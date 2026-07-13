@@ -3,7 +3,8 @@
  *
  * Prefers a precise fix from the browser Geolocation API — which works inside
  * the Capacitor WKWebView once Info.plist carries NSLocationWhenInUseUsageDescription
- * (no extra Capacitor plugin needed). Falls back to a coarse timezone-derived
+ * (iOS) / the AndroidManifest carries ACCESS_COARSE_LOCATION (wrapped Android),
+ * and needs no extra Capacitor plugin. Falls back to a coarse timezone-derived
  * lat/lon (`viewerLatLon`), then to [0,0]. Precision only matters at the ~1°
  * level for the Moon's parallax; city-level is fine for "point roughly there".
  */

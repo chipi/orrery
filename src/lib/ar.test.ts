@@ -3,6 +3,7 @@ import { describe, it, expect, afterEach } from 'vitest';
 import {
   classifyArPlatform,
   arAvailability,
+  skyAvailability,
   isArSessionSupported,
   detectArPlatform,
   isIosWeb,
@@ -74,6 +75,20 @@ describe('arAvailability (#213)', () => {
   });
   it('hidden on desktop / unsupported non-iOS', () => {
     expect(arAvailability('unsupported', false)).toBe('hidden');
+  });
+});
+
+describe('skyAvailability (#393 — heading-aligned, ARKit only)', () => {
+  it('enabled ONLY on the wrapped iPhone (ARKit true-north)', () => {
+    expect(skyAvailability('iphone-wrapped', false)).toBe('enabled');
+  });
+  it('hidden on Android even where immersive-AR works (WebXR has no compass)', () => {
+    expect(skyAvailability('android-web', false)).toBe('hidden');
+    expect(skyAvailability('android-wrapped', false)).toBe('hidden');
+  });
+  it('ios-fallback on iOS Safari, hidden on desktop', () => {
+    expect(skyAvailability('unsupported', true)).toBe('ios-fallback');
+    expect(skyAvailability('unsupported', false)).toBe('hidden');
   });
 });
 

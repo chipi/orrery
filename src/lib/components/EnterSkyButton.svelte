@@ -1,8 +1,10 @@
 <!--
   "SKY" affordance (#393) — enters the sky-pointing AR mode: hold the phone up and
-  the Sun/Moon/planets are marked where they actually are in your sky. Same
-  capability gating as EnterArButton (needs a heading-capable AR device / the
-  wrapped app); hidden on desktop + unsupported, App-Store link on iOS Safari.
+  the Sun/Moon/planets are marked where they actually are in your sky. STRICTER
+  gating than EnterArButton: sky mode needs a heading-aligned (true-north) session,
+  which only ARKit provides — so it's the wrapped iPhone only (`skyAvailability`).
+  Android WebXR has no compass and is excluded; iOS Safari shows the App-Store
+  link; desktop + everything else is hidden.
 -->
 <script lang="ts">
   import { onMount } from 'svelte';
@@ -10,7 +12,7 @@
     detectArPlatform,
     isIosWeb,
     isArSessionSupported,
-    arAvailability,
+    skyAvailability,
     type ArAvailability,
   } from '$lib/ar';
 
@@ -18,7 +20,7 @@
 
   let state = $state<ArAvailability>('hidden');
   onMount(async () => {
-    const base = arAvailability(detectArPlatform(), isIosWeb());
+    const base = skyAvailability(detectArPlatform(), isIosWeb());
     if (base !== 'enabled') {
       state = base;
       return;

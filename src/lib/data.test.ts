@@ -33,6 +33,10 @@ import {
   getTiangongModuleGallery,
   getTiangongVisitors,
   getTiangongVisitor,
+  getIssModulesBase,
+  getIssVisitorsBase,
+  getTiangongModulesBase,
+  getTiangongVisitorsBase,
   getFleetIndex,
   getFleet,
   getFleetByCategory,
@@ -600,6 +604,24 @@ describe('ISS modules (PRD-010)', () => {
     expect(m).not.toBeNull();
     expect(m!.id).toBe('harmony');
     expect(m!.name.length).toBeGreaterThan(2);
+  });
+
+  it('base loaders return overlay-free records with id + launch_date (#408 AR replay)', async () => {
+    const [issMods, issVis, tgMods, tgVis] = await Promise.all([
+      getIssModulesBase(),
+      getIssVisitorsBase(),
+      getTiangongModulesBase(),
+      getTiangongVisitorsBase(),
+    ]);
+    expect(issMods.length).toBeGreaterThan(0);
+    expect(issVis.length).toBeGreaterThan(0);
+    expect(tgMods.length).toBeGreaterThan(0);
+    expect(tgVis.length).toBeGreaterThan(0);
+    // Each carries the fields the assembly replay needs (id + launch_date).
+    const zarya = issMods.find((m) => m.id === 'zarya');
+    expect(zarya?.launch_date).toBe('1998-11-20');
+    const tianhe = tgMods.find((m) => m.id === 'tianhe');
+    expect(tianhe?.launch_date).toBeTruthy();
   });
 
   it('getIssModuleGallery returns manifest-backed URLs for ISS modules', async () => {

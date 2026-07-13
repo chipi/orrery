@@ -125,6 +125,20 @@ export function arAvailability(platform: ArPlatform, iosWeb: boolean): ArAvailab
 }
 
 /**
+ * Sky-pointing (#393) availability — STRICTER than {@link arAvailability}. Unlike
+ * tabletop AR, sky mode needs a heading-aligned (true-north) session, which only
+ * ARKit provides (`worldAlignment = .gravityAndHeading`). WebXR's `local` space
+ * has no compass, so Android is excluded even when immersive-AR is supported —
+ * the bodies would be pinned at the wrong azimuth. iOS Safari still shows the
+ * App-Store fallback like the AR button; everything else is hidden. Pure —
+ * testable. */
+export function skyAvailability(platform: ArPlatform, iosWeb: boolean): ArAvailability {
+  if (platform === 'iphone-wrapped') return 'enabled';
+  if (iosWeb) return 'ios-fallback';
+  return 'hidden';
+}
+
+/**
  * Lazily load the AR backend for the current platform. Returns null when AR is
  * unsupported. The backend chunk (WebXR or ARKit adapter) only loads here, so it
  * never weighs on the flat-screen bundle.

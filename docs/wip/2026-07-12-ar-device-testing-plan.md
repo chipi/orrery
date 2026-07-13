@@ -42,7 +42,20 @@ supported device. Options, best first:
 
 ## Path A — Android WebXR (Moto Nav)
 
-Open each of the **4 globe routes** and tap **"View in AR"**:
+**Test in Chrome-on-Android over HTTPS, not the wrapped APK.** WebXR `immersive-ar`
+is generally not exposed by the Android System WebView Capacitor wraps, so the
+realistic path is the deployed HTTPS site (or a `tailscale serve https` tunnel to
+the dev server) opened in **Chrome** with *Google Play Services for AR* installed.
+
+**Android scope (what should appear):** the **4 globe routes** (`/explore` ·
+`/earth` · `/moon` · `/mars`) + the **2 stations** (`/iss` · `/tiangong`, now with
+the #408 assembly replay on placement). The **`SKY` button will NOT appear on
+Android by design** (`skyAvailability()` — sky-pointing needs ARKit's true-north
+alignment, which WebXR lacks). Don't chase its absence; it's iPhone-only. Grant
+the **location** prompt when a real-now/Earth route asks (manifest now carries
+`ACCESS_COARSE_LOCATION`).
+
+Open each globe route and tap **"View in AR"**:
 `/explore` · `/earth` · `/moon` · `/mars`
 
 For each, verify the on-device chain (this is the wiring hardened this session):

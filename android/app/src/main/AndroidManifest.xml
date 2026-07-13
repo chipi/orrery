@@ -15,6 +15,13 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera.ar" android:required="false" />
 
+    <!-- Sky-pointing / real-now Earth (#393 / #402 / #406): the browser
+         Geolocation API places the Sun/Moon/planets + your-location pin. Mirrors
+         iOS Info.plist NSLocationWhenInUseUsageDescription. COARSE is enough —
+         getObserverLocation() requests enableHighAccuracy:false and city-level
+         precision is fine (~1° only matters for the Moon's parallax). -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"

@@ -6411,10 +6411,12 @@ sample      ${debugInfo.projectedPxSample}`}
       justify-content: center;
       position: fixed;
       left: 0;
-      top: calc(var(--nav-height) + 132px);
+      /* Vertically centred on the left edge — away from the top-left control
+         chips, matching the /iss + /tiangong module handles (.handle-left). */
+      top: 50%;
       z-index: 44;
       writing-mode: vertical-rl;
-      transform: rotate(180deg);
+      transform: translateY(-50%) rotate(180deg);
       padding: 12px 6px;
       background: rgba(8, 10, 22, 0.85);
       border: 1px solid var(--color-border);

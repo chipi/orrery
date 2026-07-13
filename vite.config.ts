@@ -425,6 +425,12 @@ export default defineConfig(({ mode }) => {
           // their *.test.ts (which still run) — same policy as scripts/hotspots.
           'src/lib/ar.ts',
           'src/lib/ar/',
+          // Three.js solar-system scene builder extracted from /explore's
+          // +page.svelte (already excluded above). Its build/update/dispose run
+          // a WebGL render loop + GPU resource management that can't be
+          // meaningfully unit-tested in jsdom; the pure structure is smoke-tested
+          // in ar-scene.test.ts. Same policy as the AR runtime + route scenes.
+          'src/lib/explore-scene.ts',
           '*.config.{js,ts}',
           '.svelte-kit/',
         ],

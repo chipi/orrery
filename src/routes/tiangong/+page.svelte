@@ -45,6 +45,8 @@
   import StationBlueprint from '$lib/components/StationBlueprint.svelte';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import StationTimelineStrip from '$lib/components/StationTimelineStrip.svelte';
+  import EnterArButton from '$lib/components/EnterArButton.svelte';
+  import { launchArScene } from '$lib/ar/launch-ar';
   import StationAssemblyControl from '$lib/components/StationAssemblyControl.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import { viewport } from '$lib/viewport.svelte';
@@ -1673,6 +1675,7 @@
     {/snippet}
     <div class="hud-controls" role="group" aria-label={m.tiangong_hud_aria()}>
       {@render tiangongControls()}
+      <EnterArButton onEnter={() => void launchArScene('tiangong')} />
     </div>
 
     {#snippet mobileModulesContent(close: () => void)}

@@ -37,6 +37,8 @@ const SCENE_LABEL: Record<ArSceneType, string> = {
   earth: 'Earth',
   moon: 'the Moon',
   mars: 'Mars',
+  iss: 'the ISS',
+  tiangong: 'Tiangong',
 };
 
 /** Remove the AR overlay DOM + restore the page (idempotent). */

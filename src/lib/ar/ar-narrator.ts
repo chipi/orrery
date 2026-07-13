@@ -18,6 +18,8 @@ const GUIDE_EPISODE: Record<ArSceneType, string> = {
   earth: 'guide-earth',
   moon: 'guide-moon',
   mars: 'guide-mars',
+  iss: 'guide-iss',
+  tiangong: 'guide-tiangong',
 };
 
 /** The Guide episode id anchoring a globe scene's AR narration. */

@@ -16,13 +16,15 @@ import { getArBackend, type ArBackend, type ArHit } from '../ar';
 import { getObserverLocation } from '../geolocation';
 import { buildRealNowEarth, positionPlanetsRealNow, type RealNowEarth } from './real-now';
 import { resolveStationTle, STATION_IDS, type StationId, type Tle } from '../satellite';
+import { buildIssProxyStation } from '../iss-proxy-model';
+import { buildTiangongProxyStation } from '../tiangong-proxy-model';
 import { updateArListener, createSpatialSource, initHeadphoneDetection } from './ar-audio';
 import { arHaptic } from './ar-haptics';
 import { scheduleArNarration, type ArNarratorHandle } from './ar-narrator';
 import { audioEngine } from '../sensory/audio-engine';
 import { audioBus } from '../audio-bus';
 
-export type ArSceneType = 'explore' | 'earth' | 'moon' | 'mars';
+export type ArSceneType = 'explore' | 'earth' | 'moon' | 'mars' | 'iss' | 'tiangong';
 
 // Tabletop scale — the whole scene fits in ~40 cm so it sits on a table.
 const TABLE_RADIUS = 0.2;
@@ -39,14 +41,13 @@ const EXPLORE_VIEW_ELEV = (30 * Math.PI) / 180;
 // Real surface textures (same assets the flat /earth,/moon,/mars scenes use),
 // plus the fallback tint used when no loader is supplied (unit tests) and the
 // true axial tilt so the globe sits like its flat-scene counterpart.
-const BODY: Record<
-  Exclude<ArSceneType, 'explore'>,
-  { texture: string; color: number; tiltDeg: number }
-> = {
-  earth: { texture: '2k_earth_daymap.jpg', color: 0x3a6ea5, tiltDeg: 23.4 },
-  moon: { texture: '2k_moon.jpg', color: 0xb9b9b9, tiltDeg: 6.7 },
-  mars: { texture: '2k_mars.jpg', color: 0xc1440e, tiltDeg: 25.2 },
-};
+const BODY: Record<'earth' | 'moon' | 'mars', { texture: string; color: number; tiltDeg: number }> =
+  {
+    // (station types iss/tiangong are handled separately in buildArSceneContent)
+    earth: { texture: '2k_earth_daymap.jpg', color: 0x3a6ea5, tiltDeg: 23.4 },
+    moon: { texture: '2k_moon.jpg', color: 0xb9b9b9, tiltDeg: 6.7 },
+    mars: { texture: '2k_mars.jpg', color: 0xc1440e, tiltDeg: 25.2 },
+  };
 
 /** A loader that resolves a texture file name to a THREE.Texture. Injected at
  *  runtime (createArScene) so the pure builder stays testable without a DOM. */
@@ -74,6 +75,23 @@ export function buildArSceneContent(
   key.position.set(0.3, 0.5, 0.4);
   group.add(key);
   group.add(new THREE.HemisphereLight(0x334455, 0x111111, 0.4 * Math.PI));
+
+  // Station tabletop model (#407) — reuse the flat routes' procedural proxy,
+  // fit to the tabletop and centred so it places like a globe.
+  if (type === 'iss' || type === 'tiangong') {
+    const station = type === 'iss' ? buildIssProxyStation() : buildTiangongProxyStation();
+    const box = new THREE.Box3().setFromObject(station);
+    const size = new THREE.Vector3();
+    const center = new THREE.Vector3();
+    box.getSize(size);
+    box.getCenter(center);
+    const s = (TABLE_RADIUS * 2) / (Math.max(size.x, size.y, size.z) || 1);
+    station.scale.setScalar(s);
+    station.position.sub(center.multiplyScalar(s));
+    station.name = type;
+    group.add(station);
+    return group;
+  }
 
   const b = BODY[type];
   // Phong with shininess 4 mirrors the flat surface scene's globe material.

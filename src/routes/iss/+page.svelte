@@ -28,6 +28,8 @@
   } from '$lib/quality/quality-tier';
   import RenderingDebugRegistrar from '$lib/components/RenderingDebugRegistrar.svelte';
   import QualitySettingsModal from '$lib/components/QualitySettingsModal.svelte';
+  import EnterArButton from '$lib/components/EnterArButton.svelte';
+  import { launchArScene } from '$lib/ar/launch-ar';
   import type { QualitySource } from '$lib/components/debug-panel-context';
   import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import { disposeScene } from '$lib/three/dispose-object3d';
@@ -1721,6 +1723,7 @@
     {/snippet}
     <div class="hud-controls" role="group" aria-label={m.iss_hud_aria()}>
       {@render issControls()}
+      <EnterArButton onEnter={() => void launchArScene('iss')} />
     </div>
 
     {#snippet mobileModulesContent(close: () => void)}

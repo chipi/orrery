@@ -12,8 +12,9 @@
 import * as THREE from 'three';
 import { base } from '$app/paths';
 import { buildSolarSystem, type SolarSystem } from '../explore-scene';
-import { prefersReducedMotion } from '../reduced-motion';
 import { getArBackend, type ArBackend, type ArHit } from '../ar';
+import { getObserverLocation } from '../geolocation';
+import { buildRealNowEarth, positionPlanetsRealNow, type RealNowEarth } from './real-now';
 import { updateArListener, createSpatialSource, initHeadphoneDetection } from './ar-audio';
 import { arHaptic } from './ar-haptics';
 import { scheduleArNarration, type ArNarratorHandle } from './ar-narrator';
@@ -29,9 +30,6 @@ const TABLE_RADIUS = 0.2;
 // system fits on a tabletop (Neptune's orbitR 430 → ~0.18 m). Relative sizes +
 // distances stay identical to the flat scene.
 const EXPLORE_AR_SCALE = 0.0004;
-// Ambient orbital pace for AR (sim-years per real second) — inner planets sweep
-// visibly, outer ones drift, as on the flat scene at a gentle speed.
-const EXPLORE_SIM_RATE = 0.03;
 // Present the ecliptic tilted toward the viewer at the SAME elevation as the flat
 // /explore default view (camP 1.05 → ~30° above the plane), so you look down onto
 // the orbits instead of edge-on (planets otherwise collapse to a line of disks).
@@ -168,14 +166,22 @@ export function createArScene(
   // of truth with the flat route, scaled + AR-quality to sit on a tabletop.
   // earth/moon/mars use the single textured globe.
   let solar: SolarSystem | null = null;
-  let simT = 0;
-  const animateOrbits = !prefersReducedMotion();
-  const orbitClock = new THREE.Clock();
+  let realEarth: RealNowEarth | null = null;
+  // Real-now positions/lighting refresh interval (bodies barely move over a
+  // session; ~10 s keeps it live without churn).
+  let lastRealNow = 0;
+  const REAL_NOW_INTERVAL_MS = 10_000;
   if (type === 'explore') {
     solar = buildSolarSystem({ loadTexture, scale: EXPLORE_AR_SCALE, quality: 'ar' });
-    solar.setInitialSimT(0); // anchor to today's real sky positions
-    solar.update(0, 0); // place planets at their real positions before first frame
+    solar.setInitialSimT(0);
+    solar.update(0, 0);
+    // #403: snap planets to their TRUE current heliocentric positions.
+    positionPlanetsRealNow(solar, EXPLORE_AR_SCALE, new Date());
     root.add(solar.group);
+  } else if (type === 'earth') {
+    // #402: Earth lit by the real Sun (live day/night terminator) + pins.
+    realEarth = buildRealNowEarth(loadTexture, new Date());
+    root.add(realEarth.group);
   } else {
     root.add(buildArSceneContent(type, { loadTexture }));
   }
@@ -305,6 +311,10 @@ export function createArScene(
     });
     await backend.startSession();
     disposeHeadphones = initHeadphoneDetection();
+    // Real-now Earth: pin the viewer's location once it resolves (#402).
+    if (realEarth) {
+      void getObserverLocation().then((loc) => realEarth?.setUserPin(loc.latDeg, loc.lonDeg));
+    }
     canvas.addEventListener('pointerdown', tapHandler);
     if (typeof window !== 'undefined') window.addEventListener('resize', resize);
     renderer.setAnimationLoop(() => {
@@ -324,12 +334,14 @@ export function createArScene(
         showPreview(pose);
         previewShown = true;
       }
-      // Advance the real orbital motion (planets revolve + spin), unless the OS
-      // reduced-motion preference is set — then they hold at their real positions.
-      if (solar && animateOrbits) {
-        const dt = orbitClock.getDelta();
-        simT += EXPLORE_SIM_RATE * dt;
-        solar.update(simT, dt);
+      // Keep the real-now scene current: re-snap /explore planets to their true
+      // positions (#403) and re-aim Earth's Sun light (#402) every few seconds.
+      const nowMs = Date.now();
+      if (nowMs - lastRealNow >= REAL_NOW_INTERVAL_MS) {
+        const d = new Date();
+        if (solar) positionPlanetsRealNow(solar, EXPLORE_AR_SCALE, d);
+        realEarth?.updateSun(d);
+        lastRealNow = nowMs;
       }
       // Move the Web Audio listener to the device once the scene is placed so
       // the spatial voices pan correctly as the user walks around.
@@ -357,6 +369,8 @@ export function createArScene(
     // Free GPU memory so repeated AR entry/exit doesn't leak textures/geometry.
     solar?.dispose();
     solar = null;
+    realEarth?.dispose();
+    realEarth = null;
     for (const t of textures) t.dispose();
     textures.length = 0;
     scene.traverse((o) => {

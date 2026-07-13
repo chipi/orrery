@@ -4,6 +4,7 @@ import {
   classifyArPlatform,
   arAvailability,
   skyAvailability,
+  isMobileSkyCapable,
   isArSessionSupported,
   detectArPlatform,
   isIosWeb,
@@ -78,17 +79,63 @@ describe('arAvailability (#213)', () => {
   });
 });
 
-describe('skyAvailability (#393 — heading-aligned, ARKit only)', () => {
-  it('enabled ONLY on the wrapped iPhone (ARKit true-north)', () => {
-    expect(skyAvailability('iphone-wrapped', false)).toBe('enabled');
+describe('skyAvailability (#393 — XR or magic-window)', () => {
+  it('enabled when a real immersive-AR session is supported', () => {
+    expect(skyAvailability(true, false)).toBe('enabled'); // ARKit / WebXR
   });
-  it('hidden on Android even where immersive-AR works (WebXR has no compass)', () => {
-    expect(skyAvailability('android-web', false)).toBe('hidden');
-    expect(skyAvailability('android-wrapped', false)).toBe('hidden');
+  it('enabled via the magic window when XR is absent but the device is mobile', () => {
+    expect(skyAvailability(false, true)).toBe('enabled'); // non-ARCore Android, iOS Safari
   });
-  it('ios-fallback on iOS Safari, hidden on desktop', () => {
-    expect(skyAvailability('unsupported', true)).toBe('ios-fallback');
-    expect(skyAvailability('unsupported', false)).toBe('hidden');
+  it('hidden only when neither substrate is available (desktop / no sensors)', () => {
+    expect(skyAvailability(false, false)).toBe('hidden');
+  });
+});
+
+describe('isMobileSkyCapable (magic-window gate)', () => {
+  const orig = {
+    doe: (globalThis as { DeviceOrientationEvent?: unknown }).DeviceOrientationEvent,
+    md: Object.getOwnPropertyDescriptor(navigator, 'mediaDevices'),
+    mtp: Object.getOwnPropertyDescriptor(navigator, 'maxTouchPoints'),
+    mm: Object.getOwnPropertyDescriptor(window, 'matchMedia'),
+  };
+  function setMobile(): void {
+    (globalThis as { DeviceOrientationEvent?: unknown }).DeviceOrientationEvent = function () {};
+    Object.defineProperty(navigator, 'mediaDevices', {
+      configurable: true,
+      value: { getUserMedia: () => Promise.resolve({}) },
+    });
+    Object.defineProperty(navigator, 'maxTouchPoints', { configurable: true, value: 5 });
+    Object.defineProperty(window, 'matchMedia', {
+      configurable: true,
+      value: () => ({ matches: true }),
+    });
+  }
+  afterEach(() => {
+    (globalThis as { DeviceOrientationEvent?: unknown }).DeviceOrientationEvent = orig.doe;
+    if (orig.md) Object.defineProperty(navigator, 'mediaDevices', orig.md);
+    else delete (navigator as { mediaDevices?: unknown }).mediaDevices;
+    if (orig.mtp) Object.defineProperty(navigator, 'maxTouchPoints', orig.mtp);
+    if (orig.mm) Object.defineProperty(window, 'matchMedia', orig.mm);
+    else delete (window as { matchMedia?: unknown }).matchMedia;
+  });
+
+  it('true on a touch device exposing DeviceOrientation + getUserMedia', () => {
+    setMobile();
+    expect(isMobileSkyCapable()).toBe(true);
+  });
+  it('false without the DeviceOrientation API', () => {
+    setMobile();
+    (globalThis as { DeviceOrientationEvent?: unknown }).DeviceOrientationEvent = undefined;
+    expect(isMobileSkyCapable()).toBe(false);
+  });
+  it('false on desktop (no touch / coarse pointer) even with a webcam', () => {
+    setMobile();
+    Object.defineProperty(navigator, 'maxTouchPoints', { configurable: true, value: 0 });
+    Object.defineProperty(window, 'matchMedia', {
+      configurable: true,
+      value: () => ({ matches: false }),
+    });
+    expect(isMobileSkyCapable()).toBe(false);
   });
 });
 

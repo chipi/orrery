@@ -125,17 +125,30 @@ export function arAvailability(platform: ArPlatform, iosWeb: boolean): ArAvailab
 }
 
 /**
- * Sky-pointing (#393) availability — STRICTER than {@link arAvailability}. Unlike
- * tabletop AR, sky mode needs a heading-aligned (true-north) session, which only
- * ARKit provides (`worldAlignment = .gravityAndHeading`). WebXR's `local` space
- * has no compass, so Android is excluded even when immersive-AR is supported —
- * the bodies would be pinned at the wrong azimuth. iOS Safari still shows the
- * App-Store fallback like the AR button; everything else is hidden. Pure —
- * testable. */
-export function skyAvailability(platform: ArPlatform, iosWeb: boolean): ArAvailability {
-  if (platform === 'iphone-wrapped') return 'enabled';
-  if (iosWeb) return 'ios-fallback';
-  return 'hidden';
+ * Sky-pointing (#393) availability. Two substrates give functional parity:
+ * a real immersive-AR session (ARKit heading-aligned, or WebXR + compass
+ * correction) OR the non-XR "magic window" (rear-camera feed + DeviceOrientation
+ * compass), which works on any mobile with a magnetometer + gyro — no ARCore. So
+ * SKY is enabled wherever EITHER is available; hidden only on desktop / no
+ * sensors. Pure — the caller probes `xrSupported` (await isArSessionSupported())
+ * and `magicWindow` ({@link isMobileSkyCapable}). */
+export function skyAvailability(xrSupported: boolean, magicWindow: boolean): ArAvailability {
+  return xrSupported || magicWindow ? 'enabled' : 'hidden';
+}
+
+/**
+ * Whether the non-XR magic-window sky substrate could run: a DeviceOrientation
+ * API + a camera getter on a MOBILE device. The mobile gate (coarse pointer /
+ * touch) is what keeps it off desktop browsers, which also expose
+ * DeviceOrientationEvent + a webcam but have no usable compass. Real event
+ * delivery is re-confirmed when the view actually starts. */
+export function isMobileSkyCapable(): boolean {
+  if (typeof window === 'undefined' || typeof navigator === 'undefined') return false;
+  if (typeof DeviceOrientationEvent === 'undefined') return false;
+  if (!navigator.mediaDevices?.getUserMedia) return false;
+  const coarse = window.matchMedia?.('(pointer: coarse)')?.matches ?? false;
+  const touch = (navigator.maxTouchPoints ?? 0) > 0;
+  return coarse || touch;
 }
 
 /**

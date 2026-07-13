@@ -125,8 +125,9 @@ export async function launchArScene(type: ArSceneType): Promise<boolean> {
 /**
  * Enter the sky-pointing AR mode (#393): hold the phone up and the Sun, Moon and
  * planets are marked where they actually are in your sky (from your location +
- * time). Uses a heading-aligned ARKit session. Idempotent with the tabletop
- * launcher — one AR view at a time.
+ * time). The substrate is picked per device (sky-view.ts): a heading-aligned
+ * ARKit session, WebXR + compass correction, or the non-XR magic window (camera
+ * feed + compass). Idempotent with the tabletop launcher — one AR view at a time.
  */
 export async function launchSkyScene(): Promise<boolean> {
   if (active || typeof document === 'undefined') return false;

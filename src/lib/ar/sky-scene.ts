@@ -1,14 +1,14 @@
 // Sky-pointing AR scene (#393). Unlike the tabletop scene (world-anchored 3D on a
 // surface), this places a labelled reticle for each Solar-System body along its
 // REAL altitude/azimuth direction, computed from the observer's location + time
-// via $lib/astronomy. It relies on an ARKit session started with
-// worldAlignment = .gravityAndHeading, so the ENU direction maps straight to the
-// world frame; markers follow the camera each frame so they read as "at infinity".
-//
-// Needs an AR-capable, heading-aligned device — verify on iPhone.
+// via $lib/astronomy. The substrate is a pluggable SkyView (sky-view.ts): an
+// ARKit/WebXR session, or the non-XR magic window (camera feed + compass). The
+// view supplies the camera pose + maps ENU directions into the render world, so
+// this scene is platform-agnostic; markers follow the camera each frame so they
+// read as "at infinity".
 
 import * as THREE from 'three';
-import { getArBackend, type ArBackend } from '../ar';
+import { pickSkyView, type SkyView } from './sky-view';
 import { skyPosition, skyDirectionENU, SKY_BODIES, type SkyBody } from '../astronomy';
 import { getObserverLocation, type ObserverLocation } from '../geolocation';
 import {
@@ -60,6 +60,8 @@ export interface SkySceneOptions {
   location?: ObserverLocation;
   /** The next pass for each station, once its fresh TLE resolves (#405). */
   onPass?: (id: StationId, pass: Pass | null) => void;
+  /** Inject a substrate (tests); else the best available is picked on start. */
+  view?: SkyView;
 }
 
 export interface SkySceneHandle {
@@ -159,11 +161,12 @@ export function createSkyScene(
     stationMarkers.set(id, { group, texture, tle: null, dir: new THREE.Vector3() });
   }
 
-  let backend: ArBackend | null = null;
+  let view: SkyView | null = null;
   let disposed = false;
   let observer: ObserverLocation | null = opts.location ?? null;
   let lastEphemeris = 0;
   const camPos = new THREE.Vector3();
+  const worldDir = new THREE.Vector3(); // scratch: ENU dir → render-world dir
 
   function recomputeDirections(): void {
     if (!observer) return;
@@ -182,14 +185,13 @@ export function createSkyScene(
   }
 
   async function start(): Promise<boolean> {
-    backend = await getArBackend();
-    if (!backend || !(await backend.isSupported())) return false;
+    view = opts.view ?? (await pickSkyView());
+    if (!view || !(await view.start())) return false;
     observer = observer ?? (await getObserverLocation());
-    backend.on('session-ended', () => {
+    view.onEnded(() => {
       stop();
       opts.onExit?.();
     });
-    await backend.startSession({ headingAligned: true });
     if (typeof window !== 'undefined') window.addEventListener('resize', resize);
     recomputeDirections();
 
@@ -215,22 +217,24 @@ export function createSkyScene(
     }
 
     renderer.setAnimationLoop(() => {
-      if (disposed || !backend) return;
-      const pose = backend.getCameraPose();
-      camera.position.set(...pose.position);
-      camera.quaternion.set(...pose.rotation);
-      camPos.set(...pose.position);
+      if (disposed || !view) return;
+      view.updateCamera(camera);
+      camPos.copy(camera.position);
 
       const t = Date.now();
       if (t - lastEphemeris >= EPHEMERIS_INTERVAL_MS) {
         recomputeDirections();
         lastEphemeris = t;
       }
-      // Anchor each visible marker at cameraPos + direction·R (stays at the
-      // correct sky direction regardless of small translation).
+      // Anchor each visible marker at cameraPos + worldDir·R (stays at the
+      // correct sky direction regardless of small translation). The view maps
+      // the stored ENU direction into the render world (identity for a
+      // heading-aligned/compass-corrected substrate, a yaw for raw WebXR).
       for (const { group, dir } of markers.values()) {
         if (!group.visible) continue;
-        group.position.copy(camPos).addScaledVector(dir, MARKER_RADIUS);
+        worldDir.copy(dir);
+        view.toWorldDir(worldDir);
+        group.position.copy(camPos).addScaledVector(worldDir, MARKER_RADIUS);
       }
       // Stations move fast (deg/s) — recompute every frame from their TLE.
       if (observer) {
@@ -244,7 +248,9 @@ export function createSkyScene(
           if (la.aboveHorizon) {
             const [x, y, z] = skyDirectionENU(la);
             sm.dir.set(x, y, z);
-            sm.group.position.copy(camPos).addScaledVector(sm.dir, MARKER_RADIUS);
+            worldDir.copy(sm.dir);
+            view.toWorldDir(worldDir);
+            sm.group.position.copy(camPos).addScaledVector(worldDir, MARKER_RADIUS);
             sm.group.visible = true;
           } else {
             sm.group.visible = false;
@@ -261,8 +267,8 @@ export function createSkyScene(
     disposed = true;
     renderer.setAnimationLoop(null);
     if (typeof window !== 'undefined') window.removeEventListener('resize', resize);
-    void backend?.endSession();
-    backend = null;
+    view?.stop();
+    view = null;
     for (const { texture } of markers.values()) texture.dispose();
     for (const { texture } of stationMarkers.values()) texture.dispose();
     scene.traverse((o) => {

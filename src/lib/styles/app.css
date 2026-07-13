@@ -176,13 +176,16 @@ html {
    narration audio, and the ExhibitOverlay (QR + hidden exit) remain. Routes
    layer on their own HUD hiding by tagging elements [data-exhibit-hide]. */
 /* AR immersive mode (#150 / RFC-021). The native ARKit camera renders BEHIND the
-   transparent WebView; make the page + flat app content transparent so it shows
-   through, leaving only the .ar-canvas (3D over the camera) + the Exit-AR button. */
+   transparent WebView (iOS); the non-XR "magic window" (#393 Android/iOS-Safari
+   sky) instead lays a .ar-camera-feed <video> behind the canvas. Either way, make
+   the flat app content transparent so the passthrough shows, leaving only the AR
+   DOM: the .ar-canvas (3D), the Exit button, the .ar-hint (instructions / next-
+   pass banner), and the .ar-camera-feed video backdrop. */
 html.ar-active,
 html.ar-active body {
   background: transparent !important;
 }
-html.ar-active body > *:not(.ar-canvas):not(.ar-exit-btn) {
+html.ar-active body > *:not(.ar-canvas):not(.ar-exit-btn):not(.ar-hint):not(.ar-camera-feed) {
   visibility: hidden !important;
 }
 .ar-exit-btn {

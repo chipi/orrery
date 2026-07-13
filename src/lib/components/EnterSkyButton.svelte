@@ -1,17 +1,16 @@
 <!--
   "SKY" affordance (#393) — enters the sky-pointing AR mode: hold the phone up and
-  the Sun/Moon/planets are marked where they actually are in your sky. STRICTER
-  gating than EnterArButton: sky mode needs a heading-aligned (true-north) session,
-  which only ARKit provides — so it's the wrapped iPhone only (`skyAvailability`).
-  Android WebXR has no compass and is excluded; iOS Safari shows the App-Store
-  link; desktop + everything else is hidden.
+  the Sun/Moon/planets are marked where they actually are in your sky. Enabled on
+  any mobile that can run a sky substrate (`skyAvailability`): a real immersive-AR
+  session (ARKit / WebXR + compass) OR the non-XR magic window (camera + compass),
+  so it works cross-platform — wrapped iPhone, Android (ARCore or not), and iOS
+  Safari. Hidden on desktop / devices with no motion sensor.
 -->
 <script lang="ts">
   import { onMount } from 'svelte';
   import {
-    detectArPlatform,
-    isIosWeb,
     isArSessionSupported,
+    isMobileSkyCapable,
     skyAvailability,
     type ArAvailability,
   } from '$lib/ar';
@@ -20,15 +19,8 @@
 
   let state = $state<ArAvailability>('hidden');
   onMount(async () => {
-    const base = skyAvailability(detectArPlatform(), isIosWeb());
-    if (base !== 'enabled') {
-      state = base;
-      return;
-    }
-    state = (await isArSessionSupported()) ? 'enabled' : 'hidden';
+    state = skyAvailability(await isArSessionSupported(), isMobileSkyCapable());
   });
-
-  const APP_STORE_URL = 'https://apps.apple.com/app/orrery';
 </script>
 
 {#if state === 'enabled'}
@@ -40,16 +32,6 @@
   >
     SKY
   </button>
-{:else if state === 'ios-fallback'}
-  <a
-    class="enter-sky ios-fallback"
-    href={APP_STORE_URL}
-    target="_blank"
-    rel="noopener noreferrer external"
-    title="Get the app to point at the real sky in AR"
-  >
-    SKY
-  </a>
 {/if}
 
 <style>
@@ -80,11 +62,5 @@
   .enter-sky:focus-visible {
     background: rgba(122, 162, 255, 0.16);
     outline: none;
-  }
-  .enter-sky.ios-fallback {
-    background: transparent;
-    border-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.45);
-    cursor: help;
   }
 </style>

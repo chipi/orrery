@@ -49,11 +49,18 @@ the dev server) opened in **Chrome** with *Google Play Services for AR* installe
 
 **Android scope (what should appear):** the **4 globe routes** (`/explore` ·
 `/earth` · `/moon` · `/mars`) + the **2 stations** (`/iss` · `/tiangong`, now with
-the #408 assembly replay on placement). The **`SKY` button will NOT appear on
-Android by design** (`skyAvailability()` — sky-pointing needs ARKit's true-north
-alignment, which WebXR lacks). Don't chase its absence; it's iPhone-only. Grant
-the **location** prompt when a real-now/Earth route asks (manifest now carries
-`ACCESS_COARSE_LOCATION`).
+the #408 assembly replay on placement) + **`SKY`** (sky-pointing now works on
+Android — WebXR + compass where ARCore is present, else the non-XR **magic
+window**: rear-camera feed + magnetometer). Grant the **location** + **camera**
+prompts when asked (manifest carries `ACCESS_COARSE_LOCATION` + `CAMERA`).
+
+**Sky-pointing calibration watch:** compass conventions vary by device. If the
+whole sky reads rotated or mirrored (e.g. Sun to your left when it's to your
+right), that's the one known-untestable bit — nudge `AZIMUTH_CALIBRATION_RAD` in
+`src/lib/ar/sky-orientation.ts` (π for 180° mirror, ±π/2 for a 90° twist). Note
+which offset makes it line up so we can bake it in. On a phone with no/uncalibrated
+magnetometer the reticles will drift — do the figure-8 compass-calibration wave
+first.
 
 Open each globe route and tap **"View in AR"**:
 `/explore` · `/earth` · `/moon` · `/mars`

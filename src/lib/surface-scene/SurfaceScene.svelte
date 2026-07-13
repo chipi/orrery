@@ -412,7 +412,7 @@
   // here (that's the whole point of a seed); the lint is intended to
   // warn against accidentally capturing a value that should be tracked
   // reactively, which doesn't apply to a write-once $state initializer.
-
+  // eslint-disable-next-line svelte/valid-compile
   const ALTITUDE_KM_SEED = Math.max(0, ((config.initialCamR ?? 85) - 30) * (config.radiusKm / 30));
   let altitudeKm = $state(ALTITUDE_KM_SEED);
 

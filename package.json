@@ -72,6 +72,7 @@
     "images:score": "tsx scripts/score-images.ts",
     "images:hotspots": "tsx scripts/fetch-hotspot-imagery.ts",
     "fetch:launches": "tsx scripts/fetch-launches.ts",
+    "fetch:tles": "node scripts/fetch-station-tles.mjs",
     "audit:images": "tsx scripts/audit-image-usage.ts",
     "audit:launches": "tsx scripts/audit-report-launches.ts",
     "audit:fly-cameras": "tsx scripts/audit-fly-cameras.ts",

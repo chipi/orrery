@@ -1,0 +1,50 @@
+name: Refresh station TLEs
+
+# #404 — keeps the bundled ISS/Tiangong element sets (src/lib/satellite/
+# station-tles.json) fresh from Celestrak so the offline/CORS fallback for the
+# station AR modes is never more than ~a day stale. At runtime the app still
+# prefers a live Celestrak fetch (tle-source.ts); this is the bundled backstop.
+#
+# Runs daily at 05:23 UTC + on demand. Commits the diff so the standard CI deploy
+# chain picks it up. Same bot-token/branch-protection contract as the launches
+# refresh (see refresh-launches.yml).
+
+on:
+  schedule:
+    - cron: '23 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.LAUNCHES_BOT_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Fetch current TLEs from Celestrak
+        run: npm run fetch:tles
+
+      - name: Commit if changed
+        run: |
+          set -euo pipefail
+          git config user.name 'orrery-launches-bot'
+          git config user.email 'launches-bot@orrery.local'
+          if [[ -n "$(git status --porcelain src/lib/satellite/station-tles.json)" ]]; then
+            git add src/lib/satellite/station-tles.json
+            TS=$(date -u +%Y-%m-%dT%H:%MZ)
+            git commit -m "chore(tles): refresh station element sets — ${TS}"
+            git push
+          else
+            echo "No station-TLE changes — skipping commit."
+          fi

@@ -159,7 +159,7 @@
     "@capacitor/splash-screen": "^8.0.1",
     "@sentry/sveltekit": "^10.53.1",
     "detect-gpu": "^5.0.70",
-    "katex": "^0.16.45",
+    "katex": "^0.17.0",
     "qrcode": "1.5.4",
     "three": "0.185.1"
   }

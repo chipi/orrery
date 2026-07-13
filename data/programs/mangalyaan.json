@@ -10,7 +10,7 @@
   "end_year": 2022,
   "status": "COMPLETED",
   "epoch": "iss-assembly",
-  "hero": "fleet/mangalyaan/01",
+  "hero": "fleet/mangalyaan/03",
   "roster": [
     {
       "linked_id": "mangalyaan",
@@ -54,6 +54,13 @@
       "label": "Chandrayaan — India's Moon program",
       "href": "/programs/chandrayaan",
       "kind": "program"
+    }
+  ],
+  "surface_sites": [
+    {
+      "surface": "mars",
+      "site": "mangalyaan",
+      "label": "Mangalyaan in Mars orbit"
     }
   ],
   "links": [

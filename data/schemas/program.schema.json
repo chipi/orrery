@@ -106,6 +106,20 @@
         }
       }
     },
+    "surface_sites": {
+      "type": "array",
+      "description": "The program's landers, rovers, and orbiters/observatories that render on a body surface — deep-linked to /moon, /mars, or /earth at ?site=<id>. Drives the 'On the surface' section.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["surface", "site", "label"],
+        "properties": {
+          "surface": { "type": "string", "enum": ["moon", "mars", "earth"] },
+          "site": { "type": "string", "minLength": 1 },
+          "label": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
     "links": {
       "type": "array",
       "minItems": 1,

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <title>Orrery</title>
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <link href="/orrery/_app/immutable/entry/start.DMLWFdE4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BteV8WCT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BHsOndvw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BpWGNCGv.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BbeNRzl4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/-UyI9lYi.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BnJ45H8A.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CHEu2MNX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B0XwC4Ot.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.BzEp2-2A.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bv6SoQKO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzT2BaDQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BVHyKRY2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CWj6FrbW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C2Q9kMI2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/4-47NKPp.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/_j_3sLD1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DT7rFlVh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DT4DP4DU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DdAW_0EA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.Ce8lq5v-.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYwSVZ3L.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CbQ5P7iv.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D69S9Sw1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Xj6meh5r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Co5Gl554.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B79LgCJy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Cn0vh-Bc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1nfqajl.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CwT4KfCE.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYx1xkCk.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BqNELRB0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DT0iYfVL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DODJ80ki.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4XAU9j9.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B54shOYO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D2uCW_lI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcMdW1Rq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dx51JDmI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DWsnhRVE.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bzswvde1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bk1udcwX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DUbQrKN4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XoT5j-w0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BtoAgfKC.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Cb21hhWH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/f-Gaer__.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CPwLOqZt.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CXpKqc2G.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BR6gBIuA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CHGdCS7w.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/30.DrOHnm8k.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RNgElSY1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvD6lZ0u.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BOe7Btw6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C3_e-jin.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CtY8OLF7.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--1qiz0dm--><meta name="description" content="روبوت بحجم حافلة أمضى ثلاثة عشر عامًا يدور حول زحل — واكتشف، على قمر لم يكن أحد يراقبه، محيطًا قد يحتوي على حياة."/><!----><title>Cassini · Programs · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.GLXyHeZc.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/AgencyBadge.BQUpc0Od.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/30.CSTkLmFg.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><nav aria-label="الملاحة الرئيسية" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery - home"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><a href="/orrery/" class="link svelte-1h32yp1">HOME</a><a href="/orrery/explore" class="link svelte-1h32yp1">نظامنا الشمسي</a><a href="/orrery/missions" class="link svelte-1h32yp1">البعثات</a><a href="/orrery/fleet" class="link svelte-1h32yp1">FLEET</a><a href="/orrery/programs" class="link svelte-1h32yp1">PROGRAMS</a><a href="/orrery/plan" class="link svelte-1h32yp1">PLAN</a><a href="/orrery/fly" class="link svelte-1h32yp1">FLY</a><a href="/orrery/earth" class="link svelte-1h32yp1">EARTH</a><a href="/orrery/moon" class="link svelte-1h32yp1">MOON</a><a href="/orrery/mars" class="link svelte-1h32yp1">MARS</a><a href="/orrery/iss" class="link svelte-1h32yp1">ISS</a><a href="/orrery/tiangong" class="link svelte-1h32yp1">تيانغونغ</a><a href="/orrery/science" class="link svelte-1h32yp1">العلم</a><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="افتح قائمة التنقل" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="ابدأ الجولة" aria-pressed="false" title="ابدأ الجولة"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <button type="button" class="sensory-toggle svelte-1h32yp1" aria-label="إعدادات الحواس" aria-haspopup="dialog" aria-expanded="false" title="الصوت والاهتزاز والإمالة"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 1.5 L9.7 8 L8 14.5 L6.3 8 Z" fill="currentColor" opacity="0.55"></path><path d="M1 8 Q 3 5, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="اللغة" aria-haspopup="listbox" aria-expanded="false" title="اختر اللغة">AR</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="بدّل عدسة العلوم (unavailable on this page)" aria-pressed="false" title="إظهار طبقة الفيزياء (طبقات الميكانيكا المدارية) (unavailable on this page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="نضال أسلوب التجارة العالية" aria-pressed="false" title="نضال أسلوب التجارة العالية">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" disabled="" aria-disabled="true" aria-label="Graphics settings (unavailable on this page)" aria-pressed="false" title="Graphics settings (unavailable on this page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="مشاركة هذا العرض" title="مشاركة هذا العرض"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <!----></div></nav> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main class="svelte-12qhfyh"><!--[-1--><!--[--><article class="program svelte-1qiz0dm"><nav class="crumb svelte-1qiz0dm"><a href="/orrery/programs" class="svelte-1qiz0dm">Programs</a> <span class="sep svelte-1qiz0dm">›</span> <span>Cassini</span></nav> <header class="hero svelte-1qiz0dm"><div class="hero-text"><p class="meta svelte-1qiz0dm"><!--[0--><span class="badges svelte-11wq40q" aria-hidden="true"><!--[--><img src="/orrery/logos/nasa.svg" alt="" title="NASA" class="badge svelte-11wq40q" loading="lazy" decoding="async"/><img src="/orrery/logos/esa.svg" alt="" title="European Space Agency" class="badge svelte-11wq40q" loading="lazy" decoding="async"/><!--]--></span><!--]--><!----> <span>NASA · USA · 1997–2017</span></p> <div class="title-row svelte-1qiz0dm"><h1 class="svelte-1qiz0dm">Cassini</h1> <!--[-1--><!--]--></div> <p class="tagline svelte-1qiz0dm">روبوت بحجم حافلة أمضى ثلاثة عشر عامًا يدور حول زحل — واكتشف، على قمر لم يكن أحد يراقبه، محيطًا قد يحتوي على حياة.</p> <p class="chips svelte-1qiz0dm"><span class="chip svelte-1qiz0dm">Robotic campaign</span> <span class="chip chip-status status-completed svelte-1qiz0dm">COMPLETED</span></p></div> <!--[0--><img class="hero-img svelte-1qiz0dm" src="/orrery/images/missions/cassini/01.webp" alt="" fetchpriority="high" decoding="async"/><!--]--></header> <!--[--><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">The land</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">بحلول تسعينيات القرن العشرين، كان زحل قد رُصِد ثلاث مرات، وفقط بشكل عابر: فقد اجتاز Pioneer 11 والمركبتان Voyager النظام في غضون ساعات، مقدمة لمحات مثيرة لعالم محاط بالحلقات مع عشرات الأقمار وقمر عملاق يكتنفه الضباب، Titan، الذي لم تستطع أي كاميرا اختراق سطحه. يمكن للتحليق العابر أن يلتقط صورًا لمكان؛ لكنه لا يستطيع أن يقيم فيه. لفهم زحل — حلقاته، طقسه، عائلته غير المحتملة من الأقمار — كان على مركبة فضائية أن تتوقف وتبقى.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">صُمِّم Cassini للقيام بذلك تحديدًا، وبُني من قبل تحالف: قدمت NASA المركبة المدارية، وقدمت وكالة الفضاء الأوروبية مركبة هبوط تُدعى Huygens لتنزل عبر ضباب Titan، وبنت إيطاليا هوائيها عالي الكسب. انطلق في عام 1997 كواحد من أكبر وأكثر المركبات الكوكبية قدرة على الإطلاق — رحلة مدتها سبع سنوات وملياري كيلومتر أمامه فقط للوصول إلى الكوكب الذي صُمِّم لدراسته.</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Goals</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">كان الهدف الأساسي هو أن يصبح أول مقيم لزحل: الدخول في مدار والبقاء لسنوات، لدراسة الغلاف الجوي للكوكب، وحلقاته، ومجاله المغناطيسي، وأقماره عبر الدورة البطيئة للفصول الزحلية — العلم المستدام والصبور الذي لا يمكن لأي تحليق عابر القيام به. كان Titan، القمر الوحيد الكبير بما يكفي ليحمل غلافًا جويًا كثيفًا، والغموض الكبير للنظام الشمسي الخارجي، على رأس الأهداف.</p><!--]--><!--[1--><figure class="fig fig-right svelte-1qiz0dm"><img src="/orrery/images/fleet-galleries/cassini/01.webp" alt="حمل Cassini مسبار Huygens الأوروبي على ظهره لمدة سبع سنوات، ثم أطلقه ليهبط بالمظلة على Titan. أما المركبة المدارية نفسها فقد أمضت ثلاثة عشر عامًا تدور حول زحل، متنقلة بين الأقمار، وفي النهاية، بين الكوكب وحلقاته." decoding="async" class="svelte-1qiz0dm"/> <figcaption class="svelte-1qiz0dm">حمل Cassini مسبار Huygens الأوروبي على ظهره لمدة سبع سنوات، ثم أطلقه ليهبط بالمظلة على Titan. أما المركبة المدارية نفسها فقد أمضت ثلاثة عشر عامًا تدور حول زحل، متنقلة بين الأقمار، وفي النهاية، بين الكوكب وحلقاته.</figcaption></figure><!--]--><!--[0--><p class="svelte-1qiz0dm">كان الهدف الثاني من نصيب Huygens: النزول عبر ضباب Titan البرتقالي والهبوط — أو الارتطام — على سطح لم يره أحد من قبل، واكتشاف ما إذا كان القمر يحتوي حقًا على البحيرات والأنهار من الميثان السائل التي توقعتها النظرية. كانت محاولة واحدة في اتجاه واحد لأبعد هبوط تم تجربته على الإطلاق.</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Outcome</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">وصل Cassini إلى زحل عام 2004 واستقر في المدار. وبعد شهور أطلق Huygens، الذي هبط بالمظلة عبر ضباب Titan في يناير 2005 وأعاد أول صور من سطح قمر في النظام الشمسي الخارجي: سهل برتقالي خافت متناثر عليه حصى مستدير من جليد الماء، شكلته أنهار من الميثان السائل. ولا يزال الهبوط الوحيد الذي حققته البشرية خارج حزام الكويكبات.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">جاء الاكتشاف العظيم للمركبة المدارية نفسها من قمر لم يكن أحد تقريبًا يتوقع أن يكون مهمًا. أثناء مروره بـ Enceladus الصغير، وجد Cassini نفاثات عالية من جليد الماء والبخار تنفجر من شقوق في قطبه الجنوبي — دليل على محيط عالمي من الماء السائل تحت الجليد، دافئ ومالح وممزوج بجزيئات عضوية. تبين أن بقعة متجمدة عرضها خمسمئة كيلومتر هي واحدة من أكثر الأماكن الواعدة في النظام الشمسي للبحث عن حياة.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">عمل Cassini لمدة ثلاثة عشر عامًا، أطول بكثير من مهمته المخطط لها، حتى نفد وقوده تقريبًا. بدلاً من المخاطرة بأن يتحطم في النهاية على Enceladus أو Titan ويلوثهما بميكروبات الأرض، اختار مخططو المهمة نهاية متعمدة: اثنتان وعشرون غوصة عبر الفجوة غير المستكشفة بين زحل وحلقاته، مع إعادة البيانات حتى اللحظة الأخيرة، ثم الغوص النهائي في الغلاف الجوي للكوكب في سبتمبر 2017، مرسلاً البيانات حتى احترق.</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">The story</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">قصة Cassini هي ما يحققه الصبر. كانت مركبات Voyager قد أظهرت زحل في يوم واحد ومضت قدمًا؛ أما Cassini فبقي لأكثر من عقد، وتقريبًا كل ما وجده من أمور مهمة جاء من البقاء هناك وقتًا كافيًا للمراقبة — عاصفة تلتف حول الكوكب بأكمله، فصل يتحول، قمر يمر قريبًا بما فيه الكفاية في المدار الأربعمئة ليكشف ما فاته التحليق الأول. لم تكن اكتشافاته لمحات محظوظة بل مكافأة المثابرة.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">أعاد اكتشافه الأكثر أهمية كتابة المكان الذي نبحث فيه عن الحياة. قبل Cassini، كان البحث عن أماكن صالحة للحياة يركز على المريخ والنظام الشمسي الداخلي الدافئ. كان يُفترض أن يكون Enceladus — الصغير، المتجمد، البعيد عن الشمس — ميتًا. لكنه بدلاً من ذلك كان يطلق مكونات الحياة في الفضاء، محتفظًا بسيولتها بفعل الجذب المرن لجاذبية زحل. حوّل Cassini النظام الشمسي الخارجي، الذي طالما اعتُبر أرضًا قاحلة متجمدة، إلى موطن محتمل للمحيطات، ولما قد تحمله المحيطات.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">وكانت نهايته خيارًا أخلاقيًا بقدر ما كانت هندسيًا. مركبة فضائية اكتشفت عالمين محيطيين ربما صالحين للحياة لم يكن يمكن السماح لها بأن تصبح الشيء الذي يلوثهما. لذلك أطار مشغلوها نحو زحل عمدًا، مضحين بالآلة لحماية الأماكن ذاتها التي اكتشفتها — الاستكشاف الكوكبي يتحمل مسؤولية مدى وصوله.</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">What it gave back</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">الإرث الأول لـ Cassini هو زحل نفسه، متحولاً من عالم يُرى عابرًا إلى الكوكب الأفضل فهمًا في النظام الشمسي الخارجي — حلقاته، طقسه، مجاله المغناطيسي، وعشرات أقماره مُرسّمة عبر ثلاثة عشر عامًا من المراقبة المستمرة التي لا توجد مهمة مستقبلية مجدولة لتكرارها.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">الثاني هو Enceladus وTitan: عالمان محيطيان وعالم ميثان واحد انتقلا، ببيانات Cassini، إلى الصف الأول من الأماكن التي تستحق العودة إليها في البحث عن الحياة. كل مقترح للبحث عن بيولوجيا في النظام الشمسي الخارجي يبدأ الآن بما وجده Cassini.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">والثالث هو نموذج المهمة نفسها — مهمة رئيسية دولية حقيقية، NASA وأوروبا تطيران مركبة فضائية واحدة لعقدين، أظهرت كم تُعيد مركبة مدارية صبورة أكثر من تحليق سريع عابر، ووضعت القالب للمهمات طويلة المدة التي تلتها.</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">What we can learn</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">الدرس من Cassini هو أن البقاء يتفوق على المرور. نفس الكوكب الذي وصفته مركبات Voyager في ساعات كشف أعمق أسراره — محيط Enceladus، دورة الميثان في Titan — فقط لمركبة فضائية على استعداد لقضاء ثلاثة عشر عامًا في المدار. للأسئلة الأصعب، الحضور عبر الزمن يساوي أكثر من أي لمحة واحدة رائعة.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">الدرس الأعمق هو أن الوصول يحمل مسؤولية. انتهى Cassini بأن طار نحو زحل لحماية أقمار المحيط التي اكتشفها — اعتراف بأن القدرة على زيارة عالم ربما حي تأتي مع واجب عدم تسميمه. القدرة بدون هذا التقييد ليست استكشافًا؛ إنها تعدٍّ.</p><!--]--><!--]--></section><!--]--> <!--[-1--><!--]--> <section class="roster svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Missions</h2> <div class="roster-split svelte-1qiz0dm"><ol class="timeline svelte-1qiz0dm"><!--[--><li class="svelte-1qiz0dm sel"><span class="t-year svelte-1qiz0dm">2004</span> <span class="t-dot svelte-1qiz0dm"></span> <span class="t-body"><!--[0--><!--[-1--><!--]--> <button type="button" class="t-name svelte-1qiz0dm">Cassini</button><!--]--> <!--[0--><span class="t-note svelte-1qiz0dm">spent thirteen years in orbit at Saturn — the only spacecraft ever to do so — mapping the rings, the moons, and the storms in detail no flyby could reach</span><!--]--></span></li><li class="svelte-1qiz0dm context"><span class="t-year svelte-1qiz0dm">2005</span> <span class="t-dot svelte-1qiz0dm"></span> <span class="t-body"><!--[-1--><span class="t-name t-ctx svelte-1qiz0dm">Huygens lands on Titan</span><!--]--> <!--[0--><span class="t-note svelte-1qiz0dm">the European Huygens probe parachuted onto Titan in January 2005 — the first and only landing anywhere in the outer solar system</span><!--]--></span></li><li class="svelte-1qiz0dm context"><span class="t-year svelte-1qiz0dm">2005</span> <span class="t-dot svelte-1qiz0dm"></span> <span class="t-body"><!--[-1--><span class="t-name t-ctx svelte-1qiz0dm">The geysers of Enceladus</span><!--]--> <!--[0--><span class="t-note svelte-1qiz0dm">Cassini found jets of water ice erupting from the south pole of the tiny moon Enceladus, evidence of a global ocean beneath its ice — one of the most promising places to look for life</span><!--]--></span></li><li class="svelte-1qiz0dm context"><span class="t-year svelte-1qiz0dm">2017</span> <span class="t-dot svelte-1qiz0dm"></span> <span class="t-body"><!--[-1--><span class="t-name t-ctx svelte-1qiz0dm">The Grand Finale</span><!--]--> <!--[0--><span class="t-note svelte-1qiz0dm">out of fuel, Cassini was flown between Saturn and its rings twenty-two times and then deliberately plunged into the planet, to be sure it could never contaminate the ocean moons</span><!--]--></span></li><!--]--></ol> <!--[0--><aside class="detail svelte-1qiz0dm" aria-live="polite"><!--[0--><img class="d-hero svelte-1qiz0dm" src="/orrery/images/missions/cassini/01.webp" alt="" decoding="async"/> <p class="d-meta svelte-1qiz0dm">1997 · NASA / ESA / ASI · مدارية + مركبة هبوط · مُنفَّذة</p> <h3 class="d-name svelte-1qiz0dm">كاسيني-هويغنز</h3> <p class="d-blurb svelte-1qiz0dm">13 عامًا في مدار زحل — هبطت مركبة هويغنز على تيتان في 14-01-2005 (أول هبوط ناعم في النظام الشمسي الخارجي)</p> <a class="d-open svelte-1qiz0dm" href="/orrery/missions?id=cassini&amp;from=program:cassini">Open the full mission →</a><!--]--></aside><!--]--></div> <h2 class="svelte-1qiz0dm">Hardware</h2> <ul class="hardware svelte-1qiz0dm"><!--[--><!--]--></ul></section> <!--[-1--><!--]--> <!--[0--><section class="see-also svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Go deeper in Orrery</h2> <ul class="svelte-1qiz0dm"><!--[--><li class="svelte-1qiz0dm"><a href="/orrery/explore" class="svelte-1qiz0dm"><span class="k svelte-1qiz0dm">explore</span>Saturn in the 3D explorer →</a></li><li class="svelte-1qiz0dm"><a href="/orrery/programs/voyager" class="svelte-1qiz0dm"><span class="k svelte-1qiz0dm">program</span>Voyager — the flybys that came first →</a></li><!--]--></ul></section><!--]--> <!--[0--><section class="related svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Related programs</h2> <p><!--[--><a class="rel svelte-1qiz0dm" href="/orrery/programs/voyager">Voyager</a><a class="rel svelte-1qiz0dm" href="/orrery/programs/galileo">Galileo</a><!--]--></p></section><!--]--> <section class="sources svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Sources</h2> <ul class="svelte-1qiz0dm"><!--[--><li class="svelte-1qiz0dm"><a href="https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens" target="_blank" rel="noopener noreferrer" class="svelte-1qiz0dm">Cassini–Huygens — Wikipedia ↗</a></li><li class="svelte-1qiz0dm"><a href="https://science.nasa.gov/mission/cassini/" target="_blank" rel="noopener noreferrer" class="svelte-1qiz0dm">Cassini — NASA mission site ↗</a></li><li class="svelte-1qiz0dm"><a href="https://science.nasa.gov/saturn/moons/enceladus/" target="_blank" rel="noopener noreferrer" class="svelte-1qiz0dm">The ocean of Enceladus — why it matters ↗</a></li><!--]--></ul></section></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="تذييل الموقع"><nav class="footer-menu svelte-12qhfyh" aria-label="روابط التذييل"><a class="footer-link svelte-12qhfyh" href="/orrery/gallery">المعرض</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">الأرصدة الدائنة</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">بيانات النشر</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">المكتبة</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">About</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="حول"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">الترخيص</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="إصدار البناء + تاريخ النشر (يفتح سجل التغييرات على GitHub): v0.8-wip · 2026-07-13" hreflang="en">v0.8-wip</a></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1xawx5e = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_1xawx5e.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.DMLWFdE4.js"),
+							import("/orrery/_app/immutable/entry/app.BzEp2-2A.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 30],
+									data: [null,null],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

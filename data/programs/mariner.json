@@ -1,0 +1,80 @@
+{
+  "id": "mariner",
+  "kind": "robotic-campaign",
+  "agency": "NASA",
+  "agencies": [
+    "NASA"
+  ],
+  "country": "USA",
+  "start_year": 1962,
+  "end_year": 1975,
+  "status": "COMPLETED",
+  "epoch": "space-race",
+  "hero": "fleet/mariner-4/01",
+  "roster": [
+    {
+      "name": "Mariner 2 reaches Venus",
+      "year": 1962,
+      "note": "in December 1962 Mariner 2 became the first spacecraft to reach another planet, finding Venus not a tropical twin of Earth but a furnace hundreds of degrees hot"
+    },
+    {
+      "linked_id": "mariner-4",
+      "ref": "fleet",
+      "role": "first close-up of another planet",
+      "year": 1964,
+      "note": "flew past Mars in 1965 and returned the first photographs ever taken of another planet from close range — a cratered, apparently dead world that ended the old dreams of Martian canals and life"
+    },
+    {
+      "linked_id": "mariner-9",
+      "ref": "fleet",
+      "role": "first to orbit another planet",
+      "year": 1971,
+      "note": "became the first spacecraft to orbit another planet, mapping the whole of Mars and revealing giant volcanoes, a canyon system the size of a continent, and dry riverbeds"
+    },
+    {
+      "name": "Mariner 10 at Mercury",
+      "year": 1973,
+      "note": "the first spacecraft to visit Mercury, and the first to use one planet's gravity to reach another — the slingshot trick every deep-space mission has used since"
+    }
+  ],
+  "related_programs": [
+    "viking",
+    "voyager"
+  ],
+  "see_also": [
+    {
+      "label": "Mars — the world Mariner first photographed",
+      "href": "/mars",
+      "kind": "body"
+    },
+    {
+      "label": "Viking — the landers Mariner scouted the way for",
+      "href": "/programs/viking",
+      "kind": "program"
+    }
+  ],
+  "surface_sites": [
+    {
+      "surface": "mars",
+      "site": "mariner9",
+      "label": "Mariner 9 in Mars orbit"
+    }
+  ],
+  "links": [
+    {
+      "l": "Mariner program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mariner_program",
+      "t": "intro"
+    },
+    {
+      "l": "Mariner 4 — first pictures of Mars — NASA",
+      "u": "https://science.nasa.gov/mission/mariner-4/",
+      "t": "core"
+    },
+    {
+      "l": "Mariner 9 — first to orbit another planet",
+      "u": "https://science.nasa.gov/mission/mariner-9/",
+      "t": "deep"
+    }
+  ]
+}

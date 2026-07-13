@@ -2,30 +2,96 @@
   "id": "artemis",
   "kind": "crewed-campaign",
   "agency": "NASA",
-  "agencies": ["NASA", "ESA", "JAXA", "CSA", "SpaceX"],
+  "agencies": [
+    "NASA",
+    "ESA",
+    "JAXA",
+    "CSA",
+    "SpaceX"
+  ],
   "country": "USA + partners",
   "start_year": 2019,
   "status": "ACTIVE",
   "epoch": "lunar-return",
-  "hero": "fleet/orion/01",
+  "hero": "fleet/sls-block-1/01",
   "roster": [
-    { "linked_id": "orion", "ref": "fleet", "role": "crew spacecraft" },
-    { "linked_id": "sls-block-1", "ref": "fleet", "role": "launcher" },
-    { "linked_id": "starship", "ref": "fleet", "role": "lunar lander (HLS)" },
-    { "name": "Artemis I", "year": 2022, "note": "an uncrewed Orion flies around the Moon on the first SLS launch — the deep-space hardware is proven before anyone rides it" },
-    { "linked_id": "artemis2", "ref": "mission", "year": 2026, "note": "the first crew — four astronauts, including the first non-American to fly to the Moon, on a lunar flyby" },
-    { "linked_id": "artemis3", "ref": "mission", "year": 2027, "note": "the return to the surface — the first crewed lunar landing since 1972, and the first ever near the south pole, using a Starship lander" },
-    { "linked_id": "artemis4", "ref": "mission", "note": "the first mission to the Gateway — the small international station being assembled in lunar orbit" }
+    {
+      "linked_id": "orion",
+      "ref": "fleet",
+      "role": "crew spacecraft"
+    },
+    {
+      "linked_id": "sls-block-1",
+      "ref": "fleet",
+      "role": "launcher"
+    },
+    {
+      "linked_id": "starship",
+      "ref": "fleet",
+      "role": "lunar lander (HLS)"
+    },
+    {
+      "name": "Artemis I",
+      "year": 2022,
+      "note": "an uncrewed Orion flies around the Moon on the first SLS launch — the deep-space hardware is proven before anyone rides it"
+    },
+    {
+      "linked_id": "artemis2",
+      "ref": "mission",
+      "year": 2026,
+      "note": "the first crew — four astronauts, including the first non-American to fly to the Moon, on a lunar flyby"
+    },
+    {
+      "linked_id": "artemis3",
+      "ref": "mission",
+      "year": 2027,
+      "note": "the return to the surface — the first crewed lunar landing since 1972, and the first ever near the south pole, using a Starship lander"
+    },
+    {
+      "linked_id": "artemis4",
+      "ref": "mission",
+      "note": "the first mission to the Gateway — the small international station being assembled in lunar orbit",
+      "year": 2028
+    }
   ],
-  "related_programs": ["apollo", "starship", "spacex", "esa-human"],
+  "related_programs": [
+    "apollo",
+    "starship",
+    "spacex",
+    "esa-human"
+  ],
   "see_also": [
-    { "label": "Moon — the destination", "href": "/moon", "kind": "body" },
-    { "label": "Fleet — Orion, SLS & the lunar hardware", "href": "/fleet?focus=orion", "kind": "fleet" },
-    { "label": "Apollo — the program Artemis is named after and built beyond", "href": "/programs/apollo", "kind": "program" }
+    {
+      "label": "Moon — the destination",
+      "href": "/moon",
+      "kind": "body"
+    },
+    {
+      "label": "Fleet — Orion, SLS & the lunar hardware",
+      "href": "/fleet?focus=orion",
+      "kind": "fleet"
+    },
+    {
+      "label": "Apollo — the program Artemis is named after and built beyond",
+      "href": "/programs/apollo",
+      "kind": "program"
+    }
   ],
   "links": [
-    { "l": "Artemis program — Wikipedia", "u": "https://en.wikipedia.org/wiki/Artemis_program", "t": "intro" },
-    { "l": "Artemis — NASA", "u": "https://www.nasa.gov/humans-in-space/artemis/", "t": "core" },
-    { "l": "Artemis — ESA", "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Artemis", "t": "deep" }
+    {
+      "l": "Artemis program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Artemis_program",
+      "t": "intro"
+    },
+    {
+      "l": "Artemis — NASA",
+      "u": "https://www.nasa.gov/humans-in-space/artemis/",
+      "t": "core"
+    },
+    {
+      "l": "Artemis — ESA",
+      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Artemis",
+      "t": "deep"
+    }
   ]
 }

@@ -1,0 +1,65 @@
+{
+  "id": "new-horizons",
+  "kind": "robotic-campaign",
+  "agency": "NASA",
+  "agencies": [
+    "NASA"
+  ],
+  "country": "USA",
+  "start_year": 2006,
+  "end_year": null,
+  "status": "ACTIVE",
+  "epoch": "iss-assembly",
+  "hero": "missions/new-horizons/01",
+  "roster": [
+    {
+      "linked_id": "new-horizons",
+      "ref": "mission",
+      "role": "first mission to Pluto",
+      "year": 2015,
+      "note": "the fastest spacecraft ever launched, sent across the solar system to make the first close study of Pluto — and then of a world beyond it"
+    },
+    {
+      "name": "Pluto, up close",
+      "year": 2015,
+      "note": "on 14 July 2015 it flew past Pluto, revealing a young, active world of nitrogen glaciers and water-ice mountains where scientists had expected a dead ball of rock"
+    },
+    {
+      "name": "Arrokoth",
+      "year": 2019,
+      "note": "on New Year's Day 2019 it flew past Arrokoth, a tiny two-lobed body a billion kilometres beyond Pluto — the most distant object ever explored up close"
+    }
+  ],
+  "related_programs": [
+    "voyager"
+  ],
+  "see_also": [
+    {
+      "label": "Pluto in the 3D explorer",
+      "href": "/explore",
+      "kind": "explore"
+    },
+    {
+      "label": "Pluto, in the Deep-Sky gallery",
+      "href": "/gallery/deep-sky",
+      "kind": "explore"
+    }
+  ],
+  "links": [
+    {
+      "l": "New Horizons — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/New_Horizons",
+      "t": "intro"
+    },
+    {
+      "l": "New Horizons — NASA mission site",
+      "u": "https://science.nasa.gov/mission/new-horizons/",
+      "t": "core"
+    },
+    {
+      "l": "The flyby of Arrokoth — the most distant world we've seen",
+      "u": "https://en.wikipedia.org/wiki/486958_Arrokoth",
+      "t": "deep"
+    }
+  ]
+}

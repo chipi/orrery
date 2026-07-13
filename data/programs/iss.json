@@ -184,6 +184,13 @@
       "kind": "program"
     }
   ],
+  "surface_sites": [
+    {
+      "surface": "earth",
+      "site": "iss",
+      "label": "The ISS overhead"
+    }
+  ],
   "links": [
     {
       "l": "International Space Station — Wikipedia",

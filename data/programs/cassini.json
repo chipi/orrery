@@ -1,0 +1,72 @@
+{
+  "id": "cassini",
+  "kind": "robotic-campaign",
+  "agency": "NASA",
+  "agencies": [
+    "NASA",
+    "ESA"
+  ],
+  "country": "USA",
+  "start_year": 1997,
+  "end_year": 2017,
+  "status": "COMPLETED",
+  "epoch": "shuttle-and-mir",
+  "hero": "missions/cassini/01",
+  "roster": [
+    {
+      "linked_id": "cassini",
+      "ref": "mission",
+      "role": "Saturn orbiter",
+      "year": 2004,
+      "note": "spent thirteen years in orbit at Saturn — the only spacecraft ever to do so — mapping the rings, the moons, and the storms in detail no flyby could reach"
+    },
+    {
+      "name": "Huygens lands on Titan",
+      "year": 2005,
+      "note": "the European Huygens probe parachuted onto Titan in January 2005 — the first and only landing anywhere in the outer solar system"
+    },
+    {
+      "name": "The geysers of Enceladus",
+      "year": 2005,
+      "note": "Cassini found jets of water ice erupting from the south pole of the tiny moon Enceladus, evidence of a global ocean beneath its ice — one of the most promising places to look for life"
+    },
+    {
+      "name": "The Grand Finale",
+      "year": 2017,
+      "note": "out of fuel, Cassini was flown between Saturn and its rings twenty-two times and then deliberately plunged into the planet, to be sure it could never contaminate the ocean moons"
+    }
+  ],
+  "related_programs": [
+    "voyager",
+    "galileo"
+  ],
+  "see_also": [
+    {
+      "label": "Saturn in the 3D explorer",
+      "href": "/explore",
+      "kind": "explore"
+    },
+    {
+      "label": "Voyager — the flybys that came first",
+      "href": "/programs/voyager",
+      "kind": "program"
+    }
+  ],
+  "links": [
+    {
+      "l": "Cassini–Huygens — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens",
+      "t": "intro"
+    },
+    {
+      "l": "Cassini — NASA mission site",
+      "u": "https://science.nasa.gov/mission/cassini/",
+      "t": "core"
+    },
+    {
+      "l": "The ocean of Enceladus — why it matters",
+      "u": "https://science.nasa.gov/saturn/moons/enceladus/",
+      "t": "deep"
+    }
+  ]
+}

@@ -15,6 +15,7 @@ import { buildSolarSystem, type SolarSystem } from '../explore-scene';
 import { getArBackend, type ArBackend, type ArHit } from '../ar';
 import { getObserverLocation } from '../geolocation';
 import { buildRealNowEarth, positionPlanetsRealNow, type RealNowEarth } from './real-now';
+import { resolveStationTle, STATION_IDS, type StationId, type Tle } from '../satellite';
 import { updateArListener, createSpatialSource, initHeadphoneDetection } from './ar-audio';
 import { arHaptic } from './ar-haptics';
 import { scheduleArNarration, type ArNarratorHandle } from './ar-narrator';
@@ -167,6 +168,7 @@ export function createArScene(
   // earth/moon/mars use the single textured globe.
   let solar: SolarSystem | null = null;
   let realEarth: RealNowEarth | null = null;
+  const stationTles = new Map<StationId, Tle | null>();
   // Real-now positions/lighting refresh interval (bodies barely move over a
   // session; ~10 s keeps it live without churn).
   let lastRealNow = 0;
@@ -311,9 +313,12 @@ export function createArScene(
     });
     await backend.startSession();
     disposeHeadphones = initHeadphoneDetection();
-    // Real-now Earth: pin the viewer's location once it resolves (#402).
+    // Real-now Earth: pin the viewer's location + resolve station TLEs (#402/#406).
     if (realEarth) {
       void getObserverLocation().then((loc) => realEarth?.setUserPin(loc.latDeg, loc.lonDeg));
+      for (const id of STATION_IDS) {
+        void resolveStationTle(id).then((tle) => stationTles.set(id, tle));
+      }
     }
     canvas.addEventListener('pointerdown', tapHandler);
     if (typeof window !== 'undefined') window.addEventListener('resize', resize);
@@ -343,6 +348,8 @@ export function createArScene(
         realEarth?.updateSun(d);
         lastRealNow = nowMs;
       }
+      // Stations orbit fast — update every frame so they visibly circle (#406).
+      realEarth?.updateStations(new Date(), stationTles);
       // Move the Web Audio listener to the device once the scene is placed so
       // the spatial voices pan correctly as the user walks around.
       if (placed) updateArListener(pose);

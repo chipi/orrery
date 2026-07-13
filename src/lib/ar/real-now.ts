@@ -13,6 +13,12 @@ import { skyPosition, julianDay } from '../astronomy';
 import { gmstRad } from '../astronomy/time';
 import { heliocentric, type PlanetId } from '../astronomy/planets';
 import { PLANETS, type SolarSystem } from '../explore-scene';
+import { propagate } from '../satellite/propagate';
+import { STATION_IDS, type StationId } from '../satellite/stations';
+import type { Tle } from '../satellite/tle';
+
+const RE_KM = 6378.137;
+const STATION_TINT: Record<StationId, number> = { iss: 0x7cff9e, tiangong: 0xff9edc };
 
 const DEG = 180 / Math.PI;
 const EARTH_RADIUS = 0.14; // matches the tabletop globe (TABLE_RADIUS * 0.7)
@@ -25,6 +31,9 @@ export interface RealNowEarth {
   updateSun(date: Date): void;
   /** Drop / move the "you are here" pin. */
   setUserPin(latDeg: number, lonDeg: number): void;
+  /** Position the ISS/Tiangong dots orbiting the globe at their true positions
+   *  (#406). Pass the resolved TLEs (null → hidden). */
+  updateStations(date: Date, tles: Map<StationId, Tle | null>): void;
   dispose(): void;
 }
 
@@ -79,6 +88,40 @@ export function buildRealNowEarth(
   userPin.visible = false;
   group.add(userPin);
 
+  // #406 — ISS/Tiangong dots orbiting the globe at their true positions.
+  const stationDots = new Map<StationId, THREE.Mesh>();
+  for (const id of STATION_IDS) {
+    const dot = new THREE.Mesh(
+      new THREE.SphereGeometry(EARTH_RADIUS * 0.035, 10, 10),
+      new THREE.MeshBasicMaterial({ color: STATION_TINT[id] }),
+    );
+    dot.visible = false;
+    group.add(dot);
+    stationDots.set(id, dot);
+  }
+
+  function updateStations(d: Date, tles: Map<StationId, Tle | null>): void {
+    const jd = julianDay(d);
+    const gmst = gmstRad(jd);
+    const cg = Math.cos(gmst);
+    const sg = Math.sin(gmst);
+    const s = EARTH_RADIUS / RE_KM;
+    for (const id of STATION_IDS) {
+      const dot = stationDots.get(id)!;
+      const tle = tles.get(id);
+      if (!tle) {
+        dot.visible = false;
+        continue;
+      }
+      const eci = propagate(tle, jd); // km, equatorial inertial
+      // ECI → ECEF (rotate −GMST about z) → globe frame (north on +Y, so y↔z).
+      const ex = cg * eci.x + sg * eci.y;
+      const ey = -sg * eci.x + cg * eci.y;
+      dot.position.set(ex * s, eci.z * s, ey * s);
+      dot.visible = true;
+    }
+  }
+
   function updateSun(d: Date): void {
     const ss = subSolar(d);
     const dir = latLonToUnitSphere(ss.latDeg, ss.lonDeg);
@@ -101,7 +144,7 @@ export function buildRealNowEarth(
   }
 
   updateSun(date);
-  return { group, updateSun, setUserPin, dispose };
+  return { group, updateSun, setUserPin, updateStations, dispose };
 }
 
 // ── #403 — real-now Explore ──────────────────────────────────────────────────

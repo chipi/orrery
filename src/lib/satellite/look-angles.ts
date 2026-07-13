@@ -7,7 +7,12 @@
 import { gmstRad } from '../astronomy/time';
 import type { EciVec } from './propagate';
 
-const RE = 6378.137; // km (spherical Earth; ellipsoid/altitude refinement later)
+// WGS84 ellipsoid — geodetic observer model. Flattening matters near the poles
+// (a spherical Earth mislocates the observer by up to ~21 km at 90° latitude,
+// tilting close-satellite look-angles); altitude refines it further.
+const WGS84_A = 6378.137; // equatorial radius, km
+const WGS84_F = 1 / 298.257223563; // flattening
+const WGS84_E2 = WGS84_F * (2 - WGS84_F); // first eccentricity squared
 const DEG = 180 / Math.PI;
 
 export interface LookAngle {
@@ -22,20 +27,34 @@ export interface LookAngle {
   aboveHorizon: boolean;
 }
 
-/** Observer geocentric ECI position (km) at Julian Day jd. */
-export function observerEci(jd: number, latRad: number, lonRad: number): EciVec {
+/**
+ * Observer geocentric ECI position (km) at Julian Day jd, on the WGS84 ellipsoid.
+ * `latRad` is GEODETIC latitude (what GPS / navigator.geolocation report);
+ * `altKm` is height above the ellipsoid (default sea level).
+ */
+export function observerEci(jd: number, latRad: number, lonRad: number, altKm = 0): EciVec {
   const lst = gmstRad(jd) + lonRad;
+  const sinLat = Math.sin(latRad);
+  // Radius of curvature in the prime vertical + the equatorial/polar offsets.
+  const n = WGS84_A / Math.sqrt(1 - WGS84_E2 * sinLat * sinLat);
+  const rEq = (n + altKm) * Math.cos(latRad);
   return {
-    x: RE * Math.cos(latRad) * Math.cos(lst),
-    y: RE * Math.cos(latRad) * Math.sin(lst),
-    z: RE * Math.sin(latRad),
+    x: rEq * Math.cos(lst),
+    y: rEq * Math.sin(lst),
+    z: (n * (1 - WGS84_E2) + altKm) * sinLat,
   };
 }
 
 /** Look angle from an observer to a satellite ECI position at Julian Day jd. */
-export function lookAngle(satEci: EciVec, jd: number, latRad: number, lonRad: number): LookAngle {
+export function lookAngle(
+  satEci: EciVec,
+  jd: number,
+  latRad: number,
+  lonRad: number,
+  altKm = 0,
+): LookAngle {
   const lst = gmstRad(jd) + lonRad;
-  const obs = observerEci(jd, latRad, lonRad);
+  const obs = observerEci(jd, latRad, lonRad, altKm);
   const rx = satEci.x - obs.x;
   const ry = satEci.y - obs.y;
   const rz = satEci.z - obs.z;

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { parseTle } from './tle';
 import { propagate, semiMajorAxisKm } from './propagate';
-import { lookAngle } from './look-angles';
+import { lookAngle, observerEci } from './look-angles';
 import { stationTle, stationLookAngle, nextPass, STATION_IDS } from './index';
 import { julianDay } from '../astronomy/time';
 
@@ -115,5 +115,28 @@ describe('satellite — pass prediction', () => {
       expect(pass.maxAltitudeDeg).toBeGreaterThanOrEqual(10);
       expect(typeof pass.visible).toBe('boolean');
     }
+  });
+});
+
+describe('observerEci (WGS84 geodetic model)', () => {
+  const jd = 2460000.5;
+  const mag = (lat: number, alt = 0) => {
+    const v = observerEci(jd, lat, 0, alt);
+    return Math.hypot(v.x, v.y, v.z);
+  };
+
+  it('equatorial radius at the equator', () => {
+    expect(mag(0)).toBeCloseTo(6378.137, 3);
+  });
+
+  it('polar radius at the pole (flattening, NOT the equatorial radius)', () => {
+    // WGS84 polar radius b = a(1−f) ≈ 6356.752 km — a spherical model would
+    // wrongly give 6378.137 here (the ~21 km error the fix removes).
+    expect(mag(Math.PI / 2)).toBeCloseTo(6356.752, 2);
+    expect(mag(Math.PI / 2)).toBeLessThan(6378.137 - 20);
+  });
+
+  it('adds altitude above the ellipsoid', () => {
+    expect(mag(0, 100)).toBeCloseTo(6478.137, 3); // equator + 100 km
   });
 });

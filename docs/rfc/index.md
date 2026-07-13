@@ -33,3 +33,4 @@
 | RFC-029 | Image staging ground — fetch→stage→approve→promote so `/credits` == shipped == displayed; rejects quarantined in gitignored `_staging/`, provenance walks the shipped tree only | Draft | #363 | v0.7 |
 | RFC-030 | Responsive image delivery + weight reduction — WebP size ladder + `srcset` + git-LFS masters (mobile · web · Google TV) | Partially implemented (Slices 0–3 + WebP-only) · locked in ADR-080 | #383 | v0.7/v0.8 |
 | RFC-031 | Keyboard-first navigation, focus model & WCAG 2.1 AA elevation — canvas keyboard-nav (ADR-025 Tier 2) + Google-TV D-pad + shared focus engine + command palette | Partially implemented (S1–S3, S5–S8; S4 camera-nav deferred) · accessibility statement live | #375 | v0.8 |
+| RFC-032 | /explore v2 context/scale-shell engine + scalable universe rendering — nested contexts, zoom-within/warp-between, instanced points + impostors + device budget, physics lenses | Draft (epic kickoff) · closes PRD-030 | #TBD | v2.x |

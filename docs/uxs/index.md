@@ -10,3 +10,4 @@
 | UXS-005 | Earth Orbit Viewer | Draft v0.1 | Verified against prototype |
 | UXS-006 | Moon Map | Draft v0.1 | Verified against prototype |
 | UXS-013 | Landing page (root `/`) | Draft v0.1 | Spec-only (no prototype) |
+| UXS-014 | /explore v2 — navigating the known universe (zoom/warp, boundary crossing, lenses, discovery) | Draft v0.1 | Spec-only; signature moments get a prototype before build |

@@ -32,3 +32,4 @@
 | PRD-027 | /science visit-list — museums with restored space hardware ("what to visit") | Draft (prep for v0.8) | curious learner, space enthusiast, educator/journalist |
 | PRD-028 | Earth-based observatories — `ground-observatory` fleet category (radio telescopes + DSN) | Draft (prep for v0.8) | curious learner, STEM student, space enthusiast |
 | PRD-029 | Programs — a grouping layer for missions + fleet (`/programs`; retrofit historical + author forward under it; coverage-hole report) | Draft (prep for v0.8) | curious learner, STEM student, space enthusiast, educator/journalist |
+| PRD-030 | /explore v2 — The Known Universe (zoom out from the solar system to nearby stars, exoplanet systems, deep-sky, galaxies; closes into RFC-032 + UXS-014) | Draft (epic kickoff) | curious learner, STEM student, space enthusiast, educator/journalist |

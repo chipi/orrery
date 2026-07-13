@@ -971,17 +971,16 @@
          hiding the nav under the iOS status bar). */
       padding: var(--safe-area-inset-top, env(safe-area-inset-top)) 6px 0;
     }
-    /* Once RFC-031 added the 6th button (high-contrast Aa), six 44 px touch
-       targets + the locale chip overflowed the 375 px bar. Keep every target
-       at 44 px by moving the locale picker + high-contrast into the hamburger
-       drawer on phones (see .drawer-controls); the lens toggle stays in the
-       bar as a primary feature, and graphics-settings ⚙ stays desktop-only. */
+    /* Keep every target at 44 px on a 375 px bar by moving the locale picker +
+       high-contrast into the hamburger drawer on phones (see .drawer-controls).
+       The lens toggle stays as a primary feature; the unified settings ⚙ stays
+       in the bar too — it's the ONLY way to reach sound/haptics/tilt on mobile
+       (it replaced the former sensory button, so the button count is unchanged). */
     .right {
       gap: 2px;
     }
     .right :global(.locale-picker),
-    .right .contrast-toggle,
-    .settings-toggle {
+    .right .contrast-toggle {
       display: none;
     }
     /* ...and surface them in the drawer instead. On wider touch screens

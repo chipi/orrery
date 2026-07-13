@@ -11,6 +11,15 @@ import * as THREE from 'three';
 import { getArBackend, type ArBackend } from '../ar';
 import { skyPosition, skyDirectionENU, SKY_BODIES, type SkyBody } from '../astronomy';
 import { getObserverLocation, type ObserverLocation } from '../geolocation';
+import {
+  resolveStationTle,
+  lookAngleForTle,
+  nextPassForTle,
+  STATION_IDS,
+  type StationId,
+  type Pass,
+  type Tle,
+} from '../satellite';
 
 // How far (metres) to place the markers. Far enough to read as sky; re-anchored
 // to the camera each frame so walking doesn't shift the angular direction.
@@ -41,11 +50,16 @@ const BODY_LABEL: Record<SkyBody, string> = {
   neptune: 'Neptune',
 };
 
+const STATION_LABEL: Record<StationId, string> = { iss: 'ISS', tiangong: 'Tiangong' };
+const STATION_COLOR: Record<StationId, string> = { iss: '#7cff9e', tiangong: '#ff9edc' };
+
 export interface SkySceneOptions {
   /** Called when the AR session ends. */
   onExit?: () => void;
   /** Pre-resolved observer location (else resolved on start). */
   location?: ObserverLocation;
+  /** The next pass for each station, once its fresh TLE resolves (#405). */
+  onPass?: (id: StationId, pass: Pass | null) => void;
 }
 
 export interface SkySceneHandle {
@@ -55,14 +69,16 @@ export interface SkySceneHandle {
   location(): ObserverLocation | null;
 }
 
-/** A reticle + label sprite for one body — a canvas texture so it stays crisp. */
-function makeMarker(body: SkyBody): { group: THREE.Group; texture: THREE.CanvasTexture } {
+/** A reticle + label sprite — a canvas texture so it stays crisp. */
+function makeMarker(
+  label: string,
+  color: string,
+): { group: THREE.Group; texture: THREE.CanvasTexture } {
   const size = 256;
   const canvas = document.createElement('canvas');
   canvas.width = size;
   canvas.height = size;
   const ctx = canvas.getContext('2d')!;
-  const color = BODY_COLOR[body];
 
   // Reticle ring + centre dot.
   ctx.strokeStyle = color;
@@ -82,7 +98,7 @@ function makeMarker(body: SkyBody): { group: THREE.Group; texture: THREE.CanvasT
   ctx.fillStyle = '#ffffff';
   ctx.shadowColor = 'rgba(0,0,0,0.85)';
   ctx.shadowBlur = 6;
-  ctx.fillText(BODY_LABEL[body], size / 2, size * 0.74);
+  ctx.fillText(label, size / 2, size * 0.74);
 
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
@@ -125,10 +141,22 @@ export function createSkyScene(
     { group: THREE.Group; texture: THREE.CanvasTexture; dir: THREE.Vector3 }
   >();
   for (const body of SKY_BODIES) {
-    const { group, texture } = makeMarker(body);
+    const { group, texture } = makeMarker(BODY_LABEL[body], BODY_COLOR[body]);
     group.visible = false;
     scene.add(group);
     markers.set(body, { group, texture, dir: new THREE.Vector3() });
+  }
+
+  // Stations (ISS/Tiangong) — fast-moving; TLEs resolved fresh on start.
+  const stationMarkers = new Map<
+    StationId,
+    { group: THREE.Group; texture: THREE.CanvasTexture; tle: Tle | null; dir: THREE.Vector3 }
+  >();
+  for (const id of STATION_IDS) {
+    const { group, texture } = makeMarker(STATION_LABEL[id], STATION_COLOR[id]);
+    group.visible = false;
+    scene.add(group);
+    stationMarkers.set(id, { group, texture, tle: null, dir: new THREE.Vector3() });
   }
 
   let backend: ArBackend | null = null;
@@ -165,6 +193,24 @@ export function createSkyScene(
     if (typeof window !== 'undefined') window.addEventListener('resize', resize);
     recomputeDirections();
 
+    // Resolve fresh TLEs, then surface each station's next visible pass (#405).
+    for (const id of STATION_IDS) {
+      void resolveStationTle(id).then((tle) => {
+        const sm = stationMarkers.get(id);
+        if (!sm) return;
+        sm.tle = tle;
+        if (observer) {
+          opts.onPass?.(
+            id,
+            nextPassForTle(tle, new Date(), observer.latDeg, observer.lonDeg, {
+              hoursAhead: 24,
+              minMaxAltDeg: 10,
+            }),
+          );
+        }
+      });
+    }
+
     renderer.setAnimationLoop(() => {
       if (disposed || !backend) return;
       const pose = backend.getCameraPose();
@@ -183,6 +229,25 @@ export function createSkyScene(
         if (!group.visible) continue;
         group.position.copy(camPos).addScaledVector(dir, MARKER_RADIUS);
       }
+      // Stations move fast (deg/s) — recompute every frame from their TLE.
+      if (observer) {
+        const nowD = new Date(t);
+        for (const sm of stationMarkers.values()) {
+          if (!sm.tle) {
+            sm.group.visible = false;
+            continue;
+          }
+          const la = lookAngleForTle(sm.tle, nowD, observer.latDeg, observer.lonDeg);
+          if (la.aboveHorizon) {
+            const [x, y, z] = skyDirectionENU(la);
+            sm.dir.set(x, y, z);
+            sm.group.position.copy(camPos).addScaledVector(sm.dir, MARKER_RADIUS);
+            sm.group.visible = true;
+          } else {
+            sm.group.visible = false;
+          }
+        }
+      }
       renderer.render(scene, camera);
     });
     return true;
@@ -196,6 +261,7 @@ export function createSkyScene(
     void backend?.endSession();
     backend = null;
     for (const { texture } of markers.values()) texture.dispose();
+    for (const { texture } of stationMarkers.values()) texture.dispose();
     scene.traverse((o) => {
       const s = o as THREE.Sprite;
       s.material?.dispose?.();

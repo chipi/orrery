@@ -14,20 +14,26 @@ import type { Tle } from './tle';
 
 export type { StationId } from './stations';
 export { STATION_IDS } from './stations';
+export { resolveStationTle } from './tle-source';
 
 const RE = 6378.137;
 const DEG = Math.PI / 180;
 
-/** Where a station appears in the sky for an observer at `date`. */
+/** Where a satellite (given its TLE) appears in the sky for an observer. */
+export function lookAngleForTle(tle: Tle, date: Date, latDeg: number, lonDeg: number): LookAngle {
+  const jd = julianDay(date);
+  return lookAngle(propagate(tle, jd), jd, latDeg * DEG, lonDeg * DEG);
+}
+
+/** Where a station appears in the sky (using the bundled TLE — prefer the
+ *  fetched one via lookAngleForTle + resolveStationTle for accuracy). */
 export function stationLookAngle(
   id: StationId,
   date: Date,
   latDeg: number,
   lonDeg: number,
 ): LookAngle {
-  const jd = julianDay(date);
-  const eci = propagate(stationTle(id), jd);
-  return lookAngle(eci, jd, latDeg * DEG, lonDeg * DEG);
+  return lookAngleForTle(stationTle(id), date, latDeg, lonDeg);
 }
 
 /** Equatorial unit vector to the Sun (compatible with the satellite ECI frame). */
@@ -73,7 +79,17 @@ export function nextPass(
   lonDeg: number,
   opts: { hoursAhead?: number; minMaxAltDeg?: number } = {},
 ): Pass | null {
-  const tle = stationTle(id);
+  return nextPassForTle(stationTle(id), from, latDeg, lonDeg, opts);
+}
+
+/** Next pass for a satellite given its TLE (prefer the fetched one). */
+export function nextPassForTle(
+  tle: Tle,
+  from: Date,
+  latDeg: number,
+  lonDeg: number,
+  opts: { hoursAhead?: number; minMaxAltDeg?: number } = {},
+): Pass | null {
   const latRad = latDeg * DEG;
   const lonRad = lonDeg * DEG;
   const hours = opts.hoursAhead ?? 24;

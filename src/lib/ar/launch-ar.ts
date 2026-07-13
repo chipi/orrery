@@ -5,8 +5,24 @@
 // The AR scene chunk is dynamic-imported so it never weighs on the flat bundle.
 
 import type { ArSceneType } from './ar-scene';
+import type { StationId, Pass } from '../satellite';
 import { audio } from '../audio-state.svelte';
 import { audioRegistry } from '../audio-registry.svelte';
+
+// Station-pass summary for the sky-mode hint (#405).
+const COMPASS8 = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+function compass8(deg: number): string {
+  return COMPASS8[Math.round((((deg % 360) + 360) % 360) / 45) % 8];
+}
+function formatPass(id: StationId, pass: Pass | null): string {
+  const name = id === 'iss' ? 'ISS' : 'Tiangong';
+  if (!pass) return `${name}: no pass in 24 h`;
+  const mins = Math.max(0, Math.round((pass.start.getTime() - Date.now()) / 60_000));
+  const when = mins === 0 ? 'now' : `in ${mins} min`;
+  return `${name}: ${pass.visible ? 'visible' : 'daytime'} pass ${when}, ${compass8(
+    pass.startAzimuthDeg,
+  )}, max ${Math.round(pass.maxAltitudeDeg)}°`;
+}
 
 let active: {
   canvas: HTMLCanvasElement;
@@ -128,7 +144,7 @@ export async function launchSkyScene(): Promise<boolean> {
 
   const hint = document.createElement('div');
   hint.className = 'ar-hint';
-  hint.textContent = 'Point your phone at the sky to find the Sun, Moon and planets';
+  hint.textContent = 'Point your phone at the sky — Sun, Moon, planets + the ISS & Tiangong';
   document.body.appendChild(hint);
 
   document.documentElement.classList.add('ar-active');
@@ -138,7 +154,19 @@ export async function launchSkyScene(): Promise<boolean> {
     teardownArDom(canvas, exitBtn, hint);
     active = null;
   };
-  const handle = createSkyScene(canvas, { onExit: cleanup });
+
+  // Once fresh TLEs resolve, replace the instruction with the next-pass summary.
+  const passLines = new Map<StationId, string>();
+  const hintTimer = setTimeout(() => hint.remove(), 8000);
+  const handle = createSkyScene(canvas, {
+    onExit: cleanup,
+    onPass: (id, pass) => {
+      passLines.set(id, formatPass(id, pass));
+      clearTimeout(hintTimer);
+      if (!hint.isConnected) document.body.appendChild(hint);
+      hint.textContent = [...passLines.values()].join('   ·   ');
+    },
+  });
 
   const ok = await handle.start();
   if (!ok) {
@@ -146,8 +174,6 @@ export async function launchSkyScene(): Promise<boolean> {
     return false;
   }
   active = { canvas, exitBtn, hint, stop: handle.stop };
-  // No placement gesture in sky mode — auto-dismiss the instruction.
-  setTimeout(() => hint.remove(), 5000);
   return true;
 }
 

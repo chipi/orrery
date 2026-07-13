@@ -196,6 +196,9 @@ export function createSkyScene(
     // Resolve fresh TLEs, then surface each station's next visible pass (#405).
     for (const id of STATION_IDS) {
       void resolveStationTle(id).then((tle) => {
+        // Exited before the fetch resolved → don't touch the torn-down scene or
+        // re-surface the (removed) pass hint.
+        if (disposed) return;
         const sm = stationMarkers.get(id);
         if (!sm) return;
         sm.tle = tle;

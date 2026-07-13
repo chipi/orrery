@@ -51,7 +51,9 @@ async function fetchTle(id: StationId): Promise<Tle | null> {
     clearTimeout(timer);
     if (!res.ok) return null;
     const text = (await res.text()).trim();
-    if (!/^\d /m.test(text)) return null; // needs TLE data lines
+    // Require the actual TLE line structure (guards against rate-limit HTML or a
+    // truncated body slipping through into the parser).
+    if (!/^1 \d{5}/m.test(text) || !/^2 \d{5}/m.test(text)) return null;
     writeCache(id, text);
     return parseTleBlock(text);
   } catch {

@@ -114,10 +114,12 @@ export function buildRealNowEarth(
         continue;
       }
       const eci = propagate(tle, jd); // km, equatorial inertial
-      // ECI → ECEF (rotate −GMST about z) → globe frame (north on +Y, so y↔z).
+      // ECI → ECEF (rotate −GMST about z) → the globe frame used by
+      // latLonToUnitSphere: x = cos·cos, y = sin(lat), z = −cos·sin(lon). ECEF is
+      // (cos·cos, cos·sin, sin), so globe = (ecef_x, ecef_z, −ecef_y).
       const ex = cg * eci.x + sg * eci.y;
       const ey = -sg * eci.x + cg * eci.y;
-      dot.position.set(ex * s, eci.z * s, ey * s);
+      dot.position.set(ex * s, eci.z * s, -ey * s);
       dot.visible = true;
     }
   }

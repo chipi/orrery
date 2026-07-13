@@ -120,23 +120,33 @@ export function nextPassForTle(
       }
     } else if (inPass) {
       inPass = false;
-      if (maxAlt >= minMax) {
-        const culM = new Date(maxT);
-        const sunHat = sunUnitEci(culM);
-        const satAtCul = propagate(tle, julianDay(culM));
-        const obsSunAlt = skyPosition('sun', culM, latDeg, lonDeg).altitudeDeg;
-        return {
-          start: new Date(startT),
-          culmination: culM,
-          end: new Date(t),
-          maxAltitudeDeg: maxAlt,
-          startAzimuthDeg: startAz,
-          visible: isSunlit(satAtCul, sunHat) && obsSunAlt < -6,
-        };
-      }
+      const p = buildPass(t);
+      if (p) return p;
     }
   }
+  // A qualifying pass may still be in progress at the scan-window end — emit it
+  // rather than dropping it.
+  if (inPass) {
+    const p = buildPass(from.getTime() + steps * stepMs);
+    if (p) return p;
+  }
   return null;
+
+  function buildPass(endT: number): Pass | null {
+    if (maxAlt < minMax) return null;
+    const culM = new Date(maxT);
+    const sunHat = sunUnitEci(culM);
+    const satAtCul = propagate(tle, julianDay(culM));
+    const obsSunAlt = skyPosition('sun', culM, latDeg, lonDeg).altitudeDeg;
+    return {
+      start: new Date(startT),
+      culmination: culM,
+      end: new Date(endT),
+      maxAltitudeDeg: maxAlt,
+      startAzimuthDeg: startAz,
+      visible: isSunlit(satAtCul, sunHat) && obsSunAlt < -6,
+    };
+  }
 }
 
 export { stationTle };

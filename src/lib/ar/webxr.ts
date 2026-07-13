@@ -96,7 +96,9 @@ export function createWebXrBackend(): ArBackend {
     if (transientHitTestSource) {
       const transient = frame.getHitTestResultsForTransientInput(transientHitTestSource);
       const pose = transient.find((r) => r.results.length > 0)?.results[0]?.getPose(localSpace);
-      if (pose) lastTransientHit = hitFromPose(pose);
+      // Clear when there's no transient input this frame, so a lifted touch
+      // doesn't leave a stale hit for the next tap.
+      lastTransientHit = pose ? hitFromPose(pose) : null;
     }
   }
 

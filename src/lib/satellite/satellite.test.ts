@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { parseTle } from './tle';
 import { propagate, semiMajorAxisKm } from './propagate';
 import { lookAngle } from './look-angles';
 import { stationTle, stationLookAngle, nextPass, STATION_IDS } from './index';
@@ -73,6 +74,31 @@ describe('satellite — look angles', () => {
       if (la.aboveHorizon) seenAbove = true;
     }
     expect(seenAbove).toBe(true);
+  });
+});
+
+describe('satellite — TLE parse + epoch rollover', () => {
+  const L2 = '2 25544  51.6000 000.0000 0006000 000.0000 000.0000 15.50000000 00001';
+  it('resolves 2-digit years across the 1957 pivot + parses core fields', () => {
+    const t98 = parseTle('1 25544U 98067A   98324.00000000  .0 0 0 0 9', L2);
+    const t24 = parseTle('1 25544U 98067A   24001.00000000  .0 0 0 0 9', L2);
+    const year = (jd: number) => new Date((jd - 2440587.5) * 86_400_000).getUTCFullYear();
+    expect(year(t98.epochJd)).toBe(1998);
+    expect(year(t24.epochJd)).toBe(2024);
+    expect(t24.noradId).toBe(25544);
+    expect((t24.inclRad * 180) / Math.PI).toBeCloseTo(51.6, 1);
+    expect(t24.eccentricity).toBeCloseTo(0.0006, 4);
+    expect(t24.revsPerDay).toBeCloseTo(15.5, 2);
+  });
+});
+
+describe('satellite — no-pass case', () => {
+  it('returns null when nothing clears an implausibly high elevation gate', () => {
+    const pass = nextPass('iss', new Date('2024-10-06T00:00:00Z'), 40, -74, {
+      hoursAhead: 3,
+      minMaxAltDeg: 89.9,
+    });
+    expect(pass).toBeNull();
   });
 });
 

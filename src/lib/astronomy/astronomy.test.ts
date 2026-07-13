@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { skyPosition, skyDirectionENU, SKY_BODIES } from './index';
+import { heliocentric } from './planets';
 
 // Validation anchors from standard references. Tolerances are generous (~0.5–1°)
 // because we omit nutation/aberration and use low-precision series — still far
@@ -30,6 +31,25 @@ describe('astronomy — reference anchors', () => {
     const m = skyPosition('moon', new Date('2024-01-01T00:00:00Z'), 52, 5);
     expect(m.distanceAu).toBeGreaterThan(0.0023);
     expect(m.distanceAu).toBeLessThan(0.0028);
+  });
+});
+
+describe('astronomy — heliocentric distances', () => {
+  it('each planet sits at its expected orbital distance (AU)', () => {
+    const jd = 2451545.0;
+    const dist = (id: Parameters<typeof heliocentric>[0]) => {
+      const p = heliocentric(id, jd);
+      return Math.hypot(p.x, p.y, p.z);
+    };
+    expect(dist('mercury')).toBeGreaterThan(0.3);
+    expect(dist('mercury')).toBeLessThan(0.47);
+    expect(dist('earth')).toBeCloseTo(1.0, 1);
+    expect(dist('mars')).toBeGreaterThan(1.38);
+    expect(dist('mars')).toBeLessThan(1.67);
+    expect(dist('jupiter')).toBeGreaterThan(4.9);
+    expect(dist('jupiter')).toBeLessThan(5.5);
+    expect(dist('neptune')).toBeGreaterThan(29.7);
+    expect(dist('neptune')).toBeLessThan(30.5);
   });
 });
 

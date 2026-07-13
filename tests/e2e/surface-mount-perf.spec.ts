@@ -46,7 +46,6 @@ for (const route of ROUTES) {
       .catch(() => {});
     await page.waitForTimeout(6000);
 
-    // eslint-disable-next-line no-console
     console.log(`[perf] ${route} mount-time hotspot image requests = ${hotspotReqs.length}`);
 
     // Pre-fix this was ~127 (Mars) / ~36 (Moon). Lazy per-zone loading
@@ -71,7 +70,7 @@ for (const route of ROUTES) {
       { timeout: 20_000 },
     );
     const ms = Date.now() - t0;
-    // eslint-disable-next-line no-console
+
     console.log(`[perf] ${route} time-to-interactive = ${ms} ms`);
     expect(ms, `${route} took ${ms}ms to become interactive`).toBeLessThan(5000);
   });

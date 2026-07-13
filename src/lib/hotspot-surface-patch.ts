@@ -414,7 +414,7 @@ export function aspectFromRegion(rb: RegionBounds | undefined): number {
 function buildPatchGeometry(
   baseDiameter: number,
   aspect: number,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   segments: number,
   orientationDeg = 0,
 ): THREE.BufferGeometry {

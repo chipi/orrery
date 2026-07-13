@@ -591,7 +591,7 @@ async function buildPanelCommonsSidecarEntries(
     const [surface, id, slot] = parts;
     if (knownIdsBySurface.get(surface)?.has(id)) continue; // already covered
     const baseLocal = join(`static/images/${surface}`, id, slot);
-    let localPath = baseLocal;
+    let localPath: string;
     if (await pathExists(`${baseLocal}.jpg`)) localPath = `${baseLocal}.jpg`;
     else if (await pathExists(`${baseLocal}.png`)) localPath = `${baseLocal}.png`;
     else continue;
@@ -679,7 +679,7 @@ async function buildMissionCommonsSidecarEntries(
     // fallback for unknown missions only.
     if (knownMissionIds.has(missionId)) continue;
     const baseLocal = join('static/images/missions', relPath);
-    let localPath = baseLocal;
+    let localPath: string;
     if (await pathExists(`${baseLocal}.jpg`)) localPath = `${baseLocal}.jpg`;
     else if (await pathExists(`${baseLocal}.png`)) localPath = `${baseLocal}.png`;
     else continue; // file isn't on disk — skip silently
@@ -1120,7 +1120,7 @@ async function buildFleetEntries(): Promise<ProvenanceEntry[]> {
     if (isCommonsShape(src)) {
       const agencyHuman = src.credit || 'Unknown';
       const baseLocal = join('static/images/fleet-galleries', relPath);
-      let localPath = baseLocal;
+      let localPath: string;
       if (await pathExists(`${baseLocal}.jpg`)) localPath = `${baseLocal}.jpg`;
       else if (await pathExists(`${baseLocal}.png`)) localPath = `${baseLocal}.png`;
       else continue; // sidecar declares a slot but disk has no file — skip

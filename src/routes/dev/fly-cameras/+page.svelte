@@ -86,7 +86,7 @@
   {/if}
 
   <div class="controls">
-    {#each ['all', 'issues', 'arrivals', 'flybys'] as f}
+    {#each ['all', 'issues', 'arrivals', 'flybys'] as f (f)}
       <button class:active={filter === f} onclick={() => (filter = f as typeof filter)}>{f}</button>
     {/each}
     <input type="search" placeholder="filter by mission / planet / label" bind:value={query} />
@@ -112,13 +112,13 @@
       </tr>
     </thead>
     <tbody>
-      {#each filtered as r}
+      {#each filtered as r (r)}
         <tr class:row-clean={r.montageClean}>
           <td class="mono">{r.id}</td>
           <td class="dim">{r.eventType}</td>
           <td class="mono">{r.planetId}</td>
           <td class="dim">{r.metDays?.toFixed?.(0)}</td>
-          {#each SHOTS as s}
+          {#each SHOTS as s (s)}
             <td class={shotClass(r.shots?.[s] ?? '?')}>
               {r.shots?.[s] === 'ok' ? '✓' : (r.shots?.[s] ?? '?')}
             </td>

@@ -534,7 +534,7 @@
       </label>
 
       <h2>Agency</h2>
-      {#each agencies as a}
+      {#each agencies as a (a)}
         <label>
           <input
             type="checkbox"
@@ -547,7 +547,7 @@
       {/each}
 
       <h2>Surface</h2>
-      {#each surfaces as s}
+      {#each surfaces as s (s)}
         <label>
           <input
             type="checkbox"
@@ -559,7 +559,7 @@
       {/each}
 
       <h2>Code path</h2>
-      {#each codePaths as c}
+      {#each codePaths as c (c)}
         <label>
           <input
             type="checkbox"
@@ -571,7 +571,7 @@
       {/each}
 
       <h2>Resolver tier</h2>
-      {#each tiers as t}
+      {#each tiers as t (t)}
         <label
           title={t === 'T1'
             ? 'Tier 1 — agency primaries (NASA Images API, ESA Hubble, Flickr, ESA Multimedia)'
@@ -592,7 +592,7 @@
       {/each}
 
       <h2>Status</h2>
-      {#each ['pending', 'approved', 'rejected', 'needs-manual'] as s}
+      {#each ['pending', 'approved', 'rejected', 'needs-manual'] as s (s)}
         <label>
           <input
             type="checkbox"
@@ -687,7 +687,7 @@
 
           <div class="tags" class:disabled={isUntouched}>
             <span class="tags-label">exception tags:</span>
-            {#each TAG_VOCAB as t}
+            {#each TAG_VOCAB as t (t)}
               <button
                 type="button"
                 class="tag-chip"
@@ -731,7 +731,7 @@
                   </div>
                 </li>
               {/if}
-              {#each trailFor(p) as t}
+              {#each trailFor(p) as t, i (i)}
                 <li class="step {t.status}">
                   <span class="step-icon"
                     >{t.status === 'pass'

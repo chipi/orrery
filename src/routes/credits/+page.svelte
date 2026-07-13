@@ -199,7 +199,7 @@
     <nav class="toc" aria-label={m.credits_toc_label()}>
       <h3>{m.credits_toc_label()}</h3>
       <ul>
-        {#each groups as group}
+        {#each groups as group (group)}
           <li>
             <a href="#src-{group.source.id}">{group.source.name}</a>
             <span class="counts">
@@ -211,7 +211,7 @@
       </ul>
     </nav>
 
-    {#each groups as group}
+    {#each groups as group (group)}
       <article class="source-block" id="src-{group.source.id}">
         <header class="src-head">
           {#if group.source.logo_path}
@@ -244,7 +244,7 @@
             <span class="bom-count">{m.credits_count_photos({ n: group.bundles.length })}</span>
           </h3>
           <ul class="photo-list">
-            {#each group.bundles as bundle}
+            {#each group.bundles as bundle (bundle)}
               {@const photo = bundle.representative}
               <li class="photo">
                 <a
@@ -305,20 +305,20 @@
                   {/if}
                   <p class="ph-row used">
                     <span class="lbl">{m.credits_used_on()}:</span>
-                    {#each bundleRoutes(bundle.stems) as route, i}
+                    {#each bundleRoutes(bundle.stems) as route, i (i)}
                       {#if i > 0}<span class="sep">·</span>{/if}
                       <span>{routeLabel(route)}</span>
                     {/each}
                     {#if bundle.variants.length > 1 || bundle.stems.length > 1}
                       <span class="variants" aria-label={m.credits_variants_aria()}>
-                        {#each bundle.variants as v}
+                        {#each bundle.variants as v (v)}
                           <span class="variant-chip">{v}</span>
                         {/each}
                       </span>
                     {/if}
                   </p>
                   <p class="ph-row stems">
-                    {#each bundle.stems as s, i}
+                    {#each bundle.stems as s, i (i)}
                       {#if i > 0}<span class="stem-sep">,</span>{/if}
                       <code class="path">{s}{stemIsMultiVariant(s, bundle.paths) ? '.*' : ''}</code>
                     {/each}
@@ -338,7 +338,7 @@
             <span class="bom-count">{m.credits_count_text({ n: group.texts.length })}</span>
           </h3>
           <ul class="text-list">
-            {#each group.texts as t}
+            {#each group.texts as t (t)}
               <li class="text-entry">
                 <p class="t-row">
                   <span class="t-cat">{categoryLabel(t.category)}</span>

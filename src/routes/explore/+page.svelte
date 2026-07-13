@@ -4456,7 +4456,7 @@
         >
         {#if speedPopoverOpen}
           <div class="speed-popover" role="listbox" aria-label={m.fly_speed_label()}>
-            {#each SIM_SPEEDS as sp}
+            {#each SIM_SPEEDS as sp (sp)}
               {@const speedTip =
                 sp === 1
                   ? m.explore_speed_tip_1()
@@ -4484,7 +4484,7 @@
         {/if}
       </div>
       <!-- Desktop: all 3 pills visible. -->
-      {#each SIM_SPEEDS as sp}
+      {#each SIM_SPEEDS as sp (sp)}
         {@const speedTip =
           sp === 1
             ? m.explore_speed_tip_1()

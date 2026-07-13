@@ -411,7 +411,7 @@
   // here (that's the whole point of a seed); the lint is intended to
   // warn against accidentally capturing a value that should be tracked
   // reactively, which doesn't apply to a write-once $state initializer.
-  // eslint-disable-next-line svelte/valid-compile
+
   const ALTITUDE_KM_SEED = Math.max(0, ((config.initialCamR ?? 85) - 30) * (config.radiusKm / 30));
   let altitudeKm = $state(ALTITUDE_KM_SEED);
 
@@ -5609,7 +5609,7 @@ sample      ${debugInfo.projectedPxSample}`}
   {#if view === '3d' && tierContext && !panoramaActive && selected?.kind !== 'orbiter'}
     <TierContextCard
       {tierContext}
-      scaleNote={'Tier-2 rectangles on the sphere are stylized — true ground extent is sub-pixel at this zoom. Zoom further in to enter the flat-patch view (true scale).'}
+      scaleNote="Tier-2 rectangles on the sphere are stylized — true ground extent is sub-pixel at this zoom. Zoom further in to enter the flat-patch view (true scale)."
     />
   {/if}
 

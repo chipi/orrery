@@ -306,7 +306,7 @@
     ctx.lineWidth = 0.5;
     // Step size adapts to zoom — finer graticule at deeper zoom.
     const kmRange = Math.max(W, H) * kmPerPx;
-    let stepKm = 1;
+    let stepKm: number;
     if (kmRange > 50) stepKm = 10;
     else if (kmRange > 5) stepKm = 1;
     else if (kmRange > 0.5) stepKm = 0.1;

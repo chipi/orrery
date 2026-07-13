@@ -729,7 +729,6 @@ export function buildCislunarTrajectory(
       end_met_days: teiEndMET,
       points: teiPts,
     });
-    metCursor = teiEndMET;
   } else if (is_return_trip && arrivalType === 'flyby') {
     // Free-return: tli_coast terminus → back to Earth. No explicit
     // TEI burn; lunar gravity bends the trajectory back.

@@ -191,7 +191,7 @@
     <nav class="toc" aria-label={m.library_toc_label()}>
       <h3>{m.library_toc_label()}</h3>
       <ul>
-        {#each groups as group}
+        {#each groups as group (group)}
           <li>
             <a href="#src-{group.source.id}">{group.source.name}</a>
             <span class="counts">
@@ -203,7 +203,7 @@
       </ul>
     </nav>
 
-    {#each groups as group}
+    {#each groups as group (group)}
       <article class="source-block" id="src-{group.source.id}">
         <header class="src-head">
           {#if group.source.logo_path}
@@ -235,7 +235,7 @@
         </header>
 
         <ul class="entity-list">
-          {#each group.entities as cluster}
+          {#each group.entities as cluster (cluster)}
             <li class="entity">
               <header class="entity-head">
                 <span class="ent-cat">{categoryLabel(cluster.category)}</span>
@@ -246,7 +246,7 @@
               </header>
 
               <ul class="link-list">
-                {#each cluster.links as link}
+                {#each cluster.links as link (link)}
                   <li class="link">
                     <p class="ln-row top">
                       <a

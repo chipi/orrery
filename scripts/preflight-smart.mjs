@@ -44,7 +44,7 @@ function fetchBase() {
 function getChangedFiles() {
   // Diff every commit on HEAD that is not yet on origin/main, plus
   // uncommitted working-tree changes. Empty if everything has shipped.
-  let committed = '';
+  let committed;
   let workingTree = '';
   try {
     committed = sh('git diff --name-only origin/main...HEAD').trim();

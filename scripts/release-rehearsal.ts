@@ -186,7 +186,7 @@ if (!existsSync(changelogPath)) {
 // (`new RegExp` with `[\s\S]*?` + lookahead) had subtle interactions
 // with the 'm' flag that occasionally returned no match even when the
 // section was clearly present. Same awk recipe lives in release.yml.
-let releaseBody = '';
+let releaseBody: string;
 try {
   releaseBody = execSync(
     `/usr/bin/awk -v ver="${versionBare}" '$0 ~ "^## \\\\[" ver "\\\\]" { flag=1; next } $0 ~ "^## \\\\[" { flag=0 } flag' ${JSON.stringify(changelogPath)}`,

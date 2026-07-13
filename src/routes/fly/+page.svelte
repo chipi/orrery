@@ -6812,7 +6812,7 @@
            iconic-shot lead-day offset + Moon composition snapshot. -->
       <div class="cislunar-hero-debug">
         <div class="cislunar-hero-header">{m.fly_cislunar_hero_header()}</div>
-        {#each cislunarHeroEvents as e}
+        {#each cislunarHeroEvents as e (e)}
           {@const t = e.type as 'loi' | 'tei' | 'descent_start' | 'ascent'}
           {@const leadDays = CISLUNAR_HERO_LEAD_DAYS[t]}
           {@const peak = e.met_days ?? 0}
@@ -7620,7 +7620,7 @@
         >
         {#if speedPopoverOpen}
           <div class="speed-popover" role="listbox" aria-label={m.fly_speed_label()}>
-            {#each isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90] as sp}
+            {#each isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90] as sp (sp)}
               <button
                 type="button"
                 class="speed-pill"
@@ -7637,7 +7637,7 @@
         {/if}
       </div>
       <!-- Desktop: all speed pills visible inline. -->
-      {#each isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90] as sp}
+      {#each isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90] as sp (sp)}
         <button
           type="button"
           class="speed-pill speed-desktop-pill"

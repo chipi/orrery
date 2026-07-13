@@ -233,7 +233,7 @@ function npmLs(omitDev: boolean): NpmLsNode {
   const cmd = `npm ls --json --all --omit=optional${omitDev ? ' --omit=dev' : ''}`;
   // npm ls exits non-zero for peer-dep warnings even when output is valid.
   // We capture stdout regardless.
-  let raw = '';
+  let raw: string;
   try {
     raw = execSync(cmd, {
       cwd: ROOT,

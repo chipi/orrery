@@ -1438,7 +1438,7 @@ async function fetchMissionImages(onlyIds?: string[]): Promise<number> {
     await mkdir(missionDir, { recursive: true });
     process.stdout.write(`  ${m.id}…`);
 
-    let urls: string[] = [];
+    let urls: string[];
     let saved = 0;
     let hasLegacyCover = false;
     const legacyCoverPath = join(MISSIONS_DIR, `${m.id}.jpg`);

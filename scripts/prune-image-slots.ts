@@ -129,7 +129,7 @@ async function main(): Promise<void> {
     .map((d) => d.name);
   for (const surface of surfaces) {
     const surfaceDir = join(STATIC_IMAGES_ROOT, surface);
-    let ids: string[] = [];
+    let ids: string[];
     try {
       ids = (await readdir(surfaceDir, { withFileTypes: true }))
         .filter((d) => d.isDirectory())

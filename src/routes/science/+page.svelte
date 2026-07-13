@@ -106,8 +106,10 @@
         {#each landing.tools as tool, i (i)}
           <li>
             {#each tool.paths as path, p (path)}
+              <!-- eslint-disable-next-line svelte/no-useless-mustaches -- literal separator; the wrapping mustache preserves the surrounding spaces Svelte would otherwise trim -->
               <a href="{base}{path}">{path}</a>{#if p < tool.paths.length - 1}{' · '}{/if}
             {/each}
+            <!-- eslint-disable-next-line svelte/no-useless-mustaches -- literal separator; leading space would be trimmed as indentation without the mustache -->
             {' — '}{tool.text}
           </li>
         {/each}

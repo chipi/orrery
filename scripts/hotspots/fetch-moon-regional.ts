@@ -136,7 +136,7 @@ export async function fetchMoonRegionalHotspots(
       continue;
     }
 
-    let didNetwork = false;
+    let didNetwork: boolean;
     try {
       const result = await fetchLrocPatch({
         siteId: hotspot.id,

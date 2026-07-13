@@ -157,7 +157,7 @@
       <div class="block">
         <div class="cell-label">{m.earth_regime_firsts_label_missions()}</div>
         <ul class="firsts">
-          {#each regime.firsts as f}
+          {#each regime.firsts as f (f)}
             <li>
               <span class="firsts-year">{f.year}</span>
               {#if f.mission_id}

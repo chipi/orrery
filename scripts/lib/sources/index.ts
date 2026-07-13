@@ -77,7 +77,7 @@ export async function gatherFromSources(opts: {
   const out: SourceCandidate[] = [];
   const seen = new Set<string>();
   for (const a of adapters) {
-    let got: SourceCandidate[] = [];
+    let got: SourceCandidate[];
     try {
       got = await a.fetch(opts);
     } catch {

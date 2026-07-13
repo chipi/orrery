@@ -30,7 +30,7 @@ test('/fly — scene becomes interactive within a few seconds', async ({ page, i
     { timeout: isMobile ? 20_000 : 12_000 },
   );
   const ms = Date.now() - t0;
-  // eslint-disable-next-line no-console
+
   console.log(`[perf] /fly time-to-interactive = ${ms} ms`);
   expect(ms, `/fly took ${ms}ms to become interactive`).toBeLessThan(isMobile ? 12_000 : 7000);
 });
@@ -56,7 +56,7 @@ test('/fly?mission= — deep-linked mission arc builds within budget', async ({ 
     { timeout: isMobile ? 25_000 : 15_000 },
   );
   const ms = Date.now() - t0;
-  // eslint-disable-next-line no-console
+
   console.log(`[perf] /fly?mission=cassini time-to-arc = ${ms} ms`);
   expect(ms, `/fly?mission=cassini took ${ms}ms to build its arc`).toBeLessThan(
     isMobile ? 15_000 : 9000,

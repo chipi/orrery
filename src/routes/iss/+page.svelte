@@ -601,6 +601,9 @@
   function stopThree() {
     cleanupThree?.();
     cleanupThree = undefined;
+    // Imperative teardown of the Three.js canvas mounted below — not a
+    // Svelte-managed node.
+    // eslint-disable-next-line svelte/no-dom-manipulating
     container?.replaceChildren();
   }
 
@@ -687,6 +690,9 @@
     renderer.domElement.dataset.testid = 'iss-canvas';
     renderer.domElement.setAttribute('role', 'img');
     renderer.domElement.setAttribute('aria-label', m.iss_canvas_aria());
+    // Mounting the WebGL canvas into its container — the one supported way to
+    // attach a Three.js renderer.
+    // eslint-disable-next-line svelte/no-dom-manipulating
     container.appendChild(renderer.domElement);
 
     const controls = new OrbitControls(camera, renderer.domElement);

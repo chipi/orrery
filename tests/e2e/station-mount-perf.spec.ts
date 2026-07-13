@@ -33,7 +33,7 @@ for (const { route, hook } of SCENES) {
       { timeout: 25_000 },
     );
     const ms = Date.now() - t0;
-    // eslint-disable-next-line no-console
+
     console.log(
       `[perf] ${route} time-to-interactive = ${ms} ms (${isMobile ? 'mobile' : 'desktop'})`,
     );

@@ -63,7 +63,7 @@ export function handleGridKeydown(e: KeyboardEvent, onEscape: () => void): void 
   }
   if (cols < 1) cols = 1;
 
-  let next = cur;
+  let next: number;
   switch (e.key) {
     case 'ArrowRight':
       next = Math.min(cur + 1, n - 1);

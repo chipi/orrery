@@ -46,7 +46,6 @@
     side = 'full',
   }: Props = $props();
 
-  // eslint-disable-next-line svelte/valid-compile -- write-once initial value from the prop
   let expanded = $state(startExpanded);
 
   // Swipe-down on the drawer collapses it.

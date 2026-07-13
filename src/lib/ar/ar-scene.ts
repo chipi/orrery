@@ -18,6 +18,7 @@ import { buildRealNowEarth, positionPlanetsRealNow, type RealNowEarth } from './
 import { resolveStationTle, STATION_IDS, type StationId, type Tle } from '../satellite';
 import { buildIssProxyStation } from '../iss-proxy-model';
 import { buildTiangongProxyStation } from '../tiangong-proxy-model';
+import { loadStationEpochs, startArStationAssembly, type ArStationAssembly } from './ar-assembly';
 import { updateArListener, createSpatialSource, initHeadphoneDetection } from './ar-audio';
 import { arHaptic } from './ar-haptics';
 import { scheduleArNarration, type ArNarratorHandle } from './ar-narrator';
@@ -186,6 +187,9 @@ export function createArScene(
   // earth/moon/mars use the single textured globe.
   let solar: SolarSystem | null = null;
   let realEarth: RealNowEarth | null = null;
+  let stationRoot: THREE.Object3D | null = null;
+  let assembly: ArStationAssembly | null = null;
+  let lastAssemblyMs = 0;
   const stationTles = new Map<StationId, Tle | null>();
   // Real-now positions/lighting refresh interval (bodies barely move over a
   // session; ~10 s keeps it live without churn).
@@ -203,7 +207,13 @@ export function createArScene(
     realEarth = buildRealNowEarth(loadTexture, new Date());
     root.add(realEarth.group);
   } else {
-    root.add(buildArSceneContent(type, { loadTexture }));
+    const content = buildArSceneContent(type, { loadTexture });
+    root.add(content);
+    // Station proxies replay their assembly once anchored (#408); keep a handle
+    // to the proxy root so the driver can traverse + animate its tagged parts.
+    if (type === 'iss' || type === 'tiangong') {
+      stationRoot = content.getObjectByName(type) ?? content;
+    }
   }
   scene.add(root);
 
@@ -311,6 +321,15 @@ export function createArScene(
     attachSpatialAudio();
     narrator = scheduleArNarration(type, (id) => opts.playNarration?.(id));
     offNarrationEnd = audioBus.on('ended', () => arHaptic('narrator-end'));
+    // Station proxies rebuild themselves module-by-module in launch order (#408).
+    if (stationRoot && (type === 'iss' || type === 'tiangong')) {
+      const sr = stationRoot;
+      void loadStationEpochs(type).then((epochs) => {
+        if (disposed || !placed) return;
+        assembly = startArStationAssembly(sr, epochs);
+        lastAssemblyMs = 0;
+      });
+    }
     opts.onPlaced?.();
   }
 
@@ -368,6 +387,11 @@ export function createArScene(
       }
       // Stations orbit fast — update every frame so they visibly circle (#406).
       realEarth?.updateStations(new Date(), stationTles);
+      // Advance the station assembly replay (#408) while it's running.
+      if (assembly && !assembly.done) {
+        if (lastAssemblyMs) assembly.update(nowMs - lastAssemblyMs);
+        lastAssemblyMs = nowMs;
+      }
       // Move the Web Audio listener to the device once the scene is placed so
       // the spatial voices pan correctly as the user walks around.
       if (placed) updateArListener(pose);
@@ -387,6 +411,8 @@ export function createArScene(
     offNarrationEnd?.();
     offNarrationEnd = null;
     detachSpatialAudio();
+    assembly?.dispose();
+    assembly = null;
     disposeHeadphones?.();
     disposeHeadphones = null;
     void backend?.endSession();

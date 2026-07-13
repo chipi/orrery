@@ -35,6 +35,7 @@
   import { getTiangongModules, getTiangongVisitors, getTiangongModuleGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { buildTiangongProxyStation } from '$lib/tiangong-proxy-model';
+  import { TIANGONG_DOCK_EVENTS } from '$lib/tiangong-assembly-phases';
   import { buildMicrogravityAxes } from '$lib/microgravity-axes';
   import { onLayerChange } from '$lib/science-layers';
   import MicrogravityAxesLegend from '$lib/components/MicrogravityAxesLegend.svelte';
@@ -141,35 +142,11 @@
   const ASSEMBLY_DURATION_MS = 24_000;
 
   // Synthetic phases for the 3 spacecraft docks — each dock fly-in is
-  // tied to a real CMSA mission so the chip narrative can name it.
+  // tied to a real CMSA mission so the chip narrative can name it. The
   // dockEventId values mirror the userData.animModuleId set in
-  // src/lib/tiangong-proxy-model.ts (see buildTiangongProxyStation).
-  type DockEvent = {
-    id: string;
-    name: string;
-    launcher: string;
-    launch_date: string;
-  };
-  const DOCK_EVENTS: DockEvent[] = [
-    {
-      id: 'dock-tianzhou-2',
-      name: 'Tianzhou 2 — first cargo to Tianhe',
-      launcher: 'Long March 7 · Wenchang',
-      launch_date: '2021-05-29',
-    },
-    {
-      id: 'dock-shenzhou-12',
-      name: 'Shenzhou 12 — first crew aboard Tianhe',
-      launcher: 'Long March 2F · Nie Haisheng + Liu Boming + Tang Hongbo',
-      launch_date: '2021-06-17',
-    },
-    {
-      id: 'dock-shenzhou-15',
-      name: 'Shenzhou 15 — first 3-spacecraft handover (6 crew aboard)',
-      launcher: 'Long March 2F · Fei Junlong + Deng Qingming + Zhang Lu',
-      launch_date: '2022-11-29',
-    },
-  ];
+  // src/lib/tiangong-proxy-model.ts (see buildTiangongProxyStation). Data
+  // lives in $lib/tiangong-assembly-phases so the AR replay shares it (#408).
+  const DOCK_EVENTS = TIANGONG_DOCK_EVENTS;
   let hoverLabel: HoverLabel | undefined = $state();
 
   // Reactive canvas-hover mirror now lives in `selection.state.hoveredId`

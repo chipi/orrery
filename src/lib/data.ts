@@ -808,6 +808,27 @@ export async function getTiangongVisitor(
 }
 
 /**
+ * Base station-part records (id + launch_date etc., no locale overlays).
+ *
+ * The station assembly replay only needs each part's `id` and `launch_date`
+ * to drive fly-in timing — never the localised prose. These skip the overlay
+ * merge that `getIssModules` / `getTiangongModules` do, so the AR tabletop
+ * assembly (#408) can resolve launch epochs without loading 30+ overlay files.
+ */
+export function getIssModulesBase(fetchFn: FetchLike = fetch): Promise<IssModuleBase[]> {
+  return get<IssModuleBase[]>('iss-modules.json', fetchFn);
+}
+export function getIssVisitorsBase(fetchFn: FetchLike = fetch): Promise<IssModuleBase[]> {
+  return get<IssModuleBase[]>('iss-visitors.json', fetchFn);
+}
+export function getTiangongModulesBase(fetchFn: FetchLike = fetch): Promise<TiangongModuleBase[]> {
+  return get<TiangongModuleBase[]>('tiangong-modules.json', fetchFn);
+}
+export function getTiangongVisitorsBase(fetchFn: FetchLike = fetch): Promise<TiangongModuleBase[]> {
+  return get<TiangongModuleBase[]>('tiangong-visitors.json', fetchFn);
+}
+
+/**
  * Spaceflight Fleet — index records (PRD-012 v0.2 / RFC-016 v0.2).
  * Lightweight summary records used by the /fleet card grid.
  */

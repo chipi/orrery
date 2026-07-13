@@ -18,18 +18,22 @@
     getImageProvenanceManifest,
     getTextSources,
     getAudioSourceProvenanceManifest,
+    getBadgeProvenance,
     type ImageProvenanceManifest,
     type SourceLogosManifest,
     type TextSourcesManifest,
     type AudioSourceProvenanceManifest,
+    type BadgeProvenance,
   } from '$lib/data';
   import { groupBySource, pathToRouteKey, type CreditsGroup } from '$lib/credits-grouping';
+  import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
 
   let logos = $state<SourceLogosManifest | null>(null);
   let provenance = $state<ImageProvenanceManifest | null>(null);
   let textSources = $state<TextSourcesManifest | null>(null);
   let audioProv = $state<AudioSourceProvenanceManifest | null>(null);
+  let badgeProv = $state<BadgeProvenance[] | null>(null);
   let loaded = $state(false);
 
   // Audio narration / tour-script attribution moved to /colophon (it's our
@@ -40,11 +44,13 @@
       getImageProvenanceManifest(),
       getTextSources(),
       getAudioSourceProvenanceManifest(),
-    ]).then(([s, p, t, a]) => {
+      getBadgeProvenance(),
+    ]).then(([s, p, t, a, b]) => {
       logos = s;
       provenance = p;
       textSources = t;
       audioProv = a;
+      badgeProv = b;
       loaded = true;
     });
   });
@@ -70,6 +76,15 @@
     texts: textSources?.entries.length ?? 0,
     sources: groups.length,
   });
+
+  // Insignia — every program / mission / fleet badge, credited here as well as
+  // inline on /patches. Sorted by name; the display name drops the " insignia"
+  // suffix fetch-badges appends to each provenance title.
+  let badges = $derived(
+    (badgeProv ?? [])
+      .map((e) => ({ ...e, name: e.title.replace(/\s+insignia$/i, '') }))
+      .sort((a, b) => a.name.localeCompare(b.name, 'en', { numeric: true })),
+  );
 
   function routeLabel(key: string): string {
     switch (key) {
@@ -427,6 +442,49 @@
     </article>
   {/if}
 
+  <!-- Insignia — program / mission / fleet patches. Sourced PD/CC via
+       scripts/fetch-badges.ts; also shown as a gallery on /patches. Each
+       row links its own source + license. -->
+  {#if badges.length > 0}
+    <article class="source-block" id="src-insignia">
+      <header class="head-row">
+        <h2>{m.patches_crumb()}</h2>
+      </header>
+      <p class="src-license">
+        <span class="lbl">{m.credits_license_summary_label()}:</span>
+        {[...new Set(badges.map((b) => b.license_short))].join(' · ')}
+      </p>
+      <ul class="insignia-list">
+        {#each badges as bdg (bdg.path)}
+          <li class="insignia-row">
+            <img
+              class="insignia-thumb"
+              src="{assetOrigin}{bdg.path}"
+              alt={m.patches_alt({ name: bdg.name })}
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="insignia-text">
+              <span class="insignia-title">{bdg.name}</span>
+              <span class="insignia-meta">
+                {bdg.author || bdg.agency} ·
+                <a
+                  href={bdg.license_url ?? bdg.source_url}
+                  target="_blank"
+                  rel="noopener noreferrer">{bdg.license_short}</a
+                >
+                ·
+                <a href={bdg.source_url} target="_blank" rel="noopener noreferrer"
+                  >{m.credits_audio_source_label()}</a
+                >
+              </span>
+            </span>
+          </li>
+        {/each}
+      </ul>
+    </article>
+  {/if}
+
   <article class="storage-card" aria-labelledby="storage-title">
     <header class="head-row">
       <h3 id="storage-title">{m.credits_storage_heading()}</h3>
@@ -496,6 +554,45 @@
     color: rgba(255, 255, 255, 0.55);
   }
   .audio-meta a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  .insignia-list {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 10px 18px;
+  }
+  .insignia-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .insignia-thumb {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    padding: 2px;
+  }
+  .insignia-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+  }
+  .insignia-title {
+    font-size: 12.5px;
+  }
+  .insignia-meta {
+    font-size: 10.5px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .insignia-meta a {
     color: inherit;
     text-decoration: underline;
   }

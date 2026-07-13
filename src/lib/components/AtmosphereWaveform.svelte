@@ -76,7 +76,9 @@
     // ── Web Audio ────────────────────────────────────────────────
     let audioCtx: AudioContext | null = null;
     let analyser: AnalyserNode | null = null;
-    let freq: Uint8Array | null = null;
+    // TS 5.9 made typed arrays generic over their buffer; AnalyserNode's
+    // getByteFrequencyData wants Uint8Array<ArrayBuffer> specifically.
+    let freq: Uint8Array<ArrayBuffer> | null = null;
     let buffer: AudioBuffer | null = null;
     let sourceNode: AudioBufferSourceNode | null = null;
 

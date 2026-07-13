@@ -682,8 +682,7 @@
             class="comment"
             placeholder="comment (optional — describe why if rejecting, or why it needs manual sourcing)"
             bind:value={commentDrafts[p.proposal_id]}
-            onblur={() => saveOverridesAndComment(p.proposal_id)}
-          ></textarea>
+            onblur={() => saveOverridesAndComment(p.proposal_id)}></textarea>
 
           <div class="tags" class:disabled={isUntouched}>
             <span class="tags-label">exception tags:</span>

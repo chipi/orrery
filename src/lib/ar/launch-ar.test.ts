@@ -19,7 +19,8 @@ vi.mock('../audio-registry.svelte', () => ({
   },
 }));
 
-import { launchArScene, exitArScene } from './launch-ar';
+import { launchArScene, exitArScene, compass8, formatPass } from './launch-ar';
+import type { Pass } from '../satellite';
 
 const arCanvas = () => document.querySelector('canvas.ar-canvas');
 
@@ -80,5 +81,47 @@ describe('exitArScene', () => {
   it('is a no-op when nothing is active', () => {
     expect(() => exitArScene()).not.toThrow();
     expect(stop).not.toHaveBeenCalled();
+  });
+});
+
+describe('compass8', () => {
+  it('maps degrees to the nearest 8-point label, wrapping at 360', () => {
+    expect(compass8(0)).toBe('N');
+    expect(compass8(45)).toBe('NE');
+    expect(compass8(90)).toBe('E');
+    expect(compass8(180)).toBe('S');
+    expect(compass8(270)).toBe('W');
+    expect(compass8(360)).toBe('N'); // wraps
+    expect(compass8(361)).toBe('N'); // rounds to nearest sector
+    expect(compass8(-45)).toBe('NW'); // negative normalises
+  });
+});
+
+describe('formatPass', () => {
+  const pass = (over: Partial<Pass>): Pass => ({
+    start: new Date(Date.now() + 30 * 60_000),
+    culmination: new Date(Date.now() + 33 * 60_000),
+    end: new Date(Date.now() + 36 * 60_000),
+    maxAltitudeDeg: 42,
+    startAzimuthDeg: 90,
+    visible: true,
+    ...over,
+  });
+
+  it('reports no pass when null', () => {
+    expect(formatPass('iss', null)).toBe('ISS: no pass in 24 h');
+    expect(formatPass('tiangong', null)).toBe('Tiangong: no pass in 24 h');
+  });
+  it('labels a visible upcoming pass with direction + max altitude', () => {
+    const s = formatPass('iss', pass({ startAzimuthDeg: 270, maxAltitudeDeg: 55 }));
+    expect(s).toContain('ISS: visible pass in 30 min');
+    expect(s).toContain('W');
+    expect(s).toContain('max 55°');
+  });
+  it('says "now" when the pass has already started', () => {
+    expect(formatPass('iss', pass({ start: new Date(Date.now() - 1000) }))).toContain('now');
+  });
+  it('distinguishes a daytime (non-visible) pass', () => {
+    expect(formatPass('tiangong', pass({ visible: false }))).toContain('daytime pass');
   });
 });

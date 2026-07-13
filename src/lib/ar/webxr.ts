@@ -139,8 +139,9 @@ export function createWebXrBackend(): ArBackend {
   };
 
   // `headingAligned` (sky mode) is an ARKit-only concept; WebXR's 'local' space
-  // isn't compass-aligned, so it's accepted-and-ignored here (Android sky mode is
-  // a later follow-up — see #393).
+  // isn't compass-aligned, so it's accepted-and-ignored HERE. Android sky mode
+  // instead applies the compass correction one layer up, in ar/sky-view.ts
+  // (createXrSkyView → skyYawOffset), so this backend needs no heading support.
   async function startSession(_opts?: ArSessionOptions): Promise<void> {
     const xr = navigator.xr;
     if (!xr) throw new Error('WebXR unavailable on this platform');

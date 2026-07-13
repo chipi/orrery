@@ -9,12 +9,13 @@ import type { StationId, Pass } from '../satellite';
 import { audio } from '../audio-state.svelte';
 import { audioRegistry } from '../audio-registry.svelte';
 
-// Station-pass summary for the sky-mode hint (#405).
+// Station-pass summary for the sky-mode hint (#405). Exported for unit testing —
+// pure helpers, no DOM/session state.
 const COMPASS8 = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
-function compass8(deg: number): string {
+export function compass8(deg: number): string {
   return COMPASS8[Math.round((((deg % 360) + 360) % 360) / 45) % 8];
 }
-function formatPass(id: StationId, pass: Pass | null): string {
+export function formatPass(id: StationId, pass: Pass | null): string {
   const name = id === 'iss' ? 'ISS' : 'Tiangong';
   if (!pass) return `${name}: no pass in 24 h`;
   const mins = Math.max(0, Math.round((pass.start.getTime() - Date.now()) / 60_000));
@@ -173,6 +174,7 @@ export async function launchSkyScene(): Promise<boolean> {
 
   const ok = await handle.start();
   if (!ok) {
+    clearTimeout(hintTimer);
     cleanup();
     return false;
   }

@@ -823,7 +823,7 @@ PRD-017 / RFC-020 (#147), **replanned 2026-07-11** ("good simple" reframe — se
 
 **Hero sonification (Phase 4).** Two continuous voices on the shared bus (duck automatically): `sonify/kepler-chord.ts` (/explore — a soft pentatonic bed tuned by orbital order, consonant-by-design to dodge the phone-speaker-mud risk) and `sonify/fly-velocity.ts` (/fly — one voice whose pitch tracks live heliocentric km/s). The other 9 per-route sonifications from the original PRD are **dropped**. `audioEngine.muted` is the screen-reader mute hook (M10; auto-detection deferred — opt-in + ducking mitigate).
 
-## §immersive — Immersive Mode (WebXR AR · ARKit · Exhibit · v0.8)
+## §immersive — Immersive Mode (WebXR AR · ARKit · Exhibit · sky-pointing · real-now · v0.8)
 
 PRD-019 / RFC-021 (#150). Two "step into it" modes share the epic: **AR** (place the scene on a real surface) and **Exhibit** (unattended kiosk loop). The AR runtime under `src/lib/ar/` is **excluded from coverage** (device-only — verified on hardware, same policy as `scripts/hotspots/`); the provider-selection seam `src/lib/ar.ts` and `src/lib/exhibit.svelte.ts` are ordinary covered code. Depends on the r128 → 0.185.1 Three.js upgrade (RFC-021 §5 / #203).
 
@@ -836,6 +836,23 @@ PRD-019 / RFC-021 (#150). Two "step into it" modes share the epic: **AR** (place
 **Scene + sensory wiring (RFC-021 §1, §6-8).** `ar/ar-scene.ts` splits `buildArSceneContent(type)` (pure tabletop Three.js Group — unit-tested) from `createArScene(...)` (session + tap-to-place + render loop). On placement three senses confirm (NE-B): `arHaptic('anchor-placed')`, a real anchor, per-body HRTF **spatial voices** (`ar-audio.ts` reuses the §sensory audio-engine, pans by world position, `updateArListener` follows the device each frame, `initHeadphoneDetection` toggles HRTF↔equalpower), and the Guide **narration** 2 s later (`ar-narrator.ts` → `launch-ar` drives the app's real audio player, which ducks the voices via `audio-bus`); `arHaptic('narrator-end')` on `ended`.
 
 **Exhibit Mode (RFC-021 §9).** `src/lib/exhibit.svelte.ts` — `?mode=exhibit` (or the in-app Kiosk button) flips any flat route into an unattended chrome-less looping kiosk: an `exhibit-mode` body class hides chrome, `AudioOverlay` runs the Curator Full Tour on a loop with per-route auto-nav, a real QR (`qrcode` dep, dynamic-imported, `?qr=<base64>` override) hands off to the live scene, Escape / hidden-corner exits. In-memory only (ADR-057; reload → off).
+
+### AR-astronomy modes (#393 / #402–#408, July 2026)
+
+Beyond the tabletop scene, AR gained **real-sky + real-time** modes powered by two new **pure, unit-tested** engines (these ARE counted toward the coverage gate, unlike the device-only `ar/` runtime):
+
+- **`src/lib/astronomy/`** — real-time Sun/Moon/planet positions. JPL approximate Keplerian elements (1800–2050, `planets.ts`), a compact lunar perturbation model (`moon.ts` — the Moon had no ephemeris before), obliquity/GMST/LST (`time.ts`), and the geocentric-ecliptic → RA/Dec → **altitude/azimuth** pipeline with topocentric parallax (`horizontal.ts`). `skyPosition(body,date,lat,lon)` + `skyDirectionENU`. Validated against Meeus (Venus alt/az <0.5°).
+- **`src/lib/satellite/`** — TLE parse (`tle.ts`) + Keplerian **J2-secular** propagation (`propagate.ts`, *not* full SGP4 — good for LEO over hours/days from a fresh element set) → geocentric ECI; full topocentric look-angles (`look-angles.ts`) + `nextPass()` visible-pass predictor. `tle-source.ts` fetches **current** ISS/Tiangong TLEs from Celestrak at runtime (localStorage-cached ≤1 day, bundled *sample* fallback).
+- **`src/lib/geolocation.ts`** — observer lat/lon via `navigator.geolocation` in the WKWebView (no extra Capacitor plugin; Info.plist `NSLocationWhenInUseUsageDescription`), timezone fallback, then `[0,0]`. On-device only; never transmitted.
+
+Modes (entered via `EnterArButton`/`EnterSkyButton` on the relevant routes; all iOS/ARKit-first):
+- **Sky-pointing (#393)** — `ar/sky-scene.ts`. ARKit session started with `worldAlignment = .gravityAndHeading` (true north + gravity, plumbed via `startSession({headingAligned})`), so a body's alt/az maps straight to a world direction; reticles for Sun/Moon/planets **+ the ISS/Tiangong** with a "next visible pass" banner (#405).
+- **Real-now Earth (#402) / Explore (#403)** — `ar/real-now.ts`. The AR Earth is lit by the **real current Sun** (live day/night terminator, sub-solar + your-location pins) with the stations **orbiting it at their true positions** (#406); /explore planets snap to their **true current heliocentric positions**.
+- **Tabletop stations (#407)** — `ar/ar-scene.ts` `iss`/`tiangong` reuse the flat routes' procedural `buildIssProxyStation`/`buildTiangongProxyStation`, fit to the tabletop.
+
+**Caveats (honest limits).** Bundled TLEs are *samples* — real accuracy needs the Celestrak fetch (a scheduled refresh, like the launches manifest, is a follow-up). Propagation is J2-secular, not SGP4. Sky-pointing needs compass-aligned AR (ARKit) — **Android/WebXR sky mode is deferred** (WebXR `local` space isn't heading-aligned). Assembly-in-AR (#408) is not yet built.
+
+**Scope note.** RFC-021 §2 (decision S-E) deferred `/iss` + `/tiangong` station AR to v2; it was brought into v1 (#407) because reusing the existing procedural proxy models made it cheap. RFC-021/PRD-019 predate the AR-astronomy modes above — treat this §immersive entry as authoritative for them.
 
 ## §stack
 
@@ -851,7 +868,7 @@ Locked technical choices. Each entry points to its ADR.
 | Math rendering | KaTeX, server-rendered at build | ADR-034 |
 | Service worker / PWA | @vite-pwa/sveltekit | ADR-029 |
 | Mobile wrapper (iOS + Android) | Capacitor 8 · stream-heavy bundle · assetUrl origin spine · native safe-area shim | ADR-078, ADR-079 (see §mobile) |
-| Immersive Mode (AR + Exhibit) | `ArBackend` abstraction · WebXR (Android) + ARKit Capacitor (iPhone) · capability-gated · Exhibit kiosk loop | PRD-019 / RFC-021 (see §immersive) |
+| Immersive Mode (AR + Exhibit) | `ArBackend` abstraction · WebXR (Android) + ARKit Capacitor (iPhone) · capability-gated · Exhibit kiosk loop · AR-astronomy modes (sky-pointing / real-now / station) on the `$lib/astronomy` + `$lib/satellite` engines + `$lib/geolocation` | PRD-019 / RFC-021 (see §immersive) |
 | Documentation site | VitePress + vitepress-sidebar at `/docs/` | ADR-021 |
 | CI + preview hosting | GitHub Actions + GitHub Pages | ADR-014 |
 | Unit / integration tests | Vitest (+ jsdom + canvas polyfill) | ADR-015 |

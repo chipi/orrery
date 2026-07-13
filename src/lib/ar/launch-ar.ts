@@ -104,6 +104,53 @@ export async function launchArScene(type: ArSceneType): Promise<boolean> {
   return true;
 }
 
+/**
+ * Enter the sky-pointing AR mode (#393): hold the phone up and the Sun, Moon and
+ * planets are marked where they actually are in your sky (from your location +
+ * time). Uses a heading-aligned ARKit session. Idempotent with the tabletop
+ * launcher — one AR view at a time.
+ */
+export async function launchSkyScene(): Promise<boolean> {
+  if (active || typeof document === 'undefined') return false;
+
+  const canvas = document.createElement('canvas');
+  canvas.className = 'ar-canvas';
+  canvas.style.cssText =
+    'position:fixed;inset:0;width:100vw;height:100vh;z-index:9997;background:transparent;';
+  document.body.appendChild(canvas);
+
+  const exitBtn = document.createElement('button');
+  exitBtn.type = 'button';
+  exitBtn.className = 'ar-exit-btn';
+  exitBtn.textContent = 'Exit AR';
+  exitBtn.onclick = () => exitArScene();
+  document.body.appendChild(exitBtn);
+
+  const hint = document.createElement('div');
+  hint.className = 'ar-hint';
+  hint.textContent = 'Point your phone at the sky to find the Sun, Moon and planets';
+  document.body.appendChild(hint);
+
+  document.documentElement.classList.add('ar-active');
+
+  const { createSkyScene } = await import('./sky-scene');
+  const cleanup = () => {
+    teardownArDom(canvas, exitBtn, hint);
+    active = null;
+  };
+  const handle = createSkyScene(canvas, { onExit: cleanup });
+
+  const ok = await handle.start();
+  if (!ok) {
+    cleanup();
+    return false;
+  }
+  active = { canvas, exitBtn, hint, stop: handle.stop };
+  // No placement gesture in sky mode — auto-dismiss the instruction.
+  setTimeout(() => hint.remove(), 5000);
+  return true;
+}
+
 /** Force-exit the active AR scene (Exit-AR button / route change). */
 export function exitArScene(): void {
   // Null `active` before the async stop() so a re-entrant launchArScene during

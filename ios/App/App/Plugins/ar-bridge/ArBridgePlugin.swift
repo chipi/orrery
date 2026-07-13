@@ -28,6 +28,7 @@ public class ArBridgePlugin: CAPPlugin, CAPBridgedPlugin, ArSessionManagerDelega
     private let anchors = ArAnchorTracker()
 
     @objc func requestSession(_ call: CAPPluginCall) {
+        let headingAligned = call.getBool("headingAligned") ?? false
         DispatchQueue.main.async {
             let mgr = ArSessionManager(webView: self.webView)
             guard mgr.isSupported else {
@@ -36,7 +37,7 @@ public class ArBridgePlugin: CAPPlugin, CAPBridgedPlugin, ArSessionManagerDelega
             }
             mgr.delegate = self
             self.manager = mgr
-            mgr.start()
+            mgr.start(headingAligned: headingAligned)
             call.resolve()
         }
     }

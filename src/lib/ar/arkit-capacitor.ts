@@ -6,11 +6,11 @@
 // the WebXR backend's rAF cache.
 
 import { Capacitor, registerPlugin } from '@capacitor/core';
-import type { ArBackend, ArCameraPose, ArEvent, ArHit } from '../ar';
+import type { ArBackend, ArCameraPose, ArEvent, ArHit, ArSessionOptions } from '../ar';
 
 // The native plugin surface (mirrors the @objc methods in ArBridgePlugin.swift).
 interface ArBridgePlugin {
-  requestSession(): Promise<void>;
+  requestSession(options?: { headingAligned?: boolean }): Promise<void>;
   endSession(): Promise<void>;
   hitTest(options: { x: number; y: number }): Promise<{ hit: ArHit | null }>;
   addAnchor(options: { position: [number, number, number] }): Promise<{ anchorId: string }>;
@@ -41,7 +41,7 @@ export function createArkitBackend(): ArBackend {
     return Capacitor.getPlatform() === 'ios' && Capacitor.isNativePlatform();
   }
 
-  async function startSession(): Promise<void> {
+  async function startSession(opts?: ArSessionOptions): Promise<void> {
     // Register listeners WITHOUT awaiting: Capacitor adds the JS callback
     // synchronously, but awaiting a custom plugin's addListener *handle* can
     // never resolve (bridge quirk) and would deadlock start. Collect the remover
@@ -61,7 +61,7 @@ export function createArkitBackend(): ArBackend {
         emit('session-ended');
       }),
     );
-    await ArBridge.requestSession();
+    await ArBridge.requestSession({ headingAligned: opts?.headingAligned ?? false });
   }
 
   async function endSession(): Promise<void> {

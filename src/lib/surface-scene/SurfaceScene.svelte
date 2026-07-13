@@ -168,7 +168,8 @@
   import { cue } from '$lib/sensory/feedback';
   import { gyro } from '$lib/sensory/device-orientation';
   import EnterArButton from '$lib/components/EnterArButton.svelte';
-  import { launchArScene } from '$lib/ar/launch-ar';
+  import EnterSkyButton from '$lib/components/EnterSkyButton.svelte';
+  import { launchArScene, launchSkyScene } from '$lib/ar/launch-ar';
   import type { ArSceneType } from '$lib/ar/ar-scene';
 
   // ─── Props (planet-specific config + data loaders) ────────────────
@@ -5324,6 +5325,7 @@
       {/if}
       {#if arType}
         <EnterArButton onEnter={() => void launchArScene(arType)} />
+        <EnterSkyButton onEnter={() => void launchSkyScene()} />
       {/if}
       <!-- Hidden tour hook — lets the audio tour pull the camera back to
            the overview (e.g. after a deep zoom) without a visible button.
@@ -5455,6 +5457,7 @@
       {/if}
       {#if arType}
         <EnterArButton onEnter={() => void launchArScene(arType)} />
+        <EnterSkyButton onEnter={() => void launchSkyScene()} />
       {/if}
     </div>
     {#if !flatPatchActive}

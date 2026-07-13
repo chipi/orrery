@@ -38,8 +38,10 @@ final class ArSessionManager: NSObject, ARSessionDelegate {
     var isSupported: Bool { ARWorldTrackingConfiguration.isSupported }
 
     /// Start world tracking + insert the camera-background ARSCNView behind the
-    /// transparent WebView. Idempotent.
-    func start() {
+    /// transparent WebView. Idempotent. `headingAligned` requests
+    /// `.gravityAndHeading` world alignment (true north + gravity) for the
+    /// sky-pointing mode (#393); otherwise the default `.gravity` is used.
+    func start(headingAligned: Bool = false) {
         guard isSupported, !running, let webView = webView, let host = webView.superview else {
             return
         }
@@ -69,6 +71,10 @@ final class ArSessionManager: NSObject, ARSessionDelegate {
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.horizontal, .vertical]
         config.environmentTexturing = .automatic
+        // Sky mode: align the world frame to true north + gravity so a body's
+        // azimuth/altitude maps straight to a world direction. Needs the location
+        // permission (Info.plist NSLocationWhenInUseUsageDescription).
+        config.worldAlignment = headingAligned ? .gravityAndHeading : .gravity
         session.run(config, options: [.resetTracking, .removeExistingAnchors])
         delegate?.arSessionStarted()
     }

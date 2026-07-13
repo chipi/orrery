@@ -7,7 +7,14 @@
 // tablet may not be ARCore-certified; the backend then just reports unsupported).
 
 import { Capacitor } from '@capacitor/core';
-import type { ArBackend, ArBackendPlatform, ArCameraPose, ArEvent, ArHit } from '../ar';
+import type {
+  ArBackend,
+  ArBackendPlatform,
+  ArCameraPose,
+  ArEvent,
+  ArHit,
+  ArSessionOptions,
+} from '../ar';
 
 type Handler = (...args: unknown[]) => void;
 const IDENTITY_POSE: ArCameraPose = { position: [0, 0, 0], rotation: [0, 0, 0, 1] };
@@ -129,7 +136,10 @@ export function createWebXrBackend(): ArBackend {
     emit('frame', frame);
   };
 
-  async function startSession(): Promise<void> {
+  // `headingAligned` (sky mode) is an ARKit-only concept; WebXR's 'local' space
+  // isn't compass-aligned, so it's accepted-and-ignored here (Android sky mode is
+  // a later follow-up — see #393).
+  async function startSession(_opts?: ArSessionOptions): Promise<void> {
     const xr = navigator.xr;
     if (!xr) throw new Error('WebXR unavailable on this platform');
     session = await xr.requestSession('immersive-ar', {

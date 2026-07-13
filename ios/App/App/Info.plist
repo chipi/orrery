@@ -35,6 +35,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Orrery uses the camera to place the solar system and planets in your room in augmented reality. Nothing is recorded or uploaded.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Orrery uses your location to point out where the Sun, Moon and planets actually are in your sky. Your location stays on your device.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

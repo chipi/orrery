@@ -44,7 +44,8 @@
   import { keplerChord } from '$lib/sensory/sonify/kepler-chord';
   import { exhibit } from '$lib/exhibit.svelte';
   import EnterArButton from '$lib/components/EnterArButton.svelte';
-  import { launchArScene } from '$lib/ar/launch-ar';
+  import EnterSkyButton from '$lib/components/EnterSkyButton.svelte';
+  import { launchArScene, launchSkyScene } from '$lib/ar/launch-ar';
   import { earthPos, outboundArc, type Vec2 } from '$lib/orbital/mission-arc';
   import { PLANET_STATS, auLightTime } from '$lib/planet-stats';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
@@ -4571,6 +4572,7 @@
         </button>
       {/if}
       <EnterArButton onEnter={() => void launchArScene('explore')} />
+      <EnterSkyButton onEnter={() => void launchSkyScene()} />
     </div>
     <!-- Inline chips rather than LayerChipRow: the PATHS chip carries
          data-audio-stage which LayerChipRow's interface doesn't expose. -->
@@ -4738,6 +4740,7 @@
       </button>
     {/if}
     <EnterArButton onEnter={() => void launchArScene('explore')} />
+    <EnterSkyButton onEnter={() => void launchSkyScene()} />
   </div>
   <!-- Mobile-only: 3-tab accordion — Orbit Ruler | Controls | Iconic Missions.
        Desktop uses .hud-controls (above) + .ruler-desktop-only (below). -->

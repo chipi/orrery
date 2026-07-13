@@ -20,13 +20,21 @@ export interface ArHit {
   worldNormal: [number, number, number];
 }
 
+export interface ArSessionOptions {
+  /** iOS/ARKit: align the AR world frame to true north + gravity
+   *  (ARWorldTrackingConfiguration.worldAlignment = .gravityAndHeading) so a
+   *  body's altitude/azimuth maps straight to a world direction — the basis of
+   *  the sky-pointing mode (#393). Ignored by backends that can't honour it. */
+  headingAligned?: boolean;
+}
+
 export interface ArBackend {
   readonly name: ArBackendName;
   readonly platform: ArBackendPlatform;
 
   // Lifecycle
   isSupported(): Promise<boolean>;
-  startSession(): Promise<void>;
+  startSession(opts?: ArSessionOptions): Promise<void>;
   endSession(): Promise<void>;
 
   // Per-frame (called from RAF)

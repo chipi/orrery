@@ -14,9 +14,11 @@
   import { onMount, onDestroy } from 'svelte';
   import { base } from '$app/paths';
   import * as THREE from 'three';
-  import { selectVisibleStars, type ShellData } from '$lib/universe/star-selection';
-  import { createPointField, type PointFieldHandle } from '$lib/universe/point-field';
-  import { tierToStarBudget } from '$lib/universe/budget';
+  import {
+    loadNeighborhoodShells,
+    createNeighborhoodScene,
+    type NeighborhoodScene,
+  } from '$lib/universe/neighborhood-scene';
   import { AU_PER_PARSEC } from '$lib/universe/context-graph';
 
   const PC_TO_LY = 3.26156;
@@ -28,7 +30,7 @@
   let status = $state('loading the real HYG neighborhood…');
 
   let renderer: THREE.WebGLRenderer | undefined;
-  let field: PointFieldHandle | undefined;
+  let nb: NeighborhoodScene | undefined;
   let raf = 0;
 
   // Log-scale camera distance (pc) driven by the cross slider: from just outside
@@ -37,17 +39,7 @@
   const FAR_PC = 40;
   const camDistPc = (t: number): number => NEAR_PC * Math.pow(FAR_PC / NEAR_PC, t);
 
-  $effect(() => {
-    // Reveal + Sun-collapse both track the crossing. Read `cross` so the effect
-    // re-runs on drag.
-    const t = cross;
-    if (field) field.setOpacity(Math.min(1, Math.max(0, (t - 0.04) / 0.35)));
-  });
-
   onMount(() => {
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x05070f);
-
     const camera = new THREE.PerspectiveCamera(
       60,
       container.clientWidth / container.clientHeight,
@@ -60,29 +52,20 @@
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
-    // The Sun — one luminous sprite at the origin. Fixed world size, so it fills
-    // the view up close and shrinks to a dot as the camera pulls back.
-    const sun = makeSunSprite();
-    sun.scale.setScalar(0.02);
-    scene.add(sun);
-
     let disposed = false;
 
-    void loadField()
+    // Build the SAME neighborhood scene /explore uses — cinematic budget for the
+    // anchor (the whole real catalogue).
+    void loadNeighborhoodShells(fetch, base)
       .then((shells) => {
         if (disposed) return;
-        // Cinematic budget for the anchor: the whole real catalogue.
-        const budget = tierToStarBudget('cinematic');
-        const data = selectVisibleStars(shells, budget);
-        starCount = data.count;
-        field = createPointField(data, {
-          sceneScale: 1,
+        nb = createNeighborhoodScene({
+          shells,
+          tier: 'cinematic',
           pixelRatio: renderer!.getPixelRatio(),
-          sizeScale: 1,
         });
-        field.setOpacity(0);
-        scene.add(field.object);
-        status = `${data.count.toLocaleString()} real stars · HYG v4.1`;
+        starCount = nb.starCount;
+        status = `${nb.starCount.toLocaleString()} real stars · HYG v4.1`;
       })
       .catch((err) => {
         status = `failed to load star data: ${err instanceof Error ? err.message : String(err)}`;
@@ -93,13 +76,12 @@
       raf = requestAnimationFrame(tick);
       const d = camDistPc(cross);
       if (autoRotate) angle += 0.0009;
-      camera.position.set(
-        Math.sin(angle) * d,
-        d * 0.12,
-        Math.cos(angle) * d,
-      );
+      camera.position.set(Math.sin(angle) * d, d * 0.12, Math.cos(angle) * d);
       camera.lookAt(0, 0, 0);
-      renderer!.render(scene, camera);
+      if (nb) {
+        nb.update(d);
+        renderer!.render(nb.scene, camera);
+      }
     };
     tick();
 
@@ -119,47 +101,10 @@
 
   onDestroy(() => {
     cancelAnimationFrame(raf);
-    field?.dispose();
+    nb?.dispose();
     renderer?.dispose();
     renderer?.forceContextLoss();
   });
-
-  async function loadField(): Promise<ShellData[]> {
-    const idx = (await (await fetch(`${base}/data/universe/stars/index.json`)).json()) as {
-      shells: { file: string }[];
-    };
-    const shells = await Promise.all(
-      idx.shells.map(async (s) => {
-        const doc = (await (await fetch(`${base}/data/universe/stars/${s.file}`)).json()) as {
-          stars: number[][];
-        };
-        return { stars: doc.stars } satisfies ShellData;
-      }),
-    );
-    return shells;
-  }
-
-  function makeSunSprite(): THREE.Sprite {
-    const size = 128;
-    const cvs = document.createElement('canvas');
-    cvs.width = cvs.height = size;
-    const ctx = cvs.getContext('2d')!;
-    const g = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
-    g.addColorStop(0, 'rgba(255,255,245,1)');
-    g.addColorStop(0.25, 'rgba(255,244,214,0.95)');
-    g.addColorStop(0.5, 'rgba(255,224,160,0.35)');
-    g.addColorStop(1, 'rgba(255,220,150,0)');
-    ctx.fillStyle = g;
-    ctx.fillRect(0, 0, size, size);
-    const tex = new THREE.CanvasTexture(cvs);
-    const mat = new THREE.SpriteMaterial({
-      map: tex,
-      transparent: true,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-    });
-    return new THREE.Sprite(mat);
-  }
 
   let distPc = $derived(camDistPc(cross));
 </script>

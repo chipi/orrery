@@ -447,7 +447,16 @@
     "landing_card_essays_title": "La perspectiva a largo plazo de la exploración espacial",
     "landing_card_essays_desc": "Naves generacionales, nuevas propulsiones, el cuerpo en la oscuridad — hacia dónde va todo esto.",
     "credits_section_data": "Datos y catálogos",
-    "credits_data_intro": "Los catálogos públicos estructurados que Orrery ingiere para situar objetos reales en 3D y construir el calendario de lanzamientos. Cada conjunto de datos se utiliza bajo su licencia declarada y se cita aquí."
+    "credits_data_intro": "Los catálogos públicos estructurados que Orrery ingiere para situar objetos reales en 3D y construir el calendario de lanzamientos. Cada conjunto de datos se utiliza bajo su licencia declarada y se cita aquí.",
+    "explore_ctx_solar_system": "Sistema Solar",
+    "explore_ctx_stellar_neighborhood": "Vecindario Estelar",
+    "explore_location_aria": "Ubicación",
+    "explore_scale_light_prefix": "luz",
+    "explore_light_seconds": "segundos-luz",
+    "explore_light_minutes": "minutos-luz",
+    "explore_light_hours": "horas-luz",
+    "explore_light_days": "días-luz",
+    "explore_light_years": "años-luz"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -930,7 +939,16 @@
     "landing_card_essays_title": "La vision long terme de l'exploration spatiale",
     "landing_card_essays_desc": "Vaisseaux générationnels, nouvelle propulsion, le corps dans l'obscurité — vers où tout cela nous mène.",
     "credits_section_data": "Données et catalogues",
-    "credits_data_intro": "Les catalogues publics structurés qu'Orrery exploite pour placer des objets réels en 3D et construire le calendrier des lancements. Chaque jeu de données est utilisé conformément à sa licence et cité ici."
+    "credits_data_intro": "Les catalogues publics structurés qu'Orrery exploite pour placer des objets réels en 3D et construire le calendrier des lancements. Chaque jeu de données est utilisé conformément à sa licence et cité ici.",
+    "explore_ctx_solar_system": "Système solaire",
+    "explore_ctx_stellar_neighborhood": "Voisinage stellaire",
+    "explore_location_aria": "Localisation",
+    "explore_scale_light_prefix": "lumière",
+    "explore_light_seconds": "secondes-lumière",
+    "explore_light_minutes": "minutes-lumière",
+    "explore_light_hours": "heures-lumière",
+    "explore_light_days": "jours-lumière",
+    "explore_light_years": "années-lumière"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -1407,7 +1425,16 @@
     "landing_card_essays_title": "Die lange Perspektive auf Raumfahrt",
     "landing_card_essays_desc": "Generationenschiffe, neue Antriebe, der Körper in der Finsternis — wohin das alles führt.",
     "credits_section_data": "Daten & Kataloge",
-    "credits_data_intro": "Die strukturierten öffentlichen Kataloge, die Orrery nutzt, um reale Objekte in 3D zu platzieren und den Startkalender zu erstellen. Jeder Datensatz wird gemäß seiner angegebenen Lizenz verwendet und hier zitiert."
+    "credits_data_intro": "Die strukturierten öffentlichen Kataloge, die Orrery nutzt, um reale Objekte in 3D zu platzieren und den Startkalender zu erstellen. Jeder Datensatz wird gemäß seiner angegebenen Lizenz verwendet und hier zitiert.",
+    "explore_ctx_solar_system": "Sonnensystem",
+    "explore_ctx_stellar_neighborhood": "Stellare Nachbarschaft",
+    "explore_location_aria": "Ort",
+    "explore_scale_light_prefix": "Licht",
+    "explore_light_seconds": "Lichtsekunden",
+    "explore_light_minutes": "Lichtminuten",
+    "explore_light_hours": "Lichtstunden",
+    "explore_light_days": "Lichttage",
+    "explore_light_years": "Lichtjahre"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -1864,7 +1891,16 @@
     "landing_card_essays_title": "A visão ampla da exploração espacial",
     "landing_card_essays_desc": "Naves geracionais, propulsão nova, o corpo na escuridão — para onde tudo isso está indo.",
     "credits_section_data": "Dados e catálogos",
-    "credits_data_intro": "Os catálogos públicos estruturados que o Orrery utiliza para posicionar objetos reais em 3D e construir o calendário de lançamentos. Cada conjunto de dados é usado sob sua licença declarada e citado aqui."
+    "credits_data_intro": "Os catálogos públicos estruturados que o Orrery utiliza para posicionar objetos reais em 3D e construir o calendário de lançamentos. Cada conjunto de dados é usado sob sua licença declarada e citado aqui.",
+    "explore_ctx_solar_system": "Sistema Solar",
+    "explore_ctx_stellar_neighborhood": "Vizinhança Estelar",
+    "explore_location_aria": "Localização",
+    "explore_scale_light_prefix": "luz",
+    "explore_light_seconds": "segundos-luz",
+    "explore_light_minutes": "minutos-luz",
+    "explore_light_hours": "horas-luz",
+    "explore_light_days": "dias-luz",
+    "explore_light_years": "anos-luz"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -2315,7 +2351,16 @@
     "landing_card_essays_title": "La prospettiva lunga dell'esplorazione spaziale",
     "landing_card_essays_desc": "Astronavi generazionali, nuova propulsione, il corpo nell'oscurità — dove tutto questo sta andando.",
     "credits_section_data": "Dati e cataloghi",
-    "credits_data_intro": "I cataloghi pubblici strutturati che Orrery utilizza per posizionare oggetti reali in 3D e costruire il calendario dei lanci. Ogni dataset è utilizzato secondo la licenza dichiarata e citato qui."
+    "credits_data_intro": "I cataloghi pubblici strutturati che Orrery utilizza per posizionare oggetti reali in 3D e costruire il calendario dei lanci. Ogni dataset è utilizzato secondo la licenza dichiarata e citato qui.",
+    "explore_ctx_solar_system": "Sistema Solare",
+    "explore_ctx_stellar_neighborhood": "Vicinato Stellare",
+    "explore_location_aria": "Posizione",
+    "explore_scale_light_prefix": "luce",
+    "explore_light_seconds": "secondi-luce",
+    "explore_light_minutes": "minuti-luce",
+    "explore_light_hours": "ore-luce",
+    "explore_light_days": "giorni-luce",
+    "explore_light_years": "anni-luce"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -2737,7 +2782,16 @@
     "landing_card_essays_title": "Дугачак поглед на свемирски лет",
     "landing_card_essays_desc": "Генерацијске звезде, нов погон, тело у мраку — куда све то иде.",
     "credits_section_data": "Подаци и каталози",
-    "credits_data_intro": "Структурирани јавни каталози које Orrery користи за позиционирање стварних објеката у 3D простору и израду календара лансирања. Сваки скуп података се користи под наведеном лиценцом и цитиран је овде."
+    "credits_data_intro": "Структурирани јавни каталози које Orrery користи за позиционирање стварних објеката у 3D простору и израду календара лансирања. Сваки скуп података се користи под наведеном лиценцом и цитиран је овде.",
+    "explore_ctx_solar_system": "Сунчев систем",
+    "explore_ctx_stellar_neighborhood": "Звездано комшилук",
+    "explore_location_aria": "Локација",
+    "explore_scale_light_prefix": "светлосни",
+    "explore_light_seconds": "светлосне секунде",
+    "explore_light_minutes": "светлосни минути",
+    "explore_light_hours": "светлосни сати",
+    "explore_light_days": "светлосни дани",
+    "explore_light_years": "светлосне године"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -3225,7 +3279,16 @@
     "landing_card_essays_title": "航天的长期视角",
     "landing_card_essays_desc": "世代飞船、新型推进、失重环境下的人体——一切将走向何方。",
     "credits_section_data": "数据与目录",
-    "credits_data_intro": "Orrery采集的结构化公共目录，用于在3D空间中放置真实天体并构建发射日历。每个数据集均按其声明的许可证使用并在此引用。"
+    "credits_data_intro": "Orrery采集的结构化公共目录，用于在3D空间中放置真实天体并构建发射日历。每个数据集均按其声明的许可证使用并在此引用。",
+    "explore_ctx_solar_system": "太阳系",
+    "explore_ctx_stellar_neighborhood": "恒星邻域",
+    "explore_location_aria": "位置",
+    "explore_scale_light_prefix": "光",
+    "explore_light_seconds": "光秒",
+    "explore_light_minutes": "光分",
+    "explore_light_hours": "光时",
+    "explore_light_days": "光日",
+    "explore_light_years": "光年"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3728,7 +3791,16 @@
     "landing_card_essays_title": "宇宙飛行の長期的視点",
     "landing_card_essays_desc": "世代船、新しい推進方式、暗黒の中の人体 — これらがどこに向かっているか。",
     "credits_section_data": "データ・カタログ",
-    "credits_data_intro": "Orreryが実際の天体を3D空間に配置し、打ち上げカレンダーを構築するために取り込んでいる構造化された公開カタログ。各データセットはその利用規約に従って使用され、ここに引用されています。"
+    "credits_data_intro": "Orreryが実際の天体を3D空間に配置し、打ち上げカレンダーを構築するために取り込んでいる構造化された公開カタログ。各データセットはその利用規約に従って使用され、ここに引用されています。",
+    "explore_ctx_solar_system": "太陽系",
+    "explore_ctx_stellar_neighborhood": "恒星近傍",
+    "explore_location_aria": "位置",
+    "explore_scale_light_prefix": "光",
+    "explore_light_seconds": "光秒",
+    "explore_light_minutes": "光分",
+    "explore_light_hours": "光時",
+    "explore_light_days": "光日",
+    "explore_light_years": "光年"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -4234,7 +4306,16 @@
     "landing_card_essays_title": "우주비행의 긴 관점",
     "landing_card_essays_desc": "세대 우주선, 새로운 추진 방식, 어둠 속의 인체 — 모든 것이 향하는 곳.",
     "credits_section_data": "데이터 및 카탈로그",
-    "credits_data_intro": "Orrery가 실제 천체를 3D로 배치하고 발사 일정을 구성하기 위해 수집하는 구조화된 공개 카탈로그입니다. 모든 데이터셋은 명시된 라이선스에 따라 사용되며 여기에 인용됩니다."
+    "credits_data_intro": "Orrery가 실제 천체를 3D로 배치하고 발사 일정을 구성하기 위해 수집하는 구조화된 공개 카탈로그입니다. 모든 데이터셋은 명시된 라이선스에 따라 사용되며 여기에 인용됩니다.",
+    "explore_ctx_solar_system": "태양계",
+    "explore_ctx_stellar_neighborhood": "항성 근방",
+    "explore_location_aria": "위치",
+    "explore_scale_light_prefix": "광",
+    "explore_light_seconds": "광초",
+    "explore_light_minutes": "광분",
+    "explore_light_hours": "광시",
+    "explore_light_days": "광일",
+    "explore_light_years": "광년"
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -4876,7 +4957,16 @@
     "landing_card_essays_title": "अंतरिक्ष उड़ान का दीर्घ दृष्टिकोण",
     "landing_card_essays_desc": "जनरेशन जहाज़, नई प्रणोदन, अंधकार में शरीर — यह सब कहाँ जा रहा है।",
     "credits_section_data": "डेटा और सूचियाँ",
-    "credits_data_intro": "ओररी द्वारा वास्तविक वस्तुओं को 3D में स्थापित करने और प्रक्षेपण कैलेंडर बनाने के लिए उपयोग की जाने वाली संरचित सार्वजनिक सूचियाँ। प्रत्येक डेटासेट का उपयोग उसके निर्धारित लाइसेंस के अंतर्गत किया गया है और यहाँ उद्धृत किया गया है।"
+    "credits_data_intro": "ओररी द्वारा वास्तविक वस्तुओं को 3D में स्थापित करने और प्रक्षेपण कैलेंडर बनाने के लिए उपयोग की जाने वाली संरचित सार्वजनिक सूचियाँ। प्रत्येक डेटासेट का उपयोग उसके निर्धारित लाइसेंस के अंतर्गत किया गया है और यहाँ उद्धृत किया गया है।",
+    "explore_ctx_solar_system": "सौर मंडल",
+    "explore_ctx_stellar_neighborhood": "तारकीय पड़ोस",
+    "explore_location_aria": "स्थान",
+    "explore_scale_light_prefix": "प्रकाश",
+    "explore_light_seconds": "प्रकाश-सेकंड",
+    "explore_light_minutes": "प्रकाश-मिनट",
+    "explore_light_hours": "प्रकाश-घंटे",
+    "explore_light_days": "प्रकाश-दिवस",
+    "explore_light_years": "प्रकाश-वर्ष"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5560,7 +5650,16 @@
     "landing_card_essays_title": "النظرة الطويلة للرحلات الفضائية",
     "landing_card_essays_desc": "السفن الجيلية، الدفع الجديد، الجسد في الظلام — إلى أين يتجه كل هذا.",
     "credits_section_data": "البيانات والفهارس",
-    "credits_data_intro": "الفهارس العامة المهيكلة التي يستوعبها Orrery لوضع الأجسام الحقيقية في الفضاء ثلاثي الأبعاد ولبناء تقويم الإطلاقات. يتم استخدام كل مجموعة بيانات بموجب الترخيص المذكور والإشارة إليها هنا."
+    "credits_data_intro": "الفهارس العامة المهيكلة التي يستوعبها Orrery لوضع الأجسام الحقيقية في الفضاء ثلاثي الأبعاد ولبناء تقويم الإطلاقات. يتم استخدام كل مجموعة بيانات بموجب الترخيص المذكور والإشارة إليها هنا.",
+    "explore_ctx_solar_system": "النظام الشمسي",
+    "explore_ctx_stellar_neighborhood": "الجوار النجمي",
+    "explore_location_aria": "الموقع",
+    "explore_scale_light_prefix": "ضوئي",
+    "explore_light_seconds": "ثوانٍ ضوئية",
+    "explore_light_minutes": "دقائق ضوئية",
+    "explore_light_hours": "ساعات ضوئية",
+    "explore_light_days": "أيام ضوئية",
+    "explore_light_years": "سنوات ضوئية"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -6066,7 +6165,16 @@
     "landing_card_essays_title": "Долгий взгляд на космонавтику",
     "landing_card_essays_desc": "Поколенческие корабли, новые движители, тело в космосе — куда всё это движется.",
     "credits_section_data": "Данные и каталоги",
-    "credits_data_intro": "Структурированные публичные каталоги, которые Orrery использует для размещения реальных объектов в 3D и построения календаря запусков. Каждый набор данных используется в соответствии с указанной лицензией и процитирован здесь."
+    "credits_data_intro": "Структурированные публичные каталоги, которые Orrery использует для размещения реальных объектов в 3D и построения календаря запусков. Каждый набор данных используется в соответствии с указанной лицензией и процитирован здесь.",
+    "explore_ctx_solar_system": "Солнечная система",
+    "explore_ctx_stellar_neighborhood": "Звёздная окрестность",
+    "explore_location_aria": "Местоположение",
+    "explore_scale_light_prefix": "light",
+    "explore_light_seconds": "световые секунды",
+    "explore_light_minutes": "световые минуты",
+    "explore_light_hours": "световые часы",
+    "explore_light_days": "световые дни",
+    "explore_light_years": "световые годы"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -6522,6 +6630,15 @@
     "landing_card_essays_title": "Het lange perspectief op ruimtevaart",
     "landing_card_essays_desc": "Generatieschepen, nieuwe voortstuwing, het lichaam in het duister — waar dit allemaal heen gaat.",
     "credits_section_data": "Data & catalogi",
-    "credits_data_intro": "De gestructureerde openbare catalogi die Orrery inleest om echte objecten in 3D te plaatsen en de lanceringskalender samen te stellen. Elke dataset wordt gebruikt onder de vermelde licentie en wordt hier geciteerd."
+    "credits_data_intro": "De gestructureerde openbare catalogi die Orrery inleest om echte objecten in 3D te plaatsen en de lanceringskalender samen te stellen. Elke dataset wordt gebruikt onder de vermelde licentie en wordt hier geciteerd.",
+    "explore_ctx_solar_system": "Zonnestelsel",
+    "explore_ctx_stellar_neighborhood": "Stellaire Omgeving",
+    "explore_location_aria": "Locatie",
+    "explore_scale_light_prefix": "licht",
+    "explore_light_seconds": "lichtseconden",
+    "explore_light_minutes": "lichtminuten",
+    "explore_light_hours": "lichturen",
+    "explore_light_days": "lichtdagen",
+    "explore_light_years": "lichtjaren"
   }
 }

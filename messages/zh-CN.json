@@ -1519,5 +1519,14 @@
   "landing_card_programs_title": "国家航天计划",
   "landing_card_programs_desc": "从东方号到阿尔忒弥斯，从阿波罗到天宫——每个国家的发展历程，从首次飞行到未来目标。",
   "landing_card_essays_title": "航天的长期视角",
-  "landing_card_essays_desc": "世代飞船、新型推进、失重环境下的人体——一切将走向何方。"
+  "landing_card_essays_desc": "世代飞船、新型推进、失重环境下的人体——一切将走向何方。",
+  "explore_ctx_solar_system": "太阳系",
+  "explore_ctx_stellar_neighborhood": "恒星邻域",
+  "explore_location_aria": "位置",
+  "explore_scale_light_prefix": "光",
+  "explore_light_seconds": "光秒",
+  "explore_light_minutes": "光分",
+  "explore_light_hours": "光时",
+  "explore_light_days": "光日",
+  "explore_light_years": "光年"
 }

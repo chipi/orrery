@@ -1519,5 +1519,14 @@
   "landing_card_programs_title": "Программы по странам",
   "landing_card_programs_desc": "От Востока до Артемиды, от Аполлона до Тяньгун — каждая национальная история, от первого полёта до будущего.",
   "landing_card_essays_title": "Долгий взгляд на космонавтику",
-  "landing_card_essays_desc": "Поколенческие корабли, новые движители, тело в космосе — куда всё это движется."
+  "landing_card_essays_desc": "Поколенческие корабли, новые движители, тело в космосе — куда всё это движется.",
+  "explore_ctx_solar_system": "Солнечная система",
+  "explore_ctx_stellar_neighborhood": "Звёздная окрестность",
+  "explore_location_aria": "Местоположение",
+  "explore_scale_light_prefix": "light",
+  "explore_light_seconds": "световые секунды",
+  "explore_light_minutes": "световые минуты",
+  "explore_light_hours": "световые часы",
+  "explore_light_days": "световые дни",
+  "explore_light_years": "световые годы"
 }

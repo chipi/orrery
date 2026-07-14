@@ -233,6 +233,20 @@ How 3D works on every canvas route. The application has **seven distinct 3D scen
 - **Pick handling:** `THREE.Raycaster` against tagged scene objects whose `userData` carries the entity id (`{ siteId }`, `{ moduleId }`, `{ missionId }`, etc.). The same `userData` is exposed to Playwright via `window.__pickAt(x, y)` per ADR-056.
 - **Disposal:** every route's teardown walks the scene graph and calls `geometry.dispose()` + `material.dispose()` (texture too where appropriate) for each `Mesh`. Without this, locale switching leaks ~6 MB per swap.
 
+### /explore v2 — The Known Universe (`$lib/universe`, Slice 0 · explore-v2 branch)
+
+Extends `/explore` outward from the solar system into the real stellar neighborhood, in place. **v1 is untouched:** the solar scene + composer render path are unchanged; the neighborhood is a **second `THREE.Scene`, dynamically imported only at the boundary** (RFC-032 C-F), so v1's bundle + first paint don't move. PRD-030 / RFC-032 / UXS-014.
+
+- **Nested contexts (`context-graph.ts`)** — a scale-shell stack. Slice 0 has two: `solar-system` (units AU, the v1 scene) and `neighborhood` (units pc). Crossing a boundary re-bases the camera between coordinate spaces (`rebaseDistance`, physically-correct via `AU_PER_PARSEC`); a hysteresis band prevents seam flicker. Pure + unit-tested (the RFC §8 "precision at the boundary" risk).
+- **Boundary crossing** — zoom out to the heliocentric ceiling, scroll/pinch once more → cross out; the scene swaps to the neighborhood (Sun collapses to a sprite dot, real star field fades in), with an eased pull-back dolly + a warp-flash mask (both reduced-motion-aware). Scroll/pinch in past the inner edge (or Reset View / breadcrumb) crosses back.
+- **Render vocabulary** — `point-field.ts`: one instanced `THREE.Points` draw call, per-point spectral colour (B−V→blackbody→RGB, `bv-to-rgb.ts`) + magnitude-driven size, distance-attenuated shader, `uOpacity` cross-fade. LOD ("N brightest within radius R") + attribute packing in `star-selection.ts` (pure, tested). Device caps via `budget.ts` over the existing `detect-gpu` quality tier. `neighborhood-scene.ts` is the context scene (Sun sprite + field + reveal); consumed by both `/explore` and the dev anchor.
+- **Data** — `scripts/build-universe-stars.ts` fetches HYG v4.1 (CC-BY-SA-4.0), normalizes + tiles 109,400 stars into distance shells under `static/data/universe/stars/` (+ schemas, `validate-universe-stars` in the validate-data runner, provenance). Network-fetch-then-commit pattern (like image-provenance); not in the `build` chain.
+- **HUD** — a scale ruler (`scale-readout.ts`, pure/tested): km·AU·ly·pc unit ladder, light-travel time, map-style scale bar, live across both contexts. The solar Orbit Ruler and solar-only chrome (layer chips, time controls, 2D/SKY) hide in the neighborhood; a breadcrumb (UXS-014) gives orientation + tap-back. Localized to 14 locales.
+- **Coverage** — the pure `$lib/universe` math is coverage-counted + tested; the WebGL builders (`point-field.ts`, `neighborhood-scene.ts`) are coverage-excluded per the `explore-scene.ts` policy.
+- **Credits** — `static/data/data-sources.json` powers a `/credits` "Data & catalogues" section (HYG · GCAT · Launch Library 2).
+
+Deferred to later slices (RFC-032 §7): object selection / Panel / named stars / constellations / `?goto=` (S1) · warp + exoplanet mini-orreries (S2) · /science + culture (S3) · deep-sky (S4) · Milky Way (S5) · physics lenses (S6+). Library article references land in S1 (need selectable star entities).
+
 ### Scene 1 — `/explore` (heliocentric solar-system)
 
 - **Coordinate frame:** heliocentric, AU units (constraint per §constraints). Sun at origin. Planet positions from `static/data/planets.json` (`a`, `e`, `T`, `L0`, `incl`, `axialTilt`, `rotPeriod`).

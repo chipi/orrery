@@ -1519,5 +1519,14 @@
   "landing_card_programs_title": "国別プログラム",
   "landing_card_programs_desc": "ボストーク（Vostok）からアルテミス（Artemis）、アポロ（Apollo）から天宮（Tiangong）まで — 各国の軌跡、初飛行から未来へ。",
   "landing_card_essays_title": "宇宙飛行の長期的視点",
-  "landing_card_essays_desc": "世代船、新しい推進方式、暗黒の中の人体 — これらがどこに向かっているか。"
+  "landing_card_essays_desc": "世代船、新しい推進方式、暗黒の中の人体 — これらがどこに向かっているか。",
+  "explore_ctx_solar_system": "太陽系",
+  "explore_ctx_stellar_neighborhood": "恒星近傍",
+  "explore_location_aria": "位置",
+  "explore_scale_light_prefix": "光",
+  "explore_light_seconds": "光秒",
+  "explore_light_minutes": "光分",
+  "explore_light_hours": "光時",
+  "explore_light_days": "光日",
+  "explore_light_years": "光年"
 }

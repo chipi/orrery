@@ -831,6 +831,26 @@
     value >= 1000 || value < 0.01
       ? value.toLocaleString(undefined, { maximumSignificantDigits: 3 })
       : String(value);
+  // Localize the light-travel unit words emitted by scale-readout (the km/AU/ly/pc
+  // symbols stay universal).
+  const lightUnitLabel = (unit: string): string => {
+    switch (unit) {
+      case 'light-seconds':
+        return m.explore_light_seconds();
+      case 'light-minutes':
+        return m.explore_light_minutes();
+      case 'light-hours':
+        return m.explore_light_hours();
+      case 'light-days':
+        return m.explore_light_days();
+      default:
+        return m.explore_light_years();
+    }
+  };
+  const contextLabel = (): string =>
+    contextId === 'neighborhood'
+      ? m.explore_ctx_stellar_neighborhood()
+      : m.explore_ctx_solar_system();
 
   // PRD-023 Slice E.2/E.4 — script-level state for the close-zoom HUD
   // overlays. `cameraState.focusedOnPlanet` is set true when the camera
@@ -896,6 +916,9 @@
   // the Sun, and per-planet 4K LOD swaps (#287) never fired for
   // anything past Mercury. See `focusOnBody` inside onMount.
   let flyToBodyFn: ((bodyId: string | null) => void) | null = null;
+  // Set in onMount; called by Reset View so resetting while out in the stellar
+  // neighborhood first crosses back to the solar system (no-op when already there).
+  let exitNeighborhoodFn: (() => void) | null = null;
 
   // Panel mutex: each select* below opens its own panel and explicitly
   // closes the four other planet/sun/smallBody/satellite/belt panels.
@@ -932,6 +955,7 @@
     panelState.smallBody = false;
     panelState.satellite = false;
     panelState.belt = false;
+    exitNeighborhoodFn?.();
     flyToBodyFn?.(null);
   }
 
@@ -2650,7 +2674,7 @@
         // Enter close (Sun still large), then dolly out so the field fades in
         // with motion.
         camR = 0.035;
-        startCrossDolly(0.035, 0.18, 1000);
+        startCrossDolly(0.035, 0.32, 1100);
         crossingFlashId++;
       }
       updateCam();
@@ -2669,6 +2693,7 @@
       camera.updateProjectionMatrix();
       updateCam();
     }
+    exitNeighborhoodFn = crossInToSolarSystem;
 
     // Camera distance → canonical AU, for the scale HUD (solar camR is AU,
     // neighborhood camR is pc).
@@ -4576,6 +4601,18 @@
     aria-label={m.explore_canvas_aria_2d()}
   ></canvas>
 
+  <!-- v2 breadcrumb (UXS-014 "you always know where you are"): shown out in the
+       stellar neighborhood; the home crumb taps back to the solar system. -->
+  {#if view === '3d' && contextId === 'neighborhood'}
+    <nav class="context-crumbs" aria-label={m.explore_location_aria()}>
+      <button type="button" class="crumb home" onclick={() => exitNeighborhoodFn?.()}>
+        ‹ {m.explore_ctx_solar_system()}
+      </button>
+      <span class="crumb-sep">›</span>
+      <span class="crumb current" aria-current="page">{m.explore_ctx_stellar_neighborhood()}</span>
+    </nav>
+  {/if}
+
   <!-- v2 scale ruler (PRD-030 / RFC-032): the fitting distance measure for the
        current zoom — km → AU → light-year → parsec — plus light-travel time and
        a map-style scale bar. Teaches which unit fits which scale as you zoom.
@@ -4608,7 +4645,8 @@
           {/if}
         </div>
         <div class="scale-light">
-          light: {fmtScale(scaleReadout.lightTravel.value)} {scaleReadout.lightTravel.unit}
+          {m.explore_scale_light_prefix()}: {fmtScale(scaleReadout.lightTravel.value)}
+          {lightUnitLabel(scaleReadout.lightTravel.unit)}
         </div>
       {/if}
       {#if scaleBarPx > 0}
@@ -4617,9 +4655,7 @@
           <span class="scale-bar-label">{scaleBarLabel}</span>
         </div>
       {/if}
-      <div class="scale-context">
-        {contextId === 'neighborhood' ? 'Stellar neighborhood' : 'Solar system'}
-      </div>
+      <div class="scale-context">{contextLabel()}</div>
     </div>
   {/if}
 
@@ -4640,6 +4676,7 @@
   <button
     type="button"
     class="earth-compare"
+    class:context-hidden={contextId === 'neighborhood'}
     aria-label={m.explore_sizes_toggle()}
     onclick={() => (panelState.sizes = !panelState.sizes)}
     data-testid="sizes-toggle"
@@ -4667,7 +4704,11 @@
        the live orbital clock. Pinned bottom-left beside the PLANET SCALES
        button (user direction 2026-06-21). Pills mirror the guide-explore
        narration ("one day per second, ten days, a hundred"). -->
-  <div class="time-controls" data-audio-stage="explore-time">
+  <div
+    class="time-controls"
+    class:context-hidden={contextId === 'neighborhood'}
+    data-audio-stage="explore-time"
+  >
     <!-- Mobile-only compact REFERENCES button — the standalone .earth-compare
          is hidden on mobile (z-20 behind footer); this keeps the affordance
          accessible in the scrubber row (z-40). -->
@@ -4824,6 +4865,7 @@
             selectedSatelliteKey = null;
             selectedBeltId = null;
             resetExplorePanelState();
+            exitNeighborhoodFn?.();
             flyToBodyFn?.(null);
           }}
           data-testid="explore-reset-view"
@@ -4964,6 +5006,7 @@
   <!-- Desktop cluster — hidden on mobile (≤767 px) via CSS. -->
   <div
     class="hud-controls"
+    class:context-hidden={contextId === 'neighborhood'}
     data-audio-stage="explore-hud"
     role="group"
     aria-label={m.ui_view_controls()}
@@ -4972,7 +5015,12 @@
   </div>
   <!-- Mobile-only: 2D/3D toggle + Reset View fixed at top-left (mirrors
        desktop .hud-controls corner; .hud-controls itself is desktop-only). -->
-  <div class="hud-top-mobile" role="group" aria-label={m.ui_view_controls()}>
+  <div
+    class="hud-top-mobile"
+    class:context-hidden={contextId === 'neighborhood'}
+    role="group"
+    aria-label={m.ui_view_controls()}
+  >
     <button
       class="toggle"
       type="button"
@@ -4992,6 +5040,7 @@
           selectedSatelliteKey = null;
           selectedBeltId = null;
           resetExplorePanelState();
+          exitNeighborhoodFn?.();
           flyToBodyFn?.(null);
         }}
         data-testid="explore-reset-view-mobile"
@@ -5167,19 +5216,23 @@
       }}
     />
   {/snippet}
-  <MobileDrawerGroup
-    tabs={[
-      { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
-      { id: 'controls', label: 'Controls', icon: '▤', content: mobileControlsContent },
-      { id: 'missions', label: 'Missions', icon: '➤', content: mobileIconicContent },
-      { id: 'index', label: 'Index', icon: '☰', content: mobileIndexContent },
-    ]}
-    onOpen={(id) => {
-      if (id === 'missions') layers.paths = true;
-    }}
-    bottomInline
-    --mcd-bottom="calc(56px + env(safe-area-inset-bottom, 0px))"
-  />
+  <!-- Mobile solar-system drawers (ruler/controls/missions/index) — hidden out
+       in the stellar neighborhood, which has its own scale ruler + no bodies. -->
+  {#if contextId !== 'neighborhood'}
+    <MobileDrawerGroup
+      tabs={[
+        { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
+        { id: 'controls', label: 'Controls', icon: '▤', content: mobileControlsContent },
+        { id: 'missions', label: 'Missions', icon: '➤', content: mobileIconicContent },
+        { id: 'index', label: 'Index', icon: '☰', content: mobileIndexContent },
+      ]}
+      onOpen={(id) => {
+        if (id === 'missions') layers.paths = true;
+      }}
+      bottomInline
+      --mcd-bottom="calc(56px + env(safe-area-inset-bottom, 0px))"
+    />
+  {/if}
 
   {#if panelState.sizes}
     <!-- Size comparison overlay — modal-style, mirrors selected planet
@@ -5500,6 +5553,69 @@
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.4);
     margin-top: 6px;
+  }
+
+  /* Solar-system chrome hidden out in the stellar neighborhood. */
+  .context-hidden {
+    display: none !important;
+  }
+
+  /* v2 breadcrumb — top-left orientation + tap-back to the solar system. */
+  .context-crumbs {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: rgba(6, 10, 22, 0.6);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    border-radius: 6px;
+    backdrop-filter: blur(5px);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+  }
+  .crumb.home {
+    background: none;
+    border: none;
+    color: #4ecdc4;
+    cursor: pointer;
+    font: inherit;
+    padding: 4px 2px;
+    min-height: 32px;
+  }
+  .crumb.home:hover,
+  .crumb.home:focus-visible {
+    color: #7ddfd8;
+    outline: none;
+  }
+  .crumb-sep {
+    color: rgba(255, 255, 255, 0.3);
+  }
+  .crumb.current {
+    color: #fff;
+  }
+
+  /* Compact the scale HUD on phones so it doesn't crowd the bottom edge. */
+  @media (max-width: 767px) {
+    .scale-hud {
+      bottom: 12px;
+      padding: 7px 9px;
+      max-width: 190px;
+    }
+    .scale-readout .primary {
+      font-size: 13px;
+    }
+    .context-crumbs {
+      font-size: 11px;
+    }
+    .crumb.home {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
   }
 
   /* Warp flash overlay — a soft radial bloom that masks the boundary cut. */

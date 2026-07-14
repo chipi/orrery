@@ -1519,5 +1519,14 @@
   "landing_card_programs_title": "Programmi, nazione per nazione",
   "landing_card_programs_desc": "Da Vostok ad Artemis, da Apollo a Tiangong — ogni percorso nazionale, dal primo volo al futuro.",
   "landing_card_essays_title": "La prospettiva lunga dell'esplorazione spaziale",
-  "landing_card_essays_desc": "Astronavi generazionali, nuova propulsione, il corpo nell'oscurità — dove tutto questo sta andando."
+  "landing_card_essays_desc": "Astronavi generazionali, nuova propulsione, il corpo nell'oscurità — dove tutto questo sta andando.",
+  "explore_ctx_solar_system": "Sistema Solare",
+  "explore_ctx_stellar_neighborhood": "Vicinato Stellare",
+  "explore_location_aria": "Posizione",
+  "explore_scale_light_prefix": "luce",
+  "explore_light_seconds": "secondi-luce",
+  "explore_light_minutes": "minuti-luce",
+  "explore_light_hours": "ore-luce",
+  "explore_light_days": "giorni-luce",
+  "explore_light_years": "anni-luce"
 }

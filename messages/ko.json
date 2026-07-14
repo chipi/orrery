@@ -1519,5 +1519,14 @@
   "landing_card_programs_title": "국가별 프로그램",
   "landing_card_programs_desc": "보스토크에서 아르테미스까지, 아폴로에서 톈궁까지 — 각 국가의 궤적, 첫 비행부터 미래까지.",
   "landing_card_essays_title": "우주비행의 긴 관점",
-  "landing_card_essays_desc": "세대 우주선, 새로운 추진 방식, 어둠 속의 인체 — 모든 것이 향하는 곳."
+  "landing_card_essays_desc": "세대 우주선, 새로운 추진 방식, 어둠 속의 인체 — 모든 것이 향하는 곳.",
+  "explore_ctx_solar_system": "태양계",
+  "explore_ctx_stellar_neighborhood": "항성 근방",
+  "explore_location_aria": "위치",
+  "explore_scale_light_prefix": "광",
+  "explore_light_seconds": "광초",
+  "explore_light_minutes": "광분",
+  "explore_light_hours": "광시",
+  "explore_light_days": "광일",
+  "explore_light_years": "광년"
 }

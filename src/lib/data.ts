@@ -1720,6 +1720,33 @@ export async function getTextSources(): Promise<TextSourcesManifest> {
   return get<TextSourcesManifest>('text-sources.json');
 }
 
+// ─── Data & catalogues (PRD-030 / RFC-032 — public /credits data section) ──
+// Curated provenance for the structured public datasets Orrery ingests (star
+// catalogues, launch catalogues, …). Distinct from image-provenance (per-asset)
+// and text-sources (editorial fragments).
+export interface DataSourceEntry {
+  id: string;
+  name: string;
+  catalog: string;
+  version?: string;
+  category: string;
+  description: string;
+  source_url: string;
+  license_short: string;
+  license_url: string;
+  license_rationale: string;
+  used_on: string[];
+}
+
+export interface DataSourcesManifest {
+  schema_version: number;
+  entries: DataSourceEntry[];
+}
+
+export async function getDataSources(): Promise<DataSourcesManifest> {
+  return get<DataSourcesManifest>('data-sources.json');
+}
+
 // ─── Audio provenance (PRD-016 §transparency / RFC-019 §5.4) ─────────────
 // Mirrors the image-provenance pattern. Read by /credits to surface every
 // audio asset's text-author + voice-provider attribution.

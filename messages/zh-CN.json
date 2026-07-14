@@ -232,6 +232,8 @@
   "credits_toc_label": "资料来源",
   "credits_section_photos": "照片",
   "credits_section_text": "文字",
+  "credits_section_data": "数据与目录",
+  "credits_data_intro": "Orrery采集的结构化公共目录，用于在3D空间中放置真实天体并构建发射日历。每个数据集均按其声明的许可证使用并在此引用。",
   "credits_count_photos": "{n} 张照片",
   "credits_count_text": "{n} 条文本条目",
   "credits_used_on": "使用过",

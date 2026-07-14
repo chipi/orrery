@@ -431,6 +431,12 @@ export default defineConfig(({ mode }) => {
           // meaningfully unit-tested in jsdom; the pure structure is smoke-tested
           // in ar-scene.test.ts. Same policy as the AR runtime + route scenes.
           'src/lib/explore-scene.ts',
+          // /explore v2 (PRD-030 / RFC-032) WebGL builders — THREE.Points shader
+          // field + the neighborhood boundary scene. Same jsdom-can't-run-WebGL
+          // policy as explore-scene.ts; their pure LOD/packing/context math keeps
+          // its own *.test.ts (star-selection, context-graph, budget, bv-to-rgb).
+          'src/lib/universe/point-field.ts',
+          'src/lib/universe/neighborhood-scene.ts',
           '*.config.{js,ts}',
           '.svelte-kit/',
         ],

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "hyg-v41",
+      "name": "HYG Database",
+      "catalog": "HYG Database v4.1 (astronexus)",
+      "version": "v4.1",
+      "category": "star-catalogue",
+      "description": "Positions, apparent magnitudes, and B−V colors for the real nearby-star field in /explore's Stellar Neighborhood. Merges the Hipparcos, Yale Bright Star, and Gliese catalogues.",
+      "source_url": "https://github.com/astronexus/HYG-Database",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_rationale": "Published by astronexus under Creative Commons Attribution-ShareAlike 4.0 International.",
+      "used_on": ["explore"]
+    },
+    {
+      "id": "gcat",
+      "name": "GCAT — General Catalog of Space Objects",
+      "catalog": "GCAT (Jonathan C. McDowell, planet4589.org)",
+      "category": "launch-catalogue",
+      "description": "Agency-grade launch log used as the trunk source for the launches calendar — dates, vehicles, and payload records for historical and current spaceflights.",
+      "source_url": "https://planet4589.org/space/gcat/",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "Released by Jonathan C. McDowell under Creative Commons Attribution 4.0 International; citation is a ship-gate (PRD-020 M14).",
+      "used_on": ["missions"]
+    },
+    {
+      "id": "ll2-thespacedevs",
+      "name": "Launch Library 2 — The Space Devs",
+      "catalog": "Launch Library 2 API (TheSpaceDevs)",
+      "category": "launch-catalogue",
+      "description": "Upcoming-launch gap-fill aggregator for the launches calendar, used where agency-direct sources do not yet cover a launch. A leaf source, not the trunk (PRD-020).",
+      "source_url": "https://thespacedevs.com/llapi",
+      "license_short": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_rationale": "LL2 terms: free use, attribution encouraged but not mandatory. Always cited regardless, per Orrery editorial discipline.",
+      "used_on": ["missions"]
+    }
+  ]
+}

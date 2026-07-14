@@ -29,6 +29,19 @@
   import { createAnimateLoop } from '$lib/three/animate-loop';
   import { attachFrameMonitor, type FrameMonitorHandle } from '$lib/quality/frame-monitor';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
+  // /explore v2 "The Known Universe" (PRD-030 / RFC-032). The neighborhood scene
+  // is dynamically imported at the boundary so v1's bundle + first paint stay
+  // untouched (RFC C-F).
+  import { ContextGraph, SOLAR_SYSTEM_CONTEXT, NEIGHBORHOOD_CONTEXT } from '$lib/universe/context-graph';
+  import type { NeighborhoodScene } from '$lib/universe/neighborhood-scene';
+  import {
+    describeDistanceAu,
+    niceScaleBar,
+    AU_PER_PC,
+    RUNG_LADDER,
+    type ScaleReadout,
+    type ScaleRung,
+  } from '$lib/universe/scale-readout';
   import {
     buildIconicTrajectory,
     type IconicTrajectoryData,
@@ -802,6 +815,22 @@
   // Lookup keyed by id; reactive to localizedPlanets.
   let planetById = $derived(new Map(localizedPlanets.map((p) => [p.id, p])));
   let selectedPlanet = $derived(selectedId ? (planetById.get(selectedId) ?? null) : null);
+
+  // /explore v2 (PRD-030 / RFC-032) — scale-ruler HUD + boundary state, pushed
+  // from the render loop. `scaleReadout` is the fitting distance measure for the
+  // current zoom; `scaleBarPx`/`scaleBarLabel` the map-style bar; `contextId`
+  // which scale-shell we're in (solar system vs stellar neighborhood).
+  let scaleReadout = $state<ScaleReadout | null>(null);
+  let scaleBarPx = $state(0);
+  let scaleBarLabel = $state('');
+  let contextId = $state<'solar-system' | 'neighborhood'>('solar-system');
+  // Bumped on each boundary crossing to replay the warp-flash overlay.
+  let crossingFlashId = $state(0);
+  const rungLadder: ScaleRung[] = RUNG_LADDER;
+  const fmtScale = (value: number): string =>
+    value >= 1000 || value < 0.01
+      ? value.toLocaleString(undefined, { maximumSignificantDigits: 3 })
+      : String(value);
 
   // PRD-023 Slice E.2/E.4 — script-level state for the close-zoom HUD
   // overlays. `cameraState.focusedOnPlanet` is set true when the camera
@@ -2539,6 +2568,130 @@
     };
     updateCam();
 
+    // ── /explore v2 boundary crossing (PRD-030 / RFC-032 · Slice 0) ──────────
+    // Zoom out to the heliocentric ceiling, then scroll once more to *leave the
+    // solar system*: the scene swaps to the real HYG stellar neighborhood (its
+    // own pc-scaled context), the Sun collapses to a dot, the star field fades
+    // in. Scroll back in past the inner edge to return. v1's zoom range + render
+    // path are unchanged — the neighborhood is a second scene, loaded lazily.
+    const contextGraph = new ContextGraph(
+      [SOLAR_SYSTEM_CONTEXT, NEIGHBORHOOD_CONTEXT],
+      'solar-system',
+    );
+    let nbScene: NeighborhoodScene | null = null;
+    let nbLoading = false;
+    const HELIO_CAM_R_MAX = camRMax; // 1400 AU — the v1 heliocentric ceiling
+    const NB_ENTRY_CAM_R = 0.05; // pc — entry framing just outside the Sun
+    const NB_CAM_R_MIN = 0.03; // pc
+    const NB_CAM_R_MAX = 60; // pc
+    const NB_FAR = 1500; // pc — neighborhood far plane
+    const SOLAR_FAR = camera.far; // 8000 AU
+
+    const inNeighborhood = () => contextGraph.active.id === 'neighborhood';
+
+    async function ensureNeighborhood(): Promise<NeighborhoodScene | null> {
+      if (nbScene) return nbScene;
+      if (nbLoading) return null;
+      nbLoading = true;
+      try {
+        const mod = await import('$lib/universe/neighborhood-scene');
+        const shells = await mod.loadNeighborhoodShells(fetch, base);
+        nbScene = mod.createNeighborhoodScene({
+          shells,
+          tier: quality.tier,
+          pixelRatio: renderer.getPixelRatio(),
+        });
+        return nbScene;
+      } catch (err) {
+        console.error('[explore v2] neighborhood load failed', err);
+        return null;
+      } finally {
+        nbLoading = false;
+      }
+    }
+
+    // Crossing polish: a brief eased pull-back (so the reveal plays as a
+    // continuous zoom, not a jump) + a warp flash to mask the scene cut. Both
+    // are skipped under prefers-reduced-motion (ADR-025).
+    let dollyActive = false;
+    let dollyFrom = 0;
+    let dollyTo = 0;
+    let dollyStart = 0;
+    let dollyMs = 0;
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+    const startCrossDolly = (from: number, to: number, ms: number) => {
+      dollyActive = true;
+      dollyFrom = from;
+      dollyTo = to;
+      dollyStart = performance.now();
+      dollyMs = ms;
+    };
+    const stepCrossDolly = () => {
+      if (!dollyActive) return;
+      const t = Math.min(1, (performance.now() - dollyStart) / dollyMs);
+      camR = dollyFrom + (dollyTo - dollyFrom) * easeOutCubic(t);
+      updateCam();
+      if (t >= 1) dollyActive = false;
+    };
+
+    async function crossOutToNeighborhood(): Promise<void> {
+      if (inNeighborhood()) return;
+      const scene = await ensureNeighborhood();
+      if (!scene) return; // load failed — stay in the solar system
+      contextGraph.setActive('neighborhood');
+      camRMin = NB_CAM_R_MIN;
+      camRMax = NB_CAM_R_MAX;
+      camera.far = NB_FAR;
+      camera.near = 0.001;
+      camera.updateProjectionMatrix();
+      if (reducedMotion) {
+        camR = NB_ENTRY_CAM_R;
+      } else {
+        // Enter close (Sun still large), then dolly out so the field fades in
+        // with motion.
+        camR = 0.035;
+        startCrossDolly(0.035, 0.18, 1000);
+        crossingFlashId++;
+      }
+      updateCam();
+    }
+
+    function crossInToSolarSystem(): void {
+      if (!inNeighborhood()) return;
+      dollyActive = false;
+      if (!reducedMotion) crossingFlashId++;
+      contextGraph.setActive('solar-system');
+      camRMin = 60;
+      camRMax = HELIO_CAM_R_MAX;
+      camR = HELIO_CAM_R_MAX;
+      camera.far = SOLAR_FAR;
+      camera.near = 0.5;
+      camera.updateProjectionMatrix();
+      updateCam();
+    }
+
+    // Camera distance → canonical AU, for the scale HUD (solar camR is AU,
+    // neighborhood camR is pc).
+    const camDistAu = () => (inNeighborhood() ? camR * AU_PER_PC : camR);
+    let scaleHudTick = 0;
+    const updateScaleHud = () => {
+      // Throttle the reactive push — the read loop runs at frame rate but the
+      // HUD only needs a few updates a second.
+      if ((scaleHudTick++ & 7) !== 0) return;
+      const au = camDistAu();
+      scaleReadout = describeDistanceAu(au);
+      contextId = inNeighborhood() ? 'neighborhood' : 'solar-system';
+      const vh = container?.clientHeight ?? 1;
+      const worldPerPx = (2 * Math.tan((camera.fov * Math.PI) / 180 / 2) * camR) / vh;
+      const unitToAu = inNeighborhood() ? AU_PER_PC : 1;
+      const bar = niceScaleBar(worldPerPx * unitToAu);
+      if (bar) {
+        scaleBarPx = bar.px;
+        const desc = describeDistanceAu(bar.au).primary;
+        scaleBarLabel = `${fmtScale(desc.value)} ${desc.unit}`;
+      }
+    };
+
     // ── Fly-to-body tween (#287 polish) ───────────────────────────────
     // Tweens focusOrigin from current to the target body's world
     // position + camR/camP/camT to a close-orbit pose around it. Pass
@@ -3083,6 +3236,10 @@
       isPan3d = false;
       mouseDownOnCanvas = false;
       el3d.style.cursor = 'grab';
+      // v2: in the stellar neighborhood the solar bodies aren't rendered — don't
+      // raycast against them (selectable stars arrive in Slice 1). Orbit/zoom
+      // still work.
+      if (inNeighborhood()) return;
       // Pan release shouldn't open a planet panel — only orbit-mode
       // mouseup that didn't reach drag-threshold counts as a pick.
       // Also require the mousedown to have started on the canvas —
@@ -3103,6 +3260,27 @@
       // bound to the 3D camera. Listener also needs `passive: false`
       // — see the addEventListener call below.
       e.preventDefault();
+      const zoomingOut = e.deltaY > 0;
+      // v2 boundary: past the heliocentric ceiling, one more scroll-out leaves
+      // the solar system; inside the neighborhood, scroll-in past the edge
+      // returns. Neighborhood uses multiplicative zoom (the pc scale spans
+      // orders of magnitude).
+      if (!inNeighborhood() && zoomingOut && camR >= camRMax - 0.5) {
+        void crossOutToNeighborhood();
+        return;
+      }
+      if (inNeighborhood()) {
+        dollyActive = false; // user took over the zoom
+        const ratio = zoomingOut ? 1.07 : 1 / 1.07;
+        const next = camR * ratio;
+        if (!zoomingOut && next <= camRMin) {
+          crossInToSolarSystem();
+          return;
+        }
+        camR = Math.max(camRMin, Math.min(camRMax, next));
+        updateCam();
+        return;
+      }
       camR = Math.max(camRMin, Math.min(camRMax, camR + e.deltaY * 0.7));
       updateCam();
     };
@@ -3136,7 +3314,19 @@
         // 3D screens are single-finger orbit + two-finger zoom.
         const dist = touchDist(e.touches[0], e.touches[1]);
         if (pinchPrev3d > 0) {
-          const ratio = pinchPrev3d / dist;
+          const ratio = pinchPrev3d / dist; // >1 = zoom out, <1 = zoom in
+          // v2 boundary crossing (mirrors the wheel handler).
+          if (!inNeighborhood() && ratio > 1 && camR >= camRMax - 0.5) {
+            void crossOutToNeighborhood();
+            pinchPrev3d = dist;
+            return;
+          }
+          if (inNeighborhood() && ratio < 1 && camR * ratio <= camRMin) {
+            crossInToSolarSystem();
+            pinchPrev3d = dist;
+            return;
+          }
+          if (inNeighborhood()) dollyActive = false; // user took over the zoom
           camR = Math.max(camRMin, Math.min(camRMax, camR * ratio));
           updateCam();
         }
@@ -4264,6 +4454,21 @@
             for (const h of iconicTrajectoryHandles) h.relayoutLabels(camera, ch);
           }
 
+          // v2 scale ruler — keep the HUD's distance/unit readout live across
+          // both contexts.
+          updateScaleHud();
+
+          // v2: inside the stellar neighborhood, render its own scene (the real
+          // HYG field fading in as the camera pulls back, Sun collapsed to a
+          // dot) with the shared camera, bypassing the solar composer + panel
+          // throttle. v1's render path below is untouched.
+          if (inNeighborhood() && nbScene) {
+            stepCrossDolly();
+            nbScene.update(camR);
+            renderer.render(nbScene.scene, camera);
+            return;
+          }
+
           // Frame throttle — render 1 of every 4 frames when a right-
           // side detail panel covers the canvas. See module-level
           // declaration above for the why.
@@ -4287,6 +4492,7 @@
       },
     });
     lifecycle.add(loop.cleanup);
+    lifecycle.add(() => nbScene?.dispose());
     loop.start();
 
     // Disposables that aren't a listener live in the same chain. LIFO
@@ -4369,6 +4575,61 @@
     class:hidden={view !== '2d'}
     aria-label={m.explore_canvas_aria_2d()}
   ></canvas>
+
+  <!-- v2 scale ruler (PRD-030 / RFC-032): the fitting distance measure for the
+       current zoom — km → AU → light-year → parsec — plus light-travel time and
+       a map-style scale bar. Teaches which unit fits which scale as you zoom.
+       English chrome for now; i18n before the slice ships. -->
+  {#if view === '3d' && scaleReadout}
+    <div class="scale-hud" class:neighborhood={contextId === 'neighborhood'} aria-hidden="true">
+      <div class="scale-ladder">
+        {#each rungLadder as rung (rung)}
+          <span
+            class="rung"
+            class:active={scaleReadout.rung === rung ||
+              (scaleReadout.rung === 'ly' && rung === 'pc')}
+          >
+            {rung === 'au' ? 'AU' : rung}
+          </span>
+        {/each}
+      </div>
+      <!-- Numeric distance + light-time only where the Orbit Ruler (solar
+           system) isn't already showing them — keeps the two rulers complementary,
+           not redundant. -->
+      {#if contextId === 'neighborhood'}
+        <div class="scale-readout">
+          <span class="primary"
+            >{fmtScale(scaleReadout.primary.value)} {scaleReadout.primary.unit}</span
+          >
+          {#if scaleReadout.companion}
+            <span class="companion"
+              >≈ {fmtScale(scaleReadout.companion.value)} {scaleReadout.companion.unit}</span
+            >
+          {/if}
+        </div>
+        <div class="scale-light">
+          light: {fmtScale(scaleReadout.lightTravel.value)} {scaleReadout.lightTravel.unit}
+        </div>
+      {/if}
+      {#if scaleBarPx > 0}
+        <div class="scale-bar-wrap">
+          <span class="scale-bar" style="width:{Math.round(Math.min(scaleBarPx, 220))}px"></span>
+          <span class="scale-bar-label">{scaleBarLabel}</span>
+        </div>
+      {/if}
+      <div class="scale-context">
+        {contextId === 'neighborhood' ? 'Stellar neighborhood' : 'Solar system'}
+      </div>
+    </div>
+  {/if}
+
+  <!-- Warp flash — masks the scene cut at a boundary crossing. Replays whenever
+       crossingFlashId changes (skipped under reduced motion, which never bumps it). -->
+  {#if view === '3d' && crossingFlashId > 0}
+    {#key crossingFlashId}
+      <div class="cross-flash" aria-hidden="true"></div>
+    {/key}
+  {/if}
 
   <!-- PRD-023 Slice E.2 — Earth-comparison ghost, doubling as the
        REFERENCES launcher (2026-06-06 user direction: move the
@@ -4745,7 +5006,7 @@
   <!-- Mobile-only: 3-tab accordion — Orbit Ruler | Controls | Iconic Missions.
        Desktop uses .hud-controls (above) + .ruler-desktop-only (below). -->
   {#snippet mobileRulerContent(close: () => void)}
-    {#if exploreRegimes.length > 0}
+    {#if exploreRegimes.length > 0 && contextId !== 'neighborhood'}
       <OrbitRuler
         regimes={exploreRegimes}
         highlightRegime={null}
@@ -5036,7 +5297,9 @@
      ?id=<body-id> (the existing /explore deep-link resolver picks it
      up). RegimePanel sits at zIndex=28 so any body panel that opens
      stacks on top — closing the body panel reveals the zone panel. -->
-{#if exploreRegimes.length > 0}
+<!-- Solar-system regime ruler — hidden past the boundary (its AU regimes are
+     meaningless in the stellar neighborhood, which has its own scale ruler). -->
+{#if exploreRegimes.length > 0 && contextId !== 'neighborhood'}
   <div class="ruler-desktop-only">
     <OrbitRuler
       regimes={exploreRegimes}
@@ -5153,6 +5416,116 @@
   }
   .layer.hidden {
     display: none;
+  }
+
+  /* v2 scale ruler HUD (PRD-030 / RFC-032). Bottom-left, unobtrusive. */
+  .scale-hud {
+    position: absolute;
+    right: 12px;
+    bottom: 46px;
+    z-index: 6;
+    padding: 9px 11px;
+    background: rgba(6, 10, 22, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    backdrop-filter: blur(5px);
+    font-family: 'Space Mono', monospace;
+    color: #dde4ff;
+    pointer-events: none;
+    max-width: 260px;
+  }
+  .scale-hud.neighborhood {
+    border-color: rgba(78, 205, 196, 0.35);
+  }
+  .scale-ladder {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+  .scale-ladder .rung {
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .scale-ladder .rung.active {
+    color: #04121a;
+    background: #4ecdc4;
+    font-weight: 700;
+  }
+  .scale-readout {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .scale-readout .primary {
+    font-size: 15px;
+    color: #fff;
+  }
+  .scale-readout .companion {
+    font-size: 11px;
+    color: #9fe8e2;
+  }
+  .scale-light {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 2px;
+  }
+  .scale-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 7px;
+  }
+  .scale-bar {
+    display: inline-block;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.8);
+    border-left: 1px solid rgba(255, 255, 255, 0.8);
+    border-right: 1px solid rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
+    min-width: 12px;
+  }
+  .scale-bar-label {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .scale-context {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 6px;
+  }
+
+  /* Warp flash overlay — a soft radial bloom that masks the boundary cut. */
+  .cross-flash {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    pointer-events: none;
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(220, 235, 255, 0.55),
+      rgba(120, 180, 255, 0.12) 45%,
+      transparent 70%
+    );
+    animation: crossFlash 720ms ease-out forwards;
+  }
+  @keyframes crossFlash {
+    0% {
+      opacity: 0;
+    }
+    22% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
   :global(.explore canvas) {
     display: block;

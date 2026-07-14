@@ -160,6 +160,8 @@ const licenseWaiversSchema = loadSchema('license-waivers.schema.json');
 // ADR-046 Milestone D — public credits page manifests.
 const sourceLogosSchema = loadSchema('source-logos.schema.json');
 const textSourcesSchema = loadSchema('text-sources.schema.json');
+// PRD-030 / RFC-032 — public "Data & catalogues" credit section.
+const dataSourcesSchema = loadSchema('data-sources.schema.json');
 // ADR-051 Milestone L-B — outbound LEARN-link provenance.
 const linkProvenanceSchema = loadSchema('link-provenance.schema.json');
 // PRD-012 v0.2 / RFC-016 v0.2 — Spaceflight Fleet (/fleet).
@@ -206,6 +208,7 @@ const validateImageProvenance = ajv.compile(imageProvenanceSchema);
 const validateLicenseWaivers = ajv.compile(licenseWaiversSchema);
 const validateSourceLogos = ajv.compile(sourceLogosSchema);
 const validateTextSources = ajv.compile(textSourcesSchema);
+const validateDataSources = ajv.compile(dataSourcesSchema);
 const validateLinkProvenance = ajv.compile(linkProvenanceSchema);
 const validateFleetEntry = ajv.compile(fleetEntrySchema);
 const validateFleetIndex = ajv.compile(fleetIndexSchema);
@@ -458,6 +461,31 @@ validateFile(join(DATA_ROOT, 'license-waivers.json'), validateLicenseWaivers);
 // ADR-046 Milestone D: public /credits manifests.
 validateFile(join(DATA_ROOT, 'source-logos.json'), validateSourceLogos);
 validateFile(join(DATA_ROOT, 'text-sources.json'), validateTextSources);
+// PRD-030 / RFC-032: public "Data & catalogues" manifest. Schema + fail-closed
+// license allowlist + unique-id checks, mirroring text-sources integrity.
+validateFile(join(DATA_ROOT, 'data-sources.json'), validateDataSources);
+{
+  const dataSrcPath = join(DATA_ROOT, 'data-sources.json');
+  if (existsSync(dataSrcPath)) {
+    const manifest = readJson(dataSrcPath) as {
+      entries: Array<{ id: string; license_short: string }>;
+    };
+    const seen = new Set<string>();
+    for (const e of manifest.entries) {
+      if (seen.has(e.id)) {
+        failed++;
+        console.error(`\n  ✗ data-sources.json: duplicate id "${e.id}"`);
+      }
+      seen.add(e.id);
+      if (!isAllowedLicense(e.license_short)) {
+        failed++;
+        console.error(
+          `\n  ✗ data-sources.json: license '${e.license_short}' for "${e.id}" not in allowlist`,
+        );
+      }
+    }
+  }
+}
 // ADR-051 Milestone L-B: outbound LEARN-link provenance manifest.
 validateFile(join(DATA_ROOT, 'link-provenance.json'), validateLinkProvenance);
 // PRD-020 / RFC-023: launches manifest + curation override + rocket mapping.

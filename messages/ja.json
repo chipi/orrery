@@ -232,6 +232,8 @@
   "credits_toc_label": "ソース",
   "credits_section_photos": "ニュース",
   "credits_section_text": "テキスト",
+  "credits_section_data": "データ・カタログ",
+  "credits_data_intro": "Orreryが実際の天体を3D空間に配置し、打ち上げカレンダーを構築するために取り込んでいる構造化された公開カタログ。各データセットはその利用規約に従って使用され、ここに引用されています。",
   "credits_count_photos": "{n}枚の写真",
   "credits_count_text": "{n}件のテキスト",
   "credits_used_on": "に使用されて",

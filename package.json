@@ -83,6 +83,7 @@
     "validate-data": "tsx scripts/validate-data-runner.ts",
     "validate-diagrams": "tsx scripts/validate-diagrams.ts",
     "build-science-index": "tsx scripts/build-science-index.ts",
+    "build-universe-stars": "tsx scripts/build-universe-stars.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs && cp -R docs/prototypes docs/.vitepress/dist/prototypes",
     "docs:preview": "vitepress preview docs",

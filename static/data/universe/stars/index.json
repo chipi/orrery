@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-14T06:35:53.581Z",
+  "script_version": "build-universe-stars@1.0.0",
+  "catalog": "HYG Database v4.1 (astronexus)",
+  "star_count": 109400,
+  "shells": [
+    {
+      "shell": 0,
+      "r_min_pc": 0,
+      "r_max_pc": 10,
+      "count": 318,
+      "file": "shell-000.json"
+    },
+    {
+      "shell": 1,
+      "r_min_pc": 10,
+      "r_max_pc": 25,
+      "count": 2733,
+      "file": "shell-001.json"
+    },
+    {
+      "shell": 2,
+      "r_min_pc": 25,
+      "r_max_pc": 50,
+      "count": 5696,
+      "file": "shell-002.json"
+    },
+    {
+      "shell": 3,
+      "r_min_pc": 50,
+      "r_max_pc": 100,
+      "count": 15938,
+      "file": "shell-003.json"
+    },
+    {
+      "shell": 4,
+      "r_min_pc": 100,
+      "r_max_pc": 250,
+      "count": 43641,
+      "file": "shell-004.json"
+    },
+    {
+      "shell": 5,
+      "r_min_pc": 250,
+      "r_max_pc": 500,
+      "count": 29445,
+      "file": "shell-005.json"
+    },
+    {
+      "shell": 6,
+      "r_min_pc": 500,
+      "r_max_pc": 1000,
+      "count": 11629,
+      "file": "shell-006.json"
+    },
+    {
+      "shell": 7,
+      "r_min_pc": 1000,
+      "r_max_pc": null,
+      "count": 0,
+      "file": "shell-007.json"
+    }
+  ]
+}

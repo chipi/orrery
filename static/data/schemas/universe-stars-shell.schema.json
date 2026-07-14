@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "universe-stars-shell.schema.json",
+  "title": "Universe star-field distance shell (PRD-030 / RFC-032, Slice 0)",
+  "description": "One distance shell of the tiled HYG star field. Each star is a compact tuple [x, y, z (parsecs, equatorial), apparent magnitude, B−V color index], sorted brightest-first so a prefix is the N-brightest LOD.",
+  "type": "object",
+  "required": ["shell", "r_min_pc", "r_max_pc", "count", "stars"],
+  "additionalProperties": false,
+  "properties": {
+    "shell": { "type": "integer", "minimum": 0 },
+    "r_min_pc": { "type": "number", "minimum": 0 },
+    "r_max_pc": { "type": ["number", "null"], "minimum": 0 },
+    "count": { "type": "integer", "minimum": 0 },
+    "stars": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "minItems": 5,
+        "maxItems": 5,
+        "items": { "type": "number" }
+      }
+    }
+  }
+}

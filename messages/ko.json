@@ -232,6 +232,8 @@
   "credits_toc_label": "이름 *",
   "credits_section_photos": "사진 갤러리",
   "credits_section_text": "이름 *",
+  "credits_section_data": "데이터 및 카탈로그",
+  "credits_data_intro": "Orrery가 실제 천체를 3D로 배치하고 발사 일정을 구성하기 위해 수집하는 구조화된 공개 카탈로그입니다. 모든 데이터셋은 명시된 라이선스에 따라 사용되며 여기에 인용됩니다.",
   "credits_count_photos": "{n}장의 사진",
   "credits_count_text": "{n}개의 텍스트 항목",
   "credits_used_on": "관련 제품",

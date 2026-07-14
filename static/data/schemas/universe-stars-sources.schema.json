@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "universe-stars-sources.schema.json",
+  "title": "Universe star-field provenance (PRD-030 / RFC-032, Slice 0)",
+  "description": "Provenance + license record for the tiled HYG star field. Mirrors the image-provenance envelope; consumed by validate-universe-stars and, later, the /credits page.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "script_version",
+    "dataset",
+    "catalog",
+    "source_url",
+    "license_short",
+    "license_url",
+    "license_rationale"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "script_version": { "type": "string", "minLength": 1 },
+    "dataset": { "type": "string", "minLength": 1 },
+    "catalog": { "type": "string", "minLength": 1 },
+    "catalog_version": { "type": "string" },
+    "source_url": { "type": "string", "format": "uri" },
+    "license_short": { "type": "string", "minLength": 2 },
+    "license_url": { "type": "string", "format": "uri" },
+    "license_rationale": { "type": "string", "minLength": 1 },
+    "derivation": { "type": "string" }
+  }
+}

@@ -19,11 +19,13 @@
     getTextSources,
     getAudioSourceProvenanceManifest,
     getBadgeProvenance,
+    getDataSources,
     type ImageProvenanceManifest,
     type SourceLogosManifest,
     type TextSourcesManifest,
     type AudioSourceProvenanceManifest,
     type BadgeProvenance,
+    type DataSourcesManifest,
   } from '$lib/data';
   import { groupBySource, pathToRouteKey, type CreditsGroup } from '$lib/credits-grouping';
   import { assetOrigin } from '$lib/asset-url';
@@ -34,6 +36,7 @@
   let textSources = $state<TextSourcesManifest | null>(null);
   let audioProv = $state<AudioSourceProvenanceManifest | null>(null);
   let badgeProv = $state<BadgeProvenance[] | null>(null);
+  let dataSources = $state<DataSourcesManifest | null>(null);
   let loaded = $state(false);
 
   // Audio narration / tour-script attribution moved to /colophon (it's our
@@ -45,12 +48,14 @@
       getTextSources(),
       getAudioSourceProvenanceManifest(),
       getBadgeProvenance(),
-    ]).then(([s, p, t, a, b]) => {
+      getDataSources(),
+    ]).then(([s, p, t, a, b, d]) => {
       logos = s;
       provenance = p;
       textSources = t;
       audioProv = a;
       badgeProv = b;
+      dataSources = d;
       loaded = true;
     });
   });
@@ -485,6 +490,39 @@
     </article>
   {/if}
 
+  <!-- Data & catalogues (PRD-030 / RFC-032) — the structured public datasets
+       Orrery ingests: star catalogues, launch catalogues, and more as they land.
+       Distinct from the per-image + per-text BoM above. -->
+  {#if dataSources && dataSources.entries.length > 0}
+    <article class="source-block data-block" id="src-data-catalogues">
+      <header class="head-row">
+        <h2>{m.credits_section_data()}</h2>
+      </header>
+      <p class="storage-blurb">{m.credits_data_intro()}</p>
+      <ul class="data-list">
+        {#each dataSources.entries as d (d.id)}
+          <li class="data-entry">
+            <p class="d-name">
+              <a href={d.source_url} target="_blank" rel="noopener noreferrer">{d.name}</a>
+              <span class="d-catalog">{d.catalog}</span>
+            </p>
+            <p class="d-desc">{d.description}</p>
+            <p class="d-row">
+              <span class="lbl">{m.credits_license_summary_label()}:</span>
+              <a href={d.license_url} target="_blank" rel="noopener noreferrer">{d.license_short}</a>
+              <span class="sep">·</span>
+              <span class="lbl">{m.credits_used_on()}:</span>
+              {#each d.used_on as route, i (i)}
+                {#if i > 0}<span class="sep">·</span>{/if}
+                <span>{routeLabel(route)}</span>
+              {/each}
+            </p>
+          </li>
+        {/each}
+      </ul>
+    </article>
+  {/if}
+
   <article class="storage-card" aria-labelledby="storage-title">
     <header class="head-row">
       <h3 id="storage-title">{m.credits_storage_heading()}</h3>
@@ -596,6 +634,65 @@
     color: inherit;
     text-decoration: underline;
   }
+  .data-list {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+  .data-entry {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+  }
+  .d-name {
+    margin: 0 0 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .d-name a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
+  }
+  .d-catalog {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .d-desc {
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 6px;
+  }
+  .d-row {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: baseline;
+  }
+  .d-row .lbl {
+    color: rgba(255, 255, 255, 0.35);
+  }
+  .d-row a {
+    color: #4ecdc4;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+  }
+
   .storage-card {
     margin-top: 32px;
     padding: 18px 20px;

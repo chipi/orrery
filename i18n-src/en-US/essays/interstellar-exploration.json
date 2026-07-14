@@ -27,6 +27,21 @@
       "md": "[Pioneer 10](/missions?id=pioneer-10) and [Pioneer 11](/missions?id=pioneer-11), the first spacecraft to cross the asteroid belt and survey Jupiter and Saturn, are also departing the solar system on hyperbolic trajectories. [New Horizons](/missions?id=new-horizons) is moving at around 14 km/s. None of them will approach another star within any timeframe that matters to the civilisation that launched them. The fastest things humanity has ever flung — the culmination of seven decades of rocket engineering and gravity-assist trajectory design — would need tens of thousands of years to cover the interstellar gap. When people say \"the stars are far away,\" they mean something more specific and more sobering than the phrase usually conveys: they mean that everything we have ever done to push a spacecraft faster has not moved the scale of interstellar travel by a single order of magnitude."
     },
     {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/voyagers-speed",
+      "kind": "diagram",
+      "caption": "Voyager 1, launched in 1977, is the fastest-receding object humanity has ever built — and at roughly seventeen kilometres a second it would still take on the order of 73,000 years to cross the distance to the nearest star. It isn’t even going there. Against interstellar distance, our fastest is a crawl.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/voyager-1/01",
+      "kind": "photo",
+      "caption": "Voyager 1 — now more than twenty-four billion kilometres out, the most distant object humans have ever made, and still, on any interstellar scale, barely out the door.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
       "type": "heading",
       "text": "What the rocket equation forbids"
     },
@@ -67,6 +82,13 @@
       "md": "Antimatter is the theoretical ceiling. Matter-antimatter annihilation is the most energetic process permitted by known physics, converting mass to energy at one hundred percent efficiency — compared to about 0.7% for nuclear fusion and a fraction of a percent for chemical combustion. An antimatter drive, if the annihilation could be directed efficiently, could in principle accelerate a spacecraft to a substantial fraction of c with a relatively modest fuel mass. The wall is production. The entire accumulated production of antimatter by particle accelerators worldwide — across all of human history — amounts to a few nanograms. A Daedalus-scale interstellar mission would require something like tens of thousands of tonnes of antimatter. The energy needed to produce that quantity would exceed the total energy output of human civilisation, multiplied by centuries. Antimatter propulsion is not a near-term engineering problem. It is a civilisational-scale energy problem."
     },
     {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/the-proposals",
+      "kind": "diagram",
+      "caption": "Three concepts survive honest scrutiny: a laser-pushed nanosail (Breakthrough Starshot) that could fly past a nearby star in decades, a fusion starship (Project Daedalus) the size of a building, and antimatter’s perfect but unmakeable fuel. None is forbidden by physics — all are forbidden by energy, distance, and patience.",
+      "align": "wide"
+    },
+    {
       "type": "heading",
       "text": "The message problem"
     },
@@ -81,6 +103,13 @@
     {
       "type": "prose",
       "md": "In the Breakthrough Starshot scenario, a gram-scale probe screams through the Proxima Centauri system at 20% of the speed of light in a matter of hours. Its sensors collect whatever they can in that window. The compressed data is then transmitted home at the speed of light, arriving 4.24 years later. There is no second pass. There is no follow-up instrument deployment, no orbit insertion, no surface mission, no ability to respond to a surprising finding with a new observation. This is the honest content of \"interstellar exploration\" at the only speed we know how to reach: a brief, unidirectional snapshot, transmitted home across years of silence, from a probe that cannot slow down and will never be heard from again."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/the-message",
+      "kind": "diagram",
+      "caption": "Even if a probe arrives, the news takes years to come home. At Proxima a signal is 4.24 years each way; a decades-long crossing yields a few hours of flyby data, then years more to hear it. Interstellar exploration is, above all, an exercise in patience.",
+      "align": "wide"
     },
     {
       "type": "heading",
@@ -105,6 +134,14 @@
     {
       "type": "prose",
       "md": "This is what \"the long view\" means when it faces outward past the heliopause. Not that we cannot go, but that going honestly requires holding the scale in your mind without flinching — the 73,000 years Voyager 1 would need, the gram-scale probe screaming through in hours, the great-great-grandchildren arriving at a star their ancestors pointed the ship toward. The nearest star is not a destination. It is a definition: of how far we have come, how far the physics still permits us to go, and how much of the distance between those two points we have not yet crossed."
+    },
+    {
+      "type": "figure",
+      "image": "missions/new-horizons/01",
+      "kind": "photo",
+      "caption": "New Horizons, which crossed nearly five billion kilometres to Pluto and on into the Kuiper Belt — the newest of our outbound craft, and a reminder that even our boldest deep-space missions are still voyages within the solar system’s own front garden.",
+      "align": "wide",
+      "credit": "NASA/JHUAPL/SwRI"
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "title": "The Habitable Zone",
+  "intro_sentence": "The band of orbits around a star where a rocky planet could hold liquid water on its surface — not too hot, not too cold.",
+  "narrative_101": [
+    "Water is liquid only over a narrow range of temperatures, and temperature falls off with distance from a star. So around every star there is a ring of orbits — the habitable zone — where an Earth-like planet could keep oceans rather than boiling or freezing them away.",
+    "The zone isn't fixed: a hot, bright star pushes it far out; a dim red dwarf pulls it in close. That's why habitable-zone planets around red dwarfs orbit in days, tucked right up against their stars.",
+    "'Habitable zone' is a hopeful shorthand, not a promise. A world there could still be an airless rock or a runaway greenhouse — location is necessary, not sufficient."
+  ],
+  "body_paragraphs": [
+    "The circumstellar habitable zone is defined by stellar flux: the inner edge is where a runaway greenhouse would boil the oceans (Venus's fate), the outer edge where even a strong carbon-dioxide greenhouse can't stop global freezing (beyond Mars). Its distance scales with the square root of the star's luminosity, so it sits far from bright stars and close to faint ones.",
+    "Because small red dwarfs are by far the most common stars, most known habitable-zone planets orbit them — worlds like TOI-700 d and several of the TRAPPIST-1 planets. Their tight orbits bring complications: tidal locking and exposure to stellar flares that can strip an atmosphere.",
+    "The habitable zone is a first filter, not a verdict. Whether any of these worlds is actually habitable depends on things the zone can't tell us — an atmosphere, water, a magnetic field — which is why the frontier has moved to reading their air."
+  ],
+  "diagram_caption": "The habitable zone (shaded) — orbits where a rocky planet could hold liquid water; inward is too hot, outward too cold."
+}

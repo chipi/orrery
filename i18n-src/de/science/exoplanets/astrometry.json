@@ -1,0 +1,15 @@
+{
+  "title": "Astrometrie",
+  "intro_sentence": "Verfolgt man die genaue Position eines Sterns am Himmel, sieht man ihn eine winzige Schleife beschreiben, während ein unsichtbarer Planet ihn um ihren gemeinsamen Massenschwerpunkt schwingt.",
+  "narrative_101": [
+    "Die Radialgeschwindigkeit erfasst die Bewegung des Sterns auf uns zu und von uns weg. Die Astrometrie erfasst die andere Komponente — das seitliche Taumeln des Sterns über den Himmel, während ein Planet ihn herumzieht.",
+    "Die Schleife, die der Stern beschreibt, ist fantastisch klein und wird in Millionstel Grad gemessen, weshalb die Astrometrie lange Zeit der große Beinahe-Erfolg der Planetenjagd war: über Jahrzehnte versprochen, wenig geliefert, weil die Präzision einfach nicht vorhanden war.",
+    "Weltraum-Astrometrie hat das verändert. Die Gaia-Mission der ESA hat die Positionen von fast zwei Milliarden Sternen mit der Präzision kartiert, die nötig ist, um den Zug eines riesigen Planeten zu spüren — und beginnt nun, Planeten aus diesen Taumelbewegungen zu ernten."
+  ],
+  "body_paragraphs": [
+    "Die Astrometrie misst die periodische Verschiebung eines Sterns in der Himmelsebene, während er den Massenschwerpunkt des Systems umkreist. Im Gegensatz zur Radialgeschwindigkeit erfasst sie die vollständige Umlaufbahn unabhängig von ihrer Ausrichtung, liefert also eine echte Masse (nicht nur eine Untergrenze) und funktioniert gut für Planeten auf weiten Umlaufbahnen, wo das astrometrische Signal wächst.",
+    "Historisch gesehen produzierte sie mehr Rücknahmen als Planeten — Barnards Stern ist die klassische Warnung, seine berühmten ‚Planeten' aus der Astrometrie der 1960er Jahre waren alle unecht. Das Signal ist einfach winzig, und instrumentelle Drift täuscht es leicht vor.",
+    "Gaias Ganzhimmel-Hochpräzisions-Astrometrie liefert nun echte Entdeckungen und, entscheidend, echte Massen für Planeten, die durch andere Methoden gefunden wurden — und schließt damit ein Kapitel, das fast ein Jahrhundert lang offen blieb."
+  ],
+  "diagram_caption": "Der Stern beschreibt eine kleine Schleife am Himmel, während ein unsichtbarer Planet ihn um ihren gemeinsamen Massenschwerpunkt schwingt."
+}

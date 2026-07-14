@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Transit-timing variations: in a multi-planet system, gravitational tugs make transits arrive early or late relative to a strict clock.">
+  <style>
+    .stroke{stroke:rgba(255,255,255,0.85);stroke-width:1.5;fill:none}
+    .dashed{stroke:rgba(255,255,255,0.3);stroke-width:1;stroke-dasharray:4 3;fill:none}
+    .accent{stroke:#4ecdc4;stroke-width:2.4;fill:none}
+    .accentf{fill:#4ecdc4}
+    .star{fill:#ffc850;stroke:#ffc850;stroke-width:1}
+    .body{fill:rgba(255,255,255,0.95)}
+    .blue{fill:#5b8dd9;stroke:#5b8dd9}
+    .red{fill:#d95b6b;stroke:#d95b6b}
+    .label{fill:rgba(255,255,255,0.85);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}
+    .laccent{fill:#4ecdc4;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}
+    .lgold{fill:#ffc850;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}
+  </style>
+  <text class="label" x="300" y="26" text-anchor="middle">TRANSIT-TIMING VARIATIONS</text>
+  <line class="dashed" x1="50" y1="120" x2="560" y2="120"/>
+  <text class="label" x="50" y="106">expected (clockwork):</text>
+  <line class="dashed" x1="110" y1="110" x2="110" y2="130"/>
+  <line class="dashed" x1="210" y1="110" x2="210" y2="130"/>
+  <line class="dashed" x1="310" y1="110" x2="310" y2="130"/>
+  <line class="dashed" x1="410" y1="110" x2="410" y2="130"/>
+  <line class="dashed" x1="510" y1="110" x2="510" y2="130"/>
+  <line class="stroke" x1="50" y1="220" x2="560" y2="220"/>
+  <text class="label" x="50" y="206">observed (perturbed):</text>
+  <line class="accent" x1="98" y1="210" x2="98" y2="230"/>
+  <line class="accent" x1="222" y1="210" x2="222" y2="230"/>
+  <line class="accent" x1="300" y1="210" x2="300" y2="230"/>
+  <line class="accent" x1="424" y1="210" x2="424" y2="230"/>
+  <line class="accent" x1="498" y1="210" x2="498" y2="230"/>
+  <path class="laccent" d="M110 250 L98 250" stroke="#4ecdc4"/><path class="accent" d="M98 246 l-6 4 l6 4 z" fill="#4ecdc4"/><text class="laccent" x="104" y="270" text-anchor="middle">early</text>
+  <path class="laccent" d="M210 250 L222 250" stroke="#4ecdc4"/><path class="accent" d="M222 246 l6 4 l-6 4 z" fill="#4ecdc4"/><text class="laccent" x="216" y="270" text-anchor="middle">late</text>
+  <path class="laccent" d="M410 250 L424 250" stroke="#4ecdc4"/><path class="accent" d="M424 246 l6 4 l-6 4 z" fill="#4ecdc4"/><text class="laccent" x="417" y="270" text-anchor="middle">late</text>
+  <text class="label" x="300" y="300" text-anchor="middle">drift pattern encodes the planets' masses</text>
+</svg>

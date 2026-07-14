@@ -1,0 +1,14 @@
+{
+  "title": "Lectura de Atmósferas de Exoplanetas",
+  "intro_sentence": "Durante un tránsito, una franja de luz estelar se filtra a través del aire de un planeta y transporta las huellas de sus gases de vuelta a nosotros.",
+  "narrative_101": [
+    "No puedes aterrizar en un exoplaneta, pero puedes probar su atmósfera desde años luz de distancia. Cuando un planeta transita, un fino anillo de luz estelar atraviesa la atmósfera en su camino hacia nosotros, y cada gas absorbe su propio conjunto de colores.",
+    "Divide esa luz en un espectro y los colores ausentes revelan de qué está hecho el aire: agua, dióxido de carbono, metano, sodio. Esto es espectroscopía de transmisión, y el James Webb Space Telescope fue construido para ello.",
+    "Hasta ahora, JWST ha detectado dióxido de carbono y otras moléculas en planetas gigantes, y ha comenzado la tarea mucho más difícil de probar si los pequeños mundos rocosos alrededor de enanas rojas tienen alguna atmósfera."
+  ],
+  "body_paragraphs": [
+    "La espectroscopía de transmisión mide cómo la atmósfera de un planeta absorbe la luz estelar durante el tránsito, longitud de onda por longitud de onda, revelando su composición. La espectroscopía de emisión —capturando el resplandor térmico propio del planeta justo antes de que se deslice detrás de la estrella— añade estructura de temperatura. Juntas convierten un planeta en tránsito en un mundo con un cielo mensurable.",
+    "JWST ha empujado el campo desde gigantes calientes hasta el borde de las atmósferas de mundos rocosos: detecciones claras de dióxido de carbono en planetas gaseosos, y búsquedas sensibles alrededor de TRAPPIST-1 que hasta ahora sugieren que sus planetas más internos carecen en gran medida de aire. Las erupciones de enanas rojas dificultan mantener una atmósfera, y ese veredicto es exactamente lo que estas observaciones prueban.",
+    "El objetivo a largo plazo es un planeta rocoso en la zona habitable de una estrella similar al Sol cuya atmósfera pueda ser examinada en busca de los gases que la vida podría producir: el puente técnico entre encontrar mundos y caracterizarlos."
+  ]
+}

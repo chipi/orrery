@@ -1,0 +1,15 @@
+{
+  "title": "Imagerie directe",
+  "intro_sentence": "Masquez l'éclat écrasant de l'étoile et, pour quelques planètes chanceuses, vous pouvez photographier le faible point lumineux à côté d'elle.",
+  "narrative_101": [
+    "La plupart des exoplanètes sont détectées indirectement, par leur effet sur leur étoile. L'imagerie directe fait exception — elle capture des photons réels provenant de la planète elle-même, une véritable image d'un autre monde.",
+    "Le problème est le contraste. Une planète peut être un milliard de fois plus faible que son étoile et se trouve juste à côté d'elle, comme repérer une luciole à côté d'un phare. La technique cache donc l'étoile derrière un masque — un coronographe à l'intérieur du télescope, ou un écran stellaire distant en vol libre — et laisse passer la lumière de la planète.",
+    "Cela fonctionne mieux pour les planètes les plus difficiles à trouver par d'autres moyens : des mondes jeunes, chauds, massifs sur des orbites larges, brillant encore de la chaleur de leur formation."
+  ],
+  "body_paragraphs": [
+    "L'imagerie directe bloque ou annule la lumière stellaire (avec un coronographe ou un interféromètre) pour révéler des planètes et des disques qui seraient autrement perdus dans l'éclat. Parce qu'elle détecte la propre lumière de la planète, elle permet uniquement la spectroscopie du monde en isolation — une lecture directe de sa température et de son atmosphère.",
+    "Son biais est l'image miroir des autres : elle favorise les grandes planètes auto-lumineuses loin de leurs étoiles (les orbites larges atténuent le problème de contraste, et la jeunesse maintient la planète chaude et brillante). Des systèmes comme HR 8799 — quatre planètes géantes imagées simultanément — et l'anneau de débris sculpté de Fomalhaut en sont des exemples remarquables.",
+    "La méthode pilote la prochaine génération d'instruments phares, dont l'objectif est d'imager et d'obtenir le spectre d'une planète rocheuse dans la zone habitable d'une étoile semblable au Soleil — et de rechercher dans son atmosphère des signes de vie."
+  ],
+  "diagram_caption": "Un coronographe masque l'éclat de l'étoile pour que la planète faible et proche devienne visible."
+}

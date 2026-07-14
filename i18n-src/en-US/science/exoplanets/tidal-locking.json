@@ -1,0 +1,14 @@
+{
+  "title": "Tidal Locking",
+  "intro_sentence": "Planets orbiting close to small stars often keep one face turned toward the star forever — permanent day on one side, permanent night on the other.",
+  "narrative_101": [
+    "The Moon does it to Earth: it keeps one face toward us always, because tides have synchronised its spin to its orbit. The same thing happens to planets that hug their stars.",
+    "For a rocky world in the habitable zone of a red dwarf — orbiting in days, tucked in close — tidal locking is almost inevitable. One hemisphere bakes in endless daylight; the other freezes in endless night; a ring of perpetual twilight runs between.",
+    "It sounds hostile, but it isn't necessarily fatal to life. A thick atmosphere or an ocean can carry heat around the planet and even out the extremes — one of the big open questions for red-dwarf habitability."
+  ],
+  "body_paragraphs": [
+    "Tidal locking (spin-orbit synchronisation) arises when a star's tidal pull brakes a close-in planet's rotation until its day equals its year. Because the effect strengthens sharply with proximity, essentially every rocky planet in a red dwarf's habitable zone is expected to be locked or in a related resonant spin state.",
+    "The consequence is an extreme, permanent temperature contrast between the substellar 'eye' and the antistellar night side. Whether that's habitable depends on heat transport: climate models show a sufficiently thick atmosphere or a global ocean can redistribute warmth and keep the terminator — or even much of the night side — temperate.",
+    "Since red dwarfs host most of the galaxy's habitable-zone real estate, the fate of tidally locked worlds like Proxima b is central to whether the most common habitable zones are actually habitable."
+  ]
+}

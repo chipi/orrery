@@ -1,0 +1,15 @@
+{
+  "title": "Variações no Tempo de Trânsito",
+  "intro_sentence": "Em um sistema populoso, planetas puxam uns aos outros e chegam cedo ou tarde; a deriva nos tempos de trânsito revela mundos invisíveis e pesa aqueles que vemos.",
+  "narrative_101": [
+    "Um planeta em trânsito solitário chega como um relógio — mesmo intervalo, a cada órbita. Mas coloque vários planetas em um sistema e sua gravidade mútua empurra uns aos outros, fazendo com que os trânsitos avancem ou atrasem um pouco em um padrão repetitivo.",
+    "Essas derivas de poucos minutos são uma assinatura gravitacional. Modele-as e você pode pesar os planetas apenas por seus puxões — sem necessidade de espectrógrafo — e às vezes inferir um planeta que nunca transita, sentido apenas por sua atração sobre os outros.",
+    "Foi assim que os sete pequenos mundos de TRAPPIST-1 foram pesados: fracos demais para velocidade radial, suas massas vieram da maneira como eles apressam e atrasam uns aos outros através da estrela."
+  ],
+  "body_paragraphs": [
+    "Variações no tempo de trânsito (TTVs) exploram as interações gravitacionais entre planetas no mesmo sistema. Um planeta perfeitamente isolado transita com um período constante; planetas que interagem mostram desvios periódicos cuja amplitude e padrão codificam as massas e órbitas dos planetas.",
+    "TTVs brilham exatamente onde a velocidade radial tem dificuldades — ao redor de estrelas pequenas e fracas cujo bambolear Doppler está enterrado no ruído — e podem revelar planetas que não transitam apenas por sua influência. São mais sensíveis perto de ressonâncias orbitais, onde encontros próximos repetidos amplificam os puxões.",
+    "As massas obtidas pelo método complementam os raios de trânsito para fornecer densidades, razão pela qual sistemas ressonantes compactos como TRAPPIST-1 e as cadeias multiplanetárias de Kepler são tão bem caracterizados apesar de orbitarem estrelas fracas."
+  ],
+  "diagram_caption": "Puxões gravitacionais mútuos fazem os trânsitos chegarem cedo ou tarde; o padrão de deriva codifica as massas dos planetas."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Astrometria",
+  "intro_sentence": "Rastreie a posição exata de uma estrela no céu e você poderá vê-la traçar um pequeno loop à medida que um planeta invisível a balança em torno do centro de massa comum.",
+  "narrative_101": [
+    "A velocidade radial captura o movimento da estrela em nossa direção e se afastando de nós. A astrometria captura o outro componente — o balanço lateral da estrela através do céu à medida que um planeta a puxa ao redor.",
+    "O loop que a estrela traça é fantasticamente pequeno, medido em milionésimos de grau, razão pela qual a astrometria foi por muito tempo a grande quase-descoberta da caça a planetas: prometida por décadas, entregando pouco, porque a precisão simplesmente não estava lá.",
+    "A astrometria espacial mudou isso. A missão Gaia da ESA mapeou as posições de quase dois bilhões de estrelas com a precisão necessária para sentir o puxão de um planeta gigante — e está começando a colher planetas desses balanços."
+  ],
+  "body_paragraphs": [
+    "A astrometria mede o deslocamento periódico de uma estrela no plano do céu à medida que ela orbita o centro de massa do sistema. Ao contrário da velocidade radial, ela detecta a órbita completa independentemente da orientação, então fornece uma massa verdadeira (não apenas um limite inferior) e funciona bem para planetas em órbitas amplas, onde o sinal astrométrico cresce.",
+    "Historicamente produziu mais retratações do que planetas — a Estrela de Barnard é o conto de advertência clássico, seus famosos 'planetas' da astrometria dos anos 1960 todos espúrios. O sinal é simplesmente minúsculo, e a deriva instrumental facilmente o simula.",
+    "A astrometria de alta precisão em todo o céu da Gaia está agora fornecendo detecções genuínas e, crucialmente, massas verdadeiras para planetas encontrados por outros métodos — fechando um capítulo que permaneceu aberto durante a maior parte de um século."
+  ],
+  "diagram_caption": "A estrela traça um pequeno loop no céu à medida que um planeta invisível a balança em torno do centro de massa comum."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "El método del tránsito",
+  "intro_sentence": "Cuando un planeta cruza por delante de su estrella, bloquea una porción de luz; esa caída periódica en el brillo revela el planeta y mide su tamaño.",
+  "narrative_101": [
+    "Si la órbita de un planeta se encuentra de canto hacia nosotros, una vez por órbita pasa directamente entre nosotros y su estrella —un tránsito— y la estrella se atenúa por una fracción diminuta y precisa mientras el planeta está por delante.",
+    "La profundidad de esa caída es simplemente la relación de áreas: un planeta más grande bloquea más luz. Una Tierra cruzando el Sol lo atenúa en aproximadamente una parte entre diez mil; un Júpiter, en un uno por ciento. Capta las caídas repitiéndose con regularidad y tendrás el tamaño del planeta y su periodo orbital.",
+    "Solo una pequeña fracción de sistemas están alineados para que podamos ver tránsitos, pero si observas suficientes estrellas los números ganan. Eso es exactamente lo que hicieron las misiones Kepler y TESS de la NASA desde el espacio, observando cientos de miles de estrellas a la vez."
+  ],
+  "body_paragraphs": [
+    "La fotometría de tránsito es, con diferencia, el método más productivo, responsable de la gran mayoría de exoplanetas conocidos. Mide el radio de un planeta directamente (a partir de la caída fraccional en la luz estelar) y su periodo orbital (a partir del espaciamiento de las caídas); combinado con una masa por velocidad radial, produce una densidad media.",
+    "Su sesgo es geométrico —solo capta la minoría de sistemas cuyas órbitas vemos casi de canto— y favorece planetas grandes en periodos cortos, que transitan con más frecuencia y más profundidad. Los falsos positivos procedentes de binarias eclipsantes y actividad estelar hacen que los tránsitos se confirmen habitualmente con un segundo método.",
+    "Más allá del descubrimiento, un tránsito es una puerta al aire de un planeta: durante el cruce, un fino anillo de luz estelar se filtra a través de la atmósfera del planeta e imprime las huellas de sus gases —la técnica que el James Webb Space Telescope utiliza ahora para olfatear los cielos de exoplanetas."
+  ],
+  "diagram_caption": "Mientras el planeta cruza el disco de la estrella, el brillo medido cae por la relación de sus áreas y luego se recupera."
+}

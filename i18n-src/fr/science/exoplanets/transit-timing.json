@@ -1,0 +1,15 @@
+{
+  "title": "Variations du temps de transit",
+  "intro_sentence": "Dans un système bondé, les planètes s'attirent mutuellement et arrivent en avance ou en retard ; la dérive des temps de transit révèle des mondes invisibles et pèse ceux que nous voyons.",
+  "narrative_101": [
+    "Une planète en transit solitaire arrive comme une horloge — même intervalle, à chaque orbite. Mais placez plusieurs planètes dans un même système et leur gravité mutuelle les pousse l'une l'autre, si bien que les transits surviennent un peu en avance ou un peu en retard selon un schéma répétitif.",
+    "Ces dérives de quelques minutes sont une signature gravitationnelle. Modélisez-les et vous pouvez peser les planètes uniquement à partir de leurs attractions — sans spectrographe nécessaire — et parfois déduire une planète qui ne transite jamais du tout, détectée seulement par son attraction sur les autres.",
+    "C'est ainsi que les sept petits mondes de TRAPPIST-1 ont été pesés : trop faibles pour la vélocimétrie radiale, leurs masses proviennent de la façon dont ils se pressent et se retardent mutuellement devant l'étoile."
+  ],
+  "body_paragraphs": [
+    "Les variations du temps de transit (TTVs) exploitent les interactions gravitationnelles entre planètes d'un même système. Une planète parfaitement isolée transite avec une période constante ; les planètes en interaction montrent des déviations périodiques dont l'amplitude et le schéma encodent les masses et les orbites des planètes.",
+    "Les TTVs brillent exactement là où la vélocimétrie radiale peine — autour d'étoiles faibles et petites dont l'oscillation Doppler est noyée dans le bruit — et elles peuvent révéler des planètes non-transitantes par leur seule influence. Elles sont plus sensibles près des résonances orbitales, où des rencontres rapprochées répétées amplifient les attractions.",
+    "Les masses obtenues par cette méthode complètent les rayons de transit pour donner les densités, ce qui explique pourquoi les systèmes compacts en résonance comme TRAPPIST-1 et les chaînes multiplanétaires de Kepler sont si bien caractérisés malgré qu'ils orbitent des étoiles faibles."
+  ],
+  "diagram_caption": "Les attractions gravitationnelles mutuelles font arriver les transits en avance ou en retard ; le schéma de dérive encode les masses des planètes."
+}

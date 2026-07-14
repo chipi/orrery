@@ -64,11 +64,13 @@
     getExoplanetSystems,
     getExoplanetSystem,
     getExoplanetI18n,
+    getCultureDoors,
     type NamedStar,
     type LocalizedNamedStar,
     type ExoplanetPlanet,
     type ExoplanetSystem,
     type ExoplanetOverlay,
+    type LocalizedCultureDoor,
   } from '$lib/data';
   import StarPanel from '$lib/components/StarPanel.svelte';
   import ExoplanetPanel from '$lib/components/ExoplanetPanel.svelte';
@@ -899,6 +901,12 @@
   let crossingFlashId = $state(0);
   // Constellation-line overlay toggle (neighborhood only).
   let showConstellations = $state(false);
+  // Slice 3 — optional "culture layer" (off by default): badged fiction / message
+  // story cards on objects that have them. Doors are fetched on selection; the
+  // panels show them only while this is on.
+  let showCulture = $state(false);
+  let starCultureDoors = $state<LocalizedCultureDoor[]>([]);
+  let exoCultureDoors = $state<LocalizedCultureDoor[]>([]);
   let setConstellationsFn: ((on: boolean) => void) | null = null;
   // Named-star index (search + list) open state.
   let starIndexOpen = $state(false);
@@ -2967,6 +2975,10 @@
           selectedExoplanet = { ...selectedExoplanet, overlay };
         }
       });
+      exoCultureDoors = [];
+      void getCultureDoors(planetId, getLocale(), fetch).then((d) => {
+        if (selectedExoplanet?.planet.id === forId) exoCultureDoors = d;
+      });
     }
     closeExoplanetFn = () => {
       panelState.exoplanet = false;
@@ -2991,6 +3003,10 @@
       if (!base) return;
       cue('select');
       selectedStarId = id;
+      starCultureDoors = [];
+      void getCultureDoors(id, getLocale(), fetch).then((d) => {
+        if (selectedStarId === id) starCultureDoors = d;
+      });
       panelState.star = true;
       panelState.planet = false;
       panelState.sun = false;
@@ -5079,6 +5095,15 @@
       >
         {m.explore_constellations_toggle()}
       </button>
+      <button
+        type="button"
+        class="nb-chip"
+        class:active={showCulture}
+        aria-pressed={showCulture}
+        onclick={() => (showCulture = !showCulture)}
+      >
+        {m.explore_culture_toggle()}
+      </button>
     </div>
     <StarIndex
       stars={namedStars}
@@ -5831,6 +5856,7 @@
   open={panelState.star}
   hasSystem={selectedStarId ? exoplanetHostIds.has(selectedStarId) : false}
   onEnterSystem={() => selectedStarId && enterSystemFn?.(selectedStarId)}
+  cultureDoors={showCulture ? starCultureDoors : []}
   onClose={() => closeStarFn?.()}
 />
 
@@ -5838,6 +5864,7 @@
   planet={selectedExoplanet?.planet ?? null}
   hostName={selectedExoplanet?.hostName ?? ''}
   overlay={selectedExoplanet?.overlay ?? null}
+  cultureDoors={showCulture ? exoCultureDoors : []}
   open={panelState.exoplanet}
   onClose={() => closeExoplanetFn?.()}
 />

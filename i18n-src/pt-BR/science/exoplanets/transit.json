@@ -1,0 +1,15 @@
+{
+  "title": "O Método de Trânsito",
+  "intro_sentence": "Quando um planeta cruza na frente de sua estrela, ele bloqueia uma fração da luz; essa queda periódica no brilho revela o planeta e mede seu tamanho.",
+  "narrative_101": [
+    "Se a órbita de um planeta está alinhada lateralmente em relação a nós, uma vez por órbita ele passa diretamente entre nós e sua estrela — um trânsito — e a estrela escurece por uma fração minúscula e precisa enquanto o planeta está à frente.",
+    "A profundidade dessa queda é apenas a razão entre as áreas: um planeta maior bloqueia mais luz. Uma Terra cruzando o Sol o escurece em cerca de uma parte em dez mil; um Júpiter, em um por cento. Capture as quedas se repetindo como um relógio e você tem o tamanho do planeta e seu período orbital.",
+    "Apenas uma pequena fração dos sistemas está alinhada para que possamos ver trânsitos — mas observe estrelas suficientes e os números vencem. Isso é exatamente o que as missões Kepler e TESS da NASA fizeram, do espaço, observando centenas de milhares de estrelas de uma vez."
+  ],
+  "body_paragraphs": [
+    "A fotometria de trânsito é o método mais produtivo de longe, responsável pela grande maioria dos exoplanetas conhecidos. Ela mede o raio de um planeta diretamente (a partir da queda fracionária na luz estelar) e seu período orbital (a partir do espaçamento das quedas); combinado com uma massa por velocidade radial, ela fornece uma densidade média.",
+    "Seu viés é geométrico — ela só captura a minoria de sistemas cujas órbitas vemos quase de lado — e favorece planetas grandes em períodos curtos, que transitam com mais frequência e mais profundamente. Falsos positivos de binárias eclipsantes e atividade estelar significam que os trânsitos geralmente são confirmados por um segundo método.",
+    "Além da descoberta, um trânsito é uma porta para a atmosfera de um planeta: durante a travessia, um fino anel de luz estelar filtra através da atmosfera do planeta e imprime as impressões digitais de seus gases — a técnica que o James Webb Space Telescope agora usa para farejar os céus de exoplanetas."
+  ],
+  "diagram_caption": "À medida que o planeta cruza o disco da estrela, o brilho medido cai pela razão de suas áreas e depois se recupera."
+}

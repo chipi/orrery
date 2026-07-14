@@ -1,0 +1,24 @@
+{
+  "id": "proxima-system",
+  "tab": "exoplanets",
+  "order": 16,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "query": "?system=proxima-centauri",
+      "context_key": "Proxima Centauri — the nearest star and its planets"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Proxima Centauri b",
+      "u": "https://en.wikipedia.org/wiki/Proxima_Centauri_b",
+      "t": "intro"
+    },
+    {
+      "l": "Breakthrough Starshot",
+      "u": "https://breakthroughinitiatives.org/initiative/3",
+      "t": "deep"
+    }
+  ]
+}

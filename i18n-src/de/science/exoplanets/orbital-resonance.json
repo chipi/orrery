@@ -1,0 +1,15 @@
+{
+  "title": "Bahnresonanz",
+  "intro_sentence": "Wenn die Umlaufzeiten von Planeten einfache ganzzahlige Verhältnisse bilden, verriegeln ihre wiederholten Ausrichtungen das System in einem selbstverstärkenden Rhythmus.",
+  "narrative_101": [
+    "Falls ein Planet genau zweimal umläuft, während sein Nachbar einmal umläuft, reihen sich die beiden immer wieder an derselben Stelle auf, und ihre gravitativen Anstöße summieren sich, anstatt sich herauszumitteln. Das ist eine Resonanz — eine rhythmische Verriegelung zwischen Bahnen.",
+    "TRAPPIST-1 ist das Paradebeispiel: seine sieben Planeten sitzen in einer nahezu ununterbrochenen Kette von Resonanzen, jede Periode ein ordentliches Vielfaches der nächsten. Beschleunigt man das System, würden die Ausrichtungen tatsächlich eine musikalische Tonleiter erklingen lassen.",
+    "Resonanzen sind Fußabdrücke davon, wie sich ein System gebildet hat — sie entstehen, wenn Planeten gemeinsam durch die Entstehungsscheibe nach innen wandern und sich gegenseitig im Gleichschritt einfangen."
+  ],
+  "body_paragraphs": [
+    "Eine Bahnresonanz tritt auf, wenn umlaufende Körper regelmäßigen, periodischen gravitativen Einfluss aufeinander ausüben, üblicherweise weil ihre Perioden im Verhältnis kleiner ganzer Zahlen stehen. Resonanzen können ein dicht gepacktes System stabilisieren, indem sie Planeten in einem verriegelten Muster halten, oder es destabilisieren, indem sie Exzentrizitäten hochtreiben.",
+    "Ketten von Resonanzen, wie die von TRAPPIST-1, sind starke Belege für konvergente Migration: Planeten, die weiter außen entstehen und durch die Gasscheibe nach innen driften, werden nacheinander in Resonanzen gefangen, während sie wandern. Die empfindliche Anordnung macht auch die gegenseitigen Zerrungen der Planeten als Transit-Timing-Variationen messbar, und so wurden ihre Massen bestimmt.",
+    "Resonanz ist eine Brücke zwischen dem gegenwärtigen Rhythmus eines Systems und seiner tiefen Vergangenheit — die Bahnen tragen noch immer die Erinnerung daran, wie sie sich zusammengefügt haben."
+  ],
+  "diagram_caption": "Planeten in nahezu ganzzahligen Periodenverhältnissen reihen sich wiederholt auf, sodass sich ihre gravitativen Anstöße verstärken."
+}

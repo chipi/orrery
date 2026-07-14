@@ -14,6 +14,9 @@ export type ScienceTabId =
   // PRD-024 — planet-level body science. Hosts the articles that pair
   // with PRD-023's /explore lens annotations + always-on overlays.
   | 'planets'
+  // RFC-032 §7 S3 — exoplanet science wing: detection methods, habitable zones,
+  // and known systems, paired with the /explore v2 BodyScenes.
+  | 'exoplanets'
   // v0.6.3 — curated companion lists (issue #128 + #129). Standalone
   // pages (no sections); the rail's tab card links straight to
   // /science/reading-list and /science/watch-list. Layout's
@@ -39,6 +42,9 @@ export interface SeeInApp {
     | '/mars'
     | '/iss'
     | '/tiangong';
+  /** Optional query string appended to the route (e.g. `?system=trappist-1`), so a
+   *  section can deep-link into a specific /explore BodyScene. */
+  query?: string;
   context_key: string;
 }
 

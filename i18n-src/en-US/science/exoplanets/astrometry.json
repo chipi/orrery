@@ -1,0 +1,15 @@
+{
+  "title": "Astrometry",
+  "intro_sentence": "Track a star's exact position on the sky and you can see it trace a tiny loop as an unseen planet swings it around their shared centre of mass.",
+  "narrative_101": [
+    "Radial velocity catches the star moving toward and away from us. Astrometry catches the other component — the star's side-to-side wobble across the sky as a planet pulls it around.",
+    "The loop the star traces is fantastically small, measured in millionths of a degree, which is why astrometry was long the great near-miss of planet hunting: promised for decades, delivering little, because the precision simply wasn't there.",
+    "Space astrometry has changed that. ESA's Gaia mission has mapped the positions of nearly two billion stars with the precision needed to feel a giant planet's tug — and is beginning to harvest planets from those wobbles."
+  ],
+  "body_paragraphs": [
+    "Astrometry measures a star's periodic displacement on the plane of the sky as it orbits the system's centre of mass. Unlike radial velocity, it senses the full orbit regardless of orientation, so it yields a true mass (not just a lower bound) and works well for planets on wide orbits, where the astrometric signal grows.",
+    "Historically it produced more retractions than planets — Barnard's Star is the classic cautionary tale, its famous 'planets' from 1960s astrometry all spurious. The signal is simply tiny, and instrumental drift easily fakes it.",
+    "Gaia's all-sky, high-precision astrometry is now delivering genuine detections and, crucially, true masses for planets found by other methods — closing a chapter that stayed open for most of a century."
+  ],
+  "diagram_caption": "The star traces a small loop on the sky as an unseen planet swings it around their common centre of mass."
+}

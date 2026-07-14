@@ -1,0 +1,15 @@
+{
+  "title": "Direkte Abbildung",
+  "intro_sentence": "Blende das überwältigende Licht des Sterns aus, und bei einigen wenigen glücklichen Planeten kannst du den schwachen Lichtpunkt daneben fotografieren.",
+  "narrative_101": [
+    "Die meisten Exoplaneten werden indirekt gefunden, durch ihre Wirkung auf ihren Stern. Die direkte Abbildung ist die Ausnahme — sie erfasst tatsächliche Photonen vom Planeten selbst, ein echtes Bild einer anderen Welt.",
+    "Das Problem ist der Kontrast. Ein Planet kann eine Milliarde Mal lichtschwächer sein als sein Stern und befindet sich direkt daneben, wie ein Glühwürmchen neben einem Leuchtturm zu entdecken. Daher verbirgt die Technik den Stern hinter einer Maske — einem Koronografen im Teleskop oder einem entfernten, frei fliegenden Starshade — und lässt das Licht des Planeten durch.",
+    "Sie funktioniert am besten für die Planeten, die mit anderen Methoden am schwersten zu finden sind: junge, heiße, massereiche Welten auf weiten Umlaufbahnen, die noch mit der Hitze ihrer Entstehung glühen."
+  ],
+  "body_paragraphs": [
+    "Die direkte Abbildung blockiert oder nullt das Sternenlicht (mit einem Koronografen oder Interferometer), um Planeten und Scheiben sichtbar zu machen, die sonst im Glanz verloren gingen. Da sie das eigene Licht des Planeten erfasst, ermöglicht sie einzigartig die Spektroskopie der Welt in Isolation — eine direkte Aussage über ihre Temperatur und Atmosphäre.",
+    "Ihre Verzerrung ist das Spiegelbild der anderen: Sie bevorzugt große, selbstleuchtende Planeten weit von ihren Sternen entfernt (weite Umlaufbahnen erleichtern das Kontrastproblem, und Jugend hält den Planeten heiß und hell). Systeme wie HR 8799 — vier Riesenplaneten auf einmal abgebildet — und der skulptierte Trümmerring von Fomalhaut sind Vorzeigeobjekte.",
+    "Die Methode treibt die nächste Generation von Flaggschiff-Instrumenten voran, deren Ziel es ist, einen Gesteinsplaneten in der habitablen Zone eines sonnenähnlichen Sterns abzubilden und sein Spektrum aufzunehmen — und seine Atmosphäre nach Anzeichen von Leben zu durchsuchen."
+  ],
+  "diagram_caption": "Ein Koronograf maskiert das Licht des Sterns, sodass der schwache, nahe Planet sichtbar wird."
+}

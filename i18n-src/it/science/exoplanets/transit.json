@@ -1,0 +1,15 @@
+{
+  "title": "Il metodo del transito",
+  "intro_sentence": "Quando un pianeta attraversa davanti alla sua stella, blocca una piccola frazione di luce; quel calo periodico di luminosità rivela il pianeta e ne misura le dimensioni.",
+  "narrative_101": [
+    "Se l'orbita di un pianeta risulta essere di taglio rispetto a noi, una volta per orbita passa direttamente tra noi e la sua stella — un transito — e la stella si attenua di una frazione minuscola e precisa mentre il pianeta è di fronte.",
+    "La profondità di quel calo è semplicemente il rapporto delle aree: un pianeta più grande blocca più luce. Una Terra che attraversa il Sole lo attenua di circa una parte su diecimila; un Giove, dell'uno percento. Cattura i cali che si ripetono con regolarità e avrai le dimensioni del pianeta e il suo periodo orbitale.",
+    "Solo una piccola frazione di sistemi è allineata in modo che possiamo vedere i transiti — ma osservando abbastanza stelle i numeri vincono. È esattamente ciò che hanno fatto le missioni Kepler e TESS della NASA, dallo spazio, fissando centinaia di migliaia di stelle contemporaneamente."
+  ],
+  "body_paragraphs": [
+    "La fotometria di transito è di gran lunga il metodo più produttivo, responsabile della grande maggioranza degli esopianeti conosciuti. Misura direttamente il raggio di un pianeta (dal calo frazionario della luce stellare) e il suo periodo orbitale (dalla spaziatura dei cali); combinato con una massa ottenuta tramite velocità radiale, fornisce una densità media.",
+    "Il suo bias è geometrico — cattura solo la minoranza di sistemi le cui orbite vediamo quasi di taglio — e favorisce pianeti grandi con periodi brevi, che transitano più spesso e più profondamente. I falsi positivi dovuti a binarie eclissanti e attività stellare fanno sì che i transiti vengano solitamente confermati da un secondo metodo.",
+    "Oltre alla scoperta, un transito è una porta verso l'atmosfera di un pianeta: durante l'attraversamento, un sottile anello di luce stellare filtra attraverso l'atmosfera del pianeta e imprime le impronte digitali dei suoi gas — la tecnica che il James Webb Space Telescope usa ora per annusare i cieli degli esopianeti."
+  ],
+  "diagram_caption": "Mentre il pianeta attraversa il disco della stella, la luminosità misurata cala del rapporto delle loro aree, poi si riprende."
+}

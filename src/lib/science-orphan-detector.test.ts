@@ -110,6 +110,36 @@ const ORPHAN_ALLOWLIST: AllowlistEntry[] = [
     reason: 'PERMANENT-INDIRECT — local-group-galaxies.json science_section',
   },
 
+  // ── PERMANENT-BROWSE — /explore v2 exoplanet wing (RFC-032 S3) ──
+  // These articles are reached via the /science/exoplanets tab and each
+  // deep-links OUTWARD to a matching /explore BodyScene (see_in_app). The
+  // inbound direction (BodyScene panel → article) lands in a later /explore
+  // v2 slice; until then they are browse-reachable and intentional.
+  ...[
+    'radial-velocity',
+    'transit',
+    'transit-timing',
+    'direct-imaging',
+    'microlensing',
+    'astrometry',
+    'habitable-zone',
+    'hot-jupiters',
+    'super-earths-sub-neptunes',
+    'tidal-locking',
+    'orbital-resonance',
+    'planet-formation',
+    'exoplanet-atmospheres',
+    'biosignatures',
+    'trappist-1-system',
+    'proxima-system',
+    'fifty-one-pegasi',
+    'are-we-alone',
+  ].map((s) => ({
+    id: `exoplanets/${s}`,
+    reason:
+      'PERMANENT-BROWSE — /explore v2 exoplanet wing; inbound BodyScene links land in a later slice',
+  })),
+
   // ── IN-PROGRESS — issue #303 backlog. Remove as inbound refs land. ──
   // history (6 — entire tab orphan)
 ];

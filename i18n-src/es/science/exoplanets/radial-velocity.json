@@ -1,0 +1,16 @@
+{
+  "title": "El Método de Velocidad Radial",
+  "intro_sentence": "La gravedad de un planeta hace que su estrella oscile en un pequeño vaivén; un espectrógrafo lee ese movimiento como un desplazamiento Doppler en la luz estelar.",
+  "narrative_101": [
+    "Un planeta no se limita a orbitar su estrella: ambos giran alrededor de su centro de masa común, de modo que la estrella traza un pequeño círculo propio. Desde nuestra posición, esto se manifiesta como un ligero movimiento de la estrella hacia nosotros y luego alejándose, una y otra vez.",
+    "Ese acercamiento y alejamiento desplaza las líneas espectrales de la estrella hacia el azul y luego hacia el rojo, el mismo efecto Doppler que eleva y baja el tono de una sirena que pasa. Si se mide el desplazamiento con suficiente precisión, el planeta se revela, aunque nunca se vea directamente.",
+    "La oscilación es minúscula: Júpiter tira del Sol a unos 12 metros por segundo, la Tierra a apenas 9 centímetros por segundo. Alcanzar esas velocidades es una historia instrumental de décadas que aún continúa desarrollándose."
+  ],
+  "body_paragraphs": [
+    "La velocidad radial fue el primer método en dar resultados, confirmando 51 Pegasi b en 1995 y dominando el recuento inicial de exoplanetas. Mide la velocidad en la línea de visión de la estrella a partir de los desplazamientos Doppler en su espectro; la amplitud de esa velocidad (K) aumenta con la masa del planeta y disminuye con la distancia orbital, por lo que favorece planetas masivos en órbitas cortas, la razón por la que los primeros hallazgos fueron «jupíteres calientes».",
+    "Su gran ventaja es la masa: la velocidad radial proporciona la masa mínima del planeta (m·sin i), la cantidad que indica si un mundo es rocoso, helado o gaseoso. Sus límites son la inclinación orbital desconocida (solo un límite inferior de masa sin un tránsito) y la barrera impuesta por la propia turbulencia superficial de la estrella, que imita una oscilación y actualmente oculta las señales de verdaderos análogos terrestres.",
+    "Espectrógrafos modernos como ESPRESSO alcanzan una precisión de menos de un metro por segundo, suficiente para detectar los mundos menores que la Tierra encontrados recientemente alrededor de la estrella de Barnard. Combinada con un tránsito, la velocidad radial convierte un tamaño en una densidad, y una densidad en una estimación de la composición de un planeta."
+  ],
+  "formula_caption": "La semiamplitud de velocidad K aumenta con la masa del planeta y disminuye con el período orbital.",
+  "diagram_caption": "La estrella y el planeta orbitan su centro de masa común; el movimiento en la línea de visión de la estrella desplaza su espectro hacia el azul y luego hacia el rojo."
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Il Metodo delle Velocità Radiali",
+  "intro_sentence": "La gravità di un pianeta spinge la sua stella in una minuscola oscillazione avanti e indietro; uno spettrografo rileva quel movimento come uno spostamento Doppler nella luce stellare.",
+  "narrative_101": [
+    "Un pianeta non orbita semplicemente attorno alla sua stella — i due ruotano intorno al loro centro di massa comune, così la stella traccia un piccolo cerchio a sua volta. Dal nostro punto di osservazione ciò si manifesta come un movimento della stella leggermente verso di noi, poi leggermente lontano, ripetutamente.",
+    "Questo avvicinamento e allontanamento sposta le linee spettrali della stella prima verso il blu poi verso il rosso — lo stesso effetto Doppler che alza e abbassa il tono di una sirena che passa. Misurando lo spostamento con sufficiente precisione il pianeta si rivela, anche se non lo si vede mai.",
+    "L'oscillazione è minuscola: Giove spinge il Sole a circa 12 metri al secondo, la Terra a malapena 9 centimetri al secondo. Raggiungere queste velocità è una storia strumentale di decenni che continua ancora oggi."
+  ],
+  "body_paragraphs": [
+    "La velocità radiale è stato il primo metodo a dare risultati, confermando 51 Pegasi b nel 1995 e dominando il conteggio iniziale degli esopianeti. Misura la velocità della stella lungo la linea di vista dagli spostamenti Doppler nel suo spettro; l'ampiezza di quella velocità (K) scala con la massa del pianeta e diminuisce con la distanza orbitale, quindi favorisce pianeti massicci su orbite brevi — la ragione per cui le prime scoperte furono i 'Giove caldi'.",
+    "Il suo grande punto di forza è la massa: la velocità radiale fornisce la massa minima del pianeta (m·sin i), la quantità che indica se un mondo è roccioso, ghiacciato o gassoso. I suoi limiti sono l'inclinazione orbitale sconosciuta (solo un limite inferiore sulla massa senza un transito) e il muro rappresentato dal ribollire della superficie stellare stessa, che imita un'oscillazione e attualmente nasconde i veri segnali di analoghi terrestri.",
+    "Spettrografi moderni come ESPRESSO raggiungono una precisione sub-metrica al secondo, sufficiente per rilevare i mondi sub-terrestri recentemente trovati attorno alla Stella di Barnard. Abbinata a un transito, la velocità radiale trasforma una dimensione in una densità — e una densità in una stima di cosa è fatto un pianeta."
+  ],
+  "formula_caption": "La semi-ampiezza di velocità K cresce con la massa del pianeta e diminuisce con il periodo orbitale.",
+  "diagram_caption": "Stella e pianeta orbitano attorno al loro centro di massa comune; il movimento della stella lungo la linea di vista sposta il suo spettro prima verso il blu poi verso il rosso."
+}

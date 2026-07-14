@@ -1,8 +1,8 @@
 {
   "source": "NASA Exoplanet Archive · pscomppars (Composite Planet Parameters)",
   "source_url": "https://exoplanetarchive.ipac.caltech.edu/",
-  "query": "SELECT hostname,hip_name,pl_name,pl_letter,pl_orbper,pl_orbsmax,pl_orbeccen,pl_rade,pl_bmasse,disc_year,discoverymethod,sy_dist,ra,dec,st_spectype FROM pscomppars WHERE hip_name IN ('HIP 32349','HIP 30438','HIP 69673','HIP 71683','HIP 91262','HIP 24608','HIP 24436','HIP 37279','HIP 7588','HIP 27989','HIP 68702','HIP 97649','HIP 60718','HIP 21421','HIP 65474','HIP 80763','HIP 37826','HIP 113368','HIP 102098','HIP 62434','HIP 49669','HIP 33579','HIP 36850','HIP 61084','HIP 25336','HIP 25428','HIP 45238','HIP 26311','HIP 109268','HIP 26727','HIP 62956','HIP 15863','HIP 90185','HIP 54061','HIP 34444','HIP 67301','HIP 86228','HIP 41037','HIP 28360','HIP 82273','HIP 31681','HIP 100751','HIP 11767','HIP 46390','HIP 9884','HIP 3419','HIP 92855','HIP 68933','HIP 677','HIP 27366','HIP 86032','HIP 14576','HIP 9640','HIP 57632','HIP 76267','HIP 100453','HIP 25930','HIP 54035','HIP 87937','HIP 36208','HIP 70890','HIP 3829') OR hostname IN ('TRAPPIST-1','51 Peg','TOI-700') ORDER BY hostname, pl_orbsmax",
-  "row_count": 25,
+  "query": "SELECT hostname,hip_name,pl_name,pl_letter,pl_orbper,pl_orbsmax,pl_orbeccen,pl_rade,pl_bmasse,disc_year,discoverymethod,sy_dist,ra,dec,st_spectype FROM pscomppars WHERE hip_name IN ('HIP 32349','HIP 30438','HIP 69673','HIP 71683','HIP 91262','HIP 24608','HIP 24436','HIP 37279','HIP 7588','HIP 27989','HIP 68702','HIP 97649','HIP 60718','HIP 21421','HIP 65474','HIP 80763','HIP 37826','HIP 113368','HIP 102098','HIP 62434','HIP 49669','HIP 33579','HIP 36850','HIP 61084','HIP 25336','HIP 25428','HIP 45238','HIP 26311','HIP 109268','HIP 26727','HIP 62956','HIP 15863','HIP 90185','HIP 54061','HIP 34444','HIP 67301','HIP 86228','HIP 41037','HIP 28360','HIP 82273','HIP 31681','HIP 100751','HIP 11767','HIP 46390','HIP 9884','HIP 3419','HIP 92855','HIP 68933','HIP 677','HIP 27366','HIP 86032','HIP 14576','HIP 9640','HIP 57632','HIP 76267','HIP 100453','HIP 25930','HIP 54035','HIP 87937','HIP 36208','HIP 70890','HIP 3829') OR hostname IN ('TRAPPIST-1','51 Peg','TOI-700','Kepler-16','Kepler-16 (AB)') ORDER BY hostname, pl_orbsmax",
+  "row_count": 26,
   "rows": [
     {
       "hostname": "51 Peg",
@@ -173,6 +173,23 @@
       "ra": 116.328824,
       "dec": 28.026127,
       "st_spectype": "K0IIIvar"
+    },
+    {
+      "hostname": "Kepler-16",
+      "hip_name": null,
+      "pl_name": "Kepler-16 b",
+      "pl_letter": "b",
+      "pl_orbper": 228.776,
+      "pl_orbsmax": 0.7048,
+      "pl_orbeccen": 0.0069,
+      "pl_rade": 8.4493,
+      "pl_bmasse": 105.833,
+      "disc_year": 2011,
+      "discoverymethod": "Transit",
+      "sy_dist": 75.0852,
+      "ra": 289.0758307,
+      "dec": 51.757229,
+      "st_spectype": null
     },
     {
       "hostname": "Proxima Cen",

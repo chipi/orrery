@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Astrometry: a star traces a small loop on the plane of the sky as an unseen planet swings it around their common centre of mass.">
+  <style>
+    .stroke{stroke:rgba(255,255,255,0.85);stroke-width:1.5;fill:none}
+    .dashed{stroke:rgba(255,255,255,0.3);stroke-width:1;stroke-dasharray:4 3;fill:none}
+    .accent{stroke:#4ecdc4;stroke-width:2.4;fill:none}
+    .accentf{fill:#4ecdc4}
+    .star{fill:#ffc850;stroke:#ffc850;stroke-width:1}
+    .body{fill:rgba(255,255,255,0.95)}
+    .blue{fill:#5b8dd9;stroke:#5b8dd9}
+    .red{fill:#d95b6b;stroke:#d95b6b}
+    .label{fill:rgba(255,255,255,0.85);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}
+    .laccent{fill:#4ecdc4;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}
+    .lgold{fill:#ffc850;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}
+  </style>
+  <text class="label" x="300" y="26" text-anchor="middle">ASTROMETRY</text>
+  <line class="dashed" x1="120" y1="70" x2="120" y2="270"/>
+  <line class="dashed" x1="200" y1="70" x2="200" y2="270"/>
+  <line class="dashed" x1="280" y1="70" x2="280" y2="270"/>
+  <line class="dashed" x1="360" y1="70" x2="360" y2="270"/>
+  <line class="dashed" x1="440" y1="70" x2="440" y2="270"/>
+  <line class="dashed" x1="100" y1="80" x2="460" y2="80"/>
+  <line class="dashed" x1="100" y1="140" x2="460" y2="140"/>
+  <line class="dashed" x1="100" y1="200" x2="460" y2="200"/>
+  <line class="dashed" x1="100" y1="260" x2="460" y2="260"/>
+  <path class="accent" d="M280 170 m-40 0 a40 26 0 1 0 80 0 a40 26 0 1 0 -80 0"/>
+  <circle class="star" cx="320" cy="170" r="9"/>
+  <circle class="accentf" cx="240" cy="170" r="2.5"/>
+  <text class="label" x="300" y="300" text-anchor="middle">the star's tiny loop across the sky (millionths of a degree)</text>
+</svg>

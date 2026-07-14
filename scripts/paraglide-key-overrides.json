@@ -496,7 +496,13 @@
     "exo_label_mass": "MASA",
     "exo_label_discovery": "DESCUBRIMIENTO",
     "exo_days": "días",
-    "exo_caption": "Órbitas a escala dentro del sistema · cuerpos fuera de escala · procedimental"
+    "exo_caption": "Órbitas a escala dentro del sistema · cuerpos fuera de escala · procedimental",
+    "science_tab_exoplanets": "EXOPLANETAS",
+    "explore_culture_toggle": "Cultura",
+    "culture_heading": "EN LA CULTURA",
+    "culture_badge_fiction": "FICCIÓN",
+    "culture_badge_message": "MENSAJE",
+    "culture_badge_visitor": "VISITANTE"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -1028,7 +1034,13 @@
     "exo_label_mass": "MASSE",
     "exo_label_discovery": "DÉCOUVERTE",
     "exo_days": "jours",
-    "exo_caption": "Orbites à l'échelle dans le système · corps hors échelle · procédural"
+    "exo_caption": "Orbites à l'échelle dans le système · corps hors échelle · procédural",
+    "science_tab_exoplanets": "EXOPLANÈTES",
+    "explore_culture_toggle": "Culture",
+    "culture_heading": "DANS LA CULTURE",
+    "culture_badge_fiction": "FICTION",
+    "culture_badge_message": "MESSAGE",
+    "culture_badge_visitor": "VISITEUR"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -1553,7 +1565,13 @@
     "exo_label_mass": "MASSE",
     "exo_label_discovery": "ENTDECKUNG",
     "exo_days": "Tage",
-    "exo_caption": "Umlaufbahnen maßstabsgetreu innerhalb des Systems · Körper nicht maßstabsgetreu · prozedural"
+    "exo_caption": "Umlaufbahnen maßstabsgetreu innerhalb des Systems · Körper nicht maßstabsgetreu · prozedural",
+    "science_tab_exoplanets": "EXOPLANETEN",
+    "explore_culture_toggle": "Kultur",
+    "culture_heading": "IN DER KULTUR",
+    "culture_badge_fiction": "FIKTION",
+    "culture_badge_message": "NACHRICHT",
+    "culture_badge_visitor": "BESUCHER"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -2059,7 +2077,13 @@
     "exo_label_mass": "MASSA",
     "exo_label_discovery": "DESCOBERTA",
     "exo_days": "dias",
-    "exo_caption": "Órbitas em escala dentro do sistema · corpos fora de escala · procedural"
+    "exo_caption": "Órbitas em escala dentro do sistema · corpos fora de escala · procedural",
+    "science_tab_exoplanets": "EXOPLANETAS",
+    "explore_culture_toggle": "Cultura",
+    "culture_heading": "NA CULTURA",
+    "culture_badge_fiction": "FICÇÃO",
+    "culture_badge_message": "MENSAGEM",
+    "culture_badge_visitor": "VISITANTE"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -2559,7 +2583,13 @@
     "exo_label_mass": "MASSA",
     "exo_label_discovery": "SCOPERTA",
     "exo_days": "giorni",
-    "exo_caption": "Orbite in scala nel sistema · corpi non in scala · procedurale"
+    "exo_caption": "Orbite in scala nel sistema · corpi non in scala · procedurale",
+    "science_tab_exoplanets": "ESOPIANETI",
+    "explore_culture_toggle": "Cultura",
+    "culture_heading": "NELLA CULTURA",
+    "culture_badge_fiction": "FINZIONE",
+    "culture_badge_message": "MESSAGGIO",
+    "culture_badge_visitor": "VISITATORE"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -3029,7 +3059,13 @@
     "exo_label_mass": "МАСА",
     "exo_label_discovery": "ОТКРИЋЕ",
     "exo_days": "дана",
-    "exo_caption": "Орбите у размери унутар система · тела нису у размери · процедурално"
+    "exo_caption": "Орбите у размери унутар система · тела нису у размери · процедурално",
+    "science_tab_exoplanets": "ЕГЗОПЛАНЕТЕ",
+    "explore_culture_toggle": "Култура",
+    "culture_heading": "У КУЛТУРИ",
+    "culture_badge_fiction": "ФИКЦИЈА",
+    "culture_badge_message": "ПОРУКА",
+    "culture_badge_visitor": "ПОСЕТИЛАЦ"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -3565,7 +3601,13 @@
     "exo_label_mass": "质量",
     "exo_label_discovery": "发现时间",
     "exo_days": "天",
-    "exo_caption": "系统内轨道按比例 · 天体未按比例 · 程序生成"
+    "exo_caption": "系统内轨道按比例 · 天体未按比例 · 程序生成",
+    "science_tab_exoplanets": "系外行星",
+    "explore_culture_toggle": "文化",
+    "culture_heading": "文化影响",
+    "culture_badge_fiction": "虚构作品",
+    "culture_badge_message": "信息",
+    "culture_badge_visitor": "访客"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -4117,7 +4159,13 @@
     "exo_label_mass": "質量",
     "exo_label_discovery": "発見",
     "exo_days": "日",
-    "exo_caption": "軌道は系内でスケール通り · 天体はスケール外 · 手続き的生成"
+    "exo_caption": "軌道は系内でスケール通り · 天体はスケール外 · 手続き的生成",
+    "science_tab_exoplanets": "系外惑星",
+    "explore_culture_toggle": "文化",
+    "culture_heading": "文化における登場",
+    "culture_badge_fiction": "フィクション",
+    "culture_badge_message": "メッセージ",
+    "culture_badge_visitor": "訪問者"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -4671,7 +4719,13 @@
     "exo_label_mass": "질량",
     "exo_label_discovery": "발견",
     "exo_days": "일",
-    "exo_caption": "항성계 내 궤도는 실제 비율 · 천체 크기는 비율 아님 · 절차적 생성"
+    "exo_caption": "항성계 내 궤도는 실제 비율 · 천체 크기는 비율 아님 · 절차적 생성",
+    "science_tab_exoplanets": "외계행성",
+    "explore_culture_toggle": "문화",
+    "culture_heading": "문화 속에서",
+    "culture_badge_fiction": "픽션",
+    "culture_badge_message": "메시지",
+    "culture_badge_visitor": "방문자"
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -5362,7 +5416,13 @@
     "exo_label_mass": "द्रव्यमान",
     "exo_label_discovery": "खोज",
     "exo_days": "दिन",
-    "exo_caption": "तंत्र के भीतर कक्षाएँ पैमाने पर · पिंड पैमाने पर नहीं · प्रक्रियात्मक"
+    "exo_caption": "तंत्र के भीतर कक्षाएँ पैमाने पर · पिंड पैमाने पर नहीं · प्रक्रियात्मक",
+    "science_tab_exoplanets": "बाह्यग्रह",
+    "explore_culture_toggle": "संस्कृति",
+    "culture_heading": "संस्कृति में",
+    "culture_badge_fiction": "कल्पना",
+    "culture_badge_message": "संदेश",
+    "culture_badge_visitor": "आगंतुक"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -6095,7 +6155,13 @@
     "exo_label_mass": "الكتلة",
     "exo_label_discovery": "الاكتشاف",
     "exo_days": "أيام",
-    "exo_caption": "المدارات بمقياس رسم دقيق داخل المنظومة · الأجرام ليست بمقياس رسم · إجرائي"
+    "exo_caption": "المدارات بمقياس رسم دقيق داخل المنظومة · الأجرام ليست بمقياس رسم · إجرائي",
+    "science_tab_exoplanets": "الكواكب الخارجية",
+    "explore_culture_toggle": "الثقافة",
+    "culture_heading": "في الثقافة",
+    "culture_badge_fiction": "خيال",
+    "culture_badge_message": "رسالة",
+    "culture_badge_visitor": "زائر"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -6650,7 +6716,13 @@
     "exo_label_mass": "МАССА",
     "exo_label_discovery": "ОТКРЫТИЕ",
     "exo_days": "сут",
-    "exo_caption": "Орбиты в масштабе внутри системы · тела не в масштабе · процедурная генерация"
+    "exo_caption": "Орбиты в масштабе внутри системы · тела не в масштабе · процедурная генерация",
+    "science_tab_exoplanets": "ЭКЗОПЛАНЕТЫ",
+    "explore_culture_toggle": "Культура",
+    "culture_heading": "В КУЛЬТУРЕ",
+    "culture_badge_fiction": "ФАНТАСТИКА",
+    "culture_badge_message": "ПОСЛАНИЕ",
+    "culture_badge_visitor": "ВИЗИТЁР"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -7155,6 +7227,12 @@
     "exo_label_mass": "MASSA",
     "exo_label_discovery": "ONTDEKKING",
     "exo_days": "dagen",
-    "exo_caption": "Banen op schaal binnen het systeem · hemellichamen niet op schaal · procedureel"
+    "exo_caption": "Banen op schaal binnen het systeem · hemellichamen niet op schaal · procedureel",
+    "science_tab_exoplanets": "EXOPLANETEN",
+    "explore_culture_toggle": "Cultuur",
+    "culture_heading": "IN DE CULTUUR",
+    "culture_badge_fiction": "FICTIE",
+    "culture_badge_message": "BERICHT",
+    "culture_badge_visitor": "BEZOEKER"
   }
 }

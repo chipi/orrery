@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-14T13:54:18.747Z",
+  "generated_at": "2026-07-14T19:50:16.292Z",
   "script_version": "build-exoplanet-systems@1.0.0",
   "source": "NASA Exoplanet Archive · pscomppars (Composite Planet Parameters)",
   "source_url": "https://exoplanetarchive.ipac.caltech.edu/",
-  "count": 10,
-  "planet_count": 25,
+  "count": 11,
+  "planet_count": 26,
   "systems": [
     {
       "hostId": "proxima-centauri",
@@ -473,6 +473,35 @@
           "radius_earth": 1.073,
           "mass_earth": 1.25,
           "disc_year": 2020,
+          "disc_method": "Transit"
+        }
+      ]
+    },
+    {
+      "hostId": "kepler-16",
+      "hip": null,
+      "star": {
+        "name": "Kepler-16",
+        "spect": "",
+        "dist_pc": 75.0852,
+        "bv": null,
+        "con": null,
+        "x": 15.1897,
+        "y": -43.9251,
+        "z": 58.9715,
+        "iconic": true
+      },
+      "planets": [
+        {
+          "id": "kepler-16-b",
+          "letter": "b",
+          "name": "Kepler-16 b",
+          "period_days": 228.776,
+          "a_au": 0.7048,
+          "e": 0.0069,
+          "radius_earth": 8.4493,
+          "mass_earth": 105.833,
+          "disc_year": 2011,
           "disc_method": "Transit"
         }
       ]

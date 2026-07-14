@@ -1,0 +1,15 @@
+{
+  "title": "La méthode du transit",
+  "intro_sentence": "Lorsqu'une planète passe devant son étoile, elle bloque une fraction de lumière ; cette baisse périodique de luminosité trahit la planète et mesure sa taille.",
+  "narrative_101": [
+    "Si l'orbite d'une planète se trouve alignée de profil par rapport à nous, une fois par orbite elle passe directement entre nous et son étoile — un transit — et l'étoile s'assombrit d'une fraction infime et précise pendant que la planète est devant.",
+    "La profondeur de cette baisse correspond simplement au rapport des surfaces : une planète plus grande bloque davantage de lumière. Une Terre traversant le Soleil l'assombrit d'environ une partie sur dix mille ; une Jupiter, d'un pour cent. Captez la répétition régulière de ces baisses et vous obtenez la taille de la planète et sa période orbitale.",
+    "Seule une petite fraction des systèmes sont alignés de manière à ce que nous puissions observer des transits — mais en surveillant suffisamment d'étoiles, les nombres jouent en notre faveur. C'est exactement ce qu'ont fait les missions Kepler et TESS de la NASA, depuis l'espace, en observant simultanément des centaines de milliers d'étoiles."
+  ],
+  "body_paragraphs": [
+    "La photométrie de transit est de loin la méthode la plus productive, responsable de la grande majorité des exoplanètes connues. Elle mesure directement le rayon d'une planète (à partir de la baisse fractionnelle de la lumière stellaire) et sa période orbitale (à partir de l'espacement des baisses) ; combinée à une masse mesurée par vitesse radiale, elle fournit une densité moyenne.",
+    "Son biais est géométrique — elle ne détecte que la minorité des systèmes dont nous voyons les orbites presque de profil — et elle favorise les grandes planètes sur des périodes courtes, qui transitent plus souvent et plus profondément. Les faux positifs dus aux binaires à éclipses et à l'activité stellaire font que les transits sont généralement confirmés par une seconde méthode.",
+    "Au-delà de la découverte, un transit est une porte vers l'atmosphère d'une planète : pendant la traversée, un mince anneau de lumière stellaire filtre à travers l'atmosphère de la planète et y imprime les empreintes de ses gaz — la technique que le James Webb Space Telescope utilise aujourd'hui pour analyser les atmosphères des exoplanètes."
+  ],
+  "diagram_caption": "Lorsque la planète traverse le disque de l'étoile, la luminosité mesurée chute proportionnellement au rapport de leurs surfaces, puis se rétablit."
+}

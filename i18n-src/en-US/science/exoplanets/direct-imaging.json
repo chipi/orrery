@@ -1,0 +1,15 @@
+{
+  "title": "Direct Imaging",
+  "intro_sentence": "Blot out the overwhelming glare of the star and, for a lucky few planets, you can photograph the faint pinprick of light beside it.",
+  "narrative_101": [
+    "Most exoplanets are found indirectly, by their effect on their star. Direct imaging is the exception — it captures actual photons from the planet itself, a genuine picture of another world.",
+    "The problem is contrast. A planet can be a billion times fainter than its star and sits right next to it, like spotting a firefly beside a lighthouse. So the technique hides the star behind a mask — a coronagraph inside the telescope, or a distant free-flying starshade — and lets the planet's light through.",
+    "It works best for the hardest planets to find by other means: young, hot, massive worlds on wide orbits, still glowing with the heat of their formation."
+  ],
+  "body_paragraphs": [
+    "Direct imaging blocks or nulls the starlight (with a coronagraph or interferometer) to reveal planets and disks that would otherwise be lost in the glare. Because it detects the planet's own light, it uniquely enables spectroscopy of the world in isolation — a direct read on its temperature and atmosphere.",
+    "Its bias is the mirror image of the others: it favours large, self-luminous planets far from their stars (wide orbits ease the contrast problem, and youth keeps the planet hot and bright). Systems like HR 8799 — four giant planets imaged at once — and the sculpted debris ring of Fomalhaut are showcases.",
+    "The method drives the next generation of flagship instruments, whose goal is to image and take the spectrum of a rocky planet in a Sun-like star's habitable zone — and search its air for signs of life."
+  ],
+  "diagram_caption": "A coronagraph masks the star's glare so the faint, nearby planet becomes visible."
+}

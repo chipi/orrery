@@ -1,0 +1,15 @@
+{
+  "title": "Transit-Timing-variaties",
+  "intro_sentence": "In een druk systeem trekken planeten aan elkaar en arriveren vroeg of laat; de verschuiving in transittijden onthult onzichtbare werelden en weegt degenen die we wel zien.",
+  "narrative_101": [
+    "Een solitaire transiterende planeet arriveert als een klokwerk — hetzelfde interval, elke omwenteling. Maar plaats meerdere planeten in één systeem en hun wederzijdse zwaartekracht stoot elkaar aan, waardoor transits een beetje vroeger of een beetje later kruipen in een herhalend patroon.",
+    "Die verschuivingen van enkele minuten zijn een gravitationele handtekening. Modelleer ze en je kunt de planeten wegen vanuit hun trekkracht alleen — geen spectrograaf nodig — en soms een planeet afleiden die helemaal nooit transite vertoont, alleen gevoeld door zijn aantrekkingskracht op de anderen.",
+    "Zo werden de zeven kleine werelden van TRAPPIST-1 gewogen: te zwak voor radiale snelheid, hun massa's kwamen voort uit de manier waarop ze elkaar haasten en vertragen over de ster."
+  ],
+  "body_paragraphs": [
+    "Transit-timing-variaties (TTV's) maken gebruik van de gravitationele interacties tussen planeten in hetzelfde systeem. Een perfect geïsoleerde planeet vertoont transits met een constante periode; interacterende planeten vertonen periodieke afwijkingen waarvan de amplitude en het patroon de massa's en banen van de planeten coderen.",
+    "TTV's blinken precies uit waar radiale snelheid het moeilijk heeft — rondom zwakke, kleine sterren waarvan de Doppler-schommeling begraven ligt in ruis — en ze kunnen niet-transiterende planeten onthullen door hun invloed alleen. Ze zijn het meest gevoelig nabij orbitale resonanties, waar herhaalde nauwe ontmoetingen de trekkracht versterken.",
+    "De massa's van de methode vullen transitstralen aan om dichtheden te geven, en daarom zijn compacte resonante systemen zoals TRAPPIST-1 en Kepler's multi-planeetkettingen zo goed gekarakteriseerd ondanks dat ze om zwakke sterren draaien."
+  ],
+  "diagram_caption": "Wederzijdse gravitationele trekkracht zorgt ervoor dat transits vroeg of laat arriveren; het patroon van verschuiving codeert de massa's van de planeten."
+}

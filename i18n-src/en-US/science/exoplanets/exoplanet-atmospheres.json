@@ -1,0 +1,14 @@
+{
+  "title": "Reading Exoplanet Atmospheres",
+  "intro_sentence": "During a transit, a sliver of starlight filters through a planet's air and carries the fingerprints of its gases back to us.",
+  "narrative_101": [
+    "You can't land on an exoplanet, but you can taste its atmosphere from light-years away. When a planet transits, a thin ring of starlight passes through the atmosphere on its way to us, and each gas absorbs its own set of colours.",
+    "Split that light into a spectrum and the missing colours spell out what the air is made of — water, carbon dioxide, methane, sodium. This is transmission spectroscopy, and the James Webb Space Telescope was built for it.",
+    "So far JWST has detected carbon dioxide and other molecules on giant planets, and begun the far harder task of testing whether small rocky worlds around red dwarfs have any atmosphere at all."
+  ],
+  "body_paragraphs": [
+    "Transmission spectroscopy measures how a planet's atmosphere absorbs starlight during transit, wavelength by wavelength, revealing its composition. Emission spectroscopy — catching the planet's own thermal glow just before it slips behind the star — adds temperature structure. Together they turn a transiting planet into a world with a measurable sky.",
+    "JWST has pushed the field from hot giants to the edge of rocky-world atmospheres: clear carbon-dioxide detections on gas planets, and sensitive searches around TRAPPIST-1 that so far suggest its innermost planets are largely airless. Red-dwarf flares make holding an atmosphere hard, and that verdict is exactly what these observations test.",
+    "The long-term goal is a rocky planet in a Sun-like star's habitable zone whose atmosphere can be searched for the gases life might produce — the technical bridge from finding worlds to characterising them."
+  ]
+}

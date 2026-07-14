@@ -1,0 +1,15 @@
+{
+  "title": "Imageamento Direto",
+  "intro_sentence": "Bloqueie o brilho intenso da estrela e, para alguns poucos planetas afortunados, você pode fotografar o tênue ponto de luz ao lado dela.",
+  "narrative_101": [
+    "A maioria dos exoplanetas é encontrada indiretamente, pelo seu efeito sobre sua estrela. O imageamento direto é a exceção — ele captura fótons reais do próprio planeta, uma imagem genuína de outro mundo.",
+    "O problema é o contraste. Um planeta pode ser um bilhão de vezes mais fraco que sua estrela e fica bem ao lado dela, como tentar avistar um vaga-lume ao lado de um farol. Portanto, a técnica oculta a estrela atrás de uma máscara — um coronógrafo dentro do telescópio, ou um starshade distante voando livremente — e deixa a luz do planeta passar.",
+    "Funciona melhor para os planetas mais difíceis de encontrar por outros meios: mundos jovens, quentes, massivos e em órbitas amplas, ainda brilhando com o calor de sua formação."
+  ],
+  "body_paragraphs": [
+    "O imageamento direto bloqueia ou anula a luz estelar (com um coronógrafo ou interferômetro) para revelar planetas e discos que de outra forma se perderiam no brilho. Como detecta a própria luz do planeta, permite exclusivamente a espectroscopia do mundo em isolamento — uma leitura direta de sua temperatura e atmosfera.",
+    "Seu viés é a imagem espelhada dos outros: favorece planetas grandes e autoluminosos distantes de suas estrelas (órbitas amplas facilitam o problema de contraste, e a juventude mantém o planeta quente e brilhante). Sistemas como HR 8799 — quatro planetas gigantes imageados de uma só vez — e o anel de detritos esculpido de Fomalhaut são exemplos notáveis.",
+    "O método impulsiona a próxima geração de instrumentos de ponta, cujo objetivo é imagear e obter o espectro de um planeta rochoso na zona habitável de uma estrela semelhante ao Sol — e buscar em sua atmosfera por sinais de vida."
+  ],
+  "diagram_caption": "Um coronógrafo mascara o brilho da estrela para que o planeta tênue e próximo se torne visível."
+}

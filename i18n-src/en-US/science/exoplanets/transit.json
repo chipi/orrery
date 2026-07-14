@@ -1,0 +1,15 @@
+{
+  "title": "The Transit Method",
+  "intro_sentence": "When a planet crosses in front of its star, it blocks a sliver of light; that periodic dip in brightness betrays the planet and measures its size.",
+  "narrative_101": [
+    "If a planet's orbit happens to be edge-on to us, once per orbit it passes directly between us and its star — a transit — and the star dims by a tiny, precise fraction while the planet is in front.",
+    "The depth of that dip is just the ratio of areas: a bigger planet blocks more light. An Earth crossing the Sun dims it by about one part in ten thousand; a Jupiter, by one percent. Catch the dips repeating on a clock and you have a planet's size and orbital period.",
+    "Only a small fraction of systems are lined up for us to see transits — but survey enough stars and the numbers win. That is exactly what NASA's Kepler and TESS missions did, from space, staring at hundreds of thousands of stars at once."
+  ],
+  "body_paragraphs": [
+    "Transit photometry is the most productive method by far, responsible for the large majority of known exoplanets. It measures a planet's radius directly (from the fractional dip in starlight) and its orbital period (from the spacing of the dips); combined with a radial-velocity mass it yields a bulk density.",
+    "Its bias is geometric — it only catches the minority of systems whose orbits we see nearly edge-on — and it favours large planets on short periods, which transit more often and more deeply. False positives from eclipsing binaries and stellar activity mean transits are usually confirmed by a second method.",
+    "Beyond discovery, a transit is a door into a planet's air: during the crossing, a thin ring of starlight filters through the planet's atmosphere and imprints the fingerprints of its gases — the technique the James Webb Space Telescope now uses to sniff exoplanet skies."
+  ],
+  "diagram_caption": "As the planet crosses the star's disk, the measured brightness drops by the ratio of their areas, then recovers."
+}

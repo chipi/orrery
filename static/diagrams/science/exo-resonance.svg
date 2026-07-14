@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Orbital resonance: planets whose orbital periods form simple whole-number ratios line up repeatedly, locking the system into a rhythm.">
+  <style>.dashed{stroke:rgba(255,255,255,0.3);stroke-width:1;stroke-dasharray:4 3;fill:none}.accent{stroke:#4ecdc4;stroke-width:2.4;fill:none}.star{fill:#ffc850;stroke:#ffc850}.body{fill:rgba(255,255,255,0.95)}.hz{fill:#4ecdc4;opacity:0.12}.label{fill:rgba(255,255,255,0.85);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}.laccent{fill:#4ecdc4;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}</style>
+  <text class="label" x="300" y="26" text-anchor="middle">ORBITAL RESONANCE (near-integer period ratios)</text>
+  <circle class="star" cx="300" cy="180" r="18"/>
+  <circle class="dashed" cx="300" cy="180" r="60"/>
+  <circle class="dashed" cx="300" cy="180" r="110"/>
+  <circle class="dashed" cx="300" cy="180" r="160"/>
+  <circle class="dashed" cx="300" cy="180" r="210"/>
+  <circle class="body" cx="360" cy="180" r="6"/><circle class="body" cx="410" cy="180" r="6"/>
+  <circle class="body" cx="460" cy="180" r="6"/><circle class="body" cx="510" cy="180" r="6"/>
+  <text class="laccent" x="300" y="300" text-anchor="middle">periods ≈ 8 : 5 : 3 : 2 — alignments repeat, tugs reinforce</text>
+</svg>

@@ -1568,5 +1568,11 @@
   "exo_label_mass": "质量",
   "exo_label_discovery": "发现时间",
   "exo_days": "天",
-  "exo_caption": "系统内轨道按比例 · 天体未按比例 · 程序生成"
+  "exo_caption": "系统内轨道按比例 · 天体未按比例 · 程序生成",
+  "science_tab_exoplanets": "系外行星",
+  "explore_culture_toggle": "文化",
+  "culture_heading": "文化影响",
+  "culture_badge_fiction": "虚构作品",
+  "culture_badge_message": "信息",
+  "culture_badge_visitor": "访客"
 }

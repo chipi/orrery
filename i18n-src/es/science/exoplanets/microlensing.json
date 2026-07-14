@@ -1,0 +1,15 @@
+{
+  "title": "Microlentes gravitacionales",
+  "intro_sentence": "Cuando una estrella pasa exactamente por delante de otra, su gravedad amplifica la estrella de fondo — y un planeta añade un destello adicional breve.",
+  "narrative_101": [
+    "La gravedad curva la luz. Cuando una estrella en primer plano pasa casi exactamente por delante de otra mucho más distante, actúa como una lente, aumentando brevemente el brillo de la estrella de fondo durante días o semanas.",
+    "Si la estrella en primer plano tiene un planeta, la gravedad propia del planeta añade un pico corto y pronunciado sobre ese aumento suave de brillo — un destello que dura de horas a un día y que delata un mundo que nunca verás directamente.",
+    "Dado que depende de una alineación fortuita única, cada evento de microlente ocurre una vez y nunca se repite. Pero el método alcanza lugares donde otros no pueden: planetas fríos lejos de sus estrellas, e incluso mundos flotantes libres que no están ligados a ninguna estrella."
+  ],
+  "body_paragraphs": [
+    "Las microlentes detectan planetas mediante la magnificación gravitacional transitoria que añaden a una alineación fortuita de dos estrellas. Es especialmente sensible a planetas de baja masa en órbitas amplias y frías — la región más allá de la línea de nieve que los tránsitos y la velocidad radial tienen dificultades para alcanzar — y a planetas errantes que van a la deriva solos por la galaxia.",
+    "El inconveniente es que los eventos son singulares e irrepetibles, el anfitrión y el planeta suelen estar demasiado distantes para estudiarlos más a fondo, y la masa y la separación resultan algo degeneradas. Es una herramienta estadística: mide cuán comunes son los planetas fríos y flotantes libres, más que catalogar mundos individuales.",
+    "El telescopio espacial Nancy Grace Roman de la NASA llevará a cabo un amplio estudio de microlentes que se espera encuentre miles de estos planetas de otro modo invisibles, completando las regiones exteriores frías del censo de exoplanetas."
+  ],
+  "diagram_caption": "Una estrella en primer plano actúa como lente sobre una de fondo; un planeta en órbita añade un pico secundario breve a la curva de luz."
+}

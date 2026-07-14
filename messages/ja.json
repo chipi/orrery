@@ -1568,5 +1568,11 @@
   "exo_label_mass": "質量",
   "exo_label_discovery": "発見",
   "exo_days": "日",
-  "exo_caption": "軌道は系内でスケール通り · 天体はスケール外 · 手続き的生成"
+  "exo_caption": "軌道は系内でスケール通り · 天体はスケール外 · 手続き的生成",
+  "science_tab_exoplanets": "系外惑星",
+  "explore_culture_toggle": "文化",
+  "culture_heading": "文化における登場",
+  "culture_badge_fiction": "フィクション",
+  "culture_badge_message": "メッセージ",
+  "culture_badge_visitor": "訪問者"
 }

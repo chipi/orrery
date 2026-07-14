@@ -1,0 +1,26 @@
+{
+  "id": "direct-imaging",
+  "tab": "exoplanets",
+  "order": 4,
+  "diagram": "exo-direct-imaging.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "query": "?goto=fomalhaut",
+      "context_key": "Fomalhaut — a bright star girdled by a directly-imaged debris ring"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Direct imaging of exoplanets",
+      "u": "https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets#Direct_imaging",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Coronagraphs and starshades",
+      "u": "https://exoplanets.nasa.gov/exep/technology/coronagraph/",
+      "t": "core"
+    }
+  ]
+}

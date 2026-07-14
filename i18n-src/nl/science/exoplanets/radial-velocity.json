@@ -1,0 +1,16 @@
+{
+  "title": "De Radiale-Snelheidsmethode",
+  "intro_sentence": "De zwaartekracht van een planeet trekt zijn ster in een kleine heen-en-weer-wiebelbeweging; een spectrograaf leest die beweging af als een Dopplerverschuiving in het sterrenlicht.",
+  "narrative_101": [
+    "Een planeet draait niet alleen om zijn ster — de twee zwaaien rond hun gedeelde massamiddelpunt, dus beschrijft de ster zelf ook een kleine cirkel. Vanuit ons perspectief zien we dat als de ster die zich een beetje naar ons toe beweegt, dan een beetje van ons af, steeds opnieuw.",
+    "Die nadering en verwijdering verschuift de spectraallijnen van de ster eerst naar blauw, dan naar rood — hetzelfde Doppler-effect dat de toonhoogte van een passerende sirene verhoogt en verlaagt. Meet de verschuiving nauwkeurig genoeg en de planeet onthult zichzelf, ook al zie je hem nooit.",
+    "De wiebelbeweging is minuscuul: Jupiter trekt aan de Zon met ongeveer 12 meter per seconde, de Aarde met nauwelijks 9 centimeter per seconde. Het bereiken van die snelheden is een decennialang instrumentverhaal dat nog steeds voortduurt."
+  ],
+  "body_paragraphs": [
+    "Radiale snelheid was de eerste methode die resultaat opleverde, met de bevestiging van 51 Pegasi b in 1995, en domineerde het vroege aantal exoplaneten. Het meet de snelheid van de ster in de gezichtslijn aan de hand van Dopplerverschuivingen in zijn spectrum; de amplitude van die snelheid (K) schaalt met de massa van de planeet en neemt af met de orbitale afstand, dus bevoordeelt het massieve planeten in korte banen — de reden waarom de eerste vondsten 'hete Jupiters' waren.",
+    "Zijn grote kracht is massa: radiale snelheid levert de minimummassa van de planeet op (m·sin i), de grootheid die je vertelt of een wereld rotsachtig, ijzig of gasvormig is. Zijn beperkingen zijn de onbekende orbitale inclinatie (slechts een ondergrens voor de massa zonder transit) en de muur die wordt opgeworpen door het eigen oppervlakteroeren van de ster, dat een wiebelbeweging nabootst en momenteel echte aarde-analoge signalen verbergt.",
+    "Moderne spectrografen zoals ESPRESSO bereiken een precisie van sub-meter-per-seconde, voldoende om de sub-aarde werelden te detecteren die onlangs rond Barnard's Star zijn gevonden. Gecombineerd met een transit, verandert radiale snelheid een grootte in een dichtheid — en een dichtheid in een schatting van waaruit een planeet is opgebouwd."
+  ],
+  "formula_caption": "De snelheids-semi-amplitude K groeit met de massa van de planeet en neemt af met de orbitale periode.",
+  "diagram_caption": "Ster en planeet draaien om hun gemeenschappelijk massamiddelpunt; de beweging van de ster in de gezichtslijn verschuift zijn spectrum eerst naar blauw, dan naar rood."
+}

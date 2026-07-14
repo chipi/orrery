@@ -1,0 +1,16 @@
+{
+  "title": "Die Radialgeschwindigkeitsmethode",
+  "intro_sentence": "Die Schwerkraft eines Planeten zieht seinen Stern in ein winziges Hin-und-her-Taumeln; ein Spektrograf liest diese Bewegung als Dopplerverschiebung im Sternenlicht.",
+  "narrative_101": [
+    "Ein Planet umkreist nicht einfach nur seinen Stern – die beiden schwingen um ihren gemeinsamen Massenschwerpunkt, sodass der Stern selbst einen kleinen Kreis beschreibt. Aus unserer Perspektive zeigt sich das dadurch, dass sich der Stern leicht auf uns zu, dann wieder leicht von uns weg bewegt, immer und immer wieder.",
+    "Diese Annäherung und Entfernung verschiebt die Spektrallinien des Sterns erst ins Blaue, dann ins Rote – derselbe Dopplereffekt, der die Tonhöhe einer vorbeifahrenden Sirene anhebt und absenkt. Misst man die Verschiebung präzise genug, offenbart sich der Planet, obwohl man ihn nie sieht.",
+    "Das Taumeln ist winzig: Jupiter zieht die Sonne mit etwa 12 Metern pro Sekunde, die Erde mit kaum 9 Zentimetern pro Sekunde. Diese Geschwindigkeiten zu erreichen ist eine jahrzehntelange Instrumentengeschichte, die noch immer andauert."
+  ],
+  "body_paragraphs": [
+    "Die Radialgeschwindigkeit war die erste Methode, die Ergebnisse lieferte: Sie bestätigte 51 Pegasi b im Jahr 1995 und dominierte die frühe Exoplanetenanzahl. Sie misst die Sichtliniengeschwindigkeit des Sterns aus Dopplerverschiebungen in seinem Spektrum; die Amplitude dieser Geschwindigkeit (K) skaliert mit der Masse des Planeten und nimmt mit dem Orbitalabstand ab, sodass sie massereiche Planeten auf kurzen Umlaufbahnen begünstigt – der Grund, warum die ersten Funde ›heiße Jupiter‹ waren.",
+    "Ihre große Stärke ist die Masse: Die Radialgeschwindigkeit liefert die Minimalmasse des Planeten (m·sin i), die Größe, die verrät, ob eine Welt felsig, eisig oder gasförmig ist. Ihre Grenzen sind die unbekannte Bahnneigung (nur eine untere Massengrenze ohne Transit) und die Mauer, die das Brodeln der Sternoberfläche selbst setzt, das ein Taumeln imitiert und derzeit echte Erdanaloga-Signale verbirgt.",
+    "Moderne Spektrografen wie ESPRESSO erreichen eine Präzision unter einem Meter pro Sekunde, genug um die Sub-Erd-Welten zu entdecken, die kürzlich um Barnard's Star gefunden wurden. Kombiniert mit einem Transit verwandelt die Radialgeschwindigkeit eine Größe in eine Dichte – und eine Dichte in eine Vermutung darüber, woraus ein Planet besteht."
+  ],
+  "formula_caption": "Die Geschwindigkeitssemiamplitude K wächst mit der Planetenmasse und nimmt mit der Umlaufperiode ab.",
+  "diagram_caption": "Stern und Planet umkreisen ihren gemeinsamen Massenschwerpunkt; die Sichtlinienbewegung des Sterns verschiebt sein Spektrum erst ins Blaue, dann ins Rote."
+}

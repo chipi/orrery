@@ -1,0 +1,15 @@
+{
+  "title": "Orbital Resonance",
+  "intro_sentence": "When planets' orbital periods form simple whole-number ratios, their repeated alignments lock the system into a self-reinforcing rhythm.",
+  "narrative_101": [
+    "If one planet orbits exactly twice for every once of its neighbour, the two line up in the same place over and over, and their gravitational nudges add up instead of averaging out. That's a resonance — a rhythmic lock between orbits.",
+    "TRAPPIST-1 is the showpiece: its seven planets sit in a near-unbroken chain of resonances, each period a tidy ratio of the next. Speed the system up and the alignments would ring out an actual musical scale.",
+    "Resonances are footprints of how a system formed — they arise when planets migrate inward together through the birth disk and catch each other in step."
+  ],
+  "body_paragraphs": [
+    "An orbital resonance occurs when orbiting bodies exert regular, periodic gravitational influence on each other, usually because their periods are in a ratio of small integers. Resonances can stabilise a tightly packed system by keeping planets in a locked pattern, or destabilise one by pumping up eccentricities.",
+    "Chains of resonances, like TRAPPIST-1's, are strong evidence for convergent migration: planets forming farther out and drifting inward through the gas disk, becoming trapped in successive resonances as they go. The delicate arrangement also makes the planets' mutual tugs measurable as transit-timing variations, which is how their masses were weighed.",
+    "Resonance is a bridge between a system's present rhythm and its deep past — the orbits still carry the memory of how they assembled."
+  ],
+  "diagram_caption": "Planets in near-integer period ratios line up repeatedly, so their gravitational tugs reinforce."
+}

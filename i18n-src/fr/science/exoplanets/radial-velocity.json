@@ -1,0 +1,16 @@
+{
+  "title": "La méthode des vitesses radiales",
+  "intro_sentence": "La gravité d'une planète entraîne son étoile dans une oscillation infime d'avant en arrière ; un spectrographe lit ce mouvement comme un décalage Doppler dans la lumière stellaire.",
+  "narrative_101": [
+    "Une planète n'orbite pas simplement autour de son étoile — les deux oscillent autour de leur centre de masse commun, si bien que l'étoile trace elle-même un petit cercle. Depuis notre point de vue, cela se manifeste par un léger déplacement de l'étoile vers nous, puis légèrement vers l'arrière, encore et encore.",
+    "Ce mouvement d'approche et d'éloignement décale les raies spectrales de l'étoile vers le bleu puis vers le rouge — le même effet Doppler qui élève puis abaisse la hauteur d'une sirène qui passe. Mesurez le décalage avec suffisamment de précision et la planète se révèle, même si vous ne la voyez jamais.",
+    "L'oscillation est infime : Jupiter fait osciller le Soleil à environ 12 mètres par seconde, la Terre à peine 9 centimètres par seconde. Atteindre ces vitesses est une histoire d'instruments qui s'étend sur des décennies et qui se poursuit encore."
+  ],
+  "body_paragraphs": [
+    "La vitesse radiale a été la première méthode à porter ses fruits, confirmant 51 Pegasi b en 1995 et dominant le décompte initial des exoplanètes. Elle mesure la vitesse de l'étoile dans la ligne de visée à partir des décalages Doppler dans son spectre ; l'amplitude de cette vitesse (K) évolue avec la masse de la planète et diminue avec la distance orbitale, elle favorise donc les planètes massives sur des orbites courtes — raison pour laquelle les premières découvertes étaient des « Jupiter chauds ».",
+    "Sa grande force est la masse : la vitesse radiale donne la masse minimale de la planète (m·sin i), la quantité qui indique si un monde est rocheux, glacé ou gazeux. Ses limites sont l'inclinaison orbitale inconnue (seulement une borne inférieure de la masse sans transit) et le mur constitué par la turbulence de surface de l'étoile elle-même, qui imite une oscillation et masque actuellement les vrais signaux d'analogues terrestres.",
+    "Les spectrographes modernes comme ESPRESSO atteignent une précision inférieure au mètre par seconde, suffisante pour détecter les mondes sub-terrestres récemment trouvés autour de l'étoile de Barnard. Couplée à un transit, la vitesse radiale transforme une taille en une densité — et une densité en une estimation de la composition d'une planète."
+  ],
+  "formula_caption": "La semi-amplitude de vitesse K augmente avec la masse de la planète et diminue avec la période orbitale.",
+  "diagram_caption": "L'étoile et la planète orbitent autour de leur centre de masse commun ; le mouvement de l'étoile dans la ligne de visée décale son spectre vers le bleu puis vers le rouge."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Variaciones en el Tiempo de Tránsito",
+  "intro_sentence": "En un sistema abarrotado, los planetas se atraen mutuamente y llegan temprano o tarde; la deriva en los tiempos de tránsito revela mundos invisibles y pesa aquellos que vemos.",
+  "narrative_101": [
+    "Un planeta en tránsito solitario llega como un reloj — mismo intervalo, cada órbita. Pero coloca varios planetas en un sistema y su gravedad mutua empuja a cada uno, de modo que los tránsitos se adelantan o retrasan ligeramente en un patrón repetitivo.",
+    "Esas derivas de unos pocos minutos son una firma gravitacional. Modélalas y podrás pesar los planetas solo por sus tirones — no se necesita espectrógrafo — y a veces inferir un planeta que nunca transita en absoluto, sentido únicamente por su atracción sobre los demás.",
+    "Así es como se pesaron los siete pequeños mundos de TRAPPIST-1: demasiado tenues para velocidad radial, sus masas provinieron de la manera en que se apresuran y retrasan mutuamente al cruzar la estrella."
+  ],
+  "body_paragraphs": [
+    "Las variaciones en el tiempo de tránsito (TTVs) explotan las interacciones gravitacionales entre planetas del mismo sistema. Un planeta perfectamente aislado transita con un periodo constante; los planetas en interacción muestran desviaciones periódicas cuya amplitud y patrón codifican las masas y órbitas de los planetas.",
+    "Las TTVs brillan exactamente donde la velocidad radial tiene dificultades — alrededor de estrellas tenues y pequeñas cuyo bamboleo Doppler está enterrado en ruido — y pueden revelar planetas que no transitan solo por su influencia. Son más sensibles cerca de resonancias orbitales, donde encuentros cercanos repetidos amplifican los tirones.",
+    "Las masas del método complementan los radios de tránsito para dar densidades, razón por la cual sistemas resonantes compactos como TRAPPIST-1 y las cadenas multiplanetarias de Kepler están tan bien caracterizados a pesar de orbitar estrellas débiles."
+  ],
+  "diagram_caption": "Los tirones gravitacionales mutuos hacen que los tránsitos lleguen temprano o tarde; el patrón de deriva codifica las masas de los planetas."
+}

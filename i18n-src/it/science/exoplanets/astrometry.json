@@ -1,0 +1,15 @@
+{
+  "title": "Astrometria",
+  "intro_sentence": "Tracciando la posizione esatta di una stella nel cielo è possibile osservarla descrivere un piccolo anello mentre un pianeta invisibile la fa oscillare attorno al loro centro di massa comune.",
+  "narrative_101": [
+    "La velocità radiale cattura il movimento della stella verso e lontano da noi. L'astrometria cattura l'altra componente — l'oscillazione laterale della stella attraverso il cielo mentre un pianeta la trascina nel suo movimento orbitale.",
+    "L'anello che la stella descrive è incredibilmente piccolo, misurato in milionesimi di grado, ed è per questo che l'astrometria è stata a lungo il grande quasi-successo della caccia ai pianeti: promessa per decenni, con risultati scarsi, perché semplicemente non c'era la precisione necessaria.",
+    "L'astrometria spaziale ha cambiato la situazione. La missione Gaia dell'ESA ha mappato le posizioni di quasi due miliardi di stelle con la precisione necessaria per rilevare l'attrazione di un pianeta gigante — e sta iniziando a scoprire pianeti da queste oscillazioni."
+  ],
+  "body_paragraphs": [
+    "L'astrometria misura lo spostamento periodico di una stella sul piano del cielo mentre orbita attorno al centro di massa del sistema. A differenza della velocità radiale, rileva l'intera orbita indipendentemente dall'orientamento, quindi fornisce una massa reale (non solo un limite inferiore) e funziona bene per pianeti su orbite ampie, dove il segnale astrometrico aumenta.",
+    "Storicamente ha prodotto più ritrattazioni che pianeti — la Stella di Barnard è il classico esempio ammonitore, con i suoi famosi 'pianeti' rilevati dall'astrometria negli anni '60 tutti spuri. Il segnale è semplicemente minuscolo e la deriva strumentale può facilmente simularlo.",
+    "L'astrometria ad alta precisione su tutto il cielo di Gaia sta ora fornendo rilevamenti autentici e, cosa fondamentale, masse reali per pianeti scoperti con altri metodi — chiudendo un capitolo rimasto aperto per gran parte di un secolo."
+  ],
+  "diagram_caption": "La stella descrive un piccolo anello nel cielo mentre un pianeta invisibile la fa oscillare attorno al loro centro di massa comune."
+}

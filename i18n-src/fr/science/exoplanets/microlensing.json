@@ -1,0 +1,15 @@
+{
+  "title": "Microlentille gravitationnelle",
+  "intro_sentence": "Lorsqu'une étoile dérive précisément devant une autre, sa gravité amplifie l'étoile d'arrière-plan — et une planète ajoute un bref éclat supplémentaire.",
+  "narrative_101": [
+    "La gravité courbe la lumière. Lorsqu'une étoile au premier plan passe presque exactement devant une étoile bien plus lointaine, elle agit comme une lentille, augmentant brièvement la luminosité de l'étoile d'arrière-plan pendant des jours ou des semaines.",
+    "Si l'étoile au premier plan possède une planète, la gravité propre de la planète ajoute un pic court et net par-dessus cet éclaircissement régulier — un signal fugace durant de quelques heures à un jour qui trahit un monde que vous ne verrez jamais directement.",
+    "Parce qu'elle repose sur un alignement fortuit unique, chaque événement de microlentille se produit une fois et ne se répète jamais. Mais la méthode atteint ce que d'autres ne peuvent pas : les planètes froides loin de leurs étoiles, et même les mondes flottant librement sans être liés à aucune étoile."
+  ],
+  "body_paragraphs": [
+    "La microlentille détecte les planètes par l'amplification gravitationnelle transitoire qu'elles ajoutent à un alignement fortuit de deux étoiles. Elle est particulièrement sensible aux planètes de faible masse sur des orbites larges et froides — la région au-delà de la ligne de glace que les transits et la vélocité radiale peinent à atteindre — et aux planètes vagabondes dérivant seules à travers la galaxie.",
+    "Le compromis est que les événements sont singuliers et non répétables, l'étoile hôte et la planète sont souvent trop distantes pour être étudiées davantage, et la masse et la séparation sont quelque peu dégénérées. C'est un outil statistique : il mesure la fréquence des planètes froides et flottant librement, plus qu'il ne catalogue des mondes individuels.",
+    "Le télescope spatial Nancy Grace Roman de la NASA effectuera un vaste relevé de microlentilles qui devrait trouver des milliers de ces planètes autrement invisibles, comblant les régions externes froides du recensement des exoplanètes."
+  ],
+  "diagram_caption": "Une étoile au premier plan fait effet de lentille sur une étoile d'arrière-plan ; une planète en orbite ajoute un bref pic secondaire à la courbe de lumière."
+}

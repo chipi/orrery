@@ -1,0 +1,15 @@
+{
+  "title": "Die Transitmethode",
+  "intro_sentence": "Wenn ein Planet vor seinem Stern vorbeizieht, blockiert er einen schmalen Streifen Licht; dieser periodische Helligkeitsabfall verrät den Planeten und misst seine Größe.",
+  "narrative_101": [
+    "Wenn die Umlaufbahn eines Planeten zufällig von der Kante zu uns ausgerichtet ist, passiert er einmal pro Umlauf direkt zwischen uns und seinem Stern — ein Transit — und der Stern wird um einen winzigen, präzisen Bruchteil dunkler, während der Planet davor steht.",
+    "Die Tiefe dieses Abfalls ist einfach das Verhältnis der Flächen: Ein größerer Planet blockiert mehr Licht. Eine Erde, die die Sonne kreuzt, verdunkelt sie um etwa einen Teil von zehntausend; ein Jupiter um ein Prozent. Wenn man die sich wiederholenden Abfälle nach der Uhr erfasst, hat man die Größe und Umlaufperiode eines Planeten.",
+    "Nur ein kleiner Bruchteil der Systeme ist so ausgerichtet, dass wir Transite sehen können — aber wenn man genügend Sterne erfasst, gewinnen die Zahlen. Genau das haben die NASA-Missionen Kepler und TESS aus dem Weltraum getan, indem sie Hunderttausende von Sternen gleichzeitig beobachteten."
+  ],
+  "body_paragraphs": [
+    "Die Transitphotometrie ist bei weitem die produktivste Methode und für die große Mehrheit der bekannten Exoplaneten verantwortlich. Sie misst den Radius eines Planeten direkt (aus dem fraktionalen Abfall des Sternenlichts) und seine Umlaufperiode (aus dem Abstand der Abfälle); kombiniert mit einer Radialgeschwindigkeitsmasse ergibt dies eine mittlere Dichte.",
+    "Ihre Verzerrung ist geometrisch — sie erfasst nur die Minderheit der Systeme, deren Umlaufbahnen wir nahezu von der Kante sehen — und sie bevorzugt große Planeten mit kurzen Perioden, die häufiger und tiefer transitieren. Falsch-positive Ergebnisse durch bedeckungsveränderliche Doppelsterne und stellare Aktivität bedeuten, dass Transite normalerweise durch eine zweite Methode bestätigt werden.",
+    "Über die Entdeckung hinaus ist ein Transit ein Tor zur Atmosphäre eines Planeten: Während des Übergangs filtert ein dünner Ring aus Sternenlicht durch die Atmosphäre des Planeten und prägt die Fingerabdrücke seiner Gase ein — die Technik, die das James Webb Space Telescope jetzt verwendet, um an Exoplanetenhimmeln zu schnüffeln."
+  ],
+  "diagram_caption": "Während der Planet die Scheibe des Sterns kreuzt, sinkt die gemessene Helligkeit um das Verhältnis ihrer Flächen und erholt sich dann wieder."
+}

@@ -1,0 +1,16 @@
+{
+  "title": "The Radial-Velocity Method",
+  "intro_sentence": "A planet's gravity tugs its star into a tiny to-and-fro wobble; a spectrograph reads that motion as a Doppler shift in starlight.",
+  "narrative_101": [
+    "A planet doesn't just orbit its star — the two swing around their shared centre of mass, so the star traces a small circle of its own. From our vantage that shows up as the star moving slightly toward us, then slightly away, over and over.",
+    "That approach-and-recede shifts the star's spectral lines blue then red — the same Doppler effect that raises and lowers a passing siren's pitch. Measure the shift precisely enough and the planet reveals itself, even though you never see it.",
+    "The wobble is minute: Jupiter tugs the Sun at about 12 metres per second, Earth at barely 9 centimetres per second. Reaching those speeds is a decades-long instrument story that is still unfolding."
+  ],
+  "body_paragraphs": [
+    "Radial velocity was the first method to deliver, confirming 51 Pegasi b in 1995 and dominating the early exoplanet count. It measures the line-of-sight speed of the star from Doppler shifts in its spectrum; the amplitude of that speed (K) scales with the planet's mass and shrinks with orbital distance, so it favours massive planets on short orbits — the reason the first finds were 'hot Jupiters'.",
+    "Its great strength is mass: radial velocity yields the planet's minimum mass (m·sin i), the quantity that tells you whether a world is rocky, icy, or gas. Its limits are the unknown orbital inclination (only a lower bound on mass without a transit) and the wall set by the star's own surface churning, which mimics a wobble and currently hides true Earth-analogue signals.",
+    "Modern spectrographs like ESPRESSO reach sub-metre-per-second precision, enough to detect the sub-Earth worlds recently found around Barnard's Star. Paired with a transit, radial velocity turns a size into a density — and a density into a guess at what a planet is made of."
+  ],
+  "formula_caption": "The velocity semi-amplitude K grows with planet mass and shrinks with orbital period.",
+  "diagram_caption": "Star and planet orbit their common centre of mass; the star's line-of-sight motion shifts its spectrum blue then red."
+}

@@ -9,6 +9,8 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
   import LearnLink from './LearnLink.svelte';
+  import CultureDoorCard from './CultureDoorCard.svelte';
+  import type { LocalizedCultureDoor } from '$lib/data';
   import StarPortrait from './StarPortrait.svelte';
   import ConstellationFinder from './ConstellationFinder.svelte';
   import ImageCredit from './ImageCredit.svelte';
@@ -23,12 +25,20 @@
   type Tab = 'overview' | 'technical';
   type Props = {
     star: LocalizedNamedStar | null;
+    cultureDoors?: LocalizedCultureDoor[];
     open: boolean;
     hasSystem?: boolean;
     onEnterSystem?: () => void;
     onClose: () => void;
   };
-  let { star, open, hasSystem = false, onEnterSystem, onClose }: Props = $props();
+  let {
+    star,
+    open,
+    hasSystem = false,
+    onEnterSystem,
+    cultureDoors = [],
+    onClose,
+  }: Props = $props();
 
   const PC_TO_LY = 3.2615638;
   let tab = $state<Tab>('overview');
@@ -169,6 +179,12 @@
         {/if}
         {#if !star.fact && !star.bio && !star.cultural}
           <p class="editorial empty">{m.star_empty()}</p>
+        {/if}
+        {#if cultureDoors.length > 0}
+          <h3 class="library-heading">{m.culture_heading()}</h3>
+          {#each cultureDoors as door (door.id)}
+            <CultureDoorCard {door} />
+          {/each}
         {/if}
       {:else}
         <div class="grid">

@@ -1,0 +1,14 @@
+{
+  "title": "Lendo Atmosferas de Exoplanetas",
+  "intro_sentence": "Durante um trânsito, um fio de luz estelar filtra através do ar de um planeta e carrega de volta para nós as impressões digitais de seus gases.",
+  "narrative_101": [
+    "Você não pode pousar em um exoplaneta, mas pode saborear sua atmosfera a anos-luz de distância. Quando um planeta transita, um fino anel de luz estelar passa através da atmosfera em seu caminho até nós, e cada gás absorve seu próprio conjunto de cores.",
+    "Divida essa luz em um espectro e as cores ausentes revelam do que o ar é feito — água, dióxido de carbono, metano, sódio. Isso é espectroscopia de transmissão, e o James Webb Space Telescope foi construído para isso.",
+    "Até agora o JWST detectou dióxido de carbono e outras moléculas em planetas gigantes, e começou a tarefa muito mais difícil de testar se pequenos mundos rochosos ao redor de anãs vermelhas têm alguma atmosfera."
+  ],
+  "body_paragraphs": [
+    "A espectroscopia de transmissão mede como a atmosfera de um planeta absorve a luz estelar durante o trânsito, comprimento de onda por comprimento de onda, revelando sua composição. A espectroscopia de emissão — capturando o próprio brilho térmico do planeta pouco antes de ele deslizar atrás da estrela — adiciona estrutura de temperatura. Juntas, elas transformam um planeta em trânsito em um mundo com um céu mensurável.",
+    "O JWST empurrou o campo dos gigantes quentes até a fronteira das atmosferas de mundos rochosos: detecções claras de dióxido de carbono em planetas gasosos, e buscas sensíveis ao redor de TRAPPIST-1 que até agora sugerem que seus planetas mais internos são em grande parte sem ar. Erupções de anãs vermelhas tornam difícil manter uma atmosfera, e esse veredicto é exatamente o que essas observações testam.",
+    "O objetivo de longo prazo é um planeta rochoso na zona habitável de uma estrela semelhante ao Sol cuja atmosfera possa ser pesquisada em busca dos gases que a vida poderia produzir — a ponte técnica entre encontrar mundos e caracterizá-los."
+  ]
+}

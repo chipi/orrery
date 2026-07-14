@@ -25,6 +25,8 @@ const ICONIC: Record<string, { id: string; name: string }> = {
   '51 Peg': { id: '51-pegasi', name: '51 Pegasi' },
   'TRAPPIST-1': { id: 'trappist-1', name: 'TRAPPIST-1' },
   'TOI-700': { id: 'toi-700', name: 'TOI-700' },
+  'Kepler-16': { id: 'kepler-16', name: 'Kepler-16' },
+  'Kepler-16 (AB)': { id: 'kepler-16', name: 'Kepler-16' },
 };
 
 const D2R = Math.PI / 180;

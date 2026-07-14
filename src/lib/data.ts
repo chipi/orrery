@@ -1920,6 +1920,62 @@ export async function getExoplanetI18n(
   );
 }
 
+// ─── Culture doors (PRD-030 / RFC-032 — /explore v2 Slice 3) ───────────────
+// Optional "culture layer": badged fiction / message / visitor story cards
+// attached to real objects (Vega→Contact, Kepler-16b→Tatooine, the Voyager
+// Golden Record). The catalog holds non-translatable metadata; the localized
+// blurb lives in i18n-src/<locale>/culture-doors/<id>.json. Fiction is always
+// badged over fact (UXS-014).
+export interface CultureDoor {
+  id: string;
+  objectId: string;
+  objectType: 'star' | 'exoplanet' | 'message';
+  type: 'fiction' | 'message' | 'visitor';
+  work: string;
+  year: number;
+  author: string;
+  media: string;
+  links: Array<{ l: string; u: string }>;
+}
+export type LocalizedCultureDoor = CultureDoor & { blurb: string };
+interface CultureDoorsManifest {
+  schema_version: number;
+  doors: CultureDoor[];
+}
+
+let cultureDoorsCache: Promise<CultureDoor[]> | null = null;
+async function getCultureDoorCatalog(fetchFn: FetchLike = fetch): Promise<CultureDoor[]> {
+  if (!cultureDoorsCache) {
+    cultureDoorsCache = get<CultureDoorsManifest>('culture-doors.json', fetchFn)
+      .then((d) => d.doors ?? [])
+      .catch(() => []);
+  }
+  return cultureDoorsCache;
+}
+
+/** The culture doors attached to a given object id, localized. Empty if none. */
+export async function getCultureDoors(
+  objectId: string,
+  locale = 'en-US',
+  fetchFn: FetchLike = fetch,
+): Promise<LocalizedCultureDoor[]> {
+  const doors = (await getCultureDoorCatalog(fetchFn)).filter((d) => d.objectId === objectId);
+  return Promise.all(
+    doors.map(async (d) => {
+      let ov = await get<{ blurb?: string }>(
+        `i18n/${locale}/culture-doors/${d.id}.json`,
+        fetchFn,
+      ).catch(() => null);
+      if (!ov && locale !== 'en-US') {
+        ov = await get<{ blurb?: string }>(`i18n/en-US/culture-doors/${d.id}.json`, fetchFn).catch(
+          () => null,
+        );
+      }
+      return { ...d, blurb: ov?.blurb ?? '' };
+    }),
+  );
+}
+
 // ─── Audio provenance (PRD-016 §transparency / RFC-019 §5.4) ─────────────
 // Mirrors the image-provenance pattern. Read by /credits to surface every
 // audio asset's text-author + voice-provider attribution.
@@ -2030,6 +2086,7 @@ export const SCIENCE_TABS: readonly ScienceTabId[] = [
   // the subject before learning the mechanics.
   'scales-time', // 1. Units, frames, dimensions of the solar system
   'planets', // 2. The bodies in it (PRD-024)
+  'exoplanets', // 2b. Real planets around other stars (RFC-032 S3)
   'orbits', // 3. How those bodies move (Kepler, e, i)
   'transfers', // 4. How to move between them (Hohmann, Lambert, ∆v)
   'porkchop', // 5. When to launch — transfer + time tradeoff

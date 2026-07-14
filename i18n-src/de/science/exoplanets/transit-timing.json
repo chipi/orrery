@@ -1,0 +1,15 @@
+{
+  "title": "Transit-Timing-Variationen",
+  "intro_sentence": "In einem dicht besetzten System ziehen Planeten aneinander und treffen früher oder später ein; die Drift in den Transitzeiten enthüllt unsichtbare Welten und wiegt diejenigen, die wir sehen.",
+  "narrative_101": [
+    "Ein einzelner transitierender Planet trifft ein wie ein Uhrwerk — gleicher Abstand, jede Umlaufbahn. Aber setze mehrere Planeten in ein System und ihre gegenseitige Gravitation schubst sie, sodass Transite ein wenig früher oder ein wenig später in einem sich wiederholenden Muster eintreffen.",
+    "Diese wenigen Minuten Drift sind eine Gravitationssignatur. Modelliere sie und du kannst die Planeten allein durch ihre Anziehung wiegen — kein Spektrograph nötig — und manchmal auf einen Planeten schließen, der niemals transitiert, sondern nur durch seinen Zug an den anderen spürbar ist.",
+    "So wurden die sieben kleinen Welten von TRAPPIST-1 gewogen: zu lichtschwach für Radialgeschwindigkeit, kamen ihre Massen aus der Art, wie sie einander über den Stern hinweg beschleunigen und verzögern."
+  ],
+  "body_paragraphs": [
+    "Transit-Timing-Variationen (TTVs) nutzen die gravitativen Wechselwirkungen zwischen Planeten im selben System. Ein perfekt isolierter Planet transitiert mit konstanter Periode; wechselwirkende Planeten zeigen periodische Abweichungen, deren Amplitude und Muster die Massen und Bahnen der Planeten kodieren.",
+    "TTVs glänzen genau dort, wo Radialgeschwindigkeit kämpft — um lichtschwache, kleine Sterne, deren Doppler-Wobble im Rauschen vergraben ist — und sie können nicht-transitierende Planeten allein durch ihren Einfluss enthüllen. Sie sind am empfindlichsten nahe Bahnresonanzen, wo wiederholte nahe Begegnungen die Anziehungen verstärken.",
+    "Die Massen der Methode ergänzen Transitradien, um Dichten zu erhalten, weshalb kompakte resonante Systeme wie TRAPPIST-1 und Keplers Multiplanetenketten so gut charakterisiert sind, obwohl sie dunkle Sterne umkreisen."
+  ],
+  "diagram_caption": "Gegenseitige gravitative Anziehungen lassen Transite früher oder später eintreffen; das Muster der Drift kodiert die Massen der Planeten."
+}

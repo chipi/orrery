@@ -1,0 +1,14 @@
+{
+  "title": "Exoplaneten-Atmosphären lesen",
+  "intro_sentence": "Während eines Transits wird ein schmaler Streifen Sternenlicht durch die Atmosphäre eines Planeten gefiltert und trägt die Fingerabdrücke seiner Gase zu uns zurück.",
+  "narrative_101": [
+    "Man kann nicht auf einem Exoplaneten landen, aber man kann seine Atmosphäre aus Lichtjahren Entfernung erschmecken. Wenn ein Planet transitiert, passiert ein dünner Ring Sternenlicht die Atmosphäre auf seinem Weg zu uns, und jedes Gas absorbiert seine eigene Auswahl an Farben.",
+    "Zerlegt man dieses Licht in ein Spektrum, buchstabieren die fehlenden Farben aus, woraus die Luft besteht — Wasser, Kohlendioxid, Methan, Natrium. Dies ist Transmissionsspektroskopie, und das James Webb Space Telescope wurde dafür gebaut.",
+    "Bisher hat JWST Kohlendioxid und andere Moleküle auf Riesenplaneten nachgewiesen und die weitaus schwierigere Aufgabe begonnen, zu testen, ob kleine felsige Welten um Rote Zwerge überhaupt eine Atmosphäre besitzen."
+  ],
+  "body_paragraphs": [
+    "Transmissionsspektroskopie misst, wie die Atmosphäre eines Planeten während des Transits Sternenlicht absorbiert, Wellenlänge für Wellenlänge, und enthüllt so ihre Zusammensetzung. Emissionsspektroskopie — das Einfangen des eigenen thermischen Leuchtens des Planeten kurz bevor er hinter dem Stern verschwindet — fügt Temperaturstruktur hinzu. Zusammen verwandeln sie einen transitierenden Planeten in eine Welt mit einem messbaren Himmel.",
+    "JWST hat das Feld von heißen Riesen bis an die Grenze felsiger Weltatmosphären vorangebracht: klare Kohlendioxid-Nachweise auf Gasplaneten und empfindliche Suchen um TRAPPIST-1, die bisher darauf hindeuten, dass seine innersten Planeten weitgehend luftlos sind. Ausbrüche Roter Zwerge erschweren das Halten einer Atmosphäre, und genau dieses Urteil ist es, was diese Beobachtungen testen.",
+    "Das langfristige Ziel ist ein felsiger Planet in der habitablen Zone eines sonnenähnlichen Sterns, dessen Atmosphäre nach den Gasen durchsucht werden kann, die Leben hervorbringen könnte — die technische Brücke vom Finden von Welten zu ihrer Charakterisierung."
+  ]
+}

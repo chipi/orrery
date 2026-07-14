@@ -18,7 +18,7 @@ const HIPS = JSON.parse(
 )
   .stars.filter((s) => s.hip)
   .map((s) => `HIP ${s.hip}`);
-const ICONIC = ['TRAPPIST-1', '51 Peg', 'TOI-700'];
+const ICONIC = ['TRAPPIST-1', '51 Peg', 'TOI-700', 'Kepler-16', 'Kepler-16 (AB)'];
 
 const cols = [
   'hostname',

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "culture-door.schema.json",
+  "title": "Culture-door catalog (PRD-030 / RFC-032, Slice 3)",
+  "description": "Optional 'culture layer' — badged fiction / message / visitor story cards attached to real objects (Vega→Contact, Kepler-16b→Tatooine, the Voyager Golden Record). The localized blurb lives in i18n-src/<locale>/culture-doors/<id>.json; this catalog holds the non-translatable metadata. Fiction is always badged over fact (UXS-014).",
+  "type": "object",
+  "required": ["schema_version", "doors"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "doors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "objectId", "objectType", "type", "work", "year", "author", "media", "links"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "objectId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "objectType": { "type": "string", "enum": ["star", "exoplanet", "message"] },
+          "type": { "type": "string", "enum": ["fiction", "message", "visitor"] },
+          "work": { "type": "string", "minLength": 1 },
+          "year": { "type": "integer" },
+          "author": { "type": "string", "minLength": 1 },
+          "media": { "type": "string", "minLength": 1 },
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["l", "u"],
+              "additionalProperties": false,
+              "properties": {
+                "l": { "type": "string", "minLength": 1 },
+                "u": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

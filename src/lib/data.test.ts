@@ -704,6 +704,7 @@ describe('SCIENCE_TABS', () => {
     expect(SCIENCE_TABS).toEqual([
       'scales-time',
       'planets',
+      'exoplanets',
       'orbits',
       'transfers',
       'porkchop',

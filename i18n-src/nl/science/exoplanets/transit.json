@@ -1,0 +1,15 @@
+{
+  "title": "De Transitmethode",
+  "intro_sentence": "Wanneer een planeet voor zijn ster langs trekt, blokkeert hij een fractie van het licht; die periodieke dip in helderheid verraadt de planeet en meet zijn grootte.",
+  "narrative_101": [
+    "Als de baan van een planeet toevallig vanaf de zijkant naar ons toe staat, passeert hij eenmaal per omwenteling recht tussen ons en zijn ster — een transit — en dimt de ster met een kleine, precieze fractie terwijl de planeet ervoor staat.",
+    "De diepte van die dip is simpelweg de verhouding van oppervlakten: een grotere planeet blokkeert meer licht. Een Aarde die voor de Zon langs trekt, dimt hem met ongeveer één deel op tienduizend; een Jupiter met één procent. Vang de herhalende dippen op met een klok en je hebt de grootte en omlooptijd van een planeet.",
+    "Slechts een kleine fractie van de systemen is zo uitgelijnd dat wij transits kunnen zien — maar als je genoeg sterren onderzoekt, winnen de aantallen. Dat is precies wat NASA's Kepler- en TESS-missies deden, vanuit de ruimte, starend naar honderdduizenden sterren tegelijk."
+  ],
+  "body_paragraphs": [
+    "Transitfotometrie is verreweg de meest productieve methode, verantwoordelijk voor de grote meerderheid van bekende exoplaneten. Het meet de straal van een planeet direct (aan de hand van de fractionele dip in sterrenlicht) en zijn omlooptijd (aan de hand van de tussenruimte tussen de dippen); gecombineerd met een radiaalsnelheidsmassa levert het een bulkdichtheid op.",
+    "De bias is geometrisch — het vangt alleen de minderheid van systemen waarvan we de banen bijna vanaf de zijkant zien — en het bevoordeelt grote planeten met korte periodes, die vaker en dieper transiteren. Vals-positieven van eclipserende dubbelsterren en stellaire activiteit betekenen dat transits meestal door een tweede methode worden bevestigd.",
+    "Naast ontdekking is een transit een deur naar de atmosfeer van een planeet: tijdens de oversteek filtert een dunne ring sterrenlicht door de atmosfeer van de planeet en drukt de vingerafdrukken van zijn gassen erop — de techniek die de James Webb Space Telescope nu gebruikt om exoplaneetluchten te ruiken."
+  ],
+  "diagram_caption": "Terwijl de planeet over de schijf van de ster trekt, daalt de gemeten helderheid met de verhouding van hun oppervlakten, en herstelt zich vervolgens."
+}

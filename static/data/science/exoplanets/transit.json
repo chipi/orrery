@@ -1,0 +1,26 @@
+{
+  "id": "transit",
+  "tab": "exoplanets",
+  "order": 2,
+  "diagram": "exo-transit.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "query": "?system=trappist-1",
+      "context_key": "TRAPPIST-1 — seven transiting worlds found by the dimming they cause"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Transit method",
+      "u": "https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets#Transit_photometry",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · How TESS finds planets",
+      "u": "https://exoplanets.nasa.gov/tess/",
+      "t": "core"
+    }
+  ]
+}

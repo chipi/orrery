@@ -1,0 +1,14 @@
+{
+  "title": "Lire les atmosphères des exoplanètes",
+  "intro_sentence": "Lors d'un transit, un mince filet de lumière stellaire traverse l'atmosphère d'une planète et nous rapporte les signatures spectrales de ses gaz.",
+  "narrative_101": [
+    "Vous ne pouvez pas atterrir sur une exoplanète, mais vous pouvez goûter son atmosphère à des années-lumière de distance. Lorsqu'une planète transite, un mince anneau de lumière stellaire traverse l'atmosphère en route vers nous, et chaque gaz absorbe son propre ensemble de couleurs.",
+    "Décomposez cette lumière en un spectre et les couleurs manquantes révèlent la composition de l'atmosphère — eau, dioxyde de carbone, méthane, sodium. C'est la spectroscopie de transmission, et le James Webb Space Telescope a été conçu pour cela.",
+    "Jusqu'à présent, JWST a détecté du dioxyde de carbone et d'autres molécules sur des planètes géantes, et a commencé la tâche bien plus difficile de tester si les petits mondes rocheux autour des naines rouges possèdent une atmosphère."
+  ],
+  "body_paragraphs": [
+    "La spectroscopie de transmission mesure comment l'atmosphère d'une planète absorbe la lumière stellaire pendant le transit, longueur d'onde par longueur d'onde, révélant ainsi sa composition. La spectroscopie d'émission — captant la propre lueur thermique de la planète juste avant qu'elle ne glisse derrière l'étoile — ajoute la structure de température. Ensemble, elles transforment une planète en transit en un monde doté d'un ciel mesurable.",
+    "JWST a fait progresser le domaine des géantes chaudes jusqu'aux limites des atmosphères de mondes rocheux : des détections claires de dioxyde de carbone sur des planètes gazeuses, et des recherches sensibles autour de TRAPPIST-1 qui suggèrent jusqu'à présent que ses planètes les plus internes sont largement dépourvues d'atmosphère. Les éruptions des naines rouges rendent difficile le maintien d'une atmosphère, et ce verdict est précisément ce que ces observations testent.",
+    "L'objectif à long terme est une planète rocheuse dans la zone habitable d'une étoile similaire au Soleil dont l'atmosphère peut être scrutée à la recherche des gaz que la vie pourrait produire — le pont technique entre la découverte de mondes et leur caractérisation."
+  ]
+}

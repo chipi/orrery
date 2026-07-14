@@ -8,17 +8,19 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
   import LearnLink from './LearnLink.svelte';
-  import type { ExoplanetPlanet, ExoplanetOverlay } from '$lib/data';
+  import CultureDoorCard from './CultureDoorCard.svelte';
+  import type { ExoplanetPlanet, ExoplanetOverlay, LocalizedCultureDoor } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
 
   type Props = {
     planet: ExoplanetPlanet | null;
     hostName: string;
     overlay?: ExoplanetOverlay | null;
+    cultureDoors?: LocalizedCultureDoor[];
     open: boolean;
     onClose: () => void;
   };
-  let { planet, hostName, overlay = null, open, onClose }: Props = $props();
+  let { planet, hostName, overlay = null, cultureDoors = [], open, onClose }: Props = $props();
 
   type LinkItem = NonNullable<ExoplanetOverlay['links']>[number];
   let library = $derived.by(() => {
@@ -77,6 +79,13 @@
     </div>
 
     <p class="caption">{m.exo_caption()}</p>
+
+    {#if cultureDoors.length > 0}
+      <h3 class="library-heading">{m.culture_heading()}</h3>
+      {#each cultureDoors as door (door.id)}
+        <CultureDoorCard {door} />
+      {/each}
+    {/if}
 
     {#if library.length > 0}
       <div class="science-library">

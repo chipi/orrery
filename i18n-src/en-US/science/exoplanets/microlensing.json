@@ -1,0 +1,15 @@
+{
+  "title": "Gravitational Microlensing",
+  "intro_sentence": "When one star drifts precisely in front of another, its gravity magnifies the background star — and a planet adds a brief extra flash.",
+  "narrative_101": [
+    "Gravity bends light. When a foreground star passes almost exactly in front of a far more distant one, it acts as a lens, briefly brightening the background star over days or weeks.",
+    "If the foreground star has a planet, the planet's own gravity adds a short, sharp spike on top of that smooth brightening — a blip lasting hours to a day that betrays a world you will never see directly.",
+    "Because it relies on a one-off chance alignment, each microlensing event happens once and never repeats. But the method reaches where others can't: cold planets far from their stars, and even free-floating worlds bound to no star at all."
+  ],
+  "body_paragraphs": [
+    "Microlensing detects planets by the transient gravitational magnification they add to a chance alignment of two stars. It is uniquely sensitive to low-mass planets on wide, cool orbits — the region beyond the snow line that transits and radial velocity struggle to reach — and to rogue planets drifting alone through the galaxy.",
+    "The trade-off is that events are singular and unrepeatable, the host and planet are often too distant to study further, and the mass and separation come out somewhat degenerate. It is a statistical tool: it measures how common cold and free-floating planets are, more than it catalogues individual worlds.",
+    "NASA's Nancy Grace Roman Space Telescope will run a wide microlensing survey expected to find thousands of these otherwise-invisible planets, filling in the cold outer reaches of the exoplanet census."
+  ],
+  "diagram_caption": "A foreground star lenses a background one; an orbiting planet adds a brief secondary spike to the light curve."
+}

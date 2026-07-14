@@ -1,0 +1,15 @@
+{
+  "title": "Astrometrie",
+  "intro_sentence": "Volg de exacte positie van een ster aan de hemel en je ziet hoe deze een minuscule lus beschrijft terwijl een onzichtbare planeet hem rond hun gemeenschappelijk massacentrum slingert.",
+  "narrative_101": [
+    "Radiale snelheid registreert de beweging van de ster naar ons toe en van ons af. Astrometrie registreert de andere component — de zijwaartse wankeling van de ster over de hemel terwijl een planeet hem rondtrekt.",
+    "De lus die de ster beschrijft is fantastisch klein, gemeten in miljoensten van een graad, wat verklaart waarom astrometrie lang de grote bijna-hit van de planetenjacht was: decennialang beloofd, weinig opgeleverd, omdat de precisie er simpelweg niet was.",
+    "Ruimte-astrometrie heeft dat veranderd. ESA's Gaia-missie heeft de posities van bijna twee miljard sterren in kaart gebracht met de precisie die nodig is om de aantrekkingskracht van een reuzenplaneet te voelen — en begint nu planeten te oogsten uit die wankelingen."
+  ],
+  "body_paragraphs": [
+    "Astrometrie meet de periodieke verplaatsing van een ster in het vlak van de hemel terwijl deze rond het massacentrum van het systeem draait. In tegenstelling tot radiale snelheid registreert het de volledige baan ongeacht de oriëntatie, zodat het een echte massa oplevert (niet alleen een ondergrens) en goed werkt voor planeten in wijde banen, waar het astrometrische signaal groter wordt.",
+    "Historisch gezien produceerde het meer intrekkingen dan planeten — Barnard's Star is het klassieke waarschuwende verhaal, waarvan de beroemde 'planeten' uit de jaren zestig astrometrie allemaal vals bleken. Het signaal is simpelweg minuscuul, en instrumentele drift bootst het gemakkelijk na.",
+    "Gaia's hemeldekkende, hoogprecieze astrometrie levert nu echte detecties en, cruciaal, echte massa's voor planeten die door andere methoden zijn gevonden — waarmee een hoofdstuk wordt gesloten dat bijna een eeuw open bleef staan."
+  ],
+  "diagram_caption": "De ster beschrijft een kleine lus aan de hemel terwijl een onzichtbare planeet hem rond hun gemeenschappelijk massacentrum slingert."
+}

@@ -1,0 +1,19 @@
+{
+  "id": "hot-jupiters",
+  "tab": "exoplanets",
+  "order": 8,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "query": "?system=51-pegasi",
+      "context_key": "51 Pegasi b — the original hot Jupiter"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Hot Jupiter",
+      "u": "https://en.wikipedia.org/wiki/Hot_Jupiter",
+      "t": "intro"
+    }
+  ]
+}

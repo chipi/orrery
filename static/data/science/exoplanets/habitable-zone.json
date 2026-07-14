@@ -1,0 +1,26 @@
+{
+  "id": "habitable-zone",
+  "tab": "exoplanets",
+  "order": 7,
+  "diagram": "exo-habitable-zone.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "query": "?system=toi-700",
+      "context_key": "TOI-700 d and e — Earth-sized worlds in their star’s habitable zone"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Circumstellar habitable zone",
+      "u": "https://en.wikipedia.org/wiki/Circumstellar_habitable_zone",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · The habitable zone",
+      "u": "https://exoplanets.nasa.gov/search-for-life/habitable-zone/",
+      "t": "core"
+    }
+  ]
+}

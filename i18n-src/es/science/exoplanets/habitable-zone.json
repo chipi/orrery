@@ -1,0 +1,15 @@
+{
+  "title": "La Zona Habitable",
+  "intro_sentence": "La banda de órbitas alrededor de una estrella donde un planeta rocoso podría mantener agua líquida en su superficie — ni demasiado caliente, ni demasiado frío.",
+  "narrative_101": [
+    "El agua es líquida solo en un rango estrecho de temperaturas, y la temperatura disminuye con la distancia de una estrella. Así que alrededor de cada estrella hay un anillo de órbitas — la zona habitable — donde un planeta similar a la Tierra podría mantener océanos en lugar de hervirlos o congelarlos.",
+    "La zona no es fija: una estrella caliente y brillante la empuja lejos; una enana roja tenue la atrae cerca. Por eso los planetas en zona habitable alrededor de enanas rojas orbitan en días, pegados a sus estrellas.",
+    "'Zona habitable' es una abreviatura esperanzadora, no una promesa. Un mundo allí todavía podría ser una roca sin aire o un invernadero desbocado — la ubicación es necesaria, no suficiente."
+  ],
+  "body_paragraphs": [
+    "La zona habitable circunestelar se define por el flujo estelar: el borde interior es donde un invernadero desbocado herviría los océanos (el destino de Venus), el borde exterior donde incluso un fuerte efecto invernadero de dióxido de carbono no puede evitar la congelación global (más allá de Marte). Su distancia escala con la raíz cuadrada de la luminosidad de la estrella, por lo que se sitúa lejos de estrellas brillantes y cerca de las tenues.",
+    "Dado que las pequeñas enanas rojas son con mucho las estrellas más comunes, la mayoría de los planetas conocidos en zona habitable las orbitan — mundos como TOI-700 d y varios de los planetas de TRAPPIST-1. Sus órbitas apretadas traen complicaciones: bloqueo de marea y exposición a fulguraciones estelares que pueden arrancar una atmósfera.",
+    "La zona habitable es un primer filtro, no un veredicto. Si alguno de estos mundos es realmente habitable depende de cosas que la zona no puede decirnos — una atmósfera, agua, un campo magnético — por eso la frontera se ha desplazado a leer su aire."
+  ],
+  "diagram_caption": "La zona habitable (sombreada) — órbitas donde un planeta rocoso podría mantener agua líquida; hacia dentro es demasiado caliente, hacia fuera demasiado frío."
+}

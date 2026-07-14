@@ -1,0 +1,14 @@
+{
+  "title": "Formation & Migration",
+  "intro_sentence": "Planets condense from a disk of gas and dust around a young star — and often don't stay where they were born.",
+  "narrative_101": [
+    "A new star is wrapped in a spinning disk of gas and dust. Grains stick into pebbles, pebbles into boulders, boulders into planet-sized bodies — the whole planetary system assembling from the leftovers of the star's own birth.",
+    "Where a planet forms depends on temperature: rock and metal condense close in, ice only beyond the 'snow line'. That's why the Solar System has small rocky worlds inside and giants outside.",
+    "But the exoplanet zoo — hot Jupiters, resonant chains — proved that planets migrate. They exchange momentum with the disk and with each other and can spiral far from where they were born, scrambling the tidy picture."
+  ],
+  "body_paragraphs": [
+    "The nebular model builds planets by core accretion in a protoplanetary disk: dust coagulates into planetesimals, which merge into cores; a core beyond the snow line that grows fast enough can capture a massive gas envelope and become a giant before the disk disperses.",
+    "Migration reshuffles the result. Gravitational torques between a planet and the disk gas can drive large radial drift, delivering hot Jupiters to their scorching orbits and sweeping smaller planets into resonant chains. Later scattering between planets can tilt and stretch orbits further.",
+    "Exoplanet demographics — the abundance of close-in giants, the ubiquity of super-Earths, the resonant multis — are the observational constraints that any formation-and-migration theory now has to reproduce."
+  ]
+}

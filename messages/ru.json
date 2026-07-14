@@ -1568,5 +1568,11 @@
   "exo_label_mass": "МАССА",
   "exo_label_discovery": "ОТКРЫТИЕ",
   "exo_days": "сут",
-  "exo_caption": "Орбиты в масштабе внутри системы · тела не в масштабе · процедурная генерация"
+  "exo_caption": "Орбиты в масштабе внутри системы · тела не в масштабе · процедурная генерация",
+  "science_tab_exoplanets": "ЭКЗОПЛАНЕТЫ",
+  "explore_culture_toggle": "Культура",
+  "culture_heading": "В КУЛЬТУРЕ",
+  "culture_badge_fiction": "ФАНТАСТИКА",
+  "culture_badge_message": "ПОСЛАНИЕ",
+  "culture_badge_visitor": "ВИЗИТЁР"
 }

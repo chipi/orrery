@@ -1,0 +1,15 @@
+{
+  "title": "Resonancia Orbital",
+  "intro_sentence": "Cuando los períodos orbitales de los planetas forman razones simples de números enteros, sus alineamientos repetidos sincronizan el sistema en un ritmo autorreforzante.",
+  "narrative_101": [
+    "Si un planeta orbita exactamente dos veces por cada una de su vecino, ambos se alinean en el mismo lugar una y otra vez, y sus empujones gravitacionales se suman en lugar de promediarse. Eso es una resonancia: un enganche rítmico entre órbitas.",
+    "TRAPPIST-1 es el caso ejemplar: sus siete planetas están dispuestos en una cadena casi ininterrumpida de resonancias, cada período es una razón ordenada del siguiente. Si acelerásemos el sistema, los alineamientos sonarían como una escala musical real.",
+    "Las resonancias son huellas de cómo se formó un sistema: surgen cuando los planetas migran hacia el interior juntos a través del disco de nacimiento y se capturan mutuamente al paso."
+  ],
+  "body_paragraphs": [
+    "Una resonancia orbital ocurre cuando cuerpos en órbita ejercen influencia gravitacional regular y periódica entre sí, generalmente porque sus períodos están en una razón de enteros pequeños. Las resonancias pueden estabilizar un sistema densamente empaquetado al mantener los planetas en un patrón sincronizado, o desestabilizarlo al aumentar las excentricidades.",
+    "Las cadenas de resonancias, como la de TRAPPIST-1, son evidencia sólida de migración convergente: planetas que se forman más lejos y derivan hacia el interior a través del disco de gas, quedando atrapados en resonancias sucesivas a medida que avanzan. La delicada disposición también hace que los tirones mutuos de los planetas sean medibles como variaciones en el tiempo de tránsito, que es como se determinaron sus masas.",
+    "La resonancia es un puente entre el ritmo presente de un sistema y su pasado profundo: las órbitas aún conservan la memoria de cómo se ensamblaron."
+  ],
+  "diagram_caption": "Planetas en razones de período cercanas a enteros se alinean repetidamente, por lo que sus tirones gravitacionales se refuerzan."
+}

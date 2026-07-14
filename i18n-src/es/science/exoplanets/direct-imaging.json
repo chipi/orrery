@@ -1,0 +1,15 @@
+{
+  "title": "Imagen Directa",
+  "intro_sentence": "Bloquea el resplandor abrumador de la estrella y, con suerte para unos pocos planetas, podrás fotografiar el débil punto de luz junto a ella.",
+  "narrative_101": [
+    "La mayoría de los exoplanetas se encuentran indirectamente, por su efecto en su estrella. La imagen directa es la excepción — capta fotones reales del propio planeta, una imagen genuina de otro mundo.",
+    "El problema es el contraste. Un planeta puede ser mil millones de veces más tenue que su estrella y se encuentra justo al lado, como detectar una luciérnaga junto a un faro. Así que la técnica oculta la estrella detrás de una máscara — un coronógrafo dentro del telescopio, o una sombra estelar distante en vuelo libre — y deja pasar la luz del planeta.",
+    "Funciona mejor para los planetas más difíciles de encontrar por otros medios: mundos jóvenes, calientes y masivos en órbitas amplias, que todavía brillan con el calor de su formación."
+  ],
+  "body_paragraphs": [
+    "La imagen directa bloquea o anula la luz estelar (con un coronógrafo o interferómetro) para revelar planetas y discos que de otro modo se perderían en el resplandor. Como detecta la propia luz del planeta, permite de manera única la espectroscopía del mundo en aislamiento — una lectura directa de su temperatura y atmósfera.",
+    "Su sesgo es la imagen invertida de los demás: favorece planetas grandes y autoluminosos lejos de sus estrellas (las órbitas amplias facilitan el problema del contraste, y la juventud mantiene al planeta caliente y brillante). Sistemas como HR 8799 — cuatro planetas gigantes fotografiados a la vez — y el anillo de escombros esculpido de Fomalhaut son ejemplos emblemáticos.",
+    "El método impulsa la próxima generación de instrumentos insignia, cuyo objetivo es obtener imágenes y espectros de un planeta rocoso en la zona habitable de una estrella similar al Sol — y buscar en su atmósfera signos de vida."
+  ],
+  "diagram_caption": "Un coronógrafo enmascara el resplandor de la estrella para que el planeta débil y cercano se haga visible."
+}

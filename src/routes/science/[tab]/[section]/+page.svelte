@@ -121,7 +121,7 @@
       <ul>
         {#each section.see_in_app as link (link.route + link.context_key)}
           <li>
-            <a href="{base}{link.route}">{link.route}</a>
+            <a href="{base}{link.route}{link.query ?? ''}">{link.route}</a>
             <span class="ctx">{link.context_key}</span>
           </li>
         {/each}

@@ -1,0 +1,15 @@
+{
+  "title": "Transit-Timing Variations",
+  "intro_sentence": "In a crowded system, planets tug on one another and arrive early or late; the drift in transit times reveals unseen worlds and weighs the ones we see.",
+  "narrative_101": [
+    "A lone transiting planet arrives like clockwork — same interval, every orbit. But put several planets in one system and their mutual gravity nudges each other, so transits creep a little early or a little late in a repeating pattern.",
+    "Those few-minute drifts are a gravitational signature. Model them and you can weigh the planets from their tugs alone — no spectrograph needed — and sometimes infer a planet that never transits at all, felt only through its pull on the others.",
+    "This is how the seven small worlds of TRAPPIST-1 were weighed: too faint for radial velocity, their masses came from the way they hurry and delay each other across the star."
+  ],
+  "body_paragraphs": [
+    "Transit-timing variations (TTVs) exploit the gravitational interactions between planets in the same system. A perfectly isolated planet transits with a constant period; interacting planets show periodic deviations whose amplitude and pattern encode the planets' masses and orbits.",
+    "TTVs shine exactly where radial velocity struggles — around faint, small stars whose Doppler wobble is buried in noise — and they can reveal non-transiting planets by their influence alone. They are most sensitive near orbital resonances, where repeated close encounters amplify the tugs.",
+    "The method's masses complement transit radii to give densities, which is why compact resonant systems like TRAPPIST-1 and Kepler's multi-planet chains are so well characterised despite orbiting dim stars."
+  ],
+  "diagram_caption": "Mutual gravitational tugs make transits arrive early or late; the pattern of drift encodes the planets' masses."
+}

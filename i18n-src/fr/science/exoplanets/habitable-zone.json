@@ -1,0 +1,15 @@
+{
+  "title": "La Zone Habitable",
+  "intro_sentence": "La bande d'orbites autour d'une étoile où une planète rocheuse pourrait retenir de l'eau liquide à sa surface — ni trop chaude, ni trop froide.",
+  "narrative_101": [
+    "L'eau est liquide seulement sur une plage étroite de températures, et la température diminue avec la distance d'une étoile. Ainsi, autour de chaque étoile il existe un anneau d'orbites — la zone habitable — où une planète semblable à la Terre pourrait conserver des océans plutôt que de les faire bouillir ou geler.",
+    "La zone n'est pas fixe : une étoile chaude et brillante la repousse au loin ; une naine rouge sombre la rapproche. C'est pourquoi les planètes en zone habitable autour des naines rouges orbitent en quelques jours, blotties tout près de leurs étoiles.",
+    "« Zone habitable » est un raccourci plein d'espoir, pas une promesse. Un monde qui s'y trouve pourrait tout de même être un rocher sans air ou une serre atmosphérique incontrôlée — l'emplacement est nécessaire, mais non suffisant."
+  ],
+  "body_paragraphs": [
+    "La zone habitable circumstellaire est définie par le flux stellaire : la bordure intérieure est l'endroit où une serre atmosphérique incontrôlée ferait bouillir les océans (le sort de Venus), la bordure extérieure où même un fort effet de serre au dioxyde de carbone ne peut empêcher la congélation globale (au-delà de Mars). Sa distance évolue avec la racine carrée de la luminosité de l'étoile, donc elle se situe loin des étoiles brillantes et près des étoiles faibles.",
+    "Parce que les petites naines rouges sont de loin les étoiles les plus communes, la plupart des planètes connues en zone habitable orbitent autour d'elles — des mondes comme TOI-700 d et plusieurs des planètes de TRAPPIST-1. Leurs orbites serrées apportent des complications : le verrouillage gravitationnel et l'exposition aux éruptions stellaires qui peuvent arracher une atmosphère.",
+    "La zone habitable est un premier filtre, pas un verdict. Le fait qu'un de ces mondes soit réellement habitable dépend de choses que la zone ne peut nous dire — une atmosphère, de l'eau, un champ magnétique — c'est pourquoi la frontière s'est déplacée vers la lecture de leur air."
+  ],
+  "diagram_caption": "La zone habitable (ombrée) — orbites où une planète rocheuse pourrait retenir de l'eau liquide ; vers l'intérieur c'est trop chaud, vers l'extérieur trop froid."
+}

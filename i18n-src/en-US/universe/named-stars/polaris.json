@@ -1,5 +1,12 @@
 {
   "fact": "Today's North Star — sitting almost exactly above Earth's north pole, a fixed point around which the sky appears to turn.",
   "bio": "Polaris (Alpha Ursae Minoris) is a yellow supergiant and a Cepheid variable roughly 430 light-years away. It is not especially bright; its fame comes entirely from its position near the celestial pole.",
-  "cultural": "For navigators across the northern hemisphere, Polaris gives both direction (true north) and latitude (its altitude equals your latitude). Precession means it has not always been, and will not always be, the pole star."
+  "cultural": "For navigators across the northern hemisphere, Polaris gives both direction (true north) and latitude (its altitude equals your latitude). Precession means it has not always been, and will not always be, the pole star.",
+  "links": [
+    {
+      "l": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Polaris",
+      "t": "intro"
+    }
+  ]
 }

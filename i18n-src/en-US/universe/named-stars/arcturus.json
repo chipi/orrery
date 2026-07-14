@@ -1,5 +1,12 @@
 {
   "fact": "The brightest star of the northern sky's Boötes — an ageing orange giant racing through the galaxy on an unusual orbit.",
   "bio": "Arcturus (Alpha Boötis) is an orange giant just 37 light-years away. It belongs to an older population of stars moving steeply relative to the galactic disc, giving it a large proper motion.",
-  "cultural": "In Hawaiian tradition Arcturus is Hōkūleʻa, the 'Star of Gladness' — the zenith star of Hawaii and a key wayfinding star for Polynesian voyagers, later lending its name to the famous voyaging canoe."
+  "cultural": "In Hawaiian tradition Arcturus is Hōkūleʻa, the 'Star of Gladness' — the zenith star of Hawaii and a key wayfinding star for Polynesian voyagers, later lending its name to the famous voyaging canoe.",
+  "links": [
+    {
+      "l": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Arcturus",
+      "t": "intro"
+    }
+  ]
 }

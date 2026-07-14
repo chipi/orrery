@@ -109,6 +109,8 @@
         return m.library_category_rocket();
       case 'fleet':
         return m.library_category_fleet();
+      case 'star':
+        return m.library_category_star();
       default:
         return c;
     }

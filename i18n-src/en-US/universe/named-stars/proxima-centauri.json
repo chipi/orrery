@@ -1,5 +1,12 @@
 {
   "fact": "The closest star to the Sun — a dim red dwarf just 4.24 light-years away, host to a potentially rocky planet in its habitable zone.",
   "bio": "Proxima Centauri is a small, cool red dwarf, the third member of the Alpha Centauri system. It is far too faint to see with the naked eye despite its proximity, and it flares violently — a challenge for any planet's habitability.",
-  "cultural": "As our nearest stellar neighbour, Proxima is the natural first target for interstellar thought experiments, from Breakthrough Starshot's light-sail probes to generations of science fiction."
+  "cultural": "As our nearest stellar neighbour, Proxima is the natural first target for interstellar thought experiments, from Breakthrough Starshot's light-sail probes to generations of science fiction.",
+  "links": [
+    {
+      "l": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Proxima_Centauri",
+      "t": "intro"
+    }
+  ]
 }

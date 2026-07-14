@@ -1775,7 +1775,8 @@ export interface NamedStarOverlay {
   bio?: string;
   /** Cultural / navigational significance across traditions. */
   cultural?: string;
-  library?: Array<{ id: string; label: string; url: string; tier: 'intro' | 'core' | 'deep' }>;
+  /** Curated learn-more links (same shape as planets): { l: label, u: url, t: tier }. */
+  links?: Array<{ l: string; u: string; t: 'intro' | 'core' | 'deep' }>;
 }
 
 export type LocalizedNamedStar = NamedStar & NamedStarOverlay;

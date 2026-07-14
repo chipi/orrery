@@ -68,7 +68,8 @@ type Category =
   | 'rocket'
   | 'small-body'
   | 'scenario'
-  | 'fleet';
+  | 'fleet'
+  | 'star';
 
 interface LinkEntry {
   id: string;
@@ -1120,6 +1121,10 @@ async function main(): Promise<void> {
     },
     { label: 'i18n/en-US/planets/*.json', run: () => collectFromI18nPlanets() },
     { label: 'sun.json + i18n overlay', run: () => collectFromSun() },
+    {
+      label: 'i18n/en-US/universe/named-stars/*.json',
+      run: () => collectFromI18nPerIdDir('universe/named-stars', 'star', '/explore'),
+    },
   ];
   const raw: RawLink[] = [];
   for (const { label, run } of collectors) {

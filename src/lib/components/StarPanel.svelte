@@ -41,10 +41,10 @@
   const fmt = (n: number, dp = 2): string =>
     n.toLocaleString(undefined, { maximumFractionDigits: dp });
 
-  type LibItem = NonNullable<LocalizedNamedStar['library']>[number];
+  type LinkItem = NonNullable<LocalizedNamedStar['links']>[number];
   let library = $derived.by(() => {
     const order = { intro: 0, core: 1, deep: 2 } as const;
-    return [...(star?.library ?? [])].sort((a, b) => order[a.tier] - order[b.tier]) as LibItem[];
+    return [...(star?.links ?? [])].sort((a, b) => order[a.t] - order[b.t]) as LinkItem[];
   });
 
   // Reset to overview + load the constellation figure when a different star is selected.
@@ -182,8 +182,8 @@
           <div class="science-library">
             <h3 class="library-heading">LEARN MORE</h3>
             <ul class="learn-list">
-              {#each library as l (l.id)}
-                <li><LearnLink entityId={star.id} url={l.url} label={l.label} /></li>
+              {#each library as l (l.u)}
+                <li><LearnLink entityId={star.id} url={l.u} label={l.l} /></li>
               {/each}
             </ul>
           </div>

@@ -1,5 +1,12 @@
 {
   "fact": "The brightest star in Earth's night sky — and one of our nearest stellar neighbours at 8.6 light-years.",
   "bio": "Sirius (Alpha Canis Majoris) is a hot, blue-white main-sequence star with a faint white-dwarf companion, Sirius B, the burnt-out core of a once more-massive star. Its brilliance comes from a genuinely luminous star sitting unusually close to us.",
-  "cultural": "The 'Dog Star' has guided calendars for millennia: its heliacal rising once heralded the annual flooding of the Nile in ancient Egypt, and it anchors the 'Dog Days' of summer in the Greco-Roman tradition."
+  "cultural": "The 'Dog Star' has guided calendars for millennia: its heliacal rising once heralded the annual flooding of the Nile in ancient Egypt, and it anchors the 'Dog Days' of summer in the Greco-Roman tradition.",
+  "links": [
+    {
+      "l": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Sirius",
+      "t": "intro"
+    }
+  ]
 }

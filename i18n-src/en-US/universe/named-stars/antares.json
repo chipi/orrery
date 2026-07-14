@@ -1,5 +1,12 @@
 {
   "fact": "The red heart of the Scorpion — a vast red supergiant whose ruddy colour earned it the name 'rival of Mars'.",
   "bio": "Antares (Alpha Scorpii) is a red supergiant roughly 550 light-years away, hundreds of times the Sun's diameter. Like Betelgeuse it is destined to end as a supernova.",
-  "cultural": "The Greek name means 'rival of Ares (Mars)', for its Mars-like hue. Many cultures place it at the heart or sting of a great scorpion or serpent along the Milky Way."
+  "cultural": "The Greek name means 'rival of Ares (Mars)', for its Mars-like hue. Many cultures place it at the heart or sting of a great scorpion or serpent along the Milky Way.",
+  "links": [
+    {
+      "l": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Antares",
+      "t": "intro"
+    }
+  ]
 }

@@ -78843,58 +78843,39 @@
       "id": "star-sirius-01",
       "path": "/images/stars/sirius/01.webp",
       "source_type": "wikimedia-commons",
-      "title": "Sirius A and B artwork (artist’s impression)",
-      "author": "NASA, ESA and G. Bacon (STScI)",
+      "title": "The Dog Star, Sirius A, and its tiny companion (Hubble)",
+      "author": "NASA, ESA, H. Bond (STScI), M. Barstow (University of Leicester)",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Sirius_A_and_B_artwork.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sirius_A_and_B_artwork.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Dog_Star,_Sirius,_and_its_Tiny_Companion_(2005-36-1820).jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Dog%20Star%2C%20Sirius%2C%20and%20its%20Tiny%20Companion%20(2005-36-1820).jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "Illustration produced by STScI for NASA (Hubble) — U.S. Government work, public domain, free to use with credit. Artist’s impression, not a photograph.",
+      "license_rationale": "Hubble Space Telescope image (STScI for NASA) — U.S. Government work, public domain. Sirius A with the white-dwarf companion Sirius B.",
       "modifications": [
         "downloaded-via-special-filepath",
         "resized",
         "reencoded-webp"
       ],
-      "fetched_at": "2026-07-14T11:20:19.325Z"
+      "fetched_at": "2026-07-14T11:52:11.093Z"
     },
     {
       "id": "star-fomalhaut-01",
       "path": "/images/stars/fomalhaut/01.webp",
       "source_type": "wikimedia-commons",
-      "title": "Fomalhaut Ring Artwork (opo0510f)",
-      "author": "NASA, ESA and A. Feild (STScI)",
+      "title": "Fomalhaut, its debris ring and the planet Fomalhaut b (Hubble)",
+      "author": "NASA, ESA, P. Kalas, J. Graham, E. Chiang, E. Kite",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Fomalhaut_Ring_Artwork_(opo0510f).jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fomalhaut%20Ring%20Artwork%20(opo0510f).jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fomalhaut_with_Disk_Ring_and_extrasolar_planet_b.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fomalhaut%20with%20Disk%20Ring%20and%20extrasolar%20planet%20b.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "STScI illustration for NASA (Hubble) — U.S. Government work, public domain. Artist’s impression, not a photograph.",
+      "license_rationale": "Hubble ACS coronagraph image (STScI for NASA) — public domain. Real image of Fomalhaut’s debris ring and planet b.",
       "modifications": [
         "downloaded-via-special-filepath",
         "resized",
         "reencoded-webp"
       ],
-      "fetched_at": "2026-07-14T11:37:10.964Z"
-    },
-    {
-      "id": "star-proxima-centauri-01",
-      "path": "/images/stars/proxima-centauri/01.webp",
-      "source_type": "wikimedia-commons",
-      "title": "Artist's impression of the planet orbiting Proxima Centauri (eso1629e)",
-      "author": "ESO/M. Kornmesser",
-      "agency": "ESO",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Artist%27s_impression_of_the_planet_orbiting_Proxima_Centauri_(eso1629e).jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Artist's%20impression%20of%20the%20planet%20orbiting%20Proxima%20Centauri%20(eso1629e).jpg",
-      "license_short": "CC-BY-4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "license_rationale": "ESO releases its imagery under Creative Commons Attribution 4.0 International. Artist’s impression, not a photograph.",
-      "modifications": [
-        "downloaded-via-special-filepath",
-        "resized",
-        "reencoded-webp"
-      ],
-      "fetched_at": "2026-07-14T11:37:10.964Z"
+      "fetched_at": "2026-07-14T11:52:11.093Z"
     }
   ]
 }

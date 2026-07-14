@@ -31,6 +31,13 @@
       "text": "The cancer risk is the one most discussed in planning documents. The central nervous system risk is the one that unnerves researchers more. High-energy galactic cosmic rays deposit energy in dense, localised tracks through neurons in ways that differ from ordinary radiation injury and may not heal the same way. Animal studies at the NASA Space Radiation Laboratory at Brookhaven have shown measurable cognitive and behavioural changes in rodents exposed to simulated GCR doses equivalent to a Mars mission: degraded spatial memory, impaired executive function, accelerated neurodegeneration. The human data to contradict or confirm this does not yet exist, because no human has ever received a GCR dose that high. We will not know the human CNS answer until the first crew goes. That is a genuine scientific and ethical frontier — treated as such by researchers who study it, even when treated as a background assumption by mission planners who need the trip to happen."
     },
     {
+      "type": "figure",
+      "image": "essays/the-body-in-the-dark/radiation-weather",
+      "kind": "diagram",
+      "caption": "The hardest problem is the one you cannot see. Beyond Earth’s magnetic field there is no shelter from galactic cosmic rays, and a solar storm can deliver an acute dose in hours. Shielding heavy enough to stop them is far too heavy to fly — so on a long voyage, the crew simply absorbs the weather.",
+      "align": "wide"
+    },
+    {
       "type": "heading",
       "text": "The body forgets gravity"
     },
@@ -47,6 +54,13 @@
       "text": "The most surprising complication to have emerged from long-duration spaceflight in the last decade is one no one anticipated clearly before the ISS programme accumulated enough crew-hours to make it visible: [spaceflight-associated neuro-ocular syndrome](/science/life-in-space/microgravity-physiology), or SANS. In microgravity, the fluid shift that drives blood and plasma toward the head also affects intracranial pressure in ways that are still being characterised. The result, in a significant fraction of long-duration crew members — some studies now put it at two-thirds or more of long-duration crew — is a flattening of the back of the eyeball, a change in the shape of the optic nerve head, and measurable degradation of visual acuity. Some astronauts have returned from the ISS needing reading glasses for the first time in their lives. The mechanism is not fully understood. The treatment does not yet exist. SANS is currently one of the three or four problems on the list of showstoppers for a crewed Mars mission, in the assessment of researchers who write those lists."
     },
     {
+      "type": "figure",
+      "image": "essays/the-body-in-the-dark/microgravity-toll",
+      "kind": "diagram",
+      "caption": "A body optimised for one gravity quietly comes apart in free fall: bone drains at around one percent a month, muscle wastes, fluid pools in the head and flattens the back of the eye. Two hours of exercise a day only slows the losses — no one has made them stop.",
+      "align": "wide"
+    },
+    {
       "type": "heading",
       "text": "What we know because someone stayed"
     },
@@ -55,12 +69,35 @@
       "text": "Everything we know about long-duration spaceflight physiology was measured — on real people, who lived in space for real durations, came home, and were studied. The record for a single continuous flight is held by Valeri Polyakov, a Russian physician-cosmonaut who boarded [Mir](/programs/mir) in January 1994 and returned to Earth in March 1995, having spent 437 consecutive days in orbit — still unbroken, three decades later. Polyakov's goal was explicitly medical: to determine whether a human being could survive, functionally, a Mars mission duration. When he landed, he insisted on walking away from the Soyuz capsule under his own power. His bone and muscle recovery took months. He walked. The [Salyut](/programs/salyut) and [Mir](/programs/mir) programmes built a Soviet and then Russian body of physiological data that remains irreplaceable — the [ISS](/programs/iss) extended it and globalised it. Peggy Whitson's cumulative 665 days across three missions gave researchers a longitudinal dataset on a single individual impossible to replicate otherwise. The NASA Twin Study — Scott Kelly's 340-day mission compared against his Earthbound identical twin Mark — found measurable changes in gene expression, telomere dynamics, gut microbiome composition, and cognitive performance, most of which reversed on return, but not all. China's [Tiangong](/programs/tiangong) programme is now adding to the record: crews on 90- and 180-day rotations since 2021, a taikonauts population previously absent from the dataset. Any honest account of what humanity knows about the long-duration human body in space has to include what Russia learned on Mir, what the 15-nation ISS partnership has measured since 2000, and what China is accumulating now."
     },
     {
+      "type": "figure",
+      "image": "essays/the-body-in-the-dark/the-record",
+      "kind": "diagram",
+      "caption": "Almost everything we know about the body in space we know because particular people stayed up there long enough to measure it — and the record is global. Valeri Polyakov’s 437 days aboard Mir still stands; the ISS and now Tiangong add crew-years to the dataset one rotation at a time.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "fleet/iss/01",
+      "kind": "photo",
+      "caption": "The International Space Station — for a quarter-century the single laboratory where the long-term effects of weightlessness have been studied, on a rotating international crew who are, unavoidably, the experiment.",
+      "align": "wide",
+      "credit": "NASA"
+    },
+    {
       "type": "heading",
       "text": "The mind in a can"
     },
     {
       "type": "prose",
       "text": "The body's physical degradation is measurable and at least partially addressable. The psychological dimension is harder to study, because it depends on variables — personality, crew composition, the texture of confinement, the relationship between crew and ground — that resist controlled experimentation. What the analogue studies suggest is not comforting. [Isolation and confinement psychology](/science/life-in-space/crew-dynamics-psychology) has been studied most systematically in Antarctic winter-over stations: small groups in genuine darkness and cold, unable to leave. The patterns are consistent across studies — a mid-winter syndrome of degraded mood and cognition, interpersonal friction that compounds in confined spaces, a psychological distancing from the outside world that can persist after return. Antarctic crews can at least breathe outside air and see a landscape. A Mars crew cannot. The Mars-500 experiment in Moscow (2010–2011) simulated a 520-day mission in a sealed habitat; six volunteers completed the full duration without leaving. Sedentary behaviour worsened across the run. One subject spent the majority of the final months asleep. One showed symptoms consistent with clinical depression. As communication delay climbed toward the simulated 20 minutes, the crews reported it felt not just slower but fundamentally lonelier — decisions that would have been delegated to the ground had to be made aboard, and the sense that someone could always be reached slowly eroded. A crew member on the [ISS](/programs/iss) has, at all times, a Soyuz docked to the station. On a Mars transit, the emergency exit does not exist. From the moment of trans-Mars injection, no decision by any controller on Earth can bring the crew home on a useful timescale. The crew knows this. What sustained knowledge of your own unrescuability does to a human mind over 18 months is a question the analogue studies have approached but cannot answer. We will not know until the first crew leaves."
+    },
+    {
+      "type": "figure",
+      "image": "missions/polaris-dawn/01",
+      "kind": "photo",
+      "caption": "A private astronaut in the open hatch of a Crew Dragon during Polaris Dawn, 2024 — a human being with only a suit between them and the vacuum. The engineering can be made reliable; the mind that has to endure the confinement, the risk, and the years cannot be re-specced.",
+      "align": "wide",
+      "credit": "Polaris Program / SpaceX"
     },
     {
       "type": "heading",

@@ -1,3 +1,38 @@
 [
-  { "slug": "navigation", "movement": "into-the-dark", "order": 1, "status": "published" }
+  {
+    "slug": "navigation",
+    "movement": "into-the-dark",
+    "order": 1,
+    "status": "published"
+  },
+  {
+    "slug": "delta-v",
+    "movement": "into-the-dark",
+    "order": 2,
+    "status": "published"
+  },
+  {
+    "slug": "comms",
+    "movement": "into-the-dark",
+    "order": 3,
+    "status": "published"
+  },
+  {
+    "slug": "reusable-launchers",
+    "movement": "the-machines",
+    "order": 1,
+    "status": "published"
+  },
+  {
+    "slug": "new-propulsion",
+    "movement": "the-machines",
+    "order": 2,
+    "status": "published"
+  },
+  {
+    "slug": "seven-minutes",
+    "movement": "arrival-and-the-long-view",
+    "order": 1,
+    "status": "published"
+  }
 ]

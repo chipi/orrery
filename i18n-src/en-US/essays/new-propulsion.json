@@ -1,0 +1,155 @@
+{
+  "title": "The Exits We've Always Known",
+  "dek": "The chemical rocket is a century-old ceiling we've ridden with extraordinary skill. The roads out — ion drives, solar sails, nuclear-thermal engines — were sketched before the first satellite flew. They are only now, haltingly, being built.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Sometime in the last decade, if you have been paying attention to spaceflight, you may have noticed a strange doubling of the word *revolutionary*. It attaches to reusable first stages, to rideshare manifests, to the plummeting cost of a kilogram to orbit. These are real achievements, genuinely important — but underneath them, if you trace the physics, is a machine that Hermann Oberth described in 1923 and Robert Goddard flew in 1926. The engine burns a fuel and an oxidizer, heats gas, and blows it out the back. A hundred years of metallurgy and manufacturing have made it astonishingly good. They have not changed what it is."
+    },
+    {
+      "type": "prose",
+      "md": "The constraint is not engineering. It is chemistry. Mix any fuel with any oxidizer and the energy available is set — not by how cleverly you design the combustion chamber, but by the bond energies of the molecules you are breaking and forming. The best you can do with hydrogen and oxygen, burning cleanly at the [specific impulse](/science/propulsion/specific-impulse) that measures how efficiently a rocket uses its propellant, is about 450 seconds. The RS-25 engine that powered every Space Shuttle main engine achieves 452 seconds in vacuum. The RL-10B-2, at 465 seconds, is the highest of any production chemical engine ever built, a number refined across six decades of work. The ceiling is near. We are against it."
+    },
+    {
+      "type": "prose",
+      "md": "And a ceiling matters because of a trap. The [Tsiolkovsky rocket equation](/science/propulsion/tsiolkovsky) — derived in 1903, three years before Goddard lit his first engine — says that the fraction of a rocket's initial mass that must be propellant grows *exponentially* with the ratio of the velocity change needed to the exhaust velocity. Double the mission's required speed, and you don't double the fuel load — you square it. Beyond a certain point, the vehicle becomes almost entirely propellant, leaving almost no room for structure, instruments, or payload. Chemical rockets have reached that point. Getting from low Earth orbit to Mars on a chemical engine takes months; getting from low Earth orbit to Mars *and back*, without a propellant depot waiting at the other end, is close to impossible. Getting anywhere further — the outer solar system on a reasonable timescale, with a payload worth sending — is not a matter of designing a better engine. It is a matter of leaving chemistry behind."
+    },
+    {
+      "type": "heading",
+      "text": "The slow push"
+    },
+    {
+      "type": "prose",
+      "md": "The first alternative to chemistry was demonstrated not in a laboratory but in space, in 1998, aboard a spacecraft called Deep Space 1. Its engine consumed xenon gas — inert, heavy, easy to store — and instead of burning it, *ionized* it: stripped electrons away with an electric field, accelerated the resulting ions through a voltage gradient, and expelled them at tens of kilometres per second. The [ion thruster](/science/propulsion/engine-types) it carried produced 92 millinewtons of thrust. That is, very nearly, the weight of a small apple. At full power it burned through about 3.25 milligrams of propellant per second — ten ounces over a full day of operation. By every conventional measure of a rocket engine, it was a joke."
+    },
+    {
+      "type": "prose",
+      "md": "What it was not a joke about was efficiency. An ion engine trades thrust for specific impulse: where the best chemical engine peaks near 450 seconds, a well-designed ion thruster achieves 3,000 seconds or more — roughly seven times the exhaust velocity, which means seven times as much velocity change per kilogram of propellant. The trade-off is time. Burning a tiny apple's weight of force continuously for days and months, a spacecraft accelerates to speeds no chemical burn could reach at any reasonable propellant fraction. Deep Space 1 proved the concept. [Dawn](/missions?id=dawn) proved it at scale."
+    },
+    {
+      "type": "prose",
+      "md": "Dawn launched in 2007 carrying three NSTAR ion thrusters — the direct descendants of Deep Space 1's engine — and used them to do something no spacecraft had ever done: orbit one body in the asteroid belt, decelerate to a stop at [Vesta](/explore), orbit that for a year, then fire up again and spiral out to a second body, [Ceres](/explore), and orbit that too. A chemical mission with the same objectives would have required so much propellant it could not have been launched on any existing rocket. The ion engines, running for a total of more than five and a half years of accumulated thrust time, made the same journey on 425 kilograms of xenon. Dawn's specific impulse was 3,100 seconds. Each kilogram of xenon did the work of seven kilograms of liquid hydrogen."
+    },
+    {
+      "type": "prose",
+      "md": "What launched in October 2023 toward the metal asteroid Psyche pushed the idea further. [Psyche](/missions?id=psyche) uses Hall-effect thrusters — a different architecture, in which the magnetic field traps electrons and creates a ring discharge that accelerates ions more efficiently at lower power. Hall thrusters are cheaper, simpler, and compact enough to fit four of them onto a Discovery-class spacecraft. Psyche's thrusters operate at 1,800 seconds specific impulse, lower than Dawn's ion engines but more than four times the chemical ceiling, and they represent the first time Hall thrusters — common workhorses of Earth-orbit station-keeping — have been trusted for deep-space primary propulsion. The same technology that nudges geostationary satellites by centimetres per second is now flying an interplanetary mission."
+    },
+    {
+      "type": "figure",
+      "image": "essays/new-propulsion/ion-drive",
+      "kind": "diagram",
+      "caption": "A chemical rocket spends its whole life in a few minutes of fury, then coasts. An ion engine pushes with the weight of a coin — but never stops. Given enough time it quietly overtakes the rocket that shoved hardest, and keeps climbing.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/dawn/01",
+      "kind": "photo",
+      "caption": "Dawn ran on a xenon-ion engine whose thrust you could have balanced on your palm — and rode that whisper for years, becoming the only craft ever to orbit two separate worlds beyond Earth: first Vesta, then Ceres.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Without propellant"
+    },
+    {
+      "type": "prose",
+      "md": "Ion and Hall drives still carry propellant. They carry much less of it, and they use it far more efficiently, but the rocket equation still applies: the xenon runs out, and when it does, the thrust stops. The most radical escape from the equation is to carry no propellant at all — to push against something outside the spacecraft."
+    },
+    {
+      "type": "prose",
+      "md": "Photons carry momentum. Light pushes. The pressure is tiny — at Earth's distance from the Sun, sunlight exerts about nine micronewtons per square metre of illuminated surface — but it is free, inexhaustible, and it never runs out. A sail large enough and light enough will accelerate indefinitely as long as it faces the Sun, trading thrust for patience the way an ion engine does, but without a propellant budget at all."
+    },
+    {
+      "type": "prose",
+      "md": "The idea is older than spaceflight by a century: Johannes Kepler noted in 1619 that comet tails always point away from the Sun and attributed it, correctly, to solar pressure. The mathematics were fully worked out by the 1920s. What was missing was a material: a sail light enough to matter, tough enough to survive the radiation environment of space, deployable from a rocket fairing. For most of the twentieth century it remained an idea."
+    },
+    {
+      "type": "prose",
+      "md": "JAXA flew the first one. On 21 May 2010, the Japanese spacecraft IKAROS — *Interplanetary Kite-craft Accelerating Radiation Of the Sun* — deployed a 200-square-metre polyimide sail en route to Venus and became the first spacecraft to achieve meaningful propulsion from sunlight alone in deep space. It measured the acceleration. It worked. The Planetary Society's LightSail 2, launched in 2019, went further: a small, shoebox-stacked CubeSat that deployed a 32-square-metre sail and became the first spacecraft to measurably raise its orbit using only the pressure of light. Both missions were small, low-budget, and largely ignored by the wider press. Between them they established that solar sailing is not a thought experiment."
+    },
+    {
+      "type": "prose",
+      "md": "NASA's Advanced Composite Solar Sail System — ACS3 — launched in April 2024, carrying an 80-square-metre sail on composite boom arms stiffer and lighter than any previous design, demonstrating the structural technology needed to scale up. NEA Scout, which would have been the first solar sail to visit a near-Earth asteroid, launched aboard Artemis I in November 2022 and was lost — its radio never made contact after deployment, a reminder that small missions fly small margins. The setback did not cancel the program. The reason sails are worth pursuing is not the acceleration they give today but the acceleration they give tomorrow: a solar sail ten kilometres across, launched toward the inner solar system where sunlight is stronger, would reach speeds unattainable by any propellant-limited system. Sails are the only architecture for which *making the sail larger* makes the physics better, without adding propellant mass."
+    },
+    {
+      "type": "heading",
+      "text": "The heat of the nucleus"
+    },
+    {
+      "type": "prose",
+      "md": "There is a third exit, and it is the one that, in the 1960s, seemed most likely to be first. A nuclear reactor running at high temperature can heat a propellant — hydrogen is the best choice, being the lightest gas and therefore fastest when expelled — and exhaust it through a nozzle. No combustion. No bond energies. The heat source is fission, and the temperatures a reactor can sustain are limited not by chemistry but by metallurgy: how hot can the fuel elements and the nozzle throat be made before they fail? The answer, in the engines tested at the Nevada Test Site from 1959 to 1969 under the program called NERVA, was hot enough to achieve specific impulses around 825 seconds — nearly twice the best chemical engine, at thrust levels measured in tens of kilonewtons, useful for a crewed Mars mission."
+    },
+    {
+      "type": "prose",
+      "md": "The Phoebus 2A reactor, tested in 1968, was the most powerful nuclear rocket engine ever fired: 4,100 megawatts of thermal power, the equivalent of four large commercial nuclear power plants running simultaneously, all compressed into a structure the size of a car. The XE Prime engine, tested in 1969 in a configuration designed to simulate altitude firing, demonstrated restart capability and throttling — exactly the operational flexibility a crewed mission would need. The program accumulated more than two hours of total run time, including 28 minutes at full power. By every technical measure, it worked."
+    },
+    {
+      "type": "prose",
+      "md": "And then it stopped. In 1973, with the Moon program over and budgets collapsing and no Mars mission forthcoming, NERVA was cancelled. The engines sat in Nevada. The knowledge spread into reports that aged in archives. For fifty years, no nuclear thermal rocket engine flew, or was seriously scheduled to fly. The [gravity assists](/science/transfers/gravity-assist) of [Voyager 2](/missions?id=voyager-2) made the outer planets reachable without nuclear propulsion. The outer planets were enough."
+    },
+    {
+      "type": "prose",
+      "md": "The idea came back slowly in the 2010s, and more urgently in the 2020s: a crewed mission to Mars, with a flight time measured in months rather than years, almost demands nuclear-thermal propulsion. DARPA's DRACO program — *Demonstration Rocket for Agile Cislunar Operations* — was the most concrete recent attempt to close the fifty-year gap, aiming to demonstrate a nuclear thermal engine in orbit. In June 2025, DARPA cancelled it. The official reasoning cited decreasing launch costs that diminished the economic case and infrastructure barriers around ground testing a nuclear reactor that had been underestimated at program start. The decision was not a technical verdict: no one tested the engine and found it wanting. The gap simply widened again."
+    },
+    {
+      "type": "figure",
+      "image": "essays/new-propulsion/nuclear-thermal",
+      "kind": "diagram",
+      "caption": "There is no flame here at all. A reactor heats hydrogen past any temperature a chemical fire can reach and throws it from the nozzle at roughly twice the speed — the same fuel, worth twice the push, and a shorter, less-irradiated road to Mars.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Why they keep failing to launch"
+    },
+    {
+      "type": "prose",
+      "md": "The history of advanced propulsion is not, mostly, a history of technical failure. Ion drives work; every deep-space spacecraft that has carried one has performed as predicted. Solar sails work; IKAROS measured the thrust, LightSail 2 changed its orbit. Nuclear-thermal engines worked; NERVA demonstrated it in six decades of un-revisited ground tests. The failures are almost entirely in the space between a working technology and a funded mission."
+    },
+    {
+      "type": "prose",
+      "md": "Part of it is the nature of these drives. Chemical rockets are violent and obvious — they shake the ground and light the sky and deliver their result in minutes. Ion and Hall thrusters produce a force you cannot feel, run for years before the result becomes visible, and require patience from funders who face budget cycles measured in months. Solar sails require large, delicate structures that complicate launch packaging. Nuclear-thermal engines require a reactor, and a reactor in space has a regulatory complexity that adds years and uncertainty to any program before the first component is machined. None of these are fundamental barriers. They are, in the language of systems engineering, *not-yet-solved integration problems* — and integration problems get solved when there is enough pressure behind them."
+    },
+    {
+      "type": "prose",
+      "md": "The pressure is building. The [Tsiolkovsky rocket equation](/science/propulsion/tsiolkovsky) has not changed. A crewed Mars round-trip at chemical Isp is not impossible — it is just enormously expensive in propellant, and therefore in launch mass, and therefore in launch cost, and therefore in political will. As the cost per kilogram to orbit drops and the ambition of missions rises, the gap between what chemistry can do and what the mission demands grows wider. Every new target — the ice giants, an asteroid on a short timeline, Mars on a crewed flight that does not require pre-positioning years of propellant — presses against the ceiling a little harder."
+    },
+    {
+      "type": "heading",
+      "text": "Where the exits lead"
+    },
+    {
+      "type": "prose",
+      "md": "What is strange, surveying this history, is not that the alternatives haven't flown — it is that they have been ready, in principle, for so long. The specific impulse limits of nuclear-thermal propulsion were calculated before Sputnik. The physics of solar sailing were understood before the Second World War. The concept of ion propulsion appeared in an Esther Goddard memoir describing a conversation with Robert Goddard in 1906, four years before he flew anything. The ideas are old. The flying is new."
+    },
+    {
+      "type": "prose",
+      "md": "What [Dawn](/missions?id=dawn) established is the practical benchmark: ion propulsion is not exotic. It is the correct choice for any mission that requires multiple destinations, large velocity changes, or flight times long enough for continuous thrust to accumulate. The missions that come after Psyche — robotic science probes to the ice giants, fast-transit cargo to a lunar Gateway, prospectors at the inner asteroid belt — are the natural clients. Hall thrusters at [Psyche's](/missions?id=psyche) scale will be routine within a decade because the economics already work."
+    },
+    {
+      "type": "prose",
+      "md": "Solar sailing is further from routine, but the trajectory is clear: each generation of sail is larger, the booms lighter, the control systems more sophisticated. The physics reward scale in a way no other propulsion mode does. A sail the size of a sports stadium, with a spacecraft bus the mass of a desk, accelerated by a laser from the inner solar system rather than by ambient sunlight — this is the architecture proposed for interstellar precursor missions, reaching speeds of hundreds of kilometres per second. The sail does not care about the rocket equation. It has no propellant to run out of."
+    },
+    {
+      "type": "prose",
+      "md": "Nuclear-thermal propulsion is the hardest call. DRACO's cancellation in 2025 closed the most concrete near-term path. But the technical case — 825 seconds of specific impulse at high thrust, the only combination of efficiency and power that opens a fast crewed Mars transit — has not weakened. The knowledge from NERVA was not lost; it was archived. What is missing is not the engineering. It is a program with enough longevity to navigate the regulatory and infrastructure work that the 1960s began but never finished. If a crewed Mars mission becomes a fixed political objective rather than a recurring aspiration, nuclear-thermal propulsion will almost certainly be part of how it is done. The engines work. They are waiting."
+    },
+    {
+      "type": "prose",
+      "md": "The chemical rocket did extraordinary things. It carried twelve people to the surface of the Moon. It landed a car-sized rover on Mars at the end of seven minutes of automated terror. It put the James Webb Space Telescope in its L2 halo orbit with so little error that the fuel margin for station-keeping, originally budgeted for ten years, now projects to last twenty. For getting mass off Earth's surface against gravity — the hardest part of any space mission — it will remain the tool for the foreseeable future. The Tsiolkovsky equation punishes propellant mass in orbit less than it does on the ground, and no ion thruster will lift anything from a launch pad."
+    },
+    {
+      "type": "prose",
+      "md": "But the ceiling above low Earth orbit is chemistry's ceiling, and the solar system above it is chemistry's trap. The exits have been drawn on the map for a hundred years. Ion drives are already flying. Sails have already changed orbits. The nuclear option is on hold, not on the shelf. We have known how to leave the chemical era since before the chemical era's greatest triumphs. We are, slowly, learning to mean it."
+    },
+    {
+      "type": "figure",
+      "image": "essays/new-propulsion/isp-ladder",
+      "kind": "diagram",
+      "caption": "Line the exits up by efficiency and the pattern is plain: every road out of the chemical era trades brute thrust for the patience to keep pushing. All of them were sketched on paper before the first satellite ever flew.",
+      "align": "wide"
+    }
+  ]
+}

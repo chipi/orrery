@@ -1,0 +1,155 @@
+{
+  "title": "Keep the Rocket",
+  "dek": "For sixty years we built the most expensive machine in human history, flew it once, and dropped it in the ocean. The people who decided to stop doing that have quietly pulled off the biggest shift in spaceflight since Apollo.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "On the night of 21 December 2015, a [Falcon 9](/fleet?id=falcon-9) first stage stood vertically on a concrete pad at Cape Canaveral, engines cold, surrounded by a cloud of residual vapour, intact. It had just come back from space. About eight minutes after lifting off to deliver a batch of satellites to orbit, the booster had flipped itself around, relit three of its nine Merlin engines, braked through the upper atmosphere, deployed four landing legs, and set itself down upright on the pad it had left. The whole manoeuvre took the kind of precision usually reserved for a Swiss watch. The crowd watching erupted, and the sound — a roar of people who had just watched something genuinely new — is still in the video."
+    },
+    {
+      "type": "prose",
+      "md": "What happened that night was a demonstration, but what it demonstrated was not primarily a technical trick. It was an economic argument. Every rocket ever flown before it — the [Saturn V](/fleet?id=saturn-v) that sent twelve people to the Moon, the Soviet N1 that never made it to orbit, the workhorse Soyuz and Atlas and Proton and Long March families that between them account for most of the launches in this atlas — was built to be used once. You flew it. It fell apart in the atmosphere or sank in the sea. You built another one. The industry had been structured around this fact for sixty years: rockets were ammunition, not aircraft. The moment that Falcon 9 landed, that assumption was on the table for the first time."
+    },
+    {
+      "type": "prose",
+      "md": "Why it had taken sixty years to get there is a more interesting question than it looks."
+    },
+    {
+      "type": "heading",
+      "text": "The accountant's problem"
+    },
+    {
+      "type": "prose",
+      "md": "The expendable rocket is wasteful in a way that is almost comical when you describe it plainly. A [Saturn V](/fleet?id=saturn-v) cost something in the range of $185 million in late-1960s dollars — roughly $1.5 billion at today's prices — and each one flew for about twelve minutes before being discarded. The five F-1 engines in its first stage, each one a staggering piece of machinery that burned 788 kilograms of propellant per second, ended their lives rusting on the floor of the Atlantic. NASA recovered two sets of Saturn V F-1 engines from the seafloor in 2013, nearly half a century after they were dropped there, and found them largely intact. They were not brought back; they went to museums. Throwing them away the first time was the plan."
+    },
+    {
+      "type": "prose",
+      "md": "The logic behind this plan was not stupidity. It was the logic of the 1960s Space Race: get there first, at whatever cost. Building a reusable rocket is harder than building an expendable one. Reusability adds weight — heat shields, landing legs, propellant reserved for the return burn — and weight is the enemy, because every kilogram you add to the structure is a kilogram you cannot deliver to orbit. Early designers ran the numbers and concluded that the penalty was too steep. Better, they decided, to build cheap and throw away. That calculation was right for its moment, and it locked in a set of assumptions that lasted two generations."
+    },
+    {
+      "type": "prose",
+      "md": "The [Space Shuttle](/fleet?id=space-shuttle-stack) was supposed to break the logic. It was the first genuine attempt by the United States — or anyone — to build an operationally reusable launch system, and the argument for it was economic: by flying the orbiter repeatedly, the program would drive the cost of reaching orbit down toward $600 per kilogram, low enough to make spaceflight almost routine. The shuttle flew 135 missions between 1981 and 2011. It failed the economic test completely. The real cost per flight averaged around $1.5 billion when total program expenses were spread across all missions — more expensive per kilogram to low Earth orbit than the Saturn V it replaced. Refurbishing the orbiter's 24,000 heat-shield tiles after each flight was not a quick job; it ate thousands of person-hours. Reuse turned out to be extraordinarily expensive when every subsystem had to be torn down and rebuilt to the standards of an aircraft that might carry crew. The shuttle proved that reusability *could* work mechanically — the orbiter flew dozens of times — but it also proved that reusability by itself does not reduce costs. The economics only work if you can turn the vehicle around *fast* and *cheaply*."
+    },
+    {
+      "type": "heading",
+      "text": "The simplest possible trick"
+    },
+    {
+      "type": "prose",
+      "md": "SpaceX approached the problem differently. Rather than trying to reuse the whole vehicle — the choice that made the Shuttle so complex — the company focused on the most expensive single component: the first-stage booster. In a typical rocket, the first stage does the heaviest lifting, burning the most propellant, carrying the most engine mass, and costing the most to manufacture. It is also the component that, on an expendable rocket, you lose every time. Save the first stage, and you have recovered the majority of the vehicle's value."
+    },
+    {
+      "type": "prose",
+      "md": "The technical requirement for saving it is brutal: the stage has to survive reentry through an atmosphere it spent the first few minutes punching through at Mach 7, reverse direction, slow from hypersonic to landing speed, and set down vertically on a target the size of a football field — either back at the launch site or on a drone ship hundreds of kilometres downrange in the Atlantic or Pacific. To accomplish all of this, the booster has to retain enough propellant for a series of precisely timed engine relights, which means it arrives in orbit with less fuel for the main job. That weight penalty is real: a Falcon 9 flying with a new booster delivers about 22,800 kilograms to low Earth orbit; a flight that recovers the booster delivers less. This is the fundamental trade at the heart of reusable launch, and SpaceX accepted it because the economics work regardless: the booster that lands can fly again, and again, and again."
+    },
+    {
+      "type": "prose",
+      "md": "After the December 2015 landing came a second, and a third, and then the reflight: in March 2017, SpaceX launched a Falcon 9 on a booster that had already flown, the first time in history that an orbital-class rocket stage flew to space twice. By mid-2026, the most-flown Falcon 9 first stage has completed 36 missions on the same hardware — more than most expendable rockets fly in total across an entire fleet. The marginal cost of a reused launch, with propellant and refurbishment, sits around $15 to $20 million against a list price of $74 million. The difference, roughly, is the cost of the booster itself, recovered by recovery."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/landing-profile",
+      "kind": "diagram",
+      "caption": "The trick is almost insultingly simple to state and brutal to fly: hold back enough propellant, flip the booster around, and burn three times on the way down — boostback, entry, landing — until it settles onto its legs. The same stage is then inspected, refuelled, and flown again.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Catching it with your hands"
+    },
+    {
+      "type": "prose",
+      "md": "The [Falcon Heavy](/fleet?id=falcon-heavy) extended the same logic sideways: three Falcon 9 cores strapped together, two of them peeling off after the first two minutes and flying back to land simultaneously, side by side, at Cape Canaveral. The videos of the twin landings — two pillars of fire descending in mirror symmetry, touching down at the exact same instant — look like something from a film. They are not. They are the economics made visible."
+    },
+    {
+      "type": "prose",
+      "md": "[Starship](/fleet?id=starship) takes the argument to its logical end. Where Falcon 9 recovers its first stage and disposes of its upper stage, Starship is designed to recover *both*. The Super Heavy booster — 71 metres tall, powered by 33 Raptor engines burning liquid methane and liquid oxygen, producing roughly twice the thrust of a Saturn V — returns to the launch site and is caught in mid-air by a pair of mechanical arms on the launch tower itself. The system is called Mechazilla by the engineers who built it. SpaceX first caught the booster this way on 13 October 2024, Flight 5 of the Starship test programme, and has repeated the manoeuvre on subsequent flights. The idea that you would not land your rocket but simply *catch it as it fell* would have sounded like fiction a decade ago. It is a Monday-morning procedure now."
+    },
+    {
+      "type": "prose",
+      "md": "The Starship upper stage — the largest spacecraft ever built, tall as a fifteen-storey building — is intended to follow the same path, returning and being caught above the pad. Once both halves are on the ground, the system can theoretically be refuelled and relaunched within hours. No expendable rocket even attempts this comparison. An expendable rocket is a logistics chain: manufacture, transport, integrate, launch, repeat from the start. A fully reusable system is an *aircraft* with a very long route. The economics of the two are not in the same galaxy."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/tower-catch",
+      "kind": "diagram",
+      "caption": "Then a stranger idea: don’t give the booster legs at all. Let the launch tower catch it — two arms closing on a seventy-metre stage as it hovers, so the mass that would have been landing gear becomes payload instead. The first clean catch came in October 2024.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "The second mover"
+    },
+    {
+      "type": "prose",
+      "md": "Blue Origin's [New Glenn](/fleet?id=new-glenn) landed its first stage at sea for the first time on 13 November 2025 — ten years after the December 2015 Falcon 9 landing, which gives a sense of how fast the industry moves when SpaceX is setting the pace. New Glenn is a large rocket by any previous standard, carrying up to 45,000 kilograms to low Earth orbit in expendable configuration; its first stage returns to a drone ship in the Atlantic on every mission. The first reuse of a New Glenn stage followed in April 2026. Blue Origin's approach mirrors SpaceX's in architecture: save the first stage, fly it again, cut the marginal cost with each reuse."
+    },
+    {
+      "type": "prose",
+      "md": "What the emergence of [New Glenn](/fleet?id=new-glenn) adds to the picture is competitive pressure. For most of the decade between 2015 and 2025, SpaceX was essentially alone in the reusable-launch market. A market with one supplier is not a market; it's a monopoly. The entry of a second credible reusable launcher changes the pricing dynamics for everyone who buys a ride to orbit. Satellite operators, space agencies, and commercial customers who once had no choice but to take whatever SpaceX offered now have alternatives — and more are coming."
+    },
+    {
+      "type": "prose",
+      "md": "China has moved with unusual seriousness. LandSpace's Zhuque-3, a methane-fuelled rocket broadly analogous to Falcon 9, attempted its first recovery in December 2025; the upper stage reached orbit but the booster crashed on its landing approach. A second recovery attempt is planned for mid-2026. iSpace has its Hyperbola-3 in hardware qualification, with a dedicated drone ship already launched, and is targeting its first flight from Wenchang. Several other Chinese commercial companies are in active development. The Chinese government has made reusable access to orbit an explicit national priority. That the country that built the Great Wall has decided to stop throwing its rockets away is a data point worth sitting with."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/falcon-9/01",
+      "kind": "photo",
+      "caption": "A Falcon 9 first stage stands back on its legs after delivering a payload to orbit — the moment a sixty-year assumption quietly collapsed. Once one company proved a booster could be flown again, everyone else had to learn to keep theirs too.",
+      "align": "wide",
+      "credit": "SpaceX"
+    },
+    {
+      "type": "heading",
+      "text": "What reuse actually changes"
+    },
+    {
+      "type": "prose",
+      "md": "The surface story is cost reduction, and the cost reduction is real: launch prices that once sat at $200 million or more for a large expendable have fallen toward $60–$80 million for a reusable medium-lift mission, and the marginal economics of a well-worn Falcon 9 booster are lower still. But the deeper change is in launch *cadence*. SpaceX launched 134 Falcon 9 missions in 2024 — almost three per week, sustained across a full calendar year, with the same pool of boosters cycling through the pad and back again. No expendable architecture could approach that tempo; you would need an industrial supply chain operating at wartime pace to match it. Reusability, it turns out, is not just about cost. It is about rate. And rate is about what becomes possible."
+    },
+    {
+      "type": "prose",
+      "md": "What becomes possible is Starlink: a constellation that required more than 6,000 launches to populate, impossible to build under any expendable pricing structure that has ever existed. What becomes possible are low-cost commercial science missions that previously could not afford the ride. What becomes possible, eventually, is crewed transport to Mars at a frequency that makes it a programme rather than a stunt — because the [delta-v budget](/science/propulsion/dv-budget) of an Earth-to-Mars mission demands a vehicle that can be refuelled on orbit and reused, or the mass fractions simply don't close. Reusability is not just an economic preference. For the ambitions that [Starship](/fleet?id=starship) is being designed to support, it is a physical requirement."
+    },
+    {
+      "type": "prose",
+      "md": "The weight penalty that made early engineers dismiss reuse is still real; it has not been engineered away. A fully expendable Starship would deliver more to orbit than a reusable one. But the question is no longer whether you can afford the mass penalty. It's whether you can afford to throw the whole thing away — whether you can afford, as the rocket industry did for six decades, to treat the most complex machine ever built as a single-use item."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/cost-curve",
+      "kind": "diagram",
+      "caption": "The number that gates everything is the price of a kilogram to orbit. The Shuttle promised to lower it and never did; reusable Falcon 9 cut it roughly twenty-fold. Drop it far enough and missions that were once unthinkable become merely scheduled.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "The question that landed"
+    },
+    {
+      "type": "prose",
+      "md": "The rocket industry's original argument against reuse was engineering: the vehicle is too complex to refurbish cheaply, too fragile to fly again without dismantling, too weight-constrained to carry the hardware needed to land. The Space Shuttle's experience seemed to confirm all three. Those concerns were legitimate, and for thirty years they held."
+    },
+    {
+      "type": "prose",
+      "md": "What changed was not the physics. What changed was the manufacturing base, the propellant choice — methane burns cleaner than kerosene, leaves less residue, makes refurbishment faster — and, more than anything, the willingness to design for reuse from the start rather than retrofitting it onto a vehicle optimised for expendability. The Shuttle was an expendable rocket that had been told to come home. The Falcon 9 booster was designed from the beginning around the question of how to land. That difference in design intent accounts for most of the difference in outcome."
+    },
+    {
+      "type": "prose",
+      "md": "In the decade since that December night at Cape Canaveral, landing a booster has gone from impossible to ordinary. A Falcon 9 first stage that fails to return to its drone ship is now the unusual event, worth noting in the anomaly log. Super Heavy has been caught from the air. A second company has landed a heavy-lift stage at sea and flown it again. China is running to catch up. The assumption that has governed the entire launch industry since Sputnik — that a rocket is an expendable — has been broken, and the breaking of it is already reshaping which missions are possible, which businesses are viable, and what it will cost the next generation to go further."
+    },
+    {
+      "type": "prose",
+      "md": "None of the [rocket stages](/science/propulsion/rocket-stages) that ever took humans or spacecraft to orbit in the first sixty years of spaceflight survived. They are on the ocean floor, or in the upper atmosphere as dispersed molecules, or in museums where engineers who built them can walk past and recognise things they once touched. The ones flying now come back. That one change — quiet, technical, brutally difficult to make work — is the thing that separates the first era of spaceflight from whatever comes next."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/starship/01",
+      "kind": "photo",
+      "caption": "Starship is the larger wager: that the whole vehicle — booster and ship alike — comes home and flies again within days. If it holds, the cost of reaching orbit stops being the thing that decides what humanity is allowed to attempt.",
+      "align": "wide",
+      "credit": "SpaceX"
+    }
+  ]
+}

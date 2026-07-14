@@ -1,0 +1,147 @@
+{
+  "title": "The Seven Minutes",
+  "dek": "The cruise is easy. You spend months doing almost nothing — coasting on physics, nudging a trajectory, waiting. Arriving is where missions die. Landing is the hardest thing in spaceflight, and we have never solved it the same way twice.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Consider what the number means. Seven minutes: from the first bite of atmosphere at roughly 19,000 kilometres per hour to wheels-down, stationary, on another planet. Seven minutes in which a spacecraft that cost a billion dollars and took a decade to build must autonomously execute a sequence of events — heat shield deployment, parachute inflation, rocket ignition, cable deployment, touchdown — each one timed to the second, each one dependent on every step before it going exactly right. Miss any single step, or hit it five seconds too late, and the whole thing becomes a crater."
+    },
+    {
+      "type": "prose",
+      "md": "And here is the detail that makes it genuinely terrifying: by the time Earth hears that the craft has touched the top of the Martian atmosphere, it has been on the ground — or part of the ground — for more than eleven minutes. The speed of light is not slow, but Mars is far enough that the round-trip lag runs anywhere from six to forty-four minutes depending on where the two planets are in their orbits. No one lands a Mars rover. No one on Earth can. The craft lands itself, in the dark, on the other side of the sun, and the people who built it can only sit in a room and wait to find out if it worked."
+    },
+    {
+      "type": "prose",
+      "md": "This is not a problem that gets easier with experience. Every world presents a different physics, a different atmosphere, a different set of constraints — and the solutions that worked on one body are useless, or dangerous, on another. The history of [entry, descent, and landing](/science/mission-phases/edl) is not a single story of improving technique. It is a collection of entirely different stories, each one a bespoke answer to the same brutal question: how do you slow down fast enough, without being crushed, in time, before you hit the ground?"
+    },
+    {
+      "type": "heading",
+      "text": "The atmosphere problem"
+    },
+    {
+      "type": "prose",
+      "md": "Start with the easy case, which is not the Moon. The Moon has no atmosphere at all — which sounds like a gift, until you realize what an atmosphere is actually for. It is free deceleration. A spacecraft hitting the top of Earth's atmosphere at orbital velocity arrives with an enormous kinetic energy budget, and the air slowly burns it off: the heat shield glows, drag builds up, and a craft that was moving at kilometres per second bleeds off enough speed, over enough minutes, that a parachute can catch it. Take away the atmosphere and you take away all of that. On the Moon, you arrive fast and you have only rockets to slow you, so you must carry every kilogram of the propellant you need to kill that speed from the moment you leave Earth. The Apollo Lunar Module had a dedicated descent engine that burned for twelve minutes to bring two men down from orbit. Every kilogram of lander had to be earned in fuel on the launch pad. There is nothing free about landing on an airless world."
+    },
+    {
+      "type": "prose",
+      "md": "Mars is the cruel middle case, and it is the one that has killed the most missions. The Martian atmosphere exists — it is real carbon dioxide, roughly a hundred kilometres deep — but it is about one percent as dense as Earth's. Thick enough to matter, thin enough to be almost useless. A parachute that would stop a probe cold in Earth's air barely makes a dent in Mars; you need it, but you cannot rely on it. Every Mars lander to date has used an aeroshell — a blunt heat shield that creates drag while absorbing the thermal fury of entry — plus a supersonic parachute to pull the speed down further, and then something else on top of that, because the parachute alone never gets you all the way to safe."
+    },
+    {
+      "type": "prose",
+      "md": "That \"something else\" is the design problem. It is what makes every Mars landing different, and it is what every engineering team has had to solve from scratch. [Viking 1](/missions?id=viking1) solved it in 1976 the obvious way: retrorockets, fired during the final descent, slowing the lander to a gentle touchdown on Chryse Planitia — the first spacecraft ever to work on the Martian surface, and it ran for more than six years. The retrorocket approach is conservative and heavy; it works, but it demands fuel and it limits your mass budget for science. Twenty years later, [Mars Pathfinder](/missions?id=mars-pathfinder) tried something that sounds like a joke: wrap the entire lander in airbags, cut it loose at altitude, let the rockets fire upward to kill the last of the vertical speed, and then let it bounce. On July 4, 1997, the Pathfinder lander hit the surface of Mars at about 50 kilometres per hour and bounced at least fifteen times before rolling to a stop, whereupon the petals opened and [Sojourner](/missions?id=mars-pathfinder) — the first Mars rover — trundled out onto the rocks of Ares Vallis."
+    },
+    {
+      "type": "heading",
+      "text": "Why the same answer never works twice"
+    },
+    {
+      "type": "prose",
+      "md": "Airbags work for small, light craft. Sojourner massed about 10 kilograms. By 2012, [Curiosity](/missions?id=curiosity) massed nearly 900. Airbags that could absorb that landing would weigh more than the rocket could afford to launch, so the team at JPL had to invent something new: the sky crane. The descent stage — a rocket-powered flying platform — carried the rover down on cables, matching the pace of the ground, and when the wheels touched the Martian surface the cables were cut and the descent stage flew off to crash-land at a safe distance. It is the most audacious landing sequence ever flown, and it worked perfectly on the first attempt, setting Curiosity down in Gale Crater at 2:32 in the morning, California time, on August 6, 2012."
+    },
+    {
+      "type": "prose",
+      "md": "The sky crane was not just an engineering novelty. It was a philosophical shift: instead of designing the lander to survive contact with the ground, the engineers separated the problem entirely — descent, then release, then ground contact — so that each piece could be optimized independently. [Perseverance](/missions?id=perseverance) used the same architecture on February 18, 2021, landing on the floor of [Jezero Crater](/mars) and then driving, over the following months, toward the ancient river delta on its northern rim. But Perseverance added one piece the sky crane had not carried: a system that looked at the ground and thought."
+    },
+    {
+      "type": "prose",
+      "md": "Jezero is not a flat plain. It has steep cliffs, sand dunes, boulder fields, and smaller impact craters nested inside the rim — terrain that would have been considered unlanding-able under older rules. The reason Perseverance could target it was Terrain-Relative Navigation: a camera mounted on the belly of the descent stage photographed the surface rushing up, matched the image in real time against an onboard map of the crater, located itself to within metres, and then steered the vehicle away from hazards that the camera could see and the ground team could not respond to in time. The craft chose its own landing spot. The people who built it had given it the map and the authority; the decision, in those seven minutes, was entirely the machine's. The navigation essay's phrase for this comes from the landing side now, not the cruise: the craft learned to see — and then it used that sight to save itself."
+    },
+    {
+      "type": "figure",
+      "image": "essays/seven-minutes/edl-toolkit",
+      "kind": "diagram",
+      "caption": "Every world hands you a different problem. The Moon has no air, so you fall on rockets alone; Mars has just enough to cook you but not enough to catch you; Earth and Titan have enough that a parachute does most of the work. No arrival is ever quite the arrival before it.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "The worlds that do not forgive"
+    },
+    {
+      "type": "prose",
+      "md": "Mars at least gives you seven minutes. Venus gives you less time than that to do anything useful, and it will kill you no matter how well you land. The Soviet [Venera program](/missions?id=venera-13) is the story of engineers deliberately designing spacecraft to die gracefully — to survive long enough to return something before the planet destroyed them. When Venera 13 touched down on March 1, 1982, it had entered a 465-degree Celsius atmosphere pressing down at 89 times Earth's standard pressure — the equivalent of a kilometre of ocean water on every surface — and its engineers had expected it to operate for perhaps thirty-two minutes before the heat cooked the electronics. It lasted 127 minutes. In that time it drilled a soil sample, analysed it chemically, and transmitted two color panoramas of flat basaltic rock under an orange sky. Those images remain, today, the best photographs ever taken from the surface of Venus. No spacecraft has been back since."
+    },
+    {
+      "type": "prose",
+      "md": "Descent through Venus's atmosphere is, at least, partly atmospheric: the thick CO₂ slows you. But there is no parachute phase that matters — the air is dense enough that even a relatively small drogue suffices to get you to terminal velocity, and after that the crushing pressure takes over. The engineering problem on Venus is not slowing down. It is surviving long enough to do anything after you stop."
+    },
+    {
+      "type": "prose",
+      "md": "Titan, Saturn's largest moon, is the strangest case of all. [Huygens](/missions?id=cassini) — an ESA probe carried to the Saturn system aboard [Cassini](/missions?id=cassini) — was released on Christmas Day 2004 and fell for twenty-two days before hitting Titan's atmosphere on January 14, 2005. Titan's air is mostly nitrogen, denser than Earth's at the surface, and colder than minus 170 degrees Celsius — a thick, orange, hydrocarbon haze that scatters sunlight into permanent amber dusk. Huygens deployed its main parachute within four minutes of atmospheric contact, then switched to a smaller drogue after the first hour to prevent the batteries from dying before it reached the surface. It fell for two hours and twenty-seven minutes — not seven minutes, but nearly two and a half hours — and when it finally touched a plain scattered with ice pebbles it was moving at about 4.5 metres per second, a pace a brisk walk would match. Then it sat on the surface and transmitted for another seventy-two minutes before Cassini carried out of view. Huygens remains the only spacecraft humanity has ever landed anywhere in the outer solar system. Nothing has gone back."
+    },
+    {
+      "type": "figure",
+      "image": "essays/seven-minutes/mars-edl",
+      "kind": "diagram",
+      "caption": "Mars is the cruel middle case — too thin an atmosphere to parachute down, too thick to ignore. It all happens in about seven minutes: entry, peak heating, a supersonic parachute, heat-shield separation, powered descent, and a sky crane lowering the rover on cables. Every step must fire on its own, on time, or the mission ends in a crater.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/perseverance/01",
+      "kind": "photo",
+      "caption": "Perseverance hangs beneath its descent stage in the final seconds over Jezero Crater, moments before the sky crane pays out its cables — a manoeuvre flown entirely by the spacecraft itself, with Earth a spectator eleven minutes behind.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "The failure record"
+    },
+    {
+      "type": "prose",
+      "md": "Across the history of Mars missions specifically, the landing problem has a body count. Mars 2, in 1971, became the first object from Earth to touch the Martian surface — and crashed, killing itself on impact, the descent system having failed before the parachute sequence was complete. Mars Polar Lander, in December 1999, almost certainly shut down its descent engines prematurely when vibrations from the legs deploying were misread as a touchdown signal, and it fell the last forty metres at full speed. Beagle 2, on Christmas Day 2003, made it through entry — the EDL sequence appears to have worked — but the solar panels failed to fully deploy on landing and it could never communicate, silent on the Martian plains. The European Space Agency's Schiaparelli lander, in October 2016, had a corrupted gyroscope reading that caused the onboard computer to believe it was already below the surface; it cut the parachute and fired the retrorockets for less than four seconds instead of thirty, and hit the ground at roughly 300 kilometres per hour."
+    },
+    {
+      "type": "prose",
+      "md": "Each failure is a different failure. That is the pattern. There is no single thing that kills Mars landers; there is a long list of single things, each one a different link in a sequence that has to hold. Every mission that has survived landing on Mars has done so by getting every step right, in order, autonomously, without a second chance. The sequence that [Curiosity](/missions?id=curiosity) and [Perseverance](/missions?id=perseverance) flew successfully is not simpler than the ones that killed their predecessors. It is, if anything, longer and more elaborate. What is different is the margin — the care with which each potential failure mode was identified, tested, and either fixed or designed around. The seven minutes that looked like terror from the outside were, from the inside, the seven minutes that the engineers had spent years making boring."
+    },
+    {
+      "type": "figure",
+      "image": "missions/schiaparelli/01",
+      "kind": "photo",
+      "caption": "Schiaparelli was meant to prove Europe could land on Mars. In 2016 its computer, briefly confused by its own sensors, decided it had already touched down — let go of its parachute, cut its thrusters, and fell the last kilometres. The record of arrivals is written as much in craters as in triumphs.",
+      "align": "wide",
+      "credit": "ESA/ATG medialab"
+    },
+    {
+      "type": "heading",
+      "text": "The part you cannot test"
+    },
+    {
+      "type": "prose",
+      "md": "Here is what makes this different from almost every other engineering problem: you cannot test it. You can test the parachute in a wind tunnel, the sky crane on a cable rig, the heat shield in an arc-jet facility — but you cannot test the full sequence, at full scale, in the actual atmosphere of Mars. Every Mars landing is a first flight of the complete system. Every EDL team in history has sent their machine off with a set of simulations, a set of engineering tests, a model of the atmosphere they are about to enter, and then waited. The Martian atmosphere is not uniform; its density varies with season and dust loading in ways that the models approximate but do not perfectly capture. A parachute deploying into slightly thinner air than expected needs to open a few seconds sooner; a lander touching down on a slope rather than a flat plain needs a slightly different retrorocket sequence. The software bakes in these contingencies, but the atmosphere gets a vote."
+    },
+    {
+      "type": "prose",
+      "md": "This is, in a specific sense, the thing navigation never has to face. [Navigation](/essays/navigation) is an iterative business — you aim, check, correct, aim again, for months or years, each correction building on the last. EDL is a one-shot event. The trajectory corrections have been made; the orbit has been shaped; the approach has been dialled in with millimetric care. Then the aeroshell hits the atmosphere and the countdown begins, and every decision from that moment is made by the machine, running code written years earlier by engineers who are now sitting in a room in Pasadena, watching a number on a screen that tells them only whether the signal is still there."
+    },
+    {
+      "type": "prose",
+      "md": "When that signal disappears — as it always does, for those long minutes while the aeroshell is a fireball — the room goes quiet. Not because they don't know what's happening. They have the timeline memorized. They know, to the second, when parachute deployment should occur, when the heat shield should separate, when the sky crane should ignite. They count through it, together, in silence, watching a clock. And when the signal comes back and says *I am on the ground*, what you hear from that room is not a sentence. It is a sound that has no words in it, because there are no words adequate for a machine the size of a car landing itself safely on another planet, alone, while the people who built it were standing eleven light-minutes away, unable to help."
+    },
+    {
+      "type": "figure",
+      "image": "essays/seven-minutes/blackout",
+      "kind": "diagram",
+      "caption": "And you cannot help it through any of it. Mars is light-minutes away — the whole descent fits inside the radio lag. By the time the first word of entry reaches Earth, the craft is already down, safe or dead, the outcome decided minutes before anyone here knew it had begun.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "The hardest thing"
+    },
+    {
+      "type": "prose",
+      "md": "Every world is different. The Moon demands rocket fuel for every metre per second of descent. Mars demands aerodynamics, parachutes, rockets, and then — because the parachute gets you only partway — invention. Venus demands thermal armor and a ticking clock. Titan offered the unexpected gift of a thick atmosphere and used it to give Huygens two and a half hours of descent data from the outer solar system, the most distant landing in history, still unmatched. Each solution is shaped by the planet that forced it into existence, and none of them transfers cleanly to the next body down the list."
+    },
+    {
+      "type": "prose",
+      "md": "What they share is this: the moment of landing is the moment when everything that cannot be undone happens. The months of cruise, the years of trajectory refinement, the decades of engineering — all of it has been moving toward a window of a few minutes during which the machine either does the thing or it doesn't, and there is no one close enough to intervene. The [navigation problem](/essays/navigation) has been solved, in pieces, over seventy years, by iterating: aim, correct, aim, correct. The landing problem must be solved in advance, completely, and then trusted. You cannot correct a Mars landing in progress. You can only watch the clock and count the beats of a sequence you no longer control, and wait for the signal that tells you the machine did what you asked."
+    },
+    {
+      "type": "prose",
+      "md": "Perseverance is on the floor of [Jezero Crater](/mars) right now, picking its way toward ancient geology that may or may not hold what we sent it there to find. Viking 1's bones are still on Chryse Planitia. Huygens sits on a plain of ice pebbles more than a billion kilometres away. [Venera 13](/missions?id=venera-13) lasted 127 minutes and went silent. Each of them got down by solving a different problem, with a different answer, in a different set of minutes that could not be re-run. The cruise is easy. The physics carry you. Arriving is where the work is — and every world makes you invent the work from scratch."
+    }
+  ]
+}

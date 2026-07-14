@@ -1,0 +1,50 @@
+{
+  "slug": "seven-minutes",
+  "movement": "arrival-and-the-long-view",
+  "order": 1,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "Finding Mars in the Dark — navigation across a hundred million kilometres",
+      "href": "/essays/navigation",
+      "kind": "essay"
+    },
+    {
+      "label": "The rocket equation — why every kilogram of lander has to be earned in fuel",
+      "href": "/essays/delta-v",
+      "kind": "essay"
+    },
+    {
+      "label": "Mars — surface, landing sites, and the terrain Perseverance is crossing",
+      "href": "/mars",
+      "kind": "interactive"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA Mars 2020 — Entry, Descent, and Landing (Perseverance EDL overview, sky crane, terrain-relative navigation)",
+      "url": "https://mars.nasa.gov/mars2020/timeline/landing/entry-descent-landing/"
+    },
+    {
+      "title": "NASA Science — Challenges of Getting to Mars: Curiosity's Seven Minutes of Terror",
+      "url": "https://science.nasa.gov/resource/challenges-of-getting-to-mars-curiositys-seven-minutes-of-terror/"
+    },
+    {
+      "title": "NASA — 45 Years Ago: Viking 1 Touches Down on Mars (July 20, 1976)",
+      "url": "https://www.nasa.gov/history/45-years-ago-viking-1-touches-down-on-mars/"
+    },
+    {
+      "title": "ESA — The Huygens probe lands on Titan (descent timeline, atmospheric facts)",
+      "url": "https://sci.esa.int/web/education/-/45751-the-huygens-probe-lands-on-titan"
+    },
+    {
+      "title": "NASA NSSDCA — Venera 13 Descent Craft/Lander (atmospheric pressure 89 atm, temperature 457 °C, 127-minute survival)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1981-106D"
+    },
+    {
+      "title": "NASA JPL — Mars Pathfinder / Sojourner Rover (airbag EDL, July 4 1997 landing, 15+ bounces)",
+      "url": "https://www.jpl.nasa.gov/missions/mars-pathfinder-sojourner-rover/"
+    }
+  ],
+  "hero": "essays/seven-minutes/entry-heat"
+}

@@ -42,6 +42,10 @@
       "md": "This is the detail worth holding onto. When [Apollo 8](/missions?id=apollo8) became the first crewed ship to leave Earth's gravity and navigate to another world in December 1968, its crew steered in part the way Cook crossed the Pacific: Jim Lovell at a telescope and sextant built into the hull, sighting known stars against the Earth's horizon, feeding the angles into a computer to correct the drift. The Apollo Guidance Computer that ran those sums had about 72 kilobytes of fixed memory and ran at a clock speed a modern doorbell would sneer at — and it flew nine crews to the Moon and [two hands' worth of them onto it](/missions?id=apollo11). The genius wasn't the hardware. It was the recognition that a machine to keep the count and a human to check it against the stars, together, could do what neither could alone."
     },
     {
+      "type": "prose",
+      "md": "The idea did not even belong to spaceflight. In those same years a reconnaissance aircraft was flying it: the SR-71 Blackbird, cruising at three times the speed of sound where the daytime sky is already dark, carried a star tracker behind the cockpit that sighted stars through a quartz window — at least two at a time, matched against an onboard catalogue — and used them to correct the drift of its inertial platform, exactly as a spacecraft does. Its crews called the unit R2-D2. The problem is the same problem at seventy thousand feet or in orbit: keep an honest count, and check it against the one thing that does not move."
+    },
+    {
       "type": "figure",
       "image": "missions/apollo8/01",
       "kind": "photo",

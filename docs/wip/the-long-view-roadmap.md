@@ -48,6 +48,12 @@ Three movements. Order is a suggestion, not a mandate — each essay stands alon
 | 💡 | Power in the dark | Sunlight runs out as you go; how we keep the lights on decides how far we can go. | Cassini, Voyager, Perseverance (RTG); propulsion? new science section? |
 | 💡 | The seven minutes | The cruise is easy; arriving is where missions die — a survey of landing across worlds. | mission-phases/edl; Viking, Pathfinder, MSL, Perseverance, Huygens, Venera |
 | 💡 | The whole journey so far | The heroic interplanetary missions as one arc — where we've been, why, and what each cost and taught. | CAPSTONE — references everything; /programs, /missions |
+| 💡 | Going to the Moon | The Moon is the practice ground — every deep-space ambition rehearses there first, and keeps having to. | /moon; Apollo, Artemis, Chang’e, Luna; delta-v, EDL |
+| 💡 | Going to Mars | Mars is the wall every human-spaceflight plan is measured against — the trip that breaks on time, mass, and the body. | /mars; Perseverance, Starship, Viking; delta-v, seven-minutes, life-in-space |
+| 💡 | Interstellar exploration | The nearest star is a different kind of hard — the honest arithmetic of a distance the solar system does not prepare you for. | Voyager; scales-time/light-minute, new-propulsion |
+| 💡 | Generational starships | If we cannot go fast, we go slow: the ship becomes a world and the crew a lineage — engineering as multi-century inheritance. | life-in-space/*, new-propulsion; a far-future bookend |
+| 💡 | Asteroid mining | The point of the asteroids is not gold — it is not hauling everything up the gravity well; the economics of building off-Earth. | small-bodies; OSIRIS-REx, Hayabusa; life-in-space/isru |
+| 💡 | Space comm arrays | The successor to three dishes and a whisper — optical/laser links and arrayed antennas as the deep-space network scales. | mission-phases/dsn; PAIRS with the comms essay |
 | 💡 | *(your labels go here)* | | |
 
 ---

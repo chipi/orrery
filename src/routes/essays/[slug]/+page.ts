@@ -8,7 +8,14 @@ export const prerender = true;
 // Hardcoded slugs for the base prerender (universal module — no node:fs).
 // The localized × slug expansion lives in svelte.config.js (essaysRoutes),
 // same split as /programs.
-const ESSAY_SLUGS = ['navigation'];
+const ESSAY_SLUGS = [
+  'navigation',
+  'delta-v',
+  'comms',
+  'reusable-launchers',
+  'new-propulsion',
+  'seven-minutes',
+];
 
 export const entries: EntryGenerator = () => ESSAY_SLUGS.map((slug) => ({ slug }));
 

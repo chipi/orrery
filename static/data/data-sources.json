@@ -15,6 +15,18 @@
       "used_on": ["explore"]
     },
     {
+      "id": "d3-celestial-constellations",
+      "name": "Constellation figures (d3-celestial)",
+      "catalog": "d3-celestial constellation lines (Olaf Frohn) — modern IAU figures",
+      "category": "constellation-figures",
+      "description": "The modern IAU constellation stick-figures, drawn in /explore's stellar neighborhood and in each named star's finder chart. Star positions are our own (from HYG); this provides the line pattern.",
+      "source_url": "https://github.com/ofrohn/d3-celestial",
+      "license_short": "BSD-3-Clause",
+      "license_url": "https://opensource.org/license/bsd-3-clause",
+      "license_rationale": "Permissive BSD-3-Clause, used with attribution. The underlying constellation figures are traditional public-domain astronomy (IAU).",
+      "used_on": ["explore"]
+    },
+    {
       "id": "gcat",
       "name": "GCAT — General Catalog of Space Objects",
       "catalog": "GCAT (Jonathan C. McDowell, planet4589.org)",

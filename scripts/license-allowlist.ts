@@ -153,6 +153,15 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'BSD-3-Clause',
+    display: 'BSD 3-Clause License',
+    url: 'https://opensource.org/license/bsd-3-clause',
+    rationale:
+      'Permissive open-source license. Reuse permitted with attribution + license text; no copyleft obligation on the larger work. Used for the d3-celestial constellation-line figures.',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
     short: 'CC-BY-4.0-IGO',
     display: 'Creative Commons Attribution 4.0 IGO',
     url: 'https://creativecommons.org/licenses/by/4.0/igo/',

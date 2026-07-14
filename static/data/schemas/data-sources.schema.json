@@ -33,7 +33,7 @@
           "version": { "type": "string" },
           "category": {
             "type": "string",
-            "enum": ["star-catalogue", "launch-catalogue", "exoplanet-catalogue", "deep-sky-catalogue", "other"]
+            "enum": ["star-catalogue", "launch-catalogue", "exoplanet-catalogue", "deep-sky-catalogue", "constellation-figures", "other"]
           },
           "description": { "type": "string", "minLength": 1 },
           "source_url": { "type": "string", "format": "uri" },

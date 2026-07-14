@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-14T10:56:23.816Z",
+  "generated_at": "2026-07-14T11:37:53.793Z",
   "script_version": "build-link-provenance@1.0.0",
-  "commit_sha": "ecfe3bb3d8a6575a0cbce5642a02a7e812c60de0",
+  "commit_sha": "8a10517dec095a0ab2955a18121cc3fb14a23fe4",
   "entries": [
     {
       "id": "67p__9db103aaeff4",
@@ -4721,6 +4721,20 @@
       "kind": "community",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "fomalhaut__7c97c76de1c9",
+      "entity_id": "fomalhaut",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Fomalhaut",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-14"
     },
     {
       "id": "freedom-7__0d76d28c5353",

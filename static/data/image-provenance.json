@@ -78857,6 +78857,44 @@
         "reencoded-webp"
       ],
       "fetched_at": "2026-07-14T11:20:19.325Z"
+    },
+    {
+      "id": "star-fomalhaut-01",
+      "path": "/images/stars/fomalhaut/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "Fomalhaut Ring Artwork (opo0510f)",
+      "author": "NASA, ESA and A. Feild (STScI)",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fomalhaut_Ring_Artwork_(opo0510f).jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fomalhaut%20Ring%20Artwork%20(opo0510f).jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "STScI illustration for NASA (Hubble) — U.S. Government work, public domain. Artist’s impression, not a photograph.",
+      "modifications": [
+        "downloaded-via-special-filepath",
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-07-14T11:37:10.964Z"
+    },
+    {
+      "id": "star-proxima-centauri-01",
+      "path": "/images/stars/proxima-centauri/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "Artist's impression of the planet orbiting Proxima Centauri (eso1629e)",
+      "author": "ESO/M. Kornmesser",
+      "agency": "ESO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Artist%27s_impression_of_the_planet_orbiting_Proxima_Centauri_(eso1629e).jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Artist's%20impression%20of%20the%20planet%20orbiting%20Proxima%20Centauri%20(eso1629e).jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "ESO releases its imagery under Creative Commons Attribution 4.0 International. Artist’s impression, not a photograph.",
+      "modifications": [
+        "downloaded-via-special-filepath",
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-07-14T11:37:10.964Z"
     }
   ]
 }

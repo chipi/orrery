@@ -1558,5 +1558,15 @@
   "star_index_aria": "Benannte Sterne",
   "star_index_close": "Index schließen",
   "star_index_no_match": "Keine Sterne entsprechen „{query}“.",
-  "explore_stars_toggle": "Sterne"
+  "explore_stars_toggle": "Sterne",
+  "star_enter_system": "System betreten →",
+  "exo_kind": "Exoplanet",
+  "exo_label_period": "UMLAUFZEIT",
+  "exo_label_axis": "GROSSE HALBACHSE",
+  "exo_label_eccentricity": "EXZENTRIZITÄT",
+  "exo_label_radius": "RADIUS",
+  "exo_label_mass": "MASSE",
+  "exo_label_discovery": "ENTDECKUNG",
+  "exo_days": "Tage",
+  "exo_caption": "Umlaufbahnen maßstabsgetreu innerhalb des Systems · Körper nicht maßstabsgetreu · prozedural"
 }

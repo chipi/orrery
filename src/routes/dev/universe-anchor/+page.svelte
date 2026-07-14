@@ -128,13 +128,14 @@
     </label>
 
     <p class="readout">
-      camera ≈ {distPc < 0.1 ? distPc.toFixed(3) : distPc.toFixed(2)} pc
-      ({(distPc * PC_TO_LY).toFixed(2)} ly · {Math.round(distPc * AU_PER_PARSEC).toLocaleString()} AU)
-      · {starCount.toLocaleString()} stars
+      camera ≈ {distPc < 0.1 ? distPc.toFixed(3) : distPc.toFixed(2)} pc ({(
+        distPc * PC_TO_LY
+      ).toFixed(2)} ly · {Math.round(distPc * AU_PER_PARSEC).toLocaleString()} AU) · {starCount.toLocaleString()}
+      stars
     </p>
     <p class="note">
-      Real HYG v4.1 positions + B−V spectral colour. Honest distances; warp captions
-      land in later slices. Screenshot-only prototype — not wired into /explore yet.
+      Real HYG v4.1 positions + B−V spectral colour. Honest distances; warp captions land in later
+      slices. Screenshot-only prototype — not wired into /explore yet.
     </p>
   </div>
 </div>

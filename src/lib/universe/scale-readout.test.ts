@@ -59,7 +59,9 @@ describe('describeDistanceAu', () => {
 describe('niceScaleBar', () => {
   it('picks a 1/2/5 × 10ⁿ round length near the target width', () => {
     const bar = niceScaleBar(1, 130)!; // 1 AU per pixel, target 130 px
-    expect([1, 2, 5, 10, 20, 50, 100].includes(bar.au / 10 ** Math.floor(Math.log10(bar.au)) * 1)).toBeTruthy();
+    expect(
+      [1, 2, 5, 10, 20, 50, 100].includes((bar.au / 10 ** Math.floor(Math.log10(bar.au))) * 1),
+    ).toBeTruthy();
     expect(bar.au).toBeLessThanOrEqual(130);
     expect(bar.px).toBeCloseTo(bar.au / 1, 6);
   });

@@ -1558,5 +1558,15 @@
   "star_index_aria": "Именоване звезде",
   "star_index_close": "Затвори индекс",
   "star_index_no_match": "Нема звезда које одговарају упиту „{query}“.",
-  "explore_stars_toggle": "Звезде"
+  "explore_stars_toggle": "Звезде",
+  "star_enter_system": "Уђи у систем →",
+  "exo_kind": "Егзопланета",
+  "exo_label_period": "ОРБИТАЛНИ ПЕРИОД",
+  "exo_label_axis": "ВЕЛИКА ПОЛУОСА",
+  "exo_label_eccentricity": "ЕКСЦЕНТРИЦИТЕТ",
+  "exo_label_radius": "ПОЛУПРЕЧНИК",
+  "exo_label_mass": "МАСА",
+  "exo_label_discovery": "ОТКРИЋЕ",
+  "exo_days": "дана",
+  "exo_caption": "Орбите у размери унутар система · тела нису у размери · процедурално"
 }

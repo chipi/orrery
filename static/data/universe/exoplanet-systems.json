@@ -1,0 +1,481 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-14T13:54:18.747Z",
+  "script_version": "build-exoplanet-systems@1.0.0",
+  "source": "NASA Exoplanet Archive · pscomppars (Composite Planet Parameters)",
+  "source_url": "https://exoplanetarchive.ipac.caltech.edu/",
+  "count": 10,
+  "planet_count": 25,
+  "systems": [
+    {
+      "hostId": "proxima-centauri",
+      "hip": 70890,
+      "star": {
+        "name": "Proxima Centauri",
+        "spect": "M5Ve",
+        "dist_pc": 1.296,
+        "bv": 1.807,
+        "con": "Cen",
+        "x": -0.4723,
+        "y": -0.3615,
+        "z": -1.1512,
+        "iconic": false
+      },
+      "planets": [
+        {
+          "id": "proxima-cen-d",
+          "letter": "d",
+          "name": "Proxima Cen d",
+          "period_days": 5.12338,
+          "a_au": 0.02881,
+          "e": 0,
+          "radius_earth": 0.692,
+          "mass_earth": 0.26,
+          "disc_year": 2025,
+          "disc_method": "Radial Velocity"
+        },
+        {
+          "id": "proxima-cen-b",
+          "letter": "b",
+          "name": "Proxima Cen b",
+          "period_days": 11.18465,
+          "a_au": 0.04848,
+          "e": 0,
+          "radius_earth": 1.02,
+          "mass_earth": 1.055,
+          "disc_year": 2016,
+          "disc_method": "Radial Velocity"
+        }
+      ]
+    },
+    {
+      "hostId": "barnards-star",
+      "hip": 87937,
+      "star": {
+        "name": "Barnard's Star",
+        "spect": "sdM4",
+        "dist_pc": 1.824,
+        "bv": 1.57,
+        "con": "Oph",
+        "x": -0.0174,
+        "y": -1.8166,
+        "z": 0.1491,
+        "iconic": false
+      },
+      "planets": [
+        {
+          "id": "barnard-d",
+          "letter": "d",
+          "name": "Barnard d",
+          "period_days": 2.3402,
+          "a_au": 0.0188,
+          "e": 0.04,
+          "radius_earth": 0.694,
+          "mass_earth": 0.263,
+          "disc_year": 2025,
+          "disc_method": "Radial Velocity"
+        },
+        {
+          "id": "barnard-b",
+          "letter": "b",
+          "name": "Barnard b",
+          "period_days": 3.1542,
+          "a_au": 0.0229,
+          "e": 0.03,
+          "radius_earth": 0.72,
+          "mass_earth": 0.299,
+          "disc_year": 2024,
+          "disc_method": "Radial Velocity"
+        },
+        {
+          "id": "barnard-c",
+          "letter": "c",
+          "name": "Barnard c",
+          "period_days": 4.1244,
+          "a_au": 0.0274,
+          "e": 0.08,
+          "radius_earth": 0.743,
+          "mass_earth": 0.335,
+          "disc_year": 2025,
+          "disc_method": "Radial Velocity"
+        },
+        {
+          "id": "barnard-e",
+          "letter": "e",
+          "name": "Barnard e",
+          "period_days": 6.7392,
+          "a_au": 0.0381,
+          "e": 0.04,
+          "radius_earth": 0.637,
+          "mass_earth": 0.193,
+          "disc_year": 2025,
+          "disc_method": "Radial Velocity"
+        }
+      ]
+    },
+    {
+      "hostId": "lalande-21185",
+      "hip": 54035,
+      "star": {
+        "name": "Lalande 21185",
+        "spect": "M2V",
+        "dist_pc": 2.547,
+        "bv": 1.502,
+        "con": "UMa",
+        "x": -1.998,
+        "y": 0.5043,
+        "z": 1.4955,
+        "iconic": false
+      },
+      "planets": [
+        {
+          "id": "gj-411-b",
+          "letter": "b",
+          "name": "GJ 411 b",
+          "period_days": 12.9394,
+          "a_au": 0.07879,
+          "e": 0.063,
+          "radius_earth": 1.45,
+          "mass_earth": 2.69,
+          "disc_year": 2019,
+          "disc_method": "Radial Velocity"
+        },
+        {
+          "id": "hd-95735-c",
+          "letter": "c",
+          "name": "HD 95735 c",
+          "period_days": 2946,
+          "a_au": 2.94,
+          "e": 0.132,
+          "radius_earth": 3.76,
+          "mass_earth": 13.6,
+          "disc_year": 2021,
+          "disc_method": "Radial Velocity"
+        }
+      ]
+    },
+    {
+      "hostId": "luytens-star",
+      "hip": 36208,
+      "star": {
+        "name": "Luyten's Star",
+        "spect": "M5",
+        "dist_pc": 3.803,
+        "bv": 1.573,
+        "con": "CMi",
+        "x": -1.4095,
+        "y": 3.5149,
+        "z": 0.3464,
+        "iconic": false
+      },
+      "planets": [
+        {
+          "id": "gj-273-c",
+          "letter": "c",
+          "name": "GJ 273 c",
+          "period_days": 4.7234,
+          "a_au": 0.036467,
+          "e": 0.17,
+          "radius_earth": 1.06,
+          "mass_earth": 1.18,
+          "disc_year": 2017,
+          "disc_method": "Radial Velocity"
+        },
+        {
+          "id": "gj-273-b",
+          "letter": "b",
+          "name": "GJ 273 b",
+          "period_days": 18.6498,
+          "a_au": 0.091101,
+          "e": 0.1,
+          "radius_earth": 1.51,
+          "mass_earth": 2.89,
+          "disc_year": 2017,
+          "disc_method": "Radial Velocity"
+        }
+      ]
+    },
+    {
+      "hostId": "pollux",
+      "hip": 37826,
+      "star": {
+        "name": "Pollux",
+        "spect": "K0IIIvar",
+        "dist_pc": 10.358,
+        "bv": 0.991,
+        "con": "Gem",
+        "x": -4.0555,
+        "y": 8.1952,
+        "z": 4.8672,
+        "iconic": false
+      },
+      "planets": [
+        {
+          "id": "hd-62509-b",
+          "letter": "b",
+          "name": "HD 62509 b",
+          "period_days": 589.64,
+          "a_au": 1.64,
+          "e": 0.02,
+          "radius_earth": 13.3,
+          "mass_earth": 731,
+          "disc_year": 2006,
+          "disc_method": "Radial Velocity"
+        }
+      ]
+    },
+    {
+      "hostId": "trappist-1",
+      "hip": null,
+      "star": {
+        "name": "TRAPPIST-1",
+        "spect": "M8.0 V",
+        "dist_pc": 12.4299,
+        "bv": null,
+        "con": null,
+        "x": 12.046,
+        "y": -2.8639,
+        "z": -1.0927,
+        "iconic": true
+      },
+      "planets": [
+        {
+          "id": "trappist-1-b",
+          "letter": "b",
+          "name": "TRAPPIST-1 b",
+          "period_days": 1.510826,
+          "a_au": 0.01154,
+          "e": 0.00622,
+          "radius_earth": 1.116,
+          "mass_earth": 1.374,
+          "disc_year": 2016,
+          "disc_method": "Transit"
+        },
+        {
+          "id": "trappist-1-c",
+          "letter": "c",
+          "name": "TRAPPIST-1 c",
+          "period_days": 2.421937,
+          "a_au": 0.0158,
+          "e": 0.00654,
+          "radius_earth": 1.097,
+          "mass_earth": 1.308,
+          "disc_year": 2016,
+          "disc_method": "Transit"
+        },
+        {
+          "id": "trappist-1-d",
+          "letter": "d",
+          "name": "TRAPPIST-1 d",
+          "period_days": 4.049219,
+          "a_au": 0.02227,
+          "e": 0.00837,
+          "radius_earth": 0.788,
+          "mass_earth": 0.388,
+          "disc_year": 2016,
+          "disc_method": "Transit"
+        },
+        {
+          "id": "trappist-1-e",
+          "letter": "e",
+          "name": "TRAPPIST-1 e",
+          "period_days": 6.101013,
+          "a_au": 0.02925,
+          "e": 0.0051,
+          "radius_earth": 0.92,
+          "mass_earth": 0.692,
+          "disc_year": 2017,
+          "disc_method": "Transit"
+        },
+        {
+          "id": "trappist-1-f",
+          "letter": "f",
+          "name": "TRAPPIST-1 f",
+          "period_days": 9.20754,
+          "a_au": 0.03849,
+          "e": 0.01007,
+          "radius_earth": 1.045,
+          "mass_earth": 1.039,
+          "disc_year": 2017,
+          "disc_method": "Transit"
+        },
+        {
+          "id": "trappist-1-g",
+          "letter": "g",
+          "name": "TRAPPIST-1 g",
+          "period_days": 12.352446,
+          "a_au": 0.04683,
+          "e": 0.00208,
+          "radius_earth": 1.129,
+          "mass_earth": 1.321,
+          "disc_year": 2017,
+          "disc_method": "Transit"
+        },
+        {
+          "id": "trappist-1-h",
+          "letter": "h",
+          "name": "TRAPPIST-1 h",
+          "period_days": 18.772866,
+          "a_au": 0.06189,
+          "e": 0.00567,
+          "radius_earth": 0.755,
+          "mass_earth": 0.326,
+          "disc_year": 2017,
+          "disc_method": "Transit"
+        }
+      ]
+    },
+    {
+      "hostId": "51-pegasi",
+      "hip": null,
+      "star": {
+        "name": "51 Pegasi",
+        "spect": "G5V",
+        "dist_pc": 15.4614,
+        "bv": null,
+        "con": null,
+        "x": 13.9219,
+        "y": -3.8956,
+        "z": 5.4827,
+        "iconic": true
+      },
+      "planets": [
+        {
+          "id": "51-peg-b",
+          "letter": "b",
+          "name": "51 Peg b",
+          "period_days": 4.2307966,
+          "a_au": 0.052,
+          "e": 0.0063,
+          "radius_earth": 14.1,
+          "mass_earth": 193.87532827,
+          "disc_year": 1995,
+          "disc_method": "Radial Velocity"
+        }
+      ]
+    },
+    {
+      "hostId": "hamal",
+      "hip": 9884,
+      "star": {
+        "name": "Hamal",
+        "spect": "K2III",
+        "dist_pc": 20.178,
+        "bv": 1.151,
+        "con": "Ari",
+        "x": 15.732,
+        "y": 9.7517,
+        "z": 8.0336,
+        "iconic": false
+      },
+      "planets": [
+        {
+          "id": "alf-ari-b",
+          "letter": "b",
+          "name": "alf Ari b",
+          "period_days": 380.8,
+          "a_au": 1.2,
+          "e": 0.25,
+          "radius_earth": 13.4,
+          "mass_earth": 572.07,
+          "disc_year": 2010,
+          "disc_method": "Radial Velocity"
+        }
+      ]
+    },
+    {
+      "hostId": "aldebaran",
+      "hip": 21421,
+      "star": {
+        "name": "Aldebaran",
+        "spect": "K5III",
+        "dist_pc": 20.433,
+        "bv": 1.538,
+        "con": "Tau",
+        "x": 7.0272,
+        "y": 18.2876,
+        "z": 5.8067,
+        "iconic": false
+      },
+      "planets": [
+        {
+          "id": "alf-tau-b",
+          "letter": "b",
+          "name": "alf Tau b",
+          "period_days": 628.96,
+          "a_au": 1.46,
+          "e": 0.1,
+          "radius_earth": 12.7,
+          "mass_earth": 2056.3601,
+          "disc_year": 2015,
+          "disc_method": "Radial Velocity"
+        }
+      ]
+    },
+    {
+      "hostId": "toi-700",
+      "hip": null,
+      "star": {
+        "name": "TOI-700",
+        "spect": "M2.5 V",
+        "dist_pc": 31.1265,
+        "bv": null,
+        "con": null,
+        "x": -1.5897,
+        "y": 12.7705,
+        "z": -28.3416,
+        "iconic": true
+      },
+      "planets": [
+        {
+          "id": "toi-700-b",
+          "letter": "b",
+          "name": "TOI-700 b",
+          "period_days": 9.977219,
+          "a_au": 0.0677,
+          "e": 0.075,
+          "radius_earth": 0.914,
+          "mass_earth": 0.704,
+          "disc_year": 2020,
+          "disc_method": "Transit"
+        },
+        {
+          "id": "toi-700-c",
+          "letter": "c",
+          "name": "TOI-700 c",
+          "period_days": 16.051137,
+          "a_au": 0.0929,
+          "e": 0.068,
+          "radius_earth": 2.6,
+          "mass_earth": 7.27,
+          "disc_year": 2020,
+          "disc_method": "Transit"
+        },
+        {
+          "id": "toi-700-e",
+          "letter": "e",
+          "name": "TOI-700 e",
+          "period_days": 27.80978,
+          "a_au": 0.134,
+          "e": 0.059,
+          "radius_earth": 0.953,
+          "mass_earth": 0.818,
+          "disc_year": 2023,
+          "disc_method": "Transit"
+        },
+        {
+          "id": "toi-700-d",
+          "letter": "d",
+          "name": "TOI-700 d",
+          "period_days": 37.42396,
+          "a_au": 0.1633,
+          "e": 0.042,
+          "radius_earth": 1.073,
+          "mass_earth": 1.25,
+          "disc_year": 2020,
+          "disc_method": "Transit"
+        }
+      ]
+    }
+  ]
+}

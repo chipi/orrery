@@ -437,6 +437,9 @@ export default defineConfig(({ mode }) => {
           // its own *.test.ts (star-selection, context-graph, budget, bv-to-rgb).
           'src/lib/universe/point-field.ts',
           'src/lib/universe/neighborhood-scene.ts',
+          // Slice 2 exoplanet BodyScene builder — same WebGL policy; its pure
+          // Keplerian math is unit-tested in kepler.test.ts.
+          'src/lib/universe/body-scene.ts',
           '*.config.{js,ts}',
           '.svelte-kit/',
         ],

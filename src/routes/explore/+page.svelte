@@ -32,8 +32,15 @@
   // /explore v2 "The Known Universe" (PRD-030 / RFC-032). The neighborhood scene
   // is dynamically imported at the boundary so v1's bundle + first paint stay
   // untouched (RFC C-F).
-  import { ContextGraph, SOLAR_SYSTEM_CONTEXT, NEIGHBORHOOD_CONTEXT } from '$lib/universe/context-graph';
+  import {
+    ContextGraph,
+    SOLAR_SYSTEM_CONTEXT,
+    NEIGHBORHOOD_CONTEXT,
+    makeBodyContext,
+    bodyContextId,
+  } from '$lib/universe/context-graph';
   import type { NeighborhoodScene } from '$lib/universe/neighborhood-scene';
+  import type { BodyScene } from '$lib/universe/body-scene';
   import {
     describeDistanceAu,
     niceScaleBar,
@@ -54,10 +61,17 @@
     getMission,
     getNamedStars,
     getNamedStarI18n,
+    getExoplanetSystems,
+    getExoplanetSystem,
+    getExoplanetI18n,
     type NamedStar,
     type LocalizedNamedStar,
+    type ExoplanetPlanet,
+    type ExoplanetSystem,
+    type ExoplanetOverlay,
   } from '$lib/data';
   import StarPanel from '$lib/components/StarPanel.svelte';
+  import ExoplanetPanel from '$lib/components/ExoplanetPanel.svelte';
   import StarIndex from '$lib/components/StarIndex.svelte';
   import type { AnonymousStar } from '$lib/universe/anonymous-star';
   import { localeFromPage } from '$lib/locale';
@@ -289,10 +303,18 @@
     satellite: false,
     belt: false,
     star: false,
+    exoplanet: false,
   });
 
   // /explore v2 Slice 1 — named-star selection + the anonymous-star tap readout.
   let namedStars = $state<NamedStar[]>([]);
+  // Slice 2 — the exoplanet selected inside a BodyScene (drives ExoplanetPanel).
+  let selectedExoplanet = $state<{
+    planet: ExoplanetPlanet;
+    hostName: string;
+    overlay: ExoplanetOverlay | null;
+  } | null>(null);
+  let closeExoplanetFn: (() => void) | null = null;
   let namedStarById = $derived(new Map(namedStars.map((s) => [s.id, s])));
   let selectedStarId = $state<string | null>(null);
   let localizedStar = $state<LocalizedNamedStar | null>(null);
@@ -863,7 +885,16 @@
   let scaleReadout = $state<ScaleReadout | null>(null);
   let scaleBarPx = $state(0);
   let scaleBarLabel = $state('');
-  let contextId = $state<'solar-system' | 'neighborhood'>('solar-system');
+  let contextId = $state<'solar-system' | 'neighborhood' | 'body-scene'>('solar-system');
+  // Slice 2: the exoplanet host whose BodyScene is active (breadcrumb crumb) + the
+  // set of host ids that have a system to descend into (drives "Enter system").
+  let bodyHostName = $state('');
+  let exoplanetHostIds = $state<Set<string>>(new Set());
+  // A distance caption shown during a Navigator warp into/out of a system.
+  let warpCaption = $state('');
+  let enterSystemFn: ((hostId: string, planetId?: string) => void) | null = null;
+  // The exoplanet host id whose BodyScene is active (for the ?system= URL sync).
+  let activeBodyHostId = $state<string | null>(null);
   // Bumped on each boundary crossing to replay the warp-flash overlay.
   let crossingFlashId = $state(0);
   // Constellation-line overlay toggle (neighborhood only).
@@ -893,9 +924,11 @@
     }
   };
   const contextLabel = (): string =>
-    contextId === 'neighborhood'
-      ? m.explore_ctx_stellar_neighborhood()
-      : m.explore_ctx_solar_system();
+    contextId === 'body-scene'
+      ? bodyHostName
+      : contextId === 'neighborhood'
+        ? m.explore_ctx_stellar_neighborhood()
+        : m.explore_ctx_solar_system();
 
   // PRD-023 Slice E.2/E.4 — script-level state for the close-zoom HUD
   // overlays. `cameraState.focusedOnPlanet` is set true when the camera
@@ -964,6 +997,8 @@
   // Set in onMount; called by Reset View so resetting while out in the stellar
   // neighborhood first crosses back to the solar system (no-op when already there).
   let exitNeighborhoodFn: (() => void) | null = null;
+  // Slice 2: leave an exoplanet BodyScene back out to the neighborhood.
+  let exitBodySceneFn: (() => void) | null = null;
   // Set in onMount; lets the star index / ?goto= resolver select a named star.
   let selectStarFn: ((id: string) => void) | null = null;
   let closeStarFn: (() => void) | null = null;
@@ -1158,6 +1193,38 @@
         else url.searchParams.delete('goto');
         lastGoto = id; // keep the resolver from re-firing on our own write
         replaceState(url, $page.state);
+      }
+    });
+  });
+
+  // v2 Slice 2 — ?system=<hostId>[&planet=<planetId>] deep-links into a BodyScene.
+  let lastSystem: string | null = null;
+  $effect(() => {
+    const s = $page.url.searchParams.get('system');
+    const pl = $page.url.searchParams.get('planet');
+    if (s && s !== lastSystem && enterSystemFn) {
+      lastSystem = s;
+      untrack(() => enterSystemFn?.(s, pl ?? undefined));
+    }
+  });
+  // Mirror the active BodyScene + selected planet into ?system / ?planet (shallow).
+  let bodySysUrl = $derived(contextId === 'body-scene' ? activeBodyHostId : null);
+  let everEnteredSystem = false;
+  $effect(() => {
+    const host = bodySysUrl;
+    const planet = panelState.exoplanet && selectedExoplanet ? selectedExoplanet.planet.id : null;
+    if (host) everEnteredSystem = true;
+    untrack(() => {
+      const url = new URL($page.url);
+      const curSys = url.searchParams.get('system') ?? null;
+      const curPl = url.searchParams.get('planet') ?? null;
+      if (curSys !== host || curPl !== planet) {
+        if (host) url.searchParams.set('system', host);
+        else url.searchParams.delete('system');
+        if (host && planet) url.searchParams.set('planet', planet);
+        else url.searchParams.delete('planet');
+        lastSystem = host; // don't re-fire the resolver on our own write
+        if (host || everEnteredSystem) replaceState(url, $page.state);
       }
     });
   });
@@ -2701,12 +2768,14 @@
       nbLoading = true;
       try {
         const mod = await import('$lib/universe/neighborhood-scene');
-        const [shells, stars, constellations] = await Promise.all([
+        const [shells, stars, constellations, exoSystems] = await Promise.all([
           mod.loadNeighborhoodShells(fetch, base),
           getNamedStars(fetch),
           mod.loadConstellationLines(fetch, base),
+          getExoplanetSystems(fetch),
         ]);
         namedStars = stars;
+        exoplanetHostIds = new Set(exoSystems.map((s) => s.hostId));
         nbScene = mod.createNeighborhoodScene({
           shells,
           tier: quality.tier,
@@ -2788,6 +2857,134 @@
     }
     exitNeighborhoodFn = crossInToSolarSystem;
 
+    // ── Exoplanet BodyScene (Slice 2) ────────────────────────────────────────
+    // Descend from the neighborhood into a host star's mini-orrery via a 1–2 s
+    // cinematic Navigator warp; zoom out or tap the crumb to return.
+    let bodyScene: BodyScene | null = null;
+    let bodyHostIdLocal: string | null = null;
+    let currentBodySystem: ExoplanetSystem | null = null;
+    let bodySimYears = 0;
+    let bodyRate = 0; // years per frame — set per-system so the outer planet orbits in ~12 s
+    const inBodyScene = () => contextGraph.active.id.startsWith('body-scene:');
+    const BODY_FAR = 4000;
+    let warpCaptionTimer: ReturnType<typeof setTimeout> | null = null;
+    const showWarpCaption = (text: string) => {
+      warpCaption = text;
+      if (warpCaptionTimer) clearTimeout(warpCaptionTimer);
+      warpCaptionTimer = setTimeout(() => (warpCaption = ''), 1800);
+    };
+
+    async function enterBodyScene(hostId: string, planetId?: string): Promise<void> {
+      const system = await getExoplanetSystem(hostId, fetch);
+      if (!system) return;
+      // Ensure the neighborhood is loaded so exiting the system renders the field.
+      await ensureNeighborhood();
+      if (bodyScene) {
+        bodyScene.dispose();
+        bodyScene = null;
+      }
+      if (bodyHostIdLocal) contextGraph.remove(bodyContextId(bodyHostIdLocal));
+      const mod = await import('$lib/universe/body-scene');
+      bodyScene = mod.createBodyScene(system);
+      bodyHostIdLocal = hostId;
+      currentBodySystem = system;
+      bodySimYears = 0;
+      const fr = bodyScene.framingRadius;
+      contextGraph.register(makeBodyContext(hostId, fr));
+      contextGraph.setActive(bodyContextId(hostId));
+      contextId = 'body-scene'; // flip chrome immediately, ahead of the throttled HUD tick
+      bodyHostName = system.star.name;
+      activeBodyHostId = hostId;
+      const maxPeriodYears = Math.max(...system.planets.map((p) => p.period_days)) / 365.25;
+      bodyRate = maxPeriodYears / (12 * 60); // outer planet ≈ 12 s per orbit at 60 fps
+      camRMin = fr * 0.2;
+      camRMax = fr * 4;
+      camera.far = BODY_FAR;
+      camera.near = 0.05;
+      camera.updateProjectionMatrix();
+      closeStarPanel();
+      anonStar = null;
+      cue('select');
+      if (reducedMotion) {
+        camR = fr * 2.2;
+      } else {
+        camR = fr * 3.6;
+        startCrossDolly(fr * 3.6, fr * 2.0, 1300);
+        crossingFlashId++;
+        showWarpCaption(
+          `${(system.star.dist_pc * 3.2615638).toFixed(2)} ${m.explore_light_years()} · ${system.star.name}`,
+        );
+      }
+      updateCam();
+      if (planetId) selectExoplanet(planetId);
+    }
+
+    function exitBodyScene(): void {
+      if (!inBodyScene()) return;
+      dollyActive = false;
+      if (!reducedMotion) crossingFlashId++;
+      const hid = bodyHostIdLocal;
+      contextGraph.setActive('neighborhood');
+      contextId = 'neighborhood'; // flip chrome immediately, ahead of the HUD tick
+      if (hid) contextGraph.remove(bodyContextId(hid));
+      if (bodyScene) {
+        bodyScene.dispose();
+        bodyScene = null;
+      }
+      bodyHostIdLocal = null;
+      bodyHostName = '';
+      activeBodyHostId = null;
+      currentBodySystem = null;
+      selectedExoplanet = null;
+      panelState.exoplanet = false;
+      camRMin = NB_CAM_R_MIN;
+      camRMax = NB_CAM_R_MAX;
+      camera.far = NB_FAR;
+      camera.near = 0.001;
+      camera.updateProjectionMatrix();
+      camR = 0.32;
+      updateCam();
+    }
+    enterSystemFn = (hostId: string, planetId?: string) => void enterBodyScene(hostId, planetId);
+    exitBodySceneFn = exitBodyScene;
+
+    function selectExoplanet(planetId: string): void {
+      const planet = currentBodySystem?.planets.find((p) => p.id === planetId);
+      if (!planet || !currentBodySystem) return;
+      cue('select');
+      selectedExoplanet = { planet, hostName: currentBodySystem.star.name, overlay: null };
+      panelState.exoplanet = true;
+      panelState.star = false;
+      panelState.planet = false;
+      panelState.sun = false;
+      panelState.smallBody = false;
+      panelState.satellite = false;
+      panelState.belt = false;
+      bodyScene?.highlightPlanet(planetId);
+      const forId = planetId;
+      void getExoplanetI18n(getLocale(), planetId, fetch).then((overlay) => {
+        if (selectedExoplanet?.planet.id === forId) {
+          selectedExoplanet = { ...selectedExoplanet, overlay };
+        }
+      });
+    }
+    closeExoplanetFn = () => {
+      panelState.exoplanet = false;
+      selectedExoplanet = null;
+      bodyScene?.highlightPlanet(null);
+    };
+
+    function pickBodyScene(e: { clientX: number; clientY: number }): void {
+      if (!bodyScene) return;
+      const rect = el3d.getBoundingClientRect();
+      const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+      ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      const hits = ray3d.intersectObjects(bodyScene.planetPickables, false);
+      const id = hits[0]?.object.userData.planetId as string | undefined;
+      if (id) selectExoplanet(id);
+    }
+
     // ── Named-star selection (Slice 1) ──────────────────────────────────────
     async function selectStar(id: string): Promise<void> {
       const base = namedStarById.get(id);
@@ -2844,21 +3041,33 @@
     };
     // Resolve a cold-load ?goto=<starId> now that the handlers exist.
     {
-      const g0 = new URL(window.location.href).searchParams.get('goto');
+      const params0 = new URL(window.location.href).searchParams;
+      const g0 = params0.get('goto');
       if (g0) {
         lastGoto = g0;
         void gotoStar(g0);
+      }
+      // Cold-load ?system=<hostId>[&planet=<planetId>] → descend into the BodyScene.
+      const sys0 = params0.get('system');
+      if (sys0) {
+        lastSystem = sys0;
+        void enterBodyScene(sys0, params0.get('planet') ?? undefined);
       }
     }
     // Exposed to the template (index / ?goto=) via a top-level binding.
     selectStarFn = selectStar;
     closeStarFn = closeStarPanel;
     setConstellationsFn = (on: boolean) => nbScene?.setConstellationsVisible(on);
-    // Dev/e2e hook for canvas star pickability (no shipped effect).
+    // Dev/e2e hook for canvas star pickability + BodyScene entry (no shipped effect).
     if (import.meta.env.DEV) {
       (window as unknown as { __exploreSelectStar?: (id: string) => void }).__exploreSelectStar = (
         id: string,
       ) => void selectStar(id);
+      (window as unknown as { __exploreEnterSystem?: (id: string) => void }).__exploreEnterSystem =
+        (id: string) => void enterBodyScene(id);
+      (
+        window as unknown as { __exploreSelectExoplanet?: (id: string) => void }
+      ).__exploreSelectExoplanet = (id: string) => selectExoplanet(id);
     }
 
     // Camera distance → canonical AU, for the scale HUD (solar camR is AU,
@@ -2871,7 +3080,7 @@
       if ((scaleHudTick++ & 7) !== 0) return;
       const au = camDistAu();
       scaleReadout = describeDistanceAu(au);
-      contextId = inNeighborhood() ? 'neighborhood' : 'solar-system';
+      contextId = inBodyScene() ? 'body-scene' : inNeighborhood() ? 'neighborhood' : 'solar-system';
       const vh = container?.clientHeight ?? 1;
       const worldPerPx = (2 * Math.tan((camera.fov * Math.PI) / 180 / 2) * camR) / vh;
       const unitToAu = inNeighborhood() ? AU_PER_PC : 1;
@@ -3475,7 +3684,8 @@
       if (wasOnCanvas && !wasDrag && !wasPan && view === '3d') {
         // v2: in the stellar neighborhood pick named stars / anonymous stars
         // instead of the (unrendered) solar bodies.
-        if (inNeighborhood()) pickNeighborhood(e);
+        if (inBodyScene()) pickBodyScene(e);
+        else if (inNeighborhood()) pickNeighborhood(e);
         else tryPick3d(e);
       }
     };
@@ -4693,6 +4903,15 @@
           // HYG field fading in as the camera pulls back, Sun collapsed to a
           // dot) with the shared camera, bypassing the solar composer + panel
           // throttle. v1's render path below is untouched.
+          // v2 Slice 2: inside an exoplanet BodyScene, render its mini-orrery
+          // (host star + planets on real Keplerian orbits) with the shared camera.
+          if (inBodyScene() && bodyScene) {
+            stepCrossDolly();
+            if (!simPaused && !reducedMotion) bodySimYears += bodyRate;
+            bodyScene.update(bodySimYears);
+            renderer.render(bodyScene.scene, camera);
+            return;
+          }
           if (inNeighborhood() && nbScene) {
             stepCrossDolly();
             nbScene.update(camR, camera);
@@ -4724,6 +4943,7 @@
     });
     lifecycle.add(loop.cleanup);
     lifecycle.add(() => nbScene?.dispose());
+    lifecycle.add(() => bodyScene?.dispose());
     loop.start();
 
     // Disposables that aren't a listener live in the same chain. LIFO
@@ -4808,14 +5028,30 @@
   ></canvas>
 
   <!-- v2 breadcrumb (UXS-014 "you always know where you are"): shown out in the
-       stellar neighborhood; the home crumb taps back to the solar system. -->
-  {#if view === '3d' && contextId === 'neighborhood'}
+       stellar neighborhood + inside a system; each crumb warps to that level. -->
+  {#if view === '3d' && (contextId === 'neighborhood' || contextId === 'body-scene')}
     <nav class="context-crumbs" aria-label={m.explore_location_aria()}>
-      <button type="button" class="crumb home" onclick={() => exitNeighborhoodFn?.()}>
+      <button
+        type="button"
+        class="crumb home"
+        onclick={() => {
+          if (contextId === 'body-scene') exitBodySceneFn?.();
+          exitNeighborhoodFn?.();
+        }}
+      >
         ‹ {m.explore_ctx_solar_system()}
       </button>
       <span class="crumb-sep">›</span>
-      <span class="crumb current" aria-current="page">{m.explore_ctx_stellar_neighborhood()}</span>
+      {#if contextId === 'body-scene'}
+        <button type="button" class="crumb" onclick={() => exitBodySceneFn?.()}>
+          {m.explore_ctx_stellar_neighborhood()}
+        </button>
+        <span class="crumb-sep">›</span>
+        <span class="crumb current" aria-current="page">{bodyHostName}</span>
+      {:else}
+        <span class="crumb current" aria-current="page">{m.explore_ctx_stellar_neighborhood()}</span
+        >
+      {/if}
     </nav>
   {/if}
 
@@ -4860,7 +5096,7 @@
        current zoom — km → AU → light-year → parsec — plus light-travel time and
        a map-style scale bar. Teaches which unit fits which scale as you zoom.
        English chrome for now; i18n before the slice ships. -->
-  {#if view === '3d' && scaleReadout}
+  {#if view === '3d' && scaleReadout && contextId !== 'body-scene'}
     <div class="scale-hud" class:neighborhood={contextId === 'neighborhood'} aria-hidden="true">
       <div class="scale-ladder">
         {#each rungLadder as rung (rung)}
@@ -4912,8 +5148,11 @@
           1,
         )} · {anonColorLabel(anonStar.colorName)} (~{anonStar.kelvin.toLocaleString()} K)
       </span>
-      <button type="button" class="anon-close" aria-label={m.explore_anon_dismiss()} onclick={() => (anonStar = null)}
-        >×</button
+      <button
+        type="button"
+        class="anon-close"
+        aria-label={m.explore_anon_dismiss()}
+        onclick={() => (anonStar = null)}>×</button
       >
     </div>
   {/if}
@@ -4926,6 +5165,14 @@
     {/key}
   {/if}
 
+  <!-- v2 Slice 2: distance caption shown during a Navigator warp into a system,
+       teaching the distance it just crossed (UXS-014 §4 signature moment). -->
+  {#if view === '3d' && warpCaption}
+    {#key warpCaption}
+      <div class="warp-caption" role="status">{warpCaption}</div>
+    {/key}
+  {/if}
+
   <!-- PRD-023 Slice E.2 — Earth-comparison ghost, doubling as the
        REFERENCES launcher (2026-06-06 user direction: move the
        REFERENCES chip from the top HUD to the Earth-for-scale slot;
@@ -4935,7 +5182,7 @@
   <button
     type="button"
     class="earth-compare"
-    class:context-hidden={contextId === 'neighborhood'}
+    class:context-hidden={contextId !== 'solar-system'}
     aria-label={m.explore_sizes_toggle()}
     onclick={() => (panelState.sizes = !panelState.sizes)}
     data-testid="sizes-toggle"
@@ -4965,7 +5212,7 @@
        narration ("one day per second, ten days, a hundred"). -->
   <div
     class="time-controls"
-    class:context-hidden={contextId === 'neighborhood'}
+    class:context-hidden={contextId !== 'solar-system'}
     data-audio-stage="explore-time"
   >
     <!-- Mobile-only compact REFERENCES button — the standalone .earth-compare
@@ -5265,7 +5512,7 @@
   <!-- Desktop cluster — hidden on mobile (≤767 px) via CSS. -->
   <div
     class="hud-controls"
-    class:context-hidden={contextId === 'neighborhood'}
+    class:context-hidden={contextId !== 'solar-system'}
     data-audio-stage="explore-hud"
     role="group"
     aria-label={m.ui_view_controls()}
@@ -5276,7 +5523,7 @@
        desktop .hud-controls corner; .hud-controls itself is desktop-only). -->
   <div
     class="hud-top-mobile"
-    class:context-hidden={contextId === 'neighborhood'}
+    class:context-hidden={contextId !== 'solar-system'}
     role="group"
     aria-label={m.ui_view_controls()}
   >
@@ -5314,7 +5561,7 @@
   <!-- Mobile-only: 3-tab accordion — Orbit Ruler | Controls | Iconic Missions.
        Desktop uses .hud-controls (above) + .ruler-desktop-only (below). -->
   {#snippet mobileRulerContent(close: () => void)}
-    {#if exploreRegimes.length > 0 && contextId !== 'neighborhood'}
+    {#if exploreRegimes.length > 0 && contextId === 'solar-system'}
       <OrbitRuler
         regimes={exploreRegimes}
         highlightRegime={null}
@@ -5475,9 +5722,9 @@
       }}
     />
   {/snippet}
-  <!-- Mobile solar-system drawers (ruler/controls/missions/index) — hidden out
-       in the stellar neighborhood, which has its own scale ruler + no bodies. -->
-  {#if contextId !== 'neighborhood'}
+  <!-- Mobile solar-system drawers (ruler/controls/missions/index) — solar-system
+       only; the neighborhood + BodyScenes have their own chrome. -->
+  {#if contextId === 'solar-system'}
     <MobileDrawerGroup
       tabs={[
         { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
@@ -5579,7 +5826,21 @@
 <SunPanel sun={localizedSun} open={panelState.sun} onClose={closeSunPanel} />
 
 <!-- v2 named-star detail (Slice 1). closeStarFn set in onMount. -->
-<StarPanel star={localizedStar} open={panelState.star} onClose={() => closeStarFn?.()} />
+<StarPanel
+  star={localizedStar}
+  open={panelState.star}
+  hasSystem={selectedStarId ? exoplanetHostIds.has(selectedStarId) : false}
+  onEnterSystem={() => selectedStarId && enterSystemFn?.(selectedStarId)}
+  onClose={() => closeStarFn?.()}
+/>
+
+<ExoplanetPanel
+  planet={selectedExoplanet?.planet ?? null}
+  hostName={selectedExoplanet?.hostName ?? ''}
+  overlay={selectedExoplanet?.overlay ?? null}
+  open={panelState.exoplanet}
+  onClose={() => closeExoplanetFn?.()}
+/>
 
 <SmallBodyPanel
   body={selectedSmallBody}
@@ -5614,7 +5875,7 @@
      stacks on top — closing the body panel reveals the zone panel. -->
 <!-- Solar-system regime ruler — hidden past the boundary (its AU regimes are
      meaningless in the stellar neighborhood, which has its own scale ruler). -->
-{#if exploreRegimes.length > 0 && contextId !== 'neighborhood'}
+{#if exploreRegimes.length > 0 && contextId === 'solar-system'}
   <div class="ruler-desktop-only">
     <OrbitRuler
       regimes={exploreRegimes}
@@ -5977,6 +6238,38 @@
       opacity: 0;
     }
     22% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .warp-caption {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    pointer-events: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(230, 240, 255, 0.92);
+    text-shadow: 0 0 12px rgba(120, 180, 255, 0.7);
+    white-space: nowrap;
+    animation: warpCaption 1800ms ease-out forwards;
+  }
+  @keyframes warpCaption {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, calc(-50% + 8px));
+    }
+    18% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+    80% {
       opacity: 1;
     }
     100% {

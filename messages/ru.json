@@ -1558,5 +1558,15 @@
   "star_color_yellow": "жёлтый",
   "star_color_orange": "оранжевый",
   "star_color_red": "красный",
-  "explore_stars_toggle": "Звёзды"
+  "explore_stars_toggle": "Звёзды",
+  "star_enter_system": "Войти в систему →",
+  "exo_kind": "Экзопланета",
+  "exo_label_period": "ОРБИТАЛЬНЫЙ ПЕРИОД",
+  "exo_label_axis": "БОЛЬШАЯ ПОЛУОСЬ",
+  "exo_label_eccentricity": "ЭКСЦЕНТРИСИТЕТ",
+  "exo_label_radius": "РАДИУС",
+  "exo_label_mass": "МАССА",
+  "exo_label_discovery": "ОТКРЫТИЕ",
+  "exo_days": "сут",
+  "exo_caption": "Орбиты в масштабе внутри системы · тела не в масштабе · процедурная генерация"
 }

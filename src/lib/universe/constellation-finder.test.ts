@@ -3,8 +3,18 @@ import { projectConstellation } from './constellation-finder';
 
 // Two connected segments forming an L, plus a star near one vertex.
 const vertices = [
-  100, 0, 0, 0, 100, 0, // segment A→B
-  0, 100, 0, 0, 0, 100, // segment B→C
+  100,
+  0,
+  0,
+  0,
+  100,
+  0, // segment A→B
+  0,
+  100,
+  0,
+  0,
+  0,
+  100, // segment B→C
 ];
 
 describe('projectConstellation', () => {
@@ -30,7 +40,10 @@ describe('projectConstellation', () => {
 
   it('is scale-invariant (only directions matter)', () => {
     const near = projectConstellation(vertices, [100, 5, 0]);
-    const far = projectConstellation(vertices.map((v) => v * 7), [700, 35, 0]);
+    const far = projectConstellation(
+      vertices.map((v) => v * 7),
+      [700, 35, 0],
+    );
     expect(far.segments[0][0][0]).toBeCloseTo(near.segments[0][0][0], 5);
     expect(far.star![0]).toBeCloseTo(near.star![0], 5);
   });

@@ -24,9 +24,11 @@
   type Props = {
     star: LocalizedNamedStar | null;
     open: boolean;
+    hasSystem?: boolean;
+    onEnterSystem?: () => void;
     onClose: () => void;
   };
-  let { star, open, onClose }: Props = $props();
+  let { star, open, hasSystem = false, onEnterSystem, onClose }: Props = $props();
 
   const PC_TO_LY = 3.2615638;
   let tab = $state<Tab>('overview');
@@ -42,13 +44,20 @@
   let colorName = $derived(kelvin !== null ? colorNameForKelvin(kelvin) : null);
   let colorLabel = $derived.by(() => {
     switch (colorName) {
-      case 'blue-white': return m.star_color_blue_white();
-      case 'white': return m.star_color_white();
-      case 'yellow-white': return m.star_color_yellow_white();
-      case 'yellow': return m.star_color_yellow();
-      case 'orange': return m.star_color_orange();
-      case 'red': return m.star_color_red();
-      default: return colorName ?? '';
+      case 'blue-white':
+        return m.star_color_blue_white();
+      case 'white':
+        return m.star_color_white();
+      case 'yellow-white':
+        return m.star_color_yellow_white();
+      case 'yellow':
+        return m.star_color_yellow();
+      case 'orange':
+        return m.star_color_orange();
+      case 'red':
+        return m.star_color_red();
+      default:
+        return colorName ?? '';
     }
   });
   const fmt = (n: number, dp = 2): string =>
@@ -72,7 +81,8 @@
       const forId = star.id;
       if (con) {
         void getConstellationLines().then((all) => {
-          if (star && star.id === forId) conVertices = all.find((c) => c.con === con)?.vertices ?? null;
+          if (star && star.id === forId)
+            conVertices = all.find((c) => c.con === con)?.vertices ?? null;
         });
       }
     }
@@ -90,6 +100,12 @@
       </div>
       <div class="name">{star.name ?? star.proper}</div>
     </div>
+
+    {#if hasSystem}
+      <button type="button" class="enter-system" onclick={() => onEnterSystem?.()}>
+        {m.star_enter_system()}
+      </button>
+    {/if}
 
     {#if star.photo}
       <div class="panel-hero star-hero">
@@ -226,6 +242,30 @@
     padding: 0 0 12px;
     border-bottom: 1px solid var(--color-border);
     margin-bottom: 12px;
+  }
+  .enter-system {
+    display: block;
+    width: 100%;
+    margin: 0 0 12px;
+    padding: 10px 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4ecdc4;
+    background: rgba(78, 205, 196, 0.1);
+    border: 1px solid rgba(78, 205, 196, 0.4);
+    border-radius: 4px;
+    cursor: pointer;
+    transition:
+      background 0.15s,
+      border-color 0.15s;
+  }
+  .enter-system:hover,
+  .enter-system:focus-visible {
+    background: rgba(78, 205, 196, 0.2);
+    border-color: rgba(78, 205, 196, 0.7);
+    outline: none;
   }
   .star-hero {
     margin-bottom: 12px;

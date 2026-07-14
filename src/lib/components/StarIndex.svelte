@@ -51,7 +51,9 @@
         aria-label={m.star_index_search_aria()}
         onkeydown={onKeydown}
       />
-      <button type="button" class="si-close" aria-label={m.star_index_close()} onclick={onClose}>×</button>
+      <button type="button" class="si-close" aria-label={m.star_index_close()} onclick={onClose}
+        >×</button
+      >
     </div>
     <ul class="si-list">
       {#each filtered as s (s.id)}

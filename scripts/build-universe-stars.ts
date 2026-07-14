@@ -15,7 +15,11 @@
 
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { normalizeStar, type NormalizedStar, type RawHygStar } from '../src/lib/universe/star-normalize.ts';
+import {
+  normalizeStar,
+  type NormalizedStar,
+  type RawHygStar,
+} from '../src/lib/universe/star-normalize.ts';
 
 const SCRIPT_VERSION = 'build-universe-stars@1.0.0';
 const HYG_URL =

@@ -58,6 +58,30 @@ export const NEIGHBORHOOD_CONTEXT: Context = {
   innerBoundaryScene: 0.02, // pc (~4125 AU) — below the ~0.0291 pc landing point
 };
 
+/** The context id for a host star's exoplanet BodyScene (Slice 2). */
+export function bodyContextId(hostId: string): string {
+  return `body-scene:${hostId}`;
+}
+
+/**
+ * A BodyScene sub-context for an exoplanet host (Slice 2). Entered and left by a
+ * cinematic Navigator warp (`setActive` + framing), not a physical re-base, so
+ * the scale is nominal; the outer boundary lets a zoom-out past the framed system
+ * cross back to the Neighborhood. `framingRadius` is the BodyScene's outermost
+ * orbit in its own display units.
+ */
+export function makeBodyContext(hostId: string, framingRadius = 40): Context {
+  return {
+    id: bodyContextId(hostId),
+    parent: 'neighborhood',
+    child: null,
+    units: 'AU',
+    sceneUnitsPerParsec: AU_PER_PARSEC,
+    outerBoundaryScene: framingRadius * 4,
+    innerBoundaryScene: 0,
+  };
+}
+
 /**
  * Re-base a camera distance from one context's scene units into another's,
  * preserving the true physical distance. This is the boundary handoff: convert
@@ -98,6 +122,16 @@ export class ContextGraph {
 
   get(id: string): Context | undefined {
     return this.contexts.get(id);
+  }
+
+  /** Register (or replace) a context — used to add a host's BodyScene on entry. */
+  register(ctx: Context): void {
+    this.contexts.set(ctx.id, ctx);
+  }
+
+  /** Remove a context by id. No-op if it is absent or currently active. */
+  remove(id: string): void {
+    if (id !== this.activeId) this.contexts.delete(id);
   }
 
   /**

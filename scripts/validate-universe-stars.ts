@@ -41,6 +41,7 @@ const validateShell = ajv.compile(loadSchema('universe-stars-shell.schema.json')
 const validateSources = ajv.compile(loadSchema('universe-stars-sources.schema.json'));
 const validateNamedStars = ajv.compile(loadSchema('named-star.schema.json'));
 const validateConstellations = ajv.compile(loadSchema('constellation-lines.schema.json'));
+const validateExoplanets = ajv.compile(loadSchema('exoplanet-system.schema.json'));
 
 const errors: string[] = [];
 const readJson = (p: string): unknown => JSON.parse(readFileSync(p, 'utf8'));
@@ -175,6 +176,51 @@ if (existsSync(CON_PATH)) {
       if (c.vertices.length % 6 !== 0) {
         errors.push(`constellation-lines.json: "${c.con}" vertices not a whole number of segments`);
       }
+    }
+  }
+}
+
+// Exoplanet systems (Slice 2): schema + unique host/planet ids + count + placement.
+const EXO_PATH = join(STARS_DIR, 'exoplanet-systems.json');
+if (existsSync(EXO_PATH)) {
+  const doc = readJson(EXO_PATH) as {
+    count: number;
+    planet_count: number;
+    systems: Array<{
+      hostId: string;
+      star: { x: number; y: number; z: number };
+      planets: Array<{ id: string }>;
+    }>;
+  };
+  if (!validateExoplanets(doc)) {
+    for (const e of validateExoplanets.errors ?? []) {
+      errors.push(`exoplanet-systems.json ${e.instancePath || '/'} ${e.message ?? 'error'}`);
+    }
+  } else {
+    if (doc.count !== doc.systems.length) {
+      errors.push(`exoplanet-systems.json: count ${doc.count} ≠ actual ${doc.systems.length}`);
+    }
+    let planetTotal = 0;
+    const hosts = new Set<string>();
+    for (const s of doc.systems) {
+      if (hosts.has(s.hostId)) errors.push(`exoplanet-systems.json: duplicate host "${s.hostId}"`);
+      hosts.add(s.hostId);
+      if (!Number.isFinite(Math.hypot(s.star.x, s.star.y, s.star.z))) {
+        errors.push(`exoplanet-systems.json: "${s.hostId}" has non-finite position`);
+      }
+      const pids = new Set<string>();
+      for (const p of s.planets) {
+        if (pids.has(p.id)) {
+          errors.push(`exoplanet-systems.json: "${s.hostId}" duplicate planet "${p.id}"`);
+        }
+        pids.add(p.id);
+      }
+      planetTotal += s.planets.length;
+    }
+    if (doc.planet_count !== planetTotal) {
+      errors.push(
+        `exoplanet-systems.json: planet_count ${doc.planet_count} ≠ actual ${planetTotal}`,
+      );
     }
   }
 }

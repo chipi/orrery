@@ -1558,5 +1558,15 @@
   "star_index_aria": "Benoemde sterren",
   "star_index_close": "Sluit index",
   "star_index_no_match": "Geen sterren komen overeen met \"{query}\".",
-  "explore_stars_toggle": "Sterren"
+  "explore_stars_toggle": "Sterren",
+  "star_enter_system": "Systeem betreden →",
+  "exo_kind": "Exoplaneet",
+  "exo_label_period": "OMLOOPTIJD",
+  "exo_label_axis": "HALVE GROTE AS",
+  "exo_label_eccentricity": "EXCENTRICITEIT",
+  "exo_label_radius": "STRAAL",
+  "exo_label_mass": "MASSA",
+  "exo_label_discovery": "ONTDEKKING",
+  "exo_days": "dagen",
+  "exo_caption": "Banen op schaal binnen het systeem · hemellichamen niet op schaal · procedureel"
 }

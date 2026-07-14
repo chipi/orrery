@@ -49,7 +49,12 @@
       for (const ang of [0, Math.PI / 2, Math.PI / 4, -Math.PI / 4]) {
         const dx = Math.cos(ang);
         const dy = Math.sin(ang);
-        const grad = ctx.createLinearGradient(c - dx * len, c - dy * len, c + dx * len, c + dy * len);
+        const grad = ctx.createLinearGradient(
+          c - dx * len,
+          c - dy * len,
+          c + dx * len,
+          c + dy * len,
+        );
         grad.addColorStop(0, rgb(0));
         grad.addColorStop(0.5, `rgba(255,255,255,${a})`);
         grad.addColorStop(1, rgb(0));

@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "exoplanet-system.schema.json",
+  "title": "Exoplanet-system catalog (PRD-030 / RFC-032, Slice 2)",
+  "description": "Host stars with known planets, on real Keplerian elements from the NASA Exoplanet Archive (pscomppars). Drives the /explore v2 BodyScene mini-orreries. Hosts already in the curated named-star catalog reuse their HYG xyz; iconic hosts are placed from ra/dec/distance.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "script_version",
+    "source",
+    "source_url",
+    "count",
+    "planet_count",
+    "systems"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "script_version": { "type": "string", "minLength": 1 },
+    "source": { "type": "string", "minLength": 1 },
+    "source_url": { "type": "string", "minLength": 1 },
+    "count": { "type": "integer", "minimum": 1 },
+    "planet_count": { "type": "integer", "minimum": 1 },
+    "systems": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["hostId", "hip", "star", "planets"],
+        "additionalProperties": false,
+        "properties": {
+          "hostId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "hip": { "type": ["integer", "null"] },
+          "star": {
+            "type": "object",
+            "required": ["name", "spect", "dist_pc", "bv", "con", "x", "y", "z", "iconic"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "spect": { "type": "string" },
+              "dist_pc": { "type": "number", "exclusiveMinimum": 0 },
+              "bv": { "type": ["number", "null"] },
+              "con": { "type": ["string", "null"], "minLength": 2 },
+              "x": { "type": "number" },
+              "y": { "type": "number" },
+              "z": { "type": "number" },
+              "iconic": { "type": "boolean" }
+            }
+          },
+          "planets": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "letter",
+                "name",
+                "period_days",
+                "a_au",
+                "e",
+                "radius_earth",
+                "mass_earth",
+                "disc_year",
+                "disc_method"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+                "letter": { "type": "string", "minLength": 1 },
+                "name": { "type": "string", "minLength": 1 },
+                "period_days": { "type": "number", "exclusiveMinimum": 0 },
+                "a_au": { "type": "number", "exclusiveMinimum": 0 },
+                "e": { "type": "number", "minimum": 0, "maximum": 1 },
+                "radius_earth": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+                "mass_earth": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+                "disc_year": { "type": ["integer", "null"] },
+                "disc_method": { "type": ["string", "null"] }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

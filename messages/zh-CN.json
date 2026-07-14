@@ -1558,5 +1558,15 @@
   "star_index_aria": "命名恒星",
   "star_index_close": "关闭索引",
   "star_index_no_match": "没有与“{query}”匹配的恒星。",
-  "explore_stars_toggle": "恒星"
+  "explore_stars_toggle": "恒星",
+  "star_enter_system": "进入星系 →",
+  "exo_kind": "系外行星",
+  "exo_label_period": "轨道周期",
+  "exo_label_axis": "半长轴",
+  "exo_label_eccentricity": "离心率",
+  "exo_label_radius": "半径",
+  "exo_label_mass": "质量",
+  "exo_label_discovery": "发现时间",
+  "exo_days": "天",
+  "exo_caption": "系统内轨道按比例 · 天体未按比例 · 程序生成"
 }

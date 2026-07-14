@@ -1558,5 +1558,15 @@
   "star_index_aria": "नामित तारे",
   "star_index_close": "सूची बंद करें",
   "star_index_no_match": "\"{query}\" से कोई तारा मेल नहीं खाता।",
-  "explore_stars_toggle": "तारे"
+  "explore_stars_toggle": "तारे",
+  "star_enter_system": "तंत्र में प्रवेश करें →",
+  "exo_kind": "बहिर्ग्रह",
+  "exo_label_period": "कक्षीय अवधि",
+  "exo_label_axis": "अर्ध-दीर्घ अक्ष",
+  "exo_label_eccentricity": "उत्केन्द्रता",
+  "exo_label_radius": "त्रिज्या",
+  "exo_label_mass": "द्रव्यमान",
+  "exo_label_discovery": "खोज",
+  "exo_days": "दिन",
+  "exo_caption": "तंत्र के भीतर कक्षाएँ पैमाने पर · पिंड पैमाने पर नहीं · प्रक्रियात्मक"
 }

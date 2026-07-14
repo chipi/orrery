@@ -1558,5 +1558,15 @@
   "star_color_yellow": "黄色",
   "star_color_orange": "橙色",
   "star_color_red": "赤色",
-  "explore_stars_toggle": "恒星"
+  "explore_stars_toggle": "恒星",
+  "star_enter_system": "システムに入る →",
+  "exo_kind": "系外惑星",
+  "exo_label_period": "公転周期",
+  "exo_label_axis": "軌道長半径",
+  "exo_label_eccentricity": "離心率",
+  "exo_label_radius": "半径",
+  "exo_label_mass": "質量",
+  "exo_label_discovery": "発見",
+  "exo_days": "日",
+  "exo_caption": "軌道は系内でスケール通り · 天体はスケール外 · 手続き的生成"
 }

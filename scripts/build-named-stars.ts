@@ -21,7 +21,19 @@ const HYG_URL =
 const OUT_PATH = 'static/data/universe/named-stars.json';
 
 // HYG column indices (0-based).
-const COL = { hip: 1, proper: 6, dist: 9, mag: 13, absmag: 14, spect: 15, ci: 16, x: 17, y: 18, z: 19, con: 29 } as const;
+const COL = {
+  hip: 1,
+  proper: 6,
+  dist: 9,
+  mag: 13,
+  absmag: 14,
+  spect: 15,
+  ci: 16,
+  x: 17,
+  y: 18,
+  z: 19,
+  con: 29,
+} as const;
 
 // Curated set — { slug, name } where `name` is the exact HYG `proper` string.
 // Grouped for readability; order here doesn't matter (output is sorted by magnitude).
@@ -115,7 +127,8 @@ function splitCsvLine(line: string): string[] {
   return out;
 }
 
-const num = (s: string | undefined): number => (s === undefined || s.trim() === '' ? Number.NaN : Number(s));
+const num = (s: string | undefined): number =>
+  s === undefined || s.trim() === '' ? Number.NaN : Number(s);
 const round = (v: number, dp: number): number => {
   const f = 10 ** dp;
   return Math.round(v * f) / f;

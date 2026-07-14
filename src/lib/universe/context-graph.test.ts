@@ -5,13 +5,12 @@ import {
   AU_PER_PARSEC,
   SOLAR_SYSTEM_CONTEXT,
   NEIGHBORHOOD_CONTEXT,
+  bodyContextId,
+  makeBodyContext,
   type Context,
 } from './context-graph';
 
-const contexts = (): Context[] => [
-  { ...SOLAR_SYSTEM_CONTEXT },
-  { ...NEIGHBORHOOD_CONTEXT },
-];
+const contexts = (): Context[] => [{ ...SOLAR_SYSTEM_CONTEXT }, { ...NEIGHBORHOOD_CONTEXT }];
 
 describe('rebaseDistance', () => {
   it('converts AU-scene units to pc-scene units at the true physical distance', () => {
@@ -92,5 +91,37 @@ describe('ContextGraph.setActive', () => {
   it('throws on an unknown id', () => {
     const g = new ContextGraph(contexts(), 'solar-system');
     expect(() => g.setActive('nope')).toThrow();
+  });
+});
+
+describe('BodyScene contexts (Slice 2)', () => {
+  it('bodyContextId namespaces the host id', () => {
+    expect(bodyContextId('proxima-centauri')).toBe('body-scene:proxima-centauri');
+  });
+
+  it('makeBodyContext builds a neighborhood child with a zoom-out boundary', () => {
+    const ctx = makeBodyContext('trappist-1', 40);
+    expect(ctx.id).toBe('body-scene:trappist-1');
+    expect(ctx.parent).toBe('neighborhood');
+    expect(ctx.child).toBeNull();
+    expect(ctx.units).toBe('AU');
+    expect(ctx.outerBoundaryScene).toBe(160);
+  });
+
+  it('register adds a BodyScene context, remove drops it', () => {
+    const g = new ContextGraph(contexts(), 'neighborhood');
+    const ctx = makeBodyContext('pollux');
+    g.register(ctx);
+    expect(g.get('body-scene:pollux')).toBe(ctx);
+    g.remove('body-scene:pollux');
+    expect(g.get('body-scene:pollux')).toBeUndefined();
+  });
+
+  it('remove refuses to drop the active context', () => {
+    const g = new ContextGraph(contexts(), 'neighborhood');
+    g.register(makeBodyContext('pollux'));
+    g.setActive('body-scene:pollux');
+    g.remove('body-scene:pollux');
+    expect(g.get('body-scene:pollux')).toBeDefined();
   });
 });

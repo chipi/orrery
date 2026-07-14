@@ -1558,5 +1558,15 @@
   "star_index_aria": "Stelle con nome",
   "star_index_close": "Chiudi indice",
   "star_index_no_match": "Nessuna stella corrisponde a \"{query}\".",
-  "explore_stars_toggle": "Stelle"
+  "explore_stars_toggle": "Stelle",
+  "star_enter_system": "Entra nel sistema →",
+  "exo_kind": "Esopianeta",
+  "exo_label_period": "PERIODO ORBITALE",
+  "exo_label_axis": "SEMIASSE MAGGIORE",
+  "exo_label_eccentricity": "ECCENTRICITÀ",
+  "exo_label_radius": "RAGGIO",
+  "exo_label_mass": "MASSA",
+  "exo_label_discovery": "SCOPERTA",
+  "exo_days": "giorni",
+  "exo_caption": "Orbite in scala nel sistema · corpi non in scala · procedurale"
 }

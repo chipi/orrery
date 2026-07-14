@@ -1558,5 +1558,15 @@
   "star_color_yellow": "jaune",
   "star_color_orange": "orange",
   "star_color_red": "rouge",
-  "explore_stars_toggle": "Étoiles"
+  "explore_stars_toggle": "Étoiles",
+  "star_enter_system": "Entrer dans le système →",
+  "exo_kind": "Exoplanète",
+  "exo_label_period": "PÉRIODE ORBITALE",
+  "exo_label_axis": "DEMI-GRAND AXE",
+  "exo_label_eccentricity": "EXCENTRICITÉ",
+  "exo_label_radius": "RAYON",
+  "exo_label_mass": "MASSE",
+  "exo_label_discovery": "DÉCOUVERTE",
+  "exo_days": "jours",
+  "exo_caption": "Orbites à l'échelle dans le système · corps hors échelle · procédural"
 }

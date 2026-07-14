@@ -1558,5 +1558,15 @@
   "star_color_yellow": "أصفر",
   "star_color_orange": "برتقالي",
   "star_color_red": "أحمر",
-  "explore_stars_toggle": "النجوم"
+  "explore_stars_toggle": "النجوم",
+  "star_enter_system": "دخول المنظومة ←",
+  "exo_kind": "كوكب خارجي",
+  "exo_label_period": "الدورة المدارية",
+  "exo_label_axis": "المحور شبه الأكبر",
+  "exo_label_eccentricity": "الانحراف المركزي",
+  "exo_label_radius": "نصف القطر",
+  "exo_label_mass": "الكتلة",
+  "exo_label_discovery": "الاكتشاف",
+  "exo_days": "أيام",
+  "exo_caption": "المدارات بمقياس رسم دقيق داخل المنظومة · الأجرام ليست بمقياس رسم · إجرائي"
 }

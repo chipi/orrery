@@ -12,7 +12,9 @@
       "license_short": "CC-BY-SA-4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
       "license_rationale": "Published by astronexus under Creative Commons Attribution-ShareAlike 4.0 International.",
-      "used_on": ["explore"]
+      "used_on": [
+        "explore"
+      ]
     },
     {
       "id": "d3-celestial-constellations",
@@ -24,7 +26,9 @@
       "license_short": "BSD-3-Clause",
       "license_url": "https://opensource.org/license/bsd-3-clause",
       "license_rationale": "Permissive BSD-3-Clause, used with attribution. The underlying constellation figures are traditional public-domain astronomy (IAU).",
-      "used_on": ["explore"]
+      "used_on": [
+        "explore"
+      ]
     },
     {
       "id": "gcat",
@@ -36,7 +40,9 @@
       "license_short": "CC-BY-4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "license_rationale": "Released by Jonathan C. McDowell under Creative Commons Attribution 4.0 International; citation is a ship-gate (PRD-020 M14).",
-      "used_on": ["missions"]
+      "used_on": [
+        "missions"
+      ]
     },
     {
       "id": "ll2-thespacedevs",
@@ -48,7 +54,24 @@
       "license_short": "CC0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
       "license_rationale": "LL2 terms: free use, attribution encouraged but not mandatory. Always cited regardless, per Orrery editorial discipline.",
-      "used_on": ["missions"]
+      "used_on": [
+        "missions"
+      ]
+    },
+    {
+      "id": "nasa-exoplanet-archive",
+      "name": "NASA Exoplanet Archive",
+      "catalog": "Planetary Systems Composite Parameters (pscomppars)",
+      "version": "snapshot",
+      "category": "exoplanet-catalogue",
+      "description": "Confirmed exoplanet orbital elements (period, semi-major axis, eccentricity), radii, masses, and discovery metadata for the host stars rendered as BodyScene mini-orreries in /explore’s Stellar Neighborhood.",
+      "source_url": "https://exoplanetarchive.ipac.caltech.edu/",
+      "license_short": "PD-USGov",
+      "license_url": "https://exoplanetarchive.ipac.caltech.edu/docs/acknowledge.html",
+      "license_rationale": "Operated by Caltech/IPAC under contract with NASA; the Archive data are U.S. Government works in the public domain, free to reuse with acknowledgement.",
+      "used_on": [
+        "explore"
+      ]
     }
   ]
 }

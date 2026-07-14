@@ -163,7 +163,12 @@ function makeLabelSprite(text: string): { sprite: THREE.Sprite; texture: THREE.C
   ctx.fillText(upper, pad, h / 2 + 1);
   const texture = new THREE.CanvasTexture(cvs);
   const sprite = new THREE.Sprite(
-    new THREE.SpriteMaterial({ map: texture, transparent: true, depthWrite: false, depthTest: false }),
+    new THREE.SpriteMaterial({
+      map: texture,
+      transparent: true,
+      depthWrite: false,
+      depthTest: false,
+    }),
   );
   sprite.userData.aspect = w / h;
   return { sprite, texture };

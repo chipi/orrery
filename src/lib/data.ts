@@ -1831,6 +1831,95 @@ export async function getNamedStarI18n(
   );
 }
 
+// ─── Exoplanet systems (PRD-030 / RFC-032 — /explore v2 Slice 2) ───────────
+// Host stars with known planets, on real Keplerian elements (NASA Exoplanet
+// Archive). Drives the BodyScene mini-orreries. Hosts already in the named-star
+// catalog reuse their HYG xyz; iconic hosts are placed from ra/dec/distance.
+export interface ExoplanetPlanet {
+  id: string;
+  letter: string;
+  name: string;
+  period_days: number;
+  a_au: number;
+  e: number;
+  radius_earth: number | null;
+  mass_earth: number | null;
+  disc_year: number | null;
+  disc_method: string | null;
+}
+export interface ExoplanetSystem {
+  hostId: string;
+  hip: number | null;
+  star: {
+    name: string;
+    spect: string;
+    dist_pc: number;
+    bv: number | null;
+    con: string | null;
+    x: number;
+    y: number;
+    z: number;
+    iconic: boolean;
+  };
+  planets: ExoplanetPlanet[];
+}
+interface ExoplanetSystemsManifest {
+  schema_version: number;
+  count: number;
+  planet_count: number;
+  systems: ExoplanetSystem[];
+}
+
+let exoplanetSystemsCache: Promise<ExoplanetSystem[]> | null = null;
+/** All exoplanet host systems (cached). */
+export async function getExoplanetSystems(fetchFn: FetchLike = fetch): Promise<ExoplanetSystem[]> {
+  if (!exoplanetSystemsCache) {
+    exoplanetSystemsCache = get<ExoplanetSystemsManifest>(
+      'universe/exoplanet-systems.json',
+      fetchFn,
+    )
+      .then((doc) => doc.systems ?? [])
+      .catch(() => []);
+  }
+  return exoplanetSystemsCache;
+}
+/** The exoplanet system for a given host id, or null. */
+export async function getExoplanetSystem(
+  hostId: string,
+  fetchFn: FetchLike = fetch,
+): Promise<ExoplanetSystem | null> {
+  const systems = await getExoplanetSystems(fetchFn);
+  return systems.find((s) => s.hostId === hostId) ?? null;
+}
+
+// Per-planet editorial overlay (Slice 2) — a "why this world matters" note that
+// leans into the planet's science + its sci-fi / news / cultural fame. Keyed by
+// planet id under i18n-src/<locale>/universe/exoplanets/<id>.json.
+export interface ExoplanetOverlay {
+  /** One-line hook. */
+  fact?: string;
+  /** Longer editorial paragraph (science + cultural/sci-fi/news significance). */
+  bio?: string;
+  /** Curated learn-more links: { l: label, u: url, t: tier }. */
+  links?: Array<{ l: string; u: string; t: 'intro' | 'core' | 'deep' }>;
+}
+
+export async function getExoplanetI18n(
+  locale: string,
+  id: string,
+  fetchFn: FetchLike = fetch,
+): Promise<ExoplanetOverlay | null> {
+  const overlay = await get<ExoplanetOverlay>(
+    `i18n/${locale}/universe/exoplanets/${id}.json`,
+    fetchFn,
+  ).catch(() => null);
+  if (overlay) return overlay;
+  if (locale === 'en-US') return null;
+  return get<ExoplanetOverlay>(`i18n/en-US/universe/exoplanets/${id}.json`, fetchFn).catch(
+    () => null,
+  );
+}
+
 // ─── Audio provenance (PRD-016 §transparency / RFC-019 §5.4) ─────────────
 // Mirrors the image-provenance pattern. Read by /credits to surface every
 // audio asset's text-author + voice-provider attribution.

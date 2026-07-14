@@ -486,7 +486,17 @@
     "star_color_yellow": "amarilla",
     "star_color_orange": "naranja",
     "star_color_red": "roja",
-    "explore_stars_toggle": "Estrellas"
+    "explore_stars_toggle": "Estrellas",
+    "star_enter_system": "Entrar al sistema →",
+    "exo_kind": "Exoplaneta",
+    "exo_label_period": "PERÍODO ORBITAL",
+    "exo_label_axis": "SEMIEJE MAYOR",
+    "exo_label_eccentricity": "EXCENTRICIDAD",
+    "exo_label_radius": "RADIO",
+    "exo_label_mass": "MASA",
+    "exo_label_discovery": "DESCUBRIMIENTO",
+    "exo_days": "días",
+    "exo_caption": "Órbitas a escala dentro del sistema · cuerpos fuera de escala · procedimental"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -1008,7 +1018,17 @@
     "star_color_yellow": "jaune",
     "star_color_orange": "orange",
     "star_color_red": "rouge",
-    "explore_stars_toggle": "Étoiles"
+    "explore_stars_toggle": "Étoiles",
+    "star_enter_system": "Entrer dans le système →",
+    "exo_kind": "Exoplanète",
+    "exo_label_period": "PÉRIODE ORBITALE",
+    "exo_label_axis": "DEMI-GRAND AXE",
+    "exo_label_eccentricity": "EXCENTRICITÉ",
+    "exo_label_radius": "RAYON",
+    "exo_label_mass": "MASSE",
+    "exo_label_discovery": "DÉCOUVERTE",
+    "exo_days": "jours",
+    "exo_caption": "Orbites à l'échelle dans le système · corps hors échelle · procédural"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -1523,7 +1543,17 @@
     "star_index_search_aria": "Benannte Sterne suchen",
     "star_index_aria": "Benannte Sterne",
     "star_index_close": "Index schließen",
-    "explore_stars_toggle": "Sterne"
+    "explore_stars_toggle": "Sterne",
+    "star_enter_system": "System betreten →",
+    "exo_kind": "Exoplanet",
+    "exo_label_period": "UMLAUFZEIT",
+    "exo_label_axis": "GROSSE HALBACHSE",
+    "exo_label_eccentricity": "EXZENTRIZITÄT",
+    "exo_label_radius": "RADIUS",
+    "exo_label_mass": "MASSE",
+    "exo_label_discovery": "ENTDECKUNG",
+    "exo_days": "Tage",
+    "exo_caption": "Umlaufbahnen maßstabsgetreu innerhalb des Systems · Körper nicht maßstabsgetreu · prozedural"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -2019,7 +2049,17 @@
     "star_index_aria": "Estrelas nomeadas",
     "star_index_close": "Fechar índice",
     "star_index_no_match": "Nenhuma estrela corresponde a \"{query}\".",
-    "explore_stars_toggle": "Estrelas"
+    "explore_stars_toggle": "Estrelas",
+    "star_enter_system": "Entrar no sistema →",
+    "exo_kind": "Exoplaneta",
+    "exo_label_period": "PERÍODO ORBITAL",
+    "exo_label_axis": "SEMIEIXO MAIOR",
+    "exo_label_eccentricity": "EXCENTRICIDADE",
+    "exo_label_radius": "RAIO",
+    "exo_label_mass": "MASSA",
+    "exo_label_discovery": "DESCOBERTA",
+    "exo_days": "dias",
+    "exo_caption": "Órbitas em escala dentro do sistema · corpos fora de escala · procedural"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -2509,7 +2549,17 @@
     "star_index_aria": "Stelle con nome",
     "star_index_close": "Chiudi indice",
     "star_index_no_match": "Nessuna stella corrisponde a \"{query}\".",
-    "explore_stars_toggle": "Stelle"
+    "explore_stars_toggle": "Stelle",
+    "star_enter_system": "Entra nel sistema →",
+    "exo_kind": "Esopianeta",
+    "exo_label_period": "PERIODO ORBITALE",
+    "exo_label_axis": "SEMIASSE MAGGIORE",
+    "exo_label_eccentricity": "ECCENTRICITÀ",
+    "exo_label_radius": "RAGGIO",
+    "exo_label_mass": "MASSA",
+    "exo_label_discovery": "SCOPERTA",
+    "exo_days": "giorni",
+    "exo_caption": "Orbite in scala nel sistema · corpi non in scala · procedurale"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -2969,7 +3019,17 @@
     "star_index_search_aria": "Претражи именоване звезде",
     "star_index_aria": "Именоване звезде",
     "star_index_close": "Затвори индекс",
-    "explore_stars_toggle": "Звезде"
+    "explore_stars_toggle": "Звезде",
+    "star_enter_system": "Уђи у систем →",
+    "exo_kind": "Егзопланета",
+    "exo_label_period": "ОРБИТАЛНИ ПЕРИОД",
+    "exo_label_axis": "ВЕЛИКА ПОЛУОСА",
+    "exo_label_eccentricity": "ЕКСЦЕНТРИЦИТЕТ",
+    "exo_label_radius": "ПОЛУПРЕЧНИК",
+    "exo_label_mass": "МАСА",
+    "exo_label_discovery": "ОТКРИЋЕ",
+    "exo_days": "дана",
+    "exo_caption": "Орбите у размери унутар система · тела нису у размери · процедурално"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -3495,7 +3555,17 @@
     "star_index_search_aria": "搜索命名恒星",
     "star_index_aria": "命名恒星",
     "star_index_close": "关闭索引",
-    "explore_stars_toggle": "恒星"
+    "explore_stars_toggle": "恒星",
+    "star_enter_system": "进入星系 →",
+    "exo_kind": "系外行星",
+    "exo_label_period": "轨道周期",
+    "exo_label_axis": "半长轴",
+    "exo_label_eccentricity": "离心率",
+    "exo_label_radius": "半径",
+    "exo_label_mass": "质量",
+    "exo_label_discovery": "发现时间",
+    "exo_days": "天",
+    "exo_caption": "系统内轨道按比例 · 天体未按比例 · 程序生成"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -4037,7 +4107,17 @@
     "star_color_yellow": "黄色",
     "star_color_orange": "橙色",
     "star_color_red": "赤色",
-    "explore_stars_toggle": "恒星"
+    "explore_stars_toggle": "恒星",
+    "star_enter_system": "システムに入る →",
+    "exo_kind": "系外惑星",
+    "exo_label_period": "公転周期",
+    "exo_label_axis": "軌道長半径",
+    "exo_label_eccentricity": "離心率",
+    "exo_label_radius": "半径",
+    "exo_label_mass": "質量",
+    "exo_label_discovery": "発見",
+    "exo_days": "日",
+    "exo_caption": "軌道は系内でスケール通り · 天体はスケール外 · 手続き的生成"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -4581,7 +4661,17 @@
     "star_index_search_aria": "명명된 별 검색",
     "star_index_aria": "명명된 별",
     "star_index_close": "목록 닫기",
-    "explore_stars_toggle": "별"
+    "explore_stars_toggle": "별",
+    "star_enter_system": "항성계 진입 →",
+    "exo_kind": "외계행성",
+    "exo_label_period": "공전주기",
+    "exo_label_axis": "궤도장반경",
+    "exo_label_eccentricity": "이심률",
+    "exo_label_radius": "반지름",
+    "exo_label_mass": "질량",
+    "exo_label_discovery": "발견",
+    "exo_days": "일",
+    "exo_caption": "항성계 내 궤도는 실제 비율 · 천체 크기는 비율 아님 · 절차적 생성"
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -5262,7 +5352,17 @@
     "star_index_aria": "नामित तारे",
     "star_index_close": "सूची बंद करें",
     "star_index_no_match": "\"{query}\" से कोई तारा मेल नहीं खाता।",
-    "explore_stars_toggle": "तारे"
+    "explore_stars_toggle": "तारे",
+    "star_enter_system": "तंत्र में प्रवेश करें →",
+    "exo_kind": "बहिर्ग्रह",
+    "exo_label_period": "कक्षीय अवधि",
+    "exo_label_axis": "अर्ध-दीर्घ अक्ष",
+    "exo_label_eccentricity": "उत्केन्द्रता",
+    "exo_label_radius": "त्रिज्या",
+    "exo_label_mass": "द्रव्यमान",
+    "exo_label_discovery": "खोज",
+    "exo_days": "दिन",
+    "exo_caption": "तंत्र के भीतर कक्षाएँ पैमाने पर · पिंड पैमाने पर नहीं · प्रक्रियात्मक"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5985,7 +6085,17 @@
     "star_color_yellow": "أصفر",
     "star_color_orange": "برتقالي",
     "star_color_red": "أحمر",
-    "explore_stars_toggle": "النجوم"
+    "explore_stars_toggle": "النجوم",
+    "star_enter_system": "دخول المنظومة ←",
+    "exo_kind": "كوكب خارجي",
+    "exo_label_period": "الدورة المدارية",
+    "exo_label_axis": "المحور شبه الأكبر",
+    "exo_label_eccentricity": "الانحراف المركزي",
+    "exo_label_radius": "نصف القطر",
+    "exo_label_mass": "الكتلة",
+    "exo_label_discovery": "الاكتشاف",
+    "exo_days": "أيام",
+    "exo_caption": "المدارات بمقياس رسم دقيق داخل المنظومة · الأجرام ليست بمقياس رسم · إجرائي"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -6530,7 +6640,17 @@
     "star_color_yellow": "жёлтый",
     "star_color_orange": "оранжевый",
     "star_color_red": "красный",
-    "explore_stars_toggle": "Звёзды"
+    "explore_stars_toggle": "Звёзды",
+    "star_enter_system": "Войти в систему →",
+    "exo_kind": "Экзопланета",
+    "exo_label_period": "ОРБИТАЛЬНЫЙ ПЕРИОД",
+    "exo_label_axis": "БОЛЬШАЯ ПОЛУОСЬ",
+    "exo_label_eccentricity": "ЭКСЦЕНТРИСИТЕТ",
+    "exo_label_radius": "РАДИУС",
+    "exo_label_mass": "МАССА",
+    "exo_label_discovery": "ОТКРЫТИЕ",
+    "exo_days": "сут",
+    "exo_caption": "Орбиты в масштабе внутри системы · тела не в масштабе · процедурная генерация"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -7025,6 +7145,16 @@
     "star_index_aria": "Benoemde sterren",
     "star_index_close": "Sluit index",
     "star_index_no_match": "Geen sterren komen overeen met \"{query}\".",
-    "explore_stars_toggle": "Sterren"
+    "explore_stars_toggle": "Sterren",
+    "star_enter_system": "Systeem betreden →",
+    "exo_kind": "Exoplaneet",
+    "exo_label_period": "OMLOOPTIJD",
+    "exo_label_axis": "HALVE GROTE AS",
+    "exo_label_eccentricity": "EXCENTRICITEIT",
+    "exo_label_radius": "STRAAL",
+    "exo_label_mass": "MASSA",
+    "exo_label_discovery": "ONTDEKKING",
+    "exo_days": "dagen",
+    "exo_caption": "Banen op schaal binnen het systeem · hemellichamen niet op schaal · procedureel"
   }
 }

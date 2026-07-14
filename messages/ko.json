@@ -1558,5 +1558,15 @@
   "star_index_aria": "명명된 별",
   "star_index_close": "목록 닫기",
   "star_index_no_match": "“{query}”와 일치하는 별이 없습니다.",
-  "explore_stars_toggle": "별"
+  "explore_stars_toggle": "별",
+  "star_enter_system": "항성계 진입 →",
+  "exo_kind": "외계행성",
+  "exo_label_period": "공전주기",
+  "exo_label_axis": "궤도장반경",
+  "exo_label_eccentricity": "이심률",
+  "exo_label_radius": "반지름",
+  "exo_label_mass": "질량",
+  "exo_label_discovery": "발견",
+  "exo_days": "일",
+  "exo_caption": "항성계 내 궤도는 실제 비율 · 천체 크기는 비율 아님 · 절차적 생성"
 }

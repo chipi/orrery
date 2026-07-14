@@ -1558,5 +1558,15 @@
   "star_index_aria": "Estrelas nomeadas",
   "star_index_close": "Fechar índice",
   "star_index_no_match": "Nenhuma estrela corresponde a \"{query}\".",
-  "explore_stars_toggle": "Estrelas"
+  "explore_stars_toggle": "Estrelas",
+  "star_enter_system": "Entrar no sistema →",
+  "exo_kind": "Exoplaneta",
+  "exo_label_period": "PERÍODO ORBITAL",
+  "exo_label_axis": "SEMIEIXO MAIOR",
+  "exo_label_eccentricity": "EXCENTRICIDADE",
+  "exo_label_radius": "RAIO",
+  "exo_label_mass": "MASSA",
+  "exo_label_discovery": "DESCOBERTA",
+  "exo_days": "dias",
+  "exo_caption": "Órbitas em escala dentro do sistema · corpos fora de escala · procedural"
 }

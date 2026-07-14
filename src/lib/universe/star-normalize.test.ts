@@ -1,10 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import {
-  normalizeStar,
-  DEFAULT_CI,
-  UNKNOWN_DISTANCE_PC,
-  type RawHygStar,
-} from './star-normalize';
+import { normalizeStar, DEFAULT_CI, UNKNOWN_DISTANCE_PC, type RawHygStar } from './star-normalize';
 
 const raw = (over: Partial<RawHygStar> = {}): RawHygStar => ({
   id: 1,

@@ -31,10 +31,7 @@ export function luminosityClass(spect: string | null | undefined): string | null
  * Portrait geometry from spectral class (+ a nudge from absolute magnitude for
  * intrinsic luminosity). Supergiants → large diffuse; dwarfs → tight core.
  */
-export function portraitParams(
-  spect: string | null | undefined,
-  absmag: number,
-): PortraitParams {
+export function portraitParams(spect: string | null | undefined, absmag: number): PortraitParams {
   const cls = luminosityClass(spect);
   let coreScale: number;
   let coronaScale: number;

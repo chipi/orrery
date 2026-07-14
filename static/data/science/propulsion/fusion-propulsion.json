@@ -1,0 +1,37 @@
+{
+  "id": "fusion-propulsion",
+  "tab": "propulsion",
+  "order": 16,
+  "see_in_app": [
+    {
+      "route": "/science",
+      "context_key": "Propulsion tab — engine types, specific impulse, and ion drive for context on what fusion would improve"
+    },
+    {
+      "route": "/explore",
+      "context_key": "Outer solar system distances that make interstellar transit times vivid"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Project Daedalus",
+      "u": "https://en.wikipedia.org/wiki/Project_Daedalus",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Fusion rocket",
+      "u": "https://en.wikipedia.org/wiki/Fusion_rocket",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Project Icarus (spacecraft)",
+      "u": "https://en.wikipedia.org/wiki/Project_Icarus_(spacecraft)",
+      "t": "deep"
+    },
+    {
+      "l": "British Interplanetary Society · Daedalus study",
+      "u": "https://www.bis-space.com/what-we-do/projects/project-daedalus",
+      "t": "deep"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "interplanetary-internet",
+  "tab": "mission-phases",
+  "order": 13,
+  "see_in_app": [
+    {
+      "route": "/programs",
+      "context_key": "ISS — operational DTN node since 2016; validated store-and-forward in low Earth orbit"
+    },
+    {
+      "route": "/missions",
+      "context_key": "Mars Reconnaissance Orbiter and MAVEN — act as DTN relay nodes for surface rovers"
+    }
+  ],
+  "links": [
+    {
+      "l": "IETF · RFC 9171 — Bundle Protocol Version 7",
+      "u": "https://www.rfc-editor.org/rfc/rfc9171",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Delay/Disruption-Tolerant Networking",
+      "u": "https://www.nasa.gov/communicating-with-missions/dtn/",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Delay-tolerant networking",
+      "u": "https://en.wikipedia.org/wiki/Delay-tolerant_networking",
+      "t": "core"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "regolith",
+  "tab": "planets",
+  "order": 10,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Rotate to the Moon to see the grey regolith blanket covering its entire surface"
+    },
+    {
+      "route": "/missions",
+      "context_key": "Apollo missions returned 382 kg of lunar regolith; OSIRIS-REx sampled Bennu's rubble-pile surface"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Lunar Dust and Regolith",
+      "u": "https://www.nasa.gov/humans-in-space/nasa-scientists-investigate-how-lunar-dust-could-affect-astronaut-health/",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Regolith",
+      "u": "https://en.wikipedia.org/wiki/Regolith",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · OSIRIS-REx at Bennu",
+      "u": "https://science.nasa.gov/mission/osiris-rex/",
+      "t": "deep"
+    },
+    {
+      "l": "Wikipedia · Lunar soil",
+      "u": "https://en.wikipedia.org/wiki/Lunar_soil",
+      "t": "deep"
+    }
+  ]
+}

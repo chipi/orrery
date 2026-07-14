@@ -1,0 +1,41 @@
+{
+  "id": "ion-drive",
+  "tab": "propulsion",
+  "order": 13,
+  "photo": {
+    "src": "/images/science/ion-drive-dawn-nstar.webp",
+    "credit": "NASA · Dawn spacecraft ion propulsion system test at JPL. Dawn's three NSTAR gridded-ion engines ran for a combined 2,009 days in flight, enabling it to orbit both Vesta (2011–2012) and Ceres (2015–2018) — the only spacecraft ever to orbit two extraterrestrial bodies."
+  },
+  "see_in_app": [
+    {
+      "route": "/missions",
+      "context_key": "Dawn used NSTAR gridded-ion drives to orbit Vesta and Ceres; DART flew NASA's NEXT-C Hall-effect thruster"
+    },
+    {
+      "route": "/science",
+      "context_key": "Compare ion-drive Isp (3,000–10,000 s) against chemical engines on the specific-impulse card"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Ion Propulsion",
+      "u": "https://www.nasa.gov/directorates/stmd/game-changing-development/ion-propulsion/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Dawn Mission Overview",
+      "u": "https://science.nasa.gov/mission/dawn/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Ion thruster",
+      "u": "https://en.wikipedia.org/wiki/Ion_thruster",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Hall-effect thruster",
+      "u": "https://en.wikipedia.org/wiki/Hall-effect_thruster",
+      "t": "deep"
+    }
+  ]
+}

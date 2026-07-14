@@ -1,0 +1,32 @@
+{
+  "id": "antimatter-propulsion",
+  "tab": "propulsion",
+  "order": 17,
+  "see_in_app": [
+    {
+      "route": "/science",
+      "context_key": "Propulsion tab — specific impulse scale shows how far antimatter exceeds all existing engines"
+    },
+    {
+      "route": "/explore",
+      "context_key": "Interstellar distances that make the energy-density argument concrete"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Antimatter propulsion overview",
+      "u": "https://www.nasa.gov/centers-and-facilities/marshall/antimatter-propulsion/",
+      "t": "intro"
+    },
+    {
+      "l": "CERN · Antimatter — what it is and how we make it",
+      "u": "https://home.cern/science/physics/antimatter",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Antimatter rocket",
+      "u": "https://en.wikipedia.org/wiki/Antimatter_rocket",
+      "t": "deep"
+    }
+  ]
+}

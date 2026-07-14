@@ -1,0 +1,37 @@
+{
+  "id": "lunar-ice",
+  "tab": "planets",
+  "order": 11,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Tilt the Moon to its south pole — permanently shadowed craters sit in darkness year-round"
+    },
+    {
+      "route": "/missions",
+      "context_key": "Chandrayaan-3 landed near the lunar south pole; LCROSS and LRO confirmed water ice in PSRs in 2009"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Water on the Moon (LRO/LCROSS)",
+      "u": "https://www.nasa.gov/missions/lro/nasa-research-confirms-water-exists-on-sunlit-surface-of-moon/",
+      "t": "intro"
+    },
+    {
+      "l": "ISRO · Chandrayaan-1 M3 water detection",
+      "u": "https://www.isro.gov.in/Chandrayaan1.html",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Lunar water",
+      "u": "https://en.wikipedia.org/wiki/Lunar_water",
+      "t": "deep"
+    },
+    {
+      "l": "Wikipedia · Permanently shadowed region",
+      "u": "https://en.wikipedia.org/wiki/Permanently_shadowed_region",
+      "t": "deep"
+    }
+  ]
+}

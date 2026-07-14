@@ -1,0 +1,37 @@
+{
+  "id": "laser-sail",
+  "tab": "propulsion",
+  "order": 18,
+  "see_in_app": [
+    {
+      "route": "/science",
+      "context_key": "Propulsion tab — compare with ion drive and specific impulse to see why carrying no fuel changes everything"
+    },
+    {
+      "route": "/missions",
+      "context_key": "Voyager 1 and 2 as the only hardware to reach interstellar space — Starshot's target is 2000× faster"
+    }
+  ],
+  "links": [
+    {
+      "l": "Breakthrough Starshot · official site",
+      "u": "https://breakthroughinitiatives.org/initiative/3",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Breakthrough Starshot",
+      "u": "https://en.wikipedia.org/wiki/Breakthrough_Starshot",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Beam-powered propulsion",
+      "u": "https://en.wikipedia.org/wiki/Beam-powered_propulsion",
+      "t": "deep"
+    },
+    {
+      "l": "Wikipedia · Solar sail (for contrast with laser-driven variants)",
+      "u": "https://en.wikipedia.org/wiki/Solar_sail",
+      "t": "deep"
+    }
+  ]
+}

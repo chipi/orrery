@@ -47,6 +47,21 @@
       "text": "A generation ship would need to be an ecology, not merely a life-support system. The soil microbiome, the decomposition cycles, the nutrient flows that keep farmland from exhausting itself are all biological processes that require their own populations of organisms, their own balances, their own space. Agriculture alone cannot close these loops; the loops that close them are the ones Biosphere 2 discovered it could not maintain. The failure modes of a closed ecology are not dramatic. They are subtle — slow accumulations, unexpected sinks, one species thriving at the expense of the system's balance — and they operate on timescales that dwarf any experiment we have run. After Biosphere 2, the ecological questions remain substantially unanswered. For a four-century voyage, they are the first questions, not the last."
     },
     {
+      "type": "figure",
+      "image": "essays/generational-starships/closed-loop",
+      "kind": "diagram",
+      "caption": "Nothing arrives and nothing leaves. The ecology has to run unbroken for centuries — air, water, and food cycled endlessly, with no resupply and no ground control to call. Biosphere 2, a sealed three-acre ecosystem, could not hold its own oxygen steady for even two years.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "fleet/iss/01",
+      "kind": "photo",
+      "caption": "The International Space Station is the closest thing we have built to a closed world — and it is resupplied from Earth every few weeks. A ship that must close the loop completely, for a thousand years, is a different order of problem entirely.",
+      "align": "wide",
+      "credit": "NASA"
+    },
+    {
       "type": "heading",
       "text": "The crew is a population"
     },
@@ -65,6 +80,13 @@
     {
       "type": "prose",
       "text": "The [long-duration spaceflight research](/science/life-in-space/long-duration-effects) we have done — from the [Skylab](/missions?id=skylab-2) crews of the 1970s through the [Mir](/programs/mir) years and the continuous human presence aboard the [ISS program](/programs/iss) since 2000 — addresses [crew dynamics](/science/life-in-space/crew-dynamics-psychology) over months, not decades. The longest continuous human spaceflight on record is about 437 days. We know a great deal about what happens to a body in [microgravity](/science/life-in-space/microgravity-physiology) over a year. We know almost nothing about what happens to a society over a century, in confinement, under the specific pressures of a sealed world with no outside. The [body-in-the-dark essay](/essays/the-body-in-the-dark) covers the physiological arc. The sociological and psychological arcs are longer, less studied, and in some ways more alarming."
+    },
+    {
+      "type": "figure",
+      "image": "essays/generational-starships/the-population",
+      "kind": "diagram",
+      "caption": "The passengers are not a crew but a population, and it has to stay genetically healthy across dozens of generations. One study puts the minimum near 14,000 people for a 150-year voyage — not a crew you train, but a society you launch, with its own governance, culture, and drift.",
+      "align": "wide"
     },
     {
       "type": "heading",
@@ -95,6 +117,13 @@
       "text": "Kennedy worked out the mathematics for this. Given reasonable assumptions about the pace of technological improvement in propulsion (based on historical rates), the optimal departure time for any given destination is not \"as soon as possible\" but \"when the technology is good enough that waiting any longer produces diminishing returns\". For Alpha Centauri, the wait calculation suggests that a ship launched before a certain threshold of propulsion capability would be irrational — that waiting for better technology would always be worth doing, up to a point. The paradox is that this reasoning can keep updating indefinitely: the ship you are about to launch is always in danger of being overtaken by a better ship launched later, so the rational choice always appears to be to wait. It is a genuine dilemma, and it has not been resolved. The only coherent answers involve either accepting that some pioneer voyages will be overtaken and that this is acceptable, or positing a scenario in which technological progress plateaus and waiting genuinely stops being rational. Neither answer is fully satisfying."
     },
     {
+      "type": "figure",
+      "image": "essays/generational-starships/the-wait-calculation",
+      "kind": "diagram",
+      "caption": "And there is a paradox in even leaving. A ship launched slowly now might be overtaken by a faster one built centuries later — arriving to find the destination already settled. If waiting can always beat you there, when, if ever, is it rational to go?",
+      "align": "wide"
+    },
+    {
       "type": "heading",
       "text": "The mirror"
     },
@@ -117,6 +146,14 @@
     {
       "type": "prose",
       "text": "The [Voyagers](/missions?id=voyager-1) will keep flying. [Pioneer 10](/missions?id=pioneer-10) is still outbound, silent now, its transmitter long since dead, coasting through interstellar space on the momentum of a 1972 launch. [Pioneer 11](/missions?id=pioneer-11) the same. They are the furthest physical extensions of this civilisation, and they will outlast it — outlast the Sun, probably, coasting through the galaxy for billions of years after every human structure has dissolved. They carry plaques, because the people who built them thought, correctly, about the long view: not just what these spacecraft would do, but what they would mean to anyone who found them after we were gone. That instinct — to build for recipients you will never meet, to send something forward into a time you cannot see — is the generation ship impulse in miniature. It is also, in the most honest reading of where we are, the only impulse that might matter. We are the crew. We are already in flight. The question the generation ship poses — can a civilisation maintain, across generations, the systems and the intentions and the care that survival requires? — is not a question about a ship that does not exist. It is the question of this century, asked in the language of the stars."
+    },
+    {
+      "type": "figure",
+      "image": "missions/apollo8/01",
+      "kind": "photo",
+      "caption": "Earthrise, photographed from Apollo 8 in 1968 — the whole of the only closed, finite world we have ever known, carrying its lineage through the dark with no resupply and no ground control. The generation ship is a thought experiment about this one: we are already the crew of one.",
+      "align": "wide",
+      "credit": "NASA / William Anders"
     }
   ]
 }

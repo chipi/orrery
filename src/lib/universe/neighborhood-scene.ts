@@ -31,10 +31,18 @@ export interface NeighborhoodScene {
   highlightStar(id: string | null): void;
   /** Lightweight readout for a background point-field star by its vertex index. */
   anonymousStarAt(index: number): AnonymousStar | null;
+  /** Toggle the constellation-line overlay. */
+  setConstellationsVisible(on: boolean): void;
   /** Reveal state + per-frame marker sizing. Pass the camera so markers keep a
    *  constant on-screen size regardless of each star's distance. */
   update(camDistPc: number, camera?: THREE.Camera): void;
   dispose(): void;
+}
+
+export interface ConstellationLines {
+  con: string;
+  /** Flat parsec XYZ; every 2 points (6 numbers) is one line segment. */
+  vertices: number[];
 }
 
 export interface NeighborhoodOptions {
@@ -43,6 +51,23 @@ export interface NeighborhoodOptions {
   pixelRatio?: number;
   /** Curated named stars to render as pickable markers + labels. */
   namedStars?: NamedStar[];
+  /** Constellation line segments (baked 3D positions) for the overlay. */
+  constellations?: ConstellationLines[];
+}
+
+/** Fetch the constellation-line data from static/data/universe/. */
+export async function loadConstellationLines(
+  fetchFn: typeof fetch,
+  base = '',
+): Promise<ConstellationLines[]> {
+  try {
+    const doc = (await (
+      await fetchFn(`${base}/data/universe/constellation-lines.json`)
+    ).json()) as { constellations: ConstellationLines[] };
+    return doc.constellations ?? [];
+  } catch {
+    return [];
+  }
 }
 
 /** Fetch the tiled HYG shells from static/data/universe/stars/ via the app base. */
@@ -157,10 +182,32 @@ interface StarMarker {
 }
 
 export function createNeighborhoodScene(opts: NeighborhoodOptions): NeighborhoodScene {
-  const { shells, tier = 'high', pixelRatio = 1, namedStars = [] } = opts;
+  const { shells, tier = 'high', pixelRatio = 1, namedStars = [], constellations = [] } = opts;
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x05070f);
+
+  // ── Constellation-line overlay (one LineSegments draw call, off by default) ──
+  let constellationLines: THREE.LineSegments | null = null;
+  if (constellations.length > 0) {
+    const all: number[] = [];
+    for (const c of constellations) all.push(...c.vertices);
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(all, 3));
+    geo.boundingSphere = new THREE.Sphere(new THREE.Vector3(0, 0, 0), 1e6);
+    constellationLines = new THREE.LineSegments(
+      geo,
+      new THREE.LineBasicMaterial({
+        color: 0x4ecdc4,
+        transparent: true,
+        opacity: 0.22,
+        depthWrite: false,
+      }),
+    );
+    constellationLines.frustumCulled = false;
+    constellationLines.visible = false;
+    scene.add(constellationLines);
+  }
 
   const sun = makeSunSprite();
   sun.scale.setScalar(0.02); // world units (pc) — collapses to a dot as camera recedes
@@ -236,6 +283,9 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     highlightStar(id: string | null) {
       highlightId = id;
     },
+    setConstellationsVisible(on: boolean) {
+      if (constellationLines) constellationLines.visible = on;
+    },
     anonymousStarAt(index: number) {
       if (index < 0 || index >= data.count) return null;
       return describeAnonymousStar(
@@ -255,6 +305,10 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       sun.material.map?.dispose();
       sun.material.dispose();
       haloTex.dispose();
+      if (constellationLines) {
+        constellationLines.geometry.dispose();
+        (constellationLines.material as THREE.Material).dispose();
+      }
       for (const m of markers) {
         (m.halo.material as THREE.SpriteMaterial).dispose();
         (m.label.material as THREE.SpriteMaterial).map?.dispose();

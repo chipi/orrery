@@ -845,6 +845,9 @@
   let contextId = $state<'solar-system' | 'neighborhood'>('solar-system');
   // Bumped on each boundary crossing to replay the warp-flash overlay.
   let crossingFlashId = $state(0);
+  // Constellation-line overlay toggle (neighborhood only).
+  let showConstellations = $state(false);
+  let setConstellationsFn: ((on: boolean) => void) | null = null;
   const rungLadder: ScaleRung[] = RUNG_LADDER;
   const fmtScale = (value: number): string =>
     value >= 1000 || value < 0.01
@@ -2641,9 +2644,10 @@
       nbLoading = true;
       try {
         const mod = await import('$lib/universe/neighborhood-scene');
-        const [shells, stars] = await Promise.all([
+        const [shells, stars, constellations] = await Promise.all([
           mod.loadNeighborhoodShells(fetch, base),
           getNamedStars(fetch),
+          mod.loadConstellationLines(fetch, base),
         ]);
         namedStars = stars;
         nbScene = mod.createNeighborhoodScene({
@@ -2651,7 +2655,9 @@
           tier: quality.tier,
           pixelRatio: renderer.getPixelRatio(),
           namedStars: stars,
+          constellations,
         });
+        nbScene.setConstellationsVisible(showConstellations);
         return nbScene;
       } catch (err) {
         console.error('[explore v2] neighborhood load failed', err);
@@ -2753,6 +2759,7 @@
     // Exposed to the template (index / ?goto=) via a top-level binding.
     selectStarFn = selectStar;
     closeStarFn = closeStarPanel;
+    setConstellationsFn = (on: boolean) => nbScene?.setConstellationsVisible(on);
     // Dev/e2e hook for canvas star pickability (no shipped effect).
     if (import.meta.env.DEV) {
       (window as unknown as { __exploreSelectStar?: (id: string) => void }).__exploreSelectStar = (
@@ -4718,6 +4725,24 @@
     </nav>
   {/if}
 
+  <!-- v2 neighborhood layer toggles (Slice 1): constellation lines. -->
+  {#if view === '3d' && contextId === 'neighborhood'}
+    <div class="nb-controls">
+      <button
+        type="button"
+        class="nb-chip"
+        class:active={showConstellations}
+        aria-pressed={showConstellations}
+        onclick={() => {
+          showConstellations = !showConstellations;
+          setConstellationsFn?.(showConstellations);
+        }}
+      >
+        Constellations
+      </button>
+    </div>
+  {/if}
+
   <!-- v2 scale ruler (PRD-030 / RFC-032): the fitting distance measure for the
        current zoom — km → AU → light-year → parsec — plus light-travel time and
        a map-style scale bar. Teaches which unit fits which scale as you zoom.
@@ -5682,6 +5707,38 @@
   /* Solar-system chrome hidden out in the stellar neighborhood. */
   .context-hidden {
     display: none !important;
+  }
+
+  /* v2 neighborhood layer toggles — bottom-left (solar chrome is hidden here). */
+  .nb-controls {
+    position: absolute;
+    left: 12px;
+    bottom: 16px;
+    z-index: 6;
+    display: flex;
+    gap: 8px;
+  }
+  .nb-chip {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(6, 10, 22, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 5px;
+    padding: 7px 12px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    min-height: 34px;
+  }
+  .nb-chip.active {
+    color: #04121a;
+    background: #4ecdc4;
+    border-color: #4ecdc4;
+    font-weight: 700;
+  }
+  .nb-chip:hover:not(.active) {
+    border-color: rgba(78, 205, 196, 0.5);
   }
 
   /* v2 breadcrumb — top-left orientation + tap-back to the solar system. */

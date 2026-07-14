@@ -10,9 +10,12 @@
   import Panel from './Panel.svelte';
   import LearnLink from './LearnLink.svelte';
   import StarPortrait from './StarPortrait.svelte';
+  import ConstellationFinder from './ConstellationFinder.svelte';
+  import WhyPopover from './WhyPopover.svelte';
   import { constellationName } from '$lib/universe/iau-constellations';
-  import { bvToRgb } from '$lib/universe/bv-to-rgb';
-  import type { LocalizedNamedStar } from '$lib/data';
+  import { bvToRgb, bvToKelvin } from '$lib/universe/bv-to-rgb';
+  import { colorNameForKelvin } from '$lib/universe/anonymous-star';
+  import { getConstellationLines, type LocalizedNamedStar } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
 
   type Tab = 'overview' | 'technical';
@@ -33,6 +36,8 @@
     return `rgb(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)})`;
   });
   let distLy = $derived(star ? star.dist_pc * PC_TO_LY : 0);
+  let kelvin = $derived(star && star.bv !== null ? Math.round(bvToKelvin(star.bv)) : null);
+  let colorName = $derived(kelvin !== null ? colorNameForKelvin(kelvin) : null);
   const fmt = (n: number, dp = 2): string =>
     n.toLocaleString(undefined, { maximumFractionDigits: dp });
 
@@ -42,12 +47,21 @@
     return [...(star?.library ?? [])].sort((a, b) => order[a.tier] - order[b.tier]) as LibItem[];
   });
 
-  // Reset to overview when a different star is selected.
+  // Reset to overview + load the constellation figure when a different star is selected.
   let lastId = $state<string | null>(null);
+  let conVertices = $state<number[] | null>(null);
   $effect(() => {
     if (star && star.id !== lastId) {
       lastId = star.id;
       tab = 'overview';
+      conVertices = null;
+      const con = star.con;
+      const forId = star.id;
+      if (con) {
+        void getConstellationLines().then((all) => {
+          if (star && star.id === forId) conVertices = all.find((c) => c.con === con)?.vertices ?? null;
+        });
+      }
     }
   });
 </script>
@@ -68,6 +82,17 @@
       <StarPortrait bv={star.bv} spect={star.spect} absmag={star.absmag} />
       <p class="hero-caption">Representation · colour from catalogued B−V</p>
     </div>
+
+    {#if conVertices && star.con}
+      <div class="star-finder">
+        <ConstellationFinder
+          vertices={conVertices}
+          starXYZ={[star.x, star.y, star.z]}
+          label={constellationName(star.con)}
+        />
+        <p class="hero-caption">Finder · {constellationName(star.con)} from the Sun's sky</p>
+      </div>
+    {/if}
 
     <div class="tabs" role="tablist">
       <button
@@ -103,6 +128,20 @@
         {/if}
       {:else}
         <div class="grid">
+          {#if colorName && kelvin !== null}
+            <div class="cell">
+              <div class="cell-label">
+                COLOUR<WhyPopover
+                  title="Star colour"
+                  body="A star's colour is set by its surface temperature. We read it from the B−V index — how much brighter the star is in visible light than in blue — which maps to temperature: hot stars glow blue-white, cool ones orange-red. The swatch shows that real colour."
+                />
+              </div>
+              <div class="cell-value">
+                <span class="c-swatch" style:background={swatch} aria-hidden="true"></span>
+                {colorName} · ~{kelvin.toLocaleString()} K
+              </div>
+            </div>
+          {/if}
           <div class="cell">
             <div class="cell-label">DISTANCE</div>
             <div class="cell-value teal">{fmt(distLy, 2)} ly</div>
@@ -161,6 +200,9 @@
     margin-bottom: 12px;
   }
   .star-hero {
+    margin-bottom: 12px;
+  }
+  .star-finder {
     margin-bottom: 12px;
   }
   .hero-caption {
@@ -233,6 +275,15 @@
   }
   .cell-value.teal {
     color: #4ecdc4;
+  }
+  .c-swatch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 6px 1px currentColor;
+    vertical-align: baseline;
+    margin-right: 4px;
   }
   .science-library {
     margin-top: 16px;

@@ -1791,6 +1791,26 @@ export async function getNamedStars(fetchFn: FetchLike = fetch): Promise<NamedSt
   return doc?.stars ?? [];
 }
 
+export interface ConstellationLineEntry {
+  con: string;
+  vertices: number[];
+}
+let constellationLinesCache: Promise<ConstellationLineEntry[]> | null = null;
+/** Constellation line segments (baked 3D positions), cached. */
+export async function getConstellationLines(
+  fetchFn: FetchLike = fetch,
+): Promise<ConstellationLineEntry[]> {
+  if (!constellationLinesCache) {
+    constellationLinesCache = get<{ constellations: ConstellationLineEntry[] }>(
+      'universe/constellation-lines.json',
+      fetchFn,
+    )
+      .then((doc) => doc.constellations ?? [])
+      .catch(() => []);
+  }
+  return constellationLinesCache;
+}
+
 export async function getNamedStarI18n(
   locale: string,
   id: string,

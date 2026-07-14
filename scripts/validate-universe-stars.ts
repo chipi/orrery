@@ -40,6 +40,7 @@ const validateIndex = ajv.compile(loadSchema('universe-stars-index.schema.json')
 const validateShell = ajv.compile(loadSchema('universe-stars-shell.schema.json'));
 const validateSources = ajv.compile(loadSchema('universe-stars-sources.schema.json'));
 const validateNamedStars = ajv.compile(loadSchema('named-star.schema.json'));
+const validateConstellations = ajv.compile(loadSchema('constellation-lines.schema.json'));
 
 const errors: string[] = [];
 const readJson = (p: string): unknown => JSON.parse(readFileSync(p, 'utf8'));
@@ -151,6 +152,28 @@ if (existsSync(NAMED_PATH)) {
       seen.add(s.id);
       if (s.con && !(s.con in IAU_CONSTELLATIONS)) {
         errors.push(`named-stars.json: "${s.id}" has unknown constellation code "${s.con}"`);
+      }
+    }
+  }
+}
+
+// Constellation lines (Slice 1 Part 3): schema + valid codes + segment-aligned verts.
+const CON_PATH = join(STARS_DIR, 'constellation-lines.json');
+if (existsSync(CON_PATH)) {
+  const doc = readJson(CON_PATH) as {
+    constellations: Array<{ con: string; vertices: number[] }>;
+  };
+  if (!validateConstellations(doc)) {
+    for (const e of validateConstellations.errors ?? []) {
+      errors.push(`constellation-lines.json ${e.instancePath || '/'} ${e.message ?? 'error'}`);
+    }
+  } else {
+    for (const c of doc.constellations) {
+      if (!(c.con in IAU_CONSTELLATIONS)) {
+        errors.push(`constellation-lines.json: unknown constellation code "${c.con}"`);
+      }
+      if (c.vertices.length % 6 !== 0) {
+        errors.push(`constellation-lines.json: "${c.con}" vertices not a whole number of segments`);
       }
     }
   }

@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "constellation-lines.schema.json",
+  "title": "Constellation lines (PRD-030 / RFC-032, Slice 1)",
+  "description": "IAU constellation line segments with baked 3D positions (parsec XYZ), resolved from Stellarium's HIP-keyed constellationship + the HYG catalogue. Each constellation's `vertices` is a flat list where every 2 points (6 numbers) is one line segment.",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "script_version", "source", "source_url", "license_short", "count", "constellations"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "script_version": { "type": "string", "minLength": 1 },
+    "source": { "type": "string", "minLength": 1 },
+    "source_url": { "type": "string", "format": "uri" },
+    "license_short": { "type": "string", "minLength": 2 },
+    "count": { "type": "integer", "minimum": 1 },
+    "segment_count": { "type": "integer", "minimum": 0 },
+    "constellations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["con", "vertices"],
+        "additionalProperties": false,
+        "properties": {
+          "con": { "type": "string", "minLength": 2, "maxLength": 4 },
+          "vertices": {
+            "type": "array",
+            "minItems": 6,
+            "items": { "type": "number" }
+          }
+        }
+      }
+    }
+  }
+}

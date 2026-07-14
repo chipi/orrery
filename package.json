@@ -85,6 +85,7 @@
     "build-science-index": "tsx scripts/build-science-index.ts",
     "build-universe-stars": "tsx scripts/build-universe-stars.ts",
     "build-named-stars": "tsx scripts/build-named-stars.ts",
+    "build-constellation-lines": "tsx scripts/build-constellation-lines.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs && cp -R docs/prototypes docs/.vitepress/dist/prototypes",
     "docs:preview": "vitepress preview docs",

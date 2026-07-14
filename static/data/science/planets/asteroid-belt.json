@@ -2,7 +2,7 @@
   "id": "asteroid-belt",
   "tab": "planets",
   "order": 7,
-  "diagram": "asteroid-belt.svg",
+  "diagram": "asteroid-belt.webp",
   "see_in_app": [
     {
       "route": "/explore",
@@ -29,5 +29,6 @@
       "u": "https://www.minorplanetcenter.net/",
       "t": "deep"
     }
-  ]
+  ],
+  "diagram_quality": "polished"
 }

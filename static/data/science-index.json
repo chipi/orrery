@@ -225,6 +225,13 @@
   },
   {
     "tab": "mission-phases",
+    "section": "antenna-arrays",
+    "title": "Arraying — many small ears instead of one giant one",
+    "intro": "Combining the signals from multiple antennas in real time creates a single virtual aperture larger than any individual dish, capturing fainter spacecraft signals without building ever-bigger structures.",
+    "haystack": "arraying — many small ears instead of one giant one combining the signals from multiple antennas in real time creates a single virtual aperture larger than any individual dish, capturing fainter spacecraft signals without building ever-bigger structures. a single large antenna is the obvious way to hear a faint spacecraft signal from billions of kilometres away. the dsn's 70 m dishes — at goldstone, madrid, and canberra — are near the practical limit for fully steerable, ground-based reflectors. building something appreciably larger would require a fixed structure (limiting sky coverage) or engineering that doesn't yet exist. the alternative is to combine many smaller antennas: arraying."
+  },
+  {
+    "tab": "mission-phases",
     "section": "dead-reckoning",
     "title": "Dead reckoning",
     "intro": "Integrate the accelerometers to get velocity, integrate again to get position — works for hours, drifts noticeably over days, and is exactly why every cruise needs periodic ground-based fixes.",
@@ -253,6 +260,13 @@
   },
   {
     "tab": "mission-phases",
+    "section": "interplanetary-internet",
+    "title": "The interplanetary internet — networking across the light-lag",
+    "intro": "Standard internet protocols fail across light-minutes and planetary occultations; Delay/Disruption-Tolerant Networking solves this with store-and-forward bundles that wait for the next available link.",
+    "haystack": "the interplanetary internet — networking across the light-lag standard internet protocols fail across light-minutes and planetary occultations; delay/disruption-tolerant networking solves this with store-and-forward bundles that wait for the next available link. the ordinary internet assumes you can send a packet, wait a fraction of a second for an acknowledgement, and resend if it doesn't arrive. that model breaks catastrophically in deep space. a radio signal from earth takes 4–24 minutes to reach mars depending on orbital geometry; during planetary conjunction the link drops entirely for weeks. tcp/ip's round-trip assumption means a session times out and fails long before a single exchange completes."
+  },
+  {
+    "tab": "mission-phases",
     "section": "launch",
     "title": "Launch + Ascent",
     "intro": "The most violent ten minutes of any mission — fighting gravity, atmosphere, and the rocket equation simultaneously.",
@@ -278,6 +292,13 @@
     "title": "NRHO — Near-Rectilinear Halo Orbit",
     "intro": "A ~6.5-day egg-shaped orbit around the Earth-Moon L2 point — the chosen home of NASA's Lunar Gateway.",
     "haystack": "nrho — near-rectilinear halo orbit a ~6.5-day egg-shaped orbit around the earth-moon l2 point — the chosen home of nasa's lunar gateway. an nrho is a halo orbit — a periodic three-body trajectory that loops around a lagrange point — but stretched until one end nearly touches the moon's south pole. it looks more like a polar orbit than a halo, hence 'near-rectilinear.' one full revolution takes about 6.5 days; the '9' in the gateway 9:2 resonance refers to nine nrho revolutions per two lunar synodic months, not a 9-day period."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "optical-comms",
+    "title": "Optical comms — talking on a beam of light",
+    "intro": "Laser-based links carry 10–100 times more data than radio for the same power and aperture, at the cost of pointing accuracy measured in microradians.",
+    "haystack": "optical comms — talking on a beam of light laser-based links carry 10–100 times more data than radio for the same power and aperture, at the cost of pointing accuracy measured in microradians. every spacecraft talking to earth uses radio — a well-understood technology that tolerates moderate pointing errors and passes through clouds. its fundamental limit is bandwidth: radio frequencies are regulated and the physics of diffraction caps how tightly you can pack a beam. optical communications replaces the radio carrier with a near-infrared laser. the same physics that makes the beam pencil-thin also concentrates the energy, so a given transmitted power delivers far more bits per second at the receiver."
   },
   {
     "tab": "mission-phases",
@@ -533,6 +554,13 @@
   },
   {
     "tab": "planets",
+    "section": "lunar-ice",
+    "title": "Lunar Ice — water in the permanent dark",
+    "intro": "Near the lunar poles, some crater floors have never seen sunlight — and in that perpetual cold, water ice delivered by comets and asteroids over billions of years has accumulated and been trapped.",
+    "haystack": "lunar ice — water in the permanent dark near the lunar poles, some crater floors have never seen sunlight — and in that perpetual cold, water ice delivered by comets and asteroids over billions of years has accumulated and been trapped. the moon's axial tilt is only about 1.5 degrees, far less than earth's 23.5 degrees. as a result, sunlight near the poles arrives almost horizontally, and the floors of deep polar craters fall permanently in shadow. these permanently shadowed regions (psrs) are among the coldest places in the solar system: measured temperatures run below 100 k (−170°c), and some spots near the lunar south pole approach 40 k. at those temperatures, water ice is stable for billions of years — it simply does not sublimate."
+  },
+  {
+    "tab": "planets",
     "section": "magnetic-fields",
     "title": "Magnetic Fields",
     "intro": "Every planet's magnetosphere is different. Saturn's is uniquely aligned, Uranus's is chaotic, Venus and Mars don't have one at all.",
@@ -551,6 +579,13 @@
     "title": "Planetary Stats",
     "intro": "How different is Jupiter from Earth, really? Eleven times the diameter. Two and a half times the surface gravity.",
     "haystack": "planetary stats how different is jupiter from earth, really? eleven times the diameter. two and a half times the surface gravity. diameters relative to earth: mercury 0.38, venus 0.95 (nearly earth-sized), earth 1.0, mars 0.53, jupiter 10.97, saturn 9.14, uranus 3.98, neptune 3.86, pluto 0.19. surface gravities in earth-g: mercury 0.38, venus 0.91, earth 1.00, mars 0.38, jupiter 2.53, saturn 1.07, uranus 0.89, neptune 1.14, pluto 0.06. notable surprises: mars and mercury share the same surface gravity (0.38 g) despite very different sizes, because their density × radius products land close. uranus and saturn both have lower-than-earth gravity despite their giant sizes — both are dominated by h/he, much less dense than rocky earth."
+  },
+  {
+    "tab": "planets",
+    "section": "regolith",
+    "title": "Regolith — the dust of airless worlds",
+    "intro": "Regolith is the loose blanket of fragmented rock and glass dust that covers the Moon, Mercury, and most asteroids — ground down by billions of years of micrometeorite bombardment, with no wind or water to round its edges.",
+    "haystack": "regolith — the dust of airless worlds regolith is the loose blanket of fragmented rock and glass dust that covers the moon, mercury, and most asteroids — ground down by billions of years of micrometeorite bombardment, with no wind or water to round its edges. on earth, sediment grains are rounded and smoothed by water and wind over time. airless bodies have neither, so their surfaces are abraded purely by impactors — from multi-kilometre asteroids down to interplanetary dust grains arriving at tens of kilometres per second. the result is a layer of angular, glassy shards called regolith, ranging from fine powder to house-sized boulders. on the moon this layer runs from a few metres deep in the highlands to tens of metres in the maria."
   },
   {
     "tab": "planets",
@@ -610,6 +645,13 @@
   },
   {
     "tab": "propulsion",
+    "section": "antimatter-propulsion",
+    "title": "Antimatter — the perfect fuel we cannot make",
+    "intro": "Matter meeting antimatter annihilates completely, releasing energy no other reaction matches — a few milligrams could in principle drive an interstellar probe, yet humanity has made less than a nanogram of it in total.",
+    "haystack": "antimatter — the perfect fuel we cannot make matter meeting antimatter annihilates completely, releasing energy no other reaction matches — a few milligrams could in principle drive an interstellar probe, yet humanity has made less than a nanogram of it in total. the energy case is exact, not approximate. when a proton meets an antiproton they convert entirely into pions, gamma rays, and lighter particles — e = mc² applied in full, with no chemical or nuclear residue. the energy density is roughly 10 billion times that of the best chemical propellant and roughly 1,000 times that of fission or fusion. a matter-antimatter annihilation drive with a magnetic nozzle to direct the charged pion exhaust could, in theory, reach specific impulse values in the millions of seconds and accelerate a spacecraft to a significant fraction of the speed of light."
+  },
+  {
+    "tab": "propulsion",
     "section": "c3",
     "title": "C3 — Characteristic Energy",
     "intro": "How much energy per unit mass a rocket needs to leave Earth's gravity well with leftover speed — the standard launch-energy metric.",
@@ -645,6 +687,34 @@
   },
   {
     "tab": "propulsion",
+    "section": "fusion-propulsion",
+    "title": "Fusion Propulsion — the star we cannot yet light",
+    "intro": "Fusing light atomic nuclei releases far more energy per kilogram than any chemical reaction, making fusion propulsion the most credible path to high-speed interstellar transit — if anyone can build a working fusion engine, which no one has.",
+    "haystack": "fusion propulsion — the star we cannot yet light fusing light atomic nuclei releases far more energy per kilogram than any chemical reaction, making fusion propulsion the most credible path to high-speed interstellar transit — if anyone can build a working fusion engine, which no one has. the physics is straightforward. fusing deuterium and tritium (or deuterium and helium-3) converts a small fraction of their mass directly into energy. the yield per kilogram is roughly ten million times that of the best chemical propellant. translated into specific impulse, a fusion drive could reach tens of thousands to hundreds of thousands of seconds — compare the best chemical engine at 450 s and the best ion drive at 9,000 s. that gap is the difference between a centuries-long interstellar trip and one measured in decades."
+  },
+  {
+    "tab": "propulsion",
+    "section": "ion-drive",
+    "title": "Ion Drives — the slow push that never stops",
+    "intro": "Ion drives achieve specific impulses 10–30 times higher than chemical rockets by accelerating ionised gas electrically rather than burning it — at the cost of very low thrust that is measured in millinewtons, not meganewtons.",
+    "haystack": "ion drives — the slow push that never stops ion drives achieve specific impulses 10–30 times higher than chemical rockets by accelerating ionised gas electrically rather than burning it — at the cost of very low thrust that is measured in millinewtons, not meganewtons. all rocket engines exchange propellant mass for velocity. the faster the exhaust leaves the nozzle, the less propellant you need for a given velocity change — which is what specific impulse (isp) measures. chemical engines are limited by flame temperature: the hottest practical propellant combination, liquid hydrogen and oxygen, reaches around 450 seconds of isp. ion drives sidestep that limit entirely. they ionise a propellant — typically xenon, chosen for its heavy atomic mass and chemical inertness — and accelerate the ions electrically or magnetically to exhaust velocities of 20–100 km/s, giving isp values of roughly 3,000 to 10,000 seconds."
+  },
+  {
+    "tab": "propulsion",
+    "section": "laser-sail",
+    "title": "Laser Sails — pushing a probe with a beam from home",
+    "intro": "Beamed propulsion inverts the usual logic: instead of carrying fuel, the spacecraft carries only a reflective sail, and all the energy is supplied by a laser or microwave array left behind on Earth or in orbit.",
+    "haystack": "laser sails — pushing a probe with a beam from home beamed propulsion inverts the usual logic: instead of carrying fuel, the spacecraft carries only a reflective sail, and all the energy is supplied by a laser or microwave array left behind on earth or in orbit. the core idea is momentum transfer. light carries momentum, and when it reflects off a surface it transfers twice that momentum to the sail. a powerful enough beam can accelerate a lightweight sail to high speed without the spacecraft carrying any propellant at all. the tsiolkovsky rocket equation — which punishes every gram of fuel you must first lift and then accelerate — does not apply; there is no exhaust, no fuel tank, no mass fraction problem. the energy bill stays at home."
+  },
+  {
+    "tab": "propulsion",
+    "section": "nuclear-thermal",
+    "title": "Nuclear-Thermal Rockets — heat, not flame",
+    "intro": "A nuclear-thermal rocket swaps the combustion chamber for a fission reactor: hydrogen heats in the core past any chemical flame and expands through a nozzle — roughly twice the specific impulse of the best chemical engines, at real thrust.",
+    "haystack": "nuclear-thermal rockets — heat, not flame a nuclear-thermal rocket swaps the combustion chamber for a fission reactor: hydrogen heats in the core past any chemical flame and expands through a nozzle — roughly twice the specific impulse of the best chemical engines, at real thrust. chemical rocket engines are limited by how hot their propellants can burn. the hydrogen-oxygen reaction peaks around 3,500 k in the combustion chamber — already close to the melting point of most materials — producing a specific impulse of roughly 450 seconds in a vacuum. a nuclear-thermal rocket (ntr) is not limited by a chemical reaction. liquid hydrogen flows through channels in a solid nuclear reactor core operating at 2,500–3,000 k, absorbs heat, and exits through a nozzle as a very hot, very light gas. because hydrogen is the lightest element, its heated molecules move fast and produce high exhaust velocity. the resulting isp is 800–1,000 seconds — more than double chemical — while thrust remains in the 50–250 kn range, far above any electric propulsion system."
+  },
+  {
+    "tab": "propulsion",
     "section": "oberth-effect",
     "title": "Oberth Effect",
     "intro": "Burn deep in a gravity well and your fuel does more work — physically the same engine produces more orbital energy when it's moving fast.",
@@ -656,6 +726,13 @@
     "title": "Stages — why no rocket has ever flown single-stage to orbit",
     "intro": "Tsiolkovsky's equation makes single-stage-to-orbit possible only with impossibly light dry mass. Every orbital launcher in history has dropped at least one stage. Most drop two or three.",
     "haystack": "stages — why no rocket has ever flown single-stage to orbit tsiolkovsky's equation makes single-stage-to-orbit possible only with impossibly light dry mass. every orbital launcher in history has dropped at least one stage. most drop two or three. the mass ratio for orbit (~9.4 km/s of ∆v from a coastal launch site) is roughly 12-15 with the best chemical engines. that means 92-93% of a notional single-stage-to-orbit (ssto) vehicle is propellant; the dry mass — tanks, engines, avionics, payload, recovery hardware — must fit inside the remaining 7-8%. no one has ever built one. the x-33 / venturestar ssto programme of the 1990s shut down when the composite hydrogen tank failed pressure-test. skylon (uk, sabre-based) is still on paper. starship is sometimes described as ssto-capable but flies as a two-stage vehicle for very good reasons: dropping the booster saves dry mass and lets the upper stage continue with much higher twr-fed acceleration. staging is the trick that turns the logarithmic rocket equation from impossible to merely difficult."
+  },
+  {
+    "tab": "propulsion",
+    "section": "solar-sail",
+    "title": "Solar Sails — the only free push",
+    "intro": "A solar sail carries no propellant: it is pushed by the momentum of photons, making it the only propulsion system with an effectively unbounded specific impulse — and the only one that gets cheaper to run the longer it flies.",
+    "haystack": "solar sails — the only free push a solar sail carries no propellant: it is pushed by the momentum of photons, making it the only propulsion system with an effectively unbounded specific impulse — and the only one that gets cheaper to run the longer it flies. light carries momentum. when a photon reflects off a mirror, it imparts twice its momentum to the mirror — a pressure called radiation pressure. in everyday life that force is negligible, but in space, where there is no air resistance, even a tiny continuous force accumulates into a real velocity change. a perfectly reflective 800 m² sail at 1 au (earth's distance from the sun) receives about 5 millinewtons of force — the weight of a small grape. that is less than any ion engine produces, but it requires no propellant, no power system beyond basic housekeeping, and it never stops as long as the sun shines."
   },
   {
     "tab": "propulsion",

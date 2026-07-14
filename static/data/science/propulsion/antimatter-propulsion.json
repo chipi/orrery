@@ -4,10 +4,6 @@
   "order": 17,
   "see_in_app": [
     {
-      "route": "/science",
-      "context_key": "Propulsion tab — specific impulse scale shows how far antimatter exceeds all existing engines"
-    },
-    {
       "route": "/explore",
       "context_key": "Interstellar distances that make the energy-density argument concrete"
     }

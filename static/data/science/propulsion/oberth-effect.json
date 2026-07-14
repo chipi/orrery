@@ -4,7 +4,7 @@
   "order": 6,
   "photo": {
     "src": "/images/missions/cassini/01.webp",
-    "credit": "NASA / JPL-Caltech \u00b7 Cassini Saturn Orbit Insertion (July 2004). Cassini's SOI was a textbook Oberth-effect maneuver \u2014 burning at periapsis around Saturn at ~30 km/s extracted the maximum energy per kilogram of propellant, capturing 5.6 tonnes of spacecraft into Saturn orbit."
+    "credit": "NASA / JPL-Caltech · Cassini Saturn Orbit Insertion (July 2004). Cassini's SOI was a textbook Oberth-effect maneuver — burning at periapsis around Saturn at ~30 km/s extracted the maximum energy per kilogram of propellant, capturing 5.6 tonnes of spacecraft into Saturn orbit."
   },
   "see_in_app": [
     {
@@ -14,16 +14,16 @@
   ],
   "links": [
     {
-      "l": "Wikipedia \u00b7 Oberth effect",
+      "l": "Wikipedia · Oberth effect",
       "u": "https://en.wikipedia.org/wiki/Oberth_effect",
       "t": "intro"
     },
     {
-      "l": "NASA \u00b7 The Oberth Effect",
+      "l": "NASA · The Oberth Effect",
       "u": "https://www.nasa.gov/feature/jpl/parker-solar-probe-completes-its-final-venus-flyby/",
       "t": "core"
     }
   ],
-  "diagram": "oberth-effect.svg",
+  "diagram": "oberth-effect.webp",
   "diagram_quality": "polished"
 }

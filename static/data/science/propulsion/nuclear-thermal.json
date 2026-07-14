@@ -2,20 +2,7 @@
   "id": "nuclear-thermal",
   "tab": "propulsion",
   "order": 15,
-  "photo": {
-    "src": "/images/science/nuclear-thermal-nerva-test.webp",
-    "credit": "NASA · NERVA (Nuclear Engine for Rocket Vehicle Application) XE-Prime engine on the test stand at Jackass Flats, Nevada, c. 1969. The NERVA/Rover programme conducted 22 reactor tests between 1959 and 1972, demonstrating specific impulses above 800 seconds — more than double the best chemical engines of the era. No nuclear thermal engine has flown."
-  },
-  "see_in_app": [
-    {
-      "route": "/essays",
-      "context_key": "going-to-mars essay discusses NTR as a candidate transit engine for crewed Mars missions"
-    },
-    {
-      "route": "/science",
-      "context_key": "Compare NTR Isp (~800–900 s) against chemical (~450 s) and ion (~3,000–10,000 s) on the specific-impulse card"
-    }
-  ],
+  "see_in_app": [],
   "links": [
     {
       "l": "NASA · Nuclear Thermal Propulsion (DRACO programme)",

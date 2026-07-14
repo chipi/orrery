@@ -2,11 +2,17 @@
   "id": "apsides",
   "tab": "orbits",
   "order": 8,
-  "diagram": "apsides.svg",
+  "diagram": "apsides.webp",
   "diagram_quality": "polished",
   "see_in_app": [
-    { "route": "/explore", "context_key": "Each planet's perihelion and aphelion are computed from a and e" },
-    { "route": "/missions", "context_key": "Perigee and apogee describe Earth-orbit mission profiles" }
+    {
+      "route": "/explore",
+      "context_key": "Each planet's perihelion and aphelion are computed from a and e"
+    },
+    {
+      "route": "/missions",
+      "context_key": "Perigee and apogee describe Earth-orbit mission profiles"
+    }
   ],
   "links": [
     {

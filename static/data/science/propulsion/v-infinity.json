@@ -4,30 +4,30 @@
   "order": 5,
   "photo": {
     "src": "/images/science/v-infinity-voyager.webp",
-    "credit": "NASA / JPL-Caltech \u00b7 Voyager probes with the outer worlds (composite). Voyager 1 + 2 each accumulated their interstellar v\u221e through Jupiter and Saturn gravity assists; their current solar-system-escape velocities are the textbook examples of v-infinity post-encounter."
+    "credit": "NASA / JPL-Caltech · Voyager probes with the outer worlds (composite). Voyager 1 + 2 each accumulated their interstellar v∞ through Jupiter and Saturn gravity assists; their current solar-system-escape velocities are the textbook examples of v-infinity post-encounter."
   },
   "see_in_app": [
     {
       "route": "/fly",
-      "context_key": "/fly's HUD shows V\u221e on arrival at the destination"
+      "context_key": "/fly's HUD shows V∞ on arrival at the destination"
     },
     {
       "route": "/missions",
-      "context_key": "Arrival V\u221e governs the size of the orbit-insertion burn"
+      "context_key": "Arrival V∞ governs the size of the orbit-insertion burn"
     }
   ],
   "links": [
     {
-      "l": "Wikipedia \u00b7 Hyperbolic trajectory",
+      "l": "Wikipedia · Hyperbolic trajectory",
       "u": "https://en.wikipedia.org/wiki/Hyperbolic_trajectory",
       "t": "intro"
     },
     {
-      "l": "NASA \u00b7 Interplanetary Trajectories",
+      "l": "NASA · Interplanetary Trajectories",
       "u": "https://www.nasa.gov/centers/johnson/pdf/383322main_018%20-%20Trajectory.pdf",
       "t": "core"
     }
   ],
-  "diagram": "v-infinity.svg",
+  "diagram": "v-infinity.webp",
   "diagram_quality": "polished"
 }

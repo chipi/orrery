@@ -4,7 +4,7 @@
   "order": 7,
   "photo": {
     "src": "/images/science/keplers-laws-portrait.webp",
-    "credit": "Unknown artist (c. 1610) \u00b7 Johannes Kepler. The three laws of planetary motion he derived from Tycho Brahe's naked-eye observations are still the canonical statement of how every orbit in the solar system works."
+    "credit": "Unknown artist (c. 1610) · Johannes Kepler. The three laws of planetary motion he derived from Tycho Brahe's naked-eye observations are still the canonical statement of how every orbit in the solar system works."
   },
   "see_in_app": [
     {
@@ -14,17 +14,17 @@
   ],
   "links": [
     {
-      "l": "Wikipedia \u00b7 Kepler's laws of planetary motion",
+      "l": "Wikipedia · Kepler's laws of planetary motion",
       "u": "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion",
       "t": "intro"
     },
     {
-      "l": "NASA \u00b7 Kepler's Three Laws",
+      "l": "NASA · Kepler's Three Laws",
       "u": "https://imagine.gsfc.nasa.gov/observatories/learning/swift/classroom/docs/Kepler.pdf",
       "t": "core"
     }
   ],
   "formula_latex": "T^2 = \\frac{4\\pi^2}{\\mu} a^3",
-  "diagram": "keplers-laws.svg",
+  "diagram": "keplers-laws.webp",
   "diagram_quality": "polished"
 }

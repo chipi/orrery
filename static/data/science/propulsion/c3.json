@@ -4,31 +4,31 @@
   "order": 4,
   "photo": {
     "src": "/images/science/c3-parker-launch.webp",
-    "credit": "NASA / Johns Hopkins APL \u00b7 Parker Solar Probe spacecraft (2018). Parker required the highest launch C3 of any NASA mission to date \u2014 the Delta IV Heavy plus a third stage delivered a launch energy of 154 km\u00b2/s\u00b2 to send Parker on its Venus-assisted trajectory toward the Sun."
+    "credit": "NASA / Johns Hopkins APL · Parker Solar Probe spacecraft (2018). Parker required the highest launch C3 of any NASA mission to date — the Delta IV Heavy plus a third stage delivered a launch energy of 154 km²/s² to send Parker on its Venus-assisted trajectory toward the Sun."
   },
   "see_in_app": [
     {
       "route": "/missions",
-      "context_key": "FLIGHT tab shows C3 in km\u00b2/s\u00b2 for each interplanetary mission"
+      "context_key": "FLIGHT tab shows C3 in km²/s² for each interplanetary mission"
     },
     {
       "route": "/plan",
-      "context_key": "Porkchop \u2206v translates to C3 via vis-viva"
+      "context_key": "Porkchop ∆v translates to C3 via vis-viva"
     }
   ],
   "links": [
     {
-      "l": "Wikipedia \u00b7 Characteristic energy",
+      "l": "Wikipedia · Characteristic energy",
       "u": "https://en.wikipedia.org/wiki/Characteristic_energy",
       "t": "intro"
     },
     {
-      "l": "NASA \u00b7 C3 and Launch Energy",
+      "l": "NASA · C3 and Launch Energy",
       "u": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
       "t": "core"
     }
   ],
   "formula_latex": "C_3 = v_\\infty^2",
-  "diagram": "c3.svg",
+  "diagram": "c3.webp",
   "diagram_quality": "polished"
 }

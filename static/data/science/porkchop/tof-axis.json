@@ -2,12 +2,19 @@
   "id": "tof-axis",
   "tab": "porkchop",
   "order": 3,
-  "diagram": "tof-axis.svg",
+  "diagram": "tof-axis.webp",
   "diagram_quality": "polished",
   "see_in_app": [
-    { "route": "/plan", "context_key": "Y axis on the porkchop is TIME OF FLIGHT" }
+    {
+      "route": "/plan",
+      "context_key": "Y axis on the porkchop is TIME OF FLIGHT"
+    }
   ],
   "links": [
-    { "l": "Wikipedia · Time of flight (orbital mechanics)", "u": "https://en.wikipedia.org/wiki/Lambert%27s_problem", "t": "intro" }
+    {
+      "l": "Wikipedia · Time of flight (orbital mechanics)",
+      "u": "https://en.wikipedia.org/wiki/Lambert%27s_problem",
+      "t": "intro"
+    }
   ]
 }

@@ -4,10 +4,6 @@
   "order": 16,
   "see_in_app": [
     {
-      "route": "/science",
-      "context_key": "Propulsion tab — engine types, specific impulse, and ion drive for context on what fusion would improve"
-    },
-    {
       "route": "/explore",
       "context_key": "Outer solar system distances that make interstellar transit times vivid"
     }

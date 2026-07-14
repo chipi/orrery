@@ -4,7 +4,7 @@
   "order": 6,
   "photo": {
     "src": "/images/science/met-mission-control.webp",
-    "credit": "NASA / Joel Kowsky \u00b7 Mission Control Center during Soyuz MS-08 docking (March 2018). Mission Elapsed Time \u2014 the time since launch, displayed everywhere in mission control \u2014 is the canonical clock against which every mission event is sequenced."
+    "credit": "NASA / Joel Kowsky · Mission Control Center during Soyuz MS-08 docking (March 2018). Mission Elapsed Time — the time since launch, displayed everywhere in mission control — is the canonical clock against which every mission event is sequenced."
   },
   "see_in_app": [
     {
@@ -14,11 +14,11 @@
   ],
   "links": [
     {
-      "l": "Wikipedia \u00b7 Mission elapsed time",
+      "l": "Wikipedia · Mission elapsed time",
       "u": "https://en.wikipedia.org/wiki/Mission_Elapsed_Time",
       "t": "intro"
     }
   ],
-  "diagram": "met.svg",
+  "diagram": "met.webp",
   "diagram_quality": "polished"
 }

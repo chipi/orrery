@@ -4,10 +4,6 @@
   "order": 13,
   "see_in_app": [
     {
-      "route": "/programs",
-      "context_key": "ISS — operational DTN node since 2016; validated store-and-forward in low Earth orbit"
-    },
-    {
       "route": "/missions",
       "context_key": "Mars Reconnaissance Orbiter and MAVEN — act as DTN relay nodes for surface rovers"
     }

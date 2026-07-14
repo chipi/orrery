@@ -48,24 +48,34 @@ function humanize(slug) {
 }
 
 function scanDiagrams(dir, urlBase) {
-  return readdirSync(dir)
-    .filter((f) => f.endsWith('.svg'))
-    .sort()
-    .map((f) => {
-      const cover = f.startsWith('_cover-');
-      // Redone flat-family covers (2026-06) ship as raster webp under
-      // /images/science-covers-v2/. Prefer that when present; covers we
-      // didn't redo (no webp) keep their original hand-authored SVG. The
-      // .svg files stay in place — the live /science/[tab] pages still use them.
-      let file = `${urlBase}/${f}`;
-      if (cover) {
-        const webp = f.replace(/\.svg$/, '.webp');
-        if (existsSync(`static/images/science-covers-v2/${webp}`)) {
-          file = `/images/science-covers-v2/${webp}`;
-        }
+  // Enumerate one entry per unique diagram, keyed by basename. A diagram may
+  // ship as hand-authored .svg, as a WIRED-blend raster .webp (2026-07 redo),
+  // or as a webp-only diagram with no SVG source (the wave-2 science set) —
+  // dedup so each appears once, preferring the .webp when both exist.
+  const bases = new Set();
+  for (const f of readdirSync(dir)) {
+    if (f.endsWith('.svg')) bases.add(f.replace(/\.svg$/, ''));
+    else if (f.endsWith('.webp')) bases.add(f.replace(/\.webp$/, ''));
+  }
+  return [...bases].sort().map((slug) => {
+    const cover = slug.startsWith('_cover-');
+    const svg = `${slug}.svg`;
+    const webp = `${slug}.webp`;
+    const hasSvg = existsSync(`${dir}/${svg}`);
+    const hasWebp = existsSync(`${dir}/${webp}`);
+    // Prefer the raster webp — the live /science pages read it too. Covers
+    // redone in the flat family (2026-06) live under science-covers-v2/;
+    // covers we didn't redo keep their hand-authored SVG.
+    let file = hasSvg ? `${urlBase}/${svg}` : `${urlBase}/${webp}`;
+    if (cover) {
+      if (existsSync(`static/images/science-covers-v2/${webp}`)) {
+        file = `/images/science-covers-v2/${webp}`;
       }
-      return { title: humanize(f), file, cover };
-    });
+    } else if (hasWebp) {
+      file = `${urlBase}/${webp}`;
+    }
+    return { title: humanize(svg), file, cover };
+  });
 }
 
 const science = scanDiagrams('static/diagrams/science', '/diagrams/science');

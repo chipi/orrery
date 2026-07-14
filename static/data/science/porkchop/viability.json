@@ -2,12 +2,19 @@
   "id": "viability",
   "tab": "porkchop",
   "order": 6,
-  "diagram": "viability.svg",
+  "diagram": "viability.webp",
   "diagram_quality": "polished",
   "see_in_app": [
-    { "route": "/plan", "context_key": "/plan compares mission ∆v against your selected vehicle's capability" }
+    {
+      "route": "/plan",
+      "context_key": "/plan compares mission ∆v against your selected vehicle's capability"
+    }
   ],
   "links": [
-    { "l": "Wikipedia · Mission analysis", "u": "https://en.wikipedia.org/wiki/Mission_analysis", "t": "intro" }
+    {
+      "l": "Wikipedia · Mission analysis",
+      "u": "https://en.wikipedia.org/wiki/Mission_analysis",
+      "t": "intro"
+    }
   ]
 }

@@ -4,10 +4,6 @@
   "order": 18,
   "see_in_app": [
     {
-      "route": "/science",
-      "context_key": "Propulsion tab — compare with ion drive and specific impulse to see why carrying no fuel changes everything"
-    },
-    {
       "route": "/missions",
       "context_key": "Voyager 1 and 2 as the only hardware to reach interstellar space — Starshot's target is 2000× faster"
     }

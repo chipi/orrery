@@ -1777,6 +1777,9 @@ export interface NamedStarOverlay {
   cultural?: string;
   /** Curated learn-more links (same shape as planets): { l: label, u: url, t: tier }. */
   links?: Array<{ l: string; u: string; t: 'intro' | 'core' | 'deep' }>;
+  /** Optional curated real image (served WebP under /images/stars/); provenance
+   *  lives in image-provenance.json keyed on the path. `kind` labels it honestly. */
+  photo?: { src: string; kind: 'real' | 'artist' };
 }
 
 export type LocalizedNamedStar = NamedStar & NamedStarOverlay;

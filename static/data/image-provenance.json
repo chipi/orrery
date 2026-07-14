@@ -78800,6 +78800,63 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-06-19T09:26:46.927Z"
+    },
+    {
+      "id": "star-betelgeuse-01",
+      "path": "/images/stars/betelgeuse/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "SPHERE’s view of Betelgeuse in January 2019 (eso2003b)",
+      "author": "ESO/M. Montargès et al.",
+      "agency": "ESO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:SPHERE%E2%80%99s_view_of_Betelgeuse_in_January_2019_(eso2003b).jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SPHERE%E2%80%99s_view_of_Betelgeuse_in_January_2019_(eso2003b).jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "ESO releases its imagery under Creative Commons Attribution 4.0 International.",
+      "modifications": [
+        "downloaded-via-special-filepath",
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-07-14T11:20:19.325Z"
+    },
+    {
+      "id": "star-antares-01",
+      "path": "/images/stars/antares/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "VLTI reconstructed view of the surface of Antares",
+      "author": "ESO/K. Ohnaka",
+      "agency": "ESO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:VLTI_reconstructed_view_of_the_surface_of_Antares.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/VLTI_reconstructed_view_of_the_surface_of_Antares.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "ESO releases its imagery under Creative Commons Attribution 4.0 International.",
+      "modifications": [
+        "downloaded-via-special-filepath",
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-07-14T11:20:19.325Z"
+    },
+    {
+      "id": "star-sirius-01",
+      "path": "/images/stars/sirius/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "Sirius A and B artwork (artist’s impression)",
+      "author": "NASA, ESA and G. Bacon (STScI)",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sirius_A_and_B_artwork.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sirius_A_and_B_artwork.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Illustration produced by STScI for NASA (Hubble) — U.S. Government work, public domain, free to use with credit. Artist’s impression, not a photograph.",
+      "modifications": [
+        "downloaded-via-special-filepath",
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-07-14T11:20:19.325Z"
     }
   ]
 }

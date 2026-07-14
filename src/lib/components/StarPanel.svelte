@@ -11,7 +11,9 @@
   import LearnLink from './LearnLink.svelte';
   import StarPortrait from './StarPortrait.svelte';
   import ConstellationFinder from './ConstellationFinder.svelte';
+  import ImageCredit from './ImageCredit.svelte';
   import WhyPopover from './WhyPopover.svelte';
+  import { base } from '$app/paths';
   import { constellationName } from '$lib/universe/iau-constellations';
   import { bvToRgb, bvToKelvin } from '$lib/universe/bv-to-rgb';
   import { colorNameForKelvin } from '$lib/universe/anonymous-star';
@@ -77,6 +79,21 @@
       </div>
       <div class="name">{star.name ?? star.proper}</div>
     </div>
+
+    {#if star.photo}
+      <div class="panel-hero star-hero">
+        <img
+          class="real-photo"
+          src="{base}{star.photo.src}"
+          alt={star.name ?? star.proper}
+          decoding="async"
+        />
+        <p class="hero-caption">
+          {star.photo.kind === 'artist' ? "Artist's impression" : 'Real image'} ·
+        </p>
+        <ImageCredit src={star.photo.src} />
+      </div>
+    {/if}
 
     <div class="panel-hero star-hero">
       <StarPortrait bv={star.bv} spect={star.spect} absmag={star.absmag} />
@@ -201,6 +218,13 @@
   }
   .star-hero {
     margin-bottom: 12px;
+  }
+  .real-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    background: #04060d;
   }
   .star-finder {
     margin-bottom: 12px;

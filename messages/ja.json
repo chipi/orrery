@@ -1507,5 +1507,8 @@
   "programs_kind_station": "宇宙ステーション",
   "programs_kind_robotic": "ロボット探査",
   "programs_kind_infrastructure": "インフラ",
-  "programs_kind_funding": "資金枠"
+  "programs_kind_funding": "資金枠",
+  "nav_group_explore": "探索",
+  "nav_catalog": "カタログ",
+  "nav_learn": "学習"
 }

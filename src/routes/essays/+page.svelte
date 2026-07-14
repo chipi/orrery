@@ -1,6 +1,6 @@
 <!--
   /essays — The Long View index. Long-form essays that cut across the atlas,
-  grouped into the series' three movements (the spiral). Cards deep-link into
+  grouped into the series' five movements (the spiral). Cards deep-link into
   each essay; the essays deep-link back into missions / fleet / science.
 -->
 <script lang="ts">
@@ -15,27 +15,32 @@
     {
       key: 'into-the-dark',
       label: 'Into the Dark',
-      blurb: 'The fundamentals of going — how we find our way, move, and stay in touch where there are no roads.',
+      blurb:
+        'The fundamentals of going — how we find our way, move, and stay in touch where there are no roads.',
     },
     {
       key: 'the-machines',
       label: 'The Machines',
-      blurb: 'How we build the going — leaving the ground, and the exits beyond the chemical rocket.',
+      blurb:
+        'How we build the going — leaving the ground, and the exits beyond the chemical rocket.',
     },
     {
       key: 'the-destinations',
       label: 'The Destinations',
-      blurb: 'Where we are actually going — the Moon we keep relearning, the Mars that breaks every plan, and the rocks worth more as fuel than as gold.',
+      blurb:
+        'Where we are actually going — the Moon we keep relearning, the Mars that breaks every plan, and the rocks worth more as fuel than as gold.',
     },
     {
       key: 'arrival-and-the-body',
       label: 'Arrival & the Body',
-      blurb: 'The cost of getting there — the violence of landing, and the fragile traveller the whole enterprise exists to carry.',
+      blurb:
+        'The cost of getting there — the violence of landing, and the fragile traveller the whole enterprise exists to carry.',
     },
     {
       key: 'the-far-horizon',
       label: 'The Far Horizon',
-      blurb: 'The honest edge of the map — the arithmetic of the stars, and the ship that would have to become a world.',
+      blurb:
+        'The honest edge of the map — the arithmetic of the stars, and the ship that would have to become a world.',
     },
   ];
 

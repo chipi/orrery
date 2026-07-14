@@ -1507,5 +1507,8 @@
   "programs_kind_station": "Stations spatiales",
   "programs_kind_robotic": "Exploration robotique",
   "programs_kind_infrastructure": "Infrastructure",
-  "programs_kind_funding": "Lignes de financement"
+  "programs_kind_funding": "Lignes de financement",
+  "nav_group_explore": "EXPLORER",
+  "nav_catalog": "CATALOGUE",
+  "nav_learn": "APPRENDRE"
 }

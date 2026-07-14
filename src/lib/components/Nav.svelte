@@ -35,25 +35,76 @@
   // bottom of the mobile drawer. Keeps the -wip suffix, collapses a .0 patch.
   const displayVersion = formatDisplayVersion(__APP_VERSION__);
 
-  const linkDefs = [
-    { path: '/', label: m.nav_home },
-    { path: '/explore', label: m.nav_explore },
-    { path: '/missions', label: m.nav_missions },
-    { path: '/fleet', label: m.nav_fleet },
-    { path: '/programs', label: m.nav_programs },
-    { path: '/plan', label: m.nav_plan },
-    { path: '/fly', label: m.nav_fly },
-    { path: '/earth', label: m.nav_earth },
-    { path: '/moon', label: m.nav_moon },
-    { path: '/mars', label: m.nav_mars },
-    { path: '/iss', label: m.nav_iss },
-    { path: '/tiangong', label: m.nav_tiangong },
-    { path: '/science', label: m.nav_science },
-    { path: '/essays', label: m.nav_essays },
-  ] as const;
+  // ─── Grouped nav (2026-07 IA restructure) ───────────────────────────
+  // The 14 flat items regroup into standalone links + three dropdown
+  // groups. Groups open a disclosure menu on pointer devices and expand
+  // inline in the mobile drawer. The roving toolbar still sweeps the top
+  // row; a TV D-pad big-box hub is a follow-up slice (#149/#375).
+  type NavLink = { kind: 'link'; path: string; label: () => string };
+  type NavGroup = {
+    kind: 'group';
+    key: string;
+    label: () => string;
+    children: { path: string; label: () => string }[];
+  };
+  type NavItem = NavLink | NavGroup;
+
+  const navItems: NavItem[] = [
+    { kind: 'link', path: '/', label: m.nav_home },
+    {
+      kind: 'group',
+      key: 'explore',
+      label: m.nav_group_explore,
+      children: [
+        { path: '/explore', label: m.nav_explore }, // "OUR SOLAR SYSTEM"
+        { path: '/earth', label: m.nav_earth },
+        { path: '/moon', label: m.nav_moon },
+        { path: '/mars', label: m.nav_mars },
+        { path: '/iss', label: m.nav_iss },
+        { path: '/tiangong', label: m.nav_tiangong },
+      ],
+    },
+    { kind: 'link', path: '/fly', label: m.nav_fly },
+    { kind: 'link', path: '/plan', label: m.nav_plan },
+    {
+      kind: 'group',
+      key: 'catalog',
+      label: m.nav_catalog,
+      children: [
+        { path: '/programs', label: m.nav_programs },
+        { path: '/missions', label: m.nav_missions },
+        { path: '/fleet', label: m.nav_fleet },
+      ],
+    },
+    {
+      kind: 'group',
+      key: 'learn',
+      label: m.nav_learn,
+      children: [
+        { path: '/essays', label: m.nav_essays },
+        { path: '/science', label: m.nav_science },
+      ],
+    },
+  ];
 
   function isActive(href: string, pathname: string): boolean {
     return pathname === href || pathname.startsWith(href + '/');
+  }
+  function groupActive(group: NavGroup, pathname: string): boolean {
+    return group.children.some((c) => isActive(`${base}${c.path}`, pathname));
+  }
+
+  // Dropdown open-state — one group at a time. Closed by: Escape, an
+  // outside click (backdrop), selecting a child, or opening another group.
+  let openGroup = $state<string | null>(null);
+  function toggleGroup(key: string) {
+    openGroup = openGroup === key ? null : key;
+  }
+  function closeGroups() {
+    openGroup = null;
+  }
+  function onWindowKeydown(e: KeyboardEvent) {
+    if (e.key === 'Escape' && openGroup) closeGroups();
   }
 
   // ─── High-contrast toggle (Theme C.C2 / v0.1.12 / ADR-029) ─────────
@@ -161,6 +212,8 @@
   onDestroy(() => clearTimeout(sensoryHintTimer));
 </script>
 
+<svelte:window onkeydown={onWindowKeydown} />
+
 <!-- Roving toolbar (RFC-031 S1): the whole top bar is one Tab stop; ← → (and a
      TV D-pad) sweep across brand · links · toggles, wrapping. Tab then jumps
      past the nav straight to page content. -->
@@ -177,12 +230,40 @@
   </div>
 
   <div class="center">
-    {#each linkDefs as { path, label } (path)}
-      <a
-        href={`${base}${localizeHref(path)}`}
-        class="link"
-        class:active={isActive(`${base}${path}`, $page.url.pathname)}>{label()}</a
-      >
+    {#each navItems as item (item.kind === 'group' ? item.key : item.path)}
+      {#if item.kind === 'link'}
+        <a
+          href={`${base}${localizeHref(item.path)}`}
+          class="link"
+          class:active={isActive(`${base}${item.path}`, $page.url.pathname)}>{item.label()}</a
+        >
+      {:else}
+        <div class="nav-group">
+          <button
+            type="button"
+            class="link group-trigger"
+            class:active={groupActive(item, $page.url.pathname)}
+            aria-haspopup="true"
+            aria-expanded={openGroup === item.key}
+            onclick={() => toggleGroup(item.key)}
+          >
+            {item.label()}<span class="caret" aria-hidden="true">▾</span>
+          </button>
+          {#if openGroup === item.key}
+            <div class="group-menu" role="menu" aria-label={item.label()}>
+              {#each item.children as child (child.path)}
+                <a
+                  href={`${base}${localizeHref(child.path)}`}
+                  role="menuitem"
+                  class="group-menu-link"
+                  class:active={isActive(`${base}${child.path}`, $page.url.pathname)}
+                  onclick={closeGroups}>{child.label()}</a
+                >
+              {/each}
+            </div>
+          {/if}
+        </div>
+      {/if}
     {/each}
   </div>
 
@@ -279,6 +360,17 @@
   </div>
 </nav>
 
+{#if openGroup}
+  <!-- Click-catcher: an outside click closes the open dropdown. Sits below
+       the menu (which is inside .nav at z-index 40) but above page content. -->
+  <button
+    type="button"
+    class="group-backdrop"
+    aria-label={m.nav_mobile_menu_close_aria()}
+    onclick={closeGroups}
+  ></button>
+{/if}
+
 <SensorySheet />
 
 {#if sensoryHintVisible}
@@ -297,13 +389,30 @@
     aria-modal="false"
     aria-label={m.nav_site_drawer_aria()}
   >
-    {#each linkDefs as { path, label } (path)}
-      <a
-        href={`${base}${localizeHref(path)}`}
-        class="drawer-link"
-        class:active={isActive(`${base}${path}`, $page.url.pathname)}
-        onclick={closeMobileMenu}>{label()}</a
-      >
+    {#each navItems as item (item.kind === 'group' ? item.key : item.path)}
+      {#if item.kind === 'link'}
+        <a
+          href={`${base}${localizeHref(item.path)}`}
+          class="drawer-link"
+          class:active={isActive(`${base}${item.path}`, $page.url.pathname)}
+          onclick={closeMobileMenu}>{item.label()}</a
+        >
+      {:else}
+        <!-- Groups expand inline in the drawer: a non-interactive heading
+             with its children indented beneath — every destination stays one
+             tap away, no nested disclosure to fight on touch/TV. -->
+        <div class="drawer-group" role="group" aria-label={item.label()}>
+          <span class="drawer-group-label">{item.label()}</span>
+          {#each item.children as child (child.path)}
+            <a
+              href={`${base}${localizeHref(child.path)}`}
+              class="drawer-link drawer-group-item"
+              class:active={isActive(`${base}${child.path}`, $page.url.pathname)}
+              onclick={closeMobileMenu}>{child.label()}</a
+            >
+          {/each}
+        </div>
+      {/if}
     {/each}
     {#if onScience}
       <!-- Mobile-only Cmd-K affordance (issue #137). Mirrors the
@@ -471,12 +580,11 @@
     display: flex;
     gap: 1px;
     align-items: center;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .center::-webkit-scrollbar {
-    display: none;
+    /* overflow must stay visible so the dropdown panels can hang below the
+       bar. With the 2026-07 grouping there are only 6 top-level items (was
+       14), so the horizontal scroller is no longer needed on desktop — the
+       row fits, and ≤640 / touch collapses to the hamburger drawer anyway. */
+    overflow: visible;
   }
 
   .link {
@@ -505,6 +613,83 @@
     color: var(--color-text);
     background: rgba(68, 102, 255, 0.28);
     border-color: rgba(68, 102, 255, 0.55);
+  }
+
+  /* ── Grouped-nav dropdowns (2026-07 IA restructure) ───────────────── */
+  .nav-group {
+    position: relative;
+    display: inline-flex;
+  }
+  /* The group trigger is a <button> styled to sit flush with the sibling
+     <a> links (it already carries the .link class). Reset the button chrome
+     and inherit the bar typography. */
+  .group-trigger {
+    appearance: none;
+    background: transparent;
+    font-family: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .caret {
+    font-size: 0.7em;
+    opacity: 0.65;
+    transition: transform 0.15s;
+  }
+  .group-trigger[aria-expanded='true'] .caret {
+    transform: rotate(180deg);
+  }
+  /* Dropdown panel — anchored under the trigger, same chrome as the mobile
+     drawer for consistency. */
+  .group-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 190px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    background: var(--color-nav-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  }
+  .group-menu-link {
+    display: block;
+    padding: 9px 12px;
+    font-size: var(--size-link);
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    transition: all 0.12s;
+  }
+  .group-menu-link:hover,
+  .group-menu-link:focus-visible {
+    color: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 255, 255, 0.12);
+    outline: none;
+  }
+  .group-menu-link.active {
+    color: var(--color-text);
+    background: rgba(68, 102, 255, 0.28);
+    border-color: rgba(68, 102, 255, 0.55);
+  }
+  /* Transparent full-page click-catcher behind an open dropdown. */
+  .group-backdrop {
+    position: fixed;
+    inset: var(--nav-height) 0 0 0;
+    z-index: 39;
+    background: transparent;
+    border: none;
+    cursor: default;
   }
 
   .right {
@@ -866,6 +1051,19 @@
   }
   .drawer-controls :global(.locale-picker .option .native) {
     display: none;
+  }
+  /* Grouped sections in the mobile drawer — a muted heading with its
+     children indented beneath (mirrors the desktop dropdown grouping). */
+  .drawer-group-label {
+    display: block;
+    padding: 12px 18px 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .drawer-group-item {
+    padding-left: 32px;
   }
   .drawer-link:hover,
   .drawer-link:focus-visible {

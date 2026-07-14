@@ -435,7 +435,10 @@
     "programs_kind_station": "Estaciones espaciales",
     "programs_kind_robotic": "Exploración robótica",
     "programs_kind_infrastructure": "Infraestructura",
-    "programs_kind_funding": "Líneas de financiación"
+    "programs_kind_funding": "Líneas de financiación",
+    "nav_group_explore": "EXPLORAR",
+    "nav_catalog": "CATÁLOGO",
+    "nav_learn": "APRENDER"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -906,7 +909,10 @@
     "programs_kind_station": "Stations spatiales",
     "programs_kind_robotic": "Exploration robotique",
     "programs_kind_infrastructure": "Infrastructure",
-    "programs_kind_funding": "Lignes de financement"
+    "programs_kind_funding": "Lignes de financement",
+    "nav_group_explore": "EXPLORER",
+    "nav_catalog": "CATALOGUE",
+    "nav_learn": "APPRENDRE"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -1371,7 +1377,10 @@
     "programs_kind_station": "Raumstationen",
     "programs_kind_robotic": "Robotische Erkundung",
     "programs_kind_infrastructure": "Infrastruktur",
-    "programs_kind_funding": "Finanzierungslinien"
+    "programs_kind_funding": "Finanzierungslinien",
+    "nav_group_explore": "ERKUNDEN",
+    "nav_catalog": "KATALOG",
+    "nav_learn": "LERNEN"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -1816,7 +1825,10 @@
     "programs_kind_station": "Estações espaciais",
     "programs_kind_robotic": "Exploração robótica",
     "programs_kind_infrastructure": "Infraestrutura",
-    "programs_kind_funding": "Linhas de financiamento"
+    "programs_kind_funding": "Linhas de financiamento",
+    "nav_group_explore": "EXPLORAR",
+    "nav_catalog": "CATÁLOGO",
+    "nav_learn": "APRENDER"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -2255,7 +2267,10 @@
     "programs_kind_station": "Stazioni spaziali",
     "programs_kind_robotic": "Esplorazione robotica",
     "programs_kind_infrastructure": "Infrastrutture",
-    "programs_kind_funding": "Linee di finanziamento"
+    "programs_kind_funding": "Linee di finanziamento",
+    "nav_group_explore": "ESPLORA",
+    "nav_catalog": "CATALOGO",
+    "nav_learn": "IMPARA"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -2665,7 +2680,10 @@
     "programs_kind_station": "Свемирске станице",
     "programs_kind_robotic": "Роботска истраживања",
     "programs_kind_infrastructure": "Инфраструктура",
-    "programs_kind_funding": "Линије финансирања"
+    "programs_kind_funding": "Линије финансирања",
+    "nav_group_explore": "ИСТРАЖИВАЊЕ",
+    "nav_catalog": "КАТАЛОГ",
+    "nav_learn": "УЧИТЕ"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -3141,7 +3159,10 @@
     "programs_kind_station": "空间站",
     "programs_kind_robotic": "机器人探索",
     "programs_kind_infrastructure": "基础设施",
-    "programs_kind_funding": "资金线"
+    "programs_kind_funding": "资金线",
+    "nav_group_explore": "探索",
+    "nav_catalog": "目录",
+    "nav_learn": "学习"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3632,7 +3653,10 @@
     "programs_kind_station": "宇宙ステーション",
     "programs_kind_robotic": "ロボット探査",
     "programs_kind_infrastructure": "インフラ",
-    "programs_kind_funding": "資金枠"
+    "programs_kind_funding": "資金枠",
+    "nav_group_explore": "探索",
+    "nav_catalog": "カタログ",
+    "nav_learn": "学習"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -4126,7 +4150,10 @@
     "programs_kind_station": "우주 정거장",
     "programs_kind_robotic": "로봇 탐사",
     "programs_kind_infrastructure": "인프라",
-    "programs_kind_funding": "자금 지원"
+    "programs_kind_funding": "자금 지원",
+    "nav_group_explore": "탐색",
+    "nav_catalog": "카탈로그",
+    "nav_learn": "학습"
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -4756,7 +4783,10 @@
     "programs_kind_station": "अंतरिक्ष स्टेशन",
     "programs_kind_robotic": "रोबोटिक अन्वेषण",
     "programs_kind_infrastructure": "बुनियादी ढांचा",
-    "programs_kind_funding": "वित्त पोषण लाइनें"
+    "programs_kind_funding": "वित्त पोषण लाइनें",
+    "nav_group_explore": "खोजें",
+    "nav_catalog": "सूची",
+    "nav_learn": "सीखें"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5428,7 +5458,10 @@
     "programs_kind_station": "المحطات الفضائية",
     "programs_kind_robotic": "الاستكشاف الروبوتي",
     "programs_kind_infrastructure": "البنية التحتية",
-    "programs_kind_funding": "خطوط التمويل"
+    "programs_kind_funding": "خطوط التمويل",
+    "nav_group_explore": "استكشف",
+    "nav_catalog": "الفهرس",
+    "nav_learn": "تعلم"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -5922,7 +5955,10 @@
     "programs_kind_station": "Космические станции",
     "programs_kind_robotic": "Роботизированные исследования",
     "programs_kind_infrastructure": "Инфраструктура",
-    "programs_kind_funding": "Линии финансирования"
+    "programs_kind_funding": "Линии финансирования",
+    "nav_group_explore": "ИССЛЕДОВАНИЕ",
+    "nav_catalog": "КАТАЛОГ",
+    "nav_learn": "ОБУЧЕНИЕ"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -6366,6 +6402,9 @@
     "programs_kind_station": "Ruimtestations",
     "programs_kind_robotic": "Robotverkenning",
     "programs_kind_infrastructure": "Infrastructuur",
-    "programs_kind_funding": "Financieringslijnen"
+    "programs_kind_funding": "Financieringslijnen",
+    "nav_group_explore": "VERKENNEN",
+    "nav_catalog": "CATALOGUS",
+    "nav_learn": "LEREN"
   }
 }

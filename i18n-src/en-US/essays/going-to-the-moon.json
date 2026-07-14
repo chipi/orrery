@@ -47,6 +47,13 @@
       "text": "This is the sobering context for everything that follows. \"We did this before\" is true in the narrow sense that the feat was accomplished, the footprints are there, the retroreflectors still work. It is misleading in the practical sense that the organisations, tools, and people who did it are gone, and what has been rebuilt since is being rebuilt from records rather than from living knowledge. Institutional memory is a real, perishable asset. The Moon is teaching that lesson a second time."
     },
     {
+      "type": "figure",
+      "image": "essays/going-to-the-moon/the-gap",
+      "kind": "diagram",
+      "caption": "Apollo was the anomaly, not the start of a trend. The Saturn V line was shut down before the last crew even flew; over the fifty years that followed, the tooling was scrapped and the people who held the knowledge in their hands retired and died. We are climbing the first rung again — from records, not from living memory.",
+      "align": "wide"
+    },
+    {
       "type": "heading",
       "text": "Not the same Moon we left"
     },
@@ -61,6 +68,21 @@
     {
       "type": "prose",
       "text": "Staying is a different problem. Staying means surviving the night, repeatedly. It means sourcing power through a fortnight of darkness, which requires either nuclear power (which the US has not sent to a planetary surface since the 1970s Viking landers) or a location near the pole where, on crater rims, the sun is present most of the time. It means managing dust accumulation over months rather than days. It means a degree of infrastructure — power, comms relay, habitat — that Apollo never attempted. The Artemis programme's stated ambition is a sustained human presence at the south pole. That goal is still years from realisation. [Artemis II](/missions?id=artemis2), the first crewed flight (a lunar flyby, not a landing), is planned but not yet flown. Artemis III, the first crewed landing since Apollo, is planned to target the south polar region. \"Planned\" is doing significant work in both those sentences."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-the-moon/south-pole-turn",
+      "kind": "diagram",
+      "caption": "Apollo went to the equator, where landing and operating are easiest. The new race goes to the poles, for what the permanently shadowed craters are thought to hold: water ice — hydrogen and oxygen, which is to say propellant, air, water, and shielding. The shift is from visiting to staying.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/chandrayaan3/01",
+      "kind": "photo",
+      "caption": "Chandrayaan-3’s Vikram lander on the southern highlands, August 2023 — the first craft to set down near the lunar south pole, closer to the ice than anything before it. It worked for a single lunar day before the fortnight-long night claimed it.",
+      "align": "wide",
+      "credit": "ISRO"
     },
     {
       "type": "heading",
@@ -79,6 +101,13 @@
       "text": "India's [Chandrayaan-3](/missions?id=chandrayaan3) made the first landing near the lunar south pole in August 2023, touching down at approximately 69°S — further south than any previous lander — shortly after Russia's Luna-25 attempt at the same region ended in a crash. The Vikram lander and Pragyan rover operated for one lunar day before the southern winter night claimed them. Japan's SLIM spacecraft landed in January 2024 with a precision that earned it the nickname \"Moon Sniper\": it touched down within 55 metres of its target, the tightest pinpoint landing yet achieved on the lunar surface, though the lander came down at an angle and spent its first days on the surface operating on its side. It survived. The commercial wave has been less clean: Peregrine Mission One in early 2024, a US commercial lander, suffered a propellant leak shortly after launch and never reached the Moon. Intuitive Machines' IM-1 in February 2024 did reach the surface but tipped on landing. The failure rate of lunar landers — taking the full population of attempts since the 1960s — remains above fifty percent. The Moon does not simply admit visitors."
     },
     {
+      "type": "figure",
+      "image": "essays/going-to-the-moon/crowded-sky",
+      "kind": "diagram",
+      "caption": "The Moon is busier than it has been since the 1970s, and for the first time the cast is genuinely global: the Soviet Luna firsts, American Apollo, China reaching the farside twice, India at the south pole, Japan’s pinpoint touchdown. The oldest question spaceflight asks, now asked by more of the species than ever.",
+      "align": "wide"
+    },
+    {
       "type": "heading",
       "text": "Dust and the long dark"
     },
@@ -93,6 +122,14 @@
     {
       "type": "prose",
       "text": "Unlike [the descent through a Martian atmosphere](/essays/seven-minutes), lunar landing offers no atmospheric braking at all — you come in on rockets from start to finish, burning propellant at every altitude, committing to a trajectory that cannot be meaningfully corrected in the final seconds if something unexpected appears on the surface below. The Moon is, in the framing of the [seven-minutes essay](/essays/seven-minutes), the purest version of the no-atmosphere case: the problem that has no free deceleration, no heat shield to buy time, no parachute phase. Everything you want to spend on the science payload, you first have to find room for in the fuel budget. And the [light-lag that makes the Moon manageable](/science/mission-phases/dsn) — that 1.3-second round trip — is short enough that humans can remain in the control loop, which means lunar landers do not yet need the fully autonomous terrain-relative navigation that Perseverance used at Jezero. They benefit from it. They do not yet strictly require it. That distinction will not hold at Mars."
+    },
+    {
+      "type": "figure",
+      "image": "missions/apollo17/01",
+      "kind": "photo",
+      "caption": "Apollo 17, December 1972 — the last time anyone walked on the Moon. The crews came back grey to the elbows: lunar dust clings, abrades, and works into every seal, and no one has yet had to keep it out for the months a settled presence would demand.",
+      "align": "wide",
+      "credit": "NASA"
     },
     {
       "type": "heading",

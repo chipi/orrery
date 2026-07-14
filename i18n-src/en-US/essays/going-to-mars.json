@@ -39,6 +39,13 @@
       "md": "The commitment consequence of the window is absolute. Unlike an Apollo lunar mission — where a [free-return trajectory](/science/transfers/free-return) kept abort-to-Earth available for much of the outbound cruise — a Mars mission on a Hohmann arc has no such option once the trans-Mars injection burn fires. There is no trajectory that brings the crew home fast if something goes wrong on the way. There are higher-energy abort trajectories, but they require enormous propellant reserves that no mission has yet proposed carrying, precisely because propellant is the second wall."
     },
     {
+      "type": "figure",
+      "image": "essays/going-to-mars/launch-window",
+      "kind": "diagram",
+      "caption": "You do not leave for Mars when you are ready; you leave when the two planets line up, which happens for a few weeks about every twenty-six months. Miss it and you wait two years. And once the transfer burn commits you to the six-to-nine-month coast, there is no abort back to Earth.",
+      "align": "wide"
+    },
+    {
       "type": "heading",
       "text": "Everything, for years"
     },
@@ -53,6 +60,13 @@
     {
       "type": "prose",
       "md": "The escape from the propellant spiral is [in-situ resource utilisation](/science/life-in-space/isru-resource-utilization): manufacturing propellant on Mars from Martian resources. Mars's atmosphere is 95% carbon dioxide; split CO₂ electrochemically and you have oxygen, or process it with hydrogen from water ice to produce methane fuel. [Perseverance](/missions?id=perseverance) carried MOXIE — the Mars Oxygen In-Situ Resource Utilization Experiment — which made oxygen from Martian CO₂ at small scale from 2021 to 2023, at rates of up to ten grams per hour. It is the only proof-of-concept of resource production on another planet. Scaling that to the tonnes of propellant a crewed ascent vehicle needs, alongside a closed-loop [life-support system](/science/life-in-space/eclss-life-support) that recycles water and air for three years without resupply, is an unsolved engineering challenge of the first order. The path from ten grams per hour to a full propellant plant exists on paper. It has never been built."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/isru-return",
+      "kind": "diagram",
+      "caption": "Hauling enough propellant from Earth to lift a crew back off Mars is close to impossible, so the plan is to make it on arrival. Perseverance’s MOXIE experiment pulled oxygen from the CO₂ atmosphere — a few grams an hour, but the first time a factory has ever run on another world.",
+      "align": "wide"
     },
     {
       "type": "heading",
@@ -71,6 +85,14 @@
       "md": "The signal lag applies regardless of EDL architecture. By the time Earth hears that a craft has entered the Martian atmosphere, the seven-minute sequence is already resolved — success or crater — which is why [Perseverance](/missions?id=perseverance) selected its own landing spot autonomously using terrain-relative navigation. For a crewed lander the same constraint holds: every descent decision is the crew's alone, and every emergency on the surface is answered by people eleven to twenty-two light-minutes from the nearest help."
     },
     {
+      "type": "figure",
+      "image": "missions/perseverance/01",
+      "kind": "photo",
+      "caption": "Perseverance in the last seconds of its own landing, lowered on cables from the sky crane over Jezero — the hardest arrival in the solar system, flown entirely by the spacecraft. A crewed lander would mass tens of times more, and no one yet knows how to set that down.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
       "type": "heading",
       "text": "The body keeps the score"
     },
@@ -81,6 +103,13 @@
     {
       "type": "prose",
       "md": "Current NASA occupational dose limits are designed to cap lifetime excess cancer risk to 3%. A Mars round trip, under most architecture assumptions, exceeds those limits. The [radiation exposure](/science/life-in-space/radiation-exposure) is a quantified, documented risk that existing shielding technology does not adequately mitigate; any limit revision permitting the mission would be a policy decision made against acknowledged uncertainty, not a technical problem solved. Beyond radiation, [bone density loss](/science/life-in-space/bone-density-loss) and [muscle atrophy](/science/life-in-space/muscle-atrophy) in [microgravity](/science/life-in-space/microgravity-physiology) can be slowed by countermeasures but not stopped. ISS crews on six-month tours return needing months of rehabilitation; a Mars crew would spend six to nine months in transit microgravity outbound, more than a year in Mars's one-third gravity — a regime with no long-duration human data — then six to nine months in microgravity again on return. Whether the body can sustain that sequence without permanent damage to bone, cardiovascular function, or vision is an open question that cannot be answered from current data. It can only be answered by going. And then there is the three-year social isolation — a crew in a volume comparable to a large recreational vehicle, beyond real-time communication with Earth, with no rescue available — a psychological experiment for which Antarctic winter-overs and submarine deployments are partial models at best."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/radiation",
+      "kind": "diagram",
+      "caption": "Mars lost its global magnetic field when its core cooled, so it has no shield against galactic cosmic rays or solar storms. A crew takes roughly 300 millisieverts on the six-month transit alone — and across a three-year round trip, a dose no shielding light enough to fly can stop.",
+      "align": "wide"
     },
     {
       "type": "heading",
@@ -105,6 +134,14 @@
     {
       "type": "prose",
       "md": "The date keeps moving because the work is real and the work is hard. The honest answer to \"when will humans land on Mars\" is: when the three walls have been addressed — not when confidence is high, not when a schedule says so, not when a founder's ambition demands it, but when the EDL architecture has been demonstrated at crewed scale, when a closed-loop life-support system has been proven for three years of operation, when the radiation picture is either mitigated or accepted on known terms, and when a return-propellant supply exists at Mars before the crew leaves Earth. Some of that work is underway. None of it is done. The wall is still there, and the measure of every plan is whether it faces the wall squarely or papers over the hardest parts with optimism. The former is how you eventually get through. The latter is how you move the date."
+    },
+    {
+      "type": "figure",
+      "image": "missions/tianwen1/01",
+      "kind": "photo",
+      "caption": "China’s Tianwen-1 delivered an orbiter, a lander, and the Zhurong rover to Mars on its very first attempt in 2021 — a sequence no other nation has managed in a single mission. Mars is the wall precisely because so many have broken on it, and a few, from more and more of the world, have not.",
+      "align": "wide",
+      "credit": "CNSA"
     }
   ]
 }

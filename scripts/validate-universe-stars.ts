@@ -18,6 +18,7 @@ import addFormats from 'ajv-formats';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { isAllowedLicense } from './license-allowlist.js';
+import { IAU_CONSTELLATIONS } from '../src/lib/universe/iau-constellations.ts';
 
 const DATA_ROOT = 'static/data';
 const STARS_DIR = join(DATA_ROOT, 'universe', 'stars');
@@ -38,6 +39,7 @@ function loadSchema(name: string): AnySchema {
 const validateIndex = ajv.compile(loadSchema('universe-stars-index.schema.json'));
 const validateShell = ajv.compile(loadSchema('universe-stars-shell.schema.json'));
 const validateSources = ajv.compile(loadSchema('universe-stars-sources.schema.json'));
+const validateNamedStars = ajv.compile(loadSchema('named-star.schema.json'));
 
 const errors: string[] = [];
 const readJson = (p: string): unknown => JSON.parse(readFileSync(p, 'utf8'));
@@ -126,6 +128,32 @@ for (const ref of index.shells ?? []) {
 
 if (starTotal !== index.star_count) {
   errors.push(`index.star_count ${index.star_count} ≠ sum of shell stars ${starTotal}`);
+}
+
+// Named-star catalog (Slice 1): schema + unique ids + valid IAU constellation codes.
+const NAMED_PATH = join(STARS_DIR, 'named-stars.json');
+if (existsSync(NAMED_PATH)) {
+  const named = readJson(NAMED_PATH) as {
+    count: number;
+    stars: Array<{ id: string; con: string | null; dist_pc: number }>;
+  };
+  if (!validateNamedStars(named)) {
+    for (const e of validateNamedStars.errors ?? []) {
+      errors.push(`named-stars.json ${e.instancePath || '/'} ${e.message ?? 'error'}`);
+    }
+  } else {
+    if (named.count !== named.stars.length) {
+      errors.push(`named-stars.json: count ${named.count} ≠ actual ${named.stars.length}`);
+    }
+    const seen = new Set<string>();
+    for (const s of named.stars) {
+      if (seen.has(s.id)) errors.push(`named-stars.json: duplicate id "${s.id}"`);
+      seen.add(s.id);
+      if (s.con && !(s.con in IAU_CONSTELLATIONS)) {
+        errors.push(`named-stars.json: "${s.id}" has unknown constellation code "${s.con}"`);
+      }
+    }
+  }
 }
 
 if (errors.length > 0) {

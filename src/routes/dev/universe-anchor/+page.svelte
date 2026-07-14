@@ -79,7 +79,7 @@
       camera.position.set(Math.sin(angle) * d, d * 0.12, Math.cos(angle) * d);
       camera.lookAt(0, 0, 0);
       if (nb) {
-        nb.update(d);
+        nb.update(d, camera);
         renderer!.render(nb.scene, camera);
       }
     };

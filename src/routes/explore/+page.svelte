@@ -47,7 +47,18 @@
     type IconicTrajectoryData,
     type IconicTrajectoryHandle,
   } from '$lib/three/iconic-trajectory';
-  import { getPlanets, getSun, getMissionIndex, getMission } from '$lib/data';
+  import {
+    getPlanets,
+    getSun,
+    getMissionIndex,
+    getMission,
+    getNamedStars,
+    getNamedStarI18n,
+    type NamedStar,
+    type LocalizedNamedStar,
+  } from '$lib/data';
+  import StarPanel from '$lib/components/StarPanel.svelte';
+  import type { AnonymousStar } from '$lib/universe/anonymous-star';
   import { localeFromPage } from '$lib/locale';
   import { createIconicSelectionService } from './iconic-selection.svelte';
   import { auToPx } from '$lib/scale';
@@ -256,7 +267,15 @@
     smallBody: false,
     satellite: false,
     belt: false,
+    star: false,
   });
+
+  // /explore v2 Slice 1 — named-star selection + the anonymous-star tap readout.
+  let namedStars = $state<NamedStar[]>([]);
+  let namedStarById = $derived(new Map(namedStars.map((s) => [s.id, s])));
+  let selectedStarId = $state<string | null>(null);
+  let localizedStar = $state<LocalizedNamedStar | null>(null);
+  let anonStar = $state<(AnonymousStar & { shownAt: number }) | null>(null);
 
   // Heliocentric scale ruler + zone panel state (#357). Mirrors the
   // /earth /moon /mars rulers — Sun → terrestrial → belt → giants →
@@ -919,6 +938,9 @@
   // Set in onMount; called by Reset View so resetting while out in the stellar
   // neighborhood first crosses back to the solar system (no-op when already there).
   let exitNeighborhoodFn: (() => void) | null = null;
+  // Set in onMount; lets the star index / ?goto= resolver select a named star.
+  let selectStarFn: ((id: string) => void) | null = null;
+  let closeStarFn: (() => void) | null = null;
 
   // Panel mutex: each select* below opens its own panel and explicitly
   // closes the four other planet/sun/smallBody/satellite/belt panels.
@@ -2619,11 +2641,16 @@
       nbLoading = true;
       try {
         const mod = await import('$lib/universe/neighborhood-scene');
-        const shells = await mod.loadNeighborhoodShells(fetch, base);
+        const [shells, stars] = await Promise.all([
+          mod.loadNeighborhoodShells(fetch, base),
+          getNamedStars(fetch),
+        ]);
+        namedStars = stars;
         nbScene = mod.createNeighborhoodScene({
           shells,
           tier: quality.tier,
           pixelRatio: renderer.getPixelRatio(),
+          namedStars: stars,
         });
         return nbScene;
       } catch (err) {
@@ -2692,8 +2719,46 @@
       camera.near = 0.5;
       camera.updateProjectionMatrix();
       updateCam();
+      // Leaving the neighborhood clears any star selection.
+      closeStarPanel();
+      anonStar = null;
     }
     exitNeighborhoodFn = crossInToSolarSystem;
+
+    // ── Named-star selection (Slice 1) ──────────────────────────────────────
+    async function selectStar(id: string): Promise<void> {
+      const base = namedStarById.get(id);
+      if (!base) return;
+      cue('select');
+      selectedStarId = id;
+      panelState.star = true;
+      panelState.planet = false;
+      panelState.sun = false;
+      panelState.smallBody = false;
+      panelState.satellite = false;
+      panelState.belt = false;
+      anonStar = null;
+      nbScene?.highlightStar(id);
+      trackItemClick('star', id, '/explore');
+      const overlay = await getNamedStarI18n(getLocale(), id, fetch);
+      // Guard against a race if the user picked another star meanwhile.
+      if (selectedStarId === id) localizedStar = { ...base, ...(overlay ?? {}) };
+    }
+    function closeStarPanel(): void {
+      panelState.star = false;
+      selectedStarId = null;
+      localizedStar = null;
+      nbScene?.highlightStar(null);
+    }
+    // Exposed to the template (index / ?goto=) via a top-level binding.
+    selectStarFn = selectStar;
+    closeStarFn = closeStarPanel;
+    // Dev/e2e hook for canvas star pickability (no shipped effect).
+    if (import.meta.env.DEV) {
+      (window as unknown as { __exploreSelectStar?: (id: string) => void }).__exploreSelectStar = (
+        id: string,
+      ) => void selectStar(id);
+    }
 
     // Camera distance → canonical AU, for the scale HUD (solar camR is AU,
     // neighborhood camR is pc).
@@ -3071,6 +3136,16 @@
       const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
       ray3dHover.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      // v2: in the stellar neighborhood, hover highlights + names the nearest
+      // named star; nothing else is hoverable there.
+      if (inNeighborhood()) {
+        const mh = nbScene ? ray3dHover.intersectObjects(nbScene.namedStarPickables, false) : [];
+        const id = (mh[0]?.object.userData.starId as string | undefined) ?? null;
+        nbScene?.highlightStar(id ?? selectedStarId);
+        el3d.style.cursor = id ? 'pointer' : 'grab';
+        if (hoverData) hoverData = null;
+        return;
+      }
       // Trajectory-marker hover — set hoveredId so the matching path
       // goes bright. Independent of the tooltip hover path below:
       // trajectories don't surface a vis-viva tooltip, only a color-
@@ -3253,6 +3328,37 @@
       lmy3d = e.clientY;
       updateCam();
     };
+    // v2 neighborhood pick: named-star markers first (open the Panel), else the
+    // nearest background star (a lightweight anonymous readout).
+    function pickNeighborhood(e: { clientX: number; clientY: number }): void {
+      if (!nbScene) return;
+      const rect = el3d.getBoundingClientRect();
+      const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+      ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      const markerHits = ray3d.intersectObjects(nbScene.namedStarPickables, false);
+      if (markerHits.length) {
+        const id = markerHits[0].object.userData.starId as string | undefined;
+        if (id) {
+          void selectStarFn?.(id);
+          return;
+        }
+      }
+      // Anonymous background star — the Points threshold scales with zoom so a
+      // tap lands on the nearest star. Generous so a tap in a starry area registers.
+      ray3d.params.Points = { threshold: Math.max(0.05, camR * 0.06) };
+      const pf = ray3d.intersectObject(nbScene.fieldObject, false);
+      ray3d.params.Points = { threshold: 1 };
+      if (pf.length && pf[0].index != null) {
+        const info = nbScene.anonymousStarAt(pf[0].index);
+        if (info) {
+          anonStar = { ...info, shownAt: performance.now() };
+          return;
+        }
+      }
+      anonStar = null; // empty space — dismiss the tag
+    }
+
     const on3dMouseUp = (e: MouseEvent) => {
       const wasDrag = dragMoved3d;
       const wasPan = isPan3d;
@@ -3261,18 +3367,16 @@
       isPan3d = false;
       mouseDownOnCanvas = false;
       el3d.style.cursor = 'grab';
-      // v2: in the stellar neighborhood the solar bodies aren't rendered — don't
-      // raycast against them (selectable stars arrive in Slice 1). Orbit/zoom
-      // still work.
-      if (inNeighborhood()) return;
-      // Pan release shouldn't open a planet panel — only orbit-mode
-      // mouseup that didn't reach drag-threshold counts as a pick.
-      // Also require the mousedown to have started on the canvas —
-      // otherwise clicks on overlay buttons (panel tabs etc.) bubble
-      // mouseup to the window-level listener and raycast through to
-      // whatever 3D pickable happens to sit behind the cursor (e.g.
-      // a Kuiper-Belt torus ring under a SatellitePanel LIBRARY tab).
-      if (wasOnCanvas && !wasDrag && !wasPan && view === '3d') tryPick3d(e);
+      // Pan release shouldn't open a panel — only orbit-mode mouseup that didn't
+      // reach drag-threshold counts as a pick. Also require the mousedown to have
+      // started on the canvas — otherwise clicks on overlay buttons bubble to the
+      // window-level listener and raycast through to whatever sits behind.
+      if (wasOnCanvas && !wasDrag && !wasPan && view === '3d') {
+        // v2: in the stellar neighborhood pick named stars / anonymous stars
+        // instead of the (unrendered) solar bodies.
+        if (inNeighborhood()) pickNeighborhood(e);
+        else tryPick3d(e);
+      }
     };
     // Right-click on the canvas would otherwise pop the browser's
     // context menu; suppress so right-drag pan stays usable.
@@ -3390,7 +3494,8 @@
         e.touches.length === 0
       ) {
         const t = e.changedTouches[0];
-        tryPick3d({ clientX: t.clientX, clientY: t.clientY } as MouseEvent);
+        if (inNeighborhood()) pickNeighborhood({ clientX: t.clientX, clientY: t.clientY });
+        else tryPick3d({ clientX: t.clientX, clientY: t.clientY } as MouseEvent);
       }
     };
 
@@ -4489,7 +4594,7 @@
           // throttle. v1's render path below is untouched.
           if (inNeighborhood() && nbScene) {
             stepCrossDolly();
-            nbScene.update(camR);
+            nbScene.update(camR, camera);
             renderer.render(nbScene.scene, camera);
             return;
           }
@@ -4656,6 +4761,22 @@
         </div>
       {/if}
       <div class="scale-context">{contextLabel()}</div>
+    </div>
+  {/if}
+
+  <!-- v2 anonymous-star tag (Slice 1 Hybrid): tapping a background star shows the
+       honest facts from the catalogue — no Panel, no invented name. -->
+  {#if view === '3d' && contextId === 'neighborhood' && anonStar}
+    <div class="anon-star" role="status">
+      <span class="anon-title">Unnamed star</span>
+      <span class="anon-facts">
+        {anonStar.distLy.toLocaleString(undefined, { maximumFractionDigits: 1 })} ly · mag {anonStar.mag.toFixed(
+          1,
+        )} · {anonStar.colorName} (~{anonStar.kelvin.toLocaleString()} K)
+      </span>
+      <button type="button" class="anon-close" aria-label="Dismiss" onclick={() => (anonStar = null)}
+        >×</button
+      >
     </div>
   {/if}
 
@@ -5319,6 +5440,9 @@
 
 <SunPanel sun={localizedSun} open={panelState.sun} onClose={closeSunPanel} />
 
+<!-- v2 named-star detail (Slice 1). closeStarFn set in onMount. -->
+<StarPanel star={localizedStar} open={panelState.star} onClose={() => closeStarFn?.()} />
+
 <SmallBodyPanel
   body={selectedSmallBody}
   open={panelState.smallBody}
@@ -5616,6 +5740,52 @@
       display: inline-flex;
       align-items: center;
     }
+  }
+
+  /* v2 anonymous-star tag — top-centre, dismissible. */
+  .anon-star {
+    position: absolute;
+    top: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: min(92vw, 420px);
+    padding: 8px 10px 8px 12px;
+    background: rgba(6, 10, 22, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    backdrop-filter: blur(5px);
+    font-family: 'Space Mono', monospace;
+    color: #dde4ff;
+  }
+  .anon-title {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    flex: 0 0 auto;
+  }
+  .anon-facts {
+    font-size: 12px;
+    color: #eaf6ff;
+    min-width: 0;
+  }
+  .anon-close {
+    flex: 0 0 auto;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 4px;
+    min-height: 28px;
+  }
+  .anon-close:hover {
+    color: #fff;
   }
 
   /* Warp flash overlay — a soft radial bloom that masks the boundary cut. */

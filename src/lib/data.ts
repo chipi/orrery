@@ -1747,6 +1747,66 @@ export async function getDataSources(): Promise<DataSourcesManifest> {
   return get<DataSourcesManifest>('data-sources.json');
 }
 
+// ─── Named stars (PRD-030 / RFC-032 — /explore v2 Slice 1) ─────────────────
+// The curated ~60 stars that get a marker + label + Panel in the stellar
+// neighborhood. Base record from HYG; per-locale editorial overlay (description,
+// facts, library) merged via getNamedStarI18n.
+export interface NamedStar {
+  id: string;
+  hip: number | null;
+  proper: string;
+  con: string | null;
+  spect: string | null;
+  dist_pc: number;
+  mag: number;
+  absmag: number;
+  bv: number | null;
+  x: number;
+  y: number;
+  z: number;
+}
+
+export interface NamedStarOverlay {
+  /** Localized proper name (falls back to the base `proper`). */
+  name?: string;
+  /** One-line overview. */
+  fact?: string;
+  /** Longer editorial paragraph. */
+  bio?: string;
+  /** Cultural / navigational significance across traditions. */
+  cultural?: string;
+  library?: Array<{ id: string; label: string; url: string; tier: 'intro' | 'core' | 'deep' }>;
+}
+
+export type LocalizedNamedStar = NamedStar & NamedStarOverlay;
+
+interface NamedStarsManifest {
+  schema_version: number;
+  count: number;
+  stars: NamedStar[];
+}
+
+export async function getNamedStars(fetchFn: FetchLike = fetch): Promise<NamedStar[]> {
+  const doc = await get<NamedStarsManifest>('universe/named-stars.json', fetchFn).catch(() => null);
+  return doc?.stars ?? [];
+}
+
+export async function getNamedStarI18n(
+  locale: string,
+  id: string,
+  fetchFn: FetchLike = fetch,
+): Promise<NamedStarOverlay | null> {
+  const overlay = await get<NamedStarOverlay>(
+    `i18n/${locale}/universe/named-stars/${id}.json`,
+    fetchFn,
+  ).catch(() => null);
+  if (overlay) return overlay;
+  if (locale === 'en-US') return null;
+  return get<NamedStarOverlay>(`i18n/en-US/universe/named-stars/${id}.json`, fetchFn).catch(
+    () => null,
+  );
+}
+
 // ─── Audio provenance (PRD-016 §transparency / RFC-019 §5.4) ─────────────
 // Mirrors the image-provenance pattern. Read by /credits to surface every
 // audio asset's text-author + voice-provider attribution.

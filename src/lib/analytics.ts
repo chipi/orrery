@@ -158,6 +158,7 @@ export type ClickKind =
   | 'small-body'
   | 'satellite'
   | 'belt'
+  | 'star'
   | 'mission'
   | 'fleet'
   | 'marker'

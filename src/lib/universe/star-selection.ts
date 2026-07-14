@@ -20,6 +20,10 @@ export interface StarFieldArrays {
   colors: Float32Array;
   /** Per-point base size (world units), brighter stars larger. */
   sizes: Float32Array;
+  /** Apparent magnitude per point (kept for the anonymous-pick readout). */
+  mags: Float32Array;
+  /** B−V colour index per point (kept for the anonymous-pick readout). */
+  cis: Float32Array;
 }
 
 /**
@@ -55,6 +59,8 @@ export function selectVisibleStars(shells: ShellData[], budget: StarBudget): Sta
   const positions = new Float32Array(count * 3);
   const colors = new Float32Array(count * 3);
   const sizes = new Float32Array(count);
+  const mags = new Float32Array(count);
+  const cis = new Float32Array(count);
 
   for (let i = 0; i < count; i++) {
     const [x, y, z, mag, ci] = within[i];
@@ -66,7 +72,9 @@ export function selectVisibleStars(shells: ShellData[], budget: StarBudget): Sta
     colors[i * 3 + 1] = g;
     colors[i * 3 + 2] = b;
     sizes[i] = magnitudeToPointSize(mag);
+    mags[i] = mag;
+    cis[i] = ci;
   }
 
-  return { count, positions, colors, sizes };
+  return { count, positions, colors, sizes, mags, cis };
 }

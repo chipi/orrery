@@ -43,6 +43,13 @@
       "md": "The genuine economic argument for asteroid resources begins exactly here, and it runs in the direction opposite to the headline. Instead of bringing material from asteroids to Earth, the question is: can we use material that is *already* above Earth's gravity well to avoid lifting it from the surface? Can we, in effect, find a fuel depot and a hardware store already in orbit — or close enough that the delivery cost is measured in fractions of a km/s rather than ten km/s — and stop paying the launch toll on every kilogram of material a deep-space economy needs? The answer, if the recon missions are to be believed, is yes. But not for gold. For water."
     },
     {
+      "type": "figure",
+      "image": "essays/asteroid-mining/the-well",
+      "kind": "diagram",
+      "caption": "Every kilogram launched from Earth pays a brutal toll in delta-v just to climb out of the planet’s gravity well. Anything already in space — an asteroid drifting above the rim — has that price paid. Which is why a litre of water parked in orbit is worth more than a litre of gold sitting on the ground.",
+      "align": "wide"
+    },
+    {
       "type": "heading",
       "text": "Water is the ore"
     },
@@ -57,6 +64,13 @@
     {
       "type": "prose",
       "md": "Beyond propellant, water provides oxygen for breathing. The same carbonaceous material provides carbon and nitrogen. The bulk mass — rock, in most cases, not metal — provides radiation shielding: a spacecraft transiting to Mars is outside Earth's magnetosphere for six to nine months, and lifting enough mass to shield a crew from cosmic rays costs enormously if every kilogram has to be launched from Earth's surface. None of this has the glamour of platinum. All of it is more valuable to a space-based economy than platinum is. The argument is not about treasure. It is about [in-situ resource utilisation](/science/life-in-space/isru-resource-utilization) — the only approach that makes sustained human presence beyond Earth physically feasible — and the resource that matters most is not the rarest or most expensive one, but the one that is most expensive to launch from Earth: propellant mass. The [going-to-the-moon essay](/essays/going-to-the-moon) makes the same case at the lunar south pole, for the same reasons. The Moon and carbonaceous near-Earth asteroids are the same argument in two different places."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/water-is-the-ore",
+      "kind": "diagram",
+      "caption": "Split asteroid water and you have hydrogen and oxygen — rocket propellant — plus air to breathe, water to drink, and bulk rock for radiation shielding. The prize was never metal to sell back home; it is a fuel depot that is already in the sky.",
+      "align": "wide"
     },
     {
       "type": "heading",
@@ -79,6 +93,21 @@
       "md": "NASA's [OSIRIS-REx](/missions?id=osiris-rex) reached the carbonaceous asteroid Bennu in December 2018 and spent almost two years mapping it before performing its Touch-And-Go sample collection in October 2020. The capsule returned to Earth in September 2023 with approximately 120 grams of material — the largest sample ever returned from an asteroid. Analysis confirmed hydrated clay minerals and carbon-rich compounds: the same ingredients the Hayabusa2 team found at Ryugu, on a different body, reached by a different nation, via a different trajectory. The result was the same. This is not a coincidence. It is confirmation that the C-type carbonaceous composition — water-bearing, organic-rich — is the rule for these bodies, not the exception."
     },
     {
+      "type": "figure",
+      "image": "essays/asteroid-mining/the-recon",
+      "kind": "diagram",
+      "caption": "Three robotic missions have already touched and sampled asteroids: Japan’s Hayabusa (Itokawa, 2010, the first ever), Hayabusa2 (Ryugu, 2020), and NASA’s OSIRIS-REx (Bennu, 2023). What came back was water-bearing clay and organics — from loose rubble, not solid metal.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/hayabusa2/01",
+      "kind": "photo",
+      "caption": "Hayabusa2 at Ryugu — JAXA’s second asteroid sample return, and the mission bold enough to fire a copper impactor into the surface to blast open a fresh crater before scooping up what it exposed.",
+      "align": "wide",
+      "credit": "JAXA"
+    },
+    {
       "type": "heading",
       "text": "Rubble, not rock"
     },
@@ -93,6 +122,14 @@
     {
       "type": "prose",
       "md": "Hayabusa2's impactor experiment confirmed the same picture from a different angle. Its 2.5-kg copper impactor created a crater roughly 14 metres in diameter and 2 metres deep — larger than predicted, because the surface was more porous than expected. The [DART](/missions?id=dart) mission, which in September 2022 redirected the asteroid Dimorphos by deliberately crashing a spacecraft into it, produced an ejecta plume and an orbital period change both larger than solid-body models predicted — consistent, again, with a loosely bound aggregate. Working in that environment is not a matter of scaling up terrestrial mining and adding vacuum suits. Anchoring against a surface you cannot push against, excavating material that floats away at centimetres per second, containing ejecta in microgravity — these are unsolved engineering problems unlike anything in the history of extraction industry. The science is confirmed. The engineering has not yet begun in earnest."
+    },
+    {
+      "type": "figure",
+      "image": "missions/osiris-rex/01",
+      "kind": "photo",
+      "caption": "OSIRIS-REx reaching down to touch Bennu — and finding not solid ground but a rubble pile so loosely bound that the sampling head sank straight in, nearly swallowing the arm. “Mining” a body like this is unlike anything ever done on Earth.",
+      "align": "wide",
+      "credit": "NASA/Goddard/University of Arizona"
     },
     {
       "type": "heading",

@@ -58,6 +58,7 @@
     type LocalizedNamedStar,
   } from '$lib/data';
   import StarPanel from '$lib/components/StarPanel.svelte';
+  import StarIndex from '$lib/components/StarIndex.svelte';
   import type { AnonymousStar } from '$lib/universe/anonymous-star';
   import { localeFromPage } from '$lib/locale';
   import { createIconicSelectionService } from './iconic-selection.svelte';
@@ -848,6 +849,8 @@
   // Constellation-line overlay toggle (neighborhood only).
   let showConstellations = $state(false);
   let setConstellationsFn: ((on: boolean) => void) | null = null;
+  // Named-star index (search + list) open state.
+  let starIndexOpen = $state(false);
   const rungLadder: ScaleRung[] = RUNG_LADDER;
   const fmtScale = (value: number): string =>
     value >= 1000 || value < 0.01
@@ -944,6 +947,9 @@
   // Set in onMount; lets the star index / ?goto= resolver select a named star.
   let selectStarFn: ((id: string) => void) | null = null;
   let closeStarFn: (() => void) | null = null;
+  // ?goto= deep-link (crosses + selects + frames) and index selection (selects + frames).
+  let gotoStarFn: ((id: string) => void) | null = null;
+  let indexSelectStarFn: ((id: string) => void) | null = null;
 
   // Panel mutex: each select* below opens its own panel and explicitly
   // closes the four other planet/sun/smallBody/satellite/belt panels.
@@ -1103,6 +1109,37 @@
   });
   afterNavigate((nav) => {
     if (nav.to?.url) trackCardNavigation(nav.to.url, nav.type);
+  });
+
+  // v2 ?goto=<starId> — deep-link into the neighborhood + select + frame a named
+  // star. Resolves each distinct value once (the URL-sync below re-writes the same
+  // value, which must not re-fire the resolver).
+  let lastGoto: string | null = null;
+  $effect(() => {
+    const g = $page.url.searchParams.get('goto');
+    // gotoStarFn is set in onMount and isn't reactive, so a cold-load ?goto= is
+    // resolved directly in onMount; this handles later in-session URL changes.
+    if (g && g !== lastGoto && gotoStarFn) {
+      lastGoto = g;
+      gotoStarFn(g);
+    }
+  });
+  // Mirror the open star panel into ?goto= (shallow, no history), like ?id= above.
+  let openStarUrlId = $derived(panelState.star && selectedStarId ? selectedStarId : null);
+  let everOpenedStar = false;
+  $effect(() => {
+    const id = openStarUrlId;
+    if (id) everOpenedStar = true;
+    untrack(() => {
+      const url = new URL($page.url);
+      const cur = url.searchParams.get('goto') ?? null;
+      if (cur !== id && (id || everOpenedStar)) {
+        if (id) url.searchParams.set('goto', id);
+        else url.searchParams.delete('goto');
+        lastGoto = id; // keep the resolver from re-firing on our own write
+        replaceState(url, $page.state);
+      }
+    });
   });
 
   // #306 deep-link from MissionPanel "See path on /explore" — `?paths=1`
@@ -2755,6 +2792,43 @@
       selectedStarId = null;
       localizedStar = null;
       nbScene?.highlightStar(null);
+    }
+    // Orient the camera to face a star (index / ?goto= landing). The camera orbits
+    // the Sun; we point the view down the star's direction and pull to a framing
+    // distance. Canvas picks don't frame (the star is already under the cursor).
+    function frameStar(id: string): void {
+      const s = namedStarById.get(id);
+      if (!s || !inNeighborhood()) return;
+      const len = Math.hypot(s.x, s.y, s.z) || 1;
+      const dx = -s.x / len;
+      const dy = -s.y / len;
+      const dz = -s.z / len;
+      camP = Math.acos(Math.max(-1, Math.min(1, dy)));
+      camT = Math.atan2(dx, dz);
+      // Frame at a comfortable distance, capped so distant stars don't zoom the
+      // whole neighborhood out into a crowded label cluster.
+      camR = Math.max(camRMin, Math.min(18, s.dist_pc * 0.6 + 3));
+      dollyActive = false;
+      updateCam();
+    }
+    async function gotoStar(id: string): Promise<void> {
+      if (!inNeighborhood()) await crossOutToNeighborhood();
+      if (!namedStarById.has(id)) return;
+      await selectStar(id);
+      frameStar(id);
+    }
+    gotoStarFn = gotoStar;
+    indexSelectStarFn = (id: string) => {
+      void selectStar(id);
+      frameStar(id);
+    };
+    // Resolve a cold-load ?goto=<starId> now that the handlers exist.
+    {
+      const g0 = new URL(window.location.href).searchParams.get('goto');
+      if (g0) {
+        lastGoto = g0;
+        void gotoStar(g0);
+      }
     }
     // Exposed to the template (index / ?goto=) via a top-level binding.
     selectStarFn = selectStar;
@@ -4731,6 +4805,15 @@
       <button
         type="button"
         class="nb-chip"
+        class:active={starIndexOpen}
+        aria-pressed={starIndexOpen}
+        onclick={() => (starIndexOpen = !starIndexOpen)}
+      >
+        Stars
+      </button>
+      <button
+        type="button"
+        class="nb-chip"
         class:active={showConstellations}
         aria-pressed={showConstellations}
         onclick={() => {
@@ -4741,6 +4824,16 @@
         Constellations
       </button>
     </div>
+    <StarIndex
+      stars={namedStars}
+      open={starIndexOpen}
+      selectedId={selectedStarId}
+      onSelect={(id) => {
+        indexSelectStarFn?.(id);
+        starIndexOpen = false;
+      }}
+      onClose={() => (starIndexOpen = false)}
+    />
   {/if}
 
   <!-- v2 scale ruler (PRD-030 / RFC-032): the fitting distance measure for the

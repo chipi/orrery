@@ -1,9 +1,9 @@
 {
   "name": "Chang'e 4 / Yutu-2",
-  "mission_type": "Ungeschraubter Lander · Rover (Rückseite)",
+  "mission_type": "Unbemannte Lander · Rover (Rückseite)",
   "site_name": "Von-Kármán-Krater",
   "crew": [],
-  "left": "Lander Chang'e 4 · Rover Yutu-2 (noch aktiv)",
-  "fact": "Das erste Raumschiff, das auf der anderen Seite des Mondes landete – technisch und operativ die härteste Mondlandung, die jemals versucht wurde. Erforderlich ist ein Relaissatellit (Queqiao) auf L2, da die andere Seite keinen direkten Funkkontakt mit der Erde hat. Yutu-2 hat mehr als 1,9 km zurückgelegt und ist immer noch aktiv. Die andere Seite war noch nie besucht worden.",
-  "capability": "Demonstrierte Relais-Satelliten-Kommunikationsarchitektur für Operationen außerhalb der direkten Sichtlinie – genau das Muster, das jede Mars-Rückseite oder Polarmission benötigt."
+  "left": "Chang'e-4-Lander · Yutu-2-Rover (seit März 2024 stationär)",
+  "fact": "Das erste Raumfahrzeug, das auf der Mondrückseite landete — technisch und operativ das schwierigste Mondlandemanöver, das je versucht wurde. Erforderte einen Relaissatelliten (Queqiao) bei L2, da die Rückseite keine direkte Funkverbindung zur Erde hat. Der Yutu-2-Rover fuhr über 1,6 km weit, bevor er im März 2024 stationär wurde; die Telemetrie lief mindestens bis September 2024 weiter. Die Rückseite war zuvor noch nie besucht worden.",
+  "capability": "Demonstrierte eine Relais-Satellit-Kommunikationsarchitektur für den Betrieb ohne direkte Sichtlinie — genau das Muster, das jede Mars-Rückseite oder Polarmission benötigen wird."
 }

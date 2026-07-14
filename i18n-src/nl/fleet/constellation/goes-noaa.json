@@ -1,6 +1,6 @@
 {
   "name": "GOES (NOAA Weather)",
-  "tagline": "NOAA geostationaire weerpaar — doorlopende dekking van Amerika",
-  "description": "Geostationary Operational Environmental Satellite — NOAA's geostationaire weerpaar. GOES-East op 75,2° W en GOES-West op 137,0° W bieden doorlopende dekking van Amerika. De huidige generatie GOES-R-serie (GOES-16, 17, 18, 19) draagt de Advanced Baseline Imager die mesoscale scans van 30 seconden kan maken voor orkaankernen en het volgen van zware stormen. Gebouwd door Lockheed Martin; dataproducten zijn vrij beschikbaar.",
-  "best_known_for": "NOAA geostationaire weerpaar — doorlopende dekking van Amerika"
+  "tagline": "NOAA geostationaire weerpaar — continue dekking Amerika",
+  "description": "Geostationary Operational Environmental Satellite — NOAA's geostationaire weerpaar. GOES-19 (GOES-East op 75,2° W) en GOES-18 (GOES-West op 137,0° W) vormen het operationele paar vanaf april 2025 en verzorgen continue dekking van Amerika. GOES-16 wordt als backup opgeslagen; GOES-17 werd in januari 2023 uit bedrijf gesteld. De GOES-R-serie beschikt over de Advanced Baseline Imager, die scans van 30 seconden op mesochaotische schaal mogelijk maakt voor orkaan-kerntracking en waarschuwing voor ernstige storms. Gebouwd door Lockheed Martin; gegevensproducten vrij beschikbaar.",
+  "best_known_for": "NOAA geostationaire weerpaar — continue dekking Amerika"
 }

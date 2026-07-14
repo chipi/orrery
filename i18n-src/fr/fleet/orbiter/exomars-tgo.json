@@ -1,6 +1,6 @@
 {
   "name": "ExoMars TGO",
-  "tagline": "Analyse des gaz traces + relais de surface ESA/NASA",
-  "description": "Le Trace Gas Orbiter de l'ESA, en orbite autour de Mars depuis 2016. Il analyse l'atmosphère à la recherche de méthane et de vapeur d'eau pouvant indiquer une activité biologique ou géologique, et relaye les données des rovers de surface dont Perseverance et Curiosity.",
-  "best_known_for": "Analyse des gaz traces sur Mars ; relais pour les missions de surface ESA et NASA"
+  "tagline": "Analyse des gaz mineurs + relais surface ESA/NASA",
+  "description": "L'orbiteur Trace Gas Orbiter de l'ESA, en orbite autour de Mars depuis 2016. Il analyse l'atmosphère pour détecter le méthane et la vapeur d'eau qui pourraient témoigner d'une activité biologique ou géologique, et relaie les données des missions de surface martiennes via son relais UHF.",
+  "best_known_for": "Analyse des gaz mineurs sur Mars ; relais pour les missions de surface de l'ESA et de la NASA"
 }

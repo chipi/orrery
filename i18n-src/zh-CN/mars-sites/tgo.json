@@ -1,7 +1,7 @@
 {
   "name": "ExoMars Trace Gas Orbiter",
-  "mission_type": "Active Orbiter · 2016 – present",
-  "site_name": "Circular ~400 km, 74° inclination",
-  "fact": "ExoMars 2016 mission's surviving half (Schiaparelli was the lander). Characterises atmospheric methane, water vapour, and other trace gases at part-per-trillion sensitivity. The methane question — was it real? was it biological? — is what TGO was built to settle. So far, the data favour the conclusion that earlier reports of methane plumes were measurement artefacts.",
-  "capability": "Highest-sensitivity atmospheric trace-gas mapping at any planet."
+  "mission_type": "主动轨道器 · 2016 – 至今",
+  "site_name": "圆形轨道，约 400 km，倾角 74°",
+  "fact": "ExoMars 2016 任务的仅存成员（着陆器 Schiaparelli 已坠毁）。以万亿分之一的灵敏度特征化大气中的甲烷、水蒸气和其他痕量气体。未发现甲烷浓度超过 0.05 ppbv——远低于所有先前宣称的检测——这加深而非解决了甲烷之谜。好奇号的表面级检测仍然无法解释。",
+  "capability": "任何行星上灵敏度最高的大气痕量气体制图。"
 }

@@ -1,7 +1,7 @@
 {
-  "name": "Il lander Viking 1",
+  "name": "Viking 1 lander",
   "mission_type": "Lander senza equipaggio · Missione completata",
-  "site_name": "Crise Planitia",
-  "fact": "Prima missione sulla superficie di Marte pienamente riuscita. Viking 1 ha operato per oltre sei anni sulla superficie: la missione di lander su Marte di più lunga durata fino a quando Opportunity non ha battuto il record nel 2010. Ha restituito le prime immagini a colori dalla superficie marziana, ha condotto i primi esperimenti di rilevamento della vita (risultati notoriamente inconcludenti) e ha caratterizzato la regolite e il tempo.",
-  "capability": "La prima scienza marziana in situ di lunga durata: ogni lander moderno funziona secondo il programma di Viking."
+  "site_name": "Chryse Planitia",
+  "fact": "Prima missione di superficie su Marte completamente riuscita. Viking 1 operò sulla superficie per oltre sei anni — la missione di superficie a lunga durata più lunga fino a quando Opportunity (un rover) stabilì il nuovo record nel 2010. Restituì le prime immagini a colori dalla superficie marziana, condusse i primi esperimenti di rilevamento della vita (risultati notoriamente inconclusivi) e caratterizzò il regolite e le condizioni meteorologiche.",
+  "capability": "Prima scienza in-situ marziana a lunga durata — ogni lander moderno si basa sul modello di Viking."
 }

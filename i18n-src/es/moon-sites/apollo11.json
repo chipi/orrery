@@ -1,9 +1,12 @@
 {
   "name": "Apollo 11",
-  "mission_type": "Aterrizador tripulado",
+  "mission_type": "Módulo lunar tripulado",
   "site_name": "Mare Tranquillitatis",
-  "crew": ["Neil Armstrong", "Buzz Aldrin"],
-  "left": "Etapa de descenso · ALSEP · retrorreflector láser · bandera · placa: \"Vinimos en paz para toda la humanidad\"",
-  "fact": "Los primeros humanos en la Luna. Vistos en directo por ~600 millones de personas — una quinta parte de la humanidad. El retrorreflector láser colocado por Armstrong y Aldrin sigue recibiendo pulsos hoy, midiendo la distancia Tierra-Luna con precisión milimétrica. Las huellas en el regolito sin aire sobrevivirán sin cambios durante un millón de años.",
-  "capability": "Primer aterrizaje humano — demostró que las operaciones tripuladas en superficie planetaria son posibles. La escala de capacidades hacia Marte comienza aquí."
+  "crew": [
+    "Neil Armstrong",
+    "Buzz Aldrin"
+  ],
+  "left": "Etapa de descenso · EASEP · retrorrefletor láser · bandera · placa: «Vinimos en paz para toda la humanidad»",
+  "fact": "Los primeros humanos en la Luna. Observado en directo por ~600 millones de personas —aproximadamente una de cada seis personas en la Tierra en ese momento. El retrorrefletor láser colocado por Armstrong y Aldrin sigue recibiendo impulsos hoy en día, midiendo la distancia Tierra-Luna con precisión milimétrica. Las huellas en el regolito sin atmósfera perdurarán sin cambios durante un millón de años.",
+  "capability": "Primer aterrizaje humano — demostró que las operaciones tripuladas en superficies planetarias son posibles. La escalera de capacidades para Marte comienza aquí."
 }

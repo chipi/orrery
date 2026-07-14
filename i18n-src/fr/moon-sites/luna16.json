@@ -1,9 +1,9 @@
 {
   "name": "Luna 16",
-  "mission_type": "Robotic Sample Return",
+  "mission_type": "Retour robotisé d'échantillons",
   "site_name": "Mare Fecunditatis",
   "crew": [],
-  "left": "Descent stage with cabling, ascent stage launch base",
-  "fact": "First fully robotic sample return from another world — September 1970. Drilled into the lunar regolith with an articulated rotary drill, transferred 101 g of dust + small rock fragments into a sealed return capsule, then launched directly back to Earth without orbital rendezvous. Landed in Kazakhstan a day later. Three Luna sample returns followed (17 / 20 / 24).",
-  "capability": "Proved end-to-end robotic sample return is feasible — the capability that underwrites Mars Sample Return today."
+  "left": "Étage de descente avec câblage, base de lancement d'étage d'ascension",
+  "fact": "Premier retour d'échantillons entièrement robotisé d'un autre monde — septembre 1970. A foré dans le régolithe lunaire avec un foret rotatif articulé, transféré 101 g de poussière et petits fragments rocheux dans une capsule de retour scellée, puis lancé directement vers la Terre sans rendez-vous orbital. Atterri au Kazakhstan trois jours plus tard. Deux autres retours d'échantillons Luna ont suivi (Luna 20 en 1972, Luna 24 en 1976).",
+  "capability": "A prouvé que le retour robotisé d'échantillons de bout en bout est réalisable — la capacité qui sous-tend Mars Sample Return aujourd'hui."
 }

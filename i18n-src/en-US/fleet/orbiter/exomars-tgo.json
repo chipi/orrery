@@ -1,6 +1,6 @@
 {
   "name": "ExoMars TGO",
   "tagline": "Trace-gas analysis + ESA/NASA surface relay",
-  "description": "ESA's Trace Gas Orbiter, in orbit at Mars since 2016. Sniffs the atmosphere for methane and water vapor that could hint at biology or geology, and relays data for surface rovers including Perseverance and Curiosity.",
+  "description": "ESA's Trace Gas Orbiter, in orbit at Mars since 2016. Sniffs the atmosphere for methane and water vapor that could hint at biology or geology, and relays data for Mars surface missions via its UHF relay.",
   "best_known_for": "Trace gas analysis at Mars; relay for ESA and NASA surface missions"
 }

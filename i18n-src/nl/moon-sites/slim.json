@@ -1,9 +1,9 @@
 {
   "name": "SLIM",
-  "mission_type": "Precisielandingsvaartuig",
-  "site_name": "Bij Shioli-krater",
+  "mission_type": "Precisielander",
+  "site_name": "Bij Shioli Crater",
   "crew": [],
   "left": "SLIM-lander · twee micro-rovers (LEV-1, LEV-2)",
-  "fact": "Japan's Smart Lander demonstreerde precisielanding — gericht op binnen 100 m nauwkeurigheid versus de km-schaal standaard van alle eerdere missies. Landde gekanteld, primaire stroom verloren, maar uiteindelijk waren de zonnepanelen naar de zon gericht en hervatten de operaties. Japan werd de vijfde natie die een zachte maanlanding bereikte.",
-  "capability": "Precisielanding-nauwkeurigheid — overbrugt de kloof tussen 'we kunnen ergens op dit hemellichaam landen' en 'we kunnen op de specifieke wetenschappelijk waardevolle rots landen', de voorwaarde voor oppervlakte-actief-rendezvous op Mars."
+  "fact": "De Smart Lander van Japan demonstreerde nauwkeurig precisielanden — gericht op 100 m nauwkeurigheid tegenover de kilometers-schaal standaard van alle eerdere missies. Geland met de neus omlaag op ongeveer 90° van de beoogde oriëntatie, waardoor de zonnepanelen aanvankelijk van de zon af wezen; operaties hervat negen dagen later toen de zonhoek verschoof. Japan werd het vijfde land dat een maanlandingsprecisie-landing bereikte.",
+  "capability": "Nauwkeurige landingsaccuraatheid — overbrugt de kloof tussen 'we kunnen ergens op dit hemellichaam landen' en 'we kunnen landen op de specifieke wetenschappelijk waardevolle steen', de voorwaarde voor oppervlakteactivatenbereikbaarheid op Mars."
 }

@@ -1,12 +1,12 @@
 {
   "name": "Apollo 12",
-  "mission_type": "Lander mit Besatzung",
+  "mission_type": "Bemannte Mondlandefähre",
   "site_name": "Oceanus Procellarum",
   "crew": [
     "Pete Conrad",
     "Alan Bean"
   ],
-  "left": "Abstiegsphase · ALSEP · Flagge · geborgene Teile von Surveyor 3",
-  "fact": "Die Punktlandung – Conrad landete 183 m von der unbemannten Sonde Surveyor 3 entfernt (1967). Sie holten Teile davon für die Rückkehr zur Erde zurück und zeigten, dass Raumschiffe Jahre auf dem Mond unbeschadet durch Strahlung oder Mikrometeoriten überleben. Ein Proof-of-Concept für zukünftige Rendezvous-Missionen.",
-  "capability": "Erste Präzisionslandung an einem bestimmten Punkt – die Voraussetzung für jede Rendezvous-Architektur zur Probenrückgabe, einschließlich des Mars."
+  "left": "Abstiegsmodul · ALSEP · Flagge · geborgene Teile von Surveyor 3",
+  "fact": "Die Präzisionslandung — Conrad setzte innerhalb von ~163 m der unbemannten Sonde Surveyor 3 (1967) auf. Sie bargen Teile davon für die Rückkehr zur Erde und zeigten, dass Raumfahrzeuge jahrelang auf dem Mond unbeschädigt von Strahlung oder Mikrometeoriten überstehen. Ein Machbarkeitsnachweis für zukünftige Rendezvous-Missionen.",
+  "capability": "Erste Präzisionslandung an einem designierten Punkt — die Voraussetzung für jede Probenrückführungs-Rendezvous-Architektur, einschließlich Mars."
 }

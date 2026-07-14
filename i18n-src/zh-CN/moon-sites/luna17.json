@@ -1,9 +1,9 @@
 {
   "name": "Luna 17 / Lunokhod 1",
-  "mission_type": "Uncrewed Rover",
-  "site_name": "Mare Imbrium",
+  "mission_type": "无人漫游车",
+  "site_name": "雨海",
   "crew": [],
-  "left": "Lunokhod 1 rover (322 kg), descent stage",
-  "fact": "The first remote-controlled rover to operate on another world. Drove 10.5 km over 322 days, photographing over 20,000 images. Lost to history until 2010, when the Lunar Reconnaissance Orbiter spotted it from orbit — still sitting exactly where it stopped.",
-  "capability": "First teleoperated rover — established the architecture every Mars rover from Sojourner to Perseverance has built on."
+  "left": "月球车1号（756 kg）、下降级",
+  "fact": "首台在其他星体上运作的远程遥控漫游车。历时322天共行驶10.5 km，拍摄了超过20,000张图像。直到2010年才被重新发现，当时月球勘测轨道器从太空中发现了它——仍然静止在它停止的确切位置。",
+  "capability": "首台遥操作漫游车——建立了从Sojourner到Perseverance的每一台火星漫游车都基于的架构。"
 }

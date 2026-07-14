@@ -19,6 +19,7 @@ export const NATION_COLORS: Record<string, string> = {
   India: '#FF9933',
   Japan: '#003087',
   UAE: '#00732F',
+  Israel: '#0038B8',
 };
 
 /** Collapse USSR + Russia to a single legend key (the lineage reads

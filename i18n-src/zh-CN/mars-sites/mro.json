@@ -1,7 +1,7 @@
 {
   "name": "Mars Reconnaissance Orbiter",
-  "mission_type": "Active Orbiter · 2006 – present",
-  "site_name": "Sun-synchronous polar orbit, ~255 km",
-  "fact": "MRO's HiRISE camera resolves objects ≥30 cm on the Martian surface — sharp enough to find Beagle 2's wreckage in 2015 and to image Curiosity and Perseverance from orbit. Acts as the primary high-bandwidth relay for surface assets.",
-  "capability": "Highest-resolution orbital imaging of any planet; the eyes-in-the-sky for every recent Mars surface mission."
+  "mission_type": "活跃轨道器 · 2006 – 至今",
+  "site_name": "太阳同步极地轨道，~255 km",
+  "fact": "MRO 的 HiRISE 相机像素分辨率为 25 厘米——足够清晰，可在 2015 年发现小猎犬 2 号的残骸，并从轨道上对火星车和毅力号进行成像。作为地面资产的主要宽带中继。",
+  "capability": "任何行星中分辨率最高的轨道成像；是近期每一次火星地面任务的眼睛。"
 }

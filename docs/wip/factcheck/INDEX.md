@@ -1,4 +1,4 @@
-# Missions + Science fact-check — master index (2026-07-14)
+# Missions + Science + Fleet fact-check — master index (2026-07-14)
 
 The `science-reviewer` swept all **123 mission editorials** + **130 science
 overlays** (253 items), batched across 25 reviewer agents. Each batch's detail
@@ -31,6 +31,11 @@ Severity: 🔴 wrong fact · 🟠 claim > evidence · 🟡 needs source/softenin
 - `life-b/surface-mobility-rovers` — LRV "27 km record"→35.7 km, "57 km range"→92 km; `lunar-surface-ops` top speed 13→18 km/h. → science-life-b.
 - `space-stations/pressurized-volume` — total vs habitable conflation + wrong Tiangong figure. → science-space-stations.
 - Many overlay↔base internal contradictions (dates/durations): rosetta 60 vs 64 h, giotto dust-impact 14 vs 2 s, hayabusa1 reaction-wheel count, mars3 110 vs 14.5 s, apollo9 stage swap, liberty-bell-7 "MR-8"→MR-4, shenzhou-1 one-day date error.
+
+## Fleet launchers (19 slugs — Batch A)
+- `fleet-launcher-a.md` — antares, ariane-1, ariane-5, ariane-6, atlas-lv-3b, atlas-slv-3d, atlas-v, delta-ii, energia, falcon-9, falcon-heavy, h-iia, h3, long-march-2f, long-march-3b, long-march-5, long-march-7, lvm3, mercury-redstone
+  - **0🔴 · 10🟠 · 5🟡 · 10🔵** across 25 findings
+  - Key 🟠 issues: Antares status ACTIVE (230+ retired 2023); Energia tagline implies 1 flight (flew twice); Falcon 9 Block 5 name vs 2010 first_flight mismatch; H-IIA overlay says "retired after first flight 2001" (actually 50 flights, retired June 2025); H3 first_flight "2024" erases the 2023 failure; Atlas V agency="NASA" (should be ULA); LVM3 first_flight "2014" is suborbital test (orbital debut 2017); Falcon Heavy "second-most-powerful" contestable with Starship; Ariane 5 "Galileo" risks confusion with NASA Galileo probe
 
 ## Detail files (25)
 

@@ -1,9 +1,12 @@
 {
   "name": "Apollo 12",
-  "mission_type": "Crewed Lander",
-  "site_name": "Oceanus Procellarum",
-  "crew": ["Pete Conrad", "Alan Bean"],
-  "left": "Descent stage · ALSEP · flag · retrieved parts of Surveyor 3",
-  "fact": "The precision landing — Conrad touched down within 183 m of the uncrewed Surveyor 3 probe (1967). They retrieved pieces of it for return to Earth, showing spacecraft survive years on the Moon undamaged by radiation or micrometeorites. A proof-of-concept for future rendezvous missions.",
-  "capability": "First precision landing at a designated point — the prerequisite for any sample-return rendezvous architecture, including Mars."
+  "mission_type": "有人着陆器",
+  "site_name": "风暴洋",
+  "crew": [
+    "Pete Conrad",
+    "Alan Bean"
+  ],
+  "left": "下降级 · ALSEP · 国旗 · 从勘测器3号回收的部件",
+  "fact": "精准着陆——康拉德在距离无人的勘测器3号探针（1967年）约163米范围内着陆。他们回收了其中的部件运回地球，证明航天器在月球上能够经历数年而不受辐射或微陨石损害。这是未来交会任务的概念验证。",
+  "capability": "首次在指定点实现精准着陆——这是任何样品采集交会架构（包括火星任务）的前提条件。"
 }

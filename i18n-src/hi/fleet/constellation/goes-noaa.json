@@ -1,6 +1,6 @@
 {
   "name": "GOES (NOAA Weather)",
-  "tagline": "NOAA भूस्थिर मौसम युग्म — अमेरिका की निरंतर कवरेज",
-  "description": "Geostationary Operational Environmental Satellite — NOAA का भूस्थिर मौसम युग्म। GOES-East 75.2° W पर और GOES-West 137.0° W पर अमेरिका की निरंतर कवरेज प्रदान करते हैं। वर्तमान पीढ़ी की GOES-R श्रृंखला (GOES-16, 17, 18, 19) में Advanced Baseline Imager है जो तूफान केंद्रों और गंभीर तूफान ट्रैकिंग के लिए 30-सेकंड मेसोस्केल स्कैन करने में सक्षम है। Lockheed Martin द्वारा निर्मित; डेटा उत्पाद मुफ्त में उपलब्ध हैं।",
-  "best_known_for": "NOAA भूस्थिर मौसम युग्म — अमेरिका की निरंतर कवरेज"
+  "tagline": "NOAA स्थिर कक्षा मौसम जोड़ी — अमेरिका महाद्वेशीय निरंतर कवरेज",
+  "description": "Geostationary Operational Environmental Satellite — NOAA की स्थिर कक्षा मौसम जोड़ी। GOES-19 (GOES-East at 75.2° W) और GOES-18 (GOES-West at 137.0° W) अप्रैल 2025 तक परिचालन जोड़ी हैं, जो अमेरिका महाद्वेशों की निरंतर कवरेज प्रदान करती हैं। GOES-16 बैकअप के रूप में संरक्षित है; GOES-17 को जनवरी 2023 में बंद कर दिया गया था। GOES-R श्रृंखला Advanced Baseline Imager रखती है जो तूफान के कोर और गंभीर तूफान ट्रैकिंग के लिए 30-सेकंड mesoscale स्कैन करने में सक्षम है। Lockheed Martin द्वारा निर्मित; डेटा उत्पाद मुक्त रूप से उपलब्ध हैं।",
+  "best_known_for": "NOAA स्थिर कक्षा मौसम जोड़ी — अमेरिका महाद्वेशीय निरंतर कवरेज"
 }

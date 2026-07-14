@@ -1,9 +1,9 @@
 {
   "name": "SLIM",
-  "mission_type": "Aterrizador de precisión",
+  "mission_type": "Módulo de aterrizaje de precisión",
   "site_name": "Cerca del cráter Shioli",
   "crew": [],
-  "left": "Aterrizador SLIM · dos micro-róvers (LEV-1, LEV-2)",
-  "fact": "El Smart Lander de Japón demostró un aterrizaje de precisión milimétrica — apuntando a una precisión de 100 m frente al estándar de escala kilométrica de todas las misiones anteriores. Aterrizó inclinado, perdiendo la energía primaria, pero finalmente los paneles solares quedaron mirando al sol y se reanudaron las operaciones. Japón se convirtió en la quinta nación en lograr un aterrizaje suave lunar.",
-  "capability": "Precisión de aterrizaje milimétrica — cierra la brecha entre \"podemos aterrizar en algún punto de este cuerpo\" y \"podemos aterrizar en la roca específica científicamente valiosa\", la condición previa para el encuentro con activos en superficie en Marte."
+  "left": "Módulo de aterrizaje SLIM · dos microrobots (LEV-1, LEV-2)",
+  "fact": "El módulo de aterrizaje inteligente de Japón demostró una precisión de aterrizaje excepcional — alcanzando una precisión de 100 m en el objetivo respecto a la escala de kilómetros estándar de todas las misiones anteriores. Aterrizó con la nariz hacia abajo en una inclinación aproximada de 90° respecto a la actitud prevista, dejando sus paneles solares apuntando inicialmente lejos del Sol; las operaciones se reanudaron nueve días después cuando el ángulo solar cambió. Japón se convirtió en la quinta nación en lograr un aterrizaje suave lunar.",
+  "capability": "Precisión de aterrizaje pinpoint — cierra la brecha entre «podemos aterrizar en algún lugar de este cuerpo» y «podemos aterrizar en la roca científicamente valiosa específica», el requisito previo para el encuentro de activos en superficie en Marte."
 }

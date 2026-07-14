@@ -1,7 +1,7 @@
 {
   "name": "Schiaparelli EDM",
-  "mission_type": "Abgeschraubter Testlander · Absturz",
+  "mission_type": "Unbemannter Testlander · Abgestürzt",
   "site_name": "Meridiani Planum",
-  "fact": "ExoMars 2016-Demonstrator für Eintritt, Abstieg und Landung. Ein Fehler in der Steuerungssoftware führte dazu, dass die Trägheitsmesseinheit während des Fallschirmeinsatzes gesättigt war, was dazu führte, dass der Lander eine negative Höhe berechnete und seinen Fallschirm vorzeitig freigab. Es fiel etwa 3,7 km frei an die Oberfläche. Die Flugdaten flossen in die Neugestaltung des ExoMars 2028 EDL ein.",
-  "capability": "Hart erkämpfte EDL-Diagnosedaten – eine Teildemonstration, die in die nächste ExoMars-Mission einfloss."
+  "fact": "ExoMars-2016-Eintritts-, Abstiegs- und Landedemonstrator. Ein Fehler in der Kontrollsoftware führte dazu, dass die Trägheitsmesseinheit gesättigt wurde, was den Lander dazu veranlasste, eine negative Höhe zu berechnen und zum vorzeitigen Auslösen des Fallschirms und der Hitzeschutzschale führte. Die Triebwerke zündeten kurz, als würden sie bereits am Boden sein, schalteten sich dann ab. Der Lander fiel frei etwa 3,7 km bis zur Oberfläche. Die Flugdaten informierten die ExoMars-2028-EDL-Neukonstruktion.",
+  "capability": "Gewonnene EDL-Diagnosedaten — eine Teildemonstration, die in die nächste ExoMars-Mission einfließen konnte."
 }

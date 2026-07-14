@@ -1,9 +1,9 @@
 {
   "name": "Luna 21 / Lunokhod 2",
-  "mission_type": "Robotic Rover",
-  "site_name": "Le Monnier Crater (Mare Serenitatis)",
+  "mission_type": "Róver robótico",
+  "site_name": "Cráter Le Monnier (Mare Serenitatis)",
   "crew": [],
-  "left": "Luna 21 lander + Lunokhod 2 rover (final resting position)",
-  "fact": "Lunokhod 2 was the second of two Soviet lunar rovers (1973). Driven by a 5-person ground crew rotating in shifts at the IKI control centre. In 4 months it covered ~37 km — the lunar-surface distance record that stood for 41 years until NASA's Opportunity Mars rover passed it in 2014. Carried French laser retroreflectors that are still used for Earth-Moon ranging today.",
-  "capability": "Long-distance teleoperated mobility — proved a remote crew can drive an unmanned vehicle across an alien surface in real time (with light-delay)."
+  "left": "Módulo de aterrizaje Luna 21 + róver Lunokhod 2 (posición de reposo final)",
+  "fact": "Lunokhod 2 fue el segundo de dos róderes lunares soviéticos (1973). Fue conducido por un equipo terrestre de 5 personas que se turnaban en el centro de control IKI. En 4 meses recorrió ~39 km — el récord de distancia en la superficie lunar que se mantuvo durante 41 años hasta que el róver marciano Opportunity de la NASA lo superó en 2014. Llevaba retrorreflectores láser franceses que hoy en día aún se utilizan para mediciones de distancia Tierra-Luna.",
+  "capability": "Movilidad teleoperada de larga distancia — demostró que un equipo remoto puede conducir un vehículo no tripulado a través de una superficie alienígena en tiempo real (con retardo de luz)."
 }

@@ -1,7 +1,7 @@
 {
-  "name": "Zhurong (com módulo de pouso Tianwen-1)",
-  "mission_type": "Rover desenroscado · Missão concluída",
-  "site_name": "Utopia Planícia",
-  "fact": "O primeiro rover de Marte da China. Operou 358 sóis, percorreu 1,92 km. Devolveu evidências de radar de penetração no solo para camadas subterrâneas enterradas, consistentes com antigos eventos de inundação catastrófica. Contato perdido durante o inverno marciano de 2022; CNSA não confirmou mais comunicações.",
-  "capability": "Primeiro rover fora dos EUA a operar em Marte; primeiro rover marciano equipado com GPR."
+  "name": "Zhurong (com Lander Tianwen-1)",
+  "mission_type": "Rover Não-tripulado · Missão Completa",
+  "site_name": "Utopia Planitia",
+  "fact": "Primeiro rover marciano da China. Operou por 358 sols, percorreu 1,92 km. Retornou evidências de radar de penetração de solo para camadas subsuperficiais enterradas consistentes com eventos de inundações catastróficas antigas. Perdeu contato durante o inverno marciano de 2022; CNSA confirmou ausência de comunicações posteriores.",
+  "capability": "Primeiro rover não-americano a operar em Marte; primeiro rover marciano não-americano equipado com GPR."
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Foglio di calcolo",
-  "tagline": "Primo tentativo di atterraggio lunare privato",
-  "description": "Il primo tentativo di atterraggio lunare privato, da parte di Israel SpaceIL non profit. Crashed nell'aprile 2019 quando un software di controllo della spinta ha lasciato il motore troppo a lungo. Dimostrato che l'atterraggio sulla Luna è molto più difficile che raggiungerlo.",
-  "best_known_for": "Primo tentativo di atterraggio lunare privato"
+  "name": "Beresheet",
+  "tagline": "Primo tentativo privato di allunaggio",
+  "description": "Il primo tentativo privato di allunaggio, realizzato dall'organizzazione no-profit israeliana SpaceIL. Si è schiantato nell'aprile 2019 quando un guasto al giroscopio IMU ha causato ripetuti riavvii del computer, ognuno dei quali ha spento il motore; quando il controllo è stato recuperato, il lander era troppo basso e veloce per sopravvivere. Ha dimostrato che allunare sulla Luna è molto più difficile che raggiungerla.",
+  "best_known_for": "Primo tentativo privato di allunaggio"
 }

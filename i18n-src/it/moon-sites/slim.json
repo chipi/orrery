@@ -1,9 +1,9 @@
 {
-  "name": "SOTTILE",
+  "name": "SLIM",
   "mission_type": "Lander di precisione",
   "site_name": "Vicino al cratere Shioli",
   "crew": [],
-  "left": "lander SLIM · due micro-rover (LEV-1, LEV-2)",
-  "fact": "Lo Smart Lander giapponese ha dimostrato un atterraggio di precisione millimetrica, mirando con una precisione entro 100 m rispetto allo standard su scala chilometrica di tutte le missioni precedenti. L'atterraggio è inclinato, perdendo l'energia primaria, ma alla fine i pannelli solari sono rivolti verso il sole e le operazioni sono riprese. Il Giappone è diventato la quinta nazione a realizzare un atterraggio morbido sulla Luna.",
-  "capability": "Precisione precisa dell'atterraggio: colma il divario tra \"possiamo atterrare da qualche parte su questo corpo\" e \"possiamo atterrare su una roccia specifica di valore scientifico\", la precondizione per l'incontro con le risorse di superficie su Marte."
+  "left": "Lander SLIM · due micro-rover (LEV-1, LEV-2)",
+  "fact": "Lo Smart Lander del Giappone ha dimostrato una precisione di atterraggio straordinaria — con un'accuratezza di 100 m rispetto allo standard di scala chilometrica di tutte le missioni precedenti. Atterrato con il muso rivolto verso il basso a circa 90° dall'assetto previsto, lasciando i suoi pannelli solari inizialmente rivolti lontano dal Sole; le operazioni sono riprese nove giorni dopo quando l'angolo del Sole si è spostato. Il Giappone è diventato la quinta nazione a raggiungere un atterraggio dolce sulla Luna.",
+  "capability": "Accuratezza di atterraggio di precisione — colma il divario tra \"possiamo atterrare da qualche parte su questo corpo celeste\" e \"possiamo atterrare sulla roccia scientificamente preziosa specifica\", il prerequisito per il rendez-vous di asset in superficie su Marte."
 }

@@ -1,6 +1,6 @@
 {
   "name": "GOES (NOAA Weather)",
   "tagline": "NOAA geostationary weather pair — Americas continuous coverage",
-  "description": "Geostationary Operational Environmental Satellite — NOAA's geostationary weather pair. GOES-East at 75.2° W and GOES-West at 137.0° W give continuous coverage of the Americas. Current generation GOES-R series (GOES-16, 17, 18, 19) carries the Advanced Baseline Imager capable of 30-second mesoscale scans for hurricane cores and severe-storm tracking. Built by Lockheed Martin; data products freely available.",
+  "description": "Geostationary Operational Environmental Satellite — NOAA's geostationary weather pair. GOES-19 (GOES-East at 75.2° W) and GOES-18 (GOES-West at 137.0° W) are the operational pair as of April 2025, providing continuous coverage of the Americas. GOES-16 is stored as backup; GOES-17 was decommissioned in January 2023. The GOES-R series carries the Advanced Baseline Imager capable of 30-second mesoscale scans for hurricane cores and severe-storm tracking. Built by Lockheed Martin; data products freely available.",
   "best_known_for": "NOAA geostationary weather pair — Americas continuous coverage"
 }

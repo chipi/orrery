@@ -1,9 +1,9 @@
 {
   "name": "Chandrayaan-3",
-  "mission_type": "Uncrewed Lander · Rover",
-  "site_name": "Shiv Shakti Point (south polar region)",
+  "mission_type": "无人着陆器·月球车",
+  "site_name": "湿婆战神点（南极区域）",
   "crew": [],
-  "left": "Vikram lander · Pragyan rover",
-  "fact": "First spacecraft to land near the lunar south pole — the most contested territory in current space exploration, where permanently shadowed craters harbour water ice. Pragyan confirmed the presence of sulfur at the surface for the first time. India became the fourth nation to soft-land on the Moon, and the first to reach the poles.",
-  "capability": "Polar landing technique — Mars's south pole region (where seasonal water ice exists) becomes a destination only after the polar landing problem is solved on the Moon."
+  "left": "维克拉姆着陆器·月船月球车",
+  "fact": "首个在月球南极附近着陆的航天器——这是当前空间探索中最具竞争力的区域，永久阴影坑藏有水冰。月船月球车使用其LIBS仪器首次在月球南极附近进行了就地硫元素探测。印度成为第四个在月球软着陆的国家，也是首个到达两极的国家。",
+  "capability": "极地着陆技术——火星南极区域（存在季节性水冰）只有在月球上解决极地着陆问题之后，才能成为探测目标。"
 }

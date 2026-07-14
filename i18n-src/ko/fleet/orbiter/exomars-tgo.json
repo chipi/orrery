@@ -1,6 +1,6 @@
 {
   "name": "ExoMars TGO",
-  "tagline": "미량 가스 분석 + ESA/NASA 표면 중계",
-  "description": "ESA의 Trace Gas Orbiter는 2016년부터 화성 궤도에서 운영 중입니다. 생물학적 또는 지질학적 활동을 암시할 수 있는 메탄과 수증기를 찾아 대기를 분석하며, Perseverance와 Curiosity를 포함한 표면 로버의 데이터를 중계합니다.",
-  "best_known_for": "화성 미량 가스 분석; ESA 및 NASA 표면 임무 중계"
+  "tagline": "미량 기체 분석 + ESA/NASA 표면 중계",
+  "description": "2016년부터 화성 궤도에 있는 ESA의 미량기체궤도선(Trace Gas Orbiter). 생물학적 또는 지질학적 신호를 나타낼 수 있는 메탄과 수증기를 대기에서 감지하며, UHF 중계기를 통해 화성 표면 탐사선들의 데이터를 중계합니다.",
+  "best_known_for": "화성의 미량 기체 분석; ESA 및 NASA 표면 탐사선 중계"
 }

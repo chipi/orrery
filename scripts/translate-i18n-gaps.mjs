@@ -44,11 +44,19 @@ const SCHEMA_BY_SURFACE = {
   'science-intro': 'science-tab-intro.schema.json',
   missions: 'mission-overlay.schema.json',
   fleet: 'fleet-overlay.schema.json',
+  'moon-sites': 'surface-site-overlay.schema.json',
+  'mars-sites': 'surface-site-overlay.schema.json',
 };
 const VALIDATORS = {};
+const _validatorCache = {};
 for (const [surface, file] of Object.entries(SCHEMA_BY_SURFACE)) {
   const p = path.join(SCHEMA_DIR, file);
-  if (fs.existsSync(p)) VALIDATORS[surface] = ajv.compile(JSON.parse(fs.readFileSync(p, 'utf8')));
+  if (!fs.existsSync(p)) continue;
+  // Compile each schema file once — moon-sites + mars-sites share one schema,
+  // and ajv rejects registering the same $id twice.
+  if (!_validatorCache[file])
+    _validatorCache[file] = ajv.compile(JSON.parse(fs.readFileSync(p, 'utf8')));
+  VALIDATORS[surface] = _validatorCache[file];
 }
 
 const LOCALES = [
@@ -256,6 +264,40 @@ const TOOLS = {
   },
 };
 
+// Moon/Mars surface-site overlays share one schema (surface-site-overlay).
+const SITE_TOOL = {
+  system:
+    SYSTEM_BASE +
+    `
+- "name" — mission/site proper name; keep verbatim unless commonly localised.
+- "mission_type" — a short kind label (e.g. "Uncrewed Soft Lander", "Active Orbiter"); translate the words.
+- "site_name" — a surface location ("Jezero Crater") or, for orbiters, an orbit description; translate descriptive words, keep proper place names.
+- "crew" (optional array) — astronaut/cosmonaut names; keep each name verbatim, preserve count + order.
+- "left" (optional) — hardware left at the site; translate.
+- "fact" + "capability" — editorial prose; translate fully.`,
+  schema: {
+    name: {
+      name: 'submit_translation',
+      description: 'Submit translated surface-site overlay.',
+      input_schema: {
+        type: 'object',
+        properties: {
+          name: { type: 'string' },
+          mission_type: { type: 'string' },
+          site_name: { type: 'string' },
+          crew: { type: 'array', items: { type: 'string' } },
+          left: { type: 'string' },
+          fact: { type: 'string' },
+          capability: { type: 'string' },
+        },
+        required: ['name', 'mission_type', 'fact'],
+      },
+    },
+  },
+};
+TOOLS['moon-sites'] = SITE_TOOL;
+TOOLS['mars-sites'] = SITE_TOOL;
+
 async function callModel(client, model, cfg, surface, locale, payload, corrections) {
   const r = await client.messages.create({
     model,
@@ -410,6 +452,49 @@ async function repairArrays(client, out, locale, payload) {
   return fixed;
 }
 
+// Rewrite an over-length string field to fit its cap — same language, keep the
+// key facts, drop a clause if needed. Sonnet, since concise-yet-faithful is hard.
+async function shortenString(client, text, locale, limit) {
+  const r = await client.messages.create({
+    model: 'claude-sonnet-4-5',
+    max_tokens: 1024,
+    system: SYSTEM_BASE,
+    tools: [
+      {
+        name: 'submit',
+        description: 'Return the shortened string.',
+        input_schema: {
+          type: 'object',
+          properties: { text: { type: 'string' } },
+          required: ['text'],
+        },
+      },
+    ],
+    tool_choice: { type: 'tool', name: 'submit' },
+    messages: [
+      {
+        role: 'user',
+        content: `Rewrite this ${NAMES[locale]} text so it is at most ${limit} characters (it is currently ${text.length}). Keep the essential meaning; drop a clause or a non-essential detail. Same language, no quotes added. Return via the submit tool.\n\n${JSON.stringify(text)}`,
+      },
+    ],
+  });
+  const b = r.content.find((x) => x.type === 'tool_use');
+  const out = b && b.input && typeof b.input.text === 'string' ? b.input.text : text;
+  return out.length <= limit ? out : out.slice(0, limit); // hard-cap as last resort
+}
+
+// Repair pass for maxLength violations on scalar string fields.
+async function repairLengths(client, out, locale, errors) {
+  const fixed = { ...out };
+  for (const e of errors) {
+    if (e.keyword !== 'maxLength' || !e.instancePath) continue;
+    const field = e.instancePath.replace(/^\//, '');
+    if (typeof fixed[field] !== 'string') continue;
+    fixed[field] = await shortenString(client, fixed[field], locale, e.params.limit);
+  }
+  return fixed;
+}
+
 async function translate(client, surface, locale, payload) {
   const cfg = TOOLS[surface];
   const validate = VALIDATORS[surface];
@@ -422,8 +507,13 @@ async function translate(client, surface, locale, payload) {
     if (!validate || validate(lastOut)) return lastOut;
     corrections = summarizeErrors(validate.errors);
   }
-  // Inline ladder exhausted — repair the collapsed array fields element-wise.
-  const repaired = await repairArrays(client, lastOut, locale, payload);
+  // Inline ladder exhausted — repair. First rebuild collapsed array fields
+  // element-wise; then, if any string field still overflows its maxLength cap
+  // (common for verbose target languages), rewrite that field shorter.
+  let repaired = await repairArrays(client, lastOut, locale, payload);
+  if (validate && !validate(repaired)) {
+    repaired = await repairLengths(client, repaired, locale, validate.errors);
+  }
   if (!validate || validate(repaired)) return repaired;
   throw new Error(`schema-invalid after ladder+repair: ${summarizeErrors(validate.errors)}`);
 }

@@ -1,7 +1,7 @@
 {
   "name": "Schiaparelli EDM",
-  "mission_type": "Lander di prova senza equipaggio · Si è schiantato",
+  "mission_type": "Lander di prova senza equipaggio · Schiantato",
   "site_name": "Meridiani Planum",
-  "fact": "Dimostratore di ingresso, discesa e atterraggio di ExoMars 2016. Un guasto al software di controllo ha causato la saturazione dell'unità di misurazione inerziale durante l'apertura del paracadute, cosa che ha portato il lander a calcolare un'altitudine negativa e a rilasciare prematuramente il paracadute. È caduto liberamente per circa 3,7 km in superficie. I dati di volo hanno informato la riprogettazione dell'EDL di ExoMars 2028.",
-  "capability": "Dati diagnostici EDL conquistati a fatica: una dimostrazione parziale che ha alimentato la prossima missione ExoMars."
+  "fact": "Dimostratore di Entrata, Discesa e Atterraggio dell'ExoMars 2016. Un errore nel software di controllo ha causato la saturazione dell'unità di misura inerziale, portando il lander a calcolare un'altitudine negativa e attivando l'espulsione prematura del paracadute e del guscio posteriore. I propulsori si sono accesi brevemente come se fossero già al suolo, poi si sono spenti. Ha fatto una caduta libera di ~3,7 km fino alla superficie. I dati di volo hanno informato la riprogettazione dell'EDL dell'ExoMars 2028.",
+  "capability": "Dati diagnostici EDL faticosamente acquisiti — una dimostrazione parziale che ha alimentato la successiva missione ExoMars."
 }

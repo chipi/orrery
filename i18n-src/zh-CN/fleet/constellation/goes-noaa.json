@@ -1,6 +1,6 @@
 {
   "name": "GOES (NOAA Weather)",
-  "tagline": "NOAA 地球静止气象卫星对 — 美洲连续覆盖",
-  "description": "Geostationary Operational Environmental Satellite — NOAA 的地球静止气象卫星对。GOES-East 位于西经 75.2°,GOES-West 位于西经 137.0°,可连续覆盖美洲地区。当前一代 GOES-R 系列(GOES-16、17、18、19)搭载先进基线成像仪,能够进行 30 秒中尺度扫描,用于飓风核心和强风暴追踪。由 Lockheed Martin 制造;数据产品免费提供。",
-  "best_known_for": "NOAA 地球静止气象卫星对 — 美洲连续覆盖"
+  "tagline": "NOAA地球静止天气卫星对——美洲连续覆盖",
+  "description": "地球静止业务环境卫星——NOAA的地球静止天气卫星对。截至2025年4月，GOES-19（位于西经75.2°的GOES-East）和GOES-18（位于西经137.0°的GOES-West）是运业卫星对，提供美洲的连续覆盖。GOES-16作为备用卫星存储；GOES-17于2023年1月停用。GOES-R系列搭载先进基线成像仪，能够进行30秒间隔的中尺度扫描，用于飓风核心和强对流天气追踪。由洛克希德·马丁公司制造；数据产品免费提供。",
+  "best_known_for": "NOAA地球静止天气卫星对——美洲连续覆盖"
 }

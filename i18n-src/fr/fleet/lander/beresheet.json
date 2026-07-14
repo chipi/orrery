@@ -1,6 +1,6 @@
 {
-  "name": "Béréfeuille",
+  "name": "Beresheet",
   "tagline": "Première tentative d'atterrissage lunaire privé",
-  "description": "La première tentative d'atterrissage lunaire privé, par Israeli. Frappé en avril 2019 lorsqu'un problème logiciel de commande de poussée a laissé le moteur hors service trop longtemps. Démontré que l'atterrissage sur la Lune est beaucoup plus difficile que de l'atteindre.",
+  "description": "La première tentative d'atterrissage lunaire privé, par l'organisme à but non lucratif israélien SpaceIL. S'est écrasée en avril 2019 lorsqu'une défaillance du gyroscope IMU a déclenché des redémarrages répétés de l'ordinateur, chacun arrêtant le moteur ; au moment où le contrôle a été rétabli, l'atterrisseur était trop bas et trop rapide pour survivre. A démontré que l'atterrissage sur la Lune est beaucoup plus difficile que de la rejoindre.",
   "best_known_for": "Première tentative d'atterrissage lunaire privé"
 }

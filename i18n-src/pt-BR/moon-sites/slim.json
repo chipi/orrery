@@ -1,9 +1,9 @@
 {
-  "name": "MAGRO",
-  "mission_type": "Módulo de pouso de precisão",
-  "site_name": "Perto da cratera Shioli",
+  "name": "SLIM",
+  "mission_type": "Pouso de Precisão",
+  "site_name": "Perto da Cratera Shioli",
   "crew": [],
-  "left": "Lander SLIM · dois micro-rovers (LEV-1, LEV-2)",
-  "fact": "O Smart Lander do Japão demonstrou um pouso preciso – mirando com precisão de 100 m em comparação com o padrão de escala de quilômetros de todas as missões anteriores. Aterrissou inclinado, perdendo energia primária, mas eventualmente os painéis solares enfrentaram o sol e as operações foram retomadas. O Japão se tornou a quinta nação a conseguir um pouso suave na Lua.",
-  "capability": "Precisão precisa do pouso – preenche a lacuna entre “podemos pousar em algum lugar deste corpo” e “podemos pousar na rocha específica cientificamente valiosa”, a pré-condição para o encontro de recursos de superfície em Marte."
+  "left": "Módulo de pouso SLIM · dois micro-rovers (LEV-1, LEV-2)",
+  "fact": "O Smart Lander japonês demonstrou precisão de pouso milimétrica — atingindo uma acurácia de 100 m em comparação com o padrão de escala quilométrica de todas as missões anteriores. Pousou de nariz para baixo em aproximadamente 90° da atitude pretendida, deixando seus painéis solares apontando inicialmente para longe do Sol; as operações foram retomadas nove dias depois, quando o ângulo solar mudou. O Japão tornou-se a quinta nação a alcançar um pouso suave lunar.",
+  "capability": "Acurácia de pouso milimétrica — preenche a lacuna entre 'conseguimos pousar em algum lugar neste corpo' e 'conseguimos pousar na rocha específica de valor científico', o pré-requisito para encontro de ativos em superfície em Marte."
 }

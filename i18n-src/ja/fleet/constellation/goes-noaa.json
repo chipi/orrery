@@ -1,6 +1,6 @@
 {
-  "name": "GOES (NOAA気象衛星)",
-  "tagline": "NOAAの静止気象衛星ペア — 南北アメリカの継続的観測",
-  "description": "Geostationary Operational Environmental Satellite — NOAAの静止気象衛星ペア。GOES-Eastは西経75.2°、GOES-Westは西経137.0°に位置し、南北アメリカ大陸を継続的に観測。現世代のGOES-Rシリーズ(GOES-16、17、18、19)は、ハリケーンの中心部や激しい嵐の追跡のための30秒メソスケールスキャンが可能なAdvanced Baseline Imagerを搭載。Lockheed Martin製。データプロダクトは無償で利用可能。",
-  "best_known_for": "NOAAの静止気象衛星ペア — 南北アメリカの継続的観測"
+  "name": "GOES (NOAA Weather)",
+  "tagline": "NOAAの地球同期気象衛星ペア — アメリカ大陸の継続的カバレッジ",
+  "description": "静止運用環境衛星 — NOAA の地球同期気象衛星ペア。GOES-19（東側の GOES、75.2° W）と GOES-18（西側の GOES、137.0° W）は 2025 年 4 月時点での運用ペアであり、アメリカ大陸の継続的なカバレッジを提供しています。GOES-16 はバックアップとして保管されており、GOES-17 は 2023 年 1 月に運用を終了しました。GOES-R シリーズは、ハリケーンコアと悪天候追跡のための 30 秒間のメソスケールスキャンが可能な Advanced Baseline Imager を搭載しています。Lockheed Martin 製；データ製品は自由に利用可能です。",
+  "best_known_for": "NOAAの地球同期気象衛星ペア — アメリカ大陸の継続的カバレッジ"
 }

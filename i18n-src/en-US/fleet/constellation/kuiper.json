@@ -1,6 +1,6 @@
 {
-  "name": "Project Kuiper",
-  "tagline": "Amazon LEO broadband — 3236 sats planned, ramping 2024+",
-  "description": "Amazon's planned answer to Starlink — 3,236 satellites at 590-630 km in 98 orbital planes. First operational launches began in 2023; FCC license requires 50% deployment by July 2026 and 100% by July 2029. Customer integration aimed at Amazon's AWS ground-station service. Will roughly double the LEO active-satellite population if fully deployed.",
-  "best_known_for": "Amazon LEO broadband — 3236 sats planned, ramping 2024+"
+  "name": "Amazon Leo (formerly Project Kuiper)",
+  "tagline": "Amazon LEO broadband — 3,236 sats planned, commercial beta 2026",
+  "description": "Amazon's answer to Starlink — 3,236 satellites at 590-630 km in 98 orbital planes. First prototype launch in October 2023 (KuiperSat-1 and -2 test launch); first 27 production satellites launched April 2025 atop Atlas V. As of mid-2026, ~230+ production satellites are operational. FCC license requires 50% deployment (1,618 sats) by July 2026 and 100% by July 2029; Amazon has requested a two-year extension due to the current shortfall. The constellation is expected to roughly double the LEO active-satellite population if fully deployed.",
+  "best_known_for": "Amazon Leo broadband — 3,236 sats planned, commercial beta 2026"
 }

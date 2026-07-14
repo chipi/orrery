@@ -1,6 +1,6 @@
 {
   "name": "ExoMars TGO",
-  "tagline": "Análise de gases-traço + retransmissor de superfície ESA/NASA",
-  "description": "O Trace Gas Orbiter da ESA, em órbita de Marte desde 2016. Fareja a atmosfera em busca de metano e vapor d'água que podem indicar biologia ou geologia, e retransmite dados para rovers de superfície incluindo Perseverance e Curiosity.",
-  "best_known_for": "Análise de gases-traço em Marte; retransmissor para missões de superfície da ESA e NASA"
+  "tagline": "Análise de gases traço + retransmissão de superfície ESA/NASA",
+  "description": "Orbitador de Gases Traço da ESA, em órbita em Marte desde 2016. Analisa a atmosfera em busca de metano e vapor de água que podem indicar atividade biológica ou geológica, e retransmite dados para missões de superfície em Marte via seu relé UHF.",
+  "best_known_for": "Análise de gases traço em Marte; retransmissão para missões de superfície da ESA e NASA"
 }

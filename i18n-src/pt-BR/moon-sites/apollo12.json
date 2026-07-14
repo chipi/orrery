@@ -1,12 +1,12 @@
 {
-  "name": "Apolo 12",
-  "mission_type": "Módulo de pouso tripulado",
-  "site_name": "No oceano de tempestades",
+  "name": "Apollo 12",
+  "mission_type": "Pouso Tripulado",
+  "site_name": "Oceanus Procellarum",
   "crew": [
-    "Pedro Conrado",
-    "Alan Feijão"
+    "Pete Conrad",
+    "Alan Bean"
   ],
-  "left": "Estágio de descida · ALSEP · bandeira · partes recuperadas do Surveyor 3",
-  "fact": "O pouso de precisão - Conrad pousou a 183 m da sonda Surveyor 3 desenroscada (1967). Eles recuperaram pedaços dele para retornar à Terra, mostrando que as espaçonaves sobreviveram anos na Lua sem serem danificadas por radiação ou micrometeoritos. Uma prova de conceito para futuras missões de encontro.",
-  "capability": "Primeiro pouso de precisão em um ponto designado – o pré-requisito para qualquer arquitetura de encontro com retorno de amostra, incluindo Marte."
+  "left": "Estágio de descida · ALSEP · bandeira · peças recuperadas do Surveyor 3",
+  "fact": "O pouso de precisão — Conrad tocou o solo a aproximadamente 163 m da sonda não tripulada Surveyor 3 (1967). Eles recuperaram peças dela para retorno à Terra, comprovando que naves espaciais sobrevivem anos na Lua sem danos causados por radiação ou micrometeoritos. Uma prova de conceito para futuras missões de rendezvous.",
+  "capability": "Primeiro pouso de precisão em um ponto designado — o pré-requisito para qualquer arquitetura de retorno de amostras com rendezvous, incluindo Marte."
 }

@@ -1,7 +1,7 @@
 {
   "name": "Viking 1 lander",
-  "mission_type": "Uncrewed Lander · Mission Complete",
+  "mission_type": "无人着陆器 · 任务完成",
   "site_name": "Chryse Planitia",
-  "fact": "First fully successful Mars surface mission. Viking 1 operated for over six years on the surface — the longest-duration Mars lander mission until Opportunity broke the record in 2010. It returned the first colour images from the Martian surface, conducted the first life-detection experiments (results famously inconclusive), and characterised the regolith and weather.",
-  "capability": "First long-duration in-situ Martian science — every modern lander runs on Viking's playbook."
+  "fact": "首次火星表面完全成功的任务。Viking 1 在表面运行了六年多——是2010年机遇号火星车打破纪录前持续时间最长的表面任务。它返回了火星表面的第一批彩色图像，进行了首次生命探测实验（结果著名地没有定论），并对火星土壤和天气进行了表征。",
+  "capability": "首次长期火星原地科学探测——每个现代着陆器都遵循Viking的方法论。"
 }

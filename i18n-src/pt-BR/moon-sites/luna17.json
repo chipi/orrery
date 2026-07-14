@@ -1,9 +1,9 @@
 {
   "name": "Luna 17 / Lunokhod 1",
-  "mission_type": "Rover desenroscado",
-  "site_name": "Chuva de Cavalos",
+  "mission_type": "Rover Não Tripulado",
+  "site_name": "Mare Imbrium",
   "crew": [],
-  "left": "Rover Lunokhod 1 (322 kg), estágio de descida",
-  "fact": "O primeiro rover controlado remotamente operando em outro mundo. Ele dirigiu 10,5 km em 322 dias, fotografando mais de 20.000 imagens. Perdido na história até 2010, quando o Lunar Reconnaissance Orbiter o avistou em órbita – ainda exatamente onde parou.",
-  "capability": "Primeiro rover teleoperado – estabeleceu a arquitetura na qual todos os rover de Marte, do Sojourner ao Perseverance, foram construídos."
+  "left": "Rover Lunokhod 1 (756 kg), estágio de descida",
+  "fact": "O primeiro rover controlado remotamente a operar em outro mundo. Percorreu 10,5 km ao longo de 322 dias, fotografando mais de 20.000 imagens. Perdido para a história até 2010, quando o Lunar Reconnaissance Orbiter o localizou em órbita — ainda sentado exatamente onde parou.",
+  "capability": "Primeiro rover teleoperado — estabeleceu a arquitetura que todo rover marciano, de Sojourner a Perseverance, construiu."
 }

@@ -1,7 +1,7 @@
 {
-  "name": "Zhurong (with Tianwen-1 lander)",
-  "mission_type": "Uncrewed Rover · Mission Complete",
-  "site_name": "Utopia Planitia",
-  "fact": "China's first Mars rover. Operated 358 sols, traversed 1.92 km. Returned ground-penetrating radar evidence for buried subsurface layers consistent with ancient catastrophic flooding events. Lost contact during the 2022 Martian winter; CNSA confirmed no further communications.",
-  "capability": "First non-US rover to operate on Mars; first GPR-equipped Martian rover."
+  "name": "祝融号（搭载天问一号着陆器）",
+  "mission_type": "无人火星车·任务完成",
+  "site_name": "乌托邦平原",
+  "fact": "中国首个火星车。运行358个火星日，行驶1.92公里。通过探地雷达获取了地下埋藏层的证据，这些层与古代灾难性洪水事件一致。在2022年火星冬季期间失去联系；中国国家航天局确认不再有进一步通信。",
+  "capability": "首个在火星上运行的非美国火星车；首个配备探地雷达的非美国火星车。"
 }

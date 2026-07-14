@@ -1,12 +1,12 @@
 {
   "name": "Apollo 12",
-  "mission_type": "Bemand landingsvaartuig",
+  "mission_type": "Bemande maanlander",
   "site_name": "Oceanus Procellarum",
   "crew": [
     "Pete Conrad",
     "Alan Bean"
   ],
-  "left": "Afdaaltrap · ALSEP · vlag · gerecupereerde delen van Surveyor 3",
-  "fact": "De precisielanding — Conrad zette neer binnen 183 m van de onbemande Surveyor 3-sonde (1967). Zij brachten er stukken van mee terug naar de Aarde, wat aantoonde dat ruimtevaartuigen jaren op de Maan overleven zonder schade door straling of micrometeorieten. Een proof-of-concept voor toekomstige rendezvous-missies.",
-  "capability": "Eerste precisielanding op een aangewezen punt — de voorwaarde voor elke architectuur voor monsterterugkeer-rendezvous, inclusief Mars."
+  "left": "Afdaalmodule · ALSEP · vlag · geredde onderdelen van Surveyor 3",
+  "fact": "De precisielanding — Conrad zette voertuig neer binnen ~163 m van de onbemande Surveyor 3-sonde (1967). Ze haalde stukken ervan naar Earth, wat aantoont dat ruimtevaartuigen jaren op de maan onbeschadigd blijven door straling en micrometer­ieten. Een proof-of-concept voor toekomstige ontmoetiingsmissies.",
+  "capability": "Eerste precisielanding op een aangewezen locatie — de voorwaarde voor enige sample-return-ontmoetinings­architectuur, waaronder Mars."
 }

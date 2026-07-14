@@ -1,9 +1,9 @@
 {
   "name": "SLIM",
-  "mission_type": "Precision Lander",
-  "site_name": "Near Shioli Crater",
+  "mission_type": "精密着陆器",
+  "site_name": "塩鹵陨石坑附近",
   "crew": [],
-  "left": "SLIM lander · two micro-rovers (LEV-1, LEV-2)",
-  "fact": "Japan's Smart Lander demonstrated pinpoint precision landing — targeting within 100 m accuracy vs the km-scale standard of all previous missions. Landed tilted, losing primary power, but eventually the solar panels faced the sun and operations resumed. Japan became the fifth nation to achieve a lunar soft landing.",
-  "capability": "Pinpoint landing accuracy — bridges the gap between 'we can land somewhere on this body' and 'we can land at the specific scientifically valuable rock', the precondition for surface-asset rendezvous on Mars."
+  "left": "SLIM着陆器·两台微型漫游车（LEV-1、LEV-2）",
+  "fact": "日本的\"月球智能着陆器\"（Smart Lander）展示了精确制导着陆能力——定位精度在100 m以内，而所有以往任务的标准精度为公里级。着陆时船头朝下，姿态偏离预定方向约90°，导致太阳能电池板初期背向太阳；九天后随着太阳角度改变而恢复运作。日本成为第五个实现月球软着陆的国家。",
+  "capability": "精密着陆精度——弥合了\"我们能在某处着陆\"与\"我们能在特定的科学价值岩石处着陆\"之间的差距，这是火星表面资产汇合任务的前提条件。"
 }

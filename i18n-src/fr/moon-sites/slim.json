@@ -1,9 +1,9 @@
 {
-  "name": "MINCE",
+  "name": "SLIM",
   "mission_type": "Atterrisseur de précision",
   "site_name": "Près du cratère Shioli",
   "crew": [],
   "left": "Atterrisseur SLIM · deux micro-rovers (LEV-1, LEV-2)",
-  "fact": "Le Smart Lander du Japon a fait la démonstration d'un atterrissage d'une précision extrême, avec un ciblage avec une précision de 100 m par rapport à la norme à l'échelle km de toutes les missions précédentes. L'atterrissage s'est incliné, perdant la puissance primaire, mais les panneaux solaires ont finalement fait face au soleil et les opérations ont repris. Le Japon est devenu le cinquième pays à réaliser un alunissage en douceur.",
-  "capability": "Précision d'atterrissage précise — comble le fossé entre « nous pouvons atterrir quelque part sur ce corps » et « nous pouvons atterrir sur une roche spécifique scientifiquement précieuse », la condition préalable au rendez-vous avec des actifs de surface sur Mars."
+  "fact": "Le Smart Lander japonais a démontré une précision d'atterrissage remarquable — avec une précision de ciblage inférieure à 100 m par rapport à l'échelle kilométrique standard de toutes les missions précédentes. S'est posé incliné à environ 90° par rapport à l'attitude prévue, laissant ses panneaux solaires initialement orientés à l'opposé du Soleil ; les opérations ont repris neuf jours plus tard une fois que l'angle solaire a changé. Le Japon est devenu la cinquième nation à réaliser un atterrissage en douceur sur la Lune.",
+  "capability": "Précision d'atterrissage pinpoint — comble le fossé entre « nous pouvons nous poser quelque part sur ce corps » et « nous pouvons nous poser sur la roche scientifiquement précieuse spécifique », la condition préalable au rendez-vous des actifs en surface sur Mars."
 }

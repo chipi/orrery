@@ -1,6 +1,6 @@
 {
-  "name": "GOES (meteorología NOAA)",
-  "tagline": "Par geoestacionario meteorológico de NOAA — cobertura continua de las Américas",
-  "description": "Geostationary Operational Environmental Satellite — par meteorológico geoestacionario de NOAA. GOES-East a 75,2° O y GOES-West a 137,0° O proporcionan cobertura continua de las Américas. La generación actual, serie GOES-R (GOES-16, 17, 18, 19), lleva el Advanced Baseline Imager capaz de escaneos de mesoescala de 30 segundos para núcleos de huracanes y seguimiento de tormentas severas. Construido por Lockheed Martin; productos de datos disponibles gratuitamente.",
-  "best_known_for": "Par geoestacionario meteorológico de NOAA — cobertura continua de las Américas"
+  "name": "GOES (NOAA Weather)",
+  "tagline": "Par geoestacionario meteorológico de la NOAA — cobertura continua de América",
+  "description": "Satélite Operacional Geoestacionario del Entorno — pareja de satélites meteorológicos geoestacionarios de la NOAA. GOES-19 (GOES-Este a 75.2° O) y GOES-18 (GOES-Oeste a 137.0° O) constituyen el par operativo a partir de abril de 2025, proporcionando cobertura continua de América. GOES-16 se mantiene como reserva; GOES-17 fue desmantelado en enero de 2023. La serie GOES-R lleva el Radiómetro Avanzado de Línea Base capaz de realizar barridos mesoescalares de 30 segundos para el seguimiento de núcleos de huracanes y tormentas severas. Construido por Lockheed Martin; productos de datos disponibles libremente.",
+  "best_known_for": "Par geoestacionario meteorológico de la NOAA — cobertura continua de América"
 }

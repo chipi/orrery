@@ -1,9 +1,12 @@
 {
   "name": "Apollo 11",
-  "mission_type": "Crewed Lander",
-  "site_name": "Mare Tranquillitatis",
-  "crew": ["Neil Armstrong", "Buzz Aldrin"],
-  "left": "Descent stage · ALSEP · laser retroreflector · flag · plaque: 'We came in peace for all mankind'",
-  "fact": "The first humans on the Moon. Watched live by ~600 million people — a fifth of humanity. The laser retroreflector placed by Armstrong and Aldrin still receives pulses today, measuring the Earth-Moon distance to millimetre precision. Footprints in the airless regolith will survive unchanged for a million years.",
-  "capability": "First human landing — proved crewed planetary surface operations are possible. The capability ladder for Mars begins here."
+  "mission_type": "载人着陆器",
+  "site_name": "宁静海",
+  "crew": [
+    "Neil Armstrong",
+    "Buzz Aldrin"
+  ],
+  "left": "下降级 · EASEP · 激光角反射器 · 国旗 · 纪念碑：'我们为了全人类而来，希望和平'",
+  "fact": "人类首次登月。约6亿人现场观看——大约是当时地球人口的六分之一。阿姆斯特朗和奥尔德林放置的激光角反射器至今仍接收脉冲信号，能够精确到毫米级别测量地月距离。无大气的月壤中留下的足迹将保存一百万年之久而不会改变。",
+  "capability": "首次人类登月——证明了载人行星表面作业是可行的。火星的能力阶梯从这里开始。"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "シアパルリ",
-  "tagline": "ExoMars 前駆者; レッスンfed Rosalind Franklin",
-  "description": "ESAの2016 ExoMarsはランディング中にクラッシュしたデモンストレータ - 障害のあるIMU飽和、初期のパラシュートデプロイとエンジンカットオフをトリガーします。 ロザリン・フランクリン・ランダー・デザインに直面するレッスン。",
-  "best_known_for": "ExoMars 前駆者; レッスンfed Rosalind Franklin"
+  "name": "Schiaparelli",
+  "tagline": "ExoMars先駆機; ロザリンド・フランクリンに活かされた教訓",
+  "description": "ESAの2016年ExoMarsデモンストレータ。着陸時にクラッシュ — 降下中にパラシュート降下時にIMUが飽和し、飛行コンピュータが自機が地面より下にあると判断。パラシュートを放出し、逆推進ロケットを30秒ではなくわずか3秒間だけ噴射し、その後通信が途絶えて3.7 km高度から約300 km/hで衝突した。この教訓はロザリンド・フランクリン着陸機の設計に直接活かされた。",
+  "best_known_for": "ExoMars先駆機; ロザリンド・フランクリンに活かされた教訓"
 }

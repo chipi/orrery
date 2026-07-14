@@ -1,6 +1,6 @@
 {
   "name": "Schiaparelli",
-  "tagline": "ExoMars precursor; aulas alimentado Rosalind Franklin",
-  "description": "Demonstrador ESA 2016 ExoMars que caiu durante a aterragem — um IMU avariado saturado, desencadeando uma implantação de pára-quedas precoce e corte do motor. Lições se alimentam diretamente do projeto Rosalind Franklin Lander.",
-  "best_known_for": "ExoMars precursor; aulas alimentado Rosalind Franklin"
+  "tagline": "Precursora do ExoMars; lições incorporadas ao Rosalind Franklin",
+  "description": "Demonstrador do ExoMars da ESA de 2016 que caiu durante o pouso — a IMU saturou durante a descida do paraquedas, fazendo o computador de voo acreditar que estava abaixo do nível do solo; liberou o paraquedas e acionou os retrofogos por apenas 3 segundos em vez de 30, então perdeu o sinal e impactou a ~300 km/h de uma altitude de 3,7 km. As lições foram incorporadas diretamente no projeto do pouso Rosalind Franklin.",
+  "best_known_for": "Precursora do ExoMars; lições incorporadas ao Rosalind Franklin"
 }

@@ -1,9 +1,9 @@
 {
   "name": "Chandrayaan-3",
-  "mission_type": "Ungeschraubter Lander · Rover",
-  "site_name": "Shiv Shakti Point (Südpolarregion)",
+  "mission_type": "Unbemannter Lander · Rover",
+  "site_name": "Shiv Shakti Point (südpolares Gebiet)",
   "crew": [],
   "left": "Vikram-Lander · Pragyan-Rover",
-  "fact": "Erstes Raumschiff, das in der Nähe des Mondsüdpols landete – dem umstrittensten Gebiet in der aktuellen Weltraumforschung, wo permanent schattige Krater Wassereis beherbergen. Pragyan bestätigte erstmals das Vorhandensein von Schwefel an der Oberfläche. Indien war das vierte Land, das sanft auf dem Mond landete, und das erste, das die Pole erreichte.",
-  "capability": "Polarlandetechnik – Die Südpolregion des Mars (wo saisonales Wassereis existiert) wird erst zum Ziel, nachdem das Problem der Polarlandung auf dem Mond gelöst ist."
+  "fact": "Erstes Raumfahrzeug, das in der Nähe des Mondpols gelandet ist — das umstrittenste Gebiet in der aktuellen Weltraumforschung, wo dauerhaft beschattete Krater Wassereis beherbergen. Pragyan führte die erste In-situ-Detektion von Schwefel in der Nähe des Mondpols mit seinem LIBS-Instrument durch. Indien wurde die vierte Nation, die auf dem Mond soft-landen konnte, und die erste, die die Pole erreichte.",
+  "capability": "Polares Landetechnik — Die südpolregion des Mars (wo saisonales Wassereis existiert) wird erst zu einem Ziel, wenn das Problem der Polandung auf dem Mond gelöst ist."
 }

@@ -1,12 +1,12 @@
 {
   "name": "Apollo 11",
-  "mission_type": "Bemand landingsvaartuig",
+  "mission_type": "Bemande Lander",
   "site_name": "Mare Tranquillitatis",
   "crew": [
     "Neil Armstrong",
     "Buzz Aldrin"
   ],
-  "left": "Afdaaltrap · ALSEP · laserretroreflector · vlag · plaquette: 'Wij kwamen in vrede voor de hele mensheid'",
-  "fact": "De eerste mensen op de Maan. Live bekeken door ~600 miljoen mensen — een vijfde van de mensheid. De laserretroreflector geplaatst door Armstrong en Aldrin ontvangt vandaag nog steeds pulsen, en meet de Aarde-Maan-afstand met millimeterprecisie. Voetafdrukken in het luchtloze regoliet zullen een miljoen jaar onveranderd blijven.",
-  "capability": "Eerste menselijke landing — bewees dat bemande planetaire oppervlakteoperaties mogelijk zijn. De capaciteitsladder voor Mars begint hier."
+  "left": "Afdalingsmodule · EASEP · laserretroreferentie · vlag · plaquette: 'We came in peace for all mankind'",
+  "fact": "De eerste mensen op de Maan. Rechtstreeks bekeken door ongeveer 600 miljoen mensen — ruwweg één op de zes mensen op Aarde destijds. De laserretroreferentie die door Armstrong en Aldrin werd geplaatst, ontvangt vandaag de dag nog steeds pulsen, waarmee de afstand tussen Aarde en Maan tot millimeterprecisie wordt gemeten. Voetafdrukken in het luchtloze regoliet zullen onveranderd blijven voor een miljoen jaar.",
+  "capability": "Eerste bemande maanlanding — bewees dat bemande operaties op planetaire oppervlakken mogelijk zijn. De capabiliteitsladder voor Mars begint hier."
 }

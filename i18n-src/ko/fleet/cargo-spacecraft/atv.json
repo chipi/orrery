@@ -1,7 +1,7 @@
 {
-  "name": "ATV (자동 이동 차량)",
-  "tagline": "ESA의 주력 ISS 화물 캐리어; 5 항공편",
-  "dispatch": "Automated Transfer Vehicle은 유럽의 ISS 화물선이자 당대 가장 정교한 화물 우주선이었다 — 20톤급 우주선으로 스스로 항법을 수행하여 정거장과 완전 자동 도킹을 실행했으며, 화물, 물, 공기, 추진제를 운반하고, 자체 엔진을 사용해 ISS 전체의 궤도를 상승시켰다. 2008년부터 2015년까지 5대가 비행했으며, 각각 Jules Verne부터 Georges Lemaître까지 유럽 사상가들의 이름을 따서 명명되었다. 단순한 보급선이 아니라, ATV는 유럽이 ISS의 정식 파트너로서 자리를 확보한 수단이었다 — 그리고 이를 통해 검증된 기술은 현재 NASA의 Orion을 달로 향하게 하는 European Service Module로 계승되고 있다.",
-  "description": "ATV (자동 이동 차량)는 다 (유럽)에 있는 Astrium/Airbus에 의해 건설된 로봇 화물 우주선입니다. ESA의 주력 ISS 화물 캐리어; 5 항공편. 2008년 첫 비행 후 은퇴",
-  "best_known_for": "ESA의 주력 ISS 화물 캐리어; 5 항공편"
+  "name": "ATV (Automated Transfer Vehicle)",
+  "tagline": "ESA의 기함급 ISS 화물 운반선; 5번의 비행",
+  "dispatch": "Automated Transfer Vehicle는 유럽의 ISS 화물 운반선이자 당대 가장 정교한 화물 우주선이었다 — 20톤급 우주선으로 자동 조종 기능으로 우주정거장과 완전 자동 도킹하여 화물, 물, 공기, 추진제를 전달했으며 자체 엔진으로 전체 ISS를 궤도에서 부스팅했다. 2008년부터 2015년 사이에 5대가 비행했으며, 각각 Jules Verne에서 Georges Lemaître까지 유럽의 사상가들의 이름을 따서 명명되었다. 단순한 보급 우주선을 넘어, ATV는 유럽이 완전한 ISS 파트너로서의 위치를 확보하는 방법이었으며 — 이것이 입증한 기술은 현재 NASA의 오리온이 달로 향하는 길에 동력을 제공하는 유럽 서비스 모듈로 살아있다.",
+  "description": "ATV (Automated Transfer Vehicle)는 Astrium / Airbus가 유럽에서 건조한 로봇식 화물 우주선이다. ESA의 기함급 ISS 화물 운반선으로 2008년부터 2015년까지 ISS로 5번의 임무를 비행하였으며, 화물, 물, 공기, 추진제를 전달하면서 자체 엔진으로 우주정거장을 부스팅했다.",
+  "best_known_for": "ESA의 기함급 ISS 화물 운반선; 5번의 비행"
 }

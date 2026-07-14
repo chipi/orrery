@@ -1,12 +1,12 @@
 {
-  "name": "Apollon 15",
-  "mission_type": "Atterrisseur avec équipage · Rover",
-  "site_name": "Hadley-Apennin",
+  "name": "Apollo 15",
+  "mission_type": "Vaisseau spatial habité · Rover",
+  "site_name": "Hadley–Apennine",
   "crew": [
     "David Scott",
     "James Irwin"
   ],
-  "left": "Étape de descente · ALSEP · Rover LRV · drapeau · Sculpture d'un astronaute tombé",
-  "fact": "Première mission avec le Lunar Roving Vehicle – parcouru 27,9 km. Scott a laissé une petite figurine en aluminium, « Fallen Astronaut », et une plaque répertoriant tous les astronautes et cosmonautes morts dans la course à l'espace. Il s’agit de la seule œuvre d’art sur la Lune, restée sans annonce publique à l’époque.",
-  "capability": "Première mobilité de surface avec équipage : rayon d'exploration étendu de plusieurs centaines de mètres à plusieurs dizaines de kilomètres, modèle pour les opérations de surface sur Mars avec équipage."
+  "left": "Étage de descente · ALSEP · Rover LRV · drapeau · sculpture Fallen Astronaut",
+  "fact": "Première mission avec le Lunar Roving Vehicle — a parcouru 27,9 km. Scott a laissé une petite figurine en aluminium, « Fallen Astronaut », ainsi qu'une plaque énumérant tous les astronautes et cosmonautes décédés lors de la course spatiale. C'est la seule œuvre d'art sur la Lune, laissée sans annonce publique à l'époque.",
+  "capability": "Première mobilité de surface habitée — rayon d'exploration étendu de centaines de mètres à des dizaines de kilomètres, modèle pour les opérations de surface avec équipage sur Mars."
 }

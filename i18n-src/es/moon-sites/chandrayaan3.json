@@ -1,9 +1,9 @@
 {
   "name": "Chandrayaan-3",
-  "mission_type": "Aterrizador no tripulado · Róver",
-  "site_name": "Shiv Shakti Point (región polar sur)",
+  "mission_type": "Módulo de aterrizaje no tripulado · Rover",
+  "site_name": "Punto Shiv Shakti (región polar sur)",
   "crew": [],
-  "left": "Aterrizador Vikram · róver Pragyan",
-  "fact": "Primera nave en aterrizar cerca del polo sur lunar — el territorio más disputado en la exploración espacial actual, donde los cráteres permanentemente en sombra albergan hielo de agua. Pragyan confirmó la presencia de azufre en la superficie por primera vez. India se convirtió en la cuarta nación en aterrizar suavemente en la Luna y la primera en alcanzar los polos.",
-  "capability": "Técnica de aterrizaje polar — la región del polo sur de Marte (donde existe hielo de agua estacional) se convierte en destino solo después de resolver el problema de aterrizaje polar en la Luna."
+  "left": "Módulo de aterrizaje Vikram · Rover Pragyan",
+  "fact": "Primer vehículo espacial en aterrizar cerca del polo sur lunar — el territorio más codiciado en la exploración espacial actual, donde cráteres permanentemente en sombra albergan hielo de agua. Pragyan realizó la primera detección in situ de azufre cerca del polo sur lunar utilizando su instrumento LIBS. India se convirtió en la cuarta nación en alunizar suavemente en la Luna, y la primera en alcanzar los polos.",
+  "capability": "Técnica de aterrizaje polar — la región del polo sur de Marte (donde existe hielo de agua estacional) se convierte en destino solo después de que el problema del aterrizaje polar se resuelva en la Luna."
 }

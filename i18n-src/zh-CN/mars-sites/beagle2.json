@@ -1,7 +1,7 @@
 {
   "name": "Beagle 2",
-  "mission_type": "Uncrewed Lander · Lost",
-  "site_name": "Isidis Planitia",
-  "fact": "UK-led astrobiology lander aboard ESA's Mars Express. Touched down on Christmas Day 2003 but never made contact. Wreckage was located in 2015 by NASA's MRO HiRISE camera — the lander had reached the surface intact, but two of its four solar panels failed to deploy, blocking its radio antenna. A 12-year mystery solved by orbital imagery.",
-  "capability": "First UK-led planetary lander; demonstrated that orbital reconnaissance can locate failed surface assets at metre-scale."
+  "mission_type": "无人着陆器 · 已失联",
+  "site_name": "伊西迪斯平原",
+  "fact": "英国主导的天体生物学着陆器，搭载于欧空局的火星快车号。于2003年圣诞节着陆，但从未建立通讯联系。该着陆器于2015年被NASA的火星勘测轨道器（MRO）HiRISE相机发现——它已完整到达表面，但其四块太阳能电池板中至少有一块未能展开，阻挡了其无线电天线。一个12年的谜团被轨道图像解开。",
+  "capability": "英国首个主导的行星着陆器；证明了轨道侦察可以在米级精度下定位失败的表面资产。"
 }

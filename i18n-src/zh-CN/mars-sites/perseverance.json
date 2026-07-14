@@ -1,7 +1,7 @@
 {
   "name": "Perseverance + Ingenuity",
-  "mission_type": "Uncrewed Rover + Helicopter · Active",
-  "site_name": "Jezero Crater (ancient lake delta)",
-  "fact": "Designed to cache promising rock cores for a future Mars Sample Return mission. Already drilled and sealed 26+ samples by mid-2024. The Ingenuity helicopter — originally a 30-day technology demo — flew 88 times before damaging a rotor in January 2024. First powered, controlled flight on another world.",
-  "capability": "First Mars sample-caching for future return; first powered flight in another atmosphere (Ingenuity)."
+  "mission_type": "无人漫游车 + 直升机 · 运行中",
+  "site_name": "杰泽罗陨石坑底部",
+  "fact": "为未来火星样品返回任务设计，用于缓存有前景的岩心。截至2024年中期，已钻取并密封26多个样品。Ingenuity直升机原本计划进行为期30天的技术演示，但在2024年1月前叶片受损前共飞行72次。这是另一个世界上首次动力控制飞行。",
+  "capability": "火星首次样品缓存以供未来返回；首次在另一大气层进行动力飞行（Ingenuity）。"
 }

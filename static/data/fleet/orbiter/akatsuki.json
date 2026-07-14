@@ -6,10 +6,10 @@
   "country": "Japan",
   "manufacturer": "Mitsubishi Electric",
   "first_flight": "2010-05-20",
-  "status": "ACTIVE",
+  "status": "RETIRED",
   "era": "2011-now",
   "epoch": "commercial-era",
-  "best_known_for": "Only active Venus orbiter; cloud-top winds + atmosphere dynamics. Recovered after a 2010 orbit-insertion failure; achieved orbit on a backup attempt in 2015",
+  "best_known_for": "Japan's first Venus orbiter; studied cloud-top winds and atmospheric dynamics. Recovered after a 2010 orbit-insertion failure; achieved orbit on a backup attempt in 2015",
   "credit": "Added for PRD-023 Slice A — active Venus orbiter rendered as 3D glyph on /explore. Memory feedback_global_space_program_representation — JAXA explicit, not silently dropped.",
   "links": [
     {

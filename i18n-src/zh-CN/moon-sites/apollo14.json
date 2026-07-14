@@ -1,9 +1,12 @@
 {
   "name": "Apollo 14",
-  "mission_type": "Crewed Lander",
+  "mission_type": "载人着陆器",
   "site_name": "Fra Mauro",
-  "crew": ["Alan Shepard", "Edgar Mitchell"],
-  "left": "Descent stage · ALSEP · flag · two golf balls",
-  "fact": "Alan Shepard, the first American in space (1961), became the only person to play golf on the Moon. He smuggled a club head and two balls aboard. He claimed one 'went miles and miles' — LRO images suggest about 40 metres. Still: the furthest sporting achievement in history.",
-  "capability": "Demonstrated highland landing — opened scientifically valuable terrain types previously considered too hazardous, a blueprint for non-mare Mars sites."
+  "crew": [
+    "Alan Shepard",
+    "Edgar Mitchell"
+  ],
+  "left": "下降舱 · ALSEP · 旗帜 · 两个高尔夫球",
+  "fact": "Alan Shepard 是第一位进入太空的美国人（1961 年），也是唯一在月球上打过高尔夫的人。他偷偷带上了一个球杆头和两个球。他声称其中一个\"飞出了好远好远\"——LRO 影像显示大约 37 m（40 码）。尽管如此，这仍然是历史上最远的运动成就。",
+  "capability": "展示了高地着陆能力——开放了以前被认为过于危险的科学价值地形，为火星非月海地点的着陆奠定了蓝图。"
 }

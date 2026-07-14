@@ -1,7 +1,7 @@
 {
   "name": "Mars 3 lander",
-  "mission_type": "Uncrewed Soft Lander · Partial Success",
-  "site_name": "Approx. 45°S, 158°W (Ptolemaeus crater region)",
-  "fact": "First soft landing on Mars. The lander touched down successfully and began transmitting data — for 14.5 seconds. A planet-wide dust storm at the time of arrival is the leading explanation for the silence that followed. Despite the brevity, Mars 3 proved a Martian soft landing was possible: a foundational engineering result built on by every Mars lander since.",
-  "capability": "First successful Mars EDL — proved soft-landing was a solved problem before American hardware tried it."
+  "mission_type": "无人软着陆器·部分成功",
+  "site_name": "约45°S, 158°W（托勒密陨石坑）",
+  "fact": "火星上的首次软着陆。该着陆器成功着陆并开始传输数据——持续了约20秒。当时到达时火星上的全球性沙尘暴是随后信号中断的主要解释。尽管时间很短，Mars 3证明了在火星上进行软着陆是可行的：这是一项奠基性的工程成就，此后所有火星着陆器都基于这一成果进行了改进。",
+  "capability": "首次成功的火星进入、下降和着陆——在美国航天器尝试之前就证明了软着陆是一个已解决的问题。"
 }

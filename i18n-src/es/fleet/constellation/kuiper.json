@@ -1,6 +1,6 @@
 {
-  "name": "Project Kuiper",
-  "tagline": "Banda ancha LEO de Amazon — 3236 sats planificados, en expansión desde 2024+",
-  "description": "La respuesta planificada de Amazon a Starlink — 3236 satélites a 590-630 km en 98 planos orbitales. Los primeros lanzamientos operativos comenzaron en 2023; la licencia de la FCC requiere un despliegue del 50% para julio de 2026 y del 100% para julio de 2029. Integración de clientes orientada al servicio de estaciones terrestres AWS de Amazon. Duplicará aproximadamente la población de satélites activos en LEO si se despliega completamente.",
-  "best_known_for": "Banda ancha LEO de Amazon — 3236 sats planificados, en expansión desde 2024+"
+  "name": "Amazon Leo (anteriormente Project Kuiper)",
+  "tagline": "Banda ancha LEO de Amazon — 3.236 satélites previstos, beta comercial 2026",
+  "description": "La respuesta de Amazon a Starlink — 3.236 satélites a 590-630 km en 98 planos orbitales. Primer lanzamiento de prototipo en octubre de 2023 (lanzamiento de prueba de KuiperSat-1 y -2); primeros 27 satélites de producción lanzados en abril de 2025 en Atlas V. A mediados de 2026, ~230+ satélites de producción están operativos. La licencia de la FCC requiere el 50% del despliegue (1.618 satélites) antes de julio de 2026 y el 100% antes de julio de 2029; Amazon ha solicitado una prórroga de dos años debido al déficit actual. Si se despliega completamente, la constelación aproximadamente duplicaría la población de satélites activos en LEO.",
+  "best_known_for": "Banda ancha LEO de Amazon — 3.236 satélites previstos, beta comercial 2026"
 }

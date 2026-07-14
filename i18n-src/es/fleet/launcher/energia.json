@@ -1,7 +1,7 @@
 {
   "name": "Energia",
-  "tagline": "Super-pesado soviético; voló Buran una vez",
-  "dispatch": "Energia fue el cohete que redimió al N1, el lanzador superpesado que la Unión Soviética finalmente logró construir correctamente. Donde el N1 explotó en los cuatro intentos, Energia funcionó, elevando la carga útil Polyus en 1987 y el orbitador Buran en 1988. Crucialmente, era un lanzador por derecho propio, no una pila de transbordador: como Buran no tenía motores principales, Energia realizaba todo el trabajo de alcanzar la órbita y podría haber elevado igualmente otras cargas útiles pesadas sin orbitador alguno. Fue el cohete más potente que la Unión Soviética llegó a volar con éxito y, al igual que Buran, fue cancelado por falta de algo que lanzar.",
-  "description": "El único lanzador super-pesado soviético en volar. Diseñado para llevar el orbitador Buran o cargas autónomas de hasta 100 t a LEO. Dos vuelos, ambos exitosos, antes de que el programa fuera archivado al final de la Guerra Fría.",
-  "best_known_for": "Super-pesado soviético; voló Buran una vez"
+  "tagline": "Superpesado soviético; dos vuelos (Polyus 1987, Buran 1988)",
+  "dispatch": "Energia fue el cohete que redimió el N1 — el lanzador superpesado que la Unión Soviética finalmente logró hacer funcionar. Donde el N1 explotó en los cuatro intentos, Energia funcionó, levantando la carga útil Polyus en 1987 y el transbordador Buran en 1988. Crucialmente, era un lanzador por sí mismo, no un conjunto tipo transbordador: como Buran no tenía motores principales, Energia realizaba todo el trabajo de alcanzar la órbita y podría haber levantado igualmente otras cargas útiles pesadas sin ningún transbordador. Fue el cohete más potente que la Unión Soviética jamás lanzó exitosamente — y, como Buran, fue cancelado por falta de nada que lanzar.",
+  "description": "El único lanzador superpesado soviético que voló exitosamente. Diseñado para transportar el transbordador Buran o cargas útiles independientes de hasta 100 t a LEO. Dos vuelos: prueba de carga útil Polyus (1987) y transbordador Buran (1988), ambos exitosos. Programa suspendido al final de la Guerra Fría.",
+  "best_known_for": "Superpesado soviético; lanzó Buran una vez"
 }

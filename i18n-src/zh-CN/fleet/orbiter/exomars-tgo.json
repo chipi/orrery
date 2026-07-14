@@ -1,6 +1,6 @@
 {
   "name": "ExoMars TGO",
   "tagline": "痕量气体分析 + ESA/NASA 表面中继",
-  "description": "ESA 的痕量气体轨道器,自 2016 年起在火星轨道运行。探测大气中可能暗示生物或地质活动的甲烷和水蒸气,并为包括 Perseverance 和 Curiosity 在内的表面探测器中继数据。",
-  "best_known_for": "火星痕量气体分析;ESA 和 NASA 表面任务中继"
+  "description": "欧空局的痕量气体轨道器，自2016年以来在火星轨道运行。通过嗅探大气中可能暗示生物或地质活动的甲烷和水蒸气，并通过其UHF中继为火星表面任务中继数据。",
+  "best_known_for": "火星痕量气体分析；为欧空局和NASA表面任务提供中继"
 }

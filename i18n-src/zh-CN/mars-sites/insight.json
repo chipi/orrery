@@ -1,7 +1,7 @@
 {
   "name": "InSight",
-  "mission_type": "Uncrewed Lander · Mission Complete",
-  "site_name": "Elysium Planitia",
-  "fact": "First dedicated planetary seismograph on Mars. Detected over 1,300 marsquakes including a record-breaking magnitude-5 quake in May 2022. Heat-flow probe (HP³) failed to penetrate the unexpectedly cohesive regolith. Mission ended December 2022 when dust accumulation on solar panels dropped power below operating threshold.",
-  "capability": "First seismic exploration of another planet's interior — established Mars's core size and crustal thickness."
+  "mission_type": "无人着陆器 · 任务完成",
+  "site_name": "极乐平原",
+  "fact": "火星首部专用行星地震仪。探测到超过1,300次火星地震，包括2022年5月创纪录的4.7级地震（S1222a）。热流探针（HP³）未能穿透出人意料的粘聚性月壤。2022年12月，太阳能电池板上的尘埃积累导致功率降至运行阈值以下，任务结束。",
+  "capability": "首次对另一颗行星内部的地震探测——确定了火星的核心大小和地壳厚度。"
 }

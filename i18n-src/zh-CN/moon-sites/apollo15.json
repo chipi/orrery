@@ -1,9 +1,12 @@
 {
   "name": "Apollo 15",
-  "mission_type": "Crewed Lander · Rover",
-  "site_name": "Hadley-Apennine",
-  "crew": ["David Scott", "James Irwin"],
-  "left": "Descent stage · ALSEP · LRV rover · flag · Fallen Astronaut sculpture",
-  "fact": "First mission with the Lunar Roving Vehicle — drove 27.9 km. Scott left a small aluminium figurine, 'Fallen Astronaut', and a plaque listing all astronauts and cosmonauts who died in the space race. It is the only artwork on the Moon, left without public announcement at the time.",
-  "capability": "First crewed surface mobility — extended exploration radius from hundreds of metres to tens of kilometres, the model for crewed Mars surface operations."
+  "mission_type": "载人着陆器 · 月球车",
+  "site_name": "哈德利-亚平宁山脉",
+  "crew": [
+    "David Scott",
+    "James Irwin"
+  ],
+  "left": "下降级 · 阿波罗月面科学实验包 · 月球车 · 国旗 · 《堕落宇航员》雕塑",
+  "fact": "首次使用月球车的任务——行驶27.9公里。斯科特留下一尊铝制小雕像《堕落宇航员》和一块纪念碑，碑上铭刻了在太空竞赛中丧生的所有宇航员和宇宙航天员的名字。这是月球上唯一的艺术作品，当时是在未公开宣布的情况下留下的。",
+  "capability": "首次载人表面机动——将探索范围从数百米扩展到数十公里，是载人火星表面行动的典范。"
 }

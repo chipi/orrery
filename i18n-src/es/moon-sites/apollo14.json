@@ -1,9 +1,12 @@
 {
   "name": "Apollo 14",
-  "mission_type": "Aterrizador tripulado",
+  "mission_type": "Modulo de Alunizaje Tripulado",
   "site_name": "Fra Mauro",
-  "crew": ["Alan Shepard", "Edgar Mitchell"],
+  "crew": [
+    "Alan Shepard",
+    "Edgar Mitchell"
+  ],
   "left": "Etapa de descenso · ALSEP · bandera · dos pelotas de golf",
-  "fact": "Alan Shepard, el primer estadounidense en el espacio (1961), se convirtió en la única persona en jugar al golf en la Luna. Coló a bordo una cabeza de palo y dos pelotas. Afirmó que una \"voló kilómetros y kilómetros\" — las imágenes del LRO sugieren unos 40 metros. Aun así: el logro deportivo más lejano de la historia.",
-  "capability": "Demostró el aterrizaje en tierras altas — abrió tipos de terreno científicamente valiosos que antes se consideraban demasiado peligrosos, un modelo para sitios marcianos fuera de las llanuras."
+  "fact": "Alan Shepard, el primer estadounidense en el espacio (1961), se convirtió en la única persona que ha jugado al golf en la Luna. Contrabandó una cabeza de palo y dos pelotas a bordo. Afirmó que una «recorrió millas y millas» — las imágenes del LRO sugieren aproximadamente 37 m (40 yardas). Aún así: el logro deportivo más lejano de la historia.",
+  "capability": "Demostró alunizaje en las tierras altas — abrió tipos de terreno científicamente valiosos previamente considerados demasiado peligrosos, un modelo para sitios marcianos no-mare."
 }

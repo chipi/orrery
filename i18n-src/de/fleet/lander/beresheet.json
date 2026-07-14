@@ -1,6 +1,6 @@
 {
-  "name": "Anmerkung:",
-  "tagline": "Erster privater Mondlandeversuch",
-  "description": "Der erste private Mondlandeversuch, von Israels SpaceIL gemeinnützig. Ausgestoßen im April 2019, als eine Schubsteuerungssoftware den Motor zu lange verlassen hat. Demonstriert, dass die Landung auf dem Mond viel härter ist als es zu erreichen.",
-  "best_known_for": "Erster privater Mondlandeversuch"
+  "name": "Beresheet",
+  "tagline": "Erste private Mondlandung im Versuch",
+  "description": "Der erste private Versuch einer Mondlandung durch SpaceIL, eine israelische gemeinnützige Organisation. Das Landegerät stürzte im April 2019 ab, nachdem ein Fehler des IMU-Gyroskops zu wiederholten Computerneustarts führte, von denen jeder den Motor abschaltete. Bis die Kontrolle wiederhergestellt war, befand sich das Landegerät zu tief und war zu schnell, um zu überleben. Dies zeigte, dass eine Mondlandung viel schwieriger ist als das Erreichen des Mondes.",
+  "best_known_for": "Erste private Mondlandung im Versuch"
 }

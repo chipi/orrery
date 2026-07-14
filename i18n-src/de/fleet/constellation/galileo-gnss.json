@@ -1,6 +1,6 @@
 {
   "name": "Galileo (GNSS)",
-  "tagline": "Europas ziviles GNSS — 28 Satelliten, Positionierung unter einem Meter",
-  "description": "Europas ziviles GNSS — 28 Satelliten in 23.222 km MEO in 3 Orbitalebenen mit 56° Inklination. Erster operativer Dienst 2016, vollständige Einsatzfähigkeit erklärt 2024. Im Gegensatz zu GPS (militärischer Betreiber) und GLONASS (militärischer Betreiber) wird Galileo von EUSPA, einer zivilen EU-Behörde, verwaltet. Ausgelegt für Positionierung unter einem Meter mit offenen + kommerziellen + Public Regulated Service-Stufen. Search and Rescue-Nutzlast integriert zur Erkennung von Notfunkbaken.",
-  "best_known_for": "Europas ziviles GNSS — 28 Satelliten, Positionierung unter einem Meter"
+  "tagline": "Europas ziviles GNSS — ~30 Satelliten, Positionierung im Dezimeterbereich",
+  "description": "Europas ziviles GNSS — 34 Satelliten wurden gestartet (4 IOV + 30 FOC); 27 operativ + 1 in Inbetriebnahme ab Mai 2026; Konstellationsziel ist 30 bei 23.222 km MEO in 3 Umlaufbahnen mit 56° Inklination. Erster Dienst 2016; Erklärung der vollständigen Einsatzfähigkeit ausstehend (offizielle Ankündigung durch ESA/EUSPA). Anders als GPS (militärischer Betreiber) und GLONASS (militärischer Betreiber) wird Galileo von der EUSPA, einer zivilen EU-Behörde, betrieben. Konzipiert für Positionierung im Dezimeterbereich mit offenen, kommerziellen und öffentlich regulierten Serviceschichten. Nutzlast für Such- und Rettung integriert zur Erkennung von Notfeuern.",
+  "best_known_for": "Europas ziviles GNSS — ~30 Satelliten, Positionierung im Dezimeterbereich"
 }

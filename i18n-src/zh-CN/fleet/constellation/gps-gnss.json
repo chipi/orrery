@@ -1,6 +1,6 @@
 {
-  "name": "GPS (Global Positioning System)",
-  "tagline": "最初的GNSS——31颗卫星,自2000年起免费公共服务",
-  "description": "Global Positioning System——最初的GNSS,至今仍是使用最广泛的系统。31颗活跃卫星运行于20,180 km高度的6个轨道平面,倾角55°。由USSF运营;最初由国防部管理,1983年大韩航空007号航班被击落后开放民用未加密L1 C/A信号。2000年关闭选择性可用性后,民用精度大幅提升。Block IIF和III卫星配备现代化的L1C、L2C、L5信号。",
-  "best_known_for": "最初的GNSS——31颗卫星,自2000年起免费公共服务"
+  "name": "GPS（全球定位系统）",
+  "tagline": "最初的GNSS — 31颗卫星，自2000年起免费公共服务",
+  "description": "全球定位系统 — 最初的GNSS，也是目前使用最广泛的系统。31颗活跃卫星在高度20,180 km处，分布在6个轨道平面，倾角55°。由美国太空军操作；最初由国防部管理。1983年里根总统的指令在大韩航空007班机被击落后承诺未来向民众开放GPS接入，但民用非加密L1 C/A信号接入直到2000年5月关闭选择可用性（Selective Availability）才成为可能，大幅提升了民用精度。Block IIF和III卫星搭载现代化的L1C、L2C、L5信号。",
+  "best_known_for": "最初的GNSS — 31颗卫星，自2000年起免费公共服务"
 }

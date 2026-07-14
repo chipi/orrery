@@ -1,9 +1,9 @@
 {
   "name": "Chang'e 4 / Yutu-2",
-  "mission_type": "Aterrizador no tripulado · Róver (Cara oculta)",
+  "mission_type": "Módulo no tripulado · Rover (Lado oculto)",
   "site_name": "Cráter Von Kármán",
   "crew": [],
-  "left": "Aterrizador Chang'e 4 · róver Yutu-2 (todavía activo)",
-  "fact": "La primera nave en aterrizar en la cara oculta de la Luna — técnica y operativamente el aterrizaje lunar más difícil jamás intentado. Requirió un satélite retransmisor (Queqiao) en L2 ya que la cara oculta no tiene contacto directo de radio con la Tierra. Yutu-2 ha recorrido más de 1,9 km, todavía activo. La cara oculta nunca había sido visitada.",
-  "capability": "Demostró la arquitectura de comunicaciones por satélite retransmisor para operaciones más allá de la línea de visión directa — el patrón exacto que cualquier misión a la cara oculta o polar de Marte necesitará."
+  "left": "Módulo Chang'e 4 · Rover Yutu-2 (estacionario desde marzo de 2024)",
+  "fact": "Primera nave espacial en aterrizar en el lado oculto de la Luna — técnica y operacionalmente el aterrizaje lunar más difícil jamás intentado. Requirió un satélite relé (Queqiao) en L2, ya que el lado oculto carece de contacto radioeléctrico directo con la Tierra. El rover Yutu-2 recorrió más de 1,6 km antes de quedarse estacionario en marzo de 2024; la telemetría continuó al menos hasta septiembre de 2024. El lado oculto nunca había sido visitado.",
+  "capability": "Demostró una arquitectura de comunicaciones por satélite relé para operaciones más allá de la línea de vista directa — el patrón exacto que cualquier misión al lado oculto o polar de Marte necesitará."
 }

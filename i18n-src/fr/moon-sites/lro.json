@@ -1,7 +1,7 @@
 {
-  "name": "Orbiteur de reconnaissance lunaire",
+  "name": "Lunar Reconnaissance Orbiter",
   "mission_type": "Orbiteur actif · 2009 – présent",
-  "site_name": "Orbite polaire lunaire, ~50 km",
-  "fact": "La mission orbitale lunaire active la plus ancienne. La caméra à angle étroit du LROC résout les objets ≥50 cm – suffisamment nets pour imager chaque étape de descente d'Apollo, les deux traces du rover Lunokhod et chaque actif récemment débarqué. Création des cartes de base topographiques et d'imagerie utilisées par chaque mission récente d'alunissage. Cartographie actuelle des cratères ombragés en permanence pour la sélection du site Artemis au pôle sud.",
-  "capability": "Reconnaissance lunaire moderne définitive – les yeux dans le ciel pour chaque mission lunaire récente."
+  "site_name": "Orbite polaire lunaire (~50 km phase scientifique ; elliptique depuis 2011)",
+  "fact": "La mission orbitale lunaire active la plus longue en activité. La caméra grand angle étroit de LROC résout les objets ≥50 cm — assez précise pour imager chaque étage de descente Apollo, les traces des deux rovers Lunokhod, et chaque engin aluni récemment. A construit les cartes topographiques et d'imagerie de base utilisées par chaque mission d'alunissage récente. Cartographie actuellement les cratères en ombre permanente pour la sélection du site pôle sud d'Artemis.",
+  "capability": "La reconnaissance lunaire moderne définitive — les yeux dans le ciel de chaque mission lunaire récente."
 }

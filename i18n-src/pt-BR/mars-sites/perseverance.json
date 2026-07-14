@@ -1,7 +1,7 @@
 {
-  "name": "Perseverança + Engenhosidade",
-  "mission_type": "Rover + Helicóptero não tripulado · Ativo",
-  "site_name": "Cratera de Jezero (antigo delta do lago)",
-  "fact": "Projetado para armazenar núcleos de rocha promissores para uma futura missão de retorno de amostras de Marte. Já perfurou e selou mais de 26 amostras em meados de 2024. O helicóptero Ingenuity – originalmente uma demonstração de tecnologia de 30 dias – voou 88 vezes antes de danificar um rotor em janeiro de 2024. Primeiro voo motorizado e controlado em outro mundo.",
-  "capability": "Primeiro armazenamento em cache de amostras de Marte para retorno futuro; primeiro voo motorizado em outra atmosfera (Ingenuity)."
+  "name": "Perseverance + Ingenuity",
+  "mission_type": "Rover Não Tripulado + Helicóptero · Ativo",
+  "site_name": "Piso da Cratera Jezero",
+  "fact": "Projetada para armazenar em cache amostras de rocha promissoras para uma futura missão de Retorno de Amostra de Marte. Já perfurou e selou mais de 26 amostras até meados de 2024. O helicóptero Ingenuity — originalmente uma demonstração de tecnologia de 30 dias — voou 72 vezes antes de danificar um rotor em janeiro de 2024. Primeiro voo propulsado e controlado em outro mundo.",
+  "capability": "Primeiro armazenamento em cache de amostra em Marte para futuro retorno; primeiro voo propulsado em outra atmosfera (Ingenuity)."
 }

@@ -1,6 +1,6 @@
 {
   "name": "Galileo (GNSS)",
-  "tagline": "GNSS civil europeo — 28 satélites, posicionamiento submétrico",
-  "description": "GNSS civil europeo — 28 satélites a 23 222 km MEO en 3 planos orbitales inclinados 56°. Primer servicio operacional en 2016, capacidad operacional plena declarada en 2024. A diferencia de GPS (operador militar) y GLONASS (operador militar), Galileo está gestionado por EUSPA, una agencia civil de la UE. Diseñado para posicionamiento submétrico con niveles de servicio abierto + comercial + Servicio Regulado Público. Carga útil de Búsqueda y Salvamento integrada para detección de balizas de emergencia.",
-  "best_known_for": "GNSS civil europeo — 28 satélites, posicionamiento submétrico"
+  "tagline": "GNSS civil europeo — ~30 satélites, posicionamiento submétrico",
+  "description": "GNSS civil europeo — 34 satélites lanzados (4 IOV + 30 FOC); 27 operacionales + 1 en comisionamiento a mayo de 2026; la constelación objetivo es de 30 en órbita MEO a 23.222 km en 3 planos orbitales inclinados 56°. Primer servicio operacional en 2016; la declaración de capacidad operacional completa está pendiente del anuncio oficial de la ESA/EUSPA. A diferencia de GPS (operador militar) y GLONASS (operador militar), Galileo está gestionado por EUSPA, una agencia civil de la UE. Diseñado para posicionamiento submétrico con capas de servicio abierto + comercial + Servicio Público Regulado. Carga de utilidad de Búsqueda y Rescate integrada para la detección de balizas de emergencia.",
+  "best_known_for": "GNSS civil europeo — ~30 satélites, posicionamiento submétrico"
 }

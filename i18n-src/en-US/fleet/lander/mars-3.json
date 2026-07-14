@@ -1,6 +1,6 @@
 {
   "name": "Mars 3",
-  "tagline": "First soft landing on Mars; 110 s of telemetry",
-  "description": "The first soft landing on Mars (December 1971). Returned 110 seconds of partial telemetry — possibly an image — before contact was lost in the global dust storm raging across the planet.",
-  "best_known_for": "First soft landing on Mars; 110 s of telemetry"
+  "tagline": "First soft landing on Mars; ~20 s of surface transmission",
+  "description": "The first soft landing on Mars (December 1971). Began transmitting what would have been a surface image, but contact was lost after ~20 seconds leaving only a featureless grey frame. The global dust storm raging across the planet may have contributed to the early transmission loss.",
+  "best_known_for": "First soft landing on Mars; ~20 s of surface transmission"
 }

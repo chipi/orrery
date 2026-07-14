@@ -1,12 +1,12 @@
 {
   "name": "Apollo 12",
   "mission_type": "Lander con equipaggio",
-  "site_name": "L'oceano delle tempeste",
+  "site_name": "Oceanus Procellarum",
   "crew": [
-    "Pietro Corrado",
-    "Alan Fagiolo"
+    "Pete Conrad",
+    "Alan Bean"
   ],
-  "left": "Fase di discesa · ALSEP · bandiera · parti recuperate di Surveyor 3",
-  "fact": "L'atterraggio di precisione: Conrad atterrò entro 183 m dalla sonda Surveyor 3 senza equipaggio (1967). Ne hanno recuperato pezzi per il ritorno sulla Terra, dimostrando che i veicoli spaziali sopravvivono per anni sulla Luna senza danni da radiazioni o micrometeoriti. Una prova di concetto per le future missioni rendezvous.",
-  "capability": "Primo atterraggio di precisione in un punto designato: il prerequisito per qualsiasi architettura di rendezvous di ritorno del campione, compreso Marte."
+  "left": "Stadio di discesa · ALSEP · bandiera · componenti recuperate del Surveyor 3",
+  "fact": "L'allunaggio di precisione — Conrad toccò il suolo a circa 163 m dal probe automatico Surveyor 3 (1967). Recuperarono componenti di esso per il ritorno sulla Terra, dimostrando che i veicoli spaziali sopravvivono per anni sulla Luna senza danni causati dalle radiazioni o dai micrometeoriti. Una prova di fattibilità per future missioni di rendezvous.",
+  "capability": "Primo allunaggio di precisione in un punto designato — prerequisito indispensabile per qualsiasi architettura di ritorno di campioni, incluso Marte."
 }

@@ -1,9 +1,9 @@
 {
   "name": "Luna 16",
-  "mission_type": "Robotic Sample Return",
-  "site_name": "Mare Fecunditatis",
+  "mission_type": "로봇식 표본 반환",
+  "site_name": "풍요의 바다",
   "crew": [],
-  "left": "Descent stage with cabling, ascent stage launch base",
-  "fact": "First fully robotic sample return from another world — September 1970. Drilled into the lunar regolith with an articulated rotary drill, transferred 101 g of dust + small rock fragments into a sealed return capsule, then launched directly back to Earth without orbital rendezvous. Landed in Kazakhstan a day later. Three Luna sample returns followed (17 / 20 / 24).",
-  "capability": "Proved end-to-end robotic sample return is feasible — the capability that underwrites Mars Sample Return today."
+  "left": "내림 단계 회로망 및 케이블, 상승 단계 발사 기지",
+  "fact": "다른 천체에서의 완전 로봇식 표본 반환 첫 성공 — 1970년 9월. 관절형 회전 드릴로 달 레골리스를 천공하여 먼지와 작은 암석 파편 101g을 밀폐된 반환 캡슐에 옮긴 후, 궤도 랑데부 없이 직접 지구로 발사했다. 사흘 뒤 카자흐스탄에 착륙했다. 루나 표본 반환은 두 번 더 이어졌다(1972년 루나 20, 1976년 루나 24).",
+  "capability": "종단간 로봇식 표본 반환이 실행 가능함을 입증했으며, 이는 오늘날 화성 표본 반환을 뒷받침하는 능력이다."
 }

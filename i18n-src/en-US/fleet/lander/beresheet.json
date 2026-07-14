@@ -1,6 +1,6 @@
 {
   "name": "Beresheet",
   "tagline": "First private lunar landing attempt",
-  "description": "The first private lunar landing attempt, by Israel’s SpaceIL nonprofit. Crashed in April 2019 when a thrust-control software glitch left the engine off too long. Demonstrated that landing on the Moon is much harder than reaching it.",
+  "description": "The first private lunar landing attempt, by Israel’s SpaceIL nonprofit. Crashed in April 2019 when an IMU gyroscope failure triggered repeated computer reboots, each shutting the engine down; by the time control was recovered, the lander was too low and fast to survive. Demonstrated that landing on the Moon is much harder than reaching it.",
   "best_known_for": "First private lunar landing attempt"
 }

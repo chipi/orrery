@@ -1,7 +1,7 @@
 {
-  "name": "Atterrisseur Viking 1",
+  "name": "Viking 1 lander",
   "mission_type": "Atterrisseur sans équipage · Mission terminée",
   "site_name": "Chryse Planitia",
-  "fact": "Première mission à la surface de Mars pleinement réussie. Viking 1 a fonctionné pendant plus de six ans à la surface – la mission d'atterrissage sur Mars la plus longue jusqu'à ce qu'Opportunity batte le record en 2010. Elle a renvoyé les premières images couleur de la surface martienne, mené les premières expériences de détection de vie (résultats notoirement peu concluants) et caractérisé le régolithe et la météo.",
-  "capability": "Première science martienne in situ de longue durée – chaque atterrisseur moderne fonctionne selon le manuel de jeu de Viking."
+  "fact": "Première mission de surface martienne entièrement réussie. Viking 1 a fonctionné plus de six ans à la surface — la mission de surface la plus longue jusqu'à ce qu'Opportunity (un rover) batte le record en 2010. Elle a renvoyé les premières images en couleur de la surface martienne, mené les premières expériences de détection de la vie (résultats notoirement peu concluants), et caractérisé le régolithe et la météorologie.",
+  "capability": "Première science martienne in-situ de longue durée — tous les atterrisseurs modernes s'inspirent du modèle de Viking."
 }

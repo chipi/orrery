@@ -1,7 +1,7 @@
 {
-  "name": "Orbitador de gás traço ExoMars",
+  "name": "ExoMars Trace Gas Orbiter",
   "mission_type": "Orbitador Ativo · 2016 – presente",
-  "site_name": "Circular ~400 km, inclinação de 74°",
-  "fact": "Metade sobrevivente da missão ExoMars 2016 (Schiaparelli foi o pousador). Caracteriza metano atmosférico, vapor de água e outros gases residuais com sensibilidade de parte por trilhão. A questão do metano – era real? era orgânico? - é o que TGO foi construído para resolver. Até agora, os dados favorecem a conclusão de que relatos anteriores de plumas de metano eram artefatos de medição.",
-  "capability": "Mapeamento de gases residuais atmosféricos de alta sensibilidade em qualquer planeta."
+  "site_name": "Órbita circular ~400 km, inclinação de 74°",
+  "fact": "Metade sobrevivente da missão ExoMars 2016 (Schiaparelli era o módulo pousador). Caracteriza metano atmosférico, vapor d'água e outros gases traço com sensibilidade de partes por trilhão. Não encontrou metano acima de 0,05 ppbv — muito abaixo de todas as detecções anteriormente reivindicadas — aprofundando em vez de resolver o mistério do metano. As detecções em nível de superfície do Curiosity permanecem inexplicadas.",
+  "capability": "Mapeamento de gases traço atmosféricos com a maior sensibilidade em qualquer planeta."
 }

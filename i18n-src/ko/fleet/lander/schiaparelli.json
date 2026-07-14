@@ -1,6 +1,6 @@
 {
-  "name": "프로젝트",
-  "tagline": "ExoMars precursor; 수업 fed Rosalind Franklin",
-  "description": "ESA의 2016 ExoMars demonstrator 착륙 중 충돌 - 결함 IMU 포화, 초기 퍼레이드 배포 및 엔진 차단을 트리거. Rosalind Franklin Lander 디자인에 직접 걸린 교훈.",
-  "best_known_for": "ExoMars precursor; 수업 fed Rosalind Franklin"
+  "name": "Schiaparelli",
+  "tagline": "ExoMars 선행 임무; Rosalind Franklin에 교훈 제공",
+  "description": "ESA의 2016년 ExoMars 시연기로, 착륙 중 충돌함 — 낙하산 강하 중 IMU가 포화되어 비행 컴퓨터가 지면 아래에 있다고 잘못 판단했고, 낙하산을 방출한 후 역추진 로켓을 30초가 아닌 3초만 분사했으며, 이후 신호가 끊기고 3.7 km 고도에서 ~300 km/h의 속도로 충돌했다. 이 교훈은 Rosalind Franklin 착륙선 설계에 직접 반영되었다.",
+  "best_known_for": "ExoMars 선행 임무; Rosalind Franklin에 교훈 제공"
 }

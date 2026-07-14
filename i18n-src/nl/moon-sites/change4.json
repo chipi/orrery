@@ -1,9 +1,9 @@
 {
   "name": "Chang'e 4 / Yutu-2",
-  "mission_type": "Onbemand landingsvaartuig · Rover (achterzijde)",
-  "site_name": "Von Kármán-krater",
+  "mission_type": "Onbemande Lander · Rover (Voorkant)",
+  "site_name": "Von Kármán Crater",
   "crew": [],
-  "left": "Chang'e 4-lander · Yutu-2-rover (nog actief)",
-  "fact": "Het eerste ruimtevaartuig dat op de achterzijde van de Maan landde — technisch en operationeel de moeilijkste maanlanding ooit geprobeerd. Vereiste een relais-satelliet (Queqiao) bij L2 omdat de achterzijde geen direct radiocontact heeft met de Aarde. Yutu-2 heeft 1,9+ km gereden, nog actief. De achterzijde was nog nooit bezocht.",
-  "capability": "Demonstreerde een relaissatelliet-communicatiearchitectuur voor operaties buiten directe zichtlijn — exact het patroon dat elke Mars-achterzijde- of polaire missie nodig zal hebben."
+  "left": "Chang'e 4 lander · Yutu-2 rover (stilgesteld sinds maart 2024)",
+  "fact": "Het eerste ruimtevaartuig dat op de achterkant van de Maan landde — technisch en operationeel de moeilijkste maanlanding ooit geprobeerd. Vereiste een relaisatelliet (Queqiao) op L2 aangezien de achterkant geen direct radiocontact met de Aarde heeft. De Yutu-2 rover reed meer dan 1,6 km af voordat deze in maart 2024 stilgesteld werd; telemetrie bleef minstens tot september 2024 beschikbaar. De achterkant was nooit eerder bezocht.",
+  "capability": "Demonstreerde communicatiearchitectuur met relaisatelliet voor operaties buiten directe zichtlijn — hetzelfde patroon dat elke Mars-achterkant- of polairmissie zal nodig hebben."
 }

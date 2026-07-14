@@ -1,6 +1,6 @@
 {
   "name": "Schiaparelli",
   "tagline": "ExoMars precursor; lessons fed Rosalind Franklin",
-  "description": "ESA’s 2016 ExoMars demonstrator that crashed during landing — a faulty IMU saturated, triggering an early parachute deploy and engine cutoff. Lessons fed directly into the Rosalind Franklin lander design.",
+  "description": "ESA’s 2016 ExoMars demonstrator that crashed during landing — the IMU saturated during parachute descent, causing the flight computer to believe it was below ground level; it released the parachute and fired the retrorockets for only 3 seconds instead of 30, then went silent and impacted at ~300 km/h from 3.7 km altitude. Lessons fed directly into the Rosalind Franklin lander design.",
   "best_known_for": "ExoMars precursor; lessons fed Rosalind Franklin"
 }

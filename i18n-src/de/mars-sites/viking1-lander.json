@@ -1,7 +1,7 @@
 {
-  "name": "Viking-1-Lander",
-  "mission_type": "Abgeschraubter Lander · Mission abgeschlossen",
+  "name": "Viking 1 lander",
+  "mission_type": "Unbemannter Lander · Mission abgeschlossen",
   "site_name": "Chryse Planitia",
-  "fact": "Erste vollständig erfolgreiche Marsoberflächenmission. Viking 1 war über sechs Jahre lang auf der Marsoberfläche im Einsatz – die Mission mit der längsten Marslandedauer, bis Opportunity 2010 den Rekord brach. Sie lieferte die ersten Farbbilder von der Marsoberfläche, führte die ersten Experimente zur Lebenserkennung durch (Ergebnisse waren bekanntermaßen nicht schlüssig) und charakterisierte den Regolith und das Wetter.",
-  "capability": "Erste Langzeit-In-situ-Marsforschung – jeder moderne Lander läuft nach dem Spielbuch von Viking."
+  "fact": "Erste vollständig erfolgreiche Marsoberflächen-Mission. Viking 1 operierte über sechs Jahre lang auf der Oberfläche — die längste Oberflächenmission bis zum Rover Opportunity, der 2010 diesen Rekord brach. Sie lieferte die ersten Farbbilder von der Marsoberfläche, führte die ersten Lebensdetektionsexperimente durch (Ergebnisse bekanntermaßen nicht schlüssig) und charakterisierte das Regolith und das Wetter.",
+  "capability": "Erste langfristige In-situ-Wissenschaft auf dem Mars — jeder moderne Lander arbeitet nach Vikings Spielregeln."
 }

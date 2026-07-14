@@ -1,9 +1,9 @@
 {
   "name": "Luna 16",
-  "mission_type": "Robotic Sample Return",
-  "site_name": "Mare Fecunditatis",
+  "mission_type": "机器人取样返回",
+  "site_name": "丰富海",
   "crew": [],
-  "left": "Descent stage with cabling, ascent stage launch base",
-  "fact": "First fully robotic sample return from another world — September 1970. Drilled into the lunar regolith with an articulated rotary drill, transferred 101 g of dust + small rock fragments into a sealed return capsule, then launched directly back to Earth without orbital rendezvous. Landed in Kazakhstan a day later. Three Luna sample returns followed (17 / 20 / 24).",
-  "capability": "Proved end-to-end robotic sample return is feasible — the capability that underwrites Mars Sample Return today."
+  "left": "着陆级及其配线、上升级发射基座",
+  "fact": "首次完全由机器人完成的另一天体取样返回任务——1970年9月。用带关节的旋转钻机钻入月壤，将101克尘埃和小岩石碎片转移到密封的返回舱中，随后直接发射返回地球，无需轨道交会。三天后在哈萨克斯坦着陆。之后还进行了两次月球取样返回任务（1972年的Luna 20和1976年的Luna 24）。",
+  "capability": "证明了端到端的机器人取样返回是可行的——这项能力为当今的火星取样返回计划奠定了基础。"
 }

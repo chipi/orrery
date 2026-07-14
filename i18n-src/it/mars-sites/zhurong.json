@@ -1,7 +1,7 @@
 {
-  "name": "Zhurong (con il lander Tianwen-1)",
+  "name": "Zhurong (con lander Tianwen-1)",
   "mission_type": "Rover senza equipaggio · Missione completata",
   "site_name": "Utopia Planitia",
-  "fact": "Il primo rover cinese su Marte. Operato 358 sol, percorso 1,92 km. Restituite prove radar che penetrano nel terreno per strati sotterranei sepolti coerenti con antichi eventi di inondazioni catastrofiche. Contatto perso durante l'inverno marziano del 2022; CNSA non ha confermato ulteriori comunicazioni.",
-  "capability": "Primo rover non statunitense ad operare su Marte; primo rover marziano dotato di GPR."
+  "fact": "Il primo rover marziano della Cina. Ha operato per 358 sol, percorrendo 1,92 km. Ha restituito evidenze di radar a penetrazione di terra di strati subsuperficiali sepolti coerenti con antichi eventi di inondazione catastrofica. Ha perso il contatto durante l'inverno marziano del 2022; l'agenzia CNSA ha confermato l'assenza di ulteriori comunicazioni.",
+  "capability": "Primo rover non statunitense a operare su Marte; primo rover marziano non statunitense dotato di GPR."
 }

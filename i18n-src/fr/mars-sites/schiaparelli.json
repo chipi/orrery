@@ -1,7 +1,7 @@
 {
   "name": "Schiaparelli EDM",
-  "mission_type": "Atterrisseur d'essai non équipé · Crashé",
-  "site_name": "Plan méridien",
-  "fact": "Démonstrateur d'entrée, de descente et d'atterrissage ExoMars 2016. Une défaillance du logiciel de contrôle a provoqué une saturation de la centrale inertielle lors du déploiement du parachute, ce qui a conduit l'atterrisseur à calculer une altitude négative et à larguer prématurément son parachute. Il est tombé librement à environ 3,7 km de la surface. Les données de vol ont éclairé la refonte de l'EDL d'ExoMars 2028.",
-  "capability": "Données de diagnostic EDL durement gagnées – une démonstration partielle qui a alimenté la prochaine mission ExoMars."
+  "mission_type": "Atterrisseur d'essai non-habité · Écrasé",
+  "site_name": "Meridiani Planum",
+  "fact": "Module de démonstration d'entrée, descente et atterrissage ExoMars 2016. Une défaillance du logiciel de contrôle a provoqué la saturation de l'unité de mesure inertielle, conduisant l'atterrisseur à calculer une altitude négative et déclenchant l'éjection prématurée du parachute et de la coiffe. Les propulseurs se sont allumés brièvement comme s'il était déjà au sol, puis se sont éteints. Il a chuté en chute libre sur ~3,7 km jusqu'à la surface. Les données de vol ont alimenté la refonte de l'EDL pour ExoMars 2028.",
+  "capability": "Données diagnostiques d'EDL obtenues au prix d'efforts considérables — une démonstration partielle qui a alimenté la mission ExoMars suivante."
 }

@@ -1,6 +1,6 @@
 {
   "name": "GOES (NOAA Weather)",
-  "tagline": "Coppia meteorologica geostazionaria NOAA — copertura continua delle Americhe",
-  "description": "Geostationary Operational Environmental Satellite — coppia meteorologica geostazionaria della NOAA. GOES-East a 75,2° W e GOES-West a 137,0° W forniscono copertura continua delle Americhe. L'attuale generazione della serie GOES-R (GOES-16, 17, 18, 19) trasporta l'Advanced Baseline Imager in grado di effettuare scansioni mesoscala di 30 secondi per i nuclei degli uragani e il monitoraggio delle tempeste violente. Costruito da Lockheed Martin; prodotti dati disponibili gratuitamente.",
-  "best_known_for": "Coppia meteorologica geostazionaria NOAA — copertura continua delle Americhe"
+  "tagline": "Coppia geostazionaria meteorologica NOAA — copertura continua delle Americhe",
+  "description": "Geostationary Operational Environmental Satellite — coppia di satelliti meteorologici geostazionari della NOAA. GOES-19 (GOES-East a 75,2° W) e GOES-18 (GOES-West a 137,0° W) costituiscono la coppia operativa a partire da aprile 2025, fornendo copertura continua delle Americhe. GOES-16 è mantenuto come backup; GOES-17 è stato disattivato nel gennaio 2023. La serie GOES-R è equipaggiata con Advanced Baseline Imager in grado di scansioni mesoscala ogni 30 secondi per il tracciamento dei nuclei di uragani e dei temporali severi. Costruito da Lockheed Martin; i prodotti dati sono disponibili gratuitamente.",
+  "best_known_for": "Coppia geostazionaria meteorologica NOAA — copertura continua delle Americhe"
 }

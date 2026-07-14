@@ -1,9 +1,9 @@
 {
   "name": "Luna 16",
-  "mission_type": "Robotic Sample Return",
+  "mission_type": "Robotische Monsterterugkeer",
   "site_name": "Mare Fecunditatis",
   "crew": [],
-  "left": "Descent stage with cabling, ascent stage launch base",
-  "fact": "First fully robotic sample return from another world — September 1970. Drilled into the lunar regolith with an articulated rotary drill, transferred 101 g of dust + small rock fragments into a sealed return capsule, then launched directly back to Earth without orbital rendezvous. Landed in Kazakhstan a day later. Three Luna sample returns followed (17 / 20 / 24).",
-  "capability": "Proved end-to-end robotic sample return is feasible — the capability that underwrites Mars Sample Return today."
+  "left": "Daalmodule met bedrading, startbasis van opstijgmodule",
+  "fact": "Eerste volledig robotische monsterterugkeer van een ander hemellichaam — september 1970. Boorde met een gearticuleerde rotatieboor in het maanregoliet, bracht 101 g stof en kleine rotsFragmenten over in een gesloten terugkeercapsule, en lanceerde vervolgens rechtstreeks terug naar de aarde zonder orbitale ontmoeting. Drie dagen later geland in Kazachstan. Twee verdere Luna-monsterterugkeren volgden (Luna 20 in 1972, Luna 24 in 1976).",
+  "capability": "Bewezig dat end-to-end robotische monsterterugkeer haalbaar is — het vermogen dat vandaag de dag Mars Sample Return ondersteunt."
 }

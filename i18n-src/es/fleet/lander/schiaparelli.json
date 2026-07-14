@@ -1,6 +1,6 @@
 {
   "name": "Schiaparelli",
-  "tagline": "Precursor de ExoMars; lecciones aplicadas a Rosalind Franklin",
-  "description": "El demostrador ExoMars de la ESA de 2016 que se estrelló durante el aterrizaje — una IMU defectuosa se saturó, disparando un despliegue prematuro del paracaídas y el corte del motor. Las lecciones se aplicaron directamente al diseño del aterrizador Rosalind Franklin.",
-  "best_known_for": "Precursor de ExoMars; lecciones aplicadas a Rosalind Franklin"
+  "tagline": "Precursor de ExoMars; lecciones incorporadas a Rosalind Franklin",
+  "description": "Demostrador de ExoMars 2016 de la ESA que se estrelló durante el aterrizaje — la IMU se saturó durante el descenso en paracaídas, lo que hizo que el ordenador de vuelo creyera que estaba por debajo del nivel del terreno; liberó el paracaídas e impulsó los retrocohetes solo durante 3 segundos en lugar de 30, después quedó en silencio e impactó a ≈300 km/h desde una altitud de 3,7 km. Las lecciones se incorporaron directamente al diseño del módulo de aterrizaje Rosalind Franklin.",
+  "best_known_for": "Precursor de ExoMars; lecciones incorporadas a Rosalind Franklin"
 }

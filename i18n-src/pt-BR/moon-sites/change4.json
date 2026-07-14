@@ -1,9 +1,9 @@
 {
   "name": "Chang'e 4 / Yutu-2",
-  "mission_type": "Lander não tripulado · Rover (lado distante)",
+  "mission_type": "Módulo de pouso não tripulado · Rover (Lado oculto)",
   "site_name": "Cratera de Von Kármán",
   "crew": [],
-  "left": "Módulo de pouso Chang'e 4 · Rover Yutu-2 (ainda ativo)",
-  "fact": "A primeira espaçonave a pousar no outro lado da Lua – técnica e operacionalmente o pouso lunar mais difícil já tentado. É necessário um satélite retransmissor (Queqiao) em L2, pois o outro lado não tem contato direto de rádio com a Terra. Yutu-2 percorreu mais de 1,9 km, ainda ativo. O outro lado nunca havia sido visitado.",
-  "capability": "Arquitetura demonstrada de comunicações por satélite de retransmissão para operações além da linha de visão direta - o padrão exato que qualquer missão polar ou distante de Marte precisará."
+  "left": "Módulo de pouso Chang'e 4 · Rover Yutu-2 (estacionário desde março de 2024)",
+  "fact": "A primeira espaçonave a pousar no lado oculto da Lua — técnica e operacionalmente o mais difícil pouso lunar jamais tentado. Exigiu um satélite retransmissor (Queqiao) em L2 já que o lado oculto não tem contato de rádio direto com a Terra. O rover Yutu-2 percorreu mais de 1,6 km antes de ficar estacionário em março de 2024; a telemetria continuou pelo menos até setembro de 2024. O lado oculto nunca havia sido visitado.",
+  "capability": "Demonstrou uma arquitetura de comunicações por satélite retransmissor para operações além da linha de visão direta — o padrão exato que qualquer missão no lado oculto ou nos polos de Marte precisará."
 }

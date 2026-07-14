@@ -35,6 +35,21 @@
       "text": "The DSN demonstrated arraying as early as the 1980s, combining Goldstone with the Very Large Array in New Mexico during Voyager 2's Neptune encounter. What is new is the intent to make it the default rather than an emergency measure. NASA's aperture enhancement programme is building additional 34-metre dishes at each complex specifically to be arrayed — adding capacity incrementally, with the resilience that a single dish going dark for maintenance no longer silences the site. And arraying is not only an American concern. ESA operates deep-space antennas at New Norcia, Cebreros, and Malargüe; JAXA runs the Usuda and Uchinoura networks; ISRO has a deep-space station at Byalalu near Bengaluru. The emerging picture is not a three-site American monopoly but a global patchwork of national assets — a commons that missions from any agency will negotiate across."
     },
     {
+      "type": "figure",
+      "image": "essays/space-comm-arrays/arraying",
+      "kind": "diagram",
+      "caption": "Rather than build ever-larger single dishes, the future is to array many smaller ones so their signals combine into one enormous virtual aperture — cheaper to grow, redundant, degrading gracefully. It was arraying, across four continents, that pulled Voyager 2’s whisper out of the noise at Neptune in 1989.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/voyager-2/01",
+      "kind": "photo",
+      "caption": "Voyager 2 at Neptune, 1989 — by then so faint that catching its full data rate meant combining dishes on four continents at once. It was the case that proved arraying works.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
       "type": "heading",
       "text": "The turn to light"
     },
@@ -59,6 +74,14 @@
       "text": "The longer-term vision is a network that uses optical links for the high-rate downlinks — science data, imagery, video — while retaining radio for the low-rate, all-weather uplink and for emergency commanding. The [scales-of-distance lesson](/science/scales-time/light-minute) still applies: DSOC is not a communications revolution in the sense of making distances irrelevant. From Psyche's location during the December 2024 record, the one-way [light travel time](/science/scales-time/light-minute) was about 27 minutes. The laser arrived 27 minutes after it left. No amount of bandwidth engineering changes that number."
     },
     {
+      "type": "figure",
+      "image": "missions/psyche-mission/01",
+      "kind": "photo",
+      "caption": "NASA’s Psyche carried the Deep Space Optical Communications demonstrator, which in 2023–24 streamed high-definition video home from tens of millions of kilometres on a beam of laser light — ten to a hundred times the data a radio link could carry.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
       "type": "heading",
       "text": "An internet with a light-hour of lag"
     },
@@ -71,6 +94,13 @@
       "text": "The answer, developed in the late 1990s by a working group that included Vint Cerf — one of the original architects of the internet — is called Delay/Disruption-Tolerant Networking, or DTN. Its governing idea is store-and-forward: a DTN node receives a bundle of data, holds it locally, and forwards it when the next link in the chain becomes available. A bundle from a Martian rover travels first to a Mars orbiter — [MAVEN](/missions?id=maven) already relays surface-mission data this way — which stores it and forwards it to Earth during its next ground contact. The bundle takes hours to traverse the chain. It arrives complete, without requiring simultaneous connectivity at any point along the route. DTN has been running as an operational experiment aboard the International Space Station since 2008. The Mars Relay Network — the informal coordination between Mars orbiters ensuring surface missions always have a relay overhead — is DTN's architectural premise made practical. The remaining work is standardising the Bundle Protocol across all agencies, so that a rover, an orbiter, and a ground station from three different nations can hand a packet between them the way any two devices on Earth exchange an email."
     },
     {
+      "type": "figure",
+      "image": "essays/space-comm-arrays/interplanetary-internet",
+      "kind": "diagram",
+      "caption": "The other half of the answer is software. Delay/Disruption-Tolerant Networking drops the ordinary internet’s assumption of a live end-to-end link: each node holds a data “bundle” and forwards it only when the next hop is reachable. Mars orbiters already relay for rovers this way — a real, standardised interplanetary internet, not a metaphor.",
+      "align": "wide"
+    },
+    {
       "type": "heading",
       "text": "What it still cannot do"
     },
@@ -81,6 +111,13 @@
     {
       "type": "prose",
       "text": "The outer solar system is quieter still. [New Horizons](/missions?id=new-horizons) during its Pluto encounter was four and a half light-hours from Earth. [Voyager 1](/missions?id=voyager-1), now more than twenty-three light-hours out, receives a command on Tuesday that was sent on Sunday. These numbers will not improve. The relevant trajectory for the [interstellar-exploration problem](/essays/interstellar-exploration) is an order of magnitude beyond even that: the nearest star system, Alpha Centauri, is four and a third light-years away — a signal sent today would arrive in 4.3 years. The bandwidth innovations described in this essay are necessary and useful for everything within the solar system. For anything beyond it, they are irrelevant. At interstellar distances, the delay is not a communications engineering problem. It is a civilisational one."
+    },
+    {
+      "type": "figure",
+      "image": "essays/space-comm-arrays/the-lightspeed-floor",
+      "kind": "diagram",
+      "caption": "None of it beats the speed of light. Optical links and arrays carry more of the story, and delay-tolerant networking keeps it from being lost — but a signal to Mars is still three to twenty-two minutes each way. There is no bandwidth, anywhere, that buys a real-time conversation with another planet.",
+      "align": "wide"
     },
     {
       "type": "heading",

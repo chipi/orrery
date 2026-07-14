@@ -1,0 +1,16 @@
+{
+  "fact": "L'étoile la plus proche du Soleil — une faible naine rouge à seulement 4,24 années-lumière, abritant une planète potentiellement rocheuse dans sa zone habitable.",
+  "bio": "Proxima Centauri est une petite naine rouge froide, le troisième membre du système Alpha Centauri. Elle est beaucoup trop faible pour être visible à l'œil nu malgré sa proximité, et elle émet de violentes éruptions — un défi pour l'habitabilité de toute planète.",
+  "cultural": "En tant que notre plus proche voisine stellaire, Proxima est la cible naturelle privilégiée des expériences de pensée interstellaires, des sondes à voile lumineuse de Breakthrough Starshot aux générations de science-fiction.",
+  "photo": {
+    "src": "/images/stars/proxima-centauri/01.webp",
+    "kind": "real"
+  },
+  "links": [
+    {
+      "l": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Proxima_Centauri",
+      "t": "intro"
+    }
+  ]
+}

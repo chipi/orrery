@@ -1,0 +1,16 @@
+{
+  "fact": "距离太阳最近的恒星——一颗暗淡的红矮星,仅距离我们4.24光年,拥有一颗可能位于宜居带内的岩质行星。",
+  "bio": "Proxima Centauri是一颗小而冷的红矮星,是Alpha Centauri三合星系统的第三颗成员星。尽管距离很近,但它太过暗淡,肉眼无法看见,而且会发生剧烈的耀斑爆发——这对任何行星的宜居性都是一个挑战。",
+  "cultural": "作为我们最近的恒星邻居,Proxima自然成为星际思想实验的首选目标,从Breakthrough Starshot的光帆探测器到一代又一代的科幻作品。",
+  "photo": {
+    "src": "/images/stars/proxima-centauri/01.webp",
+    "kind": "real"
+  },
+  "links": [
+    {
+      "l": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Proxima_Centauri",
+      "t": "intro"
+    }
+  ]
+}

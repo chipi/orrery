@@ -40,6 +40,17 @@
   let distLy = $derived(star ? star.dist_pc * PC_TO_LY : 0);
   let kelvin = $derived(star && star.bv !== null ? Math.round(bvToKelvin(star.bv)) : null);
   let colorName = $derived(kelvin !== null ? colorNameForKelvin(kelvin) : null);
+  let colorLabel = $derived.by(() => {
+    switch (colorName) {
+      case 'blue-white': return m.star_color_blue_white();
+      case 'white': return m.star_color_white();
+      case 'yellow-white': return m.star_color_yellow_white();
+      case 'yellow': return m.star_color_yellow();
+      case 'orange': return m.star_color_orange();
+      case 'red': return m.star_color_red();
+      default: return colorName ?? '';
+    }
+  });
   const fmt = (n: number, dp = 2): string =>
     n.toLocaleString(undefined, { maximumFractionDigits: dp });
 
@@ -89,7 +100,7 @@
           decoding="async"
         />
         <p class="hero-caption">
-          {star.photo.kind === 'artist' ? "Artist's impression" : 'Real image'} ·
+          {star.photo.kind === 'artist' ? m.star_photo_artist() : m.star_photo_real()} ·
         </p>
         <ImageCredit src={star.photo.src} />
       </div>
@@ -97,7 +108,7 @@
 
     <div class="panel-hero star-hero">
       <StarPortrait bv={star.bv} spect={star.spect} absmag={star.absmag} />
-      <p class="hero-caption">Representation · colour from catalogued B−V</p>
+      <p class="hero-caption">{m.star_portrait_caption()}</p>
     </div>
 
     {#if conVertices && star.con}
@@ -107,7 +118,7 @@
           starXYZ={[star.x, star.y, star.z]}
           label={constellationName(star.con)}
         />
-        <p class="hero-caption">Finder · {constellationName(star.con)} from the Sun's sky</p>
+        <p class="hero-caption">{m.star_finder_caption({ con: constellationName(star.con) })}</p>
       </div>
     {/if}
 
@@ -137,59 +148,59 @@
         {#if star.fact}<p class="editorial">{star.fact}</p>{/if}
         {#if star.bio}<p class="prose">{star.bio}</p>{/if}
         {#if star.cultural}
-          <h3 class="library-heading">ACROSS CULTURES</h3>
+          <h3 class="library-heading">{m.star_across_cultures()}</h3>
           <p class="prose">{star.cultural}</p>
         {/if}
         {#if !star.fact && !star.bio && !star.cultural}
-          <p class="editorial empty">A real star in the solar neighbourhood.</p>
+          <p class="editorial empty">{m.star_empty()}</p>
         {/if}
       {:else}
         <div class="grid">
           {#if colorName && kelvin !== null}
             <div class="cell">
               <div class="cell-label">
-                COLOUR<WhyPopover
-                  title="Star colour"
-                  body="A star's colour is set by its surface temperature. We read it from the B−V index — how much brighter the star is in visible light than in blue — which maps to temperature: hot stars glow blue-white, cool ones orange-red. The swatch shows that real colour."
+                {m.star_label_colour()}<WhyPopover
+                  title={m.star_why_colour_title()}
+                  body={m.star_why_colour_body()}
                 />
               </div>
               <div class="cell-value">
                 <span class="c-swatch" style:background={swatch} aria-hidden="true"></span>
-                {colorName} · ~{kelvin.toLocaleString()} K
+                {colorLabel} · ~{kelvin.toLocaleString()} K
               </div>
             </div>
           {/if}
           <div class="cell">
-            <div class="cell-label">DISTANCE</div>
+            <div class="cell-label">{m.star_label_distance()}</div>
             <div class="cell-value teal">{fmt(distLy, 2)} ly</div>
           </div>
           <div class="cell">
-            <div class="cell-label">DISTANCE (PC)</div>
+            <div class="cell-label">{m.star_label_distance_pc()}</div>
             <div class="cell-value">{fmt(star.dist_pc, 2)} pc</div>
           </div>
           <div class="cell">
-            <div class="cell-label">APPARENT MAGNITUDE</div>
+            <div class="cell-label">{m.star_label_apparent_mag()}</div>
             <div class="cell-value">{fmt(star.mag, 2)}</div>
           </div>
           <div class="cell">
-            <div class="cell-label">ABSOLUTE MAGNITUDE</div>
+            <div class="cell-label">{m.star_label_absolute_mag()}</div>
             <div class="cell-value">{fmt(star.absmag, 2)}</div>
           </div>
           {#if star.spect}
             <div class="cell">
-              <div class="cell-label">SPECTRAL CLASS</div>
+              <div class="cell-label">{m.sun_label_spectral_class()}</div>
               <div class="cell-value">{star.spect}</div>
             </div>
           {/if}
           {#if star.con}
             <div class="cell">
-              <div class="cell-label">CONSTELLATION</div>
+              <div class="cell-label">{m.star_label_constellation()}</div>
               <div class="cell-value">{constellationName(star.con)}</div>
             </div>
           {/if}
           {#if star.hip}
             <div class="cell">
-              <div class="cell-label">CATALOGUE</div>
+              <div class="cell-label">{m.star_label_catalogue()}</div>
               <div class="cell-value">HIP {star.hip}</div>
             </div>
           {/if}
@@ -197,7 +208,7 @@
 
         {#if library.length > 0}
           <div class="science-library">
-            <h3 class="library-heading">LEARN MORE</h3>
+            <h3 class="library-heading">{m.science_learn_more()}</h3>
             <ul class="learn-list">
               {#each library as l (l.u)}
                 <li><LearnLink entityId={star.id} url={l.u} label={l.l} /></li>

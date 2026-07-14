@@ -1,0 +1,16 @@
+{
+  "fact": "太陽に最も近い恒星――わずか4.24光年の距離にある暗い赤色矮星で、ハビタブルゾーンに岩石惑星の可能性がある惑星を持つ。",
+  "bio": "Proxima Centauriは小さく冷たい赤色矮星で、Alpha Centauri系の第三の構成員である。その近さにもかかわらず肉眼で見るには暗すぎ、激しいフレアを起こす――惑星の居住可能性にとっては困難な条件だ。",
+  "cultural": "最も近い恒星の隣人として、Proximaは恒星間航行の思考実験における自然な第一目標となってきた。Breakthrough Starshot のライトセイル探査機から、数世代にわたるSFまで。",
+  "photo": {
+    "src": "/images/stars/proxima-centauri/01.webp",
+    "kind": "real"
+  },
+  "links": [
+    {
+      "l": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Proxima_Centauri",
+      "t": "intro"
+    }
+  ]
+}

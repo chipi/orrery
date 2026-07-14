@@ -1,0 +1,16 @@
+{
+  "fact": "지구의 밤하늘에서 가장 밝은 별이자 8.6광년 거리에 있는 우리의 가장 가까운 항성 이웃 중 하나입니다.",
+  "bio": "Sirius(Alpha Canis Majoris)는 뜨겁고 청백색의 주계열성으로, 희미한 백색왜성 동반성 Sirius B를 거느리고 있습니다. Sirius B는 한때 더 무거웠던 별의 타버린 핵입니다. 이 별의 찬란한 밝기는 진정으로 밝은 별이 우리에게 유난히 가까이 있기 때문입니다.",
+  "cultural": "'개의 별(Dog Star)'은 수천 년 동안 달력의 기준이 되어 왔습니다. 고대 이집트에서는 이 별의 태양과 함께 뜨는 날이 나일강의 연례 범람을 예고했으며, 그리스-로마 전통에서는 여름의 '개의 날들(Dog Days)'을 정의하는 기준점이 됩니다.",
+  "links": [
+    {
+      "l": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Sirius",
+      "t": "intro"
+    }
+  ],
+  "photo": {
+    "src": "/images/stars/sirius/01.webp",
+    "kind": "real"
+  }
+}

@@ -5,6 +5,7 @@
 -->
 <script lang="ts">
   import { constellationName } from '$lib/universe/iau-constellations';
+  import * as m from '$lib/paraglide/messages';
   import type { NamedStar } from '$lib/data';
 
   type Props = {
@@ -40,17 +41,17 @@
 </script>
 
 {#if open}
-  <div class="star-index" aria-label="Named stars">
+  <div class="star-index" aria-label={m.star_index_aria()}>
     <div class="si-head">
       <input
         bind:this={input}
         bind:value={query}
         type="search"
-        placeholder="Search stars…"
-        aria-label="Search named stars"
+        placeholder={m.star_index_search_placeholder()}
+        aria-label={m.star_index_search_aria()}
         onkeydown={onKeydown}
       />
-      <button type="button" class="si-close" aria-label="Close" onclick={onClose}>×</button>
+      <button type="button" class="si-close" aria-label={m.star_index_close()} onclick={onClose}>×</button>
     </div>
     <ul class="si-list">
       {#each filtered as s (s.id)}
@@ -68,7 +69,7 @@
         </li>
       {/each}
       {#if filtered.length === 0}
-        <li class="si-empty">No stars match “{query}”.</li>
+        <li class="si-empty">{m.star_index_no_match({ query })}</li>
       {/if}
     </ul>
   </div>

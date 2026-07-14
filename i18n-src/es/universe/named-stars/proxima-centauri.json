@@ -1,0 +1,16 @@
+{
+  "fact": "La estrella más cercana al Sol: una tenue enana roja a solo 4,24 años luz de distancia, que alberga un planeta potencialmente rocoso en su zona habitable.",
+  "bio": "Proxima Centauri es una pequeña y fría enana roja, el tercer miembro del sistema Alpha Centauri. Es demasiado débil para verla a simple vista a pesar de su proximidad, y sufre violentas erupciones, un desafío para la habitabilidad de cualquier planeta.",
+  "cultural": "Como nuestra vecina estelar más cercana, Proxima es el objetivo natural de los experimentos mentales sobre viajes interestelares, desde las sondas de vela solar de Breakthrough Starshot hasta generaciones de ciencia ficción.",
+  "photo": {
+    "src": "/images/stars/proxima-centauri/01.webp",
+    "kind": "real"
+  },
+  "links": [
+    {
+      "l": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Proxima_Centauri",
+      "t": "intro"
+    }
+  ]
+}

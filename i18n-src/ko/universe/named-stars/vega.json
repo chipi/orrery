@@ -1,0 +1,16 @@
+{
+  "fact": "Lyra의 가장 밝은 별이며, 지구의 자전축이 천천히 세차운동을 함에 따라 과거와 미래의 북극성이다.",
+  "bio": "Vega(Alpha Lyrae)는 불과 25광년 거리에 있는 가까운 고온 백색 별로, 오랫동안 천문학적 등급 척도의 영점 기준으로 사용되었다. 매우 빠르게 자전하여 눈에 띄게 편평한 형태를 띤다.",
+  "cultural": "Vega는 기원전 12,000년경 북극성이었으며 서기 13,700년경 다시 북극성이 될 것이다. Deneb과 Altair와 함께 여름의 대삼각형을 형성하며, Carl Sagan의 Contact에서 외계 신호의 출처로 등장한다.",
+  "photo": {
+    "src": "/images/stars/vega/01.webp",
+    "kind": "real"
+  },
+  "links": [
+    {
+      "l": "Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vega",
+      "t": "intro"
+    }
+  ]
+}

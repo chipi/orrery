@@ -111,6 +111,26 @@
   import { getLocale } from '$lib/paraglide/runtime';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
 
+  // Localised label for an anonymous star's catalogue colour (enum → message).
+  const anonColorLabel = (c: string): string => {
+    switch (c) {
+      case 'blue-white':
+        return m.star_color_blue_white();
+      case 'white':
+        return m.star_color_white();
+      case 'yellow-white':
+        return m.star_color_yellow_white();
+      case 'yellow':
+        return m.star_color_yellow();
+      case 'orange':
+        return m.star_color_orange();
+      case 'red':
+        return m.star_color_red();
+      default:
+        return c;
+    }
+  };
+
   // Planet visual config (PlanetVisual / SatelliteDef / PLANETS) now lives in
   // $lib/explore-scene as the single source of truth, shared with the AR
   // renderer — imported at the top of this <script>.
@@ -4809,7 +4829,7 @@
         aria-pressed={starIndexOpen}
         onclick={() => (starIndexOpen = !starIndexOpen)}
       >
-        Stars
+        {m.explore_stars_toggle()}
       </button>
       <button
         type="button"
@@ -4821,7 +4841,7 @@
           setConstellationsFn?.(showConstellations);
         }}
       >
-        Constellations
+        {m.explore_constellations_toggle()}
       </button>
     </div>
     <StarIndex
@@ -4886,13 +4906,13 @@
        honest facts from the catalogue — no Panel, no invented name. -->
   {#if view === '3d' && contextId === 'neighborhood' && anonStar}
     <div class="anon-star" role="status">
-      <span class="anon-title">Unnamed star</span>
+      <span class="anon-title">{m.explore_anon_unnamed()}</span>
       <span class="anon-facts">
         {anonStar.distLy.toLocaleString(undefined, { maximumFractionDigits: 1 })} ly · mag {anonStar.mag.toFixed(
           1,
-        )} · {anonStar.colorName} (~{anonStar.kelvin.toLocaleString()} K)
+        )} · {anonColorLabel(anonStar.colorName)} (~{anonStar.kelvin.toLocaleString()} K)
       </span>
-      <button type="button" class="anon-close" aria-label="Dismiss" onclick={() => (anonStar = null)}
+      <button type="button" class="anon-close" aria-label={m.explore_anon_dismiss()} onclick={() => (anonStar = null)}
         >×</button
       >
     </div>

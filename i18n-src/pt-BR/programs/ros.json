@@ -1,80 +1,80 @@
 {
   "name": "Russian Orbital Station",
-  "tagline": "O retorno planejado da Rússia a uma estação própria — deixando a parceria da ISS para voar sozinha novamente, como fez com a Salyut e a Mir.",
+  "tagline": "O retorno planejado da Rússia a uma estação própria — construída inicialmente acoplada à ISS, depois, eventualmente, voando sem estar sob as regras de nenhum parceiro novamente.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Por um quarto de século, o voo espacial tripulado russo esteve ligado ao do Ocidente. Sua metade da International Space Station — descendente direta da Salyut e da Mir — manteve todo o posto avançado vivo, e por nove anos as cápsulas Soyuz russas foram a única forma de transporte para a ISS, para qualquer um, americano ou russo. Essa parceria, um dos legados mais duradouros do fim da Guerra Fria, está agora terminando. A Rússia anunciou que deixará a ISS e construirá uma estação nacional própria: a Russian Orbital Station."
+      "md": "Por um quarto de século, o voo espacial tripulado russo esteve vinculado ao do Ocidente. Sua metade da International Space Station — descendente direta de Salyut e Mir — manteve todo o posto avançado vivo, e por nove anos as cápsulas Soyuz russas foram o único meio de transporte para a ISS para qualquer um, americano ou russo. Essa parceria, um dos legados mais duradouros do fim da Guerra Fria, está agora terminando. A Rússia anunciou que deixará a ISS e construirá uma estação nacional própria: a Russian Orbital Station."
     },
     {
       "type": "prose",
-      "md": "É, em certo sentido, um retorno ao padrão. Antes da ISS, a Rússia e a União Soviética sempre operaram suas próprias estações — a série Salyut e depois a Mir, a primeira estação modular, inteiramente deles. A ROS é um plano de voltar a essa independência: uma estação russa, em órbita russa, tripulada por cosmonautas russos, sem responder a nenhum parceiro. O movimento é tanto geopolítico quanto técnico, uma consequência do colapso da cooperação entre a Rússia e o Ocidente."
+      "md": "É, em certo sentido, um retorno ao padrão. Antes da ISS, a Rússia e a União Soviética sempre operaram suas próprias estações — a série Salyut e depois Mir, a primeira estação modular. A ROS é um plano para voltar a esse modelo de independência: uma estação russa tripulada por cosmonautas russos, sem responder a nenhum parceiro no final. O movimento é tanto geopolítico quanto técnico, uma consequência do colapso da cooperação entre a Rússia e o Ocidente."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "O objetivo principal é a independência — uma estação que a Rússia controla inteiramente, encerrando sua dependência de uma parceria que se tornou politicamente insustentável. A ROS está planejada para uma órbita de alta inclinação, quase polar, escolhida deliberadamente para passar sobre todo o território russo, incluindo o Ártico, a cada revolução — uma órbita que a inclinação mais baixa da ISS nunca alcança, e adequada para observar a própria massa terrestre da Rússia."
+      "md": "O objetivo principal é a independência — uma estação que a Rússia controla inteiramente, encerrando sua dependência de uma parceria que se tornou politicamente insustentável. A estação foi originalmente planejada para uma órbita quase polar de alta inclinação escolhida deliberadamente para passar sobre todo o território russo, incluindo o Ártico — uma órbita que a ISS nunca alcança. Esse plano foi revertido em 2025: a Roscosmos anunciou que os primeiros módulos da ROS serão montados enquanto acoplados à ISS, o que significa que a estação começa sua vida compartilhando o plano orbital de 51,6° da ISS antes de eventualmente voar sozinha."
     },
     {
       "type": "prose",
-      "md": "Uma meta declarada do projeto é uma estação que não requer tripulação contínua. Em vez do modelo permanentemente ocupado da Mir e da ISS, a ROS é idealizada como visitada periodicamente, com grande parte de seu trabalho automatizado entre tripulações — uma resposta ao custo da ocupação contínua e às questões práticas de um programa com muito menos financiamento do que o esforço espacial soviético um dia comandou."
+      "md": "Uma meta de projeto declarada é uma estação que não exija tripulação contínua. Em vez do modelo permanentemente ocupado de Mir e da ISS, a ROS é concebida para ser visitada periodicamente, com grande parte de seu trabalho automatizado entre tripulações — uma resposta ao custo da ocupação contínua e às realidades práticas de um programa com financiamento muito inferior ao que o esforço espacial soviético um dia comandou."
     },
     {
       "type": "prose",
-      "md": "Por baixo dos objetivos técnicos está um estratégico: preservar o status da Rússia como uma potência independente em voo espacial tripulado enquanto a ISS termina. Sem uma estação própria, a Rússia ficaria com uma cápsula tripulada e nenhum destino — uma nação espacial sem lugar para enviar sua gente. A ROS é o plano para manter a Rússia em órbita em seus próprios termos, em vez de desaparecer do voo espacial tripulado enquanto sua parceria se dissolve."
+      "md": "Por trás dos objetivos técnicos há um estratégico: preservar o status da Rússia como uma potência independente em voos espaciais tripulados à medida que a ISS termina. Sem uma estação própria, a Rússia ficaria apenas com uma cápsula tripulada e nenhum destino — uma nação espacial sem lugar para enviar suas pessoas. A ROS é o plano para manter a Rússia em órbita em seus próprios termos, em vez de desaparecer dos voos espaciais tripulados à medida que sua parceria se dissolve."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "O resultado está inteiramente à frente — a ROS é, por enquanto, um anúncio e um conjunto de planos, não hardware em órbita. A Rússia declarou sua intenção de se retirar da ISS no final desta década e começar a lançar módulos da ROS no final dos anos 2020, mas o programa enfrenta questões reais de financiamento, capacidade industrial e cronograma em uma Rússia sob pesadas sanções e tensão econômica. Se a estação será construída no prazo, construída com atraso ou reduzida em escala é genuinamente incerto."
+      "md": "O resultado está inteiramente à frente — a ROS é, por enquanto, um anúncio e um conjunto de planos, não hardware em órbita. A Rússia declarou sua intenção de se retirar da ISS no final desta década e começar a lançar módulos da ROS no final dos anos 2020, mas o programa enfrenta questões reais de financiamento, capacidade industrial e cronograma em uma Rússia sob pesadas sanções e tensão econômica. Se a estação será construída no prazo, construída com atraso ou reduzida é genuinamente incerto."
     },
     {
       "type": "prose",
-      "md": "O que é certo é a direção: a Rússia pretende deixar a ISS e voar sozinha. A parceria que sobreviveu à Guerra Fria está sendo encerrada, e a ROS — qualquer que seja a forma que finalmente tome — é o veículo para o voo espacial tripulado russo pós-parceria. Representa o fim de uma era de cooperação e a reafirmação de um modelo russo muito mais antigo de autossuficiência em órbita."
+      "md": "O que é certo é a direção: a Rússia pretende deixar a ISS e voar sozinha. A parceria que sobreviveu à Guerra Fria está sendo desmantelada, e a ROS — qualquer que seja a forma que finalmente assuma — é o veículo para o voo espacial tripulado pós-parceria da Rússia. Ela representa o fim de uma era de cooperação e a reafirmação de um modelo russo muito mais antigo de autossuficiência em órbita."
     },
     {
       "type": "prose",
-      "md": "O risco que o programa carrega é aquele que todo plano ambicioso de estação carrega, agravado pela circunstância: que o anúncio ultrapasse o orçamento. O programa espacial russo se contraiu drasticamente desde os tempos soviéticos, e construir uma nova estação do zero é caro e lento. A ROS pode voar, ou pode se tornar a estação que a Rússia pretendia construir — um marcador de intenção que a realidade não pôde financiar."
+      "md": "O risco que o programa carrega é aquele que todo plano ambicioso de estação carrega, agravado pelas circunstâncias: que o anúncio ultrapasse o orçamento. O programa espacial da Rússia se contraiu drasticamente desde os tempos soviéticos, e construir uma nova estação do zero é caro e lento. A ROS pode voar, ou pode se tornar a estação que a Rússia pretendia construir — um marcador de intenção que a realidade não pôde financiar."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "A história da ROS é o desmanche de uma parceria que um dia simbolizou a paz. A união dos programas de estação americano e russo na ISS foi um dos grandes gestos do mundo pós-Guerra Fria — antigos rivais construindo juntos a maior estrutura em órbita, mantendo-a tripulada sem interrupção por mais de vinte anos. A ROS é a reversão desse gesto: uma decisão, impulsionada por um colapso nas relações, de se separar novamente e voar separados."
+      "md": "A história da ROS é o desmantelamento de uma parceria que um dia simbolizou a paz. A união dos programas de estações americano e russo na ISS foi um dos grandes gestos do mundo pós-Guerra Fria — antigos rivais construindo juntos a maior estrutura em órbita, mantendo-a tripulada sem interrupção por mais de vinte anos. A ROS é a reversão desse gesto: uma decisão, impulsionada por um colapso nas relações, de se separarem novamente e voarem separados."
     },
     {
       "type": "prose",
-      "md": "É também um retorno a uma profunda tradição russa. Muito antes da ISS, a Rússia era a mestre mundial das estações espaciais — a Salyut provou o conceito, a Mir aperfeiçoou o design modular que a própria ISS herdou. A ROS é apresentada, em parte, como um retorno a essa herança: a Rússia operando sua própria estação novamente, como sempre fez, baseando-se na mais longa e profunda experiência de construção de estações de qualquer nação."
+      "md": "É também um retorno a uma profunda tradição russa. Muito antes da ISS, a Rússia era a mestra mundial das estações espaciais — Salyut provou o conceito, Mir aperfeiçoou o design modular que a própria ISS herdou. A ROS é enquadrada, em parte, como um retorno a essa herança: a Rússia operando sua própria estação novamente, como sempre fez, aproveitando a mais longa e profunda experiência em construção de estações de qualquer nação."
     },
     {
       "type": "prose",
-      "md": "E é sombreada pela restrição. O programa espacial soviético que construiu a Mir comandava recursos que o programa russo moderno não possui, e a ROS deve ser construída sob sanções, com uma base industrial encolhida, em um orçamento que é uma fração do da NASA. O plano é real e a herança é genuína — mas a lacuna entre a ambição e os meios é a tensão central do programa, e a coisa que determinará se a ROS se torna uma estação ou permanece um plano."
+      "md": "E está sombreada por restrições. O programa espacial soviético que construiu Mir comandava recursos que o programa russo moderno não possui, e a ROS deve ser construída sob sanções, com uma base industrial encolhida, com um orçamento que é uma fração do da NASA. O plano é real e a herança é genuína — mas a lacuna entre a ambição e os meios é a tensão central do programa, e a coisa que determinará se a ROS se tornará uma estação ou permanecerá um plano."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "O legado da ROS, se voar, será a continuação da Rússia como uma potência independente em voo espacial tripulado na era pós-ISS — uma nação que manteve uma estação própria em vez de desaparecer do voo tripulado quando a parceria terminou."
+      "md": "O legado da ROS, se voar, será a continuação da Rússia como uma potência independente em voos espaciais tripulados na era pós-ISS — uma nação que manteve uma estação própria em vez de desaparecer dos voos tripulados quando a parceria terminou."
     },
     {
       "type": "prose",
-      "md": "Seu legado simbólico já é real: marca o fim formal da parceria da ISS, uma das últimas grandes estruturas de cooperação pós-Guerra Fria, e o retorno do voo espacial tripulado a um padrão mais dividido, mais nacional — Rússia, China e Ocidente cada um operando suas próprias estações em vez de compartilhar uma."
+      "md": "Seu legado simbólico já é real: marca o fim formal da parceria da ISS, uma das últimas grandes estruturas de cooperação pós-Guerra Fria, e o retorno do voo espacial tripulado a um padrão mais dividido, mais nacional — Rússia, China e o Ocidente cada um operando suas próprias estações em vez de compartilhar uma."
     },
     {
       "type": "prose",
-      "md": "E é um teste de se a célebre herança de estações da Rússia pode sobreviver a seus meios diminuídos. A ROS mostrará se o país que construiu a Salyut e a Mir ainda pode construir uma estação do zero sob restrições modernas — ou se essa capacidade, como tanto do legado espacial soviético, ultrapassou os recursos para sustentá-la."
+      "md": "E é um teste de se a célebre herança de estações da Rússia pode sobreviver a seus meios diminuídos. A ROS mostrará se o país que construiu Salyut e Mir ainda pode construir uma estação do zero sob restrições modernas — ou se essa capacidade, como grande parte do legado espacial soviético, ultrapassou os recursos para sustentá-la."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "A lição da ROS é que parcerias no espaço são tão frágeis quanto as políticas que as sustentam. A cooperação da ISS sobreviveu duas décadas e deveria ser uma ponte permanente; está terminando porque a relação por baixo dela quebrou. Nenhuma quantidade de hardware orbital pode durar mais que a boa vontade terrestre que a tornou possível — um contraponto sóbrio à esperança de que a cooperação espacial flutue acima do conflito terrestre."
+      "md": "A lição da ROS é que parcerias no espaço são tão frágeis quanto a política que as sustenta. A cooperação da ISS sobreviveu duas décadas e deveria ser uma ponte permanente; está terminando porque a relação por trás dela se rompeu. Nenhuma quantidade de hardware orbital pode durar mais que a boa vontade terrestre que a tornou possível — um contraponto sóbrio à esperança de que a cooperação espacial flutue acima do conflito terrestre."
     },
     {
       "type": "prose",
-      "md": "A lição mais profunda é a distância entre anunciar uma estação e operá-la. A ROS tem herança, intenção e uma justificativa estratégica clara — e ainda deve ser construída sob sanções em um orçamento encolhido. Ambição é barata e estações são caras; o programa é um lembrete de que, no voo espacial, o plano é a parte fácil, e a parte difícil é pagar por ele."
+      "md": "A lição mais profunda é a distância entre anunciar uma estação e operá-la. A ROS tem herança, intenção e uma justificativa estratégica clara — e ainda assim deve ser construída sob sanções com um orçamento encolhido. Ambição é barata e estações são caras; o programa é um lembrete de que, nos voos espaciais, o plano é a parte fácil, e a parte difícil é pagar por ele."
     }
   ]
 }

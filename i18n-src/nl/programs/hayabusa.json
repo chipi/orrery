@@ -1,88 +1,88 @@
 {
   "name": "Hayabusa",
-  "tagline": "Japans asteroïde-monsterretourmissie — een verminkte sonde die strompelend thuiskwam met de eerste korrels ooit verzameld van een asteroïde, en een vervolg dat het foutloos deed.",
+  "tagline": "Japans asteroïde-monsterretourmissie — een gehandicapte sonde die kreupel thuiskwam met de eerste korrels ooit verzameld van een asteroïde, en een vervolg dat het vlekkeloos deed.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Een stukje van een andere wereld terugbrengen naar de aarde is een van de moeilijkste dingen die een robotmissie kan doen. Je moet vliegen naar een doel miljoenen kilometers verderop, zijn baan volgen, afdalen naar een oppervlak waarvan de zwaartekracht zo zwak is dat landen eigenlijk een gecontroleerde aanraking is, materiaal grijpen zonder verankering, en dan helemaal naar huis vliegen en de terugkeer overleven. De maan daargelaten, hebben slechts een handvol missies in de geschiedenis ergens monsters vandaan teruggebracht — en de eerste die het deed van een asteroïde was niet Amerikaans of Russisch, maar Japans."
+      "md": "Een stukje van een andere wereld terugbrengen naar de aarde is een van de moeilijkste dingen die een robotmissie kan doen. Je moet vliegen naar een doel miljoenen kilometers verderop, zijn baan matchen, afdalen naar een oppervlak waarvan de zwaartekracht zo zwak is dat landen eigenlijk een gecontroleerde aanraking is, materiaal grijpen zonder te verankeren, en dan helemaal naar huis vliegen en de terugkeer overleven. Afgezien van de maan hebben slechts een handvol missies in de geschiedenis monsters van ergens teruggebracht — en de eerste die het deed van een asteroïde was niet Amerikaans of Russisch, maar Japans."
     },
     {
       "type": "prose",
-      "md": "Hayabusa — \"Slechtvalk\" — is JAXA's kenmerkende prestatie in de diepe ruimte, en het is evenzeer een verhaal van koppigheid als van techniek. De eerste missie was een technologiedemonstratie die bijna elk denkbaar probleem kreeg en toch thuiskwam. De tweede was een meesterklasse die een veel ambitieuzer plan bijna perfect uitvoerde. Samen maakten ze Japan tot wereldleider in asteroïde-monsterretour, en maakten ze de kleine valksondes tot een nationale sage van doorzettingsvermogen."
+      "md": "Hayabusa — \"Slechtvalkvalk\" — is JAXA's kenmerkende diepteruimteprestatie, en het is evenzeer een verhaal van koppigheid als van techniek. De eerste missie was een technologiedemonstratie die bijna elke mogelijke storing onderging en toch thuiskwam. De tweede was een meesterklasse die een veel ambitieuzer plan bijna perfect uitvoerde. Samen maakten ze Japan de wereldleider in asteroïde-monsterretour, en maakten de kleine valksondes tot een nationale saga van doorzettingsvermogen."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Het wetenschappelijke doel is het lezen van het vroege zonnestelsel. Asteroïden zijn overgebleven bouwmateriaal van de vorming van de planeten, grotendeels onveranderd sinds 4,5 miljard jaar; een ongerept monster van zo'n asteroïde, geanalyseerd in laboratoria op aarde in plaats van door instrumenten in de ruimte, is een direct venster op waar het zonnestelsel uit bestond voordat de planeten zich vormden — en, voor koolstofrijke asteroïden zoals Ryugu, op de organische moleculen en het water die mogelijk het leven op aarde hebben gezaaid."
+      "md": "Het wetenschappelijke doel is het vroege zonnestelsel lezen. Asteroïden zijn overgebleven bouwmateriaal van de vorming van de planeten, grotendeels onveranderd gedurende 4,5 miljard jaar; een ongerept monster van een asteroïde, geanalyseerd in laboratoria op aarde in plaats van door instrumenten in de ruimte, is een direct venster op waar het zonnestelsel van gemaakt was voordat de planeten zich vormden — en, voor koolstofrijke asteroïden zoals Ryugu, op de organische moleculen en water die mogelijk het leven op aarde hebben gezaaid."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/hayabusa-2/01"
       },
-      "caption": "Hayabusa2 bij asteroïde Ryugu. Ionenmotoren voor de lange reis, een bemonsteringshoorn om materiaal op te vangen dat bij aanraking wordt opgeworpen, en een kleine impactor om een kunstmatige krater te maken en afgeschermd gesteente onder het oppervlak te bereiken.",
+      "caption": "Hayabusa2 bij asteroïde Ryugu. Ionenmotoren voor de lange reis, een bemonsteringshoorn om materiaal op te vangen dat bij aanraking omhoog wordt gegooid, en een kleine impactor om een kunstmatige krater te maken en afgeschermd ondergronds gesteente te bereiken.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Het technische doel was een hele keten van moeilijke technologieën bewijzen: ionenmotoraandrijving voor de jarenlange reis, autonome navigatie naar een klein, onregelmatig lichaam, een bemonsteringsmechanisme dat werkt in bijna geen zwaartekracht, en een terugkeercapsule om de vuurbal naar huis te overleven. De taak van de eerste missie was de keten zelfs ruwweg te demonstreren; die van de tweede was het goed genoeg doen om een substantieel, onbesmet monster terug te brengen."
+      "md": "Het technische doel was een hele keten van moeilijke technologieën bewijzen: ionenmotoraandrijving voor de jarenlange reis, autonome navigatie naar een klein, onregelmatig lichaam, een bemonsteringsmechanisme dat werkt in bijna-nulzwaartekracht, en een terugkeercapsule om de vuurbal naar huis te overleven. De taak van de eerste missie was de keten zelfs bij benadering te demonstreren; die van de tweede was het goed genoeg te doen om een substantieel, onbesmet monster terug te brengen."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "De eerste Hayabusa, gelanceerd in 2003, bereikte de asteroïde Itokawa in 2005 en stierf toen bijna. Zijn reactiewielen faalden, een brandstoflek verminkte hem, zijn bemonsteringsmechanisme functioneerde verkeerd, contact met de aarde was wekenlang verbroken, en drie van zijn vier ionenmotoren gingen kapot — maar toch lokte het team de gewonde sonde naar huis, en in 2010 parachuteerde zijn capsule in de Australische outback met enkele duizenden microscopische korrels: het eerste monster ooit teruggebracht van een asteroïde. Het had niet moeten werken, en het deed het."
+      "md": "De eerste Hayabusa, gelanceerd in 2003, bereikte de asteroïde Itokawa in 2005 en stierf toen bijna. Twee van zijn drie reactiewielen faalden, een brandstoflek verlamde hem, zijn bemonsteringsmechanisme werkte niet goed, het contact met de aarde was wekenlang verbroken, en drie van zijn vier ionenmotoren braken — toch lokte het team de gewonde sonde naar huis, en in 2010 parachuteerde zijn capsule in de Australische outback met ongeveer 1.500 microscopische korrels: het eerste monster ooit teruggebracht van een asteroïde. Het had niet moeten werken, en dat deed het wel."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/hayabusa/01"
       },
-      "caption": "De oorspronkelijke Hayabusa — de sonde die bijna elk probleem kreeg dat een ruimtevaartuig kan krijgen en toch leverde. Zijn zevenjarige beproeving werd in Japan een nationaal verhaal over het niet opgeven van een machine die weigerde op te geven.",
+      "caption": "De oorspronkelijke Hayabusa — de sonde die bijna elke storing onderging die een ruimtevaartuig kan ondergaan en toch leverde. Zijn zeven jaar durende beproeving werd in Japan een nationaal verhaal over niet opgeven van een machine die weigerde op te geven.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "Hayabusa2, na alles geleerd te hebben van de beproeving van zijn voorganger, was de tegenovergestelde ervaring: een bijna foutloze missie. Gelanceerd in 2014, bereikte hij de koolstofrijke asteroïde Ryugu in 2018, zette huppelende rovers op het oppervlak, vuurde een koperen projectiel af om een kunstmatige krater te maken en afgeschermd materiaal onder het oppervlak te verzamelen, en bracht zijn capsule terug naar de aarde in 2020 met meer dan vijf gram ongerepte asteroïde — een monster dat de chemie van het vroege zonnestelsel al herschrijft. De sonde zelf vloog door naar een andere asteroïde, zijn missie verlengd tot in de jaren 2030."
+      "md": "Hayabusa2, die alles had geleerd van de beproeving van zijn voorganger, was de tegenovergestelde ervaring: een bijna vlekkeloze missie. Gelanceerd in 2014 bereikte het de koolstofrijke asteroïde Ryugu in 2018, zette huppelende rovers op het oppervlak uit, vuurde een koperen projectiel af om een kunstmatige krater te maken en afgeschermd ondergronds materiaal te verzamelen, en bracht zijn capsule in 2020 terug naar de aarde met meer dan vijf gram ongerepte asteroïde — een monster dat de chemie van het vroege zonnestelsel al herschrijft. De sonde zelf vloog door naar een andere asteroïde, met zijn missie verlengd tot in de jaren 2030."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "De boog van Hayabusa naar Hayabusa2 is het duidelijkste voorbeeld in deze atlas van een programma dat een bijna-ramp in meesterschap veranderde. De waarde van de eerste missie was geen schoon succes — hij strompelde nauwelijks naar huis — maar alles wat zijn team leerde door zijn cascade van problemen te overleven. Reactiewielen, brandstofsystemen, autonome nadering, de terugkeercapsule: elk bijna fataal probleem werd een les die uit het vervolg werd geëlimineerd. Hayabusa2's perfectie was volledig gebouwd op Hayabusa's lijden."
+      "md": "De boog van Hayabusa naar Hayabusa2 is het duidelijkste voorbeeld in deze atlas van een programma dat een bijna-ramp in meesterschap veranderde. De waarde van de eerste missie was geen zuiver succes — hij kwam nauwelijks kreupel thuis — maar alles wat zijn team leerde door zijn cascade van storingen te overleven. Reactiewielen, brandstofsystemen, autonome nadering, de terugkeercapsule: elk bijna-fataal probleem werd een les die uit het vervolg werd geëngineerd. Hayabusa2's perfectie was volledig gebouwd op Hayabusa's lijden."
     },
     {
       "type": "prose",
-      "md": "Het is ook een uitgesproken Japans soort ruimteprogramma — bescheiden in budget naast NASA's vlaggenschepen, smal in focus, en buitengewoon volhardend. JAXA probeerde niet alles te doen; het koos één heel moeilijk ding, asteroïde-monsterretour, en werd er de beste ter wereld in. Het resultaat is een specialiteit waar zelfs NASA op leunt: monsters van Ryugu werden gedeeld met Amerikaanse labs, en NASA's eigen asteroïde-retourmissie, OSIRIS-REx, vloog in dialoog met de zuurverdiende ervaring van het Hayabusa-team."
+      "md": "Het is ook een uitgesproken Japans soort ruimteprogramma — bescheiden in budget naast NASA's vlaggenschepen, smal in focus, en buitengewoon volhardend. JAXA probeerde niet alles te doen; het koos één zeer moeilijk ding, asteroïde-monsterretour, en werd er het beste ter wereld in. Het resultaat is een specialiteit waar zelfs NASA op leunt: monsters van Ryugu werden gedeeld met Amerikaanse laboratoria, en NASA's eigen asteroïde-retourmissie, OSIRIS-REx, deelde monsters met en putte uit de ervaring van het Hayabusa-team."
     },
     {
       "type": "prose",
-      "md": "En het maakte robots tot hoofdpersonen. De strompelende thuiskomst van de eerste Hayabusa werd door miljoenen in Japan gevolgd als een echt drama — een machine geantropomorfiseerd tot een valk die niet wilde opgeven, zijn laatste daad gefilmd terwijl hij opbrandde in de atmosfeer na de capsule te hebben losgelaten waarvoor hij zeven jaar had gevochten om te leveren. Weinig onbemande missies hebben dat soort publiek gevoel gedragen; Hayabusa verdiende het door te weigeren te falen."
+      "md": "En het maakte robots tot hoofdpersonen. De kreupele thuiskomst van de eerste Hayabusa werd in Japan door miljoenen mensen gevolgd als een echt drama — een machine geantropomorfiseerd tot een valk die niet wilde opgeven, met zijn slotdaad gefilmd terwijl hij opbrandde in de atmosfeer na de capsule te hebben losgelaten die hij zeven jaar had bevochten om te leveren. Weinig onbemande missies hebben dat soort publiek gevoel gedragen; Hayabusa verdiende het door te weigeren te falen."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Hayabusa's eerste erfenis is wetenschappelijk: ongerepte asteroïdemonsters in de laboratoria op aarde, van zowel een rotsachtige asteroïde (Itokawa) als een koolstofrijke (Ryugu), die direct informeren hoe het zonnestelsel zich vormde en hoe water en organische stoffen de vroege aarde mogelijk bereikten. Dit zijn enkele van de meest waardevolle paar gram materiaal die de mensheid bezit."
+      "md": "Hayabusa's eerste erfenis is wetenschappelijk: ongerepte asteroïdemonsters in aardse laboratoria, van zowel een steenachtige asteroïde (Itokawa) als een koolstofrijke (Ryugu), die direct informeren hoe het zonnestelsel zich vormde en hoe water en organische stoffen de vroege aarde mogelijk hebben bereikt. Dit zijn enkele van de meest waardevolle paar gram materiaal die de mensheid bezit."
     },
     {
       "type": "prose",
-      "md": "Zijn tweede erfenis is een bewezen draaiboek voor monsterretour dat de rest van de wereld nu volgt. De technologieën en harde lessen van de Hayabusa-missies voedden direct NASA's OSIRIS-REx en de bredere golf van missies naar kleine lichamen — waardoor JAXA's kleine valken de verkenners werden voor een hele klasse van exploratie."
+      "md": "Zijn tweede erfenis is een bewezen draaiboek voor monsterretour dat de rest van de wereld nu volgt. De technologieën en moeilijke lessen van de Hayabusa-missies voedden direct NASA's OSIRIS-REx en de bredere golf van kleine-lichaam-missies — waardoor JAXA's kleine valken de verkenners werden voor een hele klasse van exploratie."
     },
     {
       "type": "prose",
-      "md": "En het is een demonstratie dat een gefocust, relatief bescheiden programma de wereld kan leiden in een specifiek, moeilijk domein. Hayabusa is het bewijs dat je niet het grootste budget nodig hebt om een echte primeur te hebben — alleen de discipline om één moeilijk probleem te kiezen en te weigeren het je te laten verslaan."
+      "md": "En het is een demonstratie dat een gefocust, betrekkelijk bescheiden programma de wereld kan leiden in een specifiek, moeilijk domein. Hayabusa is het bewijs dat je niet het grootste budget nodig hebt om een echte primeur te behalen — alleen de discipline om één moeilijk probleem te kiezen en te weigeren het je te laten verslaan."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "De les van Hayabusa is dat een missie die nauwelijks overleeft meer waard kan zijn dan een die soepel verloopt, als het overleven wordt gemeten en ervan wordt geleerd. De cascade van problemen van de eerste sonde was uiteindelijk het meest waardevolle eraan — elk bijna fataal probleem werd kennis die het foutloze vervolg mogelijk maakte. Mislukking, volledig begrepen, is een vorm van vooruitgang."
+      "md": "De les van Hayabusa is dat een missie die nauwelijks overleeft meer waard kan zijn dan een missie die soepel verloopt, als de overleving wordt geïnstrumenteerd en ervan wordt geleerd. De cascade van storingen van de eerste sonde was, uiteindelijk, het meest waardevolle eraan — elk bijna-fataal probleem werd kennis die het vlekkeloze vervolg mogelijk maakte. Falen, volledig begrepen, is een vorm van vooruitgang."
     },
     {
       "type": "prose",
-      "md": "De diepere les is de kracht van focus. JAXA kon NASA niet overtreffen in uitgaven aan alles, dus koos het één buitengewoon moeilijk ding en werd er de beste ter wereld in. In een veld waar de verleiding altijd is om meer te proberen, is Hayabusa een pleidooi voor minder doen, dieper — en een primeur houden waarvoor grotere programma's dan naar jou toe moeten komen om te leren."
+      "md": "De diepere les is de kracht van focus. JAXA kon NASA niet overtreffen in uitgaven aan alles, dus koos het één buitengewoon moeilijk ding en werd er het beste ter wereld in. In een veld waar de verleiding altijd is om meer te proberen, is Hayabusa een pleidooi voor minder, dieper doen — en een primeur behalen waar grotere programma's dan naar jou moeten komen om te leren."
     }
   ]
 }

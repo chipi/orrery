@@ -1,49 +1,49 @@
 {
-  "name": "Аполлон-9",
-  "type": "ПИЛОТИРУЕМЫЙ ОКОЛОЗЕМНЫЙ · ВЫПОЛНЕН",
-  "first": "Первый пилотируемый полёт LM — испытания разделения + сближения на околоземной орбите",
-  "description": "Первый пилотируемый полёт лунного модуля. На околоземной орбите Макдивитт и Швейкарт расстыковали LM Spider от CSM Gumdrop, отлетели на 183 км в течение шести часов, затем выполнили сближение и повторную стыковку — каждый шаг лунной процедуры сближения был испытан без возможности вернуть экипаж в CSM, если что-то пойдёт не так. Швейкарт провёл 38-минутный выход в открытый космос на «крыльце» LM, продемонстрировав скафандр EVA + ранец PLSS, которые будут использовать ходящие по Луне экипажи. С проверенным оборудованием LM и процедурами сближения NASA была готова отправить Аполлон-10 к Луне через два месяца.",
+  "name": "Apollo 9",
+  "type": "ПИЛОТИРУЕМЫЙ ПОЛЁТ НА ОКОЛОЗЕМНОЙ ОРБИТЕ · ВЫПОЛНЕН",
+  "first": "Первый пилотируемый полёт Лунного модуля — испытание отделения ЛМ на орбите и маневров сближения",
+  "description": "Первый пилотируемый полёт Лунного модуля. На земной орбите Макдивит и Швейккарт отстыковали ЛМ Spider от CSM Gumdrop, улетели на расстояние до 183 км в течение шести часов, затем выполнили маневр сближения и повторную стыковку — каждый этап лунной процедуры сближения был испытан без возможности доставить экипаж на Землю в CSM в случае сбоя. Швейккарт выполнил 38-минутный выход в открытый космос на палубе ЛМ, продемонстрировав скафандр Apollo для внекорабельной деятельности и конструкцию системы жизнеобеспечения PLSS, которую использовали бы экипажи, высаживающиеся на Луну. Скотт выполнил выход в открытый космос прямо из люка CSM. После проверки оборудования ЛМ и процедур сближения NASA получила зелёный свет для отправки Apollo 10 на Луну два месяца спустя.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-504) from Kennedy Space Center LC-39A 1969-03-03 16:00 UTC — third Saturn V flight, first crewed launch carrying LM.",
+      "label": "ЗАПУСК",
+      "note": "Saturn V (AS-504) с Kennedy Space Center LC-39A 1969-03-03 16:00 UTC — третий полёт Saturn V, первый пилотируемый запуск с доставкой ЛМ.",
       "type": "nominal"
     },
     {
       "met": 0.13,
-      "label": "CSM-LM EXTRACTION",
-      "note": "CSM Gumdrop turns around + docks with LM Spider in the SLA adapter — first crewed transposition + docking. All Apollo lunar missions repeat this maneuver.",
+      "label": "ИЗВЛЕЧЕНИЕ CSM-ЛМ",
+      "note": "CSM Gumdrop разворачивается и стыкуется с ЛМ Spider в адаптере SLA — первая пилотируемая операция переворота и стыковки. Все лунные миссии Apollo повторяют этот манёвр.",
       "type": "nominal"
     },
     {
       "met": 4.2,
-      "label": "LM SEPARATION",
-      "note": "McDivitt + Schweickart undock Spider, fly up to 183 km from Gumdrop over six hours. First crewed flight where the spacecraft + crew aren't both attached to a re-entry vehicle.",
+      "label": "ОТДЕЛЕНИЕ ЛМ",
+      "note": "Макдивит и Швейккарт отстыковывают Spider, улетают на 183 км от Gumdrop в течение шести часов. Первый пилотируемый полёт, в котором космический корабль и экипаж не привязаны одновременно к аппарату возвращения.",
       "type": "info"
     },
     {
       "met": 4.5,
-      "label": "EVA",
-      "note": "Schweickart does 38-min EVA on LM porch. Scott stand-up EVA from CSM hatch. First validation of Apollo PLSS backpack.",
+      "label": "ВЫХОД В ОТКРЫТЫЙ КОСМОС",
+      "note": "Швейккарт выполняет 38-минутный выход в открытый космос на палубе ЛМ. Скотт выполняет выход из люка CSM. Первая проверка рюкзака Apollo PLSS.",
       "type": "info"
     },
     {
       "met": 4.5,
-      "label": "RENDEZVOUS + REDOCK",
-      "note": "Spider rendezvous + redocks with Gumdrop, completing the lunar-procedure dress rehearsal in Earth orbit.",
+      "label": "СБЛИЖЕНИЕ И ПОВТОРНАЯ СТЫКОВКА",
+      "note": "Spider сближается и стыкуется с Gumdrop, завершая репетицию лунной процедуры на земной орбите.",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "LM JETTISON",
-      "note": "Spider ascent stage jettisoned to deorbit; descent stage remained in orbit and decayed 1981.",
+      "label": "ОТДЕЛЕНИЕ ЛМ",
+      "note": "Посадочная ступень Spider выведена на деорбиту (вошла в атмосферу март 1969, Индийский океан); ступень взлёта была полностью израсходована и выведена на высокую орбиту — деградировала в 1981 году.",
       "type": "nominal"
     },
     {
       "met": 10.04,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Atlantic 1969-03-13 17:00 UTC after 151 orbits. Recovery by USS Guadalcanal.",
+      "label": "ПРИВОДНЕНИЕ",
+      "note": "КМ приводнилась в Северной Атлантике 1969-03-13 17:00 UTC после 151 витка. Спасена кораблём USS Guadalcanal.",
       "type": "nominal"
     }
   ]

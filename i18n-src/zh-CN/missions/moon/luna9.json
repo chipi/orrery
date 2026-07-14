@@ -1,12 +1,32 @@
 {
   "name": "Luna 9",
-  "type": "UNCREWED LANDER · FLOWN",
-  "first": "First soft-landing on the Moon; first photographs from the lunar surface",
-  "description": "After 11 Soviet failures and 5 American Ranger missions designed only to crash, Luna 9 became the first spacecraft to soft-land on another world. Nine panoramic images returned over 8 minutes settled a long-running scientific debate: the Moon's surface was solid, not a sea of dust deep enough to swallow a lander. The mission lasted 3 days before battery depletion. Within months, every Moon-bound mission afterwards used soft-landing as the baseline.",
+  "type": "无人着陆器 · 已执行",
+  "first": "首次在月球软着陆；首次从月球表面传回照片",
+  "description": "在苏联经历11次失败和美国发射5个设计仅用于撞击的火星者号任务后，Luna 9成为第一个在另一个世界实现软着陆的航天器。九张图像——其中包括五张全景照——在三天内分三个传输会话返回地球，解决了一场长期存在的科学争议：月球表面是坚实的，而非足以吞没着陆器的厚厚尘埃层。任务在电池耗尽前持续了3天。数月内，此后所有月球任务都采用软着陆作为基准方案。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Molniya-M from Baikonur 1966-01-31.", "type": "nominal" },
-    { "met": 3, "label": "TOUCHDOWN", "note": "Soft-landing at Oceanus Procellarum 1966-02-03 18:45 UTC. First soft-landing on another world.", "type": "nominal" },
-    { "met": 3.01, "label": "FIRST IMAGES", "note": "Nine panoramic images returned in three transmission sessions.", "type": "info" },
-    { "met": 6, "label": "SIGNAL LOSS", "note": "Battery depleted; final transmission 1966-02-06.", "type": "warning" }
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "质子-M火箭从拜科努尔发射，1966-01-31。",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "着陆",
+      "note": "软着陆于风暴洋，1966-02-03 18:45 UTC。首次在另一个世界的软着陆。",
+      "type": "nominal"
+    },
+    {
+      "met": 3.01,
+      "label": "首批图像",
+      "note": "九张图像，其中五张全景，在三天内分三个传输会话返回。",
+      "type": "info"
+    },
+    {
+      "met": 6,
+      "label": "信号丧失",
+      "note": "电池耗尽；最后传输于1966-02-06。",
+      "type": "warning"
+    }
   ]
 }

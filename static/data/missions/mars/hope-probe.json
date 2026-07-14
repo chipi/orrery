@@ -47,7 +47,7 @@
     },
     "arrival": {
       "v_infinity_km_s": 2.8,
-      "periapsis_km": 22000,
+      "periapsis_km": 20000,
       "inclination_deg": 25,
       "orbit_insertion_dv_km_s": 1.05,
       "source": "MBRSC Hope MOI Report (2021-02); high-altitude science orbit"
@@ -110,7 +110,7 @@
         "met_days": 205.01,
         "type": "edl_or_oi",
         "label": "Mars orbit insertion",
-        "description": "27-minute main-engine burn on 2021-02-09 captured Hope into a 22,000 × 43,000 km orbit. Hope is the first Mars mission to study the planet's lower atmosphere + weather + dust storms from a high-altitude 55-hour orbit — a vantage point that complements the lower-orbit science missions (MAVEN, TGO) it shares the Mars system with."
+        "description": "27-minute main-engine burn on 2021-02-09 captured Hope into a ~20,000 × 43,000 km orbit. Hope is the first Mars mission to study the planet's lower atmosphere + weather + dust storms from a high-altitude 55-hour orbit — a vantage point that complements the lower-orbit science missions (MAVEN, TGO) it shares the Mars system with."
       }
     ],
     "interplanetary_profile": {

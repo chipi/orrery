@@ -1,14 +1,14 @@
 {
   "title": "Epoca J2000",
-  "intro_sentence": "Mezzogiorno UTC del 1 gennaio 2000 — l'istante ancorato universale.",
+  "intro_sentence": "12:00 TT (Tempo Terrestre) del 1º gennaio 2000 — il momento di riferimento universale che gli astronomi usano per datare gli elementi orbitali.",
   "narrative_101": [
-    "Orbite derivano. Lentamente — secoli. Astronomi scelsero un punto zero condiviso. J2000 = mezzogiorno UTC 1 gennaio 2000.",
-    "Perché mezzogiorno? Decompto giorni giuliani — incrementa a mezzogiorno per non avere cambio data nella notte di osservazione. J2000 = JD 2.451.545,0.",
-    "Ogni orbita in questo simulatore ancorata a J2000."
+    "Le orbite derivano. Lentamente — nel corso dei secoli — ma abbastanza perché non puoi semplicemente dire \"l'orbita di Marte ha eccentricità 0,0934\" senza specificare \"a quando risale.\" Gli astronomi avevano bisogno di un punto zero convenzionale nel tempo, nello stesso modo in cui i cartografi avevano bisogno di un meridiano zero concordato (ecco perché esiste Greenwich). Hanno scelto mezzogiorno TT (Tempo Terrestre) del 1º gennaio 2000 — formalmente 12:00 TT, approssimativamente 11:59 UTC. Questo è J2000.",
+    "Perché mezzogiorno e non mezzanotte? Perché il conteggio del Giorno Giuliano — il registro continuo dei giorni degli astronomi dal 4713 a.C. — ha sempre cambiato alla mezzanotte astronomica (mezzogiorno), non a mezzanotte civile, così gli osservatori non devono gestire un cambio di data nel mezzo della notte lavorativa. J2000 corrisponde esattamente al Giorno Giuliano 2.451.545,0 — un riferimento intero e preciso.",
+    "Ogni orbita che vedi in questo simulatore è ancorata a J2000. La longitudine media della Terra a J2000. L'argomento del periapside di Marte a J2000. Le posizioni dei pianeti che vedi animarsi in /explore sono estrapolate in avanti (o indietro) da J2000 usando matematica lineare semplice: \"inizia qui, avanza a questo ritmo, ecco dove sei adesso.\" Scegli qualsiasi data nella storia e l'orrery può dirti dove erano i pianeti."
   ],
   "body_paragraphs": [
-    "Elementi orbitali derivano. Per significato: \"a partire da quando\". Standard: J2000.",
-    "Perché mezzogiorno? Data giuliana incrementa mezzogiorno. J2000 = JD 2.451.545,0 esatto.",
-    "Dati Orrery usano elementi J2000."
+    "Gli elementi orbitali derivano nel tempo — perturbazioni da altri pianeti modificano l'eccentricità, le longitudini precessionano, le inclinazioni oscillano. Per rendere significativi gli elementi di un pianeta, devi specificare \"a quando risale.\" La risposta standard è J2000: mezzogiorno TT (Tempo Terrestre) del 1º gennaio 2000. Le orbite sono quotate a quel momento; la propagazione in avanti o indietro utilizza modelli analitici o numerici.",
+    "Perché mezzogiorno? Perché la Data Giuliana (JD) — il conteggio continuo dei giorni degli astronomi a partire da mezzogiorno Tempo Universale del 1º gennaio 4713 a.C. (calendario giuliano prolettico) — incrementa a mezzogiorno, non a mezzanotte. J2000 corrisponde esattamente a JD 2.451.545,0, un punto di riferimento preciso senza giorni frazionari.",
+    "I dati planetari di Orrery utilizzano elementi J2000 in tutto. Il campo della longitudine media `L₀` nei pannelli `/explore` è l'angolo di posizione eliocentrica del pianeta a J2000. Da lì, il moto medio `n = 2π / T` avanza `L` linearmente a qualsiasi altra epoca — escludendo le piccole perturbazioni che il simulatore ignora."
   ]
 }

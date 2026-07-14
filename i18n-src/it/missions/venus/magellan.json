@@ -1,8 +1,8 @@
 {
   "name": "Magellan",
-  "type": "ORBITER · FLOWN",
-  "first": "La mappa radar più completa di Venere — 98% della superficie a risoluzione di 100 m; prima sonda planetaria lanciata dallo Space Shuttle",
-  "description": "Magellan ha trasformato Venere da un disco senza caratteristiche velato da nuvole in un pianeta mappato. Lanciata dalla stiva di carico dello Shuttle Atlantis il 1989-05-04 — la prima sonda planetaria a viaggiare su uno Shuttle — è arrivata su Venere il 1990-08-10 tramite una lunga traiettoria di Tipo IV (1,5 rivoluzioni solari). Nel corso di quattro cicli di mappatura, il radar ad apertura sintetica ha acquisito immagini del 98% della superficie di Venere a risoluzione di 100 m, rivelando altopiani di tessera, coronae, cupole a pancake e una superficie giovane, rimodellata vulcanicamente. La missione si è conclusa il 1994-10-13 con l'Esperimento di Terminazione — il primo ingresso atmosferico controllato e pianificato di una sonda planetaria.",
+  "type": "ORBITANTE · COMPLETATO",
+  "first": "Mappa radar più completa di Venere — 98% della superficie con risoluzione ~120 m; primo veicolo spaziale planetario lanciato dallo Space Shuttle",
+  "description": "Magellan ha trasformato Venere da un disco informe avvolto da nuvole in un pianeta mappato. Lanciato dalla stiva del Shuttle Atlantis il 1989-05-04 — il primo veicolo spaziale planetario a viaggiare su uno Shuttle — e arrivato su Venere il 1990-08-10 attraverso una lunga traiettoria di Tipo IV (1,5 rivoluzioni solari). Durante quattro cicli di mappatura il radar ad apertura sintetica ha fotografato il 98% della superficie di Venere con risoluzione ~120 m, rivelando altipiani tessera, coronae, cupole a frittella e una superficie giovane, resurfaced vulcanicamente. La missione si è conclusa il 1994-10-13 con l'Esperimento di Terminazione — il primo rientro atmosferico controllato e pianificato di un veicolo spaziale planetario.",
   "events": [
     {
       "met": 0,
@@ -13,31 +13,31 @@
     {
       "met": 60,
       "label": "TCM-1",
-      "note": "Prima correzione di rotta a metà percorso.",
+      "note": "Prima correzione di rotta.",
       "type": "nominal"
     },
     {
       "met": 455,
       "label": "TCM-4",
-      "note": "Ultimo aggiustamento pre-VOI.",
+      "note": "Regolazione finale pre-VOI.",
       "type": "nominal"
     },
     {
       "met": 463,
       "label": "VOI",
-      "note": "Accensione del motore a propellente solido in un'orbita quasi polare di 295 × 8543 km, 85,5°.",
+      "note": "Accensione motore solido in un'orbita quasi polare di 295 × 8543 km, 85,5°.",
       "type": "info"
     },
     {
       "met": 950,
       "label": "CICLO DI MAPPATURA 1 COMPLETATO",
-      "note": "Primo passaggio completo — 84% di copertura della superficie a risoluzione di 100 m.",
+      "note": "Primo passaggio completo — copertura del 84% della superficie con risoluzione di 100 m.",
       "type": "info"
     },
     {
       "met": 1988,
       "label": "ESPERIMENTO DI TERMINAZIONE",
-      "note": "1994-10-13. Periasse abbassato nell'atmosfera — primo ingresso pianificato di una sonda planetaria.",
+      "note": "1994-10-13. Perielio abbassato nell'atmosfera — primo rientro di veicolo spaziale planetario pianificato.",
       "type": "warning"
     }
   ]

@@ -1,74 +1,74 @@
 {
   "name": "Apollo 15",
-  "dispatch": "Tegen Apollo 15 was de race allang voorbij, en de wetenschap nam het stuur over — letterlijk. Dit was de eerste vlucht die de Lunar Rover meevoerde, die een wandelradius van twee mijl veranderde in een fatsoenlijke veldexpeditie van achttien mijl, en hij landde niet op een veilige vlakke vlakte maar in een vallei tussen een bergketen en een kronkelende canyon. Scott en Irwin kwamen thuis met de \"Genesis Rock,\" een vier miljard jaar oud brokstuk van de oorspronkelijke korst van de Maan dat bevestigde hoe deze was gevormd. Apollo was gestopt met het bezoeken van de Maan en begon deze te bestuderen — en het werd daar steeds beter in tot het werd geannuleerd.",
-  "type": "BEMANDE LANDER · GEVLOGEN",
-  "first": "Eerste J-missie — verlengd verblijf, eerste Lunar Roving Vehicle, \"Genesis Rock\"",
-  "description": "De eerste \"J-missie\" — wetenschappelijke Apollo met verlengd verblijf met het nieuwe Lunar Roving Vehicle. De LRV gaf Scott + Irwin een traversbereik van 27,9 km (vs de 3,5 km alleen-lopend van Apollo 14), wat de dramatische Hadley-Apennine-locatie aan de voet van een 4,5-km bergketen en de rand van de kronkelende Hadley Rille opende. Drie EVA's van in totaal 18 u 35 m, 77 kg monsters teruggebracht, waaronder de beroemde \"Genesis Rock\" (monster 15415) — een 4,1 miljard jaar oude anorthosiet die de magma-oceaan-oorsprong van de maan-hooglandkorst bevestigt. Scott's op TV uitgezonden \"hammer-feather drop\" verifieerde Galilei's zwaartekrachtwet live.",
+  "type": "BEMAND MAANLANDINGSVAARTUIG · UITGEVOERD",
+  "first": "Eerste J-mission — uitgebreide missie, eerste Maanrovers, \"Genesisrots\"",
+  "dispatch": "Met Apollo 15 was de race allang voorbij, en de wetenschap nam het stuur over — letterlijk. Dit was de eerste vlucht met een Maanrover, die een twee-kilometer loopradius omtoverde in een echte achttien-kilometer veldexpeditie, en die niet op een veilige vlakte landde maar in een vallei tussen een bergketen en een kronkelende kloof. Scott en Irwin keerden huiswaarts met de \"Genesisrots,\" een vier miljard jaar oude schaard van de maan's originele korst die bevestigde hoe deze was ontstaan. Apollo was gestopt met bezoeken aan de maan en was begonnen deze te bestuderen — en het werd daar steeds beter in tot het werd stopgezet.",
+  "description": "De eerste \"J-mission\" — uitgebreide-verblijfs wetenschappelijke Apollo met de nieuwe Maanrover. De LRV gaf Scott + Irwin een 27,9 km traverseerbereik (tegen de 3,5 km van alleen-wandelen Apollo 14), openmakend de dramatische Hadley-Apennine locatie aan de voet van een 4,5 km hoge bergketen en de rand van de sinueuze Hadley Rille. Drie EVA's totaal 18 u 35 m, 77 kg monsters teruggebracht, inclusief de beroemde \"Genesisrots\" (monster 15415) — een 4,1 miljard jaar oud anortosiet dat de magma-oceaan-oorsprong van de maanhoogtekorst bevestigt. Scott's televisie-uitgezonden \"hamer-veerdrop\" verifieerde Galileo's zwaartekrachtswet live. Worden in maanomloop bediente een SIM-baai vol afstandsmeetinstrumenten (afbeeldingscamera's, gamma-straling, röntgen-, alfadeeltjespectrometers) en voerde de eerste diepe-ruimte-EVA uit op de terugweg (~39-minuten EVA op ~317 000 km van de aarde om filmcassettes op te halen). Apollo 15's herstel werd bemoeilijkt door een van de drie parachutes die niet volledig uitvouwde — CM maakte een harde landing maar bemanning was veilig.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-510) from Kennedy Space Center LC-39A 1971-07-26 13:34 UTC.",
+      "label": "LANCERING",
+      "note": "Saturn V (AS-510) vanaf Kennedy Space Center LC-39A 1971-07-26 13:34 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection.",
+      "note": "Trans-maanvlucht injectie.",
       "type": "nominal"
     },
     {
       "met": 3.25,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "Maanorbitale inbrengings. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.79,
-      "label": "TOUCHDOWN",
-      "note": "Falcon lands at Hadley-Apennine 1971-07-30 22:16 UTC — first landing at a non-mare highland site.",
+      "label": "LANDING",
+      "note": "Falcon landt op Hadley-Apennine 1971-07-30 22:16 UTC — eerste landing op een niet-marijn hooglande gebied.",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "FIRST LRV TRAVERSE",
-      "note": "EVA-1: First Lunar Roving Vehicle deployment + 10.3 km traverse to Elbow Crater + the rim of Hadley Rille.",
+      "label": "EERSTE MAANROVER-TRAVERSERING",
+      "note": "EVA-1: Eerste Maanrover inzet + 10,3 km traversering naar Elbow Krater + rand van Hadley Rille.",
       "type": "info"
     },
     {
       "met": 5.5,
-      "label": "GENESIS ROCK",
-      "note": "EVA-2: At Spur Crater, Scott + Irwin recover sample 15415 — a 4.1-billion-year-old anorthosite from the original lunar crust.",
+      "label": "GENESISROTS",
+      "note": "EVA-2: Bij Spur Krater, Scott + Irwin bergen monster 15415 — een 4,1 miljard jaar oud anortosiet uit de originele maankorst.",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "HAMMER-FEATHER DROP",
-      "note": "EVA-3 / pre-ascent: Scott televises a hammer + feather dropped together; both hit the regolith simultaneously, verifying Galileo's 1589 prediction live.",
+      "label": "HAMER-VEERDROP",
+      "note": "EVA-3 / pre-opstijging: Scott zendt televisie uit van een hamer + veertje samen gedropt; beide raken het regoliet tegelijk, Galileo's 1589 voorspelling live verifiërend.",
       "type": "info"
     },
     {
       "met": 6.25,
-      "label": "ASCENT",
-      "note": "Falcon lifts off after 66 h 55 m on surface. 77 kg samples + first ascent televised from the LRV-mounted camera (operated remotely by Houston).",
+      "label": "OPSTIJGING",
+      "note": "Falcon stijgt op na 66 u 55 m op oppervlak. 77 kg monsters + eerste opstijging televisie-uitgezonden vanaf LRV-gemonteerde camera (op afstand bediend door Houston).",
       "type": "nominal"
     },
     {
       "met": 8.2,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Trans-aarde injectie. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 9.5,
-      "label": "DEEP-SPACE EVA",
-      "note": "Worden performs first-ever EVA in cislunar space (38 min at ~315 000 km from Earth) to retrieve SIM-bay film canisters.",
+      "label": "DIEPE-RUIMTE EVA",
+      "note": "Worden voert eerste EVA ooit in cismaanruimte uit (~39 min op ~317 000 km van aarde) om SIM-baai filmcassettes op te halen.",
       "type": "info"
     },
     {
       "met": 12.31,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+      "label": "SPLASH-DOWN",
+      "note": "CM splash-down in Noord-Stille Oceaan 1971-08-07 20:46 UTC. Een van drie grote parachutes falen volledig uit te vouwen; landing hard maar veilig. Bergingsdienst USS Okinawa.",
       "type": "warning"
     }
   ]

@@ -80,10 +80,22 @@ function programsRoutes() {
   return routes;
 }
 
+// The Long View essays — index route + one per published essay slug (same
+// pattern + rationale as programsRoutes).
+function essaysRoutes() {
+  const idxPath = 'static/data/essays/index.json';
+  if (!existsSync(idxPath)) return [];
+  const idx = JSON.parse(readFileSync(idxPath, 'utf8'));
+  const routes = ['/essays'];
+  for (const e of idx) if (e.status === 'published') routes.push(`/essays/${e.slug}`);
+  return routes;
+}
+
 const localizedRoots = expandLocalizedRoots([
   ...SEED_ROUTES,
   ...scienceRoutes(),
   ...programsRoutes(),
+  ...essaysRoutes(),
 ]);
 
 /** @type {import('@sveltejs/kit').Config} */

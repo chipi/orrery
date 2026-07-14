@@ -1,14 +1,15 @@
 {
   "title": "Kegelschnitte",
-  "intro_sentence": "Schneide einen Kegel auf vier Arten und du bekommst jede Keplersche Trajektorie — Kreis, Ellipse, Parabel, Hyperbel.",
+  "intro_sentence": "Schneide einen Kegel auf vier Arten und du erhältst jede mögliche Kepler-Bahn — Kreis, Ellipse, Parabel, Hyperbel.",
   "narrative_101": [
-    "Bizarrer mathematischer Glücksfall der Bahnmechanik: Die Formen vom Kegelschnitt — Kreis, Ellipse, Parabel, Hyperbel — sind GENAU die einzigen Formen, auf denen ein Körper unter Schwerkraft reisen kann. Die Griechen studierten die Kurven 200 v. Chr. zum Spaß. 2000 Jahre später: das Universum läuft auf ihnen.",
-    "Die vier bilden ein Kontinuum. Langsam: Kreis oder Ellipse. Genau Fluchtgeschwindigkeit: Parabel. Schneller: Hyperbel. Exzentrizität ist der Regler."
+    "Im Herzen der Orbitalmechanik steckt ein bizarrer mathematischer Glücksfall. Die Formen, die man durch Schneiden eines Kegels mit einer ebenen Fläche erhält — Kreis, Ellipse, Parabel, Hyperbel — sind GENAU die einzigen Formen, auf denen sich ein Körper unter Gravitationskraft bewegen kann. Die Griechen studieren diese Kurven um 200 v. Chr. aus Spaß. Zweitausend Jahre später entdeckten wir, dass das Universum nach ihnen funktioniert.",
+    "Die vier Formen bilden ein Kontinuum. Langsam genug? Du befindest dich auf einem Kreis oder einer Ellipse — gebunden, du wirst zurückkommen. Genau bei Fluchtgeschwindigkeit? Parabel — du kommst gerade eben nie zurück. Schneller als das? Hyperbel — du schießt durch und kommst nie zurück. Die Exzentrizität ist der Drehregler: 0 ist ein Kreis, 1 ist die Fluchtgrenze, über 1 bist du frei.",
+    "Echte Missionen nutzen alle vier. Der Flug von der Erde zum Mars ist eine Ellipse. Der Vorbeiflug an Jupiter auf dem Weg zum Saturn ist eine Hyperbel — relativ zu Jupiter bewegst du dich zu schnell, um eingefangen zu werden. Die Voyager-Sonden befinden sich jetzt auf hyperbolischen Fluchtbahnen (e > 1), die sie für immer aus dem Sonnensystem hinausführen. Dieselbe Gleichung beschreibt sie alle; nur die Exzentrizität unterscheidet sich."
   ],
   "body_paragraphs": [
-    "Schneide einen Kegel mit einer Ebene. Horizontal: Kreis (e=0). Geneigt: Ellipse (0<e<1). Parallel zur Kante: Parabel (e=1). Darüber: Hyperbel (e>1). Apollonius von Perge katalogisierte sie 200 v. Chr.",
-    "Jede Keplersche Bahn ist eine der vier. Gebundene — Planeten, Monde — Kreise/Ellipsen. Ungebundene — Vorbeiflüge, Escape — Parabeln/Hyperbeln. Die Grenze bei e=1 ist exakt.",
-    "Missionsdesigner nutzen alle vier. Cruise auf Ellipse, Vorbeiflug auf Hyperbel, Insertion zurück zur Ellipse. `/fly` macht das natürlich — eine Gleichung, Exzentrizität sagt dir, welche Kurve."
+    "Nimm einen unendlichen Kegel und schneide ihn mit einer ebenen Fläche. Horizontaler Schnitt: ein Kreis (`e = 0`). Neige den Schnitt: eine Ellipse (`0 < e < 1`). Neige parallel zur Kante des Kegels: eine Parabel (`e = 1`, der exakte Fluchtfall). Neige darüber hinaus: eine Hyperbel (`e > 1`, Flucht mit überschüssiger Energie). Zweitausend Jahre vor Kepler katalogisierte Apollonius von Perga diese Kurven. Zwei Jahrhunderte vor Newton entdeckte Kepler, dass Planeten entlang ihnen fliegen.",
+    "Jede Kepler-Bahn ist eine dieser vier. Gebundene Bahnen — Planeten, Monde, Satelliten, alles was zurückkommt — sind Kreise oder Ellipsen. Ungebundene Trajektorien — Vorbeiflüge, Fluchtbahnen, hyperbolische Einfangmanöver — sind Parabeln oder Hyperbeln. Die Grenze ist exakt: bei `e = 1` bewegst du dich mit genau der lokalen Fluchtgeschwindigkeit.",
+    "Missionsingenieure nutzen alle vier aus. Reisen auf einer Ellipse, Vorbeiflug an einem Planeten auf einer Hyperbel (relativ zu diesem Planeten), Einschwenken in eine Umlaufbahn auf einer Ellipse erneut. Der Simulator-Route `/fly` macht das natürlicherweise — dieselbe Bahngleichung bewältigt jeden Fall, die Exzentrizität sagt dir, welcher Kegelschnitt du fliegen."
   ],
-  "diagram_caption": "Vier Kegelschnitte: Kreis, Ellipse, Parabel, Hyperbel. Exzentrizität legt fest, welche."
+  "diagram_caption": "Vier Kegelschnitte durch Schneiden eines Kegels: Kreis, Ellipse, Parabel, Hyperbel. Die Exzentrizität bestimmt welcher."
 }

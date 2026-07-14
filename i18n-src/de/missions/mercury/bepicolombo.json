@@ -1,43 +1,43 @@
 {
   "name": "BepiColombo",
   "type": "ORBITER · AKTIV",
-  "first": "Erste gemeinsame planetare Mission von Europa und Japan; zweites Raumfahrzeug überhaupt, das Merkur umkreist (nach Messenger)",
-  "description": "Gemeinsame ESA-/JAXA-Mission zu Merkur, gestartet am 20.10.2018 — benannt nach dem italienischen Mathematiker Giuseppe (Bepi) Colombo, der die Mehrfach-Vorbeiflug-Trajektorie von Mariner 10 entwarf. Die 8-jährige Reise nutzt 9 Gravitationsassistenzen (Erde 2020, Venus 2020, Venus 2021, dann sechs Merkur-Vorbeiflüge 2021-2024) plus durchgehenden Ionenantrieb. Merkur-Orbit-Einschuss am 5.12.2026; wissenschaftliche Operationen beginnen Anfang 2027.",
+  "first": "Erste gemeinsame Planetenmission von Europa und Japan; zweites Raumschiff, das jemals den Merkur umkreist (nach Messenger)",
+  "description": "Gemeinsame Mission der ESA und JAXA zum Merkur, gestartet am 2018-10-20 — benannt nach dem italienischen Mathematiker Giuseppe (Bepi) Colombo, der die Mehrfach-Vorbeiflug-Flugbahn von Mariner 10 entwarf. Die 8-jährige Anflugphase nutzt 9 Gravitationsunterstützungen (Erde 2020, Venus 2020, Venus 2021, dann sechs Merkur-Vorbeiflüge 2021–2025) sowie kontinuierlichen Ionenantrieb vom Mercury Transfer Module, um das enorme Gefälle des Sonnengravitationsfelds zwischen Erd- und Merkurorbit abzubauen. Merkurorbit-Eintritt am 2026-11-21; wissenschaftliche Operationen beginnen Anfang 2027 nach Trennung des MTM und der beiden Orbiter — ESAs MPO (Planetenoberfläche + Zusammensetzung) und JXAAs Mio (Magnetosphäre). Tests der Allgemeinen Relativitätstheorie durch Funksignallaufzeit-Tracking in Merkurs starkem Sonnengraviationsfeld sind ebenfalls geplant.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "Ariane 5 ECA startet BepiColombo von Kourou auf seine 8-jährige Ionenfahrt nach Merkur.",
+      "note": "Ariane 5 ECA hebt BepiColombo von Kourou zu seiner 8-jährigen Ionenreise zum Merkur ab.",
       "type": "nominal"
     },
     {
       "met": 538,
-      "label": "ERDVORBEIFLUG",
-      "note": "Einzelne Erd-Gravitationsassistenz beginnt die innersystemische Gravitationsassistenzkette.",
+      "label": "ERDE-VORBEIFLUG",
+      "note": "Einzelne Erde-Gravitationsunterstützung startet die Gravitationsunterstützungs-Kette im inneren System.",
       "type": "nominal"
     },
     {
       "met": 727,
-      "label": "VENUSVORBEIFLUG #1",
-      "note": "Erste Venus-Gravitationsassistenz.",
+      "label": "VENUS-VORBEIFLUG #1",
+      "note": "Erste Venus-Gravitationsunterstützung.",
       "type": "nominal"
     },
     {
       "met": 1026,
-      "label": "VENUSVORBEIFLUG #2",
-      "note": "Zweite Venus-Gravitationsassistenz beginnt die Merkur-Anflugphase.",
+      "label": "VENUS-VORBEIFLUG #2",
+      "note": "Zweite Venus-Gravitationsunterstützung startet die Merkur-Annäherungsphase.",
       "type": "nominal"
     },
     {
       "met": 1133,
-      "label": "MERKURVORBEIFLUG #1",
-      "note": "Erster von sechs Merkur-Gravitationsassistenzen.",
+      "label": "MERKUR-VORBEIFLUG #1",
+      "note": "Erster von sechs Merkur-Gravitationsunterstützungen.",
       "type": "nominal"
     },
     {
       "met": 2968,
-      "label": "MERKUR-ORBITEINSCHUSS",
-      "note": "MTM-Abwurf + Orbiter-Trennung; wissenschaftliche Operationen beginnen Anfang 2027.",
+      "label": "MERKURORBIT-EINTRITT",
+      "note": "MTM-Trennung + Orbiter-Separation; wissenschaftliche Operationen beginnen Anfang 2027.",
       "type": "info"
     }
   ]

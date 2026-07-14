@@ -1,7 +1,33 @@
 {
   "name": "Liberty Bell 7 / MR-4",
-  "dispatch": "A Liberty Bell 7 voou perfeitamente e é lembrada pelos trinta segundos depois que parou de voar. O salto suborbital de Gus Grissom repetiu o de Shepard — prova de que o primeiro voo não havia sido um golpe de sorte — mas na água a nova escotilha explosiva disparou sozinha, a cápsula inundou e afundou no fundo do Atlântico enquanto Grissom quase se afogou em seu traje que se enchia. Se ele havia esbarrado no gatilho ou se este havia disparado sozinho foi debatido pelo resto de sua vida e nunca resolvido. A verdadeira lição do voo foi mais discreta e mais útil: a parte mais perigosa de um voo espacial nem sempre é o voo espacial.",
-  "type": "TRIPULADO SUBORBITAL · VOADO",
-  "first": "Segundo voo suborbital americano; falha de escotilha fez perder a cápsula (recuperada em 1999)",
-  "description": "O voo suborbital de 15 minutos de Gus Grissom — segundo norte-americano no espaço, primeiro voo com escotilha de escape explosiva. Após o amerissagem, a escotilha disparou prematuramente, a cápsula inundou e Liberty Bell 7 afundou a 4900 m de profundidade; Grissom escapou, mas seu traje encheu de água e ele quase se afogou durante o resgate por helicóptero. A causa do disparo da escotilha permaneceu controversa por décadas; Grissom manteve que não havia tocado no pino de disparo. Recuperada em 20-07-1999 por uma expedição Oceaneering/Discovery Channel, restaurada e atualmente exposta no Kansas Cosmosphere & Space Center, Hutchinson KS. O livro de Tom Wolfe e o filme The Right Stuff (1983) dramatizaram este voo e a controvérsia da escotilha."
+  "type": "VOO SUBORBITAL TRIPULADO · REALIZADO",
+  "first": "Segundo voo suborbital americano; falha na escotilha perdeu a cápsula (recuperada em 1999)",
+  "dispatch": "Liberty Bell 7 voou impecavelmente e é lembrada pelos trinta segundos depois que parou de voar. O salto suborbital de Gus Grissom repetiu o de Shepard — prova de que o primeiro voo não havia sido um acaso — mas na água a nova escotilha explosiva disparou por conta própria, a cápsula encheu de água e afundou no fundo do Atlântico enquanto Grissom quase se afogava em seu traje encharcado. Se ele tinha batido no gatilho ou se havia disparado sozinho foi debatido pelo resto de sua vida e nunca foi resolvido. A verdadeira lição do voo era mais discreta e mais útil: a parte mais perigosa de um voo espacial nem sempre é o voo espacial.",
+  "description": "Voo suborbital de 15 min de Gus Grissom — segundo americano no espaço, primeiro voo a apresentar uma escotilha de fuga explosiva. Após o pouso a escotilha disparou prematuramente, a cápsula encheu de água e Liberty Bell 7 afundou em 4900 m de água; Grissom escapou mas seu traje tomou água e ele quase se afogou durante o resgate por helicóptero. A causa do disparo da escotilha permaneceu controversa por décadas; Grissom manteve que não tinha batido no pino de disparo. Recuperada em 1999-07-20 por uma expedição Oceaneering/Discovery Channel, restaurada e agora exibida no Kansas Cosmosphere & Space Center, Hutchinson KS. O livro de Tom Wolfe / filme de 1983 The Right Stuff dramatizou este voo e a controvérsia da escotilha.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "MR-4 de Cape Canaveral LC-5 1961-07-21 12:20 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.000018,
+      "label": "APOGEU",
+      "note": "Apogeu de 190 km após 2,5 minutos; ~5 min de imponderabilidade.",
+      "type": "info"
+    },
+    {
+      "met": 0.000174,
+      "label": "POUSO",
+      "note": "Oceano Atlântico 480 km a favor do vento. Escotilha disparou prematuramente — cápsula encheu de água e afundou. Grissom escapou; recuperado pelo USS Randolph.",
+      "type": "warning"
+    },
+    {
+      "met": 13880,
+      "label": "RECUPERAÇÃO DA CÁPSULA",
+      "note": "Liberty Bell 7 levantada de 4900 m de profundidade pela Oceaneering International, 1999-07-20.",
+      "type": "info"
+    }
+  ]
 }

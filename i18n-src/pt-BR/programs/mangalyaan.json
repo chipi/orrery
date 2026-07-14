@@ -1,84 +1,84 @@
 {
   "name": "Mangalyaan",
-  "tagline": "A Índia alcançou Marte em sua primeira tentativa — algo que nenhuma nação jamais havia feito — por menos do que o custo de um filme de Hollywood sobre o espaço.",
+  "tagline": "A Índia alcançou Marte em sua primeira tentativa — o primeiro país a conseguir isso — por menos que o custo de um filme de Hollywood sobre o espaço.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Marte é onde os programas espaciais vão para falhar. Mais missões foram perdidas a caminho de Marte do que tiveram sucesso lá; os Estados Unidos, a União Soviética, a Europa e o Japão todos colidiram, erraram ou ficaram em silêncio em suas primeiras tentativas. Alcançar a órbita de Marte em uma primeira tentativa era algo que nenhum país jamais havia conseguido. Em setembro de 2014, a Índia fez exatamente isso, com uma espaçonave chamada Mangalyaan — sânscrito para \"nave marciana\" — construída por uma agência que nunca havia enviado nada além da Lua."
+      "md": "Marte é onde programas espaciais vão para fracassar. Mais missões foram perdidas a caminho de Marte do que tiveram sucesso lá; os Estados Unidos, a União Soviética e o Japão colidiram, erraram o alvo ou ficaram em silêncio em suas tentativas iniciais. Alcançar a órbita de Marte na primeira tentativa era algo que nenhum país jamais conseguira — o orbitador Mars Express da ESA teve sucesso em 2003, mas como uma agência multinacional, não um único país. Em setembro de 2014, a Índia fez exatamente isso, com uma espaçonave chamada Mangalyaan — sânscrito para \"nave marciana\" — construída por uma agência que nunca havia enviado nada além da Lua, tornando-se o primeiro país a alcançar a órbita de Marte em sua missão de estreia e o primeiro a fazê-lo com propulsão desenvolvida de forma autônoma."
     },
     {
       "type": "prose",
-      "md": "A Mars Orbiter Mission era, no papel, um modesto demonstrador de tecnologia: um pequeno orbitador com uma carga de instrumentos leve, destinado principalmente a provar que a ISRO podia navegar até Marte e entrar em órbita. Mas teve tanto sucesso, tão barato e tão improvavelmente que se tornou algo muito maior — um símbolo do que um programa espacial frugal e disciplinado podia fazer, e um momento de orgulho nacional acompanhado ao vivo por centenas de milhões de indianos."
+      "md": "A Mars Orbiter Mission era, no papel, um modesto demonstrador de tecnologia: um pequeno orbitador com uma carga de instrumentos leve, destinado principalmente a provar que a ISRO poderia navegar até Marte e entrar em órbita. Mas teve tanto sucesso, de forma tão barata e tão improvável que se tornou algo muito maior — um símbolo do que um programa espacial frugal e disciplinado poderia fazer, e um momento de orgulho nacional acompanhado ao vivo por centenas de milhões de indianos."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "O objetivo principal era capacidade, não ciência: demonstrar que a Índia podia projetar, lançar e navegar uma espaçonave através do abismo interplanetário e inseri-la precisamente na órbita de Marte — as tecnologias específicas de comunicação no espaço profundo, operação autônoma longe da Terra e uma única queima de inserção orbital decisiva que a maioria das primeiras tentativas erra. Se isso funcionasse, todo o resto era bônus."
+      "md": "O objetivo principal era capacidade, não ciência: demonstrar que a Índia poderia projetar, lançar e navegar uma espaçonave através do abismo interplanetário e inseri-la precisamente na órbita de Marte — as tecnologias específicas de comunicação no espaço profundo, operação autônoma longe da Terra e uma única queima de inserção orbital que decide tudo e que a maioria das primeiras tentativas erra. Se isso funcionasse, todo o resto seria um bônus."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/mangalyaan/01"
       },
-      "caption": "A Mars Orbiter Mission — pequena, leve e construída rapidamente sobre hardware comprovado. Seus instrumentos eram modestos; sua carga útil real era a prova de que a Índia podia alcançar outro planeta e entrar em sua órbita na primeira tentativa.",
+      "caption": "A Mars Orbiter Mission — pequena, leve e construída rapidamente sobre hardware comprovado. Seus instrumentos eram modestos; sua verdadeira carga útil era a prova de que a Índia poderia alcançar outro planeta e entrar em sua órbita na primeira tentativa.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "O objetivo não declarado era fazê-lo de forma barata o suficiente para ser repetível. A ISRO construiu e lançou a Mangalyaan por aproximadamente 74 milhões de dólares — um valor que se tornou mundialmente famoso por ser menor que o orçamento do filme Gravidade, e uma pequena fração da missão MAVEN a Marte da NASA na mesma época. O ponto não era apenas alcançar Marte, mas provar que alcançar Marte não precisava custar uma fortuna, abrindo a ciência interplanetária para nações que nunca poderiam pagar o preço tradicional."
+      "md": "O objetivo não declarado era fazê-lo de forma barata o suficiente para ser repetível. A ISRO construiu e lançou a Mangalyaan por cerca de 74 milhões de dólares — um valor que se tornou mundialmente famoso por ser menor que o orçamento do filme Gravidade, e uma pequena fração da missão MAVEN da NASA a Marte, contemporânea à época. O ponto não era apenas alcançar Marte, mas provar que alcançar Marte não precisa custar uma fortuna, abrindo a ciência interplanetária para nações que nunca poderiam pagar o preço tradicional."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Funcionou na primeira tentativa — o resultado que a tornou histórica. A Mangalyaan foi lançada em novembro de 2013, navegou por dez meses e, em 24 de setembro de 2014, acionou seu motor e entrou na órbita de Marte exatamente como planejado. A Índia se tornou a primeira nação a alcançar Marte em sua missão de estreia, a primeira nação asiática a alcançar Marte, e fez isso por um custo que redefiniu as expectativas globais sobre quanto deve custar a exploração interplanetária."
+      "md": "Funcionou na primeira tentativa — o resultado que a tornou histórica. A Mangalyaan foi lançada em novembro de 2013, cruzou o espaço por dez meses e, em 24 de setembro de 2014, acionou seu motor e entrou na órbita de Marte exatamente conforme planejado. A Índia tornou-se o primeiro país a alcançar a órbita de Marte em sua missão de estreia, a primeira nação asiática a alcançar a órbita de Marte e o fez por um custo que redefiniu as expectativas globais sobre quanto a exploração interplanetária precisa custar."
     },
     {
       "type": "prose",
-      "md": "E então continuou funcionando. Projetado para durar seis meses, o orbitador operou por aproximadamente oito anos, retornando imagens e dados atmosféricos sobre Marte — uma visão colorida do disco completo, tempestades de poeira, a tênue atmosfera superior — muito depois de seus objetivos de demonstração serem alcançados. Uma missão construída para provar um ponto se tornou discretamente uma plataforma científica durável, finalmente ficando em silêncio apenas por volta de 2022 quando seu propelente e energia se esgotaram."
+      "md": "E então continuou funcionando. Projetado para durar seis meses, o orbitador operou por cerca de oito anos, retornando imagens e dados atmosféricos sobre Marte — uma visão colorida do disco inteiro, tempestades de poeira, a atmosfera superior tênue — muito depois de suas metas de demonstração terem sido cumpridas. Uma missão construída para provar um ponto tornou-se silenciosamente uma plataforma científica durável, finalmente silenciando apenas por volta de 2022, quando seu propelente e energia se esgotaram."
     },
     {
       "type": "prose",
-      "md": "O maior efeito do resultado foi sobre a percepção. A Mangalyaan mostrou a uma audiência global que o clube de nações capazes de alcançar Marte não estava mais fechado aos poucos ricos, e que a ISRO — há muito subestimada como uma agência regional — podia entregar um primeiro feito interplanetário. Transformou a Índia, em uma única queima, em uma potência reconhecida no espaço profundo."
+      "md": "O maior efeito do resultado foi sobre a percepção. A Mangalyaan mostrou a uma audiência global que o clube de nações capazes de alcançar Marte não estava mais fechado para os poucos ricos, e que a ISRO — há muito subestimada como uma agência regional — poderia entregar um feito interplanetário inédito. Transformou a Índia, em uma única queima, em uma potência reconhecida do espaço profundo."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "A narrativa da Mangalyaan é a frugalidade como superpoder. Seu famoso baixo custo não foi sorte ou atalhos, mas uma cultura de engenharia deliberada: reutilização de componentes comprovados, uma espaçonave pequena e focada, um conjunto modesto de instrumentos, trajetórias eficientes que trocaram tempo por propelente e equipes enxutas trabalhando com orçamentos apertados. A Índia não alcançou Marte barato por fazer pior; alcançou Marte barato por uma disciplina de simplicidade que programas maiores, com mais dinheiro para gastar, raramente impõem a si mesmos."
+      "md": "A narrativa da Mangalyaan é a frugalidade como superpoder. Seu famoso baixo custo não foi sorte ou economia de recursos, mas uma cultura de engenharia deliberada: reutilização de componentes comprovados, uma espaçonave pequena e focada, um conjunto modesto de instrumentos, trajetórias eficientes que trocavam tempo por propelente e equipes enxutas trabalhando com orçamentos apertados. A Índia não alcançou Marte de forma barata fazendo menos bem; alcançou Marte de forma barata por meio de uma disciplina de simplicidade que programas maiores, com mais dinheiro para gastar, raramente impõem a si mesmos."
     },
     {
       "type": "prose",
-      "md": "É também uma história sobre o significado de um primeiro feito. A ciência da Mangalyaan foi real, mas limitada; seu peso histórico veio de ser a primeira — sucesso na primeira tentativa, primeira nação asiática, primeira a um preço famosamente baixo. Primeiros feitos desse tipo são parcialmente simbólicos, e seu valor é parcialmente orgulho nacional, mas não são vazios: demonstram uma capacidade, estabelecem um lugar à mesa e inspiram uma geração. A chegada da Índia a Marte fez as três coisas de uma vez."
+      "md": "É também uma história sobre o significado de um feito inédito. A ciência da Mangalyaan foi real, mas limitada; seu peso histórico veio de ser a primeira — sucesso na primeira tentativa, primeira nação asiática, primeira a um preço famosamente baixo. Feitos inéditos desse tipo são parcialmente simbólicos, e seu valor é parcialmente orgulho nacional, mas não são vazios: demonstram uma capacidade, estabelecem um lugar à mesa e inspiram uma geração. A chegada da Índia a Marte fez os três de uma vez."
     },
     {
       "type": "prose",
-      "md": "E pertence à mesma mudança que a Chandrayaan — a chegada de um espaço profundo multipolar. Por décadas, a exploração interplanetária foi domínio de duas superpotências e depois de um punhado de agências ricas. A Mangalyaan, alcançando Marte com recursos limitados, foi a prova de que a fronteira havia se aberto para recém-chegados determinados — que o mapa de quem explora o sistema solar estava sendo redesenhado, e a Índia havia se colocado firmemente nele."
+      "md": "E pertence à mesma mudança que a Chandrayaan — a chegada de um espaço profundo multipolar. Por décadas, a exploração interplanetária foi privilégio de duas superpotências e depois de um punhado de agências ricas. A Mangalyaan, alcançando Marte com recursos mínimos, foi a prova de que a fronteira havia se aberto para recém-chegados determinados — que o mapa de quem explora o sistema solar estava sendo redesenhado, e a Índia se colocara firmemente nele."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "O primeiro legado da Mangalyaan é o próprio recorde: a única nação a alcançar a órbita de Marte em sua primeira tentativa, e a primeira nação asiática em Marte. Essa é uma entrada permanente na história da exploração, e uma base de confiança nacional que impulsionou a ambição subsequente da ISRO, da Chandrayaan-3 ao programa tripulado Gaganyaan."
+      "md": "O primeiro legado da Mangalyaan é o próprio recorde: o primeiro país a alcançar a órbita de Marte em sua missão de estreia, e a primeira nação asiática em Marte. Essa é uma entrada permanente na história da exploração e uma fundação de confiança nacional que impulsionou a ambição subsequente da ISRO, da Chandrayaan-3 ao programa tripulado Gaganyaan."
     },
     {
       "type": "prose",
-      "md": "Seu segundo legado é o precedente de custo. Ao alcançar Marte por dezenas de milhões em vez de centenas, a ISRO mudou a conversa global sobre quanto devem custar as missões interplanetárias — um exemplo que reduz a barreira percebida de entrada para cada nação espacial emergente, e pressiona as estabelecidas a justificar seus preços."
+      "md": "Seu segundo legado é o precedente de custo. Ao alcançar Marte por dezenas de milhões em vez de centenas, a ISRO mudou a conversa global sobre quanto missões interplanetárias devem custar — um exemplo que reduz a barreira percebida de entrada para cada nação espacial emergente e pressiona as estabelecidas a justificarem seus preços."
     },
     {
       "type": "prose",
-      "md": "E seu terceiro é a inspiração. O sucesso da Mangalyaan, assistido ao vivo em toda a Índia, atraiu uma geração para a ciência e a engenharia e estabeleceu o espaço como fonte de orgulho nacional — um dividendo de soft power que sobrevive à própria espaçonave."
+      "md": "E seu terceiro é a inspiração. O sucesso da Mangalyaan, assistido ao vivo em toda a Índia, atraiu uma geração para a ciência e a engenharia e estabeleceu o espaço como fonte de orgulho nacional — um dividendo de poder brando que sobrevive à própria espaçonave."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "A lição da Mangalyaan é que a restrição, abraçada como disciplina, pode produzir resultados que o dinheiro sozinho não produz. A Índia alcançou Marte na primeira tentativa não apesar de seu pequeno orçamento, mas em parte por causa da simplicidade que esse orçamento forçou — uma espaçonave focada, hardware comprovado e uma recusa em complicar demais. A frugalidade tornou a missão tanto acessível quanto, em sua própria enxutez, robusta."
+      "md": "A lição da Mangalyaan é que a restrição, abraçada como disciplina, pode produzir resultados que o dinheiro sozinho não produz. A Índia alcançou Marte na primeira tentativa não apesar de seu pequeno orçamento, mas em parte por causa da simplicidade que esse orçamento forçou — uma espaçonave focada, hardware comprovado e uma recusa em complicar demais. A frugalidade tornou a missão acessível e, em sua própria economia, robusta."
     },
     {
       "type": "prose",
-      "md": "A lição mais profunda é que um sucesso na primeira tentativa em Marte é tanto sobre humildade quanto sobre ambição. O cemitério de missões marcianas fracassadas está cheio de programas bem financiados que alcançaram longe demais; a ISRO alcançou exatamente até onde podia gerenciar de forma confiável, provou isso e deixou a missão exceder seus próprios objetivos modestos. Mirar precisamente, em vez de mirar alto, às vezes é como os primeiros feitos mais difíceis são conquistados."
+      "md": "A lição mais profunda é que um sucesso na primeira tentativa em Marte tem tanto a ver com humildade quanto com ambição. O cemitério de missões fracassadas a Marte está cheio de programas bem financiados que foram longe demais; a ISRO alcançou exatamente até onde poderia gerenciar de forma confiável, provou isso e deixou a missão superar seus próprios objetivos modestos. Mirar com precisão, em vez de mirar alto, é às vezes como os feitos inéditos mais difíceis são conquistados."
     }
   ]
 }

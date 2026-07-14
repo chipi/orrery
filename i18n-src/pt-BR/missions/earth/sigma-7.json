@@ -1,7 +1,27 @@
 {
   "name": "Sigma 7 / MA-8",
-  "dispatch": "Depois de dois voos que terminaram em sustos, Sigma 7 foi aquele que foi entediante de propósito — e essa foi a conquista. Wally Schirra chamou-o de teste de engenharia exemplar e o pilotou como tal: experimentos mínimos, conservação cuidadosa de cada quilograma de combustível e cada ampere de energia, seis órbitas gastas provando que a espaçonave podia ser operada com disciplina em vez de ser dominada à força. Ele amerissou quase em cima do porta-aviões de recuperação. Em um programa que vinha improvisando sob pressão, Sigma 7 mostrou que os americanos haviam aprendido a pilotar a coisa com calma — o pré-requisito para as missões bem mais longas à frente.",
-  "type": "TRIPULADO ÓRBITA TERRESTRE · VOADO",
-  "first": "Primeiro voo Mercury de livro — 6 órbitas; o dobro da duração de Glenn/Carpenter",
-  "description": "O voo de 6 órbitas de Wally Schirra — dobrou a duração das missões de Glenn e Carpenter. Schirra chamou seu voo de 'teste de engenharia de livro' — carga experimental mínima, foco em economizar consumíveis e validar o veículo para missões mais longas. Duração 9 h 13 min; parâmetros orbitais 161 × 283 km. Amerissou a 480 km a NE de Midway no Pacífico — primeiro voo Mercury a amerissar no Pacífico. A Aurora 7 havia consumido 38 kg de gás de controle de atitude; Schirra usou apenas 32 kg com o dobro do tempo de voo. A cápsula Sigma 7 está em exposição no Astronaut Memorial Planetarium and Observatory, Cocoa FL."
+  "type": "VOO TRIPULADO ÓRBITA TERRESTRE · REALIZADO",
+  "first": "Primeiro voo Mercury impecável — 6 órbitas; duração dobrada em relação a Glenn / Carpenter",
+  "dispatch": "Após dois voos que terminaram em sustos, o Sigma 7 foi aquele que foi propositalmente chato — e esse foi o feito. Wally Schirra o chamou de teste de engenharia impecável e o voou como tal: experimentos mínimos, conservação cuidadosa de cada quilograma de combustível e cada ampere de energia, seis órbitas gastas provando que a espaçonave podia ser operada com disciplina em vez de dominada pela força. Ele pousou na água quase em cima do navio de recuperação. Em um programa que havia improvisado sob pressão, o Sigma 7 mostrou que os americanos aprenderam a voar a coisa com calma — o pré-requisito para as missões muito mais longas que viriam.",
+  "description": "Voo de 6 órbitas de Wally Schirra — dobrou a duração da missão de Glenn e Carpenter. Schirra chamou seu voo de \"teste de engenharia impecável\" — carga experimental mínima, foco na conservação de consumíveis, validação da espaçonave para duração prolongada. Duração do voo 9 h 13 min; parâmetros orbitais 161 × 283 km. Pousou na água ~445 km NE de Midway no Pacífico — primeiro voo Mercury a pousar no Pacífico. Aurora 7 havia usado 38 kg de gás de controle de atitude; Schirra usou apenas 32 kg com o dobro do tempo de voo. Cápsula Sigma 7 em exibição no Astronaut Memorial Planetarium and Observatory, Cocoa FL.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Atlas LV-3B de Cape Canaveral LC-14 1962-10-03 12:15 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "INSERÇÃO ORBITAL",
+      "note": "Inserção em órbita terrestre 161 × 283 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.385,
+      "label": "POUSO NA ÁGUA",
+      "note": "Oceano Pacífico ~445 km NE de Midway após 6 órbitas / 9 h 13 min. Primeira recuperação Mercury no Pacífico.",
+      "type": "nominal"
+    }
+  ]
 }

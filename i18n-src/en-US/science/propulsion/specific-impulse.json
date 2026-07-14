@@ -3,7 +3,7 @@
   "intro_sentence": "How efficient an engine is — how many seconds a kilogram of propellant produces a kilogram of thrust.",
   "narrative_101": [
     "If you've ever cared about miles-per-gallon for a car, specific impulse is the same idea for rockets. It tells you how efficiently the engine converts fuel into push. Higher Isp = better mileage = more ∆v from the same propellant load.",
-    "The unit is weird — it's measured in seconds, which makes no intuitive sense at first. The reason is historical: Isp = thrust ÷ (fuel-burned-per-second × Earth's gravity). The seconds cancel out almost everything else. The bigger the number, the more efficient the engine, and you can compare engines across decades and continents using the same number.",
+    "The unit is weird — it's measured in seconds, which makes no intuitive sense at first. The reason: Isp = thrust ÷ (fuel-burned-per-second × Earth's gravity). The mass and length units cancel, leaving pure seconds — which is why you can compare any two engines with one number. The bigger the number, the more efficient the engine, and you can compare engines across decades and continents using the same number.",
     "The range is huge. Solid rockets (the boosters on the Space Shuttle): ~250 seconds. Liquid hydrogen-oxygen (best chemical you can do): ~450 seconds. Hypergolic storables (cheap, reliable, what most spacecraft sip on for course corrections): ~310 seconds. Ion engines (super efficient but very low thrust): 3,000-9,000 seconds. The practical rule: for getting off planets, you need high thrust; for cruising in deep space, you want high Isp. Real missions stage their choices — chemical to escape Earth, ion to cruise."
   ],
   "body_paragraphs": [

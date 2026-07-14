@@ -1,37 +1,37 @@
 {
   "name": "DART",
-  "type": "KINETIC IMPACTOR · FLOWN",
-  "first": "Eerste demonstratie van kinetische-impactor planetaire verdediging; eerste keer dat mensen een asteroïde verplaatsten",
-  "description": "DART (Double Asteroid Redirection Test) was de eerste planetaire verdedigingsmissie ooit uitgevoerd — een 611-kg ruimtevaartuig dat werd gestuurd om een 160-m asteroïde hard genoeg te raken om zijn baan te veranderen. Het doel was Dimorphos, een maantje van de 780-m asteroïde Didymos. Gelanceerd op 2021-11-24 met een Falcon 9; het SMART Nav autonome navigatiesysteem nam het 4 uur voor de inslag over om Dimorphos van zijn moederlichaam te onderscheiden en het kleinere lichaam te targetten. Inslag op 2022-09-26 om 23:14 UTC met 6,14 km/s. Gemeten verandering van de orbitale periode: 33 minuten (4,2%), wat de succesvol drempelwaarde van 73 seconden met ~25× overtrof. Momentum-overdracht versterkingsfactor β ≈ 3,6 duidde op aanzienlijke bijdrage van uitgeworpen oppervlaktemateriaal. De CubeSat LICIACube observeerde de pluim; HST en JWST beeldden de resulterende ejecta-staart wekenlang af. Eerste demonstratie dat mensen een asteroïde kunnen verplaatsen.",
+  "type": "KINETISCHE IMPACTOR · VOLTOOID",
+  "first": "Eerste demonstratie van kinetische impactor planetaire verdediging; eerste keer dat mensen een asteroïde hebben verplaatst",
+  "description": "DART (Double Asteroid Redirection Test) was de eerste planetaire-verdedigingsmissie die ooit werd uitgevoerd — een 611-kg ruimtevaartuig dat werd gestuurd om een 160-m asteroïde hard genoeg te raken om zijn baan te veranderen. Het doel was Dimorphos, een maantje van de 780-m asteroïde Didymos. Gelanceerd 2021-11-24 op een Falcon 9; het SMART Nav autonoom navigatiesysteem nam 4 uur vóór de inslag de controle over om Dimorphos van zijn moederlichaam te onderscheiden en het kleinere lichaam aan te sturen. Inslag 2022-09-26 om 23:14 UTC op ~6,6 km/s. Gemeten verandering van omloopperiode: 33 minuten (4,2%), wat de succesdrempel van 73 seconden met ~25× overschreed. Impulsmomentsoverdrachtsverbeteringsfactor β ≈ 3,6 gaf aan dat er significant transport was van uitgestoten oppervlaktemateriaal. De CubeSat LICIACube observeerde de pluim; HST en JWST hebben gedurende weken het ontstane ejectastaartwaargenomen. Eerste demonstratie dat mensen een asteroïde kunnen verplaatsen.",
   "events": [
     {
       "met": 0,
-      "label": "LANCERING",
-      "note": "Falcon 9 Block 5 vanaf Vandenberg SLC-4E.",
+      "label": "START",
+      "note": "Falcon 9 Block 5 van Vandenberg SLC-4E.",
       "type": "nominal"
     },
     {
       "met": 150,
-      "label": "MIDDEN-CRUISE",
-      "note": "TCM + NEXT-C ion-thruster demonstratieafvuringen.",
+      "label": "KRUISBAAN HALVERWEGE",
+      "note": "TCM + NEXT-C ion-thruster demonstratiebrandingen.",
       "type": "nominal"
     },
     {
       "met": 306,
       "label": "NADERING",
-      "note": "2022-09-26. SMART Nav neemt het 4u voor inslag over.",
+      "note": "2022-09-26. SMART Nav neemt 4u vóór inslag de controle over.",
       "type": "info"
     },
     {
       "met": 306.001,
       "label": "INSLAG",
-      "note": "23:14 UTC. 6,14 km/s. 33-min verandering orbitale periode — eerste afbuiging van een asteroïde door mensen.",
+      "note": "23:14 UTC. ~6,6 km/s. Verandering van omloopperiode van 33 minuten — eerste afbuiging van een asteroïde door mensen.",
       "type": "info"
     },
     {
       "met": 306.002,
-      "label": "SIGNAalverlies",
-      "note": "LICIACube + HST + JWST observeren de ejecta-pluim.",
+      "label": "VERLIES VAN SIGNAAL",
+      "note": "LICIACube + HST + JWST observeren de ejectapluim.",
       "type": "warning"
     }
   ]

@@ -1,26 +1,26 @@
 {
   "name": "Vostok 6",
-  "dispatch": "Vostok 6 levou Valentina Tereshkova e fez dela a primeira mulher no espaço — um feito que permaneceu único por dezenove anos e não foi igualado pelos Estados Unidos até 1983. Ela não era piloto, mas operária têxtil e paraquedista amadora, escolhida em parte exatamente por esse simbolismo: prova, dizia o programa soviético, de que no estado dos trabalhadores até a fronteira do espaço estava aberta a qualquer um. Qualquer que fosse o motivo, quarenta e oito órbitas depois o marco era real e permanente, e levaria duas décadas até que qualquer outra nação pudesse dizer que havia feito o mesmo.",
-  "type": "ÓRBITA TERRESTRE TRIPULADA · VOADA",
+  "type": "VOO TRIPULADO ÓRBITA TERRESTRE · REALIZADO",
   "first": "Primeira mulher no espaço — Valentina Tereshkova, 48 órbitas",
-  "description": "Voo de 48 órbitas e 2 dias 23 horas de Valentina Tereshkova — a primeira mulher no espaço e (até Soyuz MS-22 em 2022) a única a ter pilotado uma missão espacial solo. Selecionada entre um grupo de cinco candidatas a cosmonauta reunido em 1962, Tereshkova foi lançada em 1963-06-16 às 09:30 UTC, apenas 2 anos após o primeiro voo orbital de Gagarin. Sua cápsula estava programada para uma queima de correção orbital ascendente em vez de descendente — ela identificou manualmente o erro e os controladores em terra recarregaram no dia seguinte um software de atitude corrigido. Pousou em 1963-06-19 às 08:20 UTC perto de Báievo, krai do Altai. Tereshkova mais tarde se tornou uma figura de destaque na política soviética e segue sendo a mulher mais jovem já enviada à órbita, com 26 anos.",
+  "dispatch": "A Vostok 6 levou Valentina Tereshkova e a tornou a primeira mulher no espaço — um feito que permaneceu único por dezenove anos e ficou sem ser igualado pelos Estados Unidos até 1983. Ela não era piloto, mas uma operária têxtil e paraquedista amadora, escolhida em parte exatamente por esse simbolismo: prova, dizia o programa soviético, de que no estado dos trabalhadores até a fronteira do espaço estava aberta a qualquer um. Qualquer que fosse o motivo, quarenta e oito órbitas depois o marco era real e permanente, e levaria duas décadas até que qualquer outra nação pudesse dizer que havia feito o mesmo.",
+  "description": "O voo de 48 órbitas e 2 dias 23 horas de Valentina Tereshkova — a primeira mulher no espaço e ainda a única mulher a ter realizado uma missão espacial em solo. Selecionada de um grupo de cinco candidatas a cosmonauta femininas reunido em 1962, Tereshkova lançou em 1963-06-16 09:30 UTC, apenas 2 anos após o primeiro voo orbital de Gagarin. Sua cápsula estava programada para uma correção de órbita ascendente em vez de descendente — ela identificou manualmente o erro e controladores em terra recarregaram o software de atitude corrigido no dia seguinte. Pousou em 1963-06-19 08:20 UTC perto de Bayevo, Altai Krai. Tereshkova posteriormente se tornou figura sênior na política soviética e continua sendo a mulher mais jovem já enviada à órbita, com 26 anos.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Vostok-K from Baikonur Site 1 1963-06-16 09:30 UTC.",
+      "label": "LANÇAMENTO",
+      "note": "Vostok-K do Sítio 1 de Baikonur 1963-06-16 09:30 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "ORBIT-CORRECTION ERROR",
-      "note": "Pre-loaded attitude software would have raised orbit instead of lowering it; corrected next day.",
+      "label": "ERRO NA CORREÇÃO DE ÓRBITA",
+      "note": "O software de atitude pré-carregado teria elevado a órbita em vez de abaixá-la; corrigido no dia seguinte.",
       "type": "warning"
     },
     {
       "met": 2.95,
-      "label": "EJECT + LAND",
-      "note": "Landed near Bayevo, Altai Krai, 1963-06-19 08:20 UTC after 48 orbits.",
+      "label": "EJEÇÃO + POUSO",
+      "note": "Pousou perto de Bayevo, Altai Krai, em 1963-06-19 08:20 UTC após 48 órbitas.",
       "type": "nominal"
     }
   ]

@@ -1,38 +1,38 @@
 {
   "name": "Voskhod 2",
-  "dispatch": "Voskhod 2 logró el primer paseo espacial y casi lo convirtió en la primera muerte en el espacio. Alexei Leonov flotó fuera de una esclusa inflable hacia el vacío, el primer humano completamente fuera de una nave espacial — y entonces su traje se infló tan rígido que no podía doblarse para volver a entrar. Tuvo que abrir una válvula y dejar escapar su propio aire, arriesgándose a sufrir la enfermedad por descompresión, solo para encogerse lo suficiente y pasar por la escotilla. No había terminado: la reentrada automática falló, la tripulación descendió volando manualmente y aterrizaron cientos de kilómetros fuera de rumbo en el bosque siberiano helado, donde esperaron una noche entre lobos antes de que los rescatistas los alcanzaran en esquís. El público vio doce minutos triunfales; lo cerca que estuvo permaneció en secreto durante años.",
-  "type": "ÓRBITA TERRESTRE TRIPULADA · VOLADO",
-  "first": "Primera actividad extravehicular (Leonov, 12 min, 18-03-1965)",
-  "description": "El vuelo de un día de Pavel Belyayev y Alexei Leonov — la primera EVA de la historia. Leonov pasó 12 minutos fuera de Voskhod 2 (18-03-1965 a las 11:34 UTC), presurizado a través de una esclusa de aire Volga inflable que los ingenieros soviéticos añadieron porque el casco de Voskhod carecía de espacio para una despresurización completa. El traje de Leonov se infló en el vacío, atascándolo fuera de la esclusa; tuvo que liberar la presión del traje para reingresar, aumentando el riesgo de enfermedad por descompresión. El reingreso fue igualmente dramático — el sistema de aterrizaje automático falló, y Belyayev pilotó manualmente el módulo de descenso hasta un aterrizaje duro en la nieve profunda de los Urales, a unos 390 km fuera del objetivo; la tripulación sobrevivió a una noche en el bosque entre lobos antes de que los helicópteros de rescate llegaran el 20-03-1965.",
+  "type": "NAVE TRIPULADA EN ÓRBITA TERRESTRE · REALIZADO",
+  "first": "Primera actividad extravehicular (Leonov, 12 min, 1965-03-18)",
+  "dispatch": "Voskhod 2 logró el primer paseo espacial y casi lo convierte en la primera muerte en el espacio. Alexei Leonov flotó fuera de una esclusa de aire inflable hacia el vacío, el primer ser humano totalmente fuera de una nave — y entonces su traje se infló tanto que no podía doblarse para volver a entrar. Tuvo que abrir una válvula y despresurizarse él mismo, arriesgándose a la enfermedad descompresiva, solo para encogerse lo suficiente para caber por la escotilla. No terminó ahí: el reingreso automático falló, la tripulación descendió a mano, y aterrizaron cientos de kilómetros fuera de curso en el bosque siberiano congelado, donde esperaron dos noches entre lobos antes de que los rescatistas los alcanzaran esquiando. El público vio doce minutos triunfales; cuán cerca estuvo de la catástrofe se mantuvo en secreto durante años.",
+  "description": "Vuelo de 1 día de Pavel Belyayev + Alexei Leonov — primer EVA en la historia. Leonov pasó 12 min fuera de Voskhod 2 (1965-03-18 11:34 UTC), presurizado a través de una esclusa Volga inflable que los ingenieros soviéticos añadieron porque el casco Voskhod carecía de espacio para despresurizarse completamente. El traje de Leonov se infló en el vacío, atrapándolo fuera de la esclusa; tuvo que despresurizarse para volver a entrar, aumentando el riesgo de enfermedad descompresiva. El reingreso fue igual de dramático — el sistema automático de aterrizaje falló, y Belyayev pilotó manualmente el módulo de descenso hacia un aterrizaje duro en la nieve profunda de los Urales, ~390 km fuera del objetivo; la tripulación sobrevivió dos noches en el bosque entre lobos antes de que llegaran helicópteros de rescate el 1965-03-21. La atmósfera de la cabina también se tornó rica en O₂ en órbita, después de que la escotilla de EVA no se cerró correctamente, arriesgando brevemente la combustión espontánea.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "label": "LANZAMIENTO",
+      "note": "Voskhod 11A57 desde Baikonur Sitio 1 (Start de Gagarin) 1965-03-18 07:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.001,
-      "label": "ORBIT INSERT",
-      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "label": "INSERCIÓN EN ÓRBITA",
+      "note": "Inserción en órbita terrestre de 167 × 475 km, inclinación 64,8°.",
       "type": "nominal"
     },
     {
       "met": 0.19,
       "label": "EVA",
-      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "note": "Leonov sale de la esclusa Volga 1965-03-18 11:34 UTC; primer EVA humano. 12 min fuera; el traje se infló en el vacío y él despresurizó para volver a entrar.",
       "type": "info"
     },
     {
       "met": 1.05,
-      "label": "DEORBIT",
-      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "label": "DESORBITACIÓN",
+      "note": "El sistema automático de aterrizaje falla; Belyayev pilota manualmente el descenso. Aterrizaje duro fuera de curso 390 km en la nieve de la Óblast de Perm.",
       "type": "warning"
     },
     {
       "met": 2.5,
-      "label": "RESCUE",
-      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "label": "RESCATE",
+      "note": "La tripulación sobrevivió 2 noches en el bosque inhabitado por lobos a -30 °C antes de que los helicópteros de recuperación los alcanzaran el 1965-03-21.",
       "type": "info"
     }
   ]

@@ -1,25 +1,25 @@
 {
-  "name": "X-37B OTV-6号 (USA-299, USSF-7)",
+  "name": "X-37B OTV-6（USA-299、USSF-7）",
   "type": "无人航天飞机 · 已飞行",
-  "first": "USA-299 / USSF-7 — 在轨908天，KSC航天飞机着陆设施",
-  "description": "X-37B第六次飞行 — 在USSF新组织名称下的首次飞行；创下908天在轨的纪录（约2.5年）。2020-05-17 13:14 UTC由阿特拉斯V 501 AV-081从CCAFS SLC-41发射；2022-11-12 10:22 UTC着陆于KSC SLF。携带海军研究实验室的PRAM（光伏射频天线模块 — 1 W太阳能转微波束传输实验）和AFRL FalconSAT-8部署器。",
+  "first": "USA-299 / USSF-7 — 在轨908天，肯尼迪航天中心航天飞机着陆设施",
+  "description": "第六次X-37B飞行——首次采用新的USSF组织命名；创纪录的908天在轨时间（约2.5年）。2020年5月17日13:14 UTC从卡纳维拉尔角航天站SLC-41发射，搭乘宇宙神V 501 AV-081火箭；于2022年11月12日10:22 UTC在肯尼迪航天中心着陆设施着陆。搭载美国海军研究实验室PRAM（光伏射频天线模块——1瓦太阳能转微波波束实验）和空军研究实验室FalconSAT-8部署器。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-081) from CCAFS SLC-41 2020-05-17.",
+      "label": "发射",
+      "note": "宇宙神V 501（AV-081）自卡纳维拉尔角航天站SLC-41发射于2020年5月17日。",
       "type": "nominal"
     },
     {
       "met": 454,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee ~390 km; classified payload operations.",
+      "label": "在轨运行",
+      "note": "远地点约400 km；保密有效载荷运行。",
       "type": "info"
     },
     {
       "met": 908,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2022-11-12.",
+      "label": "着陆",
+      "note": "自主跑道着陆于肯尼迪航天中心着陆设施，2022年11月12日。",
       "type": "nominal"
     }
   ]

@@ -1,7 +1,27 @@
 {
   "name": "Sigma 7 / MA-8",
-  "dispatch": "Nach zwei Flügen, die mit Schrecken endeten, war Sigma 7 derjenige, der absichtlich langweilig sein sollte — und das war die Leistung. Wally Schirra nannte es einen lehrbuchmäßigen Techniktest und flog ihn auch so: minimale Experimente, sorgfältiges Haushalten mit jedem Kilogramm Treibstoff und jedem Ampere Strom, sechs Erdumkreisungen, die bewiesen, dass das Raumfahrzeug mit Disziplin bedient werden konnte, statt dass man mit ihm kämpfen musste. Er wasserte fast direkt über dem Bergungsträger. In einem Programm, das unter Druck improvisiert hatte, zeigte Sigma 7, dass die Amerikaner gelernt hatten, das Ding ruhig zu fliegen — die Voraussetzung für die weitaus längeren Missionen, die bevorstanden.",
-  "type": "BEMANNT ERDORBIT · GEFLOGEN",
-  "first": "Erster lehrbuchmäßiger Mercury-Flug — 6 Orbits; doppelte Dauer Glenn/Carpenter",
-  "description": "Wally Schirras Sechs-Orbit-Flug — verdoppelte die Missionsdauer von Glenn und Carpenter. Schirra bezeichnete seinen Flug als 'lehrbuchmäßigen Engineering-Test' — minimale experimentelle Last, Fokus auf Sparsamkeit bei Verbrauchsmaterialien und Validierung des Fahrzeugs für längere Dauer. Flugdauer 9 h 13 min; Orbitparameter 161 × 283 km. Wasserung 480 km nordöstlich von Midway im Pazifik — erster Mercury-Flug mit pazifischer Wasserung. Aurora 7 hatte 38 kg Lageregelungsgas verbraucht; Schirra benötigte nur 32 kg bei doppelter Flugzeit. Die Kapsel Sigma 7 ist im Astronaut Memorial Planetarium and Observatory, Cocoa FL, ausgestellt."
+  "type": "BEMANNTE ERDORBIT · GEFLOGEN",
+  "first": "Erster vorbildlicher Mercury-Flug — 6 Umläufe; doppelte Flugdauer von Glenn / Carpenter",
+  "dispatch": "Nach zwei Flügen, die in Beinahekatastrophen endeten, war Sigma 7 derjenige, der bewusst langweilig sein sollte — und das war die Leistung. Wally Schirra nannte ihn einen vorbildlichen Ingenieurtest und flog ihn wie einen: minimale Experimente, sorgfältige Konservierung jedes Kilogramms Treibstoff und jedes Ampere Leistung, sechs Umläufe damit verbracht zu beweisen, dass das Raumfahrzeug diszipliniert bedient statt erzwungen werden konnte. Er splashte fast direkt über dem Bergungsträger ab. In einem Programm, das unter Druck improvisiert hatte, zeigte Sigma 7, dass die Amerikaner gelernt hatten, das Ding ruhig zu fliegen — die Voraussetzung für die viel längeren Missionen, die bevorstanden.",
+  "description": "Wally Schirras 6-Umlauf-Flug — verdoppelte die Flugdauer von Glenns und Carpenters Missionen. Schirra nannte seinen Flug einen „vorbildlichen Ingenieurtest\" — minimale experimentelle Last, Fokus auf Konservierung von Verbrauchsmaterialien, Validierung des Fahrzeugs für längere Flugdauer. Flugdauer 9 h 13 min; Bahnparameter 161 × 283 km. Splashdown ~445 km NO von Midway im Pazifik — erster Mercury-Flug mit Splashdown im Pazifik. Aurora 7 verbrauchte 38 kg Lageregelungsgas; Schirra verbrauchte nur 32 kg bei doppelter Flugdauer. Kapsel Sigma 7 im Astronaut Memorial Planetarium and Observatory, Cocoa FL, ausgestellt.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlas LV-3B von Cape Canaveral LC-14 1962-10-03 12:15 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "BAHNEINSCHUSS",
+      "note": "Einschuss in 161 × 283 km Erdumlaufbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.385,
+      "label": "SPLASHDOWN",
+      "note": "Pazifik ~445 km NO von Midway nach 6 Umläufen / 9 h 13 min. Erste Mercury-Bergung im Pazifik.",
+      "type": "nominal"
+    }
+  ]
 }

@@ -1,43 +1,43 @@
 {
   "name": "Mariner 9",
-  "type": "ORBITER · FLOWN",
-  "first": "Eerste ruimtevaartuig dat een andere planeet in een baan bracht",
-  "description": "Mariner 9 maakte elke orbiter die volgde mogelijk. Nadat een 15 minuten durende MOI-verbranding het op 1971-11-14 in een baan om Mars bracht, was de planeet eronder onherkenbaar — een mondiale stofstorm had alles verborgen behalve de vier toppen van de Tharsis-vulkanen. JPL wachtte het af. In januari 1972 zakte het stof en Mariner 9 stuurde 7.329 beelden terug die ~80% van het Marsoppervlak bedekten, waarbij Olympus Mons (de grootste vulkaan in het zonnestelsel), Valles Marineris (het canyonsysteem dat zijn naam draagt), opgedroogde rivierbeddingen die op een oud vloeibaar tijdperk duidden, en de eerste close-ups van Phobos en Deimos werden onthuld. De missie eindigde op 1972-10-27 toen het gas voor de attituderegeling opraakte; het ruimtevaartuig blijft in een baan, langzaam vervalend.",
+  "type": "ORBITER · GEVLOGEN",
+  "first": "Eerste ruimtevaartuig dat een ander hemellichaam omcirkelde",
+  "description": "Mariner 9 maakte het mogelijk dat alle omlopers daarna konden volgen. Na een 15 minuten durende MOI-ontsteking op 1971-11-14 in een Marsbaan bevond het planeet eronder zich in een onherkenbare toestand — een globale stofstorm had alles verborgen behalve de vier vulkaantoppen van Tharsis. JPL wachtte geduldig. Door januari 1972 heen zakte het stof neer en Mariner 9 stuurde 7.329 beelden terug die ~85% van het Marsoppervlak bedekten, waaruit Olympus Mons (de grootste vulkaan in het zonnestelsel), Valles Marineris (het canyonsysteem dat zijn naam draagt), uitgedroogde rivierkanalen die wijzen op een voorbije tijd met vloeibaar water, en de eerste close-ups van Phobos en Deimos naar voren kwamen. De missie eindigde op 1972-10-27 toen het houdings­regelingsgas op was; het ruimtevaartuig blijft in een baan, langzaam vervallend.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Atlas SLV-3C / Centaur vanaf Cape Canaveral LC-36B.",
+      "note": "Atlas SLV-3C / Centaur vanuit Cape Canaveral LC-36B.",
       "type": "nominal"
     },
     {
       "met": 5,
       "label": "TCM-1",
-      "note": "Eerste koerscorrectie.",
+      "note": "Eerste baancorrectie.",
       "type": "nominal"
     },
     {
       "met": 98,
       "label": "TCM-2",
-      "note": "Naderings-trim richt het MOI-periapsis nauwkeurig in.",
+      "note": "Aanvlieging verfijning richt zich op periapsis van MOI.",
       "type": "nominal"
     },
     {
       "met": 168,
       "label": "MOI",
-      "note": "15 minuten durende verbranding met vaste-stofmotor brengt Mariner 9 in een 1398 × 17.917 km, 64,4° baan — de allereerste baan om een andere planeet.",
+      "note": "15 min. ontsteking van vaste motor plaatst Mariner 9 in een 1398 × 17.917 km-baan met hellingshoek 64,4° — de eerste omloop om een ander hemellichaam ooit.",
       "type": "info"
     },
     {
       "met": 200,
-      "label": "STOF TREKT OP",
-      "note": "Mondiale storm gaat liggen; beeldvorming begint.",
+      "label": "STOF VERDWENEN",
+      "note": "Globale storm neemt af; beeldvorming begint.",
       "type": "info"
     },
     {
       "met": 515,
-      "label": "EINDE VAN DE MISSIE",
-      "note": "1972-10-27. Gas voor attituderegeling uitgeput.",
+      "label": "MISSIE AFGELOPEN",
+      "note": "1972-10-27. Houdings­regelingsgas verbruikt.",
       "type": "warning"
     }
   ]

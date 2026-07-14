@@ -4,11 +4,11 @@
   "the_land": [
     {
       "type": "prose",
-      "md": "Nel 1960 l'Unione Sovietica aveva già sbalordito il mondo con lo Sputnik e intendeva mantenere il vantaggio. Dietro c'era un uomo che l'Occidente ignorava esistesse: Sergei Korolev, il \"Progettista Capo\", il cui nome stesso era segreto di Stato, a capo del programma che aveva trasformato il suo R-7 — il primo missile intercontinentale al mondo — in un razzo capace di trasportare una persona. Gli americani stavano costruendo Mercury e ne parlavano apertamente. I sovietici non dicevano quasi nulla, e si muovevano più velocemente."
+      "md": "Nel 1960 l'Unione Sovietica aveva già stupito il mondo con lo Sputnik e intendeva mantenere il vantaggio. Dietro c'era un uomo che l'Occidente non sapeva esistesse: Sergei Korolev, il \"Progettista Capo\", il cui stesso nome era segreto di stato, a capo del programma che aveva trasformato il suo R-7 — il primo missile intercontinentale al mondo — in un razzo capace di portare una persona. Gli americani stavano costruendo Mercury e ne parlavano apertamente. I sovietici non dicevano quasi nulla, e si muovevano più velocemente."
     },
     {
       "type": "prose",
-      "md": "Il premio era il primo essere umano nello spazio, e valeva quasi qualsiasi rischio, perché nella Guerra Fredda un cosmonauta sovietico in orbita era un argomento che nessun discorso poteva eguagliare — la prova, trasmessa in tutto il mondo, che il sistema poteva superare l'Occidente ai limiti del possibile. Vostok fu costruito per vincere quell'argomento. Non doveva fare molto una volta in orbita; doveva portare una persona su, in giro e giù in sicurezza, ed essere il primo."
+      "md": "Il premio era il primo essere umano nello spazio, e valeva quasi qualsiasi rischio, perché nella Guerra Fredda un cosmonauta sovietico in orbita sopra le teste era un argomento che nessun discorso poteva eguagliare — la prova, trasmessa in tutto il mondo, che il sistema poteva superare l'Occidente ai limiti del possibile. Vostok fu costruito per vincere quell'argomento. Non doveva fare molto una volta in orbita; doveva portare una persona su, intorno, e giù in sicurezza, ed essere il primo."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/vostok/01"
       },
-      "caption": "Il modulo di discesa Vostok — una semplice sfera, l'unica forma che sopravvive al rientro da qualsiasi angolazione senza guida. Il cosmonauta lo cavalcava fino a pochi chilometri, poi veniva espulso e scendeva separatamente col paracadute.",
+      "caption": "Il modulo di discesa Vostok — una semplice sfera, l'unica forma che sopravvive al rientro da qualsiasi angolo senza controllo. Il cosmonauta lo cavalcava fino a pochi chilometri, poi veniva eiettato e scendeva separatamente con il paracadute.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "L'obiettivo di Vostok era limitato quanto quello di Mercury e perseguito con minore cautela: dimostrare che un essere umano poteva sopravvivere al lancio, all'orbita e al rientro — e farlo prima degli americani. La navicella rifletteva quella focalizzazione. Era una sfera, la forma che rientra in sicurezza da qualsiasi orientamento così i sistemi automatici non dovevano mantenere un assetto preciso, con un modulo di equipaggiamento separato che si staccava prima del fuoco del rientro."
+      "md": "L'obiettivo di Vostok era altrettanto specifico di quello di Mercury e perseguito con meno cautela: dimostrare che un essere umano poteva sopravvivere al lancio, all'orbita e al rientro — e farlo prima degli americani. La navicella rifletteva quella concentrazione. Era una sfera, la forma che rientra in sicurezza da qualsiasi orientamento così i sistemi automatici non dovevano mantenere un assetto preciso, con un modulo di servizio separato che si staccava prima del fuoco del rientro."
     },
     {
       "type": "prose",
-      "md": "Un dettaglio fu tenuto nascosto per anni. La sfera colpiva il suolo troppo violentemente perché una persona sopravvivesse all'impatto, così il cosmonauta veniva espulso a circa sette chilometri e scendeva con un paracadute separato. Secondo le regole internazionali dell'epoca un volo contava solo se il pilota atterrava *con* la navicella — quindi i sovietici semplicemente non lo menzionarono, e rivendicarono comunque i primati. Una cosa piccola, ma rivelatrice: il programma fu costruito per vincere, e la verità fu gestita di conseguenza."
+      "md": "Un dettaglio fu tenuto nascosto per anni. La sfera colpiva il suolo troppo violentemente perché una persona potesse sopravvivere all'impatto, così il cosmonauta veniva eiettato a circa sette chilometri e scendeva con un paracadute separato. Secondo le regole internazionali dell'epoca un volo contava solo se il pilota atterrava *con* il veicolo — così i sovietici semplicemente non lo menzionarono, e rivendicarono comunque i record. Una cosa piccola, ma rivelatrice: il programma era costruito per vincere, e la verità veniva gestita di conseguenza."
     }
   ],
   "outcome": [
@@ -40,25 +40,25 @@
     },
     {
       "type": "prose",
-      "md": "In poco più di due anni Vostok collezionò una serie di primati che gli Stati Uniti poterono solo osservare. Il 12 aprile 1961 Yuri Gagarin divenne il primo essere umano nello spazio — un'orbita singola che lo rese, da un giorno all'altro, la persona più famosa della Terra. Gherman Titov seguì con il primo giorno completo in orbita. Vostok 3 e 4 volarono insieme, la prima volta che due veicoli con equipaggio condividevano il cielo. Valery Bykovsky volò per quasi cinque giorni, ancora il volo spaziale in solitaria più lungo di sempre. E Valentina Tereshkova divenne la prima donna nello spazio — un traguardo che gli americani non avrebbero eguagliato fino al 1983."
+      "md": "In poco più di due anni Vostok collezionò una serie di primati che gli Stati Uniti poterono solo osservare. Il 12 aprile 1961 Yuri Gagarin divenne il primo essere umano nello spazio — un'orbita singola che lo rese, dall'oggi al domani, la persona più famosa della Terra. Gherman Titov seguì con il primo giorno completo in orbita. Vostok 3 e 4 volarono insieme, la prima volta che due veicoli con equipaggio condividevano il cielo. Valery Bykovsky volò per quasi cinque giorni, ancora oggi il volo spaziale in solitaria più lungo mai realizzato. E Valentina Tereshkova divenne la prima donna nello spazio — un traguardo che gli americani non avrebbero eguagliato fino al 1983."
     },
     {
       "type": "prose",
-      "md": "Sei voli, sei successi, sei primati. Secondo la misura che contava di più nel 1963 — chi ci arrivava per primo — l'Unione Sovietica stava vincendo in modo decisivo, e lo faceva con una navicella che non poteva nemmeno cambiare la propria orbita. Ma la serie segnò anche un tetto: Vostok aveva fatto tutto ciò che una sfera monoposto poteva fare, e le sfide successive — passeggiate spaziali, rendezvous, aggancio, la Luna — avrebbero richiesto macchine che non aveva."
+      "md": "Sei voli, sei successi, sei primati. Secondo la misura che contava di più nel 1963 — chi ci arrivava per primo — l'Unione Sovietica stava vincendo in modo decisivo, e lo faceva con una navicella che non poteva nemmeno cambiare la propria orbita. Ma la serie segnò anche un limite: Vostok aveva fatto tutto ciò che una sfera monoposto poteva fare, e le fasi successive — passeggiate spaziali, rendezvous, aggancio, la Luna — avrebbero richiesto macchine che non possedeva."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Vostok è una storia raccontata su due registri contemporaneamente — il trionfo pubblico e la realtà nascosta. In pubblico, ogni volo era una dimostrazione impeccabile di superiorità sovietica, annunciata solo dopo che era già riuscita. Fuori dalla vista c'erano le cose che non combaciavano: il nome di Korolev, gli atterraggi con espulsione, i fallimenti al lancio che uccisero personale a terra, gli scampati pericoli. Il programma non fece mai volare una missione che si aspettava fallisse, perché un fallimento pubblico era politicamente insostenibile — e questo plasmò ciò che tentava, e quando."
+      "md": "Vostok è una storia raccontata su due registri contemporaneamente — il trionfo pubblico e la realtà nascosta. In pubblico, ogni volo veniva presentato come impeccabile — prova, insisteva lo stato, della superiorità sovietica, annunciata solo dopo che era già riuscito. Fuori dalla vista c'erano le cose che non quadravano: il nome di Korolev, gli atterraggi con eiezione, i cani persi nei test falliti, gli scampati pericoli. Il programma non fece mai volare una missione che si aspettava fallisse, perché un fallimento pubblico era politicamente insostenibile — e questo plasmò ciò che tentava, e quando."
     },
     {
       "type": "prose",
-      "md": "Al suo centro c'era un uomo trasformato in simbolo. I 108 minuti di Gagarin lo resero un'icona globale da un giorno all'altro — inviato in tournée mondiali, messo su francobolli e statue, più utile allo Stato a terra che in aria, e mai più autorizzato a volare nello spazio. Morì in un incidente aereo nel 1968, a trentaquattro anni. Il primo essere umano a lasciare il pianeta trascorse il resto della sua breve vita come volto sorridente di un sistema che non lo avrebbe rischiato una seconda volta."
+      "md": "Al suo centro c'era un uomo trasformato in simbolo. I 108 minuti di Gagarin lo resero un'icona globale dall'oggi al domani — mandato in tour mondiali, messo su francobolli e statue, più utile allo stato a terra che in aria, e mai più autorizzato a volare nello spazio. Morì in un incidente aereo nel 1968, a trentaquattro anni. Il primo essere umano a lasciare il pianeta trascorse il resto della sua breve vita come il volto sorridente di un sistema che non voleva rischiarlo una seconda volta."
     },
     {
       "type": "prose",
-      "md": "Verso metà del 1963 Vostok aveva esaurito il suo corso. Il suo successore, Voskhod, avrebbe forzato lo stesso hardware di base per spremere altri due primati — un equipaggio multipersona e la prima passeggiata spaziale — prima che il programma sovietico passasse a Soyuz e puntasse lo sguardo, in segreto, verso la Luna."
+      "md": "Verso metà 1963 Vostok aveva esaurito il suo corso. Il suo successore, Voskhod, avrebbe stiracchiato lo stesso hardware di base per spremere altri due primati — un equipaggio multiplo e la prima passeggiata spaziale — prima che il programma sovietico passasse a Soyuz e puntasse lo sguardo, in segreto, sulla Luna."
     }
   ],
   "legacy": [
@@ -72,21 +72,21 @@
     },
     {
       "type": "prose",
-      "md": "L'eredità di Vostok è in parte un insieme di primati che non potranno mai essere tolti, e in parte una macchina che non si è mai veramente ritirata. Il razzo R-7 che lanciò Gagarin è, in discendenza diretta, il razzo Soyuz che ancora oggi porta equipaggi in orbita — più di sessant'anni e milleottocento lanci dopo, il veicolo di lancio più utilizzato della storia. Lo schema capsula-sferica-più-modulo-di-servizio divenne il modello per Soyuz, che vola ancora."
+      "md": "L'eredità di Vostok è in parte una serie di primati che non possono mai essere cancellati, e in parte una macchina che non si è mai davvero ritirata. Il razzo R-7 che lanciò Gagarin è, in discendenza diretta, il razzo Soyuz che ancora oggi porta equipaggi in orbita — più di sessant'anni e milleottocento lanci dopo, il veicolo di lancio più utilizzato della storia. La configurazione sfera-capsulare-più-modulo-di-servizio divenne il modello per Soyuz, che vola ancora oggi."
     },
     {
       "type": "prose",
-      "md": "Strategicamente fece qualcosa di più grande di qualsiasi singolo volo: convinse gli Stati Uniti che non potevano vincere la corsa spaziale alle condizioni che i sovietici stavano imponendo, e spinse Kennedy a cambiare il gioco puntando alla Luna — un obiettivo abbastanza lontano da far valere la profondità industriale americana. In questo senso Apollo è in parte opera di Vostok. E per il resto del mondo, la vista di un essere umano che orbitava il pianeta — qualunque bandiera fosse sul razzo — cambiò permanentemente la percezione di ciò che le persone potevano fare."
+      "md": "Strategicamente fece qualcosa di più grande di qualsiasi singolo volo: convinse gli Stati Uniti che non potevano vincere la corsa spaziale alle condizioni che i sovietici stavano imponendo, e spinse Kennedy a cambiare il gioco verso la Luna — un obiettivo abbastanza lontano perché la profondità industriale americana potesse contare. In questo senso Apollo è in parte opera di Vostok. E per il resto del mondo, la vista di un essere umano che orbitava intorno al pianeta — qualunque fosse la bandiera sul razzo — cambiò permanentemente la percezione di ciò che le persone potevano fare."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La lezione di Vostok è il doppio taglio di una strategia costruita sull'essere primi. I sovietici vinsero quasi ogni round iniziale spingendo una navicella limitata ai suoi estremi e muovendosi prima che la concorrenza potesse reagire — e funzionò, brillantemente, per un po'. Ma una serie di primati non è la stessa cosa di una capacità profonda, e l'attenzione di Vostok sul prossimo titolo lo lasciò senza le manovre, l'aggancio e la resistenza che la vera destinazione avrebbe richiesto. Vincere lo sprint può silenziosamente costarti la gara, se lo sprint brucia la pista di cui avevi bisogno per la maratona."
+      "md": "La lezione di Vostok è la doppia lama di una strategia costruita sull'essere primi. I sovietici vinsero quasi tutti i primi round spingendo una navicella limitata al suo limite e muovendosi prima che la concorrenza potesse reagire — e funzionò, brillantemente, per un po'. Ma una serie di primati non è la stessa cosa di una capacità profonda, e la concentrazione di Vostok sul prossimo titolo lo lasciò senza le manovre, l'aggancio e la resistenza che la vera destinazione avrebbe richiesto. Vincere lo sprint può costarti silenziosamente la gara, se lo sprint brucia la pista di cui avevi bisogno per la maratona."
     },
     {
       "type": "prose",
-      "md": "La seconda lezione è ciò che la segretezza compra, e ciò che costa. Nascondere i fallimenti e gestire la verità permise al programma di sembrare invincibile, il che ebbe un reale valore nella Guerra Fredda. Ma significò anche che il programma non poteva mai essere visto fallire — il che lo rese cauto nei posti sbagliati, incapace di correre i rischi visibili che imparare cose difficili richiede. Un'organizzazione che non può permettersi di fallire in pubblico alla fine non può permettersi nemmeno di *imparare* in pubblico."
+      "md": "La seconda lezione è cosa compra il segreto, e cosa costa. Nascondere i fallimenti e gestire la verità fece sembrare il programma invincibile, il che aveva un reale valore nella Guerra Fredda. Ma significava anche che il programma non poteva mai essere visto fallire — il che lo rese cauto nei posti sbagliati, incapace di correre i rischi visibili che imparare cose difficili richiede. Un'organizzazione che non può permettersi di fallire in pubblico alla fine non può permettersi nemmeno di *imparare* in pubblico."
     }
   ]
 }

@@ -1,14 +1,14 @@
 {
   "name": "Buran",
-  "tagline": "El transbordador espacial soviético que se parecía al estadounidense, voló mejor en un aspecto — y voló exactamente una vez, sin tripulación y sin fallos, antes de que el país que lo construyó desapareciera debajo de él.",
+  "tagline": "El transbordador espacial soviético que se parecía al estadounidense, voló mejor en un aspecto — y voló exactamente una vez, no tripulado e impecable, antes de que el país que lo construyó desapareciera bajo sus pies.",
   "the_land": [
     {
       "type": "prose",
-      "md": "A mediados de la década de 1970, la Unión Soviética observaba cómo Estados Unidos construía el Space Shuttle y llegaba a una conclusión alarmante. No podía creer del todo que los estadounidenses gastaran tanto en un avión espacial reutilizable puramente por las razones declaradas, y temía un propósito militar oculto: un vehículo que pudiera descender a la atmósfera, arrebatar un satélite soviético y regresar volando, o lanzar armas desde la órbita. Sin estar dispuesto a quedarse sin respuesta, el Politburó ordenó uno propio. El resultado, Buran, fue el proyecto espacial más grande y costoso de la historia soviética, y comenzó como respuesta a una amenaza que quizá nunca fue real."
+      "md": "A mediados de los años setenta, la Unión Soviética observaba cómo Estados Unidos construía el Space Shuttle y llegaba a una conclusión alarmante. No podía creer del todo que los estadounidenses gastaran tanto en un avión espacial reutilizable puramente por las razones declaradas, y temía un propósito militar oculto — un vehículo que pudiera descender a la atmósfera, capturar un satélite soviético y volar de regreso, o lanzar armas desde órbita. Sin estar dispuesto a quedarse sin respuesta, el Politburó ordenó uno propio. El resultado, Buran, fue el proyecto espacial más grande y costoso de la historia soviética, y comenzó como respuesta a una amenaza que quizás nunca fue real."
     },
     {
       "type": "prose",
-      "md": "Desde el exterior, Buran parecía casi idéntico al orbitador estadounidense — la misma ala delta, la misma forma aproximada — porque el mismo trabajo y la misma física de la reentrada hipersónica conducen un diseño hacia la misma respuesta. Pero por debajo, los ingenieros soviéticos tomaron dos decisiones que diferenciaron su máquina, y ambas, posiblemente, mejoraron el original. Buran no llevaba motores principales propios, y Buran podía volar sin nadie a bordo en absoluto."
+      "md": "Desde el exterior, Buran parecía casi idéntico al orbitador estadounidense — la misma ala delta, la misma forma aproximada — porque el mismo trabajo y la misma física de la reentrada hipersónica conducen un diseño hacia la misma respuesta. Pero por dentro, los ingenieros soviéticos tomaron dos decisiones que diferenciaron su máquina, y ambas, posiblemente, mejoraron el original. Buran no llevaba motores de ascenso principales propios — tenía motores de maniobra orbital para usar en el espacio, pero el levantamiento pesado a órbita lo manejaba enteramente el cohete — y Buran podía volar sin nadie a bordo en absoluto."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/energia/01"
       },
-      "caption": "El lanzador superpesado Energia, que elevó a Buran. A diferencia del orbitador estadounidense, Buran no tenía motores principales: todo el impulso provenía de Energia, un auténtico cohete de carga pesada por derecho propio — el más potente que la Unión Soviética lanzó con éxito.",
+      "caption": "El lanzador superpesado Energia, que elevó a Buran. A diferencia del orbitador estadounidense, Buran no tenía motores de ascenso principales: todo el levantamiento provenía de Energia, un auténtico cohete de carga pesada por derecho propio — uno de los más potentes jamás volados, y el más potente que la Unión Soviética voló con éxito.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "La primera decisión fue sobre los motores. El Shuttle estadounidense montaba sus tres grandes motores principales en el propio orbitador, lo que significaba transportar esa maquinaria pesada y costosa a la órbita y de vuelta en cada vuelo, y desechar solamente el tanque externo. Los soviéticos, en cambio, pusieron todo el impulso en el cohete: Buran viajaba sobre Energia, un verdadero lanzador superpesado que hacía todo el trabajo de alcanzar la órbita, dejando que el orbitador fuera una carga útil en lugar de parte de la propulsión. Esto hizo que Energia fuera útil por sí mismo — un cohete potente que podía lanzar otras cargas pesadas sin orbitador alguno — y liberó a Buran de una carga que su rival llevó durante treinta años."
+      "md": "La primera decisión fue sobre los motores. El Shuttle estadounidense montaba sus tres grandes motores principales en el propio orbitador, lo que significaba transportar esa maquinaria pesada y costosa a órbita y de vuelta en cada vuelo y desechar solo el tanque externo. Los soviéticos, en cambio, pusieron todo el levantamiento en el cohete: Buran viajaba sobre Energia, un auténtico lanzador superpesado que hacía todo el trabajo de alcanzar la órbita, dejando al orbitador ser una carga útil en lugar de parte de la propulsión. Esto hacía a Energia útil por sí mismo — un cohete potente que podía lanzar otras cargas pesadas sin orbitador alguno — y liberó a Buran de una carga que su rival llevó durante treinta años."
     },
     {
       "type": "prose",
-      "md": "La segunda decisión fue la automatización. El Shuttle estadounidense siempre necesitaba una tripulación para aterrizar; no podía regresar a casa por sí solo. Buran fue construido para volar la misión completa — lanzamiento, órbita, reentrada y aterrizaje — sin nadie a bordo, guiado por sus ordenadores y tierra. En una época en que el aterrizaje automático completo de una nave espacial alada estaba en la frontera de lo posible, esto fue un avance genuino, y preparó el único momento en que Buran pudo demostrar lo que era capaz de hacer."
+      "md": "La segunda decisión fue la automatización. El Shuttle estadounidense siempre necesitaba una tripulación para aterrizar; no podía regresar a casa por sí mismo. Buran fue construido para volar toda la misión — lanzamiento, órbita, reentrada y aterrizaje — sin nadie a bordo, guiado por sus ordenadores y el control terrestre. En una época en que el aterrizaje automático completo de una nave espacial alada estaba en la frontera de lo posible, esto fue un avance genuino, y preparó el único momento en que Buran pudo demostrar lo que era capaz de hacer."
     }
   ],
   "outcome": [
@@ -35,26 +35,26 @@
       "image": {
         "reuse": "fleet/buran/05"
       },
-      "caption": "El orbitador Buran. Voló una misión perfecta sin tripulación en noviembre de 1988 y luego nunca volvió a volar — inmovilizado por el colapso de la economía soviética y, finalmente, de la propia Unión Soviética.",
+      "caption": "El orbitador Buran. Voló una misión no tripulada perfecta en noviembre de 1988 y luego nunca volvió a volar — inmovilizado por el colapso de la economía soviética y, finalmente, de la propia Unión Soviética.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "El 15 de noviembre de 1988, Buran voló. Despegó sobre Energia, dio dos vueltas a la Tierra, reentró y — con un viento cruzado racheado que habría puesto a prueba a cualquier piloto — se posó en la pista de Baikonur de forma totalmente automática, tocando tierra a pocos metros de su objetivo sin ningún humano a bordo en ningún momento. Fue un vuelo impecable y un verdadero triunfo técnico: ninguna otra nave espacial alada había volado una misión orbital completa y aterrizando por sí misma. Y fue la única vez que Buran voló."
+      "md": "El 15 de noviembre de 1988, Buran voló. Despegó sobre Energia, dio dos vueltas a la Tierra, reentró y — con un viento cruzado racheado que habría puesto a prueba a cualquier piloto — descendió sobre la pista de Baikonur de forma totalmente automática, tocando tierra a pocos metros de su objetivo sin ningún humano a bordo en ningún momento. Fue un vuelo impecable y un verdadero triunfo técnico: ninguna otra nave espacial alada había volado una misión orbital completa y aterrizado por sí misma. Y fue la única vez que Buran voló."
     },
     {
       "type": "prose",
-      "md": "El momento no pudo ser peor. Buran alcanzó su triunfo exactamente cuando la Unión Soviética comenzaba a desmoronarse. En tres años el país había desaparecido; el dinero se desvaneció; y un avión espacial enormemente costoso construido para contrarrestar una amenaza estadounidense no tenía amenaza que contrarrestar, presupuesto para volar, ni misión que nadie pudiera permitirse darle. El programa siguió en el papel hasta 1993 y luego fue cancelado rotundamente. La indignidad final llegó en 2002, cuando el techo del hangar que alojaba el único orbitador que realmente había volado se derrumbó, aplastando la nave espacial y matando a ocho trabajadores. El único vuelo de Buran sigue siendo uno de los logros más impresionantes — y más inútiles — de la historia de los vuelos espaciales."
+      "md": "El momento no podía haber sido peor. Buran alcanzó su triunfo exactamente cuando la Unión Soviética empezaba a desmoronarse. En tres años el país había desaparecido; el dinero se esfumó; y un avión espacial enormemente costoso construido para contrarrestar una amenaza estadounidense no tenía amenaza que contrarrestar, ni presupuesto para volar, ni misión que nadie pudiera permitirse darle. El programa siguió sobre el papel hasta 1993 y luego fue cancelado definitivamente. La indignidad final llegó en 2002, cuando el techo del hangar que albergaba el único orbitador que realmente había volado se derrumbó, aplastando la nave y matando a ocho trabajadores. El único vuelo de Buran sigue siendo uno de los logros más impresionantes — y más inútiles — de la historia del vuelo espacial."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Buran es la historia de una respuesta magnífica a una pregunta que dejó de hacerse. Técnicamente fue un éxito y en algunos aspectos una mejora del vehículo que copió — el lanzador separado, el aterrizaje automático, verdaderos avances ingenieriles. Pero fue construido por razones estratégicas y políticas que se evaporaron, a un coste que la economía soviética no pudo sostener, y llegó a su momento de triunfo justo cuando el sistema que lo ordenó colapsaba. Ninguna cantidad de excelencia ingenieril podía sobrevivir a la desaparición de la razón del programa y el dinero para mantenerlo."
+      "md": "Buran es la historia de una respuesta magnífica a una pregunta que dejó de formularse. Técnicamente fue un éxito y en algunos aspectos una mejora sobre el vehículo que copió — el lanzador separado, el aterrizaje automático, verdaderos avances de ingeniería. Pero fue construido por razones estratégicas y políticas que se evaporaron, a un coste que la economía soviética no podía sostener, y llegó a su momento de triunfo justo cuando el sistema que lo ordenó colapsó. Ninguna excelencia de ingeniería podía sobrevivir a la desaparición de la razón del programa y del dinero para ejecutarlo."
     },
     {
       "type": "prose",
-      "md": "Hay una ironía que vale la pena retener. En los dos aspectos en que Buran difería del Shuttle estadounidense — poner los motores en el cohete en lugar del orbitador, y volar automáticamente sin tripulación — posiblemente tenía las mejores ideas, y ambas tienen ecos en vuelos espaciales posteriores. Y sin embargo, el Shuttle estadounidense voló 135 veces durante treinta años y construyó una estación espacial, mientras que Buran voló una vez. La lección no es que la ingeniería de Buran fuera peor; es que la ingeniería nunca es toda la historia. Un programa necesita un propósito y un presupuesto que sobrevivan a su primer vuelo, y Buran no tuvo ninguno de los dos."
+      "md": "Hay una ironía que vale la pena conservar. En los dos aspectos donde Buran difería del Shuttle estadounidense — poner los motores en el cohete en lugar del orbitador, y volar automáticamente sin tripulación — posiblemente tenía las mejores ideas, y ambas tienen ecos en el vuelo espacial posterior. Y sin embargo, el Shuttle estadounidense voló 135 veces durante treinta años y construyó una estación espacial, mientras que Buran voló una vez. La lección no es que la ingeniería de Buran fuera peor; es que la ingeniería nunca es toda la historia. Un programa necesita un propósito y un presupuesto que sobrevivan a su primer vuelo, y Buran no tuvo ninguno de los dos."
     }
   ],
   "legacy": [
@@ -63,26 +63,26 @@
       "image": {
         "reuse": "fleet/buran-ok-gli/02"
       },
-      "caption": "OK-GLI, el orbitador de prueba atmosférico de Buran — equipado con motores a reacción para practicar aproximaciones a la pista, y ahora una pieza de museo en Alemania. El hardware superviviente de Buran está disperso por museos; el único orbitador que alcanzó el espacio fue destruido en 2002.",
+      "caption": "OK-GLI, el orbitador de pruebas atmosféricas de Buran — equipado con motores a reacción para practicar aproximaciones a la pista, y ahora una pieza de museo en Alemania. El hardware superviviente de Buran está disperso por museos; el único orbitador que alcanzó el espacio fue destruido en 2002.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "El legado directo de Buran es casi nada — un programa cancelado, un solo vuelo, hardware en museos y un orbitador perdido bajo un techo caído. Pero su legado indirecto es real. Energia demostró que la Unión Soviética podía, por fin, construir un cohete superpesado que realmente funcionara, redimiendo el fracaso del N1 — aunque también fue cancelado por falta de algo que lanzar. Y el vuelo totalmente automatizado de Buran demostró una capacidad que solo se volvería estándar décadas después, cuando las naves espaciales no tripuladas y con aterrizaje autónomo se hicieron rutinarias."
+      "md": "El legado directo de Buran es casi nada — un programa cancelado, un único vuelo, hardware en museos y un orbitador perdido bajo un techo derrumbado. Pero su legado indirecto es real. Energia demostró que la Unión Soviética podía, por fin, construir un cohete superpesado que realmente funcionara, redimiendo el fracaso del N1 — aunque también fue cancelado por falta de algo que lanzar. Y el vuelo totalmente automatizado de Buran demostró una capacidad que solo se volvería estándar décadas después, cuando las naves espaciales no tripuladas y con aterrizaje autónomo se volvieron rutinarias."
     },
     {
       "type": "prose",
-      "md": "Pero sobre todo, Buran perdura como un monumento de advertencia — el caso más claro de la era espacial de un programa que acertó en la ingeniería y se equivocó en todo lo demás. Se sitúa junto al Shuttle estadounidense como el camino no tomado, y junto al N1 como el otro gran qué-habría-sido soviético: prueba de que en los vuelos espaciales, una máquina brillante sin propósito ni dinero sigue siendo una máquina que no vuela."
+      "md": "Pero sobre todo, Buran perdura como monumento de advertencia — el caso más claro en la era espacial de un programa que acertó en la ingeniería y se equivocó en todo lo demás. Se sitúa junto al Shuttle estadounidense como el camino no tomado, y junto al N1 como el otro gran pudo-haber-sido soviético: prueba de que en el vuelo espacial, una máquina brillante sin propósito y sin dinero sigue siendo una máquina que no vuela."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La primera lección de Buran es que un programa necesita una razón que sobreviva a sus orígenes. Nació de un miedo estratégico y una negativa a dejar que los estadounidenses poseyeran una capacidad que la Unión Soviética careciera — y cuando el miedo se desvaneció y la Guerra Fría terminó, no quedó nada para justificar el enorme coste. Construir una capacidad costosa para igualar a un rival, en lugar de hacer un trabajo que realmente necesitas hacer, te deja con una máquina magnífica y ninguna razón para volarla en el momento en que la rivalidad se enfría."
+      "md": "La primera lección de Buran es que un programa necesita una razón que sobreviva a sus orígenes. Nació de un miedo estratégico y de la negativa a dejar que los estadounidenses poseyeran una capacidad que la Unión Soviética no tuviera — y cuando el miedo se desvaneció y la Guerra Fría terminó, no quedó nada que justificara el enorme coste. Construir una capacidad costosa para igualar a un rival, en lugar de hacer un trabajo que realmente necesitas hacer, te deja con una máquina magnífica y ninguna razón para volarla en el momento en que la rivalidad se enfría."
     },
     {
       "type": "prose",
-      "md": "La segunda lección es que la excelencia ingenieril no puede salvar a un programa de la pérdida de su propósito y su presupuesto. Buran fue, de formas reales, un diseño mejor que el vehículo al que respondía — y voló una vez. El Shuttle estadounidense, con todos sus defectos, voló durante treinta años porque tenía misiones que volar y dinero para volarlas. Una nave espacial es solo tan duradera como la voluntad institucional y la financiación que la respaldan; sin ellas, incluso un vuelo impecable es un final en lugar de un comienzo."
+      "md": "La segunda lección es que la excelencia en ingeniería no puede salvar a un programa de la pérdida de su propósito y su presupuesto. Buran fue, en aspectos reales, un diseño mejor que el vehículo al que respondía — y voló una vez. El Shuttle estadounidense, con todos sus defectos, voló durante treinta años porque tenía misiones que cumplir y dinero para realizarlas. Una nave espacial es tan duradera como la voluntad institucional y la financiación que la respaldan; sin ellas, incluso un vuelo impecable es un final en lugar de un comienzo."
     }
   ]
 }

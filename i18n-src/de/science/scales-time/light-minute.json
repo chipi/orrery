@@ -1,14 +1,14 @@
 {
   "title": "Lichtminute und Lichtjahr",
-  "intro_sentence": "Distanz in Zeit gemessen, die Licht braucht — die nützlichste Einheit für Kommunikationsverzögerungen und Sterndistanzen.",
+  "intro_sentence": "Entfernung gemessen in der Zeit, die Licht braucht, um sie zu durchqueren — die nützlichste Einheit für Kommunikationsverzögerungen und Sternendistanzen.",
   "narrative_101": [
-    "Eine Lichtminute ist, wie weit Licht in einer Minute reist. 300.000 km/s. 18 Mio km/min. Distanz, nicht Zeit — verwirrend benannt aber nützlich. Sonne 8,3 Lichtminuten weg. Mars 4-22 Lichtminuten je nach Geometrie.",
-    "Wichtig, weil Funkwellen mit Lichtgeschwindigkeit reisen. Wenn Curiosity Mars befährt: Befehl senden, 8-22 Minuten warten, dass Rover sich bewegt. Weitere 8-22 für Bestätigung. KEIN Joystick-Steuern eines Mars-Rovers von Erde. Alles Wichtige autonom.",
-    "Voyager-1-Distanz (~165 AE): Einweg-Lag ~22,5 h. Lichtjahre: nächste Skala — Sterne. Proxima Centauri 4,2 Lichtjahre. Voyager-Geschwindigkeit: 70.000 Jahre dorthin. Universum groß und langsam."
+    "Eine Lichtminute ist die Strecke, die Licht in einer Minute zurücklegt. Licht fährt mit 300.000 km pro Sekunde, was sich auf 18 Millionen km in einer Minute beläuft. Es ist eine Entfernung, keine Zeit — verwirrend, aber nützlich. Die Sonne ist 8,3 Lichtminuten entfernt. Der Mars liegt irgendwo zwischen 4 und 22 Lichtminuten entfernt, je nach Bahnengeometrie.",
+    "Warum ist das wichtig? Weil Radiowellen mit Lichtgeschwindigkeit reisen, und das ist auch die Zeit, die deine Befehle brauchen, um ein Raumschiff zu erreichen. Wenn Curiosity über dem Mars fährt, sendet das Rover-Team einen Befehl und wartet dann 8 bis 22 Minuten, bis das Rover mit der Bewegung beginnt. Dann nochmal 8 bis 22, um herauszufinden, ob es funktioniert hat. Es gibt KEINE Möglichkeit, einen Mars-Rover von der Erde aus mit einem Joystick zu steuern. Alles Wichtige muss autonom sein.",
+    "Beim Voyager-1-Abstand (etwa 170 AU jetzt) beträgt die einseitige Lichtverzögerung etwa 23,5 Stunden — sie erreicht einen vollen Lichttag (24 Stunden) im späten 2026. Sende heute einen Befehl, und du erfährst morgen Nachmittag, ob er funktioniert hat. Lichtjahre existieren für die nächste Skalierungsebene — Entfernung zu anderen Sternen. Der nächste, Proxima Centauri, ist 4,2 Lichtjahre entfernt. Mit Voyagers Geschwindigkeit würde es 70.000 Jahre dauern, dorthin zu gelangen. Das Universum ist groß und langsam."
   ],
   "body_paragraphs": [
-    "Licht 300.000 km/s. Lichtsekunde 300.000 km. Lichtminute 18 Mio km. Lichtjahr 9,46 Bil km. Distanzen, nicht Zeiten — nützlich: 1 AE ≈ 8,3 Lichtminuten.",
-    "Wenn Curiosity Mars befährt: Befehl senden, 8-22 Minuten warten auf Bewegung — und 8-22 weiter zum Wissen ob es funktionierte. Echtzeit-Steuerung unmöglich auf Planetendistanz. Voyager 1 (22,5 Lichtstunden): Einweg-Schubse die fast einen Tag später ankommen.",
-    "Lichtjahre für Sterne. Proxima Centauri 4,2 Lichtjahre. Voyager 1 ~17 km/s — schnell für eine Sonde, langsam gegen Licht: bei der Geschwindigkeit ~70.000 Jahre."
+    "Licht bewegt sich mit etwa 300.000 km/s. Eine Lichtsekunde ist 300.000 km. Eine Lichtminute ist 18 Millionen km. Ein Lichtjahr ist 9,46 Billionen km. Es sind Entfernungen, keine Zeiten — verwirrend benannt, aber nützlich: 1 AU ≈ 8,3 Lichtminuten, also sagt dir »der Mars ist 4–22 Lichtminuten entfernt, je nach Bahn« die Hin- und Rücklicht-Latenz in jedem Moment.",
+    "Wenn Curiosity über dem Mars fährt, sendet das Rover-Team einen Befehl, wartet dann 8–22 Minuten, bis das Rover mit dem Manöver beginnt — und nochmal 8–22, um herauszufinden, ob es funktioniert hat. Echtzeit-Kontrolle ist in planetaren Entfernungen unmöglich. Weit genug draußen (Voyager 1 bei ~23,5 Lichtstunden) sendest du einseitige Stöße, die fast einen Tag später ankommen.",
+    "Lichtjahre gelten für Sterne. Proxima Centauri ist 4,2 Lichtjahre entfernt. Voyager 1 bewegt sich mit ~17 km/s, was für ein Raumschiff schnell ist, aber langsam gegen Licht: mit dieser Geschwindigkeit würde Proxima ~70.000 Jahre dauern."
   ]
 }

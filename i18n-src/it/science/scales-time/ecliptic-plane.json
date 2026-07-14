@@ -1,14 +1,14 @@
 {
-  "title": "Il piano eclittico",
-  "intro_sentence": "Il piano dell'orbita terrestre — riferimento per quasi ogni misura solare.",
+  "title": "Il Piano dell'Eclittica",
+  "intro_sentence": "Il piano dell'orbita terrestre intorno al Sole — usato come riferimento per quasi tutte le misurazioni del sistema solare.",
   "narrative_101": [
-    "Tieni un piatto piatto, biglia al centro = Sole. Biglia più piccola intorno = Terra. Piatto piatto = piano eclittico.",
-    "La maggior parte del sistema solare vive su questo piatto. Otto pianeti a pochi gradi. Luna 5°.",
-    "Comete sono jolly. Plutone 17° — uno dei motivi del declassamento."
+    "Prendi un piatto piatto e metti una pallina di marmo al centro — è il Sole. Ora fai girare una pallina più piccola attorno al bordo — è la Terra. Il piatto piatto è il piano dell'eclittica. L'orbita terrestre lo definisce; tutto il resto del sistema solare viene misurato rispetto ad esso.",
+    "Ecco la cosa strana: la maggior parte del sistema solare risiede più o meno su questo piano. Gli otto pianeti sono tutti entro pochi gradi da esso. La Luna orbita attorno alla Terra in un piano inclinato di soli 5 gradi rispetto ad esso. La fascia degli asteroidi è per lo più su di esso. Non è una coincidenza — è un fossile di come si è formato il sistema solare, quando tutto si è condensato da un unico grande disco rotante di gas e polvere attorno al giovane Sole. Il disco ha stabilito il piano e la maggior parte di ciò che rimane lo rispetta ancora.",
+    "Le comete sono i jolly. Le comete a lungo periodo arrivano da qualsiasi direzione con qualsiasi inclinazione — sono i resti della Nube di Oort esterna che non si è mai integrata nel disco. Plutone orbita a 17 gradi fuori dal piano — di gran lunga il più inclinato dei nove classici. (La sua riclassificazione del 2006 riguardava il fatto di non aver ripulito il suo vicinato orbitale, non la sua inclinazione.)"
   ],
   "body_paragraphs": [
-    "Sole, Terra, Luna tracciano cammini. Orbita Terra definisce piano. Da Terra il Sole sembra muoversi su questo piano = eclittica.",
-    "Eclittica = piano riferimento inclinazioni. Terra 0° per costruzione. Mercurio 7°, Plutone 17°.",
-    "`/explore` guarda di default dall'alto sull'eclittica."
+    "Il Sole, la Terra e la Luna tracciano percorsi nello spazio. L'orbita terrestre definisce un piano. Osservando dalla Terra, il Sole sembra muoversi lungo questo piano sullo sfondo delle stelle — quel percorso nel cielo è l'eclittica. La maggior parte degli altri corpi del sistema solare gli stanno vicini: gli otto pianeti sono tutti entro pochi gradi, la fascia degli asteroidi si concentra vicino ad esso, le comete sono sparse.",
+    "L'eclittica è il piano di riferimento per le inclinazioni orbitali dei corpi del sistema solare. L'inclinazione terrestre è 0° per costruzione. Mercurio a 7°, Plutone a 17°, sono misurati rispetto a questo piano. La direzione dell'equinozio di primavera — dove l'eclittica attraversa l'equatore celeste verso nord — è il riferimento di longitudine zero, usato per ancorare il nodo ascendente della longitudine di ogni orbita e l'argomento del periaplio.",
+    "La vista `/explore` di Orrery guarda il piano dell'eclittica dall'alto per impostazione predefinita — la prospettiva naturale per pensare al moto eliocentrico. Inclinare la vista mostra perché le orbite di Mercurio e Plutone sembrano 'sbagliate' anche se sono perfettamente kepleriane: i loro piani orbitali non corrispondono al resto del gruppo."
   ]
 }

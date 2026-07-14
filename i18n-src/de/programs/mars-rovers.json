@@ -1,84 +1,84 @@
 {
   "name": "Mars Rovers",
-  "tagline": "Ein Vierteljahrhundert amerikanischer Roboter, die über den Mars fahren — von einem mikrowellengroßen Gefährt, das ein paar Meter schaffte, bis zu einem nuklearen Astrobiologen, der Gestein für die Heimreise einlagert.",
+  "tagline": "Ein Vierteljahrhundert amerikanischer Roboter, die über den Mars fahren — von einem mikrowellengroßen Gefährt, das etwa hundert Meter schaffte, bis zu einem nuklearen Astrobiologen, der Gestein für die Heimreise einsammelt.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Die Viking-Lander von 1976 hatten bewiesen, dass ein Raumfahrzeug die Oberfläche des Mars erreichen und funktionieren konnte — aber sie waren festsitzend, wo sie aufsetzten, fähig nur das zu untersuchen, was in Reichweite eines einzigen Arms lag. Mars ist ein ganzer Planet, seine Geschichte geschrieben über Terrain, das sich über Tausende von Kilometern erstreckt, und ein Lander sieht nur einen Fleck davon. Um die Aufzeichnung zu lesen — um zu finden, wo einst Wasser floss, um Gestein zu untersuchen, das vor Milliarden Jahren abgelagert wurde — müsste sich ein Roboter bewegen."
+      "md": "Die Viking-Lander von 1976 hatten bewiesen, dass ein Raumfahrzeug die Oberfläche des Mars erreichen und funktionieren konnte — aber sie waren dort gefangen, wo sie landeten, und konnten nur untersuchen, was in Reichweite eines einzelnen Arms lag. Mars ist ein ganzer Planet, dessen Geschichte sich über Terrain erstreckt, das Tausende von Kilometern umfasst, und ein Lander sieht nur einen Punkt davon. Um die Aufzeichnungen zu lesen — um herauszufinden, wo einst Wasser floss, um Gestein zu analysieren, das vor Milliarden von Jahren abgelagert wurde — müsste sich ein Roboter bewegen können."
     },
     {
       "type": "prose",
-      "md": "Die Mars Rovers sind NASAs fünfundzwanzigjährige Antwort auf dieses Problem: eine Abstammungslinie geräderter Roboter, jeder größer und leistungsfähiger als der vorherige, ausgesandt, um über den Planeten zu fahren und Feldgeologie vor Ort zu betreiben. Sie beginnen mit einem Machbarkeitsnachweis in der Größe einer Mikrowelle und kommen, ein Vierteljahrhundert später, bei einem nuklear betriebenen Labor an, das nach den chemischen Fingerabdrücken antiken Lebens sucht."
+      "md": "Die Mars Rovers sind NASAs fünfundzwanzigjährige Antwort auf dieses Problem: eine Abstammungslinie von Robotern auf Rädern, jeder größer und leistungsfähiger als der vorherige, ausgesandt, um über den Planeten zu fahren und vor Ort Feldgeologie zu betreiben. Sie beginnen mit einem Machbarkeitsnachweis in der Größe einer Mikrowelle und erreichen ein Vierteljahrhundert später ein nuklear betriebenes Labor, das nach den chemischen Fingerabdrücken urzeitlichen Lebens sucht."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Das Ziel entwickelte sich mit jeder Generation, aber der Faden war konstant: folge dem Wasser, und dann folge der Frage nach Leben. Sojourner machte sich nur auf den Weg, um zu beweisen, dass ein Rover überhaupt auf dem Mars fahren konnte. Spirit und Opportunity wurden ausgesandt, um geologische Beweise für eine wärmere, feuchtere Vergangenheit zu finden. Curiosity ging, um zu fragen, ob Mars jemals bewohnbar gewesen war. Perseverance ging, um nach Anzeichen zu suchen, dass tatsächlich etwas gelebt hatte — und um die Arbeit zu beginnen, marsianisches Gestein zur Erde zurückzubringen."
+      "md": "Das Ziel entwickelte sich mit jeder Generation weiter, aber der rote Faden blieb konstant: dem Wasser folgen und dann der Frage nach Leben. Sojourner brach nur auf, um zu beweisen, dass ein Rover überhaupt auf dem Mars fahren konnte. Spirit und Opportunity wurden ausgesandt, um geologische Beweise für eine wärmere, feuchtere Vergangenheit zu finden. Curiosity sollte herausfinden, ob der Mars jemals bewohnbar gewesen war. Perseverance sollte nach Anzeichen suchen, dass tatsächlich etwas gelebt hatte — und die Aufgabe beginnen, Mars-Gestein zur Erde zurückzubringen."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/curiosity/01"
       },
-      "caption": "Jeder Rover war größer und intelligenter als der letzte — von Sojourner, der Größe einer Mikrowelle, bis zu Curiosity und Perseverance, der Größe kleiner Autos, die Bohrer, Labore und Kameras über den marsianischen Boden trugen bei Missionen, die Monate dauern sollten und sich zu Jahren ausdehnten.",
+      "caption": "Jeder Rover war größer und intelligenter als der vorherige — von Sojourner in der Größe einer Mikrowelle bis zu Curiosity und Perseverance in der Größe von Kleinwagen, die Bohrer, Labore und Kameras über den Mars-Boden trugen auf Missionen, die Monate dauern sollten und sich zu Jahren ausdehnten.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Allem zugrunde lag Mobilität als wissenschaftliches Instrument. Die wahre Stärke eines Rovers liegt darin, dass er hingehen und nachschauen kann — zum interessanten Felsen fahren, den Kraterrand erklimmen, zum antiken Flussbett hinüberfahren — und Mars von einem einzelnen Landeplatz in eine Landschaft verwandeln, die ein Geologe untersuchen kann, eine Fahrt nach der anderen."
+      "md": "Allem zugrunde lag Mobilität als wissenschaftliches Instrument. Die wahre Stärke eines Rovers liegt darin, dass er hinfahren und nachsehen kann — zum interessanten Gestein fahren, den Kraterrand erklimmen, zum urzeitlichen Flussbett hinüberfahren — und Mars von einem einzelnen Landeplatz in eine Landschaft verwandeln, die ein Geologe untersuchen kann, eine Fahrt nach der anderen."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Die Rovers überlebten ihre Pläne bei weitem, und jeder schrieb neu, was Mars gewesen war. Sojourner fuhr 1997 ein paar Meter und bewies das Konzept. Spirit und Opportunity, 2004 bei neunzigtägigen Missionen gelandet, arbeiteten sechs beziehungsweise vierzehn Jahre — Opportunity legte mehr als fünfundvierzig Kilometer zurück, die längste Fahrt auf irgendeiner Welt — und fanden klare chemische Beweise, dass flüssiges Wasser einst auf der Oberfläche gestanden hatte."
+      "md": "Die Rovers überlebten ihre Planungen bei weitem, und jeder schrieb neu, was Mars gewesen war. Sojourner fuhr 1997 etwa hundert Meter und bewies das Konzept. Spirit und Opportunity, 2004 mit neunzigtägigen Missionen gelandet, arbeiteten sechs beziehungsweise vierzehn Jahre lang — Opportunity legte mehr als fünfundvierzig Kilometer zurück, die längste Fahrt auf einer anderen Welt — und fanden klare chemische Beweise dafür, dass flüssiges Wasser einst auf der Oberfläche gestanden hatte."
     },
     {
       "type": "prose",
-      "md": "Curiosity, 2012 von einem raketengetriebenen Sky Crane in den Gale Crater abgesetzt nach einer Landesequenz, die so kühn war, dass ihre Planer sie sieben Minuten des Schreckens nannten, bestätigte den Fall: der Krater hatte einst einen See beherbergt, mit der Chemie, die ein lebendes Wesen hätte nutzen können. Perseverance folgte 2021, landete im Delta eines antiken Flusses, um direkt nach Anzeichen vergangenen Lebens zu suchen und marsianisches Gestein in versiegelten Röhrchen zu versiegeln — die erste Phase einer Kampagne, um Proben eines anderen Planeten zur Erde zurückzubringen."
+      "md": "Curiosity, 2012 von einem raketengetriebenen Himmelskran in den Gale Crater abgesenkt nach einer Landesequenz, die so kühn war, dass ihre Planer sie sieben Minuten des Schreckens nannten, bestätigte den Fall: Der Krater hatte einst einen See beherbergt mit der Chemie, die ein Lebewesen hätte nutzen können. Perseverance folgte 2021 und landete auf dem Boden des Jezero Crater — Heimat eines urzeitlichen Flussdeltas — um direkt nach Anzeichen vergangenen Lebens zu suchen und Mars-Gestein in versiegelten Behältern zu verschließen — die erste Stufe einer Kampagne, um Proben eines anderen Planeten zur Erde zurückzubringen."
     },
     {
       "type": "prose",
-      "md": "Perseverance trug auch einen Passagier, der seine eigene Geschichte schrieb: Ingenuity, ein kleiner Helikopter, der 2021 den ersten angetriebenen, kontrollierten Flug auf einem anderen Planeten durchführte und dann Dutzende Male mehr flog — ein Beweis, dass Mars aus der Luft ebenso wie vom Boden erkundet werden konnte. Curiosity und Perseverance fahren beide noch immer."
+      "md": "Perseverance trug auch einen Passagier, der seine eigene Geschichte schrieb: Ingenuity, einen kleinen Hubschrauber, der 2021 den ersten angetriebenen, kontrollierten Flug auf einem anderen Planeten durchführte und dann Dutzende weitere Male flog — ein Beweis dafür, dass der Mars aus der Luft ebenso wie vom Boden aus erkundet werden konnte. Curiosity und Perseverance fahren beide noch immer."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Die Geschichte der Mars Rovers ist ein langes Argument, gemacht in Radspuren, dass Mars einst eine Welt war, auf der Leben möglich war. Jeder Rover brachte es einen Schritt voran: Sojourner bewies die Methode, die Zwillinge bewiesen das Wasser, Curiosity bewies die Bewohnbarkeit, Perseverance machte Jagd auf das Leben selbst. Keine einzelne Mission klärte die Frage, aber zusammen verwandelten sie Mars von einer kalten roten Wüste in einen Planeten mit einer warmen, feuchten Jugend — und machten die Suche nach antikem marsianischem Leben zu einer ernsthaften Wissenschaft statt einer Fantasie."
+      "md": "Die Geschichte der Mars Rovers ist ein langes Argument, in Radspuren vorgebracht, dass der Mars einst eine Welt war, auf der Leben möglich war. Jeder Rover brachte es einen Schritt voran: Sojourner bewies die Methode, die Zwillinge bewiesen das Wasser, Curiosity bewies die Bewohnbarkeit, Perseverance ging auf die Jagd nach dem Leben selbst. Keine einzelne Mission klärte die Frage, aber zusammen verwandelten sie den Mars von einer kalten roten Wüste in einen Planeten mit einer warmen, feuchten Jugend — und machten die Suche nach urzeitlichem Mars-Leben zu einer ernsthaften Wissenschaft statt einer Fantasie."
     },
     {
       "type": "prose",
-      "md": "Es ist auch eine Geschichte über Roboter, die sich weigerten zu sterben. Spirit und Opportunity wurden für neunzig Tage gebaut und arbeiteten jahrelang; Opportunity fuhr die Länge eines Marathons über einen Planeten, überlebte Staubstürme und ein festsitzendes Rad und ein Jahrzehnt kalter Nächte, bis ein globaler Sturm es schließlich 2018 zum Schweigen brachte. Die Rovers verdienten sich eine echte öffentliche Zuneigung, die unter Maschinen nahezu einzigartig ist — betrauert, wenn sie versagten, bejubelt, wenn sie erwachten — weil sie unverkennbar Entdecker waren, die in Zeitlupe das taten, was ein menschlicher Geologe zu Fuß tun würde."
+      "md": "Es ist auch eine Geschichte über Roboter, die sich weigerten zu sterben. Spirit und Opportunity wurden für neunzig Tage gebaut und arbeiteten jahrelang; Opportunity fuhr die Länge eines Marathons über einen Planeten, überstand Staubstürme und ein festgefahrenes Rad und ein Jahrzehnt kalter Nächte, bis ein globaler Sturm es schließlich 2018 zum Schweigen brachte. Die Rovers ernteten eine echte öffentliche Zuneigung, die unter Maschinen fast einzigartig ist — betrauert, wenn sie versagten, bejubelt, wenn sie erwachten — weil sie unverkennbar Entdecker waren, die in Zeitlupe taten, was ein menschlicher Geologe zu Fuß tun würde."
     },
     {
       "type": "prose",
-      "md": "Und die Abstammungslinie ist eine Studie in inkrementeller Ambition. Niemand hätte 1997 Perseverances Sky-Crane- und Probeneinlagerungs-Komplexität landen können; es brauchte Sojourners paar Meter, um die Zwillinge zu rechtfertigen, die Jahre der Zwillinge, um Curiosity zu rechtfertigen, und Curiositys See, um das Senden eines Rovers zu rechtfertigen, der nach Leben sucht und die lange Straße zur Probenrückführung beginnt. Jeder Rover war die Plattform, die den nächsten denkbar machte — ein Vierteljahrhundert des Aufbaus von Fähigkeiten, eine Mission nach der anderen."
+      "md": "Und die Abstammungslinie ist eine Studie in inkrementeller Ambition. Niemand hätte Perseverances Himmelskran-Komplexität mit Probensammlung 1997 landen können; es brauchte Sojourners hundert Meter, um die Zwillinge zu rechtfertigen, die jahrelangen Einsätze der Zwillinge, um Curiosity zu rechtfertigen, und Curiositys See, um die Entsendung eines Rovers zu rechtfertigen, der nach Leben sucht und den langen Weg zur Probenrückführung beginnt. Jeder Rover war die Plattform, die den nächsten denkbar machte — ein Vierteljahrhundert des Aufbaus von Fähigkeiten, eine Mission nach der anderen."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Das erste Vermächtnis der Rovers ist der moderne Mars: ein Planet, von dem heute bekannt ist, dass er stehendes Wasser, bewohnbare Chemie und eine warme frühe Geschichte hatte, etabliert nicht durch Schlussfolgerung, sondern durch Roboter, die zu den Felsen fuhren und sie lasen. Der wissenschaftliche Nachweis, dass Mars einst Leben hätte beherbergen können, beruht nahezu vollständig auf ihren Radspuren."
+      "md": "Das erste Vermächtnis der Rovers ist der moderne Mars: ein Planet, von dem nun bekannt ist, dass er stehendes Wasser, bewohnbare Chemie und eine warme frühe Geschichte hatte, etabliert nicht durch Schlussfolgerungen, sondern durch Roboter, die zu den Gesteinen fuhren und sie lasen. Der wissenschaftliche Nachweis, dass der Mars einst Leben hätte beherbergen können, ruht fast vollständig auf ihren Radspuren."
     },
     {
       "type": "prose",
-      "md": "Ihr zweites ist die Technologie der Oberflächenmobilität — der Sky Crane, die autonome Navigation, die Nuklearenergie, die Luftaufklärung von Ingenuity — ein Werkzeugkasten, der Rover für Rover aufgebaut wurde und der es jetzt möglich macht, die Oberfläche eines Planeten als Landschaft statt als Punkt zu erkunden, und den jede zukünftige Oberflächenmission, bemannt oder robotisch, erbt."
+      "md": "Ihr zweites ist die Technologie der Oberflächenmobilität — der Himmelskran, die autonome Navigation, die Nuklearenergie, die Luftaufklärung von Ingenuity — ein Werkzeugkasten, der Rover für Rover aufgebaut wurde und der es nun möglich macht, die Oberfläche eines Planeten als Landschaft statt als Punkt zu erkunden, und den jede zukünftige Oberflächenmission, bemannt oder robotisch, erbt."
     },
     {
       "type": "prose",
-      "md": "Ihr drittes ist noch unterwegs: die versiegelten Röhrchen marsianischen Gesteins, die Perseverance einlagert, wartend auf eine zukünftige Mission, die sie nach Hause trägt. Wenn diese Kampagne gelingt, werden die Rovers die ersten jemals von der Oberfläche eines anderen Planeten zurückgebrachten Proben geliefert haben — der Ertrag einer fünfundzwanzigjährigen Fahrt."
+      "md": "Ihr drittes ist noch unterwegs: die versiegelten Behälter mit Mars-Gestein, die Perseverance einsammelt, in Erwartung einer zukünftigen Mission, die sie nach Hause trägt. Wenn diese Kampagne erfolgreich ist, werden die Rovers die ersten Proben geliefert haben, die jemals von der Oberfläche eines anderen Planeten zurückgebracht wurden — die Belohnung einer fünfundzwanzigjährigen Fahrt."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lehre der Mars Rovers ist, dass Mobilität alles verändert. Ein Lander untersucht, wo er fällt; ein Rover untersucht, wohin er zu gehen wählt. Indem das Programm das Instrument beweglich machte, verwandelte es einen einzelnen Landeplatz in die Geologie eines ganzen Planeten — eine Erinnerung daran, dass an jeder Grenze die Fähigkeit, selbst hinzugehen und nachzuschauen, mehr wert ist als jede Menge fester Beobachtung."
+      "md": "Die Lehre der Mars Rovers ist, dass Mobilität alles verändert. Ein Lander untersucht, wo er landet; ein Rover untersucht, wohin er zu fahren wählt. Indem das Programm das Instrument beweglich machte, verwandelte es einen einzelnen Landeplatz in die Geologie eines ganzen Planeten — eine Erinnerung daran, dass an jeder Grenze die Fähigkeit, selbst hinzugehen und nachzusehen, mehr wert ist als jede Menge fester Beobachtung."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lehre ist, dass große Fähigkeit in Schritten aufgebaut wird, nicht in Sprüngen. Perseverances Probeneinlagerungs-Raffinesse war in Sojourners Tagen unvorstellbar; sie wurde nur möglich, weil jeder Rover den nächsten verdiente. Ambitionierte Ziele werden üblicherweise nicht durch eine einzelne entscheidende Mission erreicht, sondern durch eine geduldige Abstammungslinie, bei der jedes Mitglied genug beweist, um dasjenige zu rechtfertigen, das folgt — Fortschritt als Staffellauf, nicht als Sprint."
+      "md": "Die tiefere Lehre ist, dass große Fähigkeit in Schritten aufgebaut wird, nicht in Sprüngen. Perseverances Raffinesse bei der Probensammlung war in Sojourners Tagen unvorstellbar; sie wurde nur möglich, weil jeder Rover den nächsten rechtfertigte. Ambitionierte Ziele werden normalerweise nicht durch eine einzige entscheidende Mission erreicht, sondern durch eine geduldige Abstammungslinie, bei der jedes Mitglied genug beweist, um das nächste zu rechtfertigen — Fortschritt als Staffellauf, nicht als Sprint."
     }
   ]
 }

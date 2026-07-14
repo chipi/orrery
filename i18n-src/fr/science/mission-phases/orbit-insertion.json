@@ -1,14 +1,14 @@
 {
-  "title": "Insertion orbitale — IOL / IOM",
-  "intro_sentence": "La combustion de freinage qui capture ta sonde en orbite au lieu de la laisser passer pour toujours.",
+  "title": "Insertion en orbite — LOI / MOI",
+  "intro_sentence": "Le freinage qui capture votre vaisseau spatial en orbite au lieu de le laisser s'échapper à jamais.",
   "narrative_101": [
-    "Tu as cruisé 8 mois. Mars grandit. Si tu fais rien, passe et part pour toujours. Pour orbiter : freiner. Combustion = moment décisif.",
-    "Maths impitoyable. Arrive à plusieurs km/s V∞. Tomber sous évasion locale. Combustion longue dure précise au plus proche, où Oberth maximise. MRO 27 min. Cassini Saturne 95 min — plus longue de la vie.",
-    "Si combustion rate ou sous-performe, tu t'échappes, pas de seconde chance. Mars Climate Orbiter 1999 : bug conversion unités, combustion trop faible, atmosphère détruite. Mission perdue en secondes."
+    "Vous avez voyagé pendant huit mois. Vous voyez Mars qui grandit par la fenêtre. Si vous ne faites rien, vous allez dépasser Mars et continuer dans le système solaire, sans jamais revenir. Pour vraiment être en orbite, vous devez freiner. Ce freinage — Insertion en Orbite Lunaire ou Insertion en Orbite de Mars ou quel que soit la planète à laquelle vous êtes — est le moment décisif de toute mission orbitale.",
+    "Les mathématiques sont impitoyables. Vous arrivez à une planète à plusieurs kilomètres par seconde de vitesse résiduelle (V∞). Pour rester, vous devez descendre sous la vitesse de libération locale de la planète. Cela signifie un long et puissant freinage du moteur, minutieusement chronométré, exactement au point de rapprochement maximal à la planète, où Oberth vous donne le freinage le plus efficace. Mars Reconnaissance Orbiter a brûlé pendant 27 minutes. L'insertion à Saturne de Cassini a pris ~96 minutes — le freinage le plus long que le vaisseau spatial ait jamais effectué.",
+    "Si le freinage échoue ou est insuffisant, vous vous échappez, et il n'y a pas de deuxième chance. Mars Climate Orbiter en 1999 avait un bug de conversion d'unités — des livres-force confondues avec des newtons — son freinage d'insertion était trop faible, il a approché trop près de Mars, et la traînée atmosphérique l'a détruit. La mission a été perdue en quelques secondes. C'est pourquoi la conception de l'insertion en orbite est l'une des activités d'ingénierie les plus prudentes que font les humains."
   ],
   "body_paragraphs": [
-    "Quand ta sonde arrive, va vite — assez pour échapper. Capture : drain assez vitesse pour tomber sous évasion locale. IOL lunaire, IOM Mars.",
-    "Au périapsis hyperbole arrivée, Oberth rend moins cher. Taille dépend de V∞ et altitude désirée. MRO V∞ ≈ 2,6 km/s, ~1 km/s capture. Cassini Saturne 95 min.",
-    "Si combustion rate, sonde s'échappe. Mars Climate Orbiter cautionnaire : bug conversion unités (livres/Newton), MOI trop faible, fragmentée par traînée atmosphérique."
+    "Quand votre vaisseau spatial arrive à la destination, il se déplace rapidement — assez vite pour s'échapper si vous ne faites rien. Pour être capturé en orbite, vous devez réduire suffisamment la vitesse pour descendre sous la vitesse de libération locale. Ce freinage est l'insertion en orbite. LOI pour lunaire (Apollo, LRO), MOI pour Mars (MAVEN, MRO, Tianwen-1), et ainsi de suite.",
+    "Le freinage se produit au périapside de l'hyperbole d'arrivée, où Oberth rend le freinage le plus économique. La taille dépend de V∞ — la vitesse résiduelle à l'infini — et de l'altitude orbitale désirée. Mars MRO est arrivée avec V∞ ≈ 2,6 km/s et a dépensé ~1 km/s de `∆v` pour la capture. L'insertion orbitale de Saturne de Cassini a été un freinage d'~96 minutes, le plus long de la vie du vaisseau spatial.",
+    "Si le freinage échoue ou est insuffisant, le vaisseau spatial s'échappe. Il n'y a pas de deuxième chance. Mars Climate Orbiter est l'histoire avertissante : une erreur de conversion d'unités a signifié que son freinage MOI était trop bas, le vaisseau spatial a approché trop près, et la traînée atmosphérique l'a déchiré."
   ]
 }

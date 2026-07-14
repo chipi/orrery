@@ -1,43 +1,43 @@
 {
   "name": "Akatsuki",
-  "type": "ORBITADOR · ACTIVO",
-  "first": "Recuperado de una espera de 5 años en órbita solar para lograr la órbita de Venus en un intento de respaldo; actualmente el único orbitador de Venus activo",
-  "description": "Akatsuki —«amanecer»— fue la primera misión de Japón a Venus. Lanzada el 20/05/2010 desde Tanegashima en un H-IIA 202, emparejada con el demostrador de vela solar IKAROS. La inserción orbital en Venus planeada para el 07/12/2010 falló cuando la acumulación de cristales de sal en una válvula de retención del oxidante desalineó el motor principal 152 segundos después del inicio de la ignición. JAXA mantuvo la nave espacial viva en órbita solar durante cinco años, doce maniobras de corrección, hasta la siguiente ventana de encuentro con Venus. El 07/12/2015, una ignición de 1228 segundos utilizando cuatro propulsores de control de actitud —nunca diseñados para inserción orbital— colocó a Akatsuki en una órbita altamente elíptica de 400 × 440 000 km con inclinación de 3°. Uno de los rescates de misión más dramáticos en la historia de los vuelos espaciales. Sigue activo.",
+  "type": "ORBITADOR · VOLADO",
+  "first": "Recuperado de una retención en órbita solar de 5 años para alcanzar la órbita de Venus en un intento de reserva; el único orbitador de Venus activo en sus años finales de operación",
+  "description": "Akatsuki —«amanecer»— fue la primera misión de Japón a Venus. Lanzado el 2010-05-20 desde Tanegashima en un H-IIA 202, junto con el demostradores de velas solares IKAROS. La inserción en órbita de Venus planeada para el 2010-12-07 falló cuando la acumulación de cristales de sal en una válvula de comprobación del oxidante sacó del eje el motor principal 152 segundos después del inicio de la maniobra. JAXA mantuvo la sonda viva en órbita solar durante cinco años, doce maniobras de corrección, hasta la siguiente ventana de encuentro con Venus. El 2015-12-07 una maniobra de 1228 segundos usando cuatro propulsores de control de actitud —nunca diseñados para inserción orbital— colocó Akatsuki en una órbita altamente elíptica de 400 × 440.000 km con inclinación de 3°. Uno de los salvamentos de misión más dramáticos en la historia de la exploración espacial. Se perdió el contacto en 2024; JAXA declaró las operaciones completadas el 2025-09-18.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "H-IIA 202 desde Tanegashima, emparejado con la vela solar IKAROS.",
+      "note": "H-IIA 202 desde Tanegashima, junto con la vela solar IKAROS.",
       "type": "nominal"
     },
     {
       "met": 30,
       "label": "TCM-1",
-      "note": "Primera corrección de medio curso.",
+      "note": "Primera corrección de trayectoria.",
       "type": "nominal"
     },
     {
       "met": 201,
       "label": "FALLO VOI-1",
-      "note": "07/12/2010. Anomalía del acelerador OME 152s después del inicio de la ignición; la nave pasa de largo hacia órbita solar.",
+      "note": "2010-12-07. Anomalía de estrangulador del motor principal 152 s después del inicio de la maniobra; la sonda continúa hacia la órbita solar.",
       "type": "warning"
     },
     {
       "met": 1000,
-      "label": "ESPERA EN ÓRBITA SOLAR",
+      "label": "RETENCIÓN EN ÓRBITA SOLAR",
       "note": "12 maniobras durante 5 años para mantener una trayectoria de reencuentro con Venus.",
       "type": "info"
     },
     {
       "met": 2027,
-      "label": "ÉXITO VOI-R2",
-      "note": "07/12/2015. Ignición de 1228s con propulsores RCS hacia órbita de 400 × 440 000 km, 3°.",
+      "label": "VOI-R2 EXITOSA",
+      "note": "2015-12-07. Maniobra de propulsores RCS de 1228 s hacia órbita de 400 × 440.000 km, 3°.",
       "type": "info"
     },
     {
       "met": 2200,
       "label": "OPERACIONES CIENTÍFICAS",
-      "note": "Seguimiento de características de nubes UV/IR; estudios de superrotación; ondas de gravedad en forma de arco sobre Aphrodite Terra.",
+      "note": "Seguimiento de características de nubes UV/IR; estudios de superrotación; ondas gravitacionales de forma arqueada sobre Tierra de Afrodita. Contacto perdido en 2024; operaciones declaradas completadas el 2025-09-18.",
       "type": "info"
     }
   ]

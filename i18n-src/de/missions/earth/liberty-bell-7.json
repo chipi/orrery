@@ -1,7 +1,33 @@
 {
   "name": "Liberty Bell 7 / MR-4",
-  "dispatch": "Liberty Bell 7 flog einwandfrei und ist für die dreißig Sekunden in Erinnerung geblieben, nachdem der Flug zu Ende war. Gus Grissoms suborbitaler Sprung wiederholte Shepards — ein Beweis, dass der erste Flug kein Zufallstreffer gewesen war —, doch auf dem Wasser löste die neue explosive Luke von selbst aus, die Kapsel lief voll und sank auf den Grund des Atlantiks, während Grissom in seinem sich füllenden Anzug beinahe ertrank. Ob er den Auslöser versehentlich betätigt hatte oder dieser sich von selbst gelöst hatte, wurde für den Rest seines Lebens diskutiert und nie geklärt. Die eigentliche Lehre des Fluges war leiser und nützlicher: Der gefährlichste Teil eines Raumflugs ist nicht immer der Raumflug selbst.",
-  "type": "BEMANNT SUBORBITAL · GEFLOGEN",
-  "first": "Zweiter US-Suborbitalflug; Luken-Fehlfunktion ließ die Kapsel verloren gehen (1999 geborgen)",
-  "description": "Gus Grissoms 15-minütiger Suborbitalflug — zweiter Amerikaner im Weltraum, erster Flug mit explosiver Notluke. Nach der Wasserung wurde die Luke vorzeitig gezündet, die Kapsel lief voll Wasser, und Liberty Bell 7 sank in 4900 m Tiefe; Grissom konnte aussteigen, sein Anzug nahm jedoch Wasser auf und er wäre während der Hubschrauber-Bergung fast ertrunken. Die Ursache der Lukenzündung blieb jahrzehntelang umstritten; Grissom beteuerte, er habe den Zündstift nicht berührt. Am 20.07.1999 von einer Oceaneering/Discovery-Channel-Expedition geborgen, restauriert und heute im Kansas Cosmosphere & Space Center, Hutchinson KS, ausgestellt. Das Buch von Tom Wolfe und der Film The Right Stuff (1983) dramatisierten diesen Flug und die Luken-Kontroverse."
+  "type": "BEMANNTE SUBORBITALE MISSION · ABGEFLOGEN",
+  "first": "Zweiter amerikanischer suborbitaler Flug; Fehler der Ausstiegsluke ließ die Kapsel versinken (1999 geborgen)",
+  "dispatch": "Liberty Bell 7 flog fehlerlos und wird für die dreißig Sekunden nach dem Ende des Flugs in Erinnerung behalten. Gus Grissoms suborbitaler Hüpfer wiederholte Shepards Flug — Beweis, dass der erste Flug kein Zufall gewesen war — aber auf dem Wasser feuerte die neue explodierende Ausstiegsluke von selbst, die Kapsel lief voll Wasser, und sie versank auf dem Grund des Atlantiks, während Grissom in seinem sich füllenden Raumanzug fast ertrunken wäre. Ob er den Auslöser berührt hatte oder ob dieser von selbst auslöste, wurde für den Rest seines Lebens diskutiert und wurde nie geklärt. Die eigentliche Lektion des Flugs war stiller und nützlicher: der gefährlichste Teil eines Raumflugs ist nicht immer der Raumflug selbst.",
+  "description": "Gus Grissoms 15-Minuten-Suborbitallflug — zweiter Amerikaner im Weltall, erster Flug mit einer explosiven Notfallausstiegsluke. Nach dem Wassertreffer feuerte die Luke vorzeitig, die Kapsel lief voll Wasser, und Liberty Bell 7 versank in 4900 m Tiefe; Grissom entkam, aber sein Anzug nahm Wasser auf und er wäre während der Hubschrauberbergung fast ertrunken. Die Ursache der Lukenzündung blieb Jahrzehnte lang umstritten; Grissom beteuerte, dass er nicht den Schlagbolzen berührt habe. Am 1999-07-20 von einer Oceaneering/Discovery Channel-Expedition aus 4900 m Tiefe geborgen, restauriert und nun im Kansas Cosmosphere & Space Center in Hutchinson, KS ausgestellt. Das Buch von Tom Wolfe / der Film von 1983 The Right Stuff dramatisierte diesen Flug und die Kontroverse um die Luke.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "MR-4 vom Cape Canaveral LC-5 1961-07-21 12:20 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.000018,
+      "label": "APOGÄUM",
+      "note": "Apogäum 190 km nach 2,5 Minuten; ca. 5 min Schwerelosigkeit.",
+      "type": "info"
+    },
+    {
+      "met": 0.000174,
+      "label": "WASSERTREFFER",
+      "note": "Atlantischer Ozean 480 km vor dem geplanten Landepunkt. Luke feuerte vorzeitig — Kapsel lief voll Wasser und versank. Grissom entkam; geborgen durch die USS Randolph.",
+      "type": "warning"
+    },
+    {
+      "met": 13880,
+      "label": "KAPSELBERGUNG",
+      "note": "Liberty Bell 7 aus 4900 m Tiefe durch Oceaneering International gehoben, 1999-07-20.",
+      "type": "info"
+    }
+  ]
 }

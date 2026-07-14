@@ -1,56 +1,56 @@
 {
-  "name": "Apollon 13",
-  "dispatch": "Apollo 13 ne s'est jamais posé, et c'est la mission dont tout le monde se souvient. Deux jours après le départ, un réservoir d'oxygène s'est déchiré et a transformé un vol de routine vers les hauts plateaux de Fra Mauro en un problème de quatre jours pour maintenir trois hommes en vie dans un vaisseau mourant à un quart de million de miles de la Terre. Ce qui les a sauvés, ce n'était pas l'héroïsme ; c'était la préparation et une salle pleine de gens travaillant sur le problème en temps réel, improvisant un moyen de respirer et un moyen de rentrer avec tout ce qui était déjà boulonné au véhicule. La NASA a appelé cela un échec réussi. Il est plus proche de la vérité de dire que c'est le vol qui a prouvé que l'agence était aussi bonne qu'elle prétendait l'être.",
-  "type": "SURVOL AVEC ÉQUIPAGE · VOLÉ (ATTERRISSAGE INTERROMPU)",
-  "first": "La mission qui a transformé un quasi-désastre en sauvetage emblématique de la NASA",
-  "description": "Apollo 13 devait être le troisième atterrissage lunaire habité, ciblant les hauts plateaux de Fra Mauro. À 55 heures et 54 minutes de vol, un réservoir d'oxygène du Module de Service a explosé, paralysant les systèmes électriques et de support-vie du CSM. L'atterrissage annulé, l'équipage — James Lovell, Jack Swigert et Fred Haise — a éteint le CSM, s'est replié dans le Module Lunaire Aquarius en canot de sauvetage, et a utilisé le moteur de descente du LM pour une mise à feu Péricinthion+2 heures, plaçant la nef sur une trajectoire de retour libre rapide. Ils ont survolé la Lune à 254 km d'altitude le 15/04/1970 et amerri sans dommage dans le Pacifique Sud le 17/04/1970. La mission est étudiée aujourd'hui comme modèle d'improvisation d'ingénierie disciplinée en temps réel.",
+  "name": "Apollo 13",
+  "type": "VOL HABITÉ AUTOUR DE LA LUNE · EFFECTUÉ (ALUNISSAGE AVORTÉ)",
+  "first": "La mission qui a transformé un quasi-désastre en sauvetage le plus célèbre de la NASA",
+  "dispatch": "Apollo 13 n'a jamais aluni, et c'est la mission dont tout le monde se souvient. Deux jours après le départ, un réservoir d'oxygène s'est désintégré et a transformé un vol de routine vers les hautes terres de Fra Mauro en quatre jours de lutte pour maintenir trois hommes en vie dans un vaisseau en perdition à un quart de million de kilomètres de la maison. Ce qui les a sauvés n'était pas l'héroïsme ; c'était la préparation et une salle pleine de gens résolvant le problème en temps réel, improvisaient une façon de respirer et une façon de rentrer à partir de ce qui était déjà boulonné au véhicule. La NASA a appelé cela un « succès avec échec ». Il est plus juste de dire que c'est le vol qui a prouvé que l'agence était aussi bonne qu'elle le prétendait.",
+  "description": "Apollo 13 devait être le troisième alunissage habité, ciblé sur les hautes terres de Fra Mauro. À 55 heures 54 minutes dans le vol, un réservoir d'oxygène du module de service a éclaté, paralysant les systèmes électriques et de maintien de la vie du module de commande-service. L'alunissage étant annulé, l'équipage — James Lovell, Jack Swigert et Fred Haise — a désactivé le CSM, s'est déplacé vers le module lunaire Aquarius en tant que canot de sauvetage, et a utilisé le moteur de descente du LM pour une combustion à Péricynthion+2 heures qui les a placés sur une trajectoire de retour libre rapide. Ils ont contourné la Lune à 254 km d'altitude le 1970-04-15 et ont amerri en toute sécurité dans le Pacifique Sud le 1970-04-17. La mission est étudiée aujourd'hui comme un modèle d'improvisation d'ingénierie en temps réel disciplinée.",
   "events": [
     {
       "met": 0,
-      "label": "LANCEMENT SATURNE V",
-      "note": "Décollage depuis KSC LC-39A. Le moteur central du deuxième étage S-II s'est arrêté deux minutes plus tôt — les moteurs extérieurs ont compensé.",
+      "label": "LANCEMENT SATURN V",
+      "note": "Décollage du pas LC-39A du KSC. Le moteur central de l'étage S-II s'est arrêté deux minutes plus tôt — les moteurs externes ont compensé.",
       "type": "nominal"
     },
     {
       "met": 0.117,
       "label": "TLI",
-      "note": "Mise à feu d'injection trans-lunaire par la S-IVB ; CSM + LM s'engagent sur la trajectoire cislunaire.",
+      "note": "Combustion d'injection trans-lunaire par S-IVB ; CSM + LM s'engagent sur une trajectoire cislunairedans.",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "MCC-2",
-      "note": "La correction à mi-course écarte la nef de la trajectoire de retour libre vers une approche de Fra Mauro.",
+      "note": "Correction de route décale le vaisseau de la trajectoire de retour libre vers une approche de Fra Mauro.",
       "type": "nominal"
     },
     {
       "met": 2.33,
       "label": "RUPTURE DU RÉSERVOIR D'OXYGÈNE #2",
-      "note": "Une commande d'agitation cryogénique sur le SM provoque un court-circuit et la rupture du réservoir. « Houston, nous avons eu un problème. » L'énergie et l'eau s'amenuisent ; le LM Aquarius devient le canot de sauvetage.",
+      "note": "La commande d'agitation cryo du SM initie un court-circuit incendie et rupture de réservoir. « Houston, nous avons eu un problème. » L'électricité et l'eau diminuent ; le module lunaire Aquarius devient le canot de sauvetage.",
       "type": "warning"
     },
     {
       "met": 2.92,
-      "label": "MISE À FEU DE RETOUR LIBRE",
-      "note": "Combustion de 31 secondes du moteur de descente du LM qui remet la nef sur une trajectoire de retour libre.",
+      "label": "COMBUSTION DE RETOUR LIBRE",
+      "note": "Combustion de 31 secondes du moteur de descente du LM ramène le vaisseau sur une trajectoire de retour libre.",
       "type": "info"
     },
     {
       "met": 3.13,
       "label": "SURVOL LUNAIRE",
-      "note": "Plus grande proximité à 254 km d'altitude au-dessus de Mare Cognitum — la plus grande distance à laquelle une nef habitée ait jamais voyagé depuis la Terre.",
+      "note": "Approche la plus proche à 254 km d'altitude au-dessus de Mare Cognitum — à 400 171 km, la distance la plus loin que les humains aient jamais voyagé de la Terre (record détenu 1970–2026, dépassé par Artemis II en avril 2026).",
       "type": "info"
     },
     {
       "met": 3.96,
-      "label": "MISE À FEU PC+2",
-      "note": "Combustion Péricinthion-plus-2-heures qui raccourcit le temps de retour à la Terre de dix heures.",
+      "label": "COMBUSTION PC+2",
+      "note": "Combustion à Péricynthion-plus-2-heures raccourcit le temps de retour à la Terre de dix heures.",
       "type": "nominal"
     },
     {
       "met": 5.95,
       "label": "AMERRISSAGE",
-      "note": "Rentrée du CSM et amerrissage dans le Pacifique Sud, récupération par l'USS Iwo Jima.",
+      "note": "Rentrée du CSM et amerrissage dans le Pacifique Sud, récupéré par l'USS Iwo Jima.",
       "type": "info"
     }
   ]

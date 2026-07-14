@@ -17,6 +17,7 @@ import type { Rocket } from '$types/rocket';
 import type { EarthObject } from '$types/earth-object';
 import type { OrbitRegime } from '$types/orbit-regime';
 import type { Program, ProgramBase, ProgramOverlay, ProgramIndexEntry } from '$types/program';
+import type { Essay, EssayBase, EssayOverlay, EssayIndexEntry } from '$types/essay';
 import type { MoonSite } from '$types/moon-site';
 import type { MarsSite, Traverse, RouteHirisePatch } from '$types/mars-site';
 import type { PorkchopGrid } from '$types/porkchop-grid';
@@ -1915,6 +1916,55 @@ export async function getProgramIndex(
         name: overlay.name ?? entry.name,
         tagline: overlay.tagline ?? entry.tagline,
       };
+    }),
+  );
+}
+
+// ─── The Long View (essays) ──────────────────────────────────────────────
+// Same base+overlay pattern as programs: base record carries structure +
+// metadata; the per-locale overlay carries the prose (title, dek, body).
+
+export async function getEssay(
+  slug: string,
+  locale = 'en-US',
+  fetchFn: FetchLike = fetch,
+): Promise<Essay | null> {
+  try {
+    const baseRecord = await get<EssayBase>(`essays/${slug}.json`, fetchFn);
+    const overlay = await get<EssayOverlay>(`i18n/${locale}/essays/${slug}.json`, fetchFn).catch(
+      () => null,
+    );
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<EssayOverlay>(`i18n/en-US/essays/${slug}.json`, fetchFn).catch(() => null));
+    if (!fallback) return null;
+    return { ...baseRecord, ...fallback };
+  } catch {
+    return null;
+  }
+}
+
+export async function getEssayIndex(
+  locale = 'en-US',
+  fetchFn: FetchLike = fetch,
+): Promise<EssayIndexEntry[]> {
+  const base = await get<EssayIndexEntry[]>('essays/index.json', fetchFn);
+  return Promise.all(
+    base.map(async (entry) => {
+      const overlay =
+        (await get<{ title?: string; dek?: string }>(
+          `i18n/${locale}/essays/${entry.slug}.json`,
+          fetchFn,
+        ).catch(() => null)) ??
+        (locale === 'en-US'
+          ? null
+          : await get<{ title?: string; dek?: string }>(
+              `i18n/en-US/essays/${entry.slug}.json`,
+              fetchFn,
+            ).catch(() => null));
+      return overlay ? { ...entry, title: overlay.title, dek: overlay.dek } : entry;
     }),
   );
 }

@@ -1,20 +1,20 @@
 {
-  "name": "Galileu",
-  "type": "ORBITER · VOADO",
+  "name": "Galileo",
+  "type": "ORBITADOR · REALIZADO",
   "first": "Primeira espaçonave a orbitar Júpiter; sonda atmosférica nas nuvens de Júpiter",
-  "dispatch": "A Galileo deveria ter sido inutilizada antes mesmo de chegar. Sua antena principal travou meio aberta a caminho de Júpiter, reduzindo sua taxa de transmissão de dados a um fiozinho — e a missão teve sucesso mesmo assim, porque engenheiros reescreveram seu software da Terra para comprimir a ciência através de uma minúscula antena reserva. Ela se tornou a primeira espaçonave a orbitar Júpiter, lançou uma sonda nas nuvens do planeta gigante e passou oito anos percorrendo as luas. Sua maior descoberta emergiu lentamente dessa persistência: a maneira como o campo magnético de Júpiter se enrolava ao redor de Europa só podia ser explicada por um oceano salgado sob o gelo — o caso mais forte até então de que uma lua de Júpiter poderia conter água líquida, e vida. No final ela foi lançada propositalmente em Júpiter, para que nunca pudesse cair sobre Europa e contaminá-la.",
-  "description": "Lançado a partir do vaivém espacial Atlantis após a longa pausa pós-Challenger, Galileo enfrentou a cintura interna de asteróides e conduziu o primeiro estudo de longo prazo de Júpiter e das suas luas a partir da órbita. Descobriu o campo magnético induzido de Europa – forte evidência de um oceano subterrâneo – e observou Shoemaker-Levy 9 colidir com Júpiter. A missão terminou com um mergulho controlado em Júpiter em 2003 para evitar a contaminação de luas geladas que poderiam abrigar condições para a vida.",
+  "dispatch": "Galileo deveria ter sido incapacitado antes mesmo de chegar. Sua antena principal ficou presa na metade do caminho para Júpiter, reduzindo sua taxa de transferência de dados a um fio — e a missão obteve sucesso mesmo assim, porque engenheiros reescreveram seu software da Terra para transmitir a ciência através de uma pequena antena de backup. Tornou-se a primeira espaçonave a orbitar Júpiter, lançou uma sonda nas nuvens do gigante planetário e passou oito anos visitando as luas. Sua descoberta mais importante emergiu lentamente dessa persistência: a forma como o campo magnético de Júpiter se envolvia ao redor de Europa só podia ser explicada por um oceano salgado sob o gelo — o caso mais forte até então de que uma lua de Júpiter poderia conter água líquida e vida. No final, foi intencionalmente lançada para dentro de Júpiter, para que nunca pudesse cair em Europa e contaminá-la.",
+  "description": "Lançada do Ônibus Espacial Atlantis após a longa pausa pós-Challenger, Galileo atravessou o cinturão de asteroides interno e conduziu o primeiro estudo de longo prazo de Júpiter e suas luas a partir da órbita. Descobriu o campo magnético induzido de Europa — evidência forte de um oceano subsuperficial — e observou o Shoemaker-Levy 9 colidir com Júpiter. A missão terminou com um mergulho controlado em Júpiter em 2003 para evitar a contaminação de luas geladas que poderiam abrigar condições para a vida.",
   "events": [
     {
       "met": 0,
-      "label": "LANÇAR",
-      "note": "STS-34 implanta Galileo e um estágio superior inercial do Atlantis.",
+      "label": "LANÇAMENTO",
+      "note": "STS-34 deploya Galileo e um estágio superior de inércia da Atlantis.",
       "type": "nominal"
     },
     {
       "met": 2242,
-      "label": "INSERÇÃO DA ÓRBITA DE JÚPITER",
-      "note": "A queima do motor principal coloca Galileu em órbita; décadas de ciência lunar começam.",
+      "label": "INSERÇÃO EM ÓRBITA DE JÚPITER",
+      "note": "Queimada do motor principal captura Galileo em órbita; começa um tour de 8 anos estudando as luas.",
       "type": "nominal"
     }
   ]

@@ -1,6 +1,6 @@
 {
   "title": "What is a Porkchop Plot?",
-  "intro_sentence": "A 2D heatmap showing ∆v cost across every (departure date, transit time) pair — the standard tool for finding launch windows.",
+  "intro_sentence": "A 2D heatmap showing trajectory cost across every (departure date, transit time) pair — the standard tool for finding launch windows. (Standard porkchops contour C3 and arrival V∞; Orrery uses a simplified ∆v-in-km/s colour scale.)",
   "narrative_101": [
     "When mission planners want to know if a trip to Mars is feasible, they don't compute one trajectory. They compute MILLIONS — every possible departure date, every possible transit time, in a giant grid — and they paint a heatmap. Cheap trajectories show up as cool blue zones, expensive ones as red. The result, weirdly, looks like a pork chop. The cheap zone is the meat of the chop; the expensive ridge is the bone.",
     "Why bother with a whole heatmap instead of just one optimal answer? Because real missions have constraints. Maybe a particular launch pad is only available in 2026. Maybe you need to land before a dust storm season ends. Maybe a particular rocket is only ready by a certain month. The porkchop lets you see ALL the trade-offs at once — pick the cheap-enough trajectory that fits your real-world calendar.",
@@ -11,5 +11,5 @@
     "Each cell is the answer to a Lambert problem: 'leave Earth on date X, arrive at the destination on date X + Y, what's the ∆v required?' Solve Lambert millions of times across a date grid and the contours emerge naturally. The natural minima are launch windows — the cheap zones where Hohmann-like transfers exist.",
     "Orrery's `/plan` route shows you the porkchop for any of nine destinations (Mars, Mercury, Venus, the gas giants, Pluto, Ceres). Hover any cell to see the exact dates and ∆v. Click to load that mission into `/fly`."
   ],
-  "diagram_caption": "Porkchop plot: X = departure date, Y = transit time, colour = ∆v cost. Cheap zones cluster around natural Hohmann windows."
+  "diagram_caption": "Porkchop plot: X = departure date, Y = transit time, colour = ∆v cost (Orrery's simplified scale; standard plots show C3 / arrival V∞). Cheap zones cluster around natural Hohmann windows."
 }

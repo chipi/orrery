@@ -1,6 +1,38 @@
 {
   "name": "SMART-1",
-  "type": "ROBOTISCHER ORBITER · GEFLOGEN",
-  "first": "Erstes europäisches Raumfahrzeug am Mond + erster Deep-Space-Ionenantriebs-Cruise zu einem Planetenkörper",
-  "description": "Die erste Mondmission der ESA und das erste europäische Raumfahrzeug, das den Mond erreichte. SMART = Small Missions for Advanced Research in Technology — und die zentrale Technologie war ein solarelektrisches Hall-Effekt-Ionentriebwerk (PPS-1350-G), zur damaligen Zeit das größte je geflogene Triebwerk dieser Art. Am 27.09.2003 als Mitflugnutzlast auf einer Ariane 5 von Kourou gestartet, nutzte das 367 kg schwere Raumfahrzeug seinen 1,2-kW-Xenon-Ionenantrieb über 13 Monate, um seine Erdbahn langsam anzuheben, und wurde am 15.11.2004 von der Mondschwerkraft eingefangen — eine 13-monatige Low-Thrust-Spirale statt der tagelangen chemischen Transferbahn aller bisherigen Mondmissionen. 16 Monate lang in einem polaren Mondorbit betrieben, lieferte sie AMIE-Kamerabilder, die ersten Röntgenfluoreszenz-Elementkarten des Mondes (D-CIXS) und Infrarot-Mineralspektroskopie (SIR). Schlug am 03.09.2006 um 02:42 UTC absichtlich in den Lacus Excellentiae (34,4° S, 46,2° W) ein — der Einschlagsblitz wurde live vom Canada-France-Hawaii-Teleskop beobachtet."
+  "type": "ROBOTISCHER ORBITER · ABGEFLOGEN",
+  "first": "Erstes europäisches Raumschiff, das den Mond erreichte; erste Mission, die den Mond unter Ionenantrieb erreichte",
+  "description": "ESAs erste Mondmission und das erste europäische Raumschiff, das den Mond erreichte. SMART = Small Missions for Advanced Research in Technology — und die Schlüsseltechnologie war ein Hall-Effekt-Sonnenelektrischer-Ionentriebwerk (PPS-1350-G), damals das größte je geflogene Ionentriebwerk dieser Art. Gestartet am 2003-09-27 als gemeinsame Nutzlast auf einer Ariane 5 von Kourou, verwendete das 367-kg-Raumschiff seinen 1,2-kW-Xenon-Ionenantrieb über 13 Monate, um seine Erdumlaufbahn langsam zu erhöhen, schließlich von der Mondgravitation am 2004-11-15 eingefangen — eine 13-Monate-Spirale mit niedrigem Schub statt der tageelangen chemischen Transfers aller vorherigen Mondmissionen. Operierte 16 Monate in einer polaren Mondumlaufbahn und lieferte AMIE-Kamerabilder, die ersten Röntgenfluoreszenzelement-Karten des Mondes (D-CIXS) und Infrarot-Mineralspektroskopie (SIR). Absichtlich impaktiert bei Lacus Excellentiae (34,4° S, 46,2° W) am 2006-09-03 05:42 UTC — der Aufprallblitz wurde live vom Canada-France-Hawaii Telescope beobachtet.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Ariane 5G von Kourou 2003-09-27 23:14 UTC — gemeinsame Nutzlast mit Insat-3E + e-Bird.",
+      "type": "nominal"
+    },
+    {
+      "met": 0,
+      "label": "IONENANTRIEB AKTIVIERT",
+      "note": "Hall-Effekt-Ionentriebwerk PPS-1350-G beginnt 13-Monate-Spirale mit niedrigem Schub.",
+      "type": "nominal"
+    },
+    {
+      "met": 414,
+      "label": "MONDEINFANG",
+      "note": "Von Mondgravitation eingefangen 2004-11-15 — erstes europäisches Raumschiff am Mond.",
+      "type": "nominal"
+    },
+    {
+      "met": 720,
+      "label": "D-CIXS KARTIERUNG",
+      "note": "D-CIXS-Röntgenfluoreszenz liefert erste globale Elementkarten des Mondes.",
+      "type": "info"
+    },
+    {
+      "met": 1072,
+      "label": "LACUS-EXCELLENTIAE-AUFPRALL",
+      "note": "Absichtlicher Aufprall bei 34,4° S, 46,2° W am 2006-09-03 05:42 UTC. Aufprallblitz vom CFHT beobachtet.",
+      "type": "nominal"
+    }
+  ]
 }

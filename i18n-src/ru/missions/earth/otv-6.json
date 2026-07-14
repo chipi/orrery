@@ -1,25 +1,25 @@
 {
   "name": "X-37B OTV-6 (USA-299, USSF-7)",
-  "type": "БЕСПИЛОТНЫЙ КОСМОПЛАН · СОВЕРШИЛ ПОЛЁТ",
-  "first": "USA-299 / USSF-7 — 908 дней на орбите, Shuttle Landing Facility KSC",
-  "description": "Шестой полёт X-37B — первый под новым организационным обозначением USSF; рекордные 908 дней на орбите (~2,5 года). Запущен 2020-05-17 в 13:14 UTC с CCAFS SLC-41 на ракете Atlas V 501 AV-081; приземлился на KSC SLF 2022-11-12 в 10:22 UTC. На борту находились PRAM Военно-морской исследовательской лаборатории (Photovoltaic RF Antenna Module — эксперимент по передаче солнечной энергии в виде микроволнового луча мощностью 1 Вт) и устройство AFRL для развёртывания FalconSAT-8.",
+  "type": "БЕСПИЛОТНЫЙ КОСМОПЛАН · ЗАВЕРШЕНА",
+  "first": "USA-299 / USSF-7 — 908 суток на орбите, пусковая площадка Shuttle Landing Facility КСЦ",
+  "description": "Шестой полёт X-37B — первый под новым организационным обозначением USSF; рекордные 908 суток на орбите (~2,5 года). Запущена 17.05.2020 13:14 UTC с площадки CCAFS SLC-41 на Atlas V 501 AV-081; приземлилась на KSC SLF 12.11.2022 10:22 UTC. Несла полезную нагрузку Naval Research Laboratory PRAM (Photovoltaic RF Antenna Module — эксперимент по преобразованию солнечной энергии в микроволновое излучение мощностью 1 Вт) и средство развёртывания AFRL FalconSAT-8.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-081) from CCAFS SLC-41 2020-05-17.",
+      "label": "ЗАПУСК",
+      "note": "Atlas V 501 (AV-081) с площадки CCAFS SLC-41, 17.05.2020.",
       "type": "nominal"
     },
     {
       "met": 454,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee ~390 km; classified payload operations.",
+      "label": "РАБОТА НА ОРБИТЕ",
+      "note": "Апогей ~400 км; выполнение секретной полезной нагрузки.",
       "type": "info"
     },
     {
       "met": 908,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2022-11-12.",
+      "label": "ПРИЗЕМЛЕНИЕ",
+      "note": "Автоматическое приземление на взлётно-посадочную полосу Shuttle Landing Facility КСЦ, 12.11.2022.",
       "type": "nominal"
     }
   ]

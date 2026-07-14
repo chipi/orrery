@@ -1,25 +1,25 @@
 {
-  "name": "X-37B OTV-3号 (USA-240)",
-  "type": "無人スペースプレーン · 飛行済",
-  "first": "USA-240 — 軌道上675日、ヴァンデンバーグ空軍基地",
-  "description": "X-37Bの3回目の飛行、OTV-1飛行機体の再使用。2012-12-11 18:03 UTCにCCAFS SLC-41からアトラスV 501 AV-034で打ち上げ。2014-10-17 16:24 UTCにヴァンデンバーグ空軍基地に着陸。軌道上675日。隣接するCCAFSのインフラで発生したAntares CRS-3打ち上げ失敗により、USSFの支援ウィンドウが一時的に阻害され、運用が16日間中断された。",
+  "name": "X-37B OTV-3 (USA-240)",
+  "type": "無人宇宙飛行機 · 飛行完了",
+  "first": "USA-240 — 軌道上675日間、ヴァンデンバーグ空軍基地",
+  "description": "X-37B第3号機による飛行。OTV-1飛行体の再利用。2012-12-11 18:03 UTC、CCAFS SLC-41からAtlas V 501 AV-034で打ち上げ。2014-10-17 16:24 UTCにヴァンデンバーグ空軍基地に着陸。軌道上での滞在期間は675日間。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-034) from CCAFS SLC-41 2012-12-11.",
+      "label": "打ち上げ",
+      "note": "2012-12-11、CCAFS SLC-41からAtlas V 501 (AV-034)で打ち上げ。",
       "type": "nominal"
     },
     {
       "met": 337.5,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee ~360 km; classified payload operations.",
+      "label": "軌道上運用",
+      "note": "近地点高度 ~360 km；極秘ペイロード運用。",
       "type": "info"
     },
     {
       "met": 675,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at Vandenberg AFB 2014-10-17.",
+      "label": "着陸",
+      "note": "2014-10-17、ヴァンデンバーグ空軍基地での自動滑走路着陸。",
       "type": "nominal"
     }
   ]

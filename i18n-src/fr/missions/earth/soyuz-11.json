@@ -1,26 +1,26 @@
 {
   "name": "Soyuz 11",
   "type": "STATION HABITÉE · PERDUE",
-  "first": "Premier équipage d'une station spatiale (Salyut 1) ; les 3 morts par décompression lors de la rentrée",
-  "dispatch": "Soyuz 11 a accompli quelque chose d'extraordinaire puis a perdu son équipage dans les dernières minutes du vol. Georgy Dobrovolsky, Vladislav Volkov et Viktor Patsayev sont devenus les premières personnes à vivre à bord d'une station spatiale, passant vingt-trois jours sur Salyut 1 — puis, pendant la rentrée, une valve s'est ouverte brutalement à l'instant où les modules se sont séparés et a laissé l'air de leur cabine s'échapper dans l'espace. Ils ne portaient aucune combinaison pressurisée ; il n'y avait pas eu de place pour des combinaisons lorsque les sièges avaient été installés pour trois. En quelques secondes, à la limite de l'espace, tous les trois étaient morts. La capsule s'est posée elle-même, parfaitement sur la cible ; l'équipe de récupération l'a ouverte pour trouver l'équipage toujours attaché dans ses sièges. Ils demeurent les seuls êtres humains à être morts dans l'espace — et ce prix a imposé une règle qui tient depuis : les équipages portent des combinaisons pressurisées pendant le lancement et la rentrée, toujours.",
-  "description": "La première mission habitée vers une station spatiale — Salyut 1 — a été lancée le 6 juin 1971 avec Georgy Dobrovolsky, Vladislav Volkov et Viktor Patsayev. L'équipage a passé 23 jours à bord de la station. Pendant la rentrée le 30 juin, une valve d'égalisation de pression s'est ouverte prématurément lors de la séparation des modules (~168 km) ; la cabine s'est dépressurisée et les trois cosmonautes, sans combinaison, sont morts en quelques secondes. La capsule s'est posée normalement. Ils demeurent les seuls humains à être morts au-dessus de la ligne de Kármán.",
+  "first": "Premier équipage d'une station spatiale (Salyut 1) ; les 3 cosmonautes sont morts par décompression lors de la rentrée",
+  "dispatch": "Soyuz 11 a accompli quelque chose d'extraordinaire avant de perdre son équipage dans les dernières minutes du vol. Georgy Dobrovolsky, Vladislav Volkov et Viktor Patsayev ont été les premiers humains à vivre à bord d'une station spatiale, passant vingt-deux jours à bord de Salyut 1 — puis, lors de la rentrée, une soupape s'est brutalement ouverte au moment précis de la séparation des modules, laissant l'air de leur cabine s'échapper dans l'espace. Ils ne portaient pas de combinaisons pressurisées ; il n'y avait pas eu de place pour des combinaisons quand les sièges avaient été aménagés pour trois personnes. En quelques secondes, en bordure de l'espace, les trois hommes étaient morts. La capsule s'est posée seule, parfaitement sur sa cible ; l'équipe de récupération l'a ouverte pour trouver l'équipage toujours attaché à ses sièges. Ils restent les seuls êtres humains à être morts dans l'espace — et ce prix a établi une règle qui tient depuis : les équipages portent des combinaisons pressurisées lors du lancement et de la rentrée, toujours.",
+  "description": "La première mission habitée vers une station spatiale — Salyut 1 — a décollé le 6 juin 1971 avec Georgy Dobrovolsky, Vladislav Volkov et Viktor Patsayev. L'équipage a passé 22 jours à bord de Salyut 1 (durée totale de la mission 23 jours 18 heures). Lors de la rentrée le 30 juin, une soupape d'équalisage de pression s'est ouverte prématurément à la séparation des modules (~168 km) ; la cabine s'est dépressurisée et les trois cosmonautes, sans combinaison pressurisée, sont morts en quelques secondes. La capsule s'est posée normalement. Ils restent les seuls humains à être morts au-delà de la ligne de Kármán.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Soyuz 11A511 depuis Baikonur, 1971-06-06 04:55 UTC.",
+      "note": "Soyuz 11A511 depuis Baïkonour, 1971-06-06 04:55 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.03,
       "label": "AMARRAGE — SALYUT 1",
-      "note": "Premier équipage à bord d'une station spatiale ; 23 jours à bord.",
+      "note": "Premier équipage à accéder à une station spatiale ; 22 jours à bord de Salyut 1.",
       "type": "info"
     },
     {
       "met": 24,
       "label": "DÉCOMPRESSION",
-      "note": "La valve s'ouvre lors de la séparation des modules ; la cabine se dépressurise à ~168 km. Équipage perdu.",
+      "note": "Soupape ouverte à la séparation des modules ; dépressurisation de la cabine à ~168 km. Équipage perdu.",
       "type": "warning"
     }
   ]

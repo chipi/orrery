@@ -1,25 +1,25 @@
 {
   "name": "MESSENGER",
-  "type": "Orbiteur · VOLÉ",
-  "first": "Premier vaisseau en orbite autour de Mercure ; première cartographie complète de la surface de la planète la plus interne",
-  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) a utilisé six assistances gravitationnelles en sept ans — Terre, deux fois Vénus, trois fois Mercure — pour ralentir et entrer en orbite mercurienne le 18-03-2011. Protégée par un pare-soleil, un côté à 370 °C et l'autre à -45 °C. Découvertes : glace d'eau dans des cratères polaires en ombre permanente, des « hollows » géologiques jusque-là inconnus et confirmation que le noyau de fer de Mercure occupe ~85 % du rayon planétaire (le plus grand rapport de cœur du système solaire). La mission s'est terminée par un impact contrôlé le 30-04-2015 après épuisement du carburant.",
+  "type": "ORBITEUR · RÉALISÉ",
+  "first": "Premier engin spatial à orbiter Mercure ; première carte de surface complète de la planète la plus intérieure",
+  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) a utilisé six assists gravitationnels sur sept ans — la Terre, Vénus deux fois, Mercure trois fois — pour ralentir et entrer en orbite autour de Mercure le 2011-03-18. Protégé par un écran thermique avec un côté à 370 °C et l'autre à -45 °C. Les découvertes incluaient de la glace d'eau dans les cratères polaires permanemment ombragés, des formations géologiques « creux » jusqu'alors inconnues, et la confirmation que le noyau de fer de Mercure occupe environ 85 % du rayon de la planète (le plus grand rapport noyau-rayon de toute planète du système solaire). La mission s'est terminée par un impact contrôlé sur la surface de Mercure le 2015-04-30 après l'épuisement du carburant.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Delta II 7925H soulève MESSENGER sur une trajectoire à six survols.",
+      "note": "Un Delta II 7925H place MESSENGER sur une trajectoire à six survols.",
       "type": "nominal"
     },
     {
       "met": 365,
-      "label": "ASSISTANCE GRAVITATIONNELLE TERRESTRE",
-      "note": "Première de six assistances qui ralentissent la trajectoire assez pour entrer en orbite mercurienne.",
+      "label": "ASSIST GRAVITATIONNEL DE LA TERRE",
+      "note": "Premier des six assists pour ralentir la trajectoire afin d'entrer en orbite autour de Mercure.",
       "type": "nominal"
     },
     {
       "met": 2419,
-      "label": "MISE EN ORBITE AUTOUR DE MERCURE",
-      "note": "Allumage du moteur principal place MESSENGER en orbite mercurienne après sept ans de croisière.",
+      "label": "INSERTION EN ORBITE DE MERCURE",
+      "note": "Une manœuvre du moteur principal place MESSENGER en orbite autour de Mercure après sept ans de croisière.",
       "type": "nominal"
     }
   ]

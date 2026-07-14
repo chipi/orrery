@@ -1,15 +1,15 @@
 {
   "title": "Transfert de Hohmann",
-  "intro_sentence": "Le voyage à deux combustions le moins cher entre orbites circulaires coplanaires — la base contre laquelle les planificateurs mesurent tout.",
+  "intro_sentence": "Le voyage à deux impulsions le moins coûteux entre deux orbites circulaires coplanaires — et la référence par laquelle les planificateurs de mission évaluent tout le reste.",
   "narrative_101": [
-    "Tu es dans l'orbite terrestre, tu veux celle de Mars. Comment avec moins de carburant ?",
-    "Walter Hohmann 1925 : trouve une ellipse qui touche orbite terrestre d'un côté, martienne de l'autre. Combustion pour quitter Terre. Croisière huit mois. Combustion à l'autre bout. Deux combustions, fini.",
-    "Le moins cher — mais le plus lent. Plus rapide ? Possible mais cher."
+    "Vous êtes en orbite autour de la Terre. Vous voulez être en orbite autour de Mars. Les deux orbites sont approximativement circulaires autour du Soleil. Comment allez-vous de l'une à l'autre avec aussi peu de carburant que possible ?",
+    "La réponse, élaborée par Walter Hohmann en 1925, est étonnamment élégante. Trouvez une ellipse qui effleure à peine l'orbite de la Terre d'un côté et l'orbite de Mars de l'autre. Allumez votre moteur brièvement pour quitter la Terre et rejoindre cette ellipse. Dérivez pendant environ 8,5 mois sans allumer le moteur du tout — la gravité fait le travail. Quand vous arrivez à l'autre extrémité, brûlez à nouveau pour vous installer en orbite martienne. Deux impulsions, au total. Terminé.",
+    "C'est le voyage le moins coûteux possible — mais c'est aussi le plus lent. L'attente de 8,5 mois est non négociable ; la physique fixe le chronomètre. Vous voulez aller plus vite ? Vous pouvez, mais vous payez le prix : une ellipse plus inclinée, une traversée plus rapide, une beaucoup plus grosse impulsion de freinage à l'autre extrémité. C'est le compromis que vous verrez se jouer sur tous les diagrammes en forme de côtelette dans /plan."
   ],
   "body_paragraphs": [
-    "D'une orbite circulaire à une plus haute : transfert de Hohmann. Périhélie touche orbite départ, aphélie touche destination. Deux combustions de moteur.",
-    "Le moins cher en impulsion fixe, mais aussi le plus lent. Terre-Mars ~259 jours. Plus rapide : V∞ d'arrivée plus haute, combustion d'entrée plus grosse, Δv total monte vite.",
-    "Sur le porkchop `/plan` : bassin de cellules turquoise autour de la fenêtre Hohmann naturelle."
+    "Imaginez que vous êtes en orbite circulaire autour du Soleil et que vous voulez atteindre une orbite plus haute — disons de la Terre à Mars. La façon la moins coûteuse est un transfert de Hohmann : une ellipse dont le périhélie effleure votre orbite de départ et dont l'aphélie effleure l'orbite de destination. Deux impulsions moteur vous y amènent. Une au périhélie pour quitter l'orbite terrestre et entrer dans l'ellipse. Une à l'aphélie pour circulariser dans l'orbite de destination.",
+    "C'est le chemin le moins coûteux à impulsion fixe, mais c'est aussi le plus lent. Terre-Mars prend environ 259 jours en transfert de Hohmann. Vous voulez aller plus vite ? Brûlez plus fort, volez une ellipse allongée avec une vitesse de périhélie plus élevée. La V∞ d'arrivée augmente, l'impulsion d'entrée à la destination est plus grande, votre coût total en ∆v augmente fortement.",
+    "Sur le diagramme en forme de côtelette `/plan` d'Orrery, vous le verrez directement : il y a un bassin tranquille de cellules bleu-vert autour de la fenêtre de Hohmann naturelle, tous les 26 mois pour Mars, et des contours de plus en plus coûteux à mesure que vous vous approchez de temps de transit plus courts."
   ],
-  "diagram_caption": "Orbite Terre (interne) · orbite Mars (externe) · ellipse de transfert Hohmann."
+  "diagram_caption": "Orbite terrestre (intérieure) · Orbite martienne (extérieure) · Ellipse de transfert de Hohmann avec périhélie à la Terre, aphélie à Mars."
 }

@@ -1,8 +1,8 @@
 {
   "name": "DART",
-  "type": "KINETIC IMPACTOR · FLOWN",
-  "first": "Erste Demonstration eines kinetischen Impaktors zur planetaren Verteidigung; erstes Mal, dass Menschen einen Asteroiden bewegt haben",
-  "description": "DART (Double Asteroid Redirection Test) war die erste jemals geflogene planetare Verteidigungsmission – ein 611 kg schweres Raumfahrzeug, das ausgesandt wurde, um einen 160 m großen Asteroiden hart genug zu treffen, um seine Umlaufbahn zu verändern. Das Ziel war Dimorphos, ein Mond des 780 m großen Asteroiden Didymos. Gestartet am 2021-11-24 mit einer Falcon 9; das autonome Navigationssystem SMART Nav übernahm 4 Stunden vor dem Einschlag, um Dimorphos von seinem Muttergestirn zu unterscheiden und den kleineren Körper anzusteuern. Einschlag am 2022-09-26 um 23:14 UTC mit 6,14 km/s. Gemessene Änderung der Umlaufzeit: 33 Minuten (4,2 %), was die Erfolgsschwelle von 73 Sekunden um das ~25-fache übertraf. Der Impulsübertragungsverstärkungsfaktor β ≈ 3,6 deutete auf einen erheblichen Beitrag durch ausgeworfenes Oberflächenmaterial hin. Der CubeSat LICIACube beobachtete die Auswurfwolke; HST und JWST bildeten den daraus resultierenden Auswurfschweif wochenlang ab. Erste Demonstration, dass Menschen einen Asteroiden bewegen können.",
+  "type": "KINETISCHER IMPAKTOR · GEFLOGEN",
+  "first": "Erste Demonstration eines kinetischen Impaktors zur Planetenverteidigung; erste Asteroiden-Umleitung durch Menschen",
+  "description": "DART (Double Asteroid Redirection Test) war die erste Planetenschutz-Mission überhaupt — ein 611-kg-Raumfahrzeug, das einen 160-m-Asteroiden mit ausreichend Wucht traf, um dessen Umlaufbahn zu verändern. Das Ziel war Dimorphos, ein Mond des 780-m-Asteroiden Didymos. Gestartet am 24.11.2021 mit einer Falcon 9; das autonome Navigationssystem SMART Nav übernahm 4 Stunden vor dem Aufprall die Kontrolle, um Dimorphos von seinem Begleiter zu unterscheiden und den kleineren Körper anzusteuern. Aufprall am 26.09.2022 um 23:14 UTC bei ~6,6 km/s. Gemessene Änderung der Umlaufperiode: 33 Minuten (4,2%), was die Erfolgs-Schwelle von 73 Sekunden um etwa 25× übertraf. Der Impuls-Übertragungsfaktor β ≈ 3,6 deutete auf erheblichen Beitrag aus dem ausgestoßenen Oberflächenmaterial hin. Der CubeSat LICIACube beobachtete die Staubfahne; HST und JWST dokumentierten die resultierende Ejecta-Schweif über Wochen hinweg. Erste Demonstration, dass Menschen einen Asteroiden bewegen können.",
   "events": [
     {
       "met": 0,
@@ -12,26 +12,26 @@
     },
     {
       "met": 150,
-      "label": "MITTE DER REISE",
-      "note": "TCM + NEXT-C Ionentriebwerk-Demonstrationszündungen.",
+      "label": "REISEMITTE",
+      "note": "TCM + Demonstrationszündungen des NEXT-C-Ionentriebwerks.",
       "type": "nominal"
     },
     {
       "met": 306,
-      "label": "ANFLUG",
-      "note": "2022-09-26. SMART Nav übernimmt 4h vor Einschlag.",
+      "label": "ANNÄHERUNG",
+      "note": "26.09.2022. SMART Nav übernimmt 4 Stunden vor Aufprall.",
       "type": "info"
     },
     {
       "met": 306.001,
-      "label": "EINSCHLAG",
-      "note": "23:14 UTC. 6,14 km/s. 33-min Änderung der Umlaufzeit – erste Ablenkung eines Asteroiden durch Menschen.",
+      "label": "AUFPRALL",
+      "note": "23:14 UTC. ~6,6 km/s. 33-Minuten-Änderung der Umlaufperiode — erste menschliche Asteroiden-Umleitung.",
       "type": "info"
     },
     {
       "met": 306.002,
       "label": "SIGNALVERLUST",
-      "note": "LICIACube + HST + JWST beobachten die Auswurfwolke.",
+      "note": "LICIACube + HST + JWST beobachten die Ejecta-Fahne.",
       "type": "warning"
     }
   ]

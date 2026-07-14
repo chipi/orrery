@@ -1,14 +1,15 @@
 {
-  "title": "Sezioni coniche",
-  "intro_sentence": "Taglia un cono in quattro modi e ottieni ogni traiettoria kepleriana.",
+  "title": "Sezioni Coniche",
+  "intro_sentence": "Affetta un cono in quattro modi e ottieni tutte le possibili traiettorie kepleriane — cerchio, ellisse, parabola, iperbole.",
   "narrative_101": [
-    "Colpo di fortuna matematico: le forme dei sezioni coniche sono ESATTAMENTE le uniche su cui un corpo gravitazionale può viaggiare.",
-    "Continuum: cerchio/ellisse legato. Parabola = fuga. Iperbola oltre. Eccentricità è il manopola."
+    "C'è un curioso colpo di fortuna matematica al cuore della meccanica orbitale. Le forme che puoi creare affettando un cono con un piano — cerchio, ellisse, parabola, iperbole — si rivelano ESATTAMENTE le uniche forme che un corpo sotto gravità può percorrere. I Greci studiavano queste curve per divertimento nel 200 a.C. Duemila anni dopo abbiamo scoperto che l'universo funziona su di esse.",
+    "Le quattro forme costituiscono un continuum. Abbastanza lento? Sei su un cerchio o un'ellisse — legato, tornerai indietro. Esattamente alla velocità di fuga? Parabola — non tornerai indietro giusto per poco. Più veloce di così? Iperbole — ti lanci attraverso e non torni mai. L'eccentricità è la manopola: 0 è un cerchio, 1 è il bordo di fuga, sopra 1 sei libero.",
+    "Le missioni reali usano tutti e quattro. Il viaggio dalla Terra a Marte è un'ellisse. Il flyby di Giove sulla strada verso Saturno è un'iperbole — rispetto a Giove, stai andando troppo veloce per essere catturato. Le sonde Voyager si trovano ora su traiettorie di fuga iperboliche (e > 1) che le porteranno fuori dal sistema solare per sempre. La stessa equazione le descrive tutte; solo l'eccentricità varia."
   ],
   "body_paragraphs": [
-    "Taglia un cono. Orizzontale: cerchio (e=0). Inclinato: ellisse. Parallelo al bordo: parabola (e=1). Oltre: iperbola.",
-    "Ogni orbita kepleriana è una delle quattro.",
-    "Designer usano tutte e quattro. Crociera ellisse, flyby iperbole, inserimento ellisse."
+    "Prendi un cono infinito e taglialo con un piano. Affetta orizzontalmente: un cerchio (`e = 0`). Inclina il taglio: un'ellisse (`0 < e < 1`). Inclina parallelo al bordo del cono: una parabola (`e = 1`, il caso esatto di fuga). Inclina oltre: un'iperbole (`e > 1`, fuga con energia di riserva). Duemila anni prima di Kepler, Apollonio di Perga catalogò queste curve. Due secoli prima di Newton, Kepler scoprì che i pianeti volano lungo di esse.",
+    "Ogni orbita kepleriana è una di queste quattro. Le orbite legate — pianeti, lune, satelliti, qualsiasi cosa che ritorna — sono cerchi o ellissi. Le traiettorie non legate — flyby, fughe, catture iperboliche — sono parabole o iperbole. Il confine è esatto: a `e = 1` ti stai muovendo esattamente alla velocità di fuga locale.",
+    "I progettisti di missioni sfruttano tutti e quattro. Naviga su un'ellisse, effettua un flyby di un pianeta su un'iperbole (rispetto a quel pianeta), inserisciti in orbita di nuovo su un'ellisse. Il percorso `/fly` del simulatore fa questo naturalmente — la stessa equazione di traiettoria gestisce ogni caso, l'eccentricità ti dice quale conica stai volando."
   ],
-  "diagram_caption": "Quattro coniche."
+  "diagram_caption": "Quattro coniche dall'affettamento di un cono: cerchio, ellisse, parabola, iperbole. L'eccentricità determina quale."
 }

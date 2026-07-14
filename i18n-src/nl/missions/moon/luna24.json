@@ -1,8 +1,8 @@
 {
   "name": "Luna 24",
-  "type": "MONSTERTERUGKEER · GEVLOGEN",
-  "first": "Laatste Sovjet-maanmissie; laatste onbemande maanlanding gedurende 37 jaar",
-  "description": "De laatste maanmissie van de Sovjet-Unie en de laatste onbemande maanlanding tot China's Chang'e 3 in 2013 — een gat van 37 jaar. De geboorde kern haalde regoliet uit 2 m diepte en bracht 170 g terug naar de Aarde. Onder de monsters: mineralen die spoor-water bevatten, voorbode van de ontdekking van substantiële maanwaterijs-depots 30 jaar later. Luna 24 markeerde ook de afsluiting van het Sovjet-maanprogramma; middelen verschoven naar Mars en Venus.",
+  "type": "MONSTERHAAKMONSTER-TERUGGEKEERDE · UITGEVOERD",
+  "first": "Laatste Sovjet-maanmissie; laatste onbemande maanlanding voor 37 jaar",
+  "description": "De laatste maanmissie van de Sovjet-Unie en de laatste onbemande maanlanding totdat Chinees Chang'e 3 in 2013 landde — een hiaat van 37 jaar. De geboorde kern haalde regoliet uit 2 m diepte en bracht 170 g naar de aarde. Een Sovjet-analyse uit 1978 rapporteerde ~0,1% water naar massa in de kern — een onbevestigd, nog steeds betwist resultaat — wat latere bevestigde detecties van maanwater aankondigde. Luna 24 markeerde ook het einde van het Sovjet-maanprogramma; middelen verschoven naar Mars en Venus.",
   "events": [
     {
       "met": 0,
@@ -13,30 +13,30 @@
     {
       "met": 5,
       "label": "MOI",
-      "note": "Maanbaan-insertie.",
+      "note": "Maanbaninvoering.",
       "type": "nominal"
     },
     {
       "met": 9,
-      "label": "TOUCHDOWN",
-      "note": "Zachte landing bij Mare Crisium 1976-08-18.",
+      "label": "LANDING",
+      "note": "Zachte landing op Mare Crisium 1976-08-18.",
       "type": "nominal"
     },
     {
       "met": 9.5,
-      "label": "BORING",
-      "note": "Kernmonster onttrokken uit 2 m diepte.",
+      "label": "BOREN",
+      "note": "Kernmonster uit 2 m diepte geëxtraheerd.",
       "type": "info"
     },
     {
       "met": 10,
-      "label": "ASCENSIE",
-      "note": "Opstijgtrap heft af; trans-Aarde-injectie.",
+      "label": "OPSTIJGING",
+      "note": "Opstijgingsmodule stijgt op; trans-aardse injectie.",
       "type": "nominal"
     },
     {
       "met": 13,
-      "label": "AARDE-TERUGKEER",
+      "label": "AARDETHUISKOMST",
       "note": "Capsule landt in Surgut, USSR 1976-08-22 met 170 g regoliet.",
       "type": "info"
     }

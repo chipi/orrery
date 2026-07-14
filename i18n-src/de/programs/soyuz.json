@@ -1,14 +1,14 @@
 {
   "name": "Soyuz",
-  "tagline": "Das Raumschiff, das in Tragödie begann, den höchsten Preis in der Raumfahrt zahlte — und zum zuverlässigsten, am längsten dienenden Transportmittel in den Orbit wurde, das je gebaut wurde.",
+  "tagline": "Das Raumschiff, das in einer Tragödie begann, den höchsten Preis in der Raumfahrt zahlte — und zum zuverlässigsten, am längsten dienenden Transportmittel in die Umlaufbahn wurde, das je gebaut wurde.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Mitte der 1960er Jahre war die Ära der Vostok-Weiterentwicklungen vorbei, und beide Supermächte brauchten ein echtes Raumschiff der zweiten Generation — eines, das manövrieren, sich treffen und andocken konnte, die Fähigkeiten, die der Mond verlangen würde. Die sowjetische Antwort war Soyuz: Sergei Korolevs Entwurf für ein modulares Schiff in drei Teilen — ein kugelförmiges Orbitalmodul zum Leben, ein Abstiegsmodul zur Heimkehr und ein Servicemodul für Energie und Antrieb. Es war ein echter Sprung nach vorn. Doch Korolev starb 1966 auf dem Operationstisch, bevor es flog, und das Programm verlor den einen Mann mit der Autorität zu sagen, eine Maschine sei nicht bereit."
+      "md": "Mitte der 1960er Jahre war die Ära der Vostok-Erweiterungen vorbei, und beide Supermächte benötigten ein echtes Raumschiff der zweiten Generation — eines, das manövrieren, sich treffen und andocken konnte, die Fähigkeiten, die der Mond verlangen würde. Die sowjetische Antwort war Soyuz: Sergei Korolevs Entwurf für ein modulares Schiff in drei Teilen — ein kugelförmiges Orbitalmodul zum Wohnen, ein Abstiegsmodul für die Rückkehr und ein Servicemodul für Energie und Antrieb. Es war ein echter Sprung nach vorn. Aber Korolev starb 1966 auf dem Operationstisch, bevor es flog, und das Programm verlor den einen Mann mit der Autorität zu sagen, dass eine Maschine noch nicht bereit war."
     },
     {
       "type": "prose",
-      "md": "Was folgte, war das dunkelste Kapitel im sowjetischen Programm. Unter dem Druck, auf Apollo zu antworten, wurde Soyuz in Dienst gestellt, bevor es sicher war, und der Preis wurde fast sofort fällig — zuerst mit dem Tod eines Kosmonauten, dann, vier Jahre später, mit drei weiteren. Soyuz sollte alle Rivalen überleben und länger fliegen als jedes bemannte Raumschiff der Geschichte, aber es verdiente sich diese Langlebigkeit auf die harte Tour, und die beiden Unfälle zu Beginn sind untrennbar von der Geschichte all dessen, was es wurde."
+      "md": "Was folgte, war das dunkelste Kapitel im sowjetischen Programm. Unter dem Druck, auf Apollo zu antworten, wurde Soyuz überstürzt in Dienst gestellt, bevor es sicher war, und der Preis wurde fast sofort fällig — zuerst mit dem Tod eines Kosmonauten, dann, vier Jahre später, mit drei weiteren. Soyuz sollte alle Konkurrenten überleben und länger fliegen als jedes bemannte Raumschiff in der Geschichte, aber es erwarb diese Langlebigkeit auf die harte Tour, und die beiden Unfälle zu Beginn sind untrennbar von der Geschichte dessen, was es wurde."
     }
   ],
   "goals": [
@@ -17,12 +17,12 @@
       "image": {
         "reuse": "fleet/soyuz-7k-ok/01"
       },
-      "caption": "Die Soyuz der ersten Generation — drei Module: ein kugelförmiges Habitationsmodul, ein glockenförmiges Abstiegsmodul und ein Servicemodul. Die grundlegende Architektur fliegt noch heute, mehr als ein halbes Jahrhundert später.",
+      "caption": "Das Soyuz der ersten Generation — drei Module: ein kugelförmiges Wohnmodul, ein glockenförmiges Abstiegsmodul und ein Servicemodul. Die grundlegende Architektur fliegt noch heute, mehr als ein halbes Jahrhundert später.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Soyuz wurde entworfen, um alles zu tun, was Vostok und Voskhod nicht konnten: seine Umlaufbahn ändern, ein anderes Fahrzeug aufsuchen und andocken, eine Besatzung wochenlang unterstützen und — im ursprünglichen Plan — Kosmonauten Richtung Mond bringen. Das Drei-Modul-Layout war die zentrale Idee. Indem das Raumschiff in ein geräumiges Orbitalmodul, in dem die Besatzung lebte, und ein kleines, stark abgeschirmtes Abstiegsmodul, in dem sie zurückkehrte, aufgeteilt wurde, konnte Soyuz im Orbit geräumig und beim Wiedereintritt leicht sein und alles abwerfen, was es nicht nach Hause bringen musste. Es war ein klarer, anpassungsfähiger Entwurf — genau deshalb hielt er so lange."
+      "md": "Soyuz wurde entworfen, um alles zu tun, was Vostok und Voskhod nicht konnten: seine Umlaufbahn ändern, ein anderes Raumfahrzeug aufsuchen und andocken, eine Besatzung wochenlang unterstützen und — im ursprünglichen Plan — Kosmonauten zum Mond bringen. Die Drei-Modul-Anordnung war die Schlüsselidee. Indem das Raumschiff in ein geräumiges Orbitalmodul, in dem die Besatzung lebte, und ein kleines, stark abgeschirmtes Abstiegsmodul, in dem sie zurückkehrte, aufgeteilt wurde, konnte Soyuz sowohl geräumig in der Umlaufbahn als auch leicht beim Wiedereintritt sein und alles abwerfen, was es nicht mit nach Hause bringen musste. Es war ein sauberer, anpassungsfähiger Entwurf — und genau deshalb hielt er so lange."
     }
   ],
   "outcome": [
@@ -31,30 +31,30 @@
       "image": {
         "reuse": "fleet/soyuz-7k-ok/02"
       },
-      "caption": "Soyuz im Orbit. Überstürzt in den Flug gebracht, bevor es bereit war, sollte der Entwurf Jahre und zwei tödliche Unfälle brauchen, um sicher zu werden — und dann hörte es nie auf zu fliegen.",
+      "caption": "Soyuz in der Umlaufbahn. Überstürzt zum Flug gebracht, bevor es bereit war, würde der Entwurf Jahre und zwei tödliche Unfälle brauchen, um sicher zu werden — und dann hörte es nie auf zu fliegen.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Soyuz' erster bemannter Flug 1967 tötete seinen Piloten: Vladimir Komarov flog ein Raumschiff voller bekannter Mängel und starb, als sein Fallschirm beim Wiedereintritt versagte — der erste Todesfall während eines Fluges in der Geschichte der Raumfahrt. Das Programm erholte sich, und 1969 führten Soyuz 4 und 5 das erste Andocken zweier bemannter Fahrzeuge durch, wobei Kosmonauten per Weltraumspaziergang zwischen ihnen wechselten. Dann wurde 1971 die Besatzung von Soyuz 11 die erste, die an Bord einer Raumstation lebte — und starb auf dem Heimweg, als ein Ventil die Kabinenluft entweichen ließ, die einzigen menschlichen Todesfälle, die je im Weltraum eintraten. Und 1975, in einem vollständigen Tonartwechsel, dockte eine Soyuz mit einem Apollo im Orbit an, und ein Amerikaner und ein Sowjet gaben sich durch die Luke die Hand — das symbolische Ende des Wettlaufs ins All."
+      "md": "Soyuz' erster bemannter Flug tötete 1967 seinen Piloten: Vladimir Komarov flog ein Raumschiff voller bekannter Mängel und starb, als seine Fallschirme versagten und die Kapsel auf den Boden aufschlug — der erste Todesfall während eines Fluges in der Geschichte der Raumfahrt. Das Programm erholte sich, und 1969 vollzogen Soyuz 4 und 5 das erste Andocken zweier bemannter Raumfahrzeuge, wobei Kosmonauten durch einen Weltraumspaziergang zwischen ihnen wechselten. Dann wurde 1971 die Besatzung von Soyuz 11 die erste, die an Bord einer Raumstation lebte — und starb auf dem Heimweg, als ein Ventil die Kabinenluft entweichen ließ, die einzigen menschlichen Todesfälle, die je im Weltraum auftraten. Und 1975, in einem kompletten Stimmungswechsel, dockte eine Soyuz mit einer Apollo in der Umlaufbahn an, und ein Amerikaner und ein Sowjet schüttelten sich durch die Luke die Hand — das symbolische Ende des Wettlaufs ins All."
     },
     {
       "type": "prose",
-      "md": "Das hätte die ganze Geschichte sein können: ein vielversprechender Entwurf, der in Tragödie begann und das Rennen mit einem Handschlag beendete. Stattdessen war es nur der Anfang. Soyuz flog weiter — zu Salyut, zu Mir, zur International Space Station — und wurde weiter verfeinert, bis das Schiff, das in seinen ersten vier Jahren zwei Besatzungen tötete, zur sichersten und zuverlässigsten Art wurde, den Orbit zu erreichen, die je betrieben wurde."
+      "md": "Das hätte die ganze Geschichte sein können: ein vielversprechender Entwurf, der in Tragödie begann und das Rennen mit einem Händedruck beendete. Stattdessen war es nur der Anfang. Soyuz flog weiter — zu Salyut, zu Mir, zur International Space Station — und wurde weiter verfeinert, bis das Schiff, das zwei Besatzungen in seinen ersten vier Jahren tötete, zum sichersten und zuverlässigsten Weg in die Umlaufbahn wurde, den je jemand betrieben hat."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Der rote Faden von Soyuz ist Zuverlässigkeit, die zu einem schrecklichen Preis erkauft und dann über Jahrzehnte vermehrt wurde. Jede seiner frühen Katastrophen schrieb eine dauerhafte Regel in den Entwurf: Nach Komarov wurden das Fallschirm- und Steuerungssystem überarbeitet; nach Soyuz 11 flogen Kosmonauten Start oder Wiedereintritt nie wieder ohne Druckanzüge. Das Programm lernte auf die Weise, wie Sicherheit gewöhnlich gelernt wird — aus den Unfällen — und dann, anders als so viele Programme, flog es dasselbe Grundfahrzeug lange genug, damit sich diese Lektionen zu etwas nahezu Unzerbrechlichem ansammelten."
+      "md": "Die durchgehende Linie von Soyuz ist Zuverlässigkeit, die zu einem schrecklichen Preis erkauft und dann über Jahrzehnte hinweg verstärkt wurde. Jede seiner frühen Katastrophen schrieb eine permanente Regel in den Entwurf: Nach Komarov wurden das Fallschirm- und Kontrollsystem überarbeitet; nach Soyuz 11 flogen Kosmonauten nie wieder Start oder Wiedereintritt ohne Druckanzüge. Das Programm lernte auf die Weise, wie Sicherheit normalerweise gelernt wird — aus den Unfällen — und dann, anders als so viele Programme, flog es dasselbe Grundfahrzeug lange genug weiter, damit sich diese Lektionen zu etwas nahezu Unzerbrechlichem verdichteten."
     },
     {
       "type": "prose",
-      "md": "Es wechselte auch völlig die Aufgabe. Konzipiert, um die Amerikaner zum Mond zu schlagen, verlor Soyuz dieses Rennen und wurde stillschweigend umfunktioniert — zur Fähre, die Besatzungen zu den Raumstationen der Sowjetunion brachte, dann zu Mir, dann zur International Space Station, die mit ebendiesen Amerikanern gebaut wurde. Als das US Space Shuttle 2011 außer Dienst gestellt wurde, wurde Soyuz neun Jahre lang die *einzige* Möglichkeit, mit der irgendein Mensch die Raumstation erreichen konnte: Das gesamte internationale Programm hing von einem sowjetischen Entwurf aus den 1960er Jahren ab."
+      "md": "Es wechselte auch völlig seine Aufgabe. Konzipiert, um im Wettlauf zum Mond gegen die Amerikaner anzutreten, verlor Soyuz dieses Rennen und wurde stillschweigend umfunktioniert — zur Fähre, die Besatzungen zu den Raumstationen der Sowjetunion brachte, dann zu Mir, dann zur International Space Station, die mit eben diesen Amerikanern gebaut wurde. Als das US Space Shuttle 2011 außer Dienst gestellt wurde, wurde Soyuz für neun Jahre die *einzige* Möglichkeit für irgendeinen Menschen, die Raumstation zu erreichen: Das gesamte internationale Programm hing von einem sowjetischen Entwurf aus den 1960er Jahren ab."
     },
     {
       "type": "prose",
-      "md": "Der Handschlag von Apollo-Soyuz 1975 ist das Scharnier. Er beendete die Ära, in der Soyuz existierte, um den Westen zu schlagen, und öffnete diejenige, in der es das nächste halbe Jahrhundert damit verbringen würde, die Astronauten des Westens neben Russlands Kosmonauten zu transportieren — dasselbe Raumschiff, dieselbe Startrampe, eine völlig andere Welt."
+      "md": "Der Händedruck von Apollo-Soyuz 1975 ist das Scharnier. Er beendete die Ära, in der Soyuz existierte, um den Westen zu schlagen, und eröffnete jene, in der es das nächste halbe Jahrhundert damit verbringen würde, die Astronauten des Westens neben Russlands Kosmonauten zu transportieren — dasselbe Raumschiff, dieselbe Startrampe, eine völlig andere Welt."
     }
   ],
   "legacy": [
@@ -63,26 +63,26 @@
       "image": {
         "reuse": "missions/apollo-soyuz/02"
       },
-      "caption": "Apollo-Soyuz, Juli 1975 — ein sowjetisches und ein amerikanisches Raumschiff dockten im Orbit an, und der Wettlauf ins All endete nicht mit einem Sieger, sondern mit einem Handschlag.",
+      "caption": "Apollo-Soyuz, Juli 1975 — ein sowjetisches und ein amerikanisches Raumschiff dockten in der Umlaufbahn an, und der Wettlauf ins All endete nicht mit einem Gewinner, sondern mit einem Händedruck.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "Soyuz' Vermächtnis ist einfach, dass es nie aufhörte. Es ist das am längsten dienende und meistgeflogene bemannte Raumschiff der Geschichte — weit über hundertfünfzig bemannte Flüge über sechs Jahrzehnte — und sein grundlegendes Drei-Modul-Design, verfeinert aber nie ersetzt, transportiert noch heute Besatzungen. Kein anderes bemanntes Raumschiff ist diesem Rekord auch nur nahegekommen. Das Schiff, das damit begann, seinen Piloten zu töten, wurde zum vertrauenswürdigsten Fahrzeug in der Raumfahrt, dasjenige, auf das sich jedes andere Programm stützte, wenn es ein Transportmittel brauchte, das einfach funktionierte."
+      "md": "Soyuz' Vermächtnis ist schlicht, dass es nie aufhörte. Es ist das am längsten dienende und am meisten geflogene bemannte Raumschiff in der Geschichte — mehr als hundertfünfzig bemannte Flüge über sechs Jahrzehnte — und sein grundlegendes Drei-Modul-Design, verfeinert, aber nie ersetzt, bringt noch heute Besatzungen ins All. Kein anderes bemanntes Raumschiff ist diesem Rekord auch nur nahe gekommen. Das Schiff, das damit begann, seinen Piloten zu töten, wurde zum vertrauenswürdigsten Fahrzeug in der Raumfahrt, auf das jedes andere Programm sich verließ, wenn es ein Transportmittel brauchte, das einfach funktionierte."
     },
     {
       "type": "prose",
-      "md": "Sein tieferes Vermächtnis ist eine Lektion über den Wert guter Grundlagen und geduldiger Iteration gegenüber dem auffälligen Austausch. Wo die Vereinigten Staaten ganze Raumschiffgenerationen bauten und außer Dienst stellten — Mercury, Gemini, Apollo, Shuttle — fanden die Sowjets einen Entwurf, der es wert war, behalten zu werden, und verbrachten fünfzig Jahre damit, ihn besser zu machen. Beide Ansätze erreichten den Weltraum. Nur einer brachte ein Fahrzeug hervor, das im Konzept im Wesentlichen unverändert in sein siebtes Jahrzehnt fliegt."
+      "md": "Sein tieferes Vermächtnis ist eine Lektion über den Wert einer guten Grundsubstanz und geduldiger Iteration gegenüber dem auffälligen Ersatz. Wo die Vereinigten Staaten ganze Raumschiffgenerationen bauten und außer Dienst stellten — Mercury, Gemini, Apollo, Shuttle — fanden die Sowjets einen Entwurf, der es wert war, behalten zu werden, und verbrachten fünfzig Jahre damit, ihn besser zu machen. Beide Ansätze erreichten den Weltraum. Nur einer produzierte ein Fahrzeug, das noch heute fliegt, konzeptionell im Wesentlichen unverändert, in seinem siebten Jahrzehnt."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Soyuz' härteste Lektion ist, dass Zuverlässigkeit nicht am Anfang eingebaut wird; sie wird verdient, gewöhnlich durch Scheitern, und nur von einer Organisation, die bereit ist, dasselbe Ding lange genug weiterzufliegen, um zu lernen. Soyuz war nicht sicher, als es begann — es wurde überstürzt, und es tötete Menschen. Was es sicher machte, waren Jahrzehnte des Fliegens, bei denen jede Schwachstelle der Reihe nach gefunden und behoben wurde, an einem Fahrzeug, das stabil genug war, dass die Lektionen haften blieben. Die Versuchung ist immer, einen problematischen Entwurf zu ersetzen; manchmal ist der weisere Weg, ihn zu behalten und richtig zu machen."
+      "md": "Soyuz' härteste Lektion ist, dass Zuverlässigkeit nicht am Anfang eingebaut wird; sie wird verdient, normalerweise durch Versagen, und nur von einer Organisation, die bereit ist, dasselbe Ding lange genug weiterzufliegen, um zu lernen. Soyuz war nicht sicher, als es begann — es wurde überstürzt, und es tötete Menschen. Was es sicher machte, waren Jahrzehnte des Fliegens, das Finden jeder Schwäche nacheinander und das Beheben, an einem Fahrzeug, das stabil genug war, dass die Lektionen haften blieben. Die Versuchung ist immer, einen problematischen Entwurf zu ersetzen; manchmal ist der klügere Weg, ihn zu behalten und richtig zu machen."
     },
     {
       "type": "prose",
-      "md": "Die zweite Lektion ist die Gefahr, eine Frist eine Warnung überschreiben zu lassen. Soyuz 1 flog mit Mängeln, die seine eigenen Ingenieure markiert hatten, weil die Antwort auf Apollo in jenem Monat wichtiger war als zuzugeben, dass das Schiff nicht bereit war — und ein Kosmonaut starb dafür. Es ist dasselbe Versagen, das Vostoks Kultur der Geheimhaltung um jeden Preis geprobt hatte, endlich mit einem Leben bezahlt. Wenn die Menschen, die der Maschine am nächsten sind, sagen, sie sei nicht bereit, ist der Zeitplan das, was nachgeben sollte."
+      "md": "Die zweite Lektion ist die Gefahr, eine Frist eine Warnung überstimmen zu lassen. Soyuz 1 flog mit Mängeln, die seine eigenen Ingenieure gekennzeichnet hatten, weil die Antwort auf Apollo in jenem Monat wichtiger war als zuzugeben, dass das Schiff nicht bereit war — und ein Kosmonaut starb dafür. Es ist derselbe Fehler, den Vostoks Kultur der Geheimhaltung um jeden Preis geprobt hatte, schließlich mit einem Leben bezahlt. Wenn die Menschen, die der Maschine am nächsten sind, sagen, dass sie nicht bereit ist, ist der Zeitplan das, was nachgeben sollte."
     }
   ]
 }

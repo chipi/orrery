@@ -1,43 +1,43 @@
 {
   "name": "Parker Solar Probe",
-  "type": "SOLAR-ORBITER · ACTIVE",
-  "first": "Sonnennächstes Raumfahrzeug aller Zeiten (6,1 M km, 9,86 R☉); erstes Raumfahrzeug, das in die Sonnenkorona eintrat (2021-04-28); schnellstes von Menschen geschaffenes Objekt (192 km/s)",
-  "description": "Parker Solar Probe absolvierte den energiereichsten Start, der jemals für eine wissenschaftliche Mission geflogen wurde — C3 von 154 km²/s², was eine speziell angefertigte Star 48BV-Feststoffrakete als dritte Stufe auf einer Delta IV Heavy erforderte, nur um der Erde auf eine sonnenfallende Flugbahn zu entkommen. Sieben Venus-Gravitationsmanöver über sechs Jahre senkten das Perihel schrittweise von 0,16 AU (P1, 2018-11-05) auf 0,046 AU (P22, 2024-12-24 — 9,86 Sonnenradien, 6,1 Millionen km von der Oberfläche). Bei P8 am 2021-04-28 tauchte Parker unter die kritische Alfvén-Fläche — das erste Raumfahrzeug überhaupt, das in die Sonnenkorona eintrat. Bei P22 erreichte es 192 km/s und wurde damit zum schnellsten von Menschen geschaffenen Objekt aller Zeiten. Der 11,43 cm dicke Kohlenstoff-Kohlenstoff-Hitzeschild hielt 1.377 °C stand, während der Raumfahrzeugbus 1 Meter dahinter bei Raumtemperatur blieb.",
+  "type": "SONNEN-ORBITER · AKTIV",
+  "first": "Raumfahrzeug in größter Nähe zur Sonne je geflogen (6,1 M km, 9,86 R☉); erstes Raumfahrzeug, das die Sonnenkorona betreten hat (2021-04-28); schnellstes von Menschen geschaffenes Objekt (~191 km/s)",
+  "description": "Parker Solar Probe führte den höchsten Energiestart durch, der jemals für eine Wissenschaftsmission geflogen wurde — C3 von 154 km²/s², was eine speziell angepasste Star 48BV-Feststoffoberstufe auf einer Delta IV Heavy erforderte, um die Erde zu verlassen und in eine Sonnenfallbahn zu gelangen. Sieben Venusgravitationsassistenten über sechs Jahre senkten das Perihel schrittweise von 0,16 AU (P1, 2018-11-05) auf 0,046 AU (P22, 2024-12-24 — 9,86 Sonnenradien, 6,1 Millionen km von der Oberfläche). Bei P8 am 2021-04-28 drang Parker unter die kritische Alfvén-Oberfläche — das erste Raumfahrzeug, das jemals die Korona der Sonne betreten hat. Bei P22 erreichte es ~191 km/s und wurde damit das schnellste von Menschen geschaffene Objekt überhaupt. Das 11,43 cm dicke Kohlenstoff-Kohlenstoff-Wärmeschutzschild hielt 1.377 °C aus, während das Raumfahrzeugbus 1 Meter dahinter Raumtemperatur behielt.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "Delta IV Heavy + Star 48BV — höchstes C3 aller Zeiten für eine wissenschaftliche Mission (154 km²/s²).",
+      "note": "Delta IV Heavy + Star 48BV — höchster C3 je für eine Wissenschaftsmission (154 km²/s²).",
       "type": "nominal"
     },
     {
       "met": 52,
       "label": "VGA-1",
-      "note": "Erstes Venus-Gravitationsmanöver 2018-10-03.",
+      "note": "Erste Venusgravitationshilfe 2018-10-03.",
       "type": "info"
     },
     {
       "met": 85,
       "label": "P1 — ERSTES PERIHEL",
-      "note": "2018-11-05, 0,16 AU. Sonnennächster Punkt aller Zeiten, übertraf Helios 2.",
+      "note": "2018-11-05, 0,16 AU. Nähe zur Sonne wie nie zuvor, Helios 2 übertreffend.",
       "type": "info"
     },
     {
       "met": 989,
-      "label": "P8 — EINTRITT IN DIE KORONA",
-      "note": "2021-04-28. Erstes Raumfahrzeug, das unter die kritische Alfvén-Fläche tauchte.",
+      "label": "P8 — KORONAEINGANG",
+      "note": "2021-04-28. Erstes Raumfahrzeug, das unter die kritische Alfvén-Oberfläche eindrang.",
       "type": "info"
     },
     {
       "met": 1830,
       "label": "VGA-6",
-      "note": "Sechstes Venus-Manöver 2023-08-21.",
+      "note": "Sechste Venusgravitationshilfe 2023-08-21.",
       "type": "info"
     },
     {
       "met": 2326,
-      "label": "P22 — DESIGN-MEILENSTEIN",
-      "note": "2024-12-24. 9,86 R☉ (6,1 M km von der Sonne). 192 km/s. Hitzeschild 1.377 °C.",
+      "label": "P22 — DESIGNMEILENSTEIN",
+      "note": "2024-12-24. 9,86 R☉ (6,1 M km von der Sonne). ~191 km/s. Wärmeschutzschild 1.377 °C.",
       "type": "info"
     }
   ]

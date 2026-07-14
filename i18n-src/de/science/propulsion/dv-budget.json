@@ -1,15 +1,15 @@
 {
-  "title": "Δv als Missionsbudget",
-  "intro_sentence": "Die einzige Zahl, die sagt, ob eine Mission möglich ist — gesamte Geschwindigkeitsänderung über alle Brennphasen.",
+  "title": "∆v als Missionsbudget",
+  "intro_sentence": "Die Kennzahl, die bestimmt, ob eine Mission möglich ist – die gesamte Geschwindigkeitsänderung, die Sie aufwenden müssen, summiert über alle Manöver.",
   "narrative_101": [
-    "Geld für Raumfahrt ist nicht Dollar. Es ist Δv (\"delta-v\") in km/s. Jede Brennphase kostet was. Das Δv-Budget ist die laufende Summe.",
-    "Killer-Twist: deine Rakete hat kein unbegrenztes Δv. Hartes Limit per Tsiolkovsky. Übersteigt deine Rechnung das Limit, ist die Mission unmöglich — Geld hilft nicht.",
-    "Referenzzahlen: in den Orbit ~9,4 km/s. Hohmann zum Mars +3,6. Marseinschuss +2. Marslandung gesamt ~15 km/s — am Limit chemischer Raketen. Deshalb ist Marslanden viel schwerer als Mondlanden."
+    "Geld für Raumfahrt sind keine Dollar. Es ist ∆v – gesprochen »delta-v« – und wird in Kilometern pro Sekunde gemessen. Jedes Manöver Ihrer Rakete kostet ∆v. Jeder Schritt auf einer Flugbahn hat einen Preis in km/s. Das ∆v-Budget der Mission ist einfach die Laufende Summe: Start + Einschuss + Kurskorektionen + Ankunft + Landung. Addieren Sie alles, das ist Ihre Rechnung.",
+    "Und jetzt kommt der Haken. Ihre Rakete hat nicht unbegrenzt ∆v. Sie hat eine harte Obergrenze, gesetzt durch die Tsiolkovsky-Gleichung, bestimmt einzig davon, wie viel Ihrer Rakete Treibstoff ist und wie gut Ihre Triebwerke sind. Wenn Ihre Rechnung die Obergrenze überschreitet, ist die Mission unmöglich. Mehr Geld hineinzuwerfen hilft nicht. Die Mathematik gewinnt.",
+    "Richtwerte zum Verinnerlichen: von der Erde in die Umlaufbahn braucht man ~9,4 km/s. Von der Umlaufbahn zu einer Hohmann-Bahn zum Mars kommen ~3,6 dazu. Die Einschwenkung beim Mars addiert noch ~2. Das sind etwa 15 km/s, um das Mars-System zu erreichen und in die Umlaufbahn zu bremsen – die dünne Atmosphäre des Mars macht dann den Großteil des Abstiegs. Das ist der Grund, warum eine Landung auf dem Mars viel schwieriger ist als auf dem Mond, und warum jedes Gramm Masse auf einem Mars-Lander erbittert umstritten ist."
   ],
   "body_paragraphs": [
-    "Δv ist die Buchhaltungswährung der Raumfahrt. Jede Brennphase — Erdaufstieg, Bahn verlassen, Korrektur, Bremsen am Ziel — kostet Geschwindigkeitsänderung. Summe = Δv-Budget.",
-    "Angebot: Tsiolkovsky setzt die Decke (Isp + Treibstoffanteil). Nachfrage: Trajektoriendesign findet den billigsten Pfad. Mission fliegt, wenn Angebot ≥ Nachfrage. Sonst nicht.",
-    "Referenzen: Erdoberfläche zu LEO ~9,4 km/s. LEO zu Hohmann-Mars +3,6 km/s. MOI +2 km/s. Direkte Marslandung ~15 km/s — am Limit aktueller chemischer Einzelschuss-Raketen."
+    "∆v (delta-v) ist die Buchhaltungswährung der Raumfahrt. Jeder Triebwerkseinsatz – von der Erde abheben, die Umlaufbahn verlassen, die Bahn korrigieren, am Ziel abbremsen – kostet Sie einen Betrag der Geschwindigkeitsänderung. Addieren Sie alle zusammen und Sie haben das ∆v-Budget der Mission.",
+    "Auf der Angebotsseite: Die ∆v-Fähigkeit Ihrer Rakete ergibt sich aus der Tsiolkovsky-Gleichung – der Engine-`Isp` und der Treibstoffanteil setzen die Obergrenze. Auf der Nachfrageseite: Das Flugbahndesign wählt den Weg mit den niedrigsten summierten Kosten. Eine Mission fliegt, wenn Angebot ≥ Nachfrage. Sie fliegt nicht, wenn nicht – egal wie viel Geld Sie an das Problem werfen.",
+    "Einige Referenzzahlen: Von der Erdoberfläche in LEO kostet ~9,4 km/s ∆v (das meiste davon gegen Schwerkraft und Atmosphäre). LEO zu einer Hohmann-Transferbahn zum Mars addiert ~3,6 km/s. Die Einschwenkung in die Mars-Umlaufbahn addiert weitere ~2 km/s. Das sind zusammen etwa 15 km/s, um das Mars-System zu erreichen und in die Umlaufbahn einzufangen – die dünne Atmosphäre des Mars bewältigt den Abstieg, keine zusätzlichen Antriebe."
   ],
-  "diagram_caption": "Gestapelte Balken: Δv Start + Injektion + Cruise + Ankunft = Gesamtbudget."
+  "diagram_caption": "Stapelbalken: Start-∆v + Einschuss + Reisekorektionen + Ankunft = Gesamtmissionsbudget."
 }

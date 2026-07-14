@@ -1,8 +1,8 @@
 {
   "name": "Luna 9",
-  "type": "LANDER SENZA EQUIPAGGIO · VOLATO",
-  "first": "Primo atterraggio morbido sulla Luna; prime fotografie dalla superficie lunare",
-  "description": "Dopo 11 fallimenti sovietici e 5 missioni Ranger americane progettate solo per schiantarsi, Luna 9 divenne la prima navicella spaziale ad atterrare dolcemente su un altro mondo. Nove immagini panoramiche restituite in 8 minuti hanno risolto un lungo dibattito scientifico: la superficie della Luna era solida, non un mare di polvere abbastanza profondo da inghiottire un lander. La missione è durata 3 giorni prima dell'esaurimento della batteria. Nel giro di pochi mesi, ogni missione diretta sulla Luna utilizzò l'atterraggio morbido come linea di base.",
+  "type": "LANDER SENZA EQUIPAGGIO · COMPLETATA",
+  "first": "Primo allunaggio dolce della Luna; prime fotografie dalla superficie lunare",
+  "description": "Dopo 11 fallimenti sovietici e 5 missioni americane Ranger progettate solo per impattare, Luna 9 divenne il primo veicolo spaziale ad allunare dolcemente su un altro mondo. Nove immagini — tra cui cinque panorami — trasmesse in tre sessioni nel corso di tre giorni risolsero un dibattito scientifico di lunga data: la superficie della Luna era solida, non un mare di polvere abbastanza profondo da inghiottire un lander. La missione durò 3 giorni prima dell'esaurimento della batteria. Nel giro di pochi mesi, ogni missione diretta verso la Luna adottò l'allunaggio dolce come standard.",
   "events": [
     {
       "met": 0,
@@ -12,20 +12,20 @@
     },
     {
       "met": 3,
-      "label": "TOCCO",
-      "note": "Atterraggio morbido all'Oceanus Procellarum 03/02/1966 18:45 UTC. Primo atterraggio morbido su un altro mondo.",
+      "label": "ALLUNAGGIO",
+      "note": "Allunaggio dolce a Oceanus Procellarum 03-02-1966 18:45 UTC. Primo allunaggio dolce su un altro mondo.",
       "type": "nominal"
     },
     {
       "met": 3.01,
       "label": "PRIME IMMAGINI",
-      "note": "Nove immagini panoramiche restituite in tre sessioni di trasmissione.",
+      "note": "Nove immagini tra cui cinque panorami, trasmesse in tre sessioni nel corso di tre giorni.",
       "type": "info"
     },
     {
       "met": 6,
-      "label": "PERDITA DI SEGNALE",
-      "note": "Batteria scarica; trasmissione finale 06-02-1966.",
+      "label": "PERDITA DEL SEGNALE",
+      "note": "Batteria esaurita; ultima trasmissione 06-02-1966.",
       "type": "warning"
     }
   ]

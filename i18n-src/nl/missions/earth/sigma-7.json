@@ -1,7 +1,27 @@
 {
   "name": "Sigma 7 / MA-8",
-  "dispatch": "Na twee vluchten die eindigden in schrikmomenten was Sigma 7 degene die met opzet saai was — en dat was de prestatie. Wally Schirra noemde het een schoolvoorbeeld van een technische test en vloog het ook zo: minimale experimenten, zorgvuldig beheer van elke kilogram brandstof en elke ampère vermogen, zes banen waarin bewezen werd dat het ruimtevaartuig met discipline bestuurd kon worden in plaats van ermee te worstelen. Hij kwam bijna recht boven op de bergingsvloot terecht. In een programma dat onder druk had geïmproviseerd, toonde Sigma 7 aan dat de Amerikanen hadden geleerd het ding rustig te vliegen — de voorwaarde voor de veel langere missies die volgden.",
-  "type": "BEMAND AARDBAAN · GEVLOGEN",
-  "first": "Eerste leerboekachtige Mercury-vlucht — 6 banen; dubbele duur Glenn/Carpenter",
-  "description": "Wally Schirras vlucht van 6 banen — verdubbelde de missieduur van Glenn en Carpenter. Schirra noemde zijn vlucht een 'leerboek engineering-test' — minimale experimentele belasting, focus op het sparen van verbruiksstoffen, validatie van het voertuig voor langere duur. Vluchtduur 9 u 13 min; baanparameters 161 × 283 km. Landde in zee 480 km ten NO van Midway in de Stille Oceaan — eerste Mercury-vlucht die in de Stille Oceaan plonsde. Aurora 7 had 38 kg standregelinggas verbruikt; Schirra gebruikte slechts 32 kg bij twee keer zoveel vliegtijd. De capsule Sigma 7 is te zien in het Astronaut Memorial Planetarium and Observatory, Cocoa FL."
+  "type": "BEMANDE AARDEORBIET · UITGEVOERD",
+  "first": "Eerste modelmatige Mercury-vlucht — 6 banen; dubbele duur van Glenn / Carpenter",
+  "dispatch": "Na twee vluchten die op schrikwekkende momenten eindigden, was Sigma 7 degene die opzettelijk saai was — en dat was de prestatie. Wally Schirra noemde het een modelmatige engineeringtest en vloog het als zodanig: minimale experimenten, zorgvuldige besparing van elke kilogram brandstof en elke ampère stroom, zes banen doorgebracht met het bewijzen dat het ruimtevaartuig met discipline kon worden bediend in plaats van bevochten te worden. Hij splashte neer vrijwel boven op het bergingsvaartuig. In een programma dat improviseren onder druk had gedaan, toonde Sigma 7 aan dat de Amerikanen hadden geleerd het ding kalm te vliegen — de vereiste voor de veel langere missies die zouden volgen.",
+  "description": "Wally Schirra's vlucht met 6 banen — verdubbelde de missionsduur van Glenn en Carpenter. Schirra noemde zijn vlucht een \\\"modelmatige engineeringtest\\\" — minimale experimentele belasting, focus op het sparen van verbruiksmiddelen, validatie van het voertuig voor langere duur. Vluchtduur 9 h 13 min; orbitale parameters 161 × 283 km. Splashte neer ~445 km NNO van Midway in de Stille Oceaan — eerste Mercury-vlucht met splashdown in de Stille Oceaan. Aurora 7 had 38 kg regelingsgas gebruikt; Schirra gebruikte slechts 32 kg met dubbele vluchtduur. Capsule Sigma 7 op display in het Astronaut Memorial Planetarium and Observatory, Cocoa FL.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlas LV-3B vanaf Cape Canaveral LC-14 1962-10-03 12:15 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "BAAN-INBRENGING",
+      "note": "Inbrenging in 161 × 283 km aardeorbiet.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.385,
+      "label": "SPLASHDOWN",
+      "note": "Stille Oceaan ~445 km NNO van Midway na 6 banen / 9 h 13 min. Eerste Mercury-bergingsoperatie in de Stille Oceaan.",
+      "type": "nominal"
+    }
+  ]
 }

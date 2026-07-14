@@ -1,38 +1,38 @@
 {
   "name": "Apollo-Soyuz Test Project (ASTP)",
-  "dispatch": "Apollo-Soyuz ist der Punkt, an dem das Wettrennen im All endet — nicht an einer Ziellinie, sondern mit einem Händedruck. Im Juli 1975 trafen sich ein amerikanisches Apollo- und ein sowjetisches Soyuz-Raumschiff, die rivalisierenden Raumfahrzeuge der rivalisierenden Supermächte, im Orbit und koppelten an, und Tom Stafford und Alexei Leonov reichten sich durch die offene Luke zwischen ihnen die Hände. Es erforderte einen gemeinsam gebauten Kopplungsadapter, zwei Besatzungen, die die Sprache des jeweils anderen lernten, und ein Tauwetter im Kalten Krieg, das tief genug war, um den erbitterten Konkurrenten jener Ära die Zusammenarbeit vor den Augen der ganzen Welt zu ermöglichen. Nichts daran war streng genommen notwendig; genau das war der Punkt. Nach achtzehn Jahren des Wettlaufs um den ersten Platz entschieden sich die beiden Programme für einen Flug, einfach zusammenzutreffen — und schufen damit die Vorlage für die internationale Zusammenarbeit, die eines Tages die Raumstation errichten sollte.",
-  "type": "BEMANNTER ERDORBIT · GEFLOGEN",
-  "first": "Erste internationale Zusammenarbeit in der bemannten Raumfahrt; erstes US-UdSSR-Rendezvous + Andocken",
-  "description": "Das Apollo-Soyuz Test Project — erster internationaler bemannter Raumflug, erstes US-UdSSR-Rendezvous + Andocken und der letzte Flug eines Apollo-CSM. Apollo (Stafford + Brand + Slayton) startete am 15.07.1975 von LC-39B; Sojus 19 (Leonow + Kubassow) startete am selben Tag von Baikonur. Apollos Andockmodul (gebaut von NASA + Rockwell) verwendete einen neuen androgynen Andockring (APAS), der es jedem Raumschiff erlaubte, aktiv zu sein — der Vorläufer aller internationalen Andocksysteme seither (Mir, ISS, Tiangong, Dragon, Starliner). Lukenöffnung am 17.07.1975 gegen 16:00 UTC; die Besatzungen tauschten Flaggen, Geschenke und gemeinsame Experimente über 4 separate Andocksequenzen im Laufe von 44 Stunden angedockt aus. Sojus kehrte am 21.07.1975 zurück; Apollo blieb weitere 5 Tage in der Umlaufbahn vor der Wasserung am 24.07.1975 — die letzte Apollo-Wasserung überhaupt. CSM-111 wird im California Science Center in LA (neben Endeavour) ausgestellt. Die Détente-Ära-Zusammenarbeit, die ASTP modellierte, prägte 20 Jahre später das Shuttle-Mir-Programm.",
+  "type": "BESATZTES ERDUMLAUFBAHN-FLUGZEUG · GEFLOGEN",
+  "first": "Erste internationale Zusammenarbeit im bemannten Raumflug; erste US-UdSSR-Rendezvous + Docking",
+  "dispatch": "Apollo-Soyuz ist der Ort, wo das Raumrennen endet — nicht an einer Ziellinie, sondern mit einem Händedruck. Im Juli 1975 trafen sich Apollo und Soyuz, die rivalisierenden Raumfahrzeuge der rivalisierenden Supermächte, im Orbit und dockten an. Tom Stafford und Alexei Leonov schüttelten sich durch die offene Luke zwischen ihnen die Hand. Es brauchte einen gemeinsam gebauten Kopplungsadapter, zwei Besatzungen, die die Sprache der jeweils anderen lernten, und eine Entspannung im Kalten Krieg, die tiefgreifend genug war, um den heftigsten Wettbewerbern der Ära eine Zusammenarbeit in voller Öffentlichkeit zu ermöglichen. Nichts davon war streng notwendig; darin lag der Sinn. Nach achtzehn Jahren des Wettlaufs um den ersten Platz entschieden sich die beiden Programme bei einem Flug einfach zu treffen — und schufen die Vorlage für die internationale Zusammenarbeit, die eines Tages die Raumstation bauen würde.",
+  "description": "Das Apollo-Soyuz Test Project — erster internationaler bemannter Raumflug, erste US-UdSSR-Rendezvous + Docking und letzter Flug eines Apollo-CSM. Apollo (Stafford + Brand + Slayton) startete am 15.07.1975 von LC-39B; Soyuz 19 (Leonov + Kubasov) startete am selben Tag von Baikonur. Apollos Kopplungsmodul (gebaut von NASA + Rockwell) verwendete einen neuen androgynen Kopplungsring (APAS), der es beiden Raumfahrzeugen erlaubte, aktiv zu sein — der Vorläufer jedes internationalen Dockingsystems seit damals (Mir, ISS, Tiangong, Dragon, Starliner). Lukenöffnung am 17.07.1975 ≈16:00 UTC; die Besatzungen tauschten Flaggen, Geschenke und gemeinsame Experimente bei 2 Dockings aus (erstes am 17. Juli, Übungs-Docking am 19. Juli) mit insgesamt ≈44 Stunden angedockt. Soyuz 19 landete am 21.07.1975; Apollo blieb noch 5 weitere Tage im Orbit, bevor es am 24.07.1975 wasserte — das letzte Apollo-Wassern aller Zeiten. CSM-111 ist im California Science Center in Los Angeles ausgestellt (neben Endeavour). Die während der Entspannungszeit durchgeführte Zusammenarbeit, die ASTP verkörperte, inspirierte das Shuttle-Mir-Programm 20 Jahre später.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH (Apollo)",
-      "note": "Saturn IB (AS-210) from LC-39B 1975-07-15 19:50 UTC. 7.5 h after Soyuz 19 (Baikonur 1975-07-15 12:20 UTC).",
+      "label": "START (Apollo)",
+      "note": "Saturn IB (AS-210) von LC-39B am 15.07.1975 19:50 UTC. 7,5 h nach Soyuz 19 (Baikonur 15.07.1975 12:20 UTC).",
       "type": "nominal"
     },
     {
       "met": 1.85,
       "label": "DOCKING",
-      "note": "Apollo + Soyuz 19 dock 1975-07-17 16:09 UTC. First US-USSR rendezvous + dock. Hatch opens at 19:17 UTC; \"Glad to see you\" handshake.",
+      "note": "Apollo + Soyuz 19 docken am 17.07.1975 16:09 UTC an. Erste US-UdSSR-Rendezvous + Docking. Luke öffnet sich um 19:17 UTC; Händedruck zwischen Stafford und Leonov etwa 3 Stunden später (≈22:19 UTC).",
       "type": "info"
     },
     {
       "met": 2,
-      "label": "JOINT OPS",
-      "note": "Flag + gift exchange; joint experiments; 4 dockings across 44 hours docked.",
+      "label": "GEMEINSAME OPERATIONEN",
+      "note": "Flaggen- + Geschenkaustausch; gemeinsame Experimente; 2 Dockings über ≈44 Stunden angedockt.",
       "type": "nominal"
     },
     {
       "met": 3.8,
-      "label": "UNDOCK",
-      "note": "Final undock 1975-07-19 16:26 UTC. Soyuz 19 lands 1975-07-21 in Kazakhstan.",
+      "label": "UNDOCKING",
+      "note": "Finales Undocking am 19.07.1975 16:26 UTC. Soyuz 19 landet am 21.07.1975 in Kasachstan.",
       "type": "nominal"
     },
     {
       "met": 9.06,
-      "label": "SPLASHDOWN (Apollo)",
-      "note": "Apollo splashed down in Pacific 1975-07-24 21:18 UTC — last Apollo splashdown ever. CSM-111 displayed at California Science Center LA.",
+      "label": "WASSERN (Apollo)",
+      "note": "Apollo wasserte im Pazifik am 24.07.1975 21:18 UTC — das letzte Apollo-Wassern aller Zeiten und die letzte US-amerikanische Wasserlandung mit Besatzung bis zu SpaceX Crew Dragon 2020. CSM-111 ist im California Science Center Los Angeles ausgestellt.",
       "type": "nominal"
     }
   ]

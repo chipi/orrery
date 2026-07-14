@@ -1,84 +1,84 @@
 {
   "name": "Pioneer",
-  "tagline": "Voordat Voyager de buitenste planeten kon bezoeken, moest iemand eerst bewijzen dat de route te overleven was. Twee kleine sondes gingen voorop — door de asteroïdengordel, langs Jupiter, en naar buiten.",
+  "tagline": "Voordat Voyager de buitenplaneten kon bezoeken, moest iemand eerst bewijzen dat de route te overleven was. Twee kleine sondes gingen voorop — door de asteroïdengordel, langs Jupiter, en verder.",
   "the_land": [
     {
       "type": "prose",
-      "md": "In het begin van de jaren zeventig was het buitenste zonnestelsel niet alleen onverkend; men dacht dat het gevaarlijk was om er te komen. Tussen Mars en Jupiter lag de asteroïdengordel, en niemand wist of een ruimtevaartuig die kon oversteken zonder vernietigd te worden door puin. Daarachter waren de stralingsgordels van Jupiter naar men wist dodelijk voor elektronica. De reuzenplaneten waren het bezoeken waard, maar de route ernaartoe voerde door twee gevaren die geen machine ooit had ondergaan."
+      "md": "Begin jaren zeventig was het buitenste zonnestelsel niet alleen onverkend; men dacht dat het gevaarlijk was om er te komen. Tussen Mars en Jupiter lag de asteroïdengordel, en niemand wist of een ruimtevaartuig die kon oversteken zonder door puin vernietigd te worden. Daarachter waren de stralingsgordels van Jupiter naar verluidt dodelijk voor elektronica. De reuzenplaneten waren het bezoeken waard, maar de route erheen liep door twee gevaren die nog nooit een machine had getrotseerd."
     },
     {
       "type": "prose",
-      "md": "De Pioneers waren de verkenners die erop uit werden gestuurd om het uit te zoeken. Klein, spinstabiel en relatief eenvoudig, werden Pioneer 10 en 11 gebouwd om als eerste te gaan — om te testen of de gordel overgestoken kon worden en of een sonde een nauwe passage langs Jupiter kon overleven — zodat de veel duurdere Voyagers, die al werden gepland, zouden weten waar ze in vlogen."
+      "md": "De Pioneers waren de verkenners die werden uitgestuurd om dat uit te zoeken. Klein, spin-gestabiliseerd en relatief eenvoudig, waren Pioneer 10 en 11 gebouwd om als eerste te gaan — om te testen of de gordel overgestoken kon worden en of een sonde een passage dicht langs Jupiter kon overleven — zodat de veel duurdere Voyagers, die al in de planning zaten, zouden weten waar ze in vlogen."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Het doel was verkenning in de meest letterlijke zin: bewijs de route. Steek de asteroïdengordel over en meet hoe groot de dreiging werkelijk was. Vlieg dicht langs Jupiter en kijk of een ruimtevaartuig de straling kon doorstaan en bruikbare gegevens kon terugsturen. De wetenschap — de eerste blikken van dichtbij op Jupiter, en daarna, voor Pioneer 11, het eerste bezoek aan Saturnus — was echt, maar het diepere doel was de weg vrijmaken."
+      "md": "Het doel was verkenning in de meest letterlijke zin: bewijs de route. Steek de asteroïdengordel over en meet hoeveel van een bedreiging die werkelijk was. Vlieg dicht langs Jupiter en kijk of een ruimtevaartuig de straling aankon en bruikbare data kon terugsturen. De wetenschap — eerste close-ups van Jupiter, en vervolgens, voor Pioneer 11, het eerste bezoek aan Saturnus — was reëel, maar het diepere doel was de weg vrijmaken."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/pioneer-10/01"
       },
-      "caption": "De Pioneers werden eenvoudig gehouden en ronddraaiend voor stabiliteit, hun instrumenten registreerden velden en deeltjes net zoveel als dat ze foto's maakten. Hun taak was de gordel en de straling overleven en terugmelden wat de Voyagers zouden tegenkomen.",
+      "caption": "De Pioneers werden eenvoudig gehouden en voor stabiliteit laten roteren, hun instrumenten lazen velden en deeltjes even zeer als dat ze foto's maakten. Hun taak was de gordel en de straling overleven en terugmelden wat de Voyagers zouden tegenkomen.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Elk droeg ook een kleine gouden plaquette — ontworpen door Carl Sagan en Frank Drake — gegraveerd met een man, een vrouw en een kaart naar de zon. Het was een bescheiden bijkomstigheid vergeleken met Voyagers latere Golden Record, maar het was de eerste: het eerste object dat de mensheid opzettelijk voorzag van een boodschap en naar de sterren wierp."
+      "md": "Elk droeg ook een kleine gouden plaquette — ontworpen door Carl Sagan en Frank Drake — gegraveerd met een man, een vrouw en een kaart naar de Zon. Het was een bescheiden bijzaak vergeleken met Voyagers latere Golden Record, maar het was de eerste: het eerste object dat de mensheid bewust inscribeerde met een boodschap en naar de sterren wierp."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Beide angsten bleken ongegrond, wat de bedoeling was. Pioneer 10 stak de asteroïdengordel ongedeerd over — de gordel, zo bleek, bestond grotendeels uit lege ruimte — en werd in december 1973 het eerste ruimtevaartuig dat Jupiter bereikte, overleefde de straling en stuurde de eerste beelden van dichtbij van de reuzenplaneet en zijn manen terug. Het werd vervolgens het eerste door mensen gemaakte object op een traject om het zonnestelsel volledig te verlaten."
+      "md": "Beide angsten bleken ongegrond, wat ook de bedoeling was. Pioneer 10 stak de asteroïdengordel onbeschadigd over — de gordel, zo bleek, was voornamelijk lege ruimte — en bereikte in december 1973 als eerste ruimtevaartuig Jupiter, overleefde de straling en stuurde de eerste beelden van dichtbij van de reuzenplaneet terug. Het werd vervolgens het eerste door mensen gemaakte object op een traject om het zonnestelsel volledig te verlaten."
     },
     {
       "type": "prose",
-      "md": "Pioneer 11 ging verder. Na zijn eigen Jupiter-passage gebruikte het de zwaartekracht van de planeet om het zonnestelsel over te steken en Saturnus te bereiken in 1979 — het eerste ruimtevaartuig ooit dat dit deed — vliegend door het ringvlak om te testen of de regio veilig was, en vond de opening die de Voyagers een jaar later zouden gebruiken. De verkenners hadden de gevaren in kaart gebracht; de tour kon doorgaan."
+      "md": "Pioneer 11 ging verder. Na zijn eigen Jupiter-scheervlucht gebruikte het de zwaartekracht van de planeet om het zonnestelsel over te steken en Saturnus te bereiken in 1979 — het eerste ruimtevaartuig ooit dat dat deed — vliegend door het ringvlak om te testen of het gebied veilig was, en vindend de opening die de Voyagers in de jaren erna zouden gebruiken. De verkenners hadden de gevaren in kaart gebracht; de tour kon doorgaan."
     },
     {
       "type": "prose",
-      "md": "De Pioneers bleven decennia lang zenden terwijl ze zich verwijderden. Het laatste zwakke signaal van Pioneer 10 werd ontvangen in 2003, van meer dan twaalf miljard kilometer afstand. Beide zijn er nog steeds, nu stil, zeilend richting de sterren — Pioneer 10 in de richting van de ster Aldebaran, een reis die zo'n twee miljoen jaar zal duren."
+      "md": "De Pioneers bleven decennialang zenden terwijl ze zich verwijderden. Het laatste zwakke signaal van Pioneer 10 werd ontvangen in 2003, van meer dan twaalf miljard kilometer afstand. Beide zijn er nog steeds, nu stil, zeilend naar de sterren — Pioneer 10 in de richting van de ster Aldebaran, een reis die zo'n twee miljoen jaar zal duren."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Het verhaal van Pioneer is het onglamoureuze, essentiële werk van als eerste gaan. De Voyagers worden herinnerd om de Grand Tour; de Pioneers zijn de reden dat de Grand Tour überhaupt geprobeerd kon worden. Zij namen de risico's die onbekende gevaren omzetten in gemeten gevaren — bewezen dat de asteroïdengordel oversteekbaar was en de straling van Jupiter te overleven — zodat de missies achter hen met vertrouwen in plaats van angst ontworpen konden worden. Iemand moet altijd de route testen, en het is zelden degene die de eer krijgt."
+      "md": "Het verhaal van Pioneer is het onglamoureuze, essentiële werk van als eerste gaan. De Voyagers worden herinnerd voor de Grand Tour; de Pioneers zijn de reden dat de Grand Tour überhaupt geprobeerd kon worden. Ze namen de risico's die onbekende gevaren in meetbare veranderden — bewijzend dat de asteroïdengordel te oversteken was en Jupiters straling te overleven — zodat de missies erachter met vertrouwen in plaats van angst ontworpen konden worden. Iemand moet altijd de weg testen, en het is zelden degene die de eer krijgt."
     },
     {
       "type": "prose",
-      "md": "Het is ook een verhaal van veel bereiken met weinig. De Pioneers waren bescheiden vaartuigen, eenvoudiger en goedkoper dan de Voyagers die volgden, en ze behaalden toch een reeks echte primeurs — eerst door de gordel, eerst naar Jupiter, eerst naar Saturnus, eerst uit het zonnestelsel. Ze zijn het bewijs dat een goed gerichte kleine missie een grens kan openen waar het vlaggenschip vervolgens doorheen stapt."
+      "md": "Het is ook een verhaal van veel bereiken met weinig. De Pioneers waren bescheiden vaartuigen, eenvoudiger en goedkoper dan de Voyagers die volgden, en ze behaalden nog steeds een reeks echte primeurs — eerst door de gordel, eerst naar Jupiter, eerst naar Saturnus, eerst het zonnestelsel uit. Ze zijn het bewijs dat een goed gerichte kleine missie een grens kan openen waar het vlaggenschip vervolgens doorheen loopt."
     },
     {
       "type": "prose",
-      "md": "En ze droegen de eerste boodschap. De Pioneer-plaquette was een rustiger gebaar dan de Golden Record — een enkele gegraveerde plaat in plaats van een bibliotheek van geluiden — maar het kwam eerst, en het formuleerde het idee dat een ruimtevaartuig dat voor altijd vertrekt iets zou moeten zeggen over wie het heeft verzonden. Elke boodschap die de mensheid sindsdien naar de diepe ruimte heeft gericht, stamt af van die kleine gouden plaat vastgebout aan een verkenner."
+      "md": "En ze droegen de eerste boodschap. De Pioneer-plaquette was een stillere gebaar dan de Golden Record — een enkele gegraveerde plaat in plaats van een bibliotheek van geluiden — maar het kwam eerst, en het formuleerde het idee dat een ruimtevaartuig dat voor altijd vertrekt iets zou moeten zeggen over wie het stuurde. Elke boodschap die de mensheid sindsdien naar de diepe ruimte heeft gericht, stamt af van die kleine gouden plaat die aan een verkenner was vastgebout."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Pioneers eerste erfenis is de weg die het opende. Door te bewijzen dat de asteroïdengordel oversteekbaar was en de straling van Jupiter te overleven was, veranderde het het buitenste zonnestelsel van een theoretisch gevaar in een bereikbare bestemming — de directe enabler van Voyager, Galileo, Cassini en elke missie naar de reuzenplaneten sindsdien."
+      "md": "Pioneers eerste erfenis is de weg die het opende. Door te bewijzen dat de asteroïdengordel te oversteken was en Jupiters straling te overleven, veranderde het het buitenste zonnestelsel van een theoretisch gevaar in een bereikbare bestemming — de directe mogelijk maker van Voyager, Galileo, Cassini en elke missie naar de reuzenplaneten sindsdien."
     },
     {
       "type": "prose",
-      "md": "De tweede is een reeks permanente primeurs: eerst door de gordel, eerst naar Jupiter, eerst naar Saturnus, eerste object op een ontsnappingstraject uit het zonnestelsel. Die vermeldingen in het verslag verlopen niet, en ze behoren allemaal toe aan twee kleine, goedkope sondes."
+      "md": "Zijn tweede is een verzameling permanente primeurs: eerst door de gordel, eerst naar Jupiter, eerst naar Saturnus, eerste object op een ontsnappingstraject uit het zonnestelsel. Die vermeldingen in de records vervallen niet, en ze behoren allemaal toe aan twee kleine, goedkope sondes."
     },
     {
       "type": "prose",
-      "md": "De derde is de plaquette — de eerste opzettelijke boodschap van de aarde aan de kosmos, en de sjabloon voor de Golden Records die volgden. Pioneer stelde vast dat een vaartuig dat voor altijd vertrekt enig verslag van zijn makers zou moeten dragen, en dat idee heeft de missies zelf overleefd."
+      "md": "Zijn derde is de plaquette — de eerste bewuste boodschap van de Aarde aan de kosmos, en de sjabloon voor de Golden Records die volgden. Pioneer vestigde dat een vaartuig dat voor altijd vertrekt een verslag van zijn makers moet dragen, en dat idee heeft de missies zelf overleefd."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "De les van Pioneer is de waarde van de verkenner. Het belangrijkste wat de Pioneers deden was onzekerheid verminderen voor de missies achter hen — gissingen over de asteroïdengordel en de straling van Jupiter omzetten in harde cijfers waar een ontwerper tegenaan kon bouwen. Op elke echte grens is een goedkope sonde die wordt gestuurd om het gevaar te meten veel meer waard dan zijn kosten, omdat het de dure opvolger laat bouwen voor de wereld zoals die is in plaats van zoals men vreesde dat die zou zijn."
+      "md": "De les van Pioneer is de waarde van de verkenner. Het belangrijkste dat de Pioneers deden was onzekerheid verminderen voor de missies erachter — gissingen over de asteroïdengordel en Jupiters straling veranderen in harde cijfers waar een ontwerper tegen kon bouwen. Op elke echte grens is een goedkope sonde die wordt uitgestuurd om het gevaar te meten veel meer waard dan zijn kosten, omdat het de dure opvolger laat bouwen voor de wereld zoals die is in plaats van zoals gevreesd werd dat die was."
     },
     {
       "type": "prose",
-      "md": "De diepere les is dat als eerste gaan zelden de roem brengt, en toch belangrijk is. De Pioneers zijn minder beroemd dan de Voyagers die ze mogelijk maakten, maar zonder hen zou de Grand Tour een sprong in het onbekende zijn geweest in plaats van een berekende vlucht. Een deel van het belangrijkste werk is de verkenning die niemand zich herinnert — en het is de moeite waard om het goed te doen juist omdat alles erna ervan afhangt."
+      "md": "De diepere les is dat als eerste gaan zelden de roem brengt, en er toch toe doet. De Pioneers zijn minder beroemd dan de Voyagers die ze mogelijk maakten, maar zonder hen zou de Grand Tour een sprong in het onbekende zijn geweest in plaats van een berekende vlucht. Een deel van het belangrijkste werk is de verkenning die niemand zich herinnert — en het is juist de moeite waard om dat goed te doen omdat alles erna ervan afhangt."
     }
   ]
 }

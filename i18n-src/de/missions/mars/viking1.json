@@ -1,8 +1,8 @@
 {
-  "name": "Wikinger 1",
-  "type": "ORBITER · LANDER · GEFLOGEN",
-  "first": "Erste völlig erfolgreiche Marslandung; erste Langzeit-Oberflächenwissenschaft",
-  "description": "Die Mission, die uns unseren ersten nachhaltigen Blick auf die Marsoberfläche ermöglichte. Der Lander von Viking 1 war 6 Jahre und 4 Monate lang auf Chryse Planitia im Einsatz – er führte biologische Experimente zur Entdeckung von Leben durch (Ergebnisse waren nicht eindeutig; ein Experiment erzeugte ein positives Signal, über das noch Jahrzehnte später diskutiert wurde), maß das Wetter, lieferte Panoramabilder und analysierte die Bodenzusammensetzung. Der Orbiter kartierte 97 % des Mars mit einer Auflösung von 100 m und half dabei, Landeplätze für Missionen auszukundschaften, die noch Jahrzehnte entfernt sind.",
+  "name": "Viking 1",
+  "type": "ORBITER · LANDER · FLOWN",
+  "first": "Erste vollständig erfolgreiche Marslanders-Mission; erste langfristige Oberflächenwissenschaft",
+  "description": "Die Mission, die uns unseren ersten andauernden Blick auf die Marsoberfläche gab. Der Lander von Viking 1 operierte 6 Jahre 4 Monate lang auf der Chryse Planitia — führte Biologie-Experimente durch, um Leben zu erkennen (Ergebnisse mehrdeutig; eines der Experimente zeigte ein positives Signal, das Jahrzehnte später noch debattiert wird), maß Wetter, lieferte Panoramabilder und analysierte die Bodenzusammensetzung. Die Viking-Orbiter kartierten gemeinsam 97% des Mars in einer Auflösung von ~300 m und halfen bei der Auswahl von Landestellen für Missionen, die noch Jahrzehnte entfernt waren.",
   "events": [
     {
       "met": 0,
@@ -13,31 +13,31 @@
     {
       "met": 7,
       "label": "TCM-1",
-      "note": "Erste Flugbahnkorrektur.",
+      "note": "Erste Bahnkorrektur.",
       "type": "nominal"
     },
     {
       "met": 304,
-      "label": "MARS-ORBIT-EINFÜHRUNG",
-      "note": "Orbiter gelangt in die Marsumlaufbahn; Der Lander bleibt zur Standortuntersuchung angebracht.",
+      "label": "MARSORBITEINSCHWUNG",
+      "note": "Orbiter fängt sich in die Marsumlaufbahn ein; Lander bleibt angebracht für Geländeerkundung.",
       "type": "nominal"
     },
     {
       "met": 335,
-      "label": "Lander-Trennung",
-      "note": "Lander löst sich zum Abstieg nach Chryse Planitia.",
+      "label": "LANDERTRENNUNG",
+      "note": "Lander trennt sich für den Abstieg zur Chryse Planitia.",
       "type": "nominal"
     },
     {
       "met": 335.05,
       "label": "LANDUNG",
-      "note": "Lander landet am 20.07.1976, genau sieben Jahre nach Apollo 11.",
+      "note": "Lander setzt am 1976-07-20 auf, genau 7 Jahre nach Apollo 11.",
       "type": "nominal"
     },
     {
       "met": 335.1,
       "label": "ERSTE PANORAMA",
-      "note": "Erste hochauflösende Oberflächenbilder zurückgekehrt.",
+      "note": "Erste hochauflösende Oberflächenbilder zurückgegeben.",
       "type": "info"
     }
   ]

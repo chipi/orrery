@@ -1,30 +1,30 @@
 {
   "name": "Chang'e 4 / Yutu-2",
-  "type": "LANDER FAR-SIDE · ROVER · ATIVO",
-  "first": "Primeiro pouso suave no outro lado lunar",
-  "description": "O outro lado lunar não tem linha direta de visão de rádio com a Terra. Para pousar uma espaçonave lá, a China primeiro lançou o satélite retransmissor Queqiao em uma órbita de halo em torno do ponto Lagrange Terra-Lua L2 - um ponto de vista que vê o lado oculto e a Terra simultaneamente. Com essa infraestrutura instalada, a Chang'e 4 se tornou a primeira espaçonave a pousar suavemente no outro lado. O rover Yutu-2 está em operação desde janeiro de 2019 e percorreu mais de 1,9 km, a travessia mais longa de qualquer rover lunar.",
+  "type": "MÓDULO DE POUSO NO LADO OPOSTO · ROVER · ATIVO",
+  "first": "Primeiro pouso suave no lado oposto da Lua",
+  "description": "O lado oposto da Lua não tem linha de visão direta para a Terra. Para pousar uma nave espacial lá, a China primeiro lançou o satélite retransmissor Queqiao para uma órbita halo em torno do ponto de Lagrange Terra-Lua L2 — uma posição privilegiada que vê simultaneamente o lado oposto e a Terra. Com essa infraestrutura em funcionamento, Chang'e 4 se tornou a primeira nave espacial a fazer um pouso suave no lado oposto. O rover Yutu-2 está operando desde janeiro de 2019 e percorreu ~1,6 km até 2024, tornando-o o rover lunar de operação mais prolongada da história.",
   "events": [
     {
       "met": 0,
-      "label": "LANÇAR",
-      "note": "Longa Marcha 3B de Xichang.",
+      "label": "LANÇAMENTO",
+      "note": "Long March 3B de Xichang.",
       "type": "nominal"
     },
     {
       "met": 4,
-      "label": "MOI",
-      "note": "Inserção da órbita lunar.",
+      "label": "INSERÇÃO LUNAR",
+      "note": "Inserção em órbita lunar.",
       "type": "nominal"
     },
     {
       "met": 27,
-      "label": "ATERRAGEM",
-      "note": "Lander pousa na cratera Von Kármán 03/01/2019 - primeira espaçonave do outro lado. Todas as comunicações via retransmissão Queqiao na Terra-Lua L2.",
+      "label": "POUSO",
+      "note": "Módulo pousa na Cratera Von Kármán em 2019-01-03 — primeira nave no lado oposto. Toda comunicação via retransmissor Queqiao no ponto L2 Terra-Lua.",
       "type": "nominal"
     },
     {
       "met": 27.01,
-      "label": "IMPLANTE TERRA-2",
+      "label": "YUTU-2 IMPLANTADO",
       "note": "Rover desce a rampa.",
       "type": "info"
     }

@@ -1,25 +1,25 @@
 {
   "name": "X-37B OTV-1 (USA-212)",
-  "type": "ONBEMAND RUIMTEVLIEGTUIG · GEVLOGEN",
-  "first": "USA-212 — 224 dagen in een baan, Vandenberg AFB",
-  "description": "Eerste vlucht van het door Boeing gebouwde X-37B Orbital Test Vehicle-programma. Gelanceerd op 2010-04-22 om 23:52 UTC vanaf Cape Canaveral SLC-41 met een Atlas V 501 AV-012; de eerste autonome orbitale terugkeer van een ruimtevliegtuig met landingsbaanoperaties sinds de Sovjet-Boeran 1.01 in 1988. Landde op Vandenberg AFB op 2010-12-03 om 09:16 UTC na 224 dagen. Nuttige lading en baanparameters geheim.",
+  "type": "ONBEMAND VLIEGTUIG · GEVLOGEN",
+  "first": "USA-212 — 224 dagen in baan, Vandenberg AFB",
+  "description": "Eerste vlucht van het Boeing X-37B Orbital Test Vehicle-programma. Gelanceerd op 2010-04-22 23:52 UTC vanaf Cape Canaveral SLC-41 op Atlas V 501 AV-012; de eerste autonome terugkeer van een orbitaal vliegtuig met landingsoperaties op een landingsbaan sinds de Sovjet Buran 1.01 in 1988. Geland op Vandenberg AFB op 2010-12-03 09:16 UTC na 224 dagen. Lasten en orbitale parameters zijn geclassificeerd.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-012) from CCAFS SLC-41 2010-04-22.",
+      "label": "LANCERING",
+      "note": "Atlas V 501 (AV-012) vanaf CCAFS SLC-41 2010-04-22.",
       "type": "nominal"
     },
     {
       "met": 112,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee 410 km; classified payload operations.",
+      "label": "OPERATIES IN BAAN",
+      "note": "Apogeum ~287 km; geclassificeerde lastoperaties.",
       "type": "info"
     },
     {
       "met": 224,
       "label": "LANDING",
-      "note": "Autonomous runway landing at Vandenberg AFB 2010-12-03.",
+      "note": "Autonome landingsbaanlandng op Vandenberg AFB 2010-12-03.",
       "type": "nominal"
     }
   ]

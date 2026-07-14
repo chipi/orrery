@@ -1,38 +1,38 @@
 {
   "name": "Apollo-Soyuz Test Project (ASTP)",
-  "dispatch": "Apollo-Soyuz is waar de ruimtewedloop eindigt — niet bij een finish, maar met een handdruk. In juli 1975 ontmoetten en koppelden een Amerikaanse Apollo en een Sovjet Soyuz, de rivaliserende ruimtevaartuigen van de rivaliserende grootmachten, in een baan om de aarde, en Tom Stafford en Alexei Leonov schudden elkaar de hand door het open luik tussen hen. Het vergde een gezamenlijk gebouwde koppelingsadapter, twee bemanningen die elkaars taal leerden, en een dooi in de Koude Oorlog die diep genoeg was om de felste concurrenten van het tijdperk voor de ogen van de wereld te laten samenwerken. Niets eraan was strikt noodzakelijk; dat was juist het punt. Na achttien jaar van wedijveren om de eerste te zijn, kozen de twee programma's ervoor om voor één vlucht simpelweg elkaar te ontmoeten — en daarmee het sjabloon te scheppen voor de internationale samenwerking die ooit het ruimtestation zou bouwen.",
-  "type": "BEMANDE AARDBAAN · GEVLOGEN",
-  "first": "Eerste internationale samenwerking in bemande ruimtevaart; eerste US-USSR rendez-vous + koppeling",
-  "description": "Het Apollo-Soyuz Test Project — eerste internationale bemande ruimtevlucht, eerste US-USSR rendez-vous + koppeling, en de laatste vlucht van een Apollo CSM. Apollo (Stafford + Brand + Slayton) werd op 15-07-1975 gelanceerd vanaf LC-39B; Sojoez 19 (Leonov + Koebasov) werd dezelfde dag gelanceerd vanaf Bajkonoer. Apollo's koppelingsmodule (gebouwd door NASA + Rockwell) gebruikte een nieuwe androgyne koppelingsring (APAS) waarmee beide ruimtevaartuigen actief konden zijn — de voorloper van elk internationaal koppelingssysteem sindsdien (Mir, ISS, Tiangong, Dragon, Starliner). Luik geopend op 17-07-1975 om ~16:00 UTC; de bemanningen wisselden vlaggen, geschenken en gezamenlijke experimenten uit via 4 afzonderlijke koppelingssequenties gedurende 44 uur gekoppeld. Sojoez keerde op 21-07-1975 terug; Apollo bleef nog 5 dagen in een baan voor de waterlanding op 24-07-1975 — de laatste Apollo-waterlanding ooit. CSM-111 is te zien in het California Science Center in LA (naast Endeavour). De détente-tijdperksamenwerking die ASTP modelleerde, beïnvloedde 20 jaar later het Shuttle-Mir-programma.",
+  "type": "BEMAND AARDBAAN · VOLTOOID",
+  "first": "Eerste internationale samenwerking in ruimtevlucht; eerste US-USSR rendezvous + docking",
+  "dispatch": "Apollo-Soyuz is waar de ruimtewedstrijd eindigt — niet bij een finishlijn, maar met een handdruk. In juli 1975 ontmoetten een Amerikaanse Apollo en een Sovjet-Soyuz, de rivaliserende ruimtevaartuigen van de rivaliserende supermachten, elkaar en dockten in baan, en Tom Stafford en Alexei Leonov schudden elkaar de hand door het open luik tussen hen. Het vereiste een gezamenlijk gebouwd dockingadapter, twee bemande teams die elkaars taal leerden, en een dooi in de Koude Oorlog diep genoeg om de felste concurrenten van het tijdperk volledige samenwerking voor de ogen van de wereld toe te staan. Niets eraan was strikt noodzakelijk; dat was juist het punt. Na achttien jaar racen om het eerst te zijn, kozen de twee programma's voor één vlucht simpelweg om elkaar te ontmoeten — en legden daarmee de basis voor de internationale samenwerking die op een dag het ruimtestation zou bouwen.",
+  "description": "Het Apollo-Soyuz Test Project — eerste internationale bemande ruimtevlucht, eerste US-USSR rendezvous + docking, en de laatste vlucht van een Apollo CSM. Apollo (Stafford + Brand + Slayton) lanceerde 1975-07-15 van LC-39B; Soyuz 19 (Leonov + Kubasov) lanceerde dezelfde dag van Baikonur. De dockingmodule van Apollo (gebouwd door NASA + Rockwell) gebruikte een nieuw androgyeen dockingring (APAS) dat elk ruimtevaartuig actief kon zijn — de voorloper van elk internationaal dockingsysteem sindsdien (Mir, ISS, Tiangong, Dragon, Starliner). Luik geopend 1975-07-17 ~16:00 UTC; de bemande teams wisselden vlaggen, geschenken en gezamenlijke experimenten uit over 2 dockings (eerste 17 juli, oefening 19 juli) totaal ~44 uur gedockt. Soyuz keerde terug 1975-07-21; Apollo bleef nog 5 dagen in baan voordat het neerkwam 1975-07-24 — laatste Apollo-neerkoming ooit. CSM-111 is tentoongesteld in het California Science Center, LA (naast Endeavour). De détente-era-samenwerking die ASTP modelleerde, informeerde het Shuttle-Mir-programma 20 jaar later.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH (Apollo)",
-      "note": "Saturn IB (AS-210) from LC-39B 1975-07-15 19:50 UTC. 7.5 h after Soyuz 19 (Baikonur 1975-07-15 12:20 UTC).",
+      "label": "LANCERING (Apollo)",
+      "note": "Saturn IB (AS-210) van LC-39B 1975-07-15 19:50 UTC. 7,5 uur na Soyuz 19 (Baikonur 1975-07-15 12:20 UTC).",
       "type": "nominal"
     },
     {
       "met": 1.85,
       "label": "DOCKING",
-      "note": "Apollo + Soyuz 19 dock 1975-07-17 16:09 UTC. First US-USSR rendezvous + dock. Hatch opens at 19:17 UTC; \"Glad to see you\" handshake.",
+      "note": "Apollo + Soyuz 19 docken 1975-07-17 16:09 UTC. Eerste US-USSR rendezvous + dock. Luik opent 19:17 UTC; Stafford–Leonov handdruk ~3 uur later (~22:19 UTC).",
       "type": "info"
     },
     {
       "met": 2,
-      "label": "JOINT OPS",
-      "note": "Flag + gift exchange; joint experiments; 4 dockings across 44 hours docked.",
+      "label": "GEZAMENLIJKE OPERATIES",
+      "note": "Vlag- en geschenkuitwisseling; gezamenlijke experimenten; 2 dockings over ~44 uur gedockt.",
       "type": "nominal"
     },
     {
       "met": 3.8,
-      "label": "UNDOCK",
-      "note": "Final undock 1975-07-19 16:26 UTC. Soyuz 19 lands 1975-07-21 in Kazakhstan.",
+      "label": "UNDOCKING",
+      "note": "Definitieve undocking 1975-07-19 16:26 UTC. Soyuz 19 landt 1975-07-21 in Kazachstan.",
       "type": "nominal"
     },
     {
       "met": 9.06,
-      "label": "SPLASHDOWN (Apollo)",
-      "note": "Apollo splashed down in Pacific 1975-07-24 21:18 UTC — last Apollo splashdown ever. CSM-111 displayed at California Science Center LA.",
+      "label": "NEERKOMING (Apollo)",
+      "note": "Apollo kwam neer in Stille Oceaan 1975-07-24 21:18 UTC — laatste Apollo-neerkoming ooit, en de laatste bemande waterlanding van de VS tot SpaceX Crew Dragon in 2020. CSM-111 tentoongesteld in California Science Center LA.",
       "type": "nominal"
     }
   ]

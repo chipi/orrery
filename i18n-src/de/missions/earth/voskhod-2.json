@@ -1,38 +1,38 @@
 {
   "name": "Voskhod 2",
-  "dispatch": "Voskhod 2 gelang der erste Weltraumausstieg und er wäre beinahe der erste Tod im All geworden. Alexei Leonov schwebte aus einer aufblasbaren Luftschleuse ins Vakuum hinaus, der erste Mensch, der sich jemals vollständig außerhalb eines Raumfahrzeugs befand — und dann blähte sich sein Anzug so steif auf, dass er sich nicht beugen konnte, um wieder hineinzugelangen. Er musste ein Ventil öffnen und seine eigene Luft ablassen, wobei er eine Dekompressionskrankheit riskierte, nur um genug zu schrumpfen, um durch die Luke zu passen. Es war noch nicht vorbei: der automatische Wiedereintritt versagte, die Besatzung flog von Hand herunter, und sie landeten Hunderte Kilometer abseits des Kurses im gefrorenen sibirischen Wald, wo sie eine Nacht zwischen Wölfen ausharrten, bevor Retter sie auf Skiern erreichten. Die Öffentlichkeit sah zwölf triumphale Minuten; wie knapp es war, blieb jahrelang geheim.",
-  "type": "BEMANNTER ERDORBIT · GEFLOGEN",
-  "first": "Erster Weltraumausstieg (Leonow, 12 Min, 18.03.1965)",
-  "description": "Pawel Beljajews und Alexei Leonows eintägiger Flug — der erste EVA der Geschichte. Leonow verbrachte 12 Minuten außerhalb von Voskhod 2 (18.03.1965 um 11:34 UTC), druckausgeglichen durch eine aufblasbare Wolga-Luftschleuse, die sowjetische Ingenieure hinzufügten, weil der Voskhod-Rumpf keinen Platz für eine vollständige Druckentlastung bot. Leonows Anzug blähte sich im Vakuum auf und blockierte ihn außerhalb der Schleuse; er musste den Anzugdruck ablassen, um wieder einzusteigen, was das Risiko der Dekompressionskrankheit erhöhte. Der Wiedereintritt war ebenso dramatisch — das automatische Landesystem versagte, und Beljajew steuerte die Landekapsel manuell zu einer harten Landung im tiefen Schnee des Urals, etwa 390 km abseits des Ziels; die Besatzung überlebte eine Nacht im Wald unter Wölfen, bevor die Rettungshubschrauber am 20.03.1965 eintrafen.",
+  "type": "BEMANNTE ERDORBITMISSION · ABSOLVIERT",
+  "first": "Erster Außenbordeinsatz (Leonov, 12 Min., 1965-03-18)",
+  "dispatch": "Voskhod 2 erzielte den ersten Weltraumspaziergang und hätte ihn beinahe zum ersten Todesfall im Weltall gemacht. Alexei Leonov schwebte aus einer aufblasbaren Schleuse ins Vakuum hinaus — der erste Mensch, der je vollständig außerhalb eines Raumfahrzeugs war — doch sein Anzug blähte sich so steif auf, dass er sich nicht genug beugen konnte, um wieder hineinzupassen. Er musste ein Ventil öffnen und seine eigene Luft ablassen, um das Risiko der Dekompressionskrankheit einzugehen und gerade noch klein genug zu werden, um durch die Luke zu passen. Das war nicht alles: Das automatische Wiedereintrittsmanöver versagte, die Crew flog manuell herunter, und sie landeten hunderte Kilometer vom Kurs entfernt im gefrorenen sibirischen Wald, wo sie zwei Nächte unter Wölfen ausharrten, ehe Rettungsteams auf Skiern sie erreichten. Die Öffentlichkeit sah zwölf triumphale Minuten; wie knapp es daneben gegangen war, blieb jahrelang geheim.",
+  "description": "Pavel Belyayev + Alexei Leonovs 1-Tages-Flug — erster Außenbordeinsatz der Geschichte. Leonov verbrachte 12 Min. außerhalb der Voskhod 2 (1965-03-18 11:34 UTC), unter Druck durch eine aufblasbare Volga-Schleuse, die sowjetische Ingenieure hinzufügten, weil der Voskhod-Rumpf nicht genug Platz für vollständige Druckabsenkung bot. Leonovs Anzug blähte sich im Vakuum auf und blockierte ihn außerhalb der Schleuse; er musste den Anzugdruck ablassen, um wieder einzutreten und dabei das Dekompressionskrankheitsrisiko erhöhen. Der Wiedereintritt war gleichermaßen dramatisch — das automatische Landesystem versagte, und Belyayev pilotierte das Landemodul manuell zu einer harten Landung im tiefen Schnee des Urals ~390 km vom Ziel entfernt; die Crew überstand zwei Nächte im waldreichen Gebiet unter Wölfen, ehe Rettungshubschrauber am 1965-03-21 eintrafen. Die Kabinenluft wurde nach dem Fehlschlag der EVA-Luke auch in der Umlaufbahn sauerstoffreich, was kurzzeitig die Gefahr einer Selbstentzündung barg.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "label": "START",
+      "note": "Voskhod 11A57 von Baikonur Bereich 1 (Gagarins Start) 1965-03-18 07:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.001,
-      "label": "ORBIT INSERT",
-      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "label": "ORBITEINTRITT",
+      "note": "Eintritt in 167 × 475 km Erdumlaufbahn, 64,8° Inklination.",
       "type": "nominal"
     },
     {
       "met": 0.19,
-      "label": "EVA",
-      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "label": "AUSSENBORDEINSATZ",
+      "note": "Leonov verlässt die Volga-Schleuse 1965-03-18 11:34 UTC; erster Außenbordeinsatz der Menschheit. 12 Min. im All; Anzug blähte sich im Vakuum auf und er ließ Druck ab, um wiederzukehren.",
       "type": "info"
     },
     {
       "met": 1.05,
-      "label": "DEORBIT",
-      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "label": "BAHNABSENKUNG",
+      "note": "Automatisches Landesystem versagt; Belyayev pilotiert Abstieg manuell. Harte Landung 390 km vom Ziel entfernt im Schnee der Oblast Perm.",
       "type": "warning"
     },
     {
       "met": 2.5,
-      "label": "RESCUE",
-      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "label": "RETTUNG",
+      "note": "Crew überlebte 2 Nächte im −30°C wolfreichen Wald, bevor Rettungshubschrauber sie am 1965-03-21 erreichten.",
       "type": "info"
     }
   ]

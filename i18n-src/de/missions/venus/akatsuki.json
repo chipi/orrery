@@ -1,43 +1,43 @@
 {
   "name": "Akatsuki",
-  "type": "ORBITER · ACTIVE",
-  "first": "Erholte sich von einer 5-jährigen Sonnenorbit-Warteschleife, um bei einem Reserveversuch den Venus-Orbit zu erreichen; derzeit der einzige aktive Venus-Orbiter",
-  "description": "Akatsuki — „Morgendämmerung\" — war Japans erste Venus-Mission. Gestartet am 20.05.2010 von Tanegashima mit einer H-IIA 202, gepaart mit dem IKAROS-Sonnensegel-Demonstrator. Der geplante Einschwenk in den Venus-Orbit am 07.12.2010 scheiterte, als Salzkristallablagerungen in einem Oxidationsmittel-Rückschlagventil das Haupttriebwerk 152 Sekunden nach Zündbeginn aus der Achse warfen. JAXA hielt das Raumfahrzeug fünf Jahre lang im Sonnenorbit am Leben, mit zwölf Korrekturmanövern, bis zum nächsten Venus-Begegnungsfenster. Am 07.12.2015 brachte eine 1228 Sekunden lange Zündung mit vier Lageregelungstriebwerken — die nie für den Orbit-Einschwenk ausgelegt waren — Akatsuki in einen stark elliptischen Orbit von 400 × 440.000 km mit 3° Inklination. Eine der dramatischsten Missionsrettungen in der Geschichte der Raumfahrt. Immer noch aktiv.",
+  "type": "ORBITER · DURCHGEFÜHRT",
+  "first": "Aus einem 5-jährigen Sonnenorbit-Wartezustand befreit, um bei einem Ausweichversuch eine Venusumlaufbahn zu erreichen; der einzige aktive Venusorbiter in seinen letzten Betriebsjahren",
+  "description": "Akatsuki — »Morgenröte« — war Japans erste Venusssonde. Gestartet 2010-05-20 von Tanegashima auf einer H-IIA 202, zusammen mit dem Sonnensegel-Demonstrator IKAROS. Das geplante Venusorbiter-Einschwenk-Manöver 2010-12-07 scheiterte, als sich Salzkristalle in einem Oxidationsmittel-Rückschlagventil bildeten und das Haupttriebwerk 152 Sekunden nach Brennbeginn aus der Ausrichtung warfen. JAXA hielt die Sonde fünf Jahre lang im Sonnenorbit am Leben, führte zwölf Korrekturmanöver durch, bis zum nächsten Venusbegegnungsfenster. Am 2015-12-07 platzierte ein 1228-Sekunden-Brennvorgang mit vier Lageregelungstriebwerken — ursprünglich nicht für Orbitaleinschwenkung vorgesehen — Akatsuki in eine stark elliptische 400 × 440.000 km, 3°-Neigung-Umlaufbahn. Einer der dramatischsten Missionsrettungen in der Raumfahrtgeschichte. Der Kontakt ging 2024 verloren; JAXA erklärte den Betrieb am 2025-09-18 für beendet.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "H-IIA 202 von Tanegashima, gepaart mit IKAROS-Sonnensegel.",
+      "note": "H-IIA 202 von Tanegashima, zusammen mit IKAROS-Sonnensegel.",
       "type": "nominal"
     },
     {
       "met": 30,
       "label": "TCM-1",
-      "note": "Erste Bahnkorrektur.",
+      "note": "Erste Flugbahnkorrektur.",
       "type": "nominal"
     },
     {
       "met": 201,
       "label": "VOI-1 FEHLSCHLAG",
-      "note": "07.12.2010. OME-Drosselungsanomalie 152s nach Zündbeginn; Raumfahrzeug fliegt vorbei in den Sonnenorbit.",
+      "note": "2010-12-07. OME-Drosselungsanomalie 152s nach Brennbeginn; Sonde fliegt in Sonnenorbit vorbei.",
       "type": "warning"
     },
     {
       "met": 1000,
-      "label": "SONNENORBIT-WARTESCHLEIFE",
-      "note": "12 Manöver über 5 Jahre zur Aufrechterhaltung einer Venus-Wiederbegegnungstrajektorie.",
+      "label": "SONNENORBIT-WARTEZUSTAND",
+      "note": "12 Manöver über 5 Jahre zur Erhaltung einer Venuswiederbegegnungsbahn.",
       "type": "info"
     },
     {
       "met": 2027,
       "label": "VOI-R2 ERFOLG",
-      "note": "07.12.2015. RCS-Triebwerk-Zündung von 1228s in 400 × 440.000 km, 3° Orbit.",
+      "note": "2015-12-07. RCS-Triebwerk 1228s Brennvorgang in 400 × 440.000 km, 3° Umlaufbahn.",
       "type": "info"
     },
     {
       "met": 2200,
       "label": "WISSENSCHAFTSBETRIEB",
-      "note": "UV/IR-Wolkenstrukturverfolgung; Superrotationsstudien; bogenförmige Schwerewellen über Aphrodite Terra.",
+      "note": "UV/IR-Wolkenmerkmalsvererfolgung; Superrotationsstudien; bogenförmige Gravitationswellen über Aphrodite Terra. Kontakt 2024 verloren; Betrieb am 2025-09-18 für beendet erklärt.",
       "type": "info"
     }
   ]

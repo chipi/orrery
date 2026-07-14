@@ -1,25 +1,25 @@
 {
   "name": "Mars 3",
-  "type": "ORBITER · LANDER · GEVLOGEN",
-  "first": "Eerste ruimtevaartuig dat zacht op Mars landde",
-  "description": "De gewaagde dubbele missie van de Sovjet-Unie naar Mars in 1971 — Mars 2 en Mars 3 lanceerden 9 dagen uit elkaar. De lander van Mars 2 crashte; de lander van Mars 3 bereikte de eerste zachte landing op Mars maar zond slechts ~110 seconden uit voordat het signaal verloren ging, mogelijk vanwege de wereldwijde stofstorm die op dat moment woedde. De orbiter werkte 8 maanden en gaf honderden beelden en atmosferische metingen terug. Ondanks de korte oppervlaktemissie demonstreerde Mars 3 dat het afdaal- en landingsprobleem op Mars oplosbaar was.",
+  "type": "ORBITER · LANDER · FLOWN",
+  "first": "Eerste ruimtevaartuig met zachte landing op Mars",
+  "description": "De ambitieuze dubbelmissie van de Sovjet-Unie naar Mars in 1971 — Mars 2 en Mars 3 werden met een interval van 9 dagen gelanceerd. De lander van Mars 2 stortte neer; de lander van Mars 3 haalde de eerste zachte landing op Mars maar verloor het signaal ~110 seconden na landing — de werkelijke transmissie duurde slechts ~14,5 seconden — waarschijnlijk door de wereldwijde stofstorm die op dat moment woedde. De orbiter werkte 8 maanden lang en leverde tientallen afbeeldingen en atmosferische metingen op. Ondanks de korte oppervlaktemissie toonde Mars 3 aan dat het afdaal- en landingsprobleem op Mars oplosbaar was.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Proton-K met Blok-D bovenste-trap vanuit Baikonur.",
+      "note": "Proton-K met Blok-D boventrip van Baikonoer.",
       "type": "nominal"
     },
     {
       "met": 188,
       "label": "ORBITER MOI",
-      "note": "Orbiter vangt in Mars-baan tijdens wereldwijde stofstorm.",
+      "note": "Orbiter gaat in een baan rond Mars tijdens wereldwijde stofstorm.",
       "type": "nominal"
     },
     {
       "met": 188.05,
-      "label": "LANDER-SCHEIDING",
-      "note": "Lander scheidt en begint atmosferische intrede.",
+      "label": "LANDER SCHEIDING",
+      "note": "Lander scheidt zich af en begint atmosferische ingang.",
       "type": "nominal"
     },
     {
@@ -31,7 +31,7 @@
     {
       "met": 188.101,
       "label": "SIGNAALVERLIES",
-      "note": "Na ~110 seconden, signaal permanent beëindigd. Oorzaak onbevestigd; stofstorm leidende verdachte.",
+      "note": "Signaal verloren ~110 s na landing (transmissie duurde ~14,5 s). Oorzaak onbevestigd; stofstorm is de meest waarschijnlijke kandidaat.",
       "type": "warning"
     }
   ]

@@ -1,31 +1,31 @@
 {
   "name": "Chang'e 4 / Yutu-2",
-  "type": "FAR-SIDE LANDER · ROVER · ACTIF",
-  "first": "Premier atterrissage en douceur sur la face cachée de la Lune",
-  "description": "La face cachée de la Lune n’a pas de ligne de vue radio directe avec la Terre. Pour y faire atterrir un vaisseau spatial, la Chine a d’abord lancé le satellite relais Queqiao sur une orbite en halo autour du point de Lagrange Terre-Lune L2 – un point d’observation qui voit simultanément la face cachée et la Terre. Avec cette infrastructure en place, Chang'e 4 est devenu le premier vaisseau spatial à atterrir en douceur sur la face cachée. Le rover Yutu-2 est en service depuis janvier 2019 et a parcouru plus de 1,9 km, la plus longue traversée jamais réalisée par un rover lunaire.",
+  "type": "ALUNISSEUR CÔTÉ LOINTAIN · ROVER · OPÉRATIONNEL",
+  "first": "Premier alunissage en douceur sur le côté lointain de la Lune",
+  "description": "Le côté lointain de la Lune n'a pas de ligne de visée radio directe avec la Terre. Pour alunir un engin spatial là-bas, la Chine a d'abord lancé le satellite relais Queqiao vers une orbite de halo autour du point de Lagrange Terre-Lune L2 — un point de vantage qui voit à la fois le côté lointain et la Terre simultanément. Avec cette infrastructure en place, Chang'e 4 est devenu le premier engin spatial à alunir en douceur sur le côté lointain. Le rover Yutu-2 fonctionne depuis janvier 2019 et a parcouru ~1,6 km en 2024, ce qui en fait le rover lunaire ayant la plus longue durée de fonctionnement dans l'histoire.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Longue marche 3B depuis Xichang.",
+      "note": "Long March 3B depuis Xichang.",
       "type": "nominal"
     },
     {
       "met": 4,
-      "label": "Moi",
-      "note": "Insertion de l'orbite lunaire.",
+      "label": "MOI",
+      "note": "Insertion en orbite lunaire.",
       "type": "nominal"
     },
     {
       "met": 27,
-      "label": "ATTERRISSAGE",
-      "note": "Lander atterrit au cratère Von Kármán 03/01/2019 — premier vaisseau spatial de l'autre côté. Toutes les communications via le relais Queqiao à Terre-Lune L2.",
+      "label": "ALUNISSAGE",
+      "note": "L'alunisseur se pose au cratère Von Kármán 2019-01-03 — premier engin spatial sur le côté lointain. Toutes les communications via le relais Queqiao au point Terre-Lune L2.",
       "type": "nominal"
     },
     {
       "met": 27.01,
       "label": "YUTU-2 DÉPLOYÉ",
-      "note": "Rover descend la rampe.",
+      "note": "Le rover descend la rampe.",
       "type": "info"
     }
   ]

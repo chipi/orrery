@@ -1,26 +1,26 @@
 {
   "name": "Soyuz 11",
-  "type": "BEMAND STATION · VERLOREN",
-  "first": "Eerste bemanning naar een ruimtestation (Salyut 1); alle 3 gestorven door decompressie bij terugkeer",
-  "dispatch": "Soyuz 11 bereikte iets buitengewoons en verloor vervolgens zijn bemanning in de laatste minuten van de vlucht. Georgy Dobrovolsky, Vladislav Volkov en Viktor Patsayev werden de eerste mensen die aan boord van een ruimtestation leefden en brachten drieëntwintig dagen door op Salyut 1 — en toen, tijdens de terugkeer, schoot een klep open op het moment dat de modules zich scheidden en liet hun cabinelucht de ruimte in sissen. Ze droegen geen drukpakken; er was geen ruimte geweest voor pakken toen de stoelen voor drie personen werden gemonteerd. Binnen enkele seconden, aan de rand van de ruimte, waren alle drie dood. De capsule landde vanzelf, perfect op doel; het reddingsteam opende hem en trof de bemanning nog vastgegespt in hun stoelen aan. Ze blijven de enige mensen die in de ruimte zijn gestorven — en de prijs kocht een regel die sindsdien standhoudt: bemanningen dragen drukpakken tijdens lancering en terugkeer, altijd.",
-  "description": "De eerste bemande missie naar een ruimtestation — Salyut 1 — lanceerde op 6 juni 1971 met Georgy Dobrovolsky, Vladislav Volkov en Viktor Patsayev. De bemanning bracht 23 dagen door aan boord van het station. Tijdens de terugkeer op 30 juni opende een drukvereffeningsklep voortijdig bij modulescheiding (~168 km); de cabine verloor zijn druk en de drie kosmonauten, zonder pak, stierven binnen enkele seconden. De capsule landde normaal. Ze blijven de enige mensen die boven de Kármánlijn zijn gestorven.",
+  "type": "BEMANDE STATION · VERLOREN",
+  "first": "Eerste bemanning van een ruimtestation (Salyut 1); alle 3 stierven door decompressie bij terugkeer",
+  "dispatch": "Soyuz 11 bereikte iets buitengewoons en verloor vervolgens zijn bemanning in de laatste minuten van de vlucht. Georgy Dobrovolsky, Vladislav Volkov en Viktor Patsayev werden de eerste mensen die aan boord van een ruimtestation leefden, en brachten tweeëntwintig dagen door op Salyut 1 — maar tijdens de terugkeer sprong een klep open op het moment dat de modules zich scheidden en liet de lucht uit hun cabine naar de ruimte ontsnappen. Ze droegen geen drukpakken; er was geen plaats voor pakken geweest toen de stoelen voor drie personen werden ingebouwd. Binnen enkele seconden, aan de rand van de ruimte, waren alle drie dood. De capsule landde zich zelf, perfect op koers; het bergingsteam opende deze en vond de bemanning nog steeds in hun stoelen vastgegespt. Zij blijven de enige mensen die in de ruimte zijn gestorven — en deze prijs bracht een regel teweeg die sindsdien stand is houden: bemanning draagt drukpakken tijdens lancering en terugkeer, altijd.",
+  "description": "De eerste bemande missie naar een ruimtestation — Salyut 1 — lanceerde op 6 juni 1971 met Georgy Dobrovolsky, Vladislav Volkov en Viktor Patsayev. De bemanning bracht 22 dagen door op Salyut 1 (totale missieduur 23 dagen 18 uur). Tijdens de terugkeer op 30 juni opende een drukvergelijkingsklep voortijdig bij modulescheiding (~168 km); de cabine depressuriseerde en de drie kosmonauten, zonder pak, stierven binnen enkele seconden. De capsule landde normaal. Zij blijven de enige mensen die boven de Kármán-lijn zijn gestorven.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Soyuz 11A511 vanaf Baikonur, 1971-06-06 04:55 UTC.",
+      "note": "Soyuz 11A511 van Baikonur, 1971-06-06 04:55 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.03,
       "label": "KOPPELING — SALYUT 1",
-      "note": "Eerste bemanning aan boord van een ruimtestation; 23 dagen aan boord.",
+      "note": "Eerste bemanning aan boord van een ruimtestation; 22 dagen op Salyut 1.",
       "type": "info"
     },
     {
       "met": 24,
       "label": "DECOMPRESSIE",
-      "note": "Klep opent bij modulescheiding; cabine verliest druk op ~168 km. Bemanning verloren.",
+      "note": "Klep opent bij modulescheiding; cabine depressuriseerd op ~168 km. Bemanning verloren.",
       "type": "warning"
     }
   ]

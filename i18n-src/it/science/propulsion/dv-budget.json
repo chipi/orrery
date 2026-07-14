@@ -1,15 +1,15 @@
 {
-  "title": "Δv come budget di missione",
-  "intro_sentence": "Il singolo numero che dice se una missione è possibile.",
+  "title": "∆v come budget di missione",
+  "intro_sentence": "Il numero unico che stabilisce se una missione è possibile: il cambio di velocità totale da spendere, sommato su ogni accensione.",
   "narrative_101": [
-    "Il denaro per il volo spaziale non sono dollari. È Δv in km/s. Ogni accensione costa.",
-    "Twist mortale: il razzo non ha Δv illimitato. Tetto duro fissato da Tsiolkovsky. Se la fattura supera il tetto, missione impossibile.",
-    "Riferimenti: superficie Terra a LEO ~9,4 km/s. Hohmann a Marte +3,6. Inserimento +2. Atterraggio Marte ~15 km/s totali."
+    "I soldi per i voli spaziali non sono dollari. Sono ∆v — pronunciato \"delta-v\" — e si misurano in chilometri al secondo. Ogni accensione del tuo razzo costa un po' di ∆v. Ogni movimento che fai su una traiettoria ha un prezzo in km/s. Il budget ∆v della missione è semplicemente il totale progressivo: lancio + iniezione + correzioni di rotta + arrivo + atterraggio. Somma tutto, e quella è la tua fattura.",
+    "Eccoci al colpo di scena spietato. Il tuo razzo non ha ∆v illimitato. Ha un limite massimo, fissato dall'equazione di Tsiolkovsky, dettato interamente da quanto del tuo razzo è carburante e da quanto sono buoni i tuoi motori. Se la tua fattura supera il limite, la missione è impossibile. Buttare più soldi non lo risolve. La matematica vince.",
+    "Numeri di riferimento rapidi da immagazzinare: sganciarsi dalla Terra in orbita costa ~9,4 km/s. Dall'orbita a un trasferimento di Hohmann a Marte aggiunge ~3,6. L'inserimento in orbita marziana aggiunge altri ~2. Sono circa 15 km/s per raggiungere il sistema di Marte e frenare in orbita — l'atmosfera sottile di Marte fa poi il grosso dell'atterraggio. Ecco perché atterrare su Marte è molto più difficile che atterrare sulla Luna, e perché ogni grammo di massa su un lander marziano viene conteso."
   ],
   "body_paragraphs": [
-    "Δv è la valuta contabile. Ogni accensione costa.",
-    "Lato offerta: Tsiolkovsky fissa il tetto. Lato domanda: design traiettoria sceglie cammino più economico.",
-    "Riferimenti: LEO 9,4. Hohmann Marte +3,6. MOI +2. Atterraggio Marte ~15 km/s — al limite chimico."
+    "∆v (delta-v) è la valuta di contabilità dei voli spaziali. Ogni accensione del motore — sganciarsi dalla Terra, lasciare l'orbita, correggere la rotta, rallentare alla destinazione — ti costa un cambio di velocità. Sommali tutti e hai il budget ∆v della missione.",
+    "Dal lato dell'offerta: la capacità ∆v del tuo razzo viene dall'equazione di Tsiolkovsky — l'`Isp` del motore e la frazione di propellente fissano il limite. Dal lato della domanda: il design della traiettoria sceglie il percorso con il costo sommato più economico. Una missione vola se il budget di offerta ≥ domanda. Non vola se non è così, non importa quanti soldi butti nel problema.",
+    "Alcuni numeri di riferimento: dalla superficie terrestre a LEO costa ~9,4 km/s di ∆v (la maggior parte combatte la gravità e l'atmosfera). Da LEO a un trasferimento di Hohmann a Marte aggiunge ~3,6 km/s. L'inserimento in orbita marziana aggiunge altri ~2 km/s. Sono circa 15 km/s per raggiungere il sistema di Marte e catturare in orbita — l'atmosfera sottile di Marte gestisce la discesa, non propulsione aggiuntiva."
   ],
-  "diagram_caption": "Barre impilate: lancio + iniezione + crociera + arrivo = budget totale."
+  "diagram_caption": "Barre sovrapposte: ∆v di lancio + iniezione + correzioni di crociera + arrivo = budget totale di missione."
 }

@@ -1,50 +1,50 @@
 {
-  "name": "Ausdauer",
+  "name": "Perseverance",
   "type": "ROVER · AKTIV",
-  "first": "Erster Hubschrauber auf einem anderen Planeten (Ingenuity); erste Probenzwischenspeicherung für Mars Sample Return",
-  "dispatch": "Perseverance ging zum Mars, um nach den Toten zu suchen. 2021 im Jezero-Krater gelandet — dem Delta eines Flusses, der vor Milliarden von Jahren einen See speiste, genau die Art von Ort, an dem Leben Spuren hinterlassen hätte — ist es der erste Rover, der speziell dafür gebaut wurde, nach Anzeichen urzeitlichen Lebens zu suchen und etwas zu tun, was keine Mission zuvor getan hatte: marsianisches Gestein in Röhren zu versiegeln und beiseite zu legen, damit ein zukünftiges Raumfahrzeug es zur Erde bringen kann. Er lieferte auch Ingenuity ab, den kleinen Helikopter, der den ersten motorisierten Flug auf einem anderen Planeten durchführte. Falls die Proben, die er zwischenlagert, jemals zurückgebracht werden, werden sie die ersten Stücke der Oberfläche eines anderen Planeten sein, die zur Erde gebracht wurden.",
-  "description": "Perseverance ist die ehrgeizigste Marsoberflächenmission, die jemals geflogen wurde. Davon hängt die Mars-Probenrückgabe ab – der Rover sammelt und speichert Proben in Röhrchen, die eine zukünftige Mission holen und zur Erde bringen wird. Ingenuity, der erste Hubschrauber auf einem anderen Planeten, flog 72 Missionen, bevor er im Januar 2024 mit beschädigten Rotoren in den Ruhestand ging – ein Beweis dafür, dass kontrollierter Flug in der dünnen Atmosphäre des Mars möglich ist. MOXIE, ein Sauerstoff-aus-CO2-Demonstrator, produzierte den ersten lokal hergestellten Sauerstoff auf einem anderen Planeten, eine Probe für bemannte Marsmissionen.",
+  "first": "Erster Hubschrauber auf einem anderen Planeten (Ingenuity); erste Probensammlung für Mars Sample Return",
+  "dispatch": "Perseverance flog zum Mars, um die Toten zu suchen. 2021 landete es auf dem Boden des Jezero-Kraters – einer Senke, in der das Delta eines Flusses mündet, der vor Milliarden von Jahren einen See speiste, genau die Art von Ort, an dem das Leben Spuren hinterlassen hätte – es ist der erste Rover, der speziell zum Suchen nach Zeichen antiken Lebens gebaut wurde, und um etwas zu tun, das noch keine Mission getan hatte: Marsgestein in Röhrchen zu versiegeln und sie für ein zukünftiges Raumfahrzeug beiseite zu legen, um sie nach Hause zu bringen. Er lieferte auch Ingenuity, den kleinen Hubschrauber, der den ersten Motorflug auf einem anderen Planeten absolvierte. Falls die Proben, die er lagert, jemals zurückgebracht werden, werden sie die ersten Teile der Oberfläche eines anderen Planeten sein, die zur Erde gebracht werden.",
+  "description": "Perseverance ist die ehrgeizigste Mars-Oberflächenmission, die jemals geflogen wurde. Mars Sample Return hängt davon ab – der Rover sammelt Proben in Röhrchen und lagert sie, die eine zukünftige Mission bergen und zur Erde bringen wird. Ingenuity, der erste Hubschrauber auf einem anderen Planeten, flog 72 Missionen, bevor er im Januar 2024 mit beschädigten Rotoren in den Ruhestand ging – ein Beweis dafür, dass kontrollierter Flug in der dünnen Atmosphäre des Mars möglich ist. MOXIE, ein Sauerstoff-aus-CO2-Demonstrator, produzierte den ersten lokal hergestellten Sauerstoff auf einem anderen Planeten, ein Trainingslauf für bemannte Marsmissionen.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "Atlas V 541 von Cape Canaveral SLC-41 – gleiche Fahrzeugklasse wie Curiosity.",
+      "note": "Atlas V 541 von Cape Canaveral SLC-41 – dasselbe Fahrzeugklasse wie Curiosity.",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "TMI-VERBRENNUNG",
+      "label": "TMI-ZÜNDUNG",
       "note": "Trans-Mars-Injektion.",
       "type": "nominal"
     },
     {
       "met": 9,
       "label": "TCM-1",
-      "note": "Erste Korrektur in der Mitte des Kurses.",
+      "note": "Erste Mid-Course-Korrektur.",
       "type": "nominal"
     },
     {
       "met": 203,
       "label": "EDL",
-      "note": "Sky-Crane liefert Rover zum Jezero-Krater 18.02.2021 – Standort eines alten Flussdeltas.",
+      "note": "Sky-crane bringt Rover zum Jezero-Krater 2021-02-18 – Ort eines antiken Flusdeltas.",
       "type": "nominal"
     },
     {
       "met": 203.01,
       "label": "LANDUNG",
-      "note": "Perseverance landet um 20:55 UTC in Jezero.",
+      "note": "Perseverance berührt Jezero um 20:55 UTC.",
       "type": "nominal"
     },
     {
       "met": 271,
-      "label": "Einfallsreichtum erster Flug",
-      "note": "Erster kontrollierter Motorflug auf einem anderen Planeten – 39,1 Sekunden in bis zu 5 m Höhe.",
+      "label": "INGENUITY ERSTER FLUG",
+      "note": "Erster motorisierter, kontrollierter Flug auf einem anderen Planeten – 39,1 Sekunden bis zu 5 m Höhe.",
       "type": "info"
     },
     {
       "met": 1278,
-      "label": "INGENUITY IM RUHESTAND",
-      "note": "Rotorblatt beim 72. Flug beschädigt 18.01.2024; Der Hubschrauber bleibt als Kommunikationsrelais einsatzbereit.",
+      "label": "INGENUITY AUSGEMUSTERT",
+      "note": "Rotorblatt beim 72. Flug am 2024-01-18 beschädigt; Hubschrauber außer Dienst gestellt, umfunktioniert als stationäre Wetter- und Datenstation, die Messwerte zur zukünftigen Abrufung speichert.",
       "type": "info"
     }
   ]

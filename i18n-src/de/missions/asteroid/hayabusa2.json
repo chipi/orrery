@@ -1,8 +1,8 @@
 {
   "name": "Hayabusa2",
-  "type": "PROBENRÜCKKEHR + LANDER · AKTIV (verlängert)",
-  "first": "Zweite Asteroiden-Probenrückkehr (Ryugu, 2020); erster künstlicher Einschlagkrater auf einem Asteroiden; erste tieferliegende Asteroidenproben zur Erde gebracht",
-  "description": "JAXAs Nachfolger der ursprünglichen Hayabusa. Gestartet am 3.12.2014, erreichte Hayabusa2 den erdnahen Asteroiden (162173) Ryugu am 27.6.2018. Oberflächenoperationen 2018-2019 lieferten die erste anhaltende Nahaufnahme eines Schutthaufen-C-Typ-Asteroiden. Die Probenrückkehrkapsel landete am 5.12.2020 über Woomera, Australien, und lieferte 5,4 g unberührtes Ryugu-Material — die erste Asteroidenprobe mit unterirdischer Stratigrafie. Erweiterte Mission: Vorbeiflug an (98943) 2001 CC21 im Juli 2026; Rendezvous mit dem schnell rotierenden (1998 KY26) für Juli 2031 anvisiert.",
+  "type": "PROBENRÜCKGABE + LANDER · AKTIV (erweitert)",
+  "first": "Zweite Asteroidenprobenrückgabe (Ryugu, 2020); erster künstlicher Einschlagskrater auf einem Asteroiden; erstes subsuperfiziales Asteroidenmaterial, das auf die Erde zurückgebracht wurde",
+  "description": "JAXAs Folgeprojekt der ursprünglichen Hayabusa. Nach dem Start am 2014-12-03 erreichte Hayabusa2 den kohlenstoffhaltigen erdnahen Asteroiden (162173) Ryugu am 2018-06-27 nach einem 3,5 Jahre dauernden Ionentriebwerk-Flug mit niedriger Schubkraft und Erdgravitationsunterstützung. Oberflächenoperationen 2018–2019: zwei Landesversuche mit Probennahme mit einer kleinen tragbaren Impaktorsonde (2019-04-05), die einen 14 m großen Krater zur zweiten Probennahme ausgrub. Drei MINERVA-II-Rover lieferten die ersten Oberflächenaufnahmen von einem Asteroiden; der DLR/CNES-Lander MASCOT arbeitete 17 Stunden lang. Die Probenrückkapsel trat über Woomera am 2020-12-05 (UTC; Bergung 2020-12-06 Ortszeit/JST) wieder in die Atmosphäre ein und lieferte 5,4 g unverfälschtes Ryugu-Material – die erste Asteroidenprobe mit subsuperfizialischer Stratigraphie. Erweiterte Mission: Vorbeiflug bei 98943 Torifune (2001 CC21) im 2026-07; Rendezvous mit dem schnell rotierenden (1998 KY26) geplant für 2031-07.",
   "events": [
     {
       "met": 0,
@@ -13,30 +13,30 @@
     {
       "met": 366,
       "label": "ERDVORBEIFLUG",
-      "note": "Erd-Gravitationsassistenz justiert die Rendezvous-Bahn.",
+      "note": "Erdgravitationsunterstützung richtet die Rendezvous-Bahn aus.",
       "type": "nominal"
     },
     {
       "met": 1302,
       "label": "RYUGU-ANKUNFT",
-      "note": "Schweben in 20 km — Beginn der 1,5-jährigen Annäherungsoperationen einschließlich Probenentnahme.",
+      "note": "Schwebflug in 20 km Höhe – Beginn der 1,5-jährigen Operationen in Bahnhöhe einschließlich Probennahme.",
       "type": "nominal"
     },
     {
       "met": 1880,
-      "label": "ERDRÜCKKEHR",
+      "label": "RÜCKKEHR ZUR ERDE",
       "note": "Probenkapsel landet in Woomera, Australien mit 5,4 g Ryugu-Material.",
       "type": "nominal"
     },
     {
       "met": 4250,
-      "label": "2001 CC21-VORBEIFLUG",
-      "note": "Verlängerte Mission Vorbeiflug am Asteroiden (98943) 2001 CC21.",
+      "label": "TORIFUNE-VORBEIFLUG",
+      "note": "Vorbeiflug der erweiterten Mission an 98943 Torifune (2001 CC21).",
       "type": "info"
     },
     {
       "met": 6092,
-      "label": "1998 KY26-RENDEZVOUS",
+      "label": "1998 KY26 RENDEZVOUS",
       "note": "Geplantes Rendezvous mit dem schnell rotierenden Asteroiden (1998 KY26).",
       "type": "info"
     }

@@ -1,8 +1,8 @@
 {
-  "headline": "Diagrammi porkchop — quando lanciare e perché le finestre sono le finestre.",
+  "headline": "Diagrammi Porkchop — quando lanciare e perché le finestre sono le finestre",
   "paragraphs": [
-    "Pianificatori calcolano milioni di traiettorie e dipingono una mappa di calore. Economiche in azzurro freddo. Care in rosso. Sembra una costoletta di maiale.",
-    "Perché tutta la mappa? Le missioni hanno vincoli — razzo non pronto, finestra del sito, stagione marziana. Il porkchop mostra TUTTI i compromessi.",
-    "Sei sezioni in ordine di lettura."
+    "I pianificatori di missioni non calcolano una sola traiettoria verso Marte — ne calcolano milioni, in una griglia gigantesca, e disegnano una mappa di calore. Le traiettorie economiche appaiono come lobi blu freddi. Quelle costose diventano rosse. Il risultato, stranamente, assomiglia a una braciola di maiale. La zona economica è la carne della braciola; la cresta costosa è l'osso.",
+    "Perché disegniamo l'intera mappa invece di solo l'ottimo? Perché le missioni reali hanno vincoli — un razzo disponibile solo in un anno particolare, una piattaforma di lancio accessibile solo in determinate settimane, un sito di atterraggio che necessita una stagione specifica su Marte. Il diagramma porkchop ti permette di vedere TUTTI i compromessi contemporaneamente e scegliere la traiettoria abbastanza economica che si adatta al tuo calendario reale.",
+    "Sei sezioni qui, in ordine di lettura. Inizia con \"Cos'è un diagramma porkchop?\" e percorri gli assi (partenza, tempo di volo), la scala dei colori (mappa di calore ∆v), come leggere la forma del lobo (lettura dei contorni), e come mappare il porkchop su un razzo specifico (fattibilità). Una nota sulla convenzione: i diagrammi porkchop standard contornano l'energia caratteristica C3 (km²/s²) alla partenza e la velocità asintotica V∞ (km/s) all'arrivo — Orrery semplifica questo in una singola scala di colori ∆v in km/s per leggibilità. Alla fine sarai in grado di guardare il diagramma porkchop di [/plan](app:/plan) per una qualsiasi delle nove destinazioni e leggerlo come un dinamicista di volo."
   ]
 }

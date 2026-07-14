@@ -1,14 +1,14 @@
 {
-  "title": "Die Ekliptikebene",
-  "intro_sentence": "Die Ebene der Erdbahn — Referenz für fast jede Sonnensystem-Messung.",
+  "title": "Die Ekliptik-Ebene",
+  "intro_sentence": "Die Ebene der Erdbahn um die Sonne — verwendet als Referenz für nahezu jede Messung im Sonnensystem.",
   "narrative_101": [
-    "Halt einen Teller flach, Murmel im Zentrum — Sonne. Kleinere Murmel um den Rand — Erde. Der Teller ist die Ekliptik. Erdbahn definiert sie; alles andere wird dagegen gemessen.",
-    "Seltsam: das meiste Sonnensystem lebt grob auf diesem Teller. Acht Planeten innerhalb weniger Grad. Mond bei 5°. Asteroidengürtel meist drauf. Kein Zufall — Fossil der Sonnensystementstehung. Die Scheibe setzte die Ebene.",
-    "Kometen sind die Joker. Langperiodische Kometen aus jeder Richtung — Reste der Oort-Wolke, die nie in die Scheibe fiel. Pluto bei 17° — ein Grund seiner Degradierung."
+    "Halte einen flachen Teller hoch und lege eine Murmel in die Mitte — das ist die Sonne. Drehe nun eine kleinere Murmel um den Rand — das ist die Erde. Der flache Teller ist die Ekliptik-Ebene. Die Erdbahn definiert sie; alles andere im Sonnensystem wird gegen sie gemessen.",
+    "Hier ist das Seltsame: Der Großteil des Sonnensystems lebt grob auf dieser Ebene. Die acht Planeten liegen alle innerhalb weniger Grad von ihr. Der Mond umkreist die Erde in einer Ebene, die nur 5 Grad von ihr abweicht. Der Asteroidengürtel liegt größtenteils auf ihr. Das ist kein Zufall — es ist ein Überbleibsel aus der Entstehung des Sonnensystems, als sich alles aus einer großen rotierenden Scheibe aus Gas und Staub um die junge Sonne verdichtete. Die Scheibe legte die Ebene fest und das meiste von dem, was übriggeblieben ist, respektiert sie immer noch.",
+    "Kometen sind die Wildcard. Langperiodische Kometen kommen aus jeder Richtung und jedem Winkel — sie sind Überbleibsel der äußeren Oort-Wolke, die sich nie in die Scheibe eingefügt hat. Pluto umkreist die Sonne 17 Grad außerhalb der Ebene — bei weitem die steilste Neigung der klassischen neun. (Seine Umklassifizierung 2006 ging nicht um seine Neigung, sondern darum, dass er seine Umlaufbahn nicht von anderen Objekten bereinigt hat.)"
   ],
   "body_paragraphs": [
-    "Sonne, Erde, Mond zeichnen Pfade. Erdbahn definiert eine Ebene. Von Erde scheint die Sonne entlang dieser Ebene gegen Hintergrundsterne zu wandern — der Pfad ist die Ekliptik. Die meisten Körper liegen nahe ihr.",
-    "Ekliptik = Referenzebene für Inklinationen. Erde 0° per Definition. Merkur 7°, Pluto 17° werden gegen sie gemessen. Frühlingspunkt = Nullreferenz.",
-    "Orrerys `/explore` blickt standardmäßig von oben auf die Ekliptik — natürliche Perspektive für heliozentrische Bewegung."
+    "Die Sonne, die Erde und der Mond zeichnen Bahnen im Weltall. Die Erdbahn definiert eine Ebene. Vom Standpunkt der Erde aus scheint die Sonne sich entlang dieser Ebene vor dem Hintergrund der Sterne zu bewegen — dieser Weg am Himmel ist die Ekliptik. Die meisten anderen Körper des Sonnensystems liegen nahe bei ihr: Die acht Planeten liegen alle innerhalb weniger Grad, der Asteroidengürtel konzentriert sich in ihrer Nähe, Kometen sind verstreut.",
+    "Die Ekliptik ist die Referenzebene für die Bahnneigung von Körpern des Sonnensystems. Die Neigung der Erde ist konstruktionsgemäß 0°. Merkur mit 7°, Pluto mit 17°, werden gegen diese Ebene gemessen. Die Richtung des Frühlingspunkts — wo die Ekliptik den Himmelsäquator nach Norden überquert — ist die Nulllängen-Referenz, die verwendet wird, um den aufsteigenden Knoten und die Periapsisargument jeder Umlaufbahn zu verankern.",
+    "Die `/explore`-Ansicht von Orrery schaut standardmäßig von oben auf die Ekliptik-Ebene herab — die natürliche Perspektive zum Denken über heliozentrische Bewegung. Das Kippen der Ansicht zeigt dir, warum die Bahnen von Merkur und Pluto ‚falsch' aussehen, obwohl sie perfekt Kepler'sch sind: Ihre Bahnebenen stimmen nicht mit dem Rest überein."
   ]
 }

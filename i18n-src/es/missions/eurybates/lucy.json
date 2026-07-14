@@ -1,8 +1,8 @@
 {
   "name": "Lucy",
-  "type": "MULTI-FLYBY · ACTIVE",
-  "first": "Primera misión a los troyanos de Júpiter; visita 8 asteroides en una única trayectoria de 12 años — más cuerpos en una sola misión que cualquier campaña anterior de ciencia planetaria",
-  "description": "Lucy alcanza las nubes de Lagrange L4 y L5 — poblaciones de asteroides primordiales que preceden y siguen a Júpiter en 60°, que se cree preservan material del disco protoplanetario exterior. Tres asistencias gravitatorias terrestres (2022, 2024, 2030) configuran una única trayectoria que visita siete asteroides troyanos más un cuerpo adicional del cinturón principal. Encuentro adicional: Donaldjohanson 2025-04. Enjambre L4: Eurybates + luna Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Tras EGA-3 (2030-12), el enjambre L5 posterior: binario Patroclus-Menoetius (2033-03) — el binario troyano más grande conocido, un clímax apropiado para la misión que lleva el nombre del fósil de homínido Lucy; Patroclus-Menoetius los dos personajes que cayeron juntos en la Ilíada.",
+  "type": "SOBREVUELO MÚLTIPLE · ACTIVA",
+  "first": "Primera misión a los Troyanos de Júpiter; visita 11 cuerpos en 8 asteroides y sus satélites en una única trayectoria de 12 años — un récord de objetos en órbitas solares separadas",
+  "description": "Lucy se dirige hacia las nubes de Lagrange L4 y L5 — poblaciones de asteroides primordiales que preceden y cierran a Júpiter por 60°, que se cree preservan material del disco protoplanetario exterior. Tres asistencias gravitatorias de la Tierra (2022, 2024, 2030) moldean una única trayectoria que visita siete asteroides troyanos además de objetivos de bonificación en el cinturón principal. Primer encuentro con asteroide: 152830 Dinkinesh (2023-11-01, ~790 m), en el cual el imageado reveló el satélite binario de contacto Selam. Bonificación del cinturón principal: Donaldjohanson 2025-04. Enjambre L4: Eurybates + satélite Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Tras EGA-3 (2030-12), el enjambre caudal L5: Patroclus-Menoetius binario (2033-03) — el binario troyano más grande conocido, un clímax apropiado para el homónimo de la misión (Lucy el fósil homínido; Patroclus-Menoetius los dos personajes que cayeron juntos en la Ilíada).",
   "events": [
     {
       "met": 0,
@@ -13,19 +13,25 @@
     {
       "met": 365,
       "label": "EGA-1",
-      "note": "Primera asistencia gravitatoria terrestre 2022-10-16.",
+      "note": "Primer asistencia gravitatoria de la Tierra 2022-10-16.",
+      "type": "info"
+    },
+    {
+      "met": 746,
+      "label": "DINKINESH",
+      "note": "2023-11-01. Primer sobrevuelo de asteroide — cuerpo del cinturón principal de ~790 m; satélite Selam (binario de contacto) descubierto.",
       "type": "info"
     },
     {
       "met": 1290,
       "label": "DONALDJOHANSON",
-      "note": "Sobrevuelo adicional del cinturón principal 2025-04. Asteroide tipo C de 4 km.",
+      "note": "Sobrevuelo de bonificación del cinturón principal 2025-04. Asteroide C-tipo de 4 km.",
       "type": "info"
     },
     {
       "met": 2127,
       "label": "EURYBATES + QUETA",
-      "note": "2027-08. Primer encuentro troyano. Tipo C de 64 km + luna de 1 km.",
+      "note": "2027-08. Primer encuentro troyano. C-tipo de 64 km + satélite de 1 km.",
       "type": "info"
     },
     {
@@ -49,13 +55,13 @@
     {
       "met": 3445,
       "label": "EGA-3",
-      "note": "Asistencia terrestre final 2030-12. Se dirige a la nube L5.",
+      "note": "Asistencia final de la Tierra 2030-12. Se dirige a la nube L5.",
       "type": "info"
     },
     {
       "met": 4170,
       "label": "PATROCLUS-MENOETIUS",
-      "note": "2033-03. Clímax de la misión: troyano binario de 113 km + 104 km.",
+      "note": "2033-03. Clímax de la misión: binario troyano de 113 km + 104 km.",
       "type": "info"
     }
   ]

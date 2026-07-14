@@ -1,7 +1,33 @@
 {
   "name": "Liberty Bell 7 / MR-4",
-  "dispatch": "Liberty Bell 7 vloog foutloos en wordt herinnerd om de dertig seconden nadat het stopte met vliegen. Gus Grissom's suborbitale sprong herhaalde die van Shepard — bewijs dat de eerste vlucht geen toevalstreffer was geweest — maar op het water ging het nieuwe explosieve luik vanzelf af, de capsule stroomde vol en zonk naar de bodem van de Atlantische Oceaan terwijl Grissom bijna verdronk in zijn vollopen pak. Of hij de trekker had aangestoten of dat deze vanzelf was afgegaan werd de rest van zijn leven betwist en nooit opgelost. De echte les van de vlucht was stiller en nuttiger: het gevaarlijkste deel van een ruimtevlucht is niet altijd de ruimtevlucht.",
-  "type": "BEMAND SUBORBITAAL · GEVLOGEN",
-  "first": "Tweede Amerikaanse suborbitale vlucht; luikstoring deed de capsule verloren gaan (geborgen in 1999)",
-  "description": "De 15 minuten durende suborbitale vlucht van Gus Grissom — tweede Amerikaan in de ruimte, eerste vlucht met explosief noodluik. Na de landing in zee ging het luik voortijdig af, de capsule liep vol en Liberty Bell 7 zonk in 4900 m water; Grissom kwam vrij, maar zijn pak liep vol water en hij verdronk bijna tijdens de helikopterredding. De oorzaak van het afgaan van het luik bleef decennia controversieel; Grissom bleef volhouden dat hij de slagpin niet had geraakt. Op 20-07-1999 geborgen door een Oceaneering/Discovery Channel-expeditie, gerestaureerd en nu te zien in het Kansas Cosmosphere & Space Center, Hutchinson KS. Het boek van Tom Wolfe en de film The Right Stuff (1983) brachten deze vlucht en de luikcontroverse op het scherm."
+  "type": "BEMAND SUBORBITAAL · UITGEVOERD",
+  "first": "Tweede Amerikaanse suborbitalevlucht; luikmalfunction kostte de capsule kwijt (teruggevonden 1999)",
+  "dispatch": "Liberty Bell 7 vloog zonder fouten en wordt vooral herinnerd om wat er dertig seconden na het stoppen van de vlucht gebeurde. Gus Grissoms suborbitalezwaai herhaalde Shepards — bewijs dat de eerste vlucht geen toeval was — maar op het water sprang het nieuwe explosieve luik vanzelf open, liep de capsule vol water, en zonk naar de bodem van de Atlantische Oceaan terwijl Grissom bijna verdronk in zijn vollopen pak. Of hij de ontsteker had aangeraakt of dat het uit zichzelf afging — daarover werd de rest van zijn leven gediscussieerd en het werd nooit opgelost. De werkelijke les van deze vlucht was stiller en bruikbaarder: het gevaarlijkste deel van een ruimtevlucht is niet altijd de ruimtevlucht zelf.",
+  "description": "Gus Grissoms 15-minuten suborbitalevlucht — tweede Amerikaan in de ruimte, eerste vlucht met een explosief noodluik. Na het watersplashdown sprong het luik voortijdig open, liep de capsule vol water, en zonk Liberty Bell 7 naar een diepte van 4900 m; Grissom ontsnapte maar zijn pak liep vol water en hij was bijna verdronken tijdens de helikopteropvangst. De oorzaak van het voortijdige openen van het luik bleef decennia omstreden; Grissom stelde steeds dat hij de ontsteker niet had aangeraakt. Teruggevonden op 1999-07-20 door een expeditie van Oceaneering/Discovery Channel, gerestaureerd en nu tentoongesteld in het Kansas Cosmosphere & Space Center, Hutchinson KS. Het boek van Tom Wolfe / de film van 1983 The Right Stuff dramatiseerde deze vlucht en de luikcontroverse.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "MR-4 vanaf Cape Canaveral LC-5 op 1961-07-21 12:20 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.000018,
+      "label": "APOGEUM",
+      "note": "Apogeum 190 km na 2,5 minuten; ~5 min gewichtloosheid.",
+      "type": "info"
+    },
+    {
+      "met": 0.000174,
+      "label": "WATERSPLASHDOWN",
+      "note": "Atlantische Oceaan 480 km downrange. Luik sprong voortijdig open — capsule liep vol water en zonk. Grissom ontsnapte; geborgen door USS Randolph.",
+      "type": "warning"
+    },
+    {
+      "met": 13880,
+      "label": "CAPSULE TERUGGEVONDEN",
+      "note": "Liberty Bell 7 opgehaald uit 4900 m diepte door Oceaneering International, 1999-07-20.",
+      "type": "info"
+    }
+  ]
 }

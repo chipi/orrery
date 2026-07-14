@@ -1,31 +1,31 @@
 {
-  "name": "Sonda de Esperança",
-  "type": "ÓRBITA · ATIVO",
+  "name": "Hope Probe",
+  "type": "ORBITADOR · ATIVO",
   "first": "Primeira missão interplanetária árabe",
-  "description": "A Missão Emirates Mars — Al Amal, 'Hope' - foi concebida em 2014 para marcar o 50º aniversário da federação dos Emirados Árabes Unidos em 2021. A equipa do MBRSC fez parceria com a Universidade do Colorado, no estado do Arizona, e com a UC Berkeley para conceber e integrar a nave espacial, mas construíram-na eles próprios. A órbita científica (duração de 1 × dia, 27.000 km × 43.000 km) cobre todas as longitudes e horas do dia, capturando padrões climáticos que nenhum outro orbitador de Marte pode resolver. A missão teve sucesso na primeira tentativa, tornando os Emirados Árabes Unidos a quinta agência em Marte.",
+  "description": "A Emirates Mars Mission — Al Amal, 'Esperança' — foi concebida em 2014 para marcar o 50º aniversário da federação dos EAU em 2021. A equipe do MBRSC colaborou com a Universidade do Colorado, Arizona State e UC Berkeley para projetar e integrar a espaçonave, mas a construiu por conta própria. A órbita científica (período de 55 horas, ~20.000 km × 43.000 km) cobre todas as longitudes e horários do dia, capturando padrões climáticos que nenhum outro orbitador de Marte consegue resolver. A missão foi bem-sucedida na primeira tentativa, fazendo dos EAU a quinta agência em Marte.",
   "events": [
     {
       "met": 0,
-      "label": "LANÇAR",
-      "note": "H-IIA 202 de Tanegashima — A Mitsubishi Heavy Industries providenciou o lançamento.",
+      "label": "LANÇAMENTO",
+      "note": "H-IIA 202 de Tanegashima — Mitsubishi Heavy Industries forneceu o lançamento.",
       "type": "nominal"
     },
     {
       "met": 7,
       "label": "TCM-1",
-      "note": "Primeira correção no meio do curso.",
+      "note": "Primeira correção de curso.",
       "type": "nominal"
     },
     {
       "met": 205,
-      "label": "INSERÇÃO DA ÓRBITA DE MARTE",
-      "note": "A queima do propulsor de 27 minutos captura Hope na órbita de Marte 09/02/2021.",
+      "label": "INSERÇÃO EM ÓRBITA DE MARTE",
+      "note": "Queimada de propulsor de 27 minutos coloca Hope em órbita de Marte em 2021-02-09.",
       "type": "nominal"
     },
     {
       "met": 250,
-      "label": "ÓRBITA DA CIÊNCIA",
-      "note": "As manobras Trim colocam Hope em sua órbita científica de 55 horas.",
+      "label": "ÓRBITA CIENTÍFICA",
+      "note": "Manobras de ajuste colocam Hope em sua órbita científica de 55 horas.",
       "type": "info"
     }
   ]

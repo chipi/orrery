@@ -1,9 +1,9 @@
 {
   "name": "Opportunity",
   "type": "ROVER · GEVLOGEN",
-  "first": "Langst rijdende Mars-rover (45,16 km); 14 jaar operationele levensduur op Mars tegen een ontwerp van 90 sols",
-  "dispatch": "Opportunity reed een marathon op een andere planeet. De tweeling van Spirit, geland in 2004 voor een negentigendag-missie, werkte veertien jaar lang en legde meer dan vijfenveertig kilometer af — de langste afstand die een voertuig ooit op welke wereld dan ook heeft afgelegd. Het landde, bij toeval, in een kleine krater waarvan de wanden precies het door water afgezette gesteente blootlegden waarnaar het was gestuurd, en daarna bleef het gewoon doorgaan, van krater naar krater, waarbij het het oude waterverhaal van Mars mijl na mijl las. Een planetaire stofstorm bracht het uiteindelijk in 2018 tot zwijgen.",
-  "description": "Opportunity (MER-B) had buitengewoon geluk — zijn in airbags verpakte lander stuiterde 26 keer over Meridiani Planum en rolde bij puur toeval in een krater van 22 m (Eagle), omringd door blootliggende rotslagen die de rover kon onderzoeken zonder te hoeven rijden. De eerste afbeeldingen toonden jarosiet + „blueberry\" hematietconcreties, het sterkste mineralogische bewijs tot dat moment voor staand vloeibaar water op het vroege Mars. Gedurende 14 jaar en 47 dagen legde Opportunity 45,16 km af — het afstandsrecord voor Mars-rovers — met bezoeken aan de kraters Endurance, Victoria en Endeavour. Een planetenbrede stofstorm in juni 2018 blokkeerde het zonlicht naar de zonnepanelen; de laatste transmissie was op 10 juni 2018, en NASA verklaarde de missie beëindigd op 13 februari 2019.",
+  "first": "Langstrijdende Marsrover (45,16 km); 14 jaar oppervlakteoperatie tegen een ontwerpperiode van 90 sols",
+  "dispatch": "Opportunity reed een marathon over een ander planet. Spirits tweelingbroer, geland in 2004 voor een missie van negentig dagen, werkte veertien jaar lang en legde meer dan vijfenveertig kilometer af — de langste afstand die een voertuig op enige wereld heeft afgelegd. Het landde, bij toeval, in een kleine krater waarvan de wanden exact het door water afgezette gesteente toonden dat het moest vinden, en het bleef maar doorgaan, van krater naar krater, het oude waterverhaal van Mars kilometer na kilometer aflezend. Een planeetbrede stofstorm maakte er eindelijk in 2018 een einde aan.",
+  "description": "Opportunity (MER-B) trof een planeetse jackpot — zijn luchtbag-omgeven lander stuiterde 26 keer over Meridiani Planum en rolde bij pure toeval in een 22-m krater (Eagle), omgeven door blootliggend gesteente dat een rover kon aflezen zonder te rijden. Eerste afbeeldingen toonden jarosiet + \"blauwe bessen\" hematiete concreties, het sterkste minerale bewijs tot dan toe van staand vloeibaar water op vroeg Mars. Over 14 jaar 138 dagen (5.111 sols) legde Opportunity 45,16 km af — het Marsrover-marathonrecord — bezocht Endurance-, Victoria- en Endeavour-kraters. Een planeetbrede stofstorm in juni 2018 blokkeerde zonlicht voor zijn zonnepanelen; laatste transmissie was 2018-06-10, en NASA verklaarde einde-van-missie op 2019-02-13.",
   "events": [
     {
       "met": 0,
@@ -14,37 +14,37 @@
     {
       "met": 12,
       "label": "TCM-1",
-      "note": "Eerste koerscorrectie halverwege.",
+      "note": "Eerste baan-correctie onderweg.",
       "type": "nominal"
     },
     {
       "met": 195,
       "label": "TCM-4",
-      "note": "Laatste bijstelling vóór EDL.",
+      "note": "Laatste trim voor landing.",
       "type": "nominal"
     },
     {
       "met": 202,
       "label": "EDL",
-      "note": "Hitteschild, parachute, remraketten, airbags.",
+      "note": "Hitteschild, parachute, retro-raketten, airbags.",
       "type": "info"
     },
     {
       "met": 202.01,
-      "label": "LANDING — IN EAGLE-KRATER",
-      "note": "26 keer gestuiterd. Rolde bij toeval in een krater van 22 m, omringd door blootliggende rotslagen.",
+      "label": "LANDING — IN EAGLE CRATER",
+      "note": "Stuiterde 26 keer. Rolde bij toeval in een 22-m krater, omgeven door blootliggend gesteente.",
       "type": "info"
     },
     {
       "met": 5300,
       "label": "LAATSTE TRANSMISSIE",
-      "note": "10 juni 2018. Planetenbrede stofstorm blokkeert zonne-energie.",
+      "note": "2018-06-10. Planeetbrede stofstorm blokkeert zonnekracht.",
       "type": "warning"
     },
     {
       "met": 5543,
       "label": "EINDE MISSIE",
-      "note": "NASA verklaart einde missie op 13 februari 2019. 45,16 km afgelegd.",
+      "note": "NASA verklaart einde-van-missie op 2019-02-13. 45,16 km afgelegd.",
       "type": "warning"
     }
   ]

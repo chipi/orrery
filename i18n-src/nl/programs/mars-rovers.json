@@ -1,84 +1,84 @@
 {
   "name": "Mars Rovers",
-  "tagline": "Een kwart eeuw Amerikaanse robots die over Mars rijden — van een magnetrongrote kar die een paar meter aflegde tot een nucleaire astrobioloog die gesteente verzamelt voor de terugreis.",
+  "tagline": "Een kwarteeuw Amerikaanse robots die over Mars rijden — van een karretje ter grootte van een magnetron dat ongeveer honderd meter aflegde tot een nucleaire astrobioloog die gesteente verzamelt voor de terugreis naar huis.",
   "the_land": [
     {
       "type": "prose",
-      "md": "De Viking landers van 1976 hadden bewezen dat een ruimtevaartuig het oppervlak van Mars kon bereiken en functioneren — maar ze zaten vast waar ze waren geland, in staat om alleen te bestuderen wat binnen bereik lag van een enkele arm. Mars is een hele planeet, met zijn geschiedenis geschreven in terrein dat zich uitstrekt over duizenden kilometers, en een lander ziet één plek ervan. Om het verslag te lezen — om te vinden waar ooit water stroomde, om gesteente te bemonsteren dat miljarden jaren geleden werd afgezet — zou een robot moeten bewegen."
+      "md": "De Viking-landers van 1976 hadden bewezen dat een ruimtevaartuig het oppervlak van Mars kon bereiken en werken — maar ze zaten vast waar ze neerkwamen, in staat alleen te bestuderen wat binnen bereik van een enkele arm lag. Mars is een hele planeet, zijn geschiedenis geschreven over terrein dat zich duizenden kilometers uitstrekt, en een lander ziet er één plek van. Om het verhaal te lezen — om te vinden waar ooit water stroomde, om gesteente te bemonsteren dat miljarden jaren geleden werd afgezet — zou een robot moeten bewegen."
     },
     {
       "type": "prose",
-      "md": "De Mars rovers zijn NASA's vijfentwintig jaar durende antwoord op dat probleem: een lijn van robots op wielen, elk groter en capabeler dan de vorige, uitgezonden om over de planeet te rijden en ter plaatse veldgeologie te doen. Ze beginnen met een proof of concept ter grootte van een magnetron en arriveren, een kwart eeuw later, bij een nucleair aangedreven laboratorium dat jaagt op de chemische vingerafdrukken van oud leven."
+      "md": "De Mars rovers zijn NASA's vijfentwintig jaar durende antwoord op dat probleem: een lijn van robots op wielen, elk groter en capabeler dan de vorige, gestuurd om over de planeet te rijden en ter plaatse veldgeologie te doen. Ze beginnen met een proof of concept ter grootte van een magnetron en arriveren, een kwarteeuw later, bij een nucleair aangedreven laboratorium dat jaagt op de chemische vingerafdrukken van oud leven."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Het doel evolueerde met elke generatie, maar de draad was constant: volg het water, en volg dan de vraag naar leven. Sojourner vertrok alleen om te bewijzen dat een rover überhaupt op Mars kon rijden. Spirit en Opportunity werden gestuurd om geologisch bewijs te vinden van een warmer, natter verleden. Curiosity ging om te vragen of Mars ooit bewoonbaar was geweest. Perseverance ging om te zoeken naar tekenen dat er daadwerkelijk iets had geleefd — en om de taak te beginnen Marssteen terug naar de aarde te brengen."
+      "md": "Het doel evolueerde met elke generatie, maar de rode draad was constant: volg het water, en volg daarna de vraag naar leven. Sojourner vertrok enkel om te bewijzen dat een rover überhaupt op Mars kon rijden. Spirit en Opportunity werden gestuurd om geologisch bewijs te vinden van een warmer, natter verleden. Curiosity ging om te vragen of Mars ooit bewoonbaar was geweest. Perseverance ging om te zoeken naar tekenen dat er daadwerkelijk iets had geleefd — en om te beginnen met de taak Martiaans gesteente terug naar de aarde te brengen."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/curiosity/01"
       },
-      "caption": "Elke rover was groter en slimmer dan de vorige — van Sojourner, ter grootte van een magnetron, tot Curiosity en Perseverance, ter grootte van kleine auto's, die boren, laboratoria en camera's over de Marsbodem droegen op missies die maanden moesten duren en uitliepen tot jaren.",
+      "caption": "Elke rover was groter en slimmer dan de vorige — van Sojourner, ter grootte van een magnetron, tot Curiosity en Perseverance, ter grootte van kleine auto's, die boren, laboratoria en camera's over de Martiaanse grond droegen op missies bedoeld om maanden te duren en uitgerekt tot jaren.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Onderliggend aan dit alles was mobiliteit als wetenschappelijk instrument. De echte kracht van een rover is dat hij kan gaan en kijken — naar de interessante steen rijden, de kraterrand beklimmen, naar de oude rivierbedding oversteken — waardoor Mars van een enkele landingsplaats verandert in een landschap dat een geoloog kan onderzoeken, één rit tegelijk."
+      "md": "Aan alles ten grondslag lag mobiliteit als wetenschappelijk instrument. De echte kracht van een rover is dat hij kan gaan en kijken — naar het interessante gesteente rijden, de kraterrand beklimmen, naar de oude rivierbedding oversteken — waardoor Mars verandert van een enkele landingsplek in een landschap dat een geoloog kan onderzoeken, één rit tegelijk."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "De rovers overleefden hun plannen ruimschoots, en elk herschreef wat Mars was geweest. Sojourner reed in 1997 een paar meter en bewees het concept. Spirit en Opportunity, geland in 2004 voor negentigdaagse missies, werkten respectievelijk zes en veertien jaar — Opportunity legde meer dan vijfenveertig kilometer af, de langste rit op welke wereld dan ook — en vonden duidelijk chemisch bewijs dat vloeibaar water ooit op het oppervlak had gestaan."
+      "md": "De rovers overleefden hun plannen ruimschoots, en elk herschreef wat Mars was geweest. Sojourner reed in 1997 ongeveer honderd meter en bewees het concept. Spirit en Opportunity, geland in 2004 voor negentig dagen durende missies, werkten respectievelijk zes en veertien jaar — Opportunity legde meer dan vijfenveertig kilometer af, de langste rit op enige andere wereld — en vonden duidelijk chemisch bewijs dat vloeibaar water ooit op het oppervlak had gestaan."
     },
     {
       "type": "prose",
-      "md": "Curiosity, in 2012 in Gale Crater neergelaten door een raketaangedreven sky crane na een landingssequentie zo gewaagd dat de planners het zeven minuten terreur noemden, bevestigde de zaak: de krater had ooit een meer gehad, met de chemie die een levend wezen had kunnen gebruiken. Perseverance volgde in 2021, landend in de delta van een oude rivier om direct te zoeken naar tekenen van vroeger leven en om Marssteen in verzegelde buizen te bewaren — de eerste fase van een campagne om monsters van een andere planeet terug naar de aarde te brengen."
+      "md": "Curiosity, in 2012 neergelaten in Gale Crater door een raketaangedreven sky crane na een landingssequentie zo gedurfd dat de planners het zeven minuten van terreur noemden, bevestigde de zaak: de krater had ooit een meer bevat, met de chemie die een levend wezen had kunnen gebruiken. Perseverance volgde in 2021, landend op de bodem van Jezero Crater — thuisbasis van een oude rivierdelta — om direct te zoeken naar tekenen van vroeger leven en om Martiaans gesteente in verzegelde buizen te bewaren — de eerste fase van een campagne om monsters van een andere planeet terug naar de aarde te brengen."
     },
     {
       "type": "prose",
-      "md": "Perseverance droeg ook een passagier die zijn eigen geschiedenis maakte: Ingenuity, een kleine helikopter die in 2021 de eerste aangedreven, gecontroleerde vlucht op een andere planeet maakte, en vervolgens tientallen keren meer vloog — bewijs dat Mars vanaf de lucht kon worden verkend, net zoals vanaf de grond. Curiosity en Perseverance rijden beide nog steeds."
+      "md": "Perseverance droeg ook een passagier die zijn eigen geschiedenis maakte: Ingenuity, een kleine helikopter die in 2021 de eerste aangedreven, gecontroleerde vlucht op een andere planeet maakte, en vervolgens tientallen keren meer vloog — bewijs dat Mars vanuit de lucht kon worden verkend, net als vanaf de grond. Curiosity en Perseverance rijden beide nog steeds."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Het verhaal van de Mars rovers is één lang argument, gemaakt in wielsporen, dat Mars ooit een wereld was waar leven mogelijk was. Elke rover bracht het een stap verder: Sojourner bewees de methode, de tweeling bewees het water, Curiosity bewees de bewoonbaarheid, Perseverance ging jagen op het leven zelf. Geen enkele missie beantwoordde de vraag definitief, maar samen veranderden ze Mars van een koude rode woestijn in een planeet met een warme, natte jeugd — en maakten ze de zoektocht naar oud Marsleven een serieuze wetenschap in plaats van een fantasie."
+      "md": "Het verhaal van de Mars rovers is één lang argument, gemaakt in wielsporen, dat Mars ooit een wereld was waar leven mogelijk was. Elke rover bracht het een stap verder: Sojourner bewees de methode, de tweeling bewees het water, Curiosity bewees de bewoonbaarheid, Perseverance ging op jacht naar het leven zelf. Geen enkele missie loste de vraag op, maar samen veranderden ze Mars van een koude rode woestijn in een planeet met een warme, natte jeugd — en maakten de zoektocht naar oud Martiaans leven tot een serieuze wetenschap in plaats van een fantasie."
     },
     {
       "type": "prose",
-      "md": "Het is ook een verhaal over robots die weigerden te sterven. Spirit en Opportunity waren gebouwd voor negentig dagen en werkten jarenlang; Opportunity reed de lengte van een marathon over een planeet, overleefde stofstormen en een vastgelopen wiel en een decennium koude nachten, totdat een wereldwijde storm hem in 2018 eindelijk het zwijgen oplegde. De rovers verdienden een oprechte publieke genegenheid die bijna uniek is onder machines — betreurd toen ze faalden, toegejuicht toen ze wakker werden — omdat ze onmiskenbaar ontdekkingsreizigers waren, die in slow motion deden wat een menselijke geoloog te voet zou doen."
+      "md": "Het is ook een verhaal over robots die weigerden te sterven. Spirit en Opportunity waren gebouwd voor negentig dagen en werkten jarenlang; Opportunity reed de lengte van een marathon over een planeet, overleefde stofstormen en een vastgelopen wiel en een decennium koude nachten, totdat een wereldwijde storm hem uiteindelijk in 2018 het zwijgen oplegde. De rovers verwierven een oprechte publieke genegenheid die bijna uniek is onder machines — betrouwd toen ze faalden, toegejuicht toen ze wakker werden — omdat ze onmiskenbaar ontdekkingsreizigers waren, in slow motion doende wat een menselijke geoloog te voet zou doen."
     },
     {
       "type": "prose",
-      "md": "En de lijn is een studie in incrementele ambitie. Niemand had Perseverance's sky-crane, monster-verzamelende complexiteit in 1997 kunnen landen; het kostte Sojourner's paar meter om de tweeling te rechtvaardigen, de jaren van de tweeling om Curiosity te rechtvaardigen, en Curiosity's meer om het sturen van een rover om naar leven te zoeken en de lange weg naar monsterretour te beginnen te rechtvaardigen. Elke rover was het platform dat de volgende denkbaar maakte — een kwart eeuw capaciteit opbouwen één missie tegelijk."
+      "md": "En de lijn is een studie in incrementele ambitie. Niemand had Perseverance's sky-crane, monster-verzamelende complexiteit in 1997 kunnen laten landen; het vergde Sojourner's honderd meter om de tweeling te rechtvaardigen, de jaren van de tweeling om Curiosity te rechtvaardigen, en Curiosity's meer om het sturen van een rover om leven te zoeken en de lange weg naar monsterretour te beginnen te rechtvaardigen. Elke rover was het platform dat de volgende denkbaar maakte — een kwarteeuw van het opbouwen van capaciteit, één missie tegelijk."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "De eerste erfenis van de rovers is het moderne Mars: een planeet waarvan nu bekend is dat hij staand water, bewoonbare chemie en een warme vroege geschiedenis heeft gehad, vastgesteld niet door gevolgtrekking maar door robots die naar de rotsen reden en ze lazen. De wetenschappelijke onderbouwing dat Mars ooit leven had kunnen herbergen rust bijna volledig op hun wielsporen."
+      "md": "De eerste erfenis van de rovers is de moderne Mars: een planeet waarvan nu bekend is dat hij staand water, bewoonbare chemie en een warme vroege geschiedenis heeft gehad, vastgesteld niet door gevolgtrekking maar door robots die naar de rotsen reden en ze lazen. De wetenschappelijke argumentatie dat Mars ooit leven had kunnen herbergen rust bijna volledig op hun wielsporen."
     },
     {
       "type": "prose",
-      "md": "Hun tweede is de technologie van oppervlaktemobiliteit — de sky crane, de autonome navigatie, de nucleaire energie, de luchtverkenning van Ingenuity — een gereedschapskist opgebouwd rover voor rover die het nu mogelijk maakt om het oppervlak van een planeet te verkennen als een landschap in plaats van een plek, en die elke toekomstige oppervlaktemissie, bemand of robotisch, erft."
+      "md": "Hun tweede is de technologie van oppervlaktemobiliteit — de sky crane, de autonome navigatie, de nucleaire energie, de luchtverkenning van Ingenuity — een gereedschapskist opgebouwd rover voor rover die het nu mogelijk maakt om een planeetoppervlak als een landschap te verkennen in plaats van als een plek, en die elke toekomstige oppervlaktemissie, bemand of robotisch, erft."
     },
     {
       "type": "prose",
-      "md": "Hun derde is nog onderweg: de verzegelde buizen Marssteen die Perseverance verzamelt, wachtend op een toekomstige missie om ze naar huis te brengen. Als die campagne slaagt, zullen de rovers de eerste monsters hebben afgeleverd die ooit zijn teruggebracht van het oppervlak van een andere planeet — de opbrengst van een vijfentwintig jaar durende rit."
+      "md": "Hun derde is nog onderweg: de verzegelde buizen Martiaans gesteente die Perseverance verzamelt, wachtend op een toekomstige missie om ze naar huis te dragen. Als die campagne slaagt, zullen de rovers de eerste monsters hebben afgeleverd die ooit zijn teruggebracht van het oppervlak van een andere planeet — de opbrengst van een vijfentwintig jaar durende rit."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "De les van de Mars rovers is dat mobiliteit alles verandert. Een lander bestudeert waar hij valt; een rover bestudeert waar hij ervoor kiest te gaan. Door het instrument te laten bewegen, veranderde het programma een enkele landingsplaats in een hele planeet aan geologie — een herinnering dat op elke grens het vermogen om zelf te gaan kijken meer waard is dan welke hoeveelheid vaste observatie dan ook."
+      "md": "De les van de Mars rovers is dat mobiliteit alles verandert. Een lander bestudeert waar hij valt; een rover bestudeert waar hij ervoor kiest te gaan. Door het instrument te laten bewegen, veranderde het programma een enkele landingsplek in de geologie van een hele planeet — een herinnering dat op elk grensgebied het vermogen om zelf te gaan en te kijken meer waard is dan welke hoeveelheid vaste observatie dan ook."
     },
     {
       "type": "prose",
-      "md": "De diepere les is dat grote capaciteit in stappen wordt opgebouwd, niet in sprongen. Perseverance's monster-verzamelende verfijning was ondenkbaar in Sojourner's tijd; het werd alleen mogelijk omdat elke rover de volgende verdiende. Ambitieuze doelen worden gewoonlijk niet bereikt door een enkele beslissende missie maar door een geduldige lijn, elk lid bewijst genoeg om degene die volgt te rechtvaardigen — vooruitgang als een estafette, niet een sprint."
+      "md": "De diepere les is dat grote capaciteit in stappen wordt opgebouwd, niet in sprongen. Perseverance's monster-verzamelende verfijning was onvoorstelbaar in Sojourner's tijd; het werd alleen mogelijk omdat elke rover de volgende verdiende. Ambitieuze doelen worden meestal niet bereikt door een enkele beslissende missie maar door een geduldige lijn, elk lid bewijst genoeg om de volgende te rechtvaardigen — vooruitgang als een estafette, niet een sprint."
     }
   ]
 }

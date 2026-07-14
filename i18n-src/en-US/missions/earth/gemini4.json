@@ -2,8 +2,8 @@
   "name": "Gemini 4 / GT-4",
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "First American spacewalk (Ed White)",
-  "dispatch": "Gemini 4 is remembered for one photograph: Ed White, tethered to the spacecraft by a gold umbilical, floating over a blue Earth with a handheld maneuvering gun — the first American to walk in space. The moment was so exhilarating that when Mission Control ordered him back inside after twenty minutes, White called it the saddest moment of his life. The spacewalk looked effortless and mostly was, because White was drifting free rather than working — the hard truth that EVA is exhausting labor wouldn't arrive until the next few flights. But for a country that had been trailing the Soviets, who had made the first spacewalk ten weeks earlier, it was proof America could do this too, and the image became one of the defining pictures of the era.",
-  "description": "James McDivitt and Edward White flew a four-day, 62-orbit mission from 3 June 1965. During the third orbit White made the first American spacewalk — about 21 minutes outside, tethered, using a handheld maneuvering unit. The flight also ran the first US extended medical + science program.",
+  "dispatch": "Gemini 4 is remembered for one photograph: Ed White, tethered to the spacecraft by a gold umbilical, floating over a blue Earth with a handheld maneuvering gun — the first American to walk in space. The moment was so exhilarating that when Mission Control ordered him back inside after twenty minutes, White called it the saddest moment of his life. The spacewalk looked effortless and mostly was, because White was drifting free rather than working — the hard truth that EVA is exhausting labor wouldn't arrive until the next few flights. But for a country that had been trailing the Soviets, who had made the first spacewalk eleven weeks earlier, it was proof America could do this too, and the image became one of the defining pictures of the era.",
+  "description": "James McDivitt and Edward White flew a four-day, 62-orbit mission from 3 June 1965. During the third orbit White made the first American spacewalk — about 23 minutes outside, tethered, using a handheld maneuvering unit. The flight also ran the first US extended medical + science program.",
   "events": [
     {
       "met": 0,
@@ -14,7 +14,7 @@
     {
       "met": 0.13,
       "label": "EVA",
-      "note": "Ed White — first American spacewalk, ~21 min, tethered, with a handheld maneuvering unit.",
+      "note": "Ed White — first American spacewalk, ~23 min, tethered, with a handheld maneuvering unit.",
       "type": "info"
     },
     {

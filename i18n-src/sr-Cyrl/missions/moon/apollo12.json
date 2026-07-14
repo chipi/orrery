@@ -1,62 +1,62 @@
 {
-  "name": "Apollo 12",
-  "dispatch": "[",
-  "type": "ПИЛОТИРАНИ ЛЕНДЕР · ОБАВЉЕНО",
-  "first": "Друго пилотирано слетање на Месец — прецизно слетање 163 m од Surveyor 3",
-  "description": "Друго пилотирано слетање на Месец. Сатурн V је током узлета погођен громом два пута (T+36 с и T+52 с) — Бин је обновио свемирски брод преко чувеног \"SCE to AUX\" позива EECOM Џона Арона. Конрад и Бин су извршили прецизно слетање на Океан Олуја у оквиру 163 m од Surveyor 3 (који је меко слетео у априлу 1967), затим прошетали до Surveyor 3 и скинули његову камеру + узорак површине. Поставили су ALSEP (први ALSEP, насупрот једноставнијем EASEP-у Аполо 11) који је емитовао податке 8 година. Мисија је донела 34 kg узорака.",
+  "name": "Аполо 12",
+  "type": "ЧОВЕЧАНСКИ ЛЕНДЕР · ЛЕТАН",
+  "first": "Друго човечанско слетање на Месец — прецизно слетање 163 m од Surveyor 3",
+  "dispatch": "Ако је Аполо 11 доказао да можеш достићи Месец, Аполо 12 је доказао да можеш достићи одређену тачку на њему. Тридесет шест секунди после лансирања, гром је ударио у ракету и искључио инструменте свемирске летелице; контролер од двадесет четири године по имену Џон Еарон извукао је необичан поправак — \"SCE to AUX\" — из памћења, и лет је наставио. Затим су Конрад и Бин спустили свој Месечни модул на Океан олуја неколико стотина стопа од сонде која је тамо била две године, прошли су до ње и донели делове њене кући. Та прецизност је била прави резултат: Месец је престао да буде одредиште и постао адреса.",
+  "description": "Друго човечанско слетање на Месец. Сатурн В је ударен грмом два пута током успона (T+36 s и T+52 s) — Бин је вратио свемирску летелицу преко чувеног позива \"SCE to AUX\" од EECOM Џона Еарона, затим је екипа поново поравнала јединицу за мерење инерције у mjesечевој орбити. Конрад и Бин су извршили прецизно слетање на Океан олуја унутар 163 m од Surveyor 3 (која је меко слетела у априлу 1967), затим су прошли до Surveyor 3 и уклонили њену камеру + узорак њене површине — делове који су се вратили на Земљу на анализу дугорочног изложености месечевој површини. Развили су ALSEP (потпуни Apollo Lunar Surface Experiments Package — први ALSEP, наспрам Аполо 11 једноставнијег EASEP) који је преносио податке 8 година. Мисија је вратила 34 kg узорака укључујући тамне mare базалте.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-507) from Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Two lightning strikes on the stack (T+36 s, T+52 s) tripped fuel cells offline; recovered via \"SCE to AUX\" call.",
+      "label": "ЛАНСИРАЊЕ",
+      "note": "Сатурн В (AS-507) са Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Два удара грма на стеку (T+36 s, T+52 s) су искључила горивне ћелије; опоравља се преко позива \"SCE to AUX\".",
       "type": "warning"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection — recovery from lightning strikes verified; mission GO for Moon.",
+      "note": "Trans-lunar injection — опоравак од удара грма потврђен; мисија GO за Месец.",
       "type": "nominal"
     },
     {
       "met": 3.39,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.89 km/s.",
+      "note": "Месечна орбитална инсерција. SPS ∆v ≈0.89 km/s.",
       "type": "nominal"
     },
     {
       "met": 5.43,
-      "label": "TOUCHDOWN",
-      "note": "Intrepid lands at Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — within 163 m of Surveyor 3 (the most precise lunar landing yet).",
+      "label": "СЛЕТАЊЕ",
+      "note": "Intrepid слеће на Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — унутар 163 m од Surveyor 3 (најпреципитније месечно слетање до тада).",
       "type": "nominal"
     },
     {
       "met": 5.58,
-      "label": "SURVEYOR 3 VISIT",
-      "note": "Conrad + Bean walk to Surveyor 3 (~163 m away), remove its TV camera + samples for return to Earth — first time a crew visited a previously-landed robotic spacecraft.",
+      "label": "ПОСЕТА SURVEYOR 3",
+      "note": "Конрад + Бин прилазе Surveyor 3 (~163 m удаљена), уклањају њену TV камеру + узорке за повратак на Земљу — први пут када је екипа посетила раније слетелу роботску свемирску летелицу.",
       "type": "info"
     },
     {
       "met": 6.74,
-      "label": "ASCENT",
-      "note": "Intrepid lifts off after 31 h 31 m on surface. 34 kg of samples returned.",
+      "label": "ДИЗАЊЕ",
+      "note": "Intrepid полеће после 31 h 31 m на површини. 34 kg узорака враћено.",
       "type": "nominal"
     },
     {
       "met": 6.93,
-      "label": "LM IMPACT",
-      "note": "Intrepid ascent stage deliberately crashed onto Moon to calibrate ALSEP seismometers. First man-made lunar impact event.",
+      "label": "LM УДАР",
+      "note": "Intrepid ascent stage намерно се срушила на Месец да би калибрирала ALSEP сеизмометре — прва свемирска летелица фазе намерно ударена на Месец и забележена од површинског сеизмометра.",
       "type": "info"
     },
     {
       "met": 7.92,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Trans-Earth injection. SPS ∆v ≈1.0 km/s.",
       "type": "nominal"
     },
     {
       "met": 10.18,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1969-11-24 20:58 UTC. Recovery by USS Hornet.",
+      "label": "СЛЕТАЊЕ НА ВОДУ",
+      "note": "CM је спуштена у Južni Pacifik 1969-11-24 20:58 UTC. Спасавање од USS Hornet.",
       "type": "nominal"
     }
   ]

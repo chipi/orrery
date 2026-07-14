@@ -114,7 +114,7 @@
         "met_days": 205.005,
         "type": "edl_or_oi",
         "label": "Mars lander touchdown — Elysium Planitia",
-        "description": "Heritage Phoenix EDL architecture (parachute + retrorockets, no sky crane) — InSight is a stationary lander, not a rover, so it could use the simpler legacy approach. Landed 2018-11-26 at 4.5°N, 135.6°E. Deployed SEIS seismometer (made the first Marsquake observations) and HP³ heat-flow probe (which jammed and never reached target depth). Mission ended 2022-12-21 when dust accumulation on the solar arrays cut power below operational threshold."
+        "description": "Heritage Phoenix EDL architecture (parachute + retrorockets, no sky crane) — InSight is a stationary lander, not a rover, so it could use the simpler legacy approach. Landed 2018-11-26 at 4.5°N, 135.6°E. Deployed SEIS seismometer (made the first Marsquake observations) and HP³ heat-flow probe (which jammed and never reached target depth). Final transmission 2022-12-15; NASA declared the mission over 2022-12-21 after two missed comm attempts confirmed the solar arrays could no longer sustain power."
       }
     ],
     "interplanetary_profile": {

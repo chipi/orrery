@@ -1,18 +1,18 @@
 {
   "title": "Régimes orbitaux — LEO, MEO, GEO, HEO",
-  "intro_sentence": "Les orbites terrestres se groupent en quatre bandes d'altitude ; chacune un compromis différent.",
+  "intro_sentence": "Les orbites terrestres se regroupent en quatre bandes d'altitude ; chacune représente un compromis différent entre la latence, la durée de vie et le coût.",
   "narrative_101": [
-    "Choisis un satellite. Le plus important n'est pas ce qu'il fait — c'est à quelle altitude il vit. Altitude fixe revisite, latence, durée de vie. Ingénieurs : quatre bandes — LEO, MEO, GEO, HEO.",
-    "LEO jusqu'à ~2000 km. ISS 408 km. Hubble 540 km. Starlink ~550 km. Bon marché, mais 90 minutes par tour, frottement atmosphérique.",
-    "MEO 2000-35786 km — bande de navigation (GPS, Galileo, Beidou). GEO exactement à 35786 km — période 24h — satellite hovere sur même point. Wettsats et comsats.",
-    "HEO = joker. Apogée haut, périgée bas. Molniya russes optimisées hautes latitudes."
+    "Prenez un satellite. Ce qui compte vraiment, ce n'est pas ce qu'il fait — c'est l'altitude à laquelle il évolue. L'altitude détermine la fréquence à laquelle il peut voir la même zone au sol, le temps qu'il faut à un signal radio pour l'atteindre, la quantité de carburant nécessaire pour maintenir l'orbite, et sa durée de vie utile. Les ingénieurs spatiaux regroupent les orbites en quatre bandes — LEO, MEO, GEO, HEO — car les compromis changent discrètement à mesure que vous montez en altitude.",
+    "LEO monte jusqu'à ~2 000 km. L'ISS se trouve à 408 km. Hubble à 540 km. Starlink de SpaceX à ~550 km. Peu coûteux d'y atteindre (la plupart des fusées peuvent lancer une charge utile ici), mais vous faites le tour de la planète toutes les 90 minutes, l'atmosphère vous ralentit (durée de vie : quelques années sans rebut), et vous ne voyez une zone au sol donnée que ~10 minutes par passage.",
+    "MEO s'étend de 2 000 à 35 786 km — la bande GPS / Galileo / Beidou, plus certaines communications. Les périodes vont de 2 à 12 heures ; vous couvrez le globe avec moins de satellites que en LEO, et vous êtes au-dessus des zones les plus dangereuses des ceintures de radiation (choix minutieux). GEO se situe exactement à 35 786 km — période exactement 24 heures — donc un satellite là-bas demeure au-dessus du même point sur Terre indéfiniment, ce qui est pourquoi tous les satellites météorologiques et de diffusion sont là-haut.",
+    "HEO (orbite hautement elliptique) est l'atout secret — apogée élevée, périgée faible, long temps de séjour au-dessus d'une latitude choisie. Les orbites Molniya russes sont HEO, optimisées pour la couverture en hautes latitudes que GEO ne peut pas atteindre. Chaque régime est une philosophie de mission différente, codée sous forme de nombre sur l'axe des ordonnées."
   ],
   "body_paragraphs": [
-    "LEO (< 2000 km) : moins cher, période ~90 min, latence courte, vie courte (frottement). ISS, Hubble, Starlink, observation, activité humaine.",
-    "MEO (2000-35786 km) : navigation. GPS 20200, GLONASS 19100, Galileo 23222, Beidou 21500. Période ~12h.",
-    "GEO (35786 km, 0° inclinaison) : période = jour sidéral. Satellite stationnaire sur longitude. TV, météo (GOES, Himawari, Meteosat). Délai aller-retour ~240 ms.",
-    "HEO : périgée bas, apogée haut. Molniya : périgée ~600 km, apogée ~40000 km, inclinaison 63,4°. Hautes latitudes.",
-    "Changer régime cher. LEO à GEO ~3,9 km/s. LEO à échappée ~3,2 km/s — moins cher, contre-intuitif."
+    "LEO (Orbite terrestre basse, < 2 000 km d'altitude) : la moins coûteuse d'accès, période la plus rapide (~90 minutes pour l'ISS à 408 km), délai de liaison sol le plus court (quelques ms), durée de vie la plus courte en raison de la traînée atmosphérique résiduelle. Héberge l'ISS, Hubble, Starlink, la plupart des satellites d'observation terrestre, toutes les activités humaines au-delà d'Apollo.",
+    "MEO (Orbite terrestre moyenne, 2 000–35 786 km) : la bande de navigation. GPS à 20 200 km, GLONASS à 19 100 km, Galileo à 23 222 km, Beidou MEO à 21 500 km. Périodes ~11–14 heures sur la bande de navigation ; les constellations de 24-30 satellites assurent une couverture mondiale. Au-dessus de la ceinture de Van Allen interne, en dessous de la majorité de la ceinture externe.",
+    "GEO (Orbite géostationnaire, 35 786 km d'altitude exactement, inclinaison 0°) : période égale à la journée sidérale terrestre (23h 56m 4s) donc le satellite reste immobile au-dessus d'une longitude sur l'équateur. Héberge la télédiffusion mondiale, l'imagerie météorologique (GOES, Himawari, Meteosat), et les comsats traditionnels. Temps aller-retour du signal ~240 ms — perceptible dans les appels vocaux.",
+    "HEO (Orbite hautement elliptique) : périgée faible + apogée élevée. Les orbites Molniya (Russie) ont un périgée ~600 km, apogée ~40 000 km, inclinaison 63,4° — choisis pour que le séjour à l'apogée se fasse au-dessus de l'hémisphère nord où les comsats GEO ne peuvent pas atteindre. Critique pour les communications en hautes latitudes et certaines constellations de détection précoce.",
+    "Changer de régime est coûteux. ∆v de LEO à GEO est environ 3,9 km/s. De LEO à l'échappement / TLI est environ 3,2 km/s — contre-intuitivement moins cher que d'atteindre GEO depuis LEO, car vous n'avez pas à circulariser à l'arrivée (TMI vers Mars demande ~3,6+ km/s)."
   ],
-  "diagram_caption": "Bandes terrestres concentriques : LEO, MEO, GEO, HEO."
+  "diagram_caption": "Bandes concentriques terrestres : LEO (cyan, basse altitude), MEO (bleu, région GPS), GEO (or, anneau géostationnaire), HEO (orange, ellipse asymétrique)."
 }

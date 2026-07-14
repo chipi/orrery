@@ -1,31 +1,32 @@
 {
   "name": "JUICE",
   "type": "ORBITER · ACTIEF",
-  "first": "Grootste interplanetaire ruimtevaartuig ooit in Europa gebouwd; eerste ruimtevaartuig dat een maan van een andere planeet omcirkelt (Ganymedes, 2034)",
-  "description": "JUpiter ICy moons Explorer — ESA's L-klasse vlaggenschipmissie, gelanceerd op 14-4-2023. De 8-jarige reis gebruikt een van de meest complexe zwaartekrachtassistentiesequenties ooit gevlogen: een primeur Maan-Aarde-zwaartekrachtassistentie op 19-8-2024, Venus op 31-8-2025, daarna nog twee Aardpassages in 2026 en 2029. Jupiter-baaninsertie is gepland voor 21-7-2031. Na 35 nauwe scheervluchten van Europa, Ganymedes en Callisto over 3,5 jaar zal JUICE op 31-12-2034 naar een speciale Ganymedes-baan manoeuvreren — het eerste ruimtevaartuig ooit dat een maan van een andere planeet omcirkelt.",
+  "first": "Grootste interplanetaire ruimtevaartuig gebouwd in Europa; eerste ruimtevaartuig ooit dat een maan van een ander planet in een baan om zich heen draait (Ganymedes, 2034)",
+  "description": "JUpiter ICy moons Explorer — ESA's L-klasse vlaggenschip, gelanceerd 2023-04-14. De 8-jarige reis maakt gebruik van een van de meest complexe zwaartekrachtassistentiesequenties ooit gevlogen: een eerste-van-zijn-soort Maan-Aarde Zwaartekrachtassistentie op 2024-08-19, Venus 2025-08-31, gevolgd door twee verdere Aardepaskeringen in 2026 en 2029. De insertie in de Jupiters-baan staat gepland voor 2031-07-21. Na 35 dichte voorbijvluchten van Europa, Ganymedes en Callisto over 3,5 jaar zal JUICE zich in een speciale baan om Ganymedes manoevreren op 2034-12-31 — het eerste ruimtevaartuig ooit dat een maan van een ander planet in een baan om zich heen draait. Missie eindigt in 2035 met inslag op Ganymedes. Primaire wetenschap: bestaan + eigenschappen van ondergrondse oceanen over de ijzige Galileïsche manen, samenstelling van ijsschil + getijverwarming, en structuur van de Joviaanse magnetosfeer.",
+  "dispatch": "JUpiter ICy moons Explorer — ESA's L-klasse vlaggenschip markeert een nieuw tijdperk van Europese interplanetaire verkenning. Gelanceerd in april 2023, zal JUICE na een ingewikkelde zwaartekrachtassistentiereis eindelijk de Joviaanse manen bereiken en als allereerste mens-ontworpen vaartuig een baan om Ganymedes innemen — een mijlpaal die het toewijdingsgeest van Europese ruimtevaart demonstreert.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "De Ariane 5 ECA+ lanceert JUICE vanuit Kourou.",
+      "note": "Ariane 5 ECA tilt JUICE op vanuit Kourou.",
       "type": "nominal"
     },
     {
       "met": 493,
-      "label": "MAAN-AARDE-SCHEERVLUCHT",
-      "note": "Eerste Maan-Aarde-zwaartekrachtassistentie ooit uitgevoerd — Maan + Aarde in één zwaai.",
+      "label": "MAAN-AARDE VOORBIJVLUCHT",
+      "note": "Eerste-ooit Maan-Aarde Zwaartekrachtassistentiemanoeuvre — Maan + Aarde in één swing.",
       "type": "nominal"
     },
     {
       "met": 871,
-      "label": "VENUS-SCHEERVLUCHT",
-      "note": "Venus-zwaartekrachtassistentie op weg terug naar nog twee aardpassages.",
+      "label": "VENUS VOORBIJVLUCHT",
+      "note": "Venus zwaartekrachtassistentie onderweg terug naar twee verdere Aardepaskeringen.",
       "type": "nominal"
     },
     {
       "met": 3020,
-      "label": "JUPITER-BAANINSERTIE",
-      "note": "Hoofdmotor-burn plaatst JUICE in Jupiterbaan voor de ijsmaantour.",
+      "label": "JUPITERS BAANINSERTIE",
+      "note": "Motorbrand plaatst JUICE in een baan om Jupiter voor de ijzige-manentour.",
       "type": "info"
     }
   ]

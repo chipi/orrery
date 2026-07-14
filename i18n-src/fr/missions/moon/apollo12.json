@@ -1,62 +1,62 @@
 {
   "name": "Apollo 12",
-  "dispatch": "Si Apollo 11 a prouvé qu'on pouvait atteindre la Lune, Apollo 12 a prouvé qu'on pouvait atteindre un endroit précis sur celle-ci. Trente-six secondes après le lancement, la foudre a frappé la fusée et mis hors service les instruments du vaisseau spatial ; un contrôleur de vingt-quatre ans nommé John Aaron a sorti de mémoire une solution obscure — « SCE to AUX » — et le vol a continué. Puis Conrad et Bean ont posé leur Lunar Module sur l'océan des Tempêtes à quelques centaines de pieds d'une sonde qui se trouvait là depuis deux ans, s'y sont rendus à pied et en ont rapporté des morceaux. Cette précision était le véritable résultat : la Lune avait cessé d'être une destination pour devenir une adresse.",
-  "type": "ATTERRISSEUR HABITÉ · VOLÉ",
+  "type": "ATTERRISSEUR HABITÉ · FLOWN",
   "first": "Deuxième alunissage habité — atterrissage de précision à 163 m de Surveyor 3",
-  "description": "Le deuxième alunissage habité. Saturn V fut frappé par la foudre deux fois pendant l'ascension (T+36 s et T+52 s) — Bean restaura le vaisseau via le célèbre appel « SCE to AUX » de l'EECOM John Aaron. Conrad et Bean ont effectué un atterrissage de précision sur l'Océan des Tempêtes à 163 m de Surveyor 3 (atterri en douceur en avril 1967), puis ont marché jusqu'à Surveyor 3 et ont enlevé sa caméra + un échantillon de sa surface. Ils ont déployé ALSEP (le premier ALSEP, par opposition à l'EASEP plus simple d'Apollo 11) qui a transmis des données pendant 8 ans. La mission a rapporté 34 kg d'échantillons.",
+  "dispatch": "Si Apollo 11 a prouvé qu'on pouvait atteindre la Lune, Apollo 12 a prouvé qu'on pouvait atteindre un endroit particulier. Trente-six secondes après le décollage, la foudre a frappé la fusée et mis hors ligne les instruments du vaisseau ; un contrôleur de vingt-quatre ans nommé John Aaron a sorti de mémoire un correctif obscur — « SCE to AUX » — et le vol a continué. Conrad et Bean ont alors posé leur module lunaire sur l'Océan des Tempêtes à quelques centaines de mètres d'une sonde qui s'y trouvait depuis deux ans, se sont approchés d'elle, et en ont ramené des pièces. Cette précision était le vrai résultat : la Lune avait cessé d'être une destination pour devenir une adresse.",
+  "description": "Le deuxième alunissage habité. La Saturn V a été frappée par la foudre deux fois lors de l'ascension (T+36 s et T+52 s) — Bean a rétabli le vaisseau via le fameux appel « SCE to AUX » du contrôleur EECOM John Aaron, puis l'équipage a réaligné l'unité de mesure inertielle en orbite lunaire. Conrad et Bean ont exécuté un atterrissage de précision sur l'Océan des Tempêtes à 163 m de Surveyor 3 (qui s'était posée en douceur en avril 1967), puis se sont rendus à Surveyor 3 et ont retiré sa caméra + un échantillon de sa surface — des pièces qui ont été ramenées sur Terre pour analyse de l'exposition à long terme à la surface lunaire. Ils ont déployé l'ALSEP (l'ensemble complet des expériences de surface du programme Apollo — le premier ALSEP, par rapport au plus simple EASEP d'Apollo 11) qui a transmis des données pendant 8 ans. La mission a ramené 34 kg d'échantillons, notamment des basaltes mariens sombres.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-507) from Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Two lightning strikes on the stack (T+36 s, T+52 s) tripped fuel cells offline; recovered via \"SCE to AUX\" call.",
+      "label": "DÉCOLLAGE",
+      "note": "Saturn V (AS-507) depuis le Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Deux coups de foudre sur la tour de lancement (T+36 s, T+52 s) ont mis hors ligne les piles à combustible ; rétablies via l'appel « SCE to AUX ».",
       "type": "warning"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection — recovery from lightning strikes verified; mission GO for Moon.",
+      "note": "Injection trans-lunaire — rétablissement après les coups de foudre vérifié ; la mission est GO pour la Lune.",
       "type": "nominal"
     },
     {
       "met": 3.39,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.89 km/s.",
+      "note": "Insertion en orbite lunaire. ∆v du SPS ≈ 0,89 km/s.",
       "type": "nominal"
     },
     {
       "met": 5.43,
-      "label": "TOUCHDOWN",
-      "note": "Intrepid lands at Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — within 163 m of Surveyor 3 (the most precise lunar landing yet).",
+      "label": "ATTERRISSAGE",
+      "note": "Intrepid se pose à Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — à 163 m de Surveyor 3 (l'alunissage le plus précis à ce jour).",
       "type": "nominal"
     },
     {
       "met": 5.58,
-      "label": "SURVEYOR 3 VISIT",
-      "note": "Conrad + Bean walk to Surveyor 3 (~163 m away), remove its TV camera + samples for return to Earth — first time a crew visited a previously-landed robotic spacecraft.",
+      "label": "VISITE DE SURVEYOR 3",
+      "note": "Conrad + Bean se rendent à Surveyor 3 (~163 m), en retirent sa caméra de télévision + des échantillons à ramener sur Terre — première fois qu'un équipage rend visite à un vaisseau robotique précédemment posé.",
       "type": "info"
     },
     {
       "met": 6.74,
-      "label": "ASCENT",
-      "note": "Intrepid lifts off after 31 h 31 m on surface. 34 kg of samples returned.",
+      "label": "DÉCOLLAGE",
+      "note": "Intrepid décolle après 31 h 31 m en surface. 34 kg d'échantillons ramené.",
       "type": "nominal"
     },
     {
       "met": 6.93,
-      "label": "LM IMPACT",
-      "note": "Intrepid ascent stage deliberately crashed onto Moon to calibrate ALSEP seismometers. First man-made lunar impact event.",
+      "label": "IMPACT DU MODULE LUNAIRE",
+      "note": "L'étage d'ascension d'Intrepid s'écrase délibérément sur la Lune pour étalonner les sismomètres de l'ALSEP — le premier étage de vaisseau d'une mission habitée délibérément impacté sur la Lune et enregistré par un sismomètre en surface.",
       "type": "info"
     },
     {
       "met": 7.92,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Injection trans-terrienne. ∆v du SPS ≈ 1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 10.18,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1969-11-24 20:58 UTC. Recovery by USS Hornet.",
+      "label": "AMERRISSAGE",
+      "note": "Le module de commande s'est amerri dans le Pacifique Sud 1969-11-24 20:58 UTC. Récupération par l'USS Hornet.",
       "type": "nominal"
     }
   ]

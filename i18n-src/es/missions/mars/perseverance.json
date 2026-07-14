@@ -1,50 +1,50 @@
 {
   "name": "Perseverance",
-  "type": "RÓVER · ACTIVA",
+  "type": "ROVER · ACTIVO",
   "first": "Primer helicóptero en otro planeta (Ingenuity); primer almacenamiento de muestras para Mars Sample Return",
-  "dispatch": "Perseverance fue a Marte a buscar a los muertos. Aterrizado en 2021 en el cráter Jezero — el delta de un río que alimentó un lago hace miles de millones de años, exactamente el tipo de lugar donde la vida habría dejado rastros — es el primer rover construido específicamente para buscar señales de vida antigua, y para hacer algo que ninguna misión había hecho: sellar roca marciana en tubos y dejarlos a un lado para que una futura nave espacial los lleve a casa. También entregó a Ingenuity, el pequeño helicóptero que realizó el primer vuelo propulsado en otro planeta. Si las muestras que está almacenando alguna vez regresan, serán los primeros fragmentos de la superficie de otro planeta traídos de vuelta a la Tierra.",
-  "description": "Perseverance es la misión de superficie marciana más ambiciosa jamás volada. Mars Sample Return depende de él — el róver está recogiendo y almacenando muestras en tubos que una misión futura recuperará y traerá a la Tierra. Ingenuity, el primer helicóptero en otro planeta, voló 72 misiones antes de retirarse con los rotores dañados en enero de 2024 — demostrando que el vuelo controlado es posible en la fina atmósfera marciana. MOXIE, un demostrador que produce oxígeno a partir de CO2, generó el primer oxígeno fabricado localmente en otro planeta, un ensayo para misiones tripuladas a Marte.",
+  "dispatch": "Perseverance fue a Marte en busca de los muertos. Descendió en 2021 en el suelo del cráter Jezero —una cuenca que alberga el delta de un río que alimentó un lago hace miles de millones de años, exactamente el tipo de lugar donde la vida habría dejado huellas— es el primer rover construido específicamente para buscar signos de vida antigua, y para hacer algo que ninguna misión había hecho: sellar rocas marcianas en tubos y apartarlas para que una nave espacial futura las llevara a casa. También entregó Ingenuity, el pequeño helicóptero que realizó el primer vuelo propulsado en otro planeta. Si las muestras que está almacenando alguna vez regresan, serán los primeros fragmentos de la superficie de otro planeta traídos de vuelta a la Tierra.",
+  "description": "Perseverance es la misión de superficie en Marte más ambiciosa jamás realizada. Mars Sample Return depende de ella —el rover está recopilando y almacenando muestras en tubos que una misión futura recuperará y llevará a la Tierra. Ingenuity, el primer helicóptero en otro planeta, completó 72 misiones antes de retirarse con rotores dañados en enero de 2024 —demostrando que el vuelo controlado es posible en la atmósfera delgada de Marte. MOXIE, un demostrador de oxígeno a partir de CO₂, produjo el primer oxígeno fabricado localmente en otro planeta, un ensayo para futuras misiones tripuladas a Marte.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Atlas V 541 desde Cape Canaveral SLC-41 — la misma clase de vehículo que Curiosity.",
+      "note": "Atlas V 541 desde Cape Canaveral SLC-41 —mismo tipo de vehículo que Curiosity.",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "ENCENDIDO ITM",
-      "note": "Inyección transmarciana.",
+      "label": "QUEMADURA TMI",
+      "note": "Inyección de transferencia a Marte.",
       "type": "nominal"
     },
     {
       "met": 9,
-      "label": "MCT-1",
+      "label": "TCM-1",
       "note": "Primera corrección de trayectoria.",
       "type": "nominal"
     },
     {
       "met": 203,
-      "label": "EDA",
-      "note": "La grúa aérea entrega el róver al cráter Jezero el 2021-02-18 — sitio de un antiguo delta fluvial.",
+      "label": "EDL",
+      "note": "La grúa del cielo entrega el rover al cráter Jezero el 2021-02-18 —sitio de un antiguo delta fluvial.",
       "type": "nominal"
     },
     {
       "met": 203.01,
       "label": "ATERRIZAJE",
-      "note": "Perseverance aterriza en Jezero a las 20:55 UTC.",
+      "note": "Perseverance toca tierra en Jezero a las 20:55 UTC.",
       "type": "nominal"
     },
     {
       "met": 271,
       "label": "PRIMER VUELO DE INGENUITY",
-      "note": "Primer vuelo controlado y propulsado en otro planeta — 39,1 segundos hasta 5 m de altitud.",
+      "note": "Primer vuelo propulsado controlado en otro planeta —39,1 segundos a una altitud de hasta 5 m.",
       "type": "info"
     },
     {
       "met": 1278,
       "label": "INGENUITY RETIRADO",
-      "note": "Pala del rotor dañada en el vuelo 72 el 2024-01-18; el helicóptero permanece operativo como retransmisor.",
+      "note": "Aspa del rotor dañada en el vuelo 72 el 2024-01-18; helicóptero inmovilizado, repurposado como estación meteorológica y de datos estacionaria almacenando lecturas para recuperación futura.",
       "type": "info"
     }
   ]

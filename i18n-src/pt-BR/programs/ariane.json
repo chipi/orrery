@@ -1,14 +1,14 @@
 {
   "name": "Ariane",
-  "tagline": "A garantia da Europa de seu próprio caminho ao espaço — nascida de um não, transformada no lançador comercial dominante do mundo, e ainda levando a independência do continente à órbita.",
+  "tagline": "A garantia da Europa de seu próprio caminho ao espaço — nascida de um não como resposta, transformada na dominante lançadora comercial do mundo, e ainda levando a independência do continente à órbita.",
   "the_land": [
     {
       "type": "prose",
-      "md": "No início dos anos 1970 a Europa não controlava seu próprio acesso ao espaço, e descobriu o que isso significava. Quando a Europa quis lançar os satélites de comunicação franco-alemães Symphonie, o único meio disponível era americano — e os Estados Unidos só forneceriam sob a condição de que os satélites não fossem usados para telecomunicações comerciais que pudessem competir com a Intelsat, liderada pelos EUA. Foi uma humilhação discreta e decisiva: voar no foguete de outro é deixá-lo decidir o que sua espaçonave pode fazer. A Europa tirou a conclusão óbvia e resolveu nunca mais estar nessa posição."
+      "md": "No início dos anos 1970, a Europa não controlava seu próprio acesso ao espaço, e descobriu o que isso significava. Quando a Europa quis lançar os satélites de comunicações franco-alemães Symphonie, o único transporte disponível era americano — e os Estados Unidos só o forneceriam sob a condição de que os satélites não fossem usados para telecomunicações comerciais que pudessem competir com a Intelsat liderada pelos EUA. Foi uma humilhação silenciosa e decisiva: voar no foguete de outra nação é deixar que ela decida o que sua espaçonave pode fazer. A Europa tirou a conclusão óbvia e resolveu nunca mais estar nessa posição."
     },
     {
       "type": "prose",
-      "md": "A resposta foi o Ariane — um lançador europeu, liderado pela França e construído sob a recém-formada Agência Espacial Europeia, lançando de Kourou na Guiana Francesa, perto do equador onde a rotação da Terra dá um impulso gratuito ao foguete. Seu primeiro voo, em 1979, foi o momento em que a Europa assegurou acesso garantido e independente à órbita. Diferente de quase todos os outros programas neste atlas, o Ariane não transportou tripulação e não perseguiu recordes. É infraestrutura — a estrada, não a jornada — e revelou-se uma das estradas mais consequentes da era espacial."
+      "md": "A resposta foi Ariane — uma lançadora europeia, liderada pela França e construída sob a recém-formada Agência Espacial Europeia, lançando de Kourou na Guiana Francesa, próximo ao equador onde a rotação da Terra dá ao foguete um impulso gratuito. Seu primeiro voo, em 1979, foi o momento em que a Europa garantiu acesso independente e assegurado à órbita. Diferente de quase todos os outros programas neste atlas, Ariane não transportou tripulação nem perseguiu recordes. É infraestrutura — a estrada, não a jornada — e acabou sendo uma das estradas mais consequentes da era espacial."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/ariane-1/01"
       },
-      "caption": "Ariane 1, o primeiro lançador orbital independente da Europa, voado pela primeira vez em 1979. Existiu para garantir que a Europa nunca mais precisasse da permissão de outra potência para colocar suas próprias espaçonaves no espaço.",
+      "caption": "Ariane 1, a primeira lançadora orbital independente da Europa, voada pela primeira vez em 1979. Ela existiu para garantir que a Europa nunca mais precisaria da permissão de outra potência para colocar suas próprias espaçonaves no espaço.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "O primeiro objetivo do Ariane era estratégico e simples: autonomia. A Europa construiria um lançador sob seu controle total, para que seus satélites, sua ciência e, eventualmente, seus astronautas pudessem alcançar a órbita nos termos europeus, sem responder a ninguém. Esse objetivo sozinho já teria justificado o programa. Mas um segundo objetivo emergiu quase imediatamente e tornou-se igualmente importante — vender essa capacidade no mercado aberto."
+      "md": "O primeiro objetivo de Ariane era estratégico e simples: autonomia. A Europa construiria uma lançadora que controlasse totalmente, para que seus satélites, sua ciência e eventualmente seus astronautas pudessem alcançar a órbita em termos europeus, sem responder a ninguém. Esse objetivo por si só teria justificado o programa. Mas um segundo objetivo surgiu quase imediatamente e se tornou igualmente importante — vender essa capacidade no mercado aberto."
     },
     {
       "type": "prose",
-      "md": "Em 1980 a Europa criou a Arianespace, a primeira empresa comercial de lançamentos do mundo, e transformou um ativo estratégico em negócio. A ideia era que se o Ariane lançasse não apenas cargas europeias mas satélites de qualquer um disposto a pagar, a receita comercial ajudaria a sustentar o lançador e reduziria seu custo. Era um modelo genuinamente novo — tratar o acesso ao espaço como um serviço a ser vendido em vez de uma capacidade que cada nação construía apenas para si — e por duas décadas funcionou espetacularmente bem."
+      "md": "Em 1980, a Europa criou a Arianespace, a primeira empresa comercial de lançamentos do mundo, e transformou um ativo estratégico em negócio. A ideia era que se Ariane lançasse não apenas cargas europeias, mas satélites de qualquer um disposto a pagar, a receita comercial ajudaria a sustentar a lançadora e reduzir seu custo. Era um modelo genuinamente novo — tratar o acesso ao espaço como um serviço a ser vendido em vez de uma capacidade que cada nação construía apenas para si — e por duas décadas funcionou espetacularmente bem."
     }
   ],
   "outcome": [
@@ -35,30 +35,30 @@
       "image": {
         "reuse": "fleet/ariane-5/03"
       },
-      "caption": "Ariane 5 em sua plataforma de lançamento em Kourou. Após uma famosa falha no voo inaugural, tornou-se um dos foguetes de carga pesada mais confiáveis já voados — lançando Rosetta, Galileo, os cargueiros ATV para a ISS e o James Webb Space Telescope.",
+      "caption": "Ariane 5 em sua plataforma de lançamento em Kourou. Depois de uma famosa falha no voo inaugural, tornou-se um dos foguetes de carga pesada mais confiáveis já voados — lançando Rosetta, Galileo, os cargueiros ATV para a ISS e o James Webb Space Telescope.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "O resultado superou a ambição. O Ariane 4, o cavalo de batalha confiável dos anos 1980 e 90, capturou aproximadamente metade de todo o mercado global de lançamentos comerciais de satélites, tornando a Arianespace o provedor de lançamentos dominante na Terra e a Europa uma potência espacial de primeira linha. Seu sucessor, o Ariane 5, teve um início notório — seu voo inaugural em 1996 autodestruiu-se trinta e sete segundos após o lançamento quando o software de navegação transferido do Ariane 4 transbordou na velocidade mais alta do novo foguete, uma falha agora ensinada em todo curso de engenharia de software — mas recuperou-se para tornar-se um dos lançadores pesados mais confiáveis já construídos."
+      "md": "O resultado excedeu a ambição. Ariane 4, o confiável cavalo de batalha das décadas de 1980 e 90, capturou aproximadamente metade de todo o mercado global de lançamentos comerciais de satélites, fazendo da Arianespace a provedora de lançamentos dominante na Terra e da Europa uma potência espacial de primeira linha. Sua sucessora, Ariane 5, teve um início notório — seu voo inaugural em 1996 se autodestruiu trinta e sete segundos após o lançamento quando o software de orientação herdado de Ariane 4 transbordou à velocidade maior do novo foguete, uma falha agora ensinada em todos os cursos de engenharia de software — mas se recuperou para se tornar uma das lançadoras pesadas mais confiáveis já construídas."
     },
     {
       "type": "prose",
-      "md": "O manifesto do Ariane 5 é um rol de honra da ciência e infraestrutura da era: a missão cometária Rosetta, a constelação de navegação Galileo, BepiColombo a Mercúrio, os cargueiros ATV que reabasteceram a International Space Station e — como sua carga final coroada — o James Webb Space Telescope, lançado com tanta precisão que economizou anos de combustível do telescópio. Então o terreno mudou. Os foguetes reutilizáveis da SpaceX cortaram os preços do Ariane e terminaram seu domínio comercial, e o Ariane 6, voando a partir de 2024, é a resposta da Europa: um lançador mais barato e flexível construído para manter o acesso independente do continente vivo em um mercado transformado."
+      "md": "O manifesto de Ariane 5 é uma lista de honra da ciência e infraestrutura da era: a missão ao cometa Rosetta, a constelação de navegação Galileo, BepiColombo a Mercúrio, os cargueiros ATV que reabasteceram a International Space Station, e — a mais celebrada de suas cargas finais — o James Webb Space Telescope (dezembro de 2021), lançado com tal precisão que economizou anos de combustível do telescópio. O verdadeiro voo final de Ariane 5 ocorreu em julho de 2023, transportando os satélites de telecomunicações Heinrich Hertz e Syracuse 4B no VA261. Então o terreno mudou. Os foguetes reutilizáveis da SpaceX reduziram os preços de Ariane e terminaram seu domínio comercial, e Ariane 6, voando a partir de 2024, é a resposta da Europa: uma lançadora mais barata e flexível construída para manter o acesso independente do continente vivo em um mercado transformado."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "O fio condutor do Ariane é que o acesso ao espaço não é uma conveniência mas uma forma de soberania. Todo o programa cresceu do reconhecimento de que depender dos foguetes de outra potência significa depender da permissão dessa potência — e tudo que a Europa fez depois, desde construir o Ariane até sustentá-lo comercialmente e substituí-lo sob pressão, seguiu da decisão de que essa dependência era inaceitável. Em um domínio geralmente contado através de tripulações e destinos, o Ariane é o lembrete de que alguém precisa construir e possuir a estrada, e que quem a possui importa enormemente."
+      "md": "O fio condutor de Ariane é que o acesso ao espaço não é uma conveniência, mas uma forma de soberania. Todo o programa nasceu do reconhecimento de que depender dos foguetes de outra potência significa depender da permissão dessa potência — e tudo o que a Europa fez depois, de construir Ariane a sustentá-la comercialmente a substituí-la sob pressão, seguiu da decisão de que essa dependência era inaceitável. Em um domínio geralmente contado através de tripulações e destinos, Ariane é o lembrete de que alguém tem que construir e possuir a estrada, e que quem a possui importa enormemente."
     },
     {
       "type": "prose",
-      "md": "A virada comercial é o movimento mais astuto do programa e sua lição central. Ao fundar a Arianespace e vender lançamentos mundialmente, a Europa fez seu lançador estratégico pagar por grande parte de sua própria manutenção e o aperfeiçoou contra competição real, em vez de deixá-lo tornar-se um projeto nacional subsidiado que voava apenas ocasionalmente. Por vinte anos isso tornou o Ariane tanto independente quanto dominante. Também tornou o programa vulnerável de um modo que um lançador puramente estratégico não teria sido: quando um concorrente mais barato apareceu, o Ariane perdeu o mercado comercial que o sustentava, e teve que reinventar-se para sobreviver."
+      "md": "O pivô comercial é o movimento mais inteligente do programa e sua lição central. Ao fundar a Arianespace e vender lançamentos mundialmente, a Europa fez sua lançadora estratégica pagar por grande parte de sua própria manutenção e a aperfeiçoou contra competição real, em vez de deixá-la se tornar um projeto nacional subsidiado que voava apenas ocasionalmente. Por vinte anos isso tornou Ariane tanto independente quanto dominante. Também tornou o programa vulnerável de uma forma que uma lançadora puramente estratégica não teria sido: quando um concorrente mais barato apareceu, Ariane perdeu o mercado comercial que a sustentava, e teve que se reinventar para sobreviver."
     },
     {
       "type": "prose",
-      "md": "Esse concorrente, é claro, foi a reutilização feita direito — a coisa que o Space Shuttle havia prometido e não entregado, e que uma nova geração alcançou. O Ariane, há muito construído na lógica do foguete descartável confiável, descobriu que essa lógica foi derrubada quase da noite para o dia, e o Ariane 6 é a resposta de uma potência estabelecida a uma disruptiva. O resultado ainda está sendo escrito, mas a aposta é exatamente a mesma de 1979: se a Europa mantém seu próprio caminho garantido ao espaço."
+      "md": "Esse concorrente, claro, foi a reutilização feita corretamente — a coisa que o Space Shuttle havia prometido e não entregue, e que uma nova geração alcançou. Ariane, há muito construída na lógica do foguete descartável confiável, descobriu que essa lógica foi derrubada quase da noite para o dia, e Ariane 6 é a resposta de uma potência estabelecida a uma disruptiva. O resultado ainda está sendo escrito, mas o que está em jogo é exatamente o mesmo que em 1979: se a Europa mantém seu próprio caminho garantido ao espaço."
     }
   ],
   "legacy": [
@@ -67,26 +67,26 @@
       "image": {
         "reuse": "fleet/ariane-6/02"
       },
-      "caption": "Ariane 6, voando a partir de 2024 — a resposta da Europa a um mercado transformado por foguetes reutilizáveis, e a continuação do mesmo mandato para o qual o Ariane 1 foi construído: acesso europeu independente ao espaço.",
+      "caption": "Ariane 6, voando a partir de 2024 — a resposta da Europa a um mercado transformado por foguetes reutilizáveis, e a continuação do mesmo mandato para o qual Ariane 1 foi construída: acesso europeu independente ao espaço.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "O legado do Ariane é que a Europa nunca mais teve que pedir permissão para alcançar o espaço. Por mais de quatro décadas uma linha ininterrupta de foguetes europeus lançou os satélites do continente, missões científicas e contribuições à International Space Station — e por muito desse tempo lançou os do mundo também. A indústria de lançamentos comerciais que agora é tão central para a exploração espacial foi, em grande parte, inventada pela Arianespace; o modelo de vender acesso à órbita como um serviço começou em Kourou."
+      "md": "O legado de Ariane é que a Europa nunca mais teve que pedir permissão para alcançar o espaço. Por mais de quatro décadas, uma linha ininterrupta de foguetes europeus lançou os satélites do continente, missões científicas e contribuições para a International Space Station — e por grande parte desse tempo lançou os do mundo também. A indústria de lançamentos comerciais que agora é tão central para os voos espaciais foi, em grande parte, inventada pela Arianespace; o modelo de vender acesso à órbita como serviço começou em Kourou."
     },
     {
       "type": "prose",
-      "md": "Também permanece como o caso de estudo mais claro sobre o valor — e o custo — da autonomia estratégica. O Ariane foi mais caro do que simplesmente comprar lançamentos de quem fosse mais barato, e na era reutilizável essa diferença cresceu. Mas os fundadores do programa entenderam que o lançamento mais barato não vale nada se o vendedor pode ditar seus termos, e a Europa gastou quatro décadas e dinheiro considerável para evitar que isso acontecesse novamente. Se deve continuar pagando esse prêmio, à medida que concorrentes reutilizáveis remodelam o mercado, é a questão viva que o Ariane 6 agora incorpora."
+      "md": "Também se destaca como o caso de estudo mais claro sobre o valor — e o custo — da autonomia estratégica. Ariane foi mais cara do que simplesmente comprar lançamentos de quem fosse mais barato, e na era reutilizável essa diferença cresceu. Mas os fundadores do programa entenderam que o lançamento mais barato não vale nada se o vendedor pode ditar seus termos, e a Europa gastou quatro décadas e dinheiro considerável para impedir que isso acontecesse novamente. Se vale a pena continuar pagando esse prêmio, enquanto concorrentes reutilizáveis remodelam o mercado, é a questão viva que Ariane 6 agora incorpora."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "A primeira lição do Ariane é que o acesso independente à infraestrutura crítica vale a pena pagar. A Europa construiu seu próprio lançador não porque era mais barato mas porque a alternativa — depender de um rival ou parceiro para algo tão fundamental quanto alcançar a órbita — significava render o controle sobre seu próprio programa espacial, como o caso Symphonie havia mostrado. O prêmio que a Europa pagou pelo Ariane é o preço de nunca mais ser dito o que seus satélites podem fazer. Para qualquer coisa genuinamente estratégica, autonomia é uma capacidade, não uma extravagância."
+      "md": "A primeira lição de Ariane é que o acesso independente a infraestrutura crítica vale a pena pagar. A Europa construiu sua própria lançadora não porque era mais barata, mas porque a alternativa — depender de um rival ou parceiro para algo tão fundamental quanto alcançar a órbita — significava entregar o controle sobre seu próprio programa espacial, como o caso Symphonie havia mostrado. O prêmio que a Europa pagou por Ariane é o preço de nunca mais ser informada do que seus satélites podem fazer. Para qualquer coisa genuinamente estratégica, autonomia é uma capacidade, não uma extravagância."
     },
     {
       "type": "prose",
-      "md": "A segunda lição está escrita no Voo 501: software reutilizado não é automaticamente software seguro. O Ariane 5 foi destruído porque o código de navegação provado no Ariane 4 foi transferido sem testes para um foguete que voava mais rápido, onde uma suposição embutida no código antigo não se sustentava mais. Os componentes eram sólidos; a falha foi em assumir que o que funcionou em um contexto funcionaria inalterado em outro. Todo sistema reutilizado deve ser revalidado contra as novas condições que realmente enfrentará — uma lição que alcança muito além de foguetes."
+      "md": "A segunda lição está escrita no Voo 501: software reutilizado não é automaticamente software seguro. Ariane 5 foi destruída porque código de orientação comprovado em Ariane 4 foi transferido sem testes para um foguete que voava mais rápido, onde uma premissa embutida no código antigo não mais se sustentava. Os componentes eram sólidos; a falha foi assumir que o que funcionava em um contexto funcionaria inalterado em outro. Todo sistema reutilizado deve ser revalidado contra as novas condições que realmente enfrentará — uma lição que vai muito além de foguetes."
     }
   ]
 }

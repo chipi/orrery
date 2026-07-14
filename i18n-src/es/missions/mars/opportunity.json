@@ -1,9 +1,9 @@
 {
   "name": "Opportunity",
-  "type": "ROVER · FLOWN",
-  "first": "Rover con mayor recorrido en Marte (45,16 km); 14 años de vida útil en superficie frente a un diseño de 90 soles",
-  "dispatch": "Opportunity recorrió un maratón a través de otro planeta. Gemelo de Spirit, aterrizó en 2004 para una misión de noventa días, funcionó durante catorce años y recorrió más de cuarenta y cinco kilómetros—la distancia más larga que cualquier vehículo haya recorrido en cualquier mundo. Descendió, por suerte, en un pequeño cráter cuyas paredes expusieron exactamente la roca depositada por agua que fue enviado a encontrar, y luego simplemente siguió adelante, cráter tras cráter, leyendo la antigua historia acuática de Marte milla tras milla. Una tormenta de polvo planetaria finalmente lo silenció en 2018.",
-  "description": "Opportunity (MER-B) tuvo una suerte planetaria excepcional: su módulo de aterrizaje envuelto en airbags rebotó 26 veces a través de Meridiani Planum y rodó dentro de un cráter de 22 m (Eagle) por pura casualidad, rodeado de roca expuesta que el rover pudo analizar sin desplazarse. Las primeras imágenes mostraron jarosita y concreciones de hematita \"arándano\", la evidencia mineral más sólida hasta ese momento de agua líquida estancada en el Marte primitivo. Durante 14 años y 47 días, Opportunity recorrió 45,16 km —el récord de maratón de rovers marcianos— visitando los cráteres Endurance, Victoria y Endeavour. Una tormenta de polvo a escala planetaria en junio de 2018 bloqueó la luz solar de sus paneles solares; la transmisión final fue el 10 de junio de 2018, y la NASA declaró el fin de la misión el 13 de febrero de 2019.",
+  "type": "ROVER · COMPLETADO",
+  "first": "Rover marciano con mayor recorrido (45,16 km); 14 años de vida en superficie contra una misión de diseño de 90 soles",
+  "dispatch": "Opportunity recorrió una maratón en otro planeta. Gemelo de Spirit, aterrizó en 2004 para una misión de noventa días, trabajó durante catorce años y cruzó más de cuarenta y cinco kilómetros — la mayor distancia que cualquier vehículo ha recorrido en cualquier mundo. Tuvo la suerte de descender en un pequeño cráter cuyas paredes exponían exactamente la roca formada por agua que fue enviado a buscar, y entonces simplemente continuó avanzando, de cráter en cráter, leyendo la antigua historia del agua en Marte kilómetro tras kilómetro. Una tormenta de polvo a escala planetaria finalmente lo silenció en 2018.",
+  "description": "Opportunity (MER-B) logró un premio mayor planetario — su módulo de aterrizaje envuelto en bolsas de aire rebotó 26 veces a lo largo de Meridiani Planum e inmediatamente se introdujo en un cráter de 22 m (Eagle) por pura suerte, rodeado de roca de lecho expuesta que un rover podía analizar sin necesidad de desplazarse. Las primeras imágenes mostraron jarosita y concreciones de hematita «arándano», la evidencia mineral más sólida hasta ese momento de agua líquida permanente en el Marte primitivo. Durante 14 años 138 días (5.111 soles) Opportunity recorrió 45,16 km — el récord de maratón de rovers en Marte — visitando los cráteres Endurance, Victoria y Endeavour. Una tormenta de polvo a escala planetaria en junio de 2018 bloqueó la luz solar de sus paneles solares; la transmisión final fue 2018-06-10, y la NASA declaró el fin de la misión el 2019-02-13.",
   "events": [
     {
       "met": 0,
@@ -20,31 +20,31 @@
     {
       "met": 195,
       "label": "TCM-4",
-      "note": "Ajuste final pre-EDL.",
+      "note": "Ajuste final preentrada.",
       "type": "nominal"
     },
     {
       "met": 202,
       "label": "EDL",
-      "note": "Escudo térmico, paracaídas, retrocohetes, airbags.",
+      "note": "Escudo térmico, paracaídas, cohetes retro, bolsas de aire.",
       "type": "info"
     },
     {
       "met": 202.01,
-      "label": "ATERRIZAJE — DENTRO DEL CRÁTER EAGLE",
-      "note": "Rebotó 26 veces. Rodó dentro de un cráter de 22 m por casualidad, rodeado de roca expuesta.",
+      "label": "TOMA DE CONTACTO — EN EL CRÁTER EAGLE",
+      "note": "Rebotó 26 veces. Se introdujo en un cráter de 22 m por casualidad, rodeado de roca de lecho expuesta.",
       "type": "info"
     },
     {
       "met": 5300,
       "label": "TRANSMISIÓN FINAL",
-      "note": "10 de junio de 2018. Tormenta de polvo a escala planetaria corta la energía solar.",
+      "note": "2018-06-10. Tormenta de polvo a escala planetaria corta la energía solar.",
       "type": "warning"
     },
     {
       "met": 5543,
-      "label": "FIN DE MISIÓN",
-      "note": "NASA declara el fin de la misión el 13 de febrero de 2019. 45,16 km recorridos.",
+      "label": "FIN DE LA MISIÓN",
+      "note": "La NASA declara el fin de la misión el 2019-02-13. 45,16 km recorridos.",
       "type": "warning"
     }
   ]

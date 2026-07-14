@@ -1,25 +1,25 @@
 {
   "name": "X-37B OTV-6 (USA-299, USSF-7)",
-  "type": "AVION SPATIAL SANS ÉQUIPAGE · VOLÉ",
-  "first": "USA-299 / USSF-7 — 908 jours en orbite, Shuttle Landing Facility du KSC",
-  "description": "Sixième vol du X-37B — premier sous la nouvelle désignation organisationnelle de l'USSF ; record de 908 jours en orbite (~2,5 ans). Lancé le 2020-05-17 à 13:14 UTC depuis CCAFS SLC-41 sur un Atlas V 501 AV-081 ; a atterri à la KSC SLF le 2022-11-12 à 10:22 UTC. Transportait le PRAM du Naval Research Laboratory (Photovoltaic RF Antenna Module — expérience de transmission par faisceau micro-ondes à partir de l'énergie solaire de 1 W) et un déployeur AFRL FalconSAT-8.",
+  "type": "AVION SPATIAL NON HABITÉ · VOLÉ",
+  "first": "USA-299 / USSF-7 — 908 jours en orbite, KSC Shuttle Landing Facility",
+  "description": "Sixième vol du X-37B — premier sous la nouvelle désignation organisationnelle de l'USSF ; mission record de 908 jours en orbite (~2,5 ans). Lancé le 2020-05-17 à 13:14 UTC depuis CCAFS SLC-41 sur Atlas V 501 AV-081 ; atterrissage à KSC SLF le 2022-11-12 à 10:22 UTC. Transportait le module PRAM du Naval Research Laboratory (Photovoltaic RF Antenna Module — expérience de transmission de puissance par micro-ondes solaires de 1 W) et un dispenseur FalconSAT-8 de l'AFRL.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-081) from CCAFS SLC-41 2020-05-17.",
+      "label": "LANCEMENT",
+      "note": "Atlas V 501 (AV-081) depuis CCAFS SLC-41 le 2020-05-17.",
       "type": "nominal"
     },
     {
       "met": 454,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee ~390 km; classified payload operations.",
+      "label": "OPÉRATIONS EN ORBITE",
+      "note": "Apogée ~400 km ; opérations de charge utile classifiées.",
       "type": "info"
     },
     {
       "met": 908,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2022-11-12.",
+      "label": "ATTERRISSAGE",
+      "note": "Atterrissage autonome sur piste à KSC Shuttle Landing Facility le 2022-11-12.",
       "type": "nominal"
     }
   ]

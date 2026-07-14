@@ -1,92 +1,92 @@
 {
   "name": "James Webb Space Telescope",
-  "tagline": "Der Nachfolger von Hubble — ein goldener Spiegel von der Größe eines Hauses, in eine Rakete gefaltet, eine Million Meilen entfernt entfaltet, um das erste Licht im Universum zu sehen.",
+  "tagline": "Der Nachfolger von Hubble — ein goldener Spiegel in der Größe eines Hauses, in eine Rakete gefaltet, eine Million Meilen entfernt entfaltet, um das erste Licht im Universum zu sehen.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Hubble zeigte uns das Universum im sichtbaren Licht. Aber die entferntesten Objekte — die allerersten Galaxien, die sich einige hundert Millionen Jahre nach dem Urknall bildeten — sind für es unsichtbar, weil die Expansion des Universums ihr Licht vollständig aus dem sichtbaren Spektrum heraus und in den Infrarotbereich gedehnt hat. Um die Morgendämmerung der kosmischen Zeit zu sehen, braucht man ein Infrarotteleskop, und zwar ein großes, das extrem kalt gehalten wird und weit entfernt von der Wärme der Erde geparkt ist. Das James Webb Space Telescope ist diese Maschine, und sein Bau dauerte fünfundzwanzig Jahre, kostete zehn Milliarden Dollar und erforderte eine technische Kühnheit, die fast keinen Raum für Fehler ließ."
+      "md": "Hubble zeigte uns das Universum im sichtbaren Licht. Aber die entferntesten Objekte — die allerersten Galaxien, die sich einige hundert Millionen Jahre nach dem Urknall bildeten — sind für es unsichtbar, weil die Expansion des Universums ihr Licht vollständig aus dem sichtbaren Spektrum heraus und ins Infrarote gedehnt hat. Um die Morgendämmerung der kosmischen Zeit zu sehen, braucht man ein Infrarotteleskop, und zwar ein großes, das extrem kalt gehalten wird und weit entfernt von der Wärme der Erde geparkt ist. Das James Webb Space Telescope ist diese Maschine, und es zu bauen dauerte fünfundzwanzig Jahre, zehn Milliarden Dollar und einen Lauf technischer Kühnheit mit fast keinem Raum für Fehler."
     },
     {
       "type": "prose",
-      "md": "JWST ist das größte und komplexeste Teleskop, das je geflogen wurde, und anders als Hubble ist es wirklich international — eine Partnerschaft der NASA, der European Space Agency und der Canadian Space Agency, gestartet auf einer europäischen Rakete. Es ist auch das riskanteste: zu groß, um vollständig montiert in eine Rakete zu passen, musste es wie Origami gefaltet, zusammengepackt gestartet und sich dann perfekt im Weltraum entfalten, durch Hunderte von Schritten, die nicht alle zusammen getestet werden konnten und niemals repariert werden könnten. Dass es überhaupt funktionierte, ist eine der großen technischen Leistungen der Ära."
+      "md": "JWST ist das größte und komplexeste Teleskop, das jemals geflogen ist, und anders als Hubble ist es wirklich international — eine Partnerschaft von NASA, der European Space Agency und der Canadian Space Agency, gestartet mit einer europäischen Rakete. Es ist auch das riskanteste: zu groß, um in irgendeine Rakete vollständig montiert zu passen, musste es wie Origami gefaltet, zusammengepackt gestartet und sich dann perfekt im tiefen Weltraum entfalten, durch Hunderte von Schritten, die nicht alle zusammen getestet werden konnten und niemals repariert werden könnten. Dass es überhaupt funktionierte, ist eine der großen technischen Leistungen der Ära."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Das Hauptziel ist es, die ersten Galaxien zu sehen — Licht von den frühesten Strukturen im Universum, über mehr als 13 Milliarden Jahre kosmischer Expansion tief ins Infrarot rotverschoben. Webb wurde gebaut, um weiter in die Zeit zurückzublicken als jedes Instrument zuvor, in die Ära, als die ersten Sterne und Galaxien sich einschalteten, und um zu beobachten, wie sich das Universum aus der Dunkelheit formte, die dem Urknall folgte."
+      "md": "Das Hauptziel ist es, die ersten Galaxien zu sehen — Licht von den frühesten Strukturen im Universum, tief ins Infrarot rotverschoben über mehr als 13 Milliarden Jahre kosmischer Expansion. Webb wurde gebaut, um weiter in die Zeit zurückzuschauen als jedes Instrument zuvor, in die Ära, als die ersten Sterne und Galaxien sich einschalteten, und um zu beobachten, wie sich das Universum aus der Dunkelheit zusammensetzte, die dem Urknall folgte."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/jwst/01"
       },
-      "caption": "JWST — ein 6,5-Meter-segmentierter goldbeschichteter Spiegel über einem fünflagigen Sonnenschild von der Größe eines Tennisplatzes. Der Schild hält das Teleskop kälter als -220°C, damit seine eigene Wärme seine Infrarotaugen nicht blenden kann.",
+      "caption": "JWST — ein 6,5-Meter-segmentierter goldbeschichteter Spiegel über einem fünfschichtigen Sonnenschild in der Größe eines Tennisplatzes. Der Schild hält das Teleskop kälter als -220°C, damit seine eigene Wärme nicht seine Infrarotaugen blendet.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Das zweite Ziel ist es, die Atmosphären anderer Welten zu lesen. Wenn ein Exoplanet vor seinem Stern vorbeizieht, filtert ein wenig Sternenlicht durch seine Atmosphäre, und Webbs Infrarotempfindlichkeit kann dieses Licht auseinandernehmen, um die vorhandenen Gase zu erkennen — Wasser, Kohlendioxid, Methan. Es ist das erste Instrument, das in der Lage ist, die Atmosphären kleiner, potenziell bewohnbarer Planeten wirklich zu charakterisieren, und verwandelt die Suche nach Leben vom Zählen von Welten zum Schnuppern ihrer Luft."
+      "md": "Das zweite Ziel ist es, die Atmosphären anderer Welten zu lesen. Wenn ein Exoplanet vor seinem Stern vorbeizieht, filtert ein wenig Sternenlicht durch seine Atmosphäre, und Webbs Infrarotempfindlichkeit kann dieses Licht auseinandernehmen, um die vorhandenen Gase zu erkennen — Wasser, Kohlendioxid, Methan. Es ist das erste Instrument, das fähig ist, die Atmosphären kleiner, potenziell bewohnbarer Planeten wirklich zu charakterisieren, und verwandelt die Suche nach Leben vom Zählen von Welten zum Erschnüffeln ihrer Luft."
     },
     {
       "type": "prose",
-      "md": "Unter beiden Zielen liegt eine Reihe brutaler technischer Anforderungen: ein Spiegel, der zu groß ist, um entfaltet gestartet zu werden, ein Sonnenschild, um das gesamte Observatorium kälter zu halten als fast jeder Ort im Sonnensystem, und ein Zuhause eine Million Meilen von der Erde entfernt am L2-Punkt — weit genug, um kalt und stabil zu bleiben, und viel zu weit, als dass jemals ein Astronaut es besuchen könnte. Alles musste beim ersten Mal funktionieren, allein, im Dunkeln."
+      "md": "Unter beiden Zielen liegt eine Reihe brutaler technischer Anforderungen: ein Spiegel, der zu groß ist, um entfaltet gestartet zu werden, ein Sonnenschild, um das gesamte Observatorium kälter zu halten als fast überall im Sonnensystem, und ein Zuhause eine Million Meilen von der Erde entfernt am L2-Punkt — weit genug, um kalt und stabil zu bleiben, und viel zu weit, um jemals von einem Astronauten besucht zu werden. Alles musste beim ersten Mal funktionieren, allein, in der Dunkelheit."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Nach einer so problematischen Entwicklung, dass es 2011 vom Kongress beinahe eingestellt wurde, startete JWST am ersten Weihnachtstag 2021 auf einer Ariane 5 — und führte dann den schwierigsten Teil fehlerfrei aus. Über zwei Wochen führte es etwa 344 ‚Single-Point Failures' durch: Entfaltungen, von denen jede, wenn sie klemmte, die Mission verkrüppelt hätte, ohne die Möglichkeit einer Reparaturmannschaft eine Million Meilen entfernt. Der Sonnenschild entfaltete sich, die Spiegelsegmente rasteten ein, das Teleskop kühlte ab — und jeder einzelne Schritt funktionierte. Der Start selbst war so präzise, dass der eingesparte Treibstoff die erwartete Lebensdauer des Teleskops ungefähr verdoppelte."
+      "md": "Nach einer Entwicklung, die so problematisch war, dass sie 2011 vom Kongress beinahe abgebrochen wurde, startete JWST am Weihnachtstag 2021 auf einer Ariane 5 — und führte dann den schwierigsten Teil makellos aus. Über zwei Wochen arbeitete es sich durch die 344 kritischen Einzelfehlerquellen, die es trug — etwa 80% davon waren Entfaltungsschritte —, von denen jede, wenn sie klemmte, die Mission verkrüppelt hätte, ohne die Möglichkeit einer Reparaturmannschaft eine Million Meilen draußen. Der Sonnenschild entfaltete sich, die Spiegelsegmente rasteten ein, das Teleskop kühlte ab — und jeder einzelne Schritt funktionierte. Der Start selbst war so präzise, dass der eingesparte Treibstoff die erwartete Lebensdauer des Teleskops ungefähr verdoppelte."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/jwst/02"
       },
-      "caption": "Das Observatorium für den Start gefaltet und bei L2 entfaltet. Nichts so Großes war jemals autonom im Weltraum entfaltet worden; die zweiwöchige Entfaltung wurde mit angehaltenem Atem von allen beobachtet, die Jahrzehnte damit verbracht hatten, es zu bauen.",
+      "caption": "Das Observatorium für den Start gefaltet und am L2 entfaltet. Nichts von dieser Größe war jemals autonom im tiefen Weltraum entfaltet worden; die zweiwöchige Entfaltung wurde mit angehaltenem Atem von jedem beobachtet, der Jahrzehnte damit verbracht hatte, es zu bauen.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "Die Wissenschaft begann fast sofort und übertraf die Erwartungen. Webbs erste Bilder, die im Juli 2022 veröffentlicht wurden, waren die tiefsten Infrarotansichten des Universums, die je aufgenommen wurden — Tausende von Galaxien in einem Himmelsausschnitt von der Größe eines Sandkorns, das auf Armlänge gehalten wird. Seitdem hat es Galaxien gefunden, die weit früher und reifer sind als die Theorie vorhersagte, Moleküle in Exoplanetatmosphären entdeckt, in die staubigen Wolken geblickt, in denen Sterne geboren werden, und ein echtes Überdenken erzwungen, wie schnell sich das frühe Universum formte. Es tut, was Hubble für eine frühere Generation tat: das Lehrbuch umschreiben und das Bild des Kosmos neu zeichnen."
+      "md": "Die Wissenschaft begann fast sofort und übertraf die Erwartungen. Webbs erste Bilder, veröffentlicht im Juli 2022, waren die tiefsten Infrarotansichten des Universums, die jemals aufgenommen wurden — Tausende von Galaxien in einem Himmelsausschnitt von der Größe eines Sandkorns, das mit ausgestrecktem Arm gehalten wird. Seitdem hat es Galaxien viel früher und reifer gefunden als die Theorie vorhergesagt hatte, Moleküle in Exoplanetatmosphären entdeckt, in die staubigen Wolken geblickt, wo Sterne geboren werden, und ein echtes Umdenken erzwungen, wie schnell sich das frühe Universum zusammensetzte. Es tut, was Hubble mit einer früheren Generation tat: das Lehrbuch umschreiben und das Bild des Kosmos neu zeichnen."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Die Geschichte von JWST ist eine Wette, die nur eine einzige Stimme vom Zusammenbruch entfernt war und sich vollständig auszahlte. Ein Jahrzehnt lang war es der problematische Gigant der Raumfahrtwissenschaft — über dem Budget, hinter dem Zeitplan, absorbierte Geld, das andere Missionen wollten, und wurde 2011 beinahe komplett eingestellt. Die Menschen, die es verteidigten, wetteten darauf, dass die Auszahlung den Schmerz rechtfertigen würde: dass ein so ehrgeiziges Teleskop, wenn es funktionierte, die Dekade der Verzögerung und das zehnfache Kostenwachstum wert sein würde. Die ersten Bilder entschieden die Debatte. Fast niemand bezweifelt jetzt noch, dass die Wette richtig war."
+      "md": "Die Geschichte von JWST ist eine Wette, die nur ein Kongressbudget davon entfernt war, getötet zu werden, und sich vollständig ausgezahlt hat. Ein Jahrzehnt lang war es der problematische Riese der Weltraumwissenschaft — über dem Budget, hinter dem Zeitplan, Geld absorbierend, das andere Missionen wollten, und 2011 beinahe komplett abgebrochen. Die Leute, die es verteidigten, wetteten darauf, dass sich die Auszahlung den Schmerz rechtfertigen würde: dass ein Teleskop so ehrgeizig, wenn es funktionierte, das Jahrzehnt Verzögerung und das zehnfache Kostenwachstum wert sein würde. Die ersten Bilder entschieden das Argument. Fast niemand stellt jetzt in Frage, dass die Wette richtig war."
     },
     {
       "type": "prose",
-      "md": "Es ist auch eine Geschichte darüber, das Unmögliche allein zu tun. Die definierende Tatsache von JWST ist, dass es nicht so getestet werden konnte, wie es fliegen würde, und nicht repariert werden konnte, sobald es geflogen war — der Sonnenschild und der Spiegel mussten sich perfekt entfalten, beim ersten Mal, an einem Ort, den kein Astronaut erreichen konnte. Hubbles fehlerhafter Spiegel wurde bekanntlich von einer Shuttle-Crew repariert; JWST hatte kein solches Sicherheitsnetz. Jede seiner Hunderte kritischer Entfaltungen musste von selbst gelingen, und die Tatsache, dass sie alle es taten, ist ein Zeugnis für ein Maß an technischer Disziplin, das an das Unvernünftige grenzt."
+      "md": "Es ist auch eine Geschichte darüber, das Unmögliche allein zu tun. Die entscheidende Tatsache von JWST ist, dass es nicht so getestet werden konnte, wie es fliegen würde, und nicht repariert werden konnte, sobald es geflogen war — der Sonnenschild und der Spiegel mussten sich perfekt entfalten, beim ersten Mal, an einem Ort, den kein Astronaut erreichen konnte. Hubbles fehlerhafter Spiegel wurde bekanntlich von einer Shuttle-Crew repariert; JWST hatte kein solches Sicherheitsnetz. Jede seiner Hunderten kritischer Entfaltungen musste für sich gelingen, und die Tatsache, dass sie alle es taten, ist ein Zeugnis für ein Maß an technischer Disziplin, das an das Unvernünftige grenzt."
     },
     {
       "type": "prose",
-      "md": "Und es ist eine wirklich globale Leistung auf eine Weise, wie es Apollo nie war. Europa baute Instrumente und stellte den Start bereit; Kanada trug wichtige Sensoren bei; die Wissenschaft wird unter den Astronomen der Welt geteilt. JWST gehört zur Ära internationaler Flaggschiffe — zu teuer und zu schwierig für eine einzelne Nation, gebaut von einer Koalition, und liefert eine Sicht auf das Universum, die im vollsten Sinne der Menschheit gehört und nicht einem einzelnen Land."
+      "md": "Und es ist eine wirklich globale Errungenschaft auf eine Art, wie Apollo es nie war. Europa baute Instrumente und stellte den Start bereit; Kanada steuerte Schlüsselsensoren bei; die Wissenschaft wird unter den Astronomen der Welt geteilt. JWST gehört zur Ära der internationalen Flaggschiffe — zu teuer und zu schwierig für eine einzelne Nation, von einer Koalition gebaut und mit einem Blick auf das Universum zurückkehrend, der im vollsten Sinne der Menschheit gehört und nicht einem einzelnen Land."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "JWSTs erstes Vermächtnis ist bereits sichtbar: eine neue Sicht auf das frühe Universum, mit Galaxien, die früher und heller gefunden wurden, als Modelle vorhersagten, was Kosmologen zwingt, zu überdenken, wie sich die ersten Strukturen bildeten. Wie Hubble zuvor ist es das Instrument hinter den Entdeckungen einer Generation, und es hat Jahrzehnte Betriebszeit vor sich."
+      "md": "JWSTs erstes Vermächtnis ist bereits sichtbar: eine neue Ansicht des frühen Universums, mit Galaxien, die früher und heller gefunden wurden als Modelle vorhergesagt hatten, was Kosmologen zwingt, zu überdenken, wie sich die ersten Strukturen bildeten. Wie Hubble zuvor ist es das Instrument hinter den Entdeckungen einer Generation, und es hat Jahrzehnte Betriebsleben vor sich."
     },
     {
       "type": "prose",
-      "md": "Sein zweites Vermächtnis ist die Charakterisierung von Exoplanetatmosphären — die erste echte Fähigkeit, die Luft kleiner Welten um andere Sterne zu analysieren, und damit das erste ernstzunehmende Werkzeug bei der Suche nach Lebenszeichen jenseits der Erde. Was auch immer Webb dort findet, es hat eine Forschungslinie eröffnet, die die Astronomie für Jahrzehnte prägen wird."
+      "md": "Sein zweites Vermächtnis ist die Charakterisierung von Exoplanetatmosphären — die erste wirkliche Fähigkeit, die Luft kleiner Welten um andere Sterne zu analysieren, und daher das erste ernsthafte Werkzeug bei der Suche nach Lebenszeichen jenseits der Erde. Was auch immer Webb dort findet, es hat eine Untersuchungslinie eröffnet, die die Astronomie für Jahrzehnte definieren wird."
     },
     {
       "type": "prose",
-      "md": "Und sein drittes ist ein Beweis der Methode: dass eine internationale Koalition etwas bauen kann, das zu groß ist, um montiert gestartet zu werden, es autonom im Weltraum entfalten und es beim ersten Mal funktionieren lassen kann. Dieses technische Vertrauen — dass das Unreparierbare zuverlässig genug gemacht werden kann, um ihm zu vertrauen — ist das Fundament, auf dem die nächste Generation noch größerer Weltraumobservatorien gebaut werden wird."
+      "md": "Und sein drittes ist ein Methodenbeweis: dass eine internationale Koalition etwas bauen kann, das zu groß ist, um montiert gestartet zu werden, es autonom im tiefen Weltraum entfalten und es beim ersten Mal funktionieren lassen kann. Dieses technische Vertrauen — dass das Nicht-Reparierbare zuverlässig genug gemacht werden kann, um darauf zu vertrauen — ist das Fundament, auf dem die nächste Generation noch größerer Weltraumobservatorien gebaut werden wird."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lektion von JWST ist, dass manche Auszahlungen eine fast unvernünftige Menge an Geduld und Schmerz wert sind. Fünfundzwanzig Jahre lang war das Teleskop verspätet, teuer und beinahe eingestellt; die Argumente für die Fortsetzung beruhten vollständig auf einem Versprechen, das nicht bewiesen werden konnte, bis es flog. Die ersten Bilder bestätigten das Versprechen — eine Erinnerung daran, dass die transformierendsten Projekte oft diejenigen sind, die jahrelang wie Fehlschläge aussehen, die darauf warten zu passieren."
+      "md": "Die Lektion von JWST ist, dass sich manche Auszahlungen ein fast unvernünftiges Maß an Geduld und Schmerz lohnen. Fast zwei Jahrzehnte lang war das Teleskop verspätet, teuer und beinahe abgebrochen; die Begründung für die Fortsetzung beruhte vollständig auf einem Versprechen, das nicht bewiesen werden konnte, bevor es flog. Die ersten Bilder rechtfertigten das Versprechen — eine Erinnerung daran, dass die transformativsten Projekte oft diejenigen sind, die jahrelang wie Fehlschläge aussehen, die darauf warten zu passieren."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lektion handelt vom Konstruieren ohne zweite Chance. JWST konnte nicht so getestet werden, wie es flog, oder repariert werden, sobald es geflogen war, und es gelang trotzdem — weil jeder Fehlermodus im Voraus aufgespürt und konstruktiv ausgeschlossen wurde, am Boden, über Jahre hinweg. Es ist der ultimative Fall für Genauigkeit statt Iteration: Wenn man es wirklich nicht später reparieren kann, ist die einzige Option, es beim ersten Mal richtig zu machen, und Webb bewies, dass das erreichbar ist, selbst bei atemberaubender Komplexität."
+      "md": "Die tiefere Lektion handelt von Technik ohne eine zweite Chance. JWST konnte nicht wie geflogen getestet oder nach dem Flug repariert werden, und es gelang trotzdem — weil jeder Fehlermodus im Voraus aufgespürt und wegkonstruiert wurde, am Boden, über Jahre. Es ist der ultimative Fall für Strenge statt Iteration: Wenn man es wirklich nicht später reparieren kann, ist die einzige Option, beim ersten Mal richtig zu liegen, und Webb bewies, dass dies erreichbar ist, selbst bei überwältigender Komplexität."
     }
   ]
 }

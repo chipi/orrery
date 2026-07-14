@@ -1,6 +1,38 @@
 {
   "name": "Lunar Prospector",
-  "type": "ROBOTISCHE ORBITER · GEVLOGEN",
-  "first": "Detectie van waterstof met neutronenspectrometer op beide maanpolen",
-  "description": "De eerste Discovery-klasse missie van NASA en de eerste speciale Amerikaanse maanmissie sinds Explorer 49 (1973). Op 07-01-1998 gelanceerd met een Athena II vanaf Cape Canaveral, kwam Lunar Prospector op 11-01-1998 in een circulaire polaire maanbaan van 100 km. Het 296 kg zware spinnende ruimtevaartuig droeg vijf instrumenten: een gammastraalspectrometer voor wereldwijde korstsamenstelling, een neutronenspectrometer voor waterstof / waterijs-detectie aan de polen, een alfadeeltjesspectrometer voor radongas, een magnetometer + elektronenreflectometer voor korstmagnetisme, en een Doppler-zwaartekrachtexperiment. Analyse door het Boynton-team van de neutronengegevens (Feldman et al., Science 281 + 284) vond scherpe neutronenflux-tekorten boven beide maanpolen — consistent met ongeveer 2 × 10⁹ ton waterstofrijk materiaal (waarschijnlijk waterijs) in permanent beschaduwde poolkraters. De missie eindigde op 31-07-1999 met een opzettelijke inslag nabij de Shackleton-krater; er werd geen waterdamppluim waargenomen."
+  "type": "ROBOTISCHE ORBITER · GEREALISEERD",
+  "first": "Neutronenspectrometer-waarneming van waterstof aan beide maanpolen",
+  "description": "De derde NASA Discovery-class missie en de eerste NASA-beheerde toegewijde maanorbiter van het post-Apollo-tijdperk. Gelanceerd op 1998-01-07 op een Athena II vanaf Cape Canaveral, Lunar Prospector bereikt op 1998-01-11 een 100-km cirkelbaan rond de maanpolen. De 296-kg rotatieve ruimtevaartuig droeg vijf instrumenten: een gammastralenspectrometer voor de globale samenstelling van de korst, een neutronenspectrometer voor waterstof- / waterjijsdetectie op de polen, een alfadeeltjesspectrometer voor radongas (indirect vulkanismedetectie), een magnetometer + elektronenreflectometer voor korstmagnetisme, en een Doppler-zwaartekrachtexperiment. Analyse van de neutronengegevens door het team-Boynton (Feldman et al., Science 281 + 284) vond scherpe neutronfluxdeficits over beide maanpolen — consistent met ~2 × 10⁹ ton waterstofrijke materie (waarschijnlijk waterjijs) in permanent beschaduwde polaire kraters. De missie eindigde op 1999-07-31 met opzettelijke inslag nabij Shackleton-krater in de hoop een waarneembare waterdampluim vrij te stellen; geen werd waargenomen. De waterstofbevinding bleef tot stand tot LCROSS en Chandrayaan-1 / M3 (2009) onafhankelijke bevestiging gaven.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Athena II vanaf Cape Canaveral SLC-46 1998-01-07 02:28 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.07,
+      "label": "TLI",
+      "note": "Trans-lunar injectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.1,
+      "label": "LOI",
+      "note": "Maanbaanopstelling 1998-01-11 — initiële 100 × 100 km polaire baan.",
+      "type": "nominal"
+    },
+    {
+      "met": 60,
+      "label": "POLAIRE WATERSTOF",
+      "note": "Neutronenspectrometer detecteert scherpe neutronfluxdeficits over beide maanpolen — sterk waterstofsignaal, consistent met polaire waterjijs.",
+      "type": "info"
+    },
+    {
+      "met": 569,
+      "label": "SHACKLETON-INSLAG",
+      "note": "Opzettelijke inslag nabij Shackleton-krater 1999-07-31 09:52 UTC. Geen waterdampluim gedetecteerd vanaf Aarde.",
+      "type": "nominal"
+    }
+  ]
 }

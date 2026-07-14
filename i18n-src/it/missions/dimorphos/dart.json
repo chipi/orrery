@@ -1,8 +1,8 @@
 {
   "name": "DART",
-  "type": "KINETIC IMPACTOR · FLOWN",
-  "first": "Prima dimostrazione di difesa planetaria tramite impattatore cinetico; prima volta in cui l'umanità ha spostato un asteroide",
-  "description": "DART (Double Asteroid Redirection Test) è stata la prima missione di difesa planetaria mai realizzata — un veicolo spaziale di 611 kg inviato a colpire un asteroide di 160 m con forza sufficiente a modificarne l'orbita. L'obiettivo era Dimorphos, una piccola luna dell'asteroide Didymos di 780 m. Lanciata il 24-11-2021 su un Falcon 9; il sistema di navigazione autonoma SMART Nav ha preso il controllo 4 ore prima dell'impatto per distinguere Dimorphos dal corpo principale e mirare al corpo più piccolo. Impatto il 26-09-2022 alle 23:14 UTC a 6,14 km/s. Cambiamento del periodo orbitale misurato: 33 minuti (4,2%), superando la soglia di successo di 73 secondi di circa 25×. Il fattore di potenziamento del trasferimento di momento β ≈ 3,6 ha indicato un contributo significativo dal materiale superficiale espulso. Il CubeSat LICIACube ha osservato il pennacchio; HST e JWST hanno acquisito immagini della coda di materiale espulso per settimane. Prima dimostrazione che l'umanità può spostare un asteroide.",
+  "type": "IMPATTORE CINETICO · FLOWN",
+  "first": "Prima dimostrazione della difesa planetaria mediante impattore cinetico; primo caso di umani che spostano un asteroide",
+  "description": "DART (Double Asteroid Redirection Test) è stata la prima missione di difesa planetaria mai realizzata — un veicolo spaziale di 611 kg inviato a impattare un asteroide di 160 m con forza sufficiente a cambiarne l'orbita. Il bersaglio era Dimorphos, un satellite dell'asteroide Didymos di 780 m. Lanciato il 2021-11-24 su un Falcon 9; il sistema di navigazione autonoma SMART Nav ha preso il controllo 4 ore prima dell'impatto per distinguere Dimorphos dal corpo principale e colpire il corpo minore. Impatto il 2022-09-26 alle 23:14 UTC a ~6,6 km/s. Variazione misurata del periodo orbitale: 33 minuti (4,2%), superando la soglia di successo di 73 secondi di ~25×. Il fattore di potenziamento del trasferimento di quantità di moto β ≈ 3,6 ha indicato un contributo significativo dal materiale di superficie espulso. Il CubeSat LICIACube ha osservato il plume; HST e JWST hanno ripreso la coda di ejecta risultante per settimane. Prima dimostrazione che gli umani possono spostare un asteroide.",
   "events": [
     {
       "met": 0,
@@ -12,26 +12,26 @@
     },
     {
       "met": 150,
-      "label": "METÀ CROCIERA",
-      "note": "TCM + accensioni dimostrative del propulsore ionico NEXT-C.",
+      "label": "MID-CRUISE",
+      "note": "TCM e scatti dimostrativi del propulsore ionico NEXT-C.",
       "type": "nominal"
     },
     {
       "met": 306,
       "label": "AVVICINAMENTO",
-      "note": "26-09-2022. SMART Nav prende il controllo 4h prima dell'impatto.",
+      "note": "2022-09-26. SMART Nav assume il controllo 4h prima dell'impatto.",
       "type": "info"
     },
     {
       "met": 306.001,
       "label": "IMPATTO",
-      "note": "23:14 UTC. 6,14 km/s. Cambiamento del periodo orbitale di 33 min — prima deflessione di un asteroide da parte dell'umanità.",
+      "note": "23:14 UTC. ~6,6 km/s. Variazione del periodo orbitale di 33 min — primo allontanamento di un asteroide da parte di umani.",
       "type": "info"
     },
     {
       "met": 306.002,
       "label": "PERDITA DI SEGNALE",
-      "note": "LICIACube + HST + JWST osservano il pennacchio di materiale espulso.",
+      "note": "LICIACube, HST e JWST osservano il plume di ejecta.",
       "type": "warning"
     }
   ]

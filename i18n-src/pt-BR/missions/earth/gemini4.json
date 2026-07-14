@@ -1,26 +1,26 @@
 {
   "name": "Gemini 4 / GT-4",
-  "type": "TRIPULADA ÓRBITA TERRESTRE · REALIZADA",
-  "first": "Primeira caminhada espacial americana (Ed White)",
-  "dispatch": "Gemini 4 é lembrada por uma fotografia: Ed White, conectado à espaçonave por um umbilical dourado, flutuando sobre uma Terra azul com uma pistola de manobra manual — o primeiro americano a caminhar no espaço. O momento foi tão empolgante que quando o Controle da Missão ordenou seu retorno após vinte minutos, White disse que foi o momento mais triste de sua vida. A caminhada espacial pareceu fácil e em grande parte foi, porque White estava flutuando livremente em vez de trabalhar — a dura verdade de que EVA é trabalho exaustivo não chegaria até os próximos voos. Mas para um país que estava atrás dos soviéticos, que haviam feito a primeira caminhada espacial dez semanas antes, foi a prova de que a América também podia fazer isso, e a imagem se tornou uma das fotografias definidoras da época.",
-  "description": "James McDivitt e Edward White voaram uma missão de quatro dias e 62 órbitas a partir de 3 de junho de 1965. Durante a terceira órbita White fez a primeira caminhada espacial americana — cerca de 21 minutos do lado de fora, conectado, usando uma unidade de manobra manual. O voo também executou o primeiro programa médico + científico estendido dos EUA.",
+  "type": "VOO TRIPULADO EM ÓRBITA TERRESTRE · REALIZADO",
+  "first": "Primeiro passeio espacial americano (Ed White)",
+  "dispatch": "Gemini 4 é lembrada por uma fotografia: Ed White, preso à espaçonave por um cordão umbilical dourado, flutuando sobre uma Terra azul com uma arma de manobra manual — o primeiro americano a caminhar no espaço. O momento foi tão emocionante que, quando o Controle da Missão o ordenou voltar para dentro após vinte minutos, White a chamou do momento mais triste de sua vida. O passeio espacial parecia fácil e em grande parte foi — porque White estava derivando livremente em vez de trabalhar. A dura verdade de que uma EVA é um trabalho exaustivo não chegaria até os próximos voos. Mas para um país que estava atrás dos soviéticos — que haviam feito o primeiro passeio espacial onze semanas antes — foi prova de que a América podia fazer isso também, e a imagem se tornou uma das fotografias definidoras da era.",
+  "description": "James McDivitt e Edward White voaram em uma missão de quatro dias e 62 órbitas de 3 de junho de 1965. Durante a terceira órbita, White realizou o primeiro passeio espacial americano — aproximadamente 23 minutos do lado de fora, preso por uma corda, usando uma unidade de manobra manual. O voo também executou o primeiro programa médico e científico estendido dos EUA.",
   "events": [
     {
       "met": 0,
       "label": "LANÇAMENTO",
-      "note": "Titan II GLV (GT-4) de Cape Canaveral LC-19, 1965-06-03 15:16 UTC.",
+      "note": "Titan II GLV (GT-4) do Cabo Canaveral LC-19, 1965-06-03 15:16 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.13,
       "label": "EVA",
-      "note": "Ed White — primeira caminhada espacial americana, ~21 min, conectado, com uma unidade de manobra manual.",
+      "note": "Ed White — primeiro passeio espacial americano, ~23 min, preso por corda, com uma unidade de manobra manual.",
       "type": "info"
     },
     {
       "met": 4,
-      "label": "AMERISSAGEM",
-      "note": "Amerissagem no Atlântico após 4 dias / 62 órbitas.",
+      "label": "POUSO NA ÁGUA",
+      "note": "Pouso na água no Atlântico após 4 dias / 62 órbitas.",
       "type": "nominal"
     }
   ]

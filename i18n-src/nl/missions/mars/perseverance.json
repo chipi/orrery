@@ -1,50 +1,50 @@
 {
   "name": "Perseverance",
   "type": "ROVER · ACTIEF",
-  "first": "Eerste helikopter op een andere planeet (Ingenuity); eerste monster-cachering voor Mars Sample Return",
-  "dispatch": "Perseverance ging naar Mars om naar de doden te zoeken. Geland in 2021 in Jezero Crater — de delta van een rivier die miljarden jaren geleden een meer voedde, precies het soort plek waar leven sporen zou hebben achtergelaten — is het de eerste rover die specifiek is gebouwd om te zoeken naar tekenen van vroegere leven, en om iets te doen wat geen enkele missie had gedaan: Martiaans gesteente in buizen te verzegelen en opzij te zetten zodat een toekomstig ruimtevaartuig ze naar huis kan brengen. Het leverde ook Ingenuity af, de kleine helikopter die de eerste aangedreven vlucht op een andere planeet maakte. Als de monsters die het opslaat ooit worden teruggebracht, zullen het de eerste stukken van het oppervlak van een andere planeet zijn die naar de aarde worden teruggebracht.",
-  "description": "Perseverance is de meest ambitieuze Mars-oppervlaktemissie ooit gevlogen. Mars Sample Return is ervan afhankelijk — de rover verzamelt en cachet monsters in buisjes die een toekomstige missie zal ophalen en naar de Aarde brengen. Ingenuity, de eerste helikopter op een andere planeet, vloog 72 missies voordat hij in januari 2024 met beschadigde rotors met pensioen ging — wat bewijst dat gecontroleerde vlucht mogelijk is in de dunne atmosfeer van Mars. MOXIE, een zuurstof-uit-CO2-demonstrator, produceerde de eerste lokaal gemaakte zuurstof op een andere planeet, een repetitie voor bemande Mars-missies.",
+  "first": "Eerste helikopter op een ander planet (Ingenuity); eerste staalcaching voor Mars Sample Return",
+  "dispatch": "Perseverance ging naar Mars om naar de doden te zoeken. Geland in 2021 op de bodem van Jezero Crater — een bekken met de delta van een rivier die miljarden jaren geleden een meer voedde, precies het soort plek waar leven sporen zou hebben achtergelaten — het is de eerste rover speciaal gebouwd om naar tekenen van oud leven te zoeken, en om iets te doen wat geen missie eerder had gedaan: Martiaans gesteente in buizen sluiten en opzij zetten voor een toekomstig ruimtevaartuig om mee naar huis te nemen. Het bracht ook Ingenuity mee, de kleine helikopter die de eerste gemotoriseerde vlucht op een ander planet maakte. Als de monsters die het cacht ooit terugkomen, zullen het de eerste stukken van het oppervlak van een ander planet zijn die naar aarde zijn gebracht.",
+  "description": "Perseverance is de meest ambitieuze Mars-oppervlaktmissie ooit uitgevoerd. Mars Sample Return hangt er van af — de rover verzamelt en cacht monsters in buizen die een toekomstige missie zal ophalen en naar aarde brengen. Ingenuity, de eerste helikopter op een ander planet, voerde 72 missies uit voordat het in januari 2024 met beschadigde rotorbladen met pensioen ging — wat bewijst dat controleerde vlucht mogelijk is in Mars' dunne atmosfeer. MOXIE, een zuurstof-uit-CO₂-demonstrator, produceerde de eerste ter plaatse gemaakte zuurstof op een ander planet, een repetitie voor bemande Marsmissies.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Atlas V 541 vanuit Cape Canaveral SLC-41 — dezelfde voertuigklasse als Curiosity.",
+      "note": "Atlas V 541 van Cape Canaveral SLC-41 — dezelfde voertuigklasse als Curiosity.",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "TMI-VERBRANDING",
-      "note": "Trans-Mars-injectie.",
+      "label": "TMI BURN",
+      "note": "Trans-Marsjectie.",
       "type": "nominal"
     },
     {
       "met": 9,
       "label": "TCM-1",
-      "note": "Eerste tussenkoerscorrectie.",
+      "note": "Eerste midbaan-correctie.",
       "type": "nominal"
     },
     {
       "met": 203,
       "label": "EDL",
-      "note": "Sky-crane levert rover aan Jezero-krater 2021-02-18 — locatie van een oude rivierdelta.",
+      "note": "Sky-crane levert rover af in Jezero Crater 2021-02-18 — plaats van een oude rivieredelta.",
       "type": "nominal"
     },
     {
       "met": 203.01,
       "label": "TOUCHDOWN",
-      "note": "Perseverance zet neer bij Jezero 20:55 UTC.",
+      "note": "Perseverance landt in Jezero om 20:55 UTC.",
       "type": "nominal"
     },
     {
       "met": 271,
       "label": "INGENUITY EERSTE VLUCHT",
-      "note": "Eerste aangedreven gecontroleerde vlucht op een andere planeet — 39,1 seconden tot 5 m hoogte.",
+      "note": "Eerste gemotoriseerde controleerde vlucht op een ander planet — 39,1 seconden op tot 5 m hoogte.",
       "type": "info"
     },
     {
       "met": 1278,
-      "label": "INGENUITY GEPENSIONEERD",
-      "note": "Rotorblad beschadigd op 72e vlucht 2024-01-18; helikopter blijft operationeel als comms-relais.",
+      "label": "INGENUITY MET PENSIOEN",
+      "note": "Rotorblad beschadigd op 72e vlucht 2024-01-18; helikopter gegrond, omgevormd tot vast weerstation en datastation dat aflezingen opslaat voor toekomstige ophaling.",
       "type": "info"
     }
   ]

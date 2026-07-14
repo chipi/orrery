@@ -3,7 +3,7 @@
   "type": "FLYBY · FLOWN",
   "first": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
   "dispatch": "Pioneer 11 was the second scout, and it went further than its twin. After its own pass by Jupiter it used the planet’s gravity to cross the solar system and reach Saturn in 1979 — the first spacecraft ever to do so — deliberately flying through the ring plane to test whether the region was safe. It found the gap the Voyagers would thread a year later. Much of what made the Grand Tour possible was this: a small, cheap probe sent ahead to take the risks and map the hazards, so the flagships behind it could fly with confidence instead of fear.",
-  "description": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter’s gravity to bend its trajectory toward Saturn — the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and the moon Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
+  "description": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter’s gravity to bend its trajectory toward Saturn — the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and a small inner moon later resolved into the co-orbital pair Janus/Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
   "events": [
     {
       "met": 0,
@@ -20,7 +20,7 @@
     {
       "met": 2339,
       "label": "SATURN CLOSEST APPROACH",
-      "note": "First images of the planet at close range; discovered the F ring and Epimetheus.",
+      "note": "First images of the planet at close range; discovered the F ring and a small inner moon (later resolved into the co-orbital pair Janus/Epimetheus).",
       "type": "nominal"
     }
   ]

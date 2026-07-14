@@ -1,26 +1,26 @@
 {
   "name": "Vostok 6",
-  "dispatch": "Vostok 6 trug Valentina Tereshkova und machte sie zur ersten Frau im Weltraum — eine Tatsache, die neunzehn Jahre lang einzigartig blieb und von den Vereinigten Staaten erst 1983 erreicht wurde. Sie war keine Pilotin, sondern Textilarbeiterin und Amateur-Fallschirmspringerin, ausgewählt unter anderem genau wegen dieser Symbolik: ein Beweis, so das sowjetische Programm, dass im Arbeiterstaat selbst die Grenze des Weltraums für jeden offen stand. Was auch immer das Motiv war, achtundvierzig Erdumkreisungen später war der Meilenstein real und dauerhaft, und es sollten zwei Jahrzehnte vergehen, bis eine andere Nation von sich behaupten konnte, dasselbe getan zu haben.",
-  "type": "BEMANNTER ERDORBIT · GEFLOGEN",
-  "first": "Erste Frau im All — Walentina Tereschkowa, 48 Umläufe",
-  "description": "Walentina Tereschkowas 48-Umlauf-Flug von 2 Tagen 23 Stunden — erste Frau im All und (bis Soyuz MS-22 im Jahr 2022) einzige Frau, die eine Solo-Raumflugmission geflogen hat. Aus einer 1962 zusammengestellten Gruppe von fünf weiblichen Kosmonautenkandidatinnen ausgewählt, startete Tereschkowa am 1963-06-16 um 09:30 UTC, nur 2 Jahre nach Gagarins erstem Orbitalflug. Ihre Kapsel war für ein aufwärts statt abwärts gerichtetes Bahnkorrekturmanöver programmiert — sie identifizierte den Fehler manuell, und die Bodencontroller spielten am nächsten Tag eine korrigierte Lageregelungssoftware hoch. Landung am 1963-06-19 um 08:20 UTC bei Bajewo, Region Altai. Tereschkowa wurde später eine führende Figur in der sowjetischen Politik und bleibt mit 26 Jahren die jüngste je in den Orbit geflogene Frau.",
+  "type": "BEMANNTE ERDUMMLAUFBAHN · DURCHGEFÜHRT",
+  "first": "Erste Frau im Weltall — Valentina Tereschkowa, 48 Umläufe",
+  "dispatch": "Vostok 6 beförderte Valentina Tereschkowa und machte sie zur ersten Frau im Weltall — eine Errungenschaft, die neunzehn Jahre lang unvergleichlich blieb und von den Vereinigten Staaten erst 1983 erreicht wurde. Sie war keine Pilotin, sondern Textilarbeiterin und Amateurfall­schirmspringerin, ausgewählt auch genau für diese Symbolik: der Beweis, so sagte das Sowjetprogramm, dass im Arbeiterstaat selbst die Grenze des Weltalls für jeden offenstand. Welche Motive auch immer dahintersteckten — nach achtundvierzig Umläufen war der Meilenstein real und dauerhaft, und es sollte zwei Jahrzehnte dauern, bis ein anderes Land das Gleiche behaupten konnte.",
+  "description": "Valentina Tereschkowas Flug mit 48 Umläufen über 2 Tage und 23 Stunden — die erste Frau im Weltall und bis heute die einzige Frau, die jemals eine Soloweltraummission durchführte. Ausgewählt aus einer Gruppe von fünf weiblichen Kosmonauten­kandidatinnen, die 1962 zusammengestellt worden waren, startete Tereschkowa am 1963-06-16 um 09:30 UTC, nur 2 Jahre nach Gagarins erstem Orbitalflug. Ihre Kapsel war für eine Bahnanhebung statt einer Bahnabsenkung programmiert — sie identifizierte den Fehler manuell und die Flugkontrolle lud am nächsten Tag korrigierte Lageregelungssoftware hoch. Landung 1963-06-19 um 08:20 UTC in der Nähe von Bajevo, Altai-Region. Tereschkowa wurde später eine führende Persönlichkeit in der sowjetischen Politik und bleibt die jüngste Frau, die jemals im Alter von 26 Jahren in die Umlaufbahn geflogen ist.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Vostok-K from Baikonur Site 1 1963-06-16 09:30 UTC.",
+      "label": "START",
+      "note": "Vostok-K von Baikonur Standort 1, 1963-06-16 09:30 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "ORBIT-CORRECTION ERROR",
-      "note": "Pre-loaded attitude software would have raised orbit instead of lowering it; corrected next day.",
+      "label": "BAHNKORREKTUR­FEHLER",
+      "note": "Vorgeladene Lageregelungssoftware hätte die Bahn angehoben statt abgesenkt; am nächsten Tag korrigiert.",
       "type": "warning"
     },
     {
       "met": 2.95,
-      "label": "EJECT + LAND",
-      "note": "Landed near Bayevo, Altai Krai, 1963-06-19 08:20 UTC after 48 orbits.",
+      "label": "AUSSTOSS + LANDUNG",
+      "note": "Landung in der Nähe von Bajevo, Altai-Region, 1963-06-19 08:20 UTC nach 48 Umläufen.",
       "type": "nominal"
     }
   ]

@@ -1,17 +1,17 @@
 {
-  "title": "Knotenmodul",
-  "intro_sentence": "Ein Druckhub mit mehreren Kopplungsports — der strukturelle Konnektor, der einer Station das Verzweigen ermöglicht.",
+  "title": "Node-Modul",
+  "intro_sentence": "Ein druckbelüfteter Hub mit mehreren Andockplätzen — der Strukturverbinder, der eine Station verzweigt.",
   "narrative_101": [
-    "Ein Knoten ist eine besondere Art von Druckmodul: er beherbergt keine Experimente oder Crew-Quartiere, er verbindet einfach andere Module miteinander. Stell dir einen sechseckigen Kasten vor, bei dem jede Fläche einen Kopplungsport hat. Schraube einen Knoten an eine startende Rakete, schick ihn hoch, dann dock fünf weitere Module an die fünf verbleibenden Ports an, und du hast deine Station von einem Modul auf sechs vergrößert.",
-    "Die ISS hat drei: Unity (Knoten 1), Harmony (Knoten 2) und Tranquility (Knoten 3). Jeder ist die zentrale Kreuzung für ein Segment der Station — Unity verbindet die russischen und US-Seiten; Harmony verbindet das US-Labor-Cluster mit den japanischen und europäischen Modulen; Tranquility trägt die Cupola-Beobachtungskuppel.",
-    "Tiangong wählte einen anderen Ansatz: anstelle dedizierter Knoten fungiert das zentrale Tianhe-Modul sowohl als Wohnquartier als auch als Hub mit mehreren Kopplungsports, die direkt in seinen vorderen und hinteren Enden eingebaut sind. Es ist ein engeres Design, das weniger Startmasse kostet, aber begrenzt, wie viele Module abzweigen können."
+    "Ein Node ist eine spezielle Art von druckbelüftetem Modul: Es beherbergt keine Experimente oder Besatzungsquartiere, sondern verbindet einfach andere Module miteinander. Stellen Sie sich eine sechseckige Box vor, bei der jede Fläche einen Andockplatz hat. Befestigen Sie einen Node an einer Startrakete, schicken Sie ihn hoch, dann koppeln Sie fünf weitere Module an die fünf verbleibenden Anschlüsse an und Ihre Station ist von einem Modul auf sechs gewachsen.",
+    "Die ISS hat drei: Unity (Node 1), Harmony (Node 2) und Tranquility (Node 3). Jeder dient als Zentralknoten für ein Stationssegment — Unity verbindet die russische und US-Seite; Harmony verbindet den US-Laborkomplex mit den japanischen und europäischen Modulen; Tranquility trägt die Cupola-Beobachtungskuppel.",
+    "Tiangong wählte einen anderen Ansatz: Statt dedizierter Nodes fungiert das zentrale Tianhe-Modul sowohl als Wohnquartier als auch als Hub mit mehreren Andockplätzen, die direkt an seinen vorderen und hinteren Enden eingebaut sind. Es ist ein kompakteres Design, das weniger Startmasse erfordert, aber die Anzahl der Module, die abzweigen können, begrenzt."
   ],
   "body_paragraphs": [
-    "Knoten sind Konnektor-Module — Druckhubs mit mehreren Common Berthing Mechanism (CBM)- oder Kopplungsports — die es einer Station ermöglichen, sich in eine Baumtopologie zu verzweigen statt in eine lineare Kette.",
-    "ISS Unity (Knoten 1) gestartet 1998 mit STS-88. Sechs CBM-Ports: vorne zu Destiny, hinten zu Sarja, backbord zu BEAM (war Tranquility), steuerbord zu Quest, Zenit zum Z1-Truss, Nadir zum Leonardo PMM. Das erste in den USA gebaute ISS-Modul.",
-    "ISS Harmony (Knoten 2) gestartet 2007. Sechs Ports: verbindet Destiny mit Columbus (backbord), Kibo (steuerbord) und dem Kopplungsadapter für Besucherfahrzeuge (vorne).",
-    "ISS Tranquility (Knoten 3) gestartet 2010. Beherbergt die Cupola-Beobachtungskuppel (Nadir-Port), das Permanent Multipurpose Module Leonardo (vorne) und BEAM (hinten).",
-    "Tiangongs Tianhe-Kern: kombiniert Knoten + Crew-Quartiere + Antrieb + Steuerung. Vorderer Kopplungshub hat 4 CBM-äquivalente Ports plus einen hinteren Kopplungsport für Fracht- (Tianzhou) und bemannte (Shenzhou) Raumschiffe. Wentian und Mengtian docken seitlich über den vorderen Knotenhub an."
+    "Nodes sind Verbindermodule — druckbelüftete Hubs mit mehreren Common-Berthing-Mechanism(CBM)- oder Andockplätzen — die es einer Station ermöglichen, sich in eine Baumtopologie zu verzweigen, anstatt eine lineare Kette zu bilden.",
+    "ISS Unity (Node 1) startete 1998 an Bord von STS-88. Sechs CBM-Häfen: vorne → Destiny, hinten → Zarya, Steuerbord → Quest-Luftschleuse, Zenit → Z1-Fachwerk, Backbord → Tranquility (2010), Nadir → PMA/Frachtandockung (ehemals Leonardo PMM 2011–2015). Das erste von den USA gebaute ISS-Modul.",
+    "ISS Harmony (Node 2) startete 2007. Sechs Häfen: verbindet Destiny mit Columbus (Backbord), Kibo (Steuerbord) und den beiden Andockhülsen (IDA-2 vorne, IDA-3 Zenit) für Crew Dragon / Starliner.",
+    "ISS Tranquility (Node 3) startete 2010. Beherbergt die Cupola-Beobachtungskuppel (Nadir-Hafen), das Permanent Multipurpose Module Leonardo (vorne) und BEAM (hinten).",
+    "Tiangongs Tianhe-Kern: verbindet Node + Besatzungsquartier + Antrieb + Kontrolle. Der Node-Hub verfügt über einen vorderen axialen Hafen (Shenzhou), zwei seitliche radiale Häfen (Wentian zu Steuerbord, Mengtian zu Backbord, beide durch den Arm dorthin verlagert) und einen Nadir-Hafen; der hintere axiale Hafen nimmt die Tianzhou-Fracht auf. Die Häfen nutzen den chinesischen Andockmechanismus, nicht das US-CBM."
   ],
-  "diagram_caption": "Sechseckiges Knotenmodul mit sechs Kopplungsports beschriftet vorne / hinten / backbord / steuerbord / Zenit / Nadir."
+  "diagram_caption": "Sechseckiges Node-Modul mit sechs beschrifteten Andockplätzen: vorne / hinten / Backbord / Steuerbord / Zenit / Nadir."
 }

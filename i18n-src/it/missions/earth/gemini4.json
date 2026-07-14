@@ -1,9 +1,9 @@
 {
   "name": "Gemini 4 / GT-4",
-  "type": "EQUIPAGGIO ORBITA TERRESTRE · VOLATO",
+  "type": "NAVICELLA EQUIPAGGIO ORBITA TERRESTRE · COMPLETATA",
   "first": "Prima passeggiata spaziale americana (Ed White)",
-  "dispatch": "Gemini 4 è ricordata per una fotografia: Ed White, legato alla navicella da un ombelicale dorato, fluttuante sopra una Terra blu con una pistola di manovra portatile — il primo americano a camminare nello spazio. Il momento fu così esaltante che quando il Controllo Missione gli ordinò di rientrare dopo venti minuti, White lo definì il momento più triste della sua vita. La passeggiata spaziale sembrava senza sforzo e per lo più lo era, perché White stava galleggiando liberamente piuttosto che lavorando — la dura verità che l'EVA è lavoro estenuante non sarebbe arrivata fino ai voli successivi. Ma per un paese che era rimasto indietro rispetto ai sovietici, che avevano effettuato la prima passeggiata spaziale dieci settimane prima, fu la prova che l'America poteva farlo anche lei, e l'immagine divenne una delle fotografie emblematiche dell'epoca.",
-  "description": "James McDivitt ed Edward White volarono una missione di quattro giorni e 62 orbite dal 3 giugno 1965. Durante la terza orbita White effettuò la prima passeggiata spaziale americana — circa 21 minuti all'esterno, legato, usando un'unità di manovra portatile. Il volo condusse anche il primo programma scientifico e medico esteso degli Stati Uniti.",
+  "dispatch": "Gemini 4 è ricordata per una fotografia in particolare: Ed White, collegato al veicolo spaziale da un cordone ombelicale dorato, che fluttua sopra una Terra blu con una pistola manovrabile in mano — il primo americano a camminare nello spazio. Il momento era così esaltante che quando il Controllo Missione gli ordinò di tornare dentro dopo venti minuti, White lo chiamò il momento più triste della sua vita. La passeggiata spaziale sembrò facile e in gran parte lo era, perché White stava galleggiando libero piuttosto che lavorare — la dura verità che l'EVA è un lavoro estenuante non sarebbe arrivata fino ai voli successivi. Ma per un paese che aveva stretto i denti agli inseguimenti dei Sovietici, che avevano fatto la prima passeggiata spaziale undici settimane prima, era la prova che l'America poteva farla anche lei, e l'immagine divenne una delle fotografie più iconiche dell'era.",
+  "description": "James McDivitt ed Edward White hanno completato una missione di quattro giorni e 62 orbite dal 3 giugno 1965. Durante la terza orbita White ha effettuato la prima passeggiata spaziale americana — circa 23 minuti all'esterno, in tether, utilizzando un'unità manovrabile portatile. Il volo ha anche eseguito il primo programma esteso di medicina e scienze degli USA.",
   "events": [
     {
       "met": 0,
@@ -14,7 +14,7 @@
     {
       "met": 0.13,
       "label": "EVA",
-      "note": "Ed White — prima passeggiata spaziale americana, ~21 min, legato, con un'unità di manovra portatile.",
+      "note": "Ed White — prima passeggiata spaziale americana, ~23 min, in tether, con unità manovrabile portatile.",
       "type": "info"
     },
     {

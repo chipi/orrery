@@ -1,6 +1,38 @@
 {
   "name": "SMART-1",
-  "type": "ROBOTISCHE ORBITER · GEVLOGEN",
-  "first": "Eerste Europese ruimtevaartuig dat de Maan bereikte + eerste diepe-ruimte ionenaandrijving-cruise naar een planetair lichaam",
-  "description": "ESA's eerste maanmissie en het eerste Europese ruimtevaartuig dat de Maan bereikte. SMART = Small Missions for Advanced Research in Technology — en de sleuteltechnologie was een Hall-effect zonne-elektrische ionenstuwraket (PPS-1350-G), destijds de grootste ooit gevlogen. Op 27-09-2003 als gedeelde lading gelanceerd op een Ariane 5 vanaf Kourou, gebruikte het 367 kg zware ruimtevaartuig zijn 1,2 kW xenon ionenaandrijving gedurende 13 maanden om zijn aardse baan langzaam te verhogen, tot het op 15-11-2004 door de zwaartekracht van de Maan werd gevangen — een 13 maanden durende lage-stuwkracht spiraal in plaats van de dagenlange chemische overgang van alle eerdere maanmissies. 16 maanden in bedrijf in een polaire maanbaan, leverde het AMIE-camerabeelden, de eerste röntgenfluorescentie-elementkaarten van de Maan (D-CIXS) en infrarood-mineraalspectroscopie (SIR). Bewust ingeslagen in Lacus Excellentiae (34,4° Z, 46,2° W) op 03-09-2006 om 02:42 UTC — de inslagflits werd live waargenomen vanaf de Canada-France-Hawaii Telescope."
+  "type": "ROBOTOÏSCHE ORBITER · UITGEVOERD",
+  "first": "Eerste Europese ruimtevaartuig dat de Maan bereikt; eerste missie die de Maan onder ionenaandrijving bereikt",
+  "description": "ESA's eerste maanmissie en het eerste Europese ruimtevaartuig dat de Maan bereikt. SMART = Small Missions for Advanced Research in Technology — en de sleuteltechnologie was een Hall-effect zonne-elektrische ionenstuwer (PPS-1350-G), destijds de grootste ooit gevlogen stuwer van dit type. Gelanceerd 2003-09-27 als een gedeelde lading op een Ariane 5 vanaf Kourou, het 367 kg zware ruimtevaartuig gebruikte zijn 1,2 kW xenonionenstuwer gedurende 13 maanden om zijn aardbaan langzaam te verhogen, uiteindelijk door de maanzwaartekracht ingevangen op 2004-11-15 — een 13 maanden durende lage-stuwkracht spiraal in plaats van de enkele dagen durende chemische overdracht van elke vorige maanmissie. Operationeel gedurende 16 maanden in een polaire maanbaan waarbij AMIE-camerabeelden, de eerste röntgenfluorescentie-elementenkaarten van de Maan (D-CIXS) en infrarode mineralenspectroscopie (SIR) werden opgeleverd. Opzettelijk neergestort in Lacus Excellentiae (34,4° Z, 46,2° W) op 2006-09-03 05:42 UTC — de inslagflits werd live waargenomen vanaf de Canada-France-Hawaii Telescope.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Ariane 5G vanaf Kourou 2003-09-27 23:14 UTC — gedeelde lading met Insat-3E + e-Bird.",
+      "type": "nominal"
+    },
+    {
+      "met": 0,
+      "label": "IONENSTUWER GESTART",
+      "note": "PPS-1350-G Hall-effect ionenstuwer begint 13 maanden durende lage-stuwkracht spiraal.",
+      "type": "nominal"
+    },
+    {
+      "met": 414,
+      "label": "MAANCAPTURE",
+      "note": "Door maanzwaartekracht ingevangen 2004-11-15 — eerste Europees ruimtevaartuig bij de Maan.",
+      "type": "nominal"
+    },
+    {
+      "met": 720,
+      "label": "D-CIXS CARTOGRAFIE",
+      "note": "D-CIXS röntgenfluorescentie levert eerste wereldwijde elementenkaarten van de Maan.",
+      "type": "info"
+    },
+    {
+      "met": 1072,
+      "label": "LACUS EXCELLENTIAE INSLAG",
+      "note": "Opzettelijke inslag op 34,4° Z, 46,2° W op 2006-09-03 05:42 UTC. Inslagflits waargenomen vanaf CFHT.",
+      "type": "nominal"
+    }
+  ]
 }

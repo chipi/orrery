@@ -1,14 +1,14 @@
 {
-  "title": "Vertrek-venster As",
-  "intro_sentence": "Wanneer je lanceert — langs de X-as, typisch een periode van vier jaar, dagelijks bemonsterd.",
+  "title": "Vertrekvenster-As",
+  "intro_sentence": "Wanneer je lanceert — over de X-as lopend, meestal een periode van vier jaar met dagelijkse steekproeven.",
   "narrative_101": [
-    "Lees de porkchop als een kalender. De horizontale as — van links naar rechts — is de datum waarop je de Aarde verlaat. Elke pixelkolom is een andere lanceringsdatum. Orrery monstert met een resolutie van één dag over ongeveer vier jaar; dat is voldoende om twee volledige synodische cycli vast te leggen, wat genoeg is om het patroon van de lanceervensters te zien herhalen.",
-    "Kijk langs de rij van goedkope cellen (de koele groenblauw-gekleurde lob) en je kunt op de kalender precies aflezen wanneer de lanceervensters zijn. Voor Mars zijn ze ongeveer elke 26 maanden. Voor Venus elke 19. Voor Jupiter elke 13. Elke goedkope zone is één venster — buiten die zones werkt de kalender tegen je.",
-    "Wanneer je de lanceerjaarselector in /plan versleept, schuif je de X-as. Ander jaar, andere vensterplaatsing, maar de onderliggende fysica is hetzelfde. Daarom is missieplanning kalendergestuurd: de goedkope zones verschuiven niet alleen omdat we een deadline hebben."
+    "Lees de porkchop als een kalender. De horizontale as — van links naar rechts — is de datum waarop je de Aarde verlaat. Elke pixelkolom is een ander lanceringsdag. Orrery bemonster met één-dag resolutie over ongeveer vier jaar; dat is genoeg om twee volledige synodische cycli voor Mars vast te leggen (de ~26-maandcyclus past ruwweg tweemaal in vier jaar), wat voldoende is om het lanceringsvensterpatroon te zien herhalen.",
+    "Kijk langs de rij van goedkope cellen (de koele tealblauw lobe) en je kunt precies op de kalender aflezen wanneer de lanceringsvensters zijn. Voor Mars zijn ze ruwweg elke 26 maanden. Voor Venus elke 19. Voor Jupiter elke 13. Elke goedkope zone is één venster — buiten die zones werkt de kalender tegen je.",
+    "Wanneer je de lanceeringsjaar-selector in /plan aanpast, verschuif je de X-as. Ander jaar, ander vensterplaatsing, maar de onderliggende fysica is hetzelfde. Dit is waarom missieplanningen kalendergestuurd zijn: de goedkope zones verplaatsen niet alleen omdat we een deadline hebben."
   ],
   "body_paragraphs": [
-    "De X-as vertelt je wanneer je de Aarde verlaat. Elke pixelkolom is een andere lanceringsdatum — voor de plots van Orrery, bemonsterd met een resolutie van één dag over ongeveer vier jaar. Waarom een periode van vier jaar? Omdat de synodische periode Aarde-Mars 26 maanden is; je hebt minstens twee synodische cycli nodig om het terugkerende lanceervensterpatroon vast te leggen.",
-    "Lees de X-as als een kalender. De goedkope lobben (de 'pork' van de porkchop) liggen op voorspelbare intervallen. Voor Mars: elke ~26 maanden. Voor Venus: elke ~19 maanden. Voor Jupiter: elke ~13 maanden (Jupiter beweegt langzaam genoeg dat de synodische periode dicht bij het jaar van de Aarde ligt).",
-    "Op `/plan` is het X-as label `DEPARTURE WINDOW · 2026 — 2030`. De letterlijke kalenderdatums verschijnen in de tooltip wanneer je eroverheen beweegt."
+    "De X-as geeft aan wanneer je de Aarde verlaat. Elke pixelkolom is een ander lanceringsdatum — voor Orrery's grafieken, bemonsterd met één-dag resolutie over ongeveer vier jaar. Waarom een periode van vier jaar? Omdat de synodische periode Aarde-Mars ~26 maanden is; vier jaar omvat ruwweg twee volledige Mars-vensters. Voor Venus (~19 maanden) of Jupiter (~13 maanden) bevat dezelfde periode meer vensters — de breedte van vier jaar is gekalibreerd voor Mars-achtige planning.",
+    "Lees de X-as als een kalender. De goedkope-kostlobes (het 'vlees' van de porkchop) zitten op voorspelbare intervallen. Voor Mars: elke ~26 maanden. Voor Venus: elke ~19 maanden. Voor Jupiter: elke ~13 maanden (Jupiter beweegt langzaam genoeg dat de synodische periode dicht bij Aarde's jaar ligt).",
+    "Op `/plan` is het X-as label `VERTREKVENSTER · 2026 — 2030`. De letterlijke kalenderdatums verschijnen in de tooltip wanneer je je muisaanwijzer erover beweegt."
   ]
 }

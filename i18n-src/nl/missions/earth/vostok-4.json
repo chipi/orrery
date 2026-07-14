@@ -1,26 +1,26 @@
 {
   "name": "Vostok 4",
-  "dispatch": "Vostok 4 was het antwoord op Vostok 3 — het tweede schip in de eerste dubbelvlucht, en het moment waarop twee mensen in twee afzonderlijke ruimtevaartuigen voor het eerst in een baan om de aarde met elkaar spraken. Pavel Popovich lanceerde een dag na Nikolayev en naderde tot ongeveer zes en een halve kilometer, dichtbij genoeg om rechtstreeks per radio te communiceren, van schip tot schip, in plaats van via de grond. Net als zijn partner kon het niet manoeuvreren om de afstand te behouden, dus dreven de twee uit elkaar. Maar het beeld van twee kosmonauten die in formatie rond de aarde cirkelden en met elkaar spraken, was precies het soort primeur waarvoor het programma was gebouwd.",
-  "type": "BEMANDE AARDOMLOOPBAAN · GEVLOGEN",
-  "first": "Tweede helft van de eerste dubbele vlucht — eerste communicatie tussen twee bemande ruimtevaartuigen",
-  "description": "48-omloops vlucht van Pavel Popovitsj, gelanceerd op 1962-08-12 om 08:02 UTC, vierentwintig uur na Vostok 3. De twee capsules naderden tot ~6,5 km en wisselden de eerste radio-spraakcommunicatie tussen kosmonauten in een baan uit. Popovitsj kreeg een dag eerder bevel terug te keren toen vluchtleiders een gecodeerde uitdrukking over donder verkeerd interpreteerden als het noodcodewoord voor voortijdige beëindiging — in werkelijkheid was het een routinematige weermelding. Landde op 1962-08-15 om 07:59 UTC nabij Karaganda, vier minuten na Vostok 3.",
+  "type": "BEMANDE AARDEBAAN · UITGEVOERD",
+  "first": "Tweede helft van eerste dubbelvlucht — eerste communicatie tussen twee bemande ruimtevaartuigen",
+  "dispatch": "Vostok 4 was het antwoord op Vostok 3 — het tweede schip in de eerste dubbelvlucht, en het moment waarop twee mensen in twee aparte ruimtevaartuigen voor het eerst met elkaar spraken in een baan om de aarde. Pavel Popovich lanceerde een dag na Nikolayev en naderde tot op ongeveer zes en een halve kilometer, dichtbij genoeg om rechtstreeks radio-stem uit te wisselen, schip naar schip, in plaats van via het grondstation. Net als zijn partner kon het niet manoeuvreren om de afstand vast te houden, dus de twee dreven uit elkaar. Maar het beeld van twee kosmonauten die in formatie rond de aarde circuleerden en met elkaar spraken, was precies het soort eerste moment dat het programma was ontworpen om voort te brengen.",
+  "description": "Pavel Popovich's vlucht van 48 banen, gelanceerd 1962-08-12 08:02 UTC, vier en twintig uur na Vostok 3. De twee capsules kwamen tot binnen ~6,5 km en wisselden de eerste spraakradiocommunicatie tussen kosmonauten in baan uit. Popovich werd een dag eerder naar beneden bevolen toen grondcontroleurs een gecodeerde opmerking over donder verkeerd interpreteerden als het noodsignaal voor voortijdige beëindiging — het echte signaal was een routineweerobservatie. Geland 1962-08-15 06:59 UTC in de buurt van Karaganda, zeven minuten na Vostok 3.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Vostok-K from Baikonur Site 1 1962-08-12 08:02 UTC.",
+      "label": "LANCERING",
+      "note": "Vostok-K van Baikonur Locatie 1 1962-08-12 08:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.001,
-      "label": "INTER-CRAFT VOICE",
-      "note": "First voice communication between two crewed spacecraft.",
+      "label": "COMMUNICATIE TUSSEN SCHEPEN",
+      "note": "Eerste spraakverbinding tussen twee bemande ruimtevaartuigen.",
       "type": "info"
     },
     {
       "met": 2.99,
-      "label": "EJECT + LAND",
-      "note": "Landed near Karaganda 1962-08-15 07:59 UTC.",
+      "label": "UITWERPING + LANDING",
+      "note": "Geland in de buurt van Karaganda 1962-08-15 06:59 UTC.",
       "type": "nominal"
     }
   ]

@@ -1,84 +1,84 @@
 {
   "name": "Mariner",
-  "tagline": "Bevor irgendein anderer Planet mehr als ein verschwommener Fleck in einem Teleskop war, machten sich eine Reihe kleiner amerikanischer Sonden auf den Weg, um sie zu sehen — und brachten die ersten jemals von einer anderen Welt aufgenommenen Fotografien zurück.",
+  "tagline": "Bevor irgendein anderer Planet mehr als ein Fleck im Teleskop war, starteten eine Reihe kleiner amerikanischer Sonden, um sie zu sehen — und lieferten die ersten Fotografien, die jemals von einer anderen Welt aufgenommen wurden.",
   "the_land": [
     {
       "type": "prose",
-      "md": "In den frühen 1960er Jahren waren die Planeten im Wesentlichen noch Lichtpunkte. Die Venus wurde als warmer, wolkenbedeckter Zwilling der Erde vorgestellt, vielleicht mit Ozeanen; der Mars zeigte durch die besten Teleskope Markierungen, die manche noch immer als Kanäle deuteten, und die hundert Jahre alte Frage nach Leben auf dem Mars war ungelöst. Alles, was über die anderen Welten bekannt war, stammte vom Blinzeln über Dutzende Millionen Kilometer hinweg. Um herauszufinden, was sie tatsächlich waren, musste jemand nah heranfliegen und hinsehen."
+      "md": "In den frühen 1960er Jahren waren die Planeten im Wesentlichen noch Lichtpunkte. Die Venus wurde als warmer, wolkenverhangener Zwilling der Erde imaginiert, vielleicht mit Ozeanen; der Mars zeigte durch die besten Teleskope Markierungen, die manche noch immer als Kanäle deuteten, und die jahrhundertealte Frage nach Leben auf dem Mars war ungelöst. Alles, was über die anderen Welten bekannt war, stammte aus dem Blick über zig Millionen Kilometer hinweg. Um zu erfahren, was sie tatsächlich waren, musste jemand nah heranfliegen und nachsehen."
     },
     {
       "type": "prose",
-      "md": "Mariner war NASAs erster Versuch, genau das zu tun — eine Familie kleiner, leichter interplanetarer Sonden, schnell gebaut und oft geflogen, auf Venus, Mars und schließlich Merkur gerichtet. Mehrere scheiterten; das Programm machte weiter. Zwischen 1962 und 1973 führten die Mariners die erste Erkundung des inneren Sonnensystems durch und ersetzten dabei Vorstellung durch Fotografien."
+      "md": "Mariner war der erste Versuch der NASA, genau das zu tun — eine Familie kleiner, leichter interplanetarer Sonden, schnell gebaut und häufig geflogen, ausgerichtet auf Venus, Mars und schließlich Merkur. Mehrere scheiterten; das Programm machte weiter. Zwischen 1962 und 1975 führten die Mariners die erste Erkundung des inneren Sonnensystems durch und ersetzten dabei die Vorstellung durch Fotografien."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Das Ziel war der erste Kontakt mit den anderen Planeten: ein Raumschiff nah genug an Venus und Mars vorbeifliegen zu lassen, um zu messen, woraus sie tatsächlich bestanden, und vor allem, um sie zu fotografieren. Ein einziger naher Vorbeiflug, der eine Handvoll Bilder und Messwerte zurückbrachte, würde der Menschheit mehr über einen Planeten verraten als ein Jahrhundert Teleskoparbeit — der Unterschied zwischen einem verschwommenen Fleck und einer Oberfläche."
+      "md": "Das Ziel war der erste Kontakt mit den anderen Planeten: ein Raumfahrzeug nah genug an Venus und Mars vorbeizufliegen, um zu messen, woraus sie tatsächlich bestanden, und vor allem, um sie zu fotografieren. Ein einziger naher Vorbeiflug, der eine Handvoll Bilder und Messwerte zurückbrachte, würde der Menschheit mehr über einen Planeten verraten als ein Jahrhundert Teleskoparbeit — der Unterschied zwischen einem Fleck und einer Oberfläche."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/mariner-4/01"
       },
-      "caption": "Die Mariners waren klein und spartanisch, gebaut, um einmal an einem Planeten vorbeizufliegen und alles nach Hause zu senden, was sie in den Stunden, die sie hatten, konnten. Mariner 4 trug eine Kamera zum Mars; Mariner 9 trug genug Treibstoff, um anzuhalten und in einen Orbit einzuschwenken.",
+      "caption": "Die Mariners waren klein und sparsam ausgestattet, gebaut um einmal an einem Planeten vorbeizufliegen und nach Hause zu senden, was sie in den Stunden konnten, die sie hatten. Mariner 4 trug eine Kamera zum Mars; Mariner 9 trug genug Treibstoff, um anzuhalten und in eine Umlaufbahn einzuschwenken.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Das spätere Ziel wurde ehrgeiziger: nicht nur vorbeizufliegen, sondern zu bleiben. Mariner 9 wurde gebaut, um genug Treibstoff zu tragen, um in einen Orbit um den Mars abzubremsen und den gesamten Planeten über Monate zu studieren — der Schritt von einem flüchtigen Blick zu einer Vermessung — während Mariner 10 darauf abzielte, Merkur auf einer Route zu erreichen, die noch niemand geflogen war, indem sie unterwegs Geschwindigkeit aus der Schwerkraft der Venus stahl."
+      "md": "Das spätere Ziel wurde ehrgeiziger: nicht nur vorbeizufliegen, sondern zu bleiben. Mariner 9 wurde gebaut, um genug Treibstoff zu tragen, um in eine Umlaufbahn um den Mars abzubremsen und den gesamten Planeten über Monate zu untersuchen — der Schritt von einem flüchtigen Blick zu einer Vermessung — während Mariner 10 darauf abzielte, Merkur auf einer Route zu erreichen, die niemand zuvor geflogen war, indem sie unterwegs Geschwindigkeit aus der Schwerkraft der Venus stahl."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Die Mariners schrieben das innere Sonnensystem einen Vorbeiflug nach dem anderen neu. Mariner 2 erreichte 1962 die Venus — das erste Raumschiff überhaupt, das einen anderen Planeten erreichte — und fand keinen tropischen Zwilling, sondern einen Hochofen, dessen Oberfläche unter erdrückenden Wolken hunderte Grad heiß war. Drei Jahre später flog Mariner 4 am Mars vorbei und schickte die ersten jemals aus nächster Nähe von einem anderen Planeten aufgenommenen Fotografien zurück: eine von Kratern übersäte, mondähnliche Wüste, die die alten Träume von Kanälen und Zivilisationen stillschweigend tötete."
+      "md": "Die Mariners schrieben das innere Sonnensystem mit jedem Vorbeiflug neu. Mariner 2 erreichte 1962 die Venus — das erste Raumfahrzeug überhaupt, das einen anderen Planeten erreichte — und fand keinen tropischen Zwilling, sondern einen Hochofen, dessen Oberfläche unter erdrückenden Wolken hunderte Grad heiß war. Drei Jahre später flog Mariner 4 am Mars vorbei und sandte die ersten Fotografien zurück, die jemals aus nächster Nähe von einem anderen Planeten aufgenommen wurden: eine mit Kratern übersäte, mondähnliche Wüste, die die alten Träume von Kanälen und Zivilisationen stillschweigend beendete."
     },
     {
       "type": "prose",
-      "md": "Mariner 9 ging weiter und blieb. 1971 wurde sie das erste Raumschiff, das einen anderen Planeten umkreiste, und erreichte den Mars mitten in einem globalen Staubsturm, der die Oberfläche wochenlang verbarg. Als sich der Staub legte, kartierte sie den gesamten Planeten — und enthüllte einen Mars, der weit großartiger war, als es die Krater von Mariner 4 nahegelegt hatten: den größten Vulkan im Sonnensystem, ein Canyonsystem, das sich über die Breite eines Kontinents erstreckte, und, am provokantesten, die trockenen Rinnen dessen, was einst fließendes Wasser gewesen war."
+      "md": "Mariner 9 ging weiter und blieb. 1971 wurde sie das erste Raumfahrzeug, das einen anderen Planeten umkreiste, und erreichte den Mars mitten in einem globalen Staubsturm, der die Oberfläche wochenlang verbarg. Als sich der Staub legte, kartierte sie den gesamten Planeten — und enthüllte einen Mars, der weit großartiger war, als die Krater von Mariner 4 vermuten ließen: den größten Vulkan im Sonnensystem, ein Canyonsystem, das sich über die Breite eines Kontinents erstreckte, und, am provokativsten, die trockenen Rinnen von einstmals fließendem Wasser."
     },
     {
       "type": "prose",
-      "md": "Mariner 10 schloss das Programm mit zwei Premieren ab. 1974 wurde sie das erste Raumschiff, das Merkur erreichte, und fotografierte eine versengte, von Kratern übersäte Welt — und sie kam dorthin, indem sie an der Venus vorbeiflog und die Schwerkraft des Planeten nutzte, um ihre Bahn zu krümmen und zu beschleunigen, der erste Einsatz des Gravitationsschleuder-Manövers, auf das jede Tiefraumission seitdem angewiesen ist."
+      "md": "Mariner 10 schloss das Programm mit zwei Premieren ab. 1974 wurde sie das erste Raumfahrzeug, das Merkur erreichte, und fotografierte eine versengte, von Kratern übersäte Welt — und sie kam dorthin, indem sie an der Venus vorbeiflog und die Schwerkraft des Planeten nutzte, um ihren Pfad abzulenken und zu beschleunigen, die erste Anwendung einer interplanetaren Gravity-Assist-Schleuder, auf die jede Tiefraumission seither angewiesen ist."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Die Geschichte von Mariner ist der erste Kontakt — der Moment, in dem jeder Planet aufhörte, eine Idee zu sein, und zu einem Ort wurde. Jede Welt, die das Programm erreichte, war bis dahin nur durch Rückschlüsse bekannt gewesen; Mariner brachte die ersten harten Daten und die ersten echten Bilder zurück, und in jedem Fall war die Realität anders als der Traum. Venus war kein Zwilling, sondern eine Hölle. Mars war nicht von Kanälen durchzogen, sondern von Kratern übersät — und dann, bei genauerer Betrachtung, doch von antikem Wasser geformt. Die Gabe des Programms bestand darin, Jahrhunderte des Rätselratens durch die schlichten Beweise einer Kamera zu ersetzen."
+      "md": "Die Geschichte von Mariner ist der erste Kontakt — der Moment, in dem jeder Planet aufhörte, eine Idee zu sein, und zu einem Ort wurde. Jede Welt, die das Programm erreichte, war bis dahin nur aus Rückschlüssen bekannt gewesen; Mariner lieferte die ersten harten Daten und die ersten echten Bilder, und in jedem Fall unterschied sich die Realität vom Traum. Venus war kein Zwilling, sondern eine Hölle. Mars war nicht von Kanälen durchzogen, sondern mit Kratern übersät — und dann, bei genauerer Betrachtung, doch von urzeitlichem Wasser geformt. Das Geschenk des Programms war es, Jahrhunderte des Ratens durch den schlichten Beweis einer Kamera zu ersetzen."
     },
     {
       "type": "prose",
-      "md": "Es ist auch die Geschichte davon, wie die planetare Erkundung ihre grundlegenden Bewegungen lernte. Mariner 4 bewies, dass man durch das Sonnensystem fliegen und einen Planeten fotografieren konnte; Mariner 9 bewies, dass man anhalten und einen vermessen konnte; Mariner 10 bewies, dass man die Schwerkraft eines Planeten nutzen konnte, um kostenlos einen anderen zu erreichen. Diese drei Fähigkeiten — der Vorbeiflug, der Orbiter und die Gravitationsunterstützung — sind die Grammatik jeder Mission, die folgte, und die Mariners sind der Ort, an dem jede zum ersten Mal geschrieben wurde."
+      "md": "Es ist auch die Geschichte davon, wie die Planetenerkundung ihre grundlegenden Züge lernte. Mariner 4 bewies, dass man durchs Sonnensystem fliegen und einen Planeten fotografieren konnte; Mariner 9 bewies, dass man anhalten und einen vermessen konnte; Mariner 10 bewies, dass man die Schwerkraft eines Planeten nutzen konnte, um kostenlos einen anderen zu erreichen. Diese drei Fähigkeiten — der Vorbeiflug, der Orbiter und der Gravity-Assist — sind die Grammatik jeder Mission, die folgte, und die Mariners sind der Ort, an dem jede erstmals geschrieben wurde."
     },
     {
       "type": "prose",
-      "md": "Und es bereitete alles vor, was danach kam. Mariner 9s globale Karte des Mars mit ihren Hinweisen auf verschwundenes Wasser ist das, was ein paar Jahre später Viking dorthin schickte, um nach Leben zu suchen. Die Mariner-Konstruktionslinie, erweitert für die äußeren Planeten, wurde zu den Voyagers. Das Programm war der erste Entwurf der amerikanischen Planetenwissenschaft — derjenige, der sowohl festlegte, was die inneren Planeten waren, als auch, wie sie von da an erkundet werden würden."
+      "md": "Und es bereitete alles nach sich vor. Die globale Karte des Mars von Mariner 9 mit ihren Hinweisen auf verschwundenes Wasser war es, die einige Jahre später Viking dorthin schickte, um nach Leben zu suchen. Die Mariner-Konstruktionslinie, für die äußeren Planeten erweitert, wurde zu den Voyagers. Das Programm war der erste Entwurf der amerikanischen Planetenwissenschaft — derjenige, der sowohl festlegte, was die inneren Planeten waren, als auch wie sie von da an erkundet werden würden."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Mariners erstes Vermächtnis ist das innere Sonnensystem, wie wir es heute kennen: Venus als Hochofen enthüllt, Mars von Kratern bis Canyons kartiert, Merkur zum ersten Mal fotografiert. Das Programm brachte die ersten Grundwahrheiten über die benachbarten Planeten zurück, und das moderne Bild von jedem beginnt mit einem Mariner."
+      "md": "Das erste Vermächtnis von Mariner ist das innere Sonnensystem, wie wir es jetzt kennen: Venus als Hochofen enthüllt, Mars von Kratern bis Canyons kartiert, Merkur zum ersten Mal fotografiert. Das Programm lieferte die erste Grundwahrheit über die benachbarten Planeten, und das moderne Bild von jedem beginnt mit einem Mariner."
     },
     {
       "type": "prose",
-      "md": "Sein zweites ist der Werkzeugkasten. Der Vorbeiflug, der planetare Orbiter und die Gravitationsschleuder wurden alle zuerst von Mariners durchgeführt, und alle drei bleiben grundlegend dafür, wie Raumschiffe erkunden. Spätere Missionen fliegen weiter und tragen mehr, aber sie verwenden immer noch die Bewegungen, die Mariner erfunden hat."
+      "md": "Das zweite ist der Werkzeugkasten. Der Vorbeiflug, der planetare Orbiter und die interplanetare Gravity-Assist-Schleuder wurden alle erstmals von Mariners vollbracht, und alle drei bleiben grundlegend dafür, wie Raumfahrzeuge erkunden. Spätere Missionen fliegen weiter und tragen mehr, aber sie verwenden noch immer die Züge, die Mariner erfand."
     },
     {
       "type": "prose",
-      "md": "Sein drittes ist alles, was es möglich machte. Mariner 9s Mars setzte das Ziel für Viking; die Mariner-Linie wuchs zu Voyager heran; und die ganze Idee, dass die Planeten besucht und verstanden werden konnten, nicht nur beobachtet, wurde durch diese kleinen Sonden etabliert. Sie waren das erste Kapitel, und der Rest der planetaren Erkundung ist in ihrer Grammatik geschrieben."
+      "md": "Das dritte ist alles, was sie möglich machte. Der Mars von Mariner 9 setzte das Ziel für Viking; die Mariner-Linie entwickelte sich zu Voyager; und die ganze Idee, dass die Planeten besucht und verstanden werden konnten, nicht nur beobachtet, wurde durch diese kleinen Sonden etabliert. Sie waren das erste Kapitel, und der Rest der Planetenerkundung ist in ihrer Grammatik geschrieben."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lehre von Mariner ist, dass ein einziger naher Blick ein Jahrhundert der Annahmen auf den Kopf stellen kann. Teleskope hatten Venus und Mars über Generationen studiert und lagen bei den Grundlagen falsch — ein warmer Zwilling, eine von Kanälen durchzogene Welt voller Leben. Ein paar Stunden Vorbeiflugdaten korrigierten beides. Wenn die echten Beweise schließlich gesammelt werden, ähneln sie oft kaum den sorgfältigen Theorien, die in ihrer Abwesenheit aufgebaut wurden; die erste direkte Messung ist mehr wert als jede Menge Rückschlüsse."
+      "md": "Die Lektion von Mariner ist, dass ein einziger naher Blick ein Jahrhundert der Annahmen umwerfen kann. Teleskope hatten Venus und Mars über Generationen studiert und lagen beim Wesentlichen falsch — ein warmer Zwilling, eine von Kanälen durchzogene Welt des Lebens. Ein paar Stunden Vorbeiflugdaten korrigierten beides. Wenn die echten Beweise endlich gesammelt werden, haben sie oft wenig Ähnlichkeit mit den sorgfältigen Theorien, die in ihrer Abwesenheit aufgebaut wurden; die erste direkte Messung ist mehr wert als jede noch so große Folgerung."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lehre ist, dass Fähigkeiten sich multiplizieren. Mariner machte sich nicht daran, die Gravitationsunterstützung oder den planetaren Orbiter als Selbstzweck zu erfinden — es löste das Problem, das vor ihm lag, und jede Lösung wurde zu einem dauerhaften Werkzeug, das die nächste Mission voraussetzen konnte. Fortschritt an harten Grenzen besteht oft weniger aus einzelnen Triumphen als aus dem Aufbau einer Grammatik von Bewegungen, die jeder, der danach kommt, kostenlos nutzen kann."
+      "md": "Die tiefere Lektion ist, dass sich Fähigkeiten potenzieren. Mariner machte sich nicht auf den Weg, um den Gravity-Assist oder den planetaren Orbiter als Selbstzweck zu erfinden — es löste das Problem, das vor ihm lag, und jede Lösung wurde zu einem permanenten Werkzeug, das die nächste Mission voraussetzen konnte. Fortschritt an harten Grenzen besteht oft weniger aus einzelnen Triumphen als darin, eine Grammatik von Zügen aufzubauen, die jeder, der danach kommt, kostenlos verwenden darf."
     }
   ]
 }

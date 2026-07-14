@@ -1,9 +1,9 @@
 {
-  "name": "Galilée",
-  "type": "ORBITEUR · VOLÉ",
-  "first": "Premier vaisseau spatial à orbiter autour de Jupiter ; sonde atmosphérique dans les nuages ​​de Jupiter",
-  "dispatch": "Galileo aurait dû être paralysée avant même d'arriver. Son antenne principale s'est bloquée à moitié ouverte en route vers Jupiter, réduisant son débit de données à un filet — et la mission a réussi quand même, parce que les ingénieurs ont réécrit son logiciel depuis la Terre pour faire passer la science à travers une minuscule antenne de secours. Elle est devenue la première sonde spatiale à orbiter Jupiter, a largué une sonde dans les nuages de la planète géante, et a passé huit ans à faire le tour des lunes. Sa plus grande découverte a émergé lentement de cette persévérance : la façon dont le champ magnétique de Jupiter s'enroulait autour d'Europa ne pouvait s'expliquer que par un océan salé sous la glace — l'argument le plus solide à ce jour qu'une lune de Jupiter pourrait abriter de l'eau liquide, et de la vie. À la fin, elle a été dirigée intentionnellement dans Jupiter, pour qu'elle ne puisse jamais tomber sur Europa et la contaminer.",
-  "description": "Lancé depuis la navette spatiale Atlantis après la longue pause post-Challenger, Galileo a bravé la ceinture intérieure d'astéroïdes et a mené la première étude à long terme de Jupiter et de ses lunes depuis l'orbite. Il a découvert le champ magnétique induit par Europe – une preuve solide de l’existence d’un océan souterrain – et a observé Shoemaker-Levy 9 percuter Jupiter. La mission s'est terminée par une plongée contrôlée dans Jupiter en 2003 pour éviter de contaminer les lunes glacées qui pourraient abriter des conditions propices à la vie.",
+  "name": "Galileo",
+  "type": "ORBITEUR · FLOWN",
+  "first": "Premier engin spatial en orbite autour de Jupiter ; sonde atmosphérique dans les nuages de Jupiter",
+  "dispatch": "Galileo aurait dû être paralysé avant même d'arriver. Son antenne principale s'est bloquée à moitié chemin vers Jupiter, réduisant son débit de données à un filet — et la mission a réussi quand même, parce que les ingénieurs ont réécrit son logiciel depuis la Terre pour faire passer la science par une minuscule antenne de secours. Il est devenu le premier engin spatial en orbite autour de Jupiter, a largué une sonde dans les nuages de la géante gazeuse, et a passé huit ans à explorer les lunes. Sa plus grande découverte a émergé lentement de cette persévérance : la façon dont le champ magnétique de Jupiter s'enroulait autour d'Europe ne pouvait s'expliquer que par un océan salé sous la glace — le plus fort indice jusqu'alors qu'une lune de Jupiter pourrait contenir de l'eau liquide, et de la vie. À la fin, il a été intentionnellement précipité dans Jupiter pour qu'il ne puisse jamais tomber sur Europe et la contaminer.",
+  "description": "Lancé depuis la navette spatiale Atlantis après la longue pause suivant Challenger, Galileo a bravé la ceinture d'astéroïdes intérieure et a mené la première étude à long terme de Jupiter et de ses lunes depuis l'orbite. Il a découvert le champ magnétique induit d'Europe — preuve solide d'un océan souterrain — et a observé Shoemaker-Levy 9 s'écraser sur Jupiter. La mission s'est terminée par une plongée contrôlée dans Jupiter en 2003 pour éviter de contaminer les lunes glacées qui pourraient abriter des conditions propices à la vie.",
   "events": [
     {
       "met": 0,
@@ -13,8 +13,8 @@
     },
     {
       "met": 2242,
-      "label": "INSERTION DE L'ORBITE DE JUPITER",
-      "note": "La combustion du moteur principal capture Galileo en orbite ; des décennies de science lunaire commencent.",
+      "label": "INSERTION EN ORBITE AUTOUR DE JUPITER",
+      "note": "Mise à feu du moteur principal pour placer Galileo en orbite ; débute un tour de 8 ans consacré à l'étude scientifique des lunes.",
       "type": "nominal"
     }
   ]

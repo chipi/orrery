@@ -1,8 +1,8 @@
 {
   "name": "OSIRIS-REx",
-  "type": "RITORNO CAMPIONI · VOLATO",
-  "first": "Il più grande campione di asteroide mai restituito (121,6 g di Bennu, consegnato sulla Terra il 24-09-2023)",
-  "description": "OSIRIS-REx ha condotto la missione di rendezvous con asteroide più precisa mai volata. Lanciata l'08-09-2016 da Cape Canaveral su un Atlas V 411, ha utilizzato un'assistenza gravitazionale terrestre nel 2017 per ruotare il proprio piano orbitale sull'inclinazione di 6° di Bennu, e ha effettuato il rendezvous con l'asteroide carbonaceo near-Earth di 492 m il 03-12-2018. Ha mantenuto la stazione a 1,4 km — l'orbita più vicina mai realizzata da un veicolo spaziale attorno a un corpo celeste. Ha trascorso due anni mappando la superficie di Bennu disseminata di massi e scoprendo attive espulsioni di particelle. Il 20-10-2020 il braccio di campionamento Touch-and-Go è sceso sul sito Nightingale, ha sparato gas N₂ nella superficie e ha afferrato un pennacchio — sprofondando di 50 cm in una superficie 'fluida di cumulo di detriti'. La Capsula di Ritorno Campioni ha consegnato 121,6 g di materiale di Bennu nello Utah il 24-09-2023. Il veicolo spaziale stesso è stato immediatamente ridesignato OSIRIS-APEX, in rotta verso un rendezvous con Apophis nel 2029.",
+  "type": "MISSIONE DI RITORNO DI CAMPIONI · COMPLETATA",
+  "first": "Più grande campione di asteroide mai riportato sulla Terra (121,6 g da Bennu, consegnato il 2023-09-24)",
+  "description": "OSIRIS-REx ha condotto una delle operazioni di prossimità asteroidale più delicate mai tentate. Lanciato il 2016-09-08 da Cape Canaveral su un Atlas V 411, ha utilizzato una fionda gravitazionale terrestre nel 2017 per ruotare il suo piano orbitale verso l'inclinazione di 6° di Bennu, e ha raggiunto l'asteroide carbonaceo near-Earth 2018-12-03 di 492 m. Dopo il mantenimento della posizione a ~19 km, in seguito ha stabilito un'orbita record di ~1,4 km — l'orbita di un veicolo spaziale più vicina mai raggiunta attorno a qualsiasi corpo celeste. Ha trascorso due anni mappando la superficie rocciosa e disseminata di massi di Bennu e scoprendo ejection di particelle attive. Il 2020-10-20 il braccio campionatore Touch-and-Go è sceso al sito Nightingale, ha sparato gas N₂ sulla superficie e ha catturato un plume — sprofondandosi di 50 cm in una superficie di 'rubble-pile fluid'. La Sample Return Capsule ha consegnato 121,6 g di materiale da Bennu in Utah il 2023-09-24. Il veicolo spaziale stesso è stato immediatamente ridisignato OSIRIS-APEX, in rotta verso un rendezvous con Apophis nel 2029.",
   "events": [
     {
       "met": 0,
@@ -12,32 +12,32 @@
     },
     {
       "met": 380,
-      "label": "ASSISTENZA GRAVITAZIONALE TERRESTRE",
-      "note": "22-09-2017, 17.237 km sopra l'Antartico — ruota il piano orbitale sull'inclinazione di 6° di Bennu.",
+      "label": "FIONDA GRAVITAZIONALE TERRESTRE",
+      "note": "2017-09-22, 17.237 km sopra l'Antartide — ruota il piano orbitale verso l'inclinazione di 6° di Bennu.",
       "type": "info"
     },
     {
       "met": 816,
       "label": "RENDEZVOUS CON BENNU",
-      "note": "Mantiene la stazione a 1,4 km — l'orbita più vicina mai realizzata da un veicolo spaziale attorno a un corpo celeste.",
+      "note": "Arriva a Bennu; mantiene la posizione a ~19 km poi progressivamente si avvicina verso un'orbita record di ~1,4 km — l'orbita di un veicolo spaziale più vicina mai raggiunta attorno a qualsiasi corpo celeste.",
       "type": "info"
     },
     {
       "met": 1503,
-      "label": "RACCOLTA CAMPIONI TAG",
-      "note": "20-10-2020. Il braccio Touch-and-Go sprofonda di 50 cm nella superficie del cumulo di detriti; raccoglie 121,6 g.",
+      "label": "RACCOLTA DI CAMPIONI TAG",
+      "note": "2020-10-20. Il braccio Touch-and-Go sprofonda 50 cm nella superficie rubble-pile; raccoglie 121,6 g.",
       "type": "info"
     },
     {
       "met": 1705,
       "label": "PARTENZA DA BENNU",
-      "note": "10-05-2021. Crociera di 2,5 anni di ritorno verso la Terra.",
+      "note": "2021-05-10. Viaggio di ritorno verso la Terra di 2,5 anni.",
       "type": "nominal"
     },
     {
       "met": 2572,
-      "label": "RITORNO CAMPIONI",
-      "note": "24-09-2023. SRC paracaduta nello Utah Test and Training Range; il veicolo spaziale diventa OSIRIS-APEX.",
+      "label": "RITORNO DEI CAMPIONI",
+      "note": "2023-09-24. SRC scende con paracadute nell'Utah Test and Training Range; il veicolo spaziale diventa OSIRIS-APEX.",
       "type": "info"
     }
   ]

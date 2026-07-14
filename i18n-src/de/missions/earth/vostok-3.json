@@ -1,27 +1,27 @@
 {
   "name": "Vostok 3",
-  "dispatch": "Vostok 3 eröffnete den ersten Akt eines orbitalen Schauspiels. Einen Tag nachdem Andriyan Nikolayev die Umlaufbahn erreicht hatte, folgte ihm Vostok 4, und für eine Weile flogen die beiden Raumfahrzeuge nur wenige Kilometer voneinander entfernt — das erste Mal, dass sich zwei bemannte Raumfahrzeuge gleichzeitig im All befanden. Für die Welt sah es wie ein Rendezvous aus, und die Sowjets ließen das gerne so stehen. In Wahrheit konnte keines der Schiffe manövrieren; die Nähe entstand dadurch, dass das eine nahezu in die Bahn des anderen gestartet wurde, und der Abstand vergrößerte sich danach stetig. Ein echter Erstflug und zugleich ein bisschen Zaubertrick — und ein Hinweis auf die wirkliche Fähigkeit, echtes Rendezvous, die noch niemand beherrschte.",
-  "type": "BEMANNTER ERDORBIT · GEFLOGEN",
-  "first": "Erstes Rendezvous im Doppelflug — bis auf ~6,5 km an Wostok 4 heran",
-  "description": "Andrijan Nikolajews 64-Orbit-Flug, gestartet am 1962-08-11 um 08:30 UTC. Vierundzwanzig Stunden später schloss sich Wostok 4 (Popowitsch) im Orbit an — der geringste Abstand betrug etwa 6,5 km, eine echte Rendezvous-Fähigkeit bestand jedoch nicht (beide Kapseln hatten keine Manövriertriebwerke). Der simultane Flug war eine Propagandaantwort auf die US-Suborbitalmissionen und John Glenns Friendship 7. Nikolajew landete am 1962-08-15 um 07:55 UTC bei Karaganda in der Kasachischen SSR nach fast vier Tagen im All.",
+  "type": "BEMANNTE ERDUMLAUFBAHN · DURCHGEFÜHRT",
+  "first": "Erstes Doppelflug-Rendezvous — flog innerhalb von ~6,5 km an Vostok 4 vorbei",
+  "dispatch": "Vostok 3 eröffnete den ersten Akt eines Stücks kosmischen Theaters. Einen Tag nachdem Andriyan Nikolayev die Umlaufbahn erreichte, folgte ihm Vostok 4 — und eine Weile lang flogen die beiden Raumschiffe nur wenige Kilometer voneinander entfernt, zum ersten Mal zwei bemannte Raumfahrzeuge im All zusammen. Für die Welt sah es wie ein Rendezvous aus, und die Sowjets waren froh, das zuzulassen. In Wahrheit konnte keines der beiden Schiffe manövrieren; die Nähe entstand dadurch, dass man das eine fast auf die Flugbahn des anderen schoss, und der Abstand vergrößerte sich danach stetig. Ein echtes Novum und zugleich ein bisschen Zauberei — und ein Hinweis auf die wirkliche Fertigkeit, das echte Rendezvous, das noch niemand beherrschte.",
+  "description": "Andriyan Nikolayevs Flug über 64 Umläufe, gestartet 1962-08-11 08:24 UTC. Vierundzwanzig Stunden nach dem Start gesellte sich Vostok 4 (Popovich) zu ihm in die Umlaufbahn — die nächste Annäherung betrug etwa 6,5 km, obwohl keine echte Rendezvous-Fähigkeit existierte (die beiden Kapseln hatten keine Manövriertriebwerke). Der gleichzeitige Flug war eine Propagandaantwort auf die suborbitalen US-Missionen und auf John Glenns Friendship 7. Nikolayev landete am 1962-08-15 06:52 UTC in der Nähe von Karaganda, Kasachische SSR, nach fast 4 Tagen im All.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Vostok-K from Baikonur Site 1 1962-08-11 08:30 UTC.",
-      "type": "nominal"
+      "type": "nominal",
+      "label": "START",
+      "note": "Vostok-K von Baikonur Site 1 am 1962-08-11 08:24 UTC."
     },
     {
       "met": 0.25,
+      "type": "info",
       "label": "VOSTOK 4 RDV",
-      "note": "Vostok 4 launched 24h later; closest approach ~6.5 km on day 2.",
-      "type": "info"
+      "note": "Vostok 4 startete 24h später; nächste Annäherung ~6,5 km am Tag 2."
     },
     {
       "met": 3.98,
-      "label": "EJECT + LAND",
-      "note": "Nikolayev landed near Karaganda 1962-08-15 07:55 UTC after 64 orbits.",
-      "type": "nominal"
+      "type": "nominal",
+      "label": "AUSSTOSS + LANDUNG",
+      "note": "Nikolayev landete am 1962-08-15 06:52 UTC in der Nähe von Karaganda nach 64 Umläufen."
     }
   ]
 }

@@ -1,74 +1,74 @@
 {
-  "name": "アポロ 15 号",
-  "dispatch": "Apollo 15の頃には競争はとうに終わり、科学が舵を取った――文字通りに。これは月面車を搭載した最初の飛行で、徒歩2マイルの行動半径を本格的な18マイルのフィールド探査に変え、安全な平坦地ではなく山脈と曲がりくねった峡谷に挟まれた谷に着陸した。ScottとIrwinは「創世記の石」を持ち帰った――月の原始地殻の40億年前の破片で、その形成過程を裏付けるものだった。Apolloは月を訪問することをやめ、研究を始めた――そして中止されるまで、その能力を向上させ続けた。",
-  "type": "有人着陸機 · 飛行済み",
-  "first": "最初の J ミッション — 滞在延長、初の月面車 (LRV)、「ジェネシス・ロック」",
-  "description": "最初の「J ミッション」 — 新しい月面車を備えた延長滞在型科学アポロ。LRV により Scott + Irwin は 27.9 km の探査範囲を獲得 (アポロ 14 の徒歩のみの 3.5 km に対して)、4.5 km の山脈の麓と曲がりくねった Hadley 谷の縁にあるドラマチックな Hadley-Apennine 地点を開拓。3 回の EVA で合計 18 時間 35 分、77 kg のサンプルを持ち帰った。これには有名な「ジェネシス・ロック」(サンプル 15415) — 月の高地地殻のマグマオーシャン起源を確認する 41 億年前のアノーソサイトが含まれる。Scott がテレビ中継した「ハンマー・羽根落下」がガリレオの重力法則を生放送で実証。",
+  "name": "アポロ15号",
+  "type": "有人月着陸機 · 運用完了",
+  "first": "初のJ-ミッション — 長期滞在、初の月面ローバー、「ジェネシス・ロック」",
+  "dispatch": "アポロ15号の時点で月競争は遠い過去のことであり、科学が主役となった — 文字通りの意味で。これは月面ローバーを搭載した初の飛行で、歩行による2マイルの活動範囲を、18マイルに及ぶ本格的な野外探査へと拡張した。着陸地点も安全な平原ではなく、山脈と蛇行する渓谷に挟まれた谷間である。スコットとアーウィンは月の原始地殻の約40億年前の岩片「ジェネシス・ロック」を持ち帰り、月がどのように形成されたかを確認した。アポロは月への単なる訪問をやめ、月の研究を始めたのだ — そしてその後もキャンセルされるまで、それは良くなり続けた。",
+  "description": "初めての「J-ミッション」 — 新しい月面ローバーを備えた長期滞在型の科学的アポロミッション。LRVはスコット＋アーウィンに27.9 kmの走行範囲を与え（歩行のみのアポロ14号の3.5 kmに対して）、4.5 km級の山脈のふもと、蛇行するハドレー・リルの縁に位置する劇的なハドレー・アペニン地域を開拓した。総計18時間35分の3度のEVA、77 kgのサンプル回収 — 有名な「ジェネシス・ロック」（サンプル15415）を含む — 月の高地地殻のマグマ・オーシャン起源を確認した41億年前の斜長岩。スコットのテレビ放映された「ハンマーと羽毛の落下実験」はガリレオの重力法則をライブで検証した。月軌道上のウォーデンはSIM-ベイの遠隔計測機器群（撮像カメラ、ガンマ線・X線・アルファ粒子分光計）を操作し、帰路で初の深宇宙EVA（地球から約317,000 kmの地点で約39分のEVAを実施し、フィルムカニスターを回収）を実行した。アポロ15号の回収は3つのメインパラシュートのうち1つが完全に展開しなかったため損傷を受けたが — CSMは硬着水したものの乗員は無事であった。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-510) from Kennedy Space Center LC-39A 1971-07-26 13:34 UTC.",
+      "label": "打ち上げ",
+      "note": "サターン V（AS-510）をケネディ宇宙センターLC-39Aから、1971年7月26日13:34 UTC に発射。",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection.",
+      "note": "月遷移軌道投入。",
       "type": "nominal"
     },
     {
       "met": 3.25,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "月軌道投入。SPS ∆v ≈0.91 km/s。",
       "type": "nominal"
     },
     {
       "met": 4.79,
-      "label": "TOUCHDOWN",
-      "note": "Falcon lands at Hadley-Apennine 1971-07-30 22:16 UTC — first landing at a non-mare highland site.",
+      "label": "着陸",
+      "note": "ファルコン着陸船がハドレー・アペニン地域に着陸、1971年7月30日22:16 UTC — 非海地点での最初の着陸地点。",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "FIRST LRV TRAVERSE",
-      "note": "EVA-1: First Lunar Roving Vehicle deployment + 10.3 km traverse to Elbow Crater + the rim of Hadley Rille.",
+      "label": "初の月面ローバー走行",
+      "note": "EVA-1: 初の月面ローバー配置展開および、エルボー・クレーターとハドレー・リル外縁への10.3 km走行。",
       "type": "info"
     },
     {
       "met": 5.5,
-      "label": "GENESIS ROCK",
-      "note": "EVA-2: At Spur Crater, Scott + Irwin recover sample 15415 — a 4.1-billion-year-old anorthosite from the original lunar crust.",
+      "label": "ジェネシス・ロック",
+      "note": "EVA-2: スパー・クレーターでスコット＋アーウィンがサンプル15415を回収 — 月の原始地殻から採取された41億年前の斜長岩。",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "HAMMER-FEATHER DROP",
-      "note": "EVA-3 / pre-ascent: Scott televises a hammer + feather dropped together; both hit the regolith simultaneously, verifying Galileo's 1589 prediction live.",
+      "label": "ハンマーと羽毛の落下実験",
+      "note": "EVA-3 / 上昇前: スコットがハンマーと羽毛を一緒に落とす様子をテレビ放映。両者が同時にレゴリスに到達し、ガリレオの1589年の予言をライブで検証。",
       "type": "info"
     },
     {
       "met": 6.25,
-      "label": "ASCENT",
-      "note": "Falcon lifts off after 66 h 55 m on surface. 77 kg samples + first ascent televised from the LRV-mounted camera (operated remotely by Houston).",
+      "label": "上昇",
+      "note": "ファルコンが表面での66時間55分の滞在後に打ち上げ。77 kgのサンプルと、月面ローバー搭載カメラからのテレビ中継による初の上昇映像（ヒューストンから遠隔操作）。",
       "type": "nominal"
     },
     {
       "met": 8.2,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "月遷移軌道離脱。SPS ∆v ≈1.0 km/s。",
       "type": "nominal"
     },
     {
       "met": 9.5,
-      "label": "DEEP-SPACE EVA",
-      "note": "Worden performs first-ever EVA in cislunar space (38 min at ~315 000 km from Earth) to retrieve SIM-bay film canisters.",
+      "label": "深宇宙EVA",
+      "note": "ウォーデンが地球月間宇宙で初のEVAを実施（地球から約317,000 kmの地点で約39分）し、SIM-ベイのフィルムカニスターを回収。",
       "type": "info"
     },
     {
       "met": 12.31,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+      "label": "着水",
+      "note": "司令船が北太平洋に着水、1971年8月7日20:46 UTC。3つのメインパラシュートのうち1つが完全に展開せず、硬着水したが乗員は無事。USS オキナワにより回収。",
       "type": "warning"
     }
   ]

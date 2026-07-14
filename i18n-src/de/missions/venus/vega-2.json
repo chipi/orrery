@@ -1,25 +1,25 @@
 {
   "name": "Vega 2",
-  "type": "VORBEIFLUG + LANDER + BALLON · BEENDET",
-  "first": "Erste chemische Analyse des venusianischen Hochlandbodens (Phoebe Regio, 1985)",
-  "description": "Zwilling von Vega 1, 6 Tage später gestartet. Das Landemodul setzte am 15.6.1985 im Hochland Phoebe Regio auf und nutzte XRF-Spektroskopie zum Nachweis von Anorthosit-Norit-Troktolith-Material — erste chemische Analyse hoch gelegener venusianischer Kruste. Der Bus flog am 9.3.1986 in 8030 km Abstand am Kometen 1P/Halley vorbei. Gemeinsam lieferten die Vega-Busse die ersten Nahaufnahmen eines Kometenkerns und verfeinerten die Positionsbestimmung, mit der Giotto fünf Tage später einen 596-km-Vorbeiflug an Halley wagen konnte.",
+  "type": "VORBEIFLUG + LANDER + BALLON · DURCHGEFÜHRT",
+  "first": "Erste chemische Analyse von Venusgestein der Hochland-Art (Aphrodite Terra, 1985); gepaarte Halley-Begegnung mit Vega 1 lieferte Giottos Zielbestimmung",
+  "description": "Zwilling von Vega 1, 6 Tage später (1984-12-21) für Redundanz + gepaarte Halley-Armada-Lösung gestartet. Vega 2's Abstiegsmodul landete 1985-06-15 in der Rusalka Planitia an der nördlichen Flanke der Aphrodite Terra und nutzte RFA-Spektrometrie, um Anorthosit-Norit-Troctolith-Material zu finden — die erste chemische Analyse der Hochland-Kruste der Venus (die Zusammensetzung ähnelt Mondhochlanden, obwohl der Landeplatz selbst eine Ebene ist). Sein Ballon funktionierte identisch mit Vega 1's, trieb in der entgegengesetzten Hemisphäre bei ~240 km/h. Der Bus flog am Kometen 1P/Halley in 8030 km Entfernung am 1986-03-09 vorbei. Zusammen lieferten die beiden Vega-Busse die ersten Nahaufnahmen des Kometenkerns und präzisierten die Positionsbestimmung, die es Giotto ermöglichte, fünf Tage später einen Vorbeiflug in 596 km Entfernung zu versuchen.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "Proton-K / D-1 startet Vega 2 von Baikonur 6 Tage nach Vega 1.",
+      "note": "Proton-K / D-1 hebt Vega 2 von Baikonur 6 Tage hinter Vega 1 ab.",
       "type": "nominal"
     },
     {
       "met": 176,
       "label": "VENUS-BEGEGNUNG",
-      "note": "Abstiegsmodul landet in Phoebe Regio + liefert erste chemische Analyse von Hochlandboden.",
+      "note": "Abstiegsmodul landet in der Aphrodite Terra (Rusalka Planitia) + liefert erste chemische Analyse der Hochland-Kruste der Venus.",
       "type": "nominal"
     },
     {
       "met": 442,
       "label": "HALLEY-VORBEIFLUG",
-      "note": "Engste Annäherung an Komet 1P/Halley in 8030 km — gepaarte Positionsbestimmung für Giotto.",
+      "note": "Größte Annäherung an Komet 1P/Halley in 8030 km — gepaarte Positionsbestimmung für Giotto.",
       "type": "nominal"
     }
   ]

@@ -1,8 +1,8 @@
 {
   "name": "Hayabusa",
-  "type": "RETOUR D'ÉCHANTILLON · RÉALISÉE",
-  "first": "Premier échantillon d'astéroïde jamais rapporté sur Terre (1500 μg provenant d'Itokawa)",
-  "description": "L'Hayabusa de la JAXA (« faucon » en japonais) a accompli la mission de sauvetage la plus héroïque de l'histoire du vol spatial. Lancée le 2003-05-09 sur une fusée M-V-5 avec quatre propulseurs ioniques μ10 — le sous-système de propulsion ionique le plus puissant jamais utilisé à cette époque. Arrivée à 25143 Itokawa le 2005-09-12 — un astéroïde géocroiseur en tas de gravats de 540×270×210 m. Deux atterrissages (2005-11-20 + 25), tous deux avec des défaillances du projectile de collecte d'échantillons, bien que le régolithe ait été projeté dans la corne de collecte malgré tout. Puis une fuite d'hydrazine a paralysé le contrôle d'attitude, deux des quatre roues de réaction sont tombées en panne, les communications ont été perdues pendant sept semaines, la fenêtre de retour vers la Terre a été reportée de trois ans. Les ingénieurs ont assemblé un moteur ionique fonctionnel à partir des moitiés survivantes de deux moteurs endommagés et ont ramené Hayabusa vers la Terre. La capsule d'échantillons récupérée à Woomera AUS le 2010-06-13 a rapporté 1500 microgrammes de matériau d'Itokawa — confirmant la composition de type S de l'astéroïde et sa structure en tas de gravats, et prouvant que le retour d'échantillon d'astéroïde était possible.",
+  "type": "RETOUR D'ÉCHANTILLONS · RÉALISÉE",
+  "first": "Premier échantillon d'astéroïde jamais ramené sur Terre (~1 500 grains de poussière d'Itokawa, masse inférieure au milligramme)",
+  "description": "La Hayabusa (« faucon » en japonais) de la JAXA a exécuté la mission de sauvetage la plus héroïque de l'histoire du vol spatial. Lancée le 2003-05-09 sur un M-V-5 équipée de quatre propulseurs ioniques μ10 — le sous-système de propulsion ionique le plus puissant jamais lancé à cette époque. Arrivée à 25143 Itokawa le 2005-09-12 — un astéroïde géocroiseur en forme de tas de gravats de 540×270×210 m. Deux poses de contact (2005-11-20 et 25), toutes deux avec défaillances du système de collecte par projectile, bien que du régolithe ait été projeté dans le bras collecteur malgré tout. Puis une fuite d'hydrazine paralysa le contrôle d'attitude, deux de ses trois roues de réaction tombèrent en panne, les communications furent perdues pendant sept semaines, et la fenêtre de retour vers la Terre se décala de trois ans. Les ingénieurs assemblèrent un propulseur ionique fonctionnant à partir des moitiés survivantes de deux moteurs endommagés et ramenèrent Hayabusa sur Terre. La capsule d'échantillons récupérée à Woomera AUS le 2010-06-13 contenait ~1 500 grains de poussière d'Itokawa (masse inférieure au milligramme) — confirmant la composition de type S de l'astéroïde et sa structure de tas de gravats, et prouvant que le retour d'échantillons d'astéroïdes était possible.",
   "events": [
     {
       "met": 0,
@@ -19,13 +19,13 @@
     {
       "met": 857,
       "label": "ARRIVÉE À ITOKAWA",
-      "note": "2005-09-12. Maintien de position à 7 km.",
+      "note": "2005-09-12. Maintien en position à 7 km de la porte de garde.",
       "type": "info"
     },
     {
       "met": 857.01,
-      "label": "ATTERRISSAGES",
-      "note": "Deux contacts de surface 2005-11-20 + 25. Échec du déclenchement des projectiles de collecte d'échantillons.",
+      "label": "POSES DE CONTACT",
+      "note": "Deux contacts de surface les 2005-11-20 et 25. Les projectiles de collecte d'échantillons ne se déploient pas sur commande.",
       "type": "warning"
     },
     {
@@ -37,13 +37,13 @@
     {
       "met": 1900,
       "label": "MOTEUR IONIQUE FRANKENSTEIN",
-      "note": "Un moteur fonctionnel assemblé à partir des moitiés survivantes de deux moteurs endommagés.",
+      "note": "Un seul moteur fonctionnant assemblé à partir des moitiés survivantes de deux moteurs endommagés.",
       "type": "info"
     },
     {
       "met": 2592,
-      "label": "RETOUR D'ÉCHANTILLON",
-      "note": "2010-06-13. 1500 μg d'Itokawa récupérés à Woomera. Premier échantillon d'astéroïde jamais rapporté.",
+      "label": "RETOUR D'ÉCHANTILLONS",
+      "note": "2010-06-13. ~1 500 grains de poussière d'Itokawa (masse inférieure au milligramme) récupérés à Woomera. Premier échantillon d'astéroïde jamais ramené.",
       "type": "info"
     }
   ]

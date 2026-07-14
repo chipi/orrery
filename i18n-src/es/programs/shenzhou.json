@@ -1,60 +1,60 @@
 {
   "name": "Shenzhou",
-  "tagline": "La cápsula que convirtió a China en la tercera nación en lanzar a su propia gente — construida lentamente, probada exhaustivamente, y que nunca perdió a una tripulación.",
+  "tagline": "La cápsula que convirtió a China en la tercera nación en lanzar a su propia gente — construida lentamente, probada exhaustivamente, y que nunca perdió una tripulación.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Durante cuarenta años, solo dos países habían lanzado a un ser humano al espacio en su propio cohete: la Unión Soviética y Estados Unidos. En octubre de 2003 un tercero se unió a ellos, discretamente y sin una carrera que ganar. Yang Liwei viajó en una cápsula Shenzhou hasta la órbita, rodeó la Tierra catorce veces y regresó a casa — y China se convirtió en una nación espacial tripulada en sus propios términos, usando su propio vehículo, su propio lanzador y su propio cuerpo de astronautas. No había ningún competidor que vencer. Solo había una capacidad que construir, y China había pasado una década construyéndola."
+      "md": "Durante cuarenta años, solo dos países habían lanzado un ser humano al espacio en su propio cohete: la Unión Soviética y Estados Unidos. En octubre de 2003 un tercero se unió a ellos, discretamente y sin ninguna carrera que ganar. Yang Liwei viajó en una cápsula Shenzhou hasta la órbita, dio catorce vueltas a la Tierra y regresó a casa — y China se convirtió en una nación espacial tripulada en sus propios términos, usando su propio vehículo, su propio lanzador y su propio cuerpo de astronautas. No había ningún competidor que vencer. Solo había una capacidad que construir, y China había pasado una década construyéndola."
     },
     {
       "type": "prose",
-      "md": "Shenzhou — \"Nave Divina\" — parece, a primera vista, como una Soyuz: la misma configuración tripartita de módulo orbital, cápsula de descenso y módulo de servicio, el legado de una relación tecnológica con Rusia en los años noventa. Pero es más grande, completamente construida por China, y mejorada de una manera reveladora — su módulo orbital lleva sus propios paneles solares y puede seguir volando como satélite libre después de que la tripulación regrese a casa. Es la arquitectura de Soyuz llevada a la escuela y devuelta con mejores notas."
+      "md": "Shenzhou — «Nave Divina» — parece, a primera vista, un Soyuz: la misma distribución en tres partes de módulo orbital, cápsula de descenso y módulo de servicio, el legado de una relación tecnológica con Rusia en los años noventa. Pero es más grande, enteramente de construcción china, y mejorada de manera reveladora — su módulo orbital lleva sus propios paneles solares y puede seguir volando como satélite libre después de que la tripulación regrese a casa. Es la arquitectura de Soyuz llevada a la escuela y devuelta con mejores notas."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "El objetivo nunca fue un vuelo espectacular; era una capacidad de vuelo espacial tripulado permanente e independiente. Eso significaba construir no solo una cápsula sino todo el aparato alrededor de ella — un vehículo de lanzamiento certificado, una red de control de misión, una fuerza de recuperación, un programa de entrenamiento y un cuerpo de astronautas extraído de la fuerza aérea. Shenzhou era el vehículo en el centro de una capacidad nacional, y el programa se negó a volar una tripulación hasta que cada pieza de esa capacidad hubiera sido probada."
+      "md": "El objetivo nunca fue un vuelo de exhibición; era una capacidad permanente e independiente de vuelo espacial tripulado. Eso significaba construir no solo una cápsula sino todo el aparato a su alrededor — un vehículo de lanzamiento certificado, una red de control de misión, una fuerza de recuperación, un programa de entrenamiento y un cuerpo de astronautas procedentes de la fuerza aérea. Shenzhou era el vehículo en el centro de una capacidad nacional, y el programa se negó a volar una tripulación hasta que cada pieza de esa capacidad hubiera sido probada."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/long-march-2f/01"
       },
-      "caption": "Long March 2F — el lanzador certificado para vuelos tripulados construido específicamente para transportar Shenzhou, con una torre de escape y la redundancia requerida para poner personas en la cima. Ninguna tripulación voló hasta que se hubiera probado a sí mismo en misiones no tripuladas.",
+      "caption": "Long March 2F — el lanzador certificado para vuelo tripulado construido específicamente para llevar Shenzhou, con una torre de escape y la redundancia necesaria para poner personas encima. Ninguna tripulación voló hasta que no se había probado en misiones no tripuladas.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "En el arco más largo, el objetivo era alimentar una estación. Cada capacidad que Shenzhou demostró — vuelo orbital, caminatas espaciales, encuentro, estancias de larga duración — era un requisito previo para las estaciones Tiangong que siguieron. El programa tripulado y el programa de la estación fueron diseñados como dos mitades de un mismo plan: construir primero el vehículo y la gente, luego darles un lugar adonde ir."
+      "md": "En el arco más largo, el objetivo era alimentar una estación. Cada capacidad que Shenzhou demostró — vuelo orbital, paseos espaciales, encuentro, estancias de larga duración — era un prerrequisito para las estaciones Tiangong que siguieron. El programa tripulado y el programa de la estación fueron diseñados como dos mitades de un plan: construir primero el vehículo y la gente, luego darles un lugar adonde ir."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Por cualquier medida de fiabilidad, Shenzhou ha sido un triunfo discreto. Desde la primera prueba no tripulada en 1999 ha llevado tripulaciones a la órbita, realizó la primera caminata espacial de China (Shenzhou 7, 2008), ejecutó el primer acoplamiento tripulado del país (Shenzhou 9, 2012), y ha entregado a cada tripulación residente a la Estación Espacial China desde 2021 — sin perder nunca a un astronauta. En un ámbito donde ambos predecesores pagaron por sus primicias con vidas, China alcanzó los mismos hitos y trajo a todos a casa."
+      "md": "Por cualquier medida de fiabilidad, Shenzhou ha sido un triunfo discreto. Desde la primera prueba no tripulada en 1999 ha llevado tripulaciones a órbita, realizado el primer paseo espacial de China (Shenzhou 7, 2008), efectuado el primer acoplamiento tripulado del país (Shenzhou 9, 2012), y entregado cada tripulación residente a la Estación Espacial China desde 2021 — sin perder nunca un astronauta. En un ámbito donde ambos predecesores pagaron por sus primeros hitos con vidas, China alcanzó los mismos hitos y trajo a todos a casa."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/shenzhou/02"
       },
-      "caption": "Un módulo de descenso Shenzhou tras su recuperación en las praderas de Mongolia Interior. La cápsula chamuscada es el extremo visible de una disciplina invisible: pruebas no tripuladas exhaustivas antes de que ningún ser humano viajara en una.",
+      "caption": "Un módulo de descenso Shenzhou después de su recuperación en las praderas de Mongolia Interior. La cápsula chamuscada es el extremo visible de una disciplina invisible: pruebas no tripuladas exhaustivas antes de que ningún ser humano subiera a una.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "El programa también construyó algo menos visible pero igual de duradero: un banco profundo. China ahora vuela comandantes experimentados junto a novatos, ha puesto mujeres en órbita y en caminatas espaciales, y rota tripulaciones por la estación en una cadencia regular. Shenzhou ya no es una demostración de que China puede volar personas — es el autobús rutinario y confiable que mantiene su estación dotada de personal."
+      "md": "El programa también construyó algo menos visible pero igualmente duradero: un banco de profundidad. China ahora vuela comandantes experimentados junto a novatos, ha puesto mujeres en órbita y en paseos espaciales, y rota tripulaciones a través de la estación con una cadencia regular. Shenzhou ya no es una demostración de que China puede volar gente — es el autobús rutinario y fiable que mantiene su estación dotada de personal."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "La historia de Shenzhou es la historia de un país que decidió que los hitos importaban menos que el método. El vuelo de Yang Liwei en 2003 llegó cuatro décadas después del de Gagarin; China no ganó nada por ser temprana porque nunca intentó serlo. Intentaba ser certera. Cada vuelo de Shenzhou retiró un riesgo específico y despejó el camino para el siguiente, y la disposición del programa a esperar — a volar pruebas no tripuladas hasta que el vehículo se hubiera ganado la confianza — es precisamente por lo que su historial humano está inmaculado."
+      "md": "La historia de Shenzhou es la historia de un país que decidió que los hitos importaban menos que el método. El vuelo de Yang Liwei de 2003 llegó cuatro décadas después del de Gagarin; China no ganó nada por ser temprana porque nunca intentó serlo. Intentaba ser certera. Cada vuelo de Shenzhou retiró un riesgo específico y despejó el camino para el siguiente, y la disposición del programa a esperar — a volar pruebas no tripuladas hasta que el vehículo se ganara la confianza — es precisamente la razón por la que su registro humano está impoluto."
     },
     {
       "type": "prose",
-      "md": "También hay una textura humana en ello. Los astronautas son figuras nacionales, extraídos en gran medida de pilotos militares, entrenados durante años para vuelos que se planifican con mucha antelación y se ejecutan casi exactamente según lo programado. Donde los primeros programas soviéticos y estadounidenses fueron improvisados y a menudo aterradores, el de China es procedimental hasta el punto de parecer poco glamuroso — y esa falta de drama es precisamente el punto. Un programa que no produce historias de casi-muerte es un programa que está funcionando."
+      "md": "También hay una textura humana en ello. Los astronautas son figuras nacionales, procedentes en gran parte de pilotos militares, entrenados durante años para vuelos que se planifican con mucha antelación y se ejecutan casi exactamente según lo programado. Donde los primeros programas soviéticos y estadounidenses fueron improvisados y a menudo aterradores, el de China es procedimental hasta el punto de parecer poco glamuroso — y esa falta de drama es todo el objetivo. Un programa que no produce historias de casi-muerte es un programa que está funcionando."
     },
     {
       "type": "prose",
@@ -64,25 +64,25 @@
   "legacy": [
     {
       "type": "prose",
-      "md": "El primer legado de Shenzhou es el hecho simple del tercer asiento en la mesa. El vuelo espacial tripulado ya no es una capacidad de dos potencias congelada en la Guerra Fría; es viva y en expansión, y el historial de seguridad ininterrumpido de China le da a su programa una credibilidad que las primicias por sí solas nunca podrían."
+      "md": "El primer legado de Shenzhou es el simple hecho del tercer asiento en la mesa. El vuelo espacial tripulado ya no es una capacidad de dos potencias congelada en la Guerra Fría; es una viva y en expansión, y el historial ininterrumpido de seguridad de China otorga a su programa una credibilidad que los primeros hitos por sí solos nunca podrían dar."
     },
     {
       "type": "prose",
-      "md": "Su segundo legado es una escalera probada para todo lo que viene después. El mismo método paso a paso, demuéstralo primero que llevó a Shenzhou de prueba no tripulada a transbordador de la estación ahora está siendo dirigido a la Luna — una nueva cápsula tripulada para el espacio profundo, un aterrizador lunar pesado y un objetivo declarado de aterrizar astronautas antes de 2030. Shenzhou es el ensayo; la Luna es la función."
+      "md": "Su segundo legado es una escalera probada para todo lo que viene después. El mismo método paso a paso, pruébalo-primero que llevó a Shenzhou de prueba no tripulada a ferry de estación ahora se está apuntando a la Luna — una nueva cápsula tripulada de espacio profundo, un módulo de aterrizaje lunar pesado y un objetivo declarado de aterrizar astronautas para 2030. Shenzhou es el ensayo; la Luna es la actuación."
     },
     {
       "type": "prose",
-      "md": "Y es una oferta permanente. China ha comenzado a invitar a astronautas de otras naciones a entrenar y volar a bordo de su estación en tripulaciones entregadas por Shenzhou — convirtiendo al vehículo no solo en un autobús nacional sino en un posible transporte para países que no tienen uno propio."
+      "md": "Y es una oferta permanente. China ha comenzado a invitar a astronautas de otras naciones a entrenar y volar a bordo de su estación en tripulaciones entregadas por Shenzhou — convirtiendo el vehículo no solo en un autobús nacional sino en un viaje potencial para países que no tienen uno propio."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La lección de Shenzhou es que en el vuelo espacial tripulado, la paciencia es un sistema de seguridad. Al negarse a apresurar una tripulación a un vehículo no probado, China alcanzó cada hito importante que lograron sus predecesores sin pagar su precio en vidas. Llegar décadas tarde no le costó nada que importara; ser cuidadosa le compró todo."
+      "md": "La lección de Shenzhou es que en el vuelo espacial tripulado, la paciencia es un sistema de seguridad. Al negarse a apresurar una tripulación a un vehículo no probado, China alcanzó cada hito importante que sus predecesores lograron sin pagar su precio en vidas. Llegar décadas tarde no le costó nada que importara; ser cuidadosa le compró todo."
     },
     {
       "type": "prose",
-      "md": "La lección más profunda trata sobre lo que vale la independencia. Un asiento prestado puede ser quitado; una capacidad que construiste tú mismo no puede. Shenzhou es el vehículo que garantiza que China nunca tenga que pedir — y esa garantía, más que cualquier vuelo individual, es lo que el programa fue realmente construido para entregar."
+      "md": "La lección más profunda es sobre lo que vale la independencia. Un asiento prestado puede ser retirado; una capacidad que construiste tú mismo no puede serlo. Shenzhou es el vehículo que garantiza que China nunca tiene que preguntar — y esa garantía, más que cualquier vuelo individual, es la cosa que el programa realmente fue construido para entregar."
     }
   ]
 }

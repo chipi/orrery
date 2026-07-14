@@ -1,15 +1,15 @@
 {
-  "title": "UA — Unità astronomica",
-  "intro_sentence": "Distanza media Terra-Sole, fissata esattamente a 149.597.870.700 metri.",
+  "title": "AU — Unità Astronomica",
+  "intro_sentence": "Distanza media della Terra dal Sole, fissata esattamente a 149.597.870.700 metri — il metro naturale per le distanze nel sistema solare.",
   "narrative_101": [
-    "Misurare in km diventa ingestibile. Astronomi: regola umana — distanza Terra-Sole = UA.",
-    "Mars 1,5 UA. Giove 5. Plutone 30-50. Voyager 1 ~165 UA.",
-    "UA ovunque in questa app."
+    "Una volta che inizi a misurare le distanze nello spazio, i chilometri diventano ingestibili rapidamente. Marte è a 200 milioni di km. Saturno è a 1,4 miliardi di km. Plutone è a 6 miliardi di km. Il tuo cervello smette di elaborare questi numeri come qualcosa di diverso da \"grande\". Così gli astronomi hanno scelto un metro più umano: una distanza Terra-Sole. Quella è un'Unità Astronomica, abbreviata AU.",
+    "L'unità è ancorata a un numero intero specifico di metri — 149.597.870.700 di loro, fissato nel 2012 — ma l'idea pratica è più semplice. Marte è a 1,5 AU dal Sole. Giove è a 5 AU. Plutone orbita tra 30 e 50 AU. Voyager 1, l'oggetto creato dall'uomo più distante, è ormai oltre i 170 AU e continua ancora. Numeri che puoi effettivamente tenere in testa.",
+    "AU è ovunque in questa app. La schermata /explore disegna i raggi orbitali in AU. Gli assi porkchop di /plan sono calibrati in AU. L'HUD su /fly converte AU in chilometri e light-minute quando ne hai bisogno, ma il metro sottostante è sempre AU. Una volta che l'hai interiorizzato, il sistema solare smette di sembrare astratto — puoi mappare approssimativamente le distanze contando i salti in AU."
   ],
   "body_paragraphs": [
-    "Fino al 2012 UA definita dall'orbita Terra. IAU fissò 2012 a intero — 149.597.870.700 m.",
-    "Mercurio 0,39, Venere 0,72, Terra 1,0, Marte 1,52, Giove 5,20, Saturno 9,58, Urano 19,22, Nettuno 30,05, Plutone 39,5.",
-    "Perché UA? Numeri in metri ingestibili. 9,58 UA tieni in mente."
+    "Fino al 2012 l'AU era definita dall'orbita della Terra. Man mano che l'orbita terrestre evolve lentamente sotto le perturbazioni planetarie, l'AU stava tecnicamente cambiando anche lei. L'IAU l'ha fissata nel 2012 a un numero intero preciso di metri — 149.597.870.700 — e la definizione è stata stabile da allora. L'AU non è più 'l'orbita della Terra'; è un metro che per caso le corrisponde approssimativamente.",
+    "Distanze nel sistema solare in AU: Mercurio 0,39, Venere 0,72, Terra 1,0, Marte 1,52, Giove 5,20, Saturno 9,58, Urano 19,22, Nettuno 30,05, Plutone 39,5 (medie — l'eccentricità le fa variare). I Voyager sono ben oltre i 150 AU e continuano ancora. La Nube di Oort si estende decine di migliaia di AU.",
+    "Perché AU invece di metri? Perché i numeri in metri sono ingombranti alla scala del sistema solare. I 1,4 miliardi di km di Saturno sono illeggibili. 9,58 AU è un numero che puoi tenere in testa. I pannelli e l'HUD di Orrery usano tutti AU per le posizioni nel sistema solare — convertiti in km, light-minute e altre unità solo dove il pubblico ha bisogno della conversione."
   ],
-  "diagram_caption": "1 UA ≈ Terra-Sole. Semiassi planetari in UA."
+  "diagram_caption": "1 AU ≈ distanza Terra-Sole. Semiassi maggiori dei pianeti in AU, scala logaritmica per gestire i pianeti esterni."
 }

@@ -1,38 +1,38 @@
 {
   "name": "Spirit",
-  "type": "ROVER · GEVLOGEN",
-  "first": "Eerste van de Mars Exploration Rover tweeling; langstlevende rover totdat Curiosity het record verbrak",
-  "dispatch": "Spirit was gebouwd voor negentig dagen en werkte zes jaar lang. Een van een tweetal golfkarretjeformaat geologen landde in 2004, het werd gestuurd om de rotsen te lezen voor bewijs van een natter Mars-verleden — en het vond het, waarbij het mineralen blootlegde die alleen in water ontstaan en, op één plek, silicaafzettingen zoals die achtergelaten door hete bronnen op aarde. Het beklom heuvels die niemand had gepland dat het zou bereiken en overleefde winters waarvoor het nooit ontworpen was, totdat een wiel het begaf en het vastzat in zacht zand. Het bleef verzenden vanaf de plek waar het vastzat totdat de Mars-koude het uiteindelijk te pakken kreeg.",
-  "description": "Spirit (MER-A) stuiterde 28 keer over de bodem van Gusev Crater op 2004-01-04 en rolde tot stilstand 250 m van zijn eerste inslag. Ontworpen voor een primaire missie van 90 sol, zou het 2.210 sols overleven. Legde 7,7 km af over de vlaktes van Gusev, beklom de Columbia Hills en ontdekte hematiet-bevattende rotsen die wijzen op aanhoudend oud water. In 2009-04 brak een wiel door een sulfaatkorst bij \"Troy\" en kwam Spirit tot stilstand in zachte grond; het team zette het om in een stationaire platform. Laatste transmissie 2010-03-22; missie verklaard beëindigd 2011-05-25. Tweelingbroer van Opportunity, die drie weken later aan de andere kant van Mars landde.",
+  "type": "ROVER · GELANCEERD",
+  "first": "Eerste van de Mars Exploration Rover-tweeling; langstlevende rover totdat Curiosity het record brak",
+  "dispatch": "Spirit was gebouwd voor negentig dagen en werkte zes jaar. Een van een paar golfwagentjesgrote geologen die in 2004 landden, werd gestuurd om de rotsen af te zoeken naar aanwijzingen van een natter Marsverleden — en vond het, ontdekte mineralen die alleen in water ontstaan en, op één plaats, silicaafzettingen zoals die achtergelaten door hete bronnen op Aarde. Het klom heuvels op die niemand van plan was voor het bereiken en overleefde winters waarvoor het nooit was ontworpen, totdat een wiel bezweek en het wegzakte in zacht zand. Het bleef signalen verzenden van waar het vastgelopen was, totdat de Martiaanse kou het uiteindelijk meenm.",
+  "description": "Spirit (MER-A) sprong 28 keer over de bodem van Gusev Crater op 2004-01-04 en rolde tot stilstand 250 m van zijn eerste impact. Ontworpen voor een primaire missie van 90 sols, zou het 2.208 sols overleven. Reed 7,7 km over Gusevs vlakten, klom de Columbia Hills op en ontdekte hematiet-houdende rotsen die langdurig aanwezig water in het verleden signaleerden. In 2009-04 brak een wiel door een sulfaatkorst bij \"Troy\" en kwam Spirit tot stilstand in zachte grond; het team zette het om in een stationair platform. Laatste transmissie 2010-03-22; missie beëindigd verklaard 2011-05-25. Tweetallig met Opportunity, dat drie weken later aan de andere kant van Mars landde.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Delta II 7925 vanaf Cape Canaveral LC-17A.",
+      "note": "Delta II 7925 van Cape Canaveral LC-17A.",
       "type": "nominal"
     },
     {
       "met": 15,
       "label": "TCM-1",
-      "note": "Eerste correctie halverwege de koers.",
+      "note": "Eerste koerscorrectie halverwege.",
       "type": "nominal"
     },
     {
       "met": 200,
       "label": "TCM-4",
-      "note": "Laatste bijstelling vóór EDL.",
+      "note": "Laatste trim voor EDL.",
       "type": "nominal"
     },
     {
       "met": 208,
       "label": "EDL",
-      "note": "Hitteschild, parachute, retro-raketten, airbags — 6 minuten van hel in Gusev Crater.",
+      "note": "Hitteschild, parachute, retrorockets, airbags — 6 minuten hel in Gusev Crater.",
       "type": "info"
     },
     {
       "met": 208.01,
       "label": "LANDING",
-      "note": "28 keer gestuiterd. Rolde tot rust op 14,57°Z, 175,47°O.",
+      "note": "Sprong 28 keer. Rolde tot rust op 14,57°Z, 175,47°O.",
       "type": "info"
     },
     {
@@ -44,7 +44,7 @@
     {
       "met": 2271,
       "label": "LAATSTE TRANSMISSIE",
-      "note": "2010-03-22. Missie verklaard beëindigd 2011-05-25.",
+      "note": "2010-03-22. Missie beëindigd verklaard 2011-05-25.",
       "type": "warning"
     }
   ]

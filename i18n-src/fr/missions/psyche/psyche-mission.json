@@ -1,8 +1,8 @@
 {
   "name": "Psyche",
-  "type": "ORBITER · ACTIVE",
-  "first": "Première mission vers un astéroïde de classe M riche en métal ; première utilisation de propulseurs ioniques à effet Hall comme propulsion principale de croisière",
-  "description": "Psyche atteint le noyau de nickel-fer exposé d'une proto-planète différenciée — un corps métallique de 226 km qui pourrait être l'analogue le plus proche du noyau terrestre accessible. Lancée le 2023-10-13 par une Falcon Heavy depuis Kennedy LC-39A. Quatre propulseurs ioniques à effet Hall SPT-140 font spiraler la trajectoire vers l'extérieur ; une assistance gravitationnelle de Mars en 2026-05 ajoute l'énergie que la propulsion ionique seule ne pourrait fournir à temps. Arrivée prévue en 2029-08, suivie d'une descente de 26 mois en quatre phases orbitales (A → B → C → D) cartographiant la gravité, le magnétisme, la topographie et la composition de l'astéroïde. Si l'hypothèse du noyau métallique est correcte, Psyche ne ressemblera à rien d'autre que nous ayons visité — surface de métal nu, dépôts de sulfure de fer, aucun du chaos en tas de débris typique des astéroïdes.",
+  "type": "ORBITEUR · ACTIF",
+  "first": "Première mission vers un astéroïde métallique de classe M; premier emploi de propulseurs ioniques à effet Hall comme propulsion de croisière principale",
+  "description": "Psyche vise le noyau nickel-fer exposé d'une proto-planète différenciée — un corps métallique de 226 km qui pourrait être l'analogue le plus proche du noyau terrestre accessible. Lancé le 2023-10-13 sur une Falcon Heavy depuis Kennedy LC-39A. Quatre propulseurs ioniques à effet Hall SPT-140 spiralent la trajectoire vers l'extérieur; une assistance gravitationnelle martienne en mai 2026 (approche minimale 4 609 km) a fourni l'énergie que la poussée ionique seule ne pouvait pas fournir à temps. Arrivée prévue en 2029-08, suivie d'une descente en quatre phases orbitales de 26 mois (A → B → C → D) cartographiant la gravité, le magnétisme, la topographie et la composition de l'astéroïde. Si l'hypothèse du noyau métallique est correcte, Psyche semblera comme rien d'autre que nous ayons visité — surface métallique nue, dépôts de sulfure de fer, sans le chaos des débris typique des astéroïdes.",
   "events": [
     {
       "met": 0,
@@ -12,20 +12,20 @@
     },
     {
       "met": 30,
-      "label": "DÉBUT DE LA CROISIÈRE IONIQUE",
+      "label": "DÉBUT DU CROISIÈRE IONIQUE",
       "note": "Quatre propulseurs ioniques à effet Hall prennent le relais. Accélération continue à faible poussée sur plus de 4 ans.",
       "type": "info"
     },
     {
       "met": 945,
       "label": "ASSISTANCE GRAVITATIONNELLE DE MARS",
-      "note": "2026-05-15, approche la plus proche à 3 000 km.",
+      "note": "2026-05-15. Approche minimale 4 609 km — survol martien complété.",
       "type": "info"
     },
     {
       "met": 2118,
       "label": "ARRIVÉE À PSYCHE",
-      "note": "Capture gravitationnelle par propulsion ionique en orbite de 700 km. Mission de 26 mois, quatre phases orbitales.",
+      "note": "Capture gravitationnelle par propulsion ionique sur orbite à 700 km. Mission de 26 mois, quatre phases orbitales.",
       "type": "info"
     }
   ]

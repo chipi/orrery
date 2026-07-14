@@ -1,74 +1,74 @@
 {
-  "name": "아폴로 15호",
-  "dispatch": "Apollo 15 임무 당시 경쟁은 이미 오래전에 끝났고, 과학이 주도권을 잡았다 — 말 그대로였다. 이것은 Lunar Rover를 실은 첫 비행으로, 2마일의 도보 반경을 본격적인 18마일 현장 탐사로 확장시켰으며, 안전한 평지가 아닌 산맥과 구불구불한 협곡 사이의 계곡에 착륙했다. Scott과 Irwin은 달의 형성 과정을 확인시켜준, 40억 년 된 달의 원시 지각 파편인 \"Genesis Rock\"을 가지고 귀환했다. Apollo는 달을 방문하는 것을 멈추고 연구하기 시작했다 — 그리고 프로그램이 취소될 때까지 계속해서 그 능력을 향상시켰다.",
-  "type": "유인 착륙선 · 완료",
-  "first": "최초의 J-임무 — 연장 체류, 최초의 달 탐사 차량(LRV), \"제네시스 록\"",
-  "description": "최초의 \"J-임무\" — 새로운 달 탐사 차량과 함께한 연장 체류 과학 아폴로. LRV는 Scott와 Irwin에게 27.9km의 탐사 반경을 제공(아폴로 14호의 도보 전용 3.5km에 비해), 4.5km 산맥 기슭과 굽이쳐 흐르는 Hadley 협곡 가장자리의 극적인 Hadley-Apennine 지점을 열었다. 총 18시간 35분의 3회 EVA, 77kg 시료 반환, 그중 유명한 \"제네시스 록\"(시료 15415) — 달 고지대 지각의 마그마 바다 기원을 확인하는 41억 년 된 아노르토사이트. Scott의 TV 중계 \"망치-깃털 낙하\"가 갈릴레오의 중력 법칙을 생방송으로 검증.",
+  "name": "Apollo 15",
+  "type": "유인 착륙선 · 비행완료",
+  "first": "첫 J-미션 — 장기 체류, 첫 달 순회차량, \"창세기 바위\"",
+  "dispatch": "Apollo 15 무렵이면 경쟁은 이미 끝난 지 오래였고, 과학이 주도권을 잡았다 — 말 그대로. 이것이 달 순회차량을 실은 첫 비행이었고, 이는 2마일의 도보 범위를 적절한 18마일 현장 탐사로 변모시켰으며, 안전한 평탄지가 아닌 산맥과 구불거리는 협곡 사이의 계곡에 착륙했다. Scott과 Irwin은 \"창세기 바위\"를 가지고 돌아왔는데, 이것은 달의 원래 지각이 어떻게 형성되었는지를 확인해 준 40억 년 된 파편이었다. Apollo는 달 방문을 멈추고 달 연구를 시작했으며 — 취소될 때까지 계속해서 그것에 더 능숙해졌다.",
+  "description": "첫 \"J-미션\" — 새로운 달 순회차량을 갖춘 장기 체류 과학 Apollo. LRV는 Scott과 Irwin에게 27.9 km 주행 범위(도보 전용 Apollo 14의 3.5 km에 비해)를 제공했으며, 4.5 km 산맥 기슭과 사행하는 Hadley Rille의 경계에 있는 극적인 Hadley-Apennine 지역을 열었다. 총 18 h 35 m에 달하는 3회 EVA, 반환된 샘플 77 kg(유명한 \"창세기 바위\"(샘플 15415) — 달의 고지 지각의 마그마 해양 기원을 확인하는 41억 년 된 정장암 포함). Scott의 텔레시 \"망치-깃털 낙하\"는 Galileo의 중력 법칙을 생방송으로 검증했다. Worden은 달 궤도에서 원격 감지 기기(매핑 카메라, 감마선, X선, 알파입자 분광기)로 가득 찬 SIM-베이를 조작했고 귀로 깊은 우주에서 첫 EVA를 수행했다(지구로부터 약 317,000 km 떨어진 곳에서 약 39분 EVA로 필름 카니스터를 회수). Apollo 15의 회수는 3개 주 낙하산 중 하나가 완전히 펴지지 않아 손상되었다 — CM은 거칠게 착수했지만 승무원은 안전했다.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-510) from Kennedy Space Center LC-39A 1971-07-26 13:34 UTC.",
+      "label": "발사",
+      "note": "Saturn V(AS-510), Kennedy 우주 센터 LC-39A에서 1971-07-26 13:34 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection.",
+      "note": "달 이동 주입.",
       "type": "nominal"
     },
     {
       "met": 3.25,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "달 궤도 진입. SPS ∆v ≈ 0.91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.79,
-      "label": "TOUCHDOWN",
-      "note": "Falcon lands at Hadley-Apennine 1971-07-30 22:16 UTC — first landing at a non-mare highland site.",
+      "label": "착륙",
+      "note": "Falcon이 Hadley-Apennine에 착륙 1971-07-30 22:16 UTC — 비-mare 고지 지역에서의 첫 착륙.",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "FIRST LRV TRAVERSE",
-      "note": "EVA-1: First Lunar Roving Vehicle deployment + 10.3 km traverse to Elbow Crater + the rim of Hadley Rille.",
+      "label": "첫 LRV 주행",
+      "note": "EVA-1: 첫 달 순회차량 배치 + Elbow Crater와 Hadley Rille 림으로의 10.3 km 주행.",
       "type": "info"
     },
     {
       "met": 5.5,
-      "label": "GENESIS ROCK",
-      "note": "EVA-2: At Spur Crater, Scott + Irwin recover sample 15415 — a 4.1-billion-year-old anorthosite from the original lunar crust.",
+      "label": "창세기 바위",
+      "note": "EVA-2: Spur Crater에서 Scott과 Irwin이 샘플 15415 — 원래 달 지각에서 나온 41억 년 된 정장암을 회수.",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "HAMMER-FEATHER DROP",
-      "note": "EVA-3 / pre-ascent: Scott televises a hammer + feather dropped together; both hit the regolith simultaneously, verifying Galileo's 1589 prediction live.",
+      "label": "망치-깃털 낙하",
+      "note": "EVA-3 / 상승 전: Scott이 함께 떨어진 망치와 깃털을 텔레시하며 둘 다 동시에 regolith에 충돌하여 Galileo의 1589년 예측을 생방송으로 검증.",
       "type": "info"
     },
     {
       "met": 6.25,
-      "label": "ASCENT",
-      "note": "Falcon lifts off after 66 h 55 m on surface. 77 kg samples + first ascent televised from the LRV-mounted camera (operated remotely by Houston).",
+      "label": "상승",
+      "note": "Falcon이 표면에서 66 h 55 m 후 이륙. 77 kg 샘플 + LRV 장착 카메라의 첫 상승 텔레시(Houston이 원격 조작).",
       "type": "nominal"
     },
     {
       "met": 8.2,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "지구 이동 주입. SPS ∆v ≈ 1.0 km/s.",
       "type": "nominal"
     },
     {
       "met": 9.5,
-      "label": "DEEP-SPACE EVA",
-      "note": "Worden performs first-ever EVA in cislunar space (38 min at ~315 000 km from Earth) to retrieve SIM-bay film canisters.",
+      "label": "심우주 EVA",
+      "note": "Worden이 지구-달 공간에서 처음으로 EVA를 수행(지구로부터 약 317,000 km에서 약 39분)하여 SIM-베이 필름 카니스터를 회수.",
       "type": "info"
     },
     {
       "met": 12.31,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+      "label": "착수",
+      "note": "CM이 북태평양에 착수 1971-08-07 20:46 UTC. 3개 주 낙하산 중 하나가 완전히 펴지지 않음; 거칠게 착수했지만 안전. USS Okinawa에 의해 회수.",
       "type": "warning"
     }
   ]

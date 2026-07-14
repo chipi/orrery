@@ -1,43 +1,43 @@
 {
   "name": "OSIRIS-REx",
-  "type": "RETORNO DE MUESTRAS · VOLADO",
-  "first": "Mayor muestra de asteroide jamás devuelta (121,6 g de Bennu, entregada a la Tierra el 24-09-2023)",
-  "description": "OSIRIS-REx ejecutó la misión de encuentro con asteroide más precisa jamás realizada. Lanzada el 08-09-2016 desde Cape Canaveral en un Atlas V 411, utilizó una asistencia gravitatoria terrestre en 2017 para rotar su plano orbital a la inclinación de 6° de Bennu, y se encontró con el asteroide carbonáceo cercano a la Tierra de 492 m el 03-12-2018. Mantuvo estación a 1,4 km, la órbita de nave espacial más cercana jamás realizada alrededor de cualquier cuerpo celeste. Pasó dos años cartografiando la superficie cubierta de rocas de Bennu y descubriendo eyecciones activas de partículas. El 20-10-2020 el brazo de muestreo Touch-and-Go descendió al sitio Nightingale, disparó gas N₂ hacia la superficie y capturó una pluma, hundiéndose 50 cm en una superficie de 'fluido de pila de escombros'. La Cápsula de Retorno de Muestras entregó 121,6 g de material de Bennu en Utah el 24-09-2023. La nave espacial misma fue inmediatamente redesignada OSIRIS-APEX, en ruta a un encuentro con Apophis en 2029.",
+  "type": "RETORNO DE MUESTRAS · COMPLETADA",
+  "first": "Mayor muestra de asteroide jamás retornada (121,6 g de Bennu, entregada en la Tierra 2023-09-24)",
+  "description": "OSIRIS-REx realizó una de las operaciones de proximidad a asteroides más precisas jamás intentadas. Lanzada el 2016-09-08 desde Cabo Cañaveral en un Atlas V 411, utilizó una asistencia gravitatoria terrestre en 2017 para rotar su plano orbital hacia la inclinación de 6° de Bennu, y se acopló con el asteroide de carbono cercano a la Tierra 2018-12-03 de 492 m. Tras una estación de mantenimiento a ~19 km, posteriormente entró en una órbita récord de ~1,4 km — la órbita de nave espacial más cercana jamás alcanzada alrededor de cualquier cuerpo celeste. Pasó dos años cartografiando la superficie llena de rocas de Bennu y descubriendo eyecciones activas de partículas. El 2020-10-20, el brazo de muestreo Touch-and-Go descendió al sitio Nightingale, disparó gas N₂ en la superficie y capturó una pluma — hundiéndose 50 cm en una superficie de «fluido de escombros». La Cápsula de Retorno de Muestras entregó 121,6 g de material de Bennu en Utah el 2023-09-24. La nave espacial misma fue inmediatamente redesignada como OSIRIS-APEX, en ruta hacia un encuentro con Apophis en 2029.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Atlas V 411 desde Cape Canaveral SLC-41.",
+      "note": "Atlas V 411 desde Cabo Cañaveral SLC-41.",
       "type": "nominal"
     },
     {
       "met": 380,
       "label": "ASISTENCIA GRAVITATORIA TERRESTRE",
-      "note": "22-09-2017, 17.237 km sobre la Antártida — rota el plano orbital a la inclinación de 6° de Bennu.",
+      "note": "2017-09-22, 17.237 km sobre la Antártida — rota el plano orbital hacia la inclinación de 6° de Bennu.",
       "type": "info"
     },
     {
       "met": 816,
       "label": "ENCUENTRO CON BENNU",
-      "note": "Mantiene estación a 1,4 km — la órbita de nave espacial más cercana jamás realizada alrededor de cualquier cuerpo celeste.",
+      "note": "Llega a Bennu; mantiene la estación a ~19 km y luego progresivamente ajusta a una órbita récord de ~1,4 km — la órbita de nave espacial más cercana jamás alcanzada alrededor de cualquier cuerpo celeste.",
       "type": "info"
     },
     {
       "met": 1503,
-      "label": "RECOGIDA DE MUESTRA TAG",
-      "note": "20-10-2020. El brazo Touch-and-Go se hunde 50 cm en la superficie de pila de escombros; captura 121,6 g.",
+      "label": "RECOLECCIÓN DE MUESTRAS TAG",
+      "note": "2020-10-20. El brazo Touch-and-Go se hunde 50 cm en la superficie de escombros; captura 121,6 g.",
       "type": "info"
     },
     {
       "met": 1705,
-      "label": "SALIDA DE BENNU",
-      "note": "10-05-2021. Crucero de 2,5 años de regreso a la Tierra.",
+      "label": "PARTIDA DE BENNU",
+      "note": "2021-05-10. Crucero de 2,5 años de regreso a la Tierra.",
       "type": "nominal"
     },
     {
       "met": 2572,
       "label": "RETORNO DE MUESTRAS",
-      "note": "24-09-2023. La SRC aterriza en paracaídas en Utah Test and Training Range; la nave espacial se convierte en OSIRIS-APEX.",
+      "note": "2023-09-24. SRC desciende en paracaídas en el Rango de Entrenamiento de Pruebas de Utah; la nave espacial se convierte en OSIRIS-APEX.",
       "type": "info"
     }
   ]

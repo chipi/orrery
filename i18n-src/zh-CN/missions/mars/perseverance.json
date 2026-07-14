@@ -1,50 +1,50 @@
 {
-  "name": "Perseverance",
-  "type": "ROVER · ACTIVE",
-  "first": "First helicopter on another planet (Ingenuity); first sample caching for Mars Sample Return",
-  "dispatch": "毅力号前往火星寻找死者。2021年降落在杰泽罗陨石坑——数十亿年前一条河流注入湖泊形成的三角洲,正是那种生命会留下痕迹的地方——它是第一辆专门为寻找古代生命迹象而建造的火星车,并且要做此前任何任务都未曾做过的事:将火星岩石密封在管中,放置一旁等待未来的航天器将其带回地球。它还运送了机智号,这架在另一颗行星上完成首次动力飞行的小型直升机。如果它正在储存的样本最终被送回,它们将成为从另一颗行星表面带回地球的第一批物质。",
-  "description": "Perseverance is the most ambitious Mars surface mission ever flown. Mars Sample Return depends on it — the rover is collecting and caching samples in tubes that a future mission will retrieve and bring to Earth. Ingenuity, the first helicopter on another planet, flew 72 missions before retiring with damaged rotors in January 2024 — proving controlled flight is possible in Mars's thin atmosphere. MOXIE, an oxygen-from-CO2 demonstrator, produced the first locally-made oxygen on another planet, a rehearsal for crewed Mars missions.",
+  "name": "毅力号",
+  "type": "火星车 · 运行中",
+  "first": "首架火星上的直升机（机智号）；火星样本返回计划的首次样本采集与缓存",
+  "dispatch": "毅力号来到火星寻找逝去的生命。它于2021年降落在杰泽罗陨石坑的底部——这是一个盆地，曾被一条古河三角洲注入，那条河在数十亿年前流入一个湖泊，正是生命会留下痕迹的地方——它是第一个专为寻找古代生命迹象而设计的火星车，并实现了任何前期任务都未曾完成的壮举：将火星岩石封入管状容器并妥善保存，等待未来的航天器将其运回地球。它还搭载了机智号，这架小型直升机实现了人类首次在另一个星球上的动力飞行。如果它缓存的样本有朝一日被运回，它们将成为首批从另一个星球表面带回地球的物质。",
+  "description": "毅力号是迄今为止最宏大的火星表面探测任务。火星样本返回计划依赖于它——火星车正在采集并缓存装在管状容器中的样本，供未来任务检索并运回地球。机智号是火星上首架直升机，在2024年1月因旋翼受损而退役前完成了72次飞行——证明了在火星稀薄大气中控制飞行是可能的。MOXIE是一台二氧化碳制氧演示装置，在另一个星球上首次成功制造了本地氧气，为载人火星任务进行了一次演练。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 541 from Cape Canaveral SLC-41 — same vehicle class as Curiosity.",
+      "label": "发射",
+      "note": "宇宙神V 541型火箭从卡纳维拉尔角SLC-41发射——与好奇号使用的火箭型号相同。",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "TMI BURN",
-      "note": "Trans-Mars injection.",
+      "label": "行星际转移制动",
+      "note": "火星转移注入。",
       "type": "nominal"
     },
     {
       "met": 9,
       "label": "TCM-1",
-      "note": "First mid-course correction.",
+      "note": "首次中途修正。",
       "type": "nominal"
     },
     {
       "met": 203,
-      "label": "EDL",
-      "note": "Sky-crane delivers rover to Jezero Crater 2021-02-18 — site of an ancient river delta.",
+      "label": "进入下降着陆",
+      "note": "空中起重机将火星车投送至杰泽罗陨石坑 2021-02-18 ——古代河流三角洲遗址。",
       "type": "nominal"
     },
     {
       "met": 203.01,
-      "label": "TOUCHDOWN",
-      "note": "Perseverance touches down at Jezero 20:55 UTC.",
+      "label": "着陆",
+      "note": "毅力号在杰泽罗北京时间04:55（UTC 20:55）接触地面。",
       "type": "nominal"
     },
     {
       "met": 271,
-      "label": "INGENUITY FIRST FLIGHT",
-      "note": "First powered controlled flight on another planet — 39.1 seconds at up to 5 m altitude.",
+      "label": "机智号首次飞行",
+      "note": "首次在另一个星球上实现动力控制飞行——飞行持续39.1秒，最高高度达5 m。",
       "type": "info"
     },
     {
       "met": 1278,
-      "label": "INGENUITY RETIRED",
-      "note": "Rotor blade damaged on 72nd flight 2024-01-18; helicopter remains operational as a comms relay.",
+      "label": "机智号退役",
+      "note": "2024-01-18第72次飞行时旋翼受损；直升机停飞，改作为固定气象站和数据记录仪，储存相关数据供未来检索。",
       "type": "info"
     }
   ]

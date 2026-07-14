@@ -1,8 +1,8 @@
 {
   "name": "DART",
-  "type": "IMPACTEUR CINÉTIQUE · MISSION ACCOMPLIE",
-  "first": "Première démonstration de défense planétaire par impacteur cinétique ; première fois que les humains déplacent un astéroïde",
-  "description": "DART (Double Asteroid Redirection Test) fut la première mission de défense planétaire jamais lancée — un vaisseau spatial de 611 kg envoyé pour percuter un astéroïde de 160 m avec suffisamment de force pour modifier son orbite. La cible était Dimorphos, une lune de l'astéroïde Didymos de 780 m. Lancé le 2021-11-24 sur une Falcon 9 ; le système de navigation autonome SMART Nav a pris le contrôle 4 heures avant l'impact pour distinguer Dimorphos de son parent et cibler le corps plus petit. Impact le 2022-09-26 à 23:14 UTC à 6,14 km/s. Changement de période orbitale mesuré : 33 minutes (4,2 %), dépassant le seuil de réussite de 73 secondes d'environ 25×. Le facteur d'amplification du transfert de quantité de mouvement β ≈ 3,6 indiquait une contribution significative des matériaux de surface éjectés. Le CubeSat LICIACube a observé le panache ; HST et JWST ont imagé la queue d'éjecta résultante pendant des semaines. Première démonstration que les humains peuvent déplacer un astéroïde.",
+  "type": "IMPACTEUR CINÉTIQUE · FLOWN",
+  "first": "Première démonstration d'une défense planétaire par impacteur cinétique ; première fois que l'humanité a dévié un astéroïde",
+  "description": "DART (Double Asteroid Redirection Test) était la première mission de défense planétaire jamais lancée — un engin spatial de 611 kg envoyé heurter un astéroïde de 160 m suffisamment fort pour modifier son orbite. La cible était Dimorphos, un satellite de l'astéroïde Didymos de 780 m. Lancé le 2021-11-24 sur une Falcon 9 ; le système de navigation autonome SMART Nav a pris le contrôle 4 heures avant l'impact pour distinguer Dimorphos de son corps parent et viser le plus petit corps. Impact le 2022-09-26 à 23:14 UTC à ≈ 6,6 km/s. Changement mesuré de la période orbitale : 33 minutes (4,2 %), dépassant le seuil de réussite de 73 secondes de ≈ 25×. Le facteur d'amélioration du transfert de quantité de mouvement β ≈ 3,6 indiquait une contribution significative des matériaux de surface éjectés. Le CubeSat LICIACube a observé le panache ; le HST et le JWST ont imagé la queue d'éjecta résultante pendant plusieurs semaines. Première démonstration que l'humanité peut dévier un astéroïde.",
   "events": [
     {
       "met": 0,
@@ -12,8 +12,8 @@
     },
     {
       "met": 150,
-      "label": "MI-CROISIÈRE",
-      "note": "TCM + tirs de démonstration du propulseur ionique NEXT-C.",
+      "label": "MID-CRUISE",
+      "note": "TCM + démonstration du propulseur ionique NEXT-C.",
       "type": "nominal"
     },
     {
@@ -25,12 +25,12 @@
     {
       "met": 306.001,
       "label": "IMPACT",
-      "note": "23:14 UTC. 6,14 km/s. Changement de période orbitale de 33 min — première déviation d'un astéroïde par les humains.",
+      "note": "23:14 UTC. ≈ 6,6 km/s. Changement de période orbitale de 33 min — première déviation d'un astéroïde par l'humanité.",
       "type": "info"
     },
     {
       "met": 306.002,
-      "label": "PERTE DU SIGNAL",
+      "label": "PERTE DE SIGNAL",
       "note": "LICIACube + HST + JWST observent le panache d'éjecta.",
       "type": "warning"
     }

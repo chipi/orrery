@@ -1,15 +1,15 @@
 {
-  "title": "Free-Return-Trajektorie",
-  "intro_sentence": "Eine Trajektorie, die am Ziel vorbeischwingt und die Schwerkraft selbst zur Rückfahrkarte biegt — ohne Triebwerksbrand.",
+  "title": "Freiflug-Rückkehrbahn",
+  "intro_sentence": "Eine Flugbahn, die am Ziel vorbeischwingt und die Schwerkraft selbst in ein Rückflugticket verwandelt — ohne Triebwerkszündung.",
   "narrative_101": [
-    "Stell dir vor, du fliegst zum Mond. Sorge: was, wenn der Motor unterwegs ausfällt? Genialer Antwort: wähl einen Pfad, bei dem selbst wenn jeder Motor stirbt, die Schwerkraft allein dich um den Mond schwenkt und automatisch nach Hause wirft. Das ist Free-Return.",
-    "Eine echte Acht im Raum. Erde verlassen, zum Mond steigen, Mondgravitation biegt um 180°, zurück zur Erde, Atmosphäre am Rebound. Kein Motor.",
-    "Apollo 8 war die erste bemannte. Apollo 13 verdankt sein Überleben dem Pfad. Orrerys Standard-/fly-Szenario macht das für Mars: Erde → Mars-Vorbeiflug → Erde, ohne Mid-Course-Burns."
+    "Stell dir vor, du fliegst zum Mond. Du machst dir Sorgen — was, wenn das Triebwerk unterwegs ausfällt? Du wärst gestrandet, für immer treibend. Hier ist die geniale Antwort: Wähle einen Pfad, bei dem die Schwerkraft allein dich um den Mond schwingt und automatisch zur Erde zurückwirft, selbst wenn jedes Triebwerk deines Raumschiffs in dem Moment ausfällt, in dem du die Erdumlaufbahn verlässt. Das ist eine Freiflug-Rückkehrbahn.",
+    "Es ist eine echte Acht im Weltraum. Du verlässt die Erde, steigst zum Mond auf, die Schwerkraft des Mondes biegt deinen Pfad um 180 Grad, und du fällst zurück zur Erde und triffst beim Rückprall auf die Atmosphäre. Kein Triebwerk erforderlich. Der Mond erledigt die ganze Arbeit. Die Geometrie muss nur stimmen.",
+    "Apollo 8 war die erste bemannte Mission, die eine solche Bahn flog. Apollo 13 — die berühmte \"Houston, wir haben ein Problem\"-Mission — verdankt ihr ihr Überleben. Als ihr Haupttriebwerk unbrauchbar wurde, ritten sie die Freiflug-Rückkehrbahn nach Hause und zündeten nur das Triebwerk der Mondfähre für Kurskorrekturen — nie das beschädigte Haupttriebwerk. Orrerys Standard-/fly-Szenario macht genau das für Mars: Erde → Mars-Vorbeiflug → Erde, keine Kurskorrektur-Zündungen erforderlich. Die billigste mögliche Mars-Reise, die man mit Menschen an Bord fliegen kann."
   ],
   "body_paragraphs": [
-    "Die Headline: Erde verlassen, am Mond (oder Mars) vorbei, dessen Gravitation biegt zurück zur Erde. Bei richtiger Geometrie reentry am Rebound. Kein Motor nötig.",
-    "Apollo 8 erste bemannte. Apollo 13 fiel auf die Technik zurück. Für Mars: 500-Tage-Loop. Vorbeiflug-Geometrie ersetzt die Rückkehrbrennphase.",
-    "Orrerys Standard-`/fly`, ORRERY-1: Erde-Mars-Erde Free-Return ohne TCMs, ohne Marsinjektion. Die Sonde umrundet die Sonne einmal, schwingt am Mars vorbei, kommt zurück. Der billigste je vorgeschlagene bemannte Mars-Vorbeiflug."
+    "Der entscheidende Trick: Verlasse die Erde, fliege am Mond (oder Mars) vorbei und lass die Schwerkraft dieses Körpers deinen Pfad zurück zur Erde biegen. Wenn die Geometrie stimmt, trittst du beim Rückprall in die Erdatmosphäre ein. Die Besatzung muss nie ein Triebwerk zünden, um nach Hause zu kommen.",
+    "Apollo 8 war die erste bemannte Freiflug-Rückkehrbahn. Apollo 13 griff berühmterweise auf die Technik zurück, als sein Servicemodul beschädigt wurde — ritt die Freiflug-Rückkehrbahn nach Hause, zündete nur das Triebwerk der Mondfähre für Kurskorrekturen, nie das beschädigte Haupttriebwerk. Für Mars ist die Geometrie schwieriger — man braucht eine 500-Tage-Schleife mit zwei Durchgängen — aber das Konzept ist dasselbe: Die Vorbeiflug-Geometrie erledigt die Arbeit der Rückkehrzündung.",
+    "Orrerys Standard-`/fly`-Szenario, ORRERY-1, ist genau das: Erde-Mars-Erde auf einem Freiflug-Rückkehrbogen, keine Kurskorrekturen, keine Orbit-Einschuss-Zündung am Mars. Du beobachtest, wie das Raumschiff einmal die Sonne umkreist, am Mars vorbeischwingt und zurückkommt. Es ist der billigste bemannte Mars-Vorbeiflug, der je vorgeschlagen wurde."
   ],
-  "diagram_caption": "Erde → Mars-Vorbeiflug → Erde. Mondgravitation (oder Mars) macht die U-Kurve gratis."
+  "diagram_caption": "Erde → Mars-Vorbeiflug → Erde. Die Schwerkraft des Mondes (oder Mars) macht die Kehrtwende kostenlos."
 }

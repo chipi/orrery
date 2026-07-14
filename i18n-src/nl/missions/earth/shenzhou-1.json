@@ -1,31 +1,31 @@
 {
   "name": "Shenzhou 1",
-  "type": "BEMANNINGSGESCHIKTE TEST · ONBEMAND · GEVLOGEN",
-  "first": "China's eerste orbitale Shenzhou-test — opende de weg naar bemande Chinese ruimtevaart",
-  "description": "Eerste vlucht van het bemande Shenzhou-ruimteschipprogramma. Gelanceerd op 1999-11-20 om 22:30 UTC vanaf Jiuquan tijdens de eerste vlucht van de voor mensen gekwalificeerde Lange Mars 2F (CZ-2F). De capsule voltooide 14 banen op 196 × 324 km bij 42,6° inclinatie en keerde op 1999-11-21 om 19:41 UTC terug naar de berging in de steppe van Binnen-Mongolië. Aan boord waren dummy-levensondersteuningsapparatuur, telemetriepakketten en een Chinese vlag, plus zaden voor een retourvracht microzwaartekracht-genetica. Markeerde China's voornemen om de USSR en VS te volgen in onafhankelijke bemande ruimtevaart; leidde direct tot Shenzhou 5 (2003) met Yang Liwei.",
+  "type": "BEMANDE TEST · ONBEMAND · GEVLOGEN",
+  "first": "Chinas eerste Shenzhou-orbitaltest — opende het pad naar bemande ruimtevaartuigen van de VRC",
+  "description": "Eerste vlucht van het Shenzhou-programma voor bemande ruimtevaartuigen. Gelanceerd op 1999-11-19 22:30 UTC vanuit Jiuquan met de eerste vlucht van de voor bemanning geschikt Long March 2F (CZ-2F). De capsule voltooide 14 banen op 195 × 315 km, 42,6° inclinatie, en herviel op 1999-11-20 19:41 UTC op de Binnenmongooise steppe. Vervoerde mock-up levenssupportsystemen, telemetriepakketten en een Chinese vlag, plus zaden voor microgravitatie-genetica-retourvracht. Markeerde Chinas toewijding om onafhankelijk bemande ruimtevaartuigen te volgen na de USSR/USA; leidde rechtstreeks naar Shenzhou 5 (2003) met Yang Liwei.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Long March 2F maiden flight from Jiuquan SLC-43 at 22:30 UTC.",
+      "label": "LANCERING",
+      "note": "Eerste vlucht van Long March 2F vanuit Jiuquan LA-4 op 1999-11-19 22:30 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.001,
-      "label": "ORBIT",
-      "note": "14-orbit flight at 196 × 324 km, 42.6° inclination.",
+      "label": "BAAN",
+      "note": "14-baansvlucht op 195 × 315 km, 42,6° inclinatie.",
       "type": "nominal"
     },
     {
       "met": 0.875,
-      "label": "DE-ORBIT",
-      "note": "Service-module retro-fire over Africa.",
+      "label": "BAANVERLAGING",
+      "note": "Retroraketvuur van de servicemoduul boven Afrika.",
       "type": "nominal"
     },
     {
       "met": 0.882,
-      "label": "RECOVERY",
-      "note": "Capsule descended to Siziwang Banner, Inner Mongolia, 1999-11-21 19:41 UTC.",
+      "label": "TERUGKEER",
+      "note": "Capsule afdaling naar Dorbod Banner, Binnenmongolie, op 1999-11-20 19:41 UTC.",
       "type": "nominal"
     }
   ]

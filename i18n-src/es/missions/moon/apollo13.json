@@ -1,56 +1,56 @@
 {
   "name": "Apollo 13",
-  "dispatch": "Apollo 13 nunca aterrizó, y es la misión que todos recuerdan. Dos días después del despegue, un tanque de oxígeno se desintegró y convirtió un vuelo de rutina a las tierras altas de Fra Mauro en un problema de cuatro días para mantener vivos a tres hombres en una nave espacial moribunda a un cuarto de millón de millas de casa. Lo que los salvó no fueron heroicidades; fue la preparación y una sala llena de gente trabajando el problema en tiempo real, improvisando una forma de respirar y una forma de volver a casa con lo que ya estaba atornillado al vehículo. La NASA lo llamó un fracaso exitoso. Está más cerca de la verdad decir que es el vuelo que demostró que la agencia era tan buena como afirmaba ser.",
-  "type": "SOBREVUELO TRIPULADO · VOLADA (ATERRIZAJE ABORTADO)",
-  "first": "La misión que convirtió un casi-desastre en el rescate más célebre de la NASA",
-  "description": "Apollo 13 debía ser el tercer alunizaje tripulado, con objetivo en las tierras altas de Fra Mauro. A las 55 horas y 54 minutos de vuelo, un tanque de oxígeno del Módulo de Servicio se rompió, dañando los sistemas eléctricos y de soporte vital del CSM. Cancelado el alunizaje, la tripulación — James Lovell, Jack Swigert y Fred Haise — apagó el CSM, se trasladó al Módulo Lunar Aquarius como bote salvavidas, y empleó el motor de descenso del LM en una combustión Pericintio+2 horas que los situó en una trayectoria de retorno libre rápida. Pasaron junto a la Luna a 254 km de altitud el 1970-04-15 y amerizaron sin novedad en el Pacífico Sur el 1970-04-17. Hoy se estudia como modelo de improvisación de ingeniería disciplinada en tiempo real.",
+  "type": "VUELO TRIPULADO LUNAR · REALIZADO (ATERRIZAJE ABORTADO)",
+  "first": "La misión que convirtió un desastre casi seguro en el rescate más celebrado de la NASA",
+  "dispatch": "Apollo 13 nunca aterrizó, y es la misión que todos recuerdan. Dos días después del despegue, un tanque de oxígeno se desgarró y transformó un vuelo de rutina hacia las tierras altas de Fra Mauro en un problema de cuatro días: mantener vivos a tres hombres en una nave agonizante a un cuarto de millón de millas de casa. Lo que los salvó no fue el heroísmo, sino la preparación y una sala llena de personas resolviendo el problema en tiempo real, improvisando una manera de respirar y una ruta a casa con lo que ya estaba atornillado al vehículo. La NASA lo llamó un fracaso exitoso. Es más cercano a la verdad decir que es el vuelo que demostró que la agencia era tan competente como afirmaba serlo.",
+  "description": "Apollo 13 estaba destinada a ser el tercer aterrizaje lunar tripulado, apuntando a las tierras altas de Fra Mauro. A las 55 horas 54 minutos del vuelo, un tanque de oxígeno en el Módulo de Servicio se rompió, incapacitando los sistemas eléctricos y de soporte vital del Módulo de Comando-Servicio. Con el aterrizaje cancelado, la tripulación —James Lovell, Jack Swigert y Fred Haise— apagó el CSM, se trasladó al Módulo Lunar Aquarius como bote salvavidas, y utilizó el motor de descenso del LM para un encendido de Pericintio+2 horas que los colocó en una trayectoria de retorno libre rápida. Pasaron junto a la Luna a 254 km de altitud el 1970-04-15 y amarizaron con seguridad en el Pacífico Sur el 1970-04-17. La misión se estudia hoy como un modelo de improvisación de ingeniería disciplinada en tiempo real.",
   "events": [
     {
       "met": 0,
-      "label": "LANZAMIENTO SATURN V",
-      "note": "Despegue desde KSC LC-39A. El motor central de la segunda etapa S-II se apagó dos minutos antes — los motores externos compensaron.",
+      "label": "LANZAMIENTO SATURNO V",
+      "note": "Despegue desde KSC LC-39A. Motor central de la segunda etapa S-II se apagó dos minutos antes — los motores exteriores compensaron.",
       "type": "nominal"
     },
     {
       "met": 0.117,
-      "label": "ITL",
-      "note": "Encendido de inyección translunar por la S-IVB; CSM + LM se comprometen con la trayectoria cislunar.",
+      "label": "TLI",
+      "note": "Encendido de inyección translunar por S-IVB; CSM + LM se comprometen a trayectoria cislunar.",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "MCC-2",
-      "note": "La corrección de mitad de curso desplaza la nave de la trayectoria de retorno libre hacia una aproximación a Fra Mauro.",
+      "note": "Corrección de curso media desplaza la nave de la trayectoria de retorno libre hacia un enfoque a Fra Mauro.",
       "type": "nominal"
     },
     {
       "met": 2.33,
       "label": "RUPTURA DEL TANQUE DE OXÍGENO #2",
-      "note": "Una orden de agitación criogénica en el SM inicia un cortocircuito y la rotura del tanque. «Houston, hemos tenido un problema.» La energía y el agua menguan; el LM Aquarius pasa a ser el bote salvavidas.",
+      "note": "El comando de agitación criogénica del SM inicia un cortocircuito e incendio y ruptura del tanque. «Houston, tenemos un problema.» La energía y el agua disminuyen; el Módulo Lunar Aquarius se convierte en el bote salvavidas.",
       "type": "warning"
     },
     {
       "met": 2.92,
       "label": "ENCENDIDO DE RETORNO LIBRE",
-      "note": "Combustión de 31 segundos del motor de descenso del LM que devuelve a la nave a una trayectoria de retorno libre.",
+      "note": "Encendido de 31 segundos del motor de descenso del LM devuelve la nave a una trayectoria de retorno libre.",
       "type": "info"
     },
     {
       "met": 3.13,
       "label": "SOBREVUELO LUNAR",
-      "note": "Aproximación máxima a 254 km de altitud sobre Mare Cognitum — la mayor distancia a la que una nave tripulada ha viajado desde la Tierra.",
+      "note": "Máxima aproximación a 254 km de altitud sobre Mare Cognitum — a 400.171 km, la distancia más lejana que los humanos habían viajado desde la Tierra (récord mantenido 1970–2026, superado por Artemis II en abril de 2026).",
       "type": "info"
     },
     {
       "met": 3.96,
       "label": "ENCENDIDO PC+2",
-      "note": "Combustión Pericintio-más-2-horas que reduce el tiempo de retorno a la Tierra en diez horas.",
+      "note": "Encendido de Pericintio-más-2-horas reduce el tiempo de retorno a la Tierra diez horas.",
       "type": "nominal"
     },
     {
       "met": 5.95,
-      "label": "AMERIZAJE",
-      "note": "Reentrada del CSM y amerizaje en el Pacífico Sur, recogidos por el USS Iwo Jima.",
+      "label": "AMARIZAJE",
+      "note": "Reentrada del CSM y amarizaje en el Pacífico Sur, recuperado por el USS Iwo Jima.",
       "type": "info"
     }
   ]

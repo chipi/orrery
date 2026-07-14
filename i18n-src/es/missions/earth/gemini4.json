@@ -1,20 +1,20 @@
 {
   "name": "Gemini 4 / GT-4",
-  "type": "TRIPULADA ÓRBITA TERRESTRE · VOLADA",
+  "type": "MISIÓN TRIPULADA EN ÓRBITA TERRESTRE · REALIZADA",
   "first": "Primer paseo espacial estadounidense (Ed White)",
-  "dispatch": "Gemini 4 se recuerda por una fotografía: Ed White, atado a la nave por un cordón umbilical dorado, flotando sobre una Tierra azul con una pistola de maniobra manual — el primer estadounidense en caminar en el espacio. El momento fue tan emocionante que cuando el Control de Misión le ordenó volver dentro después de veinte minutos, White lo llamó el momento más triste de su vida. El paseo espacial pareció sin esfuerzo y en gran parte lo fue, porque White estaba flotando libremente en lugar de trabajar — la dura verdad de que el EVA es trabajo agotador no llegaría hasta los siguientes vuelos. Pero para un país que había estado por detrás de los soviéticos, que habían realizado el primer paseo espacial diez semanas antes, fue la prueba de que Estados Unidos también podía hacerlo, y la imagen se convirtió en una de las fotografías definitorias de la época.",
-  "description": "James McDivitt y Edward White volaron una misión de cuatro días y 62 órbitas desde el 3 de junio de 1965. Durante la tercera órbita White realizó el primer paseo espacial estadounidense — aproximadamente 21 minutos fuera, atado, usando una unidad de maniobra manual. El vuelo también ejecutó el primer programa médico y científico extendido de Estados Unidos.",
+  "dispatch": "Gemini 4 es recordado por una fotografía: Ed White, atado a la nave por un cordón umbilical dorado, flotando sobre una Tierra azul con una pistola de maniobra manual en la mano — el primer estadounidense en caminar en el espacio. El momento fue tan emocionante que cuando el Control de Misión le ordenó regresar después de veinte minutos, White dijo que era el momento más triste de su vida. El paseo espacial parecía sin esfuerzo y lo fue en gran medida, porque White estaba a la deriva en lugar de trabajar — la dura verdad de que una EVA es un trabajo agotador no llegaría hasta los siguientes vuelos. Pero para un país que había estado rezagado respecto a los soviéticos, quienes habían realizado el primer paseo espacial once semanas antes, fue la prueba de que Estados Unidos también podía hacerlo, y la imagen se convirtió en una de las fotografías más emblemáticas de la era.",
+  "description": "James McDivitt y Edward White volaron una misión de cuatro días y 62 órbitas desde el 3 de junio de 1965. Durante la tercera órbita, White realizó el primer paseo espacial estadounidense — aproximadamente 23 minutos en el exterior, atado, usando una unidad de maniobra manual. El vuelo también ejecutó el primer programa estadounidense de medicina y ciencia extendido.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Titan II GLV (GT-4) desde Cape Canaveral LC-19, 1965-06-03 15:16 UTC.",
+      "note": "Titan II GLV (GT-4) desde Cabo Cañaveral LC-19, 1965-06-03 15:16 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.13,
       "label": "EVA",
-      "note": "Ed White — primer paseo espacial estadounidense, ~21 min, atado, con una unidad de maniobra manual.",
+      "note": "Ed White — primer paseo espacial estadounidense, ~23 min, atado, con una unidad de maniobra manual.",
       "type": "info"
     },
     {

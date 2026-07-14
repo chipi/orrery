@@ -1,43 +1,43 @@
 {
   "name": "Chandrayaan-3",
-  "type": "LANDER · ROVER · VOLÉ",
-  "first": "Premier atterrissage en douceur près du pôle sud lunaire",
-  "description": "Suite à la perte de l'atterrisseur Vikram de Chandrayaan-2 en 2019, la troisième mission lunaire de ISRO était délibérément conservatrice : centrée sur l'atterrisseur plutôt que sur le transport d'un orbiteur. Vikram a atterri à 69,4° de latitude sud, le vaisseau spatial le plus proche d'un pôle lunaire. Le rover Pragyan a détecté pour la première fois du soufre sur la surface lunaire et a effectué des mesures thermiques in situ. L'Inde est devenue le quatrième pays à atterrir en douceur sur la Lune et le premier dans les régions polaires où l'exploitation minière de la glace d'eau aura probablement lieu.",
+  "type": "ATTERRISSEUR · ROVER · RÉALISÉ",
+  "first": "Premier alunissage en douceur près du pôle sud lunaire",
+  "description": "Suite à la perte de l'atterrisseur Vikram de Chandrayaan-2 en 2019, la troisième mission lunaire de l'ISRO a été délibérément prudente — centrée sur l'atterrisseur plutôt que de transporter un orbiteur. Vikram s'est posé à 69,4° S de latitude, le plus proche qu'un engin spatial n'ait jamais approché un pôle lunaire. Le rover Pragyan a détecté du soufre à la surface lunaire pour la première fois et a effectué des mesures thermiques in-situ. L'Inde est devenue la quatrième nation à alunir en douceur sur la Lune, s'approchant d'un pôle lunaire plus près qu'aucun engin spatial avant elle — une région où l'exploitation minière de glace d'eau pourrait devenir possible à l'avenir.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "LVM3 M4 (anciennement GSLV Mk III) de Sriharikota.",
+      "note": "LVM3 M4 (anciennement GSLV Mk III) depuis Sriharikota.",
       "type": "nominal"
     },
     {
       "met": 22,
-      "label": "Moi",
-      "note": "Insertion de l'orbite lunaire (utilisation de plusieurs brûlures d'élévation de l'orbite terrestre et lunaire).",
+      "label": "MOI",
+      "note": "Insertion en orbite lunaire (plusieurs brûlages d'orbite terrestre et lunaire utilisés).",
       "type": "nominal"
     },
     {
       "met": 38,
-      "label": "SÉPARATION DES TERRES",
+      "label": "SÉPARATION DE L'ATTERRISSEUR",
       "note": "L'atterrisseur Vikram se sépare du module de propulsion.",
       "type": "nominal"
     },
     {
       "met": 40,
-      "label": "ATTERRISSAGE",
-      "note": "Vikram atterrit à Shiv Shakti Point près du pôle sud 2023-08-23 12:33 UTC.",
+      "label": "ALUNISSAGE",
+      "note": "Vikram se pose à Shiv Shakti Point près du pôle sud 2023-08-23 12:33 UTC.",
       "type": "nominal"
     },
     {
       "met": 40.5,
       "label": "PRAGYAN DÉPLOYÉ",
-      "note": "Rover descend la rampe ; commence la science des surfaces.",
+      "note": "Le rover descend la rampe ; commence les sciences de surface.",
       "type": "info"
     },
     {
       "met": 53,
       "label": "NUIT LUNAIRE",
-      "note": "L'atterrisseur/rover est mis en hibernation au début de la nuit lunaire.",
+      "note": "L'atterrisseur et le rover sont mis en hibernation alors que la nuit lunaire commence.",
       "type": "info"
     }
   ]

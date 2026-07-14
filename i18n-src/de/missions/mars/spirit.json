@@ -1,9 +1,9 @@
 {
   "name": "Spirit",
   "type": "ROVER · GEFLOGEN",
-  "first": "Erster der Mars Exploration Rover-Zwillinge; langlebigster Rover bis er von Curiosity übertroffen wurde",
-  "dispatch": "Spirit war für neunzig Tage gebaut und arbeitete sechs Jahre lang. Einer von zwei golfwagengroßen Geologen landete 2004, er wurde geschickt, um die Gesteine nach Hinweisen auf eine feuchtere Mars-Vergangenheit zu untersuchen — und er fand sie, entdeckte Mineralien, die sich nur in Wasser bilden, und an einer Stelle Siliziumdioxid-Ablagerungen wie jene, die von heißen Quellen auf der Erde hinterlassen werden. Er erklomm Hügel, die niemand für ihn eingeplant hatte, und überstand Winter, für die er nie konzipiert worden war, bis ein Rad versagte und er sich in weichem Sand festfuhr. Er sendete weiter von dort, wo er feststeckte, bis die marsianische Kälte ihn schließlich ereilte.",
-  "description": "Spirit (MER-A) prallte am 2004-01-04 28 Mal über den Boden des Gusev-Kraters und rollte 250 m von seinem ersten Aufprall entfernt zum Stillstand. Für eine 90-Sol-Primärmission ausgelegt, überlebte er 2.210 Sols. Fuhr 7,7 km über die Ebenen von Gusev, erklomm die Columbia Hills und entdeckte hämatithaltige Gesteine, die auf dauerhaft vorhandenes Wasser in der Vergangenheit hindeuteten. Im 2009-04 brach ein Rad durch eine Sulfatkruste bei „Troy\" und Spirit kam in weichem Boden zum Stillstand; das Team wandelte ihn in eine stationäre Plattform um. Letzte Übertragung 2010-03-22; Mission am 2011-05-25 für beendet erklärt. Zwilling von Opportunity, der drei Wochen später auf der gegenüberliegenden Seite des Mars landete.",
+  "first": "Das erste der Mars Exploration Rover Zwillinge; längstlebender Rover bis zur Überholung durch Curiosity",
+  "dispatch": "Spirit war für neunzig Tage konzipiert und funktionierte sechs Jahre lang. Eines eines Paares von golfkartgroßen Geologen, die 2004 gelandet wurden, sollte es die Felsen auslesen, um Beweise für eine feuchteren Marsvergangen­heit zu finden — und es fand sie, entdeckte Mineralien, die nur in Wasser entstehen, und an einer Stelle Kieselsäureablagerungen wie die von Heißquellen auf der Erde. Es erklomm Hügel, die niemand geplant hatte, und überstand Winter, für die es nie ausgelegt war, bis ein Rad ausfiel und es im weichen Sand stecken blieb. Es sendete von seinem Platz weiter, bis die Marskälte es endlich erreichte.",
+  "description": "Spirit (MER-A) sprang am 2004-01-04 28-mal über den Boden des Gusev-Kraters und rollte 250 m von seiner ersten Aufschlagstelle zum Stillstand. Für eine 90-Sol-Primärmission ausgelegt, würde es 2.208 Sol überstehen. Fuhr 7,7 km über Gusevs Ebenen, erklomm die Columbia Hills und deckte hämatithaltige Gesteine auf, die auf dauerhaftes altes Wasser hindeuteten. 2009-04 durchbrach ein Rad eine Sulfatkruste bei „Troy\" und Spirit blieb im weichen Boden stecken; das Team verwandelte es in eine stationäre Plattform. Letzte Übertragung 2010-03-22; Mission für beendet erklärt 2011-05-25. Mit Opportunity verpartnert, das drei Wochen später auf der gegenüberliegenden Seite des Mars landete.",
   "events": [
     {
       "met": 0,
@@ -14,37 +14,37 @@
     {
       "met": 15,
       "label": "TCM-1",
-      "note": "Erste Bahnkorrektur.",
+      "note": "Erste Kurskorrektion.",
       "type": "nominal"
     },
     {
       "met": 200,
       "label": "TCM-4",
-      "note": "Letzte Feinabstimmung vor EDL.",
+      "note": "Letzte Trimmung vor EDL.",
       "type": "nominal"
     },
     {
       "met": 208,
       "label": "EDL",
-      "note": "Hitzeschild, Fallschirm, Bremsraketen, Airbags — 6 Minuten der Hölle in den Gusev-Krater.",
+      "note": "Hitzeschild, Fallschirm, Retroraketen, Airbags — 6 Minuten Hölle in den Gusev-Krater.",
       "type": "info"
     },
     {
       "met": 208.01,
       "label": "LANDUNG",
-      "note": "28 Mal aufgeprallt. Zur Ruhe gekommen bei 14,57°S, 175,47°E.",
+      "note": "Sprang 28-mal. Rollte zum Stillstand bei 14,57°S, 175,47°E.",
       "type": "info"
     },
     {
       "met": 1990,
-      "label": "BEI TROY FESTGEFAHREN",
-      "note": "Rad bricht durch Sulfatkruste; Rover versackt in weichem Boden. 2009-04.",
+      "label": "BEI TROY STECKENGEBLIEBEN",
+      "note": "Rad durchbricht Sulfatkruste; Rover bleibt im weichen Boden stecken. 2009-04.",
       "type": "warning"
     },
     {
       "met": 2271,
       "label": "LETZTE ÜBERTRAGUNG",
-      "note": "2010-03-22. Mission am 2011-05-25 für beendet erklärt.",
+      "note": "2010-03-22. Mission für beendet erklärt 2011-05-25.",
       "type": "warning"
     }
   ]

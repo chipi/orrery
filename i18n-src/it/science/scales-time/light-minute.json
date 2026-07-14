@@ -1,14 +1,14 @@
 {
-  "title": "Minuto-luce e anno-luce",
-  "intro_sentence": "Distanza in tempo che la luce prende.",
+  "title": "Minuto-luce e Anno-luce",
+  "intro_sentence": "Distanza misurata dal tempo che la luce impiega ad attraversarla — l'unità più utile per pensare ai ritardi di comunicazione e alle distanze stellari.",
   "narrative_101": [
-    "Minuto-luce = distanza luce in un minuto. 18 milioni km. Sole 8,3 minuti-luce. Marte 4-22.",
-    "Onde radio viaggiano a velocità luce. Curiosity su Marte: comando, attendi 8-22 minuti, conferma altri 8-22. Niente joystick. Tutto autonomo.",
-    "Voyager 1 (~165 UA): ritardo singolo ~22,5 ore. Anni-luce per stelle. Proxima 4,2 anni-luce — 70.000 anni a velocità Voyager."
+    "Un minuto-luce è la distanza che la luce percorre in un minuto. La luce viaggia a 300.000 km al secondo, il che corrisponde a 18 milioni di km in un minuto. È una distanza, non un tempo — confusionario ma utile. Il Sole è a 8,3 minuti-luce di distanza. Marte è tra i 4 e i 22 minuti-luce a seconda della geometria orbitale.",
+    "Perché importa? Perché le onde radio viaggiano alla velocità della luce, e questo è anche il tempo che i tuoi comandi impiegano per raggiungere un'astronave. Quando Curiosity si muove su Marte, il team del rover invia un comando e poi aspetta — 8-22 minuti — che il rover cominci a muoversi. Poi altri 8-22 per scoprire se ha funzionato. NON c'è modo di controllare un rover di Marte da Terra con un joystick. Tutto ciò che è importante deve essere autonomo.",
+    "A distanza di Voyager-1 (circa 170 UA ora), il ritardo di luce unidirezionale è di circa 23,5 ore — raggiungerà un giorno-luce completo (24 ore) nel tardo 2026. Invia un comando oggi, domani pomeriggio scopri se ha funzionato. Gli anni-luce esistono per la scala successiva — distanza da altre stelle. La più vicina, Proxima Centauri, è a 4,2 anni-luce. Alla velocità di Voyager ci vorrebbe 70.000 anni per arrivare lì. L'universo è grande e lento."
   ],
   "body_paragraphs": [
-    "Luce 300.000 km/s. Secondo-luce 300.000 km. Minuto-luce 18M km. Anno-luce 9,46 trilioni km.",
-    "Curiosity Marte: comando attendi 8-22 min — altri 8-22 conferma. Tempo reale impossibile.",
-    "Anni-luce per stelle. Proxima 4,2 anni-luce. Voyager ~17 km/s = 70.000 anni."
+    "La luce si muove a circa 300.000 km/s. Un secondo-luce è 300.000 km. Un minuto-luce è 18 milioni di km. Un anno-luce è 9,46 trilioni di km. Sono distanze, non tempi — confusionariamente denominati, ma utili: 1 AU ≈ 8,3 minuti-luce, quindi 'Marte è a 4–22 minuti-luce di distanza a seconda dell'orbita' ti dice la latenza del comando round-trip in qualsiasi momento.",
+    "Quando Curiosity si muove su Marte, il team del rover invia un comando, quindi aspetta 8-22 minuti che il rover inizi la manovra — e altri 8-22 per scoprire se ha funzionato. Il controllo in tempo reale è impossibile a distanze planetarie. Abbastanza lontano da qui (Voyager 1 a ~23,5 ore-luce) stai inviando spinte unidirezionali che arrivano quasi un giorno dopo.",
+    "Gli anni-luce sono per le stelle. Proxima Centauri è a 4,2 anni-luce di distanza. Voyager 1 si muove a ~17 km/s, il che è veloce per un'astronave ma lento rispetto alla luce: a quella velocità Proxima richiederebbe ~70.000 anni."
   ]
 }

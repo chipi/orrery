@@ -1,14 +1,14 @@
 {
   "name": "Voskhod",
-  "tagline": "La solución provisional apresurada que exprimió dos primicias más —una tripulación y un paseo espacial— de un hardware ya al límite, y casi mata a gente en el intento.",
+  "tagline": "La solución provisional apresurada que exprimió dos primeros puestos más —una tripulación y un paseo espacial— de un hardware al límite, y casi mata a gente en el intento.",
   "the_land": [
     {
       "type": "prose",
-      "md": "En 1964 la parte fácil había terminado. Vostok había conseguido sus primicias, pero los estadounidenses estaban construyendo Gemini —una nave espacial de dos plazas que podía realmente maniobrar, realizar encuentros y acoplarse— y una vez volara, la ventaja soviética se evaporaría. Nikita Jrushchov quería más titulares antes de que eso ocurriera, y presionó a Sergei Korolev para que los produjera. No había ninguna nave espacial soviética nueva lista. Así que el equipo de Korolev hizo lo único que el calendario permitía: cogieron el Vostok de una plaza y lo modificaron para hacer cosas para las que nunca fue diseñado."
+      "md": "Para 1964 la parte fácil había terminado. Vostok había conseguido sus primeros puestos, pero los estadounidenses estaban construyendo Gemini —una nave espacial de dos plazas que podía realmente maniobrar, realizar encuentros y acoplarse— y una vez que volara, la ventaja soviética se evaporaría. Nikita Jrushchov quería más titulares antes de que eso ocurriera, y presionó a Serguéi Koroliov para que los produjera. No había ninguna nave espacial soviética nueva lista. Así que el equipo de Koroliov hizo lo único que el calendario permitía: tomaron el Vostok de una plaza y lo modificaron para hacer cosas para las que nunca fue diseñado."
     },
     {
       "type": "prose",
-      "md": "El resultado fue Voskhod, y existió con un único propósito —seguir consiguiendo primicias un poco más, con hardware prestado y margen prestado. Era menos un programa que un par de acrobacias ejecutadas antes de que la competencia pudiera alcanzarlos: una tripulación multipersonal, y un humano saliendo al exterior hacia el vacío. Ambas serían hitos genuinos. Ambas eran mucho más peligrosas de lo que dejaban entrever los tranquilos anuncios soviéticos."
+      "md": "El resultado fue Voskhod, y existía con un único propósito —seguir consiguiendo primeros puestos un poco más, con hardware prestado y margen prestado. Era menos un programa que un par de acrobacias ejecutadas antes de que la competencia pudiera alcanzarlos: una tripulación de varias personas, y un humano saliendo al exterior hacia el vacío. Ambos serían hitos genuinos. Ambos fueron mucho más peligrosos de lo que dejaban entrever los tranquilos anuncios soviéticos."
     }
   ],
   "goals": [
@@ -17,12 +17,12 @@
       "image": {
         "reuse": "fleet/voskhod/01"
       },
-      "caption": "Voskhod —un Vostok despojado de su asiento eyectable y reacondicionado para transportar más tripulación. El espacio para tres vino a costa del sistema de escape y, en el primer vuelo, de los trajes presurizados.",
+      "caption": "Voskhod —un Vostok despojado de su asiento eyectable y reempaquetado para transportar más tripulación. El espacio para tres se obtuvo a costa del sistema de escape y, en el primer vuelo, de los trajes presurizados.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Voskhod tenía exactamente dos objetivos, ambos definidos por lo que adelantaría a Gemini: volar más de una persona a la vez, y poner a un humano fuera de la nave espacial. Para meter a tres cosmonautas en una cápsula construida para uno, los ingenieros arrancaron el asiento eyectable que había salvado a cada piloto Vostok —lo que significaba que si algo salía mal en el lanzamiento o el aterrizaje, la tripulación no tenía forma de salir. En el primer vuelo ni siquiera había espacio para trajes presurizados. Era una apuesta calculada de que nada saldría mal, tomada para mantener una ventaja."
+      "md": "Voskhod tenía exactamente dos objetivos, ambos definidos por lo que le ganaría a Gemini por la mano: volar más de una persona a la vez, y poner a un humano fuera de la nave espacial. Para encajar tres cosmonautas en una cápsula construida para uno, los ingenieros arrancaron el asiento eyectable que había salvado a todos los pilotos de Vostok —lo que significaba que si algo salía mal en el lanzamiento o el aterrizaje, la tripulación no tenía forma de escapar. En el primer vuelo ni siquiera había espacio para trajes presurizados. Era una apuesta calculada de que nada saldría mal, tomada para mantener una ventaja."
     }
   ],
   "outcome": [
@@ -36,25 +36,25 @@
     },
     {
       "type": "prose",
-      "md": "Las apuestas salieron bien, apenas. En octubre de 1964 Voskhod 1 llevó a la primera tripulación de tres personas —en mangas de camisa, sin trajes, sin asientos eyectables— alrededor de la Tierra durante un día y regresó a salvo. Cinco meses después Voskhod 2 hizo algo más difícil: Alexei Leonov abrió una escotilla y flotó hacia el vacío en el primer paseo espacial de la historia. Entonces casi salió mal de todas las formas posibles. El traje de Leonov se infló tan rígidamente en el vacío que no podía volver a pasar por la esclusa de aire, y tuvo que sangrar su propia presión de aire —arriesgándose a la enfermedad descompresiva— para poder entrar. El sistema de reentrada automático falló; la tripulación lo pilotó manualmente y aterrizaron cientos de kilómetros fuera del objetivo, en lo profundo del bosque siberiano, donde pasaron una noche gélida rodeados de lobos antes de que los rescatadores en esquís pudieran alcanzarlos."
+      "md": "Las apuestas dieron resultado, apenas. En octubre de 1964 Voskhod 1 transportó la primera tripulación de tres personas —en mangas de camisa, sin trajes, sin asientos eyectables— alrededor de la Tierra durante un día y volvió a casa con seguridad. Cinco meses después Voskhod 2 hizo lo más difícil: Alexéi Leónov abrió una escotilla y flotó hacia el vacío en el primer paseo espacial de la historia. Luego casi salió mal de todas las formas posibles. El traje de Leónov se hinchó tan rígidamente en el vacío que no pudo volver a pasar por la esclusa de aire, y tuvo que sangrar su propia presión de aire —arriesgándose a la enfermedad por descompresión— para colarse. El sistema de reentrada automático falló; la tripulación lo pilotó manualmente y aterrizó cientos de kilómetros fuera del objetivo, en lo profundo del bosque siberiano, donde pasaron dos noches gélidas en el bosque profundo —lobos en la taiga a su alrededor— antes de esquiar hasta un helicóptero que no podía aterrizar entre los árboles."
     },
     {
       "type": "prose",
-      "md": "Dos vuelos, dos primicias más, y dos roces con el desastre de los que no se le contó al mundo durante décadas. Korolev vio lo cerca que había estado Voskhod 2 y canceló el resto del programa. El hardware estaba sin margen, y no había más primicias que valieran el riesgo —la siguiente capacidad real, como todo lo que Apollo necesitaría, tendría que venir de una nave espacial que aún no existía."
+      "md": "Dos vuelos, dos primeros puestos más, y dos roces con el desastre de los que no se informó al mundo durante décadas. Koroliov vio lo cerca que había estado Voskhod 2 y canceló el resto del programa. El hardware estaba sin margen, y no había más primeros puestos que valieran el riesgo —la siguiente capacidad real, como todo lo que Apollo necesitaría, tendría que venir de una nave espacial que aún no existía."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Voskhod es el aspecto que tiene un programa cuando los titulares están dirigiendo el calendario. Cada decisión —sin trajes, sin asientos eyectables, una esclusa de aire inflable atornillada a una cápsula de una plaza— fue un atajo tomado para conseguir una primicia antes que Gemini, y cada una movió el riesgo del tablero de diseño a la tripulación. Funcionó dos veces, que es exactamente el problema: el éxito con márgenes escasos enseña la lección equivocada, que los márgenes no eran necesarios."
+      "md": "Voskhod es el aspecto que tiene un programa cuando los titulares dirigen el calendario. Cada decisión —sin trajes, sin asientos eyectables, una esclusa de aire inflable atornillada a una cápsula de una plaza— fue un atajo tomado para conseguir un primer puesto antes que Gemini, y cada uno trasladó el riesgo de la mesa de dibujo a la tripulación. Funcionó dos veces, que es exactamente el problema: el éxito con márgenes estrechos enseña la lección equivocada, que los márgenes no eran necesarios."
     },
     {
       "type": "prose",
-      "md": "El paseo espacial de Leonov es el programa entero en miniatura —una primicia genuina y valiente que el público vio como algo sin esfuerzo y que estuvo a un pelo de matar a su cosmonauta, discretamente, fuera de cámara. Esa brecha entre el anuncio triunfal y la casi catástrofe subyacente es lo más verdadero sobre Voskhod, y sobre la forma en que el programa soviético temprano competía: brillantemente, públicamente, y con mucho menos margen del que se permitía saber a nadie."
+      "md": "El paseo espacial de Leónov es todo el programa en miniatura —un primer puesto genuino y valiente que el público vio como algo sin esfuerzo y que estuvo a punto de matar a su cosmonauta, silenciosamente, fuera de cámara. Esa brecha entre el anuncio triunfal y la casi catástrofe subyacente es lo más verdadero sobre Voskhod, y sobre la manera en que el programa soviético temprano corrió: brillantemente, públicamente, y con mucho menos margen de sobra de lo que nadie tenía permitido saber."
     },
     {
       "type": "prose",
-      "md": "Después de Voskhod 2 el programa soviético dejó de estirar Vostok y se volcó en Soyuz —una verdadera nave espacial de segunda generación que podía maniobrar y acoplarse— y en una apuesta secreta por la Luna. La era de las primicias fáciles había terminado; desde aquí la carrera se correría sobre capacidad, y ese era un terreno que los estadounidenses, con Gemini, estaban a punto de tomar."
+      "md": "Después de Voskhod 2 el programa soviético dejó de estirar Vostok y se volcó hacia Soyuz —una nave espacial de segunda generación real que podía maniobrar y acoplarse— y hacia una apuesta secreta por la Luna. La era de los primeros puestos fáciles había terminado; desde aquí la carrera se correría sobre capacidad, y ese era terreno que los estadounidenses, con Gemini, estaban a punto de tomar."
     }
   ],
   "legacy": [
@@ -63,26 +63,26 @@
       "image": {
         "reuse": "missions/voskhod-2/02"
       },
-      "caption": "El paseo espacial de Alexei Leonov, marzo de 1965 —el primer humano en el espacio abierto, y uno de los roces con el desastre más cercanos que produjo la era.",
+      "caption": "El paseo espacial de Alexéi Leónov, marzo de 1965 —el primer humano en el espacio abierto, y uno de los roces con el desastre más cercanos que produjo la era.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "El legado de Voskhod son dos primicias permanentes —la primera tripulación y el primer paseo espacial— y una historia aleccionadora que se sienta justo al lado de ellas. Las primicias son reales y no se pueden quitar; cada tripulación multipersonal y cada paseo espacial desde entonces se remonta a estos dos vuelos. Pero Voskhod es también el momento en que la estrategia soviética de primicias alcanzó su límite: se había quedado sin cosas nuevas que un Vostok modificado pudiera hacer, y había casi matado a gente haciendo la última de ellas."
+      "md": "El legado de Voskhod son dos primeros puestos permanentes —la primera tripulación y el primer paseo espacial— y una historia de advertencia que se sienta justo a su lado. Los primeros puestos son reales y no se pueden quitar; cada tripulación multipersonal y cada paseo espacial desde entonces se remonta a estos dos vuelos. Pero Voskhod es también el momento en que la estrategia soviética de primeros puestos alcanzó su límite: se había quedado sin cosas nuevas que un Vostok modificado pudiera hacer, y casi había matado a gente haciendo la última de ellas."
     },
     {
       "type": "prose",
-      "md": "Históricamente marca un traspaso. Voskhod 2 voló en marzo de 1965; el propio programa Gemini comenzó semanas después y, durante los siguientes veinte meses, tomó metódicamente la ventaja que los soviéticos habían mantenido desde Sputnik —encuentro, acoplamiento, resistencia, EVA convertida en rutina. Voskhod es la última vez que la Unión Soviética estuvo claramente por delante. Lo que vino después, en ambos bandos, se decidiría no por quién fue primero, sino por quién había construido la capacidad más profunda."
+      "md": "Históricamente marca un traspaso. Voskhod 2 voló en marzo de 1965; el propio programa Gemini comenzó semanas después y, durante los siguientes veinte meses, tomó metódicamente la ventaja que los soviéticos habían tenido desde Sputnik —encuentro, acoplamiento, resistencia, EVA convertido en rutina. Voskhod es la última vez que la Unión Soviética estuvo claramente por delante. Lo que vino después, en ambos lados, se decidiría no por quién fue primero, sino por quién había construido la capacidad más profunda."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La lección de Voskhod es el peligro de competir con margen prestado. Quitar los asientos eyectables y los trajes presurizados, atornillar una esclusa de aire a una cápsula que no fue construida para una —cada atajo compró un titular y movió un riesgo real a personas reales, y el programa se salió con la suya dos veces. Pero salirse con la suya no es lo mismo que estar a salvo, y el éxito con márgenes escasos es una trampa: enseña discretamente a una organización que la seguridad que descartó nunca fue necesaria, hasta el vuelo en que sí lo es."
+      "md": "La lección de Voskhod es el peligro de correr con margen prestado. Eliminar los asientos eyectables y los trajes presurizados, atornillar una esclusa de aire a una cápsula que no fue construida para una —cada atajo compró un titular y trasladó un riesgo real a personas reales, y el programa se salió con la suya dos veces. Pero salirse con la suya no es lo mismo que estar seguro, y el éxito con márgenes estrechos es una trampa: silenciosamente enseña a una organización que la seguridad que descartó nunca fue necesaria, hasta el vuelo en que sí lo es."
     },
     {
       "type": "prose",
-      "md": "La segunda lección es para qué sirve una solución provisional, y para qué no. Voskhod hizo exactamente una cosa bien —ganó tiempo y dos primicias más mientras se construía la verdadera nave espacial de siguiente generación. Ese es un uso legítimo del hardware improvisado. El error habría sido seguir volándolo, persiguiendo titulares más allá del punto donde el margen se agotó —y en honor a Korolev, él interpretó correctamente el casi desastre y se detuvo. Saber cuándo una solución provisional ha cumplido su función es tan importante como construir una."
+      "md": "La segunda lección es para qué sirve una solución provisional, y para qué no. Voskhod hizo exactamente una cosa bien —compró tiempo y dos primeros puestos más mientras se construía la verdadera nave espacial de próxima generación. Eso es un uso legítimo del hardware improvisado. El error habría sido seguir volándolo, persiguiendo titulares más allá del punto en que el margen se acabó —y en honor a Koroliov, él leyó correctamente la casi catástrofe y se detuvo. Saber cuándo una solución provisional ha cumplido su trabajo es tan importante como construir una."
     }
   ]
 }

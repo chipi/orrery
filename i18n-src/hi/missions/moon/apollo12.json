@@ -1,62 +1,62 @@
 {
   "name": "Apollo 12",
-  "dispatch": "यदि Apollo 11 ने साबित किया कि आप चंद्रमा तक पहुँच सकते हैं, तो Apollo 12 ने साबित किया कि आप उस पर किसी विशेष स्थान तक पहुँच सकते हैं। प्रक्षेपण के छत्तीस सेकंड बाद, बिजली रॉकेट से टकराई और अंतरिक्ष यान के उपकरणों को ऑफलाइन कर दिया; John Aaron नाम के चौबीस वर्षीय नियंत्रक ने स्मृति से एक अस्पष्ट समाधान निकाला — \"SCE to AUX\" — और उड़ान जारी रही। फिर Conrad और Bean ने अपने Lunar Module को Ocean of Storms पर एक ऐसे प्रोब से कुछ सौ फीट की दूरी पर उतारा जो दो वर्षों से वहाँ बैठा था, वहाँ तक गए, और इसके टुकड़े घर ले आए। वह सटीकता ही वास्तविक परिणाम था: चंद्रमा एक गंतव्य नहीं रहा और एक पता बन गया।",
-  "type": "मानवयुक्त लैंडर · उड़ा",
-  "first": "दूसरा मानवयुक्त चंद्र-लैंडिंग — Surveyor 3 से 163 मी की दूरी पर सटीक लैंडिंग",
-  "description": "दूसरी मानवयुक्त चंद्र-लैंडिंग। Saturn V को आरोहण के दौरान दो बार बिजली गिरी (T+36 स और T+52 स) — Bean ने EECOM John Aaron की प्रसिद्ध \"SCE to AUX\" कॉल के माध्यम से अंतरिक्ष यान को बहाल किया। Conrad और Bean ने Ocean of Storms पर 163 मी के भीतर Surveyor 3 (जो अप्रैल 1967 में नरम लैंडिंग की) के पास सटीक लैंडिंग की, फिर Surveyor 3 तक चले गए और उसका कैमरा + सतह का नमूना हटा दिया। उन्होंने ALSEP तैनात किया (पहला ALSEP, Apollo 11 के सरल EASEP के मुकाबले) जिसने 8 साल तक डेटा प्रसारित किया। मिशन ने 34 किग्रा नमूने वापस लाए।",
+  "type": "क्रूड लैंडर · फ्लाउन",
+  "first": "दूसरा क्रूड चंद्र लैंडिंग — सर्वेयर 3 से 163 मीटर की सटीक स्पर्श",
+  "dispatch": "यदि Apollo 11 ने साबित किया कि आप चंद्रमा तक पहुंच सकते हैं, तो Apollo 12 ने साबित किया कि आप उस पर एक विशेष स्थान तक पहुंच सकते हैं। लॉन्च के 36 सेकंड बाद, बिजली रॉकेट पर गिरी और अंतरिक्ष यान के उपकरण ऑफलाइन हो गए; एक चौबीस वर्षीय नियंत्रक जिसका नाम John Aaron था, ने स्मृति से एक अस्पष्ट समाधान निकाला — \"SCE to AUX\" — और उड़ान जारी रही। फिर Conrad और Bean ने अपने Lunar Module को Ocean of Storms पर उतारा जो एक जांच के कुछ सौ फीट दूर था जो वहां दो साल से बैठा था, चल कर गए, और इसके टुकड़े घर ले आए। वह सटीकता वास्तविक परिणाम था: चंद्रमा एक गंतव्य होना बंद हो गया था और एक पता बन गया था।",
+  "description": "दूसरी क्रूड चंद्र लैंडिंग। Saturn V को आरोहण के दौरान दो बार बिजली से मारा गया (T+36 s और T+52 s) — Bean ने EECOM John Aaron से प्रसिद्ध \"SCE to AUX\" कॉल के माध्यम से अंतरिक्ष यान को बहाल किया, फिर चालक दल ने चंद्र कक्षा में जड़त्व माप इकाई को पुनः संरेखित किया। Conrad और Bean ने Ocean of Storms पर Surveyor 3 (जो अप्रैल 1967 में नरम-लैंड किया गया था) के 163 मीटर के भीतर एक सटीक लैंडिंग को निष्पादित किया, फिर Surveyor 3 तक चले गए और इसके कैमरे + इसकी सतह के नमूने को हटा दिया — टुकड़े जो चंद्र-सतह जोखिम के दीर्घकालीन विश्लेषण के लिए पृथ्वी पर आए। उन्होंने ALSEP (पूर्ण Apollo Lunar Surface Experiments Package — पहला ALSEP, बनाम Apollo 11 का सरल EASEP) तैनात किया जो 8 साल तक डेटा प्रेषित करता रहा। मिशन ने अंधेरे mare basalts सहित 34 किग्रा नमूने लौटाए।",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-507) from Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Two lightning strikes on the stack (T+36 s, T+52 s) tripped fuel cells offline; recovered via \"SCE to AUX\" call.",
+      "label": "लॉन्च",
+      "note": "Saturn V (AS-507) Kennedy Space Center LC-39A से 1969-11-14 16:22 UTC। स्टैक पर दो बिजली की चोटें (T+36 s, T+52 s) ने ईंधन कोशिकाओं को ऑफलाइन कर दिया; \"SCE to AUX\" कॉल के माध्यम से पुनः प्राप्त।",
       "type": "warning"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection — recovery from lightning strikes verified; mission GO for Moon.",
+      "note": "ट्रांस-लूनर इंजेक्शन — बिजली की चोटों से पुनः प्राप्ति सत्यापित; चंद्रमा के लिए मिशन GO।",
       "type": "nominal"
     },
     {
       "met": 3.39,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.89 km/s.",
+      "note": "चंद्र कक्षा सम्मिलन। SPS ∆v ≈0.89 किमी/s।",
       "type": "nominal"
     },
     {
       "met": 5.43,
-      "label": "TOUCHDOWN",
-      "note": "Intrepid lands at Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — within 163 m of Surveyor 3 (the most precise lunar landing yet).",
+      "label": "टचडाउन",
+      "note": "Intrepid Oceanus Procellarum (Statio Cognitum) पर 1969-11-19 06:54 UTC को लैंड करता है — Surveyor 3 के 163 मीटर के भीतर (अब तक की सबसे सटीक चंद्र लैंडिंग)।",
       "type": "nominal"
     },
     {
       "met": 5.58,
-      "label": "SURVEYOR 3 VISIT",
-      "note": "Conrad + Bean walk to Surveyor 3 (~163 m away), remove its TV camera + samples for return to Earth — first time a crew visited a previously-landed robotic spacecraft.",
+      "label": "सर्वेयर 3 विज़िट",
+      "note": "Conrad + Bean Surveyor 3 (~163 मीटर दूर) तक चलते हैं, इसके TV कैमरे + नमूने हटाते हैं पृथ्वी पर लौटने के लिए — पहली बार कोई चालक दल एक पहले से लैंड किए गए रोबोटिक अंतरिक्ष यान का दौरा करता है।",
       "type": "info"
     },
     {
       "met": 6.74,
-      "label": "ASCENT",
-      "note": "Intrepid lifts off after 31 h 31 m on surface. 34 kg of samples returned.",
+      "label": "आरोहण",
+      "note": "Intrepid सतह पर 31 घंटे 31 मिनट के बाद उड़ता है। 34 किग्रा नमूने लौटाए गए।",
       "type": "nominal"
     },
     {
       "met": 6.93,
-      "label": "LM IMPACT",
-      "note": "Intrepid ascent stage deliberately crashed onto Moon to calibrate ALSEP seismometers. First man-made lunar impact event.",
+      "label": "LM प्रभाव",
+      "note": "Intrepid आरोही चरण जानबूझकर चंद्रमा पर दुर्घटनाग्रस्त हुआ ALSEP सीस्मोमीटर को कैलिब्रेट करने के लिए — पहला क्रूड-मिशन अंतरिक्ष यान चरण जानबूझकर चंद्रमा पर प्रभावित हुआ और एक सतह सीस्मोमीटर द्वारा रिकॉर्ड किया गया।",
       "type": "info"
     },
     {
       "met": 7.92,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "ट्रांस-अर्थ इंजेक्शन। SPS ∆v ≈1.0 किमी/s।",
       "type": "nominal"
     },
     {
       "met": 10.18,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1969-11-24 20:58 UTC. Recovery by USS Hornet.",
+      "label": "स्प्लैशडाउन",
+      "note": "CM दक्षिण प्रशांत में 1969-11-24 20:58 UTC को उतरा। USS Hornet द्वारा वसूली।",
       "type": "nominal"
     }
   ]

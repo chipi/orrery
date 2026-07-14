@@ -1,88 +1,88 @@
 {
   "name": "ESA — Ciência Espacial",
-  "tagline": "A frota robótica científica da Europa — a primeira espaçonave a pousar em um cometa, o mapa mais preciso da galáxia já feito e um telescópio caçando o universo escuro.",
+  "tagline": "A frota de ciência robótica da Europa — a primeira espaçonave a pousar em um cometa, o mapa mais preciso da galáxia já feito e um telescópio caçando o universo escuro.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Os voos espaciais tripulados da Agência Espacial Europeia são realizados em parceria — módulos na ISS, astronautas voando em foguetes de outros, uma participação no Artemis. Mas na ciência robótica, a ESA lidera por direito próprio, conduzindo algumas das missões de espaço profundo mais ambiciosas já realizadas. Onde a ciência da NASA é vasta e ampla, a da ESA tende a ser precisa e audaciosa: um pequeno número de missões tentando coisas que ninguém jamais havia feito, executadas com uma paciência medida em décadas."
+      "md": "Os voos espaciais tripulados da Agência Espacial Europeia são feitos em parceria — módulos na ISS, astronautas levados em foguetes de outros, uma participação na Artemis. Mas na ciência robótica, a ESA lidera por mérito próprio, conduzindo algumas das missões de espaço profundo mais ambiciosas já realizadas. Onde a ciência da NASA é vasta e ampla, a da ESA tende a ser precisa e audaciosa: um pequeno número de missões tentando coisas que ninguém jamais havia feito, executadas com uma paciência medida em décadas."
     },
     {
       "type": "prose",
-      "md": "Três missões capturam seu caráter. A Rosetta perseguiu um cometa por dez anos e então fez algo nunca antes tentado — orbitou-o e pousou nele. A Gaia passou uma década fazendo o mapa tridimensional mais preciso da Via Láctea da história, fixando as posições e movimentos de quase dois bilhões de estrelas. E a Euclid está mapeando um terço de todo o céu para traçar a estrutura invisível da matéria escura e a força misteriosa que está separando o universo. Juntas, elas são o argumento da Europa de que pertence à vanguarda da ciência espacial."
+      "md": "Três missões capturam o caráter disso. A Rosetta perseguiu um cometa por dez anos e então fez algo nunca tentado antes — orbitá-lo e pousar nele. A Gaia passou uma década fazendo o mapa tridimensional mais preciso da Via Láctea na história, fixando as posições de quase dois bilhões de estrelas. E a Euclid está mapeando um terço de todo o céu para traçar a estrutura invisível da matéria escura e a força misteriosa que está separando o universo. Juntas, elas são o argumento da Europa de que pertence à vanguarda da ciência espacial."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Os objetivos são tão variados quanto as missões, mas cada um visa uma questão científica de primeira linha. A Rosetta partiu para entender cometas — restos pristinos do nascimento do sistema solar — escoltando um deles em sua aproximação mais próxima ao Sol e amostrando-o diretamente. O objetivo da Gaia é o próprio mapa: um censo preciso das estrelas da galáxia que sustenta quase toda a astronomia moderna, porque você não pode entender a Via Láctea até saber onde suas estrelas realmente estão e como se movem."
+      "md": "Os objetivos são tão variados quanto as missões, mas cada um tem como alvo uma questão científica de primeira ordem. A Rosetta se propôs a entender cometas — restos pristinos do nascimento do sistema solar — escoltando um através de sua aproximação mais próxima do Sol e coletando amostras diretamente. O objetivo da Gaia é o próprio mapa: um censo preciso das estrelas da galáxia que sustenta quase toda a astronomia moderna, porque você não pode entender a Via Láctea até saber onde suas estrelas realmente estão e como se movem."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/rosetta/01"
       },
-      "caption": "Rosetta — a espaçonave que perseguiu o cometa 67P por dez anos, orbitou-o e deixou cair o módulo de pouso Philae em sua superfície: o primeiro pouso em um cometa da história.",
+      "caption": "Rosetta — a espaçonave que perseguiu o cometa 67P por dez anos, orbitou-o e lançou o módulo de pouso Philae em sua superfície: o primeiro pouso em um cometa na história.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "O objetivo da Euclid é o mais sombrio: mapear como a estrutura do universo cresceu ao longo do tempo cósmico e, a partir disso, restringir o que a matéria escura e a energia escura realmente são — os aproximadamente 95% do universo que não são estrelas nem átomos e que ninguém entende. É uma missão direcionada diretamente à maior questão aberta da física, atacada com o método paciente de mapear tudo que a ciência europeia tornou sua marca registrada."
+      "md": "O objetivo da Euclid é o mais sombrio: mapear como a estrutura do universo cresceu ao longo do tempo cósmico e, a partir disso, restringir o que realmente são a matéria escura e a energia escura — os aproximadamente 95% do universo que não são estrelas nem átomos e que ninguém compreende. É uma missão voltada diretamente para a maior questão em aberto na física, atacada com o método paciente de mapear tudo que a ciência europeia transformou em sua assinatura."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "A chegada da Rosetta ao cometa 67P em 2014, após uma perseguição de dez anos e um bilhão de quilômetros que passou pela Terra e Marte para ganhar velocidade, foi um dos grandes momentos do voo espacial moderno. Seu módulo de pouso Philae saltou pela superfície de baixa gravidade e parou na sombra, suas baterias esgotando em questão de dias — um sucesso parcial e dramático — mas a própria sonda orbital Rosetta escoltou o cometa por dois anos através de sua passagem ardente ao redor do Sol, retornando uma imagem transformadora do que os cometas são feitos e como se comportam."
+      "md": "A chegada da Rosetta ao cometa 67P em 2014, após uma perseguição de dez anos e seis bilhões de quilômetros que usou efeito estilingue passando pela Terra e Marte para ganhar velocidade, foi um dos grandes momentos do voo espacial moderno. Seu módulo de pouso Philae saltou pela superfície de baixa gravidade e parou na sombra, suas baterias se esgotando em dias — um sucesso parcial e dramático — mas o próprio orbitador Rosetta escoltou o cometa por dois anos através de sua passagem ardente ao redor do Sol, retornando uma imagem transformadora do que os cometas são feitos e como se comportam."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/gaia/01"
       },
-      "caption": "Gaia — uma espaçonave que não fez nada além de medir, precisamente, as posições e movimentos de quase dois bilhões de estrelas. Seu mapa é a fundação sob uma década de astronomia galáctica.",
+      "caption": "Gaia — uma espaçonave que não fez nada além de medir, precisamente, as posições de quase dois bilhões de estrelas. Seu mapa é a fundação sob uma década de astronomia galáctica.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "As publicações de dados da Gaia silenciosamente remodelaram a astronomia: seu mapa estelar é agora o sistema de referência contra o qual quase todas as outras observações são calibradas, revelando a estrutura da Via Láctea, fluxos ocultos de galáxias antigas fundidas e os movimentos que se desenrolarão ao longo de milhões de anos. A Euclid, mais recente, já está retornando levantamentos do céu de profundidade e amplitude impressionantes. Entre elas, a frota científica da ESA entregou primeiras vezes — o pouso no cometa, o mapa galáctico — que estão entre as conquistas robóticas mais significativas da era."
+      "md": "As liberações de dados da Gaia remodelaram silenciosamente a astronomia: seu mapa estelar é agora o quadro de referência contra o qual quase todas as outras observações são calibradas, revelando a estrutura da Via Láctea, correntes ocultas de galáxias antigas fundidas e os movimentos que se desenrolarão ao longo de milhões de anos. A Euclid, mais recente, já está retornando levantamentos do céu de profundidade e amplitude impressionantes. Juntas, a frota de ciência da ESA entregou pioneirismos — o pouso no cometa, o mapa galáctico — que estão entre as conquistas robóticas mais significativas da era."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "O fio condutor através da ciência da ESA é paciência em uma escala que poucos programas tentam. A missão da Rosetta foi duas décadas da aprovação ao cometa, dez delas gastas simplesmente voando até o alvo, incluindo quase três anos em hibernação para economizar energia. O valor da Gaia só surgiu após anos acumulando medições. Esta é a ciência como um jogo de longo prazo — missões que exigem uma continuidade de financiamento e propósito ao longo de uma década ou mais, e uma disposição para esperar por um retorno que chega de uma vez, perto do fim."
+      "md": "O fio condutor através da ciência da ESA é a paciência em uma escala que poucos programas tentam. A missão da Rosetta levou duas décadas da aprovação ao cometa, dez delas gastas simplesmente voando até o alvo, incluindo quase três anos em hibernação para economizar energia. O valor da Gaia só emergiu após anos acumulando medições. Esta é a ciência como um jogo de longo prazo — missões que exigem continuidade de financiamento e propósito ao longo de uma década ou mais, e a disposição de esperar por um retorno que chega de uma vez, perto do fim."
     },
     {
       "type": "prose",
-      "md": "É também ciência definida por fazer uma coisa difícil supremamente bem. A ESA não tenta igualar a amplitude da NASA; ela escolhe um pequeno número de missões e faz de cada uma delas uma genuína primeira vez ou um instrumento definitivo. Pousar em um cometa nunca havia sido feito; a precisão da Gaia nunca havia sido alcançada; o levantamento da Euclid é inigualável em escopo. A estratégia é profundidade sobre quantidade — uma especialidade europeia de transformar uma missão focada em um marco."
+      "md": "É também ciência definida por fazer uma coisa difícil supremamente bem. A ESA não tenta igualar a amplitude da NASA; ela escolhe um pequeno número de missões e faz de cada uma um pioneirismo genuíno ou um instrumento definitivo. Pousar em um cometa nunca havia sido feito; a precisão da Gaia nunca havia sido alcançada; o levantamento da Euclid é incomparável em escopo. A estratégia é profundidade sobre quantidade — uma especialidade europeia de transformar uma missão focada em um marco."
     },
     {
       "type": "prose",
-      "md": "E é profundamente colaborativa e internacional, à maneira europeia — missões construídas em muitos estados-membros, frequentemente voadas em parceria com a NASA, lançadas nos próprios foguetes Ariane da Europa e alimentando uma comunidade científica que atravessa o continente. A ciência da ESA é uma demonstração de que uma coalizão de nações, reunindo recursos, pode produzir resultados que rivalizam ou excedem o que qualquer uma delas poderia alcançar sozinha."
+      "md": "E é profundamente colaborativa e internacional, à maneira europeia — missões construídas através de muitos estados membros, frequentemente voadas em parceria com a NASA, lançadas nos próprios foguetes Ariane da Europa e alimentando uma comunidade científica que abrange o continente. A ciência da ESA é uma demonstração de que uma coalizão de nações, reunindo recursos, pode produzir resultados que rivalizam ou excedem o que qualquer uma delas poderia alcançar sozinha."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "A ciência da ESA deixa um legado de primeiras vezes e fundações: o primeiro pouso em cometa, que provou que até os corpos mais pequenos e irregulares podem ser alcançados e tocados; e o mapa galáctico da Gaia, que se tornou o sistema de referência sustentando a astronomia moderna, usado por quase todos os observatórios na Terra e no espaço."
+      "md": "A ciência da ESA deixa um legado de pioneirismos e fundações: o primeiro pouso em um cometa, que provou que até os corpos mais pequenos e irregulares podem ser alcançados e tocados; e o mapa galáctico da Gaia, que se tornou o quadro de referência que sustenta a astronomia moderna, usado por quase todos os observatórios na Terra e no espaço."
     },
     {
       "type": "prose",
-      "md": "Seu legado mais profundo é um modelo de ciência ambiciosa, paciente e focada — um pequeno número de missões, cada uma tentando uma genuína primeira vez, sustentadas ao longo de décadas. Esse modelo tornou a Europa líder em exploração robótica apesar de orçamentos bem abaixo dos da NASA, e um parceiro que as agências maiores ativamente procuram."
+      "md": "Seu legado mais profundo é um modelo de ciência ambiciosa, paciente e focada — um pequeno número de missões, cada uma tentando um pioneirismo genuíno, sustentadas ao longo de décadas. Esse modelo fez da Europa uma líder na exploração robótica apesar de orçamentos bem abaixo do da NASA, e uma parceira que as agências maiores buscam ativamente."
     },
     {
       "type": "prose",
-      "md": "E através da Euclid e do trabalho sobre o universo escuro, a ESA está posicionada na fronteira da maior questão não respondida da física — do que o universo é realmente feito. Seja qual for a resposta, os telescópios de levantamento da Europa serão centrais para encontrá-la."
+      "md": "E através da Euclid e do trabalho sobre o universo escuro, a ESA está posicionada na fronteira da maior questão não respondida na física — do que o universo é realmente feito. Qualquer que seja a resposta, os telescópios de levantamento da Europa serão centrais para encontrá-la."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "A lição da ciência da ESA é que paciência é um instrumento científico. Missões como Rosetta e Gaia não entregam nada por anos e então tudo de uma vez, e só são possíveis para uma organização disposta a se comprometer com um retorno de uma década. A disposição para esperar — para financiar e voar uma missão cujos resultados chegam perto do fim — é em si uma capacidade, e uma que a Europa tornou uma especialidade."
+      "md": "A lição da ciência da ESA é que a paciência é um instrumento científico. Missões como a Rosetta e a Gaia não entregam nada por anos e depois tudo de uma vez, e só são possíveis para uma organização disposta a se comprometer com um retorno de uma década. A disposição de esperar — de financiar e voar uma missão cujos resultados chegam perto do seu fim — é em si uma capacidade, e uma que a Europa transformou em especialidade."
     },
     {
       "type": "prose",
-      "md": "A lição mais profunda é que foco supera amplitude para uma potência de médio porte. A ESA não pode fazer tudo que a NASA faz, então faz algumas coisas que ninguém mais fez — pousar em um cometa, mapear a galáxia, mapear o universo escuro — e se torna líder através de profundidade em vez de escala. Escolher o problema difícil certo e resolvê-lo definitivamente é como uma coalizão supera seu orçamento."
+      "md": "A lição mais profunda é que foco supera amplitude para uma potência de médio porte. A ESA não pode fazer tudo que a NASA faz, então faz algumas coisas que ninguém mais fez — pousar em um cometa, mapear a galáxia, mapear o universo escuro — e se torna líder através de profundidade em vez de escala. Escolher o problema difícil certo e resolvê-lo definitivamente é como uma coalizão joga acima de seu orçamento."
     }
   ]
 }

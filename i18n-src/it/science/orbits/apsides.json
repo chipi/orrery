@@ -1,15 +1,15 @@
 {
   "title": "Apsidi — Perielio, Afelio, Perigeo, Apogeo",
-  "intro_sentence": "I due punti estremi di ogni orbita ellittica.",
+  "intro_sentence": "I due punti estremi di ogni orbita ellittica: il punto di massimo avvicinamento e il punto di massima distanza.",
   "narrative_101": [
-    "Ogni orbita ellittica ha un punto alto e basso — un'apside. La gente spaziale ne è ossessionata perché quasi ogni accensione importante avviene lì.",
-    "Velocità estrema agli apsidi. Effetto Oberth.",
-    "Convenzione di nomi: Sole = perielio/afelio. Terra = perigeo/apogeo. Luna = perilunio/apolunio."
+    "Ogni orbita ellittica ha un punto alto e un punto basso. È tutto ciò che è un'apside — uno di questi due estremi. Il massimo avvicinamento a qualunque corpo stiate orbitando; oppure il punto più lontano. Gli esperti di veicoli spaziali sono ossessionati da questi due punti perché praticamente ogni manovra importante accade in uno di essi.",
+    "Perché? Due ragioni. Prima, anche la vostra velocità è agli estremi lì — più veloce nel punto vicino, più lenta nel punto lontano. L'effetto Oberth (che tratteremo nella propulsione) dice che ottenete il massimo rendimento dal carburante quando accelerate velocemente — quindi le manovre di partenza avvengono vicino al punto di massimo avvicinamento. Secondo, alzare o abbassare il LATO OPPOSTO di un'orbita è più economico quando spingete all'estremo — quindi per alzare l'orbita accelerate nel punto basso.",
+    "Avvertenza sulla convenzione di nomenclatura fastidiosa: ogni pianeta ha la sua coppia di parole. Attorno al Sole: perielio / afelio. Attorno alla Terra: perigeo / apogeo. Attorno alla Luna: perilunio / apolunio. Stessa fisica, solo radici greche incollate a qualunque corpo state orbitando. Non lasciatevi intimidare — è solo una parola per 'basso' e una per 'alto'."
   ],
   "body_paragraphs": [
-    "Un'apside è uno dei due punti dove il corpo è a distanza minima/massima dal fuoco.",
-    "I nomi dipendono dal corpo orbitato. Sole: perielio/afelio (gr. peri/apo + helios).",
-    "Apsidi ancorano le tempistiche. Voyager flyby al perielio. ISS reboost ad apogeo. Rendezvous al perigeo."
+    "Un'apside è uno dei due punti su un'orbita ellittica in cui il corpo si trova a distanza minima o massima dal suo fuoco. La linea che li collega — passando attraverso entrambi i fuochi — è la linea delle apsidi. Ogni orbita kepleriana ne ha esattamente due: il punto più vicino e il punto più lontano.",
+    "I nomi dipendono da ciò che state orbitando. Attorno al Sole: perielio (più vicino) e afelio (più lontano), dal greco `peri` (vicino) e `apo` (lontano) più `helios` (Sole). Attorno alla Terra: perigeo e apogeo. Attorno alla Luna: periseleneo e aposeleneo, oppure perilunio e apolunio. Attorno a qualunque stella: periastro e apastro. La fisica è identica; cambia solo il suffisso.",
+    "Le apsidi ancorano le cronologie delle missioni. I flyby del Voyager erano temporizzati al massimo avvicinamento (periapside) a ogni pianeta target — peri-giove per Giove, peri-saturnio per Saturno. Le manovre di rialzo della ISS aggiungono energia per contrastare l'attrito atmosferico, coerentemente con la regola di accelerare nel punto basso per alzare l'orbita. Le manovre di phasing per il rendezvous e l'attracco sono posizionate per l'efficienza di phasing, spesso vicino al perigeo (effetto Oberth). Il passaggio al perielio del Sole da parte della Parker Solar Probe è il più vicino che un oggetto realizzato dall'uomo sia mai stato a una stella."
   ],
-  "diagram_caption": "Linea degli apsidi attraverso entrambi i fuochi."
+  "diagram_caption": "Linea delle apsidi attraverso entrambi i fuochi, che collega il perielio (più vicino) e l'afelio (più lontano)."
 }

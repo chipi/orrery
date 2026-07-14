@@ -1,38 +1,38 @@
 {
   "name": "Chang'e — Chinas Mondprogramm",
-  "tagline": "Die methodische Eroberung des Mondes: umkreisen, landen, fahren, zurückkehren — einschließlich der ersten Landung überhaupt auf der Rückseite und der ersten Proben von dort.",
+  "tagline": "Die methodische Eroberung des Mondes: Umlaufbahn, Landung, Rover, Rückkehr — einschließlich der ersten Landung überhaupt auf der Rückseite und der ersten Proben von dort.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Während die Vereinigten Staaten fünfzig Jahre lang vom Mond fernblieben und Russlands Mondprogramm brach lag, baute China in aller Stille die nachhaltigste und erfolgreichste Kampagne robotischer Monderkundung des einundzwanzigsten Jahrhunderts auf. Benannt nach der chinesischen Mondgöttin, hat das Chang'e-Programm Schritt für bewussten Schritt alles getan, was ein robotisches Programm auf einer anderen Welt tun kann — sie umkreist, auf ihr gelandet, über sie gefahren und Stücke von ihr nach Hause gebracht — und dann die Dinge getan, die noch niemand zuvor getan hatte."
+      "md": "Während die Vereinigten Staaten fünfzig Jahre lang vom Mond fernblieben und Russlands Mondprogramm ruhte, baute China still und leise die nachhaltigste und erfolgreichste robotische Monderkundungskampagne des einundzwanzigsten Jahrhunderts auf. Benannt nach der chinesischen Mondgöttin, hat das Chang'e-Programm Schritt für bewussten Schritt alles getan, was ein robotisches Programm auf einer anderen Welt tun kann — sie umkreist, auf ihr gelandet, über sie gefahren und Stücke von ihr nach Hause gebracht — und dann die Dinge getan, die niemand jemals zuvor getan hatte."
     },
     {
       "type": "prose",
-      "md": "Die Signatur des Programms ist dieselbe geduldige, inkrementelle Methode, die die Tiangong-Stationen aufbaute: Jede Mission ist eine Probe für die nächste, jede Fähigkeit wird bewiesen, bevor die nächste versucht wird. Zuerst umkreisen (Chang'e 1–2), dann sanft landen und fahren (Chang'e 3), dann die unmögliche Rückseite erreichen (Chang'e 4), dann Proben zurückbringen (Chang'e 5), dann Proben von der Rückseite zurückbringen (Chang'e 6). Es ist eine Leiter, die Sprosse für Sprosse erklommen wird, und China hat keine Sprosse ausgelassen."
+      "md": "Die Signatur des Programms ist dieselbe geduldige, schrittweise Methode, die die Tiangong-Stationen aufbaute: Jede Mission ist eine Probe für die nächste, jede Fähigkeit wird bewiesen, bevor die nächste versucht wird. Zuerst Umlaufbahn (Chang'e 1–2), dann weiche Landung und Rover (Chang'e 3), dann die unmögliche Rückseite erreichen (Chang'e 4), dann Proben zurückbringen (Chang'e 5), dann Proben von der Rückseite zurückbringen (Chang'e 6). Es ist eine Leiter, Sprosse für Sprosse erklommen, und China hat keine Sprosse verfehlt."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Die kurzfristigen Ziele sind wissenschaftlich und methodisch: den Mond kartieren, sanft landen, Rover einsetzen und Proben zurückbringen — jede Fähigkeit der Reihe nach meistern. Die Rückseite des Mondes, die niemals zur Erde zeigt und daher nicht direkt mit ihr kommunizieren kann, war ein spezifisches und kühnes Ziel: sie zu erreichen erforderte zunächst die Platzierung eines Relaissatelliten jenseits des Mondes, und keine Nation war dort jemals gelandet, bevor China es 2019 tat."
+      "md": "Die kurzfristigen Ziele sind wissenschaftlich und methodisch: den Mond kartieren, weich landen, Rover einsetzen und Proben zurückbringen — jede Fähigkeit nacheinander meistern. Die Rückseite des Mondes, die niemals zur Erde zeigt und daher nicht direkt mit ihr kommunizieren kann, war ein spezifisches und kühnes Ziel: sie zu erreichen erforderte zunächst die Platzierung eines Relaissatelliten jenseits des Mondes, und keine Nation war dort jemals gelandet, bevor China es 2019 tat."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "missions/change4/01"
       },
-      "caption": "Chang'e-4 auf der Rückseite des Mondes — das erste Raumfahrzeug überhaupt, das auf der Hemisphäre landete, die niemals zur Erde zeigt, erreicht erst nachdem China einen Relaissatelliten in Position gebracht hatte, um seine Signale nach Hause zu übertragen.",
+      "caption": "Chang'e-4 auf der Rückseite des Mondes — das erste Raumfahrzeug überhaupt, das auf der Hemisphäre landete, die niemals zur Erde zeigt, erreicht erst nachdem China einen Relaissatelliten in Position gebracht hatte, um seine Signale nach Hause zu tragen.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Die langfristigen Ziele sind weit größer: chinesische Astronauten vor 2030 auf dem Mond zu landen und die International Lunar Research Station zu errichten — eine zunächst robotische, dann bemannte Basis nahe dem lunaren Südpol, entwickelt mit internationalen Partnern als explizite Alternative zur amerikanisch geführten Artemis-Koalition. Die robotischen Chang'e-Missionen sind die Aufklärung und der Fähigkeitsnachweis; die bemannte Basis ist das Ziel, auf das das gesamte Programm hinarbeitet."
+      "md": "Die langfristigen Ziele sind weit größer: chinesische Astronauten bis 2030 auf dem Mond zu landen und die International Lunar Research Station zu errichten — eine zunächst robotische, dann bemannte Basis nahe dem lunaren Südpol, entwickelt mit internationalen Partnern als explizite Alternative zur amerikanisch geführten Artemis-Koalition. Die robotischen Chang'e-Missionen sind die Aufklärung und der Fähigkeitsnachweis; die bemannte Basis ist das Ziel, auf das das gesamte Programm hinarbeitet."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Die Bilanz ist eine nahezu ununterbrochene Reihe von Premieren und Erfolgen. Chang'e 1 und 2 kartierten den Mond. Chang'e 3 (2013) vollzog die erste Landung seit 1976 und brachte den Yutu-Rover mit. Chang'e 4 (2019) erreichte die erste Landung der Geschichte auf der lunaren Rückseite. Chang'e 5 (2020) brachte die ersten frischen Mondproben seit 44 Jahren zurück. Und Chang'e 6 (2024) brachte die ersten jemals von der Rückseite gesammelten Proben zurück — Material, das noch nie in menschlichen Händen gehalten worden war. Kein anderes Mondprogramm dieser Ära kommt dieser Serie von Errungenschaften auch nur nahe."
+      "md": "Die Bilanz ist eine nahezu ununterbrochene Reihe von Premieren und Erfolgen. Chang'e 1 und 2 kartierten den Mond. Chang'e 3 (2013) vollzog die erste weiche Landung seit 1976 und trug den Rover Yutu. Chang'e 4 (2019) erreichte die erste Landung in der Geschichte auf der lunaren Rückseite. Chang'e 5 (2020) brachte die ersten frischen Mondproben seit 44 Jahren zurück. Und Chang'e 6 (2024) brachte die ersten jemals von der Rückseite gesammelten Proben zurück — Material, das niemals in menschlichen Händen gehalten worden war. Kein anderes Mondprogramm dieser Ära kommt dieser Serie von Errungenschaften nahe."
     },
     {
       "type": "figure",
@@ -44,27 +44,27 @@
     },
     {
       "type": "prose",
-      "md": "Allein die Proben haben die Mondwissenschaft umgestaltet, vulkanische Aktivität enthüllt, die weit jünger war als Modelle vorhergesagt hatten, und Material von der Rückseite zurückgebracht, das endlich erklären könnte, warum die beiden Hemisphären des Mondes so unterschiedlich sind. Und der Erfolg des Programms hat China zu der schrittmachenden Bedrohung gemacht, die das amerikanische Mondprogramm wiederbelebte: Artemis existiert teilweise, weil China demonstrierte, dass es zum Mond gehen konnte und würde — und bleiben."
+      "md": "Die Proben allein haben die Mondwissenschaft umgestaltet, indem sie vulkanische Aktivität weit jüngeren Datums offenbarten als Modelle vorhersagten, und Material von der Rückseite zurückbrachten, das möglicherweise endlich erklärt, warum die beiden Hemisphären des Mondes so unterschiedlich sind. Und der Erfolg des Programms hat China zur treibenden Bedrohung gemacht, die das amerikanische Mondprogramm wiederbelebte: Artemis existiert teilweise, weil China demonstrierte, dass es zum Mond gehen konnte und würde — und bleiben."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Die Geschichte von Chang'e ist ein Programm, das den Mond als eine Abfolge von Problemen behandelte, die der Reihe nach zu lösen waren, und sie löste. Es gab keine Eile, eine Flagge zu pflanzen, keinen einzelnen dramatischen Sprint — nur eine stetige, veröffentlichte Progression durch Umkreisen, Landen, Fahren und Zurückkehren, wobei jede Mission präzise auf der letzten aufbaute. Die Rückseitenlandung ist der reinste Ausdruck der Methode: sie zu erreichen erforderte zunächst die Lösung des Kommunikationsproblems mit einem Relaissatelliten, also löste China das zuerst, dann landete es. Die Kühnheit ist real, aber sie ist stets durch Vorbereitung verdient."
+      "md": "Die Geschichte von Chang'e ist ein Programm, das den Mond als eine Abfolge von Problemen behandelte, die nacheinander gelöst werden mussten, und sie löste. Es gab keine Eile, eine Flagge zu pflanzen, keinen einzelnen dramatischen Sprint — nur ein stetiges, veröffentlichtes Voranschreiten durch Umkreisen, Landen, Fahren und Zurückkehren, wobei jede Mission präzise auf der letzten aufbaute. Die Rückseitenlandung ist der reinste Ausdruck der Methode: sie zu erreichen erforderte zunächst die Lösung des Kommunikationsproblems mit einem Relaissatelliten, also löste China das zuerst, dann landete es. Die Kühnheit ist real, aber sie ist immer durch Vorbereitung verdient."
     },
     {
       "type": "prose",
-      "md": "Es ist auch die robotische Vorhut eines größeren Ehrgeizes. Die Chang'e-Missionen sind kein Selbstzweck; sie sind die Aufklärung für bemannte Landungen und eine permanente Basis. Jede sanfte Landung, jede Probenrückführung, jede Premiere auf der Rückseite ist eine Fähigkeit, die China brauchen wird, um Menschen auf den Mond zu bringen und sie dort zu halten — und das Programm ist ausdrücklich als die robotische erste Hälfte eines Plans strukturiert, dessen zweite Hälfte menschlich ist."
+      "md": "Es ist auch die robotische Vorhut eines größeren Ehrgeizes. Die Chang'e-Missionen sind kein Selbstzweck; sie sind die Aufklärung für bemannte Landungen und eine permanente Basis. Jede weiche Landung, jede Probenrückführung, jede Rückseiten-Premiere ist eine Fähigkeit, die China brauchen wird, um Menschen auf den Mond zu bringen und sie dort zu halten — und das Programm ist explizit als die robotische erste Hälfte eines Plans strukturiert, dessen zweite Hälfte menschlich ist."
     },
     {
       "type": "prose",
-      "md": "Und es ist eine Hälfte eines neuen Wettlaufs. Zum ersten Mal seit Apollo drängen zwei Mächte gleichzeitig hart auf den Mond zu — Chinas Chang'e-und-bemanntes-Programm und Amerikas Artemis — beide zielen auf denselben ressourcenreichen Südpol, beide bauen Koalitionen auf, beide auf Zeitplänen, die um 2030 konvergieren. Chang'es stiller, methodischer Erfolg ist der Grund, warum dieser Wettlauf existiert, und Chinas Beständigkeit macht es zu einem formidablen Konkurrenten darin."
+      "md": "Und es ist eine Hälfte eines neuen Wettlaufs. Zum ersten Mal seit Apollo drängen zwei Mächte gleichzeitig hart zum Mond — Chinas Chang'e-und-bemanntes Programm und Amerikas Artemis — beide zielen auf denselben ressourcenreichen Südpol, beide bauen Koalitionen auf, beide nach Zeitplänen, die um 2030 konvergieren. Chang'es stiller, methodischer Erfolg ist der Grund, warum dieser Wettlauf existiert, und Chinas Beständigkeit macht es zu einem formidablen Konkurrenten darin."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Chang'es erstes Vermächtnis ist wissenschaftlich: frische Mondproben von sowohl Vorder- als auch Rückseite nach einer halbjahrhundertlangen Lücke, die bereits die vulkanische Geschichte des Mondes neu schreiben und die ersten direkten Hinweise darauf bieten, warum seine beiden Hemisphären sich so grundlegend unterscheiden. Dies sind einige der wertvollsten planetaren Proben, die in einer Generation zurückgebracht wurden."
+      "md": "Chang'es erstes Vermächtnis ist wissenschaftlich: frische Mondproben von sowohl Vorder- als auch Rückseite nach einer halbjahrhundertlangen Lücke, die bereits die vulkanische Geschichte des Mondes neu schreiben und die ersten direkten Hinweise darauf bieten, warum sich seine beiden Hemisphären so tiefgreifend unterscheiden. Dies sind einige der wertvollsten planetaren Proben, die seit einer Generation zurückgebracht wurden."
     },
     {
       "type": "prose",
@@ -72,17 +72,17 @@
     },
     {
       "type": "prose",
-      "md": "Und sein drittes ist die Wiederbelebung des Mondwettlaufs selbst. Chinas methodischer Erfolg ist ein Hauptgrund, warum die Vereinigten Staaten sich zu Artemis und zur Rückkehr von Menschen zum Mond mit einer Frist verpflichteten. Chang'e erkundete nicht nur den Mond; es veränderte das strategische Kalkül, das bestimmt, wer sonst noch geht und wann."
+      "md": "Und sein drittes ist die Wiederbelebung des Mondrennens selbst. Chinas methodischer Erfolg ist ein Hauptgrund, weshalb sich die Vereinigten Staaten zu Artemis und zur Rückkehr von Menschen zum Mond mit einer Frist verpflichteten. Chang'e erkundete nicht nur den Mond; es änderte das strategische Kalkül, das bestimmt, wer sonst noch geht und wann."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lehre aus Chang'e ist, dass eine geduldige, veröffentlichte Leiter von Fähigkeiten einen dramatischen Sprint übertreffen kann. China versuchte nicht, zu den schwierigsten Zielen zu springen; es kletterte zu ihnen, bewies das Umkreisen vor dem Landen, das Landen vor dem Fahren, das Fahren vor der Probenrückführung — und als es das wirklich Beispiellose versuchte, die Rückseitenlandung und Probenrückführung, hatte es jede Voraussetzung verdient. Methode, über zwei Jahrzehnte aufrechterhalten, produzierte eine Serie von Premieren, die kein Rivale erreichte."
+      "md": "Die Lehre aus Chang'e ist, dass eine geduldige, veröffentlichte Leiter von Fähigkeiten einen dramatischen Sprint übertreffen kann. China versuchte nicht, zu den schwierigsten Zielen zu springen; es kletterte zu ihnen, bewies Umkreisen vor Landen, Landen vor Fahren, Fahren vor Probenrückführung — und als es das wirklich Beispiellose versuchte, die Rückseitenlandung und Probenrückführung, hatte es sich jede Voraussetzung verdient. Methode, über zwei Jahrzehnte aufrechterhalten, erzeugte eine Serie von Premieren, die kein Rivale erreichte."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lehre ist, dass stille Kompetenz das Feld umgestaltet. Chang'e machte keine großen Proklamationen und gewann kein Rennen um Schlagzeilen, doch sein stetiger Erfolg tat mehr, um den menschlichen Mondehrgeiz weltweit neu zu starten, als jede Rede — weil ein Programm, das einfach Mission für Mission weiter erfolgreich ist, zu einer strategischen Tatsache wird, auf die alle anderen antworten müssen. Beständigkeit ist am Ende ihre eigene Art von Macht."
+      "md": "Die tiefere Lehre ist, dass stille Kompetenz das Feld umgestaltet. Chang'e machte keine großen Proklamationen und gewann kein Rennen um Schlagzeilen, doch sein stetiger Erfolg tat mehr, um den menschlichen Mondehrgeiz weltweit neu zu starten als jede Rede — denn ein Programm, das einfach weiterhin erfolgreich ist, Mission für Mission, wird zu einer strategischen Tatsache, auf die alle anderen antworten müssen. Beständigkeit ist am Ende ihre eigene Art von Macht."
     }
   ]
 }

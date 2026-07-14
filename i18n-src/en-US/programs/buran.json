@@ -8,14 +8,14 @@
     },
     {
       "type": "prose",
-      "md": "From the outside Buran looked almost identical to the American orbiter — the same delta wing, the same rough shape — because the same job and the same physics of hypersonic reentry drive a design toward the same answer. But underneath, the Soviet engineers made two decisions that set their machine apart, and both, arguably, improved on the original. Buran carried no main engines of its own, and Buran could fly with no one aboard at all."
+      "md": "From the outside Buran looked almost identical to the American orbiter — the same delta wing, the same rough shape — because the same job and the same physics of hypersonic reentry drive a design toward the same answer. But underneath, the Soviet engineers made two decisions that set their machine apart, and both, arguably, improved on the original. Buran carried no main ascent engines of its own — it had orbital-manoeuvring engines for use in space, but the heavy lift to orbit was handled entirely by the rocket — and Buran could fly with no one aboard at all."
     }
   ],
   "goals": [
     {
       "type": "figure",
       "image": { "reuse": "fleet/energia/01" },
-      "caption": "The Energia super-heavy launcher, which lifted Buran. Unlike the American orbiter, Buran had no main engines: all the lift came from Energia, a genuine heavy-lift rocket in its own right — the most powerful the Soviet Union ever flew successfully.",
+      "caption": "The Energia super-heavy launcher, which lifted Buran. Unlike the American orbiter, Buran had no main ascent engines: all the lift came from Energia, a genuine heavy-lift rocket in its own right — one of the most powerful ever flown, and the most powerful the Soviet Union ever flew successfully.",
       "align": "right"
     },
     {

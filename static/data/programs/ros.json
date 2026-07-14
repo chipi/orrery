@@ -6,7 +6,7 @@
     "Roscosmos"
   ],
   "country": "Russia",
-  "start_year": 2027,
+  "start_year": 2028,
   "status": "PLANNED",
   "epoch": "commercial-era",
   "hero": "fleet/ros/01",
@@ -18,8 +18,8 @@
     },
     {
       "name": "First module",
-      "year": 2027,
-      "note": "the planned launch of the core module of the Russian Orbital Station (ROS) into a high-inclination polar orbit, chosen to see all of Russian territory"
+      "year": 2028,
+      "note": "the planned launch of the first UUM module of the Russian Orbital Station (ROS); the full station is expected in the late 2020s"
     },
     {
       "name": "ISS withdrawal",

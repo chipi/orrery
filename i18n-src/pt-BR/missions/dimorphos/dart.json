@@ -1,8 +1,8 @@
 {
   "name": "DART",
-  "type": "IMPACTADOR CINÉTICO · VOADO",
+  "type": "IMPACTADOR CINÉTICO · EXECUTADO",
   "first": "Primeira demonstração de defesa planetária por impactador cinético; primeira vez que humanos moveram um asteroide",
-  "description": "DART (Double Asteroid Redirection Test) foi a primeira missão de defesa planetária já realizada — uma espaçonave de 611 kg enviada para colidir com um asteroide de 160 m com força suficiente para alterar sua órbita. O alvo foi Dimorphos, uma lua do asteroide Didymos de 780 m. Lançada em 24/11/2021 em um Falcon 9; o sistema de navegação autônoma SMART Nav assumiu o controle 4 horas antes do impacto para distinguir Dimorphos de seu corpo principal e mirar no corpo menor. Impacto em 26/09/2022 às 23:14 UTC a 6,14 km/s. Mudança do período orbital medida: 33 minutos (4,2%), excedendo o limite de sucesso de 73 segundos em ~25×. O fator de amplificação da transferência de momento β ≈ 3,6 indicou contribuição significativa do material de superfície ejetado. O CubeSat LICIACube observou a pluma; HST e JWST imagearam a cauda de ejecta resultante por semanas. Primeira demonstração de que humanos podem mover um asteroide.",
+  "description": "DART (Double Asteroid Redirection Test) foi a primeira missão de defesa planetária já executada — uma espaçonave de 611 kg enviada para colidir com um asteroide de 160 m com força suficiente para alterar sua órbita. O alvo era Dimorphos, um satélite do asteroide Didymos de 780 m. Lançado em 2021-11-24 em um Falcon 9; o sistema de navegação autônoma SMART Nav assumiu o controle 4 horas antes do impacto para distinguir Dimorphos do seu corpo-pai e visar o corpo menor. Impacto em 2022-09-26 às 23:14 UTC a ~6,6 km/s. Mudança no período orbital medida: 33 minutos (4,2%), excedendo o limiar de sucesso de 73 segundos em ~25×. O fator de amplificação da transferência de momento β ≈ 3,6 indicou contribuição significativa de material da superfície ejetado. O CubeSat LICIACube observou a pluma; HST e JWST imagearam a cauda de ejecta resultante durante semanas. Primeira demonstração de que humanos podem mover um asteroide.",
   "events": [
     {
       "met": 0,
@@ -12,20 +12,20 @@
     },
     {
       "met": 150,
-      "label": "MEIO DA TRAJETÓRIA",
-      "note": "TCM + disparos de demonstração do propulsor iônico NEXT-C.",
+      "label": "MEIO DA CRUZADA",
+      "note": "TCM + disparo de demostração do propulsor iônico NEXT-C.",
       "type": "nominal"
     },
     {
       "met": 306,
       "label": "APROXIMAÇÃO",
-      "note": "26/09/2022. SMART Nav assume o controle 4h antes do impacto.",
+      "note": "2022-09-26. SMART Nav assume o controle 4h antes do impacto.",
       "type": "info"
     },
     {
       "met": 306.001,
       "label": "IMPACTO",
-      "note": "23:14 UTC. 6,14 km/s. Mudança do período orbital de 33 min — primeira deflexão de um asteroide por humanos.",
+      "note": "23:14 UTC. ~6,6 km/s. Mudança no período orbital de 33 min — primeiro desvio de um asteroide por humanos.",
       "type": "info"
     },
     {

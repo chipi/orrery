@@ -1,49 +1,49 @@
 {
-  "name": "阿波罗 9 号",
+  "name": "阿波罗9号",
   "type": "载人地球轨道 · 已飞行",
-  "first": "首次载人 LM 飞行 — 地球轨道分离 + 交会试验",
-  "description": "月球着陆器（LM）的首次载人飞行。在地球轨道中，McDivitt 和 Schweickart 将 LM 蜘蛛号与 CSM 橡皮糖号分离，六个小时内飞到 183 km 远处，然后交会并重新对接 — 在没有 \"出问题时由 CSM 带回机组\" 选项的情况下，测试了登月交会程序的每一步。Schweickart 在 LM 门廊上进行了 38 分钟的 EVA，验证了登月乘员将使用的阿波罗 EVA 太空服 + PLSS 背包设计。LM 硬件和交会程序得到验证后，NASA 准备好两个月后将阿波罗 10 号送往月球。",
+  "first": "月球舱首次载人飞行——地球轨道分离及交会对接试验",
+  "description": "月球舱的首次载人飞行。在地球轨道上，麦克迪维特和施魏卡特指挥舱从\"蜘蛛\"号月球舱分离，飞行至183公里处历时六小时，随后进行交会对接——整个月球交会程序在无法依靠指挥服务舱返回的情况下完成了测试。施魏卡特在月球舱舱门廊实施了38分钟的舱外活动，验证了登月宇航员将使用的阿波罗舱外航天服及背包系统设计。斯科特从指挥舱舱口进行了站立式舱外活动。随着月球舱硬件和交会程序的验证完成，美国航空航天局获得了在两个月后向月球发射阿波罗10号的批准。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-504) from Kennedy Space Center LC-39A 1969-03-03 16:00 UTC — third Saturn V flight, first crewed launch carrying LM.",
+      "label": "发射",
+      "note": "土星5号（AS-504）从肯尼迪航天中心LC-39A发射，时间为1969年3月3日16:00 UTC——第三次土星5号飞行，首次载人发射携带月球舱。",
       "type": "nominal"
     },
     {
       "met": 0.13,
-      "label": "CSM-LM EXTRACTION",
-      "note": "CSM Gumdrop turns around + docks with LM Spider in the SLA adapter — first crewed transposition + docking. All Apollo lunar missions repeat this maneuver.",
+      "label": "指挥舱-月球舱分离器适配器提取",
+      "note": "古姆德罗普号指挥舱调转方向并与SLA适配器中的蜘蛛号月球舱对接——首次载人转位及对接。所有阿波罗月球任务都重复这一机动。",
       "type": "nominal"
     },
     {
       "met": 4.2,
-      "label": "LM SEPARATION",
-      "note": "McDivitt + Schweickart undock Spider, fly up to 183 km from Gumdrop over six hours. First crewed flight where the spacecraft + crew aren't both attached to a re-entry vehicle.",
+      "label": "月球舱分离",
+      "note": "麦克迪维特及施魏卡特指挥蜘蛛号月球舱与古姆德罗普号分离，历时六小时飞行至距其183公里处。首次载人飞行中航天器及宇航员不再同时连接至再入飞行器。",
       "type": "info"
     },
     {
       "met": 4.5,
-      "label": "EVA",
-      "note": "Schweickart does 38-min EVA on LM porch. Scott stand-up EVA from CSM hatch. First validation of Apollo PLSS backpack.",
+      "label": "舱外活动",
+      "note": "施魏卡特在月球舱舱门廊进行38分钟舱外活动。斯科特从指挥舱舱口进行站立式舱外活动。首次验证阿波罗背包系统。",
       "type": "info"
     },
     {
       "met": 4.5,
-      "label": "RENDEZVOUS + REDOCK",
-      "note": "Spider rendezvous + redocks with Gumdrop, completing the lunar-procedure dress rehearsal in Earth orbit.",
+      "label": "交会对接",
+      "note": "蜘蛛号与古姆德罗普号进行交会对接，完成了地球轨道中月球程序的全程演练。",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "LM JETTISON",
-      "note": "Spider ascent stage jettisoned to deorbit; descent stage remained in orbit and decayed 1981.",
+      "label": "月球舱抛弃",
+      "note": "蜘蛛号下降级离轨（1969年3月在印度洋再入大气）；上升级燃烧至耗尽并被推升至高轨——1981年衰变。",
       "type": "nominal"
     },
     {
       "met": 10.04,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Atlantic 1969-03-13 17:00 UTC after 151 orbits. Recovery by USS Guadalcanal.",
+      "label": "溅落",
+      "note": "指挥舱于1969年3月13日17:00 UTC在北大西洋溅落，完成151圈轨道。瓜达尔卡纳尔号军舰实施回收。",
       "type": "nominal"
     }
   ]

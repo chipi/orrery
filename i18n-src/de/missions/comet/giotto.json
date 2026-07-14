@@ -1,31 +1,31 @@
 {
   "name": "Giotto",
-  "type": "VORBEIFLUG · BEENDET",
-  "first": "ESAs erste Tiefraummission; engster jemals angesetzter Kometenvorbeiflug (Halley, 596 km, 1986)",
-  "description": "ESA-Sonde, die am 14.3.1986 in 596 km Entfernung am Kern des Halleyschen Kometen vorbeiflog — erste Nahaufnahmen eines Kometenkerns. Nach einer Schlafphase in der Sonnenumlaufbahn wurde Giotto 1990 reaktiviert und nutzte eine Erd-Gravitationsassistenz, um zum Kometen Grigg-Skjellerup umgelenkt zu werden, wo sie am 10.7.1992 in 200 km Entfernung vorbeiflog — der engste je durchgeführte Kometenvorbeiflug.",
+  "type": "VORBEIFLUG · AUSGEFÜHRT",
+  "first": "ESAs erste Tiefraummission; nächster Kometenflug, der je versucht wurde (Halley, 596 km, 1986); erste Nahaufnahmen eines Kometenkerns",
+  "description": "Giotto war Europas Säule der Halley-Armada — eine spinstabilisierte 960-kg-Sonde mit mehrschichtigem Whipple-Kevlar-Staubschild. Nach dem Start am 1985-07-02 flog sie mit einer Relativgeschwindigkeit von 68 km/s durch Halleys Koma am 1986-03-14 mit größter Annäherung 596 km und lieferte die ersten Nahaufnahmen eines Kometenkerns (ein unregelmäßiger, 15 × 7,2 × 7,2 km großer länglicher Körper mit konzentrierten Staubstrahlen). Ein Staubeinschlag etwa 7,6 Sekunden vor größter Annäherung destabilisierte die Spinachse und deaktivierte die Kamera, aber die anderen Instrumente setzten ihre Übertragung durch die Koma fort. Nach einer Hibernation in heliozentrischem Orbit wurde Giotto 1990 reaktiviert und nutzte einen Erde-Gravity-Assist, um sich zum Kometen 26P/Grigg-Skjellerup neu auszurichten. Sie flog am 1992-07-10 in 200 km Entfernung vorbei — dem nächsten Kometen-Vorbeiflug aller Zeiten.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "Ariane 1 startet Giotto von Kourou — ESAs erste Tiefraummission.",
+      "note": "Ariane 1 hebt Giotto von Kourou ab — ESAs erste Tiefraummission.",
       "type": "nominal"
     },
     {
       "met": 255,
       "label": "HALLEY-VORBEIFLUG",
-      "note": "596 km engste Annäherung an Komet 1P/Halley; erste Nahaufnahmen eines Kometenkerns.",
+      "note": "596 km größte Annäherung an Komet 1P/Halley; erste Nahaufnahmen eines Kometenkerns.",
       "type": "nominal"
     },
     {
       "met": 1827,
-      "label": "ERDVORBEIFLUG",
-      "note": "Erd-Gravitationsassistenz lenkt Giotto zum Kometen 26P/Grigg-Skjellerup um.",
+      "label": "ERDE-VORBEIFLUG",
+      "note": "Erde-Gravity-Assist richtet Giotto zum Kometen 26P/Grigg-Skjellerup aus.",
       "type": "nominal"
     },
     {
       "met": 2565,
       "label": "GRIGG-SKJELLERUP-VORBEIFLUG",
-      "note": "200 km engste Annäherung — engster jemals durchgeführter Kometenvorbeiflug.",
+      "note": "200 km größte Annäherung — der nächste Kometen-Vorbeiflug aller Zeiten.",
       "type": "nominal"
     }
   ]

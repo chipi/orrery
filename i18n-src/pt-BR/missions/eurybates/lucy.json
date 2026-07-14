@@ -1,31 +1,37 @@
 {
   "name": "Lucy",
-  "type": "MULTI-FLYBY · ACTIVE",
-  "first": "Primeira missão aos Troianos de Júpiter; visita 8 asteroides em uma única trajetória de 12 anos — mais corpos em uma missão do que qualquer campanha anterior de ciência planetária",
-  "description": "Lucy alcança as nuvens de Lagrange L4 e L5 — populações de asteroides primordiais que lideram e seguem Júpiter em 60°, acredita-se que preservem material do disco protoplanetário externo. Três assistências gravitacionais da Terra (2022, 2024, 2030) moldam uma única trajetória que visita sete asteroides troianos mais um corpo bônus do cinturão principal. Encontro bônus: Donaldjohanson 2025-04. Enxame L4: Eurybates + lua Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Após EGA-3 (2030-12), o enxame L5 seguidor: binário Patroclus-Menoetius (2033-03) — o maior binário troiano conhecido, um clímax adequado para a missão que leva o nome do fóssil hominídeo Lucy; Patroclus-Menoetius são os dois personagens que caíram juntos na Ilíada.",
+  "type": "SOBREVOO MÚLTIPLO · ATIVA",
+  "first": "Primeira missão aos Troianos de Júpiter; visita 11 corpos em 8 asteroides e seus satélites em uma única trajetória de 12 anos — um número recorde de objetos em órbitas solares separadas",
+  "description": "Lucy alcança as nuvens de Lagrange L4 e L5 — populações de asteroides primordiais que precedem e seguem Júpiter em 60°, acreditadas preservarem material do disco protoplanetário externo. Três assistências gravitacionais da Terra (2022, 2024, 2030) moldam uma única trajetória que visita sete asteroides Troianos além de alvos bônus da faixa principal. Primeiro encontro com asteroide: 152830 Dinkinesh (2023-11-01, ~790 m), no qual imagens revelaram o satélite binário de contato Selam. Bônus da faixa principal: Donaldjohanson 2025-04. Enxame L4: Eurybates + lua Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Após AGA-3 (2030-12), o enxame L5 remanescente: binário Patroclus-Menoetius (2033-03) — o maior binário Troiano conhecido, um clímax apropriado para o nome da missão (Lucy o fóssil de homínida; Patroclus-Menoetius as duas personagens que caíram juntas na Ilíada).",
   "events": [
     {
       "met": 0,
       "label": "LANÇAMENTO",
-      "note": "Atlas V 401 de Cape Canaveral SLC-41.",
+      "note": "Atlas V 401 do Cabo Canaveral SLC-41.",
       "type": "nominal"
     },
     {
       "met": 365,
-      "label": "EGA-1",
+      "label": "AGA-1",
       "note": "Primeira assistência gravitacional da Terra 2022-10-16.",
+      "type": "info"
+    },
+    {
+      "met": 746,
+      "label": "DINKINESH",
+      "note": "2023-11-01. Primeiro sobrevoo de asteroide — corpo da faixa principal ~790 m; satélite Selam (binário de contato) descoberto.",
       "type": "info"
     },
     {
       "met": 1290,
       "label": "DONALDJOHANSON",
-      "note": "Sobrevoo bônus no cinturão principal 2025-04. Asteroide tipo C de 4 km.",
+      "note": "Sobrevoo bônus da faixa principal 2025-04. Asteroide tipo C de 4 km.",
       "type": "info"
     },
     {
       "met": 2127,
       "label": "EURYBATES + QUETA",
-      "note": "2027-08. Primeiro encontro troiano. Tipo C de 64 km + lua de 1 km.",
+      "note": "2027-08. Primeiro encontro Troiano. Tipo C de 64 km + lua de 1 km.",
       "type": "info"
     },
     {
@@ -37,7 +43,7 @@
     {
       "met": 2660,
       "label": "LEUCUS",
-      "note": "Troiano tipo D de 35 km, rotação lenta (446 h).",
+      "note": "Troiano tipo D de 35 km, rotador lento (446 h).",
       "type": "info"
     },
     {
@@ -48,14 +54,14 @@
     },
     {
       "met": 3445,
-      "label": "EGA-3",
-      "note": "Assistência final da Terra 2030-12. Segue para a nuvem L5.",
+      "label": "AGA-3",
+      "note": "Assistência gravitacional final da Terra 2030-12. Segue para nuvem L5.",
       "type": "info"
     },
     {
       "met": 4170,
       "label": "PATROCLUS-MENOETIUS",
-      "note": "2033-03. Clímax da missão: troiano binário de 113 km + 104 km.",
+      "note": "2033-03. Clímax da missão: binário Troiano de 113 km + 104 km.",
       "type": "info"
     }
   ]

@@ -1,37 +1,37 @@
 {
-  "name": "Março 3",
-  "type": "ORBITER · LANDER · VOADO",
-  "first": "Primeira espaçonave a pousar suavemente em Marte",
-  "description": "A audaciosa missão dupla da União Soviética a Marte em 1971 - Marte 2 e Marte 3 foram lançadas com 9 dias de intervalo. O módulo de pouso da Mars 2 caiu; O módulo de pouso da Mars 3 alcançou o primeiro pouso suave em Marte, mas transmitiu por apenas cerca de 110 segundos antes da perda de sinal, possivelmente devido à tempestade global de poeira que assolava a época. O orbitador operou durante 8 meses, retornando centenas de imagens e medições atmosféricas. Apesar da breve missão à superfície, a Mars 3 demonstrou que o problema da descida e aterragem em Marte era solucionável.",
+  "name": "Mars 3",
+  "type": "ORBITADOR · MÓDULO DE POUSO · MISSÃO CUMPRIDA",
+  "first": "Primeira espaçonave a realizar um pouso suave em Marte",
+  "description": "A audaciosa dupla-missão soviética para Marte em 1971 — Mars 2 e Mars 3 foram lançadas com 9 dias de intervalo. O módulo de pouso da Mars 2 colidiu; o módulo de pouso da Mars 3 realizou o primeiro pouso suave em Marte, mas perdeu o sinal ~110 segundos após o toque — a transmissão real durou apenas ~14,5 segundos — possivelmente devido à tempestade de poeira global que assolava o planeta naquela época. O orbitador operou por 8 meses, retornando dezenas de imagens e medições atmosféricas. Apesar da breve missão de superfície, Mars 3 demonstrou que o problema de descida e pouso em Marte era solucionável.",
   "events": [
     {
       "met": 0,
-      "label": "LANÇAR",
+      "label": "LANÇAMENTO",
       "note": "Proton-K com estágio superior Blok-D de Baikonur.",
       "type": "nominal"
     },
     {
       "met": 188,
-      "label": "ÓRBITA MOI",
-      "note": "Orbiter captura a órbita de Marte durante tempestade de poeira global.",
+      "label": "INSERÇÃO ORBITAL",
+      "note": "Orbitador capturado em órbita de Marte durante tempestade global de poeira.",
       "type": "nominal"
     },
     {
       "met": 188.05,
-      "label": "SEPARAÇÃO DE LANDER",
-      "note": "Lander se separa e inicia a entrada atmosférica.",
+      "label": "SEPARAÇÃO DO MÓDULO DE POUSO",
+      "note": "Módulo de pouso se separa e inicia reentrada atmosférica.",
       "type": "nominal"
     },
     {
       "met": 188.1,
-      "label": "CONTATO DE SUPERFÍCIE",
-      "note": "Primeiro pouso suave em Marte; a transmissão começa.",
+      "label": "CONTATO COM A SUPERFÍCIE",
+      "note": "Primeiro pouso suave em Marte; transmissão iniciada.",
       "type": "nominal"
     },
     {
       "met": 188.101,
       "label": "PERDA DE SINAL",
-      "note": "Após aproximadamente 110 segundos, o sinal foi encerrado permanentemente. Causa não confirmada; principal suspeito de tempestade de poeira.",
+      "note": "Sinal perdido ~110 s após o toque (transmissão durou ~14,5 s). Causa não confirmada; tempestade de poeira é a principal suspeita.",
       "type": "warning"
     }
   ]

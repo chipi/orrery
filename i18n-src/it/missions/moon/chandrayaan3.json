@@ -1,8 +1,8 @@
 {
   "name": "Chandrayaan-3",
-  "type": "LANDER · ROVER · VOLATO",
-  "first": "Primo atterraggio morbido vicino al polo sud lunare",
-  "description": "In seguito alla perdita del lander Vikram di Chandrayaan-2 nel 2019, la terza missione lunare di ISRO è stata deliberatamente conservativa, concentrandosi sul lander piuttosto che sul trasporto di un orbiter. Vikram è atterrato a 69,4° di latitudine S, la distanza più vicina al polo lunare mai raggiunta da un veicolo spaziale. Il rover Pragyan ha rilevato per la prima volta lo zolfo sulla superficie lunare e ha effettuato misurazioni termiche in situ. L’India è diventata la quarta nazione ad atterrare sulla Luna e la prima nelle regioni polari dove probabilmente avverrà la futura estrazione del ghiaccio d’acqua.",
+  "type": "LANDER · ROVER · FLOWN",
+  "first": "Primo allunaggio morbido vicino al polo sud lunare",
+  "description": "Dopo la perdita del lander Vikram di Chandrayaan-2 nel 2019, la terza missione lunare dell'ISRO è stata deliberatamente conservativa — focalizzata sul lander anziché trasportare un orbiter. Vikram si è posato a 69,4° S di latitudine, il punto più vicino a un polo lunare mai raggiunto da un veicolo spaziale. Il rover Pragyan ha rilevato lo zolfo sulla superficie lunare per la prima volta e ha effettuato misurazioni termiche in situ. L'India è diventata la quarta nazione a effettuare un allunaggio morbido sulla Luna, atterrando più vicino a un polo lunare di qualsiasi altro veicolo spaziale precedente — una regione dove in futuro potrebbe diventare possibile l'estrazione di ghiaccio d'acqua.",
   "events": [
     {
       "met": 0,
@@ -13,31 +13,31 @@
     {
       "met": 22,
       "label": "MOI",
-      "note": "Inserimento nell'orbita lunare (utilizzate più ustioni per il sollevamento dell'orbita terrestre e lunare).",
+      "note": "Inserimento in orbita lunare (con più correzioni di orbita terrestre e lunare).",
       "type": "nominal"
     },
     {
       "met": 38,
-      "label": "SEPARAZIONE DEL LANDER",
+      "label": "SEPARAZIONE LANDER",
       "note": "Il lander Vikram si separa dal modulo di propulsione.",
       "type": "nominal"
     },
     {
       "met": 40,
-      "label": "TOCCO",
-      "note": "Vikram atterra a Shiv Shakti Point vicino al polo sud il 23 agosto 2023 alle 12:33 UTC.",
+      "label": "ALLUNAGGIO",
+      "note": "Vikram atterra a Shiv Shakti Point vicino al polo sud 2023-08-23 12:33 UTC.",
       "type": "nominal"
     },
     {
       "met": 40.5,
-      "label": "PRAGYAN SCHIERATO",
-      "note": "Il Rover rotola giù dalla rampa; inizia la scienza della superficie.",
+      "label": "PRAGYAN DISPIEGATO",
+      "note": "Il rover scende la rampa; inizia le operazioni scientifiche sulla superficie.",
       "type": "info"
     },
     {
       "met": 53,
       "label": "NOTTE LUNARE",
-      "note": "Il lander/rover entra in ibernazione all'inizio della notte lunare.",
+      "note": "Il lander e il rover vengono messi in ibernazione con l'inizio della notte lunare.",
       "type": "info"
     }
   ]

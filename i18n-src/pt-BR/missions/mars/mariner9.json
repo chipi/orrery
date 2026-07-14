@@ -1,8 +1,8 @@
 {
   "name": "Mariner 9",
-  "type": "ORBITADOR · VOADO",
+  "type": "ORBITADOR · OPERADO",
   "first": "Primeira espaçonave a orbitar outro planeta",
-  "description": "A Mariner 9 tornou possível todos os orbitadores que vieram depois. Após uma queima de MOI de 15 minutos que a colocou em órbita de Marte em 14/11/1971, o planeta abaixo estava irreconhecível — uma tempestade de poeira global havia ocultado tudo, exceto os quatro cumes dos vulcões Tharsis. A JPL esperou. Durante janeiro de 1972, a poeira assentou e a Mariner 9 retornou 7.329 imagens cobrindo ~80% da superfície marciana, revelando o Olympus Mons (o maior vulcão do sistema solar), Valles Marineris (o sistema de cânions que leva seu nome), canais de rios secos sugerindo uma era líquida antiga, e as primeiras imagens detalhadas de Phobos e Deimos. A missão terminou em 27/10/1972 quando o gás de controle de atitude se esgotou; a espaçonave permanece em órbita, decaindo lentamente.",
+  "description": "Mariner 9 tornou possível cada orbitador que se seguiu. Após uma queimada de inserção em órbita de 15 minutos colocá-la em órbita de Marte em 1971-11-14, o planeta abaixo era irreconhecível — uma tempestade de poeira global havia ocultado tudo, exceto os quatro topos dos vulcões de Tharsis. O JPL esperou. Até janeiro de 1972, a poeira assentou e Mariner 9 retornou 7.329 imagens cobrindo ~85% da superfície marciana, revelando Olympus Mons (o maior vulcão do sistema solar), Valles Marineris (o sistema de cânions que leva seu nome), canais fluviais secos sugerindo uma era líquida antiga, e os primeiros planos aproximados de Fobos e Deimos. A missão terminou em 1972-10-27 quando o gás de controle de atitude se esgotou; a espaçonave permanece em órbita, decaindo lentamente.",
   "events": [
     {
       "met": 0,
@@ -13,31 +13,31 @@
     {
       "met": 5,
       "label": "TCM-1",
-      "note": "Primeira correção de meio de curso.",
+      "note": "Primeira correção de trajetória.",
       "type": "nominal"
     },
     {
       "met": 98,
       "label": "TCM-2",
-      "note": "Ajuste de aproximação para o periapsis do MOI.",
+      "note": "Trimagem de aproximação com alvo de periapsis para MOI.",
       "type": "nominal"
     },
     {
       "met": 168,
       "label": "MOI",
-      "note": "Queima de motor sólido de 15 min coloca a Mariner 9 em uma órbita de 1398 × 17.917 km, 64,4° — primeira órbita de outro planeta na história.",
+      "note": "Queimada de motor sólido de 15 min coloca Mariner 9 em órbita de 1.398 × 17.917 km, 64,4° — primeira órbita de outro planeta.",
       "type": "info"
     },
     {
       "met": 200,
-      "label": "POEIRA DISSIPA",
-      "note": "Tempestade global diminui; imageamento começa.",
+      "label": "POEIRA DISPERSA",
+      "note": "Tempestade global diminui; imageamento inicia.",
       "type": "info"
     },
     {
       "met": 515,
       "label": "FIM DA MISSÃO",
-      "note": "27/10/1972. Gás de controle de atitude esgotado.",
+      "note": "1972-10-27. Gás de controle de atitude esgotado.",
       "type": "warning"
     }
   ]

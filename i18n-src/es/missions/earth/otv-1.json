@@ -1,25 +1,25 @@
 {
   "name": "X-37B OTV-1 (USA-212)",
-  "type": "AVIÓN ESPACIAL NO TRIPULADO · VOLADO",
-  "first": "USA-212 — 224 días en órbita, Base Vandenberg",
-  "description": "Primer vuelo del programa Orbital Test Vehicle X-37B construido por Boeing. Lanzado el 2010-04-22 a las 23:52 UTC desde Cabo Cañaveral SLC-41 en un Atlas V 501 AV-012; el primer reingreso autónomo de un avión espacial orbital con operaciones de aterrizaje en pista desde el Buran 1.01 soviético en 1988. Aterrizó en la Base Vandenberg el 2010-12-03 a las 09:16 UTC tras 224 días. Cargas útiles y parámetros orbitales clasificados.",
+  "type": "SPACEPLANE NO TRIPULADO · COMPLETADO",
+  "first": "USA-212 — 224 días en órbita, Vandenberg AFB",
+  "description": "Primer vuelo del programa Boeing X-37B Orbital Test Vehicle. Lanzado el 2010-04-22 23:52 UTC desde Cape Canaveral SLC-41 en Atlas V 501 AV-012; el primer spaceplane orbital autónomo en reentrada con operaciones de aterrizaje en pista desde el Buran 1.01 soviético en 1988. Aterrizó en Vandenberg AFB el 2010-12-03 09:16 UTC tras 224 días. Cargas útiles y parámetros orbitales clasificados.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-012) from CCAFS SLC-41 2010-04-22.",
+      "label": "LANZAMIENTO",
+      "note": "Atlas V 501 (AV-012) desde CCAFS SLC-41 el 2010-04-22.",
       "type": "nominal"
     },
     {
       "met": 112,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee 410 km; classified payload operations.",
+      "label": "OPERACIONES EN ÓRBITA",
+      "note": "Apogeo ~287 km; operaciones de carga útil clasificada.",
       "type": "info"
     },
     {
       "met": 224,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at Vandenberg AFB 2010-12-03.",
+      "label": "ATERRIZAJE",
+      "note": "Aterrizaje autónomo en pista en Vandenberg AFB el 2010-12-03.",
       "type": "nominal"
     }
   ]

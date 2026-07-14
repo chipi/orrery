@@ -2,8 +2,8 @@
   "name": "Mars Pathfinder",
   "type": "LANDER · ROVER · GEFLOGEN",
   "first": "Erste Räder auf dem Mars; demonstrierte Airbag-Landung",
-  "dispatch": "Mars Pathfinder war der Beweis der NASA, dass eine Landung auf dem Mars kein Vermögen kosten musste. Anstelle des schwebenden Retroraketenmanövers, das die Vikings verwendeten, traf die Sonde hinter einem Hitzeschild auf die Atmosphäre, löste einen Fallschirm aus, blies einen Kokon aus Airbags auf und prallte dutzende Male über die Oberfläche, bevor sie zum Stillstand rollte und sich wie eine Blume öffnete. Heraus fuhr Sojourner — ein Rover von der Größe einer Mikrowelle, die ersten Räder, die sich jemals auf einem anderen Planeten drehten. Die wissenschaftliche Ausbeute war bescheiden; der Punkt war die Methode. Die Airbag-Landung und der faster-cheaper-better-Ansatz, den sie bewies, wurden zur Vorlage für die weitaus ambitionierteren Rover — Spirit, Opportunity, Curiosity —, die folgten.",
-  "description": "Die Mission, die bewies, dass kostengünstige interplanetare Missionen funktionieren könnten. Pathfinder nutzte ein neuartiges Airbag-Landesystem, das Dutzende Male über die Oberfläche prallte, bevor es zur Ruhe kam, und lieferte Sojourner, den ersten Rover, der auf einem anderen Planeten operierte. Sojourner legte 100 m zurück, untersuchte ein Dutzend Steine ​​und arbeitete weit über die vorgesehene Lebensdauer von sieben Tagen hinaus. Pathfinder war 2 Monate und 27 Tage in Betrieb; Der Erfolg der Mission belebte das interplanetare Programm von NASA nach den Misserfolgen der 1990er Jahre wieder.",
+  "dispatch": "Mars Pathfinder bewies, dass eine Landung auf dem Mars nicht ein Vermögen kosten musste. Statt des Bremsraketen-Schwebeflugs der Viking-Missionen trat die Sonde mit Wärmeschutzschild in die Atmosphäre ein, entfaltete einen Fallschirm, blies einen Airbag-Kokon auf und prallte dutzende Male über die Oberfläche ab, bevor sie zum Stillstand kam und sich wie eine Blume öffnete. Heraus rollte Sojourner — ein Rover so groß wie eine Mikrowelle, die ersten Räder, die sich je auf einem anderen Planeten drehten. Die Wissenschaft war bescheiden; der Punkt war die Methode. Die Airbag-Landung und der schneller-billiger-besser-Ansatz, den sie bewies, wurden zur Vorlage für die ehrgeizigeren Rover — Spirit, Opportunity, Curiosity — die folgten.",
+  "description": "Die Mission, die bewies, dass kostengünstige interplanetare Missionen funktionieren können. Pathfinder nutzte ein neuartiges Airbag-Landungssystem — das dutzende Male über die Oberfläche abprallte, bevor es zum Stillstand kam — und lieferte Sojourner, den ersten Rover, der auf einem anderen Planeten betrieben wurde. Sojourner legte 100 m zurück, untersuchte ein Dutzend Gesteine und arbeitete lange über seine 8-Sol-Designlebensdauer hinaus. Pathfinder war 2 Monate 27 Tage lang aktiv; der Erfolg der Mission belebte NASAs interplanetares Programm nach den Fehlschlägen der 1990er Jahre wieder.",
   "events": [
     {
       "met": 0,
@@ -14,24 +14,24 @@
     {
       "met": 30,
       "label": "TCM-1",
-      "note": "Erste Flugbahnkorrektur.",
+      "note": "Erste Bahnkorrektur.",
       "type": "nominal"
     },
     {
       "met": 212,
       "label": "EDL",
-      "note": "Direkter Eintritt in die Atmosphäre – keine Einfügung in die Umlaufbahn. Hitzeschild, Fallschirm, Retro-Raketen, dann Airbag-Aufblasung.",
+      "note": "Direkter Atmosphäreneintritt — kein Bahneinschuss. Wärmeschutzschild, Fallschirm, Bremsraketen, dann Airbag-Aufblasung.",
       "type": "nominal"
     },
     {
       "met": 212.01,
-      "label": "LANDUNG",
-      "note": "Lander springt 15 Mal über Ares Vallis, bevor er zur Ruhe kommt.",
+      "label": "AUFSCHLAG",
+      "note": "Lander prallt 15 Mal über Ares Vallis ab, bevor sie zum Stillstand kommt.",
       "type": "nominal"
     },
     {
       "met": 213,
-      "label": "SOJOURNER IM EINSATZ",
+      "label": "SOJOURNER AUSGESETZT",
       "note": "Erste Räder auf einem anderen Planeten.",
       "type": "info"
     }

@@ -1,15 +1,15 @@
 {
   "title": "NRHO — Orbite de halo quasi-rectiligne",
-  "intro_sentence": "Une orbite de neuf jours en forme d'œuf autour du point L2 Terre-Lune — le foyer choisi pour le Lunar Gateway de la NASA.",
+  "intro_sentence": "Une orbite en forme d'œuf de ~6,5 jours autour du point L2 Terre-Lune — le siège choisi de la Lunar Gateway de la NASA.",
   "narrative_101": [
-    "NRHO = orbite NASA pour Gateway, petite station spatiale près Lune fin 2020s. Acronyme : Near-Rectilinear Halo Orbit. Imagine un œuf, étiré, équilibré près du point L2 Lagrange. Sonde tourne tous les 9 jours.",
-    "Pourquoi cette orbite ? Compromis parfait. Quasi gratuit à maintenir — 5 m/s/an. Toujours visibilité Terre. Bout proche assez Lune pour landers vers pôle sud.",
-    "Artemis II premier vol équipage NRHO. Artemis III docke pour transfert lander. Au-delà Gateway : NRHO comme étape pour Mars."
+    "L'NRHO est l'orbite que la NASA a choisie pour Gateway, la petite station spatiale qui vivra près de la Lune à partir de la fin des années 2020. L'acronyme signifie Near-Rectilinear Halo Orbit — une phrase qui ne veut presque rien dire jusqu'à ce que vous voyiez la forme. Imaginez un œuf, allongé, équilibré presque-mais-pas-tout-à-fait au point de Lagrange L2 Terre-Lune, avec son approche la plus proche au-dessus du pôle sud lunaire. Le vaisseau spatial tourne autour environ une fois tous les ~6,5 jours.",
+    "Pourquoi cette orbite spécifique, parmi toutes les orbites possibles ? C'est un compromis parfait. Elle coûte presque aucun carburant à maintenir — environ 5 mètres par seconde par an de maintien de station, ce qui est essentiellement gratuit. Elle a toujours une ligne de vue directe vers la Terre, donc le contact radio n'est jamais bloqué par la Lune. Et une extrémité de l'œuf s'approche assez près de la Lune pour que les atterrisseurs puissent descendre au pôle sud et revenir sans coûts ∆v énormes.",
+    "Artemis II sera le premier vol spatial équipage vers l'NRHO. Artemis III s'y arrimera pour se transférer vers un atterrisseur dérivé de Starship. Au-delà de Gateway, l'NRHO est étudiée comme base de lancement pour les futures missions spatiales habitées vers Mars — un endroit pour assembler de grands vaisseaux spatiaux loin du puits gravitationnel de la Terre."
   ],
   "body_paragraphs": [
-    "NRHO = orbite halo — trajectoire trois corps périodique autour Lagrange — étirée jusqu'à toucher pôle sud Lune. Plus orbite polaire que halo. ~6,5 jours périlune, 9 jours révolution.",
-    "Pourquoi ? Stabilité bas Δv (~5 m/s/an). Visibilité Terre continue. Bas coût Δv depuis Terre (~4 km/s). Accès surface lunaire petits landers.",
-    "Gateway première station équipage espace profond, NRHO fin 2020s. Artemis II premier équipage. NRHO terrain de mise en scène architectures Mars."
+    "Un NRHO est une orbite de halo — une trajectoire périodique à trois corps qui tourne autour d'un point de Lagrange — mais allongée jusqu'à ce qu'une extrémité touche presque le pôle sud de la Lune. Elle ressemble davantage à une orbite polaire qu'à un halo, d'où « quasi-rectiligne ». Une révolution complète prend environ 6,5 jours ; le « 9 » dans la résonance Gateway 9:2 fait référence à neuf révolutions NRHO par deux mois synodiques lunaires, et non à une période de 9 jours.",
+    "Pourquoi cette orbite ? Stabilité avec un entretien ∆v faible — environ 5 m/s par an de maintien de station. Ligne de vue continue vers la Terre (Gateway ne passe jamais longtemps derrière la Lune). Accès ∆v à faible coût depuis la Terre (environ 4 km/s pour le transfert et l'insertion, comparable à LLO mais avec une bien meilleure stabilité thermique). Accès à la surface lunaire via de petits atterrisseurs depuis le périapsis.",
+    "Gateway sera la première station spatiale habitée en espace lointain, occupant l'NRHO à partir de la fin des années 2020. Artemis II sera le premier vol spatial équipage vers l'NRHO ; Artemis III s'y arrimera pour se transférer vers l'atterrisseur. Au-delà de Gateway, l'NRHO est la base de lancement pour les architectures de missions spatiales habitées vers Mars."
   ],
-  "diagram_caption": "Orbite halo étirée au L2 Terre-Lune : période ~9j, périlune près pôle sud, visibilité Terre."
+  "diagram_caption": "Orbite de halo allongée au point L2 Terre-Lune : période de ~6,5 jours, périapsis au-dessus du pôle sud, ligne de vue continue vers la Terre."
 }

@@ -2,7 +2,7 @@
   "name": "Chandrayaan-3",
   "type": "LANDER · ROVER · FLOWN",
   "first": "First soft-landing near the lunar south pole",
-  "description": "Following the loss of Chandrayaan-2's Vikram lander in 2019, ISRO's third lunar mission was deliberately conservative — focused on the lander rather than carrying an orbiter. Vikram touched down at 69.4° S latitude, the closest any spacecraft has come to a lunar pole. The Pragyan rover detected sulfur on the lunar surface for the first time and made in-situ thermal measurements. India became the fourth nation to soft-land on the Moon and the first at the polar regions where future water-ice mining will likely happen.",
+  "description": "Following the loss of Chandrayaan-2's Vikram lander in 2019, ISRO's third lunar mission was deliberately conservative — focused on the lander rather than carrying an orbiter. Vikram touched down at 69.4° S latitude, the closest any spacecraft has come to a lunar pole. The Pragyan rover detected sulfur on the lunar surface for the first time and made in-situ thermal measurements. India became the fourth nation to soft-land on the Moon, landing closer to a lunar pole than any spacecraft before it — a region where future water-ice mining may become possible.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "LVM3 M4 (formerly GSLV Mk III) from Sriharikota.", "type": "nominal" },
     { "met": 22, "label": "MOI", "note": "Lunar orbit insertion (multiple Earth and lunar orbit-raising burns used).", "type": "nominal" },

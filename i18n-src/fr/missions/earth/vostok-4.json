@@ -1,26 +1,26 @@
 {
   "name": "Vostok 4",
-  "dispatch": "Vostok 4 était la réponse à Vostok 3 — le second vaisseau du premier vol double, et le moment où deux humains dans deux vaisseaux spatiaux distincts se sont parlés pour la première fois en orbite. Pavel Popovich a décollé un jour après Nikolayev et s'est approché à environ six kilomètres et demi, suffisamment près pour échanger par radio vocale directement, vaisseau à vaisseau, plutôt que via le sol. Comme son partenaire, il ne pouvait pas manœuvrer pour maintenir la distance, si bien que les deux se sont éloignés l'un de l'autre. Mais l'image de deux cosmonautes tournant autour de la Terre en formation, se parlant, était exactement le genre de première que le programme était conçu pour produire.",
-  "type": "ORBITE TERRESTRE HABITÉE · VOLÉ",
-  "first": "Seconde moitié du premier vol double — premières communications entre deux vaisseaux habités",
-  "description": "Vol de 48 orbites de Pavel Popovitch, lancé le 1962-08-12 à 08:02 UTC, vingt-quatre heures après Vostok 3. Les deux capsules se rapprochèrent à environ 6,5 km et échangèrent les premières communications vocales radio entre cosmonautes en orbite. Popovitch reçut l'ordre de redescendre un jour plus tôt lorsque les contrôleurs au sol interprétèrent à tort une phrase codée sur le tonnerre comme le mot-clé de détresse pour une terminaison anticipée — il s'agissait en réalité d'une observation météorologique de routine. Atterrissage le 1962-08-15 à 07:59 UTC près de Karaganda, quatre minutes après Vostok 3.",
+  "type": "VOL SPATIAL HABITÉ · EFFECTUÉ",
+  "first": "Deuxième moitié du premier vol double — première communication entre deux engins spatiaux habités",
+  "dispatch": "Vostok 4 était la réponse à Vostok 3 — le deuxième engin du premier vol double, et le moment où deux humains dans deux engins spatiaux distincts se sont parlé pour la première fois en orbite. Pavel Popovich a décollé un jour après Nikolayev et s'est rapproché à environ six kilomètres et demi, assez près pour établir une communication radio directe, d'engin à engin, plutôt que par l'intermédiaire du sol. Comme son partenaire, il ne pouvait pas se manœuvrer pour maintenir la distance, si bien que les deux engins se sont écartés. Mais l'image de deux cosmonautes tournant autour de la Terre en formation, se parlant mutuellement, était exactement le type de première que le programme était conçu pour créer.",
+  "description": "Vol de 48 orbites de Pavel Popovich, lancé le 1962-08-12 08:02 UTC, vingt-quatre heures après Vostok 3. Les deux capsules se sont rapprochées à ~6,5 km et ont échangé les premières communications radio vocales entre cosmonautes en orbite. Popovich a reçu l'ordre de redescendre un jour plus tôt lorsque les contrôleurs au sol ont mal interprété une phrase codée au sujet du tonnerre comme le mot de code d'urgence pour terminer prématurément — le vrai signal était une observation météorologique de routine. Atterrissage le 1962-08-15 06:59 UTC près de Karaganda, sept minutes après Vostok 3.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Vostok-K from Baikonur Site 1 1962-08-12 08:02 UTC.",
+      "label": "LANCEMENT",
+      "note": "Vostok-K depuis le site 1 de Baïkonour 1962-08-12 08:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.001,
-      "label": "INTER-CRAFT VOICE",
-      "note": "First voice communication between two crewed spacecraft.",
+      "label": "COMMUNICATION INTERENGINS",
+      "note": "Première communication vocale entre deux engins spatiaux habités.",
       "type": "info"
     },
     {
       "met": 2.99,
-      "label": "EJECT + LAND",
-      "note": "Landed near Karaganda 1962-08-15 07:59 UTC.",
+      "label": "ÉJECTION + ATTERRISSAGE",
+      "note": "Atterrissage près de Karaganda 1962-08-15 06:59 UTC.",
       "type": "nominal"
     }
   ]

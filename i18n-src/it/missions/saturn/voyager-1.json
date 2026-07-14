@@ -1,14 +1,14 @@
 {
   "name": "Voyager 1",
-  "type": "Sorvolo · Effettuato",
-  "first": "L'oggetto umano più distante — attualmente a circa 165 UA dal Sole, nello spazio interstellare",
-  "dispatch": "Voyager 1 è l'oggetto più lontano che l'umanità abbia mai costruito, e ci è arrivata quasi per un caso di geometria. Un passaggio ravvicinato a Titano, la luna gigante di Saturno — scelto per motivi scientifici — ha piegato la sua traiettoria verso l'alto e fuori dal piano dei pianeti e l'ha puntata verso il confine del sistema solare, e da allora non ha mai smesso di salire. Durante il viaggio ha scoperto vulcani attivi su Io, i primi mai osservati al di fuori della Terra, e nel 1990 si è voltata indietro per scattare il Pale Blue Dot. Nel 2012 è diventata la prima macchina ad attraversare lo spazio interstellare. Sta ancora trasmettendo, con l'energia nucleare che si affievolisce, da una distanza più di cento volte quella tra la Terra e il Sole.",
-  "description": "Lanciata 16 giorni dopo Voyager 2, Voyager 1 ha viaggiato più veloce ed è arrivata per prima a Giove (1979) e Saturno (1980). Il sorvolo di Titano ha curvato la traiettoria fuori dal piano dell'eclittica, chiudendo il tour planetario ma instradandola sulla via più diretta verso l'eliopausa — che ha attraversato il 25-08-2012, il primo oggetto umano a entrare nello spazio interstellare. Da una distanza di circa 6 miliardi di km ha scattato il ritratto di famiglia Pale Blue Dot (14-02-1990), la foto su cui scrisse Carl Sagan. Entrambe le Voyager portano il Disco d'Oro come biglietto da visita dell'umanità.",
+  "type": "SORVOLO · COMPLETATO",
+  "first": "Oggetto più lontano creato dall'uomo — attualmente a ~170 AU dal Sole nello spazio interstellare",
+  "dispatch": "Voyager 1 è la cosa più lontana che l'umanità abbia mai creato, e ci è arrivata quasi per un caso di geometria. Un passaggio ravvicinato della luna gigante di Saturno, Titano — scelto per la scienza — ha piegato la sua traiettoria verso l'alto e fuori dal piano dei pianeti, puntandola verso il bordo del sistema solare, e da allora non ha smesso di salire. Nel percorso ha scoperto vulcani attivi su Io, i primi mai osservati al di fuori della Terra, e nel 1990 si è voltato indietro per scattare il Pale Blue Dot. Nel 2012 è diventato il primo manufatto umano a penetrare nello spazio interstellare. Continua ancora a trasmettere, alimentato da energia nucleare sempre più fioca, da più di cento volte la distanza della Terra dal Sole.",
+  "description": "Lanciato 16 giorni dopo Voyager 2, Voyager 1 ha volato più velocemente e ha raggiunto Giove per primo (1979) e Saturno per primo (1980). Il suo sorvolo di Titano ha piegato la traiettoria verso l'alto fuori dal piano dell'eclittica, terminando il tour planetario ma inviandolo sul percorso più diretto verso l'eliopausa — che ha attraversato il 2012-08-25, il primo manufatto umano a entrare nello spazio interstellare. Da una distanza eliocentrica di ~6 miliardi di km ha scattato il ritratto di famiglia Pale Blue Dot (1990-02-14), la fotografia di cui Carl Sagan ha scritto. Entrambi i Voyager portano il Golden Record come biglietto da visita dell'umanità.",
   "events": [
     {
       "met": 0,
       "label": "LANCIO",
-      "note": "Titan IIIE / Centaur solleva Voyager 1 da Cape Canaveral.",
+      "note": "Il razzo Titan IIIE / Centaur decolla con Voyager 1 da Cape Canaveral.",
       "type": "nominal"
     },
     {
@@ -19,8 +19,8 @@
     },
     {
       "met": 1164,
-      "label": "SORVOLI SATURNO + TITANO",
-      "note": "Il sorvolo di Titano ha curvato la traiettoria fuori dall'eclittica — nessun altro incontro planetario possibile.",
+      "label": "SORVOLI DI SATURNO E TITANO",
+      "note": "Il sorvolo di Titano ha piegato la traiettoria fuori dal piano dell'eclittica — nessun ulteriore incontro planetario possibile.",
       "type": "nominal"
     }
   ]

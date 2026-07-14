@@ -4,11 +4,11 @@
   "the_land": [
     {
       "type": "prose",
-      "md": "Tendo perdido a corrida para a Lua, a União Soviética mudou o jogo. Se não podia ser a primeira a pousar, seria a primeira a *permanecer* — a construir o primeiro posto onde humanos viveram e trabalharam em órbita, e a transformar sua vantagem conquistada com esforço em resistência numa presença permanente. Em abril de 1971, dois anos antes da Skylab americana, obteve sucesso: a Salyut 1 se tornou a primeira estação espacial da história. Foi o início de uma campanha de quinze anos que, mais do que qualquer outra, inventou a estação espacial como a entendemos hoje."
+      "md": "Tendo perdido a corrida para a Lua, a União Soviética mudou o jogo. Se não podia ser a primeira a pousar, seria a primeira a *permanecer* — a construir o primeiro posto avançado onde humanos viviam e trabalhavam em órbita, e a transformar sua vantagem conquistada com esforço em resistência numa presença permanente. Em abril de 1971, dois anos antes da Skylab americana, ela conseguiu: Salyut 1 se tornou a primeira estação espacial da história. Foi o início de uma campanha de quinze anos que, mais do que qualquer outra, inventou a estação espacial como a entendemos hoje."
     },
     {
       "type": "prose",
-      "md": "Mas 'Salyut' era uma história de fachada. Por trás do único nome de aparência civil corriam dois programas inteiramente separados que a União Soviética deliberadamente embaralhou. Um era genuinamente civil — as estações DOS, para ciência e voo espacial de longa duração. O outro era Almaz: estações secretas de reconhecimento militar, construídas por uma agência de projetos rival, portando câmeras enormes para fotografar o Ocidente e, em pelo menos uma, um canhão. Ambas voaram como 'Salyut' para que o mundo não pudesse distinguir qual era qual. Desembaraçar as duas é a maior parte da história."
+      "md": "Mas 'Salyut' era uma história de cobertura. Por trás do único nome de aparência civil corriam dois programas inteiramente separados que a União Soviética deliberadamente embaralhou. Um era genuinamente civil — as estações DOS, para ciência e voos espaciais de longa duração. O outro era Almaz: estações militares secretas de reconhecimento, construídas por um escritório de projetos rival, portando câmeras enormes para fotografar o Ocidente e um canhão — de fato testado em órbita em uma delas. Ambos voavam como 'Salyut' para que o mundo não pudesse distinguir qual era qual. Desembaralhar os dois é a maior parte da história."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/salyut-6/01"
       },
-      "caption": "Salyut 6, com naves acopladas em ambas as extremidades. Sua segunda porta de acoplamento foi o avanço decisivo: um cargueiro Progress podia reabastecer e ressuprimir a estação enquanto uma Soyuz tripulada permanecia acoplada — a inovação que transformou uma estação de um lugar que você visita em um lugar onde você pode ficar.",
+      "caption": "Salyut 6, com naves acopladas em ambas as extremidades. Sua segunda porta de acoplagem foi o avanço decisivo: um cargueiro Progress podia reabastecer e ressuprir a estação enquanto uma Soyuz tripulada permanecia acoplada — a inovação que transformou uma estação de um lugar que você visita num lugar onde você pode ficar.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "O objetivo civil era tornar a órbita habitável — estadias longas, ciência real e o prestígio da permanência. O objetivo militar, escondido dentro do mesmo programa, era reconhecimento tripulado: cosmonautas operando câmeras telescópicas para fotografar alvos militares abaixo, nos anos antes que satélites espiões automatizados tornassem os olhos humanos redundantes. Por uma década esses dois propósitos compartilharam um nome, um foguete e uma estrutura básica, e o público viu apenas um deles."
+      "md": "O objetivo civil era tornar a órbita habitável — estadias longas, ciência real e o prestígio da permanência. O objetivo militar, escondido dentro do mesmo programa, era reconhecimento tripulado: cosmonautas operando câmeras telescópicas para fotografar alvos militares abaixo, nos anos antes que satélites espiões automatizados tornassem olhos humanos redundantes. Por uma década esses dois propósitos compartilharam um nome, um foguete e uma estrutura básica, e o público viu apenas um deles."
     },
     {
       "type": "prose",
-      "md": "O prêmio técnico que ambos precisavam, e que levou anos para conquistar, era o ressuprimento. Uma estação que você não pode reabastecer ou reestocar é uma estação com data de validade — como a Skylab provaria. A conquista central de engenharia do programa Salyut foi resolver isso: o projeto de duas portas da Salyut 6 e 7, que permitia que um cargueiro Progress não tripulado acoplasse em uma extremidade e bombeasse propelente, ar, água, comida e equipamentos para a estação enquanto a Soyuz de uma tripulação permanecia acoplada na outra. Essa capacidade única é o que transformou a estação espacial de um experimento em uma instituição."
+      "md": "O prêmio técnico que ambos precisavam, e que levou anos para conquistar, era o ressuprimento. Uma estação que você não pode reabastecer ou reestocar é uma estação com data de validade — como Skylab provaria. A conquista central de engenharia do programa Salyut foi resolver isso: o projeto de duas portas da Salyut 6 e 7, que permitia que um cargueiro Progress não tripulado acoplasse numa extremidade e bombeasse propelente, ar, água, comida e equipamentos para dentro da estação enquanto a Soyuz de uma tripulação permanecia acoplada na outra. Essa única capacidade é o que transformou a estação espacial de um experimento numa instituição."
     }
   ],
   "outcome": [
@@ -35,30 +35,30 @@
       "image": {
         "reuse": "fleet/salyut-3/01"
       },
-      "caption": "Salyut 3 era, na verdade, Almaz — uma estação secreta de reconhecimento militar voada sob o nome civil 'Salyut' para esconder seu propósito. As estações Almaz portavam câmeras de longo alcance para fotografar o Ocidente, e uma disparou um canhão em órbita em teste.",
+      "caption": "Salyut 3 era, na verdade, Almaz — uma estação militar secreta de reconhecimento voada sob o nome civil 'Salyut' para esconder seu propósito. As estações Almaz portavam câmeras de longo alcance para fotografar o Ocidente, e uma testou o disparo de um canhão em órbita.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "O caminho até lá foi difícil e, no início, mortal. Salyut 1 foi um triunfo e depois uma catástrofe: sua primeira tripulação residente, a Soyuz 11, morreu durante o retorno quando uma válvula ventilou sua cabine para o vácuo, e a estação nunca foi ocupada novamente. Salyut 2 — a primeira Almaz — falhou em órbita e nunca foi tripulada. As estações intermediárias foram uma série mista de voos civis e militares, alguns interrompidos por falhas e emergências, cada um ensinando aos engenheiros um pouco mais sobre manter uma máquina e sua tripulação vivas por semanas."
+      "md": "O caminho até lá foi difícil e, no início, mortal. Salyut 1 foi um triunfo e depois uma catástrofe: sua primeira tripulação residente, Soyuz 11, morreu durante o retorno quando uma válvula ventilou sua cabine para o vácuo, e a estação nunca foi ocupada novamente. Salyut 2 — a primeira Almaz — falhou em órbita e nunca foi tripulada. As estações intermediárias foram uma sequência mista de voos civis e militares, alguns interrompidos por quebras e emergências, cada uma ensinando aos engenheiros um pouco mais sobre manter uma máquina e sua tripulação vivas por semanas."
     },
     {
       "type": "prose",
-      "md": "Então tudo se encaixou. Salyut 6 (1977) e Salyut 7 (1982), com suas duas portas e ressuprimento Progress, se tornaram as primeiras estações que podiam ser genuinamente habitadas — recebendo tripulação após tripulação em revezamento contínuo, estabelecendo recordes de resistência que ultrapassaram meio ano, e levando os primeiros cosmonautas convidados \"Interkosmos\" de todo o bloco soviético e além, as primeiras pessoas no espaço que não eram nem americanas nem soviéticas. Salyut 7 também produziu um dos grandes feitos da era: em 1985, depois que a estação abandonada silenciou, congelada e girando, dois cosmonautas subiram, acoplaram manualmente com o casco morto e o trouxeram de volta à vida manualmente — o trabalho de reparo mais difícil já tentado em órbita."
+      "md": "Então as coisas se encaixaram. Salyut 6 (1977) e Salyut 7 (1982), com suas duas portas e ressuprimento Progress, se tornaram as primeiras estações que podiam ser genuinamente habitadas — hospedando tripulação após tripulação em revezamento contínuo, estabelecendo recordes de resistência que ultrapassaram meio ano, e levando os primeiros cosmonautas convidados \"Interkosmos\" de todo o bloco soviético e além, as primeiras pessoas no espaço que não eram nem americanas nem soviéticas. Salyut 7 também produziu um dos grandes feitos da era: em 1985, depois que a estação abandonada silenciou, congelada e girando, dois cosmonautas subiram, acoplaram manualmente com o casco morto e o trouxeram de volta à vida manualmente — o trabalho de reparo mais difícil já tentado em órbita."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "O fio condutor da Salyut é o domínio incremental. Não houve uma única estação de avanço decisivo; houve sete, cada uma um pouco melhor que a anterior, e o gênio do programa foi voá-las em sucessão constante e aprender com cada falha. A primeira tripulação morreu; o programa consertou os trajes e voou novamente. Estações falharam em órbita; a seguinte resistiu. A acoplagem era pouco confiável; depois se tornou rotina. O ressuprimento era impossível; depois se tornou a espinha dorsal. Isto é o oposto da aposta tudo-ou-nada que afundou o N1 — uma escalada paciente e iterativa que transformou uma novidade mortal em infraestrutura comum."
+      "md": "O fio condutor da Salyut é o domínio incremental. Não houve uma única estação revolucionária; houve sete, cada uma um pouco melhor que a anterior, e o gênio do programa estava em voá-las em sucessão constante e aprender com cada falha. A primeira tripulação morreu; o programa consertou os trajes e voou de novo. Estações falharam em órbita; a próxima resistiu. A acoplagem era pouco confiável; depois se tornou rotina. O ressuprimento era impossível; depois se tornou a espinha dorsal. Isso é o oposto da aposta tudo-ou-nada que afundou o N1 — uma escalada paciente e iterativa que transformou uma novidade mortal em infraestrutura comum."
     },
     {
       "type": "prose",
-      "md": "A identidade dupla civil-militar é a característica mais estranha do programa e muito soviética. Duas agências rivais, dois propósitos, um único disfarce compartilhado — a abertura de uma estação científica e o sigilo de uma plataforma de espionagem operando sob o mesmo nome amigável, 'Salyut.' As estações militares Almaz foram discretamente aposentadas uma vez que satélites de reconhecimento automatizados superaram cosmonautas com câmeras, e a linha civil DOS continuou, mas por anos as duas foram deliberadamente impossíveis de distinguir, e analistas ocidentais gastaram esforço enorme adivinhando qual Salyut era qual."
+      "md": "A identidade dual civil-militar é a característica mais estranha do programa e muito soviética. Dois escritórios rivais, dois propósitos, um disfarce compartilhado — a abertura de uma estação científica e o segredo de uma plataforma de espionagem funcionando sob o mesmo nome amigável, 'Saudação'. As estações militares Almaz foram discretamente aposentadas uma vez que satélites de reconhecimento automatizados superaram cosmonautas com câmeras, e a linha civil DOS continuou, mas por anos as duas foram deliberadamente difíceis de distinguir, e analistas ocidentais gastaram esforço enorme tentando adivinhar qual Salyut era qual."
     },
     {
       "type": "prose",
-      "md": "Por volta da Salyut 6 e 7 o programa havia parado de ser sobre pioneirismo e começado a ser sobre permanência — ocupação contínua, tripulações internacionais, ressuprimento como rotina. Essa mudança, de visitar a órbita a habitá-la, é a conquista real da Salyut, e alimentou diretamente o que veio depois. O módulo central da Mir era, em essência, a próxima Salyut; os padrões operacionais que a Salyut estabeleceu — tripulações Soyuz, cargueiros Progress, expedições de longa duração — são exatamente como a International Space Station é operada hoje."
+      "md": "A partir da Salyut 6 e 7 o programa deixou de ser sobre primeiros lugares e começou a ser sobre permanência — ocupação contínua, tripulações internacionais, ressuprimento como rotina. Essa mudança, de visitar a órbita para habitá-la, é a verdadeira conquista da Salyut, e ela alimentou diretamente o que veio depois. O módulo central da Mir era, em essência, a próxima Salyut; os padrões operacionais que a Salyut estabeleceu — tripulações Soyuz, cargueiros Progress, expedições de longa duração — são exatamente como a Estação Espacial Internacional é operada hoje."
     }
   ],
   "legacy": [
@@ -67,26 +67,26 @@
       "image": {
         "reuse": "fleet/salyut-7/01"
       },
-      "caption": "Uma Salyut em escala real com uma Soyuz de transporte acoplada. O padrão estação-mais-transporte-mais-cargueiro que a Salyut desenvolveu ao longo de sete estações é, essencialmente inalterado, como a Mir e depois a International Space Station têm sido operadas desde então.",
+      "caption": "Uma Salyut em escala real com uma Soyuz de transporte acoplada. O padrão estação-mais-transporte-mais-cargueiro que a Salyut desenvolveu ao longo de sete estações é, essencialmente inalterado, como a Mir e depois a Estação Espacial Internacional vêm sendo operadas desde então.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "O legado da Salyut é a própria estação espacial — não como uma ideia, mas como um sistema funcional. Ao longo de sete estações e quinze anos o programa resolveu, um de cada vez, todos os problemas práticos de viver em órbita: acoplagem, ressuprimento, reabastecimento, rotação de tripulação, saúde de longa duração, reparo de emergência. A arquitetura a que chegou — um módulo central, tripulações entregues e retornadas por Soyuz, carga e propelente entregues por um cargueiro automatizado, ocupação medida em meses — foi herdada integralmente pela Mir e depois pela ISS. Ainda é o modelo."
+      "md": "O legado da Salyut é a própria estação espacial — não como uma ideia, mas como um sistema funcional. Ao longo de sete estações e quinze anos o programa resolveu, um por vez, cada problema prático de viver em órbita: acoplagem, ressuprimento, reabastecimento, rotação de tripulação, saúde de longa duração, reparo de emergência. A arquitetura a que chegou — um módulo central, tripulações entregues e retornadas pela Soyuz, carga e propelente entregues por um cargueiro automatizado, ocupação medida em meses — foi herdada integralmente pela Mir e depois pela ISS. Ainda é o modelo."
     },
     {
       "type": "prose",
-      "md": "Também construiu a expertise que tornou possível a cooperação pós-Guerra Fria. Na época em que a International Space Station foi concebida, a União Soviética e depois a Rússia haviam acumulado duas décadas de experiência incomparável em operações de estações de longa duração — experiência que os Estados Unidos, depois da Skylab, simplesmente não tinham. Esse desequilíbrio é grande parte da razão pela qual a ISS foi construída sobre um núcleo russo e doutrina operacional russa, e por que a Salyut, o programa nascido de perder a Lua, acabou moldando a estrutura humana mais ambiciosa já construída."
+      "md": "Também construiu a expertise que tornou a cooperação pós-Guerra Fria possível. Quando a Estação Espacial Internacional foi concebida, a União Soviética e depois a Rússia haviam acumulado duas décadas de experiência incomparável em operações de estações de longa duração — experiência que os Estados Unidos, depois da Skylab, simplesmente não tinham. Esse desequilíbrio é grande parte da razão pela qual a ISS foi construída sobre um núcleo russo e doutrina operacional russa, e por que a Salyut, o programa nascido de perder a Lua, acabou moldando a estrutura humana mais ambiciosa já construída."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "A lição central da Salyut é o poder da iteração paciente sobre a grande aposta única. Sete estações, cada uma melhorada a partir das falhas da anterior, transformaram um empreendimento que matou sua primeira tripulação em infraestrutura confiável — a mesma disciplina de apostar-pouco-e-aprender que tornou a Soyuz confiável, e a imagem espelhada da aposta tudo-de-uma-vez que destruiu o N1. Problemas difíceis cedem à iteração constante sobre um projeto estável muito mais confiavelmente do que a uma única tentativa heroica, e o programa de estações soviético é a prova mais clara disso."
+      "md": "A lição central da Salyut é o poder da iteração paciente sobre a grande aposta única. Sete estações, cada uma melhorada a partir das falhas da anterior, transformaram um empreendimento que matou sua primeira tripulação em infraestrutura confiável — a mesma disciplina de apostar-pouco-e-aprender que tornou a Soyuz confiável, e a imagem espelhada da aposta all-up que destruiu o N1. Problemas difíceis cedem à iteração constante sobre um projeto estável muito mais confiavelmente do que a uma única tentativa heroica, e o programa de estações soviético é a prova mais clara disso."
     },
     {
       "type": "prose",
-      "md": "A segunda lição é que o ressuprimento é o que torna uma estação real. Skylab, brilhante e efêmera, não podia ser reabastecida e morreu quando foi deixada sozinha. A insistência da Salyut em resolver o reabastecimento e o ressuprimento — a segunda porta de acoplagem, o cargueiro Progress — é exatamente o que permitiu que suas estações posteriores fossem ocupadas por anos em vez de semanas. Uma presença permanente no espaço não é uma questão de construir uma espaçonave maior; é uma questão de construir a cadeia logística sem glamour que mantém uma modesta continuamente viva."
+      "md": "A segunda lição é que o ressuprimento é o que torna uma estação real. Skylab, brilhante e efêmera, nunca foi ressuprimida ou reimpulsionada, e decaiu assim que foi deixada sozinha. A insistência da Salyut em resolver o reabastecimento e o ressuprimento — a segunda porta de acoplagem, o cargueiro Progress — é exatamente o que permitiu que suas estações posteriores fossem ocupadas por anos em vez de semanas. Uma presença permanente no espaço não é uma questão de construir uma espaçonave maior; é uma questão de construir a cadeia logística sem glamour que mantém uma modesta continuamente viva."
     }
   ]
 }

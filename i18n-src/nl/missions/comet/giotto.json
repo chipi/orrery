@@ -1,31 +1,31 @@
 {
   "name": "Giotto",
-  "type": "SCHEERVLUCHT · VOLTOOID",
-  "first": "ESA's eerste diepruimtemissie; dichtstbijzijnde komeetscheervlucht ooit gepoogd (Halley, 596 km, 1986)",
-  "description": "ESA-sonde die op 14-3-1986 op 596 km langs de kern van komeet Halley vloog — eerste close-upbeelden van een komeetkern. Na overwintering in zonneomloop werd Giotto in 1990 gereactiveerd en gebruikte een aardse zwaartekrachtassistentie om naar komeet Grigg-Skjellerup te navigeren, waar ze op 10-7-1992 op 200 km langs vloog — de dichtstbijzijnde komeetscheervlucht ooit uitgevoerd.",
+  "type": "VOORBIJVLUCHT · VOLTOOID",
+  "first": "ESA's eerste deep-space missie; dichtstbijzijnde kometvoorbijvlucht ooit ondernomen (Halley, 596 km, 1986); eerste close-up beeldvorming van een komeetkern",
+  "description": "Giotto was Europa's hoeksteen van de Halley-armada — een spingestabiliseerde 960 kg-sonde omwikkeld met een gelaagd Whipple-Kevlar stofschild. Gelanceerd 1985-07-02, vloog het door Halley's coma met een relatieve snelheid van 68 km/s op 1986-03-14 met dichtstbijzijnde benadering van 596 km, resulterend in de eerste close-up beelden van enig komeetkern (een onregelmatig 15 × 7,2 × 7,2 km langwerpig lichaam met geconcentreerde stofstralen). Een stofimpact ongeveer 7,6 seconden voor dichtstbijzijnde benadering destabiliseerde de spinas en schakelde de camera uit, maar de andere instrumenten bleven door de coma zenden. Na sluimering in heliocentrische baan, reactiveerde Giotto in 1990 + gebruikte aardse zwaartekrachtssteun om opnieuw gericht te worden op komeet 26P/Grigg-Skjellerup, voorbijvliegend op 200 km op 1992-07-10 — de dichtstbijzijnste komeetvoorbijvlucht ooit uitgevoerd.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "De Ariane 1 lanceert Giotto vanuit Kourou — ESA's eerste diepruimtemissie.",
+      "note": "Ariane 1 lanceert Giotto van Kourou — ESA's eerste deep-space missie.",
       "type": "nominal"
     },
     {
       "met": 255,
-      "label": "HALLEY-SCHEERVLUCHT",
-      "note": "596 km dichtste nadering tot komeet 1P/Halley; eerste close-upbeelden van een komeetkern.",
+      "label": "HALLEY VOORBIJVLUCHT",
+      "note": "596 km dichtstbijzijnde benadering tot komeet 1P/Halley; eerste close-up beeldvorming van een komeetkern.",
       "type": "nominal"
     },
     {
       "met": 1827,
-      "label": "AARDSCHEERVLUCHT",
-      "note": "Aardse zwaartekrachtassistentie navigeert Giotto naar komeet 26P/Grigg-Skjellerup.",
+      "label": "AARDE VOORBIJVLUCHT",
+      "note": "Aardse zwaartekrachtssteun richt Giotto opnieuw naar komeet 26P/Grigg-Skjellerup.",
       "type": "nominal"
     },
     {
       "met": 2565,
-      "label": "GRIGG-SKJELLERUP-SCHEERVLUCHT",
-      "note": "200 km dichtste nadering — de dichtstbijzijnde komeetscheervlucht in de records.",
+      "label": "GRIGG-SKJELLERUP VOORBIJVLUCHT",
+      "note": "200 km dichtstbijzijnde benadering — de dichtstbijzijnste komeetvoorbijvlucht ooit.",
       "type": "nominal"
     }
   ]

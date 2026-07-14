@@ -1,38 +1,38 @@
 {
   "name": "Apollo-Soyuz Test Project (ASTP)",
-  "dispatch": "Apollo-Soyuz marque la fin de la course à l'espace — non par une ligne d'arrivée, mais par une poignée de main. En juillet 1975, un Apollo américain et un Soyuz soviétique, vaisseaux rivaux des superpuissances rivales, se sont rencontrés et arrimés en orbite, et Tom Stafford et Alexei Leonov se sont serré la main à travers l'écoutille ouverte qui les séparait. Il a fallu un adaptateur d'amarrage construit conjointement, deux équipages apprenant la langue de l'autre, et un dégel de la Guerre froide suffisamment profond pour permettre aux concurrents les plus acharnés de l'époque de coopérer sous les yeux du monde entier. Rien de tout cela n'était strictement nécessaire ; c'était justement là l'essentiel. Après dix-huit ans de course pour être premier, les deux programmes ont choisi, le temps d'un vol, simplement de se rencontrer — et ont établi le modèle de la coopération internationale qui devait un jour construire la Station spatiale.",
-  "type": "ORBITE TERRESTRE HABITÉE · VOLÉ",
-  "first": "Première coopération internationale en vol spatial habité ; premier rendez-vous + amarrage US-URSS",
-  "description": "Le Apollo-Soyuz Test Project — premier vol spatial habité international, premier rendez-vous + amarrage US-URSS, et le dernier vol d'un CSM Apollo. Apollo (Stafford + Brand + Slayton) fut lancé le 15/07/1975 depuis LC-39B ; Soyouz 19 (Leonov + Koubassov) fut lancé le même jour depuis Baïkonour. Le module d'amarrage d'Apollo (construit par NASA + Rockwell) utilisait un nouvel anneau d'amarrage androgyne (APAS) permettant à l'un ou l'autre vaisseau d'être actif — le précurseur de tous les systèmes d'amarrage internationaux depuis (Mir, ISS, Tiangong, Dragon, Starliner). Ouverture de l'écoutille le 17/07/1975 vers 16h00 UTC ; les équipages ont échangé drapeaux, cadeaux et expériences conjointes à travers 4 séquences d'amarrage distinctes pendant 44 heures d'amarrage. Soyouz est rentré le 21/07/1975 ; Apollo a continué 5 jours supplémentaires en orbite avant l'amerrissage du 24/07/1975 — le dernier amerrissage d'Apollo de l'histoire. Le CSM-111 est exposé au California Science Center à LA (aux côtés d'Endeavour). La coopération de l'ère de la détente que l'ASTP a modelée a inspiré le programme Shuttle-Mir 20 ans plus tard.",
+  "type": "VOL HABITÉ EN ORBITE TERRESTRE · RÉALISÉ",
+  "first": "Première coopération spatiale humaine internationale ; premier rendez-vous + arrimage US-URSS",
+  "dispatch": "Apollo-Soyuz est l'endroit où la course spatiale s'achève — non pas sur une ligne d'arrivée, mais par une poignée de main. En juillet 1975, une capsule Apollo américaine et une Soyuz soviétique, les engins rivaux des superpuissances rivales, se sont rencontrés et arrimés en orbite, et Tom Stafford et Alexei Leonov se sont serré la main à travers le sas ouvert qui les séparait. Il a fallu un adaptateur d'arrimage construit conjointement, deux équipages apprenant la langue l'un de l'autre, et un dégel de la Guerre froide assez profond pour permettre aux plus féroces concurrents de l'époque de coopérer à la vue du monde entier. Rien ne l'y obligeait vraiment ; c'était justement le point. Après dix-huit ans de course pour être le premier, les deux programmes ont choisi, pour un vol seulement, simplement de se rencontrer — et ont établi le modèle de la coopération internationale qui un jour construirait la Station spatiale.",
+  "description": "Le Apollo-Soyuz Test Project — premier vol spatial habité international, premier rendez-vous et arrimage US-URSS, et dernier vol d'un module de commande Apollo (CSM). Apollo (Stafford + Brand + Slayton) a décollé le 1975-07-15 de LC-39B ; Soyuz 19 (Leonov + Kubasov) a décollé le même jour de Baïkonour. Le module d'arrimage d'Apollo (construit par la NASA et Rockwell) utilisait un nouvel anneau d'arrimage androgyne (APAS) qui permettait à l'un ou l'autre engin d'être actif — le précurseur de tous les systèmes d'arrimage internationaux depuis (Mir, ISS, Tiangong, Dragon, Starliner). Ouverture du sas le 1975-07-17 vers 16:00 UTC ; les équipages ont échangé des drapeaux, des cadeaux et des expériences conjointes au cours de 2 arrimages (premier le 17 juillet, entraînement le 19 juillet) totalisant environ 44 heures arrimées. Soyuz a atterri le 1975-07-21 ; Apollo a continué 5 jours supplémentaires en orbite avant amerrissage le 1975-07-24 — dernier amerrissage Apollo jamais. Le CSM-111 est exposé au California Science Center, LA (aux côtés d'Endeavour). La coopération de l'ère de la détente que modélisait ASTP a informé le programme Shuttle-Mir 20 ans plus tard.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH (Apollo)",
-      "note": "Saturn IB (AS-210) from LC-39B 1975-07-15 19:50 UTC. 7.5 h after Soyuz 19 (Baikonur 1975-07-15 12:20 UTC).",
+      "label": "DÉCOLLAGE (Apollo)",
+      "note": "Saturn IB (AS-210) de LC-39B 1975-07-15 à 19:50 UTC. 7,5 h après Soyuz 19 (Baïkonour 1975-07-15 à 12:20 UTC).",
       "type": "nominal"
     },
     {
       "met": 1.85,
-      "label": "DOCKING",
-      "note": "Apollo + Soyuz 19 dock 1975-07-17 16:09 UTC. First US-USSR rendezvous + dock. Hatch opens at 19:17 UTC; \"Glad to see you\" handshake.",
+      "label": "ARRIMAGE",
+      "note": "Apollo et Soyuz 19 s'arriment le 1975-07-17 à 16:09 UTC. Premier rendez-vous et arrimage US-URSS. Ouverture du sas à 19:17 UTC ; poignée de main Stafford–Leonov environ 3 heures plus tard (vers 22:19 UTC).",
       "type": "info"
     },
     {
       "met": 2,
-      "label": "JOINT OPS",
-      "note": "Flag + gift exchange; joint experiments; 4 dockings across 44 hours docked.",
+      "label": "OPS CONJOINTES",
+      "note": "Échange de drapeaux et cadeaux ; expériences conjointes ; 2 arrimages sur environ 44 heures arrimées.",
       "type": "nominal"
     },
     {
       "met": 3.8,
-      "label": "UNDOCK",
-      "note": "Final undock 1975-07-19 16:26 UTC. Soyuz 19 lands 1975-07-21 in Kazakhstan.",
+      "label": "DÉSARRIMAGE",
+      "note": "Désarrimage final le 1975-07-19 à 16:26 UTC. Soyuz 19 atterrit le 1975-07-21 au Kazakhstan.",
       "type": "nominal"
     },
     {
       "met": 9.06,
-      "label": "SPLASHDOWN (Apollo)",
-      "note": "Apollo splashed down in Pacific 1975-07-24 21:18 UTC — last Apollo splashdown ever. CSM-111 displayed at California Science Center LA.",
+      "label": "AMERRISSAGE (Apollo)",
+      "note": "Apollo a amerri dans le Pacifique le 1975-07-24 à 21:18 UTC — dernier amerrissage Apollo jamais, et dernier amerrissage spatial habité américain jusqu'à SpaceX Crew Dragon en 2020. CSM-111 exposé au California Science Center LA.",
       "type": "nominal"
     }
   ]

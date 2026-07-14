@@ -1,38 +1,38 @@
 {
-  "name": "アポロ・ソユーズテスト計画 (ASTP)",
-  "dispatch": "Apollo-Soyuzは宇宙開発競争の終着点である——ゴールラインではなく、握手によって。1975年7月、ライバル超大国のライバル宇宙船であるアメリカのApolloとソ連のSoyuzが軌道上で出会い、ドッキングし、Tom StaffordとAlexei Leonovが両者の間の開いたハッチを通して握手を交わした。それには、共同で建造されたドッキングアダプター、互いの言語を学ぶ2組のクルー、そして当時の最も熾烈な競争相手たちが世界中の注視の中で協力できるほど深い冷戦の雪解けが必要だった。そのどれも厳密には必要ではなかった——それこそが要点だった。18年間の先陣争いの後、両プログラムは1回の飛行において、ただ出会うことを選んだ——そしていつの日か宇宙ステーションを建設することになる国際協力の雛形を確立したのである。",
-  "type": "有人地球周回 · 飛行済み",
-  "first": "初の国際有人宇宙飛行協力；初の米ソランデブー＋ドッキング",
-  "description": "アポロ・ソユーズテスト計画 — 初の国際有人宇宙飛行、初の米ソランデブー＋ドッキング、そしてアポロCSMの最終飛行。アポロ (スタッフォード+ブランド+スレイトン) は1975年7月15日にLC-39Bから打ち上げ；ソユーズ19号 (レオーノフ+クバソフ) は同日バイコヌールから打ち上げ。アポロのドッキングモジュール (NASA + ロックウェル製) は、どちらの宇宙船もアクティブになれる新しいアンドロジナスドッキングリング (APAS) を採用 — その後のすべての国際ドッキングシステム (ミール、ISS、天宮、ドラゴン、スターライナー) の先駆け。ハッチオープンは1975年7月17日 ~16:00 UTC；乗組員は44時間のドッキング中に4回の別々のドッキングシーケンスを通じて旗、贈り物、共同実験を交換した。ソユーズは1975年7月21日に帰還；アポロは1975年7月24日の着水まで軌道上で5日間継続 — 史上最後のアポロ着水。CSM-111はLAのカリフォルニア科学センター (エンデバーと並んで) に展示されている。ASTPがモデル化したデタント時代の協力は、20年後のシャトル・ミール計画に影響を与えた。",
+  "name": "Apollo-Soyuz Test Project (ASTP)",
+  "type": "有人地球周回軌道ミッション · 実施済み",
+  "first": "初の国際人類宇宙飛行協力; 初の米ソ宇宙会合とドッキング",
+  "dispatch": "Apollo-Soyuzは宇宙競争の終焉である — ゴールラインではなく、握手によってだ。1975年7月、ライバル超大国のライバル宇宙船であるアメリカのApolloとソビエトのSoyuzが軌道で出会い、ドッキングし、Tom StaffordとAlexei Leonovは開いたハッチを通して握手を交わした。それには共同で建設されたドッキングアダプター、互いの言語を学ぶ2つのクルー、そして時代の最大のライバル企業が世界中の眼前で協力できるほどの冷戦の緩和が必要だった。それに厳密な必要性はなかった。それが要点だった。18年間、最初になることを競い合った後、2つのプログラムはひとつのフライトのために単に出会うことを選んだ — そしてやがて宇宙ステーションを建設する国際協力のテンプレートを設定した。",
+  "description": "Apollo-Soyuz Test Project — 初の国際有人宇宙飛行、初の米ソ宇宙会合とドッキング、そしてApollo CSMの最後のフライト。Apollo（Stafford + Brand + Slayton）は1975-07-15にLC-39Bから打ち上げられた。Soyuz 19（Leonov + Kubasov）は同じ日にBaikonurから打ち上げられた。Apolloのドッキングモジュール（NASAとRockwellにより製造）は、どちらの宇宙船もアクティブになれるようにした新しいアンドロジナスドッキングリング(APAS)を使用した — 以来のすべての国際ドッキングシステムの前身（Mir、ISS、Tiangong、Dragon、Starliner）。ハッチ開放1975-07-17 ~16:00 UTC。クルーは2つのドッキング（初回7月17日、練習用7月19日）を通じて旗、ギフト、共同実験を交換し、計~44時間ドッキングしていた。Soyuzは1975-07-21に帰還した。Apolloはさらに軌道上で5日間続行した後、1975-07-24に溅着した — 最後のApollo溅着である。CSM-111はカリフォルニア科学センター（LA）に展示されている（Endeavourと並んで）。ASTPが示した緩和時代の協力は、20年後のShuttle-Mirプログラムに影響を与えた。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH (Apollo)",
-      "note": "Saturn IB (AS-210) from LC-39B 1975-07-15 19:50 UTC. 7.5 h after Soyuz 19 (Baikonur 1975-07-15 12:20 UTC).",
+      "label": "打ち上げ（Apollo）",
+      "note": "Saturn IB (AS-210) from LC-39B 1975-07-15 19:50 UTC。Soyuz 19（Baikonur 1975-07-15 12:20 UTC）の7.5時間後。",
       "type": "nominal"
     },
     {
       "met": 1.85,
-      "label": "DOCKING",
-      "note": "Apollo + Soyuz 19 dock 1975-07-17 16:09 UTC. First US-USSR rendezvous + dock. Hatch opens at 19:17 UTC; \"Glad to see you\" handshake.",
+      "label": "ドッキング",
+      "note": "Apollo + Soyuz 19 dock 1975-07-17 16:09 UTC。初の米ソ宇宙会合とドッキング。ハッチ開放 19:17 UTC。Stafford–Leonov握手 ~3時間後（~22:19 UTC）。",
       "type": "info"
     },
     {
       "met": 2,
-      "label": "JOINT OPS",
-      "note": "Flag + gift exchange; joint experiments; 4 dockings across 44 hours docked.",
+      "label": "共同運用",
+      "note": "旗およびギフト交換。共同実験。2つのドッキング、計~44時間ドッキング中。",
       "type": "nominal"
     },
     {
       "met": 3.8,
-      "label": "UNDOCK",
-      "note": "Final undock 1975-07-19 16:26 UTC. Soyuz 19 lands 1975-07-21 in Kazakhstan.",
+      "label": "アンドック",
+      "note": "最後のアンドック 1975-07-19 16:26 UTC。Soyuz 19 lands 1975-07-21 in Kazakhstan.",
       "type": "nominal"
     },
     {
       "met": 9.06,
-      "label": "SPLASHDOWN (Apollo)",
-      "note": "Apollo splashed down in Pacific 1975-07-24 21:18 UTC — last Apollo splashdown ever. CSM-111 displayed at California Science Center LA.",
+      "label": "溅着（Apollo）",
+      "note": "Apollo splashed down in Pacific 1975-07-24 21:18 UTC — 最後のApollo溅着、そして2020年のSpaceX Crew Dragonまで米国有人水面着陸がなかった。CSM-111はカリフォルニア科学センターLAに展示されている。",
       "type": "nominal"
     }
   ]

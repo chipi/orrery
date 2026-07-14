@@ -1,14 +1,14 @@
 {
-  "title": "∆v-warmtekaart",
-  "intro_sentence": "De kleurenschaal die ∆v-getallen omzet in een plaatje dat je in één oogopslag kunt lezen.",
+  "title": "∆v Heatmap",
+  "intro_sentence": "De kleurschaal die ∆v-waarden omzet in een afbeelding die je in één oogopslag kunt lezen.",
   "narrative_101": [
-    "Het hele punt van een porkchop-plot zijn de kleuren. Getallen in een enorm raster zouden je hetzelfde vertellen, maar je zou de patronen niet kunnen zien. Dus kleuren we elke cel — koel turquoise voor goedkope trajecten, geel voor grensgevallen, oranje en rood voor hopeloos dure. Patroonherkenning neemt het over van rekenen.",
-    "Koel turquoise zit rond 3 km/s aan ∆v — wat een echte Hohmann naar Mars kost. Blauw rond 5 km/s — betaalbaar, iets snellere reizen. Geel rond 7 km/s — wordt duur, je betaalt voor snelheid. Oranje en rood boven 9 km/s — je hebt het domein verlaten van wat huidige raketten praktisch kunnen leveren. De kleur-naar-kosten-mapping is consistent over alle porkchops in /plan.",
-    "Als je over een cel beweegt, zie je de exacte ∆v in km/s, maar het visuele verhaal is de oogtruc die porkchops onmisbaar maakt. Je kunt de grafiek in één seconde scannen en weten of een bestemming bereikbaar is, wanneer de vensters zijn, en wat de afwegingen kosten. Geen formule doet dat."
+    "Het hele doel van een porkchop-plot zijn de kleuren. Getallen in een reuzenraster zouden je hetzelfde vertellen, maar je kon de patronen niet zien. Dus verven we elke cel — koel cyaan voor goedkope trajecten, geel voor grensgeval, oranje en rood voor hopeloos duur. Patroonherkenning neemt het over van rekenkunde.",
+    "Koel cyaan zit rond de 3 km/s ∆v — de vertrekverbrandingsmanoeuvre vanuit LEO voor een Hohmann-achtige transfer naar Mars (trans-Mars injectie). Blauw rond 5 km/s — betaalbaar, iets snellere reizen. Geel rond 7 km/s — wordt duur, je betaalt voor snelheid. Oranje en rood boven 9 km/s — je bent het bereik verlaten van wat huidige raketten praktisch kunnen leveren. De kleur-naar-kosten-toewijzing is consistent over alle porkchops in /plan.",
+    "Als je over een cel beweegt, zie je de exacte ∆v in km/s, maar het visuele verhaal is de optische truc die porkchops onmisbaar maakt. Je kunt de grafiek in één seconde scannen en weten of een bestemming bereikbaar is, wanneer de vensters zijn, en wat de afwegingen kosten. Geen formule doet dat."
   ],
   "body_paragraphs": [
-    "Koel turquoise zit bij lage ∆v (~3 km/s) — het natuurlijke Hohmann-minimum. Blauw bij ~5 km/s. Geel rond 7 km/s — de drempel van duur. Oranje en rood boven 9 km/s — ontspoorde-kosten-cellen, waar je een SLS-klasse-lanceervehicle nodig zou hebben om de wiskunde überhaupt rond te krijgen.",
-    "Orrery's schaal eindigt rond 11+ km/s. Alles daarbuiten wordt weergegeven als het diepste rood omdat in de praktijk geen enkel huidig lanceervehicle de payload tegen die ∆v-kosten kan leveren. Voyager 1 lanceerde met C3 ≈ 99 km²/s² (V∞ ≈ 10 km/s) — al bijna aan de limiet van wat vliegbaar was in 1977.",
-    "Op `/plan` kun je over elke cel bewegen om de exacte ∆v in km/s te zien. De warmtekaart is een visualisatie van het antwoord; de celwaarde is het antwoord zelf."
+    "Koel cyaan zit bij lage ∆v (~3 km/s) — het minimale vertrekverbrandingsminimum voor een Mars-achtige Hohmann (dit is de trans-Mars injectie ∆v vanuit LEO, niet de totale missie ∆v). Blauw bij ~5 km/s. Geel rond 7 km/s — de drempel van duur. Oranje en rood boven 9 km/s — runaway-cost cellen, waar je een SLS-class lanceervoertuig nodig zou hebben om de wiskunde nog net sluitend te maken.",
+    "De schaal van Orrery loopt op tot ongeveer 11+ km/s. Alles daarboven wordt weergegeven als het diepste rood omdat in de praktijk geen huidig lanceervoertuig de lading op die ∆v-kosten kan leveren. Voyager 1 is een voorbeeld van het verre-rode uiteinde: het vertrek van de Aarde vereiste een karakteristieke energie C3 ≈ 100 km²/s² (opmerking: C3 is V∞ in het kwadraat, dus C3 en ∆v zitten op verschillende schalen — √100 km²/s² ≈ 10 km/s hyperbolisch overschot). Omzetting naar een vertrek ∆v vanuit LEO plaatst Voyager 1 boven 7 km/s — al dicht bij de limiet van wat een Titan IIIE/Centaur in 1977 kon leveren.",
+    "Op `/plan` kun je over elke cel bewegen om de exacte ∆v in km/s te zien. De heatmap is een visualisatie van het antwoord; de celwaarde is het antwoord zelf."
   ]
 }

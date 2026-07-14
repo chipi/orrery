@@ -1,14 +1,14 @@
 {
   "name": "Salyut",
-  "tagline": "'s Werelds eerste ruimtestations — twee geheime programma's verborgen onder één naam, een zwaar en soms dodelijk decennium van leren leven in een baan om de aarde, en de directe voorouder van elk station sindsdien.",
+  "tagline": "'s Werelds eerste ruimtestations — twee geheime programma's verborgen onder één naam, een hard en soms dodelijk decennium van leren leven in een baan, en de directe voorouder van elk station sindsdien.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Na de race naar de maan te hebben verloren, veranderde de Sovjet-Unie het spel. Als het niet de eerste kon zijn om te landen, zou het de eerste zijn om te *blijven* — om de eerste buitenpost te bouwen waar mensen leefden en werkten in een baan om de aarde, en om zijn zwaarbevochten voorsprong in uithoudingsvermogen om te zetten in een permanente aanwezigheid. In april 1971, twee jaar voor het Amerikaanse Skylab, slaagde het daarin: Salyut 1 werd het eerste ruimtestation in de geschiedenis. Het was het begin van een vijftienjarige campagne die, meer dan enig ander, het ruimtestation uitvond zoals wij het nu kennen."
+      "md": "Na het verliezen van de race naar de Maan, veranderde de Sovjet-Unie het spel. Als het niet als eerste kon landen, zou het als eerste *blijven* — het eerste buitenpost bouwen waar mensen in een baan leefden en werkten, en zijn hard bevochten voorsprong in uithoudingsvermogen omzetten in een permanente aanwezigheid. In april 1971, twee jaar voor Amerika's Skylab, slaagde het: Salyut 1 werd het eerste ruimtestation in de geschiedenis. Het was het begin van een vijftienjarige campagne die, meer dan enige andere, het ruimtestation uitvond zoals wij het nu begrijpen."
     },
     {
       "type": "prose",
-      "md": "Maar 'Salyut' was een dekmantel. Achter de enkele civiel klinkende naam liepen twee volledig gescheiden programma's die de Sovjet-Unie bewust met elkaar verwarde. Eén was werkelijk civiel — de DOS-stations, voor wetenschap en ruimtevluchten van lange duur. Het andere was Almaz: geheime militaire verkenningsstations, gebouwd door een rivaliserende ontwerpbureau, met enorme camera's om het Westen te fotograferen en, op ten minste één ervan, een kanon. Beide vlogen als 'Salyut' zodat de wereld niet kon zien welke welke was. Het ontwarren van de twee is het grootste deel van het verhaal."
+      "md": "Maar 'Salyut' was een dekmantel. Achter de enkele civiel klinkende naam liepen twee volledig gescheiden programma's die de Sovjet-Unie bewust door elkaar haalde. Eén was echt civiel — de DOS-stations, voor wetenschap en langdurige ruimtevaart. Het andere was Almaz: geheime militaire verkenningsstations, gebouwd door een rivaliserende ontwerpbureau, met enorme camera's om het Westen te fotograferen en een kanon — daadwerkelijk testgevuurd in een baan op één ervan. Beiden vlogen als 'Salyut' zodat de wereld niet kon onderscheiden welke welke was. Het ontwarren van de twee is het grootste deel van het verhaal."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/salyut-6/01"
       },
-      "caption": "Salyut 6, met vaartuigen aangemeerd aan beide uiteinden. Zijn tweede koppelpoort was de doorbraak: een Progress-vrachtschip kon het station bijtanken en bevoorraden terwijl een bemande Soyuz aangekoppeld bleef — de innovatie die een station veranderde van een plek die je bezoekt in een plek waar je kunt blijven.",
+      "caption": "Salyut 6, met vaartuigen gekoppeld aan beide uiteinden. Zijn tweede koppelpoort was de doorbraak: een Progress-vrachtschip kon het station bijtanken en herbevoorraden terwijl een bemande Soyuz gekoppeld bleef — de innovatie die een station veranderde van een plek die je bezoekt in een plek waar je kunt blijven.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Het civiele doel was om de baan bewoonbaar te maken — lange verblijven, echte wetenschap, en het prestige van permanentie. Het militaire doel, verborgen binnen hetzelfde programma, was bemande verkenning: kosmonauten die telescopische camera's bedienen om militaire doelen beneden te fotograferen, in de jaren voordat geautomatiseerde spionagesatellieten menselijke ogen overbodig maakten. Gedurende een decennium deelden deze twee doeleinden een naam, een raket en een basis-romp, en het publiek zag er slechts één van."
+      "md": "Het civiele doel was om een baan bewoonbaar te maken — lange verblijven, echte wetenschap, en het prestige van permanentie. Het militaire doel, verborgen binnen hetzelfde programma, was bemande verkenning: kosmonauten die telescopische camera's bedienden om militaire doelen beneden te fotograferen, in de jaren voordat geautomatiseerde spionagesatellieten menselijke ogen overbodig maakten. Gedurende een decennium deelden deze twee doeleinden een naam, een raket, en een basis-constructie, en het publiek zag er maar één van."
     },
     {
       "type": "prose",
-      "md": "De technische prijs die beide nodig hadden, en die jaren kostte om te winnen, was bevoorrading. Een station dat je niet kunt bijtanken of aanvullen is een station met een vervaldatum — zoals Skylab zou bewijzen. De centrale technische prestatie van het Salyut-programma was dit op te lossen: het ontwerp met twee poorten van Salyut 6 en 7, waardoor een onbemand Progress-vrachtschip aan het ene uiteinde kon aanmeren en brandstof, lucht, water, voedsel en uitrusting in het station kon pompen terwijl de Soyuz van een bemanning aan het andere uiteinde aangekoppeld bleef. Die enkele mogelijkheid is wat het ruimtestation veranderde van een experiment in een instituut."
+      "md": "De technische prijs die beiden nodig hadden, en die jaren kostte om te winnen, was herbevoorrading. Een station dat je niet kunt bijtanken of herbevoorraden is een station met een vervaldatum — zoals Skylab zou bewijzen. De centrale technische prestatie van het Salyut-programma was het oplossen daarvan: het ontwerp met twee poorten van Salyut 6 en 7, dat een onbemand Progress-vrachtschip aan het ene uiteinde liet koppelen en brandstof, lucht, water, voedsel en uitrusting in het station liet pompen terwijl de Soyuz van een bemanning aan het andere uiteinde gekoppeld bleef. Die enkele capaciteit is wat het ruimtestation veranderde van een experiment in een instituut."
     }
   ],
   "outcome": [
@@ -35,30 +35,30 @@
       "image": {
         "reuse": "fleet/salyut-3/01"
       },
-      "caption": "Salyut 3 was, in werkelijkheid, Almaz — een geheim militair verkenningsstation dat onder de civiele 'Salyut'-naam vloog om zijn doel te verbergen. De Almaz-stations droegen langebrandpuntcamera's om het Westen te fotograferen, en één vurmde ter test een kanon af in een baan om de aarde.",
+      "caption": "Salyut 3 was, in werkelijkheid, Almaz — een geheim militair verkenningsstation gevlogen onder de civiele 'Salyut'-naam om zijn doel te verbergen. De Almaz-stations droegen langefocuscamera's om het Westen te fotograferen, en één testte een kanon af in een baan.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "De weg erheen was zwaar en, in het begin, dodelijk. Salyut 1 was een triomf en daarna een catastrofe: zijn eerste vaste bemanning, Soyuz 11, stierf tijdens hun terugkeer toen een klep hun cabine naar vacuüm ventileerde, en het station werd nooit meer bezet. Salyut 2 — de eerste Almaz — faalde in een baan om de aarde en werd nooit bemand. De middelste stations waren een gemengde reeks van civiele en militaire vluchten, sommige voortijdig afgebroken door defecten en noodsituaties, elk eentje leerde de ingenieurs weer iets meer over het in leven houden van een machine en zijn bemanning gedurende weken achter elkaar."
+      "md": "De weg ernaar toe was hard en, in het begin, dodelijk. Salyut 1 was een triomf en vervolgens een catastrofe: zijn eerste residente bemanning, Soyuz 11, stierf tijdens hun terugkeer toen een klep hun cabine naar vacuüm ventileerde, en het station werd nooit meer bewoond. Salyut 2 — de eerste Almaz — faalde in een baan en werd nooit bemand. De middelste stations waren een gemengde reeks van civiele en militaire vluchten, sommige afgebroken door storingen en noodsituaties, elk leerde de ingenieurs een beetje meer over het in leven houden van een machine en zijn bemanning gedurende weken achtereen."
     },
     {
       "type": "prose",
-      "md": "Toen kwam het samen. Salyut 6 (1977) en Salyut 7 (1982), met hun twee poorten en Progress-bevoorrading, werden de eerste stations waar werkelijk in geleefd kon worden — bemanningen achtereenvolgens ontvangende in continue afwisseling, uithoudingsrecords vestigend die meer dan een half jaar overschreden, en dragend van de eerste \"Interkosmos\"-gastkosmonauten uit het hele Sovjetblok en daarbuiten, de eerste mensen in de ruimte die noch Amerikaans noch Sovjet waren. Salyut 7 leverde ook een van de grote prestaties van het tijdperk: in 1985, nadat het verlaten station stil viel, bevroren en tuimelend, vlogen twee kosmonauten omhoog, koppelden handmatig aan met de dode romp, en brachten het met de hand weer tot leven — de moeilijkste reparatieklus ooit geprobeerd in een baan om de aarde."
+      "md": "Toen kwam het samen. Salyut 6 (1977) en Salyut 7 (1982), met hun twee poorten en Progress-herbevoorrading, werden de eerste stations waarin echt geleefd kon worden — bemanningen na bemanningen in doorlopende aflossing, uithoudingsrecords die voorbij het halve jaar klommen, en met de eerste \"Interkosmos\"-gastkosmonauten uit het hele Sovjetblok en daarbuiten, de eerste mensen in de ruimte die noch Amerikaans noch Sovjet waren. Salyut 7 produceerde ook een van de grote prestaties uit het tijdperk: in 1985, nadat het verlaten station stil viel, bevroren en tuimelend, vlogen twee kosmonauten naar boven, koppelden handmatig met het dode wrak, en brachten het met de hand terug tot leven — de moeilijste reparatieklus ooit geprobeerd in een baan."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "De rode draad van Salyut is incrementele beheersing. Er was geen enkel doorbraakstation; er waren zeven, elk een beetje beter dan de vorige, en het genie van het programma lag in het achtereenvolgens vliegen ervan en het leren van elke mislukking. De eerste bemanning stierf; het programma repareerde de pakken en vloog opnieuw. Stations faalden in een baan om de aarde; de volgende hield stand. Koppeling was onbetrouwbaar; daarna was het routine. Bevoorrading was onmogelijk; daarna was het de ruggengraat. Dit is het tegenovergestelde van de alles-of-niets-gok die de N1 deed zinken — een geduldige, iteratieve klim die een dodelijke nieuwigheid veranderde in gewone infrastructuur."
+      "md": "De rode draad van Salyut is incrementeel meesterschap. Er was geen enkel doorbraakstation; er waren er zeven, elk een beetje beter dan de vorige, en het genie van het programma zat in het vliegen ervan in gestage opeenvolging en het leren van elke mislukking. De eerste bemanning stierf; het programma verbeterde de pakken en vloog opnieuw. Stations faalden in een baan; de volgende hield stand. Koppelen was onbetrouwbaar; toen was het routine. Herbevoorrading was onmogelijk; toen was het de ruggengraat. Dit is het tegenovergestelde van de alles-of-niets-gok die de N1 deed zinken — een geduldige, iteratieve klim die een dodelijke nieuwigheid veranderde in gewone infrastructuur."
     },
     {
       "type": "prose",
-      "md": "De dubbele civiel-militaire identiteit is het vreemdste kenmerk van het programma en een zeer Sovjet-kenmerk. Twee rivaliserende bureaus, twee doeleinden, één gedeelde vermomming — de openheid van een wetenschapsstation en de geheimhouding van een spionageplatform die onder dezelfde vriendelijke naam draaiden, 'Saluut.' De Almaz-militaire stations werden stilletjes met pensioen gestuurd zodra geautomatiseerde verkenningssatellieten beter presteerden dan kosmonauten met camera's, en de civiele DOS-lijn ging verder, maar jarenlang waren de twee bewust onmogelijk uit elkaar te houden, en westerse analisten spendeerden enorme inspanningen aan het raden welke Salyut welke was."
+      "md": "De dubbele civiel-militaire identiteit is het vreemdste kenmerk van het programma en een zeer Sovjet-kenmerk. Twee rivaliserende bureaus, twee doeleinden, één gedeelde vermomming — de openheid van een wetenschapsstation en de geheimhouding van een spionageplatform onder dezelfde vriendelijke naam, 'Salute'. De Almaz-militaire stations werden stilletjes teruggetrokken zodra geautomatiseerde verkenningssatellieten kosmonauten met camera's overtroffen, en de civiele DOS-lijn ging verder, maar jarenlang waren de twee bewust moeilijk uit elkaar te houden, en westerse analisten besteedden enorme moeite aan het raden welke Salyut welke was."
     },
     {
       "type": "prose",
-      "md": "Tegen Salyut 6 en 7 was het programma gestopt met gaan over primeurs en begonnen met gaan over permanentie — continue bezetting, internationale bemanningen, bevoorrading als routine. Die verschuiving, van het bezoeken van een baan om de aarde naar het bewonen ervan, is de werkelijke prestatie van Salyut, en die stroomde rechtstreeks door in wat daarna kwam. De kernmodule van Mir was, in essentie, de volgende Salyut; de operationele patronen die Salyut vestigde — Soyuz-bemanningen, Progress-vrachtschepen, expedities van lange duur — zijn precies hoe het International Space Station vandaag wordt gerund."
+      "md": "Tegen Salyut 6 en 7 was het programma gestopt met over primeurs gaan en begon het over permanentie te gaan — doorlopende bezetting, internationale bemanningen, herbevoorrading als routine. Die verschuiving, van het bezoeken van een baan naar het bewonen ervan, is de werkelijke prestatie van Salyut, en het voedde direct in wat daarna kwam. Mir's kernmodule was, in essentie, de volgende Salyut; de operationele patronen die Salyut vaststelde — Soyuz-bemanningen, Progress-vrachtschepen, langdurige expedities — zijn precies hoe het International Space Station vandaag wordt beheerd."
     }
   ],
   "legacy": [
@@ -67,26 +67,26 @@
       "image": {
         "reuse": "fleet/salyut-7/01"
       },
-      "caption": "Een volledige Salyut met een aangekoppelde Soyuz-veerboot. Het station-plus-veerboot-plus-vrachtschip-patroon dat Salyut over zeven stations uitwerkte is, in essentie onveranderd, hoe Mir en daarna het International Space Station sindsdien zijn geëxploiteerd.",
+      "caption": "Een volledige Salyut met een Soyuz-veerboot gekoppeld. Het station-plus-veerboot-plus-vrachtschip-patroon dat Salyut uitwerkte over zeven stations is, in essentie onveranderd, hoe Mir en vervolgens het International Space Station sindsdien zijn beheerd.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "De erfenis van Salyut is het ruimtestation zelf — niet als idee maar als werkend systeem. Over zeven stations en vijftien jaar loste het programma, één voor één, elk praktisch probleem van het leven in een baan om de aarde op: koppeling, bevoorrading, bijtanken, bemanningsrotatie, gezondheid bij lange duur, noodreparatie. De architectuur waar het bij uitkwam — een kernmodule, bemanningen afgeleverd en teruggebracht door Soyuz, lading en brandstof afgeleverd door een geautomatiseerd vrachtschip, bezetting gemeten in maanden — werd geheel geërfd door Mir en daarna door het ISS. Het is nog steeds het sjabloon."
+      "md": "Salyut's erfenis is het ruimtestation zelf — niet als idee maar als werkend systeem. Over zeven stations en vijftien jaar loste het programma, één voor één, elk praktisch probleem van het leven in een baan op: koppelen, herbevoorrading, bijtanken, bemanningsrotatie, langdurige gezondheid, noodreparatie. De architectuur waar het op uitkwam — een kernmodule, bemanningen gebracht en teruggebracht door Soyuz, lading en brandstof gebracht door een geautomatiseerd vrachtschip, bezetting gemeten in maanden — werd volledig geërfd door Mir en vervolgens door het ISS. Het is nog steeds het sjabloon."
     },
     {
       "type": "prose",
-      "md": "Het bouwde ook de expertise die samenwerking na de Koude Oorlog mogelijk maakte. Tegen de tijd dat het International Space Station werd bedacht, hadden de Sovjet-Unie en daarna Rusland twee decennia aan ongeëvenaarde ervaring opgebouwd in stationoperaties van lange duur — ervaring die de Verenigde Staten, na Skylab, simpelweg niet hadden. Die onbalans is een groot deel van de reden waarom het ISS werd gebouwd op een Russische kern en Russische operationele doctrine, en waarom Salyut, het programma geboren uit het verliezen van de maan, uiteindelijk de meest ambitieuze menselijke constructie ooit gebouwd vorm gaf."
+      "md": "Het bouwde ook de expertise die post-Koude-Oorlog-samenwerking mogelijk maakte. Tegen de tijd dat het International Space Station werd bedacht, had de Sovjet-Unie en vervolgens Rusland twee decennia aan ongeëvenaarde ervaring in langdurige stationoperaties verzameld — ervaring die de Verenigde Staten, na Skylab, simpelweg niet hadden. Die onevenwichtigheid is een groot deel van waarom het ISS werd gebouwd op een Russische kern en Russische operationele doctrine, en waarom Salyut, het programma geboren uit het verliezen van de Maan, uiteindelijk de meest ambitieuze menselijke structuur ooit gebouwd vorm gaf."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "De centrale les van Salyut is de kracht van geduldige iteratie boven de enkele grote gok. Zeven stations, elk verbeterd uit de mislukkingen van de vorige, veranderden een onderneming die zijn eerste bemanning doodde in betrouwbare infrastructuur — dezelfde klein-wedden-en-leren-discipline die Soyuz betrouwbaar maakte, en het spiegelbeeld van de alles-tegelijk-gok die de N1 vernietigde. Moeilijke problemen geven toe aan gestage iteratie op een stabiel ontwerp veel betrouwbaarder dan aan een enkele heroïsche poging, en het Sovjet-stationprogramma is daar het duidelijkste bewijs van."
+      "md": "Salyut's centrale les is de kracht van geduldige iteratie boven de enkele grote gok. Zeven stations, elk verbeterd uit de mislukkingen van de vorige, veranderde een onderneming die zijn eerste bemanning doodde in betrouwbare infrastructuur — dezelfde klein-wedden-en-leren-discipline die Soyuz betrouwbaar maakte, en het spiegelbeeld van de alles-in-één-gok die de N1 vernietigde. Moeilijke problemen wijken voor gestage iteratie op een stabiel ontwerp veel betrouwbaarder dan voor een enkele heroïsche poging, en het Sovjet-stationprogramma is het duidelijkste bewijs ervan."
     },
     {
       "type": "prose",
-      "md": "De tweede les is dat bevoorrading is wat een station echt maakt. Skylab, briljant en kortlevend, kon niet worden aangevuld en stierf toen het alleen werd gelaten. Het aandringen van Salyut op het oplossen van bijtanken en bevoorraden — de tweede koppelpoort, het Progress-vrachtschip — is precies wat zijn latere stations jarenlang in plaats van wekenlang bezet liet zijn. Een permanente aanwezigheid in de ruimte is geen kwestie van het bouwen van een groter ruimtevaartuig; het is een kwestie van het bouwen van de onglamoreuze logistieke keten die een bescheiden exemplaar continu in leven houdt."
+      "md": "De tweede les is dat herbevoorrading is wat een station echt maakt. Skylab, briljant en kortlevend, werd nooit herbevoorraden of opnieuw gestimuleerd, en verviel zodra het alleen gelaten werd. Salyut's vasthoudendheid aan het oplossen van bijtanken en herbevoorraden — de tweede koppelpoort, het Progress-vrachtschip — is precies wat zijn latere stations jarenlang in plaats van weken liet bezetten. Een permanente aanwezigheid in de ruimte is geen kwestie van het bouwen van een groter ruimtevaartuig; het is een kwestie van het bouwen van de onopvallende logistieke keten die een bescheiden station voortdurend in leven houdt."
     }
   ]
 }

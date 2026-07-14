@@ -1,31 +1,31 @@
 {
   "name": "JUICE",
-  "type": "ORBITADOR · ACTIVA",
-  "first": "Nave interplanetaria más grande construida en Europa; primera nave en orbitar una luna de otro planeta (Ganímedes, 2034)",
-  "description": "JUpiter ICy moons Explorer — misión insignia de clase L de la ESA, lanzada el 14-4-2023. El crucero de 8 años usa una de las secuencias de asistencia gravitatoria más complejas jamás voladas: una asistencia gravitatoria Luna-Tierra inédita el 19-8-2024, Venus el 31-8-2025, luego dos pasos terrestres más en 2026 y 2029. La inserción en órbita joviana está fijada para el 21-7-2031. Tras 35 sobrevuelos cercanos de Europa, Ganímedes y Calisto a lo largo de 3,5 años, JUICE maniobrará a una órbita dedicada de Ganímedes el 31-12-2034 — la primera nave que orbita una luna de otro planeta.",
+  "type": "ORBITADOR · ACTIVO",
+  "first": "Nave interplanetaria más grande construida en Europa; primera nave espacial en orbitar una luna de otro planeta (Ganímedes, 2034)",
+  "description": "JUpiter ICy moons Explorer — buque insignia de clase L de la ESA, lanzado 2023-04-14. El crucero de 8 años utiliza una de las secuencias de asistencia gravitatoria más complejas jamás realizadas: una maniobra de Asistencia Gravitatoria Lunar-Terrestre sin precedentes el 2024-08-19, Venus 2025-08-31, seguida de dos aproximaciones adicionales a la Tierra en 2026 y 2029. La inserción en órbita de Júpiter está prevista para 2031-07-21. Tras 35 sobrevuelos cercanos de Europa, Ganímedes y Calisto durante 3,5 años, JUICE se posicionará en una órbita dedicada de Ganímedes el 2034-12-31 — la primera nave espacial en orbitar una luna de otro planeta. La misión concluye en 2035 con un impacto en Ganímedes. Ciencia principal: existencia + propiedades de océanos subsuperficiales en las lunas galileanas heladas, composición de la corteza de hielo + calentamiento de mareas, y estructura de la magnetosfera joviana.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "El Ariane 5 ECA+ lanza JUICE desde Kourou.",
+      "note": "Ariane 5 ECA despega con JUICE desde Kourou.",
       "type": "nominal"
     },
     {
       "met": 493,
       "label": "SOBREVUELO LUNAR-TERRESTRE",
-      "note": "Primera asistencia gravitatoria Luna-Tierra jamás realizada — Luna + Tierra en un solo paso.",
+      "note": "Primera maniobra de Asistencia Gravitatoria Lunar-Terrestre — Luna + Tierra en un único movimiento.",
       "type": "nominal"
     },
     {
       "met": 871,
-      "label": "SOBREVUELO VENUS",
-      "note": "Asistencia gravitatoria de Venus en ruta de regreso a dos pasos terrestres más.",
+      "label": "SOBREVUELO DE VENUS",
+      "note": "Asistencia gravitatoria de Venus en ruta de regreso hacia dos nuevas aproximaciones a la Tierra.",
       "type": "nominal"
     },
     {
       "met": 3020,
-      "label": "INSERCIÓN ÓRBITA JÚPITER",
-      "note": "La quema del motor principal coloca JUICE en órbita joviana para la gira de lunas heladas.",
+      "label": "INSERCIÓN EN ÓRBITA DE JÚPITER",
+      "note": "El encendido del motor principal sitúa JUICE en órbita de Júpiter para el recorrido de las lunas heladas.",
       "type": "info"
     }
   ]

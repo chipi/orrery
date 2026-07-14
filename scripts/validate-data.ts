@@ -77,7 +77,10 @@ function overlayFileLocaleGaps(rel: string): string[] {
 // Empty: the /programs editorial layer and its new flagship missions (Gemini,
 // Soyuz 1/11) are now fully translated to all 14 locales, so the English-first
 // phase is over and full zero-gap coverage is enforced everywhere again.
-const I18N_ENGLISH_FIRST_PREFIXES: string[] = [];
+// The Long View essays are authored English-first — we lock the format + voice
+// across the batch before spending the 14-locale translation. Exempt them from
+// the all-locale overlay gate until translated (then remove this entry).
+const I18N_ENGLISH_FIRST_PREFIXES: string[] = ['essays/'];
 
 function allLocaleOverlayGaps(): string[] {
   const gaps: string[] = [];

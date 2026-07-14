@@ -1,14 +1,14 @@
 {
-  "title": "Minute-lumière et année-lumière",
-  "intro_sentence": "Distance mesurée en temps de la lumière — la plus utile pour délais et distances stellaires.",
+  "title": "Lumière-minute et Lumière-année",
+  "intro_sentence": "Distance mesurée par le temps que la lumière met pour la traverser — l'unité la plus utile pour réfléchir aux délais de communication et aux distances stellaires.",
   "narrative_101": [
-    "Minute-lumière = distance lumière en une minute. 300 000 km/s. 18M km/min. Soleil 8,3 minutes-lumière. Mars 4-22 selon géométrie.",
-    "Important car ondes radio voyagent vitesse lumière. Curiosity sur Mars : commande, 8-22 min attendre, encore 8-22 confirmation. PAS de joystick. Tout autonome.",
-    "Distance Voyager 1 (~165 UA) : délai aller simple ~22,5h. Années-lumière pour étoiles. Proxima Centauri 4,2 années-lumière. Vitesse Voyager : 70 000 ans dorthin. Univers grand et lent."
+    "Une lumière-minute est la distance parcourue par la lumière en une minute. La lumière se déplace à 300 000 km par seconde, ce qui représente 18 millions de km en une minute. C'est une distance, pas une durée — confus mais utile. Le Soleil est à 8,3 lumière-minutes. Mars se trouve entre 4 et 22 lumière-minutes selon la géométrie orbitale.",
+    "Pourquoi y faire attention ? Parce que les ondes radio se propagent à la vitesse de la lumière, et c'est aussi le temps que mettent vos commandes pour atteindre un engin spatial. Quand Curiosity traverse Mars, l'équipe du rover envoie une commande puis attend — 8 à 22 minutes — que le rover commence à se déplacer. Puis 8 à 22 minutes de plus pour savoir si cela a fonctionné. Il n'y a PAS de moyen de piloter un rover martien à distance depuis la Terre par joystick. Tout ce qui est important doit être autonome.",
+    "À la distance de Voyager-1 (environ 170 UA maintenant), le délai de propagation de la lumière aller est d'environ 23,5 heures — cela atteint une complète lumière-jour (24 heures) fin 2026. Envoyez une commande aujourd'hui, vous saurez demain après-midi si cela a fonctionné. Les lumière-années existent pour l'échelle suivante — la distance aux autres étoiles. La plus proche, Proxima Centauri, est à 4,2 lumière-années. À la vitesse de Voyager, il faudrait 70 000 ans pour l'atteindre. L'univers est vaste et lent."
   ],
   "body_paragraphs": [
-    "Lumière 300 000 km/s. Seconde-lumière 300 000 km. Minute 18M km. Année 9,46 trillions km. 1 UA ≈ 8,3 minutes-lumière.",
-    "Curiosity : commande, attendre 8-22 min — et 8-22 confirmation. Contrôle temps réel impossible distances planétaires. Voyager 1 (22,5h-lumière) : poussées sens unique arrivent presque jour après.",
-    "Années-lumière pour étoiles. Proxima 4,2 années-lumière. Voyager ~17 km/s — rapide pour sonde, lent contre lumière : Proxima 70 000 ans."
+    "La lumière se déplace à environ 300 000 km/s. Une lumière-seconde vaut 300 000 km. Une lumière-minute vaut 18 millions de km. Une lumière-année vaut 9,46 billions de km. Ce sont des distances, pas des durées — mal nommées mais utiles : 1 UA ≈ 8,3 lumière-minutes, donc « Mars est à 4–22 lumière-minutes selon l'orbite » vous indique la latence aller-retour des commandes à tout moment.",
+    "Quand Curiosity traverse Mars, l'équipe du rover envoie une commande, puis attend 8-22 minutes que le rover commence la manœuvre — et 8-22 minutes de plus pour savoir si cela a fonctionné. Le contrôle en temps réel est impossible à distance planétaire. Suffisamment loin (Voyager 1 à ~23,5 lumière-heures) vous envoyez des petits signaux à sens unique qui arrivent presque un jour plus tard.",
+    "Les lumière-années sont pour les étoiles. Proxima Centauri est à 4,2 lumière-années. Voyager 1 se déplace à ~17 km/s, ce qui est rapide pour un engin spatial mais lent par rapport à la lumière : à cette vitesse Proxima prendrait ~70 000 années."
   ]
 }

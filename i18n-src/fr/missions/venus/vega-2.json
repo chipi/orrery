@@ -1,25 +1,25 @@
 {
   "name": "Vega 2",
-  "type": "SURVOL + ATTERRISSEUR + BALLON · TERMINÉE",
-  "first": "Première analyse chimique du sol des hautes terres vénusiennes (Phoebe Regio, 1985)",
-  "description": "Jumelle de Vega 1, lancée 6 jours plus tard. L'atterrisseur s'est posé le 15/6/1985 dans les hautes terres de Phoebe Regio et a utilisé la spectrométrie XRF pour identifier du matériau anorthosite-norite-troctolite — première analyse chimique d'une croûte vénusienne d'altitude. Le bus est passé près de la comète 1P/Halley à 8030 km le 9/3/1986. Ensemble, les bus Vega ont renvoyé les premières images rapprochées d'un noyau cométaire et affiné la position permettant à Giotto de tenter un survol à 596 km de Halley cinq jours plus tard.",
+  "type": "SURVOL + MODULE DE DESCENTE + BALLON · RÉALISÉ",
+  "first": "Première analyse chimique du sol de type highland vénusien (Terra Aphrodite, 1985) ; rencontre avec Halley en tandem avec Vega 1 qui a alimenté la solution de ciblage de Giotto",
+  "description": "Jumeau de Vega 1, lancé 6 jours plus tard (1984-12-21) pour la redondance et une solution d'armada en tandem pour Halley. Le module de descente de Vega 2 s'est posé le 1985-06-15 dans la Planitia Rusalka, sur le flanc nord de la Terra Aphrodite, et a utilisé la spectrométrie XRF pour découvrir une composition anorthosite-norite-troctolite — la première analyse chimique de croûte vénusienne de type highland (la composition ressemble aux highlands lunaires, bien que le site d'atterrissage lui-même soit une plaine). Son ballon a fonctionné de façon identique à celui de Vega 1, dérivant dans l'hémisphère opposé à ~240 km/h. L'autobus a survolé la comète 1P/Halley à 8030 km le 1986-03-09. Ensemble, les deux autobus Vega ont retourné les premières images rapprochées du noyau cométaire et ont affiné la détermination de position qui a permis à Giotto de tenter un survol à 596 km cinq jours plus tard.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Le Proton-K / D-1 lance Vega 2 depuis Baïkonour 6 jours après Vega 1.",
+      "note": "Proton-K / D-1 décolla Vega 2 depuis Baïkonour 6 jours après Vega 1.",
       "type": "nominal"
     },
     {
       "met": 176,
-      "label": "RENCONTRE VÉNUS",
-      "note": "Le module de descente se pose à Phoebe Regio + renvoie la première analyse chimique du sol des hautes terres.",
+      "label": "RENCONTRE VÉNUSIENNE",
+      "note": "Le module de descente se pose à Terra Aphrodite (Planitia Rusalka) et retourne la première analyse chimique de croûte vénusienne de type highland.",
       "type": "nominal"
     },
     {
       "met": 442,
-      "label": "SURVOL HALLEY",
-      "note": "Approche maximale de la comète 1P/Halley à 8030 km — détermination de position appariée pour Giotto.",
+      "label": "SURVOL DE HALLEY",
+      "note": "Approche minimale de la comète 1P/Halley à 8030 km — détermination de position en tandem pour Giotto.",
       "type": "nominal"
     }
   ]

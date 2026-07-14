@@ -1,9 +1,9 @@
 {
-  "name": "Esploratore di Marte",
-  "type": "LANDER · ROVER · VOLATO",
-  "first": "Prime ruote su Marte; dimostrato l'atterraggio dell'airbag",
-  "dispatch": "Mars Pathfinder fu la dimostrazione della NASA che atterrare su Marte non doveva costare una fortuna. Invece del volo stazionario a retrorazzi usato dalle sonde Viking, colpì l'atmosfera protetta da uno scudo termico, dispiegò un paracadute, gonfiò un bozzolo di airbag e rimbalzò dozzine di volte sulla superficie prima di fermarsi rotolando e aprirsi come un fiore. Ne uscì Sojourner — un rover delle dimensioni di un forno a microonde, le prime ruote mai girate su un altro pianeta. La scienza fu modesta; il punto era il metodo. L'atterraggio con airbag e l'approccio più-veloce-più-economico-migliore che dimostrò divennero il modello per i rover di gran lunga più ambiziosi — Spirit, Opportunity, Curiosity — che seguirono.",
-  "description": "La missione che ha dimostrato che le missioni interplanetarie a basso costo potrebbero funzionare. Pathfinder ha utilizzato un nuovo sistema di atterraggio con airbag, che rimbalza dozzine di volte sulla superficie prima di fermarsi, e ha consegnato Sojourner, il primo rover a operare su un altro pianeta. Il Sojourner ha attraversato 100 m, ha esaminato una dozzina di rocce e ha lavorato ben oltre i 7 giorni di durata prevista. Pathfinder ha operato per 2 mesi e 27 giorni; il successo della missione ha rilanciato il programma interplanetario di NASA dopo i fallimenti degli anni '90.",
+  "name": "Mars Pathfinder",
+  "type": "LANDER · ROVER · FLOWN",
+  "first": "Prime ruote su Marte; ha dimostrato l'atterraggio con airbag",
+  "dispatch": "Mars Pathfinder è stata la dimostrazione della NASA che atterrare su Marte non doveva costare una fortuna. Invece dei retrorazzi al ralenti utilizzati dai Viking, la sonda ha attraversato l'atmosfera protetta da uno scudo termico, ha aperto un paracadute, ha gonfiato un bozzolo di airbag e ha rimbalzato dozzine di volte sulla superficie prima di fermarsi e aprirsi come un fiore. Ne è uscito Sojourner — un rover grande quanto un microonde, le prime ruote a muoversi su un altro pianeta. La scienza era modesta; il punto era il metodo. L'atterraggio con airbag e l'approccio più veloce, più economico e migliore che ha provato divennero il modello per i rover molto più ambiziosi — Spirit, Opportunity, Curiosity — che seguirono.",
+  "description": "La missione che ha provato che le missioni interplanetarie economiche potevano funzionare. Pathfinder ha utilizzato un innovativo sistema di atterraggio con airbag — rimbalzando dozzine di volte sulla superficie prima di venire a riposo — e ha consegnato Sojourner, il primo rover a operare su un altro pianeta. Sojourner ha percorso 100 m, ha esaminato una dozzina di rocce e ha funzionato ben oltre la sua vita utile di 8 sol. Pathfinder ha operato per 2 mesi e 27 giorni; il successo della missione ha rivitalizzato il programma interplanetario della NASA dopo i fallimenti degli anni '90.",
   "events": [
     {
       "met": 0,
@@ -13,25 +13,25 @@
     },
     {
       "met": 30,
-      "label": "MTC-1",
-      "note": "Prima correzione della traiettoria.",
+      "label": "TCM-1",
+      "note": "Primo cambio di traiettoria.",
       "type": "nominal"
     },
     {
       "met": 212,
       "label": "EDL",
-      "note": "Ingresso atmosferico diretto: nessun inserimento in orbita. Scudo termico, paracadute, retrorazzi, poi gonfiaggio dell'airbag.",
+      "note": "Entrata diretta in atmosfera — nessun inserimento orbitale. Scudo termico, paracadute, retrorazzi, quindi gonfiaggio degli airbag.",
       "type": "nominal"
     },
     {
       "met": 212.01,
-      "label": "TOCCO",
-      "note": "Lander rimbalza 15 volte attraverso Ares Vallis prima di fermarsi.",
+      "label": "TOUCHDOWN",
+      "note": "Il lander rimbalza 15 volte attraverso Ares Vallis prima di fermarsi.",
       "type": "nominal"
     },
     {
       "met": 213,
-      "label": "SOJOURNER DISPONIBILE",
+      "label": "SOJOURNER DISPIEGATO",
       "note": "Prime ruote su un altro pianeta.",
       "type": "info"
     }

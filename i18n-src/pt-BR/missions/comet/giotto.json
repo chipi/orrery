@@ -1,31 +1,31 @@
 {
   "name": "Giotto",
-  "type": "SOBREVOO · CONCLUÍDA",
-  "first": "Primeira missão de espaço profundo da ESA; sobrevoo cometário mais próximo já tentado (Halley, 596 km, 1986)",
-  "description": "Sonda da ESA que passou a 596 km do núcleo do cometa Halley em 14-3-1986 — primeiras imagens próximas do núcleo de um cometa. Após hibernar em órbita solar, Giotto foi reativada em 1990 e usou assistência gravitacional terrestre para redirecionar-se ao cometa Grigg-Skjellerup, sobrevoando-o a 200 km em 10-7-1992 — o sobrevoo cometário mais próximo já realizado.",
+  "type": "SOBREVOO · EXECUTADO",
+  "first": "Primeira missão de espaço profundo da ESA; sobrevoo de cometa mais próximo já realizado (Halley, 596 km, 1986); primeiras imagens em close-up de um núcleo cometário",
+  "description": "Giotto foi o pilar europeu da armada Halley — uma sonda de 960 kg estabilizada por rotação envolvida em um escudo de proteção contra poeira laminado Whipple-Kevlar. Lançada em 1985-07-02, ela voou através da coma de Halley a uma velocidade relativa de 68 km/s em 1986-03-14 com aproximação mínima de 596 km, retornando as primeiras imagens em close-up de qualquer núcleo cometário (um corpo alongado irregular de 15 × 7,2 × 7,2 km com jatos de poeira concentrados). Um impacto de poeira ~7,6 segundos antes da aproximação mínima desestabilizou o eixo de rotação e desativou a câmera, mas os outros instrumentos continuaram transmitindo através da coma. Após hibernar em órbita heliocêntrica, Giotto foi reativada em 1990 e usou assistência gravitacional da Terra para se redirecionar ao cometa 26P/Grigg-Skjellerup, voando por ele a 200 km em 1992-07-10 — o sobrevoo cometário mais próximo jamais realizado.",
   "events": [
     {
       "met": 0,
       "label": "LANÇAMENTO",
-      "note": "O Ariane 1 lança Giotto de Kourou — primeira missão de espaço profundo da ESA.",
+      "note": "Ariane 1 lança Giotto de Kourou — primeira missão de espaço profundo da ESA.",
       "type": "nominal"
     },
     {
       "met": 255,
-      "label": "SOBREVOO HALLEY",
-      "note": "Aproximação máxima de 596 km do cometa 1P/Halley; primeiras imagens próximas de um núcleo cometário.",
+      "label": "SOBREVOO DE HALLEY",
+      "note": "Aproximação mínima de 596 km do cometa 1P/Halley; primeiro registro de imagens em close-up de um núcleo cometário.",
       "type": "nominal"
     },
     {
       "met": 1827,
-      "label": "SOBREVOO TERRESTRE",
-      "note": "A assistência gravitacional terrestre redireciona Giotto ao cometa 26P/Grigg-Skjellerup.",
+      "label": "SOBREVOO DA TERRA",
+      "note": "Assistência gravitacional da Terra redireciona Giotto para o cometa 26P/Grigg-Skjellerup.",
       "type": "nominal"
     },
     {
       "met": 2565,
-      "label": "SOBREVOO GRIGG-SKJELLERUP",
-      "note": "Aproximação máxima de 200 km — o sobrevoo cometário mais próximo registrado.",
+      "label": "SOBREVOO DE GRIGG-SKJELLERUP",
+      "note": "Aproximação mínima de 200 km — o sobrevoo cometário mais próximo já registrado.",
       "type": "nominal"
     }
   ]

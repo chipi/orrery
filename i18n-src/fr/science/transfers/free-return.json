@@ -1,15 +1,15 @@
 {
-  "title": "Trajectoire de retour libre",
-  "intro_sentence": "Trajectoire qui passe la cible et plie la gravité elle-même en billet retour — sans combustion moteur.",
+  "title": "Trajectoire de retour gratuit",
+  "intro_sentence": "Une trajectoire qui contourne la destination et utilise la gravité elle-même comme billet de retour — sans allumage de moteur.",
   "narrative_101": [
-    "Imagine voler vers la Lune. Inquiétude : et si moteur tombe en panne ? Réponse : pick un chemin où, même si tous moteurs meurent, gravité seule te ramène automatiquement. Retour libre.",
-    "Vrai 8 dans l'espace. Quitter Terre, monter vers Lune, gravité plie 180°, retomber, atmosphère au rebond. Pas de moteur.",
-    "Apollo 8 premier équipage. Apollo 13 doit sa survie. Default `/fly` Orrery fait ça pour Mars : Terre → survol Mars → Terre."
+    "Imaginez que vous voliez vers la Lune. Vous avez peur — et si le moteur tombe en panne en route ? Vous seriez bloqué, à la dérive pour toujours. Voici la réponse de génie : choisir un chemin où, même si chaque moteur de votre vaisseau spatial meurt au moment où vous quittez l'orbite terrestre, la gravité seule vous balancera autour de la Lune et vous ramènera automatiquement à la maison. C'est une trajectoire de retour gratuit.",
+    "C'est un véritable huit dans l'espace. Vous quittez la Terre, vous montez vers la Lune, la gravité de la Lune courbe votre trajectoire de 180 degrés, et vous tombez vers la Terre, heurtant l'atmosphère au rebond. Pas de moteur requis. La Lune fait tout le travail. La géométrie doit juste être correcte.",
+    "Apollo 8 a été la première mission habitée à emprunter une telle trajectoire. Apollo 13 — la fameuse mission « Houston, we have a problem » — doit sa survie à cette géométrie. Quand leur moteur principal est devenu inutilisable, ils ont emprunté le chemin de retour gratuit, n'allumant que le moteur du module lunaire pour les corrections de cap — jamais le moteur principal endommagé. Le scénario /fly par défaut d'Orrery fait exactement cela pour Mars : Terre → survol de Mars → Terre, aucune correction de trajectoire en route requise. Le voyage Mars le moins cher possible avec des humains à bord."
   ],
   "body_paragraphs": [
-    "Tour principal : quitter Terre, voler près Lune (ou Mars), gravité plie ta trajectoire. Géométrie correcte → réentrée au rebond. Aucune équipe n'a jamais besoin de tirer un moteur.",
-    "Apollo 8 premier équipage. Apollo 13 célèbre. Pour Mars géométrie plus difficile — boucle 500 jours.",
-    "Default `/fly` ORRERY-1 : Terre-Mars-Terre retour libre, sans TCM, sans MOI. Le survol Mars équipage le moins cher proposé."
+    "L'astuce principale : quitter la Terre, voler au-delà de la Lune (ou de Mars), et laisser la gravité de ce corps courber votre trajectoire vers la Terre. Si vous avez bien calculé la géométrie, vous rentrez dans l'atmosphère terrestre au rebond. L'équipage n'a jamais besoin d'allumer un moteur pour rentrer à la maison.",
+    "Apollo 8 était la première trajectoire de retour gratuit habitée. Apollo 13 a fameux recours à cette technique quand son module de service a été endommagé — empruntant le chemin de retour gratuit, n'allumant que le moteur du module lunaire pour les corrections de cap, jamais le moteur principal endommagé. Pour Mars, la géométrie est plus difficile — vous avez besoin d'une boucle de deux passages sur 500 jours — mais le concept est le même : la géométrie du survol fait le travail de l'allumage de retour.",
+    "Le scénario `/fly` par défaut d'Orrery, ORRERY-1, est exactement cela : Terre-Mars-Terre sur un arc de retour gratuit, aucune correction de trajectoire en route, aucun allumage d'insertion en orbite à Mars. Vous regardez le vaisseau spatial boucler le Soleil une fois, survoler Mars, et revenir. C'est le survol habité de Mars le moins cher jamais proposé."
   ],
-  "diagram_caption": "Terre → survol Mars → Terre. Gravité Lune (ou Mars) fait le demi-tour gratuitement."
+  "diagram_caption": "Terre → survol de Mars → Terre. La gravité de la Lune (ou de Mars) fait le demi-tour gratuitement."
 }

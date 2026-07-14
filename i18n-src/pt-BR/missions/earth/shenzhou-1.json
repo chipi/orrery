@@ -1,31 +1,31 @@
 {
   "name": "Shenzhou 1",
-  "type": "TESTE QUALIFICADO PARA TRIPULAÇÃO · NÃO TRIPULADO · VOADO",
-  "first": "Primeiro teste orbital chinês Shenzhou — abriu o caminho para o voo tripulado da RPC",
-  "description": "Primeiro voo do programa de naves tripuladas Shenzhou. Lançada em 1999-11-20 às 22:30 UTC de Jiuquan no voo inaugural do Longa Marcha 2F (CZ-2F) certificado para uso humano. A cápsula completou 14 órbitas a 196 × 324 km e 42,6° de inclinação, reentrando para recuperação na estepe da Mongólia Interior em 1999-11-21 às 19:41 UTC. Transportou maquetes de hardware de suporte à vida, pacotes de telemetria e uma bandeira chinesa, além de sementes para uma carga de retorno de genética em microgravidade. Marcou o compromisso da China em seguir URSS / EUA rumo ao voo tripulado independente; levou diretamente à Shenzhou 5 (2003) com Yang Liwei.",
+  "type": "TESTE COM TRIPULAÇÃO NOMINAL · NÃO TRIPULADO · REALIZADO",
+  "first": "Primeiro teste orbital chinês do Shenzhou — abriu o caminho para voos espaciais tripulados da RPC",
+  "description": "Primeiro voo do programa de naves espaciais tripuladas Shenzhou. Lançado em 1999-11-19 22:30 UTC de Jiuquan no voo inaugural do Long March 2F (CZ-2F) certificado para humanos. A cápsula completou 14 órbitas a 195 × 315 km, inclinação de 42,6°, e reentrou com recuperação na estepe da Mongólia Interior em 1999-11-20 19:41 UTC. Transportava equipamentos de suporte de vida em maquete, pacotes de telemetria e uma bandeira chinesa, além de sementes para retorno de carga em pesquisa de genética em microgravidade. Marcou o compromisso da China em seguir a URSS e os EUA em voos espaciais tripulados independentes; levou diretamente ao Shenzhou 5 (2003) com Yang Liwei.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Long March 2F maiden flight from Jiuquan SLC-43 at 22:30 UTC.",
+      "label": "LANÇAMENTO",
+      "note": "Primeiro voo do Long March 2F do LA-4 de Jiuquan em 1999-11-19 22:30 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.001,
-      "label": "ORBIT",
-      "note": "14-orbit flight at 196 × 324 km, 42.6° inclination.",
+      "label": "ÓRBITA",
+      "note": "Voo de 14 órbitas a 195 × 315 km, inclinação de 42,6°.",
       "type": "nominal"
     },
     {
       "met": 0.875,
-      "label": "DE-ORBIT",
-      "note": "Service-module retro-fire over Africa.",
+      "label": "DESÓRBITA",
+      "note": "Disparo retrógrado do módulo de serviço sobre a África.",
       "type": "nominal"
     },
     {
       "met": 0.882,
-      "label": "RECOVERY",
-      "note": "Capsule descended to Siziwang Banner, Inner Mongolia, 1999-11-21 19:41 UTC.",
+      "label": "RECUPERAÇÃO",
+      "note": "Cápsula desceu para Dorbod Banner, Mongólia Interior, em 1999-11-20 19:41 UTC.",
       "type": "nominal"
     }
   ]

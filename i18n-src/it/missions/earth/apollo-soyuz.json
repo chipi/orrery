@@ -1,38 +1,38 @@
 {
   "name": "Apollo-Soyuz Test Project (ASTP)",
-  "dispatch": "Apollo-Soyuz è il punto in cui la corsa spaziale finisce — non a un traguardo, ma con una stretta di mano. Nel luglio 1975 un Apollo americano e una Soyuz sovietica, le navicelle rivali delle superpotenze rivali, si incontrarono e si agganciarono in orbita, e Tom Stafford e Alexei Leonov si strinsero la mano attraverso il portello aperto tra di loro. Ci vollero un adattatore di aggancio costruito congiuntamente, due equipaggi che impararono la lingua l'uno dell'altro, e un disgelo nella Guerra Fredda abbastanza profondo da permettere ai più acerrimi concorrenti dell'epoca di cooperare sotto gli occhi del mondo intero. Nulla di tutto ciò era strettamente necessario; questo era il punto. Dopo diciotto anni di gare per arrivare primi, i due programmi scelsero, per un volo, semplicemente di incontrarsi — e stabilirono il modello per la cooperazione internazionale che un giorno avrebbe costruito la Stazione Spaziale.",
-  "type": "ORBITA TERRESTRE CON EQUIPAGGIO · VOLATO",
-  "first": "Prima cooperazione internazionale nel volo spaziale umano; primo rendezvous + aggancio USA-URSS",
-  "description": "L'Apollo-Soyuz Test Project — primo volo spaziale con equipaggio internazionale, primo rendezvous + aggancio USA-URSS, e ultimo volo di un CSM Apollo. Apollo (Stafford + Brand + Slayton) fu lanciato il 15-07-1975 da LC-39B; Soyuz 19 (Leonov + Kubasov) fu lanciato lo stesso giorno da Baikonur. Il modulo di aggancio di Apollo (costruito da NASA + Rockwell) usò un nuovo anello di aggancio androgino (APAS) che permetteva a entrambe le navicelle di essere attive — il precursore di ogni sistema di aggancio internazionale da allora (Mir, ISS, Tiangong, Dragon, Starliner). Apertura del portello 17-07-1975 ~16:00 UTC; gli equipaggi si scambiarono bandiere, regali ed esperimenti congiunti attraverso 4 sequenze di aggancio separate nel corso di 44 ore di aggancio. Soyuz tornò il 21-07-1975; Apollo continuò altri 5 giorni in orbita prima dell'ammaraggio del 24-07-1975 — l'ultimo ammaraggio Apollo di sempre. Il CSM-111 è esposto al California Science Center di LA (accanto a Endeavour). La cooperazione dell'era della distensione che l'ASTP modellò informò il programma Shuttle-Mir 20 anni dopo.",
+  "type": "VOLO ABITATO IN ORBITA TERRESTRE · COMPLETATO",
+  "first": "Prima cooperazione umana internazionale nello spazio; primo rendezvous + attracco USA-URSS",
+  "dispatch": "Apollo-Soyuz è il punto in cui la corsa allo spazio termina — non al traguardo, ma con una stretta di mano. Nel luglio 1975 un Apollo americano e un Soyuz sovietico, i veicoli spaziali rivali delle superpotenze rivali, si incontrarono e si aggiunsero in orbita, e Tom Stafford e Alexei Leonov si strinsero la mano attraverso il boccaporto aperto tra loro. Ci vollero un adattatore di attracco costruito congiuntamente, due equipaggi che imparavano la lingua l'uno dell'altro, e uno scongelamento della Guerra Fredda abbastanza profondo da permettere ai più agguerriti concorrenti dell'epoca di cooperare sotto gli occhi del mondo. Nulla di ciò era strettamente necessario; questo era il senso. Dopo diciotto anni di corsa per essere i primi, i due programmi scelsero, per un volo, semplicemente di incontrarsi — e stabilirono il modello per la cooperazione internazionale che un giorno avrebbe costruito la Stazione Spaziale.",
+  "description": "L'Apollo-Soyuz Test Project — primo volo spaziale abitato internazionale, primo rendezvous + attracco USA-URSS, e ultimo volo di un Apollo CSM. Apollo (Stafford + Brand + Slayton) lanciato il 1975-07-15 da LC-39B; Soyuz 19 (Leonov + Kubasov) lanciato lo stesso giorno da Baikonur. Il modulo di attracco di Apollo (costruito da NASA + Rockwell) utilizzava un nuovo anello di attracco androgino (APAS) che permetteva a entrambi i veicoli spaziali di essere attivi — il precursore di ogni sistema di attracco internazionale successivo (Mir, ISS, Tiangong, Dragon, Starliner). Apertura del boccaporto il 1975-07-17 ~16:00 UTC; gli equipaggi scambiarono bandiere, regali e esperimenti congiunti attraverso 2 attracchi (iniziale 17 luglio, prova 19 luglio) per un totale di ~44 ore in attracco. Soyuz rientrato il 1975-07-21; Apollo continuò altri 5 giorni in orbita prima dell'ammaraggio il 1975-07-24 — ultimo ammaraggio Apollo di sempre. CSM-111 è in mostra presso il California Science Center, LA (insieme a Endeavour). La cooperazione dell'era della distensione che ASTP ha modellato ispirò il programma Shuttle-Mir 20 anni dopo.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH (Apollo)",
-      "note": "Saturn IB (AS-210) from LC-39B 1975-07-15 19:50 UTC. 7.5 h after Soyuz 19 (Baikonur 1975-07-15 12:20 UTC).",
+      "label": "LANCIO (Apollo)",
+      "note": "Saturn IB (AS-210) da LC-39B 1975-07-15 19:50 UTC. 7,5 h dopo Soyuz 19 (Baikonur 1975-07-15 12:20 UTC).",
       "type": "nominal"
     },
     {
       "met": 1.85,
-      "label": "DOCKING",
-      "note": "Apollo + Soyuz 19 dock 1975-07-17 16:09 UTC. First US-USSR rendezvous + dock. Hatch opens at 19:17 UTC; \"Glad to see you\" handshake.",
+      "label": "ATTRACCO",
+      "note": "Apollo + Soyuz 19 si attraccano il 1975-07-17 16:09 UTC. Primo rendezvous + attracco USA-URSS. Boccaporto aperto alle 19:17 UTC; stretta di mano Stafford–Leonov ~3 ore dopo (~22:19 UTC).",
       "type": "info"
     },
     {
       "met": 2,
-      "label": "JOINT OPS",
-      "note": "Flag + gift exchange; joint experiments; 4 dockings across 44 hours docked.",
+      "label": "OPERAZIONI CONGIUNTE",
+      "note": "Scambio di bandiere e regali; esperimenti congiunti; 2 attracchi per ~44 ore in attracco.",
       "type": "nominal"
     },
     {
       "met": 3.8,
-      "label": "UNDOCK",
-      "note": "Final undock 1975-07-19 16:26 UTC. Soyuz 19 lands 1975-07-21 in Kazakhstan.",
+      "label": "DISTACCO",
+      "note": "Ultimo distacco il 1975-07-19 16:26 UTC. Soyuz 19 atterrato il 1975-07-21 in Kazakistan.",
       "type": "nominal"
     },
     {
       "met": 9.06,
-      "label": "SPLASHDOWN (Apollo)",
-      "note": "Apollo splashed down in Pacific 1975-07-24 21:18 UTC — last Apollo splashdown ever. CSM-111 displayed at California Science Center LA.",
+      "label": "AMMARAGGIO (Apollo)",
+      "note": "Apollo ammarato nell'Oceano Pacifico il 1975-07-24 21:18 UTC — ultimo ammaraggio Apollo di sempre, e ultimo ammaraggio con equipaggio statunitense in acqua fino al Crew Dragon di SpaceX nel 2020. CSM-111 esposto presso il California Science Center LA.",
       "type": "nominal"
     }
   ]

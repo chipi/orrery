@@ -1,31 +1,31 @@
 {
   "name": "Chang'e 4 / Yutu-2",
-  "type": "ACHTERZIJDE-LANDER · ROVER · ACTIEF",
-  "first": "Eerste zachte landing op de maanachterzijde",
-  "description": "De maanachterzijde heeft geen directe radio-zichtlijn naar de Aarde. Om er een ruimtevaartuig te laten landen, lanceerde China eerst de Queqiao-relais-satelliet naar een halo-baan rond Aarde-Maan Lagrange-punt L2 — een uitkijkpunt dat zowel de achterzijde als de Aarde tegelijkertijd ziet. Met die infrastructuur op zijn plaats, werd Chang'e 4 het eerste ruimtevaartuig dat zacht op de achterzijde landde. De Yutu-2-rover werkt sinds januari 2019 en heeft 1,9+ km gereden, de langste doorvaart van enige maan-rover.",
+  "type": "MAANLANDER AAN VERWIJDERDE ZIJDE · ROVER · ACTIEF",
+  "first": "Eerste zachte landing aan de verwijderde zijde van de maan",
+  "description": "De verwijderde zijde van de maan heeft geen rechtstreekse radiokoppeling met de Aarde. Om een ruimtevaartuig daar te landen, lanceerde China eerst de Queqiao-relais-satelliet naar een halo-baan rond het Aarde-Maan Lagrangepunt L2 — een positie die tegelijkertijd zicht heeft op de verwijderde zijde en de Aarde. Met deze infrastructuur in plaats, werd Chang'e 4 het eerste ruimtevaartuig dat zachtkwam te landen aan de verwijderde zijde. De Yutu-2-rover is sinds januari 2019 in werking en heeft tot 2024 ongeveer 1,6 km afgelegd, waardoor het de langst werkende maanrover in de geschiedenis is.",
   "events": [
     {
       "met": 0,
-      "label": "LANCERING",
-      "note": "Lange Mars 3B vanuit Xichang.",
+      "label": "START",
+      "note": "Long March 3B vanaf Xichang.",
       "type": "nominal"
     },
     {
       "met": 4,
       "label": "MOI",
-      "note": "Maanbaan-insertie.",
+      "note": "Maanbaan-inbranding.",
       "type": "nominal"
     },
     {
       "met": 27,
       "label": "TOUCHDOWN",
-      "note": "Lander zet neer bij Von Kármán-krater 2019-01-03 — eerste ruimtevaartuig op de achterzijde. Alle comms via Queqiao-relais bij Aarde-Maan L2.",
+      "note": "Lander landt op 2019-01-03 bij Von Kármán Crater — eerste ruimtevaartuig aan de verwijderde zijde. Alle communicatie via Queqiao-relais bij Aarde-Maan L2.",
       "type": "nominal"
     },
     {
       "met": 27.01,
-      "label": "YUTU-2 INGEZET",
-      "note": "Rover rolt van helling.",
+      "label": "YUTU-2 GEPLAATST",
+      "note": "Rover rijdt de oprit af.",
       "type": "info"
     }
   ]

@@ -2,8 +2,8 @@
   "name": "Soyuz 11",
   "type": "CREWED STATION · LOST",
   "first": "First crew to a space station (Salyut 1); all 3 died of decompression on reentry",
-  "dispatch": "Soyuz 11 achieved something extraordinary and then lost its crew in the last minutes of the flight. Georgy Dobrovolsky, Vladislav Volkov, and Viktor Patsayev became the first people to live aboard a space station, spending twenty-three days on Salyut 1 — and then, during reentry, a valve jolted open at the instant the modules separated and let their cabin air hiss out into space. They wore no pressure suits; there had been no room for suits when the couches were fitted for three. Within seconds, at the edge of space, all three were dead. The capsule landed itself, perfectly on target; the recovery team opened it to find the crew still strapped in their seats. They remain the only human beings to have died in space — and the price bought a rule that has held ever since: crews wear pressure suits through launch and reentry, always.",
-  "description": "The first crewed mission to a space station — Salyut 1 — launched 6 June 1971 with Georgy Dobrovolsky, Vladislav Volkov, and Viktor Patsayev. The crew spent 23 days aboard the station. During reentry on 30 June a pressure-equalisation valve opened prematurely at module separation (~168 km); the cabin depressurised and the three cosmonauts, unsuited, died within seconds. The capsule landed normally. They remain the only humans to have died above the Kármán line.",
+  "dispatch": "Soyuz 11 achieved something extraordinary and then lost its crew in the last minutes of the flight. Georgy Dobrovolsky, Vladislav Volkov, and Viktor Patsayev became the first people to live aboard a space station, spending twenty-two days aboard Salyut 1 — and then, during reentry, a valve jolted open at the instant the modules separated and let their cabin air hiss out into space. They wore no pressure suits; there had been no room for suits when the couches were fitted for three. Within seconds, at the edge of space, all three were dead. The capsule landed itself, perfectly on target; the recovery team opened it to find the crew still strapped in their seats. They remain the only human beings to have died in space — and the price bought a rule that has held ever since: crews wear pressure suits through launch and reentry, always.",
+  "description": "The first crewed mission to a space station — Salyut 1 — launched 6 June 1971 with Georgy Dobrovolsky, Vladislav Volkov, and Viktor Patsayev. The crew spent 22 days aboard Salyut 1 (total mission duration 23 days 18 hours). During reentry on 30 June a pressure-equalisation valve opened prematurely at module separation (~168 km); the cabin depressurised and the three cosmonauts, unsuited, died within seconds. The capsule landed normally. They remain the only humans to have died above the Kármán line.",
   "events": [
     {
       "met": 0,
@@ -14,7 +14,7 @@
     {
       "met": 0.03,
       "label": "DOCK — SALYUT 1",
-      "note": "First crew to board a space station; 23 days aboard.",
+      "note": "First crew to board a space station; 22 days aboard Salyut 1.",
       "type": "info"
     },
     {

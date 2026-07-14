@@ -1,19 +1,19 @@
 {
   "name": "BepiColombo",
-  "type": "ORBITEUR · ACTIVE",
-  "first": "Première mission planétaire conjointe Europe-Japon ; deuxième vaisseau à orbiter Mercure (après Messenger)",
-  "description": "Mission conjointe ESA / JAXA vers Mercure, lancée le 20/10/2018 — nommée d'après le mathématicien italien Giuseppe (Bepi) Colombo, qui a conçu la trajectoire à survols multiples de Mariner 10. La croisière de 8 ans utilise 9 assistances gravitationnelles (Terre 2020, Vénus 2020, Vénus 2021, puis six survols de Mercure 2021-2024) plus une poussée ionique-électrique continue. Insertion en orbite mercurienne le 5/12/2026 ; les opérations scientifiques commencent début 2027.",
+  "type": "ORBITEUR · ACTIF",
+  "first": "Première mission planétaire conjointe Europe + Japon ; deuxième vaisseau spatial à orbiter Mercure (après Messenger)",
+  "description": "Mission conjointe ESA / JAXA vers Mercure, lancée 2018-10-20 — nommée d'après le mathématicien italien Giuseppe (Bepi) Colombo, qui a conçu la trajectoire multi-survols de Mariner 10. La croisière de 8 ans utilise 9 assistances gravitationnelles (Terre 2020, Vénus 2020, Vénus 2021, puis six survols Mercure 2021–2025) plus une propulsion ionique-électrique continue du Module de Transfert vers Mercure pour réduire l'énorme gradient de gravité solaire entre les orbites terrestre et mercurienne. Insertion en orbite de Mercure 2026-11-21 ; les opérations scientifiques commencent début 2027 après l'éjection du MTM et la séparation des deux orbiteurs — l'OMM d'ESA (surface et composition planétaires) et Mio de JAXA (magnétosphère). Des tests de relativité générale par suivi radio-scientifique du télémètre à travers l'environnement fort de gravité solaire de Mercure sont également prévus.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "L'Ariane 5 ECA lance BepiColombo depuis Kourou pour sa croisière ionique de 8 ans vers Mercure.",
+      "note": "Une Ariane 5 ECA lance BepiColombo depuis Kourou pour sa croisière ionique de 8 ans vers Mercure.",
       "type": "nominal"
     },
     {
       "met": 538,
-      "label": "SURVOL TERRESTRE",
-      "note": "Unique assistance gravitationnelle terrestre commence la chaîne d'assistances gravitationnelles du système intérieur.",
+      "label": "SURVOL TERRE",
+      "note": "Unique assistance gravitationnelle terrestre amorce la chaîne d'assistances gravitationnelles intra-système.",
       "type": "nominal"
     },
     {
@@ -25,19 +25,19 @@
     {
       "met": 1026,
       "label": "SURVOL VÉNUS #2",
-      "note": "Deuxième assistance gravitationnelle vénusienne commence la phase d'approche de Mercure.",
+      "note": "Deuxième assistance gravitationnelle vénusienne amorce la phase d'approche Mercure.",
       "type": "nominal"
     },
     {
       "met": 1133,
       "label": "SURVOL MERCURE #1",
-      "note": "Première de six assistances gravitationnelles mercuriennes.",
+      "note": "Premier des six survols avec assistance gravitationnelle mercurienne.",
       "type": "nominal"
     },
     {
       "met": 2968,
-      "label": "INSERTION ORBITE MERCURE",
-      "note": "Largage MTM + séparation des orbiteurs ; les opérations scientifiques commencent début 2027.",
+      "label": "INSERTION EN ORBITE MERCURE",
+      "note": "Éjection du MTM + séparation des orbiteurs ; les opérations scientifiques commencent début 2027.",
       "type": "info"
     }
   ]

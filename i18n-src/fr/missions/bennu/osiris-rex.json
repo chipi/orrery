@@ -1,8 +1,8 @@
 {
   "name": "OSIRIS-REx",
-  "type": "RETOUR D'ÉCHANTILLON · EFFECTUÉ",
-  "first": "Plus grand échantillon d'astéroïde jamais retourné (121,6 g de Bennu, livré sur Terre le 2023-09-24)",
-  "description": "OSIRIS-REx a mené la mission de rendez-vous avec un astéroïde la plus précise jamais réalisée. Lancée le 2016-09-08 depuis Cape Canaveral sur une Atlas V 411, a utilisé une assistance gravitationnelle de la Terre en 2017 pour faire pivoter son plan orbital sur l'inclinaison de 6° de Bennu, et a effectué son rendez-vous avec l'astéroïde géocroiseur carboné de 492 m le 2018-12-03. S'est maintenue en position à 1,4 km — l'orbite spatiale la plus proche jamais réalisée autour d'un corps céleste. A passé deux ans à cartographier la surface parsemée de rochers de Bennu et à découvrir des éjections actives de particules. Le 2020-10-20, le bras d'échantillonnage Touch-and-Go est descendu sur le site Nightingale, a injecté du gaz N₂ dans la surface et a saisi un panache — s'enfonçant de 50 cm dans une surface de « tas de gravats fluide ». La capsule de retour d'échantillon a livré 121,6 g de matériau de Bennu dans l'Utah le 2023-09-24. Le vaisseau spatial lui-même a été immédiatement renommé OSIRIS-APEX, en route vers un rendez-vous avec Apophis en 2029.",
+  "type": "RETOUR D'ÉCHANTILLON · LANCÉ",
+  "first": "Plus grand échantillon d'astéroïde jamais rapporté (121,6 g de Bennu, livré à la Terre 2023-09-24)",
+  "description": "OSIRIS-REx a réalisé l'une des opérations les plus précises jamais tentées à proximité d'un astéroïde. Lancé 2016-09-08 depuis Cape Canaveral sur un Atlas V 411, il a utilisé un survol gravitationnel terrestre en 2017 pour faire pivoter son plan orbital sur l'inclinaison de 6° de Bennu, et s'est rendez-vous avec l'astéroïde carbonacé proche de la Terre de 492 m 2018-12-03. Après un stationnement à ~19 km, il a ensuite atteint une orbite record de ~1,4 km — l'orbite de vaisseau spatial la plus proche jamais effectuée autour de n'importe quel corps céleste. Il a passé deux ans à cartographier la surface jonchée de rochers de Bennu et à découvrir des éjections de particules actives. 2020-10-20 le bras préleveur Touch-and-Go est descendu sur le site Nightingale, a tiré du gaz N₂ à la surface et a attrapé un panache — s'enfonçant de 50 cm dans une surface de « fluide de tas de décombres ». La capsule de retour d'échantillon a livré 121,6 g de matériau de Bennu à l'Utah 2023-09-24. Le vaisseau spatial lui-même a été immédiatement rebaptisé OSIRIS-APEX, en route vers un rendez-vous avec Apophis en 2029.",
   "events": [
     {
       "met": 0,
@@ -12,32 +12,32 @@
     },
     {
       "met": 380,
-      "label": "ASSISTANCE GRAVITATIONNELLE TERRESTRE",
+      "label": "SURVOL GRAVITATIONNEL TERRESTRE",
       "note": "2017-09-22, 17 237 km au-dessus de l'Antarctique — fait pivoter le plan orbital sur l'inclinaison de 6° de Bennu.",
       "type": "info"
     },
     {
       "met": 816,
       "label": "RENDEZ-VOUS AVEC BENNU",
-      "note": "Maintien en position à 1,4 km — orbite spatiale la plus proche jamais réalisée autour d'un corps céleste.",
+      "note": "Arrive à Bennu ; stationnement à ~19 km puis resserrement progressif vers une orbite record de ~1,4 km — l'orbite de vaisseau spatial la plus proche jamais effectuée autour de n'importe quel corps céleste.",
       "type": "info"
     },
     {
       "met": 1503,
-      "label": "COLLECTE D'ÉCHANTILLON TAG",
-      "note": "2020-10-20. Le bras Touch-and-Go s'enfonce de 50 cm dans la surface de tas de gravats ; saisit 121,6 g.",
+      "label": "PRÉLÈVEMENT D'ÉCHANTILLON TAG",
+      "note": "2020-10-20. Le bras Touch-and-Go s'enfonce de 50 cm dans la surface du tas de décombres ; prélève 121,6 g.",
       "type": "info"
     },
     {
       "met": 1705,
       "label": "DÉPART DE BENNU",
-      "note": "2021-05-10. Croisière de retour vers la Terre de 2,5 ans.",
+      "note": "2021-05-10. Croisière de 2,5 ans vers la Terre.",
       "type": "nominal"
     },
     {
       "met": 2572,
       "label": "RETOUR D'ÉCHANTILLON",
-      "note": "2023-09-24. La SRC atterrit en parachute dans l'Utah Test and Training Range ; le vaisseau devient OSIRIS-APEX.",
+      "note": "2023-09-24. La SRC s'amarre par parachute dans l'Utah Test and Training Range ; le vaisseau spatial devient OSIRIS-APEX.",
       "type": "info"
     }
   ]

@@ -1,32 +1,32 @@
 {
   "name": "Skylab 4",
-  "dispatch": "Skylab 4 stellte einen Ausdauerrekord auf, der jahrelang Bestand hatte — 84 Tage in der Luft — und wurde zu einem Meilenstein in etwas weniger Erwartetem: wer eine Mission leitet. Gerald Carrs Besatzung traf auf einen anstrengenden Zeitplan, der vom Boden aus gefunkt wurde, geriet in Verzug und wehrte sich schließlich, indem sie einen nicht eingeplanten Ruhetag einlegte und die Missionskontrolle zwang, eine Arbeitsbelastung auszuhandeln, die Menschen tatsächlich bewältigen konnten. Sie erfassten auch die besten Beobachtungen des Kometen Kohoutek jener Zeit. Der Flug wird sowohl wegen seines Rekords als auch dafür in Erinnerung behalten, dass er zum ersten Mal klar zum Ausdruck brachte, dass die Menschen im Orbit — nicht nur die Planer am Boden — ein Mitspracherecht daran haben, wie eine lange Mission durchgeführt wird.",
-  "type": "BEMANNTE STATIONSBESATZUNG · GEFLOGEN",
-  "first": "Längster Skylab-Aufenthalt — 84 Tage, beobachtete Komet Kohoutek, „Skylab-Streik“-Pausenstreit",
-  "description": "Carr, Gibson und Pogue — die letzte und längste Skylab-Besatzung, 84 Tage 1 Stunde, alle Erstflieger. Gestartet am 1973-11-16 um 14:01 UTC auf einer Saturn IB (SA-208). Umfassende Erderkundungs- und Sonnenbeobachtung, einschließlich einer vollständigen Kometen-Kohoutek-Kampagne im Dezember–Januar. Die Mission ist vor allem für den inoffiziellen „Skylab-Streik“ am 45. Tag in Erinnerung, als die Besatzung nach unermüdlichen Anforderungen der Bodencontroller, die jede wache Minute verplanten, die Funkgeräte einen halben Tag abschaltete — der Streit führte zu dauerhaften NASA-Reformen bei der Crew-Zeitplanung für Langzeitmissionen. Wasserung am 1974-02-08 um 15:17 UTC, die letzte bemannte US-Wasserlandung bis zur SpaceX Crew Dragon 2020. CSM-118 ist im National Museum of the US Air Force in Dayton, OH, ausgestellt.",
+  "type": "BEMANNTE RAUMSTATION BESATZUNG · DURCHGEFÜHRT",
+  "first": "Längster Skylab-Aufenthalt — 84 Tage, beobachtete Komet Kohoutek, umstrittener „Skylab-Streik\"-Ruhetag",
+  "description": "Carr, Gibson und Pogue — die letzte und längste Skylab-Besatzung, 84 Tage 1 Stunde, alle Neulinge. Gestartet 1973-11-16 14:01 UTC auf Saturn IB (SA-208). Umfassende Erdressourcen- und Sonnenbeobachtung, einschließlich einer vollständigen Komet-Kohoutek-Kampagne von Dezember bis Januar. Die Mission wird vor allem für das später von der NASA „Skylab-Meuterei\" oder „Streik\" genannte Ereignis in Erinnerung behalten — ein umstrittenes Ereignis eines Ruhetag-Stillstands um Tag 42 nach erbarmungslosen Forderungen der Bodenkontrolle, die jede Minute der Wachzeit komprimierte; NASA und die Besatzung haben erklärt, dass kein organisierter Streik stattfand, aber die zugrundeliegende Zeitplanüberlastung war real und führte zu permanenten NASA-Reformen bei der Zeitplanung der Besatzung für Langzeitmissionen. Wasserlandung 1974-02-08 15:17 UTC — die letzte Skylab-Wasserlandung. CSM-118 ausgestellt im National Museum of the US Air Force, Dayton OH.",
+  "dispatch": "Skylab 4 stellte einen Ausdauerrekord auf, der jahrelang Bestand hatte — 84 Tage im Weltall — und wurde ein Meilenstein in etwas weniger Erwartetem: wer eine Mission leitet. Gerald Carrs Besatzung traf auf einen erbarmungslosen Zeitplan ein, der vom Boden gefunkt wurde, geriet in Rückstand, und wehrte sich schließlich, indem sie einen ungeplanten Ruhetag nahmen — NASA und die Besatzung selbst stritten später darüber, wie absichtlich der Stillstand war — und zwangen die Missionsleitung, einen Arbeitspensum zu verhandeln, das Menschen tatsächlich aufrechterhalten konnten. Sie erfassten auch die besten Beobachtungen der Ära des Kometen Kohoutek. Der Flug wird sowohl für seinen Rekord als auch dafür in Erinnerung behalten, dass er zum ersten Mal klar geltend machte, dass die Menschen im Orbit — nicht nur die Planer unten — ein Mitspracherecht bei der Durchführung einer langen Mission haben.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn IB SA-208 from LC-39B 1973-11-16 14:01 UTC.",
+      "label": "START",
+      "note": "Saturn IB SA-208 von LC-39B 1973-11-16 14:01 UTC.",
       "type": "nominal"
     },
     {
       "met": 30,
-      "label": "KOHOUTEK CAMPAIGN",
-      "note": "Comprehensive ATM + window observations of Comet Kohoutek.",
+      "label": "KOHOUTEK-KAMPAGNE",
+      "note": "Umfassende ATM- + Fensterbeobachtungen des Kometen Kohoutek.",
       "type": "info"
     },
     {
-      "met": 45,
-      "label": "TIMELINE RESET",
-      "note": "Crew/ground dispute over timeline density led to permanent NASA reforms.",
+      "met": 42,
+      "label": "ZEITPLAN-RÜCKSETZUNG",
+      "note": "Umstrittener Ruhetag-Stillstand (Besatzung und NASA erklärten später, dass kein formeller Streik stattfand); die echte Zeitplanüberlastung führte zu permanenten NASA-Reformen.",
       "type": "warning"
     },
     {
       "met": 84.05,
-      "label": "SPLASHDOWN",
-      "note": "CSM-118 splashed down in Pacific 1974-02-08 15:17 UTC — last US crewed water landing until Crew Dragon.",
+      "label": "WASSERLANDUNG",
+      "note": "CSM-118 wasserte im Pazifik 1974-02-08 15:17 UTC — letzte Skylab-Wasserlandung.",
       "type": "nominal"
     }
   ]

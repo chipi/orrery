@@ -1,0 +1,50 @@
+{
+  "slug": "navigation",
+  "movement": "into-the-dark",
+  "order": 1,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "Gravity assists — the mechanics under this essay",
+      "href": "/science/transfers/gravity-assist",
+      "kind": "science"
+    },
+    {
+      "label": "The Lambert problem — aiming at a moving planet",
+      "href": "/science/transfers/lambert-problem",
+      "kind": "science"
+    },
+    {
+      "label": "Fly a real mission — watch a trajectory and its correction burns",
+      "href": "/fly",
+      "kind": "interactive"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA JPL — Basics of Space Flight, Ch. 13: Spacecraft Navigation",
+      "url": "https://science.nasa.gov/learn/basics-of-space-flight/chapter13-1/"
+    },
+    {
+      "title": "NASA — The Deep Space Network",
+      "url": "https://www.nasa.gov/communicating-with-missions/dsn/"
+    },
+    {
+      "title": "Smithsonian National Air and Space Museum — Deep Space Navigation: Apollo 8",
+      "url": "https://airandspace.si.edu/stories/editorial/deep-space-navigation"
+    },
+    {
+      "title": "NASA — New Horizons Pluto flyby (arrival timing + targeting)",
+      "url": "https://www.nasa.gov/solar-system/nasas-new-horizons-plans-july-4-return-to-normal-operations/"
+    },
+    {
+      "title": "NASA — Perseverance: Terrain-Relative Navigation",
+      "url": "https://mars.nasa.gov/mars2020/spacecraft/entry-descent-landing/"
+    },
+    {
+      "title": "NASA history (SP-4219) — Gary Flandro and the Grand Tour",
+      "url": "https://www.nasa.gov/history/"
+    }
+  ],
+  "hero": "essays/navigation/hero"
+}

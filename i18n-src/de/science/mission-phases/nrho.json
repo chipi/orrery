@@ -1,15 +1,15 @@
 {
   "title": "NRHO — Near-Rectilinear Halo Orbit",
-  "intro_sentence": "Eine 9-Tages-eiförmige Bahn um den Erde-Mond-L2-Punkt — das gewählte Zuhause des NASA Lunar Gateway.",
+  "intro_sentence": "Eine etwa 6,5-tägige eiförmige Umlaufbahn um den Erde-Mond-L2-Punkt — das zukünftige Zuhause der NASA-Raumstation Lunar Gateway.",
   "narrative_101": [
-    "NRHO ist die Bahn, die NASA für Gateway wählte — die kleine Raumstation nahe dem Mond ab Ende 2020er. Akronym = Near-Rectilinear Halo Orbit. Stell dir ein Ei vor, gestreckt, balanciert fast am L2-Lagrange-Punkt jenseits des Mondes. Sonde umrundet alle neun Tage.",
-    "Warum diese Bahn? Perfekter Kompromiss. Quasi gratis zu erhalten — ~5 m/s/Jahr Stationkeeping. Immer freie Sicht zur Erde. Ein Ei-Ende dippt nahe genug am Mond für Lander zum Südpol.",
-    "Artemis II = erster bemannter NRHO-Flug. Artemis III docked dort zum Lander-Transfer. Über Gateway hinaus: NRHO als Stage für bemannte Marsmissionen."
+    "NRHO ist die Umlaufbahn, die die NASA für Gateway ausgewählt hat — die kleine Raumstation, die ab den späten 2020ern in der Nähe des Mondes stationiert sein wird. Das Akronym steht für Near-Rectilinear Halo Orbit — eine Bezeichnung, die wenig Sinn macht, bis man die Form sieht. Stellen Sie sich ein Ei vor, das gestreckt ist und fast-aber-nicht-ganz am Erde-Mond-L2-Lagrange-Punkt balanciert, mit seinem nächsten Punkt über dem Mondsüdpol. Das Raumschiff umkreist ihn etwa alle 6,5 Tage einmal.",
+    "Warum ausgerechnet diese Umlaufbahn aus allen möglichen? Sie ist ein perfekter Kompromiss. Sie erfordert kaum Treibstoff zur Wartung — etwa 5 Meter pro Sekunde pro Jahr Bahnhaltung, was praktisch kostenlos ist. Sie hat immer eine freie Sichtlinie zur Erde, daher wird der Funkverkehr nie vom Mond blockiert. Und ein Ende des Eis dips nah genug zum Mond hinab, sodass Lander zum Südpol hinabfahren und zurückkehren können, ohne riesige ∆v-Kosten zu verursachen.",
+    "Artemis II wird der erste bemannte Flug zur NRHO sein. Artemis III wird dort andocken, um auf einen von Starship abgeleiteten Lander zu wechseln. Über Gateway hinaus wird die NRHO als Einsatzgebiet für zukünftige bemannte Marsmissionen untersucht — ein Ort, um große Raumschiffe weit weg von Erdschwerkraft zusammenzubauen."
   ],
   "body_paragraphs": [
-    "Eine NRHO ist eine Halo-Bahn — periodische Dreikörper-Trajektorie um einen Lagrange-Punkt — gestreckt bis ein Ende fast den Mond-Südpol berührt. Eher polare Bahn als Halo. ~6,5 Tage am Perilun, 9 Tage volle Revolution.",
-    "Warum diese Bahn? Stabilität bei niedrigem Δv-Aufwand — ~5 m/s/Jahr. Kontinuierliche Sichtlinie zur Erde. Niedrigkostiger Δv-Zugang von der Erde (~4 km/s Transfer + Insertion). Mondoberflächen-Zugang via kleine Lander vom Perilun.",
-    "Gateway erste bemannte Deep-Space-Station, NRHO ab Ende 2020er. Artemis II erster bemannter Flug. Über Gateway: NRHO ist Bühne für bemannte Mars-Architekturen."
+    "Eine NRHO ist eine Haloorbit — eine periodische Drei-Körper-Trajektorie, die um einen Lagrange-Punkt schleift — aber so gestreckt, dass ein Ende fast den Mondsüdpol berührt. Sie sieht eher wie eine Polarumlaufbahn als eine Haloorbit aus, daher 'near-rectilinear'. Eine vollständige Umdrehung dauert etwa 6,5 Tage; die '9' in der Gateway-9:2-Resonanz bezieht sich auf neun NRHO-Umläufe pro zwei synodische Mondmonate, nicht auf eine 9-Tage-Periode.",
+    "Warum diese Umlaufbahn? Stabilität bei niedriger ∆v-Wartung — etwa 5 m/s pro Jahr Bahnhaltung. Kontinuierliche Sichtlinie zur Erde (Gateway geht nicht lange hinter den Mond). Niedriger-∆v-Zugang von der Erde (etwa 4 km/s für Übergang + Einfügung, vergleichbar mit LLO aber mit viel besserer Wärmestabilität). Zugang zur Mondoberfläche über kleine Lander vom Perilunium.",
+    "Gateway wird die erste bemannte Raumstation im Tiefweltraum sein, die ab den späten 2020ern die NRHO bewohnt. Artemis II wird der erste bemannte Flug zur NRHO sein; Artemis III wird dort andocken, um auf den Lander zu wechseln. Über Gateway hinaus ist die NRHO das Einsatzgebiet für bemannte Mars-Architekturen."
   ],
-  "diagram_caption": "Gestreckte Halo-Bahn am Erde-Mond-L2: ~9-Tage-Periode, Perilun nahe Südpol, Sichtlinie zur Erde."
+  "diagram_caption": "Gestreckte Haloorbit am Erde-Mond-L2-Punkt: ~6,5-Tage-Periode, Perilunium über dem Südpol, kontinuierliche Sichtlinie zur Erde."
 }

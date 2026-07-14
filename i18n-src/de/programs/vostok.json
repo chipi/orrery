@@ -1,14 +1,14 @@
 {
   "name": "Vostok",
-  "tagline": "Das Programm, das den ersten Menschen in die Umlaufbahn brachte — und weiterhin Premieren erzielte, während Amerika sich bemühte aufzuholen.",
+  "tagline": "Das Programm, das den ersten Menschen in die Umlaufbahn brachte — und weiter Premieren erzielte, während Amerika sich abmühte aufzuholen.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Bis 1960 hatte die Sowjetunion die Welt bereits mit Sputnik in Erstaunen versetzt und beabsichtigte, die Führung zu behalten. Dahinter stand ein Mann, von dessen Existenz der Westen nichts wusste: Sergei Korolev, der „Chefkonstrukteur\", dessen Name selbst ein Staatsgeheimnis war und der das Programm leitete, das seine R-7 — die weltweit erste Interkontinentalrakete — in eine Rakete verwandelt hatte, die einen Menschen befördern konnte. Die Amerikaner bauten Mercury und sprachen offen darüber. Die Sowjets sagten fast nichts und bewegten sich schneller."
+      "md": "Bis 1960 hatte die Sowjetunion die Welt bereits mit Sputnik erschüttert und war entschlossen, die Führung zu behalten. Dahinter stand ein Mann, von dessen Existenz der Westen nichts wusste: Sergei Korolev, der „Chefkonstrukteur\", dessen Name selbst Staatsgeheimnis war und der das Programm leitete, das seine R-7 — die erste Interkontinentalrakete der Welt — in eine Rakete verwandelt hatte, die einen Menschen tragen konnte. Die Amerikaner bauten Mercury und sprachen offen darüber. Die Sowjets sagten fast nichts und waren schneller."
     },
     {
       "type": "prose",
-      "md": "Der Preis war der erste Mensch im Weltraum, und er war fast jedes Risiko wert, denn im Kalten Krieg war ein sowjetischer Kosmonaut, der über ihnen kreiste, ein Argument, dem keine Rede gewachsen war — ein Beweis, weltweit übertragen, dass das System den Westen an der Grenze des Möglichen überflügeln konnte. Vostok wurde gebaut, um dieses Argument zu gewinnen. Es musste im Orbit nicht viel leisten; es musste einen Menschen hinauf, herum und sicher wieder herunter bringen, und es musste das Erste sein."
+      "md": "Der Preis war der erste Mensch im Weltraum, und er war fast jedes Risiko wert, denn im Kalten Krieg war ein sowjetischer Kosmonaut, der über ihnen kreiste, ein Argument, dem keine Rede gewachsen war — ein Beweis, weltweit übertragen, dass das System den Westen an der Grenze des Möglichen überbieten konnte. Vostok wurde gebaut, um dieses Argument zu gewinnen. Es musste im Orbit nicht viel leisten; es musste einen Menschen hinauf, herum und sicher wieder hinunter bringen, und es musste das Erste sein."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/vostok/01"
       },
-      "caption": "Das Vostok-Abstiegsmodul — eine einfache Kugel, die eine Form, die den Wiedereintritt aus jedem Winkel ohne Steuerung übersteht. Der Kosmonaut flog damit bis auf wenige Kilometer herunter, katapultierte sich dann heraus und landete separat mit dem Fallschirm.",
+      "caption": "Das Vostok-Abstiegsmodul — eine einfache Kugel, die einzige Form, die den Wiedereintritt aus jedem Winkel ohne Steuerung übersteht. Der Kosmonaut flog darin bis auf wenige Kilometer herunter, wurde dann ausgeschleudert und landete separat am Fallschirm.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Vostoks Ziel war ebenso eng gefasst wie das von Mercury und wurde mit weniger Vorsicht verfolgt: beweisen, dass ein Mensch Start, Umlaufbahn und Wiedereintritt überleben konnte — und das vor den Amerikanern. Das Raumschiff spiegelte diesen Fokus wider. Es war eine Kugel, die Form, die aus jeder Orientierung sicher wiedereintritt, sodass die automatischen Systeme keine präzise Lage halten mussten, mit einem separaten Gerätemodul, das vor dem Feuer des Wiedereintritts abfiel."
+      "md": "Das Ziel von Vostok war ebenso eng gefasst wie das von Mercury und wurde mit weniger Vorsicht verfolgt: beweisen, dass ein Mensch Start, Orbit und Wiedereintritt überleben konnte — und das vor den Amerikanern. Das Raumschiff spiegelte diesen Fokus wider. Es war eine Kugel, die Form, die aus jeder Orientierung sicher wieder eintritt, sodass die automatischen Systeme keine präzise Lage halten mussten, mit einem separaten Gerätemodul, das vor dem Feuer des Wiedereintritts abfiel."
     },
     {
       "type": "prose",
-      "md": "Ein Detail wurde jahrelang verschwiegen. Die Kapsel schlug zu hart auf dem Boden auf, als dass ein Mensch den Aufprall hätte überleben können, daher stieg der Kosmonaut in etwa sieben Kilometern Höhe aus und kam unter einem separaten Fallschirm herunter. Nach den damals geltenden internationalen Regeln zählte ein Flug nur, wenn der Pilot *mit* dem Raumschiff landete — die Sowjets erwähnten es also einfach nicht und beanspruchten die Rekorde trotzdem. Eine Kleinigkeit, aber eine aufschlussreiche: Das Programm war darauf ausgelegt zu gewinnen, und die Wahrheit wurde entsprechend angepasst."
+      "md": "Ein Detail wurde jahrelang verschwiegen. Die Kapsel schlug zu hart auf dem Boden auf, als dass ein Mensch den Aufprall hätte überleben können, also katapultierte sich der Kosmonaut in etwa sieben Kilometern Höhe heraus und kam an einem separaten Fallschirm herunter. Nach den damals geltenden internationalen Regeln zählte ein Flug nur, wenn der Pilot *mit* dem Raumschiff landete — die Sowjets erwähnten es also einfach nicht und beanspruchten die Rekorde trotzdem. Eine Kleinigkeit, aber eine aufschlussreiche: Das Programm war auf Sieg ausgelegt, und die Wahrheit wurde entsprechend zurechtgebogen."
     }
   ],
   "outcome": [
@@ -35,30 +35,30 @@
       "image": {
         "reuse": "missions/vostok-6/01"
       },
-      "caption": "Valentina Tereshkova vor Vostok 6, Juni 1963 — die erste Frau im Weltraum, zwanzig Jahre bevor die Vereinigten Staaten eine fliegen würden.",
+      "caption": "Valentina Tereshkova vor Vostok 6, Juni 1963 — die erste Frau im Weltraum, zwanzig Jahre bevor die Vereinigten Staaten eine fliegen lassen würden.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "In etwas mehr als zwei Jahren erzielte Vostok eine Serie von Premieren, die die Vereinigten Staaten nur beobachten konnten. Am 12. April 1961 wurde Juri Gagarin der erste Mensch im Weltraum — eine einzige Erdumkreisung, die ihn über Nacht zur berühmtesten Person der Erde machte. Gherman Titov folgte mit dem ersten vollen Tag im Orbit. Vostok 3 und 4 flogen zusammen, das erste Mal, dass zwei bemannte Raumfahrzeuge gemeinsam den Himmel teilten. Valery Bykovsky flog fast fünf Tage, noch immer der längste Solo-Raumflug aller Zeiten. Und Valentina Tereshkova wurde die erste Frau im Weltraum — ein Meilenstein, den die Amerikaner erst 1983 erreichen sollten."
+      "md": "In knapp über zwei Jahren erzielte Vostok eine Reihe von Premieren, die die Vereinigten Staaten nur beobachten konnten. Am 12. April 1961 wurde Juri Gagarin der erste Mensch im All — eine einzige Erdumkreisung, die ihn über Nacht zur berühmtesten Person der Erde machte. Gherman Titow folgte mit dem ersten vollen Tag im Orbit. Vostok 3 und 4 flogen zusammen, das erste Mal, dass zwei bemannte Raumfahrzeuge den Himmel teilten. Waleri Bykowski flog fast fünf Tage, immer noch der längste Solo-Raumflug überhaupt. Und Valentina Tereshkova wurde die erste Frau im All — ein Meilenstein, den die Amerikaner erst 1983 erreichen sollten."
     },
     {
       "type": "prose",
-      "md": "Sechs Flüge, sechs Erfolge, sechs Premieren. Nach dem Maßstab, der 1963 am meisten zählte — wer war zuerst dort — gewann die Sowjetunion eindeutig, und das in einem Raumschiff, das nicht einmal seine eigene Umlaufbahn ändern konnte. Doch die Serie markierte auch eine Obergrenze: Vostok hatte alles geleistet, was eine einsitzige Kugel leisten konnte, und die nächsten Runden — Weltraumspaziergänge, Rendezvous, Andockmanöver, der Mond — würden Maschinen erfordern, die es nicht besaß."
+      "md": "Sechs Flüge, sechs Erfolge, sechs Premieren. Nach dem Maßstab, der 1963 am meisten zählte — wer war zuerst da — gewann die Sowjetunion eindeutig, und das mit einem Raumfahrzeug, das nicht einmal seine eigene Umlaufbahn ändern konnte. Doch die Serie markierte auch eine Obergrenze: Vostok hatte alles erreicht, was eine einsitzige Kugel erreichen konnte, und die nächsten Runden — Weltraumspaziergänge, Rendezvous, Andockmanöver, der Mond — würden Maschinen erfordern, die es nicht besaß."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Vostok ist eine Geschichte, die auf zwei Ebenen zugleich erzählt wird — der öffentliche Triumph und die verborgene Realität. In der Öffentlichkeit war jeder Flug eine makellose Demonstration sowjetischer Überlegenheit, die erst verkündet wurde, nachdem sie bereits geglückt war. Verborgen blieben die Dinge, die nicht ins Bild passten: Korolevs Name, die Schleudersitzlandungen, die Startfehlschläge, bei denen Bodenpersonal ums Leben kam, die Beinahekatastrophen. Das Programm führte nie eine Mission durch, von der es einen Fehlschlag erwartete, denn ein öffentlicher Fehlschlag war politisch unerschwinglich — und das prägte, was es unternahm und wann."
+      "md": "Vostok ist eine Geschichte, die in zwei Registern zugleich erzählt wird — der öffentliche Triumph und die verborgene Realität. In der Öffentlichkeit wurde jeder Flug als makellos dargestellt — Beweis, so bestand der Staat darauf, sowjetischer Überlegenheit, verkündet erst nachdem er bereits geglückt war. Außer Sichtweite blieben die Dinge, die nicht ins Bild passten: Korolevs Name, die Schleudersitzlandungen, die bei gescheiterten Testflügen verlorenen Hunde, die Beinahe-Katastrophen. Das Programm flog nie eine Mission, von der es erwartete, dass sie scheitern würde, denn ein öffentliches Scheitern war politisch unerschwinglich — und das prägte, was es unternahm, und wann."
     },
     {
       "type": "prose",
-      "md": "Im Zentrum stand ein Mann, der zum Symbol wurde. Gagarins 108 Minuten machten ihn über Nacht zu einer globalen Ikone — auf Welttourneen geschickt, auf Briefmarken und Statuen verewigt, für den Staat am Boden nützlicher als in der Luft, und nie wieder ins All fliegen dürfen. Er starb 1968 bei einem Düsenflugzeugabsturz, mit vierunddreißig Jahren. Der erste Mensch, der den Planeten verließ, verbrachte den Rest seines kurzen Lebens als lächelndes Gesicht eines Systems, das ihn nicht ein zweites Mal riskieren wollte."
+      "md": "Im Zentrum stand ein Mann, der zum Symbol wurde. Gagarins 108 Minuten machten ihn über Nacht zur globalen Ikone — auf Welttournee geschickt, auf Briefmarken und Statuen verewigt, für den Staat am Boden nützlicher als in der Luft, und nie wieder durfte er ins All fliegen. Er starb 1968 bei einem Düsenabsturz, mit vierunddreißig Jahren. Der erste Mensch, der den Planeten verließ, verbrachte den Rest seines kurzen Lebens als lächelndes Gesicht eines Systems, das ihn kein zweites Mal riskieren wollte."
     },
     {
       "type": "prose",
-      "md": "Mitte 1963 hatte Vostok seinen Lauf genommen. Sein Nachfolger, Voskhod, würde dieselbe grundlegende Hardware bis an die Grenzen ausreizen, um zwei weitere Premieren herauszuholen — eine mehrköpfige Besatzung und den ersten Weltraumausstieg —, bevor das sowjetische Programm zu Soyuz überging und im Geheimen den Mond ins Visier nahm."
+      "md": "Mitte 1963 hatte Vostok seinen Lauf genommen. Sein Nachfolger Voskhod würde dieselbe grundlegende Hardware noch einmal ausreizen, um zwei weitere Premieren herauszuholen — eine mehrköpfige Besatzung und den ersten Weltraumausstieg — bevor das sowjetische Programm zu Soyuz überging und seine Ziele, im Geheimen, auf den Mond richtete."
     }
   ],
   "legacy": [
@@ -67,26 +67,26 @@
       "image": {
         "reuse": "missions/vostok-1/02"
       },
-      "caption": "Yuri Gagarin — der erste Mensch im Weltraum und für den Rest seines kurzen Lebens das Gesicht des sowjetischen Raumfahrtprogramms.",
+      "caption": "Juri Gagarin — der erste Mensch im Weltraum und für den Rest seines kurzen Lebens das Gesicht des sowjetischen Raumfahrtprogramms.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "Das Vermächtnis von Vostok besteht teils aus einer Reihe von Erstleistungen, die niemals rückgängig gemacht werden können, und teils aus einer Maschine, die niemals wirklich außer Dienst gestellt wurde. Die R-7-Rakete, die Gagarin ins All brachte, ist in direkter Abstammung die Soyuz-Rakete, die noch heute Besatzungen in den Orbit befördert — mehr als sechzig Jahre und eintausendachthundert Starts später das meistgenutzte Trägerraketensystem der Geschichte. Die Konstruktion aus kugelförmiger Kapsel und Servicemodul wurde zur Vorlage für Soyuz, die noch immer fliegt."
+      "md": "Das Erbe von Vostok besteht zum Teil aus einer Reihe von Premieren, die niemals rückgängig gemacht werden können, und zum Teil aus einer Maschine, die niemals wirklich in den Ruhestand ging. Die R-7-Rakete, die Gagarin ins All brachte, ist in direkter Abstammung die Soyuz-Rakete, die noch heute Besatzungen in den Orbit befördert — nach mehr als sechzig Jahren und eintausendachthundert Starts das meistgenutzte Trägerraketensystem der Geschichte. Das Layout aus kugelförmiger Kapsel und Servicemodul wurde zur Vorlage für Soyuz, das noch immer fliegt."
     },
     {
       "type": "prose",
-      "md": "Strategisch erreichte er etwas Größeres als jeder einzelne Flug: Er überzeugte die Vereinigten Staaten, dass sie das Weltraumrennen nicht nach den Bedingungen gewinnen konnten, die die Sowjets setzten, und drängte Kennedy dazu, das Spiel in Richtung Mond zu ändern — ein Ziel, das weit genug entfernt war, dass die amerikanische Industriekraft zum Tragen kommen konnte. In diesem Sinne ist Apollo teilweise Vostoks Verdienst. Und für die weitere Welt veränderte der Anblick eines Menschen, der den Planeten umkreist — unabhängig davon, welche Flagge auf der Rakete war — dauerhaft das Verständnis dessen, wozu Menschen fähig sind."
+      "md": "Strategisch erreichte sie etwas Größeres als jeder einzelne Flug: Sie überzeugte die Vereinigten Staaten, dass sie das Weltraumrennen nicht zu den Bedingungen gewinnen konnten, die die Sowjets setzten, und drängte Kennedy dazu, das Spiel zum Mond zu verlagern — ein Ziel, das weit genug entfernt war, damit die amerikanische industrielle Stärke zum Tragen kommen konnte. In diesem Sinne ist Apollo teilweise Vostoks Werk. Und für die weitere Welt veränderte der Anblick eines Menschen, der den Planeten umkreiste — unabhängig davon, welche Flagge auf der Rakete war — dauerhaft das Verständnis davon, wozu Menschen fähig sind."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lektion von Vostok ist die zweischneidige Klinge einer Strategie, die darauf aufbaut, der Erste zu sein. Die Sowjets gewannen nahezu jede frühe Runde, indem sie ein begrenztes Raumschiff bis an seine Grenzen trieben und handelten, bevor die Konkurrenz reagieren konnte — und das funktionierte für eine Weile brillant. Aber eine Serie von Premieren ist nicht dasselbe wie eine tiefgreifende Fähigkeit, und Vostoks Fokus auf die nächste Schlagzeile ließ es ohne die Manövrier-, Andock- und Ausdauerfähigkeiten zurück, die das eigentliche Ziel erfordern würde. Den Sprint zu gewinnen kann einem still und leise das Rennen kosten, wenn der Sprint die Anlaufstrecke verbrennt, die man für den Marathon gebraucht hätte."
+      "md": "Die Lektion von Vostok ist die Doppelschneide einer Strategie, die darauf aufbaut, der Erste zu sein. Die Sowjets gewannen nahezu jede frühe Runde, indem sie ein begrenztes Raumschiff bis an seine Grenzen trieben und handelten, bevor die Konkurrenz reagieren konnte — und das funktionierte für eine Weile brillant. Aber eine Serie von Erstleistungen ist nicht dasselbe wie eine tiefgreifende Fähigkeit, und Vostoks Fokus auf die nächste Schlagzeile ließ es ohne die Manövrierfähigkeit, das Andocken und die Ausdauer zurück, die das eigentliche Ziel erfordern würde. Den Sprint zu gewinnen kann einem leise das Rennen kosten, wenn der Sprint die Strecke verbrennt, die man für den Marathon gebraucht hätte."
     },
     {
       "type": "prose",
-      "md": "Die zweite Lektion ist, was Geheimhaltung bringt und was sie kostet. Die Misserfolge zu verbergen und die Wahrheit zu steuern ließ das Programm unbesiegbar erscheinen, was echten Kalter-Krieg-Wert hatte. Aber es bedeutete auch, dass das Programm niemals scheitern durfte — was es an den falschen Stellen vorsichtig machte, unfähig, die sichtbaren Risiken einzugehen, die das Erlernen schwieriger Dinge erfordert. Eine Organisation, die es sich nicht leisten kann, öffentlich zu scheitern, kann es sich schließlich auch nicht leisten, öffentlich zu *lernen*."
+      "md": "Die zweite Lektion ist, was Geheimhaltung bringt und was sie kostet. Die Fehler zu verbergen und die Wahrheit zu steuern ließ das Programm unbesiegbar erscheinen, was im Kalten Krieg echten Wert hatte. Aber es bedeutete auch, dass das Programm niemals scheitern durfte — was es an den falschen Stellen vorsichtig machte, unfähig, die sichtbaren Risiken einzugehen, die das Erlernen schwieriger Dinge erfordert. Eine Organisation, die es sich nicht leisten kann, in der Öffentlichkeit zu scheitern, kann es sich am Ende auch nicht leisten, in der Öffentlichkeit zu *lernen*."
     }
   ]
 }

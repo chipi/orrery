@@ -1,25 +1,25 @@
 {
-  "name": "X-37B OTV-6号 (USA-299, USSF-7)",
-  "type": "無人スペースプレーン · 飛行済",
-  "first": "USA-299 / USSF-7 — 軌道上908日、KSCシャトル着陸施設",
-  "description": "X-37Bの6回目の飛行 — 新たなUSSFの組織名称の下での初の便であり、軌道上908日（約2.5年）の記録を樹立。2020-05-17 13:14 UTCにCCAFS SLC-41からアトラスV 501 AV-081で打ち上げ。2022-11-12 10:22 UTCにKSC SLFに着陸。海軍研究所のPRAM（Photovoltaic RF Antenna Module — 太陽光からマイクロ波ビームへの1 W伝送実験）とAFRLのFalconSAT-8放出機を搭載。",
+  "name": "X-37B OTV-6 (USA-299, USSF-7)",
+  "type": "無人宇宙飛行機 · 完了",
+  "first": "USA-299 / USSF-7 — 軌道上で908日間、KSC シャトル着陸施設",
+  "description": "6番目のX-37B飛行 — 新しいUSSF組織名称下での初飛行；軌道上での記録的908日間（約2.5年）。2020-05-17 13:14 UTCにCCAFS SLC-41からアトラスV 501 AV-081で打ち上げ；2022-11-12 10:22 UTCにKSC SLFに着陸。海軍研究所のPRAM（光電子RF アンテナモジュール — 1 W太陽光からマイクロ波ビーム送電実験）およびAFRL FalconSAT-8デプロイヤーを搭載。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-081) from CCAFS SLC-41 2020-05-17.",
+      "label": "打ち上げ",
+      "note": "アトラスV 501 (AV-081) CCAFS SLC-41から 2020-05-17",
       "type": "nominal"
     },
     {
       "met": 454,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee ~390 km; classified payload operations.",
+      "label": "軌道上運用",
+      "note": "遠地点～400 km；機密ペイロード運用。",
       "type": "info"
     },
     {
       "met": 908,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2022-11-12.",
+      "label": "着陸",
+      "note": "2022-11-12にKSC シャトル着陸施設での自動滑走路着陸。",
       "type": "nominal"
     }
   ]

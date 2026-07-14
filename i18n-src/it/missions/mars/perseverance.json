@@ -1,50 +1,50 @@
 {
-  "name": "Perseveranza",
+  "name": "Perseverance",
   "type": "ROVER · ATTIVO",
-  "first": "Primo elicottero su un altro pianeta (Ingenuity); primo salvataggio nella cache di campioni per Mars Sample Return",
-  "dispatch": "Perseverance è andato su Marte per cercare i morti. Atterrato nel 2021 nel cratere Jezero — il delta di un fiume che alimentava un lago miliardi di anni fa, esattamente il tipo di luogo dove la vita avrebbe lasciato tracce — è il primo rover costruito specificamente per cercare segni di vita antica, e per fare qualcosa che nessuna missione aveva fatto: sigillare roccia marziana in provette e metterle da parte perché una futura sonda spaziale le riporti a casa. Ha anche consegnato Ingenuity, il piccolo elicottero che ha compiuto il primo volo a propulsione su un altro pianeta. Se i campioni che sta raccogliendo verranno mai riportati, saranno i primi frammenti della superficie di un altro pianeta portati sulla Terra.",
-  "description": "Perseverance è la missione sulla superficie di Marte più ambiziosa mai effettuata. Il ritorno dei campioni su Marte dipende da questo: il rover sta raccogliendo e memorizzando nella cache campioni in tubi che una futura missione recupererà e porterà sulla Terra. Ingenuity, il primo elicottero su un altro pianeta, ha effettuato 72 missioni prima di ritirarsi con i rotori danneggiati nel gennaio 2024, dimostrando che il volo controllato è possibile nella sottile atmosfera di Marte. MOXIE, un dimostratore di ossigeno dalla CO2, ha prodotto il primo ossigeno prodotto localmente su un altro pianeta, una prova per le missioni su Marte con equipaggio.",
+  "first": "Primo elicottero su un altro pianeta (Ingenuity); primo campionamento conservato per Mars Sample Return",
+  "dispatch": "Perseverance è andato su Marte alla ricerca dei morti. Atterrato nel 2021 sul fondo del Cratere Jezero — un bacino che ospita il delta di un fiume che alimentava un lago miliardi di anni fa, esattamente il tipo di luogo dove la vita avrebbe lasciato tracce — è il primo rover costruito specificamente per cercare segni di vita antica, e per fare qualcosa che nessuna missione aveva mai fatto: sigillare rocce marziane in tubi e metterle da parte per una futura astronave che le porti a casa. Ha anche portato Ingenuity, il piccolo elicottero che ha realizzato il primo volo con motore su un altro pianeta. Se i campioni che sta conservando verranno mai restituiti, saranno i primi pezzi della superficie di un altro pianeta riportati sulla Terra.",
+  "description": "Perseverance è la missione di superficie su Marte più ambiziosa mai realizzata. Mars Sample Return dipende da essa — il rover sta raccogliendo e conservando campioni in tubi che una futura missione recupererà e porterà sulla Terra. Ingenuity, il primo elicottero su un altro pianeta, ha volato in 72 missioni prima di ritirarsi con rotori danneggiati nel gennaio 2024 — provando che il volo controllato è possibile nell'atmosfera sottile di Marte. MOXIE, un dimostratore di ossigeno da CO2, ha prodotto il primo ossigeno prodotto localmente su un altro pianeta, una prova generale per le missioni umane su Marte.",
   "events": [
     {
       "met": 0,
       "label": "LANCIO",
-      "note": "Atlas V 541 di Cape Canaveral SLC-41 - stessa classe di veicoli di Curiosity.",
+      "note": "Atlas V 541 da Cape Canaveral SLC-41 — stesso tipo di veicolo usato per Curiosity.",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "BRUCIATURA TMI",
-      "note": "Iniezione Trans-Marte.",
+      "label": "ACCENSIONE TMI",
+      "note": "Iniezione trans-marziana.",
       "type": "nominal"
     },
     {
       "met": 9,
-      "label": "MTC-1",
-      "note": "Prima correzione di metà percorso.",
+      "label": "TCM-1",
+      "note": "Primo aggiustamento di traiettoria.",
       "type": "nominal"
     },
     {
       "met": 203,
       "label": "EDL",
-      "note": "Una gru aerea consegna il rover al cratere Jezero 18-02-2021 — sito di un antico delta del fiume.",
+      "note": "Sky-crane consegna il rover al Cratere Jezero 2021-02-18 — sito di un antico delta fluviale.",
       "type": "nominal"
     },
     {
       "met": 203.01,
-      "label": "TOCCO",
+      "label": "CONTATTO AL SUOLO",
       "note": "Perseverance atterra a Jezero alle 20:55 UTC.",
       "type": "nominal"
     },
     {
       "met": 271,
-      "label": "L'INGEGNO IL PRIMO VOLO",
-      "note": "Primo volo controllato a motore su un altro pianeta: 39,1 secondi fino a 5 m di altitudine.",
+      "label": "PRIMO VOLO INGENUITY",
+      "note": "Primo volo controllato con motore su un altro pianeta — 39,1 secondi a un'altitudine fino a 5 m.",
       "type": "info"
     },
     {
       "met": 1278,
-      "label": "INGEGNO IN PENSIONE",
-      "note": "Pala del rotore danneggiata sul 72° volo 18-01-2024; l'elicottero rimane operativo come relè di comunicazione.",
+      "label": "INGENUITY RITIRATO",
+      "note": "Pala del rotore danneggiata nel 72º volo 2024-01-18; elicottero messo a terra, riconvertito in stazione meteorologica e di raccolta dati stazionaria conservando le letture per il recupero futuro.",
       "type": "info"
     }
   ]

@@ -1,50 +1,50 @@
 {
   "name": "Curiosity",
   "type": "ROVER · ACTIEF",
-  "first": "Eerste nucleair aangedreven Mars-rover; eerste sky-crane-landing",
-  "dispatch": "Curiosity is een nucleair aangedreven laboratorium ter grootte van een kleine auto, en het naar beneden krijgen was het moeilijke deel. Te zwaar voor airbags, werd het in 2012 op Mars neergelaten door een raketaangedreven sky crane in een sequentie zo riskant dat de planners het seven minutes of terror noemden — en het werkte meteen de eerste keer. Sindsdien heeft het zich borend een weg gebaand door Gale Crater en de vraag beantwoord waarvoor het gestuurd was: de krater bevatte ooit een meer, met de chemie die een levend wezen had kunnen gebruiken. Mars was bewoonbaar geweest. Curiosity rijdt nog steeds, klimmend over een berg van gelaagd gesteente dat leest als het eigen geschiedenisboek van de planeet.",
-  "description": "De vlaggenschipmissie die de moderne Mars-verkenning definieerde. Curiosity is autoformaat, plutoniumaangedreven en heeft sinds de landing in de Gale-krater in 2012 32+ km Mount Sharp opgereden. Zijn instrumenten bevestigden dat Mars ooit leefbare omstandigheden had — stromend water, complexe organische stoffen, de chemie die het leven nodig zou hebben. De 'zeven minuten van schrik' EDL-sequentie, eindigend met een sky-crane die de rover aan kabels neerlaat, is nu NASA's standaard voor het leveren van grote ladingen aan het Marsoppervlak.",
+  "first": "Eerste kernenergetische Marsrover; eerste sky-crane landing",
+  "dispatch": "Curiosity is een kernenergetisch laboratorium ter grootte van een kleine auto, en het neerbrengen was het moeilijkste deel. Te zwaar voor airbags, werd het in 2012 op Mars neergelaten door een raketaangedreven sky crane in een sequentie die zo riskant was dat de planners het 'zeven minuten van angst' noemden — en het werkte bij de eerste poging. Sindsdien heeft het zich een weg geboord over Gale Crater en beantwoord het de vraag waarvoor het was gestuurd: de krater bevatte ooit een meer, met scheikunde die iets levends zou hebben kunnen gebruiken. Mars was bewoonbaar geweest. Curiosity rijdt nog steeds en klimt een berg van gelaagde steen op die als een geschiedenisboek van de planeet zelf leest.",
+  "description": "De vlaggenschipmeditatie die moderne Marsverkenning definieerde. Curiosity is ter grootte van een auto, aangedreven door plutonium, en heeft sinds de landing in 2012 meer dan 36 km over Gale Crater afgelegd. Zijn instrumenten bevestigden dat Mars ooit bewoonbare omstandigheden had — stromend water, complexe organische stoffen, de scheikunde die leven nodig zou hebben. De 'zeven minuten van angst' EDL-sequentie, eindigend met een sky crane die de rover aan kabels neersendt, is nu de norm van NASA voor het leveren van grote ladingen op het Marsoppervlak.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Atlas V 541 heft af van Cape Canaveral SLC-41.",
+      "note": "Atlas V 541 liftoff van Cape Canaveral SLC-41.",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "TMI-VERBRANDING",
-      "note": "Trans-Mars-injectie (3,61 km/s ∆v) stuurt MSL op een heliocentrische Mars-bestemde traject.",
+      "label": "TMI BURN",
+      "note": "Trans-Mars injectie (3.61 km/s ∆v) stuurt MSL op een heliocentrische Mars-gebonden baan.",
       "type": "nominal"
     },
     {
       "met": 16,
       "label": "TCM-1",
-      "note": "Eerste tussenkoerscorrectie.",
+      "note": "Eerste baan-correctiemanoeuvre.",
       "type": "nominal"
     },
     {
       "met": 119,
       "label": "TCM-3",
-      "note": "Laatste pre-EDL-correctie; traject richt zich op de landingsellips van de Gale-krater.",
+      "note": "Laatste correctie vóór EDL; baan gericht op landingsellips van Gale Crater.",
       "type": "nominal"
     },
     {
       "met": 254,
-      "label": "EDL — ZEVEN MINUTEN VAN SCHRIK",
-      "note": "Atmosferische intrede, supersonische parachute, sky-crane retro-raketten, rover aan kabels neergelaten.",
+      "label": "EDL — ZEVEN MINUTEN VAN ANGST",
+      "note": "Atmosferische ingang, supersonische parachute, sky-crane retroraketten, rover neergelaten aan kabels.",
       "type": "nominal"
     },
     {
       "met": 254.005,
-      "label": "TOUCHDOWN",
-      "note": "Curiosity arriveert bij Aeolis Palus, Gale-krater, 2012-08-06 05:17:57 UTC.",
+      "label": "LANDING",
+      "note": "Curiosity arriveert bij Aeolis Palus, Gale Crater, 2012-08-06 05:17:57 UTC.",
       "type": "nominal"
     },
     {
       "met": 254.01,
       "label": "EERSTE BEELDEN",
-      "note": "Hazcam stuurt eerste lage-resolutie beeld van het oppervlak terug.",
+      "note": "Hazcam retourneert eerste lage-resolutiebild van het oppervlak.",
       "type": "info"
     }
   ]

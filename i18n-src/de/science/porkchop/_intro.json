@@ -1,8 +1,8 @@
 {
-  "headline": "Porkchop-Plots — wann starten und warum die Fenster die Fenster sind.",
+  "headline": "Porkchop-Plots — wann man startet und warum die Fenster Fenster sind",
   "paragraphs": [
-    "Missionsplaner berechnen nicht eine Trajektorie zum Mars — Millionen, in einem Raster, und malen eine Heatmap. Billige Trajektorien sind kühlblaue Lappen. Teure rot. Das Ergebnis sieht aus wie ein Schweinekotelett. Die billige Zone ist das Fleisch; der teure Grat ist der Knochen.",
-    "Warum die ganze Karte? Weil reale Missionen Beschränkungen haben — eine Rakete, die nur in einem bestimmten Jahr bereit ist; eine Startrampe, die nur in bestimmten Wochen frei ist; ein Landeplatz, der eine bestimmte Marssaison braucht. Der Porkchop zeigt ALLE Trade-offs auf einmal.",
-    "Sechs Abschnitte in Lesereihenfolge. Was ist ein Porkchop, dann Achsen, Farbskala, Konturlesen, und wie der Plot auf eine Rakete abgebildet wird. Am Ende kannst du jeden /plan-Porkchop wie ein Flugdynamiker lesen."
+    "Missionsplaner berechnen keine einzelne Flugbahn zum Mars — sie berechnen Millionen in einem riesigen Gitter und erstellen eine Wärmekarte. Günstige Flugbahnen erscheinen als kühle blaue Loben. Teure werden rot. Das Ergebnis sieht seltsamerweise wie ein Schweinekotelett aus. Die günstige Zone ist das Fleisch des Kotteletts; der teure Grat ist der Knochen.",
+    "Warum zeichnen wir die ganze Karte statt nur das Optimum? Weil echte Missionen Einschränkungen haben — eine Rakete, die nur in einem bestimmten Jahr einsatzbereit ist, ein Startplatz, der nur bestimmte Wochen verfügbar ist, eine Landestelle, die eine bestimmte Jahreszeit auf dem Mars benötigt. Die Porkchop-Karte zeigt Ihnen ALLE Kompromisse auf einmal und ermöglicht es Ihnen, die ausreichend günstige Flugbahn auszuwählen, die in Ihren realen Kalender passt.",
+    "Sechs Abschnitte hier, in Lesereihenfolge. Beginnen Sie mit \"Was ist ein Porkchop-Plot?\" und gehen Sie durch die Achsen (Abflug, Flugdauer), die Farbskala (∆v-Wärmekarte), das Lesen der Lobenform (Konturablesung) und die Zuordnung der Porkchop zu einer bestimmten Rakete (Machbarkeit). Eine Anmerkung zur Konvention: Standard-Porkchop-Plots konturieren charakteristische Energie C3 (km²/s²) bei Abflug und Ankunft V∞ (km/s) — Orrery vereinfacht dies auf einer einzigen ∆v-in-km/s-Farbskala zur besseren Lesbarkeit. Am Ende können Sie die Porkchop in /plan für alle neun Ziele betrachten und sie wie ein Flugdynamiker lesen."
   ]
 }

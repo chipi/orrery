@@ -1,49 +1,49 @@
 {
   "name": "Apollo 9",
-  "type": "मानवयुक्त पृथ्वी-कक्षा · उड़ा",
-  "first": "पहली मानवयुक्त LM उड़ान — पृथ्वी-कक्षा में पृथक्करण + मिलन परीक्षण",
-  "description": "Lunar Module की पहली मानवयुक्त उड़ान। पृथ्वी की कक्षा में, McDivitt और Schweickart ने LM Spider को CSM Gumdrop से अनडॉक किया, छह घंटे में 183 किमी दूर तक उड़े, फिर मिलन किया और पुनः डॉक किया — चंद्र-मिलन प्रक्रिया का हर कदम परखा गया बिना उस विकल्प के कि कुछ गलत होने पर क्रू को CSM में वापस लाया जा सके। Schweickart ने LM के बरामदे पर 38 मिनट का EVA किया, जिसने Apollo EVA सूट + PLSS बैकपैक डिज़ाइन प्रदर्शित किया जिसे चंद्रमा पर चलने वाले क्रू उपयोग करेंगे। LM हार्डवेयर और मिलन प्रक्रियाओं की पुष्टि के साथ, NASA Apollo 10 को दो महीने बाद चंद्रमा भेजने के लिए तैयार था।",
+  "type": "क्रू युक्त पृथ्वी-कक्षा · संपन्न",
+  "first": "चंद्र मॉड्यूल की पहली क्रू युक्त उड़ान — पृथ्वी-कक्षा LM अलगाव + रेनडेज़्वू परीक्षण",
+  "description": "चंद्र मॉड्यूल की पहली क्रू युक्त उड़ान। पृथ्वी की कक्षा में, मैकडिविट और श्वाइकार्ट ने LM स्पाइडर को CSM गमड्रॉप से अलग किया, छह घंटों में 183 किमी दूर तक उड़े, फिर रेनडेज़्वू और पुनः डॉक किया — चंद्र-रेनडेज़्वू प्रक्रिया का हर चरण परीक्षित किया गया, यदि कुछ गलत हो जाए तो क्रू को CSM में घर लाने का विकल्प नहीं रहता। श्वाइकार्ट ने LM पोर्च पर 38-मिनट की EVA कीं, Apollo EVA स्पेससूट + PLSS बैकपैक डिज़ाइन का प्रदर्शन किया जिसे चंद्र-चलने वाले क्रू उपयोग करते। स्कॉट ने CSM हैच से एक स्टैंड-अप EVA कीं। LM हार्डवेयर और रेनडेज़्वू प्रक्रियाओं के सत्यापित होने से, NASA को Apollo 10 को दो महीने बाद चंद्रमा भेजने के लिए मंजूरी मिल गई।",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-504) from Kennedy Space Center LC-39A 1969-03-03 16:00 UTC — third Saturn V flight, first crewed launch carrying LM.",
+      "label": "प्रक्षेपण",
+      "note": "Saturn V (AS-504) Kennedy अंतरिक्ष केंद्र LC-39A से 1969-03-03 16:00 UTC — तीसरी Saturn V उड़ान, पहली LM ले जाने वाली क्रू युक्त प्रक्षेपण।",
       "type": "nominal"
     },
     {
       "met": 0.13,
-      "label": "CSM-LM EXTRACTION",
-      "note": "CSM Gumdrop turns around + docks with LM Spider in the SLA adapter — first crewed transposition + docking. All Apollo lunar missions repeat this maneuver.",
+      "label": "CSM-LM निष्कर्षण",
+      "note": "CSM गमड्रॉप मुड़ता है + SLA अडैप्टर में LM स्पाइडर से डॉक करता है — पहली क्रू युक्त ट्रांसपोज़िशन + डॉकिंग। सभी Apollo चंद्र मिशन इस युद्धाभ्यास को दोहराते हैं।",
       "type": "nominal"
     },
     {
       "met": 4.2,
-      "label": "LM SEPARATION",
-      "note": "McDivitt + Schweickart undock Spider, fly up to 183 km from Gumdrop over six hours. First crewed flight where the spacecraft + crew aren't both attached to a re-entry vehicle.",
+      "label": "LM अलगाव",
+      "note": "मैकडिविट + श्वाइकार्ट स्पाइडर को अलग करते हैं, छह घंटों में गमड्रॉप से 183 किमी दूर तक उड़ते हैं। पहली क्रू युक्त उड़ान जहां अंतरिक्ष यान + क्रू दोनों पुनः प्रवेश यान से जुड़े नहीं होते।",
       "type": "info"
     },
     {
       "met": 4.5,
       "label": "EVA",
-      "note": "Schweickart does 38-min EVA on LM porch. Scott stand-up EVA from CSM hatch. First validation of Apollo PLSS backpack.",
+      "note": "श्वाइकार्ट LM पोर्च पर 38-मिनट की EVA करते हैं। स्कॉट CSM हैच से स्टैंड-अप EVA करते हैं। Apollo PLSS बैकपैक का पहला सत्यापन।",
       "type": "info"
     },
     {
       "met": 4.5,
-      "label": "RENDEZVOUS + REDOCK",
-      "note": "Spider rendezvous + redocks with Gumdrop, completing the lunar-procedure dress rehearsal in Earth orbit.",
+      "label": "रेनडेज़्वू + पुनः डॉकिंग",
+      "note": "स्पाइडर रेनडेज़्वू + गमड्रॉप से पुनः डॉक करता है, पृथ्वी की कक्षा में चंद्र-प्रक्रिया ड्रेस रिहर्सल पूरी करता है।",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "LM JETTISON",
-      "note": "Spider ascent stage jettisoned to deorbit; descent stage remained in orbit and decayed 1981.",
+      "label": "LM निष्कासन",
+      "note": "स्पाइडर अवतरण चरण को कक्षा से बाहर किया गया (मार्च 1969 में हिंद महासागर में पुनः प्रवेश); आरोहण चरण को समाप्ति तक फायर किया गया और उच्च कक्षा में बूस्ट किया गया — यह 1981 में क्षय हुआ।",
       "type": "nominal"
     },
     {
       "met": 10.04,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Atlantic 1969-03-13 17:00 UTC after 151 orbits. Recovery by USS Guadalcanal.",
+      "label": "विस्फोट",
+      "note": "CM 1969-03-13 17:00 UTC को 151 कक्षाओं के बाद उत्तरी अटलांटिक में विस्फोटित हुआ। USS गुआडलकैनल द्वारा वसूली।",
       "type": "nominal"
     }
   ]

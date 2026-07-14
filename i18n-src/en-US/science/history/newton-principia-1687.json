@@ -9,7 +9,7 @@
   "body_paragraphs": [
     "Philosophiæ Naturalis Principia Mathematica was published July 1687 in Latin. Three books: motion in a vacuum, motion through resisting media, the system of the world. The third book applies the laws to the actual cosmos and reproduces all of Kepler's data from first principles.",
     "Calculus was Newton's invention specifically to do this. He called it \"fluxions\" — Leibniz independently invented essentially the same machinery in Germany around the same time, and the rivalry over priority lasted decades.",
-    "What Newton DIDN'T explain: WHY gravity follows 1/r². His own famous comment: \"Hypotheses non fingo\" — \"I feign no hypotheses.\" The mechanism would wait for Einstein in 1915.",
+    "What Newton DIDN'T explain: WHY gravity follows 1/r². His own famous comment — added to the 1713 second edition: \"Hypotheses non fingo\" — \"I feign no hypotheses.\" The mechanism would wait for Einstein in 1915.",
     "Modern numerical orbit propagators run essentially Newton's equations with floating-point arithmetic. /fly's heliocentric arc, /plan's porkchop, every Keplerian solution — Newtonian gravity all the way down."
   ],
   "formula_caption": "Newton's law of universal gravitation. G ≈ 6.674 × 10⁻¹¹ N·m²/kg²."

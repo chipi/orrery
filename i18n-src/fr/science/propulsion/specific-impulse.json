@@ -1,14 +1,14 @@
 {
-  "title": "Impulsion spécifique (Isp)",
-  "intro_sentence": "Efficacité d'un moteur — combien de secondes un kg de propergol produit un kg de poussée.",
+  "title": "Impulsion Spécifique (Isp)",
+  "intro_sentence": "L'efficacité d'un moteur — en secondes de poussée qu'un kilogramme de propergol génère par kilogramme.",
   "narrative_101": [
-    "Comme l/100km mais pour fusées. Plus haut = mieux = plus de Δv du même propergol.",
-    "Unité étrange : secondes. Historique. Plus grand = plus efficace.",
-    "Solide ~250s. LH₂/LOX ~450s. Hypergol ~310s. Ionique 3000-9000s. Règle : haute poussée pour ascension, haute Isp pour croisière."
+    "Si vous avez déjà pensé aux kilomètres par litre pour une voiture, l'impulsion spécifique est la même idée pour les fusées. Elle indique l'efficacité avec laquelle le moteur convertit le carburant en poussée. Un Isp plus élevé = meilleure économie = plus de ∆v à partir de la même charge de propergol.",
+    "L'unité est étrange — elle s'exprime en secondes, ce qui n'a d'abord aucun sens intuitif. La raison : Isp = poussée ÷ (propergol brûlé par seconde × gravité terrestre). Les unités de masse et de longueur s'annulent, il ne reste que des secondes — ce qui permet de comparer deux moteurs n'importe lesquels avec un seul nombre. Plus le nombre est grand, plus le moteur est efficace, et vous pouvez comparer des moteurs à travers les décennies et les continents en utilisant le même nombre.",
+    "L'étendue est énorme. Moteurs à poudre (propulseurs de la navette spatiale) : ~250 secondes. Hydrogène-oxygène liquides (meilleur composé chimique possible) : ~450 secondes. Ergols stockables hypergoliques (bon marché, fiables, ce que la plupart des engins spatiaux utilisent pour les corrections de trajectoire) : ~310 secondes. Moteurs ioniques (super efficaces mais très faible poussée) : 3 000-9 000 secondes. La règle pratique : pour quitter les planètes, il faut une forte poussée ; pour naviguer en espace lointain, on veut un Isp élevé. Les missions réelles échelonnent les choix — chimique pour s'échapper de la Terre, ionique pour cruiser."
   ],
   "body_paragraphs": [
-    "Isp = nombre d'efficacité fusée. Définition : poussée ÷ débit massique propergol ÷ g₀ = secondes.",
-    "Quatre ordres de grandeur. Solide 250s. LH₂/LOX (SSME) 452s. Hypergol (Apollo SM) 314s. Ionique 3000-9000s. Nucléaire thermique (NERVA, jamais volé) 800-1000s.",
-    "Compromis. Haute Isp = basse poussée souvent. Ionique ~10 N — utile pour croisières années, inutile pour quitter Terre. Missions étagent : chimique ascension, ionique croisière."
+    "L'Isp est le nombre d'économie de carburant pour les fusées. Plus haut est mieux. Définition : divisez la poussée par le débit massique du propergol, divisez par `g₀` (gravité standard), vous obtenez un nombre en secondes. Brûlez un kilogramme de propergol par seconde, obtenez `Isp × g₀` newtons de poussée.",
+    "Le nombre s'étend sur quatre ordres de grandeur. Moteurs à poudre : 250 s. Liquides hydrogène/oxygène (Moteur Principal de la Navette Spatiale) : 452 s. Ergols stockables hypergoliques (Module de Service Apollo) : 314 s. Moteurs ioniques (Dawn, BepiColombo) : 3 000-9 000 s. Thermique nucléaire (NERVA, jamais volé) : 800-1 000 s en théorie.",
+    "Les compromis sont omniprésents. Un Isp élevé signifie généralement une faible poussée — les moteurs ioniques produisent environ dix newtons, utiles pour les croisières en espace lointain durant des années mais inutiles pour quitter la Terre. Les moteurs chimiques délivrent des méga-newtons de poussée mais épuisent le propergol en minutes. Les missions réelles échelonnent le choix : chimique pour l'ascension, ionique pour le croisière."
   ]
 }

@@ -3,7 +3,7 @@
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "Second half of first dual flight — first communications between two crewed spacecraft",
   "dispatch": "Vostok 4 was the answer to Vostok 3 — the second ship in the first dual flight, and the moment two humans in two separate spacecraft first spoke to each other in orbit. Pavel Popovich launched a day after Nikolayev and closed to within about six and a half kilometres, near enough to trade radio voice directly, ship to ship, rather than through the ground. Like its partner it couldn't maneuver to hold the distance, so the two drifted apart. But the image of two cosmonauts circling the Earth in formation, talking to each other, was exactly the kind of first the program was built to manufacture.",
-  "description": "Pavel Popovich's 48-orbit flight, launched 1962-08-12 08:02 UTC, twenty-four hours after Vostok 3. The two capsules came within ~6.5 km and exchanged the first voice radio communications between cosmonauts in orbit. Popovich was ordered down a day early when ground controllers misinterpreted a coded phrase about thunder as the duress code-word for early termination — the real signal was a routine weather observation. Landed 1962-08-15 07:59 UTC near Karaganda, four minutes after Vostok 3.",
+  "description": "Pavel Popovich's 48-orbit flight, launched 1962-08-12 08:02 UTC, twenty-four hours after Vostok 3. The two capsules came within ~6.5 km and exchanged the first voice radio communications between cosmonauts in orbit. Popovich was ordered down a day early when ground controllers misinterpreted a coded phrase about thunder as the duress code-word for early termination — the real signal was a routine weather observation. Landed 1962-08-15 06:59 UTC near Karaganda, seven minutes after Vostok 3.",
   "events": [
     {
       "met": 0,
@@ -20,7 +20,7 @@
     {
       "met": 2.99,
       "label": "EJECT + LAND",
-      "note": "Landed near Karaganda 1962-08-15 07:59 UTC.",
+      "note": "Landed near Karaganda 1962-08-15 06:59 UTC.",
       "type": "nominal"
     }
   ]

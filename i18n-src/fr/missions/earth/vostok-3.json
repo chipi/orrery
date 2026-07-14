@@ -1,26 +1,26 @@
 {
   "name": "Vostok 3",
-  "dispatch": "Vostok 3 ouvrit le premier acte d'une pièce de théâtre orbital. Un jour après qu'Andriyan Nikolayev eut atteint l'orbite, Vostok 4 le suivit, et pendant un moment les deux vaisseaux volèrent à quelques kilomètres l'un de l'autre — la première fois que deux engins habités se trouvaient simultanément dans l'espace. Pour le monde, cela ressemblait à un rendez-vous, et les Soviétiques laissèrent volontiers croire. En vérité, aucun des deux vaisseaux ne pouvait manœuvrer ; la proximité résultait du lancement de l'un presque sur la trajectoire de l'autre, et l'écart s'élargit régulièrement par la suite. Une véritable première et un tour de passe-passe à la fois — et un indice de la vraie compétence, le rendez-vous véritable, que personne ne maîtrisait encore.",
-  "type": "ORBITE TERRESTRE HABITÉE · VOLÉ",
-  "first": "Premier rendez-vous en vol double — passa à ~6,5 km de Vostok 4",
-  "description": "Vol de 64 orbites d'Andrian Nikolaïev, lancé le 1962-08-11 à 08:30 UTC. Vingt-quatre heures plus tard, Vostok 4 (Popovitch) le rejoignit en orbite — l'approche la plus proche fut d'environ 6,5 km, sans véritable capacité de rendez-vous (les deux capsules ne disposaient pas de propulseurs de manœuvre). Ce vol simultané fut une réponse de propagande aux missions suborbitales américaines et au Friendship 7 de John Glenn. Nikolaïev atterrit le 1962-08-15 à 07:55 UTC près de Karaganda, RSS du Kazakhstan, après presque 4 jours dans l'espace.",
+  "type": "VAISSEAU HABITÉ EN ORBITE TERRESTRE · EFFECTUÉ",
+  "first": "Premier rendez-vous en double décollage — a volé à ~6,5 km de Vostok 4",
+  "dispatch": "Vostok 3 ouvre le premier acte d'une pièce de théâtre orbital. Un jour après qu'Andriyan Nikolayev atteigne l'orbite, Vostok 4 le suit, et pendant un moment les deux vaisseaux volent à quelques kilomètres l'un de l'autre — la première fois que deux engins habités se trouvent ensemble dans l'espace. Pour le monde, cela ressemblait à un rendez-vous, et les Soviétiques étaient heureux de le laisser croire. En réalité, aucun des deux vaisseaux ne pouvait se manœuvrer ; la proximité provenait du lancement de l'un presque dans la trajectoire de l'autre, et l'écart s'élargissait régulièrement après. Un véritable premier exploit et un peu de magie à la fois — et un aperçu du véritable savoir-faire, le vrai rendez-vous, que personne ne possédait encore.",
+  "description": "Vol de 64 orbites d'Andriyan Nikolayev, lancé 1962-08-11 08:24 UTC. Vingt-quatre heures après le décollage, Vostok 4 (Popovich) le rejoint en orbite — l'approche la plus proche était d'environ 6,5 km, bien qu'aucune véritable capacité de rendez-vous n'existait (les deux capsules n'avaient pas de propulseurs de manœuvre). Le vol simultané était une réponse propagandiste aux missions suborbitales américaines et au Friendship 7 de John Glenn. Nikolayev a atterri 1962-08-15 06:52 UTC près de Karaganda, RSS du Kazakhstan, après près de 4 jours dans l'espace.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Vostok-K from Baikonur Site 1 1962-08-11 08:30 UTC.",
+      "label": "DÉCOLLAGE",
+      "note": "Vostok-K depuis le Site 1 de Baïkonour 1962-08-11 08:24 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.25,
-      "label": "VOSTOK 4 RDV",
-      "note": "Vostok 4 launched 24h later; closest approach ~6.5 km on day 2.",
+      "label": "RDV VOSTOK 4",
+      "note": "Vostok 4 lancé 24 h plus tard ; approche minimale ~6,5 km le jour 2.",
       "type": "info"
     },
     {
       "met": 3.98,
-      "label": "EJECT + LAND",
-      "note": "Nikolayev landed near Karaganda 1962-08-15 07:55 UTC after 64 orbits.",
+      "label": "ÉJECTION + ATTERRISSAGE",
+      "note": "Nikolayev a atterri près de Karaganda 1962-08-15 06:52 UTC après 64 orbites.",
       "type": "nominal"
     }
   ]

@@ -1,7 +1,27 @@
 {
   "name": "Sigma 7 / MA-8",
-  "dispatch": "Après deux vols qui s'étaient terminés dans la frayeur, Sigma 7 fut celui qui était ennuyeux à dessein — et c'était là la réussite. Wally Schirra l'appela un test d'ingénierie classique et le pilota comme tel : expériences minimales, conservation rigoureuse de chaque kilogramme de carburant et de chaque ampère d'énergie, six orbites passées à prouver que le vaisseau spatial pouvait être opéré avec discipline plutôt que maîtrisé de force. Il amerrit presque sur le navire de récupération. Dans un programme qui avait improvisé sous pression, Sigma 7 montra que les Américains avaient appris à piloter l'engin calmement — le prérequis pour les missions bien plus longues à venir.",
-  "type": "HABITÉ ORBITE TERRESTRE · VOLÉ",
-  "first": "Premier vol Mercury exemplaire — 6 orbites ; double durée de Glenn/Carpenter",
-  "description": "Le vol de 6 orbites de Wally Schirra — a doublé la durée des missions de Glenn et Carpenter. Schirra a qualifié son vol de 'test d'ingénierie exemplaire' — charge expérimentale minimale, accent sur l'économie des consommables, validation du véhicule pour de plus longues durées. Durée de vol 9 h 13 min ; paramètres orbitaux 161 × 283 km. Amerrissage à 480 km au NE de Midway dans le Pacifique — premier vol Mercury à amerrir dans le Pacifique. Aurora 7 avait consommé 38 kg de gaz de contrôle d'attitude ; Schirra n'en a utilisé que 32 kg pour le double du temps de vol. La capsule Sigma 7 est exposée à l'Astronaut Memorial Planetarium and Observatory, Cocoa FL."
+  "type": "VOL HABITÉ EN ORBITE TERRESTRE · RÉALISÉ",
+  "first": "Premier vol Mercury selon les règles — 6 orbites ; durée double de celles de Glenn et Carpenter",
+  "dispatch": "Après deux vols qui s'étaient terminés dans l'angoisse, Sigma 7 a été celui qu'on a volontairement rendu ennuyeux — et c'était justement l'exploit. Wally Schirra l'a appelé un test d'ingénierie selon les règles et l'a piloté comme tel : expériences minimales, conservation soigneuse de chaque kilogramme de carburant et de chaque ampère d'électricité, six orbites passées à prouver que le vaisseau pouvait être exploité avec discipline plutôt que dompté. Il s'est amarré pratiquement au-dessus du porte-avions de récupération. Dans un programme qui avait jusque-là dû improviser sous pression, Sigma 7 a montré que les Américains avaient appris à piloter l'engin tranquillement — le préalable indispensable aux missions beaucoup plus longues à venir.",
+  "description": "Vol de 6 orbites de Wally Schirra — a doublé la durée des missions de Glenn et Carpenter. Schirra a appelé son vol un « test d'ingénierie selon les règles » — charge expérimentale minimale, priorité à la conservation des consommables, validation du vaisseau pour des durées prolongées. Durée du vol 9 h 13 min ; paramètres orbitaux 161 × 283 km. Amarrage ~445 km NE de Midway dans le Pacifique — premier vol Mercury à s'amarrer dans le Pacifique. Aurora 7 avait consommé 38 kg de gaz de contrôle d'attitude ; Schirra n'en a utilisé que 32 kg pour une durée de vol double. La capsule Sigma 7 est exposée au Planetarium et Observatoire commémoratif des astronautes, Cocoa FL.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Atlas LV-3B depuis Cape Canaveral LC-14 1962-10-03 12:15 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "INSERTION ORBITALE",
+      "note": "Insertion en orbite terrestre 161 × 283 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.385,
+      "label": "AMARRAGE",
+      "note": "Océan Pacifique ~445 km NE de Midway après 6 orbites / 9 h 13 min. Premier amarrage Mercury dans le Pacifique.",
+      "type": "nominal"
+    }
+  ]
 }

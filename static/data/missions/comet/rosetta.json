@@ -15,7 +15,7 @@
   "delta_v": "~2.3 km/s (rendezvous + comet ops)",
   "data_quality": "good",
   "flight_data_quality": "sparse",
-  "credit": "© ESA / Rosetta / NavCam / OSIRIS — CC BY-SA 3.0 IGO mission imagery. Rosetta launched 2004-03-02 from Kourou on a 10-year cruise that included Earth gravity assists (2005-03-04, 2007-11-13, 2009-11-13) and a Mars flyby (2007-02-25), with main-belt asteroid encounters at 2867 Šteins (2008-09-05) and 21 Lutetia (2010-07-10). The spacecraft hibernated 2011-06 to 2014-01 (deep-space radio silence, beyond solar-array operating range), then woke and rendezvoused with comet 67P/Churyumov–Gerasimenko 2014-08-06 — the first spacecraft ever to enter orbit around a comet. Philae detached 2014-11-12 and bounced into the shadow of a cliff after harpoon failure; it returned ~60 hours of science before its primary battery drained. Rosetta itself observed 67P through perihelion (2015-08-13) and into outbound dust decay before a controlled descent to the surface on 2016-09-30 ended the mission. Key discoveries: organics + glycine + phosphorus in comet coma; deuterium-to-hydrogen ratio that ruled out Jupiter-family comets as Earth's primary water source; first close-up imaging of cometary outgassing geometry.",
+  "credit": "© ESA / Rosetta / NavCam / OSIRIS — CC BY-SA 3.0 IGO mission imagery. Rosetta launched 2004-03-02 from Kourou on a 10-year cruise that included Earth gravity assists (2005-03-04, 2007-11-13, 2009-11-13) and a Mars flyby (2007-02-25), with main-belt asteroid encounters at 2867 Šteins (2008-09-05) and 21 Lutetia (2010-07-10). The spacecraft hibernated 2011-06 to 2014-01 (deep-space radio silence, beyond solar-array operating range), then woke and rendezvoused with comet 67P/Churyumov–Gerasimenko 2014-08-06 — the first spacecraft ever to enter orbit around a comet. Philae detached 2014-11-12 and bounced into the shadow of a cliff after harpoon failure; it returned ~64 hours of science before its primary battery drained. Rosetta itself observed 67P through perihelion (2015-08-13) and into outbound dust decay before a controlled descent to the surface on 2016-09-30 ended the mission. Key discoveries: organics + glycine + phosphorus in comet coma; 67P's initially-measured D/H ratio (≈3× terrestrial) argued against Jupiter-family comets as Earth's water source — a result a 2024 re-analysis has since called into question after finding a measurement error; first close-up imaging of cometary outgassing geometry.",
   "links": [
     {
       "l": "Rosetta — Wikipedia",
@@ -105,7 +105,7 @@
         "met_days": 2320,
         "type": "flyby",
         "label": "Lutetia (21) — asteroid flyby",
-        "description": "Closest approach 3,168 km from main-belt asteroid 21 Lutetia on 2010-07-10. At 100 km diameter, Lutetia is the largest asteroid ever visited at close range; the M-type spectrum + high density suggested a metal-rich differentiated body."
+        "description": "Closest approach 3,168 km from main-belt asteroid 21 Lutetia on 2010-07-10. At ~120 km mean diameter, Lutetia is the largest asteroid ever visited at close range; the M-type spectrum + high density suggested a metal-rich differentiated body."
       },
       {
         "met_days": 3809,

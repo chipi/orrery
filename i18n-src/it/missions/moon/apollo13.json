@@ -1,56 +1,56 @@
 {
   "name": "Apollo 13",
-  "dispatch": "Apollo 13 non atterrò mai, ed è la missione che tutti ricordano. Due giorni dopo la partenza, un serbatoio di ossigeno esplose e trasformò un volo di routine verso gli altopiani di Fra Mauro in un problema di quattro giorni per mantenere in vita tre uomini in un veicolo spaziale morente a un quarto di milione di miglia da casa. Ciò che li salvò non furono gesti eroici; fu la preparazione e una sala piena di persone che affrontarono il problema in tempo reale, improvvisando un modo per respirare e una via di ritorno con qualsiasi cosa fosse già imbullonata al veicolo. La NASA la definì un fallimento di successo. È più vicino alla verità dire che è il volo che dimostrò che l'agenzia era brava quanto sosteneva di essere.",
-  "type": "SORVOLO CON EQUIPAGGIO · VOLATO (ATTERRAGGIO ABORTITO)",
-  "first": "La missione che trasformò un quasi-disastro nel più celebre salvataggio della NASA",
-  "description": "Apollo 13 doveva essere il terzo allunaggio con equipaggio, diretto agli altopiani di Fra Mauro. A 55 ore e 54 minuti dal volo un serbatoio di ossigeno del Modulo di Servizio si ruppe, paralizzando i sistemi elettrici e di supporto vitale del CSM. Cancellato l'allunaggio, l'equipaggio — James Lovell, Jack Swigert e Fred Haise — spense il CSM, si trasferì nel Modulo Lunare Aquarius come scialuppa di salvataggio, e usò il motore di discesa del LM per un'accensione Pericinzio+2-ore che li mise su una traiettoria di ritorno libero veloce. Passarono accanto alla Luna a 254 km di quota il 15/04/1970 e ammararono in sicurezza nel Pacifico meridionale il 17/04/1970. La missione è studiata oggi come modello di improvvisazione ingegneristica disciplinata in tempo reale.",
+  "type": "VOLO CON SORVOLO EQUIPAGGIO · COMPLETATO (ALLUNAGGIO ANNULLATO)",
+  "first": "La missione che trasformò un quasi-disastro nel salvataggio più celebre della NASA",
+  "dispatch": "Apollo 13 non ha mai allunato, eppure è la missione che tutti ricordano. Due giorni dopo il lancio, un serbatoio di ossigeno si squarciò e trasformò un volo di routine verso gli altopiani di Fra Mauro in un problema di quattro giorni per mantenere in vita tre uomini in un'astronave morente a trecentomila chilometri da casa. A salvarli non fu l'eroismo, ma la preparazione e una stanza piena di persone che risolvevano il problema in tempo reale, improvvisando un modo per respirare e un modo per tornare a casa con quello che era già bullonato al veicolo. La NASA lo chiamò un successo mancato. È più accurato dire che è il volo che ha provato che l'agenzia era all'altezza di quello che asseriva.",
+  "description": "Apollo 13 doveva essere il terzo allunaggio con equipaggio, mirato agli altopiani di Fra Mauro. A 55 ore e 54 minuti di volo, un serbatoio di ossigeno nel Modulo di Servizio si ruppe, compromettendo i sistemi elettrici e di supporto vitale del Modulo di Comando e Servizio. Con l'allunaggio annullato, l'equipaggio — James Lovell, Jack Swigert e Fred Haise — spense il CSM, si trasferì nel Modulo Lunare Aquarius come scialuppa di salvataggio, e utilizzò il motore di discesa dell'LM per un'accensione a Pericintio+2 ore che li pose su una traiettoria di ritorno libero veloce. Sorvolarono la Luna a 254 km di altitudine il 15 aprile 1970 e ammararono in sicurezza nell'Oceano Pacifico meridionale il 17 aprile 1970. La missione è studiata oggi come modello di improvvisazione ingegneristica disciplinata in tempo reale.",
   "events": [
     {
       "met": 0,
       "label": "LANCIO SATURN V",
-      "note": "Decollo dal KSC LC-39A. Il motore centrale del secondo stadio S-II si spense due minuti in anticipo — i motori esterni compensarono.",
+      "note": "Decollo da KSC LC-39A. Il motore centrale dello stadio S-II si spense due minuti prima — i motori esterni compensarono.",
       "type": "nominal"
     },
     {
       "met": 0.117,
       "label": "TLI",
-      "note": "Accensione di iniezione translunare dello S-IVB; CSM + LM si impegnano sulla traiettoria cislunare.",
+      "note": "Accensione di iniezione trans-lunare da S-IVB; CSM + LM si impegnano verso la traiettoria cislunar.",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "MCC-2",
-      "note": "La correzione di metà rotta sposta la sonda dalla traiettoria di ritorno libero verso un avvicinamento a Fra Mauro.",
+      "note": "Correzione di rotta di metà percorso che sposta l'astronave dalla traiettoria di ritorno libero verso un approccio a Fra Mauro.",
       "type": "nominal"
     },
     {
       "met": 2.33,
       "label": "ROTTURA SERBATOIO OSSIGENO #2",
-      "note": "Un comando di agitazione criogenica nel SM provoca un cortocircuito e la rottura del serbatoio. «Houston, abbiamo avuto un problema.» Energia e acqua diminuiscono; il LM Aquarius diventa la scialuppa di salvataggio.",
+      "note": "Il comando di mescolamento criogenico del SM innesca un cortocircuito e la rottura del serbatoio. \"Houston, abbiamo avuto un problema.\" Potenza e acqua calano; il Modulo Lunare Aquarius diventa la scialuppa di salvataggio.",
       "type": "warning"
     },
     {
       "met": 2.92,
-      "label": "ACCENSIONE DI RITORNO LIBERO",
-      "note": "Accensione di 31 secondi del motore di discesa del LM che riporta la sonda su una traiettoria di ritorno libero.",
+      "label": "ACCENSIONE RITORNO LIBERO",
+      "note": "Accensione di 31 secondi del motore di discesa dell'LM riporta l'astronave su una traiettoria di ritorno libero.",
       "type": "info"
     },
     {
       "met": 3.13,
       "label": "SORVOLO LUNARE",
-      "note": "Massimo avvicinamento a 254 km di quota sul Mare Cognitum — la maggiore distanza dalla Terra mai raggiunta da una sonda con equipaggio.",
+      "note": "Approccio più vicino a 254 km di altitudine sopra Mare Cognitum — a 400.171 km, la distanza massima raggiunta dall'uomo dalla Terra (record mantenuto 1970–2026, superato da Artemis II ad aprile 2026).",
       "type": "info"
     },
     {
       "met": 3.96,
       "label": "ACCENSIONE PC+2",
-      "note": "Accensione Pericinzio-più-2-ore che accorcia di dieci ore il tempo di ritorno sulla Terra.",
+      "note": "Accensione a Pericintio-più-2-ore riduce il tempo di ritorno sulla Terra di dieci ore.",
       "type": "nominal"
     },
     {
       "met": 5.95,
       "label": "AMMARAGGIO",
-      "note": "Rientro del CSM e ammaraggio nel Pacifico meridionale, recuperati dalla USS Iwo Jima.",
+      "note": "Rientro del CSM e ammaraggio nell'Oceano Pacifico meridionale, recuperato da USS Iwo Jima.",
       "type": "info"
     }
   ]

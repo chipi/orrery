@@ -1,43 +1,43 @@
 {
-  "name": "Lune 24",
-  "type": "RETOUR D'ÉCHANTILLON · VOLÉ",
-  "first": "Dernière mission lunaire soviétique ; dernier atterrissage lunaire sans équipage depuis 37 ans",
-  "description": "La dernière mission lunaire de l'Union soviétique et le dernier alunissage sans équipage jusqu'à Chang'e 3 en Chine en 2013, soit un intervalle de 37 ans. La carotte forée a extrait le régolithe à 2 m de profondeur et a renvoyé 170 g sur Terre. Parmi les échantillons : des minéraux contenant des traces d'eau, préfigurant la découverte d'importants dépôts de glace d'eau lunaire 30 ans plus tard. Luna 24 a également marqué la clôture du programme lunaire soviétique ; les ressources se sont déplacées vers Mars et Vénus.",
+  "name": "Luna 24",
+  "type": "RETOUR D'ÉCHANTILLONS · EFFECTUÉE",
+  "first": "Dernière mission lunaire soviétique ; dernier alunissage habité zéro pendant 37 ans",
+  "description": "La dernière mission lunaire de l'Union soviétique et le dernier alunissage sans équipage jusqu'à Chang'e 3 de la Chine en 2013 — un intervalle de 37 ans. Le carottage a extrait du régolithe d'une profondeur de 2 m et a ramené 170 g sur Terre. Une analyse soviétique de 1978 a signalé ~0,1 % d'eau en masse dans la carotte — un résultat non confirmé et toujours débattu — préfigurant les détections confirmées ultérieures d'eau lunaire. Luna 24 a également marqué la fin du programme lunaire soviétique ; les ressources ont été orientées vers Mars et Vénus.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Proton-K de Baïkonour le 09/08/1976.",
+      "note": "Proton-K depuis Baïkonour 1976-08-09.",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "Moi",
-      "note": "Insertion de l'orbite lunaire.",
+      "label": "MIL",
+      "note": "Insertion en orbite lunaire.",
       "type": "nominal"
     },
     {
       "met": 9,
-      "label": "ATTERRISSAGE",
-      "note": "Atterrissage en douceur à Mare Crisium 1976-08-18.",
+      "label": "ALUNISSAGE",
+      "note": "Alunissage en douceur à la Mer des Crises 1976-08-18.",
       "type": "nominal"
     },
     {
       "met": 9.5,
-      "label": "FORAGE",
-      "note": "Carottage extrait à 2 m de profondeur.",
+      "label": "CAROTTAGE",
+      "note": "Carotte d'échantillon extraite d'une profondeur de 2 m.",
       "type": "info"
     },
     {
       "met": 10,
       "label": "ASCENSION",
-      "note": "L'étage de montée décolle ; injection trans-Terre.",
+      "note": "L'étage de remontée décolle ; injection trans-Terre.",
       "type": "nominal"
     },
     {
       "met": 13,
-      "label": "RETOUR DE LA TERRE",
-      "note": "La capsule atterrit à Surgut, URSS le 22/08/1976 avec 170 g de régolithe.",
+      "label": "RETOUR SUR TERRE",
+      "note": "La capsule atterrit à Surgut, URSS 1976-08-22 avec 170 g de régolithe.",
       "type": "info"
     }
   ]

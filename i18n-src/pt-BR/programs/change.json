@@ -4,85 +4,85 @@
   "the_land": [
     {
       "type": "prose",
-      "md": "Enquanto os Estados Unidos ficaram afastados da Lua por cinquenta anos e o programa lunar da Rússia permaneceu adormecido, a China silenciosamente construiu a mais sustentada e bem-sucedida campanha de exploração lunar robótica do século XXI. Batizado em homenagem à deusa chinesa da Lua, o programa Chang'e, passo a passo deliberado, fez tudo o que um programa robótico pode fazer em outro mundo — orbitá-lo, pousar nele, atravessá-lo de veículo, e trazer pedaços dele para casa — e então fez coisas que ninguém jamais havia feito."
+      "md": "Enquanto os Estados Unidos estiveram afastados da Lua por cinquenta anos e o programa lunar da Rússia permaneceu dormente, a China silenciosamente construiu a campanha de exploração lunar robótica mais sustentada e bem-sucedida do século XXI. Nomeado em homenagem à deusa chinesa da Lua, o programa Chang'e, passo a passo deliberado, fez tudo que um programa robótico pode fazer em outro mundo — orbitá-lo, pousar nele, percorrê-lo e trazer pedaços dele para casa — e então fez as coisas que ninguém jamais havia feito."
     },
     {
       "type": "prose",
-      "md": "A marca registrada do programa é o mesmo método paciente e incremental que construiu as estações Tiangong: cada missão é um ensaio para a próxima, cada capacidade comprovada antes que a seguinte seja tentada. Primeiro orbitar (Chang'e 1–2), depois pousar suavemente e explorar com veículos (Chang'e 3), depois alcançar o impossível lado oculto (Chang'e 4), depois retornar amostras (Chang'e 5), depois retornar amostras do lado oculto (Chang'e 6). É uma escada subida degrau por degrau, e a China não perdeu nenhum degrau."
+      "md": "A assinatura do programa é o mesmo método paciente e incremental que construiu as estações Tiangong: cada missão é um ensaio para a próxima, cada capacidade comprovada antes que a seguinte seja tentada. Primeiro orbitar (Chang'e 1–2), depois pousar suavemente e explorar com rover (Chang'e 3), depois alcançar o impossível lado oculto (Chang'e 4), depois retornar amostras (Chang'e 5), depois retornar amostras do lado oculto (Chang'e 6). É uma escada subida degrau por degrau, e a China não perdeu nenhum degrau."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Os objetivos de curto prazo são científicos e metódicos: mapear a Lua, pousar suavemente, implantar veículos exploradores, e retornar amostras — dominando cada capacidade por vez. O lado oculto da Lua, que nunca enfrenta a Terra e portanto não pode se comunicar diretamente com ela, foi um alvo específico e audacioso: alcançá-lo exigiu primeiro posicionar um satélite repetidor além da Lua, e nenhuma nação jamais havia pousado lá antes da China fazê-lo em 2019."
+      "md": "Os objetivos de curto prazo são científicos e metódicos: mapear a Lua, pousar suavemente, implantar rovers e retornar amostras — dominando cada capacidade por vez. O lado oculto da Lua, que nunca fica voltado para a Terra e portanto não pode se comunicar diretamente com ela, foi um alvo específico e audacioso: alcançá-lo exigiu primeiro posicionar um satélite de retransmissão além da Lua, e nenhuma nação havia pousado lá antes da China fazê-lo em 2019."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "missions/change4/01"
       },
-      "caption": "Chang'e-4 no lado oculto da Lua — a primeira espaçonave de todos os tempos a pousar no hemisfério que nunca enfrenta a Terra, alcançado apenas depois que a China posicionou um satélite repetidor para transmitir seus sinais de volta.",
+      "caption": "Chang'e-4 no lado oculto da Lua — a primeira espaçonave a pousar no hemisfério que nunca fica voltado para a Terra, alcançado somente depois que a China posicionou um satélite de retransmissão para transmitir seus sinais de volta.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Os objetivos de longo prazo são muito maiores: pousar astronautas chineses na Lua antes de 2030, e construir a Estação Internacional de Pesquisa Lunar — uma base robótica e posteriormente tripulada perto do polo sul lunar, desenvolvida com parceiros internacionais como alternativa explícita à coalizão Artemis liderada pelos americanos. As missões robóticas Chang'e são o reconhecimento e a prova de capacidade; a base tripulada é o destino em direção ao qual todo o programa está subindo."
+      "md": "Os objetivos de longo prazo são muito maiores: pousar astronautas chineses na Lua até 2030, e construir a Estação Internacional de Pesquisa Lunar — uma base robótica e posteriormente tripulada perto do polo sul lunar, desenvolvida com parceiros internacionais como uma alternativa explícita à coalizão Artemis liderada pelos americanos. As missões robóticas Chang'e são o reconhecimento e a prova de capacidade; a base tripulada é o destino para o qual todo o programa está subindo."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "O histórico é uma sequência quase ininterrupta de primeiros feitos e sucessos. Chang'e 1 e 2 mapearam a Lua. Chang'e 3 (2013) realizou o primeiro pouso suave desde 1976, transportando o veículo explorador Yutu. Chang'e 4 (2019) alcançou o primeiro pouso da história no lado oculto lunar. Chang'e 5 (2020) retornou as primeiras amostras lunares frescas em 44 anos. E Chang'e 6 (2024) retornou as primeiras amostras coletadas do lado oculto — material que nunca havia sido tocado por mãos humanas. Nenhum outro programa lunar da era chega perto desta sequência de realizações."
+      "md": "O histórico é uma sequência quase ininterrupta de primeiros feitos e sucessos. Chang'e 1 e 2 mapearam a Lua. Chang'e 3 (2013) realizou o primeiro pouso suave desde 1976, transportando o rover Yutu. Chang'e 4 (2019) alcançou o primeiro pouso da história no lado oculto lunar. Chang'e 5 (2020) retornou as primeiras amostras lunares novas em 44 anos. E Chang'e 6 (2024) retornou as primeiras amostras já coletadas do lado oculto — material que nunca havia sido segurado em mãos humanas. Nenhum outro programa lunar da era chega perto dessa sequência de realizações."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "missions/change5/01"
       },
-      "caption": "O retorno de amostras da Chang'e-5 — as primeiras rochas lunares novas trazidas à Terra desde as missões soviéticas Luna dos anos 1970, e prova de que a China havia dominado a viagem completa de ida e volta à superfície lunar.",
+      "caption": "O retorno de amostras da Chang'e-5 — as primeiras rochas lunares novas trazidas à Terra desde as missões soviéticas Luna dos anos 1970, e a prova de que a China havia dominado a viagem completa de ida e volta à superfície lunar.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "Apenas as amostras já reformularam a ciência lunar, revelando atividade vulcânica muito mais recente do que os modelos previam e retornando material do lado oculto que pode finalmente explicar por que os dois hemisférios da Lua são tão diferentes. E o sucesso do programa fez da China a ameaça marcadora de ritmo que reanimou o programa lunar americano: Artemis existe, em parte, porque a China demonstrou que podia e iria à Lua — e ficaria."
+      "md": "Somente as amostras remodelaram a ciência lunar, revelando atividade vulcânica muito mais recente do que os modelos previam e retornando material do lado oculto que pode finalmente explicar por que os dois hemisférios da Lua são tão diferentes. E o sucesso do programa fez da China a ameaça de ritmo que reanimou o programa lunar americano: Artemis existe, em parte, porque a China demonstrou que podia e iria à Lua — e ficaria."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "A história da Chang'e é a de um programa que tratou a Lua como uma sequência de problemas a serem resolvidos em ordem, e os resolveu. Não houve pressa em fincar uma bandeira, nenhuma corrida dramática isolada — apenas uma progressão constante e divulgada através de orbitar, pousar, explorar e retornar, cada missão construindo precisamente sobre a anterior. O pouso no lado oculto é a expressão mais pura do método: alcançá-lo exigiu primeiro resolver o problema de comunicação com um satélite repetidor, então a China resolveu isso primeiro, depois pousou. A audácia é real, mas é sempre conquistada pela preparação."
+      "md": "A história da Chang'e é um programa que tratou a Lua como uma sequência de problemas a serem resolvidos em ordem, e os resolveu. Não houve pressa para fincar uma bandeira, nenhuma corrida dramática singular — apenas uma progressão constante e publicada através de orbitar, pousar, explorar e retornar, cada missão construindo precisamente sobre a anterior. O pouso no lado oculto é a expressão mais pura do método: alcançá-lo exigiu primeiro resolver o problema de comunicação com um satélite de retransmissão, então a China resolveu isso primeiro, depois pousou. A audácia é real, mas é sempre conquistada pela preparação."
     },
     {
       "type": "prose",
-      "md": "É também a vanguarda robótica de uma ambição maior. As missões Chang'e não são um fim em si mesmas; são o reconhecimento para pousos tripulados e uma base permanente. Cada pouso suave, cada retorno de amostras, cada primeiro feito no lado oculto é uma capacidade que a China precisará para colocar pessoas na Lua e mantê-las lá — e o programa está explicitamente estruturado como a primeira metade robótica de um plano cuja segunda metade é humana."
+      "md": "É também a vanguarda robótica de uma ambição maior. As missões Chang'e não são um fim em si mesmas; elas são o reconhecimento para pousos tripulados e uma base permanente. Cada pouso suave, cada retorno de amostras, cada primeiro feito no lado oculto é uma capacidade que a China precisará para colocar pessoas na Lua e mantê-las lá — e o programa é explicitamente estruturado como a primeira metade robótica de um plano cuja segunda metade é humana."
     },
     {
       "type": "prose",
-      "md": "E é uma metade de uma nova corrida. Pela primeira vez desde Apollo, duas potências estão investindo pesado na Lua ao mesmo tempo — o programa Chang'e-e-tripulado da China e o Artemis da América — ambos mirando o mesmo polo sul rico em recursos, ambos construindo coalizões, ambos em cronogramas que convergem em torno de 2030. O sucesso silencioso e metódico da Chang'e é a razão pela qual essa corrida existe, e a constância da China a torna uma adversária formidável nela."
+      "md": "E é uma metade de uma nova corrida. Pela primeira vez desde Apollo, duas potências estão avançando fortemente para a Lua ao mesmo tempo — o programa Chang'e-e-tripulado da China e o Artemis da América — ambos mirando o mesmo polo sul rico em recursos, ambos construindo coalizões, ambos em cronogramas que convergem em torno de 2030. O sucesso quieto e metódico da Chang'e é a razão pela qual essa corrida existe, e a constância da China a torna uma concorrente formidável nela."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "O primeiro legado da Chang'e é científico: amostras lunares frescas tanto do lado próximo quanto do lado oculto após meio século de intervalo, já reescrevendo a história vulcânica da Lua e oferecendo as primeiras pistas diretas sobre por que seus dois hemisférios diferem tão profundamente. Estas estão entre as mais valiosas amostras planetárias retornadas em uma geração."
+      "md": "O primeiro legado da Chang'e é científico: amostras lunares novas de ambos os lados próximo e oculto após uma lacuna de meio século, já reescrevendo a história vulcânica da Lua e oferecendo as primeiras pistas diretas sobre por que seus dois hemisférios diferem tão profundamente. Estas estão entre as amostras planetárias mais valiosas retornadas em uma geração."
     },
     {
       "type": "prose",
-      "md": "Seu segundo legado é o primeiro acesso humano ao lado oculto lunar — um lugar que havia sido totalmente inacessível, aberto pelo simples e inteligente passo de um satélite repetidor. Chang'e transformou a metade oculta da Lua de uma abstração em terreno explorado."
+      "md": "Seu segundo legado é o primeiro acesso humano ao lado oculto lunar — um lugar que havia sido totalmente inalcançável, aberto pelo passo simples e inteligente de um satélite de retransmissão. Chang'e transformou a metade oculta da Lua de uma abstração em terreno explorado."
     },
     {
       "type": "prose",
-      "md": "E seu terceiro é a reanimação da própria corrida lunar. O sucesso metódico da China é uma razão principal para os Estados Unidos se comprometerem com Artemis e retornarem humanos à Lua com prazo definido. Chang'e não apenas explorou a Lua; mudou o cálculo estratégico que governa quem mais vai, e quando."
+      "md": "E seu terceiro é a reanimação da própria corrida lunar. O sucesso metódico da China é uma razão principal pela qual os Estados Unidos se comprometeram com Artemis e com o retorno de humanos à Lua dentro de um prazo. Chang'e não apenas explorou a Lua; mudou o cálculo estratégico que governa quem mais vai, e quando."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "A lição da Chang'e é que uma escada paciente e divulgada de capacidades pode superar uma corrida dramática. A China não tentou saltar para os objetivos mais difíceis; subiu até eles, provando orbitar antes de pousar, pousar antes de explorar, explorar antes de retornar amostras — e quando tentou o verdadeiramente inédito, o pouso e retorno de amostras do lado oculto, havia conquistado cada pré-requisito. Método, sustentado ao longo de duas décadas, produziu uma sequência de primeiros feitos que nenhum rival igualou."
+      "md": "A lição da Chang'e é que uma escada paciente e publicada de capacidades pode superar uma corrida dramática. A China não tentou saltar para os objetivos mais difíceis; subiu até eles, comprovando orbitar antes de pousar, pousar antes de explorar, explorar antes de retornar amostras — e quando tentou o verdadeiramente sem precedentes, o pouso e retorno de amostras do lado oculto, havia conquistado todos os pré-requisitos. Método, sustentado ao longo de duas décadas, produziu uma sequência de primeiros feitos que nenhum rival igualou."
     },
     {
       "type": "prose",
-      "md": "A lição mais profunda é que competência silenciosa remodela o campo. Chang'e não fez grandes proclamações e não venceu nenhuma corrida por manchetes, mas seu sucesso constante fez mais para reiniciar a ambição lunar humana mundialmente do que qualquer discurso — porque um programa que simplesmente continua tendo sucesso, missão após missão, torna-se um fato estratégico ao qual todos os outros precisam responder. Consistência, no fim, é seu próprio tipo de poder."
+      "md": "A lição mais profunda é que a competência silenciosa remodela o campo. Chang'e não fez grandes proclamações e não venceu nenhuma corrida pelas manchetes, mas seu sucesso constante fez mais para reiniciar a ambição lunar humana em todo o mundo do que qualquer discurso — porque um programa que simplesmente continua tendo sucesso, missão após missão, torna-se um fato estratégico que todos os outros precisam responder. Consistência, no fim, é seu próprio tipo de poder."
     }
   ]
 }

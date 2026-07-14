@@ -1,20 +1,20 @@
 {
   "name": "Galileo",
-  "type": "ORBITER · VOLATO",
+  "type": "ORBITER · FLOWN",
   "first": "Primo veicolo spaziale in orbita attorno a Giove; sonda atmosferica nelle nubi di Giove",
-  "dispatch": "Galileo avrebbe dovuto essere paralizzata prima ancora di arrivare. La sua antenna principale si bloccò semiaperta durante il viaggio verso Giove, riducendo la velocità di trasmissione dati a un rivolo — eppure la missione ebbe successo comunque, perché gli ingegneri riscrissero il suo software dalla Terra per comprimere i dati scientifici attraverso una minuscola antenna di riserva. Divenne la prima sonda spaziale a orbitare attorno a Giove, sganciò una sonda nelle nubi del pianeta gigante e trascorse otto anni esplorando le lune. La sua scoperta più importante emerse lentamente da quella tenacia: il modo in cui il campo magnetico di Giove avvolgeva Europa poteva essere spiegato solo da un oceano salato sotto il ghiaccio — la prova più solida fino a quel momento che una luna di Giove potesse contenere acqua liquida, e vita. Alla fine fu fatta precipitare deliberatamente su Giove, in modo che non potesse mai cadere su Europa e contaminarla.",
-  "description": "Lanciato dallo Space Shuttle Atlantis dopo la lunga pausa post-Challenger, Galileo ha sfidato la fascia interna degli asteroidi e ha condotto il primo studio a lungo termine di Giove e delle sue lune dall'orbita. Ha scoperto il campo magnetico indotto di Europa – una forte prova dell’esistenza di un oceano sotterraneo – e ha osservato lo schianto della sonda Shoemaker-Levy 9 contro Giove. La missione si è conclusa con un tuffo controllato su Giove nel 2003 per evitare di contaminare le lune ghiacciate che potrebbero ospitare condizioni per la vita.",
+  "dispatch": "Galileo avrebbe dovuto essere paralizzato ancora prima di arrivare. La sua antenna principale rimase semiaperta durante il viaggio verso Giove, riducendo drasticamente la velocità di trasmissione dei dati — eppure la missione ebbe comunque successo, perché gli ingegneri riscrissero il software dal nostro pianeta per far passare la scienza attraverso una minuscola antenna di riserva. Divenne il primo veicolo spaziale a entrare in orbita attorno a Giove, lanciò una sonda nelle nubi del gigantesco pianeta e trascorse otto anni esplorando i satelliti. La sua scoperta più importante emerse lentamente da questa perseveranza: il modo in cui il campo magnetico di Giove si avvolgeva intorno a Europa poteva essere spiegato solo dalla presenza di un oceano salato sotto il ghiaccio — la prova più convincente fino a quel momento che una luna di Giove potrebbe contenere acqua liquida e vita. Alla fine fu mandata deliberatamente a disintegrarsi in Giove, così da non potere mai cadere su Europa e contaminarla.",
+  "description": "Lanciata dallo Space Shuttle Atlantis dopo la lunga pausa successiva al disastro dello Challenger, Galileo attraversò la fascia asteroidale interna e condusse il primo studio a lungo termine di Giove e dei suoi satelliti da orbita. Scoprì il campo magnetico indotto di Europa — forte evidenza di un oceano subsuperficiale — e osservò Shoemaker-Levy 9 impattare su Giove. La missione terminò con un tuffo controllato in Giove nel 2003 per evitare di contaminare le lune ghiacciate che potrebbero ospitare condizioni favorevoli alla vita.",
   "events": [
     {
       "met": 0,
       "label": "LANCIO",
-      "note": "STS-34 schiera Galileo e uno stadio superiore inerziale dell'Atlantis.",
+      "note": "STS-34 deploya Galileo e uno stadio superiore inerziale da Atlantis.",
       "type": "nominal"
     },
     {
       "met": 2242,
-      "label": "INSERIMENTO NELL'ORBITA DI GIOVE",
-      "note": "L'accensione del motore principale cattura Galileo in orbita; iniziano decenni di scienza lunare.",
+      "label": "INSERIMENTO IN ORBITA DI GIOVE",
+      "note": "L'accensione del motore principale cattura Galileo in orbita; inizia un tour di otto anni dedicato alla scienza dei satelliti.",
       "type": "nominal"
     }
   ]

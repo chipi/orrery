@@ -1,80 +1,80 @@
 {
   "name": "New Horizons",
-  "tagline": "Es dauerte neuneinhalb Jahre und den schnellsten Start der Geschichte, um Pluto zu erreichen — und die tote Eiskugel, die alle erwartet hatten, entpuppte sich als eine junge, aktive Welt.",
+  "tagline": "Es brauchte neuneinhalb Jahre und den schnellsten Start der Geschichte, um Pluto zu erreichen — und die tote Eiskugel, die alle erwartet hatten, erwies sich als junge, aktive Welt.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Zur Jahrtausendwende war jeder Planet des Sonnensystems von einer Raumsonde besucht worden, außer einem. Pluto — klein, kalt und drei Milliarden Kilometer entfernt — blieb selbst in den besten Teleskopen ein verschwommener Fleck, die letzte unerforschte Welt der klassischen neun. Er entfernte sich auch: Seine dünne Atmosphäre würde voraussichtlich ausfrieren und kollabieren, während er sich von der Sonne entfernte, und seine Umlaufbahn würde ihn bald für Jahrzehnte in den Schatten führen. Wenn jemand Pluto noch mit Atmosphäre sehen wollte, musste es bald geschehen."
+      "md": "Zur Jahrtausendwende war jeder Planet des Sonnensystems von einer Raumsonde besucht worden, bis auf einen. Pluto — klein, kalt und fast fünf Milliarden Kilometer entfernt — blieb selbst in den besten Teleskopen verschwommen, die letzte unerforschte Welt der damals gezählten neun Planeten. Er entfernte sich auch: Es wurde erwartet, dass seine dünne Atmosphäre ausfrieren und kollabieren würde, während er sich von der Sonne entfernte, und seine Umlaufbahn würde ihn bald in Jahrzehnte des Schattens tragen. Wenn jemand Pluto mit noch vorhandener Atmosphäre sehen wollte, mussten sie bald aufbrechen."
     },
     {
       "type": "prose",
-      "md": "New Horizons war die Mission, die gebaut wurde, um diese Uhr zu schlagen, und sie war auf Geschwindigkeit und Sparsamkeit ausgelegt. Klein, kompakt und vergleichsweise günstig, wurde sie 2006 mit der leistungsstärksten verfügbaren Rakete gestartet, erhielt einen Gravitationsschub durch Jupiter und wurde schneller als alles zuvor durch das Sonnensystem geschickt — ein neuneinhalbjähriger Sprint zu einem einzigen, nicht wiederholbaren Vorbeiflug."
+      "md": "New Horizons war die Mission, die gebaut wurde, um diese Uhr zu schlagen, und sie war auf Geschwindigkeit und Sparsamkeit ausgelegt. Klein, kompakt und vergleichsweise günstig wurde sie 2006 mit der stärksten verfügbaren Rakete gestartet, erhielt einen Gravitationsschub von Jupiter und wurde schneller als alles zuvor durch das Sonnensystem geschickt — ein neuneinhalbjähriger Sprint zu einem einzelnen, nicht wiederholbaren Vorbeiflug."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Das Ziel war der erste nahe Blick auf Pluto und seinen großen Mond Charon: sie zu kartieren, Plutos dünne Atmosphäre zu messen, bevor sie ausfrieren konnte, und den letzten unerforschten klassischen Planeten von einem Fleck in einen Ort zu verwandeln. Da die Raumsonde mit enormer Geschwindigkeit vorbeifliegen und nicht anhalten konnte, musste alles in wenigen Stunden funktionieren, ausgeführt von einer Maschine, die zu weit entfernt war, um in Echtzeit Hilfe zu erhalten — ein Befehl brauchte Stunden, um sie zu erreichen."
+      "md": "Das Ziel war der erste nahe Blick auf Pluto und seinen großen Mond Charon: sie zu kartieren, Plutos dünne Atmosphäre zu messen, bevor sie ausfrieren konnte, und den letzten unerforschten Planeten, wie er damals gezählt wurde, von einem Fleck in einen Ort zu verwandeln. Weil die Raumsonde mit enormer Geschwindigkeit vorbeifliegen und nicht anhalten konnte, musste alles in wenigen Stunden funktionieren, ausgeführt von einer Maschine, die zu weit entfernt war, um in Echtzeit geholfen zu werden — ein Befehl brauchte Stunden, um sie zu erreichen."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "missions/new-horizons/01"
       },
-      "caption": "New Horizons wurde leicht und schnell gebaut, mit einem einzigen Satz Instrumente und ohne Treibstoff zum Abbremsen. Sie hatte einen Durchgang an Pluto, mit mehr als 50.000 Kilometern pro Stunde, während ihre Erbauer Stunden auf jedes Signal warteten, das das Sonnensystem durchquerte.",
+      "caption": "New Horizons wurde leicht und schnell gebaut, mit einem einzigen Instrumentensatz und keinem Treibstoff zum Abbremsen. Sie hatte eine Chance bei Pluto, mit fast 50.000 Kilometern pro Stunde, während ihre Erbauer Stunden auf jedes Signal warteten, das das Sonnensystem durchquerte.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Ein zweites Ziel wurde hinzugefügt, sobald das erste erfüllt war: Wenn die Raumsonde Pluto überlebte, würde sie weiter in den Kuipergürtel fliegen — den riesigen Ring eisiger Körper jenseits von Neptun — und, wenn der Treibstoff ausreichte, einen von ihnen besuchen und damit eine Klasse von Objekten erreichen, die keine Mission je gesehen hatte."
+      "md": "Ein zweites Ziel wurde hinzugefügt, nachdem das erste erreicht war: Wenn die Raumsonde Pluto überlebte, würde sie weiter in den Kuipergürtel fliegen — den riesigen Ring aus eisigen Körpern jenseits von Neptun — und, wenn der Treibstoff ausreichte, einen von ihnen besuchen und eine Objektklasse erreichen, die noch keine Mission je gesehen hatte."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Am 14. Juli 2015, nach neuneinhalb Jahren, raste New Horizons an Pluto vorbei — und widerlegte die Erwartung einer toten Welt. Wissenschaftler hatten sich auf eine verkraterte, geologisch eingefrorene Kugel eingestellt; stattdessen fanden sie hoch aufragende Berge aus Wassereis, eine riesige, glatte Ebene aus gefrorenem Stickstoff in Herzform, die von langsamer Konvektion durchzogen wurde, Dunstschichten in der dünnen Atmosphäre und Anzeichen geologischer Aktivität auf einer Welt, die so klein und kalt ist, dass sie längst zur Ruhe gekommen sein sollte. Pluto sah jung aus, war komplex und voller Prozesse."
+      "md": "Am 14. Juli 2015, nach neuneinhalb Jahren, sauste New Horizons an Pluto vorbei — und stürzte die Erwartung einer toten Welt um. Wissenschaftler hatten sich auf eine verkraterte, geologisch gefrorene Kugel eingestellt; stattdessen fanden sie hoch aufragende Berge aus Wassereis, eine riesige, glatte Ebene aus gefrorenem Stickstoff in Herzform, die von langsamer Konvektion durchwoben war, Dunstschichten in der dünnen Atmosphäre und Anzeichen geologischer Aktivität auf einer Welt, die so klein und kalt war, dass sie längst zur Ruhe gekommen sein sollte. Pluto sah jung aus, war komplex und lebendig mit Prozessen."
     },
     {
       "type": "prose",
-      "md": "Dann flog sie weiter. Dreieinhalb Jahre später, am 1. Januar 2019, flog New Horizons an einem winzigen, zweilappigen Körper mehr als eineinhalb Milliarden Kilometer jenseits von Pluto vorbei — später Arrokoth benannt — das am weitesten entfernte Objekt, das je aus der Nähe erforscht wurde. Es erwies sich als ein makelloses Relikt der Geburt des Sonnensystems, zwei Kugeln, die sanft zusammengetrieben waren und aneinander haften blieben, seit dem Anfang eingefroren. Die Raumsonde fliegt noch immer und sendet weiterhin Daten vom äußeren Rand des Planetensystems."
+      "md": "Dann flog sie weiter. Dreieinhalb Jahre später, am 1. Januar 2019, flog New Horizons an einem winzigen, zweilappigen Körper mehr als eineinhalb Milliarden Kilometer jenseits von Pluto vorbei — später Arrokoth benannt — das entfernteste Objekt, das je aus der Nähe erforscht wurde. Es erwies sich als unberührtes Relikt der Geburt des Sonnensystems, zwei Kugeln, die sanft zusammengedriftet und aneinandergeklebt waren, seit Anbeginn gefroren. Die Raumsonde fliegt immer noch und liefert weiterhin Daten vom äußeren Rand des Planetensystems."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Die Geschichte von New Horizons ist die einer Mission, die genau eine Chance hatte und sie nutzte. Es gab keinen Orbit, keinen zweiten Durchgang, kein Abbremsen — neuneinhalb Jahre Reise konzentrierten sich auf wenige Stunden bei Pluto, und alles musste in einer Entfernung funktionieren, in der die Raumsonde praktisch auf sich allein gestellt war. Dass sie den Vorbeiflug fehlerfrei ausführte, mit mehr als fünfzigtausend Kilometern pro Stunde, ist ein stiller Triumph des einmaligen Handelns und des richtigen Vorgehens."
+      "md": "Die Geschichte von New Horizons ist eine Mission, die genau eine Chance hatte und sie nutzte. Es gab keinen Orbit, keinen zweiten Durchgang, kein Abbremsen — neuneinhalb Jahre Reise konzentrierten sich auf wenige Stunden bei Pluto, und alles musste in einer Entfernung funktionieren, in der die Raumsonde faktisch auf sich allein gestellt war. Dass sie den Vorbeiflug makellos ausführte, mit fast fünfzigtausend Kilometern pro Stunde, ist ein stiller Triumph, etwas einmal zu tun und es richtig zu machen."
     },
     {
       "type": "prose",
-      "md": "Ihre bleibende Überraschung war, wie falsch die Erwartung gewesen war. Die Annahme, dass eine kleine, alte, sonnenentwöhnte Welt geologisch tot sein müsse, erwies sich als genau falsch: Pluto ist eine der aktivsten Oberflächen im Sonnensystem, seine Stickstoffgletscher fließen und sein Gelände ist jung. New Horizons ist eine stehende Erinnerung daran, dass das äußere Sonnensystem sich weigert, die gefrorene Ödnis zu sein, für die es gehalten wurde — zuerst Enceladus, dann Europa und dann ein Zwergplanet, von dem niemand dachte, dass man etwas von ihm erwarten könne."
+      "md": "Ihre bleibende Überraschung war, wie falsch die Erwartung gewesen war. Die Annahme, dass eine kleine, alte, sonnenverarmte Welt geologisch tot sein muss, erwies sich als genau verkehrt: Pluto ist eine der aktivsten Oberflächen im Sonnensystem, seine Stickstoffgletscher fließen und sein Terrain ist jung. New Horizons ist eine stehende Erinnerung daran, dass das äußere Sonnensystem sich weigert, die gefrorene Einöde zu sein, für die es gehalten wurde — erst Enceladus, dann Europa und dann ein Zwergplanet, von dem niemand glaubte, dass er etwas zu erwarten sei."
     },
     {
       "type": "prose",
-      "md": "Und sie vollendete etwas. Mit Pluto hatte nun eine Raumsonde jeden klassischen Planeten besucht und damit eine Erkundung des Sonnensystems abgeschlossen, die mit den Mariners und Pioneers ein halbes Jahrhundert zuvor begonnen hatte. Dann drang sie über die Ziellinie hinaus in den Kuipergürtel vor und erreichte die unberührten Bausteine der Planeten selbst — die Mission, die eine Ära der Erkundung beendete und die nächste eröffnete."
+      "md": "Und sie vollendete etwas. Mit Pluto hatte nun eine Raumsonde jeden Planeten der alten Zählung besucht und schloss eine Erkundung des Sonnensystems ab, die mit den Marinern und Pioneers ein halbes Jahrhundert zuvor begonnen hatte. Dann schob sie sich über die Ziellinie hinaus in den Kuipergürtel und erreichte die unberührten Bausteine der Planeten selbst — die Mission, die eine Ära der Erkundung beendete und die nächste eröffnete."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Das erste Vermächtnis von New Horizons ist Pluto selbst — an einem einzigen Nachmittag vom letzten unerforschten klassischen Planeten in eine kartierte, geologisch aktive Welt verwandelt und die definitive Antwort auf ein Jahrhundert der Spekulation über den neunten Lichtpunkt."
+      "md": "New Horizons' erstes Vermächtnis ist Pluto selbst — an einem einzigen Nachmittag verwandelt vom letzten unerforschten Planeten der damals anerkannten neun in eine kartierte, geologisch aktive Welt und die definitive Antwort auf ein Jahrhundert der Spekulation über den neunten Lichtpunkt."
     },
     {
       "type": "prose",
-      "md": "Das zweite ist Arrokoth und der Kuipergürtel: der erste nahe Blick auf ein makelloses Relikt der Entstehung des Sonnensystems, ein Körper, der seit dem Anfang unberührt ist, und die Ausdehnung der Erkundung in die riesige eisige Region jenseits von Neptun, die nie besucht worden war."
+      "md": "Ihr zweites ist Arrokoth und der Kuipergürtel: der erste nahe Blick auf ein unberührtes Relikt der Entstehung des Sonnensystems, einen Körper, der seit Anbeginn unberührt war, und die Ausdehnung der Erkundung in die riesige eisige Region jenseits von Neptun, die nie besucht worden war."
     },
     {
       "type": "prose",
-      "md": "Das dritte ist eine abgeschlossene Erkundung. New Horizons markierte den Punkt, an dem jeder klassische Planet von einer Raumsonde besucht worden war — der Abschluss einer fünfzigjährigen ersten Vermessung des Sonnensystems — während sie den Weg zu den zahllosen kleinen Welten wies, die noch ungesehen sind."
+      "md": "Ihr drittes ist eine abgeschlossene Erkundung. New Horizons markierte den Punkt, an dem jeder Planet der alten Zählung von einer Raumsonde besucht worden war — der Abschluss einer fünfzigjährigen ersten Übersicht des Sonnensystems — während sie den Weg vorwärts zu den zahllosen kleinen Welten wies, die noch ungesehen sind."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lehre von New Horizons ist, dass manche Chancen nur einmal kommen und Bereitschaft alles ist. Es gab kein zweites Mal bei Pluto: ein einziger Vorbeiflug, ausgeführt von einer Maschine, die zu weit entfernt war, um Hilfe zu erhalten, nach fast einem Jahrzehnt Reise. Missionen, die auf einen einzigen unumkehrbaren Moment aufgebaut sind, gelingen oder scheitern an der Disziplin, sich darauf vorzubereiten — und New Horizons ist der Beweis, dass eine kleine, fokussierte, gut eingespielte Anstrengung die eine Chance treffen kann, die sie bekommt."
+      "md": "Die Lehre von New Horizons ist, dass manche Chancen nur einmal kommen und Bereitschaft alles ist. Es gab keine Wiederholung bei Pluto: ein einziger Vorbeiflug, ausgeführt von einer Maschine, die zu weit entfernt war, um Hilfe zu bekommen, nach fast einem Jahrzehnt Reise. Missionen, die um einen einzigen unumkehrbaren Moment herum gebaut sind, gelingen oder scheitern an der Disziplin, sich darauf vorzubereiten — und New Horizons ist der Beweis, dass eine kleine, fokussierte, gut eingespielte Anstrengung die eine Chance, die sie bekommt, treffen kann."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lehre ist, dem Vorurteil zu misstrauen, dass entfernt und alt tot bedeutet. Alles an Pluto wurde als gefroren und erledigt erwartet; fast nichts war es. Immer wieder hat das äußere Sonnensystem die Intuition bestraft, dass kalt, klein und weit von der Sonne leblos bedeutet — eine Erinnerung daran, dass der sicherste Weg, überrascht zu werden, darin besteht, im Voraus zu entscheiden, dass ein Ort nichts zu zeigen hat."
+      "md": "Die tiefere Lehre ist, dem Gedanken zu misstrauen, dass entfernt und alt tot bedeutet. Alles an Pluto wurde als gefroren und abgeschlossen erwartet; fast nichts war es. Wieder und wieder hat das äußere Sonnensystem die Intuition bestraft, dass kalt, klein und weit von der Sonne entfernt sich zu leblos addieren — eine Erinnerung daran, dass der sicherste Weg, überrascht zu werden, darin besteht, im Voraus zu entscheiden, dass ein Ort einem nichts zu zeigen hat."
     }
   ]
 }

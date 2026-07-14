@@ -1,56 +1,56 @@
 {
   "name": "Apollo 13",
-  "dispatch": "Apollo 13 landete nie, und es ist die Mission, an die sich jeder erinnert. Zwei Tage nach dem Start zerbarst ein Sauerstofftank und verwandelte einen Routineflug zum Hochland von Fra Mauro in ein viertägiges Problem, drei Menschen in einem sterbenden Raumschiff eine Viertelmillion Meilen von zu Hause entfernt am Leben zu erhalten. Was sie rettete, war keine Heldentat; es war Vorbereitung und ein Raum voller Menschen, die das Problem in Echtzeit bearbeiteten und aus dem, was bereits am Fahrzeug verschraubt war, einen Weg zum Atmen und einen Weg nach Hause improvisierten. Die NASA nannte es einen erfolgreichen Fehlschlag. Es kommt der Wahrheit näher zu sagen, es ist der Flug, der bewies, dass die Behörde so gut war, wie sie behauptete zu sein.",
-  "type": "VORBEIFLUG MIT BESATZUNG · GEFLOGEN (LANDUNG ABGEBROCHEN)",
-  "first": "Die Mission, die einen Beinahe-Disaster zu NASAs gefeiertster Rettung machte",
-  "description": "Apollo 13 sollte die dritte bemannte Mondlandung sein, Ziel war das Fra-Mauro-Hochland. 55 Stunden und 54 Minuten nach dem Flug brach ein Sauerstofftank im Servicemodul, was die elektrischen und Lebenserhaltungssysteme des CSM lähmte. Mit abgesagter Landung schalteten die Besatzung — James Lovell, Jack Swigert und Fred Haise — das CSM ab, zog in die Mondlandefähre Aquarius als Rettungsboot um und nutzte das Abstiegstriebwerk des LM für eine Perizenter+2-Stunden-Brennung, die sie auf eine schnelle freie-Rückkehr-Bahn brachte. Sie flogen am 15.04.1970 in 254 km Höhe an der Mare Cognitum vorbei und wasserten am 17.04.1970 sicher im Südpazifik. Die Mission gilt heute als Modell disziplinierter Echtzeit-Ingenieursimprovisation.",
+  "type": "CREWED FLYBY · FLOWN (LANDING ABORTED)",
+  "first": "Die Mission, die eine Katastrophe in Nahes in NASAs gefeiertste Rettung verwandelte",
+  "dispatch": "Apollo 13 landete nie, und es ist die Mission, die jeder in Erinnerung behält. Zwei Tage nach dem Start riss sich ein Sauerstofftank selbst auseinander und verwandelte einen Routineflug zu den Fra-Mauro-Hochländern in ein viertägiges Problem, drei Männer am Leben zu halten in einem sterbenden Raumschiff eine Viertelmillion Meilen von zu Hause entfernt. Was sie rettete, waren keine Heldentaten; es war Vorbereitung und ein Zimmer voller Menschen, die in Echtzeit an dem Problem arbeiteten und auf improvisierten Wegen zu atmen und nach Hause zu kommen aus dem, was bereits am Fahrzeug befestigt war. Die NASA nannte es einen erfolgreichen Fehlschlag. Es ist näher bei der Wahrheit zu sagen, dass es der Flug ist, der bewies, dass die Agentur so gut war, wie sie behauptet hatte zu sein.",
+  "description": "Apollo 13 sollte die dritte bemannte Mondlandung werden, angepeilt auf die Fra-Mauro-Hochländer. Bei 55 Stunden 54 Minuten Flugdauer riss ein Sauerstofftank im Servicemodul, was die elektischen und Lebenserhaltungssysteme des Command-Service-Moduls lahmlegte. Mit der Landung abgesagt, schaltete die Crew — James Lovell, Jack Swigert und Fred Haise — das CSM ab, zog ins Lunar Module Aquarius als Rettungsboot um und nutzte die LM-Abstiegstriebwerks für einen Perizynthion+2-Stunden-Abbrand, das sie auf eine schnelle Freiflugbahn platzierte. Sie schwangen am Mond in 254 km Höhe am 1970-04-15 vorbei und landeten sicher im Südpazifik am 1970-04-17 ab. Die Mission wird heute als ein Modell der disziplinierten Echtzeit-Improvisierung im Engineering studiert.",
   "events": [
     {
       "met": 0,
-      "label": "SATURN V START",
-      "note": "Start vom KSC LC-39A. Das zentrale Triebwerk der zweiten S-II-Stufe schaltete zwei Minuten zu früh ab — die äußeren Triebwerke kompensierten.",
+      "label": "SATURN-V-START",
+      "note": "Abheben von KSC LC-39A. Mittleres Triebwerk der S-II-Stufe schaltete zwei Minuten früh ab — äußere Triebwerke kompensieren.",
       "type": "nominal"
     },
     {
       "met": 0.117,
       "label": "TLI",
-      "note": "Translunare Injektionsbrennung der S-IVB; CSM + LM begeben sich auf cislunare Bahn.",
+      "note": "Trans-Lunar-Injection-Abbrand durch S-IVB; CSM + LM verpflichten sich zu zislunar-Flugbahn.",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "MCC-2",
-      "note": "Die Mittelkurskorrektur lenkt die Raumsonde von der freien-Rückkehr-Bahn auf einen Fra-Mauro-Anflug.",
+      "note": "Mittelkurskorrektur verschiebt das Raumschiff von der Freiflugbahn auf einen Fra-Mauro-Anflug.",
       "type": "nominal"
     },
     {
       "met": 2.33,
-      "label": "BRUCH DES O2-TANKS #2",
-      "note": "Ein Kryo-Rührbefehl im SM löst einen Kurzschluss und den Tankbruch aus. „Houston, wir hatten ein Problem.“ Strom und Wasser schwinden; das LM Aquarius wird zum Rettungsboot.",
+      "label": "SAUERSTOFFTANK #2 RUPTUR",
+      "note": "SM-Kryo-Rührbefehls löst einen Kurzschluss-Brand und eine Tankruptur aus. »Houston, wir hatten ein Problem.« Strom und Wasser schwinden; LM Aquarius wird zum Rettungsboot.",
       "type": "warning"
     },
     {
       "met": 2.92,
-      "label": "FREIE-RÜCKKEHR-BRENNUNG",
-      "note": "31-Sekunden-Brennung des LM-Abstiegstriebwerks bringt die Raumsonde auf eine freie-Rückkehr-Bahn zurück.",
+      "label": "FREIFLUGBAHN-ABBRAND",
+      "note": "31-Sekunden-LM-Abstiegstriebwerks-Abbrand setzt das Raumschiff auf eine Freiflugbahn zurück.",
       "type": "info"
     },
     {
       "met": 3.13,
-      "label": "MONDVORBEIFLUG",
-      "note": "Größte Annäherung 254 km Höhe über Mare Cognitum — die weiteste je von einer bemannten Raumsonde zurückgelegte Entfernung von der Erde.",
+      "label": "MONDFLYBY",
+      "note": "Nächste Annäherung 254 km Höhe über Mare Cognitum — auf 400.171 km, die weiteste Entfernung, die Menschen von der Erde gereist hatten (Rekord gehalten 1970–2026, übertroffen durch Artemis II im April 2026).",
       "type": "info"
     },
     {
       "met": 3.96,
-      "label": "PC+2-BRENNUNG",
-      "note": "Perizenter-plus-2-Stunden-Brennung verkürzt die Rückkehrzeit zur Erde um zehn Stunden.",
+      "label": "PC+2-ABBRAND",
+      "note": "Perizynthion-Plus-2-Stunden-Abbrand verkürzt die Rückkehrzeit zur Erde um zehn Stunden.",
       "type": "nominal"
     },
     {
       "met": 5.95,
-      "label": "WASSERUNG",
-      "note": "CSM-Wiedereintritt und Wasserung im Südpazifik, geborgen von der USS Iwo Jima.",
+      "label": "WASSERLANDUNG",
+      "note": "CSM-Wiedereintritt und Südpazifik-Wasserlandung, geborgen durch die USS Iwo Jima.",
       "type": "info"
     }
   ]

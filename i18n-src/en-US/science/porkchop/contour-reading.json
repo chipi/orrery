@@ -8,7 +8,7 @@
   ],
   "body_paragraphs": [
     "Look at a Mars porkchop. You'll see a roughly oval lobe of teal cells centred near a 250-day TOF, recurring every 26 months. That's the Hohmann opportunity. Inside the lobe, all combinations of (departure, TOF) deliver feasible Mars missions at acceptable ∆v.",
-    "Two solutions per window. The 'short way' (transfer angle < 180°) and the 'long way' (transfer angle > 180°) both connect Earth to Mars but via different ellipses. They appear as two parallel cheap bands in the porkchop — sometimes both appear, sometimes only one, depending on geometry.",
+    "Two solutions per window. The 'short way' (transfer angle < 180°) and the 'long way' (transfer angle > 180°) both connect Earth to Mars but via different ellipses. They appear as two cheap lobes in the porkchop, separated by a high-∆v ridge at the ~180° transfer angle — this ridge is literally the 'bone' of the pork chop. Sometimes both lobes appear, sometimes only one, depending on geometry.",
     "Outside the cheap lobes: red. Far from any natural window, you'd need a custom high-energy trajectory (gravity assist, multi-burn) to make the math work. Real missions cluster in the cheap zones; design philosophy 'just wait for the right window' often beats 'invent a clever trajectory.'"
   ]
 }

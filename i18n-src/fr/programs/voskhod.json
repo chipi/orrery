@@ -1,14 +1,14 @@
 {
   "name": "Voskhod",
-  "tagline": "La solution de fortune précipitée qui a extorqué deux premières de plus — un équipage et une sortie extravéhiculaire — à du matériel poussé à bout, et a failli tuer des gens ce faisant.",
+  "tagline": "L'expédient précipité qui a permis d'arracher deux premières de plus — un équipage et une sortie spatiale — à du matériel poussé à bout, et qui a failli tuer des gens au passage.",
   "the_land": [
     {
       "type": "prose",
-      "md": "En 1964, la partie facile était terminée. Vostok avait marqué ses premières, mais les Américains construisaient Gemini — un vaisseau biplace capable de vraiment manœuvrer, faire un rendez-vous et s'amarrer — et une fois qu'il volerait, l'avance soviétique s'évaporerait. Nikita Khrouchtchev voulait davantage de gros titres avant que cela n'arrive, et il a fait pression sur Sergueï Korolev pour qu'il les produise. Aucun nouveau vaisseau soviétique n'était prêt. Alors l'équipe de Korolev a fait la seule chose que le calendrier permettait : ils ont pris le Vostok monoplace et l'ont modifié pour faire des choses pour lesquelles il n'avait jamais été conçu."
+      "md": "En 1964, la partie facile était terminée. Vostok avait marqué ses premières, mais les Américains construisaient Gemini — un vaisseau biplace capable de véritablement manœuvrer, effectuer des rendez-vous et s'amarrer — et dès qu'il volerait, l'avance soviétique s'évaporerait. Nikita Khrouchtchev voulait d'autres gros titres avant que cela n'arrive, et il a fait pression sur Sergueï Korolev pour qu'il les produise. Aucun nouveau vaisseau soviétique n'était prêt. L'équipe de Korolev n'a donc fait que la seule chose que le calendrier permettait : ils ont pris le Vostok monoplace et l'ont modifié pour faire des choses pour lesquelles il n'avait jamais été conçu."
     },
     {
       "type": "prose",
-      "md": "Le résultat fut Voskhod, et il existait dans un seul but — continuer à marquer des premières un peu plus longtemps, avec du matériel emprunté et des marges empruntées. C'était moins un programme qu'une paire de coups d'éclat réalisés avant que la concurrence ne puisse rattraper son retard : un équipage de plusieurs personnes, et un humain sortant à l'extérieur dans le vide. Les deux seraient de véritables jalons. Les deux étaient bien plus dangereux que ne le laissaient entendre les calmes annonces soviétiques."
+      "md": "Le résultat fut Voskhod, qui n'existait que dans un seul but — continuer à marquer des premières un peu plus longtemps, avec du matériel emprunté et des marges empruntées. C'était moins un programme que deux cascades réalisées avant que la concurrence ne puisse rattraper son retard : un équipage multipersonne et un être humain sortant dans le vide. Les deux seraient de véritables jalons. Les deux étaient bien plus dangereux que ne le laissaient entendre les annonces soviétiques posées."
     }
   ],
   "goals": [
@@ -17,12 +17,12 @@
       "image": {
         "reuse": "fleet/voskhod/01"
       },
-      "caption": "Voskhod — un Vostok dépouillé de son siège éjectable et reconverti pour transporter plus d'équipage. La place pour trois s'est faite au prix du système d'évacuation et, lors du premier vol, des combinaisons de pression.",
+      "caption": "Voskhod — un Vostok dépouillé de son siège éjectable et réaménagé pour transporter plus d'équipage. La place pour trois s'est faite au prix du système d'éjection et, lors du premier vol, des combinaisons pressurisées.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Voskhod avait exactement deux objectifs, tous deux définis par ce qui devancerait Gemini : faire voler plus d'une personne à la fois, et placer un humain à l'extérieur du vaisseau. Pour faire tenir trois cosmonautes dans une capsule construite pour un seul, les ingénieurs ont arraché le siège éjectable qui avait sauvé chaque pilote Vostok — ce qui signifiait que si quelque chose tournait mal au lancement ou à l'atterrissage, l'équipage n'avait aucune issue. Lors du premier vol, il n'y avait même pas de place pour des combinaisons de pression. C'était un pari calculé que rien ne tournerait mal, pris pour conserver une avance."
+      "md": "Voskhod avait exactement deux objectifs, tous deux définis par ce qui devancerait Gemini : faire voler plus d'une personne à la fois et mettre un être humain à l'extérieur du vaisseau. Pour faire tenir trois cosmonautes dans une capsule construite pour un seul, les ingénieurs ont arraché le siège éjectable qui avait sauvé chaque pilote Vostok — ce qui signifiait que si quelque chose tournait mal au lancement ou à l'atterrissage, l'équipage n'avait aucune issue. Lors du premier vol, il n'y avait même pas de place pour des combinaisons pressurisées. C'était un pari calculé que rien ne tournerait mal, pris pour conserver une avance."
     }
   ],
   "outcome": [
@@ -31,30 +31,30 @@
       "image": {
         "reuse": "missions/voskhod-1/01"
       },
-      "caption": "L'équipage de trois de Voskhod 1 — Komarov, Feoktistov, Yegorov — le premier vol spatial multi-personnes, effectué en bras de chemise sans combinaisons et sans système d'évacuation.",
+      "caption": "L'équipage de trois de Voskhod 1 — Komarov, Feoktistov, Yegorov — le premier vol spatial multipersonne, effectué en bras de chemise sans combinaisons et sans système d'éjection.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Les paris ont été gagnés, de justesse. En octobre 1964, Voskhod 1 a transporté le premier équipage de trois personnes — en bras de chemise, sans combinaisons, sans sièges éjectables — autour de la Terre pendant une journée et est rentré sain et sauf. Cinq mois plus tard, Voskhod 2 a fait la chose la plus difficile : Alexei Leonov a ouvert une écoutille et a flotté dans le vide lors de la première sortie extravéhiculaire de l'histoire. Puis tout a failli mal tourner de toutes les manières possibles. La combinaison de Leonov s'est gonflée si rigidement dans le vide qu'il ne pouvait pas repasser par le sas, et a dû purger sa propre pression d'air — risquant les accidents de décompression — pour se faufiler à l'intérieur. Le système de rentrée automatique a échoué ; l'équipage l'a piloté manuellement et s'est posé à des centaines de kilomètres de la cible, dans la forêt sibérienne profonde, où ils ont passé une nuit glaciale entourés de loups avant que des sauveteurs à skis ne puissent les atteindre."
+      "md": "Les paris ont porté leurs fruits, tout juste. En octobre 1964, Voskhod 1 a transporté le premier équipage de trois personnes — en bras de chemise, sans combinaisons, sans sièges éjectables — autour de la Terre pendant une journée et est rentré sain et sauf. Cinq mois plus tard, Voskhod 2 a fait la chose la plus difficile : Alexei Leonov a ouvert une écoutille et a flotté dans le vide lors de la première sortie spatiale de l'histoire. Puis tout a failli mal tourner de toutes les façons possibles. La combinaison de Leonov s'est gonflée si rigidement dans le vide qu'il ne pouvait pas repasser par le sas, et il a dû purger sa propre pression d'air — risquant les accidents de décompression — pour se faufiler. Le système de rentrée automatique a échoué ; l'équipage l'a piloté manuellement et s'est posé à des centaines de kilomètres de la cible, dans la forêt sibérienne profonde, où ils ont passé deux nuits glaciales en pleine forêt — des loups dans la taïga autour d'eux — avant de skier jusqu'à un hélicoptère qui ne pouvait pas atterrir dans les arbres."
     },
     {
       "type": "prose",
-      "md": "Deux vols, deux premières de plus, et deux frôlements de catastrophe dont le monde n'a été informé que des décennies plus tard. Korolev a vu à quel point Voskhod 2 était passé près et a annulé le reste du programme. Le matériel était à court de marge, et il n'y avait plus de premières qui valaient le risque — la prochaine véritable capacité, comme tout ce dont Apollo aurait besoin, devrait venir d'un vaisseau qui n'existait pas encore."
+      "md": "Deux vols, deux premières de plus, et deux frôlements avec le désastre dont le monde n'a rien su pendant des décennies. Korolev a vu à quel point Voskhod 2 était passé près et a annulé le reste du programme. Le matériel était à bout de marge, et il n'y avait plus de premières qui valaient le risque — la prochaine capacité réelle, comme tout ce dont Apollo aurait besoin, devrait venir d'un vaisseau qui n'existait pas encore."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Voskhod est à quoi ressemble un programme quand les gros titres dictent le calendrier. Chaque décision — pas de combinaisons, pas de sièges éjectables, un sas gonflable boulonné sur une capsule monoplace — était un coin coupé pour marquer une première avant Gemini, et chacune a déplacé le risque de la planche à dessin vers l'équipage. Ça a fonctionné deux fois, ce qui est précisément le problème : le succès sur des marges minces enseigne la mauvaise leçon, que les marges n'étaient pas nécessaires."
+      "md": "Voskhod est ce à quoi ressemble un programme quand les gros titres dirigent le calendrier. Chaque décision — pas de combinaisons, pas de sièges éjectables, un sas gonflable boulonné sur une capsule monoplace — était un raccourci pris pour marquer une première avant Gemini, et chacune déplaçait le risque de la planche à dessin vers l'équipage. Ça a marché deux fois, et c'est justement le problème : le succès sur des marges minces enseigne la mauvaise leçon, que les marges n'étaient pas nécessaires."
     },
     {
       "type": "prose",
-      "md": "La sortie extravéhiculaire de Leonov est le programme entier en miniature — une première véritable et courageuse que le public a vue comme sans effort et qui a failli tuer son cosmonaute, discrètement, hors caméra. Cet écart entre l'annonce triomphale et la quasi-catastrophe en dessous est la chose la plus vraie sur Voskhod, et sur la manière dont le programme soviétique des débuts faisait la course : brillamment, publiquement, et avec beaucoup moins de marge que quiconque n'était autorisé à savoir."
+      "md": "La sortie spatiale de Leonov est tout le programme en miniature — une première véritable et courageuse que le public a vue comme sans effort et qui a failli tuer son cosmonaute, discrètement, hors caméra. Cet écart entre l'annonce triomphale et la quasi-catastrophe en dessous est la chose la plus vraie sur Voskhod, et sur la façon dont le programme soviétique des débuts courait : brillamment, publiquement, et avec bien moins de marge de manœuvre que quiconque n'était autorisé à le savoir."
     },
     {
       "type": "prose",
-      "md": "Après Voskhod 2, le programme soviétique a cessé d'étirer Vostok et s'est tourné vers Soyuz — un véritable vaisseau de deuxième génération capable de manœuvrer et de s'amarrer — et vers une tentative secrète pour la Lune. L'ère des premières faciles était terminée ; à partir de là, la course se ferait sur les capacités, et c'était un terrain que les Américains, avec Gemini, s'apprêtaient à saisir."
+      "md": "Après Voskhod 2, le programme soviétique a cessé d'étirer Vostok et s'est tourné vers Soyuz — un véritable vaisseau de deuxième génération capable de manœuvrer et de s'amarrer — et vers une tentative secrète pour la Lune. L'ère des premières faciles était terminée ; à partir de là, la course se jouerait sur les capacités, et c'était un terrain que les Américains, avec Gemini, étaient sur le point de saisir."
     }
   ],
   "legacy": [
@@ -63,26 +63,26 @@
       "image": {
         "reuse": "missions/voskhod-2/02"
       },
-      "caption": "La sortie extravéhiculaire d'Alexei Leonov, mars 1965 — le premier humain dans l'espace ouvert, et l'un des frôlements de catastrophe les plus proches que l'époque ait produits.",
+      "caption": "La sortie spatiale d'Alexei Leonov, mars 1965 — le premier être humain dans l'espace ouvert, et l'un des frôlements avec le désastre les plus proches que l'époque ait produits.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "L'héritage de Voskhod, ce sont deux premières permanentes — le premier équipage et la première sortie extravéhiculaire — et un récit édifiant qui siège juste à côté d'elles. Les premières sont réelles et ne peuvent être retirées ; chaque équipage multi-personnes et chaque sortie extravéhiculaire depuis remontent à ces deux vols. Mais Voskhod est aussi le moment où la stratégie soviétique des premières a atteint sa limite : elle était à court de nouvelles choses qu'un Vostok modifié pouvait faire, et avait failli tuer des gens en faisant la dernière d'entre elles."
+      "md": "L'héritage de Voskhod, ce sont deux premières permanentes — le premier équipage et la première sortie spatiale — et un récit édifiant qui se trouve juste à côté d'elles. Les premières sont réelles et ne peuvent être retirées ; chaque équipage multipersonne et chaque sortie spatiale depuis remontent à ces deux vols. Mais Voskhod est aussi le moment où la stratégie soviétique des premières a atteint sa limite : elle avait épuisé les nouvelles choses qu'un Vostok modifié pouvait faire, et avait failli tuer des gens en faisant la dernière d'entre elles."
     },
     {
       "type": "prose",
-      "md": "Historiquement, cela marque une passation. Voskhod 2 a volé en mars 1965 ; le propre programme de Gemini a commencé quelques semaines plus tard et, au cours des vingt mois suivants, a méthodiquement pris l'avance que les Soviétiques détenaient depuis Spoutnik — rendez-vous, amarrage, endurance, EVA devenue routine. Voskhod est la dernière fois que l'Union soviétique était clairement en tête. Ce qui est venu après, des deux côtés, serait décidé non par qui était premier, mais par qui avait construit la capacité la plus profonde."
+      "md": "Historiquement, cela marque une passation. Voskhod 2 a volé en mars 1965 ; le propre programme de Gemini a commencé quelques semaines plus tard et, au cours des vingt mois suivants, a méthodiquement pris l'avance que les Soviétiques détenaient depuis Spoutnik — rendez-vous, amarrage, endurance, EVA devenue routine. Voskhod est la dernière fois où l'Union soviétique était clairement en avance. Ce qui est venu après, des deux côtés, serait décidé non pas par qui était premier, mais par qui avait construit la capacité la plus profonde."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La leçon de Voskhod est le danger de faire la course sur des marges empruntées. Retirer les sièges éjectables et les combinaisons de pression, boulonner un sas sur une capsule qui n'était pas construite pour en avoir un — chaque coin coupé a acheté un gros titre et a déplacé un risque réel sur de vraies personnes, et le programme s'en est tiré deux fois. Mais s'en tirer n'est pas la même chose qu'être en sécurité, et le succès sur des marges minces est un piège : il enseigne discrètement à une organisation que la sécurité qu'elle a écartée n'a jamais été nécessaire, jusqu'au vol où elle l'est."
+      "md": "La leçon de Voskhod est le danger de courir sur des marges empruntées. Retirer les sièges éjectables et les combinaisons pressurisées, boulonner un sas sur une capsule qui n'était pas construite pour en avoir un — chaque raccourci a acheté un gros titre et déplacé un risque réel sur de vraies personnes, et le programme s'en est tiré deux fois. Mais s'en tirer n'est pas la même chose qu'être en sécurité, et le succès sur des marges minces est un piège : il enseigne discrètement à une organisation que la sécurité qu'elle a écartée n'a jamais été nécessaire, jusqu'au vol où elle l'est."
     },
     {
       "type": "prose",
-      "md": "La deuxième leçon est à quoi sert une solution de fortune, et à quoi elle ne sert pas. Voskhod a fait exactement une chose bien — il a acheté du temps et deux premières de plus pendant que le véritable vaisseau de nouvelle génération était en construction. C'est une utilisation légitime de matériel improvisé. L'erreur aurait été de continuer à le faire voler, de chasser les gros titres au-delà du point où la marge s'épuisait — et à l'honneur de Korolev, il a correctement lu la quasi-catastrophe et s'est arrêté. Savoir quand une solution de fortune a fait son travail est aussi important que d'en construire une."
+      "md": "La deuxième leçon concerne l'utilité d'un expédient, et ce qu'il n'est pas. Voskhod a fait exactement une chose bien — il a gagné du temps et deux premières de plus pendant que le véritable vaisseau de nouvelle génération était en construction. C'est une utilisation légitime de matériel improvisé. L'erreur aurait été de continuer à le faire voler, à poursuivre les gros titres au-delà du point où la marge s'épuise — et à l'honneur de Korolev, il a correctement lu la quasi-catastrophe et s'est arrêté. Savoir quand un expédient a fait son travail est aussi important que d'en construire un."
     }
   ]
 }

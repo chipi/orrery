@@ -2,12 +2,12 @@
   "name": "DART",
   "type": "KINETIC IMPACTOR · FLOWN",
   "first": "First demonstration of kinetic-impactor planetary defense; first time humans moved an asteroid",
-  "description": "DART (Double Asteroid Redirection Test) was the first planetary-defense mission ever flown — a 611-kg spacecraft sent to hit a 160-m asteroid hard enough to change its orbit. The target was Dimorphos, a moonlet of the 780-m asteroid Didymos. Launched 2021-11-24 on a Falcon 9; the SMART Nav autonomous navigation system took over 4 hours before impact to distinguish Dimorphos from its parent and target the smaller body. Impact 2022-09-26 at 23:14 UTC at 6.14 km/s. Measured orbital-period change: 33 minutes (4.2%), exceeding the 73-second success threshold by ~25×. Momentum-transfer enhancement factor β ≈ 3.6 indicated significant carry from ejected surface material. The CubeSat LICIACube observed the plume; HST and JWST imaged the resulting ejecta tail for weeks. First demonstration that humans can move an asteroid.",
+  "description": "DART (Double Asteroid Redirection Test) was the first planetary-defense mission ever flown — a 611-kg spacecraft sent to hit a 160-m asteroid hard enough to change its orbit. The target was Dimorphos, a moonlet of the 780-m asteroid Didymos. Launched 2021-11-24 on a Falcon 9; the SMART Nav autonomous navigation system took over 4 hours before impact to distinguish Dimorphos from its parent and target the smaller body. Impact 2022-09-26 at 23:14 UTC at ~6.6 km/s. Measured orbital-period change: 33 minutes (4.2%), exceeding the 73-second success threshold by ~25×. Momentum-transfer enhancement factor β ≈ 3.6 indicated significant carry from ejected surface material. The CubeSat LICIACube observed the plume; HST and JWST imaged the resulting ejecta tail for weeks. First demonstration that humans can move an asteroid.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Falcon 9 Block 5 from Vandenberg SLC-4E.", "type": "nominal" },
     { "met": 150, "label": "MID-CRUISE", "note": "TCM + NEXT-C ion-thruster demonstration firings.", "type": "nominal" },
     { "met": 306, "label": "APPROACH", "note": "2022-09-26. SMART Nav takes over 4h pre-impact.", "type": "info" },
-    { "met": 306.001, "label": "IMPACT", "note": "23:14 UTC. 6.14 km/s. 33-min orbital-period change — first deflection of an asteroid by humans.", "type": "info" },
+    { "met": 306.001, "label": "IMPACT", "note": "23:14 UTC. ~6.6 km/s. 33-min orbital-period change — first deflection of an asteroid by humans.", "type": "info" },
     { "met": 306.002, "label": "LOSS OF SIGNAL", "note": "LICIACube + HST + JWST observe the ejecta plume.", "type": "warning" }
   ]
 }

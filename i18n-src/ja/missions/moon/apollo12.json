@@ -1,62 +1,62 @@
 {
-  "name": "アポロ 12 号",
-  "dispatch": "Apollo 11が月に到達できることを証明したとすれば、Apollo 12はその特定の地点に到達できることを証明した。打ち上げから36秒後、雷がロケットに直撃し、宇宙船の計器を停止させた。24歳の管制官John Aaronが記憶から不明瞭な修正手順——「SCE to AUX」——を引き出し、飛行は続行された。その後ConradとBeanは、Lunar Moduleを2年間そこに置かれていた探査機から数百フィート離れたOcean of Stormsに着陸させ、歩いて向かい、その部品を持ち帰った。この精度こそが真の成果だった。月は目的地であることをやめ、住所になったのである。",
-  "type": "有人着陸機 · 飛行済み",
-  "first": "2 回目の有人月着陸 — Surveyor 3 から 163 m の精密着陸",
-  "description": "2 回目の有人月着陸。サターン V は上昇中に雷に 2 回打たれた (T+36 秒、T+52 秒) — Bean は EECOM John Aaron の有名な「SCE to AUX」コールによって機体を復旧。Conrad と Bean は嵐の大洋に Surveyor 3 (1967 年 4 月に軟着陸) から 163 m 以内の精密着陸を実施、その後 Surveyor 3 まで歩いてカメラと表面サンプルを取り外した。ALSEP (アポロ 11 のより単純な EASEP に対する最初の ALSEP) を展開し、8 年間データを送信。ミッションは 34 kg のサンプルを持ち帰った。",
+  "name": "Apollo 12",
+  "type": "有人月着陸船 · 実施済み",
+  "first": "2回目の有人月面着陸 — Surveyor 3から163 m以内の正確な着陸",
+  "dispatch": "Apollo 11が月に到達できることを証明したなら、Apollo 12は月の特定の地点に到達できることを証明した。打ち上げから36秒後、落雷がロケットを直撃し、宇宙船の機器をオフラインにした。24歳のフライトコントローラー、ジョン・アーロンは記憶から曖昧な修正手段「SCE to AUX」を引き出し、ミッションは続行された。その後、コンラッドとビーンは月着陸船を嵐の大洋に着陸させ、2年前からそこに置かれていた探査機の近くに着陸し、歩いてそれに接近して部品を持ち帰った。その精度こそが本当の成果だった — 月はもはや目的地ではなく、一つの住所になったのだ。",
+  "description": "2回目の有人月面着陸。Saturn Vは上昇中に落雷を2回受けた（T+36秒およびT+52秒）— ビーン飛行士がEECOMジョン・アーロンからの有名な「SCE to AUX」呼び出しで宇宙船を復旧し、その後クルーが月軌道で慣性計測装置を再調整した。コンラッドとビーンは嵐の大洋でSurveyor 3（1967年4月に軟着陸）から163 m以内に正確な着陸を実行し、Surveyor 3に歩いて接近して、そのカメラと表面サンプルを取り外した — 長期月面露出の分析のために地球に持ち帰った部品である。彼らはALSEP（完全なApollo Lunar Surface Experiments Package — 最初のALSEP。Apollo 11のより簡単なEASEPと異なる）を展開し、8年間データを送信した。ミッションは暗色玄武岩を含む34 kgのサンプルを持ち帰った。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-507) from Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Two lightning strikes on the stack (T+36 s, T+52 s) tripped fuel cells offline; recovered via \"SCE to AUX\" call.",
+      "label": "打ち上げ",
+      "note": "Saturn V（AS-507）ケネディ宇宙センターLC-39A から1969年11月14日16:22 UTC。スタック上の2つの落雷（T+36秒、T+52秒）が燃料電池をオフラインにした。「SCE to AUX」呼び出しで復旧。",
       "type": "warning"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection — recovery from lightning strikes verified; mission GO for Moon.",
+      "note": "月への遷移注入 — 落雷からの復旧を確認。月へのミッション継続決定。",
       "type": "nominal"
     },
     {
       "met": 3.39,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.89 km/s.",
+      "note": "月軌道投入。SPS ∆v ≈0.89 km/s。",
       "type": "nominal"
     },
     {
       "met": 5.43,
-      "label": "TOUCHDOWN",
-      "note": "Intrepid lands at Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — within 163 m of Surveyor 3 (the most precise lunar landing yet).",
+      "label": "着陸",
+      "note": "Intrepidはオーシャナス・プロセラルムに着陸（Statio Cognitum）1969年11月19日06:54 UTC — Surveyor 3から163 m以内（これまでで最も正確な月面着陸）。",
       "type": "nominal"
     },
     {
       "met": 5.58,
-      "label": "SURVEYOR 3 VISIT",
-      "note": "Conrad + Bean walk to Surveyor 3 (~163 m away), remove its TV camera + samples for return to Earth — first time a crew visited a previously-landed robotic spacecraft.",
+      "label": "Surveyor 3訪問",
+      "note": "コンラッド飛行士とビーン飛行士がSurveyor 3に歩いて接近（約163 m離れた場所）し、そのテレビカメラとサンプルを取り外して地球に持ち帰った — クルーが以前着陸したロボット宇宙船を訪問したのは初めて。",
       "type": "info"
     },
     {
       "met": 6.74,
-      "label": "ASCENT",
-      "note": "Intrepid lifts off after 31 h 31 m on surface. 34 kg of samples returned.",
+      "label": "上昇",
+      "note": "Intrepidは月面での31時間31分後に上昇を開始。34 kgのサンプルを持ち帰った。",
       "type": "nominal"
     },
     {
       "met": 6.93,
-      "label": "LM IMPACT",
-      "note": "Intrepid ascent stage deliberately crashed onto Moon to calibrate ALSEP seismometers. First man-made lunar impact event.",
+      "label": "LM衝突",
+      "note": "Intrepid上昇段は意図的に月に衝突し、ALSEPの地震計を較正した — 有人ミッションの宇宙船段が意図的に月に衝突され、かつ表面地震計で記録されたのは初めて。",
       "type": "info"
     },
     {
       "met": 7.92,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "地球への遷移注入。SPS ∆v ≈1.0 km/s。",
       "type": "nominal"
     },
     {
       "met": 10.18,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1969-11-24 20:58 UTC. Recovery by USS Hornet.",
+      "label": "溅落",
+      "note": "司令船は南太平洋に1969年11月24日20:58 UTC に溅落。USS Hornetが回収。",
       "type": "nominal"
     }
   ]

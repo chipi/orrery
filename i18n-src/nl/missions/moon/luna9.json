@@ -1,8 +1,8 @@
 {
   "name": "Luna 9",
   "type": "ONBEMANDE LANDER · GEVLOGEN",
-  "first": "Eerste zachte landing op de Maan; eerste foto's vanaf het maanoppervlak",
-  "description": "Na 11 Sovjet-mislukkingen en 5 Amerikaanse Ranger-missies die alleen waren ontworpen om te crashen, werd Luna 9 het eerste ruimtevaartuig dat zacht op een andere wereld landde. Negen panoramische beelden teruggegeven over 8 minuten beslechtten een lang lopend wetenschappelijk debat: het oppervlak van de Maan was vast, geen zee van stof diep genoeg om een lander te verzwelgen. De missie duurde 3 dagen voor batterij-uitputting. Binnen enkele maanden gebruikte elke daaropvolgende Maan-missie zachte landing als basislijn.",
+  "first": "Eerste zachte landing op de Maan; eerste foto's van het maanoppervlak",
+  "description": "Na 11 Sovjetfalen en 5 Amerikaanse Ranger-missies die alleen bedoeld waren om in te slaan, werd Luna 9 het eerste ruimtevaartuig dat zacht op een ander hemellichaam landde. Negen afbeeldingen — inclusief vijf panorama's — verzonden over drie sessies in drie dagen beslisten een langdurig wetenschappelijk debat: het maanoppervlak was vast, niet een zee van stof diep genoeg om een lander op te slokken. De missie duurde 3 dagen voordat de batterij leeg was. Binnen enkele maanden gebruikte elke maanwaarts gerichte missie daarna zachte landing als standaard.",
   "events": [
     {
       "met": 0,
@@ -13,19 +13,19 @@
     {
       "met": 3,
       "label": "TOUCHDOWN",
-      "note": "Zachte landing bij Oceanus Procellarum 1966-02-03 18:45 UTC. Eerste zachte landing op een andere wereld.",
+      "note": "Zachte landing in Oceanus Procellarum 1966-02-03 18:45 UTC. Eerste zachte landing op een ander hemellichaam.",
       "type": "nominal"
     },
     {
       "met": 3.01,
-      "label": "EERSTE BEELDEN",
-      "note": "Negen panoramische beelden teruggegeven in drie transmissiesessies.",
+      "label": "EERSTE AFBEELDINGEN",
+      "note": "Negen afbeeldingen inclusief vijf panorama's, verzonden in drie transmissiesessies over drie dagen.",
       "type": "info"
     },
     {
       "met": 6,
-      "label": "SIGNAALVERLIES",
-      "note": "Batterij uitgeput; laatste transmissie 1966-02-06.",
+      "label": "SIGNAALDVERLIES",
+      "note": "Batterij leeg; laatste transmissie 1966-02-06.",
       "type": "warning"
     }
   ]

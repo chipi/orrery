@@ -1,42 +1,42 @@
 {
   "name": "Luna 24",
-  "type": "PROBENRÜCKGABE · GEFLOGEN",
-  "first": "Letzte sowjetische Mondmission; letzte ungeschraubte Mondlandung seit 37 Jahren",
-  "description": "Die letzte Mondmission der Sowjetunion und die letzte unbemannte Mondlandung bis Chinas Chang'e 3 im Jahr 2013 – eine Lücke von 37 Jahren. Der Bohrkern förderte Regolith aus 2 m Tiefe und brachte 170 g zur Erde zurück. Unter den Proben: Mineralien, die Spuren von Wasser enthalten, was auf die Entdeckung beträchtlicher Wassereisablagerungen auf dem Mond 30 Jahre später schließen lässt. Luna 24 markierte auch den Abschluss des sowjetischen Mondprogramms; Ressourcen wurden auf Mars und Venus verlagert.",
+  "type": "PROBENRÜCKFÜHRUNG · FLUG DURCHGEFÜHRT",
+  "first": "Letzte sowjetische Mondmission; letzte unbemannte Mondlandung für 37 Jahre",
+  "description": "Die letzte Mondmission der Sowjetunion und die letzte unbemannte Mondlandung bis zur Chang'e 3 Chinas im Jahr 2013 — eine Lücke von 37 Jahren. Der gebohrte Bohrkern extrahierte Regolith aus 2 m Tiefe und kehrte mit 170 g zur Erde zurück. Eine sowjetische Analyse von 1978 meldete ~0,1% Wasser nach Masse im Kern — ein unbestätigtes, noch immer umstrittenes Ergebnis —, das spätere bestätigte Nachweise von Mondwasser vorwegnahm. Luna 24 markierte auch das Ende des sowjetischen Mondprogramms; die Ressourcen wurden zu Mars und Venus verschoben.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "Proton-K aus Baikonur 1976-08-09.",
+      "note": "Proton-K von Baikonur 1976-08-09.",
       "type": "nominal"
     },
     {
       "met": 5,
       "label": "MOI",
-      "note": "Einfügung in die Mondumlaufbahn.",
+      "note": "Mondumlaufbahn-Einschwung.",
       "type": "nominal"
     },
     {
       "met": 9,
-      "label": "LANDUNG",
-      "note": "Sanfte Landung im Mare Crisium 18.08.1976.",
+      "label": "AUFSETZEN",
+      "note": "Sanfte Landung am Mare Crisium 1976-08-18.",
       "type": "nominal"
     },
     {
       "met": 9.5,
-      "label": "BOHREN",
-      "note": "Kernprobe aus 2 m Tiefe entnommen.",
+      "label": "BOHRUNG",
+      "note": "Bohrkern aus 2 m Tiefe extrahiert.",
       "type": "info"
     },
     {
       "met": 10,
       "label": "AUFSTIEG",
-      "note": "Aufstiegsstufe hebt ab; Trans-Erd-Injektion.",
+      "note": "Aufstiegsstufe hebt ab; Erde-Transfer-Injektion.",
       "type": "nominal"
     },
     {
       "met": 13,
-      "label": "ERDE RÜCKKEHR",
+      "label": "RÜCKKEHR ZUR ERDE",
       "note": "Kapsel landet in Surgut, UdSSR 1976-08-22 mit 170 g Regolith.",
       "type": "info"
     }

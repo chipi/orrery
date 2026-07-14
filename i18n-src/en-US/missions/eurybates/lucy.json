@@ -1,11 +1,12 @@
 {
   "name": "Lucy",
   "type": "MULTI-FLYBY · ACTIVE",
-  "first": "First mission to the Jupiter Trojans; visits 8 asteroids in a single 12-year trajectory — more bodies in one mission than any prior planetary science campaign",
-  "description": "Lucy reaches for the L4 and L5 Lagrange clouds — populations of primordial asteroids leading and trailing Jupiter by 60°, believed to preserve material from the outer protoplanetary disc. Three Earth gravity assists (2022, 2024, 2030) shape a single trajectory that visits seven Trojan asteroids plus a bonus main-belt body. Bonus encounter: Donaldjohanson 2025-04. L4 swarm: Eurybates + moon Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). After EGA-3 (2030-12), the trailing L5 swarm: Patroclus-Menoetius binary (2033-03) — the largest Trojan binary known, a fitting climax for the mission's namesake (Lucy the hominid fossil; Patroclus-Menoetius the two characters that fell together in the Iliad).",
+  "first": "First mission to the Jupiter Trojans; visits 11 bodies across 8 asteroids and their satellites in a single 12-year trajectory — a record number of objects on separate solar orbits",
+  "description": "Lucy reaches for the L4 and L5 Lagrange clouds — populations of primordial asteroids leading and trailing Jupiter by 60°, believed to preserve material from the outer protoplanetary disc. Three Earth gravity assists (2022, 2024, 2030) shape a single trajectory that visits seven Trojan asteroids plus bonus main-belt targets. First asteroid encounter: 152830 Dinkinesh (2023-11-01, ~790 m), at which imaging revealed the contact-binary satellite Selam. Bonus main-belt: Donaldjohanson 2025-04. L4 swarm: Eurybates + moon Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). After EGA-3 (2030-12), the trailing L5 swarm: Patroclus-Menoetius binary (2033-03) — the largest Trojan binary known, a fitting climax for the mission's namesake (Lucy the hominid fossil; Patroclus-Menoetius the two characters that fell together in the Iliad).",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Atlas V 401 from Cape Canaveral SLC-41.", "type": "nominal" },
     { "met": 365, "label": "EGA-1", "note": "First Earth gravity assist 2022-10-16.", "type": "info" },
+    { "met": 746, "label": "DINKINESH", "note": "2023-11-01. First asteroid flyby — ~790 m main-belt body; satellite Selam (contact binary) discovered.", "type": "info" },
     { "met": 1290, "label": "DONALDJOHANSON", "note": "Main-belt bonus flyby 2025-04. 4-km C-type asteroid.", "type": "info" },
     { "met": 2127, "label": "EURYBATES + QUETA", "note": "2027-08. First Trojan encounter. 64-km C-type + 1-km moon.", "type": "info" },
     { "met": 2280, "label": "POLYMELE", "note": "21-km P-type Trojan with unnamed satellite.", "type": "info" },

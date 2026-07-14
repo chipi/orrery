@@ -1,20 +1,20 @@
 {
   "name": "Tiangong",
-  "tagline": "Von der Raumstation der Welt ausgeschlossen, baute China seine eigene — pünktlich, und betreibt nun den einzigen anderen dauerhaft bemannten Außenposten im Orbit.",
+  "tagline": "Von der Raumstation der Welt ausgeschlossen, baute China seine eigene — planmäßig, und betreibt nun den einzigen anderen dauerhaft bemannten Außenposten im Orbit.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Bis 2011 gab es einen Ort, an dem Menschen im Weltraum lebten, und China war dort nicht willkommen. Die International Space Station war eine Partnerschaft der Vereinigten Staaten, Russlands, Europas, Japans und Kanadas — und im selben Jahr verabschiedete der US-Kongress das Wolf Amendment, das der NASA die bilaterale Zusammenarbeit mit China ohne ausdrückliche Genehmigung untersagte. Die Botschaft war unmissverständlich: der Club war geschlossen. Chinas Antwort war nicht zu protestieren. Sie bestand darin, eine eigene Station zu bauen, mit einer eigenen Rakete, mit einer eigenen Raumkapsel, nach einem Zeitplan, den es im Voraus veröffentlichte und dann einhielt."
+      "md": "Bis 2011 gab es einen Ort, an dem Menschen im All lebten, und China war dort nicht willkommen. Die International Space Station war eine Partnerschaft der Vereinigten Staaten, Russlands, Europas, Japans und Kanadas — und im selben Jahr verabschiedete der US-Kongress das Wolf Amendment, das der NASA die bilaterale Zusammenarbeit mit China ohne ausdrückliche Genehmigung untersagte. Die Botschaft war unmissverständlich: der Club war geschlossen. Chinas Antwort bestand nicht darin zu protestieren. Sie bestand darin, eine eigene Station zu bauen, mit einer eigenen Rakete, mit einer eigenen Raumkapsel, nach einem Zeitplan, den es im Voraus veröffentlichte und dann einhielt."
     },
     {
       "type": "prose",
-      "md": "Was Tiangong — „Himmelspalast\" — von allen Stationen zuvor unterscheidet, ist, wie ungehetzt und überlegt es entstand. Die Sowjets improvisierten Salyut in Eile; die ISS ging aus einer abgesagten amerikanischen Station hervor, die durch ein postsowjetisches Russland gerettet wurde. China tat das Gegenteil: Es schickte ein einzelnes kleines Testlabor ins All, lernte daraus, schickte ein zweites, lernte erneut, und erst dann startete es die permanente Station — jeder Schritt eine Übung für den nächsten. Es ist die erste große Station, die seit Skylab vollständig von einem einzigen Land zusammengebaut wurde, und die zweite, die heute ununterbrochen bemannt ist."
+      "md": "Was Tiangong — „Himmelspalast\" — von allen Stationen zuvor unterscheidet, ist die Bedachtsamkeit und Überlegtheit des Vorgehens. Die Sowjets improvisierten Salyut in Eile; die ISS entstand aus einer abgesagten amerikanischen Station, die von einem postsowjetischen Russland gerettet wurde. China tat das Gegenteil: Es flog ein einzelnes kleines Testlabor, lernte daraus, flog ein zweites, lernte erneut, und erst dann startete es die permanente Station — jeder Schritt eine Probe für den nächsten. Es ist Chinas erste Langzeit-Raumstation und die zweite heute durchgehend bemannte."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Das kurzfristige Ziel war Beherrschung, nicht Größe. Bevor China sich auf einen permanenten Außenposten festlegte, musste es beweisen, dass es die schwierigen Aufgaben bewältigen konnte, die eine Station erfordert: ein Zielfahrzeug starten, automatisch und dann manuell mit ihm rendezvousen und andocken, Astronauten wochenlang an Bord am Leben erhalten und es mit Nachschub versorgen. Jede dieser Aufgaben wurde absichtlich durchgeführt und abgehakt, eine nach der anderen, an den beiden kleinen Tiangong-Testlaboren, bevor die eigentliche Station jemals gestartet wurde."
+      "md": "Das kurzfristige Ziel war Beherrschung, nicht Größe. Bevor China sich auf einen permanenten Außenposten festlegte, musste es beweisen, dass es die schwierigen Dinge beherrscht, die eine Station verlangt: ein Zielfahrzeug starten, automatisch und dann manuell damit rendezvousieren und andocken, Astronauten wochenlang an Bord am Leben halten und es nachversorgen. Jeder dieser Punkte wurde bewusst abgeflogen und abgehakt, einer nach dem anderen, auf den beiden kleinen Tiangong-Testlaboren, bevor die eigentliche Station jemals gestartet wurde."
     },
     {
       "type": "figure",
@@ -26,67 +26,67 @@
     },
     {
       "type": "prose",
-      "md": "Das langfristige Ziel war strategische Unabhängigkeit. Eine dauerhaft bemannte Station eigener Bauart würde China zur dritten Raumfahrtnation machen, die eine solche betreibt — und mit zunehmendem Alter der ISS und deren bevorstehendem Ruhestand möglicherweise zur einzigen verbliebenen im Betrieb. Das ist kein kleiner Ehrgeiz, der als Wissenschaftsprogramm verkleidet wurde; es ist ein Wissenschaftsprogramm, das einem sehr bewussten Ehrgeiz dient: eine Raumfahrtnation ersten Ranges nach eigenen Maßstäben zu sein, abhängig von niemandes Trägerrakete, niemandes Andockstutzen und niemandes Erlaubnis."
+      "md": "Das langfristige Ziel war strategische Unabhängigkeit. Eine dauerhaft bemannte Station in eigenem Besitz würde China zur dritten Raumfahrtnation machen, die eine solche betreibt — und, während die ISS auf ihre Stilllegung zusteuerte, möglicherweise zur einzigen, die noch in Betrieb wäre. Das ist kein kleiner Ehrgeiz, der als Wissenschaftsprogramm verkleidet wurde; es ist ein Wissenschaftsprogramm, das geschaffen wurde, um einem sehr bewussten Ehrgeiz zu dienen: eine Raumfahrtnation ersten Ranges nach eigenen Bedingungen zu sein, abhängig von niemandes Trägerrakete, niemandes Kopplungsport und niemandes Erlaubnis."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Es funktionierte, und es funktionierte nach Plan. Tiangong-1 (2011) bewies Rendezvous und Docking; Tiangong-2 (2016) bewies, dass Besatzungen einen Monat lang an Bord leben und arbeiten und vom neuen Tianzhou-Frachter versorgt werden konnten. Dann wurden zwischen April 2021 und Ende 2022 die drei Module der permanenten Station — das Tianhe-Kernmodul und die Wentian- und Mengtian-Laboratorien — gestartet und zur T-förmigen Chinese Space Station zusammengebaut, die seit der Ankunft der ersten Shenzhou-Besatzung im Juni 2021 durchgehend bemannt ist."
+      "md": "Es funktionierte, und es funktionierte nach Plan. Tiangong-1 (2011) bewies Rendezvous und Docking; Tiangong-2 (2016) bewies, dass Besatzungen einen Monat lang an Bord leben und arbeiten konnten und durch den neuen Tianzhou-Frachter versorgt werden konnten. Dann wurden zwischen April 2021 und Ende 2022 die drei Module der permanenten Station — das Tianhe-Kernmodul und die Wentian- und Mengtian-Labore — gestartet und zur T-förmigen Chinese Space Station zusammengebaut, die seit Juni 2022 durchgehend besetzt ist, als die Shenzhou-14-Besatzung die dauerhafte Residenz begann."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/tiangong/03"
       },
-      "caption": "Die fertiggestellte chinesische Raumstation — drei Module in T-Form, etwa ein Fünftel der Masse der ISS, aber vollständig modern: Roboterarm, zwei Labore und eine eigene Luftschleuse. Bewusst kleiner konzipiert und vollständig chinesisch.",
+      "caption": "Die fertiggestellte chinesische Raumstation — drei Module in T-Form, ungefähr ein Sechstel der Masse der ISS, aber vollständig modern: Roboterarm, zwei Labore und eine eigene Luftschleuse. Bewusst kleiner dimensioniert und vollständig chinesisch.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "Die Station ist bewusst bescheidener als die ISS — rund 100 Tonnen gegenüber den 420 der ISS, drei Module gegenüber sechzehn. Aber sie ist vollständig, modern und dauerhaft besetzt, mit einem Roboterarm, externen Wissenschaftsplattformen und Platz für drei Astronauten (sechs während Übergaben). China hat in etwa achtzehn Monaten Montagezeit geschafft, wofür die ISS mehr als ein Jahrzehnt brauchte, weil es allen anderen zuvor zugeschaut und deren Fehler ausgelassen hat."
+      "md": "Die Station ist bewusst bescheiden im Vergleich zur ISS — etwa 66–70 Tonnen gegenüber den 420 der ISS, drei Module gegenüber sechzehn. Aber sie ist vollständig, modern und dauerhaft besetzt, mit einem Roboterarm, externen Wissenschaftsplattformen und Platz für drei Astronauten (sechs während Übergaben). China hat in etwa achtzehn Monaten Montagezeit geschafft, wofür die ISS mehr als ein Jahrzehnt brauchte, weil es allen anderen zuvor zugeschaut und deren Fehler übersprungen hat."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Der rote Faden von Tiangong ist Geduld als Strategie. Während das Wettrennen ins All durch Eile geprägt war — Voskhods rücksichtslose Premieren, Apollos brutaler Sprint — behandelte China die bemannte Raumfahrt als ein technisches Problem, bei dem Risiko um Risiko ausgeschaltet werden musste. Shenzhou 5 brachte 2003 den ersten chinesischen Astronauten in den Orbit, zweiundvierzig Jahre nach Gagarin, und China hatte es nicht eilig, so auszusehen, als würde es aufholen. Es sah stattdessen so aus, als würde es etwas bauen, das noch stehen würde, wenn das Rennen vorbei wäre."
+      "md": "Der rote Faden von Tiangong ist Geduld als Strategie. Wo das Wettrennen ins All durch Eile definiert war — Voskhods rücksichtslose Premieren, Apollos brutaler Sprint — behandelte China die bemannte Raumfahrt als ein technisches Problem, das Risiko für Risiko abzubauen war. Shenzhou 5 brachte 2003 den ersten chinesischen Astronauten in die Umlaufbahn, zweiundvierzig Jahre nach Gagarin, und China hatte es nicht eilig, so auszusehen, als würde es aufholen. Es sah stattdessen so aus, als würde es etwas bauen, das noch stehen würde, wenn das Wettrennen vorbei wäre."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/shenzhou/01"
       },
-      "caption": "Shenzhou — Chinas Crewkapsel. In der Anordnung oberflächlich Soyuz-ähnlich, ist sie größer, vollständig chinesischer Bauart und das Fahrzeug, das jede Tiangong-Besatzung transportiert hat. Ihre Zuverlässigkeit ist das stille Fundament, auf dem das gesamte Programm steht.",
+      "caption": "Shenzhou — Chinas Mannschaftskapsel. Oberflächlich betrachtet ähnelt die Anordnung der Soyuz, sie ist jedoch größer, vollständig chinesischer Bauart und das Fahrzeug, das jede Tiangong-Besatzung befördert hat. Ihre Zuverlässigkeit ist das stille Fundament, auf dem das gesamte Programm ruht.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "Es gibt auch eine harte Seite dieser Geschichte. Das Wolf Amendment schloss China nicht nur von der ISS aus; es machte Unabhängigkeit zum einzig verfügbaren Weg. In diesem Licht ist Tiangong eine Fallstudie dessen, was Ausschluss hervorbringt: nicht Zusammenbruch, sondern eine parallele Fähigkeit, die niemandem sonst Rechenschaft schuldet. China fliegt jetzt seine eigenen Besatzungen mit seiner eigenen Rakete zu seiner eigenen Station und hat begonnen, andere Nationen einzuladen, Experimente – und schließlich Astronauten – an Bord durchzuführen. Die Station, die gebaut wurde, weil China ausgeschlossen wurde, ist zu einer Tür geworden, die China kontrolliert."
+      "md": "Die Geschichte hat auch eine harte Kante. Das Wolf Amendment schloss China nicht nur von der ISS aus; es machte Unabhängigkeit zum einzig verfügbaren Weg. In diesem Licht ist Tiangong eine Fallstudie dafür, was Ausschluss hervorbringt: keinen Zusammenbruch, sondern eine parallele Fähigkeit, die niemandem sonst Rechenschaft schuldet. China fliegt jetzt seine eigenen Besatzungen mit seiner eigenen Rakete zu seiner eigenen Station und hat begonnen, andere Nationen einzuladen, Experimente — und schließlich Astronauten — an Bord fliegen zu lassen. Die Station, die gebaut wurde, weil China ausgesperrt war, ist zu einer Tür geworden, die China kontrolliert."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Tiangongs erstes Vermächtnis besteht schlicht darin, dass es existiert und fertiggestellt ist. Zum ersten Mal seit dem Kalten Krieg befinden sich zwei permanent bemannte Stationen gleichzeitig im Orbit, betrieben von rivalisierenden Mächten — und wenn die ISS um 2030 außer Dienst gestellt wird, ist Tiangong in der Position, die einzige verbliebene zu sein. Eine Fähigkeit, die die Vereinigten Staaten mitbegründet haben, könnte innerhalb eines Jahrzehnts eine sein, die nur China kontinuierlich betreibt."
+      "md": "Tiangongs erstes Vermächtnis ist schlicht, dass es existiert und fertiggestellt ist. Zum ersten Mal seit dem Kalten Krieg befinden sich zwei permanent bemannte Stationen gleichzeitig im Orbit, betrieben von rivalisierenden Mächten — und wenn die ISS um 2030 außer Dienst gestellt wird, ist Tiangong in der Position, die einzige verbleibende zu sein. Eine Fähigkeit, deren Pionierarbeit die Vereinigten Staaten mitgeleistet haben, könnte innerhalb eines Jahrzehnts eine sein, die nur China kontinuierlich betreibt."
     },
     {
       "type": "prose",
-      "md": "Sein zweites Vermächtnis ist eine Blaupause dafür, wie ein entschlossener Neuling ein Raumfahrtprogramm aufbaut: schrittweise, öffentlich und ohne Abkürzungen. Chinas Schritt-für-Schritt-Methode — Testlabor, dann größeres Testlabor, dann permanente Station — ist die gleiche disziplinierte Leiter, die es nun auf sein robotisches Mondprogramm und seine Pläne für bemannte Mondlandungen anwendet. Tiangong ist der Beweis der Methode ebenso wie der Beweis der Fähigkeit."
+      "md": "Sein zweites Vermächtnis ist eine Vorlage dafür, wie ein entschlossener Neuling ein Raumfahrtprogramm aufbaut: schrittweise, öffentlich und ohne Abkürzungen. Chinas Methode Schritt für Schritt – Testlabor, dann größeres Testlabor, dann permanente Station – ist die gleiche disziplinierte Leiter, die es nun auf sein robotisches Mondprogramm und seine Pläne für bemannte Mondlandungen anwendet. Tiangong ist der Beweis der Methode ebenso wie der Beweis der Fähigkeit."
     },
     {
       "type": "prose",
-      "md": "Und es ist eine zweite Haustür zum Orbit. Da die ISS-Partnerschaft historisch für China verschlossen war, bietet Tiangong dem Rest der Welt einen alternativen Gastgeber für bemannte Raumfahrt — einen, der seine eigene Geopolitik mitbringt, aber materiell erweitert, wer überhaupt Menschen und Experimente zu einer Station fliegen darf."
+      "md": "Und es ist eine zweite Eingangstür zum Orbit. Da die ISS-Partnerschaft historisch für China verschlossen war, bietet Tiangong dem Rest der Welt eine alternative Gastgeberstation für bemannte Raumfahrt — eine, die ihre eigene Geopolitik mitbringt, aber materiell erweitert, wer überhaupt Menschen und Experimente zu einer Station fliegen darf."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lehre aus Tiangong ist, dass Ausschluss genau den Rivalen erzeugen kann, den er verhindern sollte. Vom Zugang zur ISS ausgeschlossen, fiel China nicht zurück; es baute die Fähigkeit selbst auf und hält nun eine Karte, die die Ausschließenden nicht zurücknehmen können. Einen Konkurrenten von einem gemeinsamen Projekt auszuschließen ist eine Wette darauf, dass er kein eigenes bauen kann — und es ist eine Wette, die gegen einen geduldigen und gut finanzierten Staat tendenziell verloren wird."
+      "md": "Die Lehre aus Tiangong ist, dass Ausschluss genau den Rivalen hervorbringen kann, den er verhindern sollte. China fiel nicht zurück, nachdem ihm ein Platz auf der ISS verwehrt wurde; es baute die Fähigkeit selbst auf und hält nun eine Karte, die die Ausschließenden nicht zurücknehmen können. Einen Konkurrenten aus einem gemeinsamen Projekt auszuschließen ist eine Wette darauf, dass er nicht sein eigenes bauen kann — und es ist eine Wette, die gegen einen geduldigen und gut finanzierten Staat tendenziell verloren wird."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lektion handelt vom Tempo. Tiangong zeigt, dass in der Raumfahrt das am schnellsten wirkende Programm selten das stärkste ist. China kam bei jeder Premiere zu spät und kümmerte sich um keine davon, optimierte stattdessen auf eine Station, die fertig, zuverlässig und dauerhaft sein würde. Wenn das Ziel ist, im Jahr 2035 noch zu fliegen, ist Geduld keine Vorsicht — sie ist die Strategie."
+      "md": "Die tiefere Lehre betrifft das Tempo. Tiangong zeigt, dass in der Raumfahrt das scheinbar schnellste Programm selten das stärkste ist. China kam bei jedem Meilenstein zu spät und kümmerte sich um keinen davon, optimierte stattdessen auf eine Station, die fertiggestellt, zuverlässig und dauerhaft sein würde. Wenn das Ziel darin besteht, 2035 noch zu fliegen, ist Geduld keine Vorsicht — sie ist die Strategie."
     }
   ]
 }

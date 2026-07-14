@@ -1,15 +1,15 @@
 {
-  "title": "NRHO — Orbita di halo quasi-rettilinea",
-  "intro_sentence": "Un'orbita a uovo di nove giorni intorno al punto L2 Terra-Luna.",
+  "title": "NRHO — Near-Rectilinear Halo Orbit",
+  "intro_sentence": "Orbita ovale di ~6,5 giorni attorno al punto L2 Terra-Luna — la futura sede della Lunar Gateway della NASA.",
   "narrative_101": [
-    "NRHO = orbita NASA per Gateway, piccola stazione spaziale vicino alla Luna a fine 2020s.",
-    "Compromesso perfetto. Quasi gratis da mantenere — 5 m/s/anno. Sempre vista a Terra. Un capo dell'uovo si tuffa abbastanza vicino alla Luna.",
-    "Artemis II primo equipaggio NRHO. Artemis III docka per trasferimento lander."
+    "NRHO è l'orbita scelta da NASA per Gateway, la piccola stazione spaziale che orbiterà presso la Luna a partire dai tardi anni 2020. L'acronimo sta per Near-Rectilinear Halo Orbit — una frase che significa quasi nulla finché non ne vedi la forma. Immagina un uovo, allungato, equilibrato quasi-ma-non-del-tutto al punto Lagrangiano L2 Terra-Luna, con il suo passaggio più vicino al polo sud lunare. L'astronave compie una rivoluzione completa ogni ~6,5 giorni.",
+    "Perché proprio questa orbita, tra tutte le orbite possibili? È un compromesso perfetto. Costa quasi nulla in carburante per mantenerla — circa 5 metri al secondo all'anno per il mantenimento della stazione, il che è essenzialmente gratuito. Dispone sempre di una linea di vista diretta verso la Terra, quindi il contatto radio non è mai bloccato dalla Luna. E un'estremità dell'uovo si avvicina abbastanza alla Luna affinché i lander possano scendere al polo sud e tornare indietro senza enormi costi di ∆v.",
+    "Artemis II sarà il primo volo equipaggio verso NRHO. Artemis III si aggancerà lì per trasferirsi su un lander derivato da Starship. Oltre Gateway, NRHO è in studio come punto di partenza per future missioni umane su Marte — un luogo dove assemblare grandi astronavi lontane dal pozzo gravitazionale terrestre."
   ],
   "body_paragraphs": [
-    "NRHO è halo orbit — traiettoria periodica a tre corpi — stirata fino al polo sud Luna.",
-    "Stabilità a basso Δv (~5 m/s/anno). Linea di vista costante alla Terra.",
-    "Gateway prima stazione equipaggio in deep space, NRHO da fine 2020s."
+    "Un NRHO è un'orbita alone — una traiettoria periodica a tre corpi che si avvolge attorno a un punto Lagrangiano — ma allungata finché un'estremità quasi non tocca il polo sud lunare. Assomiglia più a un'orbita polare che a un alone, da cui il nome 'near-rectilinear'. Una rivoluzione completa richiede circa 6,5 giorni; il '9' nella risonanza Gateway 9:2 si riferisce a nove rivoluzioni NRHO per due mesi sinodici lunari, non a un periodo di 9 giorni.",
+    "Perché questa orbita? Stabilità con basso costo di mantenimento in ∆v — circa 5 m/s all'anno per il mantenimento della stazione. Linea di vista continua verso la Terra (Gateway non va mai dietro la Luna a lungo). Accesso a basso costo in ∆v dalla Terra (circa 4 km/s per il trasferimento + inserimento, paragonabile a LLO ma con stabilità termica molto migliore). Accesso alla superficie lunare tramite piccoli lander da perilunio.",
+    "Gateway sarà la prima stazione spaziale profonda equipaggiata da equipaggio umano, occupando NRHO dai tardi anni 2020 in avanti. Artemis II sarà il primo volo equipaggio verso NRHO; Artemis III si aggancerà lì per trasferirsi al lander. Oltre Gateway, NRHO è il punto di partenza per le architetture di missioni umane su Marte."
   ],
-  "diagram_caption": "Orbita halo stirata al L2 Terra-Luna."
+  "diagram_caption": "Orbita alone allungata al punto L2 Terra-Luna: periodo di ~6,5 giorni, perilunio sul polo sud, linea di vista continua verso la Terra."
 }

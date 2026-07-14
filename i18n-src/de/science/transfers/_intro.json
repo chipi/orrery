@@ -1,8 +1,8 @@
 {
-  "headline": "Transfers — im Orbit bist du auf halbem Weg überallhin.",
+  "headline": "Transferbahnen — im Orbit angekommen, bist du schon halbwegs überall hin.",
   "paragraphs": [
-    "Heinlein schrieb das. Er hatte recht. LEO kostet ~9,4 km/s Δv — der schwerste Teil. Von dort zum Mars: nur ~3,6 km/s mehr. Sobald frei vom Planeten und im Orbit, ist der Rest des Sonnensystems hauptsächlich Geometrie.",
-    "Sieben Abschnitte. Hohmann ist die billigste Reise zwischen zwei Bahnen. Lambert verallgemeinert auf beliebige Daten. Swing-bys stehlen Geschwindigkeit von Planeten gratis — wie Voyager 2 Neptun erreichte. Free-Returns sind das Sicherheitsnetz, das Apollo 13 nach Hause brachte. Patched Conics sind die Arbeits-Approximation, die das alles im Browser möglich macht.",
-    "Wenn du nur einen Abschnitt liest: Hohmann-Transfer. Alles andere baut darauf auf."
+    "Robert Heinlein hat das geschrieben. Er hatte recht. Die Erreichung einer niedrigen Erdumlaufbahn kostet etwa 9,4 km/s ∆v — der schwierigste Teil jeder Reise. Das Bremsmanöver zur Mars-Bahn addiert nur etwa 3,6 km/s. Sobald du frei von der Atmosphäre des Planeten und in einer stabilen Umlaufbahn bist, ist der Rest des Sonnensystems vor allem Geometrie.",
+    "Die sieben Abschnitte in diesem Tab behandeln die Geometrie. Die Hohmann-Transferbahn ist die günstigste mögliche Fahrt zwischen zwei Umlaufbahnen — zwei Bremsmanöver, acht Monate Küstenkurs. Lamberts Problem verallgemeinert Hohmann auf beliebige Abflug- und Ankunftszeiten. Swing-by-Manöver lassen dich (im Grunde) kostenlos Geschwindigkeit von einem Planeten stehlen — so erreichte Voyager 2 Neptun. Free-Return-Trajektorien sind das Sicherheitsnetz, das Apollo 13 nach Hause brachte. Patched Conics ist die praktische Näherung, mit der wir all das in einem Browser berechnen können.",
+    "Wenn du nur einen Abschnitt liest: Hohmann-Transferbahn. Alles andere baut darauf auf."
   ]
 }

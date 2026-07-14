@@ -1,25 +1,26 @@
 {
-  "name": "X-37B OTV-7号 (USA-358, USSF-52)",
+  "name": "X-37B OTV-7 (USA-358, USSF-52)",
   "type": "无人航天飞机 · 已飞行",
-  "first": "USA-358 / USSF-52 — 在轨434天，范登堡太空军基地",
-  "description": "X-37B第七次飞行 — 首次进入高椭圆（HEO）轨道，也是首次由猎鹰重型发射。2023-12-29 01:07 UTC从KSC LC-39A发射；两枚侧助推器在LZ-1 / LZ-2回收，中央芯级则为获得HEO入轨能量而消耗。HEO轨道使OTV在远地点大约达到GEO带高度。执行了一次受控的气动制动式离轨流程（USSF就该机动发布了公开更新，相较此前机密飞行是一次刻意的透明度转变）。2025-03-07 09:22 UTC着陆于范登堡太空军基地。",
+  "first": "USA-358 / USSF-52 — 在轨434天，范登堡空军基地",
+  "description": "第七次X-37B飞行——首次进入高椭圆轨道(HEO)，首次由猎鹰重型火箭发射。2023年12月29日01:07 UTC从肯尼迪航天中心LC-39A发射；两枚侧助推器分别在LZ-1/LZ-2回收，中心核心级用于HEO轨道插入。HEO轨迹使OTV在远地点达到约地球同步轨道高度。执行了受控气动制动式离轨程序(美国太空部队发布了该机动的公开更新，刻意改变了早期任务的保密做法)。2025年3月7日09:22 UTC在范登堡空军基地着陆。",
+  "dispatch": "第七次X-37B飞行——首次进入高椭圆轨道(HEO)，首次由猎鹰重型火箭发射。2023年12月29日01:07 UTC从肯尼迪航天中心LC-39A发射；两枚侧助推器分别在LZ-1/LZ-2回收，中心核心级用于HEO轨道插入。HEO轨迹使OTV在远地点达到约地球同步轨道高度。执行了受控气动制动式离轨程序(美国太空部队发布了该机动的公开更新，刻意改变了早期任务的保密做法)。2025年3月7日09:22 UTC在范登堡空军基地着陆。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Falcon Heavy from KSC LC-39A 2023-12-29.",
+      "label": "发射",
+      "note": "猎鹰重型火箭从肯尼迪航天中心LC-39A发射，2023年12月29日。",
       "type": "nominal"
     },
     {
       "met": 217,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee HEO ~38,800 km × 250 km (first highly-elliptical OTV flight); classified payload operations.",
+      "label": "在轨运行",
+      "note": "远地点HEO约38,800 km × 约320 km(首次高椭圆轨道OTV飞行)；保密载荷运行。",
       "type": "info"
     },
     {
       "met": 434,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at Vandenberg SFB 2025-03-07.",
+      "label": "着陆",
+      "note": "自主跑道着陆于范登堡空军基地，2025年3月7日。",
       "type": "nominal"
     }
   ]

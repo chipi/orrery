@@ -1,43 +1,43 @@
 {
   "name": "Hayabusa2",
-  "type": "RETORNO DE AMOSTRAS + ATERRISSADORES · ATIVA (estendida)",
-  "first": "Segundo retorno de amostras de asteroide (Ryugu, 2020); primeira cratera de impacto artificial em um asteroide; primeiro material subsuperficial de asteroide trazido de volta à Terra",
-  "description": "Continuação da JAXA da Hayabusa original. Lançada em 3-12-2014, a Hayabusa2 alcançou o asteroide próximo da Terra (162173) Ryugu em 27-6-2018. As operações de superfície 2018-2019 retornaram o primeiro levantamento próximo sustentado de um asteroide de pilha de escombros tipo C. A cápsula de retorno de amostras pousou sobre Woomera, Austrália em 5-12-2020 entregando 5,4 g de material prístino de Ryugu — a primeira amostra de asteroide com estratigrafia subsuperficial. Missão estendida: sobrevoo de (98943) 2001 CC21 em julho de 2026; encontro com o rapidamente rotativo (1998 KY26) visado para julho de 2031.",
+  "type": "RETORNO DE AMOSTRA + SONDAS · ATIVA (missão estendida)",
+  "first": "Segundo retorno de amostra de asteroide (Ryugu, 2020); primeiro crater de impacto artificial em um asteroide; primeiro material subsuperficial de asteroide retornado à Terra",
+  "description": "Missão de acompanhamento da JAXA à Hayabusa original. Lançada em 2014-12-03, Hayabusa2 chegou ao asteroide carbonáceo próximo à Terra (162173) Ryugu em 2018-06-27 após um cruzeiro de 3,5 anos com propulsão iônica de baixo empuxo + assistência gravitacional terrestre. Operações de superfície 2018–2019: duas coletas de amostra por toque-e-vai envolvendo um experimento Small Carry-on Impactor (2019-04-05) que escavou um crater de 14 m para a segunda amostra. Três sondas MINERVA-II retornaram as primeiras imagens de superfície de um asteroide; o módulo de pouso MASCOT da DLR/CNES operou por 17 horas. A cápsula de retorno de amostra reingressou sobre Woomera em 2020-12-05 (UTC; recuperada em 2020-12-06 hora local/JST) e entregou 5,4 g de material prístino de Ryugu — a primeira amostra de asteroide com estratigrafia subsuperficial. Missão estendida: sobrevoo de 98943 Torifune (2001 CC21) em 2026-07; encontro de órbita com (1998 KY26) de rotação rápida previsto para 2031-07.",
   "events": [
     {
       "met": 0,
       "label": "LANÇAMENTO",
-      "note": "O H-IIA 202 de Tanegashima inicia o cruzeiro de 3,5 anos ao asteroide Ryugu.",
+      "note": "H-IIA 202 de Tanegashima inicia o cruzeiro de 3,5 anos até o asteroide Ryugu.",
       "type": "nominal"
     },
     {
       "met": 366,
       "label": "SOBREVOO TERRESTRE",
-      "note": "A assistência gravitacional terrestre faseja a órbita de encontro.",
+      "note": "Assistência gravitacional terrestre faz a correção da órbita de encontro.",
       "type": "nominal"
     },
     {
       "met": 1302,
-      "label": "CHEGADA RYUGU",
-      "note": "Voo pairado a 20 km — início de 1,5 ano de operações próximas incluindo coleta de amostras.",
+      "label": "CHEGADA EM RYUGU",
+      "note": "Pousio a 20 km — início de 1,5 ano de operações de proximidade incluindo coleta de amostra.",
       "type": "nominal"
     },
     {
       "met": 1880,
       "label": "RETORNO À TERRA",
-      "note": "A cápsula de amostras pousa em Woomera, Austrália com 5,4 g de material de Ryugu.",
+      "note": "Cápsula de amostra pousa em Woomera, Austrália com 5,4 g de material de Ryugu.",
       "type": "nominal"
     },
     {
       "met": 4250,
-      "label": "SOBREVOO 2001 CC21",
-      "note": "Sobrevoo de missão estendida do asteroide (98943) 2001 CC21.",
+      "label": "SOBREVOLO DE TORIFUNE",
+      "note": "Sobrevolo de missão estendida de 98943 Torifune (2001 CC21).",
       "type": "info"
     },
     {
       "met": 6092,
-      "label": "ENCONTRO 1998 KY26",
-      "note": "Encontro planejado com o asteroide de rotação rápida (1998 KY26).",
+      "label": "ENCONTRO COM 1998 KY26",
+      "note": "Encontro de órbita planejado com o asteroide de rotação rápida (1998 KY26).",
       "type": "info"
     }
   ]

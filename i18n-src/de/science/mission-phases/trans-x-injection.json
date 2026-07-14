@@ -1,14 +1,14 @@
 {
-  "title": "Trans-X-Injektion — TLI / TMI / TVI / TJI",
-  "intro_sentence": "Die große Abreisebrennphase, die dich auf eine Trajektorie zum Ziel wirft.",
+  "title": "Trans-X Injection — TLI / TMI / TVI / TJI",
+  "intro_sentence": "Der große Abflugsbrand, der Sie auf eine Trajektorie zu Ihrem Ziel wirft.",
   "narrative_101": [
-    "Schritt eins jeder interplanetaren Reise: in LEO. Im Raum, aber kreist um die Erde. Um wirklich zum Mond, Mars, Jupiter zu kommen: ZWEITE Brennphase — Trans-X-Injektion. X = Zielinitiale.",
-    "Eine harte, dramatische Brennphase, normalerweise 5-30 Minuten, im Perigäum (Oberth). Wirft dich auf Transferellipse. Danach Triebwerk meist monatelang aus. Inertia.",
-    "Apollo TLI: 3,05 km/s. Curiosity TMI: 3,7 km/s. Voyager 2 trans-Jupiter ~7 km/s — Großteil ihres Budgets."
+    "Schritt eins jeder interplanetaren Reise: Bringen Sie sich in die niedrige Erdumlaufbahn (LEO). Jetzt sind Sie im Weltall, aber Sie gehen nirgendwohin — Sie kreisen nur um die Erde. Um tatsächlich zum Mond, Mars oder Jupiter zu fliegen, brauchen Sie einen ZWEITEN Brand. Das ist die Trans-X-Injektion. \"X\" ist der Planet, auf den Sie abzielen. TLI = Trans-Lunar (zum Mond). TMI = Trans-Mars. TVI = Venus. TJI = Jupiter. Derselbe Trick, anderes Ziel.",
+    "Es ist ein einzelner, heftiger, dramatischer Brand — normalerweise 5 bis 30 Minuten lang, je nach Motor — durchgeführt am Perigäum Ihrer Parkunmlaufbahn, wo Sie bereits so schnell wie möglich fahren (Oberth-Effekt, nochmals). Er wirft Sie auf die elliptische Transferbahn zu Ihrem Ziel. Nach diesem Brand feuert der Motor grundsätzlich monatelang nicht mehr. Sie gleiten.",
+    "Auf jeder interplanetaren Missionskarte in /missions sehen Sie diese Zahl: ∆v_TLI oder ∆v_TMI. Es ist DIE größte einzelne Entscheidung im Missionsdesign — zu klein und Sie entkommen der Erde nie, zu groß und Sie verschwenden Treibstoff, der Nutzlast hätte fliegen können. Apollos TLI betrug 3,05 km/s. Mars Curiositys TMI betrug 3,7 km/s. Voyager 2s Trans-Jupiter-Injektion lag bei etwa 7 km/s — der Großteil seines Budgets."
   ],
   "body_paragraphs": [
-    "Nach dem Start in LEO. Zweite Brennphase hebt Apogäum auf Zielniveau — Trans-X-Injektion. X ist Initialensbuchstabe: TLI translunar, TMI Mars, TVI Venus, TJI Jupiter.",
-    "Im Perigäum der Parking-Bahn (Oberth maximiert Energie pro Treibstoff). Hohmann zu Mars: TMI ~3,6 km/s über LEO-Injektion 7,9 km/s. Voyager 2 brauchte ~7 km/s trans-Saturn.",
-    "In `/missions` FLIGHT-Tab: ∆v_TLI oder ∆v_TMI als die Kosten der Erdumgebung verlassen."
+    "Nach dem Start befinden Sie sich normalerweise in einer niedrigen Erdumlaufbahn (LEO). Um irgendwohin anders zu gehen, brauchen Sie einen zweiten Brand, der Ihr Apogäum bis zum Ziel anhebt — das ist die Trans-X-Injektion. Das X ist der erste Buchstabe des Ziels: TLI für Trans-Lunar, TMI für Trans-Mars, TVI für Trans-Venus, TJI für Trans-Jupiter. Dieselbe Physik, anderer Zielpunkt.",
+    "Der Brand erfolgt am Perigäum der Parkunmlaufbahn, wo Oberth Ihnen die meiste Energie pro Kilogramm Treibstoff gibt. Für einen Hohmann zu Mars kostet TMI etwa 3,6 km/s — etwa ein Drittel der ~9,4 km/s Aufstiegs-∆v, die nötig waren, um LEO zu erreichen. Voyager 2s Trans-Jupiter-Injektion betrug ~7 km/s, der größte einzelne Brand; Saturn, Uranus und Neptun wurden dann durch Gravitationsunterstützung erreicht, nicht durch zusätzliche Abflugbrände.",
+    "Auf dem FLIGHT-Reiter jeder interplanetaren Missionskarte in `/missions` finden Sie diese Zahl mit ∆v_TLI oder ∆v_TMI gekennzeichnet. Es sind die Kosten, um Earths Nachbarschaft zu verlassen, getrennt von den Kosten, um LEO überhaupt erst zu erreichen."
   ]
 }

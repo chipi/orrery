@@ -1,56 +1,56 @@
 {
-  "name": "Apollo 13",
-  "dispatch": "Apollo 13 从未着陆,却是所有人都记得的任务。发射两天后,一个氧气罐爆裂,将一次前往Fra Mauro高地的常规飞行变成了一场为期四天的考验——在距离地球二十五万英里远的垂死航天器中维持三名宇航员的生命。拯救他们的不是英雄主义,而是充分的准备以及一屋子实时解决问题的人员,他们即兴创造出呼吸方法和返航方案,仅仅利用飞行器上已经固定的任何设备。NASA称之为成功的失败。更贴近真相的说法是,这次飞行证明了该机构确实名副其实。",
-  "type": "CREWED FLYBY · FLOWN (LANDING ABORTED)",
-  "first": "The mission that turned a near-disaster into NASA's most celebrated rescue",
-  "description": "Apollo 13 was meant to be the third crewed lunar landing, targeted at the Fra Mauro highlands. At 55 hours 54 minutes into the flight an oxygen tank in the Service Module ruptured, crippling the Command-Service Module's electrical and life-support systems. With landing scrubbed, the crew — James Lovell, Jack Swigert, and Fred Haise — powered down the CSM, moved into the Lunar Module Aquarius as a lifeboat, and used the LM's descent engine for a Pericynthion+2-hour burn that placed them on a fast free-return trajectory. They swung past the Moon at 254 km altitude on 1970-04-15 and splashed down safely in the South Pacific on 1970-04-17. The mission is studied today as a model of disciplined real-time engineering improvisation.",
+  "name": "阿波罗13号",
+  "type": "载人飞掠 · 已飞行（登陆中止）",
+  "first": "将近乎灾难转化为NASA最著名营救的任务",
+  "dispatch": "阿波罗13号从未登陆月球，却是所有人都记得的任务。在出发两天后，一个氧气罐自行破裂，将一次前往弗拉·毛罗高地的例行飞行变成了一场四天的求生——在一艘破损的宇宙飞船中让三名航天员活着回家，距地球四分之一百万英里。拯救他们的并非英雄般的举动，而是充分的准备和休斯顿任务控制中心一整间屋子的人在实时解决问题、即兴创造呼吸之法和归家之路，用尽一切已经拴在飞行器上的零件。NASA称之为\"成功的失败\"。更接近事实的说法是，这次飞行证明了该机构确实如其声称的那样卓越。",
+  "description": "阿波罗13号原定进行第三次载人月球着陆，目标是弗拉·毛罗高地。在飞行的第55小时54分钟，服务舱中的一个氧气罐破裂，导致指令舱-服务舱的电力和生命保障系统瘫痪。登陆计划作废后，宇航员詹姆斯·洛弗尔、杰克·斯威格特和弗雷德·海斯关闭了指令舱，进入登月舱水瓶座号作为救生艇，并利用登月舱的下降发动机进行了近月点后+2小时变轨，使其进入快速自由返回轨道。他们在1970年4月15日以254公里的高度掠过月球，并在1970年4月17日安全溅落在南太平洋。这次任务今天被作为有纪律的实时工程即兴创新的典范而被研究。",
   "events": [
     {
       "met": 0,
-      "label": "SATURN V LAUNCH",
-      "note": "Liftoff from KSC LC-39A. Center engine of S-II second stage shut down two minutes early — outer engines compensated.",
+      "label": "土星五号发射",
+      "note": "从肯尼迪航天中心LC-39A发射台升空。第二级中心发动机在两分钟后关闭——外侧发动机进行补偿。",
       "type": "nominal"
     },
     {
       "met": 0.117,
-      "label": "TLI",
-      "note": "Trans-lunar injection burn by S-IVB; CSM + LM commit to cislunar trajectory.",
+      "label": "TLI（奔月转移点火）",
+      "note": "S-IVB进行月球转移注入变轨；CSM + LM进入月球近地空间轨道。",
       "type": "nominal"
     },
     {
       "met": 1.2,
-      "label": "MCC-2",
-      "note": "Mid-course correction shifts the spacecraft off the free-return trajectory onto a Fra Mauro approach.",
+      "label": "MCC-2（中途修正2）",
+      "note": "中途修正将航天器从自由返回轨道调整至弗拉·毛罗进近轨道。",
       "type": "nominal"
     },
     {
       "met": 2.33,
-      "label": "OXYGEN TANK #2 RUPTURE",
-      "note": "SM cryo-stir command initiates a short-circuit fire and tank rupture. \"Houston, we've had a problem.\" Power and water dwindle; LM Aquarius becomes the lifeboat.",
+      "label": "氧气罐#2破裂",
+      "note": "服务舱低温搅拌器命令引发短路火灾和罐体破裂。\"休斯顿，我们遇到了一个问题。\" 电力和水源不断减少；登月舱水瓶座号成为救生艇。",
       "type": "warning"
     },
     {
       "met": 2.92,
-      "label": "FREE-RETURN BURN",
-      "note": "31-second LM descent-engine burn returns the spacecraft to a free-return trajectory.",
+      "label": "自由返回变轨",
+      "note": "31秒的登月舱下降发动机变轨将航天器恢复至自由返回轨道。",
       "type": "info"
     },
     {
       "met": 3.13,
-      "label": "LUNAR FLYBY",
-      "note": "Closest approach 254 km altitude over Mare Cognitum — the farthest a crewed spacecraft has ever travelled from Earth.",
+      "label": "月球飞掠",
+      "note": "在高地湾上空以254公里高度最近距离掠过——距地球400,171公里，是人类迄今旅行的最远距离（记录保持至1970–2026年，被阿尔忒弥斯II号在2026年4月打破）。",
       "type": "info"
     },
     {
       "met": 3.96,
-      "label": "PC+2 BURN",
-      "note": "Pericynthion-plus-2-hour burn shortens the return-to-Earth time by ten hours.",
+      "label": "PC+2变轨",
+      "note": "近月点后+2小时变轨缩短了返回地球的时间十小时。",
       "type": "nominal"
     },
     {
       "met": 5.95,
-      "label": "SPLASHDOWN",
-      "note": "CSM re-entry and South Pacific splashdown, recovered by USS Iwo Jima.",
+      "label": "溅落",
+      "note": "CSM返回舱再入和南太平洋溅落，由硫磺岛号航母回收。",
       "type": "info"
     }
   ]

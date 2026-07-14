@@ -1,6 +1,38 @@
 {
   "name": "Lunar Prospector",
-  "type": "ORBITER ROBOTICO · VOLATO",
-  "first": "Scoperta dell'idrogeno con spettrometro a neutroni a entrambi i poli lunari",
-  "description": "La prima missione di classe Discovery della NASA e la prima missione lunare statunitense dedicata dal Explorer 49 (1973). Lanciata il 07/01/1998 su un Athena II da Cape Canaveral, Lunar Prospector entrò in un'orbita lunare polare circolare di 100 km l'11/01/1998. La sonda rotante da 296 kg trasportava cinque strumenti: uno spettrometro a raggi gamma per la composizione crostale globale, uno spettrometro a neutroni per il rilevamento di idrogeno / ghiaccio d'acqua ai poli, uno spettrometro a particelle alfa per il gas radon, un magnetometro + riflettometro di elettroni per il magnetismo crostale e un esperimento Doppler di gravità. L'analisi del gruppo Boynton dei dati neutronici (Feldman et al., Science 281 + 284) trovò netti deficit di flusso neutronico sopra entrambi i poli lunari — coerenti con circa 2 × 10⁹ tonnellate di materiale ricco di idrogeno (probabilmente ghiaccio d'acqua) in crateri polari in ombra permanente. La missione si concluse il 31/07/1999 con un impatto deliberato vicino al cratere Shackleton; non fu osservato alcun pennacchio di vapore acqueo."
+  "type": "ORBITER ROBOTICO · VOLO COMPLETATO",
+  "first": "Rilevamento dell'idrogeno mediante spettrometro neutronico a entrambi i poli lunari",
+  "description": "La terza missione della classe NASA Discovery e il primo orbiter lunare dedicato gestito dalla NASA nell'era post-Apollo. Lanciato il 1998-01-07 su un Athena II da Cape Canaveral, Lunar Prospector è entrato in un'orbita lunare polare circolare di 100 km il 1998-01-11. L'astronave in rotazione, del peso di 296 kg, portava cinque strumenti: uno spettrometro gamma per la composizione della crosta globale, uno spettrometro neutronico per il rilevamento dell'idrogeno e del ghiaccio d'acqua ai poli, uno spettrometro di particelle alfa per il rilevamento del gas radon (rilevamento indiretto del vulcanesimo), un magnetometro e un riflettometro di elettroni per il magnetismo della crosta, e un esperimento di gravimetria Doppler. L'analisi del team Boynton dei dati neutronici (Feldman et al., Science 281 + 284) ha rilevato deficit di flusso neutronico marcati su entrambi i poli lunari — coerente con ~2 × 10⁹ tonnellate di materiale ricco di idrogeno (probabilmente ghiaccio d'acqua) in crateri polari permanentemente in ombra. La missione è terminata il 1999-07-31 con un impatto deliberato vicino al cratere Shackleton nella speranza di liberare un plume di vapore acqueo rilevabile; nessuno è stato osservato. La scoperta dell'idrogeno è rimasta valida fino a quando LCROSS e Chandrayaan-1/M3 (2009) hanno fornito una conferma indipendente.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Athena II da Cape Canaveral SLC-46 1998-01-07 02:28 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.07,
+      "label": "TLI",
+      "note": "Iniezione trans-lunare.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.1,
+      "label": "LOI",
+      "note": "Inserimento in orbita lunare 1998-01-11 — orbita polare iniziale di 100 × 100 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 60,
+      "label": "IDROGENO POLARE",
+      "note": "Lo spettrometro neutronico rileva deficit di flusso neutronico marcati su entrambi i poli lunari — forte segnale di idrogeno, coerente con ghiaccio d'acqua polare.",
+      "type": "info"
+    },
+    {
+      "met": 569,
+      "label": "IMPATTO SHACKLETON",
+      "note": "Impatto deliberato vicino al cratere Shackleton il 1999-07-31 09:52 UTC. Nessun plume di vapore acqueo rilevato dalla Terra.",
+      "type": "nominal"
+    }
+  ]
 }

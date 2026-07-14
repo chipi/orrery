@@ -1,25 +1,25 @@
 {
   "name": "Vega 2",
-  "type": "SOBREVOO + ATERRISSADOR + BALÃO · CONCLUÍDA",
-  "first": "Primeira análise química do solo das terras altas venusianas (Phoebe Regio, 1985)",
-  "description": "Gêmea da Vega 1, lançada 6 dias depois. O módulo de descida pousou em 15-6-1985 nas terras altas de Phoebe Regio e usou espectrometria XRF para identificar material anortosito-norito-troctolito — primeira análise química da crosta venusiana de altitude. O barramento passou pelo cometa 1P/Halley a 8030 km em 9-3-1986. Juntos, os barramentos Vega devolveram as primeiras imagens próximas de um núcleo cometário e refinaram a posição que permitiu à Giotto tentar um sobrevoo a 596 km do Halley cinco dias depois.",
+  "type": "SOBREVOO + POUSADOR + BALÃO · REALIZADO",
+  "first": "Primeira análise química do solo tipo das terras altas venusianas (Afrodite Terra, 1985); encontro pareado com Halley junto com Vega 1 forneceu a solução de direcionamento para Giotto",
+  "description": "Gêmea de Vega 1, lançada 6 dias depois (1984-12-21) para redundância e uma solução de armada pareada com Halley. O módulo de descida da Vega 2 pousou em 1985-06-15 na Planícia Rusalka, no flanco setentrional de Afrodite Terra, e utilizou espectrometria XRF para encontrar material anortosita-norito-troctolita — a primeira análise química da crosta venusiana tipo terras altas (a composição se assemelha às terras altas lunares, embora o local do pouso em si seja uma planície). Seu balão funcionou de forma idêntica ao de Vega 1, derivando no hemisfério oposto a ~240 km/h. O ônibus sobrevoou o cometa 1P/Halley a 8030 km em 1986-03-09. Os dois ônibus Vega juntos retornaram as primeiras imagens aproximadas do núcleo cometário e refinou a correção de posição que permitiu Giotto tentar um sobrevoo a 596 km cinco dias depois.",
   "events": [
     {
       "met": 0,
       "label": "LANÇAMENTO",
-      "note": "O Proton-K / D-1 lança a Vega 2 de Baikonur 6 dias após a Vega 1.",
+      "note": "Proton-K / D-1 lança Vega 2 de Baikonur 6 dias atrás de Vega 1.",
       "type": "nominal"
     },
     {
       "met": 176,
-      "label": "ENCONTRO VÊNUS",
-      "note": "O módulo de descida pousa em Phoebe Regio + devolve a primeira análise química do solo de terras altas.",
+      "label": "ENCONTRO COM VÊNUS",
+      "note": "Módulo de descida pousa em Afrodite Terra (Planícia Rusalka) e retorna primeira análise química da crosta venusiana tipo terras altas.",
       "type": "nominal"
     },
     {
       "met": 442,
-      "label": "SOBREVOO HALLEY",
-      "note": "Aproximação máxima do cometa 1P/Halley a 8030 km — determinação de posição emparelhada para Giotto.",
+      "label": "SOBREVOO DE HALLEY",
+      "note": "Aproximação máxima do cometa 1P/Halley a 8030 km — correção de posição pareada para Giotto.",
       "type": "nominal"
     }
   ]

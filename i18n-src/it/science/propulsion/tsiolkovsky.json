@@ -1,16 +1,16 @@
 {
-  "title": "Equazione di Tsiolkovsky",
-  "intro_sentence": "Quanto Δv si può comprare da un dato motore e propellente — l'equazione che rende il volo spaziale logaritmico.",
+  "title": "Equazione del Razzo di Tsiolkovsky",
+  "intro_sentence": "Quanta variazione di velocità puoi ottenere da un motore e da una carica di propellente — l'equazione che rende il volo spaziale un problema logaritmico.",
   "narrative_101": [
-    "Konstantin Tsiolkovsky maestro russo sordo, 1903 scrisse un'equazione a cui nessuno scappa. Δv dipende da Isp e frazione di propellente, LOGARITMICAMENTE.",
-    "Logaritmo è la trappola. Doppio Δv: non doppio propellente, esponenzialmente di più. Saturn V: 90% propellente.",
-    "Due vie d'uscita: motori migliori (Isp) e stadiazione. Single-shot limita 10-15 km/s."
+    "Konstantin Tsiolkovsky era un insegnante sordo russo che pensava al volo spaziale nel tempo libero, decenni prima che qualcuno potesse costruire un razzo. Nel 1903 scrisse un'equazione da cui nessuno poteva sfuggire, e ancora non lo possiamo. Dice così: il ∆v che puoi estrarre da un razzo dipende da due cose — quanto è bravo il tuo motore e quanta parte del tuo razzo è carburante. E la relazione è LOGARITMICA.",
+    "Il logaritmo è la trappola. Se il tuo razzo è metà carburante, ottieni un certo ∆v. Per raddoppiare quel ∆v, non fai il tuo razzo due terzi carburante — devi farlo circa il 75% carburante. Per triplicarlo, più vicino all'87–88% carburante. I numeri ti scappano di mano esponenzialmente. Per questo un Saturn V è una torre di 110 metri che è quasi interamente propellente — l'astronave è una piccola capsula in cima.",
+    "Due strade d'uscita. Una: motori migliori (impulso specifico più alto) — questo aumenta il moltiplicatore così da ottenere più ∆v dallo stesso rapporto di massa. Due: staging — getta i serbatoi vuoti mentre si svuotano così non stai trascinando peso morto. I veri razzi fanno entrambi. Anche allora, le missioni one-shot massimizzano a circa 10-15 km/s di ∆v. Oltre questo l'equazione dice che hai bisogno di rifornire in orbita, o usare motori esotici, o ricevere aiuto da un pianeta."
   ],
   "body_paragraphs": [
-    "Tsiolkovsky 1903. Δv dipende da Isp e rapporto massa iniziale/finale — logaritmico.",
-    "Logaritmo crudele. Doppio propellente: aggiunge solo costante. Chimici (300-450s) plafonano 10-15 km/s.",
-    "Saturn V: 7800 t bagnato, 600 t secco. Rapporto 13. Isp 330s. Δv ≈ 8,3 km/s — appena per TLI."
+    "Konstantin Tsiolkovsky derivò l'equazione del razzo nel 1903, decenni prima che qualcuno costruisse un razzo vale la pena di far volare. Il risultato ha l'inevitabilità della fisica: il ∆v dipende da `Isp` del motore e dal rapporto fra la massa iniziale e la massa finale — ed è logaritmico in quel rapporto.",
+    "Il log è la parte crudele. Raddoppiare il propellente non raddoppia il ∆v; aggiunge solo un pezzo costante. Vuoi volare il doppio della distanza? Hai bisogno di un razzo esponenzialmente più grande. Questa è la tirannia dell'equazione del razzo: i motori chimici (`Isp` ~300-450s) colpiscono un muro intorno a 10-15 km/s di ∆v prima che il rapporto di massa diventi assurdo. Per andare oltre hai bisogno di `Isp` più alto (motori ionici, ~3000s) o staging (gettare i serbatoi mentre si svuotano), o entrambi.",
+    "Saturn V: 7.800 tonnellate wet, 600 tonnellate dry. Rapporto di massa 13. Isp ~330s. ∆v ≈ 8,3 km/s — appena sufficiente per raggiungere l'iniezione trans-lunare. Il riutilizzo di Falcon 9 colpisce un muro diverso: ogni chilogrammo di hardware recuperabile ti costa carico pagante proporzionale."
   ],
-  "formula_caption": "Δv da Isp, g₀, e rapporto m₀/m_f.",
-  "diagram_caption": "Δv vs rapporto massa: logaritmico."
+  "formula_caption": "∆v dall'impulso specifico, accelerazione gravitazionale g₀, e rapporto di massa m₀/m_f.",
+  "diagram_caption": "Curva di ∆v rispetto al rapporto di massa: logaritmica. Raddoppiare il propellente aggiunge solo un pezzo costante di ∆v."
 }

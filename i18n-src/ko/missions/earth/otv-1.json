@@ -1,25 +1,25 @@
 {
   "name": "X-37B OTV-1 (USA-212)",
   "type": "무인 우주비행기 · 비행 완료",
-  "first": "USA-212 — 궤도상 224일, 밴덴버그 공군기지",
-  "description": "보잉이 제작한 X-37B 궤도시험기 프로그램의 첫 비행. 2010-04-22 23:52 UTC에 케이프 커내버럴 SLC-41에서 아틀라스 V 501 AV-012로 발사. 1988년 소련의 부란 1.01 이후 활주로 착륙 운용을 동반한 첫 자율 궤도 우주비행기 재진입. 224일 후 2010-12-03 09:16 UTC에 밴덴버그 공군기지에 착륙. 페이로드와 궤도 파라미터는 기밀.",
+  "first": "USA-212 — 궤도상 224일, 밴더버그 공군기지",
+  "description": "보잉이 제작한 X-37B 궤도시험차량 프로그램의 첫 비행. 2010-04-22 23:52 UTC에 케이프 커내버럴 SLC-41에서 아틀라스 V 501 AV-012으로 발사됨. 1988년 소련 부란 1.01 이후 활주로 착륙 방식의 자율 궤도 우주비행기 재진입 첫 사례. 2010-12-03 09:16 UTC에 224일 후 밴더버그 공군기지에 착륙. 탑재체 및 궤도 매개변수는 기밀.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-012) from CCAFS SLC-41 2010-04-22.",
+      "label": "발사",
+      "note": "2010-04-22 CCAFS SLC-41에서 아틀라스 V 501 (AV-012).",
       "type": "nominal"
     },
     {
       "met": 112,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee 410 km; classified payload operations.",
+      "label": "궤도상 운영",
+      "note": "원지점 ~287 km; 기밀 탑재체 운영.",
       "type": "info"
     },
     {
       "met": 224,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at Vandenberg AFB 2010-12-03.",
+      "label": "착륙",
+      "note": "2010-12-03 밴더버그 공군기지에서 자율 활주로 착륙.",
       "type": "nominal"
     }
   ]

@@ -2,7 +2,7 @@
   "title": "Kepler's Laws · 1609–1619",
   "intro_sentence": "Tycho Brahe's lifetime of naked-eye Mars data, distilled by Kepler into the three rules every orbit obeys.",
   "narrative_101": [
-    "Tycho Brahe spent 30 years at the Uraniborg observatory on Hven measuring Mars's position with quadrants made of brass and oak — better-than-arcminute precision, all with naked eyes. He died in 1601 having published almost nothing.",
+    "Tycho Brahe spent ~20 years at the Uraniborg observatory on Hven measuring Mars's position with quadrants made of brass and oak — better-than-arcminute precision, all with naked eyes. He died in 1601 having published little of his planetary results.",
     "Kepler inherited the Mars notebooks. He spent another decade trying to fit them to circles and failed. The break came when he tried an ellipse — Mars matched immediately. Out of that came three laws: orbits are ellipses with the Sun at one focus; equal areas swept in equal time; period squared equals semi-major axis cubed.",
     "Without those three laws, no spacecraft trajectory in this app would compute. Every porkchop cell, every transfer arc, every planet on /explore is a Keplerian solution."
   ],

@@ -1,16 +1,18 @@
 {
-  "title": "Regimi orbitali — LEO, MEO, GEO, HEO",
-  "intro_sentence": "Le orbite terrestri si raggruppano in quattro bande di altitudine.",
+  "title": "Regimi Orbitali — LEO, MEO, GEO, HEO",
+  "intro_sentence": "Le orbite terrestri si raggruppano in quattro bande di altitudine; ciascuna rappresenta un compromesso diverso tra latenza, durata della missione e costi.",
   "narrative_101": [
-    "Scegli un satellite. Ciò che conta non è cosa fa — è a quale altitudine vive.",
-    "LEO fino a ~2000 km. MEO 2000-35786 km (GPS). GEO esattamente 35786 km. HEO è il jolly."
+    "Prendi un satellite. La cosa più importante non è ciò che fa — è l'altitudine a cui orbita. L'altitudine determina ogni quanto può osservare la stessa zona di terreno, quanto tempo impiega un segnale radio a raggiungerlo, quanta energia ha bisogno per mantenere l'orbita, e quale è la sua durata utile. Gli ingegneri aerospaziali raggruppano le orbite in quattro bande — LEO, MEO, GEO, HEO — perché gli equilibri cambiano discretamente man mano che sali.",
+    "LEO arriva fino a ~2.000 km. La ISS orbita a 408 km. Hubble a 540 km. Starlink di SpaceX a ~550 km. Economico da raggiungere (la maggior parte dei razzi può portarvi un carico), ma completi il giro del pianeta ogni 90 minuti, l'atmosfera ti trascina verso il basso (durata: anni senza rifornimento), e vedi qualunque punto del terreno per solo ~10 minuti per passaggio.",
+    "MEO è 2.000–35.786 km — la banda di GPS / Galileo / Beidou, più alcune comunicazioni. I periodi sono 2-12 ore; copri il globo con meno satelliti rispetto a LEO, e sei al di sopra delle zone peggiori delle fasce di radiazione (scelto con cura). GEO è esattamente a 35.786 km — periodo esattamente 24 ore — così un satellite lì rimane sospeso sopra lo stesso punto sulla Terra per sempre, per questo ogni satellite meteorologico e di broadcast è lassù.",
+    "HEO (orbita altamente ellittica) è il jolly — apogeo alto, perigeo basso, lungo tempo di permanenza su una latitudine scelta. Le orbite Molniya della Russia sono HEO, ottimizzate per la copertura ad alte latitudini che GEO non può raggiungere. Ogni regime è una diversa filosofia di missione, codificata come numero sull'asse y."
   ],
   "body_paragraphs": [
-    "LEO < 2000 km: economico, periodo ~90 min, vita corta per attrito.",
-    "MEO 2000-35786 km: navigazione. GPS 20200, GLONASS 19100, Galileo 23222.",
-    "GEO 35786 km: periodo = giorno siderale, satellite stazionario. TV broadcast, meteo.",
-    "HEO: perigeo basso + apogeo alto. Molniya per alte latitudini.",
-    "Cambiare regime caro. LEO a GEO ~3,9 km/s. LEO a fuga ~3,2 — più economico, controintuitivo."
+    "LEO (Orbita Terrestre Bassa, < 2.000 km di altitudine): più economica da raggiungere, periodo più veloce (~90 minuti per la ISS a 408 km), ritardo del collegamento col terreno più breve (alcuni ms), durata più breve a causa del trascinamento atmosferico residuo. Ospita la ISS, Hubble, Starlink, la maggior parte dei satelliti di osservazione della Terra, tutte le attività umane al di là dell'Apollo.",
+    "MEO (Orbita Terrestre Media, 2.000–35.786 km): la banda della navigazione. GPS a 20.200 km, GLONASS a 19.100 km, Galileo a 23.222 km, Beidou MEO a 21.500 km. Periodi ~11–14 ore nella banda di navigazione; costellazioni di 24-30 satelliti forniscono copertura globale. Al di sopra della fascia di Van Allen interna, al di sotto della maggior parte di quella esterna.",
+    "GEO (Orbita Terrestre Geostazionaria, 35.786 km di altitudine esatti, inclinazione 0°): il periodo è uguale al giorno sidereo terrestre (23h 56m 4s) quindi il satellite appare fermo sopra una longitudine sull'equatore. Ospita la TV broadcast mondiale, le immagini meteo (GOES, Himawari, Meteosat) e i tradizionali comsats. Tempo luce round-trip ~240 ms — percettibile nelle chiamate vocali.",
+    "HEO (Orbita Altamente Ellittica): perigeo basso + apogeo alto. Le orbite Molniya (Russia) hanno perigeo ~600 km, apogeo ~40.000 km, inclinazione 63,4° — scelta in modo che la permanenza all'apogeo avvenga sull'emisfero settentrionale dove i comsats GEO non riescono a raggiungere. Critica per le comunicazioni ad alte latitudini e alcune costellazioni di preallarme.",
+    "Cambiare regime è costoso. ∆v da LEO a GEO è circa 3,9 km/s. Da LEO a escape / TLI è circa 3,2 km/s — controintuitivamente più economico di raggiungere GEO da LEO, perché non devi circolarizzare all'arrivo (TMI per Marte richiede ~3,6+ km/s)."
   ],
-  "diagram_caption": "Bande terrestri concentriche."
+  "diagram_caption": "Bande terrestri concentriche: LEO (ciano, bassa altitudine), MEO (blu, regione GPS), GEO (oro, anello geostazionario), HEO (arancione, ellisse asimmetrica)."
 }

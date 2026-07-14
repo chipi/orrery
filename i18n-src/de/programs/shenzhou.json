@@ -1,88 +1,88 @@
 {
   "name": "Shenzhou",
-  "tagline": "Die Kapsel, die China zur dritten Nation machte, die ihre eigenen Leute ins All brachte — langsam gebaut, ausgiebig getestet, und nie eine Besatzung verloren.",
+  "tagline": "Die Kapsel, die China zur dritten Nation machte, die ihre eigenen Leute ins All brachte — langsam gebaut, erschöpfend getestet und nie eine Besatzung verloren.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Vierzig Jahre lang hatten nur zwei Länder jemals einen Menschen mit ihrer eigenen Rakete ins All gebracht: die Sowjetunion und die Vereinigten Staaten. Im Oktober 2003 gesellte sich ein drittes zu ihnen, leise und ohne ein Wettrennen zu gewinnen. Yang Liwei flog in einer Shenzhou-Kapsel in den Orbit, umkreiste die Erde vierzehnmal und kehrte nach Hause zurück – und China wurde eine bemannte Raumfahrtnation zu eigenen Bedingungen, mit eigenem Raumfahrzeug, eigener Trägerrakete und eigenem Astronautenkorps. Es hatte keinen Konkurrenten zu schlagen gegeben. Es gab nur eine Fähigkeit aufzubauen, und China hatte ein Jahrzehnt damit verbracht, sie aufzubauen."
+      "md": "Vierzig Jahre lang hatten nur zwei Länder jemals einen Menschen mit ihrer eigenen Rakete ins All gebracht: die Sowjetunion und die Vereinigten Staaten. Im Oktober 2003 gesellte sich ein drittes zu ihnen, leise und ohne ein Rennen zu gewinnen. Yang Liwei flog in einer Shenzhou-Kapsel in die Umlaufbahn, umkreiste die Erde vierzehnmal und kehrte zurück — und China wurde eine bemannte Raumfahrtnation nach eigenen Bedingungen, mit eigenem Raumfahrzeug, eigener Trägerrakete und eigenem Astronautenkorps. Es hatte keinen Konkurrenten zu schlagen gegeben. Es gab nur eine Fähigkeit aufzubauen, und China hatte ein Jahrzehnt damit verbracht, sie aufzubauen."
     },
     {
       "type": "prose",
-      "md": "Shenzhou — „Göttliches Schiff\" — sieht auf den ersten Blick aus wie eine Soyuz: dieselbe dreiteilige Anordnung aus Orbitalmodul, Landekapsel und Servicemodul, das Erbe einer technologischen Beziehung mit Russland in den 1990er Jahren. Aber es ist größer, vollständig in China gebaut und auf eine aufschlussreiche Weise verbessert — sein Orbitalmodul trägt eigene Solarpaneele und kann nach der Rückkehr der Besatzung als freier Satellit weiterfliegen. Es ist die Architektur von Soyuz, zur Schule geschickt und mit besseren Noten zurückgegeben."
+      "md": "Shenzhou — „Göttliches Gefäß\" — sieht auf den ersten Blick aus wie eine Soyuz: dieselbe dreiteilige Anordnung aus Orbitalmodul, Rückkehrkapsel und Servicemodul, das Erbe einer technologischen Beziehung mit Russland in den 1990er Jahren. Aber es ist größer, vollständig chinesisch gebaut und auf verräterische Weise verbessert — sein Orbitalmodul trägt eigene Solarpaneele und kann nach der Rückkehr der Besatzung als freier Satellit weiterfliegen. Es ist die Architektur von Soyuz, zur Schule geschickt und mit besseren Noten zurückgegeben."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Das Ziel war niemals ein Stuntflug; es war eine dauerhafte, unabhängige bemannte Raumfahrtfähigkeit. Das bedeutete, nicht nur eine Kapsel zu bauen, sondern den gesamten Apparat drumherum — ein zugelassenes Trägerraketensystem, ein Missionskontrollnetzwerk, eine Bergungseinheit, ein Trainingsprogramm und ein Korps von Astronauten aus der Luftwaffe. Shenzhou war das Fahrzeug im Zentrum einer nationalen Fähigkeit, und das Programm weigerte sich, eine Besatzung fliegen zu lassen, bis jedes Element dieser Fähigkeit erprobt war."
+      "md": "Das Ziel war nie ein Stuntflug; es war eine dauerhafte, unabhängige bemannte Raumfahrtfähigkeit. Das bedeutete, nicht nur eine Kapsel zu bauen, sondern den gesamten Apparat darum herum — ein zertifiziertes Trägerfahrzeug, ein Missionskontrollnetzwerk, eine Bergungseinheit, ein Ausbildungsprogramm und ein Korps von Astronauten aus der Luftwaffe. Shenzhou war das Fahrzeug im Zentrum einer nationalen Fähigkeit, und das Programm weigerte sich, eine Besatzung zu fliegen, bis jedes Element dieser Fähigkeit erprobt war."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/long-march-2f/01"
       },
-      "caption": "Long March 2F — die für den bemannten Einsatz ausgelegte Trägerrakete, die speziell für den Transport von Shenzhou entwickelt wurde, mit einem Rettungsturm und der erforderlichen Redundanz, um Menschen an Bord zu nehmen. Keine Besatzung flog, bevor sie sich auf unbemannten Missionen bewährt hatte.",
+      "caption": "Long March 2F – die für bemannte Flüge ausgelegte Trägerrakete, die speziell für den Transport von Shenzhou gebaut wurde, mit Rettungsturm und der für bemannte Missionen erforderlichen Redundanz. Keine Besatzung flog, bevor sie sich bei unbemannten Missionen bewährt hatte.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Langfristig bestand das Ziel darin, eine Station zu versorgen. Jede Fähigkeit, die Shenzhou unter Beweis stellte — Orbitalflug, Weltraumausstiege, Rendezvous, Langzeitaufenthalte — war eine Voraussetzung für die Tiangong-Stationen, die folgten. Das bemannte Programm und das Stationsprogramm wurden als zwei Hälften eines Plans konzipiert: erst das Fahrzeug und die Menschen aufbauen, dann ihnen einen Ort geben, zu dem sie fliegen können."
+      "md": "Über den längeren Bogen hinweg war das Ziel, eine Station zu versorgen. Jede Fähigkeit, die Shenzhou bewies — Orbitalflug, Weltraumausstiege, Rendezvous, Langzeitaufenthalte — war eine Voraussetzung für die Tiangong-Stationen, die folgten. Das bemannte Programm und das Stationsprogramm wurden als zwei Hälften eines Plans konzipiert: erst das Raumfahrzeug und die Menschen aufbauen, dann ihnen einen Ort geben, wohin sie gehen können."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Nach jedem Maßstab der Zuverlässigkeit war Shenzhou ein stiller Triumph. Seit dem ersten unbemannten Test 1999 hat es Besatzungen in die Umlaufbahn gebracht, Chinas ersten Weltraumausstieg durchgeführt (Shenzhou 7, 2008), das erste bemannte Andockmanöver des Landes ausgeführt (Shenzhou 9, 2012) und seit 2021 jede Stammbesatzung zur chinesischen Raumstation gebracht — ohne jemals einen Astronauten zu verlieren. In einem Bereich, in dem beide Vorgänger ihre Premieren mit Menschenleben bezahlten, erreichte China dieselben Meilensteine und brachte alle nach Hause."
+      "md": "Nach jedem Maßstab für Zuverlässigkeit ist Shenzhou ein stiller Triumph gewesen. Seit dem ersten unbemannten Test 1999 hat es Besatzungen in die Umlaufbahn gebracht, Chinas ersten Weltraumausstieg durchgeführt (Shenzhou 7, 2008), das erste bemannte Andockmanöver des Landes vollzogen (Shenzhou 9, 2012) und seit 2021 jede Stammbesatzung zur Chinese Space Station gebracht — ohne jemals einen Astronauten zu verlieren. In einem Bereich, in dem beide Vorgängersysteme für ihre Premieren mit Menschenleben bezahlten, erreichte China dieselben Meilensteine und brachte alle nach Hause."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/shenzhou/02"
       },
-      "caption": "Ein Shenzhou-Abstiegsmodul nach der Bergung in den Steppen der Inneren Mongolei. Die versengte Kapsel ist das sichtbare Ergebnis einer unsichtbaren Disziplin: erschöpfende unbemannte Tests, bevor ein Mensch darin flog.",
+      "caption": "Ein Shenzhou-Abstiegsmodul nach der Bergung in den Steppengebieten der Inneren Mongolei. Die versengte Kapsel ist das sichtbare Ende einer unsichtbaren Disziplin: erschöpfende unbemannte Tests, bevor ein Mensch in einer mitflog.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "Das Programm hat auch etwas weniger Sichtbares, aber ebenso Dauerhaftes aufgebaut: eine breite Personaldecke. China fliegt inzwischen erfahrene Kommandanten zusammen mit Neulingen, hat Frauen in den Orbit und auf Weltraumspaziergänge geschickt und rotiert Besatzungen in regelmäßigem Rhythmus durch die Station. Shenzhou ist nicht länger eine Demonstration, dass China Menschen ins All fliegen kann — es ist der routinemäßige, verlässliche Bus, der die Station mit Personal versorgt."
+      "md": "Das Programm hat auch etwas weniger Sichtbares, aber ebenso Dauerhaftes geschaffen: eine breite Personaldecke. China lässt inzwischen erfahrene Kommandanten neben Neulingen fliegen, hat Frauen in die Umlaufbahn und auf Weltraumausstiege gebracht und rotiert Besatzungen in regelmäßigem Rhythmus durch die Station. Shenzhou ist nicht länger eine Demonstration, dass China Menschen fliegen lassen kann — es ist der routinemäßige, zuverlässige Bus, der die Station bemannt hält."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Die Geschichte von Shenzhou ist die Geschichte eines Landes, das entschied, dass die Meilensteine weniger wichtig waren als die Methode. Yang Liweis Flug von 2003 erfolgte vier Jahrzehnte nach Gagarins; China gewann nichts dadurch, früh zu sein, weil es das nie versuchte. Es versuchte, sicher zu sein. Jeder Shenzhou-Flug eliminierte ein spezifisches Risiko und ebnete den Weg für den nächsten, und die Bereitschaft des Programms zu warten — unbemannte Tests zu fliegen, bis das Fahrzeug Vertrauen erworben hatte — ist genau der Grund, warum seine bemannte Bilanz makellos ist."
+      "md": "Die Geschichte von Shenzhou ist die Geschichte eines Landes, das entschied, dass die Meilensteine weniger zählten als die Methode. Yang Liweis Flug von 2003 erfolgte vier Jahrzehnte nach Gagarins; China gewann nichts dadurch, früh dran zu sein, weil es das nie versucht hat. Es versuchte, sicher zu sein. Jeder Shenzhou-Flug beseitigte ein spezifisches Risiko und ebnete den Weg für den nächsten, und die Bereitschaft des Programms zu warten — unbemannte Tests zu fliegen, bis das Raumfahrzeug Vertrauen verdient hatte — ist genau der Grund, warum seine bemannte Bilanz makellos ist."
     },
     {
       "type": "prose",
-      "md": "Es gibt auch eine menschliche Dimension. Die Astronauten sind nationale Persönlichkeiten, größtenteils aus Militärpiloten rekrutiert, jahrelang für Flüge trainiert, die lange im Voraus geplant und fast exakt nach Zeitplan durchgeführt werden. Während die frühen sowjetischen und amerikanischen Programme improvisiert und oft erschreckend waren, ist das chinesische Programm bis zur scheinbaren Unspektakularität prozedural — und genau diese fehlende Dramatik ist der Kern der Sache. Ein Programm, das keine Beinahe-Todes-Geschichten hervorbringt, ist ein Programm, das funktioniert."
+      "md": "Es gibt auch eine menschliche Dimension. Die Astronauten sind nationale Persönlichkeiten, größtenteils Militärpiloten, die jahrelang für Flüge ausgebildet werden, die weit im Voraus geplant und nahezu exakt nach Zeitplan durchgeführt werden. Während die frühen sowjetischen und amerikanischen Programme improvisiert und oft erschreckend waren, ist Chinas Programm so prozedural, dass es unspektakulär erscheint — und gerade dieser Mangel an Dramatik ist der springende Punkt. Ein Programm, das keine Beinahe-Todeserlebnisse hervorbringt, ist ein Programm, das funktioniert."
     },
     {
       "type": "prose",
-      "md": "Und sie ist untrennbar von Unabhängigkeit. Shenzhou existiert, weil China seine eigenen Leute fliegen lassen wollte, ohne jemanden um Erlaubnis zu fragen oder einen Platz zu leihen — derselbe Impuls, der, als China von der ISS ausgeschlossen wurde, die Tiangong-Stationen hervorbrachte. Die Kapsel ist das Vehikel; die tiefere Fracht, die sie trägt, ist Autonomie."
+      "md": "Und es ist untrennbar von Unabhängigkeit. Shenzhou existiert, weil China seine eigenen Leute fliegen lassen wollte, ohne jemandes Erlaubnis zu fragen oder jemandes Platz zu leihen — derselbe Impuls, der, als China von der ISS ausgeschlossen wurde, die Tiangong-Stationen hervorbrachte. Die Kapsel ist das Fahrzeug; die tiefere Fracht, die sie trägt, ist Autonomie."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Das erste Vermächtnis von Shenzhou ist die schlichte Tatsache des dritten Platzes am Tisch. Bemannte Raumfahrt ist nicht länger eine im Kalten Krieg eingefrorene Fähigkeit zweier Mächte; sie ist eine lebendige, sich erweiternde Fähigkeit, und Chinas ununterbrochene Sicherheitsbilanz verleiht seinem Programm eine Glaubwürdigkeit, die Premieren allein niemals hätten bieten können."
+      "md": "Das erste Vermächtnis von Shenzhou ist die schlichte Tatsache des dritten Platzes am Tisch. Bemannte Raumfahrt ist keine im Kalten Krieg eingefrorene Fähigkeit zweier Mächte mehr; sie ist eine lebendige, sich erweiternde Fähigkeit, und Chinas ununterbrochene Sicherheitsbilanz verleiht seinem Programm eine Glaubwürdigkeit, die Premieren allein niemals hätten vermitteln können."
     },
     {
       "type": "prose",
-      "md": "Sein zweites Vermächtnis ist eine bewährte Leiter für alles, was folgt. Dieselbe Schritt-für-Schritt-Methode mit Beweisführung im Vorfeld, die Shenzhou vom unbemannten Test zur Raumstationsfähre gebracht hat, ist nun auf den Mond gerichtet — eine neue Raumkapsel für Tiefraumflüge, eine schwere Mondlandefähre und das erklärte Ziel, vor 2030 Astronauten zu landen. Shenzhou ist die Probe; der Mond ist die Aufführung."
+      "md": "Sein zweites Vermächtnis ist eine bewährte Leiter für alles, was danach kommt. Die gleiche schrittweise Methode des Erst-Beweisens, die Shenzhou vom unbemannten Test zur Stationsfähre getragen hat, richtet sich nun auf den Mond — eine neue Raumkapsel für den Tiefraumflug mit Besatzung, eine schwere Mondlandefähre und das erklärte Ziel, bis 2030 Astronauten zu landen. Shenzhou ist die Probe; der Mond ist die Aufführung."
     },
     {
       "type": "prose",
-      "md": "Und es ist ein stehendes Angebot. China hat begonnen, Astronauten aus anderen Nationen einzuladen, für Flüge an Bord seiner Station mit Shenzhou-gebrachten Besatzungen zu trainieren — und macht das Fahrzeug damit nicht nur zu einem nationalen Bus, sondern zu einer potenziellen Mitfahrgelegenheit für Länder, die keinen eigenen haben."
+      "md": "Und es ist ein stehendes Angebot. China hat begonnen, Astronauten aus anderen Nationen einzuladen, für seine Station zu trainieren und an Bord auf Shenzhou-gelieferten Besatzungen zu fliegen — wodurch das Fahrzeug nicht nur ein nationaler Bus wird, sondern eine potenzielle Mitfahrgelegenheit für Länder, die keinen eigenen haben."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lehre aus Shenzhou ist, dass Geduld in der bemannten Raumfahrt ein Sicherheitssystem darstellt. Indem China sich weigerte, eine Besatzung in ein unbewährtes Fahrzeug zu drängen, erreichte es jeden wichtigen Meilenstein, den seine Vorgänger erreichten, ohne deren Preis an Menschenleben zu zahlen. Jahrzehnte später zu sein kostete es nichts, was zählte; vorsichtig zu sein brachte ihm alles."
+      "md": "Die Lehre aus Shenzhou ist, dass in der bemannten Raumfahrt Geduld ein Sicherheitssystem darstellt. Indem China sich weigerte, eine Besatzung in ein unerprobtes Fahrzeug zu schicken, erreichte es jeden wichtigen Meilenstein seiner Vorgänger, ohne deren Preis in Menschenleben zu zahlen. Jahrzehnte zu spät zu sein kostete es nichts, was wirklich zählte; vorsichtig zu sein brachte ihm alles."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lektion handelt davon, was Unabhängigkeit wert ist. Ein geliehener Platz kann entzogen werden; eine Fähigkeit, die man selbst aufgebaut hat, nicht. Shenzhou ist das Fahrzeug, das garantiert, dass China niemals fragen muss — und diese Garantie, mehr als jeder einzelne Flug, ist das, was das Programm wirklich geschaffen wurde, um es zu liefern."
+      "md": "Die tiefere Lehre handelt davon, was Unabhängigkeit wert ist. Ein geliehener Platz kann entzogen werden; eine Fähigkeit, die man selbst aufgebaut hat, nicht. Shenzhou ist das Fahrzeug, das garantiert, dass China niemals fragen muss — und diese Garantie, mehr als jeder einzelne Flug, ist das, was das Programm wirklich zu liefern bestimmt war."
     }
   ]
 }

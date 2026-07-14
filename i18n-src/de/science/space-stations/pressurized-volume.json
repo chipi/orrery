@@ -1,17 +1,17 @@
 {
-  "title": "Druckvolumen",
-  "intro_sentence": "Das gesamte bewohnbare Innere einer Station — wie viel Platz die Crew tatsächlich zum Leben und Arbeiten hat.",
+  "title": "Habitables Volumen",
+  "intro_sentence": "Der gesamte bewohnbare Innenraum einer Station – wie viel Platz die Besatzung zum Leben und Arbeiten tatsächlich hat.",
   "narrative_101": [
-    "Jedes Stationsdatenblatt führt mit einer Zahl: Druckvolumen in Kubikmetern. Es ist das Innere der Module, in denen die Crew atmen kann, summiert über die ganze Station. Die ISS kommt auf etwa 388 m³ (ungefähr das Volumen einer Boeing-747-Passagierkabine). Tiangong kommt auf etwa 110 m³ — komfortabel für drei Crew, eng für sechs.",
-    "Druckvolumen ist von zwei Decken begrenzt: Durchmesser der Trägerraketen-Verkleidung (man kann ein Modul nur so dick versenden, wie die Rakete heben kann) und Druckhüllen-Masse (je dicker die Wand, desto schwerer der Start). Moderne Verbund-Aluminium-Hüllen treffen einen Sweet Spot bei 2-4 mm Dicke. Darüber hinaus zahlt man Masse für Sicherheitsmarge, die man nicht nutzt; dünner und ein Mikrometeoroid könnte einen durchschlagen.",
-    "Crews benötigen etwa 14 m³ pro Person an „Netto-Wohnvolumen\" (Volumen nach Racks und Schotten) für Missionen über einem Monat. ISS und Tiangong übertreffen dies beide um das 3-4-fache — was übertrieben klingt, bis man bedenkt, dass die Crew jeden Tag 16 Stunden wach ist, monatelang."
+    "Jedes Stationsblatt beginnt mit einer Schlüsselzahl: habitables Volumen in Kubikmetern – der Innenraum der Module, in dem die Besatzung atmen und sich bewegen kann, summiert über die gesamte Station. Das habitables Volumen der ISS beträgt etwa 388 m³ (ungefähr so groß wie ein großes Einfamilienhaus mit 3 Schlafzimmern). Tiangong kommt auf etwa 122 m³ – komfortabel für drei Besatzungsmitglieder, eng für sechs.",
+    "Das Druckvolumen wird durch zwei Grenzen begrenzt: den Durchmesser der Raketennase (man kann ein Modul nur so dick versenden, wie die Rakete es transportieren kann) und die Masse der Druckhülle (je dicker die Wand, desto schwerer der Start). Moderne Faserverbund-Aluminium-Rümpfe erreichen ein ideales Verhältnis bei 2–4 mm Wandstärke. Alles darüber hinaus zahlt man Masse für Sicherheitsspielraum, den man nicht nutzt; alles darunter und ein Mikrometeoriten-Treffer könnte dich durchschlagen.",
+    "Besatzungen benötigen für mehrtägige Missionen etwa 15–25 m³ netto habitables Volumen pro Person (die NASA-STD-3001-Richtlinien für netto-habitables-Volumen sind dauer-abhängig, nicht ein einzelner fester Wert). ISS und Tiangong überschreiten beide komfortabel das Minimum – was übertrieben klingt, bis man sich daran erinnert, dass die Besatzung 16 Stunden am Tag, jeden Tag, über Monate hinweg wach ist."
   ],
   "body_paragraphs": [
-    "Druckvolumen ist das luftgefüllte bewohnbare Innere einer Raumstation, gemessen in Kubikmetern. Es schließt strukturelle Racks, Schotte und Ausrüstungsvolumen aus — die normalerweise zitierte Zahl ist das Brutto-Innenvolumen, von dem 30-50 % von Hardware besetzt sind.",
-    "ISS: ~388 m³ über 16 Druckmodule (Sarja, Swesda, Unity, Destiny, Quest, Pirs/Nauka, Harmony, Columbus, Kibo + ELM, Tranquility, Cupola, Leonardo PMM, Bigelow BEAM, plus die russischen Rasswet und Poisk).",
-    "Tiangong: ~110 m³ über drei Module (Tianhe-Kern, Wentian- und Mengtian-Labore).",
-    "Mir: ~350 m³ auf dem Höhepunkt (1986–2001) — vergleichbar mit der ISS im bewohnbaren Volumen, aber aus dickerwandigen Modulen und einer älteren Generation von Lebenserhaltungssystemen gebaut.",
-    "Die Richtlinie 14 m³/Person (NASA-STD-3001 Volume 2) ist empirisch abgeleitet aus Studien zur Psychologie in eingegrenzten Umgebungen, die auf Skylab und das sowjetische Saljut-Programm zurückgehen. Darunter sinken Crew-Wohlbefinden und Missionsleistung messbar."
+    "Habitables Volumen ist der luft- und nutzungsfähige Innenraum einer Raumstation, gemessen in Kubikmetern. Es schließt Struktur-Racks, Schotten und Geräte-Volumen aus – die zitierte Zahl ist üblicherweise das Brutto-Innenvolumen, von dem 30–50 % von Hardware besetzt sind.",
+    "ISS: ~388 m³ habitable Fläche über 16 druckdichte Module (Zarya, Zvezda, Unity, Destiny, Quest, Pirs/Nauka, Harmony, Columbus, Kibo + ELM, Tranquility, Cupola, Leonardo PMM, Bigelow BEAM, plus die russischen Module Rassvet und Poisk). Das Gesamtdruckvolumen beträgt ~916 m³.",
+    "Tiangong: ~122 m³ habitable über drei Module (Tianhe-Kern, Wentian und Mengtian-Labore). Das Gesamtdruckvolumen beträgt ~340 m³.",
+    "Mir: ~350 m³ Gesamtdruckvolumen auf dem Höhepunkt (1986–2001) – in der Größenordnung vergleichbar mit Tiangongs Druckgehäuse, aber aus dickerwandigen Modulen und einer älteren Generation von Lebenserhaltungssystemen gebaut.",
+    "Die Richtlinien für netto-habitables-Volumen in NASA-STD-3001 Volume 2 sind empirisch aus Psychologie-Studien in geschlossenen Umgebungen abgeleitet, die bis zu Skylab und dem sowjetischen Salyut-Programm zurückreichen, und skalieren mit der Missionsdauer anstatt einen einzelnen Schwellenwert zu setzen. Unter dem Mindestrichtlinien-Bereich sinken das Wohlbefinden der Besatzung und die Missionsleistung messbar."
   ],
-  "diagram_caption": "Drei Stationsfußabdrücke maßstabsgetreu: Tiangong (~110 m³), Mir (~350 m³), ISS (~388 m³). Eine menschliche Silhouette als Größenreferenz."
+  "diagram_caption": "Drei Stations-Habitatsvolumina maßstabsgetreu: Tiangong (~122 m³), Mir (~350 m³ Gesamtdruckvolumen), ISS (~388 m³ habitable). Eine menschliche Silhouette als Referenzmaßstab."
 }

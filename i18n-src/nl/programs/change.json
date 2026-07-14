@@ -1,88 +1,88 @@
 {
   "name": "Chang'e — China's maanprogramma",
-  "tagline": "De methodische verovering van de maan: in een baan brengen, landen, rijden, terugkeren — inclusief de eerste landing ooit aan de achterkant, en de eerste monsters daarvan.",
+  "tagline": "De methodische verovering van de Maan: in een baan brengen, landen, rijden, terugkeren — inclusief de allereerste landing op de achterkant, en de eerste monsters daarvan.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Terwijl de Verenigde Staten vijftig jaar lang weg waren van de maan en Ruslands maanprogramma in winterslaap lag, bouwde China in stilte de meest aanhoudende en succesvolle campagne van robotische maanverkenning van de eenentwintigste eeuw. Vernoemd naar de Chinese maangodin, heeft het Chang'e-programma, stap voor weloverwogen stap, alles gedaan wat een robotisch programma kan doen op een andere wereld — eromheen cirkelen, erop landen, erover rijden, en er stukken van mee naar huis nemen — en vervolgens de dingen gedaan die nog nooit iemand had gedaan."
+      "md": "Terwijl de Verenigde Staten vijftig jaar weg waren van de Maan en het Russische maanprogramma stillag, bouwde China stilletjes de meest volgehouden en succesvolle campagne van robotische maanverkenning van de eenentwintigste eeuw op. Genoemd naar de Chinese godin van de Maan, heeft het Chang'e-programma, stap voor weloverwogen stap, alles gedaan wat een robotisch programma kan doen bij een andere wereld — eromheen draaien, erop landen, erover rijden en stukken ervan naar huis brengen — en vervolgens de dingen gedaan die niemand ooit had gedaan."
     },
     {
       "type": "prose",
-      "md": "Het kenmerk van het programma is dezelfde geduldige, incrementele methode die de Tiangong-stations bouwde: elke missie is een repetitie voor de volgende, elke capaciteit wordt bewezen voordat de volgende wordt geprobeerd. Eerst in een baan (Chang'e 1–2), dan zacht landen en rijden (Chang'e 3), dan de onmogelijke achterkant bereiken (Chang'e 4), dan monsters terugbrengen (Chang'e 5), dan monsters van de achterkant terugbrengen (Chang'e 6). Het is een ladder die sport voor sport wordt beklommen, en China heeft geen sport overgeslagen."
+      "md": "Het handelsmerk van het programma is dezelfde geduldige, incrementele methode die de Tiangong-stations bouwde: elke missie is een repetitie voor de volgende, elke capaciteit bewezen voordat de volgende wordt geprobeerd. Eerst in een baan (Chang'e 1–2), dan zacht landen en rijden (Chang'e 3), dan de onmogelijke achterkant bereiken (Chang'e 4), dan monsters terugbrengen (Chang'e 5), dan monsters van de achterkant terugbrengen (Chang'e 6). Het is een ladder die sport voor sport wordt beklommen, en China heeft geen sport overgeslagen."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "De doelen op korte termijn zijn wetenschappelijk en methodisch: de maan in kaart brengen, zacht landen, rovers inzetten en monsters terugbrengen — elke capaciteit op zijn beurt beheersen. De achterkant van de maan, die nooit naar de aarde is gericht en er dus niet rechtstreeks mee kan communiceren, was een specifiek en gedurfd doel: het bereiken ervan vereiste eerst het plaatsen van een relaisatelliet voorbij de maan, en geen enkele natie had daar ooit geland voordat China het in 2019 deed."
+      "md": "De kortetermijndoelen zijn wetenschappelijk en methodisch: de Maan in kaart brengen, zacht landen, rovers inzetten en monsters terugbrengen — elke capaciteit op zijn beurt onder de knie krijgen. De achterkant van de Maan, die nooit naar de Aarde is gericht en dus niet rechtstreeks ermee kan communiceren, was een specifiek en gedurfd doelwit: het bereiken ervan vereiste eerst het plaatsen van een relaissatelliet voorbij de Maan, en geen enkele natie was daar ooit geland voordat China het in 2019 deed."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "missions/change4/01"
       },
-      "caption": "Chang'e-4 aan de achterkant van de maan — het eerste ruimtevaartuig ooit dat landde op het halfrond dat nooit naar de aarde is gericht, alleen bereikt nadat China een relaisatelliet in positie had gebracht om zijn signalen naar huis te brengen.",
+      "caption": "Chang'e-4 op de achterkant van de Maan — het eerste ruimtevaartuig ooit dat landde op het halfrond dat nooit naar de Aarde is gericht, alleen bereikt nadat China een relaissatelliet in positie had gebracht om zijn signalen naar huis te brengen.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "De langetermijndoelen zijn veel groter: Chinese astronauten voor 2030 op de maan laten landen, en het International Lunar Research Station bouwen — een robotische en vervolgens bemande basis nabij de zuidpool van de maan, ontwikkeld met internationale partners als een expliciet alternatief voor de door Amerika geleide Artemis-coalitie. De robotische Chang'e-missies zijn de verkenning en het bewijs van capaciteit; de bemande basis is de bestemming waar het hele programma naartoe klimt."
+      "md": "De langetermijndoelen zijn veel groter: Chinese astronauten tegen 2030 op de Maan laten landen, en het International Lunar Research Station bouwen — een robotische en vervolgens bemande basis nabij de zuidpool van de Maan, ontwikkeld met internationale partners als een expliciet alternatief voor de door Amerika geleide Artemis-coalitie. De robotische Chang'e-missies zijn de verkenning en het bewijs van capaciteit; de bemande basis is de bestemming waar het hele programma naartoe klimt."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "De staat van dienst is een vrijwel ononderbroken reeks primeurs en successen. Chang'e 1 en 2 brachten de maan in kaart. Chang'e 3 (2013) maakte de eerste zachte landing sinds 1976, met de Yutu-rover aan boord. Chang'e 4 (2019) realiseerde de eerste landing in de geschiedenis aan de achterkant van de maan. Chang'e 5 (2020) bracht de eerste verse maanmonsters in 44 jaar terug. En Chang'e 6 (2024) bracht de eerste monsters ooit verzameld van de achterkant terug — materiaal dat nog nooit in mensenhanden was geweest. Geen enkel ander maanprogramma uit deze tijd komt in de buurt van deze reeks prestaties."
+      "md": "Het overzicht is een vrijwel ononderbroken reeks primeurs en successen. Chang'e 1 en 2 brachten de Maan in kaart. Chang'e 3 (2013) maakte de eerste zachte landing sinds 1976, met de Yutu-rover. Chang'e 4 (2019) behaalde de eerste landing in de geschiedenis op de achterkant van de Maan. Chang'e 5 (2020) bracht de eerste verse maanmonsters in 44 jaar terug. En Chang'e 6 (2024) bracht de eerste monsters ooit verzameld van de achterkant terug — materiaal dat nog nooit in mensenhanden was geweest. Geen enkel ander maanprogramma van dit tijdperk komt in de buurt van deze prestatiereeks."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "missions/change5/01"
       },
-      "caption": "Chang'e-5's monsterterugkeer — de eerste nieuwe maanstenen die naar de aarde werden gebracht sinds de Sovjet-Luna-missies van de jaren 1970, en het bewijs dat China de volledige heen-en-terugreis naar het maanoppervlak beheerste.",
+      "caption": "De monsterterugkeer van Chang'e-5 — de eerste nieuwe maanstenen naar de Aarde gebracht sinds de Sovjet-Luna-missies van de jaren 1970, en het bewijs dat China de volledige retour naar het maanoppervlak en terug onder de knie had.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "Alleen al de monsters hebben de maanwetenschap hervormd, door vulkanische activiteit te onthullen die veel recenter was dan modellen voorspelden, en door materiaal van de achterkant terug te brengen dat mogelijk eindelijk kan verklaren waarom de twee halfronden van de maan zo verschillend zijn. En het succes van het programma heeft van China de bepalende bedreiging gemaakt die het Amerikaanse maanprogramma nieuw leven inblies: Artemis bestaat deels omdat China aantoonde dat het naar de maan kon gaan en zou gaan — en blijven."
+      "md": "Alleen al de monsters hebben de maanwetenschap hervormd, door vulkanische activiteit te onthullen die veel recenter was dan modellen voorspelden en materiaal van de achterkant terug te brengen dat misschien eindelijk kan verklaren waarom de twee halfronden van de Maan zo verschillend zijn. En het succes van het programma heeft van China de aanjager gemaakt die het Amerikaanse maanprogramma nieuw leven inblies: Artemis bestaat deels omdat China aantoonde dat het naar de Maan kon en zou gaan — en blijven."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Het verhaal van Chang'e is een programma dat de maan behandelde als een reeks problemen die in volgorde moesten worden opgelost, en ze oploste. Er was geen haast om een vlag te planten, geen enkele dramatische sprint — alleen een gestage, gepubliceerde progressie door het in een baan brengen, landen, rijden en terugkeren, waarbij elke missie precies voortbouwde op de vorige. De landing aan de achterkant is de zuiverste uitdrukking van de methode: het bereiken ervan vereiste eerst het oplossen van het communicatieprobleem met een relaisatelliet, dus loste China dat eerst op en landde vervolgens. De durf is echt, maar wordt altijd verdiend door voorbereiding."
+      "md": "Het verhaal van Chang'e is een programma dat de Maan behandelde als een reeks problemen die op volgorde moesten worden opgelost, en dat loste ze op. Er was geen haast om een vlag te planten, geen enkele dramatische sprint — slechts een gestage, gepubliceerde voortgang door in een baan brengen, landen, rijden en terugkeren, waarbij elke missie precies voortbouwde op de vorige. De landing op de achterkant is de zuiverste uitdrukking van de methode: het bereiken ervan vereiste eerst het oplossen van het communicatieprobleem met een relaissatelliet, dus China loste dat eerst op, en landde toen. De durf is echt, maar wordt altijd verdiend door voorbereiding."
     },
     {
       "type": "prose",
-      "md": "Het is ook de robotische voorhoede van een grotere ambitie. De Chang'e-missies zijn geen doel op zichzelf; ze zijn de verkenning voor bemande landingen en een permanente basis. Elke zachte landing, elke monsterterugkeer, elke primeur aan de achterkant is een capaciteit die China nodig zal hebben om mensen op de maan te brengen en daar te houden — en het programma is expliciet gestructureerd als de robotische eerste helft van een plan waarvan de tweede helft menselijk is."
+      "md": "Het is ook de robotische voorhoede van een grotere ambitie. De Chang'e-missies zijn geen doel op zich; ze zijn de verkenning voor bemande landingen en een permanente basis. Elke zachte landing, elke monsterterugkeer, elke primeur op de achterkant is een capaciteit die China nodig zal hebben om mensen op de Maan te zetten en ze daar te houden — en het programma is expliciet gestructureerd als de robotische eerste helft van een plan waarvan de tweede helft menselijk is."
     },
     {
       "type": "prose",
-      "md": "En het is de ene helft van een nieuwe race. Voor het eerst sinds Apollo drijven twee mogendheden tegelijk hard richting de maan — China's Chang'e-en-bemande-programma en Amerika's Artemis — beide gericht op dezelfde rijke zuidpool aan hulpbronnen, beide bouwend aan coalities, beide op tijdlijnen die rond 2030 samenkomen. Chang'e's stille, methodische succes is de reden dat die race bestaat, en China's standvastigheid maakt het een geduchte concurrent erin."
+      "md": "En het is de ene helft van een nieuwe wedloop. Voor het eerst sinds Apollo drijven twee mogendheden tegelijk hard naar de Maan — China's Chang'e-en-bemande programma en Amerika's Artemis — beide gericht op dezelfde hulpbronrijke zuidpool, beide bouwen aan coalities, beide met tijdlijnen die rond 2030 samenkomen. Het stille, methodische succes van Chang'e is de reden dat die wedloop bestaat, en China's standvastigheid maakt het een geduchte concurrent erin."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Chang'e's eerste erfenis is wetenschappelijk: verse maanmonsters van zowel de voor- als achterkant na een halve eeuw hiaat, die de vulkanische geschiedenis van de maan al herschrijven en de eerste directe aanwijzingen bieden waarom de twee halfronden zo fundamenteel verschillen. Dit zijn enkele van de meest waardevolle planetaire monsters die in een generatie zijn teruggebracht."
+      "md": "De eerste erfenis van Chang'e is wetenschappelijk: verse maanmonsters van zowel de voor- als achterkant na een hiaat van een halve eeuw, die de vulkanische geschiedenis van de Maan al herschrijven en de eerste directe aanwijzingen bieden waarom de twee halfronden zo diepgaand verschillen. Dit zijn enkele van de meest waardevolle planetaire monsters die in een generatie zijn teruggebracht."
     },
     {
       "type": "prose",
-      "md": "De tweede erfenis is de eerste menselijke toegang tot de achterkant van de maan — een plaats die volkomen onbereikbaar was geweest, geopend door de eenvoudige, slimme stap van een relaisatelliet. Chang'e veranderde de verborgen helft van de maan van een abstractie in verkend terrein."
+      "md": "De tweede erfenis is de eerste menselijke toegang tot de achterkant van de Maan — een plek die volkomen onbereikbaar was geweest, geopend door de simpele, slimme stap van een relaissatelliet. Chang'e veranderde de verborgen helft van de Maan van een abstractie in verkend terrein."
     },
     {
       "type": "prose",
-      "md": "En de derde is de herleving van de maanrace zelf. China's methodische succes is een hoofdreden waarom de Verenigde Staten zich committeren aan Artemis en aan het terugbrengen van mensen naar de maan op een deadline. Chang'e verkende niet alleen de maan; het veranderde de strategische calculatie die bepaalt wie er nog meer gaat, en wanneer."
+      "md": "En de derde is het nieuw leven inblazen van de Maan-wedloop zelf. China's methodische succes is een hoofdreden waarom de Verenigde Staten zich commiteerden aan Artemis en aan het terugbrengen van mensen naar de Maan met een deadline. Chang'e verkende niet alleen de Maan; het veranderde de strategische afweging die bepaalt wie er nog meer gaat, en wanneer."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "De les van Chang'e is dat een geduldige, gepubliceerde ladder van capaciteiten een dramatische sprint kan overtreffen. China probeerde niet naar de moeilijkste doelen te springen; het klom ernaartoe, bewees eerst in een baan te kunnen komen voordat het landde, landde voordat het ging rijden, reed voordat het monsters terugbracht — en tegen de tijd dat het het werkelijk ongekende probeerde, de landing aan de achterkant en monsterterugkeer, had het elke voorwaarde verdiend. Methode, volgehouden over twee decennia, produceerde een reeks primeurs die geen rivaal evenaarde."
+      "md": "De les van Chang'e is dat een geduldige, gepubliceerde ladder van capaciteit een dramatische sprint kan overtreffen. China probeerde niet naar de moeilijkste doelen te springen; het klom ernaartoe, door in een baan brengen te bewijzen voor het landen, landen voor het rijden, rijden voor monsterterugkeer — en tegen de tijd dat het het werkelijk ongekende probeerde, de landing op de achterkant en monsterterugkeer, had het elke voorwaarde verdiend. Methode, volgehouden gedurende twee decennia, leverde een reeks primeurs op die geen rivaal evenaarde."
     },
     {
       "type": "prose",
-      "md": "De diepere les is dat stille competentie het veld hervormt. Chang'e deed geen grootse proclamaties en won geen race voor krantenkoppen, maar toch deed zijn gestage succes meer om de menselijke maanambities wereldwijd te herstarten dan welke toespraak ook — omdat een programma dat simpelweg blijft slagen, missie na missie, een strategisch feit wordt waar iedereen anders een antwoord op moet geven. Consistentie is uiteindelijk zijn eigen vorm van macht."
+      "md": "De diepere les is dat stille competentie het veld hervormt. Chang'e deed geen grote proclamaties en won geen race om krantenkoppen, maar toch deed het gestage succes meer om de menselijke maanambities wereldwijd opnieuw op te starten dan welke toespraak ook — omdat een programma dat simpelweg blijft slagen, missie na missie, een strategisch feit wordt waar iedereen anders op moet reageren. Consistentie is uiteindelijk zijn eigen vorm van macht."
     }
   ]
 }

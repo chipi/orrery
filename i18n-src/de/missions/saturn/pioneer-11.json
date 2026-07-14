@@ -1,26 +1,26 @@
 {
   "name": "Pioneer 11",
-  "type": "Vorbeiflug · Geflogen",
-  "first": "Erste Raumsonde am Saturn (01.09.1979); demonstrierte die Schwerkraftunterstützung, die Voyager 2 weiterführte",
-  "dispatch": "Pioneer 11 war die zweite Sonde, und sie flog weiter als ihr Zwilling. Nach ihrem eigenen Vorbeiflug am Jupiter nutzte sie die Schwerkraft des Planeten, um das Sonnensystem zu durchqueren und 1979 den Saturn zu erreichen — als erste Raumsonde überhaupt —, wobei sie gezielt durch die Ringebene flog, um zu testen, ob die Region sicher war. Sie fand die Lücke, durch die die Voyagers ein Jahr später fliegen würden. Ein Großteil dessen, was die Grand Tour möglich machte, war dies: eine kleine, günstige Sonde, die vorausgeschickt wurde, um die Risiken einzugehen und die Gefahren zu kartieren, damit die Flaggschiffe hinter ihr mit Zuversicht statt mit Furcht fliegen konnten.",
-  "description": "Zwilling von Pioneer 10, ein Jahr später gestartet. Pioneer 11 nutzte die Schwerkraft Jupiters, um seine Bahn zum Saturn zu lenken — der kanonische Nachweis der Schwerkraftunterstützung, der Technik, die später die Grand Tour der Voyager ermöglichte. Am Saturn entdeckte sie den F-Ring und den Mond Epimetheus. Trägt dieselbe Pioneer-Plakette wie ihre Zwillingssonde. Signal verloren am 30.09.1995 aus ~43 AE Sonnenabstand; die Sonde fliegt nun in Richtung Sternbild Adler.",
+  "type": "VORBEIFLUG · DURCHGEFÜHRT",
+  "first": "Erstes Raumschiff, das Saturn vorbeigeflogen ist (1979-09-01); demonstrierte das Swing-by-Manöver, das Voyager 2 weiter brachte",
+  "dispatch": "Pioneer 11 war der zweite Kundschafter, und er flog weiter als sein Zwilling. Nach seinem eigenen Vorbeiflug an Jupiter nutzte er die Schwerkraft des Planeten, um das Sonnensystem zu durchqueren und 1979 den Saturn zu erreichen — das erste Raumschiff überhaupt, das dies tat — und flog absichtlich durch die Ringebene, um zu prüfen, ob die Region sicher war. Es fand die Lücke, die die Voyager-Sonden ein Jahr später durchfliegen würden. Vieles, das die Grand Tour möglich machte, war dies: eine kleine, preisgünstige Sonde, die vorausgeschickt wurde, um die Risiken einzugehen und die Gefahren zu kartografieren, damit die Flaggschiffe dahinter mit Zuversicht statt mit Furcht fliegen konnten.",
+  "description": "Zwilling von Pioneer 10, ein Jahr später gestartet. Pioneer 11 nutzte Jupiters Schwerkraft, um seine Flugbahn zum Saturn umzulenken — der kanonische Beweis für Swing-by-Propulsion, die Technik, die später die Voyager Grand Tour ermöglichte. Beim Saturn entdeckte es den F-Ring und einen kleinen inneren Mond, der sich später als das koorbital umlaufende Paar Janus/Epimetheus entpuppte. Trägt die gleiche Pioneer-Plakette wie sein Zwilling. Signalverlust am 1995-09-30 aus einer heliozentrischen Entfernung von ~43 AU; das Raumschiff fliegt nun auf den Sternbilds Aquila zu.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "Atlas-Centaur von Cape Canaveral auf einer Jupiter-Saturn-Schwerkraftunterstützungsbahn.",
+      "note": "Atlas-Centaur von Cape Canaveral auf einer Jupiter-Saturn-Swing-by-Flugbahn.",
       "type": "nominal"
     },
     {
       "met": 606,
       "label": "JUPITER-VORBEIFLUG",
-      "note": "Nutzte Jupiter-Unterstützung, um auf einen Saturn-Pfad einzuschwenken.",
+      "note": "Nutzte das Jupiter-Manöver, um die Flugbahn zum Saturn umzulenken.",
       "type": "nominal"
     },
     {
       "met": 2339,
-      "label": "SATURN NÄCHSTE ANNÄHERUNG",
-      "note": "Erste Nahaufnahmen des Planeten; entdeckte den F-Ring und Epimetheus.",
+      "label": "SATURN-GRÖSSTE ANNÄHERUNG",
+      "note": "Erste Bilder des Planeten aus der Nähe; entdeckte den F-Ring und einen kleinen inneren Mond (später aufgelöst in das koorbital umlaufende Paar Janus/Epimetheus).",
       "type": "nominal"
     }
   ]

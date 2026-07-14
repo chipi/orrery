@@ -1,43 +1,43 @@
 {
   "name": "Hayabusa2",
-  "type": "RETOUR D'ÉCHANTILLONS + ATTERRISSEURS · ACTIVE (étendue)",
-  "first": "Deuxième retour d'échantillons d'astéroïde (Ryugu, 2020) ; premier cratère artificiel sur un astéroïde ; premier matériau sous-surface d'astéroïde rapporté sur Terre",
-  "description": "Suite par la JAXA de l'Hayabusa originale. Lancée le 3/12/2014, Hayabusa2 a atteint l'astéroïde géocroiseur (162173) Ryugu le 27/6/2018. Les opérations de surface 2018-2019 ont produit la première étude rapprochée soutenue d'un astéroïde de type C en tas de gravats. La capsule de retour d'échantillons a atterri au-dessus de Woomera, Australie le 5/12/2020 livrant 5,4 g de matériau intact de Ryugu — le premier échantillon d'astéroïde avec stratigraphie sous-surface. Mission étendue : survol de (98943) 2001 CC21 en juillet 2026 ; rendez-vous avec le rapide (1998 KY26) visé pour juillet 2031.",
+  "type": "RETOUR D'ÉCHANTILLON + ATTERRISSEURS · ACTIF (mission étendue)",
+  "first": "Deuxième retour d'échantillon d'astéroïde (Ryugu, 2020) ; premier cratère d'impact artificiel sur un astéroïde ; premier matériau du sous-sol astéroïdal ramené sur Terre",
+  "description": "Suite de JAXA à la mission Hayabusa originale. Lancée 2014-12-03, Hayabusa2 a atteint l'astéroïde de type carboné proche de la Terre (162173) Ryugu le 2018-06-27 après une croisière de 3,5 ans à propulsion ionique basse et une assistance gravitationnelle terrestre. Opérations de surface 2018–2019 : deux collectes d'échantillons en « touch-and-go » encadrant une expérience de Projectile d'Impact Transportable (2019-04-05) qui a creusé un cratère de 14 m pour le deuxième échantillon. Trois rovers MINERVA-II ont fourni les premières images de surface d'un astéroïde ; l'atterrisseur MASCOT du DLR/CNES a fonctionné pendant 17 heures. La capsule de retour d'échantillon a réintégré l'atmosphère au-dessus de Woomera le 2020-12-05 (UTC ; récupérée 2020-12-06 heure locale/JST) et a livré 5,4 g de matériau pristine de Ryugu — le premier échantillon d'astéroïde avec stratigraphie du sous-sol. Mission étendue : survol de 98943 Torifune (2001 CC21) prévu en 2026-07 ; rendez-vous avec l'astéroïde en rotation rapide (1998 KY26) ciblé pour 2031-07.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Le H-IIA 202 de Tanegashima entame la croisière de 3,5 ans vers l'astéroïde Ryugu.",
+      "note": "H-IIA 202 depuis Tanegashima débute la croisière de 3,5 ans vers l'astéroïde Ryugu.",
       "type": "nominal"
     },
     {
       "met": 366,
       "label": "SURVOL TERRESTRE",
-      "note": "L'assistance gravitationnelle terrestre phase l'orbite de rendez-vous.",
+      "note": "L'assistance gravitationnelle terrestre ajuste l'orbite de rendez-vous.",
       "type": "nominal"
     },
     {
       "met": 1302,
-      "label": "ARRIVÉE RYUGU",
-      "note": "Vol stationnaire à 20 km — début de 1,5 an d'opérations rapprochées incluant la collecte d'échantillons.",
+      "label": "ARRIVÉE À RYUGU",
+      "note": "Stationnaire à 20 km — début des opérations de proximité d'1,5 an incluant la collecte d'échantillons.",
       "type": "nominal"
     },
     {
       "met": 1880,
       "label": "RETOUR SUR TERRE",
-      "note": "La capsule d'échantillons se pose à Woomera, Australie avec 5,4 g de matériau de Ryugu.",
+      "note": "La capsule d'échantillon se pose à Woomera, Australie, avec 5,4 g de matériau de Ryugu.",
       "type": "nominal"
     },
     {
       "met": 4250,
-      "label": "SURVOL 2001 CC21",
-      "note": "Survol de mission étendue de l'astéroïde (98943) 2001 CC21.",
+      "label": "SURVOL DE TORIFUNE",
+      "note": "Survol de mission étendue de 98943 Torifune (2001 CC21).",
       "type": "info"
     },
     {
       "met": 6092,
-      "label": "RENDEZ-VOUS 1998 KY26",
-      "note": "Rendez-vous prévu avec l'astéroïde à rotation rapide (1998 KY26).",
+      "label": "RENDEZ-VOUS AVEC 1998 KY26",
+      "note": "Rendez-vous prévu avec l'astéroïde en rotation rapide (1998 KY26).",
       "type": "info"
     }
   ]

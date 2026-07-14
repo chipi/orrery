@@ -2,7 +2,7 @@
   "name": "Rosetta",
   "type": "ORBITER + LANDER · FLOWN",
   "first": "First spacecraft to orbit a comet — and to land on one (Philae, 2014-11-12)",
-  "description": "ESA's flagship comet-rendezvous mission. After a 10-year cruise that wove three Earth assists, a Mars assist, two asteroid flybys, and 957 days of deep-space hibernation, Rosetta caught up with comet 67P/Churyumov–Gerasimenko in August 2014 and orbited it for over two years through perihelion and out the back side. The Philae lander reached 67P's surface 2014-11-12 — the first soft landing on a comet — and returned ~60 hours of science after a harpoon failure left it in the shadow of a cliff. Rosetta itself ended the mission with a controlled descent to 67P's surface on 2016-09-30. Key results: organic molecules and glycine in the coma; a deuterium-to-hydrogen ratio that ruled Jupiter-family comets out as Earth's primary water source; the first detailed maps of comet outgassing geometry.",
+  "description": "ESA's flagship comet-rendezvous mission. After a 10-year cruise that wove three Earth assists, a Mars assist, two asteroid flybys, and 957 days of deep-space hibernation, Rosetta caught up with comet 67P/Churyumov–Gerasimenko in August 2014 and orbited it for over two years through perihelion and out the back side. The Philae lander reached 67P's surface 2014-11-12 — the first soft landing on a comet — and returned ~64 hours of science after a harpoon failure left it in the shadow of a cliff. Rosetta itself ended the mission with a controlled descent to 67P's surface on 2016-09-30. Key results: organic molecules and glycine in the coma; 67P's initially-measured D/H ratio (≈3× terrestrial) argued against Jupiter-family comets as Earth's water source — a result a 2024 re-analysis has since called into question after finding a measurement error; the first detailed maps of comet outgassing geometry.",
   "events": [
     {
       "met": 0,
@@ -31,7 +31,7 @@
     {
       "met": 2320,
       "label": "ASTEROID 21 LUTETIA",
-      "note": "100 km flyby of one of the largest main-belt asteroids ever observed close-up.",
+      "note": "~120 km flyby of one of the largest main-belt asteroids ever observed close-up.",
       "type": "nominal"
     },
     {

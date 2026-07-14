@@ -1,9 +1,9 @@
 {
-  "name": "Neugier",
+  "name": "Curiosity",
   "type": "ROVER · AKTIV",
-  "first": "Erster atomgetriebener Marsrover; erste Landung eines Luftkrans",
-  "dispatch": "Curiosity ist ein nuklear betriebenes Labor von der Größe eines Kleinwagens, und es herunterzubringen war der schwierige Teil. Zu schwer für Airbags, wurde es 2012 von einem raketengetriebenen Sky Crane auf den Mars herabgelassen — in einer Abfolge so riskant, dass ihre Planer sie sieben Minuten des Schreckens nannten — und es funktionierte auf Anhieb. Seitdem hat es sich bohrend durch den Gale Crater gearbeitet und die Frage beantwortet, die zu stellen es ausgesandt wurde: Der Krater beherbergte einst einen See mit einer Chemie, die ein Lebewesen hätte nutzen können. Der Mars war bewohnbar gewesen. Curiosity fährt noch immer und erklimmt einen Berg aus geschichtetem Gestein, der sich liest wie das eigene Geschichtsbuch des Planeten.",
-  "description": "Die Flaggschiff-Mission, die die moderne Mars-Erkundung definierte. Curiosity hat die Größe eines Autos, wird von Plutonium angetrieben und ist seit seiner Landung im Gale-Krater im Jahr 2012 über 32 km den Mount Sharp hinaufgefahren. Seine Instrumente bestätigten, dass der Mars einst bewohnbare Bedingungen hatte – fließendes Wasser, komplexe organische Stoffe, die Chemie, die das Leben braucht. Die EDL-Sequenz „Sieben Minuten des Terrors“, die damit endet, dass ein Himmelskran den Rover an Kabeln herablässt, ist jetzt der Standard von NASA für die Lieferung großer Nutzlasten zur Marsoberfläche.",
+  "first": "Erster kernkraftbetriebener Mars-Rover; erste Sky-Crane-Landung",
+  "dispatch": "Curiosity ist ein kernkraftbetriebenes Laboratorium in der Größe eines Kleinwagens, und es auf dem Mars zu landen war die schwierigste Aufgabe. Zu schwer für Airbags, wurde es 2012 von einem raketenbetriebenen Sky Crane in einer Sequenz auf den Mars herabgelassen, die so riskant war, dass ihre Planer sie „sieben Minuten des Terrors\" nannten — und es funktionierte beim ersten Versuch. Seitdem hat es sich über den Gale-Krater gebohrt und die Frage beantwortet, für die es entsandt wurde: Der Krater beherbergte einst einen See mit einer Chemie, die eine lebende Organismus hätte nutzen können. Der Mars war bewohnbar. Curiosity fährt immer noch und erklimmt einen Berg aus geschichtetem Stein, der wie das eigene Geschichtsbuch des Planeten zu lesen ist.",
+  "description": "Die Flaggschiff-Mission, die die moderne Marsforschung definierte. Curiosity ist klein-wagengroß, plutoniumbetrieben und hat seit der Landung 2012 über 36 km über den Gale-Krater zurückgelegt. Seine Instrumente bestätigten, dass der Mars einst bewohnbare Bedingungen hatte — fließendes Wasser, komplexe organische Stoffe, die Chemie, die Leben benötigen würde. Die „sieben Minuten des Terrors\" EDL-Sequenz, endend mit einem Sky Crane, der den Rover an Seilen herabsenkt, ist nun NASAs Standard für die Lieferung großer Nutzlasten zur Mars-Oberfläche.",
   "events": [
     {
       "met": 0,
@@ -13,38 +13,38 @@
     },
     {
       "met": 1,
-      "label": "TMI-VERBRENNUNG",
-      "note": "Trans-Mars-Injektion (3,61 km/s ∆v) schickt MSL auf eine heliozentrische Flugbahn zum Mars.",
+      "label": "TMI-BURN",
+      "note": "Trans-Mars-Injektion (3,61 km/s ∆v) schickt MSL auf eine heliozentrische Mars-Bahn.",
       "type": "nominal"
     },
     {
       "met": 16,
       "label": "TCM-1",
-      "note": "Erste Korrektur in der Mitte des Kurses.",
+      "note": "Erste Mittkurskorrektur.",
       "type": "nominal"
     },
     {
       "met": 119,
       "label": "TCM-3",
-      "note": "Endgültige Pre-EDL-Korrektur; Die Flugbahn zielt auf die Landeellipse des Gale-Kraters.",
+      "note": "Letzte Korrektur vor EDL; Flugbahn zielt auf die Landungsellipse des Gale-Kraters.",
       "type": "nominal"
     },
     {
       "met": 254,
-      "label": "EDL – SIEBEN MINUTEN TERROR",
-      "note": "Atmosphärischer Eintritt, Überschallfallschirm, Himmelskran-Retroraketen, an Kabeln herabgelassener Rover.",
+      "label": "EDL — SIEBEN MINUTEN DES TERRORS",
+      "note": "Atmosphärischer Eintritt, Überschallschirm, Sky-Crane-Retrorakeiten, Rover an Seilen herabgelassen.",
       "type": "nominal"
     },
     {
       "met": 254.005,
       "label": "LANDUNG",
-      "note": "Curiosity erreicht Aeolis Palus, Gale-Krater, 06.08.2012 05:17:57 UTC.",
+      "note": "Curiosity kommt in Aeolis Palus, Gale-Krater an, 2012-08-06 05:17:57 UTC.",
       "type": "nominal"
     },
     {
       "met": 254.01,
       "label": "ERSTE BILDER",
-      "note": "Hazcam liefert erstes Bild der Oberfläche mit niedriger Auflösung.",
+      "note": "Hazcam liefert erstes Low-Resolution-Bild der Oberfläche.",
       "type": "info"
     }
   ]

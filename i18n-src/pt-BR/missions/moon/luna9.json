@@ -1,31 +1,31 @@
 {
-  "name": "Lua 9",
-  "type": "LANDER NÃO TRAVEADO · VOADO",
+  "name": "Luna 9",
+  "type": "SONDA NÃO TRIPULADA · OPERACIONAL",
   "first": "Primeiro pouso suave na Lua; primeiras fotografias da superfície lunar",
-  "description": "Após 11 fracassos soviéticos e 5 missões de Rangers americanas projetadas apenas para cair, a Luna 9 se tornou a primeira espaçonave a pousar suavemente em outro mundo. Nove imagens panorâmicas recolhidas ao longo de 8 minutos resolveram um longo debate científico: a superfície da Lua era sólida, e não um mar de poeira suficientemente profundo para engolir um módulo de aterragem. A missão durou 3 dias antes do esgotamento da bateria. Em poucos meses, todas as missões com destino à Lua usaram o pouso suave como base.",
+  "description": "Após 11 fracassos soviéticos e 5 missões Ranger americanas projetadas apenas para se chocar, a Luna 9 se tornou a primeira sonda a pousar suavemente em outro mundo. Nove imagens — incluindo cinco panoramas — foram retornadas em três sessões ao longo de três dias e encerraram um longo debate científico: a superfície da Lua era sólida, não um mar de poeira profundo o suficiente para engolir uma sonda. A missão durou 3 dias antes do esgotamento da bateria. Nos meses seguintes, todas as missões posteriores em direção à Lua adotaram o pouso suave como padrão.",
   "events": [
     {
       "met": 0,
-      "label": "LANÇAR",
-      "note": "Molniya-M de Baikonur 31/01/1966.",
+      "label": "LANÇAMENTO",
+      "note": "Molniya-M de Baikonur em 1966-01-31.",
       "type": "nominal"
     },
     {
       "met": 3,
-      "label": "ATERRAGEM",
-      "note": "Pouso suave no Oceanus Procellarum 03/02/1966 18:45 UTC. Primeiro pouso suave em outro mundo.",
+      "label": "TOQUE DE POUSO",
+      "note": "Pouso suave em Oceanus Procellarum em 1966-02-03 18:45 UTC. Primeiro pouso suave em outro mundo.",
       "type": "nominal"
     },
     {
       "met": 3.01,
       "label": "PRIMEIRAS IMAGENS",
-      "note": "Nove imagens panorâmicas retornaram em três sessões de transmissão.",
+      "note": "Nove imagens incluindo cinco panoramas, retornadas em três sessões de transmissão ao longo de três dias.",
       "type": "info"
     },
     {
       "met": 6,
       "label": "PERDA DE SINAL",
-      "note": "Bateria descarregada; transmissão final 06/02/1966.",
+      "note": "Bateria esgotada; transmissão final em 1966-02-06.",
       "type": "warning"
     }
   ]

@@ -1,32 +1,32 @@
 {
   "name": "Skylab 4",
-  "dispatch": "Skylab 4 vestigde een uithoudingsrecord dat jarenlang stand hield — 84 dagen in de ruimte — en werd een mijlpaal in iets minder verwachts: wie een missie mag leiden. Gerald Carr's bemanning arriveerde met een veeleisend schema dat vanaf de grond werd doorgeseind, raakte achterop, en verzette zich uiteindelijk, door een ongeplande rustdag te nemen en missiecontrole te dwingen een werkdruk te onderhandelen die mensen daadwerkelijk konden volhouden. Ze maakten ook de beste waarnemingen uit dat tijdperk van Komeet Kohoutek. De vlucht wordt zowel herinnerd om het record als om het feit dat, voor het eerst duidelijk, werd gesteld dat de mensen in een baan om de aarde — niet alleen de planners beneden — inspraak hebben in hoe een lange missie wordt uitgevoerd.",
-  "type": "BEMANDE STATIONSBEMANNING · GEVLOGEN",
-  "first": "Langste Skylab-verblijf — 84 dagen, observatie van komeet Kohoutek, rustdaggeschil van de 'Skylab-staking'",
-  "description": "Carr, Gibson en Pogue — de laatste en langste Skylab-bemanning, 84 dagen 1 uur, allen rookies. Gelanceerd op 1973-11-16 om 14:01 UTC met een Saturn IB (SA-208). Uitgebreide aardobservaties en zonneobservaties, waaronder een volledige campagne rond komeet Kohoutek in december–januari. De missie wordt vooral herinnerd om de onofficiële 'Skylab-staking' op dag 45, toen de bemanning de radio's een halve dag uitschakelde nadat onophoudelijke eisen van vluchtleiders elke wakkere minuut hadden volgepland — het geschil leidde tot permanente NASA-hervormingen in de planning van bemanningstijdlijnen voor langdurige missies. Ze plonsten neer op 1974-02-08 om 15:17 UTC, de laatste Amerikaanse bemande waterlanding tot SpaceX Crew Dragon in 2020. CSM-118 staat tentoongesteld in het National Museum of the US Air Force, Dayton OH.",
+  "type": "BEMAND STATION BEMANNING · GEVLOGEN",
+  "first": "Langste Skylab-missie — 84 dagen, waarneming Komeet Kohoutek, omstreden \"Skylab-staking\" rustdag",
+  "description": "Carr, Gibson en Pogue — de laatste en langste Skylab-bemanning, 84 dagen 1 uur, allemaal nieuwkomers. Gelanceerd 1973-11-16 14:01 UTC op Saturn IB (SA-208). Uitgebreide aardobservatie en zonnewaarneming, inclusief een volledige Komeet Kohoutek-campagne over december–januari. De missie staat vooral bekend om wat NASA later een 'Skylab-muiterij' of 'staking' noemde — een omstreden beschrijving van een rustdagstop rond dag 42 na onophoudelijke eisen van grondcontrole die elk wakend moment comprimeerde; NASA en de bemanning hebben verklaard dat geen georganiseerde staking plaatsvond, maar de onderliggende tijdlijnoverbelasting was reëel en leidde tot permanente NASA-hervormingen van bemanning-tijdlijnplanning voor langdurige missies. Geland 1974-02-08 15:17 UTC — de laatste Skylab-waterlandings. CSM-118 tentoongesteld in het National Museum of the US Air Force, Dayton OH.",
+  "dispatch": "Skylab 4 stelde een uithoudings record in dat jaren standhield — 84 dagen in de lucht — en werd een mijlpaal in iets onverwachts: wie bepaalt hoe een missie wordt uitgevoerd. De bemanning van Gerald Carr arriveerde met een verpletterende schema dat vanuit de grond werd opgestuurd, liep achter, en dwong uiteindelijk terug, nam een niet-geplande rustperiode — NASA en de bemanning zelf betwistten later hoe opzettelijk de stop-working was — en dwongen missionsbeheer om onderhandelen over een werkbelasting die mensen daadwerkelijk vol kunnen houden. Ze legden ook de beste waarnemingen van die era van Komeet Kohoutek vast. De vlucht wordt herinnerd zowel voor het record als voor het duidelijk voor het eerst stellen dat de mensen in orbit — niet alleen de planners hieronder — meespreken in hoe een lange missie wordt uitgevoerd.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn IB SA-208 from LC-39B 1973-11-16 14:01 UTC.",
+      "label": "LANCERING",
+      "note": "Saturn IB SA-208 van LC-39B 1973-11-16 14:01 UTC.",
       "type": "nominal"
     },
     {
       "met": 30,
-      "label": "KOHOUTEK CAMPAIGN",
-      "note": "Comprehensive ATM + window observations of Comet Kohoutek.",
+      "label": "KOHOUTEK-CAMPAGNE",
+      "note": "Uitgebreide ATM + raamposteremingen van Komeet Kohoutek.",
       "type": "info"
     },
     {
-      "met": 45,
-      "label": "TIMELINE RESET",
-      "note": "Crew/ground dispute over timeline density led to permanent NASA reforms.",
+      "met": 42,
+      "label": "TIJDLIJN RESET",
+      "note": "Omstreden rustdag-stop (bemanning + NASA zeiden later dat geen formele staking plaatsvond); de echte tijdlijnoverbelasting leidde tot permanente NASA-hervormingen.",
       "type": "warning"
     },
     {
       "met": 84.05,
-      "label": "SPLASHDOWN",
-      "note": "CSM-118 splashed down in Pacific 1974-02-08 15:17 UTC — last US crewed water landing until Crew Dragon.",
+      "label": "WATERLANDING",
+      "note": "CSM-118 waterlandde in Stille Oceaan 1974-02-08 15:17 UTC — laatste Skylab-waterlanding.",
       "type": "nominal"
     }
   ]

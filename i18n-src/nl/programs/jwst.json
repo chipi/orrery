@@ -1,92 +1,92 @@
 {
   "name": "James Webb Space Telescope",
-  "tagline": "De opvolger van Hubble — een gouden spiegel zo groot als een huis, opgevouwen in een raket, ontvouwen op anderhalve miljoen kilometer afstand om het eerste licht in het heelal te zien.",
+  "tagline": "De opvolger van Hubble — een gouden spiegel zo groot als een huis, opgevouwen in een raket, ontvouwd op anderhalve miljoen kilometer afstand om het eerste licht in het universum te zien.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Hubble toonde ons het heelal in zichtbaar licht. Maar de meest verre objecten — de allereerste sterrenstelsels, die enkele honderden miljoenen jaren na de oerknal ontstonden — zijn voor Hubble onzichtbaar, omdat de expansie van het heelal hun licht volledig uit het zichtbare spectrum heeft gerekt en in het infrarood heeft geduwd. Om de dageraad van de kosmische tijd te zien, heb je een infraroodtelescoop nodig, en wel een grote, die extreem koud wordt gehouden en ver van de warmte van de Aarde is geplaatst. De James Webb Space Telescope is die machine, en de bouw ervan kostte vijfentwintig jaar, tien miljard dollar, en een reeks van technische durf met vrijwel geen ruimte voor fouten."
+      "md": "Hubble toonde ons het universum in zichtbaar licht. Maar de meest verre objecten — de allereerste sterrenstelsels, die enkele honderden miljoenen jaren na de oerknal ontstonden — zijn onzichtbaar voor Hubble, omdat de expansie van het universum hun licht volledig uit het zichtbare spectrum heeft uitgerekt en in het infrarood heeft gebracht. Om de dageraad van de kosmische tijd te zien, heb je een infraroodtelescoop nodig, en een grote, die extreem koud wordt gehouden, ver van de warmte van de aarde. De James Webb Space Telescope is die machine, en de bouw ervan kostte vijfentwintig jaar, tien miljard dollar, en een reeks technische durf met bijna geen ruimte voor fouten."
     },
     {
       "type": "prose",
-      "md": "JWST is de grootste en meest complexe telescoop die ooit is gelanceerd, en in tegenstelling tot Hubble is het echt internationaal — een samenwerking tussen NASA, het Europees Ruimteagentschap en het Canadees Ruimteagentschap, gelanceerd met een Europese raket. Het is ook het meest riskante: te groot om volledig gemonteerd in een raket te passen, moest het als origami worden opgevouwen, ingepakt gelanceerd, en zichzelf vervolgens perfect in de diepe ruimte ontvouwen, via honderden stappen die niet allemaal samen konden worden getest en nooit gerepareerd konden worden. Dat het überhaupt werkte is een van de grote technische prestaties van dit tijdperk."
+      "md": "JWST is de grootste en meest complexe telescoop die ooit is gelanceerd, en in tegenstelling tot Hubble is deze echt internationaal — een partnerschap van NASA, de European Space Agency en de Canadian Space Agency, gelanceerd met een Europese raket. Het is ook de meest riskante: te groot om volledig gemonteerd in een raket te passen, moest het als origami worden opgevouwen, ingepakt gelanceerd, en zichzelf vervolgens perfect in de diepe ruimte ontvouwen, door middel van honderden stappen die niet allemaal samen konden worden getest en nooit gerepareerd konden worden. Dat het überhaupt werkte is een van de grote technische prestaties van dit tijdperk."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Het hoofddoel is de eerste sterrenstelsels te zien — licht van de vroegste structuren in het heelal, diep in het infrarood verschoven over meer dan 13 miljard jaar kosmische expansie. Webb is gebouwd om verder terug in de tijd te kijken dan enig instrument ervoor, naar het tijdperk waarin de eerste sterren en sterrenstelsels zich ontstaken, en om te zien hoe het heelal zichzelf samenstelde uit de duisternis die volgde op de oerknal."
+      "md": "Het hoofddoel is om de eerste sterrenstelsels te zien — licht van de vroegste structuren in het universum, diep in het infrarood verschoven over meer dan 13 miljard jaar van kosmische expansie. Webb is gebouwd om verder terug in de tijd te kijken dan welk instrument dan ook ervoor, naar het tijdperk waarin de eerste sterren en sterrenstelsels zich aanschakelden, en om te observeren hoe het universum zichzelf heeft geassembleerd uit de duisternis die volgde op de oerknal."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/jwst/01"
       },
-      "caption": "JWST — een gesegmenteerde, met goud bedekte spiegel van 6,5 meter boven een vijflaags zonschild zo groot als een tennisbaan. Het schild houdt de telescoop kouder dan -220°C zodat zijn eigen warmte zijn infraroodogen niet kan verblinden.",
+      "caption": "JWST — een 6,5 meter gesegmenteerde, goudgecoate spiegel boven een vijflaags zonscherm ter grootte van een tennisbaan. Het scherm houdt de telescoop kouder dan -220°C zodat zijn eigen warmte zijn infraroodogen niet kan verblinden.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Het tweede doel is de atmosferen van andere werelden te lezen. Wanneer een exoplaneet voor zijn ster langs gaat, filtert een beetje sterrenlicht door zijn atmosfeer, en Webb's infraroodgevoeligheid kan dat licht ontleden om de aanwezige gassen te detecteren — water, koolstofdioxide, methaan. Het is het eerste instrument dat in staat is de atmosferen van kleine, potentieel bewoonbare planeten echt te karakteriseren, waardoor de zoektocht naar leven verandert van het tellen van werelden naar het ruiken aan hun lucht."
+      "md": "Het tweede doel is het lezen van de atmosferen van andere werelden. Wanneer een exoplaneet voor zijn ster langs gaat, filtert een beetje sterrenlicht door zijn atmosfeer, en Webb's infraroodgevoeligheid kan dat licht ontleden om de aanwezige gassen te detecteren — water, koolstofdioxide, methaan. Het is het eerste instrument dat in staat is om de atmosferen van kleine, potentieel bewoonbare planeten echt te karakteriseren, waardoor de zoektocht naar leven verandert van het tellen van werelden naar het ruiken aan hun lucht."
     },
     {
       "type": "prose",
-      "md": "Onder beide doelen ligt een reeks brute technische eisen: een spiegel die te groot is om ontvouwen te lanceren, een zonschild om het hele observatorium kouder te houden dan bijna overal in het zonnestelsel, en een thuis op anderhalve miljoen kilometer van de Aarde op het L2-punt — ver genoeg om koud en stabiel te blijven, en veel te ver voor een bezoek van een astronaut. Alles moest de eerste keer werken, alleen, in het donker."
+      "md": "Onder beide doelen ligt een reeks meedogenloze technische eisen: een spiegel te groot om ontvouwen te lanceren, een zonscherm om het hele observatorium kouder te houden dan bijna overal in het zonnestelsel, en een thuisbasis anderhalve miljoen kilometer van de aarde bij het L2-punt — ver genoeg om koud en stabiel te blijven, en veel te ver voor enige astronaut om ooit te bezoeken. Alles moest de eerste keer werken, alleen, in het donker."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Na een ontwikkeling die zo problematisch was dat het in 2011 bijna door het Congres werd geannuleerd, lanceerde JWST op eerste kerstdag 2021 met een Ariane 5 — en voerde vervolgens het moeilijkste deel foutloos uit. In twee weken tijd voerde het ongeveer 344 'single-point failures' uit: ontvouwingen waarbij elk vastlopen de missie zou verlammen, zonder de mogelijkheid van een reparatieploeg op anderhalve miljoen kilometer afstand. Het zonschild vouwde zich open, de spiegelsegmenten klikten op hun plaats, de telescoop koelde af — en elke enkele stap werkte. De lancering zelf was zo precies dat de bespaarde brandstof de verwachte levensduur van de telescoop ongeveer verdubbelde."
+      "md": "Na een ontwikkeling die zo problematisch was dat het bijna door het Congres werd geannuleerd in 2011, lanceerde JWST op eerste kerstdag 2021 met een Ariane 5 — en voerde vervolgens het moeilijkste deel foutloos uit. Gedurende twee weken werkte het zich door de 344 enkelvoudige faalpunten die het met zich meedroeg — waarvan ongeveer 80% ontplooiingsstappen waren — waarvan elk, als het zou vastlopen, de missie zou hebben verlamd, zonder mogelijkheid van een reparatieploeg op anderhalve miljoen kilometer afstand. Het zonscherm ontvouwde zich, de spiegelsegmenten klikten op hun plaats, de telescoop koelde af — en elke enkele stap werkte. De lancering zelf was zo precies dat de bespaarde brandstof de verwachte levensduur van de telescoop ruwweg verdubbelde."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/jwst/02"
       },
-      "caption": "Het observatorium opgevouwen voor de lancering, en ontvouwen op L2. Nooit eerder was iets zo groots autonoom in de diepe ruimte ingezet; de twee weken durende ontvouwing werd met ingehouden adem gevolgd door iedereen die decennia aan de bouw had gewerkt.",
+      "caption": "Het observatorium opgevouwen voor lancering, en ontvouwd bij L2. Niets van deze omvang was ooit autonoom in de diepe ruimte ontplooid; de twee weken durende ontvouwing werd met ingehouden adem gevolgd door iedereen die er tientallen jaren aan had gebouwd.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "De wetenschap begon bijna onmiddellijk en overtrof de verwachtingen. Webb's eerste beelden, vrijgegeven in juli 2022, waren de diepste infraroodopnamen van het heelal ooit gemaakt — duizenden sterrenstelsels in een stukje hemel ter grootte van een zandkorrel op armlengte afstand. Sindsdien heeft het sterrenstelsels gevonden die veel vroeger en volwassener zijn dan de theorie voorspelde, moleculen in exoplaneetatmosferen gedetecteerd, in de stoffige wolken gekeken waar sterren worden geboren, en gedwongen tot een echte heroverweging van hoe snel het vroege heelal zich samenstelde. Het doet wat Hubble deed voor een eerdere generatie: het leerboek herschrijven en het beeld van de kosmos opnieuw tekenen."
+      "md": "De wetenschap begon bijna onmiddellijk en overtrof de verwachtingen. Webb's eerste beelden, vrijgegeven in juli 2022, waren de diepste infraroodaanzichten van het universum ooit gemaakt — duizenden sterrenstelsels in een stukje hemel ter grootte van een zandkorrel op armlengte. Sindsdien heeft het sterrenstelsels gevonden die veel vroeger en rijper zijn dan de theorie voorspelde, moleculen in exoplaneetatmosferen gedetecteerd, in de stoffige wolken gekeken waar sterren worden geboren, en een oprechte heroverweging afgedwongen van hoe snel het vroege universum zich heeft geassembleerd. Het doet wat Hubble deed voor een eerdere generatie: het leerboek herschrijven en het beeld van de kosmos opnieuw tekenen."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Het verhaal van JWST is een gok die binnen één enkele stem van instorten was en volledig uitbetaalde. Een decennium lang was het de probleemreus van de ruimtewetenschap — boven budget, achter op schema, geld absorberend dat andere missies wilden, en in 2011 bijna volledig geannuleerd. De mensen die het verdedigden gokten dat de uitbetaling de pijn zou rechtvaardigen: dat een telescoop zo ambitieus, als het werkte, het decennium vertraging en de tienvoudige kostenstijging waard zou zijn. De eerste beelden maakten een einde aan de discussie. Bijna niemand betwijfelt nu nog dat de gok juist was."
+      "md": "Het verhaal van JWST is een weddenschap die op een congresbudget na werd gedood en volledig uitbetaalde. Een decennium lang was het de problematische reus van de ruimtewetenschap — boven budget, achter op schema, absorberend geld dat andere missies wilden, en bijna ronduit geannuleerd in 2011. De mensen die het verdedigden wedden dat de opbrengst de pijn zou rechtvaardigen: dat een telescoop zo ambitieus, als het zou werken, het decennium vertraging en de tienvoudige kostenstijging waard zou zijn. De eerste beelden beslisten het argument. Bijna niemand betwist nu dat de weddenschap juist was."
     },
     {
       "type": "prose",
-      "md": "Het is ook een verhaal over het onmogelijke alleen doen. Het bepalende feit van JWST is dat het niet kon worden getest zoals het zou vliegen en niet kon worden gerepareerd eenmaal gevlogen — het zonschild en de spiegel moesten zichzelf perfect ontvouwen, de eerste keer, op een plek waar geen astronaut kon komen. Hubble's gebrekkige spiegel werd beroemd gerepareerd door een shuttlebemanning; JWST had geen dergelijk vangnet. Elk van zijn honderden kritieke ontvouwingen moest op zichzelf slagen, en het feit dat ze dat allemaal deden is een bewijs van een niveau van technische discipline dat grenst aan het onredelijke."
+      "md": "Het is ook een verhaal over het onmogelijke alleen doen. Het bepalende feit van JWST is dat het niet getest kon worden zoals het zou vliegen en niet gerepareerd kon worden eenmaal gevlogen — het zonscherm en de spiegel moesten zichzelf perfect ontvouwen, de eerste keer, op een plek waar geen astronaut kon komen. Hubble's defecte spiegel werd beroemd gerepareerd door een shuttlebemanning; JWST had geen dergelijk vangnet. Elk van zijn honderden kritieke ontplooiingen moest zelfstandig slagen, en het feit dat ze dat allemaal deden is een bewijs van een niveau van technische discipline dat grenst aan het onredelijke."
     },
     {
       "type": "prose",
-      "md": "En het is een echt mondiale prestatie op een manier waarop Apollo dat nooit was. Europa bouwde instrumenten en verzorgde de lancering; Canada leverde belangrijke sensoren; de wetenschap wordt gedeeld door astronomen over de hele wereld. JWST behoort tot het tijdperk van internationale vlaggenschepen — te duur en te moeilijk voor één natie, gebouwd door een coalitie, en met een beeld van het heelal dat in de volste zin van de mensheid is in plaats van van een enkel land."
+      "md": "En het is een oprecht wereldwijde prestatie op een manier die Apollo nooit was. Europa bouwde instrumenten en verzorgde de lancering; Canada droeg belangrijke sensoren bij; de wetenschap wordt gedeeld over de astronomen van de hele wereld. JWST behoort tot het tijdperk van internationale vlaggenschepen — te duur en te moeilijk voor één natie, gebouwd door een coalitie, en een beeld van het universum opleveren dat in de volste zin van de mensheid is in plaats van van één enkel land."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "JWST's eerste erfenis is al zichtbaar: een nieuwe blik op het vroege heelal, met sterrenstelsels gevonden die vroeger en helderder zijn dan modellen voorspelden, waardoor kosmologen worden gedwongen te herzien hoe de eerste structuren zich vormden. Net als Hubble ervoor is het het instrument achter een generatie aan ontdekkingen, en het heeft decennia aan operationeel leven voor zich."
+      "md": "JWST's eerste erfenis is al zichtbaar: een nieuw beeld van het vroege universum, met sterrenstelsels gevonden vroeger en helderder dan modellen voorspelden, waardoor kosmologen gedwongen werden te herzien hoe de eerste structuren zich vormden. Net als Hubble ervoor, is het het instrument achter de ontdekkingen van een generatie, en het heeft nog tientallen jaren aan operationele levensduur voor zich."
     },
     {
       "type": "prose",
-      "md": "Zijn tweede erfenis is de karakterisering van exoplaneetatmosferen — de eerste echte capaciteit om de lucht van kleine werelden rond andere sterren te analyseren, en daarom het eerste serieuze instrument in de zoektocht naar tekenen van leven buiten de Aarde. Wat Webb daar ook vindt, het heeft een onderzoekslijn geopend die de astronomie decennialang zal bepalen."
+      "md": "Zijn tweede erfenis is de karakterisering van exoplaneetatmosferen — de eerste echte mogelijkheid om de lucht van kleine werelden rond andere sterren te analyseren, en daarmee het eerste serieuze instrument in de zoektocht naar tekenen van leven buiten de aarde. Wat Webb daar ook vindt, het heeft een onderzoekslijn geopend die de astronomie voor tientallen jaren zal definiëren."
     },
     {
       "type": "prose",
-      "md": "En zijn derde is een bewijs van methode: dat een internationale coalitie iets kan bouwen dat te groot is om gemonteerd te lanceren, het autonoom in de diepe ruimte kan inzetten, en het de eerste keer kan laten werken. Dat technische vertrouwen — dat het onmogelijk-te-repareren betrouwbaar genoeg kan worden gemaakt om te vertrouwen — is de basis waarop de volgende generatie nog grotere ruimteobservatoria zal worden gebouwd."
+      "md": "En zijn derde is een bewijs van methode: dat een internationale coalitie iets kan bouwen dat te groot is om gemonteerd te lanceren, het autonoom in de diepe ruimte kan ontplooien, en het de eerste keer kan laten werken. Dat technische vertrouwen — dat het onmogelijk-te-repareren betrouwbaar genoeg kan worden gemaakt om te vertrouwen — is de basis waarop de volgende generatie nog grotere ruimteobservatoria zal worden gebouwd."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "De les van JWST is dat sommige uitbetalingen een bijna onredelijke hoeveelheid geduld en pijn waard zijn. Vijfentwintig jaar lang was de telescoop te laat, duur en bijna geannuleerd; de zaak om door te gaan berustte volledig op een belofte die niet kon worden bewezen totdat het vloog. De eerste beelden rechtvaardigden de belofte — een herinnering dat de meest transformerende projecten vaak degenen zijn die er jarenlang uitzien als mislukkingen die op het punt staan te gebeuren."
+      "md": "De les van JWST is dat sommige opbrengsten een bijna onredelijke hoeveelheid geduld en pijn waard zijn. Gedurende het grootste deel van twee decennia was de telescoop laat, duur en bijna geannuleerd; de argumenten om door te gaan berustten volledig op een belofte die niet kon worden bewezen totdat het vloog. De eerste beelden rechtvaardigden de belofte — een herinnering dat de meest transformerende projecten vaak degenen zijn die er jarenlang uitzien als mislukkingen in wording."
     },
     {
       "type": "prose",
-      "md": "De diepere les gaat over techniek zonder een tweede kans. JWST kon niet worden getest zoals gevlogen of gerepareerd eenmaal gevlogen, en het slaagde toch — omdat elke faalwijze van tevoren werd opgespoord en wegontworpen op de grond, gedurende jaren. Het is het ultieme pleidooi voor nauwkeurigheid boven iteratie: wanneer je het echt niet later kunt repareren, is de enige optie de eerste keer gelijk te hebben, en Webb bewees dat dit haalbaar is, zelfs bij verbijsterende complexiteit."
+      "md": "De diepere les gaat over techniek zonder een tweede kans. JWST kon niet worden getest zoals gevlogen of gerepareerd eenmaal gevlogen, en het slaagde toch — omdat elke foutmodus vooraf werd opgespoord en eruit werd ontworpen, op de grond, over jaren. Het is het ultieme pleidooi voor nauwkeurigheid boven iteratie: wanneer je het echt niet later kunt repareren, is de enige optie om het de eerste keer goed te doen, en Webb bewees dat dit haalbaar is, zelfs bij duizelingwekkende complexiteit."
     }
   ]
 }

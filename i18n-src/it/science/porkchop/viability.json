@@ -1,14 +1,14 @@
 {
-  "title": "Leggere la fattibilità",
-  "intro_sentence": "Una cella è fattibile quando la capacità Δv del razzo ≥ costo Δv.",
+  "title": "Lettura della Fattibilità",
+  "intro_sentence": "Una cella è fattibile quando il ∆v del tuo razzo ≥ il costo ∆v della cella — e la porkchop trasforma il confronto in una mappa sì/no.",
   "narrative_101": [
-    "Domanda decisiva: il mio razzo può veramente volare questo? Ogni razzo ha capacità Δv pubblicata.",
-    "Celle dove capacità > costo: fattibili con margine. Costo > capacità: non volabile.",
-    "Scegli razzo in /plan, porkchop sovrappone margine/deficit."
+    "La domanda che trasforma una porkchop da una semplice mappa termica in una vera decisione di missione è questa: il mio razzo può veramente volare questa traiettoria? Ogni razzo — Falcon Heavy, SLS, Atlas V, qualsiasi cosa — ha una capacità ∆v pubblicata per una data massa di carico. Confronta questo limite con i costi per-cella della porkchop e avrai una mappa sì/no.",
+    "Le celle dove la capacità del razzo supera il costo sono fattibili, con margine da vendere. Le celle dove la capacità corrisponde esattamente al costo sono fattibili ma strette — rischiose, nessun margine per gli imprevisti. Le celle dove il costo supera la capacità? Quella traiettoria semplicemente non è volabile con quel razzo. Puoi desiderarlo quanto vuoi; la fisica dice no.",
+    "Seleziona un razzo su /plan e la porkchop sovrappone un colore di margine/deficit. Il lobo si restringe per razzi più piccoli, si espande per quelli più grandi. È così che i pianificatori di missione lavorano davvero: prova un veicolo, vedi cosa è fattibile, vedi cosa non lo è, cambia il veicolo, il carico o la pianificazione fino a quando la zona economica rientra nella capacità del razzo. La pianificazione di volo reale è esattamente questa iterazione, solo con più decimali."
   ],
   "body_paragraphs": [
-    "Scegli vehicle: Falcon Heavy, SLS, Atlas V. Capacità Δv massima nota. Δv_costo ≤ Δv_capacità = fattibile.",
-    "In `/plan` scelta vehicle, Orrery sovrappone indicatore. Turchese = fattibile gran margine. Rosso = impossibile.",
-    "Analisi fattibilità in una vista. Veri pianificatori iterano."
+    "Seleziona un veicolo. Falcon Heavy, SLS Block 1, Atlas V N22, qualsiasi cosa. Quel veicolo ha una curva di prestazione C3-vs-massa-di-carico pubblicata — i carichi più pesanti riducono il lobo raggiungibile; quelli più leggeri lo espandono. Per una data massa di carico puoi leggere il massimo C3 (o equivalente ∆v di partenza) che il veicolo può fornire, poi confrontarlo con la porkchop: ogni cella dove ∆v_cost ≤ capability è un'opportunità di lancio fattibile. Ogni cella dove è maggiore è impossibile senza un veicolo diverso o un'astronave più leggera.",
+    "Su `/plan` puoi selezionare un veicolo di lancio e Orrery sovrappone un indicatore di margine/deficit. Le celle teal fresco diventano 'fattibile, grande margine.' Le celle gialle diventano 'fattibile ma stretto.' Le celle rosse diventano impossibili-con-questo-veicolo, e passano a un display di deficit che mostra quanta capacità in più avrai bisogno.",
+    "Questa è l'analisi di fattibilità della missione in una vista. I veri pianificatori la eseguono molte volte — per diversi veicoli, masse di carico, varianti di traiettoria — per trovare la combinazione più economica che soddisfi i requisiti scientifici. La porkchop è la visualizzazione; la scelta sottostante è sempre 'quanto razzo mi serve vs quanto viaggio sto comprando.'"
   ]
 }

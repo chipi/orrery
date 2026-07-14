@@ -1,31 +1,31 @@
 {
   "name": "Giotto",
-  "type": "SURVOL · TERMINÉE",
-  "first": "Première mission d'espace lointain de l'ESA ; survol cométaire le plus proche jamais tenté (Halley, 596 km, 1986)",
-  "description": "Sonde de l'ESA passée à 596 km du noyau de la comète de Halley le 14/3/1986 — premières images rapprochées d'un noyau cométaire. Après hibernation en orbite solaire, Giotto fut réactivée en 1990 et utilisa une assistance gravitationnelle terrestre pour se rediriger vers la comète Grigg-Skjellerup, qu'elle survola à 200 km le 10/7/1992 — le survol cométaire le plus proche jamais réalisé.",
+  "type": "SURVOL · EFFECTUÉE",
+  "first": "Première mission ESA en espace lointain ; survol de comète le plus rapproché jamais tenté (Halley, 596 km, 1986) ; premières images rapprochées d'un noyau cométaire",
+  "description": "Giotto était le pilier européen de l'armada Halley — une sonde stabilisée par rotation de 960 kg enrobée d'un écran anti-poussière multicouche Whipple-Kevlar. Lancée le 1985-07-02, elle a traversé la coma de Halley à une vitesse relative de 68 km/s le 1986-03-14 avec un passage au plus proche de 596 km, restituant les premières images rapprochées d'un noyau cométaire quelconque (un corps allongé irrégulier de 15 × 7,2 × 7,2 km avec des jets de poussière concentrés). Un impact de poussière environ 7,6 secondes avant le passage au plus proche a déstabilisé l'axe de rotation et mis hors service la caméra, mais les autres instruments ont continué à transmettre à travers la coma. Après une hibernation en orbite héliocentrique, Giotto s'est réactivée en 1990 et a utilisé l'assistance gravitationnelle terrestre pour se réorienter vers la comète 26P/Grigg-Skjellerup, la survolant à 200 km le 1992-07-10 — le survol cométaire le plus rapproché jamais effectué.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "L'Ariane 1 lance Giotto depuis Kourou — première mission d'espace lointain de l'ESA.",
+      "note": "L'Ariane 1 décole avec Giotto de Kourou — première mission ESA en espace lointain.",
       "type": "nominal"
     },
     {
       "met": 255,
-      "label": "SURVOL HALLEY",
-      "note": "Approche maximale de 596 km de la comète 1P/Halley ; premières images rapprochées d'un noyau cométaire.",
+      "label": "SURVOL DE HALLEY",
+      "note": "Passage au plus proche de 596 km de la comète 1P/Halley ; premières images rapprochées d'un noyau cométaire.",
       "type": "nominal"
     },
     {
       "met": 1827,
-      "label": "SURVOL TERRESTRE",
-      "note": "L'assistance gravitationnelle terrestre redirige Giotto vers la comète 26P/Grigg-Skjellerup.",
+      "label": "SURVOL DE LA TERRE",
+      "note": "Assistance gravitationnelle terrestre réoriente Giotto vers la comète 26P/Grigg-Skjellerup.",
       "type": "nominal"
     },
     {
       "met": 2565,
-      "label": "SURVOL GRIGG-SKJELLERUP",
-      "note": "Approche maximale de 200 km — le survol cométaire le plus proche enregistré.",
+      "label": "SURVOL DE GRIGG-SKJELLERUP",
+      "note": "Passage au plus proche de 200 km — le survol cométaire le plus rapproché enregistré.",
       "type": "nominal"
     }
   ]

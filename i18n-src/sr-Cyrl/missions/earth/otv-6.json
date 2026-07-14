@@ -1,25 +1,25 @@
 {
   "name": "X-37B OTV-6 (USA-299, USSF-7)",
-  "type": "БЕСПИЛОТНИ СВЕМИРСКИ АВИОН · ЛЕТЕО",
-  "first": "USA-299 / USSF-7 — 908 дана у орбити, KSC Shuttle Landing Facility",
-  "description": "Шести лет X-37B — први под новом организационом ознаком USSF-а; рекордних 908 дана у орбити (~2,5 година). Лансиран 2020-05-17 у 13:14 UTC са CCAFS SLC-41 ракетом Atlas V 501 AV-081; слетео на KSC SLF 2022-11-12 у 10:22 UTC. Носио је PRAM Поморске истраживачке лабораторије (Photovoltaic RF Antenna Module — експеримент преноса 1 W соларне енергије микроталасним зраком) и AFRL FalconSAT-8 испаљивач.",
+  "type": "НЕМАНСКИ СВЕМИРСКИ АВИОН · ЛЕТЕО",
+  "first": "USA-299 / USSF-7 — 908 дана на орбити, KSC Shuttle Landing Facility",
+  "description": "Шести X-37B лет — први под новом организационом назнаком USSF; рекордних 908 дана на орбити (~2,5 година). Лансиран 2020-05-17 13:14 UTC са CCAFS SLC-41 на Atlas V 501 AV-081; слетео на KSC SLF 2022-11-12 10:22 UTC. Превезен је NRL PRAM (Photovoltaic RF Antenna Module — експеримент преноса сунчеве енергије у микроталасе од 1 W) и распоредивач AFRL FalconSAT-8.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-081) from CCAFS SLC-41 2020-05-17.",
+      "label": "ЛАНСИРАЊЕ",
+      "note": "Atlas V 501 (AV-081) са CCAFS SLC-41 2020-05-17.",
       "type": "nominal"
     },
     {
       "met": 454,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee ~390 km; classified payload operations.",
+      "label": "ОПЕРАЦИЈЕ НА ОРБИТИ",
+      "note": "Апогеј ~400 км; класификоване операције корисног терета.",
       "type": "info"
     },
     {
       "met": 908,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2022-11-12.",
+      "label": "СЛЕТАЊЕ",
+      "note": "Аутономно слетање на писту у KSC Shuttle Landing Facility 2022-11-12.",
       "type": "nominal"
     }
   ]

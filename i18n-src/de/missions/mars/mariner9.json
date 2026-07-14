@@ -1,8 +1,8 @@
 {
   "name": "Mariner 9",
   "type": "ORBITER · GEFLOGEN",
-  "first": "Erstes Raumfahrzeug, das einen anderen Planeten umkreiste",
-  "description": "Mariner 9 machte alle nachfolgenden Orbiter möglich. Nach einem 15-minütigen MOI-Burn, der die Sonde am 14.11.1971 in eine Mars-Umlaufbahn brachte, war der Planet darunter nicht wiederzuerkennen – ein globaler Staubsturm hatte alles verborgen, außer den vier Gipfeln der Tharsis-Vulkane. JPL wartete ab. Im Januar 1972 legte sich der Staub und Mariner 9 lieferte 7.329 Bilder, die ~80 % der Marsoberfläche abdeckten und Olympus Mons (der größte Vulkan im Sonnensystem), Valles Marineris (das Canyonsystem, das seinen Namen trägt), ausgetrocknete Flusskanäle, die auf eine frühere flüssige Ära hindeuten, sowie die ersten Nahaufnahmen von Phobos und Deimos zeigten. Die Mission endete am 27.10.1972, als das Lageregelungsgas aufgebraucht war; das Raumfahrzeug verbleibt im Orbit und verfällt langsam.",
+  "first": "Erstes Raumschiff, das einen anderen Planeten umkreist",
+  "description": "Mariner 9 machte jeden Orbiter möglich, der danach folgte. Nach einem 15-minütigen MOI-Bremsmanöver in die Marsumlaufbahn am 1971-11-14 war der Planet darunter unkenntlich — ein globaler Staubsturm hatte alles verborgen, außer den vier Gipfeln der Tharsis-Vulkane. JPL wartete ab. Im Laufe des Januar 1972 legte sich der Staub und Mariner 9 sendete 7.329 Bilder zurück, die ~85% der Marsoberfläche abdeckten und Olympus Mons (den größten Vulkan des Sonnensystems), Valles Marineris (das Canyonsystem, das seinen Namen trägt), ausgetrocknete Flusskanäle, die auf eine antike flüssige Ära hindeuten, und die ersten Nahaufnahmen von Phobos und Deimos offenbarten. Die Mission endete am 1972-10-27, als das Lagekontrollgas aufgebraucht war; das Raumschiff bleibt in der Umlaufbahn und zerfällt langsam.",
   "events": [
     {
       "met": 0,
@@ -13,31 +13,31 @@
     {
       "met": 5,
       "label": "TCM-1",
-      "note": "Erste Bahnkorrektur.",
+      "note": "Erste Kurskorrektur im Flug.",
       "type": "nominal"
     },
     {
       "met": 98,
       "label": "TCM-2",
-      "note": "Annäherungskorrektur zielt präzise auf den MOI-Periapsis.",
+      "note": "Annäherungstrimmung zielt auf das MOI-Periapsis.",
       "type": "nominal"
     },
     {
       "met": 168,
       "label": "MOI",
-      "note": "15-min Feststoffmotor-Burn bringt Mariner 9 in eine 1398 × 17.917 km, 64,4° Umlaufbahn – die allererste Umlaufbahn eines anderen Planeten.",
+      "note": "15-minütiges Festbrennertriebwerk-Bremsmanöver setzt Mariner 9 in eine 1398 × 17.917 km, 64,4°-Umlaufbahn — erste Umlaufbahn um einen anderen Planeten.",
       "type": "info"
     },
     {
       "met": 200,
-      "label": "STAUB KLÄRT SICH",
-      "note": "Globaler Sturm lässt nach; Bildaufnahmen beginnen.",
+      "label": "STAUB KLÄRT AUF",
+      "note": "Globaler Sturm klingt ab; Bildgebung beginnt.",
       "type": "info"
     },
     {
       "met": 515,
       "label": "MISSIONSENDE",
-      "note": "27.10.1972. Lageregelungsgas aufgebraucht.",
+      "note": "1972-10-27. Lagekontrollgas aufgebraucht.",
       "type": "warning"
     }
   ]

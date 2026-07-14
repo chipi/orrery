@@ -1,13 +1,38 @@
 {
   "name": "Mangalyaan",
-  "type": "ORBITER · FLOWN",
-  "first": "First Asian Mars mission; first Mars success on first attempt",
-  "description": "ISRO's Mars Orbiter Mission cost $74 million — less than the budget of the film Gravity ($100M), and a fraction of NASA's MAVEN ($671M) which arrived two days earlier. Built in 18 months as a technology demonstrator, Mangalyaan succeeded at every objective: trans-Mars injection, deep-space navigation, Mars orbit insertion, and 8 years of science return. India became the fourth space agency at Mars and the first to succeed on its first try.",
+  "type": "环绕器 · 已飞行",
+  "first": "首个亚洲火星任务；首次尝试即成功到达火星",
+  "description": "印度空间研究组织的火星轨道任务耗资7400万美元——少于电影《地心引力》的预算（1亿美元），仅为NASA的MAVEN（6.71亿美元）的一小部分，而MAVEN早两天到达。Mangalyaan在18个月内作为技术演示器建成，成功完成了每一项目标：火星转移注入、深空导航、火星轨道插入和8年的科学回报。印度成为第四个抵达火星的航天机构，也是首个首次尝试就成功的机构。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "PSLV-XL (C25) from Sriharikota — a relatively small launcher requiring orbit-raising loop.", "type": "nominal" },
-    { "met": 7, "label": "PERIGEE BURN 1", "note": "First of seven Earth orbit raising burns.", "type": "nominal" },
-    { "met": 30, "label": "TRANS-MARS INJECTION", "note": "Final perigee burn places spacecraft on Mars trajectory.", "type": "nominal" },
-    { "met": 324, "label": "MARS ORBIT INSERTION", "note": "Liquid Apogee Motor fires after 4 years dormant — fired for 24 minutes to capture into orbit.", "type": "nominal" },
-    { "met": 3300, "label": "MISSION END", "note": "Lost contact 2022-04 after spacecraft propellant exhausted.", "type": "warning" }
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "PSLV-XL (C25)从斯里哈里科塔发射——一个相对较小的运载火箭，需要轨道升高环路。",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "近地点变轨 1",
+      "note": "火星转移注入前六次地球轨道升高变轨中的第一次。",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "火星转移注入",
+      "note": "最后的近地点变轨将航天器送入火星轨迹。",
+      "type": "nominal"
+    },
+    {
+      "met": 324,
+      "label": "火星轨道插入",
+      "note": "液体远地点发动机在休眠约10个月后启动——燃烧24分钟以捕获进入轨道。",
+      "type": "nominal"
+    },
+    {
+      "met": 3300,
+      "label": "任务结束",
+      "note": "2022年4月失去联系，航天器推进剂耗尽。",
+      "type": "warning"
+    }
   ]
 }

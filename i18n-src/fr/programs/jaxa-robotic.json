@@ -1,88 +1,88 @@
 {
   "name": "JAXA — Lune et planètes",
-  "tagline": "L'exploration ingénieuse et sobre de la Lune et des planètes par le Japon — célèbre pour ses missions qui échouent à mi-parcours et sont sauvées par l'ingéniosité.",
+  "tagline": "L'exploration ingénieuse et économe de la Lune et des planètes par le Japon — célèbre pour ses missions qui échouent à mi-parcours et sont sauvées par l'ingéniosité.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Le Japon pratique l'exploration robotique différemment des superpuissances. Il lance moins de missions, avec des budgets plus réduits, visant des objectifs précis et souvent audacieux — et il a cette habitude distincte de transformer la quasi-catastrophe en triomphe par l'ingéniosité. Là où la NASA construit des vaisseaux amiraux avec une redondance profonde et l'ESA lance de grands observatoires internationaux, l'institut ISAS de la JAXA tend à envoyer un engin spatial ingénieux et léger pour accomplir une tâche difficile, puis à improviser brillamment quand quelque chose se brise. Généralement, quelque chose se brise ; ces missions sont célèbres pour avoir été sauvées."
+      "md": "Le Japon pratique l'exploration robotique différemment des superpuissances. Il lance moins de missions, avec des budgets plus restreints, visant des objectifs étroits et souvent audacieux — et il a cette habitude particulière de transformer la quasi-catastrophe en triomphe par l'ingéniosité. Là où la NASA construit des vaisseaux amiraux dotés de redondances profondes et où l'ESA lance de grands observatoires internationaux, l'institut ISAS de la JAXA a tendance à envoyer un engin spatial ingénieux et léger pour accomplir une tâche difficile, puis à improviser brillamment lorsque quelque chose se brise. En général, quelque chose se brise ; ces missions sont célèbres pour avoir été sauvées."
     },
     {
       "type": "prose",
-      "md": "C'est le pendant du travail d'Hayabusa sur les astéroïdes : l'exploration de la Lune et des planètes par la JAXA. Elle comprend Kaguya, le relevé lunaire le plus détaillé depuis Apollo ; Akatsuki, un orbiteur vénusien qui a échoué à l'arrivée et a été récupéré cinq ans plus tard ; et SLIM, un petit atterrisseur qui s'est posé sur la Lune avec une précision que personne n'avait atteinte et a continué à fonctionner à l'envers. Ensemble, ils définissent un style national — sobre, concentré et résolument ingénieux."
+      "md": "Ceci est le pendant du travail de Hayabusa sur les astéroïdes : l'exploration de la Lune et des planètes par la JAXA. Elle comprend Kaguya, la plus grande mission lunaire depuis Apollo ; Akatsuki, un orbiteur vénusien qui a échoué à son arrivée et a été récupéré cinq ans plus tard ; et SLIM, un petit atterrisseur qui s'est posé sur la Lune avec une précision que personne n'avait atteinte et qui a continué à fonctionner à l'envers. Ensemble, elles définissent un style national — sobre, concentré et obstinément ingénieux."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Les objectifs scientifiques couvrent le système solaire interne : cartographier la Lune en détail et comprendre son origine et ses ressources (Kaguya) ; étudier l'effet de serre incontrôlé et l'atmosphère bizarre en super-rotation de Vénus (Akatsuki) ; et démontrer qu'un engin spatial peut atterrir exactement où il l'entend, plutôt que simplement quelque part en sécurité (SLIM). Chaque mission cible une question spécifique et bien choisie plutôt que de tenter une couverture large."
+      "md": "Les objectifs scientifiques couvrent le système solaire interne : cartographier la Lune en détail et comprendre son origine et ses ressources (Kaguya) ; étudier l'effet de serre incontrôlé et l'étrange atmosphère en super-rotation de Vénus (Akatsuki) ; et démontrer qu'un engin spatial peut atterrir exactement où il le souhaite, plutôt que simplement quelque part en sécurité (SLIM). Chaque mission cible une question spécifique et bien choisie plutôt que de tenter une couverture large."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/slim/01"
       },
-      "caption": "SLIM — le « tireur d'élite lunaire ». Son objectif n'était pas d'explorer mais de prouver une technique : l'atterrissage de précision à moins de 100 mètres d'un point choisi, la capacité dont chaque futur atterrisseur et mission habitée aura besoin pour atteindre un site spécifique et précieux.",
+      "caption": "SLIM — le « tireur d'élite lunaire ». Son objectif n'était pas d'explorer mais de prouver une technique : l'atterrissage de précision à moins de 100 mètres d'un point choisi, la capacité dont tout futur atterrisseur et toute mission habitée auront besoin pour atteindre un site spécifique et précieux.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "L'objectif d'ingénierie qui les traverse tous est la précision et l'autonomie à budget réduit — navigation basée sur la vision, gestion minutieuse de l'ergol, et des engins spatiaux assez ingénieux pour être sauvés quand un système critique tombe en panne. Les programmes de la JAXA sont, en somme, une longue démonstration qu'on n'a pas besoin d'un budget de vaisseau amiral pour faire de la science de pointe, si l'on accepte de voler sobre et de penser vite."
+      "md": "L'objectif technique qui traverse toutes ces missions est la précision et l'autonomie à petit budget — navigation par vision, gestion minutieuse de l'ergol, et engins spatiaux suffisamment ingénieux pour être secourus lorsqu'un système critique tombe en panne. Les programmes de la JAXA sont, en fait, une longue démonstration que l'on n'a pas besoin d'un budget de vaisseau amiral pour faire de la science de pointe, si l'on accepte de voler sobre et de penser vite."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Le bilan est une succession de succès chèrement acquis. Kaguya (2007) a fourni la carte lunaire la plus complète et les premières images HD d'un lever de Terre depuis Apollo. Akatsuki a raté son insertion en orbite vénusienne en 2010 quand son moteur principal s'est rompu — une perte totale selon tout calcul normal — et pourtant, après cinq ans en orbite autour du Soleil, la JAXA a utilisé les petits propulseurs d'attitude de la sonde pour la glisser en orbite vénusienne lors d'une seconde tentative, sauvant entièrement la mission. SLIM (2024) s'est posé à quelques mètres de sa cible, a basculé sur le côté, et a quand même livré sa science."
+      "md": "Le bilan est une série de succès durement acquis. Kaguya (2007) a rapporté le plus grand volume de données cartographiques lunaires depuis Apollo et les premières images HD d'un lever de Terre. Akatsuki a raté son insertion en orbite vénusienne en 2010 lorsque son moteur principal est tombé en panne — une perte totale selon tout critère normal — et pourtant, après cinq ans en orbite autour du Soleil, la JAXA a utilisé les petits propulseurs d'attitude de la sonde pour la glisser en orbite vénusienne lors d'une seconde tentative, récupérant entièrement la mission. SLIM (2024) a atterri à environ 55 mètres de sa cible, a basculé sur le côté, et a quand même livré sa science."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/akatsuki/01"
       },
-      "caption": "Akatsuki à Vénus — la sonde arrivée cinq ans en retard. Quand son moteur d'insertion orbitale a échoué, la mission semblait morte ; un sauvetage patient utilisant les minuscules propulseurs de l'engin spatial l'a ramenée à la vie.",
+      "caption": "Akatsuki à Vénus — la sonde arrivée cinq ans en retard. Lorsque son moteur d'insertion orbitale est tombé en panne, la mission semblait morte ; un sauvetage patient utilisant les minuscules propulseurs de l'engin spatial l'a ramenée à la vie.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "Ce que partagent ces résultats, c'est le refus d'accepter qu'une mission échouée soit une mission perdue. Akatsuki aurait dû être abandonné ; l'atterrissage basculé de SLIM aurait dû mettre fin à sa science ; chacun a été sauvé par des équipes traitant un engin spatial brisé comme une énigme plutôt que comme une perte sèche. Les résultats sont de la vraie science planétaire — dynamique atmosphérique vénusienne, géologie lunaire détaillée, atterrissage de précision démontré — livrés par des missions qui, à répétition, n'auraient rien dû livrer."
+      "md": "Ce que ces résultats ont en commun, c'est un refus d'accepter qu'une mission qui échoue soit une mission perdue. Akatsuki aurait dû être abandonnée ; l'atterrissage basculé de SLIM aurait dû mettre fin à sa science ; chacune a été récupérée par des équipes traitant un engin spatial brisé comme un puzzle plutôt que comme une perte sèche. Les résultats sont de la vraie science planétaire — dynamique atmosphérique vénusienne, géologie lunaire détaillée, atterrissage de précision démontré — livrés par des missions qui, à maintes reprises, n'auraient rien dû livrer."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Le récit du programme robotique de la JAXA fait du sauvetage une compétence fondamentale. Ce n'est pas que ces missions échouent plus que d'autres ; c'est que la culture de la JAXA est exceptionnellement douée pour ne pas abandonner quand elles échouent — pour passer des mois à trouver un moyen de faire voler un engin spatial estropié jusqu'à son objectif malgré tout. Le détour de cinq ans d'Akatsuki et sa seconde tentative d'insertion orbitale en est l'exemple le plus pur : une mission que tout programme conventionnel aurait déclarée morte, patiemment ramenée à une science complète."
+      "md": "Le récit du programme robotique de la JAXA fait du sauvetage une compétence fondamentale. Ce n'est pas que ces missions échouent plus que d'autres ; c'est que la culture de la JAXA est exceptionnellement douée pour ne pas abandonner lorsqu'elles échouent — pour passer des mois à trouver un moyen de faire voler un engin spatial estropié jusqu'à son objectif malgré tout. Le détour de cinq ans d'Akatsuki et sa seconde tentative d'insertion orbitale en sont l'exemple le plus pur : une mission que tout programme conventionnel aurait déclarée morte, patiemment ramenée à la science complète."
     },
     {
       "type": "prose",
-      "md": "C'est aussi une philosophie du faire-plus-avec-moins. Le budget spatial scientifique du Japon est une fraction de celui de la NASA, et sa réponse n'est pas de tenter des choses moins ambitieuses mais de les tenter de manière plus économe et plus ingénieuse — engins spatiaux sobres, objectifs précis, et une tolérance au risque qui vient du fait de voler sans redondance profonde. SLIM est minuscule ; Akatsuki était modeste ; Kaguya était efficace. L'ambition est dans les objectifs, pas dans les budgets."
+      "md": "C'est aussi une philosophie consistant à faire plus avec moins. Le budget de la science spatiale japonaise représente une fraction de celui de la NASA, et sa réponse n'est pas de tenter des choses moins ambitieuses mais de les tenter de manière plus économique et plus ingénieuse — engins spatiaux sobres, objectifs précis, et tolérance pour le risque qui accompagne le vol sans redondance profonde. SLIM est minuscule ; Akatsuki était modeste ; Kaguya était efficace. L'ambition réside dans les objectifs, pas dans les budgets."
     },
     {
       "type": "prose",
-      "md": "Et cela complète plutôt que de rivaliser. La JAXA n'essaie pas d'égaler la NASA ou l'ESA sur tous les fronts ; elle choisit des frontières spécifiques — retour d'échantillons d'astéroïdes, dynamique vénusienne, atterrissage de précision — et y mène ou y contribue de manière unique, souvent en partenariat. C'est le modèle d'une puissance spatiale de taille moyenne qui obtient une influence démesurée en excellant dans des domaines choisis et difficiles plutôt qu'en étant adéquate en tout."
+      "md": "Et cela complète plutôt que de concurrencer. La JAXA n'essaie pas d'égaler la NASA ou l'ESA sur toute la ligne ; elle choisit des frontières spécifiques — retour d'échantillons d'astéroïdes, dynamique vénusienne, atterrissage de précision — et y mène ou y contribue de manière unique, souvent en partenariat. C'est le modèle d'une puissance spatiale de taille moyenne qui gagne une influence démesurée en excellant dans des domaines choisis et difficiles plutôt qu'en étant adéquate en tout."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Le premier héritage est un corpus de science planétaire ciblée : le relevé lunaire définitif post-Apollo, des années de données atmosphériques vénusiennes d'une sonde qui ne devrait pas exister, et une capacité d'atterrissage de précision démontrée sur laquelle s'appuiera chaque futur atterrisseur — robotique ou habité, sur la Lune ou au-delà."
+      "md": "Le premier héritage est un ensemble de sciences planétaires ciblées : la plus grande mission lunaire depuis Apollo, produisant une cartographie détaillée de la surface et les premières images HD d'un lever de Terre ; des années de données atmosphériques vénusiennes provenant d'une sonde qui ne devrait pas exister ; et une capacité d'atterrissage de précision démontrée sur laquelle tout futur atterrisseur — robotique ou habité, à la Lune ou au-delà — s'appuiera."
     },
     {
       "type": "prose",
-      "md": "Le second est un style d'exploration éprouvé : sobre, précis et résilient, montrant que la science robotique de pointe ne nécessite pas un budget de vaisseau amiral, seulement des objectifs précis et l'ingéniosité pour sauver les missions quand elles faiblissent. C'est un modèle vers lequel se tournent désormais de nombreuses agences spatiales plus petites et émergentes."
+      "md": "Le deuxième est un style d'exploration éprouvé : sobre, précis et résilient, montrant que la science robotique de pointe ne nécessite pas un budget de vaisseau amiral, seulement des objectifs précis et l'ingéniosité nécessaire pour sauver les missions lorsqu'elles vacillent. C'est un modèle vers lequel de nombreuses agences spatiales plus petites et émergentes se tournent désormais."
     },
     {
       "type": "prose",
-      "md": "Et le troisième est l'influence par la spécialisation. En menant dans des domaines difficiles spécifiques plutôt qu'en s'éparpillant, la JAXA s'est rendue partenaire dont les grandes agences ont besoin — ses techniques et ses engins spatiaux sauvés alimentant directement l'exploration plus large de la Lune et des planètes intérieures."
+      "md": "Et le troisième est l'influence par la spécialisation. En menant dans des domaines difficiles spécifiques plutôt qu'en se dispersant, la JAXA s'est imposée comme un partenaire dont les grandes agences ont besoin — ses techniques et ses engins spatiaux sauvés alimentant directement l'exploration plus large de la Lune et des planètes internes."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La leçon des missions robotiques de la JAXA est qu'une arrivée ratée n'est pas toujours une mission ratée. Akatsuki et SLIM ont tous deux subi des défaillances qui mettraient normalement fin à un programme, et tous deux ont livré leur science malgré tout parce que leurs équipes ont traité l'engin spatial brisé comme un problème à résoudre plutôt que comme une perte à accepter. L'ingéniosité appliquée à une mission estropiée peut récupérer la majeure partie de sa valeur."
+      "md": "La leçon des missions robotiques de la JAXA est qu'une arrivée ratée n'est pas toujours une mission ratée. Akatsuki et SLIM ont tous deux subi des défaillances qui mettraient normalement fin à un programme, et tous deux ont quand même livré leur science parce que leurs équipes ont traité l'engin spatial brisé comme un problème à résoudre plutôt que comme une perte à accepter. L'ingéniosité appliquée à une mission estropiée peut récupérer l'essentiel de sa valeur."
     },
     {
       "type": "prose",
-      "md": "La leçon plus profonde est qu'ambition et budget sont dissociables. La JAXA fait de la science de pointe avec une fraction du financement d'une superpuissance en choisissant des objectifs précis et difficiles et en volant sobre — preuve que le leadership dans l'exploration est accessible à quiconque veut se spécialiser profondément et improviser efficacement, plutôt qu'uniquement à ceux qui peuvent se permettre des vaisseaux amiraux."
+      "md": "La leçon plus profonde est que l'ambition et le budget sont séparables. La JAXA fait de la science de pointe avec une fraction du financement d'une superpuissance en choisissant des objectifs étroits et difficiles et en volant sobre — preuve que le leadership dans l'exploration est accessible à quiconque est prêt à se spécialiser profondément et à bien improviser, plutôt qu'uniquement à ceux qui peuvent s'offrir des vaisseaux amiraux."
     }
   ]
 }

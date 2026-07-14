@@ -1,43 +1,43 @@
 {
   "name": "BepiColombo",
-  "type": "ORBITADOR · ACTIVA",
-  "first": "Primera misión planetaria conjunta Europa-Japón; segunda nave en orbitar Mercurio (tras Messenger)",
-  "description": "Misión conjunta ESA / JAXA a Mercurio, lanzada el 20-10-2018 — nombrada por el matemático italiano Giuseppe (Bepi) Colombo, que diseñó la trayectoria de múltiples sobrevuelos de Mariner 10. El crucero de 8 años usa 9 asistencias gravitatorias (Tierra 2020, Venus 2020, Venus 2021, luego seis sobrevuelos de Mercurio 2021-2024) más empuje iónico-eléctrico continuo. Inserción en órbita de Mercurio el 5-12-2026; las operaciones científicas comienzan a principios de 2027.",
+  "type": "ORBITADOR · ACTIVO",
+  "first": "Primera misión conjunta Europa + Japón a un planeta; segunda nave espacial en orbitar Mercurio (después de Messenger)",
+  "description": "Misión conjunta ESA / JAXA a Mercurio, lanzada el 2018-10-20 — nombrada en honor del matemático italiano Giuseppe (Bepi) Colombo, quien diseñó la trayectoria de múltiples sobrevuelos de Mariner 10. El crucero de 8 años utiliza 9 asistencias gravitatorias (Tierra 2020, Venus 2020, Venus 2021, seguidas de seis sobrevuelos de Mercurio 2021–2025) más un empuje iónico-eléctrico continuo del Módulo de Transferencia a Mercurio para reducir el enorme gradiente gravitatorio solar entre las órbitas de la Tierra y Mercurio. Inserción en órbita de Mercurio 2026-11-21; las operaciones científicas comienzan a principios de 2027 tras la eyección del MTM y la separación de los dos orbitadores — el MPO de la ESA (superficie y composición planetaria) y el Mio de la JAXA (magnetosfera). También se planean pruebas de relatividad general mediante seguimiento de rango de radiociencia a través del intenso entorno de gravedad solar de Mercurio.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "El Ariane 5 ECA lanza BepiColombo desde Kourou en su crucero iónico de 8 años a Mercurio.",
+      "note": "El Ariane 5 ECA despega con BepiColombo desde Kourou en su crucero iónico de 8 años hacia Mercurio.",
       "type": "nominal"
     },
     {
       "met": 538,
-      "label": "SOBREVUELO TERRESTRE",
-      "note": "Asistencia gravitatoria terrestre única inicia la cadena de asistencias gravitatorias del sistema interno.",
+      "label": "SOBREVUELO DE LA TIERRA",
+      "note": "Una única asistencia gravitatoria terrestre inicia la cadena de asistencias gravitatorias del sistema interior.",
       "type": "nominal"
     },
     {
       "met": 727,
-      "label": "SOBREVUELO VENUS #1",
+      "label": "SOBREVUELO DE VENUS #1",
       "note": "Primera asistencia gravitatoria de Venus.",
       "type": "nominal"
     },
     {
       "met": 1026,
-      "label": "SOBREVUELO VENUS #2",
+      "label": "SOBREVUELO DE VENUS #2",
       "note": "Segunda asistencia gravitatoria de Venus inicia la fase de aproximación a Mercurio.",
       "type": "nominal"
     },
     {
       "met": 1133,
-      "label": "SOBREVUELO MERCURIO #1",
-      "note": "Primera de seis asistencias gravitatorias de Mercurio.",
+      "label": "SOBREVUELO DE MERCURIO #1",
+      "note": "El primero de seis sobrevuelos de asistencia gravitatoria de Mercurio.",
       "type": "nominal"
     },
     {
       "met": 2968,
-      "label": "INSERCIÓN ÓRBITA MERCURIO",
-      "note": "Liberación MTM + separación del orbitador; las operaciones científicas comienzan a principios de 2027.",
+      "label": "INSERCIÓN EN ÓRBITA DE MERCURIO",
+      "note": "Eyección del MTM + separación del orbitador; las operaciones científicas comienzan a principios de 2027.",
       "type": "info"
     }
   ]

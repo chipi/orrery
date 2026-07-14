@@ -1,49 +1,49 @@
 {
   "name": "Apollo 9",
-  "type": "HABITÉ ORBITE TERRESTRE · VOLÉ",
-  "first": "Premier vol habité du LM — tests de séparation + rendez-vous en orbite terrestre",
-  "description": "Le premier vol habité du Module Lunaire. En orbite terrestre, McDivitt et Schweickart ont désamarré LM Spider de CSM Gumdrop, ont volé jusqu'à 183 km de distance sur six heures, puis ont effectué un rendez-vous et un réamarrage — chaque étape de la procédure de rendez-vous lunaire testée sans l'option de ramener l'équipage dans le CSM si quelque chose tournait mal. Schweickart a effectué une EVA de 38 minutes sur le porche du LM, démontrant la combinaison EVA + le sac PLSS Apollo que les équipages marchant sur la Lune utiliseraient. Avec le matériel LM et les procédures de rendez-vous vérifiés, NASA était prête à envoyer Apollo 10 sur la Lune deux mois plus tard.",
+  "type": "MISSION SPATIALE HABITÉE · RÉALISÉE",
+  "first": "Premier vol habité du Module Lunaire — tests de séparation et rendez-vous en orbite terrestre",
+  "description": "Le premier vol habité du Module Lunaire. En orbite terrestre, McDivitt et Schweickart se sont séparés du LM Spider du CSM Gumdrop, se sont éloignés jusqu'à 183 km sur six heures, puis se sont rendez-vous et redéverrouillés — chaque étape de la procédure de rendez-vous lunaire a été testée sans l'option de ramener l'équipage à la maison dans le CSM en cas de problème. Schweickart a effectué une EVA de 38 minutes sur le porche du LM, démontrant la combinaison spatiale Apollo EVA et la conception du sac à dos PLSS que les équipages marchant sur la Lune utiliseraient. Scott a effectué une EVA en position debout depuis l'écoutille du CSM. Avec le matériel LM et les procédures de rendez-vous vérifiés, la NASA était prête à envoyer Apollo 10 sur la Lune deux mois plus tard.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-504) from Kennedy Space Center LC-39A 1969-03-03 16:00 UTC — third Saturn V flight, first crewed launch carrying LM.",
+      "label": "LANCEMENT",
+      "note": "Saturn V (AS-504) depuis le Centre Spatial Kennedy LC-39A 1969-03-03 16:00 UTC — troisième vol de Saturn V, premier lancement habité transportant un LM.",
       "type": "nominal"
     },
     {
       "met": 0.13,
-      "label": "CSM-LM EXTRACTION",
-      "note": "CSM Gumdrop turns around + docks with LM Spider in the SLA adapter — first crewed transposition + docking. All Apollo lunar missions repeat this maneuver.",
+      "label": "EXTRACTION CSM-LM",
+      "note": "Le CSM Gumdrop fait demi-tour et s'arrime au LM Spider dans l'adaptateur SLA — premier transposition et amarrage habités. Toutes les missions Apollo lunaires répètent cette manœuvre.",
       "type": "nominal"
     },
     {
       "met": 4.2,
-      "label": "LM SEPARATION",
-      "note": "McDivitt + Schweickart undock Spider, fly up to 183 km from Gumdrop over six hours. First crewed flight where the spacecraft + crew aren't both attached to a re-entry vehicle.",
+      "label": "SÉPARATION LM",
+      "note": "McDivitt et Schweickart se séparent de Spider, s'éloignent jusqu'à 183 km de Gumdrop sur six heures. Premier vol habité où le vaisseau spatial et l'équipage ne sont pas tous deux attachés à un véhicule de rentrée.",
       "type": "info"
     },
     {
       "met": 4.5,
       "label": "EVA",
-      "note": "Schweickart does 38-min EVA on LM porch. Scott stand-up EVA from CSM hatch. First validation of Apollo PLSS backpack.",
+      "note": "Schweickart effectue une EVA de 38 min sur le porche du LM. EVA en position debout de Scott depuis l'écoutille du CSM. Première validation du sac à dos PLSS Apollo.",
       "type": "info"
     },
     {
       "met": 4.5,
-      "label": "RENDEZVOUS + REDOCK",
-      "note": "Spider rendezvous + redocks with Gumdrop, completing the lunar-procedure dress rehearsal in Earth orbit.",
+      "label": "RENDEZ-VOUS + RÉARRIMAG",
+      "note": "Spider se rend-vous et se réarrime à Gumdrop, achevant la répétition générale de la procédure lunaire en orbite terrestre.",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "LM JETTISON",
-      "note": "Spider ascent stage jettisoned to deorbit; descent stage remained in orbit and decayed 1981.",
+      "label": "ÉJECTION LM",
+      "note": "Le stage de descente Spider a été désorbitée (rentrée en mars 1969, océan Indien) ; le stage de montée a été vidé par les tirs et poussé vers une orbite haute — il s'est désintégré en 1981.",
       "type": "nominal"
     },
     {
       "met": 10.04,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Atlantic 1969-03-13 17:00 UTC after 151 orbits. Recovery by USS Guadalcanal.",
+      "label": "AMERRISSAGE",
+      "note": "Le CM a amerri dans l'océan Atlantique Nord 1969-03-13 17:00 UTC après 151 orbites. Récupération par l'USS Guadalcanal.",
       "type": "nominal"
     }
   ]

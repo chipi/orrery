@@ -1,43 +1,43 @@
 {
   "name": "Rosetta",
-  "type": "ORBITEUR + ATTERRISSEUR · TERMINÉE",
-  "first": "Premier vaisseau à orbiter une comète — et à s'y poser (Philae, 12/11/2014)",
-  "description": "Mission phare de l'ESA pour rendez-vous cométaire. Après une croisière de 10 ans incluant trois assistances gravitationnelles terrestres, une assistance martienne, deux survols d'astéroïdes et 957 jours d'hibernation dans l'espace lointain, Rosetta a rejoint la comète 67P/Tchourioumov-Guérassimenko en août 2014 et l'a orbitée pendant plus de deux ans. L'atterrisseur Philae a atteint la surface de 67P le 12/11/2014 — premier atterrissage en douceur sur une comète. Rosetta a terminé sa mission par une descente contrôlée sur 67P le 30/09/2016.",
+  "type": "ORBITEUR + ATTERRISSEUR · RÉALISÉE",
+  "first": "Premier engin spatial à orbiter autour d'une comète — et à s'y poser (Philae, 2014-11-12)",
+  "description": "Mission phare de l'ESA de rendez-vous cométaire. Après une croisière de 10 ans intégrant trois assistance gravitationnelles terrestres, une assistance martienne, deux survols d'astéroïdes et 957 jours d'hibernation en espace lointain, Rosetta a rejoint la comète 67P/Churyumov–Gerasimenko en août 2014 et l'a orbitée pendant plus de deux ans à travers le périhélie et au-delà. L'atterrisseur Philae a atteint la surface de 67P le 2014-11-12 — premier atterrissage en douceur sur une comète — et a renvoyé ~64 heures de données scientifiques après qu'une défaillance du harpon l'ait laissé dans l'ombre d'une falaise. Rosetta elle-même a terminé la mission par une descente contrôlée vers la surface de 67P le 2016-09-30. Résultats clés : molécules organiques et glycine dans la chevelure ; le rapport D/H initialement mesuré de 67P (≈3× terrestre) contredisait l'hypothèse que les comètes de la famille de Jupiter seraient à l'origine de l'eau terrestre — un résultat qu'une réanalyse de 2024 remet en question après la découverte d'une erreur de mesure ; les premières cartes détaillées de la géométrie du dégazage cométaire.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Ariane 5G+ lance Rosetta depuis Kourou pour la croisière de 10 ans vers la comète 67P.",
+      "note": "Une Ariane 5G+ décolle de Kourou avec Rosetta pour la croisière de 10 ans vers la comète 67P.",
       "type": "nominal"
     },
     {
       "met": 367,
       "label": "SURVOL TERRESTRE #1",
-      "note": "Première de trois assistances gravitationnelles terrestres pour construire la vitesse vers le rendez-vous cométaire.",
+      "note": "Premier des trois assistances gravitationnelles terrestres pour accumuler de la vélocité pour le rendez-vous cométaire.",
       "type": "nominal"
     },
     {
       "met": 1090,
       "label": "SURVOL MARTIEN",
-      "note": "Unique assistance gravitationnelle martienne + premières images rapprochées de Phobos et Mars à 250 km.",
+      "note": "Assistance gravitationnelle martienne unique + premiers clichés rapprochés de Phobos et Mars à 250 km.",
       "type": "nominal"
     },
     {
       "met": 1671,
       "label": "ASTÉROÏDE 2867 ŠTEINS",
-      "note": "Premier survol rapproché d'un astéroïde de type E.",
+      "note": "Premier gros plan jamais réalisé d'un astéroïde de type E.",
       "type": "nominal"
     },
     {
       "met": 2320,
       "label": "ASTÉROÏDE 21 LUTETIA",
-      "note": "Survol à 100 km de l'un des plus grands astéroïdes de la ceinture principale jamais observés de près.",
+      "note": "Survol à ~120 km de l'un des plus grands astéroïdes de la ceinture principale jamais observé de près.",
       "type": "nominal"
     },
     {
       "met": 3809,
-      "label": "RENDEZ-VOUS COMÈTE 67P",
-      "note": "Insertion en orbite autour de la comète 67P/Tchourioumov-Guérassimenko. Philae atterrit le 12/11/2014.",
+      "label": "RENDEZ-VOUS AVEC LA COMÈTE 67P",
+      "note": "Insertion en orbite autour de la comète 67P/Churyumov–Gerasimenko. Philae atterrit le 2014-11-12.",
       "type": "nominal"
     }
   ]

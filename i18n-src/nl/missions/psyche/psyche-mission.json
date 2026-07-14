@@ -1,8 +1,8 @@
 {
   "name": "Psyche",
-  "type": "ORBITER · ACTIVE",
-  "first": "Eerste missie naar een metaalrijke M-klasse asteroïde; eerste gebruik van Hall-effect ionenstuwraketten als primaire voortstuwing tijdens de reis",
-  "description": "Psyche reikt naar de blootliggende nikkel-ijzer kern van een gedifferentieerde proto-planeet — een 226-km metalen lichaam dat misschien wel de dichtstbijzijnde analoog is van de eigen kern van de Aarde, waar dan ook toegankelijk. Gelanceerd 2023-10-13 met een Falcon Heavy vanaf Kennedy LC-39A. Vier SPT-140 Hall-effect ionenstuwraketten laten het traject spiraalvormig naar buiten draaien; een Mars zwaartekrachtassistentie 2026-05 voegt de energie toe die ionenstuwkracht alleen niet op tijd zou kunnen leveren. Aankomst gepland 2029-08, gevolgd door een 26 maanden durende afdaling in vier baanfases (A → B → C → D) waarbij de zwaartekracht, het magnetisme, de topografie en de samenstelling van de asteroïde in kaart worden gebracht. Als de metalen-kern hypothese klopt, zal Psyche er heel anders uitzien dan alles wat we eerder bezocht hebben — kaal metalen oppervlak, ijzer-sulfide afzettingen, geen van de puinhoop-chaos van typische asteroïden.",
+  "type": "ORBITER · ACTIEF",
+  "first": "Eerste missie naar een metaalrijk M-klasse-asteroïde; eerste gebruik van Hall-effect ionenthrusters als primaire cruisevoortdrijving",
+  "description": "Psyche bereikt de blootgestelde nikkel-ijzerkern van een gedifferentieerde proto-planeet — een 226 km groot metaallichaam dat mogelijk de dichtstbijzijnde analoog is van Aarde's eigen kern die ergens bereikbaar is. Gelanceerd 2023-10-13 op een Falcon Heavy vanaf Kennedy LC-39A. Vier SPT-140 Hall-effect ionenthrusters spiraliseren de baan naar buiten; een Mars-zwaartekrachtassist in mei 2026 (4.609 km kleinste nadering) leverde de energie op die ionenstuwing alleen niet op tijd kon leveren. Aankomst gepland 2029-08, gevolgd door een 26 maanden durende vier-baanfase-afdaling (A → B → C → D) die zwaartekracht, magnetisme, topografie en samenstelling van de asteroïde in kaart brengt. Als de hypothese van de metaalkern klopt, zal Psyche uitzien als niets wat we eerder hebben bezocht — kaal metalen oppervlak, ijzersulfideafzettingen, geen chaos van puin-hoopjes zoals typische asteroïden.",
   "events": [
     {
       "met": 0,
@@ -12,20 +12,20 @@
     },
     {
       "met": 30,
-      "label": "IONENREIS BEGINT",
-      "note": "Vier Hall-effect ionenstuwraketten nemen het over. Continue lage-stuwkracht acceleratie gedurende 4+ jaar.",
+      "label": "IONENCRUISE BEGINT",
+      "note": "Vier Hall-effect ionenthrusters nemen over. Continue lage-stuwing-versnelling gedurende 4+ jaar.",
       "type": "info"
     },
     {
       "met": 945,
-      "label": "MARS ZWAARTEKRACHTASSISTENTIE",
-      "note": "2026-05-15, 3.000 km dichtste nadering.",
+      "label": "MARS-ZWAARTEKRACHTASSIST",
+      "note": "2026-05-15. Kleinste nadering 4.609 km — Mars-voorbijvlucht voltooid.",
       "type": "info"
     },
     {
       "met": 2118,
-      "label": "PSYCHE AANKOMST",
-      "note": "Ionenstuwkracht gravitationele vangst in 700-km baan. 26 maanden missie, vier baanfases.",
+      "label": "PSYCHE-AANKOMST",
+      "note": "Ionenstuw-zwaartekrachtcapture in 700 km baan. 26-maanden missie, vier baanfasen.",
       "type": "info"
     }
   ]

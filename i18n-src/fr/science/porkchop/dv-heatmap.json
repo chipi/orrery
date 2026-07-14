@@ -1,14 +1,14 @@
 {
-  "title": "Carte de chaleur Δv",
-  "intro_sentence": "L'échelle de couleur qui transforme nombres Δv en image lisible d'un coup d'œil.",
+  "title": "Carte thermique Δv",
+  "intro_sentence": "L'échelle de couleur qui transforme les nombres Δv en une image lisible au coup d'œil.",
   "narrative_101": [
-    "But porkchop = couleurs. Nombres dans grille géante diraient même chose mais motifs invisibles. Peint cellules — turquoise frais bon marché, jaune borderline, rouge cher.",
-    "Turquoise ~3 km/s — Hohmann réelle Mars. Bleu ~5. Jaune ~7. Orange/rouge >9 — au-delà du faisable. Cohérent partout porkchops `/plan`.",
-    "Hover pour Δv exact. Truc visuel rend porkchop indispensable. Scan seconde = destination atteignable, fenêtres, compromis."
+    "L'intérêt d'une courbe d'énergie est la couleur. Des chiffres dans une grille géante vous diraient la même chose, mais vous ne pourriez pas voir les motifs. Nous peignons donc chaque cellule — bleu-vert glacé pour les trajectoires bon marché, jaune pour la limite, orange et rouge pour les trajectoires désespérément coûteuses. La reconnaissance des motifs prend le pas sur l'arithmétique.",
+    "Le bleu-vert glacé se situe autour de 3 km/s de Δv — le coup de départ depuis une orbite basse (LEO) pour un transfert de type Hohmann vers Mars (injection trans-martienne). Bleu autour de 5 km/s — abordable, trajets un peu plus rapides. Jaune autour de 7 km/s — ça devient cher, vous payez pour la vitesse. Orange et rouge au-delà de 9 km/s — vous avez quitté le domaine de ce que les fusées actuelles peuvent pratiquement livrer. Le mappage couleur-coût est cohérent sur toutes les courbes d'énergie de /plan.",
+    "Survoler une cellule vous montre le Δv exact en km/s, mais l'histoire visuelle est le tour de passe-passe qui rend les courbes d'énergie indispensables. Vous pouvez balayer le graphique en une seconde et savoir si une destination est accessible, quand les fenêtres de tir sont, et ce que les compromis coûtent. Aucune formule ne fait cela."
   ],
   "body_paragraphs": [
-    "Turquoise frais Δv bas ~3 km/s — minimum Hohmann naturel. Bleu ~5. Jaune ~7 — seuil cher. Orange/rouge >9 — coûts emballés.",
-    "Échelle Orrery plafonne ~11+ km/s. Au-delà rouge profond car fusées actuelles ne livrent pas. Voyager 1 lança C₃ ≈ 99 (V∞ ≈ 10 km/s) — limite 1977.",
-    "Sur `/plan` hover pour Δv exact. Carte chaleur visualise réponse."
+    "Le bleu-vert glacé se situe à un Δv faible (≈3 km/s) — le coup de départ minimum pour une Hohmann-like vers Mars (c'est le Δv d'injection trans-martienne depuis LEO, pas le Δv total de la mission). Bleu à ≈5 km/s. Jaune autour de 7 km/s — le seuil du coûteux. Orange et rouge au-delà de 9 km/s — cellules de coûts incontrôlables, où vous auriez besoin d'un lanceur de classe SLS juste pour que le calcul soit viable.",
+    "L'échelle d'Orrery plafonne autour de 11+ km/s. Tout ce qui dépasse est rendu en rouge le plus foncé car en pratique aucun lanceur actuel ne peut livrer la charge utile à ces coûts de Δv. Voyager 1 est un exemple de l'extrême rouge : son départ de la Terre nécessitait une énergie caractéristique C3 ≈ 100 km²/s² (remarque : C3 est V∞ au carré, donc C3 et Δv sont sur des échelles différentes — √100 km²/s² ≈ 10 km/s d'excès hyperbolique). La conversion en Δv de départ depuis LEO place Voyager 1 au-dessus de 7 km/s — déjà près de la limite de ce qu'un Titan IIIE/Centaur pouvait livrer en 1977.",
+    "Sur `/plan`, vous pouvez survoler une cellule pour voir le Δv exact en km/s. La carte thermique est une visualisation de la réponse ; la valeur de la cellule est la réponse elle-même."
   ]
 }

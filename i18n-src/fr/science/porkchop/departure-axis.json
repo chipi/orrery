@@ -1,14 +1,14 @@
 {
-  "title": "Axe de fenêtre de départ",
-  "intro_sentence": "Quand tu lances — sur axe X, typiquement spans 4 ans, échantillonné quotidien.",
+  "title": "Axe de la Fenêtre de Départ",
+  "intro_sentence": "Au moment du lancement — parcourant l'axe X, typiquement une durée de quatre ans échantillonnée quotidiennement.",
   "narrative_101": [
-    "Lis porkchop comme calendrier. Axe horizontal = date départ Terre. Chaque colonne pixel = jour différent. Orrery échantillonne 1 jour sur ~4 ans — capture deux cycles synodiques complets.",
-    "Regarde rangée cellules bon marché — lis fenêtres directement calendrier. Mars ~26 mois. Vénus 19. Jupiter 13. Hors zones : calendrier lutte contre toi.",
-    "Quand barre slider année lancement /plan, glisse axe X. Année différente, fenêtres différentes — physique pareille."
+    "Lisez le porkchop comme un calendrier. L'axe horizontal — de gauche à droite — est la date à laquelle vous quittez la Terre. Chaque colonne de pixels correspond à un jour de lancement différent. Orrery échantillonne à une résolution d'un jour sur environ quatre ans ; c'est suffisant pour capturer deux cycles synodiques complets pour Mars (le cycle d'environ 26 mois s'ajuste à peu près deux fois en quatre ans), ce qui suffit pour voir le motif de la fenêtre de lancement se répéter.",
+    "Regardez sur la ligne des cellules à bas coût (le lobe bleu-vert clair) et vous pouvez lire, sur le calendrier, exactement quand les fenêtres de lancement se produisent. Pour Mars, elles sont à peu près tous les 26 mois. Pour Vénus tous les 19. Pour Jupiter tous les 13. Chaque zone bon marché est une fenêtre — en dehors de ces zones, le calendrier vous oppose une résistance.",
+    "Quand vous ajustez le sélecteur d'année de lancement dans /plan, vous faites glisser l'axe X. Année différente, placement de fenêtre différent, mais la physique sous-jacente est la même. C'est pourquoi la planification des missions est dictée par le calendrier : les zones bon marché ne se déplacent pas simplement parce que nous avons un délai."
   ],
   "body_paragraphs": [
-    "Axe X = quand Terre. Pixel-colonne = date différente — résolution 1 jour sur ~4 ans. 4 ans car synodique Terre-Mars 26 mois.",
-    "Lobes bon marché (\"viande\") à intervalles prévisibles. Mars ~26 mois. Vénus ~19. Jupiter ~13.",
-    "Sur `/plan` étiquette : `FENÊTRE DÉPART · 2026-2030`. Dates exactes au tooltip."
+    "L'axe X vous indique quand vous quittez la Terre. Chaque colonne de pixels correspond à une date de lancement différente — pour les tracés d'Orrery, échantillonnée à une résolution d'un jour sur environ quatre ans. Pourquoi une durée de quatre ans ? Parce que la période synodique Terre-Mars est d'environ 26 mois ; quatre ans captureront à peu près deux fenêtres complètes pour Mars. Pour Vénus (environ 19 mois) ou Jupiter (environ 13 mois), le même intervalle s'ajuste à plus de fenêtres — la largeur de quatre ans est calibrée pour la planification de classe Mars.",
+    "Lisez l'axe X comme un calendrier. Les lobes à bas coût (la « viande » du porkchop) se situent à des intervalles prévisibles. Pour Mars : environ tous les 26 mois. Pour Vénus : environ tous les 19 mois. Pour Jupiter : environ tous les 13 mois (Jupiter se déplace assez lentement pour que la période synodique soit proche de l'année terrestre).",
+    "Sur `/plan`, l'étiquette de l'axe X est `FENÊTRE DE DÉPART · 2026 — 2030`. Les dates du calendrier littérales apparaissent dans l'infobulle lorsque vous survolez."
   ]
 }

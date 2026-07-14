@@ -1,14 +1,14 @@
 {
-  "title": "Mappa di calore Δv",
-  "intro_sentence": "La scala di colore.",
+  "title": "Mappa termica di ∆v",
+  "intro_sentence": "La scala di colori che trasforma i numeri di ∆v in un'immagine leggibile a colpo d'occhio.",
   "narrative_101": [
-    "Lo scopo del porkchop sono i colori. Riconoscimento di pattern.",
-    "Turchese ~3 km/s — Hohmann Marte. Blu ~5. Giallo ~7. Rosso >9 — non realizzabile attualmente.",
-    "Hover per Δv esatto. Scan in un secondo = destinazione raggiungibile."
+    "Il vero scopo di un diagramma porkchop è il colore. I numeri in una griglia gigante ti direbbero la stessa cosa, ma non potresti vedere i modelli. Così dipingiamo ogni cella — teal freddo per traiettorie economiche, giallo per i casi limite, arancione e rosso per quelli disperatamente costosi. Il riconoscimento dei modelli sostituisce l'aritmetica.",
+    "Il teal freddo si attesta intorno ai 3 km/s di ∆v — il burn di partenza dal LEO per un trasferimento alla Hohmann-like verso Marte (trans-Mars injection). Blu intorno ai 5 km/s — viaggi convenienti e leggermente più veloci. Giallo intorno ai 7 km/s — sta diventando costoso, stai pagando per la velocità. Arancione e rosso oltre i 9 km/s — sei uscito dal regno di quello che i razzi attuali possono praticamente consegnare. La mappatura colore-costo è coerente su tutti i porkchop in /plan.",
+    "Passando il mouse su una cella viene visualizzato il ∆v esatto in km/s, ma la storia visiva è il trucco ottico che rende i porkchop indispensabili. Puoi scansionare il grafico in un secondo e sapere se una destinazione è raggiungibile, quando sono le finestre e quali sono i costi dei compromessi. Nessuna formula fa questo."
   ],
   "body_paragraphs": [
-    "Turchese basso Δv ~3 km/s. Blu ~5. Giallo ~7. Rosso >9 — costi run-away.",
-    "Scala Orrery topa ~11+ km/s. Voyager 1 lanciò C₃ ≈ 99 — limite 1977.",
-    "Hover per Δv esatto. Mappa visualizza risposta."
+    "Il teal freddo si attesta a basso ∆v (~3 km/s) — il minimo burn di partenza per un'orbita simile a Marte Hohmann (questo è il ∆v di trans-Mars injection dal LEO, non il ∆v totale della missione). Blu a ~5 km/s. Giallo intorno ai 7 km/s — la soglia del costoso. Arancione e rosso oltre i 9 km/s — celle di costo fuori controllo, dove avresti bisogno di un veicolo di lancio della classe SLS solo per avvicinare la matematica.",
+    "La scala di Orrery arriva a circa 11+ km/s. Tutto quello che va oltre è reso come il rosso più profondo perché in pratica nessun veicolo di lancio attuale può consegnare il carico utile a quei costi di ∆v. La Voyager 1 è un esempio dell'estremità rosso scuro: la sua partenza dalla Terra richiedeva un'energia caratteristica C3 ≈ 100 km²/s² (nota: C3 è V∞ al quadrato, quindi C3 e ∆v si trovano su scale diverse — √100 km²/s² ≈ 10 km/s di eccesso iperbolico). Convertendo a un ∆v di partenza dal LEO si ottiene la Voyager 1 oltre i 7 km/s — già vicino al limite di quello che un Titan IIIE/Centaur poteva consegnare nel 1977.",
+    "Su `/plan` puoi passare il mouse su una cella per vedere il ∆v esatto in km/s. La mappa termica è una visualizzazione della risposta; il valore della cella è la risposta stessa."
   ]
 }

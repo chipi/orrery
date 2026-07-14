@@ -1,14 +1,14 @@
 {
-  "title": "Leggere i contorni",
-  "intro_sentence": "La forma della zona economica rivela geometria traiettorie viable.",
+  "title": "Leggere i Contorni",
+  "intro_sentence": "La forma della zona economica rivela la geometria delle traiettorie praticabili — e dove risiedono i compromessi.",
   "narrative_101": [
-    "Ora conosci assi e scala. Forma zona economica = mappa quali traiettorie funzionano.",
-    "Mars classico ha DUE lobi economici per finestra. \"Tipo I\" (corto, <180°) e \"Tipo II\" (lungo, >180°).",
-    "Fuori dei lobi: rosso. La maggior parte del porkchop è rosso."
+    "Ora conosci gli assi e la scala cromatica. La prossima competenza è leggere la FORMA della zona economica. Il lobo teal non è solo una macchia generica — è una mappa letterale di quali traiettorie funzionano e quali no.",
+    "Il classico porkchop di Marte ha DUE lobi economici per finestra di lancio, uno accanto all'altro. Si chiamano traiettorie di \"Tipo I\" e \"Tipo II\" — stessa finestra, due modi diversi intorno al Sole. Il Tipo I percorre la strada breve (angolo di trasferimento sotto 180 gradi) ed è più veloce. Il Tipo II percorre la strada lunga (angolo di trasferimento sopra 180 gradi) ed è più lento ma a volte più economico. Entrambi sono reali, entrambi sono stati volati.",
+    "Fuori dai lobi: rosso. La maggior parte del porkchop è effettivamente rossa. Quella è la lezione. Ci sono pochissimi momenti economici per lanciare un'astronave verso un altro pianeta, e non sono negoziabili. \"Aspetta semplicemente la finestra giusta\" quasi sempre batte \"inventare una traiettoria intelligente\". Leggere la forma del lobo — dove si allarga, dove si restringe, dove si trovano gli ottimi — è quello che i dinamicisti del volo fanno di mestiere."
   ],
   "body_paragraphs": [
-    "Mars porkchop: lobo ovale celle turchesi centrato ~250 giorni TOF, ricorrente ~26 mesi.",
-    "Due soluzioni per finestra. Corto (<180°) e lungo (>180°) connettono Terra-Marte via ellissi diverse.",
-    "Fuori dei lobi rosso. Lontano dalla finestra naturale: traiettoria custom alta-energia."
+    "Guarda un porkchop di Marte. Vedrai un lobo all'incirca ovale di celle teal centrato vicino a un TOF di 250 giorni, ricorrente ogni 26 mesi. Questa è l'opportunità di Hohmann. All'interno del lobo, tutte le combinazioni di (partenza, TOF) forniscono missioni di Marte praticabili con ∆v accettabile.",
+    "Due soluzioni per finestra. La \"strada breve\" (angolo di trasferimento < 180°) e la \"strada lunga\" (angolo di trasferimento > 180°) collegano entrambe la Terra a Marte ma attraverso ellissi diverse. Appaiono come due lobi economici nel porkchop, separati da una cresta ad alto ∆v a circa 180° di angolo di trasferimento — questa cresta è letteralmente l'\"osso\" del pork chop. A volte compaiono entrambi i lobi, a volte solo uno, a seconda della geometria.",
+    "Fuori dai lobi economici: rosso. Lontano da qualsiasi finestra naturale, avresti bisogno di una traiettoria ad alta energia personalizzata (gravity assist, multi-burn) per far funzionare la matematica. Le missioni reali si concentrano nelle zone economiche; la filosofia progettuale \"aspetta semplicemente la finestra giusta\" spesso batte \"inventare una traiettoria intelligente\"."
   ]
 }

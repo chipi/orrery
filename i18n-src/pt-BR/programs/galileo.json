@@ -1,27 +1,27 @@
 {
   "name": "Galileo",
-  "tagline": "A primeira espaçonave a orbitar Júpiter voou por oito anos com uma antena defeituosa — e ainda assim retornou a evidência mais forte até então de que uma lua de Júpiter esconde um oceano.",
+  "tagline": "A primeira espaçonave a orbitar Júpiter voou com uma antena danificada por mais de uma década — e ainda assim retornou a evidência mais forte até então de que uma lua de Júpiter esconde um oceano.",
   "the_land": [
     {
       "type": "prose",
-      "md": "As Pioneer e Voyager haviam passado por Júpiter, cada uma em questão de horas, e cada uma havia deixado mais perguntas do que respostas: indícios de um oceano sob o gelo de Europa, vulcões em Io, um campo magnético mais vasto do que qualquer outro no sistema solar. Sobrevoos não podiam resolvê-los. Para compreender Júpiter e suas quatro grandes luas — mundos tão variados e interessantes quanto planetas por direito próprio — uma espaçonave teria que entrar em órbita e permanecer por anos."
+      "md": "As Pioneer e Voyager haviam passado por Júpiter, cada uma em questão de horas, e cada uma havia deixado mais perguntas do que respostas: indícios de um oceano sob o gelo de Europa, vulcões em Io, um campo magnético mais vasto do que qualquer outro no sistema solar. Passagens rápidas não podiam resolvê-las. Para entender Júpiter e suas quatro grandes luas — mundos tão variados e interessantes quanto planetas por direito próprio — uma espaçonave teria que entrar em órbita e permanecer por anos."
     },
     {
       "type": "prose",
-      "md": "Galileo foi construída para ser essa residente, e teve um caminho difícil mesmo antes do lançamento. Atrasada por anos pelo desastre do Challenger e por mudanças nos planos de lançamento, finalmente deixou a Terra a bordo do Space Shuttle em 1989 numa trajetória lenta e sinuosa — passando por Vênus e duas vezes pela Terra para ganhar velocidade — que levou seis anos para alcançar um planeta que outras missões haviam alcançado diretamente."
+      "md": "Galileo foi construída para ser essa residente, e teve um caminho difícil mesmo antes do lançamento. Atrasada por anos pelo desastre do Challenger e mudanças nos planos de lançamento, finalmente deixou a Terra a partir do Space Shuttle em 1989 em uma trajetória lenta e sinuosa — passando por Vênus e duas vezes pela Terra para ganhar velocidade — que levou seis anos para alcançar um planeta que outras missões haviam alcançado diretamente."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "O objetivo era o primeiro estudo sustentado do sistema de Júpiter: orbitar o planeta, percorrer suas quatro grandes luas repetidamente e transformar os vislumbres tentadores das Voyager em compreensão. Havia realmente um oceano sob Europa? Como funcionavam os vulcões de Io? O que impulsionava o maior campo magnético do sistema solar? Essas eram perguntas que apenas um orbitador, passando por cada lua repetidamente ao longo de anos, poderia responder."
+      "md": "O objetivo era o primeiro estudo sustentado do sistema de Júpiter: orbitar o planeta, percorrer suas quatro grandes luas repetidamente, e transformar os vislumbres tentadores das Voyager em compreensão. Havia realmente um oceano sob Europa? Como funcionavam os vulcões de Io? O que impulsionava o maior campo magnético do sistema solar? Essas eram perguntas que apenas um orbitador, passando por cada lua repetidamente ao longo de anos, poderia responder."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/galileo/01"
       },
-      "caption": "Galileo carregava uma sonda para lançar na atmosfera de Júpiter e um orbitador para percorrer as luas. Sua grande antena principal em forma de guarda-chuva deveria se desdobrar em voo para enviar dados para casa em alta velocidade — e nunca se abriu completamente.",
+      "caption": "Galileo carregava uma sonda para lançar na atmosfera de Júpiter e um orbitador para percorrer as luas. Sua grande antena principal em forma de guarda-chuva deveria se desdobrar em voo para enviar dados para casa em alta velocidade — e nunca se desdobrou completamente.",
       "align": "right"
     },
     {
@@ -32,53 +32,53 @@
   "outcome": [
     {
       "type": "prose",
-      "md": "Então a missão quase fracassou. Em 1991, a caminho de Júpiter, a antena principal de Galileo falhou ao abrir — ficou meio enrolada, como um guarda-chuva que não se abre, reduzindo a taxa de dados da espaçonave para uma fração ínfima do que estava planejado. A missão deveria ter sido inutilizada. Em vez disso, engenheiros reescreveram seu software da Terra, ensinando a distante espaçonave a comprimir seus dados de forma muito mais agressiva e enviá-los lentamente para casa através de uma pequena antena de backup. A maior parte da ciência foi salva através de um link milhares de vezes mais lento do que o pretendido."
+      "md": "Então a missão quase foi interrompida. Em 1991, a caminho de Júpiter, a antena principal da Galileo falhou ao abrir — ficou presa semifechada, como um guarda-chuva que não se abre, reduzindo a taxa de dados da espaçonave a uma pequena fração do que estava planejado. A missão deveria ter sido comprometida. Em vez disso, engenheiros reescreveram seu software da Terra, ensinando a espaçonave distante a comprimir seus dados de forma muito mais agressiva e enviá-los para casa através de uma pequena antena reserva. A maior parte da ciência foi salva por um link milhares de vezes mais lento do que o pretendido."
     },
     {
       "type": "prose",
-      "md": "Chegou a Júpiter em dezembro de 1995, liberou sua sonda nas nuvens e estabeleceu-se em órbita — a primeira espaçonave a fazê-lo. Ao longo dos oito anos seguintes, percorreu as luas dezenas de vezes, e sua maior descoberta emergiu lentamente dessa persistência: a forma como o campo magnético de Júpiter se moldava ao redor de Europa só podia ser explicada por um oceano salgado e condutor de água líquida sob o gelo da lua. Também mapeou o vulcanismo implacável de Io e encontrou sinais de um campo magnético gerado dentro da lua Ganímedes."
+      "md": "Chegou a Júpiter em dezembro de 1995, liberou sua sonda nas nuvens e se estabeleceu em órbita — a primeira espaçonave a fazê-lo. Ao longo de quase oito anos, percorreu as luas dezenas de vezes, e sua maior descoberta emergiu lentamente dessa persistência: a maneira como o campo magnético de Júpiter se moldava ao redor de Europa só podia ser explicada por um oceano salgado e condutor de água líquida sob o gelo da lua. Também mapeou o vulcanismo implacável de Io e encontrou sinais de um campo magnético gerado dentro da lua Ganymede."
     },
     {
       "type": "prose",
-      "md": "Em 2003, com pouco combustível, Galileo foi deliberadamente lançada contra Júpiter e destruída — a mesma escolha que Cassini faria mais tarde em Saturno — para garantir que a espaçonave nunca pudesse um dia colidir com Europa e contaminar o oceano que havia feito tanto para revelar."
+      "md": "Em 2003, com pouco combustível, Galileo foi deliberadamente lançada em Júpiter e destruída — a mesma escolha que Cassini faria mais tarde em Saturno — para garantir que a espaçonave nunca pudesse um dia colidir com Europa e contaminar o oceano que havia feito tanto para revelar."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "A história de Galileo é uma missão resgatada do desastre pela engenhosidade. A antena travada poderia tê-la encerrado; a espaçonave foi projetada em torno de um link de alta velocidade que não existia mais. Que Galileo tenha retornado a maior parte de sua ciência mesmo assim — através de uma antena de backup nunca destinada a carregar a carga, através de software escrito e carregado após o lançamento — é um dos grandes trabalhos de salvamento na história dos voos espaciais, e um lembrete de que o resultado de uma missão é decidido tanto pelas pessoas que a conduzem quanto pelo hardware que voou."
+      "md": "A história da Galileo é uma missão resgatada do desastre pela engenhosidade. A antena travada poderia tê-la encerrado; a espaçonave foi projetada em torno de um link de alta velocidade que não mais existia. Que Galileo retornou a maior parte de sua ciência de qualquer forma — através de uma antena reserva nunca destinada a carregar a carga, por software escrito e carregado após o lançamento — é um dos grandes trabalhos de salvamento na história dos voos espaciais, e um lembrete de que o resultado de uma missão é decidido tanto pelas pessoas que a pilotam quanto pelo hardware que voou."
     },
     {
       "type": "prose",
-      "md": "Sua descoberta mais importante reformulou uma lua. Antes de Galileo, o oceano de Europa era uma hipótese derivada de algumas imagens da Voyager; depois de Galileo, era a explicação principal para dados magnéticos sólidos coletados em passagem após passagem. Uma lua congelada de Júpiter juntou-se a Enceladus de Saturno como um lugar onde água líquida — e a possibilidade de vida — se esconde sob o gelo. Galileo não viu o oceano; tornou o argumento a seu favor inegável e apontou a próxima geração de missões para Europa."
+      "md": "Sua descoberta mais importante reformulou uma lua. Antes da Galileo, o oceano de Europa era uma hipótese derivada de algumas imagens da Voyager; depois da Galileo, era a explicação principal para dados magnéticos concretos coletados em passagem após passagem. Uma lua congelada de Júpiter se juntou a Enceladus de Saturno como um lugar onde água líquida — e a possibilidade de vida — se esconde sob o gelo. Galileo não viu o oceano; tornou o argumento em seu favor inegável, e apontou a próxima geração de missões para Europa."
     },
     {
       "type": "prose",
-      "md": "E, como Cassini depois dela, Galileo terminou destruindo-se para proteger o que havia encontrado. Uma espaçonave que havia passado oito anos argumentando que Europa poderia ser habitável não podia ser permitida tornar-se aquilo que a semearia com vida terrestre. Seu ato final foi cair em Júpiter — o planeta gigante engolindo o robô que finalmente havia compreendido suas luas."
+      "md": "E, como Cassini depois dela, Galileo terminou se autodestruindo para proteger o que havia encontrado. Uma espaçonave que havia passado quase oito anos argumentando que Europa poderia ser habitável não podia ser permitida se tornar a coisa que a semearia com vida terrestre. Seu ato final foi cair em Júpiter — o planeta gigante engolindo o robô que finalmente havia compreendido suas luas."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "O primeiro legado de Galileo é Europa. Seus dados transformaram um oceano subsuperficial de especulação no modelo principal, tornando Europa um dos dois ou três lugares mais convincentes do sistema solar para buscar vida — e a razão direta pela qual uma missão dedicada, Europa Clipper, foi posteriormente construída para dar continuidade."
+      "md": "O primeiro legado da Galileo é Europa. Seus dados transformaram um oceano subsuperficial de especulação no modelo principal, tornando Europa um dos dois ou três lugares mais convincentes no sistema solar para buscar vida — e a razão direta pela qual uma missão dedicada, Europa Clipper, foi posteriormente construída para dar seguimento."
     },
     {
       "type": "prose",
-      "md": "O segundo é o sistema de Júpiter como um todo: o primeiro estudo sustentado do planeta gigante, sua atmosfera amostrada por dentro, seu campo magnético mapeado, e suas quatro grandes luas transformadas de vislumbres da Voyager em mundos compreendidos ao longo de oito anos em órbita."
+      "md": "O segundo é o sistema de Júpiter como um todo: o primeiro estudo sustentado do planeta gigante, sua atmosfera amostrada por dentro, seu campo magnético mapeado, e suas quatro grandes luas transformadas de vislumbres da Voyager em mundos compreendidos ao longo de quase oito anos em órbita."
     },
     {
       "type": "prose",
-      "md": "O terceiro é uma demonstração de resiliência — que uma missão pode perder sua capacidade central e ainda assim ter sucesso se as pessoas que a conduzem forem inventivas o suficiente. O resgate por software de Galileo é um estudo de caso permanente em salvar uma espaçonave que, por direito, deveria ter sido perdida."
+      "md": "O terceiro é uma demonstração de resiliência — que uma missão pode perder sua capacidade central e ainda ter sucesso se as pessoas que a pilotam forem suficientemente inventivas. O resgate por software da Galileo é um estudo de caso permanente em salvamento de uma espaçonave que deveria, por direito, ter sido perdida."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "A lição de Galileo é que uma missão não está terminada quando seu hardware falha. A antena travada removeu a capacidade em torno da qual toda a espaçonave havia sido projetada — e a missão ainda teve sucesso, porque seus operadores reescreveram o que a máquina fazia em vez de lamentar o que ela não podia mais fazer. Quando o plano quebra, a questão não é o que foi perdido, mas o que ainda pode ser feito com o que resta; a diferença entre uma missão morta e uma grande missão é frequentemente a resposta a isso."
+      "md": "A lição da Galileo é que uma missão não termina quando seu hardware falha. A antena travada removeu a capacidade em torno da qual toda a espaçonave havia sido projetada — e a missão ainda teve sucesso, porque seus operadores reescreveram o que a máquina fazia em vez de lamentar o que ela não podia mais fazer. Quando o plano se quebra, a questão não é o que foi perdido, mas o que ainda pode ser feito com o que resta; a diferença entre uma missão morta e uma grande missão é frequentemente a resposta a isso."
     },
     {
       "type": "prose",
-      "md": "A lição mais profunda é que paciência transforma indícios em conhecimento. O oceano de Europa era invisível em qualquer passagem única; emergiu apenas do peso acumulado de muitas, reunidas ao longo de anos em órbita. As descobertas mais importantes frequentemente não são vistas, mas construídas — montadas medição por medição, até que uma hipótese se torne a única coisa que se encaixa nos dados."
+      "md": "A lição mais profunda é que paciência transforma indícios em conhecimento. O oceano de Europa era invisível em qualquer passagem isolada; emergiu apenas do peso acumulado de muitas, reunidas ao longo de anos em órbita. As descobertas mais importantes frequentemente não são vistas, mas construídas — montadas medição por medição, até que uma hipótese se torne a única coisa que se encaixa nos dados."
     }
   ]
 }

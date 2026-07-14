@@ -1,49 +1,49 @@
 {
   "name": "Apollo 9",
-  "type": "BEMAND AARDBAAN · GEVLOGEN",
-  "first": "Eerste bemande LM-vlucht — aardbaan-separatie + rendez-vous-tests",
-  "description": "De eerste bemande vlucht van de Lunar Module. In een aardbaan koppelden McDivitt en Schweickart LM Spider los van CSM Gumdrop, vlogen over zes uur tot 183 km verderop, voerden vervolgens rendez-vous uit en koppelden weer aan — elke stap van de maan-rendezvous-procedure getest zonder de optie om de bemanning in de CSM terug te brengen als er iets mis ging. Schweickart deed een 38-minuten EVA op de LM-veranda, demonstrerend het Apollo EVA-pak + PLSS-rugzakontwerp dat de maanlopende bemanningen zouden gebruiken. Met LM-hardware en rendez-vous-procedures geverifieerd, was NASA klaar om Apollo 10 twee maanden later naar de Maan te sturen.",
+  "type": "BEMANDE AARDBAAN · UITGEVOERD",
+  "first": "Eerste bemande vlucht van de LM — test van LM-scheiding en rendezvous in aardbaan",
+  "description": "De eerste bemande vlucht van de Lunar Module. In aardbaan ontkoppelden McDivitt en Schweickart de LM Spider van CSM Gumdrop, vlogen tot 183 km weg in zes uur, en voerden vervolgens rendezvous en opnieuw aankoppen uit — elke stap van de maanrendezvous-procedure werd getest zonder de mogelijkheid om de bemanning naar huis te brengen in de CSM als iets mis zou gaan. Schweickart voerde een 38 minuten durende EVA uit op de LM-veranda, waarbij hij het Apollo EVA-pak en PLSS-rugzakontwerp demonstreerde dat de maanwandelaars zouden gebruiken. Scott voerde een stand-up EVA uit vanuit de CSM-luik. Met de LM-hardware en rendezvous-procedures geverifieerd, was NASA klaar om Apollo 10 twee maanden later naar de maan te sturen.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-504) from Kennedy Space Center LC-39A 1969-03-03 16:00 UTC — third Saturn V flight, first crewed launch carrying LM.",
+      "label": "LANCERING",
+      "note": "Saturn V (AS-504) vanuit Kennedy Space Center LC-39A 1969-03-03 16:00 UTC — derde Saturn V-vlucht, eerste bemande lancering met LM.",
       "type": "nominal"
     },
     {
       "met": 0.13,
-      "label": "CSM-LM EXTRACTION",
-      "note": "CSM Gumdrop turns around + docks with LM Spider in the SLA adapter — first crewed transposition + docking. All Apollo lunar missions repeat this maneuver.",
+      "label": "CSM-LM EXTRACTIE",
+      "note": "CSM Gumdrop draait om en dockt aan bij LM Spider in de SLA-adapter — eerste bemande transposities en aankoppen. Alle Apollo-maanmissies herhalen deze manoeuvre.",
       "type": "nominal"
     },
     {
       "met": 4.2,
-      "label": "LM SEPARATION",
-      "note": "McDivitt + Schweickart undock Spider, fly up to 183 km from Gumdrop over six hours. First crewed flight where the spacecraft + crew aren't both attached to a re-entry vehicle.",
+      "label": "LM-SCHEIDING",
+      "note": "McDivitt en Schweickart ontkoppelen Spider, vliegen tot 183 km weg van Gumdrop in zes uur. Eerste bemande vlucht waarbij het ruimtevaartuig en bemanning niet beide aan een re-intreeveelheid zijn bevestigd.",
       "type": "info"
     },
     {
       "met": 4.5,
       "label": "EVA",
-      "note": "Schweickart does 38-min EVA on LM porch. Scott stand-up EVA from CSM hatch. First validation of Apollo PLSS backpack.",
+      "note": "Schweickart voert 38 minuten durende EVA uit op LM-veranda. Scott doet stand-up EVA vanuit CSM-luik. Eerste validatie van Apollo PLSS-rugzak.",
       "type": "info"
     },
     {
       "met": 4.5,
-      "label": "RENDEZVOUS + REDOCK",
-      "note": "Spider rendezvous + redocks with Gumdrop, completing the lunar-procedure dress rehearsal in Earth orbit.",
+      "label": "RENDEZVOUS EN OPNIEUW AANKOPPEN",
+      "note": "Spider voert rendezvous uit en koppelt opnieuw aan bij Gumdrop, waarmee de maanprocedure-oefening in aardbaan wordt voltooid.",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "LM JETTISON",
-      "note": "Spider ascent stage jettisoned to deorbit; descent stage remained in orbit and decayed 1981.",
+      "label": "LM-AFWERPING",
+      "note": "Spider-afdaalingstrap uit baan gebracht (hertoetrad maart 1969, Indische Oceaan); opstijgingstrap werd tot uitputting afgevuurd en opgestoten naar een hoge baan — deze verviel in 1981.",
       "type": "nominal"
     },
     {
       "met": 10.04,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Atlantic 1969-03-13 17:00 UTC after 151 orbits. Recovery by USS Guadalcanal.",
+      "label": "WATERLANDING",
+      "note": "CM landde op water in de Noord-Atlantische Oceaan op 1969-03-13 17:00 UTC na 151 banen. Gered door USS Guadalcanal.",
       "type": "nominal"
     }
   ]

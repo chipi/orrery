@@ -1,88 +1,88 @@
 {
   "name": "Los Grandes Observatorios",
-  "tagline": "El plan de la NASA para ver todo el universo: cuatro telescopios insignia, uno para cada tipo de luz, y el linaje de grandes ojos espaciales que los siguió.",
+  "tagline": "El plan de la NASA para ver el universo entero: cuatro telescopios insignia, uno para cada tipo de luz, y el linaje de grandes ojos espaciales que les siguió.",
   "the_land": [
     {
       "type": "prose",
-      "md": "La luz que emite el universo no es solo los colores visibles que nuestros ojos evolucionaron para captar. Los objetos más calientes y violentos brillan en rayos X y rayos gamma; los más fríos, polvorientos y distantes solo resplandecen en el infrarrojo. Para ver el cosmos completo, se necesitan ojos para cada banda del espectro y, crucialmente, se necesitan por encima de la atmósfera, que absorbe la mayoría de esas longitudes de onda antes de que lleguen al suelo. En los años ochenta, la NASA se propuso construir exactamente eso: un conjunto coordinado de telescopios espaciales insignia, cada uno optimizado para una porción distinta de luz."
+      "md": "La luz que emite el universo no es solo los colores visibles que nuestros ojos evolucionaron para captar. Los objetos más calientes y violentos brillan en rayos X y rayos gamma; los más fríos, polvorientos y distantes resplandecen únicamente en el infrarrojo. Para ver el cosmos completo, se necesitan ojos para cada banda del espectro y, fundamentalmente, se necesitan por encima de la atmósfera, que absorbe la mayoría de esas longitudes de onda antes de que lleguen al suelo. En la década de 1980 la NASA se propuso construir exactamente eso: un conjunto coordinado de telescopios espaciales insignia, cada uno optimizado para una porción diferente de luz."
     },
     {
       "type": "prose",
-      "md": "El resultado fue el programa Great Observatories: cuatro naves espaciales, concebidas deliberadamente como una familia: Hubble para luz visible y ultravioleta, Compton para rayos gamma, Chandra para rayos X y Spitzer para el infrarrojo. Entre aproximadamente 1990 y 2003 los cuatro alcanzaron la órbita, y por primera vez la humanidad pudo observar el mismo objeto a través de todo el espectro electromagnético a la vez. Oficialmente, esos cuatro son 'los Great Observatories'. Pero desde nuestra perspectiva décadas después, se leen como el capítulo inicial de un único proyecto continuo de la NASA: la construcción de ojos cada vez mayores en el espacio."
+      "md": "El resultado fue el programa de Grandes Observatorios: cuatro naves espaciales, concebidas deliberadamente como una familia: Hubble para visible y ultravioleta, Compton para rayos gamma, Chandra para rayos X, y Spitzer para el infrarrojo. Entre aproximadamente 1990 y 2003 los cuatro alcanzaron órbita, y por primera vez la humanidad pudo observar el mismo objeto a través de todo el espectro electromagnético a la vez. Oficialmente, esos cuatro son 'los Grandes Observatorios'. Pero desde nuestra perspectiva décadas después, se leen como el capítulo inicial de un único proyecto continuo de la NASA: la construcción de ojos cada vez más grandes en el espacio."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "El objetivo fundacional era la completitud espectral. Una galaxia, un agujero negro, una estrella moribunda se ve radicalmente diferente en cada banda de luz, y cualquier telescopio individual solo cuenta parte de la historia. Al desplegar cuatro observatorios complementarios, la NASA podía ensamblar una imagen completa —la luz estelar visible, la furia de rayos X de la materia cayendo en agujeros negros, los destellos de rayos gamma de los eventos más extremos y el resplandor infrarrojo del polvo frío y las galaxias más tempranas y con mayor corrimiento al rojo— de los mismos objetos, el mismo universo, visto de todas las formas en que puede ser visto."
+      "md": "El objetivo fundacional era la completitud espectral. Una galaxia, un agujero negro, una estrella moribunda se ve radicalmente diferente en cada banda de luz, y cualquier telescopio individual cuenta solo parte de la historia. Al desplegar cuatro observatorios complementarios, la NASA podía ensamblar una imagen completa —la luz estelar visible, la furia en rayos X de materia cayendo en agujeros negros, los destellos de rayos gamma de los eventos más extremos, y el resplandor infrarrojo del polvo frío y las galaxias más tempranas y con mayor corrimiento al rojo— de los mismos objetos, el mismo universo, visto de todas las formas en que puede ser visto."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/hubble/01"
       },
-      "caption": "Hubble: el miembro de luz visible de los cuatro, y el telescopio más famoso jamás construido. Por encima del desenfoque de la atmósfera, convirtió manchas borrosas en galaxias resueltas e hizo de las imágenes del espacio profundo parte de la imaginación humana.",
+      "caption": "Hubble, el miembro de luz visible de los cuatro, y el telescopio más famoso jamás construido. Por encima del difuminado de la atmósfera, transformó manchas borrosas en galaxias resueltas e hizo de las imágenes del espacio profundo parte de la imaginación humana.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "El objetivo del linaje, a medida que se extendió más allá de los cuatro originales, ha sido seguir empujando esa visión más profunda y amplia. El Nancy Grace Roman Space Telescope, la siguiente entrada planificada en la línea de la NASA, cambia la mirada estrecha y profunda de Hubble por un enorme campo de visión —la misma nitidez a través de un área del cielo cien veces mayor— construido para cartografiar el universo a escala, mapeando la energía oscura y buscando exoplanetas en vastas áreas en lugar de estudiar un objetivo a la vez."
+      "md": "El objetivo del linaje, a medida que se extendió más allá de los cuatro originales, ha sido seguir empujando esa visión más profunda y amplia. El Nancy Grace Roman Space Telescope, la siguiente entrada prevista en la línea de la NASA, cambia la mirada estrecha y profunda de Hubble por un campo de visión enorme —la misma nitidez a través de un parche de cielo más de cien veces mayor— construido para cartografiar el universo a escala, mapeando la energía oscura y buscando exoplanetas en áreas vastas en lugar de estudiar un objetivo a la vez."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Los cuatro originales volaron y cumplieron, y tres de los cuatro superaron ampliamente sus vidas útiles planificadas. Hubble, lanzado por el Space Shuttle en 1990 y famosamente rescatado de un espejo defectuoso por astronautas, ha operado durante más de tres décadas y ha reescrito la astronomía. Chandra reveló el universo de rayos X de agujeros negros y cúmulos de galaxias. Spitzer abrió el cielo infrarrojo. Solo Compton se perdió temprano, desorbitalizado deliberadamente en 2000 tras el fallo de un giroscopio. El programa hizo lo que se propuso: dio a la humanidad, por primera vez, ojos a través de todo el espectro."
+      "md": "Los cuatro originales volaron y cumplieron, y tres de los cuatro superaron enormemente sus vidas útiles previstas. Hubble, lanzado por el transbordador espacial en 1990 y famosamente rescatado de un espejo defectuoso por astronautas, ha operado durante más de tres décadas y reescrito la astronomía. Chandra reveló el universo en rayos X de agujeros negros y cúmulos de galaxias. Spitzer abrió el cielo infrarrojo. Solo Compton se perdió temprano, deliberadamente desorbitado en 2000 tras el fallo de un giroscopio. El programa hizo lo que se propuso hacer: le dio a la humanidad, por primera vez, ojos a través de todo el espectro."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/chandra/01"
       },
-      "caption": "Chandra: el observatorio de rayos X, sintonizado con la luz más violenta del universo: materia en espiral hacia agujeros negros, el gas de millones de grados entre galaxias, las ondas de choque de estrellas explotadas. Luz que el suelo nunca puede ver.",
+      "caption": "Chandra, el observatorio de rayos X, sintonizado con la luz más violenta del universo: materia en espiral hacia agujeros negros, el gas de millones de grados entre galaxias, las ondas de choque de estrellas explotadas. Luz que el suelo nunca puede ver.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "La cosecha científica es casi demasiado grande para resumirla: la expansión acelerada del universo, la confirmación de agujeros negros supermasivos en los centros galácticos, la edad y composición del cosmos precisadas, las atmósferas de exoplanetas exploradas por primera vez, las imágenes más profundas jamás tomadas del universo temprano. Gran parte de lo que una persona moderna sabe sobre el aspecto del universo proviene, directa o indirectamente, de estos cuatro telescopios y los que los siguieron."
+      "md": "La cosecha científica es casi demasiado extensa para resumir: la expansión acelerada del universo, la confirmación de agujeros negros supermasivos en centros galácticos, la edad y composición del cosmos determinadas con precisión, las atmósferas de exoplanetas sondeadas por primera vez, las imágenes más profundas jamás tomadas del universo temprano. Mucho de lo que una persona moderna sabe sobre cómo se ve el universo proviene, directa o indirectamente, de estos cuatro telescopios y los que les siguieron."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "La historia de los Great Observatories es la historia de una única buena idea —ver cada tipo de luz, desde encima del aire— perseguida pacientemente a lo largo de décadas. Los cuatro originales fueron un conjunto deliberado y coordinado; pero la idea no se detuvo con ellos. Cada generación de gran telescopio espacial hereda la misma ambición y la lleva más lejos: más nítido, más frío, más amplio, más profundo. Desde nuestra perspectiva, el programa es menos una lista cerrada de cuatro que una tradición continua de la NASA de construir el ojo más grande que permite la tecnología del momento."
+      "md": "La historia de los Grandes Observatorios es la historia de una única buena idea —ver cada tipo de luz, desde encima del aire— perseguida pacientemente a lo largo de décadas. Los cuatro originales fueron un conjunto deliberado y coordinado; pero la idea no se detuvo con ellos. Cada generación de gran telescopio espacial hereda la misma ambición y la empuja más lejos: más nítida, más fría, más amplia, más profunda. Desde nuestra perspectiva el programa es menos una lista cerrada de cuatro que una tradición continua de la NASA de construir el ojo más grande que la tecnología del momento permite."
     },
     {
       "type": "prose",
-      "md": "Hubble es el centro emocional de esa tradición. Su casi fracaso y reparación dramática, sus imágenes que se convirtieron en referentes culturales, su pura longevidad lo convirtieron en el telescopio que el público conoce por nombre, y demostró que un observatorio espacial podía ser no solo un instrumento científico sino una ventana humana compartida al cosmos. Cada telescopio del linaje se mide, justa o injustamente, contra lo que Hubble hizo con nuestra percepción de dónde estamos."
+      "md": "Hubble es el centro emocional de esa tradición. Su casi fracaso y reparación dramática, sus imágenes que se convirtieron en referentes culturales, su mera longevidad lo convirtieron en el telescopio que el público conoce por nombre, y demostró que un observatorio espacial podía ser no solo un instrumento científico sino una ventana humana compartida hacia el cosmos. Cada telescopio en el linaje se mide, justa o injustamente, contra lo que Hubble hizo a nuestra percepción de dónde estamos."
     },
     {
       "type": "prose",
-      "md": "El linaje también se ramifica. El James Webb Space Telescope —el sucesor infrarrojo de Hubble, y un auténtico buque insignia internacional construido con Europa y Canadá— es un capítulo lo bastante grande y distinto como para mantenerse por sí mismo, cubierto por separado en este atlas. Roman continúa la línea de la NASA aquí. El punto no son los límites exactos del árbol genealógico sino la continuidad de la ambición: la humanidad, década tras década, construyendo mejores ojos y apuntándolos a todo."
+      "md": "El linaje también se ramifica. El James Webb Space Telescope —el sucesor infrarrojo de Hubble, y un auténtico proyecto insignia internacional construido con Europa y Canadá— es un capítulo lo suficientemente grande y distinto como para sostenerse por sí mismo, cubierto por separado en este atlas. Roman continúa la línea de la NASA aquí. El punto no son los límites exactos del árbol genealógico sino la continuidad de la ambición: la humanidad, década tras década, construyendo mejores ojos y apuntándolos hacia todo."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "El primer legado es la imagen moderna del universo mismo. El cosmos en aceleración, los agujeros negros, las edades y distancias, las primeras atmósferas de exoplanetas, los campos más profundos: los Great Observatories y sus sucesores son donde se vio realmente una fracción enorme de lo que sabemos sobre el universo. Son los instrumentos detrás del libro de texto."
+      "md": "El primer legado es la imagen moderna del universo mismo. El cosmos en aceleración, los agujeros negros, las edades y distancias, las primeras atmósferas de exoplanetas, los campos más profundos: los Grandes Observatorios y sus sucesores son donde se vio realmente una fracción enorme de lo que sabemos sobre el universo. Son los instrumentos detrás del libro de texto."
     },
     {
       "type": "prose",
-      "md": "El segundo es un modelo probado de cómo ver de forma comprensiva: telescopios complementarios a través del espectro, por encima de la atmósfera, estudiando el mismo universo de todas las formas en que irradia. Ese enfoque multilongitud de onda es ahora simplemente cómo se hace la astronomía, y la coordinación que los cuatro originales pioneros es el estándar que sigue toda campaña de observatorio."
+      "md": "El segundo es un modelo probado de cómo ver de forma comprensiva: telescopios complementarios a través del espectro, por encima de la atmósfera, estudiando el mismo universo de todas las formas en que irradia. Ese enfoque de múltiples longitudes de onda es ahora simplemente cómo se hace la astronomía, y la coordinación que los cuatro originales fueron pioneros es el estándar que toda campaña de observatorio sigue."
     },
     {
       "type": "prose",
-      "md": "Y el tercero es el legado cultural de Hubble: la transformación del espacio profundo de una abstracción en imágenes que cualquiera puede reconocer. Los Great Observatories hicieron visible el universo, en el sentido más pleno: no solo medido, sino visto, y convertido en parte de cómo la humanidad imagina su propio hogar."
+      "md": "Y el tercero es el legado cultural de Hubble: la transformación del espacio profundo de una abstracción en imágenes que cualquiera puede reconocer. Los Grandes Observatorios hicieron el universo visible, en el sentido más pleno: no solo medido, sino visto, y convertido en parte de cómo la humanidad imagina su propio hogar."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La lección de los Great Observatories es que ver completamente requiere ver en cada tipo de luz. Ningún telescopio individual, por poderoso que sea, capta más que una porción de lo que es un objeto; el salto en comprensión vino de mirar el mismo universo a través de todo el espectro a la vez. La completitud, no un instrumento cualquiera, fue el avance."
+      "md": "La lección de los Grandes Observatorios es que ver completo requiere ver en cada tipo de luz. Ningún telescopio individual, por muy potente que sea, captura más que una porción de lo que es un objeto; el salto en comprensión vino de observar el mismo universo a través de todo el espectro a la vez. La completitud, no un instrumento en particular, fue el avance."
     },
     {
       "type": "prose",
-      "md": "La lección más profunda es el valor de una tradición sostenida sobre un único triunfo. El verdadero poder del programa no son los cuatro telescopios originales sino la continuidad de la ambición que iniciaron: un compromiso de décadas para seguir construyendo ojos mayores. Las misiones individuales envejecen y mueren; la tradición de siempre construir el siguiente observatorio, mejor, es lo que mantiene la vista expandiéndose."
+      "md": "La lección más profunda es el valor de una tradición sostenida por encima de un único triunfo. El poder real del programa no son los cuatro telescopios originales sino la continuidad de la ambición que iniciaron: un compromiso de décadas de seguir construyendo ojos más grandes. Las misiones individuales envejecen y mueren; la tradición de siempre construir el siguiente observatorio mejor es lo que mantiene la vista en expansión."
     }
   ]
 }

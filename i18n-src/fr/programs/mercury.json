@@ -1,14 +1,14 @@
 {
   "name": "Mercury",
-  "tagline": "La course effrénée de l'Amérique pour envoyer un être humain dans l'espace — toujours un pas derrière les Soviétiques, et le fondement de tout ce qui a suivi.",
+  "tagline": "La course effrénée de l'Amérique pour mettre un homme dans l'espace — toujours un pas derrière les Soviétiques, et les fondations de tout ce qui suivit.",
   "the_land": [
     {
       "type": "prose",
-      "md": "À l'automne 1957, l'Union soviétique plaça Spoutnik en orbite, et les États-Unis découvrirent qu'ils perdaient une course dont ils n'avaient pas vraiment compris qu'ils y participaient. La réponse de Washington fut institutionnelle : en 1958, ils créèrent une nouvelle agence spatiale civile, la NASA, et lui confièrent une première mission sans détour — envoyer un Américain dans l'espace, et le faire rapidement. Le programme fut nommé Mercury, et dès le premier jour ce fut une course effrénée. Les Soviétiques étaient en avance et continuaient de progresser, et chaque mois de retard signifiait un mois de plus de gros titres sur le monde libre en train de prendre du retard."
+      "md": "À l'automne 1957, l'Union soviétique plaça Sputnik en orbite, et les États-Unis découvrirent qu'ils perdaient une course dont ils n'avaient pas tout à fait compris qu'ils y participaient. La réponse de Washington fut institutionnelle : en 1958, ils créèrent une nouvelle agence spatiale civile, la NASA, et lui confièrent une première mission brutale — mettre un Américain dans l'espace, et le faire vite. Le programme fut nommé Mercury, et dès le premier jour ce fut une course contre la montre. Les Soviétiques avaient de l'avance et continuaient d'avancer, et chaque mois de retard était un mois de plus de gros titres sur le monde libre qui prenait du retard."
     },
     {
       "type": "prose",
-      "md": "En 1959, la NASA choisit sept pilotes d'essai militaires pour le piloter. Présentés lors d'une conférence de presse unique, les Mercury Seven devinrent instantanément des figures nationales — avant même qu'aucun d'entre eux ne soit allé quelque part — parce que le pays avait besoin qu'ils le soient. Ils s'engageaient à chevaucher une capsule expérimentale au sommet d'un missile balistique reconverti : une machine conçue pour livrer une ogive, désormais chargée de livrer un homme et de le ramener chez lui. Personne ne savait encore avec certitude qu'un être humain pouvait survivre au voyage."
+      "md": "En 1959, la NASA sélectionna sept pilotes d'essai militaires pour le piloter. Présentés lors d'une seule conférence de presse, les Mercury Seven devinrent instantanément des figures nationales — avant même qu'aucun d'eux ne soit allé nulle part — parce que le pays avait besoin qu'ils le soient. Ils s'engageaient à monter dans une capsule expérimentale au sommet d'un missile balistique reconverti : une machine conçue pour livrer une ogive, désormais chargée de livrer un homme et de le ramener chez lui. Personne ne savait encore avec certitude qu'un être humain pouvait survivre au voyage."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/mercury-capsule/01"
       },
-      "caption": "La capsule Mercury — à peine plus grande que la personne à l'intérieur. Un siège, aucune place pour bouger, et aucun moyen de changer d'orbite ; l'astronaute pouvait orienter le vaisseau, et guère plus.",
+      "caption": "La capsule Mercury — à peine plus grande que la personne à l'intérieur. Un siège, pas de place pour bouger, et aucun moyen de changer d'orbite ; l'astronaute pouvait orienter le vaisseau, et guère plus.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "L'objectif de Mercury était délibérément, presque brutalement étroit : prouver qu'un être humain pouvait survivre à toute la séquence — l'écrasement du lancement, des minutes ou des heures d'apesanteur, le feu de la rentrée — et être retiré vivant de l'océan. Pas explorer, pas manœuvrer, pas construire. Simplement survivre, et être vu en train de le faire. Tout dans le vaisseau en découlait : un cône à peine plus grand que son occupant, un siège unique, aucun moyen de changer de trajectoire une fois là-haut."
+      "md": "L'objectif de Mercury était délibérément, presque brutalement restreint : prouver qu'un être humain pouvait survivre à toute la séquence — l'écrasement du lancement, des minutes ou des heures d'apesanteur, le feu de la rentrée atmosphérique — et être repêché vivant dans l'océan. Pas explorer, pas manœuvrer, pas construire. Juste y survivre, et être vu le faire. Tout dans le vaisseau découlait de cela : un cône à peine plus grand que son occupant, un siège unique, aucun moyen de changer de trajectoire une fois là-haut."
     },
     {
       "type": "prose",
-      "md": "Le programme disposait de deux fusées, et elles le divisèrent en deux. La Redstone — descendante directe du V-2 de guerre — ne pouvait que propulser une capsule en arc suborbital pour redescendre ; l'Atlas, plus puissante, pouvait effectivement atteindre la vitesse orbitale. Mercury progressa donc par étapes : d'abord les courts sauts suborbitaux pour prouver que le système fonctionnait avec une personne à bord, puis les vols orbitaux plus difficiles une fois que l'Atlas avait mérité cette confiance."
+      "md": "Le programme disposait de deux fusées, et elles le divisèrent en deux. La Redstone — descendante directe du V-2 de la guerre — ne pouvait que propulser une capsule en arc suborbital ; l'Atlas, plus puissante, pouvait réellement atteindre la vitesse orbitale. Mercury progressa donc par étapes : d'abord les courts sauts suborbitaux pour prouver que le système fonctionnait avec une personne à bord, puis les vols orbitaux plus difficiles une fois que l'Atlas avait mérité cette confiance."
     }
   ],
   "outcome": [
@@ -35,30 +35,30 @@
       "image": {
         "reuse": "missions/friendship-7/01"
       },
-      "caption": "Friendship 7 de John Glenn, février 1962 — le premier Américain en orbite autour de la Terre, et le vol qui permit enfin à un pays anxieux de souffler.",
+      "caption": "Friendship 7 de John Glenn, février 1962 — le premier Américain en orbite autour de la Terre, et le vol qui permit enfin à un pays nerveux de respirer.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Six Américains volèrent sur Mercury entre 1961 et 1963. Alan Shepard partit le premier, un saut suborbital de quinze minutes trois semaines après que Gagarine eut déjà effectué une orbite — plus court et plus bas que le vol soviétique, mais suffisant. Gus Grissom répéta l'exploit et faillit se noyer lorsque son écoutille explosa à l'amerrissage. Puis, en février 1962, John Glenn monta à bord d'une Atlas pour atteindre l'orbite et revint après trois tours de la planète, et les États-Unis eurent enfin une réponse à Gagarine. Scott Carpenter, Wally Schirra et Gordon Cooper étendirent les vols de trois orbites à une journée complète — Faith 7 de Cooper fit le tour de la Terre vingt-deux fois en mai 1963 et clôtura le programme."
+      "md": "Six Américains volèrent sur Mercury entre 1961 et 1963. Alan Shepard fut le premier, un saut suborbital de quinze minutes trois semaines après que Gagarine eut déjà effectué une orbite — plus court et plus bas que le vol soviétique, mais suffisant. Gus Grissom le répéta et faillit se noyer quand son écoutille s'ouvrit brutalement à l'amerrissage. Puis, en février 1962, John Glenn monta à bord d'une Atlas en orbite et rentra après trois tours de la planète, et les États-Unis eurent enfin une réponse à Gagarine. Scott Carpenter, Wally Schirra et Gordon Cooper étendirent les vols de trois orbites à une journée complète — la Faith 7 de Cooper fit le tour de la Terre vingt-deux fois en mai 1963 et clôtura le programme."
     },
     {
       "type": "prose",
-      "md": "Mesuré face aux Soviétiques, Mercury fut un programme en rattrapage qui ne rattrapa jamais vraiment son retard : au moment où Glenn entra en orbite, l'URSS avait déjà volé une journée entière dans l'espace, et elle allait bientôt envoyer une femme et marcher dans le vide pendant que Mercury comptait encore les orbites une à une. Ce que Mercury gagna fut différent. Il envoya six personnes à la frontière de l'espace et les ramena — au grand jour, en télévision en direct — et n'en perdit aucune. Il prouva exactement ce qu'il devait prouver : une personne peut y aller, et revenir."
+      "md": "Comparé aux Soviétiques, Mercury fut un programme qui jouait à rattraper son retard sans jamais vraiment le rattraper : au moment où Glenn entra en orbite, l'URSS avait déjà volé une journée entière dans l'espace, et dans les deux ans suivant la clôture de Mercury elle ferait voler une femme et marcherait dans le vide — des premières que le programme américain n'égalerait pas avant des années. Ce que Mercury gagna fut autre chose. Il envoya six personnes aux confins de l'espace et les ramena — au grand jour, à la télévision en direct — et n'en perdit aucune. Il prouva exactement ce qu'il s'était fixé de prouver : une personne peut aller, et revenir."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "L'histoire de Mercury est celle d'un pays improvisé dans l'urgence, en public. Presque tout était inventé simultanément — comment maintenir une personne en vie dans le vide, comment communiquer avec une capsule filant autour de la planète, comment retrouver un petit engin dans un très grand océan — et tout cela contre une échéance fixée par un adversaire qui ne cessait de déplacer les objectifs en y arrivant en premier."
+      "md": "L'histoire de Mercury est celle d'un pays improvisant dans l'urgence, en public. Presque tout était inventé en même temps — comment maintenir une personne en vie dans le vide, comment communiquer avec une capsule filant autour de la planète, comment trouver un petit engin dans un très grand océan — et tout cela avec une échéance fixée par un adversaire qui déplaçait constamment les poteaux de but en y arrivant le premier."
     },
     {
       "type": "prose",
-      "md": "Il y eut aussi un combat plus discret à l'intérieur du programme. Les premiers plans traitaient l'astronaute comme une cargaison, un passager que les systèmes automatiques piloteraient. Les pilotes d'essai refusèrent cela. Ils réclamèrent un hublot, un contrôle manuel, une main sur le manche — et ils l'obtinrent, et plus d'une fois cela compta, lorsqu'une personne dans la boucle résolut un problème que l'automatisation ne pouvait pas. Cette insistance sur l'astronaute comme pilote plutôt que comme charge utile donna le ton à tout ce que le vol spatial habité américain allait devenir."
+      "md": "Il y eut aussi un combat plus silencieux au sein du programme. Les premiers plans traitaient l'astronaute comme du fret, un passager que les systèmes automatiques piloteraient. Les pilotes d'essai refusèrent cela. Ils réclamèrent un hublot, un contrôle manuel, une main sur le manche — et ils l'obtinrent, et plus d'une fois cela compta, quand une personne dans la boucle résolut un problème que l'automatisation ne pouvait pas. Cette insistance sur l'astronaute comme pilote plutôt que comme charge utile définit le ton de tout ce que deviendrait le vol spatial habité américain."
     },
     {
       "type": "prose",
-      "md": "Mercury se termina en 1963 après avoir répondu à son unique question. Il transmit tout ce qu'il avait appris — les fournisseurs de matériel, les contrôleurs de vol, le corps des astronautes, la confiance durement acquise — directement à Gemini, qui apprendrait à manœuvrer et à effectuer des rendez-vous, puis à Apollo, qui utilisa tout cela pour atteindre la Lune."
+      "md": "Mercury se termina en 1963 après avoir répondu à son unique question. Il transmit tout ce qu'il avait appris — les fournisseurs de matériel, les contrôleurs de vol, le corps des astronautes, la confiance durement acquise — directement à Gemini, qui apprendrait à manœuvrer et effectuer des rendez-vous, puis à Apollo, qui utilisa tout cela pour atteindre la Lune."
     }
   ],
   "legacy": [
@@ -67,34 +67,34 @@
       "image": {
         "reuse": "missions/faith-7/01"
       },
-      "caption": "Faith 7 de Gordon Cooper, mai 1963 — vingt-deux orbites et une journée entière en altitude, le dernier et le plus long vol Mercury.",
+      "caption": "Faith 7 de Gordon Cooper, mai 1963 — vingt-deux orbites et une journée entière en l'air, le dernier et le plus long vol Mercury.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "Le produit le plus précieux de Mercury ne fut aucun vol en particulier ; ce fut la machine qui les fit voler. Un réseau de suivi mondial, une salle remplie de contrôleurs apprenant à gérer une mission en temps réel, une flotte de récupération, un corps d'astronautes, et un réseau de contractants qui savaient désormais comment construire des choses certifiées pour transporter des personnes — tout cela fut construit presque à partir de rien en quelques années, et tout cela passa directement à Gemini et Apollo. La NASA apprit à faire voler des personnes avec Mercury."
+      "md": "Le produit le plus précieux de Mercury ne fut aucun vol en particulier ; ce fut la machine qui les fit voler. Un réseau de suivi mondial, une salle pleine de contrôleurs apprenant à gérer une mission en temps réel, une flotte de récupération, un corps d'astronautes, et un réseau de sous-traitants qui savaient désormais construire des choses certifiées pour transporter des personnes — tout cela fut créé presque de rien en quelques années, et tout cela passa directement à Gemini et Apollo. La NASA apprit à faire voler des gens avec Mercury."
     },
     {
       "type": "prose",
-      "md": "Ce fut aussi un argument de Guerre froide mené au grand jour. Là où le programme soviétique volait dans le secret et annonçait ses succès après coup, Mercury volait en télévision en direct — échecs inclus — un pari délibéré qu'une société ouverte pouvait accomplir des choses difficiles sous le regard de tous. Les Mercury Seven devinrent le visage humain de ce pari, célèbres hors de toute proportion avec les distances modestes qu'ils parcoururent réellement, à cause de ce qu'ils étaient censés représenter."
+      "md": "Ce fut aussi un argument de Guerre froide formulé au grand jour. Là où le programme soviétique volait dans le secret et annonçait ses succès après coup, Mercury volait à la télévision en direct — échecs inclus — un pari délibéré qu'une société ouverte pouvait accomplir des choses difficiles sous le regard de tous. Les Mercury Seven devinrent le visage humain de ce pari, célèbres hors de toute proportion avec les modestes distances qu'ils parcoururent réellement, en raison de ce qu'ils étaient censés représenter."
     },
     {
       "type": "prose",
-      "md": "Le retour matériel vint comme il vient habituellement avec un premier programme — non pas des vols eux-mêmes mais de la capacité qu'ils forcèrent à exister : le suivi, la médecine aérospatiale, la rigueur de fabrication, la preuve simple que cela pouvait être fait. Les programmes bien plus vastes qui suivirent s'appuyèrent sur tout cela sans avoir à le reconstruire."
+      "md": "Le retour matériel vint comme il le fait habituellement avec un premier programme — non pas des vols eux-mêmes mais de la capacité qu'ils forcèrent à exister : le suivi, la médecine aérospatiale, la discipline de fabrication, la preuve simple que cela pouvait être fait. Les programmes bien plus vastes qui suivirent s'appuyèrent sur tout cela sans avoir à le reconstruire."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La leçon la plus transposable de Mercury est la puissance d'un objectif étroit atteint par étapes. Il n'essaya pas d'atteindre la Lune, ni même de surpasser les Soviétiques directement. Il se fixa de prouver exactement une chose — une personne peut survivre au vol spatial et rentrer chez elle — et il progressa vers cet objectif par incréments délibérés : un essai sans équipage, puis un chimpanzé, puis un saut suborbital, puis l'orbite. Lorsque la destination est véritablement inconnue, prouver un maillon de la chaîne à la fois l'emporte sur une ruée vers l'ensemble d'un coup."
+      "md": "La leçon la plus transférable de Mercury est la puissance d'un objectif restreint atteint par étapes. Il n'essaya pas d'atteindre la Lune, ni même de surpasser les Soviétiques directement. Il se fixa de prouver exactement une chose — une personne peut survivre au vol spatial et rentrer — et il construisit vers cela par incréments délibérés : un test sans équipage, puis un chimpanzé, puis un saut suborbital, puis l'orbite. Quand la destination est véritablement inconnue, prouver un maillon de la chaîne à la fois vaut mieux que se lancer sur l'ensemble d'un coup."
     },
     {
       "type": "prose",
-      "md": "La deuxième leçon est qu'être le premier n'est pas la même chose que poser les fondations. Mercury perdit presque toutes les courses auxquelles il participa — les Soviétiques atteignirent l'espace, l'orbite et une journée en altitude avant lui. Et pourtant le programme qui se posa sur la Lune huit ans plus tard fut construit presque entièrement sur ce que Mercury avait démarré, et non sur ce que ses rivaux firent en premier. Une équipe qui continue de se présenter et de capitaliser sur ce qu'elle apprend peut perdre les premiers sprints et quand même gagner ce qui finit par compter."
+      "md": "La deuxième leçon est qu'être le premier n'est pas la même chose que poser les fondations. Mercury perdit presque toutes les courses auxquelles il participa — les Soviétiques atteignirent l'espace, l'orbite et une journée en l'air avant lui. Et pourtant le programme qui alunit huit ans plus tard fut construit presque entièrement sur ce que Mercury avait commencé, et non sur ce que ses rivaux firent en premier. Une équipe qui continue de se présenter et de capitaliser sur ce qu'elle apprend peut perdre les premiers sprints et quand même gagner ce qui finit par compter."
     },
     {
       "type": "prose",
-      "md": "Et la note humaine à retenir : le refus des astronautes d'être une cargaison. Face à une conception qui les traitait comme des passagers, ils insistèrent pour être des pilotes — un hublot, un manche, leur mot à dire dans le vol — et cette insistance, plus qu'aucune mission en particulier, est ce qui fit que le programme devint le leur et définit le caractère de tout ce qui suivit."
+      "md": "Et la note humaine qui mérite d'être retenue : le refus des astronautes d'être du fret. Face à une conception qui les traitait comme des passagers, ils insistèrent pour être des pilotes — un hublot, un manche, un mot à dire dans le vol — et cette insistance, plus que n'importe quelle mission, est ce qui rendit le programme leur et définit le caractère de tout ce qui suivit."
     }
   ]
 }

@@ -1,18 +1,18 @@
 {
-  "title": "Missionstypen — Flyby, Orbiter, Lander, Rover, Sample Return",
-  "intro_sentence": "Fünf Archetypen, wie eine Sonde mit ihrem Ziel umgeht — jeder ein anderer Δv-Preis, Risikoprofil, wissenschaftlicher Ertrag.",
+  "title": "Missionstypen — Vorbeiflug, Orbiter, Lander, Rover, Probenrückführung",
+  "intro_sentence": "Fünf Archetypen, wie ein Raumfahrzeug sein Ziel erreicht — jeder mit unterschiedlichen ∆v-Kosten, Risikoprofil und wissenschaftlicher Ausbeute.",
   "narrative_101": [
-    "Jede robotische Mission wählt eine von fünf Strategien. Die Wahl bestimmt fast alles: Raketengröße, Trajektorie, Sondenausrüstung, Wissenschaft, Überlebensfähigkeit. Taxonomie folgt Δv-Leiter: Flyby billigste, Sample Return teuerste.",
-    "FLYBY: zielen, fotografieren, weiter. Keine Bremsbrennphase. Voyager 1/2, New Horizons, Pioneer. Stunden Encounter, dann segelt die Sonde für immer. Billigste Δv, kommst nicht zurück.",
-    "ORBITER: bremsen in Capture-Bahn, jahrelang bleiben. MAVEN, MRO, Cassini, Galileo. Insertion teuer (1-2 km/s), aber kartiert ganzen Körper. LANDER + EDL on top. ROVER + Räder, Antrieb, Autonomie — jedes kg auf dem Rover kostet einen Stack drunter.",
-    "SAMPLE RETURN ist Gipfel: Lander + Aufstiegsstufe + Cruise zurück + EDL auf Erde. Hayabusa-2, OSIRIS-REx, Chang'e 5, Apollo. Mass-zu-Erdabflug-Ratio brutal — Mars Sample Return in Entwicklung, eine der schwersten je versucht."
+    "Jede robotische Mission zu einem anderen Himmelskörper wählt eine von fünf Strategien. Die Wahl bestimmt fast alles Weitere — wie groß die Rakete sein muss, wie die Bahn verläuft, was das Raumfahrzeug mitbringt, welche Wissenschaft es betreibt und ob es überlebt. Die Taxonomie entspricht sauber einer ∆v-Leiter: Vorbeiflug ist am billigsten, Probenrückführung am teuersten.",
+    "VORBEIFLUG: anpeilen, fotografieren, weiterziehen. Gar kein Bremsmanöver. Voyager 1/2 an Jupiter, Saturn, Uranus, Neptun vorbei; New Horizons an Pluto vorbei; Pioneer 10/11. Ein einziger Moment, Stunden an Nahaufnahme-Wissenschaft, das Raumfahrzeug fliegt ewig weiter. Am billigsten in ∆v, aber man kommt nicht zurück.",
+    "ORBITER: in eine gebundene Umlaufbahn bremsen und jahrelang bleiben. MAVEN, MRO, Cassini, Galileo. Das Bremsmmanöver ist teuer (1–2 km/s), aber man kann den ganzen Körper kartographieren. LANDER kommt mit EDL hinzu — Hitzeschild, Fallschirm, Bremsraketen — oben auf einem Orbiter. ROVER kommt mit Rädern, Antriebsstrang, Autonomie hinzu — jedes Kilogramm auf dem Rover kostet einen ganzen Stapel darunter.",
+    "PROBENRÜCKFÜHRUNG ist der Höhepunkt: Lander + Aufstiegsstufe von der Oberfläche + Rückflug + EDL auf der Erde. Hayabusa-2, OSIRIS-REx, Chang'e 5, die Apollo-Mondflüge. Das Masse-zu-Erdabflug-Verhältnis ist brutal — Mars Sample Return ist gerade in Entwicklung und ist eine der schwierigsten robotischen Missionen, die je versucht wurden."
   ],
   "body_paragraphs": [
-    "Flyby-Missionen überspringen Bahneinschuss komplett. Vorbeifliegen mit Ankunfts-V∞ — ~10 km/s Voyager Jupiter, ~14 km/s New Horizons Pluto. Encounter Minuten bis Tage. Tausch schnelle Wissenschaft gegen oberflächliche Abdeckung.",
-    "Orbiter tauschen Δv gegen Zeit-am-Ziel. Insertion typisch 1-2 km/s, dann Jahre Kartierung. Aerobraking (Atmosphärenwiderstand am Periapsis) kann Budget weiter senken — MRO aerobrakte 6 Monate.",
-    "Lander addieren EDL plus Strukturmasse (Hitzeschild, Schirm, Retros, Beine). EDL ist Höchstrisikophase; Mars hat ~50% historische Erfolgsrate.",
-    "Rover addieren Räder, Antrieb, Navigation, Autonomie. Jedes kg kostet ganzen Stack drunter: Descent Stage, Cruise Stage, Rakete. Curiositys 899-kg-Rover brauchte 4-t-Aeroshell auf 4-t-Cruise auf Saturn-V-Klasse-Trajektorie.",
-    "Sample Return ist Höhepunkt. Erdaufbruch-Masse ~10× Probenmasse für Mars-Roundtrip. Hayabusa-2 brachte ~5g Asteroid Ryugu in einer Kapsel handgroß zurück."
+    "Vorbeiflugs-Missionen sparen sich das Bremsmanöver komplett. Sie fegen mit der V∞ vorüber, mit der sie ankommen — ~10 km/s für Voyager bei Jupiter, ~14 km/s für New Horizons bei Pluto. Die Begegnungszeit ist Minuten bis Tage. Tausch von schneller Wissenschaft gegen geringe Abdeckung und Null Nachverfolgung.",
+    "Orbiter-Missionen tauschen ∆v gegen Zeit im Zielbereich. Das Einfügungsmanöver kostet typisch 1–2 km/s Bremsimpuls, aber das Raumfahrzeug hat dann Jahre Zeit, den Körper zu kartographieren. Aerobraking (Nutzung von Luftwiderstand an der Periapsis) kann das Budget weiter senken — Mars Reconnaissance Orbiter nutzte Aerobraking in seine Wissenschaftsumlaufbahn über 6 Monate, um Treibstoff zu sparen.",
+    "Lander ergänzen das Orbiter-Budget um EDL — Entry, Descent, Landing — plus die Strukturmasse des Hitzeschilds, Fallschirms, Bremsraketen und Landerbeine. EDL ist die höchste Risikophase jeder Mission; der Mars hat eine ~50%-ige historische Erfolgsquote für Landungen.",
+    "Rover ergänzen Räder, Antriebsstrang, Navigation und Autonomie. Jedes Kilogramm auf dem Rover kostet einen ganzen Stapel darunter: die Abstiegsstufe, die ihn liefert, die Reisestufe, die die Abstiegsstufe liefert, die Rakete, die die Reisestufe startet. Der 899-kg-Rover Curiosity benötigte einen ~2,4-Tonnen-Aeroshell/EDL-Stapel plus eine ~0,5-Tonnen-Reisestufe — insgesamt etwa 3,8 Tonnen Startmasse — geliefert von einer Atlas V.",
+    "Probenrückführung ist der Höhepunkt. Die Masse, die die Erde verlassen muss, skaliert auf etwa ~10× die Probenrückkehrmasse für eine Mars-Hin- und Rückfahrt — man zahlt für die Rakete, die die Rakete hebt, die den Lander hebt, der den Probencontainer hebt, der die Reisestufe hebt, die die Proben nach Hause bringt. Hayabusa-2 brachte ~5g vom Asteroiden Ryugu in einer Kapsel zurück, die in deine Hand passt."
   ],
-  "diagram_caption": "Fünf Missionsarchetypen nach steigender Komplexität: Flyby → Orbiter → Lander → Rover → Sample Return."
+  "diagram_caption": "Fünf Missionsarchetypen nach aufsteigender Komplexität angeordnet: Vorbeiflug → Orbiter → Lander → Rover → Probenrückführung."
 }

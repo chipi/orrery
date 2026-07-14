@@ -1,14 +1,14 @@
 {
-  "title": "Impulso specifico (Isp)",
-  "intro_sentence": "Quanto efficiente è un motore.",
+  "title": "Impulso Specifico (Isp)",
+  "intro_sentence": "Quanto è efficiente un motore — quanti secondi un chilogrammo di propellente produce un chilogrammo di spinta.",
   "narrative_101": [
-    "Come km/litro per auto ma per razzi. Più alto = meglio.",
-    "Unità strana: secondi. Storica.",
-    "Solido ~250s. LH₂/LOX ~450s. Ipergolico ~310s. Ionico 3000-9000s. Regola: alta spinta per ascesa, alto Isp per crociera."
+    "Se ti sei mai preoccupato dei chilometri-al-litro per un'auto, l'impulso specifico è lo stesso concetto per i razzi. Ti dice quanto efficientemente il motore converte il carburante in spinta. Isp più alto = migliore efficienza = più ∆v dallo stesso carico di propellente.",
+    "L'unità è strana — è misurata in secondi, il che inizialmente non ha senso intuitivo. La ragione: Isp = spinta ÷ (carburante-bruciato-al-secondo × gravità-della-Terra). Le unità di massa e lunghezza si annullano, lasciando puri secondi — per questo puoi confrontare due motori qualsiasi con un numero. Più grande il numero, più efficiente è il motore, e puoi confrontare motori attraverso decenni e continenti usando lo stesso numero.",
+    "L'intervallo è enorme. Razzi a combustibile solido (i booster dello Space Shuttle): ~250 secondi. Idrogeno liquido-ossigeno (il miglior chimico possibile): ~450 secondi. Ipergolici immagazzinabili (economici, affidabili, quello che la maggior parte dei veicoli spaziali utilizza per le correzioni di rotta): ~310 secondi. Motori ionici (super efficienti ma spinta molto bassa): 3.000-9.000 secondi. La regola pratica: per uscire dai pianeti, hai bisogno di alta spinta; per navigare nello spazio profondo, vuoi un Isp alto. Le missioni reali scelgono in base alle fasi — chimica per uscire dalla Terra, ionica per navigare."
   ],
   "body_paragraphs": [
-    "Isp è il numero di efficienza. Spinta ÷ flusso massa propellente ÷ g₀ = secondi.",
-    "Quattro ordini di grandezza. Solido 250s. LH₂/LOX 452s. Ipergolico 314s. Ionico 3000-9000s.",
-    "Compromessi: alto Isp = bassa spinta. Ionico ~10 N — ottimo per crociere lunghe, inutile per ascesa."
+    "Isp è il numero di efficienza del carburante per i razzi. Più alto è meglio. Definizione: dividi la spinta per il tasso di flusso di massa del propellente, dividi per `g₀` (gravità standard), ottieni un numero in secondi. Brucia un chilogrammo di propellente al secondo, ottieni `Isp × g₀` newton di spinta.",
+    "Il numero varia su quattro ordini di grandezza. Razzi solidi: 250s. Liquidi idrogeno/ossigeno (Space Shuttle Main Engine): 452s. Ipergolici immagazzinabili (Apollo Service Module): 314s. Motori ionici (Dawn, BepiColombo): 3000-9000s. Termico nucleare (NERVA, mai volato): 800-1000s in teoria.",
+    "Compromessi ovunque. Isp alto solitamente significa bassa spinta — i motori ionici spingono circa dieci newton, utili per crociere nello spazio profondo che durano anni ma inutili per uscire dalla Terra. I motori chimici forniscono mega-newton di spinta ma bruciano il propellente in minuti. Le missioni reali scelgono in base alle fasi: chimica per la salita, ionica per la crociera."
   ]
 }

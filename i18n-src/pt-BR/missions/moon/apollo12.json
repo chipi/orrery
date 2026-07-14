@@ -1,62 +1,62 @@
 {
   "name": "Apollo 12",
-  "dispatch": "Se a Apollo 11 provou que você podia alcançar a Lua, a Apollo 12 provou que você podia alcançar um ponto específico nela. Trinta e seis segundos após o lançamento, um raio atingiu o foguete e derrubou os instrumentos da espaçonave; um controlador de vinte e quatro anos chamado John Aaron puxou da memória uma solução obscura — \"SCE to AUX\" — e o voo prosseguiu. Então Conrad e Bean pousaram seu Módulo Lunar no Oceano das Tempestades a algumas centenas de pés de uma sonda que estava lá há dois anos, caminharam até ela e trouxeram pedaços dela para casa. Aquela precisão foi o verdadeiro resultado: a Lua havia deixado de ser um destino e se tornado um endereço.",
-  "type": "POUSADOR TRIPULADO · VOOU",
-  "first": "Segundo pouso lunar tripulado — pouso de precisão a 163 m de Surveyor 3",
-  "description": "O segundo pouso lunar tripulado. O Saturn V foi atingido por raios duas vezes durante a ascensão (T+36 s e T+52 s) — Bean restaurou a espaçonave via a famosa chamada \"SCE to AUX\" do EECOM John Aaron. Conrad e Bean executaram um pouso de precisão no Oceano das Tempestades a 163 m de Surveyor 3 (pousou suavemente em abril de 1967), depois caminharam até Surveyor 3 e removeram sua câmera + uma amostra da superfície. Implantaram o ALSEP (o primeiro ALSEP, vs o EASEP mais simples do Apollo 11) que transmitiu dados por 8 anos. A missão devolveu 34 kg de amostras.",
+  "type": "MÓDULO LUNAR TRIPULADO · REALIZADO",
+  "first": "Segunda alunissagem tripulada — pouso de precisão a 163 m da Surveyor 3",
+  "dispatch": "Se o Apollo 11 provou que você conseguia chegar à Lua, o Apollo 12 provou que conseguia chegar a um local específico nela. Trinta e seis segundos após o lançamento, um raio atingiu o foguete e desligou os instrumentos da espaçonave; um controlador de vinte e quatro anos chamado John Aaron recuperou uma correção obscura — \"SCE to AUX\" — da memória, e o voo continuou. Então Conrad e Bean pousaram o Módulo Lunar no Oceano das Tempestades a poucos metros de uma sonda que estava lá há dois anos, caminharam até ela e trouxeram peças para casa. Essa precisão foi o resultado real: a Lua havia deixado de ser um destino e se tornado um endereço.",
+  "description": "O segundo pouso lunar tripulado. O Saturn V foi atingido por raios duas vezes durante a ascensão (T+36 s e T+52 s) — Bean restaurou a espaçonave via a famosa chamada \"SCE to AUX\" do EECOM John Aaron, então a tripulação realinhou a unidade de medição inercial na órbita lunar. Conrad e Bean executaram um pouso de precisão no Oceano das Tempestades a apenas 163 m da Surveyor 3 (que havia pousado suavemente em abril de 1967), depois caminharam até a Surveyor 3 e removeram sua câmera + amostra de sua superfície — peças que retornaram à Terra para análise da exposição de longo prazo na superfície lunar. Eles implantaram o ALSEP (o pacote completo de Experimentos da Superfície Lunar Apollo — o primeiro ALSEP, versus o EASEP mais simples do Apollo 11) que transmitiu dados por 8 anos. A missão retornou 34 kg de amostras incluindo basaltos escuros do mare.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-507) from Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Two lightning strikes on the stack (T+36 s, T+52 s) tripped fuel cells offline; recovered via \"SCE to AUX\" call.",
+      "label": "LANÇAMENTO",
+      "note": "Saturn V (AS-507) do Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Dois raios atingiram a torre (T+36 s, T+52 s) e desligaram as células de combustível; recuperado via chamada \"SCE to AUX\".",
       "type": "warning"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection — recovery from lightning strikes verified; mission GO for Moon.",
+      "note": "Injeção translunar — recuperação dos raios verificada; missão GO para a Lua.",
       "type": "nominal"
     },
     {
       "met": 3.39,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.89 km/s.",
+      "note": "Inserção em órbita lunar. SPS ∆v ~0,89 km/s.",
       "type": "nominal"
     },
     {
       "met": 5.43,
-      "label": "TOUCHDOWN",
-      "note": "Intrepid lands at Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — within 163 m of Surveyor 3 (the most precise lunar landing yet).",
+      "label": "POUSO",
+      "note": "Intrepid pousa em Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — a 163 m da Surveyor 3 (o pouso lunar mais preciso até então).",
       "type": "nominal"
     },
     {
       "met": 5.58,
-      "label": "SURVEYOR 3 VISIT",
-      "note": "Conrad + Bean walk to Surveyor 3 (~163 m away), remove its TV camera + samples for return to Earth — first time a crew visited a previously-landed robotic spacecraft.",
+      "label": "VISITA À SURVEYOR 3",
+      "note": "Conrad + Bean caminham até a Surveyor 3 (~163 m de distância), removem sua câmera de TV + amostras para retorno à Terra — primeira vez que uma tripulação visitou uma espaçonave robótica pousada anteriormente.",
       "type": "info"
     },
     {
       "met": 6.74,
-      "label": "ASCENT",
-      "note": "Intrepid lifts off after 31 h 31 m on surface. 34 kg of samples returned.",
+      "label": "ASCENSÃO",
+      "note": "Intrepid decola após 31 h 31 m na superfície. 34 kg de amostras retornadas.",
       "type": "nominal"
     },
     {
       "met": 6.93,
-      "label": "LM IMPACT",
-      "note": "Intrepid ascent stage deliberately crashed onto Moon to calibrate ALSEP seismometers. First man-made lunar impact event.",
+      "label": "IMPACTO DO LM",
+      "note": "Estágio de ascensão Intrepid intencionalmente colidiu com a Lua para calibrar os sismômetros ALSEP — o primeiro estágio de espaçonave de missão tripulada intencionalmente impactou a Lua e foi registrado por um sismômetro na superfície.",
       "type": "info"
     },
     {
       "met": 7.92,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Injeção transTerrestre. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 10.18,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1969-11-24 20:58 UTC. Recovery by USS Hornet.",
+      "label": "AMERISSAGEM",
+      "note": "CM amerissou no Pacífico Sul 1969-11-24 20:58 UTC. Recuperação pelo USS Hornet.",
       "type": "nominal"
     }
   ]

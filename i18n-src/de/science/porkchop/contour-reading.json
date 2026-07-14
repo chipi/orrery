@@ -1,14 +1,14 @@
 {
-  "title": "Konturen lesen",
-  "intro_sentence": "Die Form der billigen Zone zeigt die Geometrie machbarer Trajektorien — und wo Trade-offs leben.",
+  "title": "Die Konturen lesen",
+  "intro_sentence": "Die Form der günstigen Zone zeigt dir die Geometrie tragfähiger Flugbahnen — und wo die Kompromisse liegen.",
   "narrative_101": [
-    "Du kennst Achsen und Farbskala. Jetzt: FORM der billigen Zone lesen. Türkislappen ist nicht generisch — wörtliche Karte, welche Trajektorien funktionieren.",
-    "Klassischer Mars-Porkchop hat ZWEI billige Lappen pro Fenster. \"Typ I\" (kurzer Weg, Transferwinkel <180°) und \"Typ II\" (langer Weg, >180°). Beide real, beide werden geflogen.",
-    "Außerhalb: rot. Meiste Porkchop ist rot. Wenige billige Momente, nicht verhandelbar. \"Warte aufs richtige Fenster\" schlägt fast immer \"erfinde eine clevere Trajektorie\"."
+    "Jetzt kennst du die Achsen und die Farbskala. Die nächste Fähigkeit ist das Lesen der FORM der günstigen Zone. Der Lappen aus Blaugrün ist kein beliebiger Fleck — er ist eine buchstäbliche Karte, welche Flugbahnen funktionieren und welche nicht.",
+    "Das klassische Mars-Schweinekotelett hat ZWEI günstige Lappen pro Startfenster, nebeneinander. Sie heißen \"Typ I\" und \"Typ II\" Flugbahnen — gleiches Fenster, zwei verschiedene Wege um die Sonne. Typ I geht den kurzen Weg (Transferwinkel unter 180 Grad) und ist schneller. Typ II geht den langen Weg (Transferwinkel über 180 Grad) und ist langsamer, aber manchmal günstiger. Beide sind real, beide wurden geflogen.",
+    "Außerhalb der Lappen: rot. Der größte Teil des Schweinekotteletts ist eigentlich rot. Das ist die Lektion. Es gibt sehr wenige günstige Momente zum Starten eines Raumfahrzeugs zu einem anderen Planeten, und sie sind nicht verhandelbar. \"Einfach auf das richtige Fenster warten\" schlägt fast immer \"eine clevere Flugbahn erfinden\". Das Lesen der Form des Lappens — wo er sich verbreitert, wo er sich verengt, wo die Optima sitzen — ist das, wofür Flugdynamiker ihr Leben lang arbeiten."
   ],
   "body_paragraphs": [
-    "Schau einen Mars-Porkchop. Du siehst einen ungefähr ovalen Lappen türkiser Zellen um TOF ~250 Tage, alle 26 Monate wiederkehrend. Hohmann-Gelegenheit.",
-    "Zwei Lösungen pro Fenster. \"Kurzer Weg\" (<180°) und \"langer Weg\" (>180°) verbinden Erde mit Mars über verschiedene Ellipsen. Erscheinen als zwei parallele billige Bänder.",
-    "Außerhalb: rot. Weit von natürlichem Fenster: customisierte Hochenergie-Trajektorie nötig. Echte Missionen clustern in billigen Zonen."
+    "Schau dir ein Mars-Schweinekotelett an. Du wirst einen ungefähr ovalen Lappen aus Blaugrün-Zellen sehen, der um eine Flugdauer von etwa 250 Tagen zentriert ist und sich alle 26 Monate wiederholt. Das ist die Hohmann-Gelegenheit. Innerhalb des Lappens liefern alle Kombinationen von (Abflug, Flugdauer) realisierbare Mars-Missionen bei akzeptablem ∆v.",
+    "Zwei Lösungen pro Fenster. Der \"kurze Weg\" (Transferwinkel < 180°) und der \"lange Weg\" (Transferwinkel > 180°) verbinden beide Erde und Mars, aber über verschiedene Ellipsen. Sie erscheinen als zwei günstige Lappen im Schweinekotelett, getrennt durch einen hohen-∆v-Grat bei etwa 180° Transferwinkel — dieser Grat ist buchstäblich der \"Knochen\" des Schweinekotteletts. Manchmal erscheinen beide Lappen, manchmal nur einer, je nach Geometrie.",
+    "Außerhalb der günstigen Lappen: rot. Weit entfernt von einem natürlichen Fenster würdest du eine maßgeschneiderte hochenergetische Flugbahn (Gravitationsassist, Multi-Burn) benötigen, um die Mathematik zum Funktionieren zu bringen. Echte Missionen konzentrieren sich in den günstigen Zonen; die Designphilosophie \"einfach auf das richtige Fenster warten\" schlägt oft \"eine clevere Flugbahn erfinden\"."
   ]
 }

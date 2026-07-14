@@ -1,15 +1,15 @@
 {
-  "title": "Cos'è un diagramma porkchop?",
-  "intro_sentence": "Una mappa di calore 2D che mostra costo Δv per ogni coppia (data partenza, tempo transito).",
+  "title": "Cos'è un diagramma Porkchop?",
+  "intro_sentence": "Mappa termica 2D che mostra il costo della traiettoria per ogni coppia (data di partenza, tempo di transito) — lo strumento standard per trovare finestre di lancio.",
   "narrative_101": [
-    "Pianificatori non calcolano una traiettoria — MILIONI in una griglia. Dipingono mappa di calore. Economico azzurro freddo, caro rosso. Sembra costoletta.",
-    "Perché tutta la mappa? Vincoli reali — finestra rampa, stagione marziana.",
-    "Apri /plan. Scegli destinazione, anno. Vedi porkchop calcolato live. Hover per dettagli."
+    "Quando i pianificatori di missioni vogliono sapere se un viaggio su Marte è fattibile, non calcolano una sola traiettoria. Ne calcolano MILIONI — ogni possibile data di partenza, ogni possibile tempo di transito, in una griglia gigante — e disegnano una mappa termica. Le traiettorie economiche appaiono come zone blu fredde, quelle costose come rosse. Il risultato, stranamente, sembra un braciola di maiale. La zona economica è la carne della braciola; la cresta costosa è l'osso.",
+    "Perché usare un'intera mappa termica invece di una sola risposta ottimale? Perché le vere missioni hanno vincoli. Forse una particolare rampa di lancio è disponibile solo nel 2026. Forse devi atterrare prima della fine della stagione delle tempeste di polvere. Forse un particolare razzo è pronto solo da un certo mese. Il diagramma porkchop ti permette di vedere TUTTI i compromessi contemporaneamente — scegli la traiettoria abbastanza economica che si adatta al tuo calendario nel mondo reale.",
+    "Apri /plan in questo simulatore. Scegli una destinazione. Scegli un anno di lancio. Quello che stai guardando è un diagramma porkchop, calcolato in tempo reale. Ogni pixel è un problema di Lambert — «parti dalla Terra il giorno X, arriva il giorno Y, quanto costa?» Passa il mouse su qualsiasi pixel e il simulatore ti dice le date esatte e il ∆v. Fai clic e la traiettoria si carica in /fly. Le quattro sezioni successive spiegano come leggerlo."
   ],
   "body_paragraphs": [
-    "Scegli data X, transito Y. Colore = Δv. Turchese economico, rosso caro.",
-    "Ogni cella = problema Lambert. Lambert milioni di volte → contorni emergono. Minimi naturali = finestre.",
-    "`/plan` di Orrery mostra porkchop per nove destinazioni."
+    "Scegli una data di partenza sull'asse X. Scegli un tempo di transito sull'asse Y. Il colore di quella cella ti dice quanto ∆v costerebbe volare quella missione. Teal freddo: economico. Giallo: moderato. Rosso: molto costoso. Ripeti per ogni pixel e ottieni un diagramma porkchop — così chiamato per il modo in cui i contorni della zona economica formano un lobo a forma di braciola di maiale.",
+    "Ogni cella è la risposta a un problema di Lambert: «parti dalla Terra nella data X, arriva alla destinazione nella data X + Y, qual è il ∆v richiesto?» Risolvi Lambert milioni di volte su una griglia di date e i contorni emergono naturalmente. I minimi naturali sono finestre di lancio — le zone economiche dove esistono trasferimenti simili a Hohmann.",
+    "La rotta `/plan` di Orrery ti mostra il diagramma porkchop per una di nove destinazioni (Marte, Mercurio, Venere, i giganti gassosi, Plutone, Cerere). Passa il mouse su qualsiasi cella per vedere le date e il ∆v esatti. Fai clic per caricare quella missione in `/fly`."
   ],
-  "diagram_caption": "Porkchop: X partenza, Y transito, colore Δv."
+  "diagram_caption": "Diagramma porkchop: X = data di partenza, Y = tempo di transito, colore = costo ∆v. Le zone economiche si raggruppano attorno alle finestre naturali di Hohmann."
 }

@@ -1,38 +1,38 @@
 {
-  "name": "Apollo-Soyuz Test Project (ASTP)",
-  "dispatch": "Apollo-Soyuz es donde termina la carrera espacial — no en una línea de meta, sino con un apretón de manos. En julio de 1975 un Apollo estadounidense y un Soyuz soviético, las naves espaciales rivales de las superpotencias rivales, se encontraron y acoplaron en órbita, y Tom Stafford y Alexei Leonov se estrecharon la mano a través de la escotilla abierta entre ellos. Requirió un adaptador de acoplamiento construido conjuntamente, dos tripulaciones aprendiendo el idioma del otro, y un deshielo en la Guerra Fría lo suficientemente profundo como para permitir que los competidores más feroces de la época cooperaran a plena vista del mundo. Nada de ello era estrictamente necesario; ese era el punto. Después de dieciocho años de carrera por ser los primeros, los dos programas eligieron, para un vuelo, simplemente encontrarse — y establecieron la plantilla para la cooperación internacional que un día construiría la Estación Espacial.",
-  "type": "ÓRBITA TERRESTRE TRIPULADA · VOLADO",
-  "first": "Primera cooperación internacional en vuelos espaciales tripulados; primer encuentro + acoplamiento EE.UU.-URSS",
-  "description": "El Apollo-Soyuz Test Project — primer vuelo espacial tripulado internacional, primer encuentro + acoplamiento EE.UU.-URSS, y el último vuelo de un CSM Apollo. Apollo (Stafford + Brand + Slayton) se lanzó el 15-07-1975 desde LC-39B; Soyuz 19 (Leonov + Kubasov) se lanzó el mismo día desde Baikonur. El módulo de acoplamiento de Apollo (construido por NASA + Rockwell) usó un nuevo anillo de acoplamiento andrógino (APAS) que permitió que cualquiera de las naves fuera activa — el precursor de todos los sistemas de acoplamiento internacionales desde entonces (Mir, EEI, Tiangong, Dragon, Starliner). Apertura de escotilla el 17-07-1975 a las ~16:00 UTC; las tripulaciones intercambiaron banderas, regalos y experimentos conjuntos a través de 4 secuencias de acoplamiento separadas durante 44 horas acoplados. Soyuz regresó el 21-07-1975; Apollo continuó 5 días más en órbita antes del amerizaje del 24-07-1975 — el último amerizaje de Apollo de la historia. El CSM-111 se exhibe en el California Science Center de LA (junto al Endeavour). La cooperación de la era de la distensión que ASTP modeló inspiró el programa Shuttle-Mir 20 años después.",
+  "name": "Apolo-Soyuz Test Project (ASTP)",
+  "type": "VUELO TRIPULADO EN ÓRBITA TERRESTRE · EJECUTADO",
+  "first": "Primera cooperación internacional en vuelo espacial tripulado; primer encuentro y acoplamiento EE.UU.-URSS",
+  "dispatch": "Apollo-Soyuz es donde termina la carrera espacial — no en una línea de meta, sino con un apretón de manos. En julio de 1975, un Apolo estadounidense y un Soyuz soviético, las naves rivales de las superpotencias rivales, se encontraron y acoplaron en órbita, y Tom Stafford y Alexei Leonov se estrecharon la mano a través de la escotilla abierta entre ellos. Fue necesaria una esclusa de acoplamiento construida conjuntamente, dos tripulaciones aprendiendo el idioma la una de la otra, y un deshielo de la Guerra Fría lo suficientemente profundo para permitir que los competidores más fierces de la época cooperaran a plena vista del mundo. Nada de esto era estrictamente necesario; ese era el sentido. Después de dieciocho años de competir por ser los primeros, los dos programas eligieron, para un vuelo, simplemente encontrarse — y establecieron el modelo para la cooperación internacional que algún día construiría la Estación Espacial.",
+  "description": "El Apollo-Soyuz Test Project — primer vuelo espacial tripulado internacional, primer encuentro y acoplamiento EE.UU.-URSS, y el vuelo final de un Apollo CSM. Apollo (Stafford + Brand + Slayton) se lanzó el 1975-07-15 desde LC-39B; Soyuz 19 (Leonov + Kubasov) se lanzó el mismo día desde Baikonur. El módulo de acoplamiento de Apollo (construido por NASA + Rockwell) utilizaba un nuevo anillo de acoplamiento andrógino (APAS) que permitía que cualquiera de las dos naves fuera activa — el precursor de todos los sistemas de acoplamiento internacional posteriores (Mir, ISS, Tiangong, Dragon, Starliner). Apertura de escotilla el 1975-07-17 ~16:00 UTC; las tripulaciones intercambiaron banderas, regalos y experimentos conjuntos en 2 acoplamientos (inicial el 17 de julio, práctica el 19 de julio) totalizando ~44 horas acopladas. Soyuz regresó el 1975-07-21; Apollo continuó 5 días más en órbita antes del amerizaje el 1975-07-24 — el último amerizaje de Apollo jamás. El CSM-111 se exhibe en el California Science Center, LA (junto a Endeavour). La cooperación de la era de la distensión que ASTP modeló informó el programa Shuttle-Mir 20 años después.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH (Apollo)",
-      "note": "Saturn IB (AS-210) from LC-39B 1975-07-15 19:50 UTC. 7.5 h after Soyuz 19 (Baikonur 1975-07-15 12:20 UTC).",
+      "label": "LANZAMIENTO (Apollo)",
+      "note": "Saturn IB (AS-210) desde LC-39B el 1975-07-15 19:50 UTC. 7,5 h después de Soyuz 19 (Baikonur el 1975-07-15 12:20 UTC).",
       "type": "nominal"
     },
     {
       "met": 1.85,
-      "label": "DOCKING",
-      "note": "Apollo + Soyuz 19 dock 1975-07-17 16:09 UTC. First US-USSR rendezvous + dock. Hatch opens at 19:17 UTC; \"Glad to see you\" handshake.",
+      "label": "ACOPLAMIENTO",
+      "note": "Apollo + Soyuz 19 se acoplan el 1975-07-17 16:09 UTC. Primer encuentro y acoplamiento EE.UU.-URSS. La escotilla se abre a las 19:17 UTC; el apretón de manos Stafford–Leonov ~3 horas después (~22:19 UTC).",
       "type": "info"
     },
     {
       "met": 2,
-      "label": "JOINT OPS",
-      "note": "Flag + gift exchange; joint experiments; 4 dockings across 44 hours docked.",
+      "label": "OPS CONJUNTA",
+      "note": "Intercambio de banderas y regalos; experimentos conjuntos; 2 acoplamientos en ~44 horas acopladas.",
       "type": "nominal"
     },
     {
       "met": 3.8,
-      "label": "UNDOCK",
-      "note": "Final undock 1975-07-19 16:26 UTC. Soyuz 19 lands 1975-07-21 in Kazakhstan.",
+      "label": "DESACOPLAMIENTO",
+      "note": "Desacoplamiento final el 1975-07-19 16:26 UTC. Soyuz 19 aterriza el 1975-07-21 en Kazajstán.",
       "type": "nominal"
     },
     {
       "met": 9.06,
-      "label": "SPLASHDOWN (Apollo)",
-      "note": "Apollo splashed down in Pacific 1975-07-24 21:18 UTC — last Apollo splashdown ever. CSM-111 displayed at California Science Center LA.",
+      "label": "AMERIZAJE (Apollo)",
+      "note": "Apollo amerizó en el Pacífico el 1975-07-24 21:18 UTC — el último amerizaje de Apollo jamás, y el último alunizaje tripulado estadounidense en agua hasta SpaceX Crew Dragon en 2020. CSM-111 exhibido en el California Science Center LA.",
       "type": "nominal"
     }
   ]

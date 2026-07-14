@@ -1,43 +1,43 @@
 {
   "name": "Chandrayaan-3",
-  "type": "LANDER · ROVER · VOADO",
-  "first": "Primeiro pouso suave perto do pólo sul lunar",
-  "description": "Após a perda do módulo de pouso Vikram do Chandrayaan-2 em 2019, a terceira missão lunar do ISRO foi deliberadamente conservadora – focada no módulo de pouso em vez de transportar um orbitador. Vikram pousou na latitude 69,4° S, o mais próximo que qualquer espaçonave chegou de um pólo lunar. O rover Pragyan detectou enxofre na superfície lunar pela primeira vez e fez medições térmicas in-situ. A Índia se tornou a quarta nação a pousar suavemente na Lua e a primeira nas regiões polares onde provavelmente ocorrerá a futura mineração de água e gelo.",
+  "type": "POUSADOR · ROVER · REALIZADO",
+  "first": "Primeiro pouso suave próximo ao pólo lunar sul",
+  "description": "Após a perda do pousador Vikram da Chandrayaan-2 em 2019, a terceira missão lunar da ISRO foi deliberadamente conservadora — focada no pousador em vez de carregar um orbitador. O Vikram tocou o solo em latitude 69,4° S, a aproximação mais próxima de um pólo lunar que qualquer espaçonave já alcançou. O rover Pragyan detectou enxofre na superfície lunar pela primeira vez e realizou medições térmicas in-situ. A Índia se tornou a quarta nação a pousar suavemente na Lua, pousando mais próximo de um pólo lunar do que qualquer espaçonave anterior — uma região onde a mineração futura de gelo de água pode se tornar possível.",
   "events": [
     {
       "met": 0,
-      "label": "LANÇAR",
+      "label": "LANÇAMENTO",
       "note": "LVM3 M4 (anteriormente GSLV Mk III) de Sriharikota.",
       "type": "nominal"
     },
     {
       "met": 22,
-      "label": "MOI",
-      "note": "Inserção na órbita lunar (usadas múltiplas queimaduras de elevação da órbita terrestre e lunar).",
+      "label": "INSERÇÃO LUNAR",
+      "note": "Inserção em órbita lunar (múltiplas queimadas de aumento de órbita terrestre e lunar utilizadas).",
       "type": "nominal"
     },
     {
       "met": 38,
-      "label": "SEPARAÇÃO DE LANDER",
-      "note": "O módulo de pouso Vikram se separa do módulo de propulsão.",
+      "label": "SEPARAÇÃO DO POUSADOR",
+      "note": "Pousador Vikram se separa do módulo de propulsão.",
       "type": "nominal"
     },
     {
       "met": 40,
-      "label": "ATERRAGEM",
-      "note": "Vikram pousa em Shiv Shakti Point, perto do pólo sul, em 23/08/2023 às 12:33 UTC.",
+      "label": "TOQUE",
+      "note": "Vikram pousa em Shiv Shakti Point próximo ao pólo sul 2023-08-23 12:33 UTC.",
       "type": "nominal"
     },
     {
       "met": 40.5,
-      "label": "PRAGYAN IMPLANTADO",
-      "note": "Rover desce rampa; começa a ciência da superfície.",
+      "label": "PRAGYAN DESDOBRADO",
+      "note": "Rover desce pela rampa; inicia ciência de superfície.",
       "type": "info"
     },
     {
       "met": 53,
       "label": "NOITE LUNAR",
-      "note": "Lander/rover colocado em hibernação quando a noite lunar começa.",
+      "note": "Pousador/rover colocado em hibernação conforme a noite lunar começa.",
       "type": "info"
     }
   ]

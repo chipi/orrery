@@ -1,31 +1,31 @@
 {
   "name": "Hope Probe",
   "type": "ORBITER · AKTIV",
-  "first": "Erste arabische interplanetare Mission",
-  "description": "Die Marsmission der Emirate – Al Amal, „Hoffnung“ – wurde 2014 anlässlich des 50. Jahrestages der Föderation der Vereinigten Arabischen Emirate im Jahr 2021 konzipiert. Das MBRSC-Team arbeitete mit der University of Colorado, Arizona State und der UC Berkeley zusammen, um das Raumschiff zu entwerfen und zu integrieren, baute es jedoch selbst. Die wissenschaftliche Umlaufbahn (1× Tagesdauer, 27.000 km × 43.000 km) deckt alle Längengrade und Tageszeiten ab und erfasst Wettermuster, die kein anderer Marsorbiter auflösen kann. Die Mission war beim ersten Versuch erfolgreich und die VAE sind damit die fünfte Agentur auf dem Mars.",
+  "first": "Erste arabische Interplanetarmission",
+  "description": "Die Emirates Mars Mission — Al Amal, „Hope\" — wurde 2014 konzipiert, um das 50. Jubiläum der VAE-Gründung 2021 zu markieren. Das MBRSC-Team arbeitete mit der University of Colorado, Arizona State und UC Berkeley zusammen, um das Raumfahrzeug zu entwerfen und zu integrieren, baute es aber selbst. Die Wissenschaftsumlaufbahn (55-Stunden-Periode, ~20.000 km × 43.000 km) deckt alle Längengrade und Tageszeiten ab und erfasst Wettermuster, die kein anderer Mars-Orbiter auflösen kann. Die Mission gelang beim ersten Versuch, was die VAE zur fünften Agentur auf dem Mars machte.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "H-IIA 202 aus Tanegashima – Mitsubishi Heavy Industries sorgte für den Start.",
+      "note": "H-IIA 202 von Tanegashima — Mitsubishi Heavy Industries stellte den Start zur Verfügung.",
       "type": "nominal"
     },
     {
       "met": 7,
       "label": "TCM-1",
-      "note": "Erste Korrektur in der Mitte des Kurses.",
+      "note": "Erste Bahnkorrektur während des Fluges.",
       "type": "nominal"
     },
     {
       "met": 205,
-      "label": "MARS-ORBIT-EINFÜHRUNG",
-      "note": "27-minütiger Triebwerksbrand bringt Hope in die Marsumlaufbahn 09.02.2021.",
+      "label": "MARS-ORBIT-EINTRITT",
+      "note": "27-Minuten-Triebwerksbrand bringt Hope am 09.02.2021 in die Mars-Umlaufbahn.",
       "type": "nominal"
     },
     {
       "met": 250,
-      "label": "WISSENSCHAFTSORBIT",
-      "note": "Trimmmanöver bringen Hope in ihre 55-stündige wissenschaftliche Umlaufbahn.",
+      "label": "WISSENSCHAFTLICHE UMLAUFBAHN",
+      "note": "Nachbesserungsmanöver positionieren Hope in seine 55-Stunden-Wissenschaftsumlaufbahn.",
       "type": "info"
     }
   ]

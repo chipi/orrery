@@ -1,14 +1,14 @@
 {
-  "name": "Desbravador de Marte",
-  "type": "LANDER · ROVER · VOADO",
-  "first": "Primeiras rodas em Marte; pouso de airbag demonstrado",
-  "dispatch": "A Mars Pathfinder foi a prova da NASA de que pousar em Marte não precisava custar uma fortuna. Em vez da flutuação com retrofoguetes que as Vikings usavam, ela atingiu a atmosfera atrás de um escudo térmico, abriu um paraquedas, inflou um casulo de airbags e quicou dezenas de vezes pela superfície antes de rolar até parar e abrir-se como uma flor. De dentro saiu a Sojourner — um rover do tamanho de um micro-ondas, as primeiras rodas a girar em outro planeta. A ciência era modesta; o ponto era o método. O pouso com airbags e a abordagem mais-rápido-mais-barato-melhor que ele provou tornaram-se o modelo para os rovers muito mais ambiciosos — Spirit, Opportunity, Curiosity — que se seguiram.",
-  "description": "A missão que provou que as missões interplanetárias baratas poderiam funcionar. A Pathfinder usou um novo sistema de pouso com airbag – saltando dezenas de vezes pela superfície antes de parar – e entregou o Sojourner, o primeiro rover a operar em outro planeta. Sojourner percorreu 100 m, examinou uma dúzia de rochas e trabalhou muito além da vida útil projetada de 7 dias. O Pathfinder operou por 2 meses e 27 dias; o sucesso da missão reviveu o programa interplanetário do NASA após os fracassos da década de 1990.",
+  "name": "Mars Pathfinder",
+  "type": "LANDER · ROVER · VENCIDA",
+  "first": "Primeiras rodas em Marte; demonstrou pouso com airbag",
+  "dispatch": "Mars Pathfinder foi a prova de NASA de que pousar em Marte não precisava custar uma fortuna. Em vez do hover com retrorfoguetes que os Vikings usavam, caiu na atmosfera protegido por um escudo térmico, abriu um paraquedas, inflou um casulo de airbags e saltou dúzias de vezes pela superfície antes de rolar até parar e abrir como uma flor. De lá saiu Sojourner — um rover do tamanho de um micro-ondas, as primeiras rodas a rodar em outro planeta. A ciência era modesta; o ponto era o método. O pouso com airbag e a abordagem mais rápida-barata-melhor que ele provou tornaram-se o modelo para os rovers muito mais ambiciosos — Spirit, Opportunity, Curiosity — que vieram depois.",
+  "description": "A missão que provou que missões interplanetárias baratas funcionam. Pathfinder usou um sistema inovador de pouso com airbag — saltando dúzias de vezes pela superfície antes de ficar em repouso — e entregou Sojourner, o primeiro rover a operar em outro planeta. Sojourner percorreu 100 m, examinou uma dúzia de rochas e funcionou bem além de sua vida útil de projeto de 8 sóis. Pathfinder operou por 2 meses 27 dias; o sucesso da missão revitalizou o programa interplanetário da NASA após os fracassos dos anos 1990.",
   "events": [
     {
       "met": 0,
-      "label": "LANÇAR",
-      "note": "Delta II 7925 do Cabo Canaveral.",
+      "label": "LANÇAMENTO",
+      "note": "Delta II 7925 de Cape Canaveral.",
       "type": "nominal"
     },
     {
@@ -20,13 +20,13 @@
     {
       "met": 212,
       "label": "EDL",
-      "note": "Entrada atmosférica direta – sem inserção em órbita. Escudo térmico, pára-quedas, retrofoguetes e, em seguida, inflação do airbag.",
+      "note": "Entrada atmosférica direta — sem inserção em órbita. Escudo térmico, paraquedas, retrorfoguetes, depois inflação de airbags.",
       "type": "nominal"
     },
     {
       "met": 212.01,
-      "label": "ATERRAGEM",
-      "note": "Lander salta 15 vezes em Ares Vallis antes de parar.",
+      "label": "POUSO",
+      "note": "Lander salta 15 vezes pelo Ares Vallis antes de parar.",
       "type": "nominal"
     },
     {

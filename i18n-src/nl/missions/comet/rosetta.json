@@ -1,43 +1,43 @@
 {
   "name": "Rosetta",
   "type": "ORBITER + LANDER · VOLTOOID",
-  "first": "Eerste ruimtevaartuig dat een komeet omcirkelde — en erop landde (Philae, 12-11-2014)",
-  "description": "ESA's vlaggenschipmissie voor komeetrendezvous. Na een tienjarige reis met drie aardse zwaartekrachtassists, één Mars-assist, twee asteroïdepassages en 957 dagen diepruimtewinterslaap bereikte Rosetta in augustus 2014 komeet 67P/Tsjoerjoemov-Gerasimenko en draaide er meer dan twee jaar omheen. De lander Philae bereikte het oppervlak van 67P op 12-11-2014 — de eerste zachte landing op een komeet. Rosetta beëindigde de missie met een gecontroleerde afdaling naar 67P op 30-09-2016.",
+  "first": "Eerste ruimtevaartuig om een komeet te omcirkelen — en om erop te landen (Philae, 2014-11-12)",
+  "description": "ESA's vlaggenschipcommissie voor kometenontmoeting. Na een tienjarige tocht met drie aardbijstanden, één marsbijstand, twee asteröïde-voorbijvluchten en 957 dagen diepe-ruimte-winterslaap haalde Rosetta komeet 67P/Churyumov–Gerasimenko in augustus 2014 in en omcirkelde het meer dan twee jaar lang doorheen perihelium en aan de achterkant. De Philae-lander bereikte het oppervlak van 67P op 2014-11-12 — de eerste zachte landing op een komeet — en leverde ~64 uur wetenschappelijke gegevens na een harpoenfalen dat het in de schaduw van een klif achterliet. Rosetta zelf beëindigde de missie met een gecontroleerde afdaling naar het oppervlak van 67P op 2016-09-30. Belangrijkste resultaten: organische moleculen en glycine in de coma; de aanvankelijk gemeten D/H-verhouding van 67P (≈3× aards) sprak tegen Jupiter-familie-kometen als bron van aardswater — een resultaat dat een heranalyse uit 2024 in twijfel heeft getrokken nadat een meetfout werd gevonden; de eerste gedetailleerde kaarten van de gasuitbreidingsgeometrie van kometen.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Ariane 5G+ lanceert Rosetta vanuit Kourou voor de tienjarige reis naar komeet 67P.",
+      "note": "Ariane 5G+ brengt Rosetta vanaf Kourou naar de tienjarige tocht naar komeet 67P.",
       "type": "nominal"
     },
     {
       "met": 367,
-      "label": "AARDSCHEERVLUCHT #1",
-      "note": "Eerste van drie aardse zwaartekrachtassistenties om snelheid op te bouwen voor het komeetrendezvous.",
+      "label": "AARDBIJSTAND #1",
+      "note": "Eerste van drie aardzwaartekrachtbijstanden om snelheid voor de kometenontmoeting op te bouwen.",
       "type": "nominal"
     },
     {
       "met": 1090,
-      "label": "MARSSCHEERVLUCHT",
-      "note": "Enige Mars-zwaartekrachtassistentie + eerste close-upbeelden van Phobos en Mars op 250 km.",
+      "label": "MARSBIJSTAND",
+      "note": "Enkele marszwaartekrachtbijstand + eerste close-up beelden van Phobos en Mars op 250 km.",
       "type": "nominal"
     },
     {
       "met": 1671,
-      "label": "ASTEROÏDE 2867 ŠTEINS",
-      "note": "Eerste close-upscheervlucht van een E-type asteroïde.",
+      "label": "ASTERÖÏDE 2867 ŠTEINS",
+      "note": "Allereerste close-up van een E-type asteröïde.",
       "type": "nominal"
     },
     {
       "met": 2320,
-      "label": "ASTEROÏDE 21 LUTETIA",
-      "note": "100 km scheervlucht langs een van de grootste hoofdgordel-asteroïden ooit van dichtbij waargenomen.",
+      "label": "ASTERÖÏDE 21 LUTETIA",
+      "note": "~120 km voorbijvlucht van een van de grootste hoofdgordel-asteröïden ooit van dichtbij waargenomen.",
       "type": "nominal"
     },
     {
       "met": 3809,
-      "label": "KOMEET 67P RENDEZVOUS",
-      "note": "Baaninsertie rond komeet 67P/Tsjoerjoemov-Gerasimenko. Philae landt op 12-11-2014.",
+      "label": "KOMEET 67P ONTMOETING",
+      "note": "Baanopstelling rond komeet 67P/Churyumov–Gerasimenko. Philae landt op 2014-11-12.",
       "type": "nominal"
     }
   ]

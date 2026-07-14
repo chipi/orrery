@@ -1,32 +1,32 @@
 {
   "name": "Skylab 4",
-  "dispatch": "Skylab 4 estabeleceu um recorde de permanência que durou anos — 84 dias no espaço — e se tornou um marco em algo menos esperado: quem tem o direito de comandar uma missão. A tripulação de Gerald Carr chegou a uma programação punitiva transmitida por rádio da Terra, ficou atrasada e acabou reagindo, tirando um dia de descanso não programado e forçando o controle da missão a negociar uma carga de trabalho que humanos pudessem realmente sustentar. Eles também capturaram as melhores observações da época do Cometa Kohoutek. O voo é lembrado tanto por seu recorde quanto por afirmar, pela primeira vez de forma clara, que as pessoas em órbita — não apenas os planejadores em terra — têm voz em como uma missão longa é conduzida.",
-  "type": "TRIPULAÇÃO DE ESTAÇÃO · VOADA",
-  "first": "Maior permanência em Skylab — 84 dias, observou o cometa Kohoutek, disputa do dia de descanso 'greve da Skylab'",
-  "description": "Carr, Gibson e Pogue — a última e mais longa tripulação da Skylab, 84 dias 1 hora, todos novatos. Lançados em 1973-11-16 às 14:01 UTC em um Saturno IB (SA-208). Observação abrangente de recursos terrestres e solar, incluindo uma campanha completa do cometa Kohoutek entre dezembro e janeiro. A missão é mais lembrada pela 'greve da Skylab' não oficial no dia 45, quando a tripulação desligou os rádios por meio dia depois que as exigências incessantes dos controladores em terra comprimiram cada minuto acordado — a disputa levou a reformas permanentes da NASA no planejamento da linha do tempo da tripulação em missões de longa duração. Amerissaram em 1974-02-08 às 15:17 UTC, o último amerissar tripulado dos EUA até o SpaceX Crew Dragon em 2020. O CSM-118 está exposto no National Museum of the US Air Force, Dayton OH.",
+  "type": "TRIPULAÇÃO DE ESTAÇÃO CREWED · FLOWN",
+  "first": "Permanência mais longa na Skylab — 84 dias, observou o Cometa Kohoutek, controversa \"greve\" da Skylab",
+  "description": "Carr, Gibson e Pogue — a tripulação final e mais longa da Skylab, 84 dias 1 hora, todos iniciantes. Lançado 1973-11-16 14:01 UTC em Saturn IB (SA-208). Observação abrangente de recursos terrestres e do Sol, incluindo uma campanha completa do Cometa Kohoutek entre dezembro e janeiro. A missão é mais lembrada pelo que a NASA posteriormente chamou de \"motim da Skylab\" ou \"greve\" — um relato controverso de um dia de descanso não programado por volta do dia 42 após exigências implacáveis dos controladores de solo que comprimiam cada minuto do tempo acordado; NASA e a tripulação afirmaram que nenhuma greve organizada ocorreu, mas a sobrecarga de cronograma subjacente era real e levou a reformas permanentes da NASA no planejamento de cronogramas para tripulações em missões de longa duração. Amerissou em 1974-02-08 15:17 UTC — o último amerissamento da Skylab. CSM-118 exposto no National Museum of the US Air Force, Dayton OH.",
+  "dispatch": "A Skylab 4 estabeleceu um recorde de resistência que se manteve por anos — 84 dias no espaço — e se tornou um marco em algo menos esperado: quem controla uma missão. A tripulação de Gerald Carr chegou a um cronograma punidor transmitido de terra, ficou atrasada e eventualmente recuou, tomando um período de descanso não programado — NASA e a própria tripulação posteriormente disputaram o quão deliberado foi o recesso — e forçando o controle de missão a negociar uma carga de trabalho que seres humanos realmente pudessem sustentar. Eles também capturaram as melhores observações da época do Cometa Kohoutek. O voo é lembrado tanto por seu recorde quanto por afirmar, pela primeira vez claramente, que as pessoas em órbita — não apenas os planejadores abaixo — têm voz em como uma missão longa é conduzida.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn IB SA-208 from LC-39B 1973-11-16 14:01 UTC.",
+      "label": "LANÇAMENTO",
+      "note": "Saturn IB SA-208 do LC-39B em 1973-11-16 14:01 UTC.",
       "type": "nominal"
     },
     {
       "met": 30,
-      "label": "KOHOUTEK CAMPAIGN",
-      "note": "Comprehensive ATM + window observations of Comet Kohoutek.",
+      "label": "CAMPANHA KOHOUTEK",
+      "note": "Observações abrangentes ATM + janela do Cometa Kohoutek.",
       "type": "info"
     },
     {
-      "met": 45,
-      "label": "TIMELINE RESET",
-      "note": "Crew/ground dispute over timeline density led to permanent NASA reforms.",
+      "met": 42,
+      "label": "REAJUSTE DE CRONOGRAMA",
+      "note": "Controverso dia de descanso não programado (tripulação + NASA posteriormente disseram que nenhuma greve formal ocorreu); a sobrecarga genuína de cronograma levou a reformas permanentes da NASA.",
       "type": "warning"
     },
     {
       "met": 84.05,
-      "label": "SPLASHDOWN",
-      "note": "CSM-118 splashed down in Pacific 1974-02-08 15:17 UTC — last US crewed water landing until Crew Dragon.",
+      "label": "AMERISSAGEM",
+      "note": "CSM-118 amerissou no Pacífico em 1974-02-08 15:17 UTC — último amerissamento da Skylab.",
       "type": "nominal"
     }
   ]

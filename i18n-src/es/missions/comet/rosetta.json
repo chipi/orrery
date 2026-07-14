@@ -1,43 +1,43 @@
 {
   "name": "Rosetta",
-  "type": "ORBITADOR + ATERRIZADOR · FINALIZADA",
-  "first": "Primera nave en orbitar un cometa — y aterrizar en uno (Philae, 12-11-2014)",
-  "description": "Misión insignia de la ESA para reunión con cometa. Tras un crucero de 10 años con tres asistencias gravitatorias de la Tierra, una de Marte, dos sobrevuelos de asteroides y 957 días de hibernación en el espacio profundo, Rosetta alcanzó al cometa 67P/Churyumov-Gerasimenko en agosto de 2014 y lo orbitó durante más de dos años. El módulo Philae llegó a la superficie de 67P el 12-11-2014 — el primer aterrizaje suave en un cometa. Rosetta finalizó la misión con un descenso controlado a 67P el 30-09-2016.",
+  "type": "ORBITADOR + MÓDULO DE ATERRIZAJE · REALIZADA",
+  "first": "Primera nave espacial que orbita un cometa — y que aterrizó en uno (Philae, 2014-11-12)",
+  "description": "Misión insignia de la ESA de encuentro con cometas. Tras un viaje de 10 años que incluyó tres asistencias gravitatorias de la Tierra, una asistencia de Marte, dos sobrevuelos de asteroides y 957 días de hibernación en el espacio profundo, Rosetta alcanzó el cometa 67P/Churyumov–Gerasimenko en agosto de 2014 y lo orbitó durante más de dos años, atravesando el perihelio y más allá. El módulo de aterrizaje Philae alcanzó la superficie de 67P el 2014-11-12 — el primer aterrizaje suave en un cometa — y devolvió ~64 horas de ciencia tras el fallo de un arpón que lo dejó en la sombra de un acantilado. La propia Rosetta terminó la misión con un descenso controlado hacia la superficie de 67P el 2016-09-30. Resultados clave: moléculas orgánicas y glicina en la coma; la relación D/H medida inicialmente en 67P (≈3× la terrestre) cuestionaba el papel de los cometas de la familia de Júpiter como fuente del agua terrestre — un resultado que un reanálisis de 2024 ha puesto nuevamente en duda tras encontrar un error de medición; los primeros mapas detallados de la geometría del desgasificación cometaria.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "El Ariane 5G+ lanza a Rosetta desde Kourou para el crucero de 10 años al cometa 67P.",
+      "note": "Un Ariane 5G+ lanza Rosetta desde Kourou para el viaje de 10 años hacia el cometa 67P.",
       "type": "nominal"
     },
     {
       "met": 367,
-      "label": "SOBREVUELO TERRESTRE #1",
-      "note": "Primera de tres asistencias gravitatorias terrestres para construir velocidad para el encuentro cometario.",
+      "label": "SOBREVUELO DE LA TIERRA #1",
+      "note": "Primero de tres asistencias gravitatorias terrestres para acumular velocidad hacia el encuentro cometario.",
       "type": "nominal"
     },
     {
       "met": 1090,
-      "label": "SOBREVUELO MARCIANO",
-      "note": "Única asistencia gravitatoria marciana + primeras imágenes cercanas de Fobos y Marte a 250 km.",
+      "label": "SOBREVUELO DE MARTE",
+      "note": "Única asistencia gravitatoria de Marte + primera observación de cerca de Fobos y Marte a 250 km.",
       "type": "nominal"
     },
     {
       "met": 1671,
       "label": "ASTEROIDE 2867 ŠTEINS",
-      "note": "Primer sobrevuelo cercano de un asteroide de tipo E.",
+      "note": "Primera observación de cerca de un asteroide de tipo E.",
       "type": "nominal"
     },
     {
       "met": 2320,
       "label": "ASTEROIDE 21 LUTETIA",
-      "note": "Sobrevuelo a 100 km de uno de los mayores asteroides del cinturón principal observados de cerca.",
+      "note": "Sobrevuelo a ~120 km de uno de los asteroides del cinturón principal más grandes jamás observados de cerca.",
       "type": "nominal"
     },
     {
       "met": 3809,
-      "label": "ENCUENTRO COMETARIO 67P",
-      "note": "Inserción en órbita alrededor del cometa 67P/Churyumov-Gerasimenko. Philae aterriza el 12-11-2014.",
+      "label": "ENCUENTRO CON EL COMETA 67P",
+      "note": "Inserción en órbita alrededor del cometa 67P/Churyumov–Gerasimenko. Philae aterrizó el 2014-11-12.",
       "type": "nominal"
     }
   ]

@@ -1,14 +1,14 @@
 {
-  "title": "Asse di finestra di partenza",
-  "intro_sentence": "Quando lanci — sull'asse X.",
+  "title": "Asse della Finestra di Lancio",
+  "intro_sentence": "Quando lanciate — attraversando l'asse X, tipicamente un intervallo di quattro anni campionato giornalmente.",
   "narrative_101": [
-    "Leggi porkchop come calendario. Asse orizzontale = data partenza. Pixel-colonna = giorno diverso.",
-    "Guarda riga celle economiche e leggi finestre direttamente. Mars ~26 mesi. Venere 19. Giove 13.",
-    "Slider anno lancio in /plan glide asse X."
+    "Leggete il diagramma come un calendario. L'asse orizzontale — da sinistra a destra — è la data in cui lasciate la Terra. Ogni colonna di pixel è un giorno di lancio diverso. Orrery campiona a risoluzione giornaliera su circa quattro anni; è sufficiente per catturare due cicli sinodici completi di Marte (il ciclo di ~26 mesi si adatta circa due volte in quattro anni), abbastanza per vedere il pattern della finestra di lancio ripetersi.",
+    "Guardate attraverso la riga di celle a basso costo (il lobo color teal freddo) e potete leggere sul calendario esattamente quando sono le finestre di lancio. Per Marte sono approssimativamente ogni 26 mesi. Per Venere ogni 19. Per Giove ogni 13. Ogni zona economica è una finestra — al di fuori di quelle zone, il calendario vi ostacola.",
+    "Quando regolate il selettore dell'anno di lancio in /plan, state scorrendo l'asse X. Anno diverso, posizionamento diverso della finestra, ma la fisica sottostante è la stessa. Per questo la pianificazione della missione è guidata dal calendario: le zone economiche non si muovono solo perché abbiamo una scadenza."
   ],
   "body_paragraphs": [
-    "Asse X = quando Terra. Pixel-colonna = data diversa. Risoluzione 1 giorno su 4 anni.",
-    "Lobi economici a intervalli prevedibili. Mars ~26 mesi.",
-    "In `/plan` etichetta: `FINESTRA PARTENZA · 2026-2030`."
+    "L'asse X vi dice quando lasciate la Terra. Ogni colonna di pixel è una data di lancio diversa — per i diagrammi di Orrery, campionati a risoluzione giornaliera su circa quattro anni. Perché un intervallo di quattro anni? Perché il periodo sinodico Terra-Marte è ~26 mesi; quattro anni catturano approssimativamente due finestre complete di Marte. Per Venere (~19 mesi) o Giove (~13 mesi) lo stesso intervallo contiene più finestre — la larghezza di quattro anni è calibrata per la pianificazione di classe Marte.",
+    "Leggete l'asse X come un calendario. I lobi a basso costo (il 'maiale' del diagramma) si trovano a intervalli prevedibili. Per Marte: ogni ~26 mesi. Per Venere: ogni ~19 mesi. Per Giove: ogni ~13 mesi (Giove si muove abbastanza lentamente che il periodo sinodico è vicino all'anno terrestre).",
+    "Su `/plan` l'etichetta dell'asse X è `FINESTRA DI LANCIO · 2026 — 2030`. Le date esatte del calendario appaiono nel tooltip quando passate il cursore."
   ]
 }

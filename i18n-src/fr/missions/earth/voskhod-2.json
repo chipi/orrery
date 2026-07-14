@@ -1,38 +1,38 @@
 {
   "name": "Voskhod 2",
-  "dispatch": "Voskhod 2 a réalisé la première sortie extravéhiculaire et a failli en faire le premier décès dans l'espace. Alexei Leonov est sorti d'un sas gonflable dans le vide, le premier humain à être entièrement à l'extérieur d'un vaisseau spatial — puis sa combinaison s'est gonflée au point qu'il ne pouvait plus se plier pour rentrer. Il a dû ouvrir une valve et purger son propre air, risquant les accidents de décompression, juste pour rétrécir suffisamment pour passer par l'écoutille. Ce n'était pas fini : la rentrée automatique a échoué, l'équipage a piloté manuellement la descente, et ils ont atterri à des centaines de kilomètres hors trajectoire dans la forêt sibérienne gelée, où ils ont passé une nuit parmi les loups avant que les sauveteurs ne les rejoignent à skis. Le public a vu douze minutes triomphales ; la proximité du désastre est restée secrète pendant des années.",
-  "type": "ORBITE TERRESTRE HABITÉE · VOLÉ",
-  "first": "Première sortie extravéhiculaire (Leonov, 12 min, 18/03/1965)",
-  "description": "Le vol d'une journée de Pavel Belyaïev et Alexeï Leonov — la première EVA de l'histoire. Leonov a passé 12 minutes à l'extérieur de Voskhod 2 (18/03/1965 à 11h34 UTC), pressurisé via un sas Volga gonflable que les ingénieurs soviétiques ont ajouté parce que la coque de Voskhod manquait de place pour une dépressurisation complète. La combinaison de Leonov a gonflé dans le vide, le coinçant à l'extérieur du sas ; il a dû relâcher la pression de la combinaison pour rentrer, augmentant le risque d'accident de décompression. La rentrée fut tout aussi dramatique — le système d'atterrissage automatique a échoué et Belyaïev a piloté manuellement le module de descente jusqu'à un atterrissage brutal dans la neige profonde de l'Oural, à environ 390 km hors cible ; l'équipage a survécu à une nuit dans la forêt parmi les loups avant l'arrivée des hélicoptères de secours le 20/03/1965.",
+  "type": "VOL HABITÉ EN ORBITE TERRESTRE · RÉALISÉ",
+  "first": "Première activité extravéhiculaire (Leonov, 12 min, 1965-03-18)",
+  "dispatch": "Voskhod 2 a réalisé la première sortie dans l'espace et a failli en faire le premier décès dans le vide. Alexei Leonov s'est échappé par un sas gonflable dans le vide — le premier humain jamais entièrement sorti d'un vaisseau spatial — et son scaphandre s'est gonflé si raide qu'il ne pouvait pas se plier pour rentrer. Il a dû ouvrir une soupape et purger son propre air, risquant l'accident de décompression, juste pour rétrécir assez et pouvoir passer par l'écoutille. Ce n'était pas fini : la rentrée automatique a échoué, l'équipage a piloté manuellement la descente, et ils ont atterri à des centaines de kilomètres du point d'impact prévu dans la forêt sibérienne gelée, où ils ont attendu deux nuits parmi les loups avant que les sauveteurs ne les atteignent en skis. Le public a vu douze minutes triomphantes ; à quel point cela s'était approché du drame a resté secret pendant des années.",
+  "description": "Vol d'une journée de Pavel Belyayev + Alexei Leonov — première EVA de l'histoire. Leonov a passé 12 min à l'extérieur de Voskhod 2 (1965-03-18 11:34 UTC), pressurisé par un sas Volga gonflable que les ingénieurs soviétiques ont ajouté car la coque de Voskhod n'avait pas la place pour une dépressurisation complète. Le scaphandre de Leonov s'est gonflé dans le vide, le bloquant à la sortie du sas ; il a dû ventiler la pression du scaphandre pour rentrer, augmentant le risque de décompression. La rentrée a été tout aussi dramatique — le système d'atterrissage automatique a échoué, et Belyayev a piloté manuellement le module de descente pour un atterrissage brutal dans la neige profonde de l'Oural ~390 km du point cible ; l'équipage a survécu deux nuits dans la forêt parmi les loups avant l'arrivée des hélicoptères de sauvetage le 1965-03-21. L'atmosphère de la cabine s'est également enrichie en O₂ en orbite, après l'échec de l'écoutille EVA à se refermer, risquant brièvement une combustion spontanée.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "label": "LANCEMENT",
+      "note": "Voskhod 11A57 depuis le site 1 de Baïkonour (le Cosmodrome de Gagarine) 1965-03-18 07:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.001,
-      "label": "ORBIT INSERT",
-      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "label": "INSERTION ORBITALE",
+      "note": "Insertion en orbite terrestre 167 × 475 km, inclinaison 64,8°.",
       "type": "nominal"
     },
     {
       "met": 0.19,
       "label": "EVA",
-      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "note": "Leonov sort du sas Volga 1965-03-18 11:34 UTC ; première EVA humaine. 12 min à l'extérieur ; le scaphandre s'est gonflé dans le vide et il a purgé la pression pour rentrer.",
       "type": "info"
     },
     {
       "met": 1.05,
-      "label": "DEORBIT",
-      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "label": "DÉSORBITAGE",
+      "note": "Le système d'atterrissage automatique échoue ; Belyayev pilote manuellement la descente. Atterrissage brutal 390 km du point cible dans la neige de l'oblast de Perm.",
       "type": "warning"
     },
     {
       "met": 2.5,
-      "label": "RESCUE",
-      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "label": "SAUVETAGE",
+      "note": "L'équipage a survécu 2 nuits dans une forêt habitée par les loups à -30°C avant la récupération par hélicoptères de sauvetage le 1965-03-21.",
       "type": "info"
     }
   ]

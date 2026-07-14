@@ -49,6 +49,7 @@
     { path: '/iss', label: m.nav_iss },
     { path: '/tiangong', label: m.nav_tiangong },
     { path: '/science', label: m.nav_science },
+    { path: '/essays', label: m.nav_essays },
   ] as const;
 
   function isActive(href: string, pathname: string): boolean {

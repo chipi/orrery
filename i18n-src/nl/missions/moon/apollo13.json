@@ -1,56 +1,56 @@
 {
   "name": "Apollo 13",
-  "dispatch": "Apollo 13 landde nooit, en het is de missie die iedereen zich herinnert. Twee dagen onderweg scheurde een zuurstoftank zichzelf uiteen en veranderde een routinevlucht naar de Fra Mauro-hoogvlakte in een vier dagen durend probleem om drie mannen in leven te houden in een stervend ruimtevaartuig op vierhonderdduizend kilometer van huis. Wat hen redde waren geen heldendaden; het was voorbereiding en een kamer vol mensen die het probleem in real time bewerkten, improviserend een manier om te ademen en een weg naar huis uit alles wat al aan het voertuig vastgeklonken zat. NASA noemde het een geslaagde mislukking. Het is dichter bij de waarheid te zeggen dat het de vlucht is die bewees dat de organisatie zo goed was als ze beweerde te zijn.",
-  "type": "BEMANDE FLYBY · GEVLOGEN (LANDING AFGEBROKEN)",
-  "first": "De missie die een bijna-ramp veranderde in NASA's meest gevierde redding",
-  "description": "Apollo 13 zou de derde bemande maanlanding worden, gericht op de Fra Mauro-hooglanden. Na 55 uur en 54 minuten vlucht brak een zuurstoftank in de Service Module, wat de elektrische en levensondersteunende systemen van het CSM uitschakelde. Met de landing geschrapt, schakelden James Lovell, Jack Swigert en Fred Haise het CSM uit, verhuisden naar de Lunar Module Aquarius als reddingsboot, en gebruikten het LM-afdaalmotor voor een Pericynthion+2-uur burn die hen op een snelle free-return-baan zette. Ze passeerden de Maan op 254 km hoogte op 1970-04-15 en landden veilig in de Stille Zuidzee op 1970-04-17. De missie wordt vandaag bestudeerd als model van gedisciplineerde real-time ingenieursimprovisatie.",
+  "type": "BEMANDE VOORBIJVLUCHT · UITGEVOERD (LANDING AFGEBROKEN)",
+  "first": "De missie die bijna-ramp transformeerde in NASAs meest gevierde redding",
+  "dispatch": "Apollo 13 is nooit geland, en het is de missie die iedereen zich herinnert. Twee dagen onderweg scheurde een zuurstoftank zichzelf uit elkaar en veranderde een routinevlucht naar de Fra Mauro-hooglanden in vier dagen van het redden van drie mannen in een stervend ruimtevaartuig een kwart miljoen mijlen van huis. Wat hen redde was niet heldendom; het was voorbereiding en een vol kantoor van mensen die het probleem in real time aanpakten, steeds opnieuw iets verzinnend om te ademen en een weg naar huis uit wat al aan het voertuig vastgeboord was. NASA noemde het een succesvolle mislukking. Het komt dichter bij de waarheid te zeggen dat het de vlucht is die aantoonde dat het agentschap zo goed was als het zei.",
+  "description": "Apollo 13 zou de derde bemande maanlanding zijn, gericht op de Fra Mauro-hooglanden. Op 55 uur en 54 minuten in de vlucht scheurde een zuurstoftank in de Service Module, wat de elektrische systemen en levensverstrekking van de Command-Service Module onschadelijk maakte. Met landing geannuleerd schakelden de bemanning — James Lovell, Jack Swigert en Fred Haise — de CSM uit, verplaatsten zich naar de Lunar Module Aquarius als reddingsboot en gebruikten de beschuit-engine van de LM voor een Pericynthion+2-uurs-burn die hen op een snelle vrije-terugkeer-baan plaatste. Ze vlogen voorbij de Maan op 254 km hoogte op 15 april 1970 en plonsden veilig neer in de Stille Oceaan op 17 april 1970. De missie wordt vandaag bestudeerd als een model van gedisciplineerde real-time technische improvisatie.",
   "events": [
     {
       "met": 0,
-      "label": "SATURN V LANCERING",
-      "note": "Lancering vanuit KSC LC-39A. De centrale motor van de tweede S-II-trap stopte twee minuten te vroeg — de buitenmotoren compenseerden.",
+      "label": "SATURN V-LANCERING",
+      "note": "Lancering vanaf KSC LC-39A. Centraalmotor van S-II tweede trap schakelde twee minuten eerder uit — buitenmotoren compenseerden.",
       "type": "nominal"
     },
     {
       "met": 0.117,
       "label": "TLI",
-      "note": "Trans-lunaire injectie burn door de S-IVB; CSM + LM zetten zich vast op cislunaire baan.",
+      "note": "Trans-lunaire injectie-burn door S-IVB; CSM + LM toewijding aan cislunaarbaan.",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "MCC-2",
-      "note": "De koerscorrectie verschuift het ruimtevaartuig van de free-return-baan naar een Fra Mauro-aanvliegroute.",
+      "note": "Midcourse-correctie verplaatst het ruimtevaartuig van de vrije-terugkeer-baan naar een Fra Mauro-benadering.",
       "type": "nominal"
     },
     {
       "met": 2.33,
-      "label": "ZUURSTOFTANK #2 BREEKT",
-      "note": "Een cryo-roercommando in de SM veroorzaakt kortsluiting en het breken van de tank. 'Houston, we've had a problem.' Stroom en water nemen af; de LM Aquarius wordt de reddingsboot.",
+      "label": "ZUURSTOFTANK #2 RUPTURE",
+      "note": "SM cryo-roeren-commando initieert kortsluiting-brand en tankbreuk. \"Houston, we've had a problem.\" Vermogen en water nemen af; LM Aquarius wordt de reddingsboot.",
       "type": "warning"
     },
     {
       "met": 2.92,
-      "label": "FREE-RETURN BURN",
-      "note": "31-seconden burn van de LM-afdaalmotor brengt het ruimtevaartuig terug op een free-return-baan.",
+      "label": "VRIJE-TERUGKEER-BURN",
+      "note": "31-seconde LM afdalings-engine burn keert het ruimtevaartuig terug naar een vrije-terugkeer-baan.",
       "type": "info"
     },
     {
       "met": 3.13,
-      "label": "MAAN-FLYBY",
-      "note": "Dichtste nadering 254 km hoogte over Mare Cognitum — de grootste afstand die ooit door een bemand ruimtevaartuig is afgelegd vanaf de Aarde.",
+      "label": "MAANVOORBIJVLUCHT",
+      "note": "Dichtstbijzijnde benadering 254 km hoogte boven Mare Cognitum — op 400.171 km de verste afstand die mensen van de Aarde hadden bereikt (record van 1970–2026, overtroffen door Artemis II in april 2026).",
       "type": "info"
     },
     {
       "met": 3.96,
-      "label": "PC+2 BURN",
-      "note": "Pericynthion-plus-2-uur burn verkort de terugreistijd naar de Aarde met tien uur.",
+      "label": "PC+2-BURN",
+      "note": "Pericynthion-plus-2-uur-burn verkort de terugkeer-naar-Aarde-tijd met tien uur.",
       "type": "nominal"
     },
     {
       "met": 5.95,
-      "label": "SPLASHDOWN",
-      "note": "CSM-terugkeer en splashdown in de Stille Zuidzee, opgepikt door de USS Iwo Jima.",
+      "label": "SPLASH-DOWN",
+      "note": "CSM herintrede en splash-down in de Zuid-Stille Oceaan, gered door USS Iwo Jima.",
       "type": "info"
     }
   ]

@@ -1,15 +1,15 @@
 {
   "title": "Was ist ein Porkchop-Plot?",
-  "intro_sentence": "Eine 2D-Heatmap, die Δv-Kosten über jedes (Abreisedatum, Flugzeit)-Paar zeigt — das Standardwerkzeug zum Finden von Startfenstern.",
+  "intro_sentence": "Eine 2D-Heatmap, die Trajektoriekosten über alle (Abflugdatum, Flugdauer)-Paare zeigt — das Standardwerkzeug für die Suche nach Startfenstern.",
   "narrative_101": [
-    "Wenn Missionsplaner wissen wollen, ob eine Marsreise machbar ist, berechnen sie nicht eine Trajektorie. Sie berechnen MILLIONEN — jedes mögliche Abreisedatum, jede Flugzeit, in einem riesigen Raster — und malen eine Heatmap. Billige Trajektorien als kühlblaue Zonen, teure rot. Sieht aus wie ein Schweinekotelett. Billige Zone ist das Fleisch; teurer Grat der Knochen.",
-    "Warum ganze Heatmap statt nur einer optimalen Antwort? Reale Missionen haben Beschränkungen. Vielleicht ist eine Startrampe nur 2026 verfügbar. Vielleicht musst du vor Sandsturmsaison landen. Porkchop zeigt ALLE Trade-offs auf einmal.",
-    "Öffne /plan in diesem Simulator. Wähle Ziel und Startjahr. Was du siehst, ist ein Porkchop, live berechnet. Jedes Pixel ein Lambert-Problem. Hover und der Simulator zeigt Datum und Δv. Klick und Trajektorie lädt in /fly."
+    "Wenn Missionsplaner überprüfen wollen, ob eine Marsmission machbar ist, berechnen sie nicht eine Trajektorie. Sie berechnen MILLIONEN — jedes mögliche Abflugdatum, jede mögliche Flugdauer, in einem riesigen Gitter — und färben eine Heatmap. Günstige Trajektorien erscheinen als kühle blaue Zonen, teure als rot. Das Ergebnis sieht merkwürdigerweise aus wie ein Schweinekotelett. Die günstige Zone ist das Fleisch des Koteletts; der teure Grat ist der Knochen.",
+    "Warum sich mit einer ganzen Heatmap abgeben statt nur eine optimale Lösung zu berechnen? Weil echte Missionen Einschränkungen haben. Vielleicht ist ein bestimmtes Startgelände nur 2026 verfügbar. Vielleicht musst du vor Ende einer Staubsturmsaison landen. Vielleicht ist eine bestimmte Rakete erst ab einem gewissen Monat einsatzbereit. Der Porkchop zeigt dir ALLE Kompromisse auf einmal — wähle eine ausreichend günstige Trajektorie, die in deinen realen Kalender passt.",
+    "Öffne /plan in diesem Simulator. Wähle ein Ziel. Wähle ein Startjahr. Das, was du siehst, ist ein Porkchop, berechnet in Echtzeit. Jedes Pixel ist ein Lambert-Problem — »verlasse die Erde am Tag X, komme am Tag Y an, wie viel kostet das?« Fahre mit der Maus über ein Pixel und der Simulator sagt dir die genauen Daten und Δv. Klicke und die Trajektorie wird in /fly geladen. Die nächsten vier Abschnitte erklären, wie man ihn liest."
   ],
   "body_paragraphs": [
-    "Wähle Abreisedatum auf X. Flugzeit auf Y. Farbe = Δv-Kosten. Türkis billig, Gelb mittel, Rot teuer. Wiederhole für jedes Pixel — Porkchop-Plot, benannt nach der Schweinekotelett-Form der Konturen.",
-    "Jede Zelle ist ein Lambert-Problem: \"Erde verlassen am X, ankommen am X+Y, was kostet Δv?\" Lambert millionenfach lösen, Konturen entstehen. Natürliche Minima = Startfenster.",
-    "Orrerys `/plan` zeigt Porkchops für neun Ziele. Hover für Details. Klick um in `/fly` zu laden."
+    "Wähle ein Abflugdatum auf der X-Achse. Wähle eine Flugdauer auf der Y-Achse. Die Farbe dieser Zelle sagt dir, wie viel Δv diese Mission kosten würde. Kühles Blaugrün: günstig. Gelb: moderat. Rot: sehr teuer. Wiederhole dies für jedes Pixel und du bekommst einen Porkchop-Plot — benannt nach der Art, wie die Konturen der günstigen Zone eine Schweinekotelett-ähnliche Form bilden.",
+    "Jede Zelle ist die Antwort auf ein Lambert-Problem: »verlasse die Erde am Datum X, komme am Ziel am Datum X + Y an, wie viel Δv ist erforderlich?« Löse Lambert millionenfach über einem Datumsgitter und die Konturen entstehen von selbst. Die natürlichen Minima sind Startfenster — die günstigen Zonen, in denen Hohmann-ähnliche Transfers existieren.",
+    "Orreeys `/plan`-Route zeigt dir den Porkchop für eines von neun Zielen (Mars, Merkur, Venus, Gasriesen, Pluto, Ceres). Fahre über eine Zelle, um die genauen Daten und Δv zu sehen. Klicke, um diese Mission in `/fly` zu laden."
   ],
-  "diagram_caption": "Porkchop-Plot: X = Abreise, Y = Transit, Farbe = Δv. Billige Zonen am natürlichen Hohmann-Fenster."
+  "diagram_caption": "Porkchop-Plot: X = Abflugdatum, Y = Flugdauer, Farbe = Δv-Kosten (Orreeys vereinfachte Skala; Standardplots zeigen C3/Ankunfts-V∞). Günstige Zonen clustern um natürliche Hohmann-Fenster."
 }

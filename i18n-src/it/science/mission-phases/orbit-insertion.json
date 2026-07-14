@@ -1,14 +1,14 @@
 {
-  "title": "Inserimento orbitale — IOL/IOM",
-  "intro_sentence": "L'accensione di frenaggio che cattura la sonda in orbita invece di lasciarla passare per sempre.",
+  "title": "Inserimento in Orbita — LOI / MOI",
+  "intro_sentence": "La frenata che cattura il tuo veicolo spaziale in orbita invece di lasciarlo sfuggire per sempre.",
   "narrative_101": [
-    "Hai cruisato 8 mesi. Marte ingrandisce. Se non fai niente, passi e parti per sempre. Per orbitare: frena.",
-    "Matematica impietosa. Arrivi a vari km/s di V∞. Cadere sotto fuga locale. Accensione lunga dura precisa al periapsis. MRO 27 min. Cassini Saturno 95 min.",
-    "Se l'accensione fallisce o sotto-performa, scappi. Mars Climate Orbiter 1999 — bug conversione unità — accensione troppo debole, sonda distrutta."
+    "Hai navigato per otto mesi. Vedi Marte diventare sempre più grande dal finestrino. Se non fai nulla, passerai accanto a Marte e continuerai nel sistema solare, senza mai tornare. Per orbitare davvero, devi frenare. Quella frenata — Inserimento in Orbita Lunare, Inserimento in Orbita Marziana o qualunque pianeta tu stia raggiungendo — è il momento decisivo di qualsiasi missione orbitale.",
+    "La matematica è spietata. Arrivi a un pianeta con una velocità residua di diversi chilometri al secondo (V∞). Per restare, devi scendere sotto la velocità di fuga locale del pianeta. Questo significa un'accensione motore lunga, intensa e precisamente calcolata al punto di massima vicinanza al pianeta, dove l'Effetto Oberth ti garantisce la frenata più efficiente. Mars Reconnaissance Orbiter ha acceso i motori per 27 minuti. L'inserimento di Cassini in orbita di Saturno ha richiesto ~96 minuti — l'accensione più lunga che il veicolo spaziale abbia mai fatto.",
+    "Se l'accensione fallisce o non raggiunge la potenza desiderata, scappi, e non c'è una seconda opportunità. Mars Climate Orbiter nel 1999 aveva un errore di conversione di unità — force-pounds confusi con newton — la sua accensione di inserimento è stata troppo debole, è passato troppo vicino a Marte e il trascinamento atmosferico lo ha distrutto. La missione è andata persa in secondi. Per questo motivo la progettazione dell'inserimento in orbita è una delle attività ingegneristiche più paranoiche che gli umani compiono."
   ],
   "body_paragraphs": [
-    "Quando arrivi vai veloce — abbastanza per scappare. Cattura: scarica abbastanza velocità.",
-    "Al periapsis, dove Oberth rende più economico. MRO V∞ ≈ 2,6 km/s, ~1 km/s per cattura. Cassini Saturno: 95-min.",
-    "Se accensione fallisce, sonda scappa. Mars Climate Orbiter è il monito: bug di conversione (libbre/Newton)."
+    "Quando il tuo veicolo spaziale arriva a destinazione, si sta muovendo velocemente — abbastanza velocemente da sfuggire se non fai nulla. Per essere catturato in orbita, devi perdere abbastanza velocità da scendere sotto la velocità di fuga locale. Quella frenata è l'inserimento in orbita. LOI per la Luna (Apollo, LRO), MOI per Marte (MAVEN, MRO, Tianwen-1), e così via.",
+    "L'accensione avviene al periapside dell'iperbole di arrivo, dove l'Effetto Oberth rende l'accensione più economica. Le dimensioni dipendono da V∞ — la velocità residua all'infinito — e dall'altitudine orbitale desiderata. MRO di Marte è arrivato con V∞ ≈ 2,6 km/s e ha consumato ~1 km/s di `∆v` per la cattura. L'inserimento in orbita di Saturno di Cassini è stata un'accensione di ~96 minuti, la più lunga nella vita del veicolo spaziale.",
+    "Se l'accensione fallisce o non raggiunge la potenza desiderata, il veicolo spaziale sfugge. Non c'è una seconda chance. Mars Climate Orbiter è l'avvertimento: un errore di conversione di unità ha significato che la sua accensione MOI era troppo debole, il veicolo spaziale è passato troppo vicino, e il trascinamento atmosferico lo ha fatto a pezzi."
   ]
 }

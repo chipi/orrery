@@ -1,43 +1,43 @@
 {
   "name": "Akatsuki",
-  "type": "ORBITER · ACTIEF",
-  "first": "Hersteld van een 5 jaar durende zonnebaanhouding om op een back-uppoging een Venusbaan te bereiken; momenteel de enige actieve Venus-orbiter",
-  "description": "Akatsuki — \"dageraad\" — was Japans eerste Venusmissie. Gelanceerd op 20 mei 2010 vanaf Tanegashima met een H-IIA 202, samen met de IKAROS zonnezeildemonstratie. De geplande Venus-baanplaatsing op 7 december 2010 mislukte toen zoutkristalophoping in een oxidatorterugklep de hoofdmotor 152 seconden na aanvang van de brandingstijd uit de as wierp. JAXA hield het ruimtevaartuig vijf jaar lang in leven in een zonnebaan, met twaalf correctiemanoeuvres, tot het volgende Venus-ontmoetingsvenster. Op 7 december 2015 plaatste een 1228 seconden durende branding met vier houdingscontrolestuwtjes — nooit ontworpen voor baanplaatsing — Akatsuki in een sterk elliptische baan van 400 × 440.000 km met 3° inclinatie. Een van de meest dramatische missieredingen in de geschiedenis van de ruimtevaart. Nog steeds actief.",
+  "type": "ORBITER · GEVLOGEN",
+  "first": "Hersteld vanuit een 5-jarige heliocentrische baan om Venus in de tweede poging te bereiken; de enige actieve Venus-orbiter in de slotfase van zijn operaties",
+  "description": "Akatsuki — „dageraad\" — was Japans eerste Venusverkenning. Gelanceerd op 2010-05-20 van Tanegashima met een H-IIA 202, in combinatie met de IKAROS zonnezeil-demonstrator. De geplande Venus-baanopstelling op 2010-12-07 mislukte toen kristalafzettingen in een oxidatorcontroleventiel de hoofdmotor 152 seconden in de maneuver uit as duwde. JAXA hield de ruimtesonde vijf jaar in heliocentrische baan, met twaalf correctiemaneuvers, totdat het volgende Venus-contactvenster aanbrak. Op 2015-12-07 plaatste een 1228-secondebrand van vier attiude-controleverbindingen — oorspronkelijk niet ontworpen voor baanopstelling — Akatsuki in een sterk elliptische baan van 400 × 440.000 km met 3° inclinatie. Een van de meest spectaculaire missionaves in de ruimtevaartgeschiedenis. Het contactsignaal ging in 2024 verloren; JAXA verklaarde de operaties op 2025-09-18 voltooid.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "H-IIA 202 vanaf Tanegashima, samen met IKAROS zonnezeildemonstratie.",
+      "note": "H-IIA 202 van Tanegashima, gecombineerd met IKAROS zonnezeil.",
       "type": "nominal"
     },
     {
       "met": 30,
       "label": "TCM-1",
-      "note": "Eerste mid-course correctie.",
+      "note": "Eerste midcursuscorrectie.",
       "type": "nominal"
     },
     {
       "met": 201,
-      "label": "VOI-1 FALEN",
-      "note": "7 december 2010. OME gasklep-anomalie 152s na aanvang van de branding; ruimtevaartuig zeilt voorbij in zonnebaan.",
+      "label": "VOI-1 MISLUKING",
+      "note": "2010-12-07. OME throttle-anomalie 152s in de brand; ruimtesonde zeilt voorbij in heliocentrische baan.",
       "type": "warning"
     },
     {
       "met": 1000,
-      "label": "ZONNEBAANHOUDING",
-      "note": "12 manoeuvres over 5 jaar om een Venus-herontmoetingstraject te handhaven.",
+      "label": "HELIOCENTRISCHE-BAANPAUZE",
+      "note": "12 maneuvers gedurende 5 jaar om een Venus-terugkeer-traject te behouden.",
       "type": "info"
     },
     {
       "met": 2027,
       "label": "VOI-R2 SUCCES",
-      "note": "7 december 2015. RCS-stuwtstuk 1228s branding naar 400 × 440.000 km, 3° baan.",
+      "note": "2015-12-07. RCS-verbrandingsbrand van 1228s in baan 400 × 440.000 km, 3° inclinatie.",
       "type": "info"
     },
     {
       "met": 2200,
       "label": "WETENSCHAPPELIJKE OPERATIES",
-      "note": "UV/IR wolkenkenmerkvolging; superrotatiestudies; boogvormige zwaartekrachtgolven boven Aphrodite Terra.",
+      "note": "UV/IR wolkenkenmerk-tracking; super-rotatieonderzoeken; boogvormige zwaartekrachtgolven boven Aphrodite Terra. Contact verloren 2024; operaties op 2025-09-18 voltooid.",
       "type": "info"
     }
   ]

@@ -1,14 +1,14 @@
 {
   "name": "Opportunity",
   "type": "ROVER · FLOWN",
-  "first": "Rover martien ayant parcouru la plus longue distance (45,16 km) ; durée de vie en surface de 14 ans contre une conception prévue pour 90 sols",
-  "dispatch": "Opportunity a parcouru un marathon sur une autre planète. Jumeau de Spirit, arrivé en 2004 pour une mission de quatre-vingt-dix jours, il a fonctionné pendant quatorze ans et parcouru plus de quarante-cinq kilomètres — la plus longue distance jamais parcourue par un véhicule sur un autre monde. Il s'est posé, par chance, dans un petit cratère dont les parois exposaient exactement la roche déposée par l'eau qu'il était censé trouver, et ensuite il a simplement continué, de cratère en cratère, déchiffrant l'histoire de l'eau ancienne de Mars kilomètre après kilomètre. Une tempête de poussière à l'échelle planétaire l'a finalement réduit au silence en 2018.",
-  "description": "Opportunity (MER-B) a remporté le gros lot planétaire — son atterrisseur enveloppé d'airbags a rebondi 26 fois à travers Meridiani Planum et a roulé par pure chance dans un cratère de 22 m (Eagle), entouré de roches exposées qu'un rover pouvait analyser sans se déplacer. Les premières images ont révélé de la jarosite et des concrétions d'hématite en « myrtilles », la preuve minérale la plus solide à ce moment-là de la présence d'eau liquide stagnante sur Mars primitif. En 14 ans et 47 jours, Opportunity a parcouru 45,16 km — le record de marathon pour un rover martien — visitant les cratères Endurance, Victoria et Endeavour. Une tempête de poussière à l'échelle planétaire en juin 2018 a bloqué la lumière solaire de ses panneaux solaires ; la transmission finale a eu lieu le 10 juin 2018, et la NASA a déclaré la fin de la mission le 13 février 2019.",
+  "first": "Rover martien ayant parcouru la plus grande distance (45,16 km) ; 14 ans de vie en surface contre une conception pour 90 sols",
+  "dispatch": "Opportunity a parcouru un marathon sur une autre planète. Jumeau de Spirit, descendu sur Mars en 2004 pour une mission de quatre-vingt-dix jours, il a fonctionné pendant quatorze ans et traversé plus de quarante-cinq kilomètres — la plus grande distance jamais parcourue par un véhicule sur n'importe quel monde. Il est tombé, par chance, dans un petit cratère dont les parois exposaient exactement la roche altérée par l'eau qu'il était venu chercher, et puis il a continué, de cratère en cratère, déchiffrant l'histoire ancienne de l'eau sur Mars kilomètre après kilomètre. Une tempête de poussière planétaire l'a finalement silencié en 2018.",
+  "description": "Opportunity (MER-B) a remporté un véritable jackpot planétaire — son atterrisseur cocoonné par des coussins gonflables a bondi 26 fois à travers Meridiani Planum et a roulé dans un cratère de 22 m (Eagle) par pur hasard, entouré de roche mère exposée qu'un rover pouvait étudier sans se déplacer. Les premières images ont montré de la jarositie et des concrétions d'hématite « bleue », la plus forte évidence minérale jusqu'à ce moment de l'existence d'eau liquide stagnante sur le Mars ancien. Pendant 14 ans 138 jours (5 111 sols), Opportunity a traversé 45,16 km — le record du marathon des rovers martiens — visitant les cratères Endurance, Victoria et Endeavour. Une tempête de poussière planétaire en juin 2018 a bloqué la lumière solaire de ses panneaux solaires ; la dernière transmission date du 2018-06-10, et la NASA a déclaré la fin de la mission le 2019-02-13.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Delta II 7925H Heavy depuis Cape Canaveral LC-17B.",
+      "note": "Delta II 7925H Heavy depuis le pas de tir 17B de Cap Canaveral.",
       "type": "nominal"
     },
     {
@@ -20,31 +20,31 @@
     {
       "met": 195,
       "label": "TCM-4",
-      "note": "Ajustement final avant EDL.",
+      "note": "Ajustement final avant l'EDL.",
       "type": "nominal"
     },
     {
       "met": 202,
       "label": "EDL",
-      "note": "Bouclier thermique, parachute, rétrofusées, airbags.",
+      "note": "Bouclier thermique, parachute, rétrofusées, coussins gonflables.",
       "type": "info"
     },
     {
       "met": 202.01,
-      "label": "ATTERRISSAGE — DANS LE CRATÈRE EAGLE",
-      "note": "A rebondi 26 fois. A roulé par hasard dans un cratère de 22 m, entouré de roches exposées.",
+      "label": "TOUCHDOWN — DANS LE CRATÈRE EAGLE",
+      "note": "A bondi 26 fois. A roulé dans un cratère de 22 m par chance, entouré de roche mère exposée.",
       "type": "info"
     },
     {
       "met": 5300,
-      "label": "TRANSMISSION FINALE",
-      "note": "10 juin 2018. Une tempête de poussière à l'échelle planétaire coupe l'alimentation solaire.",
+      "label": "DERNIÈRE TRANSMISSION",
+      "note": "2018-06-10. Tempête de poussière planétaire coupe l'énergie solaire.",
       "type": "warning"
     },
     {
       "met": 5543,
-      "label": "FIN DE MISSION",
-      "note": "La NASA déclare la fin de la mission le 13 février 2019. 45,16 km parcourus.",
+      "label": "FIN DE LA MISSION",
+      "note": "La NASA déclare la fin de la mission le 2019-02-13. 45,16 km parcourus.",
       "type": "warning"
     }
   ]

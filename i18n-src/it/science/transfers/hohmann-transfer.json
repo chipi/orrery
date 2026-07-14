@@ -1,14 +1,15 @@
 {
-  "title": "Trasferta di Hohmann",
-  "intro_sentence": "Il viaggio a due accensioni più economico tra orbite circolari coplanari.",
+  "title": "Trasferimento di Hohmann",
+  "intro_sentence": "Il viaggio più economico con due accensioni tra due orbite circolari coplanari — il riferimento con cui i pianificatori di missioni misurano tutto il resto.",
   "narrative_101": [
-    "Sei in orbita Terra. Vuoi orbita Marte. Walter Hohmann 1925: trova un'ellisse che tocca entrambe.",
-    "Due accensioni, niente carburante sprecato. Il più economico ma anche il più lento."
+    "Sei nell'orbita della Terra. Vuoi essere nell'orbita di Marte. Entrambe le orbite sono all'incirca cerchi attorno al Sole. Come fai a passare da una all'altra consumando il minor carburante possibile?",
+    "La risposta, sviluppata da Walter Hohmann nel 1925, è sorprendentemente elegante. Trova un'ellisse che tocca appena l'orbita della Terra da un lato e appena l'orbita di Marte dall'altro. Accendi il motore brevemente per lasciare la Terra e unirti a quell'ellisse. Procedi in costa per circa 8,5 mesi senza accendere il motore — la gravità fa il lavoro. Quando arrivi all'estremità opposta, accendi di nuovo per stabilizzarti nell'orbita di Marte. Due accensioni, totale. Fatto.",
+    "È il viaggio più economico possibile — ma è anche il più lento. L'attesa di 8,5 mesi è non negoziabile; la fisica fissa il cronometro. Vuoi andare più veloce? Puoi, ma lo paghi: un'ellisse più ripida, un attraversamento più veloce, un'accensione di frenata molto più grande all'altra estremità. Questo è il compromesso che vedrai attuarsi in ogni porkchop plot in /plan."
   ],
   "body_paragraphs": [
-    "Da orbita circolare a una più alta: trasferta di Hohmann. Perielio tocca partenza, afelio tocca destinazione.",
-    "Il più economico a impulso fisso ma più lento. Terra-Marte ~259 giorni.",
-    "Sul porkchop `/plan`: bacino di celle turchesi attorno alla finestra Hohmann naturale."
+    "Immagina di essere in un'orbita circolare attorno al Sole e di voler raggiungere una più alta — diciamo da Terra a Marte. Il modo più economico è un trasferimento di Hohmann: un'ellisse il cui perielio sfiora l'orbita di partenza e il cui afelio sfiora l'orbita di destinazione. Due accensioni del motore ti portano lì. Una al perielio per lasciare l'orbita della Terra e entrare nell'ellisse. Una all'afelio per circolarizzarsi nell'orbita di destinazione.",
+    "È il percorso a impulso fisso più economico, ma è anche il più lento. Da Terra a Marte richiede circa 259 giorni con un trasferimento di Hohmann. Vuoi andare più veloce? Accendi più forte, vola un'ellisse allungata con velocità al perielio più alta. La V∞ di arrivo aumenta, l'accensione di ingresso alla destinazione è più grande, il costo totale ∆v sale ripidamente.",
+    "Nel porkchop `/plan` di Orrery vedrai questo direttamente: c'è una tranquilla conca di celle blu teal intorno alla finestra naturale di Hohmann, ogni 26 mesi per Marte, e contorni sempre più costosi mentre spingi verso tempi di transito più brevi."
   ],
-  "diagram_caption": "Orbita Terra · Marte · ellisse di trasferta Hohmann."
+  "diagram_caption": "Orbita della Terra (interna) · Orbita di Marte (esterna) · Ellisse di trasferimento di Hohmann con perielio alla Terra, afelio a Marte."
 }

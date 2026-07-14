@@ -1,14 +1,14 @@
 {
-  "title": "Injection trans-X — ITL / ITM / ITV / ITJ",
-  "intro_sentence": "La grande combustion de départ qui te lance sur trajectoire vers ta destination.",
+  "title": "Injection Trans-X — TLI / TMI / TVI / TJI",
+  "intro_sentence": "L'importante manœuvre de départ qui vous propulse sur une trajectoire vers votre destination.",
   "narrative_101": [
-    "Étape 1 : LEO. Étape 2 : ITL/ITM/ITV/ITJ. X = initiale destination.",
-    "Combustion dure dramatique 5-30 minutes au périgée (Oberth). Te lance sur ellipse de transfert. Ensuite moteur off des mois — inertie.",
-    "Apollo ITL : 3,05 km/s. Curiosity ITM : 3,7 km/s. Voyager 2 trans-Jupiter ~7 km/s."
+    "Étape 1 de tout voyage interplanétaire : vous propulser en orbite terrestre basse. Vous êtes maintenant dans l'espace, mais vous ne vous en allez nulle part — vous tournez simplement autour de la Terre. Pour vraiment partir vers la Lune, Mars ou Jupiter, vous avez besoin d'une DEUXIÈME manœuvre. C'est l'injection trans-X. « X » est la planète vers laquelle vous vous dirigez. TLI = trans-lunaire (vers la Lune). TMI = trans-Mars. TVI = Vénus. TJI = Jupiter. La même technique, une cible différente.",
+    "C'est une seule manœuvre puissante et spectaculaire — généralement 5 à 30 minutes de durée selon le moteur — effectuée au périgée de votre orbite de stationnement, là où vous vous déplacez déjà aussi vite que possible (effet Oberth, encore une fois). Elle vous propulse sur l'ellipse de transfert qui vous mène à la destination. Après cette manœuvre, le moteur cesse pratiquement de s'allumer pendant des mois. Vous dérivez.",
+    "Sur chaque fiche de mission interplanétaire dans /missions, vous verrez ce chiffre affiché : ∆v_TLI ou ∆v_TMI. C'est LA décision unique la plus importante en conception de mission — trop petite et vous ne quittez jamais la Terre, trop grande et vous gaspillez du carburant qui aurait pu transporter de la charge utile. La TLI d'Apollo était 3,05 km/s. La TMI de Curiosity pour Mars était 3,7 km/s. L'injection trans-Jupiter de Voyager 2 était autour de 7 km/s — la majorité de son budget."
   ],
   "body_paragraphs": [
-    "Après lancement en LEO. Deuxième combustion lève apogée vers destination = injection trans-X. ITL translunaire, ITM Mars, ITV Vénus, ITJ Jupiter.",
-    "Au périgée orbite parking (Oberth maximise énergie). Hohmann Mars : ITM ~3,6 km/s sur LEO injection 7,9 km/s.",
-    "Sur onglet FLIGHT chaque carte mission interplanétaire : Δv_ITL ou Δv_ITM."
+    "Après le lancement, vous êtes généralement en orbite terrestre basse (LEO). Pour aller ailleurs, vous avez besoin d'une deuxième manœuvre qui élève votre apogée jusqu'à la destination — c'est l'injection trans-X. Le X est la première lettre de la destination : TLI pour trans-lunaire, TMI pour trans-Mars, TVI pour trans-Vénus, TJI pour trans-Jupiter. La même physique, un point de visée différent.",
+    "La manœuvre se produit au périgée de l'orbite de stationnement, là où l'effet Oberth vous donne le plus d'énergie par kilogramme de propergol. Pour un transfert de Hohmann vers Mars, la TMI coûte environ 3,6 km/s — à peu près un tiers du ∆v de montée d'~9,4 km/s qu'il a fallu pour atteindre LEO. L'injection trans-Jupiter de Voyager 2 était ~7 km/s, la manœuvre unique la plus coûteuse ; Saturne, Uranus et Neptune ont ensuite été atteints par assistance gravitationnelle, pas par des manœuvres de départ supplémentaires.",
+    "Sur l'onglet FLIGHT de chaque fiche de mission interplanétaire dans `/missions`, vous trouverez ce chiffre étiqueté ∆v_TLI ou ∆v_TMI. C'est le coût de quitter le voisinage terrestre, séparé du coût d'accès à LEO en première instance."
   ]
 }

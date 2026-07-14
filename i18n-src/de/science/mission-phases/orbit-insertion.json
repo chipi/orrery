@@ -1,14 +1,14 @@
 {
-  "title": "Bahneinschuss — LOI / MOI",
-  "intro_sentence": "Die Bremsbrennphase, die deine Sonde in eine Bahn einfängt, statt sie für immer vorbeifliegen zu lassen.",
+  "title": "Orbit Insertion — LOI / MOI",
+  "intro_sentence": "Der Bremsmanöver, der dein Raumfahrzeug in eine Umlaufbahn bringt, statt es für immer vorbei fliegen zu lassen.",
   "narrative_101": [
-    "Du bist acht Monate gecruist. Mars wird größer im Fenster. Tust du nichts, fliegst vorbei und für immer raus. Um zu orbitieren — bremsen. Diese Bremsbrennphase ist der Schicksalsmoment jeder Orbital-Mission.",
-    "Mathematik unverzeihlich. Ankunft mit V∞. Unter Escape fallen. Lange harte präzise Brennphase im nächsten Punkt zum Planeten, wo Oberth maximiert. MRO: 27 min. Cassini Saturn: 95 min — die längste Brennphase im Leben der Sonde.",
-    "Fehlt sie oder unterperformt: du entkommst, keine zweite Chance. Mars Climate Orbiter 1999 hatte Einheitenfehler — Pfunde mit Newton verwechselt — Brennphase zu schwach, Sonde verglühte. Mission verloren in Sekunden."
+    "Du bist acht Monate lang geflogen. Du kannst sehen, wie der Mars durchs Fenster immer größer wird. Wenn du nichts tust, fliegst du an Mars vorbei und setzt deinen Weg ins All fort, um niemals zurückzukehren. Um tatsächlich zu umkreisen, musst du bremsen. Dieses Bremsmanöver — Lunar Orbit Insertion oder Mars Orbit Insertion oder welcher Planet auch immer — ist der entscheidende Moment jeder Umlaufbahnmission.",
+    "Die Rechnung ist unerbittlich. Du kommst mit mehreren Kilometern pro Sekunde Restgeschwindigkeit (V∞) an einem Planeten an. Um zu bleiben, musst du unter die lokale Fluchtgeschwindigkeit des Planeten sinken. Das bedeutet ein langes, hartes, präzise getimtes Triebwerksmanöver genau beim nächsten Vorbeiflug am Planeten, wo der Oberth-Effekt dir das effizienteste Bremsen gibt. Der Mars Reconnaissance Orbiter brannte 27 Minuten lang. Cassinis Saturn-Einschwung dauerte ~96 Minuten — das längste Manöver, das das Raumfahrzeug je durchführte.",
+    "Wenn das Manöver fehlschlägt oder unzureichend ist, entkommst du, und es gibt keine zweite Chance. Der Mars Climate Orbiter 1999 hatte einen Einheitenkonvertierungsfehler — pounds-force verwechselt mit Newton — sein Einschwungmanöver war zu schwach, er kam Mars zu nahe, und atmosphärischer Widerstand zerstörte ihn. Die Mission war in Sekunden verloren. Deshalb ist die Konstruktion von Orbit-Insertions einer der paranoidesten Ingenieurstätigkeiten, die Menschen durchführen."
   ],
   "body_paragraphs": [
-    "Bei Ankunft fliegt die Sonde schnell — schnell genug zum Entkommen, wenn nichts geschieht. Capture: bleed genug Geschwindigkeit, um unter lokale Escape zu fallen. Diese Bremsbrennphase ist der Bahneinschuss. LOI für Mond (Apollo, LRO), MOI für Mars (MAVEN, MRO, Tianwen-1).",
-    "Im Periapsis der Anflugshyperbel, wo Oberth günstig macht. Größe hängt von V∞ und gewünschter Bahnhöhe ab. MRO ankam V∞ ≈ 2,6 km/s, ~1 km/s Δv für Capture. Cassini Saturn-Insertion: 95-Minuten-Brennphase, längste der Sonde.",
-    "Fehler oder Unterperformance: Sonde entkommt. Keine zweite Chance. Mars Climate Orbiter ist die Lehre."
+    "Wenn dein Raumfahrzeug sein Ziel erreicht, bewegt es sich schnell — schnell genug, um zu entweichen, wenn du nichts tust. Um in eine Umlaufbahn eingefangen zu werden, musst du genug Geschwindigkeit abbauen, um unter die lokale Fluchtgeschwindigkeit zu fallen. Dieses Bremsmanöver ist die Orbit Insertion. LOI für Mond (Apollo, LRO), MOI für Mars (MAVEN, MRO, Tianwen-1) und so weiter.",
+    "Das Manöver findet beim Periapsis der Ankunftshyperbel statt, wo der Oberth-Effekt das Manöver am günstigsten macht. Die Größe hängt von V∞ — der Restgeschwindigkeit im Unendlichen — und der gewünschten Umlaufbahnhöhe ab. Der Mars MRO kam mit V∞ ≈ 2,6 km/s an und verbrauchte ~1 km/s `∆v` zum Einfangen. Cassinis Saturn-Orbit-Insertion war ein ~96-Minuten-Manöver, das längste im Leben des Raumfahrzeugs.",
+    "Wenn das Manöver fehlschlägt oder unzureichend ist, entkommt das Raumfahrzeug. Es gibt keine zweite Chance. Der Mars Climate Orbiter ist das warnende Beispiel: Ein Einheitenkonvertierungsfehler führte dazu, dass sein MOI-Manöver zu niedrig war, das Raumfahrzeug kam zu nah an Mars heran, und atmosphärischer Widerstand zerriss es."
   ]
 }

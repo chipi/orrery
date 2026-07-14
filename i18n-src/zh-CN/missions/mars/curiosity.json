@@ -1,50 +1,50 @@
 {
-  "name": "Curiosity",
-  "type": "ROVER · ACTIVE",
-  "first": "First nuclear-powered Mars rover; first sky-crane landing",
-  "dispatch": "好奇号是一台小汽车大小的核动力实验室，而让它降落才是最难的部分。因为太重而无法使用气囊，它在2012年由火箭动力空中起重机降落到火星上，这一降落过程风险极高，以至于规划者们称之为恐怖七分钟——而它第一次尝试就成功了。此后它一路钻探穿越盖尔陨石坑，回答了它被派去探寻的问题：这个陨石坑曾经存在一个湖泊，拥有生命体本可以利用的化学条件。火星曾经是宜居的。好奇号仍在行驶，正在攀登一座由层状岩石构成的山体，这座山如同行星自己的历史书一般。",
-  "description": "The flagship mission that defined modern Mars exploration. Curiosity is car-sized, plutonium-powered, and has driven 32+ km up Mount Sharp since landing in Gale Crater in 2012. Its instruments confirmed Mars once had habitable conditions — flowing water, complex organics, the chemistry life would need. The 'seven minutes of terror' EDL sequence, ending with a sky-crane lowering the rover on cables, is now NASA's standard for delivering large payloads to Mars surface.",
+  "name": "好奇号",
+  "type": "火星车 · 活跃中",
+  "first": "首个核动力火星探测器；首次天空起重机着陆",
+  "dispatch": "好奇号是一个核动力实验室，大小如一辆小汽车，而将其送上火星才是最艰巨的挑战。因质量过重无法使用充气垫，2012年它通过火箭动力的天空起重机被放到了火星表面。这一着陆序列危险至极，以至于计划者称之为\"恐怖的七分钟\"——而它在第一次尝试中就成功了。自那以后，好奇号在盖尔陨石坑内钻探移动，并回答了它被派遣去回答的问题：这个陨石坑曾经存在一个湖泊，其化学成分可以支持生命存在。火星曾经宜居。好奇号仍在继续行驶，攀爬着一座层状岩石山，它就像火星自己的历史书。",
+  "description": "定义了现代火星探测的旗舰任务。好奇号车身大小如小汽车，由钚-238提供动力，自2012年着陆以来已在盖尔陨石坑内行驶超过36千米。其仪器确认火星曾经具备宜居条件——流动的水、复杂的有机物、生命所需的化学成分。\"恐怖的七分钟\"进入、下降、着陆序列以天空起重机通过缆绳放下火星车而告终，现已成为美国国家航空航天局向火星表面运送大型载荷的标准方案。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 541 lifts off from Cape Canaveral SLC-41.",
+      "label": "发射",
+      "note": "宇宙神V 541运载火箭从卡纳维拉尔角第41号发射台升空。",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "TMI BURN",
-      "note": "Trans-Mars injection (3.61 km/s ∆v) sends MSL onto a heliocentric Mars-bound trajectory.",
+      "label": "火星转移注入",
+      "note": "火星科学实验室进行火星转移注入（∆v 3.61 km/s），进入日心轨道飞向火星。",
       "type": "nominal"
     },
     {
       "met": 16,
-      "label": "TCM-1",
-      "note": "First mid-course correction.",
+      "label": "轨迹修正-1",
+      "note": "第一次中途轨迹修正。",
       "type": "nominal"
     },
     {
       "met": 119,
-      "label": "TCM-3",
-      "note": "Final pre-EDL correction; trajectory targets Gale Crater landing ellipse.",
+      "label": "轨迹修正-3",
+      "note": "着陆前最后的轨迹修正；轨迹瞄准盖尔陨石坑着陆椭圆区。",
       "type": "nominal"
     },
     {
       "met": 254,
-      "label": "EDL — SEVEN MINUTES OF TERROR",
-      "note": "Atmospheric entry, supersonic parachute, sky-crane retro-rockets, rover lowered on cables.",
+      "label": "进入、下降、着陆——恐怖的七分钟",
+      "note": "大气进入、超音速降落伞、天空起重机变轨火箭、火星车通过缆绳着陆。",
       "type": "nominal"
     },
     {
       "met": 254.005,
-      "label": "TOUCHDOWN",
-      "note": "Curiosity arrives at Aeolis Palus, Gale Crater, 2012-08-06 05:17:57 UTC.",
+      "label": "着陆",
+      "note": "好奇号在盖尔陨石坑的埃奥利斯平原着陆，北京时间2012-08-06 13:17:57（UTC）。",
       "type": "nominal"
     },
     {
       "met": 254.01,
-      "label": "FIRST IMAGES",
-      "note": "Hazcam returns first low-resolution image of the surface.",
+      "label": "首批图像",
+      "note": "危险相机传回首批低分辨率表面图像。",
       "type": "info"
     }
   ]

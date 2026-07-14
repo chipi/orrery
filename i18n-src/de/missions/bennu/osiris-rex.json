@@ -1,8 +1,8 @@
 {
   "name": "OSIRIS-REx",
-  "type": "PROBENRÜCKFÜHRUNG · GEFLOGEN",
-  "first": "Größte jemals zurückgebrachte Asteroidenprobe (121,6 g von Bennu, zur Erde geliefert am 24.09.2023)",
-  "description": "OSIRIS-REx führte die präziseste jemals geflogene Asteroiden-Rendezvous-Mission durch. Gestartet am 08.09.2016 von Cape Canaveral mit einer Atlas V 411, nutzte 2017 ein Erd-Schwerkraftmanöver, um die Bahnebene auf Bennus 6°-Inklination zu drehen, und erreichte den 492 m großen kohlenstoffhaltigen erdnahen Asteroiden am 03.12.2018. Hielt Position bei 1,4 km — die engste Umlaufbahn einer Raumsonde um einen Himmelskörper überhaupt. Verbrachte zwei Jahre damit, Bennus mit Felsbrocken übersäte Oberfläche zu kartieren und aktive Partikelauswürfe zu entdecken. Am 20.10.2020 senkte sich der Touch-and-Go-Probenarm zur Nightingale-Stelle ab, schoss N₂-Gas in die Oberfläche und erfasste eine Wolke — dabei sank er 50 cm in eine „Schutthaufen-Fluid\"-Oberfläche ein. Die Probenrückführungskapsel lieferte am 24.09.2023 121,6 g Bennu-Material nach Utah. Die Raumsonde selbst wurde sofort in OSIRIS-APEX umbenannt und ist unterwegs zu einem Apophis-Rendezvous 2029.",
+  "type": "PROBENRÜCKKEHR · GEFLOGEN",
+  "first": "Größte je zurückgebrachte Asteroidenprobe (121,6 g von Bennu, zur Erde 2023-09-24 geliefert)",
+  "description": "OSIRIS-REx führte eine der anspruchsvollsten Asteroiden-Proximity-Operationen durch, die je versucht wurden. Gestartet 2016-09-08 von Cape Canaveral an Bord einer Atlas V 411, nutzte einen Erd-Swing-by 2017, um die Orbitalebene zur 6°-Inklination von Bennu zu rotieren, und erreichte den 492-m-Kohlenstoff-Naherde-Asteroiden 2018-12-03. Nach Bahnstation bei ~19 km trat es später in eine Rekord-Umlaufbahn von ~1,4 km ein — der engste Raumfahrzeug-Orbit je um einen Himmelskörper. Verbrachte zwei Jahre mit der Kartierung von Bennus felsenreichem Oberflächenprofil und der Entdeckung aktiver Partikelemissionen. 2020-10-20 senkte der Touch-and-Go-Probenarm zur Nightingale-Site ab, schoss N₂-Gas in die Oberfläche und erfasste eine Fontäne — sank 50 cm in eine „Schutthalden-Flüssigkeit\"-Oberfläche ein. Die Probenrückkehrkapsel lieferte 121,6 g Bennu-Material nach Utah am 2023-09-24. Das Raumfahrzeug selbst wurde sofort als OSIRIS-APEX umbezeichnet und ist auf dem Weg zu einem Apophis-Rendezvous 2029.",
   "events": [
     {
       "met": 0,
@@ -12,32 +12,32 @@
     },
     {
       "met": 380,
-      "label": "ERD-SCHWERKRAFTMANÖVER",
-      "note": "22.09.2017, 17.237 km über der Antarktis — dreht die Bahnebene auf Bennus 6°-Inklination.",
+      "label": "ERDE GRAVITY ASSIST",
+      "note": "2017-09-22, 17.237 km über der Antarktis — rotiert die Orbitalebene zur 6°-Inklination von Bennu.",
       "type": "info"
     },
     {
       "met": 816,
-      "label": "BENNU-RENDEZVOUS",
-      "note": "Hält Position bei 1,4 km — engste Umlaufbahn einer Raumsonde um einen Himmelskörper überhaupt.",
+      "label": "BENNU RENDEZVOUS",
+      "note": "Ankunft bei Bennu; Bahnstation bei ~19 km, dann schrittweise Verengung auf eine Rekord-Umlaufbahn von ~1,4 km — engster Raumfahrzeug-Orbit je um einen Himmelskörper.",
       "type": "info"
     },
     {
       "met": 1503,
-      "label": "TAG-PROBENENTNAHME",
-      "note": "20.10.2020. Touch-and-Go-Arm sinkt 50 cm in die Schutthaufen-Oberfläche ein; erfasst 121,6 g.",
+      "label": "TAG PROBENENTNAHME",
+      "note": "2020-10-20. Touch-and-Go-Arm sinkt 50 cm in die Schutthalden-Oberfläche ein; erfasst 121,6 g.",
       "type": "info"
     },
     {
       "met": 1705,
-      "label": "BENNU-ABFLUG",
-      "note": "10.05.2021. 2,5-jähriger Rückflug zur Erde.",
+      "label": "BENNU ABFLUG",
+      "note": "2021-05-10. 2,5-jähriger Rückflug zur Erde.",
       "type": "nominal"
     },
     {
       "met": 2572,
-      "label": "PROBENRÜCKFÜHRUNG",
-      "note": "24.09.2023. SRC landet mit Fallschirm in der Utah Test and Training Range; Raumsonde wird zu OSIRIS-APEX.",
+      "label": "PROBENRÜCKKEHR",
+      "note": "2023-09-24. SRC mit Fallschirm im Utah Test and Training Range gelandet; Raumfahrzeug wird zu OSIRIS-APEX.",
       "type": "info"
     }
   ]

@@ -2,7 +2,7 @@
   "name": "Hayabusa2",
   "type": "SAMPLE RETURN + LANDERS · ACTIVE (extended)",
   "first": "Second asteroid sample return (Ryugu, 2020); first artificial impact crater on an asteroid; first subsurface asteroid material returned to Earth",
-  "description": "JAXA's follow-on to the original Hayabusa. Launched 2014-12-03, Hayabusa2 reached carbonaceous near-Earth asteroid (162173) Ryugu on 2018-06-27 after a 3.5-year low-thrust ion cruise + Earth gravity assist. Surface operations 2018–2019: two touchdown-and-go sample collections bracketing a Small Carry-on Impactor experiment (2019-04-05) that excavated a 14 m crater for the second sample. Three MINERVA-II rovers returned the first surface images from an asteroid; the DLR/CNES MASCOT lander operated for 17 hours. Sample return capsule reentry over Woomera on 2020-12-05 delivered 5.4 g of pristine Ryugu material — the first asteroid sample with subsurface stratigraphy. Extended mission: flyby of (98943) 2001 CC21 in 2026-07; rendezvous with fast-rotating (1998 KY26) targeted for 2031-07.",
+  "description": "JAXA's follow-on to the original Hayabusa. Launched 2014-12-03, Hayabusa2 reached carbonaceous near-Earth asteroid (162173) Ryugu on 2018-06-27 after a 3.5-year low-thrust ion cruise + Earth gravity assist. Surface operations 2018–2019: two touchdown-and-go sample collections bracketing a Small Carry-on Impactor experiment (2019-04-05) that excavated a 14 m crater for the second sample. Three MINERVA-II rovers returned the first surface images from an asteroid; the DLR/CNES MASCOT lander operated for 17 hours. Sample return capsule reentry over Woomera on 2020-12-05 (UTC; recovered 2020-12-06 local/JST) delivered 5.4 g of pristine Ryugu material — the first asteroid sample with subsurface stratigraphy. Extended mission: flyby of 98943 Torifune (2001 CC21) in 2026-07; rendezvous with fast-rotating (1998 KY26) targeted for 2031-07.",
   "events": [
     {
       "met": 0,
@@ -30,8 +30,8 @@
     },
     {
       "met": 4250,
-      "label": "2001 CC21 FLYBY",
-      "note": "Extended-mission flyby of asteroid (98943) 2001 CC21.",
+      "label": "TORIFUNE FLYBY",
+      "note": "Extended-mission flyby of 98943 Torifune (2001 CC21).",
       "type": "info"
     },
     {

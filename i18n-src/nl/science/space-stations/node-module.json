@@ -1,17 +1,17 @@
 {
-  "title": "Knooppuntmodule",
-  "intro_sentence": "Een onder druk staande hub met meerdere koppelpoorten — de structurele verbinding die een station laat vertakken.",
+  "title": "Node Module",
+  "intro_sentence": "Een onder druk staande hub met meerdere dockingpoorten — de structurele verbinding waarmee een station zich kan vertakken.",
   "narrative_101": [
-    "Een knooppunt is een speciaal soort module onder druk: het herbergt geen experimenten of bemanningsverblijven, het verbindt alleen andere modules met elkaar. Stel je een zeshoekige doos voor waarbij elk vlak een koppelpoort heeft. Bevestig één knooppunt aan een lanceerraket, stuur het omhoog, koppel dan vijf extra modules aan de vijf overige poorten en je hebt je station laten groeien van één module naar zes.",
-    "Het ISS heeft er drie: Unity (Node 1), Harmony (Node 2) en Tranquility (Node 3). Elk is het centrale knooppunt voor één segment van het station — Unity verbindt de Russische en Amerikaanse zijden met elkaar; Harmony verbindt het Amerikaanse laboratoriumcluster met de Japanse en Europese modules; Tranquility draagt de Cupola observatiekoepel.",
-    "Tiangong koos een andere aanpak: in plaats van speciale knooppunten fungeert de centrale Tianhe-module zowel als woonverblijf als hub, met meerdere koppelpoorten die direct in de voor- en achterkant zijn ingebouwd. Het is een compacter ontwerp dat minder massa kost om te lanceren, maar beperkt hoeveel modules zich kunnen vertakken."
+    "Een node is een speciaal type onder druk staand module: het herbergt geen experimenten of bemanningsverblijven, het verbindt gewoon andere modules met elkaar. Stel je een zeshoekig vak voor waar elk zijvlak een dockingpoort heeft. Bevestig één node aan een lanceerraket, stuur die omhoog, dock dan vijf extra modules aan de vijf resterende poorten en je hebt je station van één module naar zes gegroeid.",
+    "Het ISS heeft er drie: Unity (Node 1), Harmony (Node 2) en Tranquility (Node 3). Elk is de centrale kruising voor één segment van het station — Unity kleeft de Russische en Amerikaanse zijde aan elkaar; Harmony verbindt het Amerikaanse laboratoriumcluster met de Japanse en Europese modules; Tranquility draagt de Cupola observatiekoepel.",
+    "Tiangong koos voor een ander aanpak: in plaats van speciale nodes, fungeert de centrale Tianhe-module als zowel bemanningsverblijf als hub, met meerdere dockingpoorten ingebouwd aan de voor- en achterzijde. Het is een compacteren ontwerp dat minder startmassa kost maar beperkt hoeveel modules zich kunnen aftakken."
   ],
   "body_paragraphs": [
-    "Knooppunten zijn verbindingsmodules — hubs onder druk met meerdere Common Berthing Mechanism (CBM) of koppelpoorten — die een station in staat stellen te vertakken in een boomtopologie in plaats van een lineaire keten.",
-    "ISS Unity (Node 1) lanceerde in 1998 op STS-88. Zes CBM-poorten: voorwaarts naar Destiny, achterwaarts naar Zarya, bakboord naar BEAM (was Tranquility), stuurboord naar Quest, zenith naar Z1 truss, nadir naar Leonardo PMM. De eerste door de VS gebouwde ISS-module.",
-    "ISS Harmony (Node 2) lanceerde in 2007. Zes poorten: verbindt Destiny met Columbus (bakboord), Kibo (stuurboord) en de koppeladapter voor bezoekende voertuigen (voorwaarts).",
-    "ISS Tranquility (Node 3) lanceerde in 2010. Herbergt de Cupola observatiekoepel (nadir-poort), de Permanent Multipurpose Module Leonardo (voorwaarts) en BEAM (achterwaarts).",
-    "Tiangong's Tianhe-kern: combineert knooppunt + bemanningsverblijven + voortstuwing + besturing. De voorwaartse koppelhub heeft 4 CBM-equivalente poorten plus een achterwaartse koppelpoort voor vracht (Tianzhou) en bemande (Shenzhou) ruimtevaartuigen. Wentian en Mengtian koppelen lateraal via de voorwaartse knooppunthub."
+    "Nodes zijn verbindermodules — onder druk staande hubs met meerdere Common Berthing Mechanism (CBM) of dockingpoorten — die een station in een boomstructuur in plaats van een lineaire keten kunnen laten vertakken.",
+    "ISS Unity (Node 1) lanceerde in 1998 op STS-88. Zes CBM-poorten: vooruit → Destiny, achter → Zarya, stuurboord → Quest-luissluis, zenith → Z1-truss, bakboord → Tranquility (2010), nadir → PMA/vrachtdocking (voorheen Leonardo PMM 2011–2015). De eerste door de VS gebouwde ISS-module.",
+    "ISS Harmony (Node 2) lanceerde 2007. Zes poorten: verbindt Destiny met Columbus (bakboord), Kibo (stuurboord) en de twee dockingadapters (IDA-2 vooruit, IDA-3 zenith) voor Crew Dragon / Starliner.",
+    "ISS Tranquility (Node 3) lanceerde 2010. Herbergt de Cupola observatiekoepel (nadir-poort), de Permanent Multipurpose Module Leonardo (vooruit) en BEAM (achter).",
+    "Tiangong's Tianhe-kern: combineert node + bemanningsverblijf + voortstuwing + controle. De nodehub draagt een voorwaartse axiaalpoort (Shenzhou), twee zijwaartse radiale poorten (Wentian aan stuurboord, Mengtian aan bakboord, beide door de arm daar verplaatst), en een nadir-poort; de achterwaartse axiaalpoort neemt Tianzhou-vracht. Poorten gebruiken het Chinese Docking Mechanism, niet het Amerikaanse CBM."
   ],
-  "diagram_caption": "Zeshoekige knooppuntmodule met zes koppelpoorten gelabeld voorwaarts / achterwaarts / bakboord / stuurboord / zenith / nadir."
+  "diagram_caption": "Zeshoekige nodemodule met zes dockingpoorten gelabeld als vooruit / achter / bakboord / stuurboord / zenith / nadir."
 }

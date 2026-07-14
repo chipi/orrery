@@ -8,7 +8,7 @@
   "year": 2013,
   "status": "ACTIVE",
   "departure_date": "2013-11-18",
-  "arrival_date": "2014-09-21",
+  "arrival_date": "2014-09-22",
   "transit_days": 308,
   "vehicle": "Atlas V 401",
   "payload": "2454 kg",
@@ -110,7 +110,7 @@
         "met_days": 308,
         "type": "arrival",
         "label": "Mars approach",
-        "description": "Pre-MOI checkout phase. 2014-09-22 arrival, just 2 days after India's Mangalyaan reached Mars."
+        "description": "Pre-MOI checkout phase. 2014-09-22 arrival — India's Mangalyaan arrived 2 days later on 2014-09-24."
       },
       {
         "met_days": 308.005,

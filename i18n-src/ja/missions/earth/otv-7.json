@@ -1,25 +1,25 @@
 {
-  "name": "X-37B OTV-7号 (USA-358, USSF-52)",
-  "type": "無人スペースプレーン · 飛行済",
-  "first": "USA-358 / USSF-52 — 軌道上434日、ヴァンデンバーグ宇宙軍基地",
-  "description": "X-37Bの7回目の飛行 — 高楕円軌道（HEO）への初投入であり、Falcon Heavyによる初の打ち上げ。2023-12-29 01:07 UTCにKSC LC-39Aから打ち上げ。両側のサイドブースターはLZ-1 / LZ-2で回収され、中央コアはHEO投入エネルギーのために使い切られた。HEO軌道はOTVを遠地点でGEOベルトの高度付近にまで運んだ。制御されたエアロブレーキ風のデオービット運用を実施（USSFは機動について公的な更新情報を公開しており、以前の機密飛行からの意図的な透明性転換）。2025-03-07 09:22 UTCにヴァンデンバーグ宇宙軍基地に着陸。",
+  "name": "X-37B OTV-7 (USA-358, USSF-52)",
+  "type": "無人スペースプレーン · 飛行完了",
+  "first": "USA-358 / USSF-52 — 軌道上434日間、ヴァンデンバーグ空軍基地",
+  "description": "7番目のX-37B飛行――初の高楕円軌道(HEO)への投入、初のファルコン・ヘビーによる打上げ。2023年12月29日01:07 UTC、KSCのLC-39Aから打上げ。両側ブースターはLZ-1/LZ-2で回収、中央コアはHEO投入エネルギーのため使用済み。HEOの軌跡により、OTVは遠地点でおよそGEO帯の高度に到達。制御されたエアブレーキ様の離軌シーケンスを実施(USSF-52は機動に関する公開更新情報を発表——従来の秘匿飛行からの意図的な透明性の転換)。2025年3月7日09:22 UTC、ヴァンデンバーグ空軍基地に着陸。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Falcon Heavy from KSC LC-39A 2023-12-29.",
+      "label": "打上げ",
+      "note": "2023年12月29日、KSC LC-39Aからファルコン・ヘビーで打上げ。",
       "type": "nominal"
     },
     {
       "met": 217,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee HEO ~38,800 km × 250 km (first highly-elliptical OTV flight); classified payload operations.",
+      "label": "軌道上運用",
+      "note": "遠地点HEO ~38,800 km × ~320 km(初の高楕円軌道OTV飛行)。秘匿ペイロード運用。",
       "type": "info"
     },
     {
       "met": 434,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at Vandenberg SFB 2025-03-07.",
+      "label": "着陸",
+      "note": "2025年3月7日、ヴァンデンバーグ空軍基地への自動滑走路着陸。",
       "type": "nominal"
     }
   ]

@@ -1,6 +1,38 @@
 {
   "name": "Lunar Prospector",
-  "type": "ROBOTISCHER ORBITER · GEFLOGEN",
-  "first": "Wasserstoffnachweis an beiden Mondpolen per Neutronenspektrometer",
-  "description": "Die erste Discovery-Klasse-Mission der NASA und die erste eigens für den Mond bestimmte US-Mission seit Explorer 49 (1973). Am 07.01.1998 auf einer Athena II von Cape Canaveral gestartet, trat Lunar Prospector am 11.01.1998 in einen 100 km hohen, kreisförmigen polaren Mondorbit ein. Der 296 kg schwere, rotierende Raumflugkörper trug fünf Instrumente: ein Gammastrahlenspektrometer für die globale Krustenzusammensetzung, ein Neutronenspektrometer zur Wasserstoff- / Wassereisdetektion an den Polen, ein Alphateilchenspektrometer für Radon, ein Magnetometer + Elektronenreflektometer für Krustenmagnetismus und ein Doppler-Schwerefeldexperiment. Die Analyse der Boynton-Gruppe (Feldman et al., Science 281 + 284) zeigte scharfe Neutronenflussdefizite über beiden Mondpolen — konsistent mit etwa 2 × 10⁹ Tonnen wasserstoffreichen Materials (wahrscheinlich Wassereis) in permanent abgeschatteten Polarkratern. Die Mission endete am 31.07.1999 mit einem gezielten Einschlag nahe dem Shackleton-Krater; eine Wasserdampfwolke war nicht zu sehen."
+  "type": "ROBOTISCHER ORBITER · FLOWN",
+  "first": "Neutronenspektrometer-Wasserstoff-Nachweis an beiden Mondpolen",
+  "description": "Die dritte NASA-Discovery-Klasse-Mission und der erste von der NASA verwaltete dedizierte Mondorbiter der Ära nach Apollo. Gestartet am 1998-01-07 auf einer Athena II von Cape Canaveral, erreichte Lunar Prospector am 1998-01-11 eine 100-km-Kreisbahn um den Mond mit polarer Umlaufbahn. Das 296-kg-Raumfahrzeug mit rotierendem Aufbau trug fünf Instrumente: ein Gammastrahlen-Spektrometer zur globalen Krustenkomposition, ein Neutronenspektrometer zum Nachweis von Wasserstoff/Wassereis an den Polen, ein Alphateilchen-Spektrometer für Radongas (indirekter Vulkanismus-Nachweis), ein Magnetometer + Elektronenreflektor zum Nachweis der Krustenmagnetisierung und ein Doppler-Gravitationsexperiment. Die Analyse der Neutronendaten durch das Boynton-Team (Feldman et al., Science 281 + 284) ergab scharfe Neutronenflussmängel über beiden Mondpolen — konsistent mit ~2 × 10⁹ Tonnen wasserstoffreichem Material (wahrscheinlich Wassereis) in permanent beschatteten Polarkratern. Die Mission endete am 1999-07-31 mit absichtlichem Einschlag nahe des Shackleton-Kraters in der Hoffnung, eine nachweisbare Wasserdampf-Fahne freizusetzen; keine wurde beobachtet. Der Wasserstoff-Nachweis blieb bestehen, bis LCROSS und Chandrayaan-1 / M3 (2009) unabhängige Bestätigung lieferten.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Athena II von Cape Canaveral SLC-46 am 1998-01-07 02:28 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.07,
+      "label": "TLI",
+      "note": "Mond-Transferbahn-Injektion.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.1,
+      "label": "LOI",
+      "note": "Mond-Bahneinschuss am 1998-01-11 — initiale 100 × 100 km polare Bahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 60,
+      "label": "POLARER WASSERSTOFF",
+      "note": "Neutronenspektrometer detektiert scharfe Neutronenflussmängel über beiden Mondpolen — starkes Wasserstoff-Signal, konsistent mit Polar-Wassereis.",
+      "type": "info"
+    },
+    {
+      "met": 569,
+      "label": "SHACKLETON-EINSCHLAG",
+      "note": "Absichtlicher Einschlag nahe Shackleton-Krater am 1999-07-31 09:52 UTC. Keine Wasserdampf-Fahne von der Erde aus nachgewiesen.",
+      "type": "nominal"
+    }
+  ]
 }

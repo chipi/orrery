@@ -1,9 +1,9 @@
 {
   "name": "Voyager 1",
-  "type": "Scheervlucht · Voltooid",
-  "first": "Het verst van de mens gemaakte object — momenteel zo'n 165 AE van de Zon, in de interstellaire ruimte",
-  "dispatch": "Voyager 1 is het verste ding dat de mensheid ooit heeft gemaakt, en het kwam daar bijna door een toeval van geometrie. Een nauwe passage langs Saturnus' gigantische maan Titan — gekozen omwille van de wetenschap — boog zijn baan omhoog en uit het vlak van de planeten en richtte het op de rand van het zonnestelsel, en het is sindsdien aan het klimmen. Onderweg vond het actieve vulkanen op Io, de eerste die ooit buiten de aarde werden gezien, en in 1990 draaide het zich om om de Pale Blue Dot te maken. In 2012 werd het de eerste machine die de interstellaire ruimte binnenging. Het zendt nog steeds uit, op tanende nucleaire energie, vanaf meer dan honderd keer de afstand van de aarde tot de zon.",
-  "description": "Zestien dagen na Voyager 2 gelanceerd, vloog Voyager 1 sneller en bereikte als eerste Jupiter (1979) en Saturnus (1980). De Titan-scheervlucht boog de baan uit het vlak van de ecliptica, beëindigde de planetentocht maar zond de sonde via de meest directe weg naar de heliopauze — die ze op 25-08-2012 doorkruiste, het eerste door de mens gemaakte object in de interstellaire ruimte. Op ongeveer 6 miljard km maakte ze het familieportret Pale Blue Dot (14-02-1990), de foto waarover Carl Sagan schreef. Beide Voyagers dragen de Gouden Plaat mee als visitekaartje van de mensheid.",
+  "type": "VOORBIJVLUCHT · VOLTOOID",
+  "first": "Het verste door mensen gemaakte object — momenteel ongeveer 170 AU van de Zon in interstellaire ruimte",
+  "dispatch": "Voyager 1 is het verste wat de mensheid ooit heeft gemaakt, en het is daar bijna per ongeluk gekomen door geometrie. Een dichte passage langs Saturnus' reuzenmaantje Titan — gekozen voor de wetenschap — boog zijn baan omhoog en uit het vlak van de planeten en richtte hem op de rand van het zonnestelsel, en hij is sindsdien blijven klimmen. Onderweg ontdekte het actieve vulkanen op Io, voor het eerst ooit buiten de Aarde waargenomen, en in 1990 draaide het zich om om de Pale Blue Dot vast te leggen. In 2012 werd het het eerste apparaat dat de interstellaire ruimte in ging. Het zendt nog steeds uit, op vervagend kernenergie, vanuit meer dan honderd keer de afstand van de Aarde tot de Zon.",
+  "description": "Zeventien dagen na Voyager 2 gelanceerd, vloog Voyager 1 sneller en kwam het eerst bij Jupiter aan (1979) en eerst bij Saturnus (1980). De voorbijvlucht langs Titan boog de baan omhoog uit het eclipticavlak, wat het planetaire toernooi beëindigde maar hem op het meest directe pad naar de heliopauze stuurde — die het op 2012-08-25 kruiste, het eerste door mensen gemaakte object dat de interstellaire ruimte in ging. Vanaf een heliocentrische afstand van ongeveer 6 miljard km legde het het familieportret Pale Blue Dot vast (1990-02-14), de foto waarover Carl Sagan schreef. Beide Voyagers dragen de Golden Record als visitekaartje van de mensheid.",
   "events": [
     {
       "met": 0,
@@ -13,14 +13,14 @@
     },
     {
       "met": 546,
-      "label": "JUPITER DICHTSTE NADERING",
-      "note": "Scheervlucht op ~349.000 km; ontdekte het vulkanisme op Io, bracht het oppervlak van Europa in kaart.",
+      "label": "DICHTSTE BENADERING JUPITER",
+      "note": "Voorbijvlucht op ongeveer 349.000 km; ontdekte vulkanisme op Io, in kaart gebracht oppervlak van Europa.",
       "type": "nominal"
     },
     {
       "met": 1164,
-      "label": "SATURNUS + TITAN SCHEERVLUCHTEN",
-      "note": "De Titan-scheervlucht boog de baan uit de ecliptica — geen verdere planeetontmoeting meer mogelijk.",
+      "label": "VOORBIJVLUCHTEN SATURNUS EN TITAN",
+      "note": "Titan-voorbijvlucht boog baan uit het eclipticavlak — geen verdere planetaire ontmoeting mogelijk.",
       "type": "nominal"
     }
   ]

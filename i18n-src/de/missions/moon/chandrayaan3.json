@@ -1,8 +1,8 @@
 {
   "name": "Chandrayaan-3",
-  "type": "LANDER · ROVER · GEFLOGEN",
-  "first": "Erste sanfte Landung in der Nähe des Mondsüdpols",
-  "description": "Nach dem Verlust des Vikram-Landers von Chandrayaan-2 im Jahr 2019 war die dritte Mondmission von ISRO bewusst konservativ – sie konzentrierte sich auf den Lander und nicht auf die Mitnahme eines Orbiters. Vikram landete auf 69,4° südlicher Breite, der nächstgelegenen Raumsonde, die jemals einem Mondpol gekommen ist. Der Rover Pragyan entdeckte erstmals Schwefel auf der Mondoberfläche und führte vor Ort thermische Messungen durch. Indien war das vierte Land, das sanft auf dem Mond landete, und das erste Land in den Polarregionen, in denen künftig wahrscheinlich Wassereis abgebaut wird.",
+  "type": "LANDER · ROVER · FLOWN",
+  "first": "Erste Weichlandung in der Nähe des lunaren Südpols",
+  "description": "Nach dem Verlust von Chandrayaan-2s Vikram-Lander im Jahr 2019 war ISROs dritte Mondmission bewusst konservativ angelegt – konzentriert auf den Lander statt einen Orbiter mitzuführen. Vikram setzte in 69,4° S Breite auf, näher an einem Mondpol als jedes andere Raumfahrzeug zuvor. Der Pragyan-Rover wies Schwefel auf der Mondoberfläche zum ersten Mal nach und führte In-situ-Wärmemessungen durch. Indien wurde die vierte Nation, die auf dem Mond eine Weichlandung durchführte, und landete näher an einem Mondpol als jedes Raumfahrzeug davor – eine Region, in der in Zukunft der Abbau von Wassereis möglich werden könnte.",
   "events": [
     {
       "met": 0,
@@ -13,31 +13,31 @@
     {
       "met": 22,
       "label": "MOI",
-      "note": "Einfügung in die Mondumlaufbahn (mehrere Verbrennungen zur Erhöhung der Erd- und Mondumlaufbahn werden verwendet).",
+      "note": "Mondorbiteinschwung (mehrere Zirkularisierungsmanöver um die Erde und den Mond verwendet).",
       "type": "nominal"
     },
     {
       "met": 38,
-      "label": "Lander-Trennung",
+      "label": "LANDER-TRENNUNG",
       "note": "Vikram-Lander trennt sich vom Antriebsmodul.",
       "type": "nominal"
     },
     {
       "met": 40,
-      "label": "LANDUNG",
-      "note": "Vikram landet am Shiv Shakti Point nahe dem Südpol 23.08.2023 12:33 UTC.",
+      "label": "AUFSETZEN",
+      "note": "Vikram landet bei Shiv Shakti Point in der Nähe des Südpols 2023-08-23 12:33 UTC.",
       "type": "nominal"
     },
     {
       "met": 40.5,
-      "label": "PRAGYAN IM EINSATZ",
-      "note": "Rover rollt Rampe hinunter; beginnt mit der Oberflächenwissenschaft.",
+      "label": "PRAGYAN AUSGESETZT",
+      "note": "Rover rollt die Rampe hinunter; beginnt mit Oberflächenforschung.",
       "type": "info"
     },
     {
       "met": 53,
       "label": "MONDNACHT",
-      "note": "Lander/Rover wird zu Beginn der Mondnacht in den Winterschlaf versetzt.",
+      "note": "Lander/Rover gehen in Winterschlaf über, wenn die Mondnacht beginnt.",
       "type": "info"
     }
   ]

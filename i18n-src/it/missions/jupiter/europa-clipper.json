@@ -1,8 +1,8 @@
 {
   "name": "Europa Clipper",
-  "type": "ORBITER + MULTI-FLYBY · ACTIVE",
-  "first": "Prima missione dedicata alla caratterizzazione dell'abitabilità di una luna ghiacciata; il più grande veicolo spaziale di missione planetaria mai lanciato (6065 kg, pannelli solari da 100 m²)",
-  "description": "Europa Clipper va su Giove per studiare Europa — una luna ghiacciata di 3.121 km che si ritiene ospiti un oceano globale di acqua liquida sotto una calotta di ghiaccio di 15-25 km, l'ambiente potenzialmente abitabile più accessibile del sistema solare. Lanciata il 14-10-2024 su un Falcon Heavy con C3 41,7. Un'assistenza gravitazionale di Marte nel 03-2025 + assistenza gravitazionale della Terra nel 12-2026 forniscono la traiettoria; arriva su Giove l'11-04-2030 per l'inserimento in orbita. Il tour orbitale esegue 49 sorvoli ravvicinati di Europa nell'arco di quattro anni — passando entro 25 km dalla superficie di Europa nei passaggi più vicini, progettato per mappare l'intera luna limitando al contempo la dose di radiazioni che il veicolo spaziale riceve nelle brutali fasce di radiazione di Giove. Strumenti: radar penetrante il ghiaccio REASON, spettrometro di massa MASPEX (campiona materiale di eventuali pennacchi), imager termico E-THEMIS (rileva geyser attivi), magnetometro + strumenti al plasma confermano la profondità dell'oceano dalla risposta magnetica indotta.",
+  "type": "ORBITER + MULTI-FLYBY · ATTIVO",
+  "first": "Prima missione dedicata alla caratterizzazione dell'abitabilità di una luna ghiacciata; il più grande veicolo spaziale di missione planetaria mai lanciato (6065 kg, pannelli solari 100 m²)",
+  "description": "Europa Clipper si dirige verso Giove per studiare Europa — una luna ghiacciata di 3.121 km ritenuta ospitare un oceano di acqua liquida globale sotto un guscio di ghiaccio di 15-25 km, l'ambiente potenzialmente abitabile più accessibile del sistema solare. Lanciato il 2024-10-14 su un Falcon Heavy a C3 41,7. Un'assistenza gravitazionale da Marte a marzo 2025 ha curvato la traiettoria verso la Terra; un'assistenza gravitazionale da Terra nel 2026-12 fornisce la spinta finale verso l'esterno; arriva a Giove il 2030-04-11 per l'inserimento orbitale. Il tour orbitale esegue 49 fly-by ravvicinati di Europa nel corso di quattro anni — passando entro 25 km dalla superficie di Europa nei passaggi più vicini, progettato per mappare l'intera luna limitando la dose di radiazione del veicolo spaziale nelle brutali fasce di radiazione di Giove. Strumenti: radar REASON per penetrare il ghiaccio, spettrometro di massa MASPEX (campiona il materiale del pennacchio se presente), termocamera E-THEMIS (individua i geyser attivi), magnetometro + strumenti al plasma confermano la profondità dell'oceano dalla risposta magnetica indotta.",
   "events": [
     {
       "met": 0,
@@ -12,26 +12,26 @@
     },
     {
       "met": 504,
-      "label": "ASSISTENZA GRAVITAZIONALE DI MARTE",
-      "note": "01-03-2025. Devia la traiettoria verso il nuovo incontro con la Terra.",
+      "label": "ASSISTENZA GRAVITAZIONALE DA MARTE",
+      "note": "2025-03-01. Piega la traiettoria verso l'incontro con la Terra.",
       "type": "info"
     },
     {
       "met": 1530,
-      "label": "ASSISTENZA GRAVITAZIONALE DELLA TERRA",
-      "note": "03-12-2026. Accelerazione finale in uscita verso Giove.",
+      "label": "ASSISTENZA GRAVITAZIONALE DA TERRA",
+      "note": "2026-12-03. Accelerazione finale verso Giove.",
       "type": "info"
     },
     {
       "met": 2005,
       "label": "AVVICINAMENTO A GIOVE",
-      "note": "11-04-2030. Avvicinamento finale a JOI.",
+      "note": "2030-04-11. Approccio finale a JOI.",
       "type": "info"
     },
     {
       "met": 2005.005,
-      "label": "INSERIMENTO IN ORBITA DI GIOVE",
-      "note": "Accensione di 760 m/s. Seguono 49 sorvoli di Europa nell'arco di 4 anni.",
+      "label": "INSERIMENTO IN ORBITA GIOVIANA",
+      "note": "Manovra di 760 m/s. Seguono 49 fly-by di Europa in 4 anni.",
       "type": "info"
     }
   ]

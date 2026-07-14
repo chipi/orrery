@@ -8,10 +8,10 @@
   ],
   "body_paragraphs": [
     "Nodes are connector modules — pressurized hubs with multiple Common Berthing Mechanism (CBM) or docking ports — that allow a station to branch into a tree topology rather than a linear chain.",
-    "ISS Unity (Node 1) launched in 1998 on STS-88. Six CBM ports: forward to Destiny, aft to Zarya, port to BEAM (was Tranquility), starboard to Quest, zenith to Z1 truss, nadir to Leonardo PMM. The first US-built ISS module.",
-    "ISS Harmony (Node 2) launched 2007. Six ports: connects Destiny to Columbus (port), Kibo (starboard), and the docking adaptor for visiting vehicles (forward).",
+    "ISS Unity (Node 1) launched in 1998 on STS-88. Six CBM ports: forward → Destiny, aft → Zarya, starboard → Quest airlock, zenith → Z1 truss, port → Tranquility (2010), nadir → PMA/cargo berthing (formerly Leonardo PMM 2011–2015). The first US-built ISS module.",
+    "ISS Harmony (Node 2) launched 2007. Six ports: connects Destiny to Columbus (port), Kibo (starboard), and the two docking adapters (IDA-2 forward, IDA-3 zenith) for Crew Dragon / Starliner.",
     "ISS Tranquility (Node 3) launched 2010. Hosts the Cupola observation dome (nadir port), the Permanent Multipurpose Module Leonardo (forward), and BEAM (aft).",
-    "Tiangong's Tianhe core: combines node + crew quarters + propulsion + control. Forward docking hub has 4 CBM-equivalent ports plus an aft docking port for cargo (Tianzhou) and crewed (Shenzhou) spacecraft. Wentian and Mengtian dock laterally via the forward node hub."
+    "Tiangong's Tianhe core: combines node + crew quarters + propulsion + control. The node hub carries a forward axial port (Shenzhou), two lateral radial ports (Wentian to starboard, Mengtian to port, both relocated there by the arm), and a nadir port; the aft axial port takes Tianzhou cargo. Ports use the Chinese Docking Mechanism, not the US CBM."
   ],
   "diagram_caption": "Hexagonal node module with six docking ports labelled forward / aft / port / starboard / zenith / nadir."
 }

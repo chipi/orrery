@@ -1,6 +1,38 @@
 {
   "name": "SMART-1",
-  "type": "ORBITADOR ROBÓTICO · VOADA",
-  "first": "Primeira espaçonave europeia a chegar à Lua + primeira navegação em espaço profundo com propulsão iônica até um corpo planetário",
-  "description": "A primeira missão lunar da ESA e a primeira espaçonave europeia a chegar à Lua. SMART = Small Missions for Advanced Research in Technology — e a tecnologia-chave foi um propulsor iônico solar-elétrico de efeito Hall (PPS-1350-G), à época o maior já voado. Lançada em 27/09/2003 como carga útil compartilhada em um Ariane 5 de Kourou, a espaçonave de 367 kg usou seu propulsor iônico de xenônio de 1,2 kW durante 13 meses para elevar lentamente sua órbita terrestre, sendo finalmente capturada pela gravidade lunar em 15/11/2004 — uma espiral de baixo empuxo de 13 meses em vez da transferência química de poucos dias de todas as missões lunares anteriores. Operou 16 meses em uma órbita lunar polar enviando imagens da câmera AMIE, os primeiros mapas elementares por fluorescência de raios X da Lua (D-CIXS) e espectroscopia mineral infravermelha (SIR). Impactou deliberadamente em Lacus Excellentiae (34,4° S, 46,2° O) em 03/09/2006 às 02:42 UTC — o flash do impacto foi observado ao vivo pelo Telescópio Canadá-França-Havaí."
+  "type": "ORBITADOR ROBÓTICO · CONCLUÍDO",
+  "first": "Primeira sonda espacial europeia a atingir a Lua; primeira missão a alcançar a Lua sob propulsão iônica",
+  "description": "Primeira missão lunar da ESA e a primeira sonda espacial europeia a atingir a Lua. SMART = Small Missions for Advanced Research in Technology (Pequenas Missões para Pesquisa Avançada em Tecnologia) — e a tecnologia-chave era um propulsor eletrostático solar de efeito Hall (PPS-1350-G), na época o maior propulsor deste tipo já lançado. Lançada em 2003-09-27 como carga útil compartilhada em um Ariane 5 de Kourou, a sonda de 367 kg usou seu motor iônico de xenônio de 1,2 kW durante 13 meses para aumentar lentamente sua órbita terrestre, sendo eventualmente capturada pela gravidade lunar em 2004-11-15 — uma espiral de baixo empuxo de 13 meses em vez da transferência química de dias de todas as missões lunares anteriores. Operou por 16 meses em órbita polar lunar retornando imagens da câmera AMIE, os primeiros mapas elementares de fluorescência de raios-X da Lua (D-CIXS) e espectroscopia mineral no infravermelho (SIR). Impactou deliberadamente Lacus Excellentiae (34,4° S, 46,2° W) em 2006-09-03 05:42 UTC — o clarão de impacto foi observado ao vivo pelo Canada-France-Hawaii Telescope.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Ariane 5G de Kourou em 2003-09-27 23:14 UTC — carga útil compartilhada com Insat-3E + e-Bird.",
+      "type": "nominal"
+    },
+    {
+      "met": 0,
+      "label": "INÍCIO DO MOTOR IÔNICO",
+      "note": "Propulsor iônico de efeito Hall PPS-1350-G inicia espiral de baixo empuxo de 13 meses.",
+      "type": "nominal"
+    },
+    {
+      "met": 414,
+      "label": "CAPTURA LUNAR",
+      "note": "Capturada pela gravidade lunar em 2004-11-15 — primeira sonde espacial europeia na Lua.",
+      "type": "nominal"
+    },
+    {
+      "met": 720,
+      "label": "MAPEAMENTO D-CIXS",
+      "note": "D-CIXS de fluorescência de raios-X entrega os primeiros mapas elementares globais da Lua.",
+      "type": "info"
+    },
+    {
+      "met": 1072,
+      "label": "IMPACTO EM LACUS EXCELLENTIAE",
+      "note": "Impacto deliberado em 34,4° S, 46,2° W em 2006-09-03 05:42 UTC. Clarão de impacto observado do CFHT.",
+      "type": "nominal"
+    }
+  ]
 }

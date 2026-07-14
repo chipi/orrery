@@ -1,56 +1,56 @@
 {
-  "name": "Apolo 13",
-  "dispatch": "A Apollo 13 nunca pousou, e é a missão que todos lembram. Dois dias depois da partida, um tanque de oxigênio se despedaçou e transformou um voo rotineiro para as terras altas de Fra Mauro em um problema de quatro dias para manter três homens vivos em uma espaçonave moribunda a quatrocentos mil quilômetros de casa. O que os salvou não foi heroísmo; foi preparação e uma sala cheia de pessoas trabalhando no problema em tempo real, improvisando uma forma de respirar e uma forma de voltar para casa com o que já estava parafusado ao veículo. A NASA chamou de falha bem-sucedida. É mais próximo da verdade dizer que é o voo que provou que a agência era tão boa quanto alegava ser.",
-  "type": "SOBREVOO TRIPULADO · VOADO (POUSO ABORTADO)",
+  "name": "Apollo 13",
+  "type": "VOO TRIPULADO EM SOBREVOO · REALIZADO (POUSO ABORTADO)",
   "first": "A missão que transformou um quase-desastre no resgate mais célebre da NASA",
-  "description": "Apolo 13 deveria ser o terceiro pouso lunar tripulado, com alvo nas terras altas de Fra Mauro. A 55 horas e 54 minutos de voo, um tanque de oxigênio do Módulo de Serviço rompeu, paralisando os sistemas elétricos e de suporte à vida do CSM. Cancelado o pouso, a tripulação — James Lovell, Jack Swigert e Fred Haise — desligou o CSM, mudou-se para o Módulo Lunar Aquarius como bote salva-vidas, e usou o motor de descida do LM para uma queima Pericíntio+2-horas que os colocou em uma trajetória de retorno livre rápida. Passaram pela Lua a 254 km de altitude em 15/04/1970 e amerissaram com segurança no Pacífico Sul em 17/04/1970. A missão é estudada hoje como modelo de improvisação de engenharia disciplinada em tempo real.",
+  "dispatch": "Apollo 13 nunca pousou, e é a missão que todos lembram. Dois dias após o lançamento, um tanque de oxigênio se desintegrou e transformou um voo de rotina para as terras altas de Fra Mauro em um problema de quatro dias: manter três homens vivos em uma nave agonizante a um quarto de milhão de milhas de casa. O que os salvou não foi heroísmo; foi preparação e uma sala cheia de pessoas trabalhando o problema em tempo real, improvisando uma forma de respirar e um caminho de volta usando apenas o que já estava preso ao veículo. A NASA chamou de um fracasso bem-sucedido. Seria mais preciso dizer que foi o voo que provou que a agência era tão competente quanto afirmava ser.",
+  "description": "Apollo 13 seria o terceiro pouso lunar tripulado, com destino às terras altas de Fra Mauro. Com 55 horas 54 minutos de voo, um tanque de oxigênio no Módulo de Serviço se rompeu, incapacitando os sistemas elétricos e de suporte à vida do Módulo de Comando-Serviço. Com o pouso cancelado, a tripulação — James Lovell, Jack Swigert e Fred Haise — desligou o CSM, mudou-se para o Módulo Lunar Aquarius como bote salva-vidas e usou o motor de descida do LM para uma queimada de Pericíntio+2 horas que os colocou em uma trajetória de retorno livre rápido. Passaram pela Lua a 254 km de altitude em 1970-04-15 e pousaram com segurança no Oceano Pacífico Sul em 1970-04-17. A missão é estudada atualmente como um modelo de improvisação de engenharia em tempo real disciplinada.",
   "events": [
     {
       "met": 0,
-      "label": "LANÇAMENTO SATURNO V",
-      "note": "Decolagem do KSC LC-39A. O motor central do segundo estágio S-II desligou dois minutos mais cedo — os motores externos compensaram.",
+      "label": "LANÇAMENTO DO SATURN V",
+      "note": "Decolagem da LC-39A do KSC. O motor central do segundo estágio S-II desligou dois minutos mais cedo — os motores externos compensaram.",
       "type": "nominal"
     },
     {
       "met": 0.117,
       "label": "TLI",
-      "note": "Queima de injeção translunar pelo S-IVB; CSM + LM se comprometem com a trajetória cislunar.",
+      "note": "Queimada de injeção translunar do S-IVB; CSM + LM se comprometem com trajetória cislunar.",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "MCC-2",
-      "note": "A correção de meio de curso desloca a espaçonave da trajetória de retorno livre para uma aproximação a Fra Mauro.",
+      "note": "Correção de curso médio muda a espaçonave da trajetória de retorno livre para uma aproximação de Fra Mauro.",
       "type": "nominal"
     },
     {
       "met": 2.33,
       "label": "RUPTURA DO TANQUE DE OXIGÊNIO #2",
-      "note": "Um comando de agitação criogênica no SM provoca curto-circuito e ruptura do tanque. \"Houston, tivemos um problema.\" Energia e água diminuem; o LM Aquarius torna-se o bote salva-vidas.",
+      "note": "O comando de agitação de criogênico do SM inicia um incêndio de curto-circuito e ruptura do tanque. \"Houston, temos um problema.\" Energia e água diminuem; Módulo Lunar Aquarius se torna o bote salva-vidas.",
       "type": "warning"
     },
     {
       "met": 2.92,
-      "label": "QUEIMA DE RETORNO LIVRE",
-      "note": "Queima de 31 segundos do motor de descida do LM devolve a espaçonave a uma trajetória de retorno livre.",
+      "label": "QUEIMADA DE RETORNO LIVRE",
+      "note": "Queimada do motor de descida do LM com duração de 31 segundos retorna a espaçonave a uma trajetória de retorno livre.",
       "type": "info"
     },
     {
       "met": 3.13,
       "label": "SOBREVOO LUNAR",
-      "note": "Aproximação máxima a 254 km de altitude sobre Mare Cognitum — a maior distância da Terra já percorrida por uma espaçonave tripulada.",
+      "note": "Aproximação mínima de 254 km de altitude sobre Mare Cognitum — a 400.171 km, a distância mais longe que humanos haviam viajado da Terra (recorde mantido de 1970 a 2026, superado pela Artemis II em abril de 2026).",
       "type": "info"
     },
     {
       "met": 3.96,
-      "label": "QUEIMA PC+2",
-      "note": "Queima Pericíntio-mais-2-horas encurta o tempo de retorno à Terra em dez horas.",
+      "label": "QUEIMADA PC+2",
+      "note": "Queimada de pericíntio mais 2 horas reduz o tempo de retorno à Terra em dez horas.",
       "type": "nominal"
     },
     {
       "met": 5.95,
-      "label": "AMERISSAGEM",
-      "note": "Reentrada do CSM e amerrissagem no Pacífico Sul, recolhidos pelo USS Iwo Jima.",
+      "label": "AMARAGEM",
+      "note": "Reentrada do CSM e amaragem no Oceano Pacífico Sul, recuperada pelo USS Iwo Jima.",
       "type": "info"
     }
   ]

@@ -1,84 +1,84 @@
 {
   "name": "Chandrayaan",
-  "tagline": "Indiens Mondprogramm — es fand das Wasser, das unsere Sicht auf den Mond veränderte, und wurde dann die erste Nation überhaupt, die in der Nähe des Südpols landete.",
+  "tagline": "Indiens Mondprogramm – es fand das Wasser, das unsere Sicht auf den Mond veränderte, und wurde dann die erste Nation überhaupt, die in der Nähe des Südpols landete.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Während des größten Teils des Raumfahrtzeitalters galt der Mond als knochentrocken — ein toter, luftleerer Fels ohne etwas Nützliches auf seiner Oberfläche. Diese Annahme wurde 2008 durch ein Raumfahrzeug aus einem Land widerlegt, das zuvor nie am Mond gewesen war. Chandrayaan-1, Indiens erste Mondmission, trug Instrumente, die Wassermoleküle nachwiesen, die in weiten Bereichen der Oberfläche in den Mondboden eingebunden waren. Es war eine der folgenreichsten Entdeckungen der modernen Planetenforschung, und sie kam von ISRO, einer Behörde, die mit einem Bruchteil des Budgets von NASA oder ESA arbeitete."
+      "md": "Während des größten Teils des Raumfahrtzeitalters galt der Mond als völlig trocken – ein toter, luftloser Gesteinsbrocken ohne etwas Nützliches auf seiner Oberfläche. Diese Annahme wurde durch eine Raumsonde aus einem Land widerlegt, das zuvor noch nie zum Mond geflogen war. Chandrayaan-1, Indiens erste Mondmission – gestartet 2008 – trug das Moon Mineralogy Mapper (M3)-Instrument der NASA/JPL, das an Mondgestein gebundene Wassermoleküle in weiten, überwiegend höheren Breitengraden der Oberfläche nachwies; die Ergebnisse wurden 2009 veröffentlicht. Es war eine der folgenreichsten Entdeckungen der modernen Planetenwissenschaft, und sie gelang einem ISRO-Orbiter, der mit einem Bruchteil des Budgets der NASA oder ESA arbeitete."
     },
     {
       "type": "prose",
-      "md": "Chandrayaan — Sanskrit für \"Mondfahrzeug\" — ist das Programm, das Indien als echte Tiefraum-Macht etablierte, nicht als regionale. Es wird durch zwei Dinge definiert: erstklassige Wissenschaft kostengünstig zu betreiben und die Weigerung, sich durch Misserfolge aufhalten zu lassen. Seine zweite Mission ließ einen Lander vor den Augen einer ganzen Nation auf dem Mond abstürzen; die dritte kehrte vier Jahre später zurück und hatte Erfolg, landete dort, wo noch niemand zuvor gelandet war — nahe dem lunaren Südpol, der begehrtesten Immobilie im Sonnensystem."
+      "md": "Chandrayaan — Sanskrit für „Mondraumschiff\" — ist das Programm, das Indien als echte Tiefenraummacht ankündigte, nicht als regionale. Es ist durch zwei Dinge definiert: Wissenschaft von Weltklasse kostengünstig zu betreiben und sich von Fehlschlägen nicht aufhalten zu lassen. Seine zweite Mission brachte einen Lander vor den Augen einer zusehenden Nation auf dem Mond zum Absturz; die dritte kehrte vier Jahre später zurück und hatte Erfolg, landete dort, wo noch niemand zuvor gelandet war — nahe dem lunaren Südpol, der begehrtesten Immobilie im Sonnensystem."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Das wissenschaftliche Ziel war von Anfang an die Zusammensetzung des Mondes und vor allem sein Wasser. Chandrayaan-1 machte sich daran, die Oberfläche zu kartieren und nach Wasser und Mineralien zu suchen; sein Erfolg machte das spätere Ziel offensichtlich und dringend — den Südpol zu erreichen, wo permanent verschattete Krater Wassereis beherbergen sollen, die Ressource, die eines Tages eine Mondbasis befeuern und erhalten könnte. Indien richtete sein Programm direkt auf die wertvollste Frage zum Mond aus."
+      "md": "Das wissenschaftliche Ziel war von Anfang an die Zusammensetzung des Mondes und vor allem sein Wasser. Chandrayaan-1 sollte die Oberfläche kartieren und nach Wasser und Mineralien suchen; sein Erfolg machte das spätere Ziel offensichtlich und dringend — den Südpol zu erreichen, wo dauerhaft beschattete Krater Wassereis enthalten sollen, die Ressource, die eines Tages eine Mondbasis versorgen und unterhalten könnte. Indien richtete sein Programm direkt auf die wertvollste Frage zum Mond aus."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/chandrayaan1/01"
       },
-      "caption": "Chandrayaan-1 — Indiens erste Mondmission und das Raumfahrzeug, dessen Instrumente in den Mondboden eingebundenes Wasser fanden und damit die lange Annahme widerlegten, dass der Mond trocken sei.",
+      "caption": "Chandrayaan-1 — Indiens erste Mondmission und die Plattform, die das M3-Instrument der NASA trug, dessen Daten im Mondboden gebundenes Wasser offenbarten und die lange bestehende Annahme widerlegten, dass der Mond trocken sei.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Das technische Ziel wuchs von Mission zu Mission: zuerst den Mond zu umkreisen und einen Impaktor freizusetzen (Chandrayaan-1), dann einen Rover sanft zu landen (Chandrayaan-2 und -3). Eine Mondlandung ist brutal schwierig — die meisten Versuche der meisten Nationen sind gescheitert — und sie am rauen, schlecht beleuchteten Südpol durchzuführen, ist noch schwerer. Indiens Ziel war es, diese Landung zu meistern, und das mit einem ISRO-Budget, bei dem jede Rupie zählte."
+      "md": "Das technische Ziel wuchs mit jeder Mission: zunächst den Mond zu umkreisen und einen Impaktor freizusetzen (Chandrayaan-1), dann einen Rover sanft zu landen (Chandrayaan-2 und -3). Eine weiche Landung auf dem Mond ist brutal schwierig — die meisten Versuche der meisten Nationen sind gescheitert — und sie am rauen, schlecht beleuchteten Südpol durchzuführen ist noch schwerer. Indiens Ziel war es, diese Landung zu meistern, und das mit einem ISRO-Budget, bei dem jede Rupie zählte."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Die Ergebnisse umfassen den gesamten Bogen des Programms. Chandrayaan-1 (2008) fand lunares Wasser — ein wirklich grundlegendes Ergebnis. Chandrayaan-2 (2019) war ein teilweiser Herzschmerz: sein Orbiter erreichte den Mond und ist noch immer in Betrieb, liefert ausgezeichnete Daten, aber sein Vikram-Lander verlor in den letzten Momenten die Kontrolle und stürzte ab, live beobachtet von einer Nation, die es gewagt hatte zu hoffen. Dann kehrte Chandrayaan-3 (2023) zurück und landete sanft nahe dem Südpol — das erste Raumfahrzeug überhaupt, das dies tat, und die Leistung, die Indien zum vierten Land machte, das auf dem Mond landete, Tage nachdem ein russischer Versuch in derselben Region gescheitert war."
+      "md": "Die Ergebnisse umspannen den gesamten Bogen des Programms. Chandrayaan-1 (2008) trug das M3-Instrument der NASA, dessen Daten — 2009 veröffentlicht — lunares Wasser nachwiesen, ein wirklich bahnbrechendes Ergebnis. Chandrayaan-2 (2019) war ein teilweises Fiasko: Sein Orbiter erreichte den Mond und ist noch immer in Betrieb, liefert hervorragende Daten, aber der Vikram-Lander verlor in den letzten Momenten die Kontrolle und stürzte ab, live beobachtet von einer Nation, die es gewagt hatte zu hoffen. Dann kehrte Chandrayaan-3 (2023) zurück und landete sanft nahe dem Südpol — das erste Raumfahrzeug überhaupt, dem dies gelang, und die Leistung, die Indien zum vierten Land machte, das auf dem Mond landete, Tage nachdem ein russischer Versuch in derselben Region gescheitert war."
     },
     {
       "type": "prose",
-      "md": "Der Kontrast zu den beteiligten Budgets ist der Teil, der die Welt verblüffte. Indien erreichte den Mond, fand sein Wasser und landete an seinem Südpol zu Kosten, die einen kleinen Bruchteil vergleichbarer westlicher Missionen ausmachten — ein Beweis dafür, dass lunare Pionierforschung nicht das exklusive Vorrecht der reichsten Behörden ist. ISRO verwandelte Beschränkung in eine Disziplin und lieferte Premieren, die weitaus größere Programme nicht erreicht hatten."
+      "md": "Der Kontrast zu den eingesetzten Budgets war der Teil, der die Welt verblüffte. Indien erreichte den Mond, fand sein Wasser und landete an seinem Südpol zu Kosten, die einen Bruchteil vergleichbarer westlicher Missionen ausmachten — ein Beweis dafür, dass lunare Pionierforschung nicht das exklusive Vorrecht der reichsten Agenturen ist. ISRO machte aus Einschränkung eine Disziplin und lieferte Premieren, die weit größere Programme nicht erreicht hatten."
     },
     {
       "type": "prose",
-      "md": "Der Erfolg von Chandrayaan-3 trug auch eine Bedeutung jenseits der Wissenschaft. Es landete in einem Moment, in dem der Südpol zu einem umkämpften Ziel geworden war — Russlands Luna-25 war im selben Monat beim Versuch desselben abgestürzt — und Indiens sanfte Landung war ein nationaler Triumph, der im ganzen Land gefeiert wurde, und ein Signal, dass die aufstrebenden Raumfahrtmächte nun Orte erreichen, auf die die alten noch hinarbeiten."
+      "md": "Der Erfolg von Chandrayaan-3 hatte auch über die Wissenschaft hinaus Gewicht. Die Landung fand in einem Moment statt, als der Südpol zu einem umkämpften Ziel geworden war — Russlands Luna-25 war im selben Monat beim Versuch desselben abgestürzt — und Indiens weiche Landung war ein nationaler Triumph, der im ganzen Land gefeiert wurde, und ein Signal, dass die aufstrebenden Raumfahrtnationen nun Orte erreichen, zu denen die alten sich noch immer durchkämpfen."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Die Geschichte von Chandrayaan ist die eines Landes, das sich in der Öffentlichkeit beibringt, auf einer anderen Welt zu landen, und sich weigert aufzugeben, wenn es schiefgeht. Der Absturz von Chandrayaan-2 wurde nicht versteckt oder heruntergespielt; er geschah live, und der Leiter von ISRO wurde im nationalen Fernsehen dabei gezeigt, wie er darüber trauerte. Vier Jahre später kam dasselbe Programm zurück und hatte Erfolg — dieselben Ingenieure, dasselbe Ziel, die Lehren aus dem Misserfolg in die Lösung eingebaut. Es ist das klarste jüngste Beispiel dafür, dass eine Raumfahrtbehörde eine sehr sichtbare Niederlage in einen sehr sichtbaren Sieg verwandelt."
+      "md": "Die Geschichte von Chandrayaan ist die eines Landes, das sich öffentlich beibringt, auf einer anderen Welt zu landen, und das sich weigert aufzugeben, wenn etwas schiefgeht. Der Absturz von Chandrayaan-2 wurde weder verheimlicht noch heruntergespielt; er geschah live, und der Leiter von ISRO wurde im nationalen Fernsehen dabei gezeigt, wie er darum trauerte. Vier Jahre später kehrte dasselbe Programm zurück und hatte Erfolg — dieselben Ingenieure, dasselbe Ziel, die Lehren aus dem Scheitern in die Lösung eingearbeitet. Es ist das klarste aktuelle Beispiel dafür, wie eine Raumfahrtagentur eine sehr sichtbare Niederlage in einen sehr sichtbaren Sieg verwandelt."
     },
     {
       "type": "prose",
-      "md": "Es ist auch eine Geschichte über Kosten. ISROs Genie ist es, tiefgreifende Dinge kostengünstig zu tun — den Mond und Mars mit Budgets zu erreichen, die anderswo kaum eine Studie finanzieren würden. Diese Sparsamkeit ist teils Notwendigkeit und teils Philosophie: eine bewusste Ingenieurskultur der Einfachheit, der Wiederverwendung bewährter Hardware und der rücksichtslosen Priorisierung. Chandrayaan beweist, dass der Eintrittspreis in den Tiefraum weit genug gefallen ist, dass eine entschlossene Nation mit bescheidenen Mitteln echte Premieren erzielen kann."
+      "md": "Es ist auch eine Geschichte über Kosten. Das Genie von ISRO besteht darin, Außergewöhnliches kostengünstig zu vollbringen — den Mond und den Mars mit Budgets zu erreichen, die anderswo kaum für eine Studie ausreichen würden. Diese Sparsamkeit ist teils Notwendigkeit und teils Philosophie: eine bewusste Ingenieurskultur der Einfachheit, der Wiederverwendung bewährter Hardware und der unnachgiebigen Priorisierung. Chandrayaan beweist, dass der Eintrittspreis in den tiefen Weltraum weit genug gefallen ist, dass eine entschlossene Nation mit bescheidenen Mitteln echte Premieren erreichen kann."
     },
     {
       "type": "prose",
-      "md": "Und es ist eine Geschichte darüber, wem der Mond jetzt gehört. Jahrzehntelang war lunare Erforschung eine Angelegenheit zweier Supermächte, dann eine stille wissenschaftliche. Chandrayaan markiert zusammen mit Chinas Programm, Japans SLIM und einer Welle anderer die Ankunft eines wirklich multipolaren Mondes — wo die erste sanfte Landung am Südpol nicht von den Vereinigten Staaten, Russland oder China gemacht wurde, sondern von Indien."
+      "md": "Und es ist eine Geschichte darüber, wem der Mond jetzt gehört. Jahrzehntelang war die Monderkundung eine Angelegenheit zweier Supermächte, dann eine stille wissenschaftliche. Chandrayaan markiert neben Chinas Programm, Japans SLIM und einer Welle anderer die Ankunft eines genuinen multipolaren Mondes — wo die erste Softlandung am Südpol nicht von den Vereinigten Staaten, Russland oder China durchgeführt wurde, sondern von Indien."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Chandrayaans erstes Erbe ist wissenschaftlich und permanent: die Entdeckung von Wasser auf dem Mond, die den Mond von einem toten Felsen in einen Ort umrahmte, der eine menschliche Präsenz tragen könnte — der Fund, der jedem aktuellen Plan zur Rückkehr zugrunde liegt, einschließlich Artemis und Chinas."
+      "md": "Das erste Vermächtnis von Chandrayaan ist wissenschaftlich und dauerhaft: Es lieferte die Plattform, von der aus das M3-Instrument der NASA Wasser auf dem Mond nachwies — Daten, die 2009 veröffentlicht wurden und den Mond von einem toten Gestein zu einem Ort umdefinierten, der eine menschliche Präsenz ermöglichen könnte, und die allen aktuellen Rückkehrplänen zugrunde liegen, einschließlich Artemis und denen Chinas."
     },
     {
       "type": "prose",
-      "md": "Sein zweites Erbe ist die erste sanfte Landung nahe dem lunaren Südpol, der Region, auf die jedes zukünftige Mondprogramm abzielt. Indien kam zuerst dorthin und erhält damit einen echten Anspruch auf Führung am wichtigsten Ziel auf dem Mond und hart erkämpfte Landeerfahrung, auf der spätere Missionen aufbauen werden."
+      "md": "Sein zweites Vermächtnis ist die erste weiche Landung in der Nähe des lunaren Südpols, der Region, auf die jedes zukünftige Mondprogramm abzielt. Indien kam als Erstes dorthin und verschaffte sich damit einen echten Anspruch auf eine Führungsrolle am wichtigsten Ziel auf dem Mond sowie hart erkämpfte Landeerfahrung, auf der spätere Missionen aufbauen werden."
     },
     {
       "type": "prose",
-      "md": "Und sein drittes ist ein weltweit beobachteter Beweis dafür, dass Pionier-Raumfahrt nun für mehr als die traditionellen Mächte erschwinglich ist. ISROs Kosten setzten die Erwartungen neu, was lunare Erforschung kosten muss — ein Beispiel, dem die nächste Generation aufstrebender Raumfahrtnationen bereits folgt."
+      "md": "Und drittens ist es eine weltweit beobachtete Demonstration, dass Pionierarbeit im All nun für mehr als nur die traditionellen Mächte erschwinglich ist. Die Kosten von ISRO haben die Erwartungen neu definiert, was Mondforschung kosten muss — ein Beispiel, dem die nächste Generation aufstrebender Raumfahrtnationen bereits folgt."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lehre aus Chandrayaan ist, dass ein öffentlicher Misserfolg, vollständig anerkannt und daraus gelernt, das Fundament eines größeren Erfolgs werden kann. Der Absturz von Chandrayaan-2 hätte den Ehrgeiz des Programms beenden können; stattdessen wurde er zu den Daten, die Chandrayaan-3s historische Landung möglich machten. Die Bereitschaft, es erneut zu versuchen, unter denselben öffentlichen Augen, die den Misserfolg beobachteten, ist die ganze Geschichte."
+      "md": "Die Lehre aus Chandrayaan ist, dass ein öffentliches Scheitern, vollständig anerkannt und durchdacht, zur Grundlage eines größeren Erfolgs werden kann. Der Absturz von Chandrayaan-2 hätte die Ambitionen des Programms beenden können; stattdessen wurden daraus die Daten, die die historische Landung von Chandrayaan-3 möglich machten. Die Bereitschaft, es erneut zu versuchen, unter denselben öffentlichen Blicken, die das Scheitern beobachtet hatten, ist die ganze Geschichte."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lehre ist, dass Kosten eine Form von Fähigkeit sind. Indem ISRO tiefgreifende Erforschung kostengünstig betrieb, sparte es nicht nur Geld — es machte eine Klasse von Missionen für eine Nation möglich, die sie sich zu westlichen Preisen niemals hätte leisten können, und setzte neu, was der Rest der Welt glaubt, dass Tiefraum-Erforschung kosten muss. Sparsamkeit, als Ingenieurdisziplin verfolgt, ist selbst eine Art von Macht."
+      "md": "Die tiefere Lehre ist, dass Kosten eine Form von Fähigkeit sind. Indem ISRO tiefgreifende Erkundung kostengünstig durchführte, sparte sie nicht nur Geld — sie ermöglichte eine ganze Klasse von Missionen für eine Nation, die sie sich zu westlichen Preisen niemals hätte leisten können, und setzte neu, was der Rest der Welt glaubt, dass Tiefraumerkundung kosten muss. Sparsamkeit, als ingenieurtechnische Disziplin verfolgt, ist selbst eine Art von Macht."
     }
   ]
 }

@@ -1,20 +1,20 @@
 {
-  "name": "Galilei",
-  "type": "ORBITER · GEFLOGEN",
-  "first": "Erstes Raumschiff, das Jupiter umkreist; Atmosphärensonde in Jupiterwolken",
-  "dispatch": "Galileo hätte schon vor der Ankunft handlungsunfähig sein müssen. Seine Hauptantenne blieb auf dem Weg zum Jupiter halb offen stecken und reduzierte die Datenübertragungsrate auf ein Rinnsal — und die Mission gelang trotzdem, weil Ingenieure von der Erde aus seine Software neu schrieben, um die Wissenschaft durch eine winzige Reserveantenne zu quetschen. Es wurde die erste Raumsonde, die den Jupiter umkreiste, setzte eine Sonde in den Wolken des Riesenplaneten ab und verbrachte acht Jahre damit, die Monde zu erforschen. Seine größte Entdeckung entstand langsam aus dieser Beharrlichkeit: die Art, wie sich Jupiters Magnetfeld um Europa legte, ließ sich nur durch einen salzigen Ozean unter dem Eis erklären — der bisher stärkste Beweis dafür, dass ein Mond des Jupiter flüssiges Wasser und Leben beherbergen könnte. Am Ende wurde es absichtlich in den Jupiter gesteuert, damit es niemals auf Europa stürzen und ihn kontaminieren könnte.",
-  "description": "Galileo wurde nach der langen Pause nach dem Challenger vom Space Shuttle Atlantis gestartet, trotzte dem inneren Asteroidengürtel und führte die erste Langzeitstudie von Jupiter und seinen Monden aus der Umlaufbahn durch. Es entdeckte Europas induziertes Magnetfeld – ein starker Beweis für einen unterirdischen Ozean – und beobachtete, wie Shoemaker-Levy 9 auf Jupiter prallte. Die Mission endete 2003 mit einem kontrollierten Sturz in den Jupiter, um eine Kontamination eisiger Monde zu vermeiden, die Lebensbedingungen bieten könnten.",
+  "name": "Galileo",
+  "type": "ORBITER · GESTARTET",
+  "first": "Erstes Raumfahrzeug, das Jupiter umkreiste; Atmosphärensonde in die Jupiterwolken",
+  "dispatch": "Galileo hätte bereits vor der Ankunft bei Jupiter beschädigt werden können. Auf dem Weg zum Jupiter blieb seine Hauptantenne halb offen stecken, wodurch ihre Datenrate auf ein Minimum sank — und dennoch war die Mission erfolgreich, weil Ingenieure die Software von der Erde aus so anpassten, dass die wissenschaftlichen Daten durch eine winzige Ersatzantenne übertragen werden konnten. Sie wurde das erste Raumfahrzeug, das Jupiter umkreiste, ließ eine Sonde in die Atmosphäre des Riesenplaneten hinab und verbrachte acht Jahre damit, die Monde zu erforschen. Ihre größte Entdeckung ergab sich langsam aus dieser Ausdauer: Die Art und Weise, wie das Magnetfeld Jupiters sich um Europa wickelte, konnte nur durch einen salzigen Ozean unter dem Eis erklärt werden — der stärkste Hinweis bisher, dass ein Mond Jupiters flüssiges Wasser und möglicherweise Leben beherbergen könnte. Am Ende wurde das Raumfahrzeug absichtlich in Jupiter gesteuert, damit es niemals auf Europa aufschlagen und es kontaminieren könnte.",
+  "description": "Nach dem langen Post-Challenger-Stillstand vom Space Shuttle Atlantis gestartet, trotzte Galileo dem inneren Asteroidengürtel und führte die erste langfristige Studie Jupiters und seiner Monde aus einer Umlaufbahn durch. Sie entdeckte Europas induziertes Magnetfeld — ein starker Hinweis auf einen Subsurface-Ozean — und beobachtete, wie Shoemaker-Levy 9 in Jupiter einschlug. Die Mission endete 2003 mit einem kontrollierten Tauchgang in Jupiters Atmosphäre, um eine Kontaminierung eisiger Monde zu vermeiden, die möglicherweise Bedingungen für Leben bieten könnten.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "STS-34 setzt Galileo und eine Trägheitsoberstufe von Atlantis aus ein.",
+      "note": "STS-34 setzt Galileo und eine Trägheitsreaktionsstufe von Atlantis aus.",
       "type": "nominal"
     },
     {
       "met": 2242,
-      "label": "EINFÜHRUNG IN DIE JUPITER-ORBIT",
-      "note": "Der Haupttriebwerksbrand bringt Galileo in die Umlaufbahn; Jahrzehnte der Mondforschung beginnen.",
+      "label": "JUPITERORBIT-EINSCHWUNG",
+      "note": "Haupttriebwerk-Zündung bringt Galileo in Orbit; eine 8-jährige Tour der Mondenforschung beginnt.",
       "type": "nominal"
     }
   ]

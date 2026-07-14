@@ -1,14 +1,14 @@
 {
-  "title": "Lire les contours",
-  "intro_sentence": "La forme de la zone bon marché révèle géométrie trajectoires viables.",
+  "title": "Lecture des contours",
+  "intro_sentence": "La forme de la zone bon marché vous indique la géométrie des trajectoires viables — et où se situent les compromis.",
   "narrative_101": [
-    "Tu connais axes et échelle. Maintenant lis FORME zone bon marché. Lobe turquoise = carte littérale quelles trajectoires fonctionnent.",
-    "Porkchop Mars classique a DEUX lobes bon marché par fenêtre. \"Type I\" (court, angle <180°, plus rapide) et \"Type II\" (long, >180°, plus lent mais parfois moins cher). Tous deux réels, tous deux volés.",
-    "Hors lobes : rouge. Plupart porkchop = rouge. Peu de moments bon marché, non négociables. \"Attendre fenêtre\" bat presque toujours \"trajectoire cleverness\"."
+    "Maintenant vous connaissez les axes et l'échelle des couleurs. La compétence suivante consiste à lire la FORME de la zone bon marché. Le lobe turquoise n'est pas juste un blob générique — c'est une carte littérale de quelles trajectoires fonctionnent et lesquelles ne fonctionnent pas.",
+    "La classique diagramme de Hohmann pour Mars a DEUX lobes bon marché par fenêtre de lancement, côte à côte. On les appelle les trajectoires « Type I » et « Type II » — même fenêtre, deux façons différentes de contourner le Soleil. Le Type I emprunte le chemin court (angle de transfert inférieur à 180 degrés) et est plus rapide. Le Type II emprunte le chemin long (angle de transfert supérieur à 180 degrés) et est plus lent mais parfois moins cher. Les deux sont réels, les deux ont été utilisés.",
+    "En dehors des lobes : du rouge. La majeure partie du diagramme est en rouge, d'ailleurs. C'est la leçon. Il y a très peu de moments bon marché pour lancer un engin spatial vers une autre planète, et ils ne sont pas négociables. « Attendre juste la bonne fenêtre » bat presque toujours « inventer une trajectoire astucieuse ». Lire la forme du lobe — où il s'élargit, où il se rétrécit, où les optima se situent — c'est ce que font les dynamiciens de vol pour gagner leur vie."
   ],
   "body_paragraphs": [
-    "Mars porkchop : lobe approximativement ovale cellules turquoise centré ~250 jours TOF, récurrent ~26 mois. Opportunité Hohmann.",
-    "Deux solutions par fenêtre. \"Court\" (<180°) et \"long\" (>180°) connectent Terre-Mars via ellipses différentes. Apparaissent comme deux bandes parallèles.",
-    "Hors lobes : rouge. Trajectoire haute énergie custom (assistance gravitationnelle, multi-burn) requise. Missions clusters zones bon marché."
+    "Regardez un diagramme de Hohmann pour Mars. Vous verrez un lobe approximativement ovale de cellules turquoise centré près d'une TOF de 250 jours, se répétant tous les 26 mois. C'est l'opportunité de Hohmann. À l'intérieur du lobe, toutes les combinaisons de (départ, TOF) permettent des missions vers Mars viables à un ∆v acceptable.",
+    "Deux solutions par fenêtre. Le « chemin court » (angle de transfert < 180°) et le « chemin long » (angle de transfert > 180°) relient tous les deux la Terre à Mars mais via des ellipses différentes. Ils apparaissent comme deux lobes bon marché dans le diagramme, séparés par une crête à haut ∆v à l'angle de transfert ~180° — cette crête est littéralement l'« os » du diagramme. Parfois les deux lobes apparaissent, parfois un seul, selon la géométrie.",
+    "En dehors des zones bon marché : du rouge. Loin de toute fenêtre naturelle, vous auriez besoin d'une trajectoire à haute énergie personnalisée (assistance gravitationnelle, multi-brûlage) pour que les calculs fonctionnent. Les vraies missions se regroupent dans les zones bon marché ; la philosophie de conception « attendre juste la bonne fenêtre » bat souvent « inventer une trajectoire astucieuse »."
   ]
 }

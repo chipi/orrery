@@ -1,14 +1,14 @@
 {
-  "title": "Machbarkeit lesen",
-  "intro_sentence": "Eine Zelle ist machbar, wenn die Δv-Fähigkeit deiner Rakete ≥ den Δv-Kosten der Zelle — der Porkchop wandelt das in eine Ja/Nein-Karte.",
+  "title": "Viable Zellen auslesen",
+  "intro_sentence": "Eine Zelle ist machbar, wenn die ∆v-Leistung Ihrer Rakete ≥ den ∆v-Kosten der Zelle entspricht — das Porkchop macht diesen Vergleich zu einer Ja/Nein-Karte.",
   "narrative_101": [
-    "Die Frage, die einen Porkchop von hübscher Heatmap zu echter Missionsentscheidung macht: kann meine Rakete das wirklich fliegen? Jede Rakete hat veröffentlichte Δv-Fähigkeit für gegebene Nutzlast.",
-    "Zellen wo Fähigkeit > Kosten: machbar mit Marge. Wo gleich: machbar aber knapp. Wo Kosten > Fähigkeit: nicht fliegbar mit der Rakete. Physik sagt nein.",
-    "Wähl eine Rakete in /plan, Porkchop überlagert Marge/Defizit-Farbe. Lappen schrumpft für kleine Raketen, dehnt sich für große. So arbeiten echte Planer: Vehikel wählen, sehen was machbar, swap, iterieren bis billige Zone in Fähigkeit passt."
+    "Dies ist die Frage, die ein Porkchop von einer hübschen Heatmap zu einer echten Missionsenscheidung macht: Kann meine Rakete das wirklich fliegen? Jede Rakete – Falcon Heavy, SLS, Atlas V, nennen Sie sie – hat eine dokumentierte ∆v-Leistung für eine bestimmte Nutzlastmasse. Vergleichen Sie diese Obergrenze mit den Pro-Zelle-Kosten des Porkchop und Sie erhalten eine Ja/Nein-Karte.",
+    "Zellen, in denen die Leistung der Rakete die Kosten übersteigt, sind durchführbar, mit Spielraum zu verschenken. Zellen, in denen die Leistung den Kosten genau entspricht, sind durchführbar aber knapp — riskant, kein Spielraum für Fehler. Zellen, in denen die Kosten die Leistung übersteigen? Diese Flugbahn ist einfach nicht mit dieser Rakete fliegbar. Sie können es sich wünschen; die Physik sagt nein.",
+    "Wählen Sie eine Rakete auf /plan und das Porkchop überlagert einen Spielraum-/Defizit-Farbcode. Der Lappen schrumpft bei kleineren Raketen, expandiert bei größeren. So arbeiten Missionsplaner tatsächlich: Versuchen Sie ein Fahrzeug, sehen Sie, was machbar ist, sehen Sie, was nicht, wechseln Sie Fahrzeug, Nutzlast oder Zeitplan, bis die günstige Zone in die Leistung der Rakete passt. Echte Flugplanung ist genau diese Iteration, nur mit mehr Dezimalstellen."
   ],
   "body_paragraphs": [
-    "Wähl Vehikel: Falcon Heavy, SLS, Atlas V N22. Bekannte Δv-Fähigkeit für Nutzlastmasse. Vergleich gegen Porkchop: Δv_cost ≤ Δv_capability ist machbar; größer ist unmöglich ohne anderes Vehikel.",
-    "In `/plan` Vehikel wählen, Orrery zeigt Marge/Defizit. Türkis = \"machbar, große Marge\". Gelb = \"machbar aber knapp\". Rot = unmöglich-mit-Vehikel, zeigt Defizit.",
-    "Mission-Feasibility-Analyse in einer Ansicht. Echte Planer iterieren — andere Vehikel, Massen, Varianten — bis billigste Kombination Wissenschaftsanforderungen erfüllt."
+    "Wählen Sie ein Fahrzeug: Falcon Heavy, SLS Block 1, Atlas V N22, egal. Dieses Fahrzeug hat eine dokumentierte C3-vs-Nutzlastmasse-Leistungskurve — schwerere Nutzlasten schrumpfen den erreichbaren Lappen; leichtere expandieren ihn. Für eine gegebene Nutzlastmasse können Sie die maximale C3 (oder äquivalente Abfahrts-∆v) ablesen, die das Fahrzeug liefern kann, und dann gegen das Porkchop vergleichen: jede Zelle, in der ∆v_cost ≤ Leistung ist eine machbare Startkgelegenheit. Jede Zelle, in der es größer ist, ist unmöglich ohne ein anderes Fahrzeug oder ein leichteres Raumfahrzeug.",
+    "Auf `/plan` können Sie ein Startfahrzeug wählen und Orrery überlagert einen Spielraum-/Defizit-Indikator. Coole blaugrüne Zellen werden zu ‚machbar, großer Spielraum.' Gelbe Zellen werden zu ‚machbar aber knapp.' Rote Zellen werden unmöglich-mit-diesem-Fahrzeug, und wechseln zu einer Defizitanzeige, die zeigt, wie viel mehr Leistung Sie benötigen würden.",
+    "Dies ist Missionsrealisierungsanalyse in einer Ansicht. Echte Planer führen dies viele Male aus — für verschiedene Fahrzeuge, Nutzlastmassen, Flugbahnvarianten — um die günstigste Kombination zu finden, die die Wissenschaftsanforderungen erfüllt. Das Porkchop ist die Visualisierung; die zugrunde liegende Wahl ist immer ‚wie viel Rakete brauche ich gegen wie viel Reise kaufe ich.'"
   ]
 }

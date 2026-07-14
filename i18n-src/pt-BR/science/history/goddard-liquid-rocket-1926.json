@@ -1,16 +1,17 @@
 {
-  "title": "Primeiro Foguete de Combustível Líquido de Goddard · 1926",
-  "intro_sentence": "16 de março de 1926: uma engenhoca delgada de 3 metros sobe 12 metros no céu de Massachusetts. O primeiro voo de foguete a combustível líquido da história.",
+  "title": "O Primeiro Foguete de Combustível Líquido de Goddard · 1926",
+  "intro_sentence": "16 de março de 1926: um frágil artefato de 3 metros sobe 12 metros pelo céu de Massachusetts. O primeiro voo de foguete com combustível líquido da história.",
   "narrative_101": [
-    "Robert Goddard era professor de física na Clark University em Worcester, Massachusetts, e publicou em 1919 um artigo na Smithsonian propondo que foguetes poderiam alcançar a Lua — pelo qual o New York Times zombou dele em um editorial de 1920, alegando que ele nem mesmo entendia física de ensino médio. (O Times retratou-se em 1969, três dias após o lançamento da Apollo 11.)",
-    "Em um dia nevado de 16 de março de 1926, na fazenda de sua tia Marion em Auburn, Goddard lançou um foguete de 4,4 libras e 10 pés alimentado por oxigênio líquido e gasolina. Ele voou por 2,5 segundos, atingiu 41 pés de altitude e caiu no campo de repolho a 184 pés de distância. Sua esposa Esther Goddard o fotografou. Esse curto salto é o início de toda linhagem de foguetes modernos.",
-    "Goddard era reservado — paranóico quanto a concorrentes, recusava quase toda colaboração. Suas patentes cobriam fundamentalmente tudo: motores com cardã, bombas, orientação giroscópica, configurações de múltiplos estágios. Os alemães do pós-guerra tinham lido suas patentes; os americanos do pós-guerra tiveram que reaprender a maior parte de seu trabalho porque ele não o havia compartilhado."
+    "Robert Goddard era professor de física na Universidade de Clark em Worcester, Massachusetts, e publicou um artigo de 1919 no Smithsonian propondo que foguetes poderiam alcançar a Lua — pelo qual o New York Times o ridicularizou em um editorial de 1920 alegando que ele nem sequer compreendia a física do ensino médio. (O Times fez uma retratação em 17 de julho de 1969 — o dia após o lançamento da Apollo 11, quando a espaçonave estava a caminho da Lua.)",
+    "Em um 16 de março de 1926 nevado, na fazenda de sua tia Effie Ward em Auburn, Goddard lançou um foguete de 2,0 kg com 3 metros de altura, alimentado por oxigênio líquido e gasolina. Ele voou por 2,5 segundos, atingiu 12,5 metros de altitude e caiu em uma plantação de repolho 56 metros adiante. Sua esposa Esther Goddard fotografou o evento. Esse pequeno salto é o início de toda linhagem de foguetes modernos.",
+    "Goddard era secreto — paranóico quanto aos concorrentes, recusava a maioria das colaborações. Suas patentes cobriam fundamentalmente tudo: motores com gimbal, bombas, orientação giroscópica, configurações multi-estágio. Os alemães do pós-guerra haviam lido suas patentes; os americanos do pós-guerra tiveram de reaprender a maior parte de seu trabalho porque ele não havia compartilhado."
   ],
   "body_paragraphs": [
-    "Local de lançamento em 16 de março de 1926: fazenda da tia Marion Goddard, Auburn, Massachusetts. Veículo: \"Nell\" — 10 ft de altura, estrutura de ~3 m de comprimento, pesando cerca de 6 kg seco. Propelentes: oxigênio líquido + gasolina, resfriamento regenerativo, bocal com cardã.",
-    "Foguetes de combustível sólido já existiam anteriormente (flechas de fogo chinesas desde o século XIII, foguetes Congreve nas guerras napoleônicas), mas os combustíveis líquidos eram a porta para os voos espaciais: maior impulso específico, aceleração controlável, reiniciável.",
-    "Esther Goddard tirou a maioria das fotografias. Seu trabalho é subcreditado nas histórias oficiais — a icônica imagem do lançamento de 1926 é dela.",
-    "Os voos posteriores de Goddard em Roswell, Novo México (1930-1941), atingiram 1,7 mi de altitude (março de 1937) e 9000 ft (1941). Modestos para os padrões modernos, mas todas as tecnologias-chave — cardã, bombas, giroscópios, recuperação por paraquedas — foram provadas no hardware de Goddard décadas antes que a produção em massa de foguetes alcançasse esse nível.",
-    "Reconhecimento pós-guerra: o Goddard Space Flight Center da NASA em Maryland (1959) tem seu nome em homenagem a ele."
-  ]
+    "Local de lançamento em 16 de março de 1926: fazenda de Effie Ward, Auburn, Massachusetts. Veículo: \"Nell\" — estrutura de 3 metros de altura, ~3 m de comprimento, pesando aproximadamente 6 kg sem combustível. Propelentes: oxigênio líquido + gasolina, com arrefecimento regenerativo, bocal com gimbal.",
+    "Foguetes de combustível sólido existiram antes (flechas de fogo chinesas a partir do século 13, foguetes Congreve nas guerras napoleônicas), mas os combustíveis líquidos eram a porta para o voo espacial: maior impulso específico, aceleração controlável, reignição possível.",
+    "Esther Goddard tirou a maioria das fotografias. Seu trabalho é subestimado nas histórias convencionais — a imagem icônica do lançamento de 1926 é dela.",
+    "Voos posteriores de Goddard em Roswell, Novo México (1930-1941), atingiram 2,7 km de altitude (março de 1937) e 2,7 km (1941). Modestos pelos padrões modernos, mas toda tecnologia-chave — gimbal, bombas, giroscópios, recuperação por paraquedas — foi comprovada no hardware de Goddard décadas antes que a produção de foguetes em massa a alcançasse.",
+    "Reconhecimento do pós-guerra: o Centro de Voo Espacial Goddard da NASA em Maryland (1959) leva seu nome."
+  ],
+  "diagram_caption": "Reconstrução do foguete \\\"Nell\\\" de Goddard, 1926"
 }

@@ -3,12 +3,12 @@
   "type": "CREWED EARTH-ORBIT · FLOWN",
   "first": "First dual-flight rendezvous — flew within ~6.5 km of Vostok 4",
   "dispatch": "Vostok 3 opened the first act of a piece of orbital theatre. A day after Andriyan Nikolayev reached orbit, Vostok 4 followed him up, and for a while the two spacecraft flew within a few kilometres of each other — the first time two crewed craft had ever been in space together. To the world it looked like a rendezvous, and the Soviets were glad to let it. In truth neither ship could maneuver; the closeness came from launching one almost into the other's path, and the gap widened steadily after. A genuine first and a bit of a magic trick at once — and a hint at the real skill, true rendezvous, that no one yet had.",
-  "description": "Andriyan Nikolayev's 64-orbit flight, launched 1962-08-11 08:30 UTC. Twenty-four hours after launch Vostok 4 (Popovich) joined him in orbit — the closest approach was approximately 6.5 km, though no actual rendezvous capability existed (the two capsules had no manoeuvring thrusters). The simultaneous flight was a propaganda response to US suborbital missions and to John Glenn's Friendship 7. Nikolayev landed 1962-08-15 07:55 UTC near Karaganda, Kazakh SSR, after almost 4 days in space.",
+  "description": "Andriyan Nikolayev's 64-orbit flight, launched 1962-08-11 08:24 UTC. Twenty-four hours after launch Vostok 4 (Popovich) joined him in orbit — the closest approach was approximately 6.5 km, though no actual rendezvous capability existed (the two capsules had no manoeuvring thrusters). The simultaneous flight was a propaganda response to US suborbital missions and to John Glenn's Friendship 7. Nikolayev landed 1962-08-15 06:52 UTC near Karaganda, Kazakh SSR, after almost 4 days in space.",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Vostok-K from Baikonur Site 1 1962-08-11 08:30 UTC.",
+      "note": "Vostok-K from Baikonur Site 1 1962-08-11 08:24 UTC.",
       "type": "nominal"
     },
     {
@@ -20,7 +20,7 @@
     {
       "met": 3.98,
       "label": "EJECT + LAND",
-      "note": "Nikolayev landed near Karaganda 1962-08-15 07:55 UTC after 64 orbits.",
+      "note": "Nikolayev landed near Karaganda 1962-08-15 06:52 UTC after 64 orbits.",
       "type": "nominal"
     }
   ]

@@ -1,15 +1,15 @@
 {
   "title": "Apsides — Périhélie, Aphélie, Périgée, Apogée",
-  "intro_sentence": "Les deux points extrêmes de toute orbite elliptique : approche la plus proche et la plus éloignée.",
+  "intro_sentence": "Les deux points extrêmes de toute orbite elliptique : le plus proche et le plus loin.",
   "narrative_101": [
-    "Toute orbite elliptique a un point haut et bas. C'est tout ce qu'est une apside. Les gens du spatial obsèdent ces points car presque chaque combustion importante y arrive.",
-    "Pourquoi ? Vitesse extrême là — plus rapide au point bas. Effet Oberth. Et changer le côté OPPOSÉ est moins cher en poussant à l'extrême.",
-    "Convention de noms : Soleil = périhélie/aphélie. Terre = périgée/apogée. Lune = périlune/apolune. Même physique."
+    "Toute orbite elliptique a un point haut et un point bas. C'est tout ce qu'est une apside — l'un de ces deux extrêmes. L'approche la plus proche de ce que vous orbitez, ou la plus lointaine. Les spécialistes des engins spatiaux sont obsédés par ces deux points car presque chaque manœuvre importante s'y effectue.",
+    "Pourquoi ? Deux raisons. Premièrement, votre vitesse atteint aussi ses extrêmes à ces endroits — la plus rapide au point proche, la plus lente au point lointain. L'effet Oberth (que nous aborderons en propulsion) dit que vous tirez le maximum de votre carburant quand vous brûlez rapidement — donc les manœuvres de départ se font près du point proche. Deuxièmement, rehausser ou abaisser le côté OPPOSÉ d'une orbite coûte le moins cher quand vous poussez à l'extrême — donc pour élever votre orbite, vous tirez au point bas.",
+    "Avertissement sur une convention de nommage agaçante : chaque planète a sa propre paire de mots. Autour du Soleil : périhélie / aphélie. Autour de la Terre : périgée / apogée. Autour de la Lune : périlune / apolune. Même physique, juste des racines grecques accrochées au corps autour duquel vous orbitez. Ne vous laissez pas intimider — c'est juste un mot pour « bas » et un pour « haut »."
   ],
   "body_paragraphs": [
-    "Une apside est un des deux points où le corps est à distance minimale ou maximale du foyer. Ligne reliant = ligne des apsides.",
-    "Noms dépendent du corps. Soleil : périhélie/aphélie (gr. peri/apo + helios). Terre : périgée/apogée. Lune : périlune/apolune.",
-    "Apsides ancrent les chronologies. Voyager survols au périhélie de chaque rencontre. ISS reboost à l'apogée. Phasing rendez-vous au périgée. Parker Solar Probe périhélie = approche la plus proche d'une étoile."
+    "Une apside est l'un des deux points d'une orbite elliptique où le corps est à distance minimale ou maximale de son foyer. La ligne les reliant — passant par les deux foyers — est la ligne des apsides. Chaque orbite keplérienne en possède exactement deux : la plus proche et la plus lointaine.",
+    "Les noms dépendent de ce que vous orbitez. Autour du Soleil : périhélie (le plus proche) et aphélie (le plus loin), du grec `peri` (près) et `apo` (loin) plus `helios` (Soleil). Autour de la Terre : périgée et apogée. Autour de la Lune : périsélène et aposélène, ou périlune et apolune. Autour de toute étoile : periastron et apastron. La physique sous-jacente est identique ; seul le suffixe change.",
+    "Les apsides structurent les calendriers des missions. Les survols de Voyager ont été chronométrés à l'approche la plus proche (périapside) de chaque planète cible — péri-Jove pour Jupiter, péri-Saturne pour Saturne. Les manœuvres de rehaussement de l'ISS ajoutent de l'énergie pour combattre la traînée atmosphérique, conformément à la règle de tirer au point bas pour élever l'orbite. Les manœuvres d'ajustement de phase pour rendez-vous et amarrage sont placées pour une efficacité de phase, souvent près du périgée (effet Oberth). Le passage au périhélie du Soleil par Parker Solar Probe est l'approche la plus proche qu'un objet créé par l'homme n'ait jamais eu d'une étoile."
   ],
-  "diagram_caption": "Ligne des apsides à travers les deux foyers, reliant périhélie et aphélie."
+  "diagram_caption": "Ligne des apsides passant par les deux foyers, reliant le périhélie (le plus proche) et l'aphélie (le plus loin)."
 }

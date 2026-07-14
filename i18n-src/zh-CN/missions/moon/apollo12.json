@@ -1,62 +1,62 @@
 {
-  "name": "阿波罗 12 号",
-  "dispatch": "[",
+  "name": "Apollo 12",
   "type": "载人着陆器 · 已飞行",
-  "first": "第二次载人登月 — 距 Surveyor 3 仅 163 米的精确着陆",
-  "description": "第二次载人登月。土星五号在上升过程中被闪电击中两次（T+36 秒、T+52 秒）— Bean 通过著名的 EECOM John Aaron 的\"SCE to AUX\"呼叫恢复了飞船。Conrad 和 Bean 在风暴海上距 1967 年 4 月软着陆的 Surveyor 3 仅 163 米内精确着陆，然后步行到 Surveyor 3 并取下其相机和表面样本。他们部署了 ALSEP（第一个 ALSEP，对应阿波罗 11 的更简单的 EASEP），该装置传输数据长达 8 年。任务带回 34 公斤样本。",
+  "first": "第二次载人登月——在距 Surveyor 3 号 163 米处精确着陆",
+  "description": "第二次载人登月任务。Saturn V 火箭在上升过程中两次遭雷击(T+36 秒和 T+52 秒)——Bean 通过 EECOM John Aaron 著名的\"SCE to AUX\"指令恢复了航天器,随后乘组在月球轨道上重新校准了惯性测量单元。Conrad 和 Bean 在风暴洋执行了精确着陆,降落点距 Surveyor 3 号(该探测器于 1967 年 4 月软着陆)仅 163 米,随后他们步行至 Surveyor 3 号并拆除了其相机和表面样本——这些部件被带回地球用于分析长期月表暴露的影响。他们部署了 ALSEP(完整的阿波罗月表实验包——这是第一套 ALSEP,而 Apollo 11 部署的是更简单的 EASEP),该设备传输数据长达 8 年。任务带回了 34 千克样本,包括暗色月海玄武岩。",
+  "dispatch": "如果说 Apollo 11 证明了你能抵达月球,那么 Apollo 12 则证明了你能抵达月球上的特定地点。发射后三十六秒,闪电击中火箭并导致航天器仪表离线;一位名叫 John Aaron 的二十四岁管制员从记忆中调出了一个不为人知的修复方法——\"SCE to AUX\"——飞行得以继续。随后 Conrad 和 Bean 将他们的登月舱降落在风暴洋,距一个已在那里停留两年的探测器仅数百英尺,他们走过去并带回了它的部件。那次精确着陆才是真正的成果:月球不再只是一个目的地,而成为了一个地址。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-507) from Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Two lightning strikes on the stack (T+36 s, T+52 s) tripped fuel cells offline; recovered via \"SCE to AUX\" call.",
+      "label": "发射",
+      "note": "土星5号（AS-507）从肯尼迪航天中心LC-39A发射，1969-11-14 16:22 UTC。堆栈遭受两次闪电击中（T+36 s，T+52 s），导致燃料电池离线；通过\"SCE to AUX\"指令恢复。",
       "type": "warning"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection — recovery from lightning strikes verified; mission GO for Moon.",
+      "note": "跨月球注入 — 验证了防雷击恢复；任务前往月球。",
       "type": "nominal"
     },
     {
       "met": 3.39,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.89 km/s.",
+      "note": "月球轨道插入。SPS Δv ~0.89 km/s。",
       "type": "nominal"
     },
     {
       "met": 5.43,
-      "label": "TOUCHDOWN",
-      "note": "Intrepid lands at Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — within 163 m of Surveyor 3 (the most precise lunar landing yet).",
+      "label": "着陆",
+      "note": "勇气号降落在风暴洋（Statio Cognitum）1969-11-19 06:54 UTC — 距离勘测者3号163米以内（迄今最精准的月球着陆）。",
       "type": "nominal"
     },
     {
       "met": 5.58,
-      "label": "SURVEYOR 3 VISIT",
-      "note": "Conrad + Bean walk to Surveyor 3 (~163 m away), remove its TV camera + samples for return to Earth — first time a crew visited a previously-landed robotic spacecraft.",
+      "label": "测量员3号访问",
+      "note": "Conrad + Bean 步行前往 Surveyor 3（约 163 m 远），移除其电视摄像机及样本带回地球——首次有宇航员组访问先前着陆的机器人航天器。",
       "type": "info"
     },
     {
       "met": 6.74,
-      "label": "ASCENT",
-      "note": "Intrepid lifts off after 31 h 31 m on surface. 34 kg of samples returned.",
+      "label": "上升",
+      "note": "勇气号在表面停留 31 小时 31 分钟后升空。返回 34 千克样品。",
       "type": "nominal"
     },
     {
       "met": 6.93,
-      "label": "LM IMPACT",
-      "note": "Intrepid ascent stage deliberately crashed onto Moon to calibrate ALSEP seismometers. First man-made lunar impact event.",
+      "label": "登月撞击",
+      "note": "勇气号上升级有意坠毁在月球上以校准ALSEP地震仪 —— 这是第一个有人任务的航天器级段有意撞击月球并由月面地震仪记录的事件。",
       "type": "info"
     },
     {
       "met": 7.92,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "跨地球注入。SPS Δv ~1.0 km/s。",
       "type": "nominal"
     },
     {
       "met": 10.18,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1969-11-24 20:58 UTC. Recovery by USS Hornet.",
+      "label": "溅落",
+      "note": "舱在1969-11-24 20:58 UTC在南太平洋溅落。由黄蜂号航母回收。",
       "type": "nominal"
     }
   ]

@@ -1,80 +1,80 @@
 {
   "name": "Kommerzielle Stationen",
-  "tagline": "Die privaten Außenposten, die die ISS ersetzen sollen — eine Wette darauf, dass der niedrige Erdorbit zu einem Geschäft werden kann, nicht nur zu einem Regierungsprogramm.",
+  "tagline": "Die privaten Außenposten, die die ISS ersetzen sollen — eine Wette darauf, dass der erdnahe Orbit zu einem Geschäft werden kann, nicht nur zu einem Regierungsprogramm.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Die International Space Station ist das größte Objekt, das die Menschheit je im Orbit gebaut hat, und es wird absichtlich zerstört werden. Um 2030 herum wird die ISS nach mehr als drei Jahrzehnten ununterbrochenen bemannten Betriebs kontrolliert zum Absturz gebracht, um über dem Pazifik zu verglühen — weil sie altert, teuer in der Wartung ist und ihre Partner entschieden haben, dass die Zukunft des niedrigen Erdorbits privaten Unternehmen gehört und nicht Regierungsbehörden. Die kommerziellen Stationen sind das, was sie ersetzen soll."
+      "md": "Die International Space Station ist das größte Objekt, das die Menschheit je im Orbit gebaut hat, und sie wird absichtlich zerstört werden. Um 2030 herum wird die ISS nach mehr als drei Jahrzehnten ununterbrochenen bemannten Betriebs so gesteuert, dass sie über dem Pazifik verglüht — weil sie altert, teuer in der Wartung ist und ihre Partner entschieden haben, dass die Zukunft des erdnahen Orbits privaten Unternehmen statt Regierungsbehörden gehört. Die kommerziellen Stationen sind das, was ihren Platz einnehmen soll."
     },
     {
       "type": "prose",
-      "md": "Dies ist ein echter Modellwechsel, nicht nur ein Wechsel der Hardware. Sechzig Jahre lang wurden Raumstationen von Nationen gebaut und betrieben. Der Plan ist nun, dass die NASA und ihre Partner den Betrieb von Stationen vollständig einstellen und stattdessen Zeit an Bord von privat betriebenen Stationen kaufen — dieselbe Übergabe, die kommerziellen Unternehmen die Aufgabe übertrug, Fracht und Besatzungen zu starten, ausgeweitet auf das Ziel selbst. Mehrere Vorhaben wetteifern darum, die Außenposten zu bauen, die die NASA und andere mieten werden: Axiom Station, Orbital Reef, Starlab und weitere."
+      "md": "Dies ist eine echte Änderung des Modells, nicht nur der Hardware. Sechzig Jahre lang wurden Raumstationen von Nationen gebaut und betrieben. Der Plan ist jetzt, dass die NASA und ihre Partner den Betrieb von Stationen ganz einstellen und stattdessen Zeit an Bord privater Stationen kaufen — dieselbe Übergabe, die kommerziellen Unternehmen den Auftrag gab, Fracht und Besatzung zu starten, ausgeweitet auf das Ziel selbst. Mehrere Vorhaben wetteifern darum, die Außenposten zu bauen, die die NASA und andere mieten werden: Axiom Station, Orbital Reef, Starlab und weitere."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Das unmittelbare Ziel ist Kontinuität: mindestens eine kommerzielle Station im Betrieb zu haben, bevor die ISS ihre Umlaufbahn verlässt, damit die menschliche Präsenz im niedrigen Erdorbit — ununterbrochen seit 2000 — niemals unterbrochen wird. Der Verlust dieser Kontinuität würde bedeuten, eine hart erkämpfte Fähigkeit aufzugeben und, symbolisch, die strategische Position im niedrigen Orbit genau in dem Moment abzutreten, in dem Chinas Station die einzige andere im Betrieb befindliche ist."
+      "md": "Das unmittelbare Ziel ist Kontinuität: mindestens eine kommerzielle Station im Betrieb zu haben, bevor die ISS deorbitiert wird, damit die menschliche Präsenz im erdnahen Orbit — seit 2000 ununterbrochen — niemals unterbrochen wird. Diese Kontinuität zu verlieren würde bedeuten, eine hart erkämpfte Fähigkeit aufzugeben und, symbolisch, die Höhenposition im niedrigen Orbit genau in dem Moment abzutreten, in dem Chinas Station die einzige andere im Flug ist."
     },
     {
       "type": "prose",
-      "md": "Das tiefere Ziel ist es, den niedrigen Erdorbit in eine selbsttragende Wirtschaft zu verwandeln. Die Vision sind Stationen, die sich durch zahlende Kunden finanzieren — Forschung für Unternehmen und Behörden, Fertigung im Weltraum von Dingen, die nur in Schwerelosigkeit hergestellt werden können, und private Astronauten und Touristen — sodass eine menschliche Präsenz im Orbit nicht länger von Regierungshaushalten abhängt. Die NASA wird ein Mieter unter vielen, und die Station wird zu einem Geschäft."
+      "md": "Das tiefere Ziel ist es, den erdnahen Orbit in eine selbsttragende Wirtschaft zu verwandeln. Die Vision sind Stationen, die sich durch zahlende Kunden finanzieren — Forschung für Unternehmen und Behörden, Herstellung im Weltraum von Dingen, die nur in Mikrogravitation gefertigt werden können, und private Astronauten und Touristen — sodass eine menschliche Präsenz im Orbit nicht länger von Regierungsbudgets abhängt. Die NASA wird zu einem Mieter unter vielen, und die Station wird zu einem Geschäft."
     },
     {
       "type": "prose",
-      "md": "Es gibt auch ein strategisches Ziel, das im kommerziellen eingebettet ist: eine von Amerika geführte menschliche Präsenz im niedrigen Orbit aufrechtzuerhalten, während die ISS endet und Chinas Tiangong weiterbesteht. Die kommerziellen Stationen sollen sicherstellen, dass die Stilllegung der ISS eine Übergabe ist, kein Rückzug — dass der Westen den niedrigen Erdorbit nicht einfach standardmäßig China überlässt."
+      "md": "Es gibt auch ein strategisches Ziel, das im kommerziellen eingebettet ist: eine amerikanisch geführte menschliche Präsenz im niedrigen Orbit aufrechtzuerhalten, während die ISS endet und Chinas Tiangong weiterbesteht. Die kommerziellen Stationen sollen sicherstellen, dass die Außerdienststellung der ISS eine Übergabe ist, kein Rückzug — dass der Westen den erdnahen Orbit nicht einfach standardmäßig an China überlässt."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Das Ergebnis steht noch aus — dies sind vorerst Verträge, Entwürfe und Testartikel statt fliegender Stationen. Die Pläne sind real und finanziert: Axiom beabsichtigt, seine ersten Module an die ISS anzudocken und sie später zu einer frei fliegenden Station abzutrennen; Orbital Reef und Starlab entwerfen unabhängige Außenposten. Aber noch keine kommerzielle Station ist im Orbit, und die Zeitpläne sind eng gegen das geplante Ende der ISS, mit dem üblichen Risiko, dass eine Station auf dem Papier sich verzögert, während die Frist es nicht tut."
+      "md": "Das Ergebnis ist noch offen — dies sind vorerst Verträge, Entwürfe und Testmuster statt fliegender Stationen. Die Pläne sind real und finanziert: Axiom baut einen unabhängigen Freiflug-Komplex, wobei nur sein erstes Modul kurz an die ISS andockt, bevor es sich löst und zum Rest der Station im freien Flug gesellt — ein Plan, der Ende 2024 umstrukturiert wurde und die frühere Vision fallen ließ, Module dauerhaft an der ISS zu montieren und dann abzureisen. Orbital Reef und Starlab entwerfen unabhängige Außenposten, und Vasts Haven-1 — ein Einmodul-Freiflug-Komplex — gehört zu den wahrscheinlichsten, die zuerst fliegen werden. Aber noch ist keine kommerzielle Station im Orbit, und die Zeitpläne sind eng bemessen für das geplante Ende der ISS, mit dem üblichen Risiko, dass eine Papierstation sich verzögert, während die Frist das nicht tut."
     },
     {
       "type": "prose",
-      "md": "Die zentrale Unsicherheit ist nicht technischer, sondern wirtschaftlicher Natur. Es ist nicht offensichtlich, dass es genügend zahlende Nachfrage gibt — Forschung, Fertigung, Tourismus — um auch nur eine private Station zu erhalten, geschweige denn mehrere, sobald die tiefen Taschen eines staatlichen Hauptmieters entfernt sind. Die Ära der kommerziellen Stationen ist eine Wette darauf, dass ein Markt existiert, wo bisher nur ein Regierungsprogramm war. Ob diese Wette aufgeht, ist die Frage, die das nächste Jahrzehnt beantworten wird."
+      "md": "Die zentrale Ungewissheit ist nicht technischer, sondern wirtschaftlicher Natur. Es ist nicht offensichtlich, dass es genug zahlende Nachfrage gibt — Forschung, Herstellung, Tourismus — um auch nur eine private Station zu tragen, geschweige denn mehrere, sobald die tiefen Taschen eines staatlichen Ankernutzers entfallen. Die Ära der kommerziellen Stationen ist eine Wette darauf, dass ein Markt existiert, wo bisher nur ein Regierungsprogramm war. Ob diese Wette aufgeht, ist die Frage, die das nächste Jahrzehnt beantworten wird."
     },
     {
       "type": "prose",
-      "md": "Was bereits klar ist, ist, dass das Modell Schwung und offizielle Unterstützung hat. Die NASA hat sich verpflichtet, Kunde statt Betreiber zu werden, mehrere gut finanzierte Unternehmen konkurrieren, und das festgelegte Ruhestandsdatum der ISS gibt dem gesamten Unterfangen eine harte Frist. Die kommerziellen Stationen mögen sich verzögern, konsolidieren oder teilweise scheitern — aber die Absicht, den niedrigen Erdorbit an den Privatsektor zu übergeben, ist fest."
+      "md": "Was bereits klar ist: Das Modell hat Schwung und offizielle Unterstützung. Die NASA hat sich verpflichtet, Kunde statt Betreiber zu werden, mehrere gut finanzierte Unternehmen konkurrieren, und das feste Außerdienststellungsdatum der ISS gibt dem ganzen Vorhaben eine harte Frist. Die kommerziellen Stationen können sich verzögern, konsolidieren oder teilweise scheitern — aber die Absicht, den erdnahen Orbit an den privaten Sektor zu übergeben, ist fest."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Der Vorstoß zu kommerziellen Stationen ist der letzte Schritt in einer langen Übergabe. Zuerst übergab die NASA die Frachtlieferung an SpaceX und andere; dann den Personentransport; jetzt das Ziel selbst. Jeder Schritt übertrug eine Fähigkeit von einer Regierung, die sie entwickelt hatte, auf Unternehmen, die sie kostengünstiger betreiben und mehr Nutzern öffnen sollten. Die Stationen sind der Endpunkt dieser Logik — der Moment, in dem der niedrige Erdorbit aufhört, etwas zu sein, das Regierungen betreiben, und zu etwas wird, das sie kaufen."
+      "md": "Der Vorstoß zu kommerziellen Stationen ist der letzte Schritt einer langen Übergabe. Zuerst übergab die NASA die Frachtlieferung an SpaceX und andere; dann den Besatzungstransport; jetzt das Ziel selbst. Jeder Schritt übertrug eine Fähigkeit von einer Regierung, die sie entwickelt hatte, an Unternehmen, die sie kostengünstiger betreiben und mehr Nutzern öffnen sollen. Die Stationen sind der Endpunkt dieser Logik — der Moment, in dem der erdnahe Orbit aufhört, etwas zu sein, das Regierungen betreiben, und zu etwas wird, das sie kaufen."
     },
     {
       "type": "prose",
-      "md": "Es ist auch eine Wette auf Märkte, die zuvor gescheitert ist. Frühere Versuche, eine kommerzielle Wirtschaft im niedrigen Orbit aufzubauen, fanden heraus, dass außerhalb von Regierungsverträgen die zahlende Nachfrage dünn war. Die aktuelle Anstrengung ist besser finanziert und besser terminiert — getragen von günstigeren Starts und einer echten Frist — aber sie versucht dasselbe Schwierige: zu beweisen, dass der Orbit ein Geschäft sein kann. Von der ISS wurde nie erwartet, dass sie Gewinn abwirft; ihre Nachfolger sollen es, und das ist eine wirklich neue und unbewiesene Anforderung."
+      "md": "Es ist auch eine Wette auf Märkte, die zuvor gescheitert ist. Frühere Versuche, eine kommerzielle Wirtschaft im niedrigen Orbit aufzubauen, stellten fest, dass die zahlende Nachfrage außerhalb von Regierungsaufträgen dünn war. Das aktuelle Vorhaben ist besser finanziert und besser getaktet — getragen von billigeren Starts und einer echten Frist — aber es versucht dieselbe schwierige Sache: zu beweisen, dass Orbit ein Geschäft sein kann. Von der ISS wurde nie erwartet, dass sie Gewinn abwirft; ihre Nachfolger sollen es, und das ist eine wirklich neue und unbewiesene Anforderung."
     },
     {
       "type": "prose",
-      "md": "Und es entfaltet sich gegen eine Uhr und einen Rivalen. Die Stilllegung der ISS ist geplant; Chinas Tiangong fliegt und wird nicht mit ihr in Rente gehen. Die kommerziellen Stationen werden gebaut, um sicherzustellen, dass der Westen den niedrigen Erdorbit nicht gerade dann verlässt, wenn sich ein Konkurrent dort niederlässt — was ein Geschäftsvorhaben mit strategischem Gewicht belädt und die Frage aufwirft, was passiert, wenn sich der Markt als zu dünn erweist, aber der strategische Bedarf bestehen bleibt."
+      "md": "Und es entfaltet sich gegen eine Uhr und einen Rivalen. Die Außerdienststellung der ISS ist geplant; Chinas Tiangong fliegt und wird nicht mit ihr außer Dienst gestellt. Die kommerziellen Stationen werden gebaut, um sicherzustellen, dass der Westen den erdnahen Orbit nicht gerade dann verlässt, wenn sich ein Konkurrent dort etabliert — was einem Geschäftsvorhaben strategisches Gewicht auflädt und die Frage aufwirft, was passiert, wenn sich der Markt als zu dünn erweist, der strategische Bedarf aber bestehen bleibt."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Wenn die kommerziellen Stationen erfolgreich sind, wird ihr Vermächtnis die Transformation des niedrigen Erdorbits von einem Regierungsprogramm in eine Wirtschaft sein — eine permanente menschliche Präsenz, die von zahlenden Kunden statt von nationalen Haushalten getragen wird, und eine Vorlage dafür, wie jedes zukünftige orbitale Ziel besessen und betrieben werden könnte."
+      "md": "Wenn die kommerziellen Stationen Erfolg haben, wird ihr Vermächtnis die Transformation des erdnahen Orbits von einem Regierungsprogramm in eine Wirtschaft sein — eine dauerhafte menschliche Präsenz, getragen von zahlenden Kunden statt nationalen Budgets, und eine Vorlage dafür, wie jedes künftige orbitale Ziel besessen und betrieben werden könnte."
     },
     {
       "type": "prose",
-      "md": "Wenn sie Schwierigkeiten haben, wird ihr Vermächtnis eine harte Lektion über die Grenzen der Kommerzialisierung sein: dass einige Fähigkeiten, so wünschenswert sie auch sein mögen, möglicherweise noch keinen Markt haben, der sie ohne staatlichen Anker erhalten kann — und dass die Übergabe des niedrigen Orbits möglicherweise langsamer sein oder länger subventioniert werden muss, als die Frist der ISS es erlaubt."
+      "md": "Wenn sie sich schwertun, wird ihr Vermächtnis eine harte Lektion über die Grenzen der Kommerzialisierung sein: dass manche Fähigkeiten, so wünschenswert sie auch sein mögen, vielleicht noch keinen Markt haben, der sie ohne staatlichen Anker tragen kann — und dass die Übergabe des niedrigen Orbits langsamer sein oder länger subventioniert werden muss, als die Frist der ISS es erlaubt."
     },
     {
       "type": "prose",
-      "md": "In jedem Fall markieren sie das Ende der ISS-Ära und den Test eines neuen Modells. Die kommerziellen Stationen sind der Ort, an dem das lange Experiment der Privatisierung des Zugangs zum Weltraum auf seine schwierigste Frage trifft — nicht, ob ein Unternehmen den Orbit erreichen kann, sondern ob es dort gewinnbringend leben kann."
+      "md": "So oder so markieren sie das Ende der ISS-Ära und den Test eines neuen Modells. Die kommerziellen Stationen sind der Ort, an dem das lange Experiment der Privatisierung des Zugangs zum Weltraum auf seine härteste Frage trifft — nicht ob ein Unternehmen den Orbit erreichen kann, sondern ob es dort profitabel leben kann."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lektion, die die kommerziellen Stationen testen, ist, ob eine von Regierungen entwickelte Fähigkeit an einen Markt übergeben werden kann, der noch nicht nachweislich existiert. Der Start hatte offensichtliche Kunden; der Geschäftsfall einer permanent bemannten Station ist weit weniger bewiesen. Die Anstrengung ist ein Echtzeit-Experiment darüber, ob Kommerzialisierung Grenzen hat und wo diese liegen."
+      "md": "Die Lektion, die die kommerziellen Stationen testen, ist, ob eine von Regierungen entwickelte Fähigkeit an einen Markt übergeben werden kann, der noch nicht nachweislich existiert. Starts hatten offensichtliche Kunden; der Business Case einer dauerhaft bemannten Station ist weit weniger bewiesen. Das Vorhaben ist ein Experiment in Echtzeit darüber, ob Kommerzialisierung Grenzen hat und wo diese liegen."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lektion, die sich noch formt, handelt von der Gefahr, eine Fähigkeit stillzulegen, bevor ihr Ersatz gesichert ist. Die ISS hat ein festes Enddatum; ihre kommerziellen Nachfolger fliegen noch nicht. Darauf zu wetten, dass ein Markt pünktlich entsteht, mit einer harten Frist und einem Rivalen bereits im Orbit, ist ein Glücksspiel, dessen Einsatz nichts Geringeres ist als die kontinuierliche menschliche Präsenz im niedrigen Erdorbit selbst."
+      "md": "Die tiefere Lektion, die sich noch formt, handelt von der Gefahr, eine Fähigkeit außer Dienst zu stellen, bevor ihr Ersatz gesichert ist. Die ISS hat ein festes Enddatum; ihre kommerziellen Nachfolger fliegen noch nicht. Darauf zu wetten, dass ein Markt planmäßig entsteht, mit einer harten Frist und einem Rivalen bereits im Orbit, ist ein Glücksspiel, dessen Einsatz nichts Geringeres ist als die ununterbrochene menschliche Präsenz im erdnahen Orbit selbst."
     }
   ]
 }

@@ -1,6 +1,38 @@
 {
   "name": "Luna 10",
-  "type": "ORBITADOR ROBÓTICO · VOADA",
-  "first": "Primeira espaçonave a orbitar a Lua (e qualquer corpo que não a Terra)",
-  "description": "Lançada em 31/03/1966 de Baikonur, a Luna 10 tornou-se a primeira espaçonave a orbitar a Lua — e o primeiro satélite artificial de qualquer corpo que não a Terra — ao se inserir em uma órbita lunar de 350 × 1017 km a 71,9° de inclinação em 03/04/1966. Três anos antes de a Apollo 8 alcançar a Lua com humanos a bordo. Levava um magnetômetro, um espectrômetro de raios gama, um radiômetro infravermelho, detectores de micrometeoroides, sensores de plasma e uma sonda de rádio do campo gravitacional lunar. Os dados de raios gama foram o primeiro sensoriamento remoto composicional da Lua, sugerindo composição mare-basáltica. Notoriamente transmitiu o hino da Internacional durante o 23º Congresso do Partido Comunista Soviético em 04/04/1966 — mais um floreio propagandístico do que ciência. Operou 56 dias / 460 órbitas antes de as baterias de NiCd se esgotarem em 30/05/1966; permanece em órbita lunar."
+  "type": "ORBITADOR ROBÓTICO · CONCLUÍDO",
+  "first": "Primeira espaçonave a orbitar a Lua (e qualquer corpo celeste além da Terra)",
+  "description": "Lançada em 1966-03-31 de Baikonur, Luna 10 tornou-se a primeira espaçonave a orbitar a Lua — e o primeiro satélite artificial de qualquer corpo celeste além da Terra — quando se inseriu em uma órbita lunar de 350 × 1017 km com inclinação de 71,9° em 1966-04-03. Dois anos e meio antes do Apollo 8 chegar à Lua com humanos a bordo. Transportava um magnetômetro, espectrômetro de raios gama, radiômetro infravermelho, detectores de micrometeoroides, sensores de plasma e uma sonda de rádio do campo gravitacional lunar. Os dados de raios gama constituíram o primeiro sensoriamento remoto composicional da Lua, sugerindo uma composição de mare semelhante a basalto. Transmitiu, de forma célebre, a Internationale durante o 23º Congresso do Partido Comunista Soviético em 1966-04-04 — um floreio de propaganda mais que ciência. Operou por 56 dias / 460 órbitas antes do esgotamento das baterias de NiCd em 1966-05-30; permanece em órbita lunar.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Molniya-M de Baikonur em 1966-03-31 10:46 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.01,
+      "label": "TLI",
+      "note": "Estágio superior Block-L propele Luna 10 em direção à Lua.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "LOI",
+      "note": "Inserção em órbita lunar em 1966-04-03 — primeiro satélite artificial de qualquer corpo celeste além da Terra.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.5,
+      "label": "TRANSMISSÃO DA INTERNATIONALE",
+      "note": "Transmissão da Internationale durante o 23º Congresso do Partido Comunista Soviético (1966-04-04).",
+      "type": "info"
+    },
+    {
+      "met": 60,
+      "label": "EOL",
+      "note": "Baterias de NiCd esgotadas; missão encerrada em 1966-05-30. Permanece em órbita lunar.",
+      "type": "nominal"
+    }
+  ]
 }

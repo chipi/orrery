@@ -1,16 +1,16 @@
 {
   "title": "Tsiolkovsky-Raketengleichung",
-  "intro_sentence": "Wieviel Geschwindigkeitsänderung du aus einem Motor und einer Treibstoffmenge bekommst — die Gleichung, die Raumfahrt logarithmisch macht.",
+  "intro_sentence": "Wie viel Geschwindigkeitsänderung man mit einem bestimmten Motor und einer bestimmten Treibstoffmenge erreicht — die Gleichung, die Raumfahrt zu einem logarithmischen Problem macht.",
   "narrative_101": [
-    "Konstantin Tsiolkovsky war ein gehörloser russischer Lehrer, der in seiner Freizeit über Raumfahrt nachdachte, Jahrzehnte bevor jemand eine Rakete bauen konnte. 1903 schrieb er eine Gleichung auf, der niemand entkommt.",
-    "Δv hängt von zwei Dingen: Motorqualität und Treibstoffanteil. Die Beziehung ist LOGARITHMISCH. Verdopple Δv: nicht doppelter Treibstoff, exponentiell mehr. Saturn V: 90% Treibmittel.",
-    "Zwei Auswege: bessere Motoren (Isp) und Stufung. Echte Raketen tun beides. Trotzdem Single-Shot bei 10-15 km/s gedeckelt."
+    "Konstantin Tsiolkovsky war ein gehörloser russischer Schullehrer, der sich in seiner Freizeit mit Raumfahrt befasste — Jahrzehnte bevor jemand tatsächlich eine Rakete bauen konnte. 1903 schrieb er eine Gleichung auf, der niemand entkommt, und wir tun es immer noch nicht. Sie besagt: Der ∆v, den man aus einer Rakete herausholen kann, hängt von zwei Dingen ab — wie gut dein Motor ist und wie viel deiner Rakete Treibstoff ist. Und die Beziehung ist LOGARITHMISCH.",
+    "Der Logarithmus ist die Falle. Wenn deine Rakete zur Hälfte aus Treibstoff besteht, erreichst du einen bestimmten ∆v. Um diesen ∆v zu verdoppeln, machst du deine Rakete nicht zu zwei Dritteln aus Treibstoff — du musst sie zu etwa 75 % aus Treibstoff machen. Um ihn zu verdreifachen, näher bei 87–88 % Treibstoff. Die Zahlen laufen dir exponentiell davon. Deshalb ist die Saturn V ein 110-Meter-Turm, der fast ausschließlich aus Treibstoff besteht — das Raumschiff ist eine winzige Kapsel oben drauf.",
+    "Zwei Wege hinaus. Erstens: bessere Motoren (höherer spezifischer Impuls) — das erhöht den Multiplikator, sodass du mehr ∆v aus dem gleichen Masseverhältnis erhältst. Zweitens: Stufung — leere Tanks abwerfen, sobald sie leer sind, damit du keine tote Last mit dir herumschleppst. Echte Raketen machen beides. Selbst dann erreichen Einflugs-Missionen etwa 10–15 km/s ∆v. Darüber hinaus sagt die Gleichung dir, dass du in der Umlaufbahn nachtanken musst oder exotische Motoren brauchst oder Hilfe von einem Planeten."
   ],
   "body_paragraphs": [
-    "Tsiolkovsky 1903, Jahrzehnte vor flugfähigen Raketen. Δv hängt vom Isp und dem Verhältnis Anfangs- zu Endmasse — logarithmisch im Verhältnis.",
-    "Logarithmus ist grausam. Doppelter Treibstoff: konstantes Δv-Plus. Doppelte Reichweite: exponentiell größere Rakete. Chemie (Isp ~300-450s) deckelt bei 10-15 km/s. Mehr braucht höheren Isp (Ionen ~3000s) oder Stufung.",
-    "Saturn V: 7.800 t nass, 600 t trocken. Massenverhältnis 13. Isp ~330s. Δv ≈ 8,3 km/s — knapp für TLI."
+    "Konstantin Tsiolkovsky leitete die Raketengleichung 1903 her, Jahrzehnte bevor jemand eine flugfähige Rakete baute. Das Ergebnis hat die Unvermeidlichkeit der Physik: ∆v hängt vom Motor-`Isp` und dem Verhältnis der Startmasse zur Endmasse ab — und es ist logarithmisch in diesem Verhältnis.",
+    "Der Logarithmus ist der grausame Teil. Die Verdoppelung des Treibstoffs verdoppelt nicht den ∆v; sie addiert nur einen konstanten Betrag. Willst du doppelt so weit fliegen? Du brauchst eine exponentiell größere Rakete. Das ist die Tyrannei der Raketengleichung: chemische Motoren (`Isp` ~300–450 s) stoßen auf eine Grenze bei etwa 10–15 km/s ∆v, bevor das Masseverhältnis absurd wird. Um weiter zu gehen, brauchst du höheres `Isp` (Ionenmotoren, ~3000 s) oder Stufung (Tanks abwerfen, wenn sie leer sind) oder beides.",
+    "Saturn V: 7.800 Tonnen nass, 600 Tonnen trocken. Masseverhältnis 13. Isp ~330 s. ∆v ≈ 8,3 km/s — kaum genug für die Translunar-Injektion. Falcon 9 mit Wiederverwendung trifft auf eine andere Grenze: Jedes Kilogramm wiederherstellbarer Hardware kostet dir proportional Nutzlast."
   ],
-  "formula_caption": "Δv aus spezifischem Impuls, g₀ und Massenverhältnis m₀/m_f.",
-  "diagram_caption": "Δv vs Massenverhältnis: logarithmisch. Doppelter Treibstoff addiert nur konstanten Brocken."
+  "formula_caption": "∆v aus spezifischem Impuls, Erdbeschleunigung g₀ und Masseverhältnis m₀/m_f.",
+  "diagram_caption": "Kurve von ∆v versus Masseverhältnis: logarithmisch. Die Verdoppelung des Treibstoffs addiert nur einen konstanten ∆v-Betrag."
 }

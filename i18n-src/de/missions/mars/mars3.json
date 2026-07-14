@@ -1,37 +1,37 @@
 {
   "name": "Mars 3",
-  "type": "ORBITER · LANDER · GEFLOGEN",
-  "first": "Erste Raumsonde landet sanft auf dem Mars",
-  "description": "Die kühne Doppelmission der Sowjetunion zum Mars im Jahr 1971 – Mars 2 und Mars 3 starteten im Abstand von 9 Tagen. Der Lander von Mars 2 stürzte ab; Der Lander von Mars 3 schaffte die erste sanfte Landung auf dem Mars, sendete jedoch nur etwa 110 Sekunden lang, bevor das Signal verloren ging, möglicherweise aufgrund des damals tobenden globalen Staubsturms. Der Orbiter war acht Monate lang in Betrieb und lieferte Hunderte von Bildern und atmosphärischen Messungen. Trotz der kurzen Oberflächenmission zeigte Mars 3, dass das Problem des Abstiegs und der Landung auf dem Mars lösbar war.",
+  "type": "ORBITER · LANDER · FLOWN",
+  "first": "Erstes Raumfahrzeug mit erfolgreicher Landung auf dem Mars",
+  "description": "Die ehrgeizige Doppelmission der Sowjetunion zum Mars im Jahr 1971 — Mars 2 und Mars 3 wurden 9 Tage auseinander gestartet. Der Lander von Mars 2 stürzte ab; der Lander von Mars 3 erreichte die erste erfolgreiche Landung auf dem Mars, verstummte aber ~110 Sekunden nach der Landung — die tatsächliche Übertragung dauerte nur ~14,5 Sekunden — möglicherweise aufgrund des zu dieser Zeit wütenden globalen Staubsturms. Der Orbiter operierte 8 Monate lang und lieferte Dutzende von Bildern und Atmosphärenmessungen. Trotz der kurzen Oberflächenmission zeigte Mars 3, dass das Abstiegs- und Landeproblem auf dem Mars lösbar war.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "Proton-K mit Blok-D-Oberstufe aus Baikonur.",
+      "note": "Proton-K mit Blok-D-Oberstufe von Baikonur.",
       "type": "nominal"
     },
     {
       "met": 188,
       "label": "ORBITER MOI",
-      "note": "Der Orbiter gelangt während eines globalen Staubsturms in die Umlaufbahn des Mars.",
+      "note": "Orbiter wird während eines globalen Staubsturms in die Marsumlaufbahn eingefangen.",
       "type": "nominal"
     },
     {
       "met": 188.05,
-      "label": "Lander-Trennung",
-      "note": "Lander trennt sich und beginnt mit dem Eintritt in die Atmosphäre.",
+      "label": "LANDER-TRENNUNG",
+      "note": "Lander trennt sich und beginnt den Atmosphäreneintritt.",
       "type": "nominal"
     },
     {
       "met": 188.1,
-      "label": "OBERFLÄCHENKONTAKT",
-      "note": "Erste sanfte Landung auf dem Mars; Die Übertragung beginnt.",
+      "label": "OBERFLÄCHENBERÜHRUNG",
+      "note": "Erste erfolgreiche Landung auf dem Mars; Übertragung beginnt.",
       "type": "nominal"
     },
     {
       "met": 188.101,
       "label": "SIGNALVERLUST",
-      "note": "Nach ca. 110 Sekunden wurde das Signal dauerhaft beendet. Ursache unbestätigt; Hauptverdächtiger des Staubsturms.",
+      "note": "Signal ~110 s nach der Landung verloren (Übertragung dauerte ~14,5 s). Ursache unbestätigt; Staubsturm ist der Hauptverdächtige.",
       "type": "warning"
     }
   ]

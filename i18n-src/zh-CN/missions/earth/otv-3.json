@@ -1,25 +1,25 @@
 {
-  "name": "X-37B OTV-3号 (USA-240)",
-  "type": "无人航天飞机 · 已飞行",
+  "name": "X-37B OTV-3 (USA-240)",
+  "type": "无人航天飞机 · 已执行",
   "first": "USA-240 — 在轨675天，范登堡空军基地",
-  "description": "X-37B第三次飞行，重复使用OTV-1飞行器。2012-12-11 18:03 UTC由阿特拉斯V 501 AV-034从CCAFS SLC-41发射；2014-10-17 16:24 UTC着陆于范登堡空军基地。在轨675天。CCAFS邻近基础设施上的安塔瑞斯CRS-3发射失败短暂影响了USSF保障窗口，导致运行中断16天。",
+  "description": "第三次X-37B飞行，重复使用OTV-1飞行器。2012-12-11 18:03 UTC从CCAFS SLC-41搭乘Atlas V 501 AV-034火箭发射；2014-10-17 16:24 UTC在范登堡空军基地着陆。在轨675天。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-034) from CCAFS SLC-41 2012-12-11.",
+      "label": "发射",
+      "note": "Atlas V 501 (AV-034)从CCAFS SLC-41发射，时间为2012-12-11。",
       "type": "nominal"
     },
     {
       "met": 337.5,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee ~360 km; classified payload operations.",
+      "label": "在轨运行",
+      "note": "近地点~360 km；机密有效载荷运行。",
       "type": "info"
     },
     {
       "met": 675,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at Vandenberg AFB 2014-10-17.",
+      "label": "着陆",
+      "note": "2014-10-17自主在范登堡空军基地跑道着陆。",
       "type": "nominal"
     }
   ]

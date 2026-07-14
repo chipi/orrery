@@ -9,10 +9,10 @@
   ],
   "body_paragraphs": [
     "LEO (Low Earth Orbit, < 2,000 km altitude): cheapest to reach, fastest period (~90 minutes for ISS at 408 km), shortest ground-link delay (a few ms), shortest lifetime due to residual atmospheric drag. Hosts the ISS, Hubble, Starlink, most Earth observation satellites, all crewed activity beyond Apollo.",
-    "MEO (Medium Earth Orbit, 2,000–35,786 km): the navigation band. GPS at 20,200 km, GLONASS at 19,100 km, Galileo at 23,222 km, Beidou MEO at 21,500 km. Period ~12 hours; constellations of 24-30 satellites give global coverage. Above the inner Van Allen belt, below most of the outer.",
+    "MEO (Medium Earth Orbit, 2,000–35,786 km): the navigation band. GPS at 20,200 km, GLONASS at 19,100 km, Galileo at 23,222 km, Beidou MEO at 21,500 km. Periods ~11–14 hours across the navigation band; constellations of 24-30 satellites give global coverage. Above the inner Van Allen belt, below most of the outer.",
     "GEO (Geostationary Earth Orbit, 35,786 km altitude exactly, 0° inclination): period equals Earth's sidereal day (23h 56m 4s) so the satellite appears stationary above one longitude on the equator. Hosts the world's broadcast TV, weather imagery (GOES, Himawari, Meteosat), and traditional comsats. Light-time round-trip ~240 ms — perceptible in voice calls.",
     "HEO (Highly-Elliptical Orbit): low perigee + high apogee. Molniya orbits (Russia) sit at perigee ~600 km, apogee ~40,000 km, inclination 63.4° — chosen so the apogee dwell happens over the northern hemisphere where GEO comsats can't reach. Critical for high-latitude communications and some early-warning constellations.",
-    "Crossing regimes is expensive. ∆v from LEO to GEO is about 3.9 km/s. From LEO to escape (TLI/TMI) is about 3.2 km/s — counter-intuitively cheaper than reaching GEO from LEO, because you don't have to circularise on arrival."
+    "Crossing regimes is expensive. ∆v from LEO to GEO is about 3.9 km/s. From LEO to escape / TLI is about 3.2 km/s — counter-intuitively cheaper than reaching GEO from LEO, because you don't have to circularise on arrival (TMI for Mars requires ~3.6+ km/s)."
   ],
   "diagram_caption": "Concentric Earth bands: LEO (cyan, low altitude), MEO (blue, GPS region), GEO (gold, geostationary ring), HEO (orange, lopsided ellipse)."
 }

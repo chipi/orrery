@@ -1,8 +1,8 @@
 {
   "name": "Parker Solar Probe",
-  "type": "SOLAR-ORBITER · ACTIVE",
-  "first": "Dichtstbijzijnde ruimtevaartuig bij de zon ooit gevlogen (6,1 M km, 9,86 R☉); eerste ruimtevaartuig dat de zonnekorona is binnengevlogen (2021-04-28); snelste door mensen gemaakte object (192 km/s)",
-  "description": "Parker Solar Probe voerde de meest energetische lancering ooit voor een wetenschappelijke missie uit — C3 van 154 km²/s², wat een aangepaste Star 48BV vaste-brandstof derde trap bovenop een Delta IV Heavy vereiste om alleen maar aan de aarde te ontsnappen in een naar-de-zon-vallende baan. Zeven Venus-zwaartekrachtassists over zes jaar verlaagden geleidelijk het perihelium van 0,16 AU (P1, 2018-11-05) naar 0,046 AU (P22, 2024-12-24 — 9,86 zonneradii, 6,1 miljoen km van het oppervlak). Bij P8 op 2021-04-28 dook Parker onder het kritische Alfvén-oppervlak — het eerste ruimtevaartuig ooit dat de zonnekorona binnenging. Bij P22 bereikte het 192 km/s en werd daarmee het snelste door mensen gemaakte object ooit. Het 11,43-cm dikke koolstof-koolstof hitteschild doorstond 1.377 °C terwijl de ruimtevaartuigbus 1 meter erachter op kamertemperatuur bleef.",
+  "type": "ZONNEVERKENNER · ACTIEF",
+  "first": "Dichtstbij de Zon gevlogen ruimtevaartuig ooit (6,1 M km, 9,86 R☉); eerste ruimtevaartuig dat de zonnekroon binnenging (2021-04-28); snelste door mensen gemaakt object (~191 km/s)",
+  "description": "Parker Solar Probe voerde de lancering met de hoogste energie uit die ooit voor een wetenschappelijke missie werd gebruikt — C3 van 154 km²/s², waarvoor een aangepaste Star 48BV solid derde trap bovenop een Delta IV Heavy nodig was om uit de aarde te ontsnappen in een naar-de-Zon-vallende baan. Zeven Venus-zwaartekrachtmanoeuvres over zes jaar verlaagden het perihelium geleidelijk van 0,16 AU (P1, 2018-11-05) naar 0,046 AU (P22, 2024-12-24 — 9,86 zonnestralen, 6,1 miljoen km van het oppervlak). Bij P8 op 2021-04-28 dook Parker onder het kritieke Alfvén-oppervlak — het eerste ruimtevaartuig ooit dat de zonnekroon betrad. Bij P22 bereikte het ~191 km/s, waardoor het het snelste door mensen gemaakte object aller tijden werd. Het 11,43 cm dikke koolstof-koolstofhitteschild hield 1.377 °C vol terwijl de ruimtevaartuigbus 1 meter erachter op kamertemperatuur bleef.",
   "events": [
     {
       "met": 0,
@@ -13,31 +13,31 @@
     {
       "met": 52,
       "label": "VGA-1",
-      "note": "Eerste Venus-zwaartekrachtassist 2018-10-03.",
+      "note": "Eerste Venus-zwaartekrachtmanoeuvre 2018-10-03.",
       "type": "info"
     },
     {
       "met": 85,
       "label": "P1 — EERSTE PERIHELIUM",
-      "note": "2018-11-05, 0,16 AU. Dichtstbij-de-zon ooit, verslaat Helios 2.",
+      "note": "2018-11-05, 0,16 AU. Dichtstbij de Zon ooit, Helios 2 verslagen.",
       "type": "info"
     },
     {
       "met": 989,
-      "label": "P8 — CORONA-INTREDE",
-      "note": "2021-04-28. Eerste ruimtevaartuig dat onder het kritische Alfvén-oppervlak dook.",
+      "label": "P8 — BINNENKOMST KROON",
+      "note": "2021-04-28. Eerste ruimtevaartuig dat onder het kritieke Alfvén-oppervlak dook.",
       "type": "info"
     },
     {
       "met": 1830,
       "label": "VGA-6",
-      "note": "Zesde Venus-assist 2023-08-21.",
+      "note": "Zesde Venus-manoeuvre 2023-08-21.",
       "type": "info"
     },
     {
       "met": 2326,
       "label": "P22 — ONTWERPMIJLPAAL",
-      "note": "2024-12-24. 9,86 R☉ (6,1 M km van de zon). 192 km/s. Hitteschild 1.377 °C.",
+      "note": "2024-12-24. 9,86 R☉ (6,1 M km van de Zon). ~191 km/s. Hitteschild 1.377 °C.",
       "type": "info"
     }
   ]

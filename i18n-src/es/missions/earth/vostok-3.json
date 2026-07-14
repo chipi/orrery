@@ -1,26 +1,26 @@
 {
   "name": "Vostok 3",
-  "dispatch": "Vostok 3 abrió el primer acto de una pieza de teatro orbital. Un día después de que Andriyan Nikolayev alcanzara la órbita, Vostok 4 le siguió, y durante un tiempo las dos naves volaron a pocos kilómetros la una de la otra — la primera vez que dos naves tripuladas habían estado en el espacio simultáneamente. Para el mundo parecía una cita espacial, y los soviéticos se alegraron de permitirlo. En realidad ninguna nave podía maniobrar; la cercanía vino de lanzar una casi en la trayectoria de la otra, y la distancia se amplió constantemente después. Un auténtico hito y un truco de magia a la vez — y un indicio de la verdadera habilidad, la cita espacial real, que nadie tenía aún.",
-  "type": "ÓRBITA TERRESTRE TRIPULADA · VOLADA",
-  "first": "Primer encuentro de vuelo doble — voló a unos 6,5 km de Vostok 4",
-  "description": "Vuelo de 64 órbitas de Andriyán Nikoláyev, lanzado el 1962-08-11 a las 08:30 UTC. Veinticuatro horas después del lanzamiento, Vostok 4 (Popóvich) se le unió en órbita — la mayor aproximación fue de aproximadamente 6,5 km, aunque no existía capacidad real de encuentro (las dos cápsulas carecían de propulsores de maniobra). El vuelo simultáneo fue una respuesta propagandística a las misiones suborbitales estadounidenses y al Friendship 7 de John Glenn. Nikoláyev aterrizó el 1962-08-15 a las 07:55 UTC cerca de Karagandá, RSS de Kazajistán, tras casi 4 días en el espacio.",
+  "type": "NAVE TRIPULADA ÓRBITA TERRESTRE · REALIZADO",
+  "first": "Primer encuentro de vuelo dual — voló a ~6,5 km de Vostok 4",
+  "dispatch": "Vostok 3 abrió el primer acto de una obra de teatro orbital. Un día después de que Andriyan Nikolayev alcanzase la órbita, Vostok 4 lo siguió, y durante un tiempo ambas naves volaron a pocos kilómetros la una de la otra — la primera vez que dos naves tripuladas estaban simultáneamente en el espacio. Para el mundo parecía un encuentro de proximidad, y los soviéticos estaban encantados de permitirlo. En realidad ninguna de las dos naves podía maniobrar; la proximidad resultó de lanzar una casi en la trayectoria de la otra, y la distancia se incrementó constantemente después. Un primer logro genuino y también un truco de magia — e indicio de la verdadera destreza, un encuentro real, que aún nadie había dominado.",
+  "description": "Vuelo de 64 órbitas de Andriyan Nikolayev, lanzado 1962-08-11 08:24 UTC. Veinticuatro horas después del lanzamiento Vostok 4 (Popovich) se unió a él en órbita — el acercamiento más cercano fue aproximadamente 6,5 km, aunque ninguna capacidad real de encuentro de proximidad existía (ambas cápsulas carecían de propulsores de maniobra). El vuelo simultáneo fue una respuesta propagandística a las misiones suborbitales estadounidenses y al Friendship 7 de John Glenn. Nikolayev aterrizó 1962-08-15 06:52 UTC cerca de Karagandá, RSS de Kazajistán, después de casi 4 días en el espacio.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Vostok-K from Baikonur Site 1 1962-08-11 08:30 UTC.",
+      "label": "LANZAMIENTO",
+      "note": "Vostok-K desde Baikonur Sitio 1 1962-08-11 08:24 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.25,
-      "label": "VOSTOK 4 RDV",
-      "note": "Vostok 4 launched 24h later; closest approach ~6.5 km on day 2.",
+      "label": "VOSTOK 4 ENCUENTRO",
+      "note": "Vostok 4 lanzado 24 h después; acercamiento más cercano ~6,5 km en el día 2.",
       "type": "info"
     },
     {
       "met": 3.98,
-      "label": "EJECT + LAND",
-      "note": "Nikolayev landed near Karaganda 1962-08-15 07:55 UTC after 64 orbits.",
+      "label": "EYECCIÓN + ATERRIZAJE",
+      "note": "Nikolayev aterrizó cerca de Karagandá 1962-08-15 06:52 UTC después de 64 órbitas.",
       "type": "nominal"
     }
   ]

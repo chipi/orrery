@@ -1,12 +1,32 @@
 {
-  "name": "Chang'e 4 / Yutu-2",
-  "type": "FAR-SIDE LANDER · ROVER · ACTIVE",
-  "first": "First soft-landing on the lunar far side",
-  "description": "The lunar far side has no direct radio line of sight to Earth. To land a spacecraft there, China first launched the Queqiao relay satellite to a halo orbit around Earth-Moon Lagrange point L2 — a vantage point that sees both the far side and Earth simultaneously. With that infrastructure in place, Chang'e 4 became the first spacecraft to soft-land on the far side. The Yutu-2 rover has been operating since January 2019 and has driven 1.9+ km, the longest traverse by any lunar rover.",
+  "name": "嫦娥四号 / 玉兔-2",
+  "type": "月球背面着陆器 · 月球车 · 运行中",
+  "first": "月球背面首次软着陆",
+  "description": "月球背面与地球之间没有直接的无线电视线。为了在那里着陆航天器，中国首先将鹊桥中继卫星发射到环地月拉格朗日点L2的光晕轨道——这个位置可以同时看到月球背面和地球。有了这一基础设施，嫦娥四号成为首个在月球背面软着陆的航天器。玉兔-2月球车自2019年1月以来一直在运行，截至2024年已行驶约1.6 km，成为历史上运行时间最长的月球车。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Long March 3B from Xichang.", "type": "nominal" },
-    { "met": 4, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },
-    { "met": 27, "label": "TOUCHDOWN", "note": "Lander touches down at Von Kármán Crater 2019-01-03 — first spacecraft on the far side. All comms via Queqiao relay at Earth-Moon L2.", "type": "nominal" },
-    { "met": 27.01, "label": "YUTU-2 DEPLOYED", "note": "Rover rolls down ramp.", "type": "info" }
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "长征三号乙从西昌发射。",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "月球轨道插入",
+      "note": "月球轨道插入。",
+      "type": "nominal"
+    },
+    {
+      "met": 27,
+      "label": "接触",
+      "note": "着陆器于2019-01-03在卡门撞击坑着陆——月球背面首个航天器。所有通讯均通过位于地月L2的鹊桥中继进行。",
+      "type": "nominal"
+    },
+    {
+      "met": 27.01,
+      "label": "玉兔-2已部署",
+      "note": "月球车沿斜坡下行。",
+      "type": "info"
+    }
   ]
 }

@@ -1,7 +1,33 @@
 {
   "name": "Liberty Bell 7 / MR-4",
-  "dispatch": "Liberty Bell 7 volò in modo impeccabile ed è ricordata per i trenta secondi successivi alla fine del volo. Il salto suborbitale di Gus Grissom ripeté quello di Shepard — a prova che il primo volo non era stato un colpo di fortuna — ma sull'acqua il nuovo portello esplosivo si attivò da solo, la capsula si allagò e affondò sul fondo dell'Atlantico mentre Grissom rischiò di annegare nella sua tuta che si riempiva. Se avesse urtato il grilletto o se fosse partito da solo fu discusso per il resto della sua vita e non venne mai chiarito. La vera lezione del volo fu più silenziosa e più utile: la parte più pericolosa di un volo spaziale non è sempre il volo spaziale.",
-  "type": "EQUIPAGGIO SUBORBITALE · VOLATO",
-  "first": "Secondo volo suborbitale americano; un guasto al portello fece perdere la capsula (recuperata nel 1999)",
-  "description": "Il volo suborbitale di 15 minuti di Gus Grissom — secondo americano nello spazio, primo volo con portello di fuga esplosivo. Dopo l'ammaraggio il portello scattò prematuramente, la capsula si allagò e Liberty Bell 7 affondò a 4900 m di profondità; Grissom riuscì a uscire ma la sua tuta si riempì d'acqua e rischiò di annegare durante il recupero in elicottero. La causa dell'attivazione del portello rimase controversa per decenni; Grissom ha sempre sostenuto di non aver toccato il percussore. Recuperata il 20-07-1999 da una spedizione Oceaneering/Discovery Channel, restaurata e ora esposta al Kansas Cosmosphere & Space Center, Hutchinson KS. Il libro di Tom Wolfe e il film del 1983 The Right Stuff hanno drammatizzato questo volo e la controversia del portello."
+  "type": "VOLO SUBORBITALE CON EQUIPAGGIO · COMPLETATO",
+  "first": "Secondo volo suborbitale americano; il malfunzionamento del portello ha perduto la capsula (recuperata 1999)",
+  "dispatch": "Liberty Bell 7 ha volato perfettamente ed è ricordato per i trenta secondi dopo che ha smesso di volare. Il salto suborbitale di Gus Grissom ha ripetuto quello di Shepard — prova che il primo volo non era stato un caso fortuito — ma sull'acqua il nuovo portello esplosivo si è azionato da solo, la capsula si è allagata, e si è inabissata sul fondo dell'Atlantico mentre Grissom rischiava quasi di annegare nel suo tuta che si riempiva d'acqua. Se aveva urtato il grilletto o se si era azionato spontaneamente fu oggetto di discussione per il resto della sua vita e mai risolto. La vera lezione del volo era più tranquilla e più utile: la parte più pericolosa di un volo spaziale non è sempre il volo spaziale stesso.",
+  "description": "Il volo suborbitale di 15 minuti di Gus Grissom — secondo americano nello spazio, primo volo a presentare un portello di fuga esplosivo. Dopo l'ammaraggio il portello si è azionato prematuramente, la capsula si è allagata, e Liberty Bell 7 si è inabissata in 4900 m di acqua; Grissom è scappato ma la sua tuta ha assorbito acqua ed è quasi annegato durante il recupero dell'elicottero. La causa dell'azionamento del portello rimase controversa per decenni; Grissom ha sostenuto di non aver urtato il percussore. Recuperata 1999-07-20 da una spedizione Oceaneering/Discovery Channel, restaurata e ora esposta al Kansas Cosmosphere & Space Center, Hutchinson KS. Il libro di Tom Wolfe / film del 1983 The Right Stuff ha drammatizzato questo volo e la controversia del portello.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "MR-4 da Cape Canaveral LC-5 1961-07-21 12:20 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.000018,
+      "label": "APOGEO",
+      "note": "Apogeo 190 km dopo 2,5 minuti; ~5 min di assenza di gravità.",
+      "type": "info"
+    },
+    {
+      "met": 0.000174,
+      "label": "AMMARAGGIO",
+      "note": "Oceano Atlantico 480 km a valle della traiettoria. Il portello si è azionato prematuramente — la capsula si è allagata e si è inabissata. Grissom è scappato; recuperato da USS Randolph.",
+      "type": "warning"
+    },
+    {
+      "met": 13880,
+      "label": "RECUPERO DELLA CAPSULA",
+      "note": "Liberty Bell 7 sollevata da 4900 m di profondità da Oceaneering International, 1999-07-20.",
+      "type": "info"
+    }
+  ]
 }

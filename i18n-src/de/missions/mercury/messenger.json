@@ -1,25 +1,25 @@
 {
   "name": "MESSENGER",
-  "type": "Orbiter · Geflogen",
-  "first": "Erste Sonde im Orbit um Merkur; erste komplette Oberflächenkarte des innersten Planeten",
-  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) nutzte sechs Schwerkraftunterstützungen in sieben Jahren — Erde, zweimal Venus, dreimal Merkur — um am 18.03.2011 in den Merkurorbit einzuschwenken. Schutz durch Sonnenschild mit einer Seite bei 370 °C und der anderen bei -45 °C. Entdeckungen: Wassereis in dauerhaft beschatteten Polkratern, bislang unbekannte geologische »Hollows«, und Bestätigung, dass Merkurs Eisenkern ~85 % des Planetenradius einnimmt (das größte Kernverhältnis im Sonnensystem). Mission endete am 30.04.2015 mit einem kontrollierten Aufprall, nachdem der Treibstoff verbraucht war.",
+  "type": "ORBITER · GEFLOGEN",
+  "first": "Erste Raumsonde, die den Merkur umkreiste; erste vollständige Oberflächenkarte des innersten Planeten",
+  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) nutzte sechs Schwerkrafthilfen über sieben Jahre — Erde, Venus zweimal, Merkur dreimal — um am 2011-03-18 in die Merkurumlaufbahn zu verlangsamen. Mit Sonnenschutz ausgestattet, eine Seite bei 370 °C und die andere bei -45 °C. Entdeckungen umfassten Wassereis in permanent beschatteten Polkratern, zuvor unbekannte geologische Strukturen namens „Hollows\", und die Bestätigung, dass der Eisenkern des Merkur etwa 85 % des Planetenradius ausmacht (das größte Kern-zu-Radius-Verhältnis aller Planeten im Sonnensystem). Die Mission endete mit einem kontrollierten Einschlag auf die Merkuroberfläche am 2015-04-30, nachdem der Treibstoff aufgebraucht war.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "Delta II 7925H hebt MESSENGER auf einer Sechs-Vorbeiflug-Trajektorie.",
+      "note": "Delta II 7925H bringt MESSENGER auf eine Bahn mit sechs Vorbeiflugen.",
       "type": "nominal"
     },
     {
       "met": 365,
-      "label": "ERDSCHWUNG",
-      "note": "Erste von sechs Unterstützungen, die die Bahn genug verlangsamen, um in den Merkurorbit einzutreten.",
+      "label": "SCHWERKRAFTHILFE ERDE",
+      "note": "Erste von sechs Hilfen, um die Bahn ausreichend zu verlangsamen, um in die Merkurumlaufbahn zu gelangen.",
       "type": "nominal"
     },
     {
       "met": 2419,
-      "label": "MERKUR-ORBITEINFÜGUNG",
-      "note": "Haupttriebwerk-Manöver setzt MESSENGER nach 7 Jahren Reise in den Merkurorbit.",
+      "label": "MERKURORBITALEINSATZ",
+      "note": "Haupttriebwerk-Abbrand platziert MESSENGER nach sieben Jahren Flugstrecke in die Merkurumlaufbahn.",
       "type": "nominal"
     }
   ]

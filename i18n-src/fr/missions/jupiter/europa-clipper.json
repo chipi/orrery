@@ -1,8 +1,8 @@
 {
   "name": "Europa Clipper",
-  "type": "ORBITEUR + SURVOLS MULTIPLES · ACTIF",
-  "first": "Première mission dédiée à la caractérisation de l'habitabilité d'une lune glacée ; plus grand vaisseau spatial de mission planétaire jamais lancé (6065 kg, panneaux solaires de 100 m²)",
-  "description": "Europa Clipper se rend à Jupiter pour étudier Europe — une lune glacée de 3 121 km dont on pense qu'elle abrite un océan global d'eau liquide sous une coquille de glace de 15-25 km, l'environnement potentiellement habitable le plus accessible du système solaire. Lancé le 2024-10-14 sur un Falcon Heavy à C3 41,7. Une assistance gravitationnelle de Mars en 2025-03 + une assistance gravitationnelle de la Terre en 2026-12 fournissent la trajectoire ; arrivée à Jupiter le 2030-04-11 pour l'insertion orbitale. La tournée orbitale exécute 49 survols rapprochés d'Europe sur quatre ans — passant à moins de 25 km de la surface d'Europe lors des passages les plus proches, conçus pour cartographier l'ensemble de la lune tout en limitant la dose de rayonnement du vaisseau dans les ceintures de radiation brutales de Jupiter. Instruments : radar REASON à pénétration de glace, spectromètre de masse MASPEX (échantillonne le matériau du panache s'il y en a), imageur thermique E-THEMIS (détecte les geysers actifs), magnétomètre + instruments à plasma confirment la profondeur de l'océan à partir de la réponse magnétique induite.",
+  "type": "ORBITEUR + SURVOL MULTIPLE · ACTIF",
+  "first": "Première mission dédiée à la caractérisation de l'habitabilité d'une lune glacée ; vaisseau spatial de mission planétaire le plus volumineux jamais lancé (6065 kg, panneaux solaires de 100 m²)",
+  "description": "Europa Clipper se rend à Jupiter pour étudier Europe — une lune glacée de 3121 km de diamètre censée renfermer un océan d'eau liquide global sous une coquille de glace de 15–25 km, l'environnement potentiellement habitable le plus accessible du système solaire. Lancé le 2024-10-14 sur un Falcon Heavy avec une C3 de 41,7. Une assistance gravitationnelle de Mars en mars 2025 a infléchi la trajectoire vers la Terre ; une assistance gravitationnelle terrestre le 2026-12 fournit la poussée finale vers l'extérieur ; arrivée à Jupiter le 2030-04-11 pour l'insertion en orbite. La tournée orbitale exécute 49 survols rapprochés d'Europe sur quatre ans — passant à moins de 25 km de la surface d'Europe lors des approches les plus proches, conçue pour cartographier l'ensemble de la lune tout en limitant la dose de radiation du vaisseau spatial dans les ceintures de radiation brutales de Jupiter. Instruments : radar de pénétration de glace REASON, spectromètre de masse MASPEX (prélève les matériaux du panache le cas échéant), imageur thermique E-THEMIS (détecte les geysers actifs), magnétomètre et instruments à plasma confirment la profondeur de l'océan à partir de la réponse magnétique induite.",
   "events": [
     {
       "met": 0,
@@ -13,25 +13,25 @@
     {
       "met": 504,
       "label": "ASSISTANCE GRAVITATIONNELLE DE MARS",
-      "note": "2025-03-01. Infléchit la trajectoire vers la rencontre avec la Terre.",
+      "note": "2025-03-01. Infléchit la trajectoire vers la rencontre terrestre.",
       "type": "info"
     },
     {
       "met": 1530,
-      "label": "ASSISTANCE GRAVITATIONNELLE DE LA TERRE",
-      "note": "2026-12-03. Accélération finale en direction de Jupiter.",
+      "label": "ASSISTANCE GRAVITATIONNELLE TERRESTRE",
+      "note": "2026-12-03. Accélération finale vers Jupiter.",
       "type": "info"
     },
     {
       "met": 2005,
       "label": "APPROCHE DE JUPITER",
-      "note": "2030-04-11. Approche finale vers JOI.",
+      "note": "2030-04-11. Approche finale pour l'insertion en orbite.",
       "type": "info"
     },
     {
       "met": 2005.005,
       "label": "INSERTION EN ORBITE DE JUPITER",
-      "note": "Combustion de 760 m/s. 49 survols d'Europe sur 4 ans suivent.",
+      "note": "Combustion de 760 m/s. 49 survols d'Europe sur 4 ans à suivre.",
       "type": "info"
     }
   ]

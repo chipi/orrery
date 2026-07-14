@@ -1,16 +1,16 @@
 {
   "title": "Équation de Tsiolkovsky",
-  "intro_sentence": "Combien de Δv tu obtiens d'un moteur et d'une charge de propergol — l'équation qui rend le vol spatial logarithmique.",
+  "intro_sentence": "Comment obtenir un changement de vitesse avec un moteur et une charge de propergol donnés — l'équation qui fait du vol spatial un problème logarithmique.",
   "narrative_101": [
-    "Konstantin Tsiolkovsky était un instituteur russe sourd, en 1903 il écrivit une équation à laquelle personne n'échappe. Δv dépend de qualité moteur et fraction propergol — LOGARITHMIQUEMENT.",
-    "Logarithme = piège. Doubler Δv : pas double propergol, exponentiellement plus. Saturn V : 90% propergol.",
-    "Deux échappées : meilleurs moteurs (Isp) et étagement. Réelles font les deux. Limite single-shot : 10-15 km/s."
+    "Konstantin Tsiolkovsky était un instituteur russe sourd qui réfléchissait au vol spatial pendant ses loisirs, des décennies avant que quiconque puisse réellement construire une fusée. En 1903, il a écrit une équation inévitable, et nous ne l'avons toujours pas contournée. Elle dit : le ∆v que vous pouvez extraire d'une fusée dépend de deux choses — la qualité de votre moteur et la proportion de carburant dans votre fusée. Et la relation est LOGARITHMIQUE.",
+    "Le logarithme est le piège. Si votre fusée est à moitié du carburant, vous obtenez un certain ∆v. Pour doubler ce ∆v, vous ne faites pas passer votre fusée aux deux tiers de carburant — vous devez atteindre environ 75 % de carburant. Pour le tripler, environ 87–88 % de carburant. Les chiffres explosent exponentiellement. C'est pourquoi une Saturn V est une tour de 110 mètres composée presque entièrement de propergol — l'engin spatial n'est qu'une minuscule capsule au sommet.",
+    "Deux solutions. Une : des moteurs plus performants (impulsion spécifique plus élevée) — cela augmente le multiplicateur pour obtenir plus de ∆v pour le même rapport de masse. Deux : l'étagement — larguez les réservoirs vides au fur et à mesure du vidage pour ne pas transporter de poids mort. Les vraies fusées font les deux. Même ainsi, les missions sans ravitaillement plafonnent autour de 10–15 km/s de ∆v. Au-delà, l'équation dit que vous devez vous ravitailler en orbite, ou utiliser des moteurs exotiques, ou bénéficier de l'aide d'une planète."
   ],
   "body_paragraphs": [
-    "Tsiolkovsky 1903. Δv dépend de Isp moteur et rapport masse initiale/finale — logarithmique.",
-    "Logarithme cruel. Double propergol : ajoute morceau constant. Double portée : fusée exponentiellement plus grande. Chimique (300-450s) plafonne à 10-15 km/s. Au-delà : Isp plus haut (ionique 3000s) ou étagement.",
-    "Saturn V : 7800 t humide, 600 t sec. Rapport 13. Isp 330s. Δv ≈ 8,3 km/s — à peine assez pour TLI."
+    "Konstantin Tsiolkovsky a dérivé l'équation de la fusée en 1903, des décennies avant que quiconque construise une fusée digne de voler. Le résultat a l'inévitabilité de la physique : ∆v dépend de l'impulsion spécifique `Isp` du moteur et du rapport de la masse initiale à la masse finale — et c'est logarithmique dans ce rapport.",
+    "Le log est la partie cruelle. Doubler le carburant ne double pas le ∆v ; cela ajoute seulement un chunk constant. Voulez-vous parcourir deux fois plus loin ? Vous avez besoin d'une fusée exponentiellement plus grande. C'est la tyrannie de l'équation de la fusée : les moteurs chimiques (`Isp` ~300–450s) heurtent un mur autour de 10–15 km/s de ∆v avant que le rapport de masse devienne absurde. Pour aller plus loin, vous avez besoin d'une `Isp` plus élevée (moteurs ioniques, ~3000s) ou d'un étagement (larguez les réservoirs au fur et à mesure du vidage), ou les deux.",
+    "Saturn V : 7 800 tonnes en charge, 600 tonnes à vide. Rapport de masse 13. Isp ~330s. ∆v ≈ 8,3 km/s — à peine suffisant pour atteindre l'injection trans-lunaire. La réutilisabilité de Falcon 9 heurte un mur différent : chaque kilogramme de matériel récupérable coûte proportionnellement en charge utile."
   ],
-  "formula_caption": "Δv depuis Isp, g₀, et rapport de masses m₀/m_f.",
-  "diagram_caption": "Δv vs rapport de masses : logarithmique."
+  "formula_caption": "∆v à partir de l'impulsion spécifique, de l'accélération gravitationnelle g₀ et du rapport de masse m₀/m_f.",
+  "diagram_caption": "Courbe du ∆v en fonction du rapport de masse : logarithmique. Doubler le carburant n'ajoute qu'un chunk constant de ∆v."
 }

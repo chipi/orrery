@@ -1,43 +1,43 @@
 {
   "name": "Viking 1",
-  "type": "ORBITER · LANDER · GEVLOGEN",
-  "first": "Eerste volledig succesvolle Mars-landing; eerste langeduuroppervlakwetenschap",
-  "description": "De missie die ons onze eerste duurzame blik op het Marsoppervlak gaf. Viking 1's lander werkte 6 jaar 4 maanden bij Chryse Planitia — voerde biologie-experimenten uit ontworpen om leven te detecteren (resultaten dubbelzinnig; één experiment produceerde een positief signaal dat decennia later nog steeds wordt besproken), mat het weer, gaf panoramische beelden terug en analyseerde de bodemsamenstelling. De orbiter karteerde 97% van Mars op 100 m resolutie en hielp landingsplaatsen voor missies decennia later in de toekomst te verkennen.",
+  "type": "ORBITER · LANDER · FLOWN",
+  "first": "Eerste volledig geslaagde Marslandding; eerste langdurige oppervlaktewetenschap",
+  "description": "De missie die ons onze eerste aanhoudende blik op het Marsoppervlak gaf. De lander van Viking 1 opereerde gedurende 6 jaar en 4 maanden op Chryse Planitia — waarbij biologische experimenten werden uitgevoerd die waren ontworpen om leven op te sporen (resultaten waren ambigue; één experiment leverde een positief signaal op dat nog decennia later wordt besproken), weer werd gemeten, panoramische afbeeldingen werden teruggezonden en bodemsamenstelling werd geanalyseerd. De Viking-orbiters hebben samen 97% van Mars in kaart gebracht met een resolutie van ~300 m en hielpen landingslocaties voor missies die nog decennia in de toekomst lagen uit te kiezen.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Titan IIIE-Centaur vanuit Cape Canaveral LC-41.",
+      "note": "Titan IIIE-Centaur vanaf Cape Canaveral LC-41.",
       "type": "nominal"
     },
     {
       "met": 7,
       "label": "TCM-1",
-      "note": "Eerste trajectcorrectie.",
+      "note": "Eerste baanverbetering.",
       "type": "nominal"
     },
     {
       "met": 304,
-      "label": "MARS-BAAN INSERTIE",
-      "note": "Orbiter vangt in Mars-baan; lander blijft bevestigd voor locatieonderzoek.",
+      "label": "MARSBAANOPNAME",
+      "note": "Orbiter gaat in een baan rond Mars; lander blijft bevestigd voor terreinverkenning.",
       "type": "nominal"
     },
     {
       "met": 335,
-      "label": "LANDER-SCHEIDING",
+      "label": "LANDERSEPARATIE",
       "note": "Lander koppelt los voor afdaling naar Chryse Planitia.",
       "type": "nominal"
     },
     {
       "met": 335.05,
-      "label": "TOUCHDOWN",
-      "note": "Lander zet neer 1976-07-20, precies 7 jaar na Apollo 11.",
+      "label": "LANDING",
+      "note": "Lander landt op 1976-07-20, exact 7 jaar na Apollo 11.",
       "type": "nominal"
     },
     {
       "met": 335.1,
       "label": "EERSTE PANORAMA",
-      "note": "Eerste hoge-resolutie oppervlaktebeelden teruggekeerd.",
+      "note": "Eerste hoogresolutie oppervlakteafbeeldingen teruggezonden.",
       "type": "info"
     }
   ]

@@ -1,31 +1,31 @@
 {
   "name": "神舟一号",
-  "type": "载人定型试验 · 无人 · 已飞行",
-  "first": "中国首次神舟轨道试验 — 为中国载人航天开辟道路",
-  "description": "神舟载人航天工程首次飞行。1999-11-20 22:30 UTC由酒泉发射，搭乘人证级长征二号F(CZ-2F)首飞。返回舱以196 × 324 km、倾角42.6°的轨道完成14圈飞行，1999-11-21 19:41 UTC在内蒙古草原回收。携带生命保障系统模拟件、遥测设备和一面中国国旗，并搭载用于微重力遗传学返回试验的种子。标志着中国紧随苏联、美国走向自主载人航天的决心；直接导向2003年杨利伟的神舟五号。",
+  "type": "载人航天器试验 · 无人 · 已飞行",
+  "first": "中国首次神舟轨道试验——开启了中国独立载人航天的道路",
+  "description": "神舟载人航天器计划的首次飞行。1999年11月19日22:30 UTC从酒泉航天发射场由人类航天等级的长征2F火箭（CZ-2F）首飞携带发射。返回舱在195 × 315 km、倾角42.6°的轨道上完成14圈，于1999年11月20日19:41 UTC在内蒙古草原成功回收。携带了生命保障系统模型、遥测设备和一面中国国旗，以及微重力遗传学实验回收货物种子。标志着中国继苏联/美国之后，致力于独立进行载人航天；直接导向了2003年的神舟五号任务及杨利伟。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Long March 2F maiden flight from Jiuquan SLC-43 at 22:30 UTC.",
+      "label": "发射",
+      "note": "长征2F首飞，1999年11月19日22:30 UTC从酒泉LA-4发射场发射。",
       "type": "nominal"
     },
     {
       "met": 0.001,
-      "label": "ORBIT",
-      "note": "14-orbit flight at 196 × 324 km, 42.6° inclination.",
+      "label": "入轨",
+      "note": "在195 × 315 km、倾角42.6°的轨道上完成14圈飞行。",
       "type": "nominal"
     },
     {
       "met": 0.875,
-      "label": "DE-ORBIT",
-      "note": "Service-module retro-fire over Africa.",
+      "label": "变轨",
+      "note": "服务舱在非洲上空进行变轨制动。",
       "type": "nominal"
     },
     {
       "met": 0.882,
-      "label": "RECOVERY",
-      "note": "Capsule descended to Siziwang Banner, Inner Mongolia, 1999-11-21 19:41 UTC.",
+      "label": "回收",
+      "note": "返回舱降落到内蒙古多伦县，时间为1999年11月20日19:41 UTC。",
       "type": "nominal"
     }
   ]

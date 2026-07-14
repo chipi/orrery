@@ -1,8 +1,8 @@
 {
   "name": "Psyche",
-  "type": "ORBITER · ACTIVE",
-  "first": "Prima missione verso un asteroide di classe M ricco di metalli; primo utilizzo di propulsori ionici ad effetto Hall come propulsione primaria di crociera",
-  "description": "Psyche raggiunge il nucleo esposto di nichel-ferro di un proto-pianeta differenziato — un corpo metallico di 226 km che potrebbe essere l'analogo più vicino al nucleo terrestre accessibile ovunque. Lanciata il 2023-10-13 su un Falcon Heavy da Kennedy LC-39A. Quattro propulsori ionici ad effetto Hall SPT-140 spiralizzano la traiettoria verso l'esterno; un'assistenza gravitazionale di Mars nel 2026-05 aggiunge l'energia che la sola spinta ionica non potrebbe fornire in tempo. Arrivo previsto per il 2029-08, seguito da una discesa di 26 mesi in quattro fasi orbitali (A → B → C → D) per mappare gravità, magnetismo, topografia e composizione dell'asteroide. Se l'ipotesi del nucleo metallico è corretta, Psyche apparirà diverso da qualsiasi altro corpo che abbiamo visitato — superficie di metallo nudo, depositi di solfuro di ferro, nessuno del caos da cumulo di macerie tipico degli asteroidi comuni.",
+  "type": "ORBITER · ATTIVO",
+  "first": "Prima missione verso un asteroide ricco di metalli di classe M; primo utilizzo di propulsori ionici a effetto Hall come propulsione primaria di trasferimento",
+  "description": "Psyche si spinge verso il nucleo di nickel-ferro esposto di un proto-pianeta differenziato — un corpo metallico di 226 km che potrebbe essere l'analogo più prossimo al nucleo terrestre tra quelli accessibili. Lanciato il 2023-10-13 con un Falcon Heavy da Kennedy LC-39A. Quattro propulsori ionici SPT-140 a effetto Hall spiralizzano la traiettoria verso l'esterno; un'assistenza gravitazionale di Marte nel maggio 2026 (distanza minima 4.609 km) ha fornito l'energia che la sola spinta ionica non avrebbe potuto consegnare in tempo. Arrivo pianificato agosto 2029, seguito da una discesa a quattro fasi orbitali di 26 mesi (A → B → C → D) che mapperà la gravità, il magnetismo, la topografia e la composizione dell'asteroide. Se l'ipotesi del nucleo metallico è corretta, Psyche apparirà diverso da qualsiasi altro corpo celeste visitato — superficie di metallo nudo, depositi di solfuro di ferro, nessun del caos di asteroidi pile di macerie tipici.",
   "events": [
     {
       "met": 0,
@@ -13,13 +13,13 @@
     {
       "met": 30,
       "label": "INIZIO CROCIERA IONICA",
-      "note": "Quattro propulsori ionici ad effetto Hall prendono il controllo. Accelerazione continua a bassa spinta per oltre 4 anni.",
+      "note": "Quattro propulsori ionici a effetto Hall prendono il controllo. Accelerazione continua a bassa spinta per oltre 4 anni.",
       "type": "info"
     },
     {
       "met": 945,
-      "label": "ASSISTENZA GRAVITAZIONALE DI MARS",
-      "note": "2026-05-15, avvicinamento minimo di 3.000 km.",
+      "label": "ASSISTENZA GRAVITAZIONALE DI MARTE",
+      "note": "2026-05-15. Distanza minima 4.609 km — sorvolo di Marte completato.",
       "type": "info"
     },
     {

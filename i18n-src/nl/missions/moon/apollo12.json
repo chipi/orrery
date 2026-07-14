@@ -1,62 +1,62 @@
 {
   "name": "Apollo 12",
-  "dispatch": "Als Apollo 11 bewees dat je de Maan kon bereiken, bewees Apollo 12 dat je een specifieke plek erop kon bereiken. Zesendertig seconden na de lancering trof de bliksem de raket en vielen de instrumenten van het ruimtevaartuig uit; een vierentwintigjarige controller genaamd John Aaron haalde een obscure oplossing — \"SCE to AUX\" — uit zijn geheugen, en de vlucht ging door. Vervolgens zetten Conrad en Bean hun Lunar Module neer op de Oceaan der Stormen op een paar honderd voet van een sonde die daar twee jaar had gestaan, liepen erheen en brachten stukken ervan mee naar huis. Die precisie was het echte resultaat: de Maan was opgehouden een bestemming te zijn en was een adres geworden.",
   "type": "BEMANDE LANDER · GEVLOGEN",
-  "first": "Tweede bemande maanlanding — precisielanding op 163 m van Surveyor 3",
-  "description": "De tweede bemande maanlanding. Saturn V werd tijdens de opstijging tweemaal door de bliksem getroffen (T+36 s en T+52 s) — Bean herstelde het ruimtevaartuig via de beroemde \"SCE to AUX\"-oproep van EECOM John Aaron. Conrad en Bean voerden een precisielanding uit op de Oceaan van Stormen binnen 163 m van Surveyor 3 (in april 1967 zacht geland), liepen vervolgens naar Surveyor 3 en verwijderden de camera + een oppervlaktemonster. Ze plaatsten ALSEP (de eerste ALSEP, tegen Apollo 11's eenvoudigere EASEP) die 8 jaar data zond. De missie bracht 34 kg monsters terug.",
+  "first": "Tweede bemande maanlanding — precieze landing 163 m van Surveyor 3",
+  "description": "De tweede bemande maanlanding. Saturn V werd tijdens de beklimming twee keer door bliksem getroffen (T+36 s en T+52 s) — Bean herstelde het ruimtevaartuig via de beroemde \"SCE to AUX\"-oproep van EECOM John Aaron, waarna de bemanning de traagheidsmeeteenheid opnieuw uitlijnte in maanbaan. Conrad en Bean voerden een puntprecieze landing uit op de Ocean of Storms binnen 163 m van Surveyor 3 (die in april 1967 zacht was geland), liepen vervolgens naar Surveyor 3 en verwijderden de camera + een monster van het oppervlak — stukken die naar de aarde kwamen voor analyse van langdurige blootstelling aan het maanoppervlak. Ze plaatsten ALSEP (het volledige Apollo Lunar Surface Experiments Package — het eerste ALSEP, vergeleken met Apollo 11's eenvoudigere EASEP) dat 8 jaar lang gegevens uitzond. De missie bracht 34 kg aan monsters terug, waaronder donkere mare-basalten.",
+  "dispatch": "Als Apollo 11 bewees dat je de maan kon bereiken, bewees Apollo 12 dat je een specifieke plek erop kon bereiken. Zesendertig seconden na de lancering trof de bliksem de raket en vielen de instrumenten van het ruimtevaartuig uit; een vierentwintigjarige controller genaamd John Aaron haalde een obscure oplossing — \"SCE to AUX\" — uit zijn geheugen, en de vlucht ging door. Toen zetten Conrad en Bean hun Lunar Module neer op de Ocean of Storms op een paar honderd voet van een sonde die daar al twee jaar stond, liepen ernaartoe en brachten stukken ervan naar huis. Die precisie was het echte resultaat: de maan was opgehouden een bestemming te zijn en was een adres geworden.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-507) from Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Two lightning strikes on the stack (T+36 s, T+52 s) tripped fuel cells offline; recovered via \"SCE to AUX\" call.",
+      "label": "LANCERING",
+      "note": "Saturn V (AS-507) vanaf Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Twee blikseminslagen op de stapel (T+36 s, T+52 s) schakelden brandstofcellen uit; hersteld via \"SCE to AUX\"-oproep.",
       "type": "warning"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection — recovery from lightning strikes verified; mission GO for Moon.",
+      "note": "Trans-lunaire injectie — herstel van blikseminslagen geverifieerd; missie GO voor maan.",
       "type": "nominal"
     },
     {
       "met": 3.39,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.89 km/s.",
+      "note": "Maanbaaninvoeging. SPS ∆v ~0,89 km/s.",
       "type": "nominal"
     },
     {
       "met": 5.43,
-      "label": "TOUCHDOWN",
-      "note": "Intrepid lands at Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — within 163 m of Surveyor 3 (the most precise lunar landing yet).",
+      "label": "LANDING",
+      "note": "Intrepid landt op Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — binnen 163 m van Surveyor 3 (de meest precieze maanlanding tot nu toe).",
       "type": "nominal"
     },
     {
       "met": 5.58,
-      "label": "SURVEYOR 3 VISIT",
-      "note": "Conrad + Bean walk to Surveyor 3 (~163 m away), remove its TV camera + samples for return to Earth — first time a crew visited a previously-landed robotic spacecraft.",
+      "label": "SURVEYOR 3 BEZOEK",
+      "note": "Conrad + Bean lopen naar Surveyor 3 (~163 m verderop), verwijderen de TV-camera + monsters voor terugkeer naar aarde — eerste keer dat een bemanning een eerder geland robotisch ruimtevaartuig bezocht.",
       "type": "info"
     },
     {
       "met": 6.74,
-      "label": "ASCENT",
-      "note": "Intrepid lifts off after 31 h 31 m on surface. 34 kg of samples returned.",
+      "label": "OPSTIJGING",
+      "note": "Intrepid stijgt op na 31 u 31 m op het oppervlak. 34 kg aan monsters teruggebracht.",
       "type": "nominal"
     },
     {
       "met": 6.93,
-      "label": "LM IMPACT",
-      "note": "Intrepid ascent stage deliberately crashed onto Moon to calibrate ALSEP seismometers. First man-made lunar impact event.",
+      "label": "LM INSLAG",
+      "note": "Intrepid-opstijgfase opzettelijk op de maan laten neerstorten om ALSEP-seismometers te kalibreren — de eerste bemande-missie ruimtevaartuigfase die opzettelijk op de maan werd geïmpacteerd en geregistreerd door een oppervlakteseismometer.",
       "type": "info"
     },
     {
       "met": 7.92,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Trans-aarde injectie. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 10.18,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1969-11-24 20:58 UTC. Recovery by USS Hornet.",
+      "label": "NEERKOMEN",
+      "note": "CM kwam neer in Stille Zuidzee 1969-11-24 20:58 UTC. Berging door USS Hornet.",
       "type": "nominal"
     }
   ]

@@ -1,25 +1,25 @@
 {
   "name": "X-37B OTV-6 (USA-299, USSF-7)",
-  "type": "무인 우주비행기 · 비행 완료",
+  "type": "무인 우주비행기 · 비행완료",
   "first": "USA-299 / USSF-7 — 궤도상 908일, KSC 셔틀 착륙시설",
-  "description": "여섯 번째 X-37B 비행 — USSF의 새로운 조직 명칭하의 첫 비행이자 궤도상 908일(약 2.5년)의 기록 수립. 2020-05-17 13:14 UTC에 CCAFS SLC-41에서 아틀라스 V 501 AV-081로 발사; 2022-11-12 10:22 UTC에 KSC SLF에 착륙. 해군연구소 PRAM(Photovoltaic RF Antenna Module — 태양광을 1 W 마이크로파 빔으로 전송하는 실험)과 AFRL FalconSAT-8 배치기를 탑재.",
+  "description": "6번째 X-37B 비행 — USSF 신규 조직 지정 하에서의 첫 비행; 궤도상 908일(약 2.5년)의 기록수립 비행. 2020-05-17 13:14 UTC에 CCAFS SLC-41에서 Atlas V 501 AV-081로 발사; 2022-11-12 10:22 UTC에 KSC SLF에 착륙. 해군연구소(Naval Research Laboratory) PRAM(태양광 RF 안테나 모듈 — 1 W 태양광-마이크로파 빔 전송 실험) 및 AFRL FalconSAT-8 분리기를 탑재.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-081) from CCAFS SLC-41 2020-05-17.",
+      "label": "발사",
+      "note": "2020-05-17 CCAFS SLC-41에서 Atlas V 501 (AV-081).",
       "type": "nominal"
     },
     {
       "met": 454,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee ~390 km; classified payload operations.",
+      "label": "궤도상 운영",
+      "note": "근지점 약 400 km; 분류된 탑재체 운영.",
       "type": "info"
     },
     {
       "met": 908,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2022-11-12.",
+      "label": "착륙",
+      "note": "2022-11-12 KSC 셔틀 착륙시설에서 자동 활주로 착륙.",
       "type": "nominal"
     }
   ]

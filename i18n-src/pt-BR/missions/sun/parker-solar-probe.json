@@ -1,13 +1,13 @@
 {
   "name": "Parker Solar Probe",
-  "type": "SOLAR-ORBITER · ACTIVE",
-  "first": "Espaçonave mais próxima do Sol já voada (6,1 M km, 9,86 R☉); primeira espaçonave a entrar na corona solar (2021-04-28); objeto feito pelo homem mais rápido (192 km/s)",
-  "description": "A Parker Solar Probe realizou o lançamento de maior energia já feito para uma missão científica — C3 de 154 km²/s², exigindo um terceiro estágio sólido Star 48BV customizado sobre um Delta IV Heavy apenas para escapar da Terra em uma trajetória de queda em direção ao Sol. Sete assistências gravitacionais de Vênus ao longo de seis anos reduziram progressivamente o periélio de 0,16 UA (P1, 2018-11-05) para 0,046 UA (P22, 2024-12-24 — 9,86 raios solares, 6,1 milhões de km da superfície). No P8 em 2021-04-28, a Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira espaçonave a entrar na corona do Sol. No P22 atingiu 192 km/s, tornando-se o objeto feito pelo homem mais rápido de todos os tempos. O escudo térmico de carbono-carbono de 11,43 cm suportou 1.377 °C enquanto a estrutura da espaçonave 1 metro atrás dele permaneceu em temperatura ambiente.",
+  "type": "ORBITADOR SOLAR · ATIVO",
+  "first": "Nave mais próxima do Sol já lançada (6,1 M km, 9,86 R☉); primeira nave a entrar na coroa solar (2021-04-28); objeto feito pelo homem mais rápido (~191 km/s)",
+  "description": "Parker Solar Probe executou o lançamento de maior energia já realizado para uma missão científica — C3 de 154 km²/s², exigindo um terceiro estágio sólido Star 48BV personalizado no topo de um Delta IV Heavy apenas para escapar da Terra em uma trajetória de queda para o Sol. Sete assistências gravitacionais de Vênus ao longo de seis anos reduziram progressivamente o periélio de 0,16 AU (P1, 2018-11-05) para 0,046 AU (P22, 2024-12-24 — 9,86 raios solares, 6,1 milhões de km da superfície). No P8 em 2021-04-28, Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira nave a entrar na coroa do Sol. No P22 alcançou ~191 km/s, tornando-se o objeto feito pelo homem mais rápido de todos os tempos. O escudo térmico de carbono-carbono de 11,43 cm sustentou 1.377 °C enquanto o barco da nave 1 metro atrás permanecia à temperatura ambiente.",
   "events": [
     {
       "met": 0,
       "label": "LANÇAMENTO",
-      "note": "Delta IV Heavy + Star 48BV — maior C3 já registrado para uma missão científica (154 km²/s²).",
+      "note": "Delta IV Heavy + Star 48BV — maior C3 já realizado para uma missão científica (154 km²/s²).",
       "type": "nominal"
     },
     {
@@ -19,25 +19,25 @@
     {
       "met": 85,
       "label": "P1 — PRIMEIRO PERIÉLIO",
-      "note": "2018-11-05, 0,16 UA. Mais próximo do Sol de todos os tempos, superando a Helios 2.",
+      "note": "2018-11-05, 0,16 AU. Mais próximo do Sol já alcançado, superando Helios 2.",
       "type": "info"
     },
     {
       "met": 989,
-      "label": "P8 — ENTRADA NA CORONA",
-      "note": "2021-04-28. Primeira espaçonave a mergulhar abaixo da superfície crítica de Alfvén.",
+      "label": "P8 — ENTRADA NA COROA",
+      "note": "2021-04-28. Primeira nave a mergulhar abaixo da superfície crítica de Alfvén.",
       "type": "info"
     },
     {
       "met": 1830,
       "label": "VGA-6",
-      "note": "Sexta assistência de Vênus 2023-08-21.",
+      "note": "Sexta assistência gravitacional de Vênus 2023-08-21.",
       "type": "info"
     },
     {
       "met": 2326,
-      "label": "P22 — MARCO DO PROJETO",
-      "note": "2024-12-24. 9,86 R☉ (6,1 M km do Sol). 192 km/s. Escudo térmico 1.377 °C.",
+      "label": "P22 — MARCO DE PROJETO",
+      "note": "2024-12-24. 9,86 R☉ (6,1 M km do Sol). ~191 km/s. Escudo térmico 1.377 °C.",
       "type": "info"
     }
   ]

@@ -1,15 +1,15 @@
 {
-  "title": "UA — Unité astronomique",
-  "intro_sentence": "Distance moyenne Terre-Soleil, fixée à exactement 149 597 870 700 mètres.",
+  "title": "UA — Unité Astronomique",
+  "intro_sentence": "Distance moyenne de la Terre au Soleil, fixée exactement à 149 597 870 700 mètres — l'échelle naturelle pour les distances du système solaire.",
   "narrative_101": [
-    "Mesurer espace en km devient ingérable. Mars 200M km. Saturne 1,4Md. Pluton 6Md. Cerveau abandonne. Astronomes : règle plus humaine — distance Terre-Soleil = UA.",
-    "Ancrée à entier de mètres — 149 597 870 700, fixé 2012. Mars 1,5 UA. Jupiter 5. Pluton 30-50. Voyager 1 ~165 UA et continue.",
-    "UA partout dans cette app. /explore dessine rayons en UA. /plan porkchop calibrés UA."
+    "Dès que vous commencez à mesurer des distances dans l'espace, les kilomètres deviennent rapidement ingérables. Mars est à 200 millions de km. Saturne à 1,4 milliard de km. Pluton à 6 milliards de km. Votre cerveau cesse de traiter ces chiffres autrement que comme « grand ». Les astronomes ont donc choisi une échelle plus humaine : une distance Terre-Soleil. C'est l'Unité Astronomique, abrégée en UA.",
+    "L'unité est ancrée à un nombre entier spécifique de mètres — 149 597 870 700 exactement, fixé en 2012 — mais l'idée pratique est plus simple. Mars est à 1,5 UA du Soleil. Jupiter à 5 UA. Pluton orbite entre 30 et 50 UA. Voyager 1, l'objet artificiel le plus lointain, a dépassé 170 UA et continue toujours. Des nombres qu'on peut réellement tenir dans sa tête.",
+    "L'UA est omniprésente dans cette application. L'écran /explore dessine les rayons orbitaux en UA. Les axes des porkchop de /plan sont calibrés en UA. L'affichage tête-haute de /fly convertit l'UA en kilomètres et en lumière-minutes quand vous en avez besoin, mais l'échelle de base reste toujours l'UA. Une fois que vous l'internalisez, le système solaire cesse de sembler abstrait — vous pouvez grossièrement cartographier les distances en comptant les sauts en UA."
   ],
   "body_paragraphs": [
-    "Jusqu'en 2012 UA définie par orbite Terre. Évoluant, UA changeait techniquement. IAU fixa 2012 à entier précis — 149 597 870 700 m.",
-    "Distances : Mercure 0,39, Vénus 0,72, Terre 1,0, Mars 1,52, Jupiter 5,20, Saturne 9,58, Uranus 19,22, Neptune 30,05, Pluton 39,5. Voyagers >150 UA. Nuage Oort dizaines milliers UA.",
-    "Pourquoi UA ? Nombres mètres ingérables échelle système solaire. 1,4 Md km Saturne illisible. 9,58 UA tient en tête."
+    "Jusqu'en 2012, l'UA était définie par l'orbite terrestre. Comme l'orbite terrestre évolue lentement sous les perturbations planétaires, l'UA changeait techniquement aussi. L'UAI l'a fixée en 2012 à un nombre entier de mètres précis — 149 597 870 700 — et la définition est restée stable depuis. L'UA n'est plus « l'orbite terrestre » ; c'est une règle métrique qui se trouve simplement la correspondre approximativement.",
+    "Distances du système solaire en UA : Mercure 0,39, Vénus 0,72, Terre 1,0, Mars 1,52, Jupiter 5,20, Saturne 9,58, Uranus 19,22, Neptune 30,05, Pluton 39,5 (moyennes — l'excentricité les fait varier). Les Voyagers sont bien au-delà de 150 UA et continuent toujours. Le Nuage d'Oort s'étend sur des dizaines de milliers d'UA.",
+    "Pourquoi l'UA plutôt que les mètres ? Parce que les chiffres en mètres sont ingérables à l'échelle du système solaire. Les 1,4 milliard de km de Saturne sont illisibles. 9,58 UA est un nombre qu'on peut tenir dans sa tête. Les panneaux et l'affichage tête-haute d'Orrery utilisent tous l'UA pour les positions du système solaire — convertis en km, lumière-minutes et autres unités seulement quand le public a besoin de la conversion."
   ],
-  "diagram_caption": "1 UA ≈ Terre-Soleil. Demi-grands axes planétaires UA, échelle log pour planètes externes."
+  "diagram_caption": "1 UA ≈ distance Terre-Soleil. Demi-grands axes planétaires en UA, échelle logarithmique pour gérer les planètes externes."
 }

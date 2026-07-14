@@ -1,20 +1,20 @@
 {
   "name": "Voyager",
-  "tagline": "Duas sondas lançadas em 1977 para percorrer os planetas exteriores — e nunca voltaram. Meio século depois, ainda estão voando e ainda chamam para casa do espaço entre as estrelas.",
+  "tagline": "Duas sondas lançadas em 1977 para percorrer os planetas exteriores — e nunca voltaram. Meio século depois, ainda estão voando e ainda transmitindo de casa a partir do espaço entre as estrelas.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Uma vez a cada 176 anos, os quatro planetas gigantes se alinham no mesmo lado do Sol. Em meados da década de 1960, um jovem engenheiro do Jet Propulsion Laboratory da NASA, Gary Flandro, descobriu o que esse alinhamento tornava possível: uma única espaçonave poderia passar por Júpiter, usar a gravidade do planeta para se impulsionar até Saturno, depois Urano, depois Netuno — visitando os quatro em um único voo que de outra forma levaria décadas de missões separadas. O problema era o calendário. A janela se abria no final dos anos 1970. Perdê-la significaria que a próxima chance viria apenas na década de 2150."
+      "md": "Uma vez a cada 176 anos, os quatro planetas gigantes se alinham no mesmo lado do Sol. Em meados da década de 1960, um jovem engenheiro do Jet Propulsion Laboratory da NASA, Gary Flandro, descobriu o que esse alinhamento tornava possível: uma única espaçonave poderia passar por Júpiter, usar a gravidade do planeta para se lançar em direção a Saturno, depois Urano, depois Netuno — visitando os quatro em um único voo que de outra forma exigiria décadas de missões separadas. O problema era o calendário. A janela se abria no final da década de 1970. Perdê-la, e a próxima chance viria apenas na década de 2150."
     },
     {
       "type": "prose",
-      "md": "O sistema solar externo era, naquele momento, quase totalmente inexplorado. As Pioneer mal estavam chegando a Júpiter; Urano e Netuno nunca haviam sido nada além de pontos de luz em um telescópio. A NASA aproveitou o alinhamento e construiu dois robôs quase idênticos para fazer o percurso — robustos, alimentados por energia nuclear e carregando as melhores câmeras e instrumentos da época, apontados para mundos que ninguém jamais havia visto de perto."
+      "md": "O sistema solar externo era, naquele momento, quase totalmente inexplorado. As Pioneers estavam apenas chegando a Júpiter; Urano e Netuno nunca haviam sido mais do que pontos de luz em um telescópio. A NASA aproveitou o alinhamento e construiu dois robôs quase idênticos para fazer o percurso — robustos, movidos a energia nuclear, e carregando as melhores câmeras e instrumentos da época, direcionados a mundos que ninguém jamais tinha visto de perto."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "O objetivo era um reconhecimento em uma escala nunca tentada: uma primeira visão próxima de Júpiter e Saturno e — se as máquinas sobrevivessem tempo suficiente — a única visão próxima que alguém provavelmente teria de Urano e Netuno por gerações. Duas espaçonaves voaram para que a falha de uma não perdesse todo o percurso, e para que entre elas pudessem cobrir trajetórias que nenhuma sonda sozinha poderia voar."
+      "md": "O objetivo era um reconhecimento em uma escala nunca tentada: um primeiro olhar próximo em Júpiter e Saturno e — se as máquinas sobrevivessem tempo suficiente — o único olhar próximo que qualquer um provavelmente teria de Urano e Netuno por gerações. Duas espaçonaves voaram para que a falha de uma não perdesse todo o percurso, e para que entre elas pudessem cobrir trajetórias que nenhuma sonda individual poderia voar."
     },
     {
       "type": "figure",
@@ -26,49 +26,49 @@
     },
     {
       "type": "prose",
-      "md": "Havia um segundo objetivo, mais estranho, adicionado por um comitê liderado pelo astrônomo Carl Sagan: cada espaçonave carregaria uma mensagem. Aparafusado em seu lado estava um disco fonográfico banhado a ouro contendo os sons da Terra — música, saudações em dezenas de idiomas, o choro de um bebê, canto de pássaros — lacrado para quem quer, ou o que quer, que possa encontrá-lo no futuro distante. Era uma missão científica que também, deliberadamente, alcançava a eternidade."
+      "md": "Havia um segundo objetivo, mais estranho, adicionado por um comitê liderado pelo astrônomo Carl Sagan: cada nave carregaria uma mensagem. Parafusado ao seu lado estava um disco fonográfico folheado a ouro contendo os sons da Terra — música, saudações em dezenas de idiomas, o choro de um bebê, canto de pássaros — selado para quem quer que, ou o que quer que, pudesse encontrá-lo no futuro distante. Era uma missão científica que também, deliberadamente, alcançava a eternidade."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "O percurso entregou além do esperado. Em Júpiter, em 1979, as Voyager encontraram vulcões ativos na lua Io — os primeiros já vistos além da Terra — e o gelo liso de Europa escondendo o que parecia ser um oceano. Em Saturno, resolveram os anéis em milhares de filamentos intrincados e passaram perto da lua Titã envolta em névoa. Essa passagem por Titã curvou a trajetória da Voyager 1 para cima e para fora do plano dos planetas, enviando-a subindo em direção à borda do sistema solar."
+      "md": "O percurso entregou além do esperado. Em Júpiter em 1979, as Voyagers encontraram vulcões ativos na lua Io — os primeiros já vistos além da Terra — e o gelo liso de Europa escondendo o que parecia ser um oceano. Em Saturno, resolveram os anéis em milhares de filamentos intrincados e passaram bem perto da lua Titan envolta em névoa. Esse sobrevoo de Titan curvou a trajetória da Voyager 1 para cima e para fora do plano dos planetas, enviando-a em direção à borda do sistema solar."
     },
     {
       "type": "prose",
-      "md": "A Voyager 2 voou o Grand Tour completo. Chegou a Urano em 1986 e a Netuno em 1989 — a única espaçonave a visitar qualquer um desses mundos — encontrando um planeta inclinado de lado, um gigante azul profundo com os ventos mais rápidos do sistema solar, e uma lua, Tritão, com gêiseres de nitrogênio irrompendo para o espaço. Até hoje, tudo que a humanidade sabe de perto sobre os gigantes de gelo foi reunido nessas duas breves passagens."
+      "md": "A Voyager 2 voou o Grand Tour completo. Chegou a Urano em 1986 e a Netuno em 1989 — a única espaçonave a visitar qualquer um dos dois mundos — encontrando um planeta inclinado de lado, um gigante azul profundo com os ventos mais rápidos do sistema solar, e uma lua, Triton, com gêiseres de nitrogênio irrompendo no espaço. Até hoje, tudo o que a humanidade sabe de perto sobre os gigantes de gelo foi coletado nesses dois breves sobrevoos."
     },
     {
       "type": "prose",
-      "md": "Então a missão simplesmente continuou. Em 1990, de além de Netuno, a Voyager 1 virou sua câmera para trás e fotografou a Terra como um único ponto de luz. Em 2012, cruzou a heliopausa — a fronteira onde o vento do Sol cede ao gás entre as estrelas — e a Voyager 2 seguiu em 2018. Quase cinquenta anos após o lançamento, ambas ainda estão transmitindo, sua energia se esgotando, seus instrumentos desligados um por um para estender o sinal um pouco mais."
+      "md": "Então a missão simplesmente continuou. Em 1990, além de Netuno, a Voyager 1 virou sua câmera de volta e fotografou a Terra como um único ponto de luz. Em 2012, cruzou a heliopausa — a fronteira onde o vento do Sol cede ao gás entre as estrelas — e a Voyager 2 seguiu em 2018. Quase cinquenta anos após o lançamento, ambas ainda estão transmitindo, sua energia diminuindo, seus instrumentos desligados um por um para estender o sinal um pouco mais."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "A história da Voyager é de máquinas que sobreviveram a todas as expectativas de seus criadores. Foram projetadas para um voo de quatro anos até Saturno com eletrônicos dos anos 1970 — computadores com menos memória que um chaveiro moderno — e funcionaram por quase meio século, reprogramadas através de bilhões de quilômetros por engenheiros corrigindo código em uma espaçonave tão distante que um comando leva quase um dia para chegar. A qualidade definitiva da missão é a resistência: uma aposta em robustez e margem que se pagou muito além do plano de qualquer um."
+      "md": "A história da Voyager é de máquinas que sobreviveram a todas as expectativas de seus criadores. Foram projetadas para um voo de quatro anos até Saturno com eletrônica da década de 1970 — computadores com menos memória do que um chaveiro moderno — e funcionaram por quase meio século, reprogramadas através de bilhões de quilômetros por engenheiros corrigindo código em uma espaçonave tão distante que um comando leva quase um dia para chegar. A qualidade definidora da missão é a resistência: uma aposta em robustez e margem que compensou muito além do plano de qualquer um."
     },
     {
       "type": "prose",
-      "md": "Seu momento mais lembrado não carregou ciência alguma. Quando a Voyager 1 deixava os planetas para trás, Carl Sagan argumentou que ela deveria se virar e fotografar a Terra uma última vez — não por dados, mas por perspectiva. A imagem que ela retornou mostrava o lar como um pálido ponto azul, um grão de poeira em um raio de sol, e as palavras de Sagan sobre ela — que todos que já viveram o fizeram naquele pontinho — se tornaram uma das passagens mais citadas na literatura espacial. Uma sonda de reconhecimento havia, quase por acidente, tirado o retrato definitivo da pequenez humana."
+      "md": "Seu momento mais lembrado não carregou ciência alguma. Quando a Voyager 1 deixou os planetas para trás, Carl Sagan argumentou que ela deveria se virar e fotografar a Terra uma última vez — não por dados, mas por perspectiva. A imagem que retornou mostrava o lar como um pálido ponto azul, um grão de poeira em um raio de sol, e as palavras de Sagan sobre isso — que todos que já viveram o fizeram naquele pontinho — se tornaram uma das passagens mais citadas na literatura espacial. Uma sonda de reconhecimento havia, quase por acidente, tirado o retrato definitivo da pequenez humana."
     },
     {
       "type": "prose",
-      "md": "E há o disco. Cada Voyager carrega uma mensagem sem esperança realista de jamais ser encontrada — as chances de qualquer uma das espaçonaves passar perto de outra estrela em qualquer período de tempo significativo são ínfimas. Mas o ponto nunca foi realmente os alienígenas. O Golden Record era um espelho: uma tentativa de dizer quem somos, endereçada ao futuro e a nós mesmos, enviada nos únicos dois objetos que já lançamos em uma rota que deixa o sistema solar definitivamente."
+      "md": "E há o disco. Cada Voyager carrega uma mensagem sem esperança realista de jamais ser encontrada — as chances de qualquer uma das naves passar perto de outra estrela em qualquer intervalo de tempo significativo são minúsculas. Mas o ponto nunca foi realmente os alienígenas. O Golden Record foi um espelho: uma tentativa de dizer quem somos, endereçada ao futuro e a nós mesmos, enviada nas únicas duas naves que ainda cruzaram para o espaço interestelar."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "O primeiro legado da Voyager é o próprio mapa. Suas passagens transformaram Júpiter, Saturno, Urano e Netuno e suas luas de pontos de luz em lugares, e os encontros com Urano e Netuno permanecem — décadas depois — os únicos dados próximos que a humanidade já reuniu sobre os gigantes de gelo. Toda proposta para retornar a esses mundos ainda é construída sobre o que duas espaçonaves de 1977 viram em algumas horas."
+      "md": "O primeiro legado da Voyager é o próprio mapa. Seus sobrevoos transformaram Júpiter, Saturno, Urano e Netuno e suas luas de pontos de luz em lugares, e os encontros com Urano e Netuno permanecem — décadas depois — os únicos dados próximos que a humanidade já reuniu sobre os gigantes de gelo. Toda proposta de retornar a esses mundos ainda é construída sobre o que duas espaçonaves de 1977 viram em poucas horas."
     },
     {
       "type": "prose",
-      "md": "O segundo é a fronteira que alcançou. Ao cruzar para o espaço interestelar, as Voyager se tornaram os primeiros instrumentos a medir a fronteira da influência do Sol de fora — dados que nenhuma outra missão jamais retornou, e nenhuma retornará por décadas. São, neste momento, os objetos feitos por humanos mais distantes que existem, e ainda reportando."
+      "md": "Seu segundo é a fronteira que alcançou. Ao cruzar para o espaço interestelar, as Voyagers se tornaram os primeiros instrumentos a medir a fronteira da influência do Sol de fora — dados que nenhuma outra missão jamais retornou, e nenhuma retornará por décadas. São, agora mesmo, os objetos feitos pelo homem mais distantes em existência, e ainda transmitindo."
     },
     {
       "type": "prose",
-      "md": "Seu terceiro legado é cultural. O Pálido Ponto Azul e o Golden Record deram à era espacial duas de suas imagens mais duradouras do que a Terra é e do que ela vale — um reenquadramento do planeta como uma coisa única, pequena e compartilhada que sobreviveu a todas as descobertas específicas que a missão fez."
+      "md": "Seu terceiro legado é cultural. O Pale Blue Dot e o Golden Record deram à era espacial duas de suas imagens mais duradouras do que a Terra é e do que ela vale — uma reformulação do planeta como uma coisa única, pequena e compartilhada que sobreviveu a cada descoberta específica que a missão fez."
     }
   ],
   "lessons": [
@@ -78,7 +78,7 @@
     },
     {
       "type": "prose",
-      "md": "A lição mais profunda é construir com muito mais margem do que o plano requer. As Voyager foram projetadas para uma missão dez vezes mais curta do que a que voaram, e resistiram porque seus criadores as construíram além do necessário — sistemas redundantes, computadores reprogramáveis, energia de sobra. Ambição que planeja apenas para a missão esperada termina com a missão esperada; as que continuam são aquelas construídas para mais do que foi pedido."
+      "md": "A lição mais profunda é construir com muito mais margem do que o plano exige. As Voyagers foram projetadas para uma missão um décimo do tamanho da que voaram, e resistiram porque seus criadores as construíram além do necessário — sistemas redundantes, computadores reprogramáveis, energia de sobra. Ambição que planeja apenas para a missão esperada termina com a missão esperada; as que continuam são aquelas construídas para mais do que foram solicitadas a fazer."
     }
   ]
 }

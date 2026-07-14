@@ -1,37 +1,37 @@
 {
   "name": "Mars Pathfinder",
-  "type": "ATERRIZADOR · RÓVER · VOLADA",
-  "first": "Primeras ruedas en Marte; demostró el aterrizaje con airbags",
-  "dispatch": "Mars Pathfinder fue la prueba de la NASA de que aterrizar en Marte no tenía que costar una fortuna. En lugar del vuelo estacionario con retrocohetes que usaron las Viking, impactó la atmósfera detrás de un escudo térmico, desplegó un paracaídas, infló un capullo de airbags y rebotó docenas de veces sobre la superficie antes de rodar hasta detenerse y abrirse como una flor. De allí salió Sojourner —un rover del tamaño de un microondas, las primeras ruedas que giraron en otro planeta—. La ciencia fue modesta; el objetivo era el método. El aterrizaje con airbags y el enfoque más-rápido-más-barato-mejor que demostró se convirtieron en la plantilla para los rovers mucho más ambiciosos —Spirit, Opportunity, Curiosity— que le siguieron.",
-  "description": "La misión que demostró que las misiones interplanetarias baratas podían funcionar. Pathfinder usó un novedoso sistema de aterrizaje con airbags — rebotando docenas de veces por la superficie antes de detenerse — y entregó a Sojourner, el primer róver en operar en otro planeta. Sojourner recorrió 100 m, examinó una docena de rocas y trabajó mucho más allá de su vida útil de diseño de 7 días. Pathfinder operó 2 meses y 27 días; el éxito de la misión revivió el programa interplanetario de la NASA tras los fracasos de los años 90.",
+  "type": "MÓDULO DE ATERRIZAJE · RÓVER · CUMPLIDO",
+  "first": "Primeras ruedas en Marte; demostró el aterrizaje con bolsas de aire",
+  "dispatch": "Mars Pathfinder fue la prueba de NASA de que aterrizar en Marte no tenía que costar una fortuna. En lugar del hover con retrocohetes que usaron los Vikings, entró en la atmósfera protegido por un escudo térmico, abrió un paracaídas, infló un capullo de bolsas de aire, y rebotó docenas de veces sobre la superficie antes de rodar a un alto y abrirse como una flor. De él salió Sojourner — un róver del tamaño de un microondas, la primera rueda que giró en otro planeta. La ciencia fue modesta; el punto era el método. El aterrizaje con bolsas de aire y el enfoque más rápido, más barato y mejor que demostró se convirtieron en el modelo para los róveres mucho más ambiciosos — Spirit, Opportunity, Curiosity — que vinieron después.",
+  "description": "La misión que probó que las misiones interplanetarias baratas podían funcionar. Pathfinder utilizó un novedoso sistema de aterrizaje con bolsas de aire — rebotando docenas de veces sobre la superficie antes de detenerse — y entregó Sojourner, el primer róver en operar en otro planeta. Sojourner recorrió 100 m, examinó una docena de rocas, y funcionó mucho más allá de su tiempo de diseño de 8 soles. Pathfinder operó durante 2 meses 27 días; el éxito de la misión revitalizó el programa interplanetario de NASA después de los fracasos de los años 90.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Delta II 7925 desde Cape Canaveral.",
+      "note": "Delta II 7925 desde Cabo Cañaveral.",
       "type": "nominal"
     },
     {
       "met": 30,
-      "label": "MCT-1",
+      "label": "TCM-1",
       "note": "Primera corrección de trayectoria.",
       "type": "nominal"
     },
     {
       "met": 212,
-      "label": "EDA",
-      "note": "Entrada atmosférica directa — sin inserción orbital. Escudo térmico, paracaídas, retrocohetes, luego inflado de airbags.",
+      "label": "EDL",
+      "note": "Entrada atmosférica directa — sin inserción en órbita. Escudo térmico, paracaídas, retrocohetes, luego inflado de bolsas de aire.",
       "type": "nominal"
     },
     {
       "met": 212.01,
-      "label": "ATERRIZAJE",
-      "note": "El aterrizador rebota 15 veces por Ares Vallis antes de detenerse.",
+      "label": "TOMA DE CONTACTO",
+      "note": "El módulo de aterrizaje rebota 15 veces sobre Valles Marineris antes de detenerse.",
       "type": "nominal"
     },
     {
       "met": 213,
-      "label": "DESPLIEGUE DE SOJOURNER",
+      "label": "SOJOURNER DESPLEGADO",
       "note": "Primeras ruedas en otro planeta.",
       "type": "info"
     }

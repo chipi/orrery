@@ -1,49 +1,50 @@
 {
   "name": "Hayabusa",
-  "type": "SAMPLE-RETURN · FLOWN",
-  "first": "Primeira amostra de asteroide já retornada à Terra (1500 μg de Itokawa)",
-  "description": "A Hayabusa da JAXA (japonês para 'falcão') realizou a mais heroica missão de salvamento da história dos voos espaciais. Lançada em 09/05/2003 em um M-V-5 com quatro propulsores iônicos μ10 — o subsistema de propulsão iônica mais poderoso voado até aquele momento. Chegou ao 25143 Itokawa em 12/09/2005 — um asteroide próximo à Terra tipo rubble-pile de 540×270×210 m. Dois pousos (20 e 25/11/2005), ambos com falhas no projétil de coleta de amostras, embora regolito tenha sido chutado para dentro do funil de coleta de qualquer forma. Então um vazamento de hidrazina prejudicou o controle de atitude, duas das quatro rodas de reação morreram, comunicações perdidas por sete semanas, a janela de retorno à Terra passou por três anos. Engenheiros montaram um único motor iônico funcionando a partir das metades sobreviventes de dois motores danificados e trouxeram a Hayabusa de volta à Terra com cuidado. Cápsula de amostra recuperada em Woomera AUS em 13/06/2010 retornou 1500 microgramas de material de Itokawa — confirmando a composição tipo S do asteroide e estrutura rubble-pile, e provando que o retorno de amostras de asteroides era possível.",
+  "type": "RETORNO DE AMOSTRA · REALIZADO",
+  "first": "Primeira amostra de asteroide jamais retornada à Terra (~1.500 grãos de poeira de Itokawa, menos de um miligrama no total)",
+  "description": "O Hayabusa (japonês para \"falcão\") da JAXA realizou a mais heróica missão de resgate no espaço jamais empreendida. Lançado em 2003-05-09 em um M-V-5 com quatro propulsores iônicos μ10 — o subsistema de propulsão iônica mais poderoso voado até aquele momento. Chegou ao asteroide próximo à Terra 25143 Itokawa em 2005-09-12 — um aglomerado de escombros de 540×270×210 m. Dois pousos (2005-11-20 e 25), ambos com falhas nos projéteis coletores de amostra, embora o regolito tenha sido lançado para o cone coletor mesmo assim. Então um vazamento de hidrazina danificou o controle de atitude, dois de seus três rodas de reação falharam, comunicações perdidas por sete semanas, a janela de retorno à Terra atrasou três anos. Os engenheiros montaram um único motor iônico funcionando a partir das metades sobreviventes de dois motores danificados e levaram o Hayabusa de volta à Terra. A cápsula de amostra recuperada em Woomera, AUS, em 2010-06-13 retornou ~1.500 grãos de poeira de Itokawa (menos de um miligrama no total) — confirmando a composição tipo S e a estrutura de aglomerado de escombros do asteroide, e provando que o retorno de amostra de asteroide era possível.",
+  "dispatch": "O Hayabusa (japonês para \"falcão\") da JAXA realizou a mais heróica missão de resgate no espaço jamais empreendida — lançado em 2003 com quatro propulsores iônicos μ10, o subsistema de propulsão iônica mais poderoso voado até aquele momento. Sua jornada para o asteroide 25143 Itokawa foi marcada por contratempos dramáticos: vazamento de hidrazina, falha de rodas de reação e perda de comunicações. Mas em uma demonstração notável de engenhosidade humana, os engenheiros montaram um motor iônico funcionando a partir de duas unidades danificadas e trouxeram a sonda de volta. Em 2010, a cápsula de amostra retornou ~1.500 grãos de poeira de Itokawa — a primeira amostra de asteroide jamais trazida à Terra — abrindo o caminho para futuras missões de retorno de amostra e revelando os segredos composicionais do espaço próximo.",
   "events": [
     {
       "met": 0,
       "label": "LANÇAMENTO",
-      "note": "M-V-5 do Uchinoura Space Center.",
+      "note": "M-V-5 do Centro Espacial de Uchinoura.",
       "type": "nominal"
     },
     {
       "met": 366,
-      "label": "ASSISTÊNCIA GRAVITACIONAL DA TERRA",
-      "note": "19/05/2004.",
+      "label": "ASSISTÊNCIA GRAVITACIONAL TERRESTRE",
+      "note": "2004-05-19.",
       "type": "info"
     },
     {
       "met": 857,
-      "label": "CHEGADA A ITOKAWA",
-      "note": "12/09/2005. Manutenção de posição a 7 km.",
+      "label": "CHEGADA EM ITOKAWA",
+      "note": "2005-09-12. Manutenção de estação na posição de entrada a 7 km.",
       "type": "info"
     },
     {
       "met": 857.01,
       "label": "POUSOS",
-      "note": "Dois contatos com a superfície em 20 e 25/11/2005. Projéteis de coleta de amostras falharam ao disparar sob comando.",
+      "note": "Dois contatos com a superfície em 2005-11-20 e 25. Projéteis coletores de amostra não dispararam conforme o comando.",
       "type": "warning"
     },
     {
       "met": 920,
       "label": "TENTATIVA DE RECUPERAÇÃO",
-      "note": "Vazamento de hidrazina, 2 rodas de reação mortas, comunicações perdidas por 7 semanas.",
+      "note": "Vazamento de hidrazina, 2 rodas de reação inoperantes, comunicações perdidas por 7 semanas.",
       "type": "warning"
     },
     {
       "met": 1900,
-      "label": "FRANKENSTEIN DO MOTOR IÔNICO",
-      "note": "Um motor funcionando montado a partir das metades sobreviventes de dois danificados.",
+      "label": "MOTOR IÔNICO FRANKENSTEIN",
+      "note": "Um motor funcionando montado a partir das metades sobreviventes de dois motores danificados.",
       "type": "info"
     },
     {
       "met": 2592,
       "label": "RETORNO DE AMOSTRA",
-      "note": "13/06/2010. 1500 μg de Itokawa recuperados em Woomera. Primeira amostra de asteroide já retornada.",
+      "note": "2010-06-13. ~1.500 grãos de poeira de Itokawa (menos de um miligrama no total) recuperados em Woomera. Primeira amostra de asteroide jamais retornada.",
       "type": "info"
     }
   ]

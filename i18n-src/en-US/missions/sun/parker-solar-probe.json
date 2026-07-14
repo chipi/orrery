@@ -1,14 +1,14 @@
 {
   "name": "Parker Solar Probe",
   "type": "SOLAR-ORBITER · ACTIVE",
-  "first": "Closest spacecraft to the Sun ever flown (6.1 M km, 9.86 R☉); first spacecraft to enter the solar corona (2021-04-28); fastest human-made object (192 km/s)",
-  "description": "Parker Solar Probe ran the highest-energy launch ever flown for a science mission — C3 of 154 km²/s², requiring a custom Star 48BV solid third stage atop a Delta IV Heavy just to escape Earth into a Sun-falling trajectory. Seven Venus gravity assists over six years progressively lowered perihelion from 0.16 AU (P1, 2018-11-05) to 0.046 AU (P22, 2024-12-24 — 9.86 solar radii, 6.1 million km from the surface). At P8 in 2021-04-28 Parker dipped below the Alfvén critical surface — the first spacecraft ever to enter the Sun's corona. At P22 it reached 192 km/s, becoming the fastest human-made object ever. The 11.43-cm carbon-carbon heat shield sustained 1,377 °C while the spacecraft bus 1 metre behind it remained at room temperature.",
+  "first": "Closest spacecraft to the Sun ever flown (6.1 M km, 9.86 R☉); first spacecraft to enter the solar corona (2021-04-28); fastest human-made object (~191 km/s)",
+  "description": "Parker Solar Probe ran the highest-energy launch ever flown for a science mission — C3 of 154 km²/s², requiring a custom Star 48BV solid third stage atop a Delta IV Heavy just to escape Earth into a Sun-falling trajectory. Seven Venus gravity assists over six years progressively lowered perihelion from 0.16 AU (P1, 2018-11-05) to 0.046 AU (P22, 2024-12-24 — 9.86 solar radii, 6.1 million km from the surface). At P8 in 2021-04-28 Parker dipped below the Alfvén critical surface — the first spacecraft ever to enter the Sun's corona. At P22 it reached ~191 km/s, becoming the fastest human-made object ever. The 11.43-cm carbon-carbon heat shield sustained 1,377 °C while the spacecraft bus 1 metre behind it remained at room temperature.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Delta IV Heavy + Star 48BV — highest C3 ever for a science mission (154 km²/s²).", "type": "nominal" },
     { "met": 52, "label": "VGA-1", "note": "First Venus gravity assist 2018-10-03.", "type": "info" },
     { "met": 85, "label": "P1 — FIRST PERIHELION", "note": "2018-11-05, 0.16 AU. Closest-to-Sun ever, beating Helios 2.", "type": "info" },
     { "met": 989, "label": "P8 — CORONA ENTRY", "note": "2021-04-28. First spacecraft to dip below the Alfvén critical surface.", "type": "info" },
     { "met": 1830, "label": "VGA-6", "note": "Sixth Venus assist 2023-08-21.", "type": "info" },
-    { "met": 2326, "label": "P22 — DESIGN MILESTONE", "note": "2024-12-24. 9.86 R☉ (6.1 M km from the Sun). 192 km/s. Heat shield 1,377 °C.", "type": "info" }
+    { "met": 2326, "label": "P22 — DESIGN MILESTONE", "note": "2024-12-24. 9.86 R☉ (6.1 M km from the Sun). ~191 km/s. Heat shield 1,377 °C.", "type": "info" }
   ]
 }

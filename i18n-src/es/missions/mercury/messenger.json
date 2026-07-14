@@ -1,25 +1,25 @@
 {
   "name": "MESSENGER",
-  "type": "Orbitador · Realizada",
-  "first": "Primera nave en orbitar Mercurio; primer mapa completo de la superficie del planeta más interior",
-  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) usó seis asistencias gravitacionales en siete años — Tierra, dos veces Venus, tres veces Mercurio — para frenar y entrar en órbita de Mercurio el 18-03-2011. Protegida por sombrilla solar, con un lado a 370 °C y el otro a -45 °C. Descubrimientos: hielo de agua en cráteres polares permanentemente sombreados, los «hollows» geológicos previamente desconocidos, y la confirmación de que el núcleo de hierro de Mercurio ocupa ~85 % del radio planetario (la mayor proporción del sistema solar). La misión terminó con un impacto controlado el 30-04-2015 al agotarse el combustible.",
+  "type": "SATÉLITE · COMPLETADO",
+  "first": "Primera sonda en orbitar Mercurio; primer mapa de superficie completo del planeta más interno",
+  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) utilizó seis asistencias gravitatorias a lo largo de siete años — Tierra, Venus dos veces, Mercurio tres veces — para frenar e insertarse en órbita de Mercurio el 2011-03-18. Protegida por un parasol térmico con un lado a 370 °C y el otro a -45 °C. Los descubrimientos incluyeron hielo de agua en cráteres polares permanentemente en sombra, características geológicas previamente desconocidas llamadas \"depresiones brillantes\", y la confirmación de que el núcleo de hierro de Mercurio ocupa ≈85 % del radio del planeta (la mayor relación núcleo-radio de cualquier planeta del sistema solar). La misión concluyó con un impacto controlado en la superficie de Mercurio el 2015-04-30 tras agotarse el combustible.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Delta II 7925H eleva a MESSENGER en una trayectoria de seis sobrevuelos.",
+      "note": "Un cohete Delta II 7925H lanza MESSENGER en una trayectoria de seis encuentros.",
       "type": "nominal"
     },
     {
       "met": 365,
-      "label": "ASISTENCIA GRAVITACIONAL TERRESTRE",
-      "note": "Primera de seis asistencias que ralentizan la trayectoria lo suficiente para entrar en órbita de Mercurio.",
+      "label": "ASISTENCIA GRAVITATORIA TERRESTRE",
+      "note": "Primera de seis asistencias para frenar la trayectoria lo suficiente como para insertarse en órbita de Mercurio.",
       "type": "nominal"
     },
     {
       "met": 2419,
       "label": "INSERCIÓN EN ÓRBITA DE MERCURIO",
-      "note": "Quemado del motor principal coloca a MESSENGER en órbita de Mercurio tras siete años de crucero.",
+      "note": "Quemado del motor principal coloca a MESSENGER en órbita de Mercurio después de siete años de crucero.",
       "type": "nominal"
     }
   ]

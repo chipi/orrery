@@ -1,31 +1,32 @@
 {
   "name": "JUICE",
-  "type": "ORBITER · ATTIVA",
-  "first": "Più grande veicolo interplanetario mai costruito in Europa; primo veicolo a orbitare una luna di un altro pianeta (Ganimede, 2034)",
-  "description": "JUpiter ICy moons Explorer — missione di punta di classe L dell'ESA, lanciata il 14/4/2023. La crociera di 8 anni usa una delle sequenze di assistenza gravitazionale più complesse mai volate: un'assistenza gravitazionale Luna-Terra inedita il 19/8/2024, Venere il 31/8/2025, poi altri due passaggi terrestri nel 2026 e 2029. L'inserimento in orbita gioviana è fissato per il 21/7/2031. Dopo 35 sorvoli ravvicinati di Europa, Ganimede e Callisto in 3,5 anni, JUICE manovrerà in un'orbita dedicata di Ganimede il 31/12/2034 — il primo veicolo a orbitare una luna di un altro pianeta.",
+  "type": "ORBITER · ATTIVO",
+  "first": "Il più grande veicolo spaziale interplanetario costruito in Europa; primo veicolo spaziale mai messo in orbita attorno a una luna di un altro pianeta (Ganimede, 2034)",
+  "description": "JUpiter ICy moons Explorer — ammiraglia di classe L dell'ESA, lanciata il 2023-04-14. La crociera di 8 anni utilizza una delle sequenze di fionda gravitazionale più complesse mai realizzate: un'assistenza gravitazionale Luna-Terra senza precedenti il 2024-08-19, Venere 2025-08-31, seguito da due ulteriori passaggi ravvicinati della Terra nel 2026 e nel 2029. L'inserimento in orbita gioviana è previsto per il 2031-07-21. Dopo 35 sorvoli ravvicinati di Europa, Ganimede e Callisto nel corso di 3,5 anni, JUICE eseguirà una manovra verso un'orbita dedicata intorno a Ganimede il 2034-12-31 — il primo veicolo spaziale mai messo in orbita attorno a una luna di un altro pianeta. La missione termina nel 2035 con l'impatto su Ganimede. Scienza primaria: esistenza e proprietà degli oceani subsuperficiali attraverso le lune galileiane ghiacciate, composizione della calotta di ghiaccio e riscaldamento mareale, e struttura della magnetosfera gioviana.",
+  "dispatch": "JUICE rappresenta un capolavoro dell'ingegneria spaziale europea — il più ambizioso programma di esplorazione dei mondi ghiacciati di Giove mai concepito. Con il suo lancio dal cosmodromo di Kourou nell'aprile 2023, questa sonda ha iniziato un viaggio di otto anni che la porterà a compiere la più complessa sequenza di fionde gravitazionali mai tentata, sfruttando la Luna, la Terra, e Venere per raggiungere il gigante gassoso. Una volta giunta a Giove nel 2031, JUICE condurrà una campagna senza precedenti di osservazione ravvicinata dei tre grandi satelliti ghiacciati — Europa, Ganimede e Callisto — cercando segni di oceani subsuperficiali e condizioni che potrebbero ospitare forme di vita. L'apice della missione giungerà nel 2034, quando JUICE entrerà in orbita attorno a Ganimede, diventando il primo veicolo spaziale della storia umana a orbitare attorno a una luna di un altro pianeta.",
   "events": [
     {
       "met": 0,
       "label": "LANCIO",
-      "note": "L'Ariane 5 ECA+ lancia JUICE da Kourou.",
+      "note": "Il vettore Ariane 5 ECA decolla da Kourou con JUICE a bordo.",
       "type": "nominal"
     },
     {
       "met": 493,
       "label": "SORVOLO LUNA-TERRA",
-      "note": "Prima assistenza gravitazionale Luna-Terra mai eseguita — Luna + Terra in un singolo passaggio.",
+      "note": "Prima assistenza gravitazionale Luna-Terra — Luna e Terra in un'unica manovra.",
       "type": "nominal"
     },
     {
       "met": 871,
       "label": "SORVOLO VENERE",
-      "note": "Assistenza gravitazionale venusiana al ritorno verso altri due passaggi terrestri.",
+      "note": "Assistenza gravitazionale di Venere nel ritorno verso due ulteriori passaggi della Terra.",
       "type": "nominal"
     },
     {
       "met": 3020,
-      "label": "INSERIMENTO ORBITA GIOVE",
-      "note": "L'accensione del motore principale colloca JUICE in orbita gioviana per il tour delle lune ghiacciate.",
+      "label": "INSERIMENTO IN ORBITA GIOVIANA",
+      "note": "L'accensione del motore principale inserisce JUICE nell'orbita di Giove per il tour dei mondi ghiacciati.",
       "type": "info"
     }
   ]

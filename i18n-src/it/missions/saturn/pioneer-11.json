@@ -1,26 +1,26 @@
 {
   "name": "Pioneer 11",
-  "type": "Sorvolo · Effettuato",
-  "first": "Prima sonda a sorvolare Saturno (01-09-1979); ha dimostrato l'assistenza gravitazionale che ha lanciato Voyager 2",
-  "dispatch": "Pioneer 11 fu la seconda sonda esploratrice, e si spinse più lontano della sua gemella. Dopo il proprio passaggio ravvicinato a Giove utilizzò la gravità del pianeta per attraversare il sistema solare e raggiungere Saturno nel 1979 — la prima sonda spaziale a farlo — volando deliberatamente attraverso il piano degli anelli per verificare se la regione fosse sicura. Trovò il varco che le Voyager avrebbero attraversato un anno dopo. Gran parte di ciò che rese possibile il Grand Tour fu questo: una sonda piccola ed economica inviata in avanscoperta per correre i rischi e mappare i pericoli, così che le ammiraglie dietro di essa potessero volare con fiducia anziché con timore.",
-  "description": "Gemella di Pioneer 10, lanciata un anno dopo. Pioneer 11 ha usato la gravità di Giove per piegare la traiettoria verso Saturno — la prova canonica dell'assistenza gravitazionale, la tecnica che ha poi reso possibile il Grand Tour delle Voyager. A Saturno ha scoperto l'anello F e la luna Epimeteo. Porta la stessa Placca Pioneer della gemella. Segnale perso il 30-09-1995 da ~43 UA; la sonda viaggia ora verso la costellazione dell'Aquila.",
+  "type": "SORVOLO · COMPLETATO",
+  "first": "Primo veicolo spaziale a sorvolare Saturno (1979-09-01); ha dimostrato la manovra gravitazionale che ha mandato avanti Voyager 2",
+  "dispatch": "Pioneer 11 era la seconda sonda esplorativa, e andò più lontano dei suoi gemelli. Dopo il suo passaggio da Giove ha usato la gravità del pianeta per attraversare il sistema solare e raggiungere Saturno nel 1979 — il primo veicolo spaziale a farlo — sorvolando deliberatamente il piano degli anelli per verificare se la regione fosse sicura. Ha trovato il varco che i Voyager avrebbero attraversato un anno dopo. Gran parte di ciò che ha reso possibile il Grand Tour era questo: una piccola e economica sonda inviata in avanguardia per correre i rischi e tracciare i pericoli, affinché le navi ammiraglia dietro di essa potessero volare con fiducia piuttosto che con paura.",
+  "description": "Gemella di Pioneer 10, lanciata un anno dopo. Pioneer 11 ha usato la gravità di Giove per piegare la sua traiettoria verso Saturno — la dimostrazione canonica della propulsione a manovra gravitazionale, la tecnica che in seguito ha reso possibile il Grand Tour dei Voyager. Su Saturno ha scoperto l'anello F e una piccola luna interna in seguito risolta nella coppia co-orbitale Giano/Epimeteo. Porta la stessa placca Pioneer del suo gemello. Il segnale è andato perduto il 1995-09-30 a una distanza eliocentrica di ~43 AU; il veicolo spaziale sta ora dirigendosi verso la costellazione dell'Aquila.",
   "events": [
     {
       "met": 0,
       "label": "LANCIO",
-      "note": "Atlas-Centaur da Cape Canaveral su traiettoria di assistenza Giove-Saturno.",
+      "note": "Atlas-Centaur da Cape Canaveral con una traiettoria a manovra gravitazionale verso Giove e Saturno.",
       "type": "nominal"
     },
     {
       "met": 606,
       "label": "SORVOLO DI GIOVE",
-      "note": "Ha sfruttato l'assistenza di Giove per virare verso Saturno.",
+      "note": "Ha usato l'assist di Giove per piegare la rotta verso Saturno.",
       "type": "nominal"
     },
     {
       "met": 2339,
       "label": "MASSIMO AVVICINAMENTO A SATURNO",
-      "note": "Prime immagini ravvicinate del pianeta; scoperti l'anello F e Epimeteo.",
+      "note": "Prime immagini del pianeta da breve distanza; ha scoperto l'anello F e una piccola luna interna (in seguito risolta nella coppia co-orbitale Giano/Epimeteo).",
       "type": "nominal"
     }
   ]

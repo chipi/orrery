@@ -1,8 +1,8 @@
 {
   "name": "SMART-1",
   "type": "ROBOTIC ORBITER · FLOWN",
-  "first": "First European spacecraft to reach the Moon + first deep-space ion-drive cruise to a planetary body",
-  "description": "ESA's first lunar mission and the first European spacecraft to reach the Moon. SMART = Small Missions for Advanced Research in Technology — and the key technology was a Hall-effect solar-electric ion thruster (PPS-1350-G), at the time the largest such thruster ever flown. Launched 2003-09-27 as a shared payload on an Ariane 5 from Kourou, the 367-kg spacecraft used its 1.2-kW xenon ion drive over 13 months to slowly raise its Earth orbit, eventually captured by lunar gravity on 2004-11-15 — a 13-month low-thrust spiral rather than the days-long chemical transfer of every prior lunar mission. Operated for 16 months in a polar lunar orbit returning AMIE camera imagery, the first X-ray fluorescence elemental maps of the Moon (D-CIXS), and infrared mineral spectroscopy (SIR). Deliberately impacted Lacus Excellentiae (34.4° S, 46.2° W) on 2006-09-03 02:42 UTC — the impact flash was observed live from the Canada-France-Hawaii Telescope.",
+  "first": "First European spacecraft to reach the Moon; first mission to reach the Moon under ion propulsion",
+  "description": "ESA's first lunar mission and the first European spacecraft to reach the Moon. SMART = Small Missions for Advanced Research in Technology — and the key technology was a Hall-effect solar-electric ion thruster (PPS-1350-G), at the time the largest such thruster ever flown. Launched 2003-09-27 as a shared payload on an Ariane 5 from Kourou, the 367-kg spacecraft used its 1.2-kW xenon ion drive over 13 months to slowly raise its Earth orbit, eventually captured by lunar gravity on 2004-11-15 — a 13-month low-thrust spiral rather than the days-long chemical transfer of every prior lunar mission. Operated for 16 months in a polar lunar orbit returning AMIE camera imagery, the first X-ray fluorescence elemental maps of the Moon (D-CIXS), and infrared mineral spectroscopy (SIR). Deliberately impacted Lacus Excellentiae (34.4° S, 46.2° W) on 2006-09-03 05:42 UTC — the impact flash was observed live from the Canada-France-Hawaii Telescope.",
   "events": [
     {
       "met": 0,
@@ -31,7 +31,7 @@
     {
       "met": 1072,
       "label": "LACUS EXCELLENTIAE IMPACT",
-      "note": "Deliberate impact at 34.4° S, 46.2° W on 2006-09-03 02:42 UTC. Impact flash observed from CFHT.",
+      "note": "Deliberate impact at 34.4° S, 46.2° W on 2006-09-03 05:42 UTC. Impact flash observed from CFHT.",
       "type": "nominal"
     }
   ]

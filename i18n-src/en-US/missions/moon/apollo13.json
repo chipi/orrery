@@ -10,7 +10,7 @@
     { "met": 1.2, "label": "MCC-2", "note": "Mid-course correction shifts the spacecraft off the free-return trajectory onto a Fra Mauro approach.", "type": "nominal" },
     { "met": 2.33, "label": "OXYGEN TANK #2 RUPTURE", "note": "SM cryo-stir command initiates a short-circuit fire and tank rupture. \"Houston, we've had a problem.\" Power and water dwindle; LM Aquarius becomes the lifeboat.", "type": "warning" },
     { "met": 2.92, "label": "FREE-RETURN BURN", "note": "31-second LM descent-engine burn returns the spacecraft to a free-return trajectory.", "type": "info" },
-    { "met": 3.13, "label": "LUNAR FLYBY", "note": "Closest approach 254 km altitude over Mare Cognitum — the farthest a crewed spacecraft has ever travelled from Earth.", "type": "info" },
+    { "met": 3.13, "label": "LUNAR FLYBY", "note": "Closest approach 254 km altitude over Mare Cognitum — at 400,171 km, the farthest humans had travelled from Earth (record held 1970–2026, surpassed by Artemis II in April 2026).", "type": "info" },
     { "met": 3.96, "label": "PC+2 BURN", "note": "Pericynthion-plus-2-hour burn shortens the return-to-Earth time by ten hours.", "type": "nominal" },
     { "met": 5.95, "label": "SPLASHDOWN", "note": "CSM re-entry and South Pacific splashdown, recovered by USS Iwo Jima.", "type": "info" }
   ]

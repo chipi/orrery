@@ -10,7 +10,7 @@
   "departure_date": "2023-04-14",
   "arrival_date": "2031-07-21",
   "transit_days": 3020,
-  "vehicle": "Ariane 5 ECA+",
+  "vehicle": "Ariane 5 ECA",
   "payload": "6000 kg wet (2900 kg dry) — largest interplanetary spacecraft Europe has ever built. 10 instruments: JANUS (visible), MAJIS (IR), UVS, SWI (sub-mm), GALA (laser altimeter), RIME (radar sounder, NASA), J-MAG (mag), PEP (particle), RPWI (plasma waves), 3GM (radio science). 85 m² solar arrays sized for ~5.5 AU operation.",
   "delta_v": "~3.0 km/s (gravity-assist sequence + Jupiter orbit insertion + Ganymede orbit insertion)",
   "data_quality": "partial",
@@ -76,7 +76,7 @@
         "met_days": 871,
         "type": "flyby",
         "label": "Venus — gravity assist",
-        "description": "August 2025. Closest approach ~9,000 km from Venus. The encounter raises Juice's aphelion enough that two more Earth assists in 2026 + 2029 will reach Jupiter. The Venus thermal environment is the hottest the spacecraft will face — passive thermal control was designed around this pass."
+        "description": "August 2025. Closest approach ~5,088 km from Venus. The encounter raises Juice's aphelion enough that two more Earth assists in 2026 + 2029 will reach Jupiter. The Venus thermal environment is the hottest the spacecraft will face — passive thermal control was designed around this pass."
       },
       {
         "met_days": 1265,

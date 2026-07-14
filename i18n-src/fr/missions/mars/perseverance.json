@@ -1,50 +1,50 @@
 {
-  "name": "Persévérance",
+  "name": "Perseverance",
   "type": "ROVER · ACTIF",
-  "first": "Premier hélicoptère sur une autre planète (Ingenuity) ; mise en cache du premier échantillon pour Mars Sample Return",
-  "dispatch": "Perseverance est allé sur Mars pour chercher les morts. Arrivé en 2021 dans le cratère Jezero — le delta d'une rivière qui alimentait un lac il y a des milliards d'années, exactement le genre d'endroit où la vie aurait laissé des traces — c'est le premier rover construit spécifiquement pour rechercher des signes de vie ancienne, et pour faire quelque chose qu'aucune mission n'avait fait : sceller de la roche martienne dans des tubes et les mettre de côté pour qu'un futur vaisseau spatial les ramène sur Terre. Il a également livré Ingenuity, le petit hélicoptère qui a effectué le premier vol motorisé sur une autre planète. Si les échantillons qu'il met en cache sont un jour ramenés, ils seront les premiers morceaux de la surface d'une autre planète rapportés sur Terre.",
-  "description": "Perseverance est la mission à la surface de Mars la plus ambitieuse jamais réalisée. Mars Sample Return en dépend : le rover collecte et met en cache des échantillons dans des tubes qu'une future mission récupérera et apportera sur Terre. Ingenuity, le premier hélicoptère sur une autre planète, a effectué 72 missions avant de prendre sa retraite avec des rotors endommagés en janvier 2024, prouvant qu'un vol contrôlé est possible dans la fine atmosphère de Mars. MOXIE, un démonstrateur d'oxygène à partir de CO2, a produit le premier oxygène fabriqué localement sur une autre planète, une répétition pour les missions avec équipage sur Mars.",
+  "first": "Premier hélicoptère sur une autre planète (Ingenuity) ; premier stockage d'échantillons pour la mission Mars Sample Return",
+  "dispatch": "Perseverance est allé sur Mars à la recherche de vies disparues. Arrivé en 2021 au fond du cratère Jezero — un bassin contenant le delta d'une rivière qui alimentait un lac il y a des milliards d'années, exactement le genre d'endroit où la vie aurait laissé des traces — c'est le premier rover conçu spécifiquement pour chercher des signes de vie ancienne, et pour faire quelque chose qu'aucune mission n'avait fait auparavant : sceller des roches martiennes dans des tubes et les mettre de côté pour qu'un futur engin spatial les ramène à la maison. Il a également livré Ingenuity, le petit hélicoptère qui a effectué le premier vol motorisé sur une autre planète. Si les échantillons qu'il met en cache sont jamais ramenés, ce seront les premiers morceaux de surface d'une autre planète apportés sur Terre.",
+  "description": "Perseverance est la mission de surface martienne la plus ambitieuse jamais lancée. Mars Sample Return en dépend — le rover collecte et stocke des échantillons dans des tubes qu'une future mission récupérera et ramènera sur Terre. Ingenuity, le premier hélicoptère sur une autre planète, a volé lors de 72 missions avant de se retirer avec des rotors endommagés en janvier 2024 — prouvant que le vol contrôlé est possible dans l'atmosphère ténue de Mars. MOXIE, un démonstrateur produisant de l'oxygène à partir de CO₂, a produit le premier oxygène produit localement sur une autre planète, une répétition générale pour les futures missions martiennes habitées.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Atlas V 541 de Cap Canaveral SLC-41 — même classe de véhicule que Curiosity.",
+      "note": "Atlas V 541 depuis Cape Canaveral SLC-41 — même classe de véhicule que Curiosity.",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "BRÛLURE TMI",
-      "note": "Injection trans-Mars.",
+      "label": "INJECTION VERS MARS",
+      "note": "Trans-Mars injection.",
       "type": "nominal"
     },
     {
       "met": 9,
-      "label": "MTC-1",
-      "note": "Première correction à mi-parcours.",
+      "label": "TCM-1",
+      "note": "Première correction de trajectoire.",
       "type": "nominal"
     },
     {
       "met": 203,
-      "label": "JDE",
-      "note": "Sky-crane livre un rover au cratère Jezero 2021-02-18 — site d'un ancien delta fluvial.",
+      "label": "EDL",
+      "note": "Le sky-crane délivre le rover au cratère Jezero le 2021-02-18 — site d'un ancien delta fluvial.",
       "type": "nominal"
     },
     {
       "met": 203.01,
       "label": "ATTERRISSAGE",
-      "note": "Perseverance atterrit à Jezero à 20h55 UTC.",
+      "note": "Perseverance se pose à Jezero à 20:55 UTC.",
       "type": "nominal"
     },
     {
       "met": 271,
-      "label": "PREMIER VOL D'INGÉNUITÉ",
-      "note": "Premier vol motorisé et contrôlé sur une autre planète : 39,1 secondes jusqu'à 5 m d'altitude.",
+      "label": "PREMIER VOL D'INGENUITY",
+      "note": "Premier vol motorisé contrôlé sur une autre planète — 39,1 secondes jusqu'à 5 m d'altitude.",
       "type": "info"
     },
     {
       "met": 1278,
-      "label": "INGÉNUITÉ RETRAITÉ",
-      "note": "Pale de rotor endommagée lors du 72e vol le 18/01/2024 ; l'hélicoptère reste opérationnel comme relais de communication.",
+      "label": "INGENUITY RETIRÉ",
+      "note": "Pale du rotor endommagée lors du 72ème vol le 2024-01-18 ; hélicoptère immobilisé, repurposé comme station météorologique et de données stationnaire stockant des relevés pour une récupération future.",
       "type": "info"
     }
   ]

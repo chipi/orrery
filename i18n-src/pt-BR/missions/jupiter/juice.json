@@ -1,31 +1,31 @@
 {
   "name": "JUICE",
-  "type": "ORBITADOR · ATIVA",
-  "first": "Maior espaçonave interplanetária já construída na Europa; primeira espaçonave a orbitar uma lua de outro planeta (Ganimedes, 2034)",
-  "description": "JUpiter ICy moons Explorer — missão carro-chefe classe L da ESA, lançada em 14-4-2023. O cruzeiro de 8 anos usa uma das sequências de assistência gravitacional mais complexas já voadas: uma assistência gravitacional Lua-Terra inédita em 19-8-2024, Vênus em 31-8-2025, depois mais duas passagens terrestres em 2026 e 2029. A inserção em órbita joviana está marcada para 21-7-2031. Após 35 sobrevoos próximos de Europa, Ganimedes e Calisto ao longo de 3,5 anos, a JUICE manobrará para uma órbita dedicada de Ganimedes em 31-12-2034 — a primeira espaçonave a orbitar uma lua de outro planeta.",
+  "type": "ORBITADOR · ATIVO",
+  "first": "Maior sonda interplanetária construída na Europa; primeira sonda a orbitar uma lua de outro planeta (Ganimedes, 2034)",
+  "description": "JUpiter ICy moons Explorer — missão de classe L da ESA, lançada em 2023-04-14. O trajeto de 8 anos utiliza uma das sequências de assistência gravitacional mais complexas já realizadas: a inédita Assistência Gravitacional Lunar-Terra em 2024-08-19, Vênus em 2025-08-31, seguidas de dois sobrevoos adicionais da Terra em 2026 e 2029. A inserção em órbita de Júpiter está prevista para 2031-07-21. Após 35 sobrevoos próximos de Europa, Ganimedes e Calisto ao longo de 3,5 anos, a JUICE realizará uma manobra para entrar em órbita dedicada de Ganimedes em 2034-12-31 — a primeira sonda a orbitar uma lua de outro planeta. A missão encerra em 2035 com impacto em Ganimedes. Ciência primária: existência e propriedades de oceanos subsuperficiais nas luas galileanas de gelo, composição da camada de gelo e aquecimento por marés, além da estrutura da magnetosfera joviana.",
   "events": [
     {
       "met": 0,
       "label": "LANÇAMENTO",
-      "note": "O Ariane 5 ECA+ lança JUICE de Kourou.",
+      "note": "Ariane 5 ECA leva a JUICE de Kourou.",
       "type": "nominal"
     },
     {
       "met": 493,
-      "label": "SOBREVOO LUA-TERRA",
-      "note": "Primeira assistência gravitacional Lua-Terra já realizada — Lua + Terra em uma única balanço.",
+      "label": "SOBREVOO LUNAR-TERRA",
+      "note": "Manobra inédita de Assistência Gravitacional Lunar-Terra — Lua e Terra em um único voo.",
       "type": "nominal"
     },
     {
       "met": 871,
-      "label": "SOBREVOO VÊNUS",
-      "note": "Assistência gravitacional venusiana no caminho de volta a mais duas passagens terrestres.",
+      "label": "SOBREVOO DE VÊNUS",
+      "note": "Assistência gravitacional de Vênus no trajeto de retorno para dois sobrevoos adicionais da Terra.",
       "type": "nominal"
     },
     {
       "met": 3020,
-      "label": "INSERÇÃO ÓRBITA JÚPITER",
-      "note": "A queima do motor principal coloca JUICE em órbita joviana para a turnê das luas geladas.",
+      "label": "INSERÇÃO EM ÓRBITA DE JÚPITER",
+      "note": "Queima do motor principal coloca a JUICE em órbita de Júpiter para o tour das luas de gelo.",
       "type": "info"
     }
   ]

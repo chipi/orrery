@@ -1,84 +1,84 @@
 {
   "name": "Galileo",
-  "tagline": "Die erste Raumsonde, die Jupiter umkreiste, flog acht Jahre lang mit einer beschädigten Antenne — und lieferte dennoch die bislang stärksten Beweise dafür, dass ein Jupitermond einen Ozean verbirgt.",
+  "tagline": "Die erste Raumsonde, die Jupiter umkreiste, flog über ein Jahrzehnt lang mit einer defekten Antenne — und lieferte dennoch die bislang stärksten Beweise dafür, dass ein Mond des Jupiter einen Ozean verbirgt.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Die Pioneer- und Voyager-Sonden waren an Jupiter vorbeigeflogen, jeweils in wenigen Stunden, und jede hatte mehr Fragen hinterlassen als beantwortet: Hinweise auf einen Ozean unter dem Eis von Europa, Vulkane auf Io, ein Magnetfeld, das größer war als alles andere im Sonnensystem. Vorbeiflüge konnten diese nicht klären. Um Jupiter und seine vier großen Monde zu verstehen — Welten, die so vielfältig und interessant wie eigenständige Planeten sind — müsste eine Raumsonde in eine Umlaufbahn eintreten und dort Jahre verbringen."
+      "md": "Die Pioneer- und Voyager-Sonden waren am Jupiter vorbeigeflogen, jede in wenigen Stunden, und jede hatte mehr Fragen hinterlassen als beantwortet: Hinweise auf einen Ozean unter dem Eis von Europa, Vulkane auf Io, ein Magnetfeld, das größer war als alles andere im Sonnensystem. Vorbeiflüge konnten sie nicht klären. Um Jupiter und seine vier großen Monde zu verstehen — Welten, die in ihrer Vielfalt und ihrem Interesse Planeten gleichkamen — musste eine Raumsonde in eine Umlaufbahn eintreten und jahrelang bleiben."
     },
     {
       "type": "prose",
-      "md": "Galileo wurde gebaut, um diese stationäre Sonde zu sein, und hatte bereits vor dem Start einen schweren Weg. Jahrelang verzögert durch die Challenger-Katastrophe und wechselnde Startpläne, verließ sie schließlich 1989 die Erde vom Space Shuttle aus auf einem langsamen, schleifenförmigen Pfad — vorbei an der Venus und zweimal an der Erde, um Geschwindigkeit aufzubauen — der sechs Jahre benötigte, um einen Planeten zu erreichen, zu dem andere Missionen direkt geflogen waren."
+      "md": "Galileo war gebaut worden, um dieser ständige Begleiter zu sein, und sie hatte schon vor dem Start einen schweren Weg. Jahrelang verzögert durch die Challenger-Katastrophe und wechselnde Startpläne, verließ sie schließlich 1989 von einem Space Shuttle aus die Erde auf einer langsamen, schleifenförmigen Bahn — vorbei an der Venus und zweimal an der Erde, um Geschwindigkeit aufzubauen —, die sechs Jahre dauerte, um einen Planeten zu erreichen, zu dem andere Missionen direkt geflogen waren."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Das Ziel war die erste andauernde Untersuchung des Jupiter-Systems: den Planeten zu umkreisen, seine vier großen Monde wiederholt zu bereisen und die verlockenden Einblicke der Voyager-Sonden in Verständnis zu verwandeln. Gab es wirklich einen Ozean unter Europa? Wie funktionierten die Vulkane von Io? Was trieb das größte Magnetfeld im Sonnensystem an? Dies waren Fragen, die nur ein Orbiter beantworten konnte, der jeden Mond über Jahre hinweg immer wieder passierte."
+      "md": "Das Ziel war die erste langfristige Untersuchung des Jupiter-Systems: den Planeten zu umkreisen, seine vier großen Monde wiederholt zu besuchen und die verlockenden Einblicke der Voyager-Sonden in Verständnis zu verwandeln. Gab es wirklich einen Ozean unter Europa? Wie funktionierten die Vulkane auf Io? Was trieb das größte Magnetfeld im Sonnensystem an? Dies waren Fragen, die nur ein Orbiter beantworten konnte, der jeden Mond über Jahre hinweg immer wieder passierte."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/galileo/01"
       },
-      "caption": "Galileo trug eine Sonde, die in Jupiters Atmosphäre abgesetzt werden sollte, und einen Orbiter, um die Monde zu bereisen. Ihre große, schirmartige Hauptantenne sollte sich im Flug entfalten, um Daten mit hoher Geschwindigkeit zur Erde zu senden — und sie tat es nie vollständig.",
+      "caption": "Galileo trug eine Sonde, die in Jupiters Atmosphäre abgesetzt werden sollte, und einen Orbiter, um die Monde zu besuchen. Ihre große, schirmähnliche Hauptantenne sollte sich im Flug entfalten, um Daten mit hoher Geschwindigkeit zur Erde zu senden — und sie tat es nie vollständig.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Galileo trug auch eine zweite Raumsonde: eine Sonde, die sich bei der Ankunft abtrennen und direkt in Jupiters Wolken stürzen sollte, um die Atmosphäre des Riesenplaneten von innen zu messen, während sie fiel — die erste und bislang einzige direkte Probe aus dem Inneren eines Gasriesen."
+      "md": "Galileo trug auch eine zweite Raumsonde: eine Sonde, die bei der Ankunft abgetrennt werden und direkt in Jupiters Wolken eintauchen sollte, um die Atmosphäre des Riesenplaneten von innen zu messen, während sie fiel — die erste und bislang einzige direkte Probe aus dem Inneren eines Gasriesen."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Dann stand die Mission kurz vor dem Scheitern. 1991, auf dem Weg zu Jupiter, versagte Galileos Hauptantenne beim Öffnen — sie blieb halb zusammengerollt stecken, wie ein Regenschirm, der sich nicht öffnen lässt, und reduzierte die Datenrate der Raumsonde auf einen winzigen Bruchteil des Geplanten. Die Mission hätte gelähmt sein müssen. Stattdessen schrieben Ingenieure ihre Software von der Erde aus neu, brachten der fernen Raumsonde bei, ihre Daten weitaus aggressiver zu komprimieren und sie über eine kleine Ersatzantenne zur Erde zu übertragen. Der Großteil der Wissenschaft wurde über eine Verbindung gerettet, die tausendfach langsamer war als beabsichtigt."
+      "md": "Dann wäre die Mission beinahe gescheitert. 1991, auf dem Weg zum Jupiter, versagte Galileos Hauptantenne beim Öffnen — sie blieb halb zusammengefaltet stecken, wie ein Regenschirm, der sich nicht öffnen will, und reduzierte die Datenrate der Raumsonde auf einen winzigen Bruchteil des Geplanten. Die Mission hätte lahmgelegt sein müssen. Stattdessen schrieben Ingenieure ihre Software von der Erde aus um, brachten der fernen Raumsonde bei, ihre Daten viel aggressiver zu komprimieren und sie über eine kleine Ersatzantenne tröpfchenweise zur Erde zu senden. Der größte Teil der Wissenschaft wurde über eine Verbindung gerettet, die tausendmal langsamer war als beabsichtigt."
     },
     {
       "type": "prose",
-      "md": "Sie erreichte Jupiter im Dezember 1995, setzte ihre Sonde in den Wolken ab und ging in eine Umlaufbahn — die erste Raumsonde, die dies je tat. In den folgenden acht Jahren bereiste sie die Monde dutzende Male, und ihre größte Entdeckung entwickelte sich langsam aus dieser Beharrlichkeit: Die Art, wie sich Jupiters Magnetfeld um Europa legte, konnte nur durch einen salzigen, leitenden Ozean aus flüssigem Wasser unter dem Eis des Mondes erklärt werden. Sie kartierte auch den unablässigen Vulkanismus von Io und fand Anzeichen für ein Magnetfeld, das im Inneren des Mondes Ganymed erzeugt wurde."
+      "md": "Sie erreichte Jupiter im Dezember 1995, setzte ihre Sonde in den Wolken ab und begab sich in eine Umlaufbahn — die erste Raumsonde, die dies je tat. Während der fast acht Jahre besuchte sie die Monde dutzende Male, und ihre größte Entdeckung ergab sich langsam aus dieser Beharrlichkeit: die Art, wie sich Jupiters Magnetfeld um Europa legte, konnte nur durch einen salzigen, leitenden Ozean aus flüssigem Wasser unter dem Eis des Mondes erklärt werden. Sie kartierte auch Ios unaufhörlichen Vulkanismus und fand Anzeichen für ein Magnetfeld, das im Inneren des Mondes Ganymed erzeugt wurde."
     },
     {
       "type": "prose",
-      "md": "2003, mit wenig Treibstoff, wurde Galileo absichtlich in Jupiter gesteuert und zerstört — dieselbe Entscheidung, die Cassini später am Saturn treffen würde — um sicherzustellen, dass die Raumsonde niemals eines Tages auf Europa abstürzen und den Ozean kontaminieren könnte, den sie so sehr dabei geholfen hatte, aufzudecken."
+      "md": "2003, mit niedrigem Treibstoffvorrat, wurde Galileo absichtlich in Jupiter gelenkt und zerstört — dieselbe Entscheidung, die Cassini später am Saturn treffen würde —, um sicherzustellen, dass die Raumsonde niemals eines Tages auf Europa abstürzen und den Ozean kontaminieren könnte, den sie so sehr dazu beigetragen hatte aufzudecken."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Die Geschichte von Galileo ist eine Mission, die durch Einfallsreichtum vor der Katastrophe bewahrt wurde. Die feststeckende Antenne hätte sie beenden können; die Raumsonde war um eine Hochgeschwindigkeitsverbindung herum konstruiert worden, die nicht mehr existierte. Dass Galileo trotzdem den Großteil ihrer Wissenschaft zurückbrachte — über eine Ersatzantenne, die nie dafür gedacht war, diese Last zu tragen, über Software, die nach dem Start geschrieben und hochgeladen wurde — ist eine der großen Rettungsaktionen in der Geschichte der Raumfahrt und eine Erinnerung daran, dass das Ergebnis einer Mission ebenso sehr von den Menschen bestimmt wird, die sie fliegen, wie von der Hardware, die flog."
+      "md": "Die Geschichte von Galileo ist eine Mission, die durch Erfindungsreichtum aus einer Katastrophe gerettet wurde. Die festsitzende Antenne hätte sie beenden können; die Raumsonde war um eine Hochgeschwindigkeitsverbindung herum konstruiert worden, die nicht mehr existierte. Dass Galileo trotzdem den größten Teil ihrer Wissenschaft zurückbrachte — über eine Ersatzantenne, die niemals dafür gedacht war, diese Last zu tragen, mit Software, die nach dem Start geschrieben und hochgeladen wurde — ist eine der großartigsten Rettungsaktionen in der Geschichte der Raumfahrt und eine Erinnerung daran, dass das Ergebnis einer Mission ebenso sehr von den Menschen bestimmt wird, die sie fliegen, wie von der Hardware, die flog."
     },
     {
       "type": "prose",
-      "md": "Ihre wichtigste Entdeckung definierte einen Mond neu. Vor Galileo war Europas Ozean eine Hypothese, die aus einigen wenigen Voyager-Bildern abgeleitet wurde; nach Galileo war er die führende Erklärung für harte magnetische Daten, die bei einem Vorbeiflug nach dem anderen gesammelt wurden. Ein gefrorener Jupitermond gesellte sich zu Saturns Enceladus als ein Ort, an dem flüssiges Wasser — und die Möglichkeit von Leben — unter dem Eis verborgen liegt. Galileo sah den Ozean nicht; sie machte die Argumente dafür unwiderlegbar und richtete die nächste Generation von Missionen auf Europa aus."
+      "md": "Ihre wichtigste Entdeckung gestaltete einen Mond neu. Vor Galileo war Europas Ozean eine Hypothese, abgeleitet aus einigen wenigen Voyager-Aufnahmen; nach Galileo war er die führende Erklärung für harte magnetische Daten, die bei Vorbeiflug um Vorbeiflug gesammelt wurden. Ein gefrorener Mond des Jupiter gesellte sich zu Saturns Enceladus als ein Ort, an dem flüssiges Wasser — und die Möglichkeit von Leben — unter dem Eis verborgen ist. Galileo sah den Ozean nicht; sie machte den Fall dafür unbestreitbar und richtete die nächste Generation von Missionen auf Europa aus."
     },
     {
       "type": "prose",
-      "md": "Und wie Cassini nach ihr beendete Galileo sich selbst, um das zu schützen, was sie gefunden hatte. Eine Raumsonde, die acht Jahre lang argumentiert hatte, dass Europa bewohnbar sein könnte, durfte nicht zu dem werden, was ihn mit irdischem Leben besät. Ihr letzter Akt war, in Jupiter zu fallen — der Riesenplanet verschlang den Roboter, der seine Monde endlich verstanden hatte."
+      "md": "Und wie Cassini nach ihr beendete Galileo sich selbst, um zu schützen, was sie gefunden hatte. Eine Raumsonde, die fast acht Jahre damit verbracht hatte zu argumentieren, dass Europa bewohnbar sein könnte, durfte nicht zu dem Ding werden, das es mit irdischem Leben besäte. Ihr letzter Akt war es, in Jupiter zu fallen — der Riesenplanet verschlang den Roboter, der seine Monde endlich verstanden hatte."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Galileos erstes Vermächtnis ist Europa. Ihre Daten verwandelten einen unterirdischen Ozean von Spekulation in das führende Modell und machten Europa zu einem der zwei oder drei überzeugendsten Orte im Sonnensystem für die Suche nach Leben — und der direkte Grund, warum eine eigens dafür vorgesehene Mission, Europa Clipper, später gebaut wurde, um dem nachzugehen."
+      "md": "Galileos erstes Vermächtnis ist Europa. Ihre Daten verwandelten einen unterirdischen Ozean von Spekulation in das führende Modell und machten Europa zu einem der zwei oder drei überzeugendsten Orte im Sonnensystem, um nach Leben zu suchen — und der direkte Grund, warum eine dedizierte Mission, Europa Clipper, später gebaut wurde, um nachzufassen."
     },
     {
       "type": "prose",
-      "md": "Ihr zweites ist das Jupiter-System als Ganzes: die erste andauernde Untersuchung des Riesenplaneten, dessen Atmosphäre von innen beprobt, dessen Magnetfeld kartiert und dessen vier große Monde von Voyager-Einblicken zu verstandenen Welten über acht Jahre in einer Umlaufbahn verwandelt wurden."
+      "md": "Ihr zweites ist das Jupiter-System als Ganzes: die erste langfristige Untersuchung des Riesenplaneten, seine Atmosphäre von innen beprobt, sein Magnetfeld kartiert und seine vier großen Monde über fast acht Jahre in der Umlaufbahn von Voyager-Einblicken in verstandene Welten verwandelt."
     },
     {
       "type": "prose",
-      "md": "Ihr drittes ist ein Beweis für Widerstandsfähigkeit — dass eine Mission ihre zentrale Fähigkeit verlieren und dennoch erfolgreich sein kann, wenn die Menschen, die sie fliegen, erfinderisch genug sind. Galileos Software-Rettung ist eine bleibende Fallstudie für die Bergung einer Raumsonde, die eigentlich verloren sein sollte."
+      "md": "Ihr drittes ist eine Demonstration von Widerstandsfähigkeit — dass eine Mission ihre zentrale Fähigkeit verlieren und dennoch erfolgreich sein kann, wenn die Menschen, die sie fliegen, erfinderisch genug sind. Galileos Software-Rettung ist eine dauerhafte Fallstudie darin, eine Raumsonde zu retten, die nach allen Regeln hätte verloren sein müssen."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lehre von Galileo ist, dass eine Mission nicht beendet ist, wenn ihre Hardware versagt. Die feststeckende Antenne entfernte die Fähigkeit, um die herum die gesamte Raumsonde konstruiert worden war — und die Mission war dennoch erfolgreich, weil ihre Betreiber neu schrieben, was die Maschine tat, anstatt zu trauern, was sie nicht mehr tun konnte. Wenn der Plan zerbricht, lautet die Frage nicht, was verloren ging, sondern was noch mit dem getan werden kann, was bleibt; der Unterschied zwischen einer toten Mission und einer großartigen ist oft die Antwort darauf."
+      "md": "Die Lehre aus Galileo ist, dass eine Mission nicht beendet ist, wenn ihre Hardware versagt. Die festsitzende Antenne entfernte die Fähigkeit, um die herum die gesamte Raumsonde konstruiert worden war — und die Mission gelang dennoch, weil ihre Betreiber umschrieben, was die Maschine tat, anstatt zu betrauern, was sie nicht mehr tun konnte. Wenn der Plan zerbricht, lautet die Frage nicht, was verloren ging, sondern was mit dem, was übrig bleibt, noch getan werden kann; der Unterschied zwischen einer toten Mission und einer großartigen ist oft die Antwort darauf."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lehre ist, dass Geduld Hinweise in Wissen verwandelt. Europas Ozean war in einem einzelnen Vorbeiflug unsichtbar; er entstand erst aus dem akkumulierten Gewicht vieler, die über Jahre in einer Umlaufbahn gesammelt wurden. Die wichtigsten Entdeckungen werden häufig nicht gesehen, sondern gebaut — Messung für Messung zusammengesetzt, bis eine Hypothese zum einzigen wird, das zu den Daten passt."
+      "md": "Die tiefere Lehre ist, dass Geduld Hinweise in Wissen verwandelt. Europas Ozean war in keinem einzelnen Vorbeiflug sichtbar; er trat nur aus dem akkumulierten Gewicht vieler hervor, gesammelt über Jahre in der Umlaufbahn. Die wichtigsten Entdeckungen werden häufig nicht gesehen, sondern gebaut — zusammengesetzt Messung für Messung, bis eine Hypothese zu dem einzigen Ding wird, das zu den Daten passt."
     }
   ]
 }

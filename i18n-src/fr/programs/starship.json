@@ -1,92 +1,92 @@
 {
   "name": "Starship",
-  "tagline": "La plus grande fusée jamais construite, conçue pour être entièrement et rapidement réutilisable — le véhicule que SpaceX destine à transporter des humains vers Mars.",
+  "tagline": "La plus grande fusée jamais construite, conçue pour être entièrement et rapidement réutilisable — le véhicule que SpaceX destine à transporter des gens vers Mars.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Toutes les fusées ayant jamais lancé des humains ont jeté la majeure partie d'elles-mêmes. Même Falcon 9, qui récupère son premier étage, abandonne l'étage supérieur à chaque vol. Starship est une tentative de mettre fin à cela entièrement — un système de lancement où les deux étages reviennent, atterrissent, sont ravitaillés et revolent, comme un avion plutôt qu'un obus d'artillerie. C'est aussi tout simplement énorme : plus haute que Saturn V, avec plus de poussée que n'importe quelle fusée dans l'histoire, construite non pas pour voler une mission ou deux mais pour voler constamment, à bas coût, pendant des décennies."
+      "md": "Chaque fusée ayant jamais lancé des êtres humains a jeté la majeure partie d'elle-même. Même Falcon 9, qui récupère son premier étage, se débarrasse de l'étage supérieur à chaque vol. Starship est une tentative d'en finir totalement avec cela — un système de lancement où les deux étages reviennent, atterrissent, sont ravitaillés et revolent, comme un avion plutôt qu'un obus d'artillerie. C'est aussi tout simplement énorme : plus haute que Saturn V, avec plus de poussée que n'importe quelle fusée de l'histoire, construite non pas pour effectuer une ou deux missions mais pour voler constamment, à moindre coût, pendant des décennies."
     },
     {
       "type": "prose",
-      "md": "La raison de la taille et de la réutilisation est une destination unique. L'objectif déclaré de SpaceX depuis sa création a été de rendre l'humanité multiplanétaire, et l'arithmétique de Mars est brutale : envoyer suffisamment de personnes et de fret pour y construire une colonie nécessite de soulever plus de masse, plus souvent, et bien moins cher qu'aucune fusée à usage unique ne pourrait jamais le faire. Starship est la réponse calculée à rebours depuis cet objectif — le véhicule dont vous auriez besoin si vous étiez sérieux non seulement pour visiter Mars mais pour y vivre."
+      "md": "La raison de cette taille et de cette réutilisation est une destination unique. L'objectif déclaré de SpaceX depuis sa création a été de rendre l'humanité multiplanétaire, et l'arithmétique de Mars est brutale : envoyer suffisamment de personnes et de fret pour y bâtir une colonie nécessite de soulever plus de masse, plus souvent, et bien moins cher que n'importe quelle fusée à usage unique ne pourrait jamais le faire. Starship est la réponse obtenue en raisonnant à rebours depuis cet objectif — le véhicule dont vous auriez besoin si vous étiez sérieux non seulement dans l'idée de visiter Mars mais d'y vivre."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "L'objectif immédiat est la réutilisabilité complète et rapide : un propulseur et un vaisseau qui tous deux reviennent, atterrissent et revolent avec une remise en état minimale, réduisant le coût par kilogramme en orbite d'un ordre de grandeur supplémentaire au-delà de ce que Falcon 9 a accompli. La réutilisation du premier étage a rendu l'espace moins cher ; la réutilisation de tout, volé souvent, est censée le rendre suffisamment bon marché pour changer ce qui est possible."
+      "md": "L'objectif immédiat est la réutilisabilité complète et rapide : un propulseur et un vaisseau qui reviennent tous deux, atterrissent et revolent avec un minimum de remise en état, réduisant le coût par kilogramme en orbite d'un autre ordre de grandeur au-delà de ce que Falcon 9 a accompli. La réutilisation du premier étage a rendu l'espace moins coûteux ; la réutilisation de tout, avec des vols fréquents, est censée le rendre suffisamment bon marché pour changer ce qui est possible."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/starship/01"
       },
-      "caption": "Starship au sommet de son propulseur Super Heavy — la pile complète. Les deux étages sont conçus pour revenir et atterrir ; le propulseur est maintenant attrapé en plein vol par la tour de lancement elle-même, une méthode de récupération que personne n'avait tentée auparavant.",
+      "caption": "Starship au sommet de son propulseur Super Heavy — la pile complète. Les deux étages sont conçus pour revenir et atterrir ; le propulseur est désormais attrapé en plein vol par la tour de lancement elle-même, une méthode de récupération que personne n'avait tentée auparavant.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Les objectifs à plus court terme sont des missions concrètes qui en ont besoin. La NASA a choisi une version de Starship comme système d'atterrissage lunaire habité qui posera les astronautes Artemis sur la Lune — le premier atterrisseur lunaire habité depuis Apollo. Starship est également destiné à lancer les plus grands satellites Starlink de prochaine génération, et éventuellement à transporter du fret et des équipages vers Mars. La Lune est le terrain d'essai ; Mars est l'objectif."
+      "md": "Les objectifs à plus court terme sont des missions concrètes qui en ont besoin. La NASA a sélectionné Starship comme l'un des deux systèmes d'atterrissage habités qui déposeront les astronautes d'Artemis sur la Lune — l'autre étant Blue Moon de Blue Origin — les premiers atterrisseurs lunaires habités depuis Apollo. Starship est également destiné à lancer les plus grands satellites Starlink de nouvelle génération, et éventuellement à transporter du fret et des équipages vers Mars. La Lune est le terrain d'essai ; Mars est le but."
     },
     {
       "type": "prose",
-      "md": "Et il y a un objectif qui sous-tend tout cela : le ravitaillement en orbite. Un Starship à destination de la Lune ou de Mars se lance presque vide du propergol dont il a besoin pour le voyage, et est rempli par une série de Starship ravitailleurs qui se rencontrent avec lui en orbite terrestre. Cette architecture de ravitaillement orbital n'est pas prouvée à grande échelle et constitue la chose la plus difficile que le programme doit démontrer — la clé de voûte sur laquelle repose tout le plan spatial profond."
+      "md": "Et il y a un objectif qui sous-tend tout cela : le ravitaillement en orbite. Un Starship à destination de la Lune ou de Mars décolle presque vide du propergol dont il a besoin pour le voyage, et est rempli par une série de Starship-ravitailleurs effectuant un rendez-vous avec lui en orbite terrestre. Cette architecture de ravitaillement orbital n'est pas éprouvée à grande échelle et constitue la chose la plus difficile que le programme doit démontrer — la clé de voûte sur laquelle repose tout le plan d'exploration lointaine."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Au milieu des années 2020, Starship est un programme au milieu de son histoire, pas à la fin. Il a volé : un article d'essai à moteur unique a sauté et atterri en 2019, un étage supérieur a volé haut et atterri intact en 2021, la pile complète a été lancée à plusieurs reprises depuis 2023, et en 2024 le propulseur Super Heavy a été attrapé en plein vol par les bras de la tour de lancement — une réalisation véritablement nouvelle. Mais il n'a pas encore transporté de personnes, atteint l'orbite avec une charge utile de manière routinière, ou démontré le ravitaillement orbital. Les jalons les plus difficiles sont encore à venir."
+      "md": "Au milieu des années 2020, Starship est un programme au milieu de son histoire, pas à sa fin. Il a volé : un article d'essai à moteur unique a sauté et atterri en 2019, un étage supérieur a volé en altitude et atterri intact en 2021, la pile complète s'est lancée à plusieurs reprises depuis 2023, et en 2024 le propulseur Super Heavy a été attrapé en plein vol par les bras de la tour de lancement — une réalisation véritablement nouvelle. Mais il n'a pas encore transporté de personnes, atteint l'orbite avec une charge utile de manière routinière, ni démontré le ravitaillement orbital. Les étapes les plus difficiles sont encore à venir."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/starship/02"
       },
-      "caption": "Un vol d'essai de Starship. La méthode du programme est l'échec visible à grande échelle : voler, le regarder se briser, apprendre, revoler — la même itération qui a rendu Falcon bon marché, appliquée à la plus grande fusée jamais construite.",
+      "caption": "Un vol d'essai de Starship. La méthode du programme est l'échec visible à grande échelle : voler, regarder cela se briser, apprendre, revoler — la même itération qui a rendu Falcon bon marché, appliquée à la plus grande fusée jamais construite.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "Le style de développement est délibérément, spectaculairement public. Là où les programmes traditionnels testent au sol pendant des années pour éviter un seul échec, Starship fait voler des prototypes précoces en s'attendant à ce qu'ils explosent, traitant chaque perte comme des données achetées à bas prix. Cette approche a produit des images spectaculaires et des progrès rapides — et aussi une friction réelle, sur l'impact environnemental autour du site de lancement, sur les débris, et sur la question de savoir si l'itération rapide est appropriée pour un véhicule destiné à transporter éventuellement des humains."
+      "md": "Le style de développement est délibérément, spectaculairement public. Là où les programmes traditionnels testent au sol pendant des années pour éviter un seul échec, Starship fait voler des prototypes précoces en s'attendant à ce qu'ils explosent, traitant chaque perte comme des données acquises à bon marché. Cette approche a produit des images spectaculaires et des progrès rapides — mais aussi de véritables frictions, concernant l'impact environnemental autour du site de lancement, les débris, et la question de savoir si l'itération rapide est appropriée pour un véhicule censé transporter éventuellement des humains."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Starship est la méthode de Falcon 9 poussée à son extrême logique. L'entreprise qui a appris à faire atterrir un propulseur en en écrasant des dizaines apprend maintenant à faire voler une fusée super-lourde entièrement réutilisable de la même manière — construisant des prototypes rapidement, les faisant voler avant qu'ils ne soient parfaits, et s'améliorant à une cadence qu'aucun programme traditionnel ne tente. Les explosions ne sont pas des revers dans ce cadre ; elles sont le coût de l'information, et la volonté de payer ce coût en public est tout l'avantage concurrentiel."
+      "md": "Starship est la méthode de Falcon 9 poussée à son extrême logique. L'entreprise qui a appris à faire atterrir un propulseur en en crashant des dizaines apprend maintenant à faire voler une fusée super-lourde entièrement réutilisable de la même manière — en construisant des prototypes rapidement, en les faisant voler avant qu'ils ne soient parfaits, et en s'améliorant à une cadence qu'aucun programme traditionnel ne tente. Les explosions ne sont pas des revers dans ce cadre ; elles sont le coût de l'information, et la volonté de payer ce coût en public est tout l'avantage concurrentiel."
     },
     {
       "type": "prose",
-      "md": "C'est aussi la machine la plus ambitieuse du vol spatial, et la plus incertaine. Rien à son sujet n'est garanti : le ravitaillement orbital n'a jamais été fait à grande échelle, la réutilisation rapide d'un étage supérieur protégé thermiquement n'est pas prouvée, et le saut depuis l'atterrissage d'articles d'essai jusqu'au transport sûr d'équipages vers une autre planète est immense. Starship pourrait compresser considérablement le calendrier vers la Lune et Mars, ou pourrait passer une décennie à se révéler plus difficile que prévu. Les deux résultats sont possibles, et le programme reconnaît honnêtement que les parties les plus difficiles restent non prouvées."
+      "md": "C'est aussi la machine la plus ambitieuse du vol spatial, et la plus incertaine. Rien n'est garanti : le ravitaillement orbital n'a jamais été fait à grande échelle, la réutilisation rapide d'un étage supérieur protégé thermiquement n'est pas prouvée, et le saut entre l'atterrissage d'articles d'essai et le transport en sécurité d'équipages vers une autre planète est immense. Starship pourrait compresser radicalement le calendrier vers la Lune et Mars, ou passer une décennie à se révéler plus difficile que prévu. Les deux issues sont possibles, et le programme est honnête sur le fait que les parties les plus difficiles restent non prouvées."
     },
     {
       "type": "prose",
-      "md": "Sous l'ingénierie se trouve un pari sur l'objectif. Apollo est allé sur la Lune pour gagner une course puis s'est arrêté, parce que l'objectif était l'arrivée, pas le séjour. Starship est construit sur la prémisse opposée — que l'objectif n'est pas de planter un drapeau mais de déplacer suffisamment de masse, suffisamment souvent, pour construire quelque chose de permanent hors de la Terre. Qu'il réussisse ou non, il représente une raison différente d'y aller : non pas pour prouver la supériorité d'une nation, mais pour rendre la présence humaine dans l'espace suffisamment grande pour durer."
+      "md": "Sous l'ingénierie se trouve un pari sur le but. Apollo est allé sur la Lune pour gagner une course puis s'est arrêté, parce que l'objectif était l'arrivée, pas le séjour. Starship est construit sur la prémisse opposée — que le but n'est pas de planter un drapeau mais de déplacer suffisamment de masse, assez souvent, pour construire quelque chose de permanent hors de la Terre. Qu'il réussisse ou non, il représente une raison différente d'y aller : non pas pour prouver la supériorité d'une nation, mais pour rendre la présence humaine dans l'espace suffisamment importante pour durer."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "L'héritage de Starship est encore en train de s'écrire, mais son influence est déjà réelle. En faisant de la réutilisabilité complète et du ravitaillement orbital l'architecture supposée de l'avenir, il a redéfini à quoi un programme spatial profond sérieux est censé ressembler — et sa sélection comme atterrisseur lunaire Artemis lie le retour de l'Amérique sur la Lune directement au fait que ce véhicule fonctionne ou non."
+      "md": "L'héritage de Starship s'écrit encore, mais son influence est déjà réelle. En faisant de la réutilisabilité complète et du ravitaillement orbital l'architecture présumée du futur, il a redéfini à quoi un programme sérieux d'exploration lointaine est censé ressembler — et sa sélection comme l'un des atterrisseurs lunaires d'Artemis lie directement le retour de l'Amérique sur la Lune au fait que ce véhicule fonctionne."
     },
     {
       "type": "prose",
-      "md": "S'il réussit, l'héritage est un changement radical dans l'accès à l'espace profond : une capacité de lancement bon marché, à haute cadence, mesurée en centaines de tonnes, suffisante pour rendre les bases lunaires et les missions vers Mars logistiquement possibles plutôt que simplement concevables. S'il peine, l'héritage est quand même une démonstration de jusqu'où la méthode voler-échouer-corriger peut être poussée — et où elle rencontre ses limites."
+      "md": "S'il réussit, l'héritage est un changement radical dans l'accès à l'espace lointain : une capacité de levage bon marché et à haute cadence mesurée en centaines de tonnes, suffisante pour rendre les bases lunaires et les missions vers Mars logistiquement possibles plutôt que simplement concevables. S'il rencontre des difficultés, l'héritage reste une démonstration de jusqu'où la méthode voler-échouer-réparer peut être poussée — et où elle rencontre ses limites."
     },
     {
       "type": "prose",
-      "md": "Quoi qu'il en soit, Starship a déjà changé la conversation. La question dans le vol spatial habité n'est plus de savoir si la réutilisabilité fonctionne — Falcon l'a établi — mais jusqu'où elle peut s'étendre, et si elle peut transporter des personnes au-delà de la Terre. Starship est le plus gros pari que quiconque ait placé sur la réponse étant « jusqu'au bout »."
+      "md": "Quoi qu'il en soit, Starship a déjà changé la conversation. La question dans le vol spatial habité n'est plus de savoir si la réutilisabilité fonctionne — Falcon a réglé cela — mais jusqu'où elle s'étend, et si elle peut transporter des gens au-delà de la Terre. Starship est le plus gros pari que quiconque ait placé sur une réponse affirmative 'jusqu'au bout'."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La leçon que Starship teste est de savoir si la méthode qui a rendu les petites fusées bon marché peut aussi rendre les énormes bon marché. L'itération à travers l'échec visible a fonctionné pour Falcon ; Starship est l'expérience pour savoir si cela s'étend au véhicule le plus grand et le plus complexe jamais construit — et s'il peut franchir la ligne vers le vol spatial habité, où l'échec est bien moins acceptable. La réponse n'est pas encore là."
+      "md": "La leçon que Starship teste est de savoir si la méthode qui a rendu les petites fusées bon marché peut rendre les énormes bon marché aussi. L'itération par l'échec visible a fonctionné pour Falcon ; Starship est l'expérience pour savoir si cela s'applique au véhicule le plus grand et le plus complexe jamais construit — et s'il peut franchir la ligne vers le vol spatial habité, où l'échec est beaucoup moins acceptable. La réponse n'est pas encore connue."
     },
     {
       "type": "prose",
-      "md": "La leçon plus profonde concerne la conception à rebours depuis un objectif. Starship n'a aucun sens comme amélioration progressive des fusées existantes ; il n'a de sens que si l'objectif réel est de coloniser une autre planète, et chaque choix étrange — la taille, la réutilisation complète, le ravitaillement orbital — découle de cela. Que Mars soit atteinte ou non, le véhicule est une leçon sur ce à quoi ressemble l'ingénierie pour un état final que la plupart de l'industrie considère comme une fantaisie."
+      "md": "La leçon plus profonde concerne la conception à rebours depuis un objectif. Starship n'a aucun sens comme amélioration progressive des fusées existantes ; il n'a de sens que si l'objectif réel est de coloniser une autre planète, et chaque choix étrange — la taille, la réutilisation complète, le ravitaillement orbital — en découle. Que Mars soit atteinte ou non, le véhicule est une leçon sur ce à quoi ressemble l'ingénierie pour un état final que la majeure partie de l'industrie considère comme une fantaisie."
     }
   ]
 }

@@ -1,38 +1,38 @@
 {
   "name": "Mars Pathfinder",
-  "type": "LANDER · ROVER · GEVLOGEN",
+  "type": "LANDER · ROVER · UITGEVOERD",
   "first": "Eerste wielen op Mars; demonstreerde airbag-landing",
-  "dispatch": "Mars Pathfinder was NASA's bewijs dat landen op Mars geen fortuin hoefde te kosten. In plaats van de retroraketzwever die de Vikings gebruikten, raakte het de atmosfeer achter een hitteschild, ontvouwde een parachute, blies een cocon van airbags op, en stuiterde tientallen keren over het oppervlak voordat het tot stilstand rolde en opende als een bloem. Naar buiten reed Sojourner — een rover ter grootte van een magnetron, de eerste wielen ooit die draaiden op een andere planeet. De wetenschap was bescheiden; het punt was de methode. De airbag-landing en de sneller-goedkoper-beter-benadering die het bewees werden het sjabloon voor de veel ambitieuzere rovers — Spirit, Opportunity, Curiosity — die volgden.",
-  "description": "De missie die bewees dat goedkope interplanetaire missies konden werken. Pathfinder gebruikte een nieuw airbag-landingsysteem — tientallen keren over het oppervlak stuiterend voordat het tot stilstand kwam — en leverde Sojourner, de eerste rover die op een andere planeet werkte. Sojourner doorkruiste 100 m, onderzocht een dozijn rotsen en werkte ver voorbij zijn 7-daagse ontwerplevensduur. Pathfinder werkte 2 maanden 27 dagen; het succes van de missie heroplevde NASA's interplanetaire programma na de mislukkingen van de jaren 1990.",
+  "dispatch": "Mars Pathfinder was NASA's bewijs dat het landen op Mars niet duur hoefde te zijn. In plaats van de terugkeerraket waarmee de Vikings zweefden, vloog het door de atmosfeer achter een hitteescherm, ontplooide een parachute, vulde een cocon van airbags op en stuiterde tientallen keren over het oppervlak voordat het tot stilstand kwam en zich als een bloem opende. Daaruit reed Sojourner — een rover ter grootte van een magnetron, de eerste wielen ooit op een ander hemellichaam. De wetenschap was bescheiden; het ging om de methode. De airbag-landing en de sneller-goedkoper-beter aanpak die het bewees, werden het sjabloon voor de veel ambitieuzere rovers — Spirit, Opportunity, Curiosity — die volgden.",
+  "description": "De missie die bewees dat goedkope interplanetaire missies konden werken. Pathfinder gebruikte een noveel airbag-landingssysteem — tientallen keren stuiteren over het oppervlak voordat het tot rust kwam — en bracht Sojourner af, de eerste rover die op een ander hemellichaam opereerde. Sojourner legde 100 m af, onderzocht een dozijn rotsen en werkte ver voorbij haar 8-sol-ontwerp levensduur. Pathfinder werkte gedurende 2 maanden 27 dagen; het succes van de missie herleefde NASA's interplanetaire programma na de mislukkingen van de jaren 1990.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Delta II 7925 vanuit Cape Canaveral.",
+      "note": "Delta II 7925 vanaf Cape Canaveral.",
       "type": "nominal"
     },
     {
       "met": 30,
       "label": "TCM-1",
-      "note": "Eerste trajectcorrectie.",
+      "note": "Eerste baan correctie.",
       "type": "nominal"
     },
     {
       "met": 212,
-      "label": "EDL",
-      "note": "Directe atmosferische intrede — geen baan-insertie. Hitteschild, parachute, retro-raketten, dan airbag-inflatie.",
+      "label": "LANDING",
+      "note": "Directe atmosferische ingang — geen baanopstelling. Hitteescherm, parachute, terugkeerraket, daarna airbag-opblazing.",
       "type": "nominal"
     },
     {
       "met": 212.01,
-      "label": "TOUCHDOWN",
-      "note": "Lander stuitert 15 keer over Ares Vallis voordat hij tot stilstand komt.",
+      "label": "LANDING",
+      "note": "Lander stuitert 15 keer over Ares Vallis voordat het tot rust komt.",
       "type": "nominal"
     },
     {
       "met": 213,
-      "label": "SOJOURNER INGEZET",
-      "note": "Eerste wielen op een andere planeet.",
+      "label": "SOJOURNER GEPLAATST",
+      "note": "Eerste wielen op een ander hemellichaam.",
       "type": "info"
     }
   ]

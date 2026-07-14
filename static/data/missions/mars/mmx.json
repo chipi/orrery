@@ -7,14 +7,14 @@
   "color": "#003087",
   "year": 2026,
   "status": "PLANNED",
-  "departure_date": "2026-09-01",
+  "departure_date": "2026-11-01",
   "arrival_date": "2027-08-01",
   "transit_days": 334,
   "vehicle": "H3-24L",
   "payload": "~4000 kg (planned)",
   "delta_v": "~5 km/s",
   "data_quality": "partial",
-  "credit": "© JAXA. Launch NET 2026-09 (delayed from 2024 due to H3 rocket development). Will sample Phobos surface (~10 g) and return to Earth ~2031. First non-Earth-orbit sample return for Japan after Hayabusa series.",
+  "credit": "© JAXA. Launch NET 2026-11 (delayed from 2024 due to H3 rocket development). Will sample Phobos surface (~10 g) and return to Earth ~2031. First non-Earth-orbit sample return for Japan after Hayabusa series.",
   "links": [
     {
       "l": "Martian Moons eXploration — Wikipedia",

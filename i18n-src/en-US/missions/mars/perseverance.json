@@ -2,7 +2,7 @@
   "name": "Perseverance",
   "type": "ROVER · ACTIVE",
   "first": "First helicopter on another planet (Ingenuity); first sample caching for Mars Sample Return",
-  "dispatch": "Perseverance went to Mars to look for the dead. Landed in 2021 in Jezero Crater — the delta of a river that fed a lake billions of years ago, exactly the kind of place life would have left traces — it is the first rover built specifically to search for signs of ancient life, and to do something no mission had done: seal Martian rock into tubes and set them aside for a future spacecraft to carry home. It also delivered Ingenuity, the small helicopter that made the first powered flight on another planet. If the samples it is caching are ever returned, they will be the first pieces of another planet’s surface brought back to Earth.",
+  "dispatch": "Perseverance went to Mars to look for the dead. Landed in 2021 on the floor of Jezero Crater — a basin holding the delta of a river that fed a lake billions of years ago, exactly the kind of place life would have left traces — it is the first rover built specifically to search for signs of ancient life, and to do something no mission had done: seal Martian rock into tubes and set them aside for a future spacecraft to carry home. It also delivered Ingenuity, the small helicopter that made the first powered flight on another planet. If the samples it is caching are ever returned, they will be the first pieces of another planet’s surface brought back to Earth.",
   "description": "Perseverance is the most ambitious Mars surface mission ever flown. Mars Sample Return depends on it — the rover is collecting and caching samples in tubes that a future mission will retrieve and bring to Earth. Ingenuity, the first helicopter on another planet, flew 72 missions before retiring with damaged rotors in January 2024 — proving controlled flight is possible in Mars's thin atmosphere. MOXIE, an oxygen-from-CO2 demonstrator, produced the first locally-made oxygen on another planet, a rehearsal for crewed Mars missions.",
   "events": [
     {
@@ -44,7 +44,7 @@
     {
       "met": 1278,
       "label": "INGENUITY RETIRED",
-      "note": "Rotor blade damaged on 72nd flight 2024-01-18; helicopter remains operational as a comms relay.",
+      "note": "Rotor blade damaged on 72nd flight 2024-01-18; helicopter grounded, repurposed as a stationary weather and data station storing readings for future retrieval.",
       "type": "info"
     }
   ]

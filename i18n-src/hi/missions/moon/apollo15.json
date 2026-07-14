@@ -1,74 +1,74 @@
 {
   "name": "Apollo 15",
-  "dispatch": "Apollo 15 तक दौड़ बहुत पहले समाप्त हो चुकी थी, और विज्ञान ने कमान संभाल ली थी — शाब्दिक रूप से। यह Lunar Rover ले जाने वाली पहली उड़ान थी, जिसने दो-मील की पैदल त्रिज्या को अठारह-मील के उचित क्षेत्र अभियान में बदल दिया, और यह किसी सुरक्षित समतल मैदान पर नहीं बल्कि एक पर्वत श्रृंखला और एक घुमावदार घाटी के बीच की घाटी में उतरा। Scott और Irwin \"Genesis Rock\" के साथ लौटे, चार-अरब-वर्ष पुराना चंद्रमा की मूल भू-पर्पटी का एक टुकड़ा जिसने पुष्टि की कि यह कैसे बना था। Apollo ने चंद्रमा पर जाना बंद कर दिया था और इसका अध्ययन करना शुरू कर दिया था — और यह रद्द होने तक इसमें बेहतर होता गया।",
-  "type": "मानवयुक्त लैंडर · उड़ा",
-  "first": "पहला J-मिशन — विस्तारित प्रवास, पहला Lunar Roving Vehicle, \"Genesis Rock\"",
-  "description": "पहला \"J-मिशन\" — नए Lunar Roving Vehicle के साथ विस्तारित-प्रवास वैज्ञानिक Apollo। LRV ने Scott + Irwin को 27.9 किमी की ट्रैवर्स रेंज दी (Apollo 14 के 3.5 किमी पैदल-केवल के मुकाबले), 4.5-किमी पर्वत श्रृंखला के पैर पर और सर्पीन Hadley Rille के किनारे पर नाटकीय Hadley-Apennine साइट खोली। तीन EVAs कुल 18 घंटे 35 मिनट, 77 किग्रा नमूने वापस लाए, जिसमें प्रसिद्ध \"Genesis Rock\" (नमूना 15415) शामिल है — 4.1 अरब साल पुराना anorthosite जो चंद्र हाइलैंड्स क्रस्ट की मैग्मा-महासागर उत्पत्ति की पुष्टि करता है। Scott के टेलीविजन प्रसारित \"हथौड़ा-पंख ड्रॉप\" ने Galileo के गुरुत्वाकर्षण नियम को लाइव सत्यापित किया।",
+  "type": "क्रू वाले लैंडर · संपन्न",
+  "first": "पहला J-मिशन — विस्तारित प्रवास, पहला चंद्र रोवर, \"जेनेसिस रॉक\"",
+  "dispatch": "Apollo 15 तक दौड़ बहुत पहले ही खत्म हो गई थी, और विज्ञान ने पहिया पकड़ा — शाब्दिक रूप से। यह पहली उड़ान थी जो चंद्र रोवर ले गई, जिसने दो मील की पैदल दूरी को उचित अठारह मील के क्षेत्र अभियान में बदल दिया, और यह एक सुरक्षित सपाट मैदान पर नहीं बल्कि एक पर्वत श्रृंखला और एक घुमावदार घाटी के बीच एक घाटी में उतरा। स्कॉट और इरविन \"जेनेसिस रॉक\" के साथ घर आए — चंद्रमा की मूल परत का चार अरब वर्ष पुराना टुकड़ा जिसने पुष्टि की कि यह कैसे बना था। Apollo चंद्रमा पर जाना बंद कर गया था और इसका अध्ययन करने लगा था — और जब तक इसे रद्द नहीं किया गया तब तक यह इसमें बेहतर होता रहा।",
+  "description": "पहला \"J-मिशन\" — विस्तारित प्रवास वाला वैज्ञानिक Apollo नए चंद्र रोविंग वाहन के साथ। LRV ने Scott + Irwin को 27.9 km ट्रैवर्स रेंज दी (बनाम Apollo 14 की 3.5 km पैदल-केवल), 4.5 km पर्वत श्रृंखला के पैर पर और सर्पिल Hadley Rille के किनारे पर नाटकीय Hadley-Apennine स्थान को खोला। तीन EVA कुल 18 h 35 m, 77 kg नमूने लौटाए गए, जिसमें प्रसिद्ध \"जेनेसिस रॉक\" (नमूना 15415) शामिल है — एक 4.1-अरब वर्ष पुराना anorthosite जो चंद्र हाइलैंड्स परत की magma-ocean उत्पत्ति की पुष्टि करता है। Scott का टेलीविजन प्रसारित \"हथौड़ा-पंख ड्रॉप\" Galileo के गुरुत्वाकर्षण नियम को लाइव सत्यापित किया। Worden चंद्र कक्षा में SIM-bay में रिमोट-सेंसिंग उपकरणों से भरा (मैपिंग कैमरे, गामा-रे, X-ray, अल्फा-कण स्पेक्ट्रोमीटर) संचालित किया और घर वापसी के रास्ते में पहली गहरी-अंतरिक्ष EVA की (~39-मिनट EVA ~317 000 km पृथ्वी से फिल्म कैनिस्टर पुनः प्राप्त करने के लिए)। Apollo 15 की वसूली तीन पैराशूटों में से एक के पूरी तरह से तैनात न होने से खराब हुई — CM कड़ी उतरी लेकिन चालक दल सुरक्षित रहा।",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-510) from Kennedy Space Center LC-39A 1971-07-26 13:34 UTC.",
+      "label": "प्रक्षेपण",
+      "note": "Saturn V (AS-510) Kennedy Space Center LC-39A से 1971-07-26 13:34 UTC।",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection.",
+      "note": "अंतर-चंद्र इंजेक्शन।",
       "type": "nominal"
     },
     {
       "met": 3.25,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "चंद्र कक्षा प्रविष्टि। SPS ∆v ~0.91 km/s।",
       "type": "nominal"
     },
     {
       "met": 4.79,
-      "label": "TOUCHDOWN",
-      "note": "Falcon lands at Hadley-Apennine 1971-07-30 22:16 UTC — first landing at a non-mare highland site.",
+      "label": "स्पर्श-डाउन",
+      "note": "Falcon Hadley-Apennine पर 1971-07-30 22:16 UTC पर उतरता है — गैर-mare हाइलैंड स्थान पर पहली लैंडिंग।",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "FIRST LRV TRAVERSE",
-      "note": "EVA-1: First Lunar Roving Vehicle deployment + 10.3 km traverse to Elbow Crater + the rim of Hadley Rille.",
+      "label": "पहला LRV ट्रैवर्स",
+      "note": "EVA-1: पहला चंद्र रोविंग वाहन तैनाती + Elbow Crater + Hadley Rille के रिम के लिए 10.3 km ट्रैवर्स।",
       "type": "info"
     },
     {
       "met": 5.5,
-      "label": "GENESIS ROCK",
-      "note": "EVA-2: At Spur Crater, Scott + Irwin recover sample 15415 — a 4.1-billion-year-old anorthosite from the original lunar crust.",
+      "label": "जेनेसिस रॉक",
+      "note": "EVA-2: Spur Crater पर, Scott + Irwin नमूना 15415 प्राप्त करते हैं — मूल चंद्र परत का 4.1-अरब वर्ष पुराना anorthosite।",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "HAMMER-FEATHER DROP",
-      "note": "EVA-3 / pre-ascent: Scott televises a hammer + feather dropped together; both hit the regolith simultaneously, verifying Galileo's 1589 prediction live.",
+      "label": "हथौड़ा-पंख ड्रॉप",
+      "note": "EVA-3 / पूर्व-आरोहण: Scott एक हथौड़ा + पंख को एक साथ गिराया टेलीविजन प्रसारित करते हैं; दोनों regolith पर एक साथ मारते हैं, Galileo की 1589 की भविष्यवाणी को लाइव सत्यापित करते हुए।",
       "type": "info"
     },
     {
       "met": 6.25,
-      "label": "ASCENT",
-      "note": "Falcon lifts off after 66 h 55 m on surface. 77 kg samples + first ascent televised from the LRV-mounted camera (operated remotely by Houston).",
+      "label": "आरोहण",
+      "note": "Falcon सतह पर 66 h 55 m के बाद उड़ता है। 77 kg नमूने + LRV-माउंटेड कैमरा से पहली तैनातीकृत (Houston द्वारा दूरस्थ रूप से संचालित)।",
       "type": "nominal"
     },
     {
       "met": 8.2,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "अंतर-पृथ्वी इंजेक्शन। SPS ∆v ~1.0 km/s।",
       "type": "nominal"
     },
     {
       "met": 9.5,
-      "label": "DEEP-SPACE EVA",
-      "note": "Worden performs first-ever EVA in cislunar space (38 min at ~315 000 km from Earth) to retrieve SIM-bay film canisters.",
+      "label": "गहरी-अंतरिक्ष EVA",
+      "note": "Worden cislunar स्पेस में पहली EVA (~39 min ~317 000 km पृथ्वी से) SIM-bay फिल्म कैनिस्टर पुनः प्राप्त करने के लिए।",
       "type": "info"
     },
     {
       "met": 12.31,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+      "label": "स्प्लाशडाउन",
+      "note": "CM 1971-08-07 20:46 UTC पर उत्तरी प्रशांत में स्प्लैश डाउन हुआ। तीन मुख्य पैराशूटों में से एक पूरी तरह से तैनात नहीं हुआ; कड़ी लैंडिंग लेकिन सुरक्षित। USS Okinawa द्वारा वसूली।",
       "type": "warning"
     }
   ]

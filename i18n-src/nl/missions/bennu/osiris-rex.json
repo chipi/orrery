@@ -1,8 +1,8 @@
 {
   "name": "OSIRIS-REx",
-  "type": "SAMPLE-RETURN · FLOWN",
-  "first": "Grootste asteroïde-monster ooit teruggebracht (121,6 g van Bennu, afgeleverd op Aarde 2023-09-24)",
-  "description": "OSIRIS-REx voerde de meest precieze asteroïde-rendezvous-missie ooit uit. Gelanceerd 2016-09-08 vanaf Cape Canaveral met een Atlas V 411, gebruikte een 2017 Earth gravity assist om zijn orbitaal vlak te roteren naar Bennu's 6° inclinatie, en rendezvouste met de 492-m koolstofhoudende nabije-Aarde-asteroïde 2018-12-03. Stationkeepte op 1,4 km — de dichtste ruimtevaartuigbaan ooit rond een hemellichaam. Bracht twee jaar door met het in kaart brengen van Bennu's met rotsblokken bezaaide oppervlak en het ontdekken van actieve deeltjesuitstotingen. 2020-10-20 daalde de Touch-and-Go-monsterarm af naar de Nightingale-locatie, vuurde N₂-gas in het oppervlak en greep een pluim — zakkend 50 cm in een 'puinhoop-vloeistof'-oppervlak. Sample Return Capsule leverde 121,6 g Bennu-materiaal af in Utah 2023-09-24. Het ruimtevaartuig zelf werd onmiddellijk hernoemd naar OSIRIS-APEX, onderweg naar een 2029 Apophis-rendezvous.",
+  "type": "STEEKPROEFRETOUR · GEVLOGEN",
+  "first": "Grootste asteroïdensteekproef ooit geretourneerd (121,6 g van Bennu, afgeleverd op aarde op 2023-09-24)",
+  "description": "OSIRIS-REx voerde één van de meest nauwkeurige asteroïde-nabijheidsoperaties uit die ooit werd geprobeerd. Gelanceerd op 2016-09-08 vanaf Cape Canaveral op een Atlas V 411, gebruikte een aardzwaarteassistentie in 2017 om zijn baanvlak naar Bennu's 6°-inclinatie te roteren, en voerde een rendezvous uit met de 492 m grote koolstofrijke aarde-dichte asteroïde op 2018-12-03. Na stationhouden op ~19 km, voerde het later een recordbaan van ~1,4 km uit — de dichtstbijzijnde ruimtevaartuigbaan ooit rond welk hemellichaam dan ook. Bracht twee jaar door met het in kaart brengen van Bennu's rotsachtige oppervlak en ontdekte actieve deeltjesuitstotingen. Op 2020-10-20 daalde de Touch-and-Go-steekproefarm af naar de Nightingale-locatie, schoot N₂-gas in het oppervlak, en greep een pluim — zakte 50 cm in een 'puin-pile-vloeistof'-oppervlak. Sample Return Capsule leverde 121,6 g Bennu-materiaal af in Utah op 2023-09-24. Het ruimtevaartuig zelf werd onmiddellijk omgedoopt tot OSIRIS-APEX, onderweg naar een 2029 Apophis-rendezvous.",
   "events": [
     {
       "met": 0,
@@ -12,32 +12,32 @@
     },
     {
       "met": 380,
-      "label": "EARTH GRAVITY ASSIST",
-      "note": "2017-09-22, 17.237 km boven Antarctica — roteert orbitaal vlak naar Bennu's 6° inclinatie.",
+      "label": "AARDZWAARTEASSISTENTIE",
+      "note": "2017-09-22, 17.237 km boven Antarctica — roteert het baanvlak naar Bennu's 6°-inclinatie.",
       "type": "info"
     },
     {
       "met": 816,
-      "label": "BENNU RENDEZVOUS",
-      "note": "Stationkeept op 1,4 km — dichtste ruimtevaartuigbaan ooit rond een hemellichaam.",
+      "label": "BENNU-RENDEZVOUS",
+      "note": "Arriveert bij Bennu; houdt station op ~19 km en verstevigt zich progressief naar een record-~1,4 km baan — dichtstbijzijnde ruimtevaartuigbaan ooit rond welk hemellichaam dan ook.",
       "type": "info"
     },
     {
       "met": 1503,
-      "label": "TAG MONSTERVERZAMELING",
-      "note": "2020-10-20. Touch-and-Go-arm zakt 50 cm in het puinhoop-oppervlak; grijpt 121,6 g.",
+      "label": "TAG-STEEKPROEFVERZAMELING",
+      "note": "2020-10-20. Touch-and-Go-arm zakt 50 cm in het puin-pile-oppervlak; verzamelt 121,6 g.",
       "type": "info"
     },
     {
       "met": 1705,
-      "label": "BENNU VERTREK",
-      "note": "2021-05-10. 2,5 jaar durende cruise terug naar Aarde.",
+      "label": "BENNU-VERTREK",
+      "note": "2021-05-10. 2,5-jarige cruise terug naar aarde.",
       "type": "nominal"
     },
     {
       "met": 2572,
-      "label": "MONSTERTERUGKEER",
-      "note": "2023-09-24. SRC parachuteert naar Utah Test and Training Range; ruimtevaartuig wordt OSIRIS-APEX.",
+      "label": "STEEKPROEFRETOUR",
+      "note": "2023-09-24. SRC parachute landde in Utah Test and Training Range; ruimtevaartuig wordt OSIRIS-APEX.",
       "type": "info"
     }
   ]

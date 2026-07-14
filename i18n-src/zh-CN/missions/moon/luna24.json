@@ -1,14 +1,44 @@
 {
   "name": "Luna 24",
-  "type": "SAMPLE RETURN · FLOWN",
-  "first": "Last Soviet lunar mission; last uncrewed lunar landing for 37 years",
-  "description": "The Soviet Union's final lunar mission and the last uncrewed lunar landing until China's Chang'e 3 in 2013 — a gap of 37 years. The drilled core extracted regolith from 2 m depth and returned 170 g to Earth. Among the samples: minerals containing trace water, foreshadowing the discovery of substantial lunar water ice deposits 30 years later. Luna 24 also marked the closure of the Soviet lunar programme; resources shifted to Mars and Venus.",
+  "type": "样品返回 · 已执行",
+  "first": "苏联最后一次月球任务；37年间最后一次无人月球着陆",
+  "description": "苏联最后一次月球任务，也是最后一次无人月球着陆，直到2013年中国嫦娥三号的到来——相隔37年。钻取的岩心从2 m深度采集了月壤，并向地球返回170 g样品。1978年苏联的分析报告在岩心中发现了约0.1%的水（按质量计）——这一未经证实、仍存争议的结果——为后来确认的月球水探测奠定了基础。Luna 24同时标志着苏联月球计划的结束；资源转向了火星和金星任务。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1976-08-09.", "type": "nominal" },
-    { "met": 5, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },
-    { "met": 9, "label": "TOUCHDOWN", "note": "Soft-landing at Mare Crisium 1976-08-18.", "type": "nominal" },
-    { "met": 9.5, "label": "DRILLING", "note": "Core sample extracted from 2 m depth.", "type": "info" },
-    { "met": 10, "label": "ASCENT", "note": "Ascent stage lifts off; trans-Earth injection.", "type": "nominal" },
-    { "met": 13, "label": "EARTH RETURN", "note": "Capsule lands in Surgut, USSR 1976-08-22 with 170 g of regolith.", "type": "info" }
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "质子-K火箭从拜科努尔航天发射场发射，1976-08-09。",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "月球轨道插入",
+      "note": "月球轨道插入。",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "着陆",
+      "note": "软着陆于危海，1976-08-18。",
+      "type": "nominal"
+    },
+    {
+      "met": 9.5,
+      "label": "钻探",
+      "note": "从2 m深度采取岩心样品。",
+      "type": "info"
+    },
+    {
+      "met": 10,
+      "label": "上升",
+      "note": "上升级脱离；地球转移注入。",
+      "type": "nominal"
+    },
+    {
+      "met": 13,
+      "label": "地球返回",
+      "note": "返回舱在苏联苏尔古特着陆，1976-08-22，携带170 g月壤。",
+      "type": "info"
+    }
   ]
 }

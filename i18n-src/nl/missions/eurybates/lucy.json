@@ -1,8 +1,8 @@
 {
   "name": "Lucy",
-  "type": "MULTI-FLYBY · ACTIVE",
-  "first": "Eerste missie naar de Jupiter Trojanen; bezoekt 8 asteroïden in één enkele 12-jarige baantraject — meer hemellichamen in één missie dan enige eerdere planetaire wetenschapscampagne",
-  "description": "Lucy reikt naar de L4 en L5 Lagrange-wolken — populaties van oerasteröiden die Jupiter met 60° voorlopen en volgen, waarvan wordt aangenomen dat ze materiaal uit de buitenste protoplanetaire schijf bewaren. Drie zwaartekrachtondersteuningen van de aarde (2022, 2024, 2030) vormen één enkel traject dat zeven Trojaanse asteroïden plus een bonus hoofdgordellichaam bezoekt. Bonusontmoeting: Donaldjohanson 2025-04. L4-zwerm: Eurybates + maan Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Na EGA-3 (2030-12), de achtervolgende L5-zwerm: Patroclus-Menoetius binair (2033-03) — het grootste bekende Trojaanse binaire systeem, een passend hoogtepunt voor de naamgenoot van de missie (Lucy het fossiele hominine; Patroclus-Menoetius de twee personages die samen vielen in de Ilias).",
+  "type": "MEERVOUDIGE VLIEGBY · ACTIEF",
+  "first": "Eerste missie naar de Jupiter-Trojanen; bezoekt 11 lichamen verspreid over 8 asteroïden en hun satellieten in een enkele 12-jaar-baan — een recordaantal objecten op afzonderlijke zonnebanen",
+  "description": "Lucy reikt naar de L4- en L5-Lagrange-wolken — populaties van primordiale asteroïden die Jupiter met 60° voorafgaan en volgen, waarvan wordt aangenomen dat ze materiaal uit de buitenste protoplanetaire schijf bewaren. Drie zwaartekrachtassistenties vanuit de Aarde (2022, 2024, 2030) bepalen een enkele baan die zeven Trojaanse asteroïden bezoekt plus extra doelen in de hoofdgordel. Eerste asteroïde-ontmoeting: 152830 Dinkinesh (2023-11-01, ~790 m), waarbij imaging de contact-binaire satelliet Selam onthulde. Bonus hoofdgordel: Donaldjohanson 2025-04. L4-zwerm: Eurybates + maan Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Na EGA-3 (2030-12) volgt de achterlopende L5-zwerm: binair Patroclus-Menoetius (2033-03) — de grootste bekende Trojaanse binaire, een passend climax voor de naamgever van de missie (Lucy het hominide-fossiel; Patroclus-Menoetius de twee karakters die samen vielen in de Iliade).",
   "events": [
     {
       "met": 0,
@@ -13,13 +13,19 @@
     {
       "met": 365,
       "label": "EGA-1",
-      "note": "Eerste zwaartekrachtondersteuning aarde 2022-10-16.",
+      "note": "Eerste zwaartekrachtassistentie vanuit de Aarde 2022-10-16.",
+      "type": "info"
+    },
+    {
+      "met": 746,
+      "label": "DINKINESH",
+      "note": "2023-11-01. Eerste asteroïde-vliegby — ~790 m lichaam uit de hoofdgordel; satelliet Selam (contact-binaire) ontdekt.",
       "type": "info"
     },
     {
       "met": 1290,
       "label": "DONALDJOHANSON",
-      "note": "Hoofdgordel bonus scheervlucht 2025-04. 4-km C-type asteroïde.",
+      "note": "Bonus vliegby door hoofdgordel 2025-04. 4-km C-type asteroïde.",
       "type": "info"
     },
     {
@@ -37,7 +43,7 @@
     {
       "met": 2660,
       "label": "LEUCUS",
-      "note": "35-km D-type Trojaan, langzame rotator (446 u).",
+      "note": "35-km D-type Trojaan, trage rotator (446 u).",
       "type": "info"
     },
     {
@@ -49,13 +55,13 @@
     {
       "met": 3445,
       "label": "EGA-3",
-      "note": "Laatste aardondersteuning 2030-12. Gaat naar L5-wolk.",
+      "note": "Laatste assistentie vanuit de Aarde 2030-12. Koers naar L5-wolk.",
       "type": "info"
     },
     {
       "met": 4170,
       "label": "PATROCLUS-MENOETIUS",
-      "note": "2033-03. Missiehoogtepunt: 113-km + 104-km binaire Trojaan.",
+      "note": "2033-03. Missie-climax: 113-km + 104-km binaire Trojaan.",
       "type": "info"
     }
   ]

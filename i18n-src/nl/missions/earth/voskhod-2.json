@@ -1,38 +1,38 @@
 {
   "name": "Voskhod 2",
-  "dispatch": "Voskhod 2 realiseerde de eerste ruimtewandeling en had het er bijna de eerste dode in de ruimte van gemaakt. Alexei Leonov zweefde uit een opblaasbare luchtsluis het vacuüm in, de eerste mens ooit volledig buiten een ruimtevaartuig — en toen zwol zijn pak zo stijf op dat hij niet kon buigen om weer naar binnen te komen. Hij moest een klep openen en zijn eigen lucht laten ontsnappen, met risico op caissonziekte, alleen om genoeg te krimpen om door het luik te passen. Het was nog niet voorbij: de automatische terugkeer mislukte, de bemanning vloog met de hand naar beneden, en ze landden honderden kilometers van koers in het bevroren Siberische bos, waar ze een nacht tussen de wolven afwachtten voordat de reddingswerkers hen op ski's bereikten. Het publiek zag twaalf triomfantelijke minuten; hoe op het randje het was bleef jarenlang geheim.",
-  "type": "BEMANDE AARDBAAN · GEVLOGEN",
-  "first": "Eerste ruimtewandeling (Leonov, 12 min, 18-03-1965)",
-  "description": "De ééndaagse vlucht van Pavel Beljajev en Aleksej Leonov — de eerste EVA in de geschiedenis. Leonov bracht 12 minuten buiten Voskhod 2 door (18-03-1965 om 11:34 UTC), onder druk gebracht via een opblaasbare Volga-luchtsluis die Sovjet-ingenieurs hadden toegevoegd omdat de Voskhod-romp geen ruimte had voor volledige drukverlaging. Leonovs pak zwol op in het vacuüm en klemde hem buiten de luchtsluis; hij moest de pakdruk laten ontsnappen om weer binnen te komen, wat het risico op decompressieziekte verhoogde. De terugkeer was even dramatisch — het automatische landingssysteem faalde en Beljajev stuurde de daalmodule handmatig naar een harde landing in de diepe sneeuw van de Oeral, ongeveer 390 km buiten doel; de bemanning overleefde een nacht in het bos tussen wolven voordat reddingshelikopters op 20-03-1965 arriveerden.",
+  "type": "BEMANDE AARDBAAN · UITGEVOERD",
+  "first": "Eerste extravehiculaire activiteit (Leonov, 12 min, 1965-03-18)",
+  "dispatch": "Voskhod 2 bereikte de eerste ruimtewandeling en was bijna de eerste dood in de ruimte geworden. Alexei Leonov dreef uit een opblaasbare sluis het vacuüm in, de eerste mens ooit volledig buiten een ruimtevaartuig — en toen zijn pak zo stijf opzwol dat hij zich niet kon buigen om terug naar binnen te gaan. Hij moest een ventiel openen en zijn eigen lucht eruit laten stromen, op het risico van caisson-ziekte af, alleen maar om klein genoeg te worden om door het luik naar binnen te passen. Het was nog niet voorbij: de automatische terugkeer mislukte, de bemanning vloog handmatig omlaag, en zij landden honderden kilometers van koers af in het bevroren Siberische bos, waar zij twee nachten uitwachtten temidden van wolven totdat reddingswerkers op ski's hen bereikten. Het publiek zag twaalf triomfantelijke minuten; hoe dicht het bij rampspoed was gekomen bleef jarenlang geheim.",
+  "description": "Pavel Belyayev + Alexei Leonov's vlucht van 1 dag — eerste EVA in de geschiedenis. Leonov bracht 12 min buiten Voskhod 2 door (1965-03-18 11:34 UTC), onder druk gezet via een opblaasbare Volga-sluis die Sovjetingeniëurs toevoegden omdat de Voskhod-romp geen ruimte had voor volledige drukverlaging. Leonov's pak zwol op in het vacuüm, waardoor hij buiten de sluis vastliep; hij moest de pakdruk ventileren om terug te gaan, waardoor decompressie-ziekterisico ontstond. De terugkeer was even dramatisch — het automatische landingssysteem mislukte, en Belyayev stuurde de afdaalmodule handmatig naar een harde landing in diepe Oeralsneeuw ~390 km buiten koers; de bemanning overleefde twee nachten in het bos temidden van wolven voordat reddingshelikopters op 1965-03-21 arriveerden. De cabine-atmosfeer werd ook O₂-rijk in baan nadat het EVA-luik niet opnieuw dicht kon gaan, waardoor kortstondig spontane verbranding dreigde.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "label": "LANCERING",
+      "note": "Voskhod 11A57 van Baikonur Locatie 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.001,
-      "label": "ORBIT INSERT",
-      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "label": "BAANOPSTELLING",
+      "note": "Opname in 167 × 475 km aardbaan, 64,8° inclinatie.",
       "type": "nominal"
     },
     {
       "met": 0.19,
       "label": "EVA",
-      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "note": "Leonov verlaat de Volga-sluis 1965-03-18 11:34 UTC; eerste menselijke EVA. 12 min buiten; pak zwol op in vacuüm en hij ventileerde druk om terug te gaan.",
       "type": "info"
     },
     {
       "met": 1.05,
       "label": "DEORBIT",
-      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "note": "Automatisch landingssysteem mislukt; Belyayev stuurt afdaalmodule handmatig. 390 km buiten koers harde landing in sneeuw van Perm Oblast.",
       "type": "warning"
     },
     {
       "met": 2.5,
-      "label": "RESCUE",
-      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "label": "REDDINGSOPERATIE",
+      "note": "Bemanning overleefde 2 nachten in -30°C wolfbewoond bos voordat reddingshelikopters hen op 1965-03-21 bereikten.",
       "type": "info"
     }
   ]

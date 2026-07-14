@@ -1,13 +1,13 @@
 {
   "name": "Viking 1",
-  "type": "ORBITER · LANDER · VOADO",
-  "first": "Primeiro pouso totalmente bem-sucedido em Marte; primeira ciência de superfície de longa duração",
-  "description": "A missão que nos deu a primeira visão sustentada da superfície marciana. O módulo de aterragem da Viking 1 operou durante 6 anos e 4 meses em Chryse Planitia - realizando experiências biológicas destinadas a detectar vida (resultados ambíguos; uma experiência produziu um sinal positivo ainda debatido décadas mais tarde), medindo o tempo, retornando imagens panorâmicas e analisando a composição do solo. O orbitador mapeou 97% de Marte com resolução de 100 m e ajudou a explorar locais de pouso para missões que ainda estão a décadas de distância.",
+  "type": "ORBITADOR · SONDA · VOADO",
+  "first": "Primeiro pouso em Marte totalmente bem-sucedido; primeira ciência de superfície de longa duração",
+  "description": "A missão que nos deu nossa primeira visão sustentada da superfície marciana. A sonda de Viking 1 operou por 6 anos 4 meses em Chryse Planitia — executando experimentos de biologia projetados para detectar vida (resultados ambíguos; um experimento produziu um sinal positivo ainda debatido décadas depois), medindo clima, retornando imagens panorâmicas e analisando a composição do solo. Os orbitadores Viking juntos mapearam 97% de Marte em resolução de ~300 m e ajudaram a explorar locais de pouso para missões ainda décadas distantes.",
   "events": [
     {
       "met": 0,
-      "label": "LANÇAR",
-      "note": "Titã IIIE-Centauro do Cabo Canaveral LC-41.",
+      "label": "LANÇAMENTO",
+      "note": "Titan IIIE-Centaur de Cape Canaveral LC-41.",
       "type": "nominal"
     },
     {
@@ -18,26 +18,26 @@
     },
     {
       "met": 304,
-      "label": "INSERÇÃO DA ÓRBITA DE MARTE",
-      "note": "Orbiter captura na órbita de Marte; O módulo de pouso permanece anexado para levantamento do local.",
+      "label": "INSERÇÃO EM ÓRBITA DE MARTE",
+      "note": "Orbitador captura órbita marciana; sonda permanece acoplada para levantamento de local.",
       "type": "nominal"
     },
     {
       "met": 335,
-      "label": "SEPARAÇÃO DE LANDER",
-      "note": "Lander se destaca para descida até Chryse Planitia.",
+      "label": "SEPARAÇÃO DA SONDA",
+      "note": "Sonda se desacopla para descida a Chryse Planitia.",
       "type": "nominal"
     },
     {
       "met": 335.05,
-      "label": "ATERRAGEM",
-      "note": "Lander pousa em 20/07/1976, exatamente 7 anos após a Apollo 11.",
+      "label": "POUSO",
+      "note": "Sonda toca o solo em 1976-07-20, exatamente 7 anos após Apollo 11.",
       "type": "nominal"
     },
     {
       "met": 335.1,
       "label": "PRIMEIRO PANORAMA",
-      "note": "As primeiras imagens de superfície em alta resolução foram retornadas.",
+      "note": "Primeiras imagens de alta resolução da superfície retornadas.",
       "type": "info"
     }
   ]

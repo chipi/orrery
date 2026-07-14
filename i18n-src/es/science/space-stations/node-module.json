@@ -1,17 +1,17 @@
 {
-  "title": "Módulo nodo",
-  "intro_sentence": "Un concentrador presurizado con múltiples puertos de acoplamiento — el conector estructural que permite que una estación se ramifique.",
+  "title": "Módulo Nodo",
+  "intro_sentence": "Centro presurizado con múltiples puertos de acoplamiento — el conector estructural que permite que una estación se ramifique.",
   "narrative_101": [
-    "Un nodo es un tipo especial de módulo presurizado: no aloja experimentos ni alojamiento de tripulación, simplemente conecta otros módulos entre sí. Imagina una caja hexagonal donde cada cara tiene un puerto de acoplamiento. Atornilla un nodo a un cohete que se lanza, envíalo, luego acopla cinco módulos más a los cinco puertos restantes y has hecho crecer tu estación de un módulo a seis.",
-    "La EEI tiene tres: Unity (Nodo 1), Harmony (Nodo 2) y Tranquility (Nodo 3). Cada uno es la unión central de un segmento de la estación — Unity une los lados ruso y estadounidense; Harmony conecta el clúster de laboratorios estadounidenses con los módulos japoneses y europeos; Tranquility lleva la cúpula de observación Cupola.",
-    "Tiangong adoptó un enfoque diferente: en lugar de nodos dedicados, el módulo central Tianhe actúa como vivienda y como concentrador, con múltiples puertos de acoplamiento integrados directamente en sus extremos delantero y trasero. Es un diseño más compacto que cuesta menos masa de lanzamiento pero limita cuántos módulos pueden ramificarse."
+    "Un nodo es un tipo especial de módulo presurizado: no alberga experimentos ni camarotes, simplemente conecta otros módulos entre sí. Imagina una caja hexagonal donde cada cara tiene un puerto de acoplamiento. Acopla un nodo al cohete lanzador, envíalo al espacio y luego acopla cinco módulos más a los cinco puertos restantes y habrás expandido tu estación de un módulo a seis.",
+    "La ISS tiene tres: Unity (Nodo 1), Harmony (Nodo 2) y Tranquility (Nodo 3). Cada uno es el cruce central de un segmento de la estación — Unity conecta los lados ruso y estadounidense; Harmony une el grupo de laboratorios estadounidenses con los módulos japonés y europeo; Tranquility lleva la cúpula de observación Cupola.",
+    "Tiangong adoptó un enfoque diferente: en lugar de nodos dedicados, el módulo central Tianhe actúa como tanto alojamiento como centro de conexión, con múltiples puertos de acoplamiento integrados directamente en sus extremos delantero y trasero. Es un diseño más compacto que cuesta menos masa para lanzar, pero limita cuántos módulos pueden ramificarse."
   ],
   "body_paragraphs": [
-    "Los nodos son módulos conectores — concentradores presurizados con múltiples puertos Common Berthing Mechanism (CBM) o de acoplamiento — que permiten que una estación se ramifique en una topología de árbol en lugar de una cadena lineal.",
-    "EEI Unity (Nodo 1) lanzado en 1998 en STS-88. Seis puertos CBM: delantero a Destiny, trasero a Zarya, babor a BEAM (era Tranquility), estribor a Quest, cenit al truss Z1, nadir al Leonardo PMM. El primer módulo de la EEI construido en EE. UU.",
-    "EEI Harmony (Nodo 2) lanzado en 2007. Seis puertos: conecta Destiny a Columbus (babor), Kibo (estribor) y el adaptador de acoplamiento para vehículos visitantes (delantero).",
-    "EEI Tranquility (Nodo 3) lanzado en 2010. Aloja la cúpula de observación Cupola (puerto nadir), el Permanent Multipurpose Module Leonardo (delantero) y BEAM (trasero).",
-    "Núcleo Tianhe de Tiangong: combina nodo + alojamiento de tripulación + propulsión + control. El concentrador delantero tiene 4 puertos equivalentes a CBM más un puerto trasero para naves de carga (Tianzhou) y tripuladas (Shenzhou). Wentian y Mengtian se acoplan lateralmente a través del concentrador delantero."
+    "Los nodos son módulos conectores — centros presurizados con múltiples puertos de Common Berthing Mechanism (CBM) o de acoplamiento — que permiten que una estación se ramifique en una topología de árbol en lugar de una cadena lineal.",
+    "ISS Unity (Nodo 1) fue lanzado en 1998 en STS-88. Seis puertos CBM: hacia adelante → Destiny, hacia atrás → Zarya, estribor → esclusa Quest, cenit → estructura Z1, babor → Tranquility (2010), nadir → PMA/acoplamiento de carga (anteriormente Leonardo PMM 2011–2015). El primer módulo ISS construido por Estados Unidos.",
+    "ISS Harmony (Nodo 2) lanzado en 2007. Seis puertos: conecta Destiny a Columbus (babor), Kibo (estribor) y los dos adaptadores de acoplamiento (IDA-2 hacia adelante, IDA-3 cenit) para Crew Dragon/Starliner.",
+    "ISS Tranquility (Nodo 3) lanzado en 2010. Alberga la cúpula de observación Cupola (puerto nadir), el Módulo Multipropósito Permanente Leonardo (hacia adelante) y BEAM (hacia atrás).",
+    "Centro Tianhe de Tiangong: combina nodo + camarotes + propulsión + control. El centro nodo lleva un puerto axial delantero (Shenzhou), dos puertos radiales laterales (Wentian a estribor, Mengtian a babor, ambos reubicados allí por el brazo) y un puerto nadir; el puerto axial trasero recibe carga Tianzhou. Los puertos utilizan el Mecanismo de Acoplamiento Chino, no el CBM estadounidense."
   ],
-  "diagram_caption": "Módulo nodo hexagonal con seis puertos de acoplamiento etiquetados delantero / trasero / babor / estribor / cenit / nadir."
+  "diagram_caption": "Módulo nodo hexagonal con seis puertos de acoplamiento etiquetados hacia adelante / hacia atrás / babor / estribor / cenit / nadir."
 }

@@ -1,49 +1,49 @@
 {
-  "name": "Apollo 9",
-  "type": "مدار أرضي مأهول · حُلّق",
-  "first": "أول رحلة مأهولة لـ LM — اختبارات الفصل والالتقاء في المدار الأرضي",
-  "description": "أول رحلة مأهولة لـ Lunar Module. في المدار الأرضي، فصل McDivitt و Schweickart LM Spider عن CSM Gumdrop، حلّقا حتى 183 كم بعيداً عبر ست ساعات، ثم التقيا وأعادا الالتحام — كل خطوة من إجراءات الالتقاء القمري اختُبرت دون خيار إعادة الطاقم في CSM إذا حدث خطأ. قام Schweickart بـ EVA لمدة 38 دقيقة على شرفة LM، مما أظهر تصميم بدلة EVA + حقيبة PLSS التي سيستخدمها طاقم المشي على القمر. مع تحقق أجهزة LM وإجراءات الالتقاء، كانت NASA على استعداد لإرسال Apollo 10 إلى القمر بعد شهرين.",
+  "name": "أبولو 9",
+  "type": "مهمة مأهولة بالرواد · مدار أرضي · منفذة",
+  "first": "أول رحلة مأهولة بالرواد للوحدة القمرية — فصل في المدار الأرضي واختبارات الالتقاء والاقتران",
+  "description": "أول رحلة مأهولة بالرواد للوحدة القمرية. في المدار الأرضي، فصل مكديفيت وشفايكارت وحدة القمر سبايدر عن وحدة القيادة والخدمة جامدروب، وحلّقا بعيداً حتى 183 كم على مدى ست ساعات، ثم التقيا واقترنا مجدداً — تمت اختبار كل خطوة من خطوات إجراء الالتقاء القمري دون خيار إعادة الطاقم إلى الوطن في وحدة القيادة والخدمة إذا حدث أي خطأ. قام شفايكارت برحلة سير فضائي بمدة 38 دقيقة على درج الوحدة القمرية، مما أثبت تصميم بدلة سير الفضاء الخاصة بأبولو وحقيبة الظهر PLSS التي ستستخدمها أطقم المشي على القمر. قام سكوت برحلة سير فضائي واقفة من فتحة وحدة القيادة والخدمة. مع التحقق من أجهزة الوحدة القمرية وإجراءات الالتقاء، كانت ناسا مستعدة لإرسال أبولو 10 إلى القمر بعد شهرين.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-504) from Kennedy Space Center LC-39A 1969-03-03 16:00 UTC — third Saturn V flight, first crewed launch carrying LM.",
+      "label": "الإطلاق",
+      "note": "صاروخ ساتورن 5 (AS-504) من مركز كينيدي الفضائي LC-39A في 3 مارس 1969 16:00 بتوقيت عالمي منسّق — ثالث رحلة لصاروخ ساتورن 5، أول إطلاق مأهول بالرواد يحمل وحدة قمرية.",
       "type": "nominal"
     },
     {
       "met": 0.13,
-      "label": "CSM-LM EXTRACTION",
-      "note": "CSM Gumdrop turns around + docks with LM Spider in the SLA adapter — first crewed transposition + docking. All Apollo lunar missions repeat this maneuver.",
+      "label": "استخراج وحدة القيادة-القمرية",
+      "note": "تدور وحدة القيادة والخدمة جامدروب وتقترن بوحدة القمر سبايدر في محول SLA — أول نقل واقتران مأهول بالرواد. تكرر جميع مهام أبولو القمرية هذا المناورة.",
       "type": "nominal"
     },
     {
       "met": 4.2,
-      "label": "LM SEPARATION",
-      "note": "McDivitt + Schweickart undock Spider, fly up to 183 km from Gumdrop over six hours. First crewed flight where the spacecraft + crew aren't both attached to a re-entry vehicle.",
+      "label": "فصل الوحدة القمرية",
+      "note": "ينفصل مكديفيت وشفايكارت بوحدة سبايدر ويحلقان بعيداً حتى 183 كم عن جامدروب على مدى ست ساعات. أول رحلة مأهولة بالرواد حيث لا تكون المركبة الفضائية والطاقم مرتبطين معاً بمركبة إعادة دخول الغلاف الجوي.",
       "type": "info"
     },
     {
       "met": 4.5,
-      "label": "EVA",
-      "note": "Schweickart does 38-min EVA on LM porch. Scott stand-up EVA from CSM hatch. First validation of Apollo PLSS backpack.",
+      "label": "سير فضائي",
+      "note": "يقوم شفايكارت برحلة سير فضائي بمدة 38 دقيقة على درج الوحدة القمرية. سير فضائي واقف لسكوت من فتحة وحدة القيادة والخدمة. أول تحقق من حقيبة الظهر PLSS الخاصة بأبولو.",
       "type": "info"
     },
     {
       "met": 4.5,
-      "label": "RENDEZVOUS + REDOCK",
-      "note": "Spider rendezvous + redocks with Gumdrop, completing the lunar-procedure dress rehearsal in Earth orbit.",
+      "label": "الالتقاء والاقتران",
+      "note": "تلتقي سبايدر باجامدروب وتقترن بها، مما يكمل حفل العودة لإجراء اللقاح القمري في المدار الأرضي.",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "LM JETTISON",
-      "note": "Spider ascent stage jettisoned to deorbit; descent stage remained in orbit and decayed 1981.",
+      "label": "التخلص من الوحدة القمرية",
+      "note": "تم إخراج مرحلة الهبوط من السبايدر من المدار (دخلت الغلاف الجوي في مارس 1969، المحيط الهندي)؛ تم إطلاق مرحلة الصعود حتى الاستنزاف وتم دفعها إلى مدار عالي — تدهورت في 1981.",
       "type": "nominal"
     },
     {
       "met": 10.04,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Atlantic 1969-03-13 17:00 UTC after 151 orbits. Recovery by USS Guadalcanal.",
+      "label": "الهبوط في الماء",
+      "note": "هبطت وحدة القيادة في المحيط الأطلسي الشمالي في 13 مارس 1969 17:00 بتوقيت عالمي منسّق بعد 151 دورة مدارية. تم الاسترجاع بواسطة السفينة USS Guadalcanal.",
       "type": "nominal"
     }
   ]

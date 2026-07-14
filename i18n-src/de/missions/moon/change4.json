@@ -1,31 +1,31 @@
 {
   "name": "Chang'e 4 / Yutu-2",
-  "type": "FAR-SIDE LANDER · ROVER · AKTIV",
-  "first": "Erste sanfte Landung auf der Mondrückseite",
-  "description": "Die Mondrückseite hat keine direkte Funkverbindung zur Erde. Um dort ein Raumschiff zu landen, schickte China zunächst den Queqiao-Relaissatelliten in eine Halo-Umlaufbahn um den Lagrange-Punkt L2 zwischen Erde und Mond – einem Aussichtspunkt, der sowohl die andere Seite als auch die Erde gleichzeitig sieht. Mit dieser Infrastruktur war Chang'e 4 das erste Raumschiff, das sanft auf der anderen Seite landete. Der Yutu-2-Rover ist seit Januar 2019 in Betrieb und hat mehr als 1,9 km zurückgelegt, die längste Reise aller Mondrover.",
+  "type": "LANDEGERÄT AUF DER MONDRÜCKSEITE · ROVER · AKTIV",
+  "first": "Erste Weichlanding auf der Mondrückseite",
+  "description": "Die Mondrückseite hat keine direkte Funkverbindung zur Erde. Um ein Raumschiff dort zu landen, startete China zunächst den Relaisflugkörper Queqiao in eine Halo-Umlaufbahn um den Erde-Mond-Lagrangepunkt L2 — einen Aussichtspunkt, von dem aus man gleichzeitig die Rückseite und die Erde sieht. Mit dieser Infrastruktur an Ort und Stelle wurde Chang'e 4 zum ersten Raumschiff, das eine Weichlanding auf der Rückseite absolvierte. Der Rover Yutu-2 ist seit Januar 2019 in Betrieb und hat bis 2024 etwa 1,6 km zurückgelegt, was ihn zum am längsten operierenden Mondrovers der Geschichte macht.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "Langer Marsch 3B von Xichang.",
+      "note": "Long March 3B vom Weltraumbahnhof Xichang.",
       "type": "nominal"
     },
     {
       "met": 4,
       "label": "MOI",
-      "note": "Einfügung in die Mondumlaufbahn.",
+      "note": "Mondorbitale Zirkularisierung.",
       "type": "nominal"
     },
     {
       "met": 27,
       "label": "LANDUNG",
-      "note": "Lander landet am Von-Kármán-Krater 03.01.2019 – erste Raumsonde auf der anderen Seite. Die gesamte Kommunikation erfolgt über das Queqiao-Relais bei Erde-Mond L2.",
+      "note": "Das Landegerät setzt am Von-Kármán-Krater am 2019-01-03 auf — erstes Raumschiff auf der Rückseite. Alle Kommunikation über das Queqiao-Relais am Erde-Mond-L2.",
       "type": "nominal"
     },
     {
       "met": 27.01,
-      "label": "YUTU-2 EINGESETZT",
-      "note": "Rover rollt Rampe hinunter.",
+      "label": "YUTU-2 AUSGESETZT",
+      "note": "Rover rollt die Rampe hinab.",
       "type": "info"
     }
   ]

@@ -15,7 +15,7 @@
   "delta_v": "~1.5 km/s (Halley intercept)",
   "data_quality": "good",
   "flight_data_quality": "sparse",
-  "credit": "© ESA / Giotto. Giotto launched 1985-07-02 from Kourou as ESA's first deep-space mission and the European pillar of the Halley armada (alongside the Soviet Vega buses + Japan's Sakigake / Suisei). Closest approach to comet 1P/Halley occurred 1986-03-14 at 596 km — the closest cometary nucleus pass ever attempted at the time. The Halley Multicolour Camera returned the first close-up images of any cometary nucleus, revealing an irregular 15×8×8 km elongated body with two main outgassing jets covering ~10% of the surface. 14 seconds before closest approach a dust impact (~1 g at 68 km/s) destabilised Giotto's spin axis and disabled the camera, but the rest of the instrument suite kept returning data through the coma transit. After surviving the encounter the spacecraft was placed in hibernation, reactivated in 1990, and conducted an Earth gravity assist on 1990-07-02 to retarget to comet 26P/Grigg-Skjellerup, achieving a second flyby on 1992-07-10 at 200 km — the closest comet flyby ever performed. Final spacecraft contact 1992-07-23; hardware remains in heliocentric orbit.",
+  "credit": "© ESA / Giotto. Giotto launched 1985-07-02 from Kourou as ESA's first deep-space mission and the European pillar of the Halley armada (alongside the Soviet Vega buses + Japan's Sakigake / Suisei). Closest approach to comet 1P/Halley occurred 1986-03-14 at 596 km — the closest cometary nucleus pass ever attempted at the time. The Halley Multicolour Camera returned the first close-up images of any cometary nucleus, revealing an irregular 15 × 7.2 × 7.2 km elongated body with two main outgassing jets covering ~10% of the surface. ~7.6 seconds before closest approach a dust impact (~1 g at 68 km/s) destabilised Giotto's spin axis and disabled the camera, but the rest of the instrument suite kept returning data through the coma transit. After surviving the encounter the spacecraft was placed in hibernation, reactivated in 1990, and conducted an Earth gravity assist on 1990-07-02 to retarget to comet 26P/Grigg-Skjellerup, achieving a second flyby on 1992-07-10 at 200 km — the closest comet flyby ever performed. Final spacecraft contact 1992-07-23; hardware remains in heliocentric orbit.",
   "links": [
     {
       "l": "Giotto — Wikipedia",
@@ -70,13 +70,13 @@
         "met_days": 255,
         "type": "flyby",
         "label": "Halley — closest comet encounter",
-        "description": "Closest approach 596 km from Halley's nucleus on 1986-03-14 — the closest cometary encounter to date. A dust-grain impact two seconds before closest approach damaged the camera and tumbled the spacecraft, but Giotto recovered and returned the first close images of any comet nucleus. Revealed Halley as a peanut-shaped 15-km dark body, not the bright ice ball expected."
+        "description": "Closest approach 596 km from Halley's nucleus on 1986-03-14 — the closest cometary encounter to date. A dust-grain impact ~7.6 seconds before closest approach damaged the camera and tumbled the spacecraft, but Giotto recovered and returned the first close images of any comet nucleus. Revealed Halley as a peanut-shaped 15-km dark body, not the bright ice ball expected."
       },
       {
         "met_days": 1827,
         "type": "flyby",
         "label": "Earth — gravity assist",
-        "description": "Closest approach 22,730 km on 1990-07-02 — the first time any spacecraft used Earth for a return gravity assist. Bent the orbit to set up the second cometary encounter."
+        "description": "Closest approach 22,730 km on 1990-07-02 — the first spacecraft to return from interplanetary space to use an Earth gravity assist. Bent the orbit to set up the second cometary encounter."
       },
       {
         "met_days": 2565,

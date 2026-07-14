@@ -1,25 +1,25 @@
 {
   "name": "X-37B OTV-6 (USA-299, USSF-7)",
-  "type": "AVIÃO ESPACIAL NÃO TRIPULADO · VOADO",
-  "first": "USA-299 / USSF-7 — 908 dias em órbita, Shuttle Landing Facility do KSC",
-  "description": "Sexto voo do X-37B — primeiro sob a nova designação organizacional da USSF; recorde de 908 dias em órbita (~2,5 anos). Lançado em 2020-05-17 às 13:14 UTC de CCAFS SLC-41 em um Atlas V 501 AV-081; pousou no KSC SLF em 2022-11-12 às 10:22 UTC. Carregou o PRAM do Naval Research Laboratory (Photovoltaic RF Antenna Module — experimento de transmissão por feixe de micro-ondas a partir de energia solar de 1 W) e um lançador AFRL FalconSAT-8.",
+  "type": "AERONAVE ESPACIAL NÃO TRIPULADA · REALIZADA",
+  "first": "USA-299 / USSF-7 — 908 dias em órbita, KSC Shuttle Landing Facility",
+  "description": "Sexto voo X-37B — primeiro sob a nova designação organizacional USSF; voo recorde de 908 dias em órbita (~2,5 anos). Lançado em 2020-05-17 13:14 UTC do CCAFS SLC-41 no Atlas V 501 AV-081; pousou no KSC SLF em 2022-11-12 10:22 UTC. Transportava o PRAM (Photovoltaic RF Antenna Module — experimento de transmissão de energia solar por micro-ondas de 1 W) do Naval Research Laboratory e um despachador FalconSAT-8 do AFRL.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-081) from CCAFS SLC-41 2020-05-17.",
+      "label": "LANÇAMENTO",
+      "note": "Atlas V 501 (AV-081) do CCAFS SLC-41 em 2020-05-17.",
       "type": "nominal"
     },
     {
       "met": 454,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee ~390 km; classified payload operations.",
+      "label": "OPS EM ÓRBITA",
+      "note": "Apogeu ~400 km; operações de carga útil classificadas.",
       "type": "info"
     },
     {
       "met": 908,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2022-11-12.",
+      "label": "POUSO",
+      "note": "Pouso autônomo em pista no KSC Shuttle Landing Facility em 2022-11-12.",
       "type": "nominal"
     }
   ]

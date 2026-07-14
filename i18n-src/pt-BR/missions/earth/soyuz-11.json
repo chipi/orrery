@@ -1,9 +1,9 @@
 {
   "name": "Soyuz 11",
   "type": "TRIPULADA ESTAÇÃO · PERDIDA",
-  "first": "Primeira tripulação a uma estação espacial (Salyut 1); todos os 3 morreram de descompressão na reentrada",
-  "dispatch": "A Soyuz 11 alcançou algo extraordinário e então perdeu sua tripulação nos últimos minutos do voo. Georgy Dobrovolsky, Vladislav Volkov e Viktor Patsayev tornaram-se as primeiras pessoas a viver a bordo de uma estação espacial, passando vinte e três dias na Salyut 1 — e então, durante a reentrada, uma válvula abriu-se bruscamente no instante em que os módulos se separaram e deixou o ar da cabine escapar sibilando para o espaço. Eles não usavam trajes pressurizados; não havia espaço para trajes quando os assentos foram adaptados para três. Em segundos, no limite do espaço, todos os três estavam mortos. A cápsula pousou sozinha, perfeitamente no alvo; a equipe de recuperação a abriu para encontrar a tripulação ainda presa em seus assentos. Eles permanecem os únicos seres humanos a terem morrido no espaço — e o preço comprou uma regra que se mantém desde então: tripulações usam trajes pressurizados durante o lançamento e a reentrada, sempre.",
-  "description": "A primeira missão tripulada a uma estação espacial — Salyut 1 — lançou em 6 de junho de 1971 com Georgy Dobrovolsky, Vladislav Volkov e Viktor Patsayev. A tripulação passou 23 dias a bordo da estação. Durante a reentrada em 30 de junho uma válvula de equalização de pressão abriu prematuramente na separação dos módulos (~168 km); a cabine despressurizou e os três cosmonautas, sem trajes, morreram em segundos. A cápsula pousou normalmente. Eles permanecem os únicos humanos a terem morrido acima da linha de Kármán.",
+  "first": "Primeiro tripulante de uma estação espacial (Salyut 1); todos os 3 morreram por descompressão na reentrada",
+  "dispatch": "Soyuz 11 realizou algo extraordinário e depois perdeu sua tripulação nos últimos minutos do voo. Georgy Dobrovolsky, Vladislav Volkov e Viktor Patsayev tornaram-se os primeiros seres humanos a viver a bordo de uma estação espacial, passando vinte e dois dias a bordo de Salyut 1 — e então, durante a reentrada, uma válvula abriu-se bruscamente no instante da separação dos módulos, deixando o ar da cabine vazar para o espaço. Não usavam trajes de pressão; não havia espaço para trajes quando os assentos foram ajustados para três pessoas. Em poucos segundos, na borda do espaço, todos os três estavam mortos. A cápsula pousou sozinha, perfeitamente no alvo; a equipe de recuperação a abriu e encontrou a tripulação ainda presa aos seus assentos. Eles permanecem sendo os únicos seres humanos a terem morrido no espaço — e o preço dessa tragédia comprou uma regra que se mantém desde então: tripulações usam trajes de pressão durante o lançamento e a reentrada, sempre.",
+  "description": "A primeira missão tripulada para uma estação espacial — Salyut 1 — lançou em 6 de junho de 1971 com Georgy Dobrovolsky, Vladislav Volkov e Viktor Patsayev. A tripulação passou 22 dias a bordo de Salyut 1 (duração total da missão 23 dias 18 horas). Durante a reentrada em 30 de junho uma válvula de equalização de pressão abriu-se prematuramente na separação dos módulos (~168 km); a cabine descomprimiu e os três cosmonautas, sem trajes, morreram em poucos segundos. A cápsula pousou normalmente. Eles permanecem sendo os únicos seres humanos a terem morrido acima da linha de Kármán.",
   "events": [
     {
       "met": 0,
@@ -13,14 +13,14 @@
     },
     {
       "met": 0.03,
-      "label": "ACOPLAGEM — SALYUT 1",
-      "note": "Primeira tripulação a embarcar em uma estação espacial; 23 dias a bordo.",
+      "label": "ACOPLAMENTO — SALYUT 1",
+      "note": "Primeira tripulação a bordo de uma estação espacial; 22 dias a bordo de Salyut 1.",
       "type": "info"
     },
     {
       "met": 24,
       "label": "DESCOMPRESSÃO",
-      "note": "Válvula abre na separação dos módulos; cabine despressuriza a ~168 km. Tripulação perdida.",
+      "note": "Válvula abre na separação dos módulos; cabine descomprime em ~168 km. Tripulação perdida.",
       "type": "warning"
     }
   ]

@@ -1,14 +1,44 @@
 {
   "name": "Viking 1",
-  "type": "ORBITADOR · ATERRIZADOR · VOLADA",
-  "first": "Primer aterrizaje en Marte totalmente exitoso; primera ciencia de superficie de larga duración",
-  "description": "La misión que nos dio nuestra primera mirada sostenida a la superficie marciana. El aterrizador del Viking 1 operó durante 6 años y 4 meses en Chryse Planitia — ejecutando experimentos de biología diseñados para detectar vida (resultados ambiguos; un experimento produjo una señal positiva todavía debatida décadas después), midiendo el tiempo, devolviendo imágenes panorámicas y analizando la composición del suelo. El orbitador mapeó el 97 % de Marte a 100 m de resolución y ayudó a explorar lugares de aterrizaje para misiones que llegarían décadas después.",
+  "type": "ORBITADOR · MÓDULO DE DESCENSO · COMPLETADA",
+  "first": "Primer aterrizaje en Marte completamente exitoso; primera ciencia de superficie de larga duración",
+  "description": "La misión que nos ofreció nuestro primer análisis sostenido de la superficie marciana. El módulo de descenso de Viking 1 operó durante 6 años 4 meses en Chryse Planitia —ejecutando experimentos biológicos diseñados para detectar vida (resultados ambiguos; un experimento produjo una señal positiva todavía debatida décadas después), midiendo condiciones meteorológicas, retornando imágenes panorámicas y analizando la composición del suelo. Los orbitadores de Viking en conjunto cartografiaron el 97% de Marte con una resolución de ~300 m y ayudaron a prospeccionar lugares de aterrizaje para misiones aún décadas en el futuro.",
   "events": [
-    { "met": 0, "label": "LANZAMIENTO", "note": "Titan IIIE-Centaur desde Cape Canaveral LC-41.", "type": "nominal" },
-    { "met": 7, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
-    { "met": 304, "label": "INSERCIÓN ORBITAL EN MARTE", "note": "El orbitador captura en órbita marciana; el aterrizador permanece acoplado para reconocimiento del sitio.", "type": "nominal" },
-    { "met": 335, "label": "SEPARACIÓN DEL ATERRIZADOR", "note": "El aterrizador se desacopla para descender a Chryse Planitia.", "type": "nominal" },
-    { "met": 335.05, "label": "ATERRIZAJE", "note": "El aterrizador toma tierra el 1976-07-20, exactamente 7 años después del Apollo 11.", "type": "nominal" },
-    { "met": 335.1, "label": "PRIMER PANORAMA", "note": "Primeras imágenes de superficie en alta resolución devueltas.", "type": "info" }
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Titan IIIE-Centaur desde Cape Canaveral LC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Primera corrección de trayectoria.",
+      "type": "nominal"
+    },
+    {
+      "met": 304,
+      "label": "INSERCIÓN EN ÓRBITA DE MARTE",
+      "note": "El orbitador se inserta en órbita marciana; el módulo de descenso permanece acoplado para el reconocimiento del lugar de aterrizaje.",
+      "type": "nominal"
+    },
+    {
+      "met": 335,
+      "label": "SEPARACIÓN DEL MÓDULO DE DESCENSO",
+      "note": "El módulo de descenso se separa para descender a Chryse Planitia.",
+      "type": "nominal"
+    },
+    {
+      "met": 335.05,
+      "label": "TOMA DE CONTACTO",
+      "note": "El módulo de descenso toca la superficie el 1976-07-20, exactamente 7 años después del Apolo 11.",
+      "type": "nominal"
+    },
+    {
+      "met": 335.1,
+      "label": "PRIMER PANORAMA",
+      "note": "Primeras imágenes de alta resolución de la superficie retornadas.",
+      "type": "info"
+    }
   ]
 }

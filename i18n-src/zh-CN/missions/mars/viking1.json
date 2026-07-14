@@ -1,14 +1,44 @@
 {
   "name": "Viking 1",
-  "type": "ORBITER · LANDER · FLOWN",
-  "first": "First fully successful Mars landing; first long-duration surface science",
-  "description": "The mission that gave us our first sustained look at the Martian surface. Viking 1's lander operated for 6 years 4 months at Chryse Planitia — running biology experiments designed to detect life (results ambiguous; one experiment produced a positive signal still debated decades later), measuring weather, returning panoramic images, and analysing soil composition. The orbiter mapped 97% of Mars at 100m resolution and helped scout landing sites for missions still decades away.",
+  "type": "轨道器·着陆器·已实施",
+  "first": "火星首次完全成功的着陆；首次长期表面科学探测",
+  "description": "这项任务使我们首次对火星表面进行了持续观测。Viking 1着陆器在克瑞塞平原运行了6年4个月——进行生物学实验以探测生命（结果模棱两可；一项实验产生的正信号至今仍有争议），测量气象数据，返回全景图像，并分析土壤成分。两个Viking轨道器共绘制了火星97%的表面地形图，分辨率约300 m，并为数十年后的登陆任务进行了着陆点侦察。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Titan IIIE-Centaur from Cape Canaveral LC-41.", "type": "nominal" },
-    { "met": 7, "label": "TCM-1", "note": "First trajectory correction.", "type": "nominal" },
-    { "met": 304, "label": "MARS ORBIT INSERTION", "note": "Orbiter captures into Mars orbit; lander remains attached for site survey.", "type": "nominal" },
-    { "met": 335, "label": "LANDER SEPARATION", "note": "Lander detaches for descent to Chryse Planitia.", "type": "nominal" },
-    { "met": 335.05, "label": "TOUCHDOWN", "note": "Lander touches down 1976-07-20, exactly 7 years after Apollo 11.", "type": "nominal" },
-    { "met": 335.1, "label": "FIRST PANORAMA", "note": "First high-resolution surface images returned.", "type": "info" }
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "泰坦 IIIE-半人马火箭从卡纳维拉尔角LC-41发射升空。",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "轨道修正-1",
+      "note": "第一次轨迹修正。",
+      "type": "nominal"
+    },
+    {
+      "met": 304,
+      "label": "火星轨道插入",
+      "note": "轨道器捕获进入火星轨道；着陆器保持连接进行着陆点勘查。",
+      "type": "nominal"
+    },
+    {
+      "met": 335,
+      "label": "着陆器分离",
+      "note": "着陆器脱离轨道器，下降至克瑞塞平原。",
+      "type": "nominal"
+    },
+    {
+      "met": 335.05,
+      "label": "着陆",
+      "note": "着陆器于1976-07-20着陆，恰好是阿波罗11号登月7年后。",
+      "type": "nominal"
+    },
+    {
+      "met": 335.1,
+      "label": "首幅全景图",
+      "note": "返回首批高分辨率表面图像。",
+      "type": "info"
+    }
   ]
 }

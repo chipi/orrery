@@ -1,25 +1,25 @@
 {
   "name": "X-37B OTV-6 (USA-299, USSF-7)",
-  "type": "AEREO SPAZIALE SENZA EQUIPAGGIO · VOLATO",
-  "first": "USA-299 / USSF-7 — 908 giorni in orbita, Shuttle Landing Facility del KSC",
-  "description": "Sesto volo dell'X-37B — primo sotto la nuova designazione organizzativa dell'USSF; record di 908 giorni in orbita (~2,5 anni). Lanciato il 2020-05-17 alle 13:14 UTC da CCAFS SLC-41 su un Atlas V 501 AV-081; atterrato al KSC SLF il 2022-11-12 alle 10:22 UTC. Trasportava il PRAM del Naval Research Laboratory (Photovoltaic RF Antenna Module — esperimento di trasmissione a microonde da 1 W da energia solare) e un dispenser AFRL FalconSAT-8.",
+  "type": "SPAZIO AEREO SENZA EQUIPAGGIO · COMPLETATO",
+  "first": "USA-299 / USSF-7 — 908 giorni in orbita, KSC Shuttle Landing Facility",
+  "description": "Sesto volo dell'X-37B — primo con la nuova designazione organizzativa USSF; record di 908 giorni in orbita (~2,5 anni). Lanciato il 2020-05-17 13:14 UTC da CCAFS SLC-41 su un Atlas V 501 AV-081; atterrato a KSC SLF il 2022-11-12 10:22 UTC. Trasportava il modulo PRAM (Photovoltaic RF Antenna Module — esperimento di trasmissione di potenza solare a microonde da 1 W) del Naval Research Laboratory e uno schieramento FalconSAT-8 dell'AFRL.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-081) from CCAFS SLC-41 2020-05-17.",
+      "label": "LANCIO",
+      "note": "Atlas V 501 (AV-081) da CCAFS SLC-41 il 2020-05-17.",
       "type": "nominal"
     },
     {
       "met": 454,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee ~390 km; classified payload operations.",
+      "label": "OPS IN ORBITA",
+      "note": "Apogeo ~400 km; operazioni con carico pagante classificate.",
       "type": "info"
     },
     {
       "met": 908,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2022-11-12.",
+      "label": "ATTERRAGGIO",
+      "note": "Atterraggio autonomo su pista al KSC Shuttle Landing Facility il 2022-11-12.",
       "type": "nominal"
     }
   ]

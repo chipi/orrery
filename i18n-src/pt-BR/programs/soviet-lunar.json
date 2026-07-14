@@ -1,14 +1,14 @@
 {
   "name": "Programa Lunar Soviético",
-  "tagline": "A única corrida que a União Soviética disputou e perdeu — uma tentativa secreta, faminta de recursos e dividida pela Lua, cujo foguete gigante explodiu quatro vezes e foi apagada dos registros por vinte anos.",
+  "tagline": "A única corrida que a União Soviética disputou e perdeu — uma investida secreta, faminta e dividida pela Lua cujo foguete gigante explodiu quatro vezes e foi apagada dos registros por vinte anos.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Existe um mito persistente de que apenas os americanos correram para a Lua — que a União Soviética, tendo perdido, sempre alegou nunca ter tentado. A segunda metade é verdadeira; a primeira não é. A URSS manteve um programa lunar tripulado completo, em paralelo com Apollo e em total sigilo, e perdeu. Depois passou duas décadas negando que o programa jamais existiu, razão pela qual tão poucas pessoas sabem que existiu. O hardware era real, os cosmonautas foram designados, e a intenção era a mesma da América: colocar um cidadão soviético na Lua primeiro."
+      "md": "Existe um mito persistente de que apenas os americanos correram para a Lua — que a União Soviética, tendo perdido, sempre alegou nunca ter tentado. A segunda parte é verdadeira; a primeira não. A URSS manteve um programa lunar tripulado completo, em paralelo com a Apollo e em total segredo, e perdeu. Então passou duas décadas negando que o programa jamais existiu, razão pela qual tão poucas pessoas sabem que existiu. O equipamento era real, os cosmonautas foram designados, e a intenção era a mesma dos americanos: colocar um cidadão soviético na Lua primeiro."
     },
     {
       "type": "prose",
-      "md": "O que faltava ao esforço soviético era tudo que fez Apollo funcionar. Onde os Estados Unidos concentraram todo o seu esforço nacional por trás de um único escritório de design e um único foguete, o programa soviético foi dividido entre projetistas-chefe rivais que se desprezavam, financiado com uma fração do que a NASA recebia, e ocultado tão completamente que o fracasso não gerava custo político — e portanto não produzia urgência política. Sergei Korolev, o único homem que poderia tê-lo unificado, gastou sua autoridade lutando por recursos e então morreu em uma mesa de cirurgia em 1966, aos cinquenta e nove anos, com o programa ainda a anos do voo. Ele nunca se recuperou."
+      "md": "O que faltou ao esforço soviético foi tudo aquilo que fez a Apollo funcionar. Onde os Estados Unidos concentraram todo seu esforço nacional por trás de um escritório de design e um foguete, o programa soviético foi dividido entre projetistas-chefes rivais que se desprezavam mutuamente, financiado com uma fração do que a NASA recebeu, e escondido tão completamente que o fracasso não carregava custo político — e portanto não gerava urgência política. Sergei Korolev, o único homem que poderia tê-lo unificado, gastou sua autoridade lutando por recursos e depois morreu numa mesa de cirurgia em 1966, aos cinquenta e nove anos, com o programa ainda a anos do primeiro voo. Ele nunca se recuperou."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/n1/05"
       },
-      "caption": "O foguete superpesado N1 — a resposta soviética ao Saturn V. Seu primeiro estágio agrupava trinta motores porque nenhum motor soviético individual era potente o suficiente, e não existia bancada de teste grande o bastante para dispará-los juntos.",
+      "caption": "O foguete superpesado N1 — a resposta soviética ao Saturn V. Seu primeiro estágio agrupava trinta motores porque nenhum motor soviético isolado era poderoso o suficiente, e não existia bancada de testes grande o bastante para dispará-los em conjunto.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "O programa tinha dois objetivos, perseguidos por dois projetos separados. O primeiro, L1/Zond, era fazer um único cosmonauta dar a volta ao redor da Lua e retornar — um voo circumlunar, sem pouso — para marcar o golpe de propaganda dos primeiros humanos a alcançar as proximidades da Lua. O segundo, L3, era o verdadeiro prêmio: pousar um cosmonauta na superfície. Ambos dependiam de foguetes que a União Soviética ainda não tinha, e o pouso L3 dependia do maior de todos: o N1, um monstro de 105 metros cujo primeiro estágio empacotava trinta motores ao redor de sua base porque nenhum motor soviético individual chegava perto da potência do F-1 americano."
+      "md": "O programa tinha dois objetivos, perseguidos por dois projetos separados. O primeiro, L1/Zond, era fazer um único cosmonauta dar a volta na Lua e retornar — um voo circunlunar, sem pouso — para marcar o golpe de propaganda dos primeiros humanos a alcançar as proximidades da Lua. O segundo, L3, era o prêmio real: pousar um cosmonauta na superfície. Ambos dependiam de foguetes que a União Soviética ainda não tinha, e o pouso L3 dependia do maior de todos: o N1, um monstro de 105 metros cujo primeiro estágio empacotava trinta motores ao redor de sua base porque nenhum motor soviético isolado chegava perto da potência do F-1 americano."
     },
     {
       "type": "prose",
-      "md": "Esse agrupamento de trinta motores foi a aposta definitiva do programa e sua falha fatal. Trinta motores significavam milhares de modos de falhar, todos os quais tinham que funcionar em conjunto para o foguete voar — e não havia instalação na União Soviética grande o suficiente para testar em solo o primeiro estágio montado. Então o N1 foi voado da maneira que você nunca deveria voar um foguete: montado inteiro e lançado, com o primeiro teste completo do sistema de propulsão sendo o próprio lançamento. A NASA havia rejeitado exatamente essa abordagem para o Saturn V, insistindo em testes exaustivos em solo primeiro. Os soviéticos não podiam se dar a esse luxo, e isso matou o programa."
+      "md": "Aquele agrupamento de trinta motores foi a aposta definidora do programa e sua falha fatal. Trinta motores significavam milhares de formas de falhar, todas as quais tinham que funcionar em conjunto para o foguete voar — e não havia instalação na União Soviética grande o suficiente para testar o disparo do primeiro estágio montado em solo. Então o N1 foi voado da maneira que nunca se deve voar um foguete: montado inteiro e lançado, com o primeiro teste completo do sistema de propulsão sendo o próprio lançamento. A NASA havia rejeitado exatamente essa abordagem para o Saturn V, insistindo em disparos exaustivos em solo primeiro. Os soviéticos não podiam se dar ao luxo disso, e isso matou o programa."
     }
   ],
   "outcome": [
@@ -35,30 +35,30 @@
       "image": {
         "reuse": "fleet/n1/04"
       },
-      "caption": "O primeiro estágio do N1 agrupava trinta motores NK-15 em dois anéis. Sem como testá-los juntos em solo, cada voo era o primeiro teste integrado — e todos os quatro terminaram em falha, um destruindo a plataforma de lançamento.",
+      "caption": "O primeiro estágio do N1 agrupava trinta motores NK-15 em dois anéis. Sem como testá-los em solo juntos, cada voo era o primeiro teste integrado — e todos os quatro terminaram em falha, um destruindo a plataforma de lançamento.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "A metade circumlunar chegou agonizantemente perto. Em setembro de 1968, três meses antes da Apollo 8, a Zond 5 voou uma espaçonave ao redor da Lua e a trouxe de volta à Terra em segurança — levando duas tartarugas, as primeiras criaturas vivas a viajar até as proximidades da Lua e retornar. Foi um primeiro genuíno, e deveria ter sido seguido em semanas por um cosmonauta na mesma trajetória. Mas o voo foi mais difícil do que admitido, a Apollo 8 então levou uma tripulação até a órbita lunar e de volta, e os administradores soviéticos julgaram uma Zond tripulada arriscada demais para um prêmio que os americanos haviam acabado de conquistar de forma mais completa. O loop com cosmonauta nunca foi voado."
+      "md": "A metade circunlunar chegou agonizantemente perto. Em setembro de 1968, três meses antes da Apollo 8, a Zond 5 voou uma espaçonave ao redor da Lua e a trouxe de volta à Terra em segurança — carregando duas tartarugas, as primeiras criaturas vivas a viajar ao redor da Lua e retornar. Foi um primeiro genuíno, e deveria ter sido seguido em semanas por um cosmonauta na mesma trajetória. Mas o voo havia sido mais turbulento do que admitido, a Apollo 8 então levou uma tripulação até a órbita lunar e de volta, e os gerentes soviéticos julgaram uma Zond tripulada arriscada demais para um prêmio que os americanos haviam acabado de conquistar mais completamente. O voo circunlunar tripulado nunca foi realizado."
     },
     {
       "type": "prose",
-      "md": "A metade do pouso simplesmente falhou. O N1 foi lançado quatro vezes entre 1969 e 1972, e cada lançamento terminou em destruição. A segunda tentativa, em julho de 1969 — dias antes da Apollo 11 — perdeu empuxo segundos após a decolagem, caiu de volta sobre sua plataforma e detonou em uma das maiores explosões não nucleares já registradas, arrasando o complexo de lançamento. Quando os engenheiros começaram a entender as falhas, Apollo já havia pousado seis tripulações. O programa foi discretamente cancelado em 1974, seus foguetes sucateados, suas plataformas reconstruídas para outros usos, e sua própria existência negada até que a própria União Soviética começasse a acabar."
+      "md": "A metade do pouso simplesmente falhou. O N1 foi lançado quatro vezes entre 1969 e 1972, e cada lançamento terminou em destruição. A segunda tentativa, em julho de 1969 — dias antes da Apollo 11 — perdeu impulso segundos após a decolagem, caiu de volta sobre sua plataforma e detonou numa das maiores explosões não-nucleares já registradas, arrasando o complexo de lançamento. Quando os engenheiros começaram a entender as falhas, a Apollo já havia pousado seis tripulações. O programa foi silenciosamente cancelado em 1974, seus foguetes sucateados, suas plataformas reconstruídas para outros usos, e sua própria existência negada até que a própria União Soviética começasse a acabar."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "A linha condutora do programa lunar soviético é que o sigilo, que o sistema soviético tratava como uma força, foi neste caso uma fraqueza fatal. Porque o esforço estava oculto, suas falhas não constrangeram ninguém publicamente, não custaram a nenhum ministro seu cargo, e não produziram nenhuma das pressões externas que forçaram a NASA a ser honesta sobre risco. Os desastres da Apollo — o incêndio da Apollo 1 acima de tudo — aconteceram abertamente e forçaram reformas brutais e responsáveis. As falhas do N1 aconteceram no escuro, foram culpadas internamente, e não mudaram nada rápido o suficiente. Um programa que ninguém tem permissão de assistir é um programa que ninguém é forçado a consertar."
+      "md": "O fio condutor do programa lunar soviético é que o segredo, que o sistema soviético tratava como uma força, foi neste caso uma fraqueza fatal. Por ser escondido, seus fracassos não constrangeram ninguém publicamente, não custaram a nenhum ministro seu cargo, e não produziram nenhuma das pressões externas que forçaram a NASA a ser honesta sobre riscos. Os desastres da Apollo — o incêndio da Apollo 1 acima de tudo — aconteceram às claras e forçaram reformas brutais e responsáveis. As falhas do N1 aconteceram no escuro, foram culpadas internamente, e não mudaram nada rápido o suficiente. Um programa que ninguém pode assistir é um programa que ninguém é forçado a consertar."
     },
     {
       "type": "prose",
-      "md": "O segundo fio condutor é a divisão. Os Estados Unidos construíram Apollo como um único esforço nacional sob uma agência. O programa soviético foi uma rixa: o escritório de Korolev contra o de Vladimir Chelomei, ambos contra o projetista de motores Valentin Glushko, que se recusou a construir os motores que Korolev queria e cuja eventual tomada do programa foi o ato que finalmente matou o N1. Três homens brilhantes, três foguetes concorrentes, um orçamento faminto dividido entre eles. Força concentrada pousa na Lua; força dividida constrói três foguetes inacabados e não voa nenhum deles com sucesso."
+      "md": "O segundo fio é a divisão. Os Estados Unidos construíram a Apollo como um único esforço nacional sob uma agência. O programa soviético foi uma rixa: o escritório de Korolev contra o de Vladimir Chelomei, ambos contra o projetista de motores Valentin Glushko, que se recusou a construir os motores que Korolev queria e cuja eventual tomada do programa foi o ato que finalmente matou o N1. Três homens brilhantes, três foguetes concorrentes, um orçamento faminto dividido entre eles. Força concentrada pousa na Lua; força dividida constrói três foguetes semi-acabados e não voa nenhum deles com sucesso."
     },
     {
       "type": "prose",
-      "md": "Há um epílogo estranho. Os motores NK-15 do N1, refinados em NK-33, mostraram-se excelentes — alguns dos melhores motores de foguete já construídos. Quando o programa foi cancelado, Glushko ordenou que fossem destruídos; em vez disso os engenheiros esconderam cerca de cem deles em um armazém por vinte anos. Nos anos 1990 foram redescobertos, vendidos a empresas americanas, e voaram — motores soviéticos de foguete lunar, décadas depois, levantando foguetes americanos. O foguete falhou; seus motores foram um triunfo que ninguém teve permissão de usar até que o país que os construiu deixasse de existir."
+      "md": "Há um epílogo estranho. Os motores NK-15 do N1, refinados no NK-33, revelaram-se excelentes — alguns dos melhores motores de foguete já construídos. Quando o programa foi cancelado, Glushko ordenou sua destruição; em vez disso os engenheiros esconderam cerca de sessenta deles num armazém por vinte anos. Nos anos 1990 foram redescobertos, vendidos a empresas americanas, e voaram — motores soviéticos de foguete lunar, décadas depois, erguendo foguetes americanos. O foguete falhou; seus motores foram um triunfo que ninguém teve permissão de usar até que o país que os construiu tivesse acabado."
     }
   ],
   "legacy": [
@@ -67,26 +67,26 @@
       "image": {
         "reuse": "fleet/n1/02"
       },
-      "caption": "Uma imagem de reconhecimento americana de um mockup do N1 em Baikonur, final de 1967. Por duas décadas a União Soviética insistiu que o foguete lunar não existia; para o mundo exterior ele era conhecido principalmente através de fotografias de espionagem americanas como esta.",
+      "caption": "Uma imagem de reconhecimento americana de uma maquete do N1 em Baikonur, final de 1967. Por duas décadas a União Soviética insistiu que o foguete lunar não existia; para o mundo exterior era conhecido principalmente através de fotografias de espionagem americanas como esta.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "O legado do programa lunar soviético é principalmente ausência — o pouso que nunca aconteceu, o foguete que nunca funcionou, o silêncio de vinte anos. Mas a própria ausência é instrutiva. É o contraexemplo mais claro para Apollo em toda a era espacial: o mesmo objetivo, a mesma década, talento de engenharia comparável, e um resultado completamente diferente, impulsionado não por falta de habilidade, mas por sigilo, divisão e recursos famintos. Se Apollo mostra o que um programa concentrado, responsável e abertamente financiado pode fazer, o esforço lunar soviético mostra o que acontece quando cada uma dessas condições está ausente."
+      "md": "O legado do programa lunar soviético é principalmente ausência — o pouso que nunca aconteceu, o foguete que nunca funcionou, o silêncio de vinte anos. Mas a própria ausência é instrutiva. É o contraexemplo mais claro da Apollo em toda a era espacial: o mesmo objetivo, a mesma década, talento de engenharia comparável, e um resultado completamente diferente, impulsionado não por falta de capacidade mas por segredo, divisão e recursos escassos. Se a Apollo mostra o que um programa concentrado, responsável e financiado abertamente pode fazer, o esforço lunar soviético mostra o que acontece quando cada uma dessas condições está ausente."
     },
     {
       "type": "prose",
-      "md": "Seu hardware contribuiu para o futuro. A variante lunar Soyuz 7K-LOK informou a Soyuz que ainda voa; o design compacto de tripulação única do módulo de pouso LK influenciou o pensamento posterior; os motores NK-33 eventualmente voaram. E o acerto de contas honesto do programa, uma vez que o sigilo foi levantado, tornou-se parte de como a era espacial é agora contada — não como uma corrida de um único cavalo que os americanos venceram por default, mas como uma competição real que a União Soviética entrou, disputou com força, e perdeu por razões que tinham pouco a ver com foguetes e tudo a ver com como o esforço foi organizado e ocultado."
+      "md": "Seu equipamento sim alimentou o futuro. A variante lunar Soyuz 7K-LOK informou a Soyuz que ainda voa; o design compacto de tripulação única do módulo de pouso LK influenciou o pensamento posterior; os motores NK-33 eventualmente voaram. E o balanço honesto do programa, uma vez que o segredo foi levantado, tornou-se parte de como a era espacial é agora contada — não como uma corrida de um só cavalo que os americanos venceram por padrão, mas como uma competição real que a União Soviética entrou, correu duro, e perdeu por razões que tinham pouco a ver com coheteria e tudo a ver com como o esforço foi organizado e escondido."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "A lição mais dura do programa é que você não pode pular o teste em solo. O N1 foi voado montado-e-lançado porque a União Soviética não tinha uma bancada para disparar trinta motores juntos — e então cada voo era o primeiro teste integrado da parte mais complexa do foguete, sem chance de encontrar as falhas em qualquer lugar além do ar. A insistência da NASA em testes exaustivos em solo do Saturn V pareceu lenta e cara; foi a razão pela qual o Saturn V nunca falhou em voo. Quando você não pode se dar ao luxo de testar adequadamente, você não tornou o foguete mais barato — você transferiu o custo para os voos, e ele vence ali."
+      "md": "A lição mais difícil do programa é que não se pode pular o teste em solo. O N1 foi voado montado-e-lançado porque a União Soviética não tinha uma bancada para disparar trinta motores juntos — e então cada voo era o primeiro teste integrado da parte mais complexa do foguete, sem chance de encontrar as falhas em outro lugar que não no ar. A insistência da NASA em disparos exaustivos em solo do Saturn V parecia lenta e cara; foi a razão pela qual o Saturn V nunca falhou em voo. Quando você não pode se dar ao luxo de testar adequadamente, você não tornou o foguete mais barato — você moveu o custo para os voos, e ele vence ali."
     },
     {
       "type": "prose",
-      "md": "A segunda lição é que sigilo e responsabilidade são opostos, e que um programa precisa da segunda mais do que teme a perda da primeira. Ocultar o esforço soviético o protegeu do constrangimento público e, ao fazê-lo, arrancou todas as forças externas que poderiam tê-lo feito confrontar seus problemas a tempo. Apollo foi forçada a ser honesta porque o mundo inteiro estava assistindo; o N1 teve permissão para falhar silenciosamente, quatro vezes, porque ninguém estava. Visibilidade não é apenas um risco a ser gerenciado. Para um empreendimento difícil e implacável, é uma das coisas que torna o sucesso possível."
+      "md": "A segunda lição é que segredo e responsabilidade são opostos, e que um programa precisa do segundo mais do que teme a perda do primeiro. Esconder o esforço soviético o protegeu do constrangimento público e, ao fazê-lo, arrancou toda força externa que poderia tê-lo feito confrontar seus problemas a tempo. A Apollo foi forçada a ser honesta porque o mundo inteiro estava assistindo; o N1 foi permitido falhar silenciosamente, quatro vezes, porque ninguém estava. Visibilidade não é apenas um risco a ser gerenciado. Para um empreendimento duro e implacável, é uma das coisas que torna o sucesso possível."
     }
   ]
 }

@@ -1,84 +1,84 @@
 {
   "name": "Pioneer",
-  "tagline": "Antes de que Voyager pudiera recorrer los planetas exteriores, alguien tenía que demostrar que el camino era transitable. Dos pequeñas sondas fueron primero — a través del cinturón de asteroides, más allá de Júpiter, y hacia fuera.",
+  "tagline": "Antes de que las Voyager pudieran recorrer los planetas exteriores, alguien tenía que demostrar que la ruta era transitable. Dos pequeñas sondas fueron primero: a través del cinturón de asteroides, más allá de Júpiter, y hacia fuera.",
   "the_land": [
     {
       "type": "prose",
-      "md": "A principios de la década de 1970 el sistema solar exterior no solo estaba inexplorado; se consideraba peligroso alcanzarlo. Entre Marte y Júpiter se encontraba el cinturón de asteroides, y nadie sabía si una nave espacial podría cruzarlo sin ser destruida por los escombros. Más allá, se entendía que los cinturones de radiación de Júpiter eran letales para la electrónica. Los planetas gigantes merecían ser visitados, pero el camino hacia ellos atravesaba dos peligros que ninguna máquina había enfrentado jamás."
+      "md": "A principios de la década de 1970, el sistema solar exterior no solo estaba inexplorado; se pensaba que era peligroso alcanzarlo. Entre Marte y Júpiter se encontraba el cinturón de asteroides, y nadie sabía si una nave espacial podría atravesarlo sin ser destruida por escombros. Más allá, se entendía que los cinturones de radiación de Júpiter eran letales para la electrónica. Los planetas gigantes merecían ser visitados, pero el camino hacia ellos pasaba por dos peligros que ninguna máquina había enfrentado jamás."
     },
     {
       "type": "prose",
-      "md": "Las Pioneer fueron las exploradoras enviadas para averiguarlo. Pequeñas, estabilizadas por rotación y comparativamente simples, Pioneer 10 y 11 fueron construidas para ir primero — para probar si el cinturón podía cruzarse y si una sonda podría sobrevivir a un paso cercano por Júpiter — de modo que las Voyager, mucho más costosas y ya en planificación, supieran a qué se enfrentarían."
+      "md": "Las Pioneer fueron las exploradoras enviadas para averiguarlo. Pequeñas, estabilizadas por rotación y comparativamente simples, Pioneer 10 y 11 fueron construidas para ir primero: para probar si el cinturón podía atravesarse y si una sonda podía sobrevivir un paso cercano por Júpiter, de modo que las mucho más costosas Voyager, ya en fase de planificación, supieran a qué se enfrentaban."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "El objetivo era reconocimiento en el sentido más literal: demostrar la ruta. Cruzar el cinturón de asteroides y medir cuánta amenaza representaba realmente. Volar cerca de Júpiter y comprobar si una nave espacial podría soportar la radiación y devolver datos útiles. La ciencia — primeras miradas cercanas a Júpiter, y después, para Pioneer 11, la primera visita a Saturno — era real, pero el propósito más profundo era despejar el camino."
+      "md": "El objetivo era reconocimiento en el sentido más literal: demostrar la ruta. Cruzar el cinturón de asteroides y medir cuánto de amenaza representaba realmente. Volar cerca de Júpiter y ver si una nave espacial podía soportar la radiación y devolver datos útiles. La ciencia —primeras observaciones cercanas de Júpiter y luego, para Pioneer 11, la primera visita a Saturno— era real, pero el propósito más profundo era despejar el camino."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/pioneer-10/01"
       },
-      "caption": "Las Pioneer se mantuvieron simples y giraban para la estabilidad, sus instrumentos leyendo campos y partículas tanto como tomando fotografías. Su trabajo era sobrevivir al cinturón y a la radiación e informar de vuelta lo que las Voyager enfrentarían.",
+      "caption": "Las Pioneer se mantuvieron simples y rotaban para estabilidad, sus instrumentos midiendo campos y partículas tanto como tomando fotografías. Su trabajo era sobrevivir al cinturón y a la radiación e informar de lo que las Voyager enfrentarían.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Cada una también portaba una pequeña placa de oro — diseñada por Carl Sagan y Frank Drake — grabada con un hombre, una mujer y un mapa hacia el Sol. Era una modesta ocurrencia tardía comparada con el Disco de Oro posterior de Voyager, pero fue la primera: el primer objeto que la humanidad inscribió deliberadamente con un mensaje y lanzó hacia las estrellas."
+      "md": "Cada una también llevaba una pequeña placa de oro —diseñada por Carl Sagan y Frank Drake— grabada con un hombre, una mujer y un mapa hacia el Sol. Fue una modesta idea tardía comparada con el Disco de Oro posterior de las Voyager, pero fue la primera: el primer objeto que la humanidad inscribió deliberadamente con un mensaje y lanzó hacia las estrellas."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Ambos temores resultaron infundados, que era el objetivo. Pioneer 10 cruzó el cinturón de asteroides sin daño — el cinturón, resultó, era en su mayoría espacio vacío — y en diciembre de 1973 se convirtió en la primera nave espacial en alcanzar Júpiter, sobreviviendo a la radiación y devolviendo las primeras imágenes cercanas del planeta gigante y sus lunas. Después se convirtió en el primer objeto hecho por humanos colocado en una trayectoria para abandonar completamente el sistema solar."
+      "md": "Ambos temores resultaron infundados, que era precisamente el objetivo. Pioneer 10 cruzó el cinturón de asteroides sin daño —el cinturón, resultó ser, era mayormente espacio vacío— y en diciembre de 1973 se convirtió en la primera nave espacial en alcanzar Júpiter, sobreviviendo la radiación y devolviendo las primeras imágenes cercanas del planeta gigante. Luego se convirtió en el primer objeto fabricado por humanos colocado en una trayectoria para abandonar completamente el sistema solar."
     },
     {
       "type": "prose",
-      "md": "Pioneer 11 fue más lejos. Tras su propio sobrevuelo de Júpiter usó la gravedad del planeta para cruzar el sistema solar y alcanzar Saturno en 1979 — la primera nave espacial en hacerlo — volando a través del plano de los anillos para probar si la región era segura, y encontrando el hueco que las Voyager usarían un año después. Las exploradoras habían cartografiado los peligros; la gira podía continuar."
+      "md": "Pioneer 11 fue más lejos. Tras su propio sobrevuelo de Júpiter usó la gravedad del planeta para cruzar el sistema solar y alcanzar Saturno en 1979 —la primera nave espacial en hacerlo jamás—, volando a través del plano de los anillos para probar si la región era segura, y encontrando el hueco que las Voyager usarían en los años siguientes. Las exploradoras habían mapeado los peligros; el gran recorrido podía proceder."
     },
     {
       "type": "prose",
-      "md": "Las Pioneer siguieron transmitiendo durante décadas mientras se alejaban. La última señal débil de Pioneer 10 se recibió en 2003, desde más de doce mil millones de kilómetros de distancia. Ambas siguen ahí fuera, silenciosas ahora, deslizándose hacia las estrellas — Pioneer 10 en dirección a la estrella Aldebarán, un viaje que le llevará unos dos millones de años completar."
+      "md": "Las Pioneer continuaron transmitiendo durante décadas mientras se alejaban. La última señal débil de Pioneer 10 se recibió en 2003, desde más de doce mil millones de kilómetros de distancia. Ambas siguen ahí fuera, silenciosas ahora, deslizándose hacia las estrellas —Pioneer 10 en dirección a la estrella Aldebarán, un viaje que le tomará unos dos millones de años completar."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "La historia de Pioneer es el trabajo poco glamuroso y esencial de ir primero. Las Voyager son recordadas por el Gran Tour; las Pioneer son la razón por la que el Gran Tour pudo intentarse en absoluto. Asumieron los riesgos que convirtieron peligros desconocidos en peligros medidos — demostrando que el cinturón de asteroides era cruzable y que la radiación de Júpiter era soportable — de modo que las misiones tras ellas pudieran diseñarse con confianza en lugar de miedo. Alguien siempre tiene que probar el camino, y rara vez es quien se lleva el crédito."
+      "md": "La historia de Pioneer es el trabajo poco glamuroso y esencial de ir primero. Las Voyager son recordadas por el Grand Tour; las Pioneer son la razón por la que el Grand Tour pudo intentarse siquiera. Asumieron los riesgos que convirtieron peligros desconocidos en peligros medidos —demostrando que el cinturón de asteroides era atravesable y que la radiación de Júpiter era sobrevivible— para que las misiones posteriores pudieran diseñarse con confianza en lugar de miedo. Alguien siempre tiene que probar el camino, y rara vez es quien se lleva el reconocimiento."
     },
     {
       "type": "prose",
-      "md": "Es también una historia de lograr mucho con poco. Las Pioneer fueron naves modestas, más simples y baratas que las Voyager que las siguieron, y aun así consiguieron una serie de auténticos primeros — primeras a través del cinturón, primeras a Júpiter, primeras a Saturno, primeras fuera del sistema solar. Son la prueba de que una pequeña misión bien dirigida puede abrir una frontera por la que después cruza la insignia."
+      "md": "Es también una historia de lograr mucho con poco. Las Pioneer fueron naves modestas, más simples y baratas que las Voyager que las siguieron, y aun así lograron una serie de auténticos primeros récords: primeras a través del cinturón, primeras a Júpiter, primeras a Saturno, primeras fuera del sistema solar. Son la prueba de que una pequeña misión bien dirigida puede abrir una frontera por la que luego transita la misión insignia."
     },
     {
       "type": "prose",
-      "md": "Y portaron el primer mensaje. La placa Pioneer fue un gesto más discreto que el Disco de Oro — una sola lámina grabada en lugar de una biblioteca de sonidos — pero llegó primero, y estableció la idea de que una nave espacial que se marcha para siempre debería decir algo sobre quién la envió. Cada mensaje que la humanidad ha dirigido desde entonces al espacio profundo desciende de esa pequeña placa de oro atornillada a una exploradora."
+      "md": "Y llevaron el primer mensaje. La placa de las Pioneer fue un gesto más discreto que el Disco de Oro —una única lámina grabada en lugar de una biblioteca de sonidos— pero llegó primero, y estableció la idea de que una nave espacial que se marcha para siempre debería decir algo sobre quién la envió. Cada mensaje que la humanidad ha dirigido desde entonces al espacio profundo desciende de aquella pequeña placa de oro atornillada a una exploradora."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "El primer legado de Pioneer es el camino que abrió. Al demostrar que el cinturón de asteroides era cruzable y que la radiación de Júpiter era soportable, convirtió el sistema solar exterior de un peligro teórico en un destino alcanzable — el facilitador directo de Voyager, Galileo, Cassini y cada misión a los planetas gigantes desde entonces."
+      "md": "El primer legado de Pioneer es el camino que abrió. Al demostrar que el cinturón de asteroides era atravesable y que la radiación de Júpiter era sobrevivible, convirtió el sistema solar exterior de un peligro teórico en un destino alcanzable: el facilitador directo de Voyager, Galileo, Cassini y cada misión a los planetas gigantes desde entonces."
     },
     {
       "type": "prose",
-      "md": "El segundo es un conjunto de primeros permanentes: primera a través del cinturón, primera a Júpiter, primera a Saturno, primer objeto en una trayectoria de escape fuera del sistema solar. Esas entradas en el registro no caducan, y todas pertenecen a dos pequeñas y baratas sondas."
+      "md": "Su segundo legado es un conjunto de primeros récords permanentes: primeras a través del cinturón, primeras a Júpiter, primeras a Saturno, primer objeto en una trayectoria de escape fuera del sistema solar. Esas entradas en el registro no expiran, y todas pertenecen a dos sondas pequeñas y baratas."
     },
     {
       "type": "prose",
-      "md": "El tercero es la placa — el primer mensaje deliberado de la Tierra al cosmos, y la plantilla para los Discos de Oro que siguieron. Pioneer estableció que una nave que se marcha para siempre debería portar algún testimonio de sus creadores, y esa idea ha sobrevivido a las propias misiones."
+      "md": "Su tercero es la placa: el primer mensaje deliberado de la Tierra al cosmos, y la plantilla para los Discos de Oro que siguieron. Pioneer estableció que una nave que se marcha para siempre debería llevar algún relato de sus creadores, y esa idea ha sobrevivido a las propias misiones."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La lección de Pioneer es el valor de la exploradora. Lo más importante que hicieron las Pioneer fue reducir la incertidumbre para las misiones tras ellas — convirtiendo conjeturas sobre el cinturón de asteroides y la radiación de Júpiter en cifras firmes contra las que un diseñador podría construir. En cualquier frontera real, una sonda barata enviada para medir el peligro vale mucho más que su coste, porque permite que la siguiente costosa se construya para el mundo tal como es y no como se temía que fuera."
+      "md": "La lección de Pioneer es el valor de la exploradora. Lo más importante que hicieron las Pioneer fue reducir la incertidumbre para las misiones posteriores: convirtiendo conjeturas sobre el cinturón de asteroides y la radiación de Júpiter en cifras concretas contra las que un diseñador podía construir. En cualquier frontera real, una sonda barata enviada para medir el peligro vale mucho más que su coste, porque permite que la misión costosa posterior se construya para el mundo tal como es en lugar de como se temía que fuera."
     },
     {
       "type": "prose",
-      "md": "La lección más profunda es que ir primero rara vez trae la gloria, y aun así importa. Las Pioneer son menos famosas que las Voyager que hicieron posibles, pero sin ellas el Gran Tour habría sido un salto a lo desconocido en lugar de un vuelo calculado. Parte del trabajo más importante es el reconocimiento que nadie recuerda — y vale la pena hacerlo bien precisamente porque todo lo que viene después depende de ello."
+      "md": "La lección más profunda es que ir primero rara vez trae la gloria, y importa de todos modos. Las Pioneer son menos famosas que las Voyager que hicieron posibles, pero sin ellas el Grand Tour habría sido un salto a lo desconocido en lugar de un vuelo calculado. Parte del trabajo más importante es el reconocimiento que nadie recuerda, y merece hacerse bien precisamente porque todo lo que viene después depende de él."
     }
   ]
 }

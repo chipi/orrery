@@ -1,14 +1,14 @@
 {
-  "title": "Abreise-Fenster-Achse",
-  "intro_sentence": "Wann du startest — entlang X-Achse, typisch 4-Jahres-Spanne, täglich gesampelt.",
+  "title": "Abflug-Fenster-Achse",
+  "intro_sentence": "Wann Sie starten — quer über die X-Achse, typischerweise eine vierjährige Spanne, täglich abgetastet.",
   "narrative_101": [
-    "Lies den Porkchop wie einen Kalender. Horizontale Achse — links nach rechts — ist Abreisedatum von Erde. Jede Pixelspalte ein anderer Tag. Orrery sampelt täglich über ~4 Jahre — genug für zwei volle synodische Zyklen, genug zum Sehen, dass das Fenstermuster sich wiederholt.",
-    "Schau über die Reihe billiger Zellen (kühler türkiser Lappen) und liest direkt vom Kalender ab, wann Fenster sind. Mars ~26 Monate. Venus 19. Jupiter 13. Außerhalb: Kalender kämpft gegen dich.",
-    "Wenn du den Startjahr-Slider in /plan bewegst, gleitest du die X-Achse. Anderes Jahr, andere Fenster — aber gleiche Physik."
+    "Lesen Sie das Schweinekotelett wie einen Kalender. Die horizontale Achse – von links nach rechts – ist das Datum, an dem Sie die Erde verlassen. Jede Pixelspalte ist ein anderer Starttag. Orrery tastet mit eintägiger Auflösung über etwa vier Jahre ab; das reicht aus, um zwei vollständige synodische Zyklen für Mars zu erfassen (der ~26-Monats-Zyklus passt grob zweimal in vier Jahre), was ausreicht, um das Startfenster-Muster wiederholt zu sehen.",
+    "Schauen Sie quer über die Reihe von Niedrigkosten-Zellen (der kühle blaugrüne Lappen) und Sie können im Kalender genau ablesen, wann die Startfenster sind. Für Mars sind sie grob alle 26 Monate. Für Venus alle 19. Für Jupiter alle 13. Jede günstige Zone ist ein Fenster – außerhalb dieser Zonen arbeitet der Kalender gegen Sie.",
+    "Wenn Sie den Startjahr-Schieber in /plan verschieben, schieben Sie die X-Achse. Anderes Jahr, andere Fenster-Platzierung, aber die zugrunde liegende Physik ist dieselbe. Das ist der Grund, warum Missionsplanung kalendergesteuert ist: Die günstigen Zonen verschieben sich nicht nur, weil wir eine Frist haben."
   ],
   "body_paragraphs": [
-    "X-Achse = wann du Erde verlässt. Pro Pixelspalte ein Datum — bei Orrery 1-Tag-Auflösung über ~4 Jahre. Warum 4 Jahre? Erde-Mars-Synodik = 26 Monate, also brauchst zwei Zyklen.",
-    "Lies die X-Achse wie einen Kalender. Billige Lappen (\"Fleisch\") in vorhersagbaren Intervallen. Mars ~26 Monate. Venus ~19. Jupiter ~13.",
-    "In `/plan` Achsen-Label: `ABREISE-FENSTER · 2026-2030`. Genaue Daten im Tooltip beim Hover."
+    "Die X-Achse zeigt Ihnen, wann Sie die Erde verlassen. Jede Pixelspalte ist ein anderes Startdatum – bei Orrerys Diagrammen mit eintägiger Auflösung über etwa vier Jahre abgetastet. Warum eine vierjährige Spanne? Weil die Erde-Mars-Synodische Periode ~26 Monate beträgt; vier Jahre erfassen grob zwei vollständige Mars-Fenster. Für Venus (~19 Monate) oder Jupiter (~13 Monate) passt die gleiche Spanne in mehr Fenster – die vierjährige Breite ist für Mars-ähnliche Planung kalibriert.",
+    "Lesen Sie die X-Achse wie einen Kalender. Die Niedrigkosten-Lappen (das ‚Fleisch' des Schweinekotelets) sitzen in vorhersehbaren Abständen. Für Mars: alle ~26 Monate. Für Venus: alle ~19 Monate. Für Jupiter: alle ~13 Monate (Jupiter bewegt sich langsam genug, dass die synodische Periode der Erdenjahr-Dauer nahe kommt).",
+    "Auf `/plan` ist die X-Achsen-Beschriftung `DEPARTURE WINDOW · 2026 — 2030`. Die tatsächlichen Kalenderdaten erscheinen im Tooltip, wenn Sie darüber fahren."
   ]
 }

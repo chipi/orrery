@@ -1,88 +1,88 @@
 {
-  "name": "ESA — Ciencia espacial",
+  "name": "ESA — Ciencia Espacial",
   "tagline": "La flota científica robótica de Europa: la primera nave espacial en aterrizar sobre un cometa, el mapa más preciso de la galaxia jamás realizado y un telescopio que rastrea el universo oscuro.",
   "the_land": [
     {
       "type": "prose",
-      "md": "El vuelo espacial tripulado de la Agencia Espacial Europea se lleva a cabo en colaboración —módulos en la ISS, astronautas lanzados en cohetes ajenos, una participación en Artemis. Pero en ciencia robótica, la ESA lidera por derecho propio, dirigiendo algunas de las misiones en el espacio profundo más ambiciosas jamás realizadas. Donde la ciencia de la NASA es vasta y amplia, la de la ESA tiende a ser precisa y audaz: un pequeño número de misiones que intentan cosas que nadie había hecho antes, ejecutadas con una paciencia medida en décadas."
+      "md": "Los vuelos espaciales tripulados de la Agencia Espacial Europea se realizan en colaboración: módulos en la ISS, astronautas transportados en cohetes de otros países, una participación en Artemis. Pero en ciencia robótica, la ESA lidera por derecho propio, ejecutando algunas de las misiones al espacio profundo más ambiciosas jamás realizadas. Mientras que la ciencia de la NASA es vasta y amplia, la de la ESA tiende a ser precisa y audaz: un pequeño número de misiones que intentan cosas que nadie había hecho nunca, ejecutadas con una paciencia medida en décadas."
     },
     {
       "type": "prose",
-      "md": "Tres misiones capturan su carácter. Rosetta persiguió un cometa durante diez años y luego hizo algo nunca antes intentado: orbitarlo y aterrizar sobre él. Gaia ha pasado una década creando el mapa tridimensional más preciso de la Vía Láctea en la historia, determinando las posiciones y movimientos de casi dos mil millones de estrellas. Y Euclid está inspeccionando un tercio de todo el cielo para trazar el andamiaje invisible de la materia oscura y la misteriosa fuerza que separa el universo. Juntas son el argumento de Europa de que le corresponde estar en la vanguardia de la ciencia espacial."
+      "md": "Tres misiones capturan su carácter. Rosetta persiguió un cometa durante diez años y luego hizo algo nunca antes intentado: orbitarlo y aterrizar sobre él. Gaia ha pasado una década realizando el mapa tridimensional más preciso de la Vía Láctea de la historia, determinando las posiciones de casi dos mil millones de estrellas. Y Euclid está cartografiando un tercio de todo el cielo para rastrear el andamiaje invisible de la materia oscura y la misteriosa fuerza que está separando el universo. Juntas, son el argumento de Europa de que le corresponde estar a la vanguardia de la ciencia espacial."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Los objetivos son tan variados como las misiones, pero cada una apunta a una pregunta científica de primer orden. Rosetta se propuso comprender los cometas —restos prístinos del nacimiento del sistema solar— escoltando uno durante su aproximación más cercana al Sol y tomando muestras directamente. El objetivo de Gaia es el mapa mismo: un censo preciso de las estrellas de la galaxia que sustenta casi toda la astronomía moderna, porque no se puede comprender la Vía Láctea hasta saber dónde están realmente sus estrellas y cómo se mueven."
+      "md": "Los objetivos son tan variados como las misiones, pero cada uno apunta a una cuestión científica de primer orden. Rosetta se propuso comprender los cometas —restos prístinos del nacimiento del sistema solar— escoltando a uno durante su aproximación más cercana al Sol y tomando muestras directas. El objetivo de Gaia es el mapa en sí: un censo preciso de las estrellas de la galaxia que sustenta casi toda la astronomía moderna, porque no se puede comprender la Vía Láctea hasta que se sepa dónde están realmente sus estrellas y cómo se mueven."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/rosetta/01"
       },
-      "caption": "Rosetta: la nave espacial que persiguió al cometa 67P durante diez años, lo orbitó y posó el módulo de aterrizaje Philae en su superficie: el primer aterrizaje sobre un cometa en la historia.",
+      "caption": "Rosetta: la nave espacial que persiguió el cometa 67P durante diez años, lo orbitó y depositó el módulo de aterrizaje Philae sobre su superficie: el primer aterrizaje sobre un cometa de la historia.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "El objetivo de Euclid es el más oscuro: mapear cómo ha crecido la estructura del universo a lo largo del tiempo cósmico y, a partir de ello, determinar qué son realmente la materia oscura y la energía oscura —aproximadamente el 95% del universo que no son ni estrellas ni átomos y que nadie comprende. Es una misión dirigida directamente a la mayor pregunta abierta en física, abordada con el método paciente de inspeccionar-todo que la ciencia europea ha convertido en su sello distintivo."
+      "md": "El objetivo de Euclid es el más oscuro: mapear cómo ha crecido la estructura del universo a lo largo del tiempo cósmico, y a partir de eso delimitar qué son realmente la materia oscura y la energía oscura —aproximadamente el 95% del universo que no son ni estrellas ni átomos y que nadie comprende—. Es una misión dirigida directamente a la mayor pregunta abierta de la física, abordada con el método paciente de cartografiarlo todo que la ciencia europea ha hecho su sello distintivo."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "La llegada de Rosetta al cometa 67P en 2014, tras una persecución de diez años y mil millones de kilómetros que utilizó asistencias gravitacionales de la Tierra y Marte para ganar velocidad, fue uno de los grandes momentos del vuelo espacial moderno. Su módulo de aterrizaje Philae rebotó sobre la superficie de baja gravedad y quedó en reposo en la sombra, sus baterías agotándose en cuestión de días —un éxito parcial y dramático— pero el propio orbitador Rosetta escoltó al cometa durante dos años a través de su ardiente paso alrededor del Sol, devolviendo una imagen transformadora de qué están hechos los cometas y cómo se comportan."
+      "md": "La llegada de Rosetta en 2014 al cometa 67P, tras una persecución de diez años y seis mil millones de kilómetros que realizó asistencias gravitatorias alrededor de la Tierra y Marte para ganar velocidad, fue uno de los grandes momentos del vuelo espacial moderno. Su módulo de aterrizaje Philae rebotó por la superficie de baja gravedad y se detuvo en la sombra, agotándose sus baterías en cuestión de días —un éxito parcial y dramático—, pero la propia sonda orbital Rosetta escoltó al cometa durante dos años a través de su ardiente paso alrededor del Sol, devolviendo una imagen transformadora de qué están hechos los cometas y cómo se comportan."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/gaia/01"
       },
-      "caption": "Gaia: una nave espacial que no hizo más que medir, con precisión, las posiciones y movimientos de casi dos mil millones de estrellas. Su mapa es el cimiento sobre el que descansa una década de astronomía galáctica.",
+      "caption": "Gaia: una nave espacial que no hizo más que medir, con precisión, las posiciones de casi dos mil millones de estrellas. Su mapa es el cimiento bajo una década de astronomía galáctica.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "Las publicaciones de datos de Gaia han remodelado silenciosamente la astronomía: su mapa estelar es ahora el marco de referencia contra el que se calibra casi cualquier otra observación, revelando la estructura de la Vía Láctea, corrientes ocultas de antiguas galaxias fusionadas y los movimientos que se desarrollarán a lo largo de millones de años. Euclid, más reciente, ya está devolviendo inspecciones del cielo de profundidad y amplitud asombrosas. Entre ambas, la flota científica de la ESA ha entregado primicias —el aterrizaje en un cometa, el mapa galáctico— que se encuentran entre los logros robóticos más significativos de la era."
+      "md": "Las publicaciones de datos de Gaia han remodelado silenciosamente la astronomía: su mapa estelar es ahora el marco de referencia contra el cual se calibra casi cualquier otra observación, revelando la estructura de la Vía Láctea, corrientes ocultas de galaxias antiguas fusionadas y los movimientos que se desarrollarán durante millones de años. Euclid, más reciente, ya está devolviendo cartografías del cielo de asombrosa profundidad y amplitud. Entre ambas, la flota científica de la ESA ha conseguido logros pioneros —el aterrizaje sobre el cometa, el mapa galáctico— que figuran entre los logros robóticos más significativos de la era."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "El hilo conductor de la ciencia de la ESA es la paciencia a una escala que pocos programas intentan. La misión de Rosetta duró dos décadas desde su aprobación hasta el cometa, diez de ellas dedicadas simplemente a volar hacia el objetivo, incluidos casi tres años en hibernación para ahorrar energía. El valor de Gaia solo emergió tras años de acumular mediciones. Esto es ciencia como un juego a largo plazo: misiones que exigen una continuidad de financiación y propósito a lo largo de una década o más, y una disposición a esperar una recompensa que llega de golpe, cerca del final."
+      "md": "El hilo conductor de la ciencia de la ESA es la paciencia a una escala que pocos programas intentan. La misión de Rosetta duró dos décadas desde su aprobación hasta el cometa, diez de ellas simplemente volando hacia el objetivo, incluidos casi tres años en hibernación para ahorrar energía. El valor de Gaia sólo surgió tras años de acumular mediciones. Esto es la ciencia como un juego a largo plazo: misiones que exigen una continuidad de financiación y propósito a lo largo de una década o más, y una disposición a esperar una recompensa que llega de golpe, cerca del final."
     },
     {
       "type": "prose",
-      "md": "También es ciencia definida por hacer una cosa difícil de forma suprema. La ESA no intenta igualar la amplitud de la NASA; elige un pequeño número de misiones y convierte cada una en una auténtica primicia o un instrumento definitivo. Aterrizar en un cometa nunca se había hecho; la precisión de Gaia nunca se había logrado; la inspección de Euclid no tiene igual en alcance. La estrategia es profundidad sobre cantidad: una especialidad europea de convertir una misión enfocada en un hito."
+      "md": "También es ciencia definida por hacer una cosa difícil de forma supremamente bien. La ESA no intenta igualar la amplitud de la NASA; escoge un pequeño número de misiones y convierte cada una en un auténtico logro pionero o en un instrumento definitivo. Aterrizar sobre un cometa nunca se había hecho; la precisión de Gaia nunca se había alcanzado; la cartografía de Euclid no tiene parangón en alcance. La estrategia es profundidad por encima de cantidad: una especialidad europea de convertir una misión enfocada en un hito."
     },
     {
       "type": "prose",
-      "md": "Y es profundamente colaborativa e internacional, a la manera europea: misiones construidas entre muchos estados miembros, a menudo lanzadas en colaboración con la NASA, lanzadas en los propios cohetes Ariane de Europa y que alimentan una comunidad científica que abarca el continente. La ciencia de la ESA es una demostración de que una coalición de naciones, aunando recursos, puede producir resultados que rivalizan o superan lo que cualquiera de ellas podría lograr por sí sola."
+      "md": "Y es profundamente colaborativa e internacional, al estilo europeo: misiones construidas a través de muchos Estados miembros, a menudo realizadas en colaboración con la NASA, lanzadas con los propios cohetes Ariane de Europa y alimentando una comunidad científica que abarca todo el continente. La ciencia de la ESA es una demostración de que una coalición de naciones, aunando recursos, puede producir resultados que rivalizan o superan lo que cualquiera de ellas podría lograr sola."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "La ciencia de la ESA deja un legado de primicias y cimientos: el primer aterrizaje en un cometa, que demostró que incluso los cuerpos más pequeños e irregulares pueden ser alcanzados y tocados; y el mapa galáctico de Gaia, que se ha convertido en el marco de referencia que sustenta la astronomía moderna, utilizado por casi todos los observatorios de la Tierra y el espacio."
+      "md": "La ciencia de la ESA deja un legado de logros pioneros y fundamentos: el primer aterrizaje sobre un cometa, que demostró que incluso los cuerpos más pequeños e irregulares pueden ser alcanzados y tocados; y el mapa galáctico de Gaia, que se ha convertido en el marco de referencia que sustenta la astronomía moderna, utilizado por casi todos los observatorios de la Tierra y del espacio."
     },
     {
       "type": "prose",
-      "md": "Su legado más profundo es un modelo de ciencia ambiciosa, paciente y enfocada: un pequeño número de misiones, cada una intentando una auténtica primicia, sostenidas a lo largo de décadas. Ese modelo ha convertido a Europa en líder en exploración robótica a pesar de presupuestos muy por debajo de los de la NASA, y en un socio que las agencias más grandes buscan activamente."
+      "md": "Su legado más profundo es un modelo de ciencia ambiciosa, paciente y enfocada: un pequeño número de misiones, cada una intentando un auténtico logro pionero, sostenidas a lo largo de décadas. Ese modelo ha convertido a Europa en líder en exploración robótica a pesar de presupuestos muy inferiores a los de la NASA, y en un socio que las agencias más grandes buscan activamente."
     },
     {
       "type": "prose",
-      "md": "Y a través de Euclid y el trabajo sobre el universo oscuro, la ESA está posicionada en la frontera de la mayor pregunta sin respuesta en física: de qué está realmente hecho el universo. Cualquiera que sea la respuesta, los telescopios de inspección de Europa serán fundamentales para encontrarla."
+      "md": "Y a través de Euclid y el trabajo sobre el universo oscuro, la ESA se posiciona en la frontera de la mayor pregunta sin respuesta de la física: de qué está realmente hecho el universo. Sea cual sea la respuesta, los telescopios de cartografía de Europa serán fundamentales para encontrarla."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La lección de la ciencia de la ESA es que la paciencia es un instrumento científico. Misiones como Rosetta y Gaia no entregan nada durante años y luego todo de golpe, y solo son posibles para una organización dispuesta a comprometerse con una recompensa a una década. La disposición a esperar —financiar y hacer volar una misión cuyos resultados llegan cerca de su final— es en sí misma una capacidad, y Europa la ha convertido en una especialidad."
+      "md": "La lección de la ciencia de la ESA es que la paciencia es un instrumento científico. Misiones como Rosetta y Gaia no entregan nada durante años y luego lo entregan todo de golpe, y sólo son posibles para una organización dispuesta a comprometerse con una recompensa de una década. La disposición a esperar —a financiar y volar una misión cuyos resultados llegan cerca de su final— es en sí misma una capacidad, y una en la que Europa se ha especializado."
     },
     {
       "type": "prose",
-      "md": "La lección más profunda es que el enfoque supera a la amplitud para una potencia de tamaño medio. La ESA no puede hacer todo lo que hace la NASA, así que hace unas pocas cosas que nadie más ha hecho —aterrizar en un cometa, mapear la galaxia, inspeccionar el universo oscuro— y se convierte en líder a través de la profundidad en lugar de la escala. Elegir el problema difícil correcto y resolverlo de forma definitiva es cómo una coalición supera su presupuesto."
+      "md": "La lección más profunda es que el enfoque supera a la amplitud para una potencia mediana. La ESA no puede hacer todo lo que hace la NASA, así que hace unas pocas cosas que nadie más ha hecho —aterrizar sobre un cometa, mapear la galaxia, cartografiar el universo oscuro— y se convierte en líder a través de la profundidad en lugar de la escala. Escoger el problema difícil adecuado y resolverlo de forma definitiva es cómo una coalición supera su presupuesto."
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "name": "Europa Clipper",
-  "type": "ORBITADOR + SOBREVUELOS MÚLTIPLES · ACTIVA",
-  "first": "Primera misión dedicada a caracterizar la habitabilidad de una luna helada; la nave espacial de misión planetaria más grande jamás lanzada (6065 kg, paneles solares de 100 m²)",
-  "description": "Europa Clipper va a Júpiter para estudiar Europa, una luna helada de 3121 km que se cree alberga un océano global de agua líquida bajo una corteza de hielo de 15-25 km, el entorno potencialmente habitable más accesible del sistema solar. Lanzada el 2024-10-14 en un Falcon Heavy con C3 41,7. Una asistencia gravitatoria de Marte en 2025-03 + asistencia gravitatoria de la Tierra en 2026-12 configuran la trayectoria; llega a Júpiter el 2030-04-11 para la inserción orbital. La gira orbital ejecuta 49 sobrevuelos cercanos de Europa durante cuatro años, pasando a 25 km de la superficie de Europa en los pasos más próximos, diseñados para mapear toda la luna mientras se limita la dosis de radiación que recibe la nave en los brutales cinturones de radiación de Júpiter. Instrumentos: radar de penetración de hielo REASON, espectrómetro de masas MASPEX (muestrea material de plumas si las hay), generador de imágenes térmicas E-THEMIS (encuentra géiseres activos), magnetómetro + instrumentos de plasma confirman la profundidad del océano mediante la respuesta magnética inducida.",
+  "type": "ORBITADOR + MÚLTIPLES SOBREVUELOS · ACTIVO",
+  "first": "Primera misión dedicada a caracterizar la habitabilidad de una luna helada; nave de misión planetaria más grande lanzada jamás (6065 kg, matrices solares de 100 m²)",
+  "description": "Europa Clipper se dirige a Júpiter para estudiar Europa — una luna helada de 3121 km que se cree alberga un océano global de agua líquida bajo una capa de hielo de 15-25 km, el entorno potencialmente habitable más accesible del sistema solar. Lanzado el 2024-10-14 en un Falcon Heavy con C3 de 41,7. Una asistencia gravitatoria de Marte en marzo de 2025 curvó la trayectoria hacia la Tierra; una asistencia gravitatoria terrestre en 2026-12 proporciona el último impulso hacia el exterior; llega a Júpiter el 2030-04-11 para la inserción orbital. El tour orbital ejecuta 49 sobrevuelos cercanos a Europa durante cuatro años — pasando a 25 km de la superficie de Europa en los pasos más cercanos, diseñado para mapear la luna completa mientras se limita la dosis de radiación de la nave en los brutales cinturones de radiación de Júpiter. Instrumentos: radar penetrador de hielo REASON, espectrómetro de masas MASPEX (toma muestras del material de la pluma si existe), imager térmico E-THEMIS (encuentra géiseres activos), magnetómetro e instrumentos de plasma confirman la profundidad del océano a partir de la respuesta magnética inducida.",
   "events": [
     {
       "met": 0,
@@ -13,25 +13,25 @@
     {
       "met": 504,
       "label": "ASISTENCIA GRAVITATORIA DE MARTE",
-      "note": "2025-03-01. Desvía la trayectoria hacia el reencuentro con la Tierra.",
+      "note": "2025-03-01. Curva la trayectoria hacia el encuentro terrestre.",
       "type": "info"
     },
     {
       "met": 1530,
-      "label": "ASISTENCIA GRAVITATORIA DE LA TIERRA",
-      "note": "2026-12-03. Aceleración final de salida hacia Júpiter.",
+      "label": "ASISTENCIA GRAVITATORIA TERRESTRE",
+      "note": "2026-12-03. Aceleración final hacia el exterior en dirección a Júpiter.",
       "type": "info"
     },
     {
       "met": 2005,
       "label": "APROXIMACIÓN A JÚPITER",
-      "note": "2030-04-11. Aproximación final a JOI.",
+      "note": "2030-04-11. Aproximación final para JOI.",
       "type": "info"
     },
     {
       "met": 2005.005,
-      "label": "INSERCIÓN ORBITAL EN JÚPITER",
-      "note": "Quemado de 760 m/s. Siguen 49 sobrevuelos de Europa durante 4 años.",
+      "label": "INSERCIÓN EN ÓRBITA DE JÚPITER",
+      "note": "Quemadura de 760 m/s. Le siguen 49 sobrevuelos de Europa durante 4 años.",
       "type": "info"
     }
   ]

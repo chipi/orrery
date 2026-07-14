@@ -1,9 +1,9 @@
 {
   "name": "Spirit",
-  "type": "ROVER · VOLADO",
-  "first": "Primero de los rovers gemelos Mars Exploration Rover; rover de mayor longevidad hasta ser superado por Curiosity",
-  "dispatch": "Spirit fue construido para noventa días y trabajó durante seis años. Uno de un par de geólogos del tamaño de un carrito de golf que aterrizó en 2004, fue enviado a leer las rocas en busca de evidencia de un pasado marciano más húmedo — y la encontró, descubriendo minerales que solo se forman en agua y, en un lugar, depósitos de sílice como los que dejan las fuentes termales en la Tierra. Escaló colinas que nadie había planeado que alcanzara y sobrevivió inviernos para los que nunca fue diseñado, hasta que una rueda falló y quedó atascado en arena blanda. Siguió transmitiendo desde donde estaba atrapado hasta que el frío marciano finalmente se lo llevó.",
-  "description": "Spirit (MER-A) rebotó 28 veces en el suelo del cráter Gusev el 2004-01-04 y rodó hasta detenerse a 250 m de su primer impacto. Diseñado para una misión principal de 90 soles, sobreviviría 2.210 soles. Recorrió 7,7 km por las llanuras de Gusev, escaló las Columbia Hills y descubrió rocas con hematita que indicaban la presencia persistente de agua antigua. En 2009-04 una rueda atravesó una costra de sulfato en «Troy» y Spirit se detuvo en suelo blando; el equipo lo convirtió en una plataforma estacionaria. Última transmisión el 2010-03-22; misión declarada finalizada el 2011-05-25. Gemelo de Opportunity, que aterrizó tres semanas después en el lado opuesto de Marte.",
+  "type": "ROVER · COMPLETADA",
+  "first": "Primero de los mellizos Mars Exploration Rover; rover más longevo hasta ser superado por Curiosity",
+  "dispatch": "Spirit fue construido para noventa días y funcionó durante seis años. Uno de un par de geólogos del tamaño de un carrito de golf aterrizó en 2004; fue enviado para leer las rocas en busca de evidencia de un Marte más húmedo en el pasado — y la encontró, descubriendo minerales que solo se forman en agua y, en un lugar, depósitos de sílice como los dejados por fuentes termales en la Tierra. Escaló colinas que nadie había planeado que alcanzara y sobrevivió inviernos para los que nunca fue diseñado, hasta que una rueda se avería y quedó atrapado en arena blanda. Continuó transmitiendo desde donde quedó atrapado hasta que el frío marciano finalmente lo apagó.",
+  "description": "Spirit (MER-A) rebotó 28 veces sobre el suelo del Cráter Gusev el 2004-01-04 y se detuvo a 250 m del primer impacto. Diseñado para una misión primaria de 90 soles, sobreviviría 2.208 soles. Recorrió 7,7 km por las llanuras de Gusev, escaló las Colinas Columbia y descubrió rocas portadoras de hematita que señalaban agua antigua persistente. En 2009-04 una rueda atravesó una costra de sulfato en \"Troy\" y Spirit se detuvo en suelo blando; el equipo lo convirtió en una plataforma estacionaria. Última transmisión 2010-03-22; misión declarada finalizada 2011-05-25. Hermanado con Opportunity, que aterrizó tres semanas después en el lado opuesto de Marte.",
   "events": [
     {
       "met": 0,
@@ -14,37 +14,37 @@
     {
       "met": 15,
       "label": "TCM-1",
-      "note": "Primera corrección de trayectoria.",
+      "note": "Primera corrección de trayectoria media.",
       "type": "nominal"
     },
     {
       "met": 200,
       "label": "TCM-4",
-      "note": "Ajuste final previo a EDL.",
+      "note": "Último ajuste preentrada.",
       "type": "nominal"
     },
     {
       "met": 208,
       "label": "EDL",
-      "note": "Escudo térmico, paracaídas, retrocohetes, airbags — 6 minutos de infierno hacia el cráter Gusev.",
+      "note": "Escudo térmico, paracaídas, cohetes retro, bolsas de aire — 6 minutos de infierno en el Cráter Gusev.",
       "type": "info"
     },
     {
       "met": 208.01,
       "label": "ATERRIZAJE",
-      "note": "Rebotó 28 veces. Quedó en reposo en 14,57°S, 175,47°E.",
+      "note": "Rebotó 28 veces. Se detuvo en 14,57°S, 175,47°E.",
       "type": "info"
     },
     {
       "met": 1990,
-      "label": "ATASCADO EN TROY",
-      "note": "La rueda atraviesa la costra de sulfato; el rover se atasca en suelo blando. 2009-04.",
+      "label": "ATRAPADO EN TROY",
+      "note": "Una rueda atraviesa la costra de sulfato; rover queda atrapado en suelo blando. 2009-04.",
       "type": "warning"
     },
     {
       "met": 2271,
       "label": "ÚLTIMA TRANSMISIÓN",
-      "note": "2010-03-22. Misión declarada finalizada el 2011-05-25.",
+      "note": "2010-03-22. Misión declarada finalizada 2011-05-25.",
       "type": "warning"
     }
   ]

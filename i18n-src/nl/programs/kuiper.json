@@ -1,84 +1,84 @@
 {
-  "name": "Project Kuiper",
-  "tagline": "Amazons antwoord op Starlink — de tweede megaconstellatie, gesteund door de diepste zakken in de detailhandel en een bewuste weigering om afhankelijk te zijn van de raket van een concurrent.",
+  "name": "Amazon Leo (Project Kuiper)",
+  "tagline": "Amazons antwoord op Starlink — herbenoemd tot Amazon Leo in 2025, gesteund door de diepste zakken in de detailhandel en een bewuste weigering om afhankelijk te zijn van de raket van een rivaal.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Toen Starlink bewees dat een megaconstellatie daadwerkelijk kon werken — dat duizenden kleine satellieten in een lage baan echt internet aan echte klanten konden leveren — hield de vraag op of iemand een tweede zou bouwen en werd het wie. Het antwoord met het meeste geld erachter is Amazon. Project Kuiper is een geplande constellatie van duizenden satellieten gericht op dezelfde prijs: wereldwijd breedband vanuit lage aardbaan, verkocht aan consumenten, bedrijven en overheden die het op geen andere manier kunnen krijgen."
+      "md": "Toen Starlink bewees dat een megaconstellatie daadwerkelijk kon werken — dat duizenden kleine satellieten in een lage baan echt internet konden leveren aan echte klanten — werd de vraag niet langer óf iemand een tweede zou bouwen, maar wie. Het antwoord met het meeste geld erachter is Amazon. Gelanceerd als Project Kuiper en herbenoemd tot Amazon Leo eind 2025, is het programma een geplande constellatie van duizenden satellieten gericht op dezelfde prijs: wereldwijd breedband vanuit een lage aardbaan, verkocht aan consumenten, bedrijven en overheden die het niet op een andere manier kunnen krijgen."
     },
     {
       "type": "prose",
-      "md": "Kuiper is de uitdager, en arriveert laat met opzet en door omstandigheden. Starlink had een jarenlange voorsprong en een gegarandeerd, goedkoop vervoer naar een baan in de eigen Falcon-raketten van het moederbedrijf. Kuiper heeft geen van beide — maar het heeft Amazon: een bedrijf met enorm kapitaal, een wereldwijde logistiek- en cloudactiviteit om de dienst in te integreren, en genoeg invloed om lanceringen in grote hoeveelheden te kopen. De strijd tussen hen is de eerste echte competitie van het megaconstellatietijdperk."
+      "md": "Kuiper is de uitdager, en komt bewust en door omstandigheden laat aan. Starlink had een jarenlange voorsprong en een toegewijde, goedkope rit naar de baan in de eigen Falcon-raketten van het moederbedrijf. Kuiper heeft geen van beide — maar het heeft Amazon: een bedrijf met enorm kapitaal, een wereldwijd logistiek- en cloudbedrijf om de dienst in te pluggen, en genoeg invloed om lanceringen in bulk te kopen. De wedstrijd tussen hen is de eerste echte competitie van het megaconstellatie-tijdperk."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Het doel is een volledige commerciële breedband-constellatie — duizenden satellieten die wereldwijd internet met lage latentie leveren, geïntegreerd met Amazons Web Services-cloud zodat connectiviteit en computing samen verkocht worden. Het strategische doel is niet alleen internet verkopen, maar Amazons bereik uitbreiden naar elke hoek van de planeet die nog niet bekabeld is, en voorkomen dat een concurrent die markt ongetemd bezit."
+      "md": "Het doel is een volledige commerciële breedband-constellatie — duizenden satellieten die wereldwijd internet met lage latentie leveren, geïntegreerd met Amazons Web Services-cloud zodat connectiviteit en computing samen worden verkocht. Het strategische doel is niet alleen internet verkopen, maar Amazons bereik uitbreiden naar elke hoek van de planeet die nog niet is bekabeld, en te voorkomen dat een concurrent die markt onbetwist bezit."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/kuiper/01"
       },
-      "caption": "Een Project Kuiper-satelliet. Het technische probleem is hetzelfde als Starlink oploste; het strategische probleem is anders — hoe bouw je een constellatie op schaal zonder het lanceervoertuig van je concurrent.",
+      "caption": "Een Project Kuiper-satelliet. Het technische probleem is hetzelfde als Starlink oploste; het strategische probleem is anders — hoe bouw je een constellatie op schaal zonder het lanceervoertuig van je rivaal.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Een bepalend doel is lanceringsonafhankelijkheid van SpaceX. Omdat Kuiper rechtstreeks concurreert met Starlink, zou het kopen van vervoer op Falcon 9 betekenen dat je je rivaal financiert en ervan afhankelijk bent — dus Amazon spreidde zijn enorme lanceercontracten opzettelijk over vele aanbieders: United Launch Alliance's Atlas V en Vulcan, Arianespace's Ariane 6, en Blue Origin's New Glenn. Het is een van de grootste lanceeraankoopdeals in de geschiedenis, specifiek gestructureerd om de ene raket te vermijden die het makkelijkst te kopen zou zijn geweest."
+      "md": "Een bepalend doel is lanceeronafhankelijkheid van SpaceX. Omdat Kuiper rechtstreeks concurreert met Starlink, zou ritten kopen op Falcon 9 betekenen dat het zijn rivaal financiert en daarvan afhankelijk wordt — dus spreidde Amazon bewust zijn enorme lanceringcontracten over meerdere aanbieders: United Launch Alliance's Atlas V en Vulcan, Arianespace's Ariane 6, en Blue Origin's New Glenn. Het is een van de grootste lanceeraankoopdeals in de geschiedenis, specifiek gestructureerd om de ene raket te vermijden die het makkelijkst te kopen zou zijn geweest."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Kuiper is nog vroeg in zijn uitrol. Twee prototypesatellieten bereikten in 2023 een baan en valideerden het ontwerp; productiesatellieten begonnen midden jaren 2020 te lanceren, jaren achter Starlink en tegen een regelgevende deadline die Amazon verplichtte om de helft van de constellatie tegen een bepaalde datum uit te rollen om zijn spectrumrechten te behouden. De uitkomst — of Kuiper een echte tweede kracht wordt of een kostbare laatstekomer — wordt nog steeds besloten in een baan."
+      "md": "Kuiper is vroeg in zijn inzet. Twee prototypesatellieten bereikten een baan in 2023 en valideerden het ontwerp; productiesatellieten begonnen te lanceren in het midden van de jaren 2020, jaren achter Starlink. Een FCC-deadline die vereiste dat de helft van de constellatie tegen medio 2026 ingezet moest zijn om spectrumrechten veilig te stellen, werd kwijtgescholden in juni 2026, wat de tijdsdruk verminderde — hoewel de competitieve urgentie om Starlink in te halen blijft. De uitkomst — of Kuiper een echte tweede kracht wordt of een kostbare nakomeling — wordt nog steeds beslist in een baan."
     },
     {
       "type": "prose",
-      "md": "Wat al duidelijk is, is dat de megaconstellatie niet langer een fenomeen van één bedrijf is. Kuipers komst, naast Europese en nationale constellaties, bevestigt dat lage aardbaan tegelijk wordt uitgebouwd door meerdere concurrerende operators — wat de voordelen van connectiviteit vermenigvuldigt en in precies dezelfde verhouding de problemen van een drukke baan: meer objecten om te volgen, meer botsingsrisico, meer strepen over de hemel van astronomen, van meer eigenaren die aan meer overheden verantwoording afleggen."
+      "md": "Wat al duidelijk is, is dat de megaconstellatie niet langer een fenomeen van één bedrijf is. Kuipers aankomst, naast Europese en nationale constellaties, bevestigt dat een lage aardbaan wordt uitgebouwd door meerdere concurrerende operatoren tegelijk — wat de voordelen van connectiviteit vermenigvuldigt en in exact dezelfde verhouding de problemen van een drukke baan: meer objecten om te volgen, meer botsingsrisico, meer strepen over de hemel van astronomen, van meer eigenaren die verantwoording afleggen aan meer overheden."
     },
     {
       "type": "prose",
-      "md": "Kuiper test ook de lanceermarkt zelf. Zijn multi-aanbieder-strategie is een reddingslijn voor raketten die lading nodig hebben — Vulcan, Ariane 6 en New Glenn profiteren allemaal van een klant van deze omvang — en een gok dat een constellatie gebouwd kan worden zonder verticale integratie, door zijn vervoer te kopen in plaats van zelf te vliegen. Of dat competitief is tegen een rivaal die zelf lanceert, is een van de open vragen die het programma zal beantwoorden."
+      "md": "Kuiper test ook de lanceermarkt zelf. Zijn strategie met meerdere aanbieders is een reddingslijn voor raketten die payloads nodig hebben — Vulcan, Ariane 6 en New Glenn profiteren allemaal van het hebben van zo'n grote klant — en een gok dat een constellatie kan worden gebouwd zonder verticale integratie, door ritten te kopen in plaats van zelf te vliegen. Of dat concurrerend is tegen een rivaal die zelf lanceert, is een van de open vragen die het programma zal beantwoorden."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Het verhaal van Kuiper is het verhaal van de snelle volger. Starlink nam het technische en financiële risico om de megaconstellatie te bewijzen; Kuipers taak is bewijzen dat een goed gekapitaliseerde tweede beweger een eerste beweger kan inhalen met een voorsprong en eigen raketten. Amazons voordelen zijn reëel — geld, cloudinfrastructuur, een consumentenmerk, logistiek — maar ook het nadeel van de race beginnen nadat de leider het veld al eens heeft gerondeerd."
+      "md": "Het verhaal van Kuiper is het verhaal van de snelle volger. Starlink nam het technische en financiële risico om de megaconstellatie te bewijzen; Kuipers taak is bewijzen dat een goed gekapitaliseerde tweede aanbieder een eerste aanbieder met een voorsprong en eigen raketten kan inhalen. Amazons voordelen zijn reëel — geld, cloudinfrastructuur, een consumentenmerk, logistiek — maar ook het nadeel van de race te beginnen nadat de leider het veld al eens gerond heeft."
     },
     {
       "type": "prose",
-      "md": "Het is ook een studie in het strategische gewicht van lanceren. Kuipers meest onderscheidende beslissing — om overal vervoer te kopen behalve bij SpaceX — is een herinnering dat in het constellatietijdperk toegang tot een baan geen neutrale voorziening is maar een concurrentiewapen. Wanneer je rivaal de goedkoopste raket bezit, is weigeren deze te gebruiken duur; Amazon oordeelde dat afhankelijkheid van een concurrent nog duurder was. Het lanceeringsmanifest is in feite onderdeel van de bedrijfsstrategie."
+      "md": "Het is ook een studie in het strategische gewicht van lancering. Kuipers meest onderscheidende beslissing — overal ritten kopen behalve bij SpaceX — is een herinnering dat in het constellatie-tijdperk toegang tot een baan geen neutrale voorziening is maar een concurrentiewapen. Als je rivaal de goedkoopste raket bezit, is weigeren die te gebruiken duur; Amazon oordeelde dat afhankelijkheid van een concurrent nog duurder was. Het lanceeringsmanifest is in feite onderdeel van de bedrijfsstrategie."
     },
     {
       "type": "prose",
-      "md": "En het verdiept het bestuursprobleem dat Starlink opende. Twee rivaliserende megaconstellaties, dan meerdere, die dezelfde schillen van lage baan vullen, verhogen de inzet op elke onopgeloste vraag — coördinatie tussen operators, botsingspreventie tussen bedrijven die geen gegevens delen, spectrumverdeling, en de helderheid waar astronomen mee moeten leven. Concurrentie is goed voor klanten en moeilijk voor de gemeenschappelijke ruimte; Kuiper maakt beide meer waar."
+      "md": "En het verdiept het bestuursprobleem dat Starlink opende. Twee rivaliserende megaconstellaties, dan meerdere, die dezelfde schillen van lage banen vullen, verhogen de inzet bij elke onopgeloste vraag — coördinatie tussen operatoren, botsingspreventie tussen bedrijven die geen gegevens delen, spectrumdeling, en de helderheid waarmee astronomen moeten leven. Concurrentie is goed voor klanten en moeilijk voor de gemeenschap; Kuiper maakt beide waar."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Kuipers erfenis, nog in ontwikkeling, is de bevestiging dat satellietinternet een echte markt is met ruimte voor meer dan één reus. Het bestaan ervan alleen al veranderde Starlink van een monopolie-in-wording in één concurrent onder meerdere, en valideerde de megaconstellatie als de vaststaande toekomst van orbitale communicatie in plaats van de gok van één bedrijf."
+      "md": "Kuipers erfenis, nog in ontwikkeling, is de bevestiging dat satellietinternet een echte markt is met ruimte voor meer dan één reus. Zijn pure bestaan veranderde Starlink van een monopolie-in-wording in één concurrent tussen verscheidenen, en valideerde de megaconstellatie als de vastgestelde toekomst van orbitale communicatie in plaats van de gok van één bedrijf."
     },
     {
       "type": "prose",
-      "md": "Zijn tweede erfenis is voor de lanceringsindustrie. Door het grootste commerciële lanceercontract in de geschiedenis te spreiden over Atlas V, Vulcan, Ariane 6 en New Glenn, financierde Amazon de business case voor een hele generatie raketten — bewijs dat een constellatie een klant kan zijn die meerdere lanceervoertuigen in leven houdt."
+      "md": "Zijn tweede erfenis is voor de lanceringsindustrie. Door het grootste commerciële lanceercontract in de geschiedenis te spreiden over Atlas V, Vulcan, Ariane 6 en New Glenn, ondersteunde Amazon de business case voor een hele generatie raketten — bewijs dat een constellatie een klant kan zijn die meerdere lanceervoertuigen levend houdt."
     },
     {
       "type": "prose",
-      "md": "En het voegt een tweede grote operator toe aan de drukte van lage baan, waardoor het bestuur van een gedeelde, congesteerde nabije-aarderuimte niet een Starlink-probleem wordt maar een industrieprobleem — de omgeving waar elke toekomstige satelliet, bemande ruimtevaartuig en telescoop doorheen moet vliegen."
+      "md": "En het voegt een tweede grote operator toe aan de drukte van de lage baan, wat het bestuur van een gedeelde, drukke nabije ruimte niet een Starlink-probleem maakt maar een industrieel probleem — de omgeving waar elke toekomstige satelliet, bemand ruimtevaartuig en telescoop doorheen moet vliegen."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "De les van Kuiper is dat bewijzen dat iets mogelijk is uitnodigt tot concurrentie om het beter of goedkoper te bouwen — en dat het probleem van de tweede beweger volledig anders is dan dat van de eerste. Starlink moest bewijzen dat de megaconstellatie überhaupt kon werken; Kuiper moet bewijzen dat een laatstekomer een leider kan inhalen die de weg naar een baan bezit. Geld helpt; een voorsprong en je eigen raketten helpen misschien meer."
+      "md": "De les van Kuiper is dat bewijzen dat iets mogelijk is uitnodigt tot concurrentie om het beter of goedkoper te bouwen — en dat het probleem van de tweede aanbieder volledig anders is dan dat van de eerste. Starlink moest bewijzen dat de megaconstellatie überhaupt kon werken; Kuiper moet bewijzen dat een nakomeling een leider kan inhalen die de weg naar de baan bezit. Geld helpt; een voorsprong en je eigen raketten helpen misschien meer."
     },
     {
       "type": "prose",
-      "md": "De diepere les is dat in een genetwerkte capaciteit, controle over de toeleveringsketen strategie is. Kuipers lanceringskeuzes — opzettelijk omgeleid om zijn rivaal heen — laten zien dat wanneer toegang tot een baan schaars is en gedeeltelijk in bezit is van een concurrent, van wie je je vervoer koopt geen aankoopdetail is maar een beslissing over onafhankelijkheid, en het waard is om een premie voor te betalen."
+      "md": "De diepere les is dat in een genetwerkte capaciteit, controle over de toeleveringsketen strategie is. Kuipers lanceringskeuzes — bewust omgeleid langs zijn rivaal — tonen dat wanneer toegang tot een baan schaars is en deels in handen van een concurrent, van wie je je ritten koopt geen aankoopdetail is maar een beslissing over onafhankelijkheid, en het waard is een premie te betalen om het goed te krijgen."
     }
   ]
 }

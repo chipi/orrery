@@ -14,7 +14,7 @@
   "payload": "3460 kg (incl. 2414 kg propellant)",
   "delta_v": "~3.7 km/s",
   "data_quality": "good",
-  "credit": "© NASA / JPL / Martin Marietta — public domain. Radar-mapped 98% of Venus's surface at 100-m resolution. Mission ended 1994-10-13 in a deliberate atmospheric entry — the Termination Experiment, the first planned controlled atmospheric entry of a planetary spacecraft.",
+  "credit": "© NASA / JPL / Martin Marietta — public domain. Radar-mapped 98% of Venus's surface at ~120-m resolution. Mission ended 1994-10-13 in a deliberate atmospheric entry — the Termination Experiment, the first planned controlled atmospheric entry of a planetary spacecraft.",
   "links": [
     {
       "l": "Magellan (spacecraft) — Wikipedia",
@@ -109,7 +109,7 @@
         "met_days": 463.005,
         "type": "edl_or_oi",
         "label": "Venus orbit insertion",
-        "description": "Solid-motor VOI burn placed Magellan into a highly elliptical 295 × 8543 km, 85.5°-inclination near-polar orbit. Over four mapping cycles + an aerobraking phase that lowered the orbit, Magellan's synthetic-aperture radar mapped 98% of Venus's surface at 100-m resolution — the most complete planetary radar survey ever flown. Discovered tessera highlands, coronae, pancake domes, and confirmed the relative absence of impact craters (a young surface, repaved by global volcanism)."
+        "description": "Solid-motor VOI burn placed Magellan into a highly elliptical 295 × 8543 km, 85.5°-inclination near-polar orbit. Over four mapping cycles + an aerobraking phase that lowered the orbit, Magellan's synthetic-aperture radar mapped 98% of Venus's surface at ~120-m resolution — the most complete planetary radar survey ever flown. Discovered tessera highlands, coronae, pancake domes, and confirmed the relative absence of impact craters (a young surface, repaved by global volcanism)."
       },
       {
         "met_days": 1988,

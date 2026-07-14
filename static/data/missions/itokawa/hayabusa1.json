@@ -14,7 +14,7 @@
   "payload": "510 kg (incl. 60 kg of xenon for four μ10 ion thrusters)",
   "delta_v": "~4.0 km/s",
   "data_quality": "good",
-  "credit": "© JAXA / ISAS — public domain. First asteroid sample return. Heroic recovery from multiple failures: 3 of 4 reaction wheels died, an ion engine failed, communications lost for 7 weeks, hydrazine leak; engineers nursed the spacecraft back to Earth with one working ion engine assembled from the surviving halves of two damaged ones.",
+  "credit": "© JAXA / ISAS — public domain. First asteroid sample return. Heroic recovery from multiple failures: two of its three reaction wheels failed, an ion engine failed, communications lost for 7 weeks, hydrazine leak; engineers nursed the spacecraft back to Earth with one working ion engine assembled from the surviving halves of two damaged ones.",
   "links": [
     {
       "l": "Hayabusa — Wikipedia",
@@ -97,7 +97,7 @@
         "met_days": 920,
         "type": "anomaly",
         "label": "Series of failures",
-        "description": "Late 2005. After the second touchdown, a hydrazine leak caused attitude loss and battery depletion. Two of four reaction wheels were already dead; communications lost for 7 weeks. Earth-return window slipped by 3 years. Engineers eventually re-established contact and devised a recovery plan."
+        "description": "Late 2005. After the second touchdown, a hydrazine leak caused attitude loss and battery depletion. Two of its three reaction wheels had already failed; communications lost for 7 weeks. Earth-return window slipped by 3 years. Engineers eventually re-established contact and devised a recovery plan."
       },
       {
         "met_days": 1900,
@@ -109,7 +109,7 @@
         "met_days": 2592,
         "type": "earth_return",
         "label": "Earth sample-return capsule splashdown",
-        "description": "2010-06-13. Sample-return capsule splashed down at Woomera, Australia. The spacecraft itself burned in the atmosphere immediately afterward — the recovery imagery of the capsule descending under parachute while the spacecraft streaked overhead was widely shared. Capsule recovery returned 1500 micrograms of Itokawa surface particles — the first asteroid sample ever returned to Earth. Confirmed Itokawa's S-type composition and rubble-pile structure."
+        "description": "2010-06-13. Sample-return capsule splashed down at Woomera, Australia. The spacecraft itself burned in the atmosphere immediately afterward — the recovery imagery of the capsule descending under parachute while the spacecraft streaked overhead was widely shared. Capsule recovery returned ~1,500 grains of Itokawa dust (sub-milligram total) — the first asteroid sample ever returned to Earth. Confirmed Itokawa's S-type composition and rubble-pile structure."
       }
     ],
     "interplanetary_profile": {

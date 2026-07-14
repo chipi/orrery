@@ -1,84 +1,84 @@
 {
   "name": "Mangalyaan",
-  "tagline": "L'India ha raggiunto Marte al primo tentativo — cosa che nessuna nazione aveva mai fatto — per meno del costo di un film di Hollywood sullo spazio.",
+  "tagline": "L'India ha raggiunto Marte al primo tentativo — il primo paese al mondo a riuscirci — spendendo meno del costo di un film hollywoodiano sullo spazio.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Marte è dove i programmi spaziali vanno a fallire. Più missioni sono andate perse sulla strada per Marte di quante vi siano riuscite; gli Stati Uniti, l'Unione Sovietica, l'Europa e il Giappone si sono schiantati, hanno mancato il bersaglio o hanno perso il contatto nei loro primi tentativi. Raggiungere l'orbita marziana al primo tentativo era qualcosa che nessun paese era mai riuscito a fare. Nel settembre 2014 l'India ci riuscì, con una sonda chiamata Mangalyaan — sanscrito per \"veicolo marziano\" — costruita da un'agenzia che non aveva mai inviato nulla oltre la Luna."
+      "md": "Marte è il luogo dove i programmi spaziali vanno a fallire. Più missioni sono andate perdute in viaggio verso Marte di quante vi abbiano avuto successo; gli Stati Uniti, l'Unione Sovietica e il Giappone sono tutti precipitati, hanno mancato il bersaglio o hanno perso i contatti nei loro primi tentativi. Raggiungere l'orbita marziana al primo tentativo era qualcosa che nessun paese era mai riuscito a fare — l'orbiter Mars Express dell'ESA ci riuscì nel 2003, ma come agenzia multinazionale, non come singolo paese. Nel settembre 2014 l'India fece esattamente questo, con una sonda chiamata Mangalyaan — in sanscrito \"veicolo di Marte\" — costruita da un'agenzia che non aveva mai inviato nulla oltre la Luna, diventando il primo paese a raggiungere l'orbita di Marte alla sua missione d'esordio e il primo a farlo con propulsione sviluppata autonomamente."
     },
     {
       "type": "prose",
-      "md": "La Mars Orbiter Mission era, sulla carta, un modesto dimostratore tecnologico: un piccolo orbiter con un carico strumentale ridotto, destinato principalmente a dimostrare che l'ISRO potesse navigare fino a Marte ed entrare in orbita. Ma ebbe un successo così completo, così economico e così improbabile da diventare qualcosa di molto più grande — un simbolo di ciò che un programma spaziale frugale e disciplinato poteva fare, e un momento di orgoglio nazionale seguito in diretta da centinaia di milioni di indiani."
+      "md": "La Mars Orbiter Mission era, sulla carta, un modesto dimostratore tecnologico: un piccolo orbiter con un carico strumentale leggero, destinato principalmente a dimostrare che l'ISRO potesse navigare fino a Marte ed entrare in orbita. Ma ebbe un successo così completo, così economico e così improbabile da diventare qualcosa di molto più grande — un simbolo di ciò che un programma spaziale frugale e disciplinato poteva fare, e un momento di orgoglio nazionale seguito in diretta da centinaia di milioni di indiani."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "L'obiettivo primario era la capacità, non la scienza: dimostrare che l'India potesse progettare, lanciare e navigare una sonda attraverso il golfo interplanetario e inserirla con precisione nell'orbita marziana — le tecnologie specifiche della comunicazione nello spazio profondo, l'operazione autonoma lontano dalla Terra e l'unica accensione cruciale per l'inserimento orbitale che la maggior parte dei primi tentativi sbaglia. Se quelle funzionavano, tutto il resto era un bonus."
+      "md": "L'obiettivo primario era la capacità, non la scienza: dimostrare che l'India potesse progettare, lanciare e navigare una sonda attraverso il golfo interplanetario e inserirla con precisione nell'orbita di Marte — le tecnologie specifiche della comunicazione nello spazio profondo, dell'operazione autonoma lontano dalla Terra e di un'unica manovra critica di inserimento orbitale che la maggior parte dei primi tentativi sbaglia. Se quelle funzionavano, tutto il resto era un bonus."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/mangalyaan/01"
       },
-      "caption": "La Mars Orbiter Mission — piccola, leggera e costruita rapidamente su hardware collaudato. I suoi strumenti erano modesti; il suo vero carico utile era la dimostrazione che l'India potesse raggiungere un altro pianeta ed entrare nella sua orbita al primo tentativo.",
+      "caption": "La Mars Orbiter Mission — piccola, leggera e costruita rapidamente su hardware collaudato. I suoi strumenti erano modesti; il suo vero carico utile era la prova che l'India potesse raggiungere un altro pianeta ed entrare nella sua orbita al primo tentativo.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "L'obiettivo non dichiarato era farlo in modo abbastanza economico da essere ripetibile. L'ISRO costruì e lanciò Mangalyaan per circa 74 milioni di dollari — una cifra diventata celebre in tutto il mondo per essere inferiore al budget del film Gravity, e una piccola frazione della contemporanea missione marziana MAVEN della NASA. Il punto non era solo raggiungere Marte ma dimostrare che raggiungere Marte non dovesse costare una fortuna, aprendo la scienza interplanetaria alle nazioni che non avrebbero mai potuto permettersi il prezzo tradizionale."
+      "md": "L'obiettivo non dichiarato era farlo in modo abbastanza economico da essere ripetibile. L'ISRO costruì e lanciò Mangalyaan per circa 74 milioni di dollari — una cifra che divenne famosa in tutto il mondo per essere inferiore al budget del film Gravity, e una piccola frazione della contemporanea missione marziana MAVEN della NASA. Il punto non era solo raggiungere Marte ma dimostrare che raggiungerlo non dovesse costare una fortuna, aprendo la scienza interplanetaria a nazioni che non avrebbero mai potuto permettersi il prezzo tradizionale."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Funzionò al primo tentativo — il risultato che la rese storica. Mangalyaan fu lanciata nel novembre 2013, navigò per dieci mesi e il 24 settembre 2014 accese il motore e scivolò nell'orbita marziana esattamente come previsto. L'India divenne la prima nazione a raggiungere Marte nella sua missione inaugurale, la prima nazione asiatica a raggiungere Marte, e lo fece a un costo che ridefinì le aspettative globali su quanto debba costare l'esplorazione interplanetaria."
+      "md": "Funzionò al primo tentativo — il risultato che lo rese storico. Mangalyaan fu lanciato nel novembre 2013, viaggiò per dieci mesi e il 24 settembre 2014 accese il suo motore e scivolò nell'orbita di Marte esattamente come previsto. L'India divenne il primo paese a raggiungere l'orbita di Marte alla sua missione d'esordio, la prima nazione asiatica a raggiungere l'orbita di Marte, e lo fece per un costo che ridefinì le aspettative globali su quanto debba costare l'esplorazione interplanetaria."
     },
     {
       "type": "prose",
-      "md": "E poi continuò. Progettato per durare sei mesi, l'orbiter operò per circa otto anni, restituendo immagini e dati atmosferici su Marte — una vista a colori dell'intero disco, tempeste di polvere, la tenue atmosfera superiore — molto tempo dopo il raggiungimento degli obiettivi dimostrativi. Una missione costruita per dimostrare un punto divenne silenziosamente una piattaforma scientifica duratura, tacendo definitivamente solo intorno al 2022 quando il propellente e l'energia si esaurirono."
+      "md": "E poi continuò. Progettato per durare sei mesi, l'orbiter operò per circa otto anni, restituendo immagini e dati atmosferici su Marte — una vista a colori dell'intero disco, tempeste di polvere, la tenue atmosfera superiore — molto dopo che i suoi obiettivi dimostrativi erano stati raggiunti. Una missione costruita per dimostrare un punto divenne silenziosamente una piattaforma scientifica duratura, cadendo finalmente nel silenzio solo intorno al 2022 quando il propellente e l'energia si esaurirono."
     },
     {
       "type": "prose",
-      "md": "L'effetto maggiore del risultato fu sulla percezione. Mangalyaan mostrò a un pubblico globale che il club delle nazioni capaci di raggiungere Marte non era più chiuso ai pochi ricchi, e che l'ISRO — a lungo sottovalutata come agenzia regionale — poteva realizzare un primato interplanetario. Trasformò l'India, in un'unica accensione, in una riconosciuta potenza dello spazio profondo."
+      "md": "L'effetto maggiore del risultato fu sulla percezione. Mangalyaan mostrò a un pubblico globale che il club delle nazioni capaci di raggiungere Marte non era più chiuso ai pochi ricchi, e che l'ISRO — a lungo sottovalutata come agenzia regionale — poteva conseguire un primato interplanetario. Trasformò l'India, in un'unica accensione, in una riconosciuta potenza dello spazio profondo."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "La narrazione di Mangalyaan è la frugalità come superpotere. Il suo famoso basso costo non fu fortuna o compromessi ma una cultura ingegneristica deliberata: riutilizzo di componenti collaudati, una sonda piccola e mirata, una suite strumentale modesta, traiettorie efficienti che scambiavano tempo con propellente e team snelli che lavoravano con budget ristretti. L'India non raggiunse Marte a buon mercato facendo peggio; raggiunse Marte a buon mercato attraverso una disciplina della semplicità che i programmi più grandi, con più denaro da spendere, raramente si impongono."
+      "md": "La narrazione di Mangalyaan è la frugalità come superpotere. Il suo famoso basso costo non fu fortuna o tagli agli angoli ma una cultura ingegneristica deliberata: riutilizzo di componenti collaudati, una sonda piccola e focalizzata, una suite strumentale modesta, traiettorie efficienti che scambiavano tempo per propellente, e team snelli che lavoravano con budget ristretti. L'India non raggiunse Marte economicamente facendo peggio; raggiunse Marte economicamente attraverso una disciplina di semplicità che i programmi più grandi, con più denaro da spendere, raramente si impongono."
     },
     {
       "type": "prose",
-      "md": "È anche una storia sul significato di un primato. La scienza di Mangalyaan era reale ma limitata; il suo peso storico venne dall'essere prima — successo al primo tentativo, prima nazione asiatica, prima a un prezzo notoriamente basso. Primati di questo tipo sono in parte simbolici, e il loro valore è in parte orgoglio nazionale, ma non sono vuoti: dimostrano una capacità, stabiliscono un posto al tavolo e ispirano una generazione. L'arrivo dell'India su Marte fece tutte e tre le cose contemporaneamente."
+      "md": "È anche una storia sul significato di un primato. La scienza di Mangalyaan fu reale ma limitata; il suo peso storico derivò dall'essere il primo — successo al primo tentativo, prima nazione asiatica, primo a un prezzo notoriamente basso. Primati di quel tipo sono in parte simbolici, e il loro valore è in parte orgoglio nazionale, ma non sono vuoti: dimostrano una capacità, stabiliscono un posto al tavolo e ispirano una generazione. L'arrivo dell'India su Marte fece tutte e tre le cose contemporaneamente."
     },
     {
       "type": "prose",
-      "md": "E appartiene allo stesso cambiamento di Chandrayaan — l'arrivo di uno spazio profondo multipolare. Per decenni l'esplorazione interplanetaria fu dominio di due superpotenze e poi di una manciata di agenzie ricche. Mangalyaan, raggiungendo Marte con un budget ridotto, fu la prova che la frontiera si era aperta a nuovi arrivati determinati — che la mappa di chi esplora il sistema solare stava venendo ridisegnata, e l'India vi si era posta con fermezza."
+      "md": "E appartiene allo stesso cambiamento di Chandrayaan — l'arrivo di uno spazio profondo multipolare. Per decenni l'esplorazione interplanetaria fu appannaggio di due superpotenze e poi di una manciata di agenzie ricche. Mangalyaan, raggiungendo Marte con un budget minimo, fu la prova che la frontiera si era aperta ai nuovi arrivati determinati — che la mappa di chi esplora il sistema solare stava venendo ridisegnata, e l'India vi si era posizionata fermamente."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "La prima eredità di Mangalyaan è il primato stesso: l'unica nazione a raggiungere l'orbita marziana al primo tentativo, e la prima nazione asiatica su Marte. Questa è un'entrata permanente nella storia dell'esplorazione, e una base di fiducia nazionale che ha guidato la successiva ambizione dell'ISRO, da Chandrayaan-3 al programma con equipaggio Gaganyaan."
+      "md": "La prima eredità di Mangalyaan è il record stesso: il primo paese a raggiungere l'orbita di Marte alla sua missione d'esordio, e la prima nazione asiatica su Marte. Questa è un'entrata permanente nella storia dell'esplorazione, e un fondamento di fiducia nazionale che ha guidato la successiva ambizione dell'ISRO, da Chandrayaan-3 al programma con equipaggio Gaganyaan."
     },
     {
       "type": "prose",
-      "md": "La sua seconda eredità è il precedente del costo. Raggiungendo Marte per decine di milioni invece che centinaia, l'ISRO ha cambiato la conversazione globale su quanto debbano costare le missioni interplanetarie — un esempio che abbassa la barriera percepita all'ingresso per ogni nazione spaziale emergente e fa pressione su quelle consolidate perché giustifichino i loro prezzi."
+      "md": "La sua seconda eredità è il precedente del costo. Raggiungendo Marte per decine di milioni anziché centinaia, l'ISRO ha cambiato la conversazione globale su quanto debbano costare le missioni interplanetarie — un esempio che abbassa la barriera d'ingresso percepita per ogni nazione spaziale emergente e mette pressione su quelle consolidate affinché giustifichino i loro prezzi."
     },
     {
       "type": "prose",
-      "md": "E la terza è l'ispirazione. Il successo di Mangalyaan, seguito in diretta in tutta l'India, ha attratto una generazione verso la scienza e l'ingegneria e ha stabilito lo spazio come fonte di orgoglio nazionale — un dividendo di soft power che sopravvive alla sonda stessa."
+      "md": "E la sua terza è l'ispirazione. Il successo di Mangalyaan, seguito in diretta in tutta l'India, ha attirato una generazione verso la scienza e l'ingegneria e ha stabilito lo spazio come fonte di orgoglio nazionale — un dividendo di soft power che sopravvive alla sonda stessa."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La lezione di Mangalyaan è che il vincolo, abbracciato come disciplina, può produrre risultati che il solo denaro non produce. L'India raggiunse Marte al primo tentativo non nonostante il suo budget ridotto ma in parte grazie alla semplicità che quel budget impose — una sonda mirata, hardware collaudato e un rifiuto di complicare eccessivamente. La frugalità rese la missione sia accessibile che, nella sua stessa essenzialità, robusta."
+      "md": "La lezione di Mangalyaan è che il vincolo, abbracciato come disciplina, può produrre risultati che il solo denaro non produce. L'India raggiunse Marte al primo tentativo non nonostante il suo piccolo budget ma in parte grazie alla semplicità che quel budget impose — una sonda focalizzata, hardware collaudato e un rifiuto di complicare eccessivamente. La frugalità rese la missione sia accessibile che, nella sua stessa essenzialità, robusta."
     },
     {
       "type": "prose",
-      "md": "La lezione più profonda è che un successo al primo tentativo su Marte riguarda tanto l'umiltà quanto l'ambizione. Il cimitero delle missioni marziane fallite è pieno di programmi ben finanziati che hanno mirato troppo lontano; l'ISRO mirò esattamente fino a dove poteva gestire in modo affidabile, lo dimostrò e lasciò che la missione superasse i suoi stessi obiettivi modesti. Mirare con precisione, piuttosto che mirare in alto, è talvolta il modo in cui si conquistano i primati più difficili."
+      "md": "La lezione più profonda è che un successo al primo tentativo su Marte dipende tanto dall'umiltà quanto dall'ambizione. Il cimitero delle missioni marziane fallite è pieno di programmi ben finanziati che hanno osato troppo; l'ISRO arrivò esattamente dove poteva gestire in modo affidabile, lo dimostrò e lasciò che la missione superasse i propri obiettivi modesti. Mirare con precisione, piuttosto che mirare in alto, è talvolta il modo in cui si conquistano i primati più difficili."
     }
   ]
 }

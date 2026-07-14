@@ -11,8 +11,8 @@
   "arrival_date": "2022-09-26",
   "transit_days": 306,
   "vehicle": "Falcon 9 Block 5",
-  "payload": "611 kg (incl. 50 kg xenon for NEXT-C ion thruster demonstrator)",
-  "delta_v": "~3.7 km/s (mission cruise; 6.14 km/s impact velocity)",
+  "payload": "611 kg (incl. ~60 kg xenon for NEXT-C ion thruster demonstrator + ~50 kg hydrazine)",
+  "delta_v": "~3.7 km/s (mission cruise; ~6.6 km/s impact velocity)",
   "data_quality": "good",
   "credit": "© NASA / JHU APL — public domain. First demonstration of kinetic-impactor planetary defense. Successfully deflected Dimorphos's orbital period around Didymos by 33 minutes, exceeding the 73-second success threshold by ~25×.",
   "links": [
@@ -46,11 +46,11 @@
       "source": "JHU/APL DART Mission Operations Report; final tracking handoff to onboard SMART Nav 4 hours pre-impact"
     },
     "arrival": {
-      "v_infinity_km_s": 6.14,
+      "v_infinity_km_s": 6.6,
       "periapsis_km": null,
       "inclination_deg": null,
       "orbit_insertion_dv_km_s": 0,
-      "source": "JHU/APL DART Mission Operations Report; closing velocity at impact 6.14 km/s; no orbit insertion (kinetic impactor)"
+      "source": "JHU/APL DART Mission Operations Report; closing velocity at impact ~6.6 km/s; no orbit insertion (kinetic impactor)"
     },
     "totals": {
       "total_dv_km_s": 3.7,
@@ -86,7 +86,7 @@
         "met_days": 306.001,
         "type": "edl_or_oi",
         "label": "Dimorphos kinetic impact",
-        "description": "23:14 UTC, 2022-09-26. DART struck Dimorphos at 6.14 km/s. Final images from DRACO camera resolved boulders on the surface in the last few seconds. The 611-kg spacecraft delivered ~11 GJ of kinetic energy. Orbital-period change measured from Earth: 33 minutes shorter (4.2% reduction in Dimorphos's 11.9-hour orbit around Didymos), exceeding the 73-second success threshold by ~25× — the momentum-transfer enhancement factor β ≈ 3.6 indicates significant momentum carry from ejected surface material. First demonstration that humans can move an asteroid."
+        "description": "23:14 UTC, 2022-09-26. DART struck Dimorphos at ~6.6 km/s. Final images from DRACO camera resolved boulders on the surface in the last few seconds. The 611-kg spacecraft delivered ~11 GJ of kinetic energy. Orbital-period change measured from Earth: 33 minutes shorter (4.2% reduction in Dimorphos's 11.9-hour orbit around Didymos), exceeding the 73-second success threshold by ~25× — the momentum-transfer enhancement factor β ≈ 3.6 indicates significant momentum carry from ejected surface material. First demonstration that humans can move an asteroid."
       },
       {
         "met_days": 306.002,

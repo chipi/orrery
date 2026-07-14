@@ -1,26 +1,26 @@
 {
   "name": "Vostok 4",
-  "dispatch": "Vostok 4 fue la respuesta a Vostok 3 — la segunda nave en el primer vuelo dual, y el momento en que dos humanos en dos naves espaciales separadas hablaron entre sí en órbita por primera vez. Pavel Popovich despegó un día después de Nikolayev y se acercó hasta aproximadamente seis kilómetros y medio, lo suficientemente cerca como para intercambiar comunicación por radio de voz directamente, nave a nave, en lugar de a través de tierra. Como su compañera, no podía maniobrar para mantener la distancia, así que ambas se fueron separando. Pero la imagen de dos cosmonautas dando vueltas a la Tierra en formación, hablando entre sí, era exactamente el tipo de primicia que el programa estaba diseñado para producir.",
-  "type": "ÓRBITA TERRESTRE TRIPULADA · VOLADA",
-  "first": "Segunda mitad del primer vuelo doble — primeras comunicaciones entre dos naves tripuladas",
-  "description": "Vuelo de 48 órbitas de Pável Popóvich, lanzado el 1962-08-12 a las 08:02 UTC, veinticuatro horas después de Vostok 3. Las dos cápsulas llegaron a ~6,5 km e intercambiaron las primeras comunicaciones radiofónicas por voz entre cosmonautas en órbita. A Popóvich se le ordenó descender un día antes cuando los controladores en tierra interpretaron mal una frase codificada sobre truenos como la palabra clave de socorro para terminación anticipada — en realidad, era una observación meteorológica rutinaria. Aterrizó el 1962-08-15 a las 07:59 UTC cerca de Karagandá, cuatro minutos después de Vostok 3.",
+  "type": "VUELO TRIPULADO EN ÓRBITA TERRESTRE · COMPLETADO",
+  "first": "Segunda mitad del primer vuelo dual — primera comunicación entre dos naves tripuladas",
+  "dispatch": "Vostok 4 fue la respuesta a Vostok 3 — la segunda nave del primer vuelo dual, y el momento en que dos seres humanos en dos naves separadas hablaron por primera vez el uno con el otro en órbita. Pavel Popovich se lanzó un día después de Nikolayev y se acercó a poco más de seis kilómetros y medio, lo suficientemente cerca para comunicarse directamente por radio voz, nave a nave, en lugar de a través de tierra. Como su compañera, no podía maniobrar para mantener la distancia, así que ambas se fueron alejando. Pero la imagen de dos cosmonautas rodeando la Tierra en formación, hablando el uno con el otro, era exactamente el tipo de primicia que el programa estaba diseñado para lograr.",
+  "description": "El vuelo de 48 órbitas de Pavel Popovich, lanzado el 1962-08-12 a las 08:02 UTC, veinticuatro horas después de Vostok 3. Las dos cápsulas se acercaron a ≈6,5 km e intercambiaron las primeras comunicaciones de radio voz entre cosmonautas en órbita. Popovich fue ordenado descender un día antes cuando los controladores de tierra malinterpretaron una frase codificada sobre truenos como la palabra clave de angustia para terminación temprana — la señal real era una observación rutinaria del clima. Aterrizó el 1962-08-15 a las 06:59 UTC cerca de Karaganda, siete minutos después de Vostok 3.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Vostok-K from Baikonur Site 1 1962-08-12 08:02 UTC.",
+      "label": "LANZAMIENTO",
+      "note": "Vostok-K desde el Sitio 1 de Baikonur, 1962-08-12 08:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.001,
-      "label": "INTER-CRAFT VOICE",
-      "note": "First voice communication between two crewed spacecraft.",
+      "label": "VOZ ENTRE NAVES",
+      "note": "Primera comunicación de voz entre dos naves tripuladas.",
       "type": "info"
     },
     {
       "met": 2.99,
-      "label": "EJECT + LAND",
-      "note": "Landed near Karaganda 1962-08-15 07:59 UTC.",
+      "label": "EXPULSIÓN + ATERRIZAJE",
+      "note": "Aterrizó cerca de Karaganda el 1962-08-15 a las 06:59 UTC.",
       "type": "nominal"
     }
   ]

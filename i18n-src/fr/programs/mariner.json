@@ -1,84 +1,84 @@
 {
   "name": "Mariner",
-  "tagline": "Avant qu'aucune autre planète ne soit plus qu'une tache dans un télescope, une série de petites sondes américaines sont parties les observer — et ont rapporté les premières photographies jamais prises d'un autre monde.",
+  "tagline": "Avant qu'aucune autre planète ne soit plus qu'une tache floue dans un télescope, une série de petites sondes américaines sont parties les observer — et ont rapporté les premières photographies jamais prises d'un autre monde.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Au début des années 1960, les planètes restaient essentiellement des points lumineux. Vénus était imaginée comme une jumelle chaude et nuageuse de la Terre, peut-être dotée d'océans ; Mars, vue dans les meilleurs télescopes, montrait des marques que certains lisaient encore comme des canaux, et la question centenaire de la vie martienne demeurait sans réponse. Tout ce que l'on savait des autres mondes provenait de l'observation à travers des dizaines de millions de kilomètres. Pour découvrir ce qu'ils étaient réellement, il fallait s'approcher et regarder."
+      "md": "Au début des années 1960, les planètes étaient encore, essentiellement, des points lumineux. On imaginait Vénus comme une jumelle chaude et nuageuse de la Terre, peut-être avec des océans ; Mars, à travers les meilleurs télescopes, montrait des marques que certains lisaient encore comme des canaux, et la question séculaire de la vie martienne demeurait sans réponse. Tout ce que l'on savait des autres mondes provenait d'observations à travers des dizaines de millions de kilomètres. Pour savoir ce qu'ils étaient réellement, il fallait s'en approcher et regarder."
     },
     {
       "type": "prose",
-      "md": "Mariner fut la première tentative de la NASA en ce sens — une famille de petites sondes interplanétaires légères, construites rapidement et lancées souvent, visant Vénus, Mars et finalement Mercure. Plusieurs échouèrent ; le programme persévéra. Entre 1962 et 1973, les Mariner ont effectué la première reconnaissance du système solaire interne, et ce faisant ont remplacé l'imagination par des photographies."
+      "md": "Mariner fut la première tentative de la NASA pour y parvenir — une famille de petites sondes interplanétaires légères, construites rapidement et lancées fréquemment, visant Vénus, Mars et finalement Mercure. Plusieurs échouèrent ; le programme persévéra. Entre 1962 et 1975, les Mariner effectuèrent la première reconnaissance du système solaire interne, et ce faisant, remplacèrent l'imagination par des photographies."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "L'objectif était un premier contact avec les autres planètes : faire passer un vaisseau spatial suffisamment près de Vénus et Mars pour mesurer de quoi elles étaient réellement composées et, surtout, les photographier. Un seul passage rapproché rapportant une poignée d'images et de mesures en apprendrait plus à l'humanité sur une planète qu'un siècle d'observations au télescope — la différence entre une tache et une surface."
+      "md": "L'objectif était le premier contact avec les autres planètes : faire voler un vaisseau spatial assez près de Vénus et de Mars pour mesurer ce dont elles étaient réellement composées et, surtout, les photographier. Un seul passage rapproché rapportant une poignée de clichés et de mesures en apprendrait plus à l'humanité sur une planète qu'un siècle d'observations au télescope — la différence entre une tache floue et une surface."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/mariner-4/01"
       },
-      "caption": "Les Mariner étaient petites et dépouillées, conçues pour passer une fois près d'une planète et transmettre tout ce qu'elles pouvaient pendant les heures dont elles disposaient. Mariner 4 emportait une caméra vers Mars ; Mariner 9 emportait assez de carburant pour s'arrêter et se mettre en orbite.",
+      "caption": "Les Mariner étaient petites et dépouillées, conçues pour survoler une planète une fois et transmettre tout ce qu'elles pouvaient dans les heures dont elles disposaient. Mariner 4 emporta une caméra vers Mars ; Mariner 9 emporta assez de carburant pour s'arrêter et se placer en orbite.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "L'objectif ultérieur devint plus ambitieux : non plus simplement survoler, mais rester. Mariner 9 fut construite pour emporter assez de carburant pour freiner en orbite autour de Mars et étudier la planète entière pendant des mois — le passage d'un aperçu à un relevé — tandis que Mariner 10 visait à atteindre Mercure par une route que personne n'avait empruntée, en volant de la vitesse à la gravité de Vénus au passage."
+      "md": "L'objectif ultérieur devint plus ambitieux : non plus seulement survoler, mais rester. Mariner 9 fut conçue pour emporter assez de carburant pour freiner et se placer en orbite autour de Mars et étudier la planète entière pendant des mois — le passage d'un aperçu à une étude complète — tandis que Mariner 10 visait à atteindre Mercure par une trajectoire que personne n'avait empruntée, dérobant de la vitesse à la gravité de Vénus au passage."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Les Mariner ont réécrit le système solaire interne un survol à la fois. Mariner 2 atteignit Vénus en 1962 — le premier vaisseau spatial à jamais atteindre une autre planète — et découvrit non pas une jumelle tropicale mais une fournaise, sa surface chauffée à des centaines de degrés sous des nuages écrasants. Trois ans plus tard, Mariner 4 survola Mars et renvoya les premières photographies jamais prises d'une autre planète de près : un désert criblé de cratères semblable à la Lune qui tua silencieusement les vieux rêves de canaux et de civilisations."
+      "md": "Les Mariner réécrivirent le système solaire interne un survol à la fois. Mariner 2 atteignit Vénus en 1962 — le premier vaisseau spatial à atteindre une autre planète — et découvrit non pas une jumelle tropicale mais une fournaise, sa surface chauffée à des centaines de degrés sous des nuages écrasants. Trois ans plus tard, Mariner 4 survola Mars et renvoya les premières photographies jamais prises d'une autre planète de près : un désert criblé de cratères, semblable à la Lune, qui tua silencieusement les vieux rêves de canaux et de civilisations."
     },
     {
       "type": "prose",
-      "md": "Mariner 9 alla plus loin et resta. En 1971, elle devint le premier vaisseau spatial à orbiter autour d'une autre planète, arrivant sur Mars au milieu d'une tempête de poussière globale qui cacha la surface pendant des semaines. Lorsque la poussière retomba, elle cartographia la planète entière — et révéla un Mars bien plus grandiose que ne le suggéraient les cratères de Mariner 4 : le plus grand volcan du système solaire, un système de canyons s'étendant sur la largeur d'un continent, et, de manière plus provocante encore, les canaux asséchés de ce qui avait été autrefois de l'eau courante."
+      "md": "Mariner 9 alla plus loin et resta. En 1971, elle devint le premier vaisseau spatial à orbiter autour d'une autre planète, arrivant sur Mars au milieu d'une tempête de poussière mondiale qui cacha la surface pendant des semaines. Lorsque la poussière se dissipa, elle cartographia la planète entière — et révéla un Mars bien plus grandiose que ne le suggéraient les cratères de Mariner 4 : le plus grand volcan du système solaire, un système de canyons s'étendant sur la largeur d'un continent, et, de manière plus provocante encore, les canaux asséchés de ce qui avait été autrefois de l'eau courante."
     },
     {
       "type": "prose",
-      "md": "Mariner 10 clôtura le programme avec deux premières. En 1974, elle devint le premier vaisseau spatial à atteindre Mercure, photographiant un monde brûlé et criblé de cratères — et elle y parvint en survolant Vénus et en utilisant la gravité de la planète pour courber et accélérer sa trajectoire, première utilisation de la fronde gravitationnelle dont toutes les missions vers l'espace lointain ont dépendu depuis."
+      "md": "Mariner 10 clôtura le programme avec deux premières. En 1974, elle devint le premier vaisseau spatial à atteindre Mercure, photographiant un monde calciné et criblé de cratères — et elle y parvint en survolant Vénus et en utilisant la gravité de la planète pour courber et accélérer sa trajectoire, première utilisation d'une assistance gravitationnelle interplanétaire dont chaque mission spatiale lointaine depuis a dépendu."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "L'histoire de Mariner est celle du premier contact — le moment où chaque planète cessa d'être une idée pour devenir un lieu. Chaque monde atteint par le programme n'avait, jusque-là, été connu que par déduction ; Mariner rapporta les premières données solides et les premières images réelles, et dans chaque cas la réalité différait du rêve. Vénus n'était pas une jumelle mais un enfer. Mars n'était pas parcourue de canaux mais criblée de cratères — puis, à y regarder de plus près, sculptée par l'eau ancienne après tout. Le don du programme fut de remplacer des siècles de conjectures par l'évidence brute d'une caméra."
+      "md": "L'histoire de Mariner est celle du premier contact — le moment où chaque planète cessa d'être une idée pour devenir un lieu. Chaque monde atteint par le programme n'avait, jusqu'alors, été connu que par déduction ; Mariner rapporta les premières données concrètes et les premières vraies images, et dans chaque cas la réalité différait du rêve. Vénus n'était pas une jumelle mais un enfer. Mars n'était pas sillonnée de canaux mais criblée de cratères — et puis, en y regardant de plus près, sculptée par l'eau ancienne après tout. Le don du programme fut de remplacer des siècles de conjectures par la preuve simple d'une caméra."
     },
     {
       "type": "prose",
-      "md": "C'est aussi l'histoire de la façon dont l'exploration planétaire a appris ses manœuvres de base. Mariner 4 prouva qu'on pouvait traverser le système solaire et photographier une planète ; Mariner 9 prouva qu'on pouvait s'arrêter et en faire le relevé ; Mariner 10 prouva qu'on pouvait utiliser la gravité d'une planète pour en atteindre une autre gratuitement. Ces trois capacités — le survol, l'orbiteur et l'assistance gravitationnelle — constituent la grammaire de toutes les missions qui ont suivi, et les Mariner sont là où chacune fut d'abord écrite."
+      "md": "C'est aussi l'histoire de la façon dont l'exploration planétaire apprit ses mouvements de base. Mariner 4 prouva qu'on pouvait traverser le système solaire et photographier une planète ; Mariner 9 prouva qu'on pouvait s'arrêter et en faire l'étude ; Mariner 10 prouva qu'on pouvait utiliser la gravité d'une planète pour en atteindre une autre gratuitement. Ces trois capacités — le survol, l'orbiteur et l'assistance gravitationnelle — sont la grammaire de toutes les missions qui suivirent, et les Mariner sont l'endroit où chacune fut écrite pour la première fois."
     },
     {
       "type": "prose",
-      "md": "Et cela a préparé tout ce qui a suivi. La carte globale de Mars par Mariner 9, avec ses indices d'eau disparue, est ce qui envoya Viking y chercher la vie quelques années plus tard. La lignée du design Mariner, étendue aux planètes extérieures, devint les Voyager. Le programme fut la première ébauche de la science planétaire américaine — celle qui établit à la fois ce qu'étaient les planètes intérieures et comment, dès lors, elles seraient explorées."
+      "md": "Et elle prépara tout ce qui suivit. La carte globale de Mars établie par Mariner 9, avec ses indices d'eau disparue, est ce qui envoya Viking y chercher la vie quelques années plus tard. La lignée du design Mariner, étendue aux planètes extérieures, devint les Voyager. Le programme fut le premier brouillon de la science planétaire américaine — celui qui établit à la fois ce qu'étaient les planètes internes et comment, désormais, elles seraient explorées."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Le premier héritage de Mariner est le système solaire interne tel que nous le connaissons aujourd'hui : Vénus révélée comme une fournaise, Mars cartographiée des cratères aux canyons, Mercure photographiée pour la première fois. Le programme a rapporté la première vérité de terrain sur les planètes voisines, et l'image moderne de chacune commence avec une Mariner."
+      "md": "Le premier héritage de Mariner est le système solaire interne tel que nous le connaissons aujourd'hui : Vénus révélée comme une fournaise, Mars cartographiée des cratères aux canyons, Mercure photographiée pour la première fois. Le programme rapporta la première vérité de terrain sur les planètes voisines, et l'image moderne de chacune commence avec une Mariner."
     },
     {
       "type": "prose",
-      "md": "Le second est la boîte à outils. Le survol, l'orbiteur planétaire et la fronde gravitationnelle ont tous été accomplis pour la première fois par les Mariner, et tous trois demeurent fondamentaux dans la façon dont les vaisseaux spatiaux explorent. Les missions ultérieures vont plus loin et emportent davantage, mais elles utilisent toujours les manœuvres inventées par Mariner."
+      "md": "Le deuxième est la boîte à outils. Le survol, l'orbiteur planétaire et l'assistance gravitationnelle interplanétaire furent tous accomplis pour la première fois par les Mariner, et tous trois demeurent fondamentaux dans la façon dont les vaisseaux spatiaux explorent. Les missions ultérieures vont plus loin et emportent davantage, mais elles utilisent toujours les manœuvres inventées par Mariner."
     },
     {
       "type": "prose",
-      "md": "Le troisième est tout ce qu'il a rendu possible. Le Mars de Mariner 9 établit la cible pour Viking ; la lignée Mariner devint Voyager ; et l'idée même que les planètes pouvaient être visitées et comprises, et pas seulement observées, fut établie par ces petites sondes. Elles furent le premier chapitre, et le reste de l'exploration planétaire est écrit dans leur grammaire."
+      "md": "Le troisième est tout ce qu'elle rendit possible. Le Mars de Mariner 9 définit la cible pour Viking ; la lignée Mariner devint Voyager ; et l'idée même que les planètes pouvaient être visitées et comprises, pas seulement observées, fut établie par ces petites sondes. Elles furent le premier chapitre, et le reste de l'exploration planétaire est écrit dans leur grammaire."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La leçon de Mariner est qu'un seul regard rapproché peut renverser un siècle d'hypothèses. Les télescopes avaient étudié Vénus et Mars pendant des générations et se sont trompés sur l'essentiel — une jumelle chaude, un monde de canaux et de vie. Quelques heures de données de survol ont corrigé les deux. Lorsque les véritables preuves sont finalement rassemblées, elles ressemblent souvent peu aux théories minutieuses construites en leur absence ; la première mesure directe vaut plus que n'importe quelle quantité de déductions."
+      "md": "La leçon de Mariner est qu'un seul regard rapproché peut renverser un siècle d'hypothèses. Les télescopes avaient étudié Vénus et Mars pendant des générations et s'étaient trompés sur l'essentiel — une jumelle chaude, un monde de vie sillonné de canaux. Quelques heures de données de survol corrigèrent les deux. Lorsque les preuves réelles sont enfin rassemblées, elles ressemblent souvent peu aux théories minutieuses construites en leur absence ; la première mesure directe vaut plus que n'importe quelle quantité de déductions."
     },
     {
       "type": "prose",
-      "md": "La leçon plus profonde est que les capacités se cumulent. Mariner ne s'est pas lancé pour inventer l'assistance gravitationnelle ou l'orbiteur planétaire comme fins en soi — il a résolu le problème devant lui, et chaque solution est devenue un outil permanent que la mission suivante pouvait considérer comme acquis. Le progrès sur les frontières difficiles tient souvent moins à des triomphes isolés qu'à la construction d'une grammaire de manœuvres que tous ceux qui viennent après peuvent utiliser gratuitement."
+      "md": "La leçon plus profonde est que les capacités se cumulent. Mariner n'a pas cherché à inventer l'assistance gravitationnelle ou l'orbiteur planétaire comme des fins en soi — elle a résolu le problème devant elle, et chaque solution est devenue un outil permanent que la mission suivante pouvait utiliser. Le progrès aux frontières difficiles tient souvent moins à des triomphes isolés qu'à la construction d'une grammaire de manœuvres que tous ceux qui viennent après peuvent utiliser gratuitement."
     }
   ]
 }

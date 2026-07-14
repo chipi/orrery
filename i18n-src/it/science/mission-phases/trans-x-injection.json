@@ -1,14 +1,14 @@
 {
-  "title": "Iniezione Trans-X — ITL/ITM/ITV/ITJ",
-  "intro_sentence": "La grande accensione di partenza che ti lancia su una traiettoria verso la destinazione.",
+  "title": "Trans-X Injection — TLI / TMI / TVI / TJI",
+  "intro_sentence": "La grande manovra di partenza che ti lancia verso una traiettoria verso la tua destinazione.",
   "narrative_101": [
-    "Step 1: LEO. Step 2: ITL/ITM/ITV/ITJ. X = iniziale destinazione.",
-    "Accensione dura drammatica 5-30 minuti al perigeo (Oberth).",
-    "Apollo TLI: 3,05 km/s. Curiosity TMI: 3,7 km/s. Voyager 2 trans-Giove ~7 km/s."
+    "Primo step di qualsiasi viaggio interplanetario: lanciarti in orbita bassa terrestre (LEO). Ora sei nello spazio, ma non stai andando da nessuna parte — stai solo circolando la Terra. Per andare effettivamente sulla Luna, su Marte o su Giove, hai bisogno di una SECONDA manovra. È l'iniezione trans-X. \"X\" è qualsiasi pianeta a cui stai mirando. TLI = trans-lunare (verso la Luna). TMI = trans-Marte. TVI = Venere. TJI = Giove. Lo stesso trucco, destinazione diversa.",
+    "È una singola manovra intensa e drammatica — di solito da 5 a 30 minuti a seconda del motore — eseguita al perigeo della tua orbita parcheggio, dove già stai viaggiando il più veloce possibile (effetto Oberth, ancora). Ti lancia sulla traiettoria ellittica che ti porta alla destinazione. Dopo questa manovra, il motore praticamente non si accende più per mesi. Stai planando.",
+    "Su ogni scheda di missione interplanetaria in /missions, vedrai questo numero sottolineato: ∆v_TLI o ∆v_TMI. È LA singola decisione più grande nella progettazione di missioni — troppo piccolo e non uscirai mai da Terra, troppo grande e sprechi carburante che avrebbe potuto trasportare carico utile. Il TLI dell'Apollo era 3,05 km/s. Il TMI di Curiosity per Marte era 3,7 km/s. L'iniezione trans-Giove del Voyager 2 era circa 7 km/s — la maggior parte del suo budget."
   ],
   "body_paragraphs": [
-    "Dopo lancio in LEO. Seconda accensione alza apogeo a destinazione = iniezione Trans-X.",
-    "Al perigeo orbita parking (Oberth massimizza). Hohmann Marte: TMI ~3,6 km/s sopra LEO 7,9.",
-    "In FLIGHT tab `/missions`: ∆v_TLI o ∆v_TMI."
+    "Dopo il lancio sei tipicamente in orbita bassa terrestre (LEO). Per andare da qualsiasi altra parte, hai bisogno di una seconda manovra che alza l'apogeo verso la destinazione — è l'iniezione trans-X. La X è la prima lettera della destinazione: TLI per trans-lunare, TMI per trans-Marte, TVI per trans-Venere, TJI per trans-Giove. Stessa fisica, punto di mira diverso.",
+    "La manovra avviene al perigeo dell'orbita parcheggio, dove Oberth ti dà la massima energia per chilogrammo di propellente. Per un trasferimento Hohmann verso Marte, TMI costa circa 3,6 km/s — più o meno un terzo dei ~9,4 km/s di ∆v di salita che è voluto per raggiungere LEO. L'iniezione trans-Giove del Voyager 2 era ~7 km/s, la più grande manovra singola; Saturno, Urano e Nettuno furono poi raggiunti mediante assistenze gravitazionali, non da manovre di partenza aggiuntive.",
+    "Nella scheda FLIGHT di ogni scheda di missione interplanetaria in `/missions`, troverai questo numero etichettato ∆v_TLI o ∆v_TMI. È il costo di lasciare il vicinato terrestre, separato dal costo di raggiungere LEO in primo luogo."
   ]
 }

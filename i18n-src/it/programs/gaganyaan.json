@@ -1,84 +1,84 @@
 {
   "name": "Gaganyaan",
-  "tagline": "Il tentativo dell'India di lanciare i propri cittadini — il programma con equipaggio che la renderebbe la quarta nazione con volo spaziale umano indipendente.",
+  "tagline": "L'impegno dell'India a lanciare il proprio equipaggio — il programma con equipaggio umano che la renderebbe la quarta nazione con volo spaziale umano indipendente.",
   "the_land": [
     {
       "type": "prose",
-      "md": "L'India ha raggiunto la Luna e Marte con robot, con budget notoriamente ridotti, e si è guadagnata un posto tra le potenze spaziali serie del mondo. Ma una capacità è rimasta fuori portata: lanciare i propri cittadini. Il volo spaziale umano è un ordine di difficoltà diverso rispetto all'esplorazione robotica — un singolo fallimento costa vite, non solo una missione — e solo tre nazioni lo hanno mai fatto in modo indipendente. Gaganyaan — in sanscrito \"veicolo celeste\" — è il programma dell'India per diventare la quarta."
+      "md": "L'India ha raggiunto la Luna e Marte con robot, con budget notoriamente ridotti, e si è guadagnata un posto tra le potenze spaziali serie del mondo. Ma una capacità è rimasta fuori portata: lanciare il proprio equipaggio. Il volo spaziale umano è un ordine di difficoltà diverso rispetto all'esplorazione robotica — un singolo fallimento costa vite, non solo una missione — e solo tre nazioni lo hanno mai fatto in modo indipendente. Gaganyaan — in sanscrito \"nave del cielo\" — è il programma dell'India per diventare la quarta."
     },
     {
       "type": "prose",
-      "md": "È un passo deliberato nella scalata che ISRO sta compiendo da decenni. L'agenzia che ha raggiunto Marte al primo tentativo e atterrato al polo sud lunare sta ora costruendo la capacità molto più difficile di mantenere esseri umani in vita in orbita e riportarli a casa in sicurezza — una capsula per equipaggio, un lanciatore certificato per uso umano, un sistema di supporto vitale, un sistema di fuga e un corpo astronautico. Gaganyaan è il programma in cui la fiducia robotica dell'India incontra lo standard inflessibile della sicurezza umana."
+      "md": "È un passo deliberato sulla scala che ISRO sta scalando da decenni. L'agenzia che ha raggiunto Marte al primo tentativo e atterrato al polo sud lunare sta ora costruendo la capacità molto più difficile di mantenere esseri umani in vita in orbita e riportarli a casa in sicurezza — una capsula per equipaggio, un lanciatore certificato per uso umano, un sistema di supporto vitale, un sistema di fuga e un corpo astronautico. Gaganyaan è il programma in cui la fiducia robotica dell'India incontra lo standard inflessibile della sicurezza umana."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "L'obiettivo centrale è diretto ed enorme: portare un piccolo equipaggio di astronauti indiani in orbita terrestre bassa su un razzo indiano, mantenerli in vita lì per alcuni giorni e riportarli in sicurezza. Farlo richiede la padronanza delle tecnologie specifiche e vitali del volo spaziale umano — una capsula pressurizzata per equipaggio, un sistema di supporto vitale affidabile, una versione certificata per uso umano del lanciatore pesante indiano e, soprattutto, un sistema di fuga per l'equipaggio che possa allontanare la capsula da un razzo che si guasta sulla rampa o in volo."
+      "md": "L'obiettivo centrale è semplice ed enorme: portare un piccolo equipaggio di astronauti indiani in orbita terrestre bassa su un razzo indiano, mantenerli in vita lì per alcuni giorni e riportarli sani e salvi. Farlo richiede la padronanza delle tecnologie specifiche e vitali del volo spaziale umano — una capsula pressurizzata per equipaggio, un sistema di supporto vitale affidabile, una versione certificata per uso umano del lanciatore pesante dell'India e soprattutto un sistema di fuga per equipaggio che possa tirare la capsula lontano da un razzo che fallisce sulla rampa o in volo."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/gaganyaan/01"
       },
-      "caption": "Il modulo equipaggio Gaganyaan — il primo veicolo spaziale certificato per uso umano dell'India. Ogni suo aspetto è tenuto a uno standard più elevato rispetto alle missioni robotiche precedenti, perché per la prima volta il carico utile è costituito da persone.",
+      "caption": "Il modulo equipaggio Gaganyaan — la prima navicella spaziale indiana certificata per uso umano. Tutto in essa è tenuto a uno standard più elevato rispetto alle missioni robotiche che l'hanno preceduta, perché per la prima volta il carico utile sono persone.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "L'obiettivo a lungo termine è una fondazione, non un singolo volo. L'India ha dichiarato ambizioni per una propria stazione spaziale ed eventualmente missioni lunari con equipaggio, e nulla di tutto ciò è possibile senza prima padroneggiare il volo spaziale umano di base. Gaganyaan è il prerequisito — il programma che trasforma l'India da nazione che esplora con robot a una che può inviare i propri cittadini, la porta d'accesso a tutto ciò che con equipaggio seguirà."
+      "md": "L'obiettivo a lungo termine è una fondazione, non un singolo volo. L'India ha dichiarato ambizioni per una propria stazione spaziale ed eventualmente missioni lunari con equipaggio, e nulla di tutto ciò è possibile senza prima padroneggiare il volo spaziale umano di base. Gaganyaan è il prerequisito — il programma che trasforma l'India da una nazione che esplora con robot a una che può inviare il proprio equipaggio, il portale verso tutto ciò che segue in ambito con equipaggio."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Gaganyaan è ancora prima del suo primo volo con equipaggio, procedendo metodicamente attraverso la stessa disciplina del dimostralo-prima che ha definito Chandrayaan e Mangalyaan. Ha eseguito test senza equipaggio, incluso un volo del 2023 che ha dimostrato il sistema di fuga per l'equipaggio allontanare la capsula dal suo razzo — la singola capacità di sicurezza più importante di qualsiasi programma umano. Voli di prova orbitali senza equipaggio e un passeggero umanoide robotico precedono qualsiasi lancio umano; il primo equipaggio è previsto per la metà degli anni 2020."
+      "md": "Gaganyaan è ancora prima del suo primo volo con equipaggio, procedendo metodicamente attraverso la stessa disciplina del dimostra-prima che ha definito Chandrayaan e Mangalyaan. Ha condotto test senza equipaggio, incluso un volo del 2023 che ha dimostrato il sistema di fuga per equipaggio tirare la capsula lontano dal suo razzo — la singola capacità di sicurezza più importante di qualsiasi programma umano. Voli di test orbitali senza equipaggio e un passeggero umanoide robotico precederanno qualsiasi lancio umano; il primo equipaggio è previsto per il 2027."
     },
     {
       "type": "prose",
-      "md": "Il risultato sarà misurato non solo dal raggiungimento dell'orbita ma dal farlo in sicurezza, con un budget ISRO, senza gli anni di incidenti fatali che hanno segnato i primi programmi statunitensi e sovietici. L'India sta tentando di unirsi al club del volo spaziale umano avendo osservato tutti gli altri farlo prima — e, come per i suoi primati robotici, scommette che pazienza e frugalità possano fornire una capacità per cui i pionieri hanno pagato con vite umane."
+      "md": "Il risultato sarà misurato non solo dal raggiungimento dell'orbita ma dal farlo in sicurezza, con un budget ISRO, senza gli anni di incidenti fatali che hanno segnato i primi programmi statunitensi e sovietici. L'India sta tentando di unirsi al club del volo spaziale umano avendo osservato tutti gli altri farlo per primi — e, come con i suoi primati robotici, sta scommettendo che pazienza e frugalità possono fornire una capacità che i pionieri hanno pagato con vite umane."
     },
     {
       "type": "prose",
-      "md": "Poiché il programma non è ancora completo, la sua storia è ancora in fase di scrittura. Ma la sua traiettoria è chiara: l'India ha acquisito metodicamente ogni altra capacità di spazio profondo che si è proposta di costruire, e Gaganyaan è il gradino attuale di quella scala — il più difficile, e quello che collocherebbe l'India tra il gruppo molto ristretto di nazioni che possono mettere un essere umano nello spazio da sole."
+      "md": "Poiché il programma non è ancora completo, la sua storia è ancora in fase di scrittura. Ma la sua traiettoria è chiara: l'India ha acquisito metodicamente ogni altra capacità dello spazio profondo che si è prefissata di costruire, e Gaganyaan è il piolo attuale su quella scala — il più difficile, e quello che collocherebbe l'India tra il gruppo molto ristretto di nazioni che possono mettere un essere umano nello spazio da sole."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "La narrazione di Gaganyaan è quella di una nazione che passa deliberatamente dai robot alle persone. Ogni capacità che l'India ha costruito prima di essa — raggiungere l'orbita, navigare verso altri mondi, atterrare dolcemente, riportare campioni di esperienza — era una preparazione per quella che non poteva evitare: mantenere gli esseri umani in vita nello spazio. Gaganyaan è ISRO che applica il suo metodo caratteristico, incrementale e frugale e senza fretta, al problema a più alta posta in gioco nel volo spaziale, dove la solita tolleranza al fallimento non si applica."
+      "md": "La narrativa di Gaganyaan è quella di una nazione che passa deliberatamente dai robot alle persone. Ogni capacità che l'India ha costruito prima di essa — raggiungere l'orbita, navigare verso altri mondi, atterrare dolcemente, riportare campioni di esperienza — era preparazione per quella che non poteva abbreviare: mantenere esseri umani in vita nello spazio. Gaganyaan è ISRO che applica il suo metodo distintivo, incrementale e frugale e senza fretta, al problema più alto in gioco nel volo spaziale, dove la solita tolleranza al fallimento non si applica."
     },
     {
       "type": "prose",
-      "md": "È anche un programma plasmato dall'osservare gli altri. L'India arriva al volo spaziale umano sei decenni dopo Gagarin, con l'intera storia dei programmi statunitensi, sovietici e cinesi da cui imparare — i loro trionfi e, più utilmente, i loro disastri. Come la Cina prima di essa, l'India sta ottimizzando non per essere precoce ma per arrivare in sicurezza, eliminando in anticipo attraverso l'ingegneria le modalità di guasto che hanno ucciso equipaggi precedenti. Essere ultimi a questa capacità è, nel dominio specifico della sicurezza umana, un vantaggio."
+      "md": "È anche un programma plasmato dall'osservare gli altri. L'India arriva al volo spaziale umano sei decenni dopo Gagarin, con l'intera storia dei programmi statunitensi, sovietici e cinesi da cui imparare — i loro trionfi e, più preziosamente, i loro disastri. Come la Cina prima di lei, l'India sta ottimizzando non per essere precoce ma per arrivare in sicurezza, eliminando in anticipo attraverso l'ingegneria le modalità di fallimento che hanno ucciso equipaggi precedenti. Essere ultimi a questa capacità è, nel dominio specifico della sicurezza umana, un vantaggio."
     },
     {
       "type": "prose",
-      "md": "E porta un peso nazionale oltre l'ingegneria. Un astronauta indiano in un veicolo spaziale indiano, lanciato da suolo indiano, è una pietra miliare di un tipo che risuona ben oltre la comunità spaziale — un marcatore di arrivo tecnologico per la nazione più popolosa del mondo. Gaganyaan è un programma scientifico-ingegneristico che è anche, inequivocabilmente, una dichiarazione sul posto dell'India tra le potenze che possono raggiungere lo spazio da sole."
+      "md": "E porta un peso nazionale oltre l'ingegneria. Un astronauta indiano in una navicella spaziale indiana, lanciato da suolo indiano, è una pietra miliare di un tipo che risuona ben oltre la comunità spaziale — un marcatore di arrivo tecnologico per la nazione più popolosa del mondo. Gaganyaan è un programma scientifico e ingegneristico che è anche, inequivocabilmente, una dichiarazione sul posto dell'India tra le potenze che possono raggiungere lo spazio da sole."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "L'eredità di Gaganyaan, una volta che volerà, sarà l'ingresso dell'India nel piccolo club di nazioni con volo spaziale umano indipendente — una capacità che non può essere comprata o presa in prestito, solo costruita, e che rimodella la posizione di un paese nello spazio da un giorno all'altro."
+      "md": "L'eredità di Gaganyaan, una volta che volerà, sarà l'ingresso dell'India nel piccolo club delle nazioni con volo spaziale umano indipendente — una capacità che non può essere comprata o presa in prestito, solo costruita, e che rimodella la posizione di un paese nello spazio da un giorno all'altro."
     },
     {
       "type": "prose",
-      "md": "La sua eredità più profonda è come fondazione. Ogni ambizione che l'India ha espresso oltre ad essa — una stazione spaziale nazionale, missioni lunari con equipaggio, una presenza umana a lungo termine in orbita — dipende dalla capacità di volo spaziale umano di base che Gaganyaan è costruito per stabilire. È la porta attraverso cui tutto il futuro con equipaggio dell'India deve passare."
+      "md": "La sua eredità più profonda è come fondazione. Ogni ambizione che l'India ha espresso oltre ad essa — una stazione spaziale nazionale, missioni lunari con equipaggio, una presenza umana a lungo termine in orbita — dipende dalla capacità di base del volo spaziale umano che Gaganyaan è costruito per stabilire. È la porta attraverso cui tutto il futuro con equipaggio dell'India deve passare."
     },
     {
       "type": "prose",
-      "md": "E estende lo spostamento multipolare che Chandrayaan e Mangalyaan hanno iniziato. Mentre l'India si unisce a Russia, Stati Uniti e Cina nel volo spaziale umano indipendente, la capacità di inviare persone nello spazio diventa genuinamente distribuita — non più appannaggio delle potenze della Guerra Fredda, ma condivisa tra un cerchio sempre più ampio di nazioni."
+      "md": "Ed estende il cambiamento multipolare che Chandrayaan e Mangalyaan hanno iniziato. Mentre l'India si unisce a Russia, Stati Uniti e Cina nel volo spaziale umano indipendente, la capacità di inviare persone nello spazio diventa genuinamente distribuita — non più la prerogativa delle potenze della Guerra Fredda, ma condivisa tra un cerchio sempre più ampio di nazioni."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La lezione che Gaganyaan sta testando è se il metodo frugale e incrementale che ha portato l'India sulla Luna e su Marte possa essere esteso all'unico dominio che punisce più duramente le scorciatoie: la sicurezza umana. Le missioni robotiche possono fallire e insegnare; una con equipaggio che fallisce uccide. Gaganyaan è il caso di studio su se la disciplina di ISRO si estenda a un problema in cui il margine di errore è zero."
+      "md": "La lezione che Gaganyaan sta testando è se il metodo frugale e incrementale che ha portato l'India sulla Luna e su Marte possa essere esteso all'unico dominio che punisce più duramente le scorciatoie: la sicurezza umana. Le missioni robotiche possono fallire e insegnare; una con equipaggio che fallisce uccide. Gaganyaan è il caso di studio su se la disciplina di ISRO si estende a un problema dove il margine di errore è zero."
     },
     {
       "type": "prose",
-      "md": "La lezione più profonda è che nel volo spaziale umano, arrivare per ultimi può essere una forma di saggezza. L'India arriva al volo con equipaggio con gli incidenti di tutti i predecessori da studiare, e la possibilità di eliminare in anticipo attraverso l'ingegneria i guasti che altri hanno scoperto fatalmente. Essere in ritardo di decenni le costa un prestigio che non sembra volere; ciò che compra, se il metodo tiene, sono astronauti che tornano a casa."
+      "md": "La lezione più profonda è che nel volo spaziale umano, arrivare ultimi può essere una forma di saggezza. L'India arriva al volo con equipaggio con tutti gli incidenti dei predecessori da studiare, e la possibilità di eliminare in anticipo attraverso l'ingegneria i fallimenti che altri hanno scoperto fatalmente. Essere decenni in ritardo le costa prestigio che non sembra volere; ciò che compra, se il metodo tiene, sono astronauti che tornano a casa."
     }
   ]
 }

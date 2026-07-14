@@ -1,9 +1,9 @@
 {
   "name": "Opportunity",
-  "type": "ROVER · VOLATO",
-  "first": "Rover marziano con la percorrenza più lunga (45,16 km); 14 anni di operatività in superficie a fronte di un design previsto per 90 sol",
-  "dispatch": "Opportunity ha percorso una maratona su un altro pianeta. Gemello di Spirit, atterrato nel 2004 per una missione di novanta giorni, ha lavorato per quattordici anni e ha percorso più di quarantacinque chilometri — la distanza più lunga mai percorsa da un veicolo su qualsiasi mondo. È atterrato, per fortuna, in un piccolo cratere le cui pareti esponevano esattamente la roccia di origine acquatica che era stato inviato a trovare, e poi ha semplicemente continuato ad andare, cratere dopo cratere, leggendo l'antica storia acquatica di Marte miglio dopo miglio. Una tempesta di polvere su scala planetaria lo ha infine ridotto al silenzio nel 2018.",
-  "description": "Opportunity (MER-B) ha colpito il jackpot planetario — il suo lander avvolto negli airbag rimbalzò 26 volte attraverso Meridiani Planum e rotolò nel cratere Eagle (22 m) per pura fortuna, circondato da roccia affiorante che il rover poté analizzare senza dover guidare. Le prime immagini mostrarono jarosite e concrezioni di ematite \"blueberry\", la più forte evidenza minerale fino a quel momento di acqua liquida stagnante su Marte primordiale. In 14 anni e 47 giorni Opportunity percorse 45,16 km — il record di maratona per rover marziani — visitando i crateri Endurance, Victoria ed Endeavour. Una tempesta di polvere planetaria nel giugno 2018 bloccò la luce solare ai suoi pannelli solari; la trasmissione finale avvenne il 10-06-2018 e la NASA dichiarò la fine della missione il 13-02-2019.",
+  "type": "ROVER · FLOWN",
+  "first": "Rover marziano con la più lunga percorrenza (45,16 km); 14 anni di attività sulla superficie contro una missione progettata per 90 sol",
+  "dispatch": "Opportunity ha percorso una maratona su un altro pianeta. Gemello di Spirit, atterrato nel 2004 per una missione di novanta giorni, ha funzionato per quattordici anni e ha attraversato più di quarantacinque chilometri — la distanza maggiore che qualsiasi veicolo ha mai percorso su qualsiasi mondo. È toccato, per fortuna, in un piccolo cratere i cui muri esponevano esattamente la roccia alterata dall'acqua che era stato inviato a trovare, e poi ha continuato a procedere, cratere dopo cratere, leggendo l'antica storia dell'acqua su Marte chilometro dopo chilometro. Una tempesta di polvere globale ha infine zittito il rover nel 2018.",
+  "description": "Opportunity (MER-B) ha colpito il jackpot planetario — il suo lander avvolto in airbag ha rimbalzato 26 volte attraverso Meridiani Planum e si è rotolato in un cratere di 22 m (Eagle) per pura fortuna, circondato da roccia affiorante che un rover poteva leggere senza muoversi. Le prime immagini mostravano concrzioni di giadeite + ematite \"blueberry\", la più forte evidenza minerale fino a quel momento di acqua liquida stabile sul Marte primitivo. Nel corso di 14 anni 138 giorni (5.111 sol) Opportunity ha attraversato 45,16 km — il record di maratona per rover marziani — visitando i crateri Endurance, Victoria e Endeavour. Una tempesta di polvere globale nel giugno 2018 ha bloccato la luce solare dai suoi pannelli solari; l'ultima trasmissione è stata il 2018-06-10, e la NASA ha dichiarato la fine della missione il 2019-02-13.",
   "events": [
     {
       "met": 0,
@@ -14,13 +14,13 @@
     {
       "met": 12,
       "label": "TCM-1",
-      "note": "Prima correzione di metà corso.",
+      "note": "Primo cambio di rotta intermedio.",
       "type": "nominal"
     },
     {
       "met": 195,
       "label": "TCM-4",
-      "note": "Aggiustamento finale pre-EDL.",
+      "note": "Assetto finale pre-EDL.",
       "type": "nominal"
     },
     {
@@ -32,19 +32,19 @@
     {
       "met": 202.01,
       "label": "ATTERRAGGIO — NEL CRATERE EAGLE",
-      "note": "Rimbalzato 26 volte. Rotolato per caso in un cratere di 22 m, circondato da roccia affiorante.",
+      "note": "Ha rimbalzato 26 volte. Si è rotolato in un cratere di 22 m per caso, circondato da roccia affiorante.",
       "type": "info"
     },
     {
       "met": 5300,
-      "label": "TRASMISSIONE FINALE",
-      "note": "10-06-2018. Tempesta di polvere planetaria interrompe l'energia solare.",
+      "label": "ULTIMA TRASMISSIONE",
+      "note": "2018-06-10. Tempesta di polvere globale riduce l'energia solare.",
       "type": "warning"
     },
     {
       "met": 5543,
-      "label": "FINE MISSIONE",
-      "note": "NASA dichiara la fine della missione il 13-02-2019. 45,16 km percorsi.",
+      "label": "FINE DELLA MISSIONE",
+      "note": "La NASA dichiara la fine della missione il 2019-02-13. 45,16 km percorsi.",
       "type": "warning"
     }
   ]

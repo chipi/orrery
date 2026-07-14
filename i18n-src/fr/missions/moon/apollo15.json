@@ -1,74 +1,74 @@
 {
   "name": "Apollo 15",
-  "dispatch": "Avec Apollo 15, la course était depuis longtemps terminée, et la science prit le volant — littéralement. Ce fut le premier vol à emporter le Lunar Rover, qui transforma un rayon de marche de deux miles en une véritable expédition de terrain de dix-huit miles, et il se posa non sur une plaine plate et sûre mais dans une vallée entre une chaîne de montagnes et un canyon sinueux. Scott et Irwin revinrent avec la « Genesis Rock », un fragment vieux de quatre milliards d'années de la croûte lunaire originelle qui confirma comment elle s'était formée. Apollo avait cessé de visiter la Lune pour commencer à l'étudier — et le programme n'a cessé de s'améliorer dans cette tâche jusqu'à son annulation.",
-  "type": "ATTERRISSEUR HABITÉ · VOLÉ",
-  "first": "Première mission J — séjour prolongé, premier Lunar Roving Vehicle, « Genesis Rock »",
-  "description": "La première « mission J » — Apollo scientifique à séjour prolongé avec le nouveau Lunar Roving Vehicle. Le LRV a donné à Scott + Irwin un rayon de traversée de 27,9 km (vs les 3,5 km à pied seulement d'Apollo 14), ouvrant le site dramatique Hadley-Apennine au pied d'une chaîne de montagnes de 4,5 km et au bord de la sinueuse Hadley Rille. Trois EVAs totalisant 18 h 35 m, 77 kg d'échantillons rapportés, dont le célèbre « Genesis Rock » (échantillon 15415) — une anorthosite de 4,1 milliards d'années confirmant l'origine océan de magma de la croûte des hautes terres lunaires. Le « hammer-feather drop » télévisé de Scott a vérifié la loi de gravitation de Galilée en direct.",
+  "type": "MODULE LUNAIRE HABITÉ · RÉALISÉ",
+  "first": "Première J-mission — séjour prolongé, premier Lunar Roving Vehicle, « Genesis Rock »",
+  "dispatch": "Au moment d'Apollo 15, la course était depuis longtemps terminée, et c'est la science qui a pris le volant — littéralement. Ce fut le premier vol à embarquer le Lunar Rover, qui a transformé un rayon de marche de trois kilomètres en une véritable expédition scientifique de vingt-neuf kilomètres, et il s'est posé non sur une plaine sécuritaire mais dans une vallée entre une chaîne de montagnes et un canyon sinueux. Scott et Irwin ont ramené la « Genesis Rock », un fragment de quatre milliards d'années de la croûte lunaire originelle qui a confirmé sa formation. Apollo avait cessé de visiter la Lune et avait commencé à l'étudier — et ne cessait de s'améliorer dans cette tâche jusqu'à son annulation.",
+  "description": "La première « J-mission » — Apollo scientifique à séjour prolongé avec le nouveau Lunar Roving Vehicle. Le LRV a donné à Scott et Irwin une portée de traversée de 27,9 km (contre les 3,5 km de la marche seule d'Apollo 14), ouvrant le site dramatique d'Hadley-Apennine au pied d'une chaîne montagneuse de 4,5 km et à la lisière de la sinueuse Hadley Rille. Trois EVA totalisant 18 h 35 m, 77 kg d'échantillons rapportés, dont la célèbre « Genesis Rock » (échantillon 15415) — une anorthosite de 4,1 milliards d'années confirmant l'origine de l'océan magmatique de la croûte des terres hautes lunaires. La « chute du marteau et de la plume » télévisée par Scott a vérifié en direct la loi de la gravitation de Galilée. Worden en orbite lunaire a opéré une baie SIM remplie d'instruments de télédétection (caméras de cartographie, spectromètres gamma, rayons X, particules alpha) et a effectué la première EVA en espace lointain sur le chemin du retour (EVA d'environ 39 minutes à environ 317 000 km de la Terre pour récupérer les cartouches de film). La récupération d'Apollo 15 a été entachée par la défaillance d'un des trois parachutes principaux — le module de commande s'est posé rudement mais l'équipage était indemne.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-510) from Kennedy Space Center LC-39A 1971-07-26 13:34 UTC.",
+      "label": "DÉCOLLAGE",
+      "note": "Saturn V (AS-510) depuis Kennedy Space Center LC-39A 1971-07-26 13:34 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection.",
+      "note": "Injection trans-lunaire.",
       "type": "nominal"
     },
     {
       "met": 3.25,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "Insertion en orbite lunaire. SPS ∆v ≈ 0,91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.79,
-      "label": "TOUCHDOWN",
-      "note": "Falcon lands at Hadley-Apennine 1971-07-30 22:16 UTC — first landing at a non-mare highland site.",
+      "label": "TOUCHER",
+      "note": "Falcon se pose à Hadley-Apennine 1971-07-30 22:16 UTC — premier atterrissage sur un site des terres hautes non-mare.",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "FIRST LRV TRAVERSE",
-      "note": "EVA-1: First Lunar Roving Vehicle deployment + 10.3 km traverse to Elbow Crater + the rim of Hadley Rille.",
+      "label": "PREMIÈRE TRAVERSÉE LRV",
+      "note": "EVA-1 : Déploiement du premier Lunar Roving Vehicle + traversée de 10,3 km jusqu'au cratère Elbow et la lisière d'Hadley Rille.",
       "type": "info"
     },
     {
       "met": 5.5,
       "label": "GENESIS ROCK",
-      "note": "EVA-2: At Spur Crater, Scott + Irwin recover sample 15415 — a 4.1-billion-year-old anorthosite from the original lunar crust.",
+      "note": "EVA-2 : Au cratère Spur, Scott et Irwin récupèrent l'échantillon 15415 — une anorthosite de 4,1 milliards d'années de la croûte lunaire originelle.",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "HAMMER-FEATHER DROP",
-      "note": "EVA-3 / pre-ascent: Scott televises a hammer + feather dropped together; both hit the regolith simultaneously, verifying Galileo's 1589 prediction live.",
+      "label": "CHUTE DU MARTEAU ET DE LA PLUME",
+      "note": "EVA-3 / avant ascension : Scott télévisé lâchant un marteau et une plume ensemble ; les deux frappent le régolithe simultanément, vérifiant en direct la prédiction de Galilée de 1589.",
       "type": "info"
     },
     {
       "met": 6.25,
-      "label": "ASCENT",
-      "note": "Falcon lifts off after 66 h 55 m on surface. 77 kg samples + first ascent televised from the LRV-mounted camera (operated remotely by Houston).",
+      "label": "ASCENSION",
+      "note": "Falcon décolle après 66 h 55 m à la surface. 77 kg d'échantillons + première ascension télévisée à partir de la caméra montée sur le LRV (opérée à distance par Houston).",
       "type": "nominal"
     },
     {
       "met": 8.2,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Injection trans-Terre. SPS ∆v ≈ 1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 9.5,
-      "label": "DEEP-SPACE EVA",
-      "note": "Worden performs first-ever EVA in cislunar space (38 min at ~315 000 km from Earth) to retrieve SIM-bay film canisters.",
+      "label": "EVA EN ESPACE LOINTAIN",
+      "note": "Worden effectue la première EVA jamais réalisée en espace cislunaîre (≈ 39 min à ≈ 317 000 km de la Terre) pour récupérer les cartouches de film de la baie SIM.",
       "type": "info"
     },
     {
       "met": 12.31,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+      "label": "AMARISSAGE",
+      "note": "Module de commande amarri dans l'océan Atlantique Nord 1971-08-07 20:46 UTC. Un des trois parachutes principaux n'a pas se déployer complètement ; atterrissage rude mais sûr. Récupération par l'USS Okinawa.",
       "type": "warning"
     }
   ]

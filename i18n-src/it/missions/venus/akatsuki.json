@@ -1,43 +1,43 @@
 {
   "name": "Akatsuki",
-  "type": "ORBITER · ATTIVA",
-  "first": "Recuperata da un'attesa di 5 anni in orbita solare per raggiungere l'orbita di Venere con un tentativo di riserva; attualmente l'unico orbiter venusiano attivo",
-  "description": "Akatsuki — \"alba\" — è stata la prima missione giapponese su Venere. Lanciata il 20 maggio 2010 da Tanegashima con un H-IIA 202, abbinata al dimostratore di vela solare IKAROS. L'inserimento orbitale venusiano pianificato per il 7 dicembre 2010 è fallito quando l'accumulo di cristalli di sale in una valvola di non ritorno dell'ossidante ha spostato il motore principale fuori asse dopo 152 secondi di accensione. JAXA ha mantenuto la sonda attiva in orbita solare per cinque anni e dodici manovre correttive, fino alla successiva finestra di incontro con Venere. Il 7 dicembre 2015 un'accensione di 1228 secondi utilizzando quattro propulsori di controllo d'assetto — mai progettati per l'inserimento orbitale — ha inserito Akatsuki in un'orbita altamente ellittica di 400 × 440.000 km con inclinazione di 3°. Uno dei salvataggi di missione più spettacolari nella storia del volo spaziale. Ancora attiva.",
+  "type": "ORBITER · FLOWN",
+  "first": "Recuperata da un blocco di 5 anni in orbita solare per raggiungere l'orbita di Venere al secondo tentativo; l'unico orbiter di Venere ancora attivo negli ultimi anni di operazione",
+  "description": "Akatsuki — «alba» — era la prima missione Venus del Giappone. Lanciata il 2010-05-20 da Tanegashima su un H-IIA 202, accoppiata con il dimostratore di vela solare IKAROS. L'inserimento in orbita Venus pianificato per il 2010-12-07 fallì quando l'accumulo di cristalli di sale in una valvola di controllo dell'ossidante fece deviare il motore principale dall'asse dopo 152 secondi dall'accensione. JAXA mantenne il veicolo spaziale attivo in orbita solare per cinque anni, dodici manovre di correzione, fino alla successiva finestra di incontro con Venere. Il 2015-12-07 un'accensione di 1228 secondi usando quattro razzi di controllo d'assetto — mai progettati per l'inserimento orbitale — collocò Akatsuki in un'orbita altamente ellittica di 400 × 440.000 km con inclinazione di 3°. Uno dei salvataggi di missione più drammatici nella storia dei voli spaziali. Il contatto è stato perso nel 2024; JAXA ha dichiarato le operazioni complete il 2025-09-18.",
   "events": [
     {
       "met": 0,
       "label": "LANCIO",
-      "note": "H-IIA 202 da Tanegashima, abbinato alla vela solare IKAROS.",
+      "note": "H-IIA 202 da Tanegashima, accoppiato con la vela solare IKAROS.",
       "type": "nominal"
     },
     {
       "met": 30,
       "label": "TCM-1",
-      "note": "Prima correzione di rotta.",
+      "note": "Prima correzione di traiettoria.",
       "type": "nominal"
     },
     {
       "met": 201,
-      "label": "FALLIMENTO VOI-1",
-      "note": "7 dicembre 2010. Anomalia dell'acceleratore OME dopo 152s di accensione; la sonda supera Venere entrando in orbita solare.",
+      "label": "VOI-1 FALLIMENTO",
+      "note": "2010-12-07. Anomalia della farfalla OME a 152s dall'inizio dell'accensione; il veicolo spaziale prosegue verso l'orbita solare.",
       "type": "warning"
     },
     {
       "met": 1000,
-      "label": "ATTESA IN ORBITA SOLARE",
-      "note": "12 manovre nell'arco di 5 anni per mantenere una traiettoria di nuovo incontro con Venere.",
+      "label": "BLOCCO IN ORBITA SOLARE",
+      "note": "12 manovre in 5 anni per mantenere una traiettoria di reincontro con Venere.",
       "type": "info"
     },
     {
       "met": 2027,
-      "label": "SUCCESSO VOI-R2",
-      "note": "7 dicembre 2015. Accensione RCS di 1228s in orbita 400 × 440.000 km, 3°.",
+      "label": "VOI-R2 SUCCESSO",
+      "note": "2015-12-07. Accensione RCS di 1228s in orbita di 400 × 440.000 km con inclinazione di 3°.",
       "type": "info"
     },
     {
       "met": 2200,
       "label": "OPERAZIONI SCIENTIFICHE",
-      "note": "Tracciamento delle caratteristiche delle nubi UV/IR; studi di super-rotazione; onde di gravità ad arco sopra Aphrodite Terra.",
+      "note": "Tracciamento delle caratteristiche delle nuvole UV/IR; studi della super-rotazione; onde di gravità a forma di arco sopra Aphrodite Terra. Contatto perso nel 2024; operazioni dichiarate complete il 2025-09-18.",
       "type": "info"
     }
   ]

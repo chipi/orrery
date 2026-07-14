@@ -8,14 +8,14 @@
     },
     {
       "type": "prose",
-      "md": "Skylab was the first American attempt to answer that. Rather than design a station from scratch, NASA took the empty upper stage of a Saturn V — a hydrogen tank the size of a house — and fitted it out as an orbital workshop: crew quarters, a laboratory, a solar observatory, a home. It was launched in May 1973, and it very nearly died in the first ten minutes."
+      "md": "Skylab was the first American attempt to answer that. Rather than design a station from scratch, NASA took the empty S-IVB stage — the third stage of a Saturn V — a hydrogen tank the size of a house — and fitted it out as an orbital workshop: crew quarters, a laboratory, a solar observatory, a home. It was launched in May 1973, and it very nearly died in the first ten minutes."
     }
   ],
   "goals": [
     {
       "type": "figure",
       "image": { "reuse": "fleet/skylab/04" },
-      "caption": "The Skylab orbital workshop, built inside a converted Saturn V upper stage — laboratory, solar observatory, and home for three crews. The first station large enough that its occupants could actually live, not merely endure.",
+      "caption": "The Skylab orbital workshop, built inside a converted S-IVB — the third stage of a Saturn V — laboratory, solar observatory, and home for three crews. The first station large enough that its occupants could actually live, not merely endure.",
       "align": "right"
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "type": "prose",
-      "md": "Instead, Skylab became the first great demonstration that people in space are not just passengers but repair crews. The first crew flew up, pushed a parasol-like sunshade out through a small scientific airlock to cool the station, and then — in a tense, improvised spacewalk — wrestled the jammed solar panel free, restoring power. The station was saved, and went on to host three crews for 28, 59, and finally 84 days, returning a mountain of solar and biomedical data and setting an endurance record that stood for years. Its end was less triumphant: with no crew vehicle able to reach it after 1974 and its orbit decaying faster than predicted, Skylab fell back to Earth in 1979, scattering debris across the Indian Ocean and Western Australia."
+      "md": "Instead, Skylab became the first great demonstration that people in space are not just passengers but repair crews. The first crew flew up, pushed a parasol-like sunshade out through a small scientific airlock to cool the station, and then — in a tense, improvised spacewalk — wrestled the jammed solar panel free, restoring power. The station was saved, and went on to host three crews for 28, 59, and finally 84 days, returning a mountain of solar and biomedical data and setting an endurance record that stood for years. Its end was less triumphant: with no crew vehicle able to reach it after 1974 and its orbit decaying faster than predicted, Skylab fell back to Earth in 1979, scattering debris across the southern Indian Ocean and, unintentionally, Western Australia."
     }
   ],
   "narrative": [

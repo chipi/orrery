@@ -1,31 +1,31 @@
 {
   "name": "Shenzhou 1",
-  "type": "ESSAI QUALIFIÉ ÉQUIPAGE · INHABITÉ · VOLÉ",
-  "first": "Premier essai orbital chinois Shenzhou — a ouvert la voie aux vols habités de la RPC",
-  "description": "Premier vol du programme de vaisseau habité Shenzhou. Lancé le 1999-11-20 à 22:30 UTC depuis Jiuquan lors du vol inaugural de la fusée Longue Marche 2F (CZ-2F) qualifiée pour l'homme. La capsule a effectué 14 orbites à 196 × 324 km, 42,6° d'inclinaison, et est rentrée pour récupération dans la steppe de Mongolie-Intérieure le 1999-11-21 à 19:41 UTC. Embarquait des maquettes de support-vie, des ensembles de télémétrie et un drapeau chinois, ainsi que des graines pour un retour de cargaison en génétique microgravitaire. Marqua l'engagement de la Chine à suivre l'URSS et les États-Unis dans le vol habité indépendant ; conduisit directement à Shenzhou 5 (2003) avec Yang Liwei.",
+  "type": "TEST ÉQUIPÉ · NON-HABITÉ · VOLÉ",
+  "first": "Premier essai orbital chinois Shenzhou — a ouvert la voie au vol spatial habité de la RPC",
+  "description": "Premier vol du programme de vaisseau spatial habité Shenzhou. Lancé le 1999-11-19 22:30 UTC depuis Jiuquan lors du vol inaugural de la Longue Marche 2F (CZ-2F) certifiée pour le vol habité. La capsule a complété 14 orbites à 195 × 315 km, inclinaison 42,6°, et a été récupérée le 1999-11-20 19:41 UTC dans la steppe de Mongolie-Intérieure. Transportait un équipement de support de vie de démonstration, des paquets de télémétrie et un drapeau chinois, ainsi que des graines pour une cargaison de retour en microgravité pour études génétiques. A marqué l'engagement de la Chine à poursuivre l'URSS et les États-Unis vers un vol spatial habité indépendant ; a mené directement à Shenzhou 5 (2003) avec Yang Liwei.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Long March 2F maiden flight from Jiuquan SLC-43 at 22:30 UTC.",
+      "label": "LANCEMENT",
+      "note": "Vol inaugural de la Longue Marche 2F depuis le site de lancement Jiuquan LA-4 le 1999-11-19 22:30 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.001,
-      "label": "ORBIT",
-      "note": "14-orbit flight at 196 × 324 km, 42.6° inclination.",
+      "label": "ORBITE",
+      "note": "Vol de 14 orbites à 195 × 315 km, inclinaison 42,6°.",
       "type": "nominal"
     },
     {
       "met": 0.875,
-      "label": "DE-ORBIT",
-      "note": "Service-module retro-fire over Africa.",
+      "label": "RENTRÉE",
+      "note": "Mise à feu rétrograde du module de service au-dessus de l'Afrique.",
       "type": "nominal"
     },
     {
       "met": 0.882,
-      "label": "RECOVERY",
-      "note": "Capsule descended to Siziwang Banner, Inner Mongolia, 1999-11-21 19:41 UTC.",
+      "label": "RÉCUPÉRATION",
+      "note": "La capsule a atterri à Dorbod Banner, Mongolie-Intérieure, le 1999-11-20 19:41 UTC.",
       "type": "nominal"
     }
   ]

@@ -1,25 +1,25 @@
 {
   "name": "Vega 2",
-  "type": "SCHEERVLUCHT + LANDER + BALLON · VOLTOOID",
-  "first": "Eerste chemische analyse van Venusiaanse hooglandbodem (Phoebe Regio, 1985)",
-  "description": "Tweelingmissie van Vega 1, 6 dagen later gelanceerd. De afdalingsmodule landde op 15-6-1985 in de hooglanden van Phoebe Regio en gebruikte XRF-spectrometrie om anortosiet-noriet-troktolietmateriaal te identificeren — eerste chemische analyse van hooggelegen Venusiaanse korst. De bus passeerde komeet 1P/Halley op 8030 km op 9-3-1986. Samen retourneerden de Vega-bussen de eerste close-upbeelden van een komeetkern en verfijnden de positiebepaling waarmee Giotto vijf dagen later een 596 km Halley-scheervlucht kon proberen.",
+  "type": "VOORBIJVLUCHT + LANDER + BALLON · UITGEVOERD",
+  "first": "Eerste chemische analyse van Venusiaans hooglanden-type bodem (Aphrodite Terra, 1985); gepaarde Halley-ontmoeting met Vega 1 voedde Giotto's doelstellingoplossing",
+  "description": "Tweelingvaartuig van Vega 1, gelanceerd 6 dagen later (1984-12-21) voor redundantie + een gepaarde Halley-vloot-oplossing. Vega 2's afdalingsmodule landde op 1985-06-15 in Rusalka Planitia, op de noordelijke flank van Aphrodite Terra, en gebruikte XRF-spectrometrie om anortosiet-noriet-troctoliet-materiaal te vinden — de eerste chemische analyse van hooglanden-type Venusiaanse korst (de samenstelling lijkt op maanhooglanden, hoewel de landingsplaats zelf een vlakte is). De ballon voerde identiek uit als die van Vega 1 en dreef in het tegenovergestelde halfrond met ongeveer 240 km/u. De bus vloog op 1986-03-09 op 8030 km afstand voorbij komeet 1P/Halley. Samen leverden de twee Vega-bussen de eerste close-up beelden van komeetkernen en verfijnde de positiefix die Giotto in staat stelde een voorbijvlucht op 596 km vijf dagen later uit te voeren.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "De Proton-K / D-1 lanceert Vega 2 vanuit Bajkonoer 6 dagen na Vega 1.",
+      "note": "Proton-K / D-1 tilt Vega 2 van Baikonur 6 dagen achter Vega 1.",
       "type": "nominal"
     },
     {
       "met": 176,
       "label": "VENUS-ONTMOETING",
-      "note": "De afdalingsmodule landt in Phoebe Regio + retourneert de eerste chemische analyse van hooglandbodem.",
+      "note": "Afdalingsmodule landt bij Aphrodite Terra (Rusalka Planitia) + levert eerste chemische analyse van hooglanden-type Venusiaanse korst.",
       "type": "nominal"
     },
     {
       "met": 442,
-      "label": "HALLEY-SCHEERVLUCHT",
-      "note": "Dichtste nadering tot komeet 1P/Halley op 8030 km — gepaarde positiebepaling voor Giotto.",
+      "label": "HALLEY-VOORBIJVLUCHT",
+      "note": "Dichtstbijzijnde benadering van komeet 1P/Halley op 8030 km — gepaarde positiefix voor Giotto.",
       "type": "nominal"
     }
   ]

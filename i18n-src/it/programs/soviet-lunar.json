@@ -1,14 +1,14 @@
 {
   "name": "Programma Lunare Sovietico",
-  "tagline": "L'unica gara che l'Unione Sovietica corse e perse — un tentativo segreto, affamato e diviso per la Luna il cui razzo gigante esplose quattro volte e fu cancellato dai registri per vent'anni.",
+  "tagline": "L'unica corsa che l'Unione Sovietica affrontò e perse — un tentativo segreto, sottofinanziato e diviso per la Luna il cui razzo gigante esplose quattro volte e fu cancellato dai registri per vent'anni.",
   "the_land": [
     {
       "type": "prose",
-      "md": "C'è un mito persistente secondo cui solo gli americani corsero verso la Luna — che l'Unione Sovietica, avendo perso, sostenne sempre di non averci mai provato. La seconda metà è vera; la prima no. L'URSS condusse un programma lunare con equipaggio completo, in parallelo con Apollo e in totale segretezza, e perse. Poi trascorse due decenni negando che il programma fosse mai esistito, motivo per cui così poche persone sanno che esistette. L'hardware era reale, i cosmonauti erano assegnati e l'intento era lo stesso di quello americano: portare un cittadino sovietico sulla Luna per primo."
+      "md": "Esiste un mito persistente secondo cui solo gli americani corsero verso la Luna — che l'Unione Sovietica, avendo perso, sostenne sempre di non averci mai provato. La seconda metà è vera; la prima no. L'URSS condusse un programma lunare con equipaggio completo, in parallelo con Apollo e in totale segretezza, e perse. Poi trascorse due decenni negando che il programma fosse mai esistito, ed è per questo che così poche persone sanno che esistette. L'hardware era reale, i cosmonauti erano assegnati, e l'intento era lo stesso di quello americano: mettere un cittadino sovietico sulla Luna per primo."
     },
     {
       "type": "prose",
-      "md": "Ciò che mancava allo sforzo sovietico era tutto ciò che fece funzionare Apollo. Dove gli Stati Uniti concentrarono l'intero sforzo nazionale dietro un unico ufficio di progettazione e un unico razzo, il programma sovietico fu diviso tra capi progettisti rivali che si disprezzavano a vicenda, finanziato con una frazione di quanto ricevette la NASA e nascosto così completamente che il fallimento non comportava alcun costo politico — e quindi non generava alcuna urgenza politica. Sergei Korolev, l'unico uomo che avrebbe potuto unificarlo, consumò la sua autorità lottando per le risorse e poi morì su un tavolo operatorio nel 1966, a cinquantanove anni, con il programma ancora a anni dal volo. Non si riprese mai."
+      "md": "Ciò che mancava allo sforzo sovietico era tutto quello che fece funzionare Apollo. Dove gli Stati Uniti concentrarono l'intero sforzo nazionale dietro un unico ufficio di progettazione e un unico razzo, il programma sovietico era diviso tra progettisti capo rivali che si disprezzavano a vicenda, finanziato con una frazione di ciò che ricevette la NASA, e nascosto così completamente che il fallimento non comportava alcun costo politico — e quindi non generava alcuna urgenza politica. Sergei Korolev, l'unico uomo che avrebbe potuto unificarlo, consumò la sua autorità lottando per le risorse e poi morì su un tavolo operatorio nel 1966, a cinquantanove anni, con il programma ancora lontano anni dal volo. Non si riprese mai."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/n1/05"
       },
-      "caption": "Il razzo super-pesante N1 — la risposta sovietica al Saturn V. Il suo primo stadio raggruppava trenta motori perché nessun singolo motore sovietico era abbastanza potente e non esisteva un banco di prova abbastanza grande da accenderli insieme.",
+      "caption": "Il razzo super-pesante N1 — la risposta sovietica al Saturn V. Il suo primo stadio raggruppava trenta motori perché nessun singolo motore sovietico era abbastanza potente, e non esisteva un banco di prova abbastanza grande per accenderli insieme.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Il programma aveva due obiettivi, perseguiti da due progetti separati. Il primo, L1/Zond, era far compiere a un singolo cosmonauta un giro attorno alla Luna e tornare — un volo circumlunare, senza atterraggio — per ottenere il colpo propagandistico dei primi umani a raggiungere le vicinanze della Luna. Il secondo, L3, era il vero premio: far atterrare un cosmonauta sulla superficie. Entrambi dipendevano da razzi che l'Unione Sovietica non aveva ancora, e l'atterraggio L3 dipendeva dal più grande di tutti: l'N1, un mostro di 105 metri il cui primo stadio raggruppava trenta motori attorno alla base perché nessun singolo motore sovietico si avvicinava alla potenza dell'F-1 americano."
+      "md": "Il programma aveva due obiettivi, perseguiti da due progetti separati. Il primo, L1/Zond, era far compiere a un singolo cosmonauta un giro attorno alla Luna e ritorno — un volo circumlunare, nessun atterraggio — per ottenere il colpo di propaganda dei primi esseri umani a raggiungere le vicinanze della Luna. Il secondo, L3, era il vero premio: far atterrare un cosmonauta sulla superficie. Entrambi dipendevano da razzi che l'Unione Sovietica non aveva ancora, e l'atterraggio L3 dipendeva dal più grande di tutti: l'N1, un mostro di 105 metri il cui primo stadio raggruppava trenta motori alla sua base perché nessun singolo motore sovietico si avvicinava alla potenza dell'F-1 americano."
     },
     {
       "type": "prose",
-      "md": "Quel gruppo di trenta motori fu la scommessa definente del programma e il suo difetto fatale. Trenta motori significavano migliaia di modi per fallire, tutti i quali dovevano funzionare in concerto perché il razzo volasse — e non c'era alcuna struttura nell'Unione Sovietica abbastanza grande per testare a terra il primo stadio assemblato. Quindi l'N1 fu fatto volare nel modo in cui non si dovrebbe mai far volare un razzo: assemblato intero e lanciato, con il primo test completo del sistema di propulsione che era il lancio stesso. La NASA aveva rifiutato esattamente questo approccio per il Saturn V, insistendo prima su esaurienti accensioni a terra. I sovietici non potevano permetterselo, e questo uccise il programma."
+      "md": "Quel raggruppamento di trenta motori fu la scommessa definitoria del programma e il suo difetto fatale. Trenta motori significavano migliaia di modi per fallire, tutti i quali dovevano funzionare in concerto perché il razzo volasse — e non esisteva una struttura in Unione Sovietica abbastanza grande per testare a terra il primo stadio assemblato. Quindi l'N1 venne fatto volare nel modo in cui non si dovrebbe mai far volare un razzo: assemblato intero e lanciato, con il primo test completo del sistema di propulsione che coincideva con il lancio stesso. La NASA aveva rifiutato esattamente questo approccio per il Saturn V, insistendo prima su esaustivi test di accensione a terra. I sovietici non potevano permetterselo, e questo uccise il programma."
     }
   ],
   "outcome": [
@@ -35,30 +35,30 @@
       "image": {
         "reuse": "fleet/n1/04"
       },
-      "caption": "Il primo stadio dell'N1 raggruppava trenta motori NK-15 in due anelli. Senza modo di testarli a terra insieme, ogni volo era il primo test integrato — e tutti e quattro finirono in fallimento, uno distruggendo la rampa di lancio.",
+      "caption": "Il primo stadio dell'N1 raggruppava trenta motori NK-15 in due anelli. Senza modo di testarli insieme a terra, ogni volo era il primo test integrato — e tutti e quattro finirono in fallimento, uno distruggendo la rampa di lancio.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "La metà circumlunare arrivò agonizzantemente vicina. Nel settembre 1968, tre mesi prima di Apollo 8, Zond 5 fece volare una navicella attorno alla Luna e la riportò sana e salva sulla Terra — trasportando due tartarughe, le prime creature viventi a viaggiare nelle vicinanze della Luna e tornare. Fu un autentico primato, e avrebbe dovuto essere seguito entro settimane da un cosmonauta sulla stessa traiettoria. Ma il volo era stato più turbolento di quanto ammesso, Apollo 8 portò poi un equipaggio fino all'orbita lunare e ritorno, e i dirigenti sovietici giudicarono uno Zond con equipaggio troppo rischioso per un premio che gli americani avevano appena rivendicato più completamente. Il giro del cosmonauta non fu mai effettuato."
+      "md": "La metà circumlunare arrivò agonizzantemente vicino. Nel settembre 1968, tre mesi prima di Apollo 8, Zond 5 portò una navicella spaziale attorno alla Luna e la riportò sana e salva sulla Terra — trasportando due tartarughe, le prime creature viventi a viaggiare attorno alla Luna e tornare. Fu un vero primato, e avrebbe dovuto essere seguito entro settimane da un cosmonauta sulla stessa traiettoria. Ma il volo era stato più accidentato di quanto ammesso, Apollo 8 portò poi un equipaggio fino all'orbita lunare e ritorno, e i dirigenti sovietici giudicarono un Zond con equipaggio troppo rischioso per un premio che gli americani avevano appena rivendicato più completamente. Il giro con cosmonauta non venne mai effettuato."
     },
     {
       "type": "prose",
-      "md": "La metà dell'atterraggio semplicemente fallì. L'N1 fu lanciato quattro volte tra il 1969 e il 1972, e ogni lancio finì in distruzione. Il secondo tentativo, nel luglio 1969 — giorni prima di Apollo 11 — perse spinta pochi secondi dopo il decollo, ricadde sulla rampa e detonò in una delle più grandi esplosioni non nucleari mai registrate, radendo al suolo il complesso di lancio. Quando gli ingegneri cominciarono a capire i fallimenti, Apollo aveva già fatto atterrare sei equipaggi. Il programma fu silenziosamente cancellato nel 1974, i suoi razzi rottamati, le sue rampe ricostruite per altri usi e la sua stessa esistenza negata fino a quando l'Unione Sovietica stessa cominciò a finire."
+      "md": "La metà dell'atterraggio semplicemente fallì. L'N1 venne lanciato quattro volte tra il 1969 e il 1972, e ogni lancio finì in distruzione. Il secondo tentativo, nel luglio 1969 — giorni prima di Apollo 11 — perse spinta secondi dopo il decollo, ricadde sulla sua rampa, e detonò in una delle più grandi esplosioni non nucleari mai registrate, radendo al suolo il complesso di lancio. Quando gli ingegneri avevano cominciato a comprendere i fallimenti, Apollo aveva già fatto atterrare sei equipaggi. Il programma venne silenziosamente cancellato nel 1974, i suoi razzi rottamati, le sue rampe ricostruite per altri usi, e la sua stessa esistenza negata fino a quando l'Unione Sovietica stessa cominciò a finire."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Il filo conduttore del programma lunare sovietico è che la segretezza, che il sistema sovietico trattava come un punto di forza, fu in questo caso una debolezza fatale. Poiché lo sforzo era nascosto, i suoi fallimenti non imbarazzarono pubblicamente nessuno, non costarono il posto a nessun ministro e non produssero nessuna delle pressioni esterne che costrinsero la NASA a essere onesta riguardo al rischio. I disastri di Apollo — l'incendio di Apollo 1 soprattutto — accaddero alla luce del sole e forzarono riforme brutali e responsabili. I fallimenti dell'N1 accaddero nell'oscurità, furono incolpati internamente e non cambiarono nulla abbastanza velocemente. Un programma che a nessuno è permesso guardare è un programma che nessuno è costretto a sistemare."
+      "md": "Il filo conduttore del programma lunare sovietico è che la segretezza, che il sistema sovietico trattava come un punto di forza, fu in questo caso una debolezza fatale. Poiché lo sforzo era nascosto, i suoi fallimenti non imbarazzarono pubblicamente nessuno, non costarono a nessun ministro il suo incarico, e non produssero nessuna delle pressioni esterne che costrinsero la NASA a essere onesta riguardo ai rischi. I disastri di Apollo — l'incendio di Apollo 1 soprattutto — accaddero alla luce del sole e imposero riforme brutali e responsabili. I fallimenti dell'N1 accaddero nell'oscurità, furono incolpati internamente, e non cambiarono nulla abbastanza velocemente. Un programma che nessuno può guardare è un programma che nessuno è costretto a sistemare."
     },
     {
       "type": "prose",
-      "md": "Il secondo filo è la divisione. Gli Stati Uniti costruirono Apollo come un singolo sforzo nazionale sotto un'unica agenzia. Il programma sovietico fu una faida: l'ufficio di Korolev contro quello di Vladimir Chelomei, entrambi contro il progettista di motori Valentin Glushko, che si rifiutò di costruire i motori che Korolev voleva e la cui eventuale presa di controllo del programma fu l'atto che infine uccise l'N1. Tre uomini brillanti, tre razzi in competizione, un budget affamato diviso tra loro. La forza concentrata atterra sulla Luna; la forza divisa costruisce tre razzi semi-finiti e non ne fa volare nessuno con successo."
+      "md": "Il secondo filo è la divisione. Gli Stati Uniti costruirono Apollo come un unico sforzo nazionale sotto un'unica agenzia. Il programma sovietico era una faida: l'ufficio di Korolev contro quello di Vladimir Chelomei, entrambi contro il progettista di motori Valentin Glushko, che rifiutò di costruire i motori che Korolev voleva e la cui eventuale presa di controllo del programma fu l'atto che infine uccise l'N1. Tre uomini brillanti, tre razzi in competizione, un budget affamato diviso tra loro. La forza concentrata atterra sulla Luna; la forza divisa costruisce tre razzi mezzi finiti e non ne fa volare nessuno con successo."
     },
     {
       "type": "prose",
-      "md": "C'è una strana coda. I motori NK-15 dell'N1, raffinati in NK-33, si rivelarono superbi — alcuni dei migliori motori a razzo mai costruiti. Quando il programma fu cancellato, Glushko ordinò di distruggerli; invece gli ingegneri ne nascosero circa un centinaio in un magazzino per vent'anni. Negli anni '90 furono riscoperti, venduti a compagnie americane e volarono — motori di razzi lunari sovietici, decenni dopo, che sollevavano razzi americani. Il razzo fallì; i suoi motori furono un trionfo che a nessuno fu permesso di usare fino a quando il paese che li costruì non fu scomparso."
+      "md": "C'è una strana coda. I motori NK-15 dell'N1, perfezionati in NK-33, si rivelarono superbi — alcuni dei migliori motori a razzo mai costruiti. Quando il programma venne cancellato, Glushko ordinò di distruggerli; invece gli ingegneri ne nascosero circa sessanta in un magazzino per vent'anni. Negli anni '90 furono riscoperti, venduti a compagnie americane, e volarono — motori sovietici del razzo lunare, decenni dopo, a sollevare razzi americani. Il razzo fallì; i suoi motori furono un trionfo che nessuno poté usare fino a quando il paese che li costruì non scomparve."
     }
   ],
   "legacy": [
@@ -67,26 +67,26 @@
       "image": {
         "reuse": "fleet/n1/02"
       },
-      "caption": "Un'immagine di ricognizione statunitense di un modello dell'N1 a Baikonur, fine 1967. Per due decenni l'Unione Sovietica insistette che il razzo lunare non esisteva; per il mondo esterno era conosciuto principalmente attraverso fotografie di spionaggio americane come questa.",
+      "caption": "Un'immagine di ricognizione statunitense di un modello dell'N1 a Baikonur, fine 1967. Per due decenni l'Unione Sovietica insistette che il razzo lunare non esisteva; per il mondo esterno era noto principalmente attraverso fotografie spia americane come questa.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "L'eredità del programma lunare sovietico è per lo più assenza — l'atterraggio che non avvenne mai, il razzo che non funzionò mai, il silenzio di vent'anni. Ma l'assenza stessa è istruttiva. È il controesempio più chiaro ad Apollo in tutta l'era spaziale: lo stesso obiettivo, lo stesso decennio, talento ingegneristico comparabile e un risultato completamente diverso, guidato non da una mancanza di capacità ma da segretezza, divisione e risorse affamate. Se Apollo mostra ciò che un programma concentrato, responsabile e finanziato apertamente può fare, lo sforzo lunare sovietico mostra cosa succede quando ciascuna di queste condizioni manca."
+      "md": "L'eredità del programma lunare sovietico è per lo più assenza — l'atterraggio che non avvenne mai, il razzo che non funzionò mai, il silenzio ventennale. Ma l'assenza stessa è istruttiva. È il controesempio più chiaro ad Apollo nell'intera era spaziale: lo stesso obiettivo, lo stesso decennio, talento ingegneristico comparabile, e un risultato completamente diverso, guidato non da una mancanza di capacità ma da segretezza, divisione e risorse affamate. Se Apollo mostra cosa può fare un programma concentrato, responsabile e finanziato apertamente, lo sforzo lunare sovietico mostra cosa succede quando manca ciascuna di queste condizioni."
     },
     {
       "type": "prose",
-      "md": "Il suo hardware si trasmise in avanti. La variante lunare Soyuz 7K-LOK informò la Soyuz che vola ancora; il design compatto a equipaggio singolo del lander LK influenzò il pensiero successivo; i motori NK-33 alla fine volarono. E il resoconto onesto del programma, una volta sollevata la segretezza, divenne parte di come l'era spaziale viene ora raccontata — non come una corsa a cavallo unico che gli americani vinsero per default, ma come una vera competizione a cui l'Unione Sovietica partecipò, corse duramente e perse per ragioni che avevano poco a che fare con la missilistica e tutto a che fare con come lo sforzo fu organizzato e nascosto."
+      "md": "Il suo hardware alimentò il futuro. La variante lunare Soyuz 7K-LOK informò la Soyuz che vola ancora; il design compatto a singolo equipaggio del lander LK influenzò il pensiero successivo; i motori NK-33 alla fine volarono. E la resa dei conti onesta del programma, una volta sollevata la segretezza, divenne parte di come l'era spaziale viene ora raccontata — non come una corsa a cavallo unico vinta dagli americani per default, ma come una vera competizione che l'Unione Sovietica intraprese, condusse con forza, e perse per ragioni che avevano poco a che fare con la missilistica e tutto a che fare con come lo sforzo venne organizzato e nascosto."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La lezione più dura del programma è che non si può saltare il test a terra. L'N1 fu fatto volare assemblato-e-lanciato perché l'Unione Sovietica mancava di un banco per accendere trenta motori insieme — e così ogni volo era il primo test integrato della parte più complessa del razzo, senza possibilità di trovare i guasti da nessuna parte se non in aria. L'insistenza della NASA su esaurienti accensioni a terra del Saturn V sembrava lenta e costosa; fu la ragione per cui il Saturn V non fallì mai in volo. Quando non ci si può permettere di testare adeguatamente, non si è reso il razzo più economico — si è spostato il costo sui voli, e là viene pagato."
+      "md": "La lezione più dura del programma è che non si può saltare il test a terra. L'N1 venne fatto volare assemblato-e-lanciato perché l'Unione Sovietica mancava di un banco per accendere trenta motori insieme — e così ogni volo fu il primo test integrato della parte più complessa del razzo, senza possibilità di trovare i fallimenti da nessuna parte tranne che nell'aria. L'insistenza della NASA su esaustivi test di accensione a terra del Saturn V sembrò lenta e costosa; fu la ragione per cui il Saturn V non fallì mai in volo. Quando non ci si può permettere di testare correttamente, non si è reso il razzo più economico — si è spostato il costo sui voli, e lì viene riscosso."
     },
     {
       "type": "prose",
-      "md": "La seconda lezione è che segretezza e responsabilità sono opposti, e che un programma ha bisogno della seconda più di quanto tema la perdita della prima. Nascondere lo sforzo sovietico lo protesse dall'imbarazzo pubblico e, così facendo, tolse ogni forza esterna che avrebbe potuto costringerlo ad affrontare i suoi problemi in tempo. Apollo fu costretto a essere onesto perché il mondo intero stava guardando; all'N1 fu permesso di fallire tranquillamente, quattro volte, perché nessuno lo stava facendo. La visibilità non è solo un rischio da gestire. Per un'impresa dura e spietata, è una delle cose che rendono possibile il successo."
+      "md": "La seconda lezione è che segretezza e responsabilità sono opposti, e che un programma ha bisogno della seconda più di quanto tema la perdita della prima. Nascondere lo sforzo sovietico lo protesse dall'imbarazzo pubblico e, così facendo, strappò via ogni forza esterna che avrebbe potuto farlo confrontare con i suoi problemi in tempo. Apollo fu costretto a essere onesto perché il mondo intero stava guardando; all'N1 fu permesso di fallire in silenzio, quattro volte, perché nessuno stava guardando. La visibilità non è solo un rischio da gestire. Per un'impresa dura e spietata, è una delle cose che rendono possibile il successo."
     }
   ]
 }

@@ -1,31 +1,32 @@
 {
   "name": "Shenzhou 1",
-  "type": "PRUEBA APTA PARA TRIPULACIÓN · NO TRIPULADA · VOLADA",
-  "first": "Primera prueba orbital china de Shenzhou — abrió el camino a los vuelos tripulados de la RPC",
-  "description": "Primer vuelo del programa de naves tripuladas Shenzhou. Lanzada el 1999-11-20 a las 22:30 UTC desde Jiuquan en el vuelo inaugural del cohete tripulable Larga Marcha 2F (CZ-2F). La cápsula completó 14 órbitas a 196 × 324 km con 42,6° de inclinación y reentró para su recuperación en la estepa de Mongolia Interior el 1999-11-21 a las 19:41 UTC. Llevaba maquetas de hardware de soporte vital, paquetes de telemetría y una bandera china, además de semillas para una carga de retorno de genética en microgravedad. Marcó el compromiso de China de seguir a la URSS y EE. UU. hacia los vuelos tripulados independientes; condujo directamente a Shenzhou 5 (2003) con Yang Liwei.",
+  "type": "NAVE PRUEBA CON CAPACIDAD TRIPULADA · SIN TRIPULACIÓN · VOLADO",
+  "first": "Primera prueba orbital china Shenzhou — abrió el camino hacia el vuelo espacial tripulado de la República Popular China",
+  "description": "Primer vuelo del programa de nave espacial tripulada Shenzhou. Lanzado el 1999-11-19 a las 22:30 UTC desde Jiuquan en el vuelo inaugural del Lanzador Largo de la Marcha 2F de capacidad humana (CZ-2F). La cápsula completó 14 órbitas a 195 × 315 km, inclinación de 42,6°, y reingresó a recuperación en la estepa de Mongolia Interior el 1999-11-20 a las 19:41 UTC. Transportaba equipos de soporte vital simulados, paquetes de telemetría e una bandera china, además de semillas para carga de retorno de genética en microgravedad. Marcó el compromiso de China de seguir a la URSS y EE.UU. en el vuelo espacial tripulado independiente; condujo directamente a Shenzhou 5 (2003) con Yang Liwei.",
+  "dispatch": "<UNKNOWN>",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Long March 2F maiden flight from Jiuquan SLC-43 at 22:30 UTC.",
+      "label": "LANZAMIENTO",
+      "note": "Vuelo inaugural de Lanzador Largo de la Marcha 2F desde LA-4 Jiuquan el 1999-11-19 a las 22:30 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.001,
-      "label": "ORBIT",
-      "note": "14-orbit flight at 196 × 324 km, 42.6° inclination.",
+      "label": "ÓRBITA",
+      "note": "Vuelo de 14 órbitas a 195 × 315 km, inclinación de 42,6°.",
       "type": "nominal"
     },
     {
       "met": 0.875,
-      "label": "DE-ORBIT",
-      "note": "Service-module retro-fire over Africa.",
+      "label": "DESORBITACIÓN",
+      "note": "Retroimpulso del módulo de servicio sobre África.",
       "type": "nominal"
     },
     {
       "met": 0.882,
-      "label": "RECOVERY",
-      "note": "Capsule descended to Siziwang Banner, Inner Mongolia, 1999-11-21 19:41 UTC.",
+      "label": "RECUPERACIÓN",
+      "note": "La cápsula descendió a Dorbod Banner, Mongolia Interior, el 1999-11-20 a las 19:41 UTC.",
       "type": "nominal"
     }
   ]

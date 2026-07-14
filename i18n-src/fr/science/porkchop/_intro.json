@@ -1,8 +1,8 @@
 {
-  "headline": "Diagrammes porkchop — quand lancer, et pourquoi les fenêtres sont les fenêtres.",
+  "headline": "Diagrammes de Porkchop — quand lancer, et pourquoi les fenêtres sont les fenêtres.",
   "paragraphs": [
-    "Les planificateurs calculent des millions de trajectoires et peignent une carte de chaleur. Bon marché en bleu froid. Cher en rouge. Forme : côtelette de porc.",
-    "Pourquoi toute la carte ? Les missions ont des contraintes — fusée pas prête en temps, fenêtre de site, saison martienne. Le porkchop montre TOUS les compromis.",
-    "Six sections en ordre de lecture. Qu'est-ce qu'un porkchop, axes, échelle de couleurs, lecture des contours, viabilité."
+    "Les planificateurs de mission ne calculent pas une seule trajectoire vers Mars — ils en calculent des millions, dans une grille géante, et ils dessinent une carte thermique. Les trajectoires bon marché apparaissent en bleu froid. Les chères deviennent rouges. Le résultat, bizarrement, ressemble à une côtelette de porc. La zone bon marché est la chair de la côtelette ; la crête chère est l'os.",
+    "Pourquoi dessiner la carte entière au lieu de juste l'optimum ? Parce que les vraies missions ont des contraintes — une fusée qui n'est prête qu'une année particulière, un pas de tir qui n'est disponible que certaines semaines, un site d'atterrissage qui a besoin d'une saison spécifique sur Mars. Le diagramme de porkchop vous permet de voir TOUS les compromis à la fois et de choisir la trajectoire assez bon marché qui s'adapte à votre calendrier réel.",
+    "Six sections ici, dans l'ordre de lecture. Commencez par « Qu'est-ce qu'un diagramme de porkchop ? » et traversez les axes (départ, temps de vol), l'échelle de couleur (carte thermique de ∆v), comment lire la forme du lobe (lecture des contours), et comment mapper le diagramme de porkchop sur une fusée spécifique (viabilité). Une note sur la convention : les diagrammes de porkchop standard contournent l'énergie caractéristique C3 (km²/s²) au départ et l'arrivée V∞ (km/s) — Orrery simplifie ceci sur une seule échelle de couleur de ∆v en km/s pour la lisibilité. À la fin, vous serez capable de regarder le diagramme de porkchop de /plan pour l'une de neuf destinations et de le lire comme un dynamicien de vol."
   ]
 }

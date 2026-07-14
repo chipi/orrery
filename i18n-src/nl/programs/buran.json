@@ -1,14 +1,14 @@
 {
   "name": "Buran",
-  "tagline": "De Sovjet-ruimteveer die eruitzag als die van Amerika, in één opzicht beter vloog — en precies één keer vloog, onbemand en foutloos, voordat het land dat hem bouwde eronder vandaan verdween.",
+  "tagline": "De Sovjet-ruimteveer die eruitzag als die van Amerika, in één opzicht beter vloog — en precies één keer vloog, onbemand en foutloos, voordat het land dat hem bouwde onder hem vandaan verdween.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Tegen het midden van de jaren zeventig keek de Sovjet-Unie toe hoe de Verenigde Staten de Space Shuttle bouwden en trok een verontrustende conclusie. Ze kon niet helemaal geloven dat de Amerikanen zoveel zouden uitgeven aan een herbruikbaar ruimtevliegtuig louter om de genoemde redenen, en vreesde een verborgen militair doel — een voertuig dat de atmosfeer in kon duiken, een Sovjetsatelliet kon grijpen en naar huis kon vliegen, of wapens vanuit een baan kon laten vallen. Niet bereid te zijn zonder antwoord, gaf het Politburo opdracht voor een eigen versie. Het resultaat, Buran, was het grootste en duurste ruimteproject in de Sovjet-geschiedenis, en het begon als reactie op een dreiging die mogelijk nooit echt was geweest."
+      "md": "Tegen het midden van de jaren zeventig keek de Sovjet-Unie toe hoe de Verenigde Staten de Space Shuttle bouwden en trok een verontrustende conclusie. Men kon niet geloven dat de Amerikanen zoveel zouden uitgeven aan een herbruikbaar ruimtevliegtuig louter om de genoemde redenen, en vreesde een verborgen militair doel — een voertuig dat de atmosfeer in kon duiken, een Sovjet-satelliet kon grijpen en naar huis kon vliegen, of wapens vanuit een baan om de aarde kon laten vallen. Niet bereid te zijn zonder antwoord, gaf het Politburo opdracht voor een eigen versie. Het resultaat, Buran, was het grootste en duurste ruimteproject in de Sovjet-geschiedenis, en het begon als reactie op een dreiging die mogelijk nooit echt geweest is."
     },
     {
       "type": "prose",
-      "md": "Van buiten leek Buran bijna identiek aan de Amerikaanse orbiter — dezelfde deltavleugel, dezelfde ruwe vorm — omdat dezelfde taak en dezelfde fysica van hypersonische terugkeer een ontwerp naar hetzelfde antwoord drijven. Maar daaronder namen de Sovjet-ingenieurs twee beslissingen die hun machine onderscheidden, en beide waren, zou je kunnen zeggen, verbeteringen op het origineel. Buran had geen eigen hoofdmotoren, en Buran kon vliegen zonder dat er iemand aan boord was."
+      "md": "Van buitenaf zag Buran er bijna identiek uit aan de Amerikaanse orbiter — dezelfde deltavleugel, dezelfde ruwe vorm — omdat dezelfde taak en dezelfde natuurkunde van hypersonische terugkeer een ontwerp naar hetzelfde antwoord drijven. Maar onder de motorkap namen de Sovjet-ingenieurs twee beslissingen die hun machine onderscheidden, en beide verbeterden, naar men kan stellen, het origineel. Buran had geen eigen hoofdstuwmotoren voor de stijging — het had orbitale manoeuvreermotoren voor gebruik in de ruimte, maar de zware lift naar een baan om de aarde werd volledig door de raket verzorgd — en Buran kon vliegen zonder iemand aan boord."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/energia/01"
       },
-      "caption": "De Energia superzware drager, die Buran lanceerde. Anders dan de Amerikaanse orbiter had Buran geen hoofdmotoren: alle stuwkracht kwam van Energia, een echte zwaar-draagrakket op zich — de krachtigste die de Sovjet-Unie ooit succesvol vloog.",
+      "caption": "De Energia superzware draagraket, die Buran lanceerde. Anders dan de Amerikaanse orbiter had Buran geen hoofdstuwmotoren voor de stijging: alle stuwkracht kwam van Energia, een échte zware draagraket op zich — een van de krachtigste die ooit gevlogen hebben, en de krachtigste die de Sovjet-Unie ooit succesvol vloog.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "De eerste beslissing ging over de motoren. De Amerikaanse Shuttle monteerde zijn drie grote hoofdmotoren op de orbiter zelf, wat betekende dat die zware, dure machinerie bij elke vlucht naar de baan en terug moest worden gesleept en alleen de externe tank werd weggegooid. De Sovjets stopten in plaats daarvan alle stuwkracht in de raket: Buran vloog op Energia, een echte superzware drager die het hele werk deed om de baan te bereiken, waardoor de orbiter een lading was in plaats van onderdeel van de voortstuwing. Dit maakte Energia op zichzelf bruikbaar — een krachtige raket die andere zware ladingen kon lanceren zonder orbiter — en bevrijdde Buran van een last die zijn rivaal dertig jaar lang droeg."
+      "md": "De eerste beslissing ging over de motoren. De Amerikaanse Shuttle monteerde zijn drie grote hoofdmotoren op de orbiter zelf, wat betekende dat die zware, dure machinerie bij elke vlucht naar een baan om de aarde en terug gesleept moest worden en alleen de externe tank weggegooid werd. De Sovjets stopten in plaats daarvan alle stuwkracht in de raket: Buran vloog op Energia, een échte superzware draagraket die het hele werk deed om een baan om de aarde te bereiken, waardoor de orbiter een lading werd in plaats van onderdeel van de voortstuwing. Dit maakte Energia op zichzelf nuttig — een krachtige raket die andere zware ladingen kon lanceren zonder orbiter — en bevrijdde Buran van een last die zijn rivaal dertig jaar lang droeg."
     },
     {
       "type": "prose",
-      "md": "De tweede beslissing was automatisering. De Amerikaanse Shuttle had altijd een bemanning nodig om te landen; hij kon niet zelfstandig naar huis komen. Buran was gebouwd om de hele missie te vliegen — lancering, baan, terugkeer en landing — zonder dat er iemand aan boord was, geleid door zijn computers en de grond. In een tijd waarin volledig automatisch landen van een gevleugeld ruimtevaartuig aan de grens lag van wat mogelijk was, was dit een echte vooruitgang, en het leidde tot het ene moment waarop Buran kon bewijzen wat hij kon."
+      "md": "De tweede beslissing was automatisering. De Amerikaanse Shuttle had altijd een bemanning nodig om te landen; hij kon niet op eigen kracht thuiskomen. Buran was gebouwd om de hele missie te vliegen — lancering, baan om de aarde, terugkeer en landing — zonder iemand aan boord, geleid door zijn computers en de grond. In een tijd waarin volledige automatische landing van een gevleugeld ruimtevaartuig aan de grens lag van wat mogelijk was, was dit een echte vooruitgang, en het leidde tot het ene moment waarop Buran kon bewijzen waartoe het in staat was."
     }
   ],
   "outcome": [
@@ -35,26 +35,26 @@
       "image": {
         "reuse": "fleet/buran/05"
       },
-      "caption": "De Buran-orbiter. Hij vloog één perfecte onbemande missie in november 1988 en vloog daarna nooit meer — aan de grond gehouden door de ineenstorting van de Sovjet-economie en, uiteindelijk, van de Sovjet-Unie zelf.",
+      "caption": "De Buran orbiter. Hij vloog één perfecte onbemande missie in november 1988 en vloog daarna nooit meer — aan de grond gehouden door de ineenstorting van de Sovjet-economie en, uiteindelijk, van de Sovjet-Unie zelf.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Op 15 november 1988 vloog Buran. Hij lanceerde op Energia, cirkelde twee keer om de aarde, keerde terug en — in een rukkende zijwind die elke piloot op de proef zou hebben gesteld — zette zichzelf volledig automatisch neer op de landingsbaan in Baikonur, met een landing binnen meters van zijn doel zonder dat er op enig moment een mens aan boord was. Het was een foutloze vlucht en een echte technische triomf: geen enkel ander gevleugeld ruimtevaartuig had een complete orbitale missie gevlogen en zichzelf geland. En het was de enige keer dat Buran ooit vloog."
+      "md": "Op 15 november 1988 vloog Buran. Hij lanceerde op Energia, cirkelde tweemaal om de aarde, keerde terug en — in een rukachtige zijwind die elke piloot op de proef gesteld zou hebben — bracht zichzelf volledig automatisch neer op de landingsbaan bij Baikonur, landend binnen meters van zijn doel zonder op enig moment een mens aan boord. Het was een foutloze vlucht en een echte technische triomf: geen ander gevleugeld ruimtevaartuig had een volledige orbitale missie gevlogen en zichzelf geland. En het was de enige keer dat Buran ooit vloog."
     },
     {
       "type": "prose",
-      "md": "Het moment kon niet slechter zijn geweest. Buran bereikte zijn triomf precies toen de Sovjet-Unie uit elkaar begon te vallen. Binnen drie jaar was het land verdwenen; het geld was verdampt; en een enorm duur ruimtevliegtuig gebouwd om een Amerikaanse dreiging tegen te gaan had geen dreiging meer om tegen te gaan, geen budget om te vliegen, en geen missie die iemand zich kon veroorloven eraan te geven. Het programma sukkelde op papier voort tot 1993 en werd toen definitief geannuleerd. De laatste vernedering kwam in 2002, toen het dak van de hangar waarin de enige orbiter die daadwerkelijk had gevlogen werd bewaard instortte, waarbij het ruimtevaartuig werd verpletterd en acht arbeiders omkwamen. Buran's enkele vlucht blijft een van de meest indrukwekkende — en meest zinloze — prestaties in de geschiedenis van de ruimtevaart."
+      "md": "De timing had niet slechter kunnen zijn. Buran bereikte zijn triomf precies toen de Sovjet-Unie begon uiteen te vallen. Binnen drie jaar was het land verdwenen; het geld was weg; en een enorm duur ruimtevliegtuig gebouwd om een Amerikaanse dreiging te weerstaan had geen dreiging meer om te weerstaan, geen budget om te vliegen, en geen missie die iemand zich kon veroorloven eraan te geven. Het programma sleepte zich op papier voort tot 1993 en werd toen ronduit geannuleerd. De ultieme vernedering kwam in 2002, toen het dak van de hangar waarin de ene orbiter die werkelijk gevlogen had stond instortte, het ruimtevaartuig verpletterde en acht arbeiders doodde. Buran's enkele vlucht blijft een van de meest indrukwekkende — en meest zinloze — prestaties in de geschiedenis van de ruimtevaart."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Buran is het verhaal van een schitterend antwoord op een vraag waarvan werd opgehouden deze te stellen. Technisch was het een succes en op sommige punten een verbetering op het voertuig dat het kopieerde — de aparte drager, de automatische landing, echte technische vooruitgang. Maar het werd gebouwd om strategische en politieke redenen die verdampten, tegen kosten die de Sovjet-economie niet kon dragen, en het arriveerde op zijn moment van triomf precies toen het systeem dat opdracht ervoor gaf instortte. Geen enkele hoeveelheid technische excellentie kon overleven het verdwijnen van de reden voor het programma en het geld om het te laten draaien."
+      "md": "Buran is het verhaal van een schitterend antwoord op een vraag die niet meer gesteld werd. Technisch was het een succes en op sommige punten een verbetering op het voertuig dat het kopieerde — de aparte draagraket, de automatische landing, echte ingenieursvooruitgang. Maar het was gebouwd om strategische en politieke redenen die verdampten, tegen kosten die de Sovjet-economie niet kon dragen, en het arriveerde op zijn moment van triomf precies toen het systeem dat het had besteld instortte. Geen enkele mate van ingenieursuitmuntendheid kon de verdwijning overleven van de reden voor het programma en het geld om het te draaien."
     },
     {
       "type": "prose",
-      "md": "Er is een ironie die het waard is vast te houden. In de twee opzichten waarin Buran verschilde van de Amerikaanse Shuttle — het plaatsen van de motoren op de raket in plaats van op de orbiter, en automatisch vliegen zonder bemanning — had het waarschijnlijk de betere ideeën, en beide hebben naklank in latere ruimtevaart. En toch vloog de Amerikaanse Shuttle 135 keer over dertig jaar en bouwde een ruimtestation, terwijl Buran één keer vloog. De les is niet dat Buran's techniek slechter was; het is dat techniek nooit het hele verhaal is. Een programma heeft een doel en een budget nodig die zijn eerste vlucht overleven, en Buran had geen van beide."
+      "md": "Er is een ironie die de moeite waard is om vast te houden. In de twee opzichten waarin Buran verschilde van de Amerikaanse Shuttle — de motoren op de raket zetten in plaats van op de orbiter, en automatisch vliegen zonder bemanning — had het aantoonbaar de betere ideeën, en beide hebben echo's in latere ruimtevaart. En toch vloog de Amerikaanse Shuttle 135 keer over dertig jaar en bouwde een ruimtestation, terwijl Buran één keer vloog. De les is niet dat Buran's ingenieurswerk slechter was; het is dat ingenieurswerk nooit het hele verhaal is. Een programma heeft een doel nodig en een budget dat zijn eerste vlucht overleeft, en Buran had geen van beide."
     }
   ],
   "legacy": [
@@ -63,26 +63,26 @@
       "image": {
         "reuse": "fleet/buran-ok-gli/02"
       },
-      "caption": "OK-GLI, Buran's atmosferische testorbiter — uitgerust met straalmotoren om landingsbaanbenaderingen te oefenen, en nu een museumstuk in Duitsland. De overgebleven Buran-hardware is verspreid over musea; de enige orbiter die de ruimte bereikte werd vernietigd in 2002.",
+      "caption": "OK-GLI, Buran's atmosferische testorbiter — uitgerust met straalmotoren om landingsbaannadering te oefenen, en nu een museumstuk in Duitsland. De overgebleven Buran-hardware ligt verspreid over musea; de ene orbiter die de ruimte bereikte werd vernietigd in 2002.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "Buran's directe erfenis is bijna niets — een geannuleerd programma, een enkele vlucht, hardware in musea, en één orbiter verloren onder een ingestort dak. Maar zijn indirecte erfenis is reëel. Energia bewees dat de Sovjet-Unie eindelijk een superzware raket kon bouwen die daadwerkelijk werkte, wat het falen van de N1 goedmaakte — ook al werd deze ook geannuleerd bij gebrek aan iets om te lanceren. En Buran's volledig geautomatiseerde vlucht toonde een vermogen dat pas decennia later standaard zou worden, toen onbemande en autonoom landende ruimtevaartuigen routine werden."
+      "md": "Buran's directe erfenis is vrijwel niets — een geannuleerd programma, een enkele vlucht, hardware in musea, en één orbiter verloren onder een ingestort dak. Maar zijn indirecte erfenis is reëel. Energia bewees dat de Sovjet-Unie eindelijk een superzware raket kon bouwen die werkelijk werkte, waarmee het falen van de N1 werd goedgemaakt — ook al werd ook die geannuleerd bij gebrek aan iets om te lanceren. En Buran's volledig geautomatiseerde vlucht demonstreerde een capaciteit die pas decennia later standaard zou worden, toen onbemande en autonoom landende ruimtevaartuigen routine werden."
     },
     {
       "type": "prose",
-      "md": "Vooral echter houdt Buran stand als waarschuwend monument — het duidelijkste geval in het ruimtetijdperk van een programma dat de techniek goed kreeg en al het andere fout. Het staat naast de Amerikaanse Shuttle als de weg die niet werd genomen, en naast de N1 als het andere grote Sovjet-wat-had-kunnen-zijn: het bewijs dat in de ruimtevaart een briljante machine zonder doel en zonder geld nog steeds een machine is die niet vliegt."
+      "md": "Maar voornamelijk houdt Buran stand als een waarschuwend monument — het duidelijkste geval in het ruimtetijdperk van een programma dat het ingenieurswerk goed deed en al het andere fout. Het staat naast de Amerikaanse Shuttle als de weg die niet genomen werd, en naast de N1 als het andere grote Sovjet-wat-had-kunnen-zijn: bewijs dat in de ruimtevaart een briljante machine zonder doel en zonder geld nog steeds een machine is die niet vliegt."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Buran's eerste les is dat een programma een reden nodig heeft die zijn oorsprong overleeft. Het werd geboren uit een strategische angst en een weigering de Amerikanen een capaciteit te laten bezitten die de Sovjet-Unie miste — en toen de angst verflauwde en de Koude Oorlog eindigde, was er niets meer over om de enorme kosten te rechtvaardigen. Een dure capaciteit bouwen om een rivaal te evenaren, in plaats van om een klus te doen die je werkelijk nodig hebt, laat je achter met een schitterende machine en geen reden om hem te laten vliegen zodra de rivaliteit bekoelt."
+      "md": "Buran's eerste les is dat een programma een reden nodig heeft die zijn oorsprong overleeft. Het werd geboren uit strategische vrees en een weigering om de Amerikanen een capaciteit te laten bezitten die de Sovjet-Unie miste — en toen de vrees wegebde en de Koude Oorlog eindigde, bleef er niets over om de enorme kosten te rechtvaardigen. Een dure capaciteit bouwen om een rivaal te evenaren, in plaats van om een klus te doen die je werkelijk gedaan moet hebben, laat je achter met een schitterende machine en geen reden om hem te laten vliegen zodra de rivaliteit afkoelt."
     },
     {
       "type": "prose",
-      "md": "De tweede les is dat technische excellentie een programma niet kan redden van het verlies van zijn doel en zijn budget. Buran was, in echte zin, een beter ontwerp dan het voertuig waarop het antwoordde — en het vloog één keer. De Amerikaanse Shuttle, met al zijn gebreken, vloog dertig jaar omdat het missies had om te vliegen en geld om ze te vliegen. Een ruimtevaartuig is alleen zo duurzaam als de institutionele wil en financiering erachter; zonder die is zelfs een foutloze vlucht een einde in plaats van een begin."
+      "md": "De tweede les is dat ingenieursuitmuntendheid een programma niet kan redden van het verlies van zijn doel en zijn budget. Buran was, op echte manieren, een beter ontwerp dan het voertuig waarop het antwoordde — en het vloog één keer. De Amerikaanse Shuttle, met alle gebreken, vloog dertig jaar omdat het missies had om te vliegen en geld om ze te vliegen. Een ruimtevaartuig is slechts zo duurzaam als de institutionele wil en financiering erachter; zonder die is zelfs een foutloze vlucht een einde in plaats van een begin."
     }
   ]
 }

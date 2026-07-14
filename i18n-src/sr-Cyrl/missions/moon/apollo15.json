@@ -1,74 +1,74 @@
 {
   "name": "Apollo 15",
-  "dispatch": "[",
-  "type": "ПИЛОТИРАНИ ЛЕНДЕР · ОБАВЉЕНО",
-  "first": "Прва Ј-мисија — продужени боравак, прво лунарно возило (LRV), \"Камен Постања\"",
-  "description": "Прва \"Ј-мисија\" — научни Аполо са продуженим боравком са новим лунарним возилом. LRV је дао Скоту + Ирвину распон од 27,9 km (наспрам само-пешачких 3,5 km Аполо-14), отварајући драматичну локацију Хадли-Апенин у подножју планинског венца од 4,5 km и ивици кривудаве Хадли долине. Три EVA-а укупно 18 ч 35 м, 77 kg узорака враћено, укључујући чувени \"Камен Постања\" (узорак 15415) — аноррозит стар 4,1 милијарду година који потврђује магма-океанско порекло коре лунарних висија. Скотов ТВ преноси \"тест чекић-перо\" уживо потврдио је Галилејев закон гравитације.",
+  "type": "СА ПОСАДОМ ЛЕНДЕР · ИЗВРШЕНА",
+  "first": "Прва J-мисија — продужено боравиште, први Месечев ровер, „Genesis Rock\"",
+  "dispatch": "До Apollo 15 трка је одавно била завршена, и наука је преузела управу — буквално. Ово је био први лет који је носио Месечев ровер, који је претворио радијус од две миље хода у праву експедицију од осамнаест миља, и спустио се не на сигурну равнину већ у долину између планинског ланца и извијаног кањона. Scott и Irwin су се вратили кући са „Genesis Rock\", четирмилијардногодишњим одломком оригиналне Месечеве коре која је потврдила како је настала. Apollo је престао да посећује Месец и почео да га проучава — и наставио је да буде бољи у томе све док није отказан.",
+  "description": "Прва „J-мисија\" — научни Apollo са продуженим боравишtem и новим Месечевим ровером. LRV је Scott и Irwin дао радијус од 27,9 km (у поређењу са 3,5 km пешачког Apollo 14), отворивши драматичну локацију Hadley-Apennine код подножја планинског ланца од 4,5 km и краја извијаног Hadley Rille. Три EVA укупно 18 h 35 m, врaћено 77 kg узорака, укључујући чувени „Genesis Rock\" (узорак 15415) — анортозит од 4,1 милијарди години старости који потврђује магма-океан порекло коре лунарних возвишења. Scott-ова телевизијски емитована „drop чекива и пера\" верификовала је Galileo-в закон гравитације уживо. Worden у орбити око Месеца управљао је SIM-bay пун даљински управљаних инструмената (картограф камере, гама-зрак, X-зрак, алфа-честица спектрометри) и извршио је прву EVA у дубоком свемиру на путу кући (~39-минутна EVA на ~317 000 km од Земље да преузме филм контејнере). Recovery Apollo 15 је било оквареном једног од три главна падобрана која нису се у потпуности развила — CM је пало тврдо али је посада била безбедна.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-510) from Kennedy Space Center LC-39A 1971-07-26 13:34 UTC.",
+      "label": "ЛАНСИРАЊЕ",
+      "note": "Saturn V (AS-510) са Kennedy Space Center LC-39A 1971-07-26 13:34 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection.",
+      "note": "Трансмесечева инјекција.",
       "type": "nominal"
     },
     {
       "met": 3.25,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "Уласк у орбиту око Месеца. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.79,
-      "label": "TOUCHDOWN",
-      "note": "Falcon lands at Hadley-Apennine 1971-07-30 22:16 UTC — first landing at a non-mare highland site.",
+      "label": "СЛЕТАЊЕ",
+      "note": "Falcon слеће у Hadley-Apennine 1971-07-30 22:16 UTC — прво слетање на појави нон-mare светлосну локацију.",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "FIRST LRV TRAVERSE",
-      "note": "EVA-1: First Lunar Roving Vehicle deployment + 10.3 km traverse to Elbow Crater + the rim of Hadley Rille.",
+      "label": "ПРВА LRV ТРАНСВЕРЗАЛА",
+      "note": "EVA-1: Прво развођење Месечевог ровера + трансверзала од 10,3 km до Elbow кратера + ивица Hadley Rille.",
       "type": "info"
     },
     {
       "met": 5.5,
       "label": "GENESIS ROCK",
-      "note": "EVA-2: At Spur Crater, Scott + Irwin recover sample 15415 — a 4.1-billion-year-old anorthosite from the original lunar crust.",
+      "note": "EVA-2: На Spur кратеру, Scott и Irwin поднете узорак 15415 — анортозит од 4,1 милијарди години од оригиналне месечеве коре.",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "HAMMER-FEATHER DROP",
-      "note": "EVA-3 / pre-ascent: Scott televises a hammer + feather dropped together; both hit the regolith simultaneously, verifying Galileo's 1589 prediction live.",
+      "label": "DROP ЧЕКИВА И ПЕРА",
+      "note": "EVA-3 / пред-асцент: Scott телевизијски емитује чекиво и перо која падају заједно; оба ударе реголит истовремено, верификујући Galileo-в предвиђање из 1589 уживо.",
       "type": "info"
     },
     {
       "met": 6.25,
-      "label": "ASCENT",
-      "note": "Falcon lifts off after 66 h 55 m on surface. 77 kg samples + first ascent televised from the LRV-mounted camera (operated remotely by Houston).",
+      "label": "АСЦЕНТ",
+      "note": "Falcon полеће након 66 h 55 m на površini. 77 kg узорака + прва асцента емитована са LRV-монтиране камере (даљински управљана од Houston).",
       "type": "nominal"
     },
     {
       "met": 8.2,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Трансземаљска инјекција. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 9.5,
-      "label": "DEEP-SPACE EVA",
-      "note": "Worden performs first-ever EVA in cislunar space (38 min at ~315 000 km from Earth) to retrieve SIM-bay film canisters.",
+      "label": "EVA У ДУБОКОМ СВЕМИРУ",
+      "note": "Worden извршава прву икад EVA у цислунарном простору (~39 мин на ~317 000 km од Земље) да преузме SIM-bay филм контејнере.",
       "type": "info"
     },
     {
       "met": 12.31,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+      "label": "СЛЕТАЊЕ НА ВОДУ",
+      "note": "CM пада на воду у Северном Пацифику 1971-08-07 20:46 UTC. Једна од три главна падобрана није се потпуно развила; слетање тврдо али безбедно. Recovery од USS Okinawa.",
       "type": "warning"
     }
   ]

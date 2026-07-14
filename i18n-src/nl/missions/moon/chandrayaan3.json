@@ -1,43 +1,43 @@
 {
   "name": "Chandrayaan-3",
-  "type": "LANDER · ROVER · GEVLOGEN",
-  "first": "Eerste zachte landing nabij de maanzuidpool",
-  "description": "Na het verlies van Chandrayaan-2's Vikram-lander in 2019, was ISRO's derde maanmissie bewust conservatief — gericht op de lander in plaats van een orbiter mee te dragen. Vikram zette neer op 69,4° Z breedte, het dichtstbij dat enig ruimtevaartuig ooit een maanpool kwam. De Pragyan-rover detecteerde voor het eerst zwavel op het maanoppervlak en deed in-situ thermische metingen. India werd de vierde natie die zacht op de Maan landde en de eerste in de poolregio's waar toekomstige waterijswinning waarschijnlijk zal gebeuren.",
+  "type": "LANDER · ROVER · FLOWN",
+  "first": "Eerste zachte landing nabij de zuidpool van de maan",
+  "description": "Na het verlies van de Vikram-lander van Chandrayaan-2 in 2019, was ISRO's derde maanmissie opzettelijk conservatief — gericht op de lander in plaats van een orbiter mee te nemen. Vikram landde op 69,4° ZB breedtegraad, de dichtste benadering van een maanpool door enig ruimtevaartuig. De Pragyan-rover detecteerde voor het eerst zwavel op het maanoppervlak en voerde in-situ thermische metingen uit. India werd het vierde land dat zachte landde op de maan, dichter bij een maanpool dan enig ruimtevaartuig daarvoor — een regio waar toekomstige mijnbouw van waterijs mogelijk kan worden.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "LVM3 M4 (voorheen GSLV Mk III) vanuit Sriharikota.",
+      "note": "LVM3 M4 (voorheen GSLV Mk III) van Sriharikota.",
       "type": "nominal"
     },
     {
       "met": 22,
       "label": "MOI",
-      "note": "Maanbaan-insertie (meerdere Aarde- en maanbaan-verhogende verbrandingen gebruikt).",
+      "note": "Maanbaan-inbrenging (meerdere burn-manoeuvres in aard- en maanbaan gebruikt).",
       "type": "nominal"
     },
     {
       "met": 38,
-      "label": "LANDER-SCHEIDING",
+      "label": "LANDER SCHEIDING",
       "note": "Vikram-lander scheidt van voortstuwingsmodule.",
       "type": "nominal"
     },
     {
       "met": 40,
-      "label": "TOUCHDOWN",
-      "note": "Vikram landt bij Shiv Shakti Point nabij zuidpool 2023-08-23 12:33 UTC.",
+      "label": "LANDING",
+      "note": "Vikram landde op Shiv Shakti Point nabij zuidpool 2023-08-23 12:33 UTC.",
       "type": "nominal"
     },
     {
       "met": 40.5,
-      "label": "PRAGYAN INGEZET",
-      "note": "Rover rolt van helling; begint oppervlaktewetenschap.",
+      "label": "PRAGYAN UITGEPLAATST",
+      "note": "Rover rolt van de landingsramp; begint met oppervlaktewetenschap.",
       "type": "info"
     },
     {
       "met": 53,
       "label": "MAANNACHT",
-      "note": "Lander/rover in hibernatie geplaatst als de maannacht begint.",
+      "note": "Lander/rover in winterslaap gezet als de maannacht begint.",
       "type": "info"
     }
   ]

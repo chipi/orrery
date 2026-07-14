@@ -1,7 +1,33 @@
 {
   "name": "Liberty Bell 7 / MR-4",
-  "dispatch": "Liberty Bell 7 a volé impeccablement et reste dans les mémoires pour les trente secondes qui ont suivi la fin du vol. Le saut suborbital de Gus Grissom répétait celui de Shepard — la preuve que le premier vol n'avait pas été un coup de chance — mais une fois sur l'eau, la nouvelle trappe explosive s'est déclenchée d'elle-même, la capsule s'est remplie d'eau et a coulé au fond de l'Atlantique tandis que Grissom a failli se noyer dans sa combinaison qui se remplissait. La question de savoir s'il avait heurté le déclencheur ou si celui-ci s'était déclenché tout seul a fait débat pendant le reste de sa vie sans jamais être tranchée. La véritable leçon du vol était plus discrète et plus utile : la partie la plus dangereuse d'un vol spatial n'est pas toujours le vol spatial lui-même.",
-  "type": "HABITÉ SUBORBITAL · VOLÉ",
-  "first": "Deuxième vol suborbital américain ; un dysfonctionnement de l'écoutille a fait perdre la capsule (récupérée en 1999)",
-  "description": "Le vol suborbital de 15 minutes de Gus Grissom — deuxième Américain dans l'espace, premier vol équipé d'une écoutille de secours explosive. Après l'amerrissage, l'écoutille s'est déclenchée prématurément, la capsule s'est remplie d'eau et Liberty Bell 7 a coulé à 4900 m de profondeur ; Grissom s'est échappé, mais sa combinaison a pris l'eau et il a failli se noyer pendant la récupération par hélicoptère. La cause du déclenchement de l'écoutille est restée controversée pendant des décennies ; Grissom a toujours affirmé n'avoir pas touché le percuteur. Récupérée le 20-07-1999 par une expédition Oceaneering/Discovery Channel, restaurée et exposée aujourd'hui au Kansas Cosmosphere & Space Center, Hutchinson KS. Le livre de Tom Wolfe et le film The Right Stuff (1983) ont dramatisé ce vol et la controverse de l'écoutille."
+  "type": "VOL SUBORBITALE HABITÉ · RÉALISÉ",
+  "first": "Deuxième vol suborbitale américain ; dysfonctionnement du panneau écoutille a perdu la capsule (récupérée en 1999)",
+  "dispatch": "Liberty Bell 7 a volé sans faille et est mémorisée pour les trente secondes après qu'elle cesse de voler. Le saut suborbitale de Gus Grissom a répété celui de Shepard — preuve que le premier vol n'avait pas été un coup de chance — mais sur l'eau, l'écoutille explosive nouvelle s'est déclenchée d'elle-même, la capsule a inondé, et elle a coulé au fond de l'Atlantique tandis que Grissom a failli se noyer dans sa combinaison qui se remplissait. Qu'il ait appuyé sur le détente ou qu'elle se soit déclenchée d'elle-même a été débattu tout le reste de sa vie et n'a jamais été résolu. La véritable leçon du vol était plus discrète et plus utile : la partie la plus dangereuse d'un vol spatial n'est pas toujours le vol spatial lui-même.",
+  "description": "Vol suborbitale de 15 min de Gus Grissom — deuxième Américain dans l'espace, premier vol à équiper une écoutille d'évasion explosive. Après l'amerrissage, l'écoutille s'est déclenchée prématurément, la capsule a inondé, et Liberty Bell 7 a coulé dans 4900 m d'eau ; Grissom s'est échappé mais sa combinaison a pris de l'eau et il a failli se noyer lors du repérage en hélicoptère. La cause du déclenchement de l'écoutille a demeuré controversée pendant des décennies ; Grissom a maintenu qu'il n'avait pas appuyé sur le percuteur. Récupérée 1999-07-20 par une expédition Oceaneering/Discovery Channel, restaurée et actuellement exposée au Kansas Cosmosphere & Space Center, Hutchinson KS. Le livre de Tom Wolfe / film de 1983 The Right Stuff a dramatisé ce vol + la controverse de l'écoutille.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "MR-4 depuis Cape Canaveral LC-5 1961-07-21 12:20 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.000018,
+      "label": "APOGÉE",
+      "note": "Apogée 190 km après 2,5 minutes ; ~5 min d'impesanteur.",
+      "type": "info"
+    },
+    {
+      "met": 0.000174,
+      "label": "AMERRISSAGE",
+      "note": "Océan Atlantique 480 km en aval. Écoutille déclenchée prématurément — capsule inondée et coulée. Grissom s'est échappé ; récupéré par l'USS Randolph.",
+      "type": "warning"
+    },
+    {
+      "met": 13880,
+      "label": "RÉCUPÉRATION DE LA CAPSULE",
+      "note": "Liberty Bell 7 remontée de 4900 m de profondeur par Oceaneering International, 1999-07-20.",
+      "type": "info"
+    }
+  ]
 }

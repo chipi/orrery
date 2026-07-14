@@ -1,31 +1,31 @@
 {
   "name": "Chang'e 4 / Yutu-2",
-  "type": "LANDER LATO LONTANO · ROVER · ATTIVO",
-  "first": "Primo atterraggio morbido sul lato nascosto della Luna",
-  "description": "Il lato nascosto della Luna non ha una linea di vista radio diretta con la Terra. Per far atterrare un veicolo spaziale lì, la Cina ha prima lanciato il satellite relè Queqiao in un’orbita attorno al punto Lagrange Terra-Luna L2, un punto di osservazione che vede contemporaneamente sia il lato lontano che la Terra. Con questa infrastruttura in atto, Chang'e 4 divenne il primo veicolo spaziale ad atterrare dolcemente sul lato opposto. Il rover Yutu-2 è operativo da gennaio 2019 e ha percorso oltre 1,9 km, la traversata più lunga di qualsiasi rover lunare.",
+  "type": "LANDER EMISFERO LONTANO · ROVER · ATTIVO",
+  "first": "Primo allunaggio morbido sull'emisfero lunare lontano",
+  "description": "L'emisfero lunare lontano non ha linea radio diretta verso la Terra. Per allunare una sonda lì, la Cina ha dapprima lanciato il satellite relè Queqiao in orbita halo attorno al punto di Lagrange Terra-Luna L2 — un osservatorio privilegiato che vede simultaneamente l'emisfero lontano e la Terra. Con questa infrastruttura in posizione, Chang'e 4 è diventato il primo veicolo spaziale a effettuare un allunaggio morbido sull'emisfero lontano. Il rover Yutu-2 è in funzione dal gennaio 2019 e ha percorso ~1,6 km a partire dal 2024, rendendolo il rover lunare più longevo della storia.",
   "events": [
     {
       "met": 0,
       "label": "LANCIO",
-      "note": "Lunga Marcia 3B da Xichang.",
+      "note": "Long March 3B da Xichang.",
       "type": "nominal"
     },
     {
       "met": 4,
-      "label": "MOI",
-      "note": "Inserimento nell'orbita lunare.",
+      "label": "ILO",
+      "note": "Inserimento in orbita lunare.",
       "type": "nominal"
     },
     {
       "met": 27,
-      "label": "TOCCO",
-      "note": "Il lander atterra al cratere Von Kármán 03-01-2019: la prima navicella spaziale sul lato opposto. Tutte le comunicazioni tramite relè Queqiao su Terra-Luna L2.",
+      "label": "ALLUNAGGIO",
+      "note": "Il lander si posa al Cratere di Von Kármán 2019-01-03 — primo veicolo spaziale sull'emisfero lontano. Tutte le comunicazioni via relè Queqiao a L2 Terra-Luna.",
       "type": "nominal"
     },
     {
       "met": 27.01,
-      "label": "YUTU-2 SCHIERATO",
-      "note": "Il Rover rotola giù dalla rampa.",
+      "label": "YUTU-2 DISPIEGATO",
+      "note": "Il rover scende dalla rampa.",
       "type": "info"
     }
   ]

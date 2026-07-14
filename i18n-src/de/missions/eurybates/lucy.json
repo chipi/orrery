@@ -1,8 +1,8 @@
 {
   "name": "Lucy",
-  "type": "MULTI-FLYBY · ACTIVE",
-  "first": "Erste Mission zu den Jupiter-Trojanern; besucht 8 Asteroiden auf einer einzigen 12-jährigen Flugbahn — mehr Himmelskörper in einer einzigen Mission als jede vorherige planetenwissenschaftliche Kampagne",
-  "description": "Lucy erreicht die L4- und L5-Lagrange-Wolken — Populationen primordialer Asteroiden, die Jupiter um 60° vorauseilen bzw. folgen und vermutlich Material aus der äußeren protoplanetaren Scheibe bewahren. Drei Erd-Schwerkraftunterstützungen (2022, 2024, 2030) formen eine einzige Flugbahn, die sieben trojanische Asteroiden plus einen Bonus-Hauptgürtelkörper besucht. Bonusbegegnung: Donaldjohanson 2025-04. L4-Schwarm: Eurybates + Mond Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Nach EGA-3 (2030-12) folgt der nachlaufende L5-Schwarm: Patroclus-Menoetius-Doppelsystem (2033-03) — das größte bekannte trojanische Doppelsystem, ein passender Höhepunkt für die Namensgeberin der Mission (Lucy, das Hominiden-Fossil; Patroclus-Menoetius, die beiden Figuren, die in der Ilias gemeinsam fielen).",
+  "type": "MEHRFACH-VORBEIFLUG · AKTIV",
+  "first": "Erste Mission zu den Jupiter-Trojanern; besucht 11 Körper auf 8 Asteroiden und ihren Monden auf einer einzigen 12-jährigen Flugbahn — eine Rekordanzahl von Objekten auf getrennten Sonnenumlaufbahnen",
+  "description": "Lucy zielt auf die L4- und L5-Lagrange-Wolken — Populationen von primären Asteroiden, die Jupiter um 60° voraus und hinterher führen und Material aus der äußeren Protoplanetarscheibe bewahrt haben sollen. Drei Schwerkraftunterstützungen durch die Erde (2022, 2024, 2030) bilden eine einzige Flugbahn, die sieben Trojaner-Asteroiden plus Bonusziele im Hauptgürtel besucht. Erster Asteroidenkontakt: 152830 Dinkinesh (2023-11-01, ~790 m), bei dem Abbildungen den Kontaktbinär-Satelliten Selam offenbarten. Bonushauptgürtel: Donaldjohanson 2025-04. L4-Schwarm: Eurybates + Mond Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Nach EGA-3 (2030-12) der nachfolgende L5-Schwarm: Patroclus-Menoetius-Binär (2033-03) — der größte bekannte Trojaner-Binär, ein würdiger Höhepunkt für den Namensgeber der Mission (Lucy das Homininen-Fossil; Patroclus-Menoetius die beiden Charaktere, die in der Ilias zusammen fielen).",
   "events": [
     {
       "met": 0,
@@ -13,49 +13,55 @@
     {
       "met": 365,
       "label": "EGA-1",
-      "note": "Erste Erd-Schwerkraftunterstützung 2022-10-16.",
+      "note": "Erste Schwerkraftunterstützung durch die Erde 2022-10-16.",
+      "type": "info"
+    },
+    {
+      "met": 746,
+      "label": "DINKINESH",
+      "note": "2023-11-01. Erster Asteroidenvorbeiflug — ~790 m Hauptgürtelelement; Satellit Selam (Kontaktbinär) entdeckt.",
       "type": "info"
     },
     {
       "met": 1290,
       "label": "DONALDJOHANSON",
-      "note": "Hauptgürtel-Bonus-Vorbeiflug 2025-04. 4-km-C-Typ-Asteroid.",
+      "note": "Bonusvorbeiflug im Hauptgürtel 2025-04. 4-km C-Typ-Asteroid.",
       "type": "info"
     },
     {
       "met": 2127,
       "label": "EURYBATES + QUETA",
-      "note": "2027-08. Erste Trojaner-Begegnung. 64-km-C-Typ + 1-km-Mond.",
+      "note": "2027-08. Erster Trojanerkontakt. 64-km C-Typ + 1-km Mond.",
       "type": "info"
     },
     {
       "met": 2280,
       "label": "POLYMELE",
-      "note": "21-km-P-Typ-Trojaner mit unbenanntem Satelliten.",
+      "note": "21-km P-Typ-Trojaner mit unbenanntem Satelliten.",
       "type": "info"
     },
     {
       "met": 2660,
       "label": "LEUCUS",
-      "note": "35-km-D-Typ-Trojaner, langsamer Rotator (446 h).",
+      "note": "35-km D-Typ-Trojaner, langsamer Rotator (446 h).",
       "type": "info"
     },
     {
       "met": 2820,
       "label": "ORUS",
-      "note": "51-km-D-Typ-Trojaner.",
+      "note": "51-km D-Typ-Trojaner.",
       "type": "info"
     },
     {
       "met": 3445,
       "label": "EGA-3",
-      "note": "Letzte Erd-Unterstützung 2030-12. Auf dem Weg zur L5-Wolke.",
+      "note": "Letzte Schwerkraftunterstützung durch die Erde 2030-12. Wendet sich zur L5-Wolke.",
       "type": "info"
     },
     {
       "met": 4170,
       "label": "PATROCLUS-MENOETIUS",
-      "note": "2033-03. Missions-Höhepunkt: 113-km + 104-km-Doppel-Trojaner.",
+      "note": "2033-03. Missionshöhepunkt: 113-km + 104-km Trojaner-Binär.",
       "type": "info"
     }
   ]

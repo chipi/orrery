@@ -1,20 +1,20 @@
 {
   "name": "Galileo",
-  "type": "ORBITER · GEVLOGEN",
-  "first": "Eerste ruimtevaartuig dat rond Jupiter draaide; atmosferische probe in Jupiter-wolken",
-  "dispatch": "Galileo had verlamd moeten zijn voordat het überhaupt aankwam. Zijn hoofdantenne bleef halfopen steken onderweg naar Jupiter, waardoor de datatransmissiesnelheid terugviel tot een straaltje — en de missie slaagde toch, omdat ingenieurs vanaf de aarde zijn software herschreven om de wetenschap door een minuscule back-upantenne te persen. Het werd het eerste ruimtevaartuig dat Jupiter in een baan om draaide, liet een sonde in de wolken van de reuzenplaneet zakken, en bracht acht jaar door met het bezoeken van de manen. Zijn grootste vondst kwam langzaam voort uit die volharding: de manier waarop het magneetveld van Jupiter zich om Europa heen wikkelde kon alleen worden verklaard door een zoute oceaan onder het ijs — het sterkste bewijs tot dan toe dat een maan van Jupiter vloeibaar water zou kunnen bevatten, en leven. Aan het eind werd het met opzet Jupiter ingevlogen, zodat het nooit op Europa zou kunnen neerstorten en het zou kunnen besmetten.",
-  "description": "Gelanceerd vanuit Spaceshuttle Atlantis na de lange post-Challenger-pauze, trotseerde Galileo de binnenste planetoïdengordel en voerde de eerste langetermijnstudie uit van Jupiter en zijn manen vanuit een baan. Het ontdekte het geïnduceerde magnetische veld van Europa — sterk bewijs van een ondergrondse oceaan — en zag Shoemaker-Levy 9 op Jupiter inslaan. De missie eindigde met een gecontroleerde duik in Jupiter in 2003 om besmetting te voorkomen van ijzige manen die omstandigheden voor leven kunnen herbergen.",
+  "type": "ORBITER · UITGEVOERD",
+  "first": "Eerste ruimtevaartuig dat Jupiter omcirkelde; atmosferische sonde in Jupiters wolken",
+  "dispatch": "Galileo had al voor aankomst bij Jupiter verlamd kunnen zijn. De hoofdantenne raakte halfopen onderweg naar Jupiter, wat de gegevenssnelheid tot een druppel beperkte — maar de missie slaagde toch, omdat ingenieurs de software vanaf aarde herschreven om de wetenschap door een kleine back-upantenne uit te persen. Het werd het eerste ruimtevaartuig dat Jupiter omcirkelde, liet een sonde in de wolken van de reuzenplaneet vallen, en bracht acht jaar door met het verkennen van de manen. Zijn grootste ontdekking kwam langzaam uit die volharding voort: de manier waarop Jupiters magnetische veld om Europa heen wikkelde kon alleen worden verklaard door een zout oceaan onder het ijs — het sterkste bewijs tot dan toe dat een maan van Jupiter vloeibaar water zou kunnen bevatten, en mogelijk leven. Aan het einde werd het opzettelijk in Jupiter gevlogen, zodat het nooit op Europa zou kunnen neerstorten en het zou kunnen besmetten.",
+  "description": "Gelanceerd vanuit Space Shuttle Atlantis na de lange pauze na Challenger, trotseert Galileo de binnenasteröïdenriem en voerde het eerste langetermijnonderzoek van Jupiter en zijn manen vanuit een baan uit. Het ontdekte Europas geïnduceerde magnetische veld — sterk bewijs van een suboppervlakte-oceaan — en observeerde hoe Shoemaker-Levy 9 in Jupiter inboorde. De missie eindigde met een gecontroleerde duik in Jupiter in 2003 om besmetting van ijzige manen die mogelijk gunstige omstandigheden voor leven kunnen hebben, te voorkomen.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "STS-34 zet Galileo en een traagheidsbovenste-trap uit vanaf Atlantis.",
+      "note": "STS-34 zet Galileo en een inertiaal booster uit vanuit Atlantis.",
       "type": "nominal"
     },
     {
       "met": 2242,
-      "label": "JUPITER-BAAN INSERTIE",
-      "note": "Hoofdmotorverbranding vangt Galileo in een baan; decennia maanwetenschap beginnen.",
+      "label": "JUPITER-BAANOPNAME",
+      "note": "Hoofdmotorinbranding brengt Galileo in een baan; een 8 jaar durende wetenschappelijke maantour begint.",
       "type": "nominal"
     }
   ]

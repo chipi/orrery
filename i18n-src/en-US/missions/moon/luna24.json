@@ -2,7 +2,7 @@
   "name": "Luna 24",
   "type": "SAMPLE RETURN · FLOWN",
   "first": "Last Soviet lunar mission; last uncrewed lunar landing for 37 years",
-  "description": "The Soviet Union's final lunar mission and the last uncrewed lunar landing until China's Chang'e 3 in 2013 — a gap of 37 years. The drilled core extracted regolith from 2 m depth and returned 170 g to Earth. Among the samples: minerals containing trace water, foreshadowing the discovery of substantial lunar water ice deposits 30 years later. Luna 24 also marked the closure of the Soviet lunar programme; resources shifted to Mars and Venus.",
+  "description": "The Soviet Union's final lunar mission and the last uncrewed lunar landing until China's Chang'e 3 in 2013 — a gap of 37 years. The drilled core extracted regolith from 2 m depth and returned 170 g to Earth. A 1978 Soviet analysis reported ~0.1% water by mass in the core — an unconfirmed, still-debated result — foreshadowing later confirmed detections of lunar water. Luna 24 also marked the closure of the Soviet lunar programme; resources shifted to Mars and Venus.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1976-08-09.", "type": "nominal" },
     { "met": 5, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },

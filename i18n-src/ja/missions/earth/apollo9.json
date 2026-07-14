@@ -1,49 +1,49 @@
 {
-  "name": "アポロ 9 号",
-  "type": "有人地球周回 · 飛行済み",
-  "first": "最初の有人 LM 飛行 — 地球周回軌道での分離 + ランデブー試験",
-  "description": "月着陸船 (LM) の最初の有人飛行。地球周回軌道で、McDivitt と Schweickart は LM Spider を CSM Gumdrop から切り離し、6 時間かけて最大 183 km 離れた後、ランデブーして再ドッキング — 月面ランデブー手順のすべてのステップを、何か問題が起きても CSM で乗組員を帰還させる選択肢なしで試験した。Schweickart は LM のポーチで 38 分間の EVA を実施し、月面歩行クルーが使用する Apollo EVA スーツ + PLSS バックパック設計を実証した。LM のハードウェアとランデブー手順が検証されたため、NASA は 2 か月後にアポロ 10 号を月へ送る準備が整った。",
+  "name": "アポロ9号",
+  "type": "有人地球周回軌道飛行 · 実施済み",
+  "first": "初の有人月着陸船飛行 — 地球周回軌道での月着陸船分離・ランデブー実験",
+  "description": "月着陸船(LM)の初の有人飛行。地球周回軌道でマクディビット飛行士とシュワイカルト飛行士は、LM「スパイダー」を司令船「ガムドロップ」から分離し、6時間かけて183 km まで離れた地点まで飛行してからランデブーして再度ドッキングを行った — 月のランデブー手順のすべてのステップが、司令船での帰還オプションなしで検証された。シュワイカルト飛行士はLMのポーチから38分間のEVAを実施し、月面活動の宇宙飛行士が使用することになるアポロEVA宇宙服とPLSSバックパック設計を実証した。スコット飛行士は司令船ハッチからのスタンドアップEVAを実施した。LMハードウェアとランデブー手順が確認されたことで、NASAは2カ月後にアポロ10号を月へ送ることが明確になった。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-504) from Kennedy Space Center LC-39A 1969-03-03 16:00 UTC — third Saturn V flight, first crewed launch carrying LM.",
+      "label": "打ち上げ",
+      "note": "サターン V(AS-504)、ケネディ宇宙センターLC-39Aから1969年3月3日 16:00 UTC — 3番目のサターン V飛行、LM搭載初の有人打ち上げ。",
       "type": "nominal"
     },
     {
       "met": 0.13,
-      "label": "CSM-LM EXTRACTION",
-      "note": "CSM Gumdrop turns around + docks with LM Spider in the SLA adapter — first crewed transposition + docking. All Apollo lunar missions repeat this maneuver.",
+      "label": "司令船・月着陸船分離・結合",
+      "note": "司令船「ガムドロップ」が180度回転してSLAアダプター内のLM「スパイダー」とドッキング — 初の有人トランスポジション・ドッキング。すべてのアポロ月面探査ミッションでこの操作が繰り返される。",
       "type": "nominal"
     },
     {
       "met": 4.2,
-      "label": "LM SEPARATION",
-      "note": "McDivitt + Schweickart undock Spider, fly up to 183 km from Gumdrop over six hours. First crewed flight where the spacecraft + crew aren't both attached to a re-entry vehicle.",
+      "label": "月着陸船分離",
+      "note": "マクディビット飛行士とシュワイカルト飛行士は「スパイダー」を分離し、6時間かけて「ガムドロップ」から183 km まで飛行。宇宙船と乗員の両方が再突入機に接続されていない初の有人飛行。",
       "type": "info"
     },
     {
       "met": 4.5,
-      "label": "EVA",
-      "note": "Schweickart does 38-min EVA on LM porch. Scott stand-up EVA from CSM hatch. First validation of Apollo PLSS backpack.",
+      "label": "船外活動",
+      "note": "シュワイカルト飛行士がLMのポーチから38分間のEVAを実施。スコット飛行士が司令船ハッチからスタンドアップEVAを実施。アポロPLSSバックパックの初の検証。",
       "type": "info"
     },
     {
       "met": 4.5,
-      "label": "RENDEZVOUS + REDOCK",
-      "note": "Spider rendezvous + redocks with Gumdrop, completing the lunar-procedure dress rehearsal in Earth orbit.",
+      "label": "ランデブー・再ドッキング",
+      "note": "「スパイダー」が「ガムドロップ」とランデブーして再ドッキングし、地球周回軌道での月面手順の総合訓練を完了。",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "LM JETTISON",
-      "note": "Spider ascent stage jettisoned to deorbit; descent stage remained in orbit and decayed 1981.",
+      "label": "月着陸船放出",
+      "note": "「スパイダー」下降段は減速軌道投入(1969年3月、インド洋で再突入)。上昇段は推進剤を消費し続けて高軌道に送られ — 1981年に軌道から離脱。",
       "type": "nominal"
     },
     {
       "met": 10.04,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Atlantic 1969-03-13 17:00 UTC after 151 orbits. Recovery by USS Guadalcanal.",
+      "label": "溅落",
+      "note": "司令船が1969年3月13日 17:00 UTC、151周回後に北大西洋に溅落。回収艦はグアダルカナル号(USS Guadalcanal)。",
       "type": "nominal"
     }
   ]

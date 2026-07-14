@@ -1,18 +1,18 @@
 {
-  "title": "Types de mission — Survol, Orbiteur, Atterrisseur, Rover, Retour d'échantillons",
-  "intro_sentence": "Cinq archétypes — chacun coût Δv, profil risque, retour scientifique différent.",
+  "title": "Types de missions — Survol, Orbiteur, Atterrisseur, Rover, Retour d'échantillons",
+  "intro_sentence": "Cinq archétypes d'engagement d'un engin spatial avec sa destination — chacun avec un coût ∆v, un profil de risque et un rendement scientifique distincts.",
   "narrative_101": [
-    "Chaque mission robotique choisit une de cinq stratégies. Choix détermine presque tout : taille fusée, trajectoire, sonde, science, survie. Échelle Δv : survol moins cher, retour échantillons plus cher.",
-    "SURVOL : viser, photographier, partir. Pas de freinage. Voyager, New Horizons, Pioneer. Une chance, heures rencontre, sonde continue. Moins cher mais ne reviens pas.",
-    "ORBITEUR : freiner et rester des années. MAVEN, MRO, Cassini, Galileo. Insertion 1-2 km/s. ATTERRISSEUR + EDL. ROVER + roues, autonomie.",
-    "RETOUR D'ÉCHANTILLONS = sommet : atterrisseur + étage ascension + croisière retour + EDL Terre. Hayabusa-2, OSIRIS-REx, Apollo. Mars Sample Return en développement."
+    "Chaque mission robotique vers un autre monde adopte l'une de cinq stratégies. Ce choix détermine presque tout le reste — la taille de la fusée nécessaire, la courbure de la trajectoire, ce que l'engin spatial embarque, la science qu'il effectue et s'il survit. La taxonomie s'aligne proprement sur une échelle ∆v : le survol est le moins cher, le retour d'échantillons le plus cher.",
+    "SURVOL : viser, photographier, partir. Aucune manœuvre de freinage. Voyager 1/2 passant par Jupiter, Saturne, Uranus, Neptune ; New Horizons passant par Pluton ; Pioneer 10/11. Un seul passage, des heures de science en rencontre rapprochée, l'engin spatial poursuit sa route éternellement. Le moins cher en ∆v mais on ne revient pas.",
+    "ORBITEUR : freiner pour entrer en orbite capturée et rester pendant des années. MAVEN, MRO, Cassini, Galileo. La manœuvre d'insertion orbitale est coûteuse (1-2 km/s) mais on peut cartographier le corps entier. L'ATTERRISSEUR ajoute l'EDL — bouclier thermique, parachute, rétrofusées — par-dessus un orbiteur. Le ROVER ajoute des roues, un groupe motopropulseur et l'autonomie — chaque kilogramme du rover coûte une pile entière en dessous.",
+    "Le RETOUR D'ÉCHANTILLONS est l'apogée : atterrisseur + étage d'ascension depuis la surface + croisière de retour + EDL sur Terre. Hayabusa-2, OSIRIS-REx, Chang'e 5, les vols Apollo vers la Lune. Le rapport masse-départ-Terre est brutal — Mars Sample Return est en développement et compte parmi les missions robotiques les plus difficiles jamais tentées."
   ],
   "body_paragraphs": [
-    "Survols sautent insertion. Passent à V∞ — ~10 km/s Voyager Jupiter, ~14 New Horizons Pluton. Encontre minutes à jours. Échange science rapide vs couverture.",
-    "Orbiteurs échangent Δv contre temps. Insertion 1-2 km/s, années cartographie. Aérofreinage peut couper budget — MRO 6 mois.",
-    "Atterrisseurs ajoutent EDL + masse structurelle. EDL phase plus à risque ; Mars ~50% taux réussite historique.",
-    "Rovers ajoutent roues, propulsion, autonomie. Chaque kg coûte stack entier dessous. Curiosity 899 kg → aéroshell 4 t → croisière 4 t → trajectoire classe Saturn V.",
-    "Retour échantillons = apex. Masse quitter Terre ~10× masse retournée. Hayabusa-2 ~5g Ryugu en capsule de la taille de la main."
+    "Les missions de survol contournent la manœuvre d'insertion orbitale. Elles passent à la V∞ d'arrivée — ~10 km/s pour Voyager à Jupiter, ~14 km/s pour New Horizons à Pluton. Le temps de rencontre se compte en minutes à jours. Cela échange de la science rapide contre une couverture superficielle et zéro suivi.",
+    "Les missions d'orbiteur échangent ∆v pour du temps sur cible. L'insertion coûte généralement 1-2 km/s de freinage, mais l'engin spatial a ensuite des années pour cartographier le corps. L'aérofreinage (utilisant le traînage atmosphérique à la périapside) peut réduire le budget — Mars Reconnaissance Orbiter s'est aérofeiné dans son orbite scientifique en 6 mois pour économiser du carburant.",
+    "Les atterrisseurs ajoutent l'EDL — entrée, descente, atterrissage — au budget de l'orbiteur, plus la masse structurelle du bouclier thermique, parachute, moteurs rétrofusées et pieds d'atterrisseur. L'EDL est la phase à plus haut risque de toute mission ; Mars a un taux de réussite historique d'~50% pour les atterrissages.",
+    "Les rovers ajoutent roues, groupe motopropulseur, navigation et autonomie. Chaque kilogramme du rover coûte une pile entière en dessous : l'étage de descente qui le livre, l'étage de croisière qui livre l'étage de descente, la fusée qui lance l'étage de croisière. Le rover Curiosity de 899 kg a nécessité une pile EDL/aérocoque d'~2,4 tonnes plus un étage de croisière d'~0,5 tonne — environ 3,8 tonnes de masse totale au lancement — livré par une Atlas V.",
+    "Le retour d'échantillons est l'apogée. La masse qui doit quitter la Terre augmente d'~10× par rapport à la masse d'échantillons retournée pour un aller-retour Mars — vous payez pour la fusée qui soulève la fusée qui soulève l'atterrisseur qui soulève le conteneur d'échantillons qui soulève l'étage de croisière qui ramène les échantillons à la maison. Hayabusa-2 a ramené ~5g de l'astéroïde Ryugu dans une capsule qui tenait dans la paume de votre main."
   ],
-  "diagram_caption": "Cinq archétypes par complexité croissante : survol → orbiteur → atterrisseur → rover → retour échantillons."
+  "diagram_caption": "Cinq archétypes de missions classés par complexité croissante : survol → orbiteur → atterrisseur → rover → retour d'échantillons."
 }

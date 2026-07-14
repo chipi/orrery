@@ -1,16 +1,16 @@
 {
-  "title": "Newton's Principia · 1687",
-  "intro_sentence": "Eén boek, drie bewegingswetten en de inverse-kwadratenwet van de zwaartekracht — het fundament waarop alle ruimtevaart nog steeds rust.",
+  "title": "Newtons Principia · 1687",
+  "intro_sentence": "Één boek, drie bewegingswetten en de inverse-kwadratenwet van zwaartekracht — de grondslag waarop alles wat ruimtevaartuigen nog steeds doen, rust.",
   "narrative_101": [
-    "In 1684 stelde Halley de juiste mensen de vraag welke vorm een baan zou hebben als de aantrekkingskracht van de zon zou gaan als 1/r². Christopher Wren wedde een boek van veertig shilling dat niemand het kon bewijzen; Hooke beweerde een bewijs te hebben dat hij niet had. Halley vroeg het aan Newton — Newton zei zonder aarzeling \"een ellips\", groef het bewijs op uit jaren oude aantekeningen, en drie jaar later publiceerde hij de Principia.",
-    "Drie bewegingswetten (traagheid, F = ma, actie-reactie) plus de inverse-kwadratenwet van de zwaartekracht (F = Gm₁m₂/r²) plus de calculus om het allemaal te berekenen — één boek, drie jaar, geen peer review. Halley betaalde zelf de drukkosten toen de Royal Society door zijn geld heen was aan een boek over visanatomie.",
-    "Uit die vergelijkingen: Keplers drie wetten volgen zuiver. Getijden, projectielbeweging, de precessie van de equinoxen, de vorm van de aarde — allemaal gevolgen. Ruimtevaart 280 jaar later is rechtlijnige Newtoniaanse mechanica met motoren toegevoegd."
+    "In 1684 stelde Halley de juiste mensen de vraag welk vorm een baan zou hebben als de Zon aan 1/r² zou trekken. Christopher Wren wedde een boek van veertig shilling dat niemand het kon bewijzen; Hooke beweerde een bewijs te hebben dat hij niet had. Halley vroeg Newton — Newton zei zonder aarzeling \"een ellips\", viste het bewijs uit jaren oude aantekeningen op, en publiceerde drie jaar later de Principia.",
+    "Drie bewegingswetten (inertie, F = ma, actie-reactie) plus de inverse-kwadratenwet van zwaartekracht (F = Gm₁m₂/r²) plus de calculus om het allemaal uit te voeren — één boek, drie jaar, geen peer review. Halley betaalde de drukkosten zelf toen de Royal Society geen geld meer had door een boek over visanatomie.",
+    "Uit deze vergelijkingen: de drie wetten van Kepler volgen netjes af. Getijden, projectielbeweging, de precessie van de equinoxen, de vorm van de Aarde — allemaal gevolgen. Ruimtevaart 280 jaar later is rechtlijnige Newtonse mechanica met motoren eraan toegevoegd."
   ],
   "body_paragraphs": [
-    "Philosophiæ Naturalis Principia Mathematica werd in juli 1687 in het Latijn gepubliceerd. Drie boeken: beweging in een vacuüm, beweging door weerstrevende media, het systeem van de wereld. Het derde boek past de wetten toe op de feitelijke kosmos en reproduceert alle data van Kepler vanuit eerste principes.",
-    "Calculus was Newton's uitvinding specifiek om dit te doen. Hij noemde het \"fluxions\" — Leibniz vond onafhankelijk vrijwel dezelfde machinerie uit in Duitsland rond dezelfde tijd, en de rivaliteit over de prioriteit duurde decennia.",
-    "Wat Newton NIET verklaarde: WAAROM de zwaartekracht 1/r² volgt. Zijn eigen beroemde opmerking: \"Hypotheses non fingo\" — \"Ik verzin geen hypotheses.\" Het mechanisme zou moeten wachten op Einstein in 1915.",
-    "Moderne numerieke baanpropagatoren draaien in wezen Newton's vergelijkingen met floating-point rekenkunde. De heliocentrische boog van /fly, de porkchop van /plan, elke Kepleriaanse oplossing — Newtoniaanse zwaartekracht helemaal tot op de bodem."
+    "Philosophiæ Naturalis Principia Mathematica werd in juli 1687 in het Latijn gepubliceerd. Drie boeken: beweging in een vacuüm, beweging door weerstandgevende media, het systeem van de wereld. Het derde boek past de wetten toe op het werkelijke heelal en reproduceert al Keplers gegevens vanuit eerste principes.",
+    "Calculus was Newtons uitvinding specifiek om dit te doen. Hij noemde het \"fluxionen\" — Leibniz vond onafhankelijk in Duitsland rond dezelfde tijd in wezen dezelfde wiskundige gereedschappen uit, en de rivaliteit over prioriteit duurde decennia.",
+    "Wat Newton NIET verklaarde: WAAROM zwaartekracht 1/r² volgt. Zijn eigen beroemde opmerking — toegevoegd aan de tweede editie van 1713: \"Hypotheses non fingo\" — \"Ik stel geen hypothesen op.\" Het mechanisme zou tot 1915 op Einstein moeten wachten.",
+    "Moderne numerieke baanpropagatoren voeren in wezen Newtons vergelijkingen uit met drijvende-komma-rekenkunde. /fly's heliocentrische boog, /plan's varkensvlees, elke Keplerse oplossing — Newtonse zwaartekracht helemaal naar beneden."
   ],
-  "formula_caption": "Newton's wet van universele zwaartekracht. G ≈ 6.674 × 10⁻¹¹ N·m²/kg²."
+  "formula_caption": "Newtons wet van universele zwaartekracht. G ≈ 6.674 × 10⁻¹¹ N·m²/kg²."
 }

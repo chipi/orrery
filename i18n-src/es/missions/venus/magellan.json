@@ -1,43 +1,43 @@
 {
   "name": "Magellan",
-  "type": "ORBITER · FLOWN",
-  "first": "Mapa de radar más completo de Venus — 98% de la superficie a 100 m de resolución; primera nave planetaria lanzada desde el Transbordador Espacial",
-  "description": "Magellan transformó Venus de un disco sin rasgos velado por nubes en un planeta cartografiado. Lanzada desde la bodega de carga del Transbordador Atlantis el 4 de mayo de 1989 — la primera nave planetaria en viajar en un Transbordador — y llegó a Venus el 10 de agosto de 1990 mediante una larga trayectoria Tipo IV (1,5 revoluciones solares). A lo largo de cuatro ciclos de mapeo, el radar de apertura sintética fotografió el 98% de la superficie de Venus a 100 m de resolución, revelando las tierras altas de téssera, coronas, domos en forma de panqueque y una superficie joven reconfigurada volcánicamente. La misión finalizó el 13 de octubre de 1994 en el Experimento de Terminación — la primera entrada atmosférica controlada y planificada de una nave planetaria.",
+  "type": "ORBITADOR · VOLADO",
+  "first": "Mapa de radar más completo de Venus — 98% de la superficie a ~120 m de resolución; primer vehículo espacial planetario lanzado desde el transbordador espacial",
+  "description": "Magellan transformó Venus de un disco nublado sin rasgos definidos en un planeta cartografiado. Lanzado desde la bodega de carga del Transbordador Atlantis el 1989-05-04 —el primer vehículo espacial planetario en viajar en un transbordador— y llegó a Venus el 1990-08-10 mediante una larga trayectoria de tipo IV (1,5 revoluciones solares). A lo largo de cuatro ciclos de cartografía, el radar de apertura sintética fotografió el 98% de la superficie de Venus a ~120 m de resolución, revelando tierras altas de teséra, coronae, domos de panqueque y una superficie joven, resurfactada volcánicamente. La misión finalizó el 1994-10-13 en el Experimento de Terminación —la primera reentrada atmosférica controlada deliberadamente de un vehículo espacial planetario.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "STS-30 / Atlantis desde Kennedy LC-39B; IUS desplegado desde la bodega del Transbordador.",
+      "note": "STS-30 / Atlantis desde Kennedy LC-39B; IUS desplegado desde la bodega del transbordador.",
       "type": "nominal"
     },
     {
       "met": 60,
       "label": "TCM-1",
-      "note": "Primera corrección de trayectoria intermedia.",
+      "note": "Primera corrección de trayectoria.",
       "type": "nominal"
     },
     {
       "met": 455,
       "label": "TCM-4",
-      "note": "Ajuste final previo a VOI.",
+      "note": "Corrección final anterior a VOI.",
       "type": "nominal"
     },
     {
       "met": 463,
       "label": "VOI",
-      "note": "Encendido de motor sólido hacia una órbita casi polar de 295 × 8543 km, 85,5°.",
+      "note": "Quemado del motor sólido hacia una órbita casi polar de 295 × 8543 km, 85,5°.",
       "type": "info"
     },
     {
       "met": 950,
-      "label": "CICLO DE MAPEO 1 COMPLETO",
-      "note": "Primera pasada completa — 84% de cobertura superficial a 100 m de resolución.",
+      "label": "CICLO DE CARTOGRAFÍA 1 COMPLETADO",
+      "note": "Primer pase completo — 84% de cobertura de superficie a 100 m de resolución.",
       "type": "info"
     },
     {
       "met": 1988,
       "label": "EXPERIMENTO DE TERMINACIÓN",
-      "note": "13 de octubre de 1994. Periapsis reducido hacia la atmósfera — primera entrada planetaria planificada de una nave espacial.",
+      "note": "1994-10-13. Periapsis rebajado hacia la atmósfera — primer vehículo espacial planetario entrada planificada deliberadamente.",
       "type": "warning"
     }
   ]

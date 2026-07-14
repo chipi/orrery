@@ -1,14 +1,15 @@
 {
-  "title": "Sections coniques",
-  "intro_sentence": "Coupe un cône de quatre façons et tu obtiens chaque trajectoire képlérienne — cercle, ellipse, parabole, hyperbole.",
+  "title": "Sections Coniques",
+  "intro_sentence": "Coupez un cône quatre façons et vous obtenez chaque trajectoire képlérienne possible — cercle, ellipse, parabole, hyperbole.",
   "narrative_101": [
-    "Coup de chance mathématique : les formes des sections coniques sont EXACTEMENT les seules qu'un corps sous gravité peut suivre. Grecs étudièrent par plaisir 200 av. JC. 2000 ans plus tard : l'univers tourne dessus.",
-    "Continuum. Lent : cercle/ellipse — lié, revient. Vitesse d'échappée : parabole. Plus vite : hyperbole — passe et ne revient jamais. Excentricité = bouton."
+    "Il y a une bizarre coïncidence mathématique au cœur de la mécanique orbitale. Les formes que vous pouvez créer en coupant un cône avec un plan plat — cercle, ellipse, parabole, hyperbole — s'avèrent être EXACTEMENT les seules formes qu'un corps sous l'effet de la gravité peut emprunter. Les Grecs ont étudié ces courbes pour le plaisir autour de 200 avant JC. Deux mille ans plus tard, nous avons découvert que l'univers fonctionne selon elles.",
+    "Les quatre formes forment un continuum. Assez lent ? Vous êtes sur un cercle ou une ellipse — lié, vous reviendrez. Exactement à la vitesse d'échappement ? Parabole — vous ne reviendrez que tout juste jamais. Plus rapide que cela ? Hyperbole — vous déchirez à travers et ne revenez jamais. L'excentricité est le cadran : 0 est un cercle, 1 est le bord d'échappement, au-dessus de 1 vous êtes libre.",
+    "Les vraies missions utilisent les quatre. Le trajet de la Terre à Mars est une ellipse. Le survol de Jupiter en route vers Saturne est une hyperbole — par rapport à Jupiter, vous allez trop vite pour être capturé. Les sondes Voyager sont maintenant sur des trajectoires d'échappement hyperboliques (e > 1) qui les emmèneront hors du système solaire pour toujours. La même équation les décrit tous ; seule l'excentricité diffère."
   ],
   "body_paragraphs": [
-    "Coupe un cône avec un plan. Horizontal : cercle (e=0). Incliné : ellipse (0<e<1). Parallèle au bord : parabole (e=1). Au-delà : hyperbole (e>1). Apollonius de Perge 200 av. JC.",
-    "Chaque orbite képlérienne est une des quatre. Liées : cercles/ellipses. Non liées : paraboles/hyperboles.",
-    "Designers utilisent les quatre. Croisière sur ellipse, survol sur hyperbole (relatif au planète), insertion sur ellipse. `/fly` gère naturellement."
+    "Prenez un cône infini et coupez-le avec un plan plat. Coupez horizontalement : un cercle (`e = 0`). Inclinez la coupe : une ellipse (`0 < e < 1`). Inclinez parallèlement à l'arête du cône : une parabole (`e = 1`, le cas d'échappement exact). Inclinez au-delà : une hyperbole (`e > 1`, échappement avec énergie de rechange). Deux mille ans avant Kepler, Apollonius de Perga a catalogué ces courbes. Deux siècles avant Newton, Kepler a découvert que les planètes les suivent.",
+    "Chaque orbite képlérienne est l'une de ces quatre. Les orbites liées — planètes, lunes, satellites, tout ce qui revient — sont des cercles ou des ellipses. Les trajectoires non liées — survols, échappements, captures hyperboliques — sont des paraboles ou des hyperboles. La limite est exacte : à `e = 1` vous vous déplacez à exactement la vitesse d'échappement locale.",
+    "Les concepteurs de missions exploitent les quatre. Naviguez sur une ellipse, survolez une planète sur une hyperbole (par rapport à cette planète), insérez-vous en orbite sur une ellipse à nouveau. L'itinéraire `/fly` du simulateur fait cela naturellement — la même équation de trajectoire gère chaque cas, l'excentricité vous dit quel conique vous volez."
   ],
-  "diagram_caption": "Quatre coniques : cercle, ellipse, parabole, hyperbole."
+  "diagram_caption": "Quatre coniques issues de la coupe d'un cône : cercle, ellipse, parabole, hyperbole. L'excentricité détermine laquelle."
 }

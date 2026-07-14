@@ -1,14 +1,15 @@
 {
   "title": "Traiettoria di ritorno libero",
-  "intro_sentence": "Una traiettoria che passa il bersaglio e piega la gravità in un biglietto di ritorno.",
+  "intro_sentence": "Una traiettoria che vola oltre la destinazione e piega la gravità stessa in un biglietto di ritorno — nessun accensione del motore richiesta.",
   "narrative_101": [
-    "Immagina di volare verso la Luna. Se il motore fallisce? Risposta: scegli un percorso dove la gravità ti riporta automaticamente.",
-    "Vera figura-8. Apollo 8 prima missione equipaggiata. Apollo 13 deve la vita a questa tecnica."
+    "Immagina di volare verso la Luna. Sei preoccupato — e se il motore si guasta durante il viaggio? Saresti bloccato, alla deriva per sempre. Ecco la risposta geniale: scegli un percorso dove, anche se ogni motore della tua navicella muore nel momento in cui lasci l'orbita terrestre, la sola gravità ti farà girare attorno alla Luna e ti getterà a casa automaticamente. Quella è una traiettoria di ritorno libero.",
+    "È un vero otto nel spazio. Lasci la Terra, sali verso la Luna, la gravità della Luna piega il tuo percorso di 180 gradi, e cadi di nuovo verso la Terra, colpendo l'atmosfera al rimbalzo. Nessun motore richiesto. La Luna fa tutto il lavoro. La geometria deve solo essere giusta.",
+    "Apollo 8 è stata la prima missione con equipaggio a volare su una. Apollo 13 — la famosa missione \"Houston, abbiamo un problema\" — deve la sua sopravvivenza ad essa. Quando il loro motore principale divenne inutilizzabile, cavalcarono il ritorno libero verso casa, accendendo solo il motore del modulo lunare per le correzioni di rotta — mai il motore principale danneggiato. Lo scenario predefinito /fly di Orrery fa esattamente questo per Marte: Terra → passaggio ravvicinato di Marte → Terra, nessuna accensione di rotta richiesta. Il viaggio verso Marte più economico possibile che tu possa volare con umani a bordo."
   ],
   "body_paragraphs": [
-    "Trucco principale: lascia Terra, vola vicino alla Luna (o Marte), gravità piega la tua traiettoria indietro.",
-    "Apollo 8 prima. Apollo 13 famosamente. Per Marte geometria più difficile — loop di 500 giorni.",
-    "Default `/fly` di Orrery, ORRERY-1: Terra-Marte-Terra ritorno libero senza TCM."
+    "Il trucco principale: lascia la Terra, vola oltre la Luna (o Marte), e lascia che la gravità di quel corpo pieghi il tuo percorso verso la Terra. Se hai ottenuto la giusta geometria, rientri nell'atmosfera terrestre al rimbalzo. L'equipaggio non deve mai accendere un motore per tornare a casa.",
+    "Apollo 8 è stata la prima traiettoria di ritorno libero con equipaggio. Apollo 13 ha famosamente fatto affidamento sulla tecnica quando il suo modulo di servizio si è danneggiato — cavalcando il ritorno libero verso casa, accendendo solo il motore del modulo lunare per le correzioni di rotta, mai il motore principale danneggiato. Per Marte la geometria è più difficile — hai bisogno di un anello a due passaggi di 500 giorni — ma il concetto è lo stesso: la geometria del passaggio ravvicinato che fa il lavoro della spinta di ritorno.",
+    "Lo scenario predefinito `/fly` di Orrery, ORRERY-1, è esattamente questo: Terra-Marte-Terra su un arco di ritorno libero, nessuna correzione di rotta, nessuna accensione di inserimento in orbita a Marte. Guardi la navicella fare un giro intorno al Sole, passare rasente Marte, e tornare indietro. È il sorvolo di Marte con equipaggio più economico mai proposto."
   ],
-  "diagram_caption": "Terra → flyby Marte → Terra. Gravità Luna fa l'inversione gratis."
+  "diagram_caption": "Terra → passaggio ravvicinato di Marte → Terra. La gravità della Luna (o di Marte) fa la virata a U gratuitamente."
 }

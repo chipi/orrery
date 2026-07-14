@@ -1,50 +1,50 @@
 {
-  "name": "Curiosidade",
+  "name": "Curiosity",
   "type": "ROVER · ATIVO",
-  "first": "Primeiro rover de Marte movido a energia nuclear; primeiro pouso de guindaste no céu",
-  "dispatch": "Curiosity é um laboratório do tamanho de um carro pequeno movido a energia nuclear, e fazê-lo descer foi a parte difícil. Pesado demais para airbags, foi baixado em Marte em 2012 por um guindaste aéreo movido a foguetes numa sequência tão arriscada que seus planejadores a chamaram de sete minutos de terror — e funcionou na primeira tentativa. Desde então ele tem perfurado seu caminho através da Cratera Gale e respondido à pergunta que foi enviado para fazer: a cratera um dia abrigou um lago, com a química que um ser vivo poderia ter usado. Marte tinha sido habitável. Curiosity ainda está dirigindo, escalando uma montanha de rocha em camadas que se lê como o próprio livro de história do planeta.",
-  "description": "A missão principal que definiu a exploração moderna de Marte. O Curiosity tem o tamanho de um carro, é movido a plutônio e já percorreu mais de 32 km até o Monte Sharp desde que pousou na cratera Gale em 2012. Seus instrumentos confirmaram que Marte já teve condições habitáveis ​​– água corrente, compostos orgânicos complexos, a química que a vida precisaria. A sequência EDL dos 'sete minutos de terror', terminando com um guindaste abaixando o veículo espacial em cabos, é agora o padrão do NASA para entregar grandes cargas úteis à superfície de Marte.",
+  "first": "Primeiro rover de Marte alimentado por energia nuclear; primeiro pouso com sky crane",
+  "dispatch": "Curiosity é um laboratório movido a energia nuclear do tamanho de um carro pequeno, e a parte difícil foi conseguir colocá-lo em Marte. Muito pesado para airbags, foi descido em Marte em 2012 por um sky crane movido a foguete em uma sequência tão arriscada que seus planejadores chamaram de sete minutos de terror — e funcionou na primeira tentativa. Desde então, ele perfurou seu caminho através da Cratera Gale e respondeu a pergunta para a qual foi enviado: a cratera já abrigou um lago, com a química que uma coisa viva poderia ter utilizado. Marte tinha sido habitável. Curiosity ainda está em movimento, escalando uma montanha de rocha em camadas que se lê como o próprio livro de história do planeta.",
+  "description": "A missão de ponta que definiu a exploração moderna de Marte. Curiosity é do tamanho de um carro, alimentado por plutônio, e percorreu mais de 36 km pela Cratera Gale desde seu pouso em 2012. Seus instrumentos confirmaram que Marte já teve condições habitáveis — água fluindo, moléculas orgânicas complexas, a química que a vida precisaria. A sequência EDL dos 'sete minutos de terror', terminando com um sky crane baixando o rover em cabos, é agora o padrão da NASA para entregar grandes cargas à superfície de Marte.",
   "events": [
     {
       "met": 0,
-      "label": "LANÇAR",
+      "label": "LANÇAMENTO",
       "note": "Atlas V 541 decola do Cabo Canaveral SLC-41.",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "QUEIMADURA DE TMI",
-      "note": "A injeção Trans-Marte (3,61 km/s ∆v) envia o MSL para uma trajetória heliocêntrica rumo a Marte.",
+      "label": "QUEIMA TMI",
+      "note": "Injeção Trans-Marte (3,61 km/s ∆v) coloca MSL em uma trajetória heliocêntrica rumo a Marte.",
       "type": "nominal"
     },
     {
       "met": 16,
       "label": "TCM-1",
-      "note": "Primeira correção no meio do curso.",
+      "note": "Primeira correção de trajetória em meado do percurso.",
       "type": "nominal"
     },
     {
       "met": 119,
       "label": "TCM-3",
-      "note": "Correção final pré-EDL; a trajetória tem como alvo a elipse de pouso da Cratera Gale.",
+      "note": "Correção pré-EDL final; trajetória visa a elipse de pouso da Cratera Gale.",
       "type": "nominal"
     },
     {
       "met": 254,
       "label": "EDL — SETE MINUTOS DE TERROR",
-      "note": "Entrada atmosférica, pára-quedas supersônico, retrofoguetes sky-crane, rover baixado em cabos.",
+      "note": "Entrada atmosférica, paraquedas supersônico, foguetes retro do sky crane, rover descido em cabos.",
       "type": "nominal"
     },
     {
       "met": 254.005,
-      "label": "ATERRAGEM",
-      "note": "A curiosidade chega a Aeolis Palus, Cratera Gale, 06/08/2012 às 05:17:57 UTC.",
+      "label": "POUSO",
+      "note": "Curiosity chega a Aeolis Palus, Cratera Gale, 2012-08-06 05:17:57 UTC.",
       "type": "nominal"
     },
     {
       "met": 254.01,
       "label": "PRIMEIRAS IMAGENS",
-      "note": "Hazcam retorna a primeira imagem de baixa resolução da superfície.",
+      "note": "Hazcam retorna primeira imagem de baixa resolução da superfície.",
       "type": "info"
     }
   ]

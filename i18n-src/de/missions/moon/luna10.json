@@ -1,6 +1,38 @@
 {
   "name": "Luna 10",
-  "type": "ROBOTISCHER ORBITER · GEFLOGEN",
-  "first": "Erstes Raumfahrzeug im Mondorbit (und im Orbit eines anderen Körpers als der Erde)",
-  "description": "Am 31.03.1966 von Baikonur gestartet, wurde Luna 10 das erste Raumfahrzeug im Mondorbit — und der erste künstliche Satellit eines anderen Körpers als der Erde —, als es am 03.04.1966 in einen 350 × 1017 km Mondorbit mit 71,9° Inklination einschwenkte. Drei Jahre bevor Apollo 8 den Mond mit Menschen an Bord erreichte. Trug ein Magnetometer, ein Gammastrahlenspektrometer, ein Infrarot-Radiometer, Mikrometeoroid-Detektoren, Plasmasensoren und eine Radiosonde des Mondschwerefelds. Die Gammastrahlendaten waren die erste kompositionelle Fernerkundung des Mondes und deuteten auf eine basaltartige Mare-Zusammensetzung hin. Berühmt sendete sie am 04.04.1966 während des 23. Parteitags der KPdSU die Internationale — eine propagandistische Geste mehr als Wissenschaft. Betrieben über 56 Tage / 460 Orbits, bis die NiCd-Batterien am 30.05.1966 erschöpft waren; verbleibt im Mondorbit."
+  "type": "ROBOTISCHE SONDE · DURCHGEFÜHRT",
+  "first": "Erstes Raumfahrzeug, das den Mond umkreist (und einen anderen Himmelskörper als die Erde)",
+  "description": "Luna 10 startete am 1966-03-31 von Baikonur und wurde das erste Raumfahrzeug, das den Mond umkreiste — und der erste künstliche Satellit eines anderen Himmelskörpers als der Erde —, als es am 1966-04-03 in eine Mondumlaufbahn von 350 × 1017 km bei 71,9° Inklination eintrat. Zwei einhalb Jahre vor Apollo 8 erreichte der Mond mit Menschen an Bord. An Bord waren ein Magnetometer, ein Gammastrahlenspektrometer, ein Infrarot-Radiometer, Mikrometeoriten-Detektoren, Plasmasensoren und eine Radiosonde des Mondgravitationsfeldes. Die Gammastrahlen-Daten waren die erste zusammensetzungsabhängige Fernerkundung des Mondes und deuteten auf basaltähnliche Marekomposition hin. Berühmt wurde die Übertragung der Internationale während des 23. Kongresses der Sowjetischen Kommunistischen Partei am 1966-04-04 — eher ein propagandistischer Effekt als Wissenschaft. Betrieb 56 Tage / 460 Umlaufbahnen, bevor die NiCd-Batterien am 1966-05-30 aufgebraucht waren; verbleibt in der Mondumlaufbahn.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Molniya-M von Baikonur 1966-03-31 10:46 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.01,
+      "label": "TLI",
+      "note": "Block-L-Oberstufe bringt Luna 10 zum Mond.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "LOI",
+      "note": "Mondumlaufbahn-Einschwenkung 1966-04-03 — erster künstlicher Satellit eines anderen Himmelskörpers als der Erde.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.5,
+      "label": "INTERNATIONALE-ÜBERTRAGUNG",
+      "note": "Übertragung der Internationale während des 23. Kongresses der Sowjetischen Kommunistischen Partei (1966-04-04).",
+      "type": "info"
+    },
+    {
+      "met": 60,
+      "label": "MISSIONSENDE",
+      "note": "NiCd-Batterien aufgebraucht; Mission beendet 1966-05-30. Verbleibt in der Mondumlaufbahn.",
+      "type": "nominal"
+    }
+  ]
 }

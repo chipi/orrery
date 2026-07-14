@@ -1,84 +1,84 @@
 {
   "name": "Viking",
-  "tagline": "En 1976, deux atterrisseurs américains se sont posés sur Mars, ont renvoyé les premières photographies de sa surface — et ont mené une expérience pour répondre à la plus ancienne question sur la planète : y a-t-il quelque chose de vivant là-bas ?",
+  "tagline": "En 1976, deux atterrisseurs américains se sont posés sur Mars, ont renvoyé les premières photographies claires de sa surface — et ont mené une expérience pour répondre à la plus ancienne question concernant la planète : y a-t-il quelque chose de vivant là-bas ?",
   "the_land": [
     {
       "type": "prose",
-      "md": "Au milieu des années 1970, Mars avait été aperçue mais jamais touchée. Les survols Mariner et un orbiteur avaient remplacé le vieux rêve de canaux et de civilisations par une image plus froide — un désert cratérisé, apparemment mort — mais la surface elle-même restait inconnue, et la question qui hantait Mars depuis un siècle demeurait ouverte. Y avait-il de la vie ? Une photographie depuis l'orbite ne pouvait y répondre. Il fallait atterrir, regarder et tester le sol."
+      "md": "Au milieu des années 1970, Mars avait été aperçue mais jamais touchée. Les survols Mariner et un orbiteur avaient remplacé l'ancien rêve de canaux et de civilisations par une image plus froide — un désert cratérisé, apparemment mort — mais la surface elle-même demeurait inconnue, et la question qui hantait Mars depuis un siècle restait ouverte. Y avait-il de la vie ? Une photographie depuis l'orbite ne pouvait y répondre. Il fallait atterrir, observer et tester le sol."
     },
     {
       "type": "prose",
-      "md": "Viking était la mission interplanétaire la plus ambitieuse que les États-Unis aient jamais tentée : deux engins spatiaux identiques, chacun un orbiteur transportant un atterrisseur, envoyés pour atteindre Mars, choisir un endroit sûr depuis le ciel, et poser un robot en douceur sur un monde dont personne n'avait vu la surface depuis le sol. Rien n'avait jamais atterri sur Mars et fonctionné ; les tentatives soviétiques avaient échoué en quelques secondes. Viking devait réussir deux fois."
+      "md": "Viking était la mission interplanétaire la plus ambitieuse que les États-Unis aient jamais tentée : deux engins spatiaux identiques, chacun un orbiteur transportant un atterrisseur, envoyés pour atteindre Mars, choisir un site sûr depuis le ciel et poser un robot en douceur sur un monde dont personne n'avait vu la surface depuis le sol. Rien n'avait jamais atterri sur Mars et fonctionné ; les tentatives soviétiques avaient échoué en quelques secondes. Viking devait réussir deux fois."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "L'objectif comportait deux volets. Les orbiteurs devaient cartographier Mars depuis le ciel avec un niveau de détail qu'aucun survol ne pouvait atteindre — suffisamment pour choisir des sites d'atterrissage et étudier la planète dans son ensemble. Et les atterrisseurs devaient faire ce que rien n'avait fait auparavant : opérer à la surface martienne, la photographier, mesurer son climat et son sol, et mener une série d'expériences conçues pour détecter la chimie de la vie."
+      "md": "L'objectif comportait deux volets. Les orbiteurs cartographieraient Mars depuis le ciel avec un niveau de détail qu'aucun survol ne pouvait atteindre — suffisant pour choisir des sites d'atterrissage et étudier la planète dans son ensemble. Et les atterrisseurs feraient ce que rien n'avait fait auparavant : opérer à la surface martienne, la photographier, mesurer sa météorologie et son sol, et mener une série d'expériences conçues pour détecter la chimie de la vie."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/viking-1/01"
       },
-      "caption": "Chaque Viking était deux engins spatiaux en un : un orbiteur pour surveiller et relayer, et un atterrisseur qui se séparait, allumait ses moteurs et se posait sur trois pieds. Les atterrisseurs transportaient des caméras, une station météorologique, une pelle à sol et un laboratoire de biologie miniature.",
+      "caption": "Chaque Viking était deux engins spatiaux en un : un orbiteur pour surveiller et relayer, et un atterrisseur qui se séparait, activait ses moteurs et se posait sur trois pieds. Les atterrisseurs transportaient des caméras, une station météorologique, une pelle à sol et un laboratoire de biologie miniature.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "La question de la vie était celle qui intéressait le public, et Viking la prenait au sérieux. Chaque atterrisseur transportait trois expériences de biologie distinctes, conçues pour nourrir le sol martien et observer les signes de métabolisme — la recherche la plus directe de vie extraterrestre jamais tentée, alors ou depuis."
+      "md": "La question de la vie était celle qui intéressait le public, et Viking l'a prise au sérieux. Chaque atterrisseur transportait trois expériences de biologie distinctes, conçues pour nourrir le sol martien et surveiller les signes de métabolisme — la recherche la plus directe de vie extraterrestre jamais tentée, à l'époque comme depuis."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Cela a fonctionné, deux fois. L'atterrisseur Viking 1 s'est posé dans Chryse Planitia le 20 juillet 1976 et a renvoyé la première photographie jamais prise depuis la surface de Mars — une plaine orange parsemée de roches sous un ciel pâle. Viking 2 s'est posé dans Utopia Planitia six semaines plus tard. Ensemble, les deux atterrisseurs ont fonctionné pendant des années, renvoyant des panoramas, des données météorologiques saisonnières et la première chimie détaillée du sol martien."
+      "md": "Cela a fonctionné, deux fois. L'atterrisseur Viking 1 s'est posé dans Chryse Planitia le 20 juillet 1976 et a renvoyé la première photographie claire depuis la surface de Mars — une plaine orangée parsemée de roches sous un ciel pâle. Viking 2 s'est posé dans Utopia Planitia six semaines plus tard. Ensemble, les deux atterrisseurs ont fonctionné pendant des années, renvoyant des panoramas, des données météorologiques saisonnières et la première chimie détaillée du sol martien."
     },
     {
       "type": "prose",
-      "md": "Les résultats biologiques furent la grande ambiguïté de la mission. L'une des trois expériences a renvoyé un signal qui, sur Terre, aurait suggéré la vie ; les autres non, et l'instrument de chimie de l'atterrisseur n'a trouvé aucune molécule organique dans le sol. Le consensus scientifique s'est établi sur une chimie inhabituelle imitant la vie dans la poussière martienne plutôt que sur de la biologie — mais le résultat était suffisamment proche, et suffisamment étrange, pour qu'on en débatte encore des décennies plus tard. Viking n'a pas trouvé de vie ; il n'a pas non plus complètement clos le dossier."
+      "md": "Les résultats biologiques furent la grande ambiguïté de la mission. L'une des trois expériences a renvoyé un signal qui, sur Terre, aurait suggéré la vie ; les autres non, et l'instrument de chimie de l'atterrisseur n'a trouvé aucune molécule organique dans le sol. Le consensus scientifique s'est établi sur une chimie inhabituelle du sol martien imitant la vie plutôt que sur de la biologie — mais le résultat était suffisamment proche, et suffisamment étrange, pour qu'il soit encore débattu des décennies plus tard. Viking n'a pas trouvé de vie ; il n'a pas non plus complètement clos le dossier."
     },
     {
       "type": "prose",
-      "md": "Ce que Viking a établi, c'est que Mars pouvait être atteinte, qu'on pouvait y atterrir et y travailler — non pas une fois mais deux, pendant des années. Les orbiteurs ont cartographié presque toute la planète, révélant en détail les grands volcans et canyons, et les atterrisseurs ont prouvé qu'un robot pouvait survivre et fonctionner à la surface martienne à travers les saisons. Chaque rover qui a depuis traversé Mars repose sur cette preuve."
+      "md": "Ce que Viking a établi, c'est que Mars pouvait être atteinte, qu'on pouvait y atterrir et y travailler — non pas une fois mais deux, pendant des années. Les orbiteurs ont cartographié presque toute la planète, révélant les grands volcans et canyons dans leur intégralité, et les atterrisseurs ont prouvé qu'un robot pouvait survivre et fonctionner à la surface martienne au fil des saisons. Chaque rover qui a depuis traversé Mars repose sur cette preuve."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "L'histoire de Viking est celle d'une mission qui a répondu à toutes les questions sauf celle pour laquelle on s'en souvient le plus. Ce fut un triomphe d'ingénierie — deux atterrissages martiens réussis à une époque où personne n'en avait réussi ne serait-ce qu'un — et une mine de science, et pourtant elle est indissociable des expériences biologiques et de leur résultat exaspérant et non résolu. Viking est le cas rare où l'objectif principal n'est pas revenu sous forme de oui ou de non mais de peut-être, et ce peut-être a survécu à tout le reste."
+      "md": "L'histoire de Viking est celle d'une mission qui a répondu à toutes les questions sauf celle pour laquelle on s'en souvient le plus. Ce fut un triomphe d'ingénierie — deux atterrissages réussis sur Mars à une époque où personne n'en avait réussi un seul — et une mine de connaissances scientifiques, et pourtant elle est inséparable des expériences de biologie et de leur résultat exaspérant et non résolu. Viking est ce cas rare où l'objectif principal n'est pas revenu sous forme de oui ou non mais de peut-être, et ce peut-être a survécu à tout le reste."
     },
     {
       "type": "prose",
-      "md": "Cette ambiguïté était, à sa manière, honnête. Les concepteurs de Viking avaient construit l'expérience de détection de vie la plus minutieuse qu'ils pouvaient, et quand les données sont revenues contradictoires, ils les ont rapportées comme contradictoires plutôt que de les forcer dans une réponse nette. La leçon que la communauté en a tirée — que détecter la vie est bien plus difficile qu'il n'y paraît, et qu'une seule expérience ingénieuse peut vous tromper — a remodelé la manière dont la recherche de vie a été poursuivie depuis, vers l'habitabilité et des preuves accumulées lentement plutôt qu'un test décisif unique."
+      "md": "Cette ambiguïté était, à sa manière, honnête. Les concepteurs de Viking avaient construit l'expérience de détection de vie la plus soigneuse possible, et quand les données sont revenues contradictoires, ils les ont rapportées comme contradictoires plutôt que de les forcer dans une réponse claire. La leçon que la communauté en a tirée — que détecter la vie est bien plus difficile qu'il n'y paraît, et qu'une seule expérience astucieuse peut vous tromper — a remodelé la manière dont la recherche de vie a été menée depuis, vers l'habitabilité et des preuves accumulées lentement plutôt qu'un seul test décisif."
     },
     {
       "type": "prose",
-      "md": "Et sous le drame biologique, Viking a discrètement accompli le travail fondateur. Il a transformé Mars d'un endroit vu de loin en un lieu avec une vérité de terrain — une vraie chimie du sol, une vraie météo, de vraies images depuis la surface — et il a prouvé toute la chaîne difficile consistant à atteindre Mars et à atterrir intact. Les rovers qui parcourent aujourd'hui la planète sont les descendants directs de Viking ; ils marchent sur la preuve qu'il a laissée."
+      "md": "Et sous le drame biologique, Viking a discrètement accompli le travail fondamental. Il a transformé Mars d'un lieu vu de loin en un lieu avec une vérité de terrain — une vraie chimie du sol, une vraie météorologie, de vraies images depuis la surface — et il a prouvé toute la chaîne difficile consistant à atteindre Mars et à atterrir intact. Les rovers qui parcourent maintenant la planète sont les descendants directs de Viking ; ils marchent sur la preuve qu'il a laissée."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Le premier héritage de Viking est l'atterrissage lui-même : la première arrivée réussie à la surface de Mars, et la preuve qu'un engin spatial pouvait atteindre la planète, se poser en sécurité et fonctionner pendant des années. Chaque atterrisseur et rover martien depuis — Pathfinder, les deux géologues jumeaux, Curiosity, Perseverance — hérite du chemin ouvert par Viking."
+      "md": "Le premier héritage de Viking est l'atterrissage lui-même : la première arrivée réussie à la surface de Mars, et la preuve qu'un engin spatial pouvait atteindre la planète, se poser en toute sécurité et fonctionner pendant des années. Chaque atterrisseur et rover martien depuis — Pathfinder, les deux géologues jumeaux, Curiosity, Perseverance — hérite du chemin ouvert par Viking."
     },
     {
       "type": "prose",
-      "md": "Le deuxième est la vérité de terrain. La chimie du sol de Viking, les relevés météorologiques et les panoramas de surface ont donné à la science planétaire ses premières vraies données depuis le sol martien, et ses cartes orbitales globales ont cadré la géologie que les missions ultérieures sont allées étudier. L'image moderne de Mars commence ici."
+      "md": "Le deuxième est la vérité de terrain. La chimie du sol, les relevés météorologiques et les panoramas de surface de Viking ont donné à la science planétaire ses premières données réelles depuis le sol martien, et ses cartes orbitales globales ont encadré la géologie que les missions ultérieures sont allées étudier. L'image moderne de Mars commence ici."
     },
     {
       "type": "prose",
-      "md": "Le troisième est la question de la vie, laissée ouverte de manière productive. Le résultat biologique ambigu de Viking — et l'humilité qu'il a imposée — a remodelé toute la recherche de vie au-delà de la Terre, la détournant des tests décisifs uniques vers l'accumulation patiente de preuves qui guide aujourd'hui la quête sur Mars, Encelade et Europe."
+      "md": "Le troisième est la question de la vie, laissée ouverte de manière productive. Le résultat biologique ambigu de Viking — et l'humilité qu'il a imposée — a remodelé toute la recherche de vie au-delà de la Terre, l'orientant loin des tests décisifs uniques vers l'accumulation patiente de preuves qui guide aujourd'hui la recherche sur Mars, Encelade et Europe."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La leçon de Viking est que les questions les plus importantes se résolvent rarement en une seule expérience. Viking a demandé si Mars abritait la vie avec le meilleur instrument que son époque pouvait construire, et a reçu une réponse qui n'était ni oui ni non — et la réponse honnête fut de rapporter l'ambiguïté, non de fabriquer une certitude. Les questions difficiles trouvent généralement leur réponse par le poids lent des preuves, non par un résultat net unique, et confondre un test ingénieux avec un test final est la façon de se tromper soi-même."
+      "md": "La leçon de Viking est que les questions les plus importantes se résolvent rarement en une seule expérience. Viking a demandé si Mars abritait la vie avec le meilleur instrument que son époque pouvait construire, et a reçu une réponse qui n'était ni oui ni non — et la réponse honnête a été de rapporter l'ambiguïté, non de fabriquer une certitude. Les questions difficiles trouvent généralement leur réponse par le poids lent des preuves, non par un seul résultat clair, et confondre un test astucieux avec un test final est la façon de se tromper soi-même."
     },
     {
       "type": "prose",
-      "md": "La leçon plus profonde est la valeur de prouver toute la chaîne. Le don durable de Viking n'a été aucune mesure particulière mais la démonstration qu'atteindre Mars et atterrir intact était possible et reproductible. Une fois qu'une chose difficile a été faite — et faite deux fois — elle cesse d'être un pari et devient une fondation sur laquelle d'autres peuvent construire. Parfois le plus grand résultat qu'une mission rapporte est simplement qu'elle peut être faite."
+      "md": "La leçon plus profonde est la valeur de prouver toute la chaîne. Le don durable de Viking n'a été aucune mesure particulière mais la démonstration qu'atteindre Mars et atterrir intact était possible et reproductible. Une fois qu'une chose difficile a été accomplie — et accomplie deux fois — elle cesse d'être un pari et devient une fondation sur laquelle d'autres peuvent construire. Parfois, le plus grand résultat qu'une mission rapporte est simplement qu'elle peut être accomplie."
     }
   ]
 }

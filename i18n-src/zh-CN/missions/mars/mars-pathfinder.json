@@ -1,38 +1,38 @@
 {
   "name": "Mars Pathfinder",
-  "type": "LANDER · ROVER · FLOWN",
-  "first": "First wheels on Mars; demonstrated airbag landing",
-  "dispatch": "火星探路者号证明了NASA在火星着陆不必花费巨资。它没有采用海盗号使用的反推火箭悬停方式,而是在隔热罩保护下冲入大气层,展开降落伞,充气形成气囊茧,在火星表面弹跳了数十次后滚动停下,像花朵一样打开。旅居者号随即驶出——一个微波炉大小的火星车,这是第一个在另一颗行星上转动的轮子。科学成果是有限的;重点在于方法本身。气囊着陆方式及其所证明的\"更快-更便宜-更好\"理念成为了后续更加雄心勃勃的火星车——勇气号、机遇号、好奇号——的模板。",
-  "description": "The mission that proved cheap interplanetary missions could work. Pathfinder used a novel airbag landing system — bouncing dozens of times across the surface before coming to rest — and delivered Sojourner, the first rover to operate on another planet. Sojourner traversed 100 m, examined a dozen rocks, and worked far past its 7-day design lifetime. Pathfinder operated for 2 months 27 days; the mission's success revived NASA's interplanetary programme after the failures of the 1990s.",
+  "type": "着陆器 · 漫游车 · 已飞行",
+  "first": "火星上的首批轮迹；展示了气囊着陆技术",
+  "dispatch": "Mars Pathfinder 证明了美国航空航天局登陆火星不必花费巨资。它没有采用维京号探测器使用的减速火箭悬停方式，而是躲在隔热罩后面撞入大气，弹出降落伞，充气形成气囊保护舱，在表面弹跳数十次后滚动停止，最后像花朵一样绽放打开。Sojourner 漫游车由此驶出——一个微波炉大小的漫游车，是有史以来在另一个星球上转动的第一批轮子。科学意义不大，但方法很新颖。气囊着陆及其所证明的更快、更便宜、更好的方法，成为了后来更加雄心勃勃的漫游车——Spirit、Opportunity、Curiosity——的模板。",
+  "description": "证明廉价星际任务可行的里程碑任务。Pathfinder 采用了新颖的气囊着陆系统——在表面弹跳数十次后停止——并搭载了 Sojourner，这是第一台在另一个星球上运作的漫游车。Sojourner 行驶了 100 m，检查了约 12 块岩石，且远超其 8 火星日的设计寿命。Pathfinder 运作了 2 个月 27 天；该任务的成功在 1990 年代失败后重振了美国航空航天局的星际探测计划。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Delta II 7925 from Cape Canaveral.",
+      "label": "发射",
+      "note": "Delta II 7925 火箭从肯尼迪航天中心发射。",
       "type": "nominal"
     },
     {
       "met": 30,
-      "label": "TCM-1",
-      "note": "First trajectory correction.",
+      "label": "轨道中途修正-1",
+      "note": "首次轨道中途修正。",
       "type": "nominal"
     },
     {
       "met": 212,
-      "label": "EDL",
-      "note": "Direct atmospheric entry — no orbit insertion. Heat shield, parachute, retro-rockets, then airbag inflation.",
+      "label": "进入、下降和着陆",
+      "note": "直接大气进入——无轨道插入。隔热罩、降落伞、减速火箭，随后气囊充气。",
       "type": "nominal"
     },
     {
       "met": 212.01,
-      "label": "TOUCHDOWN",
-      "note": "Lander bounces 15 times across Ares Vallis before coming to rest.",
+      "label": "接触",
+      "note": "着陆器在 Ares Vallis 上弹跳 15 次后停止。",
       "type": "nominal"
     },
     {
       "met": 213,
-      "label": "SOJOURNER DEPLOYED",
-      "note": "First wheels on another planet.",
+      "label": "Sojourner 部署",
+      "note": "另一个星球上的首批轮迹。",
       "type": "info"
     }
   ]

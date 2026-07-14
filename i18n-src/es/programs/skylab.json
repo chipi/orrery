@@ -1,14 +1,14 @@
 {
   "name": "Skylab",
-  "tagline": "La primera estación espacial de Estados Unidos — improvisada a partir de hardware del programa Apollo, casi perdida en el lanzamiento, salvada por el trabajo de reparación más audaz de la época, y luego abandonada un poco demasiado pronto.",
+  "tagline": "La primera estación espacial de Estados Unidos — improvisada a partir de equipos Apollo, casi perdida en el lanzamiento, salvada por el trabajo de reparación más audaz de la época, y luego abandonada un poco antes de tiempo.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Cuando Apollo llegó a su fin, la NASA se encontró con algo inusual: un excedente. Cohetes Saturn construidos y pagados, fábricas aún en funcionamiento, un cuerpo de astronautas sin ningún lugar adonde ir ahora que los alunizajes se estaban cancelando uno tras otro. La pregunta pasó de *¿podemos llegar?* a *¿qué hacemos una vez que la carrera se detiene?* — y la respuesta más interesante no era otro destino sino un cambio de verbo. No visitar el espacio, sino permanecer en él. Vivir y trabajar allí, durante semanas y meses, para descubrir si los seres humanos podían hacerlo."
+      "md": "Cuando Apollo llegó a su fin, la NASA se quedó con algo inusual: un excedente. Cohetes Saturn construidos y pagados, fábricas aún en funcionamiento, un cuerpo de astronautas sin ningún lugar adonde ir ahora que los alunizajes se cancelaban uno a uno. La pregunta pasó de *podemos llegar allí* a *qué hacemos una vez que la carrera se detiene* — y la respuesta más interesante no fue otro destino sino un cambio de verbo. No visitar el espacio, sino permanecer en él. Vivir y trabajar allí, durante semanas y meses, para averiguar si los seres humanos podían."
     },
     {
       "type": "prose",
-      "md": "Skylab fue el primer intento estadounidense de responder a eso. En lugar de diseñar una estación desde cero, la NASA tomó la etapa superior vacía de un Saturn V — un tanque de hidrógeno del tamaño de una casa — y lo acondicionó como taller orbital: alojamiento para la tripulación, un laboratorio, un observatorio solar, un hogar. Fue lanzada en mayo de 1973, y estuvo a punto de morir en los primeros diez minutos."
+      "md": "Skylab fue el primer intento estadounidense de responder a eso. En lugar de diseñar una estación desde cero, la NASA tomó la etapa S-IVB vacía — la tercera etapa de un Saturn V — un tanque de hidrógeno del tamaño de una casa — y la equipó como un taller orbital: alojamiento para la tripulación, un laboratorio, un observatorio solar, un hogar. Se lanzó en mayo de 1973, y estuvo a punto de morir en los primeros diez minutos."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/skylab/04"
       },
-      "caption": "El taller orbital Skylab, construido dentro de una etapa superior convertida del Saturn V — laboratorio, observatorio solar y hogar para tres tripulaciones. La primera estación lo suficientemente grande como para que sus ocupantes pudieran realmente vivir, no meramente soportar.",
+      "caption": "El taller orbital Skylab, construido dentro de una S-IVB reconvertida — la tercera etapa de un Saturn V — laboratorio, observatorio solar y hogar para tres tripulaciones. La primera estación lo suficientemente grande como para que sus ocupantes pudieran realmente vivir, no simplemente soportar.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Skylab tenía tres objetivos entrelazados, y todos ellos trataban sobre el tiempo más que sobre la distancia. El primero era médico: averiguar qué hacen las estancias prolongadas en ingravidez al cuerpo humano, porque cada plan futuro — estaciones, Marte, cualquier cosa más allá de unos pocos días — dependía de la respuesta. El segundo era científico: Skylab llevaba el Apollo Telescope Mount, un observatorio solar tripulado que devolvió las mejores vistas del Sol obtenidas hasta entonces, junto con experimentos sobre recursos terrestres y materiales. El tercero era simplemente demostrar que un puesto avanzado grande y habitable podía gestionarse en órbita."
+      "md": "Skylab tenía tres objetivos entrelazados, y todos ellos trataban sobre el tiempo más que sobre la distancia. El primero era médico: averiguar qué hacen las estancias largas en ingravidez al cuerpo humano, porque cada plan futuro — estaciones, Marte, cualquier cosa más allá de unos pocos días — dependía de la respuesta. El segundo era científico: Skylab llevaba el Apollo Telescope Mount, un observatorio solar tripulado que devolvió las mejores vistas del Sol obtenidas hasta entonces, junto con experimentos de recursos terrestres y materiales. El tercero era simplemente demostrar que un puesto de avanzada grande y habitable podía funcionar en órbita."
     },
     {
       "type": "prose",
-      "md": "El diseño reflejaba esa ambición. Donde las naves espaciales anteriores eran cabinas a las que te sujetabas con arneses, Skylab era un edificio por el que te movías — un taller con ducha, cocina, compartimentos para dormir y suficiente volumen para que los astronautas pudieran dar volteretas de un lado a otro. Era la primera vez que los humanos tenían espacio en el espacio, y cambió lo que se sentía en una misión: menos un vuelo que sobrevivir, más un lugar que habitar."
+      "md": "El diseño reflejaba esa ambición. Donde las naves espaciales anteriores eran cabinas en las que te sujetaban, Skylab era un edificio por el que te movías — un taller con una ducha, una cocina, compartimentos para dormir y suficiente volumen para que los astronautas pudieran dar volteretas por él. Era la primera vez que los humanos tenían espacio en el espacio, y cambió lo que se sentía en una misión: menos un vuelo que sobrevivir, más un lugar para habitar."
     }
   ],
   "outcome": [
@@ -35,30 +35,30 @@
       "image": {
         "reuse": "missions/skylab-2/01"
       },
-      "caption": "La tripulación de Skylab 2 — Conrad, Kerwin, Weitz — antes del lanzamiento. Volaron a una estación averiada y sobrecalentada y la salvaron con un parasol improvisado y un paseo espacial peligroso, demostrando que las tripulaciones podían reparar una nave espacial en órbita.",
+      "caption": "La tripulación de Skylab 2 — Conrad, Kerwin, Weitz — antes del lanzamiento. Volaron a una estación averiada y sobrecalentada y la salvaron con un parasol improvisado y una peligrosa caminata espacial, demostrando que las tripulaciones podían reparar una nave espacial en órbita.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Durante el lanzamiento, el flujo de aire arrancó el escudo combinado antimicrometeorito y solar de Skylab. El escudo se llevó consigo uno de los dos paneles solares principales y atascó el otro, de modo que la estación alcanzó la órbita averiada: apenas con energía y sin sombra, su interior subiendo hacia temperaturas que arruinarían los experimentos y la harían inhabitable. Durante unos días pareció que la primera estación de Estados Unidos podría ser una pérdida total antes de que llegara una sola tripulación."
+      "md": "Durante el lanzamiento, el flujo de aire arrancó el escudo combinado contra micrometeoroides y sol de Skylab. El escudo se llevó uno de los dos paneles solares principales con él y atascó el otro, por lo que la estación alcanzó la órbita averiada: apenas energía, y sin sombra, su interior subiendo hacia temperaturas que arruinarían los experimentos y la harían inhabitable. Durante unos días pareció que la primera estación de Estados Unidos podría ser una pérdida total antes de que llegara una sola tripulación."
     },
     {
       "type": "prose",
-      "md": "En cambio, Skylab se convirtió en la primera gran demostración de que las personas en el espacio no son solo pasajeros sino equipos de reparación. La primera tripulación voló, desplegó un parasol a través de una pequeña esclusa científica para enfriar la estación, y luego — en un paseo espacial tenso e improvisado — liberó el panel solar atascado, restaurando la energía. La estación fue salvada, y continuó albergando tres tripulaciones durante 28, 59 y finalmente 84 días, devolviendo una montaña de datos solares y biomédicos y estableciendo un récord de resistencia que se mantuvo durante años. Su final fue menos triunfante: sin ningún vehículo tripulado capaz de alcanzarla después de 1974 y con su órbita decayendo más rápido de lo previsto, Skylab cayó de vuelta a la Tierra en 1979, esparciendo escombros por el océano Índico y el oeste de Australia."
+      "md": "En cambio, Skylab se convirtió en la primera gran demostración de que las personas en el espacio no son solo pasajeros sino equipos de reparación. La primera tripulación voló, desplegó un parasol improvisado a través de una pequeña esclusa científica para enfriar la estación, y luego — en una tensa caminata espacial improvisada — liberó el panel solar atascado, restaurando la energía. La estación se salvó, y llegó a albergar tres tripulaciones durante 28, 59 y finalmente 84 días, devolviendo una montaña de datos solares y biomédicos y estableciendo un récord de resistencia que se mantuvo durante años. Su final fue menos triunfante: sin ningún vehículo tripulado capaz de alcanzarla después de 1974 y con su órbita decayendo más rápido de lo previsto, Skylab cayó de vuelta a la Tierra en 1979, esparciendo escombros por el sur del océano Índico y, sin querer, por el oeste de Australia."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "El momento definitorio de Skylab es la reparación, y tiene más importancia de lo que parece a primera vista. Hasta 1973, las naves espaciales eran esencialmente desechables e imposibles de reparar: si algo se rompía, la misión se degradaba o se perdía. Skylab demostró lo contrario — que una tripulación con herramientas, entrenamiento e improvisación podía salvar una máquina que había fallado catastróficamente. Esa única idea, que el hardware orbital es *mantenible*, se extiende directamente hacia las misiones de servicio del Hubble y al trabajo constante de reparación y actualización que mantiene viva a la Estación Espacial Internacional."
+      "md": "El momento definitorio de Skylab es la reparación, y tiene más importancia de lo que parece a primera vista. Hasta 1973, las naves espaciales eran esencialmente desechables e irreparables: si algo se rompía, la misión se degradaba o se perdía. Skylab demostró lo contrario — que una tripulación con herramientas, entrenamiento e improvisación podía salvar una máquina que había fallado catastróficamente. Esa única idea, que el hardware orbital es *mantenible*, se extiende directamente hacia las misiones de servicio del Hubble y hacia el trabajo constante de reparación y actualización que mantiene viva a la International Space Station."
     },
     {
       "type": "prose",
-      "md": "La ciencia también fue real, y fácil de subestimar. El Apollo Telescope Mount observó el Sol durante un período completo de actividad solar, capturando erupciones y estructura coronal que ningún telescopio terrestre podía ver, y reescribiendo la física solar. El programa biomédico produjo los primeros datos serios sobre cómo los huesos, músculos y el corazón se adaptan a meses de ingravidez — la línea base sobre la que se ha construido cada misión de larga duración desde entonces. Skylab fue donde el vuelo espacial tripulado pasó silenciosamente de truco a laboratorio."
+      "md": "La ciencia también fue real, y fácil de subestimar. El Apollo Telescope Mount observó el Sol durante un período completo de actividad solar, capturando llamaradas y estructura coronal que ningún telescopio terrestre podía ver, y reescribiendo la física solar. El programa biomédico produjo los primeros datos serios sobre cómo los huesos, los músculos y el corazón se adaptan a meses de ingravidez — la base sobre la que se ha construido cada misión de larga duración desde entonces. Skylab fue donde el vuelo espacial tripulado pasó discretamente de ser una proeza a ser un laboratorio."
     },
     {
       "type": "prose",
-      "md": "También hay un hito humano. La tercera tripulación, trabajada hasta el agotamiento por un calendario sobrecargado enviado por radio desde tierra, finalmente se resistió — tomándose un día no programado para descansar y obligando al control de la misión a negociar una carga de trabajo más sensata. Fue un episodio incómodo en su momento y genuinamente importante: la primera afirmación clara de que las personas en órbita, no solo los planificadores en tierra, tienen voz en cómo se ejecuta una misión larga. Cada programa de estaciones desde entonces ha tenido que tomar en serio la autonomía de la tripulación."
+      "md": "También hay un hito humano. La tercera tripulación, llevada al agotamiento por un calendario sobrecargado transmitido desde tierra, finalmente se rebeló — tomándose un día no programado para descansar y obligando al control de misión a negociar una carga de trabajo más sensata. Fue un episodio incómodo en su momento y genuinamente importante: la primera afirmación clara de que las personas en órbita, no solo los planificadores en tierra, tienen voz en cómo se dirige una misión larga. Todos los programas de estaciones desde entonces han tenido que tomar en serio la autonomía de la tripulación."
     }
   ],
   "legacy": [
@@ -67,26 +67,26 @@
       "image": {
         "reuse": "missions/skylab-4/01"
       },
-      "caption": "La tripulación de Skylab 4, cuyo vuelo de 84 días estableció un récord de resistencia humana que se mantuvo durante años — y cuya resistencia a mitad de la misión contra una carga de trabajo imposible se convirtió en un hito en la autonomía de la tripulación.",
+      "caption": "La tripulación de Skylab 4, cuyo vuelo de 84 días estableció un récord de resistencia humana que se mantuvo durante años — y cuya rebelión a mitad de misión contra una carga de trabajo imposible se convirtió en un hito en la autonomía de la tripulación.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "El legado de Skylab es que hizo real la estación espacial — no como concepto sino como algo funcional, gestionado por personas, reparable, científicamente productivo, habitable durante meses. Todo lo que siguió en la era de las estaciones, tanto soviético como estadounidense, se construyó sobre lo que Skylab estableció: que los humanos pueden vivir y trabajar en órbita durante largos períodos, que el hardware puede arreglarse cuando se rompe, y que el propósito de una estación es la ciencia paciente y la resistencia humana más que un solo logro dramático."
+      "md": "El legado de Skylab es que hizo real la estación espacial — no como concepto sino como algo funcional, gestionado por personas, reparable, científicamente productivo, sobrevivible durante meses. Todo lo que siguió en la era de las estaciones, soviético y estadounidense por igual, se construyó sobre lo que Skylab estableció: que los humanos pueden vivir y trabajar en órbita durante largos períodos, que el hardware se puede arreglar cuando se rompe, y que el objetivo de una estación es la ciencia paciente y la resistencia humana más que un único primer acontecimiento dramático."
     },
     {
       "type": "prose",
-      "md": "Su desafortunado final también es instructivo. Skylab se perdió no porque fallara sino porque fue abandonada — dejada en una órbita que decayó mientras el vehículo destinado a reimpulsarla, el Space Shuttle, se retrasaba años. Una estación no es un monumento que construyes y del que te alejas; es un compromiso que debe financiarse continuamente y alcanzarse continuamente. La reentrada incontrolada sobre Australia fue una vergüenza de la que la NASA aprendió, y la lección — planificar toda la vida de una estación, incluido cómo mantenerla arriba y cómo bajarla — está escrita en cada programa que vino después."
+      "md": "Su final infeliz también es instructivo. Skylab se perdió no porque fallara sino porque fue abandonada — dejada en una órbita que decayó mientras el vehículo destinado a reimpulsarla, el Space Shuttle, se retrasó años. Una estación no es un monumento que construyes y del que te alejas; es un compromiso que debe financiarse continuamente y alcanzarse continuamente. La reentrada incontrolada sobre Australia fue una vergüenza de la que la NASA aprendió, y la lección — planificar toda la vida de una estación, incluyendo cómo mantenerla arriba y cómo bajarla — está escrita en cada programa que vino después."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La primera lección de Skylab es que la reparabilidad es una capacidad que vale la pena diseñar. La estación sobrevivió a un fallo de lanzamiento que debería haberla destruido solo porque se pudo enviar una tripulación para repararla — y porque, por improvisadas que fueran las reparaciones, había suficiente acceso y suficiente margen para intentarlas. Los programas que tomaron esto en serio, desde el servicio al Hubble hasta la ISS, trataron su hardware como algo que mantener, no meramente operar hasta que se rompiera. Los que lo olvidaron pagaron por naves espaciales que solo podían ver fallar."
+      "md": "La primera lección de Skylab es que la reparabilidad es una capacidad que vale la pena diseñar. La estación sobrevivió un fallo de lanzamiento que debería haberla destruido solo porque se pudo enviar una tripulación a repararla — y porque, por improvisadas que fueran las reparaciones, había suficiente acceso y suficiente margen para intentarlas. Los programas que tomaron esto en serio, desde el servicio del Hubble hasta la ISS, trataron su hardware como algo que debía mantenerse, no simplemente operarse hasta que se rompiera. Los que lo olvidaron pagaron por naves espaciales que solo podían ver fallar."
     },
     {
       "type": "prose",
-      "md": "La segunda lección es que una estación es tan segura como su línea de suministro. Skylab estaba condenada en el momento en que la brecha entre su última tripulación y su próxima posible visita se extendió más allá de la vida de su órbita. El hardware impresionante en el espacio no vale nada si no puedes alcanzarlo de manera confiable; el trabajo continuo, aburrido y costoso de mantener un sistema de transporte funcionando no es una nota al pie de un programa de estaciones sino su precondición. Skylab cayó porque se permitió que esa línea se interrumpiera."
+      "md": "La segunda lección es que una estación es solo tan segura como su línea de suministro. Skylab estaba condenada en el momento en que la brecha entre su última tripulación y su próxima visita posible se extendió más allá de la vida de su órbita. El hardware impresionante en el espacio no vale nada si no puedes alcanzarlo de forma fiable; el trabajo continuo, aburrido y costoso de mantener un sistema de transporte funcionando no es una nota al pie de un programa de estaciones sino su condición previa. Skylab cayó porque se permitió que esa línea se interrumpiera."
     }
   ]
 }

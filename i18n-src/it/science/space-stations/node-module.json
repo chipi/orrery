@@ -1,17 +1,17 @@
 {
-  "title": "Modulo nodo",
-  "intro_sentence": "Un hub pressurizzato con più porte di attracco — il connettore strutturale che permette a una stazione di ramificarsi.",
+  "title": "Modulo Nodo",
+  "intro_sentence": "Hub pressurizzato con molteplici porte di attracco — il connettore strutturale che consente a una stazione di diramificarsi.",
   "narrative_101": [
-    "Un nodo è un tipo speciale di modulo pressurizzato: non ospita esperimenti né alloggi per l'equipaggio, semplicemente collega altri moduli insieme. Immagina una scatola esagonale dove ogni faccia ha una porta di attracco. Imbulloni un nodo a un razzo che si lancia, lo mandi su, poi agganci cinque moduli in più alle cinque porte rimanenti e hai fatto crescere la tua stazione da un modulo a sei.",
-    "La ISS ne ha tre: Unity (Nodo 1), Harmony (Nodo 2) e Tranquility (Nodo 3). Ognuno è la giunzione centrale per un segmento della stazione — Unity unisce i lati russo e americano; Harmony collega il cluster del laboratorio statunitense ai moduli giapponese ed europeo; Tranquility porta la cupola di osservazione Cupola.",
-    "Tiangong ha adottato un approccio diverso: invece di nodi dedicati, il modulo centrale Tianhe funge sia da alloggio sia da hub, con più porte di attracco integrate direttamente nelle sue estremità anteriore e posteriore. È un design più stretto che costa meno massa al lancio ma limita quanti moduli possono ramificarsi."
+    "Un nodo è un modulo pressurizzato speciale: non ospita esperimenti né alloggi per l'equipaggio, collega semplicemente altri moduli insieme. Immagina una scatola esagonale in cui ogni faccia ha una porta di attracco. Fissa un nodo a un razzo di lancio, invialo in orbita, quindi attracca cinque moduli aggiuntivi alle cinque porte rimanenti e hai trasformato la tua stazione da un modulo a sei.",
+    "L'ISS ne ha tre: Unity (Node 1), Harmony (Node 2) e Tranquility (Node 3). Ognuno è il nodo centrale di un segmento della stazione — Unity collega i lati russo e statunitense; Harmony connette il cluster di laboratori statunitensi ai moduli giapponesi ed europei; Tranquility ospita la cupola di osservazione Cupola.",
+    "Tiangong ha adottato un approccio diverso: invece di nodi dedicati, il modulo centrale Tianhe funge sia da alloggi abitativi sia da hub, con molteplici porte di attracco integrate direttamente alle sue estremità anteriore e posteriore. È un design più compatto che riduce la massa da lanciare, ma limita quanti moduli possono diramificarsi."
   ],
   "body_paragraphs": [
-    "I nodi sono moduli connettori — hub pressurizzati con più porte Common Berthing Mechanism (CBM) o di attracco — che permettono a una stazione di ramificarsi in una topologia ad albero anziché una catena lineare.",
-    "ISS Unity (Nodo 1) lanciato nel 1998 su STS-88. Sei porte CBM: avanti verso Destiny, dietro verso Zarya, sinistra verso BEAM (era Tranquility), destra verso Quest, zenit verso il truss Z1, nadir verso Leonardo PMM. Il primo modulo ISS costruito negli USA.",
-    "ISS Harmony (Nodo 2) lanciato nel 2007. Sei porte: collega Destiny a Columbus (sinistra), Kibo (destra) e l'adattatore di attracco per veicoli visitatori (avanti).",
-    "ISS Tranquility (Nodo 3) lanciato nel 2010. Ospita la cupola di osservazione Cupola (porta nadir), il Permanent Multipurpose Module Leonardo (avanti) e BEAM (dietro).",
-    "Nucleo Tianhe di Tiangong: combina nodo + alloggi dell'equipaggio + propulsione + controllo. L'hub di attracco anteriore ha 4 porte equivalenti CBM più una porta di attracco posteriore per navette cargo (Tianzhou) e con equipaggio (Shenzhou). Wentian e Mengtian si agganciano lateralmente tramite l'hub del nodo anteriore."
+    "I nodi sono moduli connettori — hub pressurizzati con molteplici Common Berthing Mechanism (CBM) o porte di attracco — che consentono a una stazione di diramificarsi in una topologia ad albero anziché in una catena lineare.",
+    "ISS Unity (Node 1) è stato lanciato nel 1998 su STS-88. Sei porte CBM: anteriore → Destiny, posteriore → Zarya, destra → Quest airlock, zenit → Z1 truss, sinistra → Tranquility (2010), nadir → PMA/berthing per cargo (precedentemente Leonardo PMM 2011–2015). Il primo modulo ISS costruito dagli USA.",
+    "ISS Harmony (Node 2) è stato lanciato nel 2007. Sei porte: collega Destiny a Columbus (sinistra), Kibo (destra), e i due adattatori di attracco (IDA-2 anteriore, IDA-3 zenit) per Crew Dragon / Starliner.",
+    "ISS Tranquility (Node 3) è stato lanciato nel 2010. Ospita la cupola di osservazione Cupola (porta nadir), il Permanent Multipurpose Module Leonardo (anteriore), e BEAM (posteriore).",
+    "Il core di Tiangong Tianhe: combina nodo + alloggi per l'equipaggio + propulsione + controllo. L'hub nodo dispone di una porta assiale anteriore (Shenzhou), due porte radiali laterali (Wentian a destra, Mengtian a sinistra, entrambe riposizionate lì dal braccio), e una porta nadir; la porta assiale posteriore accoglie il cargo Tianzhou. Le porte utilizzano il Chinese Docking Mechanism, non il CBM statunitense."
   ],
-  "diagram_caption": "Modulo nodo esagonale con sei porte di attracco etichettate avanti / dietro / sinistra / destra / zenit / nadir."
+  "diagram_caption": "Modulo nodo esagonale con sei porte di attracco etichettate anteriore / posteriore / sinistra / destra / zenit / nadir."
 }

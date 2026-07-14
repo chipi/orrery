@@ -1,20 +1,20 @@
 {
-  "name": "Galileo",
-  "type": "ORBITER · FLOWN",
-  "first": "First spacecraft to orbit Jupiter; atmospheric probe into Jupiter clouds",
-  "dispatch": "伽利略号本该在抵达之前就已残废。它的主天线在飞往木星途中卡在半开状态,数据传输速率降至涓涓细流——但任务还是成功了,因为工程师们从地球改写了它的软件,将科学数据挤压通过一个微小的备用天线。它成为第一个环绕木星的航天器,向这颗巨行星的云层投放了一个探测器,并用八年时间巡游各卫星。它最伟大的发现缓慢地从那份坚持中浮现:木星磁场环绕Europa的方式只能用冰层下存在咸水海洋来解释——这是迄今为止最有力的证据,表明木星的一颗卫星可能蕴藏液态水,以及生命。最终它被有意驾驶坠入木星,这样它就永远不会落到Europa上并污染那里。",
-  "description": "Launched from Space Shuttle Atlantis after the long post-Challenger pause, Galileo braved the inner asteroid belt and conducted the first long-term study of Jupiter and its moons from orbit. It discovered Europa's induced magnetic field — strong evidence of a subsurface ocean — and watched Shoemaker-Levy 9 slam into Jupiter. The mission ended with a controlled plunge into Jupiter in 2003 to avoid contaminating icy moons that might harbour conditions for life.",
+  "name": "伽利略号",
+  "type": "轨道飞行器 · 已执行",
+  "first": "第一个绕木星轨道运行的航天器；向木星大气释放探测器",
+  "dispatch": "伽利略号本应在到达木星之前就已损坏。它的主天线在飞往木星的途中卡住了一半，将其数据速率降至极低——但该任务仍然取得了成功，因为地球上的工程师重写了其软件，使科学数据能通过一个微型备用天线传输。它成为了第一个绕木星轨道运行的航天器，向这颗巨型行星的大气投入了探测器，并花费了八年时间巡游各个卫星。其最伟大的发现是在这种坚持不懈中缓慢浮现的：木星磁场围绕欧罗巴的方式只能通过冰层下存在咸水洋来解释——这是迄今为止最有力的证据，表明木星的一个卫星可能蕴含液态水，甚至生命。最后，伽利略号被故意坠入木星，以确保它永远无法落在欧罗巴上并污染它。",
+  "description": "伽利略号从航天飞机亚特兰蒂斯号上发射升空，这是挑战者号事故后长期暂停后的首次任务，它穿过内小行星带，进行了第一次对木星及其卫星的长期轨道研究。它发现了欧罗巴诱导磁场——强有力的地下海洋证据——并目睹了苏梅克-列维9号彗星撞击木星。该任务以2003年有控制地坠入木星结束，以避免污染可能存在生命条件的冰质卫星。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "STS-34 deploys Galileo and an inertial upper stage from Atlantis.",
+      "label": "发射",
+      "note": "STS-34从亚特兰蒂斯号航天飞机上部署伽利略号和上面级。",
       "type": "nominal"
     },
     {
       "met": 2242,
-      "label": "JUPITER ORBIT INSERTION",
-      "note": "Main engine burn captures Galileo into orbit; decades of moon science begin.",
+      "label": "木星轨道插入",
+      "note": "主发动机点火使伽利略号进入轨道；为期8年的卫星科学巡游开始。",
       "type": "nominal"
     }
   ]

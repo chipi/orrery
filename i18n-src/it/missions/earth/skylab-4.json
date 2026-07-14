@@ -1,32 +1,32 @@
 {
   "name": "Skylab 4",
-  "dispatch": "Skylab 4 stabilì un record di permanenza che resistette per anni — 84 giorni in orbita — e divenne un punto di riferimento in qualcosa di meno prevedibile: chi ha il controllo di una missione. L'equipaggio di Gerald Carr arrivò con un programma estenuante trasmesso da terra, accumulò ritardi e alla fine reagì, prendendosi un giorno di riposo non programmato e costringendo il controllo missione a negoziare un carico di lavoro che gli esseri umani potessero effettivamente sostenere. Acquisirono anche le migliori osservazioni dell'epoca della Cometa Kohoutek. Il volo è ricordato sia per il suo record sia per aver affermato, per la prima volta in modo chiaro, che le persone in orbita — non solo i pianificatori a terra — hanno voce in capitolo su come viene condotta una missione di lunga durata.",
-  "type": "EQUIPAGGIO DI STAZIONE · VOLATA",
-  "first": "Più lunga permanenza su Skylab — 84 giorni, osservò la cometa Kohoutek, disputa del giorno di riposo \"sciopero Skylab\"",
-  "description": "Carr, Gibson e Pogue — l'ultimo e più lungo equipaggio di Skylab, 84 giorni e 1 ora, tutti esordienti. Lanciati il 1973-11-16 alle 14:01 UTC su un Saturn IB (SA-208). Osservazione completa delle risorse terrestri e solare, inclusa una campagna completa sulla cometa Kohoutek tra dicembre e gennaio. La missione è ricordata soprattutto per lo \"sciopero Skylab\" non ufficiale del 45º giorno, quando l'equipaggio spense le radio per mezza giornata dopo che le incessanti richieste dei controllori a terra avevano compresso ogni minuto di veglia — la disputa portò a riforme permanenti della NASA sulla pianificazione della timeline d'equipaggio per missioni di lunga durata. Ammararono il 1974-02-08 alle 15:17 UTC, l'ultimo ammaraggio con equipaggio statunitense fino al SpaceX Crew Dragon nel 2020. Il CSM-118 è esposto al National Museum of the US Air Force, Dayton OH.",
+  "type": "EQUIPAGGIO STAZIONE ORBITALE · COMPLETATO",
+  "first": "Permanenza su Skylab più lunga — 84 giorni, osservazioni della Cometa Kohoutek, controverso riposo \"sciopero di Skylab\"",
+  "description": "Carr, Gibson e Pogue — l'equipaggio finale e più longevo di Skylab, 84 giorni 1 ora, tutti esordienti. Lanciato il 1973-11-16 14:01 UTC su Saturn IB (SA-208). Osservazione complessiva delle risorse terrestri e solari, inclusa una campagna completa sulla Cometa Kohoutek tra dicembre e gennaio. La missione è ricordata soprattutto per quella che la NASA in seguito definì una \"ammutinamento di Skylab\" o \"sciopero\" — un racconto controverso di un giorno di riposo intorno al giorno 42 dopo pressanti richieste dei controllori di terra che comprimevano ogni minuto del tempo di veglia; la NASA e l'equipaggio hanno dichiarato che non si verificò alcuno sciopero organizzato, ma l'effettivo sovraccarico della timeline era reale e condusse a riforme permanenti della NASA sulla pianificazione della timeline dell'equipaggio per le missioni di lunga durata. Ammaraggio il 1974-02-08 15:17 UTC — l'ultimo ammaraggio di Skylab. CSM-118 esposto al National Museum of the US Air Force, Dayton OH.",
+  "dispatch": "Skylab 4 stabilì un record di durata che restò valido per anni — 84 giorni nello spazio — e divenne un punto di riferimento per qualcosa di meno atteso: chi gestisce davvero una missione. L'equipaggio di Gerald Carr arrivò a un calendario massacrante radiato da terra, rimase indietro, e infine si ribellò, prendendosi un periodo di riposo non programmato — la NASA e l'equipaggio stesso in seguito contestarono il grado di intenzionalità dello stand-down — costringendo il mission control a negoziare un carico di lavoro che gli umani potessero effettivamente sostenere. Catturarono anche le migliori osservazioni dell'epoca della Cometa Kohoutek. Il volo è ricordato sia per il record che per aver affermato, per la prima volta chiaramente, che le persone in orbita — non solo i pianificatori a terra — hanno voce in capitolo su come viene condotta una missione di lunga durata.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn IB SA-208 from LC-39B 1973-11-16 14:01 UTC.",
+      "label": "LANCIO",
+      "note": "Saturn IB SA-208 da LC-39B il 1973-11-16 14:01 UTC.",
       "type": "nominal"
     },
     {
       "met": 30,
-      "label": "KOHOUTEK CAMPAIGN",
-      "note": "Comprehensive ATM + window observations of Comet Kohoutek.",
+      "label": "CAMPAGNA KOHOUTEK",
+      "note": "Osservazioni comprehensive da ATM + finestre della Cometa Kohoutek.",
       "type": "info"
     },
     {
-      "met": 45,
-      "label": "TIMELINE RESET",
-      "note": "Crew/ground dispute over timeline density led to permanent NASA reforms.",
+      "met": 42,
+      "label": "RIPRISTINO DELLA TIMELINE",
+      "note": "Controverso stand-down di giorno di riposo (equipaggio e NASA in seguito dichiararono che non si verificò alcuno sciopero formale); il genuino sovraccarico della timeline condusse a riforme permanenti della NASA.",
       "type": "warning"
     },
     {
       "met": 84.05,
-      "label": "SPLASHDOWN",
-      "note": "CSM-118 splashed down in Pacific 1974-02-08 15:17 UTC — last US crewed water landing until Crew Dragon.",
+      "label": "AMMARAGGIO",
+      "note": "CSM-118 ammarato nell'Oceano Pacifico il 1974-02-08 15:17 UTC — ultimo ammaraggio di Skylab.",
       "type": "nominal"
     }
   ]

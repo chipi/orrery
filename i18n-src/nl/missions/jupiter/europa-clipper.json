@@ -1,37 +1,37 @@
 {
   "name": "Europa Clipper",
-  "type": "ORBITER + MULTI-FLYBY · ACTIVE",
-  "first": "Eerste missie gewijd aan het karakteriseren van de bewoonbaarheid van een ijzige maan; grootste planetaire missievoertuig ooit gelanceerd (6065 kg, 100-m² zonnepanelen)",
-  "description": "Europa Clipper gaat naar Jupiter om Europa te bestuderen — een 3.121-km ijzige maan waarvan wordt aangenomen dat er een wereldwijde oceaan van vloeibaar water onder een 15-25 km dikke ijsschil ligt, de meest toegankelijke potentieel bewoonbare omgeving in het zonnestelsel. Gelanceerd op 2024-10-14 met een Falcon Heavy bij C3 41,7. Een Mars zwaartekrachtondersteuning op 2025-03 + Aarde zwaartekrachtondersteuning op 2026-12 leveren het traject; aankomst Jupiter op 2030-04-11 voor baaninsertie. De orbitale tour voert 49 nauwe Europa-voorbijvluchten uit over vier jaar — passeert binnen 25 km van Europa's oppervlak bij de dichtstbijzijnde passages, ontworpen om de gehele maan in kaart te brengen terwijl de stralingsdosis van het ruimtevaartuig in de brute stralingsgordels van Jupiter wordt beperkt. Instrumenten: REASON ijsdoordringende radar, MASPEX massaspectrometer (bemonstert pluimmateriaal indien aanwezig), E-THEMIS thermische beeldvormer (vindt actieve geisers), magnetometer + plasma-instrumenten bevestigen oceaandiepte uit geïnduceerde magnetische respons.",
+  "type": "ORBITER + MULTI-FLYBY · ACTIEF",
+  "first": "Eerste missie gewijd aan het karakteriseren van de bewoonbaarheid van een ijzige maan; grootste planetaire missie-ruimtevaartuig ooit gelanceerd (6065 kg, 100-m² zonnepanelen)",
+  "description": "Europa Clipper gaat naar Jupiter om Europa te bestuderen — een 3.121-km ijzige maan waarvan wordt aangenomen dat deze een wereldwijd vloeibaar-waterocean onder een 15-25 km dikke ijslaag herbergt, de meest toegankelijke potentieel-bewoonbare omgeving in het zonnestelsel. Gelanceerd 2024-10-14 op een Falcon Heavy bij C3 41,7. Een Mars-zwaartekrachtmanoeuvre in maart 2025 boog de baan richting Aarde; een Aarde-zwaartekrachtmanoeuvre 2026-12 geeft de laatste duw naar buiten; aankomst Jupiter 2030-04-11 voor baaninsluiting. De baanronde voert 49 nauwe Europa-voorbijvluchten uit over vier jaar — passerend binnen 25 km van Europa's oppervlak bij de nauwste passages, ontworpen om de hele maan in kaart te brengen en tegelijkertijd de stralingsdosis van het ruimtevaartuig in Jupiters brute stralingsgordels te beperken. Instrumenten: REASON ijsdoordringende radar, MASPEX massaspectrometer (bemonstert pluimmateriaal indien aanwezig), E-THEMIS thermische beeldvormer (vindt actieve geysers), magnetometer + plasmainstrumenten bevestigen oceaandiepte uit geïnduceerde magnetische respons.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Falcon Heavy vanaf Kennedy LC-39A.",
+      "note": "Falcon Heavy van Kennedy LC-39A.",
       "type": "nominal"
     },
     {
       "met": 504,
-      "label": "MARS ZWAARTEKRACHTONDERSTEUNING",
-      "note": "2025-03-01. Buigt traject richting hernieuwde ontmoeting met Aarde.",
+      "label": "MARS-ZWAARTEKRACHTMANOEUVRE",
+      "note": "2025-03-01. Buigt baan richting Aarde-tegenontmoeting.",
       "type": "info"
     },
     {
       "met": 1530,
-      "label": "AARDE ZWAARTEKRACHTONDERSTEUNING",
-      "note": "2026-12-03. Laatste versnelling naar buiten richting Jupiter.",
+      "label": "AARDE-ZWAARTEKRACHTMANOEUVRE",
+      "note": "2026-12-03. Finale versnelling naar buiten richting Jupiter.",
       "type": "info"
     },
     {
       "met": 2005,
-      "label": "JUPITER NADERING",
-      "note": "2030-04-11. Laatste nadering tot JOI.",
+      "label": "JUPITER-BENADERING",
+      "note": "2030-04-11. Finale benadering naar JOI.",
       "type": "info"
     },
     {
       "met": 2005.005,
-      "label": "JUPITER BAANINSERTIE",
-      "note": "760 m/s ontsteking. 49 Europa-voorbijvluchten over 4 jaar volgen.",
+      "label": "JUPITER-BAANINSLUITING",
+      "note": "760 m/s-brand. 49 Europa-voorbijvluchten over 4 jaar volgen.",
       "type": "info"
     }
   ]

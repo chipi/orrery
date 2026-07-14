@@ -1,16 +1,16 @@
 {
-  "title": "Wetten van Kepler · 1609–1619",
-  "intro_sentence": "Tycho Brahe's levenslange verzameling nauwkeurige waarnemingen van Mars met het blote oog, door Kepler gedestilleerd tot de drie regels die elke baan gehoorzaamt.",
+  "title": "Keplers Wetten · 1609–1619",
+  "intro_sentence": "Tycho Brahes levenswerk van ongewapende-oog Marsgegevens, destilleerd door Kepler in drie regels die elke baan gehoorzaamt.",
   "narrative_101": [
-    "Tycho Brahe bracht 30 jaar door in het Uraniborg-observatorium op Hven, waar hij de positie van Mars mat met quadranten van messing en eikenhout — nauwkeuriger dan een boogminuut, allemaal met het blote oog. Hij stierf in 1601 zonder bijna iets te hebben gepubliceerd.",
-    "Kepler erfde de Mars-notitieboeken. Hij bracht nog eens tien jaar door met pogingen ze in cirkels te passen, maar faalde. De doorbraak kwam toen hij een ellips probeerde — Mars kwam onmiddellijk overeen. Daaruit kwamen drie wetten voort: banen zijn ellipsen met de zon in één brandpunt; gelijke oppervlakten afgelegd in gelijke tijd; periode in het kwadraat is gelijk aan halve lange as in het kubiek.",
-    "Zonder die drie wetten zou geen enkele ruimtevaartuigtraject in deze app kunnen worden berekend. Elke porkchop-cel, elke overdrachtsboog, elke planeet op /explore is een Kepleriaanse oplossing."
+    "Tycho Brahe besteedde ongeveer 20 jaar aan de sterrenwacht Uraniborg op Hven en mat Mars' positie met kwadranten van messing en eik — precisie beter dan boogminuten, allemaal met het blote oog. Hij stierf in 1601 zonder veel van zijn planetaire resultaten te hebben gepubliceerd.",
+    "Kepler erfde de Marsnotitieboeken. Hij bracht nog een decennium door met het proberen ze in cirkels in te passen en faalde. De doorbraak kwam toen hij een ellips probeerde — Mars kwam onmiddellijk overeen. Daaruit ontstonden drie wetten: banen zijn ellipsen met de Zon in één brandpunt; gelijke gebieden worden in gelijke tijd beschreven; kwadraat van periode gelijk aan kubus van halve grote as.",
+    "Zonder die drie wetten zou geen ruimtesondetraject in deze app berekenen. Elke porkchop-cel, elke transferboog, elke planeet op /explore is een Kepleriaanse oplossing."
   ],
   "body_paragraphs": [
-    "Astronomia Nova (1609) publiceerde Wetten 1 + 2 — de ellips- en gelijke-oppervlaktenregels, afgeleid uit de Mars-oppositiegegevens. Harmonices Mundi (1619) publiceerde Wet 3 — periode² ∝ halve lange as³.",
-    "Kepler had geen theoretische rechtvaardiging — de wetten waren empirische patronen die uit gegevens werden gehaald. Newton zou 70 jaar later het waarom leveren (zwaartekracht gaat als 1/r²; gebonden banen zijn kegelsneden; Wet 3 volgt uit energiebehoud).",
-    "Brahe's bijdrage was niet alleen data: hij was een nauwgezette instrumentenbouwer die meting met het blote oog tot zijn fysieke limiet doordreef. Telescoopkwaliteit precisie kwam pas na Galileo's telescoop van 1609 — te laat om met Brahe's carrière te overlappen.",
-    "Moderne heranalyse: Kepler's Mars-residuen zijn sub-boogminuut. Hij bepaalde een ellips met excentriciteit 0.0934 uit gegevens met een onvermijdbare meetonzekerheid van ~1 boogminuut. De fit was echt."
+    "Astronomia Nova (1609) publiceerde Wetten 1 + 2 — de ellips + gebiedswetten, afgeleid uit de Marsopposatiegegevens. Harmonices Mundi (1619) publiceerde Wet 3 — periode² ∝ halve grote as³.",
+    "Kepler had geen theoretische rechtvaardiging — de wetten waren empirische patronen die uit gegevens waren geëxtraheerd. Newton zou 70 jaar later het waarom leveren (zwaartekracht gaat als 1/r²; gebonden banen zijn kegelsneden; Wet 3 volgt uit energiebehoud).",
+    "Brahes bijdrage was niet alleen gegevens: hij was een nauwgezette instrumentenbouwer die ongewapende-oog meting tot zijn fysieke limiet voerde. Telescoopkwaliteitsprecisie kwam pas na Galileo's telescoop van 1609 — te laat om met Brahes carrière te overlappen.",
+    "Moderne heranalyse: Keplers Marsuitsluiting bedraagt sub-boogminuten. Hij raampte een ellips met excentriciteit 0,0934 uit gegevens die onvermijdbare meetonzekerheid van ongeveer 1 boogminuut hadden. De aanpassing was echt."
   ],
-  "diagram_caption": "Tycho's Mars-posities (punten) versus Kepler's elliptische fit (curve). Zon in één brandpunt."
+  "diagram_caption": "Tycho's Marsposities (punten) versus Keplers elliptische aanpassing (kromme). Zon in één brandpunt."
 }

@@ -1,8 +1,8 @@
 {
   "name": "Psyche",
-  "type": "ORBITER · ACTIVE",
-  "first": "Erste Mission zu einem metallreichen Asteroiden der M-Klasse; erste Verwendung von Hall-Effekt-Ionentriebwerken als primärer Antrieb für die Reise",
-  "description": "Psyche strebt zum freigelegten Nickel-Eisen-Kern eines differenzierten Protoplaneten — einem 226 km großen Metallkörper, der das nächste zugängliche Analogon zum Erdkern darstellen könnte. Start am 2023-10-13 mit einer Falcon Heavy von Kennedy LC-39A. Vier SPT-140 Hall-Effekt-Ionentriebwerke lassen die Flugbahn spiralförmig nach außen verlaufen; ein Mars-Gravity-Assist im Mai 2026 liefert die Energie, die der Ionenantrieb allein nicht rechtzeitig aufbringen könnte. Ankunft geplant für August 2029, gefolgt von einem 26-monatigen Abstieg in vier Orbitphasen (A → B → C → D), bei dem Schwerkraft, Magnetismus, Topographie und Zusammensetzung des Asteroiden kartiert werden. Sollte die Metallkern-Hypothese zutreffen, wird Psyche anders aussehen als alles, was wir bisher besucht haben — blanke Metalloberfläche, Eisen-Sulfid-Ablagerungen, kein Geröllhaufen-Chaos typischer Asteroiden.",
+  "type": "ORBITER · AKTIV",
+  "first": "Erste Mission zu einem metallreichen M-Klasse-Asteroiden; erste Verwendung von Hall-Effekt-Ionentriebwerken als primärer Kreuzfahrtsantrieb",
+  "description": "Psyche zielt auf den freigelegten Nickel-Eisen-Kern eines differenzierten Protoplaneten — einen 226 km großen Metallkörper, der möglicherweise das der Erde am ähnlichsten ist und zugänglich ist. Gestartet am 2023-10-13 von einer Falcon Heavy von Kennedy LC-39A. Vier SPT-140 Hall-Effekt-Ionentriebwerke treiben die Flugbahn spiralförmig nach außen; ein Mars-Gravitationsassist im Mai 2026 (nächste Annäherung 4.609 km) brachte die Energie, die der Ionentriebwerk allein nicht rechtzeitig liefern konnte. Ankunft geplant 2029-08, gefolgt von einer 26-monatigen vierphasigen Bahnabsenkung (A → B → C → D) zur Kartierung von Gravitation, Magnetismus, Topografie und Zusammensetzung des Asteroiden. Wenn die Metallkern-Hypothese richtig ist, wird Psyche anders aussehen als alles andere, das wir je besucht haben — bloße Metalloberfläche, Eisensulfid-Lagerstätten, keine der Trümmerhaufen-Chaos typischer Asteroiden.",
   "events": [
     {
       "met": 0,
@@ -12,20 +12,20 @@
     },
     {
       "met": 30,
-      "label": "IONENANTRIEB BEGINNT",
-      "note": "Vier Hall-Effekt-Ionentriebwerke übernehmen. Kontinuierliche Niedrigschub-Beschleunigung über 4+ Jahre.",
+      "label": "IONENKREUZFAHRT BEGINNT",
+      "note": "Vier Hall-Effekt-Ionentriebwerke übernehmen. Kontinuierliche Niedrig-Schub-Beschleunigung über 4+ Jahre.",
       "type": "info"
     },
     {
       "met": 945,
-      "label": "MARS-GRAVITY-ASSIST",
-      "note": "2026-05-15, 3.000 km nächste Annäherung.",
+      "label": "MARS-GRAVITATIONSASSIST",
+      "note": "2026-05-15. Nächste Annäherung 4.609 km — Mars-Vorbeiflug abgeschlossen.",
       "type": "info"
     },
     {
       "met": 2118,
       "label": "PSYCHE-ANKUNFT",
-      "note": "Gravitationseinfang durch Ionenantrieb in 700-km-Orbit. 26-monatige Mission, vier Orbitphasen.",
+      "note": "Ionentriebwerk-Gravitationsfang in 700-km-Umlaufbahn. 26-monatige Mission, vier Bahnphasen.",
       "type": "info"
     }
   ]

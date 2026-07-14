@@ -1,14 +1,14 @@
 {
   "name": "Space Shuttle",
-  "tagline": "El avión espacial reutilizable que prometió acceso rutinario a la órbita, como una aerolínea — entregó treinta años de capacidad extraordinaria, nunca entregó barato ni seguro, y mató a dos tripulaciones aprendiendo la diferencia.",
+  "tagline": "El avión espacial reutilizable que prometió acceso rutinario a la órbita, como una aerolínea — entregó treinta años de capacidad extraordinaria, nunca fue barato ni seguro, y mató a dos tripulaciones mientras aprendía la diferencia.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Después del Apollo, la NASA quería hacer del vuelo espacial algo ordinario. Los alunizajes habían sido magníficos e insostenibles — cohetes enormes desechados tras un solo uso, a un coste que ninguna nación soportaría durante mucho tiempo. La respuesta, argumentó la NASA, era la reutilización: un avión espacial alado que volase a órbita, planeara de vuelta a casa y despegara de nuevo en cuestión de semanas, convirtiendo el acceso al espacio de una serie de expediciones únicas en algo más cercano a una aerolínea. El Space Shuttle se vendió al Congreso exactamente con esa promesa — vuelo barato, rutinario y reutilizable."
+      "md": "Después de Apollo, la NASA quería hacer del vuelo espacial algo ordinario. Los alunizajes habían sido magníficos e insostenibles — cohetes enormes desechados tras un solo uso, a un coste que ninguna nación soportaría durante mucho tiempo. La respuesta, argumentó la NASA, era la reutilización: un avión espacial alado que volara a órbita, planeara de regreso y despegara de nuevo en cuestión de semanas, convirtiendo el acceso al espacio de una serie de expediciones únicas en algo más parecido a una aerolínea. El Space Shuttle se vendió al Congreso exactamente con esa promesa — vuelo barato, rutinario, reutilizable."
     },
     {
       "type": "prose",
-      "md": "El vehículo que surgió fue un compromiso entre esa visión y los presupuestos y requisitos militares que se le impusieron, y el compromiso importó. Para ser asequible tenía que ser reutilizable; para ser reutilizable y transportar cargas pesadas se volvió grande, complejo y — porque la tripulación viajaba junto a su tanque de combustible y aceleradores en lugar de de forma segura encima de la pila — fundamentalmente menos indulgente que las cápsulas a las que reemplazó. Era una máquina magnífica construida sobre una promesa que no podía cumplir, y la brecha entre la promesa y la realidad es toda la historia."
+      "md": "El vehículo que surgió fue un compromiso entre esa visión y los presupuestos y requisitos militares que se le impusieron, y el compromiso importó. Para ser asequible tenía que ser reutilizable; para ser reutilizable y transportar cargas pesadas se volvió grande, complejo y — porque la tripulación viajaba junto a su tanque de combustible y propulsores en lugar de segura encima de la estructura — fundamentalmente menos tolerante que las cápsulas a las que reemplazó. Era una máquina magnífica construida sobre una promesa que no podía cumplir, y la brecha entre la promesa y la realidad es toda la historia."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/endeavour/03"
       },
-      "caption": "Endeavour acoplado a la International Space Station. La combinación única del Shuttle — una tripulación grande, una bodega de carga, un brazo robótico y la capacidad de traer cosas de vuelta — lo convirtió en el vehículo que ensambló y dio servicio a las grandes estructuras de su era.",
+      "caption": "Endeavour acoplado a la Estación Espacial Internacional. La combinación única del Shuttle — una tripulación numerosa, una bodega de carga, un brazo robótico y la capacidad de traer cosas de vuelta — lo convirtió en el vehículo que ensambló y dio servicio a las grandes estructuras de su era.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "El objetivo del Shuttle era ser la bestia de carga de todo: un solo vehículo que pudiera lanzar satélites, recuperarlos y repararlos, transportar laboratorios como Spacelab, trasladar tripulaciones, y construir y dar servicio a estaciones espaciales — todo de forma reutilizable, todo de forma rutinaria. Ninguna nave espacial antes o después ha combinado tantas capacidades en un solo fuselaje. Una tripulación de hasta siete personas, una bodega de carga del tamaño de un autobús, un brazo robótico de quince metros, y la capacidad no solo de entregar carga a órbita sino de traer carga *de vuelta* — esa combinación era genuinamente única, e hizo posibles cosas que nada más podía hacer."
+      "md": "El objetivo del Shuttle era ser el caballo de batalla de todo: un solo vehículo que pudiera lanzar satélites, recuperarlos y repararlos, transportar laboratorios como Spacelab, llevar tripulaciones y construir y dar servicio a estaciones espaciales — todo de forma reutilizable, todo de forma rutinaria. Ninguna nave espacial antes o después ha combinado tantas capacidades en una sola estructura. Una tripulación de hasta siete personas, una bodega de carga del tamaño de un autobús, un brazo robótico de quince metros y la capacidad no solo de entregar carga a órbita sino de traer carga *de vuelta* — esa combinación fue genuinamente única, e hizo posibles cosas que nada más podía hacer."
     },
     {
       "type": "prose",
-      "md": "Dos de esas cosas justifican el programa entero. El Shuttle desplegó el Hubble Space Telescope y luego, cinco veces, envió tripulaciones para repararlo y mejorarlo en órbita — convirtiendo un telescopio defectuoso en el observatorio más productivo de la historia y manteniéndolo actualizado durante décadas. Y ensambló la International Space Station, llevando los módulos, armaduras y paneles solares y atornillándolos juntos con su brazo y sus caminantes espaciales. Ninguna de las dos era posible sin un vehículo que pudiera transportar una tripulación grande, una carga útil grande y las herramientas para trabajar en el espacio. Ese era el verdadero propósito del Shuttle, y en ello, fue inigualable."
+      "md": "Dos de esas cosas justifican el programa entero. El Shuttle desplegó el Telescopio Espacial Hubble y luego, en cinco ocasiones, envió tripulaciones a repararlo y mejorarlo en órbita — convirtiendo un telescopio defectuoso en el observatorio más productivo de la historia y manteniéndolo actualizado durante décadas. Y ensambló la Estación Espacial Internacional, llevando los módulos, estructuras y paneles solares y uniéndolos con su brazo y sus caminantes espaciales. Ninguna de las dos cosas era posible sin un vehículo que pudiera transportar una tripulación numerosa, una carga grande y las herramientas para trabajar en el espacio. Ese era el verdadero propósito del Shuttle, y en eso, no tuvo rival."
     }
   ],
   "outcome": [
@@ -35,30 +35,30 @@
       "image": {
         "reuse": "fleet/challenger/02"
       },
-      "caption": "La tripulación del último vuelo del Challenger, STS-51-L. Setenta y tres segundos después del despegue en una fría mañana de enero de 1986, un sello endurecido del acelerador falló y el vehículo se desintegró. Los siete murieron — y la investigación encontró que el riesgo había sido conocido y normalizado.",
+      "caption": "La tripulación del último vuelo de Challenger, STS-51-L. Setenta y tres segundos después del despegue en una mañana fría de enero de 1986, un sello de propulsor endurecido falló y el vehículo se desintegró. Los siete murieron — y la investigación encontró que el riesgo había sido conocido y normalizado.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "A lo largo de treinta años el Shuttle voló 135 misiones, transportó 355 personas e hizo trabajo que ningún otro vehículo podía. También nunca se acercó a su promesa fundacional. La reutilización no lo hizo barato: reacondicionar un orbitador entre vuelos era tan intensivo en mano de obra que cada lanzamiento costaba mucho más que un cohete desechable, y la frecuencia de vuelo similar a una aerolínea nunca se materializó. Y era peligroso de una forma que las cápsulas no lo eran — un vehículo experimental volado como si fuera operacional, con la tripulación montada al lado de los peligros en lugar de encima de ellos, y sin escape práctico de la mayoría de los fallos."
+      "md": "Durante treinta años el Shuttle voló 135 misiones, llevó a 355 personas diferentes e hizo trabajo que ningún otro vehículo podía. Tampoco se acercó nunca a su promesa fundacional. La reutilización no lo hizo barato: reacondicionar un orbitador entre vuelos era tan intensivo en mano de obra que cada lanzamiento costaba mucho más que un cohete desechable, y la tasa de vuelo tipo aerolínea nunca se materializó. Y era peligroso de una forma que las cápsulas no lo eran — un vehículo experimental volado como si fuera operativo, con la tripulación montada junto a los peligros en lugar de encima de ellos, y sin escapatoria práctica de la mayoría de los fallos."
     },
     {
       "type": "prose",
-      "md": "Ese peligro se hizo efectivo dos veces. En 1986, el Challenger fue destruido 73 segundos después del despegue cuando un sello de goma en un acelerador, endurecido por un clima inusualmente frío, falló — un riesgo que los ingenieros habían señalado y que la dirección había volado anteriormente. En 2003, el Columbia se desintegró durante la reentrada porque un trozo de espuma había perforado un agujero en su ala en el despegue — un impacto de escombros que también se había visto antes y tratado como aceptable. Catorce astronautas murieron en los dos accidentes, y ambas investigaciones llegaron a la misma conclusión condenatoria: los fallos de ingeniería fueron reales, pero la causa más profunda fue una organización que se había acostumbrado a volar con riesgo conocido y sin reparar. El vehículo era implacable; la cultura a su alrededor dejó de tener miedo de eso."
+      "md": "Ese peligro se cobró su precio dos veces. En 1986, Challenger fue destruido 73 segundos después del lanzamiento cuando un sello de goma en un propulsor, endurecido por clima inusualmente frío, falló — un riesgo que los ingenieros habían señalado y que la dirección había pasado por alto antes. En 2003, Columbia se desintegró durante la reentrada porque un pedazo de espuma había perforado un agujero en su ala durante el lanzamiento — un impacto de escombros que también se había visto antes y tratado como aceptable. Catorce astronautas murieron en los dos accidentes, y ambas investigaciones llegaron a la misma conclusión condenatoria: los fallos de ingeniería fueron reales, pero la causa más profunda fue una organización que se había acostumbrado a volar con riesgo conocido y sin corregir. El vehículo era implacable; la cultura a su alrededor dejó de temerle."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "La tensión central del Shuttle es que fue, a la vez, uno de los vehículos más capaces y más defectuosos jamás volados. Júzgalo contra su promesa — barato, rutinario, seguro — y fracasó en las tres. Júzgalo contra lo que realmente hizo — Hubble, la ISS, tres décadas de operaciones tripuladas, despliegue y recuperación de satélites, una generación de astronautas y ciencia — y es una de las grandes máquinas de la era espacial. Ambos juicios son ciertos, y el relato honesto los mantiene unidos en lugar de elegir uno."
+      "md": "La tensión central del Shuttle es que fue, a la vez, uno de los vehículos más capaces y uno de los más defectuosos jamás volados. Júzgalo contra su promesa — barato, rutinario, seguro — y falló en las tres. Júzgalo contra lo que realmente hizo — Hubble, la ISS, tres décadas de operaciones tripuladas, despliegue y recuperación de satélites, una generación de astronautas y ciencia — y es una de las grandes máquinas de la era espacial. Ambos juicios son ciertos, y el relato honesto los mantiene juntos en lugar de elegir uno."
     },
     {
       "type": "prose",
-      "md": "Los dos desastres son la parte más dura y más importante de ese relato, y su lección es organizativa, no meramente técnica. Ambos accidentes ocurrieron porque un peligro conocido — los sellos del acelerador, los impactos de espuma — había sido observado repetidamente sin catástrofe, y cada vez que no mató a nadie fue silenciosamente reclasificado como una característica aceptable del vuelo en lugar de la advertencia que era. Los sociólogos dieron un nombre a esto después del Challenger: la normalización de la desviación, el deslizamiento lento por el cual una organización llega a tolerar lo que una vez supo que era peligroso. Que el Columbia se perdiera diecisiete años más tarde por exactamente el mismo patrón es el hecho más aleccionador en la historia del programa."
+      "md": "Los dos desastres son la parte más dura y más importante de ese relato, y su lección es organizativa, no meramente técnica. Ambos accidentes ocurrieron porque un peligro conocido — los sellos de los propulsores, los impactos de espuma — había sido observado repetidamente sin catástrofe, y cada vez que no mató a nadie fue silenciosamente reclasificado como una característica aceptable del vuelo en lugar de la advertencia que era. Los sociólogos le dieron un nombre a esto después de Challenger: la normalización de la desviación, el deslizamiento lento por el cual una organización llega a tolerar lo que una vez supo que era peligroso. Que Columbia se perdiera diecisiete años después por exactamente el mismo patrón es el hecho más aleccionador en la historia del programa."
     },
     {
       "type": "prose",
-      "md": "También está la cuestión de lo que el Shuttle desplazó. Durante treinta años fue el único vehículo tripulado que Estados Unidos voló, y su coste y cadencia dieron forma a todo a su alrededor — no había ninguna cápsula más barata mantenida en reserva, ningún camino paralelo. Así que cuando se retiró en 2011, de forma segura y a tiempo, dejó a Estados Unidos sin forma de lanzar a sus propios astronautas en absoluto, dependiente de asientos rusos en Soyuz durante nueve años hasta que las cápsulas comerciales finalmente llenaron el vacío. El Shuttle era tan central que su ausencia fue en sí misma una crisis."
+      "md": "También está la cuestión de lo que el Shuttle desplazó. Durante treinta años fue el único vehículo tripulado que volaron los Estados Unidos, y su coste y cadencia moldearon todo a su alrededor — no había una cápsula más barata mantenida en reserva, ningún camino paralelo. Así que cuando se retiró en 2011, de forma segura y según el calendario, dejó a los Estados Unidos sin forma de lanzar a sus propios astronautas en absoluto, dependiendo de asientos en la Soyuz rusa durante nueve años hasta que las cápsulas comerciales finalmente llenaron el vacío. El Shuttle era tan central que su ausencia fue en sí misma una crisis."
     }
   ],
   "legacy": [
@@ -67,22 +67,22 @@
       "image": {
         "reuse": "fleet/atlantis/01"
       },
-      "caption": "Atlantis después de STS-135, el vuelo final del Shuttle, en julio de 2011 — el fin de treinta años de vuelo espacial reutilizable estadounidense, y del vehículo que construyó la Space Station que dejó atrás.",
+      "caption": "Atlantis después de STS-135, el último vuelo del Shuttle, en julio de 2011 — el fin de treinta años de vuelo espacial estadounidense reutilizable, y del vehículo que construyó la Estación Espacial que dejó atrás.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "El legado más duradero del Shuttle es físico: la International Space Station, que ensambló y que no podría haberse construido de ninguna otra forma, y el Hubble Space Telescope, que desplegó y salvó repetidamente. Esos dos solos aseguran su lugar. Pero su legado también es cautelar — la demostración más clara en el vuelo espacial de que la reutilización no es lo mismo que la baratura, que un vehículo experimental no debe venderse ni volarse como uno rutinario, y que la cultura organizativa, no solo la ingeniería, decide si una máquina peligrosa mata gente."
+      "md": "El legado más duradero del Shuttle es físico: la Estación Espacial Internacional, que ensambló y que no podría haberse construido de ninguna otra forma, y el Telescopio Espacial Hubble, que desplegó y salvó repetidamente. Solo esos dos aseguran su lugar. Pero su legado es también de advertencia — la demostración más clara en el vuelo espacial de que la reutilización no es lo mismo que la economía, que un vehículo experimental no debe venderse ni volarse como uno rutinario, y que la cultura organizativa, no solo la ingeniería, decide si una máquina peligrosa mata gente."
     },
     {
       "type": "prose",
-      "md": "Esas lecciones dieron forma a lo que siguió. Los vehículos que lo reemplazaron volvieron a la arquitectura de cápsula-encima que el Shuttle había abandonado, con sistemas reales de escape de lanzamiento; el impulso por acceso genuinamente barato al espacio pasó a una nueva generación que persiguió la reutilización de forma diferente, insistiendo en que realmente redujera los costes. El Shuttle demostró tanto que el vuelo espacial reutilizable era posible como que esta forma particular de hacerlo no era la respuesta — y ambas mitades de esa lección fueron esenciales para todo lo que vino después."
+      "md": "Esas lecciones moldearon lo que siguió. Los vehículos que lo reemplazaron volvieron a la arquitectura de cápsula-encima que el Shuttle había abandonado, con sistemas reales de escape de lanzamiento; el impulso por acceso genuinamente barato al espacio pasó a una nueva generación que persiguió la reutilización de forma diferente, insistiendo en que realmente redujera el coste. El Shuttle demostró tanto que el vuelo espacial reutilizable era posible como que esta forma particular de hacerlo no era la respuesta — y ambas mitades de esa lección fueron esenciales para todo lo que vino después."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La primera lección del Shuttle es que reutilizable no es lo mismo que barato. El vehículo fue reutilizado, pero reacondicionarlo entre vuelos era tan costoso y lento que nunca entregó el precio bajo o la cadencia alta que justificaba su diseño. La reutilización solo compensa si realmente reduce el coste y el tiempo de cambio de un vuelo; un vehículo reutilizable que es caro de reutilizar tiene los inconvenientes de la complejidad sin los ahorros prometidos. Los programas que posteriormente hicieron funcionar la reutilización trataron la baratura, no la reutilización por sí misma, como el objetivo."
+      "md": "La primera lección del Shuttle es que reutilizable no es lo mismo que barato. El vehículo se reutilizó, pero reacondicionarlo entre vuelos era tan costoso y lento que nunca entregó el bajo precio o alta cadencia que justificaba su diseño. La reutilización solo vale la pena si realmente reduce el coste y el tiempo de respuesta de un vuelo; un vehículo reutilizable que es caro de reutilizar tiene los inconvenientes de la complejidad sin los ahorros prometidos. Los programas que posteriormente hicieron funcionar la reutilización trataron la economía, no la reutilización por sí misma, como el objetivo."
     },
     {
       "type": "prose",

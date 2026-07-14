@@ -2,11 +2,11 @@
   "name": "Psyche",
   "type": "ORBITER · ACTIVE",
   "first": "First mission to a metal-rich M-class asteroid; first use of Hall-effect ion thrusters as the primary cruise propulsion",
-  "description": "Psyche reaches for the exposed nickel-iron core of a differentiated proto-planet — a 226-km metal body that may be the closest analogue to Earth's own core anywhere accessible. Launched 2023-10-13 on a Falcon Heavy from Kennedy LC-39A. Four SPT-140 Hall-effect ion thrusters spiral the trajectory outward; a Mars gravity assist 2026-05 adds the energy ion thrust alone couldn't deliver in time. Arrival planned 2029-08, followed by a 26-month four-orbit-phase descent (A → B → C → D) mapping the asteroid's gravity, magnetism, topography, and composition. If the metal-core hypothesis is right, Psyche will look unlike anything else we've visited — bare metal surface, iron-sulphide deposits, none of the rubble-pile chaos of typical asteroids.",
+  "description": "Psyche reaches for the exposed nickel-iron core of a differentiated proto-planet — a 226-km metal body that may be the closest analogue to Earth's own core anywhere accessible. Launched 2023-10-13 on a Falcon Heavy from Kennedy LC-39A. Four SPT-140 Hall-effect ion thrusters spiral the trajectory outward; a Mars gravity assist in May 2026 (4,609 km closest approach) added the energy ion thrust alone couldn't deliver in time. Arrival planned 2029-08, followed by a 26-month four-orbit-phase descent (A → B → C → D) mapping the asteroid's gravity, magnetism, topography, and composition. If the metal-core hypothesis is right, Psyche will look unlike anything else we've visited — bare metal surface, iron-sulphide deposits, none of the rubble-pile chaos of typical asteroids.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Falcon Heavy from Kennedy LC-39A.", "type": "nominal" },
     { "met": 30, "label": "ION CRUISE BEGINS", "note": "Four Hall-effect ion thrusters take over. Continuous low-thrust acceleration over 4+ years.", "type": "info" },
-    { "met": 945, "label": "MARS GRAVITY ASSIST", "note": "2026-05-15, 3,000 km closest approach.", "type": "info" },
+    { "met": 945, "label": "MARS GRAVITY ASSIST", "note": "2026-05-15. Closest approach 4,609 km — Mars flyby completed.", "type": "info" },
     { "met": 2118, "label": "PSYCHE ARRIVAL", "note": "Ion-thrust gravitational capture into 700-km orbit. 26-month mission, four orbit phases.", "type": "info" }
   ]
 }

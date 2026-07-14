@@ -1,9 +1,9 @@
 {
   "name": "Soyuz 11",
-  "type": "EQUIPAGGIO STAZIONE · PERSO",
-  "first": "Primo equipaggio su una stazione spaziale (Salyut 1); tutti e 3 morti per decompressione durante il rientro",
-  "dispatch": "Soyuz 11 conseguì qualcosa di straordinario e poi perse il suo equipaggio negli ultimi minuti del volo. Georgy Dobrovolsky, Vladislav Volkov e Viktor Patsayev divennero le prime persone a vivere a bordo di una stazione spaziale, trascorrendo ventitrè giorni sulla Salyut 1 — e poi, durante il rientro, una valvola si aprì di colpo nell'istante in cui i moduli si separarono e lasciò sfuggire l'aria della cabina nello spazio. Non indossavano tute pressurizzate; non c'era stato spazio per le tute quando i sedili erano stati montati per tre. In pochi secondi, al limite dello spazio, tutti e tre erano morti. La capsula atterrò da sola, perfettamente sul bersaglio; la squadra di recupero l'aprì e trovò l'equipaggio ancora allacciato ai sedili. Rimangono gli unici esseri umani ad essere morti nello spazio — e il prezzo pagato ha imposto una regola che vale da allora: gli equipaggi indossano tute pressurizzate durante il lancio e il rientro, sempre.",
-  "description": "La prima missione con equipaggio verso una stazione spaziale — Salyut 1 — fu lanciata il 6 giugno 1971 con Georgy Dobrovolsky, Vladislav Volkov e Viktor Patsayev. L'equipaggio trascorse 23 giorni a bordo della stazione. Durante il rientro il 30 giugno una valvola di equalizzazione della pressione si aprì prematuramente alla separazione dei moduli (~168 km); la cabina si depressurizzò e i tre cosmonauti, senza tuta, morirono in pochi secondi. La capsula atterrò normalmente. Rimangono gli unici esseri umani ad essere morti sopra la linea di Kármán.",
+  "type": "EQUIPAGGIO STAZIONE · PERDITA",
+  "first": "Primo equipaggio di una stazione spaziale (Salyut 1); tutti e 3 morti per depressurizzazione durante il rientro",
+  "dispatch": "Soyuz 11 ha realizzato qualcosa di straordinario e poi ha perso il suo equipaggio negli ultimi minuti del volo. Georgy Dobrovolsky, Vladislav Volkov e Viktor Patsayev sono diventati le prime persone a vivere a bordo di una stazione spaziale, trascorrendo ventidué giorni su Salyut 1 — e poi, durante il rientro, una valvola si è spalancata all'istante della separazione dei moduli, lasciando l'aria della loro cabina sfuggire nello spazio. Non indossavano tute di pressione; non c'era stato spazio per le tute quando i sedili erano stati allestiti per tre persone. In pochi secondi, al bordo dello spazio, tutti e tre erano morti. La capsula si è ammarata da sola, perfettamente sulla traiettoria; il team di recupero l'ha aperta trovando l'equipaggio ancora allacciato ai sedili. Rimangono gli unici esseri umani a essere morti nello spazio — e il prezzo ha istituito una regola che ha resistito da allora: gli equipaggi indossano tute di pressione durante il lancio e il rientro, sempre.",
+  "description": "La prima missione con equipaggio verso una stazione spaziale — Salyut 1 — è stata lanciata il 6 giugno 1971 con Georgy Dobrovolsky, Vladislav Volkov e Viktor Patsayev. L'equipaggio ha trascorso 22 giorni a bordo di Salyut 1 (durata totale della missione 23 giorni 18 ore). Durante il rientro del 30 giugno una valvola di uguagliamento della pressione si è aperta prematuramente alla separazione del modulo (~168 km); la cabina si è depressurizzata e i tre cosmonauti, non equipaggiati di tute, sono morti in pochi secondi. La capsula si è ammarata normalmente. Rimangono gli unici esseri umani a essere morti al di sopra della linea di Kármán.",
   "events": [
     {
       "met": 0,
@@ -13,14 +13,14 @@
     },
     {
       "met": 0.03,
-      "label": "AGGANCIO — SALYUT 1",
-      "note": "Primo equipaggio a salire a bordo di una stazione spaziale; 23 giorni a bordo.",
+      "label": "ATTRACCO — SALYUT 1",
+      "note": "Primo equipaggio a salire a bordo di una stazione spaziale; 22 giorni a bordo di Salyut 1.",
       "type": "info"
     },
     {
       "met": 24,
-      "label": "DECOMPRESSIONE",
-      "note": "La valvola si apre alla separazione dei moduli; la cabina si depressurizza a ~168 km. Equipaggio perso.",
+      "label": "DEPRESSURIZZAZIONE",
+      "note": "La valvola si apre alla separazione del modulo; la cabina si depressurizza a ~168 km. Equipaggio perduto.",
       "type": "warning"
     }
   ]

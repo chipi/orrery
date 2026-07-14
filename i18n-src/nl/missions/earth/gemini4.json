@@ -1,9 +1,9 @@
 {
   "name": "Gemini 4 / GT-4",
-  "type": "BEMAND AARDBAAN · GEVLOGEN",
+  "type": "BEMANDE AARDBAAN · VOLTOOID",
   "first": "Eerste Amerikaanse ruimtewandeling (Ed White)",
-  "dispatch": "Gemini 4 wordt herinnerd om één foto: Ed White, vastgemaakt aan het ruimtevaartuig door een gouden navelstreng, zwevend boven een blauwe aarde met een handmatig bestuurbaar pistool — de eerste Amerikaan die in de ruimte wandelde. Het moment was zo opwindend dat toen Mission Control hem na twintig minuten beval terug naar binnen te gaan, White het het trieste moment van zijn leven noemde. De ruimtewandeling zag er moeiteloos uit en was dat grotendeels ook, omdat White vrij zweefde in plaats van te werken — de harde waarheid dat EVA uitputtend werk is zou pas bij de volgende vluchten blijken. Maar voor een land dat achterliep op de Sovjet-Unie, die tien weken eerder de eerste ruimtewandeling had gemaakt, was het bewijs dat Amerika dit ook kon, en de foto werd een van de bepalende beelden van het tijdperk.",
-  "description": "James McDivitt en Edward White vlogen een vierdaagse missie van 62 banen vanaf 3 juni 1965. Tijdens de derde baan maakte White de eerste Amerikaanse ruimtewandeling — ongeveer 21 minuten buiten, vastgemaakt, gebruikmakend van een handmatige bestuuringseenheid. De vlucht voerde ook het eerste Amerikaanse uitgebreide medische + wetenschappelijke programma uit.",
+  "dispatch": "Gemini 4 wordt herinnerd om één foto: Ed White, vastgebonden aan het ruimtevaartuig door een gouden navelstreng, drijvend boven een blauwe Aarde met een draagbaar manoeuvreerapparaat — de eerste Amerikaan die in de ruimte wandelde. Het moment was zo opwindend dat toen Mission Control hem na twintig minuten terugriep naar binnen, White het het treurigste moment van zijn leven noemde. De ruimtewandeling zag er moeiteloos uit en was dat grotendeels ook, omdat White vrij dreef in plaats van te werken — de harde waarheid dat EVA uitputtend werk is zou pas duidelijk worden bij de volgende vluchten. Maar voor een land dat achter de Sovjets was blijven steken, die elf weken eerder de eerste ruimtewandeling hadden gedaan, was het het bewijs dat Amerika dit ook kon, en de foto werd een van de bepalende afbeeldingen van het tijdperk.",
+  "description": "James McDivitt en Edward White vlogen een vier dagen durende missie van 62 banen vanaf 3 juni 1965. Tijdens de derde baan maakte White de eerste Amerikaanse ruimtewandeling — ongeveer 23 minuten buiten, vastgebonden, met een draagbaar manoeuvreerapparaat. De vlucht omvatte ook het eerste uitgebreide Amerikaanse medische + wetenschapsprogramma.",
   "events": [
     {
       "met": 0,
@@ -14,13 +14,13 @@
     {
       "met": 0.13,
       "label": "EVA",
-      "note": "Ed White — eerste Amerikaanse ruimtewandeling, ~21 min, vastgemaakt, met een handmatige bestuuringseenheid.",
+      "note": "Ed White — eerste Amerikaanse ruimtewandeling, ~23 min, vastgebonden, met een draagbaar manoeuvreerapparaat.",
       "type": "info"
     },
     {
       "met": 4,
-      "label": "WATERLANDING",
-      "note": "Atlantische waterlanding na 4 dagen / 62 banen.",
+      "label": "NEERSLAG",
+      "note": "Splashdown in de Atlantische Oceaan na 4 dagen / 62 banen.",
       "type": "nominal"
     }
   ]

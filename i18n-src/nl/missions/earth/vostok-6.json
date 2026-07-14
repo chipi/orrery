@@ -1,26 +1,26 @@
 {
   "name": "Vostok 6",
-  "dispatch": "Vostok 6 vervoerde Valentina Tereshkova en maakte haar de eerste vrouw in de ruimte — een feit dat negentien jaar uniek bleef en pas in 1983 door de Verenigde Staten werd geëvenaard. Ze was geen piloot maar textielarbeidster en amateur-parachutist, deels gekozen om precies die symboliek: het bewijs, zo stelde het Sovjetprogramma, dat in de arbeiderstaat zelfs de grens van de ruimte voor iedereen toegankelijk was. Wat het motief ook was, achtenveertig banen later was de mijlpaal reëel en blijvend, en het zou twee decennia duren voordat enig ander land kon zeggen hetzelfde te hebben gedaan.",
-  "type": "BEMANDE AARDOMLOOPBAAN · GEVLOGEN",
-  "first": "Eerste vrouw in de ruimte — Valentina Teresjkova, 48 omwentelingen",
-  "description": "Valentina Teresjkova's vlucht van 48 omwentelingen en 2 dagen 23 uur — eerste vrouw in de ruimte en (tot Soyuz MS-22 in 2022) de enige vrouw die een solo-ruimtemissie heeft gevlogen. Geselecteerd uit een groep van vijf vrouwelijke kosmonautenkandidaten die in 1962 werd samengesteld, werd Teresjkova gelanceerd op 1963-06-16 om 09:30 UTC, slechts 2 jaar na Gagarins eerste orbitale vlucht. Haar capsule was geprogrammeerd voor een omhoog- in plaats van omlaaggerichte baancorrectie-burn — ze identificeerde de fout handmatig en vluchtleiders uploadden de volgende dag gecorrigeerde standregelsoftware. Landde op 1963-06-19 om 08:20 UTC nabij Bajevo, kraj Altaj. Teresjkova werd later een prominente figuur in de Sovjetpolitiek en blijft op 26-jarige leeftijd de jongste vrouw die ooit in een baan rond de Aarde vloog.",
+  "type": "BEMANDE AARDBAAN · GEVLOGEN",
+  "first": "Eerste vrouw in de ruimte — Valentina Tereshkova, 48 banen",
+  "dispatch": "Vostok 6 voerde Valentina Tereshkova mee en maakte haar de eerste vrouw in de ruimte — een feit dat negentien jaar lang uniek bleef en pas in 1983 door de Verenigde Staten werd overtroffen. Zij was niet als piloot maar als textielwerkster en amateurparachutiste geselecteerd, mede vanwege exact deze symboliek: bewijs, zo stelde het Sovjet-programma, dat in de arbeiderstaat zelfs de grens van de ruimte voor iedereen openstond. Ongeacht de motieven, na achtenveertig banen was de mijlpaal werkelijk en blijvend, en het zou twee decennia duren voordat enig ander land hetzelfde kon zeggen.",
+  "description": "Valentina Tereshkova's 48-banen, 2-dag-23-uur vlucht — de eerste vrouw in de ruimte, en nog altijd de enige vrouw die ooit een solove ruimtemissie heeft uitgevoerd. Geselecteerd uit een groep van vijf vrouwelijke kosmonauten-kandidaten bijeengebracht in 1962, lanceerde Tereshkova op 1963-06-16 09:30 UTC, slechts 2 jaar na Gagarin's eerste orbitale vlucht. Haar capsule was geprogrammeerd voor een correctiebrand omhoog in plaats van omlaag — zij identificeerde de fout handmatig en grondcontroleurs laadden de volgende dag gecorrigeerde attitudesoftware opnieuw in. Geland op 1963-06-19 08:20 UTC nabij Bayevo, Altai Krai. Tereshkova werd later een vooraanstaande figuur in de Sovjet-politiek en blijft de jongste vrouw ooit die naar een baan is gevlogen, op 26-jarige leeftijd.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Vostok-K from Baikonur Site 1 1963-06-16 09:30 UTC.",
+      "label": "LANCERING",
+      "note": "Vostok-K vanaf Baikonoer Locatie 1, 1963-06-16 09:30 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "ORBIT-CORRECTION ERROR",
-      "note": "Pre-loaded attitude software would have raised orbit instead of lowering it; corrected next day.",
+      "label": "BAANCORRECTIE-FOUT",
+      "note": "Vooringeladen attitudesoftware zou de baan hebben verhoogd in plaats van verlaagd; gecorrigeerd de volgende dag.",
       "type": "warning"
     },
     {
       "met": 2.95,
-      "label": "EJECT + LAND",
-      "note": "Landed near Bayevo, Altai Krai, 1963-06-19 08:20 UTC after 48 orbits.",
+      "label": "UITSTOOT + LANDING",
+      "note": "Geland nabij Bayevo, Altai Krai, 1963-06-19 08:20 UTC na 48 banen.",
       "type": "nominal"
     }
   ]

@@ -1,9 +1,9 @@
 {
   "name": "Soyuz 11",
-  "type": "BEMANNT STATION · VERLOREN",
-  "first": "Erste Besatzung einer Raumstation (Salyut 1); alle 3 starben bei Dekompression beim Wiedereintritt",
-  "dispatch": "Soyuz 11 erreichte etwas Außergewöhnliches und verlor dann seine Besatzung in den letzten Minuten des Fluges. Georgi Dobrowolski, Wladislaw Wolkow und Wiktor Pazajew wurden die ersten Menschen, die an Bord einer Raumstation lebten, verbrachten dreiundzwanzig Tage auf Salyut 1 — und dann, während des Wiedereintritts, öffnete sich im Moment der Modultrennung ein Ventil ruckartig und ließ die Kabinenluft ins All entweichen. Sie trugen keine Druckanzüge; es hatte keinen Platz für Anzüge gegeben, als die Sitze für drei eingebaut wurden. Innerhalb von Sekunden, am Rand des Weltraums, waren alle drei tot. Die Kapsel landete von selbst, perfekt auf Kurs; das Bergungsteam öffnete sie und fand die Besatzung noch in ihren Sitzen angeschnallt. Sie bleiben die einzigen Menschen, die im Weltraum gestorben sind — und der Preis erkaufte eine Regel, die seither gilt: Besatzungen tragen Druckanzüge während Start und Wiedereintritt, immer.",
-  "description": "Die erste bemannte Mission zu einer Raumstation — Salyut 1 — startete am 6. Juni 1971 mit Georgi Dobrowolski, Wladislaw Wolkow und Wiktor Pazajew. Die Besatzung verbrachte 23 Tage an Bord der Station. Während des Wiedereintritts am 30. Juni öffnete sich ein Druckausgleichsventil vorzeitig bei der Modultrennung (~168 km); die Kabine verlor den Druck und die drei Kosmonauten starben ohne Anzüge innerhalb von Sekunden. Die Kapsel landete normal. Sie bleiben die einzigen Menschen, die oberhalb der Kármán-Linie gestorben sind.",
+  "type": "BEMANNTE RAUMSTATION · VERLOREN",
+  "first": "Erste Besatzung an einer Raumstation (Salut 1); alle 3 starben durch Dekompression beim Wiedereintritt",
+  "dispatch": "Soyuz 11 erreichte etwas Außergewöhnliches und verlor dann seine Besatzung in den letzten Minuten des Fluges. Georgy Dobrovolsky, Vladislav Volkov und Viktor Patsayev wurden die ersten Menschen, die an einer Raumstation lebten, und verbrachten zweiundzwanzig Tage an Bord von Salut 1 — dann öffnete sich beim Wiedereintritt ein Ventil in dem Augenblick, als die Module sich trennten, und ließ die Kabinenluft in den Weltraum entweichen. Sie trugen keine Raumanzüge; es war kein Platz für Anzüge gewesen, als die Sitze für drei Personen eingebaut wurden. Innerhalb von Sekunden, am Rande des Weltalls, waren alle drei tot. Die Kapsel landete sich selbst, perfekt am Ziel; das Bergungsteam öffnete sie und fand die Besatzung noch in ihren Sitzen angeschnallt. Sie bleiben die einzigen Menschen, die im Weltraum gestorben sind — und der Preis führte zu einer Regel, die seitdem gilt: Besatzungen tragen Raumanzüge beim Start und Wiedereintritt, immer.",
+  "description": "Die erste bemannte Mission zu einer Raumstation — Salut 1 — startete am 6. Juni 1971 mit Georgy Dobrovolsky, Vladislav Volkov und Viktor Patsayev. Die Besatzung verbrachte 22 Tage an Bord von Salut 1 (Gesamtmissionsdauer 23 Tage 18 Stunden). Beim Wiedereintritt am 30. Juni öffnete sich ein Druckausgleichsventil vorzeitig bei der Modultrennung (~168 km); die Kabine depressurisierte und die drei Kosmonauten, ohne Anzüge, starben innerhalb von Sekunden. Die Kapsel landete normal. Sie bleiben die einzigen Menschen, die über der Kármán-Linie gestorben sind.",
   "events": [
     {
       "met": 0,
@@ -13,14 +13,14 @@
     },
     {
       "met": 0.03,
-      "label": "ANDOCKEN — SALYUT 1",
-      "note": "Erste Besatzung an Bord einer Raumstation; 23 Tage an Bord.",
+      "label": "ANDOCKEN — SALUT 1",
+      "note": "Erste Besatzung an Bord einer Raumstation; 22 Tage an Bord von Salut 1.",
       "type": "info"
     },
     {
       "met": 24,
       "label": "DEKOMPRESSION",
-      "note": "Ventil öffnet sich bei Modultrennung; Kabine verliert Druck bei ~168 km. Besatzung verloren.",
+      "note": "Ventil öffnet sich bei Modultrennung; Kabine depressurisiert bei ~168 km. Besatzung verloren.",
       "type": "warning"
     }
   ]

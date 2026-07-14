@@ -1,50 +1,50 @@
 {
   "name": "Curiosity",
-  "type": "RÓVER · ACTIVA",
-  "first": "Primer róver marciano a propulsión nuclear; primer aterrizaje con grúa aérea",
-  "dispatch": "Curiosity es un laboratorio del tamaño de un automóvil pequeño alimentado por energía nuclear, y la parte difícil fue hacer que aterrizara. Demasiado pesado para bolsas de aire, fue descendido sobre Marte en 2012 mediante una grúa aérea propulsada por cohetes en una secuencia tan arriesgada que sus planificadores la llamaron siete minutos de terror—y funcionó al primer intento. Desde entonces ha perforado su camino a través del cráter Gale y respondido la pregunta que fue enviado a formular: el cráter alguna vez albergó un lago, con la química que un ser vivo podría haber utilizado. Marte había sido habitable. Curiosity sigue avanzando, escalando una montaña de roca estratificada que se lee como el propio libro de historia del planeta.",
-  "description": "La misión insignia que definió la exploración moderna de Marte. Curiosity tiene el tamaño de un coche, está propulsado por plutonio y ha recorrido más de 32 km subiendo el Monte Sharp desde que aterrizó en el cráter Gale en 2012. Sus instrumentos confirmaron que Marte tuvo en su día condiciones habitables — agua corriente, compuestos orgánicos complejos, la química que necesitaría la vida. La secuencia EDA de los \"siete minutos de terror\", que termina con una grúa aérea bajando el róver con cables, es ahora el estándar de la NASA para entregar grandes cargas útiles a la superficie marciana.",
+  "type": "ROVER · ACTIVO",
+  "first": "Primer róver marciano con energía nuclear; primer aterrizaje con grúa celeste",
+  "dispatch": "Curiosity es un laboratorio con energía nuclear del tamaño de un coche pequeño, y lo difícil fue bajarlo. Demasiado pesado para bolsas de aire, fue descendido a Marte en 2012 por una grúa celeste impulsada por cohetes en una secuencia tan arriesgada que sus planificadores la llamaron siete minutos de terror — y funcionó a la primera. Desde entonces ha perforado su camino a través del cráter Gale y respondió la pregunta para la que fue enviado: el cráter albergó alguna vez un lago, con la química que algo viviente podría haber utilizado. Marte había sido habitable. Curiosity sigue funcionando, escalando una montaña de roca estratificada que se lee como el propio libro de historia del planeta.",
+  "description": "La misión insignia que definió la exploración moderna de Marte. Curiosity tiene el tamaño de un coche, está impulsado por plutonio, y ha recorrido más de 36 km a través del cráter Gale desde su aterrizaje en 2012. Sus instrumentos confirmaron que Marte alguna vez tuvo condiciones habitables — agua en movimiento, compuestos orgánicos complejos, la química que la vida necesitaría. La secuencia de EDL de los «siete minutos de terror», terminando con una grúa celeste bajando el róver por cables, es ahora el estándar de la NASA para entregar cargas útiles grandes a la superficie de Marte.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Atlas V 541 despega desde Cape Canaveral SLC-41.",
+      "note": "Atlas V 541 despega desde la Estación de Cabo Cañaveral SLC-41.",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "ENCENDIDO ITM",
-      "note": "Inyección transmarciana (3,61 km/s de ∆v) lanza a MSL a una trayectoria heliocéntrica rumbo a Marte.",
+      "label": "QUEMADURA TMI",
+      "note": "Inyección trans-Marte (∆v de 3,61 km/s) envía MSL hacia una trayectoria heliocéntrica hacia Marte.",
       "type": "nominal"
     },
     {
       "met": 16,
-      "label": "MCT-1",
-      "note": "Primera corrección de trayectoria.",
+      "label": "TCM-1",
+      "note": "Primera corrección de trayectoria de medio camino.",
       "type": "nominal"
     },
     {
       "met": 119,
-      "label": "MCT-3",
-      "note": "Última corrección antes de la EDA; la trayectoria apunta a la elipse de aterrizaje del cráter Gale.",
+      "label": "TCM-3",
+      "note": "Corrección final previa a EDL; la trayectoria apunta a la elipse de aterrizaje del cráter Gale.",
       "type": "nominal"
     },
     {
       "met": 254,
-      "label": "EDA — SIETE MINUTOS DE TERROR",
-      "note": "Entrada atmosférica, paracaídas supersónico, retrocohetes de la grúa aérea, róver bajado con cables.",
+      "label": "EDL — SIETE MINUTOS DE TERROR",
+      "note": "Entrada atmosférica, paracaídas supersónico, cohetes de retro-impulso de grúa celeste, róver descendido por cables.",
       "type": "nominal"
     },
     {
       "met": 254.005,
-      "label": "ATERRIZAJE",
+      "label": "TOMA DE CONTACTO",
       "note": "Curiosity llega a Aeolis Palus, cráter Gale, 2012-08-06 05:17:57 UTC.",
       "type": "nominal"
     },
     {
       "met": 254.01,
       "label": "PRIMERAS IMÁGENES",
-      "note": "La Hazcam devuelve la primera imagen de baja resolución de la superficie.",
+      "note": "Hazcam devuelve la primera imagen de baja resolución de la superficie.",
       "type": "info"
     }
   ]

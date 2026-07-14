@@ -15,7 +15,7 @@
   "delta_v": "~15 km/s (cumulative, Jupiter + Saturn assists)",
   "data_quality": "partial",
   "flight_data_quality": "sparse",
-  "credit": "© NASA / Ames Research Center — U.S. Government work, public domain. First spacecraft to fly past Saturn (1979-09-01) and the first to image the planet at close range. Used Jupiter's gravity to reach Saturn, demonstrating the gravity-assist technique that would later send Voyager 2 to Uranus and Neptune. Discovered Saturn's F ring + an additional small moon (Epimetheus). Carries the same Pioneer plaque as Pioneer 10. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; spacecraft heading toward the constellation Aquila.",
+  "credit": "© NASA / Ames Research Center — U.S. Government work, public domain. First spacecraft to fly past Saturn (1979-09-01) and the first to image the planet at close range. Used Jupiter's gravity to reach Saturn, demonstrating the gravity-assist technique that would later send Voyager 2 to Uranus and Neptune. Discovered Saturn's F ring + a small inner moon (later resolved by the Voyagers into the co-orbital pair Janus/Epimetheus). Carries the same Pioneer plaque as Pioneer 10. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; spacecraft heading toward the constellation Aquila.",
   "links": [
     {
       "l": "Pioneer 11 — Wikipedia",
@@ -80,7 +80,7 @@
         "met_days": 2339,
         "type": "flyby",
         "label": "Saturn — flyby",
-        "description": "Closest approach 20,900 km above Saturn's cloud tops on 1979-09-01 — the first spacecraft to visit Saturn, two years ahead of Voyager 1. Discovered the thin F-ring and a new moon (Janus); the ring-plane crossing geometry it tested cleared the Voyagers to attempt the same path. Last contact 1995-09-30."
+        "description": "Closest approach 20,900 km above Saturn's cloud tops on 1979-09-01 — the first spacecraft to visit Saturn, two years ahead of Voyager 1. Discovered the thin F-ring and a small inner moon (later resolved by the Voyagers into the co-orbital pair Janus/Epimetheus); the ring-plane crossing geometry it tested cleared the Voyagers to attempt the same path. Last contact 1995-09-30."
       }
     ],
     "interplanetary_profile": {

@@ -1,14 +1,14 @@
 {
-  "title": "Lire viabilité",
-  "intro_sentence": "Cellule viable quand capacité Δv fusée ≥ coût Δv cellule — porkchop transforme comparaison en carte oui/non.",
+  "title": "Lecture de la viabilité",
+  "intro_sentence": "Une cellule est viable lorsque la capacité ∆v de votre fusée ≥ le coût ∆v de la cellule — et la porkchop transforme cette comparaison en une carte oui/non.",
   "narrative_101": [
-    "Question qui transforme porkchop joli en décision réelle : ma fusée peut-elle voler ça ? Chaque fusée a capacité Δv publiée pour masse charge.",
-    "Cellules où capacité > coût : viables avec marge. Égales : viables mais serrées. Coût > capacité : pas volable avec cette fusée. Physique dit non.",
-    "Pick fusée /plan, porkchop superpose marge/déficit. Lobe rétrécit pour petites fusées, étend pour grandes. Vrais planificateurs itèrent."
+    "Voici la question qui transforme une porkchop d'une jolie carte thermique en une véritable décision de mission : ma fusée peut-elle vraiment voler cela ? Chaque fusée — Falcon Heavy, SLS, Atlas V, peu importe — a une capacité ∆v publiée pour une masse de charge utile donnée. Comparez ce plafond aux coûts par cellule de la porkchop et vous avez une carte oui/non.",
+    "Les cellules où la capacité de la fusée dépasse le coût sont réalisables, avec une marge de sécurité. Les cellules où la capacité correspond exactement au coût sont réalisables mais serrées — risquées, sans marge pour les imprévus. Les cellules où le coût dépasse la capacité ? Cette trajectoire n'est simplement pas réalisable avec cette fusée. Vous pouvez le souhaiter tant que vous voulez ; la physique dit non.",
+    "Choisissez une fusée sur /plan et la porkchop superpose une couleur de marge/déficit. Le lobe rétrécit pour les petites fusées, s'élargit pour les plus grandes. C'est ainsi que les planificateurs de mission travaillent réellement : essayez un véhicule, voyez ce qui est réalisable, voyez ce qui ne l'est pas, changez de véhicule, de charge utile ou de calendrier jusqu'à ce que la zone économique rentre dans la capacité de la fusée. La planification de vol réelle est exactement cette itération, juste avec plus de décimales."
   ],
   "body_paragraphs": [
-    "Choisis vehicle : Falcon Heavy, SLS Block 1, Atlas V N22. Capacité Δv max connue. Compare au porkchop : Δv_coût ≤ Δv_capacité = lancement viable. Plus grand = impossible sans autre vehicle.",
-    "Sur `/plan` choisi vehicle, Orrery superpose indicateur marge/déficit. Cellules turquoise → \"faisable, grande marge\". Jaunes → \"faisable mais serré\". Rouges → impossible-avec-ce-vehicle, affichage déficit.",
-    "Analyse faisabilité mission une vue. Vrais planificateurs run plusieurs fois — vehicles différents, masses, variantes — pour combinaison moins chère qui satisfait exigences scientifiques."
+    "Choisissez un véhicule. Falcon Heavy, SLS Block 1, Atlas V N22, peu importe. Ce véhicule possède une courbe de performance C3-vs-masse-charge-utile publiée — les charges utiles plus lourdes rétrécissent le lobe accessible ; les plus légères l'élargissent. Pour une masse de charge utile donnée, vous pouvez lire le C3 maximal (ou le ∆v de départ équivalent) que le véhicule peut fournir, puis comparer par rapport à la porkchop : chaque cellule où ∆v_coût ≤ capacité est une opportunité de lancement réalisable. Chaque cellule où c'est plus grand est impossible sans un véhicule différent ou un engin spatial plus léger.",
+    "Sur `/plan` vous pouvez choisir un lanceur et Orrery superpose un indicateur de marge/déficit. Les cellules bleu-vert deviennent « réalisable, grande marge ». Les cellules jaunes deviennent « réalisable mais serré ». Les cellules rouges deviennent impossibles-avec-ce-véhicule, et passent à un affichage de déficit montrant combien de capacité supplémentaire vous auriez besoin.",
+    "C'est l'analyse de faisabilité de mission en une seule vue. Les vrais planificateurs le font plusieurs fois — pour différents véhicules, masses de charge utile, variantes de trajectoire — afin de trouver la combinaison la moins chère qui répond aux exigences scientifiques. La porkchop est la visualisation ; le choix sous-jacent est toujours « combien de fusée me faut-il par rapport au voyage que j'achète. »"
   ]
 }

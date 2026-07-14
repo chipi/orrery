@@ -160,7 +160,12 @@ describe('image-ladder completeness (disk → manifest, bidirectional)', () => {
         // (scripts/fetch-badges.ts): fixed-size 256px icons with no responsive
         // rungs and their own badge-provenance.json, so they never enter the
         // display ladder — like posters and hotspots.
-        !rel.startsWith('images/badges/'),
+        !rel.startsWith('images/badges/') &&
+        // Essay art (the hero + the Wired-style diagram panels under
+        // images/essays/) is bespoke, direct-referenced full-width art: the
+        // /essays renderer uses a plain <img src>, not the responsive ladder,
+        // so like posters and badges it carries no rungs and no manifest entry.
+        !rel.startsWith('images/essays/'),
     )
       .map((rel) => '/' + rel.replace(/\.webp$/, '')) // images/x/01.webp → /images/x/01
       .filter((key) => !(key in manifest));

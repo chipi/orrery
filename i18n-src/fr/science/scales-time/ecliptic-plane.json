@@ -1,14 +1,14 @@
 {
-  "title": "Le plan écliptique",
-  "intro_sentence": "Le plan de l'orbite terrestre — référence pour presque chaque mesure du système solaire.",
+  "title": "Le plan de l'écliptique",
+  "intro_sentence": "Le plan de l'orbite terrestre autour du Soleil — utilisé comme référence pour presque chaque mesure du système solaire.",
   "narrative_101": [
-    "Tiens assiette plate, mets bille au centre — Soleil. Bille plus petite autour bord — Terre. Assiette plate = plan écliptique.",
-    "Étrange : la plupart du système solaire vit grossièrement sur cette assiette. Huit planètes à quelques degrés. Lune à 5°. Ceinture astéroïdes principalement dessus. Pas hasard — fossile formation système solaire.",
-    "Comètes = jokers. Comètes longue période depuis n'importe quelle direction — restes Nuage Oort jamais installés disque. Pluton à 17° — raison rétrogradation."
+    "Tenez une assiette plate et posez une bille en son centre — c'est le Soleil. Faites maintenant tourner une plus petite bille autour du bord — c'est la Terre. L'assiette plate est le plan de l'écliptique. L'orbite de la Terre le définit ; tout le reste du système solaire se mesure par rapport à lui.",
+    "Voici la chose étrange : la majeure partie du système solaire vit grosso modo sur ce plan. Les huit planètes sont toutes à quelques degrés de celui-ci. La Lune orbite autour de la Terre dans un plan décalé de seulement 5 degrés. La ceinture d'astéroïdes s'y situe en grande partie. Ce n'est pas une coïncidence — c'est un vestige de la formation du système solaire, quand tout s'est condensé à partir d'un grand disque tournant de gaz et de poussière autour du jeune Soleil. Le disque a fixé le plan et la plupart de ce qui reste le respecte encore.",
+    "Les comètes sont les éléments imprévisibles. Les comètes de longue période arrivent de n'importe quelle direction à n'importe quel angle — ce sont des résidus du nuage d'Oort extérieur qui ne se sont jamais installés dans le disque. Pluton orbite à 17 degrés hors du plan — de loin l'inclinaison la plus prononcée parmi les neuf planètes classiques. (Son reclassement en 2006 concernait le fait qu'elle n'avait pas nettoyé son voisinage orbital, non son inclinaison.)"
   ],
   "body_paragraphs": [
-    "Soleil, Terre, Lune tracent chemins. Orbite Terre définit plan. Depuis Terre, Soleil semble bouger sur ce plan contre fond étoiles — chemin = écliptique. Plupart corps proches.",
-    "Écliptique = plan référence inclinaisons. Terre 0° construction. Mercure 7°, Pluton 17°. Équinoxe vernal = longitude zéro.",
-    "`/explore` regarde par défaut depuis dessus écliptique — perspective naturelle mouvement héliocentrique."
+    "Le Soleil, la Terre et la Lune tracent des trajectoires dans l'espace. L'orbite de la Terre définit un plan. Vu depuis la Terre, le Soleil semble se déplacer le long de ce plan sur le fond des étoiles — ce chemin dans le ciel est l'écliptique. La plupart des autres corps du système solaire s'en rapprochent : les huit planètes sont toutes à quelques degrés, la ceinture d'astéroïdes s'y concentre, les comètes sont dispersées.",
+    "L'écliptique est le plan de référence pour les inclinaisons orbitales des corps du système solaire. L'inclinaison de la Terre est 0° par construction. Mercure à 7°, Pluton à 17°, se mesurent par rapport à ce plan. La direction de l'équinoxe de printemps — où l'écliptique croise l'équateur céleste vers le nord — est la référence de longitude zéro, utilisée pour ancrer la longitude du nœud ascendant et l'argument du périhélie de chaque orbite.",
+    "La vue `/explore` d'Orrery regarde le plan de l'écliptique de haut par défaut — la perspective naturelle pour penser au mouvement héliocentrique. Incliner la vue vous montre pourquoi les orbites de Mercure et Pluton semblent « anormales » alors qu'elles sont parfaitement keplériennes : leurs plans orbitaux ne correspondent pas au reste du groupe."
   ]
 }

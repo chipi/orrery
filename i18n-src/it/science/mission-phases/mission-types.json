@@ -1,18 +1,18 @@
 {
-  "title": "Tipi di missione — Flyby, Orbiter, Lander, Rover, Sample Return",
-  "intro_sentence": "Cinque archetipi.",
+  "title": "Tipologie di Missioni — Flyby, Orbiter, Lander, Rover, Sample Return",
+  "intro_sentence": "Cinque archetipi di come un veicolo spaziale si avvicina alla sua destinazione — ognuno con un costo ∆v diverso, profilo di rischio e ritorno scientifico.",
   "narrative_101": [
-    "Ogni missione robotica sceglie una delle cinque strategie.",
-    "FLYBY: mira, fotografa, parti. Voyager, New Horizons.",
-    "ORBITER: frena, resta anni. LANDER + EDL. ROVER + ruote.",
-    "SAMPLE RETURN apice: lander + ascesa + crociera ritorno + EDL Terra. Hayabusa-2, Apollo."
+    "Ogni missione robotica verso un altro mondo sceglie una di cinque strategie. Questa scelta determina quasi tutto il resto — quanto grande deve essere il razzo, come si piega la traiettoria, cosa porta il veicolo spaziale, che scienza fa, e se sopravvive. La tassonomia si allinea perfettamente con una scala di ∆v: il flyby è il più economico, il sample return è il più costoso.",
+    "FLYBY: mirare, fotografare, partire. Nessuna spinta di frenata. Voyager 1/2 oltre Giove, Saturno, Urano, Nettuno; New Horizons oltre Plutone; Pioneer 10/11. Un'unica occasione, ore di scienza al massimo avvicinamento, il veicolo spaziale continua per sempre. Il più economico in ∆v ma non ritorni.",
+    "ORBITER: frenare in un'orbita catturata e restare per anni. MAVEN, MRO, Cassini, Galileo. La spinta di inserimento orbitale è costosa (1-2 km/s) ma riesci a mappare l'intero corpo. LANDER aggiunge EDL — scudo termico, paracadute, retrorazzi — oltre a un orbiter. ROVER aggiunge ruote, trasmissione, autonomia — ogni chilogrammo sul rover costa un intero stack sottostante.",
+    "SAMPLE RETURN è l'apice: lander + stadio di ascesa dalla superficie + ritorno in crociera + EDL sulla Terra. Hayabusa-2, OSIRIS-REx, Chang'e 5, i voli lunari dell'Apollo. Il rapporto di massa per la partenza dalla Terra è brutale — Mars Sample Return è in sviluppo ed è una delle missioni robotiche più difficili mai tentate."
   ],
   "body_paragraphs": [
-    "Flyby skip insertion. Voyager Jupiter ~10 km/s, New Horizons Plutone ~14 km/s.",
-    "Orbiter scambia Δv per tempo. Insertion 1-2 km/s, anni di mappatura.",
-    "Lander aggiungono EDL e massa strutturale. ~50% successo storico Marte.",
-    "Rover aggiungono ruote, autonomia. Curiosity 899 kg → aeroshell 4 t → crociera 4 t → Saturn V class.",
-    "Sample return = apice. Massa che lascia Terra ~10× massa restituita per Marte. Hayabusa-2 ~5g Ryugu."
+    "Le missioni flyby saltano completamente la spinta di inserimento orbitale. Passano a V∞ con cui arrivano — ~10 km/s per Voyager a Giove, ~14 km/s per New Horizons a Plutone. Il tempo di incontro è di minuti fino a giorni. Scambiano la scienza veloce per una copertura superficiale e zero seguiti.",
+    "Le missioni orbiter scambiano ∆v per tempo sul bersaglio. L'inserimento costa tipicamente 1-2 km/s di frenata, ma il veicolo spaziale ha quindi anni per mappare il corpo. L'aerobraking (usando la resistenza atmosferica al periapsi) può ridurre ulteriormente il budget — Mars Reconnaissance Orbiter ha eseguito aerobraking nella sua orbita scientifica in 6 mesi per risparmiare carburante.",
+    "I lander aggiungono EDL — entrata, discesa, atterraggio — al budget dell'orbiter, più la massa strutturale dello scudo termico, del paracadute, dei retrorazzi e delle gambe del lander. L'EDL è la fase a rischio più elevato di qualsiasi missione; Marte ha un tasso di successo storico di ~50% per gli atterraggi.",
+    "I rover aggiungono ruote, trasmissione, navigazione e autonomia. Ogni chilogrammo sul rover costa un intero stack sottostante: lo stadio di discesa che lo consegna, lo stadio di crociera che consegna lo stadio di discesa, il razzo che lancia lo stadio di crociera. Il rover Curiosity da 899 kg ha richiesto uno stack di aerofreno/EDL di ~2,4 tonnellate più uno stadio di crociera di ~0,5 tonnellate — circa 3,8 tonnellate di massa totale al lancio — consegnato da un Atlas V.",
+    "Il sample return è l'apice. La massa che deve partire dalla Terra si scala come ~10× la massa del sample return per un viaggio di andata e ritorno verso Marte — stai pagando per il razzo che lancia il razzo che lancia il lander che lancia il contenitore del campione che lancia lo stadio di crociera che riporta i campioni a casa. Hayabusa-2 ha restituito ~5g dell'asteroide Ryugu in una capsula che stava nel palmo della tua mano."
   ],
-  "diagram_caption": "Cinque archetipi per complessità crescente."
+  "diagram_caption": "Cinque archetipi di missione disposti per complessità crescente: flyby → orbiter → lander → rover → sample return."
 }

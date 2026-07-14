@@ -1,26 +1,26 @@
 {
   "name": "Vostok 6",
-  "dispatch": "Vostok 6 trasportò Valentina Tereshkova e la rese la prima donna nello spazio — un primato rimasto tale per diciannove anni e non eguagliato dagli Stati Uniti fino al 1983. Non era una pilota ma un'operaia tessile e paracadutista dilettante, scelta in parte proprio per quel simbolismo: la prova, dichiarava il programma sovietico, che nello stato dei lavoratori persino la frontiera dello spazio era aperta a chiunque. Quali che fossero i motivi, quarantotto orbite dopo il traguardo era reale e permanente, e sarebbero passati due decenni prima che qualsiasi altra nazione potesse affermare di aver fatto lo stesso.",
-  "type": "ORBITA TERRESTRE CON EQUIPAGGIO · VOLATA",
-  "first": "Prima donna nello spazio — Valentina Tereškova, 48 orbite",
-  "description": "Volo di 48 orbite e 2 giorni 23 ore di Valentina Tereškova — prima donna nello spazio e (fino a Soyuz MS-22 nel 2022) unica donna ad aver effettuato una missione spaziale in solitaria. Selezionata da un gruppo di cinque candidate cosmonaute formato nel 1962, Tereškova fu lanciata il 1963-06-16 alle 09:30 UTC, solo 2 anni dopo il primo volo orbitale di Gagarin. La sua capsula era programmata per una manovra di correzione orbitale verso l'alto anziché verso il basso — identificò manualmente l'errore e i controllori a terra ricaricarono il giorno successivo un software di assetto corretto. Atterrò il 1963-06-19 alle 08:20 UTC vicino a Bajevo, Kraj dell'Altaj. Tereškova divenne in seguito una figura di primo piano nella politica sovietica e resta la donna più giovane mai volata in orbita, a 26 anni.",
+  "type": "NAVICELLA ABITATA ORBITA-TERRESTRE · COMPLETATA",
+  "first": "Prima donna nello spazio — Valentina Tereshkova, 48 orbite",
+  "dispatch": "La Vostok 6 trasportava Valentina Tereshkova e la rendeva la prima donna nello spazio — un primato che rimase solitario per diciannove anni e non fu eguagliato dagli Stati Uniti fino al 1983. Non era una pilota ma un'operaia tessile e paracadutista dilettante, scelta in parte proprio per questo simbolismo: prova, diceva il programma sovietico, che nello Stato dei lavoratori persino la frontiera dello spazio era aperta a chiunque. Comunque fossero le motivazioni, quarantotto orbite dopo il risultato era reale e permanente, e sarebbero passati due decenni prima che qualsiasi altra nazione potesse vantarsi di aver fatto lo stesso.",
+  "description": "Il volo di Valentina Tereshkova di 48 orbite, durato 2 giorni e 23 ore — la prima donna nello spazio, e ancora l'unica donna che abbia mai completato una missione spaziale in solitaria. Selezionata da un gruppo di cinque candidate cosmonauta donne riunite nel 1962, Tereshkova è decollata il 1963-06-16 alle 09:30 UTC, soli 2 anni dopo il primo volo orbitale di Gagarin. La sua capsula era programmata per una correzione orbitale verso l'alto anziché verso il basso — lei identificò manualmente l'errore e i controllori a terra caricarono il software di assetto corretto il giorno successivo. Atterrata il 1963-06-19 alle 08:20 UTC nei pressi di Bayevo, Altai Krai. Tereshkova successivamente divenne una figura di primo piano nella politica sovietica e rimane la donna più giovane mai lanciata in orbita, all'età di 26 anni.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Vostok-K from Baikonur Site 1 1963-06-16 09:30 UTC.",
+      "label": "LANCIO",
+      "note": "Vostok-K da Baikonur Sito 1, 1963-06-16 09:30 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "ORBIT-CORRECTION ERROR",
-      "note": "Pre-loaded attitude software would have raised orbit instead of lowering it; corrected next day.",
+      "label": "ERRORE CORREZIONE ORBITA",
+      "note": "Il software di assetto precaricato avrebbe elevato l'orbita invece di abbassarla; corretto il giorno successivo.",
       "type": "warning"
     },
     {
       "met": 2.95,
-      "label": "EJECT + LAND",
-      "note": "Landed near Bayevo, Altai Krai, 1963-06-19 08:20 UTC after 48 orbits.",
+      "label": "EIEZIONE + ATTERRAGGIO",
+      "note": "Atterrata nei pressi di Bayevo, Altai Krai, il 1963-06-19 alle 08:20 UTC dopo 48 orbite.",
       "type": "nominal"
     }
   ]

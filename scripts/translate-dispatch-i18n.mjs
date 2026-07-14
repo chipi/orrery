@@ -68,7 +68,7 @@ CRITICAL CONSTRAINTS:
 
 async function translateOne(client, locale, str) {
   const r = await client.messages.create({
-    model: 'claude-sonnet-4-5',
+    model: 'claude-haiku-4-5',
     max_tokens: 4096,
     system: SYSTEM,
     tools: [
@@ -144,7 +144,7 @@ function apply(target, slots, translated) {
 
 async function translateStrings(client, locale, strings) {
   const r = await client.messages.create({
-    model: 'claude-sonnet-4-5',
+    model: 'claude-haiku-4-5',
     max_tokens: 4096,
     system: SYSTEM,
     tools: [

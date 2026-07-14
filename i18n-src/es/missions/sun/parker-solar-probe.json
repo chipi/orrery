@@ -1,31 +1,31 @@
 {
   "name": "Parker Solar Probe",
-  "type": "SOLAR-ORBITER · ACTIVE",
-  "first": "Nave espacial más cercana al Sol jamás volada (6,1 M km, 9,86 R☉); primera nave espacial en entrar en la corona solar (2021-04-28); objeto creado por el ser humano más rápido (192 km/s)",
-  "description": "Parker Solar Probe ejecutó el lanzamiento de mayor energía jamás realizado para una misión científica: C3 de 154 km²/s², requiriendo una tercera etapa sólida Star 48BV personalizada sobre un Delta IV Heavy solo para escapar de la Tierra hacia una trayectoria de caída al Sol. Siete asistencias gravitatorias de Venus durante seis años redujeron progresivamente el perihelio desde 0,16 UA (P1, 2018-11-05) hasta 0,046 UA (P22, 2024-12-24 — 9,86 radios solares, 6,1 millones de km desde la superficie). En P8 el 2021-04-28, Parker se sumergió por debajo de la superficie crítica de Alfvén, convirtiéndose en la primera nave espacial en entrar en la corona del Sol. En P22 alcanzó 192 km/s, convirtiéndose en el objeto creado por el ser humano más rápido jamás registrado. El escudo térmico de carbono-carbono de 11,43 cm soportó 1.377 °C mientras que el bus de la nave espacial, 1 metro detrás, se mantenía a temperatura ambiente.",
+  "type": "SONDA SOLAR · ACTIVA",
+  "first": "Nave más cercana al Sol jamás lanzada (6,1 M km, 9,86 R☉); primera nave en entrar en la corona solar (2021-04-28); objeto hecho por humanos más rápido (~191 km/s)",
+  "description": "Parker Solar Probe realizó el lanzamiento de mayor energía jamás ejecutado en una misión científica — C3 de 154 km²/s², requiriendo una etapa sólida Star 48BV personalizada sobre un Delta IV Heavy solo para escapar de la Tierra hacia una trayectoria de caída solar. Siete asistencias gravitatorias de Venus durante seis años redujeron progresivamente el perihelio de 0,16 UA (P1, 2018-11-05) a 0,046 UA (P22, 2024-12-24 — 9,86 radios solares, 6,1 millones de km de la superficie). En P8 el 2021-04-28, Parker se sumergió por debajo de la superficie crítica de Alfvén — la primera nave en entrar en la corona del Sol. En P22 alcanzó ~191 km/s, convirtiéndose en el objeto hecho por humanos más rápido jamás registrado. El escudo térmico de carbono-carbono de 11,43 cm sostuvo 1.377 °C mientras que el autobús espacial 1 metro detrás permanecía a temperatura ambiente.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Delta IV Heavy + Star 48BV — C3 más alto jamás registrado para una misión científica (154 km²/s²).",
+      "note": "Delta IV Heavy + Star 48BV — C3 más alto jamás alcanzado en una misión científica (154 km²/s²).",
       "type": "nominal"
     },
     {
       "met": 52,
       "label": "VGA-1",
-      "note": "Primera asistencia gravitatoria de Venus 2018-10-03.",
+      "note": "Primer asistencia gravitatoria de Venus 2018-10-03.",
       "type": "info"
     },
     {
       "met": 85,
       "label": "P1 — PRIMER PERIHELIO",
-      "note": "2018-11-05, 0,16 UA. Más cercano al Sol jamás registrado, superando a Helios 2.",
+      "note": "2018-11-05, 0,16 UA. Más cercana al Sol jamás lograda, superando a Helios 2.",
       "type": "info"
     },
     {
       "met": 989,
-      "label": "P8 — ENTRADA EN LA CORONA",
-      "note": "2021-04-28. Primera nave espacial en sumergirse por debajo de la superficie crítica de Alfvén.",
+      "label": "P8 — ENTRADA A LA CORONA",
+      "note": "2021-04-28. Primera nave en sumergirse por debajo de la superficie crítica de Alfvén.",
       "type": "info"
     },
     {
@@ -37,7 +37,7 @@
     {
       "met": 2326,
       "label": "P22 — HITO DE DISEÑO",
-      "note": "2024-12-24. 9,86 R☉ (6,1 M km del Sol). 192 km/s. Escudo térmico 1.377 °C.",
+      "note": "2024-12-24. 9,86 R☉ (6,1 M km del Sol). ~191 km/s. Escudo térmico 1.377 °C.",
       "type": "info"
     }
   ]

@@ -1,6 +1,38 @@
 {
   "name": "Luna 10",
-  "type": "ORBITER ROBOTICO · VOLATO",
-  "first": "Primo veicolo spaziale a orbitare la Luna (e qualsiasi corpo diverso dalla Terra)",
-  "description": "Lanciata il 31/03/1966 da Baikonur, Luna 10 divenne il primo veicolo spaziale a orbitare la Luna — e il primo satellite artificiale di qualsiasi corpo diverso dalla Terra — quando si inserì in un'orbita lunare di 350 × 1017 km a 71,9° di inclinazione il 03/04/1966. Tre anni prima che Apollo 8 raggiungesse la Luna con umani a bordo. Trasportava un magnetometro, uno spettrometro a raggi gamma, un radiometro infrarosso, rivelatori di micrometeoroidi, sensori di plasma e una sonda radio del campo gravitazionale lunare. I dati gamma furono il primo telerilevamento compositivo della Luna, suggerendo una composizione mare-basaltica. Trasmise notoriamente l'inno dell'Internazionale durante il 23º Congresso del Partito Comunista Sovietico il 04/04/1966 — più un gesto propagandistico che scientifico. Operò 56 giorni / 460 orbite prima che le batterie NiCd si esaurissero il 30/05/1966; rimane in orbita lunare."
+  "type": "ORBITER ROBOTICO · COMPLETATO",
+  "first": "Primo veicolo spaziale a orbitare attorno alla Luna (e a qualsiasi corpo celeste diverso dalla Terra)",
+  "description": "Lanciato il 1966-03-31 da Baikonur, Luna 10 divenne il primo veicolo spaziale a orbitare attorno alla Luna — e il primo satellite artificiale di qualsiasi corpo celeste diverso dalla Terra — quando si inserì in un'orbita lunare di 350 × 1017 km con inclinazione di 71,9° il 1966-04-03. Due anni e mezzo prima che l'Apollo 8 raggiungesse la Luna con equipaggio umano. Trasportava un magnetometro, uno spettrometro a raggi gamma, un radiometro infrarosso, rivelatori di micrometeoriti, sensori al plasma e una sonda radio del campo gravitazionale lunare. I dati dei raggi gamma rappresentarono il primo telerilevamento composizionale della Luna, suggerendo una composizione dei mari simile a quella del basalto. Ha trasmesso in modo celebre l'inno L'Internazionale durante il 23° Congresso del Partito Comunista Sovietico il 1966-04-04 — una trovata propagandistica più che scientifica. Ha operato per 56 giorni / 460 orbite prima che le batterie NiCd si esaurissero il 1966-05-30; rimane in orbita lunare.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Molniya-M da Baikonur 1966-03-31 10:46 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.01,
+      "label": "TLI",
+      "note": "Lo stadio superiore Block-L spinge Luna 10 verso la Luna.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "LOI",
+      "note": "Inserimento in orbita lunare 1966-04-03 — primo satellite artificiale di qualsiasi corpo celeste diverso dalla Terra.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.5,
+      "label": "TRASMISSIONE L'INTERNAZIONALE",
+      "note": "Trasmissione dell'inno L'Internazionale durante il 23° Congresso del Partito Comunista Sovietico (1966-04-04).",
+      "type": "info"
+    },
+    {
+      "met": 60,
+      "label": "EOL",
+      "note": "Batterie NiCd esaurite; missione terminata 1966-05-30. Rimane in orbita lunare.",
+      "type": "nominal"
+    }
+  ]
 }

@@ -1,26 +1,26 @@
 {
-  "name": "Voyageur 1",
-  "type": "SURVOL · VOLÉ",
-  "first": "Objet humain le plus distant — actuellement à ~165 UA du Soleil, dans l'espace interstellaire",
-  "dispatch": "Voyager 1 est l'objet que l'humanité a envoyé le plus loin, et il y est parvenu presque par un accident de géométrie. Un passage rapproché près de Titan, la lune géante de Saturne — choisi pour la science — a courbé sa trajectoire vers le haut et hors du plan des planètes et l'a dirigé vers les confins du système solaire, et il n'a cessé de grimper depuis. En chemin, il a découvert des volcans actifs sur Io, les premiers jamais observés en dehors de la Terre, et en 1990 il s'est retourné pour prendre le Pale Blue Dot. En 2012, il est devenu la première machine à franchir l'espace interstellaire. Il émet toujours, sur une alimentation nucléaire défaillante, depuis plus de cent fois la distance Terre-Soleil.",
-  "description": "Lancée 16 jours après Voyager 2, Voyager 1 a volé plus vite et est arrivée en premier à Jupiter (1979) et Saturne (1980). Son survol de Titan a courbé la trajectoire hors du plan de l'écliptique, terminant la tournée planétaire mais l'envoyant sur la voie la plus directe vers l'héliopause — qu'elle a traversée le 25-08-2012, premier objet humain à entrer dans l'espace interstellaire. À environ 6 milliards de km, elle a pris le portrait de famille Pale Blue Dot (14-02-1990), la photo sur laquelle Carl Sagan a écrit. Les deux Voyager portent le Disque d'Or comme carte de visite de l'humanité.",
+  "name": "Voyager 1",
+  "type": "SURVOL · RÉALISÉE",
+  "first": "L'objet le plus lointain créé par l'humanité — actuellement à ~170 UA du Soleil dans l'espace interstellaire",
+  "dispatch": "Voyager 1 est l'objet le plus lointain jamais créé par l'humanité, et elle y est arrivée presque par hasard géométrique. Un passage rapproché près de Titan, la gigantesque lune de Saturne — choisie pour la science — a dévié sa trajectoire hors du plan des planètes et l'a dirigée vers le bord du système solaire, où elle continue de s'éloigner depuis. Sur son chemin, elle a découvert des volcans actifs sur Io, les premiers jamais observés en dehors de la Terre, et en 1990, elle s'est retournée pour prendre la Pâle Bleue Pointe. En 2012, elle est devenue la première machine à entrer dans l'espace interstellaire. Elle transmet toujours, alimentée par une puissance nucléaire déclinante, à plus d'une centaine de fois la distance Terre-Soleil.",
+  "description": "Lancée 16 jours après Voyager 2, Voyager 1 a volé plus vite et est arrivée à Jupiter en premier (1979) et à Saturne en premier (1980). Son survol de Titan a dévié la trajectoire vers le haut, hors du plan de l'écliptique, mettant fin à la visite des planètes mais l'envoyant sur le chemin le plus direct vers l'héliopause — qu'elle a franchie le 2012-08-25, le premier objet créé par l'humanité à entrer dans l'espace interstellaire. À une distance héliocentrique de ~6 milliards de km, elle a pris le portrait de famille de la Pâle Bleue (1990-02-14), la photographie dont Carl Sagan a écrit. Les deux Voyagers portent le Disque d'Or, message de l'humanité.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Titan IIIE / Centaur élève Voyager 1 depuis Cap Canaveral.",
+      "note": "Le lanceur Titan IIIE / Centaur décolle de Cape Canaveral avec Voyager 1.",
       "type": "nominal"
     },
     {
       "met": 546,
-      "label": "APPROCHE LA PLUS PROCHE DE JUPITER",
-      "note": "Survol à ~349 000 km ; a découvert le volcanisme d'Io, cartographié la surface d'Europe.",
+      "label": "APPROCHE CLOSEST DE JUPITER",
+      "note": "Survol à ~349 000 km ; découverte du volcanisme d'Io, cartographie de la surface d'Europe.",
       "type": "nominal"
     },
     {
       "met": 1164,
-      "label": "SURVOLS SATURNE + TITAN",
-      "note": "Le survol de Titan a courbé la trajectoire hors de l'écliptique — plus aucune rencontre planétaire possible.",
+      "label": "SURVOLS DE SATURNE ET TITAN",
+      "note": "Le survol de Titan a dévié la trajectoire hors du plan de l'écliptique — aucune autre rencontre planétaire possible.",
       "type": "nominal"
     }
   ]

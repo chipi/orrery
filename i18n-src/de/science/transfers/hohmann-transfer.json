@@ -1,15 +1,15 @@
 {
   "title": "Hohmann-Transfer",
-  "intro_sentence": "Die billigste Zwei-Brennphasen-Reise zwischen koplanaren Kreisbahnen — und die Basis, gegen die Planer alles messen.",
+  "intro_sentence": "Die billigste Zwei-Burn-Reise zwischen zwei koplanaren Kreisbahnen — und die Baseline, an die Missionsplaner alles andere messen.",
   "narrative_101": [
-    "Du bist in der Erdbahn. Du willst in die Marsbahn. Beide Kreise um die Sonne. Wie kommst du mit minimalem Treibstoff hin?",
-    "Walter Hohmanns Antwort 1925: finde eine Ellipse, die die Erdbahn auf einer Seite und die Marsbahn auf der anderen berührt. Brennphase, um die Erde zu verlassen. Acht Monate Flug ohne Triebwerk — Schwerkraft macht die Arbeit. Am anderen Ende erneut brennen, um in die Marsbahn einzuschwenken. Zwei Brennphasen. Fertig.",
-    "Die billigste Reise — aber auch die langsamste. Acht Monate Wartezeit nicht verhandelbar. Schneller? Möglich, aber teurer."
+    "Du befindest dich in der Erdumlaufbahn. Du möchtest in der Marsumlaufbahn sein. Beide Bahnen sind ungefähr Kreise um die Sonne. Wie gelangst du von einer zur anderen mit so wenig Treibstoff wie möglich?",
+    "Die Antwort, die Walter Hohmann 1925 ausarbeitete, ist überraschend elegant. Finde eine Ellipse, die die Erdumlaufbahn auf einer Seite nur knapp berührt und auf der anderen Seite knapp die Marsumlaufbahn. Brenne dein Triebwerk kurz ab, um die Erde zu verlassen und die Ellipse zu betreten. Gleite etwa 8,5 Monate lang ohne Triebwerksfeuer — die Schwerkraft verrichtet die Arbeit. Wenn du am anderen Ende ankommst, brenne nochmal ab, um dich in der Marsumlaufbahn einzusetzen. Zwei Abbrände, insgesamt. Fertig.",
+    "Es ist die billigste mögliche Reise — aber auch die langsamste. Die 8,5-Monate-Wartezeit ist nicht verhandelbar; die Physik setzt den Timer. Schneller gehen? Du kannst, aber du zahlst dafür: eine steilere Ellipse, ein schnelleres Durchqueren, ein viel größerer Bremsabbrand am anderen Ende. Dies ist der Kompromiss, den du in jedem Porkchop-Diagramm im `/plan` sehen wirst."
   ],
   "body_paragraphs": [
-    "Vom Sonnenkreis zum höheren — Erde-zu-Mars: am billigsten ist ein Hohmann-Transfer, eine Ellipse mit Perihel an deiner Startbahn und Aphel am Ziel. Zwei Brennphasen.",
-    "Billigster fester Impuls, aber auch langsamster. Erde-Mars ~259 Tage. Schneller? Höhere Perihelgeschwindigkeit, größere Ankunfts-V∞, viel höhere Δv-Kosten.",
-    "Auf dem `/plan`-Porkchop siehst du die Wanne kühler Türkis um das natürliche Hohmann-Fenster, alle 26 Monate für Mars."
+    "Stellen dir vor, du bist in einer Kreisbahn um die Sonne und möchtest eine höhere erreichen — sagen wir Erde-zu-Mars. Die billigste Methode ist ein Hohmann-Transfer: eine Ellipse, deren Perihelium deine Startbahn berührt und deren Aphelium die Zielorbita berührt. Zwei Triebwerksabbrände bringen dich dorthin. Einer beim Perihelium, um die Erdumlaufbahn zu verlassen und die Ellipse zu betreten. Einer beim Aphelium, um dich in die Zielumlaufbahn zu zirkularisieren.",
+    "Es ist der billigste Festimpuls-Weg, aber auch der langsamste. Erde-zu-Mars dauert auf einem Hohmann-Transfer etwa 259 Tage. Schneller gehen? Stärker abbrennen, eine gestreckte Ellipse mit höherer Perihelium-Geschwindigkeit fliegen. Das Ankunfts-V∞ steigt, der Einbrennabbrand am Ziel wird größer, deine gesamte ∆v-Kosten klettert steil.",
+    "Im `/plan`-Porkchop von Orrery sieht man das direkt: es gibt ein ruhiges Becken aus kühlen Türkis-Zellen um das natürliche Hohmann-Fenster, alle 26 Monate für Mars, und zunehmend teurere Konturen, wenn du dich kürzeren Transitzeiten näherst."
   ],
-  "diagram_caption": "Erdbahn (innen) · Marsbahn (außen) · Hohmann-Transferellipse mit Perihel an der Erde, Aphel am Mars."
+  "diagram_caption": "Erdumlaufbahn (innen) · Marsumlaufbahn (außen) · Hohmann-Transfer-Ellipse mit Perihelium bei der Erde, Aphelium bei Mars."
 }

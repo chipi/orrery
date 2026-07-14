@@ -1,25 +1,25 @@
 {
   "name": "MESSENGER",
-  "type": "Orbiter · Voltooid",
-  "first": "Eerste sonde in baan om Mercurius; eerste volledige kartering van het oppervlak van de binnenste planeet",
-  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) gebruikte zes zwaartekrachtsslingers over zeven jaar — Aarde, twee keer Venus, drie keer Mercurius — om af te remmen tot een Mercuriusbaan op 18-03-2011. Beschermd door een zonnescherm, met één kant op 370 °C en de andere op -45 °C. Ontdekkingen: waterijs in permanent beschaduwde poolkraters, voorheen onbekende «hollows» en de bevestiging dat de ijzeren kern van Mercurius zo'n 85 % van de planeetstraal beslaat (de grootste kernverhouding in het zonnestelsel). De missie eindigde op 30-04-2015 met een gecontroleerde inslag toen de brandstof opraakte.",
+  "type": "ORBITER · VOLTOOID",
+  "first": "Eerste ruimtevaartuig dat Mercurius in een baan omcirkelde; eerste volledige oppervlaktekaart van de binnenste planeet",
+  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) gebruikte zes zwaartekrachtassists gedurende zeven jaar — Aarde, Venus twee keer, Mercurius drie keer — om af te remmen en in een baan rond Mercurius te komen op 2011-03-18. Beschermd met een zonnescherm waarbij één zijde op 370 °C en de andere op -45 °C. Ontdekkingen omvatten waterijs in permanent in schaduw liggende polaire kraters, tot dan toe onbekende \"hollows\" geologische kenmerken, en bevestiging dat Mercurius' ijzeren kern ongeveer 85 % van de straal van de planeet inneemt (de grootste kern-tot-straal verhouding van enige planeet in het zonnestelsel). De missie eindigde met een gecontroleerde inslag op Mercurius' oppervlak op 2015-04-30 nadat de brandstof op was.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Delta II 7925H tilt MESSENGER op een traject met zes scheervluchten.",
+      "note": "Delta II 7925H zet MESSENGER op een baan met zes vliegby's.",
       "type": "nominal"
     },
     {
       "met": 365,
-      "label": "AARDSLINGER",
-      "note": "Eerste van zes slingers die het traject voldoende afremmen om de Mercuriusbaan te bereiken.",
+      "label": "ZWAARTEKRACHTASSIST AARDE",
+      "note": "Eerste van zes assists om de baan zo af te remmen dat ingang in een baan rond Mercurius mogelijk wordt.",
       "type": "nominal"
     },
     {
       "met": 2419,
-      "label": "MERCURIUS-INTRACETIEMANOEUVRE",
-      "note": "Hoofdmotor-burn plaatst MESSENGER in een Mercuriusbaan na zeven jaar reizen.",
+      "label": "INBRENGEN IN BAAN ROND MERCURIUS",
+      "note": "Hoofdmotor-brand brengt MESSENGER in een baan rond Mercurius na zeven jaar koers.",
       "type": "nominal"
     }
   ]

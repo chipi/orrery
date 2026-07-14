@@ -1,31 +1,31 @@
 {
   "name": "JUICE",
   "type": "ORBITER · AKTIV",
-  "first": "Größte je in Europa gebaute interplanetare Raumsonde; erstes Raumfahrzeug, das einen Mond eines anderen Planeten umkreist (Ganymed, 2034)",
-  "description": "JUpiter ICy moons Explorer — ESAs L-Klasse-Flaggschiff, gestartet am 14.4.2023. Die 8-jährige Reise nutzt eine der komplexesten Gravitationsassistenz-Sequenzen, die je geflogen wurden: eine erstmalige Mond-Erde-Gravitationsassistenz am 19.8.2024, Venus am 31.8.2025, dann zwei weitere Erdbahn-Vorbeiflüge 2026 und 2029. Jupiter-Orbit-Einschuss ist für den 21.7.2031 angesetzt. Nach 35 engen Vorbeiflügen an Europa, Ganymed und Kallisto über 3,5 Jahre wird JUICE am 31.12.2034 in einen dedizierten Ganymed-Orbit manövriert — das erste Raumfahrzeug überhaupt, das einen Mond eines anderen Planeten umkreist.",
+  "first": "Größtes interplanetares Raumschiff, das in Europa gebaut wurde; erstes Raumschiff überhaupt, das einen Mond eines anderen Planeten umkreist (Ganymed, 2034)",
+  "description": "JUpiter ICy moons Explorer — ESAs L-Klasse-Flaggschiff, gestartet 2023-04-14. Der achtteilige Flug nutzt eine der komplexesten Swing-by-Sequenzen, die je geflogen wurden: ein Lunar-Earth Gravity Assist der ersten Art am 2024-08-19, Venus 2025-08-31, dann zwei weitere Erdvorbeiflüge 2026 und 2029. Die Jupiter-Bahneinführung ist auf 2031-07-21 angesetzt. Nach 35 Vorbeiflugs von Europa, Ganymed und Kallisto über 3,5 Jahre wird sich JUICE am 2034-12-31 in eine dedicated Ganymed-Umlaufbahn manövrieren — das erste Raumschiff überhaupt, das einen Mond eines anderen Planeten umkreist. Die Mission endet 2035 mit dem Aufschlag auf Ganymed. Primäre Wissenschaft: Existenz und Eigenschaften subsurface oceans in den eisigen Galileischen Monden, Eishülle-Komposition und Gezeitenerwärmung sowie Struktur der Jupiterian-Magnetosphäre.",
   "events": [
     {
       "met": 0,
       "label": "START",
-      "note": "Ariane 5 ECA+ startet JUICE von Kourou.",
+      "note": "Ariane 5 ECA hebt JUICE von Kourou ab.",
       "type": "nominal"
     },
     {
       "met": 493,
-      "label": "MOND-ERDE-VORBEIFLUG",
-      "note": "Erste jemals durchgeführte Mond-Erde-Gravitationsassistenz — Mond + Erde in einem Schwung.",
+      "label": "LUNAR-EARTH VORBEIFLUG",
+      "note": "Erster Lunar-Earth Gravity-Assist-Manöver — Mond und Erde in einem Swing.",
       "type": "nominal"
     },
     {
       "met": 871,
-      "label": "VENUSVORBEIFLUG",
-      "note": "Venus-Gravitationsassistenz auf dem Rückweg zu zwei weiteren Erdpassagen.",
+      "label": "VENUS VORBEIFLUG",
+      "note": "Venus-Gravity-Assist auf dem Weg zurück zu zwei weiteren Erdvorbeiflügen.",
       "type": "nominal"
     },
     {
       "met": 3020,
-      "label": "JUPITER-ORBITEINSCHUSS",
-      "note": "Haupttriebwerksbrennen platziert JUICE in die Jupiterbahn für die Eismonde-Tour.",
+      "label": "JUPITER-BAHNEINFÜHRUNG",
+      "note": "Haupttriebwerk-Abbrand platziert JUICE in die Jupiter-Umlaufbahn für die Eis-Monde-Tour.",
       "type": "info"
     }
   ]

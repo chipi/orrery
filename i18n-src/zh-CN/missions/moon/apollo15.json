@@ -1,74 +1,74 @@
 {
-  "name": "阿波罗 15 号",
-  "dispatch": "[",
-  "type": "载人着陆器 · 已飞行",
-  "first": "首个 J 任务 — 延长停留、首辆月球车（LRV）、\"创世石\"",
-  "description": "首个\"J 任务\"— 配备新型月球车的延长停留科学型阿波罗。LRV 让 Scott 和 Irwin 拥有 27.9 km 的探索范围（相对于阿波罗 14 号纯步行的 3.5 km），开辟了 4.5 km 山脉脚下、蜿蜒哈德利月谷边缘的壮观哈德利-亚平宁地点。三次 EVA 共 18 小时 35 分，带回 77 公斤样本，包括著名的\"创世石\"（样本 15415）— 一块 41 亿年历史的斜长岩，证实月球高地地壳的岩浆海洋起源。Scott 直播的\"锤子-羽毛同时下落\"实验在现场验证了伽利略的引力定律。",
+  "name": "阿波罗15号",
+  "type": "有人登月器 · 已执行",
+  "first": "首次J型任务——延长停留、首次使用月球车、《创世纪岩石》",
+  "dispatch": "到阿波罗15号时，竞争早已结束，科学研究成了主角——字面意思上的主角。这是首次搭载月球车的任务，它将行走范围从两英里扩大到真正的十八英里的野外考察，并且着陆地点不是安全的平坦平原，而是山脉和蜿蜒峡谷之间的山谷。斯科特和欧文带回了《创世纪岩石》，这块距今40亿年的月球原始地壳碎片证实了月球是如何形成的。阿波罗任务不再仅仅是访问月球，而是开始研究它——而且直到被取消前，它的研究工作一直在不断改进。",
+  "description": "首次\"J型任务\"——配备新型月球车的延长停留科学阿波罗任务。月球车使斯科特和欧文的活动范围达到27.9 km（相比仅靠步行的阿波罗14号的3.5 km），开启了山脚下高达4.5 km山脉和蜿蜒哈德利·里尔附近这一戏剧性的哈德利-亚平宁遗迹。共进行三次舱外活动，总计18小时35分钟，带回77 kg样品，其中包括著名的《创世纪岩石》（样品15415）——一块距今41亿年的斜长岩，证实了月球高地地壳源自岩浆洋。斯科特在电视直播中进行的\"锤羽毛坠落\"实时验证了伽利略的万有引力定律。月球轨道上的沃顿操控了装满遥感仪器的SIM舱（测绘相机、伽马射线、X射线、阿尔法粒子分光计），并在返回地球途中执行了首次深空舱外活动（约39分钟，距地球约317 000 km），用以回收胶片筒。阿波罗15号的回收任务因三个主降落伞中的一个未能完全展开而受到影响——指挥舱着陆冲击力大，但全体乘员安全。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Saturn V (AS-510) from Kennedy Space Center LC-39A 1971-07-26 13:34 UTC.",
+      "label": "发射",
+      "note": "土星五号（AS-510）从肯尼迪航天中心39A发射台发射，1971年7月26日13:34 UTC。",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection.",
+      "note": "月球转移注入。",
       "type": "nominal"
     },
     {
       "met": 3.25,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "月球轨道插入。SPS ∆v ≈0.91 km/s。",
       "type": "nominal"
     },
     {
       "met": 4.79,
-      "label": "TOUCHDOWN",
-      "note": "Falcon lands at Hadley-Apennine 1971-07-30 22:16 UTC — first landing at a non-mare highland site.",
+      "label": "着陆",
+      "note": "鹰号在哈德利-亚平宁着陆，1971年7月30日22:16 UTC——首次在非月海高地地点着陆。",
       "type": "nominal"
     },
     {
       "met": 5,
-      "label": "FIRST LRV TRAVERSE",
-      "note": "EVA-1: First Lunar Roving Vehicle deployment + 10.3 km traverse to Elbow Crater + the rim of Hadley Rille.",
+      "label": "首次月球车行走",
+      "note": "舱外活动1号：首次月球车部署与10.3 km行走路线，目的地为肘部陨石坑和哈德利·里尔坑缘。",
       "type": "info"
     },
     {
       "met": 5.5,
-      "label": "GENESIS ROCK",
-      "note": "EVA-2: At Spur Crater, Scott + Irwin recover sample 15415 — a 4.1-billion-year-old anorthosite from the original lunar crust.",
+      "label": "创世纪岩石",
+      "note": "舱外活动2号：在支撑陨石坑处，斯科特和欧文回收样品15415——来自月球原始地壳的距今41亿年斜长岩。",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "HAMMER-FEATHER DROP",
-      "note": "EVA-3 / pre-ascent: Scott televises a hammer + feather dropped together; both hit the regolith simultaneously, verifying Galileo's 1589 prediction live.",
+      "label": "锤羽毛坠落",
+      "note": "舱外活动3号/上升前：斯科特在电视直播中将锤和羽毛一起放下；两者同时击中月壤，实时验证了伽利略1589年的预言。",
       "type": "info"
     },
     {
       "met": 6.25,
-      "label": "ASCENT",
-      "note": "Falcon lifts off after 66 h 55 m on surface. 77 kg samples + first ascent televised from the LRV-mounted camera (operated remotely by Houston).",
+      "label": "上升",
+      "note": "鹰号在表面停留66小时55分钟后升空。携带77 kg样品，首次舱外活动上升由月球车安装的摄像机直播（由休斯顿远程操控）。",
       "type": "nominal"
     },
     {
       "met": 8.2,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "地月转移注入。SPS ∆v ≈1.0 km/s。",
       "type": "nominal"
     },
     {
       "met": 9.5,
-      "label": "DEEP-SPACE EVA",
-      "note": "Worden performs first-ever EVA in cislunar space (38 min at ~315 000 km from Earth) to retrieve SIM-bay film canisters.",
+      "label": "深空舱外活动",
+      "note": "沃顿执行有史以来首次地月空间舱外活动（约39分钟，距地球约317 000 km），回收SIM舱胶片筒。",
       "type": "info"
     },
     {
       "met": 12.31,
-      "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+      "label": "溅落",
+      "note": "指挥舱于1971年8月7日20:46 UTC在北太平洋溅落。三个主降落伞中的一个未能完全展开；着陆冲击力大但乘员安全。由俄克拉荷马号军舰执行回收。",
       "type": "warning"
     }
   ]

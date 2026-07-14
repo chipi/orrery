@@ -1,14 +1,14 @@
 {
   "name": "Soyuz",
-  "tagline": "Le vaisseau spatial qui a commencé dans la tragédie, a payé le prix le plus élevé du vol spatial — et est devenu le moyen le plus fiable et le plus durable jamais construit pour atteindre l'orbite.",
+  "tagline": "Le vaisseau spatial né dans la tragédie, qui a payé le prix le plus élevé du vol spatial — et qui est devenu le moyen de rejoindre l'orbite le plus fiable et le plus durable jamais construit.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Au milieu des années 1960, l'ère des adaptations de Vostok était terminée, et les deux superpuissances avaient besoin d'un véritable vaisseau de deuxième génération — capable de manœuvrer, de se rapprocher et de s'arrimer, les compétences qu'exigerait la Lune. La réponse soviétique fut Soyuz : la conception de Sergueï Korolev pour un vaisseau modulaire en trois parties — un module orbital sphérique pour y vivre, un module de descente pour rentrer, et un module de service pour l'alimentation et la propulsion. C'était un véritable bond en avant. Mais Korolev mourut sur la table d'opération en 1966, avant qu'il ne vole, et le programme perdit le seul homme ayant l'autorité de dire qu'une machine n'était pas prête."
+      "md": "Au milieu des années 1960, l'ère des dérivés de Vostok était terminée, et les deux superpuissances avaient besoin d'un véritable vaisseau spatial de deuxième génération — capable de manœuvrer, de se rendre-vous et de s'amarrer, les compétences qu'exigerait la Lune. La réponse soviétique fut Soyuz : la conception de Sergueï Korolev pour un vaisseau modulaire en trois parties — un module orbital sphérique pour vivre, un module de descente pour revenir sur Terre, et un module de service pour l'alimentation et la propulsion. C'était un véritable bond en avant. Mais Korolev mourut sur la table d'opération en 1966, avant qu'il ne vole, et le programme perdit le seul homme ayant l'autorité pour dire qu'une machine n'était pas prête."
     },
     {
       "type": "prose",
-      "md": "Ce qui suivit fut le chapitre le plus sombre du programme soviétique. Sous la pression de répondre à Apollo, Soyuz fut précipité en service avant d'être sûr, et le prix à payer arriva presque immédiatement — d'abord avec la mort d'un cosmonaute, puis, quatre ans plus tard, avec trois de plus. Soyuz allait survivre à tous ses rivaux et voler plus longtemps que tout autre vaisseau spatial habité de l'histoire, mais il gagna cette longévité à la dure, et les deux accidents de ses débuts sont indissociables de l'histoire de tout ce qu'il est devenu."
+      "md": "Ce qui suivit fut le chapitre le plus sombre du programme soviétique. Sous la pression de répondre à Apollo, Soyuz fut précipité en service avant d'être sûr, et le prix se fit payer presque immédiatement — d'abord avec la mort d'un cosmonaute, puis, quatre ans plus tard, avec trois autres. Soyuz allait survivre à tous ses rivaux et voler plus longtemps que tout vaisseau spatial habité de l'histoire, mais il gagna cette longévité à la dure, et les deux accidents à ses débuts sont inséparables de l'histoire de tout ce qu'il devint."
     }
   ],
   "goals": [
@@ -22,7 +22,7 @@
     },
     {
       "type": "prose",
-      "md": "Soyuz fut conçu pour faire tout ce que Vostok et Voskhod ne pouvaient pas : changer d'orbite, rechercher et s'arrimer à un autre vaisseau, soutenir un équipage pendant des semaines, et — dans le plan original — transporter des cosmonautes vers la Lune. La disposition en trois modules était l'idée clé. En divisant le vaisseau spatial en un module orbital spacieux où l'équipage vivait et un petit module de descente fortement blindé dans lequel il revenait, Soyuz pouvait être à la fois spacieux en orbite et léger lors de la rentrée, se débarrassant de tout ce qu'il n'avait pas besoin de ramener. C'était une conception claire et adaptable — c'est précisément pourquoi elle a duré."
+      "md": "Soyuz fut conçu pour faire tout ce que Vostok et Voskhod ne pouvaient pas : changer son orbite, rechercher et s'amarrer avec un autre engin, soutenir un équipage pendant des semaines, et — dans le plan original — transporter des cosmonautes vers la Lune. La disposition en trois modules était l'idée clé. En séparant le vaisseau spatial en un module orbital spacieux dans lequel l'équipage vivait et un petit module de descente lourdement blindé dans lequel il revenait, Soyuz pouvait être à la fois spacieux en orbite et léger à la rentrée, se débarrassant de tout ce qu'il n'avait pas besoin de ramener. C'était une conception propre et adaptable — ce qui explique exactement pourquoi elle a duré."
     }
   ],
   "outcome": [
@@ -31,30 +31,30 @@
       "image": {
         "reuse": "fleet/soyuz-7k-ok/02"
       },
-      "caption": "Soyuz en orbite. Précipité en vol avant d'être prêt, la conception mettrait des années et deux accidents mortels avant d'être sûre — et ensuite elle n'a jamais cessé de voler.",
+      "caption": "Soyuz en orbite. Précipité en vol avant d'être prêt, la conception mettrait des années et deux accidents mortels à devenir sûre — et ensuite elle n'a jamais cessé de voler.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Le premier vol habité de Soyuz, en 1967, tua son pilote : Vladimir Komarov pilota un vaisseau spatial criblé de défauts connus et mourut lorsque son parachute échoua lors de la rentrée — la première mort en vol de l'histoire du vol spatial. Le programme se rétablit, et en 1969 Soyuz 4 et 5 réalisèrent le premier amarrage de deux vaisseaux habités, avec des cosmonautes se transférant entre eux par sortie extravéhiculaire. Puis, en 1971, l'équipage de Soyuz 11 devint le premier à vivre à bord d'une station spatiale — et mourut sur le chemin du retour lorsqu'une valve laissa s'échapper l'air de leur cabine, les seuls décès humains jamais survenus dans l'espace. Et en 1975, dans un changement complet de registre, un Soyuz s'arrima à un Apollo en orbite, et un Américain et un Soviétique se serrèrent la main à travers le sas — la fin symbolique de la course à l'espace."
+      "md": "Le premier vol habité de Soyuz, en 1967, tua son pilote : Vladimir Komarov pilota un vaisseau spatial criblé de défauts connus et mourut lorsque ses parachutes échouèrent et que la capsule percuta le sol — le premier décès en vol de l'histoire du vol spatial. Le programme se rétablit, et en 1969 Soyuz 4 et 5 réalisèrent le premier amarrage de deux engins habités, avec des cosmonautes transférant entre eux par sortie extravéhiculaire. Puis, en 1971, l'équipage de Soyuz 11 devint le premier à vivre à bord d'une station spatiale — et mourut sur le chemin du retour lorsqu'une valve laissa l'air de leur cabine s'échapper, les seuls décès humains jamais survenus dans l'espace. Et en 1975, dans un complet changement de tonalité, un Soyuz s'amarra avec un Apollo en orbite, et un Américain et un Soviétique se serrèrent la main à travers le sas — la fin symbolique de la course à l'espace."
     },
     {
       "type": "prose",
-      "md": "Cela aurait pu être toute l'histoire : une conception prometteuse qui commença dans la tragédie et clôtura la course par une poignée de main. Au lieu de cela, ce ne fut que le début. Soyuz continua de voler — vers Salyut, vers Mir, vers la Station spatiale internationale — et continua d'être affiné, jusqu'à ce que le vaisseau qui tua deux équipages au cours de ses quatre premières années devienne le moyen le plus sûr et le plus fiable d'atteindre l'orbite jamais exploité."
+      "md": "Cela aurait pu être toute l'histoire : une conception prometteuse qui commença dans la tragédie et ferma la course avec une poignée de main. Au lieu de cela, ce n'était que le début. Soyuz continua de voler — vers Salyut, vers Mir, vers la Station spatiale internationale — et continua d'être perfectionné, jusqu'à ce que le vaisseau qui tua deux équipages dans ses quatre premières années devienne le moyen le plus sûr et le plus fiable de rejoindre l'orbite que quiconque ait jamais exploité."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Le fil conducteur de Soyuz est une fiabilité achetée à un prix terrible puis consolidée pendant des décennies. Chacune de ses premières catastrophes inscrivit une règle permanente dans la conception : après Komarov, les systèmes de parachute et de contrôle furent retravaillés ; après Soyuz 11, les cosmonautes ne volèrent plus jamais au lancement ou à la rentrée sans combinaisons pressurisées. Le programme apprit comme la sécurité s'apprend habituellement — par les accidents — et ensuite, contrairement à tant de programmes, il continua de faire voler le même véhicule de base suffisamment longtemps pour que ces leçons s'accumulent en quelque chose de proche de l'incassable."
+      "md": "Le fil conducteur de Soyuz est une fiabilité achetée à un prix terrible puis consolidée pendant des décennies. Chacun de ses premiers désastres inscrivit une règle permanente dans la conception : après Komarov, les systèmes de parachutes et de contrôle furent retravaillés ; après Soyuz 11, les cosmonautes ne volèrent plus jamais au lancement ou à la rentrée sans combinaisons pressurisées. Le programme apprit comme on apprend habituellement la sécurité — par les accidents — et ensuite, contrairement à tant de programmes, il continua de faire voler le même véhicule de base assez longtemps pour que ces leçons s'accumulent en quelque chose de proche de l'incassable."
     },
     {
       "type": "prose",
-      "md": "Il changea aussi complètement de fonction. Conçu pour devancer les Américains vers la Lune, Soyuz perdit cette course et fut discrètement réorienté — en navette qui transporta les équipages vers les stations spatiales de l'Union soviétique, puis vers Mir, puis vers la Station spatiale internationale construite avec ces mêmes Américains. Lorsque la navette spatiale américaine prit sa retraite en 2011, Soyuz devint, pendant neuf ans, le *seul* moyen pour tout être humain d'atteindre la Station spatiale : l'ensemble du programme international dépendait d'une conception soviétique des années 1960."
+      "md": "Il changea aussi complètement de fonction. Conçu pour courir vers la Lune contre les Américains, Soyuz perdit cette course et fut discrètement réorienté — en navette qui transportait les équipages vers les stations spatiales de l'Union soviétique, puis vers Mir, puis vers la Station spatiale internationale construite avec ces mêmes Américains. Lorsque la navette spatiale américaine prit sa retraite en 2011, Soyuz devint, pendant neuf ans, le *seul* moyen pour tout être humain d'atteindre la Station spatiale : l'ensemble du programme international dépendait d'une conception soviétique des années 1960."
     },
     {
       "type": "prose",
-      "md": "La poignée de main d'Apollo-Soyuz de 1975 est la charnière. Elle mit fin à l'ère où Soyuz existait pour battre l'Occident, et ouvrit celle où il passerait le demi-siècle suivant à transporter les astronautes de l'Occident aux côtés des cosmonautes russes — le même vaisseau spatial, la même aire de lancement, un monde complètement différent."
+      "md": "La poignée de main d'Apollo-Soyuz de 1975 est la charnière. Elle mit fin à l'ère dans laquelle Soyuz existait pour battre l'Occident, et ouvrit celle dans laquelle il passerait le demi-siècle suivant à transporter les astronautes de l'Occident aux côtés des cosmonautes de la Russie — le même vaisseau spatial, la même rampe de lancement, un monde complètement différent."
     }
   ],
   "legacy": [
@@ -63,26 +63,26 @@
       "image": {
         "reuse": "missions/apollo-soyuz/02"
       },
-      "caption": "Apollo-Soyuz, juillet 1975 — un vaisseau spatial soviétique et un américain arrimés en orbite, et la course à l'espace se termina non par un vainqueur mais par une poignée de main.",
+      "caption": "Apollo-Soyuz, juillet 1975 — un vaisseau spatial soviétique et un américain amarrés en orbite, et la course à l'espace se termina non pas avec un vainqueur mais avec une poignée de main.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "L'héritage de Soyuz est simplement qu'il ne s'est jamais arrêté. C'est le vaisseau spatial habité le plus durable et le plus utilisé de l'histoire — bien plus de cent cinquante vols habités sur six décennies — et sa conception de base à trois modules, affinée mais jamais remplacée, transporte encore des équipages aujourd'hui. Aucun autre vaisseau spatial habité ne s'est approché de ce record. Le vaisseau qui commença en tuant son pilote devint le véhicule le plus fiable du vol spatial, celui sur lequel tous les autres programmes s'appuyèrent lorsqu'ils avaient besoin d'un moyen de transport qui fonctionnerait simplement."
+      "md": "L'héritage de Soyuz est simplement qu'il n'a jamais cessé. C'est le vaisseau spatial habité ayant servi le plus longtemps et ayant effectué le plus de vols de l'histoire — plus de cent cinquante vols habités sur six décennies — et sa conception de base en trois modules, raffinée mais jamais remplacée, transporte encore des équipages aujourd'hui. Aucun autre vaisseau spatial habité ne s'est approché de ce record. Le vaisseau qui commença en tuant son pilote devint le véhicule le plus fiable du vol spatial, celui sur lequel tous les autres programmes s'appuyaient quand ils avaient besoin d'un moyen de transport qui fonctionnerait simplement."
     },
     {
       "type": "prose",
-      "md": "Son héritage plus profond est une leçon sur la valeur de bonnes fondations et d'une itération patiente plutôt que du remplacement spectaculaire. Là où les États-Unis construisirent et retirèrent des générations entières de vaisseaux spatiaux — Mercury, Gemini, Apollo, Shuttle — les Soviétiques trouvèrent une conception qui valait la peine d'être gardée et passèrent cinquante ans à l'améliorer. Les deux approches atteignirent l'espace. Une seule produisit un véhicule qui vole encore, essentiellement inchangé dans son concept, dans sa septième décennie."
+      "md": "Son héritage plus profond est une leçon sur la valeur d'une bonne ossature et d'une itération patiente plutôt que du remplacement tape-à-l'œil. Là où les États-Unis construisirent et retirèrent des générations entières de vaisseaux spatiaux — Mercury, Gemini, Apollo, Shuttle — les Soviétiques trouvèrent une conception qui valait la peine d'être conservée et passèrent cinquante ans à l'améliorer. Les deux approches atteignirent l'espace. Une seule produisit un véhicule volant encore, essentiellement inchangé dans son concept, dans sa septième décennie."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "La leçon la plus dure de Soyuz est que la fiabilité n'est pas conçue dès le départ ; elle est gagnée, généralement par l'échec, et seulement par une organisation disposée à continuer de faire voler la même chose suffisamment longtemps pour apprendre. Soyuz n'était pas sûr à ses débuts — il fut précipité, et il tua des gens. Ce qui le rendit sûr, ce furent des décennies à le faire voler, à trouver chaque faiblesse à son tour, et à la corriger, sur un véhicule suffisamment stable pour que les leçons restent. La tentation est toujours de remplacer une conception problématique ; parfois le chemin le plus sage est de la garder et de la corriger."
+      "md": "La leçon la plus dure de Soyuz est que la fiabilité ne se conçoit pas au départ ; elle se gagne, généralement par l'échec, et seulement par une organisation prête à continuer de faire voler la même chose assez longtemps pour apprendre. Soyuz n'était pas sûr à ses débuts — il fut précipité, et il tua des gens. Ce qui le rendit sûr fut des décennies à le faire voler, à trouver chaque faiblesse à son tour, et à la corriger, sur un véhicule suffisamment stable pour que les leçons restent. La tentation est toujours de remplacer une conception problématique ; parfois le chemin le plus sage est de la conserver et de la corriger."
     },
     {
       "type": "prose",
-      "md": "La deuxième leçon est le danger de laisser un calendrier primer sur un avertissement. Soyuz 1 vola avec des défauts que ses propres ingénieurs avaient signalés, parce que répondre à Apollo comptait plus, ce mois-là, que d'admettre que le vaisseau n'était pas prêt — et un cosmonaute en mourut. C'est le même échec que la culture du secret orientée vers le succès absolu de Vostok avait répété, finalement payé d'une vie. Lorsque les personnes les plus proches de la machine disent qu'elle n'est pas prête, c'est le calendrier qui devrait céder."
+      "md": "La deuxième leçon est le danger de laisser une échéance supplanter un avertissement. Soyuz 1 vola avec des défauts que ses propres ingénieurs avaient signalés, parce que répondre à Apollo importait plus, ce mois-là, que d'admettre que le vaisseau n'était pas prêt — et un cosmonaute mourut pour cela. C'est le même échec que la culture du secret imposant-la-réussite de Vostok avait répété, finalement payé d'une vie. Lorsque les personnes les plus proches de la machine disent qu'elle n'est pas prête, c'est le calendrier qui devrait céder."
     }
   ]
 }

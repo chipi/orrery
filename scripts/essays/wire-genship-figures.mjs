@@ -29,13 +29,13 @@ const inserts = [
       fig(
         'essays/generational-starships/closed-loop',
         'diagram',
-        'Nothing arrives and nothing leaves. The ecology has to run unbroken for centuries — air, water, and food cycled endlessly, with no resupply and no ground control to call. Biosphere 2, a sealed three-acre ecosystem, could not hold its own oxygen steady for even two years.'
+        'Nothing arrives and nothing leaves. The ecology has to run unbroken for centuries — air, water, and food cycled endlessly, with no resupply and no ground control to call. Biosphere 2, a sealed three-acre ecosystem, could not hold its own oxygen steady for even two years.',
       ),
       fig(
         'fleet/iss/01',
         'photo',
         'The International Space Station is the closest thing we have built to a closed world — and it is resupplied from Earth every few weeks. A ship that must close the loop completely, for a thousand years, is a different order of problem entirely.',
-        'NASA'
+        'NASA',
       ),
     ],
   ],
@@ -45,7 +45,7 @@ const inserts = [
       fig(
         'essays/generational-starships/the-population',
         'diagram',
-        'The passengers are not a crew but a population, and it has to stay genetically healthy across dozens of generations. One study puts the minimum near 14,000 people for a 150-year voyage — not a crew you train, but a society you launch, with its own governance, culture, and drift.'
+        'The passengers are not a crew but a population, and it has to stay genetically healthy across dozens of generations. One study puts the minimum near 14,000 people for a 150-year voyage — not a crew you train, but a society you launch, with its own governance, culture, and drift.',
       ),
     ],
   ],
@@ -55,7 +55,7 @@ const inserts = [
       fig(
         'essays/generational-starships/the-wait-calculation',
         'diagram',
-        'And there is a paradox in even leaving. A ship launched slowly now might be overtaken by a faster one built centuries later — arriving to find the destination already settled. If waiting can always beat you there, when, if ever, is it rational to go?'
+        'And there is a paradox in even leaving. A ship launched slowly now might be overtaken by a faster one built centuries later — arriving to find the destination already settled. If waiting can always beat you there, when, if ever, is it rational to go?',
       ),
     ],
   ],
@@ -66,7 +66,7 @@ const inserts = [
         'missions/apollo8/01',
         'photo',
         'Earthrise, photographed from Apollo 8 in 1968 — the whole of the only closed, finite world we have ever known, carrying its lineage through the dark with no resupply and no ground control. The generation ship is a thought experiment about this one: we are already the crew of one.',
-        'NASA / William Anders'
+        'NASA / William Anders',
       ),
     ],
   ],
@@ -85,4 +85,9 @@ for (const p of planned) {
   body.splice(p.at, 0, ...p.figs);
 }
 fs.writeFileSync(overlayPath, JSON.stringify(overlay, null, 2) + '\n');
-console.log('wired generational-starships:', body.filter((b) => b.type === 'figure').length, 'figures; hero =', base.hero);
+console.log(
+  'wired generational-starships:',
+  body.filter((b) => b.type === 'figure').length,
+  'figures; hero =',
+  base.hero,
+);

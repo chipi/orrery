@@ -28,13 +28,13 @@ const inserts = [
       fig(
         'essays/space-comm-arrays/arraying',
         'diagram',
-        'Rather than build ever-larger single dishes, the future is to array many smaller ones so their signals combine into one enormous virtual aperture — cheaper to grow, redundant, degrading gracefully. It was arraying, across four continents, that pulled Voyager 2’s whisper out of the noise at Neptune in 1989.'
+        'Rather than build ever-larger single dishes, the future is to array many smaller ones so their signals combine into one enormous virtual aperture — cheaper to grow, redundant, degrading gracefully. It was arraying, across four continents, that pulled Voyager 2’s whisper out of the noise at Neptune in 1989.',
       ),
       fig(
         'missions/voyager-2/01',
         'photo',
         'Voyager 2 at Neptune, 1989 — by then so faint that catching its full data rate meant combining dishes on four continents at once. It was the case that proved arraying works.',
-        'NASA/JPL-Caltech'
+        'NASA/JPL-Caltech',
       ),
     ],
   ],
@@ -45,7 +45,7 @@ const inserts = [
         'missions/psyche-mission/01',
         'photo',
         'NASA’s Psyche carried the Deep Space Optical Communications demonstrator, which in 2023–24 streamed high-definition video home from tens of millions of kilometres on a beam of laser light — ten to a hundred times the data a radio link could carry.',
-        'NASA/JPL-Caltech'
+        'NASA/JPL-Caltech',
       ),
     ],
   ],
@@ -55,7 +55,7 @@ const inserts = [
       fig(
         'essays/space-comm-arrays/interplanetary-internet',
         'diagram',
-        'The other half of the answer is software. Delay/Disruption-Tolerant Networking drops the ordinary internet’s assumption of a live end-to-end link: each node holds a data “bundle” and forwards it only when the next hop is reachable. Mars orbiters already relay for rovers this way — a real, standardised interplanetary internet, not a metaphor.'
+        'The other half of the answer is software. Delay/Disruption-Tolerant Networking drops the ordinary internet’s assumption of a live end-to-end link: each node holds a data “bundle” and forwards it only when the next hop is reachable. Mars orbiters already relay for rovers this way — a real, standardised interplanetary internet, not a metaphor.',
       ),
     ],
   ],
@@ -65,7 +65,7 @@ const inserts = [
       fig(
         'essays/space-comm-arrays/the-lightspeed-floor',
         'diagram',
-        'None of it beats the speed of light. Optical links and arrays carry more of the story, and delay-tolerant networking keeps it from being lost — but a signal to Mars is still three to twenty-two minutes each way. There is no bandwidth, anywhere, that buys a real-time conversation with another planet.'
+        'None of it beats the speed of light. Optical links and arrays carry more of the story, and delay-tolerant networking keeps it from being lost — but a signal to Mars is still three to twenty-two minutes each way. There is no bandwidth, anywhere, that buys a real-time conversation with another planet.',
       ),
     ],
   ],
@@ -84,4 +84,9 @@ for (const p of planned) {
   body.splice(p.at, 0, ...p.figs);
 }
 fs.writeFileSync(overlayPath, JSON.stringify(overlay, null, 2) + '\n');
-console.log('wired space-comm-arrays:', body.filter((b) => b.type === 'figure').length, 'figures; hero =', base.hero);
+console.log(
+  'wired space-comm-arrays:',
+  body.filter((b) => b.type === 'figure').length,
+  'figures; hero =',
+  base.hero,
+);

@@ -10,22 +10,37 @@ const ROOT = path.resolve(import.meta.dirname, '..', '..');
 const OUT = path.join(ROOT, 'docs', 'wip', 'essay-diagram-sources', 'asteroid-mining');
 fs.mkdirSync(OUT, { recursive: true });
 
-const BG = '#0a0e18', LINE = '#7fb0e0', ACC = '#cfe3fb', FAINT = 'rgba(127,176,224,0.14)', WHITE = '#ffffff', GOLD = '#ffd27f';
-const W = 1600, H = 900;
+const BG = '#0a0e18',
+  LINE = '#7fb0e0',
+  ACC = '#cfe3fb',
+  WHITE = '#ffffff',
+  GOLD = '#ffd27f';
+const W = 1600,
+  H = 900;
 const frame = (inner) =>
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="${BG}"/><g font-family="monospace" fill="${ACC}">${inner}</g></svg>`;
 const label = (x, y, t, size = 22, anchor = 'start', fill = ACC) =>
   `<text x="${x}" y="${y}" font-size="${size}" text-anchor="${anchor}" fill="${fill}" letter-spacing="1">${t}</text>`;
 const dot = (x, y, r = 7, fill = WHITE) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}"/>`;
 const rock = (cx, cy, r, fill = 'rgba(127,176,224,0.16)', stroke = LINE) => {
-  let seed = cx + cy; const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+  let seed = cx + cy;
+  const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
   let pts = '';
-  for (let a = 0; a < 360; a += 30) { const rr = r * (0.78 + rnd() * 0.3); const rad = (a * Math.PI) / 180; pts += `${(cx + rr * Math.cos(rad)).toFixed(0)},${(cy + rr * Math.sin(rad)).toFixed(0)} `; }
+  for (let a = 0; a < 360; a += 30) {
+    const rr = r * (0.78 + rnd() * 0.3);
+    const rad = (a * Math.PI) / 180;
+    pts += `${(cx + rr * Math.cos(rad)).toFixed(0)},${(cy + rr * Math.sin(rad)).toFixed(0)} `;
+  }
   return `<polygon points="${pts.trim()}" fill="${fill}" stroke="${stroke}" stroke-width="2"/>`;
 };
-const stars = (() => { let s = '', seed = 313; const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
-  for (let i = 0; i < 80; i++) s += `<circle cx="${Math.round(rnd() * W)}" cy="${Math.round(rnd() * H)}" r="${(rnd() * 1.3 + 0.3).toFixed(2)}" fill="rgba(255,255,255,${(rnd() * 0.5 + 0.15).toFixed(2)})"/>`;
-  return s; })();
+const stars = (() => {
+  let s = '',
+    seed = 313;
+  const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+  for (let i = 0; i < 80; i++)
+    s += `<circle cx="${Math.round(rnd() * W)}" cy="${Math.round(rnd() * H)}" r="${(rnd() * 1.3 + 0.3).toFixed(2)}" fill="rgba(255,255,255,${(rnd() * 0.5 + 0.15).toFixed(2)})"/>`;
+  return s;
+})();
 
 const diagrams = {
   // Hero — the myth of the trillion-dollar asteroid, corrected.
@@ -71,7 +86,12 @@ const diagrams = {
       ['O₂', 'AIR', 400],
       ['H₂O', 'WATER', 500],
       ['bulk rock', 'SHIELDING', 600],
-    ].map(([a, b, y]) => `${dot(700, y, 5, GOLD)} ${label(720, y - 2, a, 18, 'start', GOLD)} ${label(920, y - 2, '→  ' + b, 16, 'start')}`).join('')}
+    ]
+      .map(
+        ([a, b, y]) =>
+          `${dot(700, y, 5, GOLD)} ${label(720, y - 2, a, 18, 'start', GOLD)} ${label(920, y - 2, '→  ' + b, 16, 'start')}`,
+      )
+      .join('')}
     ${label(800, 780, 'a fuel depot that is already in the sky, not a vault to be raided', 18, 'middle', LINE)}
   `),
 
@@ -84,19 +104,25 @@ const diagrams = {
       ['HAYABUSA', 'Itokawa · 2010', 'first asteroid sample', 300, GOLD],
       ['HAYABUSA2', 'Ryugu · 2020', 'water-bearing clay', 780, LINE],
       ['OSIRIS-REx', 'Bennu · 2023', 'organics + rubble', 1260, ACC],
-    ].map(([probe, body, found, x, col]) =>
-      `${rock(x, 430, 70, 'rgba(127,176,224,0.14)', col)}` +
-      `${label(x, 300, probe, 18, 'middle', col)}` +
-      `${label(x, 540, body, 15, 'middle')}` +
-      `${label(x, 566, found, 14, 'middle', 'rgba(207,227,251,0.75)')}`
-    ).join('')}
+    ]
+      .map(
+        ([probe, body, found, x, col]) =>
+          `${rock(x, 430, 70, 'rgba(127,176,224,0.14)', col)}` +
+          `${label(x, 300, probe, 18, 'middle', col)}` +
+          `${label(x, 540, body, 15, 'middle')}` +
+          `${label(x, 566, found, 14, 'middle', 'rgba(207,227,251,0.75)')}`,
+      )
+      .join('')}
     ${label(800, 720, 'rubble piles of water-bearing rock — not solid mountains of metal', 18, 'middle', LINE)}
   `),
 };
 
 for (const [slug, svg] of Object.entries(diagrams)) {
   fs.writeFileSync(path.join(OUT, `${slug}.svg`), svg);
-  await sharp(Buffer.from(svg)).resize(2048).png().toFile(path.join(OUT, `${slug}.png`));
+  await sharp(Buffer.from(svg))
+    .resize(2048)
+    .png()
+    .toFile(path.join(OUT, `${slug}.png`));
   console.log(`✓ ${slug}`);
 }
 console.log('done:', Object.keys(diagrams).length, 'asteroid sketches');

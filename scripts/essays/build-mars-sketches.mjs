@@ -10,16 +10,27 @@ const ROOT = path.resolve(import.meta.dirname, '..', '..');
 const OUT = path.join(ROOT, 'docs', 'wip', 'essay-diagram-sources', 'going-to-mars');
 fs.mkdirSync(OUT, { recursive: true });
 
-const BG = '#0a0e18', LINE = '#7fb0e0', ACC = '#cfe3fb', FAINT = 'rgba(127,176,224,0.14)', WHITE = '#ffffff', GOLD = '#ffd27f';
-const W = 1600, H = 900;
+const BG = '#0a0e18',
+  LINE = '#7fb0e0',
+  ACC = '#cfe3fb',
+  FAINT = 'rgba(127,176,224,0.14)',
+  WHITE = '#ffffff',
+  GOLD = '#ffd27f';
+const W = 1600,
+  H = 900;
 const frame = (inner) =>
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="${BG}"/><g font-family="monospace" fill="${ACC}">${inner}</g></svg>`;
 const label = (x, y, t, size = 22, anchor = 'start', fill = ACC) =>
   `<text x="${x}" y="${y}" font-size="${size}" text-anchor="${anchor}" fill="${fill}" letter-spacing="1">${t}</text>`;
 const dot = (x, y, r = 7, fill = WHITE) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}"/>`;
-const stars = (() => { let s = '', seed = 211; const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
-  for (let i = 0; i < 80; i++) s += `<circle cx="${Math.round(rnd() * W)}" cy="${Math.round(rnd() * H)}" r="${(rnd() * 1.3 + 0.3).toFixed(2)}" fill="rgba(255,255,255,${(rnd() * 0.5 + 0.15).toFixed(2)})"/>`;
-  return s; })();
+const stars = (() => {
+  let s = '',
+    seed = 211;
+  const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+  for (let i = 0; i < 80; i++)
+    s += `<circle cx="${Math.round(rnd() * W)}" cy="${Math.round(rnd() * H)}" r="${(rnd() * 1.3 + 0.3).toFixed(2)}" fill="rgba(255,255,255,${(rnd() * 0.5 + 0.15).toFixed(2)})"/>`;
+  return s;
+})();
 
 const diagrams = {
   // Hero — the three walls Mars breaks on.
@@ -28,14 +39,32 @@ const diagrams = {
     ${label(80, 90, 'THE WALL EVERY PLAN BREAKS ON', 30, 'start', LINE)}
     ${label(80, 128, 'Mars is not Apollo, further — it breaks on three things at once', 20)}
     ${[
-      ['TIME', ['a window every ~26 months', '6–9 months each way', 'no abort back to Earth'], 320, GOLD],
-      ['MASS', ['everything, for years', 'no resupply, ever', 'make your own return fuel'], 780, LINE],
-      ['THE BODY', ['radiation with no shield', 'bone and muscle waste', 'a mind alone for years'], 1240, ACC],
-    ].map(([t, lines, x, col]) =>
-      `<rect x="${x - 150}" y="220" width="300" height="380" rx="10" fill="rgba(127,176,224,0.06)" stroke="${col}" stroke-width="2"/>` +
-      `${label(x, 285, t, 24, 'middle', col)}` +
-      lines.map((l, i) => label(x, 350 + i * 54, l, 16, 'middle')).join('')
-    ).join('')}
+      [
+        'TIME',
+        ['a window every ~26 months', '6–9 months each way', 'no abort back to Earth'],
+        320,
+        GOLD,
+      ],
+      [
+        'MASS',
+        ['everything, for years', 'no resupply, ever', 'make your own return fuel'],
+        780,
+        LINE,
+      ],
+      [
+        'THE BODY',
+        ['radiation with no shield', 'bone and muscle waste', 'a mind alone for years'],
+        1240,
+        ACC,
+      ],
+    ]
+      .map(
+        ([t, lines, x, col]) =>
+          `<rect x="${x - 150}" y="220" width="300" height="380" rx="10" fill="rgba(127,176,224,0.06)" stroke="${col}" stroke-width="2"/>` +
+          `${label(x, 285, t, 24, 'middle', col)}` +
+          lines.map((l, i) => label(x, 350 + i * 54, l, 16, 'middle')).join(''),
+      )
+      .join('')}
     ${label(800, 700, 'clear one wall and the next two are still standing', 18, 'middle', LINE)}
   `),
 
@@ -79,7 +108,7 @@ const diagrams = {
     ${label(80, 90, 'NO SHIELD, AND YEARS IN THE OPEN', 30, 'start', LINE)}
     ${label(80, 128, 'the one wall the mission cannot engineer around', 20)}
     ${dot(240, 460, 46, GOLD)} ${label(240, 540, 'THE SUN', 14, 'middle')}
-    <g stroke="${GOLD}" stroke-width="1.6" opacity="0.8">${[420,450,480,510].map(y=>`<line x1="290" y1="460" x2="1360" y2="${y}"/>`).join('')}</g>
+    <g stroke="${GOLD}" stroke-width="1.6" opacity="0.8">${[420, 450, 480, 510].map((y) => `<line x1="290" y1="460" x2="1360" y2="${y}"/>`).join('')}</g>
     ${label(700, 400, 'galactic cosmic rays + solar particle storms', 15, 'middle', GOLD)}
     ${dot(760, 470, 34, '#6aa0d8')} <ellipse cx="760" cy="470" rx="70" ry="70" fill="none" stroke="${LINE}" stroke-width="2"/>
     ${label(760, 560, 'EARTH — a magnetic shield', 14, 'middle', LINE)}
@@ -92,7 +121,10 @@ const diagrams = {
 
 for (const [slug, svg] of Object.entries(diagrams)) {
   fs.writeFileSync(path.join(OUT, `${slug}.svg`), svg);
-  await sharp(Buffer.from(svg)).resize(2048).png().toFile(path.join(OUT, `${slug}.png`));
+  await sharp(Buffer.from(svg))
+    .resize(2048)
+    .png()
+    .toFile(path.join(OUT, `${slug}.png`));
   console.log(`✓ ${slug}`);
 }
 console.log('done:', Object.keys(diagrams).length, 'mars sketches');

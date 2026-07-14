@@ -1,6 +1,6 @@
 {
   "title": "The Exits We've Always Known",
-  "dek": "The chemical rocket is a century-old ceiling we've ridden with extraordinary skill. The roads out — ion drives, solar sails, nuclear-thermal engines — were sketched before the first satellite flew. They are only now, haltingly, being built.",
+  "dek": "The chemical rocket is a century-old ceiling we've ridden with extraordinary skill. The roads out — ion drives, [solar sail](/science/propulsion/solar-sail)s, [nuclear-thermal](/science/propulsion/nuclear-thermal) engines — were sketched before the first satellite flew. They are only now, haltingly, being built.",
   "body": [
     {
       "type": "prose",
@@ -20,7 +20,7 @@
     },
     {
       "type": "prose",
-      "md": "The first alternative to chemistry was demonstrated not in a laboratory but in space, in 1998, aboard a spacecraft called Deep Space 1. Its engine consumed xenon gas — inert, heavy, easy to store — and instead of burning it, *ionized* it: stripped electrons away with an electric field, accelerated the resulting ions through a voltage gradient, and expelled them at tens of kilometres per second. The [ion thruster](/science/propulsion/engine-types) it carried produced 92 millinewtons of thrust. That is, very nearly, the weight of a small apple. At full power it burned through about 3.25 milligrams of propellant per second — ten ounces over a full day of operation. By every conventional measure of a rocket engine, it was a joke."
+      "md": "The first alternative to chemistry was demonstrated not in a laboratory but in space, in 1998, aboard a spacecraft called Deep Space 1. Its engine consumed xenon gas — inert, heavy, easy to store — and instead of burning it, *ionized* it: stripped electrons away with an electric field, accelerated the resulting ions through a voltage gradient, and expelled them at tens of kilometres per second. The [ion thruster](/science/propulsion/ion-drive) it carried produced 92 millinewtons of thrust. That is, very nearly, the weight of a small apple. At full power it burned through about 3.25 milligrams of propellant per second — ten ounces over a full day of operation. By every conventional measure of a rocket engine, it was a joke."
     },
     {
       "type": "prose",

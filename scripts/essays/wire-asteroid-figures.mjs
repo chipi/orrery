@@ -28,7 +28,7 @@ const inserts = [
       fig(
         'essays/asteroid-mining/the-well',
         'diagram',
-        'Every kilogram launched from Earth pays a brutal toll in delta-v just to climb out of the planet’s gravity well. Anything already in space — an asteroid drifting above the rim — has that price paid. Which is why a litre of water parked in orbit is worth more than a litre of gold sitting on the ground.'
+        'Every kilogram launched from Earth pays a brutal toll in delta-v just to climb out of the planet’s gravity well. Anything already in space — an asteroid drifting above the rim — has that price paid. Which is why a litre of water parked in orbit is worth more than a litre of gold sitting on the ground.',
       ),
     ],
   ],
@@ -38,7 +38,7 @@ const inserts = [
       fig(
         'essays/asteroid-mining/water-is-the-ore',
         'diagram',
-        'Split asteroid water and you have hydrogen and oxygen — rocket propellant — plus air to breathe, water to drink, and bulk rock for radiation shielding. The prize was never metal to sell back home; it is a fuel depot that is already in the sky.'
+        'Split asteroid water and you have hydrogen and oxygen — rocket propellant — plus air to breathe, water to drink, and bulk rock for radiation shielding. The prize was never metal to sell back home; it is a fuel depot that is already in the sky.',
       ),
     ],
   ],
@@ -48,13 +48,13 @@ const inserts = [
       fig(
         'essays/asteroid-mining/the-recon',
         'diagram',
-        'Three robotic missions have already touched and sampled asteroids: Japan’s Hayabusa (Itokawa, 2010, the first ever), Hayabusa2 (Ryugu, 2020), and NASA’s OSIRIS-REx (Bennu, 2023). What came back was water-bearing clay and organics — from loose rubble, not solid metal.'
+        'Three robotic missions have already touched and sampled asteroids: Japan’s Hayabusa (Itokawa, 2010, the first ever), Hayabusa2 (Ryugu, 2020), and NASA’s OSIRIS-REx (Bennu, 2023). What came back was water-bearing clay and organics — from loose rubble, not solid metal.',
       ),
       fig(
         'missions/hayabusa2/01',
         'photo',
         'Hayabusa2 at Ryugu — JAXA’s second asteroid sample return, and the mission bold enough to fire a copper impactor into the surface to blast open a fresh crater before scooping up what it exposed.',
-        'JAXA'
+        'JAXA',
       ),
     ],
   ],
@@ -65,7 +65,7 @@ const inserts = [
         'missions/osiris-rex/01',
         'photo',
         'OSIRIS-REx reaching down to touch Bennu — and finding not solid ground but a rubble pile so loosely bound that the sampling head sank straight in, nearly swallowing the arm. “Mining” a body like this is unlike anything ever done on Earth.',
-        'NASA/Goddard/University of Arizona'
+        'NASA/Goddard/University of Arizona',
       ),
     ],
   ],
@@ -84,4 +84,9 @@ for (const p of planned) {
   body.splice(p.at, 0, ...p.figs);
 }
 fs.writeFileSync(overlayPath, JSON.stringify(overlay, null, 2) + '\n');
-console.log('wired asteroid-mining:', body.filter((b) => b.type === 'figure').length, 'figures; hero =', base.hero);
+console.log(
+  'wired asteroid-mining:',
+  body.filter((b) => b.type === 'figure').length,
+  'figures; hero =',
+  base.hero,
+);

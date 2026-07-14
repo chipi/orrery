@@ -10,16 +10,27 @@ const ROOT = path.resolve(import.meta.dirname, '..', '..');
 const OUT = path.join(ROOT, 'docs', 'wip', 'essay-diagram-sources', 'generational-starships');
 fs.mkdirSync(OUT, { recursive: true });
 
-const BG = '#0a0e18', LINE = '#7fb0e0', ACC = '#cfe3fb', FAINT = 'rgba(127,176,224,0.14)', WHITE = '#ffffff', GOLD = '#ffd27f';
-const W = 1600, H = 900;
+const BG = '#0a0e18',
+  LINE = '#7fb0e0',
+  ACC = '#cfe3fb',
+  FAINT = 'rgba(127,176,224,0.14)',
+  WHITE = '#ffffff',
+  GOLD = '#ffd27f';
+const W = 1600,
+  H = 900;
 const frame = (inner) =>
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="${BG}"/><g font-family="monospace" fill="${ACC}">${inner}</g></svg>`;
 const label = (x, y, t, size = 22, anchor = 'start', fill = ACC) =>
   `<text x="${x}" y="${y}" font-size="${size}" text-anchor="${anchor}" fill="${fill}" letter-spacing="1">${t}</text>`;
 const dot = (x, y, r = 7, fill = WHITE) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}"/>`;
-const stars = (() => { let s = '', seed = 631; const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
-  for (let i = 0; i < 90; i++) s += `<circle cx="${Math.round(rnd() * W)}" cy="${Math.round(rnd() * H)}" r="${(rnd() * 1.3 + 0.3).toFixed(2)}" fill="rgba(255,255,255,${(rnd() * 0.5 + 0.15).toFixed(2)})"/>`;
-  return s; })();
+const stars = (() => {
+  let s = '',
+    seed = 631;
+  const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+  for (let i = 0; i < 90; i++)
+    s += `<circle cx="${Math.round(rnd() * W)}" cy="${Math.round(rnd() * H)}" r="${(rnd() * 1.3 + 0.3).toFixed(2)}" fill="rgba(255,255,255,${(rnd() * 0.5 + 0.15).toFixed(2)})"/>`;
+  return s;
+})();
 
 const diagrams = {
   // Hero — the ship as a self-contained world.
@@ -50,7 +61,12 @@ const diagrams = {
       ['OXYGEN', 990, 470, ACC],
       ['CREW', 780, 680, ACC],
       ['CO₂ + WASTE', 570, 470, ACC],
-    ].map(([t, x, y, col]) => `${dot(x, y, 9, col)} ${label(x, y + (y < 460 ? -18 : 34), t, 17, 'middle', col)}`).join('')}
+    ]
+      .map(
+        ([t, x, y, col]) =>
+          `${dot(x, y, 9, col)} ${label(x, y + (y < 460 ? -18 : 34), t, 17, 'middle', col)}`,
+      )
+      .join('')}
     <g stroke="${GOLD}" stroke-width="2" fill="none">
       <path d="M 830 300 A 200 200 0 0 1 960 410"/><polygon points="960,410 944,404 956,392" fill="${GOLD}"/>
       <path d="M 960 540 A 200 200 0 0 1 840 640"/><polygon points="840,640 856,632 844,624" fill="${GOLD}"/>
@@ -68,10 +84,17 @@ const diagrams = {
     ${stars}
     ${label(80, 90, 'A TOWN, NOT A CREW', 30, 'start', LINE)}
     ${label(80, 128, 'the passengers are a population — and it has to stay genetically healthy for generations', 20)}
-    ${(() => { let g = ''; let seed = 7; const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
-      for (let i = 0; i < 140; i++) { const x = 300 + (i % 20) * 50 + rnd() * 8; const y = 240 + Math.floor(i / 20) * 46 + rnd() * 8;
-        g += `<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="5" fill="rgba(127,176,224,${(0.4 + rnd() * 0.5).toFixed(2)})"/>`; }
-      return g; })()}
+    ${(() => {
+      let g = '';
+      let seed = 7;
+      const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+      for (let i = 0; i < 140; i++) {
+        const x = 300 + (i % 20) * 50 + rnd() * 8;
+        const y = 240 + Math.floor(i / 20) * 46 + rnd() * 8;
+        g += `<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="5" fill="rgba(127,176,224,${(0.4 + rnd() * 0.5).toFixed(2)})"/>`;
+      }
+      return g;
+    })()}
     ${label(1360, 300, '≈ 14,000 people', 20, 'end', GOLD)}
     ${label(1360, 330, 'the minimum for a healthy', 14, 'end')}
     ${label(1360, 352, 'gene pool over 150 years', 14, 'end')}
@@ -99,7 +122,10 @@ const diagrams = {
 
 for (const [slug, svg] of Object.entries(diagrams)) {
   fs.writeFileSync(path.join(OUT, `${slug}.svg`), svg);
-  await sharp(Buffer.from(svg)).resize(2048).png().toFile(path.join(OUT, `${slug}.png`));
+  await sharp(Buffer.from(svg))
+    .resize(2048)
+    .png()
+    .toFile(path.join(OUT, `${slug}.png`));
   console.log(`✓ ${slug}`);
 }
 console.log('done:', Object.keys(diagrams).length, 'genship sketches');

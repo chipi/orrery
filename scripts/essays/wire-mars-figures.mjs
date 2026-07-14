@@ -28,7 +28,7 @@ const inserts = [
       fig(
         'essays/going-to-mars/launch-window',
         'diagram',
-        'You do not leave for Mars when you are ready; you leave when the two planets line up, which happens for a few weeks about every twenty-six months. Miss it and you wait two years. And once the transfer burn commits you to the six-to-nine-month coast, there is no abort back to Earth.'
+        'You do not leave for Mars when you are ready; you leave when the two planets line up, which happens for a few weeks about every twenty-six months. Miss it and you wait two years. And once the transfer burn commits you to the six-to-nine-month coast, there is no abort back to Earth.',
       ),
     ],
   ],
@@ -38,7 +38,7 @@ const inserts = [
       fig(
         'essays/going-to-mars/isru-return',
         'diagram',
-        'Hauling enough propellant from Earth to lift a crew back off Mars is close to impossible, so the plan is to make it on arrival. Perseverance’s MOXIE experiment pulled oxygen from the CO₂ atmosphere — a few grams an hour, but the first time a factory has ever run on another world.'
+        'Hauling enough propellant from Earth to lift a crew back off Mars is close to impossible, so the plan is to make it on arrival. Perseverance’s MOXIE experiment pulled oxygen from the CO₂ atmosphere — a few grams an hour, but the first time a factory has ever run on another world.',
       ),
     ],
   ],
@@ -49,7 +49,7 @@ const inserts = [
         'missions/perseverance/01',
         'photo',
         'Perseverance in the last seconds of its own landing, lowered on cables from the sky crane over Jezero — the hardest arrival in the solar system, flown entirely by the spacecraft. A crewed lander would mass tens of times more, and no one yet knows how to set that down.',
-        'NASA/JPL-Caltech'
+        'NASA/JPL-Caltech',
       ),
     ],
   ],
@@ -59,7 +59,7 @@ const inserts = [
       fig(
         'essays/going-to-mars/radiation',
         'diagram',
-        'Mars lost its global magnetic field when its core cooled, so it has no shield against galactic cosmic rays or solar storms. A crew takes roughly 300 millisieverts on the six-month transit alone — and across a three-year round trip, a dose no shielding light enough to fly can stop.'
+        'Mars lost its global magnetic field when its core cooled, so it has no shield against galactic cosmic rays or solar storms. A crew takes roughly 300 millisieverts on the six-month transit alone — and across a three-year round trip, a dose no shielding light enough to fly can stop.',
       ),
     ],
   ],
@@ -70,7 +70,7 @@ const inserts = [
         'missions/tianwen1/01',
         'photo',
         'China’s Tianwen-1 delivered an orbiter, a lander, and the Zhurong rover to Mars on its very first attempt in 2021 — a sequence no other nation has managed in a single mission. Mars is the wall precisely because so many have broken on it, and a few, from more and more of the world, have not.',
-        'CNSA'
+        'CNSA',
       ),
     ],
   ],
@@ -89,4 +89,9 @@ for (const p of planned) {
   body.splice(p.at, 0, ...p.figs);
 }
 fs.writeFileSync(overlayPath, JSON.stringify(overlay, null, 2) + '\n');
-console.log('wired going-to-mars:', body.filter((b) => b.type === 'figure').length, 'figures; hero =', base.hero);
+console.log(
+  'wired going-to-mars:',
+  body.filter((b) => b.type === 'figure').length,
+  'figures; hero =',
+  base.hero,
+);

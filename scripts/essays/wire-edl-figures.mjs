@@ -28,7 +28,7 @@ const inserts = [
       fig(
         'essays/seven-minutes/edl-toolkit',
         'diagram',
-        'Every world hands you a different problem. The Moon has no air, so you fall on rockets alone; Mars has just enough to cook you but not enough to catch you; Earth and Titan have enough that a parachute does most of the work. No arrival is ever quite the arrival before it.'
+        'Every world hands you a different problem. The Moon has no air, so you fall on rockets alone; Mars has just enough to cook you but not enough to catch you; Earth and Titan have enough that a parachute does most of the work. No arrival is ever quite the arrival before it.',
       ),
     ],
   ],
@@ -38,13 +38,13 @@ const inserts = [
       fig(
         'essays/seven-minutes/mars-edl',
         'diagram',
-        'Mars is the cruel middle case — too thin an atmosphere to parachute down, too thick to ignore. It all happens in about seven minutes: entry, peak heating, a supersonic parachute, heat-shield separation, powered descent, and a sky crane lowering the rover on cables. Every step must fire on its own, on time, or the mission ends in a crater.'
+        'Mars is the cruel middle case — too thin an atmosphere to parachute down, too thick to ignore. It all happens in about seven minutes: entry, peak heating, a supersonic parachute, heat-shield separation, powered descent, and a sky crane lowering the rover on cables. Every step must fire on its own, on time, or the mission ends in a crater.',
       ),
       fig(
         'missions/perseverance/01',
         'photo',
         'Perseverance hangs beneath its descent stage in the final seconds over Jezero Crater, moments before the sky crane pays out its cables — a manoeuvre flown entirely by the spacecraft itself, with Earth a spectator eleven minutes behind.',
-        'NASA/JPL-Caltech'
+        'NASA/JPL-Caltech',
       ),
     ],
   ],
@@ -55,7 +55,7 @@ const inserts = [
         'missions/schiaparelli/01',
         'photo',
         'Schiaparelli was meant to prove Europe could land on Mars. In 2016 its computer, briefly confused by its own sensors, decided it had already touched down — let go of its parachute, cut its thrusters, and fell the last kilometres. The record of arrivals is written as much in craters as in triumphs.',
-        'ESA/ATG medialab'
+        'ESA/ATG medialab',
       ),
     ],
   ],
@@ -65,7 +65,7 @@ const inserts = [
       fig(
         'essays/seven-minutes/blackout',
         'diagram',
-        'And you cannot help it through any of it. Mars is light-minutes away — the whole descent fits inside the radio lag. By the time the first word of entry reaches Earth, the craft is already down, safe or dead, the outcome decided minutes before anyone here knew it had begun.'
+        'And you cannot help it through any of it. Mars is light-minutes away — the whole descent fits inside the radio lag. By the time the first word of entry reaches Earth, the craft is already down, safe or dead, the outcome decided minutes before anyone here knew it had begun.',
       ),
     ],
   ],
@@ -84,4 +84,9 @@ for (const p of planned) {
   body.splice(p.at, 0, ...p.figs);
 }
 fs.writeFileSync(overlayPath, JSON.stringify(overlay, null, 2) + '\n');
-console.log('wired seven-minutes:', body.filter((b) => b.type === 'figure').length, 'figures; hero =', base.hero);
+console.log(
+  'wired seven-minutes:',
+  body.filter((b) => b.type === 'figure').length,
+  'figures; hero =',
+  base.hero,
+);

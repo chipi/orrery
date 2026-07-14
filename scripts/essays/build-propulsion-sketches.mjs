@@ -107,7 +107,7 @@ const diagrams = {
           `<rect x="360" y="${y - 26}" width="${w}" height="34" rx="6" fill="rgba(127,176,224,0.16)" stroke="${col}" stroke-width="2"/>` +
           `${label(350, y - 2, name, 18, 'end', col)}` +
           `${label(372, y - 2, note, 13, 'start', 'rgba(207,227,251,0.7)')}` +
-          `${label(360 + Number(w) + 20, y - 2, val, 17, 'start', col)}`
+          `${label(360 + Number(w) + 20, y - 2, val, 17, 'start', col)}`,
       )
       .join('')}
     ${label(760, 780, 'the exits were all sketched before the first satellite flew', 18, 'middle', LINE)}
@@ -116,7 +116,10 @@ const diagrams = {
 
 for (const [slug, svg] of Object.entries(diagrams)) {
   fs.writeFileSync(path.join(OUT, `${slug}.svg`), svg);
-  await sharp(Buffer.from(svg)).resize(2048).png().toFile(path.join(OUT, `${slug}.png`));
+  await sharp(Buffer.from(svg))
+    .resize(2048)
+    .png()
+    .toFile(path.join(OUT, `${slug}.png`));
   console.log(`✓ ${slug}`);
 }
 console.log('done:', Object.keys(diagrams).length, 'propulsion sketches');

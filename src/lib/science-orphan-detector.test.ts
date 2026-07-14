@@ -38,6 +38,10 @@ import { join } from 'node:path';
 
 const SCIENCE_ROOT = 'static/data/science';
 const SRC_ROOT = 'src';
+// Essay content lives outside src/ (JSON data). The en-US overlay carries
+// the canonical inline `[text](/science/…)` links; the base records carry
+// read_next/href fields. Both are scanned for inbound science references.
+const ESSAY_DIRS = ['i18n-src/en-US/essays', 'static/data/essays'];
 
 interface AllowlistEntry {
   id: string;
@@ -50,14 +54,9 @@ const ORPHAN_ALLOWLIST: AllowlistEntry[] = [
   // are the editorial foundation for the future routes. Promote out of
   // the allowlist when the corresponding route lands and starts linking
   // to them.
-  {
-    id: 'life-in-space/food-production-off-world',
-    reason: 'PERMANENT — future surface route (no /lunar-surface or /mars-surface yet)',
-  },
-  {
-    id: 'life-in-space/isru-resource-utilization',
-    reason: 'PERMANENT — future surface route',
-  },
+  // (food-production-off-world + isru-resource-utilization promoted OUT of the
+  //  allowlist 2026-07 — The Long View essays now link them, so they're
+  //  reachable and the essay-content scan below counts them.)
   {
     id: 'life-in-space/lunar-habitat-design',
     reason: 'PERMANENT — future Artemis surface route',
@@ -152,6 +151,22 @@ function gatherInboundRefs(): Set<string> {
     // Pattern C — direct path literal `/science/X/Y`
     const pathRe = /\/science\/([a-z][a-z0-9-]*)\/([a-z][a-z0-9-]*)/g;
     while ((m = pathRe.exec(text)) !== null) refs.add(`${m[1]}/${m[2]}`);
+  }
+  // Pattern D — essay deep-links. The Long View essays carry inline
+  // markdown links `[text](/science/tab/section)` in their body prose;
+  // these render as real click targets (essayInlineHtml) but live in JSON
+  // data outside src/, so patterns A–C miss them. Essays are a primary
+  // home for editorial science articles, so an article an essay points to
+  // is genuinely reachable — scan the essay content too.
+  for (const dir of ESSAY_DIRS) {
+    if (!existsSync(dir)) continue;
+    for (const f of readdirSync(dir)) {
+      if (!f.endsWith('.json')) continue;
+      const text = readFileSync(join(dir, f), 'utf8');
+      const pathRe = /\/science\/([a-z][a-z0-9-]*)\/([a-z][a-z0-9-]*)/g;
+      let m: RegExpExecArray | null;
+      while ((m = pathRe.exec(text)) !== null) refs.add(`${m[1]}/${m[2]}`);
+    }
   }
   return refs;
 }

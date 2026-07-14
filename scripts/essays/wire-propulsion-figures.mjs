@@ -30,13 +30,13 @@ const inserts = [
       fig(
         'essays/new-propulsion/ion-drive',
         'diagram',
-        'A chemical rocket spends its whole life in a few minutes of fury, then coasts. An ion engine pushes with the weight of a coin — but never stops. Given enough time it quietly overtakes the rocket that shoved hardest, and keeps climbing.'
+        'A chemical rocket spends its whole life in a few minutes of fury, then coasts. An ion engine pushes with the weight of a coin — but never stops. Given enough time it quietly overtakes the rocket that shoved hardest, and keeps climbing.',
       ),
       fig(
         'missions/dawn/01',
         'photo',
         'Dawn ran on a xenon-ion engine whose thrust you could have balanced on your palm — and rode that whisper for years, becoming the only craft ever to orbit two separate worlds beyond Earth: first Vesta, then Ceres.',
-        'NASA/JPL-Caltech'
+        'NASA/JPL-Caltech',
       ),
     ],
   ],
@@ -46,7 +46,7 @@ const inserts = [
       fig(
         'essays/new-propulsion/nuclear-thermal',
         'diagram',
-        'There is no flame here at all. A reactor heats hydrogen past any temperature a chemical fire can reach and throws it from the nozzle at roughly twice the speed — the same fuel, worth twice the push, and a shorter, less-irradiated road to Mars.'
+        'There is no flame here at all. A reactor heats hydrogen past any temperature a chemical fire can reach and throws it from the nozzle at roughly twice the speed — the same fuel, worth twice the push, and a shorter, less-irradiated road to Mars.',
       ),
     ],
   ],
@@ -56,7 +56,7 @@ const inserts = [
       fig(
         'essays/new-propulsion/isp-ladder',
         'diagram',
-        'Line the exits up by efficiency and the pattern is plain: every road out of the chemical era trades brute thrust for the patience to keep pushing. All of them were sketched on paper before the first satellite ever flew.'
+        'Line the exits up by efficiency and the pattern is plain: every road out of the chemical era trades brute thrust for the patience to keep pushing. All of them were sketched on paper before the first satellite ever flew.',
       ),
     ],
   ],
@@ -75,4 +75,9 @@ for (const p of planned) {
   body.splice(p.at, 0, ...p.figs);
 }
 fs.writeFileSync(overlayPath, JSON.stringify(overlay, null, 2) + '\n');
-console.log('wired propulsion:', body.filter((b) => b.type === 'figure').length, 'figures; hero =', base.hero);
+console.log(
+  'wired propulsion:',
+  body.filter((b) => b.type === 'figure').length,
+  'figures; hero =',
+  base.hero,
+);

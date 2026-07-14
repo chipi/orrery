@@ -10,16 +10,27 @@ const ROOT = path.resolve(import.meta.dirname, '..', '..');
 const OUT = path.join(ROOT, 'docs', 'wip', 'essay-diagram-sources', 'interstellar-exploration');
 fs.mkdirSync(OUT, { recursive: true });
 
-const BG = '#0a0e18', LINE = '#7fb0e0', ACC = '#cfe3fb', FAINT = 'rgba(127,176,224,0.14)', WHITE = '#ffffff', GOLD = '#ffd27f';
-const W = 1600, H = 900;
+const BG = '#0a0e18',
+  LINE = '#7fb0e0',
+  ACC = '#cfe3fb',
+  FAINT = 'rgba(127,176,224,0.14)',
+  WHITE = '#ffffff',
+  GOLD = '#ffd27f';
+const W = 1600,
+  H = 900;
 const frame = (inner) =>
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="${BG}"/><g font-family="monospace" fill="${ACC}">${inner}</g></svg>`;
 const label = (x, y, t, size = 22, anchor = 'start', fill = ACC) =>
   `<text x="${x}" y="${y}" font-size="${size}" text-anchor="${anchor}" fill="${fill}" letter-spacing="1">${t}</text>`;
 const dot = (x, y, r = 7, fill = WHITE) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}"/>`;
-const stars = (() => { let s = '', seed = 523; const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
-  for (let i = 0; i < 90; i++) s += `<circle cx="${Math.round(rnd() * W)}" cy="${Math.round(rnd() * H)}" r="${(rnd() * 1.3 + 0.3).toFixed(2)}" fill="rgba(255,255,255,${(rnd() * 0.5 + 0.15).toFixed(2)})"/>`;
-  return s; })();
+const stars = (() => {
+  let s = '',
+    seed = 523;
+  const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+  for (let i = 0; i < 90; i++)
+    s += `<circle cx="${Math.round(rnd() * W)}" cy="${Math.round(rnd() * H)}" r="${(rnd() * 1.3 + 0.3).toFixed(2)}" fill="rgba(255,255,255,${(rnd() * 0.5 + 0.15).toFixed(2)})"/>`;
+  return s;
+})();
 
 const diagrams = {
   // Hero — the scale jump from light-hours to light-years.
@@ -56,15 +67,30 @@ const diagrams = {
     ${label(80, 90, 'THE SERIOUS ROADS OUT', 30, 'start', LINE)}
     ${label(80, 128, 'three concepts that are physically sound — and each walled off', 20)}
     ${[
-      ['BREAKTHROUGH STARSHOT', 'laser-pushed sail · ~20% c', 'a 20-year flyby — no brakes, grams of payload', 300, GOLD],
-      ['PROJECT DAEDALUS', 'fusion rocket · ~12% c', 'a starship the size of a skyscraper; no reactor yet', 440, LINE],
+      [
+        'BREAKTHROUGH STARSHOT',
+        'laser-pushed sail · ~20% c',
+        'a 20-year flyby — no brakes, grams of payload',
+        300,
+        GOLD,
+      ],
+      [
+        'PROJECT DAEDALUS',
+        'fusion rocket · ~12% c',
+        'a starship the size of a skyscraper; no reactor yet',
+        440,
+        LINE,
+      ],
       ['ANTIMATTER', '100% of mass → energy', 'the perfect fuel we cannot make or store', 580, ACC],
-    ].map(([name, how, wall, y, col]) =>
-      `<rect x="120" y="${y - 40}" width="1360" height="96" rx="10" fill="rgba(127,176,224,0.05)" stroke="${col}" stroke-width="1.6"/>` +
-      label(150, y - 6, name, 20, 'start', col) +
-      label(150, y + 26, how, 15, 'start') +
-      label(1450, y + 6, wall, 15, 'end', 'rgba(207,227,251,0.8)')
-    ).join('')}
+    ]
+      .map(
+        ([name, how, wall, y, col]) =>
+          `<rect x="120" y="${y - 40}" width="1360" height="96" rx="10" fill="rgba(127,176,224,0.05)" stroke="${col}" stroke-width="1.6"/>` +
+          label(150, y - 6, name, 20, 'start', col) +
+          label(150, y + 26, how, 15, 'start') +
+          label(1450, y + 6, wall, 15, 'end', 'rgba(207,227,251,0.8)'),
+      )
+      .join('')}
     ${label(800, 720, 'not forbidden by physics — forbidden by energy, distance, and patience', 18, 'middle', LINE)}
   `),
 
@@ -85,7 +111,10 @@ const diagrams = {
 
 for (const [slug, svg] of Object.entries(diagrams)) {
   fs.writeFileSync(path.join(OUT, `${slug}.svg`), svg);
-  await sharp(Buffer.from(svg)).resize(2048).png().toFile(path.join(OUT, `${slug}.png`));
+  await sharp(Buffer.from(svg))
+    .resize(2048)
+    .png()
+    .toFile(path.join(OUT, `${slug}.png`));
   console.log(`✓ ${slug}`);
 }
 console.log('done:', Object.keys(diagrams).length, 'interstellar sketches');

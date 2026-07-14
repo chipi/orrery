@@ -28,13 +28,13 @@ const inserts = [
       fig(
         'essays/interstellar-exploration/voyagers-speed',
         'diagram',
-        'Voyager 1, launched in 1977, is the fastest-receding object humanity has ever built — and at roughly seventeen kilometres a second it would still take on the order of 73,000 years to cross the distance to the nearest star. It isn’t even going there. Against interstellar distance, our fastest is a crawl.'
+        'Voyager 1, launched in 1977, is the fastest-receding object humanity has ever built — and at roughly seventeen kilometres a second it would still take on the order of 73,000 years to cross the distance to the nearest star. It isn’t even going there. Against interstellar distance, our fastest is a crawl.',
       ),
       fig(
         'missions/voyager-1/01',
         'photo',
         'Voyager 1 — now more than twenty-four billion kilometres out, the most distant object humans have ever made, and still, on any interstellar scale, barely out the door.',
-        'NASA/JPL-Caltech'
+        'NASA/JPL-Caltech',
       ),
     ],
   ],
@@ -44,7 +44,7 @@ const inserts = [
       fig(
         'essays/interstellar-exploration/the-proposals',
         'diagram',
-        'Three concepts survive honest scrutiny: a laser-pushed nanosail (Breakthrough Starshot) that could fly past a nearby star in decades, a fusion starship (Project Daedalus) the size of a building, and antimatter’s perfect but unmakeable fuel. None is forbidden by physics — all are forbidden by energy, distance, and patience.'
+        'Three concepts survive honest scrutiny: a laser-pushed nanosail (Breakthrough Starshot) that could fly past a nearby star in decades, a fusion starship (Project Daedalus) the size of a building, and antimatter’s perfect but unmakeable fuel. None is forbidden by physics — all are forbidden by energy, distance, and patience.',
       ),
     ],
   ],
@@ -54,7 +54,7 @@ const inserts = [
       fig(
         'essays/interstellar-exploration/the-message',
         'diagram',
-        'Even if a probe arrives, the news takes years to come home. At Proxima a signal is 4.24 years each way; a decades-long crossing yields a few hours of flyby data, then years more to hear it. Interstellar exploration is, above all, an exercise in patience.'
+        'Even if a probe arrives, the news takes years to come home. At Proxima a signal is 4.24 years each way; a decades-long crossing yields a few hours of flyby data, then years more to hear it. Interstellar exploration is, above all, an exercise in patience.',
       ),
     ],
   ],
@@ -65,7 +65,7 @@ const inserts = [
         'missions/new-horizons/01',
         'photo',
         'New Horizons, which crossed nearly five billion kilometres to Pluto and on into the Kuiper Belt — the newest of our outbound craft, and a reminder that even our boldest deep-space missions are still voyages within the solar system’s own front garden.',
-        'NASA/JHUAPL/SwRI'
+        'NASA/JHUAPL/SwRI',
       ),
     ],
   ],
@@ -84,4 +84,9 @@ for (const p of planned) {
   body.splice(p.at, 0, ...p.figs);
 }
 fs.writeFileSync(overlayPath, JSON.stringify(overlay, null, 2) + '\n');
-console.log('wired interstellar-exploration:', body.filter((b) => b.type === 'figure').length, 'figures; hero =', base.hero);
+console.log(
+  'wired interstellar-exploration:',
+  body.filter((b) => b.type === 'figure').length,
+  'figures; hero =',
+  base.hero,
+);

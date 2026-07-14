@@ -90,7 +90,7 @@ const diagrams = {
     ]
       .map(
         ([b, t, y]) =>
-          `${dot(300, y, 7, y === 660 ? GOLD : WHITE)} ${label(330, y - 4, b, 20, 'start', y === 660 ? GOLD : ACC)} ${label(330, y + 22, t, 16)}`
+          `${dot(300, y, 7, y === 660 ? GOLD : WHITE)} ${label(330, y - 4, b, 20, 'start', y === 660 ? GOLD : ACC)} ${label(330, y + 22, t, 16)}`,
       )
       .join('')}
     ${label(760, 800, 'you do not fly the craft — you write it a letter and hope', 18, 'middle', LINE)}
@@ -113,7 +113,10 @@ const diagrams = {
 
 for (const [slug, svg] of Object.entries(diagrams)) {
   fs.writeFileSync(path.join(OUT, `${slug}.svg`), svg);
-  await sharp(Buffer.from(svg)).resize(2048).png().toFile(path.join(OUT, `${slug}.png`));
+  await sharp(Buffer.from(svg))
+    .resize(2048)
+    .png()
+    .toFile(path.join(OUT, `${slug}.png`));
   console.log(`✓ ${slug}`);
 }
 console.log('done:', Object.keys(diagrams).length, 'comms sketches');

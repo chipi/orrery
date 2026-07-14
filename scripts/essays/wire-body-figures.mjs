@@ -28,7 +28,7 @@ const inserts = [
       fig(
         'essays/the-body-in-the-dark/radiation-weather',
         'diagram',
-        'The hardest problem is the one you cannot see. Beyond Earth’s magnetic field there is no shelter from galactic cosmic rays, and a solar storm can deliver an acute dose in hours. Shielding heavy enough to stop them is far too heavy to fly — so on a long voyage, the crew simply absorbs the weather.'
+        'The hardest problem is the one you cannot see. Beyond Earth’s magnetic field there is no shelter from galactic cosmic rays, and a solar storm can deliver an acute dose in hours. Shielding heavy enough to stop them is far too heavy to fly — so on a long voyage, the crew simply absorbs the weather.',
       ),
     ],
   ],
@@ -38,7 +38,7 @@ const inserts = [
       fig(
         'essays/the-body-in-the-dark/microgravity-toll',
         'diagram',
-        'A body optimised for one gravity quietly comes apart in free fall: bone drains at around one percent a month, muscle wastes, fluid pools in the head and flattens the back of the eye. Two hours of exercise a day only slows the losses — no one has made them stop.'
+        'A body optimised for one gravity quietly comes apart in free fall: bone drains at around one percent a month, muscle wastes, fluid pools in the head and flattens the back of the eye. Two hours of exercise a day only slows the losses — no one has made them stop.',
       ),
     ],
   ],
@@ -48,13 +48,13 @@ const inserts = [
       fig(
         'essays/the-body-in-the-dark/the-record',
         'diagram',
-        'Almost everything we know about the body in space we know because particular people stayed up there long enough to measure it — and the record is global. Valeri Polyakov’s 437 days aboard Mir still stands; the ISS and now Tiangong add crew-years to the dataset one rotation at a time.'
+        'Almost everything we know about the body in space we know because particular people stayed up there long enough to measure it — and the record is global. Valeri Polyakov’s 437 days aboard Mir still stands; the ISS and now Tiangong add crew-years to the dataset one rotation at a time.',
       ),
       fig(
         'fleet/iss/01',
         'photo',
         'The International Space Station — for a quarter-century the single laboratory where the long-term effects of weightlessness have been studied, on a rotating international crew who are, unavoidably, the experiment.',
-        'NASA'
+        'NASA',
       ),
     ],
   ],
@@ -65,7 +65,7 @@ const inserts = [
         'missions/polaris-dawn/01',
         'photo',
         'A private astronaut in the open hatch of a Crew Dragon during Polaris Dawn, 2024 — a human being with only a suit between them and the vacuum. The engineering can be made reliable; the mind that has to endure the confinement, the risk, and the years cannot be re-specced.',
-        'Polaris Program / SpaceX'
+        'Polaris Program / SpaceX',
       ),
     ],
   ],
@@ -84,4 +84,9 @@ for (const p of planned) {
   body.splice(p.at, 0, ...p.figs);
 }
 fs.writeFileSync(overlayPath, JSON.stringify(overlay, null, 2) + '\n');
-console.log('wired the-body-in-the-dark:', body.filter((b) => b.type === 'figure').length, 'figures; hero =', base.hero);
+console.log(
+  'wired the-body-in-the-dark:',
+  body.filter((b) => b.type === 'figure').length,
+  'figures; hero =',
+  base.hero,
+);

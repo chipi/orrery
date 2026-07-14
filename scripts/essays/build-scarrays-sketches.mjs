@@ -11,8 +11,14 @@ const ROOT = path.resolve(import.meta.dirname, '..', '..');
 const OUT = path.join(ROOT, 'docs', 'wip', 'essay-diagram-sources', 'space-comm-arrays');
 fs.mkdirSync(OUT, { recursive: true });
 
-const BG = '#0a0e18', LINE = '#7fb0e0', ACC = '#cfe3fb', FAINT = 'rgba(127,176,224,0.14)', WHITE = '#ffffff', GOLD = '#ffd27f';
-const W = 1600, H = 900;
+const BG = '#0a0e18',
+  LINE = '#7fb0e0',
+  ACC = '#cfe3fb',
+  FAINT = 'rgba(127,176,224,0.14)',
+  WHITE = '#ffffff',
+  GOLD = '#ffd27f';
+const W = 1600,
+  H = 900;
 const frame = (inner) =>
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="${BG}"/><g font-family="monospace" fill="${ACC}">${inner}</g></svg>`;
 const label = (x, y, t, size = 22, anchor = 'start', fill = ACC) =>
@@ -20,9 +26,14 @@ const label = (x, y, t, size = 22, anchor = 'start', fill = ACC) =>
 const dot = (x, y, r = 7, fill = WHITE) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}"/>`;
 const dish = (x, y, s = 1, fill = LINE) =>
   `<g transform="translate(${x},${y}) scale(${s})" stroke="${fill}" stroke-width="2.5" fill="none"><path d="M -22 0 A 22 22 0 0 1 22 0"/><line x1="0" y1="0" x2="0" y2="18"/><line x1="-12" y1="18" x2="12" y2="18"/></g>`;
-const stars = (() => { let s = '', seed = 733; const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
-  for (let i = 0; i < 80; i++) s += `<circle cx="${Math.round(rnd() * W)}" cy="${Math.round(rnd() * H)}" r="${(rnd() * 1.3 + 0.3).toFixed(2)}" fill="rgba(255,255,255,${(rnd() * 0.5 + 0.15).toFixed(2)})"/>`;
-  return s; })();
+const stars = (() => {
+  let s = '',
+    seed = 733;
+  const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+  for (let i = 0; i < 80; i++)
+    s += `<circle cx="${Math.round(rnd() * W)}" cy="${Math.round(rnd() * H)}" r="${(rnd() * 1.3 + 0.3).toFixed(2)}" fill="rgba(255,255,255,${(rnd() * 0.5 + 0.15).toFixed(2)})"/>`;
+  return s;
+})();
 
 const diagrams = {
   // Hero — the ground is the bottleneck now.
@@ -32,8 +43,8 @@ const diagrams = {
     ${label(80, 128, 'the spacecraft are fine — it is the three dishes everyone has to share', 20)}
     ${dish(300, 500, 2.6, ACC)} ${dish(430, 520, 2.6, ACC)} ${dish(560, 500, 2.6, ACC)}
     ${label(430, 590, 'ONE DEEP SPACE NETWORK · THREE COMPLEXES', 15, 'middle')}
-    ${[220,300,380,460].map((y,i)=>`${dot(1180, y, 6, i===0?GOLD:LINE)} ${label(1210, y+4, ['Mars orbiters','a rover','an outer-system probe','the next mission …'][i], 15, 'start', i===0?GOLD:ACC)}`).join('')}
-    <g stroke="${FAINT}" stroke-width="1.4" stroke-dasharray="6 8">${[220,300,380,460].map(y=>`<line x1="620" y1="500" x2="1160" y2="${y}"/>`).join('')}</g>
+    ${[220, 300, 380, 460].map((y, i) => `${dot(1180, y, 6, i === 0 ? GOLD : LINE)} ${label(1210, y + 4, ['Mars orbiters', 'a rover', 'an outer-system probe', 'the next mission …'][i], 15, 'start', i === 0 ? GOLD : ACC)}`).join('')}
+    <g stroke="${FAINT}" stroke-width="1.4" stroke-dasharray="6 8">${[220, 300, 380, 460].map((y) => `<line x1="620" y1="500" x2="1160" y2="${y}"/>`).join('')}</g>
     ${label(880, 540, 'all queuing for the same antenna-hours', 15, 'middle', GOLD)}
     ${label(760, 800, 'as the traffic grows, the network — not the craft — is what runs out', 18, 'middle', LINE)}
   `),
@@ -43,10 +54,15 @@ const diagrams = {
     ${stars}
     ${label(80, 90, 'MANY EARS INSTEAD OF ONE', 30, 'start', LINE)}
     ${label(80, 128, 'combine a crowd of small antennas so they act as one enormous dish', 20)}
-    ${(() => { let g = ''; const xs = [220,320,420,300,400,500,360,460]; const ys = [560,600,560,660,660,620,720,720];
+    ${(() => {
+      let g = '';
+      const xs = [220, 320, 420, 300, 400, 500, 360, 460];
+      const ys = [560, 600, 560, 660, 660, 620, 720, 720];
       for (let i = 0; i < xs.length; i++) g += dish(xs[i], ys[i], 1.5, ACC);
-      for (let i = 0; i < xs.length; i++) g += `<line x1="${xs[i]}" y1="${ys[i]}" x2="720" y2="470" stroke="${FAINT}" stroke-width="1.2"/>`;
-      return g; })()}
+      for (let i = 0; i < xs.length; i++)
+        g += `<line x1="${xs[i]}" y1="${ys[i]}" x2="720" y2="470" stroke="${FAINT}" stroke-width="1.2"/>`;
+      return g;
+    })()}
     ${dot(720, 470, 10, GOLD)} ${label(720, 440, 'combined → one virtual giant', 16, 'middle', GOLD)}
     <g stroke="${GOLD}" stroke-width="2.5"><line x1="760" y1="460" x2="1160" y2="400"/><polygon points="1160,400 1144,398 1148,414" fill="${GOLD}"/></g>
     ${dot(1220, 390, 8, LINE)} ${label(1220, 360, 'the faint probe', 14, 'middle')}
@@ -90,7 +106,10 @@ const diagrams = {
 
 for (const [slug, svg] of Object.entries(diagrams)) {
   fs.writeFileSync(path.join(OUT, `${slug}.svg`), svg);
-  await sharp(Buffer.from(svg)).resize(2048).png().toFile(path.join(OUT, `${slug}.png`));
+  await sharp(Buffer.from(svg))
+    .resize(2048)
+    .png()
+    .toFile(path.join(OUT, `${slug}.png`));
   console.log(`✓ ${slug}`);
 }
 console.log('done:', Object.keys(diagrams).length, 'space-comm-arrays sketches');

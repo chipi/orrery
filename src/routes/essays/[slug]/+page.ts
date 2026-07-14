@@ -12,9 +12,16 @@ const ESSAY_SLUGS = [
   'navigation',
   'delta-v',
   'comms',
+  'space-comm-arrays',
   'reusable-launchers',
   'new-propulsion',
+  'going-to-the-moon',
+  'going-to-mars',
+  'asteroid-mining',
   'seven-minutes',
+  'the-body-in-the-dark',
+  'interstellar-exploration',
+  'generational-starships',
 ];
 
 export const entries: EntryGenerator = () => ESSAY_SLUGS.map((slug) => ({ slug }));

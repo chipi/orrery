@@ -1,0 +1,46 @@
+{
+  "slug": "interstellar-exploration",
+  "movement": "the-far-horizon",
+  "order": 1,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "The Exits We’ve Always Known — the propulsion this arithmetic rests on",
+      "href": "/essays/new-propulsion",
+      "kind": "essay"
+    },
+    {
+      "label": "The Ship Becomes a World — if you cannot go fast, go slow",
+      "href": "/essays/generational-starships",
+      "kind": "essay"
+    },
+    {
+      "label": "Louder Than a Whisper — the message problem across light-years",
+      "href": "/essays/space-comm-arrays",
+      "kind": "essay"
+    },
+    {
+      "label": "Explore the edge of the map",
+      "href": "/explore",
+      "kind": "interactive"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Breakthrough Starshot",
+      "url": "https://breakthroughinitiatives.org/initiative/3"
+    },
+    {
+      "title": "British Interplanetary Society — Project Daedalus",
+      "url": "https://www.bis-space.com/what-we-do/projects/project-daedalus/"
+    },
+    {
+      "title": "NASA — Voyager: interstellar mission",
+      "url": "https://science.nasa.gov/mission/voyager/"
+    },
+    {
+      "title": "ESO — Proxima Centauri, the nearest star",
+      "url": "https://www.eso.org/public/news/eso1629/"
+    }
+  ]
+}

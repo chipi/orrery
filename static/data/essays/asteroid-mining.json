@@ -1,0 +1,46 @@
+{
+  "slug": "asteroid-mining",
+  "movement": "the-destinations",
+  "order": 3,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "The grammar of delta-v — why a gravity well is the enemy",
+      "href": "/essays/delta-v",
+      "kind": "essay"
+    },
+    {
+      "label": "The Practice Ground — the same ice-as-fuel logic at the Moon",
+      "href": "/essays/going-to-the-moon",
+      "kind": "essay"
+    },
+    {
+      "label": "Keep the Rocket — the launch cost this is all measured against",
+      "href": "/essays/reusable-launchers",
+      "kind": "essay"
+    },
+    {
+      "label": "Explore the small bodies",
+      "href": "/explore",
+      "kind": "interactive"
+    }
+  ],
+  "sources": [
+    {
+      "title": "JAXA — Hayabusa2 (Ryugu sample return)",
+      "url": "https://www.hayabusa2.jaxa.jp/en/"
+    },
+    {
+      "title": "NASA — OSIRIS-REx (Bennu sample return)",
+      "url": "https://science.nasa.gov/mission/osiris-rex/"
+    },
+    {
+      "title": "NASA — Near-Earth Object studies",
+      "url": "https://cneos.jpl.nasa.gov/"
+    },
+    {
+      "title": "Wikipedia — Asteroid mining (history: Planetary Resources, DSI)",
+      "url": "https://en.wikipedia.org/wiki/Asteroid_mining"
+    }
+  ]
+}

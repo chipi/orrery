@@ -15,17 +15,27 @@
     {
       key: 'into-the-dark',
       label: 'Into the Dark',
-      blurb: 'The fundamentals of going — how we find our way, and move, where there are no roads.',
+      blurb: 'The fundamentals of going — how we find our way, move, and stay in touch where there are no roads.',
     },
     {
       key: 'the-machines',
       label: 'The Machines',
-      blurb: 'How we build the going — leaving the ground, going farther, staying alive out there.',
+      blurb: 'How we build the going — leaving the ground, and the exits beyond the chemical rocket.',
     },
     {
-      key: 'arrival-and-the-long-view',
-      label: 'Arrival & the Long View',
-      blurb: 'What it all adds up to — arriving, and the whole journey so far.',
+      key: 'the-destinations',
+      label: 'The Destinations',
+      blurb: 'Where we are actually going — the Moon we keep relearning, the Mars that breaks every plan, and the rocks worth more as fuel than as gold.',
+    },
+    {
+      key: 'arrival-and-the-body',
+      label: 'Arrival & the Body',
+      blurb: 'The cost of getting there — the violence of landing, and the fragile traveller the whole enterprise exists to carry.',
+    },
+    {
+      key: 'the-far-horizon',
+      label: 'The Far Horizon',
+      blurb: 'The honest edge of the map — the arithmetic of the stars, and the ship that would have to become a world.',
     },
   ];
 

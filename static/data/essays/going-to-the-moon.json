@@ -1,0 +1,50 @@
+{
+  "slug": "going-to-the-moon",
+  "movement": "the-destinations",
+  "order": 1,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "The Seven Minutes — why an airless landing is rockets all the way down",
+      "href": "/essays/seven-minutes",
+      "kind": "essay"
+    },
+    {
+      "label": "The Wall — why Mars is not simply the Moon, further",
+      "href": "/essays/going-to-mars",
+      "kind": "essay"
+    },
+    {
+      "label": "Explore the Moon in 3D",
+      "href": "/explore",
+      "kind": "interactive"
+    },
+    {
+      "label": "The Artemis programme",
+      "href": "/programs/artemis",
+      "kind": "program"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA — Artemis",
+      "url": "https://www.nasa.gov/humans-in-space/artemis/"
+    },
+    {
+      "title": "ISRO — Chandrayaan-3",
+      "url": "https://www.isro.gov.in/Chandrayaan3.html"
+    },
+    {
+      "title": "JAXA — SLIM (Smart Lander for Investigating Moon)",
+      "url": "https://www.isas.jaxa.jp/en/missions/spacecraft/current/slim.html"
+    },
+    {
+      "title": "NASA — Lunar Reconnaissance Orbiter: water ice at the poles",
+      "url": "https://science.nasa.gov/mission/lro/"
+    },
+    {
+      "title": "Wikipedia — Luna programme",
+      "url": "https://en.wikipedia.org/wiki/Luna_programme"
+    }
+  ]
+}

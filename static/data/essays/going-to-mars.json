@@ -1,0 +1,50 @@
+{
+  "slug": "going-to-mars",
+  "movement": "the-destinations",
+  "order": 2,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "The Seven Minutes — the hardest landing in the solar system",
+      "href": "/essays/seven-minutes",
+      "kind": "essay"
+    },
+    {
+      "label": "The Body in the Dark — the traveller is the fragile payload",
+      "href": "/essays/the-body-in-the-dark",
+      "kind": "essay"
+    },
+    {
+      "label": "The grammar of delta-v — why you never fly straight",
+      "href": "/essays/delta-v",
+      "kind": "essay"
+    },
+    {
+      "label": "Fly a Mars transfer and watch the window close",
+      "href": "/fly",
+      "kind": "interactive"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA — Mars Exploration Program",
+      "url": "https://science.nasa.gov/mars/"
+    },
+    {
+      "title": "ISRO — Mars Orbiter Mission (Mangalyaan)",
+      "url": "https://www.isro.gov.in/MarsOrbiterMissionSpacecraft.html"
+    },
+    {
+      "title": "NASA JPL — MOXIE makes oxygen on Mars",
+      "url": "https://www.nasa.gov/technology/moxie-oxygen-on-mars/"
+    },
+    {
+      "title": "NASA — Space Radiation and the human journey to Mars",
+      "url": "https://www.nasa.gov/humans-in-space/space-radiation/"
+    },
+    {
+      "title": "Wikipedia — Tianwen-1",
+      "url": "https://en.wikipedia.org/wiki/Tianwen-1"
+    }
+  ]
+}

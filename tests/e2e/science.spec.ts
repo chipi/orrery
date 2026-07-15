@@ -46,8 +46,8 @@ test.describe('/science', () => {
   }) => {
     await page.goto('/science/orbits/vis-viva');
     await expect(page.locator('h1', { hasText: 'Vis-Viva Equation' })).toBeVisible();
-    // Hero diagram above the 101.
-    await expect(page.locator('img[src$="vis-viva.svg"]')).toBeVisible();
+    // Hero diagram above the 101 (blend raster redo, 2026-07: .svg → .webp).
+    await expect(page.locator('img[src$="vis-viva.webp"]')).toBeVisible();
     // 101 zoom-in block.
     await expect(page.locator('section[aria-label="A focused 101"]')).toBeVisible();
     // KaTeX-rendered formula (server-rendered HTML, no JS math library).
@@ -81,10 +81,10 @@ test.describe('/science', () => {
   });
 
   test('deep link to a section without a formula still renders cleanly', async ({ page }) => {
-    // /science/scales-time/au has a diagram but no formula_latex.
+    // /science/scales-time/au has a diagram (blend .webp) but no formula_latex.
     await page.goto('/science/scales-time/au');
     await expect(page.locator('h1', { hasText: 'AU' })).toBeVisible();
-    await expect(page.locator('img[src$="au.svg"]')).toBeVisible();
+    await expect(page.locator('img[src$="au.webp"]')).toBeVisible();
     // No KaTeX block expected here.
     await expect(page.locator('.katex-display')).toHaveCount(0);
   });

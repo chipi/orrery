@@ -142,6 +142,14 @@ const GATEWAY: Record<string, string> = {
   'Serpens Nebula': 'toi-700',
 };
 
+// Curated real distances for catalogue objects that have no gallery photo (the
+// gallery is the usual distance source, so photo-less objects would otherwise show
+// no distance). Real, sourced values — not guesses. M13: Harris globular-cluster
+// catalogue, ~7.7 kpc.
+const DIST_OVERRIDE: Record<string, string> = {
+  M13: '~25,000 light-years',
+};
+
 // Index gallery rows by designation (first curated photo wins; the gallery
 // often has multiple photos of the same object — the scene picks one).
 const galleryByDesig = new Map<string, GalleryRow>();
@@ -170,8 +178,8 @@ const objects = snap.objects.map((o) => {
     mag: o.mag,
     size_arcmin: o.size,
     con: o.con,
-    dist_ly: parseDistLy(photo?.distance),
-    dist_label: photo?.distance ?? null,
+    dist_ly: parseDistLy(photo?.distance ?? DIST_OVERRIDE[o.designation]),
+    dist_label: photo?.distance ?? DIST_OVERRIDE[o.designation] ?? null,
     photoKey: photo?.key ?? null,
     photoTitle: photo?.title ?? null,
     gatewaySystem: GATEWAY[o.designation] ?? null,

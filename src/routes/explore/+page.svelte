@@ -85,7 +85,10 @@
   import { deepSkyRung, type DeepSkyRung } from '$lib/universe/deep-sky-lod';
   import StarPanel from '$lib/components/StarPanel.svelte';
   import ExoplanetPanel from '$lib/components/ExoplanetPanel.svelte';
+  import MassPeriodChart from '$lib/components/MassPeriodChart.svelte';
   import DeepSkyPanel from '$lib/components/DeepSkyPanel.svelte';
+  import HrDiagram from '$lib/components/HrDiagram.svelte';
+  import CausalityMap from '$lib/components/CausalityMap.svelte';
   import MilkyWayPanel from '$lib/components/MilkyWayPanel.svelte';
   import BlackHolePanel from '$lib/components/BlackHolePanel.svelte';
   import CultureDoorCard from '$lib/components/CultureDoorCard.svelte';
@@ -929,6 +932,23 @@
   // objects render as faint glints; a photo blooms only as you approach.
   let showDeepSky = $state(false);
   let setDeepSkyFn: ((on: boolean) => void) | null = null;
+  // Slice 7 — the HR-diagram (property-space) lens: re-project the star field.
+  let hrLensOpen = $state(false);
+  let hrStars = $state<Array<{ bv: number; absMag: number }>>([]);
+  let toggleHrFn: (() => void) | null = null;
+  // Slice 7 — the causality (light-cone) lens: a top-down light-horizon map.
+  let causalityOpen = $state(false);
+  let causalityShells = $state<import('$lib/universe/causality').LightShell[]>([]);
+  let causalityField = $state<Array<{ x: number; z: number; bv: number }>>([]);
+  let causalityNamed = $state<
+    Array<{ name: string; distPc: number; x: number; z: number; bv: number }>
+  >([]);
+  let openCausalityFn: (() => void) | null = null;
+  // Slice 7 — the exoplanet mass–period property-space plot (shown inside a system).
+  let massPeriodOpen = $state(false);
+  let allExoplanetPlanets = $state<
+    Array<{ name: string; periodDays: number; massEarth: number; hostId: string }>
+  >([]);
   let deepSkyObjects = $state<DeepSkyObject[]>([]);
   let selectedDeepSkyId = $state<string | null>(null);
   // Deep-sky immersion (Part 4): the full-frame photo destination. `activeDeepSky`
@@ -3030,6 +3050,17 @@
         ]);
         namedStars = stars;
         exoplanetHostIds = new Set(exoSystems.map((s) => s.hostId));
+        // Slice 7 — flatten every planet with a known mass for the mass–period plot.
+        allExoplanetPlanets = exoSystems.flatMap((s) =>
+          s.planets
+            .filter((p) => p.mass_earth != null && p.period_days > 0)
+            .map((p) => ({
+              name: p.name,
+              periodDays: p.period_days,
+              massEarth: p.mass_earth as number,
+              hostId: s.hostId,
+            })),
+        );
         deepSkyObjects = deepSky;
         deepSkyGallery = dsGallery;
         nbScene = mod.createNeighborhoodScene({
@@ -3246,6 +3277,7 @@
       bodyHostIdLocal = null;
       bodyHostName = '';
       activeBodyHostId = null;
+      massPeriodOpen = false;
       currentBodySystem = null;
       selectedExoplanet = null;
       panelState.exoplanet = false;
@@ -3497,6 +3529,18 @@
     setConstellationsFn = (on: boolean) => nbScene?.setConstellationsVisible(on);
     setDeepSkyFn = (on: boolean) => nbScene?.setDeepSkyVisible(on);
     selectDeepSkyFn = enterDeepSky;
+    // Slice 7 — HR-diagram lens: sample the real star field + re-project it.
+    toggleHrFn = () => {
+      hrLensOpen = !hrLensOpen;
+      if (hrLensOpen) hrStars = nbScene?.hrStars(2000) ?? [];
+    };
+    // Slice 7 — causality lens: pull the named stars + light-cone shells for the map.
+    openCausalityFn = () => {
+      const d = nbScene?.causalityData(92);
+      causalityShells = d?.shells ?? [];
+      causalityField = d?.field ?? [];
+      causalityNamed = d?.named ?? [];
+    };
     exitDeepSkyFn = exitDeepSky;
     deepSkyGatewayFn = deepSkyGateway;
     deepSkyDeepLinkFn = resolveDeepSkyDeepLink;
@@ -5730,6 +5774,22 @@
     {/if}
   {/if}
 
+  <!-- Slice 7: the mass–period property-space plot — a lens inside an exoplanet
+       system (body-scene). Off by default. -->
+  {#if view === '3d' && contextId === 'body-scene' && !activeBlackHole && activeBodyHostId && exoplanetHostIds.has(activeBodyHostId)}
+    <div class="nb-controls">
+      <button
+        type="button"
+        class="nb-chip"
+        class:active={massPeriodOpen}
+        aria-pressed={massPeriodOpen}
+        onclick={() => (massPeriodOpen = !massPeriodOpen)}
+      >
+        {m.explore_lens_mass_period()}
+      </button>
+    </div>
+  {/if}
+
   <!-- v2 neighborhood layer toggles (Slice 1): constellation lines. -->
   {#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole}
     <div class="nb-controls">
@@ -5774,6 +5834,27 @@
         }}
       >
         {m.explore_deep_sky_toggle()}
+      </button>
+      <button
+        type="button"
+        class="nb-chip"
+        class:active={hrLensOpen}
+        aria-pressed={hrLensOpen}
+        onclick={() => toggleHrFn?.()}
+      >
+        {m.explore_lens_hr()}
+      </button>
+      <button
+        type="button"
+        class="nb-chip"
+        class:active={causalityOpen}
+        aria-pressed={causalityOpen}
+        onclick={() => {
+          causalityOpen = !causalityOpen;
+          if (causalityOpen) openCausalityFn?.();
+        }}
+      >
+        {m.explore_lens_causality()}
       </button>
     </div>
     <StarIndex
@@ -5862,6 +5943,23 @@
       <img src={deepSkyPhotoUrl} alt={activeDeepSkyImage?.caption ?? activeDeepSky.name} />
       <div class="ds-vignette"></div>
     </div>
+  {/if}
+
+  <!-- Slice 7: the HR-diagram (property-space) lens overlay — the real star field
+       re-projected onto temperature/luminosity axes. -->
+  {#if view === '3d'}
+    <HrDiagram stars={hrStars} open={hrLensOpen && contextId === 'neighborhood'} />
+    <CausalityMap
+      field={causalityField}
+      named={causalityNamed}
+      shells={causalityShells}
+      open={causalityOpen && contextId === 'neighborhood'}
+    />
+    <MassPeriodChart
+      planets={allExoplanetPlanets}
+      activeHostId={activeBodyHostId}
+      open={massPeriodOpen && contextId === 'body-scene'}
+    />
   {/if}
 
   <!-- Warp flash — masks the scene cut at a boundary crossing. Replays whenever

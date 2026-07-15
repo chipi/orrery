@@ -150,7 +150,9 @@ export function createBlackHoleScene(hole: BlackHole, tier = 'high'): BlackHoleS
   const scene = new THREE.Scene();
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
-  // Spin sets the disk inner edge (higher spin → smaller ISCO → disk hugs closer).
+  // Spin nudges the disk inner edge inward (higher spin → smaller ISCO → disk hugs
+  // closer). This is an artistic proxy tuned for visibility, not the exact Kerr ISCO
+  // formula — the render never claims diskIn is the precise ISCO radius.
   const diskIn = 2.6 - 0.8 * Math.min(1, Math.max(0, hole.spin));
   // Camera stays near edge-on (the iconic Interstellar/Gargantua framing that was
   // approved); the object's inclination adds a small, capped tilt for variety.

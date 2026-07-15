@@ -16,6 +16,7 @@ import { createPointField, type PointFieldHandle } from './point-field';
 import { tierToStarBudget } from './budget';
 import { describeAnonymousStar, type AnonymousStar } from './anonymous-star';
 import { buildDeepSkyLayer, type DeepSkyLayerHandle } from './deep-sky-scene';
+import { lightShells, CAUSALITY_EPOCHS, CAUSALITY_NOW, type LightShell } from './causality';
 import type { NamedStar, DeepSkyObject } from '$lib/data';
 import type { QualityTier } from '$lib/quality/quality-tier';
 
@@ -32,10 +33,21 @@ export interface NeighborhoodScene {
   highlightStar(id: string | null): void;
   /** Lightweight readout for a background point-field star by its vertex index. */
   anonymousStarAt(index: number): AnonymousStar | null;
+  /** Sampled (B–V, absolute magnitude) for the Slice-7 HR-diagram overlay —
+   *  the same real stars, re-projected onto physical axes. */
+  hrStars(maxCount?: number): Array<{ bv: number; absMag: number }>;
   /** Toggle the constellation-line overlay. */
   setConstellationsVisible(on: boolean): void;
   /** Toggle the deep-sky (Messier + gallery) glint layer. Off by default. */
   setDeepSkyVisible(on: boolean): void;
+  /** The light-cone shells + a top-down census of stars within `maxPc` of the Sun,
+   *  for the Slice-7 causality map overlay. `field` is the anonymous census (scatter);
+   *  `named` carries labels for the recognizable nearby stars. */
+  causalityData(maxPc?: number): {
+    shells: LightShell[];
+    field: Array<{ x: number; z: number; bv: number }>;
+    named: Array<{ name: string; distPc: number; x: number; z: number; bv: number }>;
+  };
   /** Raycast targets for deep-sky objects (each carries userData.deepSkyId). */
   deepSkyPickables: THREE.Object3D[];
   /** Emphasize one deep-sky object (hover/selection) + reveal its label. */
@@ -221,6 +233,12 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     deepSkyObjects.length > 0 ? buildDeepSkyLayer(deepSkyObjects) : null;
   if (deepSky) scene.add(deepSky.group);
 
+  // ── Causality lens (Slice 7) — the light-cone shells render as a 2-D top-down
+  // map overlay (CausalityMap.svelte), NOT in-scene: the neighbourhood camera sits
+  // near the Sun, i.e. *inside* the shells, where wireframe spheres read as an
+  // inside-out web. The overlay plots the same real named stars at true distance
+  // against concentric light-horizon rings. `causalityData()` feeds it. ──
+
   // ── Constellation-line overlay (one LineSegments draw call, off by default) ──
   let constellationLines: THREE.LineSegments | null = null;
   if (constellations.length > 0) {
@@ -323,6 +341,24 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     setDeepSkyVisible(on: boolean) {
       deepSky?.setVisible(on);
     },
+    causalityData(maxPc = 92) {
+      const shells = lightShells(CAUSALITY_EPOCHS, CAUSALITY_NOW, maxPc);
+      // Anonymous census within the horizon — roughly uniform density, so the outer
+      // annuli (where the teaching lives) populate while the centre stays sparse.
+      const inRange: Array<{ x: number; z: number; bv: number }> = [];
+      for (let i = 0; i < data.count; i++) {
+        const x = data.positions[i * 3];
+        const y = data.positions[i * 3 + 1];
+        const z = data.positions[i * 3 + 2];
+        if (Math.hypot(x, y, z) <= maxPc) inRange.push({ x, z, bv: data.cis[i] });
+      }
+      const step = Math.max(1, Math.floor(inRange.length / 1600));
+      const field = inRange.filter((_, i) => i % step === 0);
+      const named = namedStars
+        .filter((s) => s.dist_pc > 0 && s.dist_pc <= maxPc)
+        .map((s) => ({ name: s.proper, distPc: s.dist_pc, x: s.x, z: s.z, bv: s.bv ?? 0.6 }));
+      return { shells, field, named };
+    },
     deepSkyPickables: deepSky?.pickables ?? [],
     highlightDeepSky(id: string | null) {
       deepSky?.highlight(id);
@@ -348,6 +384,19 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
         data.mags[index],
         data.cis[index],
       );
+    },
+    hrStars(maxCount = 2000) {
+      const step = Math.max(1, Math.floor(data.count / maxCount));
+      const out: Array<{ bv: number; absMag: number }> = [];
+      for (let i = 0; i < data.count; i += step) {
+        const x = data.positions[i * 3];
+        const y = data.positions[i * 3 + 1];
+        const z = data.positions[i * 3 + 2];
+        const distPc = Math.max(0.01, Math.hypot(x, y, z));
+        const absMag = data.mags[i] - 5 * (Math.log10(distPc) - 1);
+        out.push({ bv: data.cis[i], absMag });
+      }
+      return out;
     },
     update(camDistPc: number, camera?: THREE.Camera) {
       field.setOpacity(revealOpacity(camDistPc));

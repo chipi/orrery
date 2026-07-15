@@ -70,10 +70,16 @@ test.describe('Mars Tier 3 panorama — Curiosity full lifecycle', () => {
     // returns; on mobile the fullscreen panorama exits back to the bare scene
     // (the site panel does not reopen), so we assert only that the panorama
     // has closed.
-    await expect(overlay).toHaveCount(0, { timeout: 5_000 });
+    // Exiting the panorama tears down the WebGL panorama scene and rebuilds
+    // the orbit scene + detail panel — a heavy 3D re-render, on par with the
+    // initial load (which uses a 30 s budget above). The old 5 s here flaked
+    // on loaded CI runners (docker-e2e desktop, workers=1): the orbit scene's
+    // Stand-at-site button hadn't re-mounted yet. Give the same generous
+    // headroom the cold load gets; a true hang still fails well inside it.
+    await expect(overlay).toHaveCount(0, { timeout: 15_000 });
     await expect(exit).toHaveCount(0);
     if (!isMobile) {
-      await expect(stand).toBeVisible({ timeout: 5_000 });
+      await expect(stand).toBeVisible({ timeout: 15_000 });
     }
 
     expect(errors, errors.join('\n')).toEqual([]);

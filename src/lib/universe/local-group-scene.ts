@@ -211,7 +211,6 @@ export function createLocalGroupScene(
         const p = logSpiralPoint(inner, 0.24, theta, start);
         const jitter = radius * 0.06 * (rng() - 0.5);
         const r = Math.min(radius, p.r);
-        if (r > radius) continue;
         const x = Math.cos(theta + start) * r + jitter;
         const z = Math.sin(theta + start) * r + jitter;
         const y = radius * 0.05 * (rng() - 0.5);

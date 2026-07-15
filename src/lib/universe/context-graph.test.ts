@@ -5,6 +5,8 @@ import {
   AU_PER_PARSEC,
   SOLAR_SYSTEM_CONTEXT,
   NEIGHBORHOOD_CONTEXT,
+  MILKY_WAY_CONTEXT,
+  LOCAL_GROUP_CONTEXT,
   bodyContextId,
   makeBodyContext,
   type Context,
@@ -49,8 +51,19 @@ describe('ContextGraph.evaluate', () => {
     expect(t?.to.id).toBe('solar-system');
   });
 
-  it('does not cross out of the outermost context (no parent)', () => {
-    const g = new ContextGraph(contexts(), 'neighborhood');
+  it('does not cross out when outerBoundaryScene is Infinity', () => {
+    // Build a minimal context whose outerBoundaryScene is Infinity — even with a
+    // parent registered, the guard in evaluate() must not fire.
+    const inf: Context = {
+      id: 'inf-ctx',
+      parent: null,
+      child: null,
+      units: 'pc',
+      sceneUnitsPerParsec: 1,
+      outerBoundaryScene: Number.POSITIVE_INFINITY,
+      innerBoundaryScene: 0,
+    };
+    const g = new ContextGraph([inf], 'inf-ctx');
     expect(g.evaluate(1e9)).toBeNull();
   });
 });
@@ -91,6 +104,39 @@ describe('ContextGraph.setActive', () => {
   it('throws on an unknown id', () => {
     const g = new ContextGraph(contexts(), 'solar-system');
     expect(() => g.setActive('nope')).toThrow();
+  });
+});
+
+describe('MilkyWay ↔ LocalGroup contexts (Slice 5/8)', () => {
+  const full = (): Context[] => [
+    { ...SOLAR_SYSTEM_CONTEXT },
+    { ...NEIGHBORHOOD_CONTEXT },
+    { ...MILKY_WAY_CONTEXT },
+    { ...LOCAL_GROUP_CONTEXT },
+  ];
+
+  it('the Local Group is the outermost context (parent null, boundary Infinity)', () => {
+    expect(LOCAL_GROUP_CONTEXT.parent).toBeNull();
+    expect(LOCAL_GROUP_CONTEXT.child).toBe('milky-way');
+    expect(LOCAL_GROUP_CONTEXT.outerBoundaryScene).toBe(Number.POSITIVE_INFINITY);
+  });
+
+  it('the Milky Way now nests inside the Local Group (parent chain MW → LG)', () => {
+    expect(MILKY_WAY_CONTEXT.parent).toBe('local-group');
+    expect(MILKY_WAY_CONTEXT.child).toBe('neighborhood');
+  });
+
+  it('does not cross out of the Local Group (outermost — page drives warps directly)', () => {
+    const g = new ContextGraph(full(), 'local-group');
+    expect(g.evaluate(1e9)).toBeNull();
+  });
+
+  it('every context in the full chain is registered + reachable', () => {
+    const g = new ContextGraph(full(), 'solar-system');
+    for (const id of ['solar-system', 'neighborhood', 'milky-way', 'local-group']) {
+      g.setActive(id);
+      expect(g.active.id).toBe(id);
+    }
   });
 });
 

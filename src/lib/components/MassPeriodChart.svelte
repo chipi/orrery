@@ -88,7 +88,7 @@
       ctx.lineTo(x, B);
       ctx.stroke();
       const days = Math.pow(10, e);
-      ctx.fillText(days >= 1 ? `${days}` : `${days}`, x, B + (mob ? 14 : 18));
+      ctx.fillText(`${days}`, x, B + (mob ? 14 : 18));
     }
     ctx.textAlign = 'right';
     for (let e = Math.ceil(MP_MASS_LOG_MIN); e <= Math.floor(MP_MASS_LOG_MAX); e++) {
@@ -98,7 +98,7 @@
       ctx.lineTo(R, y);
       ctx.stroke();
       const me = Math.pow(10, e);
-      ctx.fillText(me >= 1 ? `${me}` : `${me}`, L - 6, y + 3);
+      ctx.fillText(`${me}`, L - 6, y + 3);
     }
     // axis frame
     ctx.strokeStyle = 'rgba(120,190,235,0.3)';

@@ -16,10 +16,10 @@ describe('absoluteMagnitude', () => {
   it('equals apparent magnitude at 10 pc', () => {
     expect(absoluteMagnitude(5, 10)).toBeCloseTo(5, 6);
   });
-  it('is brighter (smaller) for a nearer star at fixed apparent mag', () => {
-    // M = m − 5(log10 d − 1); at 1 pc, M = m + 5.
+  it('is intrinsically fainter (larger M) when nearer, at fixed apparent mag', () => {
+    // at 1 pc, M = m + 5 (star is intrinsically dim — it appears bright only because it is close)
     expect(absoluteMagnitude(5, 1)).toBeCloseTo(10, 6);
-    // at 100 pc, M = m − 5.
+    // at 100 pc, M = m − 5 (star is intrinsically luminous)
     expect(absoluteMagnitude(5, 100)).toBeCloseTo(0, 6);
   });
   it('the Sun (m = −26.7 at ~4.85e−6 pc) has Mᵥ ≈ 4.83', () => {

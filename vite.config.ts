@@ -450,6 +450,10 @@ export default defineConfig(({ mode }) => {
           // Slice 6 black-hole geodesic lensing scene — same WebGL policy; its pure
           // GR + framing math is unit-tested in black-hole-visual.test.ts.
           'src/lib/universe/black-hole-scene.ts',
+          // Slice 8 Local Group schematic scene — same WebGL policy; its pure
+          // galaxy-placement + label math lives in local-group.json (data) and
+          // the LocalGroupPanel component, neither of which runs WebGL.
+          'src/lib/universe/local-group-scene.ts',
           '*.config.{js,ts}',
           '.svelte-kit/',
         ],

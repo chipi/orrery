@@ -9,15 +9,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { bvToRgb } from '$lib/universe/bv-to-rgb';
-  import {
-    hrX,
-    hrY,
-    SPECTRAL_CLASSES,
-    SUN_BV,
-    SUN_ABSMAG,
-    ABSMAG_MIN,
-    ABSMAG_MAX,
-  } from '$lib/universe/property-space';
+  import { hrX, hrY, SPECTRAL_CLASSES, SUN_BV, SUN_ABSMAG } from '$lib/universe/property-space';
   import * as m from '$lib/paraglide/messages';
 
   type Star = { bv: number; absMag: number };
@@ -175,9 +167,6 @@
     ctx.font = `bold ${mob ? 9 : 11}px 'Space Mono', monospace`;
     ctx.fillText(m.explore_hr_sun(), sx + 11, sy + 3);
     ctx.globalAlpha = 1;
-
-    void ABSMAG_MIN;
-    void ABSMAG_MAX;
   }
 </script>
 

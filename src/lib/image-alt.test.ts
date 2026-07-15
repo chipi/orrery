@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getImageAlt, registerLocaleAltText, loadedLocales } from './image-alt';
+import { getImageAlt, registerLocaleAltText, loadedLocales, loadLocaleAltText } from './image-alt';
 
 describe('getImageAlt — locale-aware alt-text accessor', () => {
   it('returns en-US alt-text for a known image path', () => {
@@ -30,6 +30,13 @@ describe('getImageAlt — locale-aware alt-text accessor', () => {
   });
 
   it('loadedLocales includes en-US by default', () => {
+    expect(loadedLocales()).toContain('en-US');
+  });
+
+  it('loadLocaleAltText is a no-op for en-US (falls through to the baseline)', async () => {
+    // en-US is the baseline that ships in the accessor — loadLocaleAltText
+    // short-circuits without a fetch, so it resolves and adds nothing.
+    await expect(loadLocaleAltText('en-US')).resolves.toBeUndefined();
     expect(loadedLocales()).toContain('en-US');
   });
 });

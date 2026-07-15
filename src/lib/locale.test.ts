@@ -14,6 +14,8 @@ import {
   isRtlLocale,
   syncDocumentLocaleAttributes,
   assertLocalesInSync,
+  activeLocale,
+  localeFromPage,
 } from './locale';
 
 describe('SUPPORTED_LOCALES', () => {
@@ -92,6 +94,26 @@ describe('syncDocumentLocaleAttributes', () => {
 describe('assertLocalesInSync', () => {
   it('does not throw when SUPPORTED_LOCALES and Paraglide locales agree', () => {
     expect(() => assertLocalesInSync()).not.toThrow();
+  });
+});
+
+describe('activeLocale', () => {
+  it('resolves to a supported locale code', () => {
+    const loc = activeLocale();
+    expect(isSupportedLocale(loc)).toBe(true);
+  });
+});
+
+describe('localeFromPage', () => {
+  it('reads the page URL as a tracking dependency and returns the active locale', () => {
+    // Paraglide resolves the locale from its own runtime, not the passed
+    // URL, so localeFromPage agrees with activeLocale regardless of the
+    // pathname — the page arg exists only to make $derived re-fire on nav.
+    const fromRoot = localeFromPage({ url: new URL('https://example.test/') });
+    const fromNested = localeFromPage({ url: new URL('https://example.test/de/iss') });
+    expect(isSupportedLocale(fromRoot)).toBe(true);
+    expect(fromRoot).toBe(activeLocale());
+    expect(fromNested).toBe(fromRoot);
   });
 });
 

@@ -88,6 +88,8 @@
     "build-constellation-lines": "tsx scripts/build-constellation-lines.ts",
     "refresh-exoplanet-archive": "node scripts/refresh-exoplanet-archive.mjs",
     "build-exoplanet-systems": "tsx scripts/build-exoplanet-systems.ts",
+    "refresh-messier-catalog": "node scripts/refresh-messier-catalog.mjs",
+    "build-universe-deep-sky": "tsx scripts/build-universe-deep-sky.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs && cp -R docs/prototypes docs/.vitepress/dist/prototypes",
     "docs:preview": "vitepress preview docs",

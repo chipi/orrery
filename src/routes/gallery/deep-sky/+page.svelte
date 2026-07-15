@@ -11,6 +11,10 @@
 
   let { data }: { data: PageData } = $props();
 
+  // Designations placed in the /explore sky (Slice 4) — gates the "Show in the
+  // sky" CTA so only immersible objects link across.
+  let skyDesignations = $derived(new Set(data.skyDesignations ?? []));
+
   // Group each image for the filter bar. Space telescopes get their own chip;
   // the interplanetary observatories (Voyager/Cassini/New Horizons/Juno/SDO)
   // collapse under one "Spacecraft" chip.
@@ -264,6 +268,11 @@
             >{current.licence} · source ↗</a
           >
         </p>
+        {#if current.designation && skyDesignations.has(current.designation)}
+          <a class="lb-sky" href="{base}/explore?deepsky={encodeURIComponent(current.designation)}">
+            Show in the sky →
+          </a>
+        {/if}
       </figcaption>
     </figure>
     <button class="lb-nav lb-next" onclick={() => step(1)} aria-label="Next">›</button>
@@ -627,6 +636,20 @@
   .lb-src:hover {
     color: #fff;
     text-decoration: underline;
+  }
+  .lb-sky {
+    display: inline-block;
+    margin-top: 0.6rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #4ecdc4, #7ff0e0);
+    color: #06231f;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  .lb-sky:hover {
+    filter: brightness(1.08);
   }
   .lb-close {
     position: fixed;

@@ -15,7 +15,8 @@ import { selectVisibleStars, type ShellData } from './star-selection';
 import { createPointField, type PointFieldHandle } from './point-field';
 import { tierToStarBudget } from './budget';
 import { describeAnonymousStar, type AnonymousStar } from './anonymous-star';
-import type { NamedStar } from '$lib/data';
+import { buildDeepSkyLayer, type DeepSkyLayerHandle } from './deep-sky-scene';
+import type { NamedStar, DeepSkyObject } from '$lib/data';
 import type { QualityTier } from '$lib/quality/quality-tier';
 
 export interface NeighborhoodScene {
@@ -33,6 +34,20 @@ export interface NeighborhoodScene {
   anonymousStarAt(index: number): AnonymousStar | null;
   /** Toggle the constellation-line overlay. */
   setConstellationsVisible(on: boolean): void;
+  /** Toggle the deep-sky (Messier + gallery) glint layer. Off by default. */
+  setDeepSkyVisible(on: boolean): void;
+  /** Raycast targets for deep-sky objects (each carries userData.deepSkyId). */
+  deepSkyPickables: THREE.Object3D[];
+  /** Emphasize one deep-sky object (hover/selection) + reveal its label. */
+  highlightDeepSky(id: string | null): void;
+  /** Focus a deep-sky object for the approach warp (its glint blooms). */
+  focusDeepSky(id: string | null): void;
+  /** Approach ramp 0 → 1 for the focused deep-sky object. */
+  setDeepSkyApproach(a: number): void;
+  /** Scene position of a deep-sky object (for warp targeting), or null. */
+  deepSkyObjectPosition(id: string): THREE.Vector3 | null;
+  /** The deep-sky record for an id, or null. */
+  deepSkyObject(id: string): DeepSkyObject | null;
   /** Reveal state + per-frame marker sizing. Pass the camera so markers keep a
    *  constant on-screen size regardless of each star's distance. */
   update(camDistPc: number, camera?: THREE.Camera): void;
@@ -53,6 +68,8 @@ export interface NeighborhoodOptions {
   namedStars?: NamedStar[];
   /** Constellation line segments (baked 3D positions) for the overlay. */
   constellations?: ConstellationLines[];
+  /** Deep-sky objects (Messier + gallery) for the off-by-default glint layer. */
+  deepSkyObjects?: DeepSkyObject[];
 }
 
 /** Fetch the constellation-line data from static/data/universe/. */
@@ -187,10 +204,22 @@ interface StarMarker {
 }
 
 export function createNeighborhoodScene(opts: NeighborhoodOptions): NeighborhoodScene {
-  const { shells, tier = 'high', pixelRatio = 1, namedStars = [], constellations = [] } = opts;
+  const {
+    shells,
+    tier = 'high',
+    pixelRatio = 1,
+    namedStars = [],
+    constellations = [],
+    deepSkyObjects = [],
+  } = opts;
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x05070f);
+
+  // ── Deep-sky glint layer (Slice 4) — off by default, faint by design ──
+  const deepSky: DeepSkyLayerHandle | null =
+    deepSkyObjects.length > 0 ? buildDeepSkyLayer(deepSkyObjects) : null;
+  if (deepSky) scene.add(deepSky.group);
 
   // ── Constellation-line overlay (one LineSegments draw call, off by default) ──
   let constellationLines: THREE.LineSegments | null = null;
@@ -291,6 +320,25 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     setConstellationsVisible(on: boolean) {
       if (constellationLines) constellationLines.visible = on;
     },
+    setDeepSkyVisible(on: boolean) {
+      deepSky?.setVisible(on);
+    },
+    deepSkyPickables: deepSky?.pickables ?? [],
+    highlightDeepSky(id: string | null) {
+      deepSky?.highlight(id);
+    },
+    focusDeepSky(id: string | null) {
+      deepSky?.setFocus(id);
+    },
+    setDeepSkyApproach(a: number) {
+      deepSky?.setApproach(a);
+    },
+    deepSkyObjectPosition(id: string) {
+      return deepSky?.objectPosition(id) ?? null;
+    },
+    deepSkyObject(id: string) {
+      return deepSky?.objectById(id) ?? null;
+    },
     anonymousStarAt(index: number) {
       if (index < 0 || index >= data.count) return null;
       return describeAnonymousStar(
@@ -304,6 +352,7 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     update(camDistPc: number, camera?: THREE.Camera) {
       field.setOpacity(revealOpacity(camDistPc));
       applyMarkerScale(camera);
+      if (camera) deepSky?.update(camDistPc, camera);
     },
     dispose() {
       field.dispose();
@@ -319,6 +368,7 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
         (m.label.material as THREE.SpriteMaterial).map?.dispose();
         (m.label.material as THREE.SpriteMaterial).dispose();
       }
+      deepSky?.dispose();
     },
   };
 }

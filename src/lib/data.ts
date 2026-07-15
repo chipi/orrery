@@ -19,6 +19,7 @@ import type { OrbitRegime } from '$types/orbit-regime';
 import type { Program, ProgramBase, ProgramOverlay, ProgramIndexEntry } from '$types/program';
 import type { Essay, EssayBase, EssayOverlay, EssayIndexEntry } from '$types/essay';
 import type { MoonSite } from '$types/moon-site';
+import type { DeepSkyImage } from '$lib/deep-sky';
 import type { MarsSite, Traverse, RouteHirisePatch } from '$types/mars-site';
 import type { PorkchopGrid } from '$types/porkchop-grid';
 import type { DestinationId } from '$lib/lambert-grid.constants';
@@ -1890,6 +1891,74 @@ export async function getExoplanetSystem(
 ): Promise<ExoplanetSystem | null> {
   const systems = await getExoplanetSystems(fetchFn);
   return systems.find((s) => s.hostId === hostId) ?? null;
+}
+
+// Deep-sky catalogue (Slice 4) — Messier set + curated-gallery NGC/IC objects,
+// placed by unit sky-sphere direction. photoKey resolves to a static/data/
+// deep-sky.json gallery entry when a curated photo backs the object.
+export type DeepSkyCategory =
+  | 'galaxy'
+  | 'galaxy-cluster'
+  | 'nebula'
+  | 'planetary-nebula'
+  | 'supernova-remnant'
+  | 'star-forming-region'
+  | 'dark-nebula'
+  | 'star-cluster'
+  | 'globular-cluster'
+  | 'star'
+  | 'other';
+export interface DeepSkyObject {
+  id: string;
+  designation: string;
+  name: string;
+  category: DeepSkyCategory;
+  ra: number;
+  dec: number;
+  x: number;
+  y: number;
+  z: number;
+  mag: number | null;
+  /** Major-axis angular size in arcmin (for glint sizing); null if unknown. */
+  size_arcmin: number | null;
+  con: string;
+  dist_ly: number | null;
+  dist_label: string | null;
+  photoKey: string | null;
+  photoTitle: string | null;
+  /** Curated exoplanet host id this star-forming region gateways to, or null. */
+  gatewaySystem: string | null;
+}
+interface DeepSkyObjectsManifest {
+  _count: number;
+  objects: DeepSkyObject[];
+}
+let deepSkyObjectsCache: Promise<DeepSkyObject[]> | null = null;
+/** All deep-sky objects (cached). */
+export async function getDeepSkyObjects(fetchFn: FetchLike = fetch): Promise<DeepSkyObject[]> {
+  if (!deepSkyObjectsCache) {
+    deepSkyObjectsCache = get<DeepSkyObjectsManifest>('universe/deep-sky-objects.json', fetchFn)
+      .then((doc) => doc.objects ?? [])
+      .catch(() => []);
+  }
+  return deepSkyObjectsCache;
+}
+/** A deep-sky object by id or exact designation, or null. */
+export async function getDeepSkyObject(
+  idOrDesignation: string,
+  fetchFn: FetchLike = fetch,
+): Promise<DeepSkyObject | null> {
+  const objs = await getDeepSkyObjects(fetchFn);
+  return objs.find((o) => o.id === idOrDesignation || o.designation === idOrDesignation) ?? null;
+}
+let deepSkyGalleryCache: Promise<DeepSkyImage[]> | null = null;
+/** The curated deep-sky gallery images (cached) — the caption/credit/telescope
+ *  source joined to deep-sky objects via photoKey. */
+export async function getDeepSkyGallery(fetchFn: FetchLike = fetch): Promise<DeepSkyImage[]> {
+  if (!deepSkyGalleryCache) {
+    deepSkyGalleryCache = get<DeepSkyImage[]>('deep-sky.json', fetchFn).catch(() => []);
+  }
+  return deepSkyGalleryCache;
 }
 
 // Per-planet editorial overlay (Slice 2) — a "why this world matters" note that

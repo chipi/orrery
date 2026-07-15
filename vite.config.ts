@@ -440,6 +440,10 @@ export default defineConfig(({ mode }) => {
           // Slice 2 exoplanet BodyScene builder — same WebGL policy; its pure
           // Keplerian math is unit-tested in kepler.test.ts.
           'src/lib/universe/body-scene.ts',
+          // Slice 4 deep-sky billboard/glint layer — same WebGL policy; its pure
+          // colour/glint-sizing + LOD-bloom math is unit-tested in
+          // deep-sky-visual.test.ts + deep-sky-lod.test.ts.
+          'src/lib/universe/deep-sky-scene.ts',
           '*.config.{js,ts}',
           '.svelte-kit/',
         ],

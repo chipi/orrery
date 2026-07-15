@@ -72,6 +72,21 @@
       "used_on": [
         "explore"
       ]
+    },
+    {
+      "id": "openngc",
+      "name": "OpenNGC",
+      "catalog": "NGC/IC catalogue (Messier subset)",
+      "version": "snapshot",
+      "category": "deep-sky-catalogue",
+      "description": "Positions (RA/Dec J2000), object types, magnitudes, and common names for the Messier catalogue plus the NGC/IC objects rendered as deep-sky billboards and labelled dots in /explore’s Known Universe. A dozen famous non-catalogue objects (Cartwheel, Tycho's SNR, the Horsehead, Cassiopeia A) carry explicit standard J2000 positions.",
+      "source_url": "https://github.com/mattiaverga/OpenNGC",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_rationale": "OpenNGC is released under CC-BY-SA-4.0; free to reuse with attribution and share-alike. We vendor a distilled snapshot and credit the catalogue here and in /colophon.",
+      "used_on": [
+        "explore"
+      ]
     }
   ]
 }

@@ -65,15 +65,22 @@
     getExoplanetSystem,
     getExoplanetI18n,
     getCultureDoors,
+    getDeepSkyObjects,
+    getDeepSkyGallery,
     type NamedStar,
     type LocalizedNamedStar,
     type ExoplanetPlanet,
     type ExoplanetSystem,
     type ExoplanetOverlay,
     type LocalizedCultureDoor,
+    type DeepSkyObject,
   } from '$lib/data';
+  import { findDeepSkyImage, type DeepSkyImage } from '$lib/deep-sky';
+  import { assetOrigin } from '$lib/asset-url';
+  import { deepSkyRung, type DeepSkyRung } from '$lib/universe/deep-sky-lod';
   import StarPanel from '$lib/components/StarPanel.svelte';
   import ExoplanetPanel from '$lib/components/ExoplanetPanel.svelte';
+  import DeepSkyPanel from '$lib/components/DeepSkyPanel.svelte';
   import StarIndex from '$lib/components/StarIndex.svelte';
   import type { AnonymousStar } from '$lib/universe/anonymous-star';
   import { localeFromPage } from '$lib/locale';
@@ -908,6 +915,26 @@
   let starCultureDoors = $state<LocalizedCultureDoor[]>([]);
   let exoCultureDoors = $state<LocalizedCultureDoor[]>([]);
   let setConstellationsFn: ((on: boolean) => void) | null = null;
+  // Slice 4 — deep-sky glint layer (off by default). The Messier + gallery
+  // objects render as faint glints; a photo blooms only as you approach.
+  let showDeepSky = $state(false);
+  let setDeepSkyFn: ((on: boolean) => void) | null = null;
+  let deepSkyObjects = $state<DeepSkyObject[]>([]);
+  let selectedDeepSkyId = $state<string | null>(null);
+  // Deep-sky immersion (Part 4): the full-frame photo destination. `activeDeepSky`
+  // is the immersed object; `deepSkyImmersed` fades the fullscreen photo in;
+  // `deepSkyPhotoUrl` swaps thumb → full-res as the LOD blooms.
+  let deepSkyGallery = $state<DeepSkyImage[]>([]);
+  let activeDeepSky = $state<DeepSkyObject | null>(null);
+  let deepSkyImmersed = $state(false);
+  let deepSkyPhotoUrl = $state('');
+  let deepSkyPanelOpen = $state(false);
+  let exitDeepSkyFn: (() => void) | null = null;
+  let deepSkyGatewayFn: ((hostId: string) => void) | null = null;
+  let deepSkyDeepLinkFn: ((designation: string) => void) | null = null;
+  let activeDeepSkyImage = $derived(
+    activeDeepSky ? findDeepSkyImage(deepSkyGallery, activeDeepSky.photoKey) : undefined,
+  );
   // Named-star index (search + list) open state.
   let starIndexOpen = $state(false);
   const rungLadder: ScaleRung[] = RUNG_LADDER;
@@ -1010,6 +1037,8 @@
   // Set in onMount; lets the star index / ?goto= resolver select a named star.
   let selectStarFn: ((id: string) => void) | null = null;
   let closeStarFn: (() => void) | null = null;
+  // Slice 4 — select a deep-sky object (highlight; Part 4 adds warp + panel).
+  let selectDeepSkyFn: ((id: string) => void) | null = null;
   // ?goto= deep-link (crosses + selects + frames) and index selection (selects + frames).
   let gotoStarFn: ((id: string) => void) | null = null;
   let indexSelectStarFn: ((id: string) => void) | null = null;
@@ -1233,6 +1262,36 @@
         else url.searchParams.delete('planet');
         lastSystem = host; // don't re-fire the resolver on our own write
         if (host || everEnteredSystem) replaceState(url, $page.state);
+      }
+    });
+  });
+
+  // v2 Slice 4 — ?deepsky=<designation> deep-links into the immersive view.
+  let lastDeepSky: string | null = null;
+  $effect(() => {
+    const d = $page.url.searchParams.get('deepsky');
+    if (d && d !== lastDeepSky && deepSkyDeepLinkFn) {
+      lastDeepSky = d;
+      untrack(() => deepSkyDeepLinkFn?.(d));
+    }
+  });
+  // Mirror the active deep-sky immersion into ?deepsky (shallow, no history).
+  let deepSkyUrlDesignation = $derived(activeDeepSky ? activeDeepSky.designation : null);
+  let everImmersedDeepSky = false;
+  $effect(() => {
+    const d = deepSkyUrlDesignation;
+    if (d) everImmersedDeepSky = true;
+    untrack(() => {
+      const url = new URL($page.url);
+      const cur = url.searchParams.get('deepsky') ?? null;
+      if (cur !== d && (d || everImmersedDeepSky)) {
+        if (d) url.searchParams.set('deepsky', d);
+        else url.searchParams.delete('deepsky');
+        // Only advance the resolver guard on entry; never reset it to null on
+        // clear, or a transient URL write (e.g. the gateway's ?system write
+        // racing our ?deepsky removal) would re-fire the resolver + re-immerse.
+        if (d) lastDeepSky = d;
+        replaceState(url, $page.state);
       }
     });
   });
@@ -2776,22 +2835,28 @@
       nbLoading = true;
       try {
         const mod = await import('$lib/universe/neighborhood-scene');
-        const [shells, stars, constellations, exoSystems] = await Promise.all([
+        const [shells, stars, constellations, exoSystems, deepSky, dsGallery] = await Promise.all([
           mod.loadNeighborhoodShells(fetch, base),
           getNamedStars(fetch),
           mod.loadConstellationLines(fetch, base),
           getExoplanetSystems(fetch),
+          getDeepSkyObjects(fetch),
+          getDeepSkyGallery(fetch),
         ]);
         namedStars = stars;
         exoplanetHostIds = new Set(exoSystems.map((s) => s.hostId));
+        deepSkyObjects = deepSky;
+        deepSkyGallery = dsGallery;
         nbScene = mod.createNeighborhoodScene({
           shells,
           tier: quality.tier,
           pixelRatio: renderer.getPixelRatio(),
           namedStars: stars,
           constellations,
+          deepSkyObjects: deepSky,
         });
         nbScene.setConstellationsVisible(showConstellations);
+        nbScene.setDeepSkyVisible(showDeepSky);
         return nbScene;
       } catch (err) {
         console.error('[explore v2] neighborhood load failed', err);
@@ -2800,6 +2865,13 @@
         nbLoading = false;
       }
     }
+
+    // Deep-sky approach tween (Slice 4) — render-loop-driven ramp 0→1 that blooms
+    // the focused glint + fades in the full-frame immersive photo.
+    let dsApproachActive = false;
+    let dsApproachStart = 0;
+    const DS_APPROACH_MS = 1400;
+    let dsRung: DeepSkyRung = 'none';
 
     // Crossing polish: a brief eased pull-back (so the reveal plays as a
     // continuous zoom, not a jump) + a warp flash to mask the scene cut. Both
@@ -3026,6 +3098,105 @@
       localizedStar = null;
       nbScene?.highlightStar(null);
     }
+    // ── Deep-sky approach + immersion (Slice 4, Parts 3–4) ──────────────────
+    // Selecting a photo-backed object warps you in: the glint blooms in 3D
+    // (approach ramp) while a full-frame photo fades in (thumb → full-res via
+    // the LOD hysteresis), landing on an immersive destination with a panel and,
+    // for star-forming regions, a "forming-system" gateway into a BodyScene.
+    const deepSkyPhoto = (obj: DeepSkyObject, rung: DeepSkyRung): string =>
+      `${assetOrigin}/images/deep-sky/${obj.photoKey}${rung === 'full' ? '.jpg' : '.thumb.jpg'}`;
+    function loadDeepSkyFull(obj: DeepSkyObject): void {
+      if (!obj.photoKey) return;
+      const full = deepSkyPhoto(obj, 'full');
+      const img = new Image();
+      img.onload = () => {
+        if (activeDeepSky?.id === obj.id) deepSkyPhotoUrl = full;
+      };
+      img.src = full;
+    }
+    function orientToDeepSky(obj: DeepSkyObject): void {
+      // Point the view down the object's sky direction (unit vector), like frameStar.
+      camP = Math.acos(Math.max(-1, Math.min(1, obj.y)));
+      camT = Math.atan2(obj.x, obj.z);
+      dollyActive = false;
+      updateCam();
+    }
+    function enterDeepSky(id: string): void {
+      const obj = deepSkyObjects.find((o) => o.id === id);
+      if (!obj) return;
+      selectedDeepSkyId = id;
+      nbScene?.highlightDeepSky(id);
+      // Catalogue-only dots (no photo) don't immerse — just a highlighted label.
+      if (!obj.photoKey) {
+        cue('select');
+        return;
+      }
+      cue('select');
+      trackItemClick('deep-sky', id, '/explore');
+      activeDeepSky = obj;
+      nbScene?.focusDeepSky(id);
+      closeStarPanel();
+      anonStar = null;
+      dsRung = 'thumb';
+      deepSkyPhotoUrl = deepSkyPhoto(obj, 'thumb');
+      orientToDeepSky(obj);
+      if (reducedMotion) {
+        nbScene?.setDeepSkyApproach(1);
+        deepSkyImmersed = true;
+        deepSkyPanelOpen = true;
+        loadDeepSkyFull(obj);
+      } else {
+        crossingFlashId++;
+        if (obj.dist_label) showWarpCaption(`${obj.dist_label} · ${obj.name}`);
+        dsApproachActive = true;
+        dsApproachStart = performance.now();
+      }
+    }
+    function exitDeepSky(): void {
+      if (!activeDeepSky) return;
+      if (!reducedMotion) crossingFlashId++;
+      dsApproachActive = false;
+      dsRung = 'none';
+      nbScene?.setDeepSkyApproach(0);
+      nbScene?.focusDeepSky(null);
+      nbScene?.highlightDeepSky(null);
+      deepSkyImmersed = false;
+      deepSkyPanelOpen = false;
+      activeDeepSky = null;
+      selectedDeepSkyId = null;
+    }
+    function deepSkyGateway(hostId: string): void {
+      exitDeepSky();
+      void enterBodyScene(hostId);
+    }
+    // Per-frame ramp of the approach (0 → 1): blooms the focused glint in 3D,
+    // upgrades the photo rung (thumb → full via LOD hysteresis), and fades the
+    // full-frame immersion in over the final stretch.
+    function stepDeepSkyApproach(): void {
+      if (!dsApproachActive) return;
+      const t = Math.min(1, (performance.now() - dsApproachStart) / DS_APPROACH_MS);
+      const eased = t * t * (3 - 2 * t);
+      nbScene?.setDeepSkyApproach(eased);
+      const rung = deepSkyRung(eased, dsRung);
+      if (rung !== dsRung) {
+        dsRung = rung;
+        if (rung === 'full' && activeDeepSky) loadDeepSkyFull(activeDeepSky);
+      }
+      if (!deepSkyImmersed && eased >= 0.4) deepSkyImmersed = true;
+      if (t >= 1) {
+        dsApproachActive = false;
+        deepSkyImmersed = true;
+        deepSkyPanelOpen = true;
+      }
+    }
+    // ?deepsky=<designation> deep-link: cross into the neighborhood if needed,
+    // load it, then immerse. Bound to a top-level fn for the URL resolver effect.
+    async function resolveDeepSkyDeepLink(designation: string): Promise<void> {
+      if (!inNeighborhood()) await crossOutToNeighborhood();
+      await ensureNeighborhood();
+      const obj = deepSkyObjects.find((o) => o.designation === designation || o.id === designation);
+      if (obj) enterDeepSky(obj.id);
+    }
     // Orient the camera to face a star (index / ?goto= landing). The camera orbits
     // the Sun; we point the view down the star's direction and pull to a framing
     // distance. Canvas picks don't frame (the star is already under the cursor).
@@ -3069,11 +3240,22 @@
         lastSystem = sys0;
         void enterBodyScene(sys0, params0.get('planet') ?? undefined);
       }
+      // Cold-load ?deepsky=<designation> → cross into the neighborhood + immerse.
+      const ds0 = params0.get('deepsky');
+      if (ds0) {
+        lastDeepSky = ds0;
+        void resolveDeepSkyDeepLink(ds0);
+      }
     }
     // Exposed to the template (index / ?goto=) via a top-level binding.
     selectStarFn = selectStar;
     closeStarFn = closeStarPanel;
     setConstellationsFn = (on: boolean) => nbScene?.setConstellationsVisible(on);
+    setDeepSkyFn = (on: boolean) => nbScene?.setDeepSkyVisible(on);
+    selectDeepSkyFn = enterDeepSky;
+    exitDeepSkyFn = exitDeepSky;
+    deepSkyGatewayFn = deepSkyGateway;
+    deepSkyDeepLinkFn = resolveDeepSkyDeepLink;
     // Dev/e2e hook for canvas star pickability + BodyScene entry (no shipped effect).
     if (import.meta.env.DEV) {
       (window as unknown as { __exploreSelectStar?: (id: string) => void }).__exploreSelectStar = (
@@ -3084,6 +3266,9 @@
       (
         window as unknown as { __exploreSelectExoplanet?: (id: string) => void }
       ).__exploreSelectExoplanet = (id: string) => selectExoplanet(id);
+      (
+        window as unknown as { __exploreEnterDeepSky?: (id: string) => void }
+      ).__exploreEnterDeepSky = (id: string) => enterDeepSky(id);
     }
 
     // Camera distance → canonical AU, for the scale HUD (solar camR is AU,
@@ -3468,7 +3653,14 @@
         const mh = nbScene ? ray3dHover.intersectObjects(nbScene.namedStarPickables, false) : [];
         const id = (mh[0]?.object.userData.starId as string | undefined) ?? null;
         nbScene?.highlightStar(id ?? selectedStarId);
-        el3d.style.cursor = id ? 'pointer' : 'grab';
+        // Deep-sky hover (layer on, no star under cursor) reveals the glint's label.
+        let dsHoverId: string | null = null;
+        if (showDeepSky && !id && nbScene && nbScene.deepSkyPickables.length) {
+          const dh = ray3dHover.intersectObjects(nbScene.deepSkyPickables, false);
+          dsHoverId = (dh[0]?.object.userData.deepSkyId as string | undefined) ?? null;
+        }
+        nbScene?.highlightDeepSky(dsHoverId ?? selectedDeepSkyId);
+        el3d.style.cursor = id || dsHoverId ? 'pointer' : 'grab';
         if (hoverData) hoverData = null;
         return;
       }
@@ -3658,6 +3850,9 @@
     // nearest background star (a lightweight anonymous readout).
     function pickNeighborhood(e: { clientX: number; clientY: number }): void {
       if (!nbScene) return;
+      // While immersed in a deep-sky destination, the photo fills the view — a
+      // canvas click shouldn't pick a star behind it. Exit is via panel / crumb.
+      if (activeDeepSky) return;
       const rect = el3d.getBoundingClientRect();
       const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
@@ -3668,6 +3863,18 @@
         if (id) {
           void selectStarFn?.(id);
           return;
+        }
+      }
+      // Deep-sky glints (only when the layer is on). Selecting one warps in +
+      // opens the DeepSkyPanel (Part 4); Part 2 highlights + records selection.
+      if (showDeepSky && nbScene.deepSkyPickables.length) {
+        const dsHits = ray3d.intersectObjects(nbScene.deepSkyPickables, false);
+        if (dsHits.length) {
+          const id = dsHits[0].object.userData.deepSkyId as string | undefined;
+          if (id) {
+            selectDeepSkyFn?.(id);
+            return;
+          }
         }
       }
       // Anonymous background star — the Points threshold scales with zoom so a
@@ -4930,6 +5137,7 @@
           }
           if (inNeighborhood() && nbScene) {
             stepCrossDolly();
+            stepDeepSkyApproach();
             nbScene.update(camR, camera);
             renderer.render(nbScene.scene, camera);
             return;
@@ -5064,6 +5272,12 @@
         </button>
         <span class="crumb-sep">›</span>
         <span class="crumb current" aria-current="page">{bodyHostName}</span>
+      {:else if activeDeepSky}
+        <button type="button" class="crumb" onclick={() => exitDeepSkyFn?.()}>
+          {m.explore_ctx_stellar_neighborhood()}
+        </button>
+        <span class="crumb-sep">›</span>
+        <span class="crumb current" aria-current="page">{activeDeepSky.name}</span>
       {:else}
         <span class="crumb current" aria-current="page">{m.explore_ctx_stellar_neighborhood()}</span
         >
@@ -5103,6 +5317,18 @@
         onclick={() => (showCulture = !showCulture)}
       >
         {m.explore_culture_toggle()}
+      </button>
+      <button
+        type="button"
+        class="nb-chip"
+        class:active={showDeepSky}
+        aria-pressed={showDeepSky}
+        onclick={() => {
+          showDeepSky = !showDeepSky;
+          setDeepSkyFn?.(showDeepSky);
+        }}
+      >
+        {m.explore_deep_sky_toggle()}
       </button>
     </div>
     <StarIndex
@@ -5179,6 +5405,17 @@
         aria-label={m.explore_anon_dismiss()}
         onclick={() => (anonStar = null)}>×</button
       >
+    </div>
+  {/if}
+
+  <!-- v2 Slice 4: full-frame deep-sky immersion. The curated photo fills the
+       viewport (thumb → full-res) with a soft vignette — the destination you fly
+       into from a glint. Sits above the canvas; the warp flash + panel render on
+       top. -->
+  {#if view === '3d' && activeDeepSky && deepSkyPhotoUrl}
+    <div class="deep-sky-immersion" class:visible={deepSkyImmersed} aria-hidden={!deepSkyImmersed}>
+      <img src={deepSkyPhotoUrl} alt={activeDeepSkyImage?.caption ?? activeDeepSky.name} />
+      <div class="ds-vignette"></div>
     </div>
   {/if}
 
@@ -5869,6 +6106,15 @@
   onClose={() => closeExoplanetFn?.()}
 />
 
+<DeepSkyPanel
+  object={activeDeepSky}
+  image={activeDeepSkyImage}
+  galleryHref="{base}/gallery/deep-sky"
+  open={deepSkyPanelOpen}
+  onClose={() => exitDeepSkyFn?.()}
+  onGateway={(hostId) => deepSkyGatewayFn?.(hostId)}
+/>
+
 <SmallBodyPanel
   body={selectedSmallBody}
   open={panelState.smallBody}
@@ -6269,6 +6515,42 @@
     }
     100% {
       opacity: 0;
+    }
+  }
+  /* v2 Slice 4 — full-frame deep-sky immersion. Sits above the canvas (z 6),
+     below the warp flash (7) + HUD + panel. Fades in as the approach completes. */
+  .deep-sky-immersion {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 900ms ease-out;
+    background: #05070f;
+  }
+  .deep-sky-immersion.visible {
+    opacity: 1;
+  }
+  .deep-sky-immersion img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .ds-vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at 50% 45%,
+      transparent 42%,
+      rgba(3, 4, 12, 0.55) 82%,
+      rgba(3, 4, 12, 0.9) 100%
+    );
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .deep-sky-immersion {
+      transition: none;
     }
   }
   .warp-caption {

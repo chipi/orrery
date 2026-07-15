@@ -28,9 +28,25 @@
      * has to be swapped").
      */
     zIndex?: number;
+    /**
+     * Mobile (touch-portrait) sheet height. Default 'full' — the standard
+     * full-height bottom sheet that hides the scene behind it. Pass 'partial'
+     * for a shorter bottom sheet that leaves the scene visible above it — used
+     * by the /explore deep-sky immersion, where the full-frame photo *is* the
+     * content and must stay visible above the info card.
+     */
+    mobileSheet?: 'full' | 'partial';
     children?: Snippet;
   };
-  let { open, onClose, title, grabFocus = true, zIndex = 30, children }: Props = $props();
+  let {
+    open,
+    onClose,
+    title,
+    grabFocus = true,
+    zIndex = 30,
+    mobileSheet = 'full',
+    children,
+  }: Props = $props();
 
   let panelEl: HTMLElement | undefined = $state();
 
@@ -108,6 +124,7 @@
   ></button>
   <aside
     class="panel"
+    class:partial-sheet={mobileSheet === 'partial'}
     bind:this={panelEl}
     tabindex="-1"
     aria-label={title ?? m.panel_default_label()}
@@ -187,6 +204,15 @@
     right: 0;
     border-top: 1px solid var(--color-border);
     z-index: calc(var(--panel-z, 30) + 50);
+  }
+
+  /* Partial sheet — a shorter bottom sheet that leaves the scene visible above
+     it (deep-sky immersion). Overrides the full-height rule above. */
+  :global(html[data-touch][data-orientation='portrait']) .panel.partial-sheet {
+    top: auto;
+    max-height: 62vh;
+    border-radius: 18px 18px 0 0;
+    border-top: 1px solid var(--color-border);
   }
 
   /* Tap-outside scrim — mobile bottom-sheet only (desktop is a non-modal

@@ -214,6 +214,7 @@ const validateSourceLogos = ajv.compile(sourceLogosSchema);
 const validateTextSources = ajv.compile(textSourcesSchema);
 const validateDataSources = ajv.compile(dataSourcesSchema);
 const validateCultureDoors = ajv.compile(loadSchema('culture-door.schema.json'));
+const validateDeepSkyObjects = ajv.compile(loadSchema('deep-sky-object.schema.json'));
 const validateLinkProvenance = ajv.compile(linkProvenanceSchema);
 const validateFleetEntry = ajv.compile(fleetEntrySchema);
 const validateFleetIndex = ajv.compile(fleetIndexSchema);
@@ -458,6 +459,53 @@ validateFile(join(DATA_ROOT, 'mars-sites.json'), validateSurfaceSites);
 validateFile(join(DATA_ROOT, 'sun.json'), validateSun);
 validateFile(join(DATA_ROOT, 'iss-modules.json'), validateIssModules);
 validateFile(join(DATA_ROOT, 'culture-doors.json'), validateCultureDoors);
+validateFile(join(DATA_ROOT, 'universe', 'deep-sky-objects.json'), validateDeepSkyObjects);
+// /explore v2 Slice 4 — every deep-sky photoKey must resolve to a real curated
+// gallery entry (the sky↔gallery join is load-bearing for the immersion panel).
+{
+  const dsoPath = join(DATA_ROOT, 'universe', 'deep-sky-objects.json');
+  const galleryPath = join(DATA_ROOT, 'deep-sky.json');
+  if (existsSync(dsoPath) && existsSync(galleryPath)) {
+    const dso = readJson(dsoPath) as {
+      objects: Array<{ id: string; photoKey: string | null; gatewaySystem: string | null }>;
+    };
+    const galleryRaw = readJson(galleryPath) as unknown;
+    const galleryRows = (
+      Array.isArray(galleryRaw)
+        ? galleryRaw
+        : ((galleryRaw as { images?: unknown[] }).images ??
+          Object.values(galleryRaw as Record<string, unknown>).find(Array.isArray) ??
+          [])
+    ) as Array<{ key: string }>;
+    const keys = new Set(galleryRows.map((r) => r.key));
+    for (const o of dso.objects) {
+      if (o.photoKey && !keys.has(o.photoKey)) {
+        failed++;
+        console.error('\n  ✗ universe/deep-sky-objects.json');
+        console.error(
+          `      photoKey '${o.photoKey}' (object '${o.id}') not found in deep-sky.json`,
+        );
+      } else {
+        passed++;
+      }
+    }
+    // Every gatewaySystem must resolve to a real exoplanet host id.
+    const exoPath = join(DATA_ROOT, 'universe', 'exoplanet-systems.json');
+    if (existsSync(exoPath)) {
+      const exo = readJson(exoPath) as { systems: Array<{ hostId: string }> };
+      const hosts = new Set(exo.systems.map((s) => s.hostId));
+      for (const o of dso.objects) {
+        if (o.gatewaySystem && !hosts.has(o.gatewaySystem)) {
+          failed++;
+          console.error('\n  ✗ universe/deep-sky-objects.json');
+          console.error(
+            `      gatewaySystem '${o.gatewaySystem}' (object '${o.id}') not a known exoplanet host`,
+          );
+        }
+      }
+    }
+  }
+}
 validateFile(join(DATA_ROOT, 'iss-visitors.json'), validateIssVisitors);
 validateFile(join(DATA_ROOT, 'tiangong-modules.json'), validateTiangongModules);
 validateFile(join(DATA_ROOT, 'tiangong-visitors.json'), validateTiangongVisitors);

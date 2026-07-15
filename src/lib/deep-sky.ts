@@ -28,3 +28,17 @@ export type DeepSkyImage = {
   /** Full observatory name, e.g. "James Webb Space Telescope". */
   fullscope: string;
 };
+
+/**
+ * Join helper (/explore v2 Slice 4). Resolve a deep-sky object's `photoKey`
+ * to its curated gallery entry, so the in-sky DeepSkyPanel can show the same
+ * caption / credit / telescope as the /gallery/deep-sky wall. Returns
+ * undefined for catalogue-only objects (no photoKey) or a stale key.
+ */
+export function findDeepSkyImage(
+  images: DeepSkyImage[],
+  photoKey: string | null | undefined,
+): DeepSkyImage | undefined {
+  if (!photoKey) return undefined;
+  return images.find((img) => img.key === photoKey);
+}

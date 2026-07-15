@@ -53,7 +53,7 @@
     },
     "cruise": {
       "tcm_count": 0,
-      "source": "JHU/APL Parker Solar Probe Mission Operations Report. Speed at perihelion 22 (2024-12-24): 192 km/s — the fastest human-made object on record (above schema cap; recorded in i18n description). Mid-course corrections collapsed into Venus gravity assist events."
+      "source": "JHU/APL Parker Solar Probe Mission Operations Report. Speed at perihelion 22 (2024-12-24): ~191 km/s — the fastest human-made object on record (above schema cap; recorded in i18n description). Mid-course corrections collapsed into Venus gravity assist events."
     },
     "arrival": {
       "v_infinity_km_s": 7.5,
@@ -114,7 +114,7 @@
         "met_days": 2326,
         "type": "edl_or_oi",
         "label": "Closest perihelion (P22) — final design milestone",
-        "description": "2024-12-24. Christmas Eve eve. Parker reached 6.1 M km from the Sun's surface (~9.86 R☉, 0.046 AU) — the closest any spacecraft has ever been to the Sun. Speed at perihelion: 192 km/s, the fastest human-made object ever. The heat shield's solar-facing surface reached ~1,377 °C; the spacecraft bus behind it remained at room temperature. Parker has not yet been commanded back to Earth contact at the time of writing."
+        "description": "2024-12-24. Christmas Eve eve. Parker reached 6.1 M km from the Sun's surface (~9.86 R☉, 0.046 AU) — the closest any spacecraft has ever been to the Sun. Speed at perihelion: ~191 km/s, the fastest human-made object ever. The heat shield's solar-facing surface reached ~1,377 °C; the spacecraft bus behind it remained at room temperature. Parker has not yet been commanded back to Earth contact at the time of writing."
       }
     ],
     "interplanetary_profile": {

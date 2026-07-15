@@ -1,0 +1,55 @@
+{
+  "slug": "delta-v",
+  "movement": "into-the-dark",
+  "order": 2,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "Finding Mars in the Dark — navigation, dead reckoning, and the sky as the only map",
+      "href": "/essays/navigation",
+      "kind": "essay"
+    },
+    {
+      "label": "Hohmann transfers — the minimum-energy arc, explained",
+      "href": "/science/transfers/hohmann-transfer",
+      "kind": "science"
+    },
+    {
+      "label": "Gravity assists — how planets become free fuel",
+      "href": "/science/transfers/gravity-assist",
+      "kind": "science"
+    },
+    {
+      "label": "Fly a trajectory — watch the delta-v budget enforce itself, stage by stage",
+      "href": "/fly",
+      "kind": "interactive"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA — The Tyranny of the Rocket Equation (Don Pettit, Ad Astra / NASA, 2012)",
+      "url": "https://www.nasa.gov/missions/station/iss-research/the-tyranny-of-the-rocket-equation/"
+    },
+    {
+      "title": "NASA JPL — Basics of Space Flight, Ch. 4: Trajectories",
+      "url": "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/"
+    },
+    {
+      "title": "NASA — Voyager 2 Planetary Voyage (gravity assist sequence)",
+      "url": "https://science.nasa.gov/mission/voyager/planetary-voyage/"
+    },
+    {
+      "title": "Wikipedia — Tsiolkovsky Rocket Equation",
+      "url": "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation"
+    },
+    {
+      "title": "Wikipedia — Oberth Effect",
+      "url": "https://en.wikipedia.org/wiki/Oberth_effect"
+    },
+    {
+      "title": "ISRO — Mars Orbiter Mission (Mangalyaan) technical details",
+      "url": "https://www.isro.gov.in/MarsOrbiter.html"
+    }
+  ],
+  "hero": "essays/delta-v/hero"
+}

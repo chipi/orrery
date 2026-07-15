@@ -1,0 +1,55 @@
+{
+  "slug": "comms",
+  "movement": "into-the-dark",
+  "order": 3,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "Finding Mars in the Dark — navigation, the sibling problem",
+      "href": "/essays/navigation",
+      "kind": "essay"
+    },
+    {
+      "label": "The Deep Space Network — the three dishes under this essay",
+      "href": "/science/mission-phases/dsn",
+      "kind": "science"
+    },
+    {
+      "label": "How far is a light-minute? — the unit behind the lag",
+      "href": "/science/scales-time/light-minute",
+      "kind": "science"
+    },
+    {
+      "label": "Fly a real mission — watch a trajectory unfold across the light-lag",
+      "href": "/fly",
+      "kind": "interactive"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA — Deep Space Network overview",
+      "url": "https://www.nasa.gov/communicating-with-missions/dsn/"
+    },
+    {
+      "title": "NASA OIG — Revitalizing the Deep Space Network (audit, 2023)",
+      "url": "https://oig.nasa.gov/wp-content/uploads/2023/12/ig-23-016.pdf"
+    },
+    {
+      "title": "NRAO — How strong is Voyager 1's signal when it reaches Earth?",
+      "url": "https://public.nrao.edu/ask/how-strong-is-the-signal-from-the-voyager-1-spacecraft-when-it-reaches-earth/"
+    },
+    {
+      "title": "NASA JPL — DSOC laser comms demo exceeds expectations (2024)",
+      "url": "https://www.nasa.gov/directorates/stmd/tech-demo-missions-program/deep-space-optical-communications-dsoc/nasas-deep-space-communications-demo-exceeds-project-expectations/"
+    },
+    {
+      "title": "NASA JPL — DSOC sets deep-space distance record, December 2024",
+      "url": "https://www.jpl.nasa.gov/news/nasas-laser-comms-demo-makes-deep-space-record-completes-first-phase/"
+    },
+    {
+      "title": "IFLScience — Voyager 1 to reach one light-day from Earth, November 2026",
+      "url": "https://www.iflscience.com/on-november-13-2026-voyager-will-reach-one-full-light-day-away-from-earth-81432"
+    }
+  ],
+  "hero": "essays/comms/coverage"
+}

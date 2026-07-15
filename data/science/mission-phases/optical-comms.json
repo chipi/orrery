@@ -1,0 +1,30 @@
+{
+  "id": "optical-comms",
+  "tab": "mission-phases",
+  "order": 12,
+  "see_in_app": [
+    {
+      "route": "/missions",
+      "context_key": "Psyche mission — hosts DSOC, NASA's deep-space optical communications demonstrator"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Deep Space Optical Communications (DSOC)",
+      "u": "https://www.nasa.gov/communicating-with-missions/dsoc/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Laser Communications Relay Demonstration (LCRD)",
+      "u": "https://www.nasa.gov/mission/laser-communications-relay-demonstration-lcrd/",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Optical vs Radio Communications",
+      "u": "https://www.nasa.gov/technology/communications/optical-communications/",
+      "t": "core"
+    }
+  ],
+  "diagram": "optical-comms.webp",
+  "diagram_quality": "polished"
+}

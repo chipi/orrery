@@ -1,15 +1,15 @@
 {
   "id": "tundra-sirius",
-  "name": "Sirius Satellite Radio (Tundra)",
+  "name": "Sirius Satellite Radio (Tundra) — RETIRED",
   "category": "constellation",
   "agency": "Sirius XM",
   "country": "USA",
   "manufacturer": "Space Systems/Loral (Maxar)",
   "first_flight": "2000-06-30",
-  "status": "ACTIVE",
+  "status": "RETIRED",
   "era": "1981-2011",
   "epoch": "iss-assembly",
-  "best_known_for": "Only commercial fleet using the 24-hour Tundra orbit — three satellites at 63.4° critical inclination, each dwelling ~16 hours per day over North America",
+  "best_known_for": "Historic commercial Tundra-orbit constellation (2000-2016) — three satellites at 63.4° critical inclination; currently SiriusXM operates geostationary fleet",
   "credit": "Sirius Satellite Radio launched FM-1 from Baikonur on 2000-06-30 atop a Proton-K. The Tundra orbit (24-hour period, ~25,000 × 35,786 km) at the 63.4° critical inclination keeps each satellite high in the sky over CONUS for two-thirds of every orbit, giving handhelds in urban canyons the elevation angles a geostationary signal can't match. Merged with XM Radio in 2008 to form Sirius XM.",
   "links": [
     {

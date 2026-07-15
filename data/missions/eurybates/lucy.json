@@ -14,7 +14,7 @@
   "payload": "1550 kg (incl. 1003 kg of hydrazine — Lucy carries more propellant than dry mass, by a wide margin)",
   "delta_v": "~6 km/s (with 3 Earth gravity assists)",
   "data_quality": "good",
-  "credit": "© NASA / GSFC / SwRI / Lockheed Martin — public domain. First mission to the Jupiter Trojans — primordial asteroids co-orbiting Jupiter at the L4 and L5 Lagrange points, believed to preserve material from the outer protoplanetary disc. Bonus main-belt asteroid Donaldjohanson flyby 2025-04. Eurybates encounter 2027-08; Patroclus-Menoetius binary 2033-03 closes the primary mission.",
+  "credit": "© NASA / GSFC / SwRI / Lockheed Martin — public domain. First mission to the Jupiter Trojans — primordial asteroids co-orbiting Jupiter at the L4 and L5 Lagrange points, believed to preserve material from the outer protoplanetary disc. First asteroid flyby: Dinkinesh (2023-11-01), at which the contact-binary satellite Selam was discovered. Bonus main-belt asteroid Donaldjohanson flyby 2025-04. Eurybates encounter 2027-08; Patroclus-Menoetius binary 2033-03 closes the primary mission.",
   "links": [
     {
       "l": "Lucy (spacecraft) — Wikipedia",
@@ -71,7 +71,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Atlas V 401",
-        "description": "Cape Canaveral SLC-41, 2021-10-16. Lucy is the first mission to study the Jupiter Trojans — primordial asteroids leading and trailing Jupiter at its L4 and L5 Lagrange points by 60°. The trojans are believed to be remnants of the outer protoplanetary disc, captured into the Lagrange points during early solar system migration. Lucy's 12-year primary mission visits eight asteroids (one bonus main-belt, seven trojans) in a single trajectory — a record."
+        "description": "Cape Canaveral SLC-41, 2021-10-16. Lucy is the first mission to study the Jupiter Trojans — primordial asteroids leading and trailing Jupiter at its L4 and L5 Lagrange points by 60°. The trojans are believed to be remnants of the outer protoplanetary disc, captured into the Lagrange points during early solar system migration. Lucy's 12-year primary mission visits eight asteroids on separate solar orbits — two main-belt (Dinkinesh, Donaldjohanson) and six Trojans, plus their satellites — a record for a single planetary science mission."
       },
       {
         "met_days": 0.005,
@@ -86,6 +86,12 @@
         "description": "2022-10-16. First EGA accelerates Lucy onto a higher heliocentric orbit, reaching beyond Mars."
       },
       {
+        "met_days": 746,
+        "type": "flyby",
+        "label": "Dinkinesh — first asteroid flyby",
+        "description": "2023-11-01. Closest approach to 152830 Dinkinesh (~790 m main-belt asteroid). Lucy's first-ever asteroid encounter. Imaging revealed the contact-binary satellite Selam — a previously unknown moon — a headline discovery independent of the primary Trojan mission."
+      },
+      {
         "met_days": 1290,
         "type": "flyby",
         "label": "Donaldjohanson (main-belt bonus)",
@@ -95,7 +101,7 @@
         "met_days": 1330,
         "type": "flyby",
         "label": "Earth gravity assist 2",
-        "description": "2024-12-12 (per redesigned profile)."
+        "description": "2024-12-13 (per redesigned profile)."
       },
       {
         "met_days": 2127,
@@ -137,7 +143,7 @@
         "met_days": 4170,
         "type": "edl_or_oi",
         "label": "Patroclus-Menoetius binary (L5)",
-        "description": "2033-03-02. The mission climax: encounter with binary Trojan Patroclus-Menoetius. Patroclus (113 km) + Menoetius (104 km) are a nearly-equal-mass binary on the L5 side — the largest Trojan binary known. Closest approach 1,000 km at 8.4 km/s. After 12 years of cruise, Lucy will have studied seven Trojan asteroids — more bodies in one mission than any prior planetary science mission."
+        "description": "2033-03-02. The mission climax: encounter with binary Trojan Patroclus-Menoetius. Patroclus (113 km) + Menoetius (104 km) are a nearly-equal-mass binary on the L5 side — the largest Trojan binary known. Closest approach 1,000 km at 8.4 km/s. After 12 years of cruise, Lucy will have visited 11 bodies across 8 asteroids and their satellites — a record number of objects on separate heliocentric orbits for any planetary science mission."
       }
     ],
     "interplanetary_profile": {

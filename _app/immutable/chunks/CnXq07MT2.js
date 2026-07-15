@@ -1,0 +1,1 @@
+function e(e,t={}){let n=Number.isFinite(e)&&e>=0?Math.floor(e):0;if(t.withHours){let e=Math.floor(n/3600),t=Math.floor(n%3600/60),r=n%60;return`${e}:${t.toString().padStart(2,`0`)}:${r.toString().padStart(2,`0`)}`}return`${Math.floor(n/60)}:${(n%60).toString().padStart(2,`0`)}`}export{e as t};

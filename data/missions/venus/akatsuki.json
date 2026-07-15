@@ -6,7 +6,7 @@
   "dest": "VENUS",
   "color": "#003087",
   "year": 2010,
-  "status": "ACTIVE",
+  "status": "FLOWN",
   "departure_date": "2010-05-20",
   "arrival_date": "2015-12-07",
   "transit_days": 2027,
@@ -14,7 +14,7 @@
   "payload": "517 kg (incl. 196 kg propellant)",
   "delta_v": "~1.2 km/s",
   "data_quality": "good",
-  "credit": "© JAXA / ISAS — public domain. Recovered from a 2010 VOI failure (clogged oxidiser check valve) and inserted into Venus orbit on a backup attempt 2015-12-07 using attitude-control thrusters. Still operating in orbit — currently the only active Venus orbiter.",
+  "credit": "© JAXA / ISAS — public domain. Recovered from a 2010 VOI failure (clogged oxidiser check valve) and inserted into Venus orbit on a backup attempt 2015-12-07 using attitude-control thrusters. Contact lost 2024; JAXA declared operations complete 2025-09-18.",
   "links": [
     {
       "l": "Akatsuki (spacecraft) — Wikipedia",
@@ -121,7 +121,7 @@
         "met_days": 2027.005,
         "type": "edl_or_oi",
         "label": "Venus orbit insertion — RCS recovery",
-        "description": "1228-second burn using four attitude-control thrusters (originally rated for ~50 m/s ∆v; ran 244 m/s) placed Akatsuki into a highly elliptical 400 × 440,000 km, 3°-inclination prograde orbit. JAXA confirmed VOI-R2 success the following day. The recovery is one of the most dramatic mission-saves in spaceflight history. Akatsuki has since mapped Venus's UV/IR cloud features, confirmed bow-shaped gravity waves above Aphrodite Terra, and provided continuous super-rotation tracking — currently the only active Venus orbiter."
+        "description": "1228-second burn using four attitude-control thrusters (originally rated for ~50 m/s ∆v; ran 244 m/s) placed Akatsuki into a highly elliptical 400 × 440,000 km, 3°-inclination prograde orbit. JAXA confirmed VOI-R2 success the following day. The recovery is one of the most dramatic mission-saves in spaceflight history. Akatsuki mapped Venus's UV/IR cloud features, confirmed bow-shaped gravity waves above Aphrodite Terra, and provided continuous super-rotation tracking until contact was lost in 2024. JAXA declared operations complete on 2025-09-18."
       }
     ],
     "interplanetary_profile": {

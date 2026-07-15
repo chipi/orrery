@@ -1,6 +1,6 @@
 {
   "id": "kuiper",
-  "name": "Project Kuiper",
+  "name": "Amazon Leo (formerly Project Kuiper)",
   "category": "constellation",
   "agency": "Amazon",
   "country": "USA",
@@ -9,8 +9,8 @@
   "status": "ACTIVE",
   "era": "2011-now",
   "epoch": "commercial-era",
-  "best_known_for": "Amazon's LEO broadband answer to Starlink — planned 3,236 satellites at 590-630 km in 98 orbital planes; ramping deployment 2024+",
-  "credit": "Amazon Project Kuiper commercial constellation. Ramp-phase as of 2024-2025; FCC license requires 50% deployment by 2026, 100% by 2029.",
+  "best_known_for": "Amazon's LEO broadband constellation — ~231 production satellites in orbit as of mid-2026; ~3,236 planned",
+  "credit": "Amazon Leo commercial constellation (rebranded from Project Kuiper in November 2025). First prototype launch October 2023; first 27 production satellites April 2025. Ramp-phase deployment continuing 2025-2026. FCC license requires 50% deployment by July 2026, 100% by 2029; extension request pending as of July 2026.",
   "links": [
     {
       "l": "Project Kuiper — Wikipedia",

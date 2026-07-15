@@ -779,18 +779,28 @@
       "cover": true
     },
     {
+      "title": "Antenna Arrays",
+      "file": "/diagrams/science/antenna-arrays.webp",
+      "cover": false
+    },
+    {
+      "title": "Antimatter Propulsion",
+      "file": "/diagrams/science/antimatter-propulsion.webp",
+      "cover": false
+    },
+    {
       "title": "Apsides",
-      "file": "/diagrams/science/apsides.svg",
+      "file": "/diagrams/science/apsides.webp",
       "cover": false
     },
     {
       "title": "Asteroid Belt",
-      "file": "/diagrams/science/asteroid-belt.svg",
+      "file": "/diagrams/science/asteroid-belt.webp",
       "cover": false
     },
     {
       "title": "AU",
-      "file": "/diagrams/science/au.svg",
+      "file": "/diagrams/science/au.webp",
       "cover": false
     },
     {
@@ -800,57 +810,57 @@
     },
     {
       "title": "C3",
-      "file": "/diagrams/science/c3.svg",
+      "file": "/diagrams/science/c3.webp",
       "cover": false
     },
     {
       "title": "Conic Sections",
-      "file": "/diagrams/science/conic-sections.svg",
+      "file": "/diagrams/science/conic-sections.webp",
       "cover": false
     },
     {
       "title": "Contour Reading",
-      "file": "/diagrams/science/contour-reading.svg",
+      "file": "/diagrams/science/contour-reading.webp",
       "cover": false
     },
     {
       "title": "Departure Axis",
-      "file": "/diagrams/science/departure-axis.svg",
+      "file": "/diagrams/science/departure-axis.webp",
       "cover": false
     },
     {
       "title": "DV Budget",
-      "file": "/diagrams/science/dv-budget.svg",
+      "file": "/diagrams/science/dv-budget.webp",
       "cover": false
     },
     {
       "title": "DV Heatmap",
-      "file": "/diagrams/science/dv-heatmap.svg",
+      "file": "/diagrams/science/dv-heatmap.webp",
       "cover": false
     },
     {
       "title": "Eccentricity",
-      "file": "/diagrams/science/eccentricity.svg",
+      "file": "/diagrams/science/eccentricity.webp",
       "cover": false
     },
     {
       "title": "Ecliptic Plane",
-      "file": "/diagrams/science/ecliptic-plane.svg",
+      "file": "/diagrams/science/ecliptic-plane.webp",
       "cover": false
     },
     {
       "title": "EDL",
-      "file": "/diagrams/science/edl.svg",
+      "file": "/diagrams/science/edl.webp",
+      "cover": false
+    },
+    {
+      "title": "EVA",
+      "file": "/diagrams/science/eva.webp",
       "cover": false
     },
     {
       "title": "EVA Suits",
       "file": "/diagrams/science/eva-suits.svg",
-      "cover": false
-    },
-    {
-      "title": "EVA",
-      "file": "/diagrams/science/eva.svg",
       "cover": false
     },
     {
@@ -860,17 +870,22 @@
     },
     {
       "title": "Frames",
-      "file": "/diagrams/science/frames.svg",
+      "file": "/diagrams/science/frames.webp",
       "cover": false
     },
     {
       "title": "Free Return",
-      "file": "/diagrams/science/free-return.svg",
+      "file": "/diagrams/science/free-return.webp",
+      "cover": false
+    },
+    {
+      "title": "Fusion Propulsion",
+      "file": "/diagrams/science/fusion-propulsion.webp",
       "cover": false
     },
     {
       "title": "Gravity Assist",
-      "file": "/diagrams/science/gravity-assist.svg",
+      "file": "/diagrams/science/gravity-assist.webp",
       "cover": false
     },
     {
@@ -905,12 +920,22 @@
     },
     {
       "title": "Hohmann Transfer",
-      "file": "/diagrams/science/hohmann-transfer.svg",
+      "file": "/diagrams/science/hohmann-transfer.webp",
       "cover": false
     },
     {
       "title": "Inclination",
-      "file": "/diagrams/science/inclination.svg",
+      "file": "/diagrams/science/inclination.webp",
+      "cover": false
+    },
+    {
+      "title": "Interplanetary Internet",
+      "file": "/diagrams/science/interplanetary-internet.webp",
+      "cover": false
+    },
+    {
+      "title": "Ion Drive",
+      "file": "/diagrams/science/ion-drive.webp",
       "cover": false
     },
     {
@@ -920,47 +945,57 @@
     },
     {
       "title": "J2000",
-      "file": "/diagrams/science/j2000.svg",
+      "file": "/diagrams/science/j2000.webp",
       "cover": false
     },
     {
       "title": "Keplerian Orbit",
-      "file": "/diagrams/science/keplerian-orbit.svg",
+      "file": "/diagrams/science/keplerian-orbit.webp",
       "cover": false
     },
     {
       "title": "Keplers Laws",
-      "file": "/diagrams/science/keplers-laws.svg",
+      "file": "/diagrams/science/keplers-laws.webp",
       "cover": false
     },
     {
       "title": "Kuiper Belt",
-      "file": "/diagrams/science/kuiper-belt.svg",
+      "file": "/diagrams/science/kuiper-belt.webp",
       "cover": false
     },
     {
       "title": "Lagrange Points",
-      "file": "/diagrams/science/lagrange-points.svg",
+      "file": "/diagrams/science/lagrange-points.webp",
       "cover": false
     },
     {
       "title": "Lambert Problem",
-      "file": "/diagrams/science/lambert-problem.svg",
+      "file": "/diagrams/science/lambert-problem.webp",
+      "cover": false
+    },
+    {
+      "title": "Laser Sail",
+      "file": "/diagrams/science/laser-sail.webp",
       "cover": false
     },
     {
       "title": "Launch",
-      "file": "/diagrams/science/launch.svg",
+      "file": "/diagrams/science/launch.webp",
       "cover": false
     },
     {
       "title": "Light Minute",
-      "file": "/diagrams/science/light-minute.svg",
+      "file": "/diagrams/science/light-minute.webp",
       "cover": false
     },
     {
       "title": "Long Duration",
-      "file": "/diagrams/science/long-duration.svg",
+      "file": "/diagrams/science/long-duration.webp",
+      "cover": false
+    },
+    {
+      "title": "Lunar Ice",
+      "file": "/diagrams/science/lunar-ice.webp",
       "cover": false
     },
     {
@@ -970,17 +1005,17 @@
     },
     {
       "title": "MET",
-      "file": "/diagrams/science/met.svg",
+      "file": "/diagrams/science/met.webp",
       "cover": false
     },
     {
       "title": "Microgravity Physiology",
-      "file": "/diagrams/science/microgravity-physiology.svg",
+      "file": "/diagrams/science/microgravity-physiology.webp",
       "cover": false
     },
     {
       "title": "Mission Types",
-      "file": "/diagrams/science/mission-types.svg",
+      "file": "/diagrams/science/mission-types.webp",
       "cover": false
     },
     {
@@ -990,32 +1025,42 @@
     },
     {
       "title": "NRHO",
-      "file": "/diagrams/science/nrho.svg",
+      "file": "/diagrams/science/nrho.webp",
+      "cover": false
+    },
+    {
+      "title": "Nuclear Thermal",
+      "file": "/diagrams/science/nuclear-thermal.webp",
       "cover": false
     },
     {
       "title": "Oberth Effect",
-      "file": "/diagrams/science/oberth-effect.svg",
+      "file": "/diagrams/science/oberth-effect.webp",
+      "cover": false
+    },
+    {
+      "title": "Optical Comms",
+      "file": "/diagrams/science/optical-comms.webp",
       "cover": false
     },
     {
       "title": "Orbit Insertion",
-      "file": "/diagrams/science/orbit-insertion.svg",
+      "file": "/diagrams/science/orbit-insertion.webp",
       "cover": false
     },
     {
       "title": "Orbit Regimes",
-      "file": "/diagrams/science/orbit-regimes.svg",
+      "file": "/diagrams/science/orbit-regimes.webp",
       "cover": false
     },
     {
       "title": "Patched Conics",
-      "file": "/diagrams/science/patched-conics.svg",
+      "file": "/diagrams/science/patched-conics.webp",
       "cover": false
     },
     {
       "title": "Porkchop",
-      "file": "/diagrams/science/porkchop.svg",
+      "file": "/diagrams/science/porkchop.webp",
       "cover": false
     },
     {
@@ -1024,18 +1069,28 @@
       "cover": false
     },
     {
+      "title": "Regolith",
+      "file": "/diagrams/science/regolith.webp",
+      "cover": false
+    },
+    {
       "title": "Semi Major Axis",
-      "file": "/diagrams/science/semi-major-axis.svg",
+      "file": "/diagrams/science/semi-major-axis.webp",
       "cover": false
     },
     {
       "title": "Sidereal Synodic",
-      "file": "/diagrams/science/sidereal-synodic.svg",
+      "file": "/diagrams/science/sidereal-synodic.webp",
       "cover": false
     },
     {
       "title": "Solar Power Budget",
       "file": "/diagrams/science/solar-power-budget.svg",
+      "cover": false
+    },
+    {
+      "title": "Solar Sail",
+      "file": "/diagrams/science/solar-sail.webp",
       "cover": false
     },
     {
@@ -1045,52 +1100,52 @@
     },
     {
       "title": "Specific Impulse",
-      "file": "/diagrams/science/specific-impulse.svg",
+      "file": "/diagrams/science/specific-impulse.webp",
       "cover": false
     },
     {
       "title": "TCM",
-      "file": "/diagrams/science/tcm.svg",
+      "file": "/diagrams/science/tcm.webp",
       "cover": false
     },
     {
       "title": "Tof Axis",
-      "file": "/diagrams/science/tof-axis.svg",
+      "file": "/diagrams/science/tof-axis.webp",
       "cover": false
     },
     {
       "title": "Trans X Injection",
-      "file": "/diagrams/science/trans-x-injection.svg",
+      "file": "/diagrams/science/trans-x-injection.webp",
       "cover": false
     },
     {
       "title": "Transfer Ellipse",
-      "file": "/diagrams/science/transfer-ellipse.svg",
+      "file": "/diagrams/science/transfer-ellipse.webp",
       "cover": false
     },
     {
       "title": "True Anomaly",
-      "file": "/diagrams/science/true-anomaly.svg",
+      "file": "/diagrams/science/true-anomaly.webp",
       "cover": false
     },
     {
       "title": "Tsiolkovsky",
-      "file": "/diagrams/science/tsiolkovsky.svg",
+      "file": "/diagrams/science/tsiolkovsky.webp",
       "cover": false
     },
     {
       "title": "V Infinity",
-      "file": "/diagrams/science/v-infinity.svg",
+      "file": "/diagrams/science/v-infinity.webp",
       "cover": false
     },
     {
       "title": "Viability",
-      "file": "/diagrams/science/viability.svg",
+      "file": "/diagrams/science/viability.webp",
       "cover": false
     },
     {
       "title": "Vis Viva",
-      "file": "/diagrams/science/vis-viva.svg",
+      "file": "/diagrams/science/vis-viva.webp",
       "cover": false
     }
   ],
@@ -1698,7 +1753,7 @@
   ],
   "totals": {
     "anatomy_art": 144,
-    "diagrams_science": 74,
+    "diagrams_science": 85,
     "posters": 27,
     "models3d": 49,
     "canvas2d": 6,

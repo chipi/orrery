@@ -1,0 +1,55 @@
+{
+  "slug": "reusable-launchers",
+  "movement": "the-machines",
+  "order": 1,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "Delta-v — the currency everything else is priced in",
+      "href": "/essays/delta-v",
+      "kind": "essay"
+    },
+    {
+      "label": "New propulsion — what comes after chemical rockets",
+      "href": "/essays/new-propulsion",
+      "kind": "essay"
+    },
+    {
+      "label": "Rocket stages — the mass-fraction trade that drives all of this",
+      "href": "/science/propulsion/rocket-stages",
+      "kind": "science"
+    },
+    {
+      "label": "Browse the launchers — every vehicle in the atlas",
+      "href": "/fleet",
+      "kind": "interactive"
+    }
+  ],
+  "sources": [
+    {
+      "title": "SpaceX — Falcon 9 first-stage landing, 21 December 2015 (APOD)",
+      "url": "https://apod.nasa.gov/apod/ap151228.html"
+    },
+    {
+      "title": "Wikipedia — Falcon 9 first-stage landing tests (full history + statistics)",
+      "url": "https://en.wikipedia.org/wiki/Falcon_9_first-stage_landing_tests"
+    },
+    {
+      "title": "NSS — The Space Shuttle Decision, Ch. 6: Economics and the Shuttle",
+      "url": "https://nss.org/the-space-shuttle-decision-chapter-6/"
+    },
+    {
+      "title": "Blue Origin — New Glenn lands ESCAPADE mission, first reusable recovery (Nov 2025)",
+      "url": "https://www.blueorigin.com/news/new-glenn-launches-nasa-escapade-lands-fully-reusable-booster"
+    },
+    {
+      "title": "SpaceNews — China's reusable rockets: LandSpace Zhuque-3 and iSpace Hyperbola-3",
+      "url": "https://spacenews.com/chinas-latest-batch-of-new-and-reusable-rockets-are-close-to-launch/"
+    },
+    {
+      "title": "phys.org — SpaceX catches Starship Super Heavy booster, Flight 5, October 2024",
+      "url": "https://phys.org/news/2024-10-starship-megarocket-booster-caught-spacex.html"
+    }
+  ],
+  "hero": "essays/reusable-launchers/expendable-cost"
+}

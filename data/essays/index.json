@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "navigation",
+    "movement": "into-the-dark",
+    "order": 1,
+    "status": "published"
+  },
+  {
+    "slug": "delta-v",
+    "movement": "into-the-dark",
+    "order": 2,
+    "status": "published"
+  },
+  {
+    "slug": "comms",
+    "movement": "into-the-dark",
+    "order": 3,
+    "status": "published"
+  },
+  {
+    "slug": "space-comm-arrays",
+    "movement": "into-the-dark",
+    "order": 4,
+    "status": "published"
+  },
+  {
+    "slug": "reusable-launchers",
+    "movement": "the-machines",
+    "order": 1,
+    "status": "published"
+  },
+  {
+    "slug": "new-propulsion",
+    "movement": "the-machines",
+    "order": 2,
+    "status": "published"
+  },
+  {
+    "slug": "going-to-the-moon",
+    "movement": "the-destinations",
+    "order": 1,
+    "status": "published"
+  },
+  {
+    "slug": "going-to-mars",
+    "movement": "the-destinations",
+    "order": 2,
+    "status": "published"
+  },
+  {
+    "slug": "asteroid-mining",
+    "movement": "the-destinations",
+    "order": 3,
+    "status": "published"
+  },
+  {
+    "slug": "seven-minutes",
+    "movement": "arrival-and-the-body",
+    "order": 1,
+    "status": "published"
+  },
+  {
+    "slug": "the-body-in-the-dark",
+    "movement": "arrival-and-the-body",
+    "order": 2,
+    "status": "published"
+  },
+  {
+    "slug": "interstellar-exploration",
+    "movement": "the-far-horizon",
+    "order": 1,
+    "status": "published"
+  },
+  {
+    "slug": "generational-starships",
+    "movement": "the-far-horizon",
+    "order": 2,
+    "status": "published"
+  }
+]

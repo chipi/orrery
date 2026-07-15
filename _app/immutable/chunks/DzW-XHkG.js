@@ -1,0 +1,1 @@
+var e=Object.freeze({type:`loading`});function t(){return e}function n(e){return{type:`error`,error:e}}function r(e){return{type:`success`,data:e}}function i(e){return e.type===`loading`}function a(e){return e.type===`error`}function o(e){return e.type===`success`}export{t as a,o as i,a as n,r as o,i as r,n as t};

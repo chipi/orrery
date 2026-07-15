@@ -1,0 +1,50 @@
+{
+  "slug": "new-propulsion",
+  "movement": "the-machines",
+  "order": 2,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "Delta-v — the currency under every mission in this atlas",
+      "href": "/essays/delta-v",
+      "kind": "essay"
+    },
+    {
+      "label": "Reusable launchers — the other revolution, and what it doesn't solve",
+      "href": "/essays/reusable-launchers",
+      "kind": "essay"
+    },
+    {
+      "label": "Engine types — ion, Hall, nuclear, sail: the mechanics behind this essay",
+      "href": "/science/propulsion/engine-types",
+      "kind": "science"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA Science — Dawn: Ion Propulsion",
+      "url": "https://science.nasa.gov/mission/dawn/technology/ion-propulsion/"
+    },
+    {
+      "title": "NASA JPL — Solar Electric Propulsion Makes NASA's Psyche Spacecraft Go",
+      "url": "https://www.nasa.gov/centers-and-facilities/jpl/solar-electric-propulsion-makes-nasas-psyche-spacecraft-go/"
+    },
+    {
+      "title": "Wikipedia — NERVA (Nuclear Engine for Rocket Vehicle Application)",
+      "url": "https://en.wikipedia.org/wiki/NERVA"
+    },
+    {
+      "title": "SpaceNews — DARPA says decreasing launch costs led it to cancel DRACO nuclear propulsion project",
+      "url": "https://spacenews.com/darpa-says-decreasing-launch-costs-new-analysis-led-it-to-cancel-draco-nuclear-propulsion-project/"
+    },
+    {
+      "title": "The Planetary Society — The future of solar sailing (IKAROS, LightSail 2, ACS3)",
+      "url": "https://www.planetary.org/articles/the-future-of-solar-sailing"
+    },
+    {
+      "title": "NASA — Advanced Composite Solar Sail System (ACS3)",
+      "url": "https://www.nasa.gov/smallspacecraft/what-is-acs3/"
+    }
+  ],
+  "hero": "essays/new-propulsion/solar-sail"
+}

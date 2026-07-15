@@ -11,6 +11,12 @@
     "thrust-and-twr",
     "engine-clustering",
     "rocket-stages",
-    "throttling-and-gimbaling"
+    "throttling-and-gimbaling",
+    "ion-drive",
+    "solar-sail",
+    "nuclear-thermal",
+    "fusion-propulsion",
+    "antimatter-propulsion",
+    "laser-sail"
   ]
 }

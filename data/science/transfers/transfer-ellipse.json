@@ -4,7 +4,7 @@
   "order": 3,
   "photo": {
     "src": "/images/science/transfer-ellipse-hohmann.webp",
-    "credit": "Wikimedia Commons contributor \u00b7 Hohmann transfer orbit diagram. The textbook minimum-\u0394V transfer between two coplanar circular orbits \u2014 one ellipse, tangent to the inner orbit at periapsis, tangent to the outer at apoapsis. Two burns, total \u2014 what every Mars-class spacecraft trajectory starts from."
+    "credit": "Wikimedia Commons contributor · Hohmann transfer orbit diagram. The textbook minimum-ΔV transfer between two coplanar circular orbits — one ellipse, tangent to the inner orbit at periapsis, tangent to the outer at apoapsis. Two burns, total — what every Mars-class spacecraft trajectory starts from."
   },
   "see_in_app": [
     {
@@ -14,16 +14,16 @@
   ],
   "links": [
     {
-      "l": "Wikipedia \u00b7 Orbital mechanics",
+      "l": "Wikipedia · Orbital mechanics",
       "u": "https://en.wikipedia.org/wiki/Orbital_mechanics",
       "t": "intro"
     },
     {
-      "l": "NASA \u00b7 Trans-Mars Injection Trajectories",
+      "l": "NASA · Trans-Mars Injection Trajectories",
       "u": "https://www.nasa.gov/feature/jpl/how-nasa-s-perseverance-mars-team-adjusted-to-work-in-the-time-of-coronavirus",
       "t": "core"
     }
   ],
-  "diagram": "transfer-ellipse.svg",
+  "diagram": "transfer-ellipse.webp",
   "diagram_quality": "polished"
 }

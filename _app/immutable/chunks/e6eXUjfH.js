@@ -1,0 +1,1 @@
+function e(e,t){let n=e*Math.PI/180,r=t*Math.PI/180;return{x:Math.cos(n)*Math.cos(r),y:Math.sin(n),z:-Math.cos(n)*Math.sin(r)}}export{e as t};

@@ -1,0 +1,30 @@
+{
+  "id": "nuclear-thermal",
+  "tab": "propulsion",
+  "order": 15,
+  "see_in_app": [],
+  "links": [
+    {
+      "l": "NASA · Nuclear Thermal Propulsion (DRACO programme)",
+      "u": "https://www.nasa.gov/space-technology-mission-directorate/nuclear-thermal-propulsion-draco-program/",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Nuclear thermal rocket",
+      "u": "https://en.wikipedia.org/wiki/Nuclear_thermal_rocket",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · NERVA",
+      "u": "https://en.wikipedia.org/wiki/NERVA",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Project Rover and NERVA history",
+      "u": "https://www.energy.gov/ne/articles/history-nuclear-thermal-propulsion-nerva",
+      "t": "deep"
+    }
+  ],
+  "diagram": "nuclear-thermal.webp",
+  "diagram_quality": "polished"
+}

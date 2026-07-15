@@ -5,14 +5,14 @@
   "agency": "Roscosmos",
   "country": "Russia",
   "manufacturer": "Soviet/Russian Strategic Rocket Forces",
-  "first_flight": "1967-03-21",
+  "first_flight": "1966-03-17",
   "status": "RETIRED",
   "era": "1957-1969",
   "epoch": "space-race",
   "lat": 62.93,
   "lon": 40.45,
-  "best_known_for": "Tsiklon-3 / Kosmos-3M workhorse — 310+ launches across the Soviet/Russian era",
-  "credit": "Fleet launch-site entry added during the cross-correlation analysis (#306 follow-up). LC-41/1 was the primary Tsiklon-3 / Kosmos-3M pad and one of Plesetsk's busiest, distinct from LC-43 (Soyuz). Decommissioned after Tsiklon-3 retired.",
+  "best_known_for": "R-7-family pad (Vostok-2 / Soyuz-class) — 308 launches, 1966-1981",
+  "credit": "Fleet launch-site entry added during the cross-correlation analysis (#306 follow-up). LC-41/1 (Lesobaza/SK-1) operated R-7-derived rockets (Vostok-2, Soyuz, Molniya variants) from 1966 to 1981, with ~308 orbital launches. First orbital launch was Kosmos 112 (March 17, 1966). Disassembled post-1981.",
   "links": [
     {
       "l": "Plesetsk Cosmodrome — Wikipedia",

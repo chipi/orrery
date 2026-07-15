@@ -4,14 +4,14 @@
     "section": "apollo-11-1969",
     "title": "Apollo 11 · July 20, 1969",
     "intro": "Three astronauts, a Saturn V, and a moonshot deadline JFK set in 1961. Tranquillity Base, eight years later, on schedule.",
-    "haystack": "apollo 11 · july 20, 1969 three astronauts, a saturn v, and a moonshot deadline jfk set in 1961. tranquillity base, eight years later, on schedule. saturn v was a 110-meter, three-stage liquid-fuel monster designed under wernher von braun (the german v-2 designer, brought to the us under operation paperclip in 1945). first stage: 5× f-1 engines, 7.6 million lbf thrust. still the most powerful rocket to fly successfully (until sls block 1 / starship matched or exceeded it 50+ years later)."
+    "haystack": "apollo 11 · july 20, 1969 three astronauts, a saturn v, and a moonshot deadline jfk set in 1961. tranquillity base, eight years later, on schedule. saturn v was a 110-meter, three-stage liquid-fuel monster designed under wernher von braun (the german v-2 designer, brought to the us under operation paperclip in 1945). first stage: 5× f-1 engines, 7.6 million lbf thrust. still the highest-thrust rocket to fly a fully successful crewed mission (sls block 1 and starship exceed its raw liftoff thrust; nothing yet matched its crewed payload to tli)."
   },
   {
     "tab": "history",
     "section": "goddard-liquid-rocket-1926",
     "title": "Goddard's First Liquid-Fuel Rocket · 1926",
     "intro": "March 16, 1926: a 3-meter spindly contraption rises 12 meters into the Massachusetts sky. The first liquid-fuel rocket flight in history.",
-    "haystack": "goddard's first liquid-fuel rocket · 1926 march 16, 1926: a 3-meter spindly contraption rises 12 meters into the massachusetts sky. the first liquid-fuel rocket flight in history. march 16, 1926 launch site: aunt marion goddard's farm, auburn, massachusetts. vehicle: \"nell\" — 10 ft tall, ~3 m long structure, weighing about 6 kg dry. propellants: liquid oxygen + gasoline, regeneratively cooled, gimbaled nozzle."
+    "haystack": "goddard's first liquid-fuel rocket · 1926 march 16, 1926: a 3-meter spindly contraption rises 12 meters into the massachusetts sky. the first liquid-fuel rocket flight in history. march 16, 1926 launch site: aunt effie ward's farm, auburn, massachusetts. vehicle: \"nell\" — 10 ft tall, ~3 m long structure, weighing about 6 kg dry. propellants: liquid oxygen + gasoline, regeneratively cooled, gimbaled nozzle."
   },
   {
     "tab": "history",
@@ -123,7 +123,7 @@
     "section": "long-duration-effects",
     "title": "Long-duration effects",
     "intro": "Six months is the standard ISS rotation; one year has been done twice; Mars is three years. Each step extends the dose of every other effect — and adds new ones we can't yet fully reverse.",
-    "haystack": "long-duration effects six months is the standard iss rotation; one year has been done twice; mars is three years. each step extends the dose of every other effect — and adds new ones we can't yet fully reverse. roughly 60% of long-duration crew develop **sans** — space-associated neuro-ocular syndrome — a constellation of optic-disc swelling, posterior eyeball flattening, choroidal folds, and increased optic-nerve-sheath diameter. the leading hypothesis is fluid shift to the head increasing intracranial pressure; the changes don't fully reverse within a year of return for some crew. sans is the single most concerning physiologic finding from long-duration spaceflight."
+    "haystack": "long-duration effects six months is the standard iss rotation; one year has been done twice; mars is three years. each step extends the dose of every other effect — and adds new ones we can't yet fully reverse. roughly 70% of long-duration crew develop **sans** — space-associated neuro-ocular syndrome — a constellation of optic-disc swelling, posterior eyeball flattening, choroidal folds, and increased optic-nerve-sheath diameter. the leading hypothesis is fluid shift to the head increasing intracranial pressure; the changes don't fully reverse within a year of return for some crew. sans is the single most concerning physiologic finding from long-duration spaceflight."
   },
   {
     "tab": "life-in-space",
@@ -172,14 +172,14 @@
     "section": "muscle-atrophy",
     "title": "Muscle atrophy",
     "intro": "Postural muscles fade first — the calf and back muscles you didn't realise you were using until they stop working in 1 g again.",
-    "haystack": "muscle atrophy postural muscles fade first — the calf and back muscles you didn't realise you were using until they stop working in 1 g again. skeletal muscle is a use-it-or-lose-it tissue. the body is constantly weighing the metabolic cost of maintaining a muscle against the demand on it. in microgravity, the demand on the postural muscle groups — calf (soleus, gastrocnemius), back (paraspinals, erector spinae), and quadriceps — collapses overnight. the body stops maintaining them. within two weeks, type-i (slow-twitch, postural) fibres are visibly smaller; within three months, cross-sectional area in the calves drops 15–20% without countermeasures."
+    "haystack": "muscle atrophy postural muscles fade first — the calf and back muscles you didn't realise you were using until they stop working in 1 g again. skeletal muscle is a use-it-or-lose-it tissue. the body is constantly weighing the metabolic cost of maintaining a muscle against the demand on it. in microgravity, the demand on the postural muscle groups — calf (soleus, gastrocnemius), back (paraspinals, erector spinae), and quadriceps — collapses overnight. the body stops maintaining them. within two weeks, type-i (slow-twitch, postural) fibres are visibly smaller; by around six months without countermeasures, cross-sectional area in the calves drops 15–20%."
   },
   {
     "tab": "life-in-space",
     "section": "pre-flight-training",
     "title": "Pre-flight training — the years before launch",
     "intro": "Modern astronauts train 18-24 months basic + 2-3 years mission-specific before flying. Apollo crews trained 5 years for a 10-day mission. Ground-to-flight ratio is the highest of any operational profession.",
-    "haystack": "pre-flight training — the years before launch modern astronauts train 18-24 months basic + 2-3 years mission-specific before flying. apollo crews trained 5 years for a 10-day mission. ground-to-flight ratio is the highest of any operational profession. basic training is roughly the same across nasa, roscosmos, esa, jaxa, csa, and cnsa: scuba certification (for the neutral-buoyancy pool work that will later teach eva), aircraft flight time (t-38 jets at jsc, l-39s at star city, kj-200 trainers at china's astronaut center), parabolic flight (~30s zero-g exposure in a converted aircraft — the 'vomit comet' name is accurate the first 10 flights), centrifuge to 8g (soyuz re-entry profile), altitude chamber to 30,000 ft, sea + desert + arctic survival training (in case of off-nominal landing). nasa's basic-training cohort runs houston-cologne-tsukuba-tsukuba for 18-24 months; roscosmos's gctc programme is similar but longer (24-30 months) and includes more centrifuge time. the basic phase isn't about specific missions — it's about producing a body of qualified astronauts who could be assigned to any future flight."
+    "haystack": "pre-flight training — the years before launch modern astronauts train 18-24 months basic + 2-3 years mission-specific before flying. apollo crews trained 5 years for a 10-day mission. ground-to-flight ratio is the highest of any operational profession. basic training is roughly the same across nasa, roscosmos, esa, jaxa, csa, and cnsa: scuba certification (for the neutral-buoyancy pool work that will later teach eva), aircraft flight time (t-38 jets at jsc, l-39s at star city, kj-200 trainers at china's astronaut center), parabolic flight (~30s zero-g exposure in a converted aircraft — the 'vomit comet' name is accurate the first 10 flights), centrifuge to 8g (off-nominal soyuz ballistic re-entry; nominal is ~4g), altitude chamber to 30,000 ft, sea + desert + arctic survival training (in case of off-nominal landing). nasa's basic-training cohort runs houston-cologne-tsukuba-tsukuba for 18-24 months; roscosmos's gctc programme is similar but longer (24-30 months) and includes more centrifuge time. the basic phase isn't about specific missions — it's about producing a body of qualified astronauts who could be assigned to any future flight."
   },
   {
     "tab": "life-in-space",
@@ -213,15 +213,22 @@
     "tab": "life-in-space",
     "section": "surface-mobility-rovers",
     "title": "Surface mobility — from Apollo's LRV to pressurised rovers for Moon and Mars",
-    "intro": "Crewed surface stays live and die by how far the crew can travel. Apollo's LRV pushed traverse range from 1 km to 27 km. The next generation — pressurised rovers — pushes it to multi-week, multi-hundred-km expeditions.",
-    "haystack": "surface mobility — from apollo's lrv to pressurised rovers for moon and mars crewed surface stays live and die by how far the crew can travel. apollo's lrv pushed traverse range from 1 km to 27 km. the next generation — pressurised rovers — pushes it to multi-week, multi-hundred-km expeditions. apollo's lunar roving vehicle (lrv) flew on the last three apollo missions (15, 16, 17, 1971-72). before the lrv, surface traverses were limited by suit consumables to about 1 km radius from the lm — and eva fatigue from walking in 1/6-g while carrying a pressurised suit made even that distance limit a stretch. the lrv was deliberately scoped to fit folded into the lm quad-1 storage bay (a 0.7 × 0.7 m envelope), weighed only 210 kg unloaded, and ran on four 36-v silver-zinc batteries (no recharge — the lrv was a single-mission asset). top speed: 18 km/h. range per battery: ~57 km, with a hard walk-back limit of half the consumables remaining (so practical traverses were 5-10 km out + 5-10 km back). apollo 17 logged 35.7 km total over three evas, the all-time human surface-driving record. the lrv's design template — open-frame, unpressurised, suit-only, single-mission disposable — is what artemis is rebuilding now as the ltv."
+    "intro": "Crewed surface stays live and die by how far the crew can travel. Apollo's LRV pushed traverse range from 1 km to 35.7 km. The next generation — pressurised rovers — pushes it to multi-week, multi-hundred-km expeditions.",
+    "haystack": "surface mobility — from apollo's lrv to pressurised rovers for moon and mars crewed surface stays live and die by how far the crew can travel. apollo's lrv pushed traverse range from 1 km to 35.7 km. the next generation — pressurised rovers — pushes it to multi-week, multi-hundred-km expeditions. apollo's lunar roving vehicle (lrv) flew on the last three apollo missions (15, 16, 17, 1971-72). before the lrv, surface traverses were limited by suit consumables to about 1 km radius from the lm — and eva fatigue from walking in 1/6-g while carrying a pressurised suit made even that distance limit a stretch. the lrv was deliberately scoped to fit folded into the lm quad-1 storage bay (a 0.7 × 0.7 m envelope), weighed only 210 kg unloaded, and ran on two 36-v silver-zinc batteries (no recharge — the lrv was a single-mission asset). top speed: 18 km/h. total range on those batteries: ~92 km (57 mi), with a hard walk-back limit of half the consumables remaining (so practical traverses were 5-10 km out + 5-10 km back). apollo 17 logged 35.7 km total over three evas, the all-time human surface-driving record. the lrv's design template — open-frame, unpressurised, suit-only, single-mission disposable — is what artemis is rebuilding now as the ltv."
   },
   {
     "tab": "life-in-space",
     "section": "vestibular-adaptation",
     "title": "Vestibular adaptation",
-    "intro": "The inner ear's gravity sensor goes silent in orbit — half of all astronauts spend their first 2–4 days nauseous while the brain re-weights vestibular vs visual cues.",
-    "haystack": "vestibular adaptation the inner ear's gravity sensor goes silent in orbit — half of all astronauts spend their first 2–4 days nauseous while the brain re-weights vestibular vs visual cues. the vestibular system in your inner ear is built around three semicircular canals (rotation) and two otolith organs (linear acceleration + gravity). on earth those otoliths sit in a one-g field; their hair cells are constantly bent by the calcium-carbonate crystals (otoconia) pressing downward. the brain reads that bend as \"down\". in microgravity the otoconia float free. the signal goes ambiguous."
+    "intro": "The inner ear's gravity sensor goes silent in orbit — roughly 60–80% of astronauts spend their first 2–4 days nauseous while the brain re-weights vestibular vs visual cues.",
+    "haystack": "vestibular adaptation the inner ear's gravity sensor goes silent in orbit — roughly 60–80% of astronauts spend their first 2–4 days nauseous while the brain re-weights vestibular vs visual cues. the vestibular system in your inner ear is built around three semicircular canals (rotation) and two otolith organs (linear acceleration + gravity). on earth those otoliths sit in a one-g field; their hair cells are constantly bent by the calcium-carbonate crystals (otoconia) pressing downward. the brain reads that bend as \"down\". in microgravity the otoconia float free. the signal goes ambiguous."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "antenna-arrays",
+    "title": "Arraying — many small ears instead of one giant one",
+    "intro": "Combining the signals from multiple antennas in real time creates a single virtual aperture larger than any individual dish, capturing fainter spacecraft signals without building ever-bigger structures.",
+    "haystack": "arraying — many small ears instead of one giant one combining the signals from multiple antennas in real time creates a single virtual aperture larger than any individual dish, capturing fainter spacecraft signals without building ever-bigger structures. a single large antenna is the obvious way to hear a faint spacecraft signal from billions of kilometres away. the dsn's 70 m dishes — at goldstone, madrid, and canberra — are near the practical limit for fully steerable, ground-based reflectors. building something appreciably larger would require a fixed structure (limiting sky coverage) or engineering that doesn't yet exist. the alternative is to combine many smaller antennas: arraying."
   },
   {
     "tab": "mission-phases",
@@ -253,6 +260,13 @@
   },
   {
     "tab": "mission-phases",
+    "section": "interplanetary-internet",
+    "title": "The interplanetary internet — networking across the light-lag",
+    "intro": "Standard internet protocols fail across light-minutes and planetary occultations; Delay/Disruption-Tolerant Networking solves this with store-and-forward bundles that wait for the next available link.",
+    "haystack": "the interplanetary internet — networking across the light-lag standard internet protocols fail across light-minutes and planetary occultations; delay/disruption-tolerant networking solves this with store-and-forward bundles that wait for the next available link. the ordinary internet assumes you can send a packet, wait a fraction of a second for an acknowledgement, and resend if it doesn't arrive. that model breaks catastrophically in deep space. a radio signal from earth takes 4–24 minutes to reach mars depending on orbital geometry; during planetary conjunction the link drops entirely for weeks. tcp/ip's round-trip assumption means a session times out and fails long before a single exchange completes."
+  },
+  {
+    "tab": "mission-phases",
     "section": "launch",
     "title": "Launch + Ascent",
     "intro": "The most violent ten minutes of any mission — fighting gravity, atmosphere, and the rocket equation simultaneously.",
@@ -276,8 +290,15 @@
     "tab": "mission-phases",
     "section": "nrho",
     "title": "NRHO — Near-Rectilinear Halo Orbit",
-    "intro": "A nine-day egg-shaped orbit around the Earth-Moon L2 point — the chosen home of NASA's Lunar Gateway.",
-    "haystack": "nrho — near-rectilinear halo orbit a nine-day egg-shaped orbit around the earth-moon l2 point — the chosen home of nasa's lunar gateway. an nrho is a halo orbit — a periodic three-body trajectory that loops around a lagrange point — but stretched until one end nearly touches the moon's south pole. it looks more like a polar orbit than a halo, hence 'near-rectilinear.' each loop takes about 6.5 days at perilune (close to the moon) and 9 days for a full revolution."
+    "intro": "A ~6.5-day egg-shaped orbit around the Earth-Moon L2 point — the chosen home of NASA's Lunar Gateway.",
+    "haystack": "nrho — near-rectilinear halo orbit a ~6.5-day egg-shaped orbit around the earth-moon l2 point — the chosen home of nasa's lunar gateway. an nrho is a halo orbit — a periodic three-body trajectory that loops around a lagrange point — but stretched until one end nearly touches the moon's south pole. it looks more like a polar orbit than a halo, hence 'near-rectilinear.' one full revolution takes about 6.5 days; the '9' in the gateway 9:2 resonance refers to nine nrho revolutions per two lunar synodic months, not a 9-day period."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "optical-comms",
+    "title": "Optical comms — talking on a beam of light",
+    "intro": "Laser-based links carry 10–100 times more data than radio for the same power and aperture, at the cost of pointing accuracy measured in microradians.",
+    "haystack": "optical comms — talking on a beam of light laser-based links carry 10–100 times more data than radio for the same power and aperture, at the cost of pointing accuracy measured in microradians. every spacecraft talking to earth uses radio — a well-understood technology that tolerates moderate pointing errors and passes through clouds. its fundamental limit is bandwidth: radio frequencies are regulated and the physics of diffraction caps how tightly you can pack a beam. optical communications replaces the radio carrier with a near-infrared laser. the same physics that makes the beam pencil-thin also concentrates the energy, so a given transmitted power delivers far more bits per second at the receiver."
   },
   {
     "tab": "mission-phases",
@@ -318,8 +339,8 @@
     "tab": "observation",
     "section": "andromeda-galaxy",
     "title": "Andromeda Galaxy (M31) — the closest large spiral",
-    "intro": "Andromeda is the closest large galaxy to the Milky Way at 2.5 million light-years. It is the most distant object the unaided human eye can see, and it is heading directly toward us at 110 km/s.",
-    "haystack": "andromeda galaxy (m31) — the closest large spiral andromeda is the closest large galaxy to the milky way at 2.5 million light-years. it is the most distant object the unaided human eye can see, and it is heading directly toward us at 110 km/s. andromeda — catalogued as m31 (messier 31) and ngc 224 — is a barred spiral galaxy slightly larger than the milky way. mass estimates from gaia dr3 stellar dynamics put it at about 1.5 × 10¹² solar masses, comparable to or slightly more massive than the milky way. it hosts an estimated trillion stars, has a structurally similar central bar and disc, two prominent spiral arms, and a quiescent supermassive black hole at its centre (m31's nucleus is a 1.4 × 10⁸ solar-mass black hole; the milky way's sagittarius a* is 'only' 4.3 × 10⁶ solar masses). to the naked eye from a dark site, andromeda is a small smudge in the constellation that gives it its name — the most distant object the human eye can perceive without instruments, at about 2.5 million light-years. the light arriving on earth tonight left andromeda when homo habilis was first making stone tools."
+    "intro": "Andromeda is the closest large galaxy to the Milky Way at 2.5 million light-years. One of the most distant objects the naked eye can see, it is approaching us at 110 km/s — and may collide with the Milky Way in several billion years.",
+    "haystack": "andromeda galaxy (m31) — the closest large spiral andromeda is the closest large galaxy to the milky way at 2.5 million light-years. one of the most distant objects the naked eye can see, it is approaching us at 110 km/s — and may collide with the milky way in several billion years. andromeda — catalogued as m31 (messier 31) and ngc 224 — is a spiral galaxy (formally classified sa(s)b — unbarred, though kinematic evidence points to a weak inner bar) slightly larger than the milky way. mass estimates from gaia dr3 stellar dynamics put it at about 1.5 × 10¹² solar masses, comparable to or slightly more massive than the milky way. it hosts an estimated trillion stars, has a structurally similar central bar and disc, two prominent spiral arms, and a quiescent supermassive black hole at its centre (m31's nucleus is a 1.4 × 10⁸ solar-mass black hole; the milky way's sagittarius a* is 'only' 4.3 × 10⁶ solar masses). to the naked eye from a dark site, andromeda is a small smudge in the constellation that gives it its name — one of the most distant objects the human eye can perceive without instruments, at about 2.5 million light-years. the light arriving on earth tonight left andromeda when homo habilis was first making stone tools."
   },
   {
     "tab": "observation",
@@ -347,7 +368,7 @@
     "section": "galaxy-types",
     "title": "Galaxy types — spirals, ellipticals, irregulars, dwarfs",
     "intro": "Galaxies fall into a handful of structural families: spirals (Milky Way, Andromeda), ellipticals (M87, NGC 4889), irregulars (Magellanic Clouds), and dwarfs of several sub-classes. The taxonomy is Hubble's 1936 framework, refined.",
-    "haystack": "galaxy types — spirals, ellipticals, irregulars, dwarfs galaxies fall into a handful of structural families: spirals (milky way, andromeda), ellipticals (m87, ngc 4889), irregulars (magellanic clouds), and dwarfs of several sub-classes. the taxonomy is hubble's 1936 framework, refined. spiral galaxies are flat rotating discs of stars and gas surrounding a central bulge, with one or more prominent spiral arms wrapping outward. the arms are not rigid structures — they are density waves where star formation is currently elevated, plus young blue stars and pink hii regions that make the arms look brighter than the inter-arm disc. about two-thirds of bright nearby galaxies are spirals. the milky way and andromeda are both barred spirals (their central bulges are elongated into a bar 'cigar' shape that funnels gas inward, fuelling central star formation and feeding the supermassive black hole). the triangulum galaxy m33 in the local group is an unbarred spiral. the third hubble category — sc / sbc — has loose, well-separated spiral arms; the milky way is type sbbc or sbc."
+    "haystack": "galaxy types — spirals, ellipticals, irregulars, dwarfs galaxies fall into a handful of structural families: spirals (milky way, andromeda), ellipticals (m87, ngc 4889), irregulars (magellanic clouds), and dwarfs of several sub-classes. the taxonomy is hubble's 1936 framework, refined. spiral galaxies are flat rotating discs of stars and gas surrounding a central bulge, with one or more prominent spiral arms wrapping outward. the arms are not rigid structures — they are density waves where star formation is currently elevated, plus young blue stars and pink hii regions that make the arms look brighter than the inter-arm disc. about two-thirds of bright nearby galaxies are spirals. the milky way is a barred spiral (sbbc — its central bulge is elongated into a bar 'cigar' shape that funnels gas inward, fuelling central star formation and feeding the supermassive black hole). andromeda's bar status is unsettled: the formal rc3 classification is sa(s)b (unbarred), though kinematic and photometric studies point to a weak inner non-axisymmetry. the triangulum galaxy m33 in the local group is an unbarred spiral. the third hubble category — sc / sbc — has loose, well-separated spiral arms; the milky way is type sbbc or sbc."
   },
   {
     "tab": "observation",
@@ -403,7 +424,7 @@
     "section": "cislunar-orbits",
     "title": "Cislunar orbits — DRO, NRHO, halo, lunar frozen",
     "intro": "Between Earth and the Moon's surface lies a zoo of carefully-engineered orbits — none of them obvious from two-body physics, all of them exploited by the modern lunar architecture from Gateway to robotic probes.",
-    "haystack": "cislunar orbits — dro, nrho, halo, lunar frozen between earth and the moon's surface lies a zoo of carefully-engineered orbits — none of them obvious from two-body physics, all of them exploited by the modern lunar architecture from gateway to robotic probes. near-rectilinear halo orbit (nrho) is the orbit class nasa chose for the lunar gateway. geometrically: a six-day-period halo orbit around the earth-moon l2 lagrange point, with perilune ~3,000 km above the lunar south pole and apolune ~70,000 km away from the moon. the 'near-rectilinear' name comes from the orbit's shape in the earth-moon rotating frame — it sweeps a long, narrow loop perpendicular to the earth-moon line, almost like a rectangle. three properties made it the winning choice for gateway. first, station-keeping δv is extraordinarily low (~5 m/s/year) compared to lunar low orbits (>100 m/s/year). second, earth communication is unobstructed because the orbit stays out of the moon's radio shadow. third, the perilune over the south pole gives the shortest descent δv to the artemis base camp site at shackleton crater rim. the trade is that descent from nrho to lunar surface is harder than from a low circular lunar orbit (~2.5 km/s vs ~1.8 km/s) — but for a programme that needs an enduring staging point, the trade is worth it."
+    "haystack": "cislunar orbits — dro, nrho, halo, lunar frozen between earth and the moon's surface lies a zoo of carefully-engineered orbits — none of them obvious from two-body physics, all of them exploited by the modern lunar architecture from gateway to robotic probes. near-rectilinear halo orbit (nrho) is the orbit class nasa chose for the lunar gateway. geometrically: a six-day-period halo orbit around the earth-moon l2 lagrange point, with perilune ≈1,500 km altitude (perilune radius ~3,200 km) over the lunar north pole and apolune ≈70,000 km over the lunar south pole. the 'near-rectilinear' name comes from the orbit's shape in the earth-moon rotating frame — it sweeps a long, narrow loop perpendicular to the earth-moon line, almost like a rectangle. three properties made it the winning choice for gateway. first, station-keeping δv is extraordinarily low (~5 m/s/year) compared to lunar low orbits (>100 m/s/year). second, earth communication is unobstructed because the orbit stays out of the moon's radio shadow. third, the long dwell near apolune over the south pole gives near-continuous coverage of the artemis south-polar sites at shackleton crater rim. the trade is that descent from nrho to lunar surface is harder than from a low circular lunar orbit (~2.5 km/s vs ~1.8 km/s) — but for a programme that needs an enduring staging point, the trade is worth it."
   },
   {
     "tab": "orbits",
@@ -508,7 +529,7 @@
     "section": "active-spacecraft-survey",
     "title": "Active Spacecraft Survey",
     "intro": "What's at each planet right now: from MRO at Mars to Juno at Jupiter to Akatsuki at Venus.",
-    "haystack": "active spacecraft survey what's at each planet right now: from mro at mars to juno at jupiter to akatsuki at venus. mars — orbital fleet as of 2026: mro (nasa, since 2006, 300 km polar orbit, hirise camera + atmosphere observations + data relay). maven (nasa, since 2014, 6200 km orbit, atmospheric escape rates). mars express (esa, since 2003, 4200 km, mineralogy + atmosphere). exomars tgo (esa, since 2016, 400 km, trace gases + russian relay). mangalyaan / mom (isro, 2014–2022, methane + atmosphere — first asian mars mission). tianwen-1 (cnsa, since 2021, 4250 km, delivered zhurong rover + global mapping). hope / emm (uae space agency, since 2021, 30,000 km equatorial, atmospheric science). on the surface: perseverance + curiosity rovers (both nasa) and the now-grounded ingenuity helicopter."
+    "haystack": "active spacecraft survey what's at each planet right now: from mro at mars to juno at jupiter to akatsuki at venus. mars — orbital fleet as of 2026: mro (nasa, since 2006, 300 km polar orbit, hirise camera + atmosphere observations + data relay). maven (nasa, since 2014, 6200 km orbit, atmospheric escape rates). mars express (esa, since 2003, 4200 km, mineralogy + atmosphere). exomars tgo (esa, since 2016, 400 km, trace gases + russian relay). mangalyaan / mom (isro, 2014–2022, methane + atmosphere — first asian mission to successfully orbit mars). tianwen-1 (cnsa, since 2021, 4250 km, delivered zhurong rover + global mapping). hope / emm (uae space agency, since 2021, 30,000 km equatorial, atmospheric science). on the surface: perseverance + curiosity rovers (both nasa) and the now-grounded ingenuity helicopter."
   },
   {
     "tab": "planets",
@@ -533,6 +554,13 @@
   },
   {
     "tab": "planets",
+    "section": "lunar-ice",
+    "title": "Lunar Ice — water in the permanent dark",
+    "intro": "Near the lunar poles, some crater floors have never seen sunlight — and in that perpetual cold, water ice delivered by comets and asteroids over billions of years has accumulated and been trapped.",
+    "haystack": "lunar ice — water in the permanent dark near the lunar poles, some crater floors have never seen sunlight — and in that perpetual cold, water ice delivered by comets and asteroids over billions of years has accumulated and been trapped. the moon's axial tilt is only about 1.5 degrees, far less than earth's 23.5 degrees. as a result, sunlight near the poles arrives almost horizontally, and the floors of deep polar craters fall permanently in shadow. these permanently shadowed regions (psrs) are among the coldest places in the solar system: measured temperatures run below 100 k (−170°c), and some spots near the lunar south pole approach 40 k. at those temperatures, water ice is stable for billions of years — it simply does not sublimate."
+  },
+  {
+    "tab": "planets",
     "section": "magnetic-fields",
     "title": "Magnetic Fields",
     "intro": "Every planet's magnetosphere is different. Saturn's is uniquely aligned, Uranus's is chaotic, Venus and Mars don't have one at all.",
@@ -551,6 +579,13 @@
     "title": "Planetary Stats",
     "intro": "How different is Jupiter from Earth, really? Eleven times the diameter. Two and a half times the surface gravity.",
     "haystack": "planetary stats how different is jupiter from earth, really? eleven times the diameter. two and a half times the surface gravity. diameters relative to earth: mercury 0.38, venus 0.95 (nearly earth-sized), earth 1.0, mars 0.53, jupiter 10.97, saturn 9.14, uranus 3.98, neptune 3.86, pluto 0.19. surface gravities in earth-g: mercury 0.38, venus 0.91, earth 1.00, mars 0.38, jupiter 2.53, saturn 1.07, uranus 0.89, neptune 1.14, pluto 0.06. notable surprises: mars and mercury share the same surface gravity (0.38 g) despite very different sizes, because their density × radius products land close. uranus and saturn both have lower-than-earth gravity despite their giant sizes — both are dominated by h/he, much less dense than rocky earth."
+  },
+  {
+    "tab": "planets",
+    "section": "regolith",
+    "title": "Regolith — the dust of airless worlds",
+    "intro": "Regolith is the loose blanket of fragmented rock and glass dust that covers the Moon, Mercury, and most asteroids — ground down by billions of years of micrometeorite bombardment, with no wind or water to round its edges.",
+    "haystack": "regolith — the dust of airless worlds regolith is the loose blanket of fragmented rock and glass dust that covers the moon, mercury, and most asteroids — ground down by billions of years of micrometeorite bombardment, with no wind or water to round its edges. on earth, sediment grains are rounded and smoothed by water and wind over time. airless bodies have neither, so their surfaces are abraded purely by impactors — from multi-kilometre asteroids down to interplanetary dust grains arriving at tens of kilometres per second. the result is a layer of angular, glassy shards called regolith, ranging from fine powder to house-sized boulders. on the moon this layer runs from a few metres deep in the highlands to tens of metres in the maria."
   },
   {
     "tab": "planets",
@@ -578,14 +613,14 @@
     "section": "departure-axis",
     "title": "Departure-Window Axis",
     "intro": "When you launch — running across the X-axis, typically a four-year span sampled daily.",
-    "haystack": "departure-window axis when you launch — running across the x-axis, typically a four-year span sampled daily. the x-axis tells you when you leave earth. each pixel column is a different launch date — for orrery's plots, sampled at one-day resolution across roughly four years. why a four-year span? because the earth-mars synodic period is 26 months; you need at least two synodic cycles to capture the recurring launch-window pattern."
+    "haystack": "departure-window axis when you launch — running across the x-axis, typically a four-year span sampled daily. the x-axis tells you when you leave earth. each pixel column is a different launch date — for orrery's plots, sampled at one-day resolution across roughly four years. why a four-year span? because the earth-mars synodic period is ~26 months; four years captures roughly two full mars windows. for venus (~19 months) or jupiter (~13 months) the same span fits more windows — the four-year width is calibrated for mars-class planning."
   },
   {
     "tab": "porkchop",
     "section": "dv-heatmap",
     "title": "∆v Heatmap",
     "intro": "The colour scale that turns ∆v numbers into a picture you can read at a glance.",
-    "haystack": "∆v heatmap the colour scale that turns ∆v numbers into a picture you can read at a glance. cool teal sits at low ∆v (~3 km/s) — the natural hohmann minimum. blue at ~5 km/s. yellow around 7 km/s — the threshold of expensive. orange and red above 9 km/s — runaway-cost cells, where you'd need an sls-class launch vehicle just to make the math close."
+    "haystack": "∆v heatmap the colour scale that turns ∆v numbers into a picture you can read at a glance. cool teal sits at low ∆v (~3 km/s) — the departure-burn minimum for a mars-like hohmann (this is the trans-mars injection ∆v from leo, not the total mission ∆v). blue at ~5 km/s. yellow around 7 km/s — the threshold of expensive. orange and red above 9 km/s — runaway-cost cells, where you'd need an sls-class launch vehicle just to make the math close."
   },
   {
     "tab": "porkchop",
@@ -599,14 +634,21 @@
     "section": "viability",
     "title": "Reading Viability",
     "intro": "A cell is viable when your rocket's ∆v capability ≥ the cell's ∆v cost — and the porkchop turns that comparison into a yes/no map.",
-    "haystack": "reading viability a cell is viable when your rocket's ∆v capability ≥ the cell's ∆v cost — and the porkchop turns that comparison into a yes/no map. pick a vehicle. falcon heavy, sls block 1, atlas v n22, whatever. that vehicle has a known maximum ∆v capability with your payload mass. compare against the porkchop: every cell where ∆v_cost ≤ ∆v_capability is a feasible launch opportunity. every cell where it's greater is impossible without a different vehicle."
+    "haystack": "reading viability a cell is viable when your rocket's ∆v capability ≥ the cell's ∆v cost — and the porkchop turns that comparison into a yes/no map. pick a vehicle. falcon heavy, sls block 1, atlas v n22, whatever. that vehicle has a published c3-vs-payload-mass performance curve — heavier payloads shrink the reachable lobe; lighter ones expand it. for a given payload mass you can read off the maximum c3 (or equivalent departure ∆v) the vehicle can deliver, then compare against the porkchop: every cell where ∆v_cost ≤ capability is a feasible launch opportunity. every cell where it's greater is impossible without a different vehicle or a lighter spacecraft."
   },
   {
     "tab": "porkchop",
     "section": "what-is-a-porkchop",
     "title": "What is a Porkchop Plot?",
-    "intro": "A 2D heatmap showing ∆v cost across every (departure date, transit time) pair — the standard tool for finding launch windows.",
-    "haystack": "what is a porkchop plot? a 2d heatmap showing ∆v cost across every (departure date, transit time) pair — the standard tool for finding launch windows. pick a departure date on the x axis. pick a transit time on the y axis. the colour of that cell tells you how much ∆v it would cost to fly that mission. cool teal: cheap. yellow: moderate. red: very expensive. repeat for every pixel and you get a porkchop plot — named for the way the cheap-zone contours form a pork-chop-shaped lobe."
+    "intro": "A 2D heatmap showing trajectory cost across every (departure date, transit time) pair — the standard tool for finding launch windows. (Standard porkchops contour C3 and arrival V∞; Orrery uses a simplified ∆v-in-km/s colour scale.)",
+    "haystack": "what is a porkchop plot? a 2d heatmap showing trajectory cost across every (departure date, transit time) pair — the standard tool for finding launch windows. (standard porkchops contour c3 and arrival v∞; orrery uses a simplified ∆v-in-km/s colour scale.) pick a departure date on the x axis. pick a transit time on the y axis. the colour of that cell tells you how much ∆v it would cost to fly that mission. cool teal: cheap. yellow: moderate. red: very expensive. repeat for every pixel and you get a porkchop plot — named for the way the cheap-zone contours form a pork-chop-shaped lobe."
+  },
+  {
+    "tab": "propulsion",
+    "section": "antimatter-propulsion",
+    "title": "Antimatter — the perfect fuel we cannot make",
+    "intro": "Matter meeting antimatter annihilates completely, releasing energy no other reaction matches — a few milligrams could in principle drive an interstellar probe, yet humanity has made less than a nanogram of it in total.",
+    "haystack": "antimatter — the perfect fuel we cannot make matter meeting antimatter annihilates completely, releasing energy no other reaction matches — a few milligrams could in principle drive an interstellar probe, yet humanity has made less than a nanogram of it in total. the energy case is exact, not approximate. when a proton meets an antiproton they convert entirely into pions, gamma rays, and lighter particles — e = mc² applied in full, with no chemical or nuclear residue. the energy density is roughly 10 billion times that of the best chemical propellant and roughly 1,000 times that of fission or fusion. a matter-antimatter annihilation drive with a magnetic nozzle to direct the charged pion exhaust could, in theory, reach specific impulse values in the millions of seconds and accelerate a spacecraft to a significant fraction of the speed of light."
   },
   {
     "tab": "propulsion",
@@ -645,6 +687,34 @@
   },
   {
     "tab": "propulsion",
+    "section": "fusion-propulsion",
+    "title": "Fusion Propulsion — the star we cannot yet light",
+    "intro": "Fusing light atomic nuclei releases far more energy per kilogram than any chemical reaction, making fusion propulsion the most credible path to high-speed interstellar transit — if anyone can build a working fusion engine, which no one has.",
+    "haystack": "fusion propulsion — the star we cannot yet light fusing light atomic nuclei releases far more energy per kilogram than any chemical reaction, making fusion propulsion the most credible path to high-speed interstellar transit — if anyone can build a working fusion engine, which no one has. the physics is straightforward. fusing deuterium and tritium (or deuterium and helium-3) converts a small fraction of their mass directly into energy. the yield per kilogram is roughly ten million times that of the best chemical propellant. translated into specific impulse, a fusion drive could reach tens of thousands to hundreds of thousands of seconds — compare the best chemical engine at 450 s and the best ion drive at 9,000 s. that gap is the difference between a centuries-long interstellar trip and one measured in decades."
+  },
+  {
+    "tab": "propulsion",
+    "section": "ion-drive",
+    "title": "Ion Drives — the slow push that never stops",
+    "intro": "Ion drives achieve specific impulses 10–30 times higher than chemical rockets by accelerating ionised gas electrically rather than burning it — at the cost of very low thrust that is measured in millinewtons, not meganewtons.",
+    "haystack": "ion drives — the slow push that never stops ion drives achieve specific impulses 10–30 times higher than chemical rockets by accelerating ionised gas electrically rather than burning it — at the cost of very low thrust that is measured in millinewtons, not meganewtons. all rocket engines exchange propellant mass for velocity. the faster the exhaust leaves the nozzle, the less propellant you need for a given velocity change — which is what specific impulse (isp) measures. chemical engines are limited by flame temperature: the hottest practical propellant combination, liquid hydrogen and oxygen, reaches around 450 seconds of isp. ion drives sidestep that limit entirely. they ionise a propellant — typically xenon, chosen for its heavy atomic mass and chemical inertness — and accelerate the ions electrically or magnetically to exhaust velocities of 20–100 km/s, giving isp values of roughly 3,000 to 10,000 seconds."
+  },
+  {
+    "tab": "propulsion",
+    "section": "laser-sail",
+    "title": "Laser Sails — pushing a probe with a beam from home",
+    "intro": "Beamed propulsion inverts the usual logic: instead of carrying fuel, the spacecraft carries only a reflective sail, and all the energy is supplied by a laser or microwave array left behind on Earth or in orbit.",
+    "haystack": "laser sails — pushing a probe with a beam from home beamed propulsion inverts the usual logic: instead of carrying fuel, the spacecraft carries only a reflective sail, and all the energy is supplied by a laser or microwave array left behind on earth or in orbit. the core idea is momentum transfer. light carries momentum, and when it reflects off a surface it transfers twice that momentum to the sail. a powerful enough beam can accelerate a lightweight sail to high speed without the spacecraft carrying any propellant at all. the tsiolkovsky rocket equation — which punishes every gram of fuel you must first lift and then accelerate — does not apply; there is no exhaust, no fuel tank, no mass fraction problem. the energy bill stays at home."
+  },
+  {
+    "tab": "propulsion",
+    "section": "nuclear-thermal",
+    "title": "Nuclear-Thermal Rockets — heat, not flame",
+    "intro": "A nuclear-thermal rocket swaps the combustion chamber for a fission reactor: hydrogen heats in the core past any chemical flame and expands through a nozzle — roughly twice the specific impulse of the best chemical engines, at real thrust.",
+    "haystack": "nuclear-thermal rockets — heat, not flame a nuclear-thermal rocket swaps the combustion chamber for a fission reactor: hydrogen heats in the core past any chemical flame and expands through a nozzle — roughly twice the specific impulse of the best chemical engines, at real thrust. chemical rocket engines are limited by how hot their propellants can burn. the hydrogen-oxygen reaction peaks around 3,500 k in the combustion chamber — already close to the melting point of most materials — producing a specific impulse of roughly 450 seconds in a vacuum. a nuclear-thermal rocket (ntr) is not limited by a chemical reaction. liquid hydrogen flows through channels in a solid nuclear reactor core operating at 2,500–3,000 k, absorbs heat, and exits through a nozzle as a very hot, very light gas. because hydrogen is the lightest element, its heated molecules move fast and produce high exhaust velocity. the resulting isp is 800–1,000 seconds — more than double chemical — while thrust remains in the 50–250 kn range, far above any electric propulsion system."
+  },
+  {
+    "tab": "propulsion",
     "section": "oberth-effect",
     "title": "Oberth Effect",
     "intro": "Burn deep in a gravity well and your fuel does more work — physically the same engine produces more orbital energy when it's moving fast.",
@@ -656,6 +726,13 @@
     "title": "Stages — why no rocket has ever flown single-stage to orbit",
     "intro": "Tsiolkovsky's equation makes single-stage-to-orbit possible only with impossibly light dry mass. Every orbital launcher in history has dropped at least one stage. Most drop two or three.",
     "haystack": "stages — why no rocket has ever flown single-stage to orbit tsiolkovsky's equation makes single-stage-to-orbit possible only with impossibly light dry mass. every orbital launcher in history has dropped at least one stage. most drop two or three. the mass ratio for orbit (~9.4 km/s of ∆v from a coastal launch site) is roughly 12-15 with the best chemical engines. that means 92-93% of a notional single-stage-to-orbit (ssto) vehicle is propellant; the dry mass — tanks, engines, avionics, payload, recovery hardware — must fit inside the remaining 7-8%. no one has ever built one. the x-33 / venturestar ssto programme of the 1990s shut down when the composite hydrogen tank failed pressure-test. skylon (uk, sabre-based) is still on paper. starship is sometimes described as ssto-capable but flies as a two-stage vehicle for very good reasons: dropping the booster saves dry mass and lets the upper stage continue with much higher twr-fed acceleration. staging is the trick that turns the logarithmic rocket equation from impossible to merely difficult."
+  },
+  {
+    "tab": "propulsion",
+    "section": "solar-sail",
+    "title": "Solar Sails — the only free push",
+    "intro": "A solar sail carries no propellant: it is pushed by the momentum of photons, making it the only propulsion system with an effectively unbounded specific impulse — and the only one that gets cheaper to run the longer it flies.",
+    "haystack": "solar sails — the only free push a solar sail carries no propellant: it is pushed by the momentum of photons, making it the only propulsion system with an effectively unbounded specific impulse — and the only one that gets cheaper to run the longer it flies. light carries momentum. when a photon reflects off a mirror, it imparts twice its momentum to the mirror — a pressure called radiation pressure. in everyday life that force is negligible, but in space, where there is no air resistance, even a tiny continuous force accumulates into a real velocity change. a perfectly reflective 800 m² sail at 1 au (earth's distance from the sun) receives about 5 millinewtons of force — the weight of a small grape. that is less than any ion engine produces, but it requires no propellant, no power system beyond basic housekeeping, and it never stops as long as the sun shines."
   },
   {
     "tab": "propulsion",
@@ -717,8 +794,8 @@
     "tab": "scales-time",
     "section": "j2000",
     "title": "J2000 Epoch",
-    "intro": "12:00 noon UTC on January 1, 2000 — the universal anchor moment astronomers use to date orbital elements.",
-    "haystack": "j2000 epoch 12:00 noon utc on january 1, 2000 — the universal anchor moment astronomers use to date orbital elements. orbital elements drift over time — perturbations from other planets nudge eccentricity, longitudes precess, inclinations wobble. to make a planet's elements meaningful, you have to say 'as of when.' the standard answer is j2000: noon utc on january 1, 2000. orbits are quoted at that moment; propagation forward or backward uses analytical or numerical models."
+    "intro": "12:00 TT (Terrestrial Time) on January 1, 2000 — the universal anchor moment astronomers use to date orbital elements.",
+    "haystack": "j2000 epoch 12:00 tt (terrestrial time) on january 1, 2000 — the universal anchor moment astronomers use to date orbital elements. orbital elements drift over time — perturbations from other planets nudge eccentricity, longitudes precess, inclinations wobble. to make a planet's elements meaningful, you have to say 'as of when.' the standard answer is j2000: noon tt (terrestrial time) on january 1, 2000. orbits are quoted at that moment; propagation forward or backward uses analytical or numerical models."
   },
   {
     "tab": "scales-time",
@@ -746,7 +823,7 @@
     "section": "expedition-cadence",
     "title": "Expedition Cadence",
     "intro": "Stations run on rolling 6-month crew rotations — a balance of suit consumables, vehicle shelf-life, training pipelines, and human physiology.",
-    "haystack": "expedition cadence stations run on rolling 6-month crew rotations — a balance of suit consumables, vehicle shelf-life, training pipelines, and human physiology. constraints driving the ~6-month cadence: docked-spacecraft certification (soyuz: 210 days; crew dragon: 210 days; shenzhou: 180-210 days), eva suit ground refurbishment cycles, food-pantry capacity per resupply, and the nasa human research program's preference for 6-month bone-loss data brackets."
+    "haystack": "expedition cadence stations run on rolling 6-month crew rotations — a balance of suit consumables, vehicle shelf-life, training pipelines, and human physiology. constraints driving the ~6-month cadence: docked-spacecraft certified lifetime (~6–7 months; soyuz ~200 d; crew dragon originally ~210 d, since extended; shenzhou ~180–210 d), on-orbit eva suit consumable replenishment and certification limits, food-pantry capacity per resupply, and the nasa human research program's preference for 6-month bone-loss data brackets."
   },
   {
     "tab": "space-stations",
@@ -758,9 +835,9 @@
   {
     "tab": "space-stations",
     "section": "pressurized-volume",
-    "title": "Pressurized Volume",
+    "title": "Habitable Volume",
     "intro": "The total habitable interior of a station — how much room the crew actually has to live and work.",
-    "haystack": "pressurized volume the total habitable interior of a station — how much room the crew actually has to live and work. pressurized volume is the air-filled habitable interior of a space station, measured in cubic meters. it excludes structural racks, bulkheads, and equipment volume — the figure usually quoted is gross internal volume, of which 30-50% is occupied by hardware."
+    "haystack": "habitable volume the total habitable interior of a station — how much room the crew actually has to live and work. habitable volume is the air-filled usable interior of a space station, measured in cubic meters. it excludes structural racks, bulkheads, and equipment volume — the figure usually quoted is gross internal volume, of which 30-50% is occupied by hardware."
   },
   {
     "tab": "space-stations",

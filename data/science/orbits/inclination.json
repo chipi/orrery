@@ -2,11 +2,17 @@
   "id": "inclination",
   "tab": "orbits",
   "order": 4,
-  "diagram": "inclination.svg",
+  "diagram": "inclination.webp",
   "diagram_quality": "polished",
   "see_in_app": [
-    { "route": "/explore", "context_key": "Inclination tilts the orbit out of the ecliptic plane" },
-    { "route": "/earth", "context_key": "Satellite orbits show their inclination as ring tilt" }
+    {
+      "route": "/explore",
+      "context_key": "Inclination tilts the orbit out of the ecliptic plane"
+    },
+    {
+      "route": "/earth",
+      "context_key": "Satellite orbits show their inclination as ring tilt"
+    }
   ],
   "links": [
     {

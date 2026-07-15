@@ -1,0 +1,51 @@
+{
+  "slug": "the-body-in-the-dark",
+  "movement": "arrival-and-the-body",
+  "order": 2,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "The Wall — the trip that breaks on the body",
+      "href": "/essays/going-to-mars",
+      "kind": "essay"
+    },
+    {
+      "label": "The Ship Becomes a World — where the body becomes a lineage",
+      "href": "/essays/generational-starships",
+      "kind": "essay"
+    },
+    {
+      "label": "The Exits We’ve Always Known — the engines that shorten the exposure",
+      "href": "/essays/new-propulsion",
+      "kind": "essay"
+    },
+    {
+      "label": "The International Space Station — the lab this knowledge came from",
+      "href": "/programs/iss",
+      "kind": "program"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA — Human Research Program",
+      "url": "https://www.nasa.gov/humans-in-space/human-research-program/"
+    },
+    {
+      "title": "NASA — The Twins Study (Scott & Mark Kelly)",
+      "url": "https://www.nasa.gov/twins-study/"
+    },
+    {
+      "title": "NASA — Spaceflight-Associated Neuro-ocular Syndrome (SANS)",
+      "url": "https://www.nasa.gov/humans-in-space/"
+    },
+    {
+      "title": "ESA — Mars-500 isolation study",
+      "url": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Mars500"
+    },
+    {
+      "title": "Wikipedia — Valeri Polyakov (437-day record aboard Mir)",
+      "url": "https://en.wikipedia.org/wiki/Valeri_Polyakov"
+    }
+  ],
+  "hero": "essays/the-body-in-the-dark/fragile-payload"
+}

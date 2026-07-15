@@ -2,12 +2,19 @@
   "id": "dv-heatmap",
   "tab": "porkchop",
   "order": 4,
-  "diagram": "dv-heatmap.svg",
+  "diagram": "dv-heatmap.webp",
   "diagram_quality": "polished",
   "see_in_app": [
-    { "route": "/plan", "context_key": "Cell colour on the porkchop maps to ∆v" }
+    {
+      "route": "/plan",
+      "context_key": "Cell colour on the porkchop maps to ∆v"
+    }
   ],
   "links": [
-    { "l": "Wikipedia · Delta-v", "u": "https://en.wikipedia.org/wiki/Delta-v", "t": "intro" }
+    {
+      "l": "Wikipedia · Delta-v",
+      "u": "https://en.wikipedia.org/wiki/Delta-v",
+      "t": "intro"
+    }
   ]
 }

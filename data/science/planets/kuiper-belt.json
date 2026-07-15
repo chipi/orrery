@@ -2,7 +2,7 @@
   "id": "kuiper-belt",
   "tab": "planets",
   "order": 8,
-  "diagram": "kuiper-belt.svg",
+  "diagram": "kuiper-belt.webp",
   "see_in_app": [
     {
       "route": "/explore",
@@ -29,5 +29,6 @@
       "u": "https://www.minorplanetcenter.net/iau/lists/TNOs.html",
       "t": "deep"
     }
-  ]
+  ],
+  "diagram_quality": "polished"
 }

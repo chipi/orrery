@@ -147,7 +147,7 @@
     "crewed": false,
     "status": "FLOWN",
     "surface_status": "completed",
-    "surface_duration_days": 125,
+    "surface_duration_days": 116,
     "data_quality": "good",
     "credit": "© Soviet Academy of Sciences (historical). Lander deployed Lunokhod 2 in Le Monnier crater. Lunokhod 2 traversed ~39 km — record until Opportunity (2014).",
     "links": [
@@ -1101,8 +1101,8 @@
   {
     "id": "beresheet",
     "kind": "surface",
-    "agency": "UAESA",
-    "nation": "USA",
+    "agency": "SpaceIL",
+    "nation": "Israel",
     "year": 2019,
     "landing_date": "2019-04-11",
     "lat": 32.594,

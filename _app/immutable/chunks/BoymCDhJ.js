@@ -1,0 +1,1 @@
+function e(e,t){if(!t)return!0;let n=t.trim().toLowerCase();if(!n)return!0;for(let t of e)if(t&&t.toLowerCase().includes(n))return!0;return!1}export{e as t};

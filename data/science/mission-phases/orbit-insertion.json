@@ -4,26 +4,26 @@
   "order": 4,
   "photo": {
     "src": "/images/science/orbit-insertion-mro.webp",
-    "credit": "NASA / JPL-Caltech \u00b7 Mars Reconnaissance Orbiter artist's concept (PIA07245). MOI \u2014 Mars Orbit Insertion \u2014 is the single irreversible burn that captures a spacecraft into Mars orbit; MRO's 27-minute burn in March 2006 was the deepest Mars capture maneuver attempted to that point."
+    "credit": "NASA / JPL-Caltech · Mars Reconnaissance Orbiter artist's concept (PIA07245). MOI — Mars Orbit Insertion — is the single irreversible burn that captures a spacecraft into Mars orbit; MRO's 27-minute burn in March 2006 was the deepest Mars capture maneuver attempted to that point."
   },
   "see_in_app": [
     {
       "route": "/missions",
-      "context_key": "FLIGHT tab shows orbit-insertion \u2206v for orbit-class missions"
+      "context_key": "FLIGHT tab shows orbit-insertion ∆v for orbit-class missions"
     }
   ],
   "links": [
     {
-      "l": "Wikipedia \u00b7 Orbital insertion",
+      "l": "Wikipedia · Orbital insertion",
       "u": "https://en.wikipedia.org/wiki/Orbital_insertion",
       "t": "intro"
     },
     {
-      "l": "NASA \u00b7 Mars Orbit Insertion",
+      "l": "NASA · Mars Orbit Insertion",
       "u": "https://mars.nasa.gov/mro/mission/timeline/mtmoi/",
       "t": "core"
     }
   ],
-  "diagram": "orbit-insertion.svg",
+  "diagram": "orbit-insertion.webp",
   "diagram_quality": "polished"
 }

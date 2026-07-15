@@ -1,0 +1,47 @@
+{
+  "slug": "generational-starships",
+  "movement": "the-far-horizon",
+  "order": 2,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "The Honest Arithmetic — why slow is the only answer left",
+      "href": "/essays/interstellar-exploration",
+      "kind": "essay"
+    },
+    {
+      "label": "The Body in the Dark — the biology this multiplies across centuries",
+      "href": "/essays/the-body-in-the-dark",
+      "kind": "essay"
+    },
+    {
+      "label": "The Exits We’ve Always Known — the engines that would have to hold",
+      "href": "/essays/new-propulsion",
+      "kind": "essay"
+    },
+    {
+      "label": "Explore the whole system that made us",
+      "href": "/explore",
+      "kind": "interactive"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia — Biosphere 2 (closed-ecology experiment)",
+      "url": "https://en.wikipedia.org/wiki/Biosphere_2"
+    },
+    {
+      "title": "British Interplanetary Society — worldships / Project Hyperion",
+      "url": "https://www.bis-space.com/"
+    },
+    {
+      "title": "NASA — Environmental Control and Life Support (ECLSS)",
+      "url": "https://www.nasa.gov/reference/environmental-control-and-life-support-systems-eclss/"
+    },
+    {
+      "title": "Wikipedia — Generation ship (minimum viable population, wait calculation)",
+      "url": "https://en.wikipedia.org/wiki/Generation_ship"
+    }
+  ],
+  "hero": "essays/generational-starships/the-ship-as-world"
+}

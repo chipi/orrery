@@ -4,27 +4,27 @@
   "order": 2,
   "photo": {
     "src": "/images/science/tsiolkovsky-portrait.webp",
-    "credit": "Soviet press archive \u00b7 Konstantin Tsiolkovsky (1857\u20131935). Self-taught Russian schoolteacher who derived the rocket equation in 1903 \u2014 the equation that ties every modern spacecraft's mass budget to its propellant choice."
+    "credit": "Soviet press archive · Konstantin Tsiolkovsky (1857–1935). Self-taught Russian schoolteacher who derived the rocket equation in 1903 — the equation that ties every modern spacecraft's mass budget to its propellant choice."
   },
   "see_in_app": [
     {
       "route": "/missions",
-      "context_key": "Each rocket's \u2206v capability is computed from its Isp and propellant fraction"
+      "context_key": "Each rocket's ∆v capability is computed from its Isp and propellant fraction"
     }
   ],
   "links": [
     {
-      "l": "Wikipedia \u00b7 Tsiolkovsky rocket equation",
+      "l": "Wikipedia · Tsiolkovsky rocket equation",
       "u": "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation",
       "t": "intro"
     },
     {
-      "l": "NASA \u00b7 The Rocket Equation",
+      "l": "NASA · The Rocket Equation",
       "u": "https://www.nasa.gov/wp-content/uploads/2017/02/rocket-equation-2.pdf",
       "t": "core"
     }
   ],
   "formula_latex": "\\Delta v = I_{sp} \\cdot g_0 \\cdot \\ln\\!\\left(\\frac{m_0}{m_f}\\right)",
-  "diagram": "tsiolkovsky.svg",
+  "diagram": "tsiolkovsky.webp",
   "diagram_quality": "polished"
 }

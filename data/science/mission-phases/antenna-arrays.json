@@ -1,0 +1,30 @@
+{
+  "id": "antenna-arrays",
+  "tab": "mission-phases",
+  "order": 14,
+  "see_in_app": [
+    {
+      "route": "/missions",
+      "context_key": "Voyager 2 — Neptune flyby (1989) used a multi-site array combining DSN + Parkes + Canberra to capture its faint signal"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Deep Space Network",
+      "u": "https://www.nasa.gov/communicating-with-missions/dsn/",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Antenna array (deep space)",
+      "u": "https://en.wikipedia.org/wiki/Antenna_array_(deep_space)",
+      "t": "core"
+    },
+    {
+      "l": "NASA DSN · Aperture Enhancement Program",
+      "u": "https://deepspace.jpl.nasa.gov/dsndocs/810-005/",
+      "t": "core"
+    }
+  ],
+  "diagram": "antenna-arrays.webp",
+  "diagram_quality": "polished"
+}

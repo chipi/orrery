@@ -1,0 +1,1 @@
+var e=new class extends EventTarget{emit(e,t){this.dispatchEvent(new CustomEvent(e,{detail:t}))}on(e,t){let n=t;return this.addEventListener(e,n),()=>this.removeEventListener(e,n)}};export{e as t};

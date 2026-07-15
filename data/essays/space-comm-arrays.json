@@ -1,0 +1,47 @@
+{
+  "slug": "space-comm-arrays",
+  "movement": "into-the-dark",
+  "order": 4,
+  "status": "published",
+  "read_next": [
+    {
+      "label": "Running the Solar System on a Whisper — the three dishes this essay grows from",
+      "href": "/essays/comms",
+      "kind": "essay"
+    },
+    {
+      "label": "The honest arithmetic of interstellar distance — where even light is slow",
+      "href": "/essays/interstellar-exploration",
+      "kind": "essay"
+    },
+    {
+      "label": "The Deep Space Network — how ranging and Doppler actually work",
+      "href": "/science/mission-phases/dsn",
+      "kind": "science"
+    },
+    {
+      "label": "Fly a mission — watch a command cross the light-lag",
+      "href": "/fly",
+      "kind": "interactive"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA — Deep Space Network",
+      "url": "https://www.nasa.gov/directorates/somd/space-communications-navigation-program/deep-space-network/"
+    },
+    {
+      "title": "NASA — Deep Space Optical Communications (DSOC) aboard Psyche",
+      "url": "https://www.nasa.gov/mission/deep-space-optical-communications-dsoc/"
+    },
+    {
+      "title": "NASA — Laser Communications Relay Demonstration (LCRD)",
+      "url": "https://www.nasa.gov/mission/laser-communications-relay-demonstration-lcrd/"
+    },
+    {
+      "title": "IETF RFC 9171 — Bundle Protocol Version 7 (Delay-Tolerant Networking)",
+      "url": "https://www.rfc-editor.org/rfc/rfc9171.html"
+    }
+  ],
+  "hero": "essays/space-comm-arrays/the-bottleneck"
+}

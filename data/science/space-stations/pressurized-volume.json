@@ -9,11 +9,11 @@
   "see_in_app": [
     {
       "route": "/iss",
-      "context_key": "Habitable modules on the ISS sum to roughly 388 m\u00b3 of pressurized volume"
+      "context_key": "ISS habitable volume is roughly 388 m\u00b3; total pressurized volume is ~916 m\u00b3"
     },
     {
       "route": "/tiangong",
-      "context_key": "Tiangong's three pressurized modules total about 110 m\u00b3"
+      "context_key": "Tiangong's three modules have ~122 m\u00b3 habitable volume (~340 m\u00b3 total pressurized)"
     }
   ],
   "links": [

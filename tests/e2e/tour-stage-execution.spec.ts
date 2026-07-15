@@ -27,8 +27,15 @@ test.describe('tour-stage open/close cycle', () => {
   }) => {
     await page.goto('/explore', { waitUntil: 'networkidle' });
 
-    // Wait for the canvas + tour anchors to be wired.
-    await page.waitForSelector('[data-audio-stage="explore-select-saturn"]', { timeout: 5_000 });
+    // Wait for the canvas + tour anchors to be wired. The anchors only
+    // mount once the /explore Three.js scene + missions data are ready —
+    // a heavy first paint. The old 5 s budget flaked on the loaded
+    // docker-e2e desktop leg (workers=1): the run's error-context showed
+    // the anchor "resolved to visible" but only after 5 s had elapsed, so
+    // the wait had already timed out. Give the same 3D-load headroom the
+    // /earth sibling below already uses (10 s scene-ready wait) — a true
+    // hang still fails well inside 30 s.
+    await page.waitForSelector('[data-audio-stage="explore-select-saturn"]', { timeout: 30_000 });
 
     // Pre-state: no planet panel open.
     await expect(page.locator('[data-audio-stage="panel-close"]')).toHaveCount(0);
@@ -45,18 +52,18 @@ test.describe('tour-stage open/close cycle', () => {
     // Panel opens with a close button — the visible Saturn label is the
     // panel title rendered by Panel.svelte.
     const closeBtn = page.locator('[data-audio-stage="panel-close"]');
-    await expect(closeBtn).toBeVisible({ timeout: 5_000 });
+    await expect(closeBtn).toBeVisible({ timeout: 15_000 });
 
     // Close via the tour selector + assert the panel actually disappears.
     await page.evaluate(() => {
       (document.querySelector('[data-audio-stage="panel-close"]') as HTMLElement | null)?.click();
     });
-    await expect(closeBtn).toHaveCount(0, { timeout: 5_000 });
+    await expect(closeBtn).toHaveCount(0, { timeout: 15_000 });
   });
 
   test('/explore: tour-anchor selects open panels for every named planet', async ({ page }) => {
     await page.goto('/explore', { waitUntil: 'networkidle' });
-    await page.waitForSelector('[data-audio-stage="explore-select-saturn"]', { timeout: 5_000 });
+    await page.waitForSelector('[data-audio-stage="explore-select-saturn"]', { timeout: 30_000 });
 
     // Mirror the guide-explore beat sequence from src/lib/audio-tour.ts —
     // Mercury, Mars, Saturn, Neptune, Sun, Earth. Each click should land
@@ -75,13 +82,13 @@ test.describe('tour-stage open/close cycle', () => {
         (document.querySelector(`[data-audio-stage="${sel}"]`) as HTMLElement | null)?.click();
       }, a);
       await expect(page.locator('[data-audio-stage="panel-close"]')).toBeVisible({
-        timeout: 3_000,
+        timeout: 15_000,
       });
       await page.evaluate(() => {
         (document.querySelector('[data-audio-stage="panel-close"]') as HTMLElement | null)?.click();
       });
       await expect(page.locator('[data-audio-stage="panel-close"]')).toHaveCount(0, {
-        timeout: 3_000,
+        timeout: 15_000,
       });
     }
   });

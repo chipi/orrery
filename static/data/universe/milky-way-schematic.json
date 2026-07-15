@@ -1,0 +1,40 @@
+{
+  "_note": "Face-on galactocentric schematic of the Milky Way for /explore v2 (RFC-032 S5, decision C-E). POSITIONS ARE SCHEMATIC — a labelled model, NOT to scale. The Galaxy's spiral structure is genuinely uncertain, so an honest labelled diagram beats a fake to-scale render (PRD-030 principle 2). The astrometric FACTS are real and cited: the Sun's distance to the Galactic Centre (GRAVITY Collaboration 2019) and the mass of Sagittarius A* (GRAVITY Collaboration 2022). Units: kiloparsecs in the galactic plane, Sagittarius A* at the origin; x = toward the Galactic anticentre through the Sun is handled by the scene.",
+  "disk_radius_kpc": 16,
+  "sun_galactocentric_kpc": 8.178,
+  "sun_galactocentric_ly": 26700,
+  "objects": [
+    {
+      "id": "sagittarius-a-star",
+      "name": "Sagittarius A*",
+      "kind": "supermassive-black-hole",
+      "x": 0,
+      "z": 0,
+      "mass_solar": 4300000,
+      "dist_from_sun_ly": 26700,
+      "science_section": "black-holes"
+    },
+    {
+      "id": "sun",
+      "name": "The Sun",
+      "kind": "star",
+      "x": -3.457,
+      "z": 7.412,
+      "arm": "Orion Spur",
+      "science_section": "local-group"
+    }
+  ],
+  "arms": [
+    { "id": "perseus", "name": "Perseus Arm", "label_x": -12.5, "label_z": -3.5, "minor": false },
+    {
+      "id": "scutum-centaurus",
+      "name": "Scutum–Centaurus Arm",
+      "label_x": 8.5,
+      "label_z": 10.5,
+      "minor": false
+    },
+    { "id": "sagittarius", "name": "Sagittarius Arm", "label_x": 7.5, "label_z": -11.5, "minor": false },
+    { "id": "norma", "name": "Norma Arm", "label_x": -9.5, "label_z": 11.5, "minor": false },
+    { "id": "orion-spur", "name": "Orion Spur", "label_x": -3.457, "label_z": 7.412, "minor": true }
+  ]
+}

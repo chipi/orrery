@@ -215,6 +215,7 @@ const validateTextSources = ajv.compile(textSourcesSchema);
 const validateDataSources = ajv.compile(dataSourcesSchema);
 const validateCultureDoors = ajv.compile(loadSchema('culture-door.schema.json'));
 const validateDeepSkyObjects = ajv.compile(loadSchema('deep-sky-object.schema.json'));
+const validateMilkyWay = ajv.compile(loadSchema('milky-way.schema.json'));
 const validateLinkProvenance = ajv.compile(linkProvenanceSchema);
 const validateFleetEntry = ajv.compile(fleetEntrySchema);
 const validateFleetIndex = ajv.compile(fleetIndexSchema);
@@ -502,6 +503,29 @@ validateFile(join(DATA_ROOT, 'universe', 'deep-sky-objects.json'), validateDeepS
             `      gatewaySystem '${o.gatewaySystem}' (object '${o.id}') not a known exoplanet host`,
           );
         }
+      }
+    }
+  }
+}
+// /explore v2 Slice 5 — Milky Way schematic; every object's science_section must
+// resolve to a real /science/observation article (the pin panels deep-link there).
+validateFile(join(DATA_ROOT, 'universe', 'milky-way-schematic.json'), validateMilkyWay);
+{
+  const mwPath = join(DATA_ROOT, 'universe', 'milky-way-schematic.json');
+  const obsIndexPath = join(DATA_ROOT, 'science', 'observation', '_index.json');
+  if (existsSync(mwPath) && existsSync(obsIndexPath)) {
+    const mw = readJson(mwPath) as { objects: Array<{ id: string; science_section: string }> };
+    const obs = readJson(obsIndexPath) as { ids: string[] };
+    const ids = new Set(obs.ids);
+    for (const o of mw.objects) {
+      if (!ids.has(o.science_section)) {
+        failed++;
+        console.error('\n  ✗ universe/milky-way-schematic.json');
+        console.error(
+          `      science_section '${o.science_section}' (object '${o.id}') not a /science/observation article`,
+        );
+      } else {
+        passed++;
       }
     }
   }

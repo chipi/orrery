@@ -1592,5 +1592,17 @@
   "explore_ds_cat_star_cluster": "Ammasso stellare",
   "explore_ds_cat_globular_cluster": "Ammasso globulare",
   "explore_ds_cat_star": "Stella",
-  "explore_ds_cat_other": "Oggetto del cielo profondo"
+  "explore_ds_cat_other": "Oggetto del cielo profondo",
+  "explore_ctx_milky_way": "Via Lattea",
+  "explore_mw_schematic_badge": "Schematico · non in scala",
+  "explore_mw_kind_black_hole": "Buco nero supermassiccio",
+  "explore_mw_kind_star": "La nostra stella",
+  "explore_mw_label_mass": "Massa",
+  "explore_mw_label_dist_sun": "Distanza dal Sole",
+  "explore_mw_label_dist_centre": "Distanza dal centro",
+  "explore_mw_label_location": "Posizione",
+  "explore_mw_solar_masses": "masse solari",
+  "explore_mw_learn_more": "Leggi di più",
+  "explore_mw_sag_a_blurb": "Il buco nero da 4 milioni di masse solari al centro della Via Lattea, fotografato dall'Event Horizon Telescope nel 2022. Ogni stella della Galassia — compreso il Sole — gli orbita attorno.",
+  "explore_mw_sun_blurb": "Il Sole si trova a circa due terzi della distanza dal centro, su uno sperone minore tra i bracci del Sagittario e di Perseo. Un'orbita completa della Galassia richiede circa 230 milioni di anni."
 }

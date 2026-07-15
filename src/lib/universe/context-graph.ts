@@ -50,12 +50,28 @@ export const SOLAR_SYSTEM_CONTEXT: Context = {
 /** The Stellar Neighborhood: the real HYG field. 1 scene unit = 1 pc. */
 export const NEIGHBORHOOD_CONTEXT: Context = {
   id: 'neighborhood',
-  parent: null, // Milky Way arrives in S5
+  parent: 'milky-way', // Slice 5 — zoom out past the field into the galaxy
   child: 'solar-system',
   units: 'pc',
   sceneUnitsPerParsec: 1,
   outerBoundaryScene: Number.POSITIVE_INFINITY,
   innerBoundaryScene: 0.02, // pc (~4125 AU) — below the ~0.0291 pc landing point
+};
+
+/**
+ * The Milky Way (Slice 5). A face-on SCHEMATIC — not to scale (PRD-030
+ * principle 2) — so, like a BodyScene, it's entered by a warp framing with
+ * nominal units rather than a physical re-base. `sceneUnitsPerParsec` is nominal;
+ * the page drives the Neighborhood↔MilkyWay crossing directly.
+ */
+export const MILKY_WAY_CONTEXT: Context = {
+  id: 'milky-way',
+  parent: null, // outermost for now; the Local Group arrives in S8+
+  child: 'neighborhood',
+  units: 'pc',
+  sceneUnitsPerParsec: 1,
+  outerBoundaryScene: Number.POSITIVE_INFINITY,
+  innerBoundaryScene: 0,
 };
 
 /** The context id for a host star's exoplanet BodyScene (Slice 2). */

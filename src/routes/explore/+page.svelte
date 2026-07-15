@@ -36,6 +36,7 @@
     ContextGraph,
     SOLAR_SYSTEM_CONTEXT,
     NEIGHBORHOOD_CONTEXT,
+    MILKY_WAY_CONTEXT,
     makeBodyContext,
     bodyContextId,
   } from '$lib/universe/context-graph';
@@ -67,6 +68,8 @@
     getCultureDoors,
     getDeepSkyObjects,
     getDeepSkyGallery,
+    getMilkyWaySchematic,
+    type MilkyWayObject,
     type NamedStar,
     type LocalizedNamedStar,
     type ExoplanetPlanet,
@@ -81,6 +84,7 @@
   import StarPanel from '$lib/components/StarPanel.svelte';
   import ExoplanetPanel from '$lib/components/ExoplanetPanel.svelte';
   import DeepSkyPanel from '$lib/components/DeepSkyPanel.svelte';
+  import MilkyWayPanel from '$lib/components/MilkyWayPanel.svelte';
   import StarIndex from '$lib/components/StarIndex.svelte';
   import type { AnonymousStar } from '$lib/universe/anonymous-star';
   import { localeFromPage } from '$lib/locale';
@@ -894,7 +898,9 @@
   let scaleReadout = $state<ScaleReadout | null>(null);
   let scaleBarPx = $state(0);
   let scaleBarLabel = $state('');
-  let contextId = $state<'solar-system' | 'neighborhood' | 'body-scene'>('solar-system');
+  let contextId = $state<'solar-system' | 'neighborhood' | 'milky-way' | 'body-scene'>(
+    'solar-system',
+  );
   // Slice 2: the exoplanet host whose BodyScene is active (breadcrumb crumb) + the
   // set of host ids that have a system to descend into (drives "Enter system").
   let bodyHostName = $state('');
@@ -1034,6 +1040,18 @@
   let exitNeighborhoodFn: (() => void) | null = null;
   // Slice 2: leave an exoplanet BodyScene back out to the neighborhood.
   let exitBodySceneFn: (() => void) | null = null;
+  // Slice 5: leave the Milky Way context back in to the neighborhood.
+  let exitMilkyWayFn: (() => void) | null = null;
+  // Slice 5: the selected Milky Way pin (Sun / Sag A*) → MilkyWayPanel.
+  let mwObjects = $state<MilkyWayObject[]>([]);
+  let selectedMwId = $state<string | null>(null);
+  let mwPanelOpen = $state(false);
+  let closeMwFn: (() => void) | null = null;
+  let mwDeepLinkFn: ((id: string) => void) | null = null;
+  let selectedMwObject = $derived(mwObjects.find((o) => o.id === selectedMwId) ?? null);
+  let mwLearnHref = $derived(
+    selectedMwObject ? `${base}/science/observation/${selectedMwObject.science_section}` : base,
+  );
   // Set in onMount; lets the star index / ?goto= resolver select a named star.
   let selectStarFn: ((id: string) => void) | null = null;
   let closeStarFn: (() => void) | null = null;
@@ -1291,6 +1309,33 @@
         // clear, or a transient URL write (e.g. the gateway's ?system write
         // racing our ?deepsky removal) would re-fire the resolver + re-immerse.
         if (d) lastDeepSky = d;
+        replaceState(url, $page.state);
+      }
+    });
+  });
+
+  // v2 Slice 5 — ?galaxy=<pinId> deep-links into the Milky Way + selects a pin.
+  let lastGalaxy: string | null = null;
+  $effect(() => {
+    const g = $page.url.searchParams.get('galaxy');
+    if (g && g !== lastGalaxy && mwDeepLinkFn) {
+      lastGalaxy = g;
+      untrack(() => mwDeepLinkFn?.(g));
+    }
+  });
+  // Mirror the selected Milky Way pin into ?galaxy (shallow, no history).
+  let galaxyUrlId = $derived(contextId === 'milky-way' && selectedMwId ? selectedMwId : null);
+  let everEnteredGalaxy = false;
+  $effect(() => {
+    const g = galaxyUrlId;
+    if (g) everEnteredGalaxy = true;
+    untrack(() => {
+      const url = new URL($page.url);
+      const cur = url.searchParams.get('galaxy') ?? null;
+      if (cur !== g && (g || everEnteredGalaxy)) {
+        if (g) url.searchParams.set('galaxy', g);
+        else url.searchParams.delete('galaxy');
+        if (g) lastGalaxy = g; // don't re-fire the resolver on our own write
         replaceState(url, $page.state);
       }
     });
@@ -2815,7 +2860,7 @@
     // in. Scroll back in past the inner edge to return. v1's zoom range + render
     // path are unchanged — the neighborhood is a second scene, loaded lazily.
     const contextGraph = new ContextGraph(
-      [SOLAR_SYSTEM_CONTEXT, NEIGHBORHOOD_CONTEXT],
+      [SOLAR_SYSTEM_CONTEXT, NEIGHBORHOOD_CONTEXT, MILKY_WAY_CONTEXT],
       'solar-system',
     );
     let nbScene: NeighborhoodScene | null = null;
@@ -2827,7 +2872,49 @@
     const NB_FAR = 1500; // pc — neighborhood far plane
     const SOLAR_FAR = camera.far; // 8000 AU
 
+    // Slice 5 — the Milky Way schematic (nominal scene units; not to scale).
+    let mwScene: import('$lib/universe/milky-way-scene').MilkyWayScene | null = null;
+    let mwLoading = false;
+    const MW_SCENE_RADIUS = 340; // matches MW_DISK_RADIUS_SCENE
+    const MW_ENTRY_CAM_R = MW_SCENE_RADIUS * 1.7; // framing just outside the disk
+    const MW_CAM_R_MIN = MW_SCENE_RADIUS * 0.35; // zoom-in floor → cross back to neighborhood
+    const MW_CAM_R_MAX = MW_SCENE_RADIUS * 4; // zoom-out ceiling
+    const MW_FAR = MW_SCENE_RADIUS * 12;
+    const MW_ENTRY_CAM_P = 0.95; // polar angle — a tilted face-on 3/4 view of the disk
+
     const inNeighborhood = () => contextGraph.active.id === 'neighborhood';
+    const inMilkyWay = () => contextGraph.active.id === 'milky-way';
+
+    async function ensureMilkyWay(): Promise<typeof mwScene> {
+      if (mwScene) return mwScene;
+      if (mwLoading) return null;
+      mwLoading = true;
+      try {
+        const [mod, data] = await Promise.all([
+          import('$lib/universe/milky-way-scene'),
+          getMilkyWaySchematic(fetch),
+        ]);
+        if (!data) return null;
+        mwObjects = data.objects;
+        // Cinematic bloom — reuse the device quality tier's bloom budget so it
+        // scales gracefully (disabled on minimal/low, stronger on cinematic).
+        mwScene = mod.createMilkyWayScene(data, {
+          enabled: quality.bloomEnabled,
+          strength: Math.min(0.5, Math.max(0.32, quality.bloomStrength)),
+          radius: 0.6,
+          threshold: 0.62,
+        });
+        const w = container?.clientWidth ?? 1;
+        const h = container?.clientHeight ?? 1;
+        mwScene.setSize(w, h);
+        return mwScene;
+      } catch (err) {
+        console.error('[explore v2] milky way load failed', err);
+        return null;
+      } finally {
+        mwLoading = false;
+      }
+    }
 
     async function ensureNeighborhood(): Promise<NeighborhoodScene | null> {
       if (nbScene) return nbScene;
@@ -2936,6 +3023,53 @@
       anonStar = null;
     }
     exitNeighborhoodFn = crossInToSolarSystem;
+
+    // ── Milky Way context (Slice 5) — zoom out of the neighborhood into the
+    // galaxy. The schematic is not to scale, so this is a warp framing (nominal
+    // units), mirroring the BodyScene entry rather than a physical re-base. ──
+    async function crossOutToMilkyWay(): Promise<void> {
+      if (inMilkyWay()) return;
+      const scene = await ensureMilkyWay();
+      if (!scene) return; // load failed — stay in the neighborhood
+      contextGraph.setActive('milky-way');
+      contextId = 'milky-way'; // flip chrome immediately, ahead of the HUD tick
+      camRMin = MW_CAM_R_MIN;
+      camRMax = MW_CAM_R_MAX;
+      camera.far = MW_FAR;
+      camera.near = 1;
+      camera.updateProjectionMatrix();
+      camP = MW_ENTRY_CAM_P; // tilt to a face-on 3/4 view of the disk
+      closeStarPanel();
+      anonStar = null;
+      if (reducedMotion) {
+        camR = MW_ENTRY_CAM_R;
+      } else {
+        camR = MW_SCENE_RADIUS * 2.6;
+        startCrossDolly(MW_SCENE_RADIUS * 2.6, MW_ENTRY_CAM_R, 1300);
+        crossingFlashId++;
+        showWarpCaption(`${(26700).toLocaleString()} ${m.explore_light_years()} · Sagittarius A*`);
+      }
+      updateCam();
+    }
+
+    function crossInToNeighborhood(): void {
+      if (!inMilkyWay()) return;
+      dollyActive = false;
+      if (!reducedMotion) crossingFlashId++;
+      mwPanelOpen = false;
+      selectedMwId = null;
+      mwScene?.highlight(null);
+      contextGraph.setActive('neighborhood');
+      contextId = 'neighborhood'; // flip chrome immediately
+      camRMin = NB_CAM_R_MIN;
+      camRMax = NB_CAM_R_MAX;
+      camR = NB_CAM_R_MAX; // re-enter at the neighborhood's outer edge
+      camera.far = NB_FAR;
+      camera.near = 0.001;
+      camera.updateProjectionMatrix();
+      updateCam();
+    }
+    exitMilkyWayFn = crossInToNeighborhood;
 
     // ── Exoplanet BodyScene (Slice 2) ────────────────────────────────────────
     // Descend from the neighborhood into a host star's mini-orrery via a 1–2 s
@@ -3246,6 +3380,12 @@
         lastDeepSky = ds0;
         void resolveDeepSkyDeepLink(ds0);
       }
+      // Cold-load ?galaxy=<pinId> → cross into the Milky Way + select the pin.
+      const gx0 = params0.get('galaxy');
+      if (gx0) {
+        lastGalaxy = gx0;
+        void resolveGalaxyDeepLink(gx0);
+      }
     }
     // Exposed to the template (index / ?goto=) via a top-level binding.
     selectStarFn = selectStar;
@@ -3269,6 +3409,15 @@
       (
         window as unknown as { __exploreEnterDeepSky?: (id: string) => void }
       ).__exploreEnterDeepSky = (id: string) => enterDeepSky(id);
+      (
+        window as unknown as { __exploreEnterMilkyWay?: () => Promise<void> }
+      ).__exploreEnterMilkyWay = async () => {
+        if (!inNeighborhood()) await crossOutToNeighborhood();
+        await crossOutToMilkyWay();
+      };
+      (
+        window as unknown as { __exploreSelectMilkyWay?: (id: string) => Promise<void> }
+      ).__exploreSelectMilkyWay = (id: string) => resolveGalaxyDeepLink(id);
     }
 
     // Camera distance → canonical AU, for the scale HUD (solar camR is AU,
@@ -3281,7 +3430,13 @@
       if ((scaleHudTick++ & 7) !== 0) return;
       const au = camDistAu();
       scaleReadout = describeDistanceAu(au);
-      contextId = inBodyScene() ? 'body-scene' : inNeighborhood() ? 'neighborhood' : 'solar-system';
+      contextId = inBodyScene()
+        ? 'body-scene'
+        : inMilkyWay()
+          ? 'milky-way'
+          : inNeighborhood()
+            ? 'neighborhood'
+            : 'solar-system';
       const vh = container?.clientHeight ?? 1;
       const worldPerPx = (2 * Math.tan((camera.fov * Math.PI) / 180 / 2) * camR) / vh;
       const unitToAu = inNeighborhood() ? AU_PER_PC : 1;
@@ -3647,6 +3802,15 @@
       const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
       ray3dHover.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      // Slice 5 — in the Milky Way, hover highlights the Sun / Sag A* pins.
+      if (inMilkyWay()) {
+        const mh = mwScene ? ray3dHover.intersectObjects(mwScene.pickables, false) : [];
+        const id = (mh[0]?.object.userData.mwObjectId as string | undefined) ?? null;
+        mwScene?.highlight(id ?? selectedMwId);
+        el3d.style.cursor = id ? 'pointer' : 'grab';
+        if (hoverData) hoverData = null;
+        return;
+      }
       // v2: in the stellar neighborhood, hover highlights + names the nearest
       // named star; nothing else is hoverable there.
       if (inNeighborhood()) {
@@ -3892,6 +4056,42 @@
       anonStar = null; // empty space — dismiss the tag
     }
 
+    // Slice 5 — pick a Milky Way pin (Sun / Sag A*) → open the MilkyWayPanel.
+    function pickMilkyWay(e: { clientX: number; clientY: number }): void {
+      if (!mwScene) return;
+      const rect = el3d.getBoundingClientRect();
+      const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+      ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      const hits = ray3d.intersectObjects(mwScene.pickables, false);
+      if (hits.length) {
+        const id = hits[0].object.userData.mwObjectId as string | undefined;
+        if (id) selectMilkyWay(id);
+      }
+    }
+    function selectMilkyWay(id: string): void {
+      if (!mwObjects.some((o) => o.id === id)) return;
+      cue('select');
+      selectedMwId = id;
+      mwPanelOpen = true;
+      mwScene?.highlight(id);
+      trackItemClick('marker', id, '/explore');
+    }
+    function closeMwPanel(): void {
+      mwPanelOpen = false;
+      selectedMwId = null;
+      mwScene?.highlight(null);
+    }
+    async function resolveGalaxyDeepLink(id: string): Promise<void> {
+      if (!inMilkyWay()) {
+        if (!inNeighborhood()) await crossOutToNeighborhood();
+        await crossOutToMilkyWay();
+      }
+      selectMilkyWay(id);
+    }
+    closeMwFn = closeMwPanel;
+    mwDeepLinkFn = resolveGalaxyDeepLink;
+
     const on3dMouseUp = (e: MouseEvent) => {
       const wasDrag = dragMoved3d;
       const wasPan = isPan3d;
@@ -3908,6 +4108,7 @@
         // v2: in the stellar neighborhood pick named stars / anonymous stars
         // instead of the (unrendered) solar bodies.
         if (inBodyScene()) pickBodyScene(e);
+        else if (inMilkyWay()) pickMilkyWay(e);
         else if (inNeighborhood()) pickNeighborhood(e);
         else tryPick3d(e);
       }
@@ -3924,10 +4125,24 @@
       // — see the addEventListener call below.
       e.preventDefault();
       const zoomingOut = e.deltaY > 0;
+      // Slice 5 — the Milky Way is the outermost context: multiplicative zoom;
+      // scroll-in past the inner edge returns to the neighborhood.
+      if (inMilkyWay()) {
+        dollyActive = false;
+        const ratio = zoomingOut ? 1.07 : 1 / 1.07;
+        const next = camR * ratio;
+        if (!zoomingOut && next <= camRMin) {
+          crossInToNeighborhood();
+          return;
+        }
+        camR = Math.max(camRMin, Math.min(camRMax, next));
+        updateCam();
+        return;
+      }
       // v2 boundary: past the heliocentric ceiling, one more scroll-out leaves
       // the solar system; inside the neighborhood, scroll-in past the edge
-      // returns. Neighborhood uses multiplicative zoom (the pc scale spans
-      // orders of magnitude).
+      // returns and scroll-out past the ceiling crosses into the Milky Way.
+      // Neighborhood uses multiplicative zoom (the pc scale spans orders of magnitude).
       if (!inNeighborhood() && zoomingOut && camR >= camRMax - 0.5) {
         void crossOutToNeighborhood();
         return;
@@ -3938,6 +4153,10 @@
         const next = camR * ratio;
         if (!zoomingOut && next <= camRMin) {
           crossInToSolarSystem();
+          return;
+        }
+        if (zoomingOut && camR >= camRMax - 0.5) {
+          void crossOutToMilkyWay();
           return;
         }
         camR = Math.max(camRMin, Math.min(camRMax, next));
@@ -3979,6 +4198,18 @@
         if (pinchPrev3d > 0) {
           const ratio = pinchPrev3d / dist; // >1 = zoom out, <1 = zoom in
           // v2 boundary crossing (mirrors the wheel handler).
+          if (inMilkyWay()) {
+            if (ratio < 1 && camR * ratio <= camRMin) {
+              crossInToNeighborhood();
+              pinchPrev3d = dist;
+              return;
+            }
+            dollyActive = false;
+            camR = Math.max(camRMin, Math.min(camRMax, camR * ratio));
+            updateCam();
+            pinchPrev3d = dist;
+            return;
+          }
           if (!inNeighborhood() && ratio > 1 && camR >= camRMax - 0.5) {
             void crossOutToNeighborhood();
             pinchPrev3d = dist;
@@ -3986,6 +4217,11 @@
           }
           if (inNeighborhood() && ratio < 1 && camR * ratio <= camRMin) {
             crossInToSolarSystem();
+            pinchPrev3d = dist;
+            return;
+          }
+          if (inNeighborhood() && ratio > 1 && camR >= camRMax - 0.5) {
+            void crossOutToMilkyWay();
             pinchPrev3d = dist;
             return;
           }
@@ -4637,6 +4873,7 @@
       renderer.setSize(container.clientWidth, container.clientHeight);
       composer.setSize(container.clientWidth, container.clientHeight);
       bloomPass?.setSize(container.clientWidth, container.clientHeight);
+      mwScene?.setSize(container.clientWidth, container.clientHeight);
       resize2d();
       // Iconic trajectories use Line2 with screen-pixel-aware
       // LineMaterial — push the new resolution so the stroke width
@@ -5142,6 +5379,12 @@
             renderer.render(nbScene.scene, camera);
             return;
           }
+          if (inMilkyWay() && mwScene) {
+            stepCrossDolly();
+            mwScene.update(camera);
+            mwScene.render(renderer, camera); // cinematic bloom composer
+            return;
+          }
 
           // Frame throttle — render 1 of every 4 frames when a right-
           // side detail panel covers the canvas. See module-level
@@ -5167,6 +5410,7 @@
     });
     lifecycle.add(loop.cleanup);
     lifecycle.add(() => nbScene?.dispose());
+    lifecycle.add(() => mwScene?.dispose());
     lifecycle.add(() => bodyScene?.dispose());
     loop.start();
 
@@ -5253,13 +5497,14 @@
 
   <!-- v2 breadcrumb (UXS-014 "you always know where you are"): shown out in the
        stellar neighborhood + inside a system; each crumb warps to that level. -->
-  {#if view === '3d' && (contextId === 'neighborhood' || contextId === 'body-scene')}
+  {#if view === '3d' && (contextId === 'neighborhood' || contextId === 'milky-way' || contextId === 'body-scene')}
     <nav class="context-crumbs" aria-label={m.explore_location_aria()}>
       <button
         type="button"
         class="crumb home"
         onclick={() => {
           if (contextId === 'body-scene') exitBodySceneFn?.();
+          if (contextId === 'milky-way') exitMilkyWayFn?.();
           exitNeighborhoodFn?.();
         }}
       >
@@ -5278,11 +5523,23 @@
         </button>
         <span class="crumb-sep">›</span>
         <span class="crumb current" aria-current="page">{activeDeepSky.name}</span>
+      {:else if contextId === 'milky-way'}
+        <button type="button" class="crumb" onclick={() => exitMilkyWayFn?.()}>
+          {m.explore_ctx_stellar_neighborhood()}
+        </button>
+        <span class="crumb-sep">›</span>
+        <span class="crumb current" aria-current="page">{m.explore_ctx_milky_way()}</span>
       {:else}
         <span class="crumb current" aria-current="page">{m.explore_ctx_stellar_neighborhood()}</span
         >
       {/if}
     </nav>
+  {/if}
+
+  <!-- Slice 5: honesty badge — the Milky Way view is a labelled schematic, not
+       to scale (PRD-030 principle 2). Shown only in the Milky Way context. -->
+  {#if view === '3d' && contextId === 'milky-way'}
+    <div class="mw-badge" role="note">{m.explore_mw_schematic_badge()}</div>
   {/if}
 
   <!-- v2 neighborhood layer toggles (Slice 1): constellation lines. -->
@@ -5347,7 +5604,7 @@
        current zoom — km → AU → light-year → parsec — plus light-travel time and
        a map-style scale bar. Teaches which unit fits which scale as you zoom.
        English chrome for now; i18n before the slice ships. -->
-  {#if view === '3d' && scaleReadout && contextId !== 'body-scene'}
+  {#if view === '3d' && scaleReadout && contextId !== 'body-scene' && contextId !== 'milky-way'}
     <div class="scale-hud" class:neighborhood={contextId === 'neighborhood'} aria-hidden="true">
       <div class="scale-ladder">
         {#each rungLadder as rung (rung)}
@@ -6115,6 +6372,13 @@
   onGateway={(hostId) => deepSkyGatewayFn?.(hostId)}
 />
 
+<MilkyWayPanel
+  object={selectedMwObject}
+  learnHref={mwLearnHref}
+  open={mwPanelOpen}
+  onClose={() => closeMwFn?.()}
+/>
+
 <SmallBodyPanel
   body={selectedSmallBody}
   open={panelState.smallBody}
@@ -6363,7 +6627,11 @@
     bottom: 16px;
     z-index: 6;
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
+    /* Cap to the viewport so the 4-chip row wraps instead of overflowing the
+       right edge on narrow screens (bottom-anchored → wrapped rows stack up). */
+    max-width: calc(100vw - 24px);
   }
   .nb-chip {
     font-family: 'Space Mono', monospace;
@@ -6386,6 +6654,40 @@
   }
   .nb-chip:hover:not(.active) {
     border-color: rgba(78, 205, 196, 0.5);
+  }
+  /* Mobile: the bottom band is shared with the scale-HUD (bottom-right), so keep
+     the toggles compact + capped to the left column — they wrap into a tidy block
+     clear of the HUD instead of sliding underneath it. */
+  @media (max-width: 600px) {
+    .nb-controls {
+      max-width: 50vw;
+    }
+    .nb-chip {
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      padding: 6px 9px;
+      min-height: 30px;
+    }
+  }
+
+  /* Slice 5 — Milky Way honesty badge (bottom-centre pill). */
+  .mw-badge {
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    padding: 6px 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #cdd4e6;
+    background: rgba(10, 14, 26, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    pointer-events: none;
   }
 
   /* v2 breadcrumb — top-left orientation + tap-back to the solar system. */

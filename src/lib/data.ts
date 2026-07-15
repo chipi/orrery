@@ -1961,6 +1961,47 @@ export async function getDeepSkyGallery(fetchFn: FetchLike = fetch): Promise<Dee
   return deepSkyGalleryCache;
 }
 
+// Milky Way schematic (Slice 5) — a face-on galactocentric MODEL (not to scale).
+// Positions are schematic; sun_galactocentric_* and Sag A*'s mass are real,
+// cited astrometry. Drives the /explore v2 Milky Way context.
+export interface MilkyWayObject {
+  id: string;
+  name: string;
+  kind: 'supermassive-black-hole' | 'star';
+  x: number;
+  z: number;
+  mass_solar?: number;
+  dist_from_sun_ly?: number;
+  arm?: string;
+  science_section: string;
+}
+export interface MilkyWayArm {
+  id: string;
+  name: string;
+  label_x: number;
+  label_z: number;
+  minor: boolean;
+}
+export interface MilkyWaySchematic {
+  disk_radius_kpc: number;
+  sun_galactocentric_kpc: number;
+  sun_galactocentric_ly: number;
+  objects: MilkyWayObject[];
+  arms: MilkyWayArm[];
+}
+let milkyWayCache: Promise<MilkyWaySchematic | null> | null = null;
+/** The Milky Way schematic (cached), or null if unavailable. */
+export async function getMilkyWaySchematic(
+  fetchFn: FetchLike = fetch,
+): Promise<MilkyWaySchematic | null> {
+  if (!milkyWayCache) {
+    milkyWayCache = get<MilkyWaySchematic>('universe/milky-way-schematic.json', fetchFn).catch(
+      () => null,
+    );
+  }
+  return milkyWayCache;
+}
+
 // Per-planet editorial overlay (Slice 2) — a "why this world matters" note that
 // leans into the planet's science + its sci-fi / news / cultural fame. Keyed by
 // planet id under i18n-src/<locale>/universe/exoplanets/<id>.json.

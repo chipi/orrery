@@ -87,6 +87,21 @@
       "used_on": [
         "explore"
       ]
+    },
+    {
+      "id": "gravity-eht-galactic-centre",
+      "name": "GRAVITY Collaboration · Event Horizon Telescope",
+      "catalog": "Galactic-centre astrometry",
+      "version": "published",
+      "category": "other",
+      "description": "Real astrometry underpinning /explore’s Milky Way schematic: the Sun's distance to the Galactic Centre (R₀ ≈ 8.18 kpc, GRAVITY Collaboration 2019) and the mass of Sagittarius A* (≈ 4.3 million solar masses, GRAVITY Collaboration 2022; imaged by the Event Horizon Telescope 2022). The Galaxy's spiral positions are schematic; these facts are cited and real.",
+      "source_url": "https://www.eso.org/public/news/eso2208-eht-mw/",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "Published scientific measurements from the GRAVITY Collaboration (A&A) and the EHT/ESO release, reusable with attribution. Values only — no imagery embedded; the Milky Way view is our own procedural schematic.",
+      "used_on": [
+        "explore"
+      ]
     }
   ]
 }

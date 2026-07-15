@@ -1592,5 +1592,17 @@
   "explore_ds_cat_star_cluster": "Звёздное скопление",
   "explore_ds_cat_globular_cluster": "Шаровое скопление",
   "explore_ds_cat_star": "Звезда",
-  "explore_ds_cat_other": "Объект дальнего космоса"
+  "explore_ds_cat_other": "Объект дальнего космоса",
+  "explore_ctx_milky_way": "Млечный Путь",
+  "explore_mw_schematic_badge": "Схема · масштаб не соблюден",
+  "explore_mw_kind_black_hole": "Сверхмассивная чёрная дыра",
+  "explore_mw_kind_star": "Наша звезда",
+  "explore_mw_label_mass": "Масса",
+  "explore_mw_label_dist_sun": "Расстояние от Солнца",
+  "explore_mw_label_dist_centre": "Расстояние до центра",
+  "explore_mw_label_location": "Расположение",
+  "explore_mw_solar_masses": "солнечных масс",
+  "explore_mw_learn_more": "Подробнее",
+  "explore_mw_sag_a_blurb": "Чёрная дыра массой 4 миллиона солнечных масс в центре Млечного Пути, снимок которой получен телескопом Event Horizon в 2022 году. Все звёзды Галактики, включая Солнце, обращаются вокруг неё.",
+  "explore_mw_sun_blurb": "Солнце находится примерно на двух третях пути от центра, на малом ответвлении между рукавами Стрельца и Персея. Один оборот вокруг Галактики занимает около 230 миллионов лет."
 }

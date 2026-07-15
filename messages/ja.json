@@ -1592,5 +1592,17 @@
   "explore_ds_cat_star_cluster": "星団",
   "explore_ds_cat_globular_cluster": "球状星団",
   "explore_ds_cat_star": "恒星",
-  "explore_ds_cat_other": "ディープスカイ天体"
+  "explore_ds_cat_other": "ディープスカイ天体",
+  "explore_ctx_milky_way": "天の川銀河",
+  "explore_mw_schematic_badge": "模式図・縮尺なし",
+  "explore_mw_kind_black_hole": "超大質量ブラックホール",
+  "explore_mw_kind_star": "太陽",
+  "explore_mw_label_mass": "質量",
+  "explore_mw_label_dist_sun": "太陽からの距離",
+  "explore_mw_label_dist_centre": "銀河中心までの距離",
+  "explore_mw_label_location": "位置",
+  "explore_mw_solar_masses": "太陽質量",
+  "explore_mw_learn_more": "詳細を読む",
+  "explore_mw_sag_a_blurb": "天の川銀河の中心にある太陽の400万倍の質量を持つブラックホール。2022年にイベント・ホライズン・テレスコープによって撮像された。太陽を含む銀河系内の全ての恒星がこれを周回している。",
+  "explore_mw_sun_blurb": "太陽は銀河中心から約3分の2の位置、いて座腕とペルセウス腕の間の小さな分枝上にある。銀河を一周するのに約2億3000万年かかる。"
 }

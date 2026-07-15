@@ -1592,5 +1592,17 @@
   "explore_ds_cat_star_cluster": "星团",
   "explore_ds_cat_globular_cluster": "球状星团",
   "explore_ds_cat_star": "恒星",
-  "explore_ds_cat_other": "深空天体"
+  "explore_ds_cat_other": "深空天体",
+  "explore_ctx_milky_way": "银河系",
+  "explore_mw_schematic_badge": "示意图 · 非按比例",
+  "explore_mw_kind_black_hole": "超大质量黑洞",
+  "explore_mw_kind_star": "我们的恒星",
+  "explore_mw_label_mass": "质量",
+  "explore_mw_label_dist_sun": "距太阳的距离",
+  "explore_mw_label_dist_centre": "距中心的距离",
+  "explore_mw_label_location": "位置",
+  "explore_mw_solar_masses": "太阳质量",
+  "explore_mw_learn_more": "了解更多",
+  "explore_mw_sag_a_blurb": "银河系中心的400万太阳质量黑洞,由事件视界望远镜于2022年成像。银河系中的每颗恒星——包括太阳——都围绕它运行。",
+  "explore_mw_sun_blurb": "太阳位于距中心约三分之二的位置,在人马臂和英仙臂之间的一条次旋臂上。绕银河系运行一周大约需要2.3亿年。"
 }

@@ -1592,5 +1592,17 @@
   "explore_ds_cat_star_cluster": "Cúmulo estelar",
   "explore_ds_cat_globular_cluster": "Cúmulo globular",
   "explore_ds_cat_star": "Estrella",
-  "explore_ds_cat_other": "Objeto de cielo profundo"
+  "explore_ds_cat_other": "Objeto de cielo profundo",
+  "explore_ctx_milky_way": "Vía Láctea",
+  "explore_mw_schematic_badge": "Esquemático · fuera de escala",
+  "explore_mw_kind_black_hole": "Agujero negro supermasivo",
+  "explore_mw_kind_star": "Nuestra estrella",
+  "explore_mw_label_mass": "Masa",
+  "explore_mw_label_dist_sun": "Distancia desde el Sol",
+  "explore_mw_label_dist_centre": "Distancia al centro",
+  "explore_mw_label_location": "Ubicación",
+  "explore_mw_solar_masses": "masas solares",
+  "explore_mw_learn_more": "Leer más",
+  "explore_mw_sag_a_blurb": "El agujero negro de 4 millones de masas solares en el corazón de la Vía Láctea, fotografiado por el Telescopio Horizonte de Sucesos en 2022. Todas las estrellas de la Galaxia —incluido el Sol— orbitan a su alrededor.",
+  "explore_mw_sun_blurb": "El Sol se encuentra a unos dos tercios de distancia desde el centro, en un brazo menor entre los brazos de Sagitario y Perseo. Una órbita completa alrededor de la Galaxia dura aproximadamente 230 millones de años."
 }

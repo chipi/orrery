@@ -1592,5 +1592,17 @@
   "explore_ds_cat_star_cluster": "Amas d'étoiles",
   "explore_ds_cat_globular_cluster": "Amas globulaire",
   "explore_ds_cat_star": "Étoile",
-  "explore_ds_cat_other": "Objet du ciel profond"
+  "explore_ds_cat_other": "Objet du ciel profond",
+  "explore_ctx_milky_way": "Voie lactée",
+  "explore_mw_schematic_badge": "Schématique · hors échelle",
+  "explore_mw_kind_black_hole": "Trou noir supermassif",
+  "explore_mw_kind_star": "Notre étoile",
+  "explore_mw_label_mass": "Masse",
+  "explore_mw_label_dist_sun": "Distance du Soleil",
+  "explore_mw_label_dist_centre": "Distance au centre",
+  "explore_mw_label_location": "Position",
+  "explore_mw_solar_masses": "masses solaires",
+  "explore_mw_learn_more": "En savoir plus",
+  "explore_mw_sag_a_blurb": "Le trou noir de 4 millions de masses solaires au cœur de la Voie lactée, imagé par l'Event Horizon Telescope en 2022. Toutes les étoiles de la Galaxie — y compris le Soleil — orbitent autour de lui.",
+  "explore_mw_sun_blurb": "Le Soleil se situe à environ deux tiers de la distance depuis le centre, sur un bras mineur entre les bras du Sagittaire et de Persée. Une orbite complète autour de la Galaxie prend environ 230 millions d'années."
 }

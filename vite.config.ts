@@ -444,6 +444,9 @@ export default defineConfig(({ mode }) => {
           // colour/glint-sizing + LOD-bloom math is unit-tested in
           // deep-sky-visual.test.ts + deep-sky-lod.test.ts.
           'src/lib/universe/deep-sky-scene.ts',
+          // Slice 5 Milky Way schematic scene — same WebGL policy; its pure spiral
+          // + placement math is unit-tested in milky-way-visual.test.ts.
+          'src/lib/universe/milky-way-scene.ts',
           '*.config.{js,ts}',
           '.svelte-kit/',
         ],

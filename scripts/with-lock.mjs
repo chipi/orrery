@@ -10,6 +10,14 @@
  *   on a phantom error. The same hazard exists for any tool that writes
  *   into `node_modules/.vite`, `.svelte-kit/`, or `build/`.
  *
+ *   The lock is scoped PER WORKING TREE (LOCK_DIR includes a hash of the
+ *   resolved cwd). Those guarded dirs live inside the working tree and are
+ *   never shared across git worktrees, so a global-by-name lock would have
+ *   serialized fully-isolated worktrees — a real bug that blocked (and,
+ *   past the acquire timeout, failed) a push in one worktree behind a
+ *   preflight in another. Same checkout → same cwd → same lock (still
+ *   serialized). Different worktree → different lock (independent).
+ *
  * Strategy:
  *   - Lock = an empty directory at LOCK_DIR (mkdir is atomic on POSIX).
  *   - On collision, poll every 2 s with a CLI breadcrumb so the waiting
@@ -26,8 +34,9 @@
  *   node scripts/with-lock.mjs preflight -- npm run preflight:body
  */
 
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, realpathSync, rmSync, writeFileSync } from 'node:fs';
 import { spawn } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -48,7 +57,25 @@ if (!cmd) {
   process.exit(2);
 }
 
-const LOCK_DIR = join(tmpdir(), `orrery-${name}.lock`);
+// Scope the lock to THIS working tree. The dirs it guards — .svelte-kit/,
+// build/, node_modules/.vite — live INSIDE the working tree and are never
+// shared across git worktrees (each worktree runs its own npm ci / build).
+// Keying only by `name` in a system-wide tmpdir serialized independent,
+// fully-isolated worktrees: a preflight in one worktree would block a
+// push's pre-push hook in another for no reason, and — because acquire()
+// times out after MAX_WAIT_MS — could fail that push outright. Hashing the
+// resolved working-tree root keeps the real guarantee (two shells in the
+// SAME checkout still collide → same cwd → same lock) while dropping the
+// bogus cross-worktree contention.
+const worktreeRoot = (() => {
+  try {
+    return realpathSync(process.cwd());
+  } catch {
+    return process.cwd();
+  }
+})();
+const worktreeId = createHash('sha1').update(worktreeRoot).digest('hex').slice(0, 12);
+const LOCK_DIR = join(tmpdir(), `orrery-${name}-${worktreeId}.lock`);
 
 function readLockMeta() {
   try {

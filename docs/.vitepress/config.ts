@@ -8,7 +8,7 @@ const sidebarOptions = {
   capitalizeFirst: true,
   useTitleFromFileHeading: true,
   useTitleFromFrontmatter: true,
-  excludeFolders: ['.vitepress', 'prototypes'],
+  excludeFolders: ['.vitepress', 'prototypes', 'wip'],
   hyphenToSpace: true,
   underscoreToSpace: true,
 };
@@ -21,6 +21,15 @@ export default defineConfig({
   cleanUrls: true,
   lang: 'en-US',
 
+  // docs/wip/ is internal scratch — WIP notes, plans, fact-check logs
+  // (AGENTS.md §"WIP notes … go in docs/wip/"). They're tracked/findable in
+  // the repo but must NOT be compiled into the published docs site: their
+  // freeform prose (science notation like `<0.7%`, comparison operators)
+  // trips VitePress's Vue markdown compiler ("Invalid end tag") and breaks
+  // the whole Deploy-docs build. Exclude the folder from the build here and
+  // from the generated sidebar above.
+  srcExclude: ['wip/**'],
+
   // ADR/guide docs occasionally link to source files via relative paths
   // like `../../src/lib/foo.ts` — those resolve correctly on GitHub but
   // are not part of the vitepress route table. Allow them; the build
@@ -30,6 +39,15 @@ export default defineConfig({
     // Repo-root files (AGENTS.md, CLAUDE.md, README, CHANGELOG) referenced
     // from docs via `../../../NAME` — valid on GitHub, not vitepress routes.
     /(?:^|\/)(?:\.\.\/)+(?:AGENTS|CLAUDE|README|CHANGELOG)\b/,
+    // Authoring guides (essay-voice, diagram-art-style) reference the now
+    // build-excluded docs/wip/ scratch tree — findable in the repo, not a
+    // published route.
+    /(?:^|\/)\.\.\/wip\//,
+    // The essay-voice guide quotes live-APP deep-links as illustrative
+    // examples (`[dead reckoning](/science/…)`, `/missions`). These target
+    // the running Orrery app (chipi.github.io/orrery/…), not the docs site,
+    // so vitepress rightly can't resolve them as its own routes.
+    /^\/(?:missions|fleet|programs|plan|fly|earth|moon|mars|iss|tiangong|explore|science|essays)(?:\/|$)/,
   ],
 
   // Force dark mode — the app is dark-only, and the docs site should

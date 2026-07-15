@@ -15,9 +15,23 @@
  *   - default = strip params (panorama not active → URL stays clean)
  *
  * Throttle the write at the caller — yaw/pitch update per-frame
- * while dragging; we don't want 60 goto() calls per second.
+ * while dragging; we don't want 60 URL writes per second.
+ *
+ * Uses SvelteKit's SHALLOW `replaceState` (not `goto`). The docstring
+ * always intended "replaceState — no history pollution", but the impl
+ * used `goto(url, { replaceState: true })`, which is a FULL client
+ * navigation: it re-runs the page load and re-initialises the surface
+ * scene. On panorama EXIT that reset `selected` and closed the detail
+ * panel — which, under a loaded docker-e2e runner, failed to re-open in
+ * time, so the Stand-at-site button never came back (mars-tier3 e2e).
+ * Shallow `replaceState` updates the URL + page.state without any
+ * navigation, so the scene + selection stay intact and the button
+ * restores from `panoramaActive = false` alone. It also fixes the
+ * per-drag-frame full-navigation the docstring warned about.
  */
-import { goto } from '$app/navigation';
+import { replaceState } from '$app/navigation';
+import { page } from '$app/stores';
+import { get } from 'svelte/store';
 
 export interface PanoramaUrlState {
   entryId: string | null;
@@ -42,7 +56,7 @@ export function syncPanoramaUrl(currentUrl: URL, state: PanoramaUrlState | null)
     url.searchParams.delete('pano');
     url.searchParams.delete('yaw');
     url.searchParams.delete('pitch');
-    void goto(url, { replaceState: true, keepFocus: true, noScroll: true });
+    replaceState(url, get(page).state);
     return;
   }
 
@@ -57,7 +71,7 @@ export function syncPanoramaUrl(currentUrl: URL, state: PanoramaUrlState | null)
   url.searchParams.set('pano', state.entryId);
   url.searchParams.set('yaw', yawStr);
   url.searchParams.set('pitch', pitchStr);
-  void goto(url, { replaceState: true, keepFocus: true, noScroll: true });
+  replaceState(url, get(page).state);
 }
 
 /**

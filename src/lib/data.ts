@@ -2002,6 +2002,36 @@ export async function getMilkyWaySchematic(
   return milkyWayCache;
 }
 
+// Local Group (Slice 8) — the real catalogued member galaxies of our galaxy group,
+// laid out as a schematic (NOT to scale). Distances + classifications are real; the
+// xyz layout is illustrative (satellites compressed toward their parent).
+export type LocalGroupKind =
+  'spiral' | 'irregular' | 'dwarf-elliptical' | 'dwarf-spheroidal' | 'dwarf-irregular';
+export interface LocalGroupMember {
+  id: string;
+  name: string;
+  kind: LocalGroupKind;
+  parent: string;
+  headliner: boolean;
+  dist_mly: number;
+  diam_kly: number;
+  x: number;
+  y: number;
+  z: number;
+}
+export interface LocalGroupData {
+  extent_mly: number;
+  members: LocalGroupMember[];
+}
+let localGroupCache: Promise<LocalGroupData | null> | null = null;
+/** The Local Group schematic census (cached), or null if unavailable. */
+export async function getLocalGroup(fetchFn: FetchLike = fetch): Promise<LocalGroupData | null> {
+  if (!localGroupCache) {
+    localGroupCache = get<LocalGroupData>('universe/local-group.json', fetchFn).catch(() => null);
+  }
+  return localGroupCache;
+}
+
 // Black holes (Slice 6) — three real + one fictional (Gargantua), rendered with
 // the geodesic gravitational-lensing shader. Real cited GR parameters; Gargantua
 // is badged fiction.

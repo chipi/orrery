@@ -37,6 +37,7 @@
     SOLAR_SYSTEM_CONTEXT,
     NEIGHBORHOOD_CONTEXT,
     MILKY_WAY_CONTEXT,
+    LOCAL_GROUP_CONTEXT,
     makeBodyContext,
     bodyContextId,
   } from '$lib/universe/context-graph';
@@ -69,8 +70,10 @@
     getDeepSkyObjects,
     getDeepSkyGallery,
     getMilkyWaySchematic,
+    getLocalGroup,
     getBlackHole,
     type MilkyWayObject,
+    type LocalGroupMember,
     type BlackHole,
     type NamedStar,
     type LocalizedNamedStar,
@@ -90,6 +93,7 @@
   import HrDiagram from '$lib/components/HrDiagram.svelte';
   import CausalityMap from '$lib/components/CausalityMap.svelte';
   import MilkyWayPanel from '$lib/components/MilkyWayPanel.svelte';
+  import LocalGroupPanel from '$lib/components/LocalGroupPanel.svelte';
   import BlackHolePanel from '$lib/components/BlackHolePanel.svelte';
   import CultureDoorCard from '$lib/components/CultureDoorCard.svelte';
   import StarIndex from '$lib/components/StarIndex.svelte';
@@ -905,9 +909,9 @@
   let scaleReadout = $state<ScaleReadout | null>(null);
   let scaleBarPx = $state(0);
   let scaleBarLabel = $state('');
-  let contextId = $state<'solar-system' | 'neighborhood' | 'milky-way' | 'body-scene'>(
-    'solar-system',
-  );
+  let contextId = $state<
+    'solar-system' | 'neighborhood' | 'milky-way' | 'local-group' | 'body-scene'
+  >('solar-system');
   // Slice 2: the exoplanet host whose BodyScene is active (breadcrumb crumb) + the
   // set of host ids that have a system to descend into (drives "Enter system").
   let bodyHostName = $state('');
@@ -993,7 +997,11 @@
       ? bodyHostName
       : contextId === 'neighborhood'
         ? m.explore_ctx_stellar_neighborhood()
-        : m.explore_ctx_solar_system();
+        : contextId === 'milky-way'
+          ? m.explore_ctx_milky_way()
+          : contextId === 'local-group'
+            ? m.explore_ctx_local_group()
+            : m.explore_ctx_solar_system();
 
   // PRD-023 Slice E.2/E.4 — script-level state for the close-zoom HUD
   // overlays. `cameraState.focusedOnPlanet` is set true when the camera
@@ -1072,6 +1080,12 @@
   let mwPanelOpen = $state(false);
   let closeMwFn: (() => void) | null = null;
   let mwDeepLinkFn: ((id: string) => void) | null = null;
+  // Slice 8: the Local Group context — leave it back in to the Milky Way; the
+  // selected member galaxy → LocalGroupPanel.
+  let exitLocalGroupFn: (() => void) | null = null;
+  let selectedLgMember = $state<LocalGroupMember | null>(null);
+  let lgPanelOpen = $state(false);
+  let closeLgFn: (() => void) | null = null;
   // Slice 6 — the black hole currently rendered full-screen (geodesic lensing).
   let activeBlackHole = $state<BlackHole | null>(null);
   let bhPanelOpen = $state(false);
@@ -2926,7 +2940,7 @@
     // in. Scroll back in past the inner edge to return. v1's zoom range + render
     // path are unchanged — the neighborhood is a second scene, loaded lazily.
     const contextGraph = new ContextGraph(
-      [SOLAR_SYSTEM_CONTEXT, NEIGHBORHOOD_CONTEXT, MILKY_WAY_CONTEXT],
+      [SOLAR_SYSTEM_CONTEXT, NEIGHBORHOOD_CONTEXT, MILKY_WAY_CONTEXT, LOCAL_GROUP_CONTEXT],
       'solar-system',
     );
     let nbScene: NeighborhoodScene | null = null;
@@ -3031,6 +3045,55 @@
         return null;
       } finally {
         mwLoading = false;
+      }
+    }
+
+    // Slice 8 — the Local Group schematic (nominal scene units; not to scale).
+    let lgScene: import('$lib/universe/local-group-scene').LocalGroupScene | null = null;
+    let lgLoading = false;
+    let lgMembers: LocalGroupMember[] = [];
+    // Camera framing params — placeholder defaults; ensureLocalGroup() overwrites all
+    // of these from the scene's real LG_SCENE_RADIUS before any crossing reads them
+    // (crossOutToLocalGroup awaits ensureLocalGroup first), so the defaults never ship.
+    let LG_SCENE_RADIUS = 150;
+    let LG_ENTRY_CAM_R = 306;
+    let LG_ENTRY_CAM_R_MOBILE = 500;
+    let LG_CAM_R_MIN = 200;
+    let LG_CAM_R_MAX = 900;
+    let LG_FAR = 6000;
+    const LG_ENTRY_CAM_P = 1.05; // tilted 3/4 view of the group plane
+    const inLocalGroup = () => contextGraph.active.id === 'local-group';
+
+    async function ensureLocalGroup(): Promise<typeof lgScene> {
+      if (lgScene) return lgScene;
+      if (lgLoading) return null;
+      lgLoading = true;
+      try {
+        const [mod, data] = await Promise.all([
+          import('$lib/universe/local-group-scene'),
+          getLocalGroup(fetch),
+        ]);
+        if (!data) return null;
+        lgMembers = data.members;
+        LG_SCENE_RADIUS = mod.LG_SCENE_RADIUS;
+        LG_ENTRY_CAM_R = LG_SCENE_RADIUS * 2.04;
+        LG_ENTRY_CAM_R_MOBILE = LG_SCENE_RADIUS * 3.3;
+        LG_CAM_R_MIN = LG_SCENE_RADIUS * 1.3; // zoom-in floor → cross back to the galaxy
+        LG_CAM_R_MAX = LG_SCENE_RADIUS * 6; // zoom-out ceiling (outermost for now)
+        LG_FAR = LG_SCENE_RADIUS * 40;
+        lgScene = mod.createLocalGroupScene(data, {
+          enabled: quality.bloomEnabled,
+          strength: Math.min(0.36, Math.max(0.28, quality.bloomStrength)),
+          radius: 0.62,
+          threshold: 0.7,
+        });
+        lgScene.setSize(container?.clientWidth ?? 1, container?.clientHeight ?? 1);
+        return lgScene;
+      } catch (err) {
+        console.error('[explore v2] local group load failed', err);
+        return null;
+      } finally {
+        lgLoading = false;
       }
     }
 
@@ -3199,6 +3262,58 @@
       updateCam();
     }
     exitMilkyWayFn = crossInToNeighborhood;
+
+    // ── Slice 8: MilkyWay ↔ Local Group crossing ─────────────────────────────
+    // Zoom out past the galaxy's ceiling and the Milky Way collapses to one member
+    // of the Local Group schematic; zoom back in past the inner edge (or tap the
+    // crumb) to drop back into the galaxy. Same machinery as the MW crossing.
+    async function crossOutToLocalGroup(): Promise<void> {
+      if (inLocalGroup()) return;
+      const scene = await ensureLocalGroup();
+      if (!scene) return; // load failed — stay in the Milky Way
+      mwPanelOpen = false;
+      selectedMwId = null;
+      mwScene?.highlight(null);
+      contextGraph.setActive('local-group');
+      contextId = 'local-group'; // flip chrome immediately
+      camRMin = LG_CAM_R_MIN;
+      camRMax = LG_CAM_R_MAX;
+      camera.far = LG_FAR;
+      camera.near = 1;
+      camera.updateProjectionMatrix();
+      camP = LG_ENTRY_CAM_P;
+      const portrait = (container?.clientHeight ?? 0) > (container?.clientWidth ?? 1);
+      const entryR = portrait ? LG_ENTRY_CAM_R_MOBILE : LG_ENTRY_CAM_R;
+      if (reducedMotion) {
+        camR = entryR;
+      } else {
+        camR = entryR * 1.3;
+        startCrossDolly(entryR * 1.3, entryR, 1300);
+        crossingFlashId++;
+        showWarpCaption(`${(2540000).toLocaleString()} ${m.explore_light_years()} · Andromeda`);
+      }
+      updateCam();
+    }
+
+    function crossInToMilkyWay(): void {
+      if (!inLocalGroup()) return;
+      dollyActive = false;
+      if (!reducedMotion) crossingFlashId++;
+      lgPanelOpen = false;
+      selectedLgMember = null;
+      lgScene?.highlight(null);
+      contextGraph.setActive('milky-way');
+      contextId = 'milky-way'; // flip chrome immediately
+      camRMin = MW_CAM_R_MIN;
+      camRMax = MW_CAM_R_MAX;
+      camR = MW_CAM_R_MAX; // re-enter at the galaxy's outer edge
+      camera.far = MW_FAR;
+      camera.near = 1;
+      camera.updateProjectionMatrix();
+      camP = MW_ENTRY_CAM_P;
+      updateCam();
+    }
+    exitLocalGroupFn = crossInToMilkyWay;
 
     // ── Exoplanet BodyScene (Slice 2) ────────────────────────────────────────
     // Descend from the neighborhood into a host star's mini-orrery via a 1–2 s
@@ -3567,6 +3682,17 @@
         window as unknown as { __exploreSelectMilkyWay?: (id: string) => Promise<void> }
       ).__exploreSelectMilkyWay = (id: string) => resolveGalaxyDeepLink(id);
       (
+        window as unknown as { __exploreEnterLocalGroup?: () => Promise<void> }
+      ).__exploreEnterLocalGroup = async () => {
+        if (inLocalGroup()) return;
+        if (!inNeighborhood()) await crossOutToNeighborhood();
+        if (!inMilkyWay()) await crossOutToMilkyWay();
+        await crossOutToLocalGroup();
+      };
+      (
+        window as unknown as { __exploreSelectLocalGroup?: (id: string) => void }
+      ).__exploreSelectLocalGroup = (id: string) => selectLocalGroup(id);
+      (
         window as unknown as { __exploreEnterBlackHole?: (id: string) => Promise<void> }
       ).__exploreEnterBlackHole = (id: string) => enterBlackHole(id);
     }
@@ -3583,11 +3709,13 @@
       scaleReadout = describeDistanceAu(au);
       contextId = inBodyScene()
         ? 'body-scene'
-        : inMilkyWay()
-          ? 'milky-way'
-          : inNeighborhood()
-            ? 'neighborhood'
-            : 'solar-system';
+        : inLocalGroup()
+          ? 'local-group'
+          : inMilkyWay()
+            ? 'milky-way'
+            : inNeighborhood()
+              ? 'neighborhood'
+              : 'solar-system';
       const vh = container?.clientHeight ?? 1;
       const worldPerPx = (2 * Math.tan((camera.fov * Math.PI) / 180 / 2) * camR) / vh;
       const unitToAu = inNeighborhood() ? AU_PER_PC : 1;
@@ -3962,6 +4090,15 @@
         if (hoverData) hoverData = null;
         return;
       }
+      // Slice 8 — in the Local Group, hover highlights + names a member galaxy.
+      if (inLocalGroup()) {
+        const mh = lgScene ? ray3dHover.intersectObjects(lgScene.pickables, false) : [];
+        const id = (mh[0]?.object.userData.lgId as string | undefined) ?? null;
+        lgScene?.highlight(id ?? selectedLgMember?.id ?? null);
+        el3d.style.cursor = id ? 'pointer' : 'grab';
+        if (hoverData) hoverData = null;
+        return;
+      }
       // v2: in the stellar neighborhood, hover highlights + names the nearest
       // named star; nothing else is hoverable there.
       if (inNeighborhood()) {
@@ -4239,6 +4376,35 @@
       selectedMwId = null;
       mwScene?.highlight(null);
     }
+
+    // Slice 8 — pick a Local Group member galaxy → open the LocalGroupPanel.
+    function pickLocalGroup(e: { clientX: number; clientY: number }): void {
+      if (!lgScene) return;
+      const rect = el3d.getBoundingClientRect();
+      const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+      ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      const hits = ray3d.intersectObjects(lgScene.pickables, false);
+      if (hits.length) {
+        const id = hits[0].object.userData.lgId as string | undefined;
+        if (id) selectLocalGroup(id);
+      }
+    }
+    function selectLocalGroup(id: string): void {
+      const member = lgMembers.find((mm) => mm.id === id);
+      if (!member) return;
+      cue('select');
+      selectedLgMember = member;
+      lgPanelOpen = true;
+      lgScene?.highlight(id);
+      trackItemClick('marker', id, '/explore');
+    }
+    function closeLgPanel(): void {
+      lgPanelOpen = false;
+      selectedLgMember = null;
+      lgScene?.highlight(null);
+    }
+    closeLgFn = closeLgPanel;
     async function resolveGalaxyDeepLink(id: string): Promise<void> {
       if (!inMilkyWay()) {
         if (!inNeighborhood()) await crossOutToNeighborhood();
@@ -4269,6 +4435,7 @@
         // instead of the (unrendered) solar bodies.
         if (inBodyScene()) pickBodyScene(e);
         else if (inMilkyWay()) pickMilkyWay(e);
+        else if (inLocalGroup()) pickLocalGroup(e);
         else if (inNeighborhood()) pickNeighborhood(e);
         else tryPick3d(e);
       }
@@ -4285,14 +4452,32 @@
       // — see the addEventListener call below.
       e.preventDefault();
       const zoomingOut = e.deltaY > 0;
-      // Slice 5 — the Milky Way is the outermost context: multiplicative zoom;
-      // scroll-in past the inner edge returns to the neighborhood.
+      // Slice 8 — the Local Group is the outermost context: multiplicative zoom;
+      // scroll-in past the inner edge drops back into the Milky Way.
+      if (inLocalGroup()) {
+        dollyActive = false;
+        const ratio = zoomingOut ? 1.07 : 1 / 1.07;
+        const next = camR * ratio;
+        if (!zoomingOut && next <= camRMin) {
+          crossInToMilkyWay();
+          return;
+        }
+        camR = Math.max(camRMin, Math.min(camRMax, next));
+        updateCam();
+        return;
+      }
+      // Slice 5 — the Milky Way: multiplicative zoom; scroll-in past the inner edge
+      // returns to the neighborhood, scroll-out past the ceiling crosses to the Local Group.
       if (inMilkyWay()) {
         dollyActive = false;
         const ratio = zoomingOut ? 1.07 : 1 / 1.07;
         const next = camR * ratio;
         if (!zoomingOut && next <= camRMin) {
           crossInToNeighborhood();
+          return;
+        }
+        if (zoomingOut && camR >= camRMax - 0.5) {
+          void crossOutToLocalGroup();
           return;
         }
         camR = Math.max(camRMin, Math.min(camRMax, next));
@@ -4358,9 +4543,26 @@
         if (pinchPrev3d > 0) {
           const ratio = pinchPrev3d / dist; // >1 = zoom out, <1 = zoom in
           // v2 boundary crossing (mirrors the wheel handler).
+          if (inLocalGroup()) {
+            if (ratio < 1 && camR * ratio <= camRMin) {
+              crossInToMilkyWay();
+              pinchPrev3d = dist;
+              return;
+            }
+            dollyActive = false;
+            camR = Math.max(camRMin, Math.min(camRMax, camR * ratio));
+            updateCam();
+            pinchPrev3d = dist;
+            return;
+          }
           if (inMilkyWay()) {
             if (ratio < 1 && camR * ratio <= camRMin) {
               crossInToNeighborhood();
+              pinchPrev3d = dist;
+              return;
+            }
+            if (ratio > 1 && camR >= camRMax - 0.5) {
+              void crossOutToLocalGroup();
               pinchPrev3d = dist;
               return;
             }
@@ -5034,6 +5236,7 @@
       composer.setSize(container.clientWidth, container.clientHeight);
       bloomPass?.setSize(container.clientWidth, container.clientHeight);
       mwScene?.setSize(container.clientWidth, container.clientHeight);
+      lgScene?.setSize(container.clientWidth, container.clientHeight);
       bhScene?.setSize(container.clientWidth, container.clientHeight, renderer.getPixelRatio());
       resize2d();
       // Iconic trajectories use Line2 with screen-pixel-aware
@@ -5561,6 +5764,12 @@
             mwScene.render(renderer, camera); // cinematic bloom composer
             return;
           }
+          if (inLocalGroup() && lgScene) {
+            stepCrossDolly();
+            lgScene.update(camera);
+            lgScene.render(renderer, camera); // cinematic bloom composer
+            return;
+          }
 
           // Frame throttle — render 1 of every 4 frames when a right-
           // side detail panel covers the canvas. See module-level
@@ -5587,6 +5796,7 @@
     lifecycle.add(loop.cleanup);
     lifecycle.add(() => nbScene?.dispose());
     lifecycle.add(() => mwScene?.dispose());
+    lifecycle.add(() => lgScene?.dispose());
     lifecycle.add(() => bhScene?.dispose());
     lifecycle.add(() => bodyScene?.dispose());
     loop.start();
@@ -5683,14 +5893,15 @@
       <span class="crumb-sep">›</span>
       <span class="crumb current" aria-current="page">{activeBlackHole.name}</span>
     </nav>
-  {:else if view === '3d' && (contextId === 'neighborhood' || contextId === 'milky-way' || contextId === 'body-scene')}
+  {:else if view === '3d' && (contextId === 'neighborhood' || contextId === 'milky-way' || contextId === 'local-group' || contextId === 'body-scene')}
     <nav class="context-crumbs" aria-label={m.explore_location_aria()}>
       <button
         type="button"
         class="crumb home"
         onclick={() => {
           if (contextId === 'body-scene') exitBodySceneFn?.();
-          if (contextId === 'milky-way') exitMilkyWayFn?.();
+          if (contextId === 'local-group') exitLocalGroupFn?.();
+          if (contextId === 'milky-way' || contextId === 'local-group') exitMilkyWayFn?.();
           exitNeighborhoodFn?.();
         }}
       >
@@ -5715,6 +5926,12 @@
         </button>
         <span class="crumb-sep">›</span>
         <span class="crumb current" aria-current="page">{m.explore_ctx_milky_way()}</span>
+      {:else if contextId === 'local-group'}
+        <button type="button" class="crumb" onclick={() => exitLocalGroupFn?.()}>
+          {m.explore_ctx_milky_way()}
+        </button>
+        <span class="crumb-sep">›</span>
+        <span class="crumb current" aria-current="page">{m.explore_ctx_local_group()}</span>
       {:else}
         <span class="crumb current" aria-current="page">{m.explore_ctx_stellar_neighborhood()}</span
         >
@@ -5722,10 +5939,13 @@
     </nav>
   {/if}
 
-  <!-- Slice 5: honesty badge — the Milky Way view is a labelled schematic, not
-       to scale (PRD-030 principle 2). Shown only in the Milky Way context. -->
+  <!-- Slice 5/8: honesty badge — the Milky Way + Local Group views are labelled
+       schematics, not to scale (PRD-030 principle 2). -->
   {#if view === '3d' && contextId === 'milky-way' && !activeBlackHole}
     <div class="mw-badge" role="note">{m.explore_mw_schematic_badge()}</div>
+  {/if}
+  {#if view === '3d' && contextId === 'local-group' && !activeBlackHole}
+    <div class="mw-badge" role="note">{m.explore_lg_schematic_badge()}</div>
   {/if}
 
   <!-- Slice 6: the black-hole render is a geodesic GR ray-trace — label it. -->
@@ -6664,6 +6884,8 @@
   open={mwPanelOpen}
   onClose={() => closeMwFn?.()}
 />
+
+<LocalGroupPanel member={selectedLgMember} open={lgPanelOpen} onClose={() => closeLgFn?.()} />
 
 <BlackHolePanel
   hole={activeBlackHole}

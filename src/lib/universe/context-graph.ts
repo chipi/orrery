@@ -66,8 +66,23 @@ export const NEIGHBORHOOD_CONTEXT: Context = {
  */
 export const MILKY_WAY_CONTEXT: Context = {
   id: 'milky-way',
-  parent: null, // outermost for now; the Local Group arrives in S8+
+  parent: 'local-group', // Slice 8 — zoom out past the galaxy into the Local Group
   child: 'neighborhood',
+  units: 'pc',
+  sceneUnitsPerParsec: 1,
+  outerBoundaryScene: Number.POSITIVE_INFINITY,
+  innerBoundaryScene: 0,
+};
+
+/**
+ * The Local Group (Slice 8). Like the Milky Way, a SCHEMATIC — not to scale
+ * (PRD-030 principle 2) — entered by a warp framing with nominal units; the page
+ * drives the MilkyWay↔LocalGroup crossing directly. Outermost context for now.
+ */
+export const LOCAL_GROUP_CONTEXT: Context = {
+  id: 'local-group',
+  parent: null, // outermost for now; the wider universe arrives later
+  child: 'milky-way',
   units: 'pc',
   sceneUnitsPerParsec: 1,
   outerBoundaryScene: Number.POSITIVE_INFINITY,

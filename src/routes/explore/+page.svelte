@@ -69,7 +69,9 @@
     getDeepSkyObjects,
     getDeepSkyGallery,
     getMilkyWaySchematic,
+    getBlackHole,
     type MilkyWayObject,
+    type BlackHole,
     type NamedStar,
     type LocalizedNamedStar,
     type ExoplanetPlanet,
@@ -85,6 +87,8 @@
   import ExoplanetPanel from '$lib/components/ExoplanetPanel.svelte';
   import DeepSkyPanel from '$lib/components/DeepSkyPanel.svelte';
   import MilkyWayPanel from '$lib/components/MilkyWayPanel.svelte';
+  import BlackHolePanel from '$lib/components/BlackHolePanel.svelte';
+  import CultureDoorCard from '$lib/components/CultureDoorCard.svelte';
   import StarIndex from '$lib/components/StarIndex.svelte';
   import type { AnonymousStar } from '$lib/universe/anonymous-star';
   import { localeFromPage } from '$lib/locale';
@@ -1048,6 +1052,21 @@
   let mwPanelOpen = $state(false);
   let closeMwFn: (() => void) | null = null;
   let mwDeepLinkFn: ((id: string) => void) | null = null;
+  // Slice 6 — the black hole currently rendered full-screen (geodesic lensing).
+  let activeBlackHole = $state<BlackHole | null>(null);
+  let bhPanelOpen = $state(false);
+  let exitBlackHoleFn: (() => void) | null = null;
+  let bhDeepLinkFn: ((id: string) => void) | null = null;
+  // Slice 6 physics lenses (curvature grid + time-dilation readout), on the BH view.
+  let bhCurvatureLens = $state(false);
+  let bhTimeLens = $state(false);
+  let setBhCurvatureFn: ((on: boolean) => void) | null = null;
+  let bhCultureDoors = $state<LocalizedCultureDoor[]>([]);
+  let bhLearnHref = $derived(
+    activeBlackHole ? `${base}/science/observation/${activeBlackHole.science_section}` : base,
+  );
+  // Time-dilation readout: √(1 − rₛ/r) at r = k·rₛ, as a percentage of a far clock.
+  const dilationPct = (k: number): string => `${Math.round(Math.sqrt(1 - 1 / k) * 100)}%`;
   let selectedMwObject = $derived(mwObjects.find((o) => o.id === selectedMwId) ?? null);
   let mwLearnHref = $derived(
     selectedMwObject ? `${base}/science/observation/${selectedMwObject.science_section}` : base,
@@ -1336,6 +1355,33 @@
         if (g) url.searchParams.set('galaxy', g);
         else url.searchParams.delete('galaxy');
         if (g) lastGalaxy = g; // don't re-fire the resolver on our own write
+        replaceState(url, $page.state);
+      }
+    });
+  });
+
+  // v2 Slice 6 — ?bh=<id> deep-links into a black hole's lensing render.
+  let lastBh: string | null = null;
+  $effect(() => {
+    const v = $page.url.searchParams.get('bh');
+    if (v && v !== lastBh && bhDeepLinkFn) {
+      lastBh = v;
+      untrack(() => bhDeepLinkFn?.(v));
+    }
+  });
+  // Mirror the active black hole into ?bh (shallow, no history).
+  let bhUrlId = $derived(activeBlackHole ? activeBlackHole.id : null);
+  let everEnteredBh = false;
+  $effect(() => {
+    const v = bhUrlId;
+    if (v) everEnteredBh = true;
+    untrack(() => {
+      const url = new URL($page.url);
+      const cur = url.searchParams.get('bh') ?? null;
+      if (cur !== v && (v || everEnteredBh)) {
+        if (v) url.searchParams.set('bh', v);
+        else url.searchParams.delete('bh');
+        if (v) lastBh = v;
         replaceState(url, $page.state);
       }
     });
@@ -2885,6 +2931,58 @@
     const inNeighborhood = () => contextGraph.active.id === 'neighborhood';
     const inMilkyWay = () => contextGraph.active.id === 'milky-way';
 
+    // Slice 6 — the geodesic black-hole render is a full-screen takeover (like the
+    // deep-sky immersion), rendered with its own scene + ortho camera on top of
+    // whatever context you came from. Entered by pin / Sag A* / ?bh=; exit restores.
+    let bhScene: import('$lib/universe/black-hole-scene').BlackHoleScene | null = null;
+    let bhLoading = false;
+    let bhLastFrame = 0;
+    async function enterBlackHole(id: string): Promise<void> {
+      if (bhLoading) return;
+      bhLoading = true;
+      try {
+        const hole = await getBlackHole(id, fetch);
+        if (!hole) return;
+        const mod = await import('$lib/universe/black-hole-scene');
+        bhScene?.dispose();
+        bhScene = mod.createBlackHoleScene(hole, quality.tier);
+        bhScene.setSize(
+          container?.clientWidth ?? 1,
+          container?.clientHeight ?? 1,
+          renderer.getPixelRatio(),
+        );
+        bhScene.setCurvature(bhCurvatureLens ? 1 : 0);
+        bhLastFrame = performance.now();
+        activeBlackHole = hole;
+        bhPanelOpen = true;
+        bhCultureDoors = [];
+        if (hole.culture_door) {
+          void getCultureDoors(hole.id, getLocale(), fetch).then((d) => {
+            if (activeBlackHole?.id === hole.id) bhCultureDoors = d;
+          });
+        }
+        closeStarPanel();
+        anonStar = null;
+        cue('select');
+        trackItemClick('marker', id, '/explore');
+        if (!reducedMotion) crossingFlashId++;
+      } catch (err) {
+        console.error('[explore v2] black hole load failed', err);
+      } finally {
+        bhLoading = false;
+      }
+    }
+    function exitBlackHole(): void {
+      if (!activeBlackHole) return;
+      if (!reducedMotion) crossingFlashId++;
+      bhScene?.dispose();
+      bhScene = null;
+      activeBlackHole = null;
+      bhPanelOpen = false;
+      bhCurvatureLens = false;
+      bhTimeLens = false;
+    }
+
     async function ensureMilkyWay(): Promise<typeof mwScene> {
       if (mwScene) return mwScene;
       if (mwLoading) return null;
@@ -3386,6 +3484,12 @@
         lastGalaxy = gx0;
         void resolveGalaxyDeepLink(gx0);
       }
+      // Cold-load ?bh=<id> → open the black hole's lensing render.
+      const bh0 = params0.get('bh');
+      if (bh0) {
+        lastBh = bh0;
+        void enterBlackHole(bh0);
+      }
     }
     // Exposed to the template (index / ?goto=) via a top-level binding.
     selectStarFn = selectStar;
@@ -3418,6 +3522,9 @@
       (
         window as unknown as { __exploreSelectMilkyWay?: (id: string) => Promise<void> }
       ).__exploreSelectMilkyWay = (id: string) => resolveGalaxyDeepLink(id);
+      (
+        window as unknown as { __exploreEnterBlackHole?: (id: string) => Promise<void> }
+      ).__exploreEnterBlackHole = (id: string) => enterBlackHole(id);
     }
 
     // Camera distance → canonical AU, for the scale HUD (solar camR is AU,
@@ -4071,6 +4178,12 @@
     }
     function selectMilkyWay(id: string): void {
       if (!mwObjects.some((o) => o.id === id)) return;
+      // Slice 6 — Sagittarius A* upgrades from a flat pin to the lensed black-hole
+      // render when you select it (the S5 pin becomes an S6 destination).
+      if (id === 'sagittarius-a-star') {
+        void enterBlackHole('sagittarius-a-star');
+        return;
+      }
       cue('select');
       selectedMwId = id;
       mwPanelOpen = true;
@@ -4091,6 +4204,9 @@
     }
     closeMwFn = closeMwPanel;
     mwDeepLinkFn = resolveGalaxyDeepLink;
+    exitBlackHoleFn = exitBlackHole;
+    bhDeepLinkFn = (id: string) => void enterBlackHole(id);
+    setBhCurvatureFn = (on: boolean) => bhScene?.setCurvature(on ? 1 : 0);
 
     const on3dMouseUp = (e: MouseEvent) => {
       const wasDrag = dragMoved3d;
@@ -4874,6 +4990,7 @@
       composer.setSize(container.clientWidth, container.clientHeight);
       bloomPass?.setSize(container.clientWidth, container.clientHeight);
       mwScene?.setSize(container.clientWidth, container.clientHeight);
+      bhScene?.setSize(container.clientWidth, container.clientHeight, renderer.getPixelRatio());
       resize2d();
       // Iconic trajectories use Line2 with screen-pixel-aware
       // LineMaterial — push the new resolution so the stroke width
@@ -5365,6 +5482,21 @@
           // throttle. v1's render path below is untouched.
           // v2 Slice 2: inside an exoplanet BodyScene, render its mini-orrery
           // (host star + planets on real Keplerian orbits) with the shared camera.
+          // v2 Slice 6: a black hole takes over the whole view (geodesic lensing
+          // fullscreen quad on its own ortho scene), rendered by the shared renderer.
+          if (activeBlackHole && bhScene) {
+            const now = performance.now();
+            if (!reducedMotion) bhScene.update(Math.min(0.05, (now - bhLastFrame) / 1000));
+            bhLastFrame = now;
+            // The shared renderer keeps autoClear off for the solar composer; the
+            // black-hole quad is a full takeover, so clear + draw it each frame.
+            const prevAutoClear = renderer.autoClear;
+            renderer.autoClear = true;
+            renderer.setClearColor(0x020309, 1);
+            renderer.render(bhScene.scene, bhScene.camera);
+            renderer.autoClear = prevAutoClear;
+            return;
+          }
           if (inBodyScene() && bodyScene) {
             stepCrossDolly();
             if (!simPaused && !reducedMotion) bodySimYears += bodyRate;
@@ -5411,6 +5543,7 @@
     lifecycle.add(loop.cleanup);
     lifecycle.add(() => nbScene?.dispose());
     lifecycle.add(() => mwScene?.dispose());
+    lifecycle.add(() => bhScene?.dispose());
     lifecycle.add(() => bodyScene?.dispose());
     loop.start();
 
@@ -5497,7 +5630,16 @@
 
   <!-- v2 breadcrumb (UXS-014 "you always know where you are"): shown out in the
        stellar neighborhood + inside a system; each crumb warps to that level. -->
-  {#if view === '3d' && (contextId === 'neighborhood' || contextId === 'milky-way' || contextId === 'body-scene')}
+  {#if view === '3d' && activeBlackHole}
+    <!-- Slice 6: a black hole takes over the view — a single back crumb exits it. -->
+    <nav class="context-crumbs" aria-label={m.explore_location_aria()}>
+      <button type="button" class="crumb home" onclick={() => exitBlackHoleFn?.()}>
+        ‹ {m.explore_ctx_back()}
+      </button>
+      <span class="crumb-sep">›</span>
+      <span class="crumb current" aria-current="page">{activeBlackHole.name}</span>
+    </nav>
+  {:else if view === '3d' && (contextId === 'neighborhood' || contextId === 'milky-way' || contextId === 'body-scene')}
     <nav class="context-crumbs" aria-label={m.explore_location_aria()}>
       <button
         type="button"
@@ -5538,12 +5680,58 @@
 
   <!-- Slice 5: honesty badge — the Milky Way view is a labelled schematic, not
        to scale (PRD-030 principle 2). Shown only in the Milky Way context. -->
-  {#if view === '3d' && contextId === 'milky-way'}
+  {#if view === '3d' && contextId === 'milky-way' && !activeBlackHole}
     <div class="mw-badge" role="note">{m.explore_mw_schematic_badge()}</div>
   {/if}
 
+  <!-- Slice 6: the black-hole render is a geodesic GR ray-trace — label it. -->
+  {#if view === '3d' && activeBlackHole}
+    <div class="mw-badge" role="note">{m.explore_bh_lensing_badge()}</div>
+
+    <!-- Physics lenses (curvature grid + time dilation) — toggles bottom-left. -->
+    <div class="nb-controls">
+      <button
+        type="button"
+        class="nb-chip"
+        class:active={bhCurvatureLens}
+        aria-pressed={bhCurvatureLens}
+        onclick={() => {
+          bhCurvatureLens = !bhCurvatureLens;
+          setBhCurvatureFn?.(bhCurvatureLens);
+        }}
+      >
+        {m.explore_lens_curvature()}
+      </button>
+      <button
+        type="button"
+        class="nb-chip"
+        class:active={bhTimeLens}
+        aria-pressed={bhTimeLens}
+        onclick={() => (bhTimeLens = !bhTimeLens)}
+      >
+        {m.explore_lens_time()}
+      </button>
+    </div>
+
+    {#if bhCurvatureLens}
+      <div class="lens-note" role="note">{m.explore_lens_curvature_note()}</div>
+    {/if}
+
+    {#if bhTimeLens}
+      <div class="time-lens" role="note">
+        <div class="tl-title">{m.explore_lens_time_title()}</div>
+        <div class="tl-row">
+          <span>{m.explore_lens_time_photon()}</span><b>{dilationPct(1.5)}</b>
+        </div>
+        <div class="tl-row"><span>{m.explore_lens_time_isco()}</span><b>{dilationPct(3)}</b></div>
+        <div class="tl-row"><span>{m.explore_lens_time_ten()}</span><b>{dilationPct(10)}</b></div>
+        <div class="tl-foot">{m.explore_lens_time_note()}</div>
+      </div>
+    {/if}
+  {/if}
+
   <!-- v2 neighborhood layer toggles (Slice 1): constellation lines. -->
-  {#if view === '3d' && contextId === 'neighborhood'}
+  {#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole}
     <div class="nb-controls">
       <button
         type="button"
@@ -5701,7 +5889,7 @@
   <button
     type="button"
     class="earth-compare"
-    class:context-hidden={contextId !== 'solar-system'}
+    class:context-hidden={contextId !== 'solar-system' || !!activeBlackHole}
     aria-label={m.explore_sizes_toggle()}
     onclick={() => (panelState.sizes = !panelState.sizes)}
     data-testid="sizes-toggle"
@@ -5731,7 +5919,7 @@
        narration ("one day per second, ten days, a hundred"). -->
   <div
     class="time-controls"
-    class:context-hidden={contextId !== 'solar-system'}
+    class:context-hidden={contextId !== 'solar-system' || !!activeBlackHole}
     data-audio-stage="explore-time"
   >
     <!-- Mobile-only compact REFERENCES button — the standalone .earth-compare
@@ -6031,7 +6219,7 @@
   <!-- Desktop cluster — hidden on mobile (≤767 px) via CSS. -->
   <div
     class="hud-controls"
-    class:context-hidden={contextId !== 'solar-system'}
+    class:context-hidden={contextId !== 'solar-system' || !!activeBlackHole}
     data-audio-stage="explore-hud"
     role="group"
     aria-label={m.ui_view_controls()}
@@ -6042,7 +6230,7 @@
        desktop .hud-controls corner; .hud-controls itself is desktop-only). -->
   <div
     class="hud-top-mobile"
-    class:context-hidden={contextId !== 'solar-system'}
+    class:context-hidden={contextId !== 'solar-system' || !!activeBlackHole}
     role="group"
     aria-label={m.ui_view_controls()}
   >
@@ -6080,7 +6268,7 @@
   <!-- Mobile-only: 3-tab accordion — Orbit Ruler | Controls | Iconic Missions.
        Desktop uses .hud-controls (above) + .ruler-desktop-only (below). -->
   {#snippet mobileRulerContent(close: () => void)}
-    {#if exploreRegimes.length > 0 && contextId === 'solar-system'}
+    {#if exploreRegimes.length > 0 && contextId === 'solar-system' && !activeBlackHole}
       <OrbitRuler
         regimes={exploreRegimes}
         highlightRegime={null}
@@ -6243,7 +6431,7 @@
   {/snippet}
   <!-- Mobile solar-system drawers (ruler/controls/missions/index) — solar-system
        only; the neighborhood + BodyScenes have their own chrome. -->
-  {#if contextId === 'solar-system'}
+  {#if contextId === 'solar-system' && !activeBlackHole}
     <MobileDrawerGroup
       tabs={[
         { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
@@ -6379,6 +6567,17 @@
   onClose={() => closeMwFn?.()}
 />
 
+<BlackHolePanel
+  hole={activeBlackHole}
+  learnHref={bhLearnHref}
+  open={bhPanelOpen}
+  onClose={() => exitBlackHoleFn?.()}
+>
+  {#each bhCultureDoors as door (door.id)}
+    <CultureDoorCard {door} />
+  {/each}
+</BlackHolePanel>
+
 <SmallBodyPanel
   body={selectedSmallBody}
   open={panelState.smallBody}
@@ -6412,7 +6611,7 @@
      stacks on top — closing the body panel reveals the zone panel. -->
 <!-- Solar-system regime ruler — hidden past the boundary (its AU regimes are
      meaningless in the stellar neighborhood, which has its own scale ruler). -->
-{#if exploreRegimes.length > 0 && contextId === 'solar-system'}
+{#if exploreRegimes.length > 0 && contextId === 'solar-system' && !activeBlackHole}
   <div class="ruler-desktop-only">
     <OrbitRuler
       regimes={exploreRegimes}
@@ -6688,6 +6887,64 @@
     border-radius: 20px;
     backdrop-filter: blur(5px);
     pointer-events: none;
+  }
+
+  /* Slice 6 — physics-lens overlays (curvature note + time-dilation readout). */
+  .lens-note {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    max-width: 380px;
+    padding: 7px 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    line-height: 1.4;
+    text-align: center;
+    color: #cdd4e6;
+    background: rgba(10, 14, 26, 0.6);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    pointer-events: none;
+  }
+  .time-lens {
+    position: absolute;
+    top: 84px;
+    left: 12px;
+    z-index: 6;
+    width: 240px;
+    padding: 12px 14px;
+    font-family: 'Space Mono', monospace;
+    background: rgba(8, 11, 20, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    pointer-events: none;
+  }
+  .time-lens .tl-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #e9eefc;
+    margin-bottom: 8px;
+  }
+  .time-lens .tl-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 11px;
+    color: #9aa4bf;
+    margin-bottom: 4px;
+  }
+  .time-lens .tl-row b {
+    color: #4ecdc4;
+  }
+  .time-lens .tl-foot {
+    margin-top: 8px;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #7a8299;
   }
 
   /* v2 breadcrumb — top-left orientation + tap-back to the solar system. */

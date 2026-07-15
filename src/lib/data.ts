@@ -2002,6 +2002,47 @@ export async function getMilkyWaySchematic(
   return milkyWayCache;
 }
 
+// Black holes (Slice 6) — three real + one fictional (Gargantua), rendered with
+// the geodesic gravitational-lensing shader. Real cited GR parameters; Gargantua
+// is badged fiction.
+export type BlackHoleKind = 'supermassive' | 'stellar' | 'fictional';
+export interface BlackHole {
+  id: string;
+  name: string;
+  kind: BlackHoleKind;
+  mass_solar: number;
+  dist_ly: number;
+  spin: number;
+  rs_km: number;
+  inclination_deg: number;
+  ra: number | null;
+  dec: number | null;
+  science_section: string;
+  culture_door: string | null;
+  discovery: string;
+}
+interface BlackHolesManifest {
+  objects: BlackHole[];
+}
+let blackHolesCache: Promise<BlackHole[]> | null = null;
+/** All black holes (cached). */
+export async function getBlackHoles(fetchFn: FetchLike = fetch): Promise<BlackHole[]> {
+  if (!blackHolesCache) {
+    blackHolesCache = get<BlackHolesManifest>('universe/black-holes.json', fetchFn)
+      .then((doc) => doc.objects ?? [])
+      .catch(() => []);
+  }
+  return blackHolesCache;
+}
+/** A black hole by id, or null. */
+export async function getBlackHole(
+  id: string,
+  fetchFn: FetchLike = fetch,
+): Promise<BlackHole | null> {
+  const holes = await getBlackHoles(fetchFn);
+  return holes.find((h) => h.id === id) ?? null;
+}
+
 // Per-planet editorial overlay (Slice 2) — a "why this world matters" note that
 // leans into the planet's science + its sci-fi / news / cultural fame. Keyed by
 // planet id under i18n-src/<locale>/universe/exoplanets/<id>.json.

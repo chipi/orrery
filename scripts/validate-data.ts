@@ -216,6 +216,7 @@ const validateDataSources = ajv.compile(dataSourcesSchema);
 const validateCultureDoors = ajv.compile(loadSchema('culture-door.schema.json'));
 const validateDeepSkyObjects = ajv.compile(loadSchema('deep-sky-object.schema.json'));
 const validateMilkyWay = ajv.compile(loadSchema('milky-way.schema.json'));
+const validateBlackHoles = ajv.compile(loadSchema('black-hole.schema.json'));
 const validateLinkProvenance = ajv.compile(linkProvenanceSchema);
 const validateFleetEntry = ajv.compile(fleetEntrySchema);
 const validateFleetIndex = ajv.compile(fleetIndexSchema);
@@ -526,6 +527,48 @@ validateFile(join(DATA_ROOT, 'universe', 'milky-way-schematic.json'), validateMi
         );
       } else {
         passed++;
+      }
+    }
+  }
+}
+// /explore v2 Slice 6 — black holes; science_section must resolve to a real
+// /science/observation article, and any culture_door must exist in culture-doors.json.
+validateFile(join(DATA_ROOT, 'universe', 'black-holes.json'), validateBlackHoles);
+{
+  const bhPath = join(DATA_ROOT, 'universe', 'black-holes.json');
+  const obsIndexPath = join(DATA_ROOT, 'science', 'observation', '_index.json');
+  const doorsPath = join(DATA_ROOT, 'culture-doors.json');
+  if (existsSync(bhPath) && existsSync(obsIndexPath)) {
+    const bh = readJson(bhPath) as {
+      objects: Array<{ id: string; science_section: string; culture_door: string | null }>;
+    };
+    const obs = readJson(obsIndexPath) as { ids: string[] };
+    const ids = new Set(obs.ids);
+    const doorsRaw = existsSync(doorsPath) ? (readJson(doorsPath) as unknown) : null;
+    const doorRows = (
+      Array.isArray(doorsRaw)
+        ? doorsRaw
+        : doorsRaw && typeof doorsRaw === 'object'
+          ? (Object.values(doorsRaw as Record<string, unknown>).find(Array.isArray) ?? [])
+          : []
+    ) as Array<{ id: string }>;
+    const doorIds = new Set(doorRows.map((d) => d.id));
+    for (const o of bh.objects) {
+      if (!ids.has(o.science_section)) {
+        failed++;
+        console.error('\n  ✗ universe/black-holes.json');
+        console.error(
+          `      science_section '${o.science_section}' (object '${o.id}') not a /science/observation article`,
+        );
+      } else {
+        passed++;
+      }
+      if (o.culture_door && !doorIds.has(o.culture_door)) {
+        failed++;
+        console.error('\n  ✗ universe/black-holes.json');
+        console.error(
+          `      culture_door '${o.culture_door}' (object '${o.id}') not found in culture-doors.json`,
+        );
       }
     }
   }

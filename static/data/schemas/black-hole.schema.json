@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "black-hole.schema.json",
+  "title": "Black-hole catalogue (PRD-030 / RFC-032, Slice 6)",
+  "description": "The black holes rendered with the /explore v2 geodesic gravitational-lensing shader. Three real (M87*, Sagittarius A*, Cygnus X-1) with cited parameters + one fictional (Gargantua, badged). Masses in solar masses, distances in light-years, spin is the dimensionless a*, rs_km the Schwarzschild radius, inclination_deg the render disk tilt.",
+  "type": "object",
+  "required": ["objects"],
+  "additionalProperties": false,
+  "properties": {
+    "_note": { "type": "string" },
+    "objects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "mass_solar",
+          "dist_ly",
+          "spin",
+          "rs_km",
+          "inclination_deg",
+          "ra",
+          "dec",
+          "science_section",
+          "culture_door",
+          "discovery"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "type": "string", "minLength": 1 },
+          "kind": { "type": "string", "enum": ["supermassive", "stellar", "fictional"] },
+          "mass_solar": { "type": "number", "exclusiveMinimum": 0 },
+          "dist_ly": { "type": "number", "exclusiveMinimum": 0 },
+          "spin": { "type": "number", "minimum": 0, "maximum": 1 },
+          "rs_km": { "type": "number", "exclusiveMinimum": 0 },
+          "inclination_deg": { "type": "number", "minimum": 0, "maximum": 90 },
+          "ra": { "type": ["number", "null"], "minimum": 0, "maximum": 360 },
+          "dec": { "type": ["number", "null"], "minimum": -90, "maximum": 90 },
+          "science_section": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "culture_door": { "type": ["string", "null"], "pattern": "^[a-z0-9-]+$" },
+          "discovery": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

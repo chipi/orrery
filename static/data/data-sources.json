@@ -102,6 +102,21 @@
       "used_on": [
         "explore"
       ]
+    },
+    {
+      "id": "black-hole-parameters",
+      "name": "Event Horizon Telescope · published black-hole parameters",
+      "catalog": "Black-hole masses, distances & spins",
+      "version": "published",
+      "category": "other",
+      "description": "Cited parameters for /explore’s geodesic gravitational-lensing renders: M87* (first imaged, EHT 2019), Sagittarius A* (EHT 2022; GRAVITY mass), and Cygnus X-1 (stellar-mass, mass revised upward by Miller-Jones et al. 2021). Gargantua is labelled fiction (Kip Thorne's Interstellar model). The lensing image is our own geodesic ray-trace — no observatory imagery is embedded.",
+      "source_url": "https://eventhorizontelescope.org/",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "Published measurements (EHT collaboration papers + peer-reviewed literature), reusable with attribution. Parameter values only; the black-hole visual is procedurally ray-traced from the Schwarzschild geodesic equation.",
+      "used_on": [
+        "explore"
+      ]
     }
   ]
 }

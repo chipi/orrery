@@ -1,0 +1,65 @@
+{
+  "_note": "Black holes for /explore v2 Slice 6. Three real (M87*, Sagittarius A*, Cygnus X-1) with cited parameters, one fictional (Gargantua, Kip Thorne's Interstellar model — badged fiction). Rendered with a geodesic gravitational-lensing shader. Placement: Sag A* reuses its S5 galactocentric spot; M87* + Cygnus X-1 by RA/Dec direction on the sky-sphere (like deep-sky); Gargantua is fictional, flagged. Masses in solar masses, distances in light-years, spin is the dimensionless a* (0..~1), rs_km is the Schwarzschild radius. inclination_deg is the disk tilt used for the render framing.",
+  "objects": [
+    {
+      "id": "sagittarius-a-star",
+      "name": "Sagittarius A*",
+      "kind": "supermassive",
+      "mass_solar": 4300000,
+      "dist_ly": 26700,
+      "spin": 0.9,
+      "rs_km": 12700000,
+      "inclination_deg": 6,
+      "ra": null,
+      "dec": null,
+      "science_section": "black-holes",
+      "culture_door": null,
+      "discovery": "Event Horizon Telescope image 2022; mass from GRAVITY Collaboration 2022"
+    },
+    {
+      "id": "m87-star",
+      "name": "M87*",
+      "kind": "supermassive",
+      "mass_solar": 6500000000,
+      "dist_ly": 53500000,
+      "spin": 0.9,
+      "rs_km": 19000000000,
+      "inclination_deg": 17,
+      "ra": 187.70593,
+      "dec": 12.39112,
+      "science_section": "black-holes",
+      "culture_door": null,
+      "discovery": "First black hole ever imaged — Event Horizon Telescope 2019"
+    },
+    {
+      "id": "cygnus-x-1",
+      "name": "Cygnus X-1",
+      "kind": "stellar",
+      "mass_solar": 21,
+      "dist_ly": 7200,
+      "spin": 0.95,
+      "rs_km": 62,
+      "inclination_deg": 27,
+      "ra": 299.59031,
+      "dec": 35.20161,
+      "science_section": "black-holes",
+      "culture_door": null,
+      "discovery": "First widely accepted stellar-mass black hole; mass revised upward Miller-Jones et al. 2021"
+    },
+    {
+      "id": "gargantua",
+      "name": "Gargantua",
+      "kind": "fictional",
+      "mass_solar": 100000000,
+      "dist_ly": 10000000000,
+      "spin": 0.9999,
+      "rs_km": 300000000,
+      "inclination_deg": 3,
+      "ra": null,
+      "dec": null,
+      "science_section": "black-holes",
+      "culture_door": "gargantua-interstellar",
+      "discovery": "Fictional — Kip Thorne's physically-modelled black hole for Interstellar (2014)"
+    }
+  ]
+}

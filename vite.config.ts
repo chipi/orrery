@@ -447,6 +447,9 @@ export default defineConfig(({ mode }) => {
           // Slice 5 Milky Way schematic scene — same WebGL policy; its pure spiral
           // + placement math is unit-tested in milky-way-visual.test.ts.
           'src/lib/universe/milky-way-scene.ts',
+          // Slice 6 black-hole geodesic lensing scene — same WebGL policy; its pure
+          // GR + framing math is unit-tested in black-hole-visual.test.ts.
+          'src/lib/universe/black-hole-scene.ts',
           '*.config.{js,ts}',
           '.svelte-kit/',
         ],

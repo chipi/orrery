@@ -2,6 +2,22 @@
   "schema_version": 1,
   "doors": [
     {
+      "id": "gargantua-interstellar",
+      "objectId": "gargantua",
+      "objectType": "black-hole",
+      "type": "fiction",
+      "work": "Interstellar",
+      "year": 2014,
+      "author": "Christopher Nolan · Kip Thorne",
+      "media": "film",
+      "links": [
+        {
+          "l": "Wikipedia · Interstellar (film)",
+          "u": "https://en.wikipedia.org/wiki/Interstellar_(film)"
+        }
+      ]
+    },
+    {
       "id": "vega-contact",
       "objectId": "vega",
       "objectType": "star",

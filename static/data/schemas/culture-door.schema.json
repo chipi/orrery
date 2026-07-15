@@ -18,7 +18,7 @@
         "properties": {
           "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
           "objectId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-          "objectType": { "type": "string", "enum": ["star", "exoplanet", "message"] },
+          "objectType": { "type": "string", "enum": ["star", "exoplanet", "message", "black-hole"] },
           "type": { "type": "string", "enum": ["fiction", "message", "visitor"] },
           "work": { "type": "string", "minLength": 1 },
           "year": { "type": "integer" },

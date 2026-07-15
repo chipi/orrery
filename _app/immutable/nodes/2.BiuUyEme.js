@@ -1,1 +1,0 @@
-import{E as e,F as t,P as n,Tt as r,nt as i}from"../chunks/zEB-6H-K.js";import"../chunks/xihTtKlq.js";import{t as a}from"../chunks/DsC71hw92.js";var o=r({load:()=>s,prerender:()=>!1,ssr:()=>!1});function s(){throw a(404,`Not found`)}function c(r,a){var o=t();e(i(o),()=>a.children),n(r,o)}export{c as component,o as universal};

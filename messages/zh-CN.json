@@ -1510,5 +1510,12 @@
   "programs_kind_funding": "资金线",
   "nav_group_explore": "探索",
   "nav_catalog": "目录",
-  "nav_learn": "学习"
+  "nav_learn": "学习",
+  "explore_hub_intro": "这里的每个世界都是你真正能去的地方——由真实轨道数据构建，精确到足以环顾四周。从整个太阳系的运动开始，或直接降落到表面。",
+  "catalog_hub_intro": "我们飞行过的一切记录——国家计划、独立任务和承载它们的航天器。每条记录都交叉索引、标注日期，并溯源到制造它的机构。",
+  "learn_hub_intro": "硬件背后的原理——关于航天未来发展的长篇论文，以及用通俗语言解释每条轨道都遵循的物理学。从宏观图景开始，或从第一性原理入手。",
+  "landing_card_programs_title": "国家航天计划",
+  "landing_card_programs_desc": "从东方号到阿尔忒弥斯，从阿波罗到天宫——每个国家的发展历程，从首次飞行到未来目标。",
+  "landing_card_essays_title": "航天的长期视角",
+  "landing_card_essays_desc": "世代飞船、新型推进、失重环境下的人体——一切将走向何方。"
 }

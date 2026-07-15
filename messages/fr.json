@@ -1510,5 +1510,12 @@
   "programs_kind_funding": "Lignes de financement",
   "nav_group_explore": "EXPLORER",
   "nav_catalog": "CATALOGUE",
-  "nav_learn": "APPRENDRE"
+  "nav_learn": "APPRENDRE",
+  "explore_hub_intro": "Chaque monde ici est un endroit où vous pouvez vraiment aller — construit à partir de données orbitales réelles, assez proche pour regarder autour. Commencez par l'ensemble du système solaire en mouvement, ou descendez directement à la surface.",
+  "catalog_hub_intro": "Le registre de tout ce que nous avons lancé — programmes nationaux, missions individuelles, et les engins spatiaux qui les ont portées. Chaque entrée référencée croisée, datée, et sourçée jusqu'à l'agence qui l'a construite.",
+  "learn_hub_intro": "Les idées derrière le matériel — des essais longs formats sur la direction que prend l'exploration spatiale, et des explications en langage simple de la physique qui régit chaque orbite. Commencez par la vue d'ensemble, ou par les principes fondamentaux.",
+  "landing_card_programs_title": "Programmes, nation par nation",
+  "landing_card_programs_desc": "De Vostok à Artemis, d'Apollo à Tiangong — chaque trajectoire nationale, du premier vol au futur.",
+  "landing_card_essays_title": "La vision long terme de l'exploration spatiale",
+  "landing_card_essays_desc": "Vaisseaux générationnels, nouvelle propulsion, le corps dans l'obscurité — vers où tout cela nous mène."
 }

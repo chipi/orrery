@@ -38,13 +38,19 @@
   // ─── Grouped nav (2026-07 IA restructure) ───────────────────────────
   // The 14 flat items regroup into standalone links + three dropdown
   // groups. Groups open a disclosure menu on pointer devices and expand
-  // inline in the mobile drawer. The roving toolbar still sweeps the top
-  // row; a TV D-pad big-box hub is a follow-up slice (#149/#375).
+  // inline in the mobile drawer.
+  //
+  // TV ONLY (10-foot / D-pad): a dropdown is unusable with a D-pad, so on
+  // the TV layout the three groups render as plain links to a big-box hub
+  // page (`hub`) — focus the label, press OK, land on the hub, arrow through
+  // the tiles. Desktop + mobile are UNCHANGED (isTv is false for them, so
+  // they take the exact same dropdown / inline-drawer branches as before).
   type NavLink = { kind: 'link'; path: string; label: () => string };
   type NavGroup = {
     kind: 'group';
     key: string;
     label: () => string;
+    hub: string;
     children: { path: string; label: () => string }[];
   };
   type NavItem = NavLink | NavGroup;
@@ -55,6 +61,7 @@
       kind: 'group',
       key: 'explore',
       label: m.nav_group_explore,
+      hub: '/explore/hub',
       children: [
         { path: '/explore', label: m.nav_explore }, // "OUR SOLAR SYSTEM"
         { path: '/earth', label: m.nav_earth },
@@ -70,6 +77,7 @@
       kind: 'group',
       key: 'catalog',
       label: m.nav_catalog,
+      hub: '/catalog',
       children: [
         { path: '/programs', label: m.nav_programs },
         { path: '/missions', label: m.nav_missions },
@@ -80,12 +88,30 @@
       kind: 'group',
       key: 'learn',
       label: m.nav_learn,
+      hub: '/learn',
       children: [
         { path: '/essays', label: m.nav_essays },
         { path: '/science', label: m.nav_science },
       ],
     },
   ];
+
+  // TV (10-foot) detector — same query as the overscan layer in app.css and
+  // the landing's TV route-grid: coarse pointer + no hover + large + low-DPR.
+  // Hits TV, excludes desktop and high-DPR tablets. Drives the group→hub-link
+  // rendering below; false everywhere except TV, so desktop/mobile are
+  // untouched.
+  const TV_QUERY =
+    '(hover: none) and (pointer: coarse) and (min-width: 1100px) and (max-resolution: 1.5dppx)';
+  let isTv = $state(false);
+  let tvMql: MediaQueryList | undefined;
+  const onTvChange = (e: MediaQueryListEvent) => (isTv = e.matches);
+  onMount(() => {
+    tvMql = window.matchMedia(TV_QUERY);
+    isTv = tvMql.matches;
+    tvMql.addEventListener('change', onTvChange);
+  });
+  onDestroy(() => tvMql?.removeEventListener('change', onTvChange));
 
   function isActive(href: string, pathname: string): boolean {
     return pathname === href || pathname.startsWith(href + '/');
@@ -236,6 +262,13 @@
           href={`${base}${localizeHref(item.path)}`}
           class="link"
           class:active={isActive(`${base}${item.path}`, $page.url.pathname)}>{item.label()}</a
+        >
+      {:else if isTv}
+        <!-- TV: the group is a plain link to its big-box hub (no dropdown). -->
+        <a
+          href={`${base}${localizeHref(item.hub)}`}
+          class="link"
+          class:active={groupActive(item, $page.url.pathname)}>{item.label()}</a
         >
       {:else}
         <div class="nav-group">
@@ -397,10 +430,19 @@
           class:active={isActive(`${base}${item.path}`, $page.url.pathname)}
           onclick={closeMobileMenu}>{item.label()}</a
         >
+      {:else if isTv}
+        <!-- TV: the group is a single link to its big-box hub — no inline
+             children to D-pad past. -->
+        <a
+          href={`${base}${localizeHref(item.hub)}`}
+          class="drawer-link"
+          class:active={groupActive(item, $page.url.pathname)}
+          onclick={closeMobileMenu}>{item.label()}</a
+        >
       {:else}
         <!-- Groups expand inline in the drawer: a non-interactive heading
              with its children indented beneath — every destination stays one
-             tap away, no nested disclosure to fight on touch/TV. -->
+             tap away, no nested disclosure to fight on touch. -->
         <div class="drawer-group" role="group" aria-label={item.label()}>
           <span class="drawer-group-label">{item.label()}</span>
           {#each item.children as child (child.path)}
@@ -1113,6 +1155,20 @@
     }
     .menu-toggle {
       display: inline-flex;
+    }
+  }
+
+  /* TV / 10-foot (RFC-031): the previous rule collapses every coarse-pointer
+     device to the hamburger — right for phones, WRONG for a TV, where a D-pad
+     wants the links on screen, not behind a menu. On TV keep the inline bar
+     (its groups render as big-box hub links via isTv) and drop the hamburger.
+     Declared after the rule above so it wins for the TV query. */
+  @media (hover: none) and (pointer: coarse) and (min-width: 1100px) and (max-resolution: 1.5dppx) {
+    .center {
+      display: flex;
+    }
+    .menu-toggle {
+      display: none;
     }
   }
 

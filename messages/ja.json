@@ -1510,5 +1510,12 @@
   "programs_kind_funding": "資金枠",
   "nav_group_explore": "探索",
   "nav_catalog": "カタログ",
-  "nav_learn": "学習"
+  "nav_learn": "学習",
+  "explore_hub_intro": "ここのすべての世界は実際に行くことができる場所です — 実際の軌道データから構築され、周囲を見回すのに十分な精度です。太陽系全体の運動から始めるか、表面に直接降りることができます。",
+  "catalog_hub_intro": "私たちが飛行させたすべてのもの — 国家計画、個別ミッション、それらを搭載した宇宙機の記録です。すべての項目が相互参照され、日付が記載され、それを製造した機関にさかのぼって出典が示されています。",
+  "learn_hub_intro": "ハードウェアの背後にある考え — 宇宙飛行がどこに向かっているかに関する長編エッセイ、そしてすべての軌道を支配する物理学の平易な説明です。全体像から、または第一原理から始めてください。",
+  "landing_card_programs_title": "国別プログラム",
+  "landing_card_programs_desc": "ボストーク（Vostok）からアルテミス（Artemis）、アポロ（Apollo）から天宮（Tiangong）まで — 各国の軌跡、初飛行から未来へ。",
+  "landing_card_essays_title": "宇宙飛行の長期的視点",
+  "landing_card_essays_desc": "世代船、新しい推進方式、暗黒の中の人体 — これらがどこに向かっているか。"
 }

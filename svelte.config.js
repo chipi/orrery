@@ -28,6 +28,9 @@ const base = (process.env.VITE_BASE ?? '').replace(/\/$/, '');
 const SEED_ROUTES = [
   '/',
   '/explore',
+  '/explore/hub',
+  '/catalog',
+  '/learn',
   '/missions',
   '/missions/launches',
   '/fleet',

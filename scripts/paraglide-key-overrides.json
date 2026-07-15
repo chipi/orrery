@@ -438,7 +438,14 @@
     "programs_kind_funding": "Líneas de financiación",
     "nav_group_explore": "EXPLORAR",
     "nav_catalog": "CATÁLOGO",
-    "nav_learn": "APRENDER"
+    "nav_learn": "APRENDER",
+    "explore_hub_intro": "Cada mundo aquí es un lugar al que realmente puedes ir — construido a partir de datos orbitales reales, lo suficientemente preciso para mirar alrededor. Empieza con todo el sistema solar en movimiento, o cae directamente a una superficie.",
+    "catalog_hub_intro": "El registro de todo lo que hemos volado — programas nacionales, misiones individuales, y las naves espaciales que las llevaron. Cada entrada referenciada de forma cruzada, fechada, y rastreada hasta la agencia que la construyó.",
+    "learn_hub_intro": "Las ideas detrás del hardware — ensayos extensos sobre hacia dónde se dirige la exploración espacial, y explicaciones en lenguaje llano de la física que rige cada órbita. Comienza con la visión general, o con los primeros principios.",
+    "landing_card_programs_title": "Programas, nación por nación",
+    "landing_card_programs_desc": "De Vostok a Artemis, de Apollo a Tiangong — cada arco nacional, del primer vuelo al futuro.",
+    "landing_card_essays_title": "La perspectiva a largo plazo de la exploración espacial",
+    "landing_card_essays_desc": "Naves generacionales, nuevas propulsiones, el cuerpo en la oscuridad — hacia dónde va todo esto."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -912,7 +919,14 @@
     "programs_kind_funding": "Lignes de financement",
     "nav_group_explore": "EXPLORER",
     "nav_catalog": "CATALOGUE",
-    "nav_learn": "APPRENDRE"
+    "nav_learn": "APPRENDRE",
+    "explore_hub_intro": "Chaque monde ici est un endroit où vous pouvez vraiment aller — construit à partir de données orbitales réelles, assez proche pour regarder autour. Commencez par l'ensemble du système solaire en mouvement, ou descendez directement à la surface.",
+    "catalog_hub_intro": "Le registre de tout ce que nous avons lancé — programmes nationaux, missions individuelles, et les engins spatiaux qui les ont portées. Chaque entrée référencée croisée, datée, et sourçée jusqu'à l'agence qui l'a construite.",
+    "learn_hub_intro": "Les idées derrière le matériel — des essais longs formats sur la direction que prend l'exploration spatiale, et des explications en langage simple de la physique qui régit chaque orbite. Commencez par la vue d'ensemble, ou par les principes fondamentaux.",
+    "landing_card_programs_title": "Programmes, nation par nation",
+    "landing_card_programs_desc": "De Vostok à Artemis, d'Apollo à Tiangong — chaque trajectoire nationale, du premier vol au futur.",
+    "landing_card_essays_title": "La vision long terme de l'exploration spatiale",
+    "landing_card_essays_desc": "Vaisseaux générationnels, nouvelle propulsion, le corps dans l'obscurité — vers où tout cela nous mène."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -1380,7 +1394,14 @@
     "programs_kind_funding": "Finanzierungslinien",
     "nav_group_explore": "ERKUNDEN",
     "nav_catalog": "KATALOG",
-    "nav_learn": "LERNEN"
+    "nav_learn": "LERNEN",
+    "explore_hub_intro": "Jede Welt hier ist ein Ort, an den du wirklich gehen kannst — aufgebaut aus echten Bahndaten, nah genug zum Erkunden. Beginne mit dem gesamten Sonnensystem in Bewegung, oder steige direkt auf einer Oberfläche ab.",
+    "catalog_hub_intro": "Das Verzeichnis von allem, das wir geflogen haben — nationale Programme, einzelne Missionen und die Raumfahrzeuge, die sie trugen. Jeder Eintrag querverwiesen, datiert und auf die Agentur zurückgeführt, die ihn baute.",
+    "learn_hub_intro": "Die Ideen hinter der Hardware — ausführliche Essays darüber, wohin Raumfahrt führt, und verständliche Erklärungen der Physik, die jede Umlaufbahn bestimmt. Beginne mit dem großen Ganzen oder den ersten Prinzipien.",
+    "landing_card_programs_title": "Programme, Nation für Nation",
+    "landing_card_programs_desc": "Von Vostok bis Artemis, Apollo bis Tiangong — jeder nationale Weg, erster Flug bis Zukunft.",
+    "landing_card_essays_title": "Die lange Perspektive auf Raumfahrt",
+    "landing_card_essays_desc": "Generationenschiffe, neue Antriebe, der Körper in der Finsternis — wohin das alles führt."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -1828,7 +1849,14 @@
     "programs_kind_funding": "Linhas de financiamento",
     "nav_group_explore": "EXPLORAR",
     "nav_catalog": "CATÁLOGO",
-    "nav_learn": "APRENDER"
+    "nav_learn": "APRENDER",
+    "explore_hub_intro": "Cada mundo aqui é um lugar para o qual você pode realmente ir — construído a partir de dados orbitais reais, próximo o suficiente para você olhar ao redor. Comece com todo o sistema solar em movimento, ou desça direto para uma superfície.",
+    "catalog_hub_intro": "O registro de tudo o que já voamos — programas nacionais, missões individuais, e as naves que as carregaram. Cada entrada com referências cruzadas, datada e rastreada até a agência que a construiu.",
+    "learn_hub_intro": "As ideias por trás do hardware — ensaios longos sobre para onde a exploração espacial está indo, e explicadores em linguagem clara da física que governa cada órbita. Comece com o quadro geral, ou com os primeiros princípios.",
+    "landing_card_programs_title": "Programas, nação por nação",
+    "landing_card_programs_desc": "De Vostok a Artemis, Apollo a Tiangong — cada trajetória nacional, do primeiro voo ao futuro.",
+    "landing_card_essays_title": "A visão ampla da exploração espacial",
+    "landing_card_essays_desc": "Naves geracionais, propulsão nova, o corpo na escuridão — para onde tudo isso está indo."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -2270,7 +2298,14 @@
     "programs_kind_funding": "Linee di finanziamento",
     "nav_group_explore": "ESPLORA",
     "nav_catalog": "CATALOGO",
-    "nav_learn": "IMPARA"
+    "nav_learn": "IMPARA",
+    "explore_hub_intro": "Ogni mondo qui è un luogo dove puoi davvero andare — costruito da dati orbitali reali, abbastanza preciso per guardarti intorno. Inizia con l'intero sistema solare in movimento, oppure scendi direttamente su una superficie.",
+    "catalog_hub_intro": "Il registro di tutto ciò che abbiamo fatto volare — programmi nazionali, missioni individuali, e gli spacecraft che le hanno portate. Ogni voce collegata in riferimento incrociato, datata, e risalita all'agenzia che l'ha costruita.",
+    "learn_hub_intro": "Le idee dietro l'hardware — saggi lunghi su dove si sta dirigendo l'esplorazione spaziale, e spiegazioni in linguaggio semplice della fisica che governa ogni orbita. Inizia con la visione d'insieme, o dai primi principi.",
+    "landing_card_programs_title": "Programmi, nazione per nazione",
+    "landing_card_programs_desc": "Da Vostok ad Artemis, da Apollo a Tiangong — ogni percorso nazionale, dal primo volo al futuro.",
+    "landing_card_essays_title": "La prospettiva lunga dell'esplorazione spaziale",
+    "landing_card_essays_desc": "Astronavi generazionali, nuova propulsione, il corpo nell'oscurità — dove tutto questo sta andando."
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -2683,7 +2718,14 @@
     "programs_kind_funding": "Линије финансирања",
     "nav_group_explore": "ИСТРАЖИВАЊЕ",
     "nav_catalog": "КАТАЛОГ",
-    "nav_learn": "УЧИТЕ"
+    "nav_learn": "УЧИТЕ",
+    "explore_hub_intro": "Сваки свет овде је место где заиста можеш да идеш — направљен од правих орбиталних података, довољно близу да погледаш око себе. Почни са целим сончевим системом у кретању, или скочи право на површину.",
+    "catalog_hub_intro": "Забелешка свега што смо летели — националних програма, појединачних мисија и свемирских летелица које су их носиле. Свака ставка унакрсно референцирана, датирана и праћена до агенције која ју је направила.",
+    "learn_hub_intro": "Идеје иза хардвера — дугих есеја о томе куда свемирски лет иде, и објашњења физике на јасном језику која управљају сваком орбитом. Почни са великом сликом, или са прве принципе.",
+    "landing_card_programs_title": "Програми, од нације до нације",
+    "landing_card_programs_desc": "Од Востока до Артемиса, од Аполона до Тијангонга — свака национална линија, први лет до будућности.",
+    "landing_card_essays_title": "Дугачак поглед на свемирски лет",
+    "landing_card_essays_desc": "Генерацијске звезде, нов погон, тело у мраку — куда све то иде."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -3162,7 +3204,14 @@
     "programs_kind_funding": "资金线",
     "nav_group_explore": "探索",
     "nav_catalog": "目录",
-    "nav_learn": "学习"
+    "nav_learn": "学习",
+    "explore_hub_intro": "这里的每个世界都是你真正能去的地方——由真实轨道数据构建，精确到足以环顾四周。从整个太阳系的运动开始，或直接降落到表面。",
+    "catalog_hub_intro": "我们飞行过的一切记录——国家计划、独立任务和承载它们的航天器。每条记录都交叉索引、标注日期，并溯源到制造它的机构。",
+    "learn_hub_intro": "硬件背后的原理——关于航天未来发展的长篇论文，以及用通俗语言解释每条轨道都遵循的物理学。从宏观图景开始，或从第一性原理入手。",
+    "landing_card_programs_title": "国家航天计划",
+    "landing_card_programs_desc": "从东方号到阿尔忒弥斯，从阿波罗到天宫——每个国家的发展历程，从首次飞行到未来目标。",
+    "landing_card_essays_title": "航天的长期视角",
+    "landing_card_essays_desc": "世代飞船、新型推进、失重环境下的人体——一切将走向何方。"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3656,7 +3705,14 @@
     "programs_kind_funding": "資金枠",
     "nav_group_explore": "探索",
     "nav_catalog": "カタログ",
-    "nav_learn": "学習"
+    "nav_learn": "学習",
+    "explore_hub_intro": "ここのすべての世界は実際に行くことができる場所です — 実際の軌道データから構築され、周囲を見回すのに十分な精度です。太陽系全体の運動から始めるか、表面に直接降りることができます。",
+    "catalog_hub_intro": "私たちが飛行させたすべてのもの — 国家計画、個別ミッション、それらを搭載した宇宙機の記録です。すべての項目が相互参照され、日付が記載され、それを製造した機関にさかのぼって出典が示されています。",
+    "learn_hub_intro": "ハードウェアの背後にある考え — 宇宙飛行がどこに向かっているかに関する長編エッセイ、そしてすべての軌道を支配する物理学の平易な説明です。全体像から、または第一原理から始めてください。",
+    "landing_card_programs_title": "国別プログラム",
+    "landing_card_programs_desc": "ボストーク（Vostok）からアルテミス（Artemis）、アポロ（Apollo）から天宮（Tiangong）まで — 各国の軌跡、初飛行から未来へ。",
+    "landing_card_essays_title": "宇宙飛行の長期的視点",
+    "landing_card_essays_desc": "世代船、新しい推進方式、暗黒の中の人体 — これらがどこに向かっているか。"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -4153,7 +4209,14 @@
     "programs_kind_funding": "자금 지원",
     "nav_group_explore": "탐색",
     "nav_catalog": "카탈로그",
-    "nav_learn": "학습"
+    "nav_learn": "학습",
+    "explore_hub_intro": "여기 있는 모든 천체는 실제로 갈 수 있는 곳입니다 — 실제 궤도 데이터로 만들어진, 충분히 자세히 살펴볼 수 있는 거리에 있습니다. 태양계 전체가 움직이는 모습부터 시작하거나, 표면으로 바로 내려갈 수 있습니다.",
+    "catalog_hub_intro": "우리가 보낸 모든 것의 기록 — 국가 프로그램, 개별 임무, 그것들을 운반한 우주선. 모든 항목은 상호 참조되고, 날짜가 기록되고, 그것을 만든 기관으로 거슬러 올라갑니다.",
+    "learn_hub_intro": "하드웨어 뒤의 개념들 — 우주비행이 향하는 곳에 대한 장문의 에세이와, 모든 궤도를 지배하는 물리학의 쉬운 설명. 큰 그림부터 시작하거나, 기초 원리부터 시작하세요.",
+    "landing_card_programs_title": "국가별 프로그램",
+    "landing_card_programs_desc": "보스토크에서 아르테미스까지, 아폴로에서 톈궁까지 — 각 국가의 궤적, 첫 비행부터 미래까지.",
+    "landing_card_essays_title": "우주비행의 긴 관점",
+    "landing_card_essays_desc": "세대 우주선, 새로운 추진 방식, 어둠 속의 인체 — 모든 것이 향하는 곳."
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -4786,7 +4849,14 @@
     "programs_kind_funding": "वित्त पोषण लाइनें",
     "nav_group_explore": "खोजें",
     "nav_catalog": "सूची",
-    "nav_learn": "सीखें"
+    "nav_learn": "सीखें",
+    "explore_hub_intro": "यहाँ हर दुनिया एक ऐसी जगह है जहाँ आप वास्तव में जा सकते हैं — असली कक्षीय डेटा से बनी, चारों ओर देखने के लिए काफी करीब। पूरे सौर मंडल को गति में देखें, या सीधे किसी सतह पर उतरें।",
+    "catalog_hub_intro": "उस हर चीज़ का रिकॉर्ड जो हमने उड़ान भरी है — राष्ट्रीय कार्यक्रम, व्यक्तिगत मिशन, और जो अंतरिक्ष यान उन्हें ले गए। हर प्रविष्टि परस्पर संदर्भित, तारीख सहित, और उस एजेंसी के लिए स्रोत वापस किया गया जिसने इसे बनाया।",
+    "learn_hub_intro": "हार्डवेयर के पीछे के विचार — अंतरिक्ष उड़ान कहाँ जा रही है इस पर लंबे निबंध, और हर कक्षा को नियंत्रित करने वाली भौतिकी की सरल भाषा में व्याख्या। बड़ी तस्वीर से, या पहले सिद्धांतों से शुरू करें।",
+    "landing_card_programs_title": "कार्यक्रम, राष्ट्र दर राष्ट्र",
+    "landing_card_programs_desc": "वोस्तोक से आर्टेमिस तक, अपोलो से तियांगोंग तक — हर राष्ट्रीय चाप, पहली उड़ान से भविष्य तक।",
+    "landing_card_essays_title": "अंतरिक्ष उड़ान का दीर्घ दृष्टिकोण",
+    "landing_card_essays_desc": "जनरेशन जहाज़, नई प्रणोदन, अंधकार में शरीर — यह सब कहाँ जा रहा है।"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5461,7 +5531,14 @@
     "programs_kind_funding": "خطوط التمويل",
     "nav_group_explore": "استكشف",
     "nav_catalog": "الفهرس",
-    "nav_learn": "تعلم"
+    "nav_learn": "تعلم",
+    "explore_hub_intro": "كل عالم هنا هو مكان يمكنك الذهاب إليه فعلاً — مبني من بيانات مدارية حقيقية، دقيق كفاية لتتمكن من الاستكشاف. ابدأ بالنظام الشمسي كله في الحركة، أو انزل مباشرة إلى السطح.",
+    "catalog_hub_intro": "سجل كل ما أطلقناه — البرامج الوطنية والمهمات الفردية والمركبات الفضائية التي حملتها. كل إدخال مرجعي متبادل ومؤرخ وموثق إلى الوكالة التي بنتها.",
+    "learn_hub_intro": "الأفكار وراء الأجهزة — مقالات طويلة عن اتجاه الرحلات الفضائية، وشروحات علمية واضحة للفيزياء التي تحكم كل مدار. ابدأ بالصورة الكبرى، أو المبادئ الأساسية.",
+    "landing_card_programs_title": "البرامج، دولة تلو الأخرى",
+    "landing_card_programs_desc": "من فوستوك إلى أرتيميس، من أبولو إلى تيانغونغ — كل قوس وطني، من الرحلة الأولى إلى المستقبل.",
+    "landing_card_essays_title": "النظرة الطويلة للرحلات الفضائية",
+    "landing_card_essays_desc": "السفن الجيلية، الدفع الجديد، الجسد في الظلام — إلى أين يتجه كل هذا."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -5958,7 +6035,14 @@
     "programs_kind_funding": "Линии финансирования",
     "nav_group_explore": "ИССЛЕДОВАНИЕ",
     "nav_catalog": "КАТАЛОГ",
-    "nav_learn": "ОБУЧЕНИЕ"
+    "nav_learn": "ОБУЧЕНИЕ",
+    "explore_hub_intro": "Каждый мир здесь — место, куда можно реально попасть, построенное по реальным орбитальным данным, достаточно точное, чтобы оглядеться. Начните со всей Солнечной системы в движении или приземлитесь прямо на поверхность.",
+    "catalog_hub_intro": "Запись всего, что мы запускали — национальные программы, отдельные миссии и космические аппараты, которые их несли. Каждая запись перекрёстно ссылается, датирована и отслеживается до агентства, которое её создало.",
+    "learn_hub_intro": "Идеи за аппаратурой — развёрнутые статьи о том, куда движется космонавтика, и простые объяснения физики, управляющей каждой орбитой. Начните с общей картины или с первых принципов.",
+    "landing_card_programs_title": "Программы по странам",
+    "landing_card_programs_desc": "От Востока до Артемиды, от Аполлона до Тяньгун — каждая национальная история, от первого полёта до будущего.",
+    "landing_card_essays_title": "Долгий взгляд на космонавтику",
+    "landing_card_essays_desc": "Поколенческие корабли, новые движители, тело в космосе — куда всё это движется."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -6405,6 +6489,13 @@
     "programs_kind_funding": "Financieringslijnen",
     "nav_group_explore": "VERKENNEN",
     "nav_catalog": "CATALOGUS",
-    "nav_learn": "LEREN"
+    "nav_learn": "LEREN",
+    "explore_hub_intro": "Elke wereld hier is een plaats waar je werkelijk heen kunt gaan — gebouwd van echte baangegevens, dicht genoeg om rond te kijken. Begin met het hele zonnestelsel in beweging, of val rechtstreeks op een oppervlak.",
+    "catalog_hub_intro": "Het register van alles wat we hebben gevlogen — nationale programma's, individuele missies, en de ruimtevaartuigen die ze uitvoerden. Elk item kruisgeëxtrapoleerd, gedateerd, en teruggevoerd naar het agentschap dat het bouwde.",
+    "learn_hub_intro": "De ideeën achter de hardware — uitgebreide essays over waar ruimtevaart heen gaat, en begrijpelijke uitleg van de natuurkunde die elke baan beheerst. Begin met het grote geheel, of de eerste principes.",
+    "landing_card_programs_title": "Programma's, land voor land",
+    "landing_card_programs_desc": "Vostok tot Artemis, Apollo tot Tiangong — elk nationaal traject, eerste vlucht tot toekomst.",
+    "landing_card_essays_title": "Het lange perspectief op ruimtevaart",
+    "landing_card_essays_desc": "Generatieschepen, nieuwe voortstuwing, het lichaam in het duister — waar dit allemaal heen gaat."
   }
 }

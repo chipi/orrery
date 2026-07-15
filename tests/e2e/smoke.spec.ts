@@ -1,5 +1,6 @@
 import { test, expect, type Page, type ConsoleMessage } from '@playwright/test';
 import { isExpectedNoise } from './_helpers/console-errors';
+import { revealDesktopNavLink } from './_helpers/nav';
 
 /**
  * Smoke tests — every route loads without console errors and shows
@@ -76,10 +77,7 @@ test('nav bar is visible on every screen and links target primary routes', async
     await page.waitForLoadState('networkidle');
     await menuToggle.tap();
   }
-  const linkSelector = isMobile
-    ? (path: string) => `a.drawer-link[href$="${path}"]`
-    : (path: string) => `nav .center a.link[href$="${path}"]`;
-  for (const path of [
+  const primaryRoutes = [
     '/moon',
     '/mars',
     '/iss',
@@ -88,8 +86,14 @@ test('nav bar is visible on every screen and links target primary routes', async
     '/fly',
     '/missions',
     '/earth',
-  ]) {
-    const link = page.locator(linkSelector(path)).first();
+  ];
+  for (const path of primaryRoutes) {
+    // Mobile: every link is in the (already-open) drawer. Desktop: most
+    // routes now live behind the Explore / Catalog / Learn dropdowns
+    // (2026-07 nav regroup), so reveal each via its group before asserting.
+    const link = isMobile
+      ? page.locator(`a.drawer-link[href$="${path}"]`).first()
+      : await revealDesktopNavLink(page, path);
     await expect(link, `nav link to ${path}`).toBeVisible();
   }
 });

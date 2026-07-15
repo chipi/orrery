@@ -1,4 +1,5 @@
 import { test, expect, type ConsoleMessage, type Page } from '@playwright/test';
+import { revealDesktopNavLink } from './_helpers/nav';
 
 function attachConsoleAndError(page: Page) {
   const errors: string[] = [];
@@ -185,16 +186,17 @@ test.describe('/fleet', () => {
 
   test('nav exposes the FLEET link', async ({ page }) => {
     await page.goto('/explore', { waitUntil: 'networkidle' });
-    // Desktop nav surfaces the link inline; mobile hides it behind the
-    // hamburger drawer (per v0.6.0 nav overhaul, ≤640 px viewport).
-    const desktopFleet = page.locator('nav .center a.link[href*="/fleet"]').first();
-    if (await desktopFleet.isVisible().catch(() => false)) {
-      await expect(desktopFleet).toBeVisible({ timeout: 5_000 });
+    // Mobile hides the link behind the hamburger drawer; desktop surfaces
+    // it under the Catalog dropdown (2026-07 nav regroup — FLEET is no
+    // longer a top-level inline link).
+    const menuToggle = page.locator('button.menu-toggle');
+    if (await menuToggle.isVisible().catch(() => false)) {
+      await menuToggle.click();
+      await expect(page.locator('a.drawer-link[href*="/fleet"]').first()).toBeVisible({
+        timeout: 5_000,
+      });
       return;
     }
-    await page.locator('button.menu-toggle').click();
-    await expect(page.locator('a.drawer-link[href*="/fleet"]').first()).toBeVisible({
-      timeout: 5_000,
-    });
+    await expect(await revealDesktopNavLink(page, '/fleet')).toBeVisible({ timeout: 5_000 });
   });
 });

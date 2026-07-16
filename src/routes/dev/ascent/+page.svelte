@@ -15,7 +15,6 @@
   import * as THREE from 'three';
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
   import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-  import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
   import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
   import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
@@ -209,8 +208,7 @@
     composer = new EffectComposer(renderer);
     composer.setSize(w, h);
     composer.addPass(new RenderPass(sceneObj.scene, sceneObj.camera));
-    composer.addPass(new UnrealBloomPass(new THREE.Vector2(w, h), 0.4, 0.4, 0.92));
-    composer.addPass(new FilmPass(0.12));
+    composer.addPass(new FilmPass(0.1));
     const vignette = new ShaderPass(VignetteShader);
     vignette.uniforms['offset'].value = 0.95;
     vignette.uniforms['darkness'].value = 0.55;

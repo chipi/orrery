@@ -95,6 +95,12 @@ export interface AscentState {
   qPa: number;
   /** Thrust-to-weight ratio (local g). */
   twr: number;
+  /** Instantaneous thrust (N) — 0 while coasting. For the forces lens. */
+  thrustN: number;
+  /** Instantaneous drag (N). For the forces lens. */
+  dragN: number;
+  /** Commanded thrust direction — flight-path angle from horizontal (rad). */
+  pitchRad: number;
 }
 
 /** A discrete ascent beat (liftoff, staging, Max-Q, MECO, SECO, …). */
@@ -329,6 +335,9 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       stageIndex,
       qPa: dynamicPressure(rho, speed),
       twr: m > 0 ? thrust / (m * g) : 0,
+      thrustN: thrust,
+      dragN: dynamicPressure(rho, speed) * cd * refArea,
+      pitchRad: pitchAngleRad(profile, t),
     };
   };
 
@@ -493,6 +502,9 @@ export function sampleAscentAt(states: AscentState[], t: number): AscentState {
     stageIndex: f < 0.5 ? a.stageIndex : b.stageIndex,
     qPa: lerp(a.qPa, b.qPa),
     twr: lerp(a.twr, b.twr),
+    thrustN: lerp(a.thrustN, b.thrustN),
+    dragN: lerp(a.dragN, b.dragN),
+    pitchRad: lerp(a.pitchRad, b.pitchRad),
   };
 }
 

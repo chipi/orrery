@@ -15,7 +15,7 @@
  */
 
 import * as THREE from 'three';
-import type { AscentState } from '$lib/orbital/ascent-physics';
+import { gravity, type AscentState } from '$lib/orbital/ascent-physics';
 import {
   composeShot,
   selectShot,
@@ -44,10 +44,20 @@ export interface AscentScene {
   setAspect(aspect: number): void;
   /** The camera shot active at the last setState() — for the HUD. */
   readonly activeShot: AscentShotName;
+  /** Toggle the Science-Lens force vectors (thrust / weight / drag / velocity). */
+  setForcesVisible(on: boolean): void;
   /** Restore stages/fairing/plume to the pre-launch state (for replay). */
   reset(): void;
   dispose(): void;
 }
+
+/** Science-Lens force-vector palette (matches the HUD legend). */
+export const FORCE_COLORS = {
+  thrust: 0x54e08a,
+  weight: 0xff5a5a,
+  drag: 0x5aa0ff,
+  velocity: 0x7fe0ff,
+} as const;
 
 export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const vehLen = opts.vehicleLengthKm ?? 1.2;
@@ -211,11 +221,53 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   plume.rotation.z = Math.PI; // point down (−Y)
   stage1Group.add(plume);
 
+  // ── Science-Lens force vectors (thrust / weight / drag / velocity),
+  //    drawn in world space at the vehicle. Lengths are stylised so the
+  //    diagram reads; thrust and weight share a scale so TWR stays honest.
+  const FORCE_REF_N = 8_000_000; // ≈ liftoff thrust → maps to 2.2·vehLen
+  const DRAG_REF_N = 120_000; // separate scale so drag reads at Max-Q
+  const SPEED_REF = 7.8; // km/s → 2·vehLen
+  const forces = new THREE.Group();
+  forces.visible = false;
+  const mkArrow = (hex: number): THREE.ArrowHelper =>
+    new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), new THREE.Vector3(), vehLen, hex, vehLen * 0.28, vehLen * 0.16);
+  const arrThrust = mkArrow(FORCE_COLORS.thrust);
+  const arrWeight = mkArrow(FORCE_COLORS.weight);
+  const arrDrag = mkArrow(FORCE_COLORS.drag);
+  const arrVel = mkArrow(FORCE_COLORS.velocity);
+  forces.add(arrThrust, arrWeight, arrDrag, arrVel);
+  scene.add(forces);
+  let showForces = false;
+
   let fairingOn = true;
   let stage1On = true;
   let frame = 0;
   const schedule = opts.schedule ?? [];
   let activeShot: AscentShotName = 'ascent';
+
+  const _v = new THREE.Vector3();
+  const updateForces = (s: AscentState): void => {
+    const origin = new THREE.Vector3(s.downrangeKm, s.altKm, 0);
+    const setArrow = (arr: THREE.ArrowHelper, dx: number, dy: number, lenKm: number): void => {
+      const on = lenKm > vehLen * 0.05 && (dx !== 0 || dy !== 0);
+      arr.visible = on;
+      if (!on) return;
+      arr.position.copy(origin);
+      _v.set(dx, dy, 0).normalize();
+      arr.setDirection(_v);
+      arr.setLength(lenKm, vehLen * 0.28, vehLen * 0.16);
+    };
+    // Thrust — up the commanded body axis.
+    const tl = (s.thrustN / FORCE_REF_N) * vehLen * 2.2;
+    setArrow(arrThrust, Math.cos(s.pitchRad), Math.sin(s.pitchRad), s.thrustN > 0 ? tl : 0);
+    // Weight — toward Earth's centre (a full radius below the pad).
+    const weightN = s.massKg * gravity(s.altKm * 1000);
+    setArrow(arrWeight, -s.downrangeKm, -(R_EARTH_KM + s.altKm), (weightN / FORCE_REF_N) * vehLen * 2.2);
+    // Velocity + drag (drag opposes velocity).
+    const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
+    setArrow(arrVel, horiz, s.velUpKms, (s.speedKms / SPEED_REF) * vehLen * 2);
+    setArrow(arrDrag, -horiz, -s.velUpKms, (s.dragN / DRAG_REF_N) * vehLen * 1.2);
+  };
 
   const setState = (s: AscentState): void => {
     frame++;
@@ -272,6 +324,13 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       camera.fov = p.fov;
       camera.updateProjectionMatrix();
     }
+
+    if (showForces) updateForces(s);
+  };
+
+  const setForcesVisible = (on: boolean): void => {
+    showForces = on;
+    forces.visible = on;
   };
 
   const setAspect = (aspect: number): void => {
@@ -311,6 +370,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     get activeShot() {
       return activeShot;
     },
+    setForcesVisible,
     reset,
     dispose,
   };

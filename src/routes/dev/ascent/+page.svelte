@@ -66,6 +66,7 @@
   let playing = $state(true);
   let speed = $state(5);
   let t = $state(-T_MINUS);
+  let forcesOn = $state(false);
 
   let renderer: THREE.WebGLRenderer | undefined;
   let sceneObj: AscentScene | undefined;
@@ -98,6 +99,8 @@
     velUpKms: 0,
     qPa: 0,
     stageIndex: tt < IGNITION_T ? -1 : 0, // engines light at ignition
+    thrustN: tt < IGNITION_T ? 0 : summary.states[0].thrustN,
+    dragN: 0,
   });
 
   onMount(() => {
@@ -170,6 +173,11 @@
     t = -T_MINUS;
     playing = true;
   };
+
+  // Science-Lens force vectors follow the toggle.
+  $effect(() => {
+    sceneObj?.setForcesVisible(forcesOn);
+  });
 </script>
 
 <svelte:head><title>/fly launch · Scene 0 (dev)</title></svelte:head>
@@ -254,7 +262,20 @@
         <button class:active={speed === sp} onclick={() => (speed = sp)}>{sp}×</button>
       {/each}
     </div>
+    <button class="forces-btn" class:active={forcesOn} onclick={() => (forcesOn = !forcesOn)}>
+      SCIENCE LENS · FORCES
+    </button>
   </div>
+
+  <!-- Force legend (Science Lens) -->
+  {#if forcesOn}
+    <div class="legend">
+      <span><i style="background:#54e08a"></i>THRUST</span>
+      <span><i style="background:#ff5a5a"></i>WEIGHT</span>
+      <span><i style="background:#5aa0ff"></i>DRAG</span>
+      <span><i style="background:#7fe0ff"></i>VELOCITY</span>
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -557,5 +578,42 @@
     background: rgba(90, 200, 255, 0.25);
     border-color: #5ac8ff;
     color: #fff;
+  }
+  .forces-btn {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .forces-btn.active {
+    background: rgba(84, 224, 138, 0.2);
+    border-color: #54e08a;
+    color: #cffce0;
+  }
+
+  /* Force legend */
+  .legend {
+    position: absolute;
+    left: 22px;
+    bottom: 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 12px;
+    background: rgba(4, 9, 20, 0.7);
+    border: 1px solid rgba(127, 223, 255, 0.2);
+    border-radius: 5px;
+  }
+  .legend span {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #cfe3f5;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .legend i {
+    width: 14px;
+    height: 3px;
+    border-radius: 2px;
+    display: inline-block;
   }
 </style>

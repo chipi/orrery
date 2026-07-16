@@ -106,27 +106,49 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   earth.rotation.set(-Math.PI / 2, 2.1, 0); // equator up; longitude → coastline
   scene.add(earth);
 
-  // Atmosphere — two additive back-side shells for a bright, thick blue
-  // limb that reads against black (a broad haze + a tighter hot rim).
-  const atmoHaze = new THREE.Mesh(
-    new THREE.SphereGeometry(R_EARTH_KM + 220, 128, 128),
-    new THREE.MeshBasicMaterial({
-      color: 0x4aa0ff,
-      transparent: true,
-      opacity: 0.16,
-      side: THREE.BackSide,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-    }),
-  );
-  atmoHaze.position.copy(earth.position);
-  scene.add(atmoHaze);
+  // Atmosphere (R2) — a back-side additive shell with a sun-aware scatter
+  // shader: the sunlit limb brightens (forward Rayleigh scattering) and the
+  // terminator falls off to a dim blue, instead of a flat constant glow.
+  const atmoMat = new THREE.ShaderMaterial({
+    uniforms: {
+      uSunDir: { value: sunDir.clone() },
+      uDay: { value: new THREE.Color(0x8fc6ff) },
+      uNight: { value: new THREE.Color(0x14314f) },
+      uIntensity: { value: 0.9 },
+    },
+    transparent: true,
+    side: THREE.BackSide,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    vertexShader: /* glsl */ `
+      varying vec3 vN;
+      void main() {
+        vN = normalize(mat3(modelMatrix) * normal);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: /* glsl */ `
+      uniform vec3 uSunDir; uniform vec3 uDay; uniform vec3 uNight; uniform float uIntensity;
+      varying vec3 vN;
+      void main() {
+        // Sun illumination of this bit of shell (soft terminator).
+        float sun = clamp(dot(normalize(vN), normalize(uSunDir)) * 0.5 + 0.5, 0.0, 1.0);
+        float scatter = pow(sun, 1.6);
+        vec3 col = mix(uNight, uDay, scatter) * uIntensity;
+        gl_FragColor = vec4(col, 0.28 + 0.55 * scatter);
+      }
+    `,
+  });
+  const atmo = new THREE.Mesh(new THREE.SphereGeometry(R_EARTH_KM + 190, 128, 128), atmoMat);
+  atmo.position.copy(earth.position);
+  scene.add(atmo);
+  // A thin bright inner rim keeps a crisp lit edge under bloom.
   const atmoRim = new THREE.Mesh(
-    new THREE.SphereGeometry(R_EARTH_KM + 70, 128, 128),
+    new THREE.SphereGeometry(R_EARTH_KM + 62, 128, 128),
     new THREE.MeshBasicMaterial({
-      color: 0x9fd0ff,
+      color: 0xbfe0ff,
       transparent: true,
-      opacity: 0.5,
+      opacity: 0.4,
       side: THREE.BackSide,
       blending: THREE.AdditiveBlending,
       depthWrite: false,

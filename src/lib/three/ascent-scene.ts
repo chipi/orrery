@@ -16,6 +16,12 @@
 
 import * as THREE from 'three';
 import type { AscentState } from '$lib/orbital/ascent-physics';
+import {
+  composeShot,
+  selectShot,
+  type AscentShotName,
+  type ShotWindow,
+} from '$lib/orbital/ascent-cameras';
 
 const R_EARTH_KM = 6371;
 
@@ -26,6 +32,8 @@ export interface AscentSceneOptions {
   earthNightUrl?: string;
   /** Exaggeration for the vehicle length (km). Real F9 ≈ 0.07; default 1.2 to read. */
   vehicleLengthKm?: number;
+  /** Camera shot schedule (from buildShotSchedule). Falls back to a single tracking shot. */
+  schedule?: ShotWindow[];
 }
 
 export interface AscentScene {
@@ -34,6 +42,8 @@ export interface AscentScene {
   /** Position + orient the vehicle and frame the camera from a physics state. */
   setState(s: AscentState): void;
   setAspect(aspect: number): void;
+  /** The camera shot active at the last setState() — for the HUD. */
+  readonly activeShot: AscentShotName;
   dispose(): void;
 }
 
@@ -202,6 +212,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   let fairingOn = true;
   let stage1On = true;
   let frame = 0;
+  const schedule = opts.schedule ?? [];
+  let activeShot: AscentShotName = 'ascent';
 
   const setState = (s: AscentState): void => {
     frame++;
@@ -247,11 +259,17 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       plume.position.y = -(s.stageIndex >= 1 ? vehLen * 0.12 : vehLen * 0.22) * (flick * vac);
     }
 
-    // Camera: tracking three-quarter view that pulls back gently with
-    // altitude so Earth curvature enters without the vehicle shrinking.
-    const back = Math.max(vehLen * 4.5, s.altKm * 0.42 + vehLen * 3);
-    camera.position.set(s.downrangeKm - back * 0.5, s.altKm + back * 0.22, back);
-    camera.lookAt(s.downrangeKm, s.altKm + vehLen * 0.5, 0);
+    // Camera: pick the active shot from the schedule and compose its pose.
+    // Hard-cut between shots (cinematic); the pose is a continuous function
+    // of the state, so it moves smoothly within a shot.
+    activeShot = schedule.length ? selectShot(schedule, s.t) : 'ascent';
+    const p = composeShot(activeShot, s, vehLen);
+    camera.position.set(p.px, p.py, p.pz);
+    camera.lookAt(p.tx, p.ty, p.tz);
+    if (camera.fov !== p.fov) {
+      camera.fov = p.fov;
+      camera.updateProjectionMatrix();
+    }
   };
 
   const setAspect = (aspect: number): void => {
@@ -271,5 +289,14 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     });
   };
 
-  return { scene, camera, setState, setAspect, dispose };
+  return {
+    scene,
+    camera,
+    setState,
+    setAspect,
+    get activeShot() {
+      return activeShot;
+    },
+    dispose,
+  };
 }

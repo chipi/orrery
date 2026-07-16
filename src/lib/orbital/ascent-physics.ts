@@ -310,6 +310,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   let reachedOrbit = false;
   let mecoSeen = false;
   let orbitSeen = false;
+  let secoT = -1; // time all stages are spent → start of the orbit coast
+  const POST_SECO_COAST_S = 90; // render a serene "engine dark" coast after SECO
 
   const snapshot = (): AscentState => {
     const speed = Math.hypot(vx, vy);
@@ -361,13 +363,16 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     const ax = (thrust * thrustDirX + drag * dragDirX) / m;
     const ay = (thrust * thrustDirY + drag * dragDirY) / m - g;
 
-    // Δv-loss bookkeeping (integrated over dt).
-    const gammaVel = speed > 1e-3 ? Math.atan2(vy, vx) : pitch; // flight-path angle of velocity
-    losses.gravity += g * Math.sin(gammaVel) * dt;
-    losses.drag += (drag / m) * dt;
-    if (thrust > 0 && speed > 1e-3) {
-      const cosAlpha = (thrustDirX * vx + thrustDirY * vy) / speed; // thrust·v̂
-      losses.steering += (thrust / m) * (1 - Math.max(-1, Math.min(1, cosAlpha))) * dt;
+    // Δv-loss bookkeeping — accumulated over POWERED flight only (a loss is
+    // Δv you spend and don't get back; a ballistic coast spends none).
+    if (thrust > 0) {
+      const gammaVel = speed > 1e-3 ? Math.atan2(vy, vx) : pitch; // flight-path angle of velocity
+      losses.gravity += g * Math.sin(gammaVel) * dt;
+      losses.drag += (drag / m) * dt;
+      if (speed > 1e-3) {
+        const cosAlpha = (thrustDirX * vx + thrustDirY * vy) / speed; // thrust·v̂
+        losses.steering += (thrust / m) * (1 - Math.max(-1, Math.min(1, cosAlpha))) * dt;
+      }
     }
 
     // Semi-implicit Euler: velocity then position.
@@ -403,6 +408,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       pushEvent(isLast ? 'seco' : 'staging', profile.stages[stageIndex].name);
       if (isLast) {
         stageIndex = -1; // all propellant spent → coast
+        secoT = t;
       } else {
         stageIndex += 1;
         remainingProp = stagePropellant(profile.stages[stageIndex]);
@@ -428,8 +434,12 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       nextSampleT += sampleDt;
     }
 
-    // Stop once coasting with no thrust left and either in orbit or falling back.
-    if (stageIndex < 0 && (orbitSeen || (y <= 0 && t > 1))) break;
+    // Once all stages are spent, render a bounded serene coast, then stop
+    // (or stop early if the vehicle falls back to the ground).
+    if (stageIndex < 0) {
+      if (secoT < 0) secoT = t;
+      if (t - secoT >= POST_SECO_COAST_S || (y <= 0 && t > 1)) break;
+    }
   }
 
   const final = snapshot();

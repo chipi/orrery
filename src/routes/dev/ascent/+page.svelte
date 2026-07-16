@@ -16,10 +16,16 @@
   import { integrateAscent, sampleAscentAt, type AscentSummary } from '$lib/orbital/ascent-physics';
   import { FALCON9_SAMPLE } from '$lib/orbital/ascent-profiles';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
+  import { buildShotSchedule } from '$lib/orbital/ascent-cameras';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
 
   const summary: AscentSummary = integrateAscent(FALCON9_SAMPLE);
   const duration = summary.states.at(-1)!.t;
+  const schedule = buildShotSchedule({
+    events: summary.events,
+    maxQt: summary.maxQ.t,
+    duration,
+  });
 
   let container: HTMLDivElement;
   let playing = $state(true);
@@ -31,7 +37,7 @@
   let loop: AnimateLoop | undefined;
 
   // Live telemetry (derived from the sampled state).
-  let hud = $state({ altKm: 0, velKms: 0, twr: 0, qkPa: 0, downrangeKm: 0, stage: 'S1', met: 'T+00:00' });
+  let hud = $state({ altKm: 0, velKms: 0, twr: 0, qkPa: 0, downrangeKm: 0, stage: 'S1', met: 'T+00:00', shot: 'pad' });
 
   const stageLabel = (i: number): string => (i < 0 ? 'COAST' : FALCON9_SAMPLE.stages[i]?.name ?? '—');
 
@@ -50,7 +56,16 @@
       aspect: w / h,
       earthDayUrl: `${base}/textures/2k_earth_daymap.jpg`,
       earthNightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
+      schedule,
     });
+
+    // Dev-harness debug hook — read the shot schedule + beats from the console.
+    (window as unknown as Record<string, unknown>).__ascentDebug = {
+      schedule,
+      events: summary.events,
+      maxQ: summary.maxQ,
+      duration,
+    };
 
     const applyState = () => {
       const s = sampleAscentAt(summary.states, t);
@@ -63,6 +78,7 @@
         downrangeKm: s.downrangeKm,
         stage: stageLabel(s.stageIndex),
         met: formatAscentClock(s.t),
+        shot: sceneObj!.activeShot,
       };
     };
     applyState();
@@ -112,6 +128,7 @@
   <div class="hud-top">
     <span class="met">{hud.met}</span>
     <span class="stage-chip">{hud.stage}</span>
+    <span class="shot-chip">CAM · {hud.shot.replace('_', '-')}</span>
   </div>
 
   <div class="hud-left">
@@ -163,7 +180,8 @@
     color: #eafaff;
     text-shadow: 0 0 12px rgba(90, 200, 255, 0.4);
   }
-  .stage-chip {
+  .stage-chip,
+  .shot-chip {
     font-size: 11px;
     letter-spacing: 2px;
     color: #7fdfff;
@@ -171,6 +189,11 @@
     border-radius: 3px;
     padding: 2px 7px;
     align-self: center;
+    background: rgba(3, 8, 18, 0.35);
+  }
+  .shot-chip {
+    color: #ffcf8f;
+    border-color: rgba(255, 207, 143, 0.5);
   }
   .hud-left {
     position: absolute;
@@ -178,6 +201,7 @@
     left: 22px;
     display: grid;
     gap: 6px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
   }
   .row {
     font-size: 12px;

@@ -169,6 +169,8 @@
   import { sensory } from '$lib/sensory/state.svelte';
   import { flyVelocitySon } from '$lib/sensory/sonify/fly-velocity';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import LaunchScene from '$lib/components/LaunchScene.svelte';
+  import { getLaunchProfile, missionLauncherId } from '$lib/orbital/launch-profile-registry';
   import PhasePanel from '$lib/components/PhasePanel.svelte';
   import FlightDirectorBanner from '$lib/components/FlightDirectorBanner.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
@@ -232,6 +234,26 @@
     scenarioToLoaded(defaultScenarioBase, defaultScenarioOverlay),
   );
   let missionEvents: MissionEvent[] = $state(defaultScenarioOverlay.events as MissionEvent[]);
+
+  // ─── Launch pre-roll (RFC-033 §11.3 / Track A) — opt-in via ?launch=1 ─
+  // Default /fly is byte-unchanged. When the URL asks for it AND the mission's
+  // launcher has a modelled ascent profile, the launch act plays as a self-
+  // contained overlay; onComplete dismisses it to reveal the transfer scene.
+  const wantLaunch =
+    typeof window !== 'undefined' &&
+    new URLSearchParams(window.location.search).get('launch') === '1';
+  let showLaunch = $state(false);
+  let launchDismissed = $state(false);
+  let launchProfile = $derived(getLaunchProfile(missionLauncherId(mission.fleet_refs)));
+  let launchDossier = $derived({
+    name: mission.name,
+    agency: mission.agency ?? mission.agency_full ?? '',
+    site: launchProfile?.launchSite?.name ?? 'Launch complex',
+    destination: mission.arr_label ?? '',
+  });
+  $effect(() => {
+    showLaunch = wantLaunch && !launchDismissed && launchProfile != null;
+  });
 
   // ─── Rendering debug bridge (#334) ───────────────────────────────
   // Exposed so <RenderingDebugRegistrar> in the template can register
@@ -6725,6 +6747,18 @@
 
 <svelte:head><title>{m.fly_page_title()}</title></svelte:head>
 
+<!-- Launch pre-roll overlay (opt-in ?launch=1). Self-contained; dismisses to reveal the transfer scene. -->
+{#if showLaunch && launchProfile}
+  <LaunchScene
+    profile={launchProfile}
+    mission={launchDossier}
+    onComplete={() => {
+      launchDismissed = true;
+      showLaunch = false;
+    }}
+  />
+{/if}
+
 {#snippet flyDebugContent()}
   {#if mission.flight?.events && outPts.length > 0}
     {@const flybyEventsForDebug = (mission.flight.events ?? []).filter(
@@ -7100,7 +7134,7 @@
        Wide top-down system view is the backdrop (set in
        updateHelioAutoZoomTargets 'opening' branch). Skip button is
        always present while openingActive so users can fast-forward. -->
-  {#if openingActive}
+  {#if openingActive && !wantLaunch}
     {@const depYear = mission.dep_label?.slice(0, 4) ?? ''}
     {@const arrYear = mission.arr_label?.slice(0, 4) ?? ''}
     {@const story = mission.description ?? ''}

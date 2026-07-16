@@ -219,50 +219,119 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   );
   scene.add(stars);
 
-  // ── Pad + tower at the origin.
-  const padMat = new THREE.MeshStandardMaterial({ color: 0x30343c, roughness: 0.9 });
-  const pad = new THREE.Mesh(new THREE.CylinderGeometry(vehLen * 0.55, vehLen * 0.65, vehLen * 0.08, 32), padMat);
-  pad.position.y = vehLen * 0.04;
+  // ── Pad + strongback tower at the origin (slim, matched to the vehicle).
+  const padMat = new THREE.MeshStandardMaterial({ color: 0x2c3038, roughness: 0.9 });
+  const pad = new THREE.Mesh(new THREE.CylinderGeometry(vehLen * 0.15, vehLen * 0.2, vehLen * 0.05, 32), padMat);
+  pad.position.y = vehLen * 0.025;
   scene.add(pad);
-  const tower = new THREE.Mesh(new THREE.BoxGeometry(vehLen * 0.07, vehLen * 1.15, vehLen * 0.07), padMat);
-  tower.position.set(vehLen * 0.42, vehLen * 0.57, 0);
+  const tower = new THREE.Mesh(new THREE.BoxGeometry(vehLen * 0.03, vehLen * 1.05, vehLen * 0.03), padMat);
+  tower.position.set(vehLen * 0.1, vehLen * 0.52, 0);
   scene.add(tower);
 
-  // ── Vehicle group: two stages + interstage + nozzle + fairing + plume.
+  // ── Vehicle: a stylised-but-recognisable Falcon 9 (procedural, no assets):
+  //    slender body, 9-Merlin octaweb, grid fins, stowed legs, interstage,
+  //    an upper stage with a vacuum bell, and an ogive fairing.
   const vehicle = new THREE.Group();
-  const bodyMat = new THREE.MeshStandardMaterial({ color: 0xeef2f7, roughness: 0.4, metalness: 0.25 });
-  const darkMat = new THREE.MeshStandardMaterial({ color: 0x16181d, roughness: 0.55, metalness: 0.3 });
+  const bodyMat = new THREE.MeshStandardMaterial({ color: 0xeef2f7, roughness: 0.42, metalness: 0.18 });
+  const darkMat = new THREE.MeshStandardMaterial({ color: 0x15171c, roughness: 0.55, metalness: 0.35 });
+  const engMat = new THREE.MeshStandardMaterial({ color: 0x2b2f36, roughness: 0.4, metalness: 0.7 });
 
-  const rBody = vehLen * 0.055;
-  const stage1 = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.6, 40), bodyMat);
-  stage1.position.y = vehLen * 0.3;
-  const interstage = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.05, 40), darkMat);
-  interstage.position.y = vehLen * 0.625;
-  const stage2 = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.26, 40), bodyMat);
-  stage2.position.y = vehLen * 0.78;
-  const fairing = new THREE.Mesh(new THREE.ConeGeometry(rBody, vehLen * 0.18, 40), bodyMat);
-  fairing.position.y = vehLen * 1.0;
-  const nozzle = new THREE.Mesh(new THREE.ConeGeometry(rBody * 0.92, vehLen * 0.06, 28, 1, true), darkMat);
-  nozzle.position.y = -vehLen * 0.01;
+  const rBody = vehLen * 0.035; // slender — real F9 is ~19:1
   const stage1Group = new THREE.Group();
-  stage1Group.add(stage1, nozzle);
-  vehicle.add(stage1Group, interstage, stage2, fairing);
+
+  const stage1 = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.55, 40), bodyMat);
+  stage1.position.y = vehLen * 0.305;
+  stage1Group.add(stage1);
+
+  // Octaweb + 9 Merlin nozzles (1 centre + 8 ring).
+  const octaweb = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody * 0.94, vehLen * 0.03, 40), darkMat);
+  octaweb.position.y = vehLen * 0.02;
+  stage1Group.add(octaweb);
+  const merlinGeo = new THREE.ConeGeometry(rBody * 0.22, vehLen * 0.04, 12, 1, true);
+  const mkMerlin = (x: number, z: number): THREE.Mesh => {
+    const m = new THREE.Mesh(merlinGeo, engMat);
+    m.position.set(x, -vehLen * 0.008, z);
+    m.rotation.x = Math.PI;
+    return m;
+  };
+  stage1Group.add(mkMerlin(0, 0));
+  for (let i = 0; i < 8; i++) {
+    const a = (i / 8) * Math.PI * 2;
+    stage1Group.add(mkMerlin(Math.cos(a) * rBody * 0.55, Math.sin(a) * rBody * 0.55));
+  }
+
+  // 4 stowed landing legs + 4 grid fins near the top of S1.
+  const legGeo = new THREE.BoxGeometry(rBody * 0.14, vehLen * 0.2, rBody * 0.08);
+  const finGeo = new THREE.BoxGeometry(rBody * 0.5, vehLen * 0.02, rBody * 0.14);
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2;
+    const leg = new THREE.Mesh(legGeo, darkMat);
+    leg.position.set(Math.cos(a) * rBody * 1.02, vehLen * 0.11, Math.sin(a) * rBody * 1.02);
+    stage1Group.add(leg);
+    const af = a + Math.PI / 4;
+    const fin = new THREE.Mesh(finGeo, darkMat);
+    fin.position.set(Math.cos(af) * rBody * 1.15, vehLen * 0.5, Math.sin(af) * rBody * 1.15);
+    fin.rotation.y = -af;
+    stage1Group.add(fin);
+  }
+  vehicle.add(stage1Group);
+
+  const interstage = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.045, 40), darkMat);
+  interstage.position.y = vehLen * 0.6;
+  vehicle.add(interstage);
+
+  const stage2 = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.22, 40), bodyMat);
+  stage2.position.y = vehLen * 0.735;
+  const s2nozzle = new THREE.Mesh(new THREE.ConeGeometry(rBody * 0.55, vehLen * 0.06, 20, 1, true), engMat);
+  s2nozzle.position.y = vehLen * 0.6;
+  vehicle.add(stage2, s2nozzle);
+
+  const fairing = new THREE.Mesh(new THREE.ConeGeometry(rBody * 1.02, vehLen * 0.17, 40), bodyMat);
+  fairing.position.y = vehLen * 0.93;
+  vehicle.add(fairing);
   scene.add(vehicle);
 
-  // Plume: a hot inner core + an additive outer glow, hung below the
-  // firing nozzle and flickered per frame.
+  // Plume (R4): a LAYERED exhaust — hot blue-white throat, a yellow core, a
+  // wide orange glow, a long diffuse trail, and Mach-diamond shock beads down
+  // the axis. Built along +Y then rotated so it fires −Y; flickered per frame.
+  const plumeCone = (r: number, len: number, color: number, opacity: number): THREE.Mesh =>
+    new THREE.Mesh(
+      new THREE.ConeGeometry(r, len, 24, 1, true),
+      new THREE.MeshBasicMaterial({ color, transparent: true, opacity, blending: THREE.AdditiveBlending, depthWrite: false }),
+    );
   const plume = new THREE.Group();
-  const plumeCore = new THREE.Mesh(
-    new THREE.ConeGeometry(rBody * 0.7, vehLen * 0.4, 24, 1, true),
-    new THREE.MeshBasicMaterial({ color: 0xffe6b0, transparent: true, opacity: 0.7, blending: THREE.AdditiveBlending, depthWrite: false }),
-  );
-  const plumeGlow = new THREE.Mesh(
-    new THREE.ConeGeometry(rBody * 1.3, vehLen * 0.6, 24, 1, true),
-    new THREE.MeshBasicMaterial({ color: 0xff8a3c, transparent: true, opacity: 0.35, blending: THREE.AdditiveBlending, depthWrite: false }),
-  );
-  plume.add(plumeCore, plumeGlow);
+  const plumeTrail = plumeCone(rBody * 0.9, vehLen * 1.0, 0xff6a2a, 0.13);
+  const plumeGlow = plumeCone(rBody * 1.25, vehLen * 0.6, 0xff8a3c, 0.3);
+  const plumeCore = plumeCone(rBody * 0.7, vehLen * 0.42, 0xffe6b0, 0.62);
+  const plumeThroat = plumeCone(rBody * 0.48, vehLen * 0.14, 0xdfeaff, 0.85);
+  plume.add(plumeTrail, plumeGlow, plumeCore, plumeThroat);
+  // Mach diamonds — bright shock beads along the core (atmospheric flight).
+  const diamonds: THREE.Mesh[] = [];
+  for (let i = 0; i < 3; i++) {
+    const d = new THREE.Mesh(
+      new THREE.SphereGeometry(rBody * 0.15, 8, 8),
+      new THREE.MeshBasicMaterial({ color: 0xfff4d0, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending, depthWrite: false }),
+    );
+    d.position.y = (0.08 + i * 0.11) * vehLen; // local +Y → world −Y (down the plume)
+    plume.add(d);
+    diamonds.push(d);
+  }
   plume.rotation.z = Math.PI; // point down (−Y)
   stage1Group.add(plume);
+
+  // Pad smoke — an expanding billow at liftoff, world-fixed at the pad.
+  const padSmoke = new THREE.Group();
+  for (let i = 0; i < 7; i++) {
+    const a = (i / 7) * Math.PI * 2;
+    const puff = new THREE.Mesh(
+      new THREE.SphereGeometry(vehLen * 0.12, 12, 12),
+      new THREE.MeshStandardMaterial({ color: 0xc2c6cd, transparent: true, opacity: 0, roughness: 1, depthWrite: false }),
+    );
+    puff.position.set(Math.cos(a) * vehLen * 0.16, vehLen * 0.03, Math.sin(a) * vehLen * 0.16);
+    padSmoke.add(puff);
+  }
+  padSmoke.visible = false;
+  scene.add(padSmoke);
 
   // ── Science-Lens force vectors (thrust / weight / drag / velocity),
   //    drawn in world space at the vehicle. Lengths are stylised so the
@@ -351,10 +420,24 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
         firing.add(plume);
       }
       const flick = 1 + 0.09 * Math.sin(frame * 0.7) + 0.05 * Math.sin(frame * 1.9);
-      // Upper-stage plume is longer + thinner in vacuum.
-      const vac = s.stageIndex >= 1 ? 1.5 : 1;
+      // Upper-stage plume is longer + thinner in vacuum; wider in thick air.
+      const vac = s.stageIndex >= 1 ? 1.6 : 1;
       plume.scale.set(1, flick * vac, 1);
-      plume.position.y = -(s.stageIndex >= 1 ? vehLen * 0.12 : vehLen * 0.22) * (flick * vac);
+      // S1 plume emanates from the octaweb; S2 from its vacuum bell.
+      plume.position.y = -(s.stageIndex >= 1 ? vehLen * 0.14 : vehLen * 0.3);
+      // Mach diamonds only form in the atmosphere; hide them in near-vacuum.
+      const showDiamonds = s.altKm < 35 && s.stageIndex === 0;
+      for (const d of diamonds) d.visible = showDiamonds;
+    }
+
+    // Pad smoke — billows at liftoff (world-fixed), expands + fades with altitude.
+    const smokeAmt = s.stageIndex >= 0 ? Math.max(0, 1 - s.altKm / 2.5) : 0;
+    padSmoke.visible = smokeAmt > 0.02;
+    if (padSmoke.visible) {
+      padSmoke.scale.setScalar(1 + Math.min(4, Math.max(0, s.t) * 0.5));
+      for (const puff of padSmoke.children) {
+        ((puff as THREE.Mesh).material as THREE.MeshStandardMaterial).opacity = smokeAmt * 0.55;
+      }
     }
 
     // Camera: pick the active shot from the schedule and compose its pose.

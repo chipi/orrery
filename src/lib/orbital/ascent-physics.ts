@@ -445,11 +445,19 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       pushEvent('fairing_jettison');
     }
 
-    // Orbit gate: past the Kármán line at ≥ local circular speed.
+    // Orbit gate: past the Kármán line at ≥ local circular speed. A real
+    // vehicle cuts the final stage off ON TARGET here (SECO) and keeps a
+    // propellant margin — it does NOT burn to depletion — so the injection
+    // velocity matches orbital speed rather than overshooting.
     if (!orbitSeen && y >= KARMAN_LINE_M && Math.hypot(vx, vy) >= circularSpeed(y)) {
       pushEvent('orbit');
       orbitSeen = true;
       reachedOrbit = true;
+      if (stageIndex === profile.stages.length - 1) {
+        pushEvent('seco', `${profile.stages[stageIndex].name} — orbit`);
+        stageIndex = -1; // SECO on target; residual propellant is margin
+        secoT = t;
+      }
     }
 
     // Sample the trajectory.

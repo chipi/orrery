@@ -80,14 +80,15 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // ── Lighting: a hard warm sun toward the camera-facing hemisphere so
   //    the visible Earth is lit (not the night side), plus a cool fill so
   //    the shadowed limb never crushes to black.
+  // Lighting copied from the proven /fly cislunar Earth (which uses the same
+  // textures and looks right): bright white ambient + a warm directional, both
+  // × Math.PI to restore the r128 look under three r155+ physical lights (#203).
+  // The dark, un-×π ambient here before was what crushed the Earth to black.
   const sunDir = new THREE.Vector3(0.32, 0.5, 0.8).normalize();
-  const sun = new THREE.DirectionalLight(0xfff2df, 4.4);
+  const sun = new THREE.DirectionalLight(0xfff4d0, 1.6 * Math.PI);
   sun.position.copy(sunDir).multiplyScalar(1000);
   scene.add(sun);
-  scene.add(new THREE.AmbientLight(0x3a4d78, 1.0));
-  // Sky/ground hemisphere fill so the lit Earth surface reads (land + coast
-  // visible) instead of crushing to near-black.
-  scene.add(new THREE.HemisphereLight(0x9fc4ff, 0x2a2416, 0.6));
+  scene.add(new THREE.AmbientLight(0xeeeeff, 0.7 * Math.PI));
 
   const texLoader = new THREE.TextureLoader();
   const loadColor = (url?: string): THREE.Texture | null => {
@@ -102,17 +103,11 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // ── Earth: a big sphere a full radius below the pad (surface at y=0),
   //    rotated so the EQUATOR — not the smeared texture pole — sits under
   //    the launch site. Longitude tuned to frame a coastline.
-  // Self-illuminate the day map so ocean/desert/coastline always read as a
-  // lit daytime Earth (the directional sun still adds the terminator on top).
-  // Night-lights map is dropped for the launch view — daytime geography wins.
+  // Material copied from the cislunar Earth — plain lit map, no emissive hacks.
   const earthMat = new THREE.MeshStandardMaterial({
-    color: dayTex ? 0xffffff : 0x2a5a8c,
     map: dayTex ?? null,
-    emissive: 0xffffff,
-    emissiveMap: dayTex ?? null,
-    emissiveIntensity: dayTex ? 0.75 : 0,
-    roughness: 1,
-    metalness: 0,
+    color: dayTex ? 0xffffff : 0x2a5a8c,
+    roughness: 0.6,
   });
   const earth = new THREE.Mesh(new THREE.SphereGeometry(R_EARTH_KM, 128, 128), earthMat);
   earth.position.set(0, -R_EARTH_KM, 0);
@@ -130,49 +125,17 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   earth.quaternion.setFromUnitVectors(siteNormal, new THREE.Vector3(0, 1, 0));
   scene.add(earth);
 
-  // Atmosphere (R2) — a back-side additive shell with a sun-aware scatter
-  // shader: the sunlit limb brightens (forward Rayleigh scattering) and the
-  // terminator falls off to a dim blue, instead of a flat constant glow.
-  const atmoMat = new THREE.ShaderMaterial({
-    uniforms: {
-      uSunDir: { value: sunDir.clone() },
-      uDay: { value: new THREE.Color(0x8fc6ff) },
-      uNight: { value: new THREE.Color(0x14314f) },
-      uIntensity: { value: 0.9 },
-    },
-    transparent: true,
-    side: THREE.BackSide,
-    blending: THREE.AdditiveBlending,
-    depthWrite: false,
-    vertexShader: /* glsl */ `
-      varying vec3 vN;
-      void main() {
-        vN = normalize(mat3(modelMatrix) * normal);
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-      }
-    `,
-    fragmentShader: /* glsl */ `
-      uniform vec3 uSunDir; uniform vec3 uDay; uniform vec3 uNight; uniform float uIntensity;
-      varying vec3 vN;
-      void main() {
-        // Sun illumination of this bit of shell (soft terminator).
-        float sun = clamp(dot(normalize(vN), normalize(uSunDir)) * 0.5 + 0.5, 0.0, 1.0);
-        float scatter = pow(sun, 1.6);
-        vec3 col = mix(uNight, uDay, scatter) * uIntensity;
-        gl_FragColor = vec4(col, 0.28 + 0.55 * scatter);
-      }
-    `,
-  });
-  const atmo = new THREE.Mesh(new THREE.SphereGeometry(R_EARTH_KM + 190, 128, 128), atmoMat);
-  atmo.position.copy(earth.position);
-  scene.add(atmo);
-  // A thin bright inner rim keeps a crisp lit edge under bloom.
+  // Thin atmospheric limb — ONE subtle back-side rim so the edge glows under
+  // bloom WITHOUT washing the disc. The broad additive shells + procedural
+  // clouds that used to sit here muddied the whole surface to a grey haze
+  // (the cislunar Earth has none of that — just Earth + lights, and it reads
+  // crisp). A real cloud/specular pass waits for proper assets.
   const atmoRim = new THREE.Mesh(
-    new THREE.SphereGeometry(R_EARTH_KM + 62, 128, 128),
+    new THREE.SphereGeometry(R_EARTH_KM + 55, 96, 96),
     new THREE.MeshBasicMaterial({
-      color: 0xbfe0ff,
+      color: 0x8ec5ff,
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.5,
       side: THREE.BackSide,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
@@ -180,58 +143,6 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   );
   atmoRim.position.copy(earth.position);
   scene.add(atmoRim);
-
-  // Cloud layer (R5) — a procedural puffy-cloud shell over the globe, lit by
-  // the sun and drifting slowly. Visible as cloud cover from orbit and as
-  // clouds below during the climb.
-  const makeCloudTexture = (): THREE.Texture => {
-    if (typeof document === 'undefined') return new THREE.Texture();
-    const c = document.createElement('canvas');
-    c.width = 2048;
-    c.height = 1024;
-    const g = c.getContext('2d')!;
-    g.clearRect(0, 0, c.width, c.height);
-    // Layered soft blobs → fractal-ish cumulus banding. Deterministic-ish
-    // scatter (index-driven) so the texture is stable across reloads.
-    let seed = 1337;
-    const rnd = (): number => {
-      seed = (seed * 1103515245 + 12345) & 0x7fffffff;
-      return seed / 0x7fffffff;
-    };
-    for (let i = 0; i < 900; i++) {
-      const band = Math.sin(rnd() * Math.PI); // cluster into latitude bands
-      const x = rnd() * c.width;
-      const y = (0.15 + 0.7 * (0.5 + 0.5 * Math.cos(rnd() * Math.PI * 2) * band)) * c.height;
-      const rad = 12 + rnd() * 70;
-      const a = 0.04 + rnd() * 0.16;
-      const rg = g.createRadialGradient(x, y, 0, x, y, rad);
-      rg.addColorStop(0, `rgba(255,255,255,${a})`);
-      rg.addColorStop(1, 'rgba(255,255,255,0)');
-      g.fillStyle = rg;
-      g.beginPath();
-      g.arc(x, y, rad, 0, Math.PI * 2);
-      g.fill();
-    }
-    const t = new THREE.CanvasTexture(c);
-    t.wrapS = THREE.RepeatWrapping;
-    t.wrapT = THREE.ClampToEdgeWrapping;
-    t.colorSpace = THREE.SRGBColorSpace;
-    return t;
-  };
-  const cloudTex = opts.cloudUrl ? texLoader.load(opts.cloudUrl) : makeCloudTexture();
-  const clouds = new THREE.Mesh(
-    new THREE.SphereGeometry(R_EARTH_KM + 8, 96, 96),
-    new THREE.MeshStandardMaterial({
-      map: cloudTex,
-      transparent: true,
-      opacity: 0.55,
-      depthWrite: false,
-      roughness: 1,
-    }),
-  );
-  clouds.position.copy(earth.position);
-  clouds.quaternion.copy(earth.quaternion);
-  scene.add(clouds);
 
   // Graded sky dome (R5) — horizon haze → zenith blue, wrapped around the
   // camera and faded out with altitude so the low-altitude sky reads like a

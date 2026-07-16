@@ -10,6 +10,7 @@
 -->
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createAscentScene, type AscentScene } from '$lib/three/ascent-scene';
   import { integrateAscent, sampleAscentAt, type AscentSummary } from '$lib/orbital/ascent-physics';
@@ -40,10 +41,16 @@
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setPixelRatio(Math.min(2, window.devicePixelRatio));
     renderer.setSize(w, h);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.1;
     // eslint-disable-next-line svelte/no-dom-manipulating
     container.appendChild(renderer.domElement);
 
-    sceneObj = createAscentScene({ aspect: w / h });
+    sceneObj = createAscentScene({
+      aspect: w / h,
+      earthDayUrl: `${base}/textures/2k_earth_daymap.jpg`,
+      earthNightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
+    });
 
     const applyState = () => {
       const s = sampleAscentAt(summary.states, t);

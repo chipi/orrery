@@ -106,8 +106,42 @@
   };
   const activeEngines = $derived(hud.stageIndex >= 0 ? (FALCON9_SAMPLE.stages[hud.stageIndex].engines ?? 1) : 0);
   const twrPct = $derived(Math.min(1, hud.twr / 2.5) * 100);
-  const qPct = $derived(Math.min(1, hud.qkPa / maxQpeak) * 100);
-  const orbitPct = $derived(Math.min(1, hud.velKms / ORBIT_TARGET_KMS) * 100);
+
+  // ── Live strip charts (real-telemetry style): each series is the full
+  //    flight profile; the traversed portion draws bright over a ghost. ──
+  const CHART_W = 214;
+  const CHART_H = 30;
+  type Pt = [number, number];
+  const seriesFor = (acc: (s: (typeof summary.states)[number]) => number, maxV: number): Pt[] =>
+    summary.states.map((s) => [
+      (s.t / duration) * CHART_W,
+      CHART_H - Math.min(1, Math.max(0, acc(s)) / maxV) * CHART_H,
+    ]);
+  const altMax = Math.max(...summary.states.map((s) => s.altKm)) * 1.05;
+  const heatPeak = Math.max(...summary.states.map((s) => s.aeroHeatFlux)) || 1;
+  const altPts = seriesFor((s) => s.altKm, altMax);
+  const velPts = seriesFor((s) => s.speedKms, ORBIT_TARGET_KMS * 1.05);
+  const qPts = seriesFor((s) => s.qPa / 1000, maxQpeak * 1.12);
+  const heatPts = seriesFor((s) => s.aeroHeatFlux, heatPeak * 1.05);
+  const poly = (pts: Pt[]): string => pts.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+
+  // Temperature readouts.
+  let hudTemp = $state({ chamberK: 0, heatPct: 0 });
+  const nowIdx = $derived.by(() => {
+    const tt = Math.max(0, t);
+    let idx = 0;
+    for (let i = 0; i < summary.states.length; i++) {
+      if (summary.states[i].t <= tt) idx = i;
+      else break;
+    }
+    return idx;
+  });
+  const trace = (pts: Pt[], n: number): string => poly(pts.slice(0, n + 1));
+  const area = (pts: Pt[], n: number): string => {
+    const seg = pts.slice(0, n + 1);
+    if (seg.length === 0) return '';
+    return `M ${seg[0][0].toFixed(1)},${CHART_H} L ${trace(pts, n)} L ${seg[seg.length - 1][0].toFixed(1)},${CHART_H} Z`;
+  };
 
   // Derived broadcast readouts.
   const countdown = $derived(t < 0 ? Math.max(0, Math.ceil(-t)) : null);
@@ -169,6 +203,10 @@
         stageIndex: s.stageIndex,
         propRemainingKg: s.propRemainingKg,
         met: formatAscentClock(s.t),
+      };
+      hudTemp = {
+        chamberK: t < 0 ? 0 : s.chamberTempK,
+        heatPct: t < 0 ? 0 : Math.round((s.aeroHeatFlux / heatPeak) * 100),
       };
     };
     applyState();
@@ -256,14 +294,30 @@
     </dl>
   </div>
 
-  <!-- Launch console — instrument cluster grounded in the /science articles -->
+  <!-- Launch console — telemetry cluster grounded in the /science articles -->
+  {#snippet chartRow(label: string, sci: string, pts: Pt[], color: string, val: string)}
+    <section class="chart-row">
+      <header>{label}<em>{sci}</em></header>
+      <div class="chart-wrap">
+        <svg class="chart" viewBox="0 0 {CHART_W} {CHART_H}" preserveAspectRatio="none">
+          <line class="grid" x1="0" y1={CHART_H * 0.5} x2={CHART_W} y2={CHART_H * 0.5} />
+          <polyline class="ghost" points={poly(pts)} />
+          <path class="carea" d={area(pts, nowIdx)} style="fill:{color}" />
+          <polyline class="cline" points={trace(pts, nowIdx)} style="stroke:{color}" />
+          <circle class="cdot" cx={pts[nowIdx][0]} cy={pts[nowIdx][1]} r="1.8" style="fill:{color}" />
+        </svg>
+        <span class="chart-val" style="color:{color}">{val}</span>
+      </div>
+    </section>
+  {/snippet}
+
   <div class="console">
+    <div class="console-title">LAUNCH TELEMETRY<em>{mission.vehicle}</em></div>
+
     <!-- PROPELLANT — the "tyranny of the rocket equation" made kinetic -->
     <section>
       <header>PROPELLANT<em>tsiolkovsky</em></header>
-      <div class="fuel-headline">
-        <b>{propPct}%</b> of liftoff mass is fuel · payload {payloadPct}%
-      </div>
+      <div class="fuel-headline"><b>{propPct}%</b> fuel by mass · payload {payloadPct}%</div>
       {#each FALCON9_SAMPLE.stages as st, i (st.name)}
         <div class="reservoir">
           <span class="rlabel">{st.name}</span>
@@ -273,13 +327,27 @@
       {/each}
     </section>
 
-    <!-- THRUST-TO-WEIGHT — will it fly? (>1) -->
-    <section>
-      <header>THRUST / WEIGHT<em>thrust-and-twr</em></header>
-      <div class="gauge">
-        <div class="gfill" class:go={hud.twr >= 1} style="width:{twrPct}%"></div>
-        <div class="gmark" style="left:40%"></div>
-        <span class="gval">{hud.twr.toFixed(2)}</span>
+    {@render chartRow('ALTITUDE', 'launch', altPts, '#5ac8ff', `${hud.altKm.toFixed(0)} km`)}
+    {@render chartRow('VELOCITY', 'dv-budget', velPts, '#7fe0ff', `${hud.velKms.toFixed(2)} km/s`)}
+    {@render chartRow('DYNAMIC PRESSURE', 'max-q', qPts, '#9a8bff', `${hud.qkPa.toFixed(1)} kPa`)}
+    {@render chartRow('AERO HEATING', 'launch', heatPts, '#ff8a4a', `${hudTemp.heatPct}%`)}
+
+    <!-- THRUST/WEIGHT + CHAMBER TEMP -->
+    <section class="dual">
+      <div>
+        <header>T/W<em>twr</em></header>
+        <div class="gauge">
+          <div class="gfill" class:go={hud.twr >= 1} style="width:{twrPct}%"></div>
+          <div class="gmark" style="left:40%"></div>
+          <span class="gval">{hud.twr.toFixed(2)}</span>
+        </div>
+      </div>
+      <div>
+        <header>CHAMBER<em>engine-types</em></header>
+        <div class="gauge">
+          <div class="gfill temp" style="width:{hudTemp.chamberK > 0 ? 100 : 0}%"></div>
+          <span class="gval">{hudTemp.chamberK > 0 ? `${hudTemp.chamberK} K` : '— cold'}</span>
+        </div>
       </div>
     </section>
 
@@ -290,25 +358,6 @@
         {#each Array(activeEngines) as _, i (i)}
           <i class="eng"></i>
         {/each}
-      </div>
-    </section>
-
-    <!-- MAX-Q — climbing through the thick air -->
-    <section>
-      <header>DYNAMIC PRESSURE Q<em>max-q</em></header>
-      <div class="gauge">
-        <div class="gfill q" style="width:{qPct}%"></div>
-        <span class="gval">{hud.qkPa.toFixed(1)} kPa</span>
-      </div>
-    </section>
-
-    <!-- VELOCITY → ORBIT — will it reach 7.8 km/s? -->
-    <section>
-      <header>VELOCITY → ORBIT<em>dv-budget</em></header>
-      <div class="gauge">
-        <div class="gfill orbit" style="width:{orbitPct}%"></div>
-        <div class="gmark" style="left:100%"></div>
-        <span class="gval">{hud.velKms.toFixed(2)} / {ORBIT_TARGET_KMS} km/s</span>
       </div>
     </section>
 
@@ -514,17 +563,94 @@
   /* Launch console */
   .console {
     position: absolute;
-    top: 118px;
+    top: 116px;
     left: 22px;
-    width: 246px;
+    width: 250px;
+    max-height: calc(100vh - 208px);
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
+    gap: 11px;
+    padding: 13px 14px;
+    background: linear-gradient(180deg, rgba(6, 12, 24, 0.82), rgba(4, 9, 18, 0.72));
+    border: 1px solid rgba(127, 223, 255, 0.22);
+    border-radius: 7px;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(127, 223, 255, 0.35) transparent;
+  }
+  .console-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #eafaff;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(127, 223, 255, 0.15);
+  }
+  .console-title em {
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #6ea6cc;
+  }
+  /* Strip charts */
+  .chart-row header {
+    margin-bottom: 3px;
+  }
+  .chart-wrap {
+    position: relative;
+  }
+  .chart {
+    width: 100%;
+    height: 30px;
+    display: block;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .chart .grid {
+    stroke: rgba(255, 255, 255, 0.08);
+    stroke-width: 0.5;
+    stroke-dasharray: 2 2;
+  }
+  .chart .ghost {
+    fill: none;
+    stroke: rgba(180, 210, 240, 0.22);
+    stroke-width: 0.8;
+  }
+  .chart .carea {
+    opacity: 0.16;
+    stroke: none;
+  }
+  .chart .cline {
+    fill: none;
+    stroke-width: 1.4;
+    filter: drop-shadow(0 0 2px currentColor);
+  }
+  .chart-val {
+    position: absolute;
+    top: 1px;
+    right: 4px;
+    font-size: 10px;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
+  }
+  .dual {
+    flex-direction: row;
     gap: 12px;
-    padding: 14px 15px;
-    background: rgba(4, 9, 20, 0.66);
-    border: 1px solid rgba(127, 223, 255, 0.18);
-    border-radius: 6px;
-    backdrop-filter: blur(5px);
+  }
+  .dual > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .gfill.temp {
+    background: linear-gradient(90deg, #ff5a2a, #ffd36a);
   }
   .console section {
     display: flex;

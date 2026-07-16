@@ -25,6 +25,9 @@
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
   import { buildShotSchedule } from '$lib/orbital/ascent-cameras';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
+  import AscentCameraDebug from '$lib/components/AscentCameraDebug.svelte';
+
+  const VEH_LEN = 1.2; // shared vehicle length (scene render + camera debug)
 
   const summary: AscentSummary = integrateAscent(FALCON9_SAMPLE);
   const duration = summary.states.at(-1)!.t;
@@ -73,6 +76,7 @@
   let speed = $state(5);
   let t = $state(-T_MINUS);
   let forcesOn = $state(false);
+  let camDebugOn = $state(false);
 
   let renderer: THREE.WebGLRenderer | undefined;
   let composer: EffectComposer | undefined;
@@ -193,6 +197,7 @@
       earthDayUrl: `${base}/textures/4k_earth_daymap.jpg`,
       earthNightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
       launchSite: FALCON9_SAMPLE.launchSite,
+      vehicleLengthKm: VEH_LEN,
       schedule,
     });
 
@@ -438,7 +443,26 @@
     <button class="forces-btn" class:active={forcesOn} onclick={() => (forcesOn = !forcesOn)}>
       SCIENCE LENS · FORCES
     </button>
+    <button class="forces-btn" class:active={camDebugOn} onclick={() => (camDebugOn = !camDebugOn)}>
+      CAM DEBUG
+    </button>
   </div>
+
+  <!-- Camera debug (the /fly FlybyDebugViewer analogue) -->
+  {#if camDebugOn}
+    <div class="cam-debug">
+      <AscentCameraDebug
+        {summary}
+        {schedule}
+        vehLen={VEH_LEN}
+        {t}
+        onJump={(jt) => {
+          t = jt;
+          playing = false;
+        }}
+      />
+    </div>
+  {/if}
 
   <!-- Force legend (Science Lens) -->
   {#if forcesOn}
@@ -956,6 +980,11 @@
     background: rgba(84, 224, 138, 0.2);
     border-color: #54e08a;
     color: #cffce0;
+  }
+  .cam-debug {
+    position: absolute;
+    right: 22px;
+    bottom: 108px;
   }
 
   /* Force legend */

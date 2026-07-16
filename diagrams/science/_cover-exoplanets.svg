@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="An exoplanets chapter cover — a host star with concentric planet orbits, a transiting planet crossing its disk, and a small light-curve dip.">
+  <style>
+    .soft { stroke: rgba(255,255,255,0.18); stroke-width: 0.8; fill: none; }
+    .mid { stroke: rgba(255,255,255,0.35); stroke-width: 1; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
+    .star { fill: #ffc850; }
+    .body { fill: rgba(255,255,255,0.92); }
+    .accentf { fill: #4ecdc4; }
+  </style>
+  <circle cx="210" cy="130" r="90" fill="#ffc850" opacity="0.06"/>
+  <circle cx="210" cy="130" r="52" fill="#ffc850" opacity="0.1"/>
+  <ellipse class="soft" cx="210" cy="130" rx="120" ry="46"/>
+  <ellipse class="soft" cx="210" cy="130" rx="175" ry="66"/>
+  <ellipse class="mid" cx="210" cy="130" rx="80" ry="30"/>
+  <circle class="star" cx="210" cy="130" r="26"/>
+  <circle class="body" cx="196" cy="130" r="7"/>
+  <circle class="body" cx="330" cy="118" r="6"/>
+  <circle class="accentf" cx="70" cy="150" r="8"/>
+  <circle class="body" cx="385" cy="150" r="5"/>
+  <path class="accent" d="M430 90 h40 l10 24 h30 l10 -24 h40" />
+  <circle class="body" cx="150" cy="60" r="1.5"/>
+  <circle class="body" cx="470" cy="200" r="1.5"/>
+  <circle class="body" cx="540" cy="70" r="1.5"/>
+  <circle class="body" cx="90" cy="210" r="1.5"/>
+</svg>

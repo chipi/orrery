@@ -1,0 +1,19 @@
+{
+  "id": "microlensing",
+  "tab": "exoplanets",
+  "order": 5,
+  "diagram": "exo-microlensing.svg",
+  "diagram_quality": "schematic",
+  "links": [
+    {
+      "l": "Wikipedia · Gravitational microlensing",
+      "u": "https://en.wikipedia.org/wiki/Gravitational_microlensing",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Roman · Microlensing survey",
+      "u": "https://roman.gsfc.nasa.gov/",
+      "t": "core"
+    }
+  ]
+}

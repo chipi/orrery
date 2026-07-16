@@ -1,0 +1,21 @@
+{
+  "id": "orbital-resonance",
+  "tab": "exoplanets",
+  "order": 11,
+  "diagram": "exo-resonance.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "query": "?system=trappist-1",
+      "context_key": "TRAPPIST-1 — a seven-planet chain of near-resonant orbits"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Orbital resonance",
+      "u": "https://en.wikipedia.org/wiki/Orbital_resonance",
+      "t": "intro"
+    }
+  ]
+}

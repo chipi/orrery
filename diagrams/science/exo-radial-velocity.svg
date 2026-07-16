@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Radial velocity: a star and planet orbit their common centre of mass; the star moves toward then away from the observer, shifting its light blue then red.">
+  <style>
+    .stroke{stroke:rgba(255,255,255,0.85);stroke-width:1.5;fill:none}
+    .dashed{stroke:rgba(255,255,255,0.3);stroke-width:1;stroke-dasharray:4 3;fill:none}
+    .accent{stroke:#4ecdc4;stroke-width:2.4;fill:none}
+    .accentf{fill:#4ecdc4}
+    .star{fill:#ffc850;stroke:#ffc850;stroke-width:1}
+    .body{fill:rgba(255,255,255,0.95)}
+    .blue{fill:#5b8dd9;stroke:#5b8dd9}
+    .red{fill:#d95b6b;stroke:#d95b6b}
+    .label{fill:rgba(255,255,255,0.85);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}
+    .laccent{fill:#4ecdc4;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}
+    .lgold{fill:#ffc850;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}
+  </style>
+  <text class="label" x="300" y="26" text-anchor="middle">RADIAL-VELOCITY METHOD</text>
+  <ellipse class="dashed" cx="290" cy="160" rx="26" ry="14"/>
+  <ellipse class="dashed" cx="290" cy="160" rx="150" ry="80"/>
+  <circle class="star" cx="266" cy="160" r="16"/>
+  <circle class="body" cx="440" cy="160" r="7"/>
+  <circle class="accentf" cx="290" cy="160" r="2.5"/>
+  <text class="label" x="290" y="182" text-anchor="middle">centre of mass</text>
+  <path class="blue" d="M250 128 l-30 -12 l8 10 l-10 4 z"/>
+  <text class="label" x="150" y="120">toward → blue-shift</text>
+  <path class="red" d="M282 196 l30 12 l-8 -10 l10 -4 z"/>
+  <text class="label" x="330" y="212">away → red-shift</text>
+  <line class="dashed" x1="60" y1="280" x2="540" y2="280"/>
+  <path class="accent" d="M60 280 q60 -30 120 0 t120 0 t120 0 t120 0"/>
+  <text class="laccent" x="60" y="304">stellar velocity (sinusoid)</text>
+</svg>

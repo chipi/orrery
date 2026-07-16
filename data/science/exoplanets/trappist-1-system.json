@@ -1,0 +1,24 @@
+{
+  "id": "trappist-1-system",
+  "tab": "exoplanets",
+  "order": 15,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "query": "?system=trappist-1",
+      "context_key": "Drop into TRAPPIST-1 and watch the seven-world resonant chain"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · TRAPPIST-1",
+      "u": "https://en.wikipedia.org/wiki/TRAPPIST-1",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · TRAPPIST-1",
+      "u": "https://exoplanets.nasa.gov/trappist1/",
+      "t": "core"
+    }
+  ]
+}

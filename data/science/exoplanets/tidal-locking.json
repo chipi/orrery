@@ -1,0 +1,19 @@
+{
+  "id": "tidal-locking",
+  "tab": "exoplanets",
+  "order": 10,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "query": "?system=proxima-centauri",
+      "context_key": "Proxima b — a habitable-zone world likely locked face-to-star"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Tidal locking",
+      "u": "https://en.wikipedia.org/wiki/Tidal_locking",
+      "t": "intro"
+    }
+  ]
+}

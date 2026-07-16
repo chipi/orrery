@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "doors": [
+    {
+      "id": "gargantua-interstellar",
+      "objectId": "gargantua",
+      "objectType": "black-hole",
+      "type": "fiction",
+      "work": "Interstellar",
+      "year": 2014,
+      "author": "Christopher Nolan · Kip Thorne",
+      "media": "film",
+      "links": [
+        {
+          "l": "Wikipedia · Interstellar (film)",
+          "u": "https://en.wikipedia.org/wiki/Interstellar_(film)"
+        }
+      ]
+    },
+    {
+      "id": "vega-contact",
+      "objectId": "vega",
+      "objectType": "star",
+      "type": "fiction",
+      "work": "Contact",
+      "year": 1985,
+      "author": "Carl Sagan",
+      "media": "novel & film",
+      "links": [
+        {
+          "l": "Wikipedia · Contact (novel)",
+          "u": "https://en.wikipedia.org/wiki/Contact_(novel)"
+        }
+      ]
+    },
+    {
+      "id": "vega-oumuamua",
+      "objectId": "vega",
+      "objectType": "star",
+      "type": "visitor",
+      "work": "1I/ʻOumuamua",
+      "year": 2017,
+      "author": "—",
+      "media": "interstellar object",
+      "links": [
+        {
+          "l": "Wikipedia · ʻOumuamua",
+          "u": "https://en.wikipedia.org/wiki/%CA%BBOumuamua"
+        }
+      ]
+    },
+    {
+      "id": "kepler16b-tatooine",
+      "objectId": "kepler-16-b",
+      "objectType": "exoplanet",
+      "type": "fiction",
+      "work": "Tatooine (Star Wars)",
+      "year": 1977,
+      "author": "George Lucas",
+      "media": "film",
+      "links": [
+        {
+          "l": "NASA · Kepler-16b, the Tatooine planet",
+          "u": "https://science.nasa.gov/exoplanet-catalog/kepler-16-b/"
+        }
+      ]
+    },
+    {
+      "id": "barnard-rocheworld",
+      "objectId": "barnards-star",
+      "objectType": "star",
+      "type": "fiction",
+      "work": "Rocheworld & Project Daedalus",
+      "year": 1984,
+      "author": "Robert L. Forward",
+      "media": "novel & starship study",
+      "links": [
+        {
+          "l": "Wikipedia · Rocheworld",
+          "u": "https://en.wikipedia.org/wiki/Rocheworld"
+        }
+      ]
+    },
+    {
+      "id": "voyager-golden-record",
+      "objectId": "voyager",
+      "objectType": "message",
+      "type": "message",
+      "work": "The Voyager Golden Record",
+      "year": 1977,
+      "author": "Carl Sagan et al.",
+      "media": "phonograph record",
+      "links": [
+        {
+          "l": "NASA · The Golden Record",
+          "u": "https://science.nasa.gov/mission/voyager/golden-record/"
+        }
+      ]
+    },
+    {
+      "id": "arecibo-message",
+      "objectId": "arecibo",
+      "objectType": "message",
+      "type": "message",
+      "work": "The Arecibo Message",
+      "year": 1974,
+      "author": "Frank Drake & Carl Sagan",
+      "media": "radio transmission",
+      "links": [
+        {
+          "l": "Wikipedia · Arecibo message",
+          "u": "https://en.wikipedia.org/wiki/Arecibo_message"
+        }
+      ]
+    }
+  ]
+}

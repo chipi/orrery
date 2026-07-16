@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "data-sources.schema.json",
+  "title": "Data & catalogues bill-of-materials (public /credits section)",
+  "description": "Curated provenance for the structured public datasets Orrery ingests (star catalogues, launch catalogues, …). Consumed by the /credits 'Data & catalogues' section. Distinct from image-provenance (per-asset) and text-sources (editorial fragments).",
+  "type": "object",
+  "required": ["schema_version", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "catalog",
+          "category",
+          "description",
+          "source_url",
+          "license_short",
+          "license_url",
+          "license_rationale",
+          "used_on"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 2 },
+          "name": { "type": "string", "minLength": 1 },
+          "catalog": { "type": "string", "minLength": 1 },
+          "version": { "type": "string" },
+          "category": {
+            "type": "string",
+            "enum": ["star-catalogue", "launch-catalogue", "exoplanet-catalogue", "deep-sky-catalogue", "constellation-figures", "other"]
+          },
+          "description": { "type": "string", "minLength": 1 },
+          "source_url": { "type": "string", "format": "uri" },
+          "license_short": { "type": "string", "minLength": 2 },
+          "license_url": { "type": "string", "format": "uri" },
+          "license_rationale": { "type": "string", "minLength": 1 },
+          "used_on": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "planet-formation",
+  "tab": "exoplanets",
+  "order": 12,
+  "links": [
+    {
+      "l": "Wikipedia · Nebular hypothesis",
+      "u": "https://en.wikipedia.org/wiki/Nebular_hypothesis",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Planetary migration",
+      "u": "https://en.wikipedia.org/wiki/Planetary_migration",
+      "t": "core"
+    }
+  ]
+}

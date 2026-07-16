@@ -1,5 +1,131 @@
 [
   {
+    "tab": "exoplanets",
+    "section": "are-we-alone",
+    "title": "Are We Alone?",
+    "intro": "Thousands of worlds later, the oldest question is closer to a test than ever — but honesty about what we do and don't know is the whole discipline.",
+    "haystack": "are we alone? thousands of worlds later, the oldest question is closer to a test than ever — but honesty about what we do and don't know is the whole discipline. the drake equation frames the odds as a chain of factors — how many stars, how many with planets, how many habitable, how many that develop life, and so on. exoplanet science has now pinned the first factors observationally: planets are common, and habitable-zone rocky worlds abundant. the later factors remain unknown."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "astrometry",
+    "title": "Astrometry",
+    "intro": "Track a star's exact position on the sky and you can see it trace a tiny loop as an unseen planet swings it around their shared centre of mass.",
+    "haystack": "astrometry track a star's exact position on the sky and you can see it trace a tiny loop as an unseen planet swings it around their shared centre of mass. astrometry measures a star's periodic displacement on the plane of the sky as it orbits the system's centre of mass. unlike radial velocity, it senses the full orbit regardless of orientation, so it yields a true mass (not just a lower bound) and works well for planets on wide orbits, where the astrometric signal grows."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "biosignatures",
+    "title": "Biosignatures",
+    "intro": "The gases or features in a planet's light that could betray life — and why no single one is ever proof on its own.",
+    "haystack": "biosignatures the gases or features in a planet's light that could betray life — and why no single one is ever proof on its own. a biosignature is an observable — a gas, a surface feature, a seasonal cycle — whose most plausible explanation is life. the strongest cases rely on chemical disequilibrium: combinations of gases (like oxygen with methane) that react away unless continuously resupplied, ideally alongside signs that abiotic sources are ruled out."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "direct-imaging",
+    "title": "Direct Imaging",
+    "intro": "Blot out the overwhelming glare of the star and, for a lucky few planets, you can photograph the faint pinprick of light beside it.",
+    "haystack": "direct imaging blot out the overwhelming glare of the star and, for a lucky few planets, you can photograph the faint pinprick of light beside it. direct imaging blocks or nulls the starlight (with a coronagraph or interferometer) to reveal planets and disks that would otherwise be lost in the glare. because it detects the planet's own light, it uniquely enables spectroscopy of the world in isolation — a direct read on its temperature and atmosphere."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "exoplanet-atmospheres",
+    "title": "Reading Exoplanet Atmospheres",
+    "intro": "During a transit, a sliver of starlight filters through a planet's air and carries the fingerprints of its gases back to us.",
+    "haystack": "reading exoplanet atmospheres during a transit, a sliver of starlight filters through a planet's air and carries the fingerprints of its gases back to us. transmission spectroscopy measures how a planet's atmosphere absorbs starlight during transit, wavelength by wavelength, revealing its composition. emission spectroscopy — catching the planet's own thermal glow just before it slips behind the star — adds temperature structure. together they turn a transiting planet into a world with a measurable sky."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "fifty-one-pegasi",
+    "title": "51 Pegasi b: The First",
+    "intro": "In 1995 a giant planet was found skimming a Sun-like star every four days — the discovery that opened the exoplanet era and won a Nobel Prize.",
+    "haystack": "51 pegasi b: the first in 1995 a giant planet was found skimming a sun-like star every four days — the discovery that opened the exoplanet era and won a nobel prize. 51 pegasi b was found by radial velocity: a clear ~4.2-day doppler wobble revealing a planet of at least half jupiter's mass orbiting perilously close to its star. it was the first confirmed planet around a main-sequence star other than the sun."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "habitable-zone",
+    "title": "The Habitable Zone",
+    "intro": "The band of orbits around a star where a rocky planet could hold liquid water on its surface — not too hot, not too cold.",
+    "haystack": "the habitable zone the band of orbits around a star where a rocky planet could hold liquid water on its surface — not too hot, not too cold. the circumstellar habitable zone is defined by stellar flux: the inner edge is where a runaway greenhouse would boil the oceans (venus's fate), the outer edge where even a strong carbon-dioxide greenhouse can't stop global freezing (beyond mars). its distance scales with the square root of the star's luminosity, so it sits far from bright stars and close to faint ones."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "hot-jupiters",
+    "title": "Hot Jupiters",
+    "intro": "Giant planets orbiting scorchingly close to their stars — the surprise that greeted the very first exoplanet discoveries and rewrote how we think planets form.",
+    "haystack": "hot jupiters giant planets orbiting scorchingly close to their stars — the surprise that greeted the very first exoplanet discoveries and rewrote how we think planets form. hot jupiters are gas giants on orbits of only a few days, with dayside temperatures often exceeding 1,000 degrees. their existence implies large-scale orbital migration: they likely formed beyond the snow line and spiralled inward through interactions with the protoplanetary disk or with other bodies, ending up where no giant could have assembled in place."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "microlensing",
+    "title": "Gravitational Microlensing",
+    "intro": "When one star drifts precisely in front of another, its gravity magnifies the background star — and a planet adds a brief extra flash.",
+    "haystack": "gravitational microlensing when one star drifts precisely in front of another, its gravity magnifies the background star — and a planet adds a brief extra flash. microlensing detects planets by the transient gravitational magnification they add to a chance alignment of two stars. it is uniquely sensitive to low-mass planets on wide, cool orbits — the region beyond the snow line that transits and radial velocity struggle to reach — and to rogue planets drifting alone through the galaxy."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "orbital-resonance",
+    "title": "Orbital Resonance",
+    "intro": "When planets' orbital periods form simple whole-number ratios, their repeated alignments lock the system into a self-reinforcing rhythm.",
+    "haystack": "orbital resonance when planets' orbital periods form simple whole-number ratios, their repeated alignments lock the system into a self-reinforcing rhythm. an orbital resonance occurs when orbiting bodies exert regular, periodic gravitational influence on each other, usually because their periods are in a ratio of small integers. resonances can stabilise a tightly packed system by keeping planets in a locked pattern, or destabilise one by pumping up eccentricities."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "planet-formation",
+    "title": "Formation & Migration",
+    "intro": "Planets condense from a disk of gas and dust around a young star — and often don't stay where they were born.",
+    "haystack": "formation & migration planets condense from a disk of gas and dust around a young star — and often don't stay where they were born. the nebular model builds planets by core accretion in a protoplanetary disk: dust coagulates into planetesimals, which merge into cores; a core beyond the snow line that grows fast enough can capture a massive gas envelope and become a giant before the disk disperses."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "proxima-system",
+    "title": "Proxima Centauri: The Nearest Planets",
+    "intro": "Around the closest star to the Sun orbits a roughly Earth-mass planet in the habitable zone — the nearest potentially habitable world, 4.24 light-years away.",
+    "haystack": "proxima centauri: the nearest planets around the closest star to the sun orbits a roughly earth-mass planet in the habitable zone — the nearest potentially habitable world, 4.24 light-years away. proxima centauri b was detected by radial velocity: a ~11-day signal implying a planet of at least about 1.1 earth masses in the temperate zone of the m5.5 dwarf. a second, far lighter planet, proxima d, was confirmed in the early 2020s on a tighter orbit — one of the lowest-mass planets known."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "radial-velocity",
+    "title": "The Radial-Velocity Method",
+    "intro": "A planet's gravity tugs its star into a tiny to-and-fro wobble; a spectrograph reads that motion as a Doppler shift in starlight.",
+    "haystack": "the radial-velocity method a planet's gravity tugs its star into a tiny to-and-fro wobble; a spectrograph reads that motion as a doppler shift in starlight. radial velocity was the first method to deliver, confirming 51 pegasi b in 1995 and dominating the early exoplanet count. it measures the line-of-sight speed of the star from doppler shifts in its spectrum; the amplitude of that speed (k) scales with the planet's mass and shrinks with orbital distance, so it favours massive planets on short orbits — the reason the first finds were 'hot jupiters'."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "super-earths-sub-neptunes",
+    "title": "Super-Earths & Sub-Neptunes",
+    "intro": "The galaxy's most common planets are sizes the Solar System skipped entirely — bigger than Earth, smaller than Neptune.",
+    "haystack": "super-earths & sub-neptunes the galaxy's most common planets are sizes the solar system skipped entirely — bigger than earth, smaller than neptune. statistically, super-earths and sub-neptunes are the most abundant planets in the galaxy, yet the solar system contains none. the 'radius valley' — a dip in the number of planets around 1.5–2 earth radii — appears to divide bare rocky cores from worlds that have held onto a thick hydrogen-helium or steam envelope."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "tidal-locking",
+    "title": "Tidal Locking",
+    "intro": "Planets orbiting close to small stars often keep one face turned toward the star forever — permanent day on one side, permanent night on the other.",
+    "haystack": "tidal locking planets orbiting close to small stars often keep one face turned toward the star forever — permanent day on one side, permanent night on the other. tidal locking (spin-orbit synchronisation) arises when a star's tidal pull brakes a close-in planet's rotation until its day equals its year. because the effect strengthens sharply with proximity, essentially every rocky planet in a red dwarf's habitable zone is expected to be locked or in a related resonant spin state."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "transit",
+    "title": "The Transit Method",
+    "intro": "When a planet crosses in front of its star, it blocks a sliver of light; that periodic dip in brightness betrays the planet and measures its size.",
+    "haystack": "the transit method when a planet crosses in front of its star, it blocks a sliver of light; that periodic dip in brightness betrays the planet and measures its size. transit photometry is the most productive method by far, responsible for the large majority of known exoplanets. it measures a planet's radius directly (from the fractional dip in starlight) and its orbital period (from the spacing of the dips); combined with a radial-velocity mass it yields a bulk density."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "transit-timing",
+    "title": "Transit-Timing Variations",
+    "intro": "In a crowded system, planets tug on one another and arrive early or late; the drift in transit times reveals unseen worlds and weighs the ones we see.",
+    "haystack": "transit-timing variations in a crowded system, planets tug on one another and arrive early or late; the drift in transit times reveals unseen worlds and weighs the ones we see. transit-timing variations (ttvs) exploit the gravitational interactions between planets in the same system. a perfectly isolated planet transits with a constant period; interacting planets show periodic deviations whose amplitude and pattern encode the planets' masses and orbits."
+  },
+  {
+    "tab": "exoplanets",
+    "section": "trappist-1-system",
+    "title": "TRAPPIST-1: Seven Earth-Sized Worlds",
+    "intro": "A dim red dwarf 40 light-years away hosts seven roughly Earth-sized planets — the richest compact system known, and a prime hunting ground for habitability.",
+    "haystack": "trappist-1: seven earth-sized worlds a dim red dwarf 40 light-years away hosts seven roughly earth-sized planets — the richest compact system known, and a prime hunting ground for habitability. trappist-1 (an m8 dwarf ~40 light-years away in aquarius) hosts seven transiting planets, b through h, with radii from about 0.75 to 1.13 earth. discovered by ground-based transit surveys and spitzer and announced in full in 2017, their masses came from transit-timing variations — the planets are far too faint for radial velocity."
+  },
+  {
     "tab": "history",
     "section": "apollo-11-1969",
     "title": "Apollo 11 · July 20, 1969",

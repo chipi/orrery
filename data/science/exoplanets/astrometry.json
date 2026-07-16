@@ -1,0 +1,19 @@
+{
+  "id": "astrometry",
+  "tab": "exoplanets",
+  "order": 6,
+  "diagram": "exo-astrometry.svg",
+  "diagram_quality": "schematic",
+  "links": [
+    {
+      "l": "Wikipedia · Astrometry",
+      "u": "https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets#Astrometry",
+      "t": "intro"
+    },
+    {
+      "l": "ESA · Gaia mission",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Gaia",
+      "t": "core"
+    }
+  ]
+}

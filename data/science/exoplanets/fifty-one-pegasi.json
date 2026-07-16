@@ -1,0 +1,24 @@
+{
+  "id": "fifty-one-pegasi",
+  "tab": "exoplanets",
+  "order": 17,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "query": "?system=51-pegasi",
+      "context_key": "51 Pegasi b — where the exoplanet era began"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · 51 Pegasi b",
+      "u": "https://en.wikipedia.org/wiki/51_Pegasi_b",
+      "t": "intro"
+    },
+    {
+      "l": "Nobel Prize in Physics 2019",
+      "u": "https://www.nobelprize.org/prizes/physics/2019/summary/",
+      "t": "core"
+    }
+  ]
+}

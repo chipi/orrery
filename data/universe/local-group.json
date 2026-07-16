@@ -1,0 +1,43 @@
+{
+  "_note": "The Local Group (Slice 8) — a SCHEMATIC, NOT TO SCALE (PRD-030 principle 2). Positions are a schematic 3-D layout: the Milky Way sits at the origin and Andromeda (M31) ~2.5 units away, with each galaxy's real satellites clustered around it far closer than true scale so they stay visible. Distances (dist_mly) and classifications are real; the xyz layout is illustrative. Members are the real catalogued Local Group galaxies.",
+  "_provenance": "Distances + types: NASA/IPAC NED, McConnachie 2012 (AJ 144,4) Local Group census, and the individual galaxies' standard catalogue values. Schematic positions are hand-authored for legibility.",
+  "extent_mly": 10,
+  "members": [
+    { "id": "milky-way", "name": "Milky Way", "kind": "spiral", "parent": "milky-way", "headliner": true, "dist_mly": 0, "diam_kly": 105, "x": 0, "y": 0, "z": 0 },
+    { "id": "andromeda", "name": "Andromeda (M31)", "kind": "spiral", "parent": "andromeda", "headliner": true, "dist_mly": 2.54, "diam_kly": 220, "x": 2.5, "y": 0.08, "z": -0.35 },
+    { "id": "triangulum", "name": "Triangulum (M33)", "kind": "spiral", "parent": "independent", "headliner": true, "dist_mly": 2.73, "diam_kly": 60, "x": 3.05, "y": -0.22, "z": 0.5 },
+
+    { "id": "lmc", "name": "Large Magellanic Cloud", "kind": "irregular", "parent": "milky-way", "headliner": true, "dist_mly": 0.163, "diam_kly": 32, "x": -0.34, "y": -0.12, "z": 0.16 },
+    { "id": "smc", "name": "Small Magellanic Cloud", "kind": "irregular", "parent": "milky-way", "headliner": true, "dist_mly": 0.206, "diam_kly": 19, "x": -0.42, "y": -0.16, "z": 0.08 },
+    { "id": "sagittarius-dsph", "name": "Sagittarius Dwarf", "kind": "dwarf-spheroidal", "parent": "milky-way", "headliner": false, "dist_mly": 0.065, "diam_kly": 10, "x": 0.22, "y": -0.06, "z": -0.2 },
+    { "id": "ursa-minor-dwarf", "name": "Ursa Minor Dwarf", "kind": "dwarf-spheroidal", "parent": "milky-way", "headliner": false, "dist_mly": 0.2, "diam_kly": 2, "x": 0.05, "y": 0.42, "z": 0.12 },
+    { "id": "draco-dwarf", "name": "Draco Dwarf", "kind": "dwarf-spheroidal", "parent": "milky-way", "headliner": false, "dist_mly": 0.26, "diam_kly": 3, "x": 0.16, "y": 0.38, "z": -0.3 },
+    { "id": "sculptor-dwarf", "name": "Sculptor Dwarf", "kind": "dwarf-spheroidal", "parent": "milky-way", "headliner": false, "dist_mly": 0.29, "diam_kly": 3, "x": -0.2, "y": 0.34, "z": -0.12 },
+    { "id": "sextans-dwarf", "name": "Sextans Dwarf", "kind": "dwarf-spheroidal", "parent": "milky-way", "headliner": false, "dist_mly": 0.28, "diam_kly": 4, "x": 0.36, "y": 0.16, "z": 0.22 },
+    { "id": "carina-dwarf", "name": "Carina Dwarf", "kind": "dwarf-spheroidal", "parent": "milky-way", "headliner": false, "dist_mly": 0.33, "diam_kly": 2, "x": -0.3, "y": 0.2, "z": 0.36 },
+    { "id": "fornax-dwarf", "name": "Fornax Dwarf", "kind": "dwarf-spheroidal", "parent": "milky-way", "headliner": false, "dist_mly": 0.46, "diam_kly": 6, "x": 0.1, "y": 0.3, "z": 0.44 },
+    { "id": "leo-i", "name": "Leo I", "kind": "dwarf-spheroidal", "parent": "milky-way", "headliner": false, "dist_mly": 0.82, "diam_kly": 3, "x": 0.5, "y": 0.12, "z": 0.34 },
+    { "id": "leo-ii", "name": "Leo II", "kind": "dwarf-spheroidal", "parent": "milky-way", "headliner": false, "dist_mly": 0.69, "diam_kly": 2, "x": 0.44, "y": 0.24, "z": -0.18 },
+
+    { "id": "m32", "name": "M32", "kind": "dwarf-elliptical", "parent": "andromeda", "headliner": false, "dist_mly": 2.65, "diam_kly": 8, "x": 2.5, "y": 0.06, "z": -0.34 },
+    { "id": "m110", "name": "M110 (NGC 205)", "kind": "dwarf-elliptical", "parent": "andromeda", "headliner": false, "dist_mly": 2.69, "diam_kly": 17, "x": 2.66, "y": 0.2, "z": -0.5 },
+    { "id": "ngc-147", "name": "NGC 147", "kind": "dwarf-spheroidal", "parent": "andromeda", "headliner": false, "dist_mly": 2.53, "diam_kly": 10, "x": 2.4, "y": 0.3, "z": -0.66 },
+    { "id": "ngc-185", "name": "NGC 185", "kind": "dwarf-spheroidal", "parent": "andromeda", "headliner": false, "dist_mly": 2.05, "diam_kly": 8, "x": 2.44, "y": 0.26, "z": -0.58 },
+    { "id": "andromeda-i", "name": "Andromeda I", "kind": "dwarf-spheroidal", "parent": "andromeda", "headliner": false, "dist_mly": 2.43, "diam_kly": 2, "x": 2.62, "y": -0.1, "z": -0.2 },
+    { "id": "andromeda-ii", "name": "Andromeda II", "kind": "dwarf-spheroidal", "parent": "andromeda", "headliner": false, "dist_mly": 2.22, "diam_kly": 3, "x": 2.36, "y": -0.14, "z": -0.12 },
+    { "id": "andromeda-iii", "name": "Andromeda III", "kind": "dwarf-spheroidal", "parent": "andromeda", "headliner": false, "dist_mly": 2.44, "diam_kly": 2, "x": 2.74, "y": 0.16, "z": -0.28 },
+    { "id": "pegasus-dsph", "name": "Andromeda VI (Pegasus)", "kind": "dwarf-spheroidal", "parent": "andromeda", "headliner": false, "dist_mly": 2.55, "diam_kly": 3, "x": 2.9, "y": -0.05, "z": -0.6 },
+
+    { "id": "ngc-6822", "name": "NGC 6822 (Barnard's)", "kind": "dwarf-irregular", "parent": "independent", "headliner": true, "dist_mly": 1.63, "diam_kly": 7, "x": 1.4, "y": -0.5, "z": 1.15 },
+    { "id": "ic-1613", "name": "IC 1613", "kind": "dwarf-irregular", "parent": "independent", "headliner": false, "dist_mly": 2.38, "diam_kly": 10, "x": 1.85, "y": 0.55, "z": -1.0 },
+    { "id": "ic-10", "name": "IC 10", "kind": "dwarf-irregular", "parent": "andromeda", "headliner": false, "dist_mly": 2.2, "diam_kly": 5, "x": 2.1, "y": 0.5, "z": -0.85 },
+    { "id": "wlm", "name": "WLM", "kind": "dwarf-irregular", "parent": "independent", "headliner": false, "dist_mly": 3.04, "diam_kly": 8, "x": 0.6, "y": -0.8, "z": 1.5 },
+    { "id": "leo-a", "name": "Leo A", "kind": "dwarf-irregular", "parent": "independent", "headliner": false, "dist_mly": 2.6, "diam_kly": 4, "x": 0.9, "y": 0.5, "z": 0.9 },
+    { "id": "phoenix-dwarf", "name": "Phoenix Dwarf", "kind": "dwarf-irregular", "parent": "independent", "headliner": false, "dist_mly": 1.44, "diam_kly": 3, "x": 0.35, "y": -0.9, "z": 0.7 },
+    { "id": "sagittarius-dirr", "name": "Sagittarius dIrr", "kind": "dwarf-irregular", "parent": "independent", "headliner": false, "dist_mly": 3.4, "diam_kly": 3, "x": 1.1, "y": -0.7, "z": 1.6 },
+    { "id": "aquarius-dwarf", "name": "Aquarius Dwarf", "kind": "dwarf-irregular", "parent": "independent", "headliner": false, "dist_mly": 3.2, "diam_kly": 3, "x": 1.6, "y": -0.6, "z": 1.7 },
+    { "id": "tucana-dwarf", "name": "Tucana Dwarf", "kind": "dwarf-spheroidal", "parent": "independent", "headliner": false, "dist_mly": 2.9, "diam_kly": 2, "x": 0.2, "y": 0.7, "z": 1.8 },
+    { "id": "cetus-dwarf", "name": "Cetus Dwarf", "kind": "dwarf-spheroidal", "parent": "independent", "headliner": false, "dist_mly": 2.5, "diam_kly": 4, "x": 1.7, "y": 0.4, "z": -0.5 },
+    { "id": "pegasus-dirr", "name": "Pegasus dIrr", "kind": "dwarf-irregular", "parent": "independent", "headliner": false, "dist_mly": 3.2, "diam_kly": 5, "x": 2.2, "y": -0.3, "z": 1.2 }
+  ]
+}

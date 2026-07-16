@@ -25,7 +25,8 @@
         "history",
         "observation",
         "life-in-space",
-        "planets"
+        "planets",
+        "exoplanets"
       ]
     },
     "order": {
@@ -73,6 +74,7 @@
               "/tiangong"
             ]
           },
+          "query": { "type": "string", "pattern": "^\\?" },
           "context_key": { "type": "string", "minLength": 1 }
         }
       }

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="The habitable zone: a shaded ring of orbits around a star where a rocky planet could hold liquid water — inward is too hot, outward too cold.">
+  <style>.dashed{stroke:rgba(255,255,255,0.3);stroke-width:1;stroke-dasharray:4 3;fill:none}.accent{stroke:#4ecdc4;stroke-width:2.4;fill:none}.star{fill:#ffc850;stroke:#ffc850}.body{fill:rgba(255,255,255,0.95)}.hz{fill:#4ecdc4;opacity:0.12}.label{fill:rgba(255,255,255,0.85);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}.laccent{fill:#4ecdc4;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px}</style>
+  <text class="label" x="300" y="26" text-anchor="middle">THE HABITABLE ZONE</text>
+  <circle class="hz" cx="140" cy="180" r="230"/>
+  <circle cx="140" cy="180" r="150" fill="#0a0e17"/>
+  <circle class="star" cx="140" cy="180" r="26"/>
+  <path class="dashed" d="M140 180 m-90 0 a90 90 0 1 1 180 0" />
+  <path class="dashed" d="M140 180 m-230 0 a230 230 0 1 1 460 0" />
+  <circle class="body" cx="140" cy="70" r="7"/>
+  <text class="label" x="250" y="90">too hot (water boils)</text>
+  <text class="laccent" x="300" y="180">habitable zone — liquid water possible</text>
+  <text class="label" x="300" y="286">too cold (water freezes)</text>
+</svg>

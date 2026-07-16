@@ -1,0 +1,24 @@
+{
+  "id": "exoplanet-atmospheres",
+  "tab": "exoplanets",
+  "order": 13,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "query": "?system=trappist-1",
+      "context_key": "TRAPPIST-1 — rocky worlds JWST is probing for air"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Exoplanet atmosphere",
+      "u": "https://en.wikipedia.org/wiki/Extrasolar_atmosphere",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Webb and exoplanet atmospheres",
+      "u": "https://science.nasa.gov/mission/webb/",
+      "t": "core"
+    }
+  ]
+}

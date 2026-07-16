@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "hyg-v41",
+      "name": "HYG Database",
+      "catalog": "HYG Database v4.1 (astronexus)",
+      "version": "v4.1",
+      "category": "star-catalogue",
+      "description": "Positions, apparent magnitudes, and B−V colors for the real nearby-star field in /explore's Stellar Neighborhood. Merges the Hipparcos, Yale Bright Star, and Gliese catalogues.",
+      "source_url": "https://github.com/astronexus/HYG-Database",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_rationale": "Published by astronexus under Creative Commons Attribution-ShareAlike 4.0 International.",
+      "used_on": [
+        "explore"
+      ]
+    },
+    {
+      "id": "d3-celestial-constellations",
+      "name": "Constellation figures (d3-celestial)",
+      "catalog": "d3-celestial constellation lines (Olaf Frohn) — modern IAU figures",
+      "category": "constellation-figures",
+      "description": "The modern IAU constellation stick-figures, drawn in /explore's stellar neighborhood and in each named star's finder chart. Star positions are our own (from HYG); this provides the line pattern.",
+      "source_url": "https://github.com/ofrohn/d3-celestial",
+      "license_short": "BSD-3-Clause",
+      "license_url": "https://opensource.org/license/bsd-3-clause",
+      "license_rationale": "Permissive BSD-3-Clause, used with attribution. The underlying constellation figures are traditional public-domain astronomy (IAU).",
+      "used_on": [
+        "explore"
+      ]
+    },
+    {
+      "id": "gcat",
+      "name": "GCAT — General Catalog of Space Objects",
+      "catalog": "GCAT (Jonathan C. McDowell, planet4589.org)",
+      "category": "launch-catalogue",
+      "description": "Agency-grade launch log used as the trunk source for the launches calendar — dates, vehicles, and payload records for historical and current spaceflights.",
+      "source_url": "https://planet4589.org/space/gcat/",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "Released by Jonathan C. McDowell under Creative Commons Attribution 4.0 International; citation is a ship-gate (PRD-020 M14).",
+      "used_on": [
+        "missions"
+      ]
+    },
+    {
+      "id": "ll2-thespacedevs",
+      "name": "Launch Library 2 — The Space Devs",
+      "catalog": "Launch Library 2 API (TheSpaceDevs)",
+      "category": "launch-catalogue",
+      "description": "Upcoming-launch gap-fill aggregator for the launches calendar, used where agency-direct sources do not yet cover a launch. A leaf source, not the trunk (PRD-020).",
+      "source_url": "https://thespacedevs.com/llapi",
+      "license_short": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_rationale": "LL2 terms: free use, attribution encouraged but not mandatory. Always cited regardless, per Orrery editorial discipline.",
+      "used_on": [
+        "missions"
+      ]
+    },
+    {
+      "id": "nasa-exoplanet-archive",
+      "name": "NASA Exoplanet Archive",
+      "catalog": "Planetary Systems Composite Parameters (pscomppars)",
+      "version": "snapshot",
+      "category": "exoplanet-catalogue",
+      "description": "Confirmed exoplanet orbital elements (period, semi-major axis, eccentricity), radii, masses, and discovery metadata for the host stars rendered as BodyScene mini-orreries in /explore’s Stellar Neighborhood.",
+      "source_url": "https://exoplanetarchive.ipac.caltech.edu/",
+      "license_short": "PD-USGov",
+      "license_url": "https://exoplanetarchive.ipac.caltech.edu/docs/acknowledge.html",
+      "license_rationale": "Operated by Caltech/IPAC under contract with NASA; the Archive data are U.S. Government works in the public domain, free to reuse with acknowledgement.",
+      "used_on": [
+        "explore"
+      ]
+    },
+    {
+      "id": "openngc",
+      "name": "OpenNGC",
+      "catalog": "NGC/IC catalogue (Messier subset)",
+      "version": "snapshot",
+      "category": "deep-sky-catalogue",
+      "description": "Positions (RA/Dec J2000), object types, magnitudes, and common names for the Messier catalogue plus the NGC/IC objects rendered as deep-sky billboards and labelled dots in /explore’s Known Universe. A dozen famous non-catalogue objects (Cartwheel, Tycho's SNR, the Horsehead, Cassiopeia A) carry explicit standard J2000 positions.",
+      "source_url": "https://github.com/mattiaverga/OpenNGC",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_rationale": "OpenNGC is released under CC-BY-SA-4.0; free to reuse with attribution and share-alike. We vendor a distilled snapshot and credit the catalogue here and in /colophon.",
+      "used_on": [
+        "explore"
+      ]
+    },
+    {
+      "id": "gravity-eht-galactic-centre",
+      "name": "GRAVITY Collaboration · Event Horizon Telescope",
+      "catalog": "Galactic-centre astrometry",
+      "version": "published",
+      "category": "other",
+      "description": "Real astrometry underpinning /explore’s Milky Way schematic: the Sun's distance to the Galactic Centre (R₀ ≈ 8.18 kpc, GRAVITY Collaboration 2019) and the mass of Sagittarius A* (≈ 4.3 million solar masses, GRAVITY Collaboration 2022; imaged by the Event Horizon Telescope 2022). The Galaxy's spiral positions are schematic; these facts are cited and real.",
+      "source_url": "https://www.eso.org/public/news/eso2208-eht-mw/",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "Published scientific measurements from the GRAVITY Collaboration (A&A) and the EHT/ESO release, reusable with attribution. Values only — no imagery embedded; the Milky Way view is our own procedural schematic.",
+      "used_on": [
+        "explore"
+      ]
+    },
+    {
+      "id": "black-hole-parameters",
+      "name": "Event Horizon Telescope · published black-hole parameters",
+      "catalog": "Black-hole masses, distances & spins",
+      "version": "published",
+      "category": "other",
+      "description": "Cited parameters for /explore’s geodesic gravitational-lensing renders: M87* (first imaged, EHT 2019), Sagittarius A* (EHT 2022; GRAVITY mass), and Cygnus X-1 (stellar-mass, mass revised upward by Miller-Jones et al. 2021). Gargantua is labelled fiction (Kip Thorne's Interstellar model). The lensing image is our own geodesic ray-trace — no observatory imagery is embedded.",
+      "source_url": "https://eventhorizontelescope.org/",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "Published measurements (EHT collaboration papers + peer-reviewed literature), reusable with attribution. Parameter values only; the black-hole visual is procedurally ray-traced from the Schwarzschild geodesic equation.",
+      "used_on": [
+        "explore"
+      ]
+    }
+  ]
+}

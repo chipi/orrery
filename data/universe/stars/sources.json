@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-14T06:35:53.581Z",
+  "script_version": "build-universe-stars@1.0.0",
+  "dataset": "universe/stars",
+  "catalog": "HYG Database v4.1 (astronexus)",
+  "catalog_version": "v4.1",
+  "source_url": "https://github.com/astronexus/HYG-Database",
+  "license_short": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "license_rationale": "HYG Database is published by astronexus under Creative Commons Attribution-ShareAlike 4.0 International.",
+  "derivation": "Dropped the Sun (id 0) and stars without usable parallax (dist ≥ 100000). Kept equatorial cartesian x/y/z (pc), apparent magnitude, and B−V; tiled by distance shell. Star color is derived from B−V at render time (bv-to-rgb)."
+}

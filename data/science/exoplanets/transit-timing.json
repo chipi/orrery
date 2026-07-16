@@ -1,0 +1,21 @@
+{
+  "id": "transit-timing",
+  "tab": "exoplanets",
+  "order": 3,
+  "diagram": "exo-transit-timing.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "query": "?system=trappist-1",
+      "context_key": "TRAPPIST-1's planet masses were weighed by how they tug each other's transit times"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Transit-timing variation",
+      "u": "https://en.wikipedia.org/wiki/Transit-timing_variation",
+      "t": "intro"
+    }
+  ]
+}

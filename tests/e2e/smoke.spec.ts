@@ -59,7 +59,14 @@ for (const route of ROUTES) {
 }
 
 test('nav bar is visible on every screen and links target primary routes', async ({ page }) => {
-  await page.goto('/explore');
+  // Walk the (global) nav from a STATIC route, not /explore. The nav chrome is
+  // identical on every route, but /explore runs a continuous 3D rAF loop that
+  // starves the main thread under docker/CI load; each group toggle then costs
+  // a slow Svelte re-render (roving tabindex flips every trigger's tabindex),
+  // and the reveal loop's clicks race those re-renders into a flake. /library
+  // is pure content (zero canvases), so the dropdowns open in a single frame
+  // and the walk is fast and deterministic.
+  await page.goto('/library');
   const nav = page.locator('nav, [role="navigation"], header').first();
   await expect(nav).toBeVisible();
   // On ≤640 px viewports the link strip collapses into the hamburger

@@ -34,15 +34,14 @@ export async function clickNavLink(page: Page, hrefSubstring: string): Promise<v
     const triggers = page.locator('nav .center button.group-trigger');
     const groupCount = await triggers.count();
     for (let i = 0; i < groupCount; i++) {
-      // force: the group-trigger sits at a fixed position in the bar (its box
-      // is identical open vs closed — no reflow, no animation on the button),
-      // but on the heavy /explore route the continuous 3D rAF loop starves the
-      // main thread under CI load, so Playwright can seldom sample two clean
-      // frames to call the button "stable" within 30 s. We've verified there is
-      // no overlay interception (the backdrop starts below the bar), so the
-      // actionability wait adds only flake, never safety — skip it.
-      await triggers.nth(i).click({ force: true });
-      if (await menuLink.isVisible().catch(() => false)) {
+      await triggers.nth(i).click();
+      // Bounded wait, not an instant isVisible(): the just-opened menu can take
+      // a frame or two to paint, so an eager read would skip the correct group.
+      const shown = await menuLink
+        .waitFor({ state: 'visible', timeout: 2_000 })
+        .then(() => true)
+        .catch(() => false);
+      if (shown) {
         await menuLink.click();
         return;
       }
@@ -87,15 +86,20 @@ export async function revealDesktopNavLink(page: Page, hrefSubstring: string): P
   // already-open group's trigger would toggle it SHUT and hide its children.
   if (await menuLink.isVisible().catch(() => false)) return menuLink;
   const openTrigger = page.locator('nav .center button.group-trigger[aria-expanded="true"]');
-  // force: see clickNavLink — the trigger box is static (no reflow/animation) so
-  // the only thing the actionability "stable" wait buys on the rAF-saturated
-  // /explore route is a 30 s timeout under CI load. No overlay intercepts it.
-  if (await openTrigger.count()) await openTrigger.first().click({ force: true });
+  if (await openTrigger.count()) await openTrigger.first().click();
   const triggers = page.locator('nav .center button.group-trigger');
   const groupCount = await triggers.count();
   for (let i = 0; i < groupCount; i++) {
-    await triggers.nth(i).click({ force: true });
-    if (await menuLink.isVisible().catch(() => false)) return menuLink;
+    await triggers.nth(i).click();
+    // Bounded wait, not an instant isVisible(): the just-opened menu can take a
+    // frame or two to paint, so an immediate read would skip the correct group
+    // and thrash through all three. waitFor settles deterministically — the
+    // right group returns fast; a wrong group costs the timeout once.
+    const shown = await menuLink
+      .waitFor({ state: 'visible', timeout: 2_000 })
+      .then(() => true)
+      .catch(() => false);
+    if (shown) return menuLink;
   }
   // Return the (not-yet-visible) menu-link locator so the caller's
   // toBeVisible() fails with a clear selector rather than a generic timeout.

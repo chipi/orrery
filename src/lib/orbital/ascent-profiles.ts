@@ -19,6 +19,7 @@ export const FALCON9_SAMPLE: LaunchProfile = {
   fairingJettisonAltM: 110_000,
   refAreaM2: 10.75, // π·(3.7/2)²
   cd: 0.3,
+  launchSite: { lat: 28.56, lon: -80.58, name: 'SLC-40 · Cape Canaveral' },
   stages: [
     {
       name: 'S1',

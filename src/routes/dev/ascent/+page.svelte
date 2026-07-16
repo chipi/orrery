@@ -190,8 +190,9 @@
 
     sceneObj = createAscentScene({
       aspect: w / h,
-      earthDayUrl: `${base}/textures/2k_earth_daymap.jpg`,
+      earthDayUrl: `${base}/textures/4k_earth_daymap.jpg`,
       earthNightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
+      launchSite: FALCON9_SAMPLE.launchSite,
       schedule,
     });
 

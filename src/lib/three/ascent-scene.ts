@@ -30,11 +30,18 @@ export interface AscentSceneOptions {
   /** Earth day/night + sun textures (from `${base}/textures/...`). Optional; falls back to flat colour. */
   earthDayUrl?: string;
   earthNightUrl?: string;
+  /** Cloud texture URL; if omitted a procedural cloud layer is generated. */
+  cloudUrl?: string;
+  /** Launch-site coordinates — orients the globe so the real geography sits under the pad. */
+  launchSite?: { lat: number; lon: number };
   /** Exaggeration for the vehicle length (km). Real F9 ≈ 0.07; default 1.2 to read. */
   vehicleLengthKm?: number;
   /** Camera shot schedule (from buildShotSchedule). Falls back to a single tracking shot. */
   schedule?: ShotWindow[];
 }
+
+/** Texture-seam longitude offset (deg) tuned so a site's real coastline lands under the pad. */
+const LON_TEXTURE_OFFSET_DEG = -90;
 
 export interface AscentScene {
   scene: THREE.Scene;
@@ -74,10 +81,13 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   //    the visible Earth is lit (not the night side), plus a cool fill so
   //    the shadowed limb never crushes to black.
   const sunDir = new THREE.Vector3(0.32, 0.5, 0.8).normalize();
-  const sun = new THREE.DirectionalLight(0xfff2df, 3.9);
+  const sun = new THREE.DirectionalLight(0xfff2df, 4.4);
   sun.position.copy(sunDir).multiplyScalar(1000);
   scene.add(sun);
-  scene.add(new THREE.AmbientLight(0x33456b, 0.75));
+  scene.add(new THREE.AmbientLight(0x3a4d78, 1.0));
+  // Sky/ground hemisphere fill so the lit Earth surface reads (land + coast
+  // visible) instead of crushing to near-black.
+  scene.add(new THREE.HemisphereLight(0x9fc4ff, 0x2a2416, 0.6));
 
   const texLoader = new THREE.TextureLoader();
   const loadColor = (url?: string): THREE.Texture | null => {
@@ -103,7 +113,18 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   });
   const earth = new THREE.Mesh(new THREE.SphereGeometry(R_EARTH_KM, 128, 128), earthMat);
   earth.position.set(0, -R_EARTH_KM, 0);
-  earth.rotation.set(-Math.PI / 2, 2.1, 0); // equator up; longitude → coastline
+  // Orient the globe so the launch site's real geography sits under the pad
+  // (the pad is at the sphere's local +Y). Rotate the site's surface normal
+  // onto +Y; default to a mid-Atlantic view when no site is given.
+  const site = opts.launchSite ?? { lat: 0, lon: -30 };
+  const latR = (site.lat * Math.PI) / 180;
+  const lonR = ((site.lon + LON_TEXTURE_OFFSET_DEG) * Math.PI) / 180;
+  const siteNormal = new THREE.Vector3(
+    Math.cos(latR) * Math.cos(lonR),
+    Math.sin(latR),
+    Math.cos(latR) * Math.sin(lonR),
+  );
+  earth.quaternion.setFromUnitVectors(siteNormal, new THREE.Vector3(0, 1, 0));
   scene.add(earth);
 
   // Atmosphere (R2) — a back-side additive shell with a sun-aware scatter
@@ -156,6 +177,89 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   );
   atmoRim.position.copy(earth.position);
   scene.add(atmoRim);
+
+  // Cloud layer (R5) — a procedural puffy-cloud shell over the globe, lit by
+  // the sun and drifting slowly. Visible as cloud cover from orbit and as
+  // clouds below during the climb.
+  const makeCloudTexture = (): THREE.Texture => {
+    if (typeof document === 'undefined') return new THREE.Texture();
+    const c = document.createElement('canvas');
+    c.width = 2048;
+    c.height = 1024;
+    const g = c.getContext('2d')!;
+    g.clearRect(0, 0, c.width, c.height);
+    // Layered soft blobs → fractal-ish cumulus banding. Deterministic-ish
+    // scatter (index-driven) so the texture is stable across reloads.
+    let seed = 1337;
+    const rnd = (): number => {
+      seed = (seed * 1103515245 + 12345) & 0x7fffffff;
+      return seed / 0x7fffffff;
+    };
+    for (let i = 0; i < 900; i++) {
+      const band = Math.sin(rnd() * Math.PI); // cluster into latitude bands
+      const x = rnd() * c.width;
+      const y = (0.15 + 0.7 * (0.5 + 0.5 * Math.cos(rnd() * Math.PI * 2) * band)) * c.height;
+      const rad = 12 + rnd() * 70;
+      const a = 0.04 + rnd() * 0.16;
+      const rg = g.createRadialGradient(x, y, 0, x, y, rad);
+      rg.addColorStop(0, `rgba(255,255,255,${a})`);
+      rg.addColorStop(1, 'rgba(255,255,255,0)');
+      g.fillStyle = rg;
+      g.beginPath();
+      g.arc(x, y, rad, 0, Math.PI * 2);
+      g.fill();
+    }
+    const t = new THREE.CanvasTexture(c);
+    t.wrapS = THREE.RepeatWrapping;
+    t.wrapT = THREE.ClampToEdgeWrapping;
+    t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  };
+  const cloudTex = opts.cloudUrl ? texLoader.load(opts.cloudUrl) : makeCloudTexture();
+  const clouds = new THREE.Mesh(
+    new THREE.SphereGeometry(R_EARTH_KM + 8, 96, 96),
+    new THREE.MeshStandardMaterial({
+      map: cloudTex,
+      transparent: true,
+      opacity: 0.9,
+      depthWrite: false,
+      roughness: 1,
+    }),
+  );
+  clouds.position.copy(earth.position);
+  clouds.quaternion.copy(earth.quaternion);
+  scene.add(clouds);
+
+  // Graded sky dome (R5) — horizon haze → zenith blue, wrapped around the
+  // camera and faded out with altitude so the low-altitude sky reads like a
+  // real sky (not a flat fill) and dissolves to black space on the way up.
+  const skyMat = new THREE.ShaderMaterial({
+    uniforms: {
+      uAlt: { value: 0 },
+      uHorizon: { value: new THREE.Color(0xbcd6ec) },
+      uZenith: { value: new THREE.Color(0x2f6fd0) },
+    },
+    side: THREE.BackSide,
+    transparent: true,
+    depthWrite: false,
+    vertexShader: /* glsl */ `
+      varying vec3 vDir;
+      void main() { vDir = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }
+    `,
+    fragmentShader: /* glsl */ `
+      uniform float uAlt; uniform vec3 uHorizon; uniform vec3 uZenith;
+      varying vec3 vDir;
+      void main() {
+        float h = clamp(vDir.y * 0.5 + 0.5, 0.0, 1.0);
+        vec3 col = mix(uHorizon, uZenith, pow(h, 0.7));
+        float fade = clamp(1.0 - uAlt / 55.0, 0.0, 1.0); // sky thins out by ~55 km
+        gl_FragColor = vec4(col, fade);
+      }
+    `,
+  });
+  const skyDome = new THREE.Mesh(new THREE.SphereGeometry(30_000, 32, 32), skyMat);
+  skyDome.renderOrder = -10;
+  scene.add(skyDome);
 
   // ── Sun disc + additive halo, far along the light direction.
   const sunGroup = new THREE.Group();
@@ -301,6 +405,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     (scene.background as THREE.Color).copy(SKY_GROUND).lerp(SKY_SPACE, skyT);
     (stars.material as THREE.PointsMaterial).opacity = skyT;
     (stars.material as THREE.PointsMaterial).transparent = true;
+    skyMat.uniforms.uAlt.value = s.altKm;
 
     // Orient along the flight path (velocity angle from vertical).
     const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));

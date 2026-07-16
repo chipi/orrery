@@ -1658,5 +1658,11 @@
   "explore_lg_label_group": "归属",
   "explore_lg_label_distance": "距离",
   "explore_lg_label_diameter": "直径",
-  "explore_lg_group_anchor": "本星系群主要星系"
+  "explore_lg_group_anchor": "本星系群主要星系",
+  "explore_hub_shortcut_neighborhood": "真实的邻近恒星场，三维显示。",
+  "explore_hub_shortcut_milkyway": "我们的星系，带标签的示意图。",
+  "explore_hub_shortcut_localgroup": "银河系的星系邻域。",
+  "explore_hub_desc_neighborhood": "飞向太阳之外，进入真实的 HYG 星表 — 数千颗附近恒星，已命名并以 3D 方式定位。",
+  "explore_hub_desc_milkyway": "回到银河系：旋臂、核球，以及核心的人马 A*。",
+  "explore_hub_desc_localgroup": "再远一步 — 仙女座星系、三角座星系、麦哲伦星云，以及数十个矮星系。"
 }

@@ -15,6 +15,9 @@
   interface RouteCard {
     /** App path — used for the href, the per-card audio-stage id, and the key. */
     route: string;
+    /** Optional query suffix (e.g. `?context=milky-way`) appended to the href;
+     *  also disambiguates the key/audio-stage when several cards share a route. */
+    query?: string;
     /** Display headline for the tile (e.g. the nav label "OUR SOLAR SYSTEM"). */
     name: string;
     title: string;
@@ -107,17 +110,53 @@
 </svg>
 
 <ul class="card-grid" data-testid={gridTestId} data-audio-stage={gridAudioStage}>
-  {#each cards as card (card.route)}
+  {#each cards as card (card.route + (card.query ?? ''))}
     <li>
       <a
         class="card"
-        href={hrefFor(card.route)}
+        href={hrefFor(card.route + (card.query ?? ''))}
         aria-label={`${card.name}: ${card.title}`}
-        data-audio-stage="route-card-{card.route.slice(1)}"
+        data-audio-stage="route-card-{card.route.slice(1)}{card.query
+          ? '-' + card.query.replace(/\W+/g, '')
+          : ''}"
       >
         <span class="card-head">
           <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-            {#if card.route === '/explore'}
+            {#if card.query?.includes('context=')}
+              <!-- Scale-shell shortcut (Neighbourhood / Milky Way / Local Group):
+                   nested dashed ellipses zooming outward + a lit core. -->
+              <ellipse
+                cx="24"
+                cy="24"
+                rx="7"
+                ry="3"
+                fill="none"
+                stroke="rgba(255,255,255,0.5)"
+                stroke-width="0.8"
+              />
+              <ellipse
+                cx="24"
+                cy="24"
+                rx="13"
+                ry="5.5"
+                fill="none"
+                stroke="rgba(120,200,255,0.6)"
+                stroke-width="0.9"
+                stroke-dasharray="2 2"
+              />
+              <ellipse
+                cx="24"
+                cy="24"
+                rx="20"
+                ry="8.5"
+                fill="none"
+                stroke="rgba(120,200,255,0.3)"
+                stroke-width="0.7"
+                stroke-dasharray="1.5 2.5"
+              />
+              <circle cx="24" cy="24" r="5" fill="url(#ic-glow-teal)" />
+              <circle cx="24" cy="24" r="2" fill="#a0fff0" />
+            {:else if card.route === '/explore'}
               <!-- Mini solar system: gradient Sun + corona, three orbital ellipses
                    (slight perspective tilt), Earth + Mars with halos. -->
               <circle cx="24" cy="26" r="14" fill="url(#ic-sun-corona)" />

@@ -1658,5 +1658,11 @@
   "explore_lg_label_group": "소속",
   "explore_lg_label_distance": "거리",
   "explore_lg_label_diameter": "직경",
-  "explore_lg_group_anchor": "국부은하군 주요 은하"
+  "explore_lg_group_anchor": "국부은하군 주요 은하",
+  "explore_hub_shortcut_neighborhood": "실제 근처 항성장, 3D로.",
+  "explore_hub_shortcut_milkyway": "우리 은하, 표시된 개략도로.",
+  "explore_hub_shortcut_localgroup": "은하수의 은하 이웃.",
+  "explore_hub_desc_neighborhood": "태양 너머로 날아가 실제 HYG 카탈로그로 진입하세요 — 수천 개의 근처 별들이 이름 지어져 3D로 배치되어 있습니다.",
+  "explore_hub_desc_milkyway": "은하계로 돌아가세요: 나선팔, 은하 중심부, 그리고 중심의 Sagittarius A*.",
+  "explore_hub_desc_localgroup": "더 멀리 나아가세요 — Andromeda, Triangulum, 대소 마젤란 은하, 그리고 수십 개의 왜소 은하."
 }

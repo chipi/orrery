@@ -23,6 +23,18 @@
       title: m.landing_card_fleet_title(),
       desc: m.landing_card_fleet_desc(),
     },
+    {
+      route: '/iss',
+      name: m.nav_iss(),
+      title: m.landing_card_iss_title(),
+      desc: m.landing_card_iss_desc(),
+    },
+    {
+      route: '/tiangong',
+      name: m.nav_tiangong(),
+      title: m.landing_card_tiangong_title(),
+      desc: m.landing_card_tiangong_desc(),
+    },
   ]);
 </script>
 

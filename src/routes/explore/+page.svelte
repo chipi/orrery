@@ -1080,6 +1080,9 @@
   let mwPanelOpen = $state(false);
   let closeMwFn: (() => void) | null = null;
   let mwDeepLinkFn: ((id: string) => void) | null = null;
+  // Nav shortcuts + `?context=` deep-link: jump straight to a scale-shell context
+  // (solar-system | neighborhood | milky-way | local-group), climbing out or in.
+  let contextDeepLinkFn: ((ctx: string) => Promise<void>) | null = null;
   // Slice 8: the Local Group context — leave it back in to the Milky Way; the
   // selected member galaxy → LocalGroupPanel.
   let exitLocalGroupFn: (() => void) | null = null;
@@ -1419,6 +1422,26 @@
         replaceState(url, $page.state);
       }
     });
+  });
+
+  // Nav shortcut — ?context=<solar-system|neighborhood|milky-way|local-group>
+  // jumps straight to that scale-shell, then clears the param (pure trigger, no
+  // staleness once you zoom onward).
+  let lastContextJump: string | null = null;
+  $effect(() => {
+    const c = $page.url.searchParams.get('context');
+    if (c && c !== lastContextJump && contextDeepLinkFn) {
+      lastContextJump = c;
+      untrack(() => {
+        void contextDeepLinkFn?.(c).then(() => {
+          const url = new URL($page.url);
+          if (url.searchParams.get('context') === c) {
+            url.searchParams.delete('context');
+            replaceState(url, $page.state);
+          }
+        });
+      });
+    }
   });
 
   // #306 deep-link from MissionPanel "See path on /explore" — `?paths=1`
@@ -4417,6 +4440,52 @@
     exitBlackHoleFn = exitBlackHole;
     bhDeepLinkFn = (id: string) => void enterBlackHole(id);
     setBhCurvatureFn = (on: boolean) => bhScene?.setCurvature(on ? 1 : 0);
+
+    // Nav shortcuts jump straight to a scale-shell. Climb OUT (cross-out) or back
+    // IN (cross-in) one level at a time until the active context is the target.
+    const CTX_ORDER = ['solar-system', 'neighborhood', 'milky-way', 'local-group'];
+    const curCtxLevel = () =>
+      CTX_ORDER.indexOf(
+        inLocalGroup()
+          ? 'local-group'
+          : inMilkyWay()
+            ? 'milky-way'
+            : inNeighborhood()
+              ? 'neighborhood'
+              : 'solar-system',
+      );
+    contextDeepLinkFn = async (target: string) => {
+      const t = CTX_ORDER.indexOf(target);
+      if (t < 0) return;
+      let guard = 0;
+      while (curCtxLevel() < t && guard++ < 6) {
+        const cur = curCtxLevel();
+        if (cur === 0) await crossOutToNeighborhood();
+        else if (cur === 1) await crossOutToMilkyWay();
+        else if (cur === 2) await crossOutToLocalGroup();
+      }
+      while (curCtxLevel() > t && guard++ < 6) {
+        const cur = curCtxLevel();
+        if (cur === 3) crossInToMilkyWay();
+        else if (cur === 2) crossInToNeighborhood();
+        else if (cur === 1) crossInToSolarSystem();
+      }
+    };
+    // Resolve a cold-load ?context=<...> now that the crossing fns exist (the
+    // reactive $effect above only catches later in-session URL changes).
+    {
+      const ctx0 = new URL(window.location.href).searchParams.get('context');
+      if (ctx0 && CTX_ORDER.includes(ctx0)) {
+        lastContextJump = ctx0;
+        void contextDeepLinkFn(ctx0).then(() => {
+          const url = new URL(window.location.href);
+          if (url.searchParams.get('context') === ctx0) {
+            url.searchParams.delete('context');
+            replaceState(url, $page.state);
+          }
+        });
+      }
+    }
 
     const on3dMouseUp = (e: MouseEvent) => {
       const wasDrag = dragMoved3d;

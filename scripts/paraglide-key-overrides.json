@@ -586,7 +586,13 @@
     "explore_lg_label_group": "Pertenencia",
     "explore_lg_label_distance": "Distancia",
     "explore_lg_label_diameter": "Diámetro",
-    "explore_lg_group_anchor": "Galaxia importante del Grupo Local"
+    "explore_lg_group_anchor": "Galaxia importante del Grupo Local",
+    "explore_hub_shortcut_neighborhood": "El verdadero campo de estrellas cercanas, en 3D.",
+    "explore_hub_shortcut_milkyway": "Nuestra galaxia, como esquema etiquetado.",
+    "explore_hub_shortcut_localgroup": "La vecindad galáctica de la Vía Láctea.",
+    "explore_hub_desc_neighborhood": "Vuela más allá del Sol hacia el catálogo HYG real — miles de estrellas cercanas, nombradas y situadas en 3D.",
+    "explore_hub_desc_milkyway": "Retrocede hacia la galaxia: los brazos espirales, el bulbo y Sagitario A* en el núcleo.",
+    "explore_hub_desc_localgroup": "Un paso más allá — Andrómeda, Triángulo, las Nubes de Magallanes y docenas de galaxias enanas."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -1208,7 +1214,13 @@
     "explore_lg_label_group": "Appartenance",
     "explore_lg_label_distance": "Distance",
     "explore_lg_label_diameter": "Diamètre",
-    "explore_lg_group_anchor": "Galaxie majeure du Groupe local"
+    "explore_lg_group_anchor": "Galaxie majeure du Groupe local",
+    "explore_hub_shortcut_neighborhood": "Le vrai champ d'étoiles proches, en 3D.",
+    "explore_hub_shortcut_milkyway": "Notre galaxie, sous forme de schéma annoté.",
+    "explore_hub_shortcut_localgroup": "Le voisinage galactique de la Voie lactée.",
+    "explore_hub_desc_neighborhood": "Volez au-delà du Soleil dans le vrai catalogue HYG — des milliers d'étoiles proches, nommées et placées en 3D.",
+    "explore_hub_desc_milkyway": "Reculez dans la galaxie : les bras spiraux, le bulbe, et Sagittarius A* au cœur.",
+    "explore_hub_desc_localgroup": "Un pas de plus vers l'extérieur — Andromède, Triangulum, les Nuages de Magellan, et des dizaines de galaxies naines."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -1823,7 +1835,13 @@
     "explore_lg_label_group": "Zugehörigkeit",
     "explore_lg_label_distance": "Entfernung",
     "explore_lg_label_diameter": "Durchmesser",
-    "explore_lg_group_anchor": "Große Galaxie der Lokalen Gruppe"
+    "explore_lg_group_anchor": "Große Galaxie der Lokalen Gruppe",
+    "explore_hub_shortcut_neighborhood": "Das echte Nahfeld von Sternen in 3D.",
+    "explore_hub_shortcut_milkyway": "Unsere Galaxie als beschriftetes Schema.",
+    "explore_hub_shortcut_localgroup": "Die Galaxien-Nachbarschaft der Milchstraße.",
+    "explore_hub_desc_neighborhood": "Fliege über die Sonne hinaus in den echten HYG-Katalog — Tausende naher Sterne, benannt und im 3D-Raum positioniert.",
+    "explore_hub_desc_milkyway": "Zoome in die Galaxie zurück: die Spiralarme, die Bulge und Sagittarius A* im Kern.",
+    "explore_hub_desc_localgroup": "Einen Schritt weiter hinaus — Andromeda, Triangulum, die Magellanschen Wolken und Dutzende Zwerggalaxien."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -2419,7 +2437,13 @@
     "explore_lg_label_group": "Filiação",
     "explore_lg_label_distance": "Distância",
     "explore_lg_label_diameter": "Diâmetro",
-    "explore_lg_group_anchor": "Grande galáxia do Grupo Local"
+    "explore_lg_group_anchor": "Grande galáxia do Grupo Local",
+    "explore_hub_shortcut_neighborhood": "O campo real de estrelas próximas, em 3D.",
+    "explore_hub_shortcut_milkyway": "Nossa galáxia, como um esquema rotulado.",
+    "explore_hub_shortcut_localgroup": "A vizinhança galáctica da Via Láctea.",
+    "explore_hub_desc_neighborhood": "Voe para além do Sol no catálogo HYG real — milhares de estrelas próximas, nomeadas e posicionadas em 3D.",
+    "explore_hub_desc_milkyway": "Recue para a galáxia: os braços espirais, o bojo, e Sagittarius A* no centro.",
+    "explore_hub_desc_localgroup": "Um passo mais adiante — Andrômeda, Triângulo, as Nuvens de Magalhães, e dezenas de galáxias anãs."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -3009,7 +3033,13 @@
     "explore_lg_label_group": "Appartenenza",
     "explore_lg_label_distance": "Distanza",
     "explore_lg_label_diameter": "Diametro",
-    "explore_lg_group_anchor": "Galassia maggiore del Gruppo Locale"
+    "explore_lg_group_anchor": "Galassia maggiore del Gruppo Locale",
+    "explore_hub_shortcut_neighborhood": "Il vero campo stellare vicino, in 3D.",
+    "explore_hub_shortcut_milkyway": "La nostra galassia, come schema etichettato.",
+    "explore_hub_shortcut_localgroup": "Il vicinato galattico della Via Lattea.",
+    "explore_hub_desc_neighborhood": "Vola oltre il Sole nel catalogo HYG reale — migliaia di stelle vicine, nominate e posizionate in 3D.",
+    "explore_hub_desc_milkyway": "Ritirati nella galassia: i bracci a spirale, il rigonfiamento e Sagittarius A* al centro.",
+    "explore_hub_desc_localgroup": "Un passo ancora più lontano — Andromeda, Triangulum, le Nubi di Magellano e dozzine di galassie nane."
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -3569,7 +3599,13 @@
     "explore_lg_label_group": "Чланство",
     "explore_lg_label_distance": "Удаљеност",
     "explore_lg_label_diameter": "Пречник",
-    "explore_lg_group_anchor": "Велика галаксија Локалне групе"
+    "explore_lg_group_anchor": "Велика галаксија Локалне групе",
+    "explore_hub_shortcut_neighborhood": "Право поље неарбих звезда, у 3D.",
+    "explore_hub_shortcut_milkyway": "Наша галаксија, као означена шема.",
+    "explore_hub_shortcut_localgroup": "Галактичка суседства Млечног пута.",
+    "explore_hub_desc_neighborhood": "Летајте изван Сунца у прави HYG каталог — хиљаде оближњих звезда, назване и постављене у 3D.",
+    "explore_hub_desc_milkyway": "Повуците се у галаксију: спиралне гране, избочина и Стрелац A* у језгру.",
+    "explore_hub_desc_localgroup": "Један корак даље — Андромеда, Троугаоница, Магеланови облаци и десетине пигмејских галаксија."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -4195,7 +4231,13 @@
     "explore_lg_label_group": "归属",
     "explore_lg_label_distance": "距离",
     "explore_lg_label_diameter": "直径",
-    "explore_lg_group_anchor": "本星系群主要星系"
+    "explore_lg_group_anchor": "本星系群主要星系",
+    "explore_hub_shortcut_neighborhood": "真实的邻近恒星场，三维显示。",
+    "explore_hub_shortcut_milkyway": "我们的星系，带标签的示意图。",
+    "explore_hub_shortcut_localgroup": "银河系的星系邻域。",
+    "explore_hub_desc_neighborhood": "飞向太阳之外，进入真实的 HYG 星表 — 数千颗附近恒星，已命名并以 3D 方式定位。",
+    "explore_hub_desc_milkyway": "回到银河系：旋臂、核球，以及核心的人马 A*。",
+    "explore_hub_desc_localgroup": "再远一步 — 仙女座星系、三角座星系、麦哲伦星云，以及数十个矮星系。"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -4837,7 +4879,13 @@
     "explore_lg_label_group": "所属",
     "explore_lg_label_distance": "距離",
     "explore_lg_label_diameter": "直径",
-    "explore_lg_group_anchor": "局部銀河群の主要銀河"
+    "explore_lg_group_anchor": "局部銀河群の主要銀河",
+    "explore_hub_shortcut_neighborhood": "実際の近傍恒星野を3D表示。",
+    "explore_hub_shortcut_milkyway": "銀河系を図解スキーマで表示。",
+    "explore_hub_shortcut_localgroup": "銀河系の銀河近傍領域。",
+    "explore_hub_desc_neighborhood": "太陽の向こうへ飛び出して、実際のHYGカタログへ——数千の近傍恒星が名前付きで3D配置されています。",
+    "explore_hub_desc_milkyway": "銀河へ引き戻す：スパイラルアーム、バルジ、そしてコア中のいて座A*。",
+    "explore_hub_desc_localgroup": "さらに外へ一歩——アンドロメダ、三角形銀河、マゼラン雲、そして数十の矮小銀河。"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -5481,7 +5529,13 @@
     "explore_lg_label_group": "소속",
     "explore_lg_label_distance": "거리",
     "explore_lg_label_diameter": "직경",
-    "explore_lg_group_anchor": "국부은하군 주요 은하"
+    "explore_lg_group_anchor": "국부은하군 주요 은하",
+    "explore_hub_shortcut_neighborhood": "실제 근처 항성장, 3D로.",
+    "explore_hub_shortcut_milkyway": "우리 은하, 표시된 개략도로.",
+    "explore_hub_shortcut_localgroup": "은하수의 은하 이웃.",
+    "explore_hub_desc_neighborhood": "태양 너머로 날아가 실제 HYG 카탈로그로 진입하세요 — 수천 개의 근처 별들이 이름 지어져 3D로 배치되어 있습니다.",
+    "explore_hub_desc_milkyway": "은하계로 돌아가세요: 나선팔, 은하 중심부, 그리고 중심의 Sagittarius A*.",
+    "explore_hub_desc_localgroup": "더 멀리 나아가세요 — Andromeda, Triangulum, 대소 마젤란 은하, 그리고 수십 개의 왜소 은하."
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -6262,7 +6316,13 @@
     "explore_lg_label_group": "सदस्यता",
     "explore_lg_label_distance": "दूरी",
     "explore_lg_label_diameter": "व्यास",
-    "explore_lg_group_anchor": "प्रमुख स्थानीय समूह आकाशगंगा"
+    "explore_lg_group_anchor": "प्रमुख स्थानीय समूह आकाशगंगा",
+    "explore_hub_shortcut_neighborhood": "वास्तविक निकटवर्ती तारा क्षेत्र, 3D में।",
+    "explore_hub_shortcut_milkyway": "हमारी आकाशगंगा, एक लेबल किए गए आरेख के रूप में।",
+    "explore_hub_shortcut_localgroup": "मिल्की वे का आकाशगंगा पड़ोस।",
+    "explore_hub_desc_neighborhood": "सूर्य के पार असली HYG कैटलॉग में उड़ान भरें — हजारों पास के तारे, नाम दिए गए और 3D में स्थित।",
+    "explore_hub_desc_milkyway": "आकाशगंगा में वापस खींचें: सर्पिल भुजाएं, केंद्रीय उभार, और मूल में Sagittarius A*।",
+    "explore_hub_desc_localgroup": "एक कदम और आगे — Andromeda, Triangulum, Magellanic Clouds, और दर्जनों बौनी आकाशगंगाएं।"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -7085,7 +7145,13 @@
     "explore_lg_label_group": "العضوية",
     "explore_lg_label_distance": "المسافة",
     "explore_lg_label_diameter": "القطر",
-    "explore_lg_group_anchor": "مجرة رئيسية في المجموعة المحلية"
+    "explore_lg_group_anchor": "مجرة رئيسية في المجموعة المحلية",
+    "explore_hub_shortcut_neighborhood": "حقل النجوم القريبة الحقيقي، في الأبعاد الثلاثة.",
+    "explore_hub_shortcut_milkyway": "مجرتنا، كمخطط موضح بالعلامات.",
+    "explore_hub_shortcut_localgroup": "حي المجرات حول درب التبانة.",
+    "explore_hub_desc_neighborhood": "حلّق إلى ما وراء الشمس في فهرس HYG الفعلي — آلاف النجوم القريبة، مسماة وموضوعة في نموذج ثلاثي الأبعاد.",
+    "explore_hub_desc_milkyway": "انسحب للخلف نحو المجرة: الأذرع الحلزونية والانتفاخ النووي ونجم القوس A* في النواة.",
+    "explore_hub_desc_localgroup": "خطوة أخرى للخارج — أندروميدا والمثلث والسُّحب الماجلانية وعشرات المجرات القزمة."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -7730,7 +7796,13 @@
     "explore_lg_label_group": "Принадлежность",
     "explore_lg_label_distance": "Расстояние",
     "explore_lg_label_diameter": "Диаметр",
-    "explore_lg_group_anchor": "Крупная галактика Местной группы"
+    "explore_lg_group_anchor": "Крупная галактика Местной группы",
+    "explore_hub_shortcut_neighborhood": "Реальное поле ближайших звёзд в 3D.",
+    "explore_hub_shortcut_milkyway": "Наша галактика как схема с обозначениями.",
+    "explore_hub_shortcut_localgroup": "Окрестность галактик Млечного Пути.",
+    "explore_hub_desc_neighborhood": "Летите мимо Солнца в реальный каталог HYG — тысячи близких звёзд, названные и размещённые в 3D.",
+    "explore_hub_desc_milkyway": "Отступите к галактике: рукава спирали, балдж и Стрелец A* в центре.",
+    "explore_hub_desc_localgroup": "Ещё на шаг дальше — Андромеда, Треугольник, Магеллановы облака и десятки карликовых галактик."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -8325,6 +8397,12 @@
     "explore_lg_label_group": "Lidmaatschap",
     "explore_lg_label_distance": "Afstand",
     "explore_lg_label_diameter": "Diameter",
-    "explore_lg_group_anchor": "Grote Lokale Groep sterrenstelsel"
+    "explore_lg_group_anchor": "Grote Lokale Groep sterrenstelsel",
+    "explore_hub_shortcut_neighborhood": "Het echte nabije sterrenveld, in 3D.",
+    "explore_hub_shortcut_milkyway": "Onze melkweg, als een gelabeld schema.",
+    "explore_hub_shortcut_localgroup": "De galactische buurt van de Melkweg.",
+    "explore_hub_desc_neighborhood": "Vlieg uit voorbij de Zon in de echte HYG-catalogus — duizenden nabijgelegen sterren, benoemd en in 3D geplaatst.",
+    "explore_hub_desc_milkyway": "Trek terug naar het sterrenstelsel: de spiraalarmen, de bolachtige kern, en Sagittarius A* in het centrum.",
+    "explore_hub_desc_localgroup": "Nog een stap verder uit — Andromeda, Triangulum, de Magelhaense Wolken, en tientallen dwergstelstels."
   }
 }

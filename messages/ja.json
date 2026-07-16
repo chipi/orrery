@@ -1658,5 +1658,11 @@
   "explore_lg_label_group": "所属",
   "explore_lg_label_distance": "距離",
   "explore_lg_label_diameter": "直径",
-  "explore_lg_group_anchor": "局部銀河群の主要銀河"
+  "explore_lg_group_anchor": "局部銀河群の主要銀河",
+  "explore_hub_shortcut_neighborhood": "実際の近傍恒星野を3D表示。",
+  "explore_hub_shortcut_milkyway": "銀河系を図解スキーマで表示。",
+  "explore_hub_shortcut_localgroup": "銀河系の銀河近傍領域。",
+  "explore_hub_desc_neighborhood": "太陽の向こうへ飛び出して、実際のHYGカタログへ——数千の近傍恒星が名前付きで3D配置されています。",
+  "explore_hub_desc_milkyway": "銀河へ引き戻す：スパイラルアーム、バルジ、そしてコア中のいて座A*。",
+  "explore_hub_desc_localgroup": "さらに外へ一歩——アンドロメダ、三角形銀河、マゼラン雲、そして数十の矮小銀河。"
 }

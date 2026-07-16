@@ -51,7 +51,7 @@
     key: string;
     label: () => string;
     hub: string;
-    children: { path: string; label: () => string }[];
+    children: { path: string; label: () => string; query?: string }[];
   };
   type NavItem = NavLink | NavGroup;
 
@@ -64,11 +64,17 @@
       hub: '/explore/hub',
       children: [
         { path: '/explore', label: m.nav_explore }, // "OUR SOLAR SYSTEM"
+        // /explore v2 scale-shells — jump straight to a context (RFC-032).
+        {
+          path: '/explore',
+          query: '?context=neighborhood',
+          label: m.explore_ctx_stellar_neighborhood,
+        },
+        { path: '/explore', query: '?context=milky-way', label: m.explore_ctx_milky_way },
+        { path: '/explore', query: '?context=local-group', label: m.explore_ctx_local_group },
         { path: '/earth', label: m.nav_earth },
         { path: '/moon', label: m.nav_moon },
         { path: '/mars', label: m.nav_mars },
-        { path: '/iss', label: m.nav_iss },
-        { path: '/tiangong', label: m.nav_tiangong },
       ],
     },
     { kind: 'link', path: '/fly', label: m.nav_fly },
@@ -82,6 +88,9 @@
         { path: '/programs', label: m.nav_programs },
         { path: '/missions', label: m.nav_missions },
         { path: '/fleet', label: m.nav_fleet },
+        // Human hardware — the crewed stations live with missions + fleet.
+        { path: '/iss', label: m.nav_iss },
+        { path: '/tiangong', label: m.nav_tiangong },
       ],
     },
     {
@@ -284,12 +293,13 @@
           </button>
           {#if openGroup === item.key}
             <div class="group-menu" role="menu" aria-label={item.label()}>
-              {#each item.children as child (child.path)}
+              {#each item.children as child (child.path + (child.query ?? ''))}
                 <a
-                  href={`${base}${localizeHref(child.path)}`}
+                  href={`${base}${localizeHref(child.path)}${child.query ?? ''}`}
                   role="menuitem"
                   class="group-menu-link"
-                  class:active={isActive(`${base}${child.path}`, $page.url.pathname)}
+                  class:active={!child.query &&
+                    isActive(`${base}${child.path}`, $page.url.pathname)}
                   onclick={closeGroups}>{child.label()}</a
                 >
               {/each}
@@ -445,11 +455,11 @@
              tap away, no nested disclosure to fight on touch. -->
         <div class="drawer-group" role="group" aria-label={item.label()}>
           <span class="drawer-group-label">{item.label()}</span>
-          {#each item.children as child (child.path)}
+          {#each item.children as child (child.path + (child.query ?? ''))}
             <a
-              href={`${base}${localizeHref(child.path)}`}
+              href={`${base}${localizeHref(child.path)}${child.query ?? ''}`}
               class="drawer-link drawer-group-item"
-              class:active={isActive(`${base}${child.path}`, $page.url.pathname)}
+              class:active={!child.query && isActive(`${base}${child.path}`, $page.url.pathname)}
               onclick={closeMobileMenu}>{child.label()}</a
             >
           {/each}
@@ -706,6 +716,7 @@
     font-size: var(--size-link);
     letter-spacing: 1.5px;
     font-weight: 700;
+    text-transform: uppercase;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     border-radius: 4px;
@@ -1106,6 +1117,7 @@
   }
   .drawer-group-item {
     padding-left: 32px;
+    text-transform: uppercase;
   }
   .drawer-link:hover,
   .drawer-link:focus-visible {

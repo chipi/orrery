@@ -1658,5 +1658,11 @@
   "explore_lg_label_group": "सदस्यता",
   "explore_lg_label_distance": "दूरी",
   "explore_lg_label_diameter": "व्यास",
-  "explore_lg_group_anchor": "प्रमुख स्थानीय समूह आकाशगंगा"
+  "explore_lg_group_anchor": "प्रमुख स्थानीय समूह आकाशगंगा",
+  "explore_hub_shortcut_neighborhood": "वास्तविक निकटवर्ती तारा क्षेत्र, 3D में।",
+  "explore_hub_shortcut_milkyway": "हमारी आकाशगंगा, एक लेबल किए गए आरेख के रूप में।",
+  "explore_hub_shortcut_localgroup": "मिल्की वे का आकाशगंगा पड़ोस।",
+  "explore_hub_desc_neighborhood": "सूर्य के पार असली HYG कैटलॉग में उड़ान भरें — हजारों पास के तारे, नाम दिए गए और 3D में स्थित।",
+  "explore_hub_desc_milkyway": "आकाशगंगा में वापस खींचें: सर्पिल भुजाएं, केंद्रीय उभार, और मूल में Sagittarius A*।",
+  "explore_hub_desc_localgroup": "एक कदम और आगे — Andromeda, Triangulum, Magellanic Clouds, और दर्जनों बौनी आकाशगंगाएं।"
 }

@@ -1658,5 +1658,11 @@
   "explore_lg_label_group": "Чланство",
   "explore_lg_label_distance": "Удаљеност",
   "explore_lg_label_diameter": "Пречник",
-  "explore_lg_group_anchor": "Велика галаксија Локалне групе"
+  "explore_lg_group_anchor": "Велика галаксија Локалне групе",
+  "explore_hub_shortcut_neighborhood": "Право поље неарбих звезда, у 3D.",
+  "explore_hub_shortcut_milkyway": "Наша галаксија, као означена шема.",
+  "explore_hub_shortcut_localgroup": "Галактичка суседства Млечног пута.",
+  "explore_hub_desc_neighborhood": "Летајте изван Сунца у прави HYG каталог — хиљаде оближњих звезда, назване и постављене у 3D.",
+  "explore_hub_desc_milkyway": "Повуците се у галаксију: спиралне гране, избочина и Стрелац A* у језгру.",
+  "explore_hub_desc_localgroup": "Један корак даље — Андромеда, Троугаоница, Магеланови облаци и десетине пигмејских галаксија."
 }

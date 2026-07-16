@@ -1658,5 +1658,11 @@
   "explore_lg_label_group": "Appartenance",
   "explore_lg_label_distance": "Distance",
   "explore_lg_label_diameter": "Diamètre",
-  "explore_lg_group_anchor": "Galaxie majeure du Groupe local"
+  "explore_lg_group_anchor": "Galaxie majeure du Groupe local",
+  "explore_hub_shortcut_neighborhood": "Le vrai champ d'étoiles proches, en 3D.",
+  "explore_hub_shortcut_milkyway": "Notre galaxie, sous forme de schéma annoté.",
+  "explore_hub_shortcut_localgroup": "Le voisinage galactique de la Voie lactée.",
+  "explore_hub_desc_neighborhood": "Volez au-delà du Soleil dans le vrai catalogue HYG — des milliers d'étoiles proches, nommées et placées en 3D.",
+  "explore_hub_desc_milkyway": "Reculez dans la galaxie : les bras spiraux, le bulbe, et Sagittarius A* au cœur.",
+  "explore_hub_desc_localgroup": "Un pas de plus vers l'extérieur — Andromède, Triangulum, les Nuages de Magellan, et des dizaines de galaxies naines."
 }

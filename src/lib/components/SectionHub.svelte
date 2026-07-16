@@ -12,6 +12,7 @@
 
   interface HubCard {
     route: string;
+    query?: string;
     name: string;
     title: string;
     desc: string;
@@ -34,9 +35,10 @@
   const activeLocale = $derived(localeFromPage($page));
 
   function withLang(path: string): string {
-    return activeLocale === DEFAULT_LOCALE
-      ? path
-      : `${path}?lang=${encodeURIComponent(activeLocale)}`;
+    if (activeLocale === DEFAULT_LOCALE) return path;
+    // Merge with any existing query (e.g. `?context=…` on a scale-shell shortcut).
+    const sep = path.includes('?') ? '&' : '?';
+    return `${path}${sep}lang=${encodeURIComponent(activeLocale)}`;
   }
 </script>
 

@@ -44,7 +44,15 @@ jobs:
             git add src/lib/satellite/station-tles.json
             TS=$(date -u +%Y-%m-%dT%H:%MZ)
             git commit -m "chore(tles): refresh station element sets — ${TS}"
-            git push
+            # Rebase-and-retry so a concurrent push to main doesn't lose the race
+            # (same fix as refresh-launches.yml; conflict-free — only touches tles).
+            pushed=0
+            for attempt in 1 2 3; do
+              if git push; then pushed=1; break; fi
+              echo "push rejected — rebasing onto origin/${GITHUB_REF_NAME:-main} and retrying (${attempt}/3)…"
+              git pull --rebase origin "${GITHUB_REF_NAME:-main}" || true
+            done
+            [[ "$pushed" == 1 ]] || { echo "tles push failed after 3 rebase-retries"; exit 1; }
           else
             echo "No station-TLE changes — skipping commit."
           fi

@@ -65,7 +65,17 @@ jobs:
             # simple ISO-timestamped message when not present.
             TS=$(date -u +%Y-%m-%dT%H:%MZ)
             git commit -m "chore(launches): refresh — ${TS}"
-            git push
+            # main can advance during the multi-minute fetch/preflight; a plain push
+            # then loses the push-race (rejected "fetch first"). Rebase our single
+            # data commit onto the moved tip and retry (conflict-free: nothing else
+            # touches launches.json). Seen 2026-07-16 racing a manual main push.
+            pushed=0
+            for attempt in 1 2 3; do
+              if git push; then pushed=1; break; fi
+              echo "push rejected — rebasing onto origin/${GITHUB_REF_NAME:-main} and retrying (${attempt}/3)…"
+              git pull --rebase origin "${GITHUB_REF_NAME:-main}" || true
+            done
+            [[ "$pushed" == 1 ]] || { echo "launches push failed after 3 rebase-retries"; exit 1; }
           else
             echo "No launches manifest changes — skipping commit."
           fi

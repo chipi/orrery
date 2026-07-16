@@ -55,6 +55,21 @@ import {
   getBadges,
   getBadgeProvenance,
   getSourcingGaps,
+  getDataSources,
+  getNamedStars,
+  getNamedStarI18n,
+  getConstellationLines,
+  getExoplanetSystems,
+  getExoplanetSystem,
+  getExoplanetI18n,
+  getDeepSkyObjects,
+  getDeepSkyObject,
+  getDeepSkyGallery,
+  getMilkyWaySchematic,
+  getLocalGroup,
+  getBlackHoles,
+  getBlackHole,
+  getCultureDoors,
   rockets,
   earthObjects,
   moonSites,
@@ -1172,5 +1187,77 @@ describe('programs / badges / sourcing loaders (PRD-029)', () => {
     expect(en?.gaps[0]).toHaveProperty('status');
     const de = await getSourcingGaps('de');
     expect(de?.gaps.length).toBeGreaterThan(0);
+  });
+});
+
+// /explore v2 "Known Universe" data loaders (RFC-032, S1–S8). These are fetch +
+// parse + cache loaders exercised in-app; cover their happy/lookup paths here so
+// the function-coverage gate reflects them.
+describe('/explore v2 data loaders', () => {
+  it('getNamedStars returns the neighbourhood named stars', async () => {
+    const stars = await getNamedStars();
+    expect(stars.length).toBeGreaterThan(0);
+    expect(stars[0]).toHaveProperty('proper');
+  });
+
+  it('getConstellationLines resolves to an array', async () => {
+    const lines = await getConstellationLines();
+    expect(Array.isArray(lines)).toBe(true);
+  });
+
+  it('getNamedStarI18n resolves (overlay or null)', async () => {
+    const overlay = await getNamedStarI18n('en-US', 'vega');
+    expect(overlay === null || typeof overlay === 'object').toBe(true);
+  });
+
+  it('getExoplanetSystems + getExoplanetSystem (hit + miss)', async () => {
+    const systems = await getExoplanetSystems();
+    expect(systems.length).toBeGreaterThan(0);
+    const one = await getExoplanetSystem('proxima-centauri');
+    expect(one?.hostId).toBe('proxima-centauri');
+    const missing = await getExoplanetSystem('does-not-exist');
+    expect(missing).toBeNull();
+  });
+
+  it('getExoplanetI18n resolves (overlay or null)', async () => {
+    const overlay = await getExoplanetI18n('en-US', 'proxima-cen-b');
+    expect(overlay === null || typeof overlay === 'object').toBe(true);
+  });
+
+  it('getDeepSkyObjects + getDeepSkyObject + getDeepSkyGallery', async () => {
+    const objs = await getDeepSkyObjects();
+    expect(objs.length).toBeGreaterThan(0);
+    const one = await getDeepSkyObject('30-doradus');
+    expect(one?.id).toBe('30-doradus');
+    const gallery = await getDeepSkyGallery();
+    expect(gallery.length).toBeGreaterThan(0);
+  });
+
+  it('getMilkyWaySchematic returns the schematic', async () => {
+    const mw = await getMilkyWaySchematic();
+    expect(mw?.objects.length).toBeGreaterThan(0);
+  });
+
+  it('getLocalGroup returns the member galaxies', async () => {
+    const lg = await getLocalGroup();
+    expect(lg?.members.length).toBeGreaterThan(0);
+    expect(lg?.members.some((m) => m.id === 'milky-way')).toBe(true);
+  });
+
+  it('getBlackHoles + getBlackHole', async () => {
+    const holes = await getBlackHoles();
+    expect(holes.length).toBeGreaterThan(0);
+    const sgra = await getBlackHole('sagittarius-a-star');
+    expect(sgra?.id).toBe('sagittarius-a-star');
+  });
+
+  it('getCultureDoors resolves to an array', async () => {
+    const doors = await getCultureDoors('vega');
+    expect(Array.isArray(doors)).toBe(true);
+  });
+
+  it('getDataSources returns the catalogue bill of materials', async () => {
+    const src = await getDataSources();
+    expect(src?.entries.length).toBeGreaterThan(0);
   });
 });

@@ -89,51 +89,112 @@ export function buildShotSchedule(inp: ScheduleInputs): ShotWindow[] {
 
 /** The active shot at time `t` — clamps to the first/last window. */
 export function selectShot(schedule: ShotWindow[], t: number): AscentShotName {
-  if (schedule.length === 0) return 'ascent';
-  if (t <= schedule[0].tStart) return schedule[0].name;
-  for (const w of schedule) {
-    if (t >= w.tStart && t < w.tEnd) return w.name;
-  }
-  return schedule[schedule.length - 1].name;
+  return activeShotAt(schedule, t).name;
 }
 
 /**
- * Compose the camera pose for a shot from the current vehicle state.
- * `vehLen` is the rendered vehicle length (km) so offsets scale with the
- * stylised model. All shots keep the vehicle in frame; the wide shots
- * pull back with altitude to admit Earth curvature.
+ * The active shot AND the camera's progress (0→1) through that shot's beat
+ * window at time `t`. Progress drives the authored intra-shot motion
+ * (orbit / dolly / push-in) so the camera is always moving — the director's-
+ * cut steady-cam feel, cut hard between shots.
  */
-export function composeShot(name: AscentShotName, s: AscentState, vehLen: number): CameraPose {
+export function activeShotAt(schedule: ShotWindow[], t: number): { name: AscentShotName; progress: number } {
+  if (schedule.length === 0) return { name: 'ascent', progress: 0.5 };
+  if (t <= schedule[0].tStart) return { name: schedule[0].name, progress: 0 };
+  for (const w of schedule) {
+    if (t >= w.tStart && t < w.tEnd) {
+      const span = w.tEnd - w.tStart;
+      return { name: w.name, progress: span > 0 ? (t - w.tStart) / span : 0 };
+    }
+  }
+  return { name: schedule[schedule.length - 1].name, progress: 1 };
+}
+
+/** Smoothstep ease. */
+const ease = (p: number): number => {
+  const c = Math.min(1, Math.max(0, p));
+  return c * c * (3 - 2 * c);
+};
+
+/**
+ * Compose the camera pose for a shot from the current vehicle state and the
+ * shot progress `p` (0→1 across the beat window). `p` drives authored motion
+ * — a steady-cam orbit on the pad, a push-in on tower-clear, a dolly-out on
+ * ascent, a slow push-in on staging, a long dolly-back on orbit — so every
+ * shot is alive. `vehLen` scales offsets to the stylised model. A subtle
+ * handheld drift (keyed on the mission time) is layered on top of all shots.
+ */
+export function composeShot(name: AscentShotName, s: AscentState, vehLen: number, p = 0.5): CameraPose {
   const dr = s.downrangeKm;
   const alt = s.altKm;
-  // Gentle altitude pull-back shared by the tracking shots.
+  const e = ease(p);
   const back = Math.max(vehLen * 4.5, alt * 0.32 + vehLen * 3);
+  // Subtle handheld wobble — tiny, time-keyed, so a locked frame still breathes.
+  const wob = vehLen * 0.04;
+  const wx = Math.sin(s.t * 0.7) * wob;
+  const wy = Math.cos(s.t * 0.9) * wob;
 
+  let out: CameraPose;
   switch (name) {
-    case 'pad':
-      // Low, wide, ground-level looking up at the vehicle on the pad.
-      return pose(dr - vehLen * 2.4, vehLen * 0.5, vehLen * 4.2, dr, alt + vehLen * 1.1, 0, 42);
-    case 'tower_clear':
-      // Low tracking as it clears the tower — still looking up.
-      return pose(dr - vehLen * 2.2, alt + vehLen * 0.6, vehLen * 4, dr, alt + vehLen * 0.7, 0, 44);
-    case 'ascent':
-      // Three-quarter tracking arc; Earth begins to enter frame.
-      return pose(dr - back * 0.5, alt + back * 0.22, back, dr, alt, 0, 46);
-    case 'onboard_down': {
-      // Strap-cam near the nose looking DOWN the body at Earth falling
-      // away — the body rides the near frame, Earth (limb higher up) below.
-      return pose(dr + vehLen * 0.32, alt + vehLen * 0.85, vehLen * 0.6, dr, alt - vehLen * 3.2, 0, 60);
+    case 'pad': {
+      // Steady-cam ORBIT around the vehicle on the pad — sweeps ~70° through
+      // the hold, low and looking up, showing the site + tower.
+      const ang = -0.7 + p * 1.2;
+      const rad = vehLen * 4.4;
+      out = pose(
+        dr + Math.sin(ang) * rad,
+        vehLen * (0.45 + 0.25 * p),
+        Math.cos(ang) * rad,
+        dr,
+        alt + vehLen * 1.1,
+        0,
+        43,
+      );
+      break;
     }
-    case 'staging':
-      // Pulled-back, off-plane so the two parting stages read against Earth.
-      return pose(dr - vehLen * 7, alt + vehLen * 2.4, vehLen * 9, dr, alt, 0, 40);
-    case 'chase':
-      // Behind + above the upper stage, Earth curve below.
-      return pose(dr - back * 0.42, alt + back * 0.3, back * 0.9, dr + vehLen * 1.5, alt, 0, 46);
-    case 'orbit':
-      // Wide serene limb — engine dark, Earth filling the lower frame.
-      return pose(dr - back * 0.5, alt + back * 0.28, back * 1.15, dr, alt - back * 0.1, 0, 48);
+    case 'tower_clear': {
+      // PUSH-IN + crane up as it clears the tower.
+      const rad = vehLen * (4.2 - 1.1 * e);
+      out = pose(dr - rad * 0.5, alt + vehLen * (0.4 + 0.7 * e), rad, dr, alt + vehLen * 0.7, 0, 44);
+      break;
+    }
+    case 'ascent': {
+      // DOLLY-OUT three-quarter arc — pulls back + arcs as Earth enters frame.
+      const d = back * (1 + 0.5 * e);
+      const ang = -0.5 - p * 0.5;
+      out = pose(dr + Math.sin(ang) * d, alt + d * 0.24, Math.cos(ang) * d, dr, alt, 0, 46);
+      break;
+    }
+    case 'onboard_down': {
+      // Strap-cam near the nose looking DOWN the body; a slow drift across.
+      const sx = vehLen * (0.32 + 0.25 * (p - 0.5));
+      out = pose(dr + sx, alt + vehLen * 0.85, vehLen * 0.6, dr, alt - vehLen * 3.2, 0, 60);
+      break;
+    }
+    case 'staging': {
+      // Slow PUSH-IN on the separation (the hero beat), then a slight pull.
+      const io = p < 0.6 ? ease(p / 0.6) : 1 - 0.25 * ease((p - 0.6) / 0.4);
+      const d = vehLen * (9 - 4 * io);
+      out = pose(dr - d * 0.75, alt + vehLen * 2.4, d, dr, alt, 0, 40 - 4 * io);
+      break;
+    }
+    case 'chase': {
+      // Behind + above the upper stage, slow DOLLY-BACK + orbital drift.
+      const d = back * (0.9 + 0.5 * e);
+      const ang = -0.45 - p * 0.35;
+      out = pose(dr + Math.sin(ang) * d, alt + d * 0.3, Math.cos(ang) * d, dr + vehLen * 1.5, alt, 0, 46);
+      break;
+    }
+    case 'orbit': {
+      // Wide serene limb — a long DOLLY-BACK as it coasts, Earth filling frame.
+      const d = back * (1.05 + 0.35 * e);
+      out = pose(dr - d * 0.5, alt + d * 0.28, d, dr, alt - d * 0.1, 0, 48);
+      break;
+    }
   }
+  out.px += wx;
+  out.py += wy;
+  return out;
 }
 
 function pose(

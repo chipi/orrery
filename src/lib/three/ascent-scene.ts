@@ -17,8 +17,8 @@
 import * as THREE from 'three';
 import { gravity, type AscentState } from '$lib/orbital/ascent-physics';
 import {
+  activeShotAt,
   composeShot,
-  selectShot,
   type AscentShotName,
   type ShotWindow,
 } from '$lib/orbital/ascent-cameras';
@@ -357,8 +357,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // Camera: pick the active shot from the schedule and compose its pose.
     // Hard-cut between shots (cinematic); the pose is a continuous function
     // of the state, so it moves smoothly within a shot.
-    activeShot = schedule.length ? selectShot(schedule, s.t) : 'ascent';
-    const p = composeShot(activeShot, s, vehLen);
+    const shot = schedule.length ? activeShotAt(schedule, s.t) : { name: 'ascent' as const, progress: 0.5 };
+    activeShot = shot.name;
+    const p = composeShot(activeShot, s, vehLen, shot.progress);
     camera.position.set(p.px, p.py, p.pz);
     camera.lookAt(p.tx, p.ty, p.tz);
     if (camera.fov !== p.fov) {

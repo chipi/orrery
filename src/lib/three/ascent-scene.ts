@@ -236,7 +236,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const darkMat = new THREE.MeshStandardMaterial({ color: 0x15171c, roughness: 0.55, metalness: 0.35 });
   const engMat = new THREE.MeshStandardMaterial({ color: 0x2b2f36, roughness: 0.4, metalness: 0.7 });
 
-  const rBody = vehLen * 0.035; // slender — real F9 is ~19:1
+  const rBody = vehLen * 0.05; // slender-ish, but readable as the hero
   const stage1Group = new THREE.Group();
 
   const stage1 = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.55, 40), bodyMat);
@@ -300,10 +300,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       new THREE.MeshBasicMaterial({ color, transparent: true, opacity, blending: THREE.AdditiveBlending, depthWrite: false }),
     );
   const plume = new THREE.Group();
-  const plumeTrail = plumeCone(rBody * 0.9, vehLen * 1.0, 0xff6a2a, 0.13);
-  const plumeGlow = plumeCone(rBody * 1.25, vehLen * 0.6, 0xff8a3c, 0.3);
-  const plumeCore = plumeCone(rBody * 0.7, vehLen * 0.42, 0xffe6b0, 0.62);
-  const plumeThroat = plumeCone(rBody * 0.48, vehLen * 0.14, 0xdfeaff, 0.85);
+  const plumeTrail = plumeCone(rBody * 0.7, vehLen * 0.5, 0xff6a2a, 0.07);
+  const plumeGlow = plumeCone(rBody * 0.95, vehLen * 0.38, 0xff8a3c, 0.18);
+  const plumeCore = plumeCone(rBody * 0.55, vehLen * 0.28, 0xffcf80, 0.34);
+  const plumeThroat = plumeCone(rBody * 0.4, vehLen * 0.11, 0xffe0a8, 0.42);
   plume.add(plumeTrail, plumeGlow, plumeCore, plumeThroat);
   // Mach diamonds — bright shock beads along the core (atmospheric flight).
   const diamonds: THREE.Mesh[] = [];
@@ -319,15 +319,16 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   plume.rotation.z = Math.PI; // point down (−Y)
   stage1Group.add(plume);
 
-  // Pad smoke — an expanding billow at liftoff, world-fixed at the pad.
+  // Pad smoke — a LOW, modest billow that hugs the pad at liftoff (must not
+  // bury the rocket — the vehicle is the hero).
   const padSmoke = new THREE.Group();
-  for (let i = 0; i < 7; i++) {
-    const a = (i / 7) * Math.PI * 2;
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2;
     const puff = new THREE.Mesh(
-      new THREE.SphereGeometry(vehLen * 0.12, 12, 12),
+      new THREE.SphereGeometry(vehLen * 0.05, 10, 10),
       new THREE.MeshStandardMaterial({ color: 0xc2c6cd, transparent: true, opacity: 0, roughness: 1, depthWrite: false }),
     );
-    puff.position.set(Math.cos(a) * vehLen * 0.16, vehLen * 0.03, Math.sin(a) * vehLen * 0.16);
+    puff.position.set(Math.cos(a) * vehLen * 0.14, vehLen * 0.02, Math.sin(a) * vehLen * 0.14);
     padSmoke.add(puff);
   }
   padSmoke.visible = false;
@@ -430,13 +431,13 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       for (const d of diamonds) d.visible = showDiamonds;
     }
 
-    // Pad smoke — billows at liftoff (world-fixed), expands + fades with altitude.
-    const smokeAmt = s.stageIndex >= 0 ? Math.max(0, 1 - s.altKm / 2.5) : 0;
+    // Pad smoke — a modest low billow at liftoff that fades fast with altitude.
+    const smokeAmt = s.stageIndex >= 0 ? Math.max(0, 1 - s.altKm / 1.2) : 0;
     padSmoke.visible = smokeAmt > 0.02;
     if (padSmoke.visible) {
-      padSmoke.scale.setScalar(1 + Math.min(4, Math.max(0, s.t) * 0.5));
+      padSmoke.scale.setScalar(1 + Math.min(2, Math.max(0, s.t) * 0.35));
       for (const puff of padSmoke.children) {
-        ((puff as THREE.Mesh).material as THREE.MeshStandardMaterial).opacity = smokeAmt * 0.55;
+        ((puff as THREE.Mesh).material as THREE.MeshStandardMaterial).opacity = smokeAmt * 0.3;
       }
     }
 

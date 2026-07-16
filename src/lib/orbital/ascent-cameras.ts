@@ -165,32 +165,32 @@ export function composeShot(
   let out: CameraPose;
   switch (name) {
     case 'pad': {
-      // Steady-cam ORBIT around the vehicle on the pad — sweeps ~70° through
-      // the hold, low and looking up, showing the site + tower.
+      // Steady-cam ORBIT around the vehicle — TIGHT so the rocket dominates.
       const ang = -0.7 + p * 1.2;
-      const rad = vehLen * 4.4;
+      const rad = vehLen * 2.4;
       out = pose(
         dr + Math.sin(ang) * rad,
-        vehLen * (0.45 + 0.25 * p),
+        vehLen * (0.5 + 0.25 * p),
         Math.cos(ang) * rad,
         dr,
-        alt + vehLen * 1.1,
+        alt + vehLen * 0.55,
         0,
-        43,
+        42,
       );
       break;
     }
     case 'tower_clear': {
-      // PUSH-IN + crane up as it clears the tower.
-      const rad = vehLen * (4.2 - 1.1 * e);
-      out = pose(dr - rad * 0.5, alt + vehLen * (0.4 + 0.7 * e), rad, dr, alt + vehLen * 0.7, 0, 44);
+      // PUSH-IN + crane up as it clears the tower — vehicle fills the frame.
+      const rad = vehLen * (2.7 - 0.6 * e);
+      out = pose(dr - rad * 0.5, alt + vehLen * (0.35 + 0.6 * e), rad, dr, alt + vehLen * 0.5, 0, 44);
       break;
     }
     case 'ascent': {
-      // DOLLY-OUT three-quarter arc — pulls back + arcs as Earth enters frame.
-      const d = back * (1 + 0.5 * e);
+      // DOLLY-OUT three-quarter arc — starts TIGHT on the vehicle, pulls back +
+      // arcs as it climbs so Earth enters frame without losing the rocket.
+      const d = Math.max(vehLen * 2.8, alt * 0.5 + vehLen * 2.2) * (1 + 0.35 * e);
       const ang = -0.5 - p * 0.5;
-      out = pose(dr + Math.sin(ang) * d, alt + d * 0.24, Math.cos(ang) * d, dr, alt, 0, 46);
+      out = pose(dr + Math.sin(ang) * d, alt + d * 0.22, Math.cos(ang) * d, dr, alt + vehLen * 0.4, 0, 46);
       break;
     }
     case 'onboard_down': {

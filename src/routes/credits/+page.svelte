@@ -498,6 +498,10 @@
       <header class="head-row">
         <h2>{m.credits_section_data()}</h2>
       </header>
+      <p class="src-license">
+        <span class="lbl">{m.credits_license_summary_label()}:</span>
+        {[...new Set(dataSources.entries.map((d) => d.license_short))].join(' · ')}
+      </p>
       <p class="storage-blurb">{m.credits_data_intro()}</p>
       <ul class="data-list">
         {#each dataSources.entries as d (d.id)}

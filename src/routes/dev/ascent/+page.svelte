@@ -202,7 +202,7 @@
     composer = new EffectComposer(renderer);
     composer.setSize(w, h);
     composer.addPass(new RenderPass(sceneObj.scene, sceneObj.camera));
-    composer.addPass(new UnrealBloomPass(new THREE.Vector2(w, h), 0.75, 0.5, 0.82));
+    composer.addPass(new UnrealBloomPass(new THREE.Vector2(w, h), 0.6, 0.45, 0.9));
     composer.addPass(new FilmPass(0.12));
     const vignette = new ShaderPass(VignetteShader);
     vignette.uniforms['offset'].value = 0.95;

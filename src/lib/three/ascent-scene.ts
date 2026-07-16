@@ -250,12 +250,12 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // firing nozzle and flickered per frame.
   const plume = new THREE.Group();
   const plumeCore = new THREE.Mesh(
-    new THREE.ConeGeometry(rBody * 0.8, vehLen * 0.4, 24, 1, true),
-    new THREE.MeshBasicMaterial({ color: 0xfff2d0, transparent: true, opacity: 0.95, blending: THREE.AdditiveBlending, depthWrite: false }),
+    new THREE.ConeGeometry(rBody * 0.7, vehLen * 0.4, 24, 1, true),
+    new THREE.MeshBasicMaterial({ color: 0xffe6b0, transparent: true, opacity: 0.7, blending: THREE.AdditiveBlending, depthWrite: false }),
   );
   const plumeGlow = new THREE.Mesh(
-    new THREE.ConeGeometry(rBody * 1.5, vehLen * 0.62, 24, 1, true),
-    new THREE.MeshBasicMaterial({ color: 0xff9a3c, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending, depthWrite: false }),
+    new THREE.ConeGeometry(rBody * 1.3, vehLen * 0.6, 24, 1, true),
+    new THREE.MeshBasicMaterial({ color: 0xff8a3c, transparent: true, opacity: 0.35, blending: THREE.AdditiveBlending, depthWrite: false }),
   );
   plume.add(plumeCore, plumeGlow);
   plume.rotation.z = Math.PI; // point down (−Y)

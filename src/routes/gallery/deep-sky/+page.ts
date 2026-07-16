@@ -14,7 +14,7 @@ export const load: PageLoad = async ({ fetch }) => {
   const images = (await res.json()) as DeepSkyImage[];
   // Which gallery objects are placed in the /explore sky (Slice 4) — used to
   // show a "Show in the sky" CTA only for objects that actually immerse there.
-  let skyDesignations: string[] = [];
+  let skyDesignations: string[];
   try {
     const dso = await fetch(`${base}/data/universe/deep-sky-objects.json`);
     const doc = (await dso.json()) as {

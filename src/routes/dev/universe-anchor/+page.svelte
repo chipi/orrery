@@ -50,6 +50,8 @@
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
     renderer.setPixelRatio(Math.min(2, window.devicePixelRatio));
     renderer.setSize(container.clientWidth, container.clientHeight);
+    // Three.js renderer must live in the DOM; this dev route owns the container.
+    // eslint-disable-next-line svelte/no-dom-manipulating
     container.appendChild(renderer.domElement);
 
     let disposed = false;

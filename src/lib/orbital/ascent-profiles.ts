@@ -28,8 +28,9 @@ export const FALCON9_SAMPLE: LaunchProfile = {
       thrustVacKN: 8_227,
       ispSlS: 283,
       ispVacS: 312,
+      engines: 9,
     },
-    { name: 'S2', wetKg: 111_500, dryKg: 4_000, thrustVacKN: 981, ispVacS: 348 },
+    { name: 'S2', wetKg: 111_500, dryKg: 4_000, thrustVacKN: 981, ispVacS: 348, engines: 1 },
   ],
   pitchProgram: [
     [0, 90],

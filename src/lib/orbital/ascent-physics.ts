@@ -47,6 +47,8 @@ export interface LaunchStage {
   ispVacS: number;
   /** Sea-level specific impulse (s) — omit for vacuum-only upper stages. */
   ispSlS?: number;
+  /** Engine count on this stage (for the console's engine-out grid). */
+  engines?: number;
 }
 
 /** A launch vehicle's ascent profile. See RFC-033 §6 for the shipped JSON schema. */
@@ -101,6 +103,8 @@ export interface AscentState {
   dragN: number;
   /** Commanded thrust direction — flight-path angle from horizontal (rad). */
   pitchRad: number;
+  /** Propellant remaining in the active stage (kg); 0 while coasting. */
+  propRemainingKg: number;
 }
 
 /** A discrete ascent beat (liftoff, staging, Max-Q, MECO, SECO, …). */
@@ -338,6 +342,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       thrustN: thrust,
       dragN: dynamicPressure(rho, speed) * cd * refArea,
       pitchRad: pitchAngleRad(profile, t),
+      propRemainingKg: stageIndex >= 0 ? Math.max(0, remainingProp) : 0,
     };
   };
 
@@ -505,6 +510,7 @@ export function sampleAscentAt(states: AscentState[], t: number): AscentState {
     thrustN: lerp(a.thrustN, b.thrustN),
     dragN: lerp(a.dragN, b.dragN),
     pitchRad: lerp(a.pitchRad, b.pitchRad),
+    propRemainingKg: lerp(a.propRemainingKg, b.propRemainingKg),
   };
 }
 

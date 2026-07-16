@@ -72,9 +72,42 @@
   let sceneObj: AscentScene | undefined;
   let loop: AnimateLoop | undefined;
 
-  let hud = $state({ altKm: 0, velKms: 0, twr: 0, qkPa: 0, downrangeKm: 0, stage: 'S1', met: 'T-00:12' });
+  let hud = $state({
+    altKm: 0,
+    velKms: 0,
+    twr: 0,
+    qkPa: 0,
+    downrangeKm: 0,
+    stage: 'S1',
+    stageIndex: 0,
+    propRemainingKg: 0,
+    met: 'T-00:12',
+  });
 
   const stageLabel = (i: number): string => (i < 0 ? 'COAST' : FALCON9_SAMPLE.stages[i]?.name ?? '—');
+
+  // ── Launch-console derived values (grounded in the /science articles) ──
+  const ORBIT_TARGET_KMS = 7.8; // circular LEO speed — the "will it make it" line (dv-budget)
+  const liftoffMass = summary.states[0].massKg;
+  const stageProps = FALCON9_SAMPLE.stages.map((s) => Math.max(1, s.wetKg - s.dryKg));
+  const totalProp = stageProps.reduce((a, b) => a + b, 0);
+  const propPct = Math.round((totalProp / liftoffMass) * 100); // the "~88% is fuel" story
+  const payloadPct = ((FALCON9_SAMPLE.payloadKg / liftoffMass) * 100).toFixed(1);
+  const maxQpeak = summary.maxQ.qPa / 1000;
+
+  // Per-stage fuel %: full on the pad, spent stages 0, future stages full,
+  // active stage drains live.
+  const stageFuelPct = (i: number): number => {
+    if (t < 0) return 100; // tanks loaded through the countdown
+    if (hud.stageIndex < 0) return 0;
+    if (i < hud.stageIndex) return 0;
+    if (i > hud.stageIndex) return 100;
+    return Math.round((hud.propRemainingKg / stageProps[i]) * 100);
+  };
+  const activeEngines = $derived(hud.stageIndex >= 0 ? (FALCON9_SAMPLE.stages[hud.stageIndex].engines ?? 1) : 0);
+  const twrPct = $derived(Math.min(1, hud.twr / 2.5) * 100);
+  const qPct = $derived(Math.min(1, hud.qkPa / maxQpeak) * 100);
+  const orbitPct = $derived(Math.min(1, hud.velKms / ORBIT_TARGET_KMS) * 100);
 
   // Derived broadcast readouts.
   const countdown = $derived(t < 0 ? Math.max(0, Math.ceil(-t)) : null);
@@ -133,6 +166,8 @@
         qkPa: s.qPa / 1000,
         downrangeKm: s.downrangeKm,
         stage: stageLabel(s.stageIndex),
+        stageIndex: s.stageIndex,
+        propRemainingKg: s.propRemainingKg,
         met: formatAscentClock(s.t),
       };
     };
@@ -221,12 +256,70 @@
     </dl>
   </div>
 
-  <!-- Secondary telemetry (compact, left) -->
-  <div class="telem-side">
-    <div><span>TWR</span><b>{hud.twr.toFixed(2)}</b></div>
-    <div><span>Q</span><b>{hud.qkPa.toFixed(1)}</b><i>kPa</i></div>
-    <div><span>DR</span><b>{hud.downrangeKm.toFixed(0)}</b><i>km</i></div>
-    <div><span>STAGE</span><b>{hud.stage}</b></div>
+  <!-- Launch console — instrument cluster grounded in the /science articles -->
+  <div class="console">
+    <!-- PROPELLANT — the "tyranny of the rocket equation" made kinetic -->
+    <section>
+      <header>PROPELLANT<em>tsiolkovsky</em></header>
+      <div class="fuel-headline">
+        <b>{propPct}%</b> of liftoff mass is fuel · payload {payloadPct}%
+      </div>
+      {#each FALCON9_SAMPLE.stages as st, i (st.name)}
+        <div class="reservoir">
+          <span class="rlabel">{st.name}</span>
+          <div class="rbar"><div class="rfill" style="width:{stageFuelPct(i)}%"></div></div>
+          <span class="rpct">{stageFuelPct(i)}%</span>
+        </div>
+      {/each}
+    </section>
+
+    <!-- THRUST-TO-WEIGHT — will it fly? (>1) -->
+    <section>
+      <header>THRUST / WEIGHT<em>thrust-and-twr</em></header>
+      <div class="gauge">
+        <div class="gfill" class:go={hud.twr >= 1} style="width:{twrPct}%"></div>
+        <div class="gmark" style="left:40%"></div>
+        <span class="gval">{hud.twr.toFixed(2)}</span>
+      </div>
+    </section>
+
+    <!-- ENGINES — clustering + engine-out (all online) -->
+    <section>
+      <header>ENGINES · {activeEngines} ONLINE<em>engine-clustering</em></header>
+      <div class="engines">
+        {#each Array(activeEngines) as _, i (i)}
+          <i class="eng"></i>
+        {/each}
+      </div>
+    </section>
+
+    <!-- MAX-Q — climbing through the thick air -->
+    <section>
+      <header>DYNAMIC PRESSURE Q<em>max-q</em></header>
+      <div class="gauge">
+        <div class="gfill q" style="width:{qPct}%"></div>
+        <span class="gval">{hud.qkPa.toFixed(1)} kPa</span>
+      </div>
+    </section>
+
+    <!-- VELOCITY → ORBIT — will it reach 7.8 km/s? -->
+    <section>
+      <header>VELOCITY → ORBIT<em>dv-budget</em></header>
+      <div class="gauge">
+        <div class="gfill orbit" style="width:{orbitPct}%"></div>
+        <div class="gmark" style="left:100%"></div>
+        <span class="gval">{hud.velKms.toFixed(2)} / {ORBIT_TARGET_KMS} km/s</span>
+      </div>
+    </section>
+
+    <!-- GO / NO-GO status -->
+    <section class="status-lights">
+      {#each ['GUIDANCE', 'GIMBAL', 'SENSORS', 'PRESS', 'RANGE'] as lg (lg)}
+        <span class="light" class:armed={t < IGNITION_T && (lg === 'PRESS' || lg === 'RANGE')}>
+          <i></i>{lg}
+        </span>
+      {/each}
+    </section>
   </div>
 
   <!-- Event-timeline strip -->
@@ -418,36 +511,155 @@
     color: #eaf2ff;
   }
 
-  /* Secondary telemetry */
-  .telem-side {
+  /* Launch console */
+  .console {
     position: absolute;
-    top: 120px;
+    top: 118px;
     left: 22px;
-    display: grid;
+    width: 246px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 15px;
+    background: rgba(4, 9, 20, 0.66);
+    border: 1px solid rgba(127, 223, 255, 0.18);
+    border-radius: 6px;
+    backdrop-filter: blur(5px);
+  }
+  .console section {
+    display: flex;
+    flex-direction: column;
     gap: 6px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
   }
-  .telem-side div {
-    font-size: 12px;
-    color: rgba(200, 225, 255, 0.7);
+  .console header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #8fbfe0;
+  }
+  .console header em {
+    font-style: normal;
+    font-size: 8px;
     letter-spacing: 1px;
+    color: #4d7fa0;
   }
-  .telem-side span {
-    display: inline-block;
-    width: 46px;
-    color: #6ea6cc;
+  .console header em::before {
+    content: '▸ ';
   }
-  .telem-side b {
-    color: #eafaff;
-    min-width: 44px;
-    display: inline-block;
+  .fuel-headline {
+    font-size: 10px;
+    color: #cfe3f5;
+    line-height: 1.3;
+  }
+  .fuel-headline b {
+    color: #ffcf6a;
+    font-size: 15px;
+  }
+  .reservoir {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .rlabel {
+    font-size: 10px;
+    color: #7d99b5;
+    width: 20px;
+  }
+  .rbar {
+    flex: 1;
+    height: 9px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .rfill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff8a3c, #ffd36a);
+    transition: width 0.12s linear;
+  }
+  .rpct {
+    font-size: 10px;
+    color: #eaf2ff;
+    width: 34px;
     text-align: right;
   }
-  .telem-side i {
-    font-style: normal;
-    color: #6ea6cc;
-    margin-left: 3px;
-    font-size: 10px;
+  .gauge {
+    position: relative;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .gfill {
+    height: 100%;
+    background: #ff7a5a;
+    transition: width 0.12s linear;
+  }
+  .gfill.go {
+    background: linear-gradient(90deg, #54e08a, #9ff5c2);
+  }
+  .gfill.q {
+    background: linear-gradient(90deg, #5aa0ff, #a9d0ff);
+  }
+  .gfill.orbit {
+    background: linear-gradient(90deg, #5ac8ff, #eafaff);
+  }
+  .gmark {
+    position: absolute;
+    top: -1px;
+    width: 2px;
+    height: 14px;
+    background: #fff;
+    opacity: 0.7;
+  }
+  .gval {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 9px;
+    color: #eaf2ff;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
+  }
+  .engines {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .eng {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #9ff5c2, #2ea86a);
+    box-shadow: 0 0 5px rgba(84, 224, 138, 0.6);
+  }
+  .status-lights {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+  .status-lights .light {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #a9c6dc;
+  }
+  .status-lights .light i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #54e08a;
+    box-shadow: 0 0 5px rgba(84, 224, 138, 0.7);
+  }
+  .status-lights .light.armed i {
+    background: #ffbe4a;
+    box-shadow: 0 0 5px rgba(255, 190, 74, 0.7);
   }
 
   /* Event timeline */

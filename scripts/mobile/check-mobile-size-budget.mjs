@@ -12,16 +12,19 @@
  * Runs LAST in `build:mobile`, after prune + downscale. NO-OP unless MOBILE=1,
  * so the browser build (which legitimately ships everything) is never gated.
  *
- * Headroom: the pruned build is ~47 MB; 65 MB leaves room for normal data
- * growth (launches-historic, provenance) while still tripping on the smallest
- * structural regression (a single ~20 MB 4K bucket re-leak → 67 MB > 65).
- * Well under the iOS 200 MB cellular-OTA cap the prune exists to clear.
+ * Headroom: cumulative real-data growth (the /science + /programs + essays waves,
+ * and the /explore v2 "Known Universe" catalogues — ~4 MB of minified HYG star
+ * shells + exoplanet/deep-sky/black-hole/local-group JSON) took the pruned build
+ * to ~67 MB. Budget raised 65 → 68 MB to fit that (a data floor, not a leak). Still
+ * trips on a structural re-leak (a ~20 MB 4K-texture bucket → ~87 MB ≫ 68) and
+ * stays well under the iOS 200 MB cellular-OTA cap. Headroom is now thin (~1 MB);
+ * re-baseline (or re-prune the outer star shells for mobile) if it trips again.
  */
 import { statSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 
 const BUILD = path.resolve(process.cwd(), 'build');
-const BUDGET_MB = 65;
+const BUDGET_MB = 68;
 
 if (process.env.MOBILE !== '1') {
   console.log('[size-budget] MOBILE != 1 — skipping (browser build is not budgeted).');

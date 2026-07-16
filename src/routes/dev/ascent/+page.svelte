@@ -13,6 +13,12 @@
   import { onMount, onDestroy } from 'svelte';
   import { base } from '$app/paths';
   import * as THREE from 'three';
+  import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+  import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+  import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+  import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
+  import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
+  import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
   import { createAscentScene, type AscentScene } from '$lib/three/ascent-scene';
   import { integrateAscent, sampleAscentAt, type AscentSummary, type AscentState } from '$lib/orbital/ascent-physics';
   import { FALCON9_SAMPLE } from '$lib/orbital/ascent-profiles';
@@ -69,6 +75,7 @@
   let forcesOn = $state(false);
 
   let renderer: THREE.WebGLRenderer | undefined;
+  let composer: EffectComposer | undefined;
   let sceneObj: AscentScene | undefined;
   let loop: AnimateLoop | undefined;
 
@@ -188,6 +195,19 @@
       schedule,
     });
 
+    // R1 post-processing — bloom (plume/sun/limb glow) → film grain → vignette,
+    // mirroring the /fly helio pipeline. Only bright pixels bloom (threshold),
+    // so the daylight sky stays clean.
+    composer = new EffectComposer(renderer);
+    composer.setSize(w, h);
+    composer.addPass(new RenderPass(sceneObj.scene, sceneObj.camera));
+    composer.addPass(new UnrealBloomPass(new THREE.Vector2(w, h), 0.75, 0.5, 0.82));
+    composer.addPass(new FilmPass(0.12));
+    const vignette = new ShaderPass(VignetteShader);
+    vignette.uniforms['offset'].value = 0.95;
+    vignette.uniforms['darkness'].value = 0.55;
+    composer.addPass(vignette);
+
     (window as unknown as Record<string, unknown>).__ascentDebug = { schedule, events: summary.events, maxQ: summary.maxQ, duration };
 
     const applyState = () => {
@@ -218,7 +238,7 @@
           if (t >= duration) playing = false;
         }
         applyState();
-        renderer!.render(sceneObj!.scene, sceneObj!.camera);
+        composer!.render();
       },
     });
     loop.start();
@@ -229,6 +249,7 @@
       const ch = container.clientHeight;
       sceneObj.setAspect(cw / ch);
       renderer.setSize(cw, ch);
+      composer?.setSize(cw, ch);
     };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
@@ -236,6 +257,7 @@
 
   onDestroy(() => {
     loop?.cleanup();
+    composer?.dispose();
     sceneObj?.dispose();
     renderer?.dispose();
     renderer?.forceContextLoss();

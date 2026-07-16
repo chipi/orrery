@@ -44,6 +44,8 @@ export interface AscentScene {
   setAspect(aspect: number): void;
   /** The camera shot active at the last setState() — for the HUD. */
   readonly activeShot: AscentShotName;
+  /** Restore stages/fairing/plume to the pre-launch state (for replay). */
+  reset(): void;
   dispose(): void;
 }
 
@@ -277,6 +279,18 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     camera.updateProjectionMatrix();
   };
 
+  const reset = (): void => {
+    fairingOn = true;
+    stage1On = true;
+    fairing.visible = true;
+    stage1Group.visible = true;
+    interstage.visible = true;
+    if (plume.parent !== stage1Group) {
+      plume.parent?.remove(plume);
+      stage1Group.add(plume);
+    }
+  };
+
   const dispose = (): void => {
     dayTex?.dispose();
     nightTex?.dispose();
@@ -297,6 +311,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     get activeShot() {
       return activeShot;
     },
+    reset,
     dispose,
   };
 }

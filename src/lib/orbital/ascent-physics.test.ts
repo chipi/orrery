@@ -9,49 +9,16 @@ import {
   integrateAscent,
   pitchAngleRad,
   pressureRatio,
+  sampleAscentAt,
   stackIdealDv,
   stageIspS,
   stagePropellant,
   stageThrustN,
   tsiolkovskyDv,
-  type LaunchProfile,
 } from './ascent-physics';
+import { FALCON9_SAMPLE as FALCON9 } from './ascent-profiles';
 import { SEA_LEVEL_DENSITY_KGM3, SEA_LEVEL_PRESSURE_PA } from './ascent-physics-constants';
 import { expectCloseTo } from '../test-helpers/expect-close';
-
-// Falcon 9 Block 5 — representative public figures (SpaceX Users Guide /
-// Spaceflight101). Formal per-vehicle JSON + loader is S3; this in-test
-// sample proves the S1 engine end-to-end.
-const FALCON9: LaunchProfile = {
-  id: 'falcon-9',
-  name: 'Falcon 9 Block 5',
-  payloadKg: 15_000,
-  fairingKg: 1_900,
-  fairingJettisonAltM: 110_000,
-  refAreaM2: 10.75, // π·(3.7/2)²
-  cd: 0.3,
-  stages: [
-    {
-      name: 'S1',
-      wetKg: 433_100,
-      dryKg: 25_600,
-      thrustSlKN: 7_607,
-      thrustVacKN: 8_227,
-      ispSlS: 283,
-      ispVacS: 312,
-    },
-    { name: 'S2', wetKg: 111_500, dryKg: 4_000, thrustVacKN: 981, ispVacS: 348 },
-  ],
-  pitchProgram: [
-    [0, 90],
-    [12, 89],
-    [40, 70],
-    [120, 45],
-    [180, 25],
-    [300, 10],
-    [520, 3],
-  ],
-};
 
 describe('atmosphere + gravity', () => {
   it('sea-level density + pressure match the constants', () => {
@@ -177,5 +144,21 @@ describe('ascentToOrbit (/plan reuse)', () => {
 
   it('agrees with the integrator on ideal Δv', () => {
     expectCloseTo(plan.idealDvKms, stackIdealDv(FALCON9) / 1000, 1e-6, 'ideal Δv parity');
+  });
+});
+
+describe('sampleAscentAt', () => {
+  const s = integrateAscent(FALCON9);
+
+  it('clamps below the first + above the last sample', () => {
+    expect(sampleAscentAt(s.states, -100).t).toBe(s.states[0].t);
+    expect(sampleAscentAt(s.states, 1e9).t).toBe(s.states.at(-1)!.t);
+  });
+
+  it('interpolates monotonically-increasing altitude early in flight', () => {
+    const lo = sampleAscentAt(s.states, 30);
+    const hi = sampleAscentAt(s.states, 60);
+    expect(hi.altKm).toBeGreaterThan(lo.altKm);
+    expect(hi.t).toBe(60);
   });
 });

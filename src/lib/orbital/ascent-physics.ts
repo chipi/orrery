@@ -451,6 +451,41 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   };
 }
 
+/**
+ * Linear-interpolate a trajectory state at time `t` (s) from the sampled
+ * `states` (ascending in t). Clamps to the endpoints. Lets the render /
+ * scrubber read a smooth state at any clock position between samples.
+ */
+export function sampleAscentAt(states: AscentState[], t: number): AscentState {
+  if (states.length === 0) throw new Error('sampleAscentAt: empty trajectory');
+  if (t <= states[0].t) return states[0];
+  const last = states[states.length - 1];
+  if (t >= last.t) return last;
+  let lo = 0;
+  let hi = states.length - 1;
+  while (hi - lo > 1) {
+    const mid = (lo + hi) >> 1;
+    if (states[mid].t <= t) lo = mid;
+    else hi = mid;
+  }
+  const a = states[lo];
+  const b = states[hi];
+  const span = b.t - a.t;
+  const f = span > 0 ? (t - a.t) / span : 0;
+  const lerp = (x: number, y: number): number => x + (y - x) * f;
+  return {
+    t,
+    altKm: lerp(a.altKm, b.altKm),
+    downrangeKm: lerp(a.downrangeKm, b.downrangeKm),
+    speedKms: lerp(a.speedKms, b.speedKms),
+    velUpKms: lerp(a.velUpKms, b.velUpKms),
+    massKg: lerp(a.massKg, b.massKg),
+    stageIndex: f < 0.5 ? a.stageIndex : b.stageIndex,
+    qPa: lerp(a.qPa, b.qPa),
+    twr: lerp(a.twr, b.twr),
+  };
+}
+
 // ─── /plan reuse: headless take-off summary (RFC-033 L-I / S10) ──────
 
 /** Compact take-off planning summary — the shape /plan consumes. */

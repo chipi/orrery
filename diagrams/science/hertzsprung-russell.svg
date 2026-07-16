@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="A Hertzsprung–Russell diagram — surface temperature on the horizontal axis (hot O-type stars on the left, cool M-type on the right), luminosity on the vertical axis (bright at the top, faint at the bottom). The main sequence runs diagonally from top-left to bottom-right; red giants sit in the upper right, white dwarfs in the lower left, and the Sun is a G-type star near the centre of the main sequence.">
+  <style>
+    .frame { stroke: rgba(255,255,255,0.4); stroke-width: 1; fill: none; }
+    .grid { stroke: rgba(255,255,255,0.1); stroke-width: 0.6; fill: none; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 1.5px; }
+    .axis { fill: rgba(255,255,255,0.6); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1.5px; }
+    .sub { fill: rgba(255,255,255,0.45); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .region { font-family: 'Space Mono', monospace; letter-spacing: 1.5px; font-size: 10px; }
+    .ms-band { fill: rgba(120,170,255,0.07); stroke: rgba(160,190,255,0.35); stroke-width: 1; }
+    .giant-band { fill: rgba(255,140,90,0.08); stroke: rgba(255,150,100,0.4); stroke-width: 1; stroke-dasharray: 4 3; }
+    .dwarf-band { fill: rgba(180,210,255,0.06); stroke: rgba(190,215,255,0.4); stroke-width: 1; stroke-dasharray: 4 3; }
+    .sun-ring { fill: none; stroke: #4ecdc4; stroke-width: 1.6; }
+  </style>
+
+  <!-- plot frame -->
+  <path class="frame" d="M 90 55 L 90 345 L 560 345" />
+
+  <!-- spectral-class ticks + labels (hot → cool) -->
+  <g class="axis" text-anchor="middle">
+    <text x="120" y="46" fill="#8fb8ff">O</text>
+    <text x="178" y="46" fill="#cddcff">B</text>
+    <text x="236" y="46" fill="#eef2ff">A</text>
+    <text x="298" y="46" fill="#fff4e0">F</text>
+    <text x="356" y="46" fill="#ffd86a">G</text>
+    <text x="424" y="46" fill="#ff9a52">K</text>
+    <text x="504" y="46" fill="#ff6b6b">M</text>
+  </g>
+  <g class="grid">
+    <line x1="120" y1="52" x2="120" y2="345" />
+    <line x1="236" y1="52" x2="236" y2="345" />
+    <line x1="356" y1="52" x2="356" y2="345" />
+    <line x1="504" y1="52" x2="504" y2="345" />
+  </g>
+
+  <!-- main-sequence band + label -->
+  <polygon class="ms-band" points="118,66 150,70 512,314 480,330" />
+  <text class="region" fill="rgba(170,195,255,0.85)" transform="translate(300,214) rotate(31)" text-anchor="middle">MAIN SEQUENCE</text>
+
+  <!-- red-giant region -->
+  <ellipse class="giant-band" cx="452" cy="120" rx="66" ry="34" />
+  <text class="region" fill="rgba(255,170,120,0.9)" x="452" y="96" text-anchor="middle">RED GIANTS</text>
+
+  <!-- white-dwarf region -->
+  <ellipse class="dwarf-band" cx="196" cy="312" rx="52" ry="24" />
+  <text class="region" fill="rgba(200,220,255,0.9)" x="196" y="340" text-anchor="middle">WHITE DWARFS</text>
+
+  <!-- supergiants (a few luminous points across the very top) -->
+  <g fill="#ffb890"><circle cx="250" cy="72" r="2.4"/><circle cx="410" cy="78" r="2.6"/><circle cx="470" cy="70" r="2.2"/></g>
+
+  <!-- main-sequence stars (colour ~ temperature) -->
+  <g>
+    <circle cx="128" cy="78" r="2.6" fill="#8fb8ff"/>
+    <circle cx="150" cy="96" r="2.4" fill="#a9c6ff"/>
+    <circle cx="176" cy="118" r="2.2" fill="#cddcff"/>
+    <circle cx="205" cy="140" r="2.2" fill="#e6edff"/>
+    <circle cx="236" cy="162" r="2.2" fill="#eef2ff"/>
+    <circle cx="268" cy="182" r="2.2" fill="#fbf6ea"/>
+    <circle cx="300" cy="200" r="2.2" fill="#fff2d6"/>
+    <circle cx="330" cy="212" r="2.2" fill="#ffe6a8"/>
+    <circle cx="384" cy="240" r="2.2" fill="#ffc36a"/>
+    <circle cx="424" cy="262" r="2.2" fill="#ff9a52"/>
+    <circle cx="462" cy="286" r="2.2" fill="#ff7d52"/>
+    <circle cx="496" cy="308" r="2.4" fill="#ff6b6b"/>
+    <circle cx="516" cy="322" r="2.6" fill="#e8564f"/>
+  </g>
+
+  <!-- giants + dwarfs scatter -->
+  <g fill="#ff8f5a"><circle cx="432" cy="112" r="2.6"/><circle cx="466" cy="128" r="2.8"/><circle cx="450" cy="140" r="2.4"/><circle cx="486" cy="116" r="2.4"/></g>
+  <g fill="#cfe0ff"><circle cx="180" cy="308" r="2"/><circle cx="206" cy="316" r="2"/><circle cx="224" cy="306" r="2"/></g>
+
+  <!-- the Sun, on the main sequence at G -->
+  <circle class="sun-ring" cx="352" cy="222" r="6.5"/>
+  <circle cx="352" cy="222" r="2.6" fill="#ffd86a"/>
+  <text class="label" x="364" y="225" fill="#4ecdc4">THE SUN</text>
+
+  <!-- axis labels -->
+  <text class="axis" x="90" y="366" text-anchor="start">◄ HOTTER</text>
+  <text class="axis" x="560" y="366" text-anchor="end">COOLER ►</text>
+  <text class="label" x="325" y="388" text-anchor="middle">SURFACE TEMPERATURE  ·  SPECTRAL CLASS</text>
+  <text class="axis" transform="translate(74,70) rotate(-90)" text-anchor="end">LUMINOUS ▲</text>
+  <text class="axis" transform="translate(74,345) rotate(-90)" text-anchor="start">▼ FAINT</text>
+  <text class="label" transform="translate(58,200) rotate(-90)" text-anchor="middle">LUMINOSITY</text>
+</svg>

@@ -1,0 +1,35 @@
+{
+  "id": "our-galaxy",
+  "tab": "observation",
+  "order": 9,
+  "formula_latex": "T_\\odot = \\dfrac{2\\pi R_0}{v_\\odot} \\approx 230\\,\\text{Myr}",
+  "diagram": "our-galaxy.svg",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/our-galaxy-hero.webp",
+    "credit": "Orrery illustration — the Milky Way seen edge-on across the night sky, the dust lane of the disc splitting the star clouds toward the galactic centre."
+  },
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Milky Way context: the face-on schematic — spiral arms, the bar, and Sagittarius A* at the core"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · The Milky Way Galaxy",
+      "u": "https://science.nasa.gov/universe/galaxies/milky-way/",
+      "t": "intro"
+    },
+    {
+      "l": "ESA · Gaia maps the Milky Way",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Gaia",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Milky Way",
+      "u": "https://en.wikipedia.org/wiki/Milky_Way",
+      "t": "deep"
+    }
+  ]
+}

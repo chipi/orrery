@@ -1,0 +1,35 @@
+{
+  "id": "hertzsprung-russell",
+  "tab": "observation",
+  "order": 6,
+  "formula_latex": "M = m - 5\\,(\\log_{10} d - 1)",
+  "diagram": "hertzsprung-russell.svg",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/hertzsprung-russell-hero.webp",
+    "credit": "Orrery illustration — a colour-sorted star field, hot blue-white giants through cool red dwarfs. The same colour→temperature relation the H–R diagram is built on."
+  },
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Stellar Neighborhood → HR Diagram lens: the real nearby stars re-plotted by colour × luminosity"
+    }
+  ],
+  "links": [
+    {
+      "l": "ESA · The Hertzsprung–Russell diagram",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Gaia/The_colour_of_the_Milky_Way",
+      "t": "intro"
+    },
+    {
+      "l": "Las Cumbres Observatory · The H–R Diagram",
+      "u": "https://lco.global/spacebook/stars/h-r-diagram/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Hertzsprung–Russell diagram",
+      "u": "https://en.wikipedia.org/wiki/Hertzsprung%E2%80%93Russell_diagram",
+      "t": "deep"
+    }
+  ]
+}

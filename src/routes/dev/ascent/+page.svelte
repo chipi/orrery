@@ -214,6 +214,14 @@
     const applyState = () => {
       const s = t < 0 ? padState(t) : sampleAscentAt(summary.states, t);
       sceneObj!.setState(s);
+      // Debug: look straight down at the launch site to verify the geography.
+      const topDown = (window as unknown as Record<string, unknown>).__topDownKm as number | undefined;
+      if (topDown) {
+        sceneObj!.camera.position.set(0, topDown, 0.001);
+        sceneObj!.camera.lookAt(0, 0, 0);
+        sceneObj!.camera.fov = 50;
+        sceneObj!.camera.updateProjectionMatrix();
+      }
       hud = {
         altKm: s.altKm,
         velKms: s.speedKms,

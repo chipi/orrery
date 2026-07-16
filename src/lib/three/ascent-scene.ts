@@ -102,12 +102,15 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // ── Earth: a big sphere a full radius below the pad (surface at y=0),
   //    rotated so the EQUATOR — not the smeared texture pole — sits under
   //    the launch site. Longitude tuned to frame a coastline.
+  // Self-illuminate the day map so ocean/desert/coastline always read as a
+  // lit daytime Earth (the directional sun still adds the terminator on top).
+  // Night-lights map is dropped for the launch view — daytime geography wins.
   const earthMat = new THREE.MeshStandardMaterial({
     color: dayTex ? 0xffffff : 0x2a5a8c,
     map: dayTex ?? null,
     emissive: 0xffffff,
-    emissiveMap: nightTex ?? null,
-    emissiveIntensity: nightTex ? 0.55 : 0,
+    emissiveMap: dayTex ?? null,
+    emissiveIntensity: dayTex ? 0.75 : 0,
     roughness: 1,
     metalness: 0,
   });
@@ -221,7 +224,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     new THREE.MeshStandardMaterial({
       map: cloudTex,
       transparent: true,
-      opacity: 0.9,
+      opacity: 0.55,
       depthWrite: false,
       roughness: 1,
     }),

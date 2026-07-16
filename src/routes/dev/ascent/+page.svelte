@@ -23,11 +23,12 @@
   import { integrateAscent, sampleAscentAt, type AscentSummary, type AscentState } from '$lib/orbital/ascent-physics';
   import { FALCON9_SAMPLE } from '$lib/orbital/ascent-profiles';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
-  import { buildShotSchedule } from '$lib/orbital/ascent-cameras';
+  import { buildShotSchedule, defaultTuning } from '$lib/orbital/ascent-cameras';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
   import AscentCameraDebug from '$lib/components/AscentCameraDebug.svelte';
 
   const VEH_LEN = 1.2; // shared vehicle length (scene render + camera debug)
+  const tuning = $state(defaultTuning()); // live per-shot camera tuning (debug sliders → scene)
 
   const summary: AscentSummary = integrateAscent(FALCON9_SAMPLE);
   const duration = summary.states.at(-1)!.t;
@@ -199,6 +200,7 @@
       launchSite: FALCON9_SAMPLE.launchSite,
       vehicleLengthKm: VEH_LEN,
       schedule,
+      tuning,
     });
 
     // R1 post-processing — bloom (plume/sun/limb glow) → film grain → vignette,
@@ -456,6 +458,7 @@
         {schedule}
         vehLen={VEH_LEN}
         {t}
+        {tuning}
         onJump={(jt) => {
           t = jt;
           playing = false;

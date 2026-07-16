@@ -19,6 +19,7 @@ import { gravity, type AscentState } from '$lib/orbital/ascent-physics';
 import {
   activeShotAt,
   composeShot,
+  type AscentCameraTuning,
   type AscentShotName,
   type ShotWindow,
 } from '$lib/orbital/ascent-cameras';
@@ -38,6 +39,8 @@ export interface AscentSceneOptions {
   vehicleLengthKm?: number;
   /** Camera shot schedule (from buildShotSchedule). Falls back to a single tracking shot. */
   schedule?: ShotWindow[];
+  /** Live per-shot camera tuning (mutated by the camera-debug sliders); read by reference each frame. */
+  tuning?: AscentCameraTuning;
 }
 
 /** Texture-seam longitude offset (deg) tuned so a site's real coastline lands under the pad. */
@@ -359,7 +362,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // of the state, so it moves smoothly within a shot.
     const shot = schedule.length ? activeShotAt(schedule, s.t) : { name: 'ascent' as const, progress: 0.5 };
     activeShot = shot.name;
-    const p = composeShot(activeShot, s, vehLen, shot.progress);
+    const p = composeShot(activeShot, s, vehLen, shot.progress, opts.tuning?.[activeShot]);
     camera.position.set(p.px, p.py, p.pz);
     camera.lookAt(p.tx, p.ty, p.tz);
     if (camera.fov !== p.fov) {

@@ -116,6 +116,28 @@ const ease = (p: number): number => {
   return c * c * (3 - 2 * c);
 };
 
+/** Live per-shot tuning knobs (dialled in the camera-debug sliders). */
+export interface ShotTune {
+  /** Scale the camera's distance from its look-at target. */
+  distMul: number;
+  /** Scale the camera's height above its look-at (on top of distMul). */
+  heightMul: number;
+  /** Add to the shot's field of view (deg). */
+  fovAdd: number;
+}
+export const NO_TUNE: ShotTune = { distMul: 1, heightMul: 1, fovAdd: 0 };
+
+/** A full tuning map (one entry per shot). */
+export type AscentCameraTuning = Record<AscentShotName, ShotTune>;
+
+/** A no-op default tuning map. */
+export function defaultTuning(): AscentCameraTuning {
+  const names: AscentShotName[] = ['pad', 'tower_clear', 'ascent', 'onboard_down', 'staging', 'chase', 'orbit'];
+  const out = {} as AscentCameraTuning;
+  for (const n of names) out[n] = { ...NO_TUNE };
+  return out;
+}
+
 /**
  * Compose the camera pose for a shot from the current vehicle state and the
  * shot progress `p` (0→1 across the beat window). `p` drives authored motion
@@ -124,7 +146,13 @@ const ease = (p: number): number => {
  * shot is alive. `vehLen` scales offsets to the stylised model. A subtle
  * handheld drift (keyed on the mission time) is layered on top of all shots.
  */
-export function composeShot(name: AscentShotName, s: AscentState, vehLen: number, p = 0.5): CameraPose {
+export function composeShot(
+  name: AscentShotName,
+  s: AscentState,
+  vehLen: number,
+  p = 0.5,
+  tune: ShotTune = NO_TUNE,
+): CameraPose {
   const dr = s.downrangeKm;
   const alt = s.altKm;
   const e = ease(p);
@@ -192,6 +220,18 @@ export function composeShot(name: AscentShotName, s: AscentState, vehLen: number
       break;
     }
   }
+  // Live tuning — scale the offset from the look-at target + adjust fov.
+  let ox = out.px - out.tx;
+  let oy = out.py - out.ty;
+  let oz = out.pz - out.tz;
+  ox *= tune.distMul;
+  oz *= tune.distMul;
+  oy *= tune.distMul * tune.heightMul;
+  out.px = out.tx + ox;
+  out.py = out.ty + oy;
+  out.pz = out.tz + oz;
+  out.fov += tune.fovAdd;
+
   out.px += wx;
   out.py += wy;
   return out;

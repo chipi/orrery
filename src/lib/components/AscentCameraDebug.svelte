@@ -19,6 +19,8 @@
   import {
     activeShotAt,
     composeShot,
+    defaultTuning,
+    type AscentCameraTuning,
     type AscentShotName,
     type ShotWindow,
   } from '$lib/orbital/ascent-cameras';
@@ -29,10 +31,12 @@
     vehLen: number;
     /** Live mission time (s). Drives the live vehicle + camera markers. */
     t: number;
+    /** Live per-shot tuning (shared with the scene) — the sliders mutate it. */
+    tuning?: AscentCameraTuning;
     /** Scrub callback — clicking a shot jumps the harness clock to its mid-window. */
     onJump?: (t: number) => void;
   }
-  let { summary, schedule, vehLen, t, onJump }: Props = $props();
+  let { summary, schedule, vehLen, t, tuning = defaultTuning(), onJump }: Props = $props();
 
   const SHOT_COLORS: Record<AscentShotName, string> = {
     pad: '#7fdfff',
@@ -49,19 +53,20 @@
   const H = 240;
 
   let canvas = $state<HTMLCanvasElement | null>(null);
-  let trail: Array<{ x: number; y: number }> = [];
+  let topCanvas = $state<HTMLCanvasElement | null>(null);
+  let trail: Array<{ x: number; y: number; z: number }> = [];
   const TRAIL_MAX = 160;
 
   const live = $derived(activeShotAt(schedule, t));
   const liveState = $derived(sampleAscentAt(summary.states, Math.max(0, t)));
-  const livePose = $derived(composeShot(live.name, liveState, vehLen, live.progress));
+  const livePose = $derived(composeShot(live.name, liveState, vehLen, live.progress, tuning[live.name]));
 
   // Mid-window camera for every shot (the rig layout).
   const rig = $derived(
     schedule.map((w) => {
       const mid = (w.tStart + w.tEnd) / 2;
       const st = sampleAscentAt(summary.states, Math.max(0, mid));
-      return { name: w.name, mid, pose: composeShot(w.name, st, vehLen, 0.5), st };
+      return { name: w.name, mid, pose: composeShot(w.name, st, vehLen, 0.5, tuning[w.name]), st };
     }),
   );
 
@@ -180,21 +185,86 @@
     ctx.stroke();
 
     // Push into trail (keyed on live pose so it grows as the flight plays).
-    trail.push({ x: livePose.px, y: livePose.py });
+    trail.push({ x: livePose.px, y: livePose.py, z: livePose.pz });
     if (trail.length > TRAIL_MAX) trail.shift();
   }
 
-  // Redraw whenever the live pose changes (i.e. t changes).
+  // Top-down (x-z) mini view — downrange × depth, so the sideways camera
+  // offsets + orbit read (the main chart can't show z).
+  const TW = 384;
+  const TH = 96;
+  function drawTop() {
+    const ctx = topCanvas?.getContext('2d');
+    if (!ctx) return;
+    ctx.clearRect(0, 0, TW, TH);
+    ctx.fillStyle = '#05070f';
+    ctx.fillRect(0, 0, TW, TH);
+    // Bounds over downrange (x) and depth (z) of trajectory + rig cams.
+    let minX = 0;
+    let maxX = 1;
+    let maxZ = 1;
+    for (const s of summary.states) maxX = Math.max(maxX, s.downrangeKm);
+    for (const r of rig) {
+      minX = Math.min(minX, r.pose.px);
+      maxX = Math.max(maxX, r.pose.px);
+      maxZ = Math.max(maxZ, Math.abs(r.pose.pz));
+    }
+    const padX = (maxX - minX) * 0.06 + vehLen;
+    minX -= padX;
+    maxX += padX;
+    maxZ += vehLen;
+    const tx = (x: number): number => ((x - minX) / (maxX - minX)) * TW;
+    const tz = (z: number): number => TH / 2 - (z / (maxZ * 2)) * TH;
+    // Centre line (z=0, the flight plane).
+    ctx.strokeStyle = 'rgba(255,255,255,0.12)';
+    ctx.beginPath();
+    ctx.moveTo(0, tz(0));
+    ctx.lineTo(TW, tz(0));
+    ctx.stroke();
+    // Rig cameras.
+    for (const r of rig) {
+      ctx.fillStyle = SHOT_COLORS[r.name];
+      ctx.globalAlpha = r.name === live.name ? 1 : 0.5;
+      ctx.beginPath();
+      ctx.arc(tx(r.pose.px), tz(r.pose.pz), r.name === live.name ? 4 : 2.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    }
+    // Trail (x-z).
+    ctx.strokeStyle = 'rgba(255,255,255,0.5)';
+    ctx.beginPath();
+    trail.forEach((p, i) => (i === 0 ? ctx.moveTo(tx(p.x), tz(p.z)) : ctx.lineTo(tx(p.x), tz(p.z))));
+    ctx.stroke();
+    // Live vehicle (z=0) + live camera.
+    ctx.fillStyle = '#fff';
+    ctx.beginPath();
+    ctx.arc(tx(liveState.downrangeKm), tz(0), 3, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = SHOT_COLORS[live.name];
+    ctx.beginPath();
+    ctx.moveTo(tx(livePose.px), tz(livePose.pz));
+    ctx.lineTo(tx(liveState.downrangeKm), tz(0));
+    ctx.stroke();
+  }
+
+  // Redraw whenever the live pose changes (i.e. t or a tuning slider changes).
   $effect(() => {
     void t;
+    void tuning;
     void canvas;
+    void topCanvas;
     draw();
+    drawTop();
   });
+
+  const activeTune = $derived(tuning[live.name]);
 </script>
 
 <div class="dbg">
   <div class="dbg-head">CAMERA DEBUG<span>side elevation · downrange × altitude</span></div>
   <canvas bind:this={canvas} width={W} height={H}></canvas>
+  <div class="sub">top-down · downrange × depth (z)</div>
+  <canvas bind:this={topCanvas} width={TW} height={TH} class="top"></canvas>
 
   <div class="readout">
     <div><span>SHOT</span><b style="color:{SHOT_COLORS[live.name]}">{live.name.replace('_', '-')}</b></div>
@@ -206,6 +276,32 @@
     <div>
       <span>LOOK</span><b>{livePose.tx.toFixed(1)}, {livePose.ty.toFixed(1)}, {livePose.tz.toFixed(1)}</b>
     </div>
+  </div>
+
+  <div class="tune">
+    <div class="tune-lbl">
+      TUNE · <b style="color:{SHOT_COLORS[live.name]}">{live.name.replace('_', '-')}</b>
+      <button
+        class="reset"
+        onclick={() => {
+          tuning[live.name].distMul = 1;
+          tuning[live.name].heightMul = 1;
+          tuning[live.name].fovAdd = 0;
+        }}>reset</button
+      >
+    </div>
+    <label>
+      DIST <input type="range" min="0.3" max="2.5" step="0.05" bind:value={tuning[live.name].distMul} />
+      <i>{activeTune.distMul.toFixed(2)}</i>
+    </label>
+    <label>
+      HEIGHT <input type="range" min="0.3" max="2" step="0.05" bind:value={tuning[live.name].heightMul} />
+      <i>{activeTune.heightMul.toFixed(2)}</i>
+    </label>
+    <label>
+      FOV <input type="range" min="-20" max="20" step="1" bind:value={tuning[live.name].fovAdd} />
+      <i>{activeTune.fovAdd > 0 ? '+' : ''}{activeTune.fovAdd}</i>
+    </label>
   </div>
 
   <div class="strip">
@@ -251,6 +347,55 @@
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
+  }
+  canvas.top {
+    margin-top: 2px;
+  }
+  .sub {
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #5d7fa0;
+    margin: 6px 0 2px;
+  }
+  .tune {
+    margin: 8px 0;
+    display: grid;
+    gap: 3px;
+  }
+  .tune-lbl {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #8fbfe0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tune label {
+    display: grid;
+    grid-template-columns: 52px 1fr 42px;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    color: #6ea6cc;
+  }
+  .tune input[type='range'] {
+    width: 100%;
+    accent-color: #5ac8ff;
+  }
+  .tune label i {
+    font-style: normal;
+    color: #eaf2ff;
+    text-align: right;
+  }
+  .reset {
+    font-family: inherit;
+    font-size: 8px;
+    color: #cfe3f5;
+    background: transparent;
+    border: 1px solid rgba(127, 223, 255, 0.4);
+    border-radius: 3px;
+    padding: 1px 5px;
+    cursor: pointer;
   }
   .readout {
     display: grid;

@@ -238,6 +238,11 @@
           {/if}
         </div>
 
+        <!-- Every star panel links into the stellar-science article (S7 H–R lens). -->
+        <a class="hr-article-link" href="{base}/science/observation/hertzsprung-russell">
+          {m.star_hr_article_link()} →
+        </a>
+
         {#if library.length > 0}
           <div class="science-library">
             <h3 class="library-heading">{m.science_learn_more()}</h3>
@@ -375,6 +380,20 @@
     box-shadow: 0 0 6px 1px currentColor;
     vertical-align: baseline;
     margin-right: 4px;
+  }
+  .hr-article-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #4ecdc4;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+  }
+  .hr-article-link:hover,
+  .hr-article-link:focus-visible {
+    border-bottom-color: #4ecdc4;
   }
   .science-library {
     margin-top: 16px;

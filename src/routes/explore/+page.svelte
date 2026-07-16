@@ -6011,7 +6011,12 @@
   <!-- Slice 5/8: honesty badge — the Milky Way + Local Group views are labelled
        schematics, not to scale (PRD-030 principle 2). -->
   {#if view === '3d' && contextId === 'milky-way' && !activeBlackHole}
-    <div class="mw-badge" role="note">{m.explore_mw_schematic_badge()}</div>
+    <div class="mw-badge" role="note">
+      {m.explore_mw_schematic_badge()}
+      <a class="mw-badge-link" href="{base}/science/observation/our-galaxy"
+        >{m.science_learn_more()} →</a
+      >
+    </div>
   {/if}
   {#if view === '3d' && contextId === 'local-group' && !activeBlackHole}
     <div class="mw-badge" role="note">{m.explore_lg_schematic_badge()}</div>
@@ -7276,6 +7281,22 @@
     border-radius: 20px;
     backdrop-filter: blur(5px);
     pointer-events: none;
+  }
+
+  /* Milky Way schematic → the /science overview article (S5 · our-galaxy). */
+  .mw-badge-link {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.22);
+    color: #4ecdc4;
+    text-decoration: none;
+    pointer-events: auto;
+    white-space: nowrap;
+  }
+
+  .mw-badge-link:hover,
+  .mw-badge-link:focus-visible {
+    text-decoration: underline;
   }
 
   /* Slice 6 — physics-lens overlays (curvature note + time-dilation readout). */

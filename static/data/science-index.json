@@ -498,6 +498,13 @@
   },
   {
     "tab": "observation",
+    "section": "hertzsprung-russell",
+    "title": "Stars — colour, class, and the H–R diagram",
+    "intro": "A star's colour is a thermometer, and its brightness is a life story. Plot the two against each other and almost every star falls onto a single diagonal band — the Hertzsprung–Russell diagram, the most important graph in stellar astronomy.",
+    "haystack": "stars — colour, class, and the h–r diagram a star's colour is a thermometer, and its brightness is a life story. plot the two against each other and almost every star falls onto a single diagonal band — the hertzsprung–russell diagram, the most important graph in stellar astronomy. colour comes first. a star radiates as a near-perfect blackbody, so its colour is set almost entirely by its surface temperature: hot stars glow blue-white (~30,000 k), the sun is yellow-white (~5,800 k), and cool stars burn deep red (~3,000 k). astronomers measure that colour as the b–v index — the difference between a star's brightness through a blue and a visual filter — and it maps cleanly onto temperature. sort stars left-to-right by colour and you have the spectral sequence o, b, a, f, g, k, m, hottest to coolest (mnemonic: “oh be a fine girl/guy, kiss me”)."
+  },
+  {
+    "tab": "observation",
     "section": "interferometry",
     "title": "Interferometry",
     "intro": "Stitch separate telescopes into one virtual aperture larger than any of them — the Event Horizon Telescope is an Earth-sized radio interferometer built from antennas on four continents.",
@@ -516,6 +523,13 @@
     "title": "The Magellanic Clouds — LMC and SMC, our nearest galactic neighbours",
     "intro": "The Large and Small Magellanic Clouds are the closest galaxies large enough to see with the naked eye — irregular dwarf galaxies trailing the Milky Way's south-galactic pole, ~50 and ~62 kpc away.",
     "haystack": "the magellanic clouds — lmc and smc, our nearest galactic neighbours the large and small magellanic clouds are the closest galaxies large enough to see with the naked eye — irregular dwarf galaxies trailing the milky way's south-galactic pole, ~50 and ~62 kpc away. the magellanic clouds dominate the southern hemisphere sky from any reasonably dark site below about +20° latitude. they look exactly as they sound — two detached fuzzy patches in the night sky, the lmc about 5° across and the smc about 3°. they are catalogued under several names, but magellanic comes from ferdinand magellan's 1519-1522 circumnavigation, during which the clouds were the most reliable navigation reference his crew had in the south atlantic. the clouds have been continuously observed by humanity for as long as humans have lived in the southern hemisphere; rock art and oral traditions from aboriginal australia, the khoisan, and andean cultures reference them by name in ways that long predate european contact."
+  },
+  {
+    "tab": "observation",
+    "section": "our-galaxy",
+    "title": "Our galaxy — the Milky Way from the inside",
+    "intro": "We live inside a barred spiral galaxy of a few hundred billion stars, and we have never seen it from the outside. Everything we know about the Milky Way's shape is reconstructed from within the disc, looking through it.",
+    "haystack": "our galaxy — the milky way from the inside we live inside a barred spiral galaxy of a few hundred billion stars, and we have never seen it from the outside. everything we know about the milky way's shape is reconstructed from within the disc, looking through it. the milky way is a flat, rotating disc about 100,000 light-years across but only ~1,000 light-years thick — a cosmic vinyl record. its stars, gas, and dust are wound into spiral arms (perseus, sagittarius, scutum-centaurus, norma, plus our own minor orion spur), trailing from a central bar of older stars. wrapping all of it is a spherical halo of ancient globular clusters and the invisible dark-matter that dominates the galaxy's mass. estimates of the star count run from 100 to 400 billion."
   },
   {
     "tab": "observation",

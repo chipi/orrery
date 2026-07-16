@@ -1,13 +1,16 @@
 {
   "id": "local-group",
   "tab": "observation",
-  "order": 8,
+  "order": 10,
   "photo": {
     "src": "/images/science/local-group-map.webp",
     "credit": "ESA / Gaia / DPAC · Local Group map showing the Milky Way + Andromeda + Triangulum as the three dominant spirals, surrounded by ~80 known dwarf companions. The structure is gravitationally bound and approximately 10 million light-years across."
   },
   "see_in_app": [
-    { "route": "/explore", "context_key": "Local Group billboard overlay — 15 named members plotted on the celestial sphere via the Science Lens 'Galaxies' layer" }
+    {
+      "route": "/explore",
+      "context_key": "Local Group billboard overlay — 15 named members plotted on the celestial sphere via the Science Lens 'Galaxies' layer"
+    }
   ],
   "links": [
     {

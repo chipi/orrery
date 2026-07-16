@@ -1,7 +1,7 @@
 {
   "id": "black-holes",
   "tab": "observation",
-  "order": 6,
+  "order": 7,
   "formula_latex": "r_s = \\dfrac{2GM}{c^2}",
   "diagram": "black-holes.svg",
   "diagram_quality": "polished",
@@ -10,7 +10,10 @@
     "credit": "Event Horizon Telescope · 2019 · the shadow of M87's supermassive black hole — the first direct image of an event horizon."
   },
   "see_in_app": [
-    { "route": "/explore", "context_key": "Sun panel: stellar physics chip — pivot into compact objects" }
+    {
+      "route": "/explore",
+      "context_key": "Sun panel: stellar physics chip — pivot into compact objects"
+    }
   ],
   "links": [
     {

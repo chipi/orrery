@@ -14,6 +14,14 @@ export function defaultEventLabel(type: PhaseMarker['event']['type']): string {
   switch (type) {
     case 'launch':
       return m.fly_event_launch();
+    case 'max_q':
+      return m.fly_event_max_q();
+    case 'meco':
+      return m.fly_event_meco();
+    case 'fairing_jettison':
+      return m.fly_event_fairing_jettison();
+    case 'seco':
+      return m.fly_event_seco();
     case 'parking_orbit_exit':
       return m.fly_event_parking_orbit_exit();
     case 'tli_or_tmi':

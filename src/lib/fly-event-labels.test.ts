@@ -12,6 +12,10 @@ describe('defaultEventLabel', () => {
   // also catches new members at compile time.
   const KNOWN_TYPES: EventType[] = [
     'launch',
+    'max_q',
+    'meco',
+    'fairing_jettison',
+    'seco',
     'parking_orbit_exit',
     'tli_or_tmi',
     'tcm',

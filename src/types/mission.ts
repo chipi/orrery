@@ -52,6 +52,10 @@ export type FlightDataQuality = 'measured' | 'reconstructed' | 'sparse' | 'unkno
 // enum is language-neutral so a typo fails ajv at PR.
 export type FlightEventType =
   | 'launch'
+  | 'max_q' // powered-ascent beats (RFC-033 §11.1 — launch act)
+  | 'meco'
+  | 'fairing_jettison'
+  | 'seco'
   | 'tli_or_tmi'
   | 'tcm'
   | 'arrival'

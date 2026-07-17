@@ -34,6 +34,10 @@ export interface FlightEventLabels {
  *  via i18n; these are the English fallbacks. */
 const DEFAULT_FLIGHT_LABELS: Record<FlightEventType, FlightEventLabels> = {
   launch: { label: 'LAUNCH', note: '', type: 'nominal' },
+  max_q: { label: 'MAX-Q', note: '', type: 'nominal' },
+  meco: { label: 'MECO', note: '', type: 'nominal' },
+  fairing_jettison: { label: 'FAIRING JETTISON', note: '', type: 'nominal' },
+  seco: { label: 'SECO', note: '', type: 'nominal' },
   tli_or_tmi: { label: 'TLI/TMI BURN', note: '', type: 'nominal' },
   tcm: { label: 'TRAJECTORY CORRECTION', note: '', type: 'info' },
   arrival: { label: 'ARRIVAL', note: '', type: 'nominal' },

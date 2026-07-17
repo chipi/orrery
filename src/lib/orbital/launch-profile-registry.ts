@@ -10,7 +10,14 @@
 import type { LaunchProfile } from './ascent-physics';
 
 /** Launcher ids with a hand-authored flagship JSON (real per-vehicle data). */
-const FLAGSHIP_IDS = new Set<string>(['falcon-9', 'atlas-v', 'saturn-v']);
+const FLAGSHIP_IDS = new Set<string>([
+  'falcon-9',
+  'atlas-v',
+  'saturn-v',
+  'proton-k',
+  'titan-ii-glv',
+  'saturn-ib',
+]);
 
 interface FleetRef {
   id: string;

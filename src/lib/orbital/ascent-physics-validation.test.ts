@@ -77,7 +77,11 @@ describe('Falcon 9 ascent — published-milestone validation (S2)', () => {
     expect(s.losses.dragKms).toBeGreaterThan(0.02);
     expect(s.losses.dragKms).toBeLessThan(0.6);
     expect(s.losses.steeringKms).toBeGreaterThanOrEqual(0);
-    expect(s.losses.steeringKms).toBeLessThan(0.5);
+    // Closed-loop insertion guidance (#415 Track 1) holds altitude by pointing
+    // thrust off the velocity vector while still sub-orbital, so some of what a
+    // velocity-aligned gravity turn books as gravity loss lands here as steering
+    // loss — real Δv, just recategorised. Band widened from 0.5 accordingly.
+    expect(s.losses.steeringKms).toBeLessThan(0.75);
   });
 
   it('ideal Δv capacity clears the ~9.4 km/s LEO requirement', () => {

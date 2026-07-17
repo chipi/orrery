@@ -71,6 +71,12 @@ export interface LaunchProfile {
    * interpolated; clamped to the endpoints outside the knot range.
    */
   pitchProgram: [number, number][];
+  /**
+   * Target circular-orbit altitude (m) for the closed-loop insertion guidance.
+   * Above the atmosphere the integrator ignores the pitch table and steers to
+   * arrive level here at circular speed. Defaults to `GUIDANCE_TARGET_ALT_M`.
+   */
+  targetOrbitAltM?: number;
   /** Aerodynamic reference area (m²) for drag. Default 10. */
   refAreaM2?: number;
   /** Drag coefficient (dimensionless). Default 0.3. */
@@ -264,6 +270,73 @@ export function pitchAngleRad(profile: LaunchProfile, t: number): number {
   return (last[1] * Math.PI) / 180;
 }
 
+// ─── Closed-loop insertion guidance (RFC-033 §6 · #415 Track 1) ──────
+
+/**
+ * Closed-loop insertion guidance tuning. One shared set of gains flies every
+ * adequately-powered serial vehicle to orbit — NOT tuned per vehicle.
+ */
+export const GUIDANCE = {
+  /** Altitude (m) above which the pitch table hands over to guidance. */
+  handoverAltM: 55_000,
+  /** Blend band (m) over which table → guidance, so the command doesn't step. */
+  blendM: 25_000,
+  /** Default target circular-orbit altitude (m) for insertion. */
+  targetAltM: 180_000,
+  /** Altitude-error → vertical-accel gain (s⁻²). */
+  kAlt: 5e-4,
+  /** Vertical-speed → vertical-accel damping (s⁻¹). */
+  kVy: 0.05,
+  /** How far above / below local horizontal the guidance may point (rad). */
+  maxClimbRad: 0.6,
+  maxDiveRad: 0.25,
+  /** Vertical speed (m·s⁻¹) below which the orbit gate accepts an insertion —
+   *  a genuine orbit is near-level, so this rejects a suborbital lob that only
+   *  crosses circular speed while falling. */
+  orbitVyMaxMs: 250,
+};
+
+/**
+ * Commanded thrust flight-path angle (rad from local horizontal).
+ *
+ * Below `handoverAltM` the aero-safe pitch table drives the gravity turn.
+ * Above it an open-loop table can't hit "level at target altitude at circular
+ * speed", so an altitude-hold autopilot steers there instead:
+ *
+ *   1. desired vertical accel  a_des = kAlt·(target − alt) − kVy·vy
+ *      (drive altitude → target, vertical speed → 0)
+ *   2. the vertical thrust needed to achieve it, after gravity and the
+ *      centrifugal relief of horizontal speed:  a_des + g − vx²/r
+ *   3. pitch = asin(needed / (thrust/mass))
+ *
+ * As horizontal speed builds toward orbital, vx²/r cancels gravity and the
+ * commanded pitch falls to zero on its own — the vehicle arrives level at
+ * circular speed. The two phases blend over `blendM` so the command is
+ * continuous. Falls back to the table when coasting (no thrust to steer).
+ */
+export function commandedPitchRad(
+  profile: LaunchProfile,
+  t: number,
+  altM: number,
+  velUpMs: number,
+  velHorizMs: number,
+  thrustAccelMs2: number,
+): number {
+  const table = pitchAngleRad(profile, t);
+  if (altM <= GUIDANCE.handoverAltM || thrustAccelMs2 <= 1e-6) return table;
+  const targetAlt = profile.targetOrbitAltM ?? GUIDANCE.targetAltM;
+  const aDes = GUIDANCE.kAlt * (targetAlt - altM) - GUIDANCE.kVy * velUpMs;
+  const g = gravity(altM);
+  const centrifugal = (velHorizMs * velHorizMs) / (R_EARTH_M + altM);
+  const sinGamma = (aDes + g - centrifugal) / thrustAccelMs2;
+  const guided = Math.max(
+    -GUIDANCE.maxDiveRad,
+    Math.min(GUIDANCE.maxClimbRad, Math.asin(Math.max(-1, Math.min(1, sinGamma)))),
+  );
+  const blend = Math.max(0, Math.min(1, (altM - GUIDANCE.handoverAltM) / GUIDANCE.blendM));
+  return table * (1 - blend) + guided * blend;
+}
+
 // ─── Integrator ─────────────────────────────────────────────────────
 
 export interface AscentOptions {
@@ -277,9 +350,10 @@ export interface AscentOptions {
 
 /**
  * Integrate a launch profile from the pad to orbit (or propellant
- * exhaustion / `maxTS`). Semi-implicit Euler in the launch plane;
- * open-loop pitch program; pressure-interpolated thrust; single-
- * exponential drag; stages jettison on propellant exhaustion.
+ * exhaustion / `maxTS`). Semi-implicit Euler in the launch plane; pitch
+ * table through the atmosphere then closed-loop insertion guidance;
+ * pressure-interpolated thrust; single-exponential drag; stages jettison
+ * on propellant exhaustion.
  *
  * Returns the sampled trajectory, the ascent beats, Max-Q, the three Δv
  * losses, and the ideal Δv capacity. Pure — safe to call from a Svelte
@@ -351,7 +425,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       twr: m > 0 ? thrust / (m * g) : 0,
       thrustN: thrust,
       dragN: dynamicPressure(rho, speed) * cd * refArea,
-      pitchRad: pitchAngleRad(profile, t),
+      pitchRad: commandedPitchRad(profile, t, y, vy, Math.abs(vx), m > 0 ? thrust / m : 0),
       propRemainingKg: stageIndex >= 0 ? Math.max(0, remainingProp) : 0,
       chamberTempK: stageIndex >= 0 && thrust > 0 ? (profile.stages[stageIndex].chamberTempK ?? 3500) : 0,
       // Sutton-Graves form (proportional): stagnation heating rises with v³
@@ -377,7 +451,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
 
     // Thrust: open-loop along the commanded pitch angle.
     const thrust = stageIndex >= 0 && remainingProp > 0 ? stageThrustN(profile.stages[stageIndex], y) : 0;
-    const pitch = pitchAngleRad(profile, t);
+    const pitch = commandedPitchRad(profile, t, y, vy, Math.abs(vx), thrust / m);
     const thrustDirX = Math.cos(pitch);
     const thrustDirY = Math.sin(pitch);
 
@@ -453,7 +527,12 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // vehicle cuts the final stage off ON TARGET here (SECO) and keeps a
     // propellant margin — it does NOT burn to depletion — so the injection
     // velocity matches orbital speed rather than overshooting.
-    if (!orbitSeen && y >= KARMAN_LINE_M && Math.hypot(vx, vy) >= circularSpeed(y)) {
+    if (
+      !orbitSeen &&
+      y >= KARMAN_LINE_M &&
+      Math.hypot(vx, vy) >= circularSpeed(y) &&
+      Math.abs(vy) < GUIDANCE.orbitVyMaxMs
+    ) {
       pushEvent('orbit');
       orbitSeen = true;
       reachedOrbit = true;

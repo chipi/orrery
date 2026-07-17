@@ -11,15 +11,13 @@
  *     up (near circular speed at LEO altitude) after the post-SECO coast,
  *     not a suborbital lob that trips the orbit gate on the way *down*.
  *
- * Only falcon-9 and titan-ii-glv currently clear tier 2. The open-loop
- * pitch-program integrator reaches a genuine orbit only when the trajectory
- * happens to be near-horizontal at apoapsis at circular speed; higher-energy
- * stacks (saturn-v, saturn-ib, proton-k) loft and trip the gate while
- * descending, and low-TWR cryo upper stages (atlas-v Centaur) cannot
- * circularise in a single continuous burn at all. Closing that gap needs
- * closed-loop ascent guidance (+ coast/restart, + parallel-boost) — tracked
- * as the RFC-033 §6 open item. As those land, move vehicles into
- * GENUINE_ORBIT and this guard confirms the win without regression.
+ * Closed-loop insertion guidance (#415 Track 1) flies every adequately-powered
+ * serial stack to a genuine orbit — falcon-9, titan-ii-glv, saturn-ib, proton-k.
+ * Still excluded: vehicles whose UPPER stage has TWR < 1 and must coast to
+ * apoapsis then relight (Track 2 coast+restart) — atlas-v (Centaur) and
+ * saturn-v (S-IVB, which really does a partial burn → park → reignite for TLI);
+ * and strap-on vehicles that need a parallel-boost stage (Track 3). As those
+ * land, move vehicles into GENUINE_ORBIT and this guard confirms the win.
  */
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -36,7 +34,7 @@ function load(id: string): LaunchProfile {
 }
 
 const ALL_FLAGSHIPS = ['falcon-9', 'atlas-v', 'saturn-v', 'saturn-ib', 'proton-k', 'titan-ii-glv'];
-const GENUINE_ORBIT = ['falcon-9', 'titan-ii-glv'];
+const GENUINE_ORBIT = ['falcon-9', 'titan-ii-glv', 'saturn-ib', 'proton-k'];
 
 describe.each(ALL_FLAGSHIPS)('flagship profile %s — data shape', (id) => {
   const p = load(id);

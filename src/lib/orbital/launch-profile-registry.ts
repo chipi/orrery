@@ -21,6 +21,7 @@ const FLAGSHIP_IDS = new Set<string>([
   'ariane-5',
   'h-iia',
   'atlas-lv-3b',
+  'space-shuttle-stack',
 ]);
 
 interface FleetRef {
@@ -138,7 +139,10 @@ export async function loadLaunchProfile(
       const res = await fetchFn(`${baseUrl}/data/launch-profiles/${launcherId}.json`);
       if (res.ok) {
         const data: unknown = await res.json();
-        if (isValidProfile(data)) return data;
+        // Show the vehicle the mission ACTUALLY flew (e.g. "Atlas V 541"), not
+        // the flagship JSON's canonical variant ("Atlas V 401") — the ascent
+        // physics is the shared flagship model, but the label should be honest.
+        if (isValidProfile(data)) return displayName ? { ...data, name: displayName } : data;
       }
     } catch {
       // fall through to the generic fallback

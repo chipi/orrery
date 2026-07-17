@@ -187,7 +187,6 @@ export function composeShot(
   const dr = s.downrangeKm;
   const alt = s.altKm;
   const e = ease(p);
-  const back = Math.max(vehLen * 4.5, alt * 0.32 + vehLen * 3);
   // Subtle handheld wobble — tiny, time-keyed, so a locked frame still breathes.
   const wob = vehLen * 0.04;
   const wx = Math.sin(s.t * 0.7) * wob;
@@ -217,17 +216,22 @@ export function composeShot(
       break;
     }
     case 'ascent': {
-      // DOLLY-OUT three-quarter arc — starts TIGHT on the vehicle, pulls back +
-      // arcs as it climbs so Earth enters frame without losing the rocket.
-      const d = Math.max(vehLen * 2.8, alt * 0.5 + vehLen * 2.2) * (1 + 0.35 * e);
-      const ang = -0.5 - p * 0.5;
-      out = pose(dr + Math.sin(ang) * d, alt + d * 0.22, Math.cos(ang) * d, dr, alt + vehLen * 0.4, 0, 46);
+      // THREE-QUARTER tracking arc locked to the VEHICLE (not altitude), so the
+      // rocket stays hero-sized (~⅓ frame) while the curving Earth sweeps into
+      // the lower background as it climbs. A slow orbital drift keeps it alive.
+      const d = vehLen * (3.2 + 1.6 * e);
+      const ang = -0.5 - p * 0.55;
+      out = pose(dr + Math.sin(ang) * d, alt + d * 0.18, Math.cos(ang) * d, dr, alt + vehLen * 0.5, 0, 40);
       break;
     }
     case 'onboard_down': {
-      // Strap-cam near the nose looking DOWN the body; a slow drift across.
-      const sx = vehLen * (0.32 + 0.25 * (p - 0.5));
-      out = pose(dr + sx, alt + vehLen * 0.85, vehLen * 0.6, dr, alt - vehLen * 3.2, 0, 60);
+      // High tracking arc from the OPPOSITE side to the ascent shot — the
+      // vehicle stays hero-sized and centred while the Earth curves into the
+      // lower frame. (Replaces the old strap-cam that framed empty sky with the
+      // rocket stuck in a corner.)
+      const d = vehLen * (3.2 + 1.4 * e);
+      const ang = 0.7 - p * 0.5;
+      out = pose(dr + Math.sin(ang) * d, alt + d * 0.16, Math.cos(ang) * d, dr, alt + vehLen * 0.5, 0, 42);
       break;
     }
     case 'staging': {
@@ -237,10 +241,10 @@ export function composeShot(
       const io = p < 0.6 ? ease(p / 0.6) : 1 - 0.25 * ease((p - 0.6) / 0.4);
       const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
       const fv = Math.atan2(horiz, s.velUpKms);
-      const tx = dr - Math.sin(fv) * vehLen * 1.1;
-      const ty = alt - Math.cos(fv) * vehLen * 1.1;
-      const d = vehLen * (4.2 - 1.4 * io);
-      out = pose(tx - d * 0.55, ty + vehLen * 1.1, d, tx, ty, 0, 42 - 3 * io);
+      const tx = dr - Math.sin(fv) * vehLen * 0.55;
+      const ty = alt - Math.cos(fv) * vehLen * 0.55;
+      const d = vehLen * (2.7 - 0.8 * io);
+      out = pose(tx - d * 0.5, ty + vehLen * 0.75, d, tx, ty, 0, 38 - 3 * io);
       break;
     }
     case 'fairing': {
@@ -257,10 +261,13 @@ export function composeShot(
       break;
     }
     case 'chase': {
-      // Behind + above the upper stage, slow DOLLY-BACK + orbital drift.
-      const d = back * (0.9 + 0.5 * e);
-      const ang = -0.45 - p * 0.35;
-      out = pose(dr + Math.sin(ang) * d, alt + d * 0.3, Math.cos(ang) * d, dr + vehLen * 1.5, alt, 0, 46);
+      // THE hero cruise shot: behind + above the upper stage, the rocket riding
+      // the lower third with the curved Earth limb filling the frame. Locked to
+      // the VEHICLE (not altitude) so the rocket stays hero-sized as space opens
+      // up behind it; a slow orbital drift + gentle dolly keeps it cinematic.
+      const d = vehLen * (3.4 + 1.8 * e);
+      const ang = -0.42 - p * 0.32;
+      out = pose(dr + Math.sin(ang) * d, alt + d * 0.4, Math.cos(ang) * d, dr, alt + vehLen * 0.7, 0, 38);
       break;
     }
     case 'separation': {
@@ -268,19 +275,22 @@ export function composeShot(
       // The payload/stage sit ~1 unit UP THE BODY axis from the origin, which
       // is world-downrange once the stack is horizontal at SECO — so target
       // that body-offset point (robust to attitude), framed close from the side.
-      const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
-      const fv = Math.atan2(horiz, s.velUpKms); // flight-path angle from vertical
-      const tx = dr + Math.sin(fv) * vehLen * 0.9;
-      const ty = alt + Math.cos(fv) * vehLen * 0.9;
-      const d = vehLen * (2.1 - 0.5 * e);
-      const ang = -0.3 - p * 0.4;
-      out = pose(tx + Math.sin(ang) * d * 0.35, ty + vehLen * 0.35, Math.cos(ang) * d, tx, ty, 0, 44);
+      // At orbital insertion the stack is ~horizontal, so the payload leads
+      // downrange (+x) and the spent stage trails behind — frame the GAP
+      // between them (the vehicle origin) from the side + slightly above,
+      // pulled back so BOTH bodies read as they drift apart, Earth limb below.
+      const d = vehLen * (3.7 - 0.6 * e);
+      const ang = -0.34 - p * 0.28;
+      out = pose(dr + Math.sin(ang) * d, alt + d * 0.32, Math.cos(ang) * d, dr, alt + vehLen * 0.15, 0, 40);
       break;
     }
     case 'orbit': {
-      // Wide serene limb — a long DOLLY-BACK as it coasts, Earth filling frame.
-      const d = back * (1.05 + 0.35 * e);
-      out = pose(dr - d * 0.5, alt + d * 0.28, d, dr, alt - d * 0.1, 0, 48);
+      // Settled in orbit — the payload coasting above the curved limb, a slow
+      // serene dolly-back. Locked to the VEHICLE (not altitude) so the craft
+      // stays a visible hero glinting over the Earth, space opening up behind.
+      const d = vehLen * (3.6 + 1.8 * e);
+      const ang = -0.36 - p * 0.24;
+      out = pose(dr + Math.sin(ang) * d, alt + d * 0.44, Math.cos(ang) * d, dr, alt + vehLen * 0.5, 0, 40);
       break;
     }
   }

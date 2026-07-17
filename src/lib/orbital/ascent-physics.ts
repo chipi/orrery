@@ -141,6 +141,10 @@ export interface AscentState {
   pitchRad: number;
   /** Propellant remaining in the active stage (kg); 0 while coasting. */
   propRemainingKg: number;
+  /** Strap-on booster propellant remaining (kg); 0 when there are none or they're spent. */
+  boosterPropRemainingKg: number;
+  /** True while the strap-on boosters are lit (stage-0 parallel-boost phase). */
+  boostersActive: boolean;
   /** Combustion-chamber temperature (K) while firing; 0 when the engine is off. */
   chamberTempK: number;
   /** Stagnation aerodynamic heat flux ∝ √ρ·v³ (W·m⁻², proportional). Peaks after Max-Q. */
@@ -499,6 +503,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       dragN: dynamicPressure(rho, speed) * cd * refArea,
       pitchRad: lastPitch,
       propRemainingKg: stageIndex >= 0 ? Math.max(0, remainingProp) : 0,
+      boosterPropRemainingKg: boostersOn ? Math.max(0, boosterProp) : 0,
+      boostersActive: boostersOn && stageIndex === 0 && boosterProp > 0,
       chamberTempK: stageIndex >= 0 && thrust > 0 ? (profile.stages[stageIndex].chamberTempK ?? 3500) : 0,
       // Sutton-Graves form (proportional): stagnation heating rises with v³
       // but needs air (√ρ), so it peaks inside the atmosphere then vanishes.
@@ -745,6 +751,8 @@ export function sampleAscentAt(states: AscentState[], t: number): AscentState {
     dragN: lerp(a.dragN, b.dragN),
     pitchRad: lerp(a.pitchRad, b.pitchRad),
     propRemainingKg: lerp(a.propRemainingKg, b.propRemainingKg),
+    boosterPropRemainingKg: lerp(a.boosterPropRemainingKg, b.boosterPropRemainingKg),
+    boostersActive: f < 0.5 ? a.boostersActive : b.boostersActive,
     chamberTempK: f < 0.5 ? a.chamberTempK : b.chamberTempK,
     aeroHeatFlux: lerp(a.aeroHeatFlux, b.aeroHeatFlux),
   };

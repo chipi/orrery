@@ -19,6 +19,7 @@
   import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
   import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
   import { createAscentScene, type AscentScene } from '$lib/three/ascent-scene';
+  import { resolveLaunchGround } from '$lib/three/launch-ground';
   import { integrateAscent, sampleAscentAt, type AscentSummary, type AscentState } from '$lib/orbital/ascent-physics';
   import { FALCON9_SAMPLE } from '$lib/orbital/ascent-profiles';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
@@ -196,7 +197,28 @@
       aspect: w / h,
       earthDayUrl: `${base}/textures/4k_earth_daymap.jpg`,
       earthNightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
-      launchSite: FALCON9_SAMPLE.launchSite,
+      launchSite: (() => {
+        const q = typeof location !== 'undefined' ? new URLSearchParams(location.search) : null;
+        const lat = q?.get('lat');
+        const lon = q?.get('lon');
+        return lat && lon ? { lat: +lat, lon: +lon } : FALCON9_SAMPLE.launchSite;
+      })(),
+      lonTextureOffsetDeg: (() => {
+        const o = typeof location !== 'undefined' ? new URLSearchParams(location.search).get('off') : null;
+        return o != null ? +o : undefined;
+      })(),
+      siteYawDeg: (() => {
+        const y = typeof location !== 'undefined' ? new URLSearchParams(location.search).get('yaw') : null;
+        return y != null ? +y : undefined;
+      })(),
+      groundSite: (() => {
+        const q = typeof location !== 'undefined' ? new URLSearchParams(location.search) : null;
+        const lat = q?.get('lat');
+        const lon = q?.get('lon');
+        const site = lat && lon ? { lat: +lat, lon: +lon } : FALCON9_SAMPLE.launchSite;
+        const g = resolveLaunchGround(site);
+        return g ? { ...g, textureUrl: `${base}${g.textureUrl}` } : undefined;
+      })(),
       vehicleLengthKm: VEH_LEN,
       schedule,
       tuning,
@@ -224,6 +246,7 @@
     (window as unknown as Record<string, unknown>).__ascentSetT = (nt: number) => {
       playing = false;
       t = nt;
+      sceneObj?.snapCamera(); // snap (don't ease) on a deterministic freeze
     };
 
     const applyState = () => {
@@ -235,6 +258,16 @@
         sceneObj!.camera.position.set(0, topDown, 0.001);
         sceneObj!.camera.lookAt(0, 0, 0);
         sceneObj!.camera.fov = 50;
+        sceneObj!.camera.updateProjectionMatrix();
+      }
+      // Debug: free camera to inspect the vehicle model from any angle.
+      const cam = (window as unknown as Record<string, unknown>).__camOverride as
+        | { px: number; py: number; pz: number; tx: number; ty: number; tz: number; fov?: number }
+        | undefined;
+      if (cam) {
+        sceneObj!.camera.position.set(cam.px, cam.py, cam.pz);
+        sceneObj!.camera.lookAt(cam.tx, cam.ty, cam.tz);
+        sceneObj!.camera.fov = cam.fov ?? 40;
         sceneObj!.camera.updateProjectionMatrix();
       }
       hud = {

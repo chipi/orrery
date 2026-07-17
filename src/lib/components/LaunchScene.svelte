@@ -22,6 +22,8 @@
   import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
   import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
   import { createAscentScene, type AscentScene } from '$lib/three/ascent-scene';
+  import { resolveLaunchGround } from '$lib/three/launch-ground';
+  import LaunchTelemetry from '$lib/components/LaunchTelemetry.svelte';
   import {
     integrateAscent,
     sampleAscentAt,
@@ -30,7 +32,8 @@
     type LaunchProfile,
   } from '$lib/orbital/ascent-physics';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
-  import { buildShotSchedule } from '$lib/orbital/ascent-cameras';
+  import { buildShotSchedule, defaultTuning } from '$lib/orbital/ascent-cameras';
+  import AscentCameraDebug from '$lib/components/AscentCameraDebug.svelte';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
 
   interface MissionDossier {
@@ -55,9 +58,11 @@
   let { profile, mission, onComplete, hudHidden = false, onToggleHud }: Props = $props();
 
   const VEH_LEN = 1.2;
+  const tuning = $state(defaultTuning()); // live per-shot camera tuning (debug sliders → scene)
+  const debugMode =
+    typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
   const T_MINUS = 12;
   const IGNITION_T = -3;
-  const ORBIT_TARGET_KMS = 7.8;
 
   const summary: AscentSummary = integrateAscent(profile);
   const duration = summary.states.at(-1)!.t;
@@ -98,6 +103,7 @@
   let loop: AnimateLoop | undefined;
 
   let hud = $state({ altKm: 0, velKms: 0, stage: 'S1', met: 'T-00:12' });
+  let liveState = $state<AscentState>(summary.states[0]); // full state → telemetry console
   // Re-basing warp: on completion the camera pulls back hard (Earth → a dot) +
   // a flash, then onComplete reveals the transfer scene (RFC-033 §11.3).
   let warping = $state(false);
@@ -107,7 +113,7 @@
   const stageLabel = (i: number): string => (i < 0 ? 'COAST' : profile.stages[i]?.name ?? '—');
   const countdown = $derived(t < 0 ? Math.max(0, Math.ceil(-t)) : null);
   const speedKmh = $derived(Math.round(hud.velKms * 3600));
-  const dossierOpen = $derived(t < 3);
+  const dossierOpen = $derived(!warping); // keep the mission panel up through the whole launch
   const progressPct = $derived(Math.max(0, Math.min(1, t / duration)) * 100);
   const status = $derived.by(() => {
     if (t <= -10) return 'GO FOR LAUNCH';
@@ -156,9 +162,14 @@
       launchSite: profile.launchSite,
       vehicleLengthKm: VEH_LEN,
       schedule,
+      tuning,
       events: summary.events,
       spacecraftId: mission.spacecraftId,
       launcherId: profile.id,
+      groundSite: (() => {
+        const g = resolveLaunchGround(profile.launchSite);
+        return g ? { ...g, textureUrl: `${base}${g.textureUrl}` } : undefined;
+      })(),
     });
 
     composer = new EffectComposer(renderer);
@@ -173,6 +184,7 @@
     const applyState = () => {
       const s = t < 0 ? padState(t) : sampleAscentAt(summary.states, t);
       sceneObj!.setState(s);
+      liveState = s;
       hud = {
         altKm: s.altKm,
         velKms: s.speedKms,
@@ -227,6 +239,22 @@
 
 <div class="launch" class:hud-hidden={hudHidden}>
   <div class="stage" bind:this={container}></div>
+
+  <!-- Left telemetry console (shared with the dev harness) -->
+  {#if !warping}
+    <div class="telemetry">
+      <LaunchTelemetry
+        {summary}
+        stages={profile.stages}
+        boosters={profile.boosters}
+        payloadKg={profile.payloadKg}
+        vehicleName={profile.name}
+        {t}
+        state={liveState}
+        ignitionT={IGNITION_T}
+      />
+    </div>
+  {/if}
 
   {#if warping}
     <div class="warp" style="opacity:{Math.min(1, warpProgress / 0.75)}"></div>
@@ -294,6 +322,25 @@
   {#if !warping}
     <button class="continue" onclick={complete}>SKIP TO CRUISE →</button>
   {/if}
+
+  <!-- Launch camera-debug (?debug=1) — the same toolkit as the dev harness:
+       shot timeline, live camera plot, per-shot tuning sliders. -->
+  {#if debugMode && !warping}
+    <div class="cam-debug">
+      <AscentCameraDebug
+        {summary}
+        {schedule}
+        vehLen={VEH_LEN}
+        {t}
+        {tuning}
+        onJump={(jt) => {
+          t = jt;
+          playing = false;
+          sceneObj?.snapCamera();
+        }}
+      />
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -308,6 +355,26 @@
   .stage {
     position: absolute;
     inset: 0;
+  }
+  .telemetry {
+    position: absolute;
+    top: 116px;
+    left: 22px;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(127, 223, 255, 0.35) transparent;
+    transition: opacity 0.3s ease;
+  }
+  .launch.hud-hidden .telemetry {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .cam-debug {
+    position: absolute;
+    right: 22px;
+    bottom: 108px;
+    z-index: 6;
   }
   /* HUD-hidden — the shared toggle collapses the launch HUD set (matches the
      sim HUD's hudHidden), leaving just the scene + the collapse + skip buttons. */

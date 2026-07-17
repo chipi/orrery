@@ -202,6 +202,7 @@ function agencyToSourceId(agency: string): string | null {
   // Generic / non-agency authorship — let source_type drive bucketing.
   if (a.includes('wikimedia commons contributor')) return null;
   if (a.includes('solar system scope')) return 'solar-system-scope';
+  if (a.includes('eox')) return 'eox';
   if (a.includes('mbrsc') || a.includes('uae space agency')) return 'uaesa';
   if (a.includes('roscosmos') || a === 'soviet') return 'roscosmos';
   if (a.includes('cnsa')) return 'cnsa';

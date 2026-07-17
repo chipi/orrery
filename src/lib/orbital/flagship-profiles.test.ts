@@ -20,8 +20,11 @@
  * Still excluded — all for the SAME reason, a low-TWR upper stage that can't
  * circularise a wildly-eccentric insertion; each flies an accurate ascent and
  * soft-inserts to space, awaiting proper PEG (#416):
- *  - atlas-v (Centaur), ariane-5 (ESC-A), h-iia (LE-5B).
- * (delta-ii and atlas-lv-3b are strap-on vehicles not yet profiled.)
+ *  - atlas-v (Centaur), ariane-5 (ESC-A), h-iia (LE-5B), and the
+ *    space-shuttle-stack (the 53 kN Orbiter OMS — MECO is near-orbital at
+ *    ~7.3 km/s, exactly as the real Shuttle, but the low-thrust OMS can't
+ *    close the orbit without PEG).
+ * (delta-ii is a strap-on vehicle not yet profiled.)
  */
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -48,6 +51,7 @@ const ALL_FLAGSHIPS = [
   'ariane-5',
   'h-iia',
   'atlas-lv-3b',
+  'space-shuttle-stack',
 ];
 const GENUINE_ORBIT = [
   'falcon-9',

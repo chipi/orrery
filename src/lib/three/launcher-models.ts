@@ -333,6 +333,163 @@ function buildSideBooster(vehLen: number, opts: { boosterLen: number; fairingR: 
   };
 }
 
+/**
+ * Space Shuttle (space-shuttle-stack) — the unmistakable side-mount stack:
+ * a rust-orange External Tank spine, two white Solid Rocket Boosters flanking
+ * it, and the white delta-wing Orbiter riding its side with three SSME bells.
+ * The ET + SRBs are the `booster` (drop at staging = ET jettison); the Orbiter
+ * is the `upperStage` (flies on to deploy the payload).
+ */
+function buildSpaceShuttle(vehLen: number): LauncherModel {
+  const white = new THREE.MeshStandardMaterial({ color: 0xeef0f3, roughness: 0.5, metalness: 0.08 });
+  const tank = new THREE.MeshStandardMaterial({ color: 0xb15c22, roughness: 0.92, metalness: 0.03 }); // foam
+  const tile = new THREE.MeshStandardMaterial({ color: 0x191b20, roughness: 0.68, metalness: 0.12 }); // TPS
+  const dark = new THREE.MeshStandardMaterial({ color: 0x2a2d33, roughness: 0.5, metalness: 0.4 });
+  const eng = new THREE.MeshStandardMaterial({ color: 0x2b2f36, roughness: 0.4, metalness: 0.7 });
+  const r = vehLen * 0.05;
+  const root = new THREE.Group();
+
+  // ── External Tank — the rust spine with an ogive nose. (in `booster`.)
+  const booster = new THREE.Group();
+  const rET = r * 1.15;
+  const etLen = vehLen * 0.74;
+  const et = new THREE.Mesh(new THREE.CylinderGeometry(rET * 0.97, rET, etLen, 32), tank);
+  et.position.y = vehLen * 0.05 + etLen / 2;
+  const etNose = new THREE.Mesh(new THREE.SphereGeometry(rET, 24, 16, 0, Math.PI * 2, 0, Math.PI / 2), tank);
+  etNose.scale.y = 1.6;
+  etNose.position.y = vehLen * 0.05 + etLen;
+  booster.add(et, etNose);
+
+  // ── Two SRBs flanking the tank (±X), white, segmented, pointed nose + nozzle.
+  const rSRB = r * 0.6;
+  const srbLen = vehLen * 0.64;
+  for (const sx of [-1, 1]) {
+    const srb = new THREE.Group();
+    const body = new THREE.Mesh(new THREE.CylinderGeometry(rSRB, rSRB, srbLen, 24), white);
+    body.position.y = vehLen * 0.05 + srbLen / 2;
+    const nose = new THREE.Mesh(new THREE.ConeGeometry(rSRB, vehLen * 0.12, 24), white);
+    nose.position.y = vehLen * 0.05 + srbLen + vehLen * 0.06;
+    srb.add(body, nose, bell(rSRB * 0.82, vehLen * 0.05, eng, vehLen * 0.03));
+    for (const f of [0.32, 0.55, 0.78]) {
+      const band = new THREE.Mesh(new THREE.CylinderGeometry(rSRB * 1.03, rSRB * 1.03, vehLen * 0.01, 24), dark);
+      band.position.y = vehLen * 0.05 + srbLen * f;
+      srb.add(band);
+    }
+    srb.position.set(sx * (rET + rSRB * 0.98), 0, -rET * 0.12);
+    booster.add(srb);
+  }
+  root.add(booster);
+
+  // ── Orbiter — the delta-wing spaceplane, mounted nose-up on the tank's +Z
+  //    face (belly to the tank, so the black underside is hidden against it).
+  //    Proportioned to the Enterprise free-flight profile: a long slender body,
+  //    a pointed black nose, a big low double-delta over the aft half, a tall
+  //    swept tail. NOT a fat blob and NOT a pencil.
+  const orbiter = new THREE.Group();
+  const rFus = r * 0.86; // chunky, wide body
+  const oz = rET + rFus * 0.66; // belly nestles against the tank
+  const yA = vehLen * 0.055; // aft (engine plane)
+  const bodyLen = vehLen * 0.34; // SHORT fuselage: aft → nose base
+  const yNoseBase = yA + bodyLen;
+
+  // Fuselage — a short, wide, flattened white body (much wider than deep).
+  const fus = new THREE.Mesh(new THREE.CylinderGeometry(rFus * 0.82, rFus, bodyLen, 24), white);
+  fus.scale.set(1.45, 1, 0.78);
+  fus.position.set(0, yA + bodyLen / 2, oz);
+  // Short chunky black-tile nose.
+  const nose = new THREE.Mesh(new THREE.ConeGeometry(rFus * 0.92, vehLen * 0.12, 24), tile);
+  nose.scale.set(1.45, 1, 0.78);
+  nose.position.set(0, yNoseBase + vehLen * 0.05, oz);
+
+  // Big low double-delta wing — a shape in the body plane (span X, chord Y),
+  // extruded thin in Z; it rides ALONG the aft half of the body and sweeps
+  // back. White on top, a black delta tucked just beneath for the tiled
+  // underside. A glove kink gives the double-delta leading edge.
+  const span = r * 3.7;
+  const yGlove = yA + bodyLen * 0.98; // glove LE meets the body high & forward
+  const yWingTE = yA + vehLen * 0.001; // straight trailing edge across the aft
+  const h = yGlove - yWingTE;
+  const wingShape = new THREE.Shape();
+  wingShape.moveTo(rFus * 0.5, yGlove); // glove root, forward
+  wingShape.lineTo(rFus * 0.5, yWingTE); // root trailing
+  wingShape.lineTo(span, yWingTE); // wingtip trailing (aft-outboard)
+  wingShape.lineTo(span, yWingTE + h * 0.16); // squared wingtip
+  wingShape.lineTo(span * 0.52, yWingTE + h * 0.34); // main-panel leading edge
+  wingShape.lineTo(rFus * 1.5, yWingTE + h * 0.74); // glove kink (double-delta)
+  wingShape.closePath();
+  const thick = r * 0.12;
+  const wingGeo = new THREE.ExtrudeGeometry(wingShape, { depth: thick, bevelEnabled: false });
+  wingGeo.translate(0, 0, -thick / 2);
+  const mkWing = (sx: number, mat: THREE.Material, dz = 0): THREE.Mesh => {
+    const w = new THREE.Mesh(wingGeo, mat);
+    w.scale.x = sx;
+    w.position.set(0, 0, oz + dz);
+    return w;
+  };
+
+  // Tall swept vertical stabiliser at the aft, standing off the spine (+Z).
+  const tailShape = new THREE.Shape();
+  tailShape.moveTo(0, yA + vehLen * 0.02);
+  tailShape.lineTo(vehLen * 0.13, yA + vehLen * 0.02);
+  tailShape.lineTo(vehLen * 0.045, yA + vehLen * 0.24);
+  tailShape.lineTo(0, yA + vehLen * 0.24);
+  tailShape.closePath();
+  const tailGeo = new THREE.ExtrudeGeometry(tailShape, { depth: r * 0.05, bevelEnabled: false });
+  tailGeo.rotateY(-Math.PI / 2); // fin in the Y-Z plane, thin in X
+  const tail = new THREE.Mesh(tailGeo, white);
+  tail.position.set(0, 0, oz + rFus * 0.42);
+
+  // OMS pods — two bumps flanking the tail base.
+  const oms = new THREE.Group();
+  for (const sx of [-1, 1]) {
+    const pod = new THREE.Mesh(new THREE.CapsuleGeometry(rFus * 0.24, vehLen * 0.05, 6, 10), white);
+    pod.rotation.x = Math.PI / 2;
+    pod.position.set(sx * rFus * 0.6, yA + vehLen * 0.05, oz + rFus * 0.28);
+    oms.add(pod);
+  }
+
+  // Three SSME bells clustered at the aft base.
+  const ssme = engineRing(3, rFus * 0.46, rFus * 0.3, vehLen * 0.05, 0, eng);
+  ssme.position.set(0, yA - vehLen * 0.004, oz);
+
+  orbiter.add(
+    fus,
+    nose,
+    mkWing(1, tile, -thick * 0.85), // black underside, tucked toward the belly
+    mkWing(-1, tile, -thick * 0.85),
+    mkWing(1, white),
+    mkWing(-1, white),
+    tail,
+    oms,
+    ssme,
+  );
+  root.add(orbiter);
+
+  // No fairing — the payload rides in the Orbiter bay. Tiny hidden shells keep
+  // the clamshell choreography a no-op.
+  const hidden = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0 });
+  const fairingL = new THREE.Mesh(new THREE.ConeGeometry(r * 0.02, r * 0.02, 4), hidden);
+  const fairingR = new THREE.Mesh(new THREE.ConeGeometry(r * 0.02, r * 0.02, 4), hidden);
+  const fairingGroup = new THREE.Group();
+  fairingGroup.visible = false;
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: et, // liftoff plume blooms from the SRB + SSME cluster
+    upperStage: orbiter,
+    upperPlumeAnchor: fus,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: yA + bodyLen / 2,
+    fairingBaseY: vehLen * 0.9,
+    payloadMountY: vehLen * 0.5,
+  };
+}
+
 /** Dispatch table — a dedicated silhouette per launcher; the rest fall back generic. */
 const BUILDERS: Record<string, (vehLen: number) => LauncherModel> = {
   'saturn-v': buildSaturnV,
@@ -340,6 +497,7 @@ const BUILDERS: Record<string, (vehLen: number) => LauncherModel> = {
   'vostok-k': buildSoyuz,
   'ariane-5': (v) => buildSideBooster(v, { boosterLen: 0.62, fairingR: 1.35, body: 0xeae6da, boost: 0xd8d2c4 }),
   'h-iia': (v) => buildSideBooster(v, { boosterLen: 0.38, fairingR: 1.15, body: 0xf0f0f0, boost: 0xdedede }),
+  'space-shuttle-stack': buildSpaceShuttle,
 };
 
 /**

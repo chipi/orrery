@@ -45,10 +45,11 @@
     onboard_down: '#ff8a4a',
     staging: '#ff6ec7',
     chase: '#a98bff',
+    fairing: '#ffd36a',
+    separation: '#c8ff5a',
     orbit: '#5ac8ff',
   };
 
-  const duration = summary.states.at(-1)!.t;
   const W = 384;
   const H = 240;
 

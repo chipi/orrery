@@ -626,6 +626,13 @@
       "kind": "private-operator",
       "url": "https://zvezda-npp.ru/en/",
       "license_summary": "NPP Zvezda — Russian spacesuit + life-support manufacturer. © Zvezda; cited with attribution."
+    },
+    {
+      "id": "eox",
+      "name": "EOX IT Services GmbH",
+      "kind": "publisher",
+      "url": "https://s2maps.eu",
+      "license_summary": "EOX Sentinel-2 cloudless (s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020. Used as launch-site ground imagery."
     }
   ]
 }

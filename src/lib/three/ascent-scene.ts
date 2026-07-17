@@ -27,6 +27,7 @@ import {
 } from '$lib/orbital/ascent-cameras';
 import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
 import { buildLauncherModel } from '$lib/three/launcher-models';
+import { buildLaunchGround, type LaunchGround, type LaunchGroundSite } from '$lib/three/launch-ground';
 
 const R_EARTH_KM = 6371;
 
@@ -51,10 +52,22 @@ export interface AscentSceneOptions {
   spacecraftId?: string;
   /** Launcher id → the rocket's dedicated procedural model (else a generic body). */
   launcherId?: string;
+  /** Override the texture longitude offset (deg) for calibration; default −90. */
+  lonTextureOffsetDeg?: number;
+  /** Spin the globe about the pad-vertical so a green coastline faces downrange. */
+  siteYawDeg?: number;
+  /** Real cloudless satellite crop of the launch complex, laid as a ground patch (S8). */
+  groundSite?: LaunchGroundSite;
 }
 
 /** Texture-seam longitude offset (deg) tuned so a site's real coastline lands under the pad. */
-const LON_TEXTURE_OFFSET_DEG = -90;
+// Equirectangular daymap (Greenwich at the texture centre). With the corrected
+// site-normal z sign, no longitude offset is needed — each site's real
+// geography sits under the pad (Cape → Florida, Baikonur → the Kazakh steppe).
+const LON_TEXTURE_OFFSET_DEG = 0;
+
+/** Default globe spin (deg) about the pad-vertical: frame land, not open ocean. */
+const DEFAULT_SITE_YAW_DEG = 0;
 
 export interface AscentScene {
   scene: THREE.Scene;
@@ -66,6 +79,8 @@ export interface AscentScene {
   readonly activeShot: AscentShotName;
   /** Toggle the Science-Lens force vectors (thrust / weight / drag / velocity). */
   setForcesVisible(on: boolean): void;
+  /** Snap the smooth-camera to its target instantly (use on a timeline scrub). */
+  snapCamera(): void;
   /** Restore stages/fairing/plume to the pre-launch state (for replay). */
   reset(): void;
   dispose(): void;
@@ -171,14 +186,31 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // onto +Y; default to a mid-Atlantic view when no site is given.
   const site = opts.launchSite ?? { lat: 0, lon: -30 };
   const latR = (site.lat * Math.PI) / 180;
-  const lonR = ((site.lon + LON_TEXTURE_OFFSET_DEG) * Math.PI) / 180;
+  const lonR = ((site.lon + (opts.lonTextureOffsetDeg ?? LON_TEXTURE_OFFSET_DEG)) * Math.PI) / 180;
+  // Texture point for (lat, lon) in Three's sphere-UV frame: x=cosφcosλ,
+  // y=sinφ, z=−sinφ... the z is NEGATIVE sinλ (equirectangular seam at −X).
   const siteNormal = new THREE.Vector3(
     Math.cos(latR) * Math.cos(lonR),
     Math.sin(latR),
-    Math.cos(latR) * Math.sin(lonR),
+    -Math.cos(latR) * Math.sin(lonR),
   );
   earth.quaternion.setFromUnitVectors(siteNormal, new THREE.Vector3(0, 1, 0));
+  // Aligning the site normal to +Y leaves ONE free DOF: the spin about the
+  // pad's vertical (which compass bearing faces downrange). Pick it so the
+  // green coastline sits in shot rather than open ocean — a real launch pad is
+  // ringed by land. Rotate about the WORLD +Y (the pad-up axis).
+  const yawDeg = opts.siteYawDeg ?? DEFAULT_SITE_YAW_DEG;
+  if (yawDeg) earth.rotateOnWorldAxis(new THREE.Vector3(0, 1, 0), (yawDeg * Math.PI) / 180);
   scene.add(earth);
+
+  // ── Launch-site ground detail (S8): a real cloudless satellite crop of the
+  //    actual pad, tangent at the origin, so the launch sits on recognizable
+  //    green land — the global daymap is far too coarse this close.
+  let launchGround: LaunchGround | null = null;
+  if (opts.groundSite) {
+    launchGround = buildLaunchGround(opts.groundSite);
+    scene.add(launchGround.group);
+  }
 
   // Thin atmospheric limb — ONE subtle back-side rim so the edge glows under
   // bloom WITHOUT washing the disc. The broad additive shells + procedural
@@ -342,10 +374,26 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const schedule = opts.schedule ?? [];
   let activeShot: AscentShotName = 'ascent';
 
+  // Smooth-camera convergence layer (the /fly cinematic technique — see
+  // docs/guides/fly-cinematic-shot-language.md). composeShot() gives a per-frame
+  // TARGET pose; the live camera EASES toward it (position + fov) so shot
+  // changes blend as pans/dollies/zooms instead of hard-cutting, while the
+  // look-at tracks the subject fast so the vehicle never leaves the frame.
+  let camS: { px: number; py: number; pz: number; tx: number; ty: number; tz: number; fov: number } | null =
+    null;
+  const K_POS = 0.13; // camera-position ease (smooth dolly / pan)
+  const K_TGT = 0.45; // look-at ease — fast, so the subject stays framed
+  const K_FOV = 0.13; // fov ease (smooth zoom)
+
   // Separation event METs (undefined ⇒ that beat never fires; the sep stays at rest).
   const metOf = (type: AscentEvent['type']): number | undefined =>
     opts.events?.find((e) => e.type === type)?.t;
-  const stagingT = metOf('staging');
+  // The first-stage body drops at FIRST-STAGE burnout (MECO), not at strap-on
+  // jettison — both push a 'staging' event, but `meco` fires only at the first
+  // real stage burnout, so it's the correct drop time for boosted stacks
+  // (Shuttle ET+SRBs at ~510 s, not the SRB sep at ~94 s). Falls back to the
+  // lone 'staging' for un-boosted two-stage vehicles.
+  const stagingT = metOf('meco') ?? metOf('staging');
   const fairingT = metOf('fairing_jettison');
   const secoT = metOf('seco');
   const BOOSTER_SEP_S = 5;
@@ -386,6 +434,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     (stars.material as THREE.PointsMaterial).opacity = skyT;
     (stars.material as THREE.PointsMaterial).transparent = true;
     skyMat.uniforms.uAlt.value = s.altKm;
+    launchGround?.setAltitudeFade(s.altKm);
 
     // Orient along the flight path (velocity angle from vertical).
     const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
@@ -415,9 +464,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // the spent upper stage drifts back the other way.
     const pp = sepProgress(s.t, secoT, PAYLOAD_SEP_HOLD_S);
     payload.visible = fairingT != null ? s.t >= fairingT : s.stageIndex < 0;
-    payload.position.y = payloadBaseY + pp * vehLen * 0.6;
+    payload.position.y = payloadBaseY + pp * vehLen * 1.1;
     payload.rotation.y = s.t * 0.12;
-    upperStage.position.y = -pp * vehLen * 0.7;
+    upperStage.position.y = -pp * vehLen * 1.4;
 
     // Plume: only while a stage burns; re-parent to the firing stage,
     // flicker the length, taper in vacuum.
@@ -437,18 +486,28 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       plume.position.y = -(s.stageIndex >= 1 ? vehLen * 0.14 : vehLen * 0.3);
     }
 
-    // Camera: pick the active shot from the schedule and compose its pose.
-    // Hard-cut between shots (cinematic); the pose is a continuous function
-    // of the state, so it moves smoothly within a shot.
+    // Camera: pick the active shot, compose its target pose, then EASE the live
+    // camera toward it (position + fov) while snapping the look-at fast — a
+    // shot change reads as a pan/dolly/zoom that keeps the vehicle in frame,
+    // never a hard jump into a corner.
     const shot = schedule.length ? activeShotAt(schedule, s.t) : { name: 'ascent' as const, progress: 0.5 };
     activeShot = shot.name;
     const p = composeShot(activeShot, s, vehLen, shot.progress, opts.tuning?.[activeShot]);
-    camera.position.set(p.px, p.py, p.pz);
-    camera.lookAt(p.tx, p.ty, p.tz);
-    if (camera.fov !== p.fov) {
-      camera.fov = p.fov;
-      camera.updateProjectionMatrix();
+    if (!camS) {
+      camS = { px: p.px, py: p.py, pz: p.pz, tx: p.tx, ty: p.ty, tz: p.tz, fov: p.fov };
+    } else {
+      camS.px += (p.px - camS.px) * K_POS;
+      camS.py += (p.py - camS.py) * K_POS;
+      camS.pz += (p.pz - camS.pz) * K_POS;
+      camS.tx += (p.tx - camS.tx) * K_TGT;
+      camS.ty += (p.ty - camS.ty) * K_TGT;
+      camS.tz += (p.tz - camS.tz) * K_TGT;
+      camS.fov += (p.fov - camS.fov) * K_FOV;
     }
+    camera.position.set(camS.px, camS.py, camS.pz);
+    camera.lookAt(camS.tx, camS.ty, camS.tz);
+    camera.fov = camS.fov;
+    camera.updateProjectionMatrix();
 
     if (showForces) updateForces(s);
   };
@@ -480,11 +539,13 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       plume.parent?.remove(plume);
       booster.add(plume);
     }
+    camS = null; // snap the smooth-camera to the first pose on restart
   };
 
   const dispose = (): void => {
     dayTex?.dispose();
     nightTex?.dispose();
+    launchGround?.dispose();
     scene.traverse((o) => {
       const m = o as THREE.Mesh;
       if (m.geometry) m.geometry.dispose();
@@ -503,6 +564,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       return activeShot;
     },
     setForcesVisible,
+    /** Snap the smooth-camera to its target instantly (use on a timeline scrub). */
+    snapCamera: () => {
+      camS = null;
+    },
     reset,
     dispose,
   };

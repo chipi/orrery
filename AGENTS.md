@@ -273,6 +273,29 @@ Highest-frequency surface: `npm run preflight` (pre-push gate, no e2e), `npm run
 
 ---
 
+## Clean up after yourself — run the cleanup tool when you're done
+
+When you finish a work block on a worktree — deployed, tested, compared, fixed, whatever — **leave the machine quiet**. Don't strand a `vite dev` server, a wedged `playwright` run, or an orphaned headless Chrome for the next session (or the human) to hunt down. A pegged runaway dev server eating 200% CPU for days is the failure mode this prevents.
+
+```bash
+bash scripts/cleanup-worktree.sh            # canonical — no node dependency, works even when npm is wedged
+bash scripts/cleanup-worktree.sh --dry-run  # preview: list targets, kill nothing
+bash scripts/cleanup-worktree.sh --orphans  # also reap unattributable orphaned headless browsers
+npm run cleanup                             # convenience alias (needs a healthy node/npm)
+```
+
+Prefer the direct `bash` form: cleanup is exactly when the toolchain may be broken (a stale `NODE_OPTIONS` preload, a wedged node), so the tool deliberately depends on nothing but `bash` + `ps`/`lsof`/`pgrep`.
+
+**Isolation boundary = the worktree path** (`git rev-parse --show-toplevel`). Because the treehouse model is one worktree = one agent = one shell, scoping to the worktree scopes to *this* agent. Attribution is by process **cwd**, never by name, so parallel worktrees / agents / shells are never touched — not even another Orrery checkout like `orrery-fixes` (the trailing-slash match means a shared name prefix can't collide). The default run:
+
+- Kills every dev/test process (`vite`, `npm run dev/preview`, `vitest`, `playwright`, `esbuild`, `svelte-kit`) whose **cwd is inside this worktree**, plus all their descendants (browsers, renderers, workers).
+- **Reports but does NOT kill** orphaned automation browsers (`chrome-headless-shell` on a temp `playwright_*profile`, reparented to launchd). An orphan's cwd is `/` — it is unattributable to any worktree, so killing it by default could reap another agent's leftover. Pass `--orphans` only when you know it's yours and no other agent is mid-playwright-run.
+- **Never** touches: a parallel worktree/project (cwd-attributed — `orrery-fixes`, `podcast_scraper`, etc.), your real Chrome/Chromium profile, Claude Desktop, lean-ctx / MCP / language servers, or a live playwright run anywhere.
+
+This is a standing rule, not a suggestion: **the last thing you do before ending a work block is run the cleanup tool** — unless the human is actively using a server you started (e.g. a dev server they asked to keep up), in which case say so and leave it.
+
+---
+
 ## Audio narration — read before touching `src/lib/audio-*` or `scripts/audio/`
 
 v0.7 ships an in-overlay narrated episode system (PRD-016 / RFC-019). en-US only — v0.8 adds the Anthropic translation pipeline + 12-locale Curator Tour.

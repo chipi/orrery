@@ -96,6 +96,7 @@
     "docs:preview": "vitepress preview docs",
     "preflight": "node scripts/with-lock.mjs preflight -- node scripts/preflight-smart.mjs",
     "ci": "npm run preflight",
+    "cleanup": "bash scripts/cleanup-worktree.sh",
     "prepare": "git config core.hooksPath .husky 2>/dev/null || true",
     "docker:build": "docker compose build",
     "docker:up": "docker compose up -d web",

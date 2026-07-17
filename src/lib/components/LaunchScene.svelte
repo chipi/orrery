@@ -92,6 +92,11 @@
   let loop: AnimateLoop | undefined;
 
   let hud = $state({ altKm: 0, velKms: 0, stage: 'S1', met: 'T-00:12' });
+  // Re-basing warp: on completion the camera pulls back hard (Earth → a dot) +
+  // a flash, then onComplete reveals the transfer scene (RFC-033 §11.3).
+  let warping = $state(false);
+  let warpProgress = $state(0);
+  const WARP_S = 1.6;
 
   const stageLabel = (i: number): string => (i < 0 ? 'COAST' : profile.stages[i]?.name ?? '—');
   const countdown = $derived(t < 0 ? Math.max(0, Math.ceil(-t)) : null);
@@ -120,11 +125,11 @@
     dragN: 0,
   });
 
+  // Begin the re-basing warp. The real handoff (onComplete) fires when it ends.
   const complete = () => {
-    if (done) return;
-    done = true;
+    if (done || warping) return;
+    warping = true;
     playing = false;
-    onComplete?.();
   };
 
   onMount(() => {
@@ -175,6 +180,16 @@
           if (t >= duration) complete();
         }
         applyState();
+        // Re-basing warp — camera accelerates backward so Earth recedes to a
+        // dot; when the flash peaks, hand off to the transfer scene.
+        if (warping && sceneObj) {
+          warpProgress = Math.min(1, warpProgress + dt / WARP_S);
+          sceneObj.camera.translateZ(dt * (600 + warpProgress * 45000));
+          if (warpProgress >= 1 && !done) {
+            done = true;
+            onComplete?.();
+          }
+        }
         composer!.render();
       },
     });
@@ -203,6 +218,10 @@
 
 <div class="launch">
   <div class="stage" bind:this={container}></div>
+
+  {#if warping}
+    <div class="warp" style="opacity:{Math.min(1, warpProgress / 0.75)}"></div>
+  {/if}
 
   <div class="header">
     <div class="mission">{mission.name}</div>
@@ -247,23 +266,36 @@
     <div class="ro"><span class="rl">ALTITUDE</span><span class="rv">{hud.altKm.toFixed(0)}</span><span class="ru">KM</span></div>
   </div>
 
-  <button class="continue" onclick={complete}>
-    {done ? 'CRUISE →' : 'SKIP TO CRUISE →'}
-  </button>
+  {#if !warping}
+    <button class="continue" onclick={complete}>SKIP TO CRUISE →</button>
+  {/if}
 </div>
 
 <style>
   .launch {
-    position: absolute;
+    position: fixed;
     inset: 0;
     background: #03050c;
     color: #eaf2ff;
     font-family: 'Space Mono', monospace;
-    z-index: 5;
+    z-index: 200;
   }
   .stage {
     position: absolute;
     inset: 0;
+  }
+  .warp {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+    background: radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(180, 220, 255, 0.6) 28%,
+      rgba(30, 60, 120, 0.25) 58%,
+      transparent 100%
+    );
   }
   .header {
     position: absolute;

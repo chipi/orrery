@@ -172,7 +172,7 @@
   import LaunchScene from '$lib/components/LaunchScene.svelte';
   import {
     loadLaunchProfile,
-    missionLauncherId,
+    resolveLauncher,
     hasLaunchProfile,
   } from '$lib/orbital/launch-profile-registry';
   import type { LaunchProfile } from '$lib/orbital/ascent-physics';
@@ -247,7 +247,7 @@
   // SIMULATION (fly from mid-point, exactly as before). ?launch=1 auto-starts.
   let showLaunch = $state(false);
   let launchProfile = $state<LaunchProfile | null>(null);
-  let launchAvailable = $derived(hasLaunchProfile(mission.fleet_refs));
+  let launchAvailable = $derived(hasLaunchProfile(mission.fleet_refs, mission.vehicle));
   let launchDossier = $derived({
     name: mission.name,
     agency: mission.agency ?? mission.agency_full ?? '',
@@ -255,24 +255,33 @@
     destination: mission.arr_label ?? '',
   });
   function startLaunch() {
-    const launcherId = missionLauncherId(mission.fleet_refs);
-    if (!launcherId) return;
+    const launcher = resolveLauncher(mission.fleet_refs, mission.vehicle);
+    if (!launcher) return;
     // Load the profile first, THEN swap the opening for the launch overlay — no
     // flash of the cruise scene during the fetch.
-    void loadLaunchProfile(launcherId, fetch, base, mission.vehicle).then((p) => {
+    void loadLaunchProfile(launcher.id, fetch, base, launcher.name).then((p) => {
       if (!p) return;
       launchProfile = p;
       showLaunch = true;
       openingActive = false;
     });
   }
-  // ?launch=1 deep-link → auto-start the launch once the mission is ready.
-  const wantLaunchDeep =
-    typeof window !== 'undefined' &&
-    new URLSearchParams(window.location.search).get('launch') === '1';
+  // ?launch=1 deep-link → auto-start once the URL-requested mission is loaded.
+  const launchDeepParams =
+    typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+  const wantLaunchDeep = launchDeepParams?.get('launch') === '1';
+  const deepMissionId = launchDeepParams?.get('mission') ?? null;
   let launchAutoStarted = false;
   $effect(() => {
-    if (wantLaunchDeep && !launchAutoStarted && launchAvailable) {
+    // Only auto-start when the LOADED mission is the one the URL asked for —
+    // otherwise the deep-link fires on the default scenario mid-load.
+    if (
+      wantLaunchDeep &&
+      !launchAutoStarted &&
+      launchAvailable &&
+      deepMissionId != null &&
+      mission.id === deepMissionId
+    ) {
       launchAutoStarted = true;
       startLaunch();
     }

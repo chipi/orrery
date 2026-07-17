@@ -22,9 +22,46 @@ export function missionLauncherId(fleetRefs: FleetRef[] | undefined): string | u
   return fleetRefs?.find((r) => r.role === 'launcher')?.id;
 }
 
-/** True when a mission has ANY launcher — flagship or generic-fallback (RFC-033 S7). */
-export function hasLaunchProfile(fleetRefs: FleetRef[] | undefined): boolean {
-  return missionLauncherId(fleetRefs) != null;
+/** Match a free-text vehicle string ("Atlas V 411") to a flagship id, if any. */
+function matchFlagship(vehicle: string): string | null {
+  const v = vehicle.toLowerCase();
+  if (v.includes('falcon 9')) return 'falcon-9';
+  if (v.includes('atlas v')) return 'atlas-v';
+  if (v.includes('saturn v')) return 'saturn-v';
+  return null;
+}
+
+/** Slugify a vehicle string into a stable generic id ("Long March 3B" → "long-march-3b"). */
+function slug(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 40);
+}
+
+/**
+ * Resolve a mission's launch vehicle to `{ id, name }` — covering EVERY mission:
+ * prefer the fleet_refs launcher id; otherwise fall back to the mission's
+ * free-text `vehicle` string (matched to a flagship where possible, else a
+ * slug for the generic model). Returns null only when the mission has neither.
+ */
+export function resolveLauncher(
+  fleetRefs: FleetRef[] | undefined,
+  vehicle: string | undefined,
+): { id: string; name: string } | null {
+  const fromRefs = missionLauncherId(fleetRefs);
+  if (fromRefs) return { id: fromRefs, name: vehicle ?? prettyName(fromRefs) };
+  if (vehicle) return { id: matchFlagship(vehicle) ?? slug(vehicle), name: vehicle };
+  return null;
+}
+
+/** True when a mission can play a launch — via a launcher ref OR a vehicle string. */
+export function hasLaunchProfile(
+  fleetRefs: FleetRef[] | undefined,
+  vehicle?: string | undefined,
+): boolean {
+  return resolveLauncher(fleetRefs, vehicle) != null;
 }
 
 /** Title-case a launcher id ("long-march-5" → "Long March 5", "pslv-xl" → "PSLV XL"). */

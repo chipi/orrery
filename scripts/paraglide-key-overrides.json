@@ -811,7 +811,8 @@
     "landing_card_live_desc": "स्थायी ISS प्रवाह और अभी या शीघ्र ही होने वाले किसी भी प्रक्षेपण — ऐप में देखें, आधिकारिक चैनलों को श्रेय दिया गया।",
     "live_all_launches": "संपूर्ण प्रक्षेपण कैलेंडर देखें →",
     "live_iss_watch": "ISS को लाइव देखें →",
-    "live_iss_unavailable": "ISS लाइव स्ट्रीम वर्तमान में उपलब्ध नहीं है।"
+    "live_iss_unavailable": "ISS लाइव स्ट्रीम वर्तमान में उपलब्ध नहीं है।",
+    "credits_video_license_summary": "सार्वजनिक-डोमेन एजेंसी फुटेज, और कॉपीराइट फुटेज एम्बेड किया गया (कभी होस्ट नहीं किया गया) उचित उपयोग के तहत — प्रत्येक क्लिप नीचे अपना आधार सूचीबद्ध करता है।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -1486,7 +1487,8 @@
     "landing_card_live_desc": "ISSの常時ストリーム、および現在または近日中に行われるすべての打上げ — アプリ内で視聴でき、公式チャネルにクレジット表示されます。",
     "live_all_launches": "打上げカレンダー全体を見る →",
     "live_iss_watch": "ISSをライブで視聴 →",
-    "live_iss_unavailable": "ISSのライブストリームは現在利用できません。"
+    "live_iss_unavailable": "ISSのライブストリームは現在利用できません。",
+    "credits_video_license_summary": "パブリックドメインの機関映像に加え、フェアユース下で埋め込まれた（ホストされていない）著作権保護映像 — 各クリップは以下に独自の根拠を記載しています。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -2342,7 +2344,8 @@
     "landing_card_live_desc": "بث محطة الفضاء الدولية (ISS) المستمر وأي عمليات إطلاق تحدث الآن أو قريباً — يُشاهد داخل التطبيق، مع نسب المصادر للقنوات الرسمية.",
     "live_all_launches": "شاهد تقويم الإطلاق الكامل →",
     "live_iss_watch": "شاهد محطة الفضاء الدولية (ISS) مباشرة →",
-    "live_iss_unavailable": "بث محطة الفضاء الدولية المباشر غير متاح حالياً."
+    "live_iss_unavailable": "بث محطة الفضاء الدولية المباشر غير متاح حالياً.",
+    "credits_video_license_summary": "لقطات وكالات حكومية في الملك العام، بالإضافة إلى لقطات محمية بحقوق الطبع المدمجة (وليست مستضافة) بموجب الاستخدام العادل — تسرد كل لقطة أساسها الخاص أدناه."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -3019,7 +3022,8 @@
     "landing_card_live_desc": "ISS 실시간 스트림과 지금 또는 곧 진행되는 발사 — 앱 내에서 시청하며 공식 채널에 크레딧 표시됨.",
     "live_all_launches": "전체 발사 일정 보기 →",
     "live_iss_watch": "ISS 실시간 보기 →",
-    "live_iss_unavailable": "ISS 라이브 스트림이 현재 이용할 수 없습니다."
+    "live_iss_unavailable": "ISS 라이브 스트림이 현재 이용할 수 없습니다.",
+    "credits_video_license_summary": "공공 도메인 기관 영상 및 저작권 영상 포함 (정상적 이용 기준으로 삽입됨, 호스팅 안 됨) — 각 클립은 아래 자체 근거를 명시합니다."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -3667,7 +3671,8 @@
     "landing_card_live_desc": "Der permanente ISS-Stream und alle Starts, die gerade laufen oder bald anstehen — in der App anschauen, mit Angabe der offiziellen Kanäle.",
     "live_all_launches": "Vollständigen Startkalender anzeigen →",
     "live_iss_watch": "ISS live beobachten →",
-    "live_iss_unavailable": "Der Live-Stream der ISS ist derzeit nicht verfügbar."
+    "live_iss_unavailable": "Der Live-Stream der ISS ist derzeit nicht verfügbar.",
+    "credits_video_license_summary": "Gemeinfrei-Material von Behörden, plus urheberrechtlich geschütztes Material eingebunden (nie gehostet) unter Fair Use – jeder Clip listet seine eigene Grundlage unten auf."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -4322,7 +4327,8 @@
     "landing_card_live_desc": "Le flux permanent de l'ISS et tous les lancements en cours ou prochains — regardés dans l'application, crédités aux chaînes officielles.",
     "live_all_launches": "Voir le calendrier complet des lancements →",
     "live_iss_watch": "Regarder l'ISS en direct →",
-    "live_iss_unavailable": "Le flux en direct de l'ISS est actuellement indisponible."
+    "live_iss_unavailable": "Le flux en direct de l'ISS est actuellement indisponible.",
+    "credits_video_license_summary": "Vidéos du domaine public provenant d'agences spatiales, plus vidéos protégeables intégrées (jamais hébergées) en vertu d'une utilisation équitable — chaque clip indique sa base ci-dessous."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -4945,7 +4951,8 @@
     "landing_card_live_desc": "Lo stream permanente dell'ISS e i lanci in corso o prossimi — guardati in-app, con crediti ai canali ufficiali.",
     "live_all_launches": "Vedi il calendario dei lanci completo →",
     "live_iss_watch": "Guarda l'ISS in diretta →",
-    "live_iss_unavailable": "Lo streaming live della ISS non è attualmente disponibile."
+    "live_iss_unavailable": "Lo streaming live della ISS non è attualmente disponibile.",
+    "credits_video_license_summary": "Filmati di agenzia di dominio pubblico, più filmati protetti da copyright incorporati (mai ospitati) secondo fair use — ogni clip elenca la propria base di seguito."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -5567,7 +5574,8 @@
     "landing_card_live_desc": "La retransmisión permanente de la ISS y cualquier lanzamiento en curso o próximo — visualizado en la aplicación, con crédito a los canales oficiales.",
     "live_all_launches": "Ver el calendario completo de lanzamientos →",
     "live_iss_watch": "Ver la ISS en directo →",
-    "live_iss_unavailable": "La transmisión en directo de la ISS no está disponible en este momento."
+    "live_iss_unavailable": "La transmisión en directo de la ISS no está disponible en este momento.",
+    "credits_video_license_summary": "Vídeo de dominio público de agencias espaciales, más vídeo con derechos de autor incrustado (nunca alojado) bajo uso justo — cada clip indica su propia base a continuación."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -6195,7 +6203,8 @@
     "landing_card_live_desc": "De permanente ISS-stream en alle lanceringen die nu of binnenkort plaatsvinden — bekeken in-app, met credits aan de officiële kanalen.",
     "live_all_launches": "Bekijk de volledige lanceringscalender →",
     "live_iss_watch": "Bekijk het ISS live →",
-    "live_iss_unavailable": "De live ISS-stream is momenteel niet beschikbaar."
+    "live_iss_unavailable": "De live ISS-stream is momenteel niet beschikbaar.",
+    "credits_video_license_summary": "Openbare-domein agentuurbeelden, plus auteursrechtelijk beschermde beelden ingebed (nooit gehost) onder fair use — elk fragment vermeldt hieronder zijn eigen basis."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -6873,7 +6882,8 @@
     "landing_card_live_desc": "Постоянная трансляция МКС и любые запуски, происходящие сейчас или в ближайшее время — просмотр в приложении с указанием официальных источников.",
     "live_all_launches": "Смотреть полный календарь запусков →",
     "live_iss_watch": "Смотреть МКС в прямом эфире →",
-    "live_iss_unavailable": "Трансляция с МКС в данный момент недоступна."
+    "live_iss_unavailable": "Трансляция с МКС в данный момент недоступна.",
+    "credits_video_license_summary": "Видеофутаж в общественном достоянии от космических агентств, а также защищённый авторским правом видеоматериал, встроенный (никогда не размещаемый) в соответствии с добросовестным использованием — каждый клип указывает свою основу ниже."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -7532,7 +7542,8 @@
     "landing_card_live_desc": "国际空间站（ISS）的永久直播流以及正在进行或即将进行的发射——在应用内观看，内容来自官方频道。",
     "live_all_launches": "查看完整发射日历 →",
     "live_iss_watch": "观看国际空间站直播 →",
-    "live_iss_unavailable": "国际空间站直播目前无法使用。"
+    "live_iss_unavailable": "国际空间站直播目前无法使用。",
+    "credits_video_license_summary": "公共领域机构视频，加上在合理使用基础上嵌入（从不托管）的版权视频——每个片段在下方列出其自身依据。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -8125,7 +8136,8 @@
     "landing_card_live_desc": "Перманентни ток МСС-а и сви лансирања која се дешавају сада или ускоро — гледано у апликацији, са признањем официјалним каналима.",
     "live_all_launches": "Погледајте потпуни календар лансирања →",
     "live_iss_watch": "Гледајте МСС уживо →",
-    "live_iss_unavailable": "Директни пренос МСС је тренутно недоступан."
+    "live_iss_unavailable": "Директни пренос МСС је тренутно недоступан.",
+    "credits_video_license_summary": "Снимци јавног домена од агенција, плус аутором заштићени снимци уклопљени (никад нису хостовани) под правилном употребом — сваки клип наводи своју основу испод."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -8754,6 +8766,7 @@
     "landing_card_live_desc": "A transmissão permanente da ISS e qualquer lançamento acontecendo agora ou em breve — assistidos no app, com crédito aos canais oficiais.",
     "live_all_launches": "Ver o calendário completo de lançamentos →",
     "live_iss_watch": "Assistir a ISS ao vivo →",
-    "live_iss_unavailable": "A transmissão ao vivo da ISS está indisponível no momento."
+    "live_iss_unavailable": "A transmissão ao vivo da ISS está indisponível no momento.",
+    "credits_video_license_summary": "Vídeos de domínio público de agências espaciais, mais vídeos protegidos por direitos autorais incorporados (nunca hospedados) sob fair use — cada clipe lista sua própria base abaixo."
   }
 }

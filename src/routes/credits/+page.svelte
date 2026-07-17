@@ -463,6 +463,10 @@
       <header class="head-row">
         <h2>{m.credits_video_heading()}</h2>
       </header>
+      <p class="src-license">
+        <span class="lbl">{m.credits_license_summary_label()}:</span>
+        {m.credits_video_license_summary()}
+      </p>
       <p class="storage-blurb">{m.credits_video_intro()}</p>
       <ul class="photo-list">
         {#each videoProv.entries as v (v.id)}

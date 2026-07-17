@@ -200,6 +200,8 @@
       vehicleLengthKm: VEH_LEN,
       schedule,
       tuning,
+      events: summary.events,
+      spacecraftId: 'juno',
     });
 
     // R1 post-processing — bloom (plume/sun/limb glow) → film grain → vignette,
@@ -215,6 +217,11 @@
     composer.addPass(vignette);
 
     (window as unknown as Record<string, unknown>).__ascentDebug = { schedule, events: summary.events, maxQ: summary.maxQ, duration };
+    // Test hook: freeze the timeline at an exact MET for deterministic screenshots.
+    (window as unknown as Record<string, unknown>).__ascentSetT = (nt: number) => {
+      playing = false;
+      t = nt;
+    };
 
     const applyState = () => {
       const s = t < 0 ? padState(t) : sampleAscentAt(summary.states, t);

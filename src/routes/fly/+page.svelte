@@ -253,6 +253,7 @@
     agency: mission.agency ?? mission.agency_full ?? '',
     site: launchProfile?.launchSite?.name ?? 'Launch complex',
     destination: mission.arr_label ?? '',
+    spacecraftId: mission.id,
   });
   function startLaunch() {
     const launcher = resolveLauncher(mission.fleet_refs, mission.vehicle);

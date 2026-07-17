@@ -21,6 +21,7 @@ export type AscentShotName =
   | 'onboard_down'
   | 'staging'
   | 'chase'
+  | 'separation'
   | 'orbit';
 
 export interface ShotWindow {
@@ -53,6 +54,20 @@ export interface ScheduleInputs {
 const TOWER_CLEAR_END = 12;
 const PAD_END = 3;
 const STAGING_HOLD = 5;
+/** Seconds the payload-separation shot holds after SECO before the orbit
+ *  coast — also the scene's payload-sep animation duration (kept in sync). */
+export const PAYLOAD_SEP_HOLD_S = 4;
+
+/**
+ * Deterministic 0→1 progress for a separation animation that begins at
+ * `eventT` and completes `durationS` later. A pure function of the mission
+ * time, so scrubbing the timeline back and forth is exact — 0 before the
+ * event, ramps to 1, then stays 1. Returns 0 when the event never fired.
+ */
+export function sepProgress(t: number, eventT: number | undefined, durationS: number): number {
+  if (eventT == null || durationS <= 0) return 0;
+  return Math.min(1, Math.max(0, (t - eventT) / durationS));
+}
 
 /**
  * Build the ordered shot schedule from the ascent beats. Missing beats
@@ -69,6 +84,8 @@ export function buildShotSchedule(inp: ScheduleInputs): ShotWindow[] {
   // Onboard phase runs from Max-Q to staging (or, absent staging, to SECO).
   const onboardEnd = staging ?? seco;
   const stagingEnd = staging != null ? staging + STAGING_HOLD : onboardEnd;
+  // Payload separation holds briefly after SECO, then the serene orbit coast.
+  const sepEnd = seco + PAYLOAD_SEP_HOLD_S;
 
   const raw: ShotWindow[] = [
     { name: 'pad', tStart: 0, tEnd: PAD_END },
@@ -79,7 +96,8 @@ export function buildShotSchedule(inp: ScheduleInputs): ShotWindow[] {
       ? [{ name: 'staging' as const, tStart: staging, tEnd: stagingEnd }]
       : []),
     { name: 'chase', tStart: stagingEnd, tEnd: seco },
-    { name: 'orbit', tStart: seco, tEnd: Math.max(seco, inp.duration) },
+    { name: 'separation', tStart: seco, tEnd: sepEnd },
+    { name: 'orbit', tStart: sepEnd, tEnd: Math.max(sepEnd, inp.duration) },
   ];
 
   // Drop inverted/empty windows (can happen when beats bunch up on a
@@ -132,7 +150,7 @@ export type AscentCameraTuning = Record<AscentShotName, ShotTune>;
 
 /** A no-op default tuning map. */
 export function defaultTuning(): AscentCameraTuning {
-  const names: AscentShotName[] = ['pad', 'tower_clear', 'ascent', 'onboard_down', 'staging', 'chase', 'orbit'];
+  const names: AscentShotName[] = ['pad', 'tower_clear', 'ascent', 'onboard_down', 'staging', 'chase', 'separation', 'orbit'];
   const out = {} as AscentCameraTuning;
   for (const n of names) out[n] = { ...NO_TUNE };
   return out;
@@ -211,6 +229,15 @@ export function composeShot(
       const d = back * (0.9 + 0.5 * e);
       const ang = -0.45 - p * 0.35;
       out = pose(dr + Math.sin(ang) * d, alt + d * 0.3, Math.cos(ang) * d, dr + vehLen * 1.5, alt, 0, 46);
+      break;
+    }
+    case 'separation': {
+      // TIGHT hero shot of the spacecraft springing free of the spent stage.
+      // Target the vehicle origin exactly (robust to the stack's attitude) and
+      // frame close with a gentle side arc + push-in as it separates.
+      const d = vehLen * (3.2 - 0.7 * e);
+      const ang = -0.3 - p * 0.45;
+      out = pose(dr + Math.sin(ang) * d * 0.4, alt + vehLen * 0.4, Math.cos(ang) * d, dr, alt, 0, 46);
       break;
     }
     case 'orbit': {

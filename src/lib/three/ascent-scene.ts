@@ -15,14 +15,17 @@
  */
 
 import * as THREE from 'three';
-import { gravity, type AscentState } from '$lib/orbital/ascent-physics';
+import { gravity, type AscentEvent, type AscentState } from '$lib/orbital/ascent-physics';
 import {
   activeShotAt,
   composeShot,
+  sepProgress,
+  PAYLOAD_SEP_HOLD_S,
   type AscentCameraTuning,
   type AscentShotName,
   type ShotWindow,
 } from '$lib/orbital/ascent-cameras';
+import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
 
 const R_EARTH_KM = 6371;
 
@@ -41,6 +44,10 @@ export interface AscentSceneOptions {
   schedule?: ShotWindow[];
   /** Live per-shot camera tuning (mutated by the camera-debug sliders); read by reference each frame. */
   tuning?: AscentCameraTuning;
+  /** Ascent beats — drives scrub-safe stage/fairing/payload separation timing. */
+  events?: AscentEvent[];
+  /** Mission id → the payload's dedicated spacecraft model (else a generic bus). */
+  spacecraftId?: string;
 }
 
 /** Texture-seam longitude offset (deg) tuned so a site's real coastline lands under the pad. */
@@ -68,6 +75,48 @@ export const FORCE_COLORS = {
   drag: 0x5aa0ff,
   velocity: 0x7fe0ff,
 } as const;
+
+/** Generic payload for the ~110 missions without a dedicated model — a small
+ *  bus with two solar wings and a dish. Normalised to fit by buildPayload. */
+function buildGenericPayload(): THREE.Group {
+  const g = new THREE.Group();
+  const bus = new THREE.Mesh(
+    new THREE.BoxGeometry(0.55, 0.7, 0.55),
+    new THREE.MeshStandardMaterial({ color: 0xcfd6dd, roughness: 0.5, metalness: 0.45 }),
+  );
+  const panelMat = new THREE.MeshStandardMaterial({ color: 0x1f3a72, roughness: 0.4, metalness: 0.3 });
+  const panelGeo = new THREE.BoxGeometry(1.0, 0.03, 0.55);
+  const pL = new THREE.Mesh(panelGeo, panelMat);
+  pL.position.x = -0.85;
+  const pR = new THREE.Mesh(panelGeo, panelMat);
+  pR.position.x = 0.85;
+  const dish = new THREE.Mesh(
+    new THREE.SphereGeometry(0.3, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2),
+    new THREE.MeshStandardMaterial({ color: 0xeaeaea, roughness: 0.6, side: THREE.DoubleSide }),
+  );
+  dish.position.y = 0.5;
+  dish.rotation.x = Math.PI;
+  g.add(bus, pL, pR, dish);
+  return g;
+}
+
+/** The payload group: the mission's dedicated spacecraft model when one exists
+ *  (buildInterplanetarySpacecraft), else the generic bus — normalised so its
+ *  largest dimension ≈ the fairing interior and re-centred on the body axis. */
+function buildPayload(spacecraftId: string | undefined, vehLen: number): THREE.Group {
+  const model = (spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null) ?? buildGenericPayload();
+  const box = new THREE.Box3().setFromObject(model);
+  const size = new THREE.Vector3();
+  box.getSize(size);
+  const k = (vehLen * 0.14) / (Math.max(size.x, size.y, size.z) || 1);
+  const center = new THREE.Vector3();
+  box.getCenter(center);
+  model.scale.setScalar(k);
+  model.position.copy(center.multiplyScalar(-k));
+  const holder = new THREE.Group();
+  holder.add(model);
+  return holder;
+}
 
 export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const vehLen = opts.vehicleLengthKm ?? 1.2;
@@ -274,21 +323,43 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     fin.rotation.y = -af;
     stage1Group.add(fin);
   }
-  vehicle.add(stage1Group);
-
   const interstage = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.045, 40), darkMat);
   interstage.position.y = vehLen * 0.6;
-  vehicle.add(interstage);
+  stage1Group.add(interstage); // rides with the booster so it drifts away at staging
+  vehicle.add(stage1Group);
 
   const stage2 = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.22, 40), bodyMat);
-  stage2.position.y = vehLen * 0.735;
+  const stage2BaseY = vehLen * 0.735;
+  stage2.position.y = stage2BaseY;
   const s2nozzle = new THREE.Mesh(new THREE.ConeGeometry(rBody * 0.55, vehLen * 0.06, 20, 1, true), engMat);
-  s2nozzle.position.y = vehLen * 0.6;
+  const s2nozzleBaseY = vehLen * 0.6;
+  s2nozzle.position.y = s2nozzleBaseY;
   vehicle.add(stage2, s2nozzle);
 
-  const fairing = new THREE.Mesh(new THREE.ConeGeometry(rBody * 1.02, vehLen * 0.17, 40), bodyMat);
-  fairing.position.y = vehLen * 0.93;
-  vehicle.add(fairing);
+  // Fairing as two half-shells so it can clamshell + jettison, revealing the payload.
+  const fairingBaseY = vehLen * 0.93;
+  const halfShell = (thetaStart: number): THREE.Mesh => {
+    const m = new THREE.Mesh(
+      new THREE.ConeGeometry(rBody * 1.02, vehLen * 0.17, 24, 1, true, thetaStart, Math.PI),
+      bodyMat,
+    );
+    m.position.y = fairingBaseY;
+    return m;
+  };
+  const fairingHalfL = halfShell(Math.PI / 2); // −X half
+  const fairingHalfR = halfShell(-Math.PI / 2); // +X half
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingHalfL, fairingHalfR);
+  vehicle.add(fairingGroup);
+
+  // Payload — the mission's spacecraft (or a generic bus), stowed under the
+  // fairing, revealed at jettison, sprung free at SECO.
+  const payloadBaseY = vehLen * 0.85;
+  const payload = buildPayload(opts.spacecraftId, vehLen);
+  payload.position.y = payloadBaseY;
+  payload.visible = false;
+  vehicle.add(payload);
+
   scene.add(vehicle);
 
   // Plume (R4): a LAYERED exhaust — hot blue-white throat, a yellow core, a
@@ -324,11 +395,18 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   scene.add(forces);
   let showForces = false;
 
-  let fairingOn = true;
-  let stage1On = true;
   let frame = 0;
   const schedule = opts.schedule ?? [];
   let activeShot: AscentShotName = 'ascent';
+
+  // Separation event METs (undefined ⇒ that beat never fires; the sep stays at rest).
+  const metOf = (type: AscentEvent['type']): number | undefined =>
+    opts.events?.find((e) => e.type === type)?.t;
+  const stagingT = metOf('staging');
+  const fairingT = metOf('fairing_jettison');
+  const secoT = metOf('seco');
+  const BOOSTER_SEP_S = 5;
+  const FAIRING_SEP_S = 4;
 
   const _v = new THREE.Vector3();
   const updateForces = (s: AscentState): void => {
@@ -371,16 +449,33 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     const fromVertical = Math.atan2(horiz, Math.max(1e-6, s.velUpKms));
     vehicle.rotation.z = -fromVertical;
 
-    // Staging / fairing from the physics state.
-    if (fairingOn && s.stageIndex >= 1) {
-      fairing.visible = false;
-      fairingOn = false;
-    }
-    if (stage1On && s.stageIndex >= 1) {
-      stage1Group.visible = false;
-      interstage.visible = false;
-      stage1On = false;
-    }
+    // ── Separations — every offset is a pure function of the mission time vs
+    //    the event METs, so scrubbing the timeline back and forth is exact.
+    // Booster: drifts back down the body axis, tumbles, recedes away.
+    const bp = sepProgress(s.t, stagingT, BOOSTER_SEP_S);
+    stage1Group.visible = bp < 1;
+    stage1Group.position.y = -bp * vehLen * 5;
+    stage1Group.rotation.set(bp * 2.4, 0, bp * 1.2);
+    stage1Group.scale.setScalar(1 - 0.55 * bp);
+
+    // Fairing: the two shells clamshell apart, rise, and tumble away.
+    const fp = sepProgress(s.t, fairingT, FAIRING_SEP_S);
+    fairingGroup.visible = fp < 1;
+    const spread = fp * vehLen * 2.4;
+    const rise = fairingBaseY + fp * vehLen * 1.2;
+    fairingHalfL.position.set(-spread, rise, 0);
+    fairingHalfR.position.set(spread, rise, 0);
+    fairingHalfL.rotation.z = fp * 1.3;
+    fairingHalfR.rotation.z = -fp * 1.3;
+
+    // Payload: revealed once the fairing is gone; springs free at SECO while
+    // the spent upper stage drifts back the other way.
+    const pp = sepProgress(s.t, secoT, PAYLOAD_SEP_HOLD_S);
+    payload.visible = fairingT != null ? s.t >= fairingT : s.stageIndex < 0;
+    payload.position.y = payloadBaseY + pp * vehLen * 0.6;
+    payload.rotation.y = s.t * 0.12;
+    stage2.position.y = stage2BaseY - pp * vehLen * 0.7;
+    s2nozzle.position.y = s2nozzleBaseY - pp * vehLen * 0.7;
 
     // Plume: only while a stage burns; re-parent to the firing stage,
     // flicker the length, taper in vacuum.
@@ -427,11 +522,19 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   };
 
   const reset = (): void => {
-    fairingOn = true;
-    stage1On = true;
-    fairing.visible = true;
     stage1Group.visible = true;
-    interstage.visible = true;
+    stage1Group.position.set(0, 0, 0);
+    stage1Group.rotation.set(0, 0, 0);
+    stage1Group.scale.setScalar(1);
+    fairingGroup.visible = true;
+    fairingHalfL.position.set(0, fairingBaseY, 0);
+    fairingHalfR.position.set(0, fairingBaseY, 0);
+    fairingHalfL.rotation.set(0, 0, 0);
+    fairingHalfR.rotation.set(0, 0, 0);
+    payload.visible = false;
+    payload.position.set(0, payloadBaseY, 0);
+    stage2.position.y = stage2BaseY;
+    s2nozzle.position.y = s2nozzleBaseY;
     if (plume.parent !== stage1Group) {
       plume.parent?.remove(plume);
       stage1Group.add(plume);

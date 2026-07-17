@@ -38,6 +38,8 @@
     agency: string;
     site: string;
     destination: string;
+    /** Mission id → the payload's dedicated spacecraft model (else a generic bus). */
+    spacecraftId?: string;
   }
 
   interface Props {
@@ -154,6 +156,8 @@
       launchSite: profile.launchSite,
       vehicleLengthKm: VEH_LEN,
       schedule,
+      events: summary.events,
+      spacecraftId: mission.spacecraftId,
     });
 
     composer = new EffectComposer(renderer);

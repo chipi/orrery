@@ -4,6 +4,7 @@ import {
   buildShotSchedule,
   composeShot,
   selectShot,
+  sepProgress,
   type AscentShotName,
 } from './ascent-cameras';
 import { integrateAscent, type AscentState } from './ascent-physics';
@@ -51,7 +52,7 @@ describe('selectShot', () => {
 
 describe('composeShot', () => {
   const state: AscentState = summary.states[Math.floor(summary.states.length / 2)];
-  const shots: AscentShotName[] = ['pad', 'tower_clear', 'ascent', 'onboard_down', 'staging', 'chase', 'orbit'];
+  const shots: AscentShotName[] = ['pad', 'tower_clear', 'ascent', 'onboard_down', 'staging', 'chase', 'separation', 'orbit'];
 
   it('returns finite poses with sane FOV for every shot', () => {
     for (const name of shots) {
@@ -93,5 +94,29 @@ describe('director-cut motion', () => {
     const dNear = Math.hypot(near.px - near.tx, near.py - near.ty, near.pz - near.tz);
     const dFar = Math.hypot(far.px - far.tx, far.py - far.ty, far.pz - far.tz);
     expect(dFar).toBeGreaterThan(dNear);
+  });
+});
+
+describe('sepProgress', () => {
+  it('is 0 before the event, ramps linearly, then clamps at 1', () => {
+    expect(sepProgress(90, 100, 4)).toBe(0);
+    expect(sepProgress(100, 100, 4)).toBe(0);
+    expect(sepProgress(102, 100, 4)).toBeCloseTo(0.5, 5);
+    expect(sepProgress(104, 100, 4)).toBe(1);
+    expect(sepProgress(500, 100, 4)).toBe(1);
+  });
+
+  it('returns 0 when the event never fired or duration is non-positive', () => {
+    expect(sepProgress(120, undefined, 4)).toBe(0);
+    expect(sepProgress(120, 100, 0)).toBe(0);
+  });
+});
+
+describe('separation shot', () => {
+  it('is slotted between chase and orbit', () => {
+    const names = schedule.map((w) => w.name);
+    expect(names).toContain('separation');
+    expect(names.indexOf('separation')).toBeGreaterThan(names.indexOf('chase'));
+    expect(names.indexOf('separation')).toBeLessThan(names.indexOf('orbit'));
   });
 });

@@ -29,6 +29,11 @@
   } from '$lib/data';
   import { groupBySource, pathToRouteKey, type CreditsGroup } from '$lib/credits-grouping';
   import { assetOrigin } from '$lib/asset-url';
+  import {
+    getVideoManifest,
+    posterUrlFor,
+    type VideoProvenanceManifest,
+  } from '$lib/video-provenance';
   import * as m from '$lib/paraglide/messages';
 
   let logos = $state<SourceLogosManifest | null>(null);
@@ -37,6 +42,7 @@
   let audioProv = $state<AudioSourceProvenanceManifest | null>(null);
   let badgeProv = $state<BadgeProvenance[] | null>(null);
   let dataSources = $state<DataSourcesManifest | null>(null);
+  let videoProv = $state<VideoProvenanceManifest | null>(null);
   let loaded = $state(false);
 
   // Audio narration / tour-script attribution moved to /colophon (it's our
@@ -49,13 +55,15 @@
       getAudioSourceProvenanceManifest(),
       getBadgeProvenance(),
       getDataSources(),
-    ]).then(([s, p, t, a, b, d]) => {
+      getVideoManifest(),
+    ]).then(([s, p, t, a, b, d, v]) => {
       logos = s;
       provenance = p;
       textSources = t;
       audioProv = a;
       badgeProv = b;
       dataSources = d;
+      videoProv = v;
       loaded = true;
     });
   });
@@ -441,6 +449,58 @@
                 >
               </span>
             </span>
+          </li>
+        {/each}
+      </ul>
+    </article>
+  {/if}
+
+  <!-- Video (PRD-031 / RFC-033) — linked, never hosted. Each row credits the
+       official channel + agency + the fair-use/license basis and links the
+       canonical source. -->
+  {#if videoProv && videoProv.entries.length > 0}
+    <article class="source-block" id="src-video">
+      <header class="head-row">
+        <h2>{m.credits_video_heading()}</h2>
+      </header>
+      <p class="storage-blurb">{m.credits_video_intro()}</p>
+      <ul class="photo-list">
+        {#each videoProv.entries as v (v.id)}
+          {@const poster = posterUrlFor(v)}
+          <li class="photo">
+            <a
+              class="thumb video-credit-thumb"
+              href={v.source_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={v.title}
+            >
+              {#if poster}
+                <!-- eager: only ~N video posters, and they sit far down a long
+                     page where the lazy trigger is unreliable (they simply
+                     never requested). Small 64px thumbs, so eager is safe. -->
+                <img
+                  src={poster}
+                  alt=""
+                  width="64"
+                  height="64"
+                  loading="eager"
+                  decoding="async"
+                  onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+                />
+              {/if}
+              <span class="video-credit-play" aria-hidden="true">▶</span>
+            </a>
+            <div class="photo-meta">
+              <p class="ph-title">{v.title}</p>
+              <p class="ph-row">
+                {v.channel}{v.agency !== v.channel ? ` · ${v.agency}` : ''} ·
+                {v.license_or_fair_use} ·
+                <a href={v.source_url} target="_blank" rel="noopener noreferrer"
+                  >{m.credits_video_source_label()}</a
+                >
+              </p>
+            </div>
           </li>
         {/each}
       </ul>
@@ -909,6 +969,22 @@
     margin: 0;
     display: grid;
     gap: 8px;
+  }
+  .video-credit-thumb {
+    position: relative;
+    display: block;
+  }
+  .video-credit-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    padding-left: 2px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+    pointer-events: none;
   }
   .photo {
     display: grid;

@@ -13,6 +13,9 @@
   import * as m from '$lib/paraglide/messages';
   import { missionGalleryCredit } from '$lib/image-credits';
   import ImageCredit from './ImageCredit.svelte';
+  import MediaPlayer from './MediaPlayer.svelte';
+  import VideoThumb from './VideoThumb.svelte';
+  import { getVideosForEntity, type VideoProvenanceEntry } from '$lib/video-provenance';
   import LearnLink from './LearnLink.svelte';
   import ScienceChip from './ScienceChip.svelte';
   import ScienceCard from './ScienceCard.svelte';
@@ -55,6 +58,9 @@
   /** Thumbs under GALLERY tab: skip first image when a hero duplicates it. */
   let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
   let lightboxSrc = $state<string | null>(null);
+  // PRD-031 / RFC-033 S1 — linked videos interleaved into the gallery rail.
+  let videos = $state<VideoProvenanceEntry[]>([]);
+  let playerVideo = $state<VideoProvenanceEntry | null>(null);
   // Cross-link chip: when the mission corresponds to a surface or
   // orbital site on /mars or /moon, surface a chip that deep-links
   // there. Resolved from the body's surface-site catalogue —
@@ -85,12 +91,17 @@
       lastId = mission.id;
       lightboxSrc = null;
       gallery = [];
+      videos = [];
+      playerVideo = null;
       crossSite = null;
       // Popularity signal: a mission detail was opened. `open` gates it so
       // a prefetched/derived mission that never shows isn't counted.
       if (open) trackMissionView(mission.id, $page.url.pathname);
       void getMissionGallery(mission.id).then((urls) => {
         if (mission && mission.id === lastId) gallery = urls;
+      });
+      void getVideosForEntity(mission.id).then((v) => {
+        if (mission && mission.id === lastId) videos = v;
       });
       // Insignia map (PRD-029) — gate the badge so patch-less missions
       // (Mercury/Gemini flights predate mission patches) fire no 404.
@@ -312,7 +323,7 @@
           aria-controls="mp-tabpanel">{m.mp_tab_flight()}</button
         >
       {/if}
-      {#if gallery.length > 0}
+      {#if gallery.length > 0 || videos.length > 0}
         <button
           type="button"
           id="mp-tab-gallery"
@@ -802,10 +813,13 @@
           {/if}
         </div>
       {:else if tab === 'gallery'}
-        {#if gallery.length === 0}
+        {#if gallery.length === 0 && videos.length === 0}
           <p class="empty-tab">{m.mp_gallery_empty()}</p>
         {:else}
           <div class="gallery-grid" aria-label={m.mp_gallery_aria()}>
+            {#each videos as v (v.id)}
+              <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
+            {/each}
             {#each galleryGrid as src (src)}
               <button
                 type="button"
@@ -904,6 +918,8 @@
     <ImageCredit src={lightboxSrc} />
   </div>
 {/if}
+
+<MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 
 <style>
   .head {

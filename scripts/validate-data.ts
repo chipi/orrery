@@ -19,6 +19,7 @@ import {
 } from 'node:fs';
 import { join } from 'node:path';
 import { isAllowedLicense } from './license-allowlist.js';
+import { isAllowedChannel } from './video-channel-allowlist.js';
 import { isJpegBytes } from './lib/image-bytes.ts';
 import {
   findBidirectionalFleetMissionDrift,
@@ -168,6 +169,8 @@ const textSourcesSchema = loadSchema('text-sources.schema.json');
 const dataSourcesSchema = loadSchema('data-sources.schema.json');
 // ADR-051 Milestone L-B — outbound LEARN-link provenance.
 const linkProvenanceSchema = loadSchema('link-provenance.schema.json');
+// PRD-031 / RFC-033 S0 — linked-not-hosted video provenance.
+const videoProvenanceSchema = loadSchema('video-provenance.schema.json');
 // PRD-012 v0.2 / RFC-016 v0.2 — Spaceflight Fleet (/fleet).
 const fleetEntrySchema = loadSchema('fleet-entry.schema.json');
 const fleetIndexSchema = loadSchema('fleet-index.schema.json');
@@ -218,6 +221,7 @@ const validateDeepSkyObjects = ajv.compile(loadSchema('deep-sky-object.schema.js
 const validateMilkyWay = ajv.compile(loadSchema('milky-way.schema.json'));
 const validateBlackHoles = ajv.compile(loadSchema('black-hole.schema.json'));
 const validateLinkProvenance = ajv.compile(linkProvenanceSchema);
+const validateVideoProvenance = ajv.compile(videoProvenanceSchema);
 const validateFleetEntry = ajv.compile(fleetEntrySchema);
 const validateFleetIndex = ajv.compile(fleetIndexSchema);
 const validateFleetOverlay = ajv.compile(fleetOverlaySchema);
@@ -609,6 +613,8 @@ validateFile(join(DATA_ROOT, 'data-sources.json'), validateDataSources);
 }
 // ADR-051 Milestone L-B: outbound LEARN-link provenance manifest.
 validateFile(join(DATA_ROOT, 'link-provenance.json'), validateLinkProvenance);
+// PRD-031 / RFC-033 S0: linked-not-hosted video provenance manifest.
+validateFile(join(DATA_ROOT, 'video-provenance.json'), validateVideoProvenance);
 // PRD-020 / RFC-023: launches manifest + curation override + rocket mapping.
 validateFile(join(DATA_ROOT, 'launches.json'), validateLaunches);
 validateFile(join(DATA_ROOT, 'launches-curation.json'), validateLaunchesCuration);
@@ -1192,6 +1198,114 @@ if (existsSync(PROVENANCE_PATH)) {
   } else {
     console.error(
       `  ${provenanceFailed} provenance integrity failure(s) (${duplicates} duplicate, ${licenseFails} license, ${missingFiles} missing-file)`,
+    );
+  }
+}
+
+// ──────────────────────────────────────────────────────────────────────
+// PRD-031 / RFC-033 S0 — video-provenance integrity (fail-closed sourcing).
+//
+// We LINK video, never host it — so there is no on-disk file to check.
+// Instead the gate is: (1) every `channel` resolves in the video-channel
+// allowlist (the video analog of the license allowlist), and (2) every id
+// is unique. Schema shape is already checked by validateVideoProvenance.
+// ──────────────────────────────────────────────────────────────────────
+
+let videoProvenanceFailed: number;
+const VIDEO_PROVENANCE_PATH = join(DATA_ROOT, 'video-provenance.json');
+if (!existsSync(VIDEO_PROVENANCE_PATH)) {
+  // Fail-closed: the manifest is committed + built; a missing one is a real
+  // setup regression, not a skip (review M1).
+  console.error(
+    '\n  ✗ static/data/video-provenance.json is missing — run `npm run build-video-provenance`.',
+  );
+  videoProvenanceFailed = 1;
+} else {
+  console.log('\nValidating video-provenance integrity (PRD-031 / RFC-033 S0)...');
+  type VideoRow = { id: string; channel: string; entity_id: string; entity_kind: string };
+  const vManifest = JSON.parse(readFileSync(VIDEO_PROVENANCE_PATH, 'utf8')) as {
+    entries: VideoRow[];
+  };
+  const seen = new Set<string>();
+  const kindById = new Map<string, string>(); // entity_id → entity_kind (first seen)
+  let badChannels = 0;
+  let dupIds = 0;
+  let kindCollisions = 0;
+  for (const e of vManifest.entries) {
+    if (!isAllowedChannel(e.channel)) {
+      badChannels++;
+      console.error(
+        `  ✗ ${e.id}: channel '${e.channel}' not in the video-channel allowlist (scripts/video-channel-allowlist.ts)`,
+      );
+    }
+    if (seen.has(e.id)) {
+      dupIds++;
+      console.error(`  ✗ duplicate video id: ${e.id}`);
+    }
+    seen.add(e.id);
+    // review L1 — getVideosForEntity keys on entity_id alone, so the same
+    // entity_id under two kinds would cross-leak clips. Forbid it.
+    const priorKind = kindById.get(e.entity_id);
+    if (priorKind && priorKind !== e.entity_kind) {
+      kindCollisions++;
+      console.error(
+        `  ✗ entity_id '${e.entity_id}' used by both '${priorKind}' and '${e.entity_kind}' — ids must be unique across kinds`,
+      );
+    } else if (!priorKind) {
+      kindById.set(e.entity_id, e.entity_kind);
+    }
+  }
+
+  // review H1 (RFC-033 §3.1) — every entity `videos:[{id}]` ref must resolve
+  // in the manifest. Walk the object-file families + the site array files.
+  let danglingRefs = 0;
+  const checkRef = (id: unknown, where: string) => {
+    if (typeof id !== 'string') return;
+    if (!seen.has(id)) {
+      danglingRefs++;
+      console.error(`  ✗ ${where}: videos[].id '${id}' does not resolve in the manifest`);
+    }
+  };
+  for (const dir of ['missions', 'fleet']) {
+    const root = join(DATA_ROOT, dir);
+    if (!existsSync(root)) continue;
+    for (const rel of readdirSync(root, { recursive: true })) {
+      const rels = String(rel);
+      if (!rels.endsWith('.json') || rels.includes('i18n')) continue;
+      try {
+        const j = JSON.parse(readFileSync(join(root, rels), 'utf8')) as {
+          videos?: { id?: unknown }[];
+        };
+        if (Array.isArray(j.videos)) for (const v of j.videos) checkRef(v?.id, `${dir}/${rels}`);
+      } catch {
+        /* non-object / parse error — other gates catch shape */
+      }
+    }
+  }
+  for (const f of ['moon-sites.json', 'mars-sites.json']) {
+    const p = join(DATA_ROOT, f);
+    if (!existsSync(p)) continue;
+    try {
+      const arr = JSON.parse(readFileSync(p, 'utf8')) as {
+        id?: string;
+        videos?: { id?: unknown }[];
+      }[];
+      if (Array.isArray(arr))
+        for (const s of arr)
+          if (Array.isArray(s?.videos)) for (const v of s.videos) checkRef(v?.id, `${f}#${s.id}`);
+    } catch {
+      /* handled elsewhere */
+    }
+  }
+
+  videoProvenanceFailed = badChannels + dupIds + kindCollisions + danglingRefs;
+  if (videoProvenanceFailed === 0) {
+    console.log(
+      `  ✓ ${vManifest.entries.length} video entries — channels allowlisted, ids unique, entity refs resolve`,
+    );
+  } else {
+    console.error(
+      `  ${videoProvenanceFailed} video-provenance failure(s) (${badChannels} channel, ${dupIds} dup-id, ${kindCollisions} kind-collision, ${danglingRefs} dangling-ref)`,
     );
   }
 }
@@ -2066,6 +2180,7 @@ if (
     missionDriftFailed +
     missionThumbFailed +
     provenanceFailed +
+    videoProvenanceFailed +
     credBomFailed +
     linkProvenanceFailed +
     launchesFailed +

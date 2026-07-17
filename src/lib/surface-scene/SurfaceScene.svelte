@@ -75,6 +75,9 @@
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
+  import MediaPlayer from '$lib/components/MediaPlayer.svelte';
+  import VideoThumb from '$lib/components/VideoThumb.svelte';
+  import { getVideosForEntity, type VideoProvenanceEntry } from '$lib/video-provenance';
   import PanelHeroImage from '$lib/components/PanelHeroImage.svelte';
   import PanoramaOverlay from '$lib/components/PanoramaOverlay.svelte';
   import PanoramaCaptionOverlay from '$lib/components/PanoramaCaptionOverlay.svelte';
@@ -814,6 +817,9 @@
   let panelGallery: string[] = $state([]);
   let panelGalleryGrid = $derived(panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1));
   let panelLightbox = $state<string | null>(null);
+  // PRD-031 / RFC-033 S2 — linked videos interleaved into the site gallery.
+  let panelVideos = $state<VideoProvenanceEntry[]>([]);
+  let playerVideo = $state<VideoProvenanceEntry | null>(null);
   let lastSelectedId = $state<string | null>(null);
   // #PE path-B: rich multi-agency narrative panel (the STORY tab).
   // Loaded from static/data/site-stories/<id>.json. Null when no
@@ -824,6 +830,8 @@
       panelTab = 'overview';
       panelLightbox = null;
       panelGallery = [];
+      panelVideos = [];
+      playerVideo = null;
       panelStory = null;
       lastSelectedId = selected.id;
       loadPanelData({
@@ -834,6 +842,11 @@
         isStillCurrent: () => selected != null && selected.id === lastSelectedId,
         onGallery: (urls) => (panelGallery = urls),
         onStory: (story) => (panelStory = story),
+      });
+      const sid = selected.id;
+      void getVideosForEntity(sid).then((v) => {
+        if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId)
+          panelVideos = v;
       });
     }
   });
@@ -5968,7 +5981,7 @@ sample      ${debugInfo.projectedPxSample}`}
 
       <PanelTabRow
         tabs={buildSurfacePanelTabs({
-          hasGallery: panelGallery.length > 0,
+          hasGallery: panelGallery.length > 0 || panelVideos.length > 0,
           hasStory: !!panelStory,
           hasLinks: panelHasLinks,
         })}
@@ -6139,13 +6152,16 @@ sample      ${debugInfo.projectedPxSample}`}
           <LauncherFlightsWidget launcherId={selected.id} />
         {/if}
       {:else if panelTab === 'gallery'}
-        {#if panelGallery.length === 0}
+        {#if panelGallery.length === 0 && panelVideos.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
         {:else}
           <div
             class="gallery-grid"
             aria-label={m.panel_gallery_aria({ name: selected.name ?? selected.id })}
           >
+            {#each panelVideos as v (v.id)}
+              <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
+            {/each}
             {#each panelGalleryGrid as src (src)}
               <button
                 type="button"
@@ -6216,6 +6232,7 @@ sample      ${debugInfo.projectedPxSample}`}
   </Panel>
 
   <PanelLightbox src={panelLightbox} onClose={() => (panelLightbox = null)} />
+  <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 
   <!-- #290 Slice 6b — Earth-satellite info panel. Mounted only when
        the route configured earthOrbitalLayers; on /moon and /mars the

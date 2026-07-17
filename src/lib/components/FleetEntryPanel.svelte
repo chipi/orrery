@@ -9,6 +9,9 @@
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { MissionOrbitIcon } from '$lib/components/icons';
   import * as m from '$lib/paraglide/messages';
+  import MediaPlayer from './MediaPlayer.svelte';
+  import VideoThumb from './VideoThumb.svelte';
+  import { getVideosForEntity, type VideoProvenanceEntry } from '$lib/video-provenance';
 
   /**
    * Fleet detail panel. Six tabs (OVERVIEW / GALLERY / ANATOMY / CREW /
@@ -39,6 +42,9 @@
   let badges = $state<Record<string, string>>({});
   let lastId = $state<string | null>(null);
   let lightboxSrc = $state<string | null>(null);
+  // PRD-031 / RFC-033 S2 — linked videos interleaved into the fleet gallery.
+  let videos = $state<VideoProvenanceEntry[]>([]);
+  let playerVideo = $state<VideoProvenanceEntry | null>(null);
 
   $effect(() => {
     if (entry && entry.id !== lastId) {
@@ -46,6 +52,8 @@
       lastId = entry.id;
       lightboxSrc = null;
       gallery = [];
+      videos = [];
+      playerVideo = null;
       // Umami custom event: which fleet entries earn the click. /fleet
       // is a v0.6 launch route; this tells us which of the ~137 entries
       // pull engagement.
@@ -53,6 +61,9 @@
       void getBadges().then((b) => (badges = b));
       void galleryFetcher(entry.id).then((urls) => {
         if (entry && entry.id === lastId) gallery = urls;
+      });
+      void getVideosForEntity(entry.id).then((v) => {
+        if (entry && entry.id === lastId) videos = v;
       });
     }
   });
@@ -65,6 +76,7 @@
   let hasDiagram = $derived(diagramPath !== null);
 
   let hasGallery = $derived(gallery.length > 0);
+  let hasVideos = $derived(videos.length > 0);
   let hasFlights = $derived((entry?.flights?.length ?? 0) > 0);
   // Mission-link CTA on OVERVIEW renders whenever there's at least
   // one linked mission. MISSIONS tab is shown only when there are
@@ -247,7 +259,7 @@
           aria-selected={tab === 'missions'}>{hasFlights ? 'CREW' : 'MISSIONS'}</button
         >
       {/if}
-      {#if hasGallery}
+      {#if hasGallery || hasVideos}
         <button
           type="button"
           class:active={tab === 'gallery'}
@@ -395,8 +407,11 @@
 
         <p class="credit">{entry.credit}</p>
       {:else if tab === 'gallery'}
-        {#if hasGallery}
+        {#if hasGallery || hasVideos}
           <div class="gallery-grid">
+            {#each videos as v (v.id)}
+              <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
+            {/each}
             {#each gallery.slice(1) as src (src)}
               <button
                 type="button"
@@ -569,6 +584,8 @@
     <img src={lightboxSrc} alt="" loading="lazy" decoding="async" />
   </button>
 {/if}
+
+<MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 
 <style>
   .head {

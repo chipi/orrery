@@ -172,6 +172,55 @@
   display: block;
 }
 
+/* Video tile (PRD-031 / RFC-033 S1) — a poster still + play affordance that
+   opens the MediaPlayer modal. No <iframe> at rest: the tile is a plain image,
+   so the gallery mounts zero embeds until the user clicks. */
+.video-thumb {
+  position: relative;
+}
+.video-poster-fallback {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(68, 102, 255, 0.28), transparent 60%),
+    linear-gradient(160deg, #12213f, #0a0f1e);
+}
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(8, 12, 22, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 15px;
+  line-height: 40px;
+  text-align: center;
+  padding-left: 3px;
+  pointer-events: none;
+  transition: background-color 120ms;
+}
+.video-thumb:hover .video-play,
+.video-thumb:focus-visible .video-play {
+  background: rgba(68, 102, 255, 0.85);
+}
+.video-duration {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(8, 12, 22, 0.82);
+  color: #dfe6f2;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  pointer-events: none;
+}
+
 /* Insignia badge (PRD-029) — a "special" tile at the end of the gallery +
    a small badge in the panel header. Present only where a badge is sourced;
    the tile self-removes on 404. */

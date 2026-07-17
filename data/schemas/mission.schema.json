@@ -158,6 +158,21 @@
         }
       }
     },
+    "videos": {
+      "type": "array",
+      "description": "PRD-031 / RFC-033: linked (never hosted) video clips owned by this mission. Each {id} resolves in static/data/video-provenance.json; ordering here is the authored gallery placement.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^vid-[a-f0-9]{12}$"
+          }
+        }
+      }
+    },
     "flight_data_quality": {
       "enum": [
         "measured",

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <title>Orrery</title>
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <link href="/orrery/_app/immutable/entry/start.DqVIeqE7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CZaXDlEh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/zEB-6H-K.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.v7NF5zg7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/HclGiUj8.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D3Yf8Niw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B2-DRRjD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.DJ2senTU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvXlMAJS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BznbMS76.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/nsxhv0IP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CexYrVr-.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Ca72aB6s.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DUqeD0-e.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DbDP2Qkd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/eZK5-0Xu.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/z32mCZcO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/poz0EnlD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DIxOEHv62.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B_vN8rZ02.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-dFY9B52.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BZF0S92n2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKMRGM-U2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/jFGYgkM92.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B-KLceGR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DrM5Os-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bsq-kA9Q.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvTmgAOF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/zBrnIOIN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B9Uk3msQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CRrh_GCI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/29.CE5PSaOQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DEtlhtzP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/plQCMjbE.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DSWjdQKV.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5pYGABt.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DU3J6iTp2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Zl5wb2bA2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CrdB-53O2.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--jp09wb--><!----><title>ライブ · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.BgZ3aosy.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/MediaPlayer.C4AqPvMc.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/29.Cqyus1lA.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><nav aria-label="メインナビゲーション" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="オリリー — ホーム"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">ホーム ></a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">探索<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">フリガナ</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">プラン</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">カタログ<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">学習<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="ナビゲーションメニューを開く" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="ツアーを始める" aria-pressed="false" title="ツアーを始める"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="日本語 English" aria-haspopup="listbox" aria-expanded="false" title="言語を選択">JA</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="科学レンズを切り替え (unavailable on this page)" aria-pressed="false" title="物理レイヤーを表示 (軌道力学オーバーレイ) (unavailable on this page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="高コントラストモードを切り替える" aria-pressed="false" title="高コントラストモードを切り替える">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="設定" aria-haspopup="dialog" aria-expanded="false" title="設定"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="このビューを共有" title="このビューを共有"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main class="svelte-12qhfyh"><!--[-1--><!--[--><section class="live svelte-jp09wb" aria-labelledby="live-title" data-route-ready="true"><header class="live-head svelte-jp09wb"><h1 id="live-title" class="svelte-jp09wb">ライブ</h1> <p class="live-intro svelte-jp09wb">宇宙からのリアルタイム映像とブロードキャスト — 常設ISS配信と、現在または間もなく行われる打ち上げ</p></header> <!--[--><!--]--> <!--[-1--><!--]--> <section class="launches svelte-jp09wb" aria-labelledby="live-launches"><h2 id="live-launches" class="svelte-jp09wb">打ち上げブロードキャスト</h2> <!--[0--><p class="muted svelte-jp09wb">読み込み中…</p><!--]--> <p class="all-launches svelte-jp09wb"><a href="/orrery/missions/launches" class="svelte-jp09wb">打上げカレンダー全体を見る →</a></p></section></section> <!--[-1--><!--]--><!----><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="サイトフッター"><nav class="footer-menu svelte-12qhfyh" aria-label="フッターリンク"><a class="footer-link svelte-12qhfyh" href="/orrery/gallery">ギャラリー</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">クレジット</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">奥付</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">ライブラリー</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">概要</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="概要"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">ライセンス</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">フィードバック</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="ビルドバージョン+デプロイ日時（GitHubのCHANGELOGを開く）: v0.8-wip · 2026-07-17" hreflang="en">v0.8-wip</a></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_u5de1i = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_u5de1i.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.DqVIeqE7.js"),
+							import("/orrery/_app/immutable/entry/app.v7NF5zg7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 29],
+									data: [null,null],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

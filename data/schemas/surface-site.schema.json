@@ -27,6 +27,18 @@
     ],
     "properties": {
       "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "videos": {
+        "type": "array",
+        "description": "PRD-031 / RFC-033: linked (never hosted) video clips owned by this landing site. Each {id} resolves in static/data/video-provenance.json.",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id"],
+          "properties": {
+            "id": { "type": "string", "pattern": "^vid-[a-f0-9]{12}$" }
+          }
+        }
+      },
       "kind": {
         "enum": ["surface", "orbiter"],
         "description": "surface = lander/rover/crashed (lat,lon required); orbiter = circling (altitude_km, inclination_deg required)"

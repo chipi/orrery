@@ -582,6 +582,25 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       }
     }
 
+    // Soft-insertion stopgap (#416): a very-low-TWR final stage can climb to
+    // orbital altitude but not close the orbit (needs PEG). Rather than burn
+    // on into a re-entry, cut the engine once it's over the top (descending
+    // from apoapsis, above the Kármán line, on a still-sub-orbital arc) and
+    // hand off to /fly there. reachedOrbit stays honestly false — no orbit
+    // was achieved — but the ascent reads as reaching space instead of
+    // cratering. Removed once PEG lands.
+    if (
+      !orbitSeen &&
+      stageIndex === profile.stages.length - 1 &&
+      alt >= KARMAN_LINE_M &&
+      velUp < -100 &&
+      perigeeAltM < 0
+    ) {
+      pushEvent('seco', `${profile.stages[stageIndex].name} — apoapsis (insertion pending PEG)`);
+      stageIndex = -1;
+      secoT = t;
+    }
+
     // Sample the trajectory.
     if (t >= nextSampleT) {
       states.push(snapshot());

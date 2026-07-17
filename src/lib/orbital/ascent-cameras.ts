@@ -1,5 +1,5 @@
 /**
- * Scene 0 camera shot language (RFC-033 §7 · epic #412 · L-E). A launch
+ * Scene 0 camera shot language (RFC-034 §7 · epic #412 · L-E). A launch
  * is the most codified event in spaceflight: pad-wide → tower-clear →
  * tracking → onboard-looking-down → staging beauty → chase → orbit limb.
  * This module is the pure, testable analogue of the flyby montage

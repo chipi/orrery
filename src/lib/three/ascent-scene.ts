@@ -1,5 +1,5 @@
 /**
- * Scene 0 — the /fly launch/ascent render (RFC-033 · epic #412).
+ * Scene 0 — the /fly launch/ascent render (RFC-034 · epic #412).
  * Consumes the headless ascent trajectory (integrateAscent) and stages
  * a launch-site-local Three.js scene: a curved lit Earth (textured, with
  * a night side) that recedes, pad + tower, a multi-stage vehicle that
@@ -7,7 +7,7 @@
  * glow, and a star field. Kilometre scene units — Earth centred a full
  * radius below the pad so the launch site sits at the origin and every
  * vehicle-scale coordinate stays small (float-precision-safe), the "own
- * frame" of RFC-033 L-A.
+ * frame" of RFC-034 L-A.
  *
  * Dev-harness first (/dev/ascent); wired into /fly at S6. The vehicle is
  * a stylised procedural placeholder at an exaggerated scale so it reads

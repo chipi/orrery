@@ -240,7 +240,7 @@
   );
   let missionEvents: MissionEvent[] = $state(defaultScenarioOverlay.events as MissionEvent[]);
 
-  // ─── Launch pre-roll (RFC-033 §11 / Track A) — USER CHOICE from the opening ─
+  // ─── Launch pre-roll (RFC-034 §11 / Track A) — USER CHOICE from the opening ─
   // The #86 opening cinematic shows as before (planetary-orbits backdrop). When
   // the mission's launcher has an ascent profile, the opening offers START WITH
   // LAUNCH (plays the launch act → warp → transfer) alongside PROCEED TO

@@ -1,5 +1,5 @@
 /**
- * Flagship launch-profile guard (RFC-033 §6 · epic #412 · Track A).
+ * Flagship launch-profile guard (RFC-034 §6 · epic #412 · Track A).
  *
  * Two tiers:
  *

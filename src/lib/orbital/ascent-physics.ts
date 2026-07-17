@@ -1,15 +1,15 @@
 /**
  * Powered-ascent engine — the headless physics core for the /fly launch
- * act (RFC-033 · epic #412 · Scene 0). Pure functions, no Three.js, no
+ * act (RFC-034 · epic #412 · Scene 0). Pure functions, no Three.js, no
  * DOM: the same module drives both the animated Scene 0 render AND the
- * /plan take-off planner (RFC-033 L-I), exactly as fly-physics.ts is
+ * /plan take-off planner (RFC-034 L-I), exactly as fly-physics.ts is
  * shared between /fly and /plan.
  *
  * Model (S1): a 2-DOF planar gravity-turn integrated in SI units. The
  * vehicle flies an OPEN-LOOP pitch program (commanded flight-path angle
  * vs. time) — the load-bearing simplification that keeps the trajectory
  * predictable and teachable; a closed-loop guidance law is a later
- * refinement (RFC-033 §10 / L-H). Thrust interpolates between sea-level
+ * refinement (RFC-034 §10 / L-H). Thrust interpolates between sea-level
  * and vacuum by ambient pressure; drag uses a single-exponential
  * atmosphere; stages jettison on propellant exhaustion. The engine
  * books the three teachable Δv losses (gravity / drag / steering) that
@@ -54,7 +54,7 @@ export interface LaunchStage {
 }
 
 /**
- * Strap-on boosters (RFC-033 §5.2 · #415 Track 3). `count` identical boosters
+ * Strap-on boosters (RFC-034 §5.2 · #415 Track 3). `count` identical boosters
  * ignite at liftoff and burn IN PARALLEL with the first stage (the core), then
  * jettison when their propellant is spent — the core keeps firing throughout.
  * Masses/thrust/Isp are PER booster. Covers Ariane 5 EAP, H-IIA SRB-A, the R-7
@@ -75,7 +75,7 @@ export interface LaunchBoosters {
   chamberTempK?: number;
 }
 
-/** A launch vehicle's ascent profile. See RFC-033 §6 for the shipped JSON schema. */
+/** A launch vehicle's ascent profile. See RFC-034 §6 for the shipped JSON schema. */
 export interface LaunchProfile {
   id: string;
   name: string;
@@ -321,7 +321,7 @@ export function pitchAngleRad(profile: LaunchProfile, t: number): number {
   return (last[1] * Math.PI) / 180;
 }
 
-// ─── Closed-loop insertion guidance (RFC-033 §6 · #415 Track 1) ──────
+// ─── Closed-loop insertion guidance (RFC-034 §6 · #415 Track 1) ──────
 
 /**
  * Closed-loop insertion guidance tuning. One shared set of gains flies every
@@ -758,7 +758,7 @@ export function sampleAscentAt(states: AscentState[], t: number): AscentState {
   };
 }
 
-// ─── /plan reuse: headless take-off summary (RFC-033 L-I / S10) ──────
+// ─── /plan reuse: headless take-off summary (RFC-034 L-I / S10) ──────
 
 /** Compact take-off planning summary — the shape /plan consumes. */
 export interface AscentPlanSummary {
@@ -777,7 +777,7 @@ export interface AscentPlanSummary {
 /**
  * Headless take-off summary for the /plan configurator — "can this
  * rocket lift this payload to orbit, and with how much margin?" Reuses
- * the same integrator as Scene 0 (RFC-033 L-I): no rendering, just the
+ * the same integrator as Scene 0 (RFC-034 L-I): no rendering, just the
  * planning numbers.
  */
 export function ascentToOrbit(profile: LaunchProfile, opts?: AscentOptions): AscentPlanSummary {

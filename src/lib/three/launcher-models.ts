@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 /**
- * Per-launcher procedural rocket models for /fly's Scene 0 (RFC-033 §8 S11).
+ * Per-launcher procedural rocket models for /fly's Scene 0 (RFC-034 §8 S11).
  * Each builder composes Three.js primitives into a recognisable silhouette —
  * Saturn V's tapered stack, Soyuz's four strap-ons, Ariane 5's side boosters —
  * so a launch shows the actual vehicle instead of a generic body, the same

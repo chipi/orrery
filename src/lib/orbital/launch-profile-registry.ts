@@ -1,10 +1,10 @@
 /**
- * Launch-profile registry (RFC-033 §6 · epic #412 · Track A).
+ * Launch-profile registry (RFC-034 §6 · epic #412 · Track A).
  *
  * Resolves a mission's launch vehicle → its ascent LaunchProfile, keyed on the
  * `fleet_refs` entry with `role: "launcher"`. Flagship profiles ship as JSON
  * under static/data/launch-profiles/<id>.json and are fetched + shape-validated
- * on demand. The generic 2-stage fallback (RFC-033 S7) grows from here.
+ * on demand. The generic 2-stage fallback (RFC-034 S7) grows from here.
  */
 
 import type { LaunchProfile } from './ascent-physics';
@@ -85,7 +85,7 @@ function prettyName(id: string): string {
 }
 
 /**
- * Generic 2-stage LEO fallback (RFC-033 S7) — a representative medium launcher
+ * Generic 2-stage LEO fallback (RFC-034 S7) — a representative medium launcher
  * used when no flagship profile exists, so every mission with a launcher gets a
  * launch act. Physically plausible (reaches orbit with margin) but NOT vehicle-
  * accurate; surfaced with a "representative" tier so it's never mistaken for real.

@@ -1,10 +1,10 @@
 /**
- * Multi-scale journey clock for the /fly launch act (RFC-033 §4 · epic
+ * Multi-scale journey clock for the /fly launch act (RFC-034 §4 · epic
  * #412). The launch is ~600 s; the cruise is months. A single linear
  * clock makes the ascent invisible, so the scrubber is a PIECEWISE map:
  * the ascent act occupies a fixed fraction of the bar (seconds-dense),
  * the cruise occupies the rest (days-dense). One continuous drag from
- * pad to destination — RFC-033's core promise.
+ * pad to destination — RFC-034's core promise.
  *
  * Pure functions, no DOM: the render, the scrubber UI, and tests all
  * consume the same map.

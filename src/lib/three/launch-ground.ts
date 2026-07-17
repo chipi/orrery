@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 /**
- * Launch-site ground detail (RFC-033 S8).
+ * Launch-site ground detail (RFC-034 S8).
  *
  * The global Earth daymap is ~10 km per texel — far too coarse for a pad-level
  * view (we magnify a single texel ~1000×, so it reads as blurry blue nothing).

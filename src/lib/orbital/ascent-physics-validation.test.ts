@@ -1,5 +1,5 @@
 /**
- * Falcon 9 ascent validation harness (RFC-033 §5 · epic #412 · S2).
+ * Falcon 9 ascent validation harness (RFC-034 §5 · epic #412 · S2).
  *
  * Anchors the integrated ascent to published Falcon 9 milestones so a
  * regression in the equations of motion OR the profile data fails CI —

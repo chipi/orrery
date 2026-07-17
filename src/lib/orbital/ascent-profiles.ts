@@ -1,5 +1,5 @@
 /**
- * Sample launch-vehicle profiles for the ascent engine (RFC-033 · epic
+ * Sample launch-vehicle profiles for the ascent engine (RFC-034 · epic
  * #412). S1 ships one hand-typed flagship inline; the shipped per-vehicle
  * JSON library + loader (keyed on fleet_refs launcher id) is S3.
  *

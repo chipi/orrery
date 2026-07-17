@@ -1,5 +1,5 @@
 <!--
-  LaunchScene — the /fly launch pre-roll (RFC-033 · epic #412 · Track A).
+  LaunchScene — the /fly launch pre-roll (RFC-034 · epic #412 · Track A).
 
   A self-contained, props-driven player: it integrates the ascent physics for a
   LaunchProfile and renders Scene 0 (Three.js) with the broadcast HUD — T-minus
@@ -105,7 +105,7 @@
   let hud = $state({ altKm: 0, velKms: 0, stage: 'S1', met: 'T-00:12' });
   let liveState = $state<AscentState>(summary.states[0]); // full state → telemetry console
   // Re-basing warp: on completion the camera pulls back hard (Earth → a dot) +
-  // a flash, then onComplete reveals the transfer scene (RFC-033 §11.3).
+  // a flash, then onComplete reveals the transfer scene (RFC-034 §11.3).
   let warping = $state(false);
   let warpProgress = $state(0);
   const WARP_S = 1.6;

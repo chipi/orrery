@@ -1,6 +1,6 @@
 # Launch mockups — S0 direction reference (LOCKED 2026-07-16)
 
-Concept frames for the `/fly` launch/ascent act (PRD-031 · RFC-033 · epic #412). **Direction approved** — this is the reference the ascent scene builds to.
+Concept frames for the `/fly` launch/ascent act (PRD-032 · RFC-034 · epic #412). **Direction approved** — this is the reference the ascent scene builds to.
 
 | # | Frame | Beat | Demonstrates |
 |---|---|---|---|
@@ -14,6 +14,6 @@ Concept frames for the `/fly` launch/ascent act (PRD-031 · RFC-033 · epic #412
 - **Scene:** photoreal-leaning real-time 3D — volumetric exhaust, PBR lighting, real Earth curvature + thin glowing atmospheric limb, deep-black space. Aimed at *where `/fly` goes next*, not today's look.
 - **HUD:** restrained, "live-broadcast" register. Cyan-white hairline vector graphics + small monospace telemetry readouts on near-black translucent panels. A **slim timeline scrubber along the bottom edge** is the constant.
 - **Physics made visible:** force vectors drawn on the vehicle (thrust green, weight red, drag to follow), gauges for the teachable quantities (TWR, Q, mass ratio), per-beat labels.
-- **Bar:** broadcast-grade immersion (a live launch on TV), never a schematic — PRD-031 north star.
+- **Bar:** broadcast-grade immersion (a live launch on TV), never a schematic — PRD-032 north star.
 
 Source: Higgsfield `nano_banana_2`, 16:9, 1k. Generated 2026-07-16.

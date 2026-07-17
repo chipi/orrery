@@ -1,5 +1,5 @@
 <!--
-  Dev-only Scene 0 harness for the /fly launch act (PRD-031 / RFC-033 / epic #412).
+  Dev-only Scene 0 harness for the /fly launch act (PRD-032 / RFC-034 / epic #412).
 
   Plays the REAL ascent engine (integrateAscent over the Falcon 9 sample) through
   the Three.js Scene-0 render with a NASA/SpaceX-broadcast-style HUD: a T-minus

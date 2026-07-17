@@ -35,6 +35,10 @@
   "flight_data_quality": "sparse",
   "fleet_refs": [
     {
+      "id": "long-march-3b",
+      "role": "launcher"
+    },
+    {
       "id": "change-3",
       "role": "spacecraft"
     },

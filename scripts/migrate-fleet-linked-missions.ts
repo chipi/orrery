@@ -63,10 +63,12 @@ async function main() {
   for (const path of missionFiles) {
     const mission = JSON.parse(await readFile(path, 'utf-8')) as Mission;
     if (!mission.fleet_refs) continue;
-    for (const ref of mission.fleet_refs) {
-      const list = reverseMap.get(ref.id) ?? [];
+    // Dedup fleet ids per mission — a vehicle can appear in two roles
+    // (e.g. Starship is both launcher and spacecraft) but must be listed once.
+    for (const fleetId of new Set(mission.fleet_refs.map((r) => r.id))) {
+      const list = reverseMap.get(fleetId) ?? [];
       list.push(mission.id);
-      reverseMap.set(ref.id, list);
+      reverseMap.set(fleetId, list);
     }
   }
 

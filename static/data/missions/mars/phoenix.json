@@ -35,6 +35,10 @@
   "flight_data_quality": "measured",
   "fleet_refs": [
     {
+      "id": "delta-ii",
+      "role": "launcher"
+    },
+    {
       "id": "phoenix",
       "role": "spacecraft"
     }

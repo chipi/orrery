@@ -40,6 +40,10 @@
   "flight_data_quality": "sparse",
   "fleet_refs": [
     {
+      "id": "proton-k",
+      "role": "launcher"
+    },
+    {
       "id": "mars-3",
       "role": "spacecraft"
     }

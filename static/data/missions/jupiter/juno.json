@@ -55,6 +55,10 @@
   ],
   "fleet_refs": [
     {
+      "id": "atlas-v",
+      "role": "launcher"
+    },
+    {
       "id": "juno",
       "role": "spacecraft"
     }

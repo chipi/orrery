@@ -40,6 +40,10 @@
   "flight_data_quality": "measured",
   "fleet_refs": [
     {
+      "id": "long-march-3b",
+      "role": "launcher"
+    },
+    {
       "id": "change-4",
       "role": "spacecraft"
     },

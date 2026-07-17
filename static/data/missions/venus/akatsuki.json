@@ -35,6 +35,10 @@
   "flight_data_quality": "measured",
   "fleet_refs": [
     {
+      "id": "h-iia",
+      "role": "launcher"
+    },
+    {
       "id": "akatsuki",
       "role": "spacecraft"
     }

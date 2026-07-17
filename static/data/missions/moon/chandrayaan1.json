@@ -738,6 +738,10 @@
   },
   "fleet_refs": [
     {
+      "id": "pslv-xl",
+      "role": "launcher"
+    },
+    {
       "id": "sriharikota-slp",
       "role": "launch-site"
     }

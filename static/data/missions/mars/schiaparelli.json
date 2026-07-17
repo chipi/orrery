@@ -45,6 +45,10 @@
   "flight_data_quality": "sparse",
   "fleet_refs": [
     {
+      "id": "proton-m",
+      "role": "launcher"
+    },
+    {
       "id": "schiaparelli",
       "role": "spacecraft"
     }

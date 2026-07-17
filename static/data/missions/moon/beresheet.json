@@ -40,6 +40,10 @@
   "flight_data_quality": "sparse",
   "fleet_refs": [
     {
+      "id": "falcon-9",
+      "role": "launcher"
+    },
+    {
       "id": "beresheet",
       "role": "spacecraft"
     }

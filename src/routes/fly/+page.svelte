@@ -274,7 +274,7 @@
       return;
     }
     loadedLauncherId = launcherId;
-    void loadLaunchProfile(launcherId, fetch, base).then((p) => {
+    void loadLaunchProfile(launcherId, fetch, base, mission.vehicle).then((p) => {
       launchProfile = p;
       showLaunch = p != null && !launchDismissed && !launchOptOut;
     });

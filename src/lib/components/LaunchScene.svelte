@@ -240,7 +240,10 @@
   {/if}
 
   <div class="dossier" class:open={dossierOpen}>
-    <div class="dossier-title">MISSION DOSSIER</div>
+    <div class="dossier-title">
+      MISSION DOSSIER
+      {#if profile.source_tier === 'generic'}<span class="rep">REPRESENTATIVE</span>{/if}
+    </div>
     <dl>
       <dt>VEHICLE</dt><dd>{profile.name}</dd>
       <dt>LAUNCH SITE</dt><dd>{mission.site}</dd>
@@ -394,6 +397,17 @@
     letter-spacing: 2px;
     color: #5ac8ff;
     margin: 0 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .rep {
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #ffbe4a;
+    border: 1px solid rgba(255, 190, 74, 0.5);
+    border-radius: 3px;
+    padding: 1px 4px;
   }
   .dossier dl {
     display: grid;

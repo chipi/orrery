@@ -9,8 +9,8 @@
 
 import type { LaunchProfile } from './ascent-physics';
 
-/** Launcher ids that have a shipped profile — the synchronous gate. */
-const KNOWN_PROFILE_IDS = new Set<string>(['falcon-9']);
+/** Launcher ids with a hand-authored flagship JSON (real per-vehicle data). */
+const FLAGSHIP_IDS = new Set<string>(['falcon-9', 'atlas-v', 'saturn-v']);
 
 interface FleetRef {
   id: string;
@@ -22,10 +22,41 @@ export function missionLauncherId(fleetRefs: FleetRef[] | undefined): string | u
   return fleetRefs?.find((r) => r.role === 'launcher')?.id;
 }
 
-/** True (synchronously) when a mission's launcher has a shipped ascent profile. */
+/** True when a mission has ANY launcher — flagship or generic-fallback (RFC-033 S7). */
 export function hasLaunchProfile(fleetRefs: FleetRef[] | undefined): boolean {
-  const id = missionLauncherId(fleetRefs);
-  return id != null && KNOWN_PROFILE_IDS.has(id);
+  return missionLauncherId(fleetRefs) != null;
+}
+
+/** Title-case a launcher id ("long-march-5" → "Long March 5", "pslv-xl" → "PSLV XL"). */
+function prettyName(id: string): string {
+  return id
+    .split('-')
+    .map((s) => (s.length <= 3 || /\d/.test(s) ? s.toUpperCase() : s[0].toUpperCase() + s.slice(1)))
+    .join(' ');
+}
+
+/**
+ * Generic 2-stage LEO fallback (RFC-033 S7) — a representative medium launcher
+ * used when no flagship profile exists, so every mission with a launcher gets a
+ * launch act. Physically plausible (reaches orbit with margin) but NOT vehicle-
+ * accurate; surfaced with a "representative" tier so it's never mistaken for real.
+ */
+export function buildGenericProfile(launcherId: string, displayName?: string): LaunchProfile {
+  return {
+    id: launcherId,
+    name: displayName ?? prettyName(launcherId),
+    source_tier: 'generic',
+    payloadKg: 6000,
+    fairingKg: 1500,
+    fairingJettisonAltM: 110000,
+    refAreaM2: 10,
+    cd: 0.3,
+    pitchProgram: [[0, 90], [14, 88], [45, 66], [120, 42], [190, 22], [280, 10]],
+    stages: [
+      { name: 'S1', wetKg: 290000, dryKg: 22000, thrustSlKN: 4100, thrustVacKN: 4500, ispSlS: 285, ispVacS: 320, engines: 1, chamberTempK: 3400 },
+      { name: 'S2', wetKg: 28000, dryKg: 2800, thrustVacKN: 300, ispVacS: 355, engines: 1, chamberTempK: 3300 },
+    ],
+  };
 }
 
 /** Minimal fail-closed shape check for a loaded profile. */
@@ -51,14 +82,19 @@ export async function loadLaunchProfile(
   launcherId: string | undefined | null,
   fetchFn: typeof fetch = fetch,
   baseUrl = '',
+  displayName?: string,
 ): Promise<LaunchProfile | null> {
-  if (!launcherId || !KNOWN_PROFILE_IDS.has(launcherId)) return null;
-  try {
-    const res = await fetchFn(`${baseUrl}/data/launch-profiles/${launcherId}.json`);
-    if (!res.ok) return null;
-    const data: unknown = await res.json();
-    return isValidProfile(data) ? data : null;
-  } catch {
-    return null;
+  if (!launcherId) return null;
+  if (FLAGSHIP_IDS.has(launcherId)) {
+    try {
+      const res = await fetchFn(`${baseUrl}/data/launch-profiles/${launcherId}.json`);
+      if (res.ok) {
+        const data: unknown = await res.json();
+        if (isValidProfile(data)) return data;
+      }
+    } catch {
+      // fall through to the generic fallback
+    }
   }
+  return buildGenericProfile(launcherId, displayName);
 }

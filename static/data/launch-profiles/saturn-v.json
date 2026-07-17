@@ -1,0 +1,47 @@
+{
+  "id": "saturn-v",
+  "name": "Saturn V",
+  "source_tier": "flagship",
+  "payloadKg": 45000,
+  "fairingKg": 4000,
+  "fairingJettisonAltM": 100000,
+  "refAreaM2": 78.5,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.6, "lon": -80.6, "name": "LC-39A · Kennedy Space Center" },
+  "pitchProgram": [[0, 90], [13, 89], [60, 70], [150, 45], [300, 25], [450, 12], [600, 5]],
+  "stages": [
+    {
+      "name": "S-IC",
+      "wetKg": 2290000,
+      "dryKg": 130000,
+      "thrustSlKN": 34500,
+      "thrustVacKN": 38700,
+      "ispSlS": 263,
+      "ispVacS": 304,
+      "engines": 5,
+      "chamberTempK": 3500
+    },
+    {
+      "name": "S-II",
+      "wetKg": 496200,
+      "dryKg": 40100,
+      "thrustVacKN": 5141,
+      "ispVacS": 421,
+      "engines": 5,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "S-IVB",
+      "wetKg": 119900,
+      "dryKg": 13500,
+      "thrustVacKN": 1033,
+      "ispVacS": 421,
+      "engines": 1,
+      "chamberTempK": 3300
+    }
+  ],
+  "provenance": [
+    { "l": "NASA — Saturn V Flight Manual (SA-503)", "u": "https://history.nasa.gov/afj/ap08fj/pdf/sa503-flightmanual.pdf" },
+    { "l": "Spaceflight101 — Saturn V", "u": "https://spaceflight101.com/spacerockets/saturn-v/" }
+  ]
+}

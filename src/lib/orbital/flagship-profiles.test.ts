@@ -47,6 +47,7 @@ const ALL_FLAGSHIPS = [
   'vostok-k',
   'ariane-5',
   'h-iia',
+  'atlas-lv-3b',
 ];
 const GENUINE_ORBIT = [
   'falcon-9',
@@ -55,6 +56,7 @@ const GENUINE_ORBIT = [
   'proton-k',
   'saturn-v',
   'vostok-k',
+  'atlas-lv-3b',
 ];
 
 describe.each(ALL_FLAGSHIPS)('flagship profile %s — data shape', (id) => {

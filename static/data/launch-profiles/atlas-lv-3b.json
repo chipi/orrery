@@ -1,0 +1,38 @@
+{
+  "id": "atlas-lv-3b",
+  "name": "Atlas LV-3B (Mercury-Atlas)",
+  "source_tier": "flagship",
+  "payloadKg": 1355,
+  "fairingKg": 0,
+  "fairingJettisonAltM": 100000,
+  "refAreaM2": 7,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.47, "lon": -80.57, "name": "LC-14 · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [13, 88], [50, 64], [130, 40], [200, 20], [290, 6]],
+  "stages": [
+    {
+      "name": "Booster section",
+      "wetKg": 87170,
+      "dryKg": 3170,
+      "thrustSlKN": 1587,
+      "thrustVacKN": 1750,
+      "ispSlS": 250,
+      "ispVacS": 290,
+      "engines": 3,
+      "chamberTempK": 3400
+    },
+    {
+      "name": "Sustainer",
+      "wetKg": 29660,
+      "dryKg": 2660,
+      "thrustVacKN": 363,
+      "ispVacS": 309,
+      "engines": 1,
+      "chamberTempK": 3400
+    }
+  ],
+  "provenance": [
+    { "l": "NASA — Mercury-Atlas / Project Mercury Familiarization Manual", "u": "https://ntrs.nasa.gov/citations/19740074974" },
+    { "l": "Spaceflight101 / Astronautix — Atlas LV-3B", "u": "http://www.astronautix.com/a/atlaslv-3b.html" }
+  ]
+}

@@ -45,8 +45,12 @@
     mission: MissionDossier;
     /** Fired when the ascent reaches orbit or the user clicks CONTINUE. */
     onComplete?: () => void;
+    /** Shared with /fly — hides the launch HUD set (same toggle as the sim HUD). */
+    hudHidden?: boolean;
+    /** Flip the shared HUD-hidden state. */
+    onToggleHud?: () => void;
   }
-  let { profile, mission, onComplete }: Props = $props();
+  let { profile, mission, onComplete, hudHidden = false, onToggleHud }: Props = $props();
 
   const VEH_LEN = 1.2;
   const T_MINUS = 12;
@@ -216,11 +220,24 @@
   });
 </script>
 
-<div class="launch">
+<div class="launch" class:hud-hidden={hudHidden}>
   <div class="stage" bind:this={container}></div>
 
   {#if warping}
     <div class="warp" style="opacity:{Math.min(1, warpProgress / 0.75)}"></div>
+  {/if}
+
+  <!-- HUD collapse — the shared toggle (same one that manages the sim HUD). -->
+  {#if !warping}
+    <button
+      class="hud-collapse"
+      onclick={() => onToggleHud?.()}
+      aria-label={hudHidden ? 'Show HUD panels' : 'Hide HUD panels'}
+      aria-pressed={hudHidden}
+      title={hudHidden ? 'Show HUD' : 'Hide HUD'}
+    >
+      {hudHidden ? '◐' : '◑'}
+    </button>
   {/if}
 
   <div class="header">
@@ -286,6 +303,44 @@
   .stage {
     position: absolute;
     inset: 0;
+  }
+  /* HUD-hidden — the shared toggle collapses the launch HUD set (matches the
+     sim HUD's hudHidden), leaving just the scene + the collapse + skip buttons. */
+  .header,
+  .clock,
+  .count,
+  .dossier,
+  .timeline,
+  .readouts {
+    transition: opacity 0.3s ease;
+  }
+  .launch.hud-hidden .header,
+  .launch.hud-hidden .clock,
+  .launch.hud-hidden .count,
+  .launch.hud-hidden .dossier,
+  .launch.hud-hidden .timeline,
+  .launch.hud-hidden .readouts {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .hud-collapse {
+    position: absolute;
+    left: 22px;
+    bottom: 26px;
+    z-index: 6;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(10, 20, 34, 0.82);
+    border: 1px solid rgba(127, 223, 255, 0.4);
+    color: #cfeaff;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .hud-collapse:hover {
+    background: rgba(90, 200, 255, 0.25);
+    color: #fff;
   }
   .warp {
     position: absolute;

@@ -240,44 +240,42 @@
   );
   let missionEvents: MissionEvent[] = $state(defaultScenarioOverlay.events as MissionEvent[]);
 
-  // ─── Launch pre-roll (RFC-033 §11 / Track A) — AUTO-PLAY, opt-out ?launch=0 ─
-  // When the mission's fleet_refs launcher has a shipped ascent profile, the
-  // launch act plays first as a self-contained overlay (suppressing the #86
-  // opening); the warp/SKIP hands off to the transfer scene. Missions without a
-  // profile — and ?launch=0 — get the unchanged default /fly.
-  const launchOptOut =
-    typeof window !== 'undefined' &&
-    new URLSearchParams(window.location.search).get('launch') === '0';
+  // ─── Launch pre-roll (RFC-033 §11 / Track A) — USER CHOICE from the opening ─
+  // The #86 opening cinematic shows as before (planetary-orbits backdrop). When
+  // the mission's launcher has an ascent profile, the opening offers START WITH
+  // LAUNCH (plays the launch act → warp → transfer) alongside PROCEED TO
+  // SIMULATION (fly from mid-point, exactly as before). ?launch=1 auto-starts.
   let showLaunch = $state(false);
-  let launchDismissed = $state(false);
   let launchProfile = $state<LaunchProfile | null>(null);
-  let loadedLauncherId: string | null = null;
-  // Whether a launch WILL play (known synchronously) — gates the opening card.
-  let launchIntends = $derived(
-    !launchOptOut && !launchDismissed && hasLaunchProfile(mission.fleet_refs),
-  );
+  let launchAvailable = $derived(hasLaunchProfile(mission.fleet_refs));
   let launchDossier = $derived({
     name: mission.name,
     agency: mission.agency ?? mission.agency_full ?? '',
     site: launchProfile?.launchSite?.name ?? 'Launch complex',
     destination: mission.arr_label ?? '',
   });
-  // Load the profile async when a launch is intended for the current mission.
-  $effect(() => {
-    if (!launchIntends) {
-      showLaunch = false;
-      return;
-    }
-    const launcherId = missionLauncherId(mission.fleet_refs)!;
-    if (loadedLauncherId === launcherId) {
-      showLaunch = launchProfile != null;
-      return;
-    }
-    loadedLauncherId = launcherId;
+  function startLaunch() {
+    const launcherId = missionLauncherId(mission.fleet_refs);
+    if (!launcherId) return;
+    // Load the profile first, THEN swap the opening for the launch overlay — no
+    // flash of the cruise scene during the fetch.
     void loadLaunchProfile(launcherId, fetch, base, mission.vehicle).then((p) => {
+      if (!p) return;
       launchProfile = p;
-      showLaunch = p != null && !launchDismissed && !launchOptOut;
+      showLaunch = true;
+      openingActive = false;
     });
+  }
+  // ?launch=1 deep-link → auto-start the launch once the mission is ready.
+  const wantLaunchDeep =
+    typeof window !== 'undefined' &&
+    new URLSearchParams(window.location.search).get('launch') === '1';
+  let launchAutoStarted = false;
+  $effect(() => {
+    if (wantLaunchDeep && !launchAutoStarted && launchAvailable) {
+      launchAutoStarted = true;
+      startLaunch();
+    }
   });
 
   // ─── Rendering debug bridge (#334) ───────────────────────────────
@@ -6777,10 +6775,9 @@
   <LaunchScene
     profile={launchProfile}
     mission={launchDossier}
-    onComplete={() => {
-      launchDismissed = true;
-      showLaunch = false;
-    }}
+    {hudHidden}
+    onToggleHud={toggleHud}
+    onComplete={() => (showLaunch = false)}
   />
 {/if}
 
@@ -7159,7 +7156,7 @@
        Wide top-down system view is the backdrop (set in
        updateHelioAutoZoomTargets 'opening' branch). Skip button is
        always present while openingActive so users can fast-forward. -->
-  {#if openingActive && !launchIntends}
+  {#if openingActive}
     {@const depYear = mission.dep_label?.slice(0, 4) ?? ''}
     {@const arrYear = mission.arr_label?.slice(0, 4) ?? ''}
     {@const story = mission.description ?? ''}
@@ -7317,16 +7314,29 @@
       <!-- Skip button — last item in the stack, below the fleet
            section. Always visible while openingActive so users can
            fast-forward at any opening fade state. -->
-      <button
-        type="button"
-        class="opening-skip"
-        data-testid="fly-opening-skip"
-        onclick={skipOpening}
-        aria-label={m.fly_proceed_aria()}
-      >
-        <span>{m.fly_proceed_to_simulation()}</span>
-        <span class="opening-skip-arrow" aria-hidden="true">▸</span>
-      </button>
+      <div class="opening-actions">
+        {#if launchAvailable}
+          <button
+            type="button"
+            class="opening-launch"
+            data-testid="fly-opening-launch"
+            onclick={startLaunch}
+          >
+            <span aria-hidden="true">▲</span>
+            <span>START WITH LAUNCH</span>
+          </button>
+        {/if}
+        <button
+          type="button"
+          class="opening-skip"
+          data-testid="fly-opening-skip"
+          onclick={skipOpening}
+          aria-label={m.fly_proceed_aria()}
+        >
+          <span>{m.fly_proceed_to_simulation()}</span>
+          <span class="opening-skip-arrow" aria-hidden="true">▸</span>
+        </button>
+      </div>
     </div>
   {/if}
   <!-- W3.6 scrubber-jump cut overlay. Short 200 ms fade-to-black on
@@ -8643,6 +8653,40 @@
   .opening-skip-arrow {
     font-size: 14px;
     color: rgba(94, 234, 212, 0.85);
+  }
+  .opening-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4px;
+  }
+  /* START WITH LAUNCH — the launch-act entry point (amber accent). */
+  .opening-launch {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    background: rgba(22, 14, 6, 0.55);
+    border: 1px solid rgba(255, 190, 74, 0.55);
+    border-radius: 4px;
+    color: rgba(255, 236, 200, 0.95);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      background 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+  .opening-launch:hover,
+  .opening-launch:focus-visible {
+    background: rgba(255, 190, 74, 0.18);
+    border-color: rgba(255, 190, 74, 0.95);
+    color: #fff;
+    outline: none;
   }
 
   /* #86 v2 — fleet cards. Clickable (anchor) so they deep-link into

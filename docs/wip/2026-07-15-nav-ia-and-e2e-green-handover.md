@@ -70,14 +70,35 @@ mars failures were pre-existing; the completing run simply reported them.
   is the v0.8 per-click-perf follow-up. **Push triggers one more CI + docker-e2e
   cycle (~40 min); it's test-only so low risk.**
 
+## TV big-box hubs — SHIPPED (later same day, `67b9e3348c`)
+
+The "TV big-box nav hub" that was deferred below is now done and on main +
+deployed. **TV-only** — desktop + mobile are byte-identical (dropdowns/drawer
+unchanged).
+
+- On the 10-foot / D-pad layout the three nav groups (Explore/Catalog/Learn)
+  render as plain links to big-box hub pages instead of dropdowns:
+  `/explore/hub` (Our Solar System · Earth · Moon · Mars · ISS · Tiangong),
+  `/catalog` (Programs · Missions · Fleet), `/learn` (The Long View · Science).
+- `SectionHub.svelte` (heading + intro + grid) over `RouteCardGrid.svelte` (the
+  home landing's card grid + all 11 icons, extracted; two new house icons —
+  Programs badge, Essays open-book). **Home page untouched** — it kept its own
+  inline grid; the extraction is used only by the hubs.
+- `Nav.svelte`: an `isTv` flag off the existing 10-foot media query gates the
+  group→hub rendering (false off-TV → desktop/mobile identical). A TV `@media`
+  override keeps `.center` visible + hides `.menu-toggle` so TV shows the full
+  inline menu, **no hamburger** (the generic `(pointer: coarse)` rule otherwise
+  collapses TV to the hamburger — that was a wrong intermediate state).
+- 7 new i18n keys (3 hub intros + Programs/Essays card copy) translated ×14; 3
+  hub routes added to the prerender seed. Nav e2e helpers untouched (desktop/
+  mobile nav unchanged). Preflight + all 6 docker-e2e legs green, deployed.
+- Lesson captured in memory `feedback_tv_only_means_tv_only`: "for the TV" means
+  TV-only, and TV keeps the full menu (never a hamburger).
+
 ## Deferred (by design, tracked or noted)
 
 - **#409** — redo remaining 15 /science diagrams in WIRED-blend after Higgsfield
   credits renew (2026-07-22). 48/63 done.
-- **TV "big-box" nav hub** — Marko flagged wanting the Explore landing to be a
-  rendered big-box hub (like the TV pattern) rather than a dropdown. We shipped
-  "Solar System" as the Explore child label for now; the hub is future work,
-  no issue filed yet.
 
 ## Gotchas worth carrying forward
 

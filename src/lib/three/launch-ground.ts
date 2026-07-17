@@ -116,16 +116,36 @@ export interface LaunchGroundEntry extends LaunchGroundSite {
 export const LAUNCH_GROUND_SITES: LaunchGroundEntry[] = [
   // One cloudless Sentinel-2 crop per complex; each covers all nearby pads
   // (Cape's LC-5/14/34/36/39/SLC-40/41, Baikonur's sites, Kourou's ELA-2/3/4…).
-  { lat: 28.562, lon: -80.577, textureUrl: '/images/launch-ground/cape-canaveral.jpg', halfExtentKm: 33 }, // Cape Canaveral / KSC
+  {
+    lat: 28.562,
+    lon: -80.577,
+    textureUrl: '/images/launch-ground/cape-canaveral.jpg',
+    halfExtentKm: 33,
+  }, // Cape Canaveral / KSC
   { lat: 46.0, lon: 63.3, textureUrl: '/images/launch-ground/baikonur.jpg', halfExtentKm: 33 }, // Baikonur Cosmodrome
   { lat: 5.236, lon: -52.773, textureUrl: '/images/launch-ground/kourou.jpg', halfExtentKm: 33 }, // Guiana Space Centre, Kourou
   { lat: 40.96, lon: 100.299, textureUrl: '/images/launch-ground/jiuquan.jpg', halfExtentKm: 33 }, // Jiuquan
   { lat: 62.928, lon: 40.51, textureUrl: '/images/launch-ground/plesetsk.jpg', halfExtentKm: 33 }, // Plesetsk
-  { lat: 13.736, lon: 80.235, textureUrl: '/images/launch-ground/sriharikota.jpg', halfExtentKm: 33 }, // Satish Dhawan, Sriharikota
+  {
+    lat: 13.736,
+    lon: 80.235,
+    textureUrl: '/images/launch-ground/sriharikota.jpg',
+    halfExtentKm: 33,
+  }, // Satish Dhawan, Sriharikota
   { lat: 25.997, lon: -97.156, textureUrl: '/images/launch-ground/starbase.jpg', halfExtentKm: 33 }, // Starbase, Boca Chica
   { lat: 38.849, lon: 111.608, textureUrl: '/images/launch-ground/taiyuan.jpg', halfExtentKm: 33 }, // Taiyuan
-  { lat: 30.401, lon: 130.976, textureUrl: '/images/launch-ground/tanegashima.jpg', halfExtentKm: 33 }, // Tanegashima
-  { lat: 34.632, lon: -120.611, textureUrl: '/images/launch-ground/vandenberg.jpg', halfExtentKm: 33 }, // Vandenberg
+  {
+    lat: 30.401,
+    lon: 130.976,
+    textureUrl: '/images/launch-ground/tanegashima.jpg',
+    halfExtentKm: 33,
+  }, // Tanegashima
+  {
+    lat: 34.632,
+    lon: -120.611,
+    textureUrl: '/images/launch-ground/vandenberg.jpg',
+    halfExtentKm: 33,
+  }, // Vandenberg
   { lat: 19.615, lon: 110.951, textureUrl: '/images/launch-ground/wenchang.jpg', halfExtentKm: 33 }, // Wenchang
   { lat: 28.246, lon: 102.027, textureUrl: '/images/launch-ground/xichang.jpg', halfExtentKm: 33 }, // Xichang
 ];

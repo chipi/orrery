@@ -26,7 +26,8 @@ import { FALCON9_SAMPLE } from './ascent-profiles';
 import { expectCloseTo } from '../test-helpers/expect-close';
 
 const s = integrateAscent(FALCON9_SAMPLE);
-const ev = (type: AscentEvent['type']): AscentEvent | undefined => s.events.find((e) => e.type === type);
+const ev = (type: AscentEvent['type']): AscentEvent | undefined =>
+  s.events.find((e) => e.type === type);
 
 describe('Falcon 9 ascent — published-milestone validation (S2)', () => {
   it('reaches orbit', () => {

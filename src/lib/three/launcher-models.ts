@@ -64,7 +64,12 @@ function bell(r: number, len: number, mat: THREE.Material, y: number): THREE.Mes
 }
 
 /** A clamshell fairing half (cone sector), positioned at `baseY`. */
-function fairingHalf(rBody: number, vehLen: number, thetaStart: number, mat: THREE.Material): THREE.Mesh {
+function fairingHalf(
+  rBody: number,
+  vehLen: number,
+  thetaStart: number,
+  mat: THREE.Material,
+): THREE.Mesh {
   return new THREE.Mesh(
     new THREE.ConeGeometry(rBody * 1.02, vehLen * 0.17, 24, 1, true, thetaStart, Math.PI),
     mat,
@@ -83,11 +88,17 @@ function buildGeneric(vehLen: number): LauncherModel {
 
   // ── Booster (first stage): body + octaweb + 9 engines + legs + grid fins.
   const booster = new THREE.Group();
-  const stage1 = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.55, 40), p.body);
+  const stage1 = new THREE.Mesh(
+    new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.55, 40),
+    p.body,
+  );
   stage1.position.y = vehLen * 0.305;
   booster.add(stage1);
 
-  const octaweb = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody * 0.94, vehLen * 0.03, 40), p.dark);
+  const octaweb = new THREE.Mesh(
+    new THREE.CylinderGeometry(rBody, rBody * 0.94, vehLen * 0.03, 40),
+    p.dark,
+  );
   octaweb.position.y = vehLen * 0.02;
   booster.add(octaweb);
   const merlinGeo = new THREE.ConeGeometry(rBody * 0.22, vehLen * 0.04, 12, 1, true);
@@ -116,7 +127,10 @@ function buildGeneric(vehLen: number): LauncherModel {
     fin.rotation.y = -af;
     booster.add(fin);
   }
-  const interstage = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.045, 40), p.dark);
+  const interstage = new THREE.Mesh(
+    new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.045, 40),
+    p.dark,
+  );
   interstage.position.y = vehLen * 0.6;
   booster.add(interstage);
   root.add(booster);
@@ -124,7 +138,10 @@ function buildGeneric(vehLen: number): LauncherModel {
   // ── Upper stage: body + vacuum bell.
   const upperStageBaseY = vehLen * 0.735;
   const upperStage = new THREE.Group();
-  const stage2 = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.22, 40), p.body);
+  const stage2 = new THREE.Mesh(
+    new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.22, 40),
+    p.body,
+  );
   stage2.position.y = upperStageBaseY;
   const s2nozzle = nozzle(rBody * 0.55, vehLen * 0.06, p.eng);
   s2nozzle.position.y = vehLen * 0.6;
@@ -157,7 +174,14 @@ function buildGeneric(vehLen: number): LauncherModel {
 }
 
 /** A ring of `n` downward engine bells on a base. */
-function engineRing(n: number, ringR: number, bellR: number, bellLen: number, y: number, mat: THREE.Material): THREE.Group {
+function engineRing(
+  n: number,
+  ringR: number,
+  bellR: number,
+  bellLen: number,
+  y: number,
+  mat: THREE.Material,
+): THREE.Group {
   const g = new THREE.Group();
   const add = (x: number, z: number): void => {
     const b = nozzle(bellR, bellLen, mat);
@@ -187,7 +211,10 @@ function buildSaturnV(vehLen: number): LauncherModel {
   const sic = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.42, 40), p.body);
   sic.position.y = vehLen * 0.23;
   // black roll-pattern band near the base
-  const band = new THREE.Mesh(new THREE.CylinderGeometry(r * 1.01, r * 1.01, vehLen * 0.05, 40), p.dark);
+  const band = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 1.01, r * 1.01, vehLen * 0.05, 40),
+    p.dark,
+  );
   band.position.y = vehLen * 0.08;
   const fins = new THREE.Group();
   for (let i = 0; i < 4; i++) {
@@ -197,15 +224,26 @@ function buildSaturnV(vehLen: number): LauncherModel {
     fin.rotation.y = -a;
     fins.add(fin);
   }
-  booster.add(sic, band, fins, engineRing(5, r * 0.55, r * 0.2, vehLen * 0.05, vehLen * 0.0, p.eng));
+  booster.add(
+    sic,
+    band,
+    fins,
+    engineRing(5, r * 0.55, r * 0.2, vehLen * 0.05, vehLen * 0.0, p.eng),
+  );
   root.add(booster);
 
   const upperStage = new THREE.Group();
   const sii = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.62, r, vehLen * 0.05, 40), p.body); // interstage taper
   sii.position.y = vehLen * 0.47;
-  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.62, r * 0.62, vehLen * 0.22, 40), p.body);
+  const s2 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.62, r * 0.62, vehLen * 0.22, 40),
+    p.body,
+  );
   s2.position.y = vehLen * 0.6;
-  const s4b = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.42, r * 0.62, vehLen * 0.16, 40), p.body);
+  const s4b = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.42, r * 0.62, vehLen * 0.16, 40),
+    p.body,
+  );
   s4b.position.y = vehLen * 0.79;
   upperStage.add(sii, s2, s4b, bell(r * 0.3, vehLen * 0.05, p.eng, vehLen * 0.47));
   root.add(upperStage);
@@ -213,30 +251,55 @@ function buildSaturnV(vehLen: number): LauncherModel {
   // The Apollo stack rides as the "fairing": a conical CSM + a thin escape tower.
   const fairingBaseY = vehLen * 0.88;
   const mkShell = (theta: number): THREE.Mesh =>
-    new THREE.Mesh(new THREE.ConeGeometry(r * 0.42, vehLen * 0.14, 20, 1, true, theta, Math.PI), p.accent);
+    new THREE.Mesh(
+      new THREE.ConeGeometry(r * 0.42, vehLen * 0.14, 20, 1, true, theta, Math.PI),
+      p.accent,
+    );
   const fairingL = mkShell(Math.PI / 2);
   const fairingR = mkShell(-Math.PI / 2);
   fairingL.position.y = fairingBaseY;
   fairingR.position.y = fairingBaseY;
-  const tower = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.04, r * 0.04, vehLen * 0.1, 8), p.dark);
+  const tower = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.04, r * 0.04, vehLen * 0.1, 8),
+    p.dark,
+  );
   tower.position.y = fairingBaseY + vehLen * 0.13;
   const fairingGroup = new THREE.Group();
   fairingGroup.add(fairingL, fairingR, tower);
   root.add(fairingGroup);
 
   return {
-    root, booster, boosterPlumeAnchor: sic, upperStage, upperPlumeAnchor: s2,
-    fairingL, fairingR, fairingGroup,
-    upperStageBaseY: vehLen * 0.6, fairingBaseY, payloadMountY: vehLen * 0.82,
+    root,
+    booster,
+    boosterPlumeAnchor: sic,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: vehLen * 0.6,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.82,
   };
 }
 
 /** Add `n` tapered conical strap-on boosters around a core, into `booster`. */
-function strapOns(booster: THREE.Group, n: number, coreR: number, len: number, vehLen: number, mat: THREE.Material, engMat: THREE.Material): void {
+function strapOns(
+  booster: THREE.Group,
+  n: number,
+  coreR: number,
+  len: number,
+  vehLen: number,
+  mat: THREE.Material,
+  engMat: THREE.Material,
+): void {
   for (let i = 0; i < n; i++) {
     const a = (i / n) * Math.PI * 2;
     const gr = new THREE.Group();
-    const body = new THREE.Mesh(new THREE.CylinderGeometry(coreR * 0.32, coreR * 0.5, len, 20), mat);
+    const body = new THREE.Mesh(
+      new THREE.CylinderGeometry(coreR * 0.32, coreR * 0.5, len, 20),
+      mat,
+    );
     body.position.y = len / 2;
     // tapered nose cone
     const nose = new THREE.Mesh(new THREE.ConeGeometry(coreR * 0.32, len * 0.35, 20), mat);
@@ -271,7 +334,10 @@ function buildSoyuz(vehLen: number): LauncherModel {
 
   const fairingBaseY = vehLen * 0.82;
   const mkShell = (theta: number): THREE.Mesh =>
-    new THREE.Mesh(new THREE.ConeGeometry(r * 0.95, vehLen * 0.18, 20, 1, true, theta, Math.PI), p.body);
+    new THREE.Mesh(
+      new THREE.ConeGeometry(r * 0.95, vehLen * 0.18, 20, 1, true, theta, Math.PI),
+      p.body,
+    );
   const fairingL = mkShell(Math.PI / 2);
   const fairingR = mkShell(-Math.PI / 2);
   fairingL.position.y = fairingBaseY;
@@ -281,14 +347,25 @@ function buildSoyuz(vehLen: number): LauncherModel {
   root.add(fairingGroup);
 
   return {
-    root, booster, boosterPlumeAnchor: core, upperStage, upperPlumeAnchor: s2,
-    fairingL, fairingR, fairingGroup,
-    upperStageBaseY: vehLen * 0.64, fairingBaseY, payloadMountY: vehLen * 0.74,
+    root,
+    booster,
+    boosterPlumeAnchor: core,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: vehLen * 0.64,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.74,
   };
 }
 
 /** Two tall side boosters flanking a core + bulbous fairing (Ariane 5 / H-IIA). */
-function buildSideBooster(vehLen: number, opts: { boosterLen: number; fairingR: number; body: number; boost: number }): LauncherModel {
+function buildSideBooster(
+  vehLen: number,
+  opts: { boosterLen: number; fairingR: number; body: number; boost: number },
+): LauncherModel {
   const p = palette(opts.body, opts.boost);
   const r = vehLen * 0.045;
   const root = new THREE.Group();
@@ -299,7 +376,10 @@ function buildSideBooster(vehLen: number, opts: { boosterLen: number; fairingR: 
   booster.add(core, nozzle(r * 0.5, vehLen * 0.05, p.eng));
   for (const sx of [-1, 1]) {
     const gr = new THREE.Group();
-    const b = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.55, r * 0.55, vehLen * opts.boosterLen, 24), p.accent);
+    const b = new THREE.Mesh(
+      new THREE.CylinderGeometry(r * 0.55, r * 0.55, vehLen * opts.boosterLen, 24),
+      p.accent,
+    );
     b.position.y = (vehLen * opts.boosterLen) / 2 + vehLen * 0.02;
     const nose = new THREE.Mesh(new THREE.ConeGeometry(r * 0.55, vehLen * 0.08, 24), p.accent);
     nose.position.y = vehLen * opts.boosterLen + vehLen * 0.06;
@@ -317,7 +397,10 @@ function buildSideBooster(vehLen: number, opts: { boosterLen: number; fairingR: 
 
   const fairingBaseY = vehLen * 0.83;
   const mkShell = (theta: number): THREE.Mesh =>
-    new THREE.Mesh(new THREE.ConeGeometry(r * opts.fairingR, vehLen * 0.2, 24, 1, true, theta, Math.PI), p.body);
+    new THREE.Mesh(
+      new THREE.ConeGeometry(r * opts.fairingR, vehLen * 0.2, 24, 1, true, theta, Math.PI),
+      p.body,
+    );
   const fairingL = mkShell(Math.PI / 2);
   const fairingR = mkShell(-Math.PI / 2);
   fairingL.position.y = fairingBaseY;
@@ -327,9 +410,17 @@ function buildSideBooster(vehLen: number, opts: { boosterLen: number; fairingR: 
   root.add(fairingGroup);
 
   return {
-    root, booster, boosterPlumeAnchor: core, upperStage, upperPlumeAnchor: s2,
-    fairingL, fairingR, fairingGroup,
-    upperStageBaseY: vehLen * 0.71, fairingBaseY, payloadMountY: vehLen * 0.76,
+    root,
+    booster,
+    boosterPlumeAnchor: core,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: vehLen * 0.71,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.76,
   };
 }
 
@@ -341,9 +432,21 @@ function buildSideBooster(vehLen: number, opts: { boosterLen: number; fairingR: 
  * is the `upperStage` (flies on to deploy the payload).
  */
 function buildSpaceShuttle(vehLen: number): LauncherModel {
-  const white = new THREE.MeshStandardMaterial({ color: 0xeef0f3, roughness: 0.5, metalness: 0.08 });
-  const tank = new THREE.MeshStandardMaterial({ color: 0xb15c22, roughness: 0.92, metalness: 0.03 }); // foam
-  const tile = new THREE.MeshStandardMaterial({ color: 0x191b20, roughness: 0.68, metalness: 0.12 }); // TPS
+  const white = new THREE.MeshStandardMaterial({
+    color: 0xeef0f3,
+    roughness: 0.5,
+    metalness: 0.08,
+  });
+  const tank = new THREE.MeshStandardMaterial({
+    color: 0xb15c22,
+    roughness: 0.92,
+    metalness: 0.03,
+  }); // foam
+  const tile = new THREE.MeshStandardMaterial({
+    color: 0x191b20,
+    roughness: 0.68,
+    metalness: 0.12,
+  }); // TPS
   const dark = new THREE.MeshStandardMaterial({ color: 0x2a2d33, roughness: 0.5, metalness: 0.4 });
   const eng = new THREE.MeshStandardMaterial({ color: 0x2b2f36, roughness: 0.4, metalness: 0.7 });
   const r = vehLen * 0.05;
@@ -355,7 +458,10 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   const etLen = vehLen * 0.74;
   const et = new THREE.Mesh(new THREE.CylinderGeometry(rET * 0.97, rET, etLen, 32), tank);
   et.position.y = vehLen * 0.05 + etLen / 2;
-  const etNose = new THREE.Mesh(new THREE.SphereGeometry(rET, 24, 16, 0, Math.PI * 2, 0, Math.PI / 2), tank);
+  const etNose = new THREE.Mesh(
+    new THREE.SphereGeometry(rET, 24, 16, 0, Math.PI * 2, 0, Math.PI / 2),
+    tank,
+  );
   etNose.scale.y = 1.6;
   etNose.position.y = vehLen * 0.05 + etLen;
   booster.add(et, etNose);
@@ -371,7 +477,10 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
     nose.position.y = vehLen * 0.05 + srbLen + vehLen * 0.06;
     srb.add(body, nose, bell(rSRB * 0.82, vehLen * 0.05, eng, vehLen * 0.03));
     for (const f of [0.32, 0.55, 0.78]) {
-      const band = new THREE.Mesh(new THREE.CylinderGeometry(rSRB * 1.03, rSRB * 1.03, vehLen * 0.01, 24), dark);
+      const band = new THREE.Mesh(
+        new THREE.CylinderGeometry(rSRB * 1.03, rSRB * 1.03, vehLen * 0.01, 24),
+        dark,
+      );
       band.position.y = vehLen * 0.05 + srbLen * f;
       srb.add(band);
     }
@@ -495,8 +604,10 @@ const BUILDERS: Record<string, (vehLen: number) => LauncherModel> = {
   'saturn-v': buildSaturnV,
   'saturn-ib': buildSaturnV,
   'vostok-k': buildSoyuz,
-  'ariane-5': (v) => buildSideBooster(v, { boosterLen: 0.62, fairingR: 1.35, body: 0xeae6da, boost: 0xd8d2c4 }),
-  'h-iia': (v) => buildSideBooster(v, { boosterLen: 0.38, fairingR: 1.15, body: 0xf0f0f0, boost: 0xdedede }),
+  'ariane-5': (v) =>
+    buildSideBooster(v, { boosterLen: 0.62, fairingR: 1.35, body: 0xeae6da, boost: 0xd8d2c4 }),
+  'h-iia': (v) =>
+    buildSideBooster(v, { boosterLen: 0.38, fairingR: 1.15, body: 0xf0f0f0, boost: 0xdedede }),
   'space-shuttle-stack': buildSpaceShuttle,
 };
 

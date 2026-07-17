@@ -27,7 +27,11 @@ import {
 } from '$lib/orbital/ascent-cameras';
 import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
 import { buildLauncherModel } from '$lib/three/launcher-models';
-import { buildLaunchGround, type LaunchGround, type LaunchGroundSite } from '$lib/three/launch-ground';
+import {
+  buildLaunchGround,
+  type LaunchGround,
+  type LaunchGroundSite,
+} from '$lib/three/launch-ground';
 
 const R_EARTH_KM = 6371;
 
@@ -102,7 +106,11 @@ function buildGenericPayload(): THREE.Group {
     new THREE.BoxGeometry(0.55, 0.7, 0.55),
     new THREE.MeshStandardMaterial({ color: 0xcfd6dd, roughness: 0.5, metalness: 0.45 }),
   );
-  const panelMat = new THREE.MeshStandardMaterial({ color: 0x1f3a72, roughness: 0.4, metalness: 0.3 });
+  const panelMat = new THREE.MeshStandardMaterial({
+    color: 0x1f3a72,
+    roughness: 0.4,
+    metalness: 0.3,
+  });
   const panelGeo = new THREE.BoxGeometry(1.0, 0.03, 0.55);
   const pL = new THREE.Mesh(panelGeo, panelMat);
   pL.position.x = -0.85;
@@ -122,7 +130,8 @@ function buildGenericPayload(): THREE.Group {
  *  (buildInterplanetarySpacecraft), else the generic bus — normalised so its
  *  largest dimension ≈ the fairing interior and re-centred on the body axis. */
 function buildPayload(spacecraftId: string | undefined, vehLen: number): THREE.Group {
-  const model = (spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null) ?? buildGenericPayload();
+  const model =
+    (spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null) ?? buildGenericPayload();
   const box = new THREE.Box3().setFromObject(model);
   const size = new THREE.Vector3();
   box.getSize(size);
@@ -305,10 +314,16 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
 
   // ── Pad + strongback tower at the origin (slim, matched to the vehicle).
   const padMat = new THREE.MeshStandardMaterial({ color: 0x2c3038, roughness: 0.9 });
-  const pad = new THREE.Mesh(new THREE.CylinderGeometry(vehLen * 0.15, vehLen * 0.2, vehLen * 0.05, 32), padMat);
+  const pad = new THREE.Mesh(
+    new THREE.CylinderGeometry(vehLen * 0.15, vehLen * 0.2, vehLen * 0.05, 32),
+    padMat,
+  );
   pad.position.y = vehLen * 0.025;
   scene.add(pad);
-  const tower = new THREE.Mesh(new THREE.BoxGeometry(vehLen * 0.03, vehLen * 1.05, vehLen * 0.03), padMat);
+  const tower = new THREE.Mesh(
+    new THREE.BoxGeometry(vehLen * 0.03, vehLen * 1.05, vehLen * 0.03),
+    padMat,
+  );
   tower.position.set(vehLen * 0.1, vehLen * 0.52, 0);
   scene.add(tower);
 
@@ -343,7 +358,13 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const plumeCone = (r: number, len: number, color: number, opacity: number): THREE.Mesh =>
     new THREE.Mesh(
       new THREE.ConeGeometry(r, len, 24, 1, true),
-      new THREE.MeshBasicMaterial({ color, transparent: true, opacity, blending: THREE.AdditiveBlending, depthWrite: false }),
+      new THREE.MeshBasicMaterial({
+        color,
+        transparent: true,
+        opacity,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      }),
     );
   const plume = new THREE.Group();
   const plumeGlow = plumeCone(rBody * 0.8, vehLen * 0.36, 0xff8a3c, 0.15);
@@ -361,7 +382,14 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const forces = new THREE.Group();
   forces.visible = false;
   const mkArrow = (hex: number): THREE.ArrowHelper =>
-    new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), new THREE.Vector3(), vehLen, hex, vehLen * 0.28, vehLen * 0.16);
+    new THREE.ArrowHelper(
+      new THREE.Vector3(0, 1, 0),
+      new THREE.Vector3(),
+      vehLen,
+      hex,
+      vehLen * 0.28,
+      vehLen * 0.16,
+    );
   const arrThrust = mkArrow(FORCE_COLORS.thrust);
   const arrWeight = mkArrow(FORCE_COLORS.weight);
   const arrDrag = mkArrow(FORCE_COLORS.drag);
@@ -379,8 +407,15 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // TARGET pose; the live camera EASES toward it (position + fov) so shot
   // changes blend as pans/dollies/zooms instead of hard-cutting, while the
   // look-at tracks the subject fast so the vehicle never leaves the frame.
-  let camS: { px: number; py: number; pz: number; tx: number; ty: number; tz: number; fov: number } | null =
-    null;
+  let camS: {
+    px: number;
+    py: number;
+    pz: number;
+    tx: number;
+    ty: number;
+    tz: number;
+    fov: number;
+  } | null = null;
   const K_POS = 0.13; // camera-position ease (smooth dolly / pan)
   const K_TGT = 0.45; // look-at ease — fast, so the subject stays framed
   const K_FOV = 0.13; // fov ease (smooth zoom)
@@ -416,7 +451,12 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     setArrow(arrThrust, Math.cos(s.pitchRad), Math.sin(s.pitchRad), s.thrustN > 0 ? tl : 0);
     // Weight — toward Earth's centre (a full radius below the pad).
     const weightN = s.massKg * gravity(s.altKm * 1000);
-    setArrow(arrWeight, -s.downrangeKm, -(R_EARTH_KM + s.altKm), (weightN / FORCE_REF_N) * vehLen * 2.2);
+    setArrow(
+      arrWeight,
+      -s.downrangeKm,
+      -(R_EARTH_KM + s.altKm),
+      (weightN / FORCE_REF_N) * vehLen * 2.2,
+    );
     // Velocity + drag (drag opposes velocity).
     const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
     setArrow(arrVel, horiz, s.velUpKms, (s.speedKms / SPEED_REF) * vehLen * 2);
@@ -490,7 +530,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // camera toward it (position + fov) while snapping the look-at fast — a
     // shot change reads as a pan/dolly/zoom that keeps the vehicle in frame,
     // never a hard jump into a corner.
-    const shot = schedule.length ? activeShotAt(schedule, s.t) : { name: 'ascent' as const, progress: 0.5 };
+    const shot = schedule.length
+      ? activeShotAt(schedule, s.t)
+      : { name: 'ascent' as const, progress: 0.5 };
     activeShot = shot.name;
     const p = composeShot(activeShot, s, vehLen, shot.progress, opts.tuning?.[activeShot]);
     if (!camS) {

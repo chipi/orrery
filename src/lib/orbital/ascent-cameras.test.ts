@@ -52,7 +52,17 @@ describe('selectShot', () => {
 
 describe('composeShot', () => {
   const state: AscentState = summary.states[Math.floor(summary.states.length / 2)];
-  const shots: AscentShotName[] = ['pad', 'tower_clear', 'ascent', 'onboard_down', 'staging', 'fairing', 'chase', 'separation', 'orbit'];
+  const shots: AscentShotName[] = [
+    'pad',
+    'tower_clear',
+    'ascent',
+    'onboard_down',
+    'staging',
+    'fairing',
+    'chase',
+    'separation',
+    'orbit',
+  ];
 
   it('returns finite poses with sane FOV for every shot', () => {
     for (const name of shots) {

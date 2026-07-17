@@ -60,7 +60,9 @@
 
   const live = $derived(activeShotAt(schedule, t));
   const liveState = $derived(sampleAscentAt(summary.states, Math.max(0, t)));
-  const livePose = $derived(composeShot(live.name, liveState, vehLen, live.progress, tuning[live.name]));
+  const livePose = $derived(
+    composeShot(live.name, liveState, vehLen, live.progress, tuning[live.name]),
+  );
 
   // Mid-window camera for every shot (the rig layout).
   const rig = $derived(
@@ -136,7 +138,10 @@
       ctx.strokeStyle = c;
       ctx.beginPath();
       ctx.moveTo(X, Y);
-      ctx.lineTo(X + (dx / m) * 12, Y - (dy / m) * 12 * (H / (bounds.maxY - bounds.minY)) / (W / (bounds.maxX - bounds.minX)));
+      ctx.lineTo(
+        X + (dx / m) * 12,
+        Y - ((dy / m) * 12 * (H / (bounds.maxY - bounds.minY))) / (W / (bounds.maxX - bounds.minX)),
+      );
       ctx.stroke();
       ctx.globalAlpha = 1;
     }
@@ -234,7 +239,9 @@
     // Trail (x-z).
     ctx.strokeStyle = 'rgba(255,255,255,0.5)';
     ctx.beginPath();
-    trail.forEach((p, i) => (i === 0 ? ctx.moveTo(tx(p.x), tz(p.z)) : ctx.lineTo(tx(p.x), tz(p.z))));
+    trail.forEach((p, i) =>
+      i === 0 ? ctx.moveTo(tx(p.x), tz(p.z)) : ctx.lineTo(tx(p.x), tz(p.z)),
+    );
     ctx.stroke();
     // Live vehicle (z=0) + live camera.
     ctx.fillStyle = '#fff';
@@ -268,14 +275,20 @@
   <canvas bind:this={topCanvas} width={TW} height={TH} class="top"></canvas>
 
   <div class="readout">
-    <div><span>SHOT</span><b style="color:{SHOT_COLORS[live.name]}">{live.name.replace('_', '-')}</b></div>
+    <div>
+      <span>SHOT</span><b style="color:{SHOT_COLORS[live.name]}">{live.name.replace('_', '-')}</b>
+    </div>
     <div><span>PROGRESS</span><b>{(live.progress * 100).toFixed(0)}%</b></div>
     <div><span>FOV</span><b>{livePose.fov.toFixed(0)}°</b></div>
     <div>
-      <span>CAM</span><b>{livePose.px.toFixed(1)}, {livePose.py.toFixed(1)}, {livePose.pz.toFixed(1)}</b>
+      <span>CAM</span><b
+        >{livePose.px.toFixed(1)}, {livePose.py.toFixed(1)}, {livePose.pz.toFixed(1)}</b
+      >
     </div>
     <div>
-      <span>LOOK</span><b>{livePose.tx.toFixed(1)}, {livePose.ty.toFixed(1)}, {livePose.tz.toFixed(1)}</b>
+      <span>LOOK</span><b
+        >{livePose.tx.toFixed(1)}, {livePose.ty.toFixed(1)}, {livePose.tz.toFixed(1)}</b
+      >
     </div>
   </div>
 
@@ -292,11 +305,23 @@
       >
     </div>
     <label>
-      DIST <input type="range" min="0.3" max="2.5" step="0.05" bind:value={tuning[live.name].distMul} />
+      DIST <input
+        type="range"
+        min="0.3"
+        max="2.5"
+        step="0.05"
+        bind:value={tuning[live.name].distMul}
+      />
       <i>{activeTune.distMul.toFixed(2)}</i>
     </label>
     <label>
-      HEIGHT <input type="range" min="0.3" max="2" step="0.05" bind:value={tuning[live.name].heightMul} />
+      HEIGHT <input
+        type="range"
+        min="0.3"
+        max="2"
+        step="0.05"
+        bind:value={tuning[live.name].heightMul}
+      />
       <i>{activeTune.heightMul.toFixed(2)}</i>
     </label>
     <label>
@@ -309,7 +334,9 @@
     {#each schedule as w (w.name + w.tStart)}
       <button
         class:on={w.name === live.name}
-        style="background:{w.name === live.name ? SHOT_COLORS[w.name] : 'transparent'};border-color:{SHOT_COLORS[w.name]}"
+        style="background:{w.name === live.name
+          ? SHOT_COLORS[w.name]
+          : 'transparent'};border-color:{SHOT_COLORS[w.name]}"
         onclick={() => onJump?.((w.tStart + w.tEnd) / 2)}
         title="{w.tStart.toFixed(0)}–{w.tEnd.toFixed(0)}s"
       >

@@ -99,9 +99,7 @@ export function buildShotSchedule(inp: ScheduleInputs): ShotWindow[] {
     { name: 'tower_clear', tStart: PAD_END, tEnd: TOWER_CLEAR_END },
     { name: 'ascent', tStart: TOWER_CLEAR_END, tEnd: maxQ },
     { name: 'onboard_down', tStart: maxQ, tEnd: onboardEnd },
-    ...(staging != null
-      ? [{ name: 'staging' as const, tStart: staging, tEnd: stagingEnd }]
-      : []),
+    ...(staging != null ? [{ name: 'staging' as const, tStart: staging, tEnd: stagingEnd }] : []),
     ...(showFairing
       ? [
           { name: 'chase' as const, tStart: stagingEnd, tEnd: fairingStart! },
@@ -129,7 +127,10 @@ export function selectShot(schedule: ShotWindow[], t: number): AscentShotName {
  * (orbit / dolly / push-in) so the camera is always moving — the director's-
  * cut steady-cam feel, cut hard between shots.
  */
-export function activeShotAt(schedule: ShotWindow[], t: number): { name: AscentShotName; progress: number } {
+export function activeShotAt(
+  schedule: ShotWindow[],
+  t: number,
+): { name: AscentShotName; progress: number } {
   if (schedule.length === 0) return { name: 'ascent', progress: 0.5 };
   if (t <= schedule[0].tStart) return { name: schedule[0].name, progress: 0 };
   for (const w of schedule) {
@@ -163,7 +164,17 @@ export type AscentCameraTuning = Record<AscentShotName, ShotTune>;
 
 /** A no-op default tuning map. */
 export function defaultTuning(): AscentCameraTuning {
-  const names: AscentShotName[] = ['pad', 'tower_clear', 'ascent', 'onboard_down', 'staging', 'fairing', 'chase', 'separation', 'orbit'];
+  const names: AscentShotName[] = [
+    'pad',
+    'tower_clear',
+    'ascent',
+    'onboard_down',
+    'staging',
+    'fairing',
+    'chase',
+    'separation',
+    'orbit',
+  ];
   const out = {} as AscentCameraTuning;
   for (const n of names) out[n] = { ...NO_TUNE };
   return out;
@@ -212,7 +223,15 @@ export function composeShot(
     case 'tower_clear': {
       // PUSH-IN + crane up as it clears the tower — vehicle fills the frame.
       const rad = vehLen * (2.7 - 0.6 * e);
-      out = pose(dr - rad * 0.5, alt + vehLen * (0.35 + 0.6 * e), rad, dr, alt + vehLen * 0.5, 0, 44);
+      out = pose(
+        dr - rad * 0.5,
+        alt + vehLen * (0.35 + 0.6 * e),
+        rad,
+        dr,
+        alt + vehLen * 0.5,
+        0,
+        44,
+      );
       break;
     }
     case 'ascent': {
@@ -221,7 +240,15 @@ export function composeShot(
       // the lower background as it climbs. A slow orbital drift keeps it alive.
       const d = vehLen * (3.2 + 1.6 * e);
       const ang = -0.5 - p * 0.55;
-      out = pose(dr + Math.sin(ang) * d, alt + d * 0.18, Math.cos(ang) * d, dr, alt + vehLen * 0.5, 0, 40);
+      out = pose(
+        dr + Math.sin(ang) * d,
+        alt + d * 0.18,
+        Math.cos(ang) * d,
+        dr,
+        alt + vehLen * 0.5,
+        0,
+        40,
+      );
       break;
     }
     case 'onboard_down': {
@@ -231,7 +258,15 @@ export function composeShot(
       // rocket stuck in a corner.)
       const d = vehLen * (3.2 + 1.4 * e);
       const ang = 0.7 - p * 0.5;
-      out = pose(dr + Math.sin(ang) * d, alt + d * 0.16, Math.cos(ang) * d, dr, alt + vehLen * 0.5, 0, 42);
+      out = pose(
+        dr + Math.sin(ang) * d,
+        alt + d * 0.16,
+        Math.cos(ang) * d,
+        dr,
+        alt + vehLen * 0.5,
+        0,
+        42,
+      );
       break;
     }
     case 'staging': {
@@ -267,7 +302,15 @@ export function composeShot(
       // up behind it; a slow orbital drift + gentle dolly keeps it cinematic.
       const d = vehLen * (3.4 + 1.8 * e);
       const ang = -0.42 - p * 0.32;
-      out = pose(dr + Math.sin(ang) * d, alt + d * 0.4, Math.cos(ang) * d, dr, alt + vehLen * 0.7, 0, 38);
+      out = pose(
+        dr + Math.sin(ang) * d,
+        alt + d * 0.4,
+        Math.cos(ang) * d,
+        dr,
+        alt + vehLen * 0.7,
+        0,
+        38,
+      );
       break;
     }
     case 'separation': {
@@ -281,7 +324,15 @@ export function composeShot(
       // pulled back so BOTH bodies read as they drift apart, Earth limb below.
       const d = vehLen * (3.7 - 0.6 * e);
       const ang = -0.34 - p * 0.28;
-      out = pose(dr + Math.sin(ang) * d, alt + d * 0.32, Math.cos(ang) * d, dr, alt + vehLen * 0.15, 0, 40);
+      out = pose(
+        dr + Math.sin(ang) * d,
+        alt + d * 0.32,
+        Math.cos(ang) * d,
+        dr,
+        alt + vehLen * 0.15,
+        0,
+        40,
+      );
       break;
     }
     case 'orbit': {
@@ -290,7 +341,15 @@ export function composeShot(
       // stays a visible hero glinting over the Earth, space opening up behind.
       const d = vehLen * (3.6 + 1.8 * e);
       const ang = -0.36 - p * 0.24;
-      out = pose(dr + Math.sin(ang) * d, alt + d * 0.44, Math.cos(ang) * d, dr, alt + vehLen * 0.5, 0, 40);
+      out = pose(
+        dr + Math.sin(ang) * d,
+        alt + d * 0.44,
+        Math.cos(ang) * d,
+        dr,
+        alt + vehLen * 0.5,
+        0,
+        40,
+      );
       break;
     }
   }

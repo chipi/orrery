@@ -31,11 +31,22 @@
     /** T-minus seconds at which the engines light (for the GO/NO-GO arming). */
     ignitionT?: number;
   }
-  let { summary, stages, boosters, payloadKg, vehicleName, t, state, ignitionT = -3 }: Props = $props();
+  let {
+    summary,
+    stages,
+    boosters,
+    payloadKg,
+    vehicleName,
+    t,
+    state,
+    ignitionT = -3,
+  }: Props = $props();
 
   // Strap-on booster reservoir: the combined propellant drains through the
   // parallel-boost phase, then reads SEP once the boosters jettison.
-  const boosterTotalProp = boosters ? boosters.count * Math.max(1, boosters.wetKg - boosters.dryKg) : 0;
+  const boosterTotalProp = boosters
+    ? boosters.count * Math.max(1, boosters.wetKg - boosters.dryKg)
+    : 0;
   const boosterFuelPct = $derived.by(() => {
     if (!boosters) return 0;
     if (t < 0) return 100;
@@ -64,7 +75,9 @@
     if (i > state.stageIndex) return 100;
     return Math.round((state.propRemainingKg / stageProps[i]) * 100);
   };
-  const activeEngines = $derived(state.stageIndex >= 0 ? (stages[state.stageIndex].engines ?? 1) : 0);
+  const activeEngines = $derived(
+    state.stageIndex >= 0 ? (stages[state.stageIndex].engines ?? 1) : 0,
+  );
   const twrPct = $derived(Math.min(1, state.twr / 2.5) * 100);
 
   // ── Live strip charts — full flight profile drawn as a ghost, traversed
@@ -83,7 +96,8 @@
   const velPts = seriesFor((s) => s.speedKms, ORBIT_TARGET_KMS * 1.05);
   const qPts = seriesFor((s) => s.qPa / 1000, maxQpeak * 1.12);
   const heatPts = seriesFor((s) => s.aeroHeatFlux, heatPeak * 1.05);
-  const poly = (pts: Pt[]): string => pts.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+  const poly = (pts: Pt[]): string =>
+    pts.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
 
   const nowIdx = $derived.by(() => {
     const tt = Math.max(0, t);
@@ -116,7 +130,9 @@
       <div class="reservoir">
         <span class="rlabel blabel">{boosters.count}×{boosters.name}</span>
         <div class="rbar"><div class="rfill srb" style="width:{boosterFuelPct}%"></div></div>
-        <span class="rpct" class:sep={boostersJettisoned}>{boostersJettisoned ? 'SEP' : `${boosterFuelPct}%`}</span>
+        <span class="rpct" class:sep={boostersJettisoned}
+          >{boostersJettisoned ? 'SEP' : `${boosterFuelPct}%`}</span
+        >
       </div>
     {/if}
     {#each stages as st, i (st.name)}
@@ -137,7 +153,13 @@
           <polyline class="ghost" points={poly(pts)} />
           <path class="carea" d={area(pts, nowIdx)} style="fill:{color}" />
           <polyline class="cline" points={trace(pts, nowIdx)} style="stroke:{color}" />
-          <circle class="cdot" cx={pts[nowIdx][0]} cy={pts[nowIdx][1]} r="1.8" style="fill:{color}" />
+          <circle
+            class="cdot"
+            cx={pts[nowIdx][0]}
+            cy={pts[nowIdx][1]}
+            r="1.8"
+            style="fill:{color}"
+          />
         </svg>
         <span class="chart-val" style="color:{color}">{val}</span>
       </div>
@@ -145,8 +167,20 @@
   {/snippet}
 
   {@render chartRow('ALTITUDE', 'launch', altPts, '#5ac8ff', `${state.altKm.toFixed(0)} km`)}
-  {@render chartRow('VELOCITY', 'dv-budget', velPts, '#7fe0ff', `${state.speedKms.toFixed(2)} km/s`)}
-  {@render chartRow('DYNAMIC PRESSURE', 'max-q', qPts, '#9a8bff', `${(state.qPa / 1000).toFixed(1)} kPa`)}
+  {@render chartRow(
+    'VELOCITY',
+    'dv-budget',
+    velPts,
+    '#7fe0ff',
+    `${state.speedKms.toFixed(2)} km/s`,
+  )}
+  {@render chartRow(
+    'DYNAMIC PRESSURE',
+    'max-q',
+    qPts,
+    '#9a8bff',
+    `${(state.qPa / 1000).toFixed(1)} kPa`,
+  )}
   {@render chartRow('AERO HEATING', 'launch', heatPts, '#ff8a4a', `${heatPct}%`)}
 
   <section class="dual">
@@ -168,10 +202,10 @@
   </section>
 
   <section>
-    <header
-      >ENGINES · {activeEngines} ONLINE{#if state.boostersActive && boosters}
-        + {boosters.count} SRB{/if}<em>engine-clustering</em></header
-    >
+    <header>
+      ENGINES · {activeEngines} ONLINE{#if state.boostersActive && boosters}
+        + {boosters.count} SRB{/if}<em>engine-clustering</em>
+    </header>
     <div class="engines">
       {#each Array(activeEngines) as _, i (i)}
         <i class="eng"></i>

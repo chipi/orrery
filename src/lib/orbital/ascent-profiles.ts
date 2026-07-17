@@ -32,7 +32,15 @@ export const FALCON9_SAMPLE: LaunchProfile = {
       engines: 9,
       chamberTempK: 3540, // Merlin 1D, RP-1/LOX adiabatic flame temp
     },
-    { name: 'S2', wetKg: 111_500, dryKg: 4_000, thrustVacKN: 981, ispVacS: 348, engines: 1, chamberTempK: 3540 },
+    {
+      name: 'S2',
+      wetKg: 111_500,
+      dryKg: 4_000,
+      thrustVacKN: 981,
+      ispVacS: 348,
+      engines: 1,
+      chamberTempK: 3540,
+    },
   ],
   pitchProgram: [
     [0, 90],

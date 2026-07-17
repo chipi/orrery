@@ -153,7 +153,8 @@ export interface AscentState {
 
 /** A discrete ascent beat (liftoff, staging, Max-Q, MECO, SECO, …). */
 export interface AscentEvent {
-  type: 'liftoff' | 'max_q' | 'staging' | 'meco' | 'fairing_jettison' | 'seco' | 'orbit' | 'burnout';
+  type:
+    'liftoff' | 'max_q' | 'staging' | 'meco' | 'fairing_jettison' | 'seco' | 'orbit' | 'burnout';
   t: number;
   altKm: number;
   speedKms: number;
@@ -440,8 +441,10 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   };
   const currentMass = (): number => {
     // Boosters ride only while still attached (during the stage-0 boost phase).
-    const boosterMass = boostersOn && boosterStage ? boosterStage.dryKg + Math.max(0, boosterProp) : 0;
-    if (stageIndex < 0) return profile.payloadKg + (fairingOn ? (profile.fairingKg ?? 0) : 0) + boosterMass;
+    const boosterMass =
+      boostersOn && boosterStage ? boosterStage.dryKg + Math.max(0, boosterProp) : 0;
+    if (stageIndex < 0)
+      return profile.payloadKg + (fairingOn ? (profile.fairingKg ?? 0) : 0) + boosterMass;
     const s = profile.stages[stageIndex];
     return (
       profile.payloadKg +
@@ -505,7 +508,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       propRemainingKg: stageIndex >= 0 ? Math.max(0, remainingProp) : 0,
       boosterPropRemainingKg: boostersOn ? Math.max(0, boosterProp) : 0,
       boostersActive: boostersOn && stageIndex === 0 && boosterProp > 0,
-      chamberTempK: stageIndex >= 0 && thrust > 0 ? (profile.stages[stageIndex].chamberTempK ?? 3500) : 0,
+      chamberTempK:
+        stageIndex >= 0 && thrust > 0 ? (profile.stages[stageIndex].chamberTempK ?? 3500) : 0,
       // Sutton-Graves form (proportional): stagnation heating rises with v³
       // but needs air (√ρ), so it peaks inside the atmosphere then vanishes.
       aeroHeatFlux: Math.sqrt(rho) * speed * speed * speed,
@@ -555,7 +559,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
 
     // Thrust: the active stage plus, during the boost phase, the strap-on
     // boosters firing in parallel along the same body axis.
-    const coreThrust = stageIndex >= 0 && remainingProp > 0 ? stageThrustN(profile.stages[stageIndex], alt) : 0;
+    const coreThrust =
+      stageIndex >= 0 && remainingProp > 0 ? stageThrustN(profile.stages[stageIndex], alt) : 0;
     const boostThrust =
       boostersOn && stageIndex === 0 && boosterProp > 0 ? stageThrustN(boosterStage!, alt) : 0;
     const thrust = coreThrust + boostThrust;

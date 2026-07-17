@@ -20,7 +20,12 @@
   import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
   import { createAscentScene, type AscentScene } from '$lib/three/ascent-scene';
   import { resolveLaunchGround } from '$lib/three/launch-ground';
-  import { integrateAscent, sampleAscentAt, type AscentSummary, type AscentState } from '$lib/orbital/ascent-physics';
+  import {
+    integrateAscent,
+    sampleAscentAt,
+    type AscentSummary,
+    type AscentState,
+  } from '$lib/orbital/ascent-physics';
   import { FALCON9_SAMPLE } from '$lib/orbital/ascent-profiles';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
   import { buildShotSchedule, defaultTuning } from '$lib/orbital/ascent-cameras';
@@ -65,10 +70,13 @@
   const beats = (() => {
     const raw = [
       { label: 'MAX-Q', t: summary.maxQ.t },
-      ...summary.events.filter((e) => BEAT_LABEL[e.type]).map((e) => ({ label: BEAT_LABEL[e.type], t: e.t })),
+      ...summary.events
+        .filter((e) => BEAT_LABEL[e.type])
+        .map((e) => ({ label: BEAT_LABEL[e.type], t: e.t })),
     ].filter((b) => b.t > 0 && b.t <= duration);
     // Drop MECO when STAGE SEP lands within 2 s (they coincide in the model).
-    const hasSepNear = (t: number) => raw.some((b) => b.label === 'STAGE SEP' && Math.abs(b.t - t) < 2);
+    const hasSepNear = (t: number) =>
+      raw.some((b) => b.label === 'STAGE SEP' && Math.abs(b.t - t) < 2);
     return raw.filter((b) => !(b.label === 'MECO' && hasSepNear(b.t))).sort((a, b) => a.t - b.t);
   })();
 
@@ -96,7 +104,8 @@
     met: 'T-00:12',
   });
 
-  const stageLabel = (i: number): string => (i < 0 ? 'COAST' : FALCON9_SAMPLE.stages[i]?.name ?? '—');
+  const stageLabel = (i: number): string =>
+    i < 0 ? 'COAST' : (FALCON9_SAMPLE.stages[i]?.name ?? '—');
 
   // ── Launch-console derived values (grounded in the /science articles) ──
   const ORBIT_TARGET_KMS = 7.8; // circular LEO speed — the "will it make it" line (dv-budget)
@@ -116,7 +125,9 @@
     if (i > hud.stageIndex) return 100;
     return Math.round((hud.propRemainingKg / stageProps[i]) * 100);
   };
-  const activeEngines = $derived(hud.stageIndex >= 0 ? (FALCON9_SAMPLE.stages[hud.stageIndex].engines ?? 1) : 0);
+  const activeEngines = $derived(
+    hud.stageIndex >= 0 ? (FALCON9_SAMPLE.stages[hud.stageIndex].engines ?? 1) : 0,
+  );
   const twrPct = $derived(Math.min(1, hud.twr / 2.5) * 100);
 
   // ── Live strip charts (real-telemetry style): each series is the full
@@ -135,7 +146,8 @@
   const velPts = seriesFor((s) => s.speedKms, ORBIT_TARGET_KMS * 1.05);
   const qPts = seriesFor((s) => s.qPa / 1000, maxQpeak * 1.12);
   const heatPts = seriesFor((s) => s.aeroHeatFlux, heatPeak * 1.05);
-  const poly = (pts: Pt[]): string => pts.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+  const poly = (pts: Pt[]): string =>
+    pts.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
 
   // Temperature readouts.
   let hudTemp = $state({ chamberK: 0, heatPct: 0 });
@@ -204,11 +216,13 @@
         return lat && lon ? { lat: +lat, lon: +lon } : FALCON9_SAMPLE.launchSite;
       })(),
       lonTextureOffsetDeg: (() => {
-        const o = typeof location !== 'undefined' ? new URLSearchParams(location.search).get('off') : null;
+        const o =
+          typeof location !== 'undefined' ? new URLSearchParams(location.search).get('off') : null;
         return o != null ? +o : undefined;
       })(),
       siteYawDeg: (() => {
-        const y = typeof location !== 'undefined' ? new URLSearchParams(location.search).get('yaw') : null;
+        const y =
+          typeof location !== 'undefined' ? new URLSearchParams(location.search).get('yaw') : null;
         return y != null ? +y : undefined;
       })(),
       groundSite: (() => {
@@ -241,7 +255,12 @@
     vignette.uniforms['darkness'].value = 0.55;
     composer.addPass(vignette);
 
-    (window as unknown as Record<string, unknown>).__ascentDebug = { schedule, events: summary.events, maxQ: summary.maxQ, duration };
+    (window as unknown as Record<string, unknown>).__ascentDebug = {
+      schedule,
+      events: summary.events,
+      maxQ: summary.maxQ,
+      duration,
+    };
     // Test hook: freeze the timeline at an exact MET for deterministic screenshots.
     (window as unknown as Record<string, unknown>).__ascentSetT = (nt: number) => {
       playing = false;
@@ -253,7 +272,8 @@
       const s = t < 0 ? padState(t) : sampleAscentAt(summary.states, t);
       sceneObj!.setState(s);
       // Debug: look straight down at the launch site to verify the geography.
-      const topDown = (window as unknown as Record<string, unknown>).__topDownKm as number | undefined;
+      const topDown = (window as unknown as Record<string, unknown>).__topDownKm as
+        number | undefined;
       if (topDown) {
         sceneObj!.camera.position.set(0, topDown, 0.001);
         sceneObj!.camera.lookAt(0, 0, 0);
@@ -360,15 +380,20 @@
   <div class="dossier" class:open={dossierOpen}>
     <div class="dossier-title">MISSION DOSSIER</div>
     <dl>
-      <dt>VEHICLE</dt><dd>{mission.vehicle}</dd>
-      <dt>LAUNCH SITE</dt><dd>{mission.site}</dd>
-      <dt>DESTINATION</dt><dd>{mission.destination}</dd>
-      <dt>PAYLOAD</dt><dd>{mission.payload}</dd>
+      <dt>VEHICLE</dt>
+      <dd>{mission.vehicle}</dd>
+      <dt>LAUNCH SITE</dt>
+      <dd>{mission.site}</dd>
+      <dt>DESTINATION</dt>
+      <dd>{mission.destination}</dd>
+      <dt>PAYLOAD</dt>
+      <dd>{mission.payload}</dd>
     </dl>
     <div class="dossier-title">LAUNCH VEHICLE</div>
     <dl>
       {#each vehStats as [k, v] (k)}
-        <dt>{k}</dt><dd>{v}</dd>
+        <dt>{k}</dt>
+        <dd>{v}</dd>
       {/each}
     </dl>
   </div>
@@ -383,7 +408,13 @@
           <polyline class="ghost" points={poly(pts)} />
           <path class="carea" d={area(pts, nowIdx)} style="fill:{color}" />
           <polyline class="cline" points={trace(pts, nowIdx)} style="stroke:{color}" />
-          <circle class="cdot" cx={pts[nowIdx][0]} cy={pts[nowIdx][1]} r="1.8" style="fill:{color}" />
+          <circle
+            class="cdot"
+            cx={pts[nowIdx][0]}
+            cy={pts[nowIdx][1]}
+            r="1.8"
+            style="fill:{color}"
+          />
         </svg>
         <span class="chart-val" style="color:{color}">{val}</span>
       </div>
@@ -454,7 +485,12 @@
   <div class="timeline">
     <div class="track"><div class="fill" style="width:{progressPct}%"></div></div>
     {#each beats as b, i (b.label + b.t)}
-      <div class="beat" class:done={t >= b.t} class:alt={i % 2 === 1} style="left:{(b.t / duration) * 100}%">
+      <div
+        class="beat"
+        class:done={t >= b.t}
+        class:alt={i % 2 === 1}
+        style="left:{(b.t / duration) * 100}%"
+      >
         <span class="tick"></span><span class="lbl">{b.label}</span>
       </div>
     {/each}

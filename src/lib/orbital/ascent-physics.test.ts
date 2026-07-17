@@ -28,7 +28,12 @@ describe('atmosphere + gravity', () => {
   });
 
   it('density falls by 1/e over one scale height (8.5 km)', () => {
-    expectCloseTo(airDensity(8_500), SEA_LEVEL_DENSITY_KGM3 / Math.E, 1e-4, 'ρ at one scale height');
+    expectCloseTo(
+      airDensity(8_500),
+      SEA_LEVEL_DENSITY_KGM3 / Math.E,
+      1e-4,
+      'ρ at one scale height',
+    );
   });
 
   it('surface gravity ≈ 9.82 m/s² (µ/R⊕²)', () => {
@@ -67,12 +72,22 @@ describe('rocket equation', () => {
 
 describe('pressure-interpolated thrust + Isp', () => {
   it('sea-level altitude → sea-level values', () => {
-    expectCloseTo(stageThrustN(FALCON9.stages[0], 0) / 1000, 7_607, 1, 'S1 thrust @ sea level (kN)');
+    expectCloseTo(
+      stageThrustN(FALCON9.stages[0], 0) / 1000,
+      7_607,
+      1,
+      'S1 thrust @ sea level (kN)',
+    );
     expectCloseTo(stageIspS(FALCON9.stages[0], 0), 283, 0.1, 'S1 Isp @ sea level');
   });
 
   it('high altitude → approaches vacuum values', () => {
-    expectCloseTo(stageThrustN(FALCON9.stages[0], 120_000) / 1000, 8_227, 5, 'S1 thrust @ 120 km (kN)');
+    expectCloseTo(
+      stageThrustN(FALCON9.stages[0], 120_000) / 1000,
+      8_227,
+      5,
+      'S1 thrust @ 120 km (kN)',
+    );
     expectCloseTo(stageIspS(FALCON9.stages[0], 120_000), 312, 0.2, 'S1 Isp @ 120 km');
   });
 
@@ -85,9 +100,19 @@ describe('pressure-interpolated thrust + Isp', () => {
 describe('pitch program', () => {
   it('clamps to the endpoints and interpolates linearly between knots', () => {
     expectCloseTo((pitchAngleRad(FALCON9, 0) * 180) / Math.PI, 90, 1e-6, 'pitch @ t=0');
-    expectCloseTo((pitchAngleRad(FALCON9, -5) * 180) / Math.PI, 90, 1e-6, 'pitch clamped pre-launch');
+    expectCloseTo(
+      (pitchAngleRad(FALCON9, -5) * 180) / Math.PI,
+      90,
+      1e-6,
+      'pitch clamped pre-launch',
+    );
     expectCloseTo((pitchAngleRad(FALCON9, 26) * 180) / Math.PI, 79.5, 1e-6, 'pitch midway 12→40 s');
-    expectCloseTo((pitchAngleRad(FALCON9, 9_999) * 180) / Math.PI, 3, 1e-6, 'pitch clamped post-program');
+    expectCloseTo(
+      (pitchAngleRad(FALCON9, 9_999) * 180) / Math.PI,
+      3,
+      1e-6,
+      'pitch clamped post-program',
+    );
   });
 });
 

@@ -60,7 +60,8 @@
   const VEH_LEN = 1.2;
   const tuning = $state(defaultTuning()); // live per-shot camera tuning (debug sliders → scene)
   const debugMode =
-    typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
+    typeof window !== 'undefined' &&
+    new URLSearchParams(window.location.search).get('debug') === '1';
   const T_MINUS = 12;
   const IGNITION_T = -3;
 
@@ -70,7 +71,10 @@
 
   const vehStats: [string, string][] = [
     ['STAGES', String(profile.stages.length)],
-    ['LIFTOFF THRUST', `${(profile.stages[0].thrustSlKN ?? profile.stages[0].thrustVacKN).toLocaleString()} kN`],
+    [
+      'LIFTOFF THRUST',
+      `${(profile.stages[0].thrustSlKN ?? profile.stages[0].thrustVacKN).toLocaleString()} kN`,
+    ],
     ['IDEAL ΔV', `${summary.idealDvKms.toFixed(2)} km/s`],
     ['PAYLOAD', `${profile.payloadKg.toLocaleString()} kg`],
   ];
@@ -85,9 +89,12 @@
   const beats = (() => {
     const raw = [
       { label: 'MAX-Q', t: summary.maxQ.t },
-      ...summary.events.filter((e) => BEAT_LABEL[e.type]).map((e) => ({ label: BEAT_LABEL[e.type], t: e.t })),
+      ...summary.events
+        .filter((e) => BEAT_LABEL[e.type])
+        .map((e) => ({ label: BEAT_LABEL[e.type], t: e.t })),
     ].filter((b) => b.t > 0 && b.t <= duration);
-    const hasSepNear = (t: number) => raw.some((b) => b.label === 'STAGE SEP' && Math.abs(b.t - t) < 2);
+    const hasSepNear = (t: number) =>
+      raw.some((b) => b.label === 'STAGE SEP' && Math.abs(b.t - t) < 2);
     return raw.filter((b) => !(b.label === 'MECO' && hasSepNear(b.t))).sort((a, b) => a.t - b.t);
   })();
 
@@ -110,7 +117,7 @@
   let warpProgress = $state(0);
   const WARP_S = 1.6;
 
-  const stageLabel = (i: number): string => (i < 0 ? 'COAST' : profile.stages[i]?.name ?? '—');
+  const stageLabel = (i: number): string => (i < 0 ? 'COAST' : (profile.stages[i]?.name ?? '—'));
   const countdown = $derived(t < 0 ? Math.max(0, Math.ceil(-t)) : null);
   const speedKmh = $derived(Math.round(hud.velKms * 3600));
   const dossierOpen = $derived(!warping); // keep the mission panel up through the whole launch
@@ -295,11 +302,15 @@
       {#if profile.source_tier === 'generic'}<span class="rep">REPRESENTATIVE</span>{/if}
     </div>
     <dl>
-      <dt>VEHICLE</dt><dd>{profile.name}</dd>
-      <dt>LAUNCH SITE</dt><dd>{mission.site}</dd>
-      <dt>DESTINATION</dt><dd>{mission.destination}</dd>
+      <dt>VEHICLE</dt>
+      <dd>{profile.name}</dd>
+      <dt>LAUNCH SITE</dt>
+      <dd>{mission.site}</dd>
+      <dt>DESTINATION</dt>
+      <dd>{mission.destination}</dd>
       {#each vehStats as [k, v] (k)}
-        <dt>{k}</dt><dd>{v}</dd>
+        <dt>{k}</dt>
+        <dd>{v}</dd>
       {/each}
     </dl>
   </div>
@@ -307,7 +318,12 @@
   <div class="timeline">
     <div class="track"><div class="fill" style="width:{progressPct}%"></div></div>
     {#each beats as b, i (b.label + b.t)}
-      <div class="beat" class:done={t >= b.t} class:alt={i % 2 === 1} style="left:{(b.t / duration) * 100}%">
+      <div
+        class="beat"
+        class:done={t >= b.t}
+        class:alt={i % 2 === 1}
+        style="left:{(b.t / duration) * 100}%"
+      >
         <span class="tick"></span><span class="lbl">{b.label}</span>
       </div>
     {/each}
@@ -315,8 +331,16 @@
   </div>
 
   <div class="readouts">
-    <div class="ro"><span class="rl">SPEED</span><span class="rv">{speedKmh.toLocaleString()}</span><span class="ru">KM/H</span></div>
-    <div class="ro"><span class="rl">ALTITUDE</span><span class="rv">{hud.altKm.toFixed(0)}</span><span class="ru">KM</span></div>
+    <div class="ro">
+      <span class="rl">SPEED</span><span class="rv">{speedKmh.toLocaleString()}</span><span
+        class="ru">KM/H</span
+      >
+    </div>
+    <div class="ro">
+      <span class="rl">ALTITUDE</span><span class="rv">{hud.altKm.toFixed(0)}</span><span class="ru"
+        >KM</span
+      >
+    </div>
   </div>
 
   {#if !warping}

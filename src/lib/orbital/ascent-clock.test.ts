@@ -70,10 +70,15 @@ describe('scrubber ↔ point mapping', () => {
 
 describe('advanceClock', () => {
   it('advances within the ascent in real seconds × multiplier', () => {
-    const p = advanceClock({ phase: 'ascent', ascentT: 0, cruiseMetDays: 0 }, 2, {
-      ascentSpeedMult: 5,
-      cruiseDaysPerSec: 1,
-    }, TL);
+    const p = advanceClock(
+      { phase: 'ascent', ascentT: 0, cruiseMetDays: 0 },
+      2,
+      {
+        ascentSpeedMult: 5,
+        cruiseDaysPerSec: 1,
+      },
+      TL,
+    );
     expect(p.phase).toBe('ascent');
     expectCloseTo(p.ascentT, 10, 1e-6, '2 s × 5');
   });
@@ -82,19 +87,29 @@ describe('advanceClock', () => {
     // At t=538 s, 2 ascent-seconds remain. At 5×, hitting the seam costs
     // 2/5 = 0.4 wall-seconds; the other 0.6 wall-seconds run at cruise
     // speed → 0.6 s × 10 day/s = 6 cruise-days.
-    const p = advanceClock({ phase: 'ascent', ascentT: 538, cruiseMetDays: 0 }, 1, {
-      ascentSpeedMult: 5,
-      cruiseDaysPerSec: 10,
-    }, TL);
+    const p = advanceClock(
+      { phase: 'ascent', ascentT: 538, cruiseMetDays: 0 },
+      1,
+      {
+        ascentSpeedMult: 5,
+        cruiseDaysPerSec: 10,
+      },
+      TL,
+    );
     expect(p.phase).toBe('cruise');
     expectCloseTo(p.cruiseMetDays, 6, 1e-6, 'seam-crossing carry-over');
   });
 
   it('advances cruise in days-per-second and clamps at arrival', () => {
-    const p = advanceClock({ phase: 'cruise', ascentT: 540, cruiseMetDays: 255 }, 1, {
-      ascentSpeedMult: 1,
-      cruiseDaysPerSec: 100,
-    }, TL);
+    const p = advanceClock(
+      { phase: 'cruise', ascentT: 540, cruiseMetDays: 255 },
+      1,
+      {
+        ascentSpeedMult: 1,
+        cruiseDaysPerSec: 100,
+      },
+      TL,
+    );
     expect(p.cruiseMetDays).toBe(259);
   });
 

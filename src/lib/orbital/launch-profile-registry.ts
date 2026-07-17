@@ -100,10 +100,35 @@ export function buildGenericProfile(launcherId: string, displayName?: string): L
     fairingJettisonAltM: 110000,
     refAreaM2: 10,
     cd: 0.3,
-    pitchProgram: [[0, 90], [14, 88], [45, 66], [120, 42], [190, 22], [280, 10]],
+    pitchProgram: [
+      [0, 90],
+      [14, 88],
+      [45, 66],
+      [120, 42],
+      [190, 22],
+      [280, 10],
+    ],
     stages: [
-      { name: 'S1', wetKg: 290000, dryKg: 22000, thrustSlKN: 4100, thrustVacKN: 4500, ispSlS: 285, ispVacS: 320, engines: 1, chamberTempK: 3400 },
-      { name: 'S2', wetKg: 28000, dryKg: 2800, thrustVacKN: 300, ispVacS: 355, engines: 1, chamberTempK: 3300 },
+      {
+        name: 'S1',
+        wetKg: 290000,
+        dryKg: 22000,
+        thrustSlKN: 4100,
+        thrustVacKN: 4500,
+        ispSlS: 285,
+        ispVacS: 320,
+        engines: 1,
+        chamberTempK: 3400,
+      },
+      {
+        name: 'S2',
+        wetKg: 28000,
+        dryKg: 2800,
+        thrustVacKN: 300,
+        ispVacS: 355,
+        engines: 1,
+        chamberTempK: 3300,
+      },
     ],
   };
 }

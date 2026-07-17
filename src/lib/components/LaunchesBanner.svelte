@@ -10,16 +10,19 @@
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import { loadUpcoming, formatCountdown, type LaunchEntry } from '$lib/launches/manifest.js';
+  import { deriveLaunchFeedState } from '$lib/live-feeds';
   import { agencyLogo, agencyFullName } from '$lib/agencies';
 
   let entries: LaunchEntry[] = $state([]);
+  let allEntries: LaunchEntry[] = $state([]);
   let now = $state(new Date());
   let loaded = $state(false);
 
   onMount(() => {
     void (async () => {
       const m = await loadUpcoming();
-      entries = Object.values(m.entries)
+      allEntries = Object.values(m.entries);
+      entries = allEntries
         .filter((e) => e.tier === 'T1')
         .sort((a, b) => a.net.localeCompare(b.net))
         .slice(0, 4);
@@ -29,6 +32,11 @@
     return () => clearInterval(t);
   });
 
+  // Cross-correlate with /live: any launch live-or-imminent right now → pill.
+  const liveOrImminent = $derived(
+    allEntries.some((e) => deriveLaunchFeedState(e.net, now) !== null),
+  );
+
   // Agency logo lookup delegates to $lib/agencies (unified registry).
   const logoFor = agencyLogo;
 </script>
@@ -37,7 +45,14 @@
   <aside class="banner" aria-label={m.launches_banner_aria()}>
     <header class="banner-header">
       <h2 class="eyebrow">{m.launches_banner_eyebrow()}</h2>
-      <a class="all-link" href="{base}/missions/launches">{m.launches_banner_all()}</a>
+      <span class="header-links">
+        {#if liveOrImminent}
+          <a class="live-pill" href="{base}/live" data-testid="launches-live-pill">
+            <span class="live-dot" aria-hidden="true"></span>{m.live_badge_live()}
+          </a>
+        {/if}
+        <a class="all-link" href="{base}/missions/launches">{m.launches_banner_all()}</a>
+      </span>
     </header>
     <div class="cards">
       {#each entries as e (e.id)}
@@ -100,6 +115,31 @@
     font-weight: 700;
   }
 
+  .header-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .live-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #fff;
+    background: #c62f2f;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .live-pill .live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+  }
   .all-link {
     font-family: 'Space Mono', monospace;
     font-size: 11px;

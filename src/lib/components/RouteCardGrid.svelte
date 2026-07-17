@@ -684,6 +684,37 @@
               <!-- Nucleus glow -->
               <circle cx="24" cy="24" r="6" fill="url(#ic-sun-corona)" />
               <circle cx="24" cy="24" r="3.2" fill="url(#ic-sun)" />
+            {:else if card.route === '/live'}
+              <!-- Live-broadcast glyph: a signal dot radiating concentric arcs -->
+              <circle cx="24" cy="24" r="4" fill="#c62f2f" />
+              <path
+                d="M 33 15 A 13 13 0 0 1 33 33"
+                fill="none"
+                stroke="#ff6b6b"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+              <path
+                d="M 15 33 A 13 13 0 0 1 15 15"
+                fill="none"
+                stroke="#ff6b6b"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+              <path
+                d="M 38 10 A 20 20 0 0 1 38 38"
+                fill="none"
+                stroke="rgba(255,107,107,0.5)"
+                stroke-width="1.4"
+                stroke-linecap="round"
+              />
+              <path
+                d="M 10 38 A 20 20 0 0 1 10 10"
+                fill="none"
+                stroke="rgba(255,107,107,0.5)"
+                stroke-width="1.4"
+                stroke-linecap="round"
+              />
             {/if}
           </svg>
           <span class="card-name">{card.name}</span>

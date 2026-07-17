@@ -49,7 +49,7 @@ One shared interaction model for **keyboard, screen reader, and TV D-pad remote*
 
 ### Routes
 
-The production app ships **12 primary routes** at v0.6.0. Each is a SvelteKit page module under `src/routes/<route>/+page.svelte`. Pages do not share mutable state directly — they communicate via the data client + URL search params (`$page.url.searchParams`).
+The production app ships **13 primary routes** (the core experience below; nav-hub pages `/catalog` · `/learn` · `/explore/hub` and `/programs` are additional). Each is a SvelteKit page module under `src/routes/<route>/+page.svelte`. Pages do not share mutable state directly — they communicate via the data client + URL search params (`$page.url.searchParams`).
 
 | Route | Purpose | Anchored by |
 |---|---|---|
@@ -65,10 +65,13 @@ The production app ships **12 primary routes** at v0.6.0. Each is a SvelteKit pa
 | `/tiangong` | Tiangong Explorer · Tianhe + Wentian + Mengtian module overlays | PRD-011 / RFC-014 / ADR-048 / ADR-049 / ADR-050 |
 | `/science` | Science Encyclopedia · 85 sections × 10 tabs · KaTeX · 71 SVG diagrams · ?-chip deep-links · Cmd-K search | PRD-008 / RFC-011 / ADR-034 / ADR-035 / ADR-036 |
 | `/fleet` | Spaceflight Fleet · 137 entries × 9 categories with bidirectional cross-refs | PRD-012 / RFC-016 / ADR-052 / ADR-053 / ADR-054 |
+| `/live` | Live feeds · pinned NASA ISS stream (click-to-load facade) + launch broadcasts time-gated off `$lib/launches` (link-out). Under the Catalog nav group. | PRD-031 / RFC-033 |
 
 **Sub-routes + dev tooling (not in the route grid):** `/science/reading-list` + `/science/watch-list` (curated book / documentary / podcast / channel lists), `/library/episodes` (audio episode index, RFC-019). `/dev/*` (model preview, staging-ground review per RFC-029, Slice-A approval, UI style-guide) are **developer-only** — `src/routes/dev/+layout.ts` 404s the subtree in any non-dev build.
 
 **Disclosure + gallery pages:** `/credits` (image + text-source provenance per ADR-047), `/colophon` (the *original*-work bill-of-materials — spacecraft anatomy art, science diagrams, 3D/2D graphics, tour scripts; manifest `static/data/original-work.json` built by `scripts/build-original-work.mjs`. Anatomy art is AI-generated watercolor/pencil cutaways under `static/images/anatomy/*.webp` — to add more without style drift follow [`docs/anatomy-art-runbook.md`](../anatomy-art-runbook.md), #367), `/library` (outbound LEARN-link bill of links per ADR-051), `/posters` (11 hand-authored SVG art-print posters across three style families — JPL travel-poster, era-matched mood-lit, indie-pop halftone — every poster 600×900 portrait SVG; right-click save gives a scalable wallpaper file).
+
+**Video & live feeds (PRD-031 / RFC-033).** Linked-not-hosted video: zero bytes stored — every clip is an embed. `static/data/video-provenance.json` (built by `scripts/build-video-provenance.ts` from `video-sources.json`, gated by the fail-closed channel allowlist in `scripts/video-channel-allowlist.ts`; validate-data enforces channel-∈-allowlist, unique ids, and that every entity `videos:[{id}]` resolves) is the single source of truth, consumed by `$lib/video-provenance.ts`. `MediaPlayer.svelte` is a **click-to-load facade** — no `<iframe>` mounts until a user click (perf non-negotiable, e2e-enforced) — with a `content_advisory` interstitial and capture-phase Escape. `VideoThumb.svelte` tiles interleave into the mission / fleet / launch-site (`FleetEntryPanel`) / landing-site (`SurfaceScene`) galleries; the credited set surfaces on `/credits`. `$lib/live-feeds.ts` powers `/live`: the ISS `live-pin` + launch broadcasts time-gated on scheduled `net` vs real `now` (`deriveLaunchFeedState`, pure/tested).
 
 ### Data layer
 

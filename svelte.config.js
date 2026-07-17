@@ -42,6 +42,7 @@ const SEED_ROUTES = [
   '/iss',
   '/tiangong',
   '/science',
+  '/live',
   '/credits',
   '/library',
   '/gallery',

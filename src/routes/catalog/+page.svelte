@@ -35,6 +35,12 @@
       title: m.landing_card_tiangong_title(),
       desc: m.landing_card_tiangong_desc(),
     },
+    {
+      route: '/live',
+      name: m.nav_live(),
+      title: m.landing_card_live_title(),
+      desc: m.landing_card_live_desc(),
+    },
   ]);
 </script>
 

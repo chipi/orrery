@@ -91,6 +91,7 @@
         // Human hardware — the crewed stations live with missions + fleet.
         { path: '/iss', label: m.nav_iss },
         { path: '/tiangong', label: m.nav_tiangong },
+        { path: '/live', label: m.nav_live },
       ],
     },
     {

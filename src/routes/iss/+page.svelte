@@ -1724,6 +1724,9 @@
     <div class="hud-controls" role="group" aria-label={m.iss_hud_aria()}>
       {@render issControls()}
       <EnterArButton onEnter={() => void launchArScene('iss')} />
+      <a class="hud-live-link" href="{base}/live" data-testid="iss-watch-live">
+        <span class="live-dot" aria-hidden="true"></span>{m.live_iss_watch()}
+      </a>
     </div>
 
     {#snippet mobileModulesContent(close: () => void)}
@@ -2130,6 +2133,25 @@
   .hud-controls :global(button),
   .hud-controls :global(.toggle) {
     pointer-events: auto;
+  }
+  .hud-live-link {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #ffd0d0;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .hud-live-link:hover {
+    text-decoration: underline;
+  }
+  .hud-live-link .live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c62f2f;
   }
   .ctrl-row {
     display: flex;

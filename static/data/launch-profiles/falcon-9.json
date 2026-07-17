@@ -1,0 +1,38 @@
+{
+  "id": "falcon-9",
+  "name": "Falcon 9 Block 5",
+  "source_tier": "flagship",
+  "payloadKg": 15000,
+  "fairingKg": 1900,
+  "fairingJettisonAltM": 110000,
+  "refAreaM2": 10.75,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.56, "lon": -80.58, "name": "SLC-40 · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [12, 89], [40, 70], [120, 45], [180, 25], [300, 10], [520, 3]],
+  "stages": [
+    {
+      "name": "S1",
+      "wetKg": 433100,
+      "dryKg": 25600,
+      "thrustSlKN": 7607,
+      "thrustVacKN": 8227,
+      "ispSlS": 283,
+      "ispVacS": 312,
+      "engines": 9,
+      "chamberTempK": 3540
+    },
+    {
+      "name": "S2",
+      "wetKg": 111500,
+      "dryKg": 4000,
+      "thrustVacKN": 981,
+      "ispVacS": 348,
+      "engines": 1,
+      "chamberTempK": 3540
+    }
+  ],
+  "provenance": [
+    { "l": "SpaceX Falcon 9 Users Guide (2021)", "u": "https://www.spacex.com/vehicles/falcon-9/" },
+    { "l": "Spaceflight101 — Falcon 9 FT", "u": "https://spaceflight101.com/spacerockets/falcon-9-ft/" }
+  ]
+}

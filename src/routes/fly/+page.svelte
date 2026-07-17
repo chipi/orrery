@@ -170,7 +170,12 @@
   import { flyVelocitySon } from '$lib/sensory/sonify/fly-velocity';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import LaunchScene from '$lib/components/LaunchScene.svelte';
-  import { getLaunchProfile, missionLauncherId } from '$lib/orbital/launch-profile-registry';
+  import {
+    loadLaunchProfile,
+    missionLauncherId,
+    hasLaunchProfile,
+  } from '$lib/orbital/launch-profile-registry';
+  import type { LaunchProfile } from '$lib/orbital/ascent-physics';
   import PhasePanel from '$lib/components/PhasePanel.svelte';
   import FlightDirectorBanner from '$lib/components/FlightDirectorBanner.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
@@ -235,24 +240,44 @@
   );
   let missionEvents: MissionEvent[] = $state(defaultScenarioOverlay.events as MissionEvent[]);
 
-  // ─── Launch pre-roll (RFC-033 §11.3 / Track A) — opt-in via ?launch=1 ─
-  // Default /fly is byte-unchanged. When the URL asks for it AND the mission's
-  // launcher has a modelled ascent profile, the launch act plays as a self-
-  // contained overlay; onComplete dismisses it to reveal the transfer scene.
-  const wantLaunch =
+  // ─── Launch pre-roll (RFC-033 §11 / Track A) — AUTO-PLAY, opt-out ?launch=0 ─
+  // When the mission's fleet_refs launcher has a shipped ascent profile, the
+  // launch act plays first as a self-contained overlay (suppressing the #86
+  // opening); the warp/SKIP hands off to the transfer scene. Missions without a
+  // profile — and ?launch=0 — get the unchanged default /fly.
+  const launchOptOut =
     typeof window !== 'undefined' &&
-    new URLSearchParams(window.location.search).get('launch') === '1';
+    new URLSearchParams(window.location.search).get('launch') === '0';
   let showLaunch = $state(false);
   let launchDismissed = $state(false);
-  let launchProfile = $derived(getLaunchProfile(missionLauncherId(mission.fleet_refs)));
+  let launchProfile = $state<LaunchProfile | null>(null);
+  let loadedLauncherId: string | null = null;
+  // Whether a launch WILL play (known synchronously) — gates the opening card.
+  let launchIntends = $derived(
+    !launchOptOut && !launchDismissed && hasLaunchProfile(mission.fleet_refs),
+  );
   let launchDossier = $derived({
     name: mission.name,
     agency: mission.agency ?? mission.agency_full ?? '',
     site: launchProfile?.launchSite?.name ?? 'Launch complex',
     destination: mission.arr_label ?? '',
   });
+  // Load the profile async when a launch is intended for the current mission.
   $effect(() => {
-    showLaunch = wantLaunch && !launchDismissed && launchProfile != null;
+    if (!launchIntends) {
+      showLaunch = false;
+      return;
+    }
+    const launcherId = missionLauncherId(mission.fleet_refs)!;
+    if (loadedLauncherId === launcherId) {
+      showLaunch = launchProfile != null;
+      return;
+    }
+    loadedLauncherId = launcherId;
+    void loadLaunchProfile(launcherId, fetch, base).then((p) => {
+      launchProfile = p;
+      showLaunch = p != null && !launchDismissed && !launchOptOut;
+    });
   });
 
   // ─── Rendering debug bridge (#334) ───────────────────────────────
@@ -7134,7 +7159,7 @@
        Wide top-down system view is the backdrop (set in
        updateHelioAutoZoomTargets 'opening' branch). Skip button is
        always present while openingActive so users can fast-forward. -->
-  {#if openingActive && !wantLaunch}
+  {#if openingActive && !launchIntends}
     {@const depYear = mission.dep_label?.slice(0, 4) ?? ''}
     {@const arrYear = mission.arr_label?.slice(0, 4) ?? ''}
     {@const story = mission.description ?? ''}

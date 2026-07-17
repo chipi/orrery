@@ -77,6 +77,10 @@ export interface LaunchProfile {
   cd?: number;
   /** Launch site — informational; not used by the S1 planar integration. */
   launchSite?: { lat: number; lon: number; name?: string };
+  /** "flagship" (hand-authored) | "generic" (parameterized fallback). */
+  source_tier?: 'flagship' | 'generic';
+  /** Provenance rows (publisher + source URL) for the shipped JSON. */
+  provenance?: { l: string; u: string }[];
 }
 
 /** A sampled instant of the ascent trajectory. */

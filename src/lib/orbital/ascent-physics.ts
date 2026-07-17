@@ -290,29 +290,18 @@ export const GUIDANCE = {
   /** How far above / below local horizontal the guidance may point (rad). */
   maxClimbRad: 0.6,
   maxDiveRad: 0.25,
-  /** Vertical speed (m·s⁻¹) below which the orbit gate accepts an insertion —
-   *  a genuine orbit is near-level, so this rejects a suborbital lob that only
-   *  crosses circular speed while falling. */
-  orbitVyMaxMs: 250,
 };
 
 /**
  * Commanded thrust flight-path angle (rad from local horizontal).
  *
  * Below `handoverAltM` the aero-safe pitch table drives the gravity turn.
- * Above it an open-loop table can't hit "level at target altitude at circular
- * speed", so an altitude-hold autopilot steers there instead:
- *
- *   1. desired vertical accel  a_des = kAlt·(target − alt) − kVy·vy
- *      (drive altitude → target, vertical speed → 0)
- *   2. the vertical thrust needed to achieve it, after gravity and the
- *      centrifugal relief of horizontal speed:  a_des + g − vx²/r
- *   3. pitch = asin(needed / (thrust/mass))
- *
- * As horizontal speed builds toward orbital, vx²/r cancels gravity and the
- * commanded pitch falls to zero on its own — the vehicle arrives level at
- * circular speed. The two phases blend over `blendM` so the command is
- * continuous. Falls back to the table when coasting (no thrust to steer).
+ * Above it, closed-loop insertion in the 2-body dynamics: while the osculating
+ * APOAPSIS is below target, burn PROGRADE to raise it; once apoapsis reaches
+ * target, altitude-hold to circularise — command the vertical accel toward the
+ * target altitude at zero vertical speed and solve for the pitch that delivers
+ * it after the effective radial gravity (g − velHoriz²/r). Blends over
+ * `blendM`; falls back to the table while coasting.
  */
 export function commandedPitchRad(
   profile: LaunchProfile,
@@ -325,14 +314,29 @@ export function commandedPitchRad(
   const table = pitchAngleRad(profile, t);
   if (altM <= GUIDANCE.handoverAltM || thrustAccelMs2 <= 1e-6) return table;
   const targetAlt = profile.targetOrbitAltM ?? GUIDANCE.targetAltM;
-  const aDes = GUIDANCE.kAlt * (targetAlt - altM) - GUIDANCE.kVy * velUpMs;
-  const g = gravity(altM);
-  const centrifugal = (velHorizMs * velHorizMs) / (R_EARTH_M + altM);
-  const sinGamma = (aDes + g - centrifugal) / thrustAccelMs2;
-  const guided = Math.max(
-    -GUIDANCE.maxDiveRad,
-    Math.min(GUIDANCE.maxClimbRad, Math.asin(Math.max(-1, Math.min(1, sinGamma)))),
-  );
+
+  const r = R_EARTH_M + altM;
+  const energy = (velUpMs * velUpMs + velHorizMs * velHorizMs) / 2 - MU_EARTH_M3_S2 / r;
+  let apoapsisAltM = Infinity;
+  if (energy < 0) {
+    const h = r * velHorizMs;
+    const a = -MU_EARTH_M3_S2 / (2 * energy);
+    const e = Math.sqrt(Math.max(0, 1 + (2 * energy * h * h) / (MU_EARTH_M3_S2 * MU_EARTH_M3_S2)));
+    apoapsisAltM = a * (1 + e) - R_EARTH_M;
+  }
+
+  let guided: number;
+  if (apoapsisAltM < targetAlt) {
+    guided = Math.atan2(velUpMs, velHorizMs); // prograde — raise apoapsis
+  } else {
+    const aDes = GUIDANCE.kAlt * (targetAlt - altM) - GUIDANCE.kVy * velUpMs;
+    const gDeficit = gravity(altM) - (velHorizMs * velHorizMs) / (R_EARTH_M + altM);
+    const sinGamma = (aDes + gDeficit) / thrustAccelMs2;
+    guided = Math.max(
+      -GUIDANCE.maxDiveRad,
+      Math.min(GUIDANCE.maxClimbRad, Math.asin(Math.max(-1, Math.min(1, sinGamma)))),
+    );
+  }
   const blend = Math.max(0, Math.min(1, (altM - GUIDANCE.handoverAltM) / GUIDANCE.blendM));
   return table * (1 - blend) + guided * blend;
 }
@@ -362,7 +366,7 @@ export interface AscentOptions {
 export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}): AscentSummary {
   const dt = opts.dtS ?? 0.05;
   const sampleDt = opts.sampleDtS ?? 1;
-  const maxT = opts.maxTS ?? 1200;
+  const maxT = opts.maxTS ?? 2000; // a low-TWR upper stage burns for many minutes
   const refArea = profile.refAreaM2 ?? 10;
   const cd = profile.cd ?? 0.3;
 
@@ -406,26 +410,37 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   let orbitSeen = false;
   let secoT = -1; // time all stages are spent → start of the orbit coast
   const POST_SECO_COAST_S = 90; // render a serene "engine dark" coast after SECO
+  const PERIGEE_TARGET_M = 140_000; // perigee altitude that counts as a stable orbit
+
+  // Cache the last-commanded pitch so the snapshot's HUD value matches the
+  // dynamics exactly (the guidance is stateful across the trajectory).
+  let lastPitch = Math.PI / 2;
 
   const snapshot = (): AscentState => {
+    // Radial frame: position from Earth's centre, altitude above the surface,
+    // velocity split into radial (up) and downrange (horizontal) components.
+    const ry = y + R_EARTH_M;
+    const r = Math.hypot(x, ry) || R_EARTH_M;
+    const alt = r - R_EARTH_M;
     const speed = Math.hypot(vx, vy);
-    const rho = airDensity(y);
-    const g = gravity(y);
+    const velUp = (vx * x + vy * ry) / r;
+    const rho = airDensity(alt);
+    const g = gravity(alt);
     const m = currentMass();
-    const thrust = stageIndex >= 0 ? stageThrustN(profile.stages[stageIndex], y) : 0;
+    const thrust = stageIndex >= 0 ? stageThrustN(profile.stages[stageIndex], alt) : 0;
     return {
       t,
-      altKm: y / 1000,
-      downrangeKm: x / 1000,
+      altKm: alt / 1000,
+      downrangeKm: (R_EARTH_M * Math.atan2(x, ry)) / 1000,
       speedKms: speed / 1000,
-      velUpKms: vy / 1000,
+      velUpKms: velUp / 1000,
       massKg: m,
       stageIndex,
       qPa: dynamicPressure(rho, speed),
       twr: m > 0 ? thrust / (m * g) : 0,
       thrustN: thrust,
       dragN: dynamicPressure(rho, speed) * cd * refArea,
-      pitchRad: commandedPitchRad(profile, t, y, vy, Math.abs(vx), m > 0 ? thrust / m : 0),
+      pitchRad: lastPitch,
       propRemainingKg: stageIndex >= 0 ? Math.max(0, remainingProp) : 0,
       chamberTempK: stageIndex >= 0 && thrust > 0 ? (profile.stages[stageIndex].chamberTempK ?? 3500) : 0,
       // Sutton-Graves form (proportional): stagnation heating rises with v³
@@ -444,16 +459,44 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   let nextSampleT = sampleDt;
 
   while (t < maxT) {
-    const g = gravity(y);
-    const rho = airDensity(y);
+    // Radial frame — the honest curved-Earth geometry. Position from the
+    // centre is (x, y+R⊕); local vertical points radially out, local
+    // horizontal (downrange) is perpendicular to it. Gravity always pulls
+    // toward the centre, so elliptical orbits + circularisation are inherent.
+    const ry = y + R_EARTH_M;
+    const r = Math.hypot(x, ry) || R_EARTH_M;
+    const alt = r - R_EARTH_M;
+    const upX = x / r;
+    const upY = ry / r;
+    const horizX = upY; // local horizontal, +downrange
+    const horizY = -upX;
+    const g = gravity(alt);
+    const rho = airDensity(alt);
     const speed = Math.hypot(vx, vy);
     const m = currentMass();
+    const velUp = vx * upX + vy * upY; // radial (vertical) speed
+    const horizSpeed = vx * horizX + vy * horizY; // downrange speed
 
-    // Thrust along the guidance-commanded pitch angle.
-    const thrust = stageIndex >= 0 && remainingProp > 0 ? stageThrustN(profile.stages[stageIndex], y) : 0;
-    const pitch = commandedPitchRad(profile, t, y, vy, Math.abs(vx), thrust / m);
-    const thrustDirX = Math.cos(pitch);
-    const thrustDirY = Math.sin(pitch);
+    // Osculating orbit's perigee — the orbit gate fires when it's a stable,
+    // non-decaying orbit. velHoriz is the tangential speed, so h = r·velHoriz.
+    const energy = (speed * speed) / 2 - MU_EARTH_M3_S2 / r;
+    let perigeeAltM = -Infinity;
+    if (energy < 0) {
+      const hMom = r * horizSpeed;
+      const semiMajor = -MU_EARTH_M3_S2 / (2 * energy);
+      const ecc = Math.sqrt(
+        Math.max(0, 1 + (2 * energy * hMom * hMom) / (MU_EARTH_M3_S2 * MU_EARTH_M3_S2)),
+      );
+      perigeeAltM = semiMajor * (1 - ecc) - R_EARTH_M;
+    }
+
+    // Guidance: closed-loop insertion (raise apoapsis prograde, then
+    // altitude-hold to circularise), commanded from the local horizontal.
+    const thrust = stageIndex >= 0 && remainingProp > 0 ? stageThrustN(profile.stages[stageIndex], alt) : 0;
+    const pitch = commandedPitchRad(profile, t, alt, velUp, Math.abs(horizSpeed), thrust / m);
+    lastPitch = pitch;
+    const thrustDirX = Math.cos(pitch) * horizX + Math.sin(pitch) * upX;
+    const thrustDirY = Math.cos(pitch) * horizY + Math.sin(pitch) * upY;
 
     // Drag opposes the velocity vector.
     const q = dynamicPressure(rho, speed);
@@ -461,20 +504,16 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     const dragDirX = speed > 1e-6 ? -vx / speed : 0;
     const dragDirY = speed > 1e-6 ? -vy / speed : 0;
 
-    // Net acceleration (m·s⁻²). The +vx²/r term is the centrifugal relief of
-    // downrange speed in the launch-local frame — the curved-Earth correction
-    // to the otherwise-planar model. It's negligible at low speed but cancels
-    // gravity exactly at circular speed (vx²/r = g), so orbit is a real
-    // equilibrium the vehicle holds after cutoff, not a gate-faked lob.
-    const centrifugal = (vx * vx) / (R_EARTH_M + y);
-    const ax = (thrust * thrustDirX + drag * dragDirX) / m;
-    const ay = (thrust * thrustDirY + drag * dragDirY) / m - g + centrifugal;
+    // Net acceleration (m·s⁻²): thrust + drag + gravity toward Earth's centre.
+    const ax = (thrust * thrustDirX + drag * dragDirX) / m - g * upX;
+    const ay = (thrust * thrustDirY + drag * dragDirY) / m - g * upY;
 
     // Δv-loss bookkeeping — accumulated over POWERED flight only (a loss is
     // Δv you spend and don't get back; a ballistic coast spends none).
     if (thrust > 0) {
-      const gammaVel = speed > 1e-3 ? Math.atan2(vy, vx) : pitch; // flight-path angle of velocity
-      losses.gravity += g * Math.sin(gammaVel) * dt;
+      // Gravity loss integrates g·sin(flight-path angle) — the flight-path
+      // angle here is relative to the LOCAL horizontal (velUp / speed).
+      losses.gravity += g * (speed > 1e-3 ? velUp / speed : Math.sin(pitch)) * dt;
       losses.drag += (drag / m) * dt;
       if (speed > 1e-3) {
         const cosAlpha = (thrustDirX * vx + thrustDirY * vy) / speed; // thrust·v̂
@@ -487,23 +526,22 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     vy += ay * dt;
 
     // On the pad: an underpowered (TWR<1) stack can't sink through the ground.
-    if (y <= 0 && vy < 0) {
-      vy = 0;
+    if (alt <= 0 && velUp < 0) {
       vx = 0;
+      vy = 0;
     }
     x += vx * dt;
     y += vy * dt;
-    if (y < 0) y = 0;
 
     // Burn propellant (mdot = T / (Isp·g₀)).
     if (thrust > 0) {
-      const isp = stageIspS(profile.stages[stageIndex], y);
+      const isp = stageIspS(profile.stages[stageIndex], alt);
       remainingProp -= (thrust / (isp * G0)) * dt;
     }
     t += dt;
 
     // Max-Q tracking.
-    if (q > maxQ.qPa) maxQ = { t, altKm: y / 1000, qPa: q };
+    if (q > maxQ.qPa) maxQ = { t, altKm: alt / 1000, qPa: q };
 
     // Stage burnout → jettison + advance.
     if (stageIndex >= 0 && remainingProp <= 0) {
@@ -523,21 +561,17 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     }
 
     // Fairing jettison once above the atmosphere.
-    if (fairingOn && y >= fairingJettAlt) {
+    if (fairingOn && alt >= fairingJettAlt) {
       fairingOn = false;
       pushEvent('fairing_jettison');
     }
 
-    // Orbit gate: past the Kármán line at ≥ local circular speed. A real
-    // vehicle cuts the final stage off ON TARGET here (SECO) and keeps a
-    // propellant margin — it does NOT burn to depletion — so the injection
-    // velocity matches orbital speed rather than overshooting.
-    if (
-      !orbitSeen &&
-      y >= KARMAN_LINE_M &&
-      Math.hypot(vx, vy) >= circularSpeed(y) &&
-      Math.abs(vy) < GUIDANCE.orbitVyMaxMs
-    ) {
+    // Orbit gate: the osculating orbit's PERIGEE has climbed to a stable
+    // altitude → a real, non-decaying orbit (works identically for a high-TWR
+    // direct ascent and a low-TWR stage that circularises over a long burn). A
+    // real vehicle cuts the final stage off ON TARGET here (SECO), keeping a
+    // propellant margin rather than burning to depletion.
+    if (!orbitSeen && alt >= KARMAN_LINE_M && perigeeAltM >= PERIGEE_TARGET_M) {
       pushEvent('orbit');
       orbitSeen = true;
       reachedOrbit = true;
@@ -558,7 +592,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // (or stop early if the vehicle falls back to the ground).
     if (stageIndex < 0) {
       if (secoT < 0) secoT = t;
-      if (t - secoT >= POST_SECO_COAST_S || (y <= 0 && t > 1)) break;
+      if (t - secoT >= POST_SECO_COAST_S || (alt <= 0 && t > 1)) break;
     }
   }
 

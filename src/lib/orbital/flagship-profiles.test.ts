@@ -11,17 +11,17 @@
  *     up (near circular speed at LEO altitude) after the post-SECO coast,
  *     not a suborbital lob that trips the orbit gate on the way *down*.
  *
- * Closed-loop guidance (#415 Track 1) plus the launch-frame centrifugal term
- * (#415 Track 2 — vx²/r in the dynamics, so orbit is a real equilibrium the
- * vehicle holds after cutoff, not a gate-faked lob) fly every adequately-
- * powered serial stack to a stable orbit: falcon-9, titan-ii-glv, saturn-ib,
- * proton-k, saturn-v.
+ * Closed-loop guidance (#415 Track 1) on true 2-body dynamics (#415 Track 2 —
+ * gravity toward Earth's centre, so orbits are real curved arcs the vehicle
+ * holds after cutoff) fly every adequately-powered serial stack to a stable
+ * orbit: falcon-9, titan-ii-glv, saturn-ib, proton-k, saturn-v.
  *
  * Still excluded:
- *  - atlas-v — its Centaur upper stage is genuinely too weak (~0.32 TWR,
- *    igniting near 4.5 km/s): below ~6.5 km/s the gravity deficit exceeds its
- *    thrust, so it can't hold altitude long enough to reach circular speed. A
- *    real physical limit of this vehicle in the model, not a guidance gap.
+ *  - atlas-v — its Centaur upper stage (~0.32 TWR, igniting near 4.5 km/s)
+ *    reaches apoapsis far below circular speed, so it must add ~2.5 km/s of
+ *    horizontal Δv at apoapsis to circularise but can't apply it before the
+ *    eccentric arc re-enters. It has the Δv, not the thrust profile — closing
+ *    it needs proper PEG (Powered Explicit Guidance), tracked in #415.
  *  - strap-on vehicles (delta-ii, vostok-k, ariane-5, h-iia, atlas-lv-3b) that
  *    need a parallel-boost stage (Track 3). As that lands, move them here.
  */

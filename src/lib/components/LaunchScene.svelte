@@ -158,6 +158,7 @@
       schedule,
       events: summary.events,
       spacecraftId: mission.spacecraftId,
+      launcherId: profile.id,
     });
 
     composer = new EffectComposer(renderer);

@@ -202,6 +202,9 @@
       tuning,
       events: summary.events,
       spacecraftId: 'juno',
+      launcherId:
+        (typeof location !== 'undefined' && new URLSearchParams(location.search).get('launcher')) ||
+        'falcon-9',
     });
 
     // R1 post-processing — bloom (plume/sun/limb glow) → film grain → vignette,

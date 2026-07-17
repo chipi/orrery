@@ -26,6 +26,7 @@ import {
   type ShotWindow,
 } from '$lib/orbital/ascent-cameras';
 import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
+import { buildLauncherModel } from '$lib/three/launcher-models';
 
 const R_EARTH_KM = 6371;
 
@@ -48,6 +49,8 @@ export interface AscentSceneOptions {
   events?: AscentEvent[];
   /** Mission id → the payload's dedicated spacecraft model (else a generic bus). */
   spacecraftId?: string;
+  /** Launcher id → the rocket's dedicated procedural model (else a generic body). */
+  launcherId?: string;
 }
 
 /** Texture-seam longitude offset (deg) tuned so a site's real coastline lands under the pad. */
@@ -277,84 +280,24 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   tower.position.set(vehLen * 0.1, vehLen * 0.52, 0);
   scene.add(tower);
 
-  // ── Vehicle: a stylised-but-recognisable Falcon 9 (procedural, no assets):
-  //    slender body, 9-Merlin octaweb, grid fins, stowed legs, interstage,
-  //    an upper stage with a vacuum bell, and an ogive fairing.
+  // ── Vehicle: the launcher's procedural model — a per-vehicle silhouette
+  //    where one exists, else a generic body. The scene animates its STANDARD
+  //    parts (booster, upper stage, fairing halves) so the separation
+  //    choreography is vehicle-agnostic.
   const vehicle = new THREE.Group();
-  const bodyMat = new THREE.MeshStandardMaterial({ color: 0xeef2f7, roughness: 0.42, metalness: 0.18 });
-  const darkMat = new THREE.MeshStandardMaterial({ color: 0x15171c, roughness: 0.55, metalness: 0.35 });
-  const engMat = new THREE.MeshStandardMaterial({ color: 0x2b2f36, roughness: 0.4, metalness: 0.7 });
-
-  const rBody = vehLen * 0.05; // slender-ish, but readable as the hero
-  const stage1Group = new THREE.Group();
-
-  const stage1 = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.55, 40), bodyMat);
-  stage1.position.y = vehLen * 0.305;
-  stage1Group.add(stage1);
-
-  // Octaweb + 9 Merlin nozzles (1 centre + 8 ring).
-  const octaweb = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody * 0.94, vehLen * 0.03, 40), darkMat);
-  octaweb.position.y = vehLen * 0.02;
-  stage1Group.add(octaweb);
-  const merlinGeo = new THREE.ConeGeometry(rBody * 0.22, vehLen * 0.04, 12, 1, true);
-  const mkMerlin = (x: number, z: number): THREE.Mesh => {
-    const m = new THREE.Mesh(merlinGeo, engMat);
-    m.position.set(x, -vehLen * 0.008, z);
-    m.rotation.x = Math.PI;
-    return m;
-  };
-  stage1Group.add(mkMerlin(0, 0));
-  for (let i = 0; i < 8; i++) {
-    const a = (i / 8) * Math.PI * 2;
-    stage1Group.add(mkMerlin(Math.cos(a) * rBody * 0.55, Math.sin(a) * rBody * 0.55));
-  }
-
-  // 4 stowed landing legs + 4 grid fins near the top of S1.
-  const legGeo = new THREE.BoxGeometry(rBody * 0.14, vehLen * 0.2, rBody * 0.08);
-  const finGeo = new THREE.BoxGeometry(rBody * 0.5, vehLen * 0.02, rBody * 0.14);
-  for (let i = 0; i < 4; i++) {
-    const a = (i / 4) * Math.PI * 2;
-    const leg = new THREE.Mesh(legGeo, darkMat);
-    leg.position.set(Math.cos(a) * rBody * 1.02, vehLen * 0.11, Math.sin(a) * rBody * 1.02);
-    stage1Group.add(leg);
-    const af = a + Math.PI / 4;
-    const fin = new THREE.Mesh(finGeo, darkMat);
-    fin.position.set(Math.cos(af) * rBody * 1.15, vehLen * 0.5, Math.sin(af) * rBody * 1.15);
-    fin.rotation.y = -af;
-    stage1Group.add(fin);
-  }
-  const interstage = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.045, 40), darkMat);
-  interstage.position.y = vehLen * 0.6;
-  stage1Group.add(interstage); // rides with the booster so it drifts away at staging
-  vehicle.add(stage1Group);
-
-  const stage2 = new THREE.Mesh(new THREE.CylinderGeometry(rBody, rBody, vehLen * 0.22, 40), bodyMat);
-  const stage2BaseY = vehLen * 0.735;
-  stage2.position.y = stage2BaseY;
-  const s2nozzle = new THREE.Mesh(new THREE.ConeGeometry(rBody * 0.55, vehLen * 0.06, 20, 1, true), engMat);
-  const s2nozzleBaseY = vehLen * 0.6;
-  s2nozzle.position.y = s2nozzleBaseY;
-  vehicle.add(stage2, s2nozzle);
-
-  // Fairing as two half-shells so it can clamshell + jettison, revealing the payload.
-  const fairingBaseY = vehLen * 0.93;
-  const halfShell = (thetaStart: number): THREE.Mesh => {
-    const m = new THREE.Mesh(
-      new THREE.ConeGeometry(rBody * 1.02, vehLen * 0.17, 24, 1, true, thetaStart, Math.PI),
-      bodyMat,
-    );
-    m.position.y = fairingBaseY;
-    return m;
-  };
-  const fairingHalfL = halfShell(Math.PI / 2); // −X half
-  const fairingHalfR = halfShell(-Math.PI / 2); // +X half
-  const fairingGroup = new THREE.Group();
-  fairingGroup.add(fairingHalfL, fairingHalfR);
-  vehicle.add(fairingGroup);
+  const rBody = vehLen * 0.05; // plume scale reference
+  const model = buildLauncherModel(opts.launcherId, vehLen);
+  const booster = model.booster;
+  const upperStage = model.upperStage;
+  const fairingGroup = model.fairingGroup;
+  const fairingHalfL = model.fairingL;
+  const fairingHalfR = model.fairingR;
+  const fairingBaseY = model.fairingBaseY;
+  const payloadBaseY = model.payloadMountY;
+  vehicle.add(model.root);
 
   // Payload — the mission's spacecraft (or a generic bus), stowed under the
   // fairing, revealed at jettison, sprung free at SECO.
-  const payloadBaseY = vehLen * 0.85;
   const payload = buildPayload(opts.spacecraftId, vehLen);
   payload.position.y = payloadBaseY;
   payload.visible = false;
@@ -375,7 +318,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const plumeCore = plumeCone(rBody * 0.5, vehLen * 0.28, 0xffcf80, 0.38);
   plume.add(plumeGlow, plumeCore);
   plume.rotation.z = Math.PI; // point down (−Y)
-  stage1Group.add(plume);
+  booster.add(plume);
 
   // ── Science-Lens force vectors (thrust / weight / drag / velocity),
   //    drawn in world space at the vehicle. Lengths are stylised so the
@@ -453,10 +396,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     //    the event METs, so scrubbing the timeline back and forth is exact.
     // Booster: drifts back down the body axis, tumbles, recedes away.
     const bp = sepProgress(s.t, stagingT, BOOSTER_SEP_S);
-    stage1Group.visible = bp < 1;
-    stage1Group.position.y = -bp * vehLen * 3;
-    stage1Group.rotation.set(bp * 2.4, 0, bp * 1.2);
-    stage1Group.scale.setScalar(1 - 0.45 * bp);
+    booster.visible = bp < 1;
+    booster.position.y = -bp * vehLen * 3;
+    booster.rotation.set(bp * 2.4, 0, bp * 1.2);
+    booster.scale.setScalar(1 - 0.45 * bp);
 
     // Fairing: the two shells clamshell apart, rise, and tumble away.
     const fp = sepProgress(s.t, fairingT, FAIRING_SEP_S);
@@ -474,15 +417,14 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     payload.visible = fairingT != null ? s.t >= fairingT : s.stageIndex < 0;
     payload.position.y = payloadBaseY + pp * vehLen * 0.6;
     payload.rotation.y = s.t * 0.12;
-    stage2.position.y = stage2BaseY - pp * vehLen * 0.7;
-    s2nozzle.position.y = s2nozzleBaseY - pp * vehLen * 0.7;
+    upperStage.position.y = -pp * vehLen * 0.7;
 
     // Plume: only while a stage burns; re-parent to the firing stage,
     // flicker the length, taper in vacuum.
     const burning = s.stageIndex >= 0;
     plume.visible = burning;
     if (burning) {
-      const firing = s.stageIndex >= 1 ? stage2 : stage1;
+      const firing = s.stageIndex >= 1 ? model.upperPlumeAnchor : model.boosterPlumeAnchor;
       if (plume.parent !== firing) {
         plume.parent?.remove(plume);
         firing.add(plume);
@@ -522,10 +464,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   };
 
   const reset = (): void => {
-    stage1Group.visible = true;
-    stage1Group.position.set(0, 0, 0);
-    stage1Group.rotation.set(0, 0, 0);
-    stage1Group.scale.setScalar(1);
+    booster.visible = true;
+    booster.position.set(0, 0, 0);
+    booster.rotation.set(0, 0, 0);
+    booster.scale.setScalar(1);
     fairingGroup.visible = true;
     fairingHalfL.position.set(0, fairingBaseY, 0);
     fairingHalfR.position.set(0, fairingBaseY, 0);
@@ -533,11 +475,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     fairingHalfR.rotation.set(0, 0, 0);
     payload.visible = false;
     payload.position.set(0, payloadBaseY, 0);
-    stage2.position.y = stage2BaseY;
-    s2nozzle.position.y = s2nozzleBaseY;
-    if (plume.parent !== stage1Group) {
+    upperStage.position.y = 0;
+    if (plume.parent !== booster) {
       plume.parent?.remove(plume);
-      stage1Group.add(plume);
+      booster.add(plume);
     }
   };
 

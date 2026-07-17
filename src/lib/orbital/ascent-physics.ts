@@ -449,7 +449,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     const speed = Math.hypot(vx, vy);
     const m = currentMass();
 
-    // Thrust: open-loop along the commanded pitch angle.
+    // Thrust along the guidance-commanded pitch angle.
     const thrust = stageIndex >= 0 && remainingProp > 0 ? stageThrustN(profile.stages[stageIndex], y) : 0;
     const pitch = commandedPitchRad(profile, t, y, vy, Math.abs(vx), thrust / m);
     const thrustDirX = Math.cos(pitch);
@@ -461,9 +461,14 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     const dragDirX = speed > 1e-6 ? -vx / speed : 0;
     const dragDirY = speed > 1e-6 ? -vy / speed : 0;
 
-    // Net acceleration (m·s⁻²).
+    // Net acceleration (m·s⁻²). The +vx²/r term is the centrifugal relief of
+    // downrange speed in the launch-local frame — the curved-Earth correction
+    // to the otherwise-planar model. It's negligible at low speed but cancels
+    // gravity exactly at circular speed (vx²/r = g), so orbit is a real
+    // equilibrium the vehicle holds after cutoff, not a gate-faked lob.
+    const centrifugal = (vx * vx) / (R_EARTH_M + y);
     const ax = (thrust * thrustDirX + drag * dragDirX) / m;
-    const ay = (thrust * thrustDirY + drag * dragDirY) / m - g;
+    const ay = (thrust * thrustDirY + drag * dragDirY) / m - g + centrifugal;
 
     // Δv-loss bookkeeping — accumulated over POWERED flight only (a loss is
     // Δv you spend and don't get back; a ballistic coast spends none).

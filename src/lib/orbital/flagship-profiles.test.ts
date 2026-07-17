@@ -11,13 +11,19 @@
  *     up (near circular speed at LEO altitude) after the post-SECO coast,
  *     not a suborbital lob that trips the orbit gate on the way *down*.
  *
- * Closed-loop insertion guidance (#415 Track 1) flies every adequately-powered
- * serial stack to a genuine orbit — falcon-9, titan-ii-glv, saturn-ib, proton-k.
- * Still excluded: vehicles whose UPPER stage has TWR < 1 and must coast to
- * apoapsis then relight (Track 2 coast+restart) — atlas-v (Centaur) and
- * saturn-v (S-IVB, which really does a partial burn → park → reignite for TLI);
- * and strap-on vehicles that need a parallel-boost stage (Track 3). As those
- * land, move vehicles into GENUINE_ORBIT and this guard confirms the win.
+ * Closed-loop guidance (#415 Track 1) plus the launch-frame centrifugal term
+ * (#415 Track 2 — vx²/r in the dynamics, so orbit is a real equilibrium the
+ * vehicle holds after cutoff, not a gate-faked lob) fly every adequately-
+ * powered serial stack to a stable orbit: falcon-9, titan-ii-glv, saturn-ib,
+ * proton-k, saturn-v.
+ *
+ * Still excluded:
+ *  - atlas-v — its Centaur upper stage is genuinely too weak (~0.32 TWR,
+ *    igniting near 4.5 km/s): below ~6.5 km/s the gravity deficit exceeds its
+ *    thrust, so it can't hold altitude long enough to reach circular speed. A
+ *    real physical limit of this vehicle in the model, not a guidance gap.
+ *  - strap-on vehicles (delta-ii, vostok-k, ariane-5, h-iia, atlas-lv-3b) that
+ *    need a parallel-boost stage (Track 3). As that lands, move them here.
  */
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -34,7 +40,7 @@ function load(id: string): LaunchProfile {
 }
 
 const ALL_FLAGSHIPS = ['falcon-9', 'atlas-v', 'saturn-v', 'saturn-ib', 'proton-k', 'titan-ii-glv'];
-const GENUINE_ORBIT = ['falcon-9', 'titan-ii-glv', 'saturn-ib', 'proton-k'];
+const GENUINE_ORBIT = ['falcon-9', 'titan-ii-glv', 'saturn-ib', 'proton-k', 'saturn-v'];
 
 describe.each(ALL_FLAGSHIPS)('flagship profile %s — data shape', (id) => {
   const p = load(id);

@@ -12,18 +12,16 @@
  *     not a suborbital lob that trips the orbit gate on the way *down*.
  *
  * Closed-loop guidance (#415 Track 1) on true 2-body dynamics (#415 Track 2 —
- * gravity toward Earth's centre, so orbits are real curved arcs the vehicle
- * holds after cutoff) fly every adequately-powered serial stack to a stable
- * orbit: falcon-9, titan-ii-glv, saturn-ib, proton-k, saturn-v.
+ * gravity toward Earth's centre) plus the parallel-boost stage (#415 Track 3 —
+ * strap-on boosters that fire with the core then jettison) fly every
+ * adequately-powered stack to a stable orbit: falcon-9, titan-ii-glv,
+ * saturn-ib, proton-k, saturn-v, and the strap-on **vostok-k**.
  *
- * Still excluded:
- *  - atlas-v — its Centaur upper stage (~0.32 TWR, igniting near 4.5 km/s)
- *    reaches apoapsis far below circular speed, so it must add ~2.5 km/s of
- *    horizontal Δv at apoapsis to circularise but can't apply it before the
- *    eccentric arc re-enters. It has the Δv, not the thrust profile — closing
- *    it needs proper PEG (Powered Explicit Guidance), tracked in #415.
- *  - strap-on vehicles (delta-ii, vostok-k, ariane-5, h-iia, atlas-lv-3b) that
- *    need a parallel-boost stage (Track 3). As that lands, move them here.
+ * Still excluded — all for the SAME reason, a low-TWR upper stage that can't
+ * circularise a wildly-eccentric insertion; each flies an accurate ascent and
+ * soft-inserts to space, awaiting proper PEG (#416):
+ *  - atlas-v (Centaur), ariane-5 (ESC-A), h-iia (LE-5B).
+ * (delta-ii and atlas-lv-3b are strap-on vehicles not yet profiled.)
  */
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -39,8 +37,25 @@ function load(id: string): LaunchProfile {
   ) as LaunchProfile;
 }
 
-const ALL_FLAGSHIPS = ['falcon-9', 'atlas-v', 'saturn-v', 'saturn-ib', 'proton-k', 'titan-ii-glv'];
-const GENUINE_ORBIT = ['falcon-9', 'titan-ii-glv', 'saturn-ib', 'proton-k', 'saturn-v'];
+const ALL_FLAGSHIPS = [
+  'falcon-9',
+  'atlas-v',
+  'saturn-v',
+  'saturn-ib',
+  'proton-k',
+  'titan-ii-glv',
+  'vostok-k',
+  'ariane-5',
+  'h-iia',
+];
+const GENUINE_ORBIT = [
+  'falcon-9',
+  'titan-ii-glv',
+  'saturn-ib',
+  'proton-k',
+  'saturn-v',
+  'vostok-k',
+];
 
 describe.each(ALL_FLAGSHIPS)('flagship profile %s — data shape', (id) => {
   const p = load(id);

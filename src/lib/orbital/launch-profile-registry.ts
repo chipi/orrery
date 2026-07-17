@@ -17,6 +17,9 @@ const FLAGSHIP_IDS = new Set<string>([
   'proton-k',
   'titan-ii-glv',
   'saturn-ib',
+  'vostok-k',
+  'ariane-5',
+  'h-iia',
 ]);
 
 interface FleetRef {

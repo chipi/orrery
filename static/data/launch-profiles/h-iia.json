@@ -1,0 +1,49 @@
+{
+  "id": "h-iia",
+  "name": "H-IIA 202",
+  "source_tier": "flagship",
+  "payloadKg": 8000,
+  "fairingKg": 1400,
+  "fairingJettisonAltM": 110000,
+  "refAreaM2": 12,
+  "cd": 0.3,
+  "launchSite": { "lat": 30.4, "lon": 130.97, "name": "LA-Y1 · Tanegashima" },
+  "pitchProgram": [[0, 90], [12, 89], [50, 68], [130, 44], [240, 24], [360, 10], [400, 4]],
+  "boosters": {
+    "name": "SRB-A",
+    "count": 2,
+    "wetKg": 76000,
+    "dryKg": 11000,
+    "thrustSlKN": 2260,
+    "thrustVacKN": 2520,
+    "ispSlS": 265,
+    "ispVacS": 284,
+    "chamberTempK": 3300
+  },
+  "stages": [
+    {
+      "name": "First stage",
+      "wetKg": 114000,
+      "dryKg": 14000,
+      "thrustSlKN": 870,
+      "thrustVacKN": 1098,
+      "ispSlS": 338,
+      "ispVacS": 440,
+      "engines": 1,
+      "chamberTempK": 3500
+    },
+    {
+      "name": "Second stage",
+      "wetKg": 20000,
+      "dryKg": 3000,
+      "thrustVacKN": 137,
+      "ispVacS": 447,
+      "engines": 1,
+      "chamberTempK": 3300
+    }
+  ],
+  "provenance": [
+    { "l": "JAXA / MHI — H-IIA User's Manual", "u": "https://www.mhi.com/products/space/rocket_h2a.html" },
+    { "l": "Spaceflight101 — H-IIA", "u": "https://spaceflight101.com/spacerockets/h-iia/" }
+  ]
+}

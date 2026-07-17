@@ -53,12 +53,36 @@ export interface LaunchStage {
   chamberTempK?: number;
 }
 
+/**
+ * Strap-on boosters (RFC-033 §5.2 · #415 Track 3). `count` identical boosters
+ * ignite at liftoff and burn IN PARALLEL with the first stage (the core), then
+ * jettison when their propellant is spent — the core keeps firing throughout.
+ * Masses/thrust/Isp are PER booster. Covers Ariane 5 EAP, H-IIA SRB-A, the R-7
+ * strap-ons, Delta II GEM-40 solids, the Atlas half-stage boosters, etc.
+ */
+export interface LaunchBoosters {
+  name: string;
+  count: number;
+  /** Full / empty mass PER booster (kg). */
+  wetKg: number;
+  dryKg: number;
+  /** Thrust PER booster (kN) — sea-level required, vacuum optional. */
+  thrustSlKN: number;
+  thrustVacKN?: number;
+  /** Specific impulse PER booster (s) — sea-level required, vacuum optional. */
+  ispSlS: number;
+  ispVacS?: number;
+  chamberTempK?: number;
+}
+
 /** A launch vehicle's ascent profile. See RFC-033 §6 for the shipped JSON schema. */
 export interface LaunchProfile {
   id: string;
   name: string;
   /** Lower → upper. Stage 0 ignites at liftoff. */
   stages: LaunchStage[];
+  /** Strap-on boosters that fire in parallel with stage 0, then jettison. */
+  boosters?: LaunchBoosters;
   /** Payload mass carried all the way to orbit (kg). */
   payloadKg: number;
   /** Fairing mass (kg), jettisoned once out of the atmosphere. */
@@ -203,6 +227,22 @@ export function stagePropellant(stage: LaunchStage): number {
   return Math.max(0, stage.wetKg - stage.dryKg);
 }
 
+/** The `count` strap-on boosters as one combined stage-like object (masses,
+ *  thrust and Isp summed/shared), so the same thrust/Isp/propellant helpers
+ *  apply. */
+export function combinedBoosterStage(b: LaunchBoosters): LaunchStage {
+  return {
+    name: b.name,
+    wetKg: b.count * b.wetKg,
+    dryKg: b.count * b.dryKg,
+    thrustVacKN: b.count * (b.thrustVacKN ?? b.thrustSlKN),
+    thrustSlKN: b.count * b.thrustSlKN,
+    ispVacS: b.ispVacS ?? b.ispSlS,
+    ispSlS: b.ispSlS,
+    chamberTempK: b.chamberTempK,
+  };
+}
+
 /**
  * Ideal Δv capacity of a whole stack (m·s⁻¹) — Tsiolkovsky summed
  * bottom-up, each stage burning against the mass it actually carries
@@ -222,6 +262,13 @@ export function stackIdealDv(profile: LaunchProfile): number {
     const m0 = above + s.wetKg;
     const mf = above + s.dryKg;
     dv += tsiolkovskyDv(s.ispVacS, m0, mf);
+  }
+  // Strap-on boosters add Δv over the parallel boost phase (burning against
+  // the full stack) — approximate, for the HUD's ideal-Δv readout.
+  if (profile.boosters) {
+    const b = combinedBoosterStage(profile.boosters);
+    const full = upperMass(0) + b.wetKg;
+    dv += tsiolkovskyDv(b.ispVacS, full, full - stagePropellant(b));
   }
   return dv;
 }
@@ -377,20 +424,28 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   let fairingOn = (profile.fairingKg ?? 0) > 0;
   const fairingJettAlt = profile.fairingJettisonAltM ?? KARMAN_LINE_M;
 
+  // Strap-on boosters (Track 3): fire with the core, jettison when spent.
+  const boosterStage = profile.boosters ? combinedBoosterStage(profile.boosters) : null;
+  let boosterProp = boosterStage ? stagePropellant(boosterStage) : 0;
+  let boostersOn = boosterProp > 0;
+
   const massAbove = (i: number): number => {
     let m = 0;
     for (let k = i + 1; k < profile.stages.length; k++) m += profile.stages[k].wetKg;
     return m;
   };
   const currentMass = (): number => {
-    if (stageIndex < 0) return profile.payloadKg + (fairingOn ? (profile.fairingKg ?? 0) : 0);
+    // Boosters ride only while still attached (during the stage-0 boost phase).
+    const boosterMass = boostersOn && boosterStage ? boosterStage.dryKg + Math.max(0, boosterProp) : 0;
+    if (stageIndex < 0) return profile.payloadKg + (fairingOn ? (profile.fairingKg ?? 0) : 0) + boosterMass;
     const s = profile.stages[stageIndex];
     return (
       profile.payloadKg +
       (fairingOn ? (profile.fairingKg ?? 0) : 0) +
       s.dryKg +
       remainingProp +
-      massAbove(stageIndex)
+      massAbove(stageIndex) +
+      boosterMass
     );
   };
 
@@ -427,7 +482,9 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     const rho = airDensity(alt);
     const g = gravity(alt);
     const m = currentMass();
-    const thrust = stageIndex >= 0 ? stageThrustN(profile.stages[stageIndex], alt) : 0;
+    const thrust =
+      (stageIndex >= 0 ? stageThrustN(profile.stages[stageIndex], alt) : 0) +
+      (boostersOn && stageIndex === 0 && boosterProp > 0 ? stageThrustN(boosterStage!, alt) : 0);
     return {
       t,
       altKm: alt / 1000,
@@ -490,9 +547,15 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       perigeeAltM = semiMajor * (1 - ecc) - R_EARTH_M;
     }
 
+    // Thrust: the active stage plus, during the boost phase, the strap-on
+    // boosters firing in parallel along the same body axis.
+    const coreThrust = stageIndex >= 0 && remainingProp > 0 ? stageThrustN(profile.stages[stageIndex], alt) : 0;
+    const boostThrust =
+      boostersOn && stageIndex === 0 && boosterProp > 0 ? stageThrustN(boosterStage!, alt) : 0;
+    const thrust = coreThrust + boostThrust;
+
     // Guidance: closed-loop insertion (raise apoapsis prograde, then
     // altitude-hold to circularise), commanded from the local horizontal.
-    const thrust = stageIndex >= 0 && remainingProp > 0 ? stageThrustN(profile.stages[stageIndex], alt) : 0;
     const pitch = commandedPitchRad(profile, t, alt, velUp, Math.abs(horizSpeed), thrust / m);
     lastPitch = pitch;
     const thrustDirX = Math.cos(pitch) * horizX + Math.sin(pitch) * upX;
@@ -533,10 +596,18 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     x += vx * dt;
     y += vy * dt;
 
-    // Burn propellant (mdot = T / (Isp·g₀)).
-    if (thrust > 0) {
-      const isp = stageIspS(profile.stages[stageIndex], alt);
-      remainingProp -= (thrust / (isp * G0)) * dt;
+    // Burn propellant (mdot = T / (Isp·g₀)) — core and boosters separately,
+    // since they run different Isp.
+    if (coreThrust > 0) {
+      remainingProp -= (coreThrust / (stageIspS(profile.stages[stageIndex], alt) * G0)) * dt;
+    }
+    if (boostThrust > 0) {
+      boosterProp -= (boostThrust / (stageIspS(boosterStage!, alt) * G0)) * dt;
+    }
+    // Boosters jettison the moment their propellant is spent; the core fires on.
+    if (boostersOn && boosterProp <= 0) {
+      boostersOn = false;
+      pushEvent('staging', boosterStage!.name);
     }
     t += dt;
 
@@ -611,7 +682,11 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // (or stop early if the vehicle falls back to the ground).
     if (stageIndex < 0) {
       if (secoT < 0) secoT = t;
-      if (t - secoT >= POST_SECO_COAST_S || (alt <= 0 && t > 1)) break;
+      // A genuine orbit holds altitude through the coast; a soft-insertion is
+      // sub-orbital and sinks — end it once it drops back toward the atmosphere
+      // so the /fly handoff happens in space, not part-way down.
+      const softSinking = !reachedOrbit && alt < KARMAN_LINE_M + 20_000;
+      if (t - secoT >= POST_SECO_COAST_S || (alt <= 0 && t > 1) || softSinking) break;
     }
   }
 

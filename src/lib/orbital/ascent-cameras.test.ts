@@ -52,7 +52,7 @@ describe('selectShot', () => {
 
 describe('composeShot', () => {
   const state: AscentState = summary.states[Math.floor(summary.states.length / 2)];
-  const shots: AscentShotName[] = ['pad', 'tower_clear', 'ascent', 'onboard_down', 'staging', 'chase', 'separation', 'orbit'];
+  const shots: AscentShotName[] = ['pad', 'tower_clear', 'ascent', 'onboard_down', 'staging', 'fairing', 'chase', 'separation', 'orbit'];
 
   it('returns finite poses with sane FOV for every shot', () => {
     for (const name of shots) {
@@ -118,5 +118,19 @@ describe('separation shot', () => {
     expect(names).toContain('separation');
     expect(names.indexOf('separation')).toBeGreaterThan(names.indexOf('chase'));
     expect(names.indexOf('separation')).toBeLessThan(names.indexOf('orbit'));
+  });
+});
+
+describe('fairing shot', () => {
+  it('is slotted at the fairing-jettison beat, between staging and separation', () => {
+    const names = schedule.map((w) => w.name);
+    expect(names).toContain('fairing');
+    expect(names.indexOf('fairing')).toBeGreaterThan(names.indexOf('staging'));
+    expect(names.indexOf('fairing')).toBeLessThan(names.indexOf('separation'));
+    // The fairing window brackets the fairing_jettison MET.
+    const met = summary.events.find((e) => e.type === 'fairing_jettison')!.t;
+    const w = schedule.find((x) => x.name === 'fairing')!;
+    expect(met).toBeGreaterThanOrEqual(w.tStart);
+    expect(met).toBeLessThanOrEqual(w.tEnd);
   });
 });

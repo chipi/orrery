@@ -108,7 +108,7 @@ function buildPayload(spacecraftId: string | undefined, vehLen: number): THREE.G
   const box = new THREE.Box3().setFromObject(model);
   const size = new THREE.Vector3();
   box.getSize(size);
-  const k = (vehLen * 0.14) / (Math.max(size.x, size.y, size.z) || 1);
+  const k = (vehLen * 0.19) / (Math.max(size.x, size.y, size.z) || 1);
   const center = new THREE.Vector3();
   box.getCenter(center);
   model.scale.setScalar(k);
@@ -454,9 +454,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // Booster: drifts back down the body axis, tumbles, recedes away.
     const bp = sepProgress(s.t, stagingT, BOOSTER_SEP_S);
     stage1Group.visible = bp < 1;
-    stage1Group.position.y = -bp * vehLen * 5;
+    stage1Group.position.y = -bp * vehLen * 3;
     stage1Group.rotation.set(bp * 2.4, 0, bp * 1.2);
-    stage1Group.scale.setScalar(1 - 0.55 * bp);
+    stage1Group.scale.setScalar(1 - 0.45 * bp);
 
     // Fairing: the two shells clamshell apart, rise, and tumble away.
     const fp = sepProgress(s.t, fairingT, FAIRING_SEP_S);

@@ -20,6 +20,7 @@ export type AscentShotName =
   | 'ascent'
   | 'onboard_down'
   | 'staging'
+  | 'fairing'
   | 'chase'
   | 'separation'
   | 'orbit';
@@ -54,6 +55,7 @@ export interface ScheduleInputs {
 const TOWER_CLEAR_END = 12;
 const PAD_END = 3;
 const STAGING_HOLD = 5;
+const FAIRING_HOLD = 5;
 /** Seconds the payload-separation shot holds after SECO before the orbit
  *  coast — also the scene's payload-sep animation duration (kept in sync). */
 export const PAYLOAD_SEP_HOLD_S = 4;
@@ -86,6 +88,11 @@ export function buildShotSchedule(inp: ScheduleInputs): ShotWindow[] {
   const stagingEnd = staging != null ? staging + STAGING_HOLD : onboardEnd;
   // Payload separation holds briefly after SECO, then the serene orbit coast.
   const sepEnd = seco + PAYLOAD_SEP_HOLD_S;
+  // Dedicated fairing-jettison beat, if the fairing drops between staging + SECO.
+  const fairing = tOf('fairing_jettison');
+  const fairingStart = fairing != null ? fairing - 1 : undefined;
+  const fairingEnd = fairing != null ? Math.min(seco, fairing + FAIRING_HOLD) : undefined;
+  const showFairing = fairingStart != null && fairingStart > stagingEnd && fairingStart < seco;
 
   const raw: ShotWindow[] = [
     { name: 'pad', tStart: 0, tEnd: PAD_END },
@@ -95,7 +102,13 @@ export function buildShotSchedule(inp: ScheduleInputs): ShotWindow[] {
     ...(staging != null
       ? [{ name: 'staging' as const, tStart: staging, tEnd: stagingEnd }]
       : []),
-    { name: 'chase', tStart: stagingEnd, tEnd: seco },
+    ...(showFairing
+      ? [
+          { name: 'chase' as const, tStart: stagingEnd, tEnd: fairingStart! },
+          { name: 'fairing' as const, tStart: fairingStart!, tEnd: fairingEnd! },
+          { name: 'chase' as const, tStart: fairingEnd!, tEnd: seco },
+        ]
+      : [{ name: 'chase' as const, tStart: stagingEnd, tEnd: seco }]),
     { name: 'separation', tStart: seco, tEnd: sepEnd },
     { name: 'orbit', tStart: sepEnd, tEnd: Math.max(sepEnd, inp.duration) },
   ];
@@ -150,7 +163,7 @@ export type AscentCameraTuning = Record<AscentShotName, ShotTune>;
 
 /** A no-op default tuning map. */
 export function defaultTuning(): AscentCameraTuning {
-  const names: AscentShotName[] = ['pad', 'tower_clear', 'ascent', 'onboard_down', 'staging', 'chase', 'separation', 'orbit'];
+  const names: AscentShotName[] = ['pad', 'tower_clear', 'ascent', 'onboard_down', 'staging', 'fairing', 'chase', 'separation', 'orbit'];
   const out = {} as AscentCameraTuning;
   for (const n of names) out[n] = { ...NO_TUNE };
   return out;
@@ -218,10 +231,29 @@ export function composeShot(
       break;
     }
     case 'staging': {
-      // Slow PUSH-IN on the separation (the hero beat), then a slight pull.
+      // Slow PUSH-IN on the booster separation (hero beat), then a slight pull.
+      // Target the body-DOWN midpoint (where the spent booster drops) so the
+      // separation reads regardless of the stack's attitude.
       const io = p < 0.6 ? ease(p / 0.6) : 1 - 0.25 * ease((p - 0.6) / 0.4);
-      const d = vehLen * (9 - 4 * io);
-      out = pose(dr - d * 0.75, alt + vehLen * 2.4, d, dr, alt, 0, 40 - 4 * io);
+      const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
+      const fv = Math.atan2(horiz, s.velUpKms);
+      const tx = dr - Math.sin(fv) * vehLen * 1.1;
+      const ty = alt - Math.cos(fv) * vehLen * 1.1;
+      const d = vehLen * (4.2 - 1.4 * io);
+      out = pose(tx - d * 0.55, ty + vehLen * 1.1, d, tx, ty, 0, 42 - 3 * io);
+      break;
+    }
+    case 'fairing': {
+      // The clamshell fairing splitting off the top of the stack. The nose
+      // sits ~1.3 units UP THE BODY axis — target that so the split reads
+      // whatever the attitude; tight side framing with a gentle push-in.
+      const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
+      const fv = Math.atan2(horiz, s.velUpKms);
+      const tx = dr + Math.sin(fv) * vehLen * 1.15;
+      const ty = alt + Math.cos(fv) * vehLen * 1.15;
+      const d = vehLen * (2.3 - 0.5 * e);
+      const ang = 0.35 + p * 0.4;
+      out = pose(tx + Math.sin(ang) * d, ty + vehLen * 0.3, Math.cos(ang) * d, tx, ty, 0, 44);
       break;
     }
     case 'chase': {
@@ -233,11 +265,16 @@ export function composeShot(
     }
     case 'separation': {
       // TIGHT hero shot of the spacecraft springing free of the spent stage.
-      // Target the vehicle origin exactly (robust to the stack's attitude) and
-      // frame close with a gentle side arc + push-in as it separates.
-      const d = vehLen * (3.2 - 0.7 * e);
-      const ang = -0.3 - p * 0.45;
-      out = pose(dr + Math.sin(ang) * d * 0.4, alt + vehLen * 0.4, Math.cos(ang) * d, dr, alt, 0, 46);
+      // The payload/stage sit ~1 unit UP THE BODY axis from the origin, which
+      // is world-downrange once the stack is horizontal at SECO — so target
+      // that body-offset point (robust to attitude), framed close from the side.
+      const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
+      const fv = Math.atan2(horiz, s.velUpKms); // flight-path angle from vertical
+      const tx = dr + Math.sin(fv) * vehLen * 0.9;
+      const ty = alt + Math.cos(fv) * vehLen * 0.9;
+      const d = vehLen * (2.1 - 0.5 * e);
+      const ang = -0.3 - p * 0.4;
+      out = pose(tx + Math.sin(ang) * d * 0.35, ty + vehLen * 0.35, Math.cos(ang) * d, tx, ty, 0, 44);
       break;
     }
     case 'orbit': {

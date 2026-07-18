@@ -209,12 +209,15 @@ export interface BodyKinematics {
   lightTime: LightTime;
 }
 
-export const SURFACE_BODY_KINEMATICS: Record<'moon' | 'mars' | 'earth', BodyKinematics> = {
-  earth: { rotationHours: 23.93, lightTime: auLightTime(1.0) },
-  // Tidally locked: sidereal rotation = orbital period, 27.32 d.
-  moon: { rotationHours: 655.7, lightTime: kmEarthLightTime(1.0, 384_400) },
-  mars: { rotationHours: 24.62, lightTime: auLightTime(1.524) },
-};
+export const SURFACE_BODY_KINEMATICS: Record<'moon' | 'mars' | 'earth' | 'venus', BodyKinematics> =
+  {
+    earth: { rotationHours: 23.93, lightTime: auLightTime(1.0) },
+    // Tidally locked: sidereal rotation = orbital period, 27.32 d.
+    moon: { rotationHours: 655.7, lightTime: kmEarthLightTime(1.0, 384_400) },
+    mars: { rotationHours: 24.62, lightTime: auLightTime(1.524) },
+    // Venus rotates retrograde, 243 Earth days — the slowest in the solar system.
+    venus: { rotationHours: 5832.5, lightTime: auLightTime(0.723) },
+  };
 
 /**
  * Per-body display palette, anchored to the surface-route chip tint

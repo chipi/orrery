@@ -26,7 +26,7 @@
   interface Props {
     active: boolean;
     /** "/mars" or "/moon" route prefix for the traverse-stop link. */
-    routeBase: '/mars' | '/moon' | '/earth';
+    routeBase: '/mars' | '/moon' | '/earth' | '/venus';
     /** Mission id used for the traverse-stop href + as the site param. */
     missionId: string | null | undefined;
     /** Traverse-stop id from panorama metadata; null when no traverse. */

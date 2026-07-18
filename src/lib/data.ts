@@ -477,6 +477,19 @@ export async function marsSites(): Promise<MarsSite[]> {
   return get<MarsSite[]>('mars-sites.json');
 }
 
+/** Venus surface landing sites — the three Venera/Vega landers (RFC-034 §12).
+ *  No per-site i18n overlays yet; loaded straight from the base catalogue. */
+export async function getVenusSites(
+  _locale = 'en-US',
+): Promise<import('$types/surface-site').SurfaceSite[]> {
+  return get<import('$types/surface-site').SurfaceSite[]>('venus-sites.json');
+}
+
+/** Venus sites have no image galleries yet — returns an empty set. */
+export async function getVenusSiteGallery(): Promise<string[]> {
+  return [];
+}
+
 /**
  * Mars sites merged with their per-locale editorial overlay (name,
  * mission_type, site_name, fact, capability). Used by /mars.

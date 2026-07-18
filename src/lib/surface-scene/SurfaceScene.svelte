@@ -5732,7 +5732,13 @@ sample      ${debugInfo.projectedPxSample}`}
   {#if selected}
     <PanoramaCrossLink
       active={panoramaActive}
-      routeBase={config.planet === 'mars' ? '/mars' : config.planet === 'moon' ? '/moon' : '/earth'}
+      routeBase={config.planet === 'mars'
+        ? '/mars'
+        : config.planet === 'moon'
+          ? '/moon'
+          : config.planet === 'venus'
+            ? '/venus'
+            : '/earth'}
       missionId={selected.id}
       traverseStopLink={selected.traverse_stop_link ?? null}
       fleetEntryId={selected.id}

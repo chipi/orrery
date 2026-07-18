@@ -132,6 +132,7 @@
       vehicleLengthKm: DESCENT_VEHICLE_LENGTH_KM,
       siteId: mission.siteId,
       events: summary.events,
+      peakHeatFlux: summary.peakHeat.flux,
     });
     ar = createAscentRenderer(container, sceneObj);
 

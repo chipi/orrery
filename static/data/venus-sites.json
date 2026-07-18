@@ -1,0 +1,77 @@
+[
+  {
+    "id": "venera-13",
+    "kind": "surface",
+    "agency": "ROSCOSMOS",
+    "nation": "USSR",
+    "year": 1982,
+    "landing_date": "1982-03-01",
+    "lat": -7.55,
+    "lon": -56.31,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 0.02,
+    "data_quality": "good",
+    "credit": "© Soviet Academy of Sciences (historical) — declassified materials. First colour images + soil analysis from the Venus surface; survived ~127 min. Position: NASA NSSDCA catalogue.",
+    "fleet_refs": [{ "id": "venera-13", "role": "spacecraft" }],
+    "links": [
+      { "l": "Venera 13 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Venera_13", "t": "intro" },
+      {
+        "l": "Venera 13 (NASA NSSDCA)",
+        "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1981-106D",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "vega-1",
+    "kind": "surface",
+    "agency": "ROSCOSMOS",
+    "nation": "USSR",
+    "year": 1985,
+    "landing_date": "1985-06-11",
+    "lat": 8.1,
+    "lon": 175.85,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "partial",
+    "surface_duration_days": 0.01,
+    "data_quality": "partial",
+    "credit": "© Soviet Academy of Sciences / Intercosmos (historical). Lander + the first atmospheric balloon probe; surface experiments triggered early. Position: NASA NSSDCA catalogue.",
+    "fleet_refs": [{ "id": "vega-1", "role": "spacecraft" }],
+    "links": [
+      { "l": "Vega 1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Vega_1", "t": "intro" },
+      {
+        "l": "Vega 1 (NASA NSSDCA)",
+        "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1984-125A",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "vega-2",
+    "kind": "surface",
+    "agency": "ROSCOSMOS",
+    "nation": "USSR",
+    "year": 1985,
+    "landing_date": "1985-06-15",
+    "lat": -8.5,
+    "lon": 179.4,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 0.04,
+    "data_quality": "good",
+    "credit": "© Soviet Academy of Sciences / Intercosmos (historical). Lander + balloon probe; returned surface composition (drill sample) and ~56 min of data. Position: NASA NSSDCA catalogue.",
+    "fleet_refs": [{ "id": "vega-2", "role": "spacecraft" }],
+    "links": [
+      { "l": "Vega 2 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Vega_2", "t": "intro" },
+      {
+        "l": "Vega 2 (NASA NSSDCA)",
+        "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1984-128A",
+        "t": "core"
+      }
+    ]
+  }
+]

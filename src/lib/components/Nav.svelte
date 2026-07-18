@@ -75,6 +75,7 @@
         { path: '/earth', label: m.nav_earth },
         { path: '/moon', label: m.nav_moon },
         { path: '/mars', label: m.nav_mars },
+        { path: '/venus', label: m.nav_venus },
       ],
     },
     { kind: 'link', path: '/fly', label: m.nav_fly },

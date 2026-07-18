@@ -39,6 +39,7 @@ const SEED_ROUTES = [
   '/earth',
   '/moon',
   '/mars',
+  '/venus',
   '/iss',
   '/tiangong',
   '/science',

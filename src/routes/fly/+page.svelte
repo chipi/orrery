@@ -376,7 +376,7 @@
     const b = descentProfile?.body;
     const sid = descentProfile?.siteId;
     showDescent = false;
-    if ((b === 'moon' || b === 'mars') && sid) {
+    if ((b === 'moon' || b === 'mars' || b === 'venus') && sid) {
       void goto(`${base}/${b}?site=${sid}&from=descent`);
     }
   }

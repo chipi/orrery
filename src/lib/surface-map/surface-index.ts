@@ -21,7 +21,7 @@ import { categoriseMoonMarker } from '$lib/moon-marker-category';
 import { categoriseEarthSatellite } from '$lib/earth-satellite-category';
 import { matchesQuery } from '$lib/list-search';
 
-export type IndexBody = 'mars' | 'moon' | 'earth';
+export type IndexBody = 'mars' | 'moon' | 'earth' | 'venus';
 export type IndexDomain = 'orbit' | 'land';
 
 export interface IndexItem {

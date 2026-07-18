@@ -24,7 +24,7 @@ import type { ScienceTabId } from '$types/science';
  * as Earth-surface markers (paralleling /moon and /mars). Future
  * candidates: 'mercury', 'venus'.
  */
-export type SurfacePlanet = 'moon' | 'mars' | 'earth';
+export type SurfacePlanet = 'moon' | 'mars' | 'earth' | 'venus';
 
 /**
  * 2D fallback projection mode (ADR-038). Mars rotates → equirectangular

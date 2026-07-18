@@ -84,6 +84,9 @@ export interface DescentSceneOptions {
   siteId: string;
   /** Descent beats — drives scrub-safe EDL separation timing. */
   events?: DescentEvent[];
+  /** Peak aero-heating proxy from the summary — normalises the entry fireball
+   *  glow so it peaks at peak heating regardless of body. */
+  peakHeatFlux?: number;
 }
 
 export interface DescentScene extends FlightPhaseScene<DescentState> {
@@ -210,6 +213,47 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   plume.visible = false;
   model.retroPlumeAnchor.add(plume);
 
+  // ── Entry fireball — a plasma cap at the heat-shield + a wake streaming up
+  //    behind the descending vehicle, glowing with the (normalised) aero-heating
+  //    proxy so it peaks at peak heating then fades. The iconic hypersonic bow.
+  const heatRef = Math.max(1, opts.peakHeatFlux ?? 1);
+  const additive = (color: number, opacity: number): THREE.MeshBasicMaterial =>
+    new THREE.MeshBasicMaterial({
+      color,
+      transparent: true,
+      opacity,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      side: THREE.DoubleSide,
+    });
+  const plasma = new THREE.Group();
+  const plasmaCap = new THREE.Mesh(
+    new THREE.SphereGeometry(vehLen * 0.5, 20, 16),
+    additive(0xffe2b0, 0),
+  );
+  plasmaCap.position.y = -vehLen * 0.26; // bow shock at the heat-shield (below)
+  plasmaCap.scale.y = 0.7;
+  const plasmaTrail = new THREE.Mesh(
+    new THREE.ConeGeometry(vehLen * 0.44, vehLen * 2.6, 20, 1, true),
+    additive(0xff7a2c, 0),
+  );
+  plasmaTrail.position.y = vehLen * 1.25; // streams UP behind the descent
+  plasma.add(plasmaCap, plasmaTrail);
+  plasma.visible = false;
+  vehicle.add(plasma);
+  const plasmaCapMat = plasmaCap.material as THREE.MeshBasicMaterial;
+  const plasmaTrailMat = plasmaTrail.material as THREE.MeshBasicMaterial;
+
+  // ── Touchdown dust — a disc kicked up on the surface as the vehicle nears the
+  //    ground under retro / airbags, flaring at touchdown. Body-tinted.
+  const dustColor = body === 'mars' ? 0xc98a5a : body === 'venus' ? 0xd9a44a : 0xb8b3ad;
+  const dust = new THREE.Mesh(new THREE.CircleGeometry(vehLen * 1.5, 40), additive(dustColor, 0));
+  dust.rotation.x = -Math.PI / 2; // flat on the surface
+  dust.position.y = vehLen * 0.02;
+  dust.visible = false;
+  const dustMat = dust.material as THREE.MeshBasicMaterial;
+  scene.add(dust);
+
   // ── Science-Lens force vectors (thrust up / weight down / drag up / velocity down).
   const forces = new THREE.Group();
   forces.visible = false;
@@ -324,21 +368,31 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
 
     // ── EDL separations — pure functions of the mission time vs event METs, so
     //    scrubbing the timeline is exact.
-    // Heat-shield: jettisons DOWNWARD (below, toward the surface) + tumbles.
+    // Heat-shield: jettisons DOWNWARD (below, toward the surface), tumbling in
+    // two axes and shrinking as it recedes.
     const hp = sepProgress(s.t, hsT, HS_SEP_S);
     model.heatshield.visible = model.heatshield.geometry != null && hp < 1;
     model.heatshield.position.y = model.heatshieldBaseY - hp * vehLen * 5;
-    model.heatshield.rotation.x = Math.PI + hp * 3;
+    model.heatshield.position.x = hp * vehLen * 0.6;
+    model.heatshield.rotation.set(Math.PI + hp * 4, 0, hp * 2.6);
+    model.heatshield.scale.setScalar(1 - 0.4 * hp);
 
-    // Parachute: visible from deploy; flies away UP with the backshell at sep.
+    // Parachute: mortar-fires and INFLATES over ~2 s at deploy, sways under the
+    // descent, then flies away UP with the backshell (chute-cut) at sep.
     const bp = sepProgress(s.t, bsT, BS_SEP_S);
     const chuteOut = chuteT != null && s.t >= chuteT;
     model.parachute.visible = chuteOut && bp < 1;
+    if (model.parachute.visible) {
+      const inflate = Math.min(1, Math.max(0, (s.t - (chuteT ?? 0)) / 2));
+      const sway = Math.sin(frame * 0.05) * 0.09 * (1 - bp);
+      model.parachute.scale.set(0.35 + 0.65 * inflate, 0.5 + 0.5 * inflate, 0.35 + 0.65 * inflate);
+      model.parachute.rotation.z = sway + bp * 0.9;
+    }
     model.backshell.visible = bp < 1;
     const rise = bp * vehLen * 4;
-    model.parachute.position.y = model.parachuteBaseY + rise;
+    model.parachute.position.set(bp * vehLen * 0.5, model.parachuteBaseY + rise, 0);
     model.backshell.position.y = model.backshellBaseY + rise;
-    model.backshell.rotation.z = bp * 1.1;
+    model.backshell.rotation.z = bp * 1.6;
 
     // Skycrane rigging: shown only during the skycrane phase.
     model.skycraneRigging.visible = s.phaseKind === 'skycrane';
@@ -356,6 +410,30 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     if (braking) {
       const flick = 1 + 0.1 * Math.sin(frame * 0.7) + 0.05 * Math.sin(frame * 1.9);
       plume.scale.set(1, flick, 1);
+    }
+
+    // Entry fireball: glow tracks the normalised aero-heating proxy — the
+    // hypersonic bow that peaks at peak heating then dies as the vehicle slows.
+    const heat = Math.min(1, s.aeroHeatFlux / heatRef);
+    const inEntry = s.phaseKind === 'ballistic_entry' || s.phaseKind === 'aeroshell_descent';
+    plasma.visible = inEntry && heat > 0.04;
+    if (plasma.visible) {
+      const flick = 0.85 + 0.15 * Math.sin(frame * 1.3);
+      plasmaCapMat.opacity = 0.7 * heat * flick;
+      plasmaTrailMat.opacity = 0.45 * heat * flick;
+      plasma.scale.set(1, 0.7 + 0.7 * heat, 1);
+    }
+
+    // Touchdown dust: ramps up as the vehicle nears the ground under retro /
+    // airbags, and flares at touchdown.
+    const nearGround = s.altKm < vehLen * 0.5;
+    const kicking = nearGround && (braking || s.phaseKind === 'airbag_bounce' || s.altM <= 0);
+    dust.visible = kicking;
+    if (kicking) {
+      const prox = 1 - Math.min(1, s.altKm / (vehLen * 0.5)); // 0 far → 1 at ground
+      const amt = Math.max(prox, s.altM <= 0 ? 1 : 0);
+      dustMat.opacity = 0.3 * amt;
+      dust.scale.setScalar(0.5 + 1.3 * amt);
     }
 
     // Camera: compose a per-phase target pose, ease the live camera toward it.
@@ -411,16 +489,20 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   };
   const reset = (): void => {
     model.heatshield.visible = model.heatshield.geometry != null;
-    model.heatshield.position.y = model.heatshieldBaseY;
+    model.heatshield.position.set(0, model.heatshieldBaseY, 0);
     model.heatshield.rotation.set(Math.PI, 0, 0);
+    model.heatshield.scale.setScalar(1);
     model.backshell.visible = true;
     model.backshell.position.y = model.backshellBaseY;
     model.backshell.rotation.set(0, 0, 0);
     model.parachute.visible = false;
-    model.parachute.position.y = model.parachuteBaseY;
+    model.parachute.position.set(0, model.parachuteBaseY, 0);
+    model.parachute.scale.setScalar(1);
     model.airbags.visible = false;
     model.skycraneRigging.visible = false;
     plume.visible = false;
+    plasma.visible = false;
+    dust.visible = false;
     camS = null;
   };
   const dispose = (): void => {

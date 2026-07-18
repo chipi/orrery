@@ -647,6 +647,68 @@ function buildGenericLander(color: string): THREE.Group {
 
 import { categoriseMoonMarker, type MoonMarkerCategory } from './moon-marker-category';
 
+/** SpaceIL Beresheet — a small octagonal gold-foil lander on four splayed legs,
+ *  a top sphere tank and a single main engine (2019, hard-landed). */
+function buildBeresheet(color: string): THREE.Group {
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(0.26, 0.3, 0.28, 8), goldMat());
+  body.position.y = 0.34;
+  g.add(body);
+  const tank = new THREE.Mesh(new THREE.SphereGeometry(0.16, 14, 12), silverMat());
+  tank.position.y = 0.56;
+  g.add(tank);
+  const noz = new THREE.Mesh(new THREE.ConeGeometry(0.09, 0.16, 12, 1, true), darkMat());
+  noz.position.y = 0.16;
+  g.add(noz);
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
+    const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 0.42, 5), silverMat());
+    leg.position.set(Math.cos(a) * 0.28, 0.18, Math.sin(a) * 0.28);
+    leg.rotation.set(Math.sin(a) * 0.5, 0, -Math.cos(a) * 0.5);
+    g.add(leg);
+    const foot = new THREE.Mesh(new THREE.CircleGeometry(0.05, 8), silverMat());
+    foot.rotation.x = -Math.PI / 2;
+    foot.position.set(Math.cos(a) * 0.46, 0.0, Math.sin(a) * 0.46);
+    g.add(foot);
+  }
+  const acc = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.06, 0.02), accentMat(color));
+  acc.position.y = 0.4;
+  g.add(acc);
+  return g;
+}
+
+/** Blue Origin Blue Moon MK1 — a tall cargo lander: a central tank stack, a big
+ *  spherical hydrogen tank, four long legs and a BE-7 engine. */
+function buildBlueMoon(color: string): THREE.Group {
+  const g = new THREE.Group();
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.24, 0.7, 16), bodyMat(color));
+  core.position.y = 0.7;
+  g.add(core);
+  const h2 = new THREE.Mesh(new THREE.SphereGeometry(0.3, 18, 14), silverMat());
+  h2.position.y = 1.15;
+  g.add(h2);
+  const deck = new THREE.Mesh(new THREE.CylinderGeometry(0.34, 0.34, 0.08, 16), darkMat());
+  deck.position.y = 0.42;
+  g.add(deck);
+  const eng = new THREE.Mesh(new THREE.ConeGeometry(0.14, 0.3, 16, 1, true), darkMat());
+  eng.position.y = 0.2;
+  g.add(eng);
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
+    const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.7, 6), silverMat());
+    leg.position.set(Math.cos(a) * 0.42, 0.22, Math.sin(a) * 0.42);
+    leg.rotation.set(Math.sin(a) * 0.6, 0, -Math.cos(a) * 0.6);
+    g.add(leg);
+    const foot = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.03, 10), silverMat());
+    foot.position.set(Math.cos(a) * 0.62, 0.0, Math.sin(a) * 0.62);
+    g.add(foot);
+  }
+  const acc = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.5, 0.02), accentMat(color));
+  acc.position.set(0.24, 0.7, 0);
+  g.add(acc);
+  return g;
+}
+
 const BUILDERS: Record<string, (color: string) => THREE.Group> = {
   // Apollo (NASA)
   apollo11: buildApolloLM,
@@ -677,6 +739,10 @@ const BUILDERS: Record<string, (color: string) => THREE.Group> = {
   chandrayaan3: buildVikram,
   // SLIM (JAXA)
   slim: buildSLIM,
+  // Commercial / future landers
+  beresheet: buildBeresheet,
+  'blue-moon-mk1': buildBlueMoon,
+  artemis4: buildArtemis,
 };
 
 const CATEGORY_FALLBACKS: Record<MoonMarkerCategory, (color: string) => THREE.Group> = {

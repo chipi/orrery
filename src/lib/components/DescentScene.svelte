@@ -224,7 +224,13 @@
   <!-- EDL indicators — parachute + retro lamps. -->
   <div class="lamps">
     <span class="lamp" class:on={chuteOut}>CHUTE</span>
-    <span class="lamp" class:on={retroOn}>RETRO</span>
+    <span class="lamp" class:on={retroOn}
+      >RETRO<ScienceChip
+        tab="mission-phases"
+        section="propulsive-landing"
+        label="Propulsive landing"
+      /></span
+    >
   </div>
 
   <div class="dossier">
@@ -267,9 +273,13 @@
 
   <div class="readouts">
     <div class="ro">
-      <span class="rl">ALTITUDE</span><span class="rv">{alt.value}</span><span class="ru"
-        >{alt.unit}</span
-      >
+      <span class="rl"
+        >ALTITUDE<ScienceChip
+          tab="mission-phases"
+          section="ballistic-coefficient"
+          label="Ballistic coefficient"
+        /></span
+      ><span class="rv">{alt.value}</span><span class="ru">{alt.unit}</span>
     </div>
     <div class="ro">
       <span class="rl"

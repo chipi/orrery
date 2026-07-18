@@ -7115,7 +7115,7 @@
     <div class="oi-status">
       {oiFiring ? 'CAPTURE BURN' : 'APPROACH'}{orbitInsertion.dvKms != null
         ? ` · Δv ${orbitInsertion.dvKms.toFixed(2)} km/s`
-        : ''}
+        : ''}<ScienceChip tab="mission-phases" section="aerobraking" label="Aerobraking" />
     </div>
   </div>
 {/if}

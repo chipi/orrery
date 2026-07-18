@@ -157,7 +157,11 @@ function buildAsteroidSamplerBus(): THREE.Group {
   const g = new THREE.Group();
   const foil = new THREE.MeshStandardMaterial({ color: 0xc9a45a, roughness: 0.5, metalness: 0.65 });
   const panel = new THREE.MeshStandardMaterial({ color: 0x2a3655, roughness: 0.6, metalness: 0.3 });
-  const metal = new THREE.MeshStandardMaterial({ color: 0xb9bfc7, roughness: 0.45, metalness: 0.6 });
+  const metal = new THREE.MeshStandardMaterial({
+    color: 0xb9bfc7,
+    roughness: 0.45,
+    metalness: 0.6,
+  });
   // Main bus body.
   const bus = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.14, 0.3), foil);
   g.add(bus);
@@ -227,7 +231,11 @@ function buildHuygensProbe(): THREE.Group {
  */
 function buildPhilaeLander(): THREE.Group {
   const g = new THREE.Group();
-  const foil = new THREE.MeshStandardMaterial({ color: 0xc9a45a, roughness: 0.55, metalness: 0.55 });
+  const foil = new THREE.MeshStandardMaterial({
+    color: 0xc9a45a,
+    roughness: 0.55,
+    metalness: 0.55,
+  });
   const grey = new THREE.MeshStandardMaterial({ color: 0x9aa0a8, roughness: 0.5, metalness: 0.45 });
   const panel = new THREE.MeshStandardMaterial({ color: 0x2a3655, roughness: 0.6, metalness: 0.3 });
   // Main box body.
@@ -518,10 +526,7 @@ function buildCometLanderStack(lander: THREE.Group, vehLen: number): DescentMode
   m.root.add(lander);
 
   // Harpoon anchor rig in the airbags slot.
-  const harpoon = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.015, 0.01, vehLen * 0.18, 8),
-    p.eng,
-  );
+  const harpoon = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.01, vehLen * 0.18, 8), p.eng);
   harpoon.position.y = -vehLen * 0.12;
   m.airbags.add(harpoon);
   m.airbags.visible = true;

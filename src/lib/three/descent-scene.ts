@@ -83,11 +83,36 @@ const SKY: Record<DescentBody, SkyConfig> = {
     rim: { color: 0xd8b88a, opacity: 0.4 },
   },
   // Airless micro-g bodies — black sky, stars, near-instant fade.
-  comet_67p: { high: new THREE.Color('#020305'), low: new THREE.Color('#050608'), stars: true, fadeKm: 2 },
-  itokawa: { high: new THREE.Color('#03040a'), low: new THREE.Color('#05060c'), stars: true, fadeKm: 1 },
-  ryugu: { high: new THREE.Color('#03040a'), low: new THREE.Color('#05060c'), stars: true, fadeKm: 1 },
-  bennu: { high: new THREE.Color('#03040a'), low: new THREE.Color('#05060c'), stars: true, fadeKm: 1 },
-  eros: { high: new THREE.Color('#03040a'), low: new THREE.Color('#05060c'), stars: true, fadeKm: 2 },
+  comet_67p: {
+    high: new THREE.Color('#020305'),
+    low: new THREE.Color('#050608'),
+    stars: true,
+    fadeKm: 2,
+  },
+  itokawa: {
+    high: new THREE.Color('#03040a'),
+    low: new THREE.Color('#05060c'),
+    stars: true,
+    fadeKm: 1,
+  },
+  ryugu: {
+    high: new THREE.Color('#03040a'),
+    low: new THREE.Color('#05060c'),
+    stars: true,
+    fadeKm: 1,
+  },
+  bennu: {
+    high: new THREE.Color('#03040a'),
+    low: new THREE.Color('#05060c'),
+    stars: true,
+    fadeKm: 1,
+  },
+  eros: {
+    high: new THREE.Color('#03040a'),
+    low: new THREE.Color('#05060c'),
+    stars: true,
+    fadeKm: 2,
+  },
 };
 
 /** Rendered lander length (km, world units) — exaggerated so it reads against

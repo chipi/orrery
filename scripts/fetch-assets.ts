@@ -846,6 +846,15 @@ export const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
     query: 'dawn spacecraft ceres',
     commonsCoverFirst: 'Dawn Flight Configuration 2.jpg',
   },
+  // RFC-034 §12 Phase-2 descent missions — spacecraft-focused heroes (#418).
+  {
+    id: 'huygens',
+    query: 'huygens probe titan spacecraft',
+  },
+  {
+    id: 'near-shoemaker',
+    query: 'NEAR Shoemaker spacecraft eros asteroid',
+  },
   // #306 A.1.a — Voyager 1 + Pioneer 10/11 + Cassini + Juno + MESSENGER.
   // Hero + gallery sourcing for the six iconic deep-space records the
   // catalogue had been missing.

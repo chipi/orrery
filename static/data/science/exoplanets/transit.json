@@ -2,8 +2,8 @@
   "id": "transit",
   "tab": "exoplanets",
   "order": 2,
-  "diagram": "exo-transit.svg",
-  "diagram_quality": "schematic",
+  "diagram": "exo-transit.webp",
+  "diagram_quality": "polished",
   "see_in_app": [
     {
       "route": "/explore",

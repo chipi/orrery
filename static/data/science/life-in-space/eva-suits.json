@@ -2,16 +2,25 @@
   "id": "eva-suits",
   "tab": "life-in-space",
   "order": 8,
-  "diagram": "eva-suits.svg",
+  "diagram": "eva-suits.webp",
   "diagram_quality": "polished",
   "photo": {
     "src": "/images/science/eva-suits-orlan.webp",
     "credit": "NASA / Roscosmos · ISS Expedition 54 EVA-2 (Feb 2018) — Russian Orlan-MK suits worked outside the Russian segment. Rear-entry HUT-and-PLSS hatch visible."
   },
   "see_in_app": [
-    { "route": "/iss", "context_key": "Quest + Pirs/Poisk airlocks where EMU and Orlan suits live and are donned" },
-    { "route": "/tiangong", "context_key": "Wentian airlock where Feitian suits stage for Chinese spacewalks" },
-    { "route": "/missions", "context_key": "STS-41B (Bruce McCandless MMU flight) · ISS construction EVAs · Shenzhou 7 first Chinese EVA" }
+    {
+      "route": "/iss",
+      "context_key": "Quest + Pirs/Poisk airlocks where EMU and Orlan suits live and are donned"
+    },
+    {
+      "route": "/tiangong",
+      "context_key": "Wentian airlock where Feitian suits stage for Chinese spacewalks"
+    },
+    {
+      "route": "/missions",
+      "context_key": "STS-41B (Bruce McCandless MMU flight) · ISS construction EVAs · Shenzhou 7 first Chinese EVA"
+    }
   ],
   "links": [
     {

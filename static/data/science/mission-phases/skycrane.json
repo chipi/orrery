@@ -2,6 +2,8 @@
   "id": "skycrane",
   "tab": "mission-phases",
   "order": 5,
+  "diagram": "skycrane.webp",
+  "diagram_quality": "polished",
   "see_in_app": [
     {
       "route": "/fly",

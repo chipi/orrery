@@ -2,6 +2,8 @@
   "id": "terminal-velocity",
   "tab": "mission-phases",
   "order": 5,
+  "diagram": "terminal-velocity.webp",
+  "diagram_quality": "polished",
   "see_in_app": [
     {
       "route": "/fly",

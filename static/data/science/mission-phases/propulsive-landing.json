@@ -2,11 +2,25 @@
   "id": "propulsive-landing",
   "tab": "mission-phases",
   "order": 5,
+  "diagram": "propulsive-landing.webp",
+  "diagram_quality": "polished",
   "see_in_app": [
-    { "route": "/fly", "query": "?descent=1", "context_key": "Watch a lunar or Starship landing in ?descent=1 — no parachute, rockets all the way to the surface" }
+    {
+      "route": "/fly",
+      "query": "?descent=1",
+      "context_key": "Watch a lunar or Starship landing in ?descent=1 — no parachute, rockets all the way to the surface"
+    }
   ],
   "links": [
-    { "l": "Wikipedia · Powered descent (landing)", "u": "https://en.wikipedia.org/wiki/Lunar_lander", "t": "intro" },
-    { "l": "NASA · Apollo Lunar Module descent", "u": "https://www.nasa.gov/history/afj/", "t": "core" }
+    {
+      "l": "Wikipedia · Powered descent (landing)",
+      "u": "https://en.wikipedia.org/wiki/Lunar_lander",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Apollo Lunar Module descent",
+      "u": "https://www.nasa.gov/history/afj/",
+      "t": "core"
+    }
   ]
 }

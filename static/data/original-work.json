@@ -724,6 +724,11 @@
   ],
   "diagrams_science": [
     {
+      "title": "Exoplanets",
+      "file": "/diagrams/science/_cover-exoplanets.svg",
+      "cover": true
+    },
+    {
       "title": "History",
       "file": "/images/science-covers-v2/_cover-history.webp",
       "cover": true
@@ -779,6 +784,11 @@
       "cover": true
     },
     {
+      "title": "Aerobraking",
+      "file": "/diagrams/science/aerobraking.webp",
+      "cover": false
+    },
+    {
       "title": "Antenna Arrays",
       "file": "/diagrams/science/antenna-arrays.webp",
       "cover": false
@@ -804,8 +814,13 @@
       "cover": false
     },
     {
+      "title": "Ballistic Coefficient",
+      "file": "/diagrams/science/ballistic-coefficient.webp",
+      "cover": false
+    },
+    {
       "title": "Black Holes",
-      "file": "/diagrams/science/black-holes.svg",
+      "file": "/diagrams/science/black-holes.webp",
       "cover": false
     },
     {
@@ -854,18 +869,63 @@
       "cover": false
     },
     {
+      "title": "Entry Heating",
+      "file": "/diagrams/science/entry-heating.webp",
+      "cover": false
+    },
+    {
       "title": "EVA",
       "file": "/diagrams/science/eva.webp",
       "cover": false
     },
     {
       "title": "EVA Suits",
-      "file": "/diagrams/science/eva-suits.svg",
+      "file": "/diagrams/science/eva-suits.webp",
+      "cover": false
+    },
+    {
+      "title": "Exo Astrometry",
+      "file": "/diagrams/science/exo-astrometry.webp",
+      "cover": false
+    },
+    {
+      "title": "Exo Direct Imaging",
+      "file": "/diagrams/science/exo-direct-imaging.webp",
+      "cover": false
+    },
+    {
+      "title": "Exo Habitable Zone",
+      "file": "/diagrams/science/exo-habitable-zone.webp",
+      "cover": false
+    },
+    {
+      "title": "Exo Microlensing",
+      "file": "/diagrams/science/exo-microlensing.webp",
+      "cover": false
+    },
+    {
+      "title": "Exo Radial Velocity",
+      "file": "/diagrams/science/exo-radial-velocity.webp",
+      "cover": false
+    },
+    {
+      "title": "Exo Resonance",
+      "file": "/diagrams/science/exo-resonance.webp",
+      "cover": false
+    },
+    {
+      "title": "Exo Transit",
+      "file": "/diagrams/science/exo-transit.webp",
+      "cover": false
+    },
+    {
+      "title": "Exo Transit Timing",
+      "file": "/diagrams/science/exo-transit-timing.webp",
       "cover": false
     },
     {
       "title": "Expedition Cadence",
-      "file": "/diagrams/science/expedition-cadence.svg",
+      "file": "/diagrams/science/expedition-cadence.webp",
       "cover": false
     },
     {
@@ -889,33 +949,38 @@
       "cover": false
     },
     {
+      "title": "Hertzsprung Russell",
+      "file": "/diagrams/science/hertzsprung-russell.webp",
+      "cover": false
+    },
+    {
       "title": "History Apollo 11",
-      "file": "/diagrams/science/history-apollo-11.svg",
+      "file": "/diagrams/science/history-apollo-11.webp",
       "cover": false
     },
     {
       "title": "History Goddard Rocket",
-      "file": "/diagrams/science/history-goddard-rocket.svg",
+      "file": "/diagrams/science/history-goddard-rocket.webp",
       "cover": false
     },
     {
       "title": "History Keplers Laws",
-      "file": "/diagrams/science/history-keplers-laws.svg",
+      "file": "/diagrams/science/history-keplers-laws.webp",
       "cover": false
     },
     {
       "title": "History Newton Principia",
-      "file": "/diagrams/science/history-newton-principia.svg",
+      "file": "/diagrams/science/history-newton-principia.webp",
       "cover": false
     },
     {
       "title": "History Sputnik",
-      "file": "/diagrams/science/history-sputnik.svg",
+      "file": "/diagrams/science/history-sputnik.webp",
       "cover": false
     },
     {
       "title": "History Tsiolkovsky",
-      "file": "/diagrams/science/history-tsiolkovsky.svg",
+      "file": "/diagrams/science/history-tsiolkovsky.webp",
       "cover": false
     },
     {
@@ -940,7 +1005,7 @@
     },
     {
       "title": "IVA Suits",
-      "file": "/diagrams/science/iva-suits.svg",
+      "file": "/diagrams/science/iva-suits.webp",
       "cover": false
     },
     {
@@ -1000,7 +1065,7 @@
     },
     {
       "title": "Lunar Suits",
-      "file": "/diagrams/science/lunar-suits.svg",
+      "file": "/diagrams/science/lunar-suits.webp",
       "cover": false
     },
     {
@@ -1020,7 +1085,7 @@
     },
     {
       "title": "Node Module",
-      "file": "/diagrams/science/node-module.svg",
+      "file": "/diagrams/science/node-module.webp",
       "cover": false
     },
     {
@@ -1054,6 +1119,11 @@
       "cover": false
     },
     {
+      "title": "Our Galaxy",
+      "file": "/diagrams/science/our-galaxy.webp",
+      "cover": false
+    },
+    {
       "title": "Patched Conics",
       "file": "/diagrams/science/patched-conics.webp",
       "cover": false
@@ -1065,7 +1135,12 @@
     },
     {
       "title": "Pressurized Volume",
-      "file": "/diagrams/science/pressurized-volume.svg",
+      "file": "/diagrams/science/pressurized-volume.webp",
+      "cover": false
+    },
+    {
+      "title": "Propulsive Landing",
+      "file": "/diagrams/science/propulsive-landing.webp",
       "cover": false
     },
     {
@@ -1084,8 +1159,13 @@
       "cover": false
     },
     {
+      "title": "Skycrane",
+      "file": "/diagrams/science/skycrane.webp",
+      "cover": false
+    },
+    {
       "title": "Solar Power Budget",
-      "file": "/diagrams/science/solar-power-budget.svg",
+      "file": "/diagrams/science/solar-power-budget.webp",
       "cover": false
     },
     {
@@ -1095,7 +1175,7 @@
     },
     {
       "title": "Space Photography",
-      "file": "/diagrams/science/space-photography.svg",
+      "file": "/diagrams/science/space-photography.webp",
       "cover": false
     },
     {
@@ -1106,6 +1186,11 @@
     {
       "title": "TCM",
       "file": "/diagrams/science/tcm.webp",
+      "cover": false
+    },
+    {
+      "title": "Terminal Velocity",
+      "file": "/diagrams/science/terminal-velocity.webp",
       "cover": false
     },
     {
@@ -1753,7 +1838,7 @@
   ],
   "totals": {
     "anatomy_art": 144,
-    "diagrams_science": 85,
+    "diagrams_science": 102,
     "posters": 27,
     "models3d": 49,
     "canvas2d": 6,

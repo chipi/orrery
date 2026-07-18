@@ -72,7 +72,23 @@ export function buildDescentBeats(summary: DescentSummary): DescentBeat[] {
 
 /** The status line for the current descent instant. */
 export function descentStatus(s: DescentState, summary: DescentSummary): string {
-  if (s.altM <= 0) return summary.touchdownSuccess ? 'TOUCHDOWN' : 'IMPACT';
+  const body = summary.body;
+  // No-surface atmospheric probe (Jupiter): the descent ends when the rising
+  // pressure crushes the probe at depth, not at a ground the body lacks — so
+  // hold the phase label all the way down and close on SIGNAL LOST at the floor.
+  if (body === 'jupiter') {
+    const deepest = summary.states.at(-1)?.altM ?? -Infinity;
+    return s.altM <= deepest + 1 ? 'SIGNAL LOST' : (EDL_PHASE_LABEL[s.phaseKind] ?? 'DESCENT');
+  }
+  if (s.altM <= 0) {
+    // Asteroid touch-and-go is a sample contact, not a landing; a comet is a
+    // low-g settle after the bounces; everything else is a true touchdown.
+    if (body === 'itokawa' || body === 'ryugu' || body === 'bennu' || body === 'eros') {
+      return 'SAMPLE COLLECTED';
+    }
+    if (body === 'comet_67p') return summary.touchdownSuccess ? 'SETTLED' : 'IMPACT';
+    return summary.touchdownSuccess ? 'TOUCHDOWN' : 'IMPACT';
+  }
   return EDL_PHASE_LABEL[s.phaseKind] ?? 'DESCENT';
 }
 

@@ -80,7 +80,16 @@
   const duration = $derived(summary.totalDurationS);
   const beats = $derived(buildDescentBeats(summary));
 
-  const bodyTexName = $derived(mission.body === 'venus' ? 'venus_atmosphere' : mission.body);
+  // Rocky rubble-pile small bodies (no bespoke map yet) borrow Phobos — a real
+  // asteroid-like rocky surface — as an honest stand-in rather than a blank sphere.
+  const ROCKY_BODIES = new Set(['itokawa', 'ryugu', 'bennu', 'eros', 'comet_67p']);
+  const bodyTexName = $derived(
+    mission.body === 'venus'
+      ? 'venus_atmosphere'
+      : ROCKY_BODIES.has(mission.body)
+        ? 'phobos'
+        : mission.body,
+  );
 
   const dossierRows: [string, string][] = $derived([
     ['BODY', mission.body[0].toUpperCase() + mission.body.slice(1)],

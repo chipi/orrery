@@ -148,6 +148,111 @@ function retroNozzles(n: number, r: number, len: number, mat: THREE.Material): T
  * ring with the ring-shaped aerobrake on top). NOT the solar-panelled cruise
  * bus (that stayed in orbit) — a descent shows only what descends.
  */
+/**
+ * Hayabusa / OSIRIS-REx asteroid-sampler bus — flat rectangular bus with two
+ * thin solar-panel wings, a downward sample horn, and a small high-gain dish.
+ * Airless touch-and-go; no aeroshell, no legs.
+ */
+function buildAsteroidSamplerBus(): THREE.Group {
+  const g = new THREE.Group();
+  const foil = new THREE.MeshStandardMaterial({ color: 0xc9a45a, roughness: 0.5, metalness: 0.65 });
+  const panel = new THREE.MeshStandardMaterial({ color: 0x2a3655, roughness: 0.6, metalness: 0.3 });
+  const metal = new THREE.MeshStandardMaterial({ color: 0xb9bfc7, roughness: 0.45, metalness: 0.6 });
+  // Main bus body.
+  const bus = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.14, 0.3), foil);
+  g.add(bus);
+  // Solar wings extending +/-X.
+  for (const sign of [-1, 1] as const) {
+    const wing = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.02, 0.28), panel);
+    wing.position.set(sign * 0.45, 0, 0);
+    g.add(wing);
+  }
+  // Sample horn pointing -Y.
+  const horn = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.04, 0.25, 12), metal);
+  horn.position.set(0, -0.195, 0);
+  g.add(horn);
+  // High-gain dish on top.
+  const dish = new THREE.Mesh(
+    new THREE.SphereGeometry(0.07, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2),
+    metal,
+  );
+  dish.rotation.x = Math.PI;
+  dish.position.set(0, 0.09, 0);
+  g.add(dish);
+  return g;
+}
+
+/**
+ * Galileo probe descent module — a squat instrument pressure vessel with a
+ * small ring vent band. Probe-only; never touches a surface.
+ */
+function buildJupiterDescentModule(): THREE.Group {
+  const g = new THREE.Group();
+  const metal = new THREE.MeshStandardMaterial({ color: 0xb9bfc7, roughness: 0.3, metalness: 0.7 });
+  const vent = new THREE.MeshStandardMaterial({ color: 0x8a9098, roughness: 0.5, metalness: 0.55 });
+  // Instrument pressure can.
+  const can = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 0.16, 24), metal);
+  g.add(can);
+  // Ring vent band.
+  const band = new THREE.Mesh(new THREE.TorusGeometry(0.19, 0.02, 8, 24), vent);
+  band.rotation.x = Math.PI / 2;
+  band.position.y = 0.04;
+  g.add(band);
+  return g;
+}
+
+/**
+ * Huygens probe — a shallow lens/disk probe (Titan atmosphere; no landing).
+ * Gold-foil finish; no legs.
+ */
+function buildHuygensProbe(): THREE.Group {
+  const g = new THREE.Group();
+  const foil = new THREE.MeshStandardMaterial({ color: 0xd4a84b, roughness: 0.5, metalness: 0.6 });
+  const metal = new THREE.MeshStandardMaterial({ color: 0xb9bfc7, roughness: 0.4, metalness: 0.6 });
+  // Disk body — flattened sphere.
+  const disk = new THREE.Mesh(new THREE.SphereGeometry(0.28, 24, 14), foil);
+  disk.scale.y = 0.36; // flatten to ~0.1 h
+  g.add(disk);
+  // Small instrument ring on top.
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.14, 0.02, 8, 20), metal);
+  ring.rotation.x = Math.PI / 2;
+  ring.position.y = 0.12;
+  g.add(ring);
+  return g;
+}
+
+/**
+ * Philae lander on comet 67P — boxy body, hex solar-panel lid, three splayed
+ * legs, and a downward harpoon anchor stub.
+ */
+function buildPhilaeLander(): THREE.Group {
+  const g = new THREE.Group();
+  const foil = new THREE.MeshStandardMaterial({ color: 0xc9a45a, roughness: 0.55, metalness: 0.55 });
+  const grey = new THREE.MeshStandardMaterial({ color: 0x9aa0a8, roughness: 0.5, metalness: 0.45 });
+  const panel = new THREE.MeshStandardMaterial({ color: 0x2a3655, roughness: 0.6, metalness: 0.3 });
+  // Main box body.
+  const body = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.2, 0.24), foil);
+  g.add(body);
+  // Hex solar panel lid on top (approximated as a thin cylinder).
+  const lid = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, 0.02, 6), panel);
+  lid.position.y = 0.11;
+  g.add(lid);
+  // Three splayed landing legs.
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2;
+    const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 0.28, 8), grey);
+    leg.position.set(Math.cos(a) * 0.14, -0.16, Math.sin(a) * 0.14);
+    leg.rotation.z = (Math.PI / 2) * 0.5 * Math.sign(Math.cos(a) || 1);
+    leg.rotation.x = (Math.PI / 2) * 0.5 * Math.sign(Math.sin(a) || 1);
+    g.add(leg);
+  }
+  // Harpoon/anchor stub pointing -Y.
+  const harpoon = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.01, 0.14, 8), grey);
+  harpoon.position.y = -0.17;
+  g.add(harpoon);
+  return g;
+}
+
 function buildVenusDescentLander(): THREE.Group {
   const g = new THREE.Group();
   const foil = new THREE.MeshStandardMaterial({ color: 0xc9a45a, roughness: 0.5, metalness: 0.6 });
@@ -172,6 +277,11 @@ function buildVenusDescentLander(): THREE.Group {
 function resolveLander(siteId: string, body: DescentBody): THREE.Group {
   if (body === 'moon') return buildMoonLanderModel(siteId, 'lander', '#c9ccd2');
   if (body === 'venus') return buildVenusDescentLander();
+  if (body === 'itokawa' || body === 'ryugu' || body === 'bennu' || body === 'eros')
+    return buildAsteroidSamplerBus();
+  if (body === 'jupiter') return buildJupiterDescentModule();
+  if (body === 'titan') return buildHuygensProbe();
+  if (body === 'comet_67p') return buildPhilaeLander();
   return buildMarsLanderModel(siteId, 'lander', undefined, '#d0a884');
 }
 
@@ -379,6 +489,88 @@ function buildVenusStack(lander: THREE.Group, vehLen: number): DescentModel {
   return m;
 }
 
+/** Asteroid/small-body touch-and-go (Hayabusa / OSIRIS-REx) — no aeroshell,
+ *  no chute, no legs. The sampler bus IS the whole craft; a TAG-contact retro
+ *  puff fires from the horn tip. */
+function buildAsteroidSamplerStack(lander: THREE.Group, vehLen: number): DescentModel {
+  const p = palette();
+  const m = scaffold(lander);
+  m.landerMountY = 0;
+  lander.position.y = 0;
+  m.root.add(lander);
+
+  // Single retro/gas-jet at the horn tip.
+  m.retro = retroNozzles(1, 0, vehLen * 0.08, p.eng);
+  m.retro.position.y = -vehLen * 0.22;
+  m.root.add(m.retro);
+  m.retroPlumeAnchor.position.y = -vehLen * 0.22;
+  m.root.add(m.retroPlumeAnchor);
+  return m;
+}
+
+/** Comet lander (Philae / 67P) — no aeroshell, no chute, unpowered micro-g
+ *  touchdown. The harpoon rig lives in the airbags group slot. */
+function buildCometLanderStack(lander: THREE.Group, vehLen: number): DescentModel {
+  const p = palette();
+  const m = scaffold(lander);
+  m.landerMountY = 0;
+  lander.position.y = 0;
+  m.root.add(lander);
+
+  // Harpoon anchor rig in the airbags slot.
+  const harpoon = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.015, 0.01, vehLen * 0.18, 8),
+    p.eng,
+  );
+  harpoon.position.y = -vehLen * 0.12;
+  m.airbags.add(harpoon);
+  m.airbags.visible = true;
+  m.root.add(m.airbags);
+
+  m.retroPlumeAnchor.position.y = -vehLen * 0.12;
+  m.root.add(m.retroPlumeAnchor);
+  return m;
+}
+
+/** Jupiter probe stack (Galileo) — sphere-cone aeroshell + single parachute +
+ *  instrument module. Never touches a surface. */
+function buildJupiterProbeStack(lander: THREE.Group, vehLen: number): DescentModel {
+  const p = palette();
+  const m = scaffold(lander);
+  addAeroshell(m, p, vehLen);
+
+  m.parachuteBaseY = vehLen * 0.86;
+  m.parachute = parachuteCanopy(vehLen * 0.5, p, -vehLen * 0.86);
+  m.parachute.position.y = m.parachuteBaseY;
+  m.root.add(m.parachute);
+
+  lander.position.y = 0;
+  m.root.add(lander);
+  m.retroPlumeAnchor.position.y = -vehLen * 0.1;
+  m.root.add(m.retroPlumeAnchor);
+  return m;
+}
+
+/** Titan parachute stack (Huygens / Cassini-Huygens) — aeroshell + large
+ *  parachute (Titan's thick atmosphere needs it). */
+function buildTitanParachuteStack(lander: THREE.Group, vehLen: number): DescentModel {
+  const p = palette();
+  const m = scaffold(lander);
+  addAeroshell(m, p, vehLen);
+
+  // Titan's main chute is notably large.
+  m.parachuteBaseY = vehLen * 0.9;
+  m.parachute = parachuteCanopy(vehLen * 0.7, p, -vehLen * 0.9);
+  m.parachute.position.y = m.parachuteBaseY;
+  m.root.add(m.parachute);
+
+  lander.position.y = 0;
+  m.root.add(lander);
+  m.retroPlumeAnchor.position.y = -vehLen * 0.1;
+  m.root.add(m.retroPlumeAnchor);
+  return m;
+}
+
 // ─── Dispatch ───────────────────────────────────────────────────────
 
 type StackBuilder = (lander: THREE.Group, vehLen: number) => DescentModel;
@@ -399,12 +591,22 @@ const BUILDERS: Record<string, StackBuilder> = {
   mars3: (l, v) => buildMarsRetroStack(l, v, 4),
   zhurong: (l, v) => buildMarsRetroStack(l, v, 4),
   schiaparelli: (l, v) => buildMarsRetroStack(l, v, 3),
+  // Asteroid touch-and-go
+  hayabusa1: buildAsteroidSamplerStack,
+  'osiris-rex': buildAsteroidSamplerStack,
+  // Jupiter probe
+  'galileo-probe': buildJupiterProbeStack,
 };
 
 /** Per-body generic stack for missions without a dedicated builder. */
 function genericFor(body: DescentBody): StackBuilder {
   if (body === 'moon') return buildLunarStack;
   if (body === 'venus') return buildVenusStack;
+  if (body === 'itokawa' || body === 'ryugu' || body === 'bennu' || body === 'eros')
+    return buildAsteroidSamplerStack;
+  if (body === 'jupiter') return buildJupiterProbeStack;
+  if (body === 'titan') return buildTitanParachuteStack;
+  if (body === 'comet_67p') return buildCometLanderStack;
   return (l, v) => buildMarsRetroStack(l, v, 3);
 }
 

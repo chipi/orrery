@@ -2,6 +2,9 @@
 
 **GH issue:** #418 · **Started:** 2026-07-18 · **Branch:** `launch`
 
+**STATUS: COMPLETE ✅** — all 7 missions fly + descend end-to-end, browser-verified.
+102 descent tests pass; validate-data green. Commits f57b86ce69 → 056acf0bc8.
+
 **Progress:**
 - **S1 ✅** (f57b86ce69) — body regimes/types/constants/guards. typecheck-green.
 - **S2 ✅** (6363e06ae2) — 4 archetypes + pressure-terminus integrator branch. typecheck-green.

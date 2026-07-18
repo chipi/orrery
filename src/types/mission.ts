@@ -85,9 +85,19 @@ export interface FlightCruise {
   source?: string;
 }
 
-/** The Entry, Descent & Landing system class for a lander (RFC-034 §12). */
+/** The Entry, Descent & Landing system class for a lander (RFC-034 §12).
+ *  Phase 2 adds the outer/small-body classes: micro-g sample touch-and-go,
+ *  comet harpoon bounce-landing, and the Jupiter atmospheric probe. */
 export type EDLSystemKind =
-  'powered' | 'airbag' | 'skycrane' | 'aeroshell' | 'parachute_retro' | 'direct_impact';
+  | 'powered'
+  | 'airbag'
+  | 'skycrane'
+  | 'aeroshell'
+  | 'parachute_retro'
+  | 'direct_impact'
+  | 'touch_and_go'
+  | 'harpoon'
+  | 'atmospheric_probe';
 
 export interface FlightArrival {
   v_infinity_km_s?: number;

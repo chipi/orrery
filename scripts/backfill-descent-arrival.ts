@@ -30,6 +30,10 @@ const EDL_SYSTEM: Record<ArchetypeName, EDLSystemKind> = {
   MARS_SKYCRANE: 'skycrane',
   MARS_PROPULSIVE: 'powered',
   VENUS_AEROSHELL: 'aeroshell',
+  ASTEROID_TOUCH_AND_GO: 'touch_and_go',
+  COMET_HARPOON: 'harpoon',
+  TITAN_PARACHUTE: 'aeroshell',
+  JUPITER_PROBE: 'atmospheric_probe',
 };
 
 function missionPath(id: string): string | null {

@@ -24,8 +24,8 @@ const viking1 = loadRaw('viking1');
 const apollo11 = loadRaw('apollo11');
 
 describe('hasDescentProfile gate', () => {
-  it('covers all 37 Moon/Mars/Venus landers and rejects the rest', () => {
-    expect(DESCENT_MISSION_IDS.size).toBe(37);
+  it('covers all 44 landers (37 Moon/Mars/Venus + 7 Phase-2 outer/small-body) and rejects the rest', () => {
+    expect(DESCENT_MISSION_IDS.size).toBe(44);
     expect(hasDescentProfile('apollo11')).toBe(true);
     expect(hasDescentProfile('curiosity')).toBe(true);
     // Orbiters / flybys must NOT play a descent act.

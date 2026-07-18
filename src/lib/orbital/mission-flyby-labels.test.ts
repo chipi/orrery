@@ -105,6 +105,8 @@ const NON_PLANET_LABEL_PATTERNS = [
   /halley|grigg-skjellerup|steins|lutetia/i, // Specific comet / asteroid names without "asteroid" / "comet" keyword
   /\bceres\b/i, // Dwarf-planet target (Dawn) — same rationale as Pluto.
   /\bphobos\b|\bdeimos\b/i, // Martian moons (MMX, future Mars-moon missions).
+  /\btitan\b/i, // Saturn's moon (Huygens EDL) — closest-planet → Saturn at runtime.
+  /mathilde|\beros\b/i, // Named asteroids (NEAR Shoemaker: 253 Mathilde flyby, 433 Eros orbit + landing).
   // OSIRIS-REx sample-collection event "TAG — Touch-and-Go sample
   // collection" — the body is implicit (Bennu) but the label doesn't
   // mention it. Resolver falls back to closest-planet at runtime;

@@ -352,6 +352,7 @@
     if (kinds.has('touch_and_go_contact')) return 'Touch-and-go';
     if (p.body === 'comet_67p') return 'Harpoon landing';
     if (p.body === 'jupiter') return 'Atmospheric probe';
+    if (p.body === 'titan') return 'Parachute descent';
     if (kinds.has('skycrane')) return 'Sky-crane';
     if (kinds.has('airbag_bounce')) return 'Airbags';
     if (kinds.has('aeroshell_descent')) return 'Aeroshell';

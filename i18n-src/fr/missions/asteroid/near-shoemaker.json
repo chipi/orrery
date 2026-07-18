@@ -1,0 +1,39 @@
+{
+  "name": "NEAR Shoemaker",
+  "type": "ORBITEUR + MODULE D'ATTERRISSAGE · VOLÉ",
+  "first": "Premier vaisseau spatial à orbiter un astéroïde (433 Eros, 2000) et premier atterrissage en douceur sur n'importe quel petit corps (12-02-2001)",
+  "dispatch": "NEAR Shoemaker est allé à Eros parce que personne ne savait vraiment à quoi ressemblait un astéroïde de près. Il arriva pour trouver un monde constellé de cratères, étiré en forme de selle par sa propre rotation lente, recouvert d'un fin régolithe qui n'avait nulle part où aller en microgravité quasi nulle. Pendant un an, il a cartographié chaque crête et rocher depuis l'orbite, puis en février 2001, les contrôleurs ont tenté leur chance : ils ont abaissé l'orbite du vaisseau cinq fois en deux semaines, l'ont ralenti à allure de marche, et l'ont posé à la surface. Il a survécu. Pendant seize jours de plus, il a transmis depuis Eros — le premier émissaire de la Terre à se reposer sur un petit corps.",
+  "description": "Mission du programme Discovery de la NASA, dirigée par l'APL de l'Université Johns Hopkins. Lancée le 17-02-1996, NEAR Shoemaker a survolé l'astéroïde 253 Mathilde (27-06-1997) avant un survol de gravité terrestre (23-01-1998) qui a fait correspondre son orbite à celle d'Eros. L'insertion orbitale autour de 433 Eros le 14-02-2000 a commencé un relevé de 12 mois qui a retourné 160 000 images et des cartes spectrales, compositionnelles et gravitationnelles complètes du corps de type S de 34 × 11 × 11 km. Le 12-02-2001, cinq corrections de descente orbitale ont amené le vaisseau à 5 km d'altitude ; la descente contrôlée à ~1,7 m/s s'est terminée par un atterrissage en douceur près de la selle d'Himéros (35°N, 280°O), renvoyant des images jusqu'à 125 m de la surface. Le vaisseau a survécu et a transmis depuis la surface pendant ~16 jours.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT — DELTA II",
+      "note": "Cap Canaveral, 17-02-1996. Première mission planétaire du programme Discovery.",
+      "type": "nominal"
+    },
+    {
+      "met": 496,
+      "label": "SURVOL DE 253 MATHILDE",
+      "note": "27-06-1997 : survol à 1 212 km de l'astéroïde carbonacé Mathilde ; 500 images.",
+      "type": "nominal"
+    },
+    {
+      "met": 706,
+      "label": "SURVOL DE GRAVITÉ TERRESTRE",
+      "note": "23-01-1998 : survol à 540 km ajuste l'orbite pour correspondre à Eros.",
+      "type": "nominal"
+    },
+    {
+      "met": 1458,
+      "label": "INSERTION EN ORBITE D'EROS",
+      "note": "14-02-2000 : premier vaisseau spatial à orbiter un astéroïde ; 12 mois de science orbitale.",
+      "type": "nominal"
+    },
+    {
+      "met": 1822,
+      "label": "ATTERRISSAGE À EROS — EDL",
+      "note": "12-02-2001 : descente contrôlée à 1,7 m/s — premier atterrissage en douceur sur n'importe quel petit corps.",
+      "type": "nominal"
+    }
+  ]
+}

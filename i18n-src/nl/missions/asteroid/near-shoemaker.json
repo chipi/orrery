@@ -1,0 +1,39 @@
+{
+  "name": "NEAR Shoemaker",
+  "type": "OMLOOPBAAN + LANDINGSMODULE · GEVLOGEN",
+  "first": "Eerste ruimtevaartuig dat een asteroïde omlopen (433 Eros, 2000) en eerste zachte landing op enig klein lichaam (12-02-2001)",
+  "dispatch": "NEAR Shoemaker ging naar Eros omdat niemand echt wist hoe een asteroïde van dichtbij eruit zag. Het arriveerde om een wereld vol kraters te vinden, uitgerekt in zadelvorm door zijn eigen trage rotatie, bedekt met fijne regoliet die in bijna nulgravitateit nergens heen kon gaan. Gedurende een jaar mappeerde het van baan uit elke bergkam en rots, toen in februari 2001 lieten de controllers hun geluk gaan: ze senktden de baan van het ruimtevaartuig vijf keer in twee weken, vertragen het tot wandelpas en plaatsten het op het oppervlak. Het overleefde. Zestien dagen langer zond het uit van Eros — de eerste gezant van de Aarde om op een klein lichaam tot rust te komen.",
+  "description": "NASA Discovery-programma missie, geleid door Johns Hopkins University APL. Gelanceerd op 17-02-1996, vloog NEAR Shoemaker voorbij asteroïde 253 Mathilde (27-06-1997) voordat een Aardse zwaartekrachtsteun (23-01-1998) zijn baan faalde om overeen te komen met Eros. Baaninbreng rond 433 Eros op 14-02-2000 begon een 12 maanden durende onderzoek dat 160.000 afbeeldingen en volledige spectrale, compositie en zwaartekrachtkaarten van het 34 × 11 × 11 km S-type lichaam retourneerde. Op 12-02-2001 brachten vijf baandalingen het ruimtevaartuig op 5 km hoogte; gecontroleerde afdaling van ~1,7 m/s eindigde met zachte landing in de buurt van Himeros-zadel (35°N, 280°O), afbeeldingen tot 125 m van het oppervlak terugsturen. Het ruimtevaartuig overleefde en zond gedurende ~16 dagen uit van het oppervlak.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING — DELTA II",
+      "note": "Cape Canaveral, 17-02-1996. Eerste Discovery-programma planetaire missie.",
+      "type": "nominal"
+    },
+    {
+      "met": 496,
+      "label": "253 MATHILDE VLIEGBY",
+      "note": "27-06-1997: 1.212 km vliegby van koolstofhoudende asteroïde Mathilde; 500 afbeeldingen.",
+      "type": "nominal"
+    },
+    {
+      "met": 706,
+      "label": "AARDSE ZWAARTEKRACHTSTEUN",
+      "note": "23-01-1998: 540 km vliegby faast de baan om overeen te komen met Eros.",
+      "type": "nominal"
+    },
+    {
+      "met": 1458,
+      "label": "EROS BAAN INBRENG",
+      "note": "14-02-2000: eerste ruimtevaartuig dat een asteroïde omloopt; 12 maanden baanwetenschap.",
+      "type": "nominal"
+    },
+    {
+      "met": 1822,
+      "label": "EROS LANDING — EDL",
+      "note": "12-02-2001: gecontroleerde afdaling van ~1,7 m/s — eerste zachte landing op enig klein lichaam.",
+      "type": "nominal"
+    }
+  ]
+}

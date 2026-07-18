@@ -1228,5 +1228,25 @@
     "sector": "gov",
     "color": "#CD1F2D",
     "crewed": true
+  },
+  {
+    "id": "huygens",
+    "agency": "ESA",
+    "dest": "SATURN",
+    "status": "FLOWN",
+    "year": 1997,
+    "sector": "gov",
+    "color": "#FFD700",
+    "crewed": false
+  },
+  {
+    "id": "near-shoemaker",
+    "agency": "NASA",
+    "dest": "ASTEROID",
+    "status": "FLOWN",
+    "year": 1996,
+    "sector": "gov",
+    "color": "#D97D2C",
+    "crewed": false
   }
 ]

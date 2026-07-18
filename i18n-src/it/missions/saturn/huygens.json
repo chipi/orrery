@@ -1,0 +1,33 @@
+{
+  "name": "Huygens",
+  "type": "SONDA ATMOSFERICA + LANDER · VOLATO",
+  "first": "Primo e unico allunaggio dolce nel sistema solare esterno — sceso con il paracadute attraverso l'atmosfera di Titano il 14-01-2005",
+  "dispatch": "Huygens non è stato inviato per orbitare ma per cadere. Legato a Cassini per sette anni, si è staccato il giorno di Natale 2004 e ha navigato da solo verso Titano per venti giorni. Quando ha colpito l'atmosfera di Titano a sei chilometri al secondo, uno scudo termico gli ha comprato il tempo di cui aveva bisogno; quindi tre stadi di paracadute lo hanno rallentato per due ore e mezzo attraverso una foschia arancione che nessuno strumento aveva mai attraversato. Ha fotografato le valli fluviali, misurato le velocità del vento, odorato l'atmosfera — e atterrato su una pianura di ciottoli di ghiaccio d'acqua arrotondati. È stato il primo allunaggio mai effettuato nel sistema solare esterno, e nessun veicolo spaziale ha mai atterrato lì da allora.",
+  "description": "La sonda Huygens dell'ESA ha viaggiato a bordo del veicolo spaziale Cassini della NASA in un viaggio interplanetario di 7 anni verso il sistema di Saturno, arrivando a Saturno nel luglio 2004. Rilasciata il 25-12-2004, ha navigato per 20 giorni prima di entrare nell'atmosfera azoto-metano di Titano il 14-01-2005 a 6 km/s. Un guscio aerodinamico ha rallentato la sonda a velocità subsonica; tre stadi di paracadute successivi l'hanno quindi guidata attraverso 2 ore 27 minuti di discesa, raccogliendo le prime misurazioni dirette dell'atmosfera di Titano — temperatura, pressione, vento e composizione chimica a tutte le altitudini. La sonda ha trasmesso 350 immagini durante la discesa e ha continuato a trasmettere dalla superficie per 72 minuti, rivelando una pianura di ciottoli di ghiaccio d'acqua arrotondati sotto un sottile velo di metano liquido a 10,3°S, 192,3°O.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO (CON CASSINI)",
+      "note": "Titano IVB / Centaur lancia lo stack Cassini–Huygens. Huygens viaggia come sonda collegata durante il viaggio VVEJGA di 7 anni.",
+      "type": "nominal"
+    },
+    {
+      "met": 2451,
+      "label": "INSERIMENTO IN ORBITA SATURNIANA",
+      "note": "Cassini (e Huygens collegato) catturato in orbita di Saturno il 01-07-2004.",
+      "type": "nominal"
+    },
+    {
+      "met": 2617,
+      "label": "RILASCIO DI HUYGENS",
+      "note": "Sonda rilasciata da Cassini il 25-12-2004; volo balistico di 20 giorni verso Titano.",
+      "type": "nominal"
+    },
+    {
+      "met": 2648,
+      "label": "ENTRATA A TITANO + ALLUNAGGIO",
+      "note": "14-01-2005: scudo termico, tre stadi di paracadute, discesa di 2,5 ore, allunaggio in superficie — primo allunaggio dolce nel sistema solare esterno.",
+      "type": "nominal"
+    }
+  ]
+}

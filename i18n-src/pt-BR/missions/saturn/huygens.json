@@ -1,0 +1,33 @@
+{
+  "name": "Huygens",
+  "type": "SONDA ATMOSFÉRICA + MÓDULO DE POUSO · VOADO",
+  "first": "Primeiro e único pouso suave no sistema solar externo — desceu de paraquedas pela atmosfera de Titã em 14-01-2005",
+  "dispatch": "Huygens não foi enviado para orbitar, mas para cair. Preso à Cassini por sete anos, se desprendeu no Natal de 2004 e navegou sozinho em direção a Titã por vinte dias. Quando atingiu a atmosfera de Titã a seis quilômetros por segundo, um escudo térmico comprou o tempo necessário; então três estágios de paraquedas desaceleraram-no por duas horas e meia através de uma névoa laranja que nenhum instrumento tinha atravessado. Fotografou vales fluviais, mediu velocidades de vento, cheirou a atmosfera — e pousou em uma planície de seixos de gelo aquoso arredondados. Foi o primeiro pouso jamais realizado no sistema solar externo, e nenhuma nave pousou lá desde então.",
+  "description": "A sonda Huygens da ESA viajou a bordo da nave espacial Cassini da NASA em uma jornada interplanetária de 7 anos até o sistema de Saturno, chegando a Saturno em julho de 2004. Liberada em 25-12-2004, navegou por 20 dias antes de entrar na atmosfera de nitrogênio-metano de Titã em 14-01-2005 a 6 km/s. Um escudo aerodinâmico desacelerou a sonda para velocidade subsônica; três estágios de paraquedas sucessivos a guiaram então através de 2 horas 27 minutos de descida, coletando as primeiras medições diretas da atmosfera de Titã — temperatura, pressão, vento e composição química em todas as altitudes. A sonda transmitiu 350 imagens durante a descida e continuou transmitindo da superfície por 72 minutos, revelando uma planície de seixos de gelo aquoso arredondados sob um fino véu de metano líquido a 10,3°S, 192,3°O.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO (COM CASSINI)",
+      "note": "Titã IVB / Centaur lança o conjunto Cassini–Huygens. Huygens viaja como uma sonda acoplada durante a jornada VVEJGA de 7 anos.",
+      "type": "nominal"
+    },
+    {
+      "met": 2451,
+      "label": "INSERÇÃO EM ÓRBITA DE SATURNO",
+      "note": "Cassini (e Huygens acoplado) capturado em órbita de Saturno em 01-07-2004.",
+      "type": "nominal"
+    },
+    {
+      "met": 2617,
+      "label": "LIBERAÇÃO DE HUYGENS",
+      "note": "Sonda liberada de Cassini em 25-12-2004; voo balístico de 20 dias até Titã.",
+      "type": "nominal"
+    },
+    {
+      "met": 2648,
+      "label": "ENTRADA EM TITÃ + POUSO",
+      "note": "14-01-2005: escudo térmico, três estágios de paraquedas, descida de 2,5 horas, pouso na superfície — primeiro pouso suave no sistema solar externo.",
+      "type": "nominal"
+    }
+  ]
+}

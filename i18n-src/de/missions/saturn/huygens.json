@@ -1,0 +1,33 @@
+{
+  "name": "Huygens",
+  "type": "ATMOSPHÄRENSONDE + LANDER · GEFLOGEN",
+  "first": "Erste und einzige sanfte Landung im äußeren Sonnensystem — per Fallschirm durch Titans Atmosphäre am 14.01.2005",
+  "dispatch": "Huygens wurde nicht geschickt, um zu kreisen, sondern um zu fallen. Sieben Jahre lang an Cassini gebunden, trennte es sich am Weihnachtstag 2004 ab und segelte allein zwanzig Tage lang zu Titan hin. Als es Titans Atmosphäre mit sechs Kilometer pro Sekunde durchbrach, erkaufte ein Wärmeschild die kostbare Zeit; dann verlangsamten drei Fallschirmstadien das Raumschiff über zwei Stunden und dreißig Minuten durch einen orangenen Dunst, den nie ein Instrument zuvor durchquert hatte. Es fotografierte Flusstäler, maß Windgeschwindigkeiten, analysierte die Atmosphäre — und setzte sich auf einer Ebene aus abgerundeten Wasser-Eis-Kieseln ab. Es war die erste Landung, die je im äußeren Sonnensystem durchgeführt wurde, und kein Raumschiff ist seitdem dort gelandet.",
+  "description": "ESAs Huygens-Sonde flog an Bord von NASAs Cassini-Raumschiff auf einer siebenjährigen interplanetaren Reise zum Saturn-System und erreichte Saturn im Juli 2004. Freigegeben am 25.12.2004 segelte sie zwanzig Tage lang, bevor sie am 14.01.2005 mit 6 km/s in Titans Stickstoff-Methan-Atmosphäre eintrat. Eine Aeroshell bremste die Sonde auf Unterschallgeschwindigkeit ab; drei nachfolgende Fallschirmstadien führten sie dann durch 2 Stunden 27 Minuten Abstieg, wobei die ersten direkten Messungen von Titans Atmosphäre erfasst wurden — Temperatur, Druck, Wind und chemische Zusammensetzung in allen Höhen. Die Sonde übertrug 350 Bilder während des Abstiegs und sendete von der Oberfläche noch 72 Minuten lang weiter, wobei sie eine Ebene aus abgerundeten Wasser-Eis-Kieseln unter einer dünnen Veneerung aus flüssigem Methan bei 10,3°S, 192,3°W offenbarte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START (MIT CASSINI)",
+      "note": "Titan IVB / Centaur hebt den Cassini–Huygens-Stack. Huygens fliegt als angebrachte Sonde während der siebenjährigen VVEJGA-Reise mit.",
+      "type": "nominal"
+    },
+    {
+      "met": 2451,
+      "label": "SATURN-ORBITEINFÜGUNG",
+      "note": "Cassini (mit angebrachtem Huygens) wird am 01.07.2004 in die Saturn-Umlaufbahn eingefangen.",
+      "type": "nominal"
+    },
+    {
+      "met": 2617,
+      "label": "HUYGENS-FREIGABE",
+      "note": "Sonde wird am 25.12.2004 von Cassini freigegeben; 20-tägiger ballistischer Segelflug zu Titan.",
+      "type": "nominal"
+    },
+    {
+      "met": 2648,
+      "label": "TITAN-EINTRITT + LANDUNG",
+      "note": "14.01.2005: Wärmeschild, drei Fallschirmstadien, 2,5-stündiger Abstieg, Oberflächenlandung — erste sanfte Landung im äußeren Sonnensystem.",
+      "type": "nominal"
+    }
+  ]
+}

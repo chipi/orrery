@@ -1,0 +1,39 @@
+{
+  "name": "NEAR Shoemaker",
+  "type": "ORBITER + LANDER · FLOWN",
+  "first": "First spacecraft to orbit an asteroid (433 Eros, 2000) and first soft landing on any small body (2001-02-12)",
+  "dispatch": "NEAR Shoemaker went to Eros because nobody knew what an asteroid really looked like up close. It arrived to find a world pocked with craters, stretched into a saddle shape by its own slow rotation, covered in fine regolith that had nowhere to go in near-zero gravity. For a year it mapped every ridge and boulder from orbit, then in February 2001 the controllers pressed their luck: they lowered the spacecraft's orbit five times in two weeks, slowed it to walking pace, and set it down on the surface. It survived. For sixteen more days it transmitted from Eros — the first emissary from Earth to rest on a small body.",
+  "description": "NASA Discovery-program mission, led by Johns Hopkins University APL. Launched 1996-02-17, NEAR Shoemaker flew past asteroid 253 Mathilde (1997-06-27) before an Earth gravity assist (1998-01-23) phased its orbit to match Eros. Orbital insertion around 433 Eros on 2000-02-14 began a 12-month survey that returned 160,000 images and complete spectral, compositional, and gravitational maps of the 34 × 11 × 11 km S-type body. On 2001-02-12, five orbit-lowering burns brought the spacecraft to 5 km altitude; controlled descent at ~1.7 m/s ended with a soft landing near the Himeros saddle (35°N, 280°W), returning images to within 125 m of the surface. The spacecraft survived and transmitted from the surface for ~16 days.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH — DELTA II",
+      "note": "Cape Canaveral, 1996-02-17. First Discovery-program planetary mission.",
+      "type": "nominal"
+    },
+    {
+      "met": 496,
+      "label": "253 MATHILDE FLYBY",
+      "note": "1997-06-27: 1,212 km flyby of carbonaceous asteroid Mathilde; 500 images.",
+      "type": "nominal"
+    },
+    {
+      "met": 706,
+      "label": "EARTH GRAVITY ASSIST",
+      "note": "1998-01-23: 540 km flyby phases the orbit to match Eros.",
+      "type": "nominal"
+    },
+    {
+      "met": 1458,
+      "label": "EROS ORBIT INSERTION",
+      "note": "2000-02-14: first spacecraft to orbit an asteroid; 12 months of orbital science.",
+      "type": "nominal"
+    },
+    {
+      "met": 1822,
+      "label": "EROS LANDING — EDL",
+      "note": "2001-02-12: controlled descent at 1.7 m/s — first soft landing on any small body.",
+      "type": "nominal"
+    }
+  ]
+}

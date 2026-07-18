@@ -1,0 +1,33 @@
+{
+  "name": "Huygens",
+  "type": "ATMOSFEERSONDE + LANDINGSMODULE · GEVLOGEN",
+  "first": "Eerste en enige zachte landing in het buitenste zonnestelsel — per parachute door Titans atmosfeer op 14-01-2005",
+  "dispatch": "Huygens werd niet gestuurd om te draaien, maar om te vallen. Zeven jaar lang aan Cassini vastgemaakt, scheidde het zich af op eerste kerstdag 2004 en navigeerde alleen naar Titan gedurende twintig dagen. Toen het Titans atmosfeer raakte met zes kilometer per seconde, kocht een hitteschild de benodigde tijd; toen vertragen drie valschermstadia het gedurende twee en een half uur door een oranje waas die nog nooit door een instrument was doorstoten. Het fotografeerde rivierdalingen, mat windsnelheden, rook de atmosfeer — en landde op een vlakte van afgeronde water-ijskeien. Het was de eerste landing ooit in het buitenste zonnestelsel, en geen ruimtevaartuig is sindsdien daar geland.",
+  "description": "ESA's Huygens-sonde reisde mee aan boord van NASA's Cassini-ruimtevaartuig op een 7-jarige interplanetaire reis naar het Saturnusstelsel en arriveerde in juli 2004 bij Saturnus. Vrijgegeven op 25-12-2004, navigeerde het gedurende 20 dagen voordat het op 14-01-2005 met 6 km/s de stikstof-methaanatmosfeer van Titan binnenging. Een aerodynamische schaal vertraagde de sonde tot subsonische snelheid; drie opeenvolgende valschermstadia leidden het vervolgens door 2 uur 27 minuten afdaling, verzamelend de eerste rechtstreekse metingen van Titans atmosfeer — temperatuur, druk, wind en chemische samenstelling op alle hoogtepunten. De sonde verzond 350 afbeeldingen tijdens de afdaling en bleef vanaf het oppervlak nog 72 minuten uitzenden, wat een vlakte van afgeronde water-ijskeien onder een dun laagje vloeibaar methaan op 10,3°Z, 192,3°W onthulde.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING (MET CASSINI)",
+      "note": "Titan IVB / Centaur tilt de Cassini-Huygens-stapel op. Huygens reist als bijgevoegde sonde gedurende de 7-jarige VVEJGA-reis.",
+      "type": "nominal"
+    },
+    {
+      "met": 2451,
+      "label": "SATURNUS BAAN INBRENG",
+      "note": "Cassini (en bijgevoegde Huygens) gevangen in Saturnus-baan op 01-07-2004.",
+      "type": "nominal"
+    },
+    {
+      "met": 2617,
+      "label": "HUYGENS VRIJSTELLING",
+      "note": "Sonde vrijgesteld van Cassini op 25-12-2004; 20-daagse ballistische reis naar Titan.",
+      "type": "nominal"
+    },
+    {
+      "met": 2648,
+      "label": "TITAN INGANG + LANDING",
+      "note": "14-01-2005: hitteschild, drie valschermstadia, 2,5-uurs afdaling, oppervlaklanding — eerste zachte landing in het buitenste zonnestelsel.",
+      "type": "nominal"
+    }
+  ]
+}

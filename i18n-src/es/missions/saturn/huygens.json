@@ -1,0 +1,33 @@
+{
+  "name": "Huygens",
+  "type": "SONDA ATMOSFÉRICA + MÓDULO DE ATERRIZAJE · VOLADO",
+  "first": "Primer y único aterrizaje suave en el sistema solar exterior — bajó en paracaídas por la atmósfera de Titán el 14-01-2005",
+  "dispatch": "Huygens no fue enviada para orbitar, sino para caer. Atada a Cassini durante siete años, se desprendió en Navidad de 2004 y navegó sola hacia Titán durante veinte días. Cuando golpeó la atmósfera de Titán a seis kilómetros por segundo, un escudo térmico le compró el tiempo que necesitaba; luego tres etapas de paracaídas la ralentizaron durante dos horas y media a través de una neblina naranja que ningún instrumento había cruzado antes. Fotografió valles fluviales, midió velocidades del viento, analizó la atmósfera — y aterrizó en una llanura de guijarros de hielo de agua redondeados. Fue el primer aterrizaje realizado en el sistema solar exterior, y ninguna nave ha aterrizando allí desde entonces.",
+  "description": "La sonda Huygens de la ESA viajó a bordo de la nave espacial Cassini de la NASA en un viaje interplanetario de 7 años hacia el sistema de Saturno, llegando a Saturno en julio de 2004. Lanzada el 25-12-2004, navegó durante 20 días antes de entrar en la atmósfera de nitrógeno-metano de Titán el 14-01-2005 a 6 km/s. Un caparazón aerodinámico ralentizó la sonda a velocidad subsónica; tres etapas de paracaídas sucesivas la guiaron a través de 2 horas 27 minutos de descenso, recopilando las primeras mediciones directas de la atmósfera de Titán — temperatura, presión, viento y composición química a todas las altitudes. La sonda transmitió 350 imágenes durante el descenso y continuó transmitiendo desde la superficie durante 72 minutos, revelando una llanura de guijarros de hielo de agua redondeados bajo un fino velo de metano líquido a 10.3°S, 192.3°W.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO (CON CASSINI)",
+      "note": "Titán IVB / Centauro lanza el conjunto Cassini–Huygens. Huygens viaja como sonda acoplada durante el viaje VVEJGA de 7 años.",
+      "type": "nominal"
+    },
+    {
+      "met": 2451,
+      "label": "INSERCIÓN EN ÓRBITA DE SATURNO",
+      "note": "Cassini (e Huygens acoplado) capturado en órbita de Saturno el 01-07-2004.",
+      "type": "nominal"
+    },
+    {
+      "met": 2617,
+      "label": "DESPRENDIMIENTO DE HUYGENS",
+      "note": "Sonda desprendida de Cassini el 25-12-2004; viaje balístico de 20 días hacia Titán.",
+      "type": "nominal"
+    },
+    {
+      "met": 2648,
+      "label": "ENTRADA A TITÁN + ATERRIZAJE",
+      "note": "14-01-2005: escudo térmico, tres etapas de paracaídas, descenso de 2.5 horas, aterrizaje en superficie — primer aterrizaje suave en el sistema solar exterior.",
+      "type": "nominal"
+    }
+  ]
+}

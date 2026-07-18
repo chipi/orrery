@@ -1,0 +1,39 @@
+{
+  "name": "NEAR Shoemaker",
+  "type": "ORBITADOR + MÓDULO DE ATERRIZAJE · VOLADO",
+  "first": "Primera nave en orbitar un asteroide (433 Eros, 2000) y primer aterrizaje suave en cualquier cuerpo pequeño (12-02-2001)",
+  "dispatch": "NEAR Shoemaker fue a Eros porque nadie sabía realmente cómo se veía un asteroide de cerca. Llegó para encontrar un mundo lleno de cráteres, estirado en forma de silla de montar por su propia rotación lenta, cubierto de regolito fino que no tenía a dónde ir en microgravedad cercana al cero. Durante un año lo cartografió cada cresta y roca desde la órbita, luego en febrero de 2001 los controladores arriesgaron: bajaron la órbita de la nave cinco veces en dos semanas, la ralentizaron a paso de caminata, y la posaron en la superficie. Sobrevivió. Dieciséis días más transmitió desde Eros — el primer emisario de la Tierra en descansar en un cuerpo pequeño.",
+  "description": "Misión del programa Discovery de la NASA, dirigida por Johns Hopkins University APL. Lanzada el 17-02-1996, NEAR Shoemaker pasó volando cerca del asteroide 253 Mathilde (27-06-1997) antes de un asistencia de gravedad terrestre (23-01-1998) que ajustó su órbita para coincidir con Eros. La inserción orbital alrededor de 433 Eros el 14-02-2000 comenzó un estudio de 12 meses que devolvió 160.000 imágenes y mapas completos espectrales, composicionales y gravitacionales del cuerpo tipo S de 34 × 11 × 11 km. El 12-02-2001, cinco quemadas de descenso orbital llevaron la nave a 5 km de altitud; el descenso controlado a ~1.7 m/s terminó con un aterrizaje suave cerca de la silla de montar de Himeros (35°N, 280°W), devolviendo imágenes hasta 125 m de la superficie. La nave sobrevivió y transmitió desde la superficie durante ~16 días.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO — DELTA II",
+      "note": "Cabo Cañaveral, 17-02-1996. Primera misión planetaria del programa Discovery.",
+      "type": "nominal"
+    },
+    {
+      "met": 496,
+      "label": "SOBREVUELO DE 253 MATHILDE",
+      "note": "27-06-1997: sobrevuelo a 1.212 km del asteroide carbonáceo Mathilde; 500 imágenes.",
+      "type": "nominal"
+    },
+    {
+      "met": 706,
+      "label": "ASISTENCIA DE GRAVEDAD TERRESTRE",
+      "note": "23-01-1998: sobrevuelo a 540 km ajusta la órbita para coincidir con Eros.",
+      "type": "nominal"
+    },
+    {
+      "met": 1458,
+      "label": "INSERCIÓN EN ÓRBITA DE EROS",
+      "note": "14-02-2000: primera nave en orbitar un asteroide; 12 meses de ciencia orbital.",
+      "type": "nominal"
+    },
+    {
+      "met": 1822,
+      "label": "ATERRIZAJE EN EROS — EDL",
+      "note": "12-02-2001: descenso controlado a 1.7 m/s — primer aterrizaje suave en cualquier cuerpo pequeño.",
+      "type": "nominal"
+    }
+  ]
+}

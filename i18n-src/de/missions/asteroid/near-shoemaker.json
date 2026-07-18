@@ -1,0 +1,39 @@
+{
+  "name": "NEAR Shoemaker",
+  "type": "ORBITER + LANDER · GEFLOGEN",
+  "first": "Erstes Raumschiff im Orbit um einen Asteroiden (433 Eros, 2000) und erste sanfte Landung auf einem Kleingestirn (12.02.2001)",
+  "dispatch": "NEAR Shoemaker flog zu Eros, weil niemand wirklich wusste, wie ein Asteroid aus der Nähe aussieht. Es kam an und fand eine Welt voller Krater, die durch ihre eigene langsame Rotation zu einer Sattelform verzerrt war, bedeckt mit feinem Regolith, das in der Mikrogravitation nirgendwo hingehen konnte. Ein Jahr lang kartographierte es jeden Rücken und Felsblock aus der Umlaufbahn, dann im Februar 2001 ließen die Kontrolleure das Spiel eskalieren: Sie senkten die Umlaufbahn des Raumschiffs fünfmal in zwei Wochen ab, verlangsamten es auf Schrittgeschwindigkeit und setzten es auf der Oberfläche ab. Es überlebte. Sechzehn weitere Tage lang sendete es von Eros — der erste Bote der Erde, der sich auf einem Kleingestirn zur Ruhe setzte.",
+  "description": "NASA-Discovery-Programm-Mission, angeführt von der Johns Hopkins University APL. Gestartet am 17.02.1996, flog NEAR Shoemaker am Asteroiden 253 Mathilde (27.06.1997) vorbei, bevor eine Erd-Schwerkraftunterstützung (23.01.1998) ihre Umlaufbahn phasierte, um die von Eros zu treffen. Orbitaleinführung um 433 Eros am 14.02.2000 begann eine 12-Monats-Vermessung, die 160.000 Bilder und komplette spektrale, zusammensetzungs- und gravitationskarten des 34 × 11 × 11 km großen S-Typ-Körpers zurückbrachte. Am 12.02.2001 brachten fünf Orbit-Senkmanöver das Raumschiff auf 5 km Höhe; kontrollierter Abstieg bei ~1,7 m/s endete mit einer sanften Landung nahe des Himeros-Sattels (35°N, 280°W), die Bilder bis auf 125 m zur Oberfläche zurückgab. Das Raumschiff überlebte und sendete von der Oberfläche etwa 16 Tage lang.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START — DELTA II",
+      "note": "Cape Canaveral, 17.02.1996. Erste Discovery-Programm-Planetenmission.",
+      "type": "nominal"
+    },
+    {
+      "met": 496,
+      "label": "253 MATHILDE-VORBEIFLUG",
+      "note": "27.06.1997: 1.212 km Vorbeiflug des kohlenstoffreichen Asteroiden Mathilde; 500 Bilder.",
+      "type": "nominal"
+    },
+    {
+      "met": 706,
+      "label": "ERD-SCHWERKRAFTUNTERSTÜTZUNG",
+      "note": "23.01.1998: 540 km Vorbeiflug phasiert die Umlaufbahn, um die von Eros zu treffen.",
+      "type": "nominal"
+    },
+    {
+      "met": 1458,
+      "label": "EROS-ORBITALEINFÜHRUNG",
+      "note": "14.02.2000: erstes Raumschiff im Orbit um einen Asteroiden; 12 Monate Orbitalwissenschaft.",
+      "type": "nominal"
+    },
+    {
+      "met": 1822,
+      "label": "EROS-LANDUNG — EDL",
+      "note": "12.02.2001: kontrollierter Abstieg mit 1,7 m/s — erste sanfte Landung auf einem Kleingestirn.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Huygens",
+  "type": "SONDE ATMOSPHÉRIQUE + MODULE D'ATTERRISSAGE · VOLÉ",
+  "first": "Premier et unique atterrissage en douceur du système solaire externe — parachuté à travers l'atmosphère de Titan le 14-01-2005",
+  "dispatch": "Huygens n'a pas été envoyé pour orbiter mais pour tomber. Attaché à Cassini pendant sept ans, il s'est détaché le jour de Noël 2004 et a navigué seul vers Titan pendant vingt jours. Quand il a frappé l'atmosphère de Titan à six kilomètres par seconde, un bouclier thermique lui a acheté le temps dont il avait besoin ; puis trois étages de parachutes l'ont ralenti pendant deux heures et demie à travers une brume orangée qu'aucun instrument n'avait jamais traversée. Il a photographié les vallées fluviales, mesuré les vitesses du vent, senti l'atmosphère — et atterri sur une plaine de galets de glace d'eau arrondis. C'était le premier atterrissage jamais effectué dans le système solaire externe, et aucun engin spatial n'y a atterri depuis.",
+  "description": "La sonde Huygens de l'ESA voyageait à bord du vaisseau spatial Cassini de la NASA lors d'une croisière interplanétaire de 7 ans vers le système de Saturne, arrivant à Saturne en juillet 2004. Libérée le 25-12-2004, elle a navigué pendant 20 jours avant d'entrer dans l'atmosphère azote-méthane de Titan le 14-01-2005 à 6 km/s. Une coque aérodynamique a ralenti la sonde à une vitesse subsonique ; trois étages de parachutes successifs l'ont ensuite guidée à travers 2 heures 27 minutes de descente, collectant les premières mesures directes de l'atmosphère de Titan — température, pression, vent et composition chimique à toutes les altitudes. La sonde a transmis 350 images pendant la descente et a continué à émettre depuis la surface pendant 72 minutes, révélant une plaine de galets de glace d'eau arrondis sous un mince voile de méthane liquide à 10,3°S, 192,3°O.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT (AVEC CASSINI)",
+      "note": "Titan IVB / Centaure lance l'ensemble Cassini–Huygens. Huygens voyage comme sonde attachée lors de la croisière VVEJGA de 7 ans.",
+      "type": "nominal"
+    },
+    {
+      "met": 2451,
+      "label": "INSERTION EN ORBITE SATURNIENNE",
+      "note": "Cassini (et Huygens attaché) capturé en orbite de Saturne le 01-07-2004.",
+      "type": "nominal"
+    },
+    {
+      "met": 2617,
+      "label": "LIBÉRATION DE HUYGENS",
+      "note": "Sonde libérée de Cassini le 25-12-2004 ; vol balistique de 20 jours vers Titan.",
+      "type": "nominal"
+    },
+    {
+      "met": 2648,
+      "label": "ENTRÉE À TITAN + ATTERRISSAGE",
+      "note": "14-01-2005 : bouclier thermique, trois étages de parachutes, descente de 2,5 heures, atterrissage en surface — premier atterrissage en douceur du système solaire externe.",
+      "type": "nominal"
+    }
+  ]
+}

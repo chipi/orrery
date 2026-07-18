@@ -1,0 +1,33 @@
+{
+  "name": "Huygens",
+  "type": "ATMOSPHERIC PROBE + LANDER · FLOWN",
+  "first": "First and only soft landing in the outer solar system — parachuted through Titan's atmosphere on 2005-01-14",
+  "dispatch": "Huygens was sent not to orbit but to fall. Strapped to Cassini for seven years, it detached on Christmas Day 2004 and coasted alone toward Titan for twenty days. When it hit Titan's atmosphere at six kilometres per second, a heat shield bought the time it needed; then three parachute stages slowed it for two and a half hours through an orange haze no instrument had ever crossed. It photographed river valleys, measured wind speeds, smelled the atmosphere — and touched down on a floodplain of rounded water-ice pebbles. It was the first landing ever made in the outer solar system, and no spacecraft has landed there since.",
+  "description": "ESA's Huygens probe rode aboard NASA's Cassini spacecraft on a 7-year interplanetary cruise to the Saturn system, arriving at Saturn in July 2004. Released on 2004-12-25, it coasted for 20 days before entering Titan's nitrogen–methane atmosphere on 2005-01-14 at 6 km/s. An aeroshell slowed the probe to subsonic speed; three successive parachute stages then guided it through 2 hours 27 minutes of descent, collecting the first direct measurements of Titan's atmosphere — temperature, pressure, wind, and chemical composition at all altitudes. The probe transmitted 350 images during descent and continued transmitting from the surface for 72 minutes, revealing a floodplain of rounded water-ice pebbles beneath a thin veneer of liquid methane at 10.3°S, 192.3°W.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH (WITH CASSINI)",
+      "note": "Titan IVB / Centaur lifts the Cassini–Huygens stack. Huygens rides as an attached probe for the 7-year VVEJGA cruise.",
+      "type": "nominal"
+    },
+    {
+      "met": 2451,
+      "label": "SATURN ORBIT INSERTION",
+      "note": "Cassini (and attached Huygens) captured into Saturn orbit 2004-07-01.",
+      "type": "nominal"
+    },
+    {
+      "met": 2617,
+      "label": "HUYGENS RELEASE",
+      "note": "Probe released from Cassini 2004-12-25; 20-day ballistic coast to Titan.",
+      "type": "nominal"
+    },
+    {
+      "met": 2648,
+      "label": "TITAN ENTRY + LANDING",
+      "note": "2005-01-14: heat shield, three parachute stages, 2.5-hour descent, surface landing — first outer-solar-system soft landing.",
+      "type": "nominal"
+    }
+  ]
+}

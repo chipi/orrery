@@ -44,9 +44,9 @@
     },
     "arrival": {
       "entry_velocity_km_s": 7.5,
-      "edl_system": "parachute_retro",
-      "edl_duration_s": 399,
-      "touchdown_velocity_ms": 1
+      "edl_system": "powered",
+      "edl_duration_s": 464,
+      "touchdown_velocity_ms": 1.2
     }
   }
 }

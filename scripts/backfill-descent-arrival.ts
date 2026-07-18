@@ -28,6 +28,7 @@ const EDL_SYSTEM: Record<ArchetypeName, EDLSystemKind> = {
   MARS_PARACHUTE_RETRO: 'parachute_retro',
   MARS_AIRBAG: 'airbag',
   MARS_SKYCRANE: 'skycrane',
+  MARS_PROPULSIVE: 'powered',
   VENUS_AEROSHELL: 'aeroshell',
 };
 

@@ -29,11 +29,19 @@ const loadRaw = (id: string): RawDescentProfile =>
 /** The three missions whose EDL is an honest failure (impact, not touchdown). */
 const CRASHES = new Set(['beresheet', 'schiaparelli', 'mars3']);
 
-/** Peak-decel band (Earth-g) per body — loose, uncalibrated sanity bounds. */
+/**
+ * Peak-decel band (Earth-g) per body — a TIGHT regression guard calibrated to
+ * the published EDL peak-deceleration envelopes:
+ *   - Moon: gentle powered descent, a few g of braking (no atmospheric spike).
+ *   - Mars: 5–16 g across the fleet (MER ~6, Viking ~8, MSL/M2020 ~12–15).
+ *   - Venus: the fierce dense-atmosphere entry, ~150–350 g (Venera-class).
+ * A profile edit that pushes a body's peak-g outside its real envelope now
+ * fails here instead of silently shipping an unphysical entry.
+ */
 const PEAK_G_BAND: Record<string, [number, number]> = {
-  moon: [0, 8],
-  mars: [2, 25],
-  venus: [40, 600],
+  moon: [0, 7],
+  mars: [4, 18],
+  venus: [120, 320],
 };
 
 describe('all 37 descent profiles ship on disk', () => {

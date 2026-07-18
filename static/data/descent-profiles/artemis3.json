@@ -2,15 +2,29 @@
   "missionId": "artemis3",
   "siteId": "artemis3",
   "body": "moon",
-  "landingSite": { "lat": -89.5, "lon": 0 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "landingSite": {
+    "lat": -85.3,
+    "lon": 31.5
+  },
+  "entryState": {
+    "altitudeM": 2500,
+    "velocityMs": 150,
+    "flightPathAngleDeg": 55
+  },
   "entryMassKg": 100000,
   "entryCdA": 0,
   "retroPropellantKg": 14000,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 1,
+    "descentRateGain": 0.06
+  },
   "source_tier": "generic",
   "provenance": [
-    { "l": "Artemis III Human Landing System overview — NASA", "u": "https://www.nasa.gov/artemisprogram/artemis-iii/" }
+    {
+      "l": "Artemis III Human Landing System overview \u2014 NASA",
+      "u": "https://www.nasa.gov/artemisprogram/artemis-iii/"
+    }
   ]
 }

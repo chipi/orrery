@@ -23,6 +23,7 @@ export type ArchetypeName =
   | 'MARS_PARACHUTE_RETRO'
   | 'MARS_AIRBAG'
   | 'MARS_SKYCRANE'
+  | 'MARS_PROPULSIVE'
   | 'VENUS_AEROSHELL';
 
 /**
@@ -169,12 +170,31 @@ const VENUS_AEROSHELL: ArchetypeBuilder = (p) => [
   },
 ];
 
+/** Fully propulsive Mars EDL — a hypersonic aeroshell/belly entry that bleeds
+ *  speed on drag, then a landing burn straight to touchdown with NO parachute
+ *  (Mars air is too thin to chute a 100-t vehicle). How SpaceX Starship lands. */
+const MARS_PROPULSIVE: ArchetypeBuilder = (p) => [
+  {
+    kind: 'ballistic_entry',
+    endTrigger: { type: 'altitude_m', value: p.terminalHandoffAltM ?? 3000 },
+  },
+  {
+    kind: 'powered_retro',
+    endTrigger: { type: 'ground', value: 0 },
+    ispS: p.ispS ?? 350,
+    terminalVelocityMs: p.terminalVelocityMs ?? 2,
+    descentRateGain: p.descentRateGain ?? 0.06,
+    events: ['retro_ignition'],
+  },
+];
+
 const ARCHETYPES: Record<ArchetypeName, ArchetypeBuilder> = {
   LUNAR_POWERED,
   LUNA_DIRECT_IMPACT,
   MARS_PARACHUTE_RETRO,
   MARS_AIRBAG,
   MARS_SKYCRANE,
+  MARS_PROPULSIVE,
   VENUS_AEROSHELL,
 };
 
@@ -185,6 +205,7 @@ const ARCHETYPE_SURVIVABLE: Record<ArchetypeName, number> = {
   MARS_PARACHUTE_RETRO: 3,
   MARS_AIRBAG: 25,
   MARS_SKYCRANE: 3,
+  MARS_PROPULSIVE: 3,
   VENUS_AEROSHELL: 15,
 };
 

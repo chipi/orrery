@@ -135,7 +135,11 @@ function signalDelayFromDistAu(distAu: number): number {
 // the touch UX directly; this file's job is the math invariants. Same
 // pattern as perf-explore-iconic-clicks.spec.ts's mobile skip.
 test.beforeEach(({ page: _page }, testInfo) => {
-  test.skip(testInfo.project.name === 'mobile-chromium', 'desktop-only math invariants');
+  // The 3D↔2D view-toggle these invariants exercise is desktop-only chrome
+  // (touch viewports render 3D-only + fold controls into drawers); the touch UX
+  // is covered by fly-cislunar / *-phase-markers. Skip on ALL non-desktop
+  // projects (mobile-chromium AND mobile-landscape-chromium).
+  test.skip(testInfo.project.name !== 'desktop-chromium', 'desktop-only math invariants');
 });
 
 test.describe('/fly render validation — Layer 3 (arc geometry)', () => {

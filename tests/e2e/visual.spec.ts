@@ -106,6 +106,15 @@ test.describe('visual regression baselines (S8 — element-scoped, stable surfac
         label === 'fly-mobile-tabs' && testInfo.project.name === 'desktop-chromium',
         'fly-mobile-tabs only renders on touch viewports (display:none on hover)',
       );
+      // mobile-landscape-chromium was added to the CI gate for the functional
+      // suite; its Linux visual baselines don't exist yet (local runs only
+      // produce gitignored *-darwin.png). FOLLOW-UP: run the "Regenerate visual
+      // snapshots" workflow to commit the landscape baselines, then drop this
+      // skip so landscape visual regressions are gated too.
+      test.skip(
+        testInfo.project.name === 'mobile-landscape-chromium',
+        'landscape visual baselines pending CI regeneration',
+      );
       await page.goto(path, { waitUntil: 'networkidle' });
       // #342 Phase 29 — /missions and /fleet collapse the filter
       // strip behind .filters-toggle on mobile. Expand it before the

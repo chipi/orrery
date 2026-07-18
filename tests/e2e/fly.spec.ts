@@ -452,14 +452,23 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
   });
 
   /* ── C.5 — Flight Director narration banner ────────────────────── */
-  test('Flight Director banner is hidden until Science Lens is enabled', async ({ page }) => {
+  test('Flight Director banner is hidden until Science Lens is enabled', async ({
+    page,
+  }, testInfo) => {
     await gotoFly(page);
     const banner = page.locator('[data-testid="flight-director-banner"]');
     await expect(banner).toHaveCount(0);
 
     // Toggle the Science Lens via the nav button.
     await page.locator('button[aria-label="Toggle science lens"]').click();
-    await expect(banner).toBeVisible();
+    // Landscape folds the banner into a tab-revealed bottom sheet
+    // (`.fly-bottom-strips:not(.m-open){display:none}`) — it's attached but not
+    // visible until its tab opens; assert presence there, visibility inline.
+    if (testInfo.project.name === 'mobile-landscape-chromium') {
+      await expect(banner).toBeAttached();
+    } else {
+      await expect(banner).toBeVisible();
+    }
 
     // The banner carries the current phase as a data-attribute. One of
     // the five known phases; departure/injection/cruise/approach/arrival.

@@ -49,7 +49,7 @@ test.describe('/explore iconic-mission perf', () => {
     // 2026-06-23 release-prep — skipped on mobile pending v0.8 perf-
     // investigation follow-up (which also re-evaluates the desktop
     // threshold of 300).
-    test.skip(testInfo.project.name === 'mobile-chromium', 'desktop-only perf benchmark');
+    test.skip(testInfo.project.name !== 'desktop-chromium', 'desktop-only perf benchmark');
     const runLabel = process.env.PERF_LABEL ?? 'unlabeled';
     testInfo.setTimeout(180_000);
 

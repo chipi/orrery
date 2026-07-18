@@ -109,6 +109,16 @@ jobs:
           - project: mobile-chromium
             shard: '4/4'
             shard_id: '4-of-4'
+          # Landscape phone (Pixel 5 rotated). Guards the 0.7.2 responsive
+          # redesign — touch chrome / drawers, not the desktop HUD columns. 2
+          # shards: the heavy /fly render-validation + explore-perf specs are
+          # desktop-only (skipped here), so landscape's tail is short.
+          - project: mobile-landscape-chromium
+            shard: '1/2'
+            shard_id: '1-of-2'
+          - project: mobile-landscape-chromium
+            shard: '2/2'
+            shard_id: '2-of-2'
     name: docker-e2e (${{ matrix.project }} ${{ matrix.shard_id }})
     runs-on: ubuntu-latest
     # workflow_run fires on EVERY completion of the upstream workflow

@@ -197,6 +197,9 @@ test.describe('/fly Apollo 11 — phase markers (GH #107 reference)', () => {
     // path. Earlier the assertion was toHaveCount(0); updated for
     // the new behaviour.
     await page.goto('/fly?mission=mariner4');
+    // Touch/landscape HUD is default-collapsed — reveal the identity HUD before
+    // asserting the mission-name (mobile-landscape guard).
+    await expandFlyHud(page);
     await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({ timeout: 10_000 });
     await expect(page.locator('[data-testid="phase-markers-overlay"]')).toBeVisible({
       timeout: 10_000,

@@ -2,7 +2,21 @@
 
 **GH issue:** #418 · **Started:** 2026-07-18 · **Branch:** `launch`
 
-**Progress:** S1 ✅ (f57b86ce69) · S2 ✅ · S3–S7 pending. Each slice committed separately, typecheck-green.
+**Progress:**
+- **S1 ✅** (f57b86ce69) — body regimes/types/constants/guards. typecheck-green.
+- **S2 ✅** (6363e06ae2) — 4 archetypes + pressure-terminus integrator branch. typecheck-green.
+- **S5a ✅** (b8a5a7a3a0) — the 3 already-flyable missions (hayabusa1/osiris-rex/galileo)
+  ship profiles + integrate to honest outcomes; **94 vitest pass** (Galileo hits
+  230 g, matching published ~228 g). Density no longer clamps at datum; terminal
+  beat recognises probe_signal_lost.
+- **Pending:** S4 (models — needs browser verify), S6 (/fly act wiring + no-surface
+  terminal cards — needs browser verify), S3 (destination-wiring for the 4 blocked
+  missions + 2 new mission JSONs), S7 (RFC-034 §12 doc + TA.md), S5b (the 4 blocked
+  missions' profiles, after S3).
+
+**What works today:** the descent *physics* for asteroid TAG + Jupiter probe is
+real and tested. **What does NOT yet:** none of the 7 render or trigger in /fly
+(no models, no act wiring); the 4 blocked missions have no reachable arrival.
 
 Phase 1 (Moon/Mars/Venus, 37 missions) shipped. Phase 2 extends the `/fly`
 Descent & Landing act to the **7 lander/probe missions outside that scope**,

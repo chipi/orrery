@@ -1,0 +1,15 @@
+{
+  "title": "Gravity Turn",
+  "intro_sentence": "The pitch program that lets gravity itself steer the rocket downrange — trading a vertical climb for orbital speed with almost no steering loss.",
+  "narrative_101": [
+    "A rocket does not fly straight up to orbit. It lifts off vertically to clear the pad and punch through the thickest air, then slowly tips over toward the horizon. By the time the engine shuts off it is flying almost sideways — because orbit is about going fast enough sideways, not high enough up.",
+    "The clever part is that the rocket does not fight to hold that tilt. Just after liftoff it pitches over by a tiny amount, and from then on gravity does the steering: the same downward pull that the rocket is fighting also gently rotates its velocity toward the horizontal, for free. Keep the engine pointed straight along the flight path and the vehicle carves a smooth arc with no wasted sideways thrust. That is a gravity turn.",
+    "Get the tip-over wrong and you pay for it. Pitch too early or too steeply and the rocket spends its climb going sideways through thick air, piling up drag. Pitch too late and it wastes propellant holding itself up against gravity. The pitch program — exactly when and how fast to tilt — is tuned for each vehicle to spend the least total ∆v getting to orbit."
+  ],
+  "body_paragraphs": [
+    "Two of the three big ascent losses are shaped by the turn. Steering loss is the ∆v wasted whenever thrust points away from the direction of travel; a true gravity turn keeps thrust aligned with velocity, so steering loss stays near zero. Gravity loss is the ∆v spent holding the vehicle up against its own weight while it climbs — the faster the rocket tips toward horizontal, the sooner that weight stops eating its acceleration. The two pull in opposite directions, and the pitch program is the compromise.",
+    "The turn is initiated by a brief, deliberate pitch-over manoeuvre a few seconds after liftoff — the only real steering input of the whole ascent. After that the guidance mostly just keeps the nose aligned with the velocity vector and lets the arc develop. Late in flight, above the atmosphere, a second-stage guidance law (closed-loop or PEG-style) fine-tunes the final angle to hit the target orbit precisely.",
+    "On `/fly`, turn on the thrust and velocity Science-Lens layers during any `?launch=1` ascent and watch the two arrows stay nearly parallel as the rocket tips over — that alignment is the gravity turn working. The Δv-loss ledger shows steering loss staying small while gravity loss accumulates through the climb."
+  ],
+  "diagram_caption": "Gravity turn: a vertical liftoff, a small pitch-over, then a gravity-shaped arc from vertical to horizontal by orbital insertion."
+}

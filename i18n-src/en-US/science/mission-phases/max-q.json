@@ -1,0 +1,15 @@
+{
+  "title": "Max-Q",
+  "intro_sentence": "The moment of maximum aerodynamic stress on the way up — where dynamic pressure peaks and the rocket is squeezed hardest by the air it is punching through.",
+  "narrative_101": [
+    "About a minute into flight the rocket hits a wall it cannot see. Not a physical wall — a pressure one. As it accelerates, the air pushes back harder and harder; but as it climbs, the air also gets thinner. Those two effects fight, and somewhere around 11–14 km altitude the product of the two peaks. That peak is Max-Q: maximum dynamic pressure, the instant the vehicle is under the greatest aerodynamic load of the entire ascent.",
+    "Dynamic pressure is written q = ½ρv² — half the air density times velocity squared. Early on the rocket is slow but deep in thick air; higher up it is fast but the air is thin. The worst of both worlds lands in the middle, and that is where the airframe flexes most and the structure works hardest.",
+    "Rockets are built to survive Max-Q, but many throttle their engines down as they approach it to ease the load, then throttle back up once they are through — you can hear this on launch broadcasts as the callout \"throttling up\" a few seconds after \"Max-Q.\" Past that point the air thins fast, dynamic pressure falls away, and the aerodynamic danger is essentially over."
+  ],
+  "body_paragraphs": [
+    "The value of q rises with velocity squared but falls with air density, so the Max-Q altitude depends on how quickly the vehicle accelerates versus how quickly it climbs out of the dense lower atmosphere. A heavy, slow-accelerating stack hits Max-Q lower and softer; a punchy light one hits it higher. Typical crewed launchers see peak dynamic pressures around 30–35 kPa.",
+    "Aerodynamic drag — one of the three ascent ∆v losses — tracks the same q curve, so drag loss accumulates fastest right around Max-Q. This is exactly why the gravity turn matters: pitching over too aggressively early would drive the vehicle sideways through the densest air right when q is climbing, multiplying both the structural load and the drag loss.",
+    "On `/fly`, the DYNAMIC PRESSURE strip chart in the launch telemetry peaks at Max-Q, and the timeline carries a MAX-Q beat marker. Toggle the drag Science-Lens layer to see the drag arrow swell to its longest right at that moment, then shrink as the atmosphere gives up."
+  ],
+  "diagram_caption": "Dynamic pressure q = ½ρv² rises with speed and falls with thinning air; the crossover peak, ~11–14 km up, is Max-Q."
+}

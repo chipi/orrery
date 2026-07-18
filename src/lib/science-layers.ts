@@ -22,6 +22,9 @@ import { isScienceLensOn, onScienceLensChange } from './science-lens';
 export type LayerKey =
   | 'gravity' // A — gravity arrows
   | 'velocity' // B — velocity tangent arrows
+  | 'thrust' // R — ascent thrust force vector (/fly launch only, RFC-034 §11.2)
+  | 'drag' // R — ascent drag force vector (/fly launch only, RFC-034 §11.2)
+  | 'ascent-losses' // R — ascent Δv-loss ledger panel (/fly launch only, RFC-034 §11.2)
   | 'soi' // C — sphere-of-influence rings
   | 'hover' // D — hover info cards
   | 'centripetal' // E — centripetal acceleration arrows
@@ -56,6 +59,9 @@ export const LAYER_ORDER: readonly LayerKey[] = [
   'hover',
   'gravity',
   'velocity',
+  'thrust',
+  'drag',
+  'ascent-losses',
   'centripetal',
   'apsides',
   'coast',
@@ -91,6 +97,9 @@ export const LAYER_DEFAULTS: Record<LayerKey, boolean> = {
   hover: true,
   gravity: true,
   velocity: false,
+  thrust: false,
+  drag: false,
+  'ascent-losses': false,
   centripetal: false,
   apsides: false,
   coast: false,

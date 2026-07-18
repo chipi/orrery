@@ -454,6 +454,20 @@ export default defineConfig(({ mode }) => {
           // galaxy-placement + label math lives in local-group.json (data) and
           // the LocalGroupPanel component, neither of which runs WebGL.
           'src/lib/universe/local-group-scene.ts',
+          // /fly launch/ascent WebGL builders (RFC-034 · epic #412) — the Scene 0
+          // render (ascent-scene), its ACES+film+vignette composer
+          // (ascent-renderer), the per-vehicle procedural rocket models
+          // (launcher-models), and the launch-site ground patch (launch-ground)
+          // all instantiate Three.js + WebGL that jsdom can't run. Same policy as
+          // explore-scene.ts. Their pure math stays counted: the headless
+          // trajectory (ascent-physics), HUD logic (ascent-hud), clock
+          // (ascent-clock), cameras (ascent-cameras), profile registry, and the
+          // force-layer map each keep their own *.test.ts. The phase-scene
+          // contract (flight-phase-scene.ts) is pure types — no runtime to cover.
+          'src/lib/three/ascent-scene.ts',
+          'src/lib/three/ascent-renderer.ts',
+          'src/lib/three/launcher-models.ts',
+          'src/lib/three/launch-ground.ts',
           '*.config.{js,ts}',
           '.svelte-kit/',
         ],

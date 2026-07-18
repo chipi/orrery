@@ -76,6 +76,9 @@
     hover: false,
     gravity: false,
     velocity: false,
+    thrust: false,
+    drag: false,
+    'ascent-losses': false,
     centripetal: false,
     apsides: false,
     coast: false,
@@ -188,6 +191,21 @@
         return {
           label: m.science_layer_velocity_label(),
           description: m.science_layer_velocity_desc(),
+        };
+      case 'thrust':
+        return {
+          label: m.science_layer_thrust_label(),
+          description: m.science_layer_thrust_desc(),
+        };
+      case 'drag':
+        return {
+          label: m.science_layer_drag_label(),
+          description: m.science_layer_drag_desc(),
+        };
+      case 'ascent-losses':
+        return {
+          label: m.science_layer_ascent_losses_label(),
+          description: m.science_layer_ascent_losses_desc(),
         };
       case 'centripetal':
         return {

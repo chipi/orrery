@@ -1,0 +1,15 @@
+{
+  "title": "Gravity Turn",
+  "intro_sentence": "Het pitch-programma dat de zwaartekracht zelf de raket stuurlangzaam laat draaien — een verticale klimming omzetten in baansnelheid met vrijwel geen stuusverlies.",
+  "narrative_101": [
+    "Een raket vliegt niet rechtstreeks naar een baan omhoog. Hij stijgt verticaal op om het lanceerplatform te verlaten en door de dikste atmosfeer heen te breken, en kantelt zich dan langzaam naar de horizon. Op het moment dat de motor uitvalt, vliegt hij bijna zijwaarts — omdat een baan gaat over snel zijwaarts gaan, niet hoog genoeg omhoog.",
+    "Het slimme deel is dat de raket niet tegen die kanteling in vecht. Even na het opstijgen kantelt hij een klein beetje, en daarna doet de zwaartekracht het sturen: dezelfde neerwaartse trekkracht die de raket tegengaat draait ook zachtjes zijn snelheid naar horizontaal, gratis. Houd de motor recht langs het vluchtpad gericht en het voertuig snijdt een gladde boog zonder verspilde zijwaartse stuwkracht. Dat is een gravity turn.",
+    "Een fout bij het kantelen betaal je voor. Te vroeg of te steil kantelen en de raket brengt zijn klim zijwaarts door dikke lucht, ophooping van weerstand. Te laat kantelen en het verspilt brandstof door zichzelf tegen de zwaartekracht omhoog te houden. Het pitch-programma — precies wanneer en hoe snel moet worden gekanteld — wordt voor elk voertuig afgestemd om zo weinig mogelijk totale ∆v te gebruiken om een baan te bereiken."
+  ],
+  "body_paragraphs": [
+    "Twee van de drie grote opstijgingsverliezen worden bepaald door de draai. Stuusverlies is de ∆v die verloren gaat wanneer stuwkracht niet in de richting van beweging wijst; een echte gravity turn houdt de stuwkracht gelijk aan de snelheid, dus het stuusverlies blijft dicht bij nul. Zwaartekrachtverlies is de ∆v besteed aan het omhoog houden van het voertuig tegen zijn eigen gewicht terwijl het klimt — hoe sneller de raket naar horizontaal kantelt, hoe eerder dat gewicht ophoudt zijn versnelling op te eten. De twee trekken in tegengestelde richtingen, en het pitch-programma is het compromis.",
+    "De draai wordt geïnitieerd door een korte, opzettelijke kanteling een paar seconden na het opstijgen — de enige echte sturingsbeweging van de hele opstijging. Daarna houdt de begeleiding meestal alleen de neus gelijk met de snelheidsvector en laat de boog zich ontwikkelen. Laat in de vlucht, boven de atmosfeer, past een tweede-fase begeleiding (gesloten lus of PEG-stijl) de uiteindelijke hoek fijn af om precies de doelbaan te raken.",
+    "Op `/fly`, schakel je de stuwkracht- en snelheidslagen van de Science-Lens in tijdens elke `?launch=1`-opstijging en zie je de twee pijlen bijna parallel blijven terwijl de raket kantelt — die uitlijning is de gravity turn die werkt. Het Δv-verlies register toont het stuusverlies klein blijvend terwijl het zwaartekrachtverlies door de klim ophoopt."
+  ],
+  "diagram_caption": "Gravity turn: een verticale lancering, een kleine kanteling, dan een door de zwaartekracht gevormde boog van verticaal naar horizontaal bij baanopbouw."
+}

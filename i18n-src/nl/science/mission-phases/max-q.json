@@ -1,0 +1,15 @@
+{
+  "title": "Max-Q",
+  "intro_sentence": "Het moment van maximale aerodynamische belasting tijdens de opstijging — waar dynamische druk piekt en de raket het hardst door de lucht wordt samengeperst.",
+  "narrative_101": [
+    "Ongeveer een minuut na de lancering raakt de raket een muur die hij niet kan zien. Geen fysieke muur — een druk muur. Terwijl hij versnelt, duwt de lucht steeds harder terug; maar terwijl hij stijgt, wordt de lucht ook dunner. Deze twee effecten strijden met elkaar, en ergens tussen 11–14 km hoogte bereikt het product van beide een piek. Die piek is Max-Q: maximale dynamische druk, het moment waarop het voertuig onder de grootste aerodynamische belasting van de hele opstijging staat.",
+    "Dynamische druk wordt geschreven als q = ½ρv² — half de luchtdichtheid keer snelheid in het kwadraat. In het begin is de raket langzaam maar diep in dichte lucht; hoger op is hij snel maar is de lucht dun. Het ergste van beide werelden valt in het midden, en daar buigt het vliegtuigframe het meest en werkt de constructie het hardst.",
+    "Raketten zijn gebouwd om Max-Q te overleven, maar veel dempen hun motoren als ze eraan naderen om de belasting te verlichten, en geven dan weer vol vermogen nadat ze erlangs zijn — dit kun je in lanceringsuitzendingen horen als de aankondiging \"throttling up\" enkele seconden na \"Max-Q.\" Daarna wordt de lucht snel dunner, daalt de dynamische druk sterk af, en is het aerodynamische gevaar vrijwel voorbij."
+  ],
+  "body_paragraphs": [
+    "De waarde van q stijgt met snelheid in het kwadraat maar daalt met luchtdichtheid, dus de Max-Q hoogte hangt af van hoe snel het voertuig versnelt versus hoe snel het uit de dichte onderste atmosfeer klimt. Een zware, langzaam versnellende stack raakt Max-Q lager en zachter; een snelle, lichte raakt het hoger. Typische bemande lanceerders zien piekdynamische drukken rond de 30–35 kPa.",
+    "Aerodynamische weerstand — een van de drie opstijgings-∆v verliezen — volgt dezelfde q-curve, dus weerstandsverlies accumuleert het snelst rond Max-Q. Dit is precies waarom de gravity turn belangrijk is: te agressief vroeg overhellen zou het voertuig zijwaarts door de dichtste lucht duwen precies wanneer q stijgt, wat zowel de structurele belasting als het weerstandsverlies verveelvoudigt.",
+    "Op `/fly` bereikt de DYNAMIC PRESSURE strookgrafiek in de lanceringstelemetrie zijn piek op Max-Q, en de tijdlijn draagt een MAX-Q beatmarker. Activeer de drag Science-Lens-laag om te zien hoe de weerstandspijl op dat moment tot zijn langste punt zwelt, en dan afneemt als de atmosfeer opgegeven is."
+  ],
+  "diagram_caption": "Dynamische druk q = ½ρv² stijgt met snelheid en daalt met dunnere lucht; de snijpuntpiek, ~11–14 km hoog, is Max-Q."
+}

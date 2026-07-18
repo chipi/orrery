@@ -7,8 +7,41 @@
   "fairingJettisonAltM": 320000,
   "refAreaM2": 55,
   "cd": 0.4,
-  "launchSite": { "lat": 28.608, "lon": -80.604, "name": "LC-39 · Kennedy Space Center" },
-  "pitchProgram": [[0, 90], [12, 89], [40, 74], [120, 50], [240, 30], [400, 15], [500, 6]],
+  "launchSite": {
+    "lat": 28.608,
+    "lon": -80.604,
+    "name": "LC-39 · Kennedy Space Center"
+  },
+  "pitchProgram": [
+    [
+      0,
+      90
+    ],
+    [
+      12,
+      89
+    ],
+    [
+      40,
+      74
+    ],
+    [
+      120,
+      50
+    ],
+    [
+      240,
+      30
+    ],
+    [
+      400,
+      15
+    ],
+    [
+      500,
+      6
+    ]
+  ],
   "boosters": {
     "name": "SRB",
     "count": 2,
@@ -33,7 +66,7 @@
       "chamberTempK": 3600
     },
     {
-      "name": "Orbiter OMS",
+      "name": "Orbiter",
       "wetKg": 100000,
       "dryKg": 92000,
       "thrustVacKN": 53,
@@ -43,7 +76,13 @@
     }
   ],
   "provenance": [
-    { "l": "NASA — Space Shuttle Basics / Launch Vehicle", "u": "https://www.nasa.gov/space-shuttle/" },
-    { "l": "Spaceflight101 — Space Shuttle", "u": "https://spaceflight101.com/spacerockets/space-shuttle/" }
+    {
+      "l": "NASA — Space Shuttle Basics / Launch Vehicle",
+      "u": "https://www.nasa.gov/space-shuttle/"
+    },
+    {
+      "l": "Spaceflight101 — Space Shuttle",
+      "u": "https://spaceflight101.com/spacerockets/space-shuttle/"
+    }
   ]
 }

@@ -2,12 +2,15 @@ import { describe, it, expect } from 'vitest';
 import {
   advanceClock,
   cruiseDate,
+  defaultRegimeFor,
   formatAscentClock,
   formatClock,
   formatCruiseClock,
   makeTimeline,
   pointToScrubber,
   scrubberToPoint,
+  ASCENT_SPEED_MULTIPLIERS,
+  CRUISE_DAYS_PER_SEC,
 } from './ascent-clock';
 import { expectCloseTo } from '../test-helpers/expect-close';
 
@@ -138,5 +141,15 @@ describe('readouts', () => {
   it('computes an absolute cruise date from the departure date', () => {
     expect(cruiseDate('2011-11-26', 253)).toBe('2012-08-05'); // Curiosity launch → landing
     expect(cruiseDate('not-a-date', 10)).toBeNull();
+  });
+});
+
+describe('defaultRegimeFor', () => {
+  it('picks the gentlest pill of each speed set for both phases', () => {
+    for (const phase of ['ascent', 'cruise'] as const) {
+      const regime = defaultRegimeFor(phase);
+      expect(regime.ascentSpeedMult).toBe(ASCENT_SPEED_MULTIPLIERS[0]);
+      expect(regime.cruiseDaysPerSec).toBe(CRUISE_DAYS_PER_SEC[0]);
+    }
   });
 });

@@ -40,6 +40,8 @@ const SECTION_ENTRIES: { tab: ScienceTabId; section: string }[] = [
   { tab: 'propulsion', section: 'v-infinity' },
   { tab: 'propulsion', section: 'oberth-effect' },
   { tab: 'mission-phases', section: 'launch' },
+  { tab: 'mission-phases', section: 'gravity-turn' },
+  { tab: 'mission-phases', section: 'max-q' },
   { tab: 'mission-phases', section: 'trans-x-injection' },
   { tab: 'mission-phases', section: 'tcm' },
   { tab: 'mission-phases', section: 'orbit-insertion' },

@@ -9,9 +9,9 @@
  * vehicle-scale coordinate stays small (float-precision-safe), the "own
  * frame" of RFC-034 L-A.
  *
- * Dev-harness first (/dev/ascent); wired into /fly at S6. The vehicle is
- * a stylised procedural placeholder at an exaggerated scale so it reads
- * against Earth curvature — per-vehicle accurate GLBs land at S11.
+ * Mounted by LaunchScene in /fly (the sole launch/ascent implementation).
+ * The vehicle is a stylised procedural placeholder at an exaggerated scale
+ * so it reads against Earth curvature — per-vehicle accurate GLBs land at S11.
  */
 
 import * as THREE from 'three';
@@ -32,6 +32,7 @@ import {
   type LaunchGround,
   type LaunchGroundSite,
 } from '$lib/three/launch-ground';
+import type { FlightPhaseScene, ForceKey } from '$lib/three/flight-phase-scene';
 
 const R_EARTH_KM = 6371;
 
@@ -56,6 +57,9 @@ export interface AscentSceneOptions {
   spacecraftId?: string;
   /** Launcher id → the rocket's dedicated procedural model (else a generic body). */
   launcherId?: string;
+  /** Strap-on booster count (Atlas V's variable AJ-60A count) — drawn on the
+   *  generic body + jettisoned at strap-on burnout. 0 / omitted = none. */
+  boosterCount?: number;
   /** Override the texture longitude offset (deg) for calibration; default −90. */
   lonTextureOffsetDeg?: number;
   /** Spin the globe about the pad-vertical so a green coastline faces downrange. */
@@ -73,22 +77,18 @@ const LON_TEXTURE_OFFSET_DEG = 0;
 /** Default globe spin (deg) about the pad-vertical: frame land, not open ocean. */
 const DEFAULT_SITE_YAW_DEG = 0;
 
-export interface AscentScene {
-  scene: THREE.Scene;
-  camera: THREE.PerspectiveCamera;
-  /** Position + orient the vehicle and frame the camera from a physics state. */
-  setState(s: AscentState): void;
-  setAspect(aspect: number): void;
+export interface AscentScene extends FlightPhaseScene<AscentState> {
   /** The camera shot active at the last setState() — for the HUD. */
   readonly activeShot: AscentShotName;
-  /** Toggle the Science-Lens force vectors (thrust / weight / drag / velocity). */
-  setForcesVisible(on: boolean): void;
-  /** Snap the smooth-camera to its target instantly (use on a timeline scrub). */
-  snapCamera(): void;
-  /** Restore stages/fairing/plume to the pre-launch state (for replay). */
-  reset(): void;
-  dispose(): void;
+  /** Re-light the plume on the upper stage for the post-SECO injection burn
+   *  (RFC-034 §3.1). Driven by the clock (not the clamped physics state, which
+   *  freezes at SECO). */
+  setInjectionBurn(on: boolean): void;
 }
+
+/** Rendered vehicle length (km, world units) — the single source for the scene
+ *  default + the HUD/camera-debug callers that used to each hard-code 1.2. */
+export const VEHICLE_LENGTH_KM = 1.2;
 
 /** Science-Lens force-vector palette (matches the HUD legend). */
 export const FORCE_COLORS = {
@@ -146,7 +146,7 @@ function buildPayload(spacecraftId: string | undefined, vehLen: number): THREE.G
 }
 
 export function createAscentScene(opts: AscentSceneOptions): AscentScene {
-  const vehLen = opts.vehicleLengthKm ?? 1.2;
+  const vehLen = opts.vehicleLengthKm ?? VEHICLE_LENGTH_KM;
   const scene = new THREE.Scene();
   // Sky colour is altitude-driven in setState: daylight blue on the pad →
   // deep black by ~70 km, the signature "blue sky to space" of an ascent.
@@ -333,7 +333,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   //    choreography is vehicle-agnostic.
   const vehicle = new THREE.Group();
   const rBody = vehLen * 0.05; // plume scale reference
-  const model = buildLauncherModel(opts.launcherId, vehLen);
+  const model = buildLauncherModel(opts.launcherId, vehLen, opts.boosterCount ?? 0);
+  const strapOnGroup = model.strapOns;
   const booster = model.booster;
   const upperStage = model.upperStage;
   const fairingGroup = model.fairingGroup;
@@ -397,6 +398,24 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   forces.add(arrThrust, arrWeight, arrDrag, arrVel);
   scene.add(forces);
   let showForces = false;
+  // Per-vector visibility (the Science-Lens layers drive these individually).
+  // Default all-off: an arrow shows only when its lens layer is on AND the
+  // force is non-trivial at the current state. The group gate `forces.visible`
+  // opens whenever any single vector is on.
+  const forceVisible: Record<ForceKey, boolean> = {
+    thrust: false,
+    weight: false,
+    drag: false,
+    velocity: false,
+  };
+  const anyForceOn = (): boolean =>
+    forceVisible.thrust || forceVisible.weight || forceVisible.drag || forceVisible.velocity;
+  // Last physics state — lets a lens toggle refresh the arrows immediately even
+  // when the timeline is paused (no setState pending).
+  let lastState: AscentState | null = null;
+  // Post-SECO injection burn (RFC-034 §3.1) — driven by the clock, not the
+  // physics state (which freezes at SECO). Re-lights the upper-stage plume.
+  let injectionBurning = false;
 
   let frame = 0;
   const schedule = opts.schedule ?? [];
@@ -429,6 +448,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // (Shuttle ET+SRBs at ~510 s, not the SRB sep at ~94 s). Falls back to the
   // lone 'staging' for un-boosted two-stage vehicles.
   const stagingT = metOf('meco') ?? metOf('staging');
+  // Strap-on solids jettison at the FIRST 'staging' (their burnout, ~94 s for
+  // Atlas V AJ-60As) — earlier than the core drop at MECO above.
+  const strapOnSepT = metOf('staging');
   const fairingT = metOf('fairing_jettison');
   const secoT = metOf('seco');
   const BOOSTER_SEP_S = 5;
@@ -437,8 +459,14 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const _v = new THREE.Vector3();
   const updateForces = (s: AscentState): void => {
     const origin = new THREE.Vector3(s.downrangeKm, s.altKm, 0);
-    const setArrow = (arr: THREE.ArrowHelper, dx: number, dy: number, lenKm: number): void => {
-      const on = lenKm > vehLen * 0.05 && (dx !== 0 || dy !== 0);
+    const setArrow = (
+      arr: THREE.ArrowHelper,
+      key: ForceKey,
+      dx: number,
+      dy: number,
+      lenKm: number,
+    ): void => {
+      const on = forceVisible[key] && lenKm > vehLen * 0.05 && (dx !== 0 || dy !== 0);
       arr.visible = on;
       if (!on) return;
       arr.position.copy(origin);
@@ -448,19 +476,26 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     };
     // Thrust — up the commanded body axis.
     const tl = (s.thrustN / FORCE_REF_N) * vehLen * 2.2;
-    setArrow(arrThrust, Math.cos(s.pitchRad), Math.sin(s.pitchRad), s.thrustN > 0 ? tl : 0);
+    setArrow(
+      arrThrust,
+      'thrust',
+      Math.cos(s.pitchRad),
+      Math.sin(s.pitchRad),
+      s.thrustN > 0 ? tl : 0,
+    );
     // Weight — toward Earth's centre (a full radius below the pad).
     const weightN = s.massKg * gravity(s.altKm * 1000);
     setArrow(
       arrWeight,
+      'weight',
       -s.downrangeKm,
       -(R_EARTH_KM + s.altKm),
       (weightN / FORCE_REF_N) * vehLen * 2.2,
     );
     // Velocity + drag (drag opposes velocity).
     const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
-    setArrow(arrVel, horiz, s.velUpKms, (s.speedKms / SPEED_REF) * vehLen * 2);
-    setArrow(arrDrag, -horiz, -s.velUpKms, (s.dragN / DRAG_REF_N) * vehLen * 1.2);
+    setArrow(arrVel, 'velocity', horiz, s.velUpKms, (s.speedKms / SPEED_REF) * vehLen * 2);
+    setArrow(arrDrag, 'drag', -horiz, -s.velUpKms, (s.dragN / DRAG_REF_N) * vehLen * 1.2);
   };
 
   const setState = (s: AscentState): void => {
@@ -490,6 +525,16 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     booster.rotation.set(bp * 2.4, 0, bp * 1.2);
     booster.scale.setScalar(1 - 0.45 * bp);
 
+    // Strap-on solids: at burnout they fall back + tumble away from the still-
+    // climbing core (earlier than the core drop above).
+    if (strapOnGroup) {
+      const sp = sepProgress(s.t, strapOnSepT, BOOSTER_SEP_S);
+      strapOnGroup.visible = sp < 1;
+      strapOnGroup.position.y = -sp * vehLen * 2.6;
+      strapOnGroup.rotation.set(sp * 1.6, 0, 0);
+      strapOnGroup.scale.setScalar(1 - 0.4 * sp);
+    }
+
     // Fairing: the two shells clamshell apart, rise, and tumble away.
     const fp = sepProgress(s.t, fairingT, FAIRING_SEP_S);
     fairingGroup.visible = fp < 1;
@@ -511,7 +556,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // Plume: only while a stage burns; re-parent to the firing stage,
     // flicker the length, taper in vacuum.
     const burning = s.stageIndex >= 0;
-    plume.visible = burning;
+    plume.visible = burning || injectionBurning;
     if (burning) {
       const firing = s.stageIndex >= 1 ? model.upperPlumeAnchor : model.boosterPlumeAnchor;
       if (plume.parent !== firing) {
@@ -524,6 +569,17 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       plume.scale.set(1, flick * vac, 1);
       // S1 plume emanates from the octaweb; S2 from its vacuum bell.
       plume.position.y = -(s.stageIndex >= 1 ? vehLen * 0.14 : vehLen * 0.3);
+    } else if (injectionBurning) {
+      // Post-SECO injection: the kick/upper stage re-lights — a long, thin
+      // vacuum plume from the upper bell (the payload is still attached).
+      const firing = model.upperPlumeAnchor;
+      if (plume.parent !== firing) {
+        plume.parent?.remove(plume);
+        firing.add(plume);
+      }
+      const flick = 1 + 0.09 * Math.sin(frame * 0.7);
+      plume.scale.set(0.85, flick * 1.9, 0.85);
+      plume.position.y = -(vehLen * 0.14);
     }
 
     // Camera: pick the active shot, compose its target pose, then EASE the live
@@ -551,12 +607,30 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     camera.fov = camS.fov;
     camera.updateProjectionMatrix();
 
+    lastState = s;
     if (showForces) updateForces(s);
   };
 
   const setForcesVisible = (on: boolean): void => {
+    forceVisible.thrust = on;
+    forceVisible.weight = on;
+    forceVisible.drag = on;
+    forceVisible.velocity = on;
     showForces = on;
     forces.visible = on;
+    if (on && lastState) updateForces(lastState);
+  };
+
+  const setInjectionBurn = (on: boolean): void => {
+    injectionBurning = on; // the continuous render loop applies it next frame
+  };
+
+  const setForceVisible = (force: ForceKey, on: boolean): void => {
+    forceVisible[force] = on;
+    const any = anyForceOn();
+    showForces = any;
+    forces.visible = any;
+    if (any && lastState) updateForces(lastState);
   };
 
   const setAspect = (aspect: number): void => {
@@ -565,10 +639,17 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   };
 
   const reset = (): void => {
+    injectionBurning = false;
     booster.visible = true;
     booster.position.set(0, 0, 0);
     booster.rotation.set(0, 0, 0);
     booster.scale.setScalar(1);
+    if (strapOnGroup) {
+      strapOnGroup.visible = true;
+      strapOnGroup.position.set(0, 0, 0);
+      strapOnGroup.rotation.set(0, 0, 0);
+      strapOnGroup.scale.setScalar(1);
+    }
     fairingGroup.visible = true;
     fairingHalfL.position.set(0, fairingBaseY, 0);
     fairingHalfR.position.set(0, fairingBaseY, 0);
@@ -606,6 +687,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       return activeShot;
     },
     setForcesVisible,
+    setForceVisible,
+    setInjectionBurn,
     /** Snap the smooth-camera to its target instantly (use on a timeline scrub). */
     snapCamera: () => {
       camS = null;

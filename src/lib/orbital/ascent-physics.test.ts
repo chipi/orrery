@@ -4,8 +4,10 @@ import {
   ambientPressure,
   ascentToOrbit,
   circularSpeed,
+  commandedPitchRad,
   dynamicPressure,
   gravity,
+  GUIDANCE,
   integrateAscent,
   pitchAngleRad,
   pressureRatio,
@@ -156,6 +158,11 @@ describe('integrateAscent (Falcon 9 smoke test)', () => {
     expect(s.losses.dragKms).toBeLessThan(1);
     expect(s.losses.steeringKms).toBeGreaterThanOrEqual(0);
   });
+
+  it('exposes totalDurationS matching the final sampled state (no re-derivation)', () => {
+    expect(s.totalDurationS).toBe(s.states.at(-1)!.t);
+    expect(s.totalDurationS).toBeGreaterThan(0);
+  });
 });
 
 describe('ascentToOrbit (/plan reuse)', () => {
@@ -172,6 +179,47 @@ describe('ascentToOrbit (/plan reuse)', () => {
   });
 });
 
+describe('commandedPitchRad — two-phase insertion guidance (#415)', () => {
+  const belowHandover = GUIDANCE.handoverAltM - 5_000;
+  const aboveHandover = GUIDANCE.handoverAltM + GUIDANCE.blendM + 30_000;
+
+  it('follows the aero pitch table below the handover altitude', () => {
+    const guided = commandedPitchRad(FALCON9, 40, belowHandover, 300, 200, 25);
+    expect(guided).toBe(pitchAngleRad(FALCON9, 40));
+  });
+
+  it('falls back to the table while coasting (no thrust) even above handover', () => {
+    const guided = commandedPitchRad(FALCON9, 300, aboveHandover, 100, 5_000, 0);
+    expect(guided).toBe(pitchAngleRad(FALCON9, 300));
+  });
+
+  it('commands prograde while apoapsis is still below target (raise apoapsis)', () => {
+    // Low horizontal speed → sub-orbital arc → apoapsis below target → prograde.
+    const velUp = 400;
+    const velHoriz = 1_000;
+    const guided = commandedPitchRad(FALCON9, 200, aboveHandover, velUp, velHoriz, 20);
+    expect(guided).toBeCloseTo(Math.atan2(velUp, velHoriz), 6);
+  });
+
+  it('stays within the guidance climb/dive clamps', () => {
+    for (const vh of [1_000, 4_000, 7_000, 7_800]) {
+      const guided = commandedPitchRad(FALCON9, 250, aboveHandover, 50, vh, 18);
+      expect(guided).toBeLessThanOrEqual(GUIDANCE.maxClimbRad + 1e-9);
+      expect(guided).toBeGreaterThanOrEqual(-GUIDANCE.maxDiveRad - 1e-9);
+    }
+  });
+
+  it('drops the commanded pitch as horizontal speed builds (vₓ²/r cancels gravity)', () => {
+    // At target altitude with super-circular horizontal speed the guidance is in
+    // its altitude-hold branch; as vₓ grows, the centrifugal relief pushes the
+    // commanded pitch down toward (and past) level — arriving level at orbit.
+    const atTarget = GUIDANCE.targetAltM;
+    const slow = commandedPitchRad(FALCON9, 250, atTarget, 0, 7_900, 18);
+    const fast = commandedPitchRad(FALCON9, 250, atTarget, 0, 8_100, 18);
+    expect(fast).toBeLessThan(slow);
+  });
+});
+
 describe('sampleAscentAt', () => {
   const s = integrateAscent(FALCON9);
 
@@ -185,5 +233,44 @@ describe('sampleAscentAt', () => {
     const hi = sampleAscentAt(s.states, 60);
     expect(hi.altKm).toBeGreaterThan(lo.altKm);
     expect(hi.t).toBe(60);
+  });
+});
+
+describe('Δv-loss ledger (running totals per state)', () => {
+  const s = integrateAscent(FALCON9);
+
+  it('drag + steering losses are monotonic non-decreasing; all non-negative', () => {
+    // Drag loss (drag/m·dt) and steering loss ((1−cosα)·dt) are non-negative
+    // integrands → strictly monotonic. Gravity loss integrates g·sin(γ)·dt,
+    // which can tick DOWN when the flight-path angle goes negative near
+    // insertion (Δv is recovered thrusting while descending) — so it is only
+    // bounded non-negative overall, not monotonic.
+    for (let i = 1; i < s.states.length; i++) {
+      const p = s.states[i - 1];
+      const c = s.states[i];
+      expect(c.lossDragKms).toBeGreaterThanOrEqual(p.lossDragKms);
+      expect(c.lossSteeringKms).toBeGreaterThanOrEqual(p.lossSteeringKms);
+      expect(c.lossGravityKms).toBeGreaterThanOrEqual(0);
+      expect(c.lossDragKms).toBeGreaterThanOrEqual(0);
+      expect(c.lossSteeringKms).toBeGreaterThanOrEqual(0);
+    }
+  });
+
+  it('the first sample starts at zero losses', () => {
+    expect(s.states[0].lossGravityKms).toBe(0);
+    expect(s.states[0].lossDragKms).toBe(0);
+    expect(s.states[0].lossSteeringKms).toBe(0);
+  });
+
+  it('the final sampled state equals summary.losses exactly', () => {
+    const last = s.states.at(-1)!;
+    expect(last.lossGravityKms).toBe(s.losses.gravityKms);
+    expect(last.lossDragKms).toBe(s.losses.dragKms);
+    expect(last.lossSteeringKms).toBe(s.losses.steeringKms);
+  });
+
+  it('gravity loss dominates for a vertical-launch stack (physical sanity)', () => {
+    const last = s.states.at(-1)!;
+    expect(last.lossGravityKms).toBeGreaterThan(last.lossDragKms);
   });
 });

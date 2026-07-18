@@ -386,6 +386,13 @@
   },
   {
     "tab": "mission-phases",
+    "section": "gravity-turn",
+    "title": "Gravity Turn",
+    "intro": "The pitch program that lets gravity itself steer the rocket downrange — trading a vertical climb for orbital speed with almost no steering loss.",
+    "haystack": "gravity turn the pitch program that lets gravity itself steer the rocket downrange — trading a vertical climb for orbital speed with almost no steering loss. two of the three big ascent losses are shaped by the turn. steering loss is the ∆v wasted whenever thrust points away from the direction of travel; a true gravity turn keeps thrust aligned with velocity, so steering loss stays near zero. gravity loss is the ∆v spent holding the vehicle up against its own weight while it climbs — the faster the rocket tips toward horizontal, the sooner that weight stops eating its acceleration. the two pull in opposite directions, and the pitch program is the compromise."
+  },
+  {
+    "tab": "mission-phases",
     "section": "interplanetary-internet",
     "title": "The interplanetary internet — networking across the light-lag",
     "intro": "Standard internet protocols fail across light-minutes and planetary occultations; Delay/Disruption-Tolerant Networking solves this with store-and-forward bundles that wait for the next available link.",
@@ -397,6 +404,13 @@
     "title": "Launch + Ascent",
     "intro": "The most violent ten minutes of any mission — fighting gravity, atmosphere, and the rocket equation simultaneously.",
     "haystack": "launch + ascent the most violent ten minutes of any mission — fighting gravity, atmosphere, and the rocket equation simultaneously. launch ascent costs about 9.4 km/s of ∆v, but barely 7.9 km/s of that is actual orbital velocity. the rest is gravity loss (you spend energy holding the rocket up while it climbs) and drag loss (atmosphere fighting back). pitch-program right and you minimise both — too vertical wastes thrust on altitude that doesn't help orbital insertion; too horizontal and the atmosphere has more time to slow you down."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "max-q",
+    "title": "Max-Q",
+    "intro": "The moment of maximum aerodynamic stress on the way up — where dynamic pressure peaks and the rocket is squeezed hardest by the air it is punching through.",
+    "haystack": "max-q the moment of maximum aerodynamic stress on the way up — where dynamic pressure peaks and the rocket is squeezed hardest by the air it is punching through. the value of q rises with velocity squared but falls with air density, so the max-q altitude depends on how quickly the vehicle accelerates versus how quickly it climbs out of the dense lower atmosphere. a heavy, slow-accelerating stack hits max-q lower and softer; a punchy light one hits it higher. typical crewed launchers see peak dynamic pressures around 30–35 kpa."
   },
   {
     "tab": "mission-phases",

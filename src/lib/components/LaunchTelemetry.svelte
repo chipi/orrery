@@ -1,52 +1,51 @@
 <!--
   LaunchTelemetry — the broadcast "LAUNCH TELEMETRY" console (the left HUD panel).
 
-  Shared by the dev harness (/dev/ascent) and the shipping /fly launch pre-roll
-  (LaunchScene) so the rich telemetry — propellant reservoirs, live strip charts
-  (altitude / velocity / dynamic pressure / aero heating), T/W + chamber gauges,
-  engine cluster, GO/NO-GO lights — is identical in both. Every series is grounded
-  in the /science articles (Tsiolkovsky, Max-Q, dv-budget, engine clustering).
+  The left HUD panel of the /fly launch pre-roll (LaunchScene): propellant
+  reservoirs, live strip charts (altitude / velocity / dynamic pressure / aero
+  heating), T/W + chamber gauges, engine cluster, GO/NO-GO lights. Every series
+  is grounded in the /science articles (Tsiolkovsky, Max-Q, dv-budget, engine
+  clustering).
 
   Pure presentational: give it the integrated summary + the live state at time t.
 -->
 <script lang="ts">
-  import type {
-    AscentSummary,
-    AscentState,
-    LaunchStage,
-    LaunchBoosters,
-  } from '$lib/orbital/ascent-physics';
+  import type { AscentSummary, AscentState, LaunchProfile } from '$lib/orbital/ascent-physics';
+  import { IGNITION_T_S, ORBIT_TARGET_KMS } from '$lib/orbital/ascent-hud';
+  import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import type { ScienceTabId } from '$types/science';
+
+  // Chart/section shorthand → the /science article it cross-links (RFC-034 §11.2).
+  // Only the beats that have a real article are linked; the rest stay plain text.
+  const SCI_LINK: Record<string, { tab: ScienceTabId; section: string }> = {
+    tsiolkovsky: { tab: 'propulsion', section: 'tsiolkovsky' },
+    'dv-budget': { tab: 'propulsion', section: 'dv-budget' },
+    'max-q': { tab: 'mission-phases', section: 'max-q' },
+    launch: { tab: 'mission-phases', section: 'launch' },
+  };
 
   interface Props {
+    /** The launch vehicle — stages / boosters / payload / name all read from here. */
+    profile: LaunchProfile;
+    /** The integrated ascent for `profile`. */
     summary: AscentSummary;
-    stages: LaunchStage[];
-    /** Strap-on boosters (SRBs / EAP / Korolev strap-ons), if the vehicle has them. */
-    boosters?: LaunchBoosters;
-    payloadKg: number;
-    vehicleName: string;
     /** Live mission time (s); negative during the countdown. */
     t: number;
     /** Live sampled state at t (pad-clamped by the caller during the countdown). */
     state: AscentState;
-    /** T-minus seconds at which the engines light (for the GO/NO-GO arming). */
-    ignitionT?: number;
   }
-  let {
-    summary,
-    stages,
-    boosters,
-    payloadKg,
-    vehicleName,
-    t,
-    state,
-    ignitionT = -3,
-  }: Props = $props();
+  let { profile, summary, t, state }: Props = $props();
+
+  const stages = $derived(profile.stages);
+  const boosters = $derived(profile.boosters);
+  const payloadKg = $derived(profile.payloadKg);
+  const vehicleName = $derived(profile.name);
 
   // Strap-on booster reservoir: the combined propellant drains through the
   // parallel-boost phase, then reads SEP once the boosters jettison.
-  const boosterTotalProp = boosters
-    ? boosters.count * Math.max(1, boosters.wetKg - boosters.dryKg)
-    : 0;
+  const boosterTotalProp = $derived(
+    boosters ? boosters.count * Math.max(1, boosters.wetKg - boosters.dryKg) : 0,
+  );
   const boosterFuelPct = $derived.by(() => {
     if (!boosters) return 0;
     if (t < 0) return 100;
@@ -57,16 +56,15 @@
   });
   const boostersJettisoned = $derived(!!boosters && t >= 0 && state.boosterPropRemainingKg <= 0);
 
-  const duration = summary.states.at(-1)!.t;
-  const ORBIT_TARGET_KMS = 7.8; // circular LEO — the dv-budget "will it make it" line
+  const duration = $derived(summary.totalDurationS);
 
   // Propellant story (Tsiolkovsky) — ~88% of liftoff mass is fuel.
-  const liftoffMass = summary.states[0].massKg;
-  const stageProps = stages.map((s) => Math.max(1, s.wetKg - s.dryKg));
-  const totalProp = stageProps.reduce((a, b) => a + b, 0);
-  const propPct = Math.round((totalProp / liftoffMass) * 100);
-  const payloadPct = ((payloadKg / liftoffMass) * 100).toFixed(1);
-  const maxQpeak = summary.maxQ.qPa / 1000;
+  const liftoffMass = $derived(summary.states[0].massKg);
+  const stageProps = $derived(stages.map((s) => Math.max(1, s.wetKg - s.dryKg)));
+  const totalProp = $derived(stageProps.reduce((a, b) => a + b, 0));
+  const propPct = $derived(Math.round((totalProp / liftoffMass) * 100));
+  const payloadPct = $derived(((payloadKg / liftoffMass) * 100).toFixed(1));
+  const maxQpeak = $derived(summary.maxQ.qPa / 1000);
 
   const stageFuelPct = (i: number): number => {
     if (t < 0) return 100; // tanks loaded through the countdown
@@ -90,12 +88,12 @@
       (s.t / duration) * CHART_W,
       CHART_H - Math.min(1, Math.max(0, acc(s)) / maxV) * CHART_H,
     ]);
-  const altMax = Math.max(...summary.states.map((s) => s.altKm)) * 1.05;
-  const heatPeak = Math.max(...summary.states.map((s) => s.aeroHeatFlux)) || 1;
-  const altPts = seriesFor((s) => s.altKm, altMax);
-  const velPts = seriesFor((s) => s.speedKms, ORBIT_TARGET_KMS * 1.05);
-  const qPts = seriesFor((s) => s.qPa / 1000, maxQpeak * 1.12);
-  const heatPts = seriesFor((s) => s.aeroHeatFlux, heatPeak * 1.05);
+  const altMax = $derived(Math.max(...summary.states.map((s) => s.altKm)) * 1.05);
+  const heatPeak = $derived(Math.max(...summary.states.map((s) => s.aeroHeatFlux)) || 1);
+  const altPts = $derived(seriesFor((s) => s.altKm, altMax));
+  const velPts = $derived(seriesFor((s) => s.speedKms, ORBIT_TARGET_KMS * 1.05));
+  const qPts = $derived(seriesFor((s) => s.qPa / 1000, maxQpeak * 1.12));
+  const heatPts = $derived(seriesFor((s) => s.aeroHeatFlux, heatPeak * 1.05));
   const poly = (pts: Pt[]): string =>
     pts.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
 
@@ -124,7 +122,9 @@
 
   <!-- PROPELLANT — the tyranny of the rocket equation made kinetic -->
   <section>
-    <header>PROPELLANT<em>tsiolkovsky</em></header>
+    <header>
+      PROPELLANT<ScienceChip tab="propulsion" section="tsiolkovsky" label="tsiolkovsky" />
+    </header>
     <div class="fuel-headline"><b>{propPct}%</b> fuel by mass · payload {payloadPct}%</div>
     {#if boosters}
       <div class="reservoir">
@@ -146,7 +146,13 @@
 
   {#snippet chartRow(label: string, sci: string, pts: Pt[], color: string, val: string)}
     <section class="chart-row">
-      <header>{label}<em>{sci}</em></header>
+      <header>
+        {label}{#if SCI_LINK[sci]}<ScienceChip
+            tab={SCI_LINK[sci].tab}
+            section={SCI_LINK[sci].section}
+            label={sci}
+          />{:else}<em>{sci}</em>{/if}
+      </header>
       <div class="chart-wrap">
         <svg class="chart" viewBox="0 0 {CHART_W} {CHART_H}" preserveAspectRatio="none">
           <line class="grid" x1="0" y1={CHART_H * 0.5} x2={CHART_W} y2={CHART_H * 0.5} />
@@ -215,7 +221,7 @@
 
   <section class="status-lights">
     {#each ['GUIDANCE', 'GIMBAL', 'SENSORS', 'PRESS', 'RANGE'] as lg (lg)}
-      <span class="light" class:armed={t < ignitionT && (lg === 'PRESS' || lg === 'RANGE')}>
+      <span class="light" class:armed={t < IGNITION_T_S && (lg === 'PRESS' || lg === 'RANGE')}>
         <i></i>{lg}
       </span>
     {/each}
@@ -344,16 +350,21 @@
     align-items: center;
     gap: 8px;
   }
+  /* Fixed-width label column so every reservoir bar starts at the same x and
+     the bars read equal-width; nowrap + ellipsis so "Centaur" / "5×AJ-60A"
+     never clip. */
   .rlabel {
+    flex: 0 0 58px;
+    width: 58px;
     font-size: 10px;
     color: #7d99b5;
-    width: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .blabel {
-    width: 46px;
     font-size: 9px;
     color: #ffbe7a;
-    white-space: nowrap;
   }
   .rfill.srb {
     background: linear-gradient(90deg, #ff5a2a, #ffb14a);

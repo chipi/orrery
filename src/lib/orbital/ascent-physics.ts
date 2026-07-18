@@ -107,7 +107,11 @@ export interface LaunchProfile {
   cd?: number;
   /** Launch site — informational; not used by the S1 planar integration. */
   launchSite?: { lat: number; lon: number; name?: string };
-  /** "flagship" (hand-authored) | "generic" (parameterized fallback). */
+  /**
+   * Launch-profile provenance tier — distinct from the cislunar/mission
+   * `tier_*` trajectory taxonomy (see cislunar-geometry.ts); same field name,
+   * different domain. "flagship" (hand-authored) | "generic" (parameterized).
+   */
   source_tier?: 'flagship' | 'generic';
   /** Provenance rows (publisher + source URL) for the shipped JSON. */
   provenance?: { l: string; u: string }[];
@@ -147,14 +151,24 @@ export interface AscentState {
   boostersActive: boolean;
   /** Combustion-chamber temperature (K) while firing; 0 when the engine is off. */
   chamberTempK: number;
-  /** Stagnation aerodynamic heat flux ∝ √ρ·v³ (W·m⁻², proportional). Peaks after Max-Q. */
+  /**
+   * Stagnation aerodynamic heating proxy ∝ √ρ·v³ (Sutton-Graves form).
+   * PROPORTIONAL, arbitrary units — NOT calibrated W·m⁻²; use only for
+   * relative HUD gauges (peaks after Max-Q), never as an absolute flux.
+   */
   aeroHeatFlux: number;
+  /** Running Δv gravity loss to this instant (km·s⁻¹). Monotonic non-decreasing;
+   *  the final sample equals `AscentSummary.losses.gravityKms`. For the ledger. */
+  lossGravityKms: number;
+  /** Running Δv drag loss to this instant (km·s⁻¹). Monotonic non-decreasing. */
+  lossDragKms: number;
+  /** Running Δv steering loss to this instant (km·s⁻¹). Monotonic non-decreasing. */
+  lossSteeringKms: number;
 }
 
 /** A discrete ascent beat (liftoff, staging, Max-Q, MECO, SECO, …). */
 export interface AscentEvent {
-  type:
-    'liftoff' | 'max_q' | 'staging' | 'meco' | 'fairing_jettison' | 'seco' | 'orbit' | 'burnout';
+  type: 'liftoff' | 'max_q' | 'staging' | 'meco' | 'fairing_jettison' | 'seco' | 'orbit';
   t: number;
   altKm: number;
   speedKms: number;
@@ -179,6 +193,8 @@ export interface AscentSummary {
   losses: { gravityKms: number; dragKms: number; steeringKms: number };
   /** Ideal Δv capacity (km·s⁻¹) — Tsiolkovsky summed over stages, vacuum Isp. */
   idealDvKms: number;
+  /** Total flight duration (s) — the MET of the final sampled state. */
+  totalDurationS: number;
 }
 
 // ─── Atmosphere + gravity ───────────────────────────────────────────
@@ -400,7 +416,7 @@ export interface AscentOptions {
   dtS?: number;
   /** Trajectory sample interval (s). Default 1. */
   sampleDtS?: number;
-  /** Hard stop (s) so a sub-orbital / underpowered stack can't loop forever. Default 1200. */
+  /** Hard stop (s) so a sub-orbital / underpowered stack can't loop forever. Default 2000. */
   maxTS?: number;
 }
 
@@ -513,6 +529,11 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       // Sutton-Graves form (proportional): stagnation heating rises with v³
       // but needs air (√ρ), so it peaks inside the atmosphere then vanishes.
       aeroHeatFlux: Math.sqrt(rho) * speed * speed * speed,
+      // Running Δv-loss ledger (m·s⁻¹ → km·s⁻¹), snapshotted each sample so the
+      // ledger layer can read the live tally at any scrubbed time t.
+      lossGravityKms: losses.gravity / 1000,
+      lossDragKms: losses.drag / 1000,
+      lossSteeringKms: losses.steering / 1000,
     };
   };
 
@@ -717,6 +738,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       steeringKms: losses.steering / 1000,
     },
     idealDvKms: stackIdealDv(profile) / 1000,
+    totalDurationS: final.t,
   };
 }
 
@@ -760,6 +782,9 @@ export function sampleAscentAt(states: AscentState[], t: number): AscentState {
     boostersActive: f < 0.5 ? a.boostersActive : b.boostersActive,
     chamberTempK: f < 0.5 ? a.chamberTempK : b.chamberTempK,
     aeroHeatFlux: lerp(a.aeroHeatFlux, b.aeroHeatFlux),
+    lossGravityKms: lerp(a.lossGravityKms, b.lossGravityKms),
+    lossDragKms: lerp(a.lossDragKms, b.lossDragKms),
+    lossSteeringKms: lerp(a.lossSteeringKms, b.lossSteeringKms),
   };
 }
 

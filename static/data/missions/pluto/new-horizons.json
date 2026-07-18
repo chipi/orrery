@@ -699,6 +699,9 @@
           -31.212121
         ]
       ]
+    },
+    "launch": {
+      "vehicle_stage": "STAR 48B (third stage)"
     }
   }
 }

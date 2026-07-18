@@ -24,7 +24,13 @@ import { parseDeltaV } from '$lib/parse-delta-v';
 import { dateToSimDay } from '$lib/sim-day';
 import { mergeFlightEvents } from '$lib/mission-event-merge';
 import { missionDestToHeliocentricDestinationId } from '$lib/mission-dest';
-import type { FlightDataQuality, FlightParams, Mission, MissionEvent } from '$types/mission';
+import type {
+  Destination,
+  FlightDataQuality,
+  FlightParams,
+  Mission,
+  MissionEvent,
+} from '$types/mission';
 import type { LocalizedScenario } from '$types/scenario';
 
 /**
@@ -57,6 +63,9 @@ export interface LoadedMission {
   id?: string;
   name: string;
   vehicle: string;
+  /** Destination enum from the raw record — drives the injection burn type
+   *  (TLI/TMI/INJECTION) + other destination-keyed logic. */
+  dest?: Destination;
   payload: string;
   dv_total: number;
   dv_used: number;
@@ -205,6 +214,7 @@ function buildMissionMeta(
     id: m.id,
     name: m.name ?? m.id,
     vehicle: m.vehicle ?? '—',
+    dest: m.dest,
     payload: m.payload ?? '—',
     dv_total: dvTotalCanonical,
     dv_used: dvTotalCanonical * 0.94,

@@ -1,0 +1,15 @@
+{
+  "title": "Max-Q",
+  "intro_sentence": "Le moment de contrainte aérodynamique maximale en montée — où la pression dynamique atteint son pic et la fusée est comprimée au maximum par l'air qu'elle traverse.",
+  "narrative_101": [
+    "Environ une minute après le décollage, la fusée heurte un mur qu'elle ne peut pas voir. Pas un mur physique — un mur de pression. En accélérant, l'air repousse de plus en plus fort ; mais en montant, l'air devient aussi de plus en plus raréfié. Ces deux effets s'opposent, et quelque part autour de 11–14 km d'altitude, le produit des deux atteint son maximum. Ce pic est Max-Q : la pression dynamique maximale, l'instant où le véhicule subit la plus grande charge aérodynamique de tout l'ascension.",
+    "La pression dynamique s'écrit q = ½ρv² — la moitié de la densité de l'air multipliée par le carré de la vitesse. Au début, la fusée est lente mais dans un air très dense ; plus haut, elle est rapide mais l'air est raréfié. Le pire des deux mondes se rencontre au milieu, et c'est là que l'airframe fléchit le plus et où la structure travaille le plus dur.",
+    "Les fusées sont construites pour survivre à Max-Q, mais beaucoup réduisent la poussée de leurs moteurs en s'en approchant pour soulager la charge, puis augmentent la poussée à nouveau une fois qu'elles l'ont dépassée — vous pouvez entendre cela lors des retransmissions de lancement avec l'annonce « poussée augmentée » quelques secondes après « Max-Q ». Au-delà de ce point, l'air se raréfie rapidement, la pression dynamique disparaît, et le danger aérodynamique est essentiellement terminé."
+  ],
+  "body_paragraphs": [
+    "La valeur de q augmente avec le carré de la vitesse mais diminue avec la densité de l'air, donc l'altitude de Max-Q dépend de la rapidité d'accélération du véhicule par rapport à la rapidité avec laquelle il monte hors de l'atmosphère dense des basses couches. Un ensemble lourd et accélérant lentement atteint Max-Q plus bas et plus doucement ; un ensemble léger et puissant l'atteint plus haut. Les lanceurs habités typiques rencontrent des pressions dynamiques maximales autour de 30–35 kPa.",
+    "La traînée aérodynamique — l'une des trois pertes de ∆v en ascension — suit la même courbe de q, donc la perte due à la traînée s'accumule le plus rapidement juste autour de Max-Q. C'est exactement pourquoi la perte gravitationnelle est importante : basculer trop agressivement au début forcerait le véhicule à se déplacer latéralement dans l'air le plus dense juste quand q augmente, multipliant à la fois la charge structurale et la perte de traînée.",
+    "Sur `/fly`, la courbe DYNAMIC PRESSURE dans la télémétrie de lancement atteint son pic à Max-Q, et la chronologie porte un marqueur MAX-Q. Activez la couche Science-Lens de traînée pour voir la flèche de traînée s'allonger au maximum juste à ce moment, puis rétrécir à mesure que l'atmosphère s'épuise."
+  ],
+  "diagram_caption": "La pression dynamique q = ½ρv² augmente avec la vitesse et diminue avec l'air raréfié ; le pic de croisement, ~11–14 km, est Max-Q."
+}

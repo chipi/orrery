@@ -63,6 +63,9 @@
       "return": {
         "type": "none"
       }
+    },
+    "launch": {
+      "vehicle_stage": "Athena II trans-lunar kick stage (Star-37)"
     }
   }
 }

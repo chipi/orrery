@@ -42,5 +42,10 @@
       "id": "cape-canaveral-lc-36b",
       "role": "launch-site"
     }
-  ]
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Centaur D-1A upper stage"
+    }
+  }
 }

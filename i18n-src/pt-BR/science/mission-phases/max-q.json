@@ -1,0 +1,15 @@
+{
+  "title": "Max-Q",
+  "intro_sentence": "O momento de máxima tensão aerodinâmica na ascensão — onde a pressão dinâmica atinge seu pico e o foguete é comprimido com mais intensidade pelo ar que atravessa.",
+  "narrative_101": [
+    "Cerca de um minuto após o lançamento, o foguete bate em uma parede invisível. Não é uma parede física — é uma parede de pressão. Conforme acelera, o ar empurra de volta com cada vez mais força; mas conforme sobe, o ar também fica mais rarefeito. Esses dois efeitos se antagonizam, e em algum lugar entre 11 e 14 km de altitude o produto dos dois atinge seu pico. Esse pico é Max-Q: pressão dinâmica máxima, o instante em que a nave sofre a maior carga aerodinâmica de toda a ascensão.",
+    "A pressão dinâmica é escrita como q = ½ρv² — metade da densidade do ar vezes a velocidade ao quadrado. No início o foguete é lento mas está em ar denso; mais acima ele é rápido mas o ar é rarefeito. O pior dos dois mundos ocorre no meio, e é aí que a fuselagem se flexiona mais e a estrutura trabalha mais intensamente.",
+    "Os foguetes são construídos para sobreviver a Max-Q, mas muitos reduzem a potência dos motores conforme se aproximam para aliviar a carga, depois aumentam novamente após ultrapassá-la — você pode ouvir isso nas transmissões de lançamento como o anúncio \"aumentando potência\" alguns segundos após \"Max-Q\". Depois desse ponto o ar se rarefaz rapidamente, a pressão dinâmica desaparece, e o perigo aerodinâmico essencialmente termina."
+  ],
+  "body_paragraphs": [
+    "O valor de q aumenta com a velocidade ao quadrado mas diminui com a densidade do ar, portanto a altitude de Max-Q depende de quão rapidamente a nave acelera em comparação com quão rapidamente sai da atmosfera densa inferior. Um conjunto pesado e de aceleração lenta atinge Max-Q mais baixo e com menor intensidade; um leve e ágil atinge mais alto. Típicas naves tripuladas de lançamento veem pressões dinâmicas de pico em torno de 30–35 kPa.",
+    "O arrasto aerodinâmico — uma das três perdas de ∆v na ascensão — segue a mesma curva de q, assim a perda por arrasto se acumula mais rapidamente justamente em torno de Max-Q. É exatamente por isso que a curva gravitacional importa: inclinar agressivamente cedo demais levaria a nave lateralmente através do ar mais denso justamente quando q está aumentando, multiplicando tanto a carga estrutural quanto a perda por arrasto.",
+    "Em `/fly`, a fita de gráfico DYNAMIC PRESSURE na telemetria de lançamento atinge seu pico em Max-Q, e a linha do tempo carrega um marcador MAX-Q. Ative a camada Science-Lens de arrasto para ver a seta de arrasto se expandir ao máximo naquele momento, então encolher conforme a atmosfera cede."
+  ],
+  "diagram_caption": "A pressão dinâmica q = ½ρv² aumenta com a velocidade e diminui com o ar rarefeito; o cruzamento de pico, ~11–14 km acima, é Max-Q."
+}

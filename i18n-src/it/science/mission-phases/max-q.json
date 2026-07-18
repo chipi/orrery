@@ -1,0 +1,15 @@
+{
+  "title": "Max-Q",
+  "intro_sentence": "Il momento di massimo stress aerodinamico in salita — dove la pressione dinamica raggiunge il picco e il razzo è compresso al massimo dall'aria che attraversa.",
+  "narrative_101": [
+    "Circa un minuto dopo il lancio il razzo colpisce un muro che non può vedere. Non un muro fisico — uno di pressione. Man mano che accelera, l'aria spinge indietro sempre più forte; ma man mano che sale, l'aria diventa anche più rarefatta. Questi due effetti si contrappongono, e da qualche parte attorno agli 11–14 km di altitudine il loro prodotto raggiunge il massimo. Quel picco è Max-Q: pressione dinamica massima, l'istante in cui il veicolo subisce il carico aerodinamico maggiore dell'intera salita.",
+    "La pressione dinamica è scritta q = ½ρv² — metà della densità dell'aria per il quadrato della velocità. All'inizio il razzo è lento ma immerso in aria densa; più in alto è veloce ma l'aria è rarefatta. Il peggio dei due mondi converge nel mezzo, ed è lì che la fusoliera si piega di più e la struttura lavora più duramente.",
+    "I razzi sono costruiti per sopravvivere a Max-Q, ma molti riducono la spinta dei motori quando si avvicinano per alleggerire il carico, per poi aumentarla di nuovo una volta superato — si sente nei radiocronache dei lanci con la comunicazione «throttling up» pochi secondi dopo «Max-Q». Oltre quel punto l'aria si rarefà velocemente, la pressione dinamica cala, e il pericolo aerodinamico è essenzialmente terminato."
+  ],
+  "body_paragraphs": [
+    "Il valore di q sale con il quadrato della velocità ma cala con la densità dell'aria, quindi l'altitudine di Max-Q dipende da quanto velocemente il veicolo accelera rispetto a quanto velocemente sale dall'atmosfera densa in basso. Una configurazione pesante e lentamente accelerata raggiunge Max-Q più bassa e più dolcemente; una leggera e scattante la raggiunge più in alto. I lanciatori civili tipici vedono pressioni dinamiche di picco attorno a 30–35 kPa.",
+    "La resistenza aerodinamica — una delle tre perdite di ∆v in salita — segue la stessa curva di q, quindi la perdita per resistenza si accumula più velocemente proprio attorno a Max-Q. Questo è esattamente il motivo per cui la gravity turn è importante: inclinare troppo aggressivamente all'inizio farebbe muovere il veicolo lateralmente attraverso l'aria più densa proprio quando q sta salendo, moltiplicando sia il carico strutturale che la perdita per resistenza.",
+    "Su `/fly`, la striscia DYNAMIC PRESSURE nel telemetria del lancio raggiunge il picco a Max-Q, e la cronologia porta un marcatore beat MAX-Q. Attiva il layer Science-Lens della resistenza per vedere la freccia della resistenza raggiungere la sua lunghezza massima proprio in quel momento, poi ridursi man mano che l'atmosfera si dirada."
+  ],
+  "diagram_caption": "La pressione dinamica q = ½ρv² cresce con la velocità e cala man mano che l'aria si rarefà; il picco di incrocio, ~11–14 km di altitudine, è Max-Q."
+}

@@ -1,11 +1,11 @@
 /**
- * Sample launch-vehicle profiles for the ascent engine (RFC-034 · epic
- * #412). S1 ships one hand-typed flagship inline; the shipped per-vehicle
- * JSON library + loader (keyed on fleet_refs launcher id) is S3.
+ * Inline launch-vehicle sample for the ascent engine (RFC-034 · epic #412).
  *
- * Figures are representative public values (users' guides / Spaceflight101),
- * good enough to exercise the engine + render. Provenance-gated data lands
- * with the S3 schema.
+ * The SHIPPED source of truth is the per-vehicle JSON under
+ * static/data/launch-profiles/ (loaded via launch-profile-registry). This
+ * inline copy exists only so tests + the dev harness get a LaunchProfile
+ * synchronously (no fetch). `ascent-profiles.test.ts` guards the two against
+ * drift — keep FALCON9_SAMPLE identical to falcon-9.json (#8).
  */
 
 import type { LaunchProfile } from './ascent-physics';

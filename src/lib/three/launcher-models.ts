@@ -31,6 +31,10 @@ export interface LauncherModel {
   upperStageBaseY: number;
   fairingBaseY: number;
   payloadMountY: number;
+  /** Strap-on boosters that jettison SEPARATELY (before core staging) — e.g.
+   *  Atlas V's variable AJ-60A count. Undefined when the vehicle has none or
+   *  models them as part of the core `booster` group (Soyuz / Ariane / H-IIA). */
+  strapOns?: THREE.Group;
 }
 
 interface Palette {
@@ -81,7 +85,7 @@ function fairingHalf(
  * fallback for launchers without a dedicated builder, and the base other
  * builders start from.
  */
-function buildGeneric(vehLen: number): LauncherModel {
+function buildGeneric(vehLen: number, boosterCount = 0): LauncherModel {
   const p = palette();
   const rBody = vehLen * 0.05;
   const root = new THREE.Group();
@@ -135,6 +139,16 @@ function buildGeneric(vehLen: number): LauncherModel {
   booster.add(interstage);
   root.add(booster);
 
+  // ── Strap-on boosters (e.g. Atlas V's 0–5 AJ-60A solids). Built in their OWN
+  //    group so the scene jettisons them at strap-on burnout, before core
+  //    staging. Clustered around the core base, ~2/3 the core height.
+  let strapOnGroup: THREE.Group | undefined;
+  if (boosterCount > 0) {
+    strapOnGroup = new THREE.Group();
+    strapOns(strapOnGroup, boosterCount, rBody, vehLen * 0.42, vehLen, p.accent, p.eng);
+    root.add(strapOnGroup);
+  }
+
   // ── Upper stage: body + vacuum bell.
   const upperStageBaseY = vehLen * 0.735;
   const upperStage = new THREE.Group();
@@ -170,6 +184,7 @@ function buildGeneric(vehLen: number): LauncherModel {
     upperStageBaseY,
     fairingBaseY,
     payloadMountY: vehLen * 0.85,
+    strapOns: strapOnGroup,
   };
 }
 
@@ -323,8 +338,12 @@ function buildSoyuz(vehLen: number): LauncherModel {
   const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.5, 32), p.body);
   core.position.y = vehLen * 0.28;
   booster.add(core, nozzle(r * 0.5, vehLen * 0.05, p.eng));
-  strapOns(booster, 4, r, vehLen * 0.34, vehLen, p.accent, p.eng);
   root.add(booster);
+  // The four R-7 strap-ons jettison at the "Korolev cross" (~118 s), before the
+  // core burns out — their own group so the scene drops them at booster-sep.
+  const strapOnGroup = new THREE.Group();
+  strapOns(strapOnGroup, 4, r, vehLen * 0.34, vehLen, p.accent, p.eng);
+  root.add(strapOnGroup);
 
   const upperStage = new THREE.Group();
   const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.9, r, vehLen * 0.2, 32), p.body);
@@ -358,6 +377,7 @@ function buildSoyuz(vehLen: number): LauncherModel {
     upperStageBaseY: vehLen * 0.64,
     fairingBaseY,
     payloadMountY: vehLen * 0.74,
+    strapOns: strapOnGroup,
   };
 }
 
@@ -374,6 +394,11 @@ function buildSideBooster(
   const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.6, 32), p.body);
   core.position.y = vehLen * 0.33;
   booster.add(core, nozzle(r * 0.5, vehLen * 0.05, p.eng));
+  root.add(booster);
+  // The two solid/liquid side boosters jettison well before the core (EAP at
+  // ~140 s, SRB-A similar) — their own group so the scene drops them at
+  // booster-sep, not at core MECO.
+  const strapOnGroup = new THREE.Group();
   for (const sx of [-1, 1]) {
     const gr = new THREE.Group();
     const b = new THREE.Mesh(
@@ -385,9 +410,9 @@ function buildSideBooster(
     nose.position.y = vehLen * opts.boosterLen + vehLen * 0.06;
     gr.add(b, nose, nozzle(r * 0.32, vehLen * 0.04, p.eng));
     gr.position.set(sx * r * 1.5, 0, 0);
-    booster.add(gr);
+    strapOnGroup.add(gr);
   }
-  root.add(booster);
+  root.add(strapOnGroup);
 
   const upperStage = new THREE.Group();
   const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.95, r, vehLen * 0.16, 32), p.body);
@@ -421,6 +446,7 @@ function buildSideBooster(
     upperStageBaseY: vehLen * 0.71,
     fairingBaseY,
     payloadMountY: vehLen * 0.76,
+    strapOns: strapOnGroup,
   };
 }
 
@@ -466,7 +492,12 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   etNose.position.y = vehLen * 0.05 + etLen;
   booster.add(et, etNose);
 
+  root.add(booster);
+
   // ── Two SRBs flanking the tank (±X), white, segmented, pointed nose + nozzle.
+  //    They jettison at ~124 s — long before the ET at MECO — so they live in
+  //    their own group the scene drops at booster-sep.
+  const strapOnGroup = new THREE.Group();
   const rSRB = r * 0.6;
   const srbLen = vehLen * 0.64;
   for (const sx of [-1, 1]) {
@@ -485,9 +516,9 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
       srb.add(band);
     }
     srb.position.set(sx * (rET + rSRB * 0.98), 0, -rET * 0.12);
-    booster.add(srb);
+    strapOnGroup.add(srb);
   }
-  root.add(booster);
+  root.add(strapOnGroup);
 
   // ── Orbiter — the delta-wing spaceplane, mounted nose-up on the tank's +Z
   //    face (belly to the tank, so the black underside is hidden against it).
@@ -596,6 +627,7 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
     upperStageBaseY: yA + bodyLen / 2,
     fairingBaseY: vehLen * 0.9,
     payloadMountY: vehLen * 0.5,
+    strapOns: strapOnGroup,
   };
 }
 
@@ -615,7 +647,13 @@ const BUILDERS: Record<string, (vehLen: number) => LauncherModel> = {
  * The 3D model for a launcher id (its dedicated silhouette if one exists, else
  * the generic body). `vehLen` scales the whole rocket.
  */
-export function buildLauncherModel(launcherId: string | undefined, vehLen: number): LauncherModel {
-  const build = (launcherId && BUILDERS[launcherId]) || buildGeneric;
-  return build(vehLen);
+export function buildLauncherModel(
+  launcherId: string | undefined,
+  vehLen: number,
+  boosterCount = 0,
+): LauncherModel {
+  const build = launcherId ? BUILDERS[launcherId] : undefined;
+  // Dedicated silhouettes draw their own (fixed-count) boosters; the generic
+  // body draws `boosterCount` strap-ons (Atlas V's variable AJ-60A count).
+  return build ? build(vehLen) : buildGeneric(vehLen, boosterCount);
 }

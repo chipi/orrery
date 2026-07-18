@@ -7,7 +7,37 @@
  * on demand. The generic 2-stage fallback (RFC-034 S7) grows from here.
  */
 
-import type { LaunchProfile } from './ascent-physics';
+import type { LaunchBoosters, LaunchProfile } from './ascent-physics';
+
+/**
+ * The Aerojet AJ-60A strap-on solid (one unit) — the largest monolithic solid
+ * rocket motor ever flown. Atlas V bolts on 0–5 of these depending on the
+ * variant; the count is the MIDDLE digit of the 3-digit config code (see
+ * {@link atlasVSrbCount}). Masses/thrust/Isp are PER booster.
+ * Figures: Aerojet Rocketdyne AJ-60A (gross 46,697 kg · propellant 40,779 kg ·
+ * 1,688 kN peak SL thrust · Isp 245.5 s SL / 279.3 s vac · ~94 s burn).
+ */
+const ATLAS_V_AJ60A: Omit<LaunchBoosters, 'count'> = {
+  name: 'AJ-60A',
+  wetKg: 46697,
+  dryKg: 5918,
+  thrustSlKN: 1688,
+  thrustVacKN: 1900,
+  ispSlS: 245,
+  ispVacS: 279,
+  chamberTempK: 3300,
+};
+
+/**
+ * Atlas V solid-booster count from a variant name — the MIDDLE digit of the
+ * 3-digit config code ("Atlas V 551" → 5, "Atlas V 401" → 0, "Atlas V 541" → 4,
+ * "Atlas V 501 (AV-034)" → 0). Returns 0 when the name carries no parseable
+ * config code (e.g. the bare flagship fallback "Atlas V 401").
+ */
+export function atlasVSrbCount(displayName: string | undefined): number {
+  const m = /atlas\s*v\s*(\d)(\d)(\d)/i.exec(displayName ?? '');
+  return m ? Number(m[2]) : 0;
+}
 
 /** Launcher ids with a hand-authored flagship JSON (real per-vehicle data). */
 const FLAGSHIP_IDS = new Set<string>([
@@ -34,12 +64,33 @@ export function missionLauncherId(fleetRefs: FleetRef[] | undefined): string | u
   return fleetRefs?.find((r) => r.role === 'launcher')?.id;
 }
 
+/**
+ * Free-text vehicle spellings → flagship id, ONE row per FLAGSHIP_IDS entry.
+ * Ordered most-specific first so "Atlas LV-3B" doesn't fall to "Atlas V" and
+ * "Saturn IB" doesn't fall to "Saturn V". Keep in sync with FLAGSHIP_IDS.
+ */
+const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
+  [['falcon 9', 'falcon-9'], 'falcon-9'],
+  [['atlas lv-3b', 'atlas lv', 'mercury-atlas'], 'atlas-lv-3b'],
+  [['atlas v', 'atlas-v'], 'atlas-v'],
+  [['saturn v', 'saturn-v'], 'saturn-v'],
+  [['saturn ib', 'saturn 1b', 'saturn-ib'], 'saturn-ib'],
+  // Require "GLV" so "Titan IIIE" (Voyager/Viking) does NOT fall to the Gemini
+  // Titan II GLV — a 2-stage LEO booster, wrong for those interplanetary flights.
+  [['titan ii glv', 'titan 2 glv', 'titan-ii-glv'], 'titan-ii-glv'],
+  [['proton'], 'proton-k'],
+  [['vostok'], 'vostok-k'],
+  [['ariane 5', 'ariane-5'], 'ariane-5'],
+  [['h-iia', 'h-2a', 'h2a', 'h iia'], 'h-iia'],
+  [['space shuttle', 'shuttle'], 'space-shuttle-stack'],
+];
+
 /** Match a free-text vehicle string ("Atlas V 411") to a flagship id, if any. */
 function matchFlagship(vehicle: string): string | null {
   const v = vehicle.toLowerCase();
-  if (v.includes('falcon 9')) return 'falcon-9';
-  if (v.includes('atlas v')) return 'atlas-v';
-  if (v.includes('saturn v')) return 'saturn-v';
+  for (const [needles, id] of FLAGSHIP_ALIASES) {
+    if (needles.some((n) => v.includes(n))) return id;
+  }
   return null;
 }
 
@@ -167,7 +218,19 @@ export async function loadLaunchProfile(
         // Show the vehicle the mission ACTUALLY flew (e.g. "Atlas V 541"), not
         // the flagship JSON's canonical variant ("Atlas V 401") — the ascent
         // physics is the shared flagship model, but the label should be honest.
-        if (isValidProfile(data)) return displayName ? { ...data, name: displayName } : data;
+        if (isValidProfile(data)) {
+          let profile: LaunchProfile = displayName ? { ...data, name: displayName } : data;
+          // Atlas V bolts on 0–5 AJ-60A solids depending on the variant (the
+          // config code's middle digit). The flagship JSON is the boosterless
+          // 401 core; attach the flown variant's SRBs so a 551/541/411 shows its
+          // strap-ons in the telemetry + burns them in the ascent physics.
+          if (launcherId === 'atlas-v') {
+            const srbs = atlasVSrbCount(displayName);
+            profile =
+              srbs > 0 ? { ...profile, boosters: { ...ATLAS_V_AJ60A, count: srbs } } : profile;
+          }
+          return profile;
+        }
       }
     } catch {
       // fall through to the generic fallback

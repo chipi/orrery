@@ -34,7 +34,7 @@ describe('science-layers — config', () => {
     expect(new Set(LAYER_ORDER)).toEqual(new Set(Object.keys(LAYER_DEFAULTS) as LayerKey[]));
   });
 
-  it('LAYER_ORDER has 29 layers (matches docs)', () => {
+  it('LAYER_ORDER has 31 layers (matches docs)', () => {
     // Tracked by README + user-guide as the sub-toggleable layer
     // count; this test breaks if a layer is added/removed without
     // doc update. 12th was ozone (v0.6); 13th added v0.7 = galaxies
@@ -50,7 +50,13 @@ describe('science-layers — config', () => {
     // dead-dynamo, polar-caps, mars-moons — body-specific overlays
     // across Earth / Moon / Mars. 29th added 2026-07-09 by #386 —
     // `climate` ("Sun is life": climate bands + insolation readout).
-    expect(LAYER_ORDER.length).toBe(29);
+    // 30th–31st added 2026-07-18 by the launch-consolidation epic
+    // (RFC-034 §11.2) — `thrust` + `drag` ascent force vectors, the
+    // Science-Lens layers that drive the launch scene's force arrows
+    // (weight = the shared `gravity` layer; velocity = `velocity`).
+    // 32nd added same day by the same epic — `ascent-losses`, the
+    // gravity/drag/steering Δv-loss ledger panel (RFC-034 §11.2 · S8).
+    expect(LAYER_ORDER.length).toBe(32);
   });
 });
 

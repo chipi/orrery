@@ -1,0 +1,23 @@
+{
+  "id": "gravity-turn",
+  "tab": "mission-phases",
+  "order": 1,
+  "see_in_app": [
+    {
+      "route": "/fly",
+      "context_key": "Watch the pitch program tilt the rocket downrange during any ?launch=1 ascent"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Gravity turn",
+      "u": "https://en.wikipedia.org/wiki/Gravity_turn",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Space Launch Basics (ascent guidance)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2017/08/space_launch_basics.pdf",
+      "t": "core"
+    }
+  ]
+}

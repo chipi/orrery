@@ -731,6 +731,9 @@
           -1.939345
         ]
       ]
+    },
+    "launch": {
+      "vehicle_stage": "Inertial Upper Stage (IUS)"
     }
   }
 }

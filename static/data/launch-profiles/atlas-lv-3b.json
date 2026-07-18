@@ -7,11 +7,40 @@
   "fairingJettisonAltM": 100000,
   "refAreaM2": 7,
   "cd": 0.3,
-  "launchSite": { "lat": 28.47, "lon": -80.57, "name": "LC-14 · Cape Canaveral" },
-  "pitchProgram": [[0, 90], [13, 88], [50, 64], [130, 40], [200, 20], [290, 6]],
+  "launchSite": {
+    "lat": 28.47,
+    "lon": -80.57,
+    "name": "LC-14 · Cape Canaveral"
+  },
+  "pitchProgram": [
+    [
+      0,
+      90
+    ],
+    [
+      13,
+      88
+    ],
+    [
+      50,
+      64
+    ],
+    [
+      130,
+      40
+    ],
+    [
+      200,
+      20
+    ],
+    [
+      290,
+      6
+    ]
+  ],
   "stages": [
     {
-      "name": "Booster section",
+      "name": "Booster",
       "wetKg": 87170,
       "dryKg": 3170,
       "thrustSlKN": 1587,
@@ -32,7 +61,13 @@
     }
   ],
   "provenance": [
-    { "l": "NASA — Mercury-Atlas / Project Mercury Familiarization Manual", "u": "https://ntrs.nasa.gov/citations/19740074974" },
-    { "l": "Spaceflight101 / Astronautix — Atlas LV-3B", "u": "http://www.astronautix.com/a/atlaslv-3b.html" }
+    {
+      "l": "NASA — Mercury-Atlas / Project Mercury Familiarization Manual",
+      "u": "https://ntrs.nasa.gov/citations/19740074974"
+    },
+    {
+      "l": "Spaceflight101 / Astronautix — Atlas LV-3B",
+      "u": "http://www.astronautix.com/a/atlaslv-3b.html"
+    }
   ]
 }

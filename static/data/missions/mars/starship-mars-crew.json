@@ -37,5 +37,10 @@
       "id": "starship",
       "role": "spacecraft"
     }
-  ]
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Starship upper stage"
+    }
+  }
 }

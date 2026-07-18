@@ -1,0 +1,15 @@
+{
+  "title": "Max-Q",
+  "intro_sentence": "Der Moment maximaler aerodynamischer Belastung beim Aufstieg — wo der Staudruck seinen Höhepunkt erreicht und die Rakete von der durchstoßenen Luft am stärksten zusammengepresst wird.",
+  "narrative_101": [
+    "Etwa eine Minute nach dem Start stößt die Rakete auf eine unsichtbare Wand. Nicht auf eine physische Wand — auf eine Druckwand. Während sie beschleunigt, drückt die Luft immer stärker zurück; aber während sie aufsteigt, wird die Luft auch immer dünner. Diese beiden Effekte bekämpfen sich, und irgendwo in 11–14 km Höhe erreicht ihr Produkt seinen Höhepunkt. Dieser Höhepunkt ist Max-Q: maximaler Staudruck, der Moment, in dem das Fahrzeug während des gesamten Aufstiegs der größten aerodynamischen Belastung ausgesetzt ist.",
+    "Staudruck wird als q = ½ρv² geschrieben — halbe Luftdichte mal Geschwindigkeit zum Quadrat. Am Anfang ist die Rakete langsam, aber sie befindet sich in dichter Luft; höher oben ist sie schnell, aber die Luft ist dünn. Das Schlechteste aus beiden Welten trifft sich in der Mitte, und dort flexioniert das Flugwerk am meisten und die Struktur arbeitet am härtesten.",
+    "Raketen sind gebaut, um Max-Q zu überstehen, aber viele drosseln ihre Triebwerke, während sie sich ihm nähern, um die Last zu erleichtern, und fahren sie dann wieder hoch, sobald sie es durchquert haben — das hört man bei Startübertragungen als Ansage \"throttling up\" wenige Sekunden nach \"Max-Q\". Danach wird die Luft schnell dünner, der Staudruck fällt ab, und die aerodynamische Gefahr ist im Wesentlichen vorbei."
+  ],
+  "body_paragraphs": [
+    "Der Wert von q steigt mit der Geschwindigkeit zum Quadrat, fällt aber mit der Luftdichte, daher hängt die Max-Q-Höhe davon ab, wie schnell das Fahrzeug beschleunigt, gegenüber wie schnell es aus der dichten unteren Atmosphäre aufsteigt. Ein schwerer, langsam beschleunigender Stack erreicht Max-Q niedriger und sanfter; ein wendiger leichter trifft es höher. Typische bemannte Träger sehen Spitzenstaudruck um 30–35 kPa.",
+    "Aerodynamischer Widerstand — einer der drei Aufstiegs-∆v-Verluste — folgt der gleichen q-Kurve, daher sammelt sich der Widerstandsverlust am schnellsten genau bei Max-Q an. Genau darum ist die Gravity Turn wichtig: Ein zu aggressives Neigen zu früh würde das Fahrzeug durch die dichteste Luft genau seitwärts treiben, wenn q ansteigt, und würde sowohl die Strukturbelastung als auch den Widerstandsverlust vervielfachen.",
+    "Auf `/fly` erreicht das DYNAMIC PRESSURE-Streifendiagramm in der Starttelemetrie seinen Höhepunkt bei Max-Q, und die Timeline trägt einen MAX-Q-Beat-Marker. Schalten Sie die Drag-Science-Lens-Schicht um, um den Widerstandspfeil genau in diesem Moment am längsten anschwellen zu sehen, und dann schrumpfen, während die Atmosphäre aufgibt."
+  ],
+  "diagram_caption": "Staudruck q = ½ρv² steigt mit der Geschwindigkeit und fällt mit dünnerer Luft; der Übergangshöhepunkt in ~11–14 km Höhe ist Max-Q."
+}

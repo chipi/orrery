@@ -715,6 +715,9 @@
           -1.994999
         ]
       ]
+    },
+    "launch": {
+      "vehicle_stage": "Delta II Star-48B (third stage)"
     }
   }
 }

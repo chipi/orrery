@@ -1,0 +1,15 @@
+{
+  "title": "Curva Gravitacional",
+  "intro_sentence": "O programa de arfagem que deixa a gravidade guiar o foguete — trocando uma subida vertical por velocidade orbital com quase nenhuma perda de direcionamento.",
+  "narrative_101": [
+    "Um foguete não voa reto até a órbita. Ele decola verticalmente para limpar a plataforma e atravessar o ar mais denso, depois inclina-se lentamente em direção ao horizonte. Quando o motor desliga, está voando quase de lado — porque órbita é sobre ir rápido o suficiente para o lado, não alto o suficiente para cima.",
+    "A parte engenhosa é que o foguete não luta para manter essa inclinação. Logo após a decolagem, ele arfa por uma pequena quantidade, e a partir de então a gravidade faz o direcionamento: a mesma tração para baixo que o foguete combate também gira suavemente sua velocidade em direção à horizontal, de graça. Mantenha o motor apontado reto ao longo do caminho de voo e o veículo traça um arco suave sem empuxo lateral desperdiçado. Isso é uma curva gravitacional.",
+    "Acertar a inclinação inicial é crítico. Arfar muito cedo ou muito inclinado e o foguete passa sua subida viajando de lado pelo ar denso, acumulando arrasto. Arfar muito tarde e ele desperdiça propelente sustentando-se contra a gravidade. O programa de arfagem — exatamente quando e quão rápido inclinar — é ajustado para cada veículo para gastar o mínimo de ∆v total chegando à órbita."
+  ],
+  "body_paragraphs": [
+    "Duas das três grandes perdas de subida são moldadas pela curva. Perda de direcionamento é o ∆v desperdiçado sempre que o empuxo aponta para longe da direção do movimento; uma verdadeira curva gravitacional mantém o empuxo alinhado com a velocidade, então a perda de direcionamento permanece próxima a zero. Perda gravitacional é o ∆v gasto mantendo o veículo suspenso contra seu próprio peso durante a subida — quanto mais rápido o foguete se inclina para horizontal, mais cedo esse peso para de comer sua aceleração. Os dois puxam em direções opostas, e o programa de arfagem é o compromisso.",
+    "A curva é iniciada por uma manobra de arfagem breve e deliberada alguns segundos após a decolagem — a única entrada de direcionamento real de toda a subida. Depois disso, a orientação principalmente apenas mantém o nariz alinhado com o vetor de velocidade e deixa o arco se desenvolver. No final do voo, acima da atmosfera, uma segunda lei de orientação de estágio (malha fechada ou estilo PEG) ajusta finamente o ângulo final para acertar a órbita-alvo com precisão.",
+    "Em `/fly`, ative as camadas Lente Científica de empuxo e velocidade durante qualquer subida `?launch=1` e observe os dois vetores permanecerem quase paralelos enquanto o foguete se inclina — esse alinhamento é a curva gravitacional funcionando. O ledger de perda de Δv mostra a perda de direcionamento permanecendo pequena enquanto a perda gravitacional se acumula durante a subida."
+  ],
+  "diagram_caption": "Curva gravitacional: uma decolagem vertical, uma pequena arfagem, depois um arco moldado pela gravidade de vertical para horizontal até a inserção orbital."
+}

@@ -8,22 +8,16 @@
   /fly can hand off to the heliocentric / cislunar transfer.
 
   Deliberately isolated from /fly's helio/cislunar rendering — it owns its own
-  renderer + container, mounts, plays, and disposes. The dev harness
-  (/dev/ascent) keeps the full telemetry console + camera-debug toolkit; this is
-  the shipping-facing subset.
+  renderer + container, mounts, plays, and disposes.
 -->
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy, untrack } from 'svelte';
   import { base } from '$app/paths';
-  import * as THREE from 'three';
-  import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-  import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-  import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
-  import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
-  import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
-  import { createAscentScene, type AscentScene } from '$lib/three/ascent-scene';
+  import { createAscentScene, VEHICLE_LENGTH_KM, type AscentScene } from '$lib/three/ascent-scene';
+  import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
   import { resolveLaunchGround } from '$lib/three/launch-ground';
   import LaunchTelemetry from '$lib/components/LaunchTelemetry.svelte';
+  import AscentLosses from '$lib/components/AscentLosses.svelte';
   import {
     integrateAscent,
     sampleAscentAt,
@@ -31,10 +25,24 @@
     type AscentState,
     type LaunchProfile,
   } from '$lib/orbital/ascent-physics';
+  import {
+    IGNITION_T_S,
+    T_MINUS_S,
+    INJECTION_COAST_S,
+    INJECTION_BURN_S,
+    buildAscentBeats,
+    ascentStatus,
+    countdownSeconds,
+    injectionPhaseStatus,
+    padState,
+  } from '$lib/orbital/ascent-hud';
+  import { injectionBurnLabel, type InjectionBurnParams } from '$lib/orbital/injection-burn';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
   import { buildShotSchedule, defaultTuning } from '$lib/orbital/ascent-cameras';
   import AscentCameraDebug from '$lib/components/AscentCameraDebug.svelte';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
+  import { onLayerChange } from '$lib/science-layers';
+  import { LAUNCH_FORCE_LAYER_ENTRIES } from '$lib/orbital/launch-force-layers';
 
   interface MissionDossier {
     name: string;
@@ -43,6 +51,9 @@
     destination: string;
     /** Mission id → the payload's dedicated spacecraft model (else a generic bus). */
     spacecraftId?: string;
+    /** The post-SECO injection burn (RFC-034 §3.1); null when the mission has no
+     *  kick/upper injection stage — the beat is then absent. */
+    injectionBurn?: InjectionBurnParams | null;
   }
 
   interface Props {
@@ -54,22 +65,63 @@
     hudHidden?: boolean;
     /** Flip the shared HUD-hidden state. */
     onToggleHud?: () => void;
+    /** Mission time (s), negative during countdown. Bindable — the /fly master
+     *  clock drives this when `externalClock` is set (RFC-034 §4 unified clock);
+     *  otherwise LaunchScene self-advances it. */
+    t?: number;
+    /** Play/pause. Bindable so the shared /fly control bar governs it. */
+    playing?: boolean;
+    /** Ascent real-time multiplier (×). Bindable — driven by the shared speed pills. */
+    speed?: number;
+    /** When true, LaunchScene does NOT self-advance `t` — the parent's master
+     *  clock owns time (the extensibility seam a future DescentScene reuses). */
+    externalClock?: boolean;
   }
-  let { profile, mission, onComplete, hudHidden = false, onToggleHud }: Props = $props();
+  let {
+    profile,
+    mission,
+    onComplete,
+    hudHidden = false,
+    onToggleHud,
+    t = $bindable(-T_MINUS_S),
+    playing = $bindable(true),
+    speed = $bindable(5),
+    externalClock = false,
+  }: Props = $props();
 
-  const VEH_LEN = 1.2;
   const tuning = $state(defaultTuning()); // live per-shot camera tuning (debug sliders → scene)
   const debugMode =
     typeof window !== 'undefined' &&
     new URLSearchParams(window.location.search).get('debug') === '1';
-  const T_MINUS = 12;
-  const IGNITION_T = -3;
 
-  const summary: AscentSummary = integrateAscent(profile);
-  const duration = summary.states.at(-1)!.t;
-  const schedule = buildShotSchedule({ events: summary.events, maxQt: summary.maxQ.t, duration });
+  const summary: AscentSummary = $derived(integrateAscent(profile));
+  const duration = $derived(summary.totalDurationS);
+  const schedule = $derived(
+    buildShotSchedule({ events: summary.events, maxQt: summary.maxQ.t, duration }),
+  );
 
-  const vehStats: [string, string][] = [
+  // Post-SECO injection beat (RFC-034 §3.1): a parking-orbit coast then the kick
+  // stage firing, appended to the ascent before the warp. Absent when the
+  // mission has no injection stage.
+  const injection = $derived(mission.injectionBurn ?? null);
+  const injectionBurnStart = $derived(duration + INJECTION_COAST_S);
+  const injectionEnd = $derived(duration + INJECTION_COAST_S + INJECTION_BURN_S);
+  /** End of the launch phase — SECO, or the injection-burn end when present. */
+  const ascentEnd = $derived(injection ? injectionEnd : duration);
+  /** Kick stage actually firing (drives the plume). */
+  const injectionFiring = $derived(!!injection && t >= injectionBurnStart && t < injectionEnd);
+  /** The whole post-SECO injection window (coast + burn) — drives the HUD panel. */
+  const injectionBeatActive = $derived(!!injection && t >= duration && t < injectionEnd);
+  /** Injection-burn completion (%): 0 through the parking coast, fills 0→100 as
+   *  the kick stage fires. NOT stage fuel — the ascent telemetry already shows
+   *  the (spent) ascent stages; per-kick-stage propellant masses aren't modelled. */
+  const injectionBurnProgress = $derived(
+    !injection || t < injectionBurnStart
+      ? 0
+      : Math.min(1, (t - injectionBurnStart) / INJECTION_BURN_S) * 100,
+  );
+
+  const vehStats: [string, string][] = $derived([
     ['STAGES', String(profile.stages.length)],
     [
       'LIFTOFF THRUST',
@@ -77,40 +129,21 @@
     ],
     ['IDEAL ΔV', `${summary.idealDvKms.toFixed(2)} km/s`],
     ['PAYLOAD', `${profile.payloadKg.toLocaleString()} kg`],
-  ];
+  ]);
 
-  const BEAT_LABEL: Record<string, string> = {
-    meco: 'MECO',
-    staging: 'STAGE SEP',
-    fairing_jettison: 'FAIRING',
-    seco: 'SECO',
-    orbit: 'ORBIT',
-  };
-  const beats = (() => {
-    const raw = [
-      { label: 'MAX-Q', t: summary.maxQ.t },
-      ...summary.events
-        .filter((e) => BEAT_LABEL[e.type])
-        .map((e) => ({ label: BEAT_LABEL[e.type], t: e.t })),
-    ].filter((b) => b.t > 0 && b.t <= duration);
-    const hasSepNear = (t: number) =>
-      raw.some((b) => b.label === 'STAGE SEP' && Math.abs(b.t - t) < 2);
-    return raw.filter((b) => !(b.label === 'MECO' && hasSepNear(b.t))).sort((a, b) => a.t - b.t);
-  })();
+  const beats = $derived(buildAscentBeats(summary));
 
   let container: HTMLDivElement;
-  let playing = $state(true);
-  let speed = $state(5);
-  let t = $state(-T_MINUS);
   let done = $state(false);
+  let showLosses = $state(false); // ascent-losses lens layer → AscentLosses panel
 
-  let renderer: THREE.WebGLRenderer | undefined;
-  let composer: EffectComposer | undefined;
+  let ar: AscentRenderer | undefined;
   let sceneObj: AscentScene | undefined;
   let loop: AnimateLoop | undefined;
 
   let hud = $state({ altKm: 0, velKms: 0, stage: 'S1', met: 'T-00:12' });
-  let liveState = $state<AscentState>(summary.states[0]); // full state → telemetry console
+  // Seeded once from the initial state, then reassigned every frame by applyState().
+  let liveState = $state<AscentState>(untrack(() => summary.states[0]));
   // Re-basing warp: on completion the camera pulls back hard (Earth → a dot) +
   // a flash, then onComplete reveals the transfer scene (RFC-034 §11.3).
   let warping = $state(false);
@@ -118,31 +151,16 @@
   const WARP_S = 1.6;
 
   const stageLabel = (i: number): string => (i < 0 ? 'COAST' : (profile.stages[i]?.name ?? '—'));
-  const countdown = $derived(t < 0 ? Math.max(0, Math.ceil(-t)) : null);
+  const countdown = $derived(countdownSeconds(t));
   const speedKmh = $derived(Math.round(hud.velKms * 3600));
   const dossierOpen = $derived(!warping); // keep the mission panel up through the whole launch
   const progressPct = $derived(Math.max(0, Math.min(1, t / duration)) * 100);
-  const status = $derived.by(() => {
-    if (t <= -10) return 'GO FOR LAUNCH';
-    if (t < IGNITION_T) return 'TERMINAL COUNT';
-    if (t < 0) return 'IGNITION SEQUENCE';
-    if (t < 10) return 'LIFTOFF';
-    const passed = beats.filter((b) => b.t <= t);
-    return passed.length ? passed[passed.length - 1].label : 'ASCENT';
-  });
-
-  const padState = (tt: number): AscentState => ({
-    ...summary.states[0],
-    t: tt,
-    altKm: 0,
-    downrangeKm: 0,
-    speedKms: 0,
-    velUpKms: 0,
-    qPa: 0,
-    stageIndex: tt < IGNITION_T ? -1 : 0,
-    thrustN: tt < IGNITION_T ? 0 : summary.states[0].thrustN,
-    dragN: 0,
-  });
+  const status = $derived(
+    injection
+      ? (injectionPhaseStatus(t, duration, injectionBurnLabel(injection.burnType)) ??
+          ascentStatus(t, beats))
+      : ascentStatus(t, beats),
+  );
 
   // Begin the re-basing warp. The real handoff (onComplete) fires when it ends.
   const complete = () => {
@@ -154,49 +172,107 @@
   onMount(() => {
     const w = container.clientWidth;
     const h = container.clientHeight;
-    renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setPixelRatio(Math.min(2, window.devicePixelRatio));
-    renderer.setSize(w, h);
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.1;
-    // eslint-disable-next-line svelte/no-dom-manipulating
-    container.appendChild(renderer.domElement);
+
+    // ?debug=1 pad-calibration overrides: let a developer swing the launch
+    // site, texture-seam offset, downrange yaw, and launcher model from the URL
+    // without editing the profile. Inert in production — `debugMode` is false
+    // unless ?debug=1 is present.
+    const dbg = debugMode ? new URLSearchParams(window.location.search) : null;
+    const dbgNum = (key: string): number | undefined => {
+      const v = dbg?.get(key);
+      return v != null && v !== '' ? +v : undefined;
+    };
+    const dbgLat = dbgNum('lat');
+    const dbgLon = dbgNum('lon');
+    const dbgSite = dbgLat != null && dbgLon != null ? { lat: dbgLat, lon: dbgLon } : undefined;
+    const launchSite = dbgSite ?? profile.launchSite;
 
     sceneObj = createAscentScene({
       aspect: w / h,
       earthDayUrl: `${base}/textures/4k_earth_daymap.jpg`,
       earthNightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
-      launchSite: profile.launchSite,
-      vehicleLengthKm: VEH_LEN,
+      launchSite,
+      lonTextureOffsetDeg: dbgNum('off'),
+      siteYawDeg: dbgNum('yaw'),
+      vehicleLengthKm: VEHICLE_LENGTH_KM,
       schedule,
       tuning,
       events: summary.events,
       spacecraftId: mission.spacecraftId,
-      launcherId: profile.id,
+      launcherId: dbg?.get('launcher') || profile.id,
+      boosterCount: profile.boosters?.count ?? 0,
       groundSite: (() => {
-        const g = resolveLaunchGround(profile.launchSite);
+        const g = resolveLaunchGround(launchSite);
         return g ? { ...g, textureUrl: `${base}${g.textureUrl}` } : undefined;
       })(),
     });
 
-    composer = new EffectComposer(renderer);
-    composer.setSize(w, h);
-    composer.addPass(new RenderPass(sceneObj.scene, sceneObj.camera));
-    composer.addPass(new FilmPass(0.1));
-    const vignette = new ShaderPass(VignetteShader);
-    vignette.uniforms['offset'].value = 0.95;
-    vignette.uniforms['darkness'].value = 0.55;
-    composer.addPass(vignette);
+    ar = createAscentRenderer(container, sceneObj);
+
+    // Science-Lens force vectors — the lens panel's thrust / drag / gravity /
+    // velocity layers drive the scene's force arrows (RFC-034 §11.2); the lens
+    // panel is the force legend. onLayerChange fires immediately with the
+    // current state, so this also seeds the initial vector visibility.
+    const forceLayerStops = LAUNCH_FORCE_LAYER_ENTRIES.map(([layer, force]) =>
+      onLayerChange(layer, (on) => sceneObj?.setForceVisible(force, on)),
+    );
+    // Ascent Δv-loss ledger (RFC-034 §11.2 · S8) — its own lens layer toggles
+    // the AscentLosses panel (live from state.loss*Kms).
+    const lossesStop = onLayerChange('ascent-losses', (on) => (showLosses = on));
+
+    // ?debug=1 test hooks, DEV-only so production builds tree-shake the whole
+    // block away. `__ascentSetT` freezes the
+    // timeline at an exact MET for deterministic screenshots; `__ascentDebug`
+    // exposes the schedule/events for the e2e harness; `__topDownKm` /
+    // `__camOverride` are read each frame in applyState() to reposition the
+    // camera for pad-geography + model inspection.
+    const winDbg = window as unknown as Record<string, unknown>;
+    if (import.meta.env.DEV && debugMode) {
+      winDbg.__ascentDebug = { schedule, events: summary.events, maxQ: summary.maxQ, duration };
+      winDbg.__ascentSetT = (nt: number) => {
+        playing = false;
+        t = nt;
+        sceneObj?.snapCamera();
+      };
+    }
+
+    // Debug camera overrides read per-frame: `__topDownKm` looks straight down
+    // at the pad to verify the launch-site geography; `__camOverride` frees the
+    // camera to inspect the vehicle model from any pose.
+    const applyDebugCamera = (): void => {
+      if (!sceneObj) return;
+      const topDown = winDbg.__topDownKm as number | undefined;
+      if (topDown) {
+        sceneObj.camera.position.set(0, topDown, 0.001);
+        sceneObj.camera.lookAt(0, 0, 0);
+        sceneObj.camera.fov = 50;
+        sceneObj.camera.updateProjectionMatrix();
+      }
+      const cam = winDbg.__camOverride as
+        | { px: number; py: number; pz: number; tx: number; ty: number; tz: number; fov?: number }
+        | undefined;
+      if (cam) {
+        sceneObj.camera.position.set(cam.px, cam.py, cam.pz);
+        sceneObj.camera.lookAt(cam.tx, cam.ty, cam.tz);
+        sceneObj.camera.fov = cam.fov ?? 40;
+        sceneObj.camera.updateProjectionMatrix();
+      }
+    };
 
     const applyState = () => {
-      const s = t < 0 ? padState(t) : sampleAscentAt(summary.states, t);
+      // Past SECO, sampleAscentAt clamps to the final state — the vehicle coasts
+      // in parking orbit through the injection beat; the MET keeps advancing off
+      // the real clock `t`, and the kick-stage plume is driven by injectionFiring.
+      const s = t < 0 ? padState(summary, t) : sampleAscentAt(summary.states, t);
       sceneObj!.setState(s);
+      sceneObj!.setInjectionBurn(injectionFiring);
+      if (import.meta.env.DEV && debugMode) applyDebugCamera();
       liveState = s;
       hud = {
         altKm: s.altKm,
         velKms: s.speedKms,
-        stage: stageLabel(s.stageIndex),
-        met: formatAscentClock(s.t),
+        stage: injectionBeatActive ? (injection?.stageName ?? 'COAST') : stageLabel(s.stageIndex),
+        met: formatAscentClock(t),
       };
     };
     applyState();
@@ -204,8 +280,11 @@
     loop = createAnimateLoop({
       onFrame: ({ dt }) => {
         if (playing) {
-          t = Math.min(duration, t + dt * speed);
-          if (t >= duration) complete();
+          // externalClock: the /fly master clock owns `t` (it advances launchT
+          // and binds it in) — LaunchScene only renders + still triggers the
+          // orbit-reached warp when time crosses the seam (after injection).
+          if (!externalClock) t = Math.min(ascentEnd, t + dt * speed);
+          if (t >= ascentEnd) complete();
         }
         applyState();
         // Re-basing warp — camera accelerates backward so Earth recedes to a
@@ -218,48 +297,45 @@
             onComplete?.();
           }
         }
-        composer!.render();
+        ar!.render();
       },
     });
     loop.start();
 
-    const onResize = () => {
-      if (!renderer || !sceneObj || !composer) return;
-      const cw = container.clientWidth;
-      const ch = container.clientHeight;
-      sceneObj.setAspect(cw / ch);
-      renderer.setSize(cw, ch);
-      composer.setSize(cw, ch);
-    };
+    const onResize = () => ar?.resize();
     window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('resize', onResize);
+      forceLayerStops.forEach((stop) => stop?.());
+      lossesStop?.();
+      if (import.meta.env.DEV && debugMode) {
+        delete winDbg.__ascentDebug;
+        delete winDbg.__ascentSetT;
+      }
+    };
   });
 
   onDestroy(() => {
     loop?.cleanup();
-    composer?.dispose();
     sceneObj?.dispose();
-    renderer?.dispose();
-    renderer?.forceContextLoss();
+    ar?.dispose();
   });
 </script>
 
-<div class="launch" class:hud-hidden={hudHidden}>
+<div class="launch" class:hud-hidden={hudHidden} class:external={externalClock}>
   <div class="stage" bind:this={container}></div>
 
-  <!-- Left telemetry console (shared with the dev harness) -->
+  <!-- Left telemetry console -->
   {#if !warping}
     <div class="telemetry">
-      <LaunchTelemetry
-        {summary}
-        stages={profile.stages}
-        boosters={profile.boosters}
-        payloadKg={profile.payloadKg}
-        vehicleName={profile.name}
-        {t}
-        state={liveState}
-        ignitionT={IGNITION_T}
-      />
+      <LaunchTelemetry {profile} {summary} {t} state={liveState} />
+    </div>
+  {/if}
+
+  <!-- Ascent Δv-loss ledger (ascent-losses Science-Lens layer) -->
+  {#if showLosses && !warping}
+    <div class="losses">
+      <AscentLosses state={liveState} />
     </div>
   {/if}
 
@@ -287,8 +363,31 @@
 
   <div class="clock">
     <span class="met">{hud.met}</span>
-    <span class="status" class:hot={t >= IGNITION_T && t < 6}>{status}</span>
+    <span class="status" class:hot={t >= IGNITION_T_S && t < 6}>{status}</span>
   </div>
+
+  <!-- Post-SECO injection-burn callout (RFC-034 §3.1): the kick/upper stage
+       fires to leave parking orbit onto the transfer. -->
+  {#if injectionBeatActive && injection && !warping}
+    <div class="injection" class:firing={injectionFiring}>
+      <div class="inj-type">{injectionBurnLabel(injection.burnType)}</div>
+      <div class="inj-stage">{injection.stageName}</div>
+      {#if injectionFiring}
+        <div class="inj-fuel" aria-label="injection burn progress">
+          <span class="inj-fuel-label">BURN</span>
+          <div class="inj-fuel-bar">
+            <div class="inj-fuel-fill" style="width:{injectionBurnProgress}%"></div>
+          </div>
+          <span class="inj-fuel-pct">{Math.round(injectionBurnProgress)}%</span>
+        </div>
+        <div class="inj-dv">
+          {injection.dvKms != null ? `Δv ${injection.dvKms.toFixed(2)} km/s` : 'IGNITION'}
+        </div>
+      {:else}
+        <div class="inj-dv">PARKING ORBIT · STAGE ARMED</div>
+      {/if}
+    </div>
+  {/if}
 
   {#if countdown !== null}
     {#key countdown}
@@ -347,14 +446,14 @@
     <button class="continue" onclick={complete}>SKIP TO CRUISE →</button>
   {/if}
 
-  <!-- Launch camera-debug (?debug=1) — the same toolkit as the dev harness:
-       shot timeline, live camera plot, per-shot tuning sliders. -->
+  <!-- Launch camera-debug (?debug=1): shot timeline, live camera plot,
+       per-shot tuning sliders. -->
   {#if debugMode && !warping}
     <div class="cam-debug">
       <AscentCameraDebug
         {summary}
         {schedule}
-        vehLen={VEH_LEN}
+        vehLen={VEHICLE_LENGTH_KM}
         {t}
         {tuning}
         onJump={(jt) => {
@@ -376,6 +475,15 @@
     font-family: 'Space Mono', monospace;
     z-index: 200;
   }
+  /* Driven by the shared /fly master scrubber (externalClock): the launch's own
+     bottom transport strip + skip + big readouts are replaced by the unified
+     control bar, so hide them here to avoid a parallel timeline (RFC-034 §11). */
+  .launch.external .timeline,
+  .launch.external .readouts,
+  .launch.external .continue,
+  .launch.external .hud-collapse {
+    display: none;
+  }
   .stage {
     position: absolute;
     inset: 0;
@@ -391,6 +499,17 @@
     transition: opacity 0.3s ease;
   }
   .launch.hud-hidden .telemetry {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .losses {
+    position: absolute;
+    right: 22px;
+    top: 360px;
+    z-index: 6;
+    transition: opacity 0.3s ease;
+  }
+  .launch.hud-hidden .losses {
     opacity: 0;
     pointer-events: none;
   }
@@ -415,9 +534,78 @@
   .launch.hud-hidden .count,
   .launch.hud-hidden .dossier,
   .launch.hud-hidden .timeline,
-  .launch.hud-hidden .readouts {
+  .launch.hud-hidden .readouts,
+  .launch.hud-hidden .injection {
     opacity: 0;
     pointer-events: none;
+  }
+  /* Post-SECO injection-burn callout — centered under the clock, amber theme
+     matching the /fly TLI/TMI event markers; pulses while the stage fires. */
+  .injection {
+    position: absolute;
+    top: 128px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 8px 18px;
+    border: 1px solid rgba(255, 190, 74, 0.45);
+    border-radius: 6px;
+    background: rgba(20, 12, 4, 0.55);
+    backdrop-filter: blur(6px);
+    transition: opacity 0.3s ease;
+  }
+  .injection.firing {
+    border-color: rgba(255, 190, 74, 0.85);
+    box-shadow: 0 0 22px rgba(255, 160, 40, 0.35);
+  }
+  .inj-type {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: #ffcf6a;
+  }
+  .inj-stage {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #eaf2ff;
+    margin-top: 2px;
+  }
+  .inj-fuel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 6px;
+  }
+  .inj-fuel-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #b58a4a;
+  }
+  .inj-fuel-bar {
+    width: 120px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 190, 74, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .inj-fuel-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff8a3c, #ffd36a);
+    transition: width 0.12s linear;
+  }
+  .inj-fuel-pct {
+    font-size: 9px;
+    color: #ffcf6a;
+    width: 30px;
+    text-align: left;
+  }
+  .inj-dv {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #ffbe7a;
+    margin-top: 3px;
   }
   .hud-collapse {
     position: absolute;

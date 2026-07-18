@@ -175,7 +175,16 @@
     resolveLauncher,
     hasLaunchProfile,
   } from '$lib/orbital/launch-profile-registry';
-  import type { LaunchProfile } from '$lib/orbital/ascent-physics';
+  import { integrateAscent, type LaunchProfile } from '$lib/orbital/ascent-physics';
+  import {
+    makeTimeline,
+    scrubberToPoint,
+    pointToScrubber,
+    ASCENT_SPEED_MULTIPLIERS,
+    type JourneyTimeline,
+  } from '$lib/orbital/ascent-clock';
+  import { T_MINUS_S, INJECTION_COAST_S, INJECTION_BURN_S } from '$lib/orbital/ascent-hud';
+  import { resolveInjectionBurn } from '$lib/orbital/injection-burn';
   import PhasePanel from '$lib/components/PhasePanel.svelte';
   import FlightDirectorBanner from '$lib/components/FlightDirectorBanner.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
@@ -247,13 +256,33 @@
   // SIMULATION (fly from mid-point, exactly as before). ?launch=1 auto-starts.
   let showLaunch = $state(false);
   let launchProfile = $state<LaunchProfile | null>(null);
+  // Master-clock state for the unified pad→arrival scrubber (RFC-034 §4/§11).
+  // `launchT` is the ascent MET (s) the /fly rAF loop advances during the launch
+  // phase and binds into LaunchScene (which renders but no longer self-advances);
+  // `launchSpeed` is the ascent real-time multiplier the shared speed pills set.
+  let launchT = $state(-T_MINUS_S);
+  let launchSpeed = $state(5);
   let launchAvailable = $derived(hasLaunchProfile(mission.fleet_refs, mission.vehicle));
+  // The post-SECO injection burn for this mission (RFC-034 §3.1) — the kick /
+  // upper stage that leaves parking orbit. Null when the mission has no
+  // injection stage; the LaunchScene beat is then absent.
+  let launchInjectionBurn = $derived(
+    launchProfile && launchAvailable
+      ? resolveInjectionBurn(
+          resolveLauncher(mission.fleet_refs, mission.vehicle)?.id,
+          mission.flight?.launch?.vehicle_stage,
+          mission.flight?.totals?.tli_or_tmi_dv_km_s,
+          mission.dest,
+        )
+      : null,
+  );
   let launchDossier = $derived({
     name: mission.name,
     agency: mission.agency ?? mission.agency_full ?? '',
     site: launchProfile?.launchSite?.name ?? 'Launch complex',
     destination: mission.arr_label ?? '',
     spacecraftId: mission.id,
+    injectionBurn: launchInjectionBurn,
   });
   function startLaunch() {
     const launcher = resolveLauncher(mission.fleet_refs, mission.vehicle);
@@ -1342,6 +1371,88 @@
     }
     simSpeed = v;
     isPlaying = true;
+  }
+
+  // ─── Unified master clock (RFC-034 §4 · §11) ──────────────────────
+  // The launch act and the cruise are one continuous timeline on one scrubber.
+  // The launch owns `[0, ascentScrubberFraction)`; the cruise owns the rest.
+  // `simDay` stays the cruise source of truth — the master fraction is DERIVED
+  // from whichever phase is live, and the shared control writes back to the
+  // right one. When no launch profile is loaded, the bar is the cruise-only
+  // `arcProgress`, unchanged.
+  let launchSummaryFly = $derived(launchProfile ? integrateAscent(launchProfile) : null);
+  // The ascent slice of the unified scrubber spans pad → SECO → (injection beat).
+  // When the mission has an injection burn, extend the ascent duration by the
+  // coast + burn window so the seam lands after injection, not at SECO.
+  let launchDurationS = $derived(
+    launchSummaryFly
+      ? launchSummaryFly.totalDurationS +
+          (launchInjectionBurn ? INJECTION_COAST_S + INJECTION_BURN_S : 0)
+      : 540,
+  );
+  let masterTimeline: JourneyTimeline = $derived(
+    makeTimeline(launchDurationS, Math.max(1, arcTotalDays), 0.15),
+  );
+  let hasLaunchAct = $derived(!!launchProfile);
+  // Ascent real-time × pills vs cruise day/s pills — swapped at the seam.
+  let speedPills = $derived(
+    showLaunch ? [...ASCENT_SPEED_MULTIPLIERS] : isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90],
+  );
+  let activeSpeed = $derived(showLaunch ? launchSpeed : simSpeed);
+  // The scrubber fraction for the live phase (∈ [0,1]).
+  let masterU = $derived(
+    showLaunch
+      ? pointToScrubber(
+          { phase: 'ascent', ascentT: Math.max(0, launchT), cruiseMetDays: 0 },
+          masterTimeline,
+        )
+      : pointToScrubber(
+          {
+            phase: 'cruise',
+            ascentT: launchDurationS,
+            cruiseMetDays: Math.max(0, simDay - arcTimeline.dep_day),
+          },
+          masterTimeline,
+        ),
+  );
+  // The value the scrubber input + fill render: the master fraction once a
+  // launch act exists, else the plain cruise progress (unchanged).
+  let scrubValue = $derived(hasLaunchAct ? masterU : Math.max(0, Math.min(1, arcProgress)));
+  // A cruise MET (days) → its % position on the ACTIVE bar. On the unified bar
+  // the cruise occupies `[seam, 1]`; on the cruise-only bar it is `[0, 1]`.
+  function cruiseTickPct(metDays: number): number {
+    const frac = arcTotalDays > 0 ? metDays / arcTotalDays : 0;
+    const seam = hasLaunchAct ? masterTimeline.ascentScrubberFraction : 0;
+    return Math.max(0, Math.min(100, (seam + (1 - seam) * frac) * 100));
+  }
+  function masterTogglePlay() {
+    if (showLaunch) {
+      isPlaying = !isPlaying;
+      track('mission-play-toggle', { id: mission?.name ?? 'unknown', playing: isPlaying });
+    } else {
+      togglePlay();
+    }
+  }
+  function masterSetSpeed(v: number) {
+    if (showLaunch) {
+      launchSpeed = v;
+      isPlaying = true;
+    } else {
+      setSpeed(v);
+    }
+  }
+  function onMasterScrub(event: Event) {
+    const u = Number((event.target as HTMLInputElement).value);
+    const pt = scrubberToPoint(u, masterTimeline);
+    if (pt.phase === 'ascent') {
+      // Scrubbing back into the ascent re-mounts LaunchScene fresh (resets any
+      // completed warp) and drives it to the scrubbed MET.
+      if (!showLaunch) showLaunch = true;
+      launchT = pt.ascentT;
+    } else {
+      if (showLaunch) showLaunch = false;
+      simDay = arcTimeline.dep_day + pt.cruiseMetDays;
+    }
   }
   // ─── Scrubber ──────────────────────────────────────────────────
   // Pause-on-scrub: writing to simDay while isPlaying is true would
@@ -5167,7 +5278,13 @@
         if (montageEnabled && currentFrameFlybyMet != null) {
           cinematicFreeze = false;
         }
-        if (isPlaying && now >= launchDwellUntil && !cinematicFreeze) {
+        // Master clock — ascent phase: advance the launch MET (LaunchScene is
+        // clock-driven, externalClock=true). At the seam LaunchScene's own loop
+        // fires the orbit-reached warp → onComplete flips showLaunch off.
+        if (showLaunch && isPlaying) {
+          launchT = Math.min(launchDurationS, launchT + dt * launchSpeed);
+        }
+        if (isPlaying && now >= launchDwellUntil && !cinematicFreeze && !showLaunch) {
           // Flyby slow-motion (#371): around closest approach, ease the
           // effective sim rate down so the gravity-assist swing is
           // watchable instead of a buzz. Only when the montage is on and a
@@ -6787,7 +6904,16 @@
     mission={launchDossier}
     {hudHidden}
     onToggleHud={toggleHud}
-    onComplete={() => (showLaunch = false)}
+    bind:t={launchT}
+    bind:playing={isPlaying}
+    bind:speed={launchSpeed}
+    externalClock={true}
+    onComplete={() => {
+      // Seam crossed forward: reveal the transfer scene and keep playing so the
+      // cruise continues the one continuous timeline from MET 0.
+      showLaunch = false;
+      isPlaying = true;
+    }}
   />
 {/if}
 
@@ -7596,13 +7722,14 @@
   <div
     class="scrubber"
     class:cinematic-hidden={inCinematicHeldBeat}
+    class:launch-active={showLaunch}
     aria-label={m.fly_scrub_label()}
   >
     <button
       type="button"
       class="play-btn"
       data-audio-stage="fly-play"
-      onclick={togglePlay}
+      onclick={masterTogglePlay}
       aria-label={isPlaying ? m.fly_pause() : m.fly_play()}
     >
       {isPlaying ? '⏸' : '▶'}
@@ -7614,28 +7741,29 @@
            visual. YouTube-style: chapter dots sit ON the track at each
            milestone's MET, the fill grows behind them as the mission
            plays, and the label appears in a clean tooltip card on hover
-           (no zigzag, no escaping the row). -->
+           (no zigzag, no escaping the row). Once a launch act is loaded the
+           value is the unified pad→arrival master fraction (RFC-034 §4). -->
       <div class="scrub-visual" aria-hidden="true">
-        <div class="scrub-fill" style="width: {Math.max(0, Math.min(1, arcProgress)) * 100}%"></div>
+        <div class="scrub-fill" style="width: {scrubValue * 100}%"></div>
       </div>
       <input
         type="range"
         min="0"
         max="1"
         step="0.001"
-        value={Math.max(0, Math.min(1, arcProgress))}
-        oninput={onScrub}
+        value={scrubValue}
+        oninput={hasLaunchAct ? onMasterScrub : onScrub}
         onpointerdown={onScrubStart}
         onpointerup={onScrubEnd}
         onpointercancel={onScrubEnd}
         class="scrub"
         aria-label={m.fly_scrub_label()}
       />
-      {#if arcTotalDays > 0 && mission.flight?.events}
+      {#if arcTotalDays > 0 && mission.flight?.events && !showLaunch}
         <div class="milestone-track" data-testid="milestone-track">
           {#each mission.flight.events as evt, idx (idx + '@' + evt.met_days + '@' + (evt.label ?? ''))}
             {#if evt.label && evt.met_days != null}
-              {@const pct = Math.max(0, Math.min(100, (evt.met_days / arcTotalDays) * 100))}
+              {@const pct = cruiseTickPct(evt.met_days)}
               {@const past = (evt.met_days ?? 0) < simDay - arcTimeline.dep_day}
               <button
                 type="button"
@@ -7663,7 +7791,7 @@
            Same scrubber-jump behaviour as milestones. Mirrors the
            on-canvas gold diamonds so the user can see the FD cadence
            on the timeline too. -->
-      {#if arcTotalDays > 0 && fdScrubberTicks.length > 0}
+      {#if arcTotalDays > 0 && fdScrubberTicks.length > 0 && !showLaunch}
         <div class="fd-stage-track" data-testid="fd-stage-track">
           {#each fdScrubberTicks as t (t.id)}
             {@const past = t.met_days < simDay - arcTimeline.dep_day}
@@ -7671,7 +7799,7 @@
               type="button"
               class="fd-stage-tick-button"
               class:past
-              style="left: {t.pct}%;"
+              style="left: {cruiseTickPct(t.met_days)}%;"
               aria-label="{t.label} stage. Click to jump."
               onclick={() => jumpToMet(t.met_days)}
               data-fd-stage={t.id}
@@ -7694,20 +7822,20 @@
           class:active={isPlaying}
           aria-expanded={speedPopoverOpen}
           aria-haspopup="listbox"
-          aria-label="{simSpeed}× — {m.fly_speed_label()}"
-          onclick={() => (speedPopoverOpen = !speedPopoverOpen)}>{simSpeed}×</button
+          aria-label="{activeSpeed}× — {m.fly_speed_label()}"
+          onclick={() => (speedPopoverOpen = !speedPopoverOpen)}>{activeSpeed}×</button
         >
         {#if speedPopoverOpen}
           <div class="speed-popover" role="listbox" aria-label={m.fly_speed_label()}>
-            {#each isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90] as sp (sp)}
+            {#each speedPills as sp (sp)}
               <button
                 type="button"
                 class="speed-pill"
-                class:active={simSpeed === sp}
+                class:active={activeSpeed === sp}
                 role="option"
-                aria-selected={simSpeed === sp}
+                aria-selected={activeSpeed === sp}
                 onclick={() => {
-                  setSpeed(sp);
+                  masterSetSpeed(sp);
                   speedPopoverOpen = false;
                 }}>{sp}×</button
               >
@@ -7716,12 +7844,12 @@
         {/if}
       </div>
       <!-- Desktop: all speed pills visible inline. -->
-      {#each isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90] as sp (sp)}
+      {#each speedPills as sp (sp)}
         <button
           type="button"
           class="speed-pill speed-desktop-pill"
-          class:active={simSpeed === sp}
-          onclick={() => setSpeed(sp)}
+          class:active={activeSpeed === sp}
+          onclick={() => masterSetSpeed(sp)}
         >
           {sp}×
         </button>
@@ -7942,6 +8070,9 @@
       'soi',
       'gravity',
       'velocity',
+      'thrust',
+      'drag',
+      'ascent-losses',
       'centripetal',
       'apsides',
       'coast',
@@ -9067,6 +9198,11 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     backdrop-filter: blur(6px);
+  }
+  /* During the launch act the LaunchScene overlay sits at z-index 200; the
+     unified master scrubber must out-stack it so pad→arrival is one control. */
+  .scrubber.launch-active {
+    z-index: 210;
   }
 
   /* The HUD-collapse toggle itself — mobile-only floating button at

@@ -14,7 +14,7 @@ const summary = integrateAscent(FALCON9_SAMPLE);
 const schedule = buildShotSchedule({
   events: summary.events,
   maxQt: summary.maxQ.t,
-  duration: summary.states.at(-1)!.t,
+  duration: summary.totalDurationS,
 });
 
 describe('buildShotSchedule', () => {

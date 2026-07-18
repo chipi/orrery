@@ -1,6 +1,8 @@
 {
   "ids": [
     "launch",
+    "gravity-turn",
+    "max-q",
     "trans-x-injection",
     "tcm",
     "orbit-insertion",

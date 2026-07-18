@@ -171,6 +171,9 @@
           0.6
         ]
       ]
+    },
+    "launch": {
+      "vehicle_stage": "Centaur upper stage"
     }
   }
 }

@@ -112,6 +112,9 @@
           0.3
         ]
       ]
+    },
+    "launch": {
+      "vehicle_stage": "TE-364-4 (Star-37E) third stage"
     }
   }
 }

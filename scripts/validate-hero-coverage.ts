@@ -71,12 +71,7 @@ interface SurfaceSpec {
 // The 7 fleet-galleries / planets hero files live on disk + the
 // runtime gallery loader's cross-surface fallback now resolves the
 // mission-side IDs.
-// RFC-034 §12 Phase 2 (GH #418): huygens + near-shoemaker missions added
-// so their already-authored descent profiles can trigger from /fly. Hero
-// imagery sourcing deferred to the follow-on image pipeline run (these
-// are descent-only missions — the hero slot will be filled by the
-// image pipeline fetch pass that adds them to the gallery rotation).
-const MISSIONS_KNOWN_GAPS = new Set<string>(['huygens', 'near-shoemaker']);
+const MISSIONS_KNOWN_GAPS = new Set<string>([]);
 const FLEET_KNOWN_GAPS = new Set<string>([]);
 const MOON_SITES_KNOWN_GAPS = new Set<string>([]);
 const MARS_SITES_KNOWN_GAPS = new Set<string>([]);

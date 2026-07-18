@@ -853,7 +853,7 @@ export const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   },
   {
     id: 'near-shoemaker',
-    query: 'NEAR Shoemaker spacecraft eros asteroid',
+    query: 'NEAR Shoemaker Eros',
   },
   // #306 A.1.a — Voyager 1 + Pioneer 10/11 + Cassini + Juno + MESSENGER.
   // Hero + gallery sourcing for the six iconic deep-space records the

@@ -1,0 +1,24 @@
+{
+  "missionId": "galileo",
+  "siteId": "galileo-probe",
+  "body": "jupiter",
+  "landingSite": { "lat": 6.5, "lon": 4.0 },
+  "entryState": { "altitudeM": 450000, "velocityMs": 47400, "flightPathAngleDeg": 8.4 },
+  "entryMassKg": 339,
+  "entryCdA": 1.3,
+  "archetype": "JUPITER_PROBE",
+  "params": {
+    "chuteDeployAltM": 50000,
+    "terminalHandoffAltM": 30000,
+    "parachuteCdA": 8,
+    "heatshieldKg": 90,
+    "crushPressurePa": 2300000
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Galileo Probe — NASA NSSDCA spacecraft record",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1989-084E"
+    }
+  ]
+}

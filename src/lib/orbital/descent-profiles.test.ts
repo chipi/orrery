@@ -42,9 +42,17 @@ const PEAK_G_BAND: Record<string, [number, number]> = {
   moon: [0, 7],
   mars: [4, 18],
   venus: [120, 320],
+  // Phase 2 (RFC-034 §12): micro-g asteroids barely decelerate; the Galileo
+  // Jupiter probe hits the fiercest entry of any probe (~200–260 g published).
+  itokawa: [0, 2],
+  bennu: [0, 2],
+  jupiter: [150, 320],
 };
 
-describe('all 37 descent profiles ship on disk', () => {
+/** Missions whose descent has no solid-surface terminus (atmospheric probe). */
+const NO_SURFACE = new Set(['galileo']);
+
+describe('all 40 descent profiles ship on disk', () => {
   for (const id of DESCENT_MISSION_IDS) {
     it(`${id} has a profile JSON`, () => {
       expect(existsSync(profilePath(id))).toBe(true);
@@ -59,7 +67,9 @@ describe('every descent profile expands + flies to its honest outcome', () => {
       const raw = loadRaw(id);
       expect(raw.missionId).toBe(id);
       const profile = expandDescentProfile(raw);
-      expect(profile.phases.at(-1)!.endTrigger.type).toBe('ground');
+      const noSurface = NO_SURFACE.has(id);
+      // Landers end at the ground; an atmospheric probe ends on a pressure crush.
+      expect(profile.phases.at(-1)!.endTrigger.type).toBe(noSurface ? 'pressure_pa' : 'ground');
 
       const s = integrateDescent(profile);
       if (CRASHES.has(id)) {
@@ -70,9 +80,9 @@ describe('every descent profile expands + flies to its honest outcome', () => {
       // Peak deceleration in the body's plausible band.
       const band = PEAK_G_BAND[profile.body];
       expectInRange(s.peakDecel.g, band[0], band[1], `${id} peak decel (g)`);
-      // Beats open on entry and close on touchdown.
+      // Beats open on entry; landers close on touchdown, probes on signal loss.
       expect(s.events[0].type).toBe('entry');
-      expect(s.events.at(-1)!.type).toBe('touchdown');
+      expect(s.events.at(-1)!.type).toBe(noSurface ? 'probe_signal_lost' : 'touchdown');
     });
   }
 });

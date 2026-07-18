@@ -413,6 +413,10 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'venera-13',
   'vega-1',
   'vega-2',
+  // Phase 2 — outer + small bodies, already-flyable arrivals (RFC-034 §12)
+  'hayabusa1', // Itokawa touch-and-go
+  'osiris-rex', // Bennu touch-and-go
+  'galileo', // Jupiter atmospheric probe (no surface)
 ]);
 
 /** True when a mission plays a descent act (has a hand-authored profile). */

@@ -1,0 +1,18 @@
+{
+  "missionId": "osiris-rex",
+  "siteId": "osiris-rex",
+  "body": "bennu",
+  "landingSite": { "lat": 56.0, "lon": 43.0 },
+  "entryState": { "altitudeM": 40, "velocityMs": 0.1, "flightPathAngleDeg": 90 },
+  "entryMassKg": 1200,
+  "entryCdA": 4,
+  "archetype": "ASTEROID_TOUCH_AND_GO",
+  "params": { "contactAltM": 1, "terminalVelocityMs": 0.1, "descentRateGain": 0.02 },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "OSIRIS-REx sample collection at Bennu (Nightingale) — NASA",
+      "u": "https://www.nasa.gov/mission/osiris-rex/"
+    }
+  ]
+}

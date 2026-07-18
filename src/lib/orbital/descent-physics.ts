@@ -229,11 +229,14 @@ export interface DescentSummary {
 
 // ─── Per-body atmosphere + gravity ──────────────────────────────────
 
-/** Air density (kg·m⁻³) at altitude for a body — single-exponential; Moon = 0. */
+/** Air density (kg·m⁻³) at altitude for a body — single-exponential; Moon = 0.
+ *  Altitude is NOT clamped at the datum: a surface-bound descent never goes
+ *  below h=0 (the ground break stops it), but an atmospheric probe (Jupiter)
+ *  sinks below the 1-bar datum into ever-denser gas, so the drag must rise. */
 export function bodyAirDensity(altM: number, body: DescentBody): number {
   const rho0 = SURFACE_DENSITY_KGM3[body];
   if (rho0 <= 0) return 0;
-  return rho0 * Math.exp(-Math.max(0, altM) / ATM_SCALE_HEIGHT_M[body]);
+  return rho0 * Math.exp(-altM / ATM_SCALE_HEIGHT_M[body]);
 }
 
 /** Local gravitational acceleration (m·s⁻²): g = μ / (R + h)². */
@@ -470,10 +473,14 @@ export function integrateDescent(
     }
   }
 
-  // Ensure a final sample + a touchdown beat even if maxT clamped the run.
+  // Ensure a final sample + a terminal beat even if maxT clamped the run. A
+  // no-surface probe (Jupiter) closes on `probe_signal_lost`, everything else on
+  // `touchdown` — don't append a spurious touchdown when the probe already ended.
   const final = makeState();
   states.push(final);
-  if (!events.some((e) => e.type === 'touchdown')) pushEvent('touchdown', 'timeout');
+  if (!events.some((e) => e.type === 'touchdown' || e.type === 'probe_signal_lost')) {
+    pushEvent('touchdown', 'timeout');
+  }
 
   // Splice the peak beats in at their recorded instants, then re-sort.
   events.push({ type: 'peak_heat', t: peakHeat.t, altKm: peakHeat.altKm, velocityMs: 0 });

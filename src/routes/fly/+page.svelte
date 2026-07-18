@@ -194,6 +194,7 @@
   } from '$lib/orbital/ascent-clock';
   import { T_MINUS_S, INJECTION_COAST_S, INJECTION_BURN_S } from '$lib/orbital/ascent-hud';
   import { resolveInjectionBurn } from '$lib/orbital/injection-burn';
+  import { resolveOrbitInsertion } from '$lib/orbital/orbit-insertion';
   import PhasePanel from '$lib/components/PhasePanel.svelte';
   import FlightDirectorBanner from '$lib/components/FlightDirectorBanner.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
@@ -1482,6 +1483,30 @@
           (launchInjectionBurn ? INJECTION_COAST_S + INJECTION_BURN_S : 0)
       : 540,
   );
+  // ─── Orbit-insertion beat (RFC-034 §12) — the arrival mirror of the launch
+  // injection burn: an ORBITER's capture burn at the destination (MOI/VOI/SOI/
+  // JOI…). Shown as a callout in the arrival window for missions that go into
+  // orbit (an authored orbit_insertion_dv) rather than land.
+  let orbitInsertion = $derived(
+    descentProfile
+      ? null // landers descend; they don't capture into orbit
+      : resolveOrbitInsertion(mission.dest, mission.flight?.arrival?.orbit_insertion_dv_km_s),
+  );
+  const OI_WINDOW_DAYS = 5; // the capture-burn window straddling arrival
+  let oiBeatActive = $derived(
+    !!orbitInsertion &&
+      !showLaunch &&
+      !showDescent &&
+      simDay >= arcTimeline.arr_day - OI_WINDOW_DAYS &&
+      simDay <= arcTimeline.arr_day + 1,
+  );
+  /** Burn firing — the last half of the window into arrival (the retro burn). */
+  let oiFiring = $derived(
+    !!orbitInsertion &&
+      simDay >= arcTimeline.arr_day - OI_WINDOW_DAYS / 2 &&
+      simDay <= arcTimeline.arr_day + 0.5,
+  );
+
   // The descent act (RFC-034 §9): integrate the EDL profile and give it the
   // scrubber TAIL. 0 duration / fraction when the mission doesn't land — the
   // bar stays the 2-segment ascent→cruise, unchanged for orbiters.
@@ -7081,6 +7106,20 @@
   />
 {/if}
 
+<!-- Orbit-insertion beat (RFC-034 §12) — an orbiter's capture burn at arrival,
+     the mirror of the launch injection burn. Top-center amber callout. -->
+{#if oiBeatActive && orbitInsertion && !hudHidden}
+  <div class="oi-callout" class:firing={oiFiring}>
+    <div class="oi-tag">{orbitInsertion.tag}</div>
+    <div class="oi-label">{orbitInsertion.label}</div>
+    <div class="oi-status">
+      {oiFiring ? 'CAPTURE BURN' : 'APPROACH'}{orbitInsertion.dvKms != null
+        ? ` · Δv ${orbitInsertion.dvKms.toFixed(2)} km/s`
+        : ''}
+    </div>
+  </div>
+{/if}
+
 {#snippet flyDebugContent()}
   {#if mission.flight?.events && outPts.length > 0}
     {@const flybyEventsForDebug = (mission.flight.events ?? []).filter(
@@ -8317,6 +8356,57 @@
 />
 
 <style>
+  /* Orbit-insertion beat (RFC-034 §12) — top-center amber capture-burn callout
+     at an orbiter's arrival, mirroring the launch injection-burn callout. */
+  .oi-callout {
+    position: fixed;
+    top: 74px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 60;
+    text-align: center;
+    padding: 8px 20px;
+    border: 1px solid rgba(255, 190, 74, 0.45);
+    border-radius: 6px;
+    background: rgba(20, 12, 4, 0.6);
+    backdrop-filter: blur(6px);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .oi-callout.firing {
+    border-color: rgba(255, 190, 74, 0.9);
+    box-shadow: 0 0 24px rgba(255, 160, 40, 0.4);
+    animation: oi-pulse 1.1s ease-in-out infinite;
+  }
+  @keyframes oi-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 18px rgba(255, 160, 40, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(255, 180, 60, 0.55);
+    }
+  }
+  .oi-tag {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 4px;
+    color: #ffcf6a;
+    line-height: 1;
+  }
+  .oi-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #ffe0b0;
+    margin-top: 3px;
+  }
+  .oi-status {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #ffbe7a;
+    margin-top: 3px;
+  }
+
   /* Follow-up 5 — cislunar hero-events panel in the debug PAGE tab. */
   .cislunar-hero-debug {
     display: flex;

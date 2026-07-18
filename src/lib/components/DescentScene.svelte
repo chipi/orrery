@@ -34,6 +34,7 @@
     formatDescentAltitude,
   } from '$lib/orbital/descent-hud';
   import { formatDescentClock } from '$lib/orbital/ascent-clock';
+  import { BODY_LABEL } from '$lib/orbital/descent-physics-constants';
   import { onLayerChange } from '$lib/science-layers';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { DESCENT_FORCE_LAYER_ENTRIES } from '$lib/orbital/descent-force-layers';
@@ -92,7 +93,7 @@
   );
 
   const dossierRows: [string, string][] = $derived([
-    ['BODY', mission.body[0].toUpperCase() + mission.body.slice(1)],
+    ['BODY', BODY_LABEL[mission.body] ?? mission.body[0].toUpperCase() + mission.body.slice(1)],
     ['SITE', mission.siteName],
     ['EDL SYSTEM', mission.edlSystem],
     ...(mission.entryVelocityKms != null

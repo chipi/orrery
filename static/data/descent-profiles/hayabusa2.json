@@ -1,0 +1,18 @@
+{
+  "missionId": "hayabusa2",
+  "siteId": "hayabusa2",
+  "body": "ryugu",
+  "landingSite": { "lat": 0.0, "lon": 320.0 },
+  "entryState": { "altitudeM": 40, "velocityMs": 0.1, "flightPathAngleDeg": 90 },
+  "entryMassKg": 590,
+  "entryCdA": 4,
+  "archetype": "ASTEROID_TOUCH_AND_GO",
+  "params": { "contactAltM": 1, "terminalVelocityMs": 0.1, "descentRateGain": 0.02 },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Hayabusa2 sample collection at Ryugu — JAXA",
+      "u": "https://www.hayabusa2.jaxa.jp/en/"
+    }
+  ]
+}

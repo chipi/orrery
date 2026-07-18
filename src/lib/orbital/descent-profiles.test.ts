@@ -48,13 +48,15 @@ const PEAK_G_BAND: Record<string, [number, number]> = {
   bennu: [0, 2],
   ryugu: [0, 2],
   comet_67p: [0, 2],
+  eros: [0, 2],
+  titan: [4, 26],
   jupiter: [150, 320],
 };
 
 /** Missions whose descent has no solid-surface terminus (atmospheric probe). */
 const NO_SURFACE = new Set(['galileo']);
 
-describe('all 42 descent profiles ship on disk', () => {
+describe('all 44 descent profiles ship on disk', () => {
   for (const id of DESCENT_MISSION_IDS) {
     it(`${id} has a profile JSON`, () => {
       expect(existsSync(profilePath(id))).toBe(true);

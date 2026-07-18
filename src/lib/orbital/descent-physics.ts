@@ -278,8 +278,9 @@ export interface DescentOptions {
   dtS?: number;
   /** Trajectory sample interval (s). Default 0.5. */
   sampleDtS?: number;
-  /** Hard stop (s) so a mis-authored profile can't loop forever. Default 4000 —
-   *  Venus's dense-atmosphere descent legitimately runs ~50 min. */
+  /** Hard stop (s) so a mis-authored profile can't loop forever. Default 12000 —
+   *  Titan's parachute descent legitimately runs ~3 h; every other body reaches
+   *  the ground (or the Jupiter crush) long before the cap. */
   maxTS?: number;
 }
 
@@ -334,7 +335,7 @@ export function integrateDescent(
 ): DescentSummary {
   const dt = opts.dtS ?? 0.02;
   const sampleDt = opts.sampleDtS ?? 0.5;
-  const maxT = opts.maxTS ?? 4000;
+  const maxT = opts.maxTS ?? 12000;
   const body = profile.body;
   const survivable = profile.survivableTouchdownMs ?? 3;
   const propTotal = profile.retroPropellantKg ?? Infinity;

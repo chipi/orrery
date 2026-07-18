@@ -419,6 +419,8 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'galileo', // Jupiter atmospheric probe (no surface)
   'hayabusa2', // Ryugu touch-and-go
   'rosetta', // Philae bounce-landing on comet 67P
+  'huygens', // Titan parachute descent
+  'near-shoemaker', // Eros soft landing (433 Eros)
 ]);
 
 /** True when a mission plays a descent act (has a hand-authored profile). */

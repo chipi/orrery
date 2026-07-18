@@ -1,0 +1,19 @@
+{
+  "missionId": "near-shoemaker",
+  "siteId": "near-shoemaker",
+  "body": "eros",
+  "landingSite": { "lat": 35.0, "lon": 280.0 },
+  "entryState": { "altitudeM": 60, "velocityMs": 0.15, "flightPathAngleDeg": 90 },
+  "entryMassKg": 480,
+  "entryCdA": 4,
+  "archetype": "LUNAR_POWERED",
+  "params": { "terminalVelocityMs": 1.7, "descentRateGain": 0.03 },
+  "survivableTouchdownMs": 5,
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "NEAR Shoemaker landing on asteroid 433 Eros — NASA/JHU APL",
+      "u": "https://science.nasa.gov/mission/near-shoemaker/"
+    }
+  ]
+}

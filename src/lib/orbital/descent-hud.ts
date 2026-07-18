@@ -81,11 +81,10 @@ export function descentStatus(s: DescentState, summary: DescentSummary): string 
     return s.altM <= deepest + 1 ? 'SIGNAL LOST' : (EDL_PHASE_LABEL[s.phaseKind] ?? 'DESCENT');
   }
   if (s.altM <= 0) {
-    // Asteroid touch-and-go is a sample contact, not a landing; a comet is a
-    // low-g settle after the bounces; everything else is a true touchdown.
-    if (body === 'itokawa' || body === 'ryugu' || body === 'bennu' || body === 'eros') {
-      return 'SAMPLE COLLECTED';
-    }
+    // Touch-and-go asteroids (Hayabusa/OSIRIS-REx) sample and depart; a comet is
+    // a low-g settle after the bounces; Eros (NEAR) actually soft-landed, so it —
+    // like every true lander — closes on TOUCHDOWN.
+    if (body === 'itokawa' || body === 'ryugu' || body === 'bennu') return 'SAMPLE COLLECTED';
     if (body === 'comet_67p') return summary.touchdownSuccess ? 'SETTLED' : 'IMPACT';
     return summary.touchdownSuccess ? 'TOUCHDOWN' : 'IMPACT';
   }

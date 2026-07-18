@@ -8,6 +8,10 @@
   },
   "see_in_app": [
     {
+      "route": "/fly",
+      "context_key": "Fly an orbiter to its destination — /fly plays the capture burn (MOI/VOI/SOI/JOI) as an arrival beat with the Δv"
+    },
+    {
       "route": "/missions",
       "context_key": "FLIGHT tab shows orbit-insertion ∆v for orbit-class missions"
     }

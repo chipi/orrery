@@ -1,0 +1,15 @@
+{
+  "title": "Aerobraking",
+  "intro_sentence": "Trimming a wide capture orbit down to a working one for almost no fuel — by dipping into the very top of a planet's atmosphere a little on every pass.",
+  "narrative_101": [
+    "When an orbiter arrives at a planet it fires a capture burn to drop into orbit — but stopping fully into a tight, useful orbit would cost a huge amount of fuel. So mission planners cheat physics with the atmosphere: they capture into a big, loose ellipse, then let the spacecraft skim the very top of the air at the low point of each orbit. Each brush of thin air steals a little speed, and the far side of the orbit sinks a bit lower.",
+    "Do this a few hundred times over weeks or months and the wide capture ellipse shrinks into the near-circular science orbit the mission actually wants — all for the price of the small capture burn, not the enormous one full propulsive insertion would need. It is one of the great fuel bargains in spaceflight.",
+    "The catch is that it is slow and delicate. Dip too shallow and nothing happens; dip too deep and the heating or the aerodynamic forces can damage or tumble the spacecraft. Controllers nudge the low point up and down pass by pass, riding a narrow corridor between 'too little' and 'too much' for months on end."
+  ],
+  "body_paragraphs": [
+    "Aerobraking trades propellant for time and patience. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN, and Venus's Magellan all used it to reach their final orbits, saving hundreds of kilograms of fuel that would otherwise have had to be launched from Earth — often more than the spacecraft's own dry mass.",
+    "The physics is the same drag that lands a probe, applied in tiny, repeated doses at orbital speed instead of one fierce entry. Because the spacecraft only grazes the outermost, thinnest air, each pass sheds just a few metres per second — but orbits repeat, and the effect compounds. Solar panels, turned edge-on or used as brake surfaces, often take the load.",
+    "Aerocapture is the bolder cousin: braking enough on a SINGLE deep pass to go straight from arrival into a captured orbit, no capture burn at all. It would save even more fuel, but it demands a heat shield and split-second guidance, and no mission has yet flown it — aerobraking's patient, low-risk version remains the workhorse."
+  ],
+  "diagram_caption": "Aerobraking: capture into a wide ellipse, then skim the upper atmosphere at periapsis pass after pass; each dip lowers apoapsis until the orbit is circular."
+}

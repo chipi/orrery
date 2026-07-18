@@ -1,0 +1,15 @@
+{
+  "title": "Pouso Propulsivo",
+  "intro_sentence": "Pouso apenas com foguetes — o único caminho em um mundo sem atmosfera como a Lua, e como um gigante como o Starship descerá em Marte.",
+  "narrative_101": [
+    "Em um mundo sem ar, não há nada para um paraquedas agarrar. A única forma de desacelerar é apontar um motor para o solo e queimar — convertendo propelente em cada metro por segundo de velocidade que você precisa cancelar. Este é o pouso propulsivo, e é assim que cada Lunar Module de Apollo até hoje pousou: uma longa queimada de frenagem, depois um hover suave e controlado até a superfície.",
+    "É implacável. Levar combustível de menos e você fica sem antes de parar; controlar mal o motor e você tanto bate forte no solo quanto sobe novamente. O motor deve ser profundamente regulável em potência, a navegação deve resolver o problema combustível-versus-tempo em tempo real, e não há segunda chance — você não pode re-desplegar um paraquedas. Os astronautas de Apollo assistiram o indicador de combustível cair rumo ao vazio enquanto procuravam um pouso seguro.",
+    "Marte fica no meio. Sua atmosfera é fina — o suficiente para ajudar um Lunar Module leve com paraquedas, mas inútil para um veículo tão massivo quanto o Starship da SpaceX. Para esses, o plano é propulsivo do começo ao fim: uma entrada hipersônica para dissipar a maior parte da velocidade no escudo térmico, depois uma queimada de pouso até a superfície, sem paraquedas nenhum — muito parecido com pouso na Lua, mas chegando através de um sussurro de atmosfera."
+  ],
+  "body_paragraphs": [
+    "O custo em propelente é definido pela equação de foguete e a velocidade a cancelar. Na Lua um Lunar Module deve eliminar toda sua velocidade orbital ou de aproximação no motor, é por isso que tanta massa de um Lunar Module é combustível. Em Marte a atmosfera faz a primeira metade cara gratuitamente (o escudo térmico), deixando o motor para lidar apenas com os últimos quilómetros lentos — mas para um veículo pesado até isso é uma queimada volumosa.",
+    "A regulagem de potência é o coração disso tudo. Um motor de pouso deve funcionar suavemente desde potência máxima até uma fração dela, para o veículo corresponder a um cronograma de taxa de descida em queda e assentar em velocidade de caminhada no solo. Motores com regulagem profunda (o motor de descida de Apollo, os propulsores MLE do sky-crane, os Raptors do Starship) são o que tornam um pouso controlado — em vez de uma colisão controlada — possível.",
+    "Em `/fly`, cada pouso lunar com `?descent=1` é propulsivo do começo ao fim (sem paraquedas no vácuo), e os perfis de Starship para Marte freiam no escudo térmico e depois pousam nos motores. O retro-indicador do descent HUD + o indicador de combustível rastreiam a queimada — o mesmo problema que os astronautas de Apollo resolviam a olho nu, agora mostrado como telemetria ao vivo."
+  ],
+  "diagram_caption": "Pouso propulsivo: sem ar utilizável, um motor cancela a velocidade de descida diretamente — uma queimada de frenagem, depois um hover controlado até o contato."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Ballistic Coefficient",
+  "intro_sentence": "The single number — mass divided by drag area — that decides how fast a spacecraft falls through an atmosphere, and whether it can stop in time.",
+  "narrative_101": [
+    "Drop a feather and a hammer in air and the feather drifts down while the hammer plummets. The difference is the ballistic coefficient: how much mass each carries behind how much drag area. A low ballistic coefficient (lots of drag, little mass) falls slowly; a high one (compact and heavy) falls fast. It is the one number that most shapes how a spacecraft comes down.",
+    "Landing engineers spend enormous effort keeping the ballistic coefficient low. A blunt heat shield, a huge parachute, an inflatable decelerator — all are ways to add drag area without adding much mass, so the vehicle sheds speed higher up where there is more air-column left to work with. The bigger and heavier the payload, the harder this fight becomes.",
+    "This is the quiet reason Mars is so hard. Its air is thin, so even a large parachute on a modest lander only bleeds the speed so far — the ballistic coefficient is too high to stop on drag alone. Every Mars lander needs a second act (retro-rockets, airbags, a sky-crane), while a light probe at Venus, in dense air, can drift down on drag alone."
+  ],
+  "body_paragraphs": [
+    "Formally the ballistic coefficient is mass ÷ (drag coefficient × reference area). Terminal velocity scales with its square root, so halving the ballistic coefficient slows the fall by about 30%. Peak deceleration and peak heating both rise with it too — a heavier, more compact entry hits the atmosphere harder and hotter, which is why big vehicles face the worst of both.",
+    "It also sets WHERE in the descent the action happens. A low-ballistic-coefficient vehicle decelerates high up, in thin air, giving more time and altitude for the terminal phases. A high one carries its speed deep into the atmosphere before drag catches up, compressing the whole sequence into the last few kilometres — exactly the squeeze that makes a heavy Mars landing a race against the ground.",
+    "On `/fly`, the contrast is visible across bodies in `?descent=1`. A light Mars lander under a big parachute (low ballistic coefficient) settles gently; a 100-tonne Starship (very high) must brake propulsively; a Venus probe in thick air drifts down on a small drag plate. Same physics, three ballistic coefficients, three very different descents."
+  ],
+  "diagram_caption": "Ballistic coefficient = mass ÷ drag area. Low (big chute, light payload) → slow, high-altitude deceleration; high (heavy, compact) → fast, deep, hot entry."
+}

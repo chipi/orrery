@@ -351,10 +351,24 @@
   },
   {
     "tab": "mission-phases",
+    "section": "aerobraking",
+    "title": "Aerobraking",
+    "intro": "Trimming a wide capture orbit down to a working one for almost no fuel — by dipping into the very top of a planet's atmosphere a little on every pass.",
+    "haystack": "aerobraking trimming a wide capture orbit down to a working one for almost no fuel — by dipping into the very top of a planet's atmosphere a little on every pass. aerobraking trades propellant for time and patience. mars global surveyor, mars odyssey, mars reconnaissance orbiter, maven, and venus's magellan all used it to reach their final orbits, saving hundreds of kilograms of fuel that would otherwise have had to be launched from earth — often more than the spacecraft's own dry mass."
+  },
+  {
+    "tab": "mission-phases",
     "section": "antenna-arrays",
     "title": "Arraying — many small ears instead of one giant one",
     "intro": "Combining the signals from multiple antennas in real time creates a single virtual aperture larger than any individual dish, capturing fainter spacecraft signals without building ever-bigger structures.",
     "haystack": "arraying — many small ears instead of one giant one combining the signals from multiple antennas in real time creates a single virtual aperture larger than any individual dish, capturing fainter spacecraft signals without building ever-bigger structures. a single large antenna is the obvious way to hear a faint spacecraft signal from billions of kilometres away. the dsn's 70 m dishes — at goldstone, madrid, and canberra — are near the practical limit for fully steerable, ground-based reflectors. building something appreciably larger would require a fixed structure (limiting sky coverage) or engineering that doesn't yet exist. the alternative is to combine many smaller antennas: arraying."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "ballistic-coefficient",
+    "title": "Ballistic Coefficient",
+    "intro": "The single number — mass divided by drag area — that decides how fast a spacecraft falls through an atmosphere, and whether it can stop in time.",
+    "haystack": "ballistic coefficient the single number — mass divided by drag area — that decides how fast a spacecraft falls through an atmosphere, and whether it can stop in time. formally the ballistic coefficient is mass ÷ (drag coefficient × reference area). terminal velocity scales with its square root, so halving the ballistic coefficient slows the fall by about 30%. peak deceleration and peak heating both rise with it too — a heavier, more compact entry hits the atmosphere harder and hotter, which is why big vehicles face the worst of both."
   },
   {
     "tab": "mission-phases",
@@ -453,6 +467,13 @@
     "title": "Orbit Insertion — LOI / MOI",
     "intro": "The braking burn that captures your spacecraft into orbit instead of letting it fly past forever.",
     "haystack": "orbit insertion — loi / moi the braking burn that captures your spacecraft into orbit instead of letting it fly past forever. when your spacecraft arrives at the destination, it's moving fast — fast enough to escape if you do nothing. to capture into orbit, you have to bleed off enough velocity to drop below local escape speed. that braking burn is the orbit insertion. loi for lunar (apollo, lro), moi for mars (maven, mro, tianwen-1), and so on."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "propulsive-landing",
+    "title": "Propulsive Landing",
+    "intro": "Landing on rockets alone — the only way down on an airless world like the Moon, and how a giant like Starship will set down on Mars.",
+    "haystack": "propulsive landing landing on rockets alone — the only way down on an airless world like the moon, and how a giant like starship will set down on mars. the propellant cost is set by the rocket equation and the speed to cancel. on the moon a lander must kill its full orbital or approach speed on the engine, which is why so much of a lunar lander's mass is fuel. on mars the atmosphere does the expensive first half for free (the heat shield), leaving the engine to handle only the final, slow kilometres — but for a heavy vehicle even that is a large burn."
   },
   {
     "tab": "mission-phases",

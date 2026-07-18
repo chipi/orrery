@@ -1,0 +1,15 @@
+{
+  "title": "Frenado aerodinámico",
+  "intro_sentence": "Reducir una órbita de captura amplia a una órbita de trabajo con casi ningún combustible, rozando la parte superior de la atmósfera de un planeta en cada pasada.",
+  "narrative_101": [
+    "Cuando un orbitador llega a un planeta, realiza una maniobra de captura para entrar en órbita, pero frenar completamente hasta una órbita cerrada y útil requeriría una cantidad enorme de combustible. Por eso los planificadores de misiones engañan a la física con la atmósfera: capturan en una órbita elíptica amplia y suelta, y luego dejan que la sonda roce la parte superior del aire en el punto más bajo de cada órbita. Cada contacto con el aire delgado reduce un poco la velocidad, y el lado opuesto de la órbita desciende gradualmente.",
+    "Repetir esto cientos de veces durante semanas o meses encoge la elipse amplia de captura hasta convertirse en la órbita casi circular que la misión realmente necesita, todo al precio del pequeño impulso de captura, no del enorme que requeriría una inserción totalmente propulsada. Es uno de los grandes ahorros de combustible en astronáutica.",
+    "La dificultad es que es lento y delicado. Si rozas demasiado superficialmente no pasa nada; si te adentras demasiado, el calor o las fuerzas aerodinámicas pueden dañar o hacer rotar la sonda. Los controladores ajustan el punto más bajo hacia arriba y hacia abajo en cada pasada, manteniéndose en un estrecho margen entre 'demasiado poco' y 'demasiado' durante meses."
+  ],
+  "body_paragraphs": [
+    "El frenado aerodinámico intercambia propelente por tiempo y paciencia. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN y Magellan de Venus lo utilizaron para alcanzar sus órbitas finales, ahorrando cientos de kilogramos de combustible que de otro modo habría que lanzar desde la Tierra, a menudo más que la masa en seco de la propia sonda.",
+    "La física es la misma resistencia que frena una sonda, aplicada en pequeñas dosis repetidas a velocidad orbital en lugar de una entrada feroz única. Dado que la sonda solo roza el aire más exterior y más delgado, cada pasada reduce solo algunos metros por segundo, pero las órbitas se repiten y el efecto se acumula. Los paneles solares, orientados de canto o usados como superficies de frenado, a menudo soportan la carga.",
+    "La aerocaptura es la prima más audaz: frenar lo suficiente en una ÚNICA pasada profunda para pasar directamente de la llegada a una órbita capturada, sin ningún impulso de captura. Ahorraría aún más combustible, pero requiere un escudo térmico y una guía de precisión, y ninguna misión la ha volado aún; la versión paciente y de bajo riesgo del frenado aerodinámico sigue siendo la más utilizada."
+  ],
+  "diagram_caption": "Frenado aerodinámico: captura en una elipse amplia, luego rozar la atmósfera superior en el periapsis en cada pasada; cada rozadura reduce el apoapsis hasta que la órbita es circular."
+}

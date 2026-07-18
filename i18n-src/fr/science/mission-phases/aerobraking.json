@@ -1,0 +1,15 @@
+{
+  "title": "Aérofreinage",
+  "intro_sentence": "Réduire une large orbite de capture à une orbite de travail avec presque pas de carburant — en effleurant le sommet de l'atmosphère d'une planète à chaque passage.",
+  "narrative_101": [
+    "Quand un orbiteur arrive à une planète, il effectue une manœuvre de capture pour entrer en orbite — mais s'arrêter complètement dans une orbite serrée et utile consommerait énormément de carburant. Les planificateurs de missions contournent donc la physique avec l'atmosphère : ils captent dans une grande ellipse lâche, puis laissent le vaisseau effleurer le sommet de l'air au point bas de chaque orbite. Chaque friction dans l'air mince vole un peu de vitesse, et le côté lointain de l'orbite s'abaisse légèrement.",
+    "En répétant cela plusieurs centaines de fois sur des semaines ou des mois, la large ellipse de capture se rétrécit en orbite quasi-circulaire que la mission désire réellement — tout au prix de la petite manœuvre de capture, non pas de l'énorme consommation qu'une insertion purement propulsive exigerait. C'est l'une des plus grandes économies de carburant en astronautique.",
+    "Le hic, c'est que c'est lent et délicat. Effleurer trop peu et rien ne se passe ; effleurer trop profondément et le chauffage ou les forces aérodynamiques peuvent endommager ou faire basculer le vaisseau. Les contrôleurs ajustent le point bas vers le haut et le bas à chaque passage, naviguant un corridor étroit entre « trop peu » et « trop » pendant des mois."
+  ],
+  "body_paragraphs": [
+    "L'aérofreinage échange le carburant contre du temps et de la patience. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN et Magellan de Vénus l'ont tous utilisé pour atteindre leurs orbites finales, économisant des centaines de kilogrammes de carburant qui auraient dû être lancés depuis la Terre — souvent plus que la masse sèche du vaisseau lui-même.",
+    "La physique est la même traînée qui freine une sonde, appliquée en petites doses répétées à vitesse orbitale plutôt qu'une seule entrée féroce. Puisque le vaisseau ne frôle que l'air le plus étendu et le plus mince, chaque passage réduit juste quelques mètres par seconde — mais les orbites se répètent, et l'effet s'accumule. Les panneaux solaires, orientés de profil ou utilisés comme surfaces de freinage, supportent souvent la charge.",
+    "L'aérocapture est la cousine plus audacieuse : freiner suffisamment lors d'UN SEUL passage profond pour passer directement de l'arrivée à une orbite capturée, sans manœuvre de capture du tout. Cela économiserait encore plus de carburant, mais cela exige un bouclier thermique et un guidage à la fraction de seconde, et aucune mission ne l'a encore flown — la version patiente et à faible risque de l'aérofreinage reste l'incontournable."
+  ],
+  "diagram_caption": "Aérofreinage : capture dans une large ellipse, puis effleurement de l'atmosphère supérieure à chaque passage du périapsis ; chaque plongée abaisse l'apoapsis jusqu'à ce que l'orbite soit circulaire."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Aerobraking",
+  "intro_sentence": "Ridurre un'ampia orbita di cattura a un'orbita di lavoro per quasi nulla di carburante — immergendosi nella parte superiore dell'atmosfera di un pianeta un po' ad ogni passaggio.",
+  "narrative_101": [
+    "Quando un orbiter arriva su un pianeta, accende il motore di cattura per entrare in orbita — ma fermarsi completamente in un'orbita stretta e utile costerebbe una quantità enorme di carburante. Così i pianificatori della missione ingannano la fisica con l'atmosfera: catturano in una grande ellisse ampia e lascia che il veicolo spaziale sfiorare la parte superiore dell'aria nel punto più basso di ogni orbita. Ogni contatto con l'aria sottile ruba un po' di velocità, e il lato opposto dell'orbita si abbassa un po' più basso.",
+    "Fai questo un paio di cento volte nel corso di settimane o mesi e l'ampia ellisse di cattura si contrae nell'orbita quasi circolare di osservazione scientifica che la missione effettivamente desidera — tutto al prezzo del piccolo burn di cattura, non dell'enorme one che l'inserimento propulsivo completo richiederebbe. È uno dei grandi affari di carburante nel volo spaziale.",
+    "Il rovescio della medaglia è che è lento e delicato. Immergiti troppo basso e non succede nulla; immergiti troppo in profondità e il riscaldamento o le forze aerodinamiche possono danneggiare o far roteare il veicolo spaziale. I controllori spingono il punto più basso su e giù passaggio per passaggio, cavalcando un corridoio stretto tra 'troppo poco' e 'troppo' per mesi interi."
+  ],
+  "body_paragraphs": [
+    "L'aerobraking scambia propellente per tempo e pazienza. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN e Venus's Magellan lo hanno usato per raggiungere le loro orbite finali, risparmiando centinaia di chilogrammi di carburante che altrimenti avrebbero dovuto essere lanciati dalla Terra — spesso più della massa secca del veicolo spaziale stesso.",
+    "La fisica è la stessa resistenza che atterra una sonda, applicata in dosi minuscole e ripetute alla velocità orbitale invece di un'unica discesa feroce. Poiché il veicolo spaziale sfiora solo l'aria più esterna e più sottile, ogni passaggio perde solo pochi metri al secondo — ma le orbite si ripetono, e l'effetto si accumula. I pannelli solari, girati di taglio o usati come superfici di frenata, spesso sopportano il carico.",
+    "L'aerocattura è la cugina più audace: frenare abbastanza su UN singolo passaggio profondo per passare direttamente dall'arrivo a un'orbita catturata, niente capture burn affatto. Risparmierebbe ancora più carburante, ma richiede uno scudo termico e una guida al secondo, e nessuna missione l'ha ancora volata — la versione paziente e a basso rischio dell'aerobraking rimane la spina dorsale."
+  ],
+  "diagram_caption": "Aerobraking: cattura in un'ampia ellisse, poi sfioramento dell'atmosfera superiore al periapsi passaggio dopo passaggio; ogni immersione abbassa l'apoapsi fino a quando l'orbita è circolare."
+}

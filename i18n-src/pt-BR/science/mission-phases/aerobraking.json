@@ -1,0 +1,15 @@
+{
+  "title": "Frenagem Aerodinâmica",
+  "intro_sentence": "Reduzir uma órbita de captura ampla para uma órbita operacional com quase nenhum combustível — mergulhando no topo da atmosfera de um planeta a cada passagem.",
+  "narrative_101": [
+    "Quando um orbitador chega a um planeta, ele aciona uma queimada de captura para entrar em órbita — mas parar completamente em uma órbita apertada e útil custaria uma enorme quantidade de combustível. Então os planejadores de missão trapaceiam a física usando a atmosfera: capturam em uma grande elipse solta, depois deixam a sonda raspar o topo do ar no ponto mais baixo de cada órbita. Cada contato com ar rarefeito rouba um pouco de velocidade, e o lado oposto da órbita desce um pouco mais.",
+    "Fazendo isto umas centenas de vezes ao longo de semanas ou meses, a ampla elipse de captura se encolhe até virar a órbita quase circular que a missão realmente quer — tudo pelo preço da pequena queimada de captura, não a enorme que uma inserção totalmente propulsiva exigiria. É um dos melhores negócios de combustível do voo espacial.",
+    "O problema é que é lento e delicado. Mergulhar muito raso e nada acontece; mergulhar muito fundo e o aquecimento ou as forças aerodinâmicas podem danificar ou fazer a sonda girar descontroladamente. Os operadores ajustam o ponto mais baixo para cima e para baixo a cada passagem, navegando por um corredor estreito entre 'muito pouco' e 'demais' por meses a fio."
+  ],
+  "body_paragraphs": [
+    "A frenagem aerodinâmica troca propelente por tempo e paciência. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN e Magellan de Vênus usaram para atingir suas órbitas finais, economizando centenas de quilogramas de combustível que de outra forma teriam de ser lançados da Terra — frequentemente mais que a massa seca da própria sonda.",
+    "A física é o mesmo arrasto que pousa uma sonda, aplicado em doses minúsculas e repetidas a velocidade orbital em vez de uma entrada feroz. Como a sonda apenas raspa o ar mais externo e mais rarefeito, cada passagem reduz apenas alguns metros por segundo — mas órbitas se repetem e o efeito se acumula. Painéis solares, orientados de perfil ou usados como superfícies de frenagem, frequentemente absorvem a maior parte da carga.",
+    "Aerocaptura é a prima mais ousada: frear o suficiente em uma ÚNICA passagem profunda para ir direto de chegada a uma órbita capturada, nenhuma queimada de captura. Economizaria ainda mais combustível, mas exige um escudo térmico e orientação fracionada, e nenhuma missão a voou ainda — a versão paciente e de baixo risco da frenagem aerodinâmica permanece como a ferramenta de trabalho."
+  ],
+  "diagram_caption": "Frenagem aerodinâmica: captura em uma elipse ampla, depois raspar a atmosfera superior no periapsia a cada passagem; cada mergulho baixa o apoapsia até a órbita ficar circular."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Voortgestuwde landing",
+  "intro_sentence": "Landing op raketmotoren alleen — de enige manier omlaag op een wereld zonder lucht zoals de Maan, en hoe een reus als Starship op Mars zal neerdalen.",
+  "narrative_101": [
+    "Op een wereld zonder lucht is er niets voor een parachute om grip op te krijgen. De enige manier om af te remmen is een motor naar de grond te wijzen en te branden — propellant ruilen voor elke meter per seconde snelheid die je moet opheffen. Dit is voortgestuwde landing, en zo hebben alle maanlanders van Apollo tot vandaag geland: een lange rembranding, gevolgd door zachtjes gasgeven om tot stilstand op het oppervlak te komen.",
+    "Het is onvergeeflijk. Neem te weinig propellant mee en je raakt op voordat je stopt; bedien de motor verkeerd en je slaat neer of klimt weer omhoog. De motor moet diep regelbaar zijn, de geleiding moet het brandstof-versus-tijd probleem in realtime oplossen, en er is geen tweede kans — je kunt geen parachute uitstekken. Apollo's astronauten zagen de brandstofmeter naar nul dalen terwijl zij naar een veilige plek zochten.",
+    "Mars zit ertussenin. Zijn lucht is dun — genoeg om een lichte lander met parachute te helpen, maar nutteloos voor een voertuig zo massief als SpaceX's Starship. Voor die dingen is het plan voortgestuwde landing helemaal: hypersonische ingang om het meeste van de snelheid op het hiteschild af te remmen, dan een landingsbranding naar het oppervlak, helemaal geen parachute — zeer veel zoals landen op de Maan, maar dan aankomst door een zuchtje atmosfeer."
+  ],
+  "body_paragraphs": [
+    "De propellantkosten worden bepaald door de raketvergelijking en de snelheid die je moet opheffen. Op de Maan moet een lander zijn volledige baan- of naderingssnelheid op de motor opheffen, daarom bestaat veel van de massa van een maanlander uit brandstof. Op Mars doet de atmosfeer het dure eerste deel gratis voor je (het hiteschild), waardoor de motor alleen de laatste, langzame kilometer hoeft af te handelen — maar voor een zwaar voertuig is dat ook al een grote branding.",
+    "Gasregeling is het hart ervan. Een landingsmotor moet soepel kunnen lopen van volledige stuwkracht naar een fractie daarvan, zodat het voertuig een vallende afdaalsnelheid kan volgen en bij stapsnelheid op de grond kan stilstaan. Diep regelbare motoren (de Apollo afdalingsmotor, de sky-crane's MLE-thrusters, Starship's Raptors) maken een gecontroleerde landing — eerder dan een gecontroleerde crash — mogelijk.",
+    "Op `/fly` is elke maanlanding in `?descent=1` voortgestuwd van begin tot eind (geen parachute in vacuüm), en de Starship Mars-profielen remmen op het hiteschild en landen op hun motoren. De afstelhoogtemeter retro-indicator + de brandstofmeting volgen de branding — dezelfde opgave die Apollo's crews oog-gebaseerd hebben opgelost, nu getoond als live telemetrie."
+  ],
+  "diagram_caption": "Voortgestuwde landing: zonder bruikbare lucht heft een motor direct de afdaalsnelheid op — een rembranding, dan voorzichtig gasgeven tot touchdown."
+}

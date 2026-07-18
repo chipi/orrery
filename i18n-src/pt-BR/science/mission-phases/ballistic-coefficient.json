@@ -1,0 +1,15 @@
+{
+  "title": "Coeficiente Balístico",
+  "intro_sentence": "O número único — massa dividida pela área de arrasto — que determina a velocidade de queda de uma nave espacial na atmosfera e se ela consegue frear a tempo.",
+  "narrative_101": [
+    "Solte uma pena e um martelo no ar e a pena desce lentamente enquanto o martelo cai desabando. A diferença é o coeficiente balístico: quanta massa cada um carrega atrás de quanta área de arrasto. Um coeficiente balístico baixo (muito arrasto, pouca massa) cai lentamente; um alto (compacto e pesado) cai rápido. É o número único que mais determina como uma nave espacial desce.",
+    "Engenheiros de pouso gastam esforço enorme para manter o coeficiente balístico baixo. Um protetor térmico arredondado, um paraquedas gigante, um decelerador inflável — todos são maneiras de adicionar área de arrasto sem adicionar muita massa, para que o veículo perca velocidade mais alto onde há mais coluna de ar para trabalhar. Quanto maior e mais pesado o carregamento, mais difícil essa luta se torna.",
+    "Esta é a razão silenciosa pela qual Marte é tão difícil. Seu ar é fino, então mesmo um grande paraquedas em um módulo modesto só reduz a velocidade até certo ponto — o coeficiente balístico é muito alto para parar apenas com arrasto. Cada módulo de pouso em Marte precisa de um segundo ato (foguetes de retropropulsão, bolsas de ar, um guindaste celeste), enquanto uma sonda leve em Vênus, em ar denso, pode descer flutuando apenas com arrasto."
+  ],
+  "body_paragraphs": [
+    "Formalmente o coeficiente balístico é massa ÷ (coeficiente de arrasto × área de referência). A velocidade terminal escala com sua raiz quadrada, então reduzir o coeficiente balístico pela metade desacelera a queda em cerca de 30%. A desaceleração máxima e o aquecimento máximo também aumentam com ele — uma entrada mais pesada e compacta colide com a atmosfera mais forte e mais quente, razão pela qual grandes veículos enfrentam o pior dos dois cenários.",
+    "Ele também define ONDE na descida a ação acontece. Um veículo com coeficiente balístico baixo desacelera alto, no ar fino, dando mais tempo e altitude para as fases terminais. Um com coeficiente alto carrega sua velocidade profundamente na atmosfera antes que o arrasto a alcance, comprimindo toda a sequência nos últimos quilômetros — exatamente o aperto que faz de um pouso pesado em Marte uma corrida contra o solo.",
+    "Em `/fly`, o contraste é visível entre corpos com `?descent=1`. Um módulo de pouso leve em Marte sob um grande paraquedas (coeficiente balístico baixo) desce suavemente; uma Starship de 100 toneladas (muito alto) deve frear propulsivamente; uma sonda em Vênus em ar denso desce flutuando em uma pequena placa de arrasto. Mesma física, três coeficientes balísticos, três descidas muito diferentes."
+  ],
+  "diagram_caption": "Coeficiente balístico = massa ÷ área de arrasto. Baixo (grande paraquedas, carregamento leve) → desaceleração lenta e em altitude elevada; alto (pesado, compacto) → entrada rápida, profunda e quente."
+}

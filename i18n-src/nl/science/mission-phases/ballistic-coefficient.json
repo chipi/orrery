@@ -1,0 +1,15 @@
+{
+  "title": "Ballistisch coëfficiënt",
+  "intro_sentence": "Het enkele getal — massa gedeeld door weerstandsoppervlak — dat bepaalt hoe snel een ruimtevaartuig door een atmosfeer valt, en of het op tijd kan stoppen.",
+  "narrative_101": [
+    "Laat een veer en een hamer in lucht vallen en de veer drijft langzaam omlaag terwijl de hamer naar beneden plonst. Het verschil is de ballistisch coëfficiënt: hoeveel massa achter hoeveel weerstandsoppervlak. Een lage ballistisch coëfficiënt (veel weerstand, weinig massa) valt langzaam; een hoge (compact en zwaar) valt snel. Het is het ene getal dat het meest bepaalt hoe een ruimtevaartuig naar beneden komt.",
+    "Landingsengineers besteden enorme inspanning om de ballistisch coëfficiënt laag te houden. Een stomp hitteschild, een gigantische parachute, een opblaasbare remmer — het zijn allemaal manieren om weerstandsoppervlak toe te voegen zonder veel massa, zodat het voertuig hoger snelheid afstoot waar meer luchtkolom overblijft. Hoe groter en zwaarder de lading, hoe moeilijker dit gevecht wordt.",
+    "Dit is de stille reden waarom Mars zo moeilijk is. De lucht is dun, dus zelfs een grote parachute op een bescheiden lander remt de snelheid slechts zover — de ballistisch coëfficiënt is te hoog om alleen op weerstand te stoppen. Elke Mars-lander heeft een tweede act nodig (retroraketten, luchtkussens, een sky-crane), terwijl een lichte sonde op Venus, in dichte lucht, alleen op weerstand omlaag kan drijven."
+  ],
+  "body_paragraphs": [
+    "Formeel is de ballistisch coëfficiënt massa ÷ (weerstandscoëfficiënt × referentieoppervlak). Eindsnelheid schaalt met de wortel ervan, dus halvering van de ballistisch coëfficiënt vertraagt de val met ongeveer 30%. Piekvertraging en piekverwarming nemen beide met het getal toe — een zwaarder en compacter voertuig raakt de atmosfeer harder en heter, wat verklaart waarom grote voertuigen het ergste van allebei ondergaan.",
+    "Het bepaalt ook WAAR in de afdaling het gebeurt. Een voertuig met lage ballistisch coëfficiënt vertraagt hoog op, in dunne lucht, wat meer tijd en hoogte geeft voor de eindstadia. Eentje met hoog getal behoudt snelheid diep in de atmosfeer voordat weerstand inhaalt, wat de hele reeks in de laatste paar kilometers perst — precies de druk die een zware Mars-landing een race tegen de grond maakt.",
+    "Op `/fly` is het contrast zichtbaar over hemellichamen in `?descent=1`. Een lichte Mars-lander onder een grote parachute (lage ballistisch coëfficiënt) daalt voorzichtig; een 100-ton Starship (zeer hoog) moet propulsief remmen; een Venus-sonde in dichte lucht drijft op een klein weerstandsplaatje. Dezelfde natuurkunde, drie ballistisch coëfficiënten, drie totaal verschillende afdalingen."
+  ],
+  "diagram_caption": "Ballistisch coëfficiënt = massa ÷ weerstandsoppervlak. Laag (grote parachute, lichte lading) → langzame, hoogteverlaging; hoog (zwaar, compact) → snelle, diepe, hete ingang."
+}

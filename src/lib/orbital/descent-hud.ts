@@ -21,6 +21,7 @@ export const EDL_PHASE_LABEL: Record<EDLPhaseKind, string> = {
   airbag_bounce: 'AIRBAG DESCENT',
   aeroshell_descent: 'AEROSHELL DESCENT',
   direct_impact: 'HARD DESCENT',
+  touch_and_go_contact: 'TOUCH-AND-GO',
   coast: 'COAST',
 };
 
@@ -36,6 +37,12 @@ export const EDL_BEAT_LABEL: Record<DescentEventType, string> = {
   skycrane_flyaway: 'FLYAWAY',
   retro_ignition: 'RETRO',
   airbag_deploy: 'AIRBAG',
+  harpoon_fire: 'HARPOON',
+  first_contact: 'CONTACT',
+  bounce: 'BOUNCE',
+  sample_collected: 'SAMPLE',
+  parachute_jettison: 'CHUTE SEP',
+  probe_signal_lost: 'SIGNAL LOST',
   touchdown: 'TOUCHDOWN',
 };
 

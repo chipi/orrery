@@ -36,8 +36,24 @@ const DEG2RAD = Math.PI / 180;
 
 // ─── Types ──────────────────────────────────────────────────────────
 
-/** A destination body the descent engine can land on. */
-export type DescentBody = 'moon' | 'mars' | 'venus';
+/**
+ * A destination body the descent engine can land on (or, for Jupiter, descend
+ * into). Phase 1: Moon/Mars/Venus. Phase 2 (RFC-034 §12) adds Titan (thick cold
+ * N₂), Jupiter (atmosphere, no solid surface), comet 67P and the sampled
+ * asteroids (micro-g, airless), each keyed to its real μ/R so the felt-g and
+ * timeline stay honest across ten-orders-of-magnitude gravity.
+ */
+export type DescentBody =
+  | 'moon'
+  | 'mars'
+  | 'venus'
+  | 'titan'
+  | 'jupiter'
+  | 'comet_67p'
+  | 'itokawa'
+  | 'ryugu'
+  | 'bennu'
+  | 'eros';
 
 /**
  * The physical behaviour of one EDL phase. Determines defaults for the
@@ -50,9 +66,10 @@ export type EDLPhaseKind =
   | 'powered_retro' // retro-rocket braking (Apollo/Viking/Phoenix/InSight/lunar)
   | 'skycrane' // hover + tether-lower (Curiosity/Perseverance)
   | 'airbag_bounce' // airbag impact + settle (Pathfinder/MER)
-  | 'aeroshell_descent' // dense-atmosphere passive braking (Venera/Vega)
+  | 'aeroshell_descent' // dense-atmosphere passive braking (Venera/Vega/Huygens/Galileo)
   | 'direct_impact' // no soft-landing system — hard arrival (Luna 9-class)
-  | 'coast'; // unpowered coast (e.g. terminal free-fall to the surface)
+  | 'touch_and_go_contact' // micro-g sample contact then immediate departure (Hayabusa/OSIRIS-REx)
+  | 'coast'; // unpowered coast (e.g. terminal free-fall, or comet drift between bounces)
 
 /** Discrete descent beats the HUD + scene key off. */
 export type DescentEventType =
@@ -66,11 +83,21 @@ export type DescentEventType =
   | 'skycrane_flyaway'
   | 'retro_ignition'
   | 'airbag_deploy'
+  | 'harpoon_fire' // comet anchoring attempt (Philae)
+  | 'first_contact' // first surface touch (comet bounce / asteroid TAG)
+  | 'bounce' // rebound off a low-g surface (Philae, MER airbags)
+  | 'sample_collected' // touch-and-go sample horn fired, ascent begins
+  | 'parachute_jettison' // drogue/main chute released (Huygens two-chute, Galileo)
+  | 'probe_signal_lost' // atmospheric probe crushed / comms end (Galileo, no surface)
   | 'touchdown';
 
-/** When a phase ends. `ground` fires at h ≤ 0 (touchdown). */
+/**
+ * When a phase ends. `ground` fires at h ≤ 0 (touchdown). `pressure_pa` fires
+ * when the ambient pressure exceeds `value` — the terminus for a body with no
+ * solid surface (Jupiter probe crush), where `ground` never trips.
+ */
 export interface EDLEndTrigger {
-  type: 'altitude_m' | 'velocity_ms' | 'duration_s' | 'ground';
+  type: 'altitude_m' | 'velocity_ms' | 'duration_s' | 'ground' | 'pressure_pa';
   value: number;
 }
 
@@ -215,6 +242,21 @@ export function bodyGravity(altM: number, body: DescentBody): number {
   return MU_BODY_M3_S2[body] / (r * r);
 }
 
+/**
+ * Ambient atmospheric pressure (Pa) at altitude — isothermal hydrostatic
+ * P(h) = ρ₀·g·H·exp(−h/H). Unlike `bodyAirDensity`, altitude is NOT clamped at
+ * the datum, so pressure keeps rising as an atmospheric probe sinks below it
+ * (Jupiter has no solid surface — the `pressure_pa` end-trigger fires here).
+ * Airless bodies return 0.
+ */
+export function bodyAmbientPressurePa(altM: number, body: DescentBody): number {
+  const rho0 = SURFACE_DENSITY_KGM3[body];
+  if (rho0 <= 0) return 0;
+  const gSurf = MU_BODY_M3_S2[body] / (R_BODY_M[body] * R_BODY_M[body]);
+  const H = ATM_SCALE_HEIGHT_M[body];
+  return rho0 * gSurf * H * Math.exp(-altM / H);
+}
+
 /** Dynamic pressure q = ½ρv² (Pa). */
 export function dynamicPressure(densityKgM3: number, speedMs: number): number {
   return 0.5 * densityKgM3 * speedMs * speedMs;
@@ -256,6 +298,7 @@ function triggerMet(
   altM: number,
   velMs: number,
   tInPhase: number,
+  ambientPa: number,
 ): boolean {
   switch (trigger.type) {
     case 'altitude_m':
@@ -266,6 +309,8 @@ function triggerMet(
       return tInPhase >= trigger.value;
     case 'ground':
       return altM <= 0;
+    case 'pressure_pa':
+      return ambientPa >= trigger.value;
   }
 }
 
@@ -404,7 +449,10 @@ export function integrateDescent(
 
     // Phase transition. `ground` is handled by the h ≤ 0 break above; other
     // triggers advance to the next phase (staying on the last if exhausted).
-    if (phase.endTrigger.type !== 'ground' && triggerMet(phase.endTrigger, h, v, t - phaseStartT)) {
+    if (
+      phase.endTrigger.type !== 'ground' &&
+      triggerMet(phase.endTrigger, h, v, t - phaseStartT, bodyAmbientPressurePa(h, body))
+    ) {
       if (phaseIndex < profile.phases.length - 1) {
         phaseIndex += 1;
         phaseStartT = t;

@@ -14,6 +14,20 @@
 
 import type { DescentBody, DescentProfile, EDLPhase } from './descent-physics';
 
+/** Runtime allowlist of destination bodies the engine accepts (validation). */
+const DESCENT_BODIES = [
+  'moon',
+  'mars',
+  'venus',
+  'titan',
+  'jupiter',
+  'comet_67p',
+  'itokawa',
+  'ryugu',
+  'bennu',
+  'eros',
+] as const satisfies readonly DescentBody[];
+
 // ─── Archetypes ─────────────────────────────────────────────────────
 
 /** The six EDL archetypes covering all 37 Moon/Mars/Venus landers. */
@@ -307,7 +321,8 @@ function isValidRaw(d: unknown): d is RawDescentProfile {
   return (
     typeof p.missionId === 'string' &&
     typeof p.siteId === 'string' &&
-    (p.body === 'moon' || p.body === 'mars' || p.body === 'venus') &&
+    typeof p.body === 'string' &&
+    (DESCENT_BODIES as readonly string[]).includes(p.body) &&
     typeof p.entryMassKg === 'number' &&
     typeof p.entryCdA === 'number' &&
     typeof p.archetype === 'string' &&

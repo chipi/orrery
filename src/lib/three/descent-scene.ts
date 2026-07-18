@@ -26,7 +26,18 @@ import { buildDescentModel } from '$lib/three/descent-models';
 import type { FlightPhaseScene, ForceKey } from '$lib/three/flight-phase-scene';
 
 /** Body mean radius (km, scene units). */
-const R_BODY_KM: Record<DescentBody, number> = { moon: 1737.4, mars: 3389.5, venus: 6051.8 };
+const R_BODY_KM: Record<DescentBody, number> = {
+  moon: 1737.4,
+  mars: 3389.5,
+  venus: 6051.8,
+  titan: 2574.7,
+  jupiter: 69911,
+  comet_67p: 1.72,
+  itokawa: 0.165,
+  ryugu: 0.448,
+  bennu: 0.245,
+  eros: 8.42,
+};
 
 /** Per-body sky/atmosphere grading — inverse of the ascent "blue → black". */
 interface SkyConfig {
@@ -57,6 +68,26 @@ const SKY: Record<DescentBody, SkyConfig> = {
     fadeKm: 90,
     rim: { color: 0xffb347, opacity: 0.5 },
   },
+  titan: {
+    high: new THREE.Color('#0a0805'),
+    low: new THREE.Color('#c88a3c'),
+    stars: false, // opaque orange haze
+    fadeKm: 200,
+    rim: { color: 0xd8933c, opacity: 0.45 },
+  },
+  jupiter: {
+    high: new THREE.Color('#0b0805'),
+    low: new THREE.Color('#c8a878'),
+    stars: false, // deep banded cloud murk (no surface)
+    fadeKm: 300,
+    rim: { color: 0xd8b88a, opacity: 0.4 },
+  },
+  // Airless micro-g bodies — black sky, stars, near-instant fade.
+  comet_67p: { high: new THREE.Color('#020305'), low: new THREE.Color('#050608'), stars: true, fadeKm: 2 },
+  itokawa: { high: new THREE.Color('#03040a'), low: new THREE.Color('#05060c'), stars: true, fadeKm: 1 },
+  ryugu: { high: new THREE.Color('#03040a'), low: new THREE.Color('#05060c'), stars: true, fadeKm: 1 },
+  bennu: { high: new THREE.Color('#03040a'), low: new THREE.Color('#05060c'), stars: true, fadeKm: 1 },
+  eros: { high: new THREE.Color('#03040a'), low: new THREE.Color('#05060c'), stars: true, fadeKm: 2 },
 };
 
 /** Rendered lander length (km, world units) — exaggerated so it reads against

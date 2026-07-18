@@ -1,6 +1,8 @@
 # Descent & Landing — Phase 2: outer + small-body EDL (RFC-034 §12)
 
-**GH issue:** #418 · **Started:** 2026-07-18 · **Branch:** `launch` (uncommitted work lands here)
+**GH issue:** #418 · **Started:** 2026-07-18 · **Branch:** `launch`
+
+**Progress:** S1 ✅ (f57b86ce69) · S2 ✅ · S3–S7 pending. Each slice committed separately, typecheck-green.
 
 Phase 1 (Moon/Mars/Venus, 37 missions) shipped. Phase 2 extends the `/fly`
 Descent & Landing act to the **7 lander/probe missions outside that scope**,

@@ -30,7 +30,10 @@ const DESCENT_BODIES = [
 
 // ─── Archetypes ─────────────────────────────────────────────────────
 
-/** The six EDL archetypes covering all 37 Moon/Mars/Venus landers. */
+/** EDL archetypes. The first seven cover the 37 Moon/Mars/Venus landers
+ *  (Phase 1); the last four cover the outer + small-body EDL (Phase 2,
+ *  RFC-034 §12): asteroid touch-and-go, comet bounce-landing, Titan parachute
+ *  descent, and the Jupiter atmospheric probe (no surface). */
 export type ArchetypeName =
   | 'LUNAR_POWERED'
   | 'LUNA_DIRECT_IMPACT'
@@ -38,7 +41,11 @@ export type ArchetypeName =
   | 'MARS_AIRBAG'
   | 'MARS_SKYCRANE'
   | 'MARS_PROPULSIVE'
-  | 'VENUS_AEROSHELL';
+  | 'VENUS_AEROSHELL'
+  | 'ASTEROID_TOUCH_AND_GO'
+  | 'COMET_HARPOON'
+  | 'TITAN_PARACHUTE'
+  | 'JUPITER_PROBE';
 
 /**
  * Per-mission knobs an archetype reads to build its phase sequence. Every field
@@ -68,6 +75,11 @@ export interface ArchetypeParams {
   descentRateGain?: number;
   /** Airbag/impact speed (m·s⁻¹) the powered brake eases to before release. */
   airbagReleaseMs?: number;
+  /** Altitude (m) of surface contact for touch-and-go / comet landing. */
+  contactAltM?: number;
+  /** Ambient pressure (Pa) at which an atmospheric probe is crushed / lost
+   *  (Jupiter — the descent has no solid-surface terminus). */
+  crushPressurePa?: number;
 }
 
 type ArchetypeBuilder = (p: ArchetypeParams) => EDLPhase[];
@@ -202,6 +214,92 @@ const MARS_PROPULSIVE: ArchetypeBuilder = (p) => [
   },
 ];
 
+/** Asteroid sample touch-and-go (Hayabusa/OSIRIS-REx). Airless micro-g: a slow
+ *  guided descent from the station-keeping point to a feather-light contact,
+ *  the sample horn fires, and the craft immediately backs away — there is no
+ *  landing, so it ends on `touch_and_go_contact`, not a survivable touchdown. */
+const ASTEROID_TOUCH_AND_GO: ArchetypeBuilder = (p) => [
+  {
+    kind: 'powered_retro',
+    endTrigger: { type: 'altitude_m', value: p.contactAltM ?? 1 },
+    ispS: p.ispS ?? 290,
+    terminalVelocityMs: p.terminalVelocityMs ?? 0.1,
+    descentRateGain: p.descentRateGain ?? 0.02,
+    events: ['retro_ignition'],
+  },
+  {
+    kind: 'touch_and_go_contact',
+    endTrigger: { type: 'ground', value: 0 },
+    events: ['first_contact', 'sample_collected'],
+  },
+];
+
+/** Comet bounce-landing (Philae on 67P). Unpowered micro-g free-descent to the
+ *  nucleus; the harpoons fire (Philae's failed), the lander touches at ~1 m·s⁻¹,
+ *  rebounds and drifts, and finally settles — the multi-contact drama carried by
+ *  the event beats rather than a rebound in the 1-DOF integrator. */
+const COMET_HARPOON: ArchetypeBuilder = (p) => [
+  {
+    kind: 'coast',
+    endTrigger: { type: 'altitude_m', value: p.contactAltM ?? 20 },
+    events: ['harpoon_fire'],
+  },
+  {
+    kind: 'airbag_bounce',
+    endTrigger: { type: 'ground', value: 0 },
+    events: ['first_contact', 'bounce', 'touchdown'],
+  },
+];
+
+/** Titan parachute descent (Huygens). Hypersonic aeroshell entry, a pilot/drogue
+ *  chute pulls the main, then the heat shield drops and a small stabiliser chute
+ *  carries the probe through the thick cold N₂ to a ~5 m·s⁻¹ surface contact —
+ *  a ~2.5-hour descent. */
+const TITAN_PARACHUTE: ArchetypeBuilder = (p) => [
+  {
+    kind: 'ballistic_entry',
+    endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 160000 },
+  },
+  {
+    kind: 'parachute',
+    endTrigger: { type: 'altitude_m', value: p.terminalHandoffAltM ?? 120000 },
+    cdA: p.parachuteCdA ?? 12,
+    jettisonKg: p.heatshieldKg ?? 80,
+    events: ['parachute_deploy', 'heatshield_sep'],
+  },
+  {
+    kind: 'aeroshell_descent',
+    endTrigger: { type: 'ground', value: 0 },
+    cdA: p.terminalCdA ?? 3,
+    jettisonKg: p.backshellKg ?? 20,
+    events: ['parachute_jettison'],
+  },
+];
+
+/** Jupiter atmospheric probe (Galileo). A ~47 km·s⁻¹ hypersonic entry (peak
+ *  ~230 g), a single parachute, then a passive descent deeper into the H₂/He
+ *  until the rising pressure crushes the probe — there is NO solid surface, so
+ *  the terminus is `pressure_pa`, not `ground`, and the beat is signal-loss. */
+const JUPITER_PROBE: ArchetypeBuilder = (p) => [
+  {
+    kind: 'ballistic_entry',
+    endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 100000 },
+  },
+  {
+    kind: 'parachute',
+    endTrigger: { type: 'altitude_m', value: p.terminalHandoffAltM ?? 50000 },
+    cdA: p.parachuteCdA ?? 8,
+    jettisonKg: p.heatshieldKg ?? 150,
+    events: ['parachute_deploy', 'heatshield_sep'],
+  },
+  {
+    kind: 'aeroshell_descent',
+    endTrigger: { type: 'pressure_pa', value: p.crushPressurePa ?? 2_200_000 }, // ~22 bar
+    cdA: p.terminalCdA ?? 3,
+    events: ['probe_signal_lost'],
+  },
+];
+
 const ARCHETYPES: Record<ArchetypeName, ArchetypeBuilder> = {
   LUNAR_POWERED,
   LUNA_DIRECT_IMPACT,
@@ -210,6 +308,10 @@ const ARCHETYPES: Record<ArchetypeName, ArchetypeBuilder> = {
   MARS_SKYCRANE,
   MARS_PROPULSIVE,
   VENUS_AEROSHELL,
+  ASTEROID_TOUCH_AND_GO,
+  COMET_HARPOON,
+  TITAN_PARACHUTE,
+  JUPITER_PROBE,
 };
 
 /** The default survivable-touchdown limit (m·s⁻¹) per archetype. */
@@ -221,6 +323,10 @@ const ARCHETYPE_SURVIVABLE: Record<ArchetypeName, number> = {
   MARS_SKYCRANE: 3,
   MARS_PROPULSIVE: 3,
   VENUS_AEROSHELL: 15,
+  ASTEROID_TOUCH_AND_GO: 1, // feather contact; not a landing
+  COMET_HARPOON: 5, // Philae touched at ~1 m/s and survived the bounces
+  TITAN_PARACHUTE: 8, // Huygens hit ~4.5 m/s
+  JUPITER_PROBE: 60, // no touchdown — high limit so the crush isn't flagged a crash
 };
 
 // ─── Thin JSON shape + expansion ────────────────────────────────────

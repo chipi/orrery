@@ -441,7 +441,15 @@ export function integrateDescent(
       nextSampleT += sampleDt;
     }
 
-    if (h <= 0) {
+    // No-surface terminus (Jupiter probe): the final phase ends when the rising
+    // pressure crushes the probe, not at a ground the body doesn't have. Let the
+    // probe sink below the datum until the pressure trigger fires.
+    if (phase.endTrigger.type === 'pressure_pa') {
+      if (bodyAmbientPressurePa(h, body) >= phase.endTrigger.value) {
+        pushEvent('probe_signal_lost');
+        break;
+      }
+    } else if (h <= 0) {
       h = 0;
       pushEvent('touchdown');
       break;

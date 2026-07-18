@@ -294,6 +294,15 @@
   {#if !flashing}
     <button class="continue" onclick={complete}>SKIP TO SURFACE →</button>
   {/if}
+
+  <!-- Compact always-on mobile strip — phase + altitude + velocity, shown on
+       touch viewports where the full HUD is decluttered so mobile still gets
+       the key EDL telemetry. -->
+  <div class="descent-mstrip" data-testid="descent-mstrip">
+    <span class="ms-phase">{status}</span>
+    <span class="ms-val">{alt.value}<i>{alt.unit}</i></span>
+    <span class="ms-val">{liveState.velocityMs.toFixed(0)}<i>M/S</i></span>
+  </div>
 </div>
 
 <style>
@@ -590,5 +599,45 @@
   .continue:hover {
     background: rgba(216, 168, 130, 0.25);
     color: #fff;
+  }
+  /* Mobile-only compact telemetry strip — shown on touch viewports (where the
+     full HUD is decluttered), always visible during descent so mobile keeps the
+     key EDL readouts. Not gated by hud-hidden. */
+  .descent-mstrip {
+    display: none;
+  }
+  @media (hover: none), (pointer: coarse) {
+    .descent-mstrip {
+      position: fixed;
+      bottom: 84px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding: 5px 14px;
+      background: rgba(4, 9, 20, 0.72);
+      border: 1px solid rgba(216, 168, 130, 0.4);
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+      z-index: 10;
+      pointer-events: none;
+    }
+  }
+  .descent-mstrip .ms-phase {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #ffcf8a;
+  }
+  .descent-mstrip .ms-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: #fff;
+  }
+  .descent-mstrip .ms-val i {
+    font-size: 9px;
+    font-style: normal;
+    color: #7d99b5;
+    margin-left: 2px;
   }
 </style>

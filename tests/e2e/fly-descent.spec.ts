@@ -13,45 +13,66 @@ import { test, expect, type Page } from '@playwright/test';
  * = all 37 land per their honest outcome); this spec covers the wired UI.
  */
 
-test.beforeEach(({ page: _page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'desktop-chromium', 'desktop-only EDL HUD reference');
-});
-
 async function enterDescent(page: Page, mission: string): Promise<void> {
   await page.goto(`/fly?mission=${mission}&descent=1`);
   await expect(page.locator('[data-testid="descent-scene"]')).toBeVisible({ timeout: 20_000 });
 }
 
-test('Apollo 11 descent mounts with honest EDL telemetry', async ({ page }) => {
+// Mobile coverage: the full HUD is decluttered on touch (like launch), so this
+// asserts the scene mounts + the compact mobile telemetry strip carries the key
+// readouts. Runs on every project (desktop + mobile).
+test('descent mounts + the mobile telemetry strip carries phase/alt/velocity', async ({
+  page,
+}, testInfo) => {
   await enterDescent(page, 'apollo11');
-  await expect(page.locator('[data-testid="descent-mission"]')).toHaveText('Apollo 11');
-  // The status is one of the EDL phase labels (ENTRY / POWERED DESCENT / TOUCHDOWN…).
-  const status = page.locator('[data-testid="descent-status"]');
-  await expect(status).toBeVisible();
-  await expect(status).not.toBeEmpty();
-  // The three EDL readouts render with numeric values.
-  const readouts = page.locator('.descent .readouts .ro');
-  await expect(readouts).toHaveCount(3);
-  await expect(page.locator('.descent .readouts')).toContainText(/ALTITUDE/);
-  await expect(page.locator('.descent .readouts')).toContainText(/VELOCITY/);
-  await expect(page.locator('.descent .readouts')).toContainText(/DECEL/);
+  await expect(page.locator('.descent .stage canvas')).toBeAttached();
+  const strip = page.locator('[data-testid="descent-mstrip"]');
+  await expect(strip).toBeAttached();
+  await expect(strip).toContainText(/M|KM/); // altitude unit
+  // The strip is display:flex only on touch viewports.
+  if (testInfo.project.name.startsWith('mobile')) {
+    await expect(strip).toBeVisible();
+  }
 });
 
-test('Curiosity descent dossier names the sky-crane EDL system', async ({ page }) => {
-  await enterDescent(page, 'curiosity');
-  await expect(page.locator('[data-testid="descent-mission"]')).toHaveText('Curiosity');
-  const dossier = page.locator('.descent .dossier');
-  await expect(dossier).toContainText('Mars');
-  await expect(dossier).toContainText('Sky-crane');
-  await expect(dossier).toContainText('km/s'); // entry velocity
-});
+// The full-HUD reference assertions are desktop-only (the HUD is display:none
+// under the mobile declutter; touch pointers race the rAF commit).
+test.describe('descent EDL HUD (desktop)', () => {
+  test.beforeEach(({ page: _page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop-chromium', 'desktop-only EDL HUD reference');
+  });
 
-test('touchdown hands off to the destination body SurfaceScene', async ({ page }) => {
-  // Beresheet is the shortest descent (~19 s → a few wall-seconds at 3×), so the
-  // full pad→surface handoff completes fast + deterministically. It closes the
-  // circle onto /moon with the landing site pre-focused.
-  test.setTimeout(45_000);
-  await enterDescent(page, 'beresheet');
-  await page.waitForURL(/\/moon\?.*site=beresheet/, { timeout: 30_000 });
-  expect(page.url()).toContain('from=descent');
+  test('Apollo 11 descent mounts with honest EDL telemetry', async ({ page }) => {
+    await enterDescent(page, 'apollo11');
+    await expect(page.locator('[data-testid="descent-mission"]')).toHaveText('Apollo 11');
+    // The status is one of the EDL phase labels (ENTRY / POWERED DESCENT / TOUCHDOWN…).
+    const status = page.locator('[data-testid="descent-status"]');
+    await expect(status).toBeVisible();
+    await expect(status).not.toBeEmpty();
+    // The three EDL readouts render with numeric values.
+    const readouts = page.locator('.descent .readouts .ro');
+    await expect(readouts).toHaveCount(3);
+    await expect(page.locator('.descent .readouts')).toContainText(/ALTITUDE/);
+    await expect(page.locator('.descent .readouts')).toContainText(/VELOCITY/);
+    await expect(page.locator('.descent .readouts')).toContainText(/DECEL/);
+  });
+
+  test('Curiosity descent dossier names the sky-crane EDL system', async ({ page }) => {
+    await enterDescent(page, 'curiosity');
+    await expect(page.locator('[data-testid="descent-mission"]')).toHaveText('Curiosity');
+    const dossier = page.locator('.descent .dossier');
+    await expect(dossier).toContainText('Mars');
+    await expect(dossier).toContainText('Sky-crane');
+    await expect(dossier).toContainText('km/s'); // entry velocity
+  });
+
+  test('touchdown hands off to the destination body SurfaceScene', async ({ page }) => {
+    // Beresheet is the shortest descent (~19 s → a few wall-seconds at 3×), so the
+    // full pad→surface handoff completes fast + deterministically. It closes the
+    // circle onto /moon with the landing site pre-focused.
+    test.setTimeout(45_000);
+    await enterDescent(page, 'beresheet');
+    await page.waitForURL(/\/moon\?.*site=beresheet/, { timeout: 30_000 });
+    expect(page.url()).toContain('from=descent');
+  });
 });

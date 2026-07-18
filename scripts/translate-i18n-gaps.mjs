@@ -570,8 +570,15 @@ async function main() {
     process.exit(1);
   }
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-  const gaps = findGaps();
-  console.log(`Found ${gaps.length} translation gaps across ${LOCALES.length} locales.`);
+  // Optional `--only=<substring>` filter: scope the run to overlay paths that
+  // include the substring (e.g. --only=science/mission-phases), so a targeted
+  // fix doesn't sweep every unrelated gap in the tree. No arg = all gaps.
+  const onlyArg = process.argv.find((a) => a.startsWith('--only='))?.slice('--only='.length);
+  let gaps = findGaps();
+  if (onlyArg) gaps = gaps.filter((g) => g.rel.includes(onlyArg));
+  console.log(
+    `Found ${gaps.length} translation gaps across ${LOCALES.length} locales${onlyArg ? ` (filtered to "${onlyArg}")` : ''}.`,
+  );
   if (gaps.length === 0) {
     console.log('Nothing to do.');
     return;

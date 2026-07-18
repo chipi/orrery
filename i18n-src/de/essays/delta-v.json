@@ -1,0 +1,155 @@
+{
+  "title": "Die Grammatik der Delta-V",
+  "dek": "Jedes Raumschiff, das jemals die Erde verlassen hat, trug vor allem eine Sache mit sich: ein Budget. Nicht Geld — Geschwindigkeit. Die Raketengleichung verteilte sie in Kilometern pro Sekunde, die Gravitation war die einzige kostenlose Nachfüllung, und jeder Ingenieur, der je eine Mission geplant hat, lebt seit 1903 innerhalb dieser Beschränkung.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Stellen Sie sich vor, Ihnen wird ein Scheckbuch mit festem Guthaben in die Hand gedrückt. Sie können es ausgeben wie Sie möchten — aber jede Ausgabe ist endgültig, es gibt keine Einzahlungen, und wenn das Guthaben Null erreicht, sind Sie fertig. Das ist die Situation, in der sich jedes Raumschiff befindet, sobald es den Starttower verlässt. Die Währung ist nicht Treibstoff. Sie ist nicht Schub. Sie ist **Geschwindigkeit** — genauer gesagt, die *Veränderung* der Geschwindigkeit, gemessen in Kilometern pro Sekunde, die das Raumschiff über seine gesamte Mission ansammeln kann. Ingenieure nennen es Delta-v, und das Konto wird einmal beim Start eröffnet."
+    },
+    {
+      "type": "prose",
+      "md": "Die Regel, die diese Beschränkung aufzeigte, wurde 1903 von einem autodidaktischen russischen Schullehrer namens Konstantin Ziolkowski veröffentlicht, der allein in einer kleinen Provinzstadt arbeitete. Seine [Raketengleichung](/science/propulsion/tsiolkovsky) wurde seitdem nicht aufgehoben: **∆v = Isp · g₀ · ln(m₀/mf)**. Auf Englisch gelesen: Die Geschwindigkeit, die Sie kaufen können, ist gleich der Effizienz Ihres Motors — gemessen in Sekunden des [spezifischen Impulses](/science/propulsion/specific-impulse) und multipliziert mit einer Gravitationskonstante von 9,807 m/s² — mal dem natürlichen Logarithmus davon, wie viel schwerer die Rakete am Anfang war als am Ende. Dieser Logarithmus ist der Bösewicht. Weil *ln* die am langsamsten wachsende Funktion der Mathematik ist, bedeutet das, dass jedes zusätzliche Kilometer pro Sekunde, das Sie hinzufügen möchten, exponentiell mehr Treibstoffmasse kostet — und dieser Treibstoff muss auch hochgehoben werden, was bedeutet, dass er seinen eigenen Treibstoff braucht, der auch hochgehoben werden muss, und so weiter in einen Regress, der kein Ende hat."
+    },
+    {
+      "type": "prose",
+      "md": "Astronaut Don Pettit nannte das 2012 in einem an Bord der ISS verfassten Essay *die Tyrannei der Raketengleichung*, und das Wort Tyrannei ist genau richtig. Die Saturn V, die Apollo-Astronauten zum Mond brachte, stand auf dem Startplatz dreißig Stockwerke hoch und bestand zu **85% aus Treibstoff nach Masse**; ihre Nutzlast — alles, das tatsächlich irgendwohin gelangte — überstieg nie etwa 4% dieser Nassgewichte. Der Rest war eine kontrollierte Explosion in Zeitlupe, verbraucht Schritt für Schritt, nur um den Rest ein wenig schneller und ein wenig höher zu bekommen. Alles andere in der Raumfahrt — die Missionen, die Flugbahnen, das Warten auf Startfenster, das obsessive Trimmen der Instrumentenmasse — ergibt sich aus diesem einen, erbarmungslosen Nenner."
+    },
+    {
+      "type": "figure",
+      "image": "essays/delta-v/rocket-equation",
+      "kind": "diagram",
+      "caption": "Die exponentielle Mauer der Raketengleichung: Bei chemischen Antrieben erfordert jedes zusätzliche Kilometer pro Sekunde einen deutlich größeren Treibstoffanteil — und je näher Sie sich an ein echtes Ziel heranwagen, desto steiler steigt der Preis.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Das Budget"
+    },
+    {
+      "type": "prose",
+      "md": "Ein [Delta-v-Budget](/science/propulsion/dv-budget) ist das, was Missionsplaner die Kalkulationstabelle nennen, die jede Geschwindigkeitsänderung abrechnet, die eine Mission durchführen muss, von der niedrigen Erdumlaufbahn bis zum endgültigen Ziel. Es ist das folgenreichste Dokument bei der Missionsgestaltung: es entscheidet, ob die Mission überhaupt möglich ist. Ein Raumschiff von einer niedrigen Erdumlaufbahn zu, sagen wir, einem Hohmann-Transfer zum Mars und in eine Mars-Umlaufbahn zu bringen kostet ungefähr **5,6 km/s** insgesamt — eine Zahl, die bescheiden klingt, bis Sie sich daran erinnern, dass jede Dezimalstelle in Tonnen Treibstoff bezahlt wird, und die Raketengleichung bedeutet, dass der Wechselkurs schlechter wird, je mehr Sie ausgeben."
+    },
+    {
+      "type": "prose",
+      "md": "Ein [Hohmann-Transfer](/science/transfers/hohmann-transfer) ist der energieminimale Bogen zwischen zwei Umlaufbahnen — der Pfad, der die geringste Delta-v kostet, um von A nach B zu gelangen. Er ist nicht gerade; er ist eine Ellipse, die die innere Umlaufbahn an einem Ende und die äußere am anderen berührt und den gesamten Weg auf nichts als Trägheit segelnd zurücklegt. Der Trick besteht darin, dass Sie den Motor zweimal zünden: einmal, um die Abflugumlaufbahn zu verlassen, und einmal, um die Ankunftsumlaufbahn zu erreichen. Zwischen diesen beiden Manövern — typischerweise 259 Tage im Fall Erde-Mars — geben Sie nichts aus. Die Gravitation des Sonnensystems trägt Sie kostenlos, solange Sie am Anfang richtig gezielt haben."
+    },
+    {
+      "type": "figure",
+      "image": "essays/delta-v/hohmann-transfer",
+      "kind": "diagram",
+      "caption": "Der billigste Pfad zwischen zwei Umlaufbahnen ist niemals die gerade Linie — ein Hohmann-Transfer gleitet entlang einer Ellipse, die gerade jede Umlaufbahn berührt, und zündet den Motor nur zweimal: einmal zum Gehen, einmal zum Ankommen.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "Das ist das, womit die *Navigation* die Delta-v-Planung abhandelt. Der [Navigation-Essay](/essays/navigation) beginnt mit dem Problem, auf einen sich bewegenden Planeten zu zielen — das Lambert-Problem, der lange Bogen, die Korrekturbrenner, die die Lücke zwischen Plan und Wirklichkeit schließen. Aber die Wahl dieses Bogens von Anfang an war eine Budgetentscheidung. Der Hohmann-Weg minimaler Energie wurde gewählt, weil er am wenigsten kostet; es existiert eine schnellere Flugbahn, aber sie kostet mehr Delta-v, als die meisten Missionen sich leisten können, und Delta-v ist das eine Ding, das man sich nicht leihen kann."
+    },
+    {
+      "type": "heading",
+      "text": "Die eine kostenlose Nachfüllung"
+    },
+    {
+      "type": "prose",
+      "md": "Angesichts der Tyrannei der Gleichung ist jeder Trick, der Delta-v umsonst hinzufügt, nicht nur nützlich — er ist transformativ. Es gibt genau einen: **Schwerkraft**."
+    },
+    {
+      "type": "prose",
+      "md": "Ein Raumschiff, das dicht an einem Planeten vorbeischwenkt, betritt das Gravitationsfeld des Planeten schnell, krümmt sich um ihn und verlässt ihn schneller, als es ankam — weil sich der Planet selbst bewegt, und das Raumschiff einen Hauch dieser Bewegung gestohlen hat. Der [Gravitationsunterstützung](/science/transfers/gravity-assist) kostet überhaupt keinen Treibstoff. Der Planet verliert eine unmessbar kleine Menge seiner eigenen Umlaufbahngeschwindigkeit; das Raumschiff gewinnt eine große Menge. Für die meisten interplanetaren Sonden ist das kein Bonus — das ist das ganze Geschäftsmodell."
+    },
+    {
+      "type": "prose",
+      "md": "In der Mitte der 1960er Jahre bemerkte ein JPL-Mathematiker namens Gary Flandro etwas, während er Sommerberechnungen durchführte. Die äußeren Planeten — Jupiter, Saturn, Uranus, Neptun — drifteten auf eine einmal-in-175-Jahren-Ausrichtung zu. Eine Sonde, die 1977 gestartet wurde und richtig gezielt, konnte Jupiters Schwerkraft nutzen, um Saturn zu erreichen, Saturns um Uranus zu erreichen, Uranus um Neptun zu erreichen: ein Vier-Planeten-Bankschuss, wobei jedes Vorbeiflug Delta-v kostenlos hinzufügt und die Flugbahn auf das nächste Ziel umleitet. Die Flugzeit zum Neptun würde von dreißig Jahren auf zwölf fallen. Diese Beobachtung wurde die Grand Tour — und [Voyager 2](/missions?id=voyager-2) machte sie wirklich, gewann ungefähr **10 km/s** nur vom Jupiter-Vorbeiflug, genug, um das äußere System in der Zeit zu erreichen, die ursprünglich nur für eine Saturn-Mission budgetiert war. Der Neptun wurde heute einmal besucht. Der Grund ist, dass sich das Fenster in den 1980er Jahren schloss und erst wieder in den 2150ern öffnet."
+    },
+    {
+      "type": "figure",
+      "image": "missions/voyager-2/01",
+      "kind": "photo",
+      "caption": "Voyager 2 nahm die kostenlose Nachfüllung viermal — Jupiter zu Saturn zu Uranus zu Neptun — und bankierte die Bewegung jedes Planeten in den nächsten, auf einer Route, die sich für 175 Jahre nicht mehr ausrichten wird.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "prose",
+      "md": "Die gleiche Mathematik ist der Grund, warum [Cassini](/missions?id=cassini) durch die Venus schleifte — zweimal — und an der Erde und am Jupiter vorbeiging, bevor sie sich zum Saturn aufmachte: nicht die malerische Route, sondern die billige. Und warum [Mangalyaan](/missions?id=mangalyaan), Indiens erste interplanetare Mission, 2014 den Mars auf einem Budget von ungefähr 74 Millionen US-Dollar erreichte — ein Bruchteil dessen, was vergleichbare Missionen gekostet haben — teilweise weil ihre Flugbahn entworfen wurde, um maximalen Wert aus jedem Kilogramm ihrer 852-Kilogramm-Treibstofflast zu extrahieren, die größte einzelne Komponente eines Raumschiffs, das 1.340 kg auf dem Startplatz wog. Das Delta-v-Budget betrug 1.350 m/s für die gesamte Mission nach der Flucht. Jedes Gramm wurde verbucht."
+    },
+    {
+      "type": "figure",
+      "image": "missions/cassini/01",
+      "kind": "photo",
+      "caption": "Cassini erreichte Saturn auf geliehener Geschwindigkeit, schwenkend an der Venus zweimal vorbei, an der Erde und am Jupiter — ein siebenjähriger Umweg, der weniger Treibstoff kostete, als direkt auf sie zu zielen je konnte.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech/Space Science Institute"
+    },
+    {
+      "type": "heading",
+      "text": "Die Oberth-Dividende"
+    },
+    {
+      "type": "prose",
+      "md": "Die Schwerkraft bietet einen zweiten Trick, subtiler als der erste. Sie wurde 1929 von Hermann Oberth beschrieben, und sie basiert auf einer Tatsache über kinetische Energie, die nicht offensichtlich ist, bis Sie sie aufschreiben: Die Energie wächst mit dem *Quadrat* der Geschwindigkeit. Ein Manöver, das 1 km/s bei 10 km/s hinzufügt, fügt viel mehr kinetische Energie hinzu als das gleiche Manöver bei 1 km/s — weil die geleistete Arbeit Kraft mal Strecke ist, und eine schnell fliegende Rakete während des Manövers mehr Strecke zurücklegt."
+    },
+    {
+      "type": "prose",
+      "md": "Die Konsequenz, genannt der [Oberth-Effekt](/science/propulsion/oberth-effect), ist, dass Manöver tief in einem Schwerkraftfeld — am niedrigsten Punkt einer Umlaufbahn, *Perigäum*, wo ein Raumschiff am schnellsten fliegt — drastisch effizienter sind als Manöver in der Höhe. Dasselbe Delta-v, zum richtigen Zeitpunkt am richtigen Ort ausgegeben, liefert mehr Endenergie zum Raumschiff. Missionen, die ihre Motoren beim Perigäum zünden können — bei ankommenden Planeten, bei engen Vorbeiflügen, absichtlich konstruierte Manöver am niedrigen Punkt — erhalten, quasi, einen Multiplikator auf das Delta-v, das sie ausgeben. [New Horizons](/missions?id=new-horizons) nutzte einen Jupiter-Vorbeiflug nicht nur für den Schwerkraftunterstützungs-Geschwindigkeitsboost, sondern zeitete sein Manöver so ab, dass es mit dem nächsten Vorbeiflug zusammenfiel, die Oberth-Dividende auf die Unterstützung stapelnd. Die Kombination sparte drei Jahre Flugzeit zum Pluto."
+    },
+    {
+      "type": "figure",
+      "image": "essays/delta-v/oberth-effect",
+      "kind": "diagram",
+      "caption": "Brennen Sie tief und gewinnen Sie mehr: Tief in einem Schwerkraftfeld fliegt ein Raumschiff am schnellsten, und dasselbe Motormanöver dort kauft viel mehr Energie, als es oben in der langsamen, fernen Spitze der Umlaufbahn täte.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "Das sind keine Hacks oder Schlupflöcher. Das ist die Mathematik der Bewegung durch eine Gravitationslandschaft, die, wenn Sie sie richtig lesen, nicht feindselig gegenüber Bewegung ist, sondern in der Tat von Rutschen und Rampen durchzogen ist. Das Budget verschwindet nicht — aber der geschickte Leser dieser Landschaft kann es strecken, manchmal enorm."
+    },
+    {
+      "type": "heading",
+      "text": "Was die Gleichung auslöscht"
+    },
+    {
+      "type": "prose",
+      "md": "Das Delta-v-Budget ist rücksichtslos gleichgültig gegenüber fast allem, das sich wichtig für eine Mission anfühlt — die Wissenschaft, das Prestige, die Geopolitik. Es interessiert sich nicht dafür, wer das Raumschiff gebaut hat oder welche Flagge drauf gemalt ist. Es interessiert sich nur für Masse, Abgasgeschwindigkeit und den Logarithmus."
+    },
+    {
+      "type": "prose",
+      "md": "Das schafft eine Disziplin, die in der Technik unvergleichlich ist. Die Kamera, die einem Mars-Rover hinzugefügt wird, die zusätzliche Redundanz in einem Computer, das zusätzliche Wissenschaftsinstrument, das ein Team jahrelang lobbyiert hat — jedes kommt mit einem Delta-v-Preis. Wenn das Instrument schwerer ist als die Marge zulässt, wird entweder etwas anderes entfernt, oder die gesamte Mission wird unmöglich. Missionsplanung ist eine Übung in kontinuierlichem, schmerzhaftem Arbitrage zwischen dem, was Sie wollen, und dem, was Sie tragen können, und die Gleichung ist der Richter jedes Disputs."
+    },
+    {
+      "type": "prose",
+      "md": "Das Budget löscht auch den Spielraum für Fehler auf eine Weise, die landgestützte Technik selten tut. Eine Brücke, die leicht überlastet ist, steht immer noch. Ein Raumschiff, dem vor dem Abschluss der Orbitaleinbringung die Delta-v ausgeht, wird zu einem Stück unkontrollierter Schutt. Es gibt keinen Teilgutschrift. Jede Mission in diesem Atlas, die erfolgreich war, war es, weil jemand, irgendwo, eine ehrliche Abrechnung führte und niemals mehr ausgab als vorhanden war. Der anonyme Raum von Menschen, der das alles berechnete — die das Budget überwachten, die Astrodynamik überprüften, die Korrekturbrenner-Sequenzen durchliefen — trug jede Mission, die jemals ankam."
+    },
+    {
+      "type": "heading",
+      "text": "Das Wiederverwendungsargument, klar dargelegt"
+    },
+    {
+      "type": "prose",
+      "md": "Für sechzig Jahre produzierte die Tyrannei der Raketengleichung eine bestimmte Antwort auf das Problem, in die Umlaufbahn zu gelangen: baue eine Maschine, die für die Aufgabe optimiert ist, verbrenne sie auf dem Weg hinauf, wirf sie weg. Die Strukturmasseneinsparungen aus der Konstruktion einer Einmal-Erststufe waren real, und das Delta-v war real, und die Mathematik passte. Das Problem war, dass Sie einen Motor im Wert von zehn Millionen Dollar wegwarfen, nachdem Sie ihn einmal benutzt hatten."
+    },
+    {
+      "type": "prose",
+      "md": "Eine Raketenstufe zu landen und sie erneut zu fliegen ändert den Nenner, aber nicht so, wie die Gleichung es vorhersagt. Strukturell ist eine wiederverwendbare Stufe leicht schwerer — sie braucht Landebeine, Gitterflossen, Wärmeschutz, Restreibstoffreserven für das Rückbrennmanöver — was bedeutet, dass der [spezifische Impuls](/science/propulsion/specific-impulse)-Vorteil schrumpft und das Massenverhältnis sinkt. Die Gleichung, streng gelesen, sagt, dass Wiederverwendung Sie Delta-v kostet. Was die Gleichung nicht modelliert, ist, dass Sie die Stufe nächste Woche wieder fliegen können, zu einem Bruchteil der Kosten, eine neue zu bauen, was bedeutet, dass Sie sich mehr Missionen leisten können, was bedeutet, dass das Budget, das zählt — Dollar pro Kilogramm zur Umlaufbahn — zusammenbricht. Die Delta-v-Logik hat sich nicht geändert. Die wirtschaftliche Logik, die daneben läuft, tat es."
+    },
+    {
+      "type": "prose",
+      "md": "Das ist die Spannung, die das letzte Jahrzehnt der Trägerentwicklung definiert hat, und es ist noch nicht gelöst. Die Raketengleichung setzt immer noch die harte physikalische Untergrenze. Was sich ändert, ist, wie viel es kostet, auf ihr zu stehen. [Fliegen Sie eine Flugbahn im Atlas](/fly) und beobachten Sie, was mit dem Delta-v-Budget geschieht, wenn jede Stufe sich abtrennt — die Massenverhältnis-Schnappschüsse an jedem Schnitt sind das, was die Gleichung tatsächlich auf jedem Flug unsichtbar erzwingt."
+    },
+    {
+      "type": "heading",
+      "text": "Das Buch schließt"
+    },
+    {
+      "type": "prose",
+      "md": "Es gibt etwas Klärendes an einer Beschränkung ohne Ausnahmen. Die Raketengleichung gibt nicht aus politischen Gründen nach, auch nicht bei Budgeterhöhungen oder ingenieurtechnischen Kunststücken. Jede Mission, die jemals diesen Planeten verlassen hat — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [Mangalyaan](/missions?id=mangalyaan) — tat dies, weil jemand eine Spalte von Delta-v-Anforderungen gegen eine Spalte dessen, was der Treibstoff liefern konnte, abglich, und die zweite Zahl war mindestens so groß wie die erste. Jede Mission, die niemals abhob — und es gab viele, ruhig während der Planung getötet — schlug diesen Test."
+    },
+    {
+      "type": "prose",
+      "md": "Was die Gleichung auch tut, weniger offensichtlich, ist Schwerkraft kostbar machen. Nicht als eine Gefahr, die zu überwinden ist — jede Rakete brennt gegen sie hinauf — sondern als ein freies Konto. Ein Schwerkraftfeld eines Planeten, richtig durchlaufen, ist eine Quelle. Die Schwerkraft des Jupiter gab Voyager 2 eine Geschwindigkeit, die sie sich nie mit Treibstoff hätte kaufen können. Der Oberth-Effekt macht tiefe Perigäum-Pässe wert, absichtlich konstruiert zu werden. Die Orbitalarchitektur des gesamten Sonnensystems ist, aus einer Delta-v-Perspektive, eine Landschaft von kostenlosen Nachfüllungen verstreut über eine größtenteils leere Karte — und jede [Flugbahn, die Sie hier erkunden können](/science/transfers/hohmann-transfer) ist ein Rekord von jemandem, der eine findet."
+    },
+    {
+      "type": "prose",
+      "md": "Tsiolkowski starb 1935, neun Jahre bevor die erste ballistische Rakete flog und eine Generation bevor das erste Raumschiff die Erde verließ. Er sah nie eine Rakete in der Umlaufbahn. Was er tat, war, 1903 die Grammatik aufzuschreiben, die jede Mission seitdem gesprochen hat — die eine Regel, die den Ehrgeiz, irgendwohin zu gehen, in die Arithmetik umwandelt, ob Sie können. Alles andere ist ein Satz in dieser Sprache. Die Frage, die der Atlas Mission für Mission immer wieder beantwortet, ist, wie viel Sie darin sagen können."
+    }
+  ]
+}

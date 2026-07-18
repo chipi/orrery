@@ -1,0 +1,178 @@
+{
+  "title": "Encontrando Marte no Escuro",
+  "dek": "Como você se orienta em direção a um planeta em movimento atravessando cem milhões de quilômetros de vazio, sem mapa, sem horizonte e com vinte minutos de atraso em cada instrução? A resposta de setenta anos é mais estranha, e mais humana, do que as máquinas sugerem.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Não há estradas no espaço. Nenhuma costa, nenhum horizonte, nenhuma referência para se guiar — e a única coisa que todo motorista na Terra agora toma como certa, uma constelação de satélites sussurrando *você está aqui*, existe apenas em uma fina casca com poucos milhares de quilômetros de espessura ao redor de um planeta. Saia dela e você estará sozinho com um problema de três camadas: **Onde estou? Para onde estou apontado? E como vou de aqui para um lugar que está se movendo, rápido, e não estará lá quando chegar?**"
+    },
+    {
+      "type": "prose",
+      "md": "Errar e não há como se recuperar: uma fração de grau de erro de apontamento, multiplicada por cem milhões de quilômetros, é a diferença entre uma órbita e uma cratera. Acertar e desaparece — navegação é a habilidade silenciosa por sob todas as outras ruidosas, a coisa que nenhum comunicado à imprensa leva como pauta principal e nenhuma missão sobrevive sem. Considere o padrão ao qual é mantida. A [New Horizons](/missions?id=new-horizons) atravessou quase cinco bilhões de quilômetros até [Plutão](/explore) em nove anos e meio e chegou em cerca de cem quilômetros, e cerca de um minuto, de um plano elaborado antes de deixar a plataforma de lançamento. Essa é a precisão da qual se trata — e a coisa espantosa é o quão antiga, e quão humana, as ideias por trás disso se mostram ser."
+    },
+    {
+      "type": "prose",
+      "md": "Porque a resposta mal mudou. As máquinas ficaram menores e depois ficaram inteligentes; as distâncias cresceram até que o solo não pudesse mais acompanhar; mas por baixo, naves ainda navegam da maneira que um marinheiro do século XVIII fazia — medindo ângulos para as únicas coisas fixas que existem, as estrelas, e mantendo uma contagem honesta de cada empurrão que já sentiram. Essa é a história dessa contagem, e da lenta transferência de todo o negócio delicado de uma sala cheia de pessoas no solo para a própria nave."
+    },
+    {
+      "type": "heading",
+      "text": "A arte da contagem honesta"
+    },
+    {
+      "type": "prose",
+      "md": "Comece com a mais difícil das três perguntas, aquela que parece a mais fácil: *onde estou?* Na Terra você olha. No espaço, por muito tempo, você não podia — então em vez disso você **mantinha a contagem**."
+    },
+    {
+      "type": "prose",
+      "md": "A técnica é chamada [navegação por estimativa](/science/mission-phases/dead-reckoning), e é exatamente tão antiga quanto a navegação oceânica. Se você sabe onde começou e mede cada aceleração que sentiu desde então — cada queimadura de motor, cada empurrão — você pode somá-los todos e saber, em princípio, onde está agora. Uma nave faz isso com uma *unidade de medição inercial*: um aglomerado de giroscópios que mantêm uma orientação fixa e acelerômetros que sentem cada mudança de movimento, integrando silenciosamente no núcleo da nave toda a jornada em um palpite contínuo de posição e velocidade."
+    },
+    {
+      "type": "figure",
+      "image": "essays/navigation/dead-reckoning",
+      "kind": "diagram",
+      "caption": "Navegação por estimativa — o truque mais antigo do mar, e ainda aquele por baixo. Mantenha o começo conhecido, some cada empurrão que sentiu desde então, e um palpite contínuo de onde você está lentamente apodrece; uma observação de estrela redefine a deriva para zero.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "\"Em princípio\" está carregando peso nessa frase. A navegação por estimativa deriva. Cada pequeno erro em cada medição se acumula, então o palpite lentamente apodrece, e quanto mais longe você vai, pior fica. Por isso, nos voos que mais importavam, eles colocavam um humano no circuito com um sextante."
+    },
+    {
+      "type": "prose",
+      "md": "Esse é o detalhe que vale a pena reter. Quando a [Apollo 8](/missions?id=apollo8) se tornou a primeira nave tripulada a deixar a gravidade da Terra e navegar para outro mundo em dezembro de 1968, sua tripulação se orientava em parte da maneira como Cook cruzava o Pacífico: Jim Lovell em um telescópio e sextante construído no casco, visando estrelas conhecidas contra o horizonte da Terra, alimentando os ângulos em um computador para corrigir a deriva. O Apollo Guidance Computer que fazia essas contas tinha cerca de 72 kilobytes de memória fixa e rodava em uma velocidade de clock que uma campainha moderna riria — e ele voou nove tripulações para a Lua e [duas mãos cheias delas até lá](/missions?id=apollo11). O gênio não era o hardware. Era o reconhecimento de que uma máquina para manter a contagem e um humano para verificá-la contra as estrelas, juntos, poderiam fazer o que nenhum dos dois conseguiria sozinho."
+    },
+    {
+      "type": "prose",
+      "md": "A ideia nem mesmo pertencia ao voo espacial. Nesses mesmos anos uma aeronave de reconhecimento estava voando com ela: o SR-71 Blackbird, cruzando a três vezes a velocidade do som onde o céu diurno já está escuro, levava um rastreador de estrelas atrás da cabine que visava estrelas através de uma janela de quartzo — pelo menos dois por vez, comparados com um catálogo a bordo — e os usava para corrigir a deriva de sua plataforma inercial, exatamente como uma nave faz. Suas tripulações chamavam a unidade de R2-D2. O problema é o mesmo problema em setenta mil pés ou em órbita: manter uma contagem honesta e verificá-la contra a única coisa que não se move."
+    },
+    {
+      "type": "figure",
+      "image": "missions/apollo8/01",
+      "kind": "photo",
+      "caption": "Apollo 8, dezembro de 1968 — a primeira tripulação a deixar a Terra e navegar para outro mundo, corrigindo uma contagem à deriva da maneira que um marinheiro faria: um sextante, as estrelas e o horizonte da Terra.",
+      "align": "wide",
+      "credit": "NASA"
+    },
+    {
+      "type": "prose",
+      "md": "Toda nave de espaço profundo ainda carrega a metade máquina desse par. Mas o sextante tripulado era um expediente para uma década específica. Para tudo não tripulado — cada sonda para cada planeta — a contagem honesta tinha que ser verificada de alguma outra forma. Tinha que ser verificada do solo."
+    },
+    {
+      "type": "heading",
+      "text": "O solo faz o voo"
+    },
+    {
+      "type": "prose",
+      "md": "Aqui está o fato que desfaz a intuição da maioria das pessoas sobre navegação espacial: para a maioria das missões neste atlas, **a nave não sabe onde está. O solo sabe.**"
+    },
+    {
+      "type": "prose",
+      "md": "O instrumento é a [Rede de Espaço Profundo](/science/mission-phases/dsn) — três grandes complexos de pratos espaçados aproximadamente 120° em Califórnia, Espanha e Austrália, então enquanto a Terra gira, pelo menos um deles sempre pode ver o espaço profundo. Quando um prato aponta para uma sonda, não está principalmente ouvindo dados. Está medindo duas coisas com precisão monstra. Primeiro, **alcance**: ele envia um sinal de tempo, a nave o ecoa de volta, e o tempo de ida e volta — multiplicado pela velocidade da luz — dá a distância, boa para alguns metros em bilhões de quilômetros. Segundo, **velocidade**: o rádio da nave, deslocado em frequência por seu movimento em direção a nós ou para longe, é lido por seu deslocamento Doppler, e o deslocamento dá a velocidade ao longo da linha de visão até uma fração de milímetro por segundo."
+    },
+    {
+      "type": "figure",
+      "image": "essays/navigation/deep-space-network",
+      "kind": "diagram",
+      "caption": "A Rede de Espaço Profundo: três grandes pratos espaçados aproximadamente 120°, então um sempre enfrenta o espaço profundo. O alcance vem do tempo de luz de ida e volta; a velocidade do deslocamento Doppler do rádio. O solo faz o voo.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "Rastreie esses dois números por horas enquanto a Terra gira e a geometria muda, e uma sala de navegadores pode reconstruir o caminho de uma nave através do sistema solar sem a nave ter uma opinião forte sobre isso. Quando a [Mariner 4](/missions?id=mariner4) retornou as primeiras fotografias em close de outro planeta em 1965, a nave era um passageiro; a navegação foi feita na Terra. O mesmo foi verdade para as [Voyagers](/missions?id=voyager-1) e [Cassini](/missions?id=cassini) — e aquela chegada de fio de navalha em Plutão, aquela que abriu esse ensaio, foi voada da mesma maneira: reconstruída e corrigida quase inteiramente de três pratos no solo."
+    },
+    {
+      "type": "prose",
+      "md": "Mas a Rede de Espaço Profundo tem um adversário que não pode argumentar, e seu nome é a velocidade da luz. Em Marte, um comando leva em qualquer lugar de cerca de três a vinte e dois minutos para chegar, e o reconhecimento leva exatamente o mesmo tempo para voltar. Em Plutão são quatro horas e meia, uma via. O solo pode navegar uma sonda belamente — contanto que nada precise ser decidido mais rápido do que a luz pode carregar as notícias para casa e uma resposta de volta. Por setenta anos, quase nada precisou. Isso está prestes a ser o problema inteiro."
+    },
+    {
+      "type": "heading",
+      "text": "Para onde está o alto"
+    },
+    {
+      "type": "prose",
+      "md": "Antes de você poder ir a qualquer lugar, você tem que resolver a segunda pergunta — *para onde estou apontado?* — e o espaço é silenciosamente hostil a isso. Não há alto. Não há baixo. Uma nave girando no escuro não tem um piso para lhe dizer para onde está enfrentando, e errar isso significa apontar sua antena para longe da Terra, sua câmera para longe do alvo, seu motor para o lado errado da trajetória."
+    },
+    {
+      "type": "prose",
+      "md": "A correção é concordar, com antecedência, com um conjunto de direções que nunca se movem, e medir você contra elas constantemente. Esse acordo é um [referencial](/science/scales-time/frames) — para a maioria do voo espacial moderno, aquele chamado J2000, uma orientação fixada às posições médias das estrelas ao meio-dia do primeiro dia do ano 2000. É uma âncora arbitrária, escolhida por conveniência, e agora é a grade compartilhada que quase toda nave, efeméride e plano de missão silenciosamente se prende."
+    },
+    {
+      "type": "prose",
+      "md": "Para encontrar seu lugar nessa grade, uma nave lê o céu. Um **rastreador de estrelas** é uma pequena câmera que fotografa um pedaço de estrelas, compara o padrão com um catálogo a bordo, e a partir desse único ponto fixo sabe precisamente para qual direção está orientada no referencial fixo — uma máquina fazendo, em uma fração de segundo, exatamente o que Lovell fez manualmente em seu sextante. Entre pontos fixos, os giroscópios à deriva carregam a contagem; cada vez que o rastreador de estrelas consegue uma visão clara, ele redefine a deriva para zero. O céu, novamente, é a única coisa que vale a pena confiar. Tudo mais é interpolação entre vislumbres dele."
+    },
+    {
+      "type": "figure",
+      "image": "essays/navigation/reference-frame",
+      "kind": "diagram",
+      "caption": "Para onde está o alto, quando não há alto: um rastreador de estrelas fotografa um pedaço de céu, compara o padrão com um catálogo a bordo, e sabe de imediato como a nave está orientada no referencial fixo J2000. Entre pontos fixos, os giroscópios carregam a contagem.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Apontando para um planeta em movimento"
+    },
+    {
+      "type": "prose",
+      "md": "Agora a terceira pergunta, aquela que transforma navegação de contabilidade em algo mais próximo da mira. Você sabe onde está. Você sabe para onde está apontado. **Marte está em algum lugar — e quando chegar lá, terá se movido.**"
+    },
+    {
+      "type": "prose",
+      "md": "Você nunca, voa direto para ele. Combustível é a moeda do voo espacial, e nunca há o suficiente, então você voa o caminho que custa menos: uma longa e curva [órbita de transferência](/science/transfers/hohmann-transfer) que deixa a Terra e planeja sem motor, ao longo de um arco calculado para que sua extremidade distante e o planeta alvo cheguem no mesmo ponto de encontro no mesmo instante, meses depois. Trabalhar esse arco — *qual velocidade, em qual direção, me leva desse ponto em movimento para aquele ponto em movimento em exatamente esse tempo?* — é uma peça de mecânica orbital antiga o suficiente para ter um nome, o [problema de Lambert](/science/transfers/lambert-problem), e resolvê-lo é o núcleo de cada janela de lançamento interplanetário."
+    },
+    {
+      "type": "prose",
+      "md": "O truque mais elegante de toda a disciplina é deixar os planetas fazerem o empurrão. Uma nave que passa perto de um planeta pode roubar um sussurro do próprio movimento orbital daquele planeta e se afastar mais rápido do que chegou, gratuitamente — uma [assistência gravitacional](/science/transfers/gravity-assist). Em meados dos anos 1960, um jovem matemático no JPL chamado Gary Flandro, trabalhando em cálculos de trabalho de verão, notou que os planetas externos estavam se deslocando para um alinhamento uma vez em 175 anos que deixaria uma única sonda bancar um assistência na próxima na próxima, o caminho todo. Essa observação se tornou o Grand Tour: [Voyager 2](/missions?id=voyager-2) usou Júpiter para alcançar Saturno, Saturno para alcançar Urano, Urano para alcançar Netuno, uma tacada de quatro planetas que economizou décadas de tempo de voo e permanece, hoje, a única vez que algo visitou os gigantes de gelo."
+    },
+    {
+      "type": "figure",
+      "image": "essays/navigation/gravity-assist",
+      "kind": "diagram",
+      "caption": "Você nunca voa direto para ele. Uma transferência de Hohmann planeja ao longo do arco mais barato para um planeta em movimento; uma assistência gravitacional rouba um sussurro do próprio movimento de um planeta gratuitamente — o truque que deixou uma sonda bancar Júpiter em Saturno em Urano em Netuno.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "Nenhum arco é voado perfeitamente. Pequenos erros no lançamento se tornam enormes em cem milhões de quilômetros, então cada voo de espaço profundo é uma lenta sequência de [manobras de correção de trajetória](/science/mission-phases/tcm) — breves e precisamente cronometradas, cada uma fechando a lacuna dos navegadores no solo entre onde a nave *está* e onde o plano diz que deveria estar. Navegação, na prática, não é um único ato de apontamento. É apontar, verificar e reapontar, uma e outra vez, por anos."
+    },
+    {
+      "type": "heading",
+      "text": "A nave aprende a ver"
+    },
+    {
+      "type": "prose",
+      "md": "Tudo até aqui tem uma sala de pessoas na Terra no circuito. O último ato dessa história é a máquina levando a contagem deles — porque na fronteira, a luz é simplesmente muito lenta para pedir permissão."
+    },
+    {
+      "type": "prose",
+      "md": "A primeira rachadura no modelo antigo foi **navegação óptica**: em vez de depender apenas de rádio do solo, a nave fotografa o próprio alvo contra as estrelas de fundo e trabalha, a bordo, exatamente onde o alvo fica relativo à sua própria abordagem. A [Cassini](/missions?id=cassini) refinou isso contra as luas de Saturno; é como você encaixa uma agulha em um corpo cuja posição, antes de chegar, é conhecida menos precisamente do que a sua própria."
+    },
+    {
+      "type": "prose",
+      "md": "Então vieram os lugares onde o solo genuinamente não pode ajudar. Pousar em Marte é o exemplo mais afiado — a [entrada, descida e pouso](/science/mission-phases/edl) leva cerca de sete minutos, e Marte está a anos-luz de distância, então no tempo em que a Terra até ouve que a nave entrou na atmosfera, a coisa toda já passou, de um jeito ou de outro. Ninguém na Terra pousa um rover de Marte. O rover pousa a si mesmo. A [Perseverance](/missions?id=perseverance) carregava um sistema que fotografava o solo se aproximando rápido, o comparava em tempo real contra um mapa a bordo, reconhecia o terreno e *escolhia* um local seguro para tocar o solo — uma máquina fazendo o trabalho de Lovell, o trabalho da Rede de Espaço Profundo, e o trabalho de um piloto de arbusto uma vez, em sete minutos, sozinha."
+    },
+    {
+      "type": "figure",
+      "image": "missions/perseverance/01",
+      "kind": "photo",
+      "caption": "Perseverance pousa a si mesma. Marte está a anos-luz de distância, então no tempo em que a Terra ouve que a nave entrou na atmosfera já está descida, de um jeito ou de outro — o rover lê o terreno se aproximando rápido e escolhe seu próprio local seguro.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "prose",
+      "md": "A [OSIRIS-REx](/missions?id=osiris-rex) fez algo na mesma família no asteróide Bennu: navegando autonomamente contra características de superfície para tocar um rochedo repleto de boulders do tamanho de uma pequena montanha e roubar um punhado dele. Esses não são o solo voando mais um passageiro. Essas são naves que se navegam, porque a alternativa — esperar a velocidade da luz — mataria a missão."
+    },
+    {
+      "type": "heading",
+      "text": "O céu é o mapa"
+    },
+    {
+      "type": "prose",
+      "md": "Recue e setenta anos desabam em uma única linha. A [Apollo 8](/missions?id=apollo8) de Lovell em um sextante, visando estrelas para corrigir uma contagem à deriva. O rastreador de estrelas em uma sonda fazendo a coisa idêntica, automaticamente, um bilhão de quilômetros longe. A câmera de descida da [Perseverance](/missions?id=perseverance) lendo o terreno porque as pessoas que a construíram estão doze minutos-luz de distância demais para ajudar. Máquinas diferentes, sessenta anos de distância, e por baixo delas um fato teimoso que nunca se moveu: não há mapa do espaço, e nunca houve. Há apenas o céu, que não se move, e uma contagem honesta de cada empurrão, que lentamente faz — e toda a disciplina se resume a confiar no primeiro para corrigir o segundo. Cada pouso, cada aproximação, cada fotografia neste atlas rode em acertar isso certo, e quase nada disso foi nunca a manchete."
+    },
+    {
+      "type": "prose",
+      "md": "E está prestes a parar de ser silencioso. Quanto mais longe avançamos — em direção ao [sistema externo](/explore), em direção a voos tripulados para Marte onde um atraso de vinte minutos é a lacuna entre uma correção e uma cratera — menos o solo pode fazer a tempo, e mais cada nave deve se tornar seu próprio navegador: seu próprio sextante, sua própria [Rede de Espaço Profundo](/science/mission-phases/dsn), sua própria sala cheia de pessoas. Passamos setenta anos ensinando máquinas a encontrar seu caminho pelo céu. Estamos prestes a descobrir o quão bem elas aprenderam."
+    }
+  ]
+}

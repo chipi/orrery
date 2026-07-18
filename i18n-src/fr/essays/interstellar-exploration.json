@@ -1,0 +1,147 @@
+{
+  "title": "L'Arithmétique honnête",
+  "dek": "L'étoile la plus proche n'est pas loin de la façon dont Mars est loin, ou même Pluton. C'est une espèce de distance catégoriquement différente — et les mathématiques sobres de s'y rendre ont une façon de rendre chaque proposition sérieuse à la fois tranquillement héroïque et tranquillement vouée à l'échec.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Il existe une habitude de pensée que le vol spatial encourage, et elle est raisonnable jusqu'à un certain point. Vous apprenez les distances — la Lune est à trois jours, Mars à six à neuf mois, Jupiter à des années — et vous assimilez l'échelle du système solaire comme quelque chose de vaste mais navigable, quelque chose que l'ingéniosité humaine n'a cessé de réduire depuis soixante-dix ans. [Voyager 1](/missions?id=voyager-1) a atteint l'espace interstellaire. [New Horizons](/missions?id=new-horizons) a traversé cinq milliards de kilomètres jusqu'à [Pluton](/explore) et est arrivée à une minute de son horaire. Le système extérieur semble, de l'intérieur de ce cadre, être un problème de patience et d'ingénierie, non de limites fondamentales."
+    },
+    {
+      "type": "prose",
+      "md": "Puis vous vous tournez vers l'étoile la plus proche, et le cadre s'effondre."
+    },
+    {
+      "type": "prose",
+      "md": "Proxima Centauri est à 4,24 années-lumière. Cette phrase doit être dépliée lentement pour avoir toute son ampleur, car les années-lumière et les minutes-lumière sont la même unité et la différence d'échelle n'est pas intuitive. Une [minute-lumière](/science/scales-time/light-minute) est la distance que la lumière parcourt en soixante secondes : environ 18 millions de kilomètres, ce qui est à peu près l'écart entre la Terre et le Soleil divisé par huit. Le système solaire — tout le volume habité et exploré de l'orbite terrestre au-delà de Neptune — tient à l'intérieur d'une sphère d'environ cinq heures-lumière de diamètre. Pluton, à la limite du système classique, est à environ cinq heures et demie de la lumière du Soleil. Le Nuage d'Oort, la limite gravitationnelle la plus lointaine de l'influence du Soleil, s'étend peut-être à une année-lumière ou deux. Proxima Centauri, l'étoile la plus proche de la nôtre, est plus de deux fois même cela. La distance à l'étoile la plus proche n'est pas la distance au système solaire extérieur mise à l'échelle par un facteur gérable quelconque. Elle est à peu près *neuf mille* fois la distance de la Terre à Pluton. Le système solaire ne vous y prépare pas."
+    },
+    {
+      "type": "heading",
+      "text": "La vitesse humiliante de tout ce que nous avons lancé"
+    },
+    {
+      "type": "prose",
+      "md": "[Voyager 1](/missions?id=voyager-1) est l'objet en récession le plus rapide que l'humanité possède. Lancée en 1977, propulsée au-delà de Jupiter et Saturne sur une trajectoire qui a emprunté de l'énergie aux champs gravitationnels de ces deux planètes, elle voyage maintenant à environ 17 kilomètres par seconde par rapport au Soleil — environ 61 000 kilomètres par heure, une vitesse qui vous amènerait de Londres à Sydney en moins d'une minute. Selon toute mesure terrestre, c'est inimaginablement rapide. Selon la mesure interstellaire, c'est glaciaire. À 17 km/s, Voyager 1 aurait besoin d'environ 73 000 ans pour couvrir la distance jusqu'à Proxima Centauri — et elle n'y est même pas dirigée. Elle se dirige dans une direction entièrement différente, vers la constellation d'Ophiuchius, sur une trajectoire qui a été conçue pour explorer le système solaire extérieur, non pour atteindre les étoiles."
+    },
+    {
+      "type": "prose",
+      "md": "[Pioneer 10](/missions?id=pioneer-10) et [Pioneer 11](/missions?id=pioneer-11), les premiers engins spatiaux à traverser la ceinture d'astéroïdes et à explorer Jupiter et Saturne, quittent également le système solaire sur des trajectoires hyperboliques. [New Horizons](/missions?id=new-horizons) se déplace à environ 14 km/s. Aucun d'eux ne s'approchera d'une autre étoile dans un délai qui soit pertinent pour la civilisation qui les a lancés. Les choses les plus rapides que l'humanité ait jamais lancées — l'aboutissement de sept décennies d'ingénierie des fusées et de conception de trajectoires à assistance gravitationnelle — auraient besoin de dizaines de milliers d'années pour couvrir l'écart interstellaire. Quand les gens disent « les étoiles sont loin », ils signifient quelque chose de plus spécifique et plus décourageant que ce que la phrase transmet généralement : ils signifient que tout ce que nous avons jamais fait pour pousser un engin spatial plus vite n'a pas déplacé l'échelle du voyage interstellaire d'un seul ordre de grandeur."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/voyagers-speed",
+      "kind": "diagram",
+      "caption": "Voyager 1, lancée en 1977, est l'objet en récession le plus rapide que l'humanité ait jamais construit — et à environ dix-sept kilomètres par seconde, il lui faudrait toujours environ 73 000 ans pour couvrir la distance jusqu'à l'étoile la plus proche. Elle n'y va même pas. Face à la distance interstellaire, notre plus rapide est une lenteur.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/voyager-1/01",
+      "kind": "photo",
+      "caption": "Voyager 1 — maintenant à plus de vingt-quatre milliards de kilomètres, l'objet le plus lointain que les humains aient jamais créé, et toujours, selon toute mesure interstellaire, à peine sorti de la porte.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Ce que l'équation de la fusée interdit"
+    },
+    {
+      "type": "prose",
+      "md": "Pour atteindre Proxima Centauri pendant une vie humaine — disons, en quarante ans — un engin spatial aurait besoin de voyager à environ dix pour cent de la vitesse de la lumière. Dix pour cent de c fait approximativement 30 000 km/s. Voyager 1 voyage à 17 km/s. Le rapport est presque 2 000 pour 1. Vous auriez besoin d'aller à peu près deux mille fois plus vite que la chose la plus rapide que nous ayons jamais lancée."
+    },
+    {
+      "type": "prose",
+      "md": "L'[équation de la fusée Tsiolkovsky](/essays/delta-v) — la loi de fer qui gouverne tout engin brûlant du carburant — rend cela précis, et la précision est brutale. L'équation dit que la vélocité qu'une fusée peut atteindre dépend de deux choses : le rapport de sa masse initiale (totalement carburisée) à sa masse finale (vide), et la vélocité d'échappement de son carburant. Pour aller plus vite, vous portez soit plus de carburant, soit l'expulsez plus vite — mais porter plus de carburant augmente la masse initiale, ce qui augmente le carburant que vous avez besoin d'accélérer *ce* carburant, dans un piège composé qui croît exponentiellement. Les fusées chimiques, comme [l'essai de propulsion](/essays/new-propulsion) le trace en détail, sont déjà au plafond de ce que leur vélocité d'échappement permet. Les meilleurs moteurs chimiques atteignent des impulsions spécifiques autour de 450 secondes, correspondant à des vélocités d'échappement d'environ 4,4 km/s. Pour atteindre dix pour cent de la vitesse de la lumière avec une fusée chimique, le rapport de masse requis n'est pas dix, ou mille, ou un million. C'est un nombre si grand que l'univers observable ne contient pas assez d'hydrogène pour alimenter le moteur. La chimie n'est pas un chemin vers les étoiles. Ce n'est même pas une première étape."
+    },
+    {
+      "type": "prose",
+      "md": "La propulsion nucléo-thermique — chauffer l'hydrogène dans un réacteur et l'expulser par une tuyère — double à peu près la vélocité d'échappement, atteignant des impulsions spécifiques autour de 825 secondes dans les meilleurs moteurs testés au sol du programme NERVA. Doubler la vélocité d'échappement ne réduit pas de moitié le rapport de masse requis ; cela élève la relation au carré. Aux vélocités interstellaires, la propulsion nucléo-thermique est toujours catégoriquement inadéquate. L'équation de la fusée ne se soucie pas de la façon dont le carburant est chauffé. Elle se soucie seulement de la vitesse à laquelle il s'en va. Et aucune architecture de combustion du carburant jamais conçue ne peut expulser la matière assez vite pour atteindre une fraction significative de c sans nécessiter une charge de carburant qui rend la mission impossible d'emblée."
+    },
+    {
+      "type": "heading",
+      "text": "Les propositions sérieuses — et les murs qu'elles rencontrent"
+    },
+    {
+      "type": "prose",
+      "md": "Il y a un petit nombre de propositions pour le vol interstellaire qui sont sérieuses au sens où les physiciens ne les rejettent pas immédiatement. Aucune n'est facile. Chacune, examinée attentivement, a un mur derrière l'optimisme initial."
+    },
+    {
+      "type": "prose",
+      "md": "La proposition actuelle la plus concrète est Breakthrough Starshot, annoncée en 2016 par une collaboration de scientifiques et de technologues. Le concept est élégant : abandonner complètement les grands engins spatiaux. Construire des voiles légères à l'échelle du gramme — des feuilles de matière plus fines qu'une feuille de papier, avec un petit paquet électronique attaché — et les accélérer avec un ensemble de lasers basé au sol délivrant, en agrégat, environ 100 gigawatts de puissance sur une brève passe d'illumination. À ce niveau de puissance, une voile à l'échelle du gramme pourrait théoriquement être poussée à environ vingt pour cent de la vitesse de la lumière, couvrant la distance jusqu'à Proxima Centauri en environ vingt ans. Les physiques sont, en principe, saines. La navigation solaire fonctionne — IKAROS l'a prouvé en 2010, et le LightSail 2 de la Planetary Society a augmenté son orbite sur la lumière du soleil seule en 2019. Mettre à l'échelle le concept à la propulsion laser est un problème différent en ingénierie, non en nature."
+    },
+    {
+      "type": "prose",
+      "md": "Les murs sont substantiels. Un [réseau de laser par phase](/science/propulsion/laser-sail) de 100 gigawatts n'existe pas. En construire un serait une entreprise d'ingénierie et financière comparable aux plus grands projets de l'histoire humaine, et maintenir la cohérence du faisceau et la précision de pointage à travers une cible en départ à vitesse relativiste nécessite une technologie bien au-delà de la démonstration actuelle. Plus fondamentalement : les voiles légères s'accélèrent. Elles ne peuvent pas décélérer. Il n'existe aucun mécanisme pour ralentir une voile à l'échelle du gramme alors qu'elle s'approche de Proxima Centauri à 20 % c — aucun ensemble de laser ne l'attend là, aucun freinage atmosphérique disponible. Le survol durerait une question d'heures. Après des décennies de voyage et des années de transmission de signal à la vitesse de la lumière, Proxima Centauri et toute planète en orbite autour de lui recevraient quelques heures d'attention. Tout ce que les capteurs captèreraient pendant ce passage prendrait 4,24 années pour arriver à la maison. Breakthrough Starshot n'est pas une mission pour explorer une autre étoile. C'est une mission pour jeter un coup d'œil à une."
+    },
+    {
+      "type": "prose",
+      "md": "Project Daedalus, proposé par la British Interplanetary Society dans une étude de 1973 à 1978, visait quelque chose de plus substantiel : un [vaisseau interstellaire à propulsion par fusion](/science/propulsion/fusion-propulsion) à deux étages, utilisant l'allumage par confinement inertiel de pastilles deutérium-hélium-3, conçu pour atteindre l'étoile de Barnard (alors supposée avoir des planètes) à environ 12 % de la vitesse de la lumière, arrivant en approximativement cinquante ans. Le navire qu'il envisageait était énorme — initialement carburisé, il aurait une masse d'environ 54 000 tonnes, la taille d'un petit gratte-ciel. Son étude successeur, Project Icarus, a revisité le concept à partir de 2009 avec une physique mise à jour et des options de propulsion plus larges. Les deux études convergent sur la même évaluation honnête : le moteur à fusion fonctionne, en principe, mais la technologie requise — la fusion par confinement inertiel soutenue à l'échelle et au taux de répétition nécessaires pour la propulsion — n'a pas été réalisée, et la nécessité en carburant d'hélium-3 dépasse vastement ce qui peut être extrait de la Terre. L'hélium-3 devrait être extrait de l'atmosphère de Jupiter. Aucun mécanisme n'existe pour faire cela."
+    },
+    {
+      "type": "prose",
+      "md": "L'antimatière est le plafond théorique. [L'annihilation matière-antimatière](/science/propulsion/antimatter-propulsion) est le processus le plus énergétique permis par la physique connue, convertissant la masse en énergie à cent pour cent d'efficacité — comparé à environ 0,7 % pour la fusion nucléaire et une fraction d'un pour cent pour la combustion chimique. Un moteur à antimatière, si l'annihilation pouvait être dirigée efficacement, pourrait en principe accélérer un engin spatial à une fraction substantielle de c avec une masse de carburant relativement modeste. Le mur est la production. Toute la production accumulée d'antimatière par les accélérateurs de particules du monde — à travers toute l'histoire humaine — se chiffre à quelques nanogrammes. Une mission interstellaire à l'échelle de Daedalus nécessiterait quelque chose comme des dizaines de milliers de tonnes d'antimatière. L'énergie nécessaire pour produire cette quantité dépasserait la production totale d'énergie de la civilisation humaine, multipliée par les siècles. La propulsion par antimatière n'est pas un problème d'ingénierie à court terme. C'est un problème énergétique à l'échelle de la civilisation."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/the-proposals",
+      "kind": "diagram",
+      "caption": "Trois concepts survivent à l'examen honnête : une navoile poussée par laser (Breakthrough Starshot) qui pourrait survoler une étoile proche en décennies, un vaisseau interstellaire à fusion (Project Daedalus) de la taille d'un bâtiment, et le carburant parfait mais inimitable de l'antimatière. Aucun n'est interdit par la physique — tous sont interdits par l'énergie, la distance et la patience.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Le problème des messages"
+    },
+    {
+      "type": "prose",
+      "md": "Même en mettant de côté la propulsion, l'exploration interstellaire a une deuxième difficulté structurelle que la chimie et l'ingénierie ne peuvent pas résoudre : la vitesse de la lumière elle-même. Un signal radio de Proxima Centauri prend 4,24 années pour atteindre la Terre. Une question transmise au moment de l'arrivée d'un engin spatial reçoit une réponse, au mieux, 8,48 années plus tard. Il n'y a pas de contrôle en temps réel significatif. Il n'y a pas de contrôleur de mission criant les corrections de cap lors d'une approche. Tout ce qu'un engin spatial fait à Proxima Centauri, il le fait entièrement seul — plus seul, par ordres de grandeur, que [les sept minutes d'EDL autonomes](/essays/seven-minutes) sur Mars, où l'engin sait au moins que les humains le surveillent de douze minutes de distance."
+    },
+    {
+      "type": "prose",
+      "md": "L'architecture de communication que cela exige est qualitativement différente de tout ce que nous avons construit. Le [Deep Space Network](/science/mission-phases/dsn) gère les distances interplanétaires parce que le délai aller-retour, bien que douloureux aux planètes extérieures, est toujours mesuré en heures — une cadence au sein de laquelle les contrôleurs de mission humains peuvent travailler. Les délais interstellaires sont mesurés en années. Les volumes de données seraient transmis à la vitesse de la lumière mais les photons les portant voyageraient pendant des années avant d'arriver à une antenne sur Terre, et tout commandement de suivi ou retransmission prendrait tout aussi longtemps. [La communication spatiale à travers le système solaire](/essays/comms) est déjà une discipline de patience ; la communication interstellaire serait une discipline de générations. Vous envoyez un message. Vos petits-enfants reçoivent la réponse."
+    },
+    {
+      "type": "prose",
+      "md": "Dans le scénario de Breakthrough Starshot, une sonde à l'échelle du gramme passe à toute vitesse dans le système Proxima Centauri à 20 % de la vitesse de la lumière en une question d'heures. Ses capteurs collectent tout ce qu'ils peuvent dans cette fenêtre. Les données comprimées sont ensuite transmises à la maison à la vitesse de la lumière, arrivant 4,24 années plus tard. Il n'y a pas de deuxième passe. Il n'y a pas de déploiement d'instruments de suivi, pas d'insertion en orbite, pas de mission de surface, pas de capacité à répondre à une découverte surprenante par une nouvelle observation. C'est le contenu honnête de « l'exploration interstellaire » à la seule vitesse que nous sachions atteindre : un bref cliché unidirectionnel, transmis à la maison à travers des années de silence, d'une sonde qui ne peut pas ralentir et ne sera jamais entendue à nouveau."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/the-message",
+      "kind": "diagram",
+      "caption": "Même si une sonde arrive, les nouvelles prennent des années pour rentrer à la maison. À Proxima, un signal fait 4,24 années dans chaque sens ; une traversée durant des décennies donne quelques heures de données de survol, puis encore des années pour l'entendre. L'exploration interstellaire est, avant tout, un exercice de patience.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "L'horizon honnête"
+    },
+    {
+      "type": "prose",
+      "md": "Rien de cela ne signifie que le voyage interstellaire est interdit. Il n'existe pas de loi physique qui interdise à un engin spatial de traverser quatre années-lumière. Il n'y a que des murs d'ingénierie, des budgets énergétiques, et le plafond d'impulsion spécifique de chaque système de propulsion que les êtres humains ont jamais conçu. Ce sont des contraintes réelles, non absolues — ce sont les contraintes d'une civilisation à un moment particulier de son développement, une civilisation qui peut, en principe, lancer une sonde à l'échelle du gramme vers une étoile proche sur un rayon laser, mais ne peut pas encore construire le laser. La distinction compte. « Interdit par la physique » et « au-delà de l'ingénierie actuelle » sont des phrases différentes."
+    },
+    {
+      "type": "prose",
+      "md": "Mais l'écart entre « non interdit » et « réalisable dans un délai rapproché » est énorme. La proposition la plus lente sérieuse — un vaisseau interstellaire à fusion à 12 % de c — nécessiterait une technologie qui n'existe pas, à un coût qui dépasse n'importe quel programme spatial de l'histoire, pour livrer un navire avec équipage à une autre étoile en approximativement cinquante ans. La proposition la plus rapide sérieuse — le vaisseau léger poussé par laser de Breakthrough Starshot — livrerait un gramme d'instruments à un survol qui dure des heures, et retournerait des données pendant des années, à un coût que ses partisans estiment en dizaines de milliards de dollars, en supposant que le réseau de laser puisse être construit du tout. Entre ces extrêmes, il n'y a pas d'option intermédiaire qui soit à la fois techniquement faisable et adéquate pour une exploration significative. L'échelle du problème n'a simplement pas de solution modérée."
+    },
+    {
+      "type": "prose",
+      "md": "Il existe un troisième chemin, et c'est le plus humain : allez lentement, et allez dans des navires assez grands pour porter des vies. Si vous ne pouvez pas accélérer à dix pour cent de la vitesse de la lumière, vous acceptez le temps de voyage — des siècles, des millénaires — et vous construisez un navire qui est lui-même un monde. C'est l'idée derrière [les vaisseaux interstellaires générationnels](/essays/generational-starships) : non un engin spatial au sens conventionnel mais un système écologique et social fermé, lancé à des vitesses réalisables par une propulsion ambitieuse mais concevable du proche avenir, visant Proxima ou un autre système proche, portant les ancêtres des gens qui arriveront. Les physiques sont indulgentes d'une façon que l'équation de la fusée ne l'est pas. Les problèmes se déplacent de l'ingénierie à la biologie, l'écologie, la sociologie, et l'éthique : ce que cela signifie de naître dans un voyage que vous n'avez pas choisi, et de mourir avant qu'il se termine. Ce ne sont pas de plus petits problèmes. Ce sont des problèmes différents."
+    },
+    {
+      "type": "prose",
+      "md": "Ce que l'arithmétique fournit en fin de compte n'est pas le désespoir. Cela fournit la proportion. Le système solaire — le vaste volume de l'orbite terrestre au Nuage d'Oort — est la plus grande chose que les êtres humains aient jamais navigué, et il a fallu la meilleure partie d'un siècle pour construire les outils d'explorer même ses atteintes proches. L'espace interstellaire n'est pas la prochaine étape sur cette échelle. C'est une falaise au-dessus. La falaise n'est pas infinie ; elle a un sommet. Mais atteindre le sommet nécessite soit une révolution dans la production d'énergie et la science des matériaux (le réseau de laser), soit une maîtrise soutenue de la propulsion par fusion (Daedalus/Icarus), soit un engagement civilisationnel à la patience à une échelle temporelle qu'aucune institution humaine n'a encore maintenue (le vaisseau génération). Ces trois sont réellement possibles. Aucun n'est imminent."
+    },
+    {
+      "type": "prose",
+      "md": "C'est ce que « la vue longue » signifie quand elle regarde vers l'extérieur au-delà de l'héliopause. Non pas que nous ne pouvons pas y aller, mais que d'y aller honnêtement exige de tenir l'échelle dans votre esprit sans sourciller — les 73 000 années dont Voyager 1 aurait besoin, la sonde à l'échelle du gramme hurlant à travers en heures, les arrière-arrière-petits-enfants arrivant à une étoile vers laquelle leurs ancêtres ont pointé le navire. L'étoile la plus proche n'est pas une destination. C'est une définition : de combien nous avons avancé, de combien la physique nous permet encore d'avancer, et de combien de la distance entre ces deux points nous n'avons pas encore traversé."
+    },
+    {
+      "type": "figure",
+      "image": "missions/new-horizons/01",
+      "kind": "photo",
+      "caption": "New Horizons, qui a traversé près de cinq milliards de kilomètres jusqu'à Pluton et au-delà dans la ceinture de Kuiper — le plus nouveau de nos engins en partance, et un rappel que même nos plus audacieuses missions de l'espace lointain sont encore des voyages dans le propre jardin d'avant du système solaire.",
+      "align": "wide",
+      "credit": "NASA/JHUAPL/SwRI"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Sky-Crane",
+  "intro_sentence": "The rocket-powered platform that lowers a rover to the surface on tethers, then flies away — the landing system that put Curiosity and Perseverance on Mars.",
+  "narrative_101": [
+    "Early Mars rovers were small enough to bounce down inside a cocoon of airbags. But Curiosity was the size of a car — far too heavy for airbags — and putting big landing legs under the rover would have meant perching it high on a bulky platform, then somehow driving it off. NASA's answer was stranger and more elegant: the sky-crane.",
+    "After the heat shield and parachute have done their work, a rocket-powered descent stage takes over, firing eight engines to slow to a near-hover a few metres up. Then, instead of landing itself, it lowers the rover beneath it on a set of tethers — like a helicopter placing a load — until the rover's wheels touch the ground. The rover is its own landing gear.",
+    "The instant the rover is down and its weight comes off the tethers, the descent stage cuts the cords and flies away to crash a safe distance off, so its exhaust and its wreckage never touch the rover. The whole sequence — hover, lower, touchdown, fly-away — takes only seconds, and it has now worked twice: for Curiosity in 2012 and Perseverance in 2021."
+  ],
+  "body_paragraphs": [
+    "The sky-crane solves two problems at once. It keeps the rocket engines high, so their plumes do not dig a crater or throw debris up at the rover, and it delivers the rover directly onto its wheels, ready to drive — no ramps, no lander deck to descend. The cost is a choreography with zero margin for error, executed autonomously, minutes after a fiery entry, with Earth too far away to help in real time.",
+    "It is the terminal chapter of the seven minutes of terror: entry heating, then the supersonic parachute, then heat-shield separation, then the powered descent, then the sky-crane lower and fly-away — each step must fire on cue or the mission is lost on landing. Only a handful of nations have soft-landed on Mars at all; the sky-crane is the most audacious way it has been done.",
+    "On `/fly`, fly Curiosity or Perseverance in `?descent=1` and watch the descent stage's tethers pay out below the parachute-and-retro sequence, lowering the rover to the surface before the stage flies clear — the sky-crane beat made visible."
+  ],
+  "diagram_caption": "Sky-crane: a rocket-powered descent stage hovers and lowers the rover on tethers to the surface, then cuts the cords and flies clear."
+}

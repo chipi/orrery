@@ -63,7 +63,11 @@
       "periapsis_km": 115,
       "inclination_deg": 120,
       "orbit_insertion_dv_km_s": 0.7,
-      "source": "NASA NSSDCA Luna 24 archive; 115 × 120 km parking orbit before descent to Mare Crisium"
+      "source": "NASA NSSDCA Luna 24 archive; 115 × 120 km parking orbit before descent to Mare Crisium",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 3.5,

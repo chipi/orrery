@@ -1,0 +1,127 @@
+{
+  "title": "Het lichaam in het donker",
+  "dek": "Al het andere in deze verzameling is engineering — navigatie, voortaandrijving, landing, communicatie over de leegte. Dit is het ene probleem dat geen motor oplost: de reiziger is biologie die verslechtert, en het menselijk lichaam is de kwetsbare lading die het hele onderneming beschermt.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Het ruimtevaartuig is, in bijna elke zinvolle zin, een wonder. Zijn [navigatiesysteem](/essays/navigation) kan het tot op honderd kilometer nauwkeurig plaatsen bij een doel over vijf miljard kilometer niets. Zijn motoren kunnen jaren lang stuwkracht produceren op een klein beetje xenon. Zijn radio's kunnen fluisteren over het buitenste zonnestelsel en worden nog steeds gehoord. Elk subsysteem is gespecificeerd, getest, gecertificeerd tegen uitval, en als er iets mis gaat tijdens de reis, kan een team op aarde een fix sturen — een softwarepatch over honderden miljoenen kilometers. Het ruimtevaartuig is engineering op zijn meest verfijnd. Het bevindt zich echter, in het ene geval dat hier van belang is, in ernstige moeilijkheden, omdat het ding dat het vervoert niet kan worden gerepareerd met een patch, niet opnieuw kan worden gespecificeerd, en van het moment waarop de luik sluit achteruit gaat."
+    },
+    {
+      "type": "prose",
+      "md": "Het menselijk lichaam is niet ontworpen voor de ruimte. De verleiding — in persberichten, in populaire verslagen, in het visuele vocabulaire van elke missieaffiche — is om de astronaut als triomfantelijk, gekleed, bepantserd tegen de leegte af te beelden. Dit beeld is niet onjuist. Het is echter onvolledig. Verwijder het pak en je hebt een primaat wiens immuunreacties zijn gevormd door een ziektekiemrijke Afrikaanse savanna, wiens skelet zich heeft ontwikkeld om zich tegen één standaard aardse zwaartekracht in stand te houden, wiens cardiovasculaire systeem een vloeistofkolom verwacht die tegen de zwaartekracht van beneden naar boven vecht, en wiens hersenen werken op een magnetosfeer-afgeschermde stralingsbegroting die bijna niets te maken heeft met wat wacht buiten een lage aardbaan. Het pak is een interface. De mens is de beperking. Elk [systeem aan boord van het ruimtevaartuig](/science/life-in-space/crewed-station-design), elke redundantie in de levensverwarmingslussen, bestaat om die beperking lang genoeg in leven te houden om nuttig werk te doen en naar huis te komen."
+    },
+    {
+      "type": "prose",
+      "md": "Dit is het probleem dat [naar Mars gaan](/essays/going-to-mars) stelt dat geen voortaandrijvingsvooruitgang kan oplossen. [Snellere motoren](/essays/new-propulsion) verkorten de treinreis en verminderen blootstellingstijd — maar ze verwijderen het niet. Het lichaam blijft wat het is: een systeem onder aanhoudende aanval van vier richtingen tegelijk. Straling die elke schaal penetreert die we kunnen dragen. Het verdwijnen van het zwaartekrachtsignaal waarvan het hele bewegingsapparaat afhankelijk is. Een immuunsysteem dat op manieren afwijkt die we nog steeds catalogiseren. Een geest die steeds meer alleen is op een manier waarvoor geen evolutie het voorbereide. Geen van deze is volledig opgelost. Elk is een echte beperking op hoe ver en hoe lang menselijke wezens kunnen reizen."
+    },
+    {
+      "type": "heading",
+      "text": "Het onzichtbare weer"
+    },
+    {
+      "type": "prose",
+      "md": "De ruimte is niet leeg. Het is vol [straling](/science/life-in-space/radiation-exposure) — en niet de gelokaliseerde, voorspelbare straling van een röntgentoestel, dat een bekende dosis in een bekende geometrie aflevert en stopt. Ruimtestraling komt in twee verschillende en gevaarlijke smaken. De eerste zijn zonnepartikelgebeurtenissen: stormen van protonen versneld door zonnefakkels en coronale massa-ejecties, die in staat zijn om in uren tijd een dodelijke dosis af te leveren zonder bescherming. De tweede zijn galactische kosmische stralen: hoogenergetische atoomkernen die miljarden jaren door de melkweg versnellen en van alle richtingen continu aankomen, bij energieën zo extreem dat de praktische hoeveelheid metaal of water die ze zou stoppen in honderden tonnen wordt gemeten — ver voorbij wat elke voorzienbare raket kan tillen. Het magnetische veld en de atmosfeer van de aarde behandelen beide. Voorbij lage aardbaan, geen van beide is er."
+    },
+    {
+      "type": "prose",
+      "md": "Carrièredosislimieten voor astronauten zijn ingesteld om het levenslange overtollige kankerrisico op ongeveer drie procent boven het achtergrondpercentage in te perken. NASA's limieten, uitgedrukt in sieverts, verschillen naar leeftijd en geslacht omdat stralingsgevoel niet — een 35-jarige vrouw staat voor een strenger plafond dan een 55-jarige man. Een verblijf van zes maanden aan boord van het [ISS](/programs/iss) — nog steeds in de gedeeltelijke bescherming van de magnetosfeer — levert ongeveer 80 millisieverts. Een Mars-transit van zes tot negen maanden elk aan elke kant, plus een verblijf op het oppervlak, zou waarschijnlijk 500 tot 1.200 millisieverts heen en terug leveren, afhankelijk van de zonnecyclusfase. Dit getal ligt op of voorbij wat huidige carrièrelimieten voor een enkele missie toestaan."
+    },
+    {
+      "type": "prose",
+      "md": "Het kankerrisico is het meest besproken in planningsdocumenten. Het risico voor het centrale zenuwstelsel is het risico dat onderzoekers meer zenuwachtig maakt. Hoogenergetische galactische kosmische stralen zetten energie af in dichte, gelokaliseerde sporen door neuronen op manieren die verschillen van gewone stralingsblessures en die op dezelfde manier niet kunnen genezen. Dierenstudies in het NASA Space Radiation Laboratory op Brookhaven hebben meetbare cognitieve en gedragsveranderingen in knaagdieren blootgesteld aan gesimuleerde GCR-doses gelijk aan een Mars-missie aangetoond: verslechterde ruimtelijk geheugen, verstoorde executieve functie, versnelde neurodegenereratie. De menselijke gegevens om dit tegen te spreken of te bevestigen bestaat nog niet, omdat geen mens ooit een GCR-dosis zo hoog heeft ontvangen. We zullen het menselijke CNS-antwoord pas kennen wanneer de eerste bemanning gaat. Dat is een echt wetenschappelijk en ethisch grensgebied — behandeld als zodanig door onderzoekers die het bestuderen, zelfs wanneer het wordt behandeld als een achtergrondaanname door missieplanners die de trip moeten laten plaatsvinden."
+    },
+    {
+      "type": "figure",
+      "image": "essays/the-body-in-the-dark/radiation-weather",
+      "kind": "diagram",
+      "caption": "Het moeilijkste probleem is het probleem dat je niet kunt zien. Voorbij het magnetische veld van de aarde is er geen schuilplaats tegen galactische kosmische stralen, en een zonnestorm kan in uren tijd een acute dosis afleveren. Blindage zwaar genoeg om ze te stoppen is veel te zwaar om te vliegen — dus op een lange reis absorbeert de bemanning eenvoudig het weer.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Het lichaam vergeet zwaartekracht"
+    },
+    {
+      "type": "prose",
+      "md": "Zwaartekracht is niet alleen een ongemak waartegen het lichaam vecht. Het is een signaal dat het lichaam continu leest, en waaraan bijna elk groot fysiologisch systeem is gekalibreerd. Verwijder het en de kalibratie mislukt, geleidelijk, op manieren die twee uur dagelijks beweging kunnen vertragen maar niet kunnen stoppen. [Botmineraaldichtheid](/science/life-in-space/bone-density-loss) daalt met ongeveer één tot anderhalve procent per maand in de dragende botten — de heup, de ruggraat, de dijbeen — zonder de mechanische prikkel die normaal bothermodellering triggert. Dat is een snelheid vergelijkbaar met de meest ernstige gevallen van osteoporose op aarde, samengeperst in maanden in plaats van decennia. Na een standaard zes maanden ISS-toer kunnen bemanningsleden botverliesbotten tonen die een jaar of meer herstel nodig hebben om om te keren, en het bewijs dat volledig herstel altijd voor alle bemanningsleden plaatsvindt is niet waterdicht."
+    },
+    {
+      "type": "prose",
+      "md": "[Spieromvang volgt een parallelle curve](/science/life-in-space/muscle-atrophy), vooral in de houding spieren — degenen wiens primaire Earthside-functie het skelet rechtop houdt. Zonder het constante lage-niveauwerk van tegen zwaartekracht vechten, atrofieën zij sneller dan vrijwillig lichaamsbeweging volledig kan compenseren. Het [vestibulaire systeem](/science/life-in-space/vestibular-adaptation), dat een zwaartekrachtvector tegen zich aan verwacht, leest de microgravitatie-omgeving in eerste instantie verkeerd af en produceert ruimtemotie in ongeveer de helft van alle astronauten in de eerste paar dagen; aanpassing vindt uiteindelijk plaats, maar het systeem moet zich vervolgens opnieuw aanpassen aan zwaartekracht bij terugkeer, en de heraanpassing is niet altijd soepel of snel. Cardiovasculaire ontconditioning volgt zijn eigen boog: zonder hydrostatische drukgradiënt waartegen moet werken, atrofieert het hart als elke onderbelaste spier, daalt het hartminuutvolume, en het plasmavolume dat normaal het lagere lichaam vult, verdeelt zich naar boven. Het terugkeren van bemanningsleden die zes maanden in een baan hebben gezeten, kunnen soms niet rechtop staan zonder een bloeddrukdaling die een gezonde volwassene op de grond zou vloeren."
+    },
+    {
+      "type": "prose",
+      "md": "De meest verrassende complicatie die in het afgelopen decennium uit lange-duur-ruimtevluchten naar voren is gekomen, is er een die niemand duidelijk voor het ISS-programma anticipeerde genoeg uren van de bemanning om het zichtbaar te maken: [spaceflight-associated neuro-ocular syndrome](/science/life-in-space/microgravity-physiology), of SANS. In micrograviteit beïnvloedde de vloeistofverschuiving die bloed en plasma naar het hoofd aandrijft, ook de intracraniële druk op manieren die nog steeds worden gekarakteriseerd. Het resultaat, in een aanzienlijke fractie van lange-duur-bemanningsleden — sommige studies plaatsen het nu op twee-derde of meer van lange-duur-bemanning — is een afplatting van de achterkant van de oogbol, een verandering in de vorm van de optische zenuwhoofd, en meetbare verslechtering van het gezichtsvermogen. Sommige astronauten zijn van het ISS teruggekeerd en hebben voor het eerst in hun leven een leesbril nodig. Het mechanisme is niet volledig begrepen. De behandeling bestaat nog niet. SANS is momenteel een van de drie of vier problemen op de lijst van showstoppers voor een bemande Mars-missie, in de beoordeling van onderzoekers die die lijsten schrijven."
+    },
+    {
+      "type": "figure",
+      "image": "essays/the-body-in-the-dark/microgravity-toll",
+      "kind": "diagram",
+      "caption": "Een lichaam dat voor één zwaartekracht is geoptimaliseerd, valt rustig uiteen in vrije val: bot loost ongeveer één procent per maand, spier verspilt, vloeistof verzamelt zich in het hoofd en plaatst de achterkant van het oog af. Twee uur oefening per dag vertraagt de verliezen alleen maar — niemand heeft ze doen stoppen.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Wat we weten omdat iemand bleef"
+    },
+    {
+      "type": "prose",
+      "md": "Alles wat we over langdurige ruimtevaartuigfysiologie weten, werd gemeten — op echte mensen, die in werkelijkheid in de ruimte leefden, voor echte durations thuis kwamen, en werden bestudeerd. Het record voor een enkele continue vlucht wordt gehouden door Valeri Polyakov, een Russische arts-kosmonaut die [Mir](/programs/mir) in januari 1994 instapt en naar aarde terugkeerde in maart 1995, na 437 opeenvolgende dagen in een baan te hebben doorgebracht — nog steeds ongebroken, drie decennia later. Polyakov's doel was expliciet medisch: bepalen of een menselijk wezen, functioneel, een Mars-missiuduur kon overleven. Toen hij landde, eiste hij erop dat hij onder zijn eigen kracht bij de Soyuz-capsule wegging. Zijn bot- en spierachteruitgang duurde maanden. Hij liep. De [Salyut](/programs/salyut) en [Mir](/programs/mir) programma's bouwden een Sovjet- en vervolgens Russische lichaam van fysiologische gegevens op die onvervangbaar blijft — het [ISS](/programs/iss) breidde het uit en globaliseerde het. Peggy Whitson's cumulatieve 665 dagen over drie missies gaven onderzoekers een longitudinale dataset op een enkel individu onmogelijk anders te repliceren. De NASA Twin Study — Scott Kelly's 340-daagse missie vergeleken met zijn aardse identieke tweeling Mark — vond meetbare veranderingen in genexpressie, telomeeranamica, darmmicrobobocompositie, en cognitieve prestaties, waarvan de meeste op terugkomst werden omgekeerd, maar niet allemaal. China's [Tiangong](/programs/tiangong) programma voegt nu aan het record toe: bemanning op 90- en 180-daagse rotaties sinds 2021, een taikonauts-populatie voorheen afwezig uit de dataset. Elk eerlijk rekenschap van wat de mensheid over het langdurige menselijk lichaam in de ruimte weet, moet omvatten wat Rusland op Mir leerde, wat het 15-natie ISS-partnerschap sinds 2000 heeft gemeten, en wat China nu accumuleert."
+    },
+    {
+      "type": "figure",
+      "image": "essays/the-body-in-the-dark/the-record",
+      "kind": "diagram",
+      "caption": "Bijna alles wat we over het lichaam in de ruimte weten, weten we omdat bepaalde mensen daar lang genoeg bleven om het te meten — en het record is wereldwijd. Valeri Polyakov's 437 dagen aan boord van Mir staat nog steeds; het ISS en nu Tiangong voegen crew-jaren aan de dataset één rotatie tegelijk toe.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "fleet/iss/01",
+      "kind": "photo",
+      "caption": "Het Internationaal Ruimtestation — een kwart eeuw lang het enige laboratorium waar de langetermijneffecten van gewichtloosheid zijn bestudeerd, met een roterende internationale bemanning die onvermijdelijk het experiment is.",
+      "align": "wide",
+      "credit": "NASA"
+    },
+    {
+      "type": "heading",
+      "text": "De geest in een blik"
+    },
+    {
+      "type": "prose",
+      "md": "De fysieke verslechtering van het lichaam is meetbaar en op zijn minst gedeeltelijk adresbaar. De psychologische dimensie is moeilijker om te bestuderen, omdat het afhangt van variabelen — persoonlijkheid, bemanningswerkstelling, de textuur van opsluiting, de relatie tussen bemanning en grond — die zich tegen gecontroleerde experimenten verzetten. Wat de analoge studies suggereren is niet bemoedigend. [Isolatie- en opsluiting psychologie](/science/life-in-space/crew-dynamics-psychology) is het meest systematisch bestudeerd in Antarctic winter-overstation: kleine groepen in echt donker en koud, zonder te kunnen vertrekken. De patronen zijn consistent in studies — een middenwinter-syndroom van verslechterde stemming en cognitie, interpersoonlijke wrijving die erger wordt in gesloten ruimten, een psychologische afstand van de buitenwereld die na terugkeer kan aanhouden. Antarctic crews kan in ieder geval buiten lucht inhaleren en een landschap zien. Een Mars-bemanning kan niet. Het Mars-500-experiment in Moskou (2010–2011) simuleerde een 520-daagse missie in een verzegelde habitat; zes vrijwilligers hebben de volledige duur voltooid zonder weg te gaan. Zittend gedrag verslechterde in de hele omloop. Een onderwerp bracht de meerderheid van de laatste maanden in slaap door. Een toonde symptomen consistent met klinische depressie. Als de communicatievertraging naar de gesimuleerde 20 minuten klom, rapporteerden de crews dat het niet alleen langzamer voelde, maar fundamenteel eenzamer — beslissingen die aan de grond zouden zijn overgedragen, moesten aan boord worden genomen, en het gevoel dat iemand altijd kon worden bereikt, langzaam erodeert. Een bemanningslid op het [ISS](/programs/iss) heeft altijd een Soyuz aan het station aangedockt. Op een Mars-transit bestaat de nooduitgang niet. Vanaf het moment van trans-Mars-injectie kan geen beslissing van enige controller op aarde de bemanning op nuttige tijd naar huis brengen. De bemanning weet dit. Wat blijvende kennis van uw eigen onreddelijkheid doet voor een menselijk gedachte over 18 maanden is een vraag die de analoge studies hebben benaderd maar niet kunnen beantwoorden. We zullen het niet weten totdat de eerste bemanning vertrekt."
+    },
+    {
+      "type": "figure",
+      "image": "missions/polaris-dawn/01",
+      "kind": "photo",
+      "caption": "Een privéastronaut in het open luik van een Crew Dragon tijdens Polaris Dawn, 2024 — een menselijk wezen met alleen een pak tussen hen en het vacuüm. De engineering kan betrouwbaar worden gemaakt; de geest die de opsluiting, het risico en de jaren moet verdragen, kan niet opnieuw worden gespecificeerd.",
+      "align": "wide",
+      "credit": "Polaris Program / SpaceX"
+    },
+    {
+      "type": "heading",
+      "text": "De limiet die motoren niet verplaatsen"
+    },
+    {
+      "type": "prose",
+      "md": "Geen van wat dit gedeelte voorafgaat, is een reden om niet te gaan. Het is een eerlijke begroting van wat gaan betekent, en wat het zal kosten voor de mensen die gaan. Dit zijn verschillende dingen, en het verschil is het waard om nauwkeurig over te zijn."
+    },
+    {
+      "type": "prose",
+      "md": "Betere voortaandrijving doet ertoe. De [nieuwe motortechnologieën](/essays/new-propulsion) die onder ontwikkeling zijn — nucleaire thermische, nucleaire elektrische, zonnezeil, de verdertoekomstige concepten — zouden de treinrijduur verkorten, en het inkorten van de treinrijduur vermindert cumulatieve stralingsbelasting en cumulatieve fysiologische verslechtering. Een transit van 90 dagen in plaats van 270 is niet drie keer gemakkelijker voor het lichaam; de relatie tussen dosis en effect is complexer dan lineair, en sommige systemen — de psychologische, de beenderen, de cardiovasculaire — zijn gevoelig voor duur op manieren waarop zelfs kortere blootstelling niet volledig redt. Maar korter is beter. Snellere motoren zijn echte geneeskunde. Ze veranderen echter niet de fundamentele aard van het probleem. Een 90-daagse transit kruist nog steeds interplanetaire ruimte zonder magnetosfeer, zonder zwaartekracht en zonder redding. Het lichaam is nog steeds de lading. Het verslechtert nog steeds. Het keert nog steeds naar huis terug verminderd op manieren die maanden of jaren nemen om om te keren, als zij omdraaien."
+    },
+    {
+      "type": "prose",
+      "md": "De tegenmaatresten die bestaan, zijn echt maar gedeeltelijk. Geavanceerde resistente trainingstoestellen — de soort aan boord van het [ISS](/programs/iss), op een betekenisvolle manier beter dan wat vloog op vroege [Skylab](/programs/skylab) missies — kunnen beenverlies en spierverval aanzienlijk vertragen, niet elimineren. Voedingsinterventies, farmacologische beenverliesbehandelingen, en slaapbeheerprotocollen dragen elk iets bij. Kunstmatige zwaartekracht, bereikt door het ruimtevaartuig of een module ervan te draaien, zou de grootste enkele categorie aanpakken — micrograviteitsfysiologie — maar geen bemande ruimtevaartuig met kunstmatige zwaartekracht is ooit gebouwd of gevlogen, en de engineeringkosten in massa en lanceringvolume zijn aanzienlijk. Het [Skylab](/programs/skylab) programma van drie bemanning — 28, 59, en 84 dagen in 1973 en 1974 — gaf het eerste systematische Amerikaanse bewijs dat lichaamsbeweging deconditionering op een zinvol zou kunnen tegenwerken, een bevinding die elk bemanningsgezondheidprotocol op elk vervolg langdurend programma vorm heeft gegeven."
+    },
+    {
+      "type": "prose",
+      "md": "Wat dit onthult, is dat de uitdaging van menselijke diepruimtereizen twee afzonderlijke moeilijkheidscategorieën heeft. De eerste — engineering — is moeilijk maar handelbaar: raketten, [navigatie](/essays/navigation), [communicatie](/essays/comms), landing, levensverwarmingen hebben allemaal definieerbare oplossingsspaties waar meer kennis en investeringen het antwoord naar voren brengen. De tweede is biologisch, en het is op een ander manier moeilijker. Niet omdat de biologie onbegrijpelijk is — de mechanismen worden grotendeels begrepen, en de tegenmaatresten worden beter — maar omdat de biologie niet kan worden onderhandeld. Je kunt een softwareflap niet voor een ruggengraat schrijven die botmineraaldichtheid over acht maanden heeft verloren. Je kunt het immuunsysteem's reactie op isolatie niet met een firmwareupdate herprogrammeren. Het lichaam heeft zijn eigen beperkingen, gebouwd over miljoenen jaren voor een enkele wereld, en die beperkingen zijn het ultieme plafond op hoe ver elke persoon kan reizen. [De mensen aan boord van een generationeel ruimteschip](/essays/generational-starships) zijn geen individuen die hun gezondheid over een carrière beheren — ze zijn een afstamming, over wie de fysiologische gevolgen van de omgeving over generaties heen ophopen."
+    },
+    {
+      "type": "prose",
+      "md": "De [Polaris Dawn-missie](/explore) in 2024 — een particuliere bemande vlucht door de buitenste Van Allen-gordels — leverde de eerste gegevens van de privésector op hoogtepunten waar beltflux werkelijk gevaarlijk is. De duur was kort, de hoogte nog steeds in het Earth-Moon-systeem. Maar het markeert een fase waarin de bevolking van mensen voor wie deze vragen praktisch zijn, niet theoretisch, zich uitbreidt voorbij nationale programma's. De beperkingen van het lichaam veranderen niet wanneer de werkgever doet. In elk ander essay in deze verzameling, haalt de engineering uiteindelijk de ambitie in — voortaandrijving, [navigatie](/essays/navigation), landing, [communicatie](/essays/comms) elk dicht naar hun doelen in decennia. De kloof tussen wat menselijke fysiologie is en wat diepruimtevervoer eist, sluit ook, door tegenmaatstudies en de ophopende datasets van het [ISS](/programs/iss) en [Tiangong](/programs/tiangong) en wat eraan voorafging. Maar het sluit niet snel, en het kan helemaal niet sluiten. Het lichaam is het oudste systeem op het ruimtevaartuig, en het is de ene die niet kan worden geüpgraded."
+    }
+  ]
+}

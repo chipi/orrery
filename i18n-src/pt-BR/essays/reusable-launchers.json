@@ -1,0 +1,155 @@
+{
+  "title": "Manter o Foguete",
+  "dek": "Durante sessenta anos construímos a máquina mais cara da história humana, a utilizámos uma única vez e a largámos no oceano. As pessoas que decidiram parar com isso conseguiram, discretamente, a maior mudança na exploração espacial desde a Apollo.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Na noite de 21 de dezembro de 2015, um primeiro estágio do [Falcon 9](/fleet?id=falcon-9) estava em pé verticalmente numa plataforma de concreto em Cabo Canaveral, motores frios, envolvido por uma nuvem de vapor residual, intacto. Tinha acabado de voltar do espaço. Cerca de oito minutos depois de decolar para entregar um lote de satélites em órbita, o foguete impulsionador tinha-se girado, reacendido três dos seus nove motores Merlin, travado através da atmosfera superior, implantado quatro pernas de aterragem e colocado-se de pé na plataforma de onde tinha partido. A manobra inteira exigiu o tipo de precisão normalmente reservado para um relógio suíço. A multidão que observava eclodiu em aplausos e o som — um rugido de pessoas que tinham acabado de ver algo genuinamente novo — ainda está no vídeo."
+    },
+    {
+      "type": "prose",
+      "md": "O que aconteceu essa noite foi uma demonstração, mas o que demonstrava não era principalmente um truque técnico. Era um argumento económico. Cada foguete que já tinha voado antes — o [Saturn V](/fleet?id=saturn-v) que levou doze pessoas à Lua, o N1 soviético que nunca chegou à órbita, as famílias de trabalho Soyuz, Atlas, Proton e Long March que, no conjunto, respondem pela maioria dos lançamentos deste atlas — foi construído para ser utilizado uma vez. Voava. Desintegrava-se na atmosfera ou afundava-se no mar. Construíamos outro. A indústria tinha sido estruturada à volta deste facto durante sessenta anos: foguetes eram munição, não aviões. No momento em que o Falcon 9 aterrou, esse pressuposto foi colocado em causa pela primeira vez."
+    },
+    {
+      "type": "prose",
+      "md": "A razão pela qual tinha levado sessenta anos para chegar a esse ponto é uma questão mais interessante do que parece."
+    },
+    {
+      "type": "heading",
+      "text": "O problema do contabilista"
+    },
+    {
+      "type": "prose",
+      "md": "O foguete descartável é desperdiçador de uma forma que é quase cômica quando a descreves abertamente. Um [Saturn V](/fleet?id=saturn-v) custava algo na ordem dos $185 milhões em dólares do final dos anos 1960 — aproximadamente $1,5 mil milhões aos preços de hoje — e cada um voava durante apenas cerca de doze minutos antes de ser descartado. Os cinco motores F-1 no seu primeiro estágio, cada um uma peça extraordinária de engenharia que queimava aproximadamente 2.600 quilogramas de propelente por segundo, terminaram as suas vidas enferrujadas no fundo do Oceano Atlântico. Uma expedição privada financiada por Jeff Bezos recuperou dois conjuntos de motores F-1 do Saturn V do fundo do mar em 2013, quase meio século depois de terem sido largados lá, e encontrou-os em grande parte intactos. Foram para museus, não de volta ao voo. A intenção desde o início era largá-los."
+    },
+    {
+      "type": "prose",
+      "md": "A lógica por trás deste plano não era estupidez. Era a lógica da Corrida Espacial dos anos 1960: chegar primeiro, a qualquer custo. Construir um foguete reutilizável é mais difícil do que construir um descartável. A reutilizabilidade acrescenta peso — escudos térmicos, pernas de aterragem, propelente reservado para a queimada de retorno — e o peso é o inimigo, porque cada quilograma que adicionas à estrutura é um quilograma que não podes entregar em órbita. Os designers iniciais fizeram as contas e concluíram que a penalidade era demasiado elevada. Era melhor, decidiram, construir barato e descartar. Esse cálculo era correto para o seu momento e fixou um conjunto de pressupostos que duraria duas gerações."
+    },
+    {
+      "type": "prose",
+      "md": "O [Space Shuttle](/fleet?id=space-shuttle-stack) era suposto quebrar essa lógica. Era a primeira tentativa genuína dos Estados Unidos — ou de qualquer outro país — de construir um sistema de lançamento reutilizável operacionalmente, e o argumento a favor era económico: voando o orbitador repetidamente, o programa reduziria o custo de atingir órbita para cerca de $600 por quilograma, baixo o suficiente para tornar a exploração espacial quase rotineira. O shuttle voou 135 missões entre 1981 e 2011. Falhou completamente no teste económico. O custo real por voo tinha uma média de cerca de $1,5 mil milhões quando as despesas totais do programa foram distribuídas por todas as missões — mais caro por quilograma para órbita terrestre baixa do que o Saturn V que substituiu. A restauração das 24.000 telhas de escudo térmico do orbitador após cada voo não era um trabalho rápido; consumia milhares de horas de pessoa. A reutilização revelou-se extraordinariamente cara quando cada subsistema tinha de ser desmontado e reconstruído aos padrões de um avião que poderia levar tripulação. O shuttle provou que a reutilização *podia* funcionar mecanicamente — o orbitador voou dezenas de vezes — mas também provou que a reutilização por si só não reduz custos. A economia só funciona se conseguires girar o veículo *rapidamente* e *economicamente*."
+    },
+    {
+      "type": "heading",
+      "text": "O truque mais simples possível"
+    },
+    {
+      "type": "prose",
+      "md": "A SpaceX aproximou-se do problema de forma diferente. Em vez de tentar reutilizar todo o veículo — a escolha que tornou o Shuttle tão complexo — a empresa concentrou-se no componente mais caro único: o foguete impulsionador do primeiro estágio. Num foguete típico, o primeiro estágio faz o trabalho mais pesado, queimando a maior quantidade de propelente, transportando a maior massa de motor e custando mais a fabricar. É também o componente que, num foguete descartável, perdes sempre. Salva o primeiro estágio e tens recuperado a maioria do valor do veículo."
+    },
+    {
+      "type": "prose",
+      "md": "O requisito técnico para salvá-lo é brutal: o estágio tem de sobreviver à reentrada através de uma atmosfera que passou os primeiros minutos a atravessar a Mach 7, reverter a direção, abrandar de hipersónico para velocidade de aterragem e colocar-se verticalmente numa alvo do tamanho de um campo de futebol — quer de volta ao local de lançamento quer numa nave de drone centenas de quilómetros a jusante no Atlântico ou Pacífico. Para realizar tudo isto, o foguete impulsionador tem de reter propelente suficiente para uma série de reacensões de motor cronometradas com precisão, o que significa que chega em órbita com menos combustível para o trabalho principal. Essa penalidade de peso é real: um Falcon 9 que voa com um impulsionador novo entrega cerca de 22.800 quilogramas em órbita terrestre baixa; um voo que recupera o impulsionador entrega menos. Este é o compromisso fundamental no coração do lançamento reutilizável e a SpaceX o aceitou porque a economia funciona independentemente: o impulsionador que aterra pode voar novamente, e novamente, e novamente."
+    },
+    {
+      "type": "prose",
+      "md": "Após o aterragem de dezembro de 2015 veio um segundo, e um terceiro, e depois o revoo: em março de 2017, a SpaceX lançou um Falcon 9 num foguete impulsionador que já tinha voado, a primeira vez na história em que um estágio de foguete de classe orbital voou para o espaço duas vezes. Por meados de 2026, o primeiro estágio Falcon 9 mais utilizado completou 36 missões no mesmo hardware — mais do que a maioria dos foguetes descartáveis voam no total em toda uma frota. O custo marginal de um lançamento reutilizado, com propelente e restauração, fica em torno de $15 a $20 milhões contra um preço de tabela de $74 milhões. A diferença, grosso modo, é o custo do foguete impulsionador em si, recuperado pela recuperação."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/landing-profile",
+      "kind": "diagram",
+      "caption": "O truque é quase insultuosamente simples de afirmar e brutal de voar: retém propelente suficiente, gira o foguete impulsionador, e queima três vezes a caminho — reimpulsionamento, entrada, aterragem — até se assentar nas suas pernas. O mesmo estágio é depois inspecionado, reabastecido e voado novamente.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Apanhá-lo com as tuas mãos"
+    },
+    {
+      "type": "prose",
+      "md": "O [Falcon Heavy](/fleet?id=falcon-heavy) estendeu a mesma lógica lateralmente: três núcleos Falcon 9 ligados juntos, dois deles descolando-se após os primeiros dois minutos e voando de volta para aterrar simultaneamente, lado a lado, em Cabo Canaveral. Os vídeos dos aterragens gémeas — dois pilares de fogo a descer em simetria especular, tocando o solo exactamente no mesmo instante — parecem algo de um filme. Não são. São a economia tornada visível."
+    },
+    {
+      "type": "prose",
+      "md": "O [Starship](/fleet?id=starship) leva o argumento ao seu fim lógico. Enquanto o Falcon 9 recupera o seu primeiro estágio e descarta o seu estágio superior, o Starship é desenhado para recuperar *ambos*. O impulsionador Super Heavy — 71 metros de altura, alimentado por 33 motores Raptor queimando metano líquido e oxigénio líquido, produzindo aproximadamente o dobro do impulso de um Saturn V — regressa ao local de lançamento e é apanhado no ar por um par de braços mecânicos na torre de lançamento em si. O sistema é chamado Mechazilla pelos engenheiros que o construíram. A SpaceX apanhou o impulsionador desta forma pela primeira vez em 13 de outubro de 2024, Voo 5 do programa de testes do Starship, e repetiu a manobra em voos subsequentes. A ideia de que não ia aterrar o teu foguete mas simplesmente *apanhá-lo enquanto cai* teria parecido ficção uma década atrás. É um procedimento de segunda-feira de manhã agora."
+    },
+    {
+      "type": "prose",
+      "md": "O estágio superior do Starship — a nave espacial maior já construída, tão alto quanto um edifício de quinze andares — é destinado a seguir o mesmo caminho, regressando e sendo apanhado acima da plataforma. Uma vez que ambas as metades estão no chão, o sistema pode teoricamente ser reabastecido e relançado em horas. Nenhum foguete descartável nem tenta esta comparação. Um foguete descartável é uma cadeia logística: fabrica, transporta, integra, lança, repete desde o início. Um sistema totalmente reutilizável é um *avião* com uma rota muito longa. A economia dos dois não está na mesma galáxia."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/tower-catch",
+      "kind": "diagram",
+      "caption": "Depois uma ideia mais estranha: não dá ao foguete impulsionador pernas. Deixa a torre de lançamento apanhá-lo — dois braços a fecharem-se num estágio de setenta metros enquanto paira, para que a massa que teria sido equipamento de aterragem se torna carga útil em vez disso. A primeira apanha limpa veio em outubro de 2024.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "O segundo movimento"
+    },
+    {
+      "type": "prose",
+      "md": "O [New Glenn](/fleet?id=new-glenn) da Blue Origin aterrou o seu primeiro estágio no mar pela primeira vez em 13 de novembro de 2025 — dez anos após o aterragem do Falcon 9 de dezembro de 2015, o que dá uma sensação de quão rápido a indústria se move quando a SpaceX está a estabelecer o ritmo. O New Glenn é um foguete grande por qualquer padrão anterior, carregando até 45.000 quilogramas para órbita terrestre baixa em configuração descartável; o seu primeiro estágio regressa a uma nave de drone no Atlântico em cada missão. O primeiro reuso de um estágio New Glenn seguiu-se em abril de 2026. A abordagem da Blue Origin espelha a da SpaceX em arquitetura: salva o primeiro estágio, voa-o novamente, reduz o custo marginal com cada reutilização."
+    },
+    {
+      "type": "prose",
+      "md": "O que o surgimento do [New Glenn](/fleet?id=new-glenn) adiciona ao quadro é pressão competitiva. Durante a maior parte da década entre 2015 e 2025, a SpaceX estava essencialmente sozinha no mercado de lançamento reutilizável. Um mercado com um fornecedor não é um mercado; é um monopólio. A entrada de um segundo lançador reutilizável credível altera a dinâmica de preços para todos que compram uma viagem para órbita. Operadores de satélites, agências espaciais e clientes comerciais que uma vez não tinham escolha senão aceitarem o que a SpaceX oferecia agora têm alternativas — e mais estão a chegar."
+    },
+    {
+      "type": "prose",
+      "md": "A China moveu-se com seriedade incomum. O Zhuque-3 da LandSpace, um foguete alimentado a metano aproximadamente análogo ao Falcon 9, tentou a sua primeira recuperação em dezembro de 2025; o estágio superior atingiu órbita mas o foguete impulsionador despenhou-se na sua abordagem de aterragem. Uma segunda tentativa de recuperação está planeada para meados de 2026. O Hyperbola-3 da iSpace está em qualificação de hardware, com uma nave de drone dedicada já lançada, e está a visar o seu primeiro voo de Wenchang. Várias outras empresas comerciais chinesas estão em desenvolvimento ativo. O governo chinês fez do acesso reutilizável a órbita uma prioridade nacional explícita. Que o país que construiu a Grande Muralha decidiu parar de largar os seus foguetes é um ponto de dado que vale a pena considerar."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/falcon-9/01",
+      "kind": "photo",
+      "caption": "Um primeiro estágio Falcon 9 fica em pé novamente sobre as suas pernas após entregar uma carga útil em órbita — o momento em que um pressuposto de sessenta anos desabou discretamente. Uma vez que uma empresa provou que um foguete impulsionador podia ser voado novamente, todos os outros tinham de aprender a manter os seus também.",
+      "align": "wide",
+      "credit": "SpaceX"
+    },
+    {
+      "type": "heading",
+      "text": "O que a reutilização muda realmente"
+    },
+    {
+      "type": "prose",
+      "md": "A história da superfície é redução de custos, e a redução de custos é real: os preços de lançamento que antes estavam em $200 milhões ou mais para um foguete descartável grande caíram para $60-$80 milhões para uma missão de levantamento médio reutilizável, e a economia marginal de um foguete impulsionador Falcon 9 bem-gasto é ainda menor. Mas a mudança mais profunda é na *cadência* de lançamento. A SpaceX lançou 132 missões Falcon 9 em 2024 — quase três por semana, sustentadas ao longo de um ano inteiro, com o mesmo conjunto de foguetes impulsionadores ciclando pela plataforma e de volta novamente. Nenhuma arquitetura descartável poderia aproximar-se desse tempo; precisarias de uma cadeia de abastecimento industrial operando a um ritmo de tempo de guerra para igualar. A reutilização, como se revelou, não é apenas sobre custo. É sobre taxa. E a taxa é sobre o que se torna possível."
+    },
+    {
+      "type": "prose",
+      "md": "O que se torna possível é Starlink: uma constelação que exigiu mais de 6.000 lançamentos para preencher, impossível de construir sob qualquer estrutura de preços descartável que alguma vez existiu. O que se torna possível são missões de ciência comercial de baixo custo que anteriormente não podiam pagar pela viagem. O que se torna possível, eventualmente, é transporte tripulado para Marte numa frequência que o torna um programa em vez de um espetáculo — porque o [orçamento delta-v](/science/propulsion/dv-budget) de uma missão Terra-Marte exige um veículo que possa ser reabastecido em órbita e reutilizado, ou as frações de massa simplesmente não se fecham. A reutilização não é apenas uma preferência económica. Para as ambições que o [Starship](/fleet?id=starship) é desenhado para suportar, é um requisito físico."
+    },
+    {
+      "type": "prose",
+      "md": "A penalidade de peso que fez os engenheiros iniciais rejeitar a reutilização ainda é real; não foi engenharia para a afastar. Um Starship totalmente descartável entregaria mais em órbita do que um reutilizável. Mas a questão já não é se podes pagar a penalidade de massa. É se podes pagar por largar o tudo — se podes pagar, como a indústria de foguetes fez durante seis décadas, por tratar a máquina mais complexa alguma vez construída como um artigo de uso único."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/cost-curve",
+      "kind": "diagram",
+      "caption": "O número que controla tudo é o preço de um quilograma em órbita. O Shuttle prometeu baixá-lo e nunca o fez; o Falcon 9 reutilizável cortou-o aproximadamente vinte vezes. Desce-o longe o suficiente e as missões que eram uma vez impensáveis tornam-se meramente agendadas.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "A questão que aterrou"
+    },
+    {
+      "type": "prose",
+      "md": "O argumento original da indústria de foguetes contra a reutilização era engenharia: o veículo é demasiado complexo para restaurar barato, demasiado frágil para voar novamente sem desmontar, demasiado constrangido em peso para transportar o hardware necessário para aterrar. A experiência do Space Shuttle parecia confirmar as três coisas. Essas preocupações eram legítimas e durante trinta anos mantiveram-se."
+    },
+    {
+      "type": "prose",
+      "md": "O que mudou não foi a física. O que mudou foi a base de fabrico, a escolha do propelente — metano queima mais limpo do que querosene, deixa menos resíduo, torna a restauração mais rápida — e, mais do que nada, a disposição de desenhar para reutilização desde o início em vez de adaptar-se a um veículo otimizado para descartabilidade. O Shuttle era um foguete descartável que tinha sido dito para regressar a casa. O foguete impulsionador Falcon 9 foi desenhado desde o início à volta da questão de como aterrar. Essa diferença na intenção de design explica a maior parte da diferença no resultado."
+    },
+    {
+      "type": "prose",
+      "md": "Na década desde essa noite de dezembro em Cabo Canaveral, aterrar um foguete impulsionador tornou-se de impossível para ordinário. Um primeiro estágio Falcon 9 que falha em regressar à sua nave de drone é agora o evento incomum, digno de nota no registo de anomalia. O Super Heavy foi apanhado do ar. Uma segunda empresa aterrou um estágio de levantamento pesado no mar e o voou novamente. A China está a correr para alcançar. O pressuposto que governou toda a indústria de lançamento desde o Sputnik — que um foguete é um descartável — foi quebrado, e o quebrar disso já está a remodelar quais as missões que são possíveis, quais os negócios que são viáveis e quanto vai custar à próxima geração ir mais longe."
+    },
+    {
+      "type": "prose",
+      "md": "Nenhum dos [estágios de foguete](/science/propulsion/rocket-stages) que alguma vez levou humanos ou naves espaciais para órbita nos primeiros sessenta anos da exploração espacial sobreviveu. Estão no fundo do oceano, ou na atmosfera superior como moléculas dispersas, ou em museus onde engenheiros que as construíram podem caminhar e reconhecer coisas que uma vez tocaram. Os que voam agora regressam. Essa única mudança — discreta, técnica, brutalmente difícil de fazer funcionar — é a coisa que separa a primeira era da exploração espacial do que quer que venha a seguir."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/starship/01",
+      "kind": "photo",
+      "caption": "O Starship é a aposta maior: que todo o veículo — foguete impulsionador e nave juntos — regressa e voa novamente em dias. Se aguenta, o custo de atingir órbita deixa de ser a coisa que decide o que a humanidade é permitida tentar.",
+      "align": "wide",
+      "credit": "SpaceX"
+    }
+  ]
+}

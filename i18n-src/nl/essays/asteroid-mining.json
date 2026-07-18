@@ -1,0 +1,159 @@
+{
+  "title": "De Verkeerde Schat",
+  "dek": "De kop zegt dat asteroïden miljarden dollars aan goud en platina bevatten. De kop is fout — niet over het metaal, maar over het geld. Het echte argument voor asteroïde-hulpbronnen loopt in precies de tegenovergestelde richting.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Om de paar jaar doet iemand de rekenkundige berekening voor asteroïde 16 Psyche en kondigt met veel tam-tam aan in een persbericht dat het metaalrijke lichaam dat in de [asteroïdengordel](/science/planets/asteroid-belt) ronddraait ijzer, nikkel en edelmetalen bevat ter waarde van ongeveer tien kwintiljoen dollar. Het getal is altijd verbijsterend. Het is ook, in enige economisch betekenisvolle zin, betekenisloos — en begrijpen waarom het betekenisloos is, leidt direct naar wat het echte argument voor asteroïde-hulpbronnen werkelijk is, wat vrijwel het tegenovergestelde van de kopoversie is."
+    },
+    {
+      "type": "prose",
+      "md": "Begin met het getal zelf. De mondiale platinarmarkt is in een bepaald jaar ruwweg 5 miljard dollar waard. Als je de platinummetaalinhoud van zelfs een bescheiden metaalrijke asteroïde naar aarde zou kunnen brengen en morgen verkopen, zou je geen fortuin maken. Je zou de markt ineenstorten. De prijs van platina komt volledig voort uit zijn schaarste; verwijder de schaarste, en je verwijdert de prijs. Waarde, voor een grondstof, wordt bepaald aan de marge — door de laatste verkochte eenheid, niet het totale volume in bestaan. De asteroïde van 10 kwintiljoen dollar, succesvol gedolven en op het aardoppervlak geleverd, zou ongeveer even veel waard zijn als ijzererts: niet veel per kilogram. Maar dit marktinstortingsargument staat bijna terzijde, want het veronderstelt levering aan aarde — en levering aan aarde is waar de rekenkundige al veel eerder fout gaat voordat de markt ter sprake komt. Dit is waar de [raketv ergelijking](/science/propulsion/tsiolkovsky) het debat afsluit."
+    },
+    {
+      "type": "heading",
+      "text": "Zwaartekracht is de boekhouder"
+    },
+    {
+      "type": "prose",
+      "md": "De [delta-v-budget](/science/propulsion/dv-budget) voor een missie van aarde naar een dicht bij de aarde komende asteroïde is, voor een gunstig doel, ergens rond de 6 km/s — vergelijkbaar met het bereiken van Mars. Het terugbrengen van materiaal van die asteroïde naar aardeomloop kost nog meer, en het terugbrengen van aardeomloop naar aardoppervlak vereist het overleven van de atmosfeer. Dit alles voordat je enig mijnbouw hebt gedaan. De [raketv ergelijking](/science/propulsion/tsiolkovsky) kent geen bocht: elk kilogram vracht dat je van diep in de ruimte naar huis wilt terugbrengen, moet bij lancering overeenkomen met voldoende brandstof om het terug te dragen, wat zelf moet overeenkomen met brandstof om die brandstof mee te nemen, enzovoort in de regressie die de v ergelijking beschrijft. De [Tsiolkovsky-beperking](/science/propulsion/tsiolkovsky), die sinds 1903 niet is opgeheven, maakt de cijfers barbaars."
+    },
+    {
+      "type": "prose",
+      "md": "Eenvoudig gezegd: je haalt materiaal uit een zwaartekrachtput — niet de van aarde, maar van het zonnestelsel. De asteroïde is, erkend zij, piepklein, met een oppervlakte zwaartekracht een duizendste van die van aarde. Het eraf komen kost bijna niets in [delta-v](/essays/delta-v). Maar je bent dan in interplanetaire ruimte, en aarde ligt op de bodem van een zeer grote zwaartekrachtput, en daar aankomen met aanzienlijke snelheid betekent dat je brandstof uitgeeft om af te remmen, of dat je de kracht van aerobraking aanvaardt, of beide. De economische kosten van het vervoer van massa over interplanetaire afstanden en het vervolgens veilig vertragen ervan, zijn met huidige en voorzienbare aandrijftechnologieën zover boven de marktwaarde van enige grondstof, dat het zakelijke geval voor het terugbrengen van bulkmaterialen naar aarde niet kan sluiten. Dit is geen pessimistische lezing. Dit is wat de getallen van [specifieke impuls](/science/propulsion/specific-impulse) zeggen als je ze eerlijk uitvoert."
+    },
+    {
+      "type": "prose",
+      "md": "Dit is ook waarom de eerste generatie commerciële asteroïde-ondernemingen — Planetary Resources, opgericht in 2012, en Deep Space Industries, opgericht in 2013 — binnen een decennium faalden, niet omdat de asteroïden er niet zijn, maar omdat de markt voor aarde-geleverd asteroïde-platina niet bestaat tegen enige prijs die de [delta-v-economie](/essays/delta-v) kan ondersteunen. De logica van het naar beneden slepen van rijkdom naar aardoppervlak was vanaf het begin gebroken."
+    },
+    {
+      "type": "heading",
+      "text": "De put is het probleem"
+    },
+    {
+      "type": "prose",
+      "md": "Keer de vraag nu om. In plaats van te vragen wat het kost om materiaal van ruimte naar aarde te brengen, vraag je wat het kost om materiaal van aarde naar ruimte te brengen. Het antwoord is dezelfde raketv ergelijking, in de andere richting, en het is net zo barbaars. Het krijgen van één kilogram in lage aardomloop op een [herbruikbare lanceerder](/essays/reusable-launchers) kost tegenwoordig op zijn best een paar duizend dollar — dramatisch gedaald van de tienduizenden die een decennium geleden kostte. Het verder krijgen van dat kilogram, naar een maantransferomloop of naar een Mars-gebonden traject, kost nog meer, omdat je hoger uit aardes zwaartekrachtput klimt en de [Oberth-rekenkundige](/science/propulsion/oberth-effect) die diepe burns efficiënt maakt, kan het fundamentele massakwotaprobleem niet oplossen."
+    },
+    {
+      "type": "prose",
+      "md": "Dit is wat het zwaartekrachtputraamwerk verduidelijkt. Aardoppervlak ligt op de bodem van een put die ruwweg 9,4 km/s delta-v kost om helemaal te ontsnappen. Elk kilogram voedsel, brandstof, water, lucht, structuurmateriaal of stralingsbescherming dat een bemande ruimtevaartuig boven lage aardomloop draagt, heeft die tol betaald. De tol is geen toeslag die slimme techniek kan vermijden; het is een fysieke gevolg van op aarde zijn, wat een grote planeet is met een diep zwaartekrachtveld. Als je ruimtevaartuigen boven lage aardomloop wilt bouwen en bedrijven — voor een maanbase, voor Mars-transit, voor alles langdurig in diep ruimte — de dominante kosten zijn niet uw hardware. Het is de brandstof die wordt verbrand om uw hardware en consumptiegoederen uit de put omhoog te tillen telkens opnieuw."
+    },
+    {
+      "type": "prose",
+      "md": "Het echte economische argument voor asteroïde-hulpbronnen begint precies hier, en het loopt in de tegenovergestelde richting naar de kop. In plaats van materiaal van asteroïden naar aarde te brengen, is de vraag: kunnen we materiaal gebruiken dat *al* boven aardes zwaartekrachtput ligt om het niet van het oppervlak op te tillen? Kunnen we, effectief gezegd, een brandstoftankstation en een hardwarewinkel al in omloop vinden — of dicht genoeg zodat de leveringskosten gemeten worden in breuken van een km/s in plaats van tien km/s — en stoppen met het betalen van de lanceringstol op elk kilogram materiaal dat een diepe-ruimte-economie nodig heeft? Het antwoord, als de verkenningmissies te vertrouwen zijn, is ja. Maar niet voor goud. Voor water."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/the-well",
+      "kind": "diagram",
+      "caption": "Elk kilogram dat van aarde wordt gelanceerd betaalt een barbaarse tol in delta-v alleen maar om uit aardes zwaartekrachtput te klimmen. Alles wat al in de ruimte is — een asteroïde die boven de rand drijft — heeft die prijs betaald. Daarom is een liter water in omloop meer waard dan een liter goud op de grond.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Water is het erts"
+    },
+    {
+      "type": "prose",
+      "md": "Carbonaatrijke chondrie-asteroïden — de C-type en verwante klassen die de meerderheid van dicht-bij-aarde-objecten vertegenwoordigen — bevatten aanzienlijke hoeveelheden gehydrateerde mineralen: kleiën en fyllosilicaten die watermoleculen in hun kristalstructuur vasthouden op niveaus die variëren van enkele procenten tot meer dan twintig procent naar massa. Sommigen bevatten ook organische stoffen. Het water zit niet in plassen; het is chemisch gebonden, en het extractie ervan vereist verhitting van het materiaal om waterdamp af te drijven en het vervolgens te condenseren. Maar de energie om dat te doen, kan in principe afkomstig zijn van zonneconcentrators in de ruimte. Het resultaat is water — en water, in de context van een diep-ruimte-programma, is niet in de eerste plaats iets om te drinken."
+    },
+    {
+      "type": "prose",
+      "md": "Elektrolyse splitst water in waterstof en zuurstof: de meest energieke chemische brandstofcombinatie ooit gevlogen. Waterstof en zuurstof, vloeibaar gemaakt en opgeslagen, zijn raketbrandstof. De [delta-v](/essays/delta-v)-budget voor een Mars-overdracht is ongeveer 3,6 km/s van lage aardomloop; een brandstoftankstation op een handige [Lagrangepunt](/science/transfers/hohmann-transfer) of in een dicht-bij-aarde-omloop, voorzien van asteroïde-afkomstig water, zou de massa die van aarde voor enige missie voorbij-LEO moet worden gelanceerd dramatisch veranderen. De brandstof is de dominante massafractie van elk ruimtevaartuig — de Saturn V die Apollo-astronauten naar de maan droeg was [85% brandstof naar massa](/essays/delta-v). Een tankstation dat brandstof levert zonder dat het van aardes oppervlak moet worden opgetild, is geen logistieke gemak. Het herstructureert de gehele economie van diep ruimte."
+    },
+    {
+      "type": "prose",
+      "md": "Voorbij brandstof levert water zuurstof voor ademhaling. Hetzelfde koolstofrijke materiaal levert koolstof en stikstof. De bulkmassa — rots, in de meeste gevallen, niet metaal — levert stralingsbescherming: een ruimtevaartuig dat naar Mars transit ligt buiten aardes magnetosfeer voor zes tot negen maanden, en het opheffen van voldoende massa om een bemanning tegen kosmische straling te beschermen kost enorm als elk kilogram van aardes oppervlak moet worden gelanceerd. Niets hiervan heeft de glans van platina. Het is allemaal waardevoller voor een ruimte-gebaseerde economie dan platina is. Het argument gaat niet over schat. Het gaat over [in-situ-hulpbronnenbenutting](/science/life-in-space/isru-resource-utilization) — de enige benadering die voortdurende menselijke aanwezigheid voorbij aarde fysiek haalbaar maakt — en de hulpbron die het meest belangrijk is, is niet de zeldzaamste of duurste, maar degene die het duurste is om van aardes oppervlak te lanceren: brandstofmassa. Het [naar-de-maan-essay](/essays/going-to-the-moon) stelt dezelfde zaak aan de zuidpool van de maan, om dezelfde redenen. De maan en koolstofrijke dicht-bij-aarde-asteroïden zijn hetzelfde argument op twee verschillende plaatsen."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/water-is-the-ore",
+      "kind": "diagram",
+      "caption": "Splits asteroïde-water en je hebt waterstof en zuurstof — raketbrandstof — plus lucht om adem te halen, water om te drinken, en bulkrots voor stralingsbescherming. De prijs was nooit metaal om naar huis te verkopen; het is een brandstoftankstation dat al aan de hemel staat.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "We hebben ze al aangeraakt"
+    },
+    {
+      "type": "prose",
+      "md": "De verkenning die dit alles zou ondersteunen, is niet theoretisch. Het is twee keer door Japan gedaan, en eenmaal door de Verenigde Staten — en wat het ontdekte, was zowel interessanter als bescheidener dan de kopoversie suggereerde."
+    },
+    {
+      "type": "prose",
+      "md": "Japans [Hayabusa](/missions?id=hayabusa1) bereikte de S-type asteroïde Itokawa in september 2005. Het monster-collectiemechanisme was kapot gelopen, maar het ruimtevaartuig keerde in juni 2010 naar aarde terug met ongeveer 1.500 submillimeter-deeltjes — de eerste monsters ooit van een asteroïde teruggebracht. De analyse bevestigde mineralogie van ordinaire LL-chondrieten: niet het waterhoudend koolstofrijke doel dat het ISRU-argument nodig heeft, maar een proof of concept dat je een asteroïde kunt bereiken, aanraken en stukken terugkunt brengen."
+    },
+    {
+      "type": "prose",
+      "md": "[Hayabusa2](/missions?id=hayabusa2), gelanceerd in december 2014, was ontworpen om verder te gaan. Het doel was Ryugu, een C-type dicht-bij-aarde-asteroïde — de koolstofrijke variëteit die hydratiemodellen voorspelden waterhoudende mineralen zou bevatten. Het ruimtevaartuig arriveerde in juni 2018 bij Ryugu en besteedde anderhalf jaar eraan het te bestuderen voordat het monster-collectie uitvoerde in februari en juli 2019. In juli 2019 zette het ook een kleine impactor in die een krater in aardes oppervlak van Ryugu opblies, en vervolgens material van het blootgestelde ondergrondse materiaal — materiaal dat niet door ruimteverweering was veranderd. De capsule keerde in december 2020 naar aarde terug. De analyse bevestigde wat de modellen voorspelden: het materiaal van Ryugu is rijk in gehydrateerde mineralen, bevat organische stoffen inclusief aminozuurvoorlopers, en is in chemische samenstelling nauw verwant aan CI-chondrieten — de meest primitieve en waterhoudendste klasse van koolstofrijke chondrieten. Het erts dat het ISRU-argument nodig heeft, is daar. Ryugu is geen uniek lichaam; C-type asteroïden vertegenwoordigen ruwweg 75% van alle asteroïden in de hoofdriem en een aanzienlijk deel van dicht-bij-aarde-objecten."
+    },
+    {
+      "type": "prose",
+      "md": "NASAs [OSIRIS-REx](/missions?id=osiris-rex) bereikte de koolstofrijke asteroïde Bennu in december 2018 en besteedde bijna twee jaar eraan het in kaart te brengen voordat het monster-collectie in oktober 2020 aanraakte. De capsule keerde in september 2023 naar aarde terug met ongeveer 120 gram materiaal — het grootste monster ooit van een asteroïde teruggebracht. Analyse bevestigde gehydrateerde klei-mineralen en koolstofrijke verbindingen: dezelfde ingrediënten die het Hayabusa2-team bij Ryugu vond, op een ander lichaam, bereikt door een ander volk, via een ander traject. Het resultaat was hetzelfde. Dit is geen toeval. Het is bevestiging dat de C-type koolstofrijke samenstelling — waterhoudend, organisch-rijk — de regel voor deze lichamen is, niet de uitzondering."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/the-recon",
+      "kind": "diagram",
+      "caption": "Drie robotmissies hebben al asteroïden aangeraakt en bemonsterd: Japans Hayabusa (Itokawa, 2010, het eerste ooit), Hayabusa2 (Ryugu, 2020), en NASAs OSIRIS-REx (Bennu, 2023). Wat terugkwam was waterhoudende klei en organische stoffen — van losse gruis, niet vast metaal.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/hayabusa2/01",
+      "kind": "photo",
+      "caption": "Hayabusa2 bij Ryugu — JAXAs tweede asteroïde-monsterbemonstering en de missie dapper genoeg om een koperen impactor in het oppervlak af te vuren om een verse krater opblazen voordat het opschaapte wat het blootlegde.",
+      "align": "wide",
+      "credit": "JAXA"
+    },
+    {
+      "type": "heading",
+      "text": "Gruis, geen rots"
+    },
+    {
+      "type": "prose",
+      "md": "Dit is wat de missies ook vonden, en wat de koppen over asteroïde-mijnbouw consistent onderschatten: Bennu en Ryugu zijn geen vaste lichamen. Het zijn gruis-heuvels."
+    },
+    {
+      "type": "prose",
+      "md": "Een gruisheuvel is een verzameling van losjes samengestelde materiaal — rotsblokken, kiezelstenen, stof — bijeengehouden door zwaartekracht zo zwak dat er op het oppervlak lopen voorzichtige overweging van of je misschien helemaal afkaatst. De oppervlakte zwaartekracht van Bennu is ongeveer 6 micronewton per kilogram. Een astronaut die op zijn evenaar staat, zou in aardetermen minder dan een milligram wegen. Het proberen om een mijnbouwsysteem te verankeren — om te boren, uit te graven, tegen het oppervlak met enige kracht te duwen — genereert een reactie die de mijnbouwuitrusting van de asteroïde af zou kunnen duwen. De TAG (Touch-and-Go)-gebeurtenis die OSIRIS-REx gebruikte om zijn monster te verzamelen, duurde ongeveer zes seconden oppervlaktecontact; tijdens die zes seconden, zakte het monster-kopje van het ruimtevaartuig dieper in het oppervlak dan verwacht, omdat het materiaal van Bennu minder samengevoegd is dan een zandkasteel. Het missie-team zei later dat het ruimtevaartuig helemaal zou zijn gezonken als de thrustors niet hadden afgevuurd om het terug te trekken. Dit is geen vijandig milieu op de manier waarop Mars vijandig is. Het is een vijandig milieu op de manier waarop een zak losse zand drijvend in nul-zwaartekracht vijandig is: fundamenteel anders dan elke aanname die aardse mijnbouw-engineeringsmaak maakt."
+    },
+    {
+      "type": "prose",
+      "md": "De impactor-experiment van Hayabusa2 bevestigde dezelfde beeld vanuit een ander hoek. Zijn 2,5 kg koperen impactor maakte een krater van ruwweg 14 meter in diameter en 2 meter diep — groter dan verwacht, omdat het oppervlak poreuzer was dan verwacht. De [DART](/missions?id=dart)-missie, die in september 2022 de asteroïde Dimorphos omleidden door opzettelijk een ruimtevaartuig erin te crashen, produceerde een ejecta-pluim en een orbitale periode-verandering beide groter dan vast-lichaam-modellen voorspelden — consistent, wederom, met een losjes gebonden verzameling. Werken in die omgeving is niet een kwestie van aardse mijnbouw omhoog schalen en ruimtepakken toevoegen. Verankering tegen een oppervlak waarop je niet kunt duwen, grondstof uitgraven die op centimeters per seconde wegvliegt, ejecta in microzwaartekracht bevattend — dit zijn onopgeloste engineeringsproblemen anders dan alles in de geschiedenis van de extractie-industrie. De wetenschap is bevestigd. De engineering is nog niet serieus begonnen."
+    },
+    {
+      "type": "figure",
+      "image": "missions/osiris-rex/01",
+      "kind": "photo",
+      "caption": "OSIRIS-REx reikt omlaag naar Bennu — en ontdekt niet vast grond maar een gruisheuvel zo losjes gebonden dat de bemonsteringsarm er recht inzakte, bijna de arm opslokking. \"Mijnbouw\" op een lichaam als dit is anders dan alles ooit op aarde gedaan.",
+      "align": "wide",
+      "credit": "NASA/Goddard/University of Arizona"
+    },
+    {
+      "type": "heading",
+      "text": "De economie boven de put"
+    },
+    {
+      "type": "prose",
+      "md": "De vraag die het lange zicht moet beantwoorden is: waar gaat dit heen? Het ISRU-argument is logisch gezond. De verkenning bevestigt dat de hulpbronnen bestaan. De engineeringuitdagingen zijn echt maar in principe niet onoplosbaar. De economie vereist echter iets wat nog niet bestaat: vraag naar hulpbronnen in de ruimte."
+    },
+    {
+      "type": "prose",
+      "md": "Dit is het timing-probleem dat de eerste commerciële golf doodde. Planetary Resources en Deep Space Industries bouwden leveringsketens voor een klantenbasis die nog niet bestond — specifiek, voor de brandstof-hongerige voorbij-LEO-economie die een voortdurend maanprogramma en eventuele Mars-operaties zou creëren. In 2012, toen Planetary Resources werd opgericht, was de [herbruikbare lanceerder-revolutie](/essays/reusable-launchers) nog niet bewezen, het Artemis-programma bestond niet, geen commerciële ruimtestations waren in ontwikkeling, en het idee van regelmatige bemande Mars-missies lag vast in de speculatieve toekomst. De bedrijven bouwden, in infrastructuurtermen, tankstations voordat de snelweg er was. Infrastructuur moet bijna altijd op het verkeer wachten voordat het levensvatbaar wordt, en asteroïde-hulpbronnen-extractie is niet anders."
+    },
+    {
+      "type": "prose",
+      "md": "De situatie in het midden van de 2020s is in één opzicht anders: het verkeer is dichterbij. [Herbruikbare lanceervoertuigen](/essays/reusable-launchers) hebben de economie van het bereiken van omloop veranderd. Commerciële stationprogramma's zijn in ontwikkeling. Het Artemis-programma, hoewel vertraagd, heeft bemande maanoperaties terug op planningshorizonnen geplaatst. NASAs [Psyche-missie](/missions?id=psyche-mission), gelanceerd in oktober 2023 en onderweg naar de metaalrijke asteroïde 16 Psyche, zal de meest grondige externe karakterisering van een metaalrijke asteroïde ooit ondernomen afleveren. De leveringsketens potentiële klanten zijn niet langer zuiver hypothetisch. Maar dichterbij is niet hier. Een brandstoftankstation dat Mars-grensoverschrijdende ruimtevaartuigen bedient, is op zijn minst een decennium verwijderd van operationele realiteit — en die schatting is optimistisch, afhankelijk van een tempo van maanontikkeling dat consistent is versleten. De eerlijke lezing: asteroïde-hulpbronnen worden economisch levensvatbaar wanneer, en alleen wanneer, er voortdurende menselijke activiteit voorbij lage aardomloop op een schaal is die brandstof, lucht en bescherming de bindende beperking maakt. Die beperking nadert. De opening tussen naderen en hier heeft bedrijven eerder opgeslokt."
+    },
+    {
+      "type": "prose",
+      "md": "Wat overblijft, nadat de hype is leeggelopen en het marktinstortingsfallacy is opgeruimd, is iets duurzamer en minder opwindend om een persbericht te doen: een structureel argument dat de lange-termijn economie van menselijke aanwezigheid voorbij aarde niet kan werken zonder beroep te doen op hulpbronnen die al boven de zwaartekrachtput liggen. Het zonnestelsel bevat meer water, meer koolstof, meer structuurmateriaal dan de gehele menselijke beschaving ooit heeft verbruikt, verdeeld over miljoen lichamen waarvan de oppervlakte zwaartekracht bijna niets kost om te overwinnen, zittend boven het ene ding dat ruimtevlucht duur maakt. Het argument gaat niet om kwintiljoen dollar. Het gaat over de [raketv ergelijking](/science/propulsion/tsiolkovsky) en de richting waar die naar wijst."
+    },
+    {
+      "type": "prose",
+      "md": "Tsiolkovskys beperking heeft een uitweg. Het is niet slimme chemie of radicale nieuwe aandrijving — hoewel [nieuwe aandrijving](/essays/new-propulsion) aan de marges helpt. De uitweg is niet het verbruikbare goed lanceren in de eerste plaats. Het is ze al boven de put vinden en daar gebruiken. [Hayabusa2](/missions?id=hayabusa2) bracht 5,4 gram Ryugu naar aarde terug. [OSIRIS-REx](/missions?id=osiris-rex) bracht 120 gram Bennu terug. De volgende missies in deze volgorde zullen geen materiaal naar huis brengen. Ze zullen leren hoe het op zijn plaats laat — en daar gebruiken. Dat is het punt waar de kop niet aankomt. [Verken de kleine lichamen in de atlas](/explore) en wat je ziet, is geen opslagplaats van naar aarde te leveren schat. Het is de hardwarewinkel voor een beschaving die nog niet is gearriveerd."
+    }
+  ]
+}

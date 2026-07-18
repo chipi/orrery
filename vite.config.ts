@@ -468,6 +468,13 @@ export default defineConfig(({ mode }) => {
           'src/lib/three/ascent-renderer.ts',
           'src/lib/three/launcher-models.ts',
           'src/lib/three/launch-ground.ts',
+          // /fly descent/landing WebGL builders (RFC-034 §12) — same policy: the
+          // EDL Scene render (descent-scene) + the procedural EDL-stack models
+          // (descent-models) instantiate Three.js jsdom can't run. Their pure
+          // counterparts (descent-physics, descent-hud, descent-profile-registry,
+          // descent-force-layers, the widened ascent-clock) each keep *.test.ts.
+          'src/lib/three/descent-scene.ts',
+          'src/lib/three/descent-models.ts',
           '*.config.{js,ts}',
           '.svelte-kit/',
         ],

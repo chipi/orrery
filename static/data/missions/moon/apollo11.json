@@ -1,6 +1,10 @@
 {
   "id": "apollo11",
-  "videos": [{ "id": "vid-612cd0489c9c" }],
+  "videos": [
+    {
+      "id": "vid-612cd0489c9c"
+    }
+  ],
   "agency": "NASA",
   "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
   "sector": "gov",
@@ -67,7 +71,11 @@
       "periapsis_km": 110,
       "inclination_deg": 1.25,
       "orbit_insertion_dv_km_s": 0.89,
-      "source": "Apollo 11 Mission Report (NASA MSC-00171, 1969); LOI burn parameters per CSM Trajectory Reconstruction"
+      "source": "Apollo 11 Mission Report (NASA MSC-00171, 1969); LOI burn parameters per CSM Trajectory Reconstruction",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 7.2,

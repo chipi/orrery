@@ -1,0 +1,15 @@
+{
+  "title": "Entry Heating",
+  "intro_sentence": "Waarom een atmosfeer met kilometers per seconde raken een ruimtevaartuig tot duizenden graden verhit — en hoe een hitteschild de klap opvangt.",
+  "narrative_101": [
+    "Een ruimtevaartuig dat aankomt bij een planeet beweegt snel — 5 tot 6 km/s bij Mars, bijna 11 km/s bij Venus. Wanneer het de bovenkant van de atmosfeer raakt, wrijft het niet zozeer tegen de lucht als dat het deze verplettert. Het gas dat voor het voertuig ophoopt wordt zo heftig gecomprimeerd dat het tot duizenden graden opwarmt en gloeit — de vuurbal die je rond elke terugkerende capsule ziet.",
+    "Het is een veel voorkomend misverstand dat deze hitte uit wrijving komt. Vrijwel alles komt uit compressie: het ruimtevaartuig kan de lucht niet snel genoeg uit de weg duwen, dus ontstaat een schokgolf vlak ervoor en verwarmt het opgesloten gas tot extreem hoge temperaturen. Hoe sneller de ingang, hoe heter de schok — wat Venus, met de snelste ingangen en de dichtste atmosfeer, maakt tot de hardste ingangsomgeving in het zonnestelsel.",
+    "Het voertuig overleeft achter een hitteschild — een stomp, ablatief schild dat naar de stroming is gericht. Stomp is opzettelijk: een scherpe neus zou de hitte concentreren, terwijl een breed schild de schokgolf op afstand houdt en de belasting verspreidt. Het oppervlak van het schild verkoolde en bladert opzettelijk af, waarbij het de hitte meeneemt, zodat het ruimtevaartuig errachter koel blijft."
+  ],
+  "body_paragraphs": [
+    "Twee pieken zijn belangrijk tijdens ingang en ze vallen niet samen. De maximale verhitting gebeurt hoog, waar het voertuig nog snel is en het verwarmingspercentage (dat ruwweg met de snelheid in het kwadraat schaalt) enorm is, zelfs in dunne lucht. De maximale vertraging gebeurt lager, in dichtere lucht, waar de kracht op het voertuig het grootst is — Mars-ingangen bereiken piek rond 8–15 g, Venus-ingangen rond 100–350 g. De structuur van een lander is ontworpen voor de g-piek; het hitteschild is ontworpen voor de verwarmingspiek.",
+    "De plasmahoes die rond het voertuig gloeit blokkeert ook radio: gedurende een minuut of twee op piekverwarming wikkelt geïoniseerd gas het ruimtevaartuig in en verbreekt communicatie — de beroemde ingangsverduistering. Controllers wachten het simpelweg uit; het voertuig voert een voorgeladen reeks commando's uit, op zichzelf, door het heetste deel van het traject.",
+    "Op `/fly` is de aeroverwarmingindicator van de afdalings-HUD een relatieve proxy hiervoor — deze stijgt terwijl het voertuig in de atmosfeer bijt en bereikt zijn piek lang voor landing, daalt dan weg naarmate het voertuig vertraagt. Zet de sleepkracht Science-Lens-laag aan tijdens elke `?descent=1` Mars- of Venus-ingang om de vertraging te zien toenemen naarmate de lucht dikker wordt."
+  ],
+  "diagram_caption": "Entry heating: een stomp hitteschild houdt een voorkschokgolf voor het voertuig; het gecomprimeerde gas verwarmt tot extreem hoge temperaturen en gloeit terwijl het schild de hitte afblaast."
+}

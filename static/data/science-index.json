@@ -379,6 +379,13 @@
   },
   {
     "tab": "mission-phases",
+    "section": "entry-heating",
+    "title": "Entry Heating",
+    "intro": "Why hitting an atmosphere at kilometres per second heats a spacecraft to thousands of degrees — and how a heat shield takes the punishment.",
+    "haystack": "entry heating why hitting an atmosphere at kilometres per second heats a spacecraft to thousands of degrees — and how a heat shield takes the punishment. two peaks matter during entry and they do not coincide. peak heating happens high up, where the vehicle is still fast and the heating rate (which scales roughly with velocity cubed) is enormous even in thin air. peak deceleration happens lower down, in denser air, where the force on the vehicle is greatest — mars entries peak around 8–15 g, venus entries at 100–350 g. a lander's structure is sized for the g-peak; its heat shield is sized for the heat-peak."
+  },
+  {
+    "tab": "mission-phases",
     "section": "eva",
     "title": "EVA — Extravehicular Activity",
     "intro": "A spacewalk: the highest-risk, highest-reward portion of a crewed mission, capped at about 8 hours by suit consumables.",
@@ -449,6 +456,13 @@
   },
   {
     "tab": "mission-phases",
+    "section": "skycrane",
+    "title": "Sky-Crane",
+    "intro": "The rocket-powered platform that lowers a rover to the surface on tethers, then flies away — the landing system that put Curiosity and Perseverance on Mars.",
+    "haystack": "sky-crane the rocket-powered platform that lowers a rover to the surface on tethers, then flies away — the landing system that put curiosity and perseverance on mars. the sky-crane solves two problems at once. it keeps the rocket engines high, so their plumes do not dig a crater or throw debris up at the rover, and it delivers the rover directly onto its wheels, ready to drive — no ramps, no lander deck to descend. the cost is a choreography with zero margin for error, executed autonomously, minutes after a fiery entry, with earth too far away to help in real time."
+  },
+  {
+    "tab": "mission-phases",
     "section": "star-trackers",
     "title": "Star trackers",
     "intro": "A small camera pointed at the sky, identifying stars by pattern-matching against an onboard catalogue — the most accurate way for a spacecraft to know which way it's pointing.",
@@ -460,6 +474,13 @@
     "title": "TCM — Trajectory Correction Maneuver",
     "intro": "A small mid-cruise burn to fix the small errors that always sneak into the launch trajectory.",
     "haystack": "tcm — trajectory correction maneuver a small mid-cruise burn to fix the small errors that always sneak into the launch trajectory. no launch is perfect. the actual trajectory off the launch vehicle differs from the planned one by tens of metres per second — small in absolute terms, catastrophic in arrival accuracy if left alone. a 5 cm/s error at tli translates to 100 km of miss-distance at the moon. tcms trim those errors before they grow."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "terminal-velocity",
+    "title": "Terminal Velocity",
+    "intro": "Why a falling lander stops speeding up — the balance between drag and weight that sets how fast a parachute, or a planet's air, lets a spacecraft descend.",
+    "haystack": "terminal velocity why a falling lander stops speeding up — the balance between drag and weight that sets how fast a parachute, or a planet's air, lets a spacecraft descend. the governing number is the ballistic coefficient — mass divided by drag area. a light vehicle with a big parachute (low ballistic coefficient) settles to a slow terminal velocity; a heavy, compact one (high ballistic coefficient) falls faster. designers trade the two: a bigger chute buys a slower descent but weighs more and is harder to deploy supersonically in thin air."
   },
   {
     "tab": "mission-phases",

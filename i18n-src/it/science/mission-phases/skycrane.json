@@ -1,0 +1,15 @@
+{
+  "title": "Sky-Crane",
+  "intro_sentence": "La piattaforma spinta da razzi che abbassa un rover sulla superficie mediante cavi, poi si allontana — il sistema di atterraggio che ha posizionato Curiosity e Perseverance su Marte.",
+  "narrative_101": [
+    "I primi rover marziani erano abbastanza piccoli da rimbalzare giù all'interno di un bozzolo di airbag. Ma Curiosity aveva le dimensioni di un'auto — troppo pesante per gli airbag — e posizionare lunghe gambe di atterraggio sotto il rover avrebbe significato appoggiarla in alto su una piattaforma ingombrante, poi in qualche modo farla scendere. La risposta della NASA era più strana ed elegante: lo sky-crane.",
+    "Dopo che lo scudo termico e il paracadute hanno fatto il loro lavoro, uno stadio di discesa alimentato da razzi prende il controllo, accendendo otto motori per rallentare fino a un quasi-hovering a pochi metri di altitudine. Poi, invece di atterrare lui stesso, abbassa il rover sotto di sé mediante un insieme di cavi — come un elicottero che posiziona un carico — fino a quando le ruote del rover toccano il suolo. Il rover è il suo stesso carrello di atterraggio.",
+    "Nel momento in cui il rover è giù e il suo peso si stacca dai cavi, lo stadio di discesa taglia i cordoni e si allontana volando per schiantarsi a una distanza sicura, in modo che i suoi gas di scarico e i suoi detriti non tocchino mai il rover. L'intera sequenza — hovering, abbassamento, atterraggio, allontanamento — richiede solo pochi secondi, ed è stata eseguita con successo due volte: per Curiosity nel 2012 e per Perseverance nel 2021."
+  ],
+  "body_paragraphs": [
+    "Lo sky-crane risolve due problemi contemporaneamente. Mantiene i motori a razzi in alto, così i loro pennacchi non scavano un cratere o non lanciano detriti verso il rover, e consegna il rover direttamente sulle sue ruote, pronto a muoversi — nessuna rampa, nessun ponte di atterraggio da cui scendere. Il costo è una coreografia senza margine di errore, eseguita autonomamente, minuti dopo un ingresso infuocato, con la Terra troppo lontana per aiutare in tempo reale.",
+    "È il capitolo finale dei sette minuti di terrore: riscaldamento di ingresso, poi il paracadute supersonico, poi la separazione dello scudo termico, poi la discesa motore, poi lo sky-crane abbassa e vola via — ogni passaggio deve attivarsi al momento giusto o la missione viene persa all'atterraggio. Solo una manciata di nazioni ha effettuato atterraggi morbidi su Marte; lo sky-crane è il modo più audace in cui è stato fatto.",
+    "Su `/fly`, vola con Curiosity o Perseverance in `?descent=1` e guarda come i cavi dello stadio di discesa si allungano sotto la sequenza di paracadute e retrorazzi, abbassando il rover sulla superficie prima che lo stadio si allontani — il movimento dello sky-crane reso visibile."
+  ],
+  "diagram_caption": "Sky-crane: uno stadio di discesa spinto da razzi rimane in hovering e abbassa il rover mediante cavi sulla superficie, poi taglia i cordoni e vola via."
+}

@@ -85,6 +85,10 @@ export interface FlightCruise {
   source?: string;
 }
 
+/** The Entry, Descent & Landing system class for a lander (RFC-034 §12). */
+export type EDLSystemKind =
+  'powered' | 'airbag' | 'skycrane' | 'aeroshell' | 'parachute_retro' | 'direct_impact';
+
 export interface FlightArrival {
   v_infinity_km_s?: number;
   entry_velocity_km_s?: number;
@@ -93,6 +97,13 @@ export interface FlightArrival {
   inclination_deg?: number | null;
   /** Landers: null. Orbiters: orbit-insertion ∆v in km/s. */
   orbit_insertion_dv_km_s?: number | null;
+  /** EDL system class (landers only) — derived from the descent profile
+   *  (RFC-034 §12); the descent-profile registry stays the source of truth. */
+  edl_system?: EDLSystemKind;
+  /** EDL duration, entry interface → touchdown (s) — derived from the descent profile. */
+  edl_duration_s?: number;
+  /** Touchdown speed (m/s) — derived from the descent profile (high = a crash). */
+  touchdown_velocity_ms?: number;
   source?: string;
 }
 

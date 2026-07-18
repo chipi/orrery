@@ -1,0 +1,159 @@
+{
+  "title": "El Tesoro Equivocado",
+  "dek": "El titular dice que los asteroides contienen cuatrillones de dólares en oro y platino. El titular está equivocado — no en lo que se refiere al metal, sino al dinero. El argumento real para los recursos de asteroides corre en la dirección completamente opuesta.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Cada algunos años, alguien hace las cuentas del asteroide 16 Psyche y anuncia, en un comunicado de prensa entusiasmado, que el cuerpo rico en metales que orbita en el [cinturón de asteroides](/science/planets/asteroid-belt) contiene hierro, níquel, y metales preciosos con un valor en el rango de alrededor de diez quintillones de dólares. La cifra siempre es asombrosa. También es, en cualquier sentido económico significativo, sin sentido — y entender por qué carece de sentido conduce directamente a cuál es realmente el argumento genuino para los recursos de asteroides, que es casi lo opuesto a la versión del titular."
+    },
+    {
+      "type": "prose",
+      "md": "Empecemos por el número en sí. El mercado global de platino vale, en un año dado, aproximadamente 5 mil millones de dólares. Si pudieras entregar el contenido de metales del grupo del platino incluso de un asteroide metálico modesto a la Tierra y venderlo mañana, no harías fortuna. Colapsarías el mercado. El precio del platino se deriva enteramente de su escasez; elimina la escasez, y eliminas el precio. El valor, para una mercancía, se fija al margen — por la última unidad vendida, no por el volumen total en existencia. El asteroide de 10 quintillones de dólares, explotado exitosamente y entregado a la superficie terrestre, valdría aproximadamente lo que vale el mineral de hierro: no mucho por kilogramo. Pero este argumento de colapso del mercado es casi irrelevante, porque asume la entrega a la Tierra — y la entrega a la Tierra es donde la aritmética se equivoca mucho antes de que el mercado entre en la imagen. Aquí es donde la [ecuación de cohetes](/science/propulsion/tsiolkovsky) cierra la discusión."
+    },
+    {
+      "type": "heading",
+      "text": "La gravedad es la contadora"
+    },
+    {
+      "type": "prose",
+      "md": "El [presupuesto de delta-v](/science/propulsion/dv-budget) para una misión desde la Tierra a un asteroide cercano a la Tierra es, para un objetivo favorable, alrededor de 6 km/s — comparable a alcanzar Marte. Traer material de ese asteroide de vuelta a la órbita terrestre cuesta aún más, y llevarlo desde la órbita terrestre a la superficie de la Tierra requiere sobrevivir a la atmósfera. Todo esto antes de haber hecho ninguna explotación minera. La [ecuación de cohetes](/science/propulsion/tsiolkovsky) no califica con curva: cada kilogramo de carga que deseas devolver a casa desde el espacio profundo debe ser igualado, en el lanzamiento, por suficiente propelente para llevarlo de vuelta, que a su vez debe ser igualado por propelente para llevar ese propelente, y así sucesivamente en la regresión que la ecuación describe. La [restricción de Tsiolkovsky](/science/propulsion/tsiolkovsky), que no ha sido derogada desde 1903, hace que los números sean brutales."
+    },
+    {
+      "type": "prose",
+      "md": "Hablando claramente: estás extrayendo material de un pozo de gravedad — no el de la Tierra, sino el del sistema solar. El asteroide es, admitidamente, diminuto, con una gravedad superficial una milésima parte de la de la Tierra. Escapar de él cuesta casi nada en [delta-v](/essays/delta-v). Pero luego estás en el espacio interplanetario, y la Tierra está en el fondo de un pozo de gravedad muy profundo, y llegar allí con cualquier velocidad significativa significa gastar combustible para desacelerar, o aceptar la violencia del aerofreado, o ambos. El costo económico de transportar masa a través de distancias interplanetarias y luego desacelerarla de manera segura es, con tecnologías de propulsión actuales y previsibles, tan por encima del valor de mercado de cualquier mercancía que el caso comercial para devolver materiales en lote a la Tierra no puede cerrarse. Esta no es una lectura pesimista. Es lo que dicen los números del [impulso específico](/science/propulsion/specific-impulse) cuando los ejecutas honestamente."
+    },
+    {
+      "type": "prose",
+      "md": "Esta es también la razón por la que la primera generación de empresas comerciales de asteroides — Planetary Resources, fundada en 2012, y Deep Space Industries, fundada en 2013 — fracasaron dentro de una década, no porque los asteroides no estén allí, sino porque el mercado para platino de asteroide entregado en la Tierra no existe a ningún precio que la [economía del delta-v](/essays/delta-v) pueda sostener. La lógica de transportar riqueza a la superficie terrestre estaba rota desde el principio."
+    },
+    {
+      "type": "heading",
+      "text": "El pozo es el problema"
+    },
+    {
+      "type": "prose",
+      "md": "Ahora invierte la pregunta. En lugar de preguntar cuánto cuesta traer material del espacio a la Tierra, pregunta cuánto cuesta traer material de la Tierra al espacio. La respuesta es la misma ecuación de cohetes, corriendo en la otra dirección, y es igual de brutal. Llevar un kilogramo a órbita terrestre baja en un [lanzador reutilizable](/essays/reusable-launchers) cuesta, en el mejor de los casos, algunos miles de dólares hoy — bajando dramáticamente de los decenas de miles que costaba hace una década. Llevar ese kilogramo más lejos, a una órbita de transferencia lunar o a una trayectoria hacia Marte, cuesta aún más, porque estás ascendiendo más en el pozo de gravedad terrestre y la [aritmética de Oberth](/science/propulsion/oberth-effect) que hace que las quemas profundas sean eficientes no puede arreglar el problema fundamental de la relación de masa."
+    },
+    {
+      "type": "prose",
+      "md": "Esto es lo que el encuadre del pozo de gravedad aclara. La superficie terrestre se sienta en el fondo de un pozo que cuesta aproximadamente 9,4 km/s de delta-v para escapar completamente. Cada kilogramo de comida, combustible, agua, aire, material estructural, o blindaje de radiación que una nave espacial tripulada lleva por encima de la órbita terrestre baja ha pagado ese peaje. El peaje no es un recargo que la ingeniería inteligente puede evitar; es una consecuencia física de estar en la Tierra, que es un planeta grande con un campo gravitacional profundo. Si quieres construir y operar naves espaciales por encima de la órbita terrestre baja — para una base lunar, para tránsito a Marte, para cualquier cosa sostenida en el espacio profundo — el costo dominante no es tu hardware. Es el propelente quemado para elevar tu hardware y sus consumibles fuera del pozo cada vez."
+    },
+    {
+      "type": "prose",
+      "md": "El argumento económico genuino para los recursos de asteroides comienza exactamente aquí, y corre en la dirección opuesta al titular. En lugar de traer material de asteroides a la Tierra, la pregunta es: ¿podemos usar material que *ya está* por encima del pozo de gravedad terrestre para evitar levantarlo desde la superficie? ¿Podemos, en efecto, encontrar un depósito de combustible y una ferretería ya en órbita — o lo suficientemente cerca de que el costo de entrega se mida en fracciones de un km/s en lugar de diez km/s — y dejar de pagar el peaje de lanzamiento en cada kilogramo de material que una economía del espacio profundo necesita? La respuesta, si las misiones de reconocimiento son de creer, es sí. Pero no es oro. Es agua."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/the-well",
+      "kind": "diagram",
+      "caption": "Cada kilogramo lanzado desde la Tierra paga un peaje brutal en delta-v solo para ascender del pozo de gravedad del planeta. Cualquier cosa ya en el espacio — un asteroide a la deriva sobre el borde — tiene ese precio pagado. Por eso un litro de agua estacionado en órbita vale más que un litro de oro sentado en el suelo.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "El agua es el mineral"
+    },
+    {
+      "type": "prose",
+      "md": "Los asteroides condritos carbonosos — las clases de tipo C y relacionadas que representan la mayoría de los objetos cercanos a la Tierra — contienen cantidades significativas de minerales hidratados: arcillas y filosilicatos que retienen moléculas de agua en su estructura cristalina en niveles que van desde algunos por ciento a más del veinte por ciento en masa. Algunos también contienen materia orgánica. El agua no está sentada en charcos; está químicamente unida, y extraerla requiere calentar el material para expulsar el vapor de agua y luego condensarlo. Pero la energía para hacer eso puede, en principio, provenir de concentradores solares en el espacio. El resultado es agua — y el agua, en el contexto de un programa del espacio profundo, no es principalmente una cosa para beber."
+    },
+    {
+      "type": "prose",
+      "md": "La electrólisis divide el agua en hidrógeno y oxígeno: la combinación de propelente químico más energético jamás utilizado. El hidrógeno y el oxígeno, licuados y almacenados, son propelente de cohete. El [presupuesto de delta-v](/essays/delta-v) para una transferencia a Marte es aproximadamente 3,6 km/s desde órbita terrestre baja; un depósito de propelente en un conveniente [punto de Lagrange](/science/transfers/hohmann-transfer) o en órbita cercana a la Tierra, abastecido a partir de agua derivada de asteroides, cambiaría dramáticamente la masa que necesita ser lanzada desde la Tierra para cualquier misión más allá de LEO. El combustible es la fracción de masa dominante de cualquier nave espacial — el Saturno V que llevaba astronautas del Apolo a la Luna era [85 por ciento propelente en masa](/essays/delta-v). Un depósito que suministra propelente sin requerir que sea levantado de la superficie terrestre no es una conveniencia logística. Reestructura toda la economía del espacio profundo."
+    },
+    {
+      "type": "prose",
+      "md": "Más allá del propelente, el agua proporciona oxígeno para respirar. El mismo material carbonoso proporciona carbono y nitrógeno. La masa en volumen — roca, en la mayoría de los casos, no metal — proporciona blindaje de radiación: una nave espacial en tránsito a Marte está fuera de la magnetosfera terrestre durante seis a nueve meses, y cargar suficiente masa para blindar una tripulación de rayos cósmicos cuesta enormemente si cada kilogramo tiene que ser lanzado desde la superficie terrestre. Nada de esto tiene el glamour del platino. Todo es más valioso para una economía basada en el espacio que el platino. El argumento no es sobre tesoros. Es sobre [utilización de recursos in situ](/science/life-in-space/isru-resource-utilization) — el único enfoque que hace físicamente viable la presencia humana sostenida más allá de la Tierra — y el recurso que importa más no es el más raro o más caro, sino el que es más caro de lanzar desde la Tierra: masa de propelente. El [ensayo sobre ir a la luna](/essays/going-to-the-moon) hace el mismo argumento en el polo sur lunar, por las mismas razones. La Luna y los asteroides cercanos a la Tierra carbonosos son el mismo argumento en dos lugares diferentes."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/water-is-the-ore",
+      "kind": "diagram",
+      "caption": "Divide agua de asteroide y tienes hidrógeno y oxígeno — propelente de cohete — más aire para respirar, agua para beber, y roca en volumen para blindaje de radiación. El premio nunca fue metal para vender de vuelta a casa; es un depósito de combustible que ya está en el cielo.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Ya los hemos tocado"
+    },
+    {
+      "type": "prose",
+      "md": "El reconocimiento que apoyaría cualquiera de esto no es teórico. Ha sido hecho, dos veces, por Japón, y una vez por Estados Unidos — y lo que encontró fue tanto más interesante como más humillante que la versión del titular sugería."
+    },
+    {
+      "type": "prose",
+      "md": "El [Hayabusa](/missions?id=hayabusa1) de Japón alcanzó el asteroide Itokawa de tipo S en septiembre de 2005. Su mecanismo de recolección de muestras había malfuncionado, pero la nave regresó a la Tierra en junio de 2010 llevando aproximadamente 1.500 partículas de submilímetro — las primeras muestras jamás devueltas de un asteroide. El análisis confirmó la mineralogía de condrita LL ordinaria: no el objetivo carbonoso rico en agua que el argumento ISRU necesita, pero prueba de concepto de que puedes alcanzar un asteroide, tocarlo, y traer piezas de vuelta."
+    },
+    {
+      "type": "prose",
+      "md": "[Hayabusa2](/missions?id=hayabusa2), lanzada en diciembre de 2014, fue diseñada para ir más allá. Su objetivo era Ryugu, un asteroide cercano a la Tierra de tipo C — la variedad carbonosa que los modelos de hidratación predijeron debería contener minerales con agua. La nave espacial llegó a Ryugu en junio de 2018 y pasó año y medio estudiándolo antes de realizar la recolección de muestras en febrero y julio de 2019. En julio de 2019, también desplegó un pequeño impactador que voló un cráter en la superficie de Ryugu, luego recopiló material de la subsuperficie expuesta — material que no había sido alterado por la erosión espacial. La cápsula regresó a la Tierra en diciembre de 2020. El análisis confirmó lo que los modelos predijeron: el material de Ryugu es rico en minerales hidratados, contiene materia orgánica incluyendo precursores de aminoácidos, y en composición química está estrechamente relacionado con condrita CI — la clase más primitiva y rica en agua de los condritas carbonosos. El mineral que el argumento ISRU necesita está allí. Ryugu no es un cuerpo único; los asteroides de tipo C representan aproximadamente el 75 por ciento de todos los asteroides en el cinturón principal y una fracción significativa de objetos cercanos a la Tierra."
+    },
+    {
+      "type": "prose",
+      "md": "El [OSIRIS-REx](/missions?id=osiris-rex) de la NASA alcanzó el asteroide carbonoso Bennu en diciembre de 2018 y pasó casi dos años mapeándolo antes de realizar su recolección de muestra Touch-And-Go en octubre de 2020. La cápsula regresó a la Tierra en septiembre de 2023 con aproximadamente 120 gramos de material — la muestra más grande jamás devuelta de un asteroide. El análisis confirmó minerales de arcilla hidratada y compuestos ricos en carbono: los mismos ingredientes que el equipo de Hayabusa2 encontró en Ryugu, en un cuerpo diferente, alcanzado por una nación diferente, a través de una trayectoria diferente. El resultado fue el mismo. Esto no es una coincidencia. Es confirmación de que la composición carbonosa de tipo C — portadora de agua, rica en materia orgánica — es la regla para estos cuerpos, no la excepción."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/the-recon",
+      "kind": "diagram",
+      "caption": "Tres misiones robóticas ya han tocado y muestreado asteroides: el Hayabusa de Japón (Itokawa, 2010, el primero jamás), Hayabusa2 (Ryugu, 2020), y OSIRIS-REx de la NASA (Bennu, 2023). Lo que volvió fue arcilla con agua y materia orgánica — de escombros sueltos, no metal sólido.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/hayabusa2/01",
+      "kind": "photo",
+      "caption": "Hayabusa2 en Ryugu — la segunda devolución de muestra de asteroide de JAXA, y la misión lo suficientemente atrevida como para disparar un impactador de cobre en la superficie para volar abierto un cráter fresco antes de recopilar lo que expuso.",
+      "align": "wide",
+      "credit": "JAXA"
+    },
+    {
+      "type": "heading",
+      "text": "Escombros, no roca"
+    },
+    {
+      "type": "prose",
+      "md": "Aquí está lo que las misiones también encontraron, y lo que los titulares sobre la minería de asteroides consistentemente subestiman: Bennu y Ryugu no son cuerpos sólidos. Son pilas de escombros."
+    },
+    {
+      "type": "prose",
+      "md": "Una pila de escombros es un agregado de material poco consolidado — cantos rodados, guijarros, polvo — mantenido junto por una gravedad tan débil que caminar sobre la superficie requeriría consideración cuidadosa de si podrías rebotar completamente. La gravedad superficial de Bennu es aproximadamente 6 micronewtons por kilogramo. Un astronauta de pie en su ecuador pesaría menos de un miligramo en términos terrestres. Intentar anclar un sistema de minería — para perforar, excavar, empujar contra la superficie con cualquier fuerza — genera una reacción que podría empujar el equipo de minería fuera del asteroide. El evento TAG (Touch-and-Go) que OSIRIS-REx usó para recopilar su muestra duró aproximadamente seis segundos de contacto superficial; durante esos seis segundos, la cabeza de muestra de la nave espacial se hundió más profundamente en la superficie de lo esperado, porque el material de Bennu está menos consolidado que un castillo de arena. El equipo de misión dijo más tarde que la nave espacial se habría hundido completamente si los propulsores no hubieran disparado para sacarla. Esto no es un entorno hostil en la forma que Marte es hostil. Es un entorno hostil en la forma que una bolsa de arena suelta flotando en gravedad cero es hostil: fundamentalmente diferente de cada suposición que la ingeniería de minería terrestre hace."
+    },
+    {
+      "type": "prose",
+      "md": "El experimento impactador de Hayabusa2 confirmó el mismo cuadro desde un ángulo diferente. Su impactador de cobre de 2,5 kg creó un cráter de aproximadamente 14 metros de diámetro y 2 metros de profundidad — más grande de lo predicho, porque la superficie era más porosa de lo esperado. La misión [DART](/missions?id=dart), que en septiembre de 2022 desvió el asteroide Dimorphos al chocar deliberadamente una nave espacial contra él, produjo una pluma de eyecta y un cambio de período orbital ambos mayores de lo que los modelos de cuerpo sólido predijeron — consistente, nuevamente, con un agregado débilmente unido. Trabajar en ese entorno no es una cuestión de ampliar la minería terrestre y añadir trajes de vacío. Anclar contra una superficie contra la que no puedes empujar, excavar material que flota a centímetros por segundo, contener eyecta en microgravedad — estos son problemas de ingeniería sin resolver a diferencia de cualquier cosa en la historia de la industria extractiva. La ciencia está confirmada. La ingeniería aún no ha comenzado en serio."
+    },
+    {
+      "type": "figure",
+      "image": "missions/osiris-rex/01",
+      "kind": "photo",
+      "caption": "OSIRIS-REx extendiendo la mano para tocar Bennu — y encontrando no tierra sólida sino una pila de escombros tan débilmente unida que la cabeza de muestreo se hundió directamente, casi tragándose el brazo. \"Minar\" un cuerpo como este es a diferencia de cualquier cosa jamás hecha en la Tierra.",
+      "align": "wide",
+      "credit": "NASA/Goddard/University of Arizona"
+    },
+    {
+      "type": "heading",
+      "text": "La economía por encima del pozo"
+    },
+    {
+      "type": "prose",
+      "md": "La pregunta que la vista larga tiene que responder es: ¿a dónde va esto? El argumento ISRU es lógicamente sólido. El reconocimiento confirma que los recursos existen. Los desafíos de ingeniería son reales pero no en principio insolubles. La economía, sin embargo, requiere algo que aún no existe: demanda de recursos en el espacio."
+    },
+    {
+      "type": "prose",
+      "md": "Este es el problema de tiempo que mató la primera ola comercial. Planetary Resources y Deep Space Industries estaban construyendo cadenas de suministro para una base de clientes que aún no existía — específicamente, para la economía más allá de LEO hambrienta de propelente que un programa lunar sostenido y las operaciones eventuales de Marte crearían. En 2012, cuando Planetary Resources fue fundada, la [revolución de lanzadores reutilizables](/essays/reusable-launchers) aún no estaba probada, el programa Artemis no existía, ninguna estación espacial comercial estaba en desarrollo, y la idea de misiones humanas regulares a Marte era firmemente en el futuro especulativo. Las empresas estaban, en términos de infraestructura, construyendo estaciones de combustible antes de la carretera. La infraestructura casi siempre tiene que esperar el tráfico antes de que se vuelva viable, y la extracción de recursos espaciales no es diferente."
+    },
+    {
+      "type": "prose",
+      "md": "La situación a mediados de los años 2020 es diferente en un aspecto: el tráfico está más cerca. Los [vehículos de lanzamiento reutilizables](/essays/reusable-launchers) han cambiado la economía de alcanzar órbita. Los programas de estaciones comerciales están en desarrollo. El programa Artemis, sin embargo demorado, ha puesto las operaciones lunares tripuladas de vuelta en horizontes de planificación. La misión [Psyche](/missions?id=psyche-mission) de la NASA, lanzada en octubre de 2023 y en ruta hacia el asteroide metálico 16 Psyche, entregará la caracterización remota más exhaustiva de un asteroide metálico jamás intentada. Los clientes potenciales de la cadena de suministro ya no son puramente hipotéticos. Pero más cerca no es aquí. Un depósito de propelente que da servicio a naves espaciales con destino a Marte está, como mínimo, a una década de la realidad operacional — y esa estimación es optimista, contingente a un ritmo de desarrollo lunar que ha deslizado consistentemente. La lectura honesta: los recursos de asteroides se vuelven económicamente viables cuando, y solo cuando, hay actividad humana sostenida más allá de órbita terrestre baja a una escala que hace que el combustible, el aire, y el blindaje sean la restricción vinculante. Esa restricción se está acercando. La brecha entre acercarse y aquí ha tragado negocios antes."
+    },
+    {
+      "type": "prose",
+      "md": "Lo que permanece, después de que la exageración ha sido deshinchada y la falacia de colapso del mercado descartada, es algo más duradero y menos emocionante para un comunicado de prensa: un argumento estructural de que la economía a largo plazo de la presencia humana más allá de la Tierra no puede ser hecha para funcionar sin extraer de recursos que ya están por encima del pozo de gravedad. El sistema solar contiene más agua, más carbono, más material estructural de lo que la totalidad de la civilización humana ha consumido jamás, distribuido a través de millones de cuerpos cuya gravedad superficial cuesta casi nada superar, sentados por encima de la una cosa que hace que el vuelo espacial sea caro. El argumento no es sobre quintillones de dólares. Es sobre la [ecuación de cohetes](/science/propulsion/tsiolkovsky) y la dirección a la que está apuntando."
+    },
+    {
+      "type": "prose",
+      "md": "La restricción de Tsiolkovsky tiene una salida. No es química inteligente o propulsión radical nueva — aunque la [propulsión nueva](/essays/new-propulsion) ayuda en los márgenes. La salida no es lanzar los consumibles en primer lugar. Es encontrarlos ya por encima del pozo y usarlos allí. [Hayabusa2](/missions?id=hayabusa2) trajo 5,4 gramos de Ryugu de vuelta a la Tierra. [OSIRIS-REx](/missions?id=osiris-rex) trajo 120 gramos de Bennu. Las próximas misiones en esta secuencia no estarán trayendo material a casa. Estarán aprendiendo cómo dejarlo donde está — y usarlo allí. Ese es el punto al que el titular nunca llega. [Explora los cuerpos pequeños en el atlas](/explore) y lo que estás mirando no es un almacén de tesoro entregable en la Tierra. Es la ferretería para una civilización que aún no ha llegado."
+    }
+  ]
+}

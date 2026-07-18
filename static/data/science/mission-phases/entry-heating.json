@@ -1,0 +1,24 @@
+{
+  "id": "entry-heating",
+  "tab": "mission-phases",
+  "order": 5,
+  "see_in_app": [
+    {
+      "route": "/fly",
+      "query": "?descent=1",
+      "context_key": "Watch the aero-heating gauge spike at peak heating during any ?descent=1 Mars or Venus entry"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Atmospheric-entry heating",
+      "u": "https://en.wikipedia.org/wiki/Atmospheric_entry#Heating_during_re-entry",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Thermal Protection Systems",
+      "u": "https://www.nasa.gov/general/thermal-protection-systems/",
+      "t": "core"
+    }
+  ]
+}

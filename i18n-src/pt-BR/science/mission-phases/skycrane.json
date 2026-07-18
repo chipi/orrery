@@ -1,0 +1,15 @@
+{
+  "title": "Sky-Crane",
+  "intro_sentence": "A plataforma movida a foguete que abaixa um rover até a superfície por cabos e depois decola — o sistema de pouso que colocou Curiosity e Perseverance em Marte.",
+  "narrative_101": [
+    "Os primeiros rovers em Marte eram pequenos o suficiente para descer quicando dentro de um casulo de airbags. Mas Curiosity tinha o tamanho de um carro — muito pesado para airbags — e colocar grandes pernas de pouso sob o rover significaria colocá-lo no topo de uma plataforma volumosa e depois encontrar uma maneira de tirá-lo de lá. A resposta da NASA foi mais estranha e elegante: o sky-crane.",
+    "Depois que o escudo térmico e o paraquedas fizeram seu trabalho, um estágio de descida movido a foguete assume o controle, disparando oito motores para desacelerar até quase uma posição estática a alguns metros de altura. Em seguida, em vez de pousar ele mesmo, ele abaixa o rover abaixo dele por um conjunto de cabos — como um helicóptero colocando uma carga — até as rodas do rover tocarem o solo. O rover é seu próprio trem de pouso.",
+    "No instante em que o rover está no solo e seu peso sai dos cabos, o estágio de descida corta as amarras e decola para cair a uma distância segura, assim os gases de escape e os destroços nunca tocam o rover. Toda a sequência — pairar, abaixar, toque, decolagem — leva apenas alguns segundos, e já funcionou duas vezes: para Curiosity em 2012 e Perseverance em 2021."
+  ],
+  "body_paragraphs": [
+    "O sky-crane resolve dois problemas de uma vez. Mantém os motores de foguete em altitude, assim suas plumas não abrem uma cratera ou jogam detritos sobre o rover, e entrega o rover diretamente sobre suas rodas, pronto para rodar — sem rampas, sem uma plataforma de pouso para descer. O custo é uma coreografia sem margem para erro, executada autonomamente, minutos após uma entrada flamejante, com a Terra tão longe que não pode ajudar em tempo real.",
+    "É o capítulo final dos sete minutos de terror: aquecimento de entrada, depois o paraquedas supersônico, depois separação do escudo térmico, depois a descida motorizada, depois o sky-crane abaixa e decola — cada passo deve funcionar na hora certa ou a missão é perdida no pouso. Apenas um punhado de nações pousou suavemente em Marte; o sky-crane é o jeito mais audacioso de ter feito isso.",
+    "Em `/fly`, voe com Curiosity ou Perseverance em `?descent=1` e veja os cabos do estágio de descida se desenrolarem abaixo da sequência de paraquedas e retrofogo, abaixando o rover até a superfície antes que o estágio decole — o ritmo do sky-crane tornado visível."
+  ],
+  "diagram_caption": "Sky-crane: um estágio de descida movido a foguete paira e abaixa o rover por cabos até a superfície, depois corta as amarras e decola."
+}

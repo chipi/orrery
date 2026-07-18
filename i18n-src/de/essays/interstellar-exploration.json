@@ -1,0 +1,147 @@
+{
+  "title": "Die ehrliche Rechnung",
+  "dek": "Der nächste Stern ist nicht weit entfernt, wie der Mars es ist, oder auch nicht wie Pluto. Es ist eine kategorial andere Art von Distanz — und die nüchterne Mathematik, um dorthin zu gelangen, hat die Eigenschaft, dass jeder ernsthafte Vorschlag zugleich ruhig heroisch und ruhig zum Scheitern verurteilt aussieht.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Es gibt eine Denkweise, die die Raumfahrt fördert, und sie ist bis zu einem gewissen Punkt vernünftig. Man lernt die Distanzen — der Mond ist drei Tage entfernt, Mars ist sechs bis neun Monate, Jupiter ist Jahre — und man verinnerlicht die Größenordnung des Sonnensystems als etwas, das riesig ist, aber navigierbar, etwas, das die menschliche Erfindungsgabe über siebzig Jahre hinweg stetig bewältigt hat. Die [Voyager 1](/missions?id=voyager-1) erreichte den interstellaren Raum. Die [New Horizons](/missions?id=new-horizons) überquerte fünf Milliarden Kilometer zum [Pluto](/explore) und traf dort bis auf die Minute pünktlich ein. Das äußere System wirkt aus diesem Blickwinkel heraus wie ein Problem von Geduld und Technik, nicht von fundamentalen Grenzen."
+    },
+    {
+      "type": "prose",
+      "md": "Dann wendest du dich dem nächsten Stern zu, und der Blickwinkel zerfällt."
+    },
+    {
+      "type": "prose",
+      "md": "Proxima Centauri ist 4,24 Lichtjahre entfernt. Dieser Satz muss langsam auseinandergenommen werden, um mit seinem ganzen Gewicht zu landen, denn Lichtjahre und Lichtminuten sind die gleiche Einheit und der Größenunterschied ist nicht intuitiv. Eine [Lichtminute](/science/scales-time/light-minute) ist die Strecke, die Licht in sechzig Sekunden zurücklegt: etwa 18 Millionen Kilometer, was ungefähr der Entfernung zwischen Erde und Sonne dividiert durch acht entspricht. Das Sonnensystem — das gesamte bewohnte und erforschte Volumen von der Erdumlaufbahn bis über die Neptunbahn hinaus — passt in eine Kugel von etwa fünf Lichtstunden Durchmesser. Pluto, am Rand des klassischen Systems, ist etwa fünfeinhalb Lichtstunden von der Sonne entfernt. Die Oort-Wolke, die äußerste Reichweite der Gravitationsbeeinflussung der Sonne, erstreckt sich vielleicht auf ein bis zwei Lichtjahre. Proxima Centauri, der nächste Stern zu unserem eigenen, ist mehr als doppelt so weit entfernt. Die Entfernung zum nächsten Stern ist nicht die Entfernung zum äußeren Sonnensystem um einen verwaltbaren Faktor vergrößert. Sie ist etwa *neuntausendmal* die Entfernung von der Erde zu Pluto. Das Sonnensystem bereitet dich nicht darauf vor."
+    },
+    {
+      "type": "heading",
+      "text": "Die demütigende Geschwindigkeit von allem, das wir ins All geschossen haben"
+    },
+    {
+      "type": "prose",
+      "md": "Die [Voyager 1](/missions?id=voyager-1) ist das am schnellsten sich entfernende menschengemachte Objekt, das es gibt. 1977 gestartet, beschleunigt an Jupiter und Saturn vorbei auf einer Umlaufbahn, die Energie aus den Gravitationsfeldern beider Planeten nutzte, bewegt sie sich jetzt mit etwa 17 Kilometern pro Sekunde relativ zur Sonne — etwa 61.000 Kilometer pro Stunde, eine Geschwindigkeit, die dich von London nach Sydney in weniger als einer Minute bringen würde. Nach jedem irdischen Maßstab ist sie unvorstellbar schnell. Nach interstellarem Maßstab ist sie glacial. Mit 17 km/s würde die Voyager 1 etwa 73.000 Jahre brauchen, um die Entfernung zu Proxima Centauri zu überbrücken — und sie ist nicht einmal auf Kurs dorthin. Sie fliegt in eine völlig andere Richtung, zum Sternbild Ophiuchus, auf einer Umlaufbahn, die dazu bestimmt war, das äußere Sonnensystem zu vermessen, nicht um die Sterne zu erreichen."
+    },
+    {
+      "type": "prose",
+      "md": "[Pioneer 10](/missions?id=pioneer-10) und [Pioneer 11](/missions?id=pioneer-11), die ersten Raumschiffe, die den Asteroidengürtel überquerten und Jupiter und Saturn vermessen haben, verlassen auch das Sonnensystem auf hyperbolischen Flugbahnen. [New Horizons](/missions?id=new-horizons) bewegt sich mit etwa 14 km/s fort. Keines von ihnen wird sich einem anderen Stern in einem Zeitrahmen annähern, der für die Zivilisation, die es startete, bedeutsam wäre. Die schnellsten Dinge, die die Menschheit je ins All geschleudert hat — die Krönung von sieben Jahrzehnten Raketentechnik und Swing-by-Bahnplanung — würden Zehntausende von Jahren brauchen, um die interstellare Lücke zu überbrücken. Wenn Menschen sagen, \"die Sterne sind weit weg\", meinen sie etwas Spezifischeres und Ernüchternderes, als der Satz normalerweise vermittelt: Sie meinen, dass alles, was wir je getan haben, um ein Raumschiff schneller zu machen, die Größenordnung der interstellaren Raumfahrt nicht um eine einzige Zehnerpotenz verändert hat."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/voyagers-speed",
+      "kind": "diagram",
+      "caption": "Die Voyager 1, 1977 gestartet, ist das am schnellsten sich entfernende Objekt, das die Menschheit je gebaut hat — und mit etwa siebzehn Kilometern pro Sekunde würde es immer noch etwa 73.000 Jahre dauern, die Entfernung zum nächsten Stern zu überqueren. Sie fliegt nicht einmal dorthin. Gegen interstellare Entfernung ist unsere Schnellste ein Kriechen.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/voyager-1/01",
+      "kind": "photo",
+      "caption": "Die Voyager 1 — jetzt mehr als vierundzwanzig Milliarden Kilometer entfernt, das am weitesten entfernte Objekt, das Menschen je gebaut haben, und immer noch, auf jeder interstellaren Skala, kaum vor der Tür.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Was die Raketengleichung verbietet"
+    },
+    {
+      "type": "prose",
+      "md": "Um Proxima Centauri in einem Menschenleben zu erreichen — sagen wir, in vierzig Jahren — müsste ein Raumschiff mit etwa zehn Prozent der Lichtgeschwindigkeit reisen. Zehn Prozent von c sind ungefähr 30.000 km/s. Die Voyager 1 reist mit 17 km/s. Das Verhältnis ist fast 2.000 zu eins. Man müsste etwa zweitausendmal schneller gehen als das schnellste Objekt, das wir je ins All geschossen haben."
+    },
+    {
+      "type": "prose",
+      "md": "Die [Tsiolkowski-Raketengleichung](/essays/delta-v) — das eiserne Gesetz, das jedes Treibstoff verbrennende Fahrzeug beherrscht — macht dies präzise, und die Präzision ist brutal. Die Gleichung besagt, dass die Geschwindigkeit, die eine Rakete erreichen kann, von zwei Dingen abhängt: dem Verhältnis ihrer Anfangsmasse (vollgetankt) zu ihrer Endmasse (leer) und der Ausströmungsgeschwindigkeit ihres Treibstoffs. Um schneller zu gehen, transportierst du entweder mehr Treibstoff oder stößt ihn schneller aus — aber das Transportieren von mehr Treibstoff erhöht die Anfangsmasse, was den Treibstoff erhöht, den du brauchst, um *diesen* Treibstoff zu beschleunigen, in einer Falle, die exponentiell wächst. Chemische Raketen befinden sich, wie der [Antriebsaufsatz](/essays/new-propulsion) detailliert darlegt, bereits an der Obergrenze dessen, was ihre Ausströmungsgeschwindigkeit zulässt. Die besten chemischen Triebwerke erreichen spezifische Impulse um 450 Sekunden, was Ausströmungsgeschwindigkeiten von etwa 4,4 km/s entspricht. Um zehn Prozent der Lichtgeschwindigkeit mit einer chemischen Rakete zu erreichen, ist das erforderliche Massenverhältnis nicht zehn oder tausend oder eine Million. Es ist eine Zahl so groß, dass das beobachtbare Universum nicht genug Wasserstoff enthält, um den Motor zu befeuern. Chemie ist kein Weg zu den Sternen. Es ist nicht einmal der erste Schritt."
+    },
+    {
+      "type": "prose",
+      "md": "Die nuklear-thermische Antriebstechnik — Wasserstoff in einem Reaktor zu erhitzen und ihn durch eine Düse auszustoßen — verdoppelt ungefähr die Ausströmungsgeschwindigkeit und erreicht spezifische Impulse um 825 Sekunden in den besten bodenerprobt getesteten Motoren des NERVA-Programms. Die Verdopplung der Ausströmungsgeschwindigkeit halbiert nicht das erforderliche Massenverhältnis; sie quadriert die Beziehung. Bei interstellaren Geschwindigkeiten ist die nuklear-thermische Antriebstechnik immer noch kategorial inadäquat. Die Raketengleichung kümmert sich nicht, wie der Treibstoff erhitzt wird. Sie kümmert sich nur, wie schnell er austritt. Und keine bisher konzipierte Treibstoff verbrennende Architektur kann Materie schnell genug ausstoßen, um einen bedeutsamen Bruchteil von c zu erreichen, ohne eine Treibstoffladung zu erfordern, die die Mission von vornherein unmöglich macht."
+    },
+    {
+      "type": "heading",
+      "text": "Die ernsthaften Vorschläge — und die Mauern, auf die sie treffen"
+    },
+    {
+      "type": "prose",
+      "md": "Es gibt eine kleine Anzahl von Vorschlägen für interstellare Raumfahrt, die insofern ernst zu nehmen sind, als Physiker sie nicht sofort ausschließen. Keiner ist einfach. Jeder, sorgfältig untersucht, hat eine Mauer hinter dem anfänglichen Optimismus."
+    },
+    {
+      "type": "prose",
+      "md": "Der konkreteste aktuelle Vorschlag ist Breakthrough Starshot, 2016 von einer Zusammenarbeit von Wissenschaftlern und Technologen angekündigt. Das Konzept ist elegant: Große Raumschiffe ganz aufgeben. Baue Gram-Skala-Lichtsegel — Materialscheiben, dünner als ein Blatt Papier, mit einem kleinen Elektronik-Paket angebracht — und beschleunige sie mit einem bodengestützten Laser-Array, das insgesamt etwa 100 Gigawatt Leistung über einen kurzen Bestrahlungspass abgibt. Bei dieser Leistung könnte ein Gram-Skala-Segel theoretisch auf etwa zwanzig Prozent der Lichtgeschwindigkeit beschleunigt werden und würde die Entfernung zu Proxima Centauri in etwa zwanzig Jahren überbrücken. Die Physik ist prinzipiell sund. Sonnensegeln funktionieren — IKAROS bewies es 2010, und das LightSail 2 der Planetary Society erhöhte seine Umlaufbahn allein mit Sonnenlicht im Jahr 2019. Die Skalierung des Konzepts auf Laser-Antrieb ist ein anderes Problem der Ingenieurwissenschaft, nicht prinzipieller Art."
+    },
+    {
+      "type": "prose",
+      "md": "Die Mauern sind erheblich. Ein 100-Gigawatt [Phased-Laser-Array](/science/propulsion/laser-sail) existiert nicht. Der Bau eines würde ein Ingenieur- und Finanzunternehmen sein, das den größten Projekten der Menschheitsgeschichte vergleichbar ist, und die Aufrechterhaltung der Strahkohärenz und Zielgenauigkeit über ein sich entfernendes Ziel bei relativistischer Geschwindigkeit erfordert Technologie, die weit über aktuelle Demonstrationen hinausgeht. Fundamentaler: Die Lichtsegel beschleunigen. Sie können nicht abbremsen. Es gibt keinen Mechanismus, um ein Gram-Skala-Segel zu verlangsamen, wenn es sich Proxima Centauri mit 20% c nähert — kein Laser-Array, das dort wartet, keine Atmosphärenbremsen vorhanden. Der Vorbeiflug würde Stunden dauern. Nach Jahrzehnten der Reise und Jahren der Signalübertragung mit Lichtgeschwindigkeit würden Proxima Centauri und alle Planeten, die um ihn kreisen, ein paar Stunden Aufmerksamkeit erhalten. Was immer die Sensoren während dieses Vorbeiflugs erfassten, würde 4,24 Jahre brauchen, um nach Hause zu kommen. Breakthrough Starshot ist nicht eine Mission, um einen anderen Stern zu erkunden. Es ist eine Mission, einen anzuschauen."
+    },
+    {
+      "type": "prose",
+      "md": "Project Daedalus, vorgeschlagen von der British Interplanetary Society in einer Studie von 1973 bis 1978, zielte auf etwas Größeres: ein zweistufiges [Fusionsgetriebenes Sternenraumschiff](/science/propulsion/fusion-propulsion), mit Trägheitseindämmungszündung von Deuterium-Helium-3-Pellets, entworfen, um Barnards Stern (damals dachte man, er habe Planeten) mit etwa 12% der Lichtgeschwindigkeit zu erreichen und in etwa fünfzig Jahren anzukommen. Das Schiff, das es entwarf, war riesig — anfangs betankt hätte es etwa 54.000 Tonnen gewogen, die Größe eines kleinen Wolkenkratzers. Seine Nachfolgestudie, Project Icarus, überarbeitete das Konzept ab 2009 mit aktualisierter Physik und breiteren Antriebsoptionen. Beide Studien vereinigen sich auf der gleichen ehrlichen Bewertung: Der Fusionstrieb funktioniert prinzipiell, aber die erforderliche Technologie — anhaltende Trägheitseindämmungsfusion in der für den Antrieb erforderlichen Größenordnung und Wiederholungsrate — wurde nicht erreicht, und die Treibstoffanforderung für Helium-3 übersteigt bei weitem alles, was aus der Erde gewonnen werden kann. Das Helium-3 müsste aus der Atmosphäre von Jupiter abgebaut werden. Es gibt keinen Mechanismus, um dies zu tun."
+    },
+    {
+      "type": "prose",
+      "md": "Antimaterie ist die theoretische Obergrenze. [Materie-Antimaterie-Annihilation](/science/propulsion/antimatter-propulsion) ist der energiereichste Prozess, der von bekannter Physik zugelassen wird, mit einer hundertprozentigen Effizienz Masse in Energie umwandelt — im Vergleich zu etwa 0,7% für Kernfusion und einem Bruchteil eines Prozents für chemische Verbrennung. Ein Antimaterie-Antrieb, wenn die Annihilation effizient geleitet werden könnte, könnte prinzipiell ein Raumschiff auf einen substanziellen Bruchteil von c mit einer relativ bescheidenen Treibstoffmasse beschleunigen. Die Mauer ist die Produktion. Die gesamte kumulierte Produktion von Antimaterie durch Teilchenbeschleuniger weltweit — über die gesamte Menschheitsgeschichte — beläuft sich auf ein paar Nanogramm. Eine Mission im Daedalus-Maßstab würde etwas wie Zehntausende von Tonnen Antimaterie erfordern. Die zur Herstellung dieser Menge erforderliche Energie würde den gesamten Energieausstoß der menschlichen Zivilisation übersteigen, multipliziert mit Jahrhunderten. Der Antimaterie-Antrieb ist kein kurzfristiges Ingenieurproblem. Es ist ein zivilisatorisches Energieproblem."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/the-proposals",
+      "kind": "diagram",
+      "caption": "Drei Konzepte überstehen ehrliche Überprüfung: ein Laser-angetriebenes Nanosegel (Breakthrough Starshot), das einen nahegelegenen Stern in Jahrzehnten vorbei fliegen könnte, ein Fusionsraumschiff (Project Daedalus) in der Größe eines Gebäudes und Antimateries perfekter aber unherstellbarer Treibstoff. Keines wird von der Physik verboten — alle werden von Energie, Entfernung und Geduld verboten.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Das Nachrichtenproblem"
+    },
+    {
+      "type": "prose",
+      "md": "Selbst abgesehen von der Antriebstechnik hat die interstellare Erkundung eine zweite strukturelle Schwierigkeit, die Chemie und Ingenieurwesen nicht lösen können: die Lichtgeschwindigkeit selbst. Ein Funksignal von Proxima Centauri braucht 4,24 Jahre, um die Erde zu erreichen. Eine Frage, die im Moment der Ankunft eines Raumschiffs übertragen wird, erhält eine Antwort, bestenfalls 8,48 Jahre später. Es gibt keine sinnvolle Echtzeit-Kontrolle. Es gibt keinen Missionsleiter, der Kurskorektionen während einer Annäherung aufruft. Was auch immer ein Raumschiff bei Proxima Centauri tut, es tut es völlig allein — exponentiell allein als die [sieben Minuten autonomer Landung](/essays/seven-minutes) auf dem Mars, wo das Handwerk zumindest weiß, dass Menschen von zwölf Minuten Entfernung aus überwachen."
+    },
+    {
+      "type": "prose",
+      "md": "Die Kommunikationsarchitektur, die dies erfordert, unterscheidet sich qualitativ von allem, das wir gebaut haben. Das [Deep Space Network](/science/mission-phases/dsn) bewältigt interplanetare Entfernungen, weil die Hin- und Rückreiseverzögerung, obwohl schmerzhaft bei den äußeren Planeten, immer noch in Stunden gemessen wird — ein Rhythmus, mit dem menschliche Missionsleiter arbeiten können. Interstellare Verzögerungen werden in Jahren gemessen. Datenmengen würden mit Lichtgeschwindigkeit übertragen, aber die sie tragenden Photonen würden Jahre reisen, bevor sie eine Schüssel auf der Erde erreichen, und jeder Folgebefehl oder jede Wiederübertragung würde genauso lange dauern. [Weltraumkommunikation über das Sonnensystem](/essays/comms) ist bereits eine Disziplin der Geduld; interstellare Kommunikation würde eine Disziplin von Generationen sein. Du sendest eine Nachricht. Deine Enkel erhalten die Antwort."
+    },
+    {
+      "type": "prose",
+      "md": "Im Breakthrough-Starshot-Szenario rast eine Gram-Skala-Sonde mit 20% der Lichtgeschwindigkeit in wenigen Stunden durch das Proxima-Centauri-System. Seine Sensoren sammeln, was sie in diesem Fenster können. Die komprimierten Daten werden dann mit Lichtgeschwindigkeit nach Hause übertragen und kommen 4,24 Jahre später an. Es gibt keinen zweiten Vorbeiflug. Es gibt keine Folgeinstrumentbereitstellung, keine Orbitalinsertion, keine Oberflächenmission, keine Fähigkeit, auf eine überraschende Entdeckung mit einer neuen Beobachtung zu reagieren. Dies ist der ehrliche Inhalt der \"interstellaren Erkundung\" bei der einzigen Geschwindigkeit, die wir zu erreichen wissen: ein kurzer, einseitiger Schnappschuss, über Jahre der Stille nach Hause übertragen, von einer Sonde, die nicht abbremsen kann und nie wieder gehört wird."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/the-message",
+      "kind": "diagram",
+      "caption": "Selbst wenn eine Sonde ankommt, dauert es Jahre, bis die Nachricht nach Hause kommt. Bei Proxima ist ein Signal 4,24 Jahre hin und zurück; eine jahrzehntealte Überfahrt ergibt wenige Stunden Flugbydaten, dann weitere Jahre, um davon zu hören. Interstellare Erkundung ist vor allem eine Übung in Geduld.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Der ehrliche Horizont"
+    },
+    {
+      "type": "prose",
+      "md": "Nichts davon bedeutet, dass interstellare Raumfahrt verboten ist. Es gibt kein physikalisches Gesetz, das ein Raumschiff daran hindert, vier Lichtjahre zu überqueren. Es gibt nur Ingenieurfallen, Energiehaushalte und die spezifische Impuls-Obergrenze aller Antriebssysteme, die menschliche Wesen bisher konzipiert haben. Dies sind reale Beschränkungen, nicht absolute — sie sind die Beschränkungen einer Zivilisation in einem bestimmten Moment ihrer Entwicklung, eine Zivilisation, die eine Gram-Skala-Sonde auf einem Laserstrahl zu einem nahegelegenen Stern schießen kann, prinzipiell, aber noch keinen Laser bauen kann. Die Unterscheidung ist wichtig. \"Von der Physik verboten\" und \"jenseits aktueller Ingenieurkunst\" sind verschiedene Sätze."
+    },
+    {
+      "type": "prose",
+      "md": "Aber die Lücke zwischen \"nicht verboten\" und \"in jedem nahen Zeitrahmen erreichbar\" ist enorm. Der langsamste ernsthafte Vorschlag — ein Fusionsraumschiff mit 12% von c — würde Technologie erfordern, die es nicht gibt, zu Kosten, die jedes Raumfahrtprogramm in der Geschichte übersteigen, um ein bemanntes Schiff in etwa fünfzig Jahren zu einem anderen Stern zu liefern. Der schnellste ernsthafte Vorschlag — Breakthrough Starshots Laser-getriebenes Lichtsegel — würde ein Gramm Instrumente zu einem Vorbeiflug liefern, der Stunden dauert, und Daten über Jahre zurückgeben, zu Kosten, die seine Befürworter auf Dutzende Milliarden Dollar schätzen, vorausgesetzt, das Laser-Array kann überhaupt gebaut werden. Zwischen diesen Extremen gibt es keine Mitteloption, die sowohl technisch machbar als auch für sinnvolle Erkundung ausreichend ist. Die Skala des Problems hat einfach keine moderate Lösung."
+    },
+    {
+      "type": "prose",
+      "md": "Es gibt einen dritten Weg, und er ist der menschlichste: geh langsam, und geh in Schiffen, die groß genug sind, um Leben zu tragen. Wenn du nicht auf zehn Prozent der Lichtgeschwindigkeit beschleunigen kannst, akzeptierst du die Reisezeit — Jahrhunderte, Jahrtausende — und baust ein Gefäß, das selbst eine Welt ist. Dies ist die Idee hinter [Generationenschiffen](/essays/generational-starships): nicht ein Raumschiff im konventionellen Sinne, sondern ein geschlossenes ökologisches und soziales System, gestartet mit Geschwindigkeiten, die durch ehrgeizige aber vorstellbare Antriebstechniken der nahen Zukunft erreichbar sind, auf Proxima oder ein anderes nahegelegenes System ausgerichtet, die Vorfahren der Menschen tragend, die ankommen werden. Die Physik ist auf eine Weise nachsichtig, auf die die Raketengleichung es nicht ist. Die Probleme verlagern sich von Ingenieurwesen zu Biologie, Ökologie, Soziologie und Ethik: Was es bedeutet, in eine Reise geboren zu werden, die du nicht gewählt hast, und zu sterben, bevor sie endet. Dies sind nicht kleinere Probleme. Sie sind andere."
+    },
+    {
+      "type": "prose",
+      "md": "Was die Arithmetik letztendlich liefert, ist nicht Verzweiflung. Sie liefert Proportionen. Das Sonnensystem — das riesige Volumen von der Erdumlaufbahn bis zur Oort-Wolke — ist das größte Ding, das menschliche Wesen je navigiert haben, und es dauerte fast ein Jahrhundert, die Werkzeuge zu bauen, um selbst seine näheren Reichweiten zu erkunden. Der interstellare Raum ist nicht der nächste Schritt auf dieser Leiter. Es ist eine Klippe oben drauf. Die Klippe ist nicht unendlich; sie hat einen Gipfel. Aber den Gipfel zu erreichen, erfordert entweder eine Revolution in der Energieerzeugung und Materialwissenschaft (das Laser-Array), eine anhaltende Beherrschung der Fusionsantrieb-Technologie (Daedalus/Icarus) oder ein zivilisatorisches Engagement für Geduld in einem Zeitrahmen, den keine menschliche Institution bisher aufrechterhalten hat (das Generationenschiff). Alle drei davon sind wirklich möglich. Keines davon ist unmittelbar bevorstehend."
+    },
+    {
+      "type": "prose",
+      "md": "Dies ist, was \"die lange Sicht\" bedeutet, wenn sie nach außen über die Heliopause blickt. Nicht, dass wir nicht gehen können, sondern dass ehrliches Gehen erfordert, die Skala im Kopf zu halten, ohne zu zucken — die 73.000 Jahre, die die Voyager 1 brauchen würde, die Gram-Skala-Sonde, die in Stunden durchrast, die Urur-Enkel, die an einem Stern ankommen, auf den ihre Vorfahren das Schiff richteten. Der nächste Stern ist kein Ziel. Es ist eine Definition: wie weit wir gekommen sind, wie weit die Physik uns noch gehen lässt, und wie viel der Entfernung zwischen diesen zwei Punkten wir noch nicht überquert haben."
+    },
+    {
+      "type": "figure",
+      "image": "missions/new-horizons/01",
+      "kind": "photo",
+      "caption": "New Horizons, die fast fünf Milliarden Kilometer zum Pluto überquerten und weiter in den Kuiper-Gürtel — das neueste unserer auslaufenden Raumschiffe, und eine Erinnerung daran, dass selbst unsere kühnsten Tiefraum-Missionen immer noch Voyagen in der eigenen vorderen Garten des Sonnensystems sind.",
+      "align": "wide",
+      "credit": "NASA/JHUAPL/SwRI"
+    }
+  ]
+}

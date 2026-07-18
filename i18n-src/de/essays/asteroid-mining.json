@@ -1,0 +1,159 @@
+{
+  "title": "Der falsche Schatz",
+  "dek": "Die Überschrift sagt, Asteroiden enthalten Billiarden Dollar an Gold und Platin. Die Überschrift ist falsch — nicht in Bezug auf das Metall, sondern auf das Geld. Das eigentliche Argument für Asteroidenressourcen verläuft in eine völlig entgegengesetzte Richtung.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Alle paar Jahre nimmt sich jemand die Zeit, die Mathematik des Asteroiden 16 Psyche durchzurechnen, und verkündet in einer atemlose Pressemitteilung, dass der metallreiche Körper, der im [Asteroidengürtel](/science/planets/asteroid-belt) umkreist, Eisen, Nickel und Edelmetalle im Wert von etwa zehn Quintillionen Dollar enthält. Die Zahl ist immer atemberaubend. Sie ist aber auch, in jedem wirtschaftlich sinnvollen Sinne, bedeutungslos — und zu verstehen, warum sie bedeutungslos ist, führt direkt zu dem, was das eigentliche Argument für Asteroidenressourcen tatsächlich ist, was fast das Gegenteil der Überschriftenversion ist."
+    },
+    {
+      "type": "prose",
+      "md": "Beginnen wir mit der Zahl selbst. Der globale Platinmarkt ist in einem gegebenen Jahr etwa 5 Milliarden Dollar wert. Wenn man den Platinmetall-Gehalt selbst eines bescheidenen metallischen Asteroiden zur Erde bringen und ihn morgen verkaufen könnte, würde man nicht zu Reichtum gelangen. Man würde den Markt zusammenbrechen lassen. Der Preis von Platin ergibt sich ausschließlich aus seiner Knappheit; entfernt man die Knappheit, entfernt man den Preis. Wert wird für eine Ware an der Grenze festgelegt — von der letzten verkauften Einheit, nicht vom Gesamtvolumen, das existiert. Der 10-Quintillionen-Dollar-Asteroid, erfolgreich abgebaut und zur Erdoberfläche befördert, würde etwa das Wert sein, was Eisenerz wert ist: nicht viel pro Kilogramm. Aber dieses Markt-Zusammenbruch-Argument ist fast irrelevant, weil es Lieferung zur Erde voraussetzt — und Lieferung zur Erde ist, wo die Arithmetik lange vor dem Markt schiefgeht. Hier ist es, wo die [Raketengleichung](/science/propulsion/tsiolkovsky) die Diskussion beendet."
+    },
+    {
+      "type": "heading",
+      "text": "Die Schwerkraft ist der Buchhalter"
+    },
+    {
+      "type": "prose",
+      "md": "Das [Delta-v-Budget](/science/propulsion/dv-budget) für eine Mission von der Erde zu einem erdnahen Asteroiden beträgt, für ein günstiges Ziel, irgendwo um 6 km/s — vergleichbar mit der Erreichung des Mars. Material von diesem Asteroiden zurück zur Erdumlaufbahn zu bringen kostet noch mehr, und es von der Erdumlaufbahn zur Erdoberfläche zu bringen erfordert, die Atmosphäre zu überstehen. All dies ist vor dem Abbau überhaupt. Die [Raketengleichung](/science/propulsion/tsiolkovsky) berücksichtigt nicht die Gnade: Jedes Kilogramm Nutzlast, das man aus dem Tiefenraum nach Hause zurückbringen möchte, muss beim Start mit genug Treibstoff übereinstimmen, um es zurückzubringen, was selbst mit Treibstoff übereinstimmen muss, um diesen Treibstoff zu transportieren, und so weiter im Rückgang, den die Gleichung beschreibt. Die [Tsiolkowski-Bedingung](/science/propulsion/tsiolkovsky), die seit 1903 nicht aufgehoben wurde, macht die Zahlen brutal."
+    },
+    {
+      "type": "prose",
+      "md": "Offen gesagt: Man zieht Material aus einem Gravitationsbrunnen heraus — nicht aus Earths, sondern aus dem des Sonnensystems. Der Asteroid ist zwar winzig, mit einer Oberflächengravitation, die ein Tausendstel derjenigen der Erde beträgt. Ihn zu verlassen kostet fast nichts in [Delta-v](/essays/delta-v). Aber man befindet sich dann im interplanetaren Raum, und die Erde liegt am Boden eines sehr großen Gravitationsbrunnens, und dort anzukommen mit einer signifikanten Geschwindigkeit bedeutet, Treibstoff auszugeben, um abzubremsen, oder die Gewalt des Aerobremsung zu akzeptieren, oder beides. Die wirtschaftlichen Kosten für den Transport von Masse über interplanetare Entfernungen und deren sicheres Abbremsen übersteigen bei gegenwärtigen und absehbaren Antriebstechnologien den Marktwert einer beliebigen Ware so stark, dass der Geschäftsfall für die Rückkehr von Massegütern zur Erde nicht aufgehen kann. Dies ist keine pessimistische Lesart. Es ist das, was die [Zahlen zum spezifischen Impuls](/science/propulsion/specific-impulse) sagen, wenn man sie ehrlich durchrechnet."
+    },
+    {
+      "type": "prose",
+      "md": "Dies ist auch der Grund, warum die erste Generation kommerzieller Asteroidenunternehmen — Planetary Resources, gegründet 2012, und Deep Space Industries, gegründet 2013 — innerhalb eines Jahrzehnts scheiterten, nicht weil die Asteroiden nicht da sind, sondern weil der Markt für von der Erde geliefertes Asteroidenplatin bei keinem Preis existiert, den die [Delta-v-Wirtschaftlichkeit](/essays/delta-v) unterstützen kann. Die Logik, Reichtum zur Erdoberfläche zu transportieren, war von Anfang an gebrochen."
+    },
+    {
+      "type": "heading",
+      "text": "Der Brunnen ist das Problem"
+    },
+    {
+      "type": "prose",
+      "md": "Drehen wir die Frage um. Anstatt zu fragen, was es kostet, Material vom Raum zur Erde zu bringen, fragen wir, was es kostet, Material von der Erde zum Raum zu bringen. Die Antwort ist die gleiche Raketengleichung, in die andere Richtung verlaufend, und sie ist genauso brutal. Ein Kilogramm in eine niedrige Erdumlaufbahn auf einem [wiederverwendbaren Träger](/essays/reusable-launchers) zu bringen kostet heute bestenfalls einige tausend Dollar — dramatisch gesunken von den zehntausend Dollar, die es vor einem Jahrzehnt kostete. Dieses Kilogramm weiter zu bringen, zu einer Mond-Transferbahn oder auf eine Mars-Bahn, kostet noch mehr, weil man höher aus Earths Gravitationsbrunnen klettert und die [Oberth-Arithmetik](/science/propulsion/oberth-effect), die tiefe Manöver effizient macht, kann das grundlegende Massenverhältnis-Problem nicht beheben."
+    },
+    {
+      "type": "prose",
+      "md": "Dies ist das, was der Gravitationsbrunnen-Rahmen klärt. Earths Oberfläche sitzt am Boden eines Brunnens, der rund 9,4 km/s Delta-v kostet, um vollständig zu entkommen. Jedes Kilogramm Nahrung, Treibstoff, Wasser, Luft, Strukturmaterial oder Strahlungsschutz, das ein bemanntes Raumfahrzeug über der niederen Erdumlaufbahn trägt, hat diesen Zoll bezahlt. Der Zoll ist keine Zusatzgebühr, die clevere Technik vermeiden kann; er ist eine physikalische Folge, auf der Erde zu sein, die ein großer Planet mit einem tiefen Gravitationsfeld ist. Wenn man Raumfahrzeuge über der niederen Erdumlaufbahn bauen und betreiben möchte — für eine Mondbasis, für einen Mars-Transit, für alles Nachhaltige im Tiefenraum — ist die dominierende Kosten nicht die Hardware. Es ist der Treibstoff, der verbrannt wird, um die Hardware und ihre Verbrauchsmaterialien jeden einzelnen Tag aus dem Brunnen zu heben."
+    },
+    {
+      "type": "prose",
+      "md": "Das echte wirtschaftliche Argument für Asteroidenressourcen beginnt genau hier, und es verläuft in die entgegengesetzte Richtung zur Überschrift. Anstatt Material von Asteroiden zur Erde zu bringen, lautet die Frage: Können wir Material, das *bereits* über Earths Gravitationsbrunnen liegt, nutzen, um zu vermeiden, es von der Oberfläche zu heben? Können wir, sozusagen, eine Tankstelle und einen Baumarkt, der bereits in einer Umlaufbahn ist — oder nah genug dran, dass die Lieferkosten in Bruchteilen von km/s statt in zehn km/s gemessen werden — finden und aufhören, den Startzoll für jedes Kilogramm Material, das eine Tiefenraum-Wirtschaft braucht, zu bezahlen? Die Antwort, wenn die Erkundungsmissionen richtig sind, lautet ja. Aber nicht für Gold. Für Wasser."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/the-well",
+      "kind": "diagram",
+      "caption": "Jedes Kilogramm, das von der Erde gestartet wird, bezahlt einen brutalen Zoll in Delta-v, nur um aus dem Gravitationsbrunnen des Planeten zu klettern. Alles, das bereits im Raum ist — ein Asteroid, der über dem Rand driftet — hat diesen Preis bereits bezahlt. Darum ist ein Liter Wasser, der in einer Umlaufbahn geparkt ist, mehr wert als ein Liter Gold, das auf dem Boden sitzt.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Wasser ist das Erz"
+    },
+    {
+      "type": "prose",
+      "md": "Kohlenstoffhaltige Chondrit-Asteroiden — die C-Typ und verwandte Klassen, die die Mehrheit der erdnahen Objekte darstellen — enthalten signifikante Mengen hydratisierter Mineralien: Tone und Phyllosilikate, die Wassermoleküle in ihrer Kristallstruktur in Anteilen von einigen Prozent bis zu mehr als zwanzig Prozent Masseprozent enthalten. Einige enthalten auch Organika. Das Wasser sitzt nicht in Pfützen; es ist chemisch gebunden, und das Extrahieren erfordert, das Material zu erhitzen, um Wasserdampf abzufahren und ihn dann zu kondensieren. Aber die Energie dafür kann, grundsätzlich, von Sonnenkonzentratoren im Raum kommen. Das Ergebnis ist Wasser — und Wasser, im Zusammenhang eines Tiefenraum-Programms, ist nicht primär eine Sache zum Trinken."
+    },
+    {
+      "type": "prose",
+      "md": "Elektrolyse spaltet Wasser in Wasserstoff und Sauerstoff: die energiereichste chemische Treibstoffkombination, die jemals geflogen wurde. Wasserstoff und Sauerstoff, verflüssigt und gelagert, sind Raketentreibstoff. Das [Delta-v](/essays/delta-v)-Budget für einen Mars-Transfer beträgt etwa 3,6 km/s von der niederen Erdumlaufbahn; ein Treibstoffdepot an einem günstigen [Lagrange-Punkt](/science/transfers/hohmann-transfer) oder in einer erdnahen Umlaufbahn, aus asteroidenabgeleitetem Wasser bestückt, würde die Masse, die von der Erde für jede Beyond-LEO-Mission gestartet werden muss, dramatisch ändern. Der Treibstoff ist der dominierende Massenprozentsatz eines jeden Raumfahrzeugs — die Saturn V, die Apollo-Astronauten zum Mond brachte, war [zu 85 % Treibstoff nach Masse](/essays/delta-v). Ein Depot, das Treibstoff liefert, ohne dass er von Earths Oberfläche gehoben werden muss, ist keine logistische Bequemlichkeit. Es strukturiert die gesamte Wirtschaft des Tiefenraums um."
+    },
+    {
+      "type": "prose",
+      "md": "Neben dem Treibstoff liefert Wasser Sauerstoff zum Atmen. Das gleiche kohlenstoffhaltige Material liefert Kohlenstoff und Stickstoff. Die Massebulk — Stein, in den meisten Fällen, nicht Metall — liefert Strahlungsschutz: Ein Raumfahrzeug im Transit zum Mars ist außerhalb von Earths Magnetosphäre für sechs bis neun Monate, und eine ausreichende Masse zum Schutz einer Besatzung vor kosmischer Strahlung zu heben kostet enorm, wenn jedes Kilogramm von Earths Oberfläche gestartet werden muss. Nichts davon hat den Glanz von Platin. Alles davon ist wertvoller für eine weltraum-basierte Wirtschaft als Platin. Das Argument ist nicht über Schatz. Es ist über [In-situ-Ressourcennutzung](/science/life-in-space/isru-resource-utilization) — der einzige Ansatz, der menschliche Gegenwart jenseits der Erde physikalisch machbar macht — und die Ressource, die am meisten zählt, ist nicht die seltenste oder teuerste, sondern die eine, die am teuersten ist, von der Erde zu starten: Treibstoffmasse. Der [Zum-Mond-gehen-Aufsatz](/essays/going-to-the-moon) macht das gleiche Argument am Mondsüdpol, aus den gleichen Gründen. Der Mond und kohlenstoffhaltige erdnahe Asteroiden sind das gleiche Argument an zwei verschiedenen Orten."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/water-is-the-ore",
+      "kind": "diagram",
+      "caption": "Spalte Asteroidenwasser und du hast Wasserstoff und Sauerstoff — Raketentreibstoff — plus Luft zum Atmen, Wasser zum Trinken und Massenstein zum Strahlungsschutz. Der Preis war nie Metall zum Verkaufen nach Hause; es ist eine Tankstelle, die bereits am Himmel ist.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Wir haben sie bereits berührt"
+    },
+    {
+      "type": "prose",
+      "md": "Die Erkundung, die alles dies unterstützen würde, ist nicht theoretisch. Sie wurde zweimal von Japan und einmal von den Vereinigten Staaten durchgeführt — und was sie fand, war sowohl interessanter als auch demütigender als die Überschriftenversion nahelegt."
+    },
+    {
+      "type": "prose",
+      "md": "Japans [Hayabusa](/missions?id=hayabusa1) erreichte den S-Typ-Asteroiden Itokawa im September 2005. Sein Probenentnahmemechanismus war ausgefallen, aber das Raumfahrzeug kehrte im Juni 2010 zur Erde zurück und trug dabei etwa 1.500 Sub-Millimeter-Partikel — die ersten Proben, die je von einem Asteroiden zurückgebracht wurden. Die Analyse bestätigte die Mineralogie gewöhnlicher LL-Chondrite: nicht das wasserreiche kohlenstoffhaltige Ziel, das das ISRU-Argument braucht, aber ein Machbarkeitsnachweis, dass man einen Asteroiden erreichen, ihn berühren und Stücke zurückbringen kann."
+    },
+    {
+      "type": "prose",
+      "md": "[Hayabusa2](/missions?id=hayabusa2), im Dezember 2014 gestartet, war darauf ausgelegt, weiter zu gehen. Sein Ziel war Ryugu, ein C-Typ-Asteroid in Erdnähe — die kohlenstoffhaltige Variante, die Hydrations-Modelle vorhersagten, sollten wasserhaltende Mineralien enthalten. Das Raumfahrzeug erreichte Ryugu im Juni 2018 und verbrachte anderthalb Jahre damit, ihn zu studieren, bevor es die Probenentnahme im Februar und Juli 2019 durchführte. Im Juli 2019 setzte es auch einen kleinen Impaktor ein, der einen Krater in Ryugus Oberfläche sprach, und sammelte dann Material der freiliegenden Subsurface — Material, das nicht durch Weltraum-Verwitterung verändert worden war. Die Kapsel kehrte im Dezember 2020 zur Erde zurück. Die Analyse bestätigte das, was die Modelle vorhersagten: Ryugus Material ist reich an hydratisierten Mineralien, enthält Organika einschließlich Aminosäure-Vorläufern und ist in chemischer Zusammensetzung eng verwandt mit CI-Chondriten — die primitivste und wasserreichste Klasse kohlenstoffhaltiger Chondrite. Das Erz, das das ISRU-Argument braucht, ist da. Ryugu ist nicht ein einzigartiger Körper; C-Typ-Asteroiden stellen etwa 75 % aller Asteroiden im Hauptgürtel und einen signifikanten Anteil erdnaher Objekte dar."
+    },
+    {
+      "type": "prose",
+      "md": "NASAs [OSIRIS-REx](/missions?id=osiris-rex) erreichte den kohlenstoffhaltigen Asteroiden Bennu im Dezember 2018 und verbrachte fast zwei Jahre damit, ihn zu kartieren, bevor es im Oktober 2020 die Touch-and-Go-Probenentnahme durchführte. Die Kapsel kehrte im September 2023 mit etwa 120 Gramm Material — der größten je von einem Asteroiden zurückgebrachten Probe — zur Erde zurück. Die Analyse bestätigte hydratisierte Ton-Mineralien und kohlenstoffreiche Verbindungen: die gleichen Zutaten, die das Hayabusa2-Team bei Ryugu fand, an einem anderen Körper, erreicht durch eine andere Nation, über eine andere Flugbahn. Das Ergebnis war gleich. Dies ist kein Zufall. Es ist Bestätigung, dass die C-Typ kohlenstoffhaltige Zusammensetzung — wasserhaltig, organisch-reich — die Regel für diese Körper ist, nicht die Ausnahme."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/the-recon",
+      "kind": "diagram",
+      "caption": "Drei Robotermissionen haben bereits Asteroiden berührt und beprobt: Japans Hayabusa (Itokawa, 2010, die erste überhaupt), Hayabusa2 (Ryugu, 2020) und NASAs OSIRIS-REx (Bennu, 2023). Was zurückkam, war wasserhaltiger Ton und Organika — aus losem Geröll, nicht aus solidem Metall.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/hayabusa2/01",
+      "kind": "photo",
+      "caption": "Hayabusa2 bei Ryugu — JAXAs zweite Asteroiden-Probenrückkehr, und die Mission mutig genug, einen Kupfer-Impaktor in die Oberfläche zu feuern, um einen frischen Krater aufzuspritzen, bevor sie einscoop, was er freigelegt hatte.",
+      "align": "wide",
+      "credit": "JAXA"
+    },
+    {
+      "type": "heading",
+      "text": "Geröll, nicht Fels"
+    },
+    {
+      "type": "prose",
+      "md": "Hier ist das, was die Missionen auch fanden, und was die Überschriften über Asteroidenabbau konsistent unterschätzen: Bennu und Ryugu sind keine massiven Körper. Sie sind Geröll-Haufen."
+    },
+    {
+      "type": "prose",
+      "md": "Ein Geröll-Haufen ist ein Aggregat aus locker konsolidiertem Material — Bouldern, Kieselsteinen, Staub — zusammengehalten durch Schwerkraft so schwach, dass das Gehen auf der Oberfläche eine sorgfältige Überlegung erfordern würde, ob man möglicherweise vollständig abprallen könnte. Bennus Oberflächengravitation beträgt etwa 6 Mikronewton pro Kilogramm. Ein Astronaut, der auf seinem Äquator steht, würde in Erdtermen weniger als ein Milligramm wiegen. Der Versuch, ein Abbaueystem zu verankern — zu bohren, auszugraben, mit irgendeiner Kraft gegen die Oberfläche zu drücken — erzeugt eine Reaktion, die die Abbauausrüstung vom Asteroiden stoßen könnte. Das TAG (Touch-and-Go)-Ereignis, das OSIRIS-REx zur Probenentnahme nutzte, dauerte etwa sechs Sekunden Oberflächenkontakt; während dieser sechs Sekunden sank der Probenkopf des Raumfahrzeugs tiefer in die Oberfläche als erwartet, weil Bennus Material weniger konsolidiert ist als eine Sandburg. Das Missionsteam sagte später, das Raumfahrzeug würde vollständig versenkt, wenn die Triebwerke nicht gefeuert hätten, um es zurückzuziehen. Dies ist nicht eine feindselige Umgebung in der Art, in der der Mars feindselig ist. Es ist eine feindselige Umgebung in der Art, in der ein Beutel mit losem Sand, das in der Schwerelosigkeit schwebt, feindselig ist: grundlegend anders von jedem Annahme, die die terrestrische Bergbautechnik macht."
+    },
+    {
+      "type": "prose",
+      "md": "Hayabusa2s Impaktor-Experiment bestätigte das gleiche Bild aus einem anderen Winkel. Sein 2,5-kg Kupfer-Impaktor schuf einen Krater mit etwa 14 Metern Durchmesser und 2 Metern Tiefe — größer als vorhersagt, weil die Oberfläche poröser war als erwartet. Die [DART](/missions?id=dart)-Mission, die im September 2022 den Asteroiden Dimorphos umlenkte, indem sie absichtlich ein Raumfahrzeug hineinfahren ließ, produzierte eine Auswerfer-Fahne und eine Umlaufperioden-Veränderung, beide größer als Festkörper-Modelle vorhersagten — konsistent, wiederum, mit einem locker gebundenen Aggregat. In dieser Umgebung zu arbeiten, ist kein Problem der Skalierung von terrestrischem Bergbau und dem Hinzufügen von Raumanzügen. Verankern gegen eine Oberfläche, auf die man nicht drücken kann, Ausgraben von Material, das in Zentimetern pro Sekunde davonschwimmt, Enthalten von Auswürfen in Mikrogravitation — das sind ungelöste Ingenieur-Probleme, anders als alles in der Geschichte der Abbau-Industrie. Die Wissenschaft ist bestätigt. Die Technik hat noch nicht ernsthaft begonnen."
+    },
+    {
+      "type": "figure",
+      "image": "missions/osiris-rex/01",
+      "kind": "photo",
+      "caption": "OSIRIS-REx, die sich hinunterbeugt, um Bennu zu berühren — und findet nicht festes Gelände, sondern einen Geröll-Haufen so locker gebunden, dass der Probenkopf einfach hineingesunken ist, fast den Arm verschluckend. \"Abbau\" eines Körpers wie diesem ist anders als alles, was jemals auf der Erde gemacht wurde.",
+      "align": "wide",
+      "credit": "NASA/Goddard/University of Arizona"
+    },
+    {
+      "type": "heading",
+      "text": "Die Wirtschaft über dem Brunnen"
+    },
+    {
+      "type": "prose",
+      "md": "Die Frage, die die lange Ansicht beantworten muss, ist: Wo führt das hin? Das ISRU-Argument ist logisch korrekt. Die Erkundung bestätigt, dass die Ressourcen existieren. Die Ingenieur-Herausforderungen sind real, aber nicht im Prinzip unlösbar. Die Wirtschaft erfordert jedoch etwas, das noch nicht existiert: Nachfrage nach Ressourcen im Raum."
+    },
+    {
+      "type": "prose",
+      "md": "Dies ist das Timing-Problem, das die erste kommerzielle Welle tötete. Planetary Resources und Deep Space Industries bauten Lieferketten für eine Kundenbasis auf, die nicht existierte — speziell für die treibstoffhungrige Beyond-LEO-Wirtschaft, die ein nachhaltiges Mondes-Programm und eventuelles Mars-Betrieb würde schaffen. Im Jahr 2012, als Planetary Resources gegründet wurde, war die [wiederverwendbare Träger-Revolution](/essays/reusable-launchers) noch nicht bewiesen, das Artemis-Programm existierte nicht, keine kommerziellen Raumstationen waren in Entwicklung, und die Idee von regelmäßigen bemannten Mars-Missionen war fest in der spekulativen Zukunft. Die Unternehmen bauten, in Infrastruktur-Begriffen, Tankstellen vor dem Autobahn. Infrastruktur muss fast immer auf den Verkehr warten, bevor er rentabel wird, und Weltraum-Ressourcenabbau ist nicht anders."
+    },
+    {
+      "type": "prose",
+      "md": "Die Situation in der Mitte der 2020er Jahre ist in einer Hinsicht anders: der Verkehr ist näher. [Wiederverwendbare Trägerraketen](/essays/reusable-launchers) haben die Wirtschaft des Erreichens einer Umlaufbahn geändert. Kommerzielle Stationsprogramme sind in Entwicklung. Das Artemis-Programm, so verzögert, hat bemanntes Mond-Betrieb zurück auf Planungshorizonte gelegt. NASAs [Psyche-Mission](/missions?id=psyche-mission), gestartet im Oktober 2023 und unterwegs zum metallischen Asteroiden 16 Psyche, wird die gründlichste Ferncharakterisierung eines metallischen Asteroiden, die je versucht wurde, liefern. Die potenziellen Kunden der Lieferkette sind nicht mehr rein hypothetisch. Aber näher ist nicht hier. Ein Treibstoffdepot, das Mars-gebundene Raumfahrzeuge versorgt, ist mindestens ein Jahrzehnt weg von operationaler Realität — und diese Schätzung ist optimistisch, abhängig von einem Tempo der Mondes-Entwicklung, das konsistent gerutscht ist. Die ehrliche Lesart: Asteroidenressourcen werden wirtschaftlich rentabel, wenn, und nur wenn, es nachhaltige menschliche Aktivität jenseits der niederen Erdumlaufbahn in einem Ausmaß gibt, das Treibstoff, Luft und Schutz zur bindenden Einschränkung macht. Diese Einschränkung nähert sich. Die Lücke zwischen Nähern und Hier hat Unternehmen vorher verschlungen."
+    },
+    {
+      "type": "prose",
+      "md": "Was bleibt, nachdem der Hype entleert wurde und die Markt-Zusammenbruch-Fehlschluss verworfen ist, ist etwas Dauerhafteres und weniger Aufregung-weckendes zum Pressemitteilung: Ein strukturelles Argument, dass die Langzeit-Wirtschaft der menschlichen Gegenwart jenseits der Erde nicht funktionieren kann, ohne Ressourcen zu nutzen, die bereits über dem Gravitationsbrunnen liegen. Das Sonnensystem enthält mehr Wasser, mehr Kohlenstoff, mehr Strukturmaterial als die Gesamtheit der menschlichen Zivilisation je verbraucht hat, verteilt über Millionen Körper, deren Oberflächengravitation fast nichts kostet zu überwindet, sitting über dem einzigen Ding, das Raumfahrt teuer macht. Das Argument ist nicht über Quintillionen Dollar. Es ist über die [Raketengleichung](/science/propulsion/tsiolkovsky) und die Richtung, in die sie zeigt."
+    },
+    {
+      "type": "prose",
+      "md": "Tsiolkovskys Einschränkung hat eine Flucht. Es ist nicht clevere Chemie oder radikale neue Triebwerke — obwohl [neue Triebwerke](/essays/new-propulsion) an den Rändern hilft. Die Flucht ist nicht, die Verbrauchsmaterialien überhaupt zu starten. Es ist, sie bereits über dem Brunnen zu finden und sie dort zu nutzen. [Hayabusa2](/missions?id=hayabusa2) brachte 5,4 Gramm Ryugu zur Erde. [OSIRIS-REx](/missions?id=osiris-rex) brachte 120 Gramm Bennu. Die nächsten Missionen in dieser Sequenz werden Material nicht nach Hause bringen. Sie werden lernen, wie man es dort lässt — und es dort nutzt. Das ist der Punkt, den die Überschrift nie erreicht. [Erkunde die kleinen Körper im Atlas](/explore) und was du schaust, ist nicht ein Lagerhaus mit nach-Erde-lieferbarem Schatz. Es ist der Baumarkt für eine Zivilisation, die noch nicht angekommen ist."
+    }
+  ]
+}

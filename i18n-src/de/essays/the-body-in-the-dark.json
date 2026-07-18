@@ -1,0 +1,127 @@
+{
+  "title": "Der Körper in der Finsternis",
+  "dek": "Alles andere in dieser Sammlung ist Ingenieurkunst — Navigation, Antrieb, Landung, Kommunikation über die Leere hinweg. Dies ist das eine Problem, das kein Motor löst: Der Reisende ist Biologie, die sich abbaut, und der menschliche Körper ist die zerbrechliche Fracht, deren Schutz das gesamte Unternehmen existiert.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Das Raumschiff ist in fast jeder bedeutsamen Hinsicht ein Wunderwerk. Sein [Navigationssystem](/essays/navigation) kann es innerhalb von hundert Kilometern an ein Ziel über fünf Milliarden Kilometer Nichts hinweg positionieren. Seine Motoren können jahrelang Schub liefern mit einem bloßen Xenon-Rinnsal. Seine Funkgeräte können über das äußere Sonnensystem hinweg flüstern und werden immer noch gehört. Jedes Subsystem ist spezifiziert, getestet, gegen Ausfälle zertifiziert, und wenn während der Reise etwas schiefgeht, kann ein Team auf dem Boden eine Reparatur senden — einen Software-Patch über hunderte Millionen Kilometer. Das Raumschiff ist Ingenieurkunst in ihrer raffiniertesten Form. Es ist jedoch, in dem einen Fall, der hier zählt, in ernsten Schwierigkeiten, denn das, was es trägt, kann nicht gepatcht werden, kann nicht neu spezifiziert werden, und baut sich ab vom Moment an, in dem die Luke verschlossen wird."
+    },
+    {
+      "type": "prose",
+      "md": "Der menschliche Körper wurde nicht für den Weltraum entworfen. Die Versuchung — in Pressemitteilungen, in populären Darstellungen, im visuellen Vokabular jedes Missions-Posters — besteht darin, den Astronauten als triumphierend, anzugezogen, gegen die Leere gepanzert zu zeigen. Dieses Bild ist nicht falsch. Es ist jedoch unvollständig. Entfernt man den Anzug, hat man einen Primaten, dessen Immunantworten von einem pathogenreichen afrikanischen Savannenleben geprägt wurden, dessen Skelett sich entwickelt hat, um sich gegen eine Standard-Erdgravitation aufzurichten, dessen Herz-Kreislauf-System eine Flüssigkeitssäule erwartet, die von unten nach oben gegen die Schwerkraft kämpft, und dessen Gehirn auf einem Magnetosphären-geschützten Strahlungsbudget läuft, das fast nichts mit dem zu tun hat, was jenseits der niedrigen Erdumlaufbahn wartet. Der Anzug ist eine Schnittstelle. Der Mensch ist die Einschränkung. Jedes [System an Bord des Raumschiffs](/science/life-in-space/crewed-station-design), jede Redundanz in den Lebenserhaltungskreisläufen existiert, um diese Einschränkung lange genug am Leben zu erhalten, um nützliche Arbeit zu leisten und nach Hause zu kommen."
+    },
+    {
+      "type": "prose",
+      "md": "Dies ist das Problem, das [eine Reise zum Mars](/essays/going-to-mars) aufwirft und das kein Antriebsfortschritt auflösen kann. [Schnellere Motoren](/essays/new-propulsion) verkürzen die Transitzeit und reduzieren die Expositionszeit — aber sie beseitigen sie nicht. Der Körper bleibt, was er ist: ein System unter anhaltender Attacke aus vier Richtungen gleichzeitig. Strahlung, die jeden Schirm durchdringt, den wir tragen können. Das Verschwinden des Schwerkraft-Signals, auf das das gesamte Bewegungsapparat-System angewiesen ist. Ein Immunsystem, das auf Wegen abdriftet, die wir noch katalogisieren. Ein Geist, der zunehmend allein ist auf eine Weise, für die keine Evolution ihn vorbereitet hat. Keine dieser Herausforderungen ist vollständig gelöst. Jede ist eine echte Einschränkung, wie weit und wie lange sich Menschenwesen reisen können."
+    },
+    {
+      "type": "heading",
+      "text": "Das unsichtbare Wetter"
+    },
+    {
+      "type": "prose",
+      "md": "Der Weltraum ist nicht leer. Er ist voller [Strahlung](/science/life-in-space/radiation-exposure) — und nicht der lokalisierten, vorhersagbaren Strahlung eines Röntgengeräts, das eine bekannte Dosis in einer bekannten Geometrie abgibt und dann stoppt. Weltraumstrahlung kommt in zwei verschiedenen und gefährlichen Varianten. Die erste sind Sonneneruptionsereignisse: Stürme von Protonen, die durch Sonneneruptionen und koronale Massenauswürfe beschleunigt werden und in wenigen Stunden eine tödliche Dosis liefern können, wenn man ohne Schutz erwischt wird. Die zweite sind galaktische kosmische Strahlen: hochenergetische Atomkerne, die millionen Jahre lang durch die Galaxie beschleunigt wurden und aus allen Richtungen kontinuierlich in Energien ankommen, die so extrem sind, dass die praktische Menge Metall oder Wasser, die sie stoppen würde, in Hunderten von Tonnen gemessen wird — weit jenseits dessen, was jede absehbare Rakete heben kann. Erdmagnetfeld und Atmosphäre handhaben beide. Jenseits der niedrigen Erdumlaufbahn ist weder das eine noch das andere vorhanden."
+    },
+    {
+      "type": "prose",
+      "md": "Die Karrieredosis-Grenzen für Astronauten werden gesetzt, um das lebenslange Überrisiko für Krebs auf etwa drei Prozent über der Hintergrundrate zu begrenzen. Die NASA-Grenzen, ausgedrückt in Sievert, variieren je nach Alter und Geschlecht, da sich die Strahlungsempfindlichkeit unterscheidet — eine 35-jährige Frau steht unter einer strengeren Obergrenze als ein 55-jähriger Mann. Ein sechsmonatiger Aufenthalt an Bord der [ISS](/programs/iss) — immer noch im teilweisen Schutz der Magnetosphäre — liefert etwa 80 Millisievert. Ein Mars-Transit von sechs bis neun Monaten in jede Richtung plus einen Oberflächenaufenthalt würde je nach Sonnenzyklusphase wahrscheinlich 500 bis 1.200 Millisievert Rundreise liefern. Diese Zahl liegt bei oder über dem, was aktuelle Karrieredosis-Grenzen für eine einzelne Mission erlauben."
+    },
+    {
+      "type": "prose",
+      "md": "Das Krebsrisiko ist das, das in Planungsdokumenten am häufigsten diskutiert wird. Das Risiko für das zentrale Nervensystem ist das, das Forscher mehr beunruhigt. Hochenergetische galaktische kosmische Strahlen lagern Energie in dichten, lokalisierten Spuren durch Neuronen ab, auf eine Weise, die sich von gewöhnlichen Strahlenschäden unterscheidet und möglicherweise nicht auf die gleiche Weise heilt. Tierstudien im NASA Space Radiation Laboratory in Brookhaven haben messbare kognitive und Verhaltensänderungen bei Nagetieren gezeigt, die Simulations-GCR-Dosen ausgesetzt waren, die einer Mars-Mission entsprechen: verminderte räumliche Erinnerung, beeinträchtigte exekutive Funktion, beschleunigte Neurodegeneration. Die Menschendaten, um dies zu widersprechen oder zu bestätigen, existieren noch nicht, weil kein Mensch jemals eine so hohe GCR-Dosis erhalten hat. Wir werden nicht die menschliche ZNS-Antwort kennen, bis die erste Besatzung fährt. Dies ist eine echte wissenschaftliche und ethische Grenze — als solche von Forschern behandelt, die sie studieren, auch wenn sie von Missionsplanern als Hintergrund-Annahmen behandelt wird, die die Reise möglich machen müssen."
+    },
+    {
+      "type": "figure",
+      "image": "essays/the-body-in-the-dark/radiation-weather",
+      "kind": "diagram",
+      "caption": "Das schwierigste Problem ist das, das man nicht sehen kann. Jenseits des Erdmagnetfelds gibt es keinen Schutz vor galaktischen kosmischen Strahlen, und ein Sonnensturm kann in wenigen Stunden eine akute Dosis liefern. Abschirmung, die schwer genug ist, um sie zu stoppen, ist viel zu schwer zum Fliegen — so absorbiert die Besatzung auf einer langen Reise einfach das Wetter.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Der Körper vergisst die Schwerkraft"
+    },
+    {
+      "type": "prose",
+      "md": "Schwerkraft ist nicht nur ein Unbehagen, gegen das der Körper ankämpft. Sie ist ein Signal, das der Körper kontinuierlich liest und auf das fast jedes größere physiologische System kalibriert ist. Entfernt man sie und die Kalibrierung schlägt fehl, progressiv, auf Wegen, die zwei Stunden tägliche Übung verlangsamen, aber nicht stoppen kann. [Die Knochenmineraldichte](/science/life-in-space/bone-density-loss) fällt bei ungefähr ein bis eineinhalb Prozent pro Monat in den lastentragenden Knochen — die Hüfte, die Wirbelsäule, der Oberschenkelknochen — bei Abwesenheit des mechanischen Stimulus, der normalerweise Knochenumgestaltung auslöst. Das ist eine Rate, die vergleichbar ist mit den schwerwiegendsten Fällen von Osteoporose auf der Erde, komprimiert in Monate statt Jahrzehnte. Nach einer Standard-Sechsmonats-ISS-Mission können Besatzungsmitglieder Knochendichteverluste zeigen, deren Rückgang über ein Jahr oder mehr zur Umkehrung braucht, und der Nachweis, dass vollständige Genesung für alle Besatzungsmitglieder immer auftritt, ist nicht wasserdicht."
+    },
+    {
+      "type": "prose",
+      "md": "[Die Muskelmasse folgt einer parallelen Kurve](/science/life-in-space/muscle-atrophy), besonders in den posturalen Muskeln — denjenigen, deren primäre Erdseiten-Funktion darin besteht, das Skelett aufrecht zu halten. Ohne die konstante niederfrequente Arbeit, gegen die Schwerkraft zu kämpfen, atrophieren sie schneller, als freiwilliges Training vollständig aufwiegen kann. Das [vestibuläre System](/science/life-in-space/vestibular-adaptation), das einen Schwerkraft-Vektor erwartet, gegen den es sich orientieren kann, liest die Mikrogravitations-Umgebung anfangs falsch und erzeugt Weltraum-Bewegungskrankheit bei ungefähr der Hälfte aller Astronauten in den ersten Tagen; Anpassung tritt letztlich auf, aber das System muss sich dann bei der Rückkehr der Schwerkraft wieder neu anpassen, und die Neuanpassung ist nicht immer glatt oder schnell. Kardiovaskuläre Dekonditionierung folgt ihrer eigenen Bahn: Ohne Hydrostatischen Druckgradienten, gegen den sie arbeitet, atrophiert das Herz wie jeder unterbelastete Muskel, das Herz-Zeit-Volumen sinkt, und das Plasmavolumen, das normalerweise den unteren Körper füllt, verlagert sich nach oben. Zurückkehrende Besatzungsmitglieder, die sechs Monate im Orbit waren, können manchmal nicht ohne einen Blutdruckabfall stehen, der einen gesunden Erwachsenen auf der Erde zu Boden werfen würde."
+    },
+    {
+      "type": "prose",
+      "md": "Die überraschendste Komplikation, die in der letzten Dekade aus der Langzeitraumfahrt hervorgegangen ist, ist eine, die vor dem ISS-Programm niemand klar antizipiert hatte, bevor genug Besatzungs-Stunden sich ansammelten, um sie sichtbar zu machen: [Weltraumfahrt-assoziiertes neurookulares Syndrom](/science/life-in-space/microgravity-physiology), oder SANS. In Mikrogravitation beeinflusst die Flüssigkeitsverschiebung, die Blut und Plasma zum Kopf treibt, auch den intrakraniellen Druck auf Wegen, die immer noch charakterisiert werden. Das Ergebnis ist bei einem signifikanten Anteil der Langzeitbesatzungsmitglieder — einige Studien stellen es jetzt auf zwei Drittel oder mehr von Langzeitbesatzung — eine Abflachung der Rückseite des Augapfels, eine Veränderung der Form des Sehnervenkopfes und messbare Degradation der visuellen Schärfe. Einige Astronauten sind von der ISS zurückgekehrt und brauchten zum ersten Mal in ihrem Leben Lesebrillen. Der Mechanismus ist nicht vollständig verstanden. Die Behandlung existiert noch nicht. SANS steht derzeit auf der Liste der drei oder vier Showstopper-Probleme für eine bemannten Mars-Mission, in der Beurteilung von Forschern, die solche Listen schreiben."
+    },
+    {
+      "type": "figure",
+      "image": "essays/the-body-in-the-dark/microgravity-toll",
+      "kind": "diagram",
+      "caption": "Ein Körper, optimiert für eine Schwerkraft, fällt ruhig in der Schwerelosigkeit auseinander: Knochen verschwinden bei etwa einem Prozent pro Monat, Muskeln schwinden, Flüssigkeit sammelt sich im Kopf und flacht die Rückseite des Auges ab. Zwei Stunden Bewegung am Tag verlangsamen die Verluste nur — niemand hat sie gestoppt.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Was wir wissen, weil jemand geblieben ist"
+    },
+    {
+      "type": "prose",
+      "md": "Alles, was wir über Langzeitraumfahrt-Physiologie wissen, wurde gemessen — an echten Menschen, die echte Dauer im Weltraum verbrachten, nach Hause kamen und studiert wurden. Der Rekord für einen einzelnen kontinuierlichen Flug wird von Valeri Polyakov gehalten, einem russischen Arzt-Kosmonauten, der im Januar 1994 an Bord von [Mir](/programs/mir) ging und im März 1995 zur Erde zurückkehrte, nachdem er 437 aufeinanderfolgende Tage im Orbit verbracht hatte — immer noch ungebrochen, drei Jahrzehnte später. Polyakovs Ziel war explizit medizinisch: zu bestimmen, ob ein Mensch die Dauer einer Mars-Mission funktional überleben konnte. Als er landete, bestand er darauf, von der Soyuz-Kapsel unter seiner eigenen Kraft wegzugehen. Seine Knochen- und Muskel-Erholung dauerte Monate. Er ging. Die [Salyut](/programs/salyut)- und [Mir](/programs/mir)-Programme bauten einen sowjetischen und dann russischen Körper physiologischer Daten auf, der unersetzbar bleibt — die [ISS](/programs/iss) erweiterte ihn und machte ihn global. Peggy Whitsons kumulative 665 Tage über drei Missionen gaben Forschern einen Längsdatensatz über eine einzelne Person, der sonst unmöglich zu replizieren ist. Die NASA Twin Study — Scott Kellys 340-Tage-Mission im Vergleich zu seinem erdengebundenen identischen Zwilling Mark — fand messbare Veränderungen in der Genexpression, Telomer-Dynamik, Darmmikrobiom-Zusammensetzung und kognitiven Leistungen, von denen die meisten bei der Rückkehr rückgängig gemacht wurden, aber nicht alle. Chinas [Tiangong](/programs/tiangong)-Programm fügt jetzt zum Datensatz hinzu: Besatzungen auf 90- und 180-Tage-Rotationen seit 2021, eine Taikonaut-Bevölkerung, die vorher im Datensatz fehlte. Jede ehrliche Darstellung dessen, was die Menschheit über den Langzeitmensch-Körper im Weltraum weiß, muss das einschließen, was Russland auf Mir gelernt hat, was die 15-Nationen-ISS-Partnerschaft seit 2000 gemessen hat, und was China jetzt ansammelt."
+    },
+    {
+      "type": "figure",
+      "image": "essays/the-body-in-the-dark/the-record",
+      "kind": "diagram",
+      "caption": "Fast alles, was wir über den Körper im Weltraum wissen, wissen wir, weil bestimmte Menschen lange genug dort oben blieben, um es zu messen — und der Datensatz ist global. Valeri Polyakovs 437 Tage an Bord von Mir stehen immer noch; die ISS und jetzt Tiangong fügen Besatzungs-Jahre zum Datensatz hinzu, eine Rotation nach der anderen.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "fleet/iss/01",
+      "kind": "photo",
+      "caption": "Die Internationale Raumstation — ein Vierteljahrhundert lang das einzige Labor, in dem die Langzeiteffekte der Schwerelosigkeit untersucht wurden, auf einer rotierenden internationalen Besatzung, die unvermeidlich das Experiment ist.",
+      "align": "wide",
+      "credit": "NASA"
+    },
+    {
+      "type": "heading",
+      "text": "Der Geist in einer Dose"
+    },
+    {
+      "type": "prose",
+      "md": "Der physische Abbau des Körpers ist messbar und zumindest teilweise adressierbar. Die psychologische Dimension ist schwerer zu studieren, weil sie von Variablen abhängt — Persönlichkeit, Besatzungszusammensetzung, die Textur der Einsperrung, die Beziehung zwischen Besatzung und Boden — die resistente Begrenzungen zur kontrollierten Experimentation bieten. Was die Analoga-Studien vorschlagen, ist nicht beruhigend. [Isolations- und Isolations-Psychologie](/science/life-in-space/crew-dynamics-psychology) ist am systematischsten in antarktischen Überwintern studiert worden: kleine Gruppen in echter Finsternis und Kälte, unfähig zu gehen. Die Muster sind konsistent über Studien hinweg — ein Mitte-Winter-Syndrom von degradierter Stimmung und Kognition, zwischenmenschliche Reibung, die sich in engen Räumen zusammensetzt, psychologische Distanzierung von der Außenwelt, die nach der Rückkehr fortbestehen kann. Antarktis-Besatzungen können zumindest Außenluft atmen und eine Landschaft sehen. Eine Mars-Besatzung kann nicht. Das Mars-500-Experiment in Moskau (2010–2011) simulierte eine 520-Tage-Mission in einem versiegelten Habitat; sechs Freiwillige vollendeten die ganze Dauer, ohne zu gehen. Sesshaftes Verhalten verschlechterte sich über den Lauf. Ein Proband verbrachte die Mehrheit der letzten Monate schlafend. Einer zeigte Symptome, die klinischer Depression entsprechen. Während die Kommunikationsverzögerung sich dem simulierten 20-Minuten-Wert näherte, berichteten die Besatzungen, dass es sich nicht nur langsamer, sondern grundsätzlich einsamer anfühlte — Entscheidungen, die dem Boden delegiert worden wären, mussten an Bord getroffen werden, und das Gefühl, dass jemand immer erreichbar sein könnte, erodierte langsam. Ein Besatzungsmitglied auf der [ISS](/programs/iss) hat zu jeder Zeit eine Soyuz, die an der Station angedockt ist. Bei einem Mars-Transit existiert der Notausgang nicht. Vom Moment der Trans-Mars-Einspritzung an kann keine Entscheidung eines Controllers auf der Erde die Besatzung auf einer nützlichen Zeitleiste nach Hause bringen. Die Besatzung weiß dies. Was nachhaltendes Wissen um die eigene Unrettbarkeit über 18 Monate mit einem menschlichen Geist macht, ist eine Frage, die die Analoga-Studien angesprochen haben, aber nicht beantworten können. Wir werden es nicht wissen, bis die erste Besatzung fährt."
+    },
+    {
+      "type": "figure",
+      "image": "missions/polaris-dawn/01",
+      "kind": "photo",
+      "caption": "Ein privater Astronaut in der offenen Schleuse eines Crew Dragon während Polaris Dawn, 2024 — ein Mensch mit nur einem Anzug zwischen sich und dem Vakuum. Die Ingenieurkunst kann zuverlässig gemacht werden; der Geist, der die Einsperrung, das Risiko und die Jahre aushalten muss, kann nicht neu spezifiziert werden.",
+      "align": "wide",
+      "credit": "Polaris Program / SpaceX"
+    },
+    {
+      "type": "heading",
+      "text": "Die Grenze, die Motoren nicht verschieben"
+    },
+    {
+      "type": "prose",
+      "md": "Nichts von dem, was diesem Abschnitt vorausgeht, ist ein Grund nicht zu gehen. Es ist eine ehrliche Abrechnung dessen, was zu gehen bedeutet, und was es die Menschen kosten wird, die gehen. Diese sind verschiedene Dinge, und der Unterschied lohnt sich, präzise zu sein."
+    },
+    {
+      "type": "prose",
+      "md": "Besserer Antrieb ist wichtig. Die [neuen Engine-Technologien](/essays/new-propulsion), die in Entwicklung sind — nuklearwärme, nukleoelektrisch, Sonnensegel, die weiter entfernten Zukunftskonzepte — würden die Transitzeit verkürzen, und eine Verkürzung der Transitzeit reduziert die kumulative Strahlung-Exposition und kumulative physiologische Degradation. Ein Transit von 90 Tagen statt 270 ist nicht dreifach einfacher für den Körper; die Beziehung zwischen Dosis und Effekt ist komplexer als linear, und einige Systeme — das psychologische, das Knochen-, das kardiovaskuläre — sind gegen Dauer in Wegen sensibel, die sogar eine kürzere Exposition nicht vollständig rettet. Aber kürzer ist besser. Schnellere Motoren sind echte Medizin. Sie ändern jedoch nicht die grundsätzliche Natur des Problems. Ein 90-Tage-Transit durchquert immer noch den Interplanetarischen Raum ohne Magnetosphäre, ohne Schwerkraft und ohne Rettung. Der Körper ist immer noch die Nutzlast. Er baut immer noch ab. Er kommt immer noch nach Hause vermindert auf Wegen, die Monate oder Jahre zum Rückgang dauern, wenn sie überhaupt rückgängig sind."
+    },
+    {
+      "type": "prose",
+      "md": "Die Gegenmaßnahmen, die existieren, sind echt, aber partiell. Fortgeschrittene widerstandsfähige Übungsgeräte — die Art an Bord der [ISS](/programs/iss), bedeutungsvoller besser als das, was in frühen [Skylab](/programs/skylab)-Missionen flog — können Knochen- und Muskelabbau wesentlich verlangsamen, nicht beseitigen. Ernährungsinterventionen, pharmakologische Knochenabbau-Behandlungen und Schlafmanagement-Protokolle tragen alle etwas bei. Künstliche Schwerkraft, erreicht durch Drehen des Raumschiffs oder eines Moduls in ihm, würde die größte Einzelkategorie adressieren — Mikrogravitations-Physiologie — aber kein bemanntes Raumschiff mit künstlicher Schwerkraft wurde je gebaut oder geflogen, und die Ingenieurkunst-Kosten in Masse und Startvolumen sind bedeutsam. Das [Skylab](/programs/skylab)-Programm mit seinen drei Besatzungen — 28, 59 und 84 Tagen in 1973 und 1974 — gab den ersten systematischen amerikanischen Nachweis, dass Bewegung Dekonditionierung bedeutsam aufwiegen konnte, ein Befund, der Besatzungsgesundheitsprotokolle auf jedem nachfolgenden Langzeitprogramm geprägt hat."
+    },
+    {
+      "type": "prose",
+      "md": "Was dies zeigt, ist, dass die Herausforderung der bemannten Tiefenraum-Reisen zwei separate Schwierigkeitskategorien hat. Die erste — Ingenieurkunst — ist schwer, aber handhabbar: Raketen, [Navigation](/essays/navigation), [Kommunikation](/essays/comms), Landung, Lebenserhaltung alle haben definierbare Lösungsräume, wo mehr Wissen und Investition die Antwort voranbringt. Die zweite ist biologisch, und sie ist auf andere Weise schwerer. Nicht weil die Biologie unverständlich ist — die Mechanismen sind weitgehend verstanden, und die Gegenmaßnahmen verbessern sich — sondern weil mit der Biologie nicht verhandelt werden kann. Man kann keinen Software-Patch für eine Wirbelsäule schreiben, die über acht Monate Knochenmineraldichte verloren hat. Man kann das Immunsystem-Antwort auf Isolation nicht mit einem Firmware-Update neu programmieren. Der Körper hat seine eigenen Einschränkungen, über Millionen von Jahren für eine einzelne Welt gebaut, und jene Einschränkungen sind die ultimative Decke, wie weit eine Person reisen kann. [Die Menschen an Bord eines generationalen Raumschiffs](/essays/generational-starships) sind nicht Einzelne, die ihre Gesundheit über eine Karriere verwalten — sie sind eine Abstammung, über die sich die physiologischen Konsequenzen der Umgebung über Generationen ansammeln."
+    },
+    {
+      "type": "prose",
+      "md": "Die [Polaris Dawn-Mission](/explore) in 2024 — ein privater bemannter Flug durch die äußeren Van-Allen-Gürtel — lieferte die ersten privaten Sektor-Strahlungsdaten auf Höhen, in denen die Gürtel-Flusse wirklich gefährlich sind. Die Dauer war kurz, die Höhe immer noch im Erde-Mond-System. Aber es markiert eine Phase, in der die Bevölkerung von Menschen, für die jene Fragen praktisch, nicht theoretisch sind, sich über nationale Programme hinaus ausbaut. Der Körper-Einschränkungen ändert sich nicht, wenn der Arbeitgeber ändert. In jedem anderen Essay in dieser Sammlung holt die Ingenieurkunst letztendlich zur Ambition auf — Antrieb, [Navigation](/essays/navigation), Landung, [Kommunikation](/essays/comms) schloss sich über Jahrzehnte ihren Zielen an. Die Lücke zwischen dem, was menschliche Physiologie ist, und das, was Tiefenraum-Transit verlangt, schließt sich auch, durch Gegenmaßnahmen-Forschung und die ansammelnden Datensätze der [ISS](/programs/iss) und [Tiangong](/programs/tiangong) und was davor kam. Aber sie schließt sich nicht schnell, und sie könnte sich nie vollständig schließen. Der Körper ist das älteste System auf dem Raumschiff, und es ist das, das nicht aktualisiert werden kann."
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "title": "Bewaar de Raket",
+  "dek": "Zestig jaar hebben we de duurste machine in de menselijke geschiedenis gebouwd, vlogen er eenmaal mee, en gooiden hem in de oceaan. De mensen die hebben besloten daarmee te stoppen hebben zachtjes de grootste verschuiving in ruimtevaarttechnologie sinds Apollo voor elkaar gekregen.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "In de nacht van 21 december 2015 stond een [Falcon 9](/fleet?id=falcon-9)-eerste trap verticaal op een betonnen platform bij Cape Canaveral, motoren koud, omgeven door een wolk residuale damp, intact. Het was zojuist uit de ruimte teruggekomen. Ongeveer acht minuten nadat het opstijgen een batch satellieten naar een baan had gebracht, had de booster zichzelf omgedraaid, drie van zijn negen Merlin-motoren opnieuw ontstoken, zich door de bovenste atmosfeer afgeremd, vier landingsbeinen uitgefahren, en zichzelf rechtop op het platform neergezet waarvan het was vertrokken. De hele manoeuvre vereiste de nauwkeurigheid die normaal voorbehouden is aan een Zwitsers horloge. De menigte die toekeek brulle, en het geluid — een gejuich van mensen die zojuist iets werkelijk nieuws hadden zien gebeuren — is nog steeds op de video."
+    },
+    {
+      "type": "prose",
+      "md": "Wat die nacht gebeurde was een demonstratie, maar wat het demonstreerde was niet primair een technische kunst. Het was een economisch argument. Elke raket die ervoor was gevlogen — de [Saturn V](/fleet?id=saturn-v) die twaalf mensen naar de maan stuurde, de Sovjetse N1 die nooit een baan bereikte, de betrouwbare families Soyuz, Atlas, Proton en Long March die samen voor het merendeel van de lanceringen in deze atlas verantwoordelijk zijn — werd gebouwd om eenmaal gebruikt te worden. Je vloog ermee. Hij viel uiteen in de atmosfeer of zonk in zee. Je bouwde er een nieuw exemplaar. De industrie was zestig jaar lang rond dit gegeven gestructureerd: raketten waren munitie, niet vliegtuigen. Het moment dat Falcon 9 landde, lag die aanname voor het eerst ter discussie."
+    },
+    {
+      "type": "prose",
+      "md": "Waarom het zestig jaar heeft geduurd om daar te komen is een interessantere vraag dan het lijkt."
+    },
+    {
+      "type": "heading",
+      "text": "Het boekhoudkundig probleem"
+    },
+    {
+      "type": "prose",
+      "md": "De wegwerpraket is verspillend op een manier die bijna komisch is wanneer je het simpel beschrijft. Een [Saturn V](/fleet?id=saturn-v) kostte rond de 185 miljoen dollar in dollars van eind jaren zestig — ongeveer 1,5 miljard dollar in de huidige prijzen — en elk exemplaar vloog ongeveer twaalf minuten voordat het werd weggegooid. De vijf F-1-motoren in de eerste trap, elk ervan een indrukwekkend stuk techniek dat ongeveer 2.600 kilogram brandstof per seconde verbrandde, eindigden hun levensduur roestend op de bodem van de Atlantische Oceaan. Een particuliere expeditie gefinancierd door Jeff Bezos haalde in 2013 twee sets Saturn V F-1-motoren van de zeeBodem, bijna een halve eeuw nadat ze daar waren achtergelaten, en vond ze grotendeels intact. Ze gingen naar musea, niet terug naar vluchten. Ze de eerste keer weggooien was het plan."
+    },
+    {
+      "type": "prose",
+      "md": "De logica achter dit plan was niet domheid. Het was de logica van de Space Race in de jaren zestig: kom eerst aan, wat het ook kost. Een herbruikbare raket bouwen is moeilijker dan een wegwerpraket bouwen. Herbruikbaarheid voegt gewicht toe — hitteschilden, landingsbeinen, brandstof gereserveerd voor de terugreis — en gewicht is de vijand, omdat elk kilogram dat je aan de constructie toevoegt een kilogram is dat je niet naar een baan kunt brengen. Vroege ontwerpers rekenden de getallen na en concludeerden dat de straf te groot was. Beter, besloten zij, om goedkoop te bouwen en weg te gooien. Die berekening was juist voor haar moment en ze legde een reeks aannames vast die twee generaties standhielden."
+    },
+    {
+      "type": "prose",
+      "md": "De [Space Shuttle](/fleet?id=space-shuttle-stack) zou de logica moeten doorbreken. Het was de eerste echte poging van de Verenigde Staten — of wie dan ook — om een operationeel herbruikbaar lanceersysteem te bouwen, en het argument ervoor was economisch: door de orbiter herhaaldelijk in te zetten zou het programma de kosten van bereiken van een baan omlaag drijven naar 600 dollar per kilogram, laag genoeg om ruimtevaarttechnologie vrijwel routinematig te maken. De shuttle voerde 135 missies uit tussen 1981 en 2011. Het faalde volledig in de economische test. De werkelijke kosten per vlucht bedroegen gemiddeld ongeveer 1,5 miljard dollar wanneer de totale programmakosten over alle missies waren verdeeld — duurder per kilogram naar lage aardbaan dan de Saturn V die het vervangen. Het onderhoud van de 24.000 hittebestendige tegels van de orbiter na elke vlucht was niet snel klaar; het slokte duizenden persoonsuurtjes op. Hergebruik bleek buitengewoon duur als elk subsysteem uit elkaar gehaald en herbouwd moest worden naar de normen van een vliegtuig dat bemanning zou kunnen vervoeren. De shuttle bewees dat hergebruik *mechanisch* kon werken — de orbiter vloog tientallen keren — maar het bewees ook dat hergebruik op zich geen kosten verlaagt. De economie werkt alleen als je het voertuig *snel* en *goedkoop* kunt omdraien."
+    },
+    {
+      "type": "heading",
+      "text": "De eenvoudigste mogelijke truc"
+    },
+    {
+      "type": "prose",
+      "md": "SpaceX benaderde het probleem anders. In plaats van te proberen het hele voertuig her te gebruiken — de keuze die de Shuttle zo complex maakte — concentreerde het bedrijf zich op het duurste enkele onderdeel: de eerste-trap booster. Bij een typische raket doet de eerste trap het zware werk, verbruikt de meeste brandstof, draagt de meeste motormassa en kost het meest in fabricage. Het is ook het onderdeel dat je bij een wegwerpraket elke keer verliest. Bewaar de eerste trap en je hebt het merendeel van de waarde van het voertuig teruggewonnen."
+    },
+    {
+      "type": "prose",
+      "md": "De technische vereiste om het te redden is braal: de trap moet terugkeer door de atmosfeer overleven waardoor hij in de eerste minuten op Mach 7 doorheen schoot, van richting veranderen, vertragen van hypersonisch naar landingssnelheid, en verticaal op een doel ter grootte van een voetbalveld neerzetten — hetzij terug bij de lanceerplek hetzij op een onbemand schip honderden kilometers verderop in de Atlantische of Stille Oceaan. Om dit alles te bereiken moet de booster genoeg brandstof behouden voor een reeks nauwkeurig getimede motoreropstartingen, wat betekent dat het in een baan aankomt met minder brandstof voor de hoofdtaak. Die gewichtspenaliteit is reëel: een Falcon 9 met een nieuwe booster levert ongeveer 22.800 kilogram naar een lage aardbaan; een vlucht die de booster terugwint levert minder. Dit is de fundamentele afweging in het hart van herbruikbare lancering, en SpaceX aanvaarde het omdat de economie ongeacht werkt: de booster die landt kan opnieuw vliegen, en opnieuw, en opnieuw."
+    },
+    {
+      "type": "prose",
+      "md": "Na de landing in december 2015 volgde een tweede, en een derde, en toen de herstart: in maart 2017 lanceerde SpaceX een Falcon 9 op een booster die al eerder had gevlogen, de eerste keer in de geschiedenis dat een baan-klasse raket-trap twee keer naar de ruimte vloog. Begin 2026 heeft de meest-gevlogen Falcon 9 eerste trap 36 missies op dezelfde hardware voltooid — meer dan meeste wegwerpraketten in totaal over een heel wapenpark vliegen. De marginale kosten van een hergebruikte lancering, met brandstof en onderhoud, zitten rond de 15 tot 20 miljoen dollar tegen een vraagprijs van 74 miljoen dollar. Het verschil is ruwweg de kosten van de booster zelf, teruggewonnen door herstel."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/landing-profile",
+      "kind": "diagram",
+      "caption": "De truc is bijna beledigend eenvoudig om uit te spreken en braal om te vliegen: hou genoeg brandstof achter, draai de booster om, en brand drie keer op weg omlaag — opslingering, ingang, landing — totdat het zich op zijn beinen neerzet. Dezelfde trap wordt dan geïnspecteerd, herbrand, en opnieuw gevlogen.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Het met je handen vangen"
+    },
+    {
+      "type": "prose",
+      "md": "De [Falcon Heavy](/fleet?id=falcon-heavy) breidde dezelfde logica zijwaarts uit: drie Falcon 9-kernen vastgespannen, twee van hen peelend na de eerste twee minuten en tegelijk terugvliegend om side-by-side bij Cape Canaveral te landen. De video's van de tweeling-landen — twee vuurzuilen die in spiegelsymmetrie afdalen, op exact hetzelfde moment neerkomen — zien eruit als iets uit een film. Dat zijn ze niet. Het zijn de economieën die zichtbaar worden gemaakt."
+    },
+    {
+      "type": "prose",
+      "md": "[Starship](/fleet?id=starship) voert het argument naar zijn logische einde. Waar Falcon 9 zijn eerste trap terugwint en zijn bovenste trap weggooit, is Starship ontworpen om *beide* terug te winnen. De Super Heavy booster — 71 meter lang, aangedreven door 33 Raptor-motoren die vloeibaar methaan en vloeibare zuurstof verbranden, producerend ongeveer twee keer de stuwkracht van een Saturn V — keert terug naar de lanceerplek en wordt in de lucht gevangen door een paar mechanische armen op de lanceerpostoren zelf. Het systeem heet Mechazilla door de ingenieurs die het gebouwd hebben. SpaceX ving de booster op deze manier voor het eerst op 13 oktober 2024, Vlucht 5 van het Starship-testprogramma, en heeft de manoeuvre op volgende vluchten herhaald. Het idee dat je je raket niet zou landen maar eenvoudigweg *zou vangen terwijl hij viel* zou tien jaar geleden als fictie hebben geklonken. Het is nu een maandagochtendprocedure."
+    },
+    {
+      "type": "prose",
+      "md": "De Starship bovenste trap — het grootste ruimtevaartuig ooit gebouwd, even hoog als een gebouw van vijftien verdiepingen — is bedoeld hetzelfde pad te volgen, terugkerend en gevangen boven het platform. Eenmaal beide helften op de grond zijn kan het systeem theoretisch hergebrand en binnen uren opnieuw gelanceerd worden. Geen wegwerpraket probeert zelfs deze vergelijking aan. Een wegwerpraket is een logistieke keten: fabricage, transport, integratie, lancering, herhalen vanaf het begin. Een volledig herbruikbaar systeem is een *vliegtuig* met een zeer lange route. De economie van de twee zijn niet in dezelfde melkweg."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/tower-catch",
+      "kind": "diagram",
+      "caption": "Dan een vreemdere idee: geef de booster helemaal geen beinen. Laat de lanceerpost het vangen — twee armen die sluiten op een zeventig-meter trap terwijl deze zweeft, zodat de massa die landinggear zou zijn geweest in plaats daarvan lading wordt. De eerste schone vangst kwam in oktober 2024.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "De tweede mover"
+    },
+    {
+      "type": "prose",
+      "md": "Blue Origin's [New Glenn](/fleet?id=new-glenn) liet zijn eerste trap voor het eerst op zee landen op 13 november 2025 — tien jaar nadat de Falcon 9-landing in december 2015, wat aangeeft hoe snel de industrie beweegt wanneer SpaceX het tempo aangeeft. New Glenn is een grote raket naar elke vorige maatstaf, dragend tot 45.000 kilogram naar lage aardbaan in wegwerpkonfiguratie; zijn eerste trap keert op elke missie naar een onbemand schip in de Atlantische Oceaan. De eerste hergebruik van een New Glenn-trap volgde in april 2026. Blue Origin's benadering spiegelt SpaceX's in architectuur: bewaar de eerste trap, vlieg hem opnieuw, snijd de marginale kosten met elk hergebruik."
+    },
+    {
+      "type": "prose",
+      "md": "Wat de opkomst van [New Glenn](/fleet?id=new-glenn) aan het beeld toevoegt is concurrentiedruk. Voor het grootste deel van het decennium tussen 2015 en 2025 was SpaceX in wezen alleen op de herbruikbare lancemarkts. Een markt met één leverancier is geen markt; het is een monopolie. De intrede van een tweede geloofwaardige herbruikbare lanceerder verandert de prijsdynamica voor iedereen die een rit naar een baan koopt. Satellieten-operatoren, ruimtebureaus en commerciële klanten die eenmaal geen keus hadden dan te nemen wat SpaceX bood hebben nu alternatieven — en meer komen eraan."
+    },
+    {
+      "type": "prose",
+      "md": "China is met ongebruikelijke ernst voortgedaan. De Zhuque-3 van LandSpace, een methaan-gestookte raket ruwweg analoog aan Falcon 9, ondernam zijn eerste herstelpoging in december 2025; de bovenste trap bereikte een baan maar de booster stortte op zijn landing-aanpak. Een tweede herstelpoging is gepland voor mid-2026. iSpace heeft zijn Hyperbola-3 in hardwarekwalificatie, met een speciaal onbemand schip al gelanceerd, en richt zich op zijn eerste vlucht vanaf Wenchang. Verschillende andere Chinese commerciële bedrijven zijn in actieve ontwikkeling. De Chinese regering heeft herbruikbare toegang tot een baan tot een expliciet nationale prioriteit gemaakt. Dat het land dat de Grote Muur bouwde heeft besloten zijn raketten niet meer weg te gooien is een gegevenspunt dat de moeite waard is om over na te denken."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/falcon-9/01",
+      "kind": "photo",
+      "caption": "Een Falcon 9 eerste trap staat terug op zijn beinen nadat een lading naar een baan is bezorgd — het moment waarop een zestig-jaar-aanname stilletjes instortte. Eenmaal één bedrijf bewees dat een booster opnieuw kon vliegen moesten alle anderen leren hun de hunne ook te behouden.",
+      "align": "wide",
+      "credit": "SpaceX"
+    },
+    {
+      "type": "heading",
+      "text": "Wat hergebruik werkelijk verandert"
+    },
+    {
+      "type": "prose",
+      "md": "Het oppervlakteverhaal is kostenvermindering, en de kostenvermindering is reëel: lanceerprijzen die eenmaal op 200 miljoen dollar of meer voor een grote wegwerper zaten zijn gedaald naar 60–80 miljoen dollar voor een herbruikbare middelzware liftmissie, en de marginale economie van een goed gebruikt Falcon 9 booster zijn nog lager. Maar de diepere verandering is in lanceer *tempo*. SpaceX lanceerde 132 Falcon 9-missies in 2024 — bijna drie per week, volgehouden over een volledig kalenderjaar, met dezelfde groep boosters die door het platform en weer terug draaiden. Geen wegwerparchitectuur zou dat tempo kunnen benaderen; je zou een industriële toeleveringsketen nodig hebben die met oorlogstijdtempo werkte om het te evenaren. Hergebruik is, het bleek, niet alleen over kosten. Het is over tempo. En tempo gaat over wat mogelijk wordt."
+    },
+    {
+      "type": "prose",
+      "md": "Wat mogelijk wordt is Starlink: een sterrenbeeld dat meer dan 6.000 lanceringen vereiste om te bevolken, onmogelijk om te bouwen onder enige wegwerpprijs-structuur die ooit heeft bestaan. Wat mogelijk wordt zijn laagkostencommerciële wetenschapsmissies die eerder de rit niet konden betalen. Wat mogelijk wordt, uiteindelijk, is bemande vervoer naar Mars met een frequentie die het een programma maakt in plaats van een stunt — omdat de [delta-v budget](/science/propulsion/dv-budget) van een Aarde-naar-Mars-missie een voertuig eist dat in een baan kan worden herbrand en hergebruikt, of de massafracties sluiten niet. Hergebruik is niet zomaar een economische voorkeur. Voor de ambities die [Starship](/fleet?id=starship) moet ondersteunen is het een fysieke vereiste."
+    },
+    {
+      "type": "prose",
+      "md": "De gewichtsstraf die vroege ingenieurs deed hergebruik afwijzen is nog steeds reëel; het is niet gereduceerd. Een volledig wegwerpbare Starship zou meer naar een baan leveren dan een herbruikbare. Maar de vraag is niet langer of je het gewichtspenaliteit kunt veroorloven. Het is of je het hele ding kan veroorloven weg te gooien — of je kan, zoals de raketendustrie zes decennia deed, behandelen de meest complexe machine ooit gebouwd als een eenmalig artikel."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/cost-curve",
+      "kind": "diagram",
+      "caption": "Het getal dat alles bepaalt is de prijs van een kilogram naar een baan. De Shuttle beloofde het lager te brengen en deed het nooit; herbruikbare Falcon 9 sneed het ruwweg twintigvoudig. Drop het ver genoeg en missies die eenmaal ondenkbaar waren worden gewoon gepland.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "De vraag die landde"
+    },
+    {
+      "type": "prose",
+      "md": "Het originele argument van de raketendustrie tegen hergebruik was engineering: het voertuig is te complex om goedkoop te onderhouden, te kwetsbaar om opnieuw te vliegen zonder te demonteren, te zeer gewichtsbeperkt om de hardware te dragen die nodig is om te landen. De Space Shuttle-ervaring leek alle drie te bevestigen. Die bezorgdheden waren legitiem, en dertig jaar lang stonden ze vast."
+    },
+    {
+      "type": "prose",
+      "md": "Wat veranderde was niet de natuurkunde. Wat veranderde was de fabricagebasis, de brandstofkeuze — methaan brandt schoner dan kerosine, laat minder residu achter, maakt onderhoud sneller — en, meer dan alles, de bereidheid om voor hergebruik ontworpen te bouwen vanaf het begin in plaats van het aan te passen op een voertuig geoptimaliseerd voor wegwerpen. De Shuttle was een wegwerpraket die werd verteld naar huis te gaan. De Falcon 9 booster werd van het begin af aan ontworpen rond de vraag hoe te landen. Dat verschil in ontwerpdoel verantwoordt het meeste van het verschil in uitkomst."
+    },
+    {
+      "type": "prose",
+      "md": "In het decennium sinds die decembernacht bij Cape Canaveral is het landen van een booster van onmogelijk naar gewoon gegaan. Een Falcon 9 eerste trap die niet naar zijn onbemand schip terugkeert is nu de ongewone gebeurtenis, het waard om op te merken in het anomalielog. Super Heavy is uit de lucht gevangen. Een tweede bedrijf heeft een zware-lift trap op zee geland en het opnieuw gevlogen. China rent om op te vangen. De aanname die de gehele lancerindustrie sinds Sputnik heeft beheerst — dat een raket verbruikbaar is — is gebroken, en het breken ervan hervormt al welke missies mogelijk zijn, welke ondernemingen levensvatbaar zijn, en wat het de volgende generatie zal kosten om verder te gaan."
+    },
+    {
+      "type": "prose",
+      "md": "Geen van de [raketentrappen](/science/propulsion/rocket-stages) die in de eerste zestig jaar van ruimtevaarttechnologie ooit mensen of ruimtevaartuigen naar een baan hebben gebracht hebben het overleefd. Ze liggen op de oceaanbodem, of in de bovenste atmosfeer als verspreide moleculen, of in musea waar ingenieurs die ze bouwden langs kunnen lopen en dingen kunnen herkennen die ze eenmaal aanraakten. Die nu vliegen komen terug. Die ene verandering — stil, technisch, braal moeilijk om werkend te maken — is het ding dat het eerste tijdperk van ruimtevaarttechnologie scheidt van wat volgt."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/starship/01",
+      "kind": "photo",
+      "caption": "Starship is de grotere inzet: dat het hele voertuig — booster en schip samen — naar huis komt en binnen dagen opnieuw vliegt. Als het standhield, houdt de kosten van bereiken van een baan op het ding dat bepaalt wat de mensheid mag proberen.",
+      "align": "wide",
+      "credit": "SpaceX"
+    }
+  ]
+}

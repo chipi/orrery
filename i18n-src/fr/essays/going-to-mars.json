@@ -1,0 +1,147 @@
+{
+  "title": "Le Mur",
+  "dek": "Tout plan de vol spatial humain finit par buter sur Mars, et Mars brise tous les plans sur les mêmes trois choses à la fois : le temps, la masse et le corps. Ce n'est pas Apollo mais au-delà. C'est un problème catégoriquement différent — et comprendre pourquoi ces dates de départ assurées ne cessent de glisser, c'est le début pour le comprendre honnêtement.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Il existe une date qui ne cesse de bouger. En 1969, Wernher von Braun dit à une commission du Sénat que les humains pourraient se tenir sur Mars en 1982. En 1986, la Commission nationale de l'espace proposa 2010. En 2010, un discours politique présidentiel visait le milieu des années 2030. Chaque décennie a produit un plan avec du matériel spécifique, des calendriers spécifiques, et une décennie spécifique où la chose se produirait — et chaque plan a, d'une forme ou d'une autre, disparu. Le matériel change, l'agence change, la justification change, mais la date recule régulièrement d'à peu près la même distance qu'elle s'était engagée à franchir. Quelque chose de structurel est à l'œuvre."
+    },
+    {
+      "type": "prose",
+      "md": "L'élément structurel n'est pas l'argent, bien que l'argent soit toujours une contrainte. Ce n'est pas la volonté politique, bien que celle-ci s'évapore aussi. C'est que Mars présente, simultanément, trois problèmes que le vol spatial humain n'a pas encore résolus ensemble — le temps, la masse et le corps — et les résoudre séparément, un à la fois, donne une fausse impression de progrès. Ensemble, ils se renforcent mutuellement d'une manière qui rend la somme considérablement plus difficile que les parties. Mars a été atteint par la robotique par les États-Unis, la Russie, l'Agence spatiale européenne, l'Inde, la Chine et les Émirats arabes unis. L'avant-garde est déjà multinationale, et tout compte honnête de ceux qui essaient d'y aller doit commencer par ce fait."
+    },
+    {
+      "type": "heading",
+      "text": "Pas Apollo mais au-delà"
+    },
+    {
+      "type": "prose",
+      "md": "La comparaison avec Apollo est presque toujours le premier mouvement dans un débat sur Mars, et c'est presque toujours trompeur. Ce qui a rendu Apollo possible était une convergence spécifique : un objectif unique bien défini, un encadrement d'urgence nationale, une croissance budgétaire essentiellement illimitée dans les années 1960, et un délai de propagation de 1,3 seconde qui gardait les équipages en contact en temps réel avec la Terre. Rien de tout cela n'existe pour Mars, et rien ne peut être reproduit en le désirant."
+    },
+    {
+      "type": "prose",
+      "md": "La Lune est, comme [l'essai sur l'aller sur la Lune](/essays/going-to-the-moon) l'encadre, un terrain d'entraînement : trois jours de trajet, interruption disponible, radio en temps réel, défaillances catastrophiques survivables. Mars n'est rien de tout cela. À l'approche la plus proche, elle est à peu près à 54 millions de kilomètres ; au plus loin, à plus de 400 millions. Un signal radio prend trois à vingt-deux minutes d'une seule façon. Le transfert le plus rapide plausible se fait en six à neuf mois de coast. Une fois que la manœuvre d'injection trans-Mars tire, il n'y a aucune trajectoire de retour sur demande. L'équipage qui part pour Mars est engagé."
+    },
+    {
+      "type": "heading",
+      "text": "Vous ne pouvez pas partir quand vous le souhaitez"
+    },
+    {
+      "type": "prose",
+      "md": "Le premier mur est le temps, et il commence avant la mission elle-même. La Terre et Mars orbite autour du soleil à des vitesses différentes — la Terre en environ 365 jours, Mars en environ 687 — ce qui signifie que la géométrie entre elles change constamment. Une [orbite de transfert de Hohmann](/science/transfers/hohmann-transfer), l'arc d'énergie minimale d'une planète à l'autre, ne fonctionne que lorsque les planètes sont dans les bonnes positions relatives : le départ doit être programmé de sorte que la lointaine extrémité de l'ellipse de transfert coupe l'orbite de Mars précisément au moment où Mars y arrive. Cette fenêtre s'ouvre à peu près tous les 26 mois. La manquez et vous attendez plus de deux ans pour la suivante."
+    },
+    {
+      "type": "prose",
+      "md": "L'alignement affecte non seulement le trajet aller mais aussi le retour. Un équipage arrivant à Mars attendra au moins 14 à 18 mois pour que les planètes se réalignent dans une fenêtre de retour — c'est pourquoi une mission Mars de durée minimale, avec un coast aller de six à neuf mois, un séjour de surface de 14 à 18 mois, et un retour de six à neuf mois, s'étend à approximativement 900 jours au total. Trois ans, allerretour, comme plancher. Les ingénieurs appellent les graphiques qui cartographient les fenêtres de lancement et les délais de transit « porkchop plots » — des cartes de contours du [delta-v](/essays/delta-v) contre la date de départ et d'arrivée qui ressemblent, avec un peu d'imagination, à la découpe qu'ils portent. Les vallées bon marché de ces graphiques sont les fenêtres. Les crêtes coûteuses entre elles sont les mois où aucune mission raisonnable ne peut voler. La fenêtre commande la mission, pas l'inverse."
+    },
+    {
+      "type": "prose",
+      "md": "La conséquence d'engagement de la fenêtre est absolue. Contrairement à une mission lunaire Apollo — où une [trajectoire de retour libre](/science/transfers/free-return) gardait l'interruption vers la Terre disponible pour la majeure partie du coast aller — une mission Mars sur un arc de Hohmann n'a pas cette option une fois que la manœuvre d'injection trans-Mars tire. Il n'y a aucune trajectoire qui ramène l'équipage à la maison rapidement si quelque chose tourne mal en chemin. Il y a des trajectoires d'interruption à énergie plus élevée, mais elles nécessitent d'énormes réserves de propergol qu'aucune mission n'a encore proposé de transporter, précisément parce que le propergol est le deuxième mur."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/launch-window",
+      "kind": "diagram",
+      "caption": "Vous ne partez pas pour Mars quand vous êtes prêt ; vous partez quand les deux planètes s'alignent, ce qui se produit pendant quelques semaines environ tous les vingt-six mois. Manquez cela et vous attendez deux ans. Et une fois que la manœuvre de transfert vous engage dans le coast de six à neuf mois, il n'y a pas d'interruption vers la Terre.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Tout, pendant des années"
+    },
+    {
+      "type": "prose",
+      "md": "Le deuxième mur est la masse — et spécifiquement, la relation entre la masse et la distance dans une mission dont aucun ravitaillement n'est possible. Sur la Station spatiale internationale, un véhicule cargo Progress arrive tous les quelques mois avec de la nourriture, de l'eau, de l'équipement et des pièces de rechange. Les systèmes de soutien-vie de la station sont à boucle fermée sous certains aspects mais fuyards sous d'autres ; l'eau est recyclée, mais les consommables sont régulièrement réapprovisionnés de la Terre. Un équipage Mars n'obtient pas ce ravitaillement. Tout ce qui part avec eux est ce qu'ils ont. Chaque kilogramme de nourriture, chaque litre d'eau, chaque pièce de rechange pour chaque système critique doit soit être transporte de la Terre — à un coût de lancement extraordinaire — soit être produit sur Mars lui-même."
+    },
+    {
+      "type": "prose",
+      "md": "Le problème du propergol de retour est la version la plus aiguë de cela. Un atterrisseur spatial équipage descendant à la surface martienne doit également transporter le propergol pour s'en élever, se rendez-vous avec un navire qui attend en orbite, et brûler pour le retour. La masse de ce propergol, ajoutée à l'atterrisseur, élève la masse de l'atterrisseur, ce qui nécessite plus de propergol pour l'atterrir, ce qui élève la masse davantage — une spirale qui a été étudiée attentivement et aboutit à des dizaines de tonnes de propergol qui doivent atteindre la surface martienne. Le transporter de la Terre sur une seule pile de lancement est extraordinairement coûteux. L'évasion de cette spirale est [l'utilisation des ressources in situ](/science/life-in-space/isru-resource-utilization) : fabriquer du propergol sur Mars, à partir des ressources martiennes, plutôt que de le traîner de la Terre."
+    },
+    {
+      "type": "prose",
+      "md": "L'évasion de la spirale du propergol est [l'utilisation des ressources in situ](/science/life-in-space/isru-resource-utilization) : fabriquer du propergol sur Mars à partir des ressources martiennes. L'atmosphère de Mars est 95 % dioxyde de carbone ; divisez le CO₂ électrochimiquement et vous avez de l'oxygène, ou traitez-le avec de l'hydrogène provenant de la glace d'eau pour produire du carburant méthane. [Perseverance](/missions?id=perseverance) transportait MOXIE — l'expérience d'utilisation des ressources in situ du dioxyde de carbone martien — qui a produit de l'oxygène à partir du CO₂ martien à petite échelle de 2021 à 2023, à des taux allant jusqu'à dix grammes par heure. C'est la seule preuve de concept de production de ressources sur une autre planète. Mettre à l'échelle cela aux tonnes de propergol qu'un véhicule de décollage équipage a besoin, aux côtés d'un [système de soutien-vie](/science/life-in-space/eclss-life-support) à boucle fermée qui recycle l'eau et l'air pendant trois ans sans ravitaillement, est un défi d'ingénierie non résolu du premier ordre. Le chemin de dix grammes par heure à une usine de propergol complète existe sur papier. Il n'a jamais été construit."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/isru-return",
+      "kind": "diagram",
+      "caption": "Traîner assez de propergol de la Terre pour soulever un équipage de Mars est proche de l'impossible, donc le plan est de le fabriquer à l'arrivée. L'expérience MOXIE de Perseverance a tiré de l'oxygène de l'atmosphère CO₂ — quelques grammes par heure, mais la première fois qu'une usine a jamais fonctionné sur un autre monde.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Les sept minutes, encore — et puis un peu plus"
+    },
+    {
+      "type": "prose",
+      "md": "L'acte d'ouverture du troisième mur est bien documenté. [L'entrée, la descente et l'atterrissage sur Mars](/science/mission-phases/edl) — la séquence que [l'essai des sept minutes](/essays/seven-minutes) trace en détail — est l'atterrissage le plus difficile du système solaire pour une raison spécifique et inexorable : Mars a juste assez d'atmosphère pour générer une chaleur mortelle à l'entrée, et pas du tout assez pour vous ralentir à une vitesse d'atterrissage sur une parachute seul. Chaque atterrisseur Mars dans l'histoire a nécessité une combinaison sur mesure de bouclier thermique, parachute supersonique, fusées, et parfois une ingénierie mécanique élaborée — les airbags de [Mars Pathfinder](/missions?id=mars-pathfinder), la grue volante de [Curiosity](/missions?id=curiosity) et [Perseverance](/missions?id=perseverance) — juste pour mettre du matériel de la taille d'une voiture sur la surface. La grue volante est, à peu près une tonne de rover, près de la limite extérieure de ce que la boîte à outils EDL actuelle peut livrer. Un atterrisseur Mars équipage aurait une masse de l'ordre de vingt à quarante tonnes."
+    },
+    {
+      "type": "prose",
+      "md": "Cet écart — entre ce qui a été atterri et ce qu'une mission équipage nécessite — est appelé l'écart EDL, et ce n'est pas une petite extension d'ingénierie du travail existant. C'est un changement de régime. La physique qui régit la traînée du parachute s'adapte mal avec la masse : un parachute assez grand pour ralentir significativement un véhicule de quarante tonnes dans l'atmosphère fine de Mars aurait besoin d'être tellement grand qu'il devient structurellement impraticable à des vitesses supersoniques. Les approches alternatives — rétropropulsion supersonique, coques aérodynamiques gonflables, combinaisons de celles-ci — ont été étudiées et démontrées à petite échelle. Le Starship de SpaceX, s'il atteint jamais Mars avec une capacité d'atterrissage propulsif fonctionnelle, représenterait la première tentative d'EDL Mars à l'échelle équipage. Au moment de cette rédaction, Starship n'a pas complété une démonstration orbitale entièrement réussie sur la Terre. Sa performance sur Mars est une projection d'un système non éprouvé. Chaque analyse crédible des architectures Mars équipage énumère l'EDL comme l'un des risques techniques non résolus les plus importants. Ce n'est pas du pessimisme. C'est le bilan d'ingénierie tel qu'il se présente."
+    },
+    {
+      "type": "prose",
+      "md": "Le décalage du signal s'applique quel que soit l'architecture EDL. Au moment où la Terre entend qu'un engin est entré dans l'atmosphère martienne, la séquence des sept minutes est déjà résolue — succès ou cratère — c'est pourquoi [Perseverance](/missions?id=perseverance) a sélectionné son propre site d'atterrissage de façon autonome en utilisant la navigation relative au terrain. Pour un atterrisseur équipage, la même contrainte s'applique : chaque décision de descente est celle de l'équipage seul, et chaque urgence à la surface est traitée par des gens onze à vingt-deux minutes-lumière du secours le plus proche."
+    },
+    {
+      "type": "figure",
+      "image": "missions/perseverance/01",
+      "kind": "photo",
+      "caption": "Perseverance dans les dernières secondes de son propre atterrissage, descendue sur des câbles de la grue volante sur Jezero — l'arrivée la plus difficile du système solaire, pilotée entièrement par l'engin spatial. Un atterrisseur équipage aurait une masse des dizaines de fois plus importante, et personne ne sait encore comment le poser.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Le corps tient le compte"
+    },
+    {
+      "type": "prose",
+      "md": "Le troisième mur est le corps humain, et c'est celui que l'architecture de la mission ne peut pas contourner. Mars n'a pas de champ magnétique global — son noyau s'est solidifié il y a longtemps, terminant la dynamo qui générait autrefois le bouclier. La magnétosphère de la Terre dévie la majorité des rayons cosmiques galactiques et des particules énergétiques solaires ; Mars n'offre pas d'équivalent. Un transit de six mois à travers l'espace interplanétaire fournit une dose mesurée d'environ 300 millisieverts — bien plus d'une centaine de fois une année typique de rayonnement de fond naturel sur la Terre, absorbée en six mois. À la surface martienne, sans magnétosphère, la dose s'accumule davantage à partir du rayonnement secondaire. Un voyage aller-retour de trois ans a été estimé à 600 à 1 200 millisieverts au total, selon la phase du cycle solaire et le blindage — des nombres mesurés en vol par des instruments à bord de [Curiosity](/missions?id=curiosity)."
+    },
+    {
+      "type": "prose",
+      "md": "Les limites de dose professionnelle actuelles de la NASA sont conçues pour plafonner le risque de cancer excessif à vie à 3 %. Un voyage aller-retour Mars, selon la plupart des hypothèses architecturales, dépasse ces limites. [L'exposition aux radiations](/science/life-in-space/radiation-exposure) est un risque quantifié, documenté que la technologie de blindage existante ne mitigue pas adéquatement ; toute révision de limite permettant la mission serait une décision politique prise contre l'incertitude reconnue, pas un problème technique résolu. Au-delà des radiations, [la perte de densité osseuse](/science/life-in-space/bone-density-loss) et [l'atrophie musculaire](/science/life-in-space/muscle-atrophy) en [microgravité](/science/life-in-space/microgravity-physiology) peuvent être ralentis par des contre-mesures mais non arrêtés. Les équipages de la Station spatiale internationale en tournées de six mois reviennent ayant besoin de mois de réadaptation ; un équipage Mars passerait six à neuf mois en microgravité lors du trajet aller, plus d'un an dans la gravité d'un tiers de Mars — un régime sans données humaines de longue durée — puis six à neuf mois en microgravité à nouveau au retour. Si le corps peut soutenir cette séquence sans dommage permanent à l'os, à la fonction cardiovasculaire, ou à la vision, est une question ouverte qui ne peut pas être répondue à partir des données actuelles. Elle ne peut être répondue que en allant. Et puis il y a l'isolement social de trois ans — un équipage dans un volume comparable à un grand véhicule de loisirs, au-delà de la communication en temps réel avec la Terre, sans secours disponible — une expérience psychologique pour laquelle les hivernages en Antarctique et les déploiements de sous-marins sont des modèles partiels au mieux."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/radiation",
+      "kind": "diagram",
+      "caption": "Mars a perdu son champ magnétique global quand son noyau s'est refroidi, donc il n'a pas de bouclier contre les rayons cosmiques galactiques ou les tempêtes solaires. Un équipage prend environ 300 millisieverts lors du transit de six mois seul — et sur un voyage aller-retour de trois ans, une dose qu'aucun blindage assez léger pour voler ne peut arrêter.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Le mur est le point"
+    },
+    {
+      "type": "prose",
+      "md": "Le bilan robotique à Mars est, si vous reculez assez loin, extraordinaire. [Viking 1](/missions?id=viking1) a touché Chryse Planitia le 20 juillet 1976 — le premier engin spatial à fonctionner avec succès à la surface martienne — et a fonctionné pendant plus de six ans. [Spirit](/missions?id=spirit) et [Opportunity](/missions?id=opportunity) ont roulé sur un terrain qu'aucun humain n'a touché ; [Curiosity](/missions?id=curiosity) a lu l'histoire géologique du cratère Gale depuis août 2012 ; [Perseverance](/missions?id=perseverance) est dans le cratère Jezero maintenant, mettant en cache les noyaux rocheux qu'une future mission de retour d'échantillons pourrait un jour ramener sur Terre."
+    },
+    {
+      "type": "prose",
+      "md": "La dimension mondiale de cet avant-garde est sous-estimée. [Mangalyaan](/missions?id=mangalyaan) — la mission de l'orbite martienne de l'Organisation de recherche spatiale indienne — est arrivée à Mars le 24 septembre 2014 à sa première tentative, faisant de l'Inde la quatrième agence spatiale à atteindre Mars et la première nation asiatique à le faire, avec un coût total de mission d'environ 74 millions de dollars, moins que le budget de production du film *Gravity*. Elle a fonctionné pendant près de huit ans, bien au-delà de sa vie de conception de six mois. [Tianwen-1](/missions?id=tianwen1), lancée par la Chine en juillet 2020, a réalisé un exploit qu'aucune agence spatiale n'avait géré à sa première tentative martienne : elle a orbité, atterri et déployé un rover — Zhurong — tout dans une seule mission. Zhurong a roulé à travers Utopia Planitia à partir de mai 2021 et a retourné des données géologiques et atmosphériques pendant plus d'un an. Cet exploit, à la première tentative, d'un programme spatial national qui n'existait pas avant le 21e siècle, redessine la carte géopolitique du lieu où la capacité d'aller à Mars réside actuellement."
+    },
+    {
+      "type": "prose",
+      "md": "Contre cette fondation robotique, Starship se tient comme la pièce centrale actuelle de la planification martienne équipage. SpaceX a décrit des architectures dans lesquelles des véhicules entièrement réutilisables, entièrement ravitaillés transportent de grands équipages dans des transits de six mois, atterrissant propulsivement et produisant du propergol de retour à la surface via ISRU. L'ambition est réelle ; un véhicule entièrement réutilisable à l'échelle de Starship changerait substantially l'équation des masses. Mais au moment de cette rédaction, Starship n'a pas complété une démonstration orbitale entièrement réussie sur la Terre. Il n'a pas démontré le transfert de propergol in-space à grande échelle, l'atterrissage propulsif à la masse de l'atterrisseur équipage, ou n'importe lequel des systèmes de soutien-vie et des mitigations de radiations que les murs ci-dessus nécessitent. Starship peut éventuellement traiter ces choses. C'est, maintenant, un pari énorme et sérieusement financé — et un pari n'est pas une solution."
+    },
+    {
+      "type": "prose",
+      "md": "Ce qui fait que Mars est le mur n'est pas que c'est impossible. La mécanique orbitale est résolue ; les [trajectoires de transfert](/science/transfers/hohmann-transfer) sont cartographiées ; les [porkchop plots](/science/transfers/lambert-problem) existent pour chaque fenêtre jusqu'à la fin du siècle. Ce qui en fait le mur, c'est qu'il nécessite de résoudre le temps, la masse et le corps simultanément, à une distance où chaque défaillance est finale et aucune aide ne vient. [L'essai sur l'aller sur la Lune](/essays/going-to-the-moon) encadre le retour lunaire comme une répétition précisément parce que se tromper là est survivable. Mars n'offre pas cela. La première mission équipage sera la première fois que chaque système fonctionne ensemble dans l'environnement réel, avec des vraies personnes à l'intérieur, sur un engagement réel de trois ans — et il n'y a pas de deuxième tentative intégrée au calendrier."
+    },
+    {
+      "type": "prose",
+      "md": "La date continue de bouger parce que le travail est réel et le travail est difficile. La réponse honnête à « quand les humains atterriront-ils sur Mars » est : quand les trois murs auront été surmontés — non pas quand la confiance est élevée, non pas quand un calendrier le dit, non pas quand l'ambition d'un fondateur l'exige, mais quand l'architecture EDL a été démontrée à l'échelle équipage, quand un système de soutien-vie à boucle fermée a été prouvé pour trois ans d'exploitation, quand le tableau des radiations est soit atténué soit accepté selon des termes connus, et quand un approvisionnement en propergol de retour existe à Mars avant que l'équipage quitte la Terre. Une partie de ce travail est en cours. Aucun d'entre eux n'est fait. Le mur est toujours là, et la mesure de chaque plan est s'il fait face au mur carrément ou s'il masque les parties les plus difficiles avec l'optimisme. Le premier est comment vous finissez par le traverser. Le second est comment vous déplacez la date."
+    },
+    {
+      "type": "figure",
+      "image": "missions/tianwen1/01",
+      "kind": "photo",
+      "caption": "Le Tianwen-1 de la Chine a livré un orbiteur, un atterrisseur et le rover Zhurong à Mars à sa toute première tentative en 2021 — une séquence qu'aucune autre nation n'a gérée dans une seule mission. Mars est le mur précisément parce que tant de personnes l'ont brisé sur lui, et quelques-unes, d'un nombre croissant du monde, ne l'ont pas.",
+      "align": "wide",
+      "credit": "CNSA"
+    }
+  ]
+}

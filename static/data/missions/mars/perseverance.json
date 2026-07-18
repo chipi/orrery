@@ -1,6 +1,10 @@
 {
   "id": "perseverance",
-  "videos": [{ "id": "vid-54cee894b509" }],
+  "videos": [
+    {
+      "id": "vid-54cee894b509"
+    }
+  ],
   "agency": "NASA",
   "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
   "sector": "gov",
@@ -68,7 +72,10 @@
       "periapsis_km": null,
       "inclination_deg": null,
       "orbit_insertion_dv_km_s": null,
-      "source": "NASA Mars 2020 Press Kit (2021-02); JPL Mars 2020 EDL Telemetry"
+      "source": "NASA Mars 2020 Press Kit (2021-02); JPL Mars 2020 EDL Telemetry",
+      "edl_system": "skycrane",
+      "edl_duration_s": 351,
+      "touchdown_velocity_ms": 0.75
     },
     "totals": {
       "total_dv_km_s": 6.1,

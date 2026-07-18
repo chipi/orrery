@@ -1,0 +1,159 @@
+{
+  "title": "La nave se convierte en un mundo",
+  "dek": "Si no podemos viajar rápido, la única alternativa es viajar lentamente — cambiar velocidad por tiempo y dejar que la tripulación se convierta en un linaje. La nave generacional no es un plan que nadie está construyendo. Es un espejo que refleja todo lo que ya somos.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "El [ensayo de exploración interestelar](/essays/interstellar-exploration) hace la aritmética con honestidad, y la aritmética es despiadada. El sistema estelar más cercano, Alfa Centauri, se encuentra a 4,37 años luz de distancia. [Voyager 1](/missions?id=voyager-1), el objeto más rápido que la humanidad jamás ha lanzado en una trayectoria de escape del sistema solar, dejó la Tierra en 1977 y ahora —después de casi cinco décadas de vuelo— está a menos de 0,003 años luz. A ese ritmo, una nave dirigida a Alfa Centauri llegaría en aproximadamente 75.000 años. El [ensayo sobre propulsión](/essays/new-propulsion) cataloga las salidas: motores iónicos, velas solares, motores nucleotérmicos. Ayudan en los márgenes del sistema solar. Contra distancias interestelares, incluso los más ambiciosos de ellos apenas logran un factor de diez en velocidad. Diez veces más rápido que Voyager aún significa 7.500 años. No existe tecnología que podamos señalar, ni física que comprendamos, que cierre esa brecha a una vida humana."
+    },
+    {
+      "type": "prose",
+      "md": "Hay una respuesta a esto que no es una fantasía: aceptar la escala de tiempo. No comprimir el viaje — acomodarlo. Construir una nave lo suficientemente grande y autosuficiente para sustentar la vida humana no durante años sino durante siglos, y enviarla sabiendo que las personas que desembarquen en el destino serán los bisnietos, quizás los tataranietos, de las personas que embarcaron. La nave generacional. Aclaremos: no es un plan que nadie esté ejecutando actualmente, ni cerca de ejecutarlo. Ningún gobierno ha presupuestado para ello. Ningún programa de ingeniería trabaja hacia ello. Pertenece a la categoría de ideas que los físicos, demógrafos y eticistas toman en serio precisamente porque no están limitadas por la practicidad a corto plazo — experimentos mentales con dientes reales, donde el pensamiento revela cosas que las ambiciones más modestas oscurecen. El valor de imaginar una nave generacional no es la nave. Es lo que la nave requiere, y lo que esos requisitos dicen de nosotros."
+    },
+    {
+      "type": "prose",
+      "md": "Porque lo que dicen, principalmente, es que aún no comprendemos el problema que creemos comprender. Imaginamos la ingeniería — el casco, los motores, el reactor — y subestimamos todo lo demás. Una nave generacional no es una gran nave espacial. Es una civilización en una botella, lanzada a la oscuridad, sin reabastecimiento, sin rescate, y un retraso en las comunicaciones que crece, a lo largo de décadas de vuelo, de horas a días a semanas, hasta que el [ensayo sobre comunicaciones](/essays/comms) de \"cartas entre personas que ya se han mudado\" deja de ser una metáfora para convertirse en una descripción literal de la relación entre la nave y el hogar. Los problemas difíciles no son los de los libros de texto de ingeniería. Son los de los libros de texto de ecología, genética, gobernanza y filosofía, y esas disciplinas han estado pensando en ellos, en sus propios términos, durante mucho tiempo."
+    },
+    {
+      "type": "heading",
+      "text": "La respuesta lenta"
+    },
+    {
+      "type": "prose",
+      "md": "El intercambio es brutal pero coherente: sustituir tiempo por velocidad, y llevar una civilización en lugar de una tripulación. Cualquier misión tripulada a otra estrella debe viajar a una fracción significativa de la velocidad de la luz, sustentar la tripulación durante muchos siglos a velocidades más lentas, o hacer algo que aún no sabemos cómo hacer. La primera requiere propulsión que sigue siendo especulativa incluso en principio — acelerar una nave tripulada al diez por ciento de la velocidad de la luz requiere energía que empequeñece la producción total de la civilización humana. La tercera es ciencia ficción en el sentido preciso: no tenemos la física. La segunda opción son las naves generacionales, y la razón por la que persisten en la discusión seria es que no requieren nada que ya no sepamos cómo pensar. Sin física exótica. Solo la disposición de aceptar que el viaje es el trabajo de un linaje, no de una tripulación."
+    },
+    {
+      "type": "prose",
+      "md": "Una nave dirigida a Próxima Centauri al uno por ciento de la velocidad de la luz — un orden de magnitud más rápida que cualquier cosa que hayamos construido, pero no físicamente inconcebible — llegaría en aproximadamente 430 años. Aproximadamente el tiempo que nos separa de Shakespeare. Las personas que partieron no verían el destino; tampoco sus hijos, ni sus nietos, ni varias generaciones posteriores. La nave tendría que sustentar una sociedad humana funcional y reproductiva durante ese período completo, sin aporte externo y sin posibilidad de reabastecimiento, y un retraso en las comunicaciones hacia la Tierra que, dentro de décadas de la partida, crecería lo suficiente para que ninguna orientación en tiempo real desde casa fuera posible. El [tiempo actual de viaje de luz de una sola dirección de Voyager 1](/missions?id=voyager-1) a la Tierra es de aproximadamente 23 horas. Una nave a un año luz de distancia esperaría un año por cualquier respuesta. Tres años luz de distancia: tres años. El aislamiento no es metafórico. Es absoluto."
+    },
+    {
+      "type": "heading",
+      "text": "Un mundo cerrado"
+    },
+    {
+      "type": "prose",
+      "md": "El primer problema de ingeniería es el más fundamental: nada llega, y nada se va. Cada átomo de oxígeno, agua, nitrógeno, carbono y mineral traza que la tripulación necesita para todo el viaje debe ser lanzado con la nave o regenerado a bordo de ella, indefinidamente, sin fallos. El [sistema de apoyo vital ECLSS](/science/life-in-space/eclss-life-support) a bordo de la Estación Espacial Internacional es el sistema de apoyo vital de circuito cerrado más sofisticado que la humanidad ha operado — recupera agua de la humedad, la orina y el aire de la cabina; genera oxígeno mediante la electrólisis del agua; elimina el dióxido de carbono de la atmósfera. Es reabastecido por vehículos de carga varias veces al año. Elimina el reabastecimiento, y cada ineficiencia en el circuito se acumula: cada kilogramo de agua no recuperada, cada molécula de gas no reciclada, es un kilogramo o una molécula permanentemente perdidos del inventario total de la nave. Durante un viaje de cuatro siglos, la acumulación de pequeñas pérdidas se vuelve existencial. Un sistema que es 99,9 por ciento eficiente pierde, a lo largo de 430 años, el equivalente de su stock de trabajo completo muchas veces. El circuito debe ser, en la práctica, completo."
+    },
+    {
+      "type": "prose",
+      "md": "La única prueba de existencia de una ecología cerrada a escala es la Tierra misma, que ha estado haciendo funcionar sus circuitos durante 4.500 millones de años en un sustrato del tamaño de un planeta con aporte únicamente de la luz solar. Todo lo más pequeño ha sido intentado y ha tenido dificultades. El intento más instructivo — porque fue serio, bien financiado y fracasó de una manera que enseñó lecciones precisas — fue Biosfera 2, la estructura sellada de vidrio y acero de 1,27 hectáreas construida en el desierto de Arizona e inhabitada por ocho personas de septiembre de 1991 a septiembre de 1993. Los diseñadores la concibieron como una demostración de una ecología cerrada autosuficiente: cinco biomas, una granja, un océano, un pantano, una selva tropical, un desierto, todo sellado dentro de un caparazón a través del cual solo pasaban la luz solar y la electricidad. Se suponía que la tripulación respiraría aire regenerado por las plantas, bebería agua reciclada a través del sistema y comería alimentos que cultivaba ella misma."
+    },
+    {
+      "type": "prose",
+      "md": "Lo que sucedió en cambio fue instructivo. En cuestión de meses, los niveles de oxígeno comenzaron a caer — del 21 por ciento normal en la Tierra al 14,5 por ciento en dos años, el equivalente a vivir a una altitud de 4.000 metros. El culpable resultó ser el hormigón en la estructura misma: estaba absorbiendo dióxido de carbono más rápido de lo que la biología estaba produciendo oxígeno, un efecto que los diseñadores no habían modelado. Las glorias matutinas, introducidas como cultivo alimentario, escaparon al bioma de la selva tropical y desplazaron otras plantas. Diecinueve de las veinticinco especies vertebradas introducidas murieron. La tripulación perdió peso corporal con la producción de la granja y tuvo que suplementarse con reservas de emergencia. El oxígeno tuvo que ser inyectado dos veces para mantener la tripulación funcional. Dos años, en una estructura de 1,27 hectáreas con ocho personas, con intervención activa posible desde el exterior en cualquier momento: las lecciones de Biosfera 2 para un viaje sellado de cuatro siglos no son alentadoras. Sin embargo, son exactas."
+    },
+    {
+      "type": "prose",
+      "md": "Una nave generacional tendría que ser una ecología, no meramente un sistema de apoyo vital. El microbioma del suelo, los ciclos de descomposición, los flujos de nutrientes que mantienen las tierras de cultivo sin agotarse son todos procesos biológicos que requieren sus propias poblaciones de organismos, sus propios equilibrios, su propio espacio. La agricultura sola no puede cerrar estos circuitos; los circuitos que los cierran son los que Biosfera 2 descubrió que no podía mantener. Los modos de fallo de una ecología cerrada no son dramáticos. Son sutiles — acumulaciones lentas, sumideros inesperados, una especie prosperando a expensas del equilibrio del sistema — y operan en escalas de tiempo que superan cualquier experimento que hayamos realizado. Después de Biosfera 2, las preguntas ecológicas siguen siendo sustancialmente sin respuesta. Para un viaje de cuatro siglos, son las primeras preguntas, no las últimas."
+    },
+    {
+      "type": "figure",
+      "image": "essays/generational-starships/closed-loop",
+      "kind": "diagram",
+      "caption": "Nada llega y nada se va. La ecología tiene que funcionar ininterrumpidamente durante siglos — aire, agua y comida reciclados eternamente, sin reabastecimiento y sin control de tierra para llamar. Biosfera 2, un ecosistema sellado de tres acres, no pudo mantener su propio oxígeno estable ni siquiera durante dos años.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "fleet/iss/01",
+      "kind": "photo",
+      "caption": "La Estación Espacial Internacional es lo más parecido a un mundo cerrado que hemos construido — y es reabastecida desde la Tierra cada pocas semanas. Una nave que debe cerrar completamente el circuito, durante mil años, es un problema de un orden completamente diferente.",
+      "align": "wide",
+      "credit": "NASA"
+    },
+    {
+      "type": "heading",
+      "text": "La tripulación es una población"
+    },
+    {
+      "type": "prose",
+      "md": "El segundo problema es genético, y tiene un nombre: población viable mínima. Una especie que se reproduce sexualmente necesita un cierto número de individuos reproductores para mantener la diversidad genética a lo largo de generaciones — para evitar la depresión por consanguinidad, para conservar el depósito de variación que permite la adaptación a la enfermedad, el estrés y el cambio ambiental. La pregunta para una nave generacional es: ¿cuántas personas necesitas a bordo para llegar al destino con una población que sea genéticamente saludable, es decir, no tan consanguínea como para haber perdido la variación que la supervivencia a largo plazo requiere?"
+    },
+    {
+      "type": "prose",
+      "md": "Las estimaciones no son tranquilizadoras. Un estudio de 2014 del antropólogo Cameron Smith de la Universidad Estatal de Portland, basándose en modelos de genética de poblaciones y las condiciones específicas de un viaje interestelar multigeneracional, concluyó que sería necesaria una población fundadora mínima de alrededor de 14.000 personas para sustentar la salud genética durante un viaje multigeneracional de 150 años, teniendo en cuenta la enfermedad, los accidentes y la varianza natural en el éxito reproductivo. Las estimaciones anteriores y más optimistas — algunas sugiriendo unos pocos cientos, otras unos pocos miles — típicamente asumían un comportamiento reproductivo ideal, sin eventos de cuello de botella, y condiciones de gestión genética (esencialmente, cría controlada) que la mayoría de los eticistas encontraría problemática. Incluso los análisis más conservadores convergen en un número que no es una tripulación en ningún sentido convencional. Es un pueblo."
+    },
+    {
+      "type": "prose",
+      "md": "Más allá de la genética, el problema de la población es cultural. Las sociedades humanas a lo largo de docenas de generaciones no permanecen estáticas. Los idiomas cambian; las religiones evolucionan o desaparecen; los sistemas de gobernanza que parecen estables durante décadas se fracturan durante siglos; la memoria institucional de por qué existen las reglas se erosiona y las reglas se calcifican en dogma o se disuelven en anomia. Un viaje de cuatro siglos de la salida a la llegada abarca aproximadamente el mismo tiempo que la totalidad de la Revolución Científica — de Copérnico a través de Newton a través de Darwin a Einstein. La sociedad que llegue al destino no será la sociedad que partió, en ningún sentido cultural que importe. Si aún entenderá la misión, si aún tendrá el conocimiento técnico para ejecutar el aterrizaje y el establecimiento de una colonia, si aún llevará adelante las habilidades y las estructuras sociales necesarias para sobrevivir en un entorno alienígena — estas no son preguntas de ingeniería. Son preguntas sobre cómo se transmite el conocimiento a lo largo de generaciones, cómo persisten o fracasan las instituciones, cómo se mantiene la identidad bajo condiciones de confinamiento radical e aislamiento radical. La historia no es optimista en ninguna de ellas."
+    },
+    {
+      "type": "prose",
+      "md": "La [investigación de vuelos espaciales de larga duración](/science/life-in-space/long-duration-effects) que hemos realizado — desde las tripulaciones del [Skylab](/missions?id=skylab-2) de los años setenta hasta los años de [Mir](/programs/mir) y la presencia humana continua a bordo del [programa ISS](/programs/iss) desde 2000 — aborda la [dinámica de la tripulación](/science/life-in-space/crew-dynamics-psychology) a lo largo de meses, no décadas. El vuelo espacial humano continuo más largo registrado es de aproximadamente 437 días. Sabemos mucho sobre lo que le sucede a un cuerpo en la [microgravedad](/science/life-in-space/microgravity-physiology) durante un año. Sabemos casi nada sobre lo que le sucede a una sociedad durante un siglo, en confinamiento, bajo las presiones específicas de un mundo sellado sin exterior. El [ensayo del cuerpo en la oscuridad](/essays/the-body-in-the-dark) cubre el arco fisiológico. Los arcos sociológico y psicológico son más largos, menos estudiados, y en algunos aspectos más alarmantes."
+    },
+    {
+      "type": "figure",
+      "image": "essays/generational-starships/the-population",
+      "kind": "diagram",
+      "caption": "Los pasajeros no son una tripulación sino una población, y tiene que mantenerse genéticamente saludable a lo largo de docenas de generaciones. Un estudio sitúa el mínimo cerca de 14.000 personas para un viaje de 150 años — no una tripulación que entrenas, sino una sociedad que lanzas, con su propia gobernanza, cultura y cambio.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Nacido en la misión"
+    },
+    {
+      "type": "prose",
+      "md": "Aquí está la pregunta a la que la mayor parte de la discusión sobre naves generacionales eventualmente llega y luego tiende a pasar rápidamente, porque no tiene una respuesta cómoda. Las personas que abordan la nave consienten el viaje. Son adultos que han elegido, conscientemente, dar sus vidas a un proyecto cuya finalización no verán — una opción que tiene precedentes en la historia humana, desde los constructores de catedrales hasta los plantadores de huertos que sus nietos cosecharían. La opción es inusual pero es, al menos, una opción."
+    },
+    {
+      "type": "prose",
+      "md": "Las personas nacidas en la nave no hicieron esa opción. Heredan un mundo sellado y una tarea — llegar a una estrella, establecer una colonia — que fue decidida por personas que murieron antes que ellos, en una época y un contexto que solo pueden conocer a través de registros. No pueden irse. No pueden rechazar la misión sin amenazar la supervivencia de todos a bordo. La nave es su mundo entero: su política es la única política, sus normas sociales las únicas normas que jamás han conocido, su misión la condición definitoria de cada vida que jamás han observado. ¿En qué sentido son libres? ¿En qué sentido es ético que los fundadores tomen, en su nombre, una opción tan total?"
+    },
+    {
+      "type": "prose",
+      "md": "El filósofo S. Matthew Liao y otros que trabajan en ética reproductiva han abordado esta pregunta directamente, y sus conclusiones no son simples. El argumento estándar para las naves generacionales — que los descendientes estarán contentos de existir, y que existir en una nave es mejor que no existir en absoluto — se encuentra con el bien conocido problema de la no identidad: no puedes perjudicar a alguien por traerlo a la existencia, porque la no existencia no es un daño que pueda compararse con la existencia. Pero esto corta de manera incómoda en ambas direcciones. Si no puedes perjudicar a los descendientes no nacidos lanzándolos a un viaje sellado de varios siglos, tampoco puedes, por la misma lógica, hacer que el viaje sea un regalo para ellos. No se les está dando una opción. Se les está dando un mundo, y luego se les dice que el mundo tiene una tarea, y que la tarea es innegociable, y que no hay salida. Los fundadores de una nave generacional estarían tomando la decisión más consequente e irreversible en la historia humana: comprometiendo no solo a sí mismos sino a todos sus descendientes, durante siglos, a un proyecto del que no pueden retirarse. La ética de esa decisión no ha sido resuelta, y la posición honesta es que podrían no serlo — que la nave generacional se encuentra en la intersección de dos imperativos morales genuinos (expandir el alcance de la vida versus la libertad de los individuos para determinar sus propias condiciones) que no pueden satisfacerse completamente."
+    },
+    {
+      "type": "heading",
+      "text": "¿Llegarán primero?"
+    },
+    {
+      "type": "prose",
+      "md": "Incluso concediendo todo lo anterior — la ecología, la genética, la gobernanza, la ética — hay un problema más, y es el más extraño. Fue articulado claramente por el matemático Andrew Kennedy en un artículo de 2006 en la Journal of the British Interplanetary Society, y se conoce por el nombre del \"cálculo de la espera\". El argumento es este: si lanzas una nave lenta ahora, hacia Alfa Centauri, y la tecnología humana continúa mejorando — si, décadas o siglos en el futuro, desarrollamos sistemas de propulsión que permiten viajar al diez, veinte o cincuenta por ciento de la velocidad de la luz — entonces una nave más rápida lanzada más tarde podría partir después de tu nave lenta pero llegar antes, o al mismo tiempo. En ese caso, ¿fue racional partir temprano? Las personas que partieron en la nave lenta pasarían siglos en tránsito; las personas que partieron en la nave rápida podrían pasar décadas o años; podrían llegar a encontrar la colonia ya establecida por los descendientes de la nave lenta, o podrían — si la nave lenta aún no hubiera llegado — ser los primeros allí, a pesar de haber partido más tarde."
+    },
+    {
+      "type": "prose",
+      "md": "Kennedy elaboró las matemáticas de esto. Dadas suposiciones razonables sobre el ritmo de mejora tecnológica en propulsión (basadas en tasas históricas), el momento de salida óptimo para cualquier destino dado no es \"lo antes posible\" sino \"cuando la tecnología es lo suficientemente buena como para que esperar más tiempo produzca retornos decrecientes\". Para Alfa Centauri, el cálculo de la espera sugiere que una nave lanzada antes de un cierto umbral de capacidad de propulsión sería irracional — que esperar mejor tecnología siempre valdría la pena, hasta cierto punto. La paradoja es que este razonamiento puede actualizarse indefinidamente: la nave que estás a punto de lanzar siempre está en peligro de ser alcanzada por una nave mejor lanzada más tarde, así que la opción racional siempre parece ser esperar. Es un dilema genuino, y no ha sido resuelto. Las únicas respuestas coherentes implican aceptar que algunos viajes pioneros serán alcanzados y que esto es aceptable, o postular un escenario en el que el progreso tecnológico se estabiliza y la espera genuinamente deja de ser racional. Ninguna respuesta es completamente satisfactoria."
+    },
+    {
+      "type": "figure",
+      "image": "essays/generational-starships/the-wait-calculation",
+      "kind": "diagram",
+      "caption": "Y hay una paradoja incluso en irse. Una nave lanzada lentamente ahora podría ser alcanzada por una más rápida construida siglos después — llegando para encontrar el destino ya establecido. Si la espera siempre puede ganarte, ¿cuándo, si es que alguna vez, es racional irse?",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "El espejo"
+    },
+    {
+      "type": "prose",
+      "md": "Aquí, al final de esta colección, está lo que la nave generacional realmente es. No el destino — no hay misión ni estrella. El experimento mental es un espejo, y lo que refleja es el mundo que ya habitamos."
+    },
+    {
+      "type": "prose",
+      "md": "Considera lo que realmente es una nave generacional. Un mundo cerrado y finito. Una ecología completamente cerrada que no puede fallar. Una población de humanos que no eligieron las condiciones de su nacimiento y que están comprometidos, por circunstancias que no crearon, en el mantenimiento de sistemas que no construyeron. Un conjunto de recursos que no pueden ser reabastecidos desde el exterior. Un problema de gobernanza que abarca generaciones, con decisiones tomadas hoy vinculando personas siglos después. Un retraso en la comunicación — no desde un control de tierra distante, sino de cada generación anterior a cada una posterior — que significa que las personas que dirigen el sistema ahora siempre trabajan con instrucciones escritas por personas que no podrían haber anticipado la situación presente, dejando instrucciones para personas que enfrentarán circunstancias imposibles de prever."
+    },
+    {
+      "type": "prose",
+      "md": "Esta no es una descripción de una nave hipotética. Es una descripción de la Tierra. La ecología cerrada es la biosfera — los mismos circuitos de carbono, nitrógeno y agua que Biosfera 2 intentó en miniatura y encontró que no podía mantener durante dos años. La [exposición a la radiación](/science/life-in-space/radiation-exposure), la [pérdida ósea](/science/life-in-space/bone-density-loss), la [deriva vestibular](/science/life-in-space/vestibular-adaptation) que el ensayo del cuerpo rastrea en astronautas individuales son la versión de enfoque nítido de una versión más lenta y civilizacional del mismo problema: los humanos evolucionaron para condiciones que están cambiando a su alrededor, y la escala de tiempo de adaptación no es la escala de tiempo del cambio. El [desafío de la producción de alimentos](/science/life-in-space/food-production-off-world) que los diseñadores de una nave deben resolver — cómo alimentar a miles indefinidamente en un sustrato finito sin importaciones — es el mismo desafío que la agricultura global enfrenta, a escala planetaria, con una población que aún está creciendo. La pregunta de gobernanza — quién decide, por cuánto tiempo, en nombre de personas aún no nacidas — es la pregunta exacta que la política climática, el almacenamiento de residuos nucleares, los sistemas de pensiones y la gestión de la deuda intentan y en gran medida no responden."
+    },
+    {
+      "type": "prose",
+      "md": "Nada de esto es cómodo. El experimento mental de la nave generacional no es reconfortante — es aclarador, que es una cosa diferente. Elimina la suposición de que somos pasajeros temporales en este mundo, que los sistemas de los que dependemos son problema de otro, que las decisiones que tomamos sobre la atmósfera, los océanos y el suelo son reversibles o aplazables de formas que las decisiones que los fundadores de una nave toman no lo son. No lo son. Hemos sido lanzados. La nave — esta, la real, la única que jamás hemos habitado — ya está en camino. Las personas que lleguen a lo que sea que sea el destino de esta civilización serán los descendientes de las personas que tomaron, o no tomaron, las decisiones que la perspectiva larga ha estado circulando durante la duración de esta colección."
+    },
+    {
+      "type": "prose",
+      "md": "Los [Voyagers](/missions?id=voyager-1) continuarán volando. [Pioneer 10](/missions?id=pioneer-10) sigue en camino, silenciosa ahora, su transmisor hace mucho tiempo muerto, navegando por el espacio interestelar en el impulso de un lanzamiento de 1972. [Pioneer 11](/missions?id=pioneer-11) lo mismo. Son las extensiones físicas más lejanas de esta civilización, y la sobrevivirán — probablemente sobrevivirán al Sol, navegando por la galaxia durante miles de millones de años después de que todas las estructuras humanas se hayan disuelto. Llevan placas, porque las personas que las construyeron pensaron, correctamente, en la perspectiva larga: no solo lo que estas naves espaciales harían, sino lo que significarían para cualquiera que las encontrara después de que nos fuéramos. Ese instinto — construir para destinatarios a quienes nunca conocerás, enviar algo hacia un tiempo que no puedes ver — es el impulso de la nave generacional en miniatura. Es también, en la lectura más honesta de dónde estamos, el único impulso que podría importar. Somos la tripulación. Ya estamos en vuelo. La pregunta que la nave generacional plantea — ¿puede una civilización mantener, a lo largo de generaciones, los sistemas, las intenciones y el cuidado que la supervivencia requiere? — no es una pregunta sobre una nave que no existe. Es la pregunta de este siglo, hecha en el lenguaje de las estrellas."
+    },
+    {
+      "type": "figure",
+      "image": "missions/apollo8/01",
+      "kind": "photo",
+      "caption": "Earthrise, fotografiado desde Apollo 8 en 1968 — el todo del único mundo cerrado y finito que jamás hemos conocido, llevando su linaje a través de la oscuridad sin reabastecimiento y sin control de tierra. La nave generacional es un experimento mental sobre esta: ya somos la tripulación de una.",
+      "align": "wide",
+      "credit": "NASA / William Anders"
+    }
+  ]
+}

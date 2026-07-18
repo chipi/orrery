@@ -1,0 +1,15 @@
+{
+  "title": "Sky-Crane",
+  "intro_sentence": "Het raketaangedreven platform dat een rover aan kabels naar het oppervlak laat zakken en dan wegvliegt — het landingssysteem dat Curiosity en Perseverance op Mars plaatste.",
+  "narrative_101": [
+    "Vroege Marsrovers waren klein genoeg om naar beneden te stuiteren in een cocon van airbags. Maar Curiosity was zo groot als een auto — veel te zwaar voor airbags — en grote landingspoten onder de rover plaatsen zou hebben betekend dat deze hoog op een omvangrijk platform werd gezet, waarna het er op een of andere manier af moest rijden. NASAs antwoord was vreemder en eleganter: de sky-crane.",
+    "Nadat de hitteschild en parachute hun werk hebben gedaan, neemt een raketaangedreven daaltrap het over en vuurt acht motoren af om tot een bijna-zweven op enkele meters hoogte af te remmen. Dan, in plaats van zelf te landen, laat het de rover eronder zakken aan een reeks kabels — als een helikopter die een last plaatst — totdat de wielen van de rover de grond raken. De rover is zelf zijn landingsgestel.",
+    "Op het moment dat de rover beneden is en het gewicht van de kabels afvalt, snijdt de daaltrap de kabels door en vliegt weg om op veilige afstand neer te storten, zodat zijn uitlaat en puin de rover nooit raken. De hele reeks — zweven, zakken, landen, wegvliegen — duurt slechts enkele seconden, en het heeft nu twee keer gewerkt: voor Curiosity in 2012 en Perseverance in 2021."
+  ],
+  "body_paragraphs": [
+    "De sky-crane lost twee problemen tegelijk op. Het houdt de raketmotoren hoog, zodat hun pluimen geen krater graven of puin tegen de rover gooien, en het levert de rover direct op zijn wielen af, klaar om te rijden — geen hellingen, geen landingsplatform om af te gaan. De prijs is een choreografie zonder foutmarge, autonoom uitgevoerd, minuten na een vurige ingang, terwijl de Aarde te ver weg is om in real-time te helpen.",
+    "Het is het slothoofdstuk van de zeven minuten van terreur: ingangsverwarming, dan de supersone parachute, dan scheiding van de hitteschild, dan de aangedreven afdaling, dan de sky-crane-afdaling en wegvliegen — elke stap moet op tijd plaatsvinden of de missie gaat verloren bij landing. Slechts een handvol landen hebben zacht op Mars geland; de sky-crane is de meest gedurfde manier waarop het is gedaan.",
+    "Op `/fly`, vlieg Curiosity of Perseverance in `?descent=1` en bekijk hoe de kabels van de daaltrap zich uitrollen onder de parachute-en-terugsturingsvolgorde, de rover naar het oppervlak latend zakken voordat de trap wegvliegt — de sky-crane-beweging zichtbaar gemaakt."
+  ],
+  "diagram_caption": "Sky-crane: een raketaangedreven daaltrap zweeft en laat de rover aan kabels naar het oppervlak zakken, snijdt vervolgens de kabels door en vliegt weg."
+}

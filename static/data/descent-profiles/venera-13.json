@@ -1,0 +1,21 @@
+{
+  "missionId": "venera-13",
+  "siteId": "venera-13",
+  "body": "venus",
+  "landingSite": { "lat": -7.55, "lon": 303.69 },
+  "entryState": { "altitudeM": 130000, "velocityMs": 10700, "flightPathAngleDeg": 65 },
+  "entryMassKg": 1650,
+  "entryCdA": 1.6,
+  "archetype": "VENUS_AEROSHELL",
+  "params": {
+    "chuteDeployAltM": 62000,
+    "terminalHandoffAltM": 47000,
+    "parachuteCdA": 24,
+    "terminalCdA": 3.2,
+    "backshellKg": 200
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Venera 13 mission — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1981-106D" }
+  ]
+}

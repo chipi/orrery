@@ -1,0 +1,15 @@
+{
+  "title": "Eindsnelheid",
+  "intro_sentence": "Waarom een vallende lander stopt met versnellen — het evenwicht tussen luchtweerstand en gewicht dat bepaalt hoe snel een parachute, of de lucht van een planeet, een ruimtevaartuig laat dalen.",
+  "narrative_101": [
+    "Laat iets vallen en het versnelt — maar niet voor altijd. Hoe sneller het valt, hoe harder de lucht terugduwt, totdat de opwaartse luchtweerstand precies het neerwaartse gewicht in evenwicht houdt. Vanaf dat moment stopt het object met versnellen en valt het met een constante eindsnelheid. Een parachute werkt door de weerstandskant van dat evenwicht enorm te maken, zodat het evenwicht wordt bereikt bij een zachte snelheid.",
+    "Hoe zacht hangt af van de lucht. Mars heeft een atmosfeer ongeveer 1% zo dik als die van de aarde, dus zelfs een enorme supersonische parachute — die van Curiosity was meer dan 20 meter breed — vertraagt het voertuig slechts tot enkele honderden kilometer per uur. Dat is veel te snel om te landen, daarom hebben marslanders altijd een tweede fase nodig: tegenstuwraketten, airbags of een sky-crane om het werk af te maken.",
+    "Venus is het tegenovergestelde. Zijn atmosfeer is zo dicht — ongeveer 90 keer de oppervlaktedruk van de aarde — dat een Venera-lander slechts een kleine parachute hoog boven nodig had, deze daarna kon afwerpen en eenvoudig naar het oppervlak kon zinken op een bescheiden weerstandsplaat, zich gedurende een goed uur omlaag driftend. En de maan, zonder atmosfeer, heeft geen eindsnelheid: een maanlander moet elke meter per seconde van zijn snelheid met zijn motor opheffen, helemaal tot aan de landing."
+  ],
+  "body_paragraphs": [
+    "Het doorslaggevende getal is de balistische coëfficiënt — massa gedeeld door weerstandsoppervlak. Een licht voertuig met een grote parachute (lage balistische coëfficiënt) settelt op een lage eindsnelheid; een zwaar, compact voertuig (hoge balistische coëfficiënt) valt sneller. Ontwerpers wegen beide af: een grotere parachute geeft een langzamer descent maar weegt meer en is moeilijker supersoon in dunne lucht in te zetten.",
+    "Eindsnelheid verandert ook met hoogte, omdat lucht dunner wordt met toenemende hoogte. Een Venuslandingsvaartuig daalt het snelst hoog boven, waar de lucht het dunst is, en vertraagt voortdurend terwijl het in de dichtere lagere atmosfeer zinkt — landing met een zacht tempo van slechts enkele meters per seconde zelfs zonder actieve remming op het einde.",
+    "Op `/fly` is dit waarom de drie hemellichamen er zo verschillend uitzien in `?descent=1`. Een marsdescent verliest het meeste van zijn snelheid onder de parachute, daarna wordt het overgedragen aan een aangedreven of airbag-landing; een Venusdescent is een lange, langzame drift onder alleen luchtweerstand; een maandescent wordt van begin tot eind aangedreven, omdat er geen lucht is om te helpen."
+  ],
+  "diagram_caption": "Eindsnelheid: luchtweerstand stijgt met snelheid totdat deze het gewicht in evenwicht houdt; een parachute vergroten het weerstandsoppervlak zodat het evenwicht wordt bereikt bij een zachte daalsnelheid."
+}

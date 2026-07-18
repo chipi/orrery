@@ -1,0 +1,15 @@
+{
+  "title": "Aquecimento de Entrada",
+  "intro_sentence": "Por que atingir uma atmosfera a quilómetros por segundo aquece uma espaçonave a milhares de graus — e como um escudo térmico suporta o impacto.",
+  "narrative_101": [
+    "Uma espaçonave chegando a um planeta se move rapidamente — 5 a 6 km/s em Marte, quase 11 km/s em Vênus. Quando ela colide com o topo da atmosfera, não é tanto uma fricção contra o ar quanto uma compressão dele. O gás acumulando na frente do veículo é comprimido tão violentamente que aquece a milhares de graus e brilha — a bola de fogo que você vê ao redor de qualquer cápsula retornando.",
+    "É um mito comum que esse calor vem de fricção. Quase todo ele vem de compressão: a espaçonave não consegue afastar o ar rápido o suficiente, então uma onda de choque se forma logo à frente dela e o gás preso superaquece. Quanto mais rápida a entrada, mais quente a onda de choque — é por isso que Vênus, com as entradas mais rápidas e o ar mais denso, é o ambiente de entrada mais severo do sistema solar.",
+    "O veículo sobrevive protegido por um escudo térmico — uma casca romba e ablativa que enfrenta o fluxo. Romba é proposital: um nariz afiado concentraria o calor, enquanto um escudo amplo mantém a onda de choque a uma distância e distribui a carga. A superfície do escudo se carboniza e lascas saem propositalmente, levando o calor embora, de modo que a espaçonave protegida atrás fica fresca."
+  ],
+  "body_paragraphs": [
+    "Dois picos importam durante a entrada e eles não coincidem. O aquecimento máximo acontece alto, onde o veículo ainda está rápido e a taxa de aquecimento (que escala aproximadamente com a velocidade ao cubo) é enorme mesmo no ar fino. A desaceleração máxima acontece mais baixo, no ar mais denso, onde a força sobre o veículo é maior — entradas em Marte atingem picos de 8–15 g, entradas em Vênus de 100–350 g. A estrutura de um lander é dimensionada para o pico de g; seu escudo térmico é dimensionado para o pico de calor.",
+    "A bainha de plasma que brilha ao redor do veículo também bloqueia rádio: durante um ou dois minutos no aquecimento máximo, gás ionizado envolve a espaçonave e corta as comunicações — o famoso apagão de entrada. Os controladores simplesmente esperam; o veículo está voando uma sequência pré-carregada, por conta própria, através da parte mais quente da trajetória.",
+    "Em `/fly`, o medidor de aquecimento aerodinâmico do HUD de descida é um substituto relativo para isso — ele sobe enquanto o veículo penetra na atmosfera e atinge o pico bem antes do pouso, depois cai conforme o veículo desacelera. Ative a camada Science-Lens de arrasto durante qualquer entrada em Marte ou Vênus com `?descent=1` para ver a desaceleração aumentar conforme o ar fica mais denso."
+  ],
+  "diagram_caption": "Aquecimento de entrada: um escudo térmico rombo mantém uma onda de choque de arco à frente do veículo; o gás comprimido superaquece e brilha enquanto o escudo ablata o calor embora."
+}

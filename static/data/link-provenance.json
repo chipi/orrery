@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-14T11:37:53.793Z",
+  "generated_at": "2026-07-18T13:03:38.108Z",
   "script_version": "build-link-provenance@1.0.0",
-  "commit_sha": "8a10517dec095a0ab2955a18121cc3fb14a23fe4",
+  "commit_sha": "f93bd47897c10f9c601a48ce3ca8ec882468d5dc",
   "entries": [
     {
       "id": "67p__9db103aaeff4",
@@ -131,6 +131,48 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "achernar__31210281561c",
+      "entity_id": "achernar",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Achernar",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "acrux__c36d85d0a8da",
+      "entity_id": "acrux",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Acrux",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "adhara__a3f65a918b82",
+      "entity_id": "adhara",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Adhara",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "akatsuki__6299f9d5ea89",
       "entity_id": "akatsuki",
       "category": "mission",
@@ -199,6 +241,174 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-14"
+    },
+    {
+      "id": "algol__3a5344a7c0b9",
+      "entity_id": "algol",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Algol",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "alhena__6c8e1b02f0d5",
+      "entity_id": "alhena",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Alhena",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "alioth__1a2969204c62",
+      "entity_id": "alioth",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Alioth",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "alkaid__824089309296",
+      "entity_id": "alkaid",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Alkaid",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "almach__a15c7ee19379",
+      "entity_id": "almach",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Almach",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "alnair__eb4612473638",
+      "entity_id": "alnair",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Alnair",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "alnilam__df573b37218f",
+      "entity_id": "alnilam",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Alnilam",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "alnitak__5773829aa22c",
+      "entity_id": "alnitak",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Alnitak",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "alphard__1b29c80b1d53",
+      "entity_id": "alphard",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Alphard",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "alphecca__5b1483db1eb1",
+      "entity_id": "alphecca",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Alphecca",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "alpheratz__0d0118a6d974",
+      "entity_id": "alpheratz",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Alpheratz",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "altair__694615b253de",
+      "entity_id": "altair",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Altair",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "antares__c446642ddf8c",
@@ -1433,6 +1643,20 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "atria__6df8d43e001f",
+      "entity_id": "atria",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Atria",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "atv__dec5aa39777c",
       "entity_id": "atv",
       "category": "fleet",
@@ -1487,6 +1711,20 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "avior__8cbb3dd70737",
+      "entity_id": "avior",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Avior",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "axemu__c9995ba2e380",
@@ -1753,6 +1991,20 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "bellatrix__e3d0c5b2bb1a",
+      "entity_id": "bellatrix",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Bellatrix",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "bennu__8bcee115eee2",
@@ -2147,6 +2399,20 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "canopus__0bb73a5a1cf5",
+      "entity_id": "canopus",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Canopus",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "cape-canaveral-lc-36b__1ede218c2dac",
       "entity_id": "cape-canaveral-lc-36b",
       "category": "fleet",
@@ -2257,6 +2523,20 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "capella__cb6a47208e8d",
+      "entity_id": "capella",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Capella",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "cargo_dragon__7cfe513f5641",
@@ -2495,6 +2775,20 @@
       "kind": "science-publisher",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-06-28"
+    },
+    {
+      "id": "castor__6d876a0fb09d",
+      "entity_id": "castor",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Castor",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "ceres__49c6ef445a68",
@@ -3939,6 +4233,34 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "deneb__f8c496a63b19",
+      "entity_id": "deneb",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Deneb",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "denebola__7b1c0da2908f",
+      "entity_id": "denebola",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Denebola",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "destiny__2688fd7b3230",
       "entity_id": "destiny",
       "category": "iss-module",
@@ -4051,6 +4373,20 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "diphda__44494a2d3e1e",
+      "entity_id": "diphda",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Diphda",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "discovery__fbf9542c8326",
       "entity_id": "discovery",
       "category": "fleet",
@@ -4135,6 +4471,20 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "dubhe__244e8a24c8d8",
+      "entity_id": "dubhe",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Dubhe",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "earth__00686330a73b",
       "entity_id": "earth",
       "category": "planet",
@@ -4203,6 +4553,20 @@
       "kind": "educational",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "elnath__5269a3692913",
+      "entity_id": "elnath",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Elnath",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "emu__476e7605ee3b",
@@ -4791,6 +5155,20 @@
       "kind": "educational",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "gacrux__4ef560ee6dcd",
+      "entity_id": "gacrux",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Gacrux",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "gaganyaan__ae27ff48c276",
@@ -5717,6 +6095,20 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "hadar__7c229174b381",
+      "entity_id": "hadar",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Hadar",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "hakuto-r__acc43c81a29a",
       "entity_id": "hakuto-r",
       "category": "fleet",
@@ -5771,6 +6163,20 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "hamal__6c5359f2ee4c",
+      "entity_id": "hamal",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Hamal",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "harmony__fcad2bbea4d7",
@@ -7131,6 +7537,20 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "kaus-australis__f06727abfd37",
+      "entity_id": "kaus-australis",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Kaus_Australis",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "kepler__0f64fbb29582",
       "entity_id": "kepler",
       "category": "fleet",
@@ -7353,6 +7773,20 @@
       "kind": "vendor-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "lalande-21185__151f4b2e991f",
+      "entity_id": "lalande-21185",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Lalande_21185",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "landsat__23558f08d393",
@@ -8741,6 +9175,20 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "luytens-star__a8a7a341709d",
+      "entity_id": "luytens-star",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Luyten's_Star",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "lvm3__551986241115",
       "entity_id": "lvm3",
       "category": "fleet",
@@ -9665,6 +10113,34 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "menkalinan__dfa62bdcc501",
+      "entity_id": "menkalinan",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Menkalinan",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "menkent__279973d5032e",
+      "entity_id": "menkent",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Menkent",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "menoetius__b02947f72d22",
       "entity_id": "menoetius",
       "category": "small-body",
@@ -9931,6 +10407,48 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "miaplacidus__032c8b0a431e",
+      "entity_id": "miaplacidus",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Miaplacidus",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "mimosa__658c458e3ea4",
+      "entity_id": "mimosa",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Mimosa",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "mintaka__1e016e576a5e",
+      "entity_id": "mintaka",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Mintaka",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "mir__c2bd70cf57be",
       "entity_id": "mir",
       "category": "fleet",
@@ -9971,6 +10489,20 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "mirfak__abc4de721bff",
+      "entity_id": "mirfak",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Mirfak",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "mmx__88ea3070fd2d",
@@ -10433,6 +10965,20 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "nunki__1d9b6fe778b9",
+      "entity_id": "nunki",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Nunki",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "o3b__208f6f390128",
@@ -11149,6 +11695,20 @@
       "last_verified": "2026-06-28"
     },
     {
+      "id": "peacock__2323d7de7750",
+      "entity_id": "peacock",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Peacock",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "perseverance__c796de99d764",
       "entity_id": "perseverance",
       "category": "mission",
@@ -11793,6 +12353,20 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "pollux__9c66f98abd34",
+      "entity_id": "pollux",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Pollux",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "polymele__8bed5b54c659",
       "entity_id": "polymele",
       "category": "small-body",
@@ -11903,6 +12477,20 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "procyon__45b7e69758df",
+      "entity_id": "procyon",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Procyon",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "progress_ms__05de6bed67ee",
@@ -12437,6 +13025,20 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "rasalhague__d87156267152",
+      "entity_id": "rasalhague",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Rasalhague",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "rassvet__04a561b7b5f5",
       "entity_id": "rassvet",
       "category": "iss-module",
@@ -12479,6 +13081,20 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "regulus__4a90fd7097c3",
+      "entity_id": "regulus",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Regulus",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "rigel__779eafb3f1d7",
       "entity_id": "rigel",
       "category": "star",
@@ -12491,6 +13107,20 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-14"
+    },
+    {
+      "id": "rigil-kentaurus__077581abf720",
+      "entity_id": "rigil-kentaurus",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Alpha_Centauri",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "rosetta__c16c3c4e7708",
@@ -12603,6 +13233,34 @@
       "kind": "science-publisher",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-06-28"
+    },
+    {
+      "id": "sadr__ee9d7f916df2",
+      "entity_id": "sadr",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Sadr",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
+      "id": "saiph__870a28b799af",
+      "entity_id": "saiph",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Saiph",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "salyut-1__8fba44786b30",
@@ -12855,6 +13513,20 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "sargas__c057b2d4de4e",
+      "entity_id": "sargas",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Sargas",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "saturn__1562983c0383",
@@ -14341,6 +15013,20 @@
       "last_verified": "2026-07-07"
     },
     {
+      "id": "spica__3cb9f3df9637",
+      "entity_id": "spica",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Spica",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
+    },
+    {
       "id": "spirit__a26c83decaca",
       "entity_id": "spirit",
       "category": "mission",
@@ -15823,6 +16509,20 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
+    },
+    {
+      "id": "van-maanens-star__ffed3619d271",
+      "entity_id": "van-maanens-star",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Van_Maanen's_Star",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "vandenberg-slc-4e__5abaa049fc98",
@@ -17391,6 +18091,20 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "wezen__9b0e2a5e0e44",
+      "entity_id": "wezen",
+      "category": "star",
+      "route": "/explore",
+      "url": "https://en.wikipedia.org/wiki/Wezen",
+      "label": "Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-07-18"
     },
     {
       "id": "x37b__0a2865655f10",

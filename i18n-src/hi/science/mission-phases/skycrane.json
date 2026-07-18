@@ -1,0 +1,15 @@
+{
+  "title": "Sky-Crane",
+  "intro_sentence": "वह रॉकेट-संचालित मंच जो रोवर को तारों पर सतह तक उतारता है, फिर दूर उड़ जाता है — वह लैंडिंग सिस्टम जिसने Curiosity और Perseverance को Mars पर उतारा।",
+  "narrative_101": [
+    "शुरुआती Mars रोवर काफी छोटे थे कि वे एयरबैग के कोकून के अंदर उछल कर नीचे आ सकें। लेकिन Curiosity कार के आकार का था — एयरबैग के लिए बहुत भारी — और रोवर के नीचे बड़े लैंडिंग पैर लगाने का अर्थ यह होता कि इसे एक भारी मंच पर ऊपर बैठाया जाता, फिर किसी तरह इसे उतारा जाता। NASA का उत्तर अधिक अजीब और अधिक सुंदर था: sky-crane।",
+    "जब heat shield और parachute ने अपना काम कर दिया, तो एक रॉकेट-संचालित descent stage संभाल लेता है, आठ इंजन को फायर करके कुछ मीटर ऊपर near-hover तक धीमा करता है। फिर, स्वयं को लैंड करने के बजाय, यह रोवर को अपने नीचे तारों के एक सेट पर उतारता है — जैसे एक हेलिकॉप्टर किसी भार को रखता है — जब तक रोवर के पहिये जमीन को न छू लें। रोवर अपना स्वयं का लैंडिंग gear है।",
+    "जिस तुरंत रोवर नीचे है और उसका वजन तारों से हट जाता है, descent stage तारों को काट देता है और एक सुरक्षित दूरी पर क्रैश करने के लिए उड़ जाता है, इसलिए इसका exhaust और मलबा कभी भी रोवर को स्पर्श नहीं करता। पूरा अनुक्रम — hover, lower, touchdown, fly-away — केवल कुछ सेकंड लेता है, और यह अब दो बार काम कर चुका है: 2012 में Curiosity के लिए और 2021 में Perseverance के लिए।"
+  ],
+  "body_paragraphs": [
+    "sky-crane एक साथ दो समस्याओं को हल करता है। यह रॉकेट इंजन को ऊपर रखता है, इसलिए उनके plumes एक क्रेटर नहीं खोदते या रोवर पर मलबा नहीं फेंकते, और यह रोवर को सीधे इसके पहियों पर deliver करता है, चलाने के लिए तैयार — कोई ramps नहीं, कोई lander deck नहीं। लागत एक choreography है जिसमें error के लिए शून्य margin है, जो autonomously निष्पादित होती है, fiery entry के कुछ मिनट बाद, Earth बहुत दूर होने के साथ real time में मदद करने के लिए।",
+    "यह seven minutes of terror का terminal chapter है: entry heating, फिर supersonic parachute, फिर heat-shield separation, फिर powered descent, फिर sky-crane lower और fly-away — प्रत्येक step को cue पर fire करना चाहिए अन्यथा mission landing पर खो जाती है। केवल मुट्ठी भर राष्ट्र Mars पर soft-land करने में सक्षम हैं; sky-crane सबसे audacious तरीका है जिसमें यह किया गया है।",
+    "`/fly` पर, Curiosity या Perseverance को `?descent=1` में fly करें और descent stage के तारों को parachute-और-retro sequence के नीचे pay out होते देखें, रोवर को सतह तक lower करते हुए stage को fly clear करने से पहले — sky-crane beat को दृश्यमान बनाया गया।"
+  ],
+  "diagram_caption": "Sky-crane: एक रॉकेट-संचालित descent stage सतह पर तारों पर रोवर को hover और lower करता है, फिर तारों को काट देता है और स्पष्ट रूप से उड़ जाता है।"
+}

@@ -62,7 +62,11 @@
       "periapsis_km": 200,
       "inclination_deg": 88,
       "orbit_insertion_dv_km_s": 0.8,
-      "source": "CNSA Chang'e 5 LOI Report (2020-11)"
+      "source": "CNSA Chang'e 5 LOI Report (2020-11)",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 5,

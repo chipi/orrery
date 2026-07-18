@@ -1,0 +1,15 @@
+{
+  "title": "Riscaldamento da Ingresso",
+  "intro_sentence": "Perché colpire un'atmosfera a chilometri al secondo riscalda un veicolo spaziale a migliaia di gradi — e come uno scudo termico sopporta l'urto.",
+  "narrative_101": [
+    "Un veicolo spaziale in arrivo a un pianeta si muove velocemente — 5-6 km/s su Marte, quasi 11 km/s su Venere. Quando si schianta nella parte superiore dell'atmosfera non sfrega tanto l'aria quanto la comprime. Il gas che si accumula davanti al veicolo viene compresso così violentemente da riscaldarsi a migliaia di gradi e brillare — la palla di fuoco che si vede attorno a qualsiasi capsula in rientro.",
+    "È un mito diffuso che questo calore provenga dall'attrito. Quasi tutto proviene dalla compressione: il veicolo spaziale non riesce a spingere l'aria sufficientemente velocemente, così si forma un'onda d'urto appena davanti a esso e il gas intrappolato si surriscalda. Più veloce l'ingresso, più caldo l'urto — ecco perché Venere, con gli ingressi più veloci e l'aria più densa, è l'ambiente di ingresso più severo del sistema solare.",
+    "Il veicolo sopravvive dietro uno scudo termico — un guscio smussato e ablativo rivolto verso il flusso. Lo smussamento è deliberato: un naso appuntito concentrerebbe il calore, mentre uno scudo ampio tiene l'onda d'urto a distanza e distribuisce il carico. La superficie dello scudo si annerisce e si stacca di proposito, portando via il calore con sé, così il veicolo spaziale dietro rimane fresco."
+  ],
+  "body_paragraphs": [
+    "Due picchi sono importanti durante l'ingresso e non coincidono. Il picco di riscaldamento avviene in alto, dove il veicolo è ancora veloce e il tasso di riscaldamento (che scala approssimativamente con il cubo della velocità) è enorme anche in aria sottile. Il picco di decelerazione avviene più in basso, in aria più densa, dove la forza sul veicolo è massima — gli ingressi su Marte raggiungono il picco intorno a 8–15 g, gli ingressi su Venere a 100–350 g. La struttura di un lander è dimensionata per il picco di g; il suo scudo termico è dimensionato per il picco di calore.",
+    "La guaina di plasma che brilla intorno al veicolo blocca anche le radio: per uno o due minuti al picco di riscaldamento, il gas ionizzato avvolge il veicolo spaziale e interrompe le comunicazioni — il famoso blackout da ingresso. I controllori semplicemente aspettano; il veicolo sta seguendo una sequenza pre-caricata, da solo, attraverso la parte più calda della traiettoria.",
+    "Su `/fly`, il gauge di riscaldamento aerodinamico dell'HUD di discesa è un proxy relativo per questo — sale mentre il veicolo morde l'atmosfera e raggiunge il picco ben prima dell'atterraggio, poi cala mentre il veicolo rallenta. Attiva il layer Science-Lens della resistenza durante qualsiasi ingresso su Marte o Venere con `?descent=1` per vedere la decelerazione aumentare man mano che l'aria si addensa."
+  ],
+  "diagram_caption": "Riscaldamento da ingresso: uno scudo termico smussato mantiene un'onda d'urto davanti al veicolo; il gas compresso si surriscalda e brilla mentre lo scudo ablata il calore."
+}

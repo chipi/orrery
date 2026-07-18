@@ -1,0 +1,15 @@
+{
+  "title": "Velocidade Terminal",
+  "intro_sentence": "Por que um módulo em queda para de acelerar — o equilíbrio entre arrasto e peso que determina a velocidade de descida sob paraquedas ou na atmosfera de um planeta.",
+  "narrative_101": [
+    "Deixe cair algo e ele acelera — mas não para sempre. Quanto mais rápido cai, mais a ar o empurra para trás, até que o arrasto para cima equilibre exatamente o peso para baixo. A partir desse momento, o objeto para de acelerar e cai em velocidade terminal constante. Um paraquedas funciona tornando a força de arrasto muito grande, então o equilíbrio se estabelece em uma velocidade suave.",
+    "Quão suave depende da atmosfera. Marte tem uma atmosfera cerca de 1% tão densa quanto a da Terra, então mesmo um paraquedas supersonicamente enorme — o de Curiosity tinha mais de 20 metros de diâmetro — apenas reduz o veículo para algumas centenas de quilômetros por hora. Isso é muito rápido demais para pousar, por isso os módulos de Marte sempre precisam de um segundo ato: foguetes de frenagem, airbags ou um sky-crane para terminar o trabalho.",
+    "Vênus é o oposto. Sua atmosfera é tão densa — cerca de 90 vezes a pressão da superfície da Terra — que um módulo Venera precisava apenas de um pequeno paraquedas no alto, depois podia descartá-lo e simplesmente afundar até a superfície em uma modesta placa de arrasto, descendo à deriva por quase uma hora. E a Lua, sem atmosfera alguma, não tem velocidade terminal: um módulo lunar tem que cancelar cada metro por segundo de sua velocidade com o motor, o tempo todo até o pouso."
+  ],
+  "body_paragraphs": [
+    "O número determinante é o coeficiente balístico — massa dividida pela área de arrasto. Um veículo leve com um grande paraquedas (coeficiente balístico baixo) desce a uma velocidade terminal lenta; um compacto e pesado (coeficiente balístico alto) cai mais rápido. Os projetistas fazem um trade-off entre os dois: um paraquedas maior compra uma descida mais lenta, mas pesa mais e é mais difícil de desdobrar supersonicamente em ar fino.",
+    "A velocidade terminal também muda com a altitude, porque o ar fica mais rarefeito com a altura. Um módulo de Vênus desce mais rápido no alto, onde o ar é mais rarefeito, e desacelera continuamente conforme afunda na atmosfera mais densa mais abaixo — tocando o solo em uma modesta mão-cheia de metros por segundo mesmo sem frenagem ativa no final.",
+    "Em `/fly`, é por isso que os três corpos parecem tão diferentes em `?descent=1`. Uma descida em Marte dissipa a maior parte de sua velocidade sob o paraquedas, depois passa para um pouso com propulsão ou airbag; uma descida em Vênus é uma longa e lenta deriva sob arrasto apenas; uma descida na Lua é com propulsão do início ao fim, porque não há ar para ajudar."
+  ],
+  "diagram_caption": "Velocidade terminal: o arrasto aumenta com a velocidade até equilibrar o peso; um paraquedas amplia a área de arrasto para que o equilíbrio seja alcançado a uma velocidade de descida suave."
+}

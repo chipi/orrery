@@ -1,0 +1,155 @@
+{
+  "title": "Die Ausgänge, die wir schon immer gekannt haben",
+  "dek": "Die chemische Rakete ist eine ein Jahrhundert alte Grenze, die wir mit außergewöhnlichem Geschick überwunden haben. Die Wege hinaus — Ionentriebwerke, [Sonnensegel](/science/propulsion/solar-sail), [nuklear-thermische](/science/propulsion/nuclear-thermal) Motoren — wurden skizziert, bevor der erste Satellit flog. Sie werden erst jetzt, zögernd, gebaut.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Irgendwann im letzten Jahrzehnt, wenn Sie die Raumfahrt verfolgt haben, könnten Sie eine seltsame Verdoppelung des Wortes *revolutionär* bemerkt haben. Es haftet an wiederverwendbaren ersten Stufen, an gemeinsamen Manifest-Flügen, an den steil fallenden Kosten pro Kilogramm in die Umlaufbahn. Dies sind echte Leistungen, wirklich wichtig — aber darunter, wenn man die Physik verfolgt, ist eine Maschine, die Hermann Oberth 1923 beschrieb und Robert Goddard 1926 flog. Das Triebwerk verbrennt einen Treibstoff und einen Oxidator, erhitzt Gas und bläst ihn nach hinten hinaus. Hundert Jahre Metallurgie und Fertigung haben es erstaunlich gut gemacht. Sie haben nicht geändert, was es ist."
+    },
+    {
+      "type": "prose",
+      "md": "Die Beschränkung ist nicht die Technik. Sie ist Chemie. Mischen Sie jeden Treibstoff mit jedem Oxidator und die verfügbare Energie ist festgelegt — nicht durch die Geschicklichkeit deines Brennkammerdesigns, sondern durch die Bindungsenergien der Moleküle, die du brichst und bildest. Das Beste, das man mit Wasserstoff und Sauerstoff tun kann, wenn man sauber bei dem [spezifischen Impuls](/science/propulsion/specific-impulse) verbrennt, der misst, wie effizient eine Rakete ihren Treibstoff nutzt, beträgt etwa 450 Sekunden. Das RS-25-Triebwerk, das jeden Space-Shuttle-Hauptmotor antrieb, erreicht 452 Sekunden im Vakuum. Das RL-10B-2 erreicht bei 465 Sekunden das Höchste aller chemischen Produktionsmotoren, das je gebaut wurde, eine Zahl, die über sechs Jahrzehnte Arbeit verfeinert wurde. Die Grenze ist nah. Wir sind gegen sie angestoßen."
+    },
+    {
+      "type": "prose",
+      "md": "Und eine Grenze spielt eine Rolle wegen einer Falle. Die [Tsiolkovsky-Raketengleichung](/science/propulsion/tsiolkovsky) — 1903 abgeleitet, drei Jahre bevor Goddard seinen ersten Motor zündete — besagt, dass der Anteil der anfänglichen Masse einer Rakete, der Treibstoff sein muss, *exponentiell* mit dem Verhältnis der benötigten Geschwindigkeitsänderung zur Ausströmungsgeschwindigkeit wächst. Verdoppeln Sie die erforderliche Geschwindigkeit der Mission, und Sie verdoppeln nicht die Treibstofflast — Sie quadrieren sie. Ab einem bestimmten Punkt besteht das Fahrzeug fast vollständig aus Treibstoff und lässt fast keinen Platz für Struktur, Instrumente oder Nutzlast. Chemische Raketen haben diesen Punkt erreicht. Um von der niedrigen Erdumlaufbahn zum Mars auf einem chemischen Motor zu kommen, dauert es Monate; um von der niedrigen Erdumlaufbahn zum Mars *und zurück* zu kommen, ohne ein Treibstoff-Depot am anderen Ende zu warten, ist nahezu unmöglich. Um irgendwohin weiter zu gehen — das äußere Sonnensystem auf einer angemessenen Zeitskala, mit einer Nutzlast, die es wert ist zu senden — ist es keine Frage, einen besseren Motor zu entwerfen. Es ist eine Frage, die Chemie hinter sich zu lassen."
+    },
+    {
+      "type": "heading",
+      "text": "Der langsame Stoß"
+    },
+    {
+      "type": "prose",
+      "md": "Die erste Alternative zur Chemie wurde nicht in einem Labor, sondern im Weltall demonstriert, 1998, an Bord eines Raumfahrzeugs namens Deep Space 1. Sein Motor verbrauchte Xenongas — inert, schwer, leicht zu lagern — und verbrannte es nicht, sondern *ionisierte* es: streifte Elektronen mit einem elektrischen Feld ab, beschleunigte die resultierenden Ionen durch einen Spannungsgradienten und stieß sie mit Zehnteln von Kilometern pro Sekunde aus. Das [Ionentriebwerk](/science/propulsion/ion-drive), das es trug, erzeugte 92 Millinewton Schub. Das ist, sehr nahe, das Gewicht eines kleinen Apfels. Bei voller Leistung verbrauchte es etwa 3,25 Milligramm Treibstoff pro Sekunde — zehn Unzen über einen ganzen Tag Betrieb. Nach jedem konventionellen Maßstab eines Raketenmotors war es ein Witz."
+    },
+    {
+      "type": "prose",
+      "md": "Was es kein Witz war, war die Effizienz. Ein Ionenmotor handelt Schub gegen spezifischen Impuls: während der beste chemische Motor bei etwa 450 Sekunden seinen Höhepunkt erreicht, erreicht ein gut konstruiertes Ionentriebwerk 3.000 Sekunden oder mehr — ungefähr siebenmal die Ausströmungsgeschwindigkeit, was siebenmal soviel Geschwindigkeitsänderung pro Kilogramm Treibstoff bedeutet. Der Kompromiss ist Zeit. Wenn man kontinuierlich für Tage und Monate eine winzige Apfelgewichtskraft brennt, beschleunigt sich ein Raumfahrzeug auf Geschwindigkeiten, die kein chemischer Brennvorgang bei irgendeiner angemessenen Treibstoffmasse erreichen könnte. Deep Space 1 bewies das Konzept. [Dawn](/missions?id=dawn) bewies es im großen Maßstab."
+    },
+    {
+      "type": "prose",
+      "md": "Dawn startete 2007 mit drei NSTAR-Ionentriebwerken — den direkten Nachkommen von Deep Space 1s Motor — und nutzte sie, um etwas zu tun, das noch kein Raumfahrzeug je getan hatte: einen Körper im Asteroidengürtel zu umkreisen, an [Vesta](/explore) zu dezellerieren, diesen ein Jahr lang zu umkreisen, dann wieder zu zünden und sich zu einem zweiten Körper, [Ceres](/explore), auszuwinkeln und auch diesen zu umkreisen. Eine chemische Mission mit denselben Zielen hätte so viel Treibstoff benötigt, dass sie auf keine existierende Rakete hätte gestartet werden können. Die Ionentriebwerke, die über insgesamt mehr als fünfeinhalb Jahre Schubzeit liefen, machten dieselbe Reise mit 425 Kilogramm Xenon. Dawns spezifischer Impuls betrug 3.100 Sekunden. Jedes Kilogramm Xenon leistete die Arbeit von sieben Kilogramm flüssigem Wasserstoff."
+    },
+    {
+      "type": "prose",
+      "md": "Was im Oktober 2023 zum Metall-Asteroiden Psyche aufbrach, trieb die Idee weiter voran. [Psyche](/missions?id=psyche) nutzt Hall-Effekt-Triebwerke — eine andere Architektur, bei der das Magnetfeld Elektronen einfängt und eine Ringentladung erzeugt, die Ionen bei niedrigerer Leistung effizienter beschleunigt. Hall-Triebwerke sind billiger, einfacher und kompakt genug, um vier von ihnen auf ein Discovery-Klasse-Raumfahrzeug zu passen. Psyches Triebwerke operieren bei etwa 1.750 Sekunden spezifischem Impuls, niedriger als Dawns Ionentriebwerke, aber mehr als viermal die chemische Grenze, und sie sind das erste Mal, dass Hall-Triebwerke — häufige Workhorse der Bahnerhaltung im Erdorbit — für tiefe Raumfahrtprimär-Antrieb vertraut werden. Die gleiche Technologie, die geostationäre Satelliten um Zentimeter pro Sekunde verschiebt, fliegt jetzt eine interplanetare Mission."
+    },
+    {
+      "type": "figure",
+      "image": "essays/new-propulsion/ion-drive",
+      "kind": "diagram",
+      "caption": "Eine chemische Rakete verbringt ihr ganzes Leben in wenigen Minuten Wut, dann gleitet sie. Ein Ionentriebwerk drückt mit dem Gewicht einer Münze — aber hört niemals auf. Bei genug Zeit überholt es leise die Rakete, die am härtesten stieß, und klettert weiter.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/dawn/01",
+      "kind": "photo",
+      "caption": "Dawn lief auf einem Xenon-Ionentriebwerk, dessen Schub du auf deiner Handfläche hättest balancieren können — und ritt dieses Flüstern jahrelang, wurde das einzige Schiff, das je zwei separate Welten jenseits der Erde umkreiste: zuerst Vesta, dann Ceres.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Ohne Treibstoff"
+    },
+    {
+      "type": "prose",
+      "md": "Ion- und Hall-Triebwerke tragen immer noch Treibstoff. Sie tragen viel weniger davon, und sie nutzen ihn viel effizienter, aber die Raketengleichung gilt immer noch: Das Xenon läuft aus, und wenn es tut, stoppt der Schub. Der radikalste Ausweg aus der Gleichung ist, überhaupt keinen Treibstoff zu tragen — gegen etwas außerhalb des Raumfahrzeugs zu drücken."
+    },
+    {
+      "type": "prose",
+      "md": "Photonen tragen Impuls. Licht drückt. Der Druck ist winzig — in der Entfernung der Erde von der Sonne übt Sonnenlicht etwa neun Mikronewton pro Quadratmeter bestrahlter Oberfläche aus — aber er ist kostenlos, unerschöpflich, und er läuft nie aus. Ein Segel, das groß genug und leicht genug ist, wird sich unendlich beschleunigen, solange es der Sonne zugewandt ist, handelt Schub gegen Geduld, genauso wie ein Ionentriebwerk, aber ohne ein Treibstoffbudget überhaupt."
+    },
+    {
+      "type": "prose",
+      "md": "Die Idee ist älter als die Raumfahrt um ein Jahrhundert: Johannes Kepler notierte 1619, dass Kometenschwänze immer von der Sonne wegzeigen, und schrieb es korrekterweise dem Solardruck zu. Die Mathematik waren vollständig in den 1920ern ausgearbeitet. Was fehlte, war ein Material: ein Segel, das leicht genug ist, um wichtig zu sein, robust genug, um die Strahlung des Weltraums zu überstehen, auslegbar aus einer Raketenverkleidung. Während des größten Teils des zwanzigsten Jahrhunderts blieb es eine Idee."
+    },
+    {
+      "type": "prose",
+      "md": "JAXA flog das erste. Am 21. Mai 2010 setzte das japanische Raumfahrzeug IKAROS — *Interplanetary Kite-craft Accelerating Radiation Of the Sun* — ein 200-Quadratmeter-Polyimid-Segel in Richtung Venus ein und wurde das erste Raumfahrzeug, das bedeutsame Antriebe nur durch Sonnenlicht im Tiefraum erreichte. Es maß die Beschleunigung. Es funktionierte. Die LightSail 2 der Planetary Society, die 2019 gestartet wurde, ging weiter: ein kleiner, schuhkarton-gestapelter CubeSat, der ein 32-Quadratmeter-Segel auslegte und das erste Raumfahrzeug wurde, das seinen Orbit nur mit dem Druck von Licht messbar erhöhte. Beide Missionen waren klein, mit kleinem Budget, und wurde weitgehend von der breiteren Presse ignoriert. Zusammen legten sie dar, dass Sonnensegeln nicht nur ein Gedankenexperiment ist."
+    },
+    {
+      "type": "prose",
+      "md": "NASAs Advanced Composite Solar Sail System — ACS3 — startete im April 2024 mit einem 80-Quadratmeter-Segel auf Verbundboom-Armen, die steifer und leichter sind als jedes vorherige Design, und demonstrierte die Strukturtechnologie, die benötigt wird, um aufzuskalieren. NEA Scout, das der erste Sonnensegel gewesen wäre, der einen erdnahen Asteroiden besucht, startete an Bord von Artemis I im November 2022 und ging verloren — sein Funk machte keinen Kontakt nach der Entfaltung, eine Erinnerung, dass kleine Missionen kleine Spielräume fliegen. Der Rückschlag hob das Programm nicht auf. Der Grund, warum Segel es wert sind, verfolgt zu werden, ist nicht die Beschleunigung, die sie heute geben, sondern die Beschleunigung, die sie morgen geben: Ein Sonnensegel zehn Kilometer über dem inneren Sonnensystem, wo Sonnenlicht stärker ist, würde Geschwindigkeiten erreichen, die von einem treibstoffbegrenzten System nicht zu erreichen sind. Segel sind die einzige Architektur, für die *das Segel größer zu machen* die Physik besser macht, ohne Treibstoffmasse zu addieren."
+    },
+    {
+      "type": "heading",
+      "text": "Die Wärme des Kerns"
+    },
+    {
+      "type": "prose",
+      "md": "Es gibt einen dritten Ausgang, und das ist derjenige, der in den 1960ern am wahrscheinlichsten zu sein schien, zuerst zu kommen. Ein Kernreaktor, der bei hoher Temperatur läuft, kann einen Treibstoff erhitzen — Wasserstoff ist die beste Wahl, da er das leichteste Gas ist und daher am schnellsten ausgestoßen wird — und ihn durch eine Düse auspuffen. Keine Verbrennung. Keine Bindungsenergien. Die Wärmequelle ist Kernspaltung, und die Temperaturen, die ein Reaktor aufrechterhalten kann, sind nicht durch Chemie, sondern durch Metallurgie begrenzt: wie heiß können die Brennelemente und die Düsenkehle gemacht werden, bevor sie ausfallen? Die Antwort, in den Motoren, die am Nevada Test Site von 1959 bis 1969 unter dem Programm NERVA getestet wurden, war heiß genug, um spezifische Impulse um 825 Sekunden zu erreichen — fast doppelt so gut wie der beste chemische Motor, bei Schubstufen, gemessen in Zehnteln von Kilonewton, nützlich für eine bemannte Marsmission."
+    },
+    {
+      "type": "prose",
+      "md": "Der Phoebus 2A Reaktor, getestet 1968, war das mächtigste je gezündete Kernraketen-Triebwerk: 4.100 Megawatt Wärmeleistung, das Äquivalent von vier großen Handels-Kernkraftwerken, die gleichzeitig laufen, alles komprimiert in eine Struktur so groß wie ein Auto. Der XE Prime Motor, getestet 1969 in einer Konfiguration, die den Flughöhen-Betrieb simulieren sollte, demonstrierte Neustart-Fähigkeit und Drosslung — genau die betriebliche Flexibilität, die eine bemannte Mission brauchen würde. Das Programm sammelte mehr als zwei Stunden Gesamtlaufzeit, einschließlich 28 Minuten bei voller Leistung. Nach jedem technischen Maßstab funktionierte es."
+    },
+    {
+      "type": "prose",
+      "md": "Und dann stoppte es. 1973, mit dem Mondprogramm vorbei und Budgets zusammenbrechend und keine Marsmission in Sicht, wurde NERVA abgebrochen. Die Motoren saßen in Nevada. Das Wissen verbreitete sich in Berichte, die in Archiven alterten. Für fünfzig Jahre flog kein nukleares Thermal-Raketenmotor, oder war ernsthaft geplant zu fliegen. Die [Gravitationsassisten](/science/transfers/gravity-assist) von [Voyager 2](/missions?id=voyager-2) machten die äußeren Planeten ohne nuklearen Antrieb erreichbar. Die äußeren Planeten waren genug."
+    },
+    {
+      "type": "prose",
+      "md": "Die Idee kam langsam in den 2010ern zurück, und dringlicher in den 2020ern: eine bemannte Mission zum Mars, mit einer Flugzeit, die in Monaten statt Jahren gemessen wird, verlangt fast nuklear-thermischen Antrieb. DARPAs DRACO-Programm — *Demonstration Rocket for Agile Cislunar Operations* — war der konkreteste jüngste Versuch, die fünfzigjährige Lücke zu schließen, mit dem Ziel, ein nuklear-thermisches Triebwerk im Orbit zu demonstrieren. Im Juni 2025 stornierte DARPA es. Die offizielle Begründung zitierte sinkende Startkosten, die den wirtschaftlichen Fall schwächten, und Infrastruktur-Barrieren rund um den Bodentest eines Reaktors, die zu Programmstart unterschätzt worden waren. Die Entscheidung war kein technisches Urteil: niemand testete den Motor und fand ihn mangelhaft. Die Lücke erweiterte sich einfach wieder."
+    },
+    {
+      "type": "figure",
+      "image": "essays/new-propulsion/nuclear-thermal",
+      "kind": "diagram",
+      "caption": "Es gibt hier überhaupt keine Flamme. Ein Reaktor erhitzt Wasserstoff über jede Temperatur, die ein chemisches Feuer erreichen kann, und wirft ihn aus der Düse mit ungefähr doppelter Geschwindigkeit — derselbe Treibstoff, doppelter Stoß wert, und eine kürzere, weniger bestrahlte Straße zum Mars.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Warum sie weiterhin nicht starten"
+    },
+    {
+      "type": "prose",
+      "md": "Die Geschichte des fortgeschrittenen Antriebs ist nicht, größtenteils, eine Geschichte des technischen Versagens. Ionentriebwerke funktionieren; jedes Tiefraum-Raumfahrzeug, das eines trug, funktionierte wie vorhergesagt. Sonnensegel funktionieren; IKAROS maß den Schub, LightSail 2 änderte seine Umlaufbahn. Kernthermische Motoren funktionieren; NERVA demonstrierte es in sechs Jahrzehnten nicht überarbeiteter Bodentests. Die Ausfälle sind fast vollständig in dem Raum zwischen einer funktionierenden Technologie und einer finanzierten Mission."
+    },
+    {
+      "type": "prose",
+      "md": "Ein Teil davon ist die Natur dieser Antriebe. Chemische Raketen sind gewalttätig und offensichtlich — sie schütteln den Boden und beleuchten den Himmel und liefern ihr Ergebnis in Minuten. Ion- und Hall-Triebwerke erzeugen eine Kraft, die du nicht spüren kannst, laufen jahrelang, bevor das Ergebnis sichtbar wird, und erfordern Geduld von Finanziers, die Budgetzyklen gegenüberstehen, die in Monaten gemessen werden. Sonnensegel erfordern große, empfindliche Strukturen, die das Startverpacken erschweren. Kernthermische Motoren erfordern einen Reaktor, und ein Reaktor im Weltall hat eine regulatorische Komplexität, die Jahren und Unsicherheit zu irgendeinem Programm hinzufügt, bevor die erste Komponente bearbeitet wird. Keines davon sind grundlegende Barrieren. Sie sind, in der Sprache der Systemtechnik, *noch-nicht-gelöste Integrationsprobleme* — und Integrationsprobleme werden gelöst, wenn genug Druck dahinter ist."
+    },
+    {
+      "type": "prose",
+      "md": "Der Druck baut sich auf. Die [Tsiolkovsky-Raketengleichung](/science/propulsion/tsiolkovsky) hat sich nicht geändert. Eine bemannte Marsfernreise mit chemischem Isp ist nicht unmöglich — sie ist einfach ungeheuer teuer in Treibstoff, und daher in Startmasse, und daher in Startkosten, und daher im politischen Willen. Wenn die Kosten pro Kilogramm in die Umlaufbahn sinken und die Ehrgeiz der Missionen steigt, wächst die Lücke zwischen dem, was Chemie tun kann, und dem, was die Mission verlangt, breiter. Jedes neue Ziel — die Eisriesen, ein Asteroid auf kurzem Zeitplan, Mars auf einem bemannten Flug, der nicht die Vorpositionierung von Jahren Treibstoff erfordert — drückt gegen die Grenze ein wenig fester."
+    },
+    {
+      "type": "heading",
+      "text": "Wohin die Ausgänge führen"
+    },
+    {
+      "type": "prose",
+      "md": "Das Seltsame bei der Vermessung dieser Geschichte ist nicht, dass die Alternativen nicht geflogen sind — es ist, dass sie prinzipiell so lange bereit waren. Die Grenzen des spezifischen Impulses der nuklearwärmlichen Antriebe wurden vor Sputnik berechnet. Die Physik des Sonnensegelns wurde vor dem Zweiten Weltkrieg verstanden. Das Konzept des Ionenantrieb erschien in einer Esther-Goddard-Erinnerung, die ein Gespräch mit Robert Goddard 1906 beschreibt, vier Jahre, bevor er irgendetwas flog. Die Ideen sind alt. Das Fliegen ist neu."
+    },
+    {
+      "type": "prose",
+      "md": "Was [Dawn](/missions?id=dawn) etablierte, ist der praktische Maßstab: Ionenantrieb ist nicht exotisch. Es ist die richtige Wahl für jede Mission, die mehrere Ziele, große Geschwindigkeitsänderungen oder Flugzeiten erfordert, die lange genug für kontinuierlichen Schub akkumulieren. Die Missionen, die nach Psyche kommen — Roboter-Sonden zu den Eisriesen, schneller Transit-Frachter zu einem Lunar Gateway, Prospektoren im inneren Asteroidengürtel — sind die natürlichen Kunden. Hall-Triebwerke bei [Psyche's](/missions?id=psyche) Maßstab werden routinemäßig innerhalb eines Jahrzehnts sein, weil die Ökonomie bereits funktioniert."
+    },
+    {
+      "type": "prose",
+      "md": "Sonnensegelflug ist weiter von Routine entfernt, aber die Bahn ist klar: jede Generation von Segel ist größer, die Booms leichter, die Kontrollsysteme ausgefeilter. Die Physik-Belohnung skaliert auf eine Weise, wie kein anderer Antriebsmodus es tut. Ein Segel so groß wie ein Sportstadion, mit einem Raumfahrzeug-Bus von der Masse eines Schreibtischs, beschleunigt von einem Laser aus dem inneren Sonnensystem statt durch Umgebungssonnenlicht — das ist die Architektur, die für interstellare Vorboten-Missionen vorgeschlagen wird, die Geschwindigkeiten von Hunderten von Kilometern pro Sekunde erreichen. Das Segel kümmert sich nicht um die Raketengleichung. Es hat keinen Treibstoff, der ausläuft."
+    },
+    {
+      "type": "prose",
+      "md": "Der kernthermische Antrieb ist der schwierigste Aufruf. DARPAs Stornierung 2025 schloss den konkretesten nahfristigen Weg. Aber der technische Fall — 825 Sekunden spezifischer Impuls bei hohem Schub, die einzige Kombination von Effizienz und Kraft, die einen schnellen bemannten Marsdurchgang eröffnet — ist nicht schwächer geworden. Das Wissen aus NERVA ging nicht verloren; es wurde archiviert. Was fehlt, ist nicht die Technik. Es ist ein Programm mit genug Beständigkeit, um die regulatorische und Infrastruktur-Arbeit zu navigieren, die die 1960er begonnen, aber nie beendet. Wenn eine bemannte Marsmission ein festes politisches Ziel wird, statt eine wiederkehrende Aspiration, wird der kernthermische Antrieb fast sicher Teil sein, wie es getan wird. Die Motoren funktionieren. Sie warten."
+    },
+    {
+      "type": "prose",
+      "md": "Die chemische Rakete tat außerordentliche Dinge. Sie trug zwölf Menschen zur Oberfläche des Mondes. Sie landete ein autogroßes Rover auf dem Mars am Ende von sieben Minuten automatisierter Angst. Sie setzte das James Webb Space Telescope in seiner L2-Halo-Umlaufbahn mit so wenig Fehler, dass der Treibstoffrand für Bahnhaltung, ursprünglich mit zehn Jahren budgetiert, jetzt zu zwanzig Jahren projiziert. Zum Entfernen von Masse von Erdoberfläche gegen Schwerkraft — der schwierigste Teil jeder Raumfahrtmission — wird es das Werkzeug für die absehbare Zukunft bleiben. Die Tsiolkovsky-Gleichung bestraft Treibstoffmasse in der Umlaufbahn weniger als auf dem Boden, und kein Ionentriebwerk wird etwas von einem Startplatz heben."
+    },
+    {
+      "type": "prose",
+      "md": "Aber die Grenze über niedrigen Erdumlaufbahnen ist Chemies Grenze, und das Sonnensystem darüber ist Chemies Falle. Die Ausgänge sind für hundert Jahre auf die Karte gezeichnet. Ionentriebwerke fliegen bereits. Segel haben bereits Umlaufbahnen geändert. Die Kernoptionen sind in Abwartung, nicht im Regal. Wir wissen, wie man die chemische Ära verlässt, seit bevor die chemische Ära ihre größten Triumphe erlebte. Wir lernen, es langsam, zu bedeuten."
+    },
+    {
+      "type": "figure",
+      "image": "essays/new-propulsion/isp-ladder",
+      "kind": "diagram",
+      "caption": "Reihen Sie die Ausgänge nach Effizienz auf und die Muster sind klar: jede Straße hinaus aus der chemischen Ära handelt rohen Schub gegen die Geduld, um zu drücken. Alle von ihnen wurden auf Papier skizziert, bevor der erste Satellit je flog.",
+      "align": "wide"
+    }
+  ]
+}

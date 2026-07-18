@@ -1,0 +1,147 @@
+{
+  "title": "La aritmética honrada",
+  "dek": "La estrella más cercana no está lejos de la manera en que Marte está lejos, ni siquiera Plutón. Es una clase categóricamente distinta de distancia — y la sobria matemática de llegar allí tiene una manera de hacer que cada propuesta seria parezca a la vez tranquilamente heroica y tranquilamente condenada.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Existe un hábito mental que el viaje espacial fomenta, y es uno razonable hasta cierto punto. Aprendes las distancias — la Luna está a tres días, Marte entre seis y nueve meses, Júpiter son años — y asimila la escala del sistema solar como algo que es vasto pero navegable, algo en lo que la ingeniosidad humana ha estado avanzando constantemente durante setenta años. El [Voyager 1](/missions?id=voyager-1) alcanzó el espacio interestelar. La [New Horizons](/missions?id=new-horizons) cruzó cinco mil millones de kilómetros hasta [Plutón](/explore) y llegó con una diferencia de un minuto respecto a su cronograma. El sistema exterior se siente, desde dentro de este marco, como un problema de paciencia e ingeniería, no de límites fundamentales."
+    },
+    {
+      "type": "prose",
+      "md": "Entonces te das la vuelta para enfrentar la estrella más cercana, y el marco se rompe."
+    },
+    {
+      "type": "prose",
+      "md": "Proxima Centauri está a 4,24 años luz de distancia. Esa frase debe desempaquetarse lentamente para impactar con todo su peso, porque los años luz y los minutos luz son la misma unidad y la diferencia de escala no es intuitiva. Un [minuto luz](/science/scales-time/light-minute) es la distancia que cubre la luz en sesenta segundos: aproximadamente 18 millones de kilómetros, que es aproximadamente la brecha entre la Tierra y el Sol dividida entre ocho. El sistema solar — todo el volumen habitado y explorado desde la órbita de la Tierra más allá de Neptuno — cabe dentro de una esfera de unos cinco minutos luz de diámetro. Plutón, en el borde del sistema clásico, está aproximadamente a cinco horas y media luz del Sol. La nube de Oort, el alcance gravitacional más externo de la influencia del Sol, se extiende quizás a uno o dos años luz. Proxima Centauri, la estrella más cercana a la nuestra, está más del doble incluso de eso. La distancia a la estrella más cercana no es la distancia al sistema solar exterior escalada por algún factor manejable. Es aproximadamente *nueve mil* veces la distancia desde la Tierra a Plutón. El sistema solar no te prepara para ello."
+    },
+    {
+      "type": "heading",
+      "text": "La velocidad humillante de todo lo que hemos lanzado"
+    },
+    {
+      "type": "prose",
+      "md": "El [Voyager 1](/missions?id=voyager-1) es el objeto que se aleja más rápido jamás lanzado por seres humanos. Lanzado en 1977, impulsado por Júpiter y Saturno en una trayectoria que tomó energía de los campos gravitacionales de ambos planetas, ahora viaja a aproximadamente 17 kilómetros por segundo con respecto al Sol — unos 61 000 kilómetros por hora, una velocidad que te llevaría de Londres a Sídney en menos de un minuto. Por cualquier medida terrestre es incomprensiblemente rápido. Por medida interestelar, es glacial. A 17 km/s, el Voyager 1 tardaría aproximadamente 73 000 años en recorrer la distancia a Proxima Centauri — y ni siquiera va dirigido allá. Se dirige en una dirección completamente diferente, hacia la constelación de Ofiuco, en una trayectoria diseñada para estudiar el sistema solar exterior, no para alcanzar las estrellas."
+    },
+    {
+      "type": "prose",
+      "md": "El [Pioneer 10](/missions?id=pioneer-10) y el [Pioneer 11](/missions?id=pioneer-11), las primeras naves espaciales en cruzar el cinturón de asteroides y estudiar Júpiter y Saturno, también están saliendo del sistema solar en trayectorias hiperbólicas. La [New Horizons](/missions?id=new-horizons) se mueve a alrededor de 14 km/s. Ninguna de ellas se aproximará a otra estrella dentro de ningún plazo que importe a la civilización que las lanzó. Las cosas más rápidas que la humanidad jamás ha lanzado — la culminación de siete décadas de ingeniería de cohetes y diseño de trayectorias con asistencia gravitacional — necesitarían decenas de miles de años para cubrir la brecha interestelar. Cuando la gente dice \"las estrellas están muy lejos\", quiere decir algo más específico y más sobrio de lo que la frase generalmente transmite: quiere decir que todo lo que hemos hecho para hacer que una nave espacial vaya más rápido no ha movido la escala del viaje interestelar ni un solo orden de magnitud."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/voyagers-speed",
+      "kind": "diagram",
+      "caption": "El Voyager 1, lanzado en 1977, es el objeto que se aleja más rápido que la humanidad jamás ha construido — y a aproximadamente diecisiete kilómetros por segundo aún tardaría en el orden de 73 000 años en cruzar la distancia a la estrella más cercana. Ni siquiera va hacia allá. Frente a la distancia interestelar, nuestro más rápido es un arrastre.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/voyager-1/01",
+      "kind": "photo",
+      "caption": "El Voyager 1 — ahora a más de veinticuatro mil millones de kilómetros, el objeto más distante que los humanos jamás hayan hecho, y aún, en cualquier escala interestelar, apenas fuera de la puerta.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Lo que la ecuación de cohetes prohíbe"
+    },
+    {
+      "type": "prose",
+      "md": "Para alcanzar Proxima Centauri en una vida humana — digamos, en cuarenta años — una nave espacial necesitaría viajar a aproximadamente el diez por ciento de la velocidad de la luz. El diez por ciento de c es aproximadamente 30 000 km/s. El Voyager 1 viaja a 17 km/s. La proporción es casi de dos mil a uno. Necesitarías ir aproximadamente dos mil veces más rápido que lo más rápido que hemos lanzado jamás."
+    },
+    {
+      "type": "prose",
+      "md": "La [ecuación de cohetes de Tsiolkovsky](/essays/delta-v) — la ley de hierro que rige todo vehículo que quema propulsante — lo hace preciso, y la precisión es brutal. La ecuación dice que la velocidad que un cohete puede alcanzar depende de dos cosas: la proporción de su masa inicial (completamente cargada) a su masa final (vacía), y la velocidad de escape de su propulsante. Para ir más rápido, llevas más propulsante o lo expulsas más rápido — pero llevar más propulsante aumenta la masa inicial, lo que aumenta el propulsante que necesitas para acelerar *ese* propulsante, en una trampa compuesta que crece exponencialmente. Los cohetes químicos, como [el ensayo sobre propulsión](/essays/new-propulsion) describe en detalle, ya están en el techo de lo que su velocidad de escape permite. Los mejores motores químicos alcanzan impulsos específicos alrededor de 450 segundos, correspondientes a velocidades de escape de aproximadamente 4,4 km/s. Para alcanzar el diez por ciento de la velocidad de la luz con un cohete químico, la relación de masas requerida no es diez, ni mil, ni un millón. Es un número tan grande que el universo observable no contiene suficiente hidrógeno para alimentar el motor. La química no es un camino hacia las estrellas. Ni siquiera es un primer paso."
+    },
+    {
+      "type": "prose",
+      "md": "La propulsión termomuclear — calentar hidrógeno en un reactor y expulsarlo a través de una tobera — aproximadamente duplica la velocidad de escape, logrando impulsos específicos alrededor de 825 segundos en los mejores motores probados en tierra del programa NERVA. Duplicar la velocidad de escape no reduce a la mitad la relación de masas requerida; eleva la relación al cuadrado. A velocidades estelares, la propulsión termomuclear sigue siendo categóricamente inadecuada. La ecuación de cohetes no le importa cómo se calienta el propulsante. Solo le importa qué tan rápido se va. Y ninguna arquitectura de combustión de propulsante jamás concebida puede expulsar materia lo suficientemente rápido como para alcanzar una fracción significativa de c sin requerir una carga de combustible que hace la misión imposible de entrada."
+    },
+    {
+      "type": "heading",
+      "text": "Las propuestas serias — y las paredes que encuentran"
+    },
+    {
+      "type": "prose",
+      "md": "Hay un pequeño número de propuestas para vuelos interestelares que son serias en el sentido de que los físicos no las descartan inmediatamente. Ninguna es fácil. Cada una, examinada cuidadosamente, tiene una pared detrás del optimismo inicial."
+    },
+    {
+      "type": "prose",
+      "md": "La propuesta más concreta actual es Breakthrough Starshot, anunciada en 2016 por una colaboración de científicos y tecnólogos. El concepto es elegante: prescindir completamente de naves espaciales grandes. Construir velas ligeras de escala de gramos — obleas de material más delgadas que una hoja de papel, con un pequeño paquete electrónico adjunto — y acelerarlas con una matriz de láser basada en tierra entregando, en conjunto, alrededor de 100 gigavatios de potencia durante un breve paso de iluminación. A ese nivel de potencia, una vela de escala de gramos teóricamente podría ser impulsada a alrededor del veinte por ciento de la velocidad de la luz, cubriendo la distancia a Proxima Centauri en aproximadamente veinte años. La física son, en principio, sólidas. La navegación solar funciona — el IKAROS lo demostró en 2010, y el LightSail 2 de la Planetary Society elevó su órbita con la luz solar únicamente en 2019. Escalar el concepto a propulsión por láser es un problema diferente de ingeniería, no de naturaleza."
+    },
+    {
+      "type": "prose",
+      "md": "Las paredes son sustanciales. Una matriz de láser faseada de 100 gigavatios no existe. Construir una sería una tarea de ingeniería y financiera comparable a los mayores proyectos de la historia humana, y mantener la coherencia del haz y la precisión de apuntamiento a través de un objetivo que se aleja a velocidad relativista requiere tecnología que está muy por debajo de la demostración actual. Más fundamentalmente: las velas ligeras aceleran. No pueden desacelerar. No hay mecanismo para ralentizar una vela de escala de gramos mientras se acerca a Proxima Centauri al 20% c — ninguna matriz de láser esperando allí, ningún frenado atmosférico disponible. El sobrevuelo duraría un asunto de horas. Después de décadas de viaje y años de transmisión de señales a la velocidad de la luz, Proxima Centauri y cualquier planeta que la orbite recibirían algunas horas de atención. Lo que sea que los sensores capturaran durante ese paso tardaría 4,24 años en llegar a casa. Breakthrough Starshot no es una misión para explorar otra estrella. Es una misión para echar un vistazo a una."
+    },
+    {
+      "type": "prose",
+      "md": "El Proyecto Dédalo, propuesto por la British Interplanetary Society en un estudio de 1973 a 1978, apuntaba a algo más sustancial: una [nave interestelar impulsada por fusión](/science/propulsion/fusion-propulsion) de dos etapas, utilizando ignición por confinamiento inercial de cápsulas de deuterio-helio-3, diseñada para alcanzar la Estrella de Barnard (entonces se creía que tenía planetas) a aproximadamente el 12% de la velocidad de la luz, llegando en aproximadamente cincuenta años. La nave que envisagó era enorme — completamente cargada de combustible, habría tenido una masa de alrededor de 54 000 toneladas, del tamaño de un pequeño rascacielos. Su estudio sucesor, el Proyecto Ícaro, revisitó el concepto a partir de 2009 con física actualizada y opciones de propulsión más amplias. Ambos estudios convergen en la misma evaluación honesta: el motor de fusión funciona, en principio, pero la tecnología requerida — fusión por confinamiento inercial sostenida en la escala y frecuencia de repetición necesarias para la propulsión — no ha sido lograda, y el requisito de combustible para helio-3 vastamente excede cualquier cosa que pueda ser extraída de la Tierra. El helio-3 tendría que ser extraído de la atmósfera de Júpiter. No existe mecanismo para hacer esto."
+    },
+    {
+      "type": "prose",
+      "md": "La antimateria es el techo teórico. La [aniquilación materia-antimateria](/science/propulsion/antimatter-propulsion) es el proceso más energético permitido por la física conocida, convirtiendo masa en energía con cien por cien de eficiencia — comparado con aproximadamente el 0,7% para la fusión nuclear y una fracción de por ciento para la combustión química. Un motor de antimateria, si la aniquilación pudiera dirigirse eficientemente, podría en principio acelerar una nave espacial a una fracción sustancial de c con una masa de combustible relativamente modesta. La pared es la producción. La producción total acumulada de antimateria por aceleradores de partículas en todo el mundo — a lo largo de toda la historia humana — asciende a unos pocos nanogramos. Una misión interestelar de escala Dédalo requeriría algo como decenas de miles de toneladas de antimateria. La energía necesaria para producir esa cantidad excedería la salida total de energía de la civilización humana, multiplicada por siglos. La propulsión de antimateria no es un problema de ingeniería a corto plazo. Es un problema de energía a escala civilizacional."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/the-proposals",
+      "kind": "diagram",
+      "caption": "Tres conceptos sobreviven al escrutinio honesto: una nanovela impulsada por láser (Breakthrough Starshot) que podría volar cerca de una estrella cercana en décadas, una nave estelar de fusión (Proyecto Dédalo) del tamaño de un edificio, y el combustible perfecto pero imposible de fabricar de la antimateria. Ninguno es prohibido por la física — todos son prohibidos por la energía, la distancia y la paciencia.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "El problema del mensaje"
+    },
+    {
+      "type": "prose",
+      "md": "Incluso dejando de lado la propulsión, la exploración interestelar tiene una segunda dificultad estructural que la química y la ingeniería no pueden resolver: la velocidad de la luz en sí. Una señal de radio desde Proxima Centauri tarda 4,24 años en llegar a la Tierra. Una pregunta transmitida en el momento de la llegada de una nave espacial recibe una respuesta, en el mejor de los casos, 8,48 años después. No hay control en tiempo real significativo. No hay un controlador de misión dando correcciones de curso durante un acercamiento. Lo que sea que una nave espacial haga en Proxima Centauri, lo hace completamente sola — más sola, por órdenes de magnitud, que [los siete minutos de EDL autónomo](/essays/seven-minutes) en Marte, donde la nave al menos sabe que los humanos están monitoreando desde doce minutos de distancia."
+    },
+    {
+      "type": "prose",
+      "md": "La arquitectura de comunicación que esto demanda es cualitativamente diferente de cualquier cosa que hayamos construido. La [Red de Espacio Profundo](/science/mission-phases/dsn) maneja las distancias interplanetarias porque el retardo de ida y vuelta, aunque doloroso en los planetas exteriores, aún se mide en horas — un cadencia con la que los controladores de misión humanos pueden trabajar. Los retardos interestelares se miden en años. Los volúmenes de datos se transmitirían a la velocidad de la luz pero los fotones que los transportan viajarían durante años antes de llegar a una antena en la Tierra, y cualquier comando de seguimiento o retransmisión tomaría igual tiempo. La [comunicación espacial a través del sistema solar](/essays/comms) ya es una disciplina de paciencia; la comunicación interestelar sería una disciplina de generaciones. Envías un mensaje. Tus nietos reciben la respuesta."
+    },
+    {
+      "type": "prose",
+      "md": "En el escenario de Breakthrough Starshot, una sonda de escala de gramos atraviesa el sistema de Proxima Centauri a una velocidad del 20% de la luz en un asunto de horas. Sus sensores capturan lo que pueden en esa ventana. Los datos comprimidos se transmiten luego a casa a la velocidad de la luz, llegando 4,24 años después. No hay segundo paso. No hay despliegue de instrumento de seguimiento, no hay inserción orbital, no hay misión de superficie, no hay capacidad de responder a un hallazgo sorprendente con una nueva observación. Este es el contenido honesto de \"exploración interestelar\" a la única velocidad que sabemos alcanzar: una instantánea breve y unidireccional, transmitida a casa a través de años de silencio, desde una sonda que no puede ralentizar y nunca volverá a saberse de ella."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/the-message",
+      "kind": "diagram",
+      "caption": "Incluso si una sonda llega, la noticia tarda años en llegar a casa. En Proxima una señal es 4,24 años en cada sentido; un cruce de décadas produce algunas horas de datos de sobrevuelo, luego más años para oírlo. La exploración interestelar es, por encima de todo, un ejercicio de paciencia.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "El horizonte honesto"
+    },
+    {
+      "type": "prose",
+      "md": "Nada de esto significa que el viaje interestelar esté prohibido. No hay ley física que prohíba que una nave espacial cruce cuatro años luz. Solo hay paredes de ingeniería, presupuestos de energía, y el techo de impulso específico de todos los sistemas de propulsión que los seres humanos hemos concebido hasta ahora. Estas son restricciones reales, no absolutas — son las restricciones de una civilización en un momento particular de su desarrollo, una civilización que puede lanzar una sonda de escala de gramos a una estrella cercana en un haz de láser, en principio, pero aún no puede construir el láser. La distinción importa. \"Prohibido por la física\" y \"más allá de la ingeniería actual\" son oraciones diferentes."
+    },
+    {
+      "type": "prose",
+      "md": "Pero la brecha entre \"no prohibido\" y \"alcanzable en ningún plazo cercano\" es enorme. La propuesta más lenta seria — una nave estelar de fusión al 12% de c — requeriría tecnología que no existe, a un costo que empequeñece cualquier programa espacial en la historia, para entregar una nave tripulada a otra estrella en aproximadamente cincuenta años. La propuesta más rápida seria — la vela ligera impulsada por láser de Breakthrough Starshot — entregaría un gramo de instrumentos a un sobrevuelo que dura horas, y devolvería datos durante años, a un costo que sus proponentes estiman en decenas de miles de millones de dólares, asumiendo que la matriz de láser puede ser construida. Entre estos extremos, no hay opción intermedia que sea tanto tecnológicamente viable como adecuada para una exploración significativa. La escala del problema simplemente no tiene una solución moderada."
+    },
+    {
+      "type": "prose",
+      "md": "Hay un tercer camino, y es el más humano: ir lentamente, e ir en naves lo suficientemente grandes como para llevar vidas. Si no puedes acelerar al diez por ciento de la velocidad de la luz, aceptas el tiempo de viaje — siglos, milenios — y construyes una nave que es en sí misma un mundo. Esta es la idea detrás de [naves estelares generacionales](/essays/generational-starships): no una nave espacial en el sentido convencional sino un sistema ecológico y social cerrado, lanzado a velocidades alcanzables por propulsión ambiciosa pero concebible del futuro cercano, apuntado a Proxima u otro sistema cercano, llevando a los ancestros de la gente que llegará. La física son indulgentes de una manera que la ecuación de cohetes no lo es. Los problemas se desplazan de la ingeniería a la biología, la ecología, la sociología y la ética: qué significa nacer en un viaje que no elegiste, y morir antes de que termine. Estos no son problemas menores. Son diferentes."
+    },
+    {
+      "type": "prose",
+      "md": "Lo que la aritmética finalmente entrega no es desesperación. Entrega proporción. El sistema solar — el volumen vasto desde la órbita de la Tierra hasta la nube de Oort — es la cosa más grande que los seres humanos jamás hayan navegado, y tomó la mejor parte de un siglo construir las herramientas para explorar incluso sus alcances cercanos. El espacio interestelar no es el siguiente paso en esa escalera. Es un acantilado encima de ella. El acantilado no es infinito; tiene una cima. Pero alcanzar la cima requiere una revolución en producción de energía y ciencia de materiales (la matriz de láser), un dominio sostenido de la propulsión por fusión (Dédalo/Ícaro), o un compromiso civilizacional con la paciencia en una escala de tiempo que ninguna institución humana aún ha mantenido (la nave generacional). Los tres son genuinamente posibles. Ninguno es inminente."
+    },
+    {
+      "type": "prose",
+      "md": "Esto es lo que \"la perspectiva a largo plazo\" significa cuando mira hacia afuera más allá de la heliopausa. No que no podamos ir, sino que ir honestamente requiere mantener la escala en tu mente sin retroceder — los 73 000 años que el Voyager 1 necesitaría, la sonda de escala de gramos atravesando en horas, los bisnietos llegando a una estrella hacia la que sus ancestros apuntaron la nave. La estrella más cercana no es un destino. Es una definición: de cuán lejos hemos llegado, cuán lejos la física aún nos permite ir, y cuánto de la distancia entre esos dos puntos aún no hemos cruzado."
+    },
+    {
+      "type": "figure",
+      "image": "missions/new-horizons/01",
+      "kind": "photo",
+      "caption": "La New Horizons, que cruzó casi cinco mil millones de kilómetros hasta Plutón y en el Cinturón de Kuiper — la más nueva de nuestras naves salientes, y un recordatorio de que incluso nuestras más audaces misiones de espacio profundo aún son viajes dentro del propio jardín frontal del sistema solar.",
+      "align": "wide",
+      "credit": "NASA/JHUAPL/SwRI"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "title": "La gramática del Delta-V",
+  "dek": "Toda nave espacial que ha salido de la Tierra ha llevado consigo una cosa por encima de todo lo demás: un presupuesto. No de dinero — de velocidad. La ecuación del cohete lo repartía en kilómetros por segundo, la gravedad era el único reabastecimiento gratuito, e cada ingeniero que ha planeado jamás una misión ha estado viviendo dentro de esa restricción desde 1903.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Imagina que te entregan una chequera con un saldo fijo. Puedes gastarlo como quieras — pero cada compra es definitiva, no hay depósitos, y cuando el saldo llega a cero se acabó. Esa es la situación a la que se enfrenta toda nave espacial desde el momento en que despeja la torre de lanzamiento. La moneda no es el combustible. No es el empuje. Es la **velocidad** — más precisamente, el *cambio* en la velocidad, medido en kilómetros por segundo, que la nave espacial puede acumular a lo largo de toda su misión. Los ingenieros lo llaman delta-v, y la cuenta se abre, una sola vez, en el lanzamiento."
+    },
+    {
+      "type": "prose",
+      "md": "La regla que escribió esta restricción fue publicada en 1903 por un maestro de escuela ruso autodidacta llamado Konstantín Tsiolkovski, trabajando solo en una pequeña ciudad provincial. Su [ecuación del cohete](/science/propulsion/tsiolkovsky) no ha sido derogada desde entonces: **∆v = Isp · g₀ · ln(m₀/mf)**. Léela en español: la velocidad que puedes comprar es igual a la eficiencia de tu motor — medida en segundos de [impulso específico](/science/propulsion/specific-impulse) y multiplicada por una constante gravitatoria de 9,807 m/s² — multiplicado por el logaritmo natural de cuánto más pesado era el cohete al principio que al final. Ese logaritmo es el villano. Porque *ln* es la función de crecimiento más lento en matemáticas, significa que cada kilómetro por segundo extra que quieras añadir te cuesta una porción exponencialmente mayor de masa de propelente — y el propelente tiene que ser levantado también, lo que significa que necesita su propio propelente, que también tiene que ser levantado, y así sucesivamente en una regresión que no tiene fondo."
+    },
+    {
+      "type": "prose",
+      "md": "El astronauta Don Pettit llamó a esto *la tiranía de la ecuación del cohete* en un ensayo de 2012 escrito a bordo de la ISS, y la palabra tiranía es exactamente la correcta. El Saturno V que llevó a los astronautas del Apolo a la Luna se erguía treinta pisos de altura en la plataforma y era **85% propelente por masa**; su carga útil — todo lo que realmente fue a algún lugar — nunca superó el 4% de esa masa húmeda. El resto era una explosión controlada en cámara lenta, consumida paso a paso solo para conseguir que el resto fuera un poco más rápido, un poco más alto. Todo lo demás en los vuelos espaciales — las misiones, las trayectorias, la espera de ventanas de lanzamiento, el recorte obsesivo de la masa de los instrumentos — fluye de ese único y despiadado denominador."
+    },
+    {
+      "type": "figure",
+      "image": "essays/delta-v/rocket-equation",
+      "kind": "diagram",
+      "caption": "La pared exponencial de la ecuación del cohete: en la eficiencia química, cada kilómetro por segundo extra exige una fracción de propelente mucho más grande — y cuanto más empujes hacia un destino real, más pronunciada sube el precio.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "El presupuesto"
+    },
+    {
+      "type": "prose",
+      "md": "Un [presupuesto de delta-v](/science/propulsion/dv-budget) es lo que los planificadores de misiones llaman la hoja de cálculo que contabiliza cada cambio de velocidad que una misión debe realizar, desde la órbita de estacionamiento terrestre hasta el destino final. Es el documento más consecuente en el diseño de misiones: decide si la misión es posible en absoluto. Llevar una nave espacial desde una órbita terrestre baja a, digamos, una transferencia de Hohmann hacia Marte y hacia la órbita marciana cuesta aproximadamente **5,6 km/s** en total — una cifra que suena modesta hasta que recuerdas que cada decimal se paga en toneladas de propelente, y la ecuación del cohete significa que la tasa de cambio empeora cuanto más gastes."
+    },
+    {
+      "type": "prose",
+      "md": "Una [transferencia de Hohmann](/science/transfers/hohmann-transfer) es el arco de energía mínima entre dos órbitas — el camino que cuesta menos delta-v para pasar de A a B. No es recto; es una elipse que toca la órbita interior en un extremo y la exterior en el otro, costando todo el camino en nada más que inercia. El truco es que enciendes el motor dos veces: una para salir de la órbita de salida, otra para coincidir con la órbita de llegada. Entre esos dos encendimientos — típicamente 259 días en el caso de Tierra a Marte — no gastas nada. La gravedad del sistema solar hace el transporte de forma gratuita, siempre que hayas tenido el sentido de apuntar de la manera correcta al principio."
+    },
+    {
+      "type": "figure",
+      "image": "essays/delta-v/hohmann-transfer",
+      "kind": "diagram",
+      "caption": "El camino más barato entre dos órbitas nunca es la línea recta — una transferencia de Hohmann navega a lo largo de una elipse que solo toca cada órbita, encendiendo el motor solo dos veces: una para salir, otra para llegar.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "Esto es lo que *navegación* entrega a la planificación de delta-v. El [ensayo de navegación](/essays/navigation) comenzó con el problema de apuntar a un planeta en movimiento — el problema de Lambert, el arco largo, los encendimientos de corrección que cierren la brecha entre plan y realidad. Pero elegir ese arco en primer lugar fue una decisión de presupuesto. El camino de energía mínima de Hohmann fue elegido porque gasta menos; existe una trayectoria más rápida, pero cuesta más delta-v del que la mayoría de misiones pueden permitirse, y delta-v es la única cosa que no puedes pedir prestada."
+    },
+    {
+      "type": "heading",
+      "text": "El único reabastecimiento gratuito"
+    },
+    {
+      "type": "prose",
+      "md": "Dada la tiranía de la ecuación, cualquier truco que añada delta-v de forma gratuita no es meramente útil — es transformador. Hay exactamente uno: **la gravedad**."
+    },
+    {
+      "type": "prose",
+      "md": "Una nave espacial que se acerca rápido a un planeta entra en el campo gravitatorio del planeta rápidamente, gira alrededor de él y sale más rápido de lo que llegó — porque el planeta se está moviendo a sí mismo, y la nave ha robado un susurro de ese movimiento. La [asistencia gravitatoria](/science/transfers/gravity-assist) no cuesta propelente alguno. El planeta pierde una cantidad inmensurablemente pequeña de su propia velocidad orbital; la nave espacial gana una cantidad considerable. Para la mayoría de las sondas interplanetarias, esto no es un bono — es el modelo completo de negocio."
+    },
+    {
+      "type": "prose",
+      "md": "A mediados de los años sesenta, un matemático del JPL llamado Gary Flandro estaba haciendo cálculos de verano cuando notó algo. Los planetas exteriores — Júpiter, Saturno, Urano, Neptuno — se estaban desplazando hacia un alineamiento que ocurre una sola vez cada 175 años. Una sonda lanzada en 1977 y dirigida correctamente podría usar la gravedad de Júpiter para alcanzar Saturno, la de Saturno para alcanzar Urano, la de Urano para alcanzar Neptuno: un tiro de cuatro planetas, cada encuentro cercano añadiendo delta-v de forma gratuita y redirigiendo la trayectoria al siguiente objetivo. El tiempo de vuelo a Neptuno caería de treinta años a doce. Esa observación se convirtió en el Grand Tour — y el [Voyager 2](/missions?id=voyager-2) lo hizo real, ganando aproximadamente **10 km/s** solo del encuentro cercano con Júpiter, suficiente para alcanzar el sistema exterior en el tiempo presupuestado originalmente para una misión solo a Saturno. Neptuno, hoy en día, ha sido visitado una sola vez. La razón es que la ventana se cerró en los años ochenta y no se abrirá de nuevo hasta los años 2150."
+    },
+    {
+      "type": "figure",
+      "image": "missions/voyager-2/01",
+      "kind": "photo",
+      "caption": "El Voyager 2 tomó el reabastecimiento gratuito cuatro veces — Júpiter a Saturno a Urano a Neptuno — acumulando el movimiento de cada planeta en el siguiente, en una ruta que no se alineará de nuevo durante 175 años.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "prose",
+      "md": "La misma aritmética es la razón por la que el [Cassini](/missions?id=cassini) hizo bucles a través de Venus — dos veces — y pasó por la Tierra y pasó por Júpiter antes de dirigirse hacia afuera a Saturno: no la ruta panorámica, sino la barata. Y por qué el [Mangalyaan](/missions?id=mangalyaan), la primera misión interplanetaria de India, alcanzó Marte en 2014 con un presupuesto de aproximadamente US$74 millones — una fracción de lo que han costado misiones comparables — en parte porque su trayectoria fue diseñada para extraer el máximo valor de cada kilogramo de su carga de propelente de 852 kilogramos, el componente más grande de una nave que pesaba 1.340 kg en la plataforma. El presupuesto de delta-v fue de 1.350 m/s para la misión completa después del escape. Cada gramo fue contabilizado."
+    },
+    {
+      "type": "figure",
+      "image": "missions/cassini/01",
+      "kind": "photo",
+      "caption": "El Cassini alcanzó Saturno en velocidad prestada, pasando por Venus dos veces, la Tierra y Júpiter en el camino — un desvío de siete años que costó menos combustible que apuntar directamente a él nunca podría.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech/Space Science Institute"
+    },
+    {
+      "type": "heading",
+      "text": "La ganancia de Oberth"
+    },
+    {
+      "type": "prose",
+      "md": "La gravedad ofrece un segundo truco, más sutil que el primero. Fue descrito en 1929 por Hermann Oberth, y se basa en un hecho sobre la energía cinética que no es obvio hasta que lo escribes: la energía crece como el *cuadrado* de la velocidad. Un encendimiento que añade 1 km/s a 10 km/s añade mucha más energía cinética que el mismo encendimiento a 1 km/s — porque el trabajo realizado es igual a la fuerza por la distancia, y un cohete que se mueve rápido cubre más distancia durante el encendimiento."
+    },
+    {
+      "type": "prose",
+      "md": "La consecuencia, llamada el [efecto Oberth](/science/propulsion/oberth-effect), es que los encendimientos profundos en un pozo gravitatorio — en el punto más bajo de una órbita, *periapsis*, donde una nave espacial se mueve más rápido — son drásticamente más eficientes que los encendimientos realizados en altitud. El mismo delta-v, gastado en el momento correcto en el lugar correcto, entrega más energía final a la nave. Las misiones que pueden arreglárselas para encender sus motores en periapsis — llegadas planetarias, encuentros cercanos, maniobras de bajo punto deliberadamente diseñadas — reciben, en efecto, un multiplicador en cualquier delta-v que gasten. El [New Horizons](/missions?id=new-horizons) usó un encuentro cercano con Júpiter no solo para el impulso de velocidad de asistencia gravitatoria sino que sincronizó su encendimiento para coincidir con el punto de máximo acercamiento, apilando la ganancia de Oberth encima de la asistencia. La combinación ahorró tres años en su vuelo a Plutón."
+    },
+    {
+      "type": "figure",
+      "image": "essays/delta-v/oberth-effect",
+      "kind": "diagram",
+      "caption": "Enciende bajo, gana más: profundo en un pozo gravitatorio una nave espacial se mueve más rápido, y el mismo encendimiento del motor allí compra mucha más energía de la que lo haría arriba en el top lento y distante de la órbita.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "Estos no son trucos o lagunas. Son las matemáticas de moverse a través de un paisaje gravitatorio que, si lo lees correctamente, no es hostil al movimiento sino que de hecho está lleno de toboganes y rampas. El presupuesto no desaparece — pero el lector hábil de ese paisaje puede estirarlo, a veces enormemente."
+    },
+    {
+      "type": "heading",
+      "text": "Lo que la ecuación borra"
+    },
+    {
+      "type": "prose",
+      "md": "El presupuesto de delta-v es despiadadamente indiferente a casi todo lo que se siente importante sobre una misión — la ciencia, el prestigio, la geopolítica. No le importa quién construyó la nave o qué bandera está pintada en ella. Le importa solo la masa, la velocidad de escape, y el logaritmo."
+    },
+    {
+      "type": "prose",
+      "md": "Esto crea una disciplina distinta a cualquier otra en ingeniería. La cámara añadida a un rover de Marte, la redundancia extra en una computadora, el instrumento científico adicional por el que un equipo cabildió durante años — cada uno de ellos viene con un precio de delta-v. Si el instrumento es más pesado del margen permitido, algo más se quita o la misión entera se vuelve inviable. La planificación de misiones es un ejercicio de arbitraje continuo y doloroso entre lo que quieres y lo que puedes llevar, y la ecuación es el juez de cada disputa."
+    },
+    {
+      "type": "prose",
+      "md": "El presupuesto también borra el margen para el error de una manera que la ingeniería basada en tierra rara vez lo hace. Un puente que está ligeramente sobrecargado aún se sostiene. Una nave que se queda sin delta-v antes de completar la inserción orbital se convierte en un pedazo de escombros descontrolados. No hay crédito parcial. Cada misión en este atlas que tuvo éxito lo hizo porque alguien, en algún lugar, mantuvo una contabilidad honesta y nunca gastó más de lo que había. El anónimo cuarto de personas que hicieron esa matemática — que vigilaron el presupuesto, comprobaron la astrodinámica, realizaron las secuencias de encendimiento de corrección — llevaron cada misión que llegó."
+    },
+    {
+      "type": "heading",
+      "text": "El argumento de reutilización, declarado claramente"
+    },
+    {
+      "type": "prose",
+      "md": "Durante sesenta años, la tiranía de la ecuación del cohete produjo una respuesta particular al problema de llegar a órbita: construir una máquina optimizada para la tarea, quemarla en el camino hacia arriba, tirarla. Los ahorros de masa estructural de diseñar una primera etapa de un solo uso eran reales, y el delta-v era real, y la matemática cerraba. El problema era que estabas tirando un motor que valía decenas de millones de dólares después de usarlo una sola vez."
+    },
+    {
+      "type": "prose",
+      "md": "Aterrizar una etapa de cohete y volarla de nuevo cambia el denominador, pero no de la manera que la ecuación predice. Estructuralmente, una etapa reutilizable es ligeramente más pesada — necesita patas de aterrizaje, aletas de rejilla, protección térmica, reservas de propelente residual para el encendimiento de regreso — lo que significa que la ventaja del [impulso específico](/science/propulsion/specific-impulse) se estrecha y la proporción de masa se reduce. La ecuación, estrictamente leída, dice que la reutilización te cuesta delta-v. Lo que la ecuación no modela es que puedes volar la etapa de nuevo la próxima semana, a una fracción del costo de construir una nueva, lo que significa que puedes permitirte volar más misiones, lo que significa que el presupuesto que importa — dólares por kilogramo a órbita — se colapsa. La lógica de delta-v no cambió. La lógica económica que corre paralela a ella sí."
+    },
+    {
+      "type": "prose",
+      "md": "Esta es la tensión que ha definido la última década del desarrollo de vehículos de lanzamiento, y aún no se resuelve. La ecuación del cohete aún establece el piso físico duro. Lo que cambia es cuánto cuesta estar de pie en él. [Vuela una trayectoria en el atlas](/fly) y mira qué sucede con el presupuesto de delta-v a medida que cada etapa se separa — las instantáneas de la proporción de masa en cada corte son lo que la ecuación está realmente aplicando, invisiblemente, en cada vuelo."
+    },
+    {
+      "type": "heading",
+      "text": "El libro de contabilidad se cierra"
+    },
+    {
+      "type": "prose",
+      "md": "Hay algo aclarador en una restricción sin excepciones. La ecuación del cohete no cede por razones políticas o aumentos de presupuesto o heroísmos de ingeniería. Cada misión que ha salido de este planeta — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [Mangalyaan](/missions?id=mangalyaan) — lo hizo porque alguien reconcilió una columna de requisitos de delta-v contra una columna de lo que el propelente podía proporcionar, y el segundo número era al menos tan grande como el primero. Cada misión que nunca partió — y ha habido muchas, muertas silenciosamente en la planificación — falló esa prueba."
+    },
+    {
+      "type": "prose",
+      "md": "Lo que la ecuación también hace, menos obviamente, es hacer la gravedad preciosa. No como un riesgo a superar — cada cohete está quemando hacia arriba contra ella — sino como una cuenta gratuita. Un pozo gravitatorio de un planeta, atravesado correctamente, es una fuente. La gravedad de Júpiter le dio al Voyager 2 una velocidad que nunca hubiera podido comprar con propelente. El efecto Oberth hace que los pasos de periapsis profundo valga la pena diseñar deliberadamente. La arquitectura orbital del sistema solar es, desde una perspectiva de delta-v, un paisaje de reabastecimientos gratuitos dispersos en un mapa mayormente vacío — y cada [trayectoria que puedes explorar aquí](/science/transfers/hohmann-transfer) es un registro de alguien encontrando uno."
+    },
+    {
+      "type": "prose",
+      "md": "Tsiolkovski murió en 1935, nueve años antes de que volara el primer misil balístico y una generación antes de que la primera nave espacial saliera de la Tierra. Nunca vio un cohete en órbita. Lo que hizo fue escribir, en 1903, la gramática que cada misión desde entonces ha hablado — la única regla que convierte la aspiración de ir a algún lugar en la aritmética de si puedes. Todo lo demás es una oración en ese lenguaje. La pregunta que el atlas sigue respondiendo, misión tras misión, es cuánto puedes decir dentro de él."
+    }
+  ]
+}

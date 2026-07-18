@@ -1,0 +1,70 @@
+/**
+ * Flagship descent-profile guard (RFC-034 §9) — the inverse of
+ * flagship-profiles.test.ts. Every one of the 37 Moon/Mars/Venus landers must
+ * ship a well-formed thin profile that expands via its archetype and flies to
+ * the RIGHT outcome: a survivable touchdown for the soft landers, an honest
+ * high-speed impact for the three crash reconstructions. Catches a data typo
+ * (an entry mass, a phase altitude, a propellant budget) the moment it makes a
+ * lander crater — or a crash "succeed".
+ */
+
+import { readFileSync, existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, resolve } from 'node:path';
+import { describe, it, expect } from 'vitest';
+import {
+  expandDescentProfile,
+  DESCENT_MISSION_IDS,
+  type RawDescentProfile,
+} from './descent-profile-registry';
+import { integrateDescent } from './descent-physics';
+import { expectInRange } from '../test-helpers/expect-close';
+
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../');
+const profilePath = (id: string): string =>
+  resolve(ROOT, `static/data/descent-profiles/${id}.json`);
+const loadRaw = (id: string): RawDescentProfile =>
+  JSON.parse(readFileSync(profilePath(id), 'utf-8')) as RawDescentProfile;
+
+/** The three missions whose EDL is an honest failure (impact, not touchdown). */
+const CRASHES = new Set(['beresheet', 'schiaparelli', 'mars3']);
+
+/** Peak-decel band (Earth-g) per body — loose, uncalibrated sanity bounds. */
+const PEAK_G_BAND: Record<string, [number, number]> = {
+  moon: [0, 8],
+  mars: [2, 25],
+  venus: [40, 600],
+};
+
+describe('all 37 descent profiles ship on disk', () => {
+  for (const id of DESCENT_MISSION_IDS) {
+    it(`${id} has a profile JSON`, () => {
+      expect(existsSync(profilePath(id))).toBe(true);
+    });
+  }
+});
+
+describe('every descent profile expands + flies to its honest outcome', () => {
+  for (const id of DESCENT_MISSION_IDS) {
+    it(`${id} lands as expected`, () => {
+      if (!existsSync(profilePath(id))) return; // gated by the coverage suite above
+      const raw = loadRaw(id);
+      expect(raw.missionId).toBe(id);
+      const profile = expandDescentProfile(raw);
+      expect(profile.phases.at(-1)!.endTrigger.type).toBe('ground');
+
+      const s = integrateDescent(profile);
+      if (CRASHES.has(id)) {
+        expect(s.touchdownSuccess).toBe(false);
+      } else {
+        expect(s.touchdownSuccess).toBe(true);
+      }
+      // Peak deceleration in the body's plausible band.
+      const band = PEAK_G_BAND[profile.body];
+      expectInRange(s.peakDecel.g, band[0], band[1], `${id} peak decel (g)`);
+      // Beats open on entry and close on touchdown.
+      expect(s.events[0].type).toBe('entry');
+      expect(s.events.at(-1)!.type).toBe('touchdown');
+    });
+  }
+});

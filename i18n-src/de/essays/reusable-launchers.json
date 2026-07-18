@@ -1,0 +1,155 @@
+{
+  "title": "Die Rakete behalten",
+  "dek": "Sechzig Jahre lang bauten wir die teuerste Maschine der Menschheitsgeschichte, flogen sie einmal und warfen sie ins Meer. Die Menschen, die beschlossen haben, damit aufzuhören, haben in aller Stille den größten Wandel in der Raumfahrt seit Apollo bewerkstelligt.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "In der Nacht des 21. Dezember 2015 stand eine [Falcon 9](/fleet?id=falcon-9)-Erststufe vertikal auf einem Betonfundament in Cape Canaveral, ihre Triebwerke kalt, umgeben von einer Wolke aus Restwasserdampf, intakt. Sie war gerade aus dem Weltall zurückgekommen. Etwa acht Minuten, nachdem sie gestartet war, um eine Charge von Satelliten in die Umlaufbahn zu bringen, hatte die Raketenstufe sich selbst umgedreht, drei ihrer neun Merlin-Triebwerke gezündet, sich durch die obere Atmosphäre gebremst, vier Landebeine ausgefahren und sich aufrecht auf dem Fundament nieder gelassen, von dem sie gestartet war. Das gesamte Manöver erforderte eine Präzision, wie man sie sonst nur von einer Schweizer Uhr kennt. Die zuschauende Menge brach in Jubel aus, und der Laut – das Brausen von Menschen, die gerade etwas wirklich Neues gesehen hatten – ist immer noch im Video zu hören."
+    },
+    {
+      "type": "prose",
+      "md": "Was in jener Nacht geschah, war eine Demonstration, aber das, was sie demonstrierte, war nicht in erster Linie ein technischer Trick. Es war ein wirtschaftliches Argument. Jede Rakete, die je zuvor flog – die [Saturn V](/fleet?id=saturn-v), die zwölf Menschen zum Mond brachte, die sowjetische N1, die es nie in die Umlaufbahn schaffte, die vielseitige Soyuz, Atlas, Proton und Long-March-Familie, die zusammen die meisten Starts in diesem Atlas ausmachen – war dafür gebaut, um einmal verwendet zu werden. Man flog sie. Sie zerfiel in der Atmosphäre oder versank im Meer. Man baute eine andere. Die Industrie war sechzig Jahre lang um diese Tatsache herum strukturiert: Raketen waren Munition, keine Flugzeuge. In dem Moment, in dem die Falcon 9 landete, stand diese Annahme zum ersten Mal zur Diskussion."
+    },
+    {
+      "type": "prose",
+      "md": "Warum es sechzig Jahre dauerte, dorthin zu gelangen, ist eine interessantere Frage, als sie aussieht."
+    },
+    {
+      "type": "heading",
+      "text": "Das Buchhalter-Problem"
+    },
+    {
+      "type": "prose",
+      "md": "Die Einwegrakete ist auf eine Art verschwenderisch, die fast komisch wirkt, wenn man sie schlicht beschreibt. Eine [Saturn V](/fleet?id=saturn-v) kostete ungefähr 185 Millionen Dollar in Dollars der späten 1960er Jahre – etwa 1,5 Milliarden Dollar zu heutigen Preisen – und jede flog etwa zwölf Minuten lang, bevor sie verworfen wurde. Die fünf F-1-Triebwerke ihrer Erststufe, jedes ein atemberaubendes Meisterwerk der Ingenieurskunst, das grob 2.600 Kilogramm Treibstoff pro Sekunde verbrannte, endeten ihr Leben, während sie auf dem Boden des Atlantiks rosteten. Eine private Expedition, finanziert von Jeff Bezos, barg 2013 zwei Sätze von Saturn-V-F-1-Triebwerken vom Meeresboden – fast ein Jahrhundert, nachdem sie dort abgeworfen wurden – und fand sie weitgehend intakt vor. Sie kamen in Museen, nicht zurück in den Flugbetrieb. Sie beim ersten Mal wegzuwerfen war das Plan."
+    },
+    {
+      "type": "prose",
+      "md": "Die Logik hinter diesem Plan war nicht Dummheit. Es war die Logik des Weltraum-Rennens der 1960er Jahre: zuerst dort ankommen, um jeden Preis. Eine wiederverwendbare Rakete zu bauen ist schwieriger als eine Einwegrakete. Wiederverwendbarkeit fügt Gewicht hinzu – Hitzeschutzschilde, Landebeine, Treibstoff für den Rückflug reserviert – und Gewicht ist der Feind, denn jedes Kilogramm, das man zur Struktur hinzufügt, ist ein Kilogramm, das man nicht in die Umlaufbahn liefern kann. Frühe Designer rechneten die Zahlen durch und kamen zu dem Ergebnis, dass die Strafe zu hoch war. Besser, beschlossen sie, billig bauen und wegwerfen. Diese Berechnung stimmte für ihren Moment, und sie fixierte einen Satz von Annahmen, die zwei Generationen hielten."
+    },
+    {
+      "type": "prose",
+      "md": "Das [Space Shuttle](/fleet?id=space-shuttle-stack) sollte diese Logik durchbrechen. Es war der erste echte Versuch der Vereinigten Staaten – oder von irgendjemand – ein operativ wiederverwendbares Startsystem zu bauen, und das Argument dafür war wirtschaftlich: Durch wiederholtes Fliegen des Orbiters würde das Programm die Kosten für den Erreichen der Umlaufbahn auf etwa 600 Dollar pro Kilogramm senken, niedrig genug, um Raumfahrt fast zur Routine zu machen. Das Shuttle flog zwischen 1981 und 2011 135 Missionen. Es bestand den wirtschaftlichen Test völlig nicht. Die echten Kosten pro Flug betrugen durchschnittlich etwa 1,5 Milliarden Dollar, wenn die Gesamtprogrammkosten auf alle Missionen verteilt wurden – pro Kilogramm zur niederen Erdumlaufbahn teurer als die Saturn V, die es ersetzte. Das Aufbereiten der 24.000 Hitzeschutzplatten des Orbiters nach jedem Flug war keine schnelle Arbeit; sie erforderte Tausende von Personenstunden. Wiederverwendung erwies sich als außerordentlich teuer, wenn jedes Untersystem bis zu den Standards eines Flugzeugs abgebaut und wieder aufgebaut werden musste, das möglicherweise Besatzung tragen könnte. Das Shuttle bewies, dass Wiederverwendung *mechanisch* funktionieren *konnte* – der Orbiter flog Dutzende Male – aber es bewies auch, dass Wiederverwendbarkeit allein die Kosten nicht senkt. Die Wirtschaftlichkeit funktioniert nur, wenn man das Fahrzeug *schnell* und *billig* umdrehen kann."
+    },
+    {
+      "type": "heading",
+      "text": "Der einfachste mögliche Trick"
+    },
+    {
+      "type": "prose",
+      "md": "SpaceX näherte sich dem Problem anders. Anstatt zu versuchen, das ganze Fahrzeug wiederzuverwenden – die Wahl, die das Shuttle so komplex machte – konzentrierte sich das Unternehmen auf die teuerste einzelne Komponente: die Erststufen-Raketenstufe. Bei einer typischen Rakete macht die Erststufe das schwerste Heben, verbraucht den meisten Treibstoff, trägt die meiste Triebwerksenergie und kostet am meisten zu fertigen. Sie ist auch die Komponente, die man bei einer Einwegrakete jedes Mal verliert. Die Erststufe zu retten bedeutet, die Mehrheit des Fahrzeugwertes zu retten."
+    },
+    {
+      "type": "prose",
+      "md": "Die technische Anforderung, sie zu retten, ist brutal: Die Stufe muss den Wiedereintritt durch eine Atmosphäre überstehen, die sie in den ersten Minuten mit Mach 7 durchstoßen hat, die Richtung umkehren, von Überschallgeschwindigkeit auf Landegeschwindigkeit verlangsamen und sich vertikal auf ein Ziel der Größe eines Footballfeldes setzen – entweder zurück am Startplatz oder auf einem unbemannten Drohnenflugzeug hunderte Kilometer weit entfernt im Atlantik oder Pazifik. Um all das zu erreichen, muss die Raketenstufe genug Treibstoff behalten für eine Reihe von präzise getimten Triebwerkszündungen, was bedeutet, dass sie mit weniger Treibstoff für die Hauptaufgabe in die Umlaufbahn kommt. Diese Gewichtsstrafe ist real: Eine Falcon 9, die mit einer neuen Raketenstufe fliegt, liefert etwa 22.800 Kilogramm zur niederen Erdumlaufbahn; ein Flug, der die Raketenstufe rettet, liefert weniger. Dies ist der grundlegende Kompromiss im Zentrum der wiederverwendbaren Raumfahrt, und SpaceX akzeptierte ihn, weil die Wirtschaftlichkeit trotzdem funktioniert: die Raketenstufe, die landet, kann wieder fliegen, und wieder, und wieder."
+    },
+    {
+      "type": "prose",
+      "md": "Nach der Dezember-2015-Landung folgte eine zweite, und eine dritte, und dann der Reflug: Im März 2017 startete SpaceX eine Falcon 9 mit einer Raketenstufe, die bereits geflogen war, das erste Mal in der Geschichte, dass eine Rakete der Orbitalklasse die gleiche Stufe zweimal ins All flog. Bis Mitte 2026 hat die am häufigsten geflogene Falcon 9-Erststufe 36 Missionen auf der gleichen Hardware abgeschlossen – mehr als die meisten Einwegraketen in ihrer gesamten Flotte fliegen. Die Grenzkosten eines wiederverwendbaren Starts mit Treibstoff und Überholung betragen etwa 15 bis 20 Millionen Dollar gegen einen Listenpreis von 74 Millionen Dollar. Die Differenz, ungefähr, sind die Kosten der Raketenstufe selbst, durch die Rettung zurückgewonnen."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/landing-profile",
+      "kind": "diagram",
+      "caption": "Der Trick ist fast beleidigend einfach auszusagen und brutal zu fliegen: Genug Treibstoff zurückhalten, die Raketenstufe umdrehen und drei Mal auf dem Weg nach unten brennen – Rückstoß, Eintritt, Landung – bis sie auf ihren Beinen sitzt. Die gleiche Stufe wird dann überprüft, aufgetankt und wieder geflogen.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Es mit den Händen fangen"
+    },
+    {
+      "type": "prose",
+      "md": "Die [Falcon Heavy](/fleet?id=falcon-heavy) erweiterte die gleiche Logik seitwärts: drei Falcon 9-Kerne aneinander gebunden, zwei von ihnen peelen nach den ersten zwei Minuten ab und fliegen zurück, um gleichzeitig nebeneinander in Cape Canaveral zu landen. Die Videos der Zwillingslandungen – zwei Feuersäulen, die in Spiegelsymmetrie herabsteigen, im exakt gleichen Moment landen – sehen aus wie etwas aus einem Film. Sie sind nicht. Sie sind die Wirtschaftlichkeit sichtbar gemacht."
+    },
+    {
+      "type": "prose",
+      "md": "[Starship](/fleet?id=starship) führt das Argument zu seinem logischen Ende. Wo Falcon 9 ihre Erststufe zurückgewinnt und ihre Oberstufe entsorgt, ist Starship dafür ausgelegt, *beide* zurückzugewinnen. Der Super-Heavy-Booster – 71 Meter hoch, angetrieben von 33 Raptor-Triebwerken, die flüssiges Methan und flüssigen Sauerstoff verbrennen, mit ungefähr doppelter Schubkraft einer Saturn V – kehrt zum Startplatz zurück und wird in der Luft von einem Paar mechanischer Arme auf dem Startturm selbst gefangen. Das System heißt Mechazilla nach den Ingenieuren, die es bauten. SpaceX fing den Booster zum ersten Mal auf diese Weise am 13. Oktober 2024, Flug 5 des Starship-Testprogramms, und wiederholte das Manöver bei nachfolgenden Flügen. Die Idee, dass man seine Rakete nicht landen würde, sondern sie einfach *fangen würde, während sie fiel*, hätte vor einem Jahrzehnt wie Fiktion geklungen. Es ist jetzt ein Montagmorgen-Verfahren."
+    },
+    {
+      "type": "prose",
+      "md": "Die Starship-Oberstufe – die größte je gebaute Raumfahrzeug, so hoch wie ein fünfzehnstöckiges Gebäude – soll dem gleichen Weg folgen, zurückkehren und über dem Fundament gefangen werden. Sobald beide Hälften auf dem Boden sind, kann das System theoretisch innerhalb von Stunden wieder aufgetankt und wieder gestartet werden. Keine Einwegrakete versucht auch nur diesen Vergleich. Eine Einwegrakete ist eine Logistikkette: fertigen, transportieren, integrieren, starten, von vorne beginnen. Ein vollständig wiederverwendbares System ist ein *Flugzeug* mit einer sehr langen Route. Die Wirtschaftlichkeit der beiden sind nicht in der gleichen Galaxie."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/tower-catch",
+      "kind": "diagram",
+      "caption": "Dann eine seltsamere Idee: Geben Sie dem Booster überhaupt keine Beine. Lassen Sie den Startturm ihn fangen – zwei Arme schließen sich um eine siebzig-Meter-Stufe, während sie schwebt, so dass die Masse, die Landegestelle gewesen wären, stattdessen zur Nutzlast wird. Das erste saubere Fangen kam im Oktober 2024.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Der zweite Mover"
+    },
+    {
+      "type": "prose",
+      "md": "Blue Origins [New Glenn](/fleet?id=new-glenn) landete ihre Erststufe zum ersten Mal auf dem Meer am 13. November 2025 – zehn Jahre nach der Falcon 9-Dezember-2015-Landung, was einen Eindruck davon gibt, wie schnell sich die Industrie bewegt, wenn SpaceX das Tempo setzt. New Glenn ist nach jedem vorherigen Standard eine große Rakete, die bis zu 45.000 Kilogramm zur niederen Erdumlaufbahn in Einwegkonfiguration tragen kann; ihre Erststufe kehrt bei jeder Mission auf einem unbemannten Drohnenflugzeug im Atlantik zurück. Der erste Reflug einer New-Glenn-Stufe folgte im April 2026. Blue Origins Ansatz spiegelt SpaceX's in der Architektur wider: die Erststufe retten, sie wieder fliegen, die Grenzkosten bei jeder Wiederverwendung senken."
+    },
+    {
+      "type": "prose",
+      "md": "Was die Erscheinung von [New Glenn](/fleet?id=new-glenn) zum Bild hinzufügt, ist Wettbewerbsdruck. Für die meiste Dekade zwischen 2015 und 2025 war SpaceX im Wesentlichen allein auf dem wiederverwendbaren Startmarkt. Ein Markt mit einem Lieferanten ist kein Markt; es ist ein Monopol. Der Eintritt eines zweiten glaubwürdigen wiederverwendbaren Launchers ändert die Preisdynamik für jeden, der eine Fahrt in die Umlaufbahn kauft. Satellitenbetreiber, Weltraumbehörden und kommerzielle Kunden, die früher keine andere Wahl hatten, als das zu nehmen, was SpaceX anbot, haben jetzt Alternativen – und mehr kommen."
+    },
+    {
+      "type": "prose",
+      "md": "China ist mit ungewöhnlicher Ernsthaftigkeit vorangegangen. LandSpaces Zhuque-3, eine methangetriebene Rakete, die grob der Falcon 9 ähnelt, versuchte ihre erste Rettung im Dezember 2025; die Oberstufe erreichte die Umlaufbahn, aber der Booster stürzte auf seinem Landeansatz ab. Ein zweiter Rettungsversuch ist für Mitte 2026 geplant. iSpace hat die Hyperbola-3 in Hardware-Qualifikation, mit einem dedizierten unbemannten Drohnenflugzeug bereits gestartet, und zielt auf seinen ersten Flug von Wenchang. Mehrere andere chinesische kommerzielle Unternehmen sind in aktiver Entwicklung. Die chinesische Regierung hat wiederverwendbaren Zugang zur Umlaufbahn zu einer expliziten nationalen Priorität gemacht. Dass das Land, das die Große Mauer baute, beschlossen hat, seine Raketen nicht mehr wegzuwerfen, ist ein Datenpunkt, den man beachten sollte."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/falcon-9/01",
+      "kind": "photo",
+      "caption": "Eine Falcon 9-Erststufe steht wieder auf ihren Beinen, nachdem sie eine Nutzlast in die Umlaufbahn geliefert hat – der Moment, in dem eine sechzig Jahre alte Annahme in aller Stille zusammenbrach. Sobald ein Unternehmen bewies, dass ein Booster wieder geflogen werden konnte, mussten alle anderen lernen, ihre zu behalten.",
+      "align": "wide",
+      "credit": "SpaceX"
+    },
+    {
+      "type": "heading",
+      "text": "Was Wiederverwendung wirklich ändert"
+    },
+    {
+      "type": "prose",
+      "md": "Die Oberflächengeschichte ist Kostenreduktion, und die Kostenreduktion ist real: Startpreise, die einmal bei 200 Millionen Dollar oder mehr für ein großes Einwegrakete lagen, sind auf 60–80 Millionen Dollar für eine wiederverwendbare Mittelhub-Mission gefallen, und die Grenzwirtschaftlichkeit einer abgenutzten Falcon 9-Raketenstufe ist noch niedriger. Aber die tiefere Änderung ist im Start-*Tempo*. SpaceX startete 2024 132 Falcon 9-Missionen – fast drei pro Woche, aufrechterhalten über ein volles Kalenderjahr, mit dem gleichen Pool von Raketenstufen, die den Startplatz wieder durchlaufen. Keine Einwegarchitektur könnte sich diesem Tempo nähern; man würde eine Industrieversorgungskette benötigen, die mit Kriegstempo arbeitet, um es zu erreichen. Wiederverwendbarkeit ist nicht nur eine Frage der Kosten. Es geht um Tempo. Und Tempo ist davon, was möglich wird."
+    },
+    {
+      "type": "prose",
+      "md": "Was möglich wird, ist Starlink: eine Konstellation, die mehr als 6.000 Starts erforderte, um sie zu besiedeln, unmöglich zu bauen unter jeder Einwegpreisstruktur, die es je gab. Was möglich wird, sind kostengünstige kommerzielle Wissenschaftsmissionen, die sich vorher die Fahrt nicht leisten konnten. Was möglich wird, schließlich, ist bemannte Raumfahrt zum Mars bei einer Häufigkeit, die es zu einem Programm macht, anstatt zu einem Kunststück – weil das [Delta-v-Budget](/science/propulsion/dv-budget) einer Erde-zu-Mars-Mission ein Fahrzeug erfordert, das in der Umlaufbahn aufgetankt und wiederverwendet werden kann, oder die Massefraktionen schließen einfach nicht. Wiederverwendbarkeit ist nicht nur eine wirtschaftliche Vorliebe. Für die ehrgeizigen Ziele, die [Starship](/fleet?id=starship) unterstützen soll, ist sie eine physische Notwendigkeit."
+    },
+    {
+      "type": "prose",
+      "md": "Die Gewichtsstrafe, die frühe Ingenieure dazu bewogen, Wiederverwendung abzulehnen, ist immer noch real; sie wurde nicht wegentwickelt. Ein vollständig wegwerffähiges Starship würde mehr in die Umlaufbahn liefern als ein wiederverwendbares. Aber die Frage ist nicht mehr, ob man sich die Gewichtsstrafe leisten kann. Es geht darum, ob man sich leisten kann, das ganze Ding wegzuwerfen – ob man sich, wie es die Raketenindus­trie sechs Jahrzehnte lang tat, leisten kann, die komplizierteste Maschine, die je gebaut wurde, als Einwegartikel zu behandeln."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/cost-curve",
+      "kind": "diagram",
+      "caption": "Die Zahl, die alles steuert, ist der Preis eines Kilogramms in die Umlaufbahn. Das Shuttle versprach, es zu senken und tat das nie; wiederverwendbare Falcon 9 senkte es etwa um das Zwanzigfache. Senken Sie es weit genug und Missionen, die einmal unvorstellbar waren, werden einfach geplant.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Die Frage, die landete"
+    },
+    {
+      "type": "prose",
+      "md": "Das ursprüngliche Argument der Raketenindus­trie gegen Wiederverwendung war Ingenieurswesen: Das Fahrzeug ist zu kompliziert, um billig überarbeitet zu werden, zu zerbrechlich, um ohne Abbau wieder zu fliegen, zu gewichtsbeschränkt, um die Hardware zu tragen, die nötig ist zum Landen. Die Space-Shuttle-Erfahrung schien alle drei zu bestätigen. Diese Bedenken waren legitim, und dreißig Jahre lang hielten sie."
+    },
+    {
+      "type": "prose",
+      "md": "Was sich nicht änderte, war die Physik. Was sich änderte, waren die Fertigungsbasis, die Treibstoffwahl – Methan verbrennt sauberer als Kerosin, hinterlässt weniger Rückstände, macht die Überholung schneller – und, mehr als alles andere, die Bereitschaft, um Wiederverwendung von Anfang an zu entwerfen, anstatt sie auf ein Fahrzeug zu ersetzen, das für Einwegbarkeit optimiert war. Das Shuttle war eine Einwegrakete, der man gesagt hatte, nachhause zu kommen. Die Falcon 9-Raketenstufe wurde von Anfang an um die Frage herum entworfen, wie man landet. Dieser Unterschied in der Designabsicht macht die meisten des Unterschieds im Ergebnis aus."
+    },
+    {
+      "type": "prose",
+      "md": "In der Dekade seit jener Dezembernacht in Cape Canaveral ist das Landen einer Raketenstufe von unmöglich zu gewöhnlich gegangen. Eine Falcon 9-Erststufe, die nicht zu ihrem unbemannten Drohnenflugzeug zurückkehrt, ist jetzt das ungewöhnliche Ereignis, wert, im Anomalielog notiert zu werden. Super Heavy wurde aus der Luft gefangen. Ein zweites Unternehmen hat eine schwere Stufe auf dem Meer gelandet und wieder geflogen. China läuft, um aufzuholen. Die Annahme, die die gesamte Startindustrie seit Sputnik regiert hat – dass eine Rakete ein Einwegartikel ist – wurde gebrochen, und ihr Brechen gestaltet bereits, welche Missionen möglich sind, welche Unternehmen lebensfähig sind, und was es die nächste Generation kosten wird, weiter zu gehen."
+    },
+    {
+      "type": "prose",
+      "md": "Keine der [Raketenstufen](/science/propulsion/rocket-stages), die je Menschen oder Raumfahrzeuge in die Umlaufbahn in den ersten sechzig Jahren der Raumfahrt brachten, überlebten. Sie sind auf dem Meeresboden oder in der oberen Atmosphäre als verstreute Moleküle oder in Museen, wo Ingenieure, die sie bauten, vorbeigehen und Dinge erkennen können, die sie einmal berührten. Die, die jetzt fliegen, kommen zurück. Diese eine Änderung – leise, technisch, brutal schwierig umzusetzen – ist das, was die erste Ära der Raumfahrt von allem trennt, was kommt als Nächstes."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/starship/01",
+      "kind": "photo",
+      "caption": "Starship ist die größere Wette: dass das ganze Fahrzeug – Booster und Schiff gleichermaßen – nachhause kommt und innerhalb von Tagen wieder fliegt. Wenn es hält, hört die Kosten, um die Umlaufbahn zu erreichen, auf, das zu sein, das entscheidet, was die Menschheit versuchen darf.",
+      "align": "wide",
+      "credit": "SpaceX"
+    }
+  ]
+}

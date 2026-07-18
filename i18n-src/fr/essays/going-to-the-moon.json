@@ -1,0 +1,151 @@
+{
+  "title": "Le terrain d'entraînement",
+  "dek": "Nous sommes allés sur la Lune une fois, à un coût extraordinaire, puis nous avons arrêté pendant un demi-siècle et laissé mourir la mémoire institutionnelle. Maintenant nous la réapprenons — et cette fois, la raison pour laquelle nous y allons a changé.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Il existe un fait concernant la Lune qui devrait être plus troublant qu'il ne l'est généralement. Nous y avons été, de manière définitive, entre 1969 et 1972. Douze personnes y ont marché. Nous avons ramené 382 kilogrammes de roche, pris des milliers de photographies, piloté un rover à travers les hauts plateaux, et laissé des rétroréflecteurs dont les astronomes font encore rebondir les lasers aujourd'hui. Et puis, pour des raisons qui n'ont jamais été purement techniques, nous avons arrêté — et les six décennies qui ont suivi ont été assez longues pour que presque tout ce que nous avions appris sur la façon de le faire soit perdu. Non pas oublié au sens où les archives auraient disparu; perdu au sens plus profond où les personnes qui détenaient ce savoir entre leurs mains ont pris leur retraite et sont mortes, l'outillage a été mis au rebut, les chaînes d'approvisionnement se sont dissoutes, et les organisations se sont reconstruites autour d'autres priorités. La chaîne de production Saturn V, le système de lancement le plus puissant jamais construit par l'humanité, a été arrêtée avant même que [Apollo 17](/missions?id=apollo17) ne s'envole. Nous l'avons fait une fois. C'est une phrase différente de : nous pouvons le faire maintenant."
+    },
+    {
+      "type": "prose",
+      "md": "Ce fait — revenir, réapprendre, reconstruire — se situe au centre de tout ce qui se passe à la Lune en ce moment. Le monde y est actif d'une manière qu'il ne l'a pas été depuis les années 1970 : des atterrisseurs chinois sur la face cachée, des engins spatiaux indiens et japonais se posant près du pôle sud, une vague d'atterrisseurs commerciaux américains, un programme de la NASA visant à ramener des équipages. Mais avant que tout cela puisse être compris clairement, deux choses doivent être tenues à l'esprit simultanément. Premièrement : la Lune est le premier échelon naturel de l'ambition spatiale profonde précisément parce qu'elle est assez proche pour être indulgente et assez réelle pour enseigner les véritables leçons. Deuxièmement : nous avons déjà gravi cet échelon, à un coût stupéfiant, puis nous sommes redescendus et avons laissé l'échelon se corroder. Le retour à la Lune n'est pas une continuation d'Apollo. C'est une deuxième tentative de ce qu'Apollo a commencé, cinquante ans plus tard, pour des raisons différentes, par une distribution différente — et à certains égards en commençant plus loin en arrière."
+    },
+    {
+      "type": "prose",
+      "md": "Et les raisons, cette fois, sont suffisamment différentes pour avoir une importance."
+    },
+    {
+      "type": "heading",
+      "text": "Trois jours de voyage"
+    },
+    {
+      "type": "prose",
+      "md": "La Lune se trouve à environ 384 400 kilomètres. La lumière couvre cette distance en environ 1,3 secondes, ce qui signifie qu'un signal envoyé de la Terre arrive avant que vous n'ayez terminé la pensée qui l'a provoqué. À Mars, le chiffre équivalent se situe entre trois et vingt-deux minutes dans un seul sens, et au sommet des [sept minutes de terreur d'entrée, descente et atterrissage](/essays/seven-minutes), l'engin est entièrement seul. À la Lune, un équipage humain peut toujours parler au sol en quelque chose qui se rapproche du temps réel. Les contrôleurs peuvent émettre des avertissements, poser des questions et recevoir des réponses avant qu'un problème qui se développe ne devienne irréversible. Cette marge — 1,3 secondes par rapport à vingt-deux minutes — est la différence entre un endroit où les gens peuvent rester impliqués et un endroit où ils ne le peuvent pas. Ce n'est pas un détail accessoire. C'est la raison structurelle pour laquelle la Lune vient en premier."
+    },
+    {
+      "type": "prose",
+      "md": "Mais proche ne signifie pas facile. La Lune n'a pas d'atmosphère du tout — pas un souffle, pas une trace assez épaisse pour ralentir un vaisseau spatial en descente d'un seul mètre par seconde. Tout ce que [l'essai des sept minutes](/essays/seven-minutes) décrit sur la cruauté de Mars — boucliers thermiques, parachutes supersoniques, la compression brutale de l'entrée — est en réalité le cas relativement facile, car au moins Mars vous donne quelque chose avec lequel travailler. À la Lune, vous arrivez vite, avec seulement des fusées pour tuer votre vitesse, il faut donc porter chaque kilogramme de propergol dont vous aurez jamais besoin à partir du moment où vous quittez la rampe de lancement. Le moteur de descente du Module Lunaire Apollo a brûlé pendant douze minutes contre un puits gravitationnel qui, bien que ne représentant que le sixième de celui de la Terre, est un vrai puits gravitationnel — authentique, exigeant du carburant pour le combattre, implacable face aux erreurs de synchronisation de la combustion. Et sous l'atterrisseur, quand vous touchez, se trouve le [régolithe](/science/planets/regolith) : une fine poudre anguleuse aux bords vitreux, broyée par des milliards d'années d'impacts de micrométéorites en quelque chose qui se comporte comme de la farine, colle comme des bardanes, et abrase comme du papier de verre. Les combinaisons que portaient les astronautes d'Apollo s'en sont visiblement assombries en quelques heures. La poussière n'est pas un détail. La poussière est un problème de conception."
+    },
+    {
+      "type": "prose",
+      "md": "Puis il y a la nuit. Le jour lunaire dure environ quatorze jours terrestres, tout comme la nuit, durant laquelle les températures chutent à environ −170°C. Les panneaux solaires ne génèrent rien. Les batteries qui alimentent les systèmes de survie s'épuisent contre un froid qui tuerait la plupart des équipements électroniques commerciaux. Chaque système à bord d'un atterrisseur lunaire doit soit hiberner pendant l'obscurité et la survivre, soit être conçu pour fonctionner sans lumière solaire pendant deux semaines. [Luna 9](/missions?id=luna9) soviétique — qui en février 1966 est devenue le premier vaisseau spatial de l'histoire à effectuer un atterrissage en douceur sur la Lune et à transmettre des photographies de la surface — a fonctionné environ trois jours terrestres avant que ses batteries ne s'épuisent. La leçon a été immédiate : la Lune est assez proche pour être atteinte mais assez réelle pour vous faire travailler pour chaque heure que vous y passez."
+    },
+    {
+      "type": "heading",
+      "text": "Ce que nous avons fait et ensuite oublié"
+    },
+    {
+      "type": "prose",
+      "md": "Apollo est simultanément le plus grand accomplissement en génie spatial de l'histoire du vol spatial et l'une des histoires les plus étranges de l'histoire des institutions. Il a été construit en une décennie à un coût — en dollars de 2025 — d'un peu plus de 250 milliards. À son apogée, il employait quelque 400 000 personnes directement ou par le biais d'entrepreneurs. Il a fallu inventer une nouvelle métallurgie, une nouvelle informatique, de nouvelles techniques de fabrication, de nouvelles disciplines de génie des systèmes qui n'existaient pas quand Kennedy a prononcé son discours. Et cela a fonctionné. [Apollo 11](/missions?id=apollo11) a atterri sur la Mer de la Tranquillité le 20 juillet 1969, et à [Apollo 17](/missions?id=apollo17) en décembre 1972, le programme avait affiné ses techniques au point où les équipages effectuaient une véritable géologie sur le terrain à des latitudes élevées avec un rover et une suite d'instruments scientifiques. Ensuite cela s'est arrêté, et l'arrêt a été définitif de manière que personne n'a vraiment admise à l'époque."
+    },
+    {
+      "type": "prose",
+      "md": "Le Saturn V — la fusée qui l'a fait — mesurait 111 mètres de haut, générait 34,5 millions de newtons de poussée au décollage, et n'a jamais été égalé pour la charge utile en orbite terrestre basse. Le dernier s'est envolé en mai 1973, emportant Skylab. L'outillage, les gabarits, les relations avec les fournisseurs, les mains qui ont usiné les pièces — tout cela a été liquidé. En une génération, la NASA ne pouvait plus construire un Saturn V même si elle le voulait. Le savoir était parti non pas des bibliothèques mais des personnes, et de l'infrastructure qui donnait au savoir sa signification pratique. Quand les ingénieurs ont commencé à travailler sur ce qui deviendrait le Space Launch System dans les années 2010, ils ne pouvaient pas simplement rouvrir les plans du Saturn V ; les processus de fabrication que ces plans supposaient n'existaient plus. Ils ont dû les redévelopper. L'écart entre Apollo 17 en 1972 et le [vol Artemis I sans équipage en 2022](/programs/artemis) — cinquante ans — n'était pas une pause. C'était une effacement."
+    },
+    {
+      "type": "prose",
+      "md": "C'est le contexte sobering pour tout ce qui suit. « Nous avons déjà fait cela » est vrai au sens étroit où l'exploit a été réalisé, les empreintes sont là, les rétroréflecteurs fonctionnent toujours. C'est trompeur au sens pratique où les organisations, les outils et les personnes qui l'ont fait sont partis, et ce qui a été reconstruit depuis l'est à partir de dossiers plutôt qu'à partir d'un savoir vivant. La mémoire institutionnelle est un bien réel et périssable. La Lune enseigne cette leçon une deuxième fois."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-the-moon/the-gap",
+      "kind": "diagram",
+      "caption": "Apollo était l'anomalie, pas le début d'une tendance. La chaîne de production Saturn V a été arrêtée avant même que le dernier équipage ne s'envole ; au cours des cinquante années qui ont suivi, l'outillage a été mis au rebut et les personnes qui détenaient le savoir entre leurs mains ont pris leur retraite et sont mortes. Nous gravissons à nouveau le premier échelon — à partir de dossiers, non pas à partir d'une mémoire vivante.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Pas la même Lune que nous avons laissée"
+    },
+    {
+      "type": "prose",
+      "md": "Apollo est allé à l'équateur. Six des sept atterrissages (le septième, [Apollo 13](/missions?id=apollo13), n'a pas atterri) se sont posés à environ 26 degrés de l'équateur lunaire, dans un terrain généralement plat avec des conditions d'éclairage acceptables pour la période en surface et un environnement thermique prévisible. Cela avait du sens pour un programme dont l'objectif principal était d'y aller et d'en revenir en toute sécurité, de prouver la technologie et de collecter des échantillons. La Lune équatoriale est la version la plus facile de la Lune à atteindre, à atterrir et à opérer. Ce n'est pas, il s'avère, la plus intéressante."
+    },
+    {
+      "type": "prose",
+      "md": "En 2008 et 2009, la mission Chandrayaan-1 et l'Orbiteur de Reconnaissance Lunaire de la NASA ont produit ce qui équivaut à une révolution en sciences lunaires : la preuve que les cratères en ombre permanente près du pôle sud contiennent [de la glace d'eau](/science/planets/lunar-ice). Pas des traces — des dépôts substantiels, probablement des centaines de millions de tonnes, accumulés au cours de milliards d'années à partir d'impacts de comètes et du vent solaire, préservés par des températures qui ne remontent jamais au-dessus de −160°C parce que le soleil ne atteint jamais ces planchers de cratères. La glace d'eau, dans le contexte d'un programme d'exploration spatiale profonde, n'est pas seulement quelque chose à boire. C'est de l'hydrogène et de l'oxygène : propergol de fusée, air respirable, blindage anti-radiation. Le pôle sud de la Lune détient, potentiellement, le dépôt de carburant et les consommables de support-vie pour tout ce qui vient après. C'est ce que l'expression « utilisation des ressources in situ » signifie en pratique, et cela change entièrement la raison d'y aller. Apollo, c'était visiter. Le pôle sud, c'est rester."
+    },
+    {
+      "type": "prose",
+      "md": "Rester est un problème différent. Rester signifie survivre à la nuit, à plusieurs reprises. Cela signifie générer l'énergie pendant une quinzaine de jours d'obscurité, ce qui nécessite soit l'énergie nucléaire (que les États-Unis n'ont pas envoyée sur une surface planétaire depuis les atterrisseurs Viking des années 1970) soit un endroit près du pôle où, sur les rebords de cratères, le soleil est présent la plupart du temps. Cela signifie gérer l'accumulation de poussière sur des mois plutôt que des jours. Cela signifie un degré d'infrastructure — énergie, relais de communications, habitat — qu'Apollo n'a jamais tenté. L'ambition déclarée du programme Artemis est une présence humaine soutenue au pôle sud. Cet objectif ne sera réalisé que dans quelques années. [Artemis II](/missions?id=artemis2), le premier vol avec équipage (un survol lunaire, pas un atterrissage), est planifié mais pas encore effectué. Artemis III, le premier atterrissage avec équipage depuis Apollo, est prévu pour cibler la région du pôle sud. « Planifié » fait un travail important dans ces deux phrases."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-the-moon/south-pole-turn",
+      "kind": "diagram",
+      "caption": "Apollo est allé à l'équateur, où l'atterrissage et les opérations sont les plus faciles. La nouvelle course va aux pôles, pour ce que les cratères en ombre permanente sont supposés contenir : de la glace d'eau — hydrogène et oxygène, c'est-à-dire propergol, air, eau et blindage. Le passage se fait de la visite à la permanence.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/chandrayaan3/01",
+      "kind": "photo",
+      "caption": "L'atterrisseur Vikram de Chandrayaan-3 sur les hauts plateaux austral, août 2023 — le premier engin à se poser près du pôle sud lunaire, plus proche de la glace que n'importe quoi avant lui. Il a fonctionné pendant un seul jour lunaire avant que la quinzaine de nuit le réclame.",
+      "align": "wide",
+      "credit": "ISRO"
+    },
+    {
+      "type": "heading",
+      "text": "Un ciel bondé"
+    },
+    {
+      "type": "prose",
+      "md": "L'intérêt renouvelé pour la Lune n'est pas un programme américain. C'est un véritable phénomène mondial, et il a une histoire qui précède Apollo de près d'une décennie. Le programme Luna soviétique a mis le premier objet fabriqué par l'homme sur la Lune — [Luna 2](/missions?id=luna2) a heurté la surface en septembre 1959 — puis a retourné les premières photographies du côté lointain lunaire avec Luna 3 la même année, et a passé la décennie suivante à accumuler des premières qui ne sont pas aussi bien mémorisées qu'elles devraient l'être. [Luna 9](/missions?id=luna9) a effectué le premier atterrissage en douceur en 1966, réglant une véritable controverse scientifique sur la question de savoir si la surface était assez solide pour supporter un vaisseau spatial (il y avait un argument sérieux, avant cela, que la surface de la Lune pourrait être une poussière de plusieurs mètres de profondeur dans laquelle tout atterrisseur s'enfoncerait simplement). Luna 16, en 1970, a retourné le premier échantillon robotique à la Terre — prouvant que vous n'aviez pas besoin d'une mission avec équipage pour ramener du matériel lunaire. Luna 24, en 1976, a été le dernier retour d'échantillon lunaire soviétique, et il est resté le dernier retour d'échantillon lunaire par quiconque pendant 44 ans."
+    },
+    {
+      "type": "prose",
+      "md": "Cet écart de 44 ans s'est terminé avec [Chang'e-5](/missions?id=change5), qui en décembre 2020 a atterri dans la région volcanique du Mons Rümker, a collecté 1,73 kilogrammes de basalte lunaire et l'a ramené à la Terre — le premier retour d'échantillon de la Lune depuis Luna 24. Ce fut un succès complet. Mais la mission qui a réécrit la frontière de ce qui avait été fait était [Chang'e-4](/missions?id=change4), qui en janvier 2019 est devenue le premier vaisseau spatial de l'histoire à atterrir sur la face lointaine de la Lune — un exploit qui a nécessité un satellite relais en orbite halo autour du point L2 Terre-Lune, car aucune liaison radio directe vers la face lointaine n'est possible depuis la Terre. Le côté lointain de la Lune n'avait jamais été visité à la surface par quoi que ce soit. Chang'e-4 a atterri dans le cratère Von Kármán dans le bassin du Pôle Sud-Aitken, la plus grande et la plus ancienne structure d'impact du système solaire. Ensuite, en juin 2024, [Chang'e-6](/missions?id=change6) est allé encore plus loin : la première mission à ramener des échantillons de la face lointaine, du même bassin. Deux premières historiques en cinq ans, d'un programme qui n'existait pas du tout avant 2007."
+    },
+    {
+      "type": "prose",
+      "md": "[Chandrayaan-3](/missions?id=chandrayaan3) de l'Inde a effectué le premier atterrissage près du pôle sud lunaire en août 2023, se posant à environ 69°S — plus au sud que n'importe quel atterrisseur précédent — peu de temps après l'échec de la tentative Luna-25 de la Russie dans la même région. L'atterrisseur Vikram et le rover Pragyan ont fonctionné pendant un jour lunaire avant que la nuit hivernale australe les réclame. Le vaisseau spatial SLIM du Japon a atterri en janvier 2024 avec une précision qui lui a valu le surnom de « Moon Sniper » : il s'est posé à 55 mètres de sa cible, l'atterrissage le plus précis jamais réalisé sur la surface lunaire, bien que l'atterrisseur soit descendu à un angle et ait passé ses premiers jours à la surface en fonctionnant sur le côté. Il a survécu. La vague commerciale a été moins nette : Peregrine Mission One au début de 2024, un atterrisseur commercial américain, a subi une fuite de propergol peu de temps après le lancement et n'a jamais atteint la Lune. IM-1 de Intuitive Machines en février 2024 a atteint la surface mais s'est basculé à l'atterrissage. Le taux d'échec des atterrisseurs lunaires — en tenant compte de la population complète des tentatives depuis les années 1960 — reste au-dessus de cinquante pour cent. La Lune n'admet tout simplement pas les visiteurs."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-the-moon/crowded-sky",
+      "kind": "diagram",
+      "caption": "La Lune est plus active qu'elle ne l'a été depuis les années 1970, et pour la première fois, la distribution est véritablement mondiale : les premières Luna soviétiques, Apollo américain, la Chine atteignant deux fois la face lointaine, l'Inde au pôle sud, l'atterrissage de précision du Japon. La plus ancienne question que pose le vol spatial, maintenant posée par plus de l'espèce que jamais.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Poussière et la longue nuit"
+    },
+    {
+      "type": "prose",
+      "md": "Les deux principaux dangers de la Lune — régolithe et la nuit — ne sont pas dramatiques de la manière qu'une défaillance de lancement ou une catastrophe d'EDL est dramatique. Ils sont structurels et s'aggravent avec le temps. La poussière lunaire est chargée électrostatiquement par le vent solaire, ce qui signifie qu'elle colle à tout : visières, joints d'étanchéité, radiateurs, panneaux solaires, instruments. Elle ne s'enlève pas. Les combinaisons Apollo qui ont été portées pendant plusieurs EVA ont montré des traces visibles d'usure ; les ingénieurs de la NASA à l'époque estimaient qu'un séjour lunaire de six mois rendrait probablement les combinaisons spatiales inutilisables par abrasion seule. Personne n'a encore eu à résoudre cela pour une mission de longue durée, parce que personne n'en a encore menée. L'ambition du pôle sud nécessitera des solutions qui n'existent pas encore à maturité opérationnelle."
+    },
+    {
+      "type": "prose",
+      "md": "La nuit est un problème plus simple en principe et un problème difficile en ingénierie. Quatorze jours terrestres d'obscurité, avec des températures chutant à −170°C, est suffisant pour tuer la plupart des chimies de batterie par des cycles thermiques répétés et pour nier complètement l'énergie solaire. La mission Chang'e-4 a hiberné son atterrisseur et son rover pendant chaque nuit lunaire et les a réveillés au lever du soleil ; tous deux ont survécu à plusieurs cycles. Le rover Pragyan de Chandrayaan-3 a été mis en mode veille avant la nuit, avec l'attente qu'il se réveillerait le matin ; il ne l'a pas fait, et la mission s'est terminée là. La différence entre un atterrisseur qui survit aux nuits lunaires et un qui ne le fait pas est une fine marge d'ingénierie thermique, de chimie de batterie et de puissance de chauffage qui est encore en cours d'apprentissage sur le terrain. Les rebords de cratères du pôle sud offrent un sursis partiel — certains endroits là sont éclairés par le soleil pendant plus de 80 % de l'année — mais accéder à la glace dans les planchers de cratères en ombre permanente, c'est là que la valeur des ressources réside, signifie envoyer des systèmes dans un terrain qui est simultanément l'endroit le plus froid de la Lune et le plus sombre."
+    },
+    {
+      "type": "prose",
+      "md": "Contrairement à [la descente à travers une atmosphère martienne](/essays/seven-minutes), l'atterrissage lunaire n'offre aucun freinage atmosphérique — vous arrivez sur des fusées du début à la fin, brûlant du propergol à toutes les altitudes, vous engageant dans une trajectoire qui ne peut pas être corrigée de façon significative dans les dernières secondes si quelque chose d'inattendu apparaît à la surface dessous. La Lune est, dans le cadre de [l'essai des sept minutes](/essays/seven-minutes), la version la plus pure du cas sans atmosphère : le problème qui n'a pas de décélération gratuite, pas de bouclier thermique pour gagner du temps, pas de phase de parachute. Tout ce que vous voulez dépenser sur la charge utile scientifique, vous devez d'abord trouver de la place pour cela dans le budget de carburant. Et le [décalage lumineux qui rend la Lune gérable](/science/mission-phases/dsn) — ce aller-retour de 1,3 secondes — est assez court pour que les humains restent impliqués dans la boucle de contrôle, ce qui signifie que les atterrisseurs lunaires n'ont pas encore besoin de la navigation relative au terrain entièrement autonome que Perseverance a utilisée à Jezero. Ils en bénéficient. Ils ne l'exigent pas strictement encore. Cette distinction ne tiendra pas sur Mars."
+    },
+    {
+      "type": "figure",
+      "image": "missions/apollo17/01",
+      "kind": "photo",
+      "caption": "Apollo 17, décembre 1972 — la dernière fois que quelqu'un a marché sur la Lune. Les équipages revenaient gris jusqu'aux coudes : la poussière lunaire colle, abrase, et s'infiltre dans tous les joints, et personne n'a encore eu à la tenir éloignée pendant les mois qu'une présence établie demanderait.",
+      "align": "wide",
+      "credit": "NASA"
+    },
+    {
+      "type": "heading",
+      "text": "La répétition"
+    },
+    {
+      "type": "prose",
+      "md": "Il existe un fil conducteur de la Lune à partout ce qui vient après, et il traverse la question de ce que « rester » signifie réellement. Un programme de drapeaux et d'empreintes — arriver, explorer les environs, revenir — a une structure de coût connue. Vous construisez le matériel, entraînez l'équipage, exécutez la mission, revenez. Tout est délimité. Un programme de présence est différent : il nécessite une infrastructure qui persiste, un réapprovisionnement qui se répète, des systèmes qui doivent être maintenus et finalement remplacés sur place. Il nécessite, en bref, le développement d'une économie plutôt qu'une série d'expéditions. La Lune est l'endroit pour construire cette économie en premier, parce que les conséquences de se tromper sont supportables. Si un système d'alimentation échoue au pôle sud lunaire, les secours sont à trois jours de distance et l'équipage peut être atteint en temps quasi réel par radio en attendant. Si la même défaillance se produit sur Mars, les secours sont, au minimum, à un an et demi de distance et chaque décision que l'équipage prend est la sienne, communiquée à la Terre avec un décalage qui exclut tout véritable contrôle."
+    },
+    {
+      "type": "prose",
+      "md": "C'est ce que la Lune est, dans la perspective à long terme : un terrain d'entraînement que vous ne pouvez pas sauter, même si vous pouviez vous le permettre. Le delta-v pour atteindre la Lune est assez bas qu'une erreur sérieuse peut être survivable. L'[orbite de transfert vers Mars](/science/transfers/hohmann-transfer) — un voyage de six à neuf mois sans retours — n'est pas supportable de la même manière. Quand [le problème d'aller sur Mars](/science/mission-phases/edl) est soulevé sérieusement, la réponse nécessite chaque leçon que la Lune aura enseignée sur la présence humaine soutenue dans un vide difficile : comment la poussière est gérée pendant des mois, comment l'énergie est générée dans une obscurité prolongée, comment le matériel est maintenu par des personnes en combinaisons, comment la nourriture et l'eau sont produites plutôt que simplement transportées. Rien de tout cela ne peut être appris en simulation avec une confiance suffisamment élevée pour parier des vies dessus. La Lune est où cela s'apprend pour de vrai."
+    },
+    {
+      "type": "prose",
+      "md": "La perspective à long terme sur la Lune, alors, n'est pas triomphaliste et ce n'est pas pessimiste. C'est quelque chose de plus proche d'être sobre. Nous avons passé 1969 à 1972 à gravir le premier échelon, puis nous avons passé cinquante ans debout sur le sol à le regarder. Nous gravissons à nouveau maintenant — plus lentement, avec plus de partenaires, avec de meilleurs instruments et une pire mémoire institutionnelle — et cette fois la raison n'est pas de prouver un point à un rival mais de découvrir si les humains peuvent réellement vivre quelque part ailleurs que sur la Terre. La glace du pôle sud, si elle peut être récoltée, changerait l'économie de tout ce qui vient après. Le programme Artemis, s'il atteint la surface avec des équipages et maintient ensuite une présence, enseignera des choses sur l'habitation en exploration spatiale profonde qui ne peuvent pas être apprises d'une autre manière. Et la distribution mondiale d'atterrisseurs — soviétique, puis chinoise, indienne, japonaise, américaine, commerciale — est la preuve que la question que pose la Lune n'en est pas une nationale. C'est la plus ancienne question que pose le vol spatial, maintenant posée par plus de l'espèce que jamais avant : qu'est-ce qu'il faut réellement pour être quelque part d'autre ? Nous découvrons toujours. Le terrain d'entraînement est ouvert."
+    }
+  ]
+}

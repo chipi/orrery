@@ -1,0 +1,155 @@
+{
+  "title": "Tenere il Razzo",
+  "dek": "Per sessanta anni abbiamo costruito la macchina più costosa della storia umana, l'abbiamo volata una volta, e l'abbiamo gettata in mare. Le persone che hanno deciso di smettere di farlo hanno tranquillamente realizzato il più grande cambiamento nell'astronautica dai tempi dell'Apollo.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Nella notte del 21 dicembre 2015, il primo stadio di un [Falcon 9](/fleet?id=falcon-9) si ergeva verticalmente su una piattaforma di cemento a Cape Canaveral, motori freddi, circondato da una nuvola di vapore residuo, intatto. Aveva appena fatto ritorno dallo spazio. Circa otto minuti dopo il decollo per consegnare un carico di satelliti in orbita, il booster si era capovolto, aveva riacceso tre dei suoi nove motori Merlin, aveva frenato attraverso l'atmosfera superiore, aveva dispiegato quattro gambe di atterraggio, e si era posato verticalmente sulla piattaforma dalla quale era partito. L'intera manovra ha richiesto il tipo di precisione solitamente riservato a un orologio svizzero. La folla che guardava è esplosa in grida, e il suono — un ruggito di persone che avevano appena assistito a qualcosa genuinamente nuovo — è ancora registrato nel video."
+    },
+    {
+      "type": "prose",
+      "md": "Quello che accadde quella notte era una dimostrazione, ma quello che dimostrava non era principalmente un trucco tecnico. Era un argomento economico. Ogni razzo mai volato prima — il [Saturn V](/fleet?id=saturn-v) che inviò dodici persone sulla Luna, il sovietico N1 che non raggiunse mai l'orbita, le famiglie di razzi da lavoro Soyuz, Atlas, Proton e Long March che insieme rappresentano la maggior parte dei lanci in questo atlante — era costruito per essere usato una sola volta. Lo volavi. Si disintegrava nell'atmosfera o affondava nel mare. Ne costruivi un altro. L'industria era stata strutturata attorno a questo fatto per sessanta anni: i razzi erano munizioni, non aeroplani. Nel momento in cui il Falcon 9 atterrò, questo presupposto fu messo in discussione per la prima volta."
+    },
+    {
+      "type": "prose",
+      "md": "Perché ci vollero sessanta anni per arrivarci è una domanda più interessante di quanto sembri."
+    },
+    {
+      "type": "heading",
+      "text": "Il problema del contabile"
+    },
+    {
+      "type": "prose",
+      "md": "Il razzo usa-e-getta è dispendioso in un modo che è quasi comico quando lo descrivi in termini semplici. Un [Saturn V](/fleet?id=saturn-v) costava qualcosa nell'ordine di 185 milioni di dollari in valuta dei tardi anni sessanta — più o meno 1,5 miliardi ai prezzi odierni — e ciascuno volava per circa dodici minuti prima di essere scartato. I cinque motori F-1 nel suo primo stadio, ciascuno un pezzo straordinario di ingegneria che bruciava circa 2.600 chilogrammi di propellente al secondo, terminarono le loro vite arrugginendo sul fondo dell'Atlantico. Una spedizione privata finanziata da Jeff Bezos ha recuperato due serie di motori F-1 del Saturn V dal fondo del mare nel 2013, quasi mezzo secolo dopo essere stati gettati lì, e li ha trovati largamente intatti. Sono andati nei musei, non di nuovo in volo. Buttarli via la prima volta era il piano."
+    },
+    {
+      "type": "prose",
+      "md": "La logica dietro questo piano non era stupidità. Era la logica della Corsa allo Spazio degli anni sessanta: arrivarci per primo, a qualunque costo. Costruire un razzo riutilizzabile è più difficile che costruire uno usa-e-getta. La riutilizzabilità aggiunge peso — scudi termici, gambe di atterraggio, propellente riservato per il bruciamento di ritorno — e il peso è il nemico, perché ogni chilogrammo che aggiungi alla struttura è un chilogrammo che non puoi consegnare in orbita. I primi progettisti calcolarono i numeri e conclusero che la penalità era troppo elevata. Meglio, decisero, costruire economico e buttare via. Quel calcolo era corretto per il suo momento, e ha bloccato una serie di presupposti che durarono due generazioni."
+    },
+    {
+      "type": "prose",
+      "md": "Lo [Space Shuttle](/fleet?id=space-shuttle-stack) era supposto rompere questa logica. Era il primo tentativo genuino degli Stati Uniti — o di chiunque — di costruire un sistema di lancio operazionalmente riutilizzabile, e l'argomento per esso era economico: volando l'orbiter ripetutamente, il programma avrebbe ridotto il costo di raggiungere l'orbita verso 600 dollari per chilogrammo, abbastanza basso da rendere i voli spaziali quasi ordinari. Lo shuttle volò 135 missioni tra il 1981 e il 2011. Fallì completamente il test economico. Il costo reale per volo era mediamente attorno a 1,5 miliardi di dollari quando le spese totali del programma erano distribuite su tutte le missioni — più caro per chilogrammo verso l'orbita terrestre bassa del Saturn V che sostituì. Ricondizionare le 24.000 piastrelle dello scudo termico dell'orbiter dopo ogni volo non era un lavoro veloce; consumava migliaia di ore-persona. La riutilizzazione si rivelò straordinariamente costosa quando ogni sottosistema doveva essere smontato e ricostruito agli standard di un aeroplano che potrebbe trasportare equipaggio. Lo shuttle provò che la riutilizzabilità *poteva* funzionare meccanicamente — l'orbiter volò decine di volte — ma provò anche che la riutilizzabilità in sé non riduce i costi. L'economia funziona solo se riesci a far girare il veicolo di nuovo *velocemente* e *economicamente*."
+    },
+    {
+      "type": "heading",
+      "text": "Il trucco più semplice possibile"
+    },
+    {
+      "type": "prose",
+      "md": "SpaceX affrontò il problema diversamente. Piuttosto che tentare di riutilizzare l'intero veicolo — la scelta che rese lo Shuttle così complesso — l'azienda si concentrò sul componente singolo più costoso: il booster del primo stadio. In un razzo tipico, il primo stadio compie il lavoro più pesante, brucia il massimo di propellente, trasporta la maggior massa motore, e costa di più da produrre. È anche il componente che, in un razzo usa-e-getta, perdi ogni volta. Salvare il primo stadio, e hai recuperato la maggior parte del valore del veicolo."
+    },
+    {
+      "type": "prose",
+      "md": "Il requisito tecnico per salvarlo è brutale: lo stadio deve resistere al rientro attraverso un'atmosfera che aveva passato i primi minuti a sfondare a Mach 7, invertire direzione, rallentare da ipersonico a velocità di atterraggio, e posarsi verticalmente su un bersaglio della dimensione di un campo da football — sia di ritorno al sito di lancio sia su una nave drone centinaia di chilometri di distanza nell'Atlantico o nel Pacifico. Per realizzare tutto questo, il booster deve trattenere abbastanza propellente per una serie di riaccensioni motore precisamente temporizzate, il che significa che arriva in orbita con meno carburante per il lavoro principale. Questa penalità di peso è reale: un Falcon 9 che vola con un booster nuovo consegna circa 22.800 chilogrammi verso l'orbita terrestre bassa; un volo che recupera il booster consegna meno. Questo è il compromesso fondamentale al cuore del lancio riutilizzabile, e SpaceX l'ha accettato perché l'economia funziona comunque: il booster che atterra può volare di nuovo, e ancora, e ancora."
+    },
+    {
+      "type": "prose",
+      "md": "Dopo l'atterraggio di dicembre 2015 ne seguirono un secondo e un terzo, e poi il riflight: nel marzo 2017, SpaceX lanciò un Falcon 9 su un booster che aveva già volato, la prima volta nella storia che uno stadio di razzo di classe orbitale volò nello spazio due volte. A metà 2026, il primo stadio Falcon 9 più frequentemente utilizzato ha completato 36 missioni sullo stesso hardware — più di quanti razzi usa-e-getta volano in totale su un'intera flotta. Il costo marginale di un lancio riutilizzato, con propellente e ricondizionamento, si aggira attorno a 15-20 milioni di dollari rispetto a un prezzo di listino di 74 milioni di dollari. La differenza, più o meno, è il costo del booster stesso, recuperato mediante il recupero."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/landing-profile",
+      "kind": "diagram",
+      "caption": "Il trucco è quasi insultantemente semplice da enunciare e brutale da volare: trattenere abbastanza propellente, capovolgere il booster, e bruciare tre volte durante la discesa — boostback, entry, landing — finché non si posa sulle sue gambe. Lo stesso stadio viene quindi ispezionato, ricaricato, e volato di nuovo.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Catturandolo con le tue mani"
+    },
+    {
+      "type": "prose",
+      "md": "Il [Falcon Heavy](/fleet?id=falcon-heavy) estese la stessa logica lateralmente: tre core Falcon 9 legati insieme, due di loro staccandosi dopo i primi due minuti e volando di ritorno per atterrare simultaneamente, fianco a fianco, a Cape Canaveral. I video dei doppi atterraggi — due pilastri di fuoco che scendono in simmetria speculare, toccando il suolo nello stesso istante — sembrano venire da un film. Non lo sono. Sono l'economia resa visibile."
+    },
+    {
+      "type": "prose",
+      "md": "[Starship](/fleet?id=starship) porta l'argomento alla sua conclusione logica. Dove Falcon 9 recupera il suo primo stadio e scarta il suo stadio superiore, Starship è progettato per recuperare *entrambi*. Il booster Super Heavy — 71 metri di altezza, alimentato da 33 motori Raptor che bruciano metano liquido e ossigeno liquido, producendo pressappoco il doppio della spinta di un Saturn V — ritorna al sito di lancio e viene catturato in aria da un paio di bracci meccanici sulla torre di lancio stessa. Il sistema è chiamato Mechazilla dagli ingegneri che l'hanno costruito. SpaceX ha catturato il booster in questo modo per la prima volta il 13 ottobre 2024, Volo 5 del programma di test di Starship, e ha ripetuto la manovra nei voli successivi. L'idea che non atterreresti il tuo razzo ma semplicemente lo *catturassi mentre cadeva* avrebbe suonato come fantascienza un decennio fa. È una procedura di lunedì mattina adesso."
+    },
+    {
+      "type": "prose",
+      "md": "Lo stadio superiore di Starship — il più grande veicolo spaziale mai costruito, alto quanto un edificio di quindici piani — è inteso a seguire lo stesso percorso, tornando ed essendo catturato sopra il pad. Una volta che entrambi i pezzi sono a terra, il sistema teoricamente può essere ricaricato e rilasciato nell'arco di poche ore. Nessun razzo usa-e-getta nemmeno tenta questo paragone. Un razzo usa-e-getta è una catena logistica: produzione, trasporto, integrazione, lancio, ripeti dall'inizio. Un sistema completamente riutilizzabile è un *aeroplano* con una rotta molto lunga. L'economia dei due non è nello stesso universo."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/tower-catch",
+      "kind": "diagram",
+      "caption": "Poi un'idea più strana: non dare gambe al booster del tutto. Lascia che la torre di lancio lo catturi — due bracci che si chiudono su uno stadio di settanta metri mentre si libra, così la massa che sarebbe stata il carrello di atterraggio diventa carico utile. Il primo catch pulito è arrivato in ottobre 2024.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Il secondo arrivato"
+    },
+    {
+      "type": "prose",
+      "md": "Il [New Glenn](/fleet?id=new-glenn) di Blue Origin ha atterrato il suo primo stadio in mare per la prima volta il 13 novembre 2025 — dieci anni dopo l'atterraggio del Falcon 9 di dicembre 2015, il che dà un'idea di quanto velocemente l'industria si muova quando SpaceX sta fissando il ritmo. New Glenn è un grande razzo per qualsiasi standard precedente, capace di portare fino a 45.000 chilogrammi verso l'orbita terrestre bassa in configurazione usa-e-getta; il suo primo stadio ritorna su una nave drone nell'Atlantico su ogni missione. Il primo riutilizzo di uno stadio New Glenn è seguito nell'aprile 2026. L'approccio di Blue Origin rispecchia quello di SpaceX in architettura: salvare il primo stadio, volarlo di nuovo, ridurre il costo marginale con ogni riutilizzo."
+    },
+    {
+      "type": "prose",
+      "md": "Quello che l'emergenza di [New Glenn](/fleet?id=new-glenn) aggiunge al quadro è la pressione competitiva. Per la maggior parte del decennio tra il 2015 e il 2025, SpaceX era essenzialmente sola nel mercato del lancio riutilizzabile. Un mercato con un solo fornitore non è un mercato; è un monopolio. L'ingresso di un secondo lanciatore riutilizzabile credibile cambia la dinamica dei prezzi per chiunque acquisti un passaggio verso l'orbita. Operatori satellitari, agenzie spaziali, e clienti commerciali che una volta non avevano scelta se non accettare quello che SpaceX offriva ora hanno alternative — e ne arriveranno altre."
+    },
+    {
+      "type": "prose",
+      "md": "La Cina si è mossa con insolita serietà. Lo Zhuque-3 di LandSpace, un razzo a metano grosso modo analogo al Falcon 9, ha tentato il suo primo recupero in dicembre 2025; lo stadio superiore ha raggiunto l'orbita ma il booster si è schiantato durante l'avvicinamento all'atterraggio. Un secondo tentativo di recupero è programmato per metà 2026. iSpace ha il suo Hyperbola-3 in qualificazione hardware, con una nave drone dedicata già lanciata, e sta mirando al suo primo volo da Wenchang. Molte altre aziende commerciali cinesi sono in sviluppo attivo. Il governo cinese ha reso l'accesso riutilizzabile all'orbita una priorità nazionale esplicita. Che il paese che ha costruito la Grande Muraglia abbia deciso di smettere di buttare via i suoi razzi è un dato di fatto che merita di essere considerato."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/falcon-9/01",
+      "kind": "photo",
+      "caption": "Un primo stadio Falcon 9 si posa di nuovo sulle sue gambe dopo aver consegnato un carico in orbita — il momento in cui un presupposto di sessant'anni tranquillamente crollò. Una volta che un'azienda provò che un booster poteva volare di nuovo, chiunque altro dovette imparare a conservare il suo.",
+      "align": "wide",
+      "credit": "SpaceX"
+    },
+    {
+      "type": "heading",
+      "text": "Quello che il riutilizzo effettivamente cambia"
+    },
+    {
+      "type": "prose",
+      "md": "La storia superficiale è la riduzione dei costi, e la riduzione dei costi è reale: i prezzi di lancio che un tempo si aggiravano attorno a 200 milioni di dollari o più per un grande usa-e-getta sono caduti verso 60–80 milioni di dollari per una missione di sollevamento medio riutilizzabile, e l'economia marginale di un booster Falcon 9 ben consumato è ancora inferiore. Ma il cambiamento più profondo è nella *cadenza* di lancio. SpaceX ha lanciato 132 missioni Falcon 9 nel 2024 — quasi tre a settimana, sostenuto durante un intero anno solare, con lo stesso pool di booster che cicla attraverso il pad e di ritorno. Nessuna architettura usa-e-getta potrebbe avvicinarsi a quel ritmo; avresti bisogno di una catena di approvvigionamento industriale operante a ritmo di tempo di guerra per uguagliarlo. La riutilizzabilità, risulta, non è solo una questione di costi. È una questione di ritmo. E il ritmo riguarda quello che diventa possibile."
+    },
+    {
+      "type": "prose",
+      "md": "Quello che diventa possibile è Starlink: una costellazione che ha richiesto più di 6.000 lanci per popolarla, impossibile da costruire secondo qualsiasi struttura di prezzi usa-e-getta che sia mai esistita. Quello che diventa possibile sono missioni scientifiche commerciali a basso costo che in precedenza non potevano permettersi il passaggio. Quello che diventa possibile, alla fine, è il trasporto con equipaggio verso Marte a una frequenza che lo rende un programma piuttosto che un'esibizione — perché il [delta-v budget](/science/propulsion/dv-budget) di una missione Terra-Marte richiede un veicolo che possa essere ricaricato in orbita e riutilizzato, o le frazioni di massa semplicemente non si chiudono. La riutilizzabilità non è solo una preferenza economica. Per le ambizioni che [Starship](/fleet?id=starship) è progettato per supportare, è un requisito fisico."
+    },
+    {
+      "type": "prose",
+      "md": "La penalità di peso che fece ai primi ingegneri scartare la riutilizzabilità è ancora reale; non è stata eliminata mediante ingegneria. uno Starship completamente usa-e-getta consegnerebbe più in orbita di uno riutilizzabile. Ma la domanda non è più se puoi permetterti la penalità di massa. È se puoi permetterti di buttare via il tutto — se puoi permetterti, come l'industria dei razzi ha fatto per sei decenni, di trattare la macchina più complessa mai costruita come un articolo monouso."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/cost-curve",
+      "kind": "diagram",
+      "caption": "Il numero che determina tutto è il prezzo di un chilogrammo verso l'orbita. Lo Shuttle prometteva di abbassarlo e non l'ha mai fatto; il Falcon 9 riutilizzabile l'ha ridotto approssimativamente di venti volte. Abbassalo abbastanza e le missioni che un tempo erano impensabili diventano semplicemente programmate.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "La domanda che atterrò"
+    },
+    {
+      "type": "prose",
+      "md": "L'argomento originale dell'industria dei razzi contro il riutilizzo era l'ingegneria: il veicolo è troppo complesso per il ricondizionamento economico, troppo fragile per volare di nuovo senza smontaggio, troppo vincolato dal peso per trasportare l'hardware necessario per atterrare. L'esperienza dello Space Shuttle sembrava confermare tutti e tre. Queste preoccupazioni erano legittime, e per trenta anni ressero."
+    },
+    {
+      "type": "prose",
+      "md": "Quello che cambiò non era la fisica. Quello che cambiò era la base di produzione, la scelta di propellente — il metano brucia più pulito del cherosene, lascia meno residui, rende il ricondizionamento più veloce — e, più di ogni altra cosa, la volontà di progettare per il riutilizzo da allora piuttosto che retrofitting su un veicolo ottimizzato per l'usa-e-getta. Lo Shuttle era un razzo usa-e-getta a cui era stato detto di tornare a casa. Il booster Falcon 9 è stato progettato dall'inizio attorno alla domanda di come atterrare. Quella differenza nell'intento di progettazione rappresenta la maggior parte della differenza nel risultato."
+    },
+    {
+      "type": "prose",
+      "md": "Nel decennio da quella notte di dicembre a Cape Canaveral, atterrare un booster è passato dall'impossibile all'ordinario. Un primo stadio Falcon 9 che non riesce a tornare sulla sua nave drone è ora l'evento inusuale, degno di nota nel registro delle anomalie. Super Heavy è stato catturato dall'aria. Un'azienda seconda ha atterrato uno stadio di sollevamento pesante in mare e l'ha volato di nuovo. La Cina sta correndo per recuperare il ritardo. L'assunzione che ha governato l'intera industria di lancio dai tempi dello Sputnik — che un razzo sia usa-e-getta — è stata spezzata, e la sua rottura sta già riconfigurando quali missioni sono possibili, quali affari sono redditizi, e quanto costerà alla prossima generazione andare più lontano."
+    },
+    {
+      "type": "prose",
+      "md": "Nessuno dei [razzi](/science/propulsion/rocket-stages) che abbia mai portato umani o veicoli spaziali in orbita nei primi sessant'anni dell'astronautica è sopravvissuto. Sono sul fondo dell'oceano, o nell'atmosfera superiore come molecole disperse, o nei musei dove gli ingegneri che li hanno costruiti possono passare e riconoscere cose che una volta hanno toccato. Quelli che volano adesso ritornano. Quel solo cambiamento — tranquillo, tecnico, brutalmente difficile da realizzare — è la cosa che separa la prima era dell'astronautica da quello che verrà dopo."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/starship/01",
+      "kind": "photo",
+      "caption": "Starship è la scommessa più grande: che l'intero veicolo — booster e nave insieme — ritorni a casa e voli di nuovo nel giro di pochi giorni. Se tiene, il costo di raggiungere l'orbita smette di essere la cosa che decide cosa l'umanità è autorizzata a tentare.",
+      "align": "wide",
+      "credit": "SpaceX"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Sky-Crane",
+  "intro_sentence": "Die raketenbetriebene Plattform, die einen Rover an Seilen zur Oberfläche hinablässt und dann wegfliegt — das Landungssystem, das Curiosity und Perseverance auf dem Mars abgesetzt hat.",
+  "narrative_101": [
+    "Die frühen Mars-Rover waren klein genug, um in einem Airbag-Kokon abzufedern. Aber Curiosity hatte die Größe eines Autos — viel zu schwer für Airbags — und große Landebeinen unter dem Rover anzubringen hätte bedeutet, ihn hochoben auf einer sperrigen Plattform zu positionieren und ihn dann irgendwie herunterzufahren. NASAs Antwort war seltsamer und eleganter: der Sky-Crane.",
+    "Nachdem der Hitzeschild und der Fallschirm ihre Arbeit geleistet haben, übernimmt eine raketenbetriebene Abstiegsstufe und zündet acht Triebwerke, um zu einem nahezu schwebenden Flugzustand wenige Meter über dem Boden zu verlangsamen. Dann senkt sie nicht sich selbst ab, sondern den Rover darunter an einem Satz von Seilen — wie ein Hubschrauber eine Last absetzt — bis die Räder des Rovers den Boden berühren. Der Rover ist sein eigenes Fahrwerk.",
+    "Im Augenblick, in dem der Rover unten ankommt und sein Gewicht von den Seilen fällt, trennt die Abstiegsstufe die Seile und fliegt weg, um in sicherer Entfernung abzustürzen, damit ihr Abgasstrahl und die Trümmer den Rover niemals berühren. Die gesamte Sequenz — Schwebeflug, Ablassen, Landung, Abflug — dauert nur Sekunden und funktioniert mittlerweile zweimal: für Curiosity 2012 und Perseverance 2021."
+  ],
+  "body_paragraphs": [
+    "Der Sky-Crane löst zwei Probleme gleichzeitig. Er hält die Raketentriebwerke hoch, damit ihre Flammen keinen Krater graben oder Trümmer auf den Rover schleudern, und er setzt den Rover direkt auf seine Räder ab, bereit zum Fahren — keine Rampen, keine Landeplattform zum Herabfahren. Die Kosten sind eine Choreografie ohne Fehlerspielraum, autonom ausgeführt, Minuten nach einem feurigen Eintritt, wobei die Erde zu weit entfernt ist, um in Echtzeit zu helfen.",
+    "Es ist das letzte Kapitel der sieben Minuten des Grauens: Eintrittsheizung, dann der Überschall-Fallschirm, dann die Hitzschildtrennung, dann der Triebwerksabstieg, dann der Sky-Crane-Ablassung und Abflug — jeder Schritt muss zünden oder die Mission ist bei der Landung verloren. Nur eine Handvoll Nationen haben auf dem Mars überhaupt sanft gelandet; der Sky-Crane ist die kühnste Art, wie es getan wurde.",
+    "Auf `/fly` können Sie Curiosity oder Perseverance in `?descent=1` fliegen und beobachten, wie die Seile der Abstiegsstufe unter der Fallschirm- und Retro-Sequenz abgewickelt werden, den Rover zur Oberfläche hinablassend, bevor die Stufe wegfliegt — das Sky-Crane-Manöver wird sichtbar gemacht."
+  ],
+  "diagram_caption": "Sky-Crane: eine raketenbetriebene Abstiegsstufe schwebt und senkt den Rover an Seilen zur Oberfläche, schneidet dann die Seile durch und fliegt weg."
+}

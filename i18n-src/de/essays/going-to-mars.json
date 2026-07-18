@@ -1,0 +1,147 @@
+{
+  "title": "Die Mauer",
+  "dek": "Jeder Plan für bemannte Raumfahrt kollidiert letztlich mit dem Mars, und der Mars bricht jeden Plan an denselben drei Dingen zugleich: Zeit, Masse und dem menschlichen Körper. Es ist nicht Apollo, sondern etwas darüber hinaus. Es ist ein kategorisch anderes Problem – und zu verstehen, warum diese selbstsicheren Starttermine immer wieder verstreichen, ist der Anfang, es ehrlich zu erfassen.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Es gibt ein Datum, das sich ständig verschiebt. 1969 teilte Wernher von Braun einem Senatsausschuss mit, dass Menschen 1982 auf dem Mars stehen könnten. 1986 schlug die National Commission on Space das Jahr 2010 vor. 2010 zielte eine präsidentschaftliche Grundsatzrede auf Mitte der 2030er Jahre ab. Jedes Jahrzehnt hat einen Plan mit spezifischer Hardware, spezifischen Zeitplänen und einem spezifischen Jahrzehnt hervorgebracht, in dem das Ganze stattfinden sollte – und jeder Plan ist in einer Form oder anderen zusammengebrochen. Die Hardware ändert sich, die Behörde ändert sich, die Begründung ändert sich, aber das Datum weicht zuverlässig um etwa denselben Abstand zurück, den es vorrücken sollte. Hier wirkt etwas Strukturelles."
+    },
+    {
+      "type": "prose",
+      "md": "Das Strukturelle ist nicht das Geld, obwohl Geld immer ein Engpass ist. Es ist nicht der politische Wille, obwohl dieser auch verdunstet. Es ist vielmehr, dass der Mars gleichzeitig drei Probleme darstellt, die die bemannte Raumfahrt noch nicht zusammen gelöst hat – Zeit, Masse und der menschliche Körper – und das Lösen dieser Probleme einzeln nacheinander vermittelt einen trügerischen Eindruck von Fortschritt. Zusammen verstärken sie sich gegenseitig auf Weise, die die Summe erheblich schwieriger macht als die einzelnen Teile. Der Mars ist vom Weltall aus bereits von den USA, Russland, der Europäischen Weltraumorganisation, Indien, China und den Vereinigten Arabischen Emiraten erreicht worden. Die Vorhut ist bereits multinational, und jede ehrliche Darstellung dessen, wer dorthin versucht zu gehen, muss von dieser Tatsache ausgehen."
+    },
+    {
+      "type": "heading",
+      "text": "Nicht Apollo, sondern weiter"
+    },
+    {
+      "type": "prose",
+      "md": "Der Vergleich mit Apollo ist fast immer der erste Zug in einer Mars-Diskussion, und er ist fast immer irreführend. Das, was Apollo zum Erfolg machte, war eine bestimmte Konvergenz: ein einzelnes definiertes Ziel, eine nationale Notsituation als Rahmen, im Wesentlichen unbegrenztes Budgetwachstum in den 1960er Jahren und eine Signallaufzeit von 1,3 Sekunden, die die Besatzungen in Echtzeit-Kontakt mit der Erde hielt. Nichts davon existiert für den Mars, und nichts davon kann durch Willenskraft reproduziert werden."
+    },
+    {
+      "type": "prose",
+      "md": "Der Mond ist, wie das [Aufsatz über das Mondflugprogramm](/essays/going-to-the-moon) es darstellt, ein Übungsgelände: drei Tage entfernt, Abbruch möglich, Funkverbindung in Echtzeit, katastrophale Ausfälle überlebensfähig. Der Mars ist keines dieser Dinge. In größter Nähe ist er etwa 54 Millionen Kilometer entfernt; in größter Entfernung über 400 Millionen. Ein Funksignal benötigt drei bis zweiundzwanzig Minuten für die einfache Strecke. Der schnellstmögliche Transfer dauert sechs bis neun Monate Küstenflugs. Einmal wenn das Trans-Mars-Injektionsmanöver gezündet wird, gibt es keine Flugbahn nach Hause auf Abruf. Die Besatzung, die zum Mars aufbricht, ist festgelegt."
+    },
+    {
+      "type": "heading",
+      "text": "Du kannst nicht gehen, wenn du möchtest"
+    },
+    {
+      "type": "prose",
+      "md": "Die erste Mauer ist die Zeit, und sie beginnt, bevor die Mission beginnt. Erde und Mars umkreisen die Sonne mit unterschiedlichen Geschwindigkeiten – die Erde in etwa 365 Tagen, der Mars in etwa 687 – was bedeutet, dass die Geometrie zwischen ihnen sich ständig verschiebt. Eine [Hohmann-Transferbahn](/science/transfers/hohmann-transfer), der energieminimale Bogen von einem Planeten zum anderen, funktioniert nur, wenn die Planeten in den richtigen relativen Positionen sind: Der Start muss so timed werden, dass das Ende der Transferellipse die Marsbahn genau in dem Moment schneidet, in dem der Mars dort ankommt. Dieses Fenster öffnet sich etwa alle 26 Monate. Verfehle es und du wartest mehr als zwei Jahre auf das nächste."
+    },
+    {
+      "type": "prose",
+      "md": "Die Ausrichtung betrifft nicht nur den Hinflug, sondern auch die Rückkehr. Eine Besatzung, die auf dem Mars ankommt, wird mindestens 14 bis 18 Monate warten müssen, bis sich die Planeten wieder in ein Rückflugfenster zurückbewegen – weshalb eine Mars-Mission mit minimaler Dauer, mit sechs bis neun Monaten Hinflug-Küstenflugs, einem Oberflächenaufenthalt von 14 bis 18 Monaten und sechs bis neun Monaten Rückkehr insgesamt etwa 900 Tage dauert. Drei Jahre, Hin- und Zurück, als Minimum. Ingenieure nennen die Diagramme, die Startfenster und Transitzeiten abbilden, \"Kotelettdiagramme\" – Konturkarten mit [Delta-v](/essays/delta-v)-Kosten gegen Abflug- und Ankunftsdatum, die mit etwas Fantasie wie der Schnitt aussehen, nach dem sie benannt sind. Die günstigen Täler in diesen Diagrammen sind die Fenster. Die teuren Grate zwischen ihnen sind die Monate, in denen keine sinnvolle Mission fliegen kann. Das Fenster führt die Mission, nicht andersherum."
+    },
+    {
+      "type": "prose",
+      "md": "Die Verpflichtungsfolge des Fensters ist absolut. Anders als bei einer Apollo-Mondmission – wo eine [freie Rückkehrbahn](/science/transfers/free-return) während des größten Teils des Hinflugs Abbruch zur Erde verfügbar hielt – hat eine Mars-Mission auf einer Hohmann-Bahn keine solche Option, sobald das Trans-Mars-Injektionsmanöver gezündet wird. Es gibt keine Flugbahn, die die Besatzung schnell nach Hause bringt, wenn auf dem Weg etwas schiefgeht. Es gibt höhenergetische Abbruchbahnen, aber sie erfordern enorme Treibstoffreserven, die keine Mission je vorzuschlagen gewagt hat, genau weil Treibstoff die zweite Mauer ist."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/launch-window",
+      "kind": "diagram",
+      "caption": "Du fliegst nicht zum Mars, wenn du bereit bist; du fliegst, wenn sich die beiden Planeten ausrichten, was für ein paar Wochen etwa alle sechsundzwanzig Monate passiert. Verfehle es und du wartest zwei Jahre. Und sobald das Transfermanöver dich zum sechs- bis neunmonatigen Küstenflug verpflichtet, gibt es keinen Abbruch zurück zur Erde.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Alles, für Jahre"
+    },
+    {
+      "type": "prose",
+      "md": "Die zweite Mauer ist die Masse – und speziell die Beziehung zwischen Masse und Entfernung in einer Mission, aus der keine Nachschubversorgung möglich ist. Auf der Internationalen Raumstation kommt alle paar Monate ein Progress-Frachtfahrzeug mit Lebensmitteln, Wasser, Ausrüstung und Ersatzteilen an. Die Lebenserhaltungssysteme der Station sind in einigen Aspekten geschlossen, aber in anderen undicht; Wasser wird recycelt, aber Verbrauchsmaterialien werden regelmäßig von der Erde aufgefüllt. Eine Mars-Besatzung erhält keine solche Nachschubversorgung. Was mit ihnen abreist, ist alles, was sie haben. Jedes Kilogramm Lebensmittel, jeder Liter Wasser, jede Ersatzkomponente für jedes kritische System muss entweder von der Erde transportiert werden – zu außerordentlichen Startkosten – oder auf dem Mars selbst produziert werden."
+    },
+    {
+      "type": "prose",
+      "md": "Das Rückkehr-Treibstoff-Problem ist die schärfste Version davon. Ein bemannter Landekörper, der auf der Marsoberfläche herabsteigt, muss auch den Treibstoff mitführen, um von ihr aufzusteigen, mit einem wartenden Schiff in der Umlaufbahn zu koppeln und für die Rückkehr zu zünden. Die Masse dieses Treibstoffs, zum Landekörper addiert, erhöht die Masse des Landekörpers, was mehr Treibstoff erfordert, um ihn zu landen, was die Masse weiter erhöht – eine Spirale, die sorgfältig untersucht wurde und sich auf Dutzende Tonnen Treibstoff beläuft, das auf der Marsoberfläche ankommen muss. Es von der Erde auf einem einzelnen Startstapel zu transportieren ist außerordentlich teuer. Das Entkommen aus dieser Spirale ist [In-situ-Ressourcennutzung](/science/life-in-space/isru-resource-utilization): die Herstellung von Treibstoff auf dem Mars aus Marsressourcen, statt ihn von der Erde zu schleppen."
+    },
+    {
+      "type": "prose",
+      "md": "Das Entkommen aus der Treibstoffspirale ist [In-situ-Ressourcennutzung](/science/life-in-space/isru-resource-utilization): die Herstellung von Treibstoff auf dem Mars aus Marsressourcen. Die Atmosphäre des Mars besteht zu 95 % aus Kohlendioxid; spalte CO₂ elektrochemisch und du hast Sauerstoff, oder verarbeite es mit Wasserstoff aus Wassereis, um Methanbrennstoff herzustellen. [Perseverance](/missions?id=perseverance) führte MOXIE mit sich – das Mars Oxygen In-Situ Resource Utilization Experiment – das von 2021 bis 2023 in kleinem Maßstab Sauerstoff aus Martian CO₂ herstellte, mit Raten bis zu zehn Gramm pro Stunde. Es ist der einzige Machbarkeitsnachweis der Ressourcenproduktion auf einem anderen Planeten. Das Skalieren auf die Tonnen Treibstoff, das ein bemanntes Aufstiegsfahrzeug benötigt, neben einem geschlossenen [Lebenserhaltungssystem](/science/life-in-space/eclss-life-support), das Wasser und Luft für drei Jahre ohne Nachschubversorgung recycelt, ist eine ungelöste Ingenieuraufgabe ersten Ranges. Der Pfad von zehn Gramm pro Stunde zu einer vollständigen Treibstoffanlage existiert auf dem Papier. Er wurde nie gebaut."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/isru-return",
+      "kind": "diagram",
+      "caption": "Genug Treibstoff von der Erde zu schleppen, um eine Besatzung vom Mars zurück zu heben, ist nahezu unmöglich, also ist der Plan, ihn bei der Ankunft herzustellen. Perseverances MOXIE-Experiment zog Sauerstoff aus der CO₂-Atmosphäre – ein paar Gramm pro Stunde, aber das erste Mal, dass eine Fabrik auf einer anderen Welt gelaufen ist.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Die sieben Minuten, nochmal – und dann manche"
+    },
+    {
+      "type": "prose",
+      "md": "Der dritte Mauer Auftakt ist gut dokumentiert. [Eintritt, Abstieg und Landung auf dem Mars](/science/mission-phases/edl) – die Sequenz, die das [Aufsatz über sieben Minuten](/essays/seven-minutes) im Detail nachzeichnet – ist die schwierigste Landung des Sonnensystems aus einem spezifischen und unerbittlichen Grund: Der Mars hat gerade genug Atmosphäre, um bei der Eintritt tödliche Hitze zu erzeugen, und bei weitem nicht genug, um dich nur mit einem Fallschirm auf eine Landegeschwindigkeit zu verlangsamen. Jeder Mars-Landekörper in der Geschichte hat eine maßgeschneiderte Kombination aus Hitzeschild, Überschallfallschirm, Raketen und manchmal aufwändiger mechanischer Erfindungsgabe erfordert – die Airbags der [Mars Pathfinder](/missions?id=mars-pathfinder), der Himmelskran der [Curiosity](/missions?id=curiosity) und [Perseverance](/missions?id=perseverance) – nur um Hardware in Autogröße auf die Oberfläche zu bringen. Der Himmelskran ist bei etwa einer Tonne Rover nahe der äußeren Grenze dessen, was das derzeitige EDL-Werkzeugset liefern kann. Ein bemannter Mars-Landekörper würde in der Größenordnung von zwanzig bis vierzig Tonnen wiegen."
+    },
+    {
+      "type": "prose",
+      "md": "Diese Lücke – zwischen dem, was gelandet wurde, und dem, was eine bemannte Mission erfordert – wird die EDL-Lücke genannt, und es ist keine kleine Ingenieuerweiterung der bestehenden Arbeit. Es ist ein Regime-Wechsel. Die Physik, die Fallschirm-Luftwiderstand regiert, skaliert schlecht mit Masse: Ein Fallschirm groß genug, um ein vierzig-Tonnen-Fahrzeug in der dünnen Marsatmosphäre bedeutsam zu verlangsamen, müsste so groß sein, dass es bei Überschallgeschwindigkeit strukturell unpraktisch wird. Alternative Ansätze – Überschall-Retroproputsion, aufblasbare Aeroshells, Kombinationen davon – wurden untersucht und in kleinem Maßstab demonstriert. SpaceX's Starship würde, wenn es je zum Mars mit einer funktionierenden propulsiven Landefähigkeit kommt, den ersten Versuch mit bemannter Skalierungs-Mars-EDL darstellen. Stand dieser Veröffentlichung hat Starship keine vollständig erfolgreiche Orbitaldemonstration auf der Erde abgeschlossen. Seine Mars-Leistung ist eine Projektion aus einem unerprobten System. Jede glaubwürdige Analyse von bemannten Mars-Architekturen listet EDL als eines der bedeutsamsten ungelösten technischen Risiken. Dies ist keine Pessimismus. Es ist die Ingenieuraufzeichnung, wie sie jetzt ist."
+    },
+    {
+      "type": "prose",
+      "md": "Die Signallaufzeit gilt unabhängig von der EDL-Architektur. Bis die Erde hört, dass ein Raumfahrzeug in die Marsatmosphäre eingetreten ist, ist die sieben-Minuten-Sequenz bereits gelöst – Erfolg oder Krater – weshalb [Perseverance](/missions?id=perseverance) seinen Landeplatz autonom mit terrainbezogener Navigation auswählte. Für einen bemannten Landekörper gilt die gleiche Einschränkung: Jede Abstiegsentscheidung gehört der Besatzung allein, und jeder Notfall auf der Oberfläche wird von Menschen beantwortet, die elf bis zweiundzwanzig Lichtminuten von der nächsten Hilfe entfernt sind."
+    },
+    {
+      "type": "figure",
+      "image": "missions/perseverance/01",
+      "kind": "photo",
+      "caption": "Perseverance in den letzten Sekunden ihrer eigenen Landung, an Kabeln vom Himmelskran über dem Jezero herabgelassen – die schwierigste Ankunft im Sonnensystem, vollständig vom Raumfahrzeug geflogen. Ein bemannter Landekörper würde zehnfach mehr wiegen, und niemand weiß noch, wie man das setzt.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Der Körper zählt"
+    },
+    {
+      "type": "prose",
+      "md": "Die dritte Mauer ist der menschliche Körper, und er ist diejenige, die die Missionsarchitektur nicht umgehen kann. Der Mars hat kein globales Magnetfeld – sein Kern lange seit erstarrt, was den Dynamo beendete, der einst den Schild erzeugte. Das Magnetfeld der Erde lenkt die meisten galaktischen kosmischen Strahlen und solaren energetischen Partikel ab; der Mars bietet kein Äquivalent. Eine sechsmonatige Passage durch den Weltraum liefert eine gemessene Dosis von etwa 300 Millisievert – weit über hundertmal ein typisches Jahr natürlicher Hintergrundstrahlung auf der Erde, absorbiert in sechs Monaten. Auf der Marsoberfläche, ohne Magnetfeld, sammelt sich die Dosis weiter aus Sekundärstrahlung. Eine dreijährige Rundreise wurde auf 600 bis 1.200 Millisievert insgesamt geschätzt, abhängig von Sonnenzyklusphase und Abschirmung – Zahlen, die von Instrumenten an Bord der [Curiosity](/missions?id=curiosity) im Flug gemessen wurden."
+    },
+    {
+      "type": "prose",
+      "md": "Die derzeitigen NASA-Berufsdosisgrenzen sind darauf ausgerichtet, das Lebenszeit-Überschusskrebs-Risiko auf 3 % zu begrenzen. Eine Mars-Rundreise überschreitet unter den meisten Architekturannahmen diese Grenzen. Die [Strahlenbelastung](/science/life-in-space/radiation-exposure) ist ein quantifiziertes, dokumentiertes Risiko, das die vorhandene Abschirmungstechnologie nicht angemessen mindert; jede Grenzrevision, die die Mission zulässt, würde eine Richtlinienentscheidung gegen anerkannte Unsicherheit sein, nicht ein technisches Problem gelöst. Jenseits von Strahlung können [Knochendichteverlust](/science/life-in-space/bone-density-loss) und [Muskelatrophie](/science/life-in-space/muscle-atrophy) in [Schwerelosigkeit](/science/life-in-space/microgravity-physiology) durch Gegenmaßnahmen verlangsamt, aber nicht gestoppt werden. ISS-Besatzungen auf sechsmonatigen Missionen kehren mit Bedarf an Monaten Rehabilitation zurück; eine Mars-Besatzung würde sechs bis neun Monate in Übergangsschwerelosigkeit verbringen, mehr als ein Jahr in der Einschwerkraft des Mars – ein Regime ohne Langzeitdaten von Menschen – dann sechs bis neun Monate wieder in Schwerelosigkeit. Ob der Körper diese Sequenz ohne permanente Schäden an Knochen, kardiovaskulärer Funktion oder Vision aufrechterhalten kann, ist eine offene Frage, die aus derzeitigen Daten nicht beantwortet werden kann. Sie kann nur beantwortet werden, indem man geht. Und dann gibt es die dreijährige soziale Isolation – eine Besatzung in einem Volumen vergleichbar mit einem großen Wohnmobil, jenseits von Echtzeit-Kommunikation mit der Erde, mit keiner verfügbaren Rettung – ein psychologisches Experiment, für das Überwinterungen in der Antarktis und Tauchbootseinsätze im besten Fall Teilmodelle sind."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/radiation",
+      "kind": "diagram",
+      "caption": "Der Mars verlor sein globales Magnetfeld, als sein Kern erkaltet, also hat er keinen Schild gegen galaktische kosmische Strahlen oder Sonnenstürme. Eine Besatzung nimmt etwa 300 Millisievert auf der sechs-monatigen Passage allein – und über eine dreijährige Rundreise eine Dosis, die keine leichte Abschirmung stoppen kann.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Die Mauer ist der Punkt"
+    },
+    {
+      "type": "prose",
+      "md": "Der Robotik-Rekord auf dem Mars ist, wenn du weit genug zurücktrittst, außerordentlich. [Viking 1](/missions?id=viking1) setzte am 20. Juli 1976 auf der Chryse Planitia auf – das erste Raumfahrzeug, das erfolgreich auf der Marsoberfläche operierte – und lief mehr als sechs Jahre. [Spirit](/missions?id=spirit) und [Opportunity](/missions?id=opportunity) fuhren über Terrain, das kein Mensch berührt hat; [Curiosity](/missions?id=curiosity) liest die geologische Geschichte des Gale-Kraters seit August 2012; [Perseverance](/missions?id=perseverance) ist jetzt im Jezero-Krater und zwischenspeichert Felskerne, die eine zukünftige Probenrückkehrmission eines Tages zur Erde bringen könnte."
+    },
+    {
+      "type": "prose",
+      "md": "Die globale Dimension dieser Vorhut ist unterbewertet. [Mangalyaan](/missions?id=mangalyaan) – die Mars Orbiter Mission der Indischen Weltraumforschungsorganisation – kam am 24. September 2014 beim ersten Versuch zum Mars an, machte Indien zur vierten Weltraumbehörde, die den Mars erreichte, und zur ersten asiatischen Nation, die dies tat, bei Gesamtmissionkosten von etwa 74 Millionen Dollar, weniger als das Produktionsbudget des Films *Gravity*. Sie operierte fast acht Jahre, weit über ihre sechsmonatige Designlebensdauer hinaus. [Tianwen-1](/missions?id=tianwen1), von China im Juli 2020 gestartet, führte eine Leistung auf, die keine Weltraumbehörde beim ersten Mars-Versuch geschafft hatte: Sie umkreiste, landete und stellte einen Rover – Zhurong – alles in einer einzigen Mission bereit. Zhurong fuhr ab Mai 2021 über Utopia Planitia und gab geologische und atmosphärische Daten für mehr als ein Jahr zurück. Diese Leistung, beim ersten Versuch, von einem nationalen Marsprogramm, das vor dem 21. Jahrhundert nicht existierte, zeichnet die geopolitische Karte neu, wo die Fähigkeit zu gehen zu Mars derzeit residiert."
+    },
+    {
+      "type": "prose",
+      "md": "Gegen diese Robotik-Grundlage steht Starship als aktueller Kernpunkt bemannter Mars-Planung. SpaceX hat Architekturen beschrieben, in denen vollständig wiederverwendbare, vollständig getankte Fahrzeuge große Besatzungen auf sechs-monatigen Übergängen transportieren, propulsiv landen und Rück-Treibstoff auf der Oberfläche via ISRU produzieren. Der Ehrgeiz ist real; ein vollständig wiederverwendbares Fahrzeug an Starship's Skalierung würde die Massengleichung wesentlich verändern. Aber Stand dieser Veröffentlichung hat Starship keine vollständig erfolgreiche Orbitaldemonstration auf der Erde abgeschlossen. Sie hat nicht In-Space-Treibstofftransfer in Maßstab, propulsive Landung in bemannter-Landekörper-Masse oder eines der Lebenserhaltungs- und Strahlenschutzmittel, das die Mauern oben erfordern, demonstriert. Starship könnte diese Dinge letztendlich adressieren. Es ist jetzt ein enormes und ernsthaft finanziertes Wagnis – und ein Wagnis ist keine Lösung."
+    },
+    {
+      "type": "prose",
+      "md": "Was den Mars zur Mauer macht, ist nicht, dass es unmöglich ist. Die Orbitmechanik ist gelöst; die [Transferbahnen](/science/transfers/hohmann-transfer) sind kartiert; die [Kotelettdiagramme](/science/transfers/lambert-problem) existieren für jedes Fenster bis zum Ende des Jahrhunderts. Was es zur Mauer macht, ist, dass es erfordert, Zeit, Masse und den Körper gleichzeitig zu lösen, in einer Ferne, wo jeder Fehler endgültig ist und keine Hilfe kommt. Das [Aufsatz über das Mondflugprogramm](/essays/going-to-the-moon) rahmt die Mondrendezvouz als eine Generalprobe genau ein, weil es dort falsch zu machen überlebensfähig ist. Der Mars bietet das nicht. Die erste bemannte Mission wird das erste Mal sein, dass jedes System zusammen in der tatsächlichen Umgebung, mit tatsächlichen Menschen darin, auf einer tatsächlichen dreijährigen Verpflichtung lauft – und es gibt keinen zweiten Versuch, der in den Zeitplan eingebaut ist."
+    },
+    {
+      "type": "prose",
+      "md": "Das Datum bewegt sich weiter, weil die Arbeit real und die Arbeit schwer ist. Die ehrliche Antwort auf \"wann werden Menschen auf dem Mars landen\" ist: wenn die drei Mauern adressiert wurden – nicht wenn Zutrauen hoch ist, nicht wenn ein Zeitplan sagt, nicht wenn eine Gründer-Ambition es verlangt, sondern wenn die EDL-Architektur in bemannter Skalierung demonstriert wurde, wenn ein geschlossenes Lebenserhaltungssystem für drei Jahre Betrieb bewiesen wurde, wenn das Strahlenbild entweder gemindert oder unter bekannten Bedingungen akzeptiert wurde, und wenn eine Rück-Treibstoffversorgung auf dem Mars existiert, bevor die Besatzung die Erde verlässt. Etwas davon läuft. Nichts davon ist fertig. Die Mauer ist noch da, und das Maß jedes Plans ist, ob er der Mauer gerade ins Auge schaut oder die schwierigsten Teile mit Optimismus verdeckt. Das Erstere ist, wie du letztendlich durchkommst. Das Letztere ist, wie du das Datum bewegst."
+    },
+    {
+      "type": "figure",
+      "image": "missions/tianwen1/01",
+      "kind": "photo",
+      "caption": "Chinas Tianwen-1 lieferte einen Orbiter, einen Lander und den Zhurong-Rover 2021 beim allerersten Versuch zum Mars – eine Sequenz, die keine andere Nation in einer einzigen Mission geschafft hat. Der Mars ist die Mauer genau, weil so viele darauf gebrochen wurden, und ein paar, von mehr und mehr der Welt, nicht.",
+      "align": "wide",
+      "credit": "CNSA"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Velocità Terminale",
+  "intro_sentence": "Perché un lander in caduta smette di accelerare — l'equilibrio tra la resistenza dell'aria e il peso che determina la velocità di discesa di un paracadute o dell'atmosfera di un pianeta.",
+  "narrative_101": [
+    "Lascia cadere qualcosa e accelera — ma non all'infinito. Più velocemente cade, più forte l'aria spinge indietro, finché la resistenza verso l'alto bilancia esattamente il peso verso il basso. Da quel momento l'oggetto smette di accelerare e cade a una velocità terminale costante. Un paracadute funziona rendendo enorme il lato della resistenza di quell'equilibrio, così l'equilibrio si raggiunge a una velocità dolce.",
+    "Quanto sia dolce dipende dall'aria. Marte ha un'atmosfera circa l'1% dello spessore della Terra, quindi anche un paracadute supersonico enorme — quello di Curiosity era largo oltre 20 metri — rallenta il veicolo solo a qualche centinaio di chilometri all'ora. È troppo veloce per atterrare, motivo per cui i lander marziani hanno sempre bisogno di un secondo atto: razzi retrogradi, airbag o una sky-crane per completare il lavoro.",
+    "Venere è l'opposto. La sua atmosfera è così densa — circa 90 volte la pressione superficiale terrestre — che un lander Venera aveva bisogno solo di un piccolo paracadute in alto, poi poteva scaricarlo e semplicemente scendere sulla superficie su un modesto piatto di resistenza, galleggiando giù per la maggior parte di un'ora. E la Luna, senza atmosfera affatto, non ha velocità terminale: un lander lunare deve annullare ogni metro al secondo della sua velocità con il motore, fino all'atterraggio."
+  ],
+  "body_paragraphs": [
+    "Il numero governante è il coefficiente balistico — massa divisa per l'area di resistenza. Un veicolo leggero con un grande paracadute (basso coefficiente balistico) si assesta a una velocità terminale lenta; uno pesante e compatto (alto coefficiente balistico) cade più velocemente. I progettisti bilanciano i due: un paracadute più grande garantisce una discesa più lenta ma pesa di più ed è più difficile da dispiegare supersonicamente in aria rarefatta.",
+    "La velocità terminale cambia anche con l'altitudine, perché l'aria si rarefà con l'altezza. Un lander di Venere scende più velocemente in alto, dove l'aria è più rarefatta, e rallenta continuamente man mano che scende nell'atmosfera più densa sottostante — toccando il suolo a una dolce manciata di metri al secondo anche senza frenata attiva alla fine.",
+    "Su `/fly`, questo è il motivo per cui i tre corpi hanno un aspetto così diverso in `?descent=1`. Una discesa su Marte dissipa la maggior parte della sua velocità sotto il paracadute, poi passa a un atterraggio motorizzato o con airbag; una discesa su Venere è una lenta e lunga deriva sola sotto la resistenza; una discesa sulla Luna è motorizzata dall'inizio alla fine, perché non c'è aria per aiutare."
+  ],
+  "diagram_caption": "Velocità terminale: la resistenza aumenta con la velocità finché non bilancia il peso; un paracadute allarga l'area di resistenza così l'equilibrio si raggiunge a una dolce velocità di discesa."
+}

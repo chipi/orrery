@@ -60,7 +60,10 @@
       "periapsis_km": null,
       "inclination_deg": null,
       "orbit_insertion_dv_km_s": null,
-      "source": "JPL MER-B EDL Reconstruction (2004); direct atmospheric entry"
+      "source": "JPL MER-B EDL Reconstruction (2004); direct atmospheric entry",
+      "edl_system": "airbag",
+      "edl_duration_s": 1367,
+      "touchdown_velocity_ms": 15.89
     },
     "totals": {
       "total_dv_km_s": 5.5,

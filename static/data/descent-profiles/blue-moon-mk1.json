@@ -1,0 +1,16 @@
+{
+  "missionId": "blue-moon-mk1",
+  "siteId": "blue-moon-mk1",
+  "body": "moon",
+  "landingSite": { "lat": 0.0, "lon": 0.0 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 16000,
+  "entryCdA": 0,
+  "retroPropellantKg": 2300,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "generic",
+  "provenance": [
+    { "l": "Blue Moon Mk1 lunar lander overview — Blue Origin", "u": "https://www.blueorigin.com/blue-moon" }
+  ]
+}

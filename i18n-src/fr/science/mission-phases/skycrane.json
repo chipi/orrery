@@ -1,0 +1,15 @@
+{
+  "title": "Sky-Crane",
+  "intro_sentence": "La plateforme propulsée par fusée qui abaisse le rover à la surface par des câbles, puis s'envole — le système d'atterrissage qui a déposé Curiosity et Perseverance sur Mars.",
+  "narrative_101": [
+    "Les premiers rovers martiens étaient assez petits pour rebondir à l'intérieur d'un cocon de coussins gonflables. Mais Curiosity avait la taille d'une voiture — bien trop lourd pour les coussins gonflables — et placer de grandes pattes d'atterrissage sous le rover aurait signifié le percher haut sur une plateforme encombrante, puis trouver un moyen de le descendre. La réponse de la NASA était plus étrange et plus élégante : la sky-crane.",
+    "Après que le bouclier thermique et le parachute ont fait leur travail, un étage de descente propulsé par fusée prend le relais, allumant huit moteurs pour ralentir jusqu'à un quasi-vol stationnaire à quelques mètres d'altitude. Ensuite, au lieu d'atterrir lui-même, il abaisse le rover sous lui par un ensemble de câbles — comme un hélicoptère plaçant une charge — jusqu'à ce que les roues du rover touchent le sol. Le rover est son propre système d'atterrissage.",
+    "Dès que le rover est au sol et que son poids relâche les câbles, l'étage de descente coupe les cordages et s'envole pour s'écraser à une distance sûre, afin que son échappement et ses débris ne touchent jamais le rover. Toute la séquence — vol stationnaire, abaissement, touchdown, décollage — ne prend que quelques secondes, et elle a maintenant fonctionné deux fois : pour Curiosity en 2012 et Perseverance en 2021."
+  ],
+  "body_paragraphs": [
+    "La sky-crane résout deux problèmes à la fois. Elle maintient les moteurs fusée en hauteur, afin que leurs panaches ne creusent pas un cratère ou ne projettent de débris sur le rover, et elle livre le rover directement sur ses roues, prêt à circuler — pas de rampes, pas de plate-forme de débarquement à descendre. Le prix à payer est une chorégraphie sans marge d'erreur, exécutée en autonomie, des minutes après une entrée brûlante, avec la Terre trop loin pour aider en temps réel.",
+    "C'est le chapitre final des sept minutes de terreur : le chauffage d'entrée, puis le parachute supersonique, puis la séparation du bouclier thermique, puis la descente propulsée, puis l'abaissement de la sky-crane et le décollage — chaque étape doit se déclencher à point nommé ou la mission est perdue à l'atterrissage. Seule une poignée de nations ont effectué un atterrissage en douceur sur Mars ; la sky-crane est la manière la plus audacieuse de l'avoir fait.",
+    "Sur `/fly`, pilotez Curiosity ou Perseverance en `?descent=1` et regardez les câbles de l'étage de descente se dérouler sous la séquence parachute-rétrofusées, abaissant le rover à la surface avant que l'étage s'écarte — le beat de la sky-crane rendu visible."
+  ],
+  "diagram_caption": "Sky-crane : un étage de descente propulsé par fusée survole et abaisse le rover par des câbles jusqu'à la surface, puis coupe les cordages et s'écarte."
+}

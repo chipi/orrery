@@ -1,0 +1,16 @@
+{
+  "missionId": "luna24",
+  "siteId": "luna24",
+  "body": "moon",
+  "landingSite": { "lat": 12.25, "lon": 62.2 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 1880,
+  "entryCdA": 0,
+  "retroPropellantKg": 270,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Luna 24 — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1976-081A" }
+  ]
+}

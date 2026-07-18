@@ -78,6 +78,12 @@
         "label": "Halley — flyby (Halley Armada)",
         "description": "Closest approach 8,030 km from Halley's nucleus on 1986-03-09, three days after Vega 1. Together the two Vegas + Sakigake/Suisei + Giotto delivered the first multi-spacecraft cometary observation campaign in history — pathway-data sharing across NASA, ESA, Roscosmos (then Soviet Intercosmos), and JAXA's predecessors was unprecedented for the period."
       }
-    ]
+    ],
+    "arrival": {
+      "entry_velocity_km_s": 10.7,
+      "edl_system": "aeroshell",
+      "edl_duration_s": 2989,
+      "touchdown_velocity_ms": 11.12
+    }
   }
 }

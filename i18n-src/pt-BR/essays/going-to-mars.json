@@ -1,0 +1,147 @@
+{
+  "title": "O Muro",
+  "dek": "Todos os planos de voos espaciais humanos eventualmente esbarram em Marte, e Marte quebra cada um deles nas mesmas três coisas simultaneamente: tempo, massa e corpo. Não é Apollo, mas vai além. É um problema categoricamente diferente — e entender por que aquelas datas de partida confiantes continuam se adiando é o começo de compreendê-lo honestamente.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Há uma data que não para de se mover. Em 1969, Wernher von Braun disse a uma comissão do Senado que humanos poderiam pisar em Marte em 1982. Em 1986, a Comissão Nacional de Espaço propôs 2010. Em 2010, um discurso de política presidencial apontava para meados dos anos 2030. Cada década produziu um plano com equipamentos específicos, cronogramas específicos e uma década específica em que a coisa aconteceria — e cada plano, de uma forma ou outra, se dissolveu. O equipamento muda, a agência muda, a justificativa muda, mas a data se afasta confiaveimente pela aproximadamente mesma distância que foi prometido que fecharia. Algo estrutural está em funcionamento."
+    },
+    {
+      "type": "prose",
+      "md": "O fator estrutural não é dinheiro, embora dinheiro seja sempre uma restrição. Não é vontade política, embora isso também evapore. É que Marte apresenta, simultaneamente, três problemas que os voos espaciais humanos ainda não resolveram juntos — tempo, massa e corpo — e resolvê-los separadamente, um de cada vez, dá uma falsa sensação de progresso. Juntos, eles se reforçam mutuamente de maneiras que tornam a soma consideravelmente mais difícil do que as partes. Marte foi alcançado roboticamente pelos Estados Unidos, Rússia, Agência Espacial Europeia, Índia, China e Emirados Árabes Unidos. A vanguarda já é multinacional, e qualquer relato honesto de quem está tentando ir lá tem que partir desse fato."
+    },
+    {
+      "type": "heading",
+      "text": "Não Apollo, mas vai além"
+    },
+    {
+      "type": "prose",
+      "md": "A comparação com Apollo é quase sempre o primeiro movimento em um argumento sobre Marte, e quase sempre é enganosa. O que fez Apollo funcionar foi uma convergência específica: um objetivo singular e definido, um enquadramento de emergência nacional, essencialmente crescimento orçamentário ilimitado nos anos 1960, e um atraso de transmissão de 1,3 segundo que mantinha as tripulações em contato em tempo real com a terra. Nada disso existe para Marte, e nada disso pode ser replicado apenas desejando."
+    },
+    {
+      "type": "prose",
+      "md": "A Lua é, como o ensaio sobre ir à Lua enquadra, um campo de treinamento: três dias de distância, aborto disponível, rádio em tempo real, falhas catastróficas sobreviváveis. Marte não é nenhuma dessas coisas. Na aproximação mais próxima, está aproximadamente 54 milhões de quilômetros de distância; na mais afastada, mais de 400 milhões. Um sinal de rádio leva de três a vinte e dois minutos em um sentido. A transferência mais rápida possível funciona em seis a nove meses de costa. Uma vez que a queimada de injeção transmarcinana dispara, não há trajetória para casa por demanda. A tripulação que sai para Marte está comprometida."
+    },
+    {
+      "type": "heading",
+      "text": "Você não pode sair quando quer"
+    },
+    {
+      "type": "prose",
+      "md": "O primeiro muro é o tempo, e ele começa antes da missão. Terra e Marte orbitam o sol em velocidades diferentes — Terra em aproximadamente 365 dias, Marte em aproximadamente 687 — o que significa que a geometria entre eles está constantemente mudando. Uma órbita de transferência de Hohmann, o arco de energia mínima de um planeta para outro, só funciona quando os planetas estão nas posições relativas corretas: a partida deve ser cronometrada para que a extremidade distante da elipse de transferência intersecte a órbita de Marte exatamente no momento em que Marte chega lá. Essa janela se abre aproximadamente a cada 26 meses. Perda-a e você espera mais de dois anos pela próxima."
+    },
+    {
+      "type": "prose",
+      "md": "O alinhamento afeta não apenas a perna de saída, mas também o retorno. Uma tripulação chegando a Marte aguardará pelo menos de 14 a 18 meses para os planetas voltarem a se alinhar em uma janela de retorno — é por isso que uma missão de duração mínima para Marte, com costa de saída de seis a nove meses, permanência na superfície de 14 a 18 meses e retorno de seis a nove meses, chega a aproximadamente 900 dias totais. Três anos, ida e volta, como piso. Engenheiros chamam os gráficos que mapeiam janelas de lançamento e tempos de trânsito de \"gráficos de costeleta\" — mapas de contorno de custo delta-v contra data de partida e chegada que parecem, com alguma imaginação, como o corte que recebem o nome. Os vales baratos nesses gráficos são as janelas. As cristas caras entre eles são os meses quando nenhuma missão razoável pode voar. A janela executa a missão, não o contrário."
+    },
+    {
+      "type": "prose",
+      "md": "A consequência do comprometimento da janela é absoluta. Diferentemente de uma missão lunar Apollo — onde uma trajetória de retorno livre mantinha o aborto para Terra disponível durante grande parte da costa de saída — uma missão para Marte em um arco de Hohmann não tem tal opção uma vez que a queimada de injeção trans-marcinana dispara. Não há trajetória que traga a tripulação de volta rápido se algo der errado pelo caminho. Há trajetórias de aborto de energia superior, mas elas requerem enormes reservas de propelente que nenhuma missão até agora se propôs a carregar, precisamente porque propelente é o segundo muro."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/launch-window",
+      "kind": "diagram",
+      "caption": "Você não sai para Marte quando está pronto; você sai quando os dois planetas se alinham, o que acontece por algumas semanas a cada vinte e seis meses. Perca e você espera dois anos. E uma vez que a queimada de transferência o compromete com a costa de seis a nove meses, não há aborto de volta para a Terra.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Tudo, por anos"
+    },
+    {
+      "type": "prose",
+      "md": "O segundo muro é a massa — e especificamente, a relação entre massa e distância em uma missão da qual nenhum reabastecimento é possível. Na Estação Espacial Internacional, um veículo de carga Progress chega a cada poucos meses com alimento, água, equipamento e peças de reposição. Os sistemas de suporte de vida da estação são de circuito fechado em alguns aspectos, mas vazam em outros; água é reciclada, mas consumíveis são reabastecidos regularmente da Terra. Uma tripulação de Marte não recebe tal reabastecimento. O que sai com eles é o que eles têm. Cada quilograma de alimento, cada litro de água, cada componente de reposição de cada sistema crítico deve ser carregado da Terra — a um custo de lançamento extraordinário — ou produzido no próprio Marte."
+    },
+    {
+      "type": "prose",
+      "md": "O problema do propelente de retorno é a versão mais acentuada disso. Um módulo de pouso com tripulação descendo para a superfície marciana também deve carregar o propelente para ascender dele, fazer rendezvous com uma nave em espera na órbita e queimar para o retorno. A massa desse propelente, adicionada ao módulo de pouso, aumenta a massa do módulo, o que requer mais propelente para pousá-lo, o que aumenta a massa ainda mais — uma espiral que foi cuidadosamente estudada e chega a dezenas de toneladas de propelente que devem alcançar a superfície marciana. Carregá-lo da Terra em uma única pilha de lançamento é extraordinariamente caro. A fuga dessa espiral é a utilização de recursos in-situ: fabricar propelente em Marte, a partir de recursos marcianos, em vez de carregá-lo da Terra."
+    },
+    {
+      "type": "prose",
+      "md": "A fuga da espiral de propelente é a utilização de recursos in-situ: fabricar propelente em Marte a partir de recursos marcianos. A atmosfera de Marte é 95% dióxido de carbono; divida CO₂ eletroquimicamente e você tem oxigênio, ou processe-o com hidrogênio da água gelada para produzir combustível de metano. Perseverance carregou MOXIE — o Experimento de Utilização de Recursos In-Situ de Oxigênio em Marte — que fez oxigênio a partir de CO₂ marciano em pequena escala de 2021 a 2023, em taxas de até dez gramas por hora. É o único conceito comprovado de produção de recursos em outro planeta. Dimensionar isso para as toneladas de propelente que um veículo de ascensão com tripulação precisa, juntamente com um sistema de suporte de vida em circuito fechado que recicla água e ar por três anos sem reabastecimento, é um desafio de engenharia de primeira ordem ainda não resolvido. O caminho de dez gramas por hora para uma planta de propelente completa existe no papel. Nunca foi construído."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/isru-return",
+      "kind": "diagram",
+      "caption": "Carregar propelente suficiente da Terra para elevar uma tripulação de volta de Marte é quase impossível, então o plano é fabricá-lo na chegada. O experimento MOXIE do Perseverance retirou oxigênio da atmosfera de CO₂ — alguns gramas por hora, mas a primeira vez que uma fábrica funciona em outro mundo.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Os sete minutos, novamente — e mais ainda"
+    },
+    {
+      "type": "prose",
+      "md": "O ato de abertura do terceiro muro é bem documentado. Entrada, descida e pouso em Marte — a sequência que o ensaio dos sete minutos traça em detalhes — é o pouso mais difícil do sistema solar por uma razão específica e inflexível: Marte tem apenas atmosfera suficiente para gerar calor letal na entrada, e nada perto o suficiente para desacelerá-lo até uma velocidade de pouso apenas com paraquedas. Todos os pousadores de Marte na história exigiram uma combinação bespoke de escudo térmico, paraquedas supersônico, foguetes e às vezes engenhosidade mecânica elaborada — os airbags do Mars Pathfinder, o guindaste do céu do Curiosity e Perseverance — apenas para colocar equipamento do tamanho de um carro na superfície. O guindaste do céu é, com aproximadamente uma tonelada de rover, perto do limite externo do que o kit EDL atual pode entregar. Um módulo de pouso com tripulação em Marte teria massa na ordem de vinte a quarenta toneladas."
+    },
+    {
+      "type": "prose",
+      "md": "Essa lacuna — entre o que foi pousado e o que uma missão com tripulação requer — é chamada de lacuna EDL, e não é uma pequena extensão de engenharia do trabalho existente. É uma mudança de regime. A física que governa o arrasto do paraquedas não escala bem com a massa: um paraquedas grande o suficiente para desacelerar significativamente um veículo de quarenta toneladas na atmosfera fina de Marte precisaria ser tão grande que se torna impraticável estruturalmente em velocidades supersônicas. Abordagens alternativas — retropropulsão supersônica, aeroshells infláveis, combinações delas — foram estudadas e demonstradas em pequena escala. O Starship do SpaceX, se alguma vez chegar a Marte com uma capacidade de pouso propulsivo funcional, representaria a primeira tentativa de EDL em escala com tripulação em Marte. Até este momento, o Starship não completou uma demonstração orbital completamente bem-sucedida na Terra. Seu desempenho em Marte é uma projeção de um sistema não comprovado. Toda análise credível de arquiteturas de Marte com tripulação lista EDL como um dos maiores riscos técnicos não resolvidos. Isso não é pessimismo. É o registro de engenharia como ele permanece."
+    },
+    {
+      "type": "prose",
+      "md": "O atraso de sinal se aplica independentemente da arquitetura EDL. Ao momento em que a Terra recebe notícia de que uma nave entrou na atmosfera marciana, a sequência de sete minutos já está resolvida — sucesso ou cratera — é por isso que Perseverance selecionou seu próprio local de pouso autonomamente usando navegação relativa ao terreno. Para um módulo de pouso com tripulação, a mesma limitação se mantém: cada decisão de descida é apenas da tripulação, e cada emergência na superfície é respondida por pessoas onze a vinte e dois minutos-luz do auxílio mais próximo."
+    },
+    {
+      "type": "figure",
+      "image": "missions/perseverance/01",
+      "kind": "photo",
+      "caption": "Perseverance nos últimos segundos do seu próprio pouso, abaixada em cabos do guindaste do céu sobre Jezero — a chegada mais difícil do sistema solar, voada inteiramente pela espaçonave. Um módulo de pouso com tripulação teria massa dezenas de vezes maior, e ninguém ainda sabe como pousá-lo.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "O corpo guarda a pontuação"
+    },
+    {
+      "type": "prose",
+      "md": "O terceiro muro é o corpo humano, e é aquele que a arquitetura da missão não pode contornar. Marte não possui um campo magnético global — seu núcleo solidificou há muito tempo, encerrando o dínamo que uma vez gerou o escudo. A magnetosfera da Terra desvia a maior parte dos raios cósmicos galácticos e partículas energéticas solares; Marte não oferece equivalente. Um trânsito de seis meses pelo espaço interplanetário entrega uma dose medida de aproximadamente 300 milisieverts — bem mais de cem vezes um ano típico de radiação de fundo natural na Terra, absorvido em seis meses. Na superfície marciana, sem uma magnetosfera, a dose se acumula ainda mais pela radiação secundária. Uma viagem redonda de três anos foi estimada em 600 a 1.200 milisieverts total, dependendo da fase do ciclo solar e do blindagem — números medidos em voo por instrumentos a bordo do Curiosity."
+    },
+    {
+      "type": "prose",
+      "md": "Os limites de dose ocupacional atuais da NASA são projetados para limitar o risco de câncer de excesso vitalício a 3%. Uma viagem redonda para Marte, sob a maioria dos pressupostos de arquitetura, excede esses limites. A exposição à radiação é um risco quantificado e documentado que a tecnologia de blindagem existente não mitiga adequadamente; qualquer revisão de limite que permita a missão seria uma decisão de política feita contra incerteza reconhecida, não um problema técnico resolvido. Além da radiação, a perda de densidade óssea e atrofia muscular em microgravidade podem ser desaceleradas por contramedidas, mas não paradas. Tripulações da ISS em turnos de seis meses retornam precisando de meses de reabilitação; uma tripulação de Marte gastaria seis a nove meses em microgravidade de trânsito de saída, mais de um ano na gravidade de um terço de Marte — um regime sem dados de longa duração humana — então seis a nove meses em microgravidade novamente no retorno. Se o corpo pode sustentar essa sequência sem dano permanente ao osso, função cardiovascular ou visão é uma questão aberta que não pode ser respondida a partir dos dados atuais. Só pode ser respondida indo. E depois há o isolamento social de três anos — uma tripulação em um volume comparável a um grande veículo recreativo, além de comunicação em tempo real com a Terra, sem resgate disponível — um experimento psicológico para o qual invernos antárticos e implantações de submarino são modelos parciais no melhor."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/radiation",
+      "kind": "diagram",
+      "caption": "Marte perdeu seu campo magnético global quando seu núcleo esfriou, então não tem escudo contra raios cósmicos galácticos ou tempestades solares. Uma tripulação recebe aproximadamente 300 milisieverts apenas no trânsito de seis meses — e em uma viagem redonda de três anos, uma dose que nenhuma blindagem leve o suficiente para voar pode parar.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "O muro é o ponto"
+    },
+    {
+      "type": "prose",
+      "md": "O registro robótico em Marte é, se você se afastar bastante, extraordinário. Viking 1 pousou em Chryse Planitia em 20 de julho de 1976 — a primeira espaçonave a operar com sucesso na superfície marciana — e funcionou por mais de seis anos. Spirit e Opportunity conduziram por terreno que nenhum humano tocou; Curiosity tem lido a história geológica da Cratera Gale desde agosto de 2012; Perseverance está na Cratera Jezero agora, colocando em cache núcleos de rocha que uma futura missão de retorno de amostras pode um dia trazer para a Terra."
+    },
+    {
+      "type": "prose",
+      "md": "A dimensão global dessa vanguarda não é adequadamente apreciada. Mangalyaan — a Missão do Orbitador de Marte da Organização de Pesquisa Espacial Indiana — chegou a Marte em 24 de setembro de 2014 em sua primeira tentativa, tornando a Índia a quarta agência espacial a alcançar Marte e a primeira nação asiática a fazê-lo, com um custo total de missão de aproximadamente 74 milhões de dólares, menos do que o orçamento de produção do filme Gravity. Funcionou por quase oito anos, bem além de sua vida útil de design de seis meses. Tianwen-1, lançada pela China em julho de 2020, realizou um feito que nenhuma agência espacial havia conseguido em uma primeira tentativa de Marte: orbitou, pousou e implantou um rover — Zhurong — tudo em uma única missão. Zhurong conduziu por Utopia Planitia começando em maio de 2021 e retornou dados geológicos e atmosféricos por mais de um ano. Essa conquista, na primeira tentativa, de um programa espacial nacional de Marte que não existia antes do século XXI, remapeia o mapa geopolítico de onde a capacidade de ir a Marte reside atualmente."
+    },
+    {
+      "type": "prose",
+      "md": "Contra essa fundação robótica, Starship permanece como a peça central atual do planejamento de Marte com tripulação. SpaceX descreveu arquiteturas nas quais veículos totalmente reutilizáveis e totalmente reabastecidos carregam grandes tripulações em trânsitos de seis meses, pousando propulsivamente e produzindo propelente de retorno na superfície via ISRU. A ambição é real; um veículo totalmente reutilizável na escala do Starship mudaria substancialmente a equação de massa. Mas até este momento, o Starship não completou uma demonstração orbital totalmente bem-sucedida na Terra. Não demonstrou transferência de propelente no espaço em escala, pouso propulsivo em massa de módulo de pouso com tripulação, ou qualquer um dos sistemas de suporte de vida e mitigações de radiação que os muros acima exigem. Starship pode eventualmente abordar essas coisas. É, agora, uma aposta enorme e seriamente financiada — e uma aposta não é uma solução."
+    },
+    {
+      "type": "prose",
+      "md": "O que torna Marte o muro não é que seja impossível. A mecânica orbital é resolvida; as trajetórias de transferência são mapeadas; os gráficos de costeleta existem para cada janela até o final do século. O que o torna o muro é que ele requer resolver tempo, massa e corpo simultaneamente, a uma distância onde cada falha é final e nenhuma ajuda está chegando. O ensaio sobre ir à Lua enquadra o retorno lunar como um ensaio precisamente porque errar lá é sobrevivível. Marte não oferece isso. A primeira missão com tripulação será a primeira vez que cada sistema funciona junto no ambiente real, com pessoas reais dentro, em um comprometimento real de três anos — e não há segunda tentativa incorporada ao cronograma."
+    },
+    {
+      "type": "prose",
+      "md": "A data continua se movendo porque o trabalho é real e o trabalho é difícil. A resposta honesta a \"quando os humanos poujarão em Marte\" é: quando os três muros tiverem sido abordados — não quando a confiança é alta, não quando um cronograma diz assim, não quando a ambição de um fundador o exige, mas quando a arquitetura EDL foi demonstrada em escala com tripulação, quando um sistema de suporte de vida em circuito fechado foi comprovado por três anos de operação, quando o quadro de radiação é ou mitigado ou aceito em termos conhecidos, e quando um suprimento de propelente de retorno existe em Marte antes da tripulação sair da Terra. Parte desse trabalho está em andamento. Nenhuma dele está feito. O muro ainda está lá, e a medida de cada plano é se ele enfrenta o muro de frente ou cobre as partes mais difíceis com otimismo. O primeiro é como você eventualmente consegue passar. O segundo é como você move a data."
+    },
+    {
+      "type": "figure",
+      "image": "missions/tianwen1/01",
+      "kind": "photo",
+      "caption": "Tianwen-1 da China entregou um orbitador, um módulo de pouso e o rover Zhurong para Marte em sua primeira tentativa em 2021 — uma sequência que nenhuma outra nação conseguiu em uma única missão. Marte é o muro precisamente porque tantos se quebraram nele, e alguns, de mais e mais do mundo, não.",
+      "align": "wide",
+      "credit": "CNSA"
+    }
+  ]
+}

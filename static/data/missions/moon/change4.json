@@ -67,7 +67,11 @@
       "periapsis_km": 100,
       "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.78,
-      "source": "CNSA Chang'e 4 LOI Report (2018-12)"
+      "source": "CNSA Chang'e 4 LOI Report (2018-12)",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 3,

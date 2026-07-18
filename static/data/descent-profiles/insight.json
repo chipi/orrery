@@ -1,0 +1,24 @@
+{
+  "missionId": "insight",
+  "siteId": "insight",
+  "body": "mars",
+  "landingSite": { "lat": 4.5, "lon": 135.62 },
+  "entryState": { "altitudeM": 125000, "velocityMs": 5500, "flightPathAngleDeg": 7.5 },
+  "entryMassKg": 360,
+  "entryCdA": 14,
+  "retroPropellantKg": 45,
+  "archetype": "MARS_PARACHUTE_RETRO",
+  "params": {
+    "chuteDeployAltM": 8000,
+    "terminalHandoffAltM": 1500,
+    "parachuteCdA": 120,
+    "heatshieldKg": 60,
+    "backshellKg": 100,
+    "ispS": 225,
+    "terminalVelocityMs": 2.4
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "InSight EDL — NASA JPL mission overview", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-042A" }
+  ]
+}

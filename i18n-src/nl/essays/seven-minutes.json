@@ -1,0 +1,147 @@
+{
+  "title": "De zeven minuten",
+  "dek": "De cruise is makkelijk. Je brengt maanden door met bijna niets doen — meegaan met de natuurkunde, een baan subtiel bijstellen, wachten. Aankomen is waar missies sterven. Landen is het moeilijkste wat er in de ruimtevaart bestaat, en we hebben het nooit twee keer op dezelfde manier opgelost.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Bedenk wat het getal betekent. Zeven minuten: van de eerste aanraking met de atmosfeer op ongeveer 20.000 kilometer per uur tot wielen omlaag, stilstaand, op een ander werelddeel. Zeven minuten waarin een ruimtevaartuig dat een miljard dollar kostte en tien jaar in de bouw was, autonoom een reeks gebeurtenissen moet uitvoeren — hitteschildontplooiing, parachuteontsteking, raketontsteking, kabelontplooiing, aanraking — elk één seconde getimed, elk één afhankelijk van elke stap ervoor die precies goed gaat. Mis één enkele stap, of raak het vijf seconden te laat, en het hele ding wordt een krater."
+    },
+    {
+      "type": "prose",
+      "md": "En hier is het detail dat het echt verschrikkelijk maakt: op het moment dat de Aarde hoort dat de raket de bovenkant van de Martiaanse atmosfeer heeft bereikt, staat hij al op de grond — of een deel ervan — meer dan elf minuten. De snelheid van het licht is niet langzaam, maar Mars is ver genoeg dat de retourvertraging tussen zes en vierenveertig minuten loopt, afhankelijk van waar de twee planeten in hun banen staan. Niemand landt een Marsrover. Niemand op Aarde kan dat. De raket landt zichzelf, in het donker, aan de andere kant van de zon, en de mensen die hem bouwden kunnen alleen in een kamer zitten en wachten tot ze ontdekken of het werkte."
+    },
+    {
+      "type": "prose",
+      "md": "Dit is geen probleem dat makkelijker wordt met ervaring. Elke wereld presenteert een andere natuurkunde, een ander atmosfeer, een ander stel beperkingen — en de oplossingen die op één lichaam werkten, zijn nutteloos, of gevaarlijk, op een ander. De geschiedenis van [ingang, afdaling en landing](/science/mission-phases/edl) is niet één verhaal van verbeterde techniek. Het is een verzameling van volledig verschillende verhalen, elk één op maat gesneden antwoord op dezelfde meedogenloze vraag: hoe vertraag je snel genoeg, zonder te worden verpletterd, op tijd, voordat je de grond raakt?"
+    },
+    {
+      "type": "heading",
+      "text": "Het atmosfeerprobleem"
+    },
+    {
+      "type": "prose",
+      "md": "Begin met het gemakkelijke geval, wat niet de Maan is. De Maan heeft helemaal geen atmosfeer — wat als een geschenk klinkt, tot je beseft waarvoor een atmosfeer eigenlijk is. Het is gratis vertraging. Een ruimtevaartuig dat de bovenkant van Aarde's atmosfeer raakt met baansnelheid, arriveert met een enorm kinetisch energiebudget, en de lucht brandt het langzaam op: het hitteschildgloedt, weerstand bouwt op, en een raket die kilometers per seconde beweegt, slaat genoeg snelheid af over genoeg minuten dat een parachute hem kan vangen. Haal de atmosfeer weg en je haalt al dat weg. Op de Maan kom je snel aan en heb je alleen raketmotoren om je te vertragen, dus moet je elke kilogram drijfstof die je nodig hebt om die snelheid te doden van het moment dat je Aarde verlaat, meenemen. De Apollo Lunar Module had een toegewijde afdalingsmotor die twaalf minuten brandde om twee mannen uit de baan omlaag te brengen. Elke kilogram lander moest worden verdiend in brandstof op het lanceringskasteel. Er is niets gratis aan landen op een wereld zonder lucht."
+    },
+    {
+      "type": "prose",
+      "md": "Mars is het wreedste middelste geval, en het is het geval dat de meeste missies heeft gedood. De Martiaanse atmosfeer bestaat — het is echte kooldioxide, ongeveer honderd kilometer diep — maar het is ongeveer één procent zo dicht als Aarde. Dik genoeg om uit te maken, dun genoeg om bijna nutteloos te zijn. Een parachute die een sonde in Aarde's lucht koud zou stoppen, maakt nauwelijks indruk op Mars; je hebt het nodig, maar je kunt er niet op vertrouwen. Elke Marslander tot nu toe heeft een aeroshell gebruikt — een stomp hitteschildvorm dat weerstand creëert terwijl het de thermische woede van ingang opneemt — plus een supersonische parachute om de snelheid verder te verlagen, en dan nog iets bovenop, omdat de parachute alleen je nooit helemaal naar veilig krijgt."
+    },
+    {
+      "type": "prose",
+      "md": "Dat 'iets anders' is het ontwerpprobleem. Het is wat elk Marslanding verschilt maakt, en het is wat elk engineeringteam van nul moest oplossen. [Viking 1](/missions?id=viking1) loste het in 1976 op de voor de hand liggende manier op: retroraketjes, afgevuurd tijdens de laatste afdaling, vertragend de lander tot een zachte landing op Chryse Planitia — de eerste ruimtevaartuig ooit op het Martiaanse oppervlak te werken, en het rende meer dan zes jaar. De retroraketbenadering is conservatief en zwaar; het werkt, maar het vraagt brandstof en het beperkt je massabudget voor wetenschap. Twintig jaar later, [Mars Pathfinder](/missions?id=mars-pathfinder) probeerde iets wat als een grap klinkt: wikkel de hele lander in airbags, slaap het los op hoogte, laat de raketjes naar boven afvuren om het laatste van de verticale snelheid te doden, en laat het dan stuiteren. Op 4 juli 1997 raakte de Pathfinder-lander het oppervlak van Mars op ongeveer 50 kilometer per uur en stuiterde minstens vijftien keer voordat het tot stilstand rolde, waarop de bloembladen opengingen en [Sojourner](/missions?id=mars-pathfinder) — de eerste Marsrover — het terrein op klom van Ares Vallis."
+    },
+    {
+      "type": "heading",
+      "text": "Waarom hetzelfde antwoord nooit twee keer werkt"
+    },
+    {
+      "type": "prose",
+      "md": "Airbags werken voor kleine, lichte voertuigen. Sojourner woog ongeveer 10 kilogram. In 2012 woog [Curiosity](/missions?id=curiosity) bijna 900. Airbags die zo'n landing konden opvangen, zouden meer wegen dan de raket kon lanceren, dus het team van JPL moest iets nieuws uitvinden: de hemelkraan. Het afdalingsstadium — een raketaangedreven vliegplatform — droeg de rover op kabels omlaag, de snelheid van de grond aanpassend, en wanneer de wielen het Martiaanse oppervlak raakten werden de kabels doorgesneden en het afdalingsstadium vloog weg voor een noodlanding op veilige afstand. Het is de meest gedurfde landingssequentie ooit gevlogen, en het werkte perfect bij de eerste poging, stellend Curiosity in Gale Crater op 2:32 in de ochtend, Californische tijd, op 6 augustus 2012."
+    },
+    {
+      "type": "prose",
+      "md": "De hemelkraan was niet alleen een engineeringnoveliteit. Het was een filosofische verschuiving: in plaats van de lander zo te ontwerpen dat hij contact met de grond zou overleven, scheidden de ingenieurs het probleem volledig — afdaling, dan vrijlating, dan grondcontact — zodat elk stuk onafhankelijk kon worden geoptimaliseerd. [Perseverance](/missions?id=perseverance) gebruikte dezelfde architectuur op 18 februari 2021, landend op de bodem van [Jezero Crater](/mars) en daarna rijdend, over de volgende maanden, naar de oude riverdelta op de noordelijke rand. Maar Perseverance voegde één stuk toe dat de hemelkraan niet droeg: een systeem dat naar de grond keek en dacht."
+    },
+    {
+      "type": "prose",
+      "md": "Jezero is geen vlakke vlakte. Het heeft steile kliffen, zandduinen, rotsvelden, en kleinere inslagkraters genest in de rand — terrein dat onder oudere regels als onlandbaar zou zijn beschouwd. De reden dat Perseverance het kon richten was Terrein-Relatieve Navigatie: een camera op de buik van het afdalingsstadium fotografeerde het oppervlak dat naar boven haastte, vergeleek het beeld in real time met een aan boord kaart van de krater, plaatste zichzelf tot op meters nauwkeurig, en stuurde het voertuig weg van gevaren die de camera kon zien en het grondteam niet kon reageren op in de tijd. De raket koos zijn eigen landingsplaats. De mensen die hem bouwden hadden hem de kaart en autoriteit gegeven; de beslissing, in die zeven minuten, was volledig van de machine. De navigatieessay's zin daarvoor komt nu van de landingskant, niet de cruise: de raket leerde zien — en gebruikte die zicht dan om zichzelf te redden."
+    },
+    {
+      "type": "figure",
+      "image": "essays/seven-minutes/edl-toolkit",
+      "kind": "diagram",
+      "caption": "Elke wereld geeft je een ander probleem. De Maan heeft geen lucht, dus val je op raketjes alleen; Mars heeft net genoeg om je te garen maar niet genoeg om je te vangen; Aarde en Titan hebben genoeg dat een parachute het meeste werk doet. Geen aankomst is ooit precies de aankomst ervoor.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "De werelden die niet vergeven"
+    },
+    {
+      "type": "prose",
+      "md": "Mars geeft je op zijn minst zeven minuten. Venus geeft je minder tijd dan dat om iets nuttigs te doen, en het zal je doden hoe goed je ook landt. Het Sovjet [Venera-programma](/missions?id=venera-13) is het verhaal van ingenieurs die opzettelijk ruimtevaartuigen ontwerpen om gracieus te sterven — om lang genoeg te overleven om iets terug te geven voordat de planeet hen vernietigt. Toen Venera 13 op 1 maart 1982 neerstreek, was het een atmosfeer van 465 graden Celsius binnengedrongen met een druk van 89 maal Aarde's standaarddruk — het equivalent van een kilometer oceaanwater op elk oppervlak — en zijn ingenieurs verwachtten dat het ongeveer tweeëndertig minuten zou functioneren voordat de hitte de elektronika gaar zou koken. Het duurde 127 minuten. In die tijd boorde het een grondmonster, analyseerde het chemisch, en zond twee kleurenpanorama's van vlak basaltachtig gesteente onder een oranje hemel uit. Die afbeeldingen blijven, vandaag, de beste foto's ooit gemaakt van het oppervlak van Venus. Geen ruimtevaartuig is sindsdien teruggekomen."
+    },
+    {
+      "type": "prose",
+      "md": "Afdaling door Venus's atmosfeer is, op zijn minst, gedeeltelijk atmosferisch: de dikke CO₂ vertraagt je. Maar er is geen parachutafase die van belang is — de lucht is dicht genoeg dat zelfs een relatief klein drogue voldoende is om je naar terminalsnelheid te krijgen, en daarna neemt de verpletterende druk het over. Het engineeringprobleem op Venus is niet vertragen. Het is lang genoeg overleven om iets te doen nadat je stopt."
+    },
+    {
+      "type": "prose",
+      "md": "Titan, Saturnus's grootste maan, is het vreemdste geval van allemaal. [Huygens](/missions?id=cassini) — een ESA-sonde vervoerd naar het Saturnus-systeem aan boord van [Cassini](/missions?id=cassini) — werd losgelaten op eerste kerstdag 2004 en viel tweeëntwintig dagen lang voordat het op 14 januari 2005 Titan's atmosfeer raakte. Titan's lucht is meestal stikstof, dichter dan Aarde's aan het oppervlak, en kouder dan min 170 graden Celsius — een dikke, oranje, koolwaterstofnevel die zonlicht verstrooit in permanente amber schemering. Huygens ontplooid zijn hoofdparachute binnen vier minuten van atmosferisch contact, schakelde dan na het eerste uur over naar een kleinere drogue om te voorkomen dat de batterijen leeg zouden gaan voordat het het oppervlak bereikte. Het viel tweeënhalve uur — niet zeven minuten, maar bijna tweeënhalve uur — en toen het eindelijk een vlakte vol ijskeien raakte, bewoog het zich op ongeveer 4,5 meter per seconde, een tempo dat een snelle wandeling zou evenaren. Daarna zat het op het oppervlak en zond tweeënzeventig minuten lang uit voordat Cassini uit het zicht voer. Huygens blijft de enige ruimtevaartuig dat de mensheid ooit ergens in het buitenste zonnestelsel heeft geland. Niets is teruggegaan."
+    },
+    {
+      "type": "figure",
+      "image": "essays/seven-minutes/mars-edl",
+      "kind": "diagram",
+      "caption": "Mars is het wreedste middelste geval — te dunne atmosfeer om mee af te dalen, te dik om te negeren. Het gebeurt allemaal in ongeveer zeven minuten: ingang, piekverwarming, een supersonische parachute, hitteschildscheiding, aangedreven afdaling, en een hemelkraan die de rover aan kabels omlaag laat. Elke stap moet op zijn beurt afgaan, op tijd, of de missie eindigt in een krater.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/perseverance/01",
+      "kind": "photo",
+      "caption": "Perseverance hangt onder zijn afdalingsstadium in de laatste seconden boven Jezero Crater, momenten voordat de hemelkraan zijn kabels uitgooit — een manoeuvre volledig door de raket zelf gevlogen, met Aarde een toeschouwer elf minuten achter.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Het faalrecord"
+    },
+    {
+      "type": "prose",
+      "md": "Over de geschiedenis van Mars-missies specifiek, heeft het landingsprobleem een sterftecijfer. Mars 2, in 1971, werd het eerste voorwerp van Aarde dat het Martiaanse oppervlak raakte — en crashte, zichzelf bij impact doodde, het afdalingssysteem faalde voordat de parachutesequentie voltooid was. Mars Polar Lander, in december 1999, schakelde bijna zeker zijn afdalingsmotoren voortijdig uit toen trillingen van de benen die werden ingezet, verkeerd werden gelezen als een aanraaksignaal, en het viel de laatste veertig meter met volle snelheid. Beagle 2, op eerste kerstdag 2003, haalde het door ingang — de EDL-sequentie lijkt te hebben gewerkt — maar de zonnepanelen konden niet volledig ontplooien bij landing en het kon nooit communiceren, stil op de Martiaanse vlaktes. De lander Schiaparelli van het Europees Ruimtevaartagentschap, in oktober 2016, had zijn inertiële meeteenheid verzadigen tijdens de gewelddadige parachutenafdaling — de aflezing liep even over de top van hun schaal — corrumpering van de navigatieoplossing zodat de computer aan boord geloofde dat het al onder het oppervlak was; het sneed de parachute af en zond de retroraketjes voor slechts drie seconden in plaats van dertig, en raakte de grond op ongeveer 540 kilometer per uur."
+    },
+    {
+      "type": "prose",
+      "md": "Elk falen is een ander falen. Dat is het patroon. Er is geen enkel iets dat Marslanders doodt; er is een lange lijst van afzonderlijke dingen, elk één ander schakeltje in een reeks die moet houden. Elke missie die op Mars is geland, heeft dat gedaan door elke stap goed te krijgen, op volgorde, autonoom, zonder een tweede kans. De sequentie die [Curiosity](/missions?id=curiosity) en [Perseverance](/missions?id=perseverance) succesvol vlogen, is niet eenvoudiger dan de sequenties die hun voorgangers doodden. Het is, als wat dan ook, langer en uitgebreider. Wat anders is, is de marge — de zorg waarmee elke mogelijke faalmodus werd geïdentificeerd, getest, en ofwel gerepareerd ofwel ontworpen. De zeven minuten die van buiten af als terreur leken, waren van binnenuit, de zeven minuten die de ingenieurs jarenlang saai hadden gemaakt."
+    },
+    {
+      "type": "figure",
+      "image": "missions/schiaparelli/01",
+      "kind": "photo",
+      "caption": "Schiaparelli was bedoeld om te bewijzen dat Europa op Mars kon landen. In 2016 besloot zijn computer, kort verward door zijn eigen sensoren, dat het al was aangeraakt — liet los van zijn parachute, sneed zijn thruster af, en viel de laatste kilometer. Het record van aankomsten is even veel geschreven in kraters als in triomfen.",
+      "align": "wide",
+      "credit": "ESA/ATG medialab"
+    },
+    {
+      "type": "heading",
+      "text": "Het deel dat je niet kunt testen"
+    },
+    {
+      "type": "prose",
+      "md": "Hier is wat dit anders maakt dan bijna elk ander engineeringprobleem: je kunt het niet testen. Je kunt de parachute in een windtunnel testen, de hemelkraan op een kabelinstallatie, het hitteschild in een boogarc-installatie — maar je kunt niet de volledige sequentie testen, op volledige schaal, in de werkelijke atmosfeer van Mars. Elke Marslanding is een eerstevlucht van het complete systeem. Elk EDL-team in de geschiedenis heeft zijn machine afgestuurd met een reeks simulaties, een reeks engineeringtests, een model van de atmosfeer die ze op het punt staan binnen te gaan, en daarna gewacht. De Martiaanse atmosfeer is niet uniform; de dichtheid varieert met seizoen en stofbelasting op manieren die de modellen benaderen maar niet perfect vastleggen. Een parachute die in wat dunner dan verwacht lucht wordt ingezet, moet enkele seconden eerder opengaan; een lander die neerkomt op een helling in plaats van een vlakke vlakte, heeft een iets ander retroraketsequentie nodig. De software bakt deze voorzieningen in, maar de atmosfeer krijgt een stem."
+    },
+    {
+      "type": "prose",
+      "md": "Dit is, in strikte zin, het ding dat navigatie nooit hoeft te bereiken. [Navigatie](/essays/navigation) is een iteratief bedrijf — je richt, controleert, corrigeert, richt opnieuw, maanden of jaren, elke correctie voortbouwend op de laatste. EDL is een eenmalige gebeurtenis. De trajectcorrecties zijn gedaan; de baan is gevormd; de benadering is met millimetrische zorg ingespeld. Daarna raakt de aeroshell de atmosfeer en begint de aftelling, en elke beslissing van dat moment wordt genomen door de machine, code uit te voeren geschreven jaren eerder door ingenieurs die nu in een kamer in Pasadena zitten, kijkend naar een getal op een scherm dat ze alleen vertelt of het signaal er nog is."
+    },
+    {
+      "type": "prose",
+      "md": "Als dat signaal verdwijnt — wat het altijd doet, voor die lange minuten terwijl de aeroshell een vuurbal is — wordt de kamer stil. Niet omdat ze niet weten wat er gebeurt. Ze hebben de tijdlijn uit het hoofd geleerd. Ze weten, tot op de seconde, wanneer parachuteontsteking zou moeten optreden, wanneer het hitteschildscheiding zou moeten plaatsvinden, wanneer de hemelkraan zou moeten ontbranden. Ze tellen ertussen, samen, in stilte, kijkend naar een klok. En wanneer het signaal terugkomt en zegt *Ik ben op de grond*, wat je van die kamer hoort is geen zin. Het is een geluid zonder woorden erin, omdat er geen woorden adequate voor zijn voor een machine ter grootte van een auto die zichzelf veilig op een ander werelddeel landt, alleen, terwijl de mensen die hem bouwden elf licht-minuten weg stonden, niet in staat om te helpen."
+    },
+    {
+      "type": "figure",
+      "image": "essays/seven-minutes/blackout",
+      "kind": "diagram",
+      "caption": "En je kunt het niet helpen door het allemaal. Mars is licht-minuten weg — de hele afdaling past in het radiovertrag. Op het moment dat het eerste woord van ingang Aarde bereikt, staat de raket al omlaag, veilig of dood, de uitkomst beslist minuten voordat hier iemand wist dat het was begonnen.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Het moeilijkste ding"
+    },
+    {
+      "type": "prose",
+      "md": "Elke wereld is anders. De Maan vraagt raketbrandstof voor elke meter per seconde afdaling. Mars vraagt aërodynamica, parachutes, raketjes, en daarna — omdat de parachute je alleen tot halverwege krijgt — uitvinding. Venus vraagt thermische pantser en een tikkende klok. Titan bood het onverwachte geschenk van een dikke atmosfeer en gebruikte het om Huygens tweeënhalve uur afdalingsgegevens uit het buitenste zonnestelsel te geven, de meest verre landing in de geschiedenis, nog steeds ongeëvenaard. Elke oplossing wordt gevormd door de planeet die hem in bestaan dwong, en geen van hen draagt schoon over naar het volgende lichaam op de lijst."
+    },
+    {
+      "type": "prose",
+      "md": "Wat zij delen is dit: het moment van landing is het moment waarop alles wat niet ongedaan kan worden, gebeurt. De maanden cruise, de jaren trajectraffinement, de decennia engineering — het is allemaal bewogen naar een venster van enkele minuten waarin de machine ofwel het ding doet ofwel het niet doet, en er is niemand dicht genoeg om in te grijpen. Het [navigatieprobleem](/essays/navigation) is in stukken opgelost, over zeventig jaar, door te itereren: richt, corrigeer, richt, corrigeer. Het landingsprobleem moet vooraf volledig worden opgelost, en daarna vertrouwd. Je kunt een Marslanding niet in voortgang corrigeren. Je kunt alleen naar de klok kijken en de slagen tellen van een sequentie die je niet langer controleert, en wachten op het signaal dat je vertelt dat de machine deed wat je vroeg."
+    },
+    {
+      "type": "prose",
+      "md": "Perseverance zit nu op de bodem van [Jezero Crater](/mars), haar weg zoekend naar oude geologie die misschien wel of niet wat we haar erheen hebben gestuurd om te vinden, bevat. De beenderen van Viking 1 zijn nog steeds op Chryse Planitia. Huygens zit op een vlakte van ijskeien meer dan een miljard kilometer weg. [Venera 13](/missions?id=venera-13) duurde 127 minuten en werd stil. Elk van hen kwam omlaag door een ander probleem op te lossen, met een ander antwoord, in een ander stel minuten dat niet opnieuw kon worden gerund. De cruise is makkelijk. De natuurkunde draagt je. Aankomen is waar het werk is — en elke wereld dwingt je het werk van nul af uit te vinden."
+    }
+  ]
+}

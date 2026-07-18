@@ -1,6 +1,10 @@
 {
   "id": "chandrayaan3",
-  "videos": [{ "id": "vid-654cc435c4dd" }],
+  "videos": [
+    {
+      "id": "vid-654cc435c4dd"
+    }
+  ],
   "agency": "ISRO",
   "agency_full": "Indian Space Research Organisation",
   "sector": "gov",
@@ -67,7 +71,11 @@
       "periapsis_km": 100,
       "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.84,
-      "source": "ISRO Chandrayaan-3 LOI Report (2023-08)"
+      "source": "ISRO Chandrayaan-3 LOI Report (2023-08)",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 3.5,

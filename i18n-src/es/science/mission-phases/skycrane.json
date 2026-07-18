@@ -1,0 +1,15 @@
+{
+  "title": "Sky-Crane",
+  "intro_sentence": "La plataforma impulsada por cohetes que baja un róver a la superficie mediante cables, luego se aleja volando — el sistema de aterrizaje que llevó Curiosity y Perseverance a Marte.",
+  "narrative_101": [
+    "Los primeros róveres de Marte eran lo suficientemente pequeños para rebotar dentro de un capullo de bolsas de aire. Pero Curiosity tenía el tamaño de un automóvil — demasiado pesado para las bolsas de aire — y colocar patas grandes de aterrizaje bajo el róver habría significado colocarlo en lo alto de una plataforma voluminosa, e intentar que bajara de ella. La respuesta de la NASA fue más extraña y elegante: la sky-crane.",
+    "Después de que el escudo térmico y el paracaídas han cumplido su función, una etapa de descenso impulsada por cohetes toma el relevo, disparando ocho motores para ralentizar hasta un cuasi-suspensión a pocos metros de altura. Luego, en lugar de aterrizar ella misma, baja el róver bajo ella mediante un conjunto de cables — como un helicóptero colocando una carga — hasta que las ruedas del róver tocan el suelo. El róver es su propio tren de aterrizaje.",
+    "En el instante en que el róver está abajo y su peso deja de estar sobre los cables, la etapa de descenso corta los cables y vuela lejos para estrellarse a una distancia segura, de modo que su escape y sus restos nunca toquen el róver. Toda la secuencia — suspensión, descenso, toque, vuelo — dura solo segundos, y ya ha funcionado dos veces: para Curiosity en 2012 y Perseverance en 2021."
+  ],
+  "body_paragraphs": [
+    "La sky-crane resuelve dos problemas simultáneamente. Mantiene los motores del cohete elevados, de modo que sus columnas de escape no caven un cráter ni lancen escombros hacia el róver, y entrega el róver directamente sobre sus ruedas, listo para conducir — sin rampas, sin plataforma de lander de la que descender. El costo es una coreografía sin margen de error, ejecutada de forma autónoma, minutos después de una entrada ígnea, cuando la Tierra está demasiado lejos para ayudar en tiempo real.",
+    "Es el capítulo final de los siete minutos de terror: calentamiento de entrada, luego el paracaídas supersónico, luego la separación del escudo térmico, luego el descenso motorizado, luego el descenso y vuelo de la sky-crane — cada paso debe ejecutarse a tiempo o la misión se pierde en el aterrizaje. Solo un puñado de naciones han alunizado suavemente en Marte; la sky-crane es la forma más audaz en que se ha hecho.",
+    "En `/fly`, vuela con Curiosity o Perseverance en `?descent=1` y observa cómo los cables de la etapa de descenso se despliegan bajo la secuencia de paracaídas y retrorrazos, bajando el róver a la superficie antes de que la etapa se aleje volando — el compás de la sky-crane hecho visible."
+  ],
+  "diagram_caption": "Sky-crane: una etapa de descenso impulsada por cohetes se suspende y baja el róver mediante cables a la superficie, luego corta los cables y vuela alejándose."
+}

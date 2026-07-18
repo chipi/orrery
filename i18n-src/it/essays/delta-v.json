@@ -1,0 +1,155 @@
+{
+  "title": "La Grammatica del Delta-V",
+  "dek": "Ogni veicolo spaziale che abbia mai lasciato la Terra ha portato con sé una cosa più importante di ogni altra: un bilancio. Non denaro — velocità. L'equazione del razzo lo distribuiva in chilometri al secondo, la gravità era l'unico riempimento gratuito, e ogni ingegnere che abbia mai pianificato una missione è vissuto dentro quel vincolo dal 1903.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Immagina di ricevere un assegno con un saldo fisso. Puoi spenderlo come preferisci — ma ogni acquisto è definitivo, non ci sono depositi, e quando il saldo raggiunge zero hai terminato. Questa è la situazione che ogni veicolo spaziale affronta dal momento in cui sgombra la torre di lancio. La valuta non è il carburante. Non è la spinta. È la **velocità** — più precisamente, il *cambiamento* di velocità, misurato in chilometri al secondo, che il veicolo spaziale può accumulare durante l'intera missione. Gli ingegneri la chiamano delta-v, e il conto si apre, una sola volta, al lancio."
+    },
+    {
+      "type": "prose",
+      "md": "La regola che ha scritto questo vincolo fu pubblicata nel 1903 da un insegnante russo autodidatta di una piccola provincia di nome Konstantin Tsiolkovsky, che lavorava da solo in una piccola città provinciale. La sua [equazione del razzo](/science/propulsion/tsiolkovsky) non è stata abrogata da allora: **∆v = Isp · g₀ · ln(m₀/mf)**. Leggendola in italiano: la velocità che puoi ottenere equivale all'efficienza del tuo motore — misurata in secondi di [impulso specifico](/science/propulsion/specific-impulse) e moltiplicata per una costante gravitazionale di 9,807 m/s² — per il logaritmo naturale di quanto era più pesante il razzo all'inizio rispetto alla fine. Quel logaritmo è il villano. Perché *ln* è la funzione a crescita più lenta in matematica, significa che ogni chilometro al secondo in più che vuoi aggiungere ti costa un boccone esponenzialmente più grande di massa del propellente — e il propellente deve essere sollevato, il che significa che ha bisogno del suo propellente, che deve essere sollevato a sua volta, e così via in una regressione che non ha fondo."
+    },
+    {
+      "type": "prose",
+      "md": "L'astronauta Don Pettit ha chiamato questo *la tirannia dell'equazione del razzo* in un saggio del 2012 scritto a bordo della ISS, e la parola tirannia è esattamente giusta. Il Saturn V che ha portato gli astronauti dell'Apollo sulla Luna era alto trenta piani sulla rampa di lancio ed era **propellente all'85% della massa**; il suo carico — tutto ciò che andava realmente da qualche parte — non ha mai superato circa il 4% di quella massa bagnata. Il resto era un'esplosione controllata al rallentatore, consumata passo dopo passo solo per far andare il resto un po' più veloce, un po' più alto. Tutto il resto nella navigazione spaziale — le missioni, le traiettorie, l'attesa delle finestre di lancio, l'attento trimming della massa dello strumento — scaturisce da quel singolo, spietato denominatore."
+    },
+    {
+      "type": "figure",
+      "image": "essays/delta-v/rocket-equation",
+      "kind": "diagram",
+      "caption": "Il muro esponenziale dell'equazione del razzo: con l'efficienza chimica, ogni chilometro al secondo in più richiede una frazione di propellente enormemente più grande — e più ci avvicini a una vera destinazione, più il prezzo sale.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Il bilancio"
+    },
+    {
+      "type": "prose",
+      "md": "Un [bilancio delta-v](/science/propulsion/dv-budget) è quello che i pianificatori di missioni chiamano il foglio di calcolo che tiene conto di ogni cambio di velocità che una missione deve effettuare, dall'orbita parcheggio terrestre alla destinazione finale. È il documento più consequenziale nella progettazione della missione: decide se la missione è possibile a tutti. Portare un veicolo spaziale da un'orbita terrestre bassa a, diciamo, un trasferimento di Hohmann verso Marte e in orbita marziana costa approssimativamente **5,6 km/s** in totale — una cifra che sembra modesta finché non ricordi che ogni decimale è pagato in tonnellate di propellente, e l'equazione del razzo significa che il tasso di cambio peggiora quanto più spendi."
+    },
+    {
+      "type": "prose",
+      "md": "Un [trasferimento di Hohmann](/science/transfers/hohmann-transfer) è l'arco a minima energia tra due orbite — il percorso che costa il minor delta-v per andare da A a B. Non è dritto; è un'ellisse che tocca l'orbita interna a un'estremità e l'esterna all'altra, costeggiando l'intera strada su nient'altro che l'inerzia. Il trucco è che accendi il motore due volte: una volta per lasciare l'orbita di partenza, una volta per abbinare l'orbita di arrivo. Tra quei due burn — tipicamente 259 giorni nel caso Terra-Marte — non spendi niente. La gravità del sistema solare fa il trasporto gratuitamente, finché avevi il buonsenso di mirare nel modo giusto all'inizio."
+    },
+    {
+      "type": "figure",
+      "image": "essays/delta-v/hohmann-transfer",
+      "kind": "diagram",
+      "caption": "Il percorso più economico tra due orbite non è mai la linea retta — un trasferimento di Hohmann costeggia un'ellisse che sfiora appena ogni orbita, accendendo il motore solo due volte: una volta per partire, una volta per arrivare.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "Questo è quello che la *navigazione* cede alla pianificazione delta-v. Il [saggio sulla navigazione](/essays/navigation) si è aperto con il problema di mirare a un pianeta in movimento — il problema di Lambert, l'arco lungo, i burn di correzione che chiudono il divario tra il piano e la realtà. Ma la scelta di quell'arco in primo luogo era una decisione di bilancio. Il percorso a minima energia di Hohmann è stato scelto perché spende il meno; esiste una traiettoria più veloce, ma costa più delta-v di quanto la maggior parte delle missioni possa permettersi, e delta-v è l'unica cosa che non puoi prendere in prestito."
+    },
+    {
+      "type": "heading",
+      "text": "L'unico riempimento gratuito"
+    },
+    {
+      "type": "prose",
+      "md": "Data la tirannia dell'equazione, qualsiasi trucco che aggiunga delta-v gratuitamente non è meramente utile — è trasformativo. Ce n'è esattamente uno: **la gravità**."
+    },
+    {
+      "type": "prose",
+      "md": "Un veicolo spaziale che oscilla vicino a un pianeta entra nel campo gravitazionale del pianeta velocemente, si curva attorno ad esso, ed esce più veloce di come è arrivato — perché il pianeta stesso si sta muovendo, e il veicolo ha rubato un sussurro di quel movimento. L'[assistenza gravitazionale](/science/transfers/gravity-assist) non costa affatto propellente. Il pianeta perde una quantità immisurabilmente piccola della sua stessa velocità orbitale; il veicolo spaziale ne guadagna una grande. Per la maggior parte delle sonde interplanetarie, questo non è un bonus — è l'intero modello di business."
+    },
+    {
+      "type": "prose",
+      "md": "A metà degli anni '60, un matematico del JPL di nome Gary Flandro stava facendo calcoli estivi quando ha notato qualcosa. I pianeti esterni — Giove, Saturno, Urano, Nettuno — si stavano spostando verso un allineamento che accade una volta ogni 175 anni. Una sonda lanciata nel 1977 e mirata correttamente poteva usare la gravità di Giove per raggiungere Saturno, la gravità di Saturno per raggiungere Urano, la gravità di Urano per raggiungere Nettuno: una carambola a quattro pianeti, ogni flyby che aggiunge delta-v gratuitamente e reindirizza la traiettoria verso il prossimo bersaglio. Il tempo di volo verso Nettuno sarebbe caduto da trenta anni a dodici. Quella osservazione è diventata il Grand Tour — e [Voyager 2](/missions?id=voyager-2) l'ha reso reale, guadagnando approssimativamente **10 km/s** solo dal flyby di Giove, abbastanza per raggiungere il sistema esterno nel tempo originariamente preventivato per una missione solo su Saturno. Nettuno, oggi, è stato visitato una sola volta. La ragione è che la finestra si è chiusa negli anni '80 e non si riaprirà fino agli anni 2150."
+    },
+    {
+      "type": "figure",
+      "image": "missions/voyager-2/01",
+      "kind": "photo",
+      "caption": "Voyager 2 ha preso il riempimento gratuito quattro volte — Giove a Saturno a Urano a Nettuno — depositando il movimento di ogni pianeta nel prossimo, su una rotta che non si riallineerà per 175 anni.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "prose",
+      "md": "La stessa aritmetica è il motivo per cui [Cassini](/missions?id=cassini) ha fatto il loop attraverso Venere — due volte — e passato la Terra e passato Giove prima di dirigersi verso Saturno: non il percorso panoramico, ma quello economico. E perché [Mangalyaan](/missions?id=mangalyaan), la prima missione interplanetaria dell'India, ha raggiunto Marte nel 2014 con un budget di approssimativamente 74 milioni di dollari USA — una frazione di quello che le missioni comparabili hanno costato — in parte perché la sua traiettoria è stata progettata per estrarre il massimo valore da ogni chilogrammo del suo carico di propellente di 852 chilogrammi, il singolo componente più grande di un veicolo spaziale che pesava 1.340 kg sulla rampa. Il bilancio delta-v era di 1.350 m/s per l'intera missione dopo l'escape. Ogni grammo è stato contabilizzato."
+    },
+    {
+      "type": "figure",
+      "image": "missions/cassini/01",
+      "kind": "photo",
+      "caption": "Cassini ha raggiunto Saturno su velocità presa in prestito, oscilando passato Venere due volte, la Terra e Giove lungo la strada — una deviazione di sette anni che ha costato meno carburante di quanto mirare direttamente ad essa avrebbe mai potuto.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech/Space Science Institute"
+    },
+    {
+      "type": "heading",
+      "text": "Il dividendo di Oberth"
+    },
+    {
+      "type": "prose",
+      "md": "La gravità offre un secondo trucco, più sottile del primo. È stato descritto nel 1929 da Hermann Oberth, e si basa su un fatto riguardante l'energia cinetica che non è ovvio finché non lo scrivi: l'energia cresce al *quadrato* della velocità. Un burn che aggiunge 1 km/s a 10 km/s aggiunge molto più energia cinetica dello stesso burn a 1 km/s — perché il lavoro svolto equivale alla forza per la distanza, e un razzo che si muove velocemente copre una distanza maggiore durante il burn."
+    },
+    {
+      "type": "prose",
+      "md": "La conseguenza, chiamata [effetto Oberth](/science/propulsion/oberth-effect), è che i burn in profondità in un pozzo gravitazionale — nel punto più basso di un'orbita, *perielio*, dove un veicolo spaziale si muove più velocemente — sono drasticamente più efficienti dei burn effettuati in quota. Lo stesso delta-v, speso al momento giusto nel posto giusto, fornisce più energia finale al veicolo. Le missioni che riescono ad arrangiarsi per accendere i loro motori al perielio — pianeti in arrivo, passaggi ravvicinati, manovre a punto basso deliberatamente progettate — ottengono, in effetti, un moltiplicatore su qualsiasi delta-v spendono. [New Horizons](/missions?id=new-horizons) ha usato un flyby di Giove non solo per il boost di velocità dell'assistenza gravitazionale ma ha tempizzato il suo burn per coincidere con l'approccio più ravvicinato, impilando il dividendo di Oberth sopra l'assistenza. La combinazione ha risparmiato tre anni dal suo volo verso Plutone."
+    },
+    {
+      "type": "figure",
+      "image": "essays/delta-v/oberth-effect",
+      "kind": "diagram",
+      "caption": "Accendi in basso, guadagna di più: in profondità in un pozzo gravitazionale un veicolo spaziale si muove più velocemente, e lo stesso burn del motore lì compra molta più energia di quanto farebbe in cima all'orbita, lenta e distante.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "Questi non sono hack o scappatoie. Sono la matematica del movimento attraverso un paesaggio gravitazionale che, se lo leggi bene, non è ostile al movimento ma è in effetti pieno di scivoli e rampe. Il bilancio non scompare — ma il lettore abile di quel paesaggio può allungarlo, a volte enormemente."
+    },
+    {
+      "type": "heading",
+      "text": "Ciò che l'equazione cancella"
+    },
+    {
+      "type": "prose",
+      "md": "Il bilancio delta-v è spietatamente indifferente a quasi tutto ciò che sembra importante per una missione — la scienza, il prestigio, la geopolitica. Non importa chi abbia costruito il veicolo spaziale o quale bandiera sia dipinta su di esso. Non importa altro che la massa, la velocità di scarico e il logaritmo."
+    },
+    {
+      "type": "prose",
+      "md": "Questo crea una disciplina diversa da qualsiasi altra nell'ingegneria. La fotocamera aggiunta a un rover su Marte, la ridondanza extra in un computer, lo strumento scientifico aggiuntivo per cui un team ha fatto pressioni per anni — tutti hanno un prezzo delta-v. Se lo strumento è più pesante del margine consentito, allora qualcos'altro viene rimosso oppure l'intera missione diventa impossibile. La pianificazione della missione è un esercizio di arbitrato continuo e doloroso tra quello che vuoi e quello che puoi portare, e l'equazione è il giudice di ogni disputa."
+    },
+    {
+      "type": "prose",
+      "md": "Il bilancio cancella anche il margine di errore in un modo che l'ingegneria basata sulla terra raramente fa. Un ponte leggermente sovraccaricato regge ancora. Un veicolo spaziale che esaurisce il delta-v prima di completare l'inserimento orbitale diventa un pezzo di detriti incontrollato. Non c'è merito parziale. Ogni missione in questo atlante che è riuscita l'ha fatto perché qualcuno, da qualche parte, ha mantenuto una contabilità onesta e non ha mai speso più di quello che c'era. La stanza anonima di persone che hanno fatto quella matematica — che hanno guardato il bilancio, controllato l'astrodinamica, eseguito le sequenze di burn di correzione — ha portato ogni missione che sia mai arrivata."
+    },
+    {
+      "type": "heading",
+      "text": "L'argomento del riuso, esposto chiaramente"
+    },
+    {
+      "type": "prose",
+      "md": "Per sessant'anni, la tirannia dell'equazione del razzo ha prodotto una risposta particolare al problema di raggiungere l'orbita: costruisci una macchina ottimizzata per il compito, bruciala sulla strada, buttala via. I risparmi di massa strutturale dal progettare uno stadio di primo gradino monouso erano reali, e il delta-v era reale, e la matematica chiudeva. Il problema era che stavi buttando via un motore che vale decine di milioni di dollari dopo averlo usato una volta."
+    },
+    {
+      "type": "prose",
+      "md": "Atterrare un stadio di razzo e farlo volare di nuovo cambia il denominatore, ma non nel modo che l'equazione predice. Strutturalmente, uno stadio riutilizzabile è leggermente più pesante — ha bisogno di gambe di atterraggio, alette a griglia, protezione termica, riserve di propellente residue per il burn di ritorno — il che significa che il vantaggio di [impulso specifico](/science/propulsion/specific-impulse) si riduce e il rapporto di massa si restringe. L'equazione, strettamente letta, dice che il riuso ti costa delta-v. Ciò che l'equazione non modella è che puoi far volare lo stadio di nuovo la prossima settimana, a una frazione del costo di costruirne uno nuovo, il che significa che puoi permetterti di volare più missioni, il che significa che il bilancio che importa — dollari per chilogrammo in orbita — crolla. La logica delta-v non è cambiata. La logica economica che corre insieme ad essa l'ha fatto."
+    },
+    {
+      "type": "prose",
+      "md": "Questa è la tensione che ha definito l'ultimo decennio dello sviluppo dei veicoli di lancio, ed è ancora irrisolta. L'equazione del razzo ancora stabilisce il pavimento fisico duro. Quello che cambia è quanto costa stare su di esso. [Vola una traiettoria nell'atlante](/fly) e guarda cosa succede al bilancio delta-v mentre ogni stadio si separa — gli snapshot del rapporto di massa a ogni taglio sono quello che l'equazione sta effettivamente imponendo, invisibilmente, su ogni volo."
+    },
+    {
+      "type": "heading",
+      "text": "Il bilancio si chiude"
+    },
+    {
+      "type": "prose",
+      "md": "C'è qualcosa di illuminante in un vincolo senza eccezioni. L'equazione del razzo non cede per ragioni politiche o aumenti di bilancio o eroismo ingegneristico. Ogni missione che abbia mai lasciato questo pianeta — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [Mangalyaan](/missions?id=mangalyaan) — l'ha fatto perché qualcuno ha riconciliato una colonna di requisiti delta-v con una colonna di quello che il propellente poteva fornire, e il secondo numero era almeno grande quanto il primo. Ogni missione che non è mai partita — e ce ne sono state molte, uccise silenziosamente nella pianificazione — ha fallato quel test."
+    },
+    {
+      "type": "prose",
+      "md": "Quello che l'equazione fa anche, meno ovviamente, è rendere la gravità preziosa. Non come un pericolo da superare — ogni razzo sta bruciando verso l'alto contro di essa — ma come un conto gratuito. Un pozzo gravitazionale di un pianeta, filato correttamente, è una fonte. La gravità di Giove ha dato a Voyager 2 una velocità che non avrebbe mai potuto comprare con il propellente. L'effetto Oberth rende i passaggi di perielio profondo degni di essere progettati deliberatamente. L'intera architettura orbitale del sistema solare è, da una prospettiva delta-v, un paesaggio di riempimenti gratuiti sparsi su una mappa per lo più vuota — e ogni [traiettoria che puoi esplorare qui](/science/transfers/hohmann-transfer) è un record di qualcuno che ne ha trovato uno."
+    },
+    {
+      "type": "prose",
+      "md": "Tsiolkovsky morì nel 1935, nove anni prima che volasse il primo missile balistico e una generazione prima che il primo veicolo spaziale lasciasse la Terra. Non vide mai un razzo in orbita. Quello che fece fu scrivere, nel 1903, la grammatica che ogni missione da allora ha parlato — la regola unica che trasforma l'aspirazione di andare da qualche parte nell'aritmetica se puoi. Tutto il resto è una frase in quella lingua. La domanda che l'atlante continua a rispondere, missione dopo missione, è quanto puoi dire dentro di essa."
+    }
+  ]
+}

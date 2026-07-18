@@ -1,0 +1,147 @@
+{
+  "title": "Os Sete Minutos",
+  "dek": "A travessia é fácil. Você passa meses fazendo quase nada — navegando pela física, ajustando uma trajetória, esperando. Chegar é onde as missões morrem. O pouso é a coisa mais difícil do voo espacial, e nunca o resolvemos da mesma forma duas vezes.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Considere o que o número significa. Sete minutos: da primeira mordida da atmosfera em aproximadamente 20.000 quilômetros por hora até os pneus no chão, imóvel, em outro planeta. Sete minutos em que uma nave que custou um bilhão de dólares e levou uma década para ser construída deve executar autonomamente uma sequência de eventos — implantação do escudo térmico, inflação do paraquedas, ignição do foguete, implantação de cabos, toque — cada um cronometrado ao segundo, cada um dependente de cada etapa anterior acontecer exatamente certo. Perca um único passo, ou o acerte cinco segundos tarde demais, e o tudo se torna uma cratera."
+    },
+    {
+      "type": "prose",
+      "md": "E aqui está o detalhe que o torna genuinamente aterrorizante: no momento em que a Terra ouve que a nave tocou o topo da atmosfera marciana, ela já está no chão — ou parte do chão — há mais de onze minutos. A velocidade da luz não é lenta, mas Marte é tão distante que o atraso de ida e volta corre em qualquer lugar de seis a quarenta e quatro minutos dependendo de onde os dois planetas estão em suas órbitas. Ninguém pousa um rover em Marte. Ninguém na Terra pode. A nave pousa a si mesma, no escuro, do outro lado do sol, e as pessoas que a construíram só podem sentar em uma sala e esperar para descobrir se funcionou."
+    },
+    {
+      "type": "prose",
+      "md": "Este não é um problema que fica mais fácil com a experiência. Cada mundo apresenta uma física diferente, uma atmosfera diferente, um conjunto diferente de restrições — e as soluções que funcionaram em um corpo são inúteis, ou perigosas, em outro. O histórico de [entrada, descida e pouso](/science/mission-phases/edl) não é uma única história de técnica melhorada. É uma coleção de histórias inteiramente diferentes, cada uma uma resposta feita sob medida para a mesma pergunta brutal: como você desacelera rápido o suficiente, sem ser esmagado, a tempo, antes de bater no chão?"
+    },
+    {
+      "type": "heading",
+      "text": "O problema da atmosfera"
+    },
+    {
+      "type": "prose",
+      "md": "Comece com o caso fácil, que não é a Lua. A Lua não tem atmosfera alguma — o que soa como um presente, até você perceber para que uma atmosfera é realmente útil. É desaceleração gratuita. Uma nave que bate no topo da atmosfera terrestre em velocidade orbital chega com um orçamento de energia cinética enorme, e o ar o queima lentamente: o escudo térmico brilha, o arrasto se acumula, e uma nave que estava se movendo a quilômetros por segundo perde velocidade o suficiente, por tempo suficiente, para que um paraquedas a pegue. Remova a atmosfera e você remove tudo isso. Na Lua, você chega rápido e tem apenas foguetes para o desacelerar, então deve carregar cada quilograma do propelente que precisa para matar essa velocidade desde o momento em que sai da Terra. O Módulo de Descida Lunar Apollo tinha um motor de descida dedicado que queimava por doze minutos para trazer dois homens da órbita. Cada quilograma de lander tinha que ser conquistado em combustível na plataforma de lançamento. Não há nada gratuito em pousar em um mundo sem ar."
+    },
+    {
+      "type": "prose",
+      "md": "Marte é o caso cruel do meio, e é aquele que matou mais missões. A atmosfera marciana existe — é dióxido de carbono real, aproximadamente cem quilômetros de profundidade — mas é cerca de um por cento tão densa quanto a da Terra. Grossa o suficiente para importar, fina demais para ser quase inútil. Um paraquedas que deteria uma sonda completamente no ar da Terra mal faz uma diferença em Marte; você precisa dele, mas não pode confiar apenas nele. Cada lander marciano até agora usou um aerocasco — um escudo térmico cego que cria arrasto enquanto absorve a fúria térmica da entrada — mais um paraquedas supersônico para reduzir mais a velocidade e, em seguida, algo mais além disso, porque o paraquedas sozinho nunca o leva até a segurança."
+    },
+    {
+      "type": "prose",
+      "md": "Esse \"algo mais\" é o problema de design. É o que torna cada pouso em Marte diferente, e é o que cada equipe de engenharia teve que resolver do zero. [Viking 1](/missions?id=viking1) resolveu em 1976 da forma óbvia: retrorfoguetes, disparados durante a descida final, desacelerando o lander para um toque suave em Chryse Planitia — a primeira nave a funcionar na superfície marciana, e funcionou por mais de seis anos. A abordagem de retrorfoguete é conservadora e pesada; funciona, mas exige combustível e limita seu orçamento de massa para ciência. Vinte anos depois, [Mars Pathfinder](/missions?id=mars-pathfinder) tentou algo que soa como uma piada: envolva o lander inteiro em bolsas de ar, solte-o em altitude, deixe os foguetes dispararem para cima para matar o último da velocidade vertical e, em seguida, deixe-o saltar. Em 4 de julho de 1997, o lander Pathfinder bateeu na superfície de Marte a cerca de 50 quilômetros por hora e saltou pelo menos quinze vezes antes de rolar para um ponto de parada, quando as pétalas se abriram e [Sojourner](/missions?id=mars-pathfinder) — o primeiro rover de Marte — saiu aos tropeços para as rochas de Ares Vallis."
+    },
+    {
+      "type": "heading",
+      "text": "Por que a mesma resposta nunca funciona duas vezes"
+    },
+    {
+      "type": "prose",
+      "md": "Bolsas de ar funcionam para naves pequenas e leves. Sojourner tinha cerca de 10 quilogramas. Em 2012, [Curiosity](/missions?id=curiosity) tinha quase 900. Bolsas de ar que pudessem absorver esse pouso pesariam mais do que o foguete poderia arcar para lançar, então a equipe do JPL teve que inventar algo novo: o guindaste do céu. O estágio de descida — uma plataforma voadora movida a foguete — levou o rover para baixo em cabos, acompanhando o ritmo do chão, e quando as rodas tocaram a superfície marciana os cabos foram cortados e o estágio de descida voou para um pouso de caída a uma distância segura. É a sequência de pouso mais audaciosa já realizada, e funcionou perfeitamente na primeira tentativa, pousando a Curiosity em Gale Crater às 2h32 da manhã, horário da Califórnia, em 6 de agosto de 2012."
+    },
+    {
+      "type": "prose",
+      "md": "O guindaste do céu não era apenas uma novidade de engenharia. Era uma mudança filosófica: em vez de projetar o lander para sobreviver ao contato com o chão, os engenheiros separaram o problema completamente — descida, depois liberação, depois contato com o chão — para que cada peça pudesse ser otimizada independentemente. [Perseverance](/missions?id=perseverance) usou a mesma arquitetura em 18 de fevereiro de 2021, pousando no piso de [Jezero Crater](/mars) e depois se movendo, nos meses seguintes, em direção ao antigo delta do rio em sua borda norte. Mas Perseverance adicionou uma peça que o guindaste do céu não havia transportado: um sistema que olhava para o chão e pensava."
+    },
+    {
+      "type": "prose",
+      "md": "Jezero não é uma planície plana. Tem penhascos íngremes, dunas de areia, campos de matacões e crateras de impacto menores aninhadas dentro da borda — terreno que teria sido considerado impossível de pousar sob regras mais antigas. A razão pela qual Perseverance poderia visá-lo era Navegação Relativa ao Terreno: uma câmera montada na barriga do estágio de descida fotografou a superfície precipitando, correspondeu a imagem em tempo real contra um mapa a bordo da cratera, se localizou a poucos metros e, em seguida, manobrou o veículo longe de riscos que a câmera podia ver e a equipe do solo não poderia responder a tempo. A nave escolheu seu próprio local de pouso. As pessoas que a construíram lhe deram o mapa e a autoridade; a decisão, nesses sete minutos, era inteiramente da máquina. A frase do ensaio de navegação para isso vem do lado de pouso agora, não do cruzeiro: a nave aprendeu a ver — e depois usou essa visão para se salvar."
+    },
+    {
+      "type": "figure",
+      "image": "essays/seven-minutes/edl-toolkit",
+      "kind": "diagram",
+      "caption": "Cada mundo lhe entrega um problema diferente. A Lua não tem ar, então você cai apenas em foguetes; Marte tem apenas o suficiente para o cozinhar mas não o suficiente para o pegar; Terra e Titã têm o suficiente para que um paraquedas fça a maior parte do trabalho. Nenhuma chegada é nunca bem a chegada anterior.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Os mundos que não perdoam"
+    },
+    {
+      "type": "prose",
+      "md": "Marte pelo menos lhe dá sete minutos. Vênus lhe dá menos tempo do que isso para fazer qualquer coisa útil, e o matará não importa como você o pousa bem. O programa [Venera](/missions?id=venera-13) soviético é a história de engenheiros deliberadamente projetando naves para morrer graciosamente — para sobreviver tempo suficiente para retornar algo antes do planeta as destruir. Quando Venera 13 tocou o solo em 1º de março de 1982, havia entrado em uma atmosfera de 465 graus Celsius pressionando a 89 vezes a pressão padrão terrestre — equivalente a um quilômetro de água do oceano em cada superfície — e seus engenheiros esperavam que operasse por talvez trinta e dois minutos antes do calor cozinhar a eletrônica. Durou 127 minutos. Nesse tempo, ela perfurou uma amostra de solo, a analisou quimicamente e transmitiu dois panoramas coloridos de rocha basáltica plana sob um céu laranja. Essas imagens permanecem, hoje, as melhores fotografi já tiradas da superfície de Vênus. Nenhuma nave voltou desde então."
+    },
+    {
+      "type": "prose",
+      "md": "A descida pela atmosfera de Vênus é, pelo menos, em parte atmosférica: o CO₂ denso o desacelera. Mas não há uma fase de paraquedas que importe — o ar é tão denso que mesmo um drogue relativamente pequeno é suficiente para o levar à velocidade terminal, e depois a pressão esmagadora assume. O problema de engenharia em Vênus não é desacelerar. É sobreviver tempo suficiente para fazer qualquer coisa depois de parar."
+    },
+    {
+      "type": "prose",
+      "md": "Titã, a maior lua de Saturno, é o caso mais estranho de todos. [Huygens](/missions?id=cassini) — uma sonda da ESA transportada para o sistema de Saturno a bordo de [Cassini](/missions?id=cassini) — foi liberada no Dia de Natal de 2004 e caiu por vinte e dois dias antes de atingir a atmosfera de Titã em 14 de janeiro de 2005. O ar de Titã é principalmente nitrogênio, mais denso que o da Terra na superfície, e mais frio que menos 170 graus Celsius — um nevoeiro de hidrocarboneto espesso e laranja que espalha a luz solar em crepúsculo âmbar permanente. Huygens implantou seu paraquedas principal dentro de quatro minutos do contato atmosférico, depois mudou para um drogue menor após a primeira hora para evitar que as baterias morressem antes de atingir a superfície. Caiu por duas horas e vinte e sete minutos — não sete minutos, mas quase duas horas e meia — e quando finalmente tocou uma planície espalhada com seixos de gelo estava se movendo a cerca de 4,5 metros por segundo, um ritmo que um andar rápido corresponderia. Depois se sentou na superfície e transmitiu por mais setenta e dois minutos antes de Cassini sair de vista. Huygens continua a ser a única nave que a humanidade já pousou em qualquer lugar do sistema solar externo. Nada voltou."
+    },
+    {
+      "type": "figure",
+      "image": "essays/seven-minutes/mars-edl",
+      "kind": "diagram",
+      "caption": "Marte é o caso cruel do meio — uma atmosfera tão fina que não para o paraquedas, tão densa para ignorar. Tudo acontece em cerca de sete minutos: entrada, aquecimento máximo, um paraquedas supersônico, separação do escudo térmico, descida motorizada e um guindaste do céu baixando o rover em cabos. Cada passo deve disponer por conta própria, no tempo, ou a missão termina em uma cratera.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/perseverance/01",
+      "kind": "photo",
+      "caption": "Perseverance pendurado sob seu estágio de descida nos segundos finais sobre Jezero Crater, momentos antes do guindaste do céu pagar seus cabos — uma manobra voada inteiramente pela nave, com a Terra uma espectadora onze minutos atrás.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "O registro de falhas"
+    },
+    {
+      "type": "prose",
+      "md": "Em toda a história de missões de Marte especificamente, o problema de pouso tem um saldo de corpos. Mars 2, em 1971, tornou-se o primeiro objeto da Terra a tocar a superfície marciana — e caiu, se matando no impacto, o sistema de descida tendo falhado antes da sequência de paraquedas ser completa. Mars Polar Lander, em dezembro de 1999, quase certamente desligou seus motores de descida prematuramente quando vibrações das pernas se despregando foram mal interpretadas como um sinal de toque, e caiu os últimos quarenta metros em velocidade total. Beagle 2, no Dia de Natal de 2003, passou pela entrada — a sequência EDL parece ter funcionado — mas os painéis solares falharam em se desdobrar completamente no pouso e nunca pôde se comunicar, silencioso nas planícies marcianas. O lander Schiaparelli da Agência Espacial Europeia, em outubro de 2016, teve sua unidade de medição inercial saturada durante a descida violenta do paraquedas — as leituras brevemente saíram do topo de sua escala — corrompendo a solução de navegação então o computador a bordo acreditava que já estava abaixo da superfície; cortou o paraquedas e disparou os retrorfoguetes por apenas três segundos em vez de trinta, e bateu no chão a aproximadamente 540 quilômetros por hora."
+    },
+    {
+      "type": "prose",
+      "md": "Cada falha é uma falha diferente. Esse é o padrão. Não há uma única coisa que mate landers marcianos; há uma longa lista de coisas únicas, cada uma um link diferente em uma sequência que tem que se manter. Cada missão que sobreviveu ao pouso em Marte o fez acertando cada passo, em ordem, autonomamente, sem segunda chance. A sequência que [Curiosity](/missions?id=curiosity) e [Perseverance](/missions?id=perseverance) voaram com sucesso não é mais simples que as que mataram seus antecessores. É, se algo, mais longa e mais elaborada. O que é diferente é a margem — o cuidado com o qual cada modo potencial de falha foi identificado, testado, e ou consertado ou projetado ao redor. Os sete minutos que pareciam terror do lado de fora eram, do lado de dentro, os sete minutos que os engenheiros haviam gasto anos tornando entediantes."
+    },
+    {
+      "type": "figure",
+      "image": "missions/schiaparelli/01",
+      "kind": "photo",
+      "caption": "Schiaparelli era suposto provar que a Europa podia pousar em Marte. Em 2016 seu computador, brevemente confundido por seus próprios sensores, decidiu que já havia tocado — soltou seu paraquedas, cortou seus propulsores, e caiu os últimos quilômetros. O registro de chegadas é escrito tanto em crateras quanto em triunfos.",
+      "align": "wide",
+      "credit": "ESA/ATG medialab"
+    },
+    {
+      "type": "heading",
+      "text": "A parte que você não pode testar"
+    },
+    {
+      "type": "prose",
+      "md": "Aqui está o que torna isso diferente de quase todos os outros problemas de engenharia: você não pode testá-lo. Você pode testar o paraquedas em um túnel de vento, o guindaste do céu em um aparelho de cabo, o escudo térmico em uma instalação de arco-jato — mas você não pode testar a sequência completa, em escala total, na atmosfera real de Marte. Cada pouso em Marte é um voo de primeiro de um sistema completo. Cada equipe de EDL na história enviou sua máquina com um conjunto de simulações, um conjunto de testes de engenharia, um modelo da atmosfera que está prestes a entrar, e depois esperou. A atmosfera marciana não é uniforme; sua densidade varia com a estação e o carregamento de poeira de maneiras que os modelos aproximam mas não capturam perfeitamente. Um paraquedas se implantando em ar ligeiramente mais fino que o esperado precisa se abrir alguns segundos mais cedo; um lander tocando uma encosta em vez de uma planície plana precisa de uma sequência de retrorfoguete ligeiramente diferente. O software cozinha essas contingências, mas a atmosfera consegue um voto."
+    },
+    {
+      "type": "prose",
+      "md": "Isto é, em um sentido específico, a coisa que navegação nunca tem que enfrentar. [Navegação](/essays/navigation) é um negócio iterativo — você visa, verifica, corrige, visa novamente, por meses ou anos, cada correção se construindo na última. EDL é um evento de uma única tentativa. As correções de trajetória foram feitas; a órbita foi moldada; a aproximação foi ajustada com cuidado milimétrico. Então o aerocasco bate na atmosfera e a contagem regressiva começa, e cada decisão desse momento em diante é feita pela máquina, rodando código escrito anos antes por engenheiros que agora estão sentados em uma sala em Pasadena, observando um número na tela que lhes diz apenas se o sinal ainda está lá."
+    },
+    {
+      "type": "prose",
+      "md": "Quando esse sinal desaparece — como sempre faz, durante esses longos minutos enquanto o aerocasco é uma bola de fogo — a sala fica quieta. Não porque eles não saibam o que está acontecendo. Eles memorizaram o cronograma. Eles sabem, ao segundo, quando a implantação do paraquedas deve ocorrer, quando o escudo térmico deve se separar, quando o guindaste do céu deve ignir. Eles contam através disso, juntos, em silêncio, observando um relógio. E quando o sinal volta e diz *estou no chão*, o que você ouve dessa sala não é uma sentença. É um som que não tem palavras nele, porque não há palavras adequadas para uma máquina do tamanho de um carro pousando a si mesma com segurança em outro planeta, sozinha, enquanto as pessoas que a construíram estavam em pé onze minutos-luz de distância, incapazes de ajudar."
+    },
+    {
+      "type": "figure",
+      "image": "essays/seven-minutes/blackout",
+      "kind": "diagram",
+      "caption": "E você não pode ajudá-lo através de qualquer um disso. Marte fica minutos-luz de distância — a descida inteira se encaixa dentro do atraso de rádio. No momento em que a primeira palavra de entrada chega à Terra, a nave já está no chão, segura ou morta, o resultado decidido minutos antes de alguém aqui saber que havia começado.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "A coisa mais difícil"
+    },
+    {
+      "type": "prose",
+      "md": "Cada mundo é diferente. A Lua exige combustível de foguete para cada metro por segundo de descida. Marte exige aerodinâmica, paraquedas, foguetes, e depois — porque o paraquedas o leva apenas parte do caminho — invenção. Vênus exige armadura térmica e um relógio marcando. Titã ofereceu o presente inesperado de uma atmosfera densa e o usou para dar a Huygens duas horas e meia de dados de descida do sistema solar externo, o pouso mais distante da história, ainda incomparável. Cada solução é moldada pelo planeta que a forçou à existência, e nenhuma delas é transferida limpa para o próximo corpo da lista."
+    },
+    {
+      "type": "prose",
+      "md": "O que eles compartilham é isto: o momento do pouso é o momento em que tudo o que não pode ser desfeito acontece. Os meses de cruzeiro, os anos de refinamento de trajetória, as décadas de engenharia — tudo isso foi se movendo em direção a uma janela de alguns minutos durante a qual a máquina faz a coisa ou não, e não há ninguém perto o suficiente para intervir. O [problema de navegação](/essays/navigation) foi resolvido, em pedaços, durante setenta anos, iterando: vise, corrija, vise, corrija. O problema de pouso deve ser resolvido com antecedência, completamente, e depois confiado. Você não pode corrigir um pouso em Marte em andamento. Você pode apenas observar o relógio e contar os batidas de uma sequência que você não controla mais, e esperar pelo sinal que lhe diz que a máquina fez o que você pediu."
+    },
+    {
+      "type": "prose",
+      "md": "Perseverance está no piso de [Jezero Crater](/mars) agora, abrindo caminho em direção à geologia antiga que pode ou não conter o que a enviamos lá para encontrar. Os ossos de Viking 1 ainda estão em Chryse Planitia. Huygens se senta em uma planície de seixos de gelo mais de um bilhão de quilômetros de distância. [Venera 13](/missions?id=venera-13) durou 127 minutos e ficou em silêncio. Cada um deles desceu resolvendo um problema diferente, com uma resposta diferente, em um conjunto diferente de minutos que não podia ser re-executado. O cruzeiro é fácil. A física o carrega. Chegar é onde o trabalho é — e cada mundo faz você inventar o trabalho do zero."
+    }
+  ]
+}

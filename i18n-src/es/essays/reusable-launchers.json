@@ -1,0 +1,155 @@
+{
+  "title": "Guarda el Cohete",
+  "dek": "Durante sesenta años construimos la máquina más cara de la historia de la humanidad, la volamos una sola vez y la tiramos al océano. Las personas que decidieron dejar de hacerlo han logrado silenciosamente el cambio más radical en la navegación espacial desde el Apolo.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "En la noche del 21 de diciembre de 2015, el primer estadio de un [Falcon 9](/fleet?id=falcon-9) se mantenía de pie verticalmente sobre una plataforma de hormigón en Cabo Cañaveral, con los motores fríos, rodeado de una nube de vapor residual, intacto. Acababa de regresar del espacio. Aproximadamente ocho minutos después de despegar para entregar un lote de satélites en órbita, el impulsor se dio la vuelta, reencendió tres de sus nueve motores Merlin, frenó a través de la atmósfera superior, desplegó cuatro patas de aterrizaje y se posó en posición vertical sobre la plataforma que había dejado. La maniobra completa requirió la clase de precisión que normalmente se reserva para un reloj suizo. La multitud que observaba estalló en gritos, y el sonido — un rugido de personas que acababan de presenciar algo genuinamente nuevo — aún está en el vídeo."
+    },
+    {
+      "type": "prose",
+      "md": "Lo que sucedió esa noche fue una demostración, pero lo que demostraba no era principalmente un truco técnico. Era un argumento económico. Cada cohete volado antes — el [Saturno V](/fleet?id=saturn-v) que llevó a doce personas a la Luna, el N1 soviético que nunca llegó a órbita, las familias de trabajo Soyuz, Atlas, Protón y Larga Marcha que en conjunto representan la mayoría de los lanzamientos en este atlas — fue construido para ser utilizado una sola vez. Lo volabas. Se desintegraba en la atmósfera o se hundía en el mar. Construías otro. La industria había estado estructurada en torno a este hecho durante sesenta años: los cohetes eran municiones, no aviones. En el momento en que el Falcon 9 aterrizó, esa suposición se puso sobre la mesa por primera vez."
+    },
+    {
+      "type": "prose",
+      "md": "Por qué tardó sesenta años en llegar aquí es una pregunta más interesante de lo que parece."
+    },
+    {
+      "type": "heading",
+      "text": "El problema del contador"
+    },
+    {
+      "type": "prose",
+      "md": "El cohete desechable es derrochador de una forma que resulta casi cómica cuando la describes llanamente. Un [Saturno V](/fleet?id=saturn-v) costaba algo en el rango de 185 millones de dólares en dólares de finales de los años sesenta — aproximadamente 1.500 millones de dólares a precios actuales — y cada uno volaba durante unos doce minutos antes de ser desechado. Los cinco motores F-1 en su primer estadio, cada uno una pieza de maquinaria extraordinaria que quemaba aproximadamente 2.600 kilogramos de propelente por segundo, terminaron sus vidas oxidándose en el fondo del Atlántico. Una expedición privada financiada por Jeff Bezos recuperó dos juegos de motores F-1 del Saturno V del lecho marino en 2013, casi medio siglo después de que fueran arrojados allí, y los encontró en gran medida intactos. Fueron a museos, no de vuelta al vuelo. Tirarlos la primera vez era el plan."
+    },
+    {
+      "type": "prose",
+      "md": "La lógica detrás de este plan no era estupidez. Era la lógica de la Carrera Espacial de los años sesenta: llegar primero, a cualquier costo. Construir un cohete reutilizable es más difícil que construir uno desechable. La reutilización añade peso — escudos térmicos, patas de aterrizaje, propelente reservado para el encendido de retorno — y el peso es el enemigo, porque cada kilogramo que añades a la estructura es un kilogramo que no puedes entregar en órbita. Los primeros diseñadores hicieron los cálculos y concluyeron que la penalización era demasiado alta. Mejor, decidieron, construir barato y tirar. Ese cálculo era correcto para su momento, e impuso un conjunto de suposiciones que duraron dos generaciones."
+    },
+    {
+      "type": "prose",
+      "md": "El [Transbordador Espacial](/fleet?id=space-shuttle-stack) suponía romper la lógica. Fue el primer intento genuino de los Estados Unidos — o de cualquiera — de construir un sistema de lanzamiento operacionalmente reutilizable, y el argumento a favor era económico: volando el orbitador repetidamente, el programa reduciría el costo de llegar a órbita hacia 600 dólares por kilogramo, lo suficientemente bajo como para hacer el vuelo espacial casi rutinario. El transbordador voló 135 misiones entre 1981 y 2011. Falló completamente en la prueba económica. El costo real por vuelo promedió alrededor de 1.500 millones de dólares cuando los gastos totales del programa se distribuyeron entre todas las misiones — más caro por kilogramo a órbita terrestre baja que el Saturno V que reemplazó. Reacondicionador los 24.000 azulejos de escudo térmico del orbitador después de cada vuelo no era un trabajo rápido; consumía miles de horas-persona. La reutilización resultó ser extraordinariamente cara cuando cada subsistema tenía que ser desmontado y reconstruido según los estándares de un avión que podría llevar tripulación. El transbordador probó que la reutilización *podía* funcionar mecánicamente — el orbitador voló docenas de veces — pero también probó que la reutilización por sí sola no reduce costos. La economía solo funciona si puedes poner el vehículo en servicio *rápido* y *barato*."
+    },
+    {
+      "type": "heading",
+      "text": "El truco más simple posible"
+    },
+    {
+      "type": "prose",
+      "md": "SpaceX abordó el problema de manera diferente. En lugar de intentar reutilizar todo el vehículo — la opción que hizo el Transbordador tan complejo — la empresa se enfocó en el componente más caro: el impulsor del primer estadio. En un cohete típico, el primer estadio realiza la carga más pesada, quemando la mayor cantidad de propelente, transportando la mayor masa de motores y costando más de fabricar. También es el componente que, en un cohete desechable, pierdes cada vez. Salvar el primer estadio, y habrás recuperado la mayoría del valor del vehículo."
+    },
+    {
+      "type": "prose",
+      "md": "El requisito técnico para salvarlo es brutal: el estadio tiene que sobrevivir la reentrada a través de una atmósfera que pasó los primeros minutos atravesando a Mach 7, invertir la dirección, desacelerar de hipersónico a velocidad de aterrizaje, y posarse verticalmente sobre un objetivo del tamaño de un campo de fútbol — bien en el sitio de lanzamiento o en un barco no tripulado a cientos de kilómetros de distancia en el Atlántico o Pacífico. Para lograr todo esto, el impulsor tiene que conservar suficiente propelente para una serie de reencendidos de motor precisamente cronometrados, lo que significa que llega a órbita con menos combustible para el trabajo principal. Esa penalización de peso es real: un Falcon 9 volando con un impulsor nuevo entrega aproximadamente 22.800 kilogramos a órbita terrestre baja; un vuelo que recupera el impulsor entrega menos. Este es el balance fundamental en el corazón del lanzamiento reutilizable, y SpaceX lo aceptó porque la economía funciona de todas formas: el impulsor que aterriza puede volar de nuevo, una y otra vez."
+    },
+    {
+      "type": "prose",
+      "md": "Después del aterrizaje de diciembre de 2015 vinieron un segundo, un tercero, y luego el re-vuelo: en marzo de 2017, SpaceX lanzó un Falcon 9 en un impulsor que ya había volado, la primera vez en la historia que un estadio de cohete de clase orbital voló al espacio dos veces. A mediados de 2026, el primer estadio del Falcon 9 más volado ha completado 36 misiones en el mismo hardware — más de lo que la mayoría de los cohetes desechables vuelan en total a lo largo de toda una flota. El costo marginal de un lanzamiento reutilizado, con propelente y reacondicionamiento, ronda los 15 a 20 millones de dólares frente a un precio de lista de 74 millones de dólares. La diferencia, aproximadamente, es el costo del impulsor en sí, recuperado por la recuperación."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/landing-profile",
+      "kind": "diagram",
+      "caption": "El truco es casi insultantemente simple de exponer y brutal de volar: retener suficiente propelente, dar la vuelta al impulsor, y quemar tres veces en el descenso — retroceso, entrada, aterrizaje — hasta que se pose sobre sus patas. El mismo estadio es luego inspeccionado, reabastecido de combustible, y volado de nuevo.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Atrapándolo con las manos"
+    },
+    {
+      "type": "prose",
+      "md": "El [Falcon Heavy](/fleet?id=falcon-heavy) extendió la misma lógica horizontalmente: tres núcleos Falcon 9 atados juntos, dos de ellos desprendiéndose después de los primeros dos minutos y volando de vuelta para aterrizar simultáneamente, lado a lado, en Cabo Cañaveral. Los vídeos de los aterrizajes gemelos — dos pilares de fuego descendiendo en simetría especular, tocando tierra en el mismo instante exacto — parecen algo de una película. No lo son. Son la economía hecha visible."
+    },
+    {
+      "type": "prose",
+      "md": "[Starship](/fleet?id=starship) lleva el argumento a su conclusión lógica. Donde el Falcon 9 recupera su primer estadio y desecha su estadio superior, Starship está diseñado para recuperar *ambos*. El impulsor Super Heavy — 71 metros de altura, impulsado por 33 motores Raptor quemando metano líquido y oxígeno líquido, produciendo aproximadamente el doble del empuje de un Saturno V — regresa al sitio de lanzamiento y es atrapado en el aire por un par de brazos mecánicos en la torre de lanzamiento misma. El sistema se llama Mechazilla por los ingenieros que lo construyeron. SpaceX atrapó el impulsor de esta manera por primera vez el 13 de octubre de 2024, Vuelo 5 del programa de prueba de Starship, y ha repetido la maniobra en vuelos posteriores. La idea de que no aterrizarías tu cohete sino simplemente lo *atrapases mientras caía* habría sonado a ficción hace una década. Es un procedimiento de lunes por la mañana ahora."
+    },
+    {
+      "type": "prose",
+      "md": "El estadio superior de Starship — la nave espacial más grande jamás construida, tan alto como un edificio de quince pisos — está destinado a seguir el mismo camino, regresando y siendo atrapado sobre la plataforma. Una vez que ambas mitades están en el suelo, el sistema teóricamente puede ser reabastecido y relanzado en horas. Ningún cohete desechable ni siquiera intenta esta comparación. Un cohete desechable es una cadena logística: fabricar, transportar, integrar, lanzar, repetir desde el inicio. Un sistema completamente reutilizable es un *avión* con una ruta muy larga. La economía de los dos no está en la misma galaxia."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/tower-catch",
+      "kind": "diagram",
+      "caption": "Luego una idea más extraña: no dar al impulsor patas en absoluto. Dejar que la torre de lanzamiento lo atrape — dos brazos cerrándose sobre un estadio de setenta metros mientras planea, así que la masa que habría sido tren de aterrizaje se convierte en carga útil. El primer atrape limpio llegó en octubre de 2024.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "El segundo movedor"
+    },
+    {
+      "type": "prose",
+      "md": "El [New Glenn](/fleet?id=new-glenn) de Blue Origin aterrizó su primer estadio en el mar por primera vez el 13 de noviembre de 2025 — diez años después del aterrizaje del Falcon 9 de diciembre de 2015, lo que da una idea de cuán rápido se mueve la industria cuando SpaceX establece el ritmo. New Glenn es un cohete grande por cualquier estándar anterior, transportando hasta 45.000 kilogramos a órbita terrestre baja en configuración desechable; su primer estadio regresa a un barco no tripulado en el Atlántico en cada misión. La primera reutilización de un estadio New Glenn siguió en abril de 2026. El enfoque de Blue Origin refleja el de SpaceX en arquitectura: salvar el primer estadio, volarlo de nuevo, reducir el costo marginal con cada reutilización."
+    },
+    {
+      "type": "prose",
+      "md": "Lo que la aparición del [New Glenn](/fleet?id=new-glenn) añade al panorama es presión competitiva. Durante la mayor parte de la década entre 2015 y 2025, SpaceX estuvo esencialmente solo en el mercado de lanzamiento reutilizable. Un mercado con un solo proveedor no es un mercado; es un monopolio. La entrada de un segundo lanzador reutilizable creíble cambia la dinámica de precios para todos los que compran un viaje a órbita. Operadores de satélites, agencias espaciales y clientes comerciales que una vez no tenían más opción que aceptar lo que SpaceX ofrecía ahora tienen alternativas — y más están llegando."
+    },
+    {
+      "type": "prose",
+      "md": "China se ha movido con una seriedad inusual. Zhuque-3 de LandSpace, un cohete impulsado por metano ampliamente análogo al Falcon 9, intentó su primera recuperación en diciembre de 2025; el estadio superior alcanzó órbita pero el impulsor se estrelló en su aproximación de aterrizaje. Se planea un segundo intento de recuperación para mediados de 2026. iSpace tiene su Hyperbola-3 en calificación de hardware, con un barco no tripulado dedicado ya lanzado, y apunta a su primer vuelo desde Wenchang. Varias otras empresas comerciales chinas están en desarrollo activo. El gobierno chino ha convertido el acceso reutilizable a órbita en una prioridad nacional explícita. Que el país que construyó la Gran Muralla haya decidido dejar de tirar sus cohetes es un punto de datos que vale la pena contemplar."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/falcon-9/01",
+      "kind": "photo",
+      "caption": "Un primer estadio del Falcon 9 se posa de nuevo sobre sus patas después de entregar una carga útil a órbita — el momento en que una suposición de sesenta años se derrumbó silenciosamente. Una vez que una empresa probó que un impulsor podía ser volado de nuevo, todos los demás tuvieron que aprender a conservar los suyos también.",
+      "align": "wide",
+      "credit": "SpaceX"
+    },
+    {
+      "type": "heading",
+      "text": "Lo que la reutilización realmente cambia"
+    },
+    {
+      "type": "prose",
+      "md": "La historia de la superficie es la reducción de costos, y la reducción de costos es real: precios de lanzamiento que una vez se situaban en 200 millones de dólares o más para un desechable grande han caído hacia 60–80 millones de dólares para una misión de levantamiento medio reutilizable, y la economía marginal de un impulsor Falcon 9 bien usado es aún menor. Pero el cambio más profundo está en la *cadencia* de lanzamiento. SpaceX lanzó 132 misiones Falcon 9 en 2024 — casi tres por semana, sostenidas a lo largo de un año calendario completo, con el mismo grupo de impulsores ciclando a través de la plataforma y de vuelta. Ninguna arquitectura desechable podría aproximarse a ese ritmo; necesitarías una cadena de suministro industrial operando a ritmo de guerra para igualarlo. La reutilización, resulta, no se trata solo de costo. Se trata de ritmo. Y el ritmo se trata de qué se vuelve posible."
+    },
+    {
+      "type": "prose",
+      "md": "Lo que se vuelve posible es Starlink: una constelación que requirió más de 6.000 lanzamientos para poblarla, imposible de construir bajo ninguna estructura de precios de desechable que haya existido jamás. Lo que se vuelve posible son misiones comerciales de ciencia de bajo costo que previamente no podían permitirse el viaje. Lo que se vuelve posible, eventualmente, es transporte tripulado a Marte con una frecuencia que lo convierte en un programa en lugar de un acto — porque el [presupuesto de delta-v](/science/propulsion/dv-budget) de una misión Tierra-Marte exige un vehículo que pueda ser reabastecido en órbita y reutilizado, o las fracciones de masa simplemente no se cierran. La reutilización no es solo una preferencia económica. Para las ambiciones que [Starship](/fleet?id=starship) está diseñado para soportar, es un requisito físico."
+    },
+    {
+      "type": "prose",
+      "md": "La penalización de peso que hizo que los primeros ingenieros rechazaran la reutilización sigue siendo real; no ha sido eliminada por la ingeniería. Un Starship completamente desechable entregaría más a órbita que uno reutilizable. Pero la pregunta ya no es si puedes permitirte la penalización de masa. Es si puedes permitirte tirar todo — si puedes permitirte, como la industria de cohetes hizo durante seis décadas, tratar la máquina más compleja jamás construida como un artículo de un solo uso."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/cost-curve",
+      "kind": "diagram",
+      "caption": "El número que controla todo es el precio de un kilogramo a órbita. El Transbordador prometió reducirlo y nunca lo hizo; el Falcon 9 reutilizable lo redujo aproximadamente veinte veces. Redúcelo lo suficiente y misiones que una vez fueron impensables se vuelven meramente programadas.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "La pregunta que aterrizó"
+    },
+    {
+      "type": "prose",
+      "md": "El argumento original de la industria de cohetes contra la reutilización era de ingeniería: el vehículo es demasiado complejo para reacondicionarlo barato, demasiado frágil para volar de nuevo sin desmontarlo, demasiado limitado en peso para llevar el hardware necesario para aterrizar. La experiencia del Transbordador Espacial parecía confirmar los tres. Esas preocupaciones eran legítimas, y durante treinta años se mantuvieron."
+    },
+    {
+      "type": "prose",
+      "md": "Lo que cambió no fue la física. Lo que cambió fue la base de fabricación, la elección de propelente — el metano se quema más limpiamente que el queroseno, deja menos residuos, hace el reacondicionamiento más rápido — y, más que nada, la disposición de diseñar para reutilización desde el inicio en lugar de adaptarla retroactivamente a un vehículo optimizado para desechabilidad. El Transbordador era un cohete desechable al que se le había dicho que volviera a casa. El impulsor Falcon 9 fue diseñado desde el principio alrededor de la pregunta de cómo aterrizar. Esa diferencia en la intención de diseño explica la mayoría de la diferencia en el resultado."
+    },
+    {
+      "type": "prose",
+      "md": "En la década desde esa noche de diciembre en Cabo Cañaveral, aterrizar un impulsor ha pasado de imposible a ordinario. Un primer estadio de Falcon 9 que no logra regresar a su barco no tripulado es ahora el evento inusual, digno de anotar en el registro de anomalías. El Super Heavy ha sido atrapado desde el aire. Una segunda empresa ha aterrizando un estadio de levantamiento pesado en el mar y lo ha volado de nuevo. China está corriendo para ponerse al día. La suposición que ha gobernado toda la industria de lanzamiento desde el Sputnik — que un cohete es desechable — ha sido rota, y el rompimiento de ella ya está remodelando qué misiones son posibles, qué negocios son viables, y qué les costará a la próxima generación avanzar más."
+    },
+    {
+      "type": "prose",
+      "md": "Ninguno de los [estadios de cohete](/science/propulsion/rocket-stages) que llevaron a humanos o naves espaciales a órbita en los primeros sesenta años de la navegación espacial sobrevivió. Están en el fondo del océano, o en la atmósfera superior como moléculas dispersas, o en museos donde los ingenieros que los construyeron pueden caminar y reconocer cosas que una vez tocaron. Los que vuelan ahora regresan. Ese cambio — silencioso, técnico, brutalmente difícil de hacer funcionar — es lo que separa la primera era de la navegación espacial de lo que venga después."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/starship/01",
+      "kind": "photo",
+      "caption": "Starship es la apuesta más grande: que todo el vehículo — impulsor y nave juntos — regrese a casa y vuele de nuevo dentro de días. Si se sostiene, el costo de llegar a órbita deja de ser lo que decide qué se permite a la humanidad intentar.",
+      "align": "wide",
+      "credit": "SpaceX"
+    }
+  ]
+}

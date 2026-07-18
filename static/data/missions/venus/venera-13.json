@@ -72,6 +72,12 @@
         "label": "Venus landing + surface operations",
         "description": "Soft-landed 1982-03-01 at Phoebe Regio. Transmitted for 127 minutes from the surface — twice the design lifetime — and returned the first colour panoramic images of Venus's surface, sampled the soil with an X-ray fluorescence spectrometer, and recorded the first audio from the surface of another planet (wind on Venus's microphone). The lander succumbed to the heat after ~2 hours."
       }
-    ]
+    ],
+    "arrival": {
+      "entry_velocity_km_s": 10.7,
+      "edl_system": "aeroshell",
+      "edl_duration_s": 2989,
+      "touchdown_velocity_ms": 11.12
+    }
   }
 }

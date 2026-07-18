@@ -1,0 +1,147 @@
+{
+  "title": "De eerlijke rekenkunde",
+  "dek": "De dichtstbijzijnde ster is niet ver op de manier waarop Mars ver is, of zelfs Pluto. Het is een categoraal ander soort afstand — en de nuchtere wiskunde van het bereiken ervan heeft iets dat elk serieus voorstel tegelijk stilletjes heroïsch en stilletjes verloren doet lijken.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Er is een denkgewoonte die ruimtevaartuigen aanmoedigen, en tot op zekere hoogte is het een redelijke. Je leert de afstanden — de Maan is drie dagen weg, Mars is zes tot negen maanden, Jupiter is jaren — en je absorbeert de schaal van het zonnestelsel als iets dat immens is maar bevaarbaar, iets waarin menselijke vindingrijkheid zeventig jaar lang gestaag inbreuk heeft gemaakt. [Voyager 1](/missions?id=voyager-1) bereikte de interstellaire ruimte. [New Horizons](/missions?id=new-horizons) legde vijf miljard kilometer af naar [Pluto](/explore) en kwam binnen een minuut van zijn schema aan. Het buitenstelsel voelt, van binnen dit frame, als een probleem van geduld en techniek, niet van fundamentele limieten."
+    },
+    {
+      "type": "prose",
+      "md": "Dan draai je je naar de dichtstbijzijnde ster, en het frame breekt."
+    },
+    {
+      "type": "prose",
+      "md": "Proxima Centauri ligt 4,24 lichtjaar weg. Die zin moet langzaam worden uitgepakt om met zijn volle gewicht aan te slaan, omdat lichtminuten en lichtjaren dezelfde eenheid zijn en het schaalverschil niet intuïtief is. Een [lichtminuut](/science/scales-time/light-minute) is de afstand die licht in zestig seconden aflegt: ongeveer 18 miljoen kilometer, wat grofweg de afstand tussen Aarde en Zon gedeeld door acht is. Het zonnestelsel — het hele bewoonde en onderzochte volume van de baan van de Aarde tot voorbij Neptunus — past in een bol van ongeveer vijf lichtuur in doorsnee. Pluto, aan de rand van het klassieke stelsel, ligt ongeveer vijf en een half uur licht van de Zon af. De Oortwolk, het buitenste zwaartekrachtbereik van de invloed van de Zon, strekt zich uit tot misschien een of twee lichtjaar. Proxima Centauri, de dichtstbijzijnde ster bij de onze, ligt meer dan twee keer zoveel weg. De afstand tot de dichtstbijzijnde ster is niet de afstand naar het buitenstelsel geschaald met enige beheersbare factor. Het is ongeveer *negenduizend* keer de afstand van Aarde naar Pluto. Het zonnestelsel bereidt je niet voor."
+    },
+    {
+      "type": "heading",
+      "text": "De demotiverende snelheid van alles wat we hebben gelanceerd"
+    },
+    {
+      "type": "prose",
+      "md": "[Voyager 1](/missions?id=voyager-1) is het snelste voortschrijdende menselijke object dat bestaat. Gelanceerd in 1977, geslingerd langs Jupiter en Saturnus op een baan die energie van beide planeten' zwaartekrachtvelden leende, reist het nu met ongeveer 17 kilometer per seconde ten opzichte van de Zon — ongeveer 61.000 kilometer per uur, een snelheid die je van Londen naar Sydney in minder dan een minuut zou brengen. Naar iedere aardse maatstaf is het onvoorstelbaar snel. Naar interstellaire maatstaf is het glaciaal. Met 17 km/s zou Voyager 1 ongeveer 73.000 jaar nodig hebben om de afstand naar Proxima Centauri af te leggen — en het is niet eens daarheen gericht. Het beweegt in een heel ander richting, naar het sterrenbeeld Ophiuchus, op een baan die was ontworpen om het buitenstelsel te onderzoeken, niet om naar de sterren te gaan."
+    },
+    {
+      "type": "prose",
+      "md": "[Pioneer 10](/missions?id=pioneer-10) en [Pioneer 11](/missions?id=pioneer-11), de eerste ruimtevaartuigen die de asteroïdenriem overstaken en Jupiter en Saturnus verkenden, verlaten ook het zonnestelsel op hyperbolische banen. [New Horizons](/missions?id=new-horizons) beweegt met ongeveer 14 km/s. Geen van hen zal zich binnen een relevant tijdsbestek een ander ster naderen van de beschaving die hen lanceerde. De snelste dingen die de mensheid ooit heeft voortgeslingerd — het resultaat van zeventig jaar raketkunde en zwaartekracht-hulpbaan-ontwerp — zouden tienduizenden jaren nodig hebben om de interstellaire kloof over te bruggen. Wanneer mensen zeggen \"de sterren zijn ver weg,\" bedoelen ze iets specifieker en ontmoedigenders dan de uitdrukking meestal convaleert: zij bedoelen dat alles wat we ooit hebben gedaan om een ruimtevaartuig sneller te maken het bereik van interstellaire reizen niet met één orde van grootte heeft verschoven."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/voyagers-speed",
+      "kind": "diagram",
+      "caption": "Voyager 1, gelanceerd in 1977, is het snelste voortschrijdende object dat de mensheid ooit heeft gebouwd — en met ongeveer zeventien kilometer per seconde zou het nog steeds ongeveer 73.000 jaar duren om de afstand naar de dichtstbijzijnde ster over te steken. Het gaat daar niet eens heen. Tegen interstellaire afstand is ons snelste een kruiptempo.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/voyager-1/01",
+      "kind": "photo",
+      "caption": "Voyager 1 — nu meer dan vierentwintig miljard kilometer verder weg, het verste object dat mensen ooit hebben gemaakt, en nog steeds, op enige interstellaire schaal, nauwelijks de deur uit.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Wat de raketverordening verbiedt"
+    },
+    {
+      "type": "prose",
+      "md": "Om Proxima Centauri in een mensenleven te bereiken — zeg, in veertig jaar — zou een ruimtevaartuig ongeveer tien procent van de lichtsnelheid nodig hebben. Tien procent van c is ongeveer 30.000 km/s. Voyager 1 reist met 17 km/s. De verhouding is bijna 2.000 tot één. Je zou ongeveer tweeduizend keer sneller moeten gaan dan het snelste wat we ooit hebben gelanceerd."
+    },
+    {
+      "type": "prose",
+      "md": "De [Tsiolkovsky-raketverordening](/essays/delta-v) — de ijzeren wet die elk voortstvormingsvoertuig beheerst — maakt dit precies, en de precisie is genadeloos. De verordening zegt dat de snelheid die een raket kan bereiken afhangt van twee dingen: de verhouding van zijn beginmassa (volledig getankt) tot zijn eindmassa (leeg), en de uitlaatsnelheid van zijn voortsmiddel. Om sneller te gaan, draag je meer voortsmiddel mee of stootte het sneller uit — maar het meenemen van meer voortsmiddel verhoogt de beginmassa, wat het voortsmiddel verhoogt dat je nodig hebt om *dat* voortsmiddel te versnellen, in een samengestelde val die exponentieel groeit. Chemische raketten, zoals [het voortsmiddelstuk](/essays/new-propulsion) in detail beschrijft, zitten al aan de plafond van wat hun uitlaatsnelheid toestaat. De beste chemische motoren bereiken specifieke impulsen rond 450 seconden, corresponderend met uitlaatsnelheden van ongeveer 4,4 km/s. Om tien procent van de lichtsnelheid met een chemische raket te bereiken, is de vereiste massaverhouding niet tien, of duizend, of miljoen. Het is een getal zo groot dat het waarneembare universum niet genoeg waterstof bevat om de motor te brandstofferen. Chemie is geen pad naar de sterren. Het is niet eens een eerste stap."
+    },
+    {
+      "type": "prose",
+      "md": "Nucleair-thermische voortaving — waterstof in een reactor verwarmen en door een mondstuk uitstoten — verdubbelt grofweg de uitlaatsnelheid, bereikend specifieke impulsen rond 825 seconden in de beste grond-geteste motoren van het NERVA-programma. Het verdubbelen van de uitlaatsnelheid halveert niet de vereiste massaverhouding; het kwadrateert de relatie. Bij interstellaire snelheden is nucleair-thermische voortaving nog steeds categoraal onvoldoende. De raketverordening geeft niet om hoe het voortsmiddel wordt verwarmd. Het geeft alleen om hoe snel het vertrekt. En geen voortsmiddel-brandende architectuur die tot nu toe is bedacht kan materie snel genoeg uitstoten om een betekenisvol deel van c te bereiken zonder een brandstofbelasting nodig te hebben die de missie van zichzelf onmogelijk maakt."
+    },
+    {
+      "type": "heading",
+      "text": "De serieuze voorstellen — en de muren waar ze tegenaan lopen"
+    },
+    {
+      "type": "prose",
+      "md": "Er zijn een klein aantal voorstellen voor interstellaire vlucht die serieus zijn in die zin dat fysici ze niet onmiddellijk uitstellen. Geen ervan is gemakkelijk. Elk daarvan, voorzichtig onderzocht, heeft een muur achter het eerste optimisme."
+    },
+    {
+      "type": "prose",
+      "md": "Het meest concrete huidige voorstel is Breakthrough Starshot, aangekondigd in 2016 door een samenwerking van wetenschappers en technologen. Het concept is elegant: grote ruimtevaartuigen helemaal achterwege laten. Bouw gram-schaal-lichtzeielen — wafers van materiaal dunner dan een vel papier, met een klein elektronicapakket erbij — en versneld ze met een aardse lasermatrix die gezamenlijk ongeveer 100 gigawatt vermogen levert over een korte bestralingsdoorgang. Bij dat vermogensniveau kon een gram-schaal-zeil theoretisch naar ongeveer twintig procent van de lichtsnelheid worden geduwd, waardoor de afstand naar Proxima Centauri in ongeveer twintig jaar wordt overbrugd. De natuurkunde is in principe gezond. Zonnezeielen werken — IKAROS bewees het in 2010, en de LightSail 2 van de Planetary Society hief zijn baan op alleen zonneschijn in 2019. Het schaal van het concept tot laservoortaving is een ander probleem in techniek, niet in soort."
+    },
+    {
+      "type": "prose",
+      "md": "De muren zijn aanzienlijk. Een 100-gigawatt [gefaseerde lasermatrix](/science/propulsion/laser-sail) bestaat niet. Het bouwen ervan zou een techniek- en financieringsonderneming zijn die vergelijkbaar is met de grootste projecten in de menselijke geschiedenis, en het behouden van straalsamenhang en puntingsnauwkeurigheid over een vertrekkend doel bij relativistische snelheid vereist technologie die veel verder gaat dan huidige demonstratie. Meer fundamenteel: de lichtzeielen versnellen. Ze kunnen niet vertragen. Er is geen mechanisme om een gram-schaal zeil af te remmen als het Proxima Centauri nadert met 20% c — geen lasermatrix die daar wacht, geen atmosferische remming beschikbaar. De voorbijvlucht zou een paar uur duren. Na decennia reizen en jaren signaaloverdracht ter lichtsnelheid zouden Proxima Centauri en alle planeten die eromheen draaien enkele uren aandacht krijgen. Wat de sensoren tijdens die doorgang hebben vastgelegd zou 4,24 jaar in beslag nemen om thuis aan te komen. Breakthrough Starshot is niet een missie om een ander ster te onderzoeken. Het is een missie om er even naar te kijken."
+    },
+    {
+      "type": "prose",
+      "md": "Project Daedalus, voorgesteld door de British Interplanetary Society in een studie van 1973 tot 1978, had op iets meer aanzienlijks. Het was een twee-etappe [fusieaangedreven stermonster](/science/propulsion/fusion-propulsion), gebruik makend van traagheidsopsluiting ontsteking van deuterium-helium-3 korrels, ontworpen om Barnard's Star (toen dacht men planeten te hebben) te bereiken met ongeveer 12% van de lichtsnelheid, aankomend in ongeveer vijftig jaar. Het schip dat het voorsagen was enorm — aanvankelijk getankt, zou het ongeveer 54.000 ton hebben gewogen, de grootte van een kleine wolkenkrabber. De opvolgingsstudie, Project Icarus, herzag het concept vanaf 2009 onward met bijgewerkte natuurkunde en bredere voortsmiddelkeuzen. Beide studies convergen op dezelfde eerlijke beoordeling: de fusiedrive werkt in principe, maar de technologie vereist — gestage traagheidsopsluiting fusie op de schaal en herhaalfrequentie nodig voor voortaving — is niet bereikt, en de brandstofvereiste voor helium-3 overschrijdt veel wat van Aarde kan worden gewonnen. De helium-3 zou uit de atmosfeer van Jupiter moeten worden gehaald. Er bestaat geen mechanisme om dit te doen."
+    },
+    {
+      "type": "prose",
+      "md": "Antimaterie is het theoretische plafond. [Materie-antimaterie annihilatie](/science/propulsion/antimatter-propulsion) is het meest energetische proces dat door bekende natuurkunde is toegestaan, massaconversie naar energie met honderd procent rendement — vergeleken met ongeveer 0,7% voor kernfusie en een fractie van een procent voor chemische verbranding. Een antimaterie-drive, als de annihilatie efficiënt kon worden gericht, kon in principe een ruimtevaartuig naar een aanzienlijk deel van c versnellen met een relatief bescheiden brandstofmassa. De muur is productie. De hele geaccumuleerde productie van antimaterie door deeltjesversnellers wereldwijd — over de hele menselijke geschiedenis — bedraagt slechts enkele nanogrammen. Een Daedalus-schaal interstellaire missie zou iets zoals tientallen duizenden tonnen antimaterie nodig hebben. De energie nodig om die hoeveelheid te produceren zou het totale energieoutput van menselijke beschaving overschrijden, vermenigvuldigd met eeuwen. Antimaterie-voortaving is niet een dichtbij-termijn technisch probleem. Het is een beschavingsschaal energieprobleem."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/the-proposals",
+      "kind": "diagram",
+      "caption": "Drie concepten overleven eerlijke controle: een laser-geduwd nanovlies (Breakthrough Starshot) dat voorbij een nabije ster in decennia kan vliegen, een fusiester (Project Daedalus) ter grootte van een gebouw, en antistof's perfecte maar onmakelijke brandstof. Geen is verboden door natuurkunde — alle zijn verboden door energie, afstand en geduld.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Het berichtprobleem"
+    },
+    {
+      "type": "prose",
+      "md": "Afgezien van voortaving heeft interstellaire exploratie een tweede structureel probleem dat chemie en techniek niet kunnen oplossen: de lichtsnelheid zelf. Een radiosignaal van Proxima Centauri bereikt Aarde in 4,24 jaar. Een vraag verzonden op het moment van aankomst van een ruimtevaartuig ontvangt een antwoord, op zijn best, 8,48 jaar later. Er is geen betekenisvolle real-time controle. Er is geen missioncontroller die richtingcorrecties roept tijdens een benadering. Wat een ruimtevaartuig bij Proxima Centauri doet, doet het helemaal alleen — meer alleen, orders of magnitude, dan [de zeven minuten autonome EDL](/essays/seven-minutes) op Mars, waar het vaartuig op zijn minst weet dat mensen van twaalf minuten afstand controleren."
+    },
+    {
+      "type": "prose",
+      "md": "De communicatiearchitectuur die dit vereist is kwalitatief anders van alles wat we hebben gebouwd. Het [Deep Space Network](/science/mission-phases/dsn) handelt interplanetaire afstanden af omdat de retour-lag, hoewel pijnlijk aan de buitenplaneten, nog steeds in uren wordt gemeten — een cadans waar menselijke missioncontroles binnen kunnen werken. Interstellaire vertragingen worden in jaren gemeten. Gegevensvolumes zouden ter lichtsnelheid worden verzonden, maar de fotonen die ze dragen zouden jaren reizen voordat ze op een schotel op Aarde aankomen, en elke vervolgcommando of heruitzending zou net zo lang duren. [Ruimtecommunicatie over het zonnestelsel](/essays/comms) is al een geduld-discipline; interstellaire communicatie zou een generatie-discipline zijn. Je stuurt een bericht. Je kleinkinderen ontvangen het antwoord."
+    },
+    {
+      "type": "prose",
+      "md": "In het Breakthrough Starshot-scenario raast een gram-schaal sonde in enkele uren door het Proxima Centauri-systeem met 20% van de lichtsnelheid. Zijn sensoren verzamelen wat ze kunnen in dat venster. De samengeperste gegevens worden vervolgens ter lichtsnelheid naar huis verzonden, aankomend 4,24 jaar later. Er is geen tweede doorgang. Er is geen vervolgingstukinzetseming, geen baaninsluiting, geen oppervlaktemissie, geen vermogen om op een verrassende bevinding met een nieuwe waarneming te reageren. Dit is de eerlijke inhoud van \"interstellaire exploratie\" met de enige snelheid die we weten hoe we kunnen bereiken: een korte, unidirectionele momentopname, verzonden naar huis over jaren stille, van een sonde die niet kan vertragen en nooit meer wordt gehoord."
+    },
+    {
+      "type": "figure",
+      "image": "essays/interstellar-exploration/the-message",
+      "kind": "diagram",
+      "caption": "Zelfs als een sonde aankomt, bereikt het nieuws jaren later thuis. Op Proxima een signaal is 4,24 jaar elk weg; een decennia-lange kruising levert enkele uren voorbijvlieggegevens op, daarna jaren meer om het te horen. Interstellaire exploratie is bovenalles een oefening in geduld.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "De eerlijke horizon"
+    },
+    {
+      "type": "prose",
+      "md": "Niets van dit betekent dat interstellaire reizen verboden zijn. Er is geen fysische wet die een ruimtevaartuig verbiedt vier lichtjaar over te steken. Er zijn alleen technische muren, energiebudgetten en het specifieke impulsplafond van elk voortsmiddelsysteem dat mensheid tot nu toe heeft bedacht. Dit zijn echte beperkingen, geen absolute — zij zijn de beperkingen van een beschaving op een bepaald moment in haar ontwikkeling, een beschaving die theoretisch gezien een gram-schaal sonde naar een nabije ster op een laserstraal kan lanceren, maar nog niet de laser kan bouwen. Het onderscheid doet er toe. \"Verboden door natuurkunde\" en \"jenseits van huidige techniek\" zijn verschillende zinnen."
+    },
+    {
+      "type": "prose",
+      "md": "Maar het gat tussen \"niet verboden\" en \"bereikbaar in elk dichtbij tijdsbestek\" is enorm. Het langzaamste serieuze voorstel — een fusiester op 12% van c — zou technologie vereisen die niet bestaat, tegen een kosten die elk ruimteprogramma in geschiedenis dwaalt, een bemande vaartuig naar een ander ster in ongeveer vijftig jaar af te leveren. Het snelste serieuze voorstel — Breakthrough Starshot's lasergedreven lichtzeil — zou een gram instrumenten afleveren aan een voorbijvlucht die uren duurt, en gegevens retourneren voor jaren, tegen een kosten die de voorstanders schatten in tientallen miljarden dollars, aangenomen dat de lasermatrix überhaupt kan worden gebouwd. Tussen deze extremen is er geen middeloptie die zowel technisch haalbaar als adequaat voor betekenisvol onderzoek is. De schaal van het probleem heeft gewoon geen gematigde oplossing."
+    },
+    {
+      "type": "prose",
+      "md": "Er is een derde weg, en het is de meest menselijke: ga langzaam, en ga in schepen groot genoeg om levens te dragen. Als je niet naar tien procent van de lichtsnelheid kunt versnellen, accepteer je de reistijd — eeuwen, millennia — en je bouwt een vaartuig dat zelf een wereld is. Dit is het idee achter [generatie-ster-schepen](/essays/generational-starships): niet een ruimtevaartuig in conventionele zin maar een gesloten ecologisch en sociaal systeem, gelanceerd met snelheden bereikbaar door ambitieus maar voorstelbaar nabij-toekomst voortsmiddel, gericht op Proxima of een ander nabije systeem, dragende de voorouders van de mensen die zullen aankomen. De natuurkunde zijn vergevingsgezind op een manier die de raketverordening niet is. De problemen verschuiven van techniek naar biologie, ecologie, sociologie en ethiek: wat het betekent om geboren te worden in een reis die je niet hebt gekozen, en om te sterven voordat hij eindigt. Dit zijn niet kleinere problemen. Het zijn andere."
+    },
+    {
+      "type": "prose",
+      "md": "Wat de rekenkunde uiteindelijk oplevert is niet wanhoop. Het levert verhouding. Het zonnestelsel — het immense volume van de baan van de Aarde naar de Oortwolk — is het grootste wat mensheid ooit heeft genavigeerd, en het kostte beter part of een eeuw om de gereedschappen te bouwen om zelfs de nabije bereiken te onderzoeken. Interstellaire ruimte is niet de volgende trede op die ladder. Het is een klif erboven. De klif is niet oneindig; het heeft een top. Maar de top bereiken vereist ofwel een revolutie in energieproductie en materialenwetenschap (de lasermatrix), een gestage meesterschap van fusievoortaving (Daedalus/Icarus), of een beschavingsverplichting geduld op een tijdsschaal die geen mensinstelling tot nu toe heeft gehandhaafd (het generatie-schip). Alle drie zijn echt mogelijk. Geen ervan is onmiddellijk."
+    },
+    {
+      "type": "prose",
+      "md": "Dit is wat \"het lange zicht\" betekent wanneer het naar buiten buiten de heliopauze kijkt. Niet dat we niet kunnen gaan, maar dat eerlijk gaan vereist de schaal in je geest te houden zonder te flinchen — de 73.000 jaren Voyager 1 zou nodig hebben, de gram-schaal sonde die in uren door raast, de achter-achter-achter-achterkinderen aankomend op een ster waar hun voorouders het schip naar hebben gewezen. De dichtstbijzijnde ster is geen bestemming. Het is een definitie: van hoe ver we zijn gekomen, hoe ver de natuurkunde ons nog toestaat te gaan, en hoeveel van de afstand tussen die twee punten we nog niet hebben overgestoken."
+    },
+    {
+      "type": "figure",
+      "image": "missions/new-horizons/01",
+      "kind": "photo",
+      "caption": "New Horizons, wat bijna vijf miljard kilometer naar Pluto en verder in de Kuiper Belt kruiste — de nieuwste van onze uitwaartse vaartuigen, en een herinnering dat zelfs onze meest gedurfde diepe-ruimte-missies nog steeds tochten zijn binnen de voortuin van het zonnestelsel zelf.",
+      "align": "wide",
+      "credit": "NASA/JHUAPL/SwRI"
+    }
+  ]
+}

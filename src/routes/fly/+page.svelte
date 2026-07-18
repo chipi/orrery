@@ -2,6 +2,7 @@
   import { onMount, onDestroy, untrack } from 'svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
+  import { goto } from '$app/navigation';
   import { viewport } from '$lib/viewport.svelte';
   import { agencyToLogoEntries } from '$lib/agency-logo';
   import type { FleetIndexEntry } from '$types/fleet';
@@ -170,17 +171,25 @@
   import { flyVelocitySon } from '$lib/sensory/sonify/fly-velocity';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import LaunchScene from '$lib/components/LaunchScene.svelte';
+  import DescentScene from '$lib/components/DescentScene.svelte';
   import {
     loadLaunchProfile,
     resolveLauncher,
     hasLaunchProfile,
   } from '$lib/orbital/launch-profile-registry';
+  import { loadDescentProfile, hasDescentProfile } from '$lib/orbital/descent-profile-registry';
   import { integrateAscent, type LaunchProfile } from '$lib/orbital/ascent-physics';
+  import {
+    integrateDescent,
+    type DescentProfile,
+    type EDLPhaseKind,
+  } from '$lib/orbital/descent-physics';
   import {
     makeTimeline,
     scrubberToPoint,
     pointToScrubber,
     ASCENT_SPEED_MULTIPLIERS,
+    DESCENT_SPEED_MULTIPLIERS,
     type JourneyTimeline,
   } from '$lib/orbital/ascent-clock';
   import { T_MINUS_S, INJECTION_COAST_S, INJECTION_BURN_S } from '$lib/orbital/ascent-hud';
@@ -314,6 +323,89 @@
     ) {
       launchAutoStarted = true;
       startLaunch();
+    }
+  });
+
+  // ─── Descent / landing act (RFC-034 §9 · Track D) ─────────────────
+  // The inverse of the launch pre-roll: for the 37 Moon/Mars/Venus landers the
+  // cruise ends at arrival, then the EDL act flies the lander down to the
+  // surface (DescentScene, clock-driven, externalClock=true) and hands off to
+  // the body's SurfaceScene. Gated on `hasDescentProfile`; orbiters never enter.
+  let showDescent = $state(false);
+  let descentProfile = $state<DescentProfile | null>(null);
+  let descentT = $state(0);
+  let descentSpeed = $state(3);
+  // Load the mission's descent profile whenever the mission changes.
+  $effect(() => {
+    const id = mission.id;
+    if (!hasDescentProfile(id)) {
+      descentProfile = null;
+      return;
+    }
+    void loadDescentProfile(id, fetch, base).then((p) => {
+      if (mission.id === id) descentProfile = p;
+    });
+  });
+  function edlSystemLabel(p: DescentProfile): string {
+    const kinds = new Set<EDLPhaseKind>(p.phases.map((x) => x.kind));
+    if (kinds.has('skycrane')) return 'Sky-crane';
+    if (kinds.has('airbag_bounce')) return 'Airbags';
+    if (kinds.has('aeroshell_descent')) return 'Aeroshell';
+    if (kinds.has('parachute') && kinds.has('powered_retro')) return 'Parachute + retro';
+    if (kinds.has('powered_retro')) return 'Powered retro';
+    return 'Ballistic';
+  }
+  let descentDossier = $derived(
+    descentProfile
+      ? {
+          name: mission.name,
+          agency: mission.agency ?? mission.agency_full ?? '',
+          body: descentProfile.body,
+          siteId: descentProfile.siteId,
+          siteName: `${descentProfile.landingSite.lat.toFixed(2)}°, ${descentProfile.landingSite.lon.toFixed(2)}°`,
+          edlSystem: edlSystemLabel(descentProfile),
+          // The descent profile is the source of truth for the entry state.
+          entryVelocityKms: descentProfile.entryState.velocityMs / 1000,
+        }
+      : null,
+  );
+  // Touchdown → hand off to the destination body's SurfaceScene, closing the
+  // flight circle (RFC-034 §9). Moon/Mars have surface routes; Venus has none,
+  // so its touchdown simply rests on the landed frame.
+  function handleTouchdown() {
+    const b = descentProfile?.body;
+    const sid = descentProfile?.siteId;
+    showDescent = false;
+    if ((b === 'moon' || b === 'mars') && sid) {
+      void goto(`${base}/${b}?site=${sid}&from=descent`);
+    }
+  }
+  /** Opening CTA (landing missions only): jump straight to the EDL act, past the
+   *  launch + cruise — the descent counterpart of startLaunch. */
+  function startDescent() {
+    if (!descentProfile) return;
+    showLaunch = false;
+    showDescent = true;
+    descentT = 0;
+    openingActive = false;
+  }
+  // ?descent=1 deep-link → jump straight to the EDL act once the profile loads
+  // (mirrors ?launch=1). Deterministic entry for browser/e2e checks + a direct
+  // "watch the landing" link.
+  const wantDescentDeep = launchDeepParams?.get('descent') === '1';
+  let descentAutoStarted = false;
+  $effect(() => {
+    if (
+      wantDescentDeep &&
+      !descentAutoStarted &&
+      descentProfile != null &&
+      (deepMissionId == null || mission.id === deepMissionId)
+    ) {
+      descentAutoStarted = true;
+      showLaunch = false;
+      showDescent = true;
+      descentT = 0;
+      openingActive = false;
     }
   });
 
@@ -1390,15 +1482,33 @@
           (launchInjectionBurn ? INJECTION_COAST_S + INJECTION_BURN_S : 0)
       : 540,
   );
+  // The descent act (RFC-034 §9): integrate the EDL profile and give it the
+  // scrubber TAIL. 0 duration / fraction when the mission doesn't land — the
+  // bar stays the 2-segment ascent→cruise, unchanged for orbiters.
+  let descentSummaryFly = $derived(descentProfile ? integrateDescent(descentProfile) : null);
+  let descentDurationS = $derived(descentSummaryFly ? descentSummaryFly.totalDurationS : 0);
   let masterTimeline: JourneyTimeline = $derived(
-    makeTimeline(launchDurationS, Math.max(1, arcTotalDays), 0.15),
+    makeTimeline(
+      launchDurationS,
+      Math.max(1, arcTotalDays),
+      0.15,
+      descentDurationS,
+      descentProfile ? 0.1 : 0,
+    ),
   );
   let hasLaunchAct = $derived(!!launchProfile);
-  // Ascent real-time × pills vs cruise day/s pills — swapped at the seam.
+  // Ascent real-time × pills · descent real-time × pills · cruise day/s pills —
+  // swapped at each seam.
   let speedPills = $derived(
-    showLaunch ? [...ASCENT_SPEED_MULTIPLIERS] : isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90],
+    showLaunch
+      ? [...ASCENT_SPEED_MULTIPLIERS]
+      : showDescent
+        ? [...DESCENT_SPEED_MULTIPLIERS]
+        : isMoonMission
+          ? [0.1, 0.5, 1, 3]
+          : [1, 7, 30, 90],
   );
-  let activeSpeed = $derived(showLaunch ? launchSpeed : simSpeed);
+  let activeSpeed = $derived(showLaunch ? launchSpeed : showDescent ? descentSpeed : simSpeed);
   // The scrubber fraction for the live phase (∈ [0,1]).
   let masterU = $derived(
     showLaunch
@@ -1406,14 +1516,24 @@
           { phase: 'ascent', ascentT: Math.max(0, launchT), cruiseMetDays: 0 },
           masterTimeline,
         )
-      : pointToScrubber(
-          {
-            phase: 'cruise',
-            ascentT: launchDurationS,
-            cruiseMetDays: Math.max(0, simDay - arcTimeline.dep_day),
-          },
-          masterTimeline,
-        ),
+      : showDescent
+        ? pointToScrubber(
+            {
+              phase: 'descent',
+              ascentT: launchDurationS,
+              cruiseMetDays: arcTotalDays,
+              descentT: Math.max(0, descentT),
+            },
+            masterTimeline,
+          )
+        : pointToScrubber(
+            {
+              phase: 'cruise',
+              ascentT: launchDurationS,
+              cruiseMetDays: Math.max(0, simDay - arcTimeline.dep_day),
+            },
+            masterTimeline,
+          ),
   );
   // The value the scrubber input + fill render: the master fraction once a
   // launch act exists, else the plain cruise progress (unchanged).
@@ -1426,7 +1546,7 @@
     return Math.max(0, Math.min(100, (seam + (1 - seam) * frac) * 100));
   }
   function masterTogglePlay() {
-    if (showLaunch) {
+    if (showLaunch || showDescent) {
       isPlaying = !isPlaying;
       track('mission-play-toggle', { id: mission?.name ?? 'unknown', playing: isPlaying });
     } else {
@@ -1436,6 +1556,9 @@
   function masterSetSpeed(v: number) {
     if (showLaunch) {
       launchSpeed = v;
+      isPlaying = true;
+    } else if (showDescent) {
+      descentSpeed = v;
       isPlaying = true;
     } else {
       setSpeed(v);
@@ -1447,10 +1570,17 @@
     if (pt.phase === 'ascent') {
       // Scrubbing back into the ascent re-mounts LaunchScene fresh (resets any
       // completed warp) and drives it to the scrubbed MET.
+      showDescent = false;
       if (!showLaunch) showLaunch = true;
       launchT = pt.ascentT;
+    } else if (pt.phase === 'descent') {
+      // Scrubbing into the tail enters the descent act at the scrubbed EDL time.
+      showLaunch = false;
+      if (!showDescent) showDescent = true;
+      descentT = pt.descentT ?? 0;
     } else {
-      if (showLaunch) showLaunch = false;
+      showLaunch = false;
+      showDescent = false;
       simDay = arcTimeline.dep_day + pt.cruiseMetDays;
     }
   }
@@ -5284,7 +5414,19 @@
         if (showLaunch && isPlaying) {
           launchT = Math.min(launchDurationS, launchT + dt * launchSpeed);
         }
-        if (isPlaying && now >= launchDwellUntil && !cinematicFreeze && !showLaunch) {
+        // Master clock — descent phase: advance the EDL time (DescentScene is
+        // clock-driven, externalClock=true). At touchdown DescentScene's own
+        // loop fires the surface handoff → handleTouchdown navigates away.
+        if (showDescent && isPlaying) {
+          descentT = Math.min(descentDurationS, descentT + dt * descentSpeed);
+        }
+        if (
+          isPlaying &&
+          now >= launchDwellUntil &&
+          !cinematicFreeze &&
+          !showLaunch &&
+          !showDescent
+        ) {
           // Flyby slow-motion (#371): around closest approach, ease the
           // effective sim rate down so the gravity-assist swing is
           // watchable instead of a buzz. Only when the montage is on and a
@@ -5297,7 +5439,15 @@
             );
           }
           simDay += dt * effectiveSpeed;
-          if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
+          // At arrival, a landing mission enters the descent act instead of
+          // looping the cruise — closing the flight circle (RFC-034 §9).
+          if (descentProfile && simDay >= arcTimeline.arr_day) {
+            simDay = arcTimeline.arr_day;
+            showDescent = true;
+            descentT = 0;
+          } else if (simDay > arcTimeline.arr_day + 30) {
+            simDay = arcTimeline.dep_day;
+          }
           // Moon orbits advance in real wall-clock time, decoupled from
           // simSpeed, so they read as a calm drift at any play speed
           // instead of strobing. Frozen alongside simDay during holds.
@@ -6917,6 +7067,20 @@
   />
 {/if}
 
+{#if showDescent && descentProfile && descentDossier}
+  <DescentScene
+    profile={descentProfile}
+    mission={descentDossier}
+    {hudHidden}
+    onToggleHud={toggleHud}
+    bind:t={descentT}
+    bind:playing={isPlaying}
+    bind:speed={descentSpeed}
+    externalClock={true}
+    onComplete={handleTouchdown}
+  />
+{/if}
+
 {#snippet flyDebugContent()}
   {#if mission.flight?.events && outPts.length > 0}
     {@const flybyEventsForDebug = (mission.flight.events ?? []).filter(
@@ -7460,6 +7624,17 @@
           >
             <span aria-hidden="true">▲</span>
             <span>START WITH LAUNCH</span>
+          </button>
+        {/if}
+        {#if descentProfile}
+          <button
+            type="button"
+            class="opening-descent"
+            data-testid="fly-opening-descent"
+            onclick={startDescent}
+          >
+            <span aria-hidden="true">▼</span>
+            <span>SKIP TO LANDING</span>
           </button>
         {/if}
         <button
@@ -8826,6 +9001,34 @@
   .opening-launch:focus-visible {
     background: rgba(255, 190, 74, 0.18);
     border-color: rgba(255, 190, 74, 0.95);
+    color: #fff;
+    outline: none;
+  }
+  /* Descent CTA (landing missions) — the EDL counterpart of START WITH LAUNCH,
+     tinted the descent copper/salmon so it reads as the opposite bookend. */
+  .opening-descent {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    background: rgba(20, 12, 8, 0.55);
+    border: 1px solid rgba(216, 168, 130, 0.55);
+    border-radius: 4px;
+    color: rgba(240, 216, 191, 0.95);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      background 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+  .opening-descent:hover,
+  .opening-descent:focus-visible {
+    background: rgba(216, 168, 130, 0.18);
+    border-color: rgba(216, 168, 130, 0.95);
     color: #fff;
     outline: none;
   }

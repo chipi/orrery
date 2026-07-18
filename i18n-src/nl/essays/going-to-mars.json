@@ -1,0 +1,147 @@
+{
+  "title": "De muur",
+  "dek": "Elk voornemen voor bemand ruimtevaartuig eindigt uiteindelijk bij Mars, en Mars breekt al deze voornemen op dezelfde drie punten tegelijk: tijd, massa en het lichaam. Het is niet Apollo, maar verder. Het is een categorisch ander probleem — en het begrijpen waarom die zelfverzekerde vertrekdata blijven verschuiven is het begin van eerlijk inzicht.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Er is een datum die steeds verschuift. In 1969 vertelde Wernher von Braun aan een Senaatscommissie dat mensen tegen 1982 op Mars konden staan. In 1986 stelde de Nationale Commissie voor Ruimtevaart 2010 voor. In 2010 richtte een presidentieel beleidstoespraak zich op het midden van de jaren dertig. Elk decennium heeft een plan opgeleverd met specifieke hardware, specifieke tijdlijnen en een specifiek decennium waarin het zou gebeuren — en elk plan is op de een of andere manier uiteengevallen. De hardware verandert, het agentschap verandert, de motivering verandert, maar de datum wijkt betrouwbaar terug met ongeveer dezelfde afstand die beloofd was dicht te worden gebracht. Iets structureels is aan het werk."
+    },
+    {
+      "type": "prose",
+      "md": "Het structurele element is niet geld, hoewel geld altijd een beperking is. Het is niet politieke wil, hoewel die ook verdampt. Het is dat Mars tegelijkertijd drie problemen presenteert die ruimtevaart met bemanning nog niet samen heeft opgelost — tijd, massa en het lichaam — en ze afzonderlijk oplossen, één tegelijk, geeft een misleidend gevoel van vooruitgang. Samen versterken ze elkaar op manieren die de som aanzienlijk moeilijker maken dan de onderdelen. Mars is robotisch bereikt door de Verenigde Staten, Rusland, het Europese Ruimteagentschap, India, China en de Verenigde Arabische Emiraten. De voortroepers zijn al multinationaal, en elk eerlijk overzicht van wie probeert erheen te gaan moet van dat feit uitgaan."
+    },
+    {
+      "type": "heading",
+      "text": "Niet Apollo, maar verder"
+    },
+    {
+      "type": "prose",
+      "md": "De vergelijking met Apollo is bijna altijd de eerste zet in een Marsdebat, en het is bijna altijd misleidend. Wat Apollo deed werken was een specifieke convergentie: één duidelijk gedefinieerd doel, een nationale noodsituatie, in wezen onbegrensde budgetstijging in de jaren zestig, en een signaalvertraging van 1,3 seconden die bemande teams in real-time contact met het aardse grondstation hield. Niets daarvan bestaat voor Mars, en niets daarvan kan worden gerepliceerd door ervan te wensen."
+    },
+    {
+      "type": "prose",
+      "md": "De maan is, zoals [het essay over naar-de-maan-gaan](/essays/going-to-the-moon) het stelt, een oefenterrein: drie dagen reizen, abort mogelijk, radio real-time, catastrofale fouten te overleven. Mars is niets van dat alles. Op het dichtste punt ligt het ruwweg 54 miljoen kilometer weg; op het verst, meer dan 400 miljoen. Een radiosignaal duurt drie tot tweeëntwintig minuten onderweg. De snelste plausibele transfer duurt zes tot negen maanden coast. Zodra de trans-Mars-injectiebrand afgaat, is er geen baan naar huis op aanvraag. De bemanning die naar Mars vertrekt is gecommitteerd."
+    },
+    {
+      "type": "heading",
+      "text": "Je kunt niet vertrekken wanneer je wilt"
+    },
+    {
+      "type": "prose",
+      "md": "De eerste muur is tijd, en die begint voor de missie. Aarde en Mars draaien met verschillende snelheden om de zon — Aarde in ongeveer 365 dagen, Mars in ongeveer 687 — wat betekent dat de geometrie tussen hen constant verschuift. Een [Hohmann-overdrachtbaan](/science/transfers/hohmann-transfer), de minimale-energieboog van de ene planeet naar de andere, werkt alleen als de planeten in de juiste relatieve posities staan: vertrek moet zo worden getimed dat de ellips van de overdracht aan zijn verre uiteinde de baan van Mars op precies het moment snijdt dat Mars daar aankomt. Dat venster opent zich ruwweg elke 26 maanden. Missen en je wacht meer dan twee jaar op het volgende."
+    },
+    {
+      "type": "prose",
+      "md": "De uitlijning beïnvloedt niet alleen de uitgaande route maar ook de terugkeer. Een bemanning die op Mars aankomt wacht minstens 14 tot 18 maanden tot de planeten weer in een terugkeervenster cyclus terug zijn — daarom duurt een minimale-duur Marsmissie, met zes tot negen maanden uitgaande coast, een oppervlaktestop van 14 tot 18 maanden en zes tot negen maanden terugkeer, tot ruwweg 900 dagen totaal. Drie jaar, heen en terug, als ondergrens. Ingenieurs noemen de grafieken die startvensters en transitijden in kaart brengen \"varkenskoteletten-grafieken\" — contourkaarten van [delta-v](/essays/delta-v)-kosten tegen vertrek- en aankomstdatum die, met wat fantasie, eruit zien als het stuk waar ze naar genoemd zijn. De goedkope valleien in die grafieken zijn de vensters. De dure ruggen ertussen zijn de maanden waarop geen redelijke missie kan vliegen. Het venster voert de missie aan, niet andersom."
+    },
+    {
+      "type": "prose",
+      "md": "Het commitment-gevolg van het venster is absoluut. In tegenstelling tot een Apollo-maanlanding — waar een [vrije-terugkeer-traject](/science/transfers/free-return) abort-naar-Aarde beschikbaar hield voor veel van de uitgaande cruise — heeft een Marsmissie op een Hohmann-boog geen dergelijke optie zodra de trans-Mars-injectiebrand afgaat. Er is geen traject dat de bemanning snel naar huis brengt als iets misgaat onderweg. Er zijn hogere-energie abort-trajecten, maar die vereisen enorme propellantreserves die geen missie tot nu toe heeft voorgesteld mee te dragen, precies omdat propellant de tweede muur is."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/launch-window",
+      "kind": "diagram",
+      "caption": "Je vertrekt niet naar Mars wanneer je klaar bent; je vertrekt wanneer de twee planeten zich uitlijnen, wat gebeurt gedurende enkele weken ongeveer elke zesentwintig maanden. Mis het en je wacht twee jaar. En zodra de overdrachtbrand je aan de zes tot negen maanden coast commit, is er geen abort terug naar Aarde.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Alles, jaren lang"
+    },
+    {
+      "type": "prose",
+      "md": "De tweede muur is massa — en specifiek, de relatie tussen massa en afstand in een missie waarvan geen resupply mogelijk is. Op het Internationaal Ruimtestation arriveert elke paar maanden een Progress-vrachtwagen met voedsel, water, apparatuur en onderdelen. De levenssteunsystemen van het station zijn in sommige opzichten gesloten maar in andere lek; water wordt gerecycled, maar consumptiegoederen worden regelmatig aangevuld vanaf Aarde. Een Marsbemanning krijgt geen dergelijke resupply. Wat met hen vertrekt is wat ze hebben. Elke kilogram voedsel, elke liter water, elk onderdeel voor elk cruciaal systeem moet ofwel van Aarde worden meegenomen — met buitengewone lanceerkosten — ofwel ter plaatse op Mars worden geproduceerd."
+    },
+    {
+      "type": "prose",
+      "md": "Het teruggaande-propellantprobleem is de scherpste versie hiervan. Een bemande landingsvoertuig dat op het Martiaanse oppervlak afdaalt moet ook de propellant dragen om ervan af te stijgen, met een wachtend schip in een baan bij elkaar te komen en voor de terugkeer te branden. De massa van die propellant, opgeteld bij de lander, verhoogt de massa van de lander, wat meer propellant vereist om hem te landen, wat de massa verder verhoogt — een spiraal die zorgvuldig is bestudeerd en neerkomt op tientallen tonnen propellant die het Martiaanse oppervlak moeten bereiken. Dit van Aarde meebrengen op een enkele lanceerstapel is buitengewoon duur. De ontsnapping aan deze spiraal is [in-situ-hulpbronnenbenutting](/science/life-in-space/isru-resource-utilization): propellant op Mars maken van Martiaanse hulpbronnen, in plaats van het van Aarde te verslepen."
+    },
+    {
+      "type": "prose",
+      "md": "De ontsnapping aan de propellantspiraal is [in-situ-hulpbronnenbenutting](/science/life-in-space/isru-resource-utilization): propellant op Mars maken van Martiaanse hulpbronnen. Mars' atmosfeer is 95% kooldioxide; splits CO₂ elektrochemisch en je hebt zuurstof, of verwerk het met waterstof uit waterijs om methaanstof te produceren. [Perseverance](/missions?id=perseverance) droeg MOXIE — het Mars Oxygen In-Situ Resource Utilization Experiment — die zuurstof uit Martiaanse CO₂ op kleine schaal van 2021 tot 2023 maakte, met snelheden tot tien gram per uur. Het is het enige proof-of-concept van hulpbronnenproductie op een ander planeet. Schaling daarvan naar de tonnen propellant die een bemand opstijgvoertuig nodig heeft, naast een gesloten [levenssteunsysteem](/science/life-in-space/eclss-life-support) dat water en lucht drie jaar lang zonder resupply recirculeert, is een onopgelost technisch ingenieursprobleem van de eerste orde. Het pad van tien gram per uur naar een volledige propellantfabriek bestaat op papier. Het is nooit gebouwd."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/isru-return",
+      "kind": "diagram",
+      "caption": "Genoeg propellant van Aarde meebrengen om een bemanning terug van Mars af te tillen is bijna onmogelijk, dus het plan is het ter plaatse te maken. Perseverance's MOXIE-experiment haalde zuurstof uit de CO₂-atmosfeer — enkele grammen per uur, maar de eerste keer dat een fabriek ooit op een ander werelddeel is gebruikt.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "De zeven minuten, opnieuw — en dan nog wat"
+    },
+    {
+      "type": "prose",
+      "md": "De opening van de derde muur is goed gedocumenteerd. [Ingang, afdaling en landing op Mars](/science/mission-phases/edl) — de sequentie die het [zeven-minuten essay](/essays/seven-minutes) in detail uiteenzet — is de moeilijkste landing in het zonnestelsel om een specifieke en onverbiddelijke reden: Mars heeft net genoeg atmosfeer om dodelijke hitte op ingang te genereren, en niet bijna genoeg om je op alleen een parachute tot een landingssnelheid af te remmen. Elke Marslander in de geschiedenis heeft een op maat gemaakte combinatie nodig gehad van hitteschild, supersonische parachute, raketten en soms ingewikkelde mechanische vindingrijkheid — de airbags van [Mars Pathfinder](/missions?id=mars-pathfinder), de skyline-kraan van [Curiosity](/missions?id=curiosity) en [Perseverance](/missions?id=perseverance) — gewoon om hardware ter grootte van een auto op het oppervlak te krijgen. De skyline-kraan is, met ongeveer één ton rover, dicht bij de buitengrens van wat de huidige EDL-toolkit kan leveren. Een bemande Marslander zou van de orde van twintig tot veertig tonnen wegen."
+    },
+    {
+      "type": "prose",
+      "md": "Die kloof — tussen wat is geland en wat een bemande missie vereist — wordt de EDL-kloof genoemd, en het is niet een kleine technische uitbreiding van bestaand werk. Het is een regimeverandering. De fysica die parachuteslepen bepaalt, schaalt slecht met massa: een parachute groot genoeg om een veertig-tonnevoertuig in Mars' dunne atmosfeer zinvol af te remmen zou zo groot moeten zijn dat het structureel onpraktisch wordt bij supersonische snelheden. Alternatieve benaderingen — supersonische terugtrekstuwing, opblaasbare aeroshells, combinaties daarvan — zijn bestudeerd en op kleine schaal aangetoond. SpaceX's Starship, als het ooit Mars met een werkende voortgestuwde-landingsvermogen bereikt, zou de eerste poging op bemande-schaal Marsland vertegenwoordigen. Op het moment van schrijven heeft Starship geen volledig succesvolle orbitale demonstratie op Aarde voltooid. Zijn Marsprestatiedatum is een projectie van een onbewezen systeem. Elke geloofwaardige analyse van bemande Marsarchitecturen noemt EDL als een van de meest significante onopgeloste technische risico's. Dit is geen pessimisme. Het is het technische gegeven zoals het nu staat."
+    },
+    {
+      "type": "prose",
+      "md": "De signaalvertraging is van toepassing ongeacht EDL-architectuur. Tegen de tijd dat Aarde hoort dat een voertuig de Martiaanse atmosfeer is binnengegaan, is de zeven-minuten-sequentie al opgelost — succes of krater — daarom selecteerde [Perseverance](/missions?id=perseverance) autonome landingsplek met behulp van terreinrelatieve navigatie. Voor een bemande lander geldt dezelfde beperking: elke afdaalingsbeslissing is die van de bemanning alleen, en elke noodsituatie op het oppervlak wordt beantwoord door mensen elf tot tweeëntwintig lichtminuten van de dichtstbijzijnde hulp."
+    },
+    {
+      "type": "figure",
+      "image": "missions/perseverance/01",
+      "kind": "photo",
+      "caption": "Perseverance in de laatste seconden van zijn eigen landing, omlaag gelaten op kabels van de skyline-kraan boven Jezero — de moeilijkste aankomst in het zonnestelsel, geheel autonoom gevlogen. Een bemande lander zou tientallen keren zwaarder wegen, en niemand weet nog hoe die neer te zetten.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Het lichaam draagt het score bij"
+    },
+    {
+      "type": "prose",
+      "md": "De derde muur is het menselijk lichaam, en het is degene waarmee de missie-architectuur niet omheen kan engineeren. Mars heeft geen globaal magnetisch veld — zijn kern lang sinds gestold, waardoor de dynamo die eenmaal het schild genereerde, eindigde. Het magnetosfeer van Aarde leidt het merendeel van kosmische stralen en energetische zonne-deeltjes af; Mars biedt geen equivalent. Een zes-maanden-transitie door interplanetaire ruimte geeft een gemeten dosis van ruwweg 300 millisievert — ruim honderd keer een typisch jaar van natuurlijke achtergrondsstraling op Aarde, opgenomen in zes maanden. Op het Martiaanse oppervlak, zonder magnetosfeer, accumuleert dosis verder door secundaire straling. Een drie-jaar-rondtrip is geschat op 600 tot 1.200 millisievert totaal, afhankelijk van zonlekkerheid en afscherming — getallen gemeten in vlucht door instrumenten aan boord van [Curiosity](/missions?id=curiosity)."
+    },
+    {
+      "type": "prose",
+      "md": "Huidige NASA-beroepsmatige dosislimiet zijn ontworpen om levenslang excessief kankerrisico tot 3% te begrenzen. Een Marsrondreis overschrijdt deze limieten onder de meeste architectuur-aannames. De [stralingsblooming](/science/life-in-space/radiation-exposure) is een gekwantificeerde, gedocumenteerde risico die bestaande afschermingstechnologie niet adequaat mitigeert; elke limietherzieningtoestemming voor de missie zou een beleidsbeslissing zijn tegen erkend onzekerheidheid, niet een technisch probleem opgelost. Buiten straling, [botstofverlies](/science/life-in-space/bone-density-loss) en [spierdegeneratie](/science/life-in-space/muscle-atrophy) in [microgravitatie](/science/life-in-space/microgravity-physiology) kunnen worden vertraagd door tegenmaatregelen maar niet gestopt. ISS-bemanningen op zes-maanden-tours keren terug en hebben maanden rehabilitatie nodig; een Marsbemanning zou zes tot negen maanden in transitie-microgravitatie uitgaande, meer dan een jaar in Mars' een-derde zwaartekracht — een regime zonder langdurige menselijke gegevens — dan zes tot negen maanden in microgravitatie opnieuw bij terugkeer. Of het lichaam die sequentie zonder blijvende schade aan bot, cardiovasculaire functie of zicht kan volhouden is een open vraag die niet kan worden beantwoord uit huidige gegevens. Het kan alleen beantwoord worden door te gaan. En dan is er de drie-jaar sociale isolatie — een bemanning in een volume vergelijkbaar met een groot recreatief voertuig, voorbij real-time communicatie met Aarde, zonder redding beschikbaar — een psychologisch experiment waarvoor Antarctische winter-overwinterings en onderzeeër-inzendingen hooguit deelmodellen zijn."
+    },
+    {
+      "type": "figure",
+      "image": "essays/going-to-mars/radiation",
+      "kind": "diagram",
+      "caption": "Mars verloor zijn globaal magnetisch veld toen zijn kern afkoelde, dus het heeft geen schild tegen kosmische stralen of zonnestormen. Een bemanning ontvangt ruwweg 300 millisievert op alleen de zes-maanden-transitie — en over een drie-jaar-rondreis, een dosis die geen afscherming licht genoeg om te vliegen kan stoppen.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "De muur is het punt"
+    },
+    {
+      "type": "prose",
+      "md": "Het robotische gegeven op Mars is, als je ver genoeg terugtreedt, buitengewoon. [Viking 1](/missions?id=viking1) landde op Chryse Planitia op 20 juli 1976 — het eerste ruimtevaartuig dat succesvol op het Martiaanse oppervlak opereerde — en liep meer dan zes jaar. [Spirit](/missions?id=spirit) en [Opportunity](/missions?id=opportunity) reden over terrein dat geen mens heeft aangeraakt; [Curiosity](/missions?id=curiosity) leest sinds augustus 2012 de geologische geschiedenis van Gale Crater; [Perseverance](/missions?id=perseverance) zit nu in Jezero-krater en bergt rotskernen in cache die een toekomstige sample-return missie ooit naar Aarde mag brengen."
+    },
+    {
+      "type": "prose",
+      "md": "De mondiale dimensie van deze voortroepers wordt ondergewaardeerd. [Mangalyaan](/missions?id=mangalyaan) — de Mars Orbiter Mission van de Indian Space Research Organisation — arriveerde op 24 september 2014 op zijn eerste poging op Mars, waardoor India de vierde ruimtevaartorganisatie werd die Mars bereikt en de eerste Aziatische natie, met totale missiekosten van ongeveer 74 miljoen dollar, minder dan de productiebudget van de film *Gravity*. Het opereerde bijna acht jaar, ver voorbij zijn zes-maanden ontwerp leven. [Tianwen-1](/missions?id=tianwen1), gelanceerd door China in juli 2020, voerde een prestatie uit die geen ruimtevaartorganisatie op een eerste Marspoging had bereikt: het orbiteerde, landde en zette een rover uit — Zhurong — alles in één missie. Zhurong reed vanaf mei 2021 over Utopia Planitia en gaf geologische en atmosferische gegevens meer dan een jaar terug. Die prestatie, op de eerste poging, van een nationaal Marprogramma dat voor de 21e eeuw niet bestond, schets de geopolitieke kaart van waar de mogelijkheid om naar Mars te gaan momenteel woont."
+    },
+    {
+      "type": "prose",
+      "md": "Tegen deze robotische stichting staat Starship als het huidige middelpunt van bemande Marsplanning. SpaceX heeft architecturen beschreven waarin volledig herbruikbare, volledig hertankte voertuigen grote bemanningen op zes-maanden-transits dragen, voortgestuwd landen en terugkeerpropellant op het oppervlak maken via ISRU. De ambitie is echt; een volledig herbruikbaar voertuig op Starship's schaal zou de massavergelijking substantieel veranderen. Maar op het moment van schrijven heeft Starship geen volledig succesvolle orbitale demonstratie op Aarde voltooid. Het heeft niet in-space propellant-transfer op schaal aangetoond, voortgestuwde landing op bemande-lander-massa, of enig van de levenssteunsystemen en stralingsbeperkingen die de hierboven genoemde muren vereisen. Starship kan die dingen uiteindelijk aanpakken. Het is, nu, een enorme en serieus gefinancierde weddenschap — en een weddenschap is geen oplossing."
+    },
+    {
+      "type": "prose",
+      "md": "Wat Mars tot de muur maakt is niet dat het onmogelijk is. De orbitale mechanica zijn opgelost; de [overdracht-trajecten](/science/transfers/hohmann-transfer) zijn in kaart gebracht; de [varkenskoteletten-grafieken](/science/transfers/lambert-problem) bestaan voor elk venster tot het einde van de eeuw. Wat het tot de muur maakt is dat het vereist dat tijd, massa en het lichaam tegelijk worden opgelost, op een verwijdering waar elk falen definitief is en geen hulp komt. [Het essay over naar-de-maan-gaan](/essays/going-to-the-moon) stelt de maanterugkeer als een repetitie juist omdat het daar verkeerd doen te overleven is. Mars biedt dat niet. De eerste bemande missie zal de eerste keer zijn dat elk systeem samen in de werkelijke omgeving werkt, met werkelijke mensen erin, op een werkelijk driejarig commitment — en er is geen tweede poging ingebouwd in het schema."
+    },
+    {
+      "type": "prose",
+      "md": "De datum blijft verschuiven omdat het werk echt is en het werk is hard. Het eerlijke antwoord op \"wanneer zullen mensen op Mars landen\" is: wanneer de drie muren zijn aangepakt — niet wanneer vertrouwen hoog is, niet wanneer een schema dat zegt, niet wanneer oprichters ambitie het eist, maar wanneer de EDL-architectuur op bemande schaal is aangetoond, wanneer een gesloten levenssteunsysteem drie jaar operatie is bewezen, wanneer het stralingsveld ofwel is beperkt ofwel wordt aanvaard op bekende termen, en wanneer een terugkeerpropellantvoorraad op Mars bestaat voordat de bemanning Aarde verlaat. Sommige van dat werk is gaande. Niets is af. De muur is nog daar, en de maatstaf van elk plan is of het de muur rechtstreeks aanschouwt of de moeilijkste delen met optimisme bedekt. De eerstgenoemde is hoe je uiteindelijk door komt. De laatstgenoemde is hoe je de datum beweegt."
+    },
+    {
+      "type": "figure",
+      "image": "missions/tianwen1/01",
+      "kind": "photo",
+      "caption": "China's Tianwen-1 leverde een orbiter, een lander en de Zhurong-rover in één zeer eerste poging in 2021 op Mars — een sequentie die geen ander land in één missie heeft bereikt. Mars is de muur juist omdat zovele eraan zijn gebroken, en een paar, van meer en meer van de wereld, niet.",
+      "align": "wide",
+      "credit": "CNSA"
+    }
+  ]
+}

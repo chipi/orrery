@@ -1,0 +1,159 @@
+{
+  "title": "Le mauvais trésor",
+  "dek": "La manchette affirme que les astéroïdes contiennent des quadrillions de dollars d'or et de platine. La manchette est fausse — non pas sur le métal, mais sur l'argent. Le véritable argument en faveur des ressources astéroïdales va dans une direction entièrement opposée.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Tous les quelques ans, quelqu'un fait l'arithmétique sur l'astéroïde 16 Psyché et annonce, dans un communiqué de presse haletant, que le corps riche en métaux en orbite dans la [ceinture d'astéroïdes](/science/planets/asteroid-belt) contient du fer, du nickel et des métaux précieux d'une valeur d'environ dix quintillions de dollars. Le chiffre est toujours stupéfiant. Il est aussi, dans n'importe quel sens économique significatif, dénué de sens — et comprendre pourquoi il est dénué de sens mène directement à ce que véritable argument en faveur des ressources astéroïdales est réellement, ce qui est presque l'opposé de la version de la manchette."
+    },
+    {
+      "type": "prose",
+      "md": "Commençons par le nombre lui-même. Le marché mondial du platine vaut, au cours d'une année donnée, à peu près 5 milliards de dollars. Si vous pouviez livrer le contenu en métaux du groupe du platine d'un astéroïde métallique modeste à la Terre et le vendre demain, vous ne feriez pas fortune. Vous effondreriez le marché. Le prix du platine découle entièrement de sa rareté ; supprimez la rareté et vous supprimez le prix. La valeur, pour une matière première, est établie à la marge — par la dernière unité vendue, non par le volume total en existence. L'astéroïde de 10 quintillions de dollars, exploité avec succès et livré à la surface de la Terre, vaudrait à peu près ce que vaut le minerai de fer : pas grand-chose par kilogramme. Mais cet argument d'effondrement du marché est presque secondaire, car il suppose la livraison à la Terre — et la livraison à la Terre est là où l'arithmétique s'égare bien avant que le marché n'entre en jeu. C'est là que l'[équation de fusée](/science/propulsion/tsiolkovsky) ferme la discussion."
+    },
+    {
+      "type": "heading",
+      "text": "La gravité est le comptable"
+    },
+    {
+      "type": "prose",
+      "md": "Le [budget delta-v](/science/propulsion/dv-budget) d'une mission de la Terre vers un astéroïde proche de la Terre est, pour une cible favorable, quelque part autour de 6 km/s — comparable à atteindre Mars. Ramener du matériel de cet astéroïde à l'orbite terrestre coûte encore plus, et le faire de l'orbite terrestre à la surface de la Terre nécessite de survivre à l'atmosphère. Tout cela avant d'avoir fait une quelconque exploitation minière. L'[équation de fusée](/science/propulsion/tsiolkovsky) ne note pas sur une courbe : chaque kilogramme de charge utile que vous voulez ramener de l'espace profond doit être égalé, au lancement, par suffisamment de propergol pour le ramener, ce qui lui-même doit être égalé par du propergol pour transporter ce propergol, et ainsi de suite dans la régression que l'équation décrit. La [contrainte de Tsiolkovsky](/science/propulsion/tsiolkovsky), qui n'a pas été abrogée depuis 1903, rend les nombres brutaux."
+    },
+    {
+      "type": "prose",
+      "md": "Clairement dit : vous tirez du matériel d'un puits gravitationnel — non celui de la Terre, mais celui du système solaire. L'astéroïde est, certes, minuscule, avec une gravité de surface un millième de celle de la Terre. En s'en échapper ne coûte presque rien en [delta-v](/essays/delta-v). Mais vous vous retrouvez alors dans l'espace interplanétaire, et la Terre se trouve au fond d'un très grand puits gravitationnel, et y arriver avec une vitesse significative signifie dépenser du carburant pour ralentir, ou accepter la violence du freinage aérodynamique, ou les deux. Le coût économique du transport de masse à travers les distances interplanétaires, puis de sa décélération sécuritaire, est, avec les technologies de propulsion actuelles et prévisibles, tellement supérieur à la valeur marchande de toute matière première que le cas commercial du retour de matériaux en vrac à la Terre ne peut pas se concrétiser. Ce n'est pas une lecture pessimiste. C'est ce que disent les chiffres d'[impulsion spécifique](/science/propulsion/specific-impulse) quand vous les exécutez honnêtement."
+    },
+    {
+      "type": "prose",
+      "md": "C'est aussi pourquoi la première génération de ventures commerciales d'astéroïdes — Planetary Resources, fondée en 2012, et Deep Space Industries, fondée en 2013 — a échoué en une décennie, non pas parce que les astéroïdes ne sont pas là, mais parce que le marché du platine astéroïdal livré à la Terre n'existe à aucun prix que l'[économie delta-v](/essays/delta-v) peut soutenir. La logique de traîner la richesse à la surface de la Terre était cassée dès le départ."
+    },
+    {
+      "type": "heading",
+      "text": "Le puits est le problème"
+    },
+    {
+      "type": "prose",
+      "md": "Inversez maintenant la question. Au lieu de demander quel coût pour amener du matériel de l'espace à la Terre, demandez quel coût pour amener du matériel de la Terre à l'espace. La réponse est la même équation de fusée, tournant dans l'autre sens, et elle est tout aussi brutale. Obtenir un kilogramme en orbite terrestre basse sur un [lanceur réutilisable](/essays/reusable-launchers) coûte, au mieux, quelques milliers de dollars aujourd'hui — dramatiquement moins que les dizaines de milliers que ça coûtait il y a une décennie. Transporter ce kilogramme plus loin, vers une orbite de transfert lunaire ou vers une trajectoire destination Mars, coûte davantage, parce que vous grimpez plus haut hors du puits gravitationnel terrestre et l'[arithmétique d'Oberth](/science/propulsion/oberth-effect) qui rend les brûlures profondes efficaces ne peut pas corriger le problème fondamental du rapport de masse."
+    },
+    {
+      "type": "prose",
+      "md": "C'est ce que le cadre du puits gravitationnel clarifie. La surface de la Terre se trouve au fond d'un puits qui coûte à peu près 9,4 km/s de delta-v pour s'échapper entièrement. Chaque kilogramme de nourriture, carburant, eau, air, matériau structurel ou blindage contre les radiations qu'un vaisseau spatial habité porte au-dessus de l'orbite terrestre basse a payé ce péage. Le péage n'est pas une surcharge que l'ingénierie intelligente peut éviter ; c'est une conséquence physique d'être sur la Terre, qui est une grande planète avec un champ gravitationnel profond. Si vous voulez construire et opérer des vaisseaux spatiaux au-dessus de l'orbite terrestre basse — pour une base lunaire, pour un transit Mars, pour n'importe quoi de soutenu dans l'espace profond — le coût dominant n'est pas votre matériel. C'est le propergol brûlé pour soulever votre matériel et ses consommables hors du puits à chaque fois."
+    },
+    {
+      "type": "prose",
+      "md": "Le véritable argument économique en faveur des ressources astéroïdales commence précisément ici, et il va dans la direction opposée à la manchette. Au lieu d'amener du matériel des astéroïdes à la Terre, la question est : pouvons-nous utiliser du matériel qui est *déjà* au-dessus du puits gravitationnel terrestre pour éviter de l'enlever de la surface ? Pouvons-nous, en effet, trouver un dépôt de carburant et une quincaillerie déjà en orbite — ou suffisamment proche pour que le coût de livraison soit mesuré en fractions de km/s plutôt que dix km/s — et cesser de payer le péage de lancement sur chaque kilogramme de matériel qu'une économie de l'espace profond a besoin ? La réponse, si les missions de reconnaissance sont à croire, est oui. Mais pas pour l'or. Pour l'eau."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/the-well",
+      "kind": "diagram",
+      "caption": "Chaque kilogramme lancé de la Terre paie un péage brutal en delta-v juste pour s'échapper du puits gravitationnel de la planète. N'importe quoi déjà dans l'espace — un astéroïde dérivant au-dessus du rebord — a ce prix payé. C'est pourquoi un litre d'eau garé en orbite vaut plus qu'un litre d'or assis sur le sol.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "L'eau est le minerai"
+    },
+    {
+      "type": "prose",
+      "md": "Les astéroïdes chondrites carbonacées — les classes de type C et apparentées qui représentent la majorité des objets proches de la Terre — contiennent des quantités significatives de minéraux hydratés : argiles et phyllosilicates qui retiennent des molécules d'eau dans leur structure cristalline à des niveaux variant de quelques pour cent à plus de vingt pour cent en masse. Certains contiennent aussi des composés organiques. L'eau ne se trouve pas en flaques ; elle est chimiquement liée, et l'extraire nécessite de chauffer le matériel pour dégager la vapeur d'eau, puis de la condenser. Mais l'énergie pour cela peut, en principe, provenir de concentrateurs solaires dans l'espace. Le résultat est de l'eau — et l'eau, dans le contexte d'un programme d'espace profond, n'est pas principalement une chose à boire."
+    },
+    {
+      "type": "prose",
+      "md": "L'électrolyse divise l'eau en hydrogène et oxygène : la combinaison de propergol chimique la plus énergétique jamais utilisée en vol. L'hydrogène et l'oxygène, liquéfiés et stockés, sont du propergol de fusée. Le [budget delta-v](/essays/delta-v) pour un transfert Mars est d'environ 3,6 km/s depuis l'orbite terrestre basse ; un dépôt de propergol à un [point de Lagrange](/science/transfers/hohmann-transfer) convenable ou en orbite terrestre proche, approvisionné à partir d'eau dérivée d'astéroïdes, changerait dramatiquement la masse qui doit être lancée de la Terre pour n'importe quelle mission au-delà de LEO. Le carburant est la fraction de masse dominante de n'importe quel vaisseau spatial — la Saturn V qui a transporté les astronautes d'Apollo vers la Lune était [85 % propergol en masse](/essays/delta-v). Un dépôt qui fournit du carburant sans qu'il soit nécessaire de le lancer de la surface de la Terre n'est pas une commodité logistique. Il restructure l'économie entière de l'espace profond."
+    },
+    {
+      "type": "prose",
+      "md": "Au-delà du carburant, l'eau fournit de l'oxygène pour respirer. Le même matériau carbonacé fournit du carbone et de l'azote. La masse en vrac — la roche, dans la plupart des cas, pas du métal — fournit un blindage contre les radiations : un vaisseau spatial en transit vers Mars se trouve en dehors de la magnétosphère terrestre pendant six à neuf mois, et soulever suffisamment de masse pour protéger un équipage des rayons cosmiques coûte énormément si chaque kilogramme doit être lancé de la surface de la Terre. Rien de tout cela n'a la glamour du platine. Tout cela est plus précieux pour une économie basée dans l'espace que le platine l'est. L'argument n'est pas sur le trésor. C'est sur l'[utilisation des ressources in-situ](/science/life-in-space/isru-resource-utilization) — la seule approche qui rend la présence humaine soutenue au-delà de la Terre physiquement réalisable — et la ressource qui compte le plus n'est pas la plus rare ou la plus chère, mais celle qui est la plus chère à lancer de la Terre : la masse de propergol. L'[essai sur la descente sur la lune](/essays/going-to-the-moon) fait le même argument au pôle sud lunaire, pour les mêmes raisons. La Lune et les astéroïdes carbonacés proches de la Terre sont le même argument en deux endroits différents."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/water-is-the-ore",
+      "kind": "diagram",
+      "caption": "Divisez l'eau astéroïdale et vous avez de l'hydrogène et de l'oxygène — du propergol de fusée — plus de l'air pour respirer, de l'eau pour boire, et de la roche en vrac pour un blindage contre les radiations. Le prix n'a jamais été du métal à revendre à la maison ; c'est un dépôt de carburant qui est déjà dans le ciel.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Nous les avons déjà touchés"
+    },
+    {
+      "type": "prose",
+      "md": "La reconnaissance qui soutiendrait tout cela n'est pas théorique. Elle a été faite, deux fois, par le Japon, et une fois par les États-Unis — et ce qu'elle a trouvé était à la fois plus intéressant et plus humiliant que la version de la manchette ne l'a suggéré."
+    },
+    {
+      "type": "prose",
+      "md": "[Hayabusa](/missions?id=hayabusa1) du Japon a atteint l'astéroïde de type S Itokawa en septembre 2005. Son mécanisme de collecte d'échantillons avait dysfonctionné, mais le vaisseau spatial est revenu sur Terre en juin 2010 portant environ 1 500 particules submillimètriques — les premiers échantillons jamais retournés d'un astéroïde. L'analyse a confirmé la minéralogie de chondrite LL ordinaire : non pas la cible carbonacée riche en eau que l'argument ISRU nécessite, mais la preuve de concept que vous pouvez atteindre un astéroïde, le toucher et ramener des morceaux."
+    },
+    {
+      "type": "prose",
+      "md": "[Hayabusa2](/missions?id=hayabusa2), lancée en décembre 2014, a été conçue pour aller plus loin. Sa cible était Ryugu, un astéroïde proche de la Terre de type C — la variété carbonacée que les modèles d'hydratation prédisaient devrait contenir des minéraux porteurs d'eau. Le vaisseau spatial est arrivé à Ryugu en juin 2018 et a passé un an et demi à l'étudier avant d'effectuer une collecte d'échantillons en février et juillet 2019. En juillet 2019, il a également déployé un petit impacteur qui a créé un cratère à la surface de Ryugu, puis a collecté du matériel du sous-sol exposé — du matériel qui n'avait pas été altéré par l'altération spatiale. La capsule est revenue sur Terre en décembre 2020. L'analyse a confirmé ce que les modèles prédisaient : le matériel de Ryugu est riche en minéraux hydratés, contient des composés organiques incluant des précurseurs d'acides aminés, et en composition chimique est étroitement lié aux chondrites CI — la classe la plus primitive et la plus riche en eau de chondrites carbonacées. Le minerai que l'argument ISRU nécessite y est. Ryugu n'est pas un corps unique ; les astéroïdes de type C représentent à peu près 75 % de tous les astéroïdes de la ceinture principale et une fraction significative des objets proches de la Terre."
+    },
+    {
+      "type": "prose",
+      "md": "[OSIRIS-REx](/missions?id=osiris-rex) de la NASA a atteint l'astéroïde carbonacé Bennu en décembre 2018 et a passé presque deux ans le cartographiant avant d'effectuer sa collecte d'échantillons Touch-And-Go en octobre 2020. La capsule est revenue sur Terre en septembre 2023 avec environ 120 grammes de matériel — le plus grand échantillon jamais retourné d'un astéroïde. L'analyse a confirmé des minéraux argileux hydratés et des composés riches en carbone : les mêmes ingrédients que l'équipe Hayabusa2 a trouvés à Ryugu, sur un corps différent, atteint par une nation différente, via une trajectoire différente. Le résultat était le même. Ce n'est pas une coïncidence. C'est une confirmation que la composition carbonacée de type C — riche en eau, riche en composés organiques — est la règle pour ces corps, pas l'exception."
+    },
+    {
+      "type": "figure",
+      "image": "essays/asteroid-mining/the-recon",
+      "kind": "diagram",
+      "caption": "Trois missions robotiques ont déjà touché et prélevé des échantillons d'astéroïdes : Hayabusa du Japon (Itokawa, 2010, le premier jamais), Hayabusa2 (Ryugu, 2020), et OSIRIS-REx de la NASA (Bennu, 2023). Ce qui est revenu était de l'argile porteuse d'eau et des composés organiques — de gravats lâches, pas du métal solide.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/hayabusa2/01",
+      "kind": "photo",
+      "caption": "Hayabusa2 à Ryugu — le deuxième retour d'échantillons d'astéroïde de la JAXA, et la mission assez audacieuse pour tirer un impacteur en cuivre à la surface et créer un cratère frais avant de ramasser ce qu'elle a exposé.",
+      "align": "wide",
+      "credit": "JAXA"
+    },
+    {
+      "type": "heading",
+      "text": "Des gravats, pas de roche"
+    },
+    {
+      "type": "prose",
+      "md": "Voici ce que les missions ont aussi découvert, et ce que les manchettes sur l'exploitation minière astéroïdale minimisent systématiquement : Bennu et Ryugu ne sont pas des corps solides. Ce sont des amas de gravats."
+    },
+    {
+      "type": "prose",
+      "md": "Un amas de gravats est un agrégat de matériel mal consolidé — rochers, cailloux, poussière — tenus ensemble par une gravité si faible que marcher à sa surface nécessiterait de considérer attentivement si vous pourriez ne pas rebondir entièrement. La gravité de surface de Bennu est d'environ 6 micronewtons par kilogramme. Un astronaute se tenant à son équateur pèserait moins d'un milligramme en termes terrestres. Essayer d'ancrer un système d'exploitation — pour forer, excaver, pousser contre la surface avec n'importe quelle force — génère une réaction qui pourrait repousser l'équipement d'exploitation de l'astéroïde. L'événement TAG (Touch-and-Go) qu'OSIRIS-REx a utilisé pour collecter son échantillon a duré environ six secondes de contact avec la surface ; pendant ces six secondes, la tête de prélèvement du vaisseau spatial s'est enfoncée plus profondément dans la surface que prévu, parce que le matériel de Bennu est moins consolidé qu'un château de sable. L'équipe de mission a dit plus tard que le vaisseau spatial se serait enfoncé entièrement si les propulseurs n'avaient pas tiré pour le repousser. Ce n'est pas un environnement hostile de la même façon que Mars est hostile. C'est un environnement hostile de la façon qu'un sac de sable lâche flottant en microgravité l'est : fondamentalement différent de chaque hypothèse que l'ingénierie d'exploitation minière terrestre fait."
+    },
+    {
+      "type": "prose",
+      "md": "L'expérience d'impacteur d'Hayabusa2 a confirmé la même image d'un angle différent. Son impacteur en cuivre de 2,5 kg a créé un cratère d'à peu près 14 mètres de diamètre et 2 mètres de profondeur — plus grand que prévu, parce que la surface était plus poreuse qu'attendu. La mission [DART](/missions?id=dart), qui en septembre 2022 a réorienté l'astéroïde Dimorphos en envoyant délibérément un vaisseau spatial dans sa direction, a produit un panache d'éjecta et un changement de période orbitale tous deux plus importants que ce que les modèles de corps solides prédisaient — cohérent, encore une fois, avec un agrégat faiblement lié. Travailler dans cet environnement n'est pas une question de mettre à l'échelle l'exploitation minière terrestre et d'ajouter des combinaisons spatiales. Ancrer contre une surface contre laquelle vous ne pouvez pas pousser, excaver du matériel qui s'envole à quelques centimètres par seconde, contenir l'éjecta en microgravité — ce sont des problèmes d'ingénierie non résolus contrairement à n'importe quoi dans l'histoire de l'industrie d'extraction. La science est confirmée. L'ingénierie n'a pas encore commencé sérieusement."
+    },
+    {
+      "type": "figure",
+      "image": "missions/osiris-rex/01",
+      "kind": "photo",
+      "caption": "OSIRIS-REx tendant la main pour toucher Bennu — et trouvant non pas un sol solide mais un amas de gravats si faiblement lié que la tête d'échantillonnage s'est enfoncée directement dedans, avalant presque le bras. « Exploiter » un corps comme celui-ci est contrairement à n'importe quoi jamais fait sur Terre.",
+      "align": "wide",
+      "credit": "NASA/Goddard/University of Arizona"
+    },
+    {
+      "type": "heading",
+      "text": "L'économie au-dessus du puits"
+    },
+    {
+      "type": "prose",
+      "md": "La question à laquelle la vue à long terme doit répondre est : où cela va-t-il ? L'argument ISRU est logiquement solide. La reconnaissance confirme que les ressources existent. Les défis d'ingénierie sont réels mais pas en principe insolubles. L'économie, cependant, nécessite quelque chose qui n'existe pas encore : la demande de ressources dans l'espace."
+    },
+    {
+      "type": "prose",
+      "md": "C'est le problème de calendrier qui a tué la première vague commerciale. Planetary Resources et Deep Space Industries construisaient des chaînes d'approvisionnement pour une base de clients qui n'existait pas encore — spécifiquement, pour l'économie affamée de propergol au-delà de LEO qu'un programme lunaire soutenu et les opérations Mars éventuelles créeraient. En 2012, quand Planetary Resources a été fondée, la [révolution des lanceurs réutilisables](/essays/reusable-launchers) n'était pas encore prouvée, le programme Artemis n'existait pas, aucunes stations spatiales commerciales n'étaient en cours de développement, et l'idée de missions humaines Mars régulières était fermement dans l'avenir spéculatif. Les compagnies construisaient, en termes d'infrastructure, des stations-service avant l'autoroute. L'infrastructure presque toujours doit attendre le trafic avant de devenir viable, et l'extraction de ressources spatiales n'est pas différente."
+    },
+    {
+      "type": "prose",
+      "md": "La situation au milieu des années 2020 est différente sur un point : le trafic est plus proche. Les [véhicules de lancement réutilisables](/essays/reusable-launchers) ont changé l'économie d'atteindre l'orbite. Les programmes de stations commerciales sont en cours de développement. Le programme Artemis, aussi retardé soit-il, a remis les opérations lunaires habitées sur les horizons de planification. La [mission Psyche](/missions?id=psyche-mission) de la NASA, lancée en octobre 2023 et en route vers l'astéroïde métallique 16 Psyché, fournira la caractérisation télécommandée la plus approfondie d'un astéroïde métallique jamais tentée. Les clients potentiels de la chaîne d'approvisionnement ne sont plus purement hypothétiques. Mais plus proche ce n'est pas ici. Un dépôt de propergol desservant des vaisseaux spatiaux destination Mars est, au minimum, à une décennie de la réalité opérationnelle — et cette estimation est optimiste, subordonnée à un rythme de développement lunaire qui a constamment glissé. La lecture honnête : les ressources astéroïdales deviennent économiquement viables quand, et seulement quand, il y a une activité humaine soutenue au-delà de l'orbite terrestre basse à une échelle qui rend le carburant, l'air et le blindage la contrainte contraignante. Cette contrainte s'approche. L'écart entre s'approcher et être ici a englouti des entreprises auparavant."
+    },
+    {
+      "type": "prose",
+      "md": "Ce qui reste, après que le battage médiatique a été dégonflé et l'erreur d'effondrement du marché débarrassée, est quelque chose de plus durable et moins excitant pour un communiqué de presse : un argument structurel que l'économie à long terme de la présence humaine au-delà de la Terre ne peut pas être faite pour fonctionner sans exploiter les ressources qui sont déjà au-dessus du puits gravitationnel. Le système solaire contient plus d'eau, plus de carbone, plus de matériau structurel que la totalité de la civilisation humaine a jamais consommé, distribué à travers des millions de corps dont la gravité de surface coûte presque rien pour surmonter, assis au-dessus de la seule chose qui rend le vol spatial cher. L'argument n'est pas sur les quintillions de dollars. C'est sur l'[équation de fusée](/science/propulsion/tsiolkovsky) et la direction vers laquelle elle pointe."
+    },
+    {
+      "type": "prose",
+      "md": "La contrainte de Tsiolkovsky a une échappatoire. Ce n'est pas de la chimie intelligente ou une nouvelle propulsion radicale — bien que la [nouvelle propulsion](/essays/new-propulsion) aide aux marges. L'échappatoire n'est pas de lancer les consommables en premier lieu. C'est les trouver déjà au-dessus du puits et les utiliser là. [Hayabusa2](/missions?id=hayabusa2) a ramené 5,4 grammes de Ryugu sur Terre. [OSIRIS-REx](/missions?id=osiris-rex) a ramené 120 grammes de Bennu. Les prochaines missions dans cette séquence ne ramèneront pas du matériel à la maison. Elles apprendront comment le laisser où il est — et l'utiliser là. C'est le point que la manchette n'atteint jamais. [Explorez les petits corps dans l'atlas](/explore) et ce que vous regardez n'est pas un magasin de trésor livrable à la Terre. C'est la quincaillerie pour une civilisation qui n'est pas encore arrivée."
+    }
+  ]
+}

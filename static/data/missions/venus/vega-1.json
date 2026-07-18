@@ -78,6 +78,12 @@
         "label": "Halley — flyby (Halley Armada)",
         "description": "Closest approach 8,890 km from Halley's nucleus on 1986-03-06 — first close visit to any comet, 8 days before Giotto's much closer pass. Vega 1's imagery + dust-impact data informed the Giotto-target final approach geometry: \"the Halley Armada\" cooperative tracking enabled Giotto to safely fly to 596 km without an unknown nucleus position."
       }
-    ]
+    ],
+    "arrival": {
+      "entry_velocity_km_s": 10.7,
+      "edl_system": "aeroshell",
+      "edl_duration_s": 2989,
+      "touchdown_velocity_ms": 11.12
+    }
   }
 }

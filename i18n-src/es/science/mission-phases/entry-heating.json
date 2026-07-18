@@ -1,0 +1,15 @@
+{
+  "title": "Calentamiento de entrada",
+  "intro_sentence": "Por qué impactar una atmósfera a kilómetros por segundo calienta una nave a miles de grados — y cómo un escudo térmico aguanta el castigo.",
+  "narrative_101": [
+    "Una nave que llega a un planeta se mueve deprisa — 5 a 6 km/s en Marte, casi 11 km/s en Venus. Cuando impacta contra la parte superior de la atmósfera no tanto roza el aire como lo comprime. El gas que se acumula frente al vehículo se comprime tan violentamente que se calienta a miles de grados y brilla — la bola de fuego que ves alrededor de cualquier cápsula que regresa.",
+    "Es un mito común que este calor provenga de la fricción. Casi todo proviene de la compresión: la nave no puede apartar el aire lo bastante rápido, así que se forma una onda de choque justo delante de ella y el gas atrapado se sobrecalienta. Cuanto más rápida sea la entrada, más caliente la onda de choque — por eso Venus, con las entradas más rápidas y el aire más denso, es el entorno de entrada más hostil del sistema solar.",
+    "El vehículo sobrevive protegido por un escudo térmico — una cubierta roma y ablativa que enfrenta el flujo. Lo de roma es deliberado: una nariz afilada concentraría el calor, mientras que un escudo ancho mantiene la onda de choque a distancia y distribuye la carga. La superficie del escudo se carboniza y se descascara a propósito, llevándose el calor consigo, así que la nave protegida detrás permanece fría."
+  ],
+  "body_paragraphs": [
+    "Dos picos importan durante la entrada y no coinciden. El pico de calentamiento ocurre arriba, donde la nave aún es rápida y la velocidad de calentamiento (que escala aproximadamente con la velocidad al cubo) es enorme incluso en aire fino. El pico de desaceleración ocurre más abajo, en aire más denso, donde la fuerza en la nave es mayor — las entradas en Marte alcanzan picos de 8–15 g, las entradas en Venus de 100–350 g. La estructura de una sonda se dimensiona para el pico de g; su escudo térmico se dimensiona para el pico de calor.",
+    "La vaina de plasma que brilla alrededor de la nave también bloquea la radio: durante un minuto o dos en el pico de calentamiento, el gas ionizado envuelve la nave y corta las comunicaciones — el famoso apagón de entrada. Los controladores simplemente esperan; la nave vuela una secuencia precargada, por su cuenta, a través de la parte más caliente de la trayectoria.",
+    "En `/fly`, el medidor de calentamiento aerodinámico del HUD de descenso es un indicador relativo para esto — sube cuando la nave muerde la atmósfera y alcanza su pico mucho antes de tocar tierra, luego cae cuando la nave desacelera. Activa la capa de ciencia de arrastre durante cualquier entrada a Marte o Venus con `?descent=1` para ver cómo la desaceleración aumenta conforme el aire se vuelve más denso."
+  ],
+  "diagram_caption": "Calentamiento de entrada: un escudo térmico roma mantiene una onda de choque de proa delante de la nave; el gas comprimido se sobrecalienta y brilla mientras el escudo ablaciona el calor."
+}

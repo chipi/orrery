@@ -1,0 +1,178 @@
+{
+  "title": "Den Mars in der Finsternis finden",
+  "dek": "Wie steuert man zu einem sich bewegenden Planeten über hundert Millionen Kilometer des Nichts, ohne Karte, ohne Horizont und mit einer zwanzigminütigen Verzögerung bei jedem Befehl? Die Antwort aus siebzig Jahren ist seltsamer und menschlicher, als die Maschinen vermuten lassen.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Es gibt keine Straßen im All. Keine Küste, keinen Horizont, keinen Orientierungspunkt zum Steuern — und das eine, das jeder Fahrer auf der Erde heute für selbstverständlich hält, eine Satellitenkonstellation, die *du bist hier* flüstert, existiert nur in einer dünnen Schale wenige tausend Kilometer dick um einen Planeten. Verlasse sie, und du bist allein mit einem dreiteiligen Problem: **Wo bin ich? In welche Richtung bin ich ausgerichtet? Und wie komme ich von hier zu einem Ort, der sich selbst bewegt, schnell ist, und nicht da sein wird, wenn ich ankomme?**"
+    },
+    {
+      "type": "prose",
+      "md": "Verstehst du es falsch, gibt es keine Rettung: Ein Bruchteil eines Grades Zielabweichung, vervielfacht über hundert Millionen Kilometer, ist der Unterschied zwischen einer Umlaufbahn und einem Krater. Verstehst du es richtig, verschwindet es — Navigation ist die stille Fähigkeit unter allen lauten, das, womit keine Pressemitteilung führt und ohne das keine Mission überlebt. Bedenke den Standard, dem sie entspricht. [New Horizons](/missions?id=new-horizons) durchquerte fast fünf Milliarden Kilometer zum [Pluto](/explore) in neuneinhalb Jahren und traf etwa hundert Kilometer und etwa eine Minute entfernt von einem Plan ein, der noch vor dem Start gezeichnet worden war. Das ist die Präzision, um die es hier geht — und das Erstaunliche ist, wie alt und wie menschlich die dahintersteckenden Ideen sich herausstellen."
+    },
+    {
+      "type": "prose",
+      "md": "Denn die Antwort hat sich kaum verändert. Die Maschinen wurden kleiner und dann clever; die Entfernungen wuchsen, bis der Boden nicht mehr folgen konnte; aber darunter navigieren Raumschiffe immer noch wie ein Seemann des achtzehnten Jahrhunderts — durch Winkelmessung zu den einzigen festen Dingen, die es gibt, den Sternen, und durch ehrliche Erfassung jeden Stoßes, den sie je gespürt haben. Dies ist die Geschichte dieses Zählens und der langsamen Übergabe des ganzen zarten Geschäfts von einem Raum voller Menschen auf der Erde zum Raumschiff selbst."
+    },
+    {
+      "type": "heading",
+      "text": "Die Kunst des ehrlichen Zählens"
+    },
+    {
+      "type": "prose",
+      "md": "Beginne mit der schwierigsten der drei Fragen, der, die am leichtesten klingt: *Wo bin ich?* Auf der Erde schaust du hin. Im All konntest du das lange nicht — stattdessen hast du **gezählt**."
+    },
+    {
+      "type": "prose",
+      "md": "Die Technik heißt [Koppelnavigation](/science/mission-phases/dead-reckoning), und sie ist genau so alt wie die Ozeannavigation. Wenn du weißt, wo du angefangen hast, und du misst jede Beschleunigung, die du seit dem gespürt hast — jeden Motorenbrand, jeden Schubs — kannst du sie alle addieren und theoretisch wissen, wo du jetzt bist. Ein Raumschiff tut dies mit einer *Inertialmesseinheit*: ein Bündel von Kreiselkompass-Geräten, die eine feste Ausrichtung halten, und Beschleunigungsmessern, die jede Bewegungsänderung fühlen, ruhig in der Mitte des Raumschiffs die ganze Reise in eine laufende Schätzung von Position und Geschwindigkeit integrierend."
+    },
+    {
+      "type": "figure",
+      "image": "essays/navigation/dead-reckoning",
+      "kind": "diagram",
+      "caption": "Koppelnavigation — der älteste Trick auf See, und immer noch der darunter. Halte den bekannten Anfang, addiere jeden Schubs, den du je gespürt hast, und eine laufende Schätzung, wo du bist, verrottet langsam; eine Sternbeobachtung setzt die Abweichung auf Null zurück.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "»Theoretisch« trägt in diesem Satz Gewicht. Koppelnavigation driftet ab. Jeder winzige Fehler in jeder Messung sammelt sich an, daher verrottet die Schätzung langsam, und je weiter man geht, desto schlimmer wird es. Deshalb setzten sie bei den wichtigsten Flügen einen Menschen in die Schleife mit einem Sextanten."
+    },
+    {
+      "type": "prose",
+      "md": "Das ist ein Detail, das man behalten sollte. Als [Apollo 8](/missions?id=apollo8) im Dezember 1968 das erste bemannte Schiff wurde, das die Anziehungskraft der Erde verließ und zu einer anderen Welt navigierte, steuerte ihre Besatzung teilweise wie Cook über den Pazifik: Jim Lovell an einem Teleskop und Sextanten, die in die Hülle eingebaut waren, sichtete bekannte Sterne gegen den Horizont der Erde, führte die Winkel in einen Computer ein, um die Abweichung zu korrigieren. Der Apollo-Leitcomputer, der diese Berechnungen ausführte, hatte etwa 72 Kilobyte Festspeicher und lief mit einer Taktfrequenz, über die eine moderne Türklingel nur lachen würde — und er flog neun Besatzungen zum Mond und [zwei Handvoll davon drauf](/missions?id=apollo11). Das Genie war nicht die Hardware. Es war die Erkenntnis, dass eine Maschine zum Zählen und ein Mensch zum Überprüfen gegen die Sterne zusammen tun konnten, was keiner allein konnte."
+    },
+    {
+      "type": "prose",
+      "md": "Die Idee gehörte nicht einmal zum Raumflug. In denselben Jahren flog sie ein Aufklärungsflugzeug: Die SR-71 Blackbird, mit dreifacher Schallgeschwindigkeit fliegend, wo der Taghimmel bereits dunkel ist, führte einen Sterntracker hinter dem Cockpit mit sich, der Sterne durch ein Quarzfenster sichtete — mindestens zwei gleichzeitig, abgeglichen gegen einen bordeigenen Katalog — und nutzte sie, um die Abweichung ihrer Inertialplattform zu korrigieren, genau wie ein Raumschiff. Seine Besatzungen nannten die Einheit R2-D2. Das Problem ist das gleiche Problem in 70.000 Fuß Höhe oder in der Umlaufbahn: Halte ehrlich Zählung und überprüfe sie gegen das eine, das sich nicht bewegt."
+    },
+    {
+      "type": "figure",
+      "image": "missions/apollo8/01",
+      "kind": "photo",
+      "caption": "Apollo 8, Dezember 1968 — die erste Besatzung, die die Erde verließ und zu einer anderen Welt navigierte, korrigierte eine abdriftende Zählung, wie es ein Seemann würde: ein Sextant, die Sterne und der Horizont der Erde.",
+      "align": "wide",
+      "credit": "NASA"
+    },
+    {
+      "type": "prose",
+      "md": "Jedes Tiefraum-Raumschiff trägt immer noch die maschinelle Hälfte dieses Paares. Aber der bemannte Sextant war eine Notlösung für ein spezifisches Jahrzehnt. Für alles Unbemanntes — jeden Satelliten zu jedem Planeten — musste die ehrliche Zählung auf andere Weise überprüft werden. Sie musste von der Erde aus überprüft werden."
+    },
+    {
+      "type": "heading",
+      "text": "Der Boden fliegt"
+    },
+    {
+      "type": "prose",
+      "md": "Hier ist die Tatsache, die die meisten Menschen über Raumschiffnavigation in Verwirrung bringt: Bei den meisten Missionen in diesem Atlas **weiß das Raumschiff nicht, wo es ist. Der Boden weiß es.**"
+    },
+    {
+      "type": "prose",
+      "md": "Das Instrument ist das [Tiefraum-Netzwerk](/science/mission-phases/dsn) — drei große Schüsselkomplexe, etwa 120° auseinander in Kalifornien, Spanien und Australien, so dass, wenn die Erde sich dreht, mindestens eines von ihnen immer ins Tiefraum schauen kann. Wenn eine Schüssel auf eine Sonde zeigt, hört sie hauptsächlich nicht auf Daten. Sie misst zwei Dinge mit ungeheurer Präzision. Erstens, **Entfernung**: es sendet ein Zeitsignal, das Raumschiff echot es zurück, und die Echtlaufzeit — multipliziert mit der Lichtgeschwindigkeit — gibt die Entfernung an, gut einige Meter über Milliarden Kilometer. Zweitens, **Geschwindigkeit**: Das Radio des Raumschiffs, verschoben in der Frequenz durch seine Bewegung auf uns zu oder weg von uns, wird auf seine Dopplerverschiebung gelesen, und die Verschiebung gibt die Geschwindigkeit entlang der Sichtlinie auf einen Bruchteil eines Millimeters pro Sekunde."
+    },
+    {
+      "type": "figure",
+      "image": "essays/navigation/deep-space-network",
+      "kind": "diagram",
+      "caption": "Das Tiefraum-Netzwerk: drei große Schüsseln etwa 120° auseinander, damit eine immer ins Tiefraum schaut. Die Entfernung kommt von der Echtlaufzeit; die Geschwindigkeit von der Dopplerverschiebung des Radios. Der Boden fliegt.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "Verfolge diese zwei Zahlen über Stunden, während sich die Erde dreht und die Geometrie sich ändert, und ein Raum von Navigatoren kann den Weg eines Raumschiffs durch das Sonnensystem rekonstruieren, ohne dass das Raumschiff überhaupt eine starke Meinung dazu hat. Als [Mariner 4](/missions?id=mariner4) 1965 die ersten Nahaufnahmen eines anderen Planeten zurückbrachte, war das Raumschiff ein Passagier; die Navigation fand auf der Erde statt. Das Gleiche galt für die [Voyager](/missions?id=voyager-1) und für [Cassini](/missions?id=cassini) — und jene messerscharfe Ankunft am Pluto, die diesen Aufsatz eröffnete, wurde auf die gleiche Weise geflogen: fast vollständig von drei Schüsseln auf dem Boden rekonstruiert und korrigiert."
+    },
+    {
+      "type": "prose",
+      "md": "Aber das Tiefraum-Netzwerk hat einen Gegner, mit dem es nicht argumentieren kann, und sein Name ist die Lichtgeschwindigkeit. Beim Mars dauert ein Befehl überall von etwa drei bis zweiundzwanzig Minuten zum Eintreffen, und die Bestätigung dauert genauso lange zurückzukommen. Bei Pluto sind es vier einhalb *Stunden*, einfach. Der Boden kann eine Sonde wunderbar navigieren — solange nichts schneller als das Licht entschieden werden muss, um die Nachricht nach Hause und eine Antwort zurück nach draußen zu bringen. Für siebzig Jahre war fast nichts schneller. Das ist etwa zum ganzen Problem zu werden."
+    },
+    {
+      "type": "heading",
+      "text": "Welche Richtung ist oben"
+    },
+    {
+      "type": "prose",
+      "md": "Bevor du irgendwohin gehen kannst, musst du die zweite Frage lösen — *In welche Richtung bin ich ausgerichtet?* — und der All ist still dagegen feindselig. Es gibt oben. Es gibt kein unten. Ein sich im Dunklen drehendes Raumschiff hat keinen Boden, um ihm zu sagen, in welche Richtung es schaut, und das falsch zu machen bedeutet, deine Antenne weg von der Erde zu zeigen, deine Kamera weg vom Ziel, deinen Motor die falsche Richtung in der Flugbahn."
+    },
+    {
+      "type": "prose",
+      "md": "Die Lösung besteht darin, sich vorher auf einen Satz von Richtungen zu einigen, die sich nie bewegen, und dich ständig gegen sie zu messen. Diese Vereinbarung ist ein [Bezugssystem](/science/scales-time/frames) — für den Großteil des modernen Raumfahrts das sogenannte J2000, eine Ausrichtung an den durchschnittlichen Positionen der Sterne um Mittag am ersten Tag des Jahres 2000 verankert. Es ist ein willkürlicher Anker, aus Gründen der Bequemlichkeit gewählt, und es ist nun das gemeinsame Gitter, an dem fast jedes Raumschiff, jede Efemeriden und jeder Missionsplan ruhig hängt."
+    },
+    {
+      "type": "prose",
+      "md": "Um seinen Platz in diesem Gitter zu finden, liest ein Raumschiff den Himmel. Ein **Sterntracker** ist eine kleine Kamera, die ein Stück Sterne fotografiert, das Muster gegen einen bordeigenen Katalog abgleicht, und von diesem einzelnen Fix weiß genau, in welche Richtung es im festen Rahmen ausgerichtet ist — eine Maschine, die in einem Bruchteil einer Sekunde genau das tut, was Lovell mit der Hand an seinem Sextanten tat. Zwischen Fixes trägt die abdriftende Drehbeschleunigung die Zählung; jedes Mal, wenn der Sterntracker einen klaren Blick bekommt, setzt er die Abweichung auf Null zurück. Der Himmel, wiederum, ist das einzige, das es wert ist zu vertrauen. Alles andere ist Interpolation zwischen Blicken darauf."
+    },
+    {
+      "type": "figure",
+      "image": "essays/navigation/reference-frame",
+      "kind": "diagram",
+      "caption": "Welche Richtung ist oben, wenn es kein oben gibt: Ein Sterntracker fotografiert ein Stück Himmel, gleicht das Muster mit einem bordeigenen Katalog ab und weiß sofort, wie das Raumschiff im festen J2000-Rahmen ausgerichtet ist. Zwischen Fixes tragen die Kreisel die Zählung.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Zielen auf einen sich bewegenden Planeten"
+    },
+    {
+      "type": "prose",
+      "md": "Nun die dritte Frage, die Navigation von Buchführung in etwas näher Zielschießerei verwandelt. Du weißt, wo du bist. Du weißt, in welche Richtung du ausgerichtet bist. **Der Mars ist irgendwo anders — und bis du dort ankommst, wird er sich bewegt haben.**"
+    },
+    {
+      "type": "prose",
+      "md": "Du fliegst niemals direkt darauf zu. Treibstoff ist die Währung der Raumfahrt, und es gibt nie genug, also fliegst du den Weg, der am wenigsten kostet: eine lange, gekrümmte [Transferumlaufbahn](/science/transfers/hohmann-transfer), die die Erde verlässt und ohne Motoren entlang eines Bogens gleitet, berechnet so, dass sein weit entferntes Ende und der Zielplanet am gleichen Rendezvousort zur gleichen Sekunde ankommen, Monate später. Diesen Bogen zu erarbeiten — *welche Geschwindigkeit, in welche Richtung, bringt mich von diesem bewegten Punkt zu diesem bewegten Punkt in genau dieser Zeitspanne?* — ist ein Stück Himmelsmechanik alt genug, um einen Namen zu haben, das [Lambert-Problem](/science/transfers/lambert-problem), und seine Lösung ist der Kern jedes interplanetaren Startfensters."
+    },
+    {
+      "type": "prose",
+      "md": "Der eleganteste Trick in der ganzen Disziplin ist, die Planeten selbst für dich arbeiten zu lassen. Ein Raumschiff, das nah an einem Planeten vorbeizieht, kann ein Flüstern der eigenen Umlaufbewegung dieses Planeten stehlen und schneller wegfliegen, als es kam, kostenlos — eine [Gravitationsunterstützung](/science/transfers/gravity-assist). In der Mitte der 1960er Jahre bemerkte ein junger Mathematiker im JPL namens Gary Flandro bei Sommerferienberechnungen, dass die äußeren Planeten in eine einmal-in-175-Jahren-Ausrichtung drifteten, die es einer einzelnen Sonde ermöglichen würde, eine Unterstützung in die nächste zu banken und so weiter bis nach draußen. Diese Beobachtung wurde die Grand Tour: [Voyager 2](/missions?id=voyager-2) nutzte Jupiter, um Saturn zu erreichen, Saturn, um Uranus zu erreichen, Uranus, um Neptun zu erreichen, einen Vier-Planeten-Bankshot, der Jahrzehnte Flugzeit sparte und bleibt heute die einzige Zeit, in der etwas die Eisriesen überhaupt besucht hat."
+    },
+    {
+      "type": "figure",
+      "image": "essays/navigation/gravity-assist",
+      "kind": "diagram",
+      "caption": "Du fliegst niemals direkt darauf zu. Eine Hohmann-Transferumlaufbahn gleitet entlang des billigsten Bogens zu einem sich bewegenden Planeten; eine Gravitationsunterstützung stiehlt kostenlos ein Flüstern einer eigenen Planetenbewegung — der Trick, der es einer Sonde ermöglichte, Jupiter zu Saturn zu Uranus zu Neptun zu banken.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "Kein Bogen wird je perfekt geflogen. Kleine Fehler beim Start werden über hundert Millionen Kilometer zu enormen, so dass jeder Tiefraum-Flug eine langsame Folge von [Trajektorienkorrekturen](/science/mission-phases/tcm) ist — kurze, präzise zeitgesteuerte Stupser, von denen jeder die Navigatoren auf der Erde die Lücke zwischen dem schließt, wo das Raumschiff *ist* und wo der Plan sagt, dass es sein sollte. Navigation ist in der Praxis kein einzelner Akt des Zielens. Es ist Zielen, Überprüfung und Umzielen, immer wieder, für Jahre."
+    },
+    {
+      "type": "heading",
+      "text": "Das Raumschiff lernt zu sehen"
+    },
+    {
+      "type": "prose",
+      "md": "Alles bisher hat einen Raum von Menschen auf der Erde in der Schleife. Der letzte Akt dieser Geschichte ist die Maschine, die die Zählung von ihnen wegnimmt — denn an der Grenze ist das Licht einfach zu langsam, um Erlaubnis zu fragen."
+    },
+    {
+      "type": "prose",
+      "md": "Der erste Riss im alten Modell war **optische Navigation**: statt sich nur auf Radio vom Boden zu verlassen, fotografiert das Raumschiff das Ziel selbst gegen den Sternenhintergrund und arbeitet an Bord genau aus, wo das Ziel relativ zu seiner eigenen Annäherung sitzt. [Cassini](/missions?id=cassini) verfeinerte dies gegen Saturns Monde; so fädelt man eine Nadel bei einem Körper, dessen Position vor der Ankunft weniger genau bekannt ist als die eigene."
+    },
+    {
+      "type": "prose",
+      "md": "Dann kamen die Orte, wo der Boden wirklich nicht helfen konnte. Auf dem Mars zu landen ist das schärfste Beispiel — der [Eintritt, Abstieg und Landung](/science/mission-phases/edl) dauert etwa sieben Minuten, und der Mars ist Lichtminuten entfernt, daher ist zum Zeitpunkt, an dem die Erde auch nur hört, dass das Raumschiff in die Atmosphäre eintritt, die ganze Sache längst vorbei, auf die eine oder andere Weise. Niemand auf der Erde landen einen Marsrover. Der Rover landen sich selbst. [Perseverance](/missions?id=perseverance) trug ein System mit sich, das den Boden fotografierte, der emporschoss, es in Echtzeit gegen eine bordeigene Karte abglich, das Gelände erkannte und *wählte* einen sicheren Platz zum Landen — eine Maschine, die Lovells Job, den Job des Tiefraum-Netzwerks und den Job eines Buschfliegers auf einmal, in sieben Minuten, allein tat."
+    },
+    {
+      "type": "figure",
+      "image": "missions/perseverance/01",
+      "kind": "photo",
+      "caption": "Perseverance landen sich selbst. Der Mars ist Lichtminuten entfernt, daher ist zum Zeitpunkt, an dem die Erde hört, dass das Raumschiff in die Atmosphäre eintritt, es bereits unten, auf die eine oder andere Weise — der Rover liest das Gelände, das emporschießt, und wählt seinen eigenen sicheren Platz.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "prose",
+      "md": "[OSIRIS-REx](/missions?id=osiris-rex) tat etwas in der gleichen Familie beim Asteroiden Bennu: autonom gegen Oberflächenmerkmale navigierend, um einen felsenübersäten Felsen in der Größe eines kleinen Berges zu berühren und eine Handvoll davon zu stehlen. Dies sind nicht mehr der Boden, der einen Passagier fliegt. Dies sind Raumschiffe, die sich selbst navigieren, weil die Alternative — auf die Lichtgeschwindigkeit warten — die Mission töten würde."
+    },
+    {
+      "type": "heading",
+      "text": "Der Himmel ist die Karte"
+    },
+    {
+      "type": "prose",
+      "md": "Treten Sie einen Schritt zurück, und siebzig Jahre fallen in eine einzige Linie. [Apollo 8](/missions?id=apollo8)'s Lovell an einem Sextanten, sichtete Sterne, um eine abdriftende Zählung zu korrigieren. Der Sterntracker auf einer Sonde, die genau das gleiche tut, automatisch, eine Milliarde Kilometer draußen. [Perseverance](/missions?id=perseverance)'s Abstiegskamera liest das Gelände, weil die Menschen, die sie bauten, zwölf Lichtminuten zu weit weg sind, um zu helfen. Verschiedene Maschinen, sechzig Jahre auseinander, und darunter eine beharrliche Tatsache, die sich nie bewegte: es gibt keine Karte des Weltraums und es gab nie eine. Es gibt nur den Himmel, der sich nicht bewegt, und eine ehrliche Zählung jeden Stoßes, die sich langsam tut — und die ganze Disziplin kommt darauf herunter, dem ersten zu vertrauen, um den zweiten zu korrigieren. Jede Landung, jeder Vorbeiflug, jedes Foto in diesem Atlas ritt darauf, das richtig zu machen, und fast keine davon war jemals die Schlagzeile."
+    },
+    {
+      "type": "prose",
+      "md": "Und es ist dabei, still zu sein, um aufzuhören. Je weiter nach draußen wir drängen — hin zum [äußeren System](/explore), hin zu bemannten Flügen zum Mars, wo ein zwanzigminütiger Lag der Unterschied zwischen einer Korrektur und einem Krater ist — desto weniger kann der Boden rechtzeitig tun, und desto mehr muss jedes Raumschiff sein eigener Navigator werden: sein eigener Sextant, sein eigenes [Tiefraum-Netzwerk](/science/mission-phases/dsn), sein eigener Raum voller Menschen. Wir verbrachten siebzig Jahre damit, Maschinen beizubringen, ihren Weg am Himmel zu finden. Wir werden gleich herausfinden, wie gut sie gelernt haben."
+    }
+  ]
+}

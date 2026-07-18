@@ -1,0 +1,155 @@
+{
+  "title": "De Grammatica van Delta-V",
+  "dek": "Elk ruimtevaartuig dat ooit de Aarde heeft verlaten, droeg één ding boven alles uit: een begroting. Niet van geld — van snelheid. De raketequatie meerde het uit in kilometers per seconde, zwaartekracht was de enige gratis vulling, en elke ingenieur die ooit een missie heeft gepland, leeft sinds 1903 binnen die beperking.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Stel je voor dat je een chequeboek krijgt met een vast saldo. Je kunt het uitgeven zoals je wilt — maar elke aankoop is definitief, er zijn geen stortingen, en als het saldo nul bereikt ben je klaar. Dat is de situatie waarmee elk ruimtevaartuig wordt geconfronteerd op het moment dat het de lanceertoren verlaat. De valuta is geen brandstof. Het is geen stuwkracht. Het is **snelheid** — preciezer gezegd, de *verandering* in snelheid, gemeten in kilometers per seconde, die het ruimtevaartuig over zijn gehele missie kan accumuleren. Ingenieurs noemen het delta-v, en de rekening opent, eenmaal, bij lancering."
+    },
+    {
+      "type": "prose",
+      "md": "De regel die deze beperking formuleerde, werd in 1903 gepubliceerd door een autodidactische Russische schoolmeester genaamd Konstantin Tsiolkovsky, werkzaam in een klein provinciaal stadje. Zijn [raketequatie](/science/propulsion/tsiolkovsky) is sindsdien niet ingetrokken: **∆v = Isp · g₀ · ln(m₀/mf)**. In het Engels gelezen: de snelheid die je kunt bereiken is gelijk aan de rendementsfactor van je motor — gemeten in seconden [specifieke impuls](/science/propulsion/specific-impulse) en vermenigvuldigd met een zwaartekrachtsconstante van 9,807 m/s² — maal de natuurlijke logaritme van hoe veel zwaarder de raket aan het begin was dan aan het einde. Die logaritme is de schurk. Omdat *ln* de langzaamst groeiende functie in de wiskunde is, betekent dit dat elke extra kilometer per seconde die je wilt toevoegen je exponentieel meer brandstofmassa kost — en die brandstof moet ook omhoog worden gebracht, wat betekent dat het zijn eigen brandstof nodig heeft, die ook omhoog moet worden gebracht, enzovoort in een reeks die geen bodem heeft."
+    },
+    {
+      "type": "prose",
+      "md": "Astronaut Don Pettit noemde dit *de tirannie van de raketequatie* in een essay uit 2012 geschreven aan boord van het ISS, en het woord tirannie is exact juist. De Saturn V die Apollo-astronauten naar de Maan bracht, stond dertig verdiepingen hoog op het lanceerpunt en bestond voor **85% uit brandstof naar massa**; de lading — alles wat daadwerkelijk ergens heen ging — overschreed nooit ongeveer 4% van die natte massa. De rest was een gecontroleerde explosie in slow motion, stap voor stap verbruikt alleen maar om de rest iets sneller, iets hoger te krijgen. Alles anders in ruimtevaart — de missies, de trajecten, het wachten op lanceergelegendheden, het obsessief trimmen van instrumentenmassa — vloeit voort uit die enkele, meedogenloze noemer."
+    },
+    {
+      "type": "figure",
+      "image": "essays/delta-v/rocket-equation",
+      "kind": "diagram",
+      "caption": "De exponentiële muur van de raketequatie: bij chemische rendementsfactor vraagt elke extra kilometer per seconde een veel groter brandstoffractie — en hoe dichter je naar een echte bestemming duwt, des te steiler stijgt de prijs.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "De begroting"
+    },
+    {
+      "type": "prose",
+      "md": "Een [delta-v begroting](/science/propulsion/dv-budget) is wat missieplanners het werkblad noemen dat elke snelheidsverandering recordeert die een missie moet uitvoeren, van lage aardbaan tot eindbestemming. Het is het meest impactvolle document in missieontwerp: het beslist of de missie überhaupt mogelijk is. Een ruimtevaartuig van een lage aardbaan naar, zeg, een Hohmann-overdracht naar Mars en in een Martiaanse baan krijgen kost ongeveer **5,6 km/s** totaal — een cijfer dat bescheiden klinkt totdat je je realiseert dat elke decimaal wordt betaald in tonnen brandstof, en de raketequatie betekent dat de wisselkoers verslechtert hoe meer je uitgeeft."
+    },
+    {
+      "type": "prose",
+      "md": "Een [Hohmann-overdracht](/science/transfers/hohmann-transfer) is de minimale-energie boog tussen twee banen — het pad dat het minste delta-v kost om van A naar B te gaan. Het is niet recht; het is een ellips die de binnenste baan aan het ene uiteinde en de buitenste aan het andere raakt, en de hele weg op niets anders dan traagheid voortglijdt. De truc is dat je de motor twee keer afvuurt: eenmaal om de vertrekbaan te verlaten, eenmaal om de aankomstbaan af te stemmen. Tussen die twee branden — meestal 259 dagen in het Aarde-naar-Mars geval — geef je niets uit. De zwaartekracht van het zonnestelsel doet het vervoer gratis, zolang je het verstand had om aan het begin de juiste richting aan te wijzen."
+    },
+    {
+      "type": "figure",
+      "image": "essays/delta-v/hohmann-transfer",
+      "kind": "diagram",
+      "caption": "Het goedkoopste pad tussen twee banen is nooit de rechte lijn — een Hohmann-overdracht glijdt langs een ellips die elke baan net raakt, en vuurt de motor maar twee keer af: eenmaal om te vertrekken, eenmaal om aan te komen.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "Dit is wat *navigatie* overdraagt aan delta-v planning. Het [navigatie-essay](/essays/navigation) opende met het probleem van richten op een bewegende planeet — het Lambert-probleem, de lange boog, de correctiebranden die de kloof tussen plan en werkelijkheid dichten. Maar die boog in eerste instantie kiezen was een begrotingsbeslissing. Het Hohmann minimale-energie pad werd gekozen omdat het het minst verbruikt; een sneller traject bestaat, maar het kost meer delta-v dan de meeste missies zich kunnen veroorloven, en delta-v is het enige wat je niet kunt lenen."
+    },
+    {
+      "type": "heading",
+      "text": "De enige gratis vulling"
+    },
+    {
+      "type": "prose",
+      "md": "Gegeven de tirannie van de vergelijking, is elke truc die delta-v gratis toevoegt niet alleen nuttig — het is transformatief. Er is precies één: **zwaartekracht**."
+    },
+    {
+      "type": "prose",
+      "md": "Een ruimtevaartuig dat dicht langs een planeet zwenkt, betreedt het zwaartekrachtveld van de planeet snel, buigt eromheen, en verlaat het sneller dan het is aangekomen — omdat de planeet zelf beweegt, en het vaartuig een fluistering van die beweging heeft gestolen. De [zwaartekracht-assist](/science/transfers/gravity-assist) kost helemaal geen brandstof. De planeet verliest een onmeetbaar klein beetje van haar eigen baansnelheid; het ruimtevaartuig wint veel. Voor de meeste interplanetaire sondes is dit niet een bonus — het is het hele zakenmodel."
+    },
+    {
+      "type": "prose",
+      "md": "Halverwege de jaren zestig merkte een JPL-wiskundige genaamd Gary Flandro iets op tijdens zomerberekeningen. De buitenplaneten — Jupiter, Saturnus, Uranus, Neptunus — waren naar een eenmaal in de 175 jaar voorkomende uitlijnering aan het drijven. Een sonde gelanceerd in 1977 en correct gericht kon Jupiters zwaartekracht gebruiken om Saturnus te bereiken, Saturnus' om Uranus te bereiken, Uranus' om Neptunus te bereiken: een bankshot van vier planeten, elke voorbijvlucht voegde delta-v gratis toe en leidde het traject naar het volgende doel. De vluchtduur naar Neptunus zou van dertig jaar tot twaalf vallen. Dat inzicht werd de Grand Tour — en [Voyager 2](/missions?id=voyager-2) maakte het werkelijkheid, wintte ongeveer **10 km/s** van de Jupiter-voorbijvlucht alleen al, genoeg om het buitenstelsel in de oorspronkelijk begrote tijd voor een alleen-Saturnus-missie te bereiken. Neptunus is heden ten dage eenmaal bezocht. De reden is dat het raam in de jaren tachtig sloot en niet opnieuw opent tot de jaren 2150."
+    },
+    {
+      "type": "figure",
+      "image": "missions/voyager-2/01",
+      "kind": "photo",
+      "caption": "Voyager 2 nam de gratis vulling vier keer — Jupiter naar Saturnus naar Uranus naar Neptunus — met elke planeetbeweging in de volgende bankend, op een route die niet opnieuw aansluit tot over 175 jaar.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "prose",
+      "md": "Dezelfde rekenkunst is waarom [Cassini](/missions?id=cassini) door Venus liep — twee keer — en langs Aarde en langs Jupiter voordat het naar buiten naar Saturnus ging: niet de toeristenroute, maar de goedkope. En waarom [Mangalyaan](/missions?id=mangalyaan), India's eerste interplanetaire missie, Mars in 2014 bereikt op een begroting van ongeveer US$74 miljoen — een fractie van wat vergelijkbare missies hebben gekost — deels omdat het traject ontworpen was om maximale waarde uit elke kilogram van zijn 852 kilogram brandstofbelading te halen, de grootste enkele component van een ruimtevaartuig dat 1.340 kg op het lanceerpunt woog. De delta-v begroting was 1.350 m/s voor de gehele missie na ontsnapping. Elk gram was verantwoord."
+    },
+    {
+      "type": "figure",
+      "image": "missions/cassini/01",
+      "kind": "photo",
+      "caption": "Cassini bereikte Saturnus op geleende snelheid, zwenkelend langs Venus twee keer, Aarde en Jupiter langs de weg — een zeven jaar omweg die minder brandstof kostte dan er ooit rechtstreeks naar kunnen schieten.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech/Space Science Institute"
+    },
+    {
+      "type": "heading",
+      "text": "Het Oberth-dividend"
+    },
+    {
+      "type": "prose",
+      "md": "Zwaartekracht biedt een tweede truc, subtieler dan de eerste. Het werd in 1929 beschreven door Hermann Oberth, en het draait om een feit over kinetische energie dat niet voor de hand liggend is totdat je het uitschrijft: energie groeit als het *kwadraat* van snelheid. Een brand die 1 km/s toevoegt op 10 km/s voegt veel meer kinetische energie toe dan dezelfde brand op 1 km/s — omdat het verrichte werk gelijk is aan kracht maal afstand, en een snel bewegende raket legt meer afstand af tijdens de brand."
+    },
+    {
+      "type": "prose",
+      "md": "Het gevolg, genoemd het [Oberth-effect](/science/propulsion/oberth-effect), is dat branden diep in een zwaartekrachtput — op het laagste punt van een baan, *periapsis*, waar een ruimtevaartuig het snelst beweegt — drastisch efficiënter zijn dan branden op hoogte. Dezelfde delta-v, op het juiste moment op de juiste plaats verbruikt, levert meer eindenergie aan het vaartuig. Missies die hun motoren op periapsis kunnen afvuren — aankomende planeten, dichte passages, opzettelijk ontworpen laagpunt manoeuvres — krijgen, in feite, een vermenigvuldiger op welke delta-v ze dan ook verbruiken. [New Horizons](/missions?id=new-horizons) gebruikte een Jupiter-voorbijvlucht niet alleen voor de zwaartekracht-assist snelheidsboost maar timede zijn brand om samen te vallen met nadering tot dichtste punt, het Oberth-dividend op de assist stapelend. De combinatie schroeide drie jaar van zijn vlucht naar Pluto."
+    },
+    {
+      "type": "figure",
+      "image": "essays/delta-v/oberth-effect",
+      "kind": "diagram",
+      "caption": "Brand laag, win meer: diep in een zwaartekrachtput beweegt een ruimtevaartuig het snelst, en dezelfde motorbrand daar koopt veel meer energie dan die zou kopen op de trage, verre top van de baan.",
+      "align": "wide"
+    },
+    {
+      "type": "prose",
+      "md": "Dit zijn geen hacks of gaten. Dit is de wiskunde van bewegen door een zwaartekrachtlandschap dat, als je het goed leest, niet vijandig voor beweging is maar in feite vol staat met glijbanen en hellingen. De begroting verdwijnt niet — maar de bekwame lezer van dat landschap kan het uitrekken, soms enorm."
+    },
+    {
+      "type": "heading",
+      "text": "Wat de vergelijking uitwist"
+    },
+    {
+      "type": "prose",
+      "md": "De delta-v begroting is meedogenloos onverschillig tegenover bijna alles wat belangrijk voelt over een missie — de wetenschap, het prestige, de geopolitiek. Het interesseert niet wie het ruimtevaartuig bouwde of welke vlag erop geschilderd is. Het interesseert alleen massa, uitlaatsnelheid, en de logaritme."
+    },
+    {
+      "type": "prose",
+      "md": "Dit creëert een discipline ongelijk aan enige ander in engineering. De camera toegevoegd aan een Marsrover, de extra redundantie in een computer, het extra wetenschappelijk instrument waar een team jaren voor gelobbyd heeft — allemaal hebben ze een delta-v prijs. Als het instrument zwaarder is dan de toegestane marge, wordt óf iets anders verwijderd óf wordt de gehele missie onhaalbaar. Missieplannen is een oefening in continue, pijnlijke afruil tussen wat je wilt en wat je kunt dragen, en de vergelijking is de rechter van elk geschil."
+    },
+    {
+      "type": "prose",
+      "md": "De begroting wist ook de marge voor fouten uit op een manier die landgestelde engineering zelden doet. Een brug die licht overbelast is, staat nog overeind. Een ruimtevaartuig dat geen delta-v meer heeft voordat de baanopname compleet is, wordt een stuk ongecontroleerd puin. Er is geen deelkrediet. Elke missie in deze atlas die slaagde, deed dat omdat iemand, ergens, een eerlijk rapport bijhield en nooit meer uitgaf dan beschikbaar was. De anonieme groep mensen die die wiskunde deden — die de begroting in de gaten hielden, de astrodynamica checkte, de correctie-brand sequenties runden — droeg elke missie die ooit arriveerde."
+    },
+    {
+      "type": "heading",
+      "text": "Het hergebruik argument, eenvoudig gesteld"
+    },
+    {
+      "type": "prose",
+      "md": "Zestig jaar lang produceerde de tirannie van de raketequatie een bepaald antwoord op het probleem van in een baan rond de aarde komen: bouw een machine geoptimaliseerd voor de taak, verbrand het onderweg omhoog, gooi het weg. De structurele massabesparing uit het ontwerpen van een eenmalig eerste stadium waren echt, en de delta-v was echt, en de wiskunde klopte. Het probleem was dat je een motor ter waarde van tientallen miljoenen dollars weggooid na hem eenmaal te gebruiken."
+    },
+    {
+      "type": "prose",
+      "md": "Het landen van een rakettraject en het opnieuw vliegen verandert de noemer, maar niet op de manier die de vergelijking voorspelt. Structureel is een herbruikbaar stadium iets zwaarder — het heeft landingspoten nodig, rasterflanken, thermische bescherming, reserve-brandstof voor de terugbrand — wat betekent dat het [specifieke impuls](/science/propulsion/specific-impulse) voordeel krimpt en de massaverhouding krimpt. De vergelijking, strikt gelezen, zegt dat hergebruik je delta-v kost. Wat de vergelijking niet modelleert is dat je het stadium volgende week opnieuw kunt vliegen, tegen een fractie van de kosten van het bouwen van een nieuw, wat betekent dat je meer missies kunt vliegen, wat betekent dat de begroting die ertoe doet — dollars per kilogram in een baan — instort. De delta-v logica veranderde niet. De economische logica die ernaast loopt wel."
+    },
+    {
+      "type": "prose",
+      "md": "Dit is de spanning die het laatste decennium van voertuigontwikkeling heeft bepaald, en het is nog niet opgelost. De raketequatie stelt nog steeds de harde fysieke bodem. Wat verandert is hoeveel het kost om erop te staan. [Vliegen een traject in de atlas](/fly) en kijk wat er met de delta-v begroting gebeurt als elke trap zich scheidt — de massaverhoudingskoppelingen op elke snede zijn wat de vergelijking eigenlijk afdwingt, onzichtbaar, op elke vlucht."
+    },
+    {
+      "type": "heading",
+      "text": "Het kasboek sluit"
+    },
+    {
+      "type": "prose",
+      "md": "Er is iets verhelderende over een beperking zonder uitzonderingen. De raketequatie wijkt niet om politieke redenen of begrotingsverhogingen of engineeringheroïek. Elke missie die ooit deze planeet heeft verlaten — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [Mangalyaan](/missions?id=mangalyaan) — deed dat omdat iemand een kolom delta-v vereisten verzoende tegen een kolom wat de brandstof kon leveren, en het tweede getal was minstens zo groot als het eerste. Elke missie die nooit vertrok — en er zijn veel geweest, stilletjes gedood in planning — faalde die test."
+    },
+    {
+      "type": "prose",
+      "md": "Wat de vergelijking ook doet, minder voor de hand liggend, is zwaartekracht kostbaar maken. Niet als een hindernis om te overwinnen — elke raket brandt omhoog tegen het — maar als een gratis rekening. Een planetaire zwaartekrachtput, juist doorgeraden, is een bron. Jupiters zwaartekracht gaf Voyager 2 een snelheid die het nooit met brandstof zou kunnen hebben gekocht. Het Oberth-effect maakt diepe periapsis passagiers het waard om opzettelijk in te engineeren. De orbitale architectuur van het zonnestelsel is, vanuit een delta-v perspectief, een landschap van gratis vullinge verspreide over een meestal lege kaart — en elke [traject die je hier kunt verkennen](/science/transfers/hohmann-transfer) is een verslag van iemand die er een vindt."
+    },
+    {
+      "type": "prose",
+      "md": "Tsiolkovsky stierf in 1935, negen jaar voordat het eerste ballistische raket vloog en een generatie voordat het eerste ruimtevaartuig de aarde verliet. Hij zag nooit een raket in baan. Wat hij deed was opschrijven, in 1903, de grammatica die elke missie sindsdien spreekt — de ene regel die de aspiratie van ergens heen gaan transformeert in de rekenkunde van of je kunt. Al het andere is een zin in die taal. De vraag die de atlas missie na missie blijft beantwoorden, is hoeveel je daarin kunt zeggen."
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "title": "Il corpo nell'oscurità",
+  "dek": "Tutto il resto in questa raccolta è ingegneria — navigazione, propulsione, atterraggio, comunicazione attraverso il vuoto. Questo è l'unico problema che nessun motore risolve: il viaggiatore è una biologia che si degrada, e il corpo umano è il carico fragile che l'intera impresa esiste per proteggere.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "L'astronave è, in quasi ogni senso significativo, una meraviglia. Il suo [sistema di navigazione](/essays/navigation) può collocarla a meno di cento chilometri da un obiettivo attraverso cinque miliardi di chilometri di nulla. I suoi motori possono produrre spinta per anni con un filo di xenon. Le sue radio possono sussurrare attraverso il sistema solare esterno e comunque essere udite. Ogni sottosistema è specificato, testato, certificato contro il guasto, e se qualcosa va storto durante il viaggio un team a terra può inviare una correzione — una patch software attraverso centinaia di milioni di chilometri. L'astronave è l'ingegneria nel suo stato più raffinato. È anche, nel caso che qui importa, in serio pericolo, perché la cosa che sta trasportando non può essere corretta, non può essere riprogrammata, e si degrada dal momento in cui il portello si chiude."
+    },
+    {
+      "type": "prose",
+      "md": "Il corpo umano non è stato progettato per lo spazio. La tentazione — nei comunicati stampa, nei resoconti popolari, nel vocabolario visivo di ogni poster di missione — è mostrare l'astronauta come trionfante, tuta indosso, corazzato contro il vuoto. Quell'immagine non è sbagliata. È, tuttavia, incompleta. Togliere la tuta e si ha un primate le cui risposte immunitarie sono state modellate da un'Africa ricca di patogeni, il cui scheletro si è evoluto per sostenersi contro una gravità terrestre standard, il cui sistema cardiovascolare si aspetta una colonna fluida che contrasta la gravità dai piedi in su, e il cui cervello funziona con un bilancio di radiazioni schermato dalla magnetosfera che ha quasi nulla a che fare con ciò che attende oltre l'orbita bassa terrestre. La tuta è un'interfaccia. L'umano è il vincolo. Ogni [sistema a bordo dell'astronave](/science/life-in-space/crewed-station-design), ogni ridondanza nei circuiti di supporto vitale, esiste per mantenere quel vincolo vivo abbastanza a lungo per fare un lavoro utile e tornare a casa."
+    },
+    {
+      "type": "prose",
+      "md": "Questo è il problema che [andare su Marte](/essays/going-to-mars) pone e che nessun progresso nella propulsione può sciogliere. [Motori più veloci](/essays/new-propulsion) accorciano il transito e riducono il tempo di esposizione — ma non lo eliminano. Il corpo rimane ciò che è: un sistema sotto attacco sostenuto da quattro direzioni contemporaneamente. Radiazioni che penetrano ogni schermo che possiamo permetterci di portare. La scomparsa del segnale gravitazionale da cui dipende l'intero sistema muscoloscheletrico. Un sistema immunitario che si muove in modi che stiamo ancora catalogando. Una mente sempre più sola in modo che nessuna evoluzione l'ha preparata. Nessuno di questi è completamente risolto. Ognuno è un vincolo reale su quanto lontano, e per quanto a lungo, gli esseri umani possono viaggiare."
+    },
+    {
+      "type": "heading",
+      "text": "Il meteo invisibile"
+    },
+    {
+      "type": "prose",
+      "md": "Lo spazio non è vuoto. È pieno di [radiazioni](/science/life-in-space/radiation-exposure) — e non le radiazioni localizzate e prevedibili di una macchina a raggi X, che eroga una dose nota in una geometria nota e si ferma. La radiazione spaziale viene in due distinti e pericolosi sapori. Il primo è gli eventi di particelle solari: tempeste di protoni accelerati da brillamenti solari ed espulsioni di massa coronale, capaci di erogare una dose letale in ore se colti senza schermatura. Il secondo è i raggi cosmici galattici: nuclei atomici ad alta energia che si stanno accelerando attraverso la galassia da milioni di anni e arrivano da tutte le direzioni, continuamente, a energie così estreme che la quantità pratica di metallo o acqua che li fermerebbe è misurata in centinaia di tonnellate — ben oltre ciò che qualsiasi razzo prevedibile può sollevare. Il campo magnetico terrestre e l'atmosfera gestiscono entrambi. Oltre l'orbita bassa terrestre, nessuno dei due è presente."
+    },
+    {
+      "type": "prose",
+      "md": "I limiti di dose per la carriera degli astronauti sono impostati per limitare il rischio di cancro in eccesso per la vita a circa il tre percento sopra il tasso di fondo. I limiti della NASA, espressi in sievert, variano per età e sesso perché la sensibilità alle radiazioni varia — una donna di 35 anni affronta un limite più severo di un uomo di 55 anni. Un soggiorno di sei mesi a bordo dell'[ISS](/programs/iss) — ancora dentro il rifugio parziale della magnetosfera — eroga circa 80 millisievert. Un transito su Marte di sei a nove mesi in ogni direzione, più un soggiorno in superficie, probabilmente eroga 500 a 1.200 millisievert andata e ritorno a seconda della fase del ciclo solare. Quella cifra si trova a o oltre quello che i limiti di carriera attuali consentono per una singola missione."
+    },
+    {
+      "type": "prose",
+      "md": "Il rischio di cancro è quello più discusso nei documenti di pianificazione. Il rischio del sistema nervoso centrale è quello che rende più nervosi i ricercatori. I raggi cosmici galattici ad alta energia depositano energia in tracce dense e localizzate attraverso i neuroni in modi che differiscono dalle lesioni da radiazioni ordinarie e potrebbero non guarire allo stesso modo. Gli studi su animali presso il NASA Space Radiation Laboratory a Brookhaven hanno mostrato cambiamenti cognitivi e comportamentali misurabili nei roditori esposti a dosi simulate di GCR equivalenti a una missione su Marte: memoria spaziale degradata, funzione esecutiva compromessa, neurodegenerazione accelerata. I dati umani per confutare o confermare questo non esistono ancora, perché nessun umano ha mai ricevuto una dose GCR così alta. Non sapremo la risposta CNS umana fino a quando il primo equipaggio non andrà. Questa è una vera frontiera scientifica ed etica — trattata come tale dai ricercatori che la studiano, anche se trattata come un'assunzione di fondo dai pianificatori di missioni che hanno bisogno che il viaggio accada."
+    },
+    {
+      "type": "figure",
+      "image": "essays/the-body-in-the-dark/radiation-weather",
+      "kind": "diagram",
+      "caption": "Il problema più difficile è quello che non puoi vedere. Oltre il campo magnetico terrestre non c'è riparo dai raggi cosmici galattici, e una tempesta solare può erogare una dose acuta in ore. La schermatura abbastanza pesante per fermarli è troppo pesante per volare — quindi in un lungo viaggio, l'equipaggio semplicemente assorbe il meteo.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Il corpo dimentica la gravità"
+    },
+    {
+      "type": "prose",
+      "md": "La gravità non è meramente una seccatura contro cui il corpo lavora. È un segnale che il corpo legge continuamente, e a cui quasi ogni grande sistema fisiologico è calibrato. Toglierla e la calibrazione fallisce, progressivamente, in modi che due ore di esercizio quotidiano possono rallentare ma non fermare. [La densità minerale ossea](/science/life-in-space/bone-density-loss) diminuisce a circa uno o uno e mezzo percento al mese nelle ossa portanti — l'anca, la colonna vertebrale, il femore — in assenza dello stimolo meccanico che normalmente attiva il rimodellamento osseo. È un tasso paragonabile ai casi più gravi di osteoporosi sulla Terra, compresso in mesi piuttosto che decenni. Dopo un incremento ISS standard di sei mesi, i membri dell'equipaggio possono mostrare perdite di densità ossea che richiedono un anno o più di recupero per invertire, e la prova che il recupero completo si verifica sempre per tutti i membri dell'equipaggio non è airtight."
+    },
+    {
+      "type": "prose",
+      "md": "[La massa muscolare segue una curva parallela](/science/life-in-space/muscle-atrophy), in particolare nei muscoli posturali — quelli la cui funzione primaria sulla Terra è mantenere lo scheletro in posizione verticale. Senza il lavoro costante di basso livello di contrastare la gravità, si atrofizzano più velocemente di quanto l'esercizio volontario possa completamente compensare. Il [sistema vestibolare](/science/life-in-space/vestibular-adaptation), che si aspetta un vettore gravitazionale contro cui orientarsi, inizialmente fraintende l'ambiente di microgravità e produce il mal di movimento spaziale in circa la metà di tutti gli astronauti durante i primi giorni; l'adattamento alla fine si verifica, ma il sistema allora deve riadattarsi alla gravità al ritorno, e il riadattamento non è sempre fluido o veloce. Il deconizionamento cardiovascolare segue il suo arco: senza un gradiente di pressione idrostatica contro cui lavorare, il cuore si atrofizza come qualsiasi muscolo sottocarico, la gittata cardiaca cala, e il volume di plasma che normalmente riempie il corpo inferiore si ridistribuisce verso l'alto. I membri dell'equipaggio che ritornano dopo essere stati in orbita per sei mesi a volte non riescono a stare in piedi senza una caduta della pressione sanguigna che metter giù un adulto sano sulla Terra."
+    },
+    {
+      "type": "prose",
+      "md": "La complicazione più sorprendente emersa dai voli spaziali di lunga durata nell'ultimo decennio è quella che nessuno ha previsto chiaramente prima che il programma ISS accumulasse abbastanza crew-hour per renderla visibile: [sindrome neuro-oculare associata al volo spaziale](/science/life-in-space/microgravity-physiology), o SANS. In microgravità, lo shift di fluido che spinge sangue e plasma verso la testa influisce anche sulla pressione intracranica in modi che sono ancora caratterizzati. Il risultato, in una frazione significativa di membri dell'equipaggio di lunga durata — alcuni studi ora lo mettono a due terzi o più di equipaggi di lunga durata — è un appiattimento della parte posteriore del bulbo oculare, un cambiamento nella forma della testa del nervo ottico, e degradazione misurabile dell'acuità visiva. Alcuni astronauti sono tornati dall'ISS avendo bisogno di occhiali da lettura per la prima volta nella loro vita. Il meccanismo non è pienamente compreso. Il trattamento non esiste ancora. SANS è attualmente uno dei tre o quattro problemi nell'elenco dei blocchi per una missione umana su Marte, nella valutazione dei ricercatori che stilano questi elenchi."
+    },
+    {
+      "type": "figure",
+      "image": "essays/the-body-in-the-dark/microgravity-toll",
+      "kind": "diagram",
+      "caption": "Un corpo ottimizzato per una gravità si disfa tranquillamente in caduta libera: l'osso si svuota a circa l'uno percento al mese, il muscolo si consuma, il fluido si accumula nella testa e appiattisce la parte posteriore dell'occhio. Due ore di esercizio al giorno rallentano solo le perdite — nessuno le ha fermate.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Ciò che sappiamo perché qualcuno è rimasto"
+    },
+    {
+      "type": "prose",
+      "md": "Tutto ciò che sappiamo sulla fisiologia dei voli spaziali di lunga durata è stato misurato — su persone reali, che hanno vissuto nello spazio per durate reali, sono tornate a casa, e sono state studiate. Il record per un singolo volo continuo è detenuto da Valeri Polyakov, un medico-cosmonauta russo che salì a bordo del [Mir](/programs/mir) nel gennaio 1994 e tornò sulla Terra nel marzo 1995, avendo trascorso 437 giorni consecutivi in orbita — ancora imbattuto, tre decenni dopo. L'obiettivo di Polyakov era esplicitamente medico: determinare se un essere umano potesse sopravvivere, funzionalmente, a una durata di missione su Marte. Quando atterrò, insistette nel camminare lontano dalla capsula Soyuz con le sue stesse forze. Il suo recupero osseo e muscolare richiedette mesi. Ha camminato. I programmi [Salyut](/programs/salyut) e [Mir](/programs/mir) costruirono un corpo di dati fisiologici sovietici e poi russi che rimane insostituibile — l'[ISS](/programs/iss) lo estese e lo globalizzò. I 665 giorni cumulativi di Peggy Whitson attraverso tre missioni diedero ai ricercatori un dataset longitudinale su un singolo individuo impossibile da replicare diversamente. Lo NASA Twin Study — la missione di 340 giorni di Scott Kelly paragonata al suo gemello identico legato alla Terra Mark — trovò cambiamenti misurabili nell'espressione genica, nella dinamica dei telomeri, nella composizione del microbioma intestinale, e nella prestazione cognitiva, la maggior parte dei quali si invertì al ritorno, ma non tutto. Il programma [Tiangong](/programs/tiangong) della Cina sta ora aggiungendo al record: equipaggi su rotazioni di 90 e 180 giorni dal 2021, una popolazione di taikonauti precedentemente assente dal dataset. Qualsiasi resoconto onesto di ciò che l'umanità sa sul corpo umano di lunga durata nello spazio deve includere ciò che la Russia ha imparato su Mir, ciò che la partnership ISS a 15 nazioni ha misurato dal 2000, e ciò che la Cina sta accumulando ora."
+    },
+    {
+      "type": "figure",
+      "image": "essays/the-body-in-the-dark/the-record",
+      "kind": "diagram",
+      "caption": "Quasi tutto ciò che sappiamo sul corpo nello spazio lo sappiamo perché persone particolari sono rimaste lassù abbastanza a lungo per misurarla — e il record è globale. I 437 giorni di Valeri Polyakov a bordo di Mir ancora resistono; l'ISS e ora Tiangong aggiungono crew-years al dataset una rotazione alla volta.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "fleet/iss/01",
+      "kind": "photo",
+      "caption": "La Stazione Spaziale Internazionale — per un quarto di secolo l'unico laboratorio dove gli effetti a lungo termine dell'assenza di peso sono stati studiati, su un equipaggio internazionale rotante che è, inevitabilmente, l'esperimento.",
+      "align": "wide",
+      "credit": "NASA"
+    },
+    {
+      "type": "heading",
+      "text": "La mente in una scatola"
+    },
+    {
+      "type": "prose",
+      "md": "Il degrado fisico del corpo è misurabile e almeno parzialmente affrontabile. La dimensione psicologica è più difficile da studiare, perché dipende da variabili — personalità, composizione dell'equipaggio, la trama del confinamento, la relazione tra equipaggio e terra — che resistono alla sperimentazione controllata. Ciò che gli studi analoghi suggeriscono non è confortante. [La psicologia dell'isolamento e del confinamento](/science/life-in-space/crew-dynamics-psychology) è stata studiata più sistematicamente nelle stazioni invernali antartico: piccoli gruppi in oscurità e freddo genuini, incapaci di partire. Gli schemi sono coerenti tra gli studi — una sindrome di metà inverno di umore e cognizione degradati, attrito interpersonale che si compone negli spazi confinati, un distanziamento psicologico dal mondo esterno che può persistere dopo il ritorno. Gli equipaggi antartico almeno possono respirare aria esterna e vedere un paesaggio. Un equipaggio su Marte non può. L'esperimento Mars-500 a Mosca (2010–2011) ha simulato una missione di 520 giorni in un habitat sigillato; sei volontari hanno completato la durata intera senza partire. Il comportamento sedentario è peggiorato nel corso della prova. Un soggetto ha trascorso la maggior parte degli ultimi mesi addormentato. Uno ha mostrato sintomi coerenti con la depressione clinica. Quando il ritardo di comunicazione è salito verso i simulati 20 minuti, gli equipaggi hanno riferito che si sentiva non solo più lento ma fondamentalmente più solitario — decisioni che sarebbero state delegate a terra dovevano essere prese a bordo, e il senso che qualcuno potesse sempre essere raggiunto lentamente si è eroso. Un membro dell'equipaggio sull'[ISS](/programs/iss) ha, in ogni momento, una Soyuz ancorata alla stazione. Su un transito verso Marte, l'uscita di emergenza non esiste. Dal momento dell'iniezione trans-Marte, nessuna decisione di nessun controllore sulla Terra può riportare l'equipaggio a casa su una scala temporale utile. L'equipaggio lo sa. Ciò che la conoscenza sostenuta della propria impossibilità di soccorso fa a una mente umana per 18 mesi è una domanda che gli studi analoghi hanno affrontato ma non possono rispondere. Non sapremo fino a quando il primo equipaggio non partirà."
+    },
+    {
+      "type": "figure",
+      "image": "missions/polaris-dawn/01",
+      "kind": "photo",
+      "caption": "Un astronauta privato nel portello aperto di una Crew Dragon durante Polaris Dawn, 2024 — un essere umano con solo una tuta tra loro e il vuoto. L'ingegneria può essere resa affidabile; la mente che deve sopportare il confinamento, il rischio, e gli anni non può essere riprogrammata.",
+      "align": "wide",
+      "credit": "Polaris Program / SpaceX"
+    },
+    {
+      "type": "heading",
+      "text": "Il limite che i motori non spostano"
+    },
+    {
+      "type": "prose",
+      "md": "Nulla di ciò che precede questa sezione è una ragione per non andare. È un resoconto onesto di ciò che andare significa, e ciò che costerà alle persone che vanno. Queste sono cose diverse, e la differenza vale la pena precisare."
+    },
+    {
+      "type": "prose",
+      "md": "La propulsione migliore importa. Le [nuove tecnologie di motori](/essays/new-propulsion) in sviluppo — nucleare termico, nucleare elettrico, vele solari, i concetti ulteriori nel futuro — ridurrebbero il tempo di transito, e ridurre il tempo di transito riduce l'esposizione alle radiazioni cumulativa e il degrado fisiologico cumulativo. Un transito di 90 giorni invece di 270 non è tre volte più facile sul corpo; la relazione tra dose e effetto è più complessa della lineare, e alcuni sistemi — il psicologico, l'osso, il cardiovascolare — sono sensibili alla durata in modi che anche un'esposizione più breve non salva completamente. Ma più breve è meglio. Motori più veloci sono vera medicina. Non cambiano, tuttavia, la natura fondamentale del problema. Un transito di 90 giorni ancora attraversa lo spazio interplanetario senza magnetosfera, senza gravità, e senza soccorso. Il corpo è ancora il carico. Si degrada ancora. Torna ancora a casa diminuito in modi che richiedono mesi o anni per invertire, se si invertono."
+    },
+    {
+      "type": "prose",
+      "md": "I contromisure che esistono sono reali ma parziali. Dispositivi di esercizio resistivo avanzati — il tipo a bordo dell'[ISS](/programs/iss), significativamente migliori di ciò che volò su primi missioni [Skylab](/programs/skylab) — possono rallentare la perdita di osso e muscolo sostanzialmente, non eliminarla. Gli interventi nutrizionali, i trattamenti farmacologici di perdita ossea, e i protocolli di gestione del sonno ognuno contribuisce qualcosa. La gravità artificiale, ottenuta ruotando l'astronave o un modulo al suo interno, affronterebbe la più grande singola categoria — la fisiologia della microgravità — ma nessuna astronave con equipaggio con gravità artificiale è mai stata costruita o volata, e il costo ingegneristico in massa e volume di lancio è sostanziale. Il programma [Skylab](/programs/skylab) con i suoi tre equipaggi — 28, 59, e 84 giorni nel 1973 e 1974 — diede la prima evidenza sistematica americana che l'esercizio potesse significativamente compensare il deconizionamento, un risultato che ha modellato i protocolli di salute dell'equipaggio su ogni programma di lunga durata successivo."
+    },
+    {
+      "type": "prose",
+      "md": "Ciò che questo rivela è che la sfida dei voli umani nello spazio profondo ha due categorie separate di difficoltà. La prima — ingegneria — è difficile ma trattabile: razzi, [navigazione](/essays/navigation), [comunicazioni](/essays/comms), atterraggio, supporto vitale hanno tutti spazi di soluzione definibili dove più conoscenza e investimento spostano la risposta in avanti. La seconda è biologica, ed è più difficile in modo diverso. Non perché la biologia sia incomprensibile — i meccanismi sono largamente compresi, e le contromisure stanno migliorando — ma perché la biologia non può essere negoziata. Non puoi scrivere una patch software per una spina che ha perso densità minerale ossea durante otto mesi. Non puoi riprogrammare la risposta del sistema immunitario all'isolamento con un aggiornamento firmware. Il corpo ha i suoi vincoli, costruiti per milioni di anni per un solo mondo, e quei vincoli sono il soffitto ultimo su quanto lontano qualsiasi individuo può viaggiare. [Le persone a bordo di una nave stellare generazionale](/essays/generational-starships) non sono individui che gestiscono la loro salute nel corso di una carriera — sono una stirpe, attraverso la quale le conseguenze fisiologiche dell'ambiente si accumulano attraverso le generazioni."
+    },
+    {
+      "type": "prose",
+      "md": "La missione [Polaris Dawn](/explore) nel 2024 — un volo umano dal settore privato attraverso i cinture di Van Allen esterne — ha fornito i primi dati di radiazione del settore privato ad altitudini dove il flusso della cintura è genuinamente pericoloso. La durata era breve, l'altitudine ancora dentro il sistema Terra-Luna. Ma segna una fase in cui la popolazione di persone per cui queste domande sono pratiche, non teoriche, si sta espandendo oltre i programmi nazionali. I vincoli del corpo non cambiano quando il datore di lavoro cambia. In ogni altro saggio in questa raccolta, l'ingegneria alla fine raggiunge l'ambizione — propulsione, [navigazione](/essays/navigation), atterraggio, [comunicazioni](/essays/comms) ognuno si è chiuso verso i loro obiettivi nel corso dei decenni. Lo spazio tra ciò che la fisiologia umana è e ciò che il transito dello spazio profondo richiede si sta chiudendo anche, attraverso la ricerca sulle contromisure e i dataset accumulati dell'[ISS](/programs/iss) e del [Tiangong](/programs/tiangong) e ciò che è venuto prima. Ma non si sta chiudendo velocemente, e potrebbe non chiudersi mai completamente. Il corpo è il sistema più vecchio sull'astronave, ed è quello che non può essere aggiornato."
+    }
+  ]
+}

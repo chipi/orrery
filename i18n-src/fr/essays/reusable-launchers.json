@@ -1,0 +1,155 @@
+{
+  "title": "Garder la fusée",
+  "dek": "Pendant soixante ans, nous avons construit la machine la plus coûteuse de l'histoire humaine, l'avons utilisée une fois, et l'avons laissée tomber dans l'océan. Les gens qui ont décidé d'arrêter de faire cela ont discrètement réalisé le plus grand changement en astronautique depuis Apollo.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "La nuit du 21 décembre 2015, un premier étage [Falcon 9](/fleet?id=falcon-9) se dressait verticalement sur un ponceau de béton à Cap Canaveral, moteurs éteints, entouré d'un nuage de vapeur résiduelle, intact. Il venait de revenir de l'espace. Environ huit minutes après son décollage pour livrer un lot de satellites en orbite, l'accélérateur s'était retourné, avait ralumé trois de ses neuf moteurs Merlin, avait freiné dans l'atmosphère supérieure, avait déployé quatre pieds d'atterrissage, et s'était posé verticalement sur le ponceau qu'il venait de quitter. Toute la manœuvre a demandé la précision habituellement réservée à une montre suisse. La foule qui regardait a explosé de joie, et le bruit — un rugissement de gens qui venaient de voir quelque chose véritablement nouveau — est encore dans la vidéo."
+    },
+    {
+      "type": "prose",
+      "md": "Ce qui s'est passé cette nuit-là était une démonstration, mais ce qu'elle démontrait n'était pas d'abord un exploit technique. C'était un argument économique. Chaque fusée jamais lancée avant celle-ci — le [Saturn V](/fleet?id=saturn-v) qui a envoyé douze hommes sur la Lune, le N1 soviétique qui n'a jamais atteint l'orbite, les familles de fusées opérationnelles Soyouz, Atlas, Proton et Long March qui représentent ensemble la plupart des lancements de cet atlas — avait été construite pour être utilisée une seule fois. On la lançait. Elle se désintégrait dans l'atmosphère ou coulait dans la mer. On en construisait une autre. L'industrie s'était organisée autour de ce fait pendant soixante ans : les fusées étaient des munitions, non des avions. À l'instant où Falcon 9 s'est posée, cette hypothèse était remise en question pour la première fois."
+    },
+    {
+      "type": "prose",
+      "md": "La question de savoir pourquoi il a fallu soixante ans pour en arriver là est plus intéressante qu'il n'y paraît."
+    },
+    {
+      "type": "heading",
+      "text": "Le problème du comptable"
+    },
+    {
+      "type": "prose",
+      "md": "La fusée jetable est gaspilleuse d'une manière presque comique si on la décrit sans détour. Une [Saturn V](/fleet?id=saturn-v) coûtait environ 185 millions de dollars en dollars de la fin des années 1960 — environ 1,5 milliard au prix actuel — et chacune volait environ douze minutes avant d'être jetée. Les cinq moteurs F-1 de son premier étage, chacun une pièce de machinerie impressionnante qui brûlait approximativement 2 600 kilogrammes de carburant par seconde, ont terminé leur vie à rouiller sur le plancher de l'Atlantique. Une expédition privée financée par Jeff Bezos a récupéré deux séries de moteurs F-1 du Saturn V du fond marin en 2013, près d'un demi-siècle après qu'ils y aient été laissés tomber, et les a trouvés largement intacts. Ils sont allés dans des musées, non pas retourner au vol. Les jeter la première fois était le plan."
+    },
+    {
+      "type": "prose",
+      "md": "La logique derrière ce plan n'était pas la stupidité. C'était la logique de la Guerre de l'Espace des années 1960 : y arriver en premier, à n'importe quel prix. Construire une fusée réutilisable est plus difficile que construire une fusée jetable. La réutilisabilité ajoute du poids — boucliers thermiques, pieds d'atterrissage, carburant réservé pour la brûlure de retour — et le poids est l'ennemi, car chaque kilogramme que vous ajoutez à la structure est un kilogramme que vous ne pouvez pas livrer en orbite. Les premiers concepteurs ont fait les calculs et ont conclu que la pénalité était trop élevée. Mieux vaut, ont-ils décidé, construire bon marché et jeter. Ce calcul était juste pour l'époque, et il a figé un ensemble d'hypothèses qui a duré deux générations."
+    },
+    {
+      "type": "prose",
+      "md": "La [Navette spatiale](/fleet?id=space-shuttle-stack) était censée briser cette logique. C'était la première tentative sincère des États-Unis — ou de quiconque — de construire un système de lancement opérationnel réutilisable, et l'argument en sa faveur était économique : en utilisant l'orbiteur à plusieurs reprises, le programme réduirait le coût d'accès à l'orbite vers 600 dollars par kilogramme, suffisamment bas pour rendre les voyages spatiaux presque routiniers. La navette a volé 135 missions entre 1981 et 2011. Elle a échoué complètement au test économique. Le coût réel par vol s'élevait en moyenne à environ 1,5 milliard de dollars lorsque les dépenses totales du programme étaient réparties sur toutes les missions — plus cher par kilogramme en orbite basse que le Saturn V qu'elle remplaçait. Refaire les tuiles de bouclier thermique de 24 000 de l'orbiteur après chaque vol n'était pas une tâche rapide ; cela consommait des milliers d'heures de travail. La réutilisabilité s'est avérée extraordinairement coûteuse quand chaque sous-système devait être démonté et reconstruit aux normes d'un avion qui pourrait transporter un équipage. La navette a prouvé que la réutilisabilité *pouvait* fonctionner mécaniquement — l'orbiteur a volé des douzaines de fois — mais elle a aussi prouvé que la réutilisabilité en elle-même ne réduit pas les coûts. L'économie ne fonctionne que si vous pouvez renouveler le véhicule *rapidement* et *bon marché*."
+    },
+    {
+      "type": "heading",
+      "text": "L'astuce la plus simple possible"
+    },
+    {
+      "type": "prose",
+      "md": "SpaceX a abordé le problème différemment. Plutôt que de réutiliser tout le véhicule — le choix qui a rendu la Navette si complexe — l'entreprise s'est concentrée sur le composant le plus cher : l'accélérateur du premier étage. Dans une fusée typique, le premier étage fait le levage le plus lourd, brûle le plus de carburant, porte la plus grande masse de moteurs, et coûte le plus à fabriquer. C'est aussi le composant que, sur une fusée jetable, vous perdez à chaque fois. Sauver le premier étage, et vous avez récupéré la majorité de la valeur du véhicule."
+    },
+    {
+      "type": "prose",
+      "md": "L'exigence technique pour le sauver est brutale : l'étage doit survivre à la rentrée dans une atmosphère qu'il venait de traverser pendant les premières minutes à Mach 7, inverser sa direction, ralentir de l'hypersonique à la vitesse d'atterrissage, et se poser verticalement sur une cible de la taille d'un terrain de football — soit au site de lancement, soit sur un drone ship à des centaines de kilomètres de distance dans l'Atlantique ou le Pacifique. Pour accomplir tout cela, l'accélérateur doit conserver suffisamment de carburant pour une série de rallumages de moteurs précisément chronométrés, ce qui signifie qu'il arrive en orbite avec moins de carburant pour la tâche principale. Cette pénalité de poids est réelle : un Falcon 9 volant avec un accélérateur neuf livre environ 22 800 kilogrammes en orbite basse terrestre ; un vol qui récupère l'accélérateur livre moins. C'est l'arbitrage fondamental au cœur du lancement réutilisable, et SpaceX l'a accepté parce que l'économie fonctionne indépendamment : l'accélérateur qui atterrit peut voler à nouveau, et à nouveau, et à nouveau."
+    },
+    {
+      "type": "prose",
+      "md": "Après l'atterrissage de décembre 2015 sont venus un deuxième, puis un troisième, et ensuite le reflux : en mars 2017, SpaceX a lancé un Falcon 9 sur un accélérateur qui avait déjà volé, la première fois de l'histoire qu'un étage de fusée de classe orbitale a volé dans l'espace deux fois. En milieu 2026, le premier étage de Falcon 9 le plus volé a complété 36 missions sur le même matériel — plus que la plupart des fusées jetables ne volent au total sur toute une flotte. Le coût marginal d'un lancement réutilisé, avec carburant et remise à neuf, s'élève à environ 15 à 20 millions de dollars contre un prix catalogue de 74 millions de dollars. La différence, grosso modo, est le coût de l'accélérateur lui-même, récupéré par la récupération."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/landing-profile",
+      "kind": "diagram",
+      "caption": "L'astuce est presque insultante à énoncer et brutale à voler : conserver suffisamment de carburant, retourner l'accélérateur, et brûler trois fois sur la route vers le bas — booster back, entrée, atterrissage — jusqu'à ce qu'il se pose sur ses pieds. Le même étage est ensuite inspecté, ravitaillé, et relancé.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Le attraper avec vos mains"
+    },
+    {
+      "type": "prose",
+      "md": "Le [Falcon Heavy](/fleet?id=falcon-heavy) a étendu la même logique latéralement : trois noyaux Falcon 9 attachés ensemble, deux d'entre eux se détachant après les deux premières minutes et volant en arrière pour atterrir simultanément, côte à côte, à Cap Canaveral. Les vidéos des atterrissages jumeaux — deux piliers de feu descendant en symétrie miroir, se posant au même instant exact — ressemblent à quelque chose d'un film. Elles ne le sont pas. Elles sont l'économie rendue visible."
+    },
+    {
+      "type": "prose",
+      "md": "[Starship](/fleet?id=starship) pousse l'argument à sa fin logique. Où Falcon 9 récupère son premier étage et se débarrasse de son étage supérieur, Starship est conçue pour récupérer *les deux*. Le surpuissant accélérateur — 71 mètres de haut, alimenté par 33 moteurs Raptor brûlant du méthane liquide et de l'oxygène liquide, produisant environ deux fois la poussée d'un Saturn V — retourne au site de lancement et est attrapé en plein air par une paire de bras mécaniques sur la tour de lancement elle-même. Le système s'appelle Mechazilla par les ingénieurs qui l'ont construit. SpaceX a d'abord attrapé l'accélérateur de cette manière le 13 octobre 2024, Vol 5 du programme de test de Starship, et a répété la manœuvre sur les vols ultérieurs. L'idée que vous ne poseriez pas votre fusée mais la *attraperiez simplement en tombant* aurait semblé être de la fiction il y a une décennie. C'est une procédure de lundi matin maintenant."
+    },
+    {
+      "type": "prose",
+      "md": "L'étage supérieur de Starship — le plus grand engin spatial jamais construit, aussi haut qu'un immeuble de quinze étages — est destiné à suivre le même chemin, retourner et être attrapé au-dessus du ponceau. Une fois que les deux moitiés sont au sol, le système peut théoriquement être ravitaillé et relancé en heures. Aucune fusée jetable n'essaie même cette comparaison. Une fusée jetable est une chaîne logistique : fabrication, transport, intégration, lancement, répétition depuis le début. Un système entièrement réutilisable est un *avion* avec une route très longue. L'économie des deux ne sont pas dans la même galaxie."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/tower-catch",
+      "kind": "diagram",
+      "caption": "Puis une idée plus étrange : ne donner aucun pied à l'accélérateur. Laisser la tour de lancement l'attraper — deux bras se refermant sur un étage de soixante-dix mètres alors qu'il plane, de sorte que la masse qui aurait été un train d'atterrissage devient une charge utile à la place. La première capture nette est venue en octobre 2024.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Le second arrivant"
+    },
+    {
+      "type": "prose",
+      "md": "Le [New Glenn](/fleet?id=new-glenn) de Blue Origin a atterri son premier étage en mer pour la première fois le 13 novembre 2025 — dix ans après l'atterrissage du Falcon 9 de décembre 2015, ce qui donne une idée de la rapidité avec laquelle l'industrie se meut quand SpaceX fixe le rythme. New Glenn est une grande fusée selon n'importe quel standard antérieur, pouvant transporter jusqu'à 45 000 kilogrammes en orbite basse terrestre en configuration jetable ; son premier étage retourne sur un drone ship dans l'Atlantique à chaque mission. La première réutilisation d'un étage New Glenn a suivi en avril 2026. L'approche de Blue Origin reflète celle de SpaceX en architecture : sauver le premier étage, le relancer, réduire le coût marginal avec chaque réutilisation."
+    },
+    {
+      "type": "prose",
+      "md": "Ce que l'émergence du [New Glenn](/fleet?id=new-glenn) ajoute au tableau, c'est la pression concurrentielle. Pendant la plupart de la décennie entre 2015 et 2025, SpaceX était essentiellement seule sur le marché du lancement réutilisable. Un marché avec un seul fournisseur n'est pas un marché ; c'est un monopole. L'entrée d'un second lanceur réutilisable crédible change la dynamique des prix pour tous ceux qui achètent un trajet vers l'orbite. Les opérateurs de satellites, les agences spatiales, et les clients commerciaux qui n'avaient autrefois d'autre choix que de prendre ce que SpaceX offrait ont maintenant des alternatives — et d'autres arrivent."
+    },
+    {
+      "type": "prose",
+      "md": "La Chine a bougé avec un sérieux inhabituel. Le Zhuque-3 de LandSpace, une fusée au méthane grossièrement analogue au Falcon 9, a tenté sa première récupération en décembre 2025 ; l'étage supérieur a atteint l'orbite mais l'accélérateur s'est écrasé sur son approche d'atterrissage. Une deuxième tentative de récupération est prévue pour milieu 2026. iSpace a son Hyperbola-3 en qualification matérielle, avec un drone ship dédié déjà lancé, et cible son premier vol depuis Wenchang. Plusieurs autres entreprises commerciales chinoises sont en développement actif. Le gouvernement chinois a fait de l'accès réutilisable à l'orbite une priorité nationale explicite. Que le pays qui a construit la Grande Muraille ait décidé d'arrêter de jeter ses fusées est un point de données qui mérite qu'on s'y attarde."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/falcon-9/01",
+      "kind": "photo",
+      "caption": "Un premier étage Falcon 9 se tient de nouveau sur ses pieds après avoir livré une charge utile en orbite — le moment où une hypothèse de soixante ans s'est discrètement effondrée. Une fois qu'une entreprise a prouvé qu'un accélérateur pouvait voler à nouveau, tous les autres ont dû apprendre à garder les leurs aussi.",
+      "align": "wide",
+      "credit": "SpaceX"
+    },
+    {
+      "type": "heading",
+      "text": "Ce que la réutilisabilité change réellement"
+    },
+    {
+      "type": "prose",
+      "md": "L'histoire de surface est la réduction des coûts, et la réduction des coûts est réelle : les prix de lancement qui s'élevaient autrefois à 200 millions de dollars ou plus pour une grosse fusée jetable ont baissé vers 60–80 millions de dollars pour une mission de levage moyen réutilisable, et l'économie marginale d'un accélérateur Falcon 9 bien usé est encore plus basse. Mais le changement plus profond est dans la *cadence* de lancement. SpaceX a lancé 132 missions Falcon 9 en 2024 — presque trois par semaine, soutenues sur toute une année civile, avec le même groupe d'accélérateurs se cyclant par le ponceau et en arrière. Aucune architecture jetable ne pourrait approcher ce tempo ; vous auriez besoin d'une chaîne d'approvisionnement industrielle opérant à un rythme de temps de guerre pour l'égaler. La réutilisabilité, s'avère-t-il, n'est pas qu'une question de coût. C'est une question de rythme. Et le rythme parle de ce qui devient possible."
+    },
+    {
+      "type": "prose",
+      "md": "Ce qui devient possible, c'est Starlink : une constellation qui a demandé plus de 6 000 lancements pour être peuplée, impossible à construire selon n'importe quelle structure de prix jetable qui ait jamais existé. Ce qui devient possible, ce sont des missions scientifiques commerciales bas coût qui n'auraient auparavant pas pu se permettre le trajet. Ce qui devient possible, éventuellement, c'est un transport habité vers Mars à une fréquence qui en fait un programme plutôt qu'un exploit — parce que le [budget delta-v](/science/propulsion/dv-budget) d'une mission Terre-Mars exige un véhicule qui peut être ravitaillé en orbite et réutilisé, ou les fractions de masse ne se ferment tout simplement pas. La réutilisabilité n'est pas qu'une préférence économique. Pour les ambitions que [Starship](/fleet?id=starship) est conçue pour soutenir, c'est une exigence physique."
+    },
+    {
+      "type": "prose",
+      "md": "La pénalité de poids qui a amené les premiers ingénieurs à rejeter la réutilisabilité est encore réelle ; elle n'a pas été éliminée par l'ingénierie. Un Starship entièrement jetable livrerait plus en orbite qu'un réutilisable. Mais la question n'est plus de savoir si vous pouvez vous permettre la pénalité de poids. C'est de savoir si vous pouvez vous permettre de jeter le tout — de savoir, comme l'industrie des fusées l'a fait pendant six décennies, si vous pouvez traiter la machine la plus complexe jamais construite comme un article à usage unique."
+    },
+    {
+      "type": "figure",
+      "image": "essays/reusable-launchers/cost-curve",
+      "kind": "diagram",
+      "caption": "Le nombre qui change tout est le prix d'un kilogramme en orbite. La Navette a promis de le réduire et ne l'a jamais fait ; le Falcon 9 réutilisable l'a réduit d'environ vingt fois. Abaissez-le assez loin et les missions qui étaient autrefois impensables deviennent simplement programmées.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "La question qui s'est posée"
+    },
+    {
+      "type": "prose",
+      "md": "L'argument original de l'industrie des fusées contre la réutilisabilité était d'ingénierie : le véhicule est trop complexe pour être remis à neuf bon marché, trop fragile pour voler à nouveau sans démontage, trop limité en poids pour transporter le matériel nécessaire pour atterrir. L'expérience de la Navette spatiale semblait confirmer les trois. Ces préoccupations étaient légitimes, et pendant trente ans elles ont tenu bon."
+    },
+    {
+      "type": "prose",
+      "md": "Ce qui a changé, ce n'était pas la physique. Ce qui a changé, c'était la base de fabrication, le choix du carburant — le méthane brûle plus propre que le kérosène, laisse moins de résidu, rend la remise à neuf plus rapide — et, plus que toute autre chose, la volonté de concevoir pour la réutilisabilité dès le départ plutôt que de la rajouter à un véhicule optimisé pour la jetabilité. La Navette était une fusée jetable à laquelle on avait dit de revenir. Le booster Falcon 9 a été conçu dès le début autour de la question de comment atterrir. Cette différence d'intention de conception représente la plupart de la différence en résultat."
+    },
+    {
+      "type": "prose",
+      "md": "Dans la décennie qui a suivi cette nuit de décembre à Cap Canaveral, atterrir un accélérateur est passé de l'impossible à l'ordinaire. Un premier étage Falcon 9 qui échoue à retourner sur son drone ship est maintenant l'événement inhabituel, digne d'être noté dans le journal des anomalies. Super Heavy a été attrapé de l'air. Une deuxième entreprise a atterri un étage de levage lourd en mer et l'a relancé. La Chine court pour rattraper. L'hypothèse qui a gouverné toute l'industrie de lancement depuis Spoutnik — qu'une fusée est jetable — a été brisée, et son rupture reshape déjà quelles missions sont possibles, quels commerces sont viables, et quel coût aura la prochaine génération pour aller plus loin."
+    },
+    {
+      "type": "prose",
+      "md": "Aucun des [étages de fusée](/science/propulsion/rocket-stages) qui ont jamais transporté des humains ou des engins spatiaux en orbite au cours des soixante premières années des voyages spatiaux n'a survécu. Ils sont sur le plancher océanique, ou dans l'atmosphère supérieure sous forme de molécules dispersées, ou dans des musées où les ingénieurs qui les ont construits peuvent marcher et reconnaître des choses qu'ils ont autrefois touchées. Ceux qui volent maintenant reviennent. Ce seul changement — discret, technique, brutalement difficile à mettre en œuvre — est la chose qui sépare la première ère des voyages spatiaux de ce qui vient ensuite."
+    },
+    {
+      "type": "figure",
+      "image": "fleet/starship/01",
+      "kind": "photo",
+      "caption": "Starship est le pari plus grand : que tout le véhicule — accélérateur et navire ensemble — revient à la maison et vole à nouveau en quelques jours. Si cela tient, le coût d'accès à l'orbite cesse d'être la chose qui décide de ce que l'humanité est autorisée à tenter.",
+      "align": "wide",
+      "credit": "SpaceX"
+    }
+  ]
+}

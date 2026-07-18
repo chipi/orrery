@@ -65,7 +65,11 @@
       "periapsis_km": 110,
       "inclination_deg": 28.5,
       "orbit_insertion_dv_km_s": 0.91,
-      "source": "Apollo 17 Mission Report (NASA JSC-07904, 1973)"
+      "source": "Apollo 17 Mission Report (NASA JSC-07904, 1973)",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 7.3,

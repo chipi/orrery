@@ -50,6 +50,12 @@
   "flight": {
     "launch": {
       "vehicle_stage": "SLS Exploration Upper Stage (EUS)"
+    },
+    "arrival": {
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     }
   }
 }

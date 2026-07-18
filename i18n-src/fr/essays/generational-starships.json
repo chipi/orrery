@@ -1,0 +1,159 @@
+{
+  "title": "Le Vaisseau Devient un Monde",
+  "dek": "Si nous ne pouvons pas aller vite, la seule alternative est d'aller lentement — d'échanger la vitesse contre le temps et de laisser l'équipage devenir une lignée. Le vaisseau générationnel n'est pas un plan que quelqu'un construit. C'est un miroir tenu face à tout ce que nous sommes déjà.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "L'[essai sur l'exploration interstellaire](/essays/interstellar-exploration) fait l'arithmétique honnêtement, et l'arithmétique est impitoyable. Le système stellaire le plus proche, Alpha Centauri, se trouve à 4,37 années-lumière. [Voyager 1](/missions?id=voyager-1), l'objet le plus rapide que l'humanité ait jamais lancé sur une trajectoire d'évasion du système solaire, a quitté la Terre en 1977 et se trouve maintenant — après près de cinq décennies de vol — à moins de 0,003 années-lumière. À ce rythme, un vaisseau visant Alpha Centauri arriverait dans environ 75 000 ans. L'[essai sur la propulsion](/essays/new-propulsion) énumère les solutions : les moteurs ioniques, les voiles solaires, les moteurs nucléo-thermiques. Ils aident aux marges du système solaire. Face aux distances interstellaires, même les plus ambitieux d'entre eux offrent peut-être un facteur dix de vitesse. Dix fois plus rapide que Voyager signifie toujours 7 500 ans. Aucune technologie à laquelle nous pouvons pointer, et aucune physique que nous comprenons, ne comble cet écart jusqu'à une vie humaine."
+    },
+    {
+      "type": "prose",
+      "md": "Il existe une réponse à cela qui n'est pas un fantasme : accepter l'échelle de temps. Ne comprimez pas le voyage — accommodez-le. Construisez un vaisseau assez grand et autosuffisant pour soutenir la vie humaine non pas pendant des années mais pendant des siècles, et envoyez-le en sachant que les gens qui descendront à la destination seront les arrière-arrière-petits-enfants, peut-être les arrière-arrière-arrière-petits-enfants, de ceux qui sont montés à bord. Le vaisseau générationnel. Il est clair que ce n'est pas un plan que quelqu'un exécute actuellement, ou sur le point d'exécuter. Aucun gouvernement n'y a budgétisé. Aucun programme d'ingénierie ne travaille vers cela. Il appartient à la catégorie des idées qui sont prises au sérieux par les physiciens, les démographes et les éthiciens précisément parce qu'elles ne sont pas limitées par la praticabilité à court terme — des expériences de pensée avec de véritables enjeux, où le raisonnement révèle des choses que des ambitions plus modestes obscurcissent. La valeur d'imaginer un vaisseau générationnel n'est pas le vaisseau. C'est ce que le vaisseau exige, et ce que ces exigences disent sur nous."
+    },
+    {
+      "type": "prose",
+      "md": "Parce que ce qu'elles disent, surtout, c'est que nous ne comprenons pas encore le problème que nous pensons comprendre. Nous imaginons l'ingénierie — la coque, les moteurs, le réacteur — et nous sous-estimons tout le reste. Un vaisseau générationnel n'est pas un grand engin spatial. C'est une civilisation dans une bouteille, lancée dans l'obscurité, sans ravitaillement, sans secours, et un délai de communication qui grandit, au cours des décennies de vol, d'heures à jours à semaines, jusqu'à ce que l'[essai sur les communications](/essays/comms) « des lettres entre des gens qui se sont déjà tous les deux éloignés » cesse d'être une métaphore et devienne une description littérale de la relation entre le vaisseau et la maison. Les problèmes difficiles ne sont pas ceux des manuels d'ingénierie. Ce sont ceux des manuels d'écologie, de génétique, de gouvernance et de philosophie, et ces disciplines y réfléchissent, à leur manière, depuis longtemps."
+    },
+    {
+      "type": "heading",
+      "text": "La réponse lente"
+    },
+    {
+      "type": "prose",
+      "md": "L'échange est brutal mais cohérent : remplacer la vitesse par le temps, et transporter une civilisation au lieu d'un équipage. Toute mission habitée vers une autre étoile doit soit voyager à une fraction significative de la vitesse de la lumière, soit soutenir l'équipage pendant de nombreux siècles à des vitesses plus lentes, soit faire quelque chose que nous ne savons pas encore comment faire. La première exige une propulsion qui reste spéculative même en principe — accélérer un vaisseau habité à dix pour cent de la vitesse de la lumière exige une énergie qui dépasse la production totale de la civilisation humaine. La troisième est de la science-fiction au sens précis du terme : nous n'avons pas la physique. La deuxième option est les vaisseaux générationnels, et la raison pour laquelle ils persistent dans la discussion sérieuse est qu'ils ne nécessitent rien que nous ne sachions déjà comment penser. Pas de physique exotique. Seulement la volonté d'accepter que le voyage est l'œuvre d'une lignée, non d'un équipage."
+    },
+    {
+      "type": "prose",
+      "md": "Un vaisseau visant Proxima Centauri à un pour cent de la vitesse de la lumière — un ordre de magnitude plus rapide que tout ce que nous avons construit, mais pas physiquement inconcevable — arriverait dans environ 430 ans. À peu près le temps qui nous sépare de Shakespeare. Les gens qui sont partis ne vivraient pas pour voir la destination ; ni leurs enfants, ni leurs petits-enfants, ni plusieurs générations après eux. Le vaisseau devrait soutenir une société humaine fonctionnelle et reproductrice sur toute cette période, sans apport externe et sans possibilité de ravitaillement, et avec un délai de communication avec la Terre qui, quelques décennies après le départ, deviendrait assez long pour que aucune guidance en temps réel depuis la maison ne soit possible. Le [délai actuel de voyage aller-retour de la lumière de Voyager 1](/missions?id=voyager-1) vers la Terre est d'environ 23 heures. Un vaisseau situé à une année-lumière attendrait un an pour toute réponse. À trois années-lumière : trois ans. L'isolement n'est pas métaphorique. Il est absolu."
+    },
+    {
+      "type": "heading",
+      "text": "Un monde fermé"
+    },
+    {
+      "type": "prose",
+      "md": "Le premier problème d'ingénierie est le plus fondamental : rien n'arrive, et rien ne part. Chaque atome d'oxygène, d'eau, d'azote, de carbone et de minéraux en traces que l'équipage a besoin pour le voyage entier doit soit être lancé avec le vaisseau, soit régénéré à bord, indéfiniment, sans défaillance. Le [système ECLSS de support de vie](/science/life-in-space/eclss-life-support) à bord de la Station spatiale internationale est le système de support de vie en boucle fermée le plus sophistiqué que l'humanité ait jamais opéré — il récupère l'eau de l'humidité, de l'urine et de l'air de la cabine ; il génère de l'oxygène en électrolysant l'eau ; il élimine le dioxyde de carbone de l'atmosphère. Il est ravitaillé par des véhicules cargo plusieurs fois par an. Supprimez le ravitaillement, et chaque inefficacité dans la boucle s'accumule : chaque kilogramme d'eau non récupéré, chaque molécule de gaz non recyclé, est un kilogramme ou une molécule perdue à jamais de l'inventaire total du vaisseau. Sur un voyage de quatre siècles, la composition de petites pertes devient existentielle. Un système qui est 99,9 pour cent efficace perd, sur 430 ans, l'équivalent de son stock de travail complet plusieurs fois. La boucle doit être, en pratique, complète."
+    },
+    {
+      "type": "prose",
+      "md": "La seule preuve d'existence d'une écologie fermée à l'échelle est la Terre elle-même, qui exécute ses boucles depuis 4,5 milliards d'années sur un substrat de la taille d'une planète avec un apport uniquement du soleil. Tout ce qui est plus petit a été tenté et a rencontré des difficultés. La tentative la plus instructive — parce qu'elle était sérieuse, bien financée, et a échoué de manière à enseigner des leçons précises — était Biosphere 2, la structure de 1,27 hectare en verre et acier scellée construite dans le désert de l'Arizona et habitée par huit personnes de septembre 1991 à septembre 1993. Les concepteurs l'ont conçue comme une démonstration d'une écologie fermée autosuffisante : cinq biomes, une ferme, un océan, un marais, une forêt tropicale, un désert, tous scellés dans une coque à travers laquelle seuls la lumière du soleil et l'électricité passaient. L'équipage devait respirer de l'air régénéré par les plantes, boire de l'eau cyclée dans le système, et manger de la nourriture qu'ils cultiveaient eux-mêmes."
+    },
+    {
+      "type": "prose",
+      "md": "Ce qui s'est passé à la place a été instructif. En quelques mois, les niveaux d'oxygène ont commencé à chuter — de 21 pour cent normal sur Terre à 14,5 pour cent sur deux ans, l'équivalent de vivre à une altitude de 4 000 mètres. Le coupable s'avéra être le béton dans la structure elle-même : il absorbait le dioxyde de carbone plus rapidement que la biologie ne produisait d'oxygène, un effet que les concepteurs n'avaient pas modélisé. Les gloires du matin, introduites comme culture alimentaire, se sont échappées dans le biome de la forêt tropicale et ont étouffé d'autres plantes. Dix-neuf des vingt-cinq espèces de vertébrés introduites ont disparu. L'équipage a perdu du poids corporel sur la production de la ferme et a dû compléter avec les réserves d'urgence. L'oxygène a dû être injecté deux fois pour maintenir l'équipage fonctionnel. Deux ans, dans une structure de 1,27 hectare avec huit personnes, avec intervention active possible de l'extérieur à tout moment : les leçons de Biosphere 2 pour un voyage scellé de quatre siècles ne sont pas encourageantes. Elles sont, cependant, exactes."
+    },
+    {
+      "type": "prose",
+      "md": "Un vaisseau générationnel devrait être une écologie, pas simplement un système de support de vie. Le microbiome du sol, les cycles de décomposition, les flux de nutriments qui empêchent les terres agricoles de s'épuiser sont tous des processus biologiques qui nécessitent leurs propres populations d'organismes, leurs propres équilibres, leur propre espace. L'agriculture seule ne peut pas fermer ces boucles ; les boucles qui les ferment sont celles que Biosphere 2 a découvert qu'elle ne pouvait pas maintenir. Les modes de défaillance d'une écologie fermée ne sont pas dramatiques. Ils sont subtils — des accumulations lentes, des puits inattendus, une espèce prospérant aux dépens de l'équilibre du système — et ils opèrent sur des échelles de temps qui dépassent tout expérience que nous avons menée. Après Biosphere 2, les questions écologiques demeurent substantiellement sans réponse. Pour un voyage de quatre siècles, ce sont les premières questions, pas les dernières."
+    },
+    {
+      "type": "figure",
+      "image": "essays/generational-starships/closed-loop",
+      "kind": "diagram",
+      "caption": "Rien n'arrive et rien ne part. L'écologie doit fonctionner sans interruption pendant des siècles — air, eau et nourriture cyclés sans fin, sans ravitaillement et sans contrôle au sol à appeler. Biosphere 2, un écosystème scellé de trois acres, ne pouvait pas maintenir son propre oxygène stable pendant seulement deux ans.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "fleet/iss/01",
+      "kind": "photo",
+      "caption": "La Station spatiale internationale est la chose la plus proche que nous ayons construite d'un monde fermé — et elle est ravitaillée depuis la Terre toutes les quelques semaines. Un vaisseau qui doit fermer la boucle complètement, pendant mille ans, est un ordre de problème entièrement différent.",
+      "align": "wide",
+      "credit": "NASA"
+    },
+    {
+      "type": "heading",
+      "text": "L'équipage est une population"
+    },
+    {
+      "type": "prose",
+      "md": "Le deuxième problème est génétique, et il a un nom : population minimale viable. Une espèce qui se reproduit sexuellement a besoin d'un certain nombre d'individus reproducteurs pour maintenir la diversité génétique au fil des générations — pour éviter la dépression de consanguinité, pour conserver le réservoir de variation qui permet l'adaptation à la maladie, au stress et aux changements environnementaux. La question pour un vaisseau générationnel est : combien de personnes devez-vous avoir à bord pour arriver à la destination avec une population qui est génétiquement saine, c'est-à-dire pas tellement consanguine qu'elle aurait perdu la variation requise pour la survie à long terme ?"
+    },
+    {
+      "type": "prose",
+      "md": "Les estimations ne sont pas rassurantes. Une étude de 2014 par l'anthropologue Cameron Smith de la Portland State University, basée sur les modèles de génétique des populations et les conditions spécifiques d'un voyage interstellaire multigénérationnel, a conclu qu'une population fondatrice minimale d'environ 14 000 personnes serait nécessaire pour maintenir la santé génétique sur un voyage de 150 ans, multigénérationnel, en tenant compte de la maladie, des accidents et de la variance naturelle du succès reproducteur. Les estimations antérieures et plus optimistes — certaines suggérant quelques centaines, d'autres quelques milliers — supposaient généralement un comportement reproducteur idéal, aucun événement de goulot d'étranglement, et des conditions de gestion génétique (essentiellement, l'élevage contrôlé) que la plupart des éthiciens trouveraient troublantes. Même les analyses les plus conservatrices convergent vers un nombre qui n'est pas un équipage dans aucun sens conventionnel. C'est une ville."
+    },
+    {
+      "type": "prose",
+      "md": "Au-delà de la génétique, le problème de la population est culturel. Les sociétés humaines sur des dizaines de générations ne restent pas statiques. Les langues dérivent ; les religions évoluent ou meurent ; les systèmes de gouvernance qui semblent stables sur des décennies se fractionnent sur des siècles ; la mémoire institutionnelle de pourquoi les règles existent s'érode et les règles soit se calcifient en dogme soit se dissolvent en anomie. Un voyage de quatre siècles du départ à l'arrivée couvre à peu près le même temps que la totalité de la Révolution scientifique — de Copernic à travers Newton à travers Darwin à Einstein. La société qui arrive à la destination ne sera pas la société qui est partie, dans aucun sens culturel qui importe. Qu'elle comprendra toujours la mission, qu'elle aura toujours les connaissances techniques pour exécuter l'atterrissage et l'établissement d'une colonie, qu'elle portera toujours les compétences et les structures sociales nécessaires pour survivre dans un environnement alien — ce ne sont pas des questions d'ingénierie. Ce sont des questions sur la manière dont les connaissances sont transmises au fil des générations, comment les institutions persistent ou échouent, comment l'identité se maintient ensemble dans des conditions de confinement radical et d'isolement radical. L'histoire n'est pas optimiste sur aucune d'elles."
+    },
+    {
+      "type": "prose",
+      "md": "La [recherche en vol spatial de longue durée](/science/life-in-space/long-duration-effects) que nous avons menée — des équipages de [Skylab](/missions?id=skylab-2) des années 1970 à travers les années de [Mir](/programs/mir) et la présence humaine continue à bord du [programme ISS](/programs/iss) depuis 2000 — aborde la [dynamique d'équipage](/science/life-in-space/crew-dynamics-psychology) sur des mois, pas des décennies. Le vol spatial humain en continu le plus long jamais enregistré est d'environ 437 jours. Nous savons beaucoup sur ce qui arrive à un corps en [microgravité](/science/life-in-space/microgravity-physiology) pendant un an. Nous savons presque rien sur ce qui arrive à une société pendant un siècle, en confinement, sous les pressions spécifiques d'un monde scellé sans extérieur. L'[essai sur le corps dans l'obscurité](/essays/the-body-in-the-dark) couvre l'arc physiologique. Les arcs sociologiques et psychologiques sont plus longs, moins étudiés, et à certains égards plus alarmants."
+    },
+    {
+      "type": "figure",
+      "image": "essays/generational-starships/the-population",
+      "kind": "diagram",
+      "caption": "Les passagers ne sont pas un équipage mais une population, et elle doit rester génétiquement saine au fil de douzaines de générations. Une étude met le minimum près de 14 000 personnes pour un voyage de 150 ans — pas un équipage que vous entraînez, mais une société que vous lancez, avec sa propre gouvernance, culture et dérive.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Né dans la mission"
+    },
+    {
+      "type": "prose",
+      "md": "Voici la question à laquelle la plupart des discussions sur les vaisseaux générationnels finissent par arriver et tendent à dépasser rapidement, parce qu'elle n'a pas de réponse confortable. Les personnes qui montent à bord du vaisseau consentent au voyage. Ce sont des adultes qui ont choisi, en connaissance de cause, de donner leurs vies à un projet dont elles ne vivront pas pour voir l'accomplissement — un choix qui a un précédent dans l'histoire humaine, des constructeurs de cathédrales aux planteurs de vergers que leurs petits-enfants récolteraient. Le choix est inhabituel mais c'est, du moins, un choix."
+    },
+    {
+      "type": "prose",
+      "md": "Les personnes nées sur le vaisseau n'ont pas fait ce choix. Elles héritent d'un monde scellé et d'une tâche — arriver à une étoile, établir une colonie — qui a été décidée par des gens qui ont disparu avant elles, dans un temps et un contexte qu'elles ne peuvent connaître que par des dossiers. Elles ne peuvent pas partir. Elles ne peuvent pas refuser la mission sans menacer la survie de tout le monde à bord. Le vaisseau est leur monde entier : sa politique est la seule politique, ses normes sociales les seules normes qu'elles aient jamais connues, sa mission le cadre de chaque vie qu'elles aient jamais observée. En quel sens sont-elles libres ? En quel sens est-il éthique pour les fondateurs de faire, en leur nom, un choix aussi total ?"
+    },
+    {
+      "type": "prose",
+      "md": "Le philosophe S. Matthew Liao et d'autres travaillant en éthique reproductive se sont engagés directement dans cette question, et leurs conclusions ne sont pas simples. L'argument standard pour les vaisseaux générationnels — que les descendants seront heureux d'exister, et que d'exister dans un vaisseau est mieux que de ne pas exister — se heurte au problème bien connu de la non-identité : vous ne pouvez pas faire du tort à quelqu'un en les menant à l'existence, parce que la non-existence n'est pas un préjudice qui peut être comparé à l'existence. Mais cela coupe maladroitement dans les deux sens. Si vous ne pouvez pas faire du tort aux descendants non nés en les lançant dans un voyage scellé de plusieurs siècles, vous ne pouvez également pas, par la même logique, faire du voyage un cadeau pour eux. On ne leur donne pas un choix. On leur donne un monde, puis on leur dit que le monde a une tâche, et que la tâche est non négociable, et qu'il n'y a pas de sortie. Les fondateurs d'un vaisseau générationnel prendraient la décision la plus conséquente et irréversible de l'histoire humaine : s'engager non seulement eux-mêmes mais chaque descendant des leurs, pendant des siècles, dans un projet dont ils ne peuvent se retirer. L'éthique de cette décision n'a pas été résolue, et la position honnête est qu'elle ne peut pas être — que le vaisseau générationnel se trouve à l'intersection de deux impératifs moraux authentiques (élargir la portée de la vie par rapport à la liberté des individus à déterminer leurs propres conditions) qui ne peuvent pas tous deux être pleinement satisfaits."
+    },
+    {
+      "type": "heading",
+      "text": "Vont-ils arriver en premier ?"
+    },
+    {
+      "type": "prose",
+      "md": "Même en accordant tout ce qui précède — l'écologie, la génétique, la gouvernance, l'éthique — il y a un problème de plus, et c'est le plus étrange. Il a été articulé clairement par le mathématicien Andrew Kennedy dans un article de 2006 dans le Journal de la British Interplanetary Society, et il porte le nom du « calcul d'attente ». L'argument est le suivant : si vous lancez un vaisseau lent maintenant, vers Alpha Centauri, et que la technologie humaine continue de s'améliorer — si, des décennies ou des siècles dans le futur, nous développons des systèmes de propulsion permettant un voyage à dix ou vingt ou cinquante pour cent de la vitesse de la lumière — alors un vaisseau plus rapide lancé plus tard pourrait partir après votre vaisseau lent mais arriver avant, ou en même temps. Dans ce cas, était-il rationnel de partir tôt ? Les personnes qui sont parties dans le vaisseau lent auraient passé des siècles en transit ; les personnes qui sont parties dans le vaisseau rapide pourraient avoir passé des décennies ou des années ; elles pourraient arriver pour trouver la colonie déjà établie par les descendants du vaisseau lent, ou elles pourraient — si le vaisseau lent n'était pas encore arrivé — être les premières là-bas, malgré avoir quitté plus tard."
+    },
+    {
+      "type": "prose",
+      "md": "Kennedy a travaillé les mathématiques pour cela. Étant donné des hypothèses raisonnables sur le rythme de l'amélioration technologique en propulsion (basées sur les taux historiques), le moment de départ optimal pour toute destination donnée n'est pas « dès que possible » mais « quand la technologie est assez bonne qu'attendre plus longtemps produit des rendements décroissants ». Pour Alpha Centauri, le calcul d'attente suggère qu'un vaisseau lancé avant un certain seuil de capacité de propulsion serait irrationnel — qu'attendre une meilleure technologie serait toujours à faire, jusqu'à un certain point. Le paradoxe est que ce raisonnement peut continuer à se mettre à jour indéfiniment : le vaisseau que vous êtes sur le point de lancer est toujours en danger d'être dépassé par un meilleur vaisseau lancé plus tard, donc le choix rationnel semble toujours être d'attendre. C'est un véritable dilemme, et il n'a pas été résolu. Les seules réponses cohérentes impliquent soit d'accepter que certains voyages de pionnier seront dépassés et que c'est acceptable, soit de postuler un scénario dans lequel le progrès technologique s'arrête et l'attente cesse vraiment d'être rationnelle. Aucune réponse n'est pleinement satisfaisante."
+    },
+    {
+      "type": "figure",
+      "image": "essays/generational-starships/the-wait-calculation",
+      "kind": "diagram",
+      "caption": "Et il y a un paradoxe dans le simple fait de partir. Un vaisseau lancé lentement maintenant pourrait être dépassé par un plus rapide construit des siècles plus tard — arrivant pour trouver la destination déjà établie. Si l'attente peut toujours vous y dépasser, quand, le cas échéant, est-ce rationnel de partir ?",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Le miroir"
+    },
+    {
+      "type": "prose",
+      "md": "Ici, à la fin de cette collection, se trouve la chose pour laquelle le vaisseau générationnel existe vraiment. Pas la destination — il n'y a pas de mission et pas d'étoile. L'expérience de pensée est un miroir, et ce qu'elle reflète est le monde que nous habitons déjà."
+    },
+    {
+      "type": "prose",
+      "md": "Considérez ce qu'un vaisseau générationnel est vraiment. Un monde scellé et fini. Une écologie entièrement fermée qui ne peut pas être autorisée à échouer. Une population d'humains qui n'ont pas choisi les conditions de leur naissance et qui sont engagés, par des circonstances qu'ils n'ont pas créées, dans le maintien de systèmes qu'ils n'ont pas construits. Un ensemble de ressources qui ne peut pas être réapprovisionné de l'extérieur. Un problème de gouvernance s'étendant sur des générations, avec des décisions prises aujourd'hui engageant des personnes des siècles à venir. Un délai de communication — pas depuis un contrôle au sol lointain, mais de chaque génération précédente à chaque génération suivante — ce qui signifie que les gens qui dirigent maintenant le système travaillent toujours avec des instructions écrites par des gens qui n'auraient pas pu anticiper la situation présente, et laissant des instructions pour des gens qui feront face à des circonstances impossibles à prévoir."
+    },
+    {
+      "type": "prose",
+      "md": "Ce n'est pas une description d'un vaisseau hypothétique. C'est une description de la Terre. L'écologie fermée est la biosphère — les mêmes boucles de carbone et d'azote et d'eau que Biosphere 2 a essayé de miniaturiser et a trouvé qu'elle ne pouvait pas tenir pendant deux ans. L'[exposition aux radiations](/science/life-in-space/radiation-exposure), la [perte osseuse](/science/life-in-space/bone-density-loss), la [dérive vestibulaire](/science/life-in-space/vestibular-adaptation) que l'essai sur le corps trace chez les astronautes individuels est la version en foyer net d'une version plus lente, civilisationnelle du même problème : les humains ont évolué pour des conditions qui changent autour d'eux, et l'échelle de temps de l'adaptation n'est pas l'échelle de temps du changement. Le [défi de la production alimentaire](/science/life-in-space/food-production-off-world) que les concepteurs d'un vaisseau doivent résoudre — comment nourrir des milliers indéfiniment sur un substrat fini sans importations — est le même défi que l'agriculture mondiale fait face, à l'échelle planétaire, avec une population qui croît toujours. La question de gouvernance — qui décide, pendant combien de temps, au nom de gens pas encore nés — est la question exacte que la politique climatique, le stockage des déchets nucléaires, les systèmes de pensions et la gestion de la dette essaient et largement échouent à répondre."
+    },
+    {
+      "type": "prose",
+      "md": "Rien de cela n'est confortable. L'expérience de pensée du vaisseau générationnel n'est pas réconfortante — c'est clarifiante, ce qui est une chose différente. Elle élimine l'hypothèse que nous sommes des passagers temporaires sur ce monde, que les systèmes sur lesquels nous dépendons sont le problème de quelqu'un d'autre, que les décisions que nous prenons sur l'atmosphère et les océans et le sol sont réversibles ou reportables de la manière que les décisions que les fondateurs d'un vaisseau ne le sont pas. Elles ne le sont pas. Nous avons été lancés. Le vaisseau — celui-ci, le véritable, le seul que nous ayons jamais habité — est déjà en cours. Les personnes qui arriveront à la destination que cette civilisation atteindra seront les descendants des personnes qui ont fait, ou n'ont pas fait, les choix sur lesquels la vue longue a tourné pendant la longueur de cette collection."
+    },
+    {
+      "type": "prose",
+      "md": "Les [Voyagers](/missions?id=voyager-1) continueront de voler. [Pioneer 10](/missions?id=pioneer-10) est toujours sortant, silencieux maintenant, son transmetteur longtemps éteint, glissant à travers l'espace interstellaire sur l'élan d'un lancement de 1972. [Pioneer 11](/missions?id=pioneer-11) pareil. Ce sont les extensions physiques les plus éloignées de cette civilisation, et elles la survivront — survivront probablement au Soleil, glissant à travers la galaxie pendant des milliards d'années après que chaque structure humaine se soit dissoute. Elles portent des plaques, parce que les gens qui les ont construites ont pensé, correctement, à la vue longue : non seulement ce que ces engins spatiaux feraient, mais ce qu'ils signifieraient pour quiconque les trouverait après notre disparition. Cet instinct — construire pour des destinataires que vous ne rencontrerez jamais, envoyer quelque chose vers l'avant dans un temps que vous ne pouvez pas voir — est l'impulsion du vaisseau générationnel en miniature. C'est aussi, dans la lecture la plus honnête de où nous sommes, le seul instinct qui pourrait importer. Nous sommes l'équipage. Nous sommes déjà en vol. La question que le vaisseau générationnel pose — une civilisation peut-elle maintenir, au fil des générations, les systèmes et les intentions et le soin que la survie exige ? — n'est pas une question sur un vaisseau qui n'existe pas. C'est la question de ce siècle, posée dans le langage des étoiles."
+    },
+    {
+      "type": "figure",
+      "image": "missions/apollo8/01",
+      "kind": "photo",
+      "caption": "Lever de Terre, photographié depuis Apollo 8 en 1968 — la totalité du seul monde fermé et fini que nous ayons jamais connu, portant sa lignée à travers l'obscurité sans ravitaillement et sans contrôle au sol. Le vaisseau générationnel est une expérience de pensée sur celui-ci : nous sommes déjà l'équipage d'un.",
+      "align": "wide",
+      "credit": "NASA / William Anders"
+    }
+  ]
+}

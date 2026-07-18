@@ -1,0 +1,15 @@
+{
+  "title": "Entry Heating",
+  "intro_sentence": "Why hitting an atmosphere at kilometres per second heats a spacecraft to thousands of degrees — and how a heat shield takes the punishment.",
+  "narrative_101": [
+    "A spacecraft arriving at a planet is moving fast — 5 to 6 km/s at Mars, nearly 11 km/s at Venus. When it slams into the top of the atmosphere it does not so much rub against the air as crush it. The gas piling up in front of the vehicle is compressed so violently that it heats to thousands of degrees and glows — the fireball you see around any returning capsule.",
+    "It is a common myth that this heat comes from friction. Almost all of it comes from compression: the spacecraft cannot push the air out of the way fast enough, so a shock wave forms just ahead of it and the trapped gas superheats. The faster the entry, the hotter the shock — which is why Venus, with the fastest entries and the thickest air, is the harshest entry environment in the solar system.",
+    "The vehicle survives behind a heat shield — a blunt, ablative shell that faces the flow. Blunt is deliberate: a sharp nose would concentrate the heat, while a broad shield holds the shock wave out at a distance and spreads the load. The shield's surface chars and flakes away on purpose, carrying the heat off with it, so the spacecraft tucked behind stays cool."
+  ],
+  "body_paragraphs": [
+    "Two peaks matter during entry and they do not coincide. Peak heating happens high up, where the vehicle is still fast and the heating rate (which scales roughly with velocity cubed) is enormous even in thin air. Peak deceleration happens lower down, in denser air, where the force on the vehicle is greatest — Mars entries peak around 8–15 g, Venus entries at 100–350 g. A lander's structure is sized for the g-peak; its heat shield is sized for the heat-peak.",
+    "The plasma sheath that glows around the vehicle also blocks radio: for a minute or two at peak heating, ionised gas wraps the spacecraft and cuts communications — the famous entry blackout. Controllers simply wait it out; the vehicle is flying a pre-loaded sequence, on its own, through the hottest part of the trajectory.",
+    "On `/fly`, the descent HUD's aero-heating gauge is a relative proxy for this — it climbs as the vehicle bites into the atmosphere and peaks well before touchdown, then falls away as the vehicle slows. Turn on the drag Science-Lens layer during any `?descent=1` Mars or Venus entry to see the deceleration build as the air thickens."
+  ],
+  "diagram_caption": "Entry heating: a blunt heat shield holds a bow shock ahead of the vehicle; the compressed gas superheats and glows while the shield ablates the heat away."
+}

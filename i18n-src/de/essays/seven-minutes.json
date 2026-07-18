@@ -1,0 +1,147 @@
+{
+  "title": "Die sieben Minuten",
+  "dek": "Die Anflugphase ist einfach. Man verbringt Monate damit, fast nichts zu tun — die Physik trägt einen mit, man korrigiert eine Flugbahn, man wartet. Die Ankunft ist der Ort, wo Missionen sterben. Landen ist das Schwierigste in der Raumfahrt, und wir haben es noch nie zweimal auf die gleiche Weise gelöst.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Bedenken Sie, was diese Zahl bedeutet. Sieben Minuten: vom ersten Kontakt mit der Atmosphäre bei etwa 20.000 Kilometern pro Stunde bis zur Bodenkontrolle, stillstehend, auf einem anderen Planeten. Sieben Minuten, in denen ein Raumfahrzeug, das eine Milliarde Dollar kostete und zehn Jahre zum Bau brauchte, eine Abfolge von Ereignissen autonom ausführen muss — Hitzeschild-Entfaltung, Fallschirmaufblasung, Raketenstart, Seilentfaltung, Bodenkontakt — jedes Ereignis auf die Sekunde zeitgesteuert, jedes abhängig davon, dass alle bisherigen Schritte genau richtig liefen. Verpasse einen einzigen Schritt oder führe ihn fünf Sekunden zu spät aus, und das ganze Unternehmen wird zum Krater."
+    },
+    {
+      "type": "prose",
+      "md": "Und hier ist das Detail, das es wirklich erschreckend macht: Wenn die Erde hört, dass das Raumfahrzeug die oberste Schicht der Marsatmosphäre berührt hat, ist es bereits seit mehr als elf Minuten auf dem Boden — oder Teil des Bodens. Die Lichtgeschwindigkeit ist nicht langsam, aber der Mars ist weit genug entfernt, dass die Kommunikationsverzögerung in beide Richtungen irgendwo zwischen sechs und vierundvierzig Minuten beträgt, je nachdem, wo sich die beiden Planeten in ihren Umlaufbahnen befinden. Niemand landet einen Mars-Rover. Niemand auf der Erde kann es tun. Das Raumfahrzeug landet sich selbst, in der Dunkelheit, auf der anderen Seite der Sonne, und die Menschen, die es gebaut haben, können nur in einem Zimmer sitzen und darauf warten zu erfahren, ob es funktioniert hat."
+    },
+    {
+      "type": "prose",
+      "md": "Dies ist kein Problem, das mit Erfahrung leichter wird. Jede Welt stellt eine andere Physik dar, eine andere Atmosphäre, einen anderen Satz von Einschränkungen — und die Lösungen, die auf einem Himmelskörper funktioniert haben, sind auf einem anderen nutzlos oder gefährlich. Die Geschichte der [Eintritt-, Abstiegs- und Landephasen](/science/mission-phases/edl) ist nicht eine einzelne Geschichte der verbesserten Technik. Sie ist eine Sammlung von völlig verschiedenen Geschichten, jede eine maßgeschneiderte Antwort auf die gleiche brutale Frage: Wie verlangsamt man sich schnell genug, ohne zerquetscht zu werden, rechtzeitig, bevor man den Boden trifft?"
+    },
+    {
+      "type": "heading",
+      "text": "Das Atmosphärenprob lem"
+    },
+    {
+      "type": "prose",
+      "md": "Beginnen Sie mit dem einfachen Fall, der nicht der Mond ist. Der Mond hat überhaupt keine Atmosphäre — was sich wie ein Geschenk anhört, bis Sie realisieren, wofür eine Atmosphäre wirklich da ist. Sie ist kostenlose Verzögerung. Ein Raumfahrzeug, das die oberste Schicht der Erdatmosphäre in Orbitalgeschwindigkeit trifft, kommt mit einem enormen kinetischen Energiebudget an, und die Luft verbrennt es langsam: Der Hitzeschild glüht, Luftwiderstand baut sich auf, und ein Raumfahrzeug, das sich mit Kilometern pro Sekunde bewegte, verliert genug Geschwindigkeit über genug Minuten, dass ein Fallschirm es fangen kann. Entfernen Sie die Atmosphäre und Sie entfernen das ganze. Auf dem Mond kommen Sie schnell an und haben nur Raketen, um sich zu verlangsamen, also müssen Sie jeden Kilogramm des Treibstoffs tragen, den Sie brauchen, um diese Geschwindigkeit vom Moment des Verlassens der Erde an zu töten. Das Apollo Lunar Module hatte einen speziellen Abstiegsmotor, der zwölf Minuten lang brannte, um zwei Menschen von der Umlaufbahn herabzubringen. Jeder Kilogramm Lander musste sich auf dem Starttisch durch Treibstoff verdienen. Es gibt nichts Kostenloses beim Landen auf einer Welt ohne Atmosphäre."
+    },
+    {
+      "type": "prose",
+      "md": "Der Mars ist der grausame Mittelfall, und er ist derjenige, der die meisten Missionen getötet hat. Die Marsatmosphäre existiert — es ist echtes Kohlendioxid, etwa hundert Kilometer tief — aber sie ist etwa ein Prozent so dicht wie die Erde. Dick genug, um wichtig zu sein, dünn genug, um fast nutzlos zu sein. Ein Fallschirm, der eine Sonde in der Erdluft sofort stoppen würde, macht auf dem Mars kaum einen Dent; man braucht ihn, aber man kann sich nicht darauf verlassen. Jeder Mars-Lander bis heute hat eine Aeroshell verwendet — einen stumpfen Hitzeschild, der Widerstand erzeugt, während er die thermische Gewalt des Eintritts absorbiert — plus einen Überschall-Fallschirm, um die Geschwindigkeit weiter zu reduzieren, und dann etwas anderes obendrein, weil der Fallschirm allein Sie nie ganz zum Sicheren bringt."
+    },
+    {
+      "type": "prose",
+      "md": "Dieses \"etwas anderes\" ist das Designproblem. Es ist das, was jeden Mars-Landung unterschiedlich macht, und es ist das, was jedes Ingenieursteam von Grund auf lösen musste. [Viking 1](/missions?id=viking1) löste es 1976 auf offensichtliche Weise: Bremsraketen, gezündet während des letzten Abstiegs, verlangsamten den Lander zu einer sanften Landung auf der Chryse Planitia — das erste Raumfahrzeug, das jemals auf der Marsoberfläche arbeitete, und es lief mehr als sechs Jahre. Der Bremsraketenzugang ist konservativ und schwer; er funktioniert, erfordert aber Treibstoff und begrenzt Ihr Massenbudget für Wissenschaft. Zwanzig Jahre später probierte [Mars Pathfinder](/missions?id=mars-pathfinder) etwas, das wie ein Witz klingt: Hüllen Sie den gesamten Lander in Airbags, schneiden Sie ihn in Höhe los, lassen Sie die Raketen nach oben feuern, um die letzte vertikale Geschwindigkeit zu töten, und dann lassen Sie ihn springen. Am 4. Juli 1997 traf der Pathfinder-Lander die Marsoberfläche bei etwa 50 Kilometern pro Stunde und sprang mindestens fünfzehnmal ab, bevor er zum Stillstand kam, woraufhin sich die Blütenblätter öffneten und [Sojourner](/missions?id=mars-pathfinder) — der erste Mars-Rover — auf den Steinen des Ares Vallis dahinrollte."
+    },
+    {
+      "type": "heading",
+      "text": "Warum die gleiche Antwort nie zweimal funktioniert"
+    },
+    {
+      "type": "prose",
+      "md": "Airbags funktionieren bei kleinen, leichten Raumfahrzeugen. Sojourner wog etwa 10 Kilogramm. Bis 2012 wog [Curiosity](/missions?id=curiosity) fast 900. Airbags, die diese Landung absorbieren könnten, würden mehr wiegen, als die Rakete starten konnte, also musste das Team am JPL etwas Neues erfinden: den Sky Crane. Die Abstiegsstufe — eine raketengetriebene fliegende Plattform — brachte den Rover an Seilen hinunter und folgte dabei dem Bodenrhythmus, und als die Räder die Marsoberfläche berührten, wurden die Seile durchtrennt und die Abstiegsstufe flog davon, um in sicherer Entfernung zu crashen. Es ist die kühnste Landungsabfolge, die jemals geflogen wurde, und sie funktionierte beim ersten Versuch perfekt, setzte Curiosity am 6. August 2012 um 2:32 Uhr pazifischer Zeit im Gale Crater ab."
+    },
+    {
+      "type": "prose",
+      "md": "Der Sky Crane war nicht nur eine technische Neuheit. Es war ein Paradigmenwechsel: Anstatt den Lander so zu konstruieren, dass er den Bodenkontakt übersteht, trennten die Ingenieure das Problem völlig — Abstieg, dann Freigabe, dann Bodenkontakt — damit jedes Stück unabhängig optimiert werden konnte. [Perseverance](/missions?id=perseverance) verwendete die gleiche Architektur am 18. Februar 2021 und landete auf dem Boden des [Jezero Crater](/mars), um dann in den folgenden Monaten zum antiken Flussdelta an seinem nördlichen Rand zu fahren. Aber Perseverance fügte ein Stück hinzu, das der Sky Crane nicht getragen hatte: ein System, das auf den Boden schaute und dachte."
+    },
+    {
+      "type": "prose",
+      "md": "Jezero ist keine flache Ebene. Es hat steile Klippen, Sanddünen, Felsbrockenfelder und kleinere Einschlagskrater, die in den Rand verschachtelt sind — Gelände, das unter älteren Regeln als nicht landbar betrachtet worden wäre. Der Grund, warum Perseverance es anvisieren konnte, war Terrain-Relative Navigation: Eine Kamera unter der Abstiegsstufe fotografierte die aufsteigenden Oberflächen, verglich das Bild in Echtzeit mit einer an Bord befindlichen Karte des Kraters, lokalisierte sich selbst auf Meter genau und lenkte dann das Fahrzeug von Gefahren ab, die die Kamera sehen konnte und das Bodenteam nicht rechtzeitig reagieren konnte. Das Raumfahrzeug wählte seinen eigenen Landeplatz aus. Die Menschen, die es gebaut haben, hatten ihm die Karte und die Autorität gegeben; die Entscheidung in diesen sieben Minuten war völlig die der Maschine. Die Phrase aus dem Navigationsessay kommt jetzt von der Landungsseite, nicht von der Anflugseite: Das Raumfahrzeug lernte zu sehen — und dann benutzte es diesen Blick, um sich selbst zu retten."
+    },
+    {
+      "type": "figure",
+      "image": "essays/seven-minutes/edl-toolkit",
+      "kind": "diagram",
+      "caption": "Jede Welt stellt dir ein anderes Problem. Der Mond hat keine Luft, also fällst du nur auf Raketen; der Mars hat gerade genug, um dich zu kochen, aber nicht genug, um dich zu fangen; die Erde und der Titan haben genug, dass ein Fallschirm das meiste der Arbeit macht. Keine Ankunft ist jemals ganz die Ankunft davor.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Die Welten, die nicht verzeihen"
+    },
+    {
+      "type": "prose",
+      "md": "Der Mars gibt dir wenigstens sieben Minuten. Die Venus gibt dir weniger Zeit als das, um etwas Sinnvolles zu tun, und sie wird dich töten, egal wie gut du landest. Das sowjetische [Venera-Programm](/missions?id=venera-13) ist die Geschichte von Ingenieuren, die bewusst Raumfahrzeuge so konstruieren, dass sie elegant sterben — lange genug überleben, um etwas zurückzugeben, bevor der Planet sie zerstört. Als Venera 13 am 1. März 1982 aufsetzte, war sie in eine Atmosphäre von 465 Grad Celsius eingetreten, die mit 89-facher Erdstandarddruck nach unten drückte — das Äquivalent eines Kilometers Meerwasser auf jeder Oberfläche — und ihre Ingenieure hatten erwartet, dass sie etwa zweiunddreißig Minuten lang arbeitete, bevor die Hitze die Elektronik kochte. Es hielt 127 Minuten. In dieser Zeit bohrte es eine Bodenprobe, analysierte sie chemisch und übertrug zwei Farbpanoramen aus flachen basaltischen Steinen unter einem orangefarbenen Himmel. Diese Bilder bleiben heute die besten Fotos, die jemals von der Venusoberfläche aufgenommen wurden. Kein Raumfahrzeug ist seitdem zurückgekehrt."
+    },
+    {
+      "type": "prose",
+      "md": "Der Abstieg durch die Venusatmosphäre ist zumindest teilweise atmosphärisch: Die dicke CO₂ verlangsamt dich. Aber es gibt keine Fallschirmphase, die wichtig wäre — die Luft ist so dicht, dass selbst ein relativ kleiner Drogenschirm ausreicht, um dich zur Endgeschwindigkeit zu bringen, und danach übernimmt der erdrückende Druck. Das Ingenieurfroblem auf der Venus ist nicht, dich zu verlangsamen. Es ist, lange genug zu überleben, um etwas nach dem Stillstand zu tun."
+    },
+    {
+      "type": "prose",
+      "md": "Titan, Saturns größter Mond, ist der seltsamste Fall von allen. [Huygens](/missions?id=cassini) — eine ESA-Sonde, die an Bord von [Cassini](/missions?id=cassini) zum Saturn-System transportiert wurde — wurde am Weihnachtstag 2004 ausgelöst und fiel zweiundzwanzig Tage, bevor sie am 14. Januar 2005 in Titans Atmosphäre eintrat. Titans Luft besteht hauptsächlich aus Stickstoff, dichter als die Erde an der Oberfläche, und kälter als minus 170 Grad Celsius — ein dichter, orangefarbener Kohlenwasserstoff-Dunst, der Sonnenlicht in dauerhaftes bernsteinfarbenes Dämmerungslicht streut. Huygens entfaltete seinen Hauptfallschirm innerhalb von vier Minuten nach atmosphärischem Kontakt, wechselte dann nach der ersten Stunde zu einem kleineren Drogenschirm, um zu verhindern, dass die Batterien starben, bevor es die Oberfläche erreichte. Es fiel zwei Stunden und siebenundzwanzig Minuten — nicht sieben Minuten, sondern fast zweieinhalb Stunden — und als es endlich eine mit Eiskieseln verstreute Ebene berührte, bewegte es sich mit etwa 4,5 Metern pro Sekunde, ein Tempo, das ein zügiges Gehen entspricht. Dann saß es auf der Oberfläche und übertrug noch zweiundsiebzig Minuten, bevor Cassini außer Sichtweite kam. Huygens bleibt das einzige Raumfahrzeug, das die Menschheit jemals irgendwo im äußeren Sonnensystem gelandet hat. Nichts ist zurückgekehrt."
+    },
+    {
+      "type": "figure",
+      "image": "essays/seven-minutes/mars-edl",
+      "kind": "diagram",
+      "caption": "Der Mars ist der grausame Mittelfall — eine Atmosphäre zu dünn zum Fallschirmabstieg, zu dick, um ignoriert zu werden. Es passiert alles etwa in sieben Minuten: Eintritt, Spitzenwärme, ein Überschall-Fallschirm, Hitzeschild-Trennung, motorgetriebener Abstieg und ein Sky Crane, der den Rover an Seilen hinunterlässt. Jeder Schritt muss zur richtigen Zeit von selbst zünden, oder die Mission endet in einem Krater.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/perseverance/01",
+      "kind": "photo",
+      "caption": "Perseverance hängt unter seiner Abstiegsstufe in den letzten Sekunden über dem Jezero Crater, Momente bevor der Sky Crane seine Seile ausfahrt — eine Manöver, die völlig vom Raumfahrzeug selbst geflogen wird, während die Erde elf Minuten dahinter ein Zuschauer ist.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Die Fehlerquote"
+    },
+    {
+      "type": "prose",
+      "md": "Über die gesamte Geschichte von Mars-Missionen hat das Landeproblem eine Opferbilanz. Mars 2 wurde 1971 zum ersten Objekt der Erde, das die Marsoberfläche berührte — und crashte, tötete sich selbst beim Aufprall, nachdem das Abstiegssystem vor der Fallschirmabfolge fehlgeschlagen war. Mars Polar Lander schaltete im Dezember 1999 fast sicher seine Abstiegsmotoren vorzeitig ab, als Vibrationen von den ausfahrenden Beinen als Landesignal fehlinterpretiert wurden, und es fiel die letzten vierzig Meter mit voller Geschwindigkeit. Beagle 2 machte es am Weihnachtstag 2003 durch den Eintritt — die EDL-Abfolge scheint funktioniert zu haben — aber die Solarpanels konnten sich bei der Landung nicht vollständig ausfalten und es konnte niemals kommunizieren, stumm auf den Marsbenen. Der Schiaparelli-Lander der Europäischen Weltraumorganisation sättigte im Oktober 2016 seine Trägheitsmesseinheit während des gewaltsamen Fallschirmabstiegs — die Messwerte liefen kurzzeitig aus ihrer Skala — verdarben die Navigationslösung, sodass der Bordcomputer glaubte, dass er bereits unter der Oberfläche war; es schnitt den Fallschirm ab und zündete die Bremsraketen nur drei Sekunden lang statt dreißig, und traf den Boden mit etwa 540 Kilometern pro Stunde."
+    },
+    {
+      "type": "prose",
+      "md": "Jeder Fehler ist ein anderer Fehler. Das ist das Muster. Es gibt nichts Einziges, das Mars-Lander tötet; es gibt eine lange Liste von einzelnen Dingen, jedes eine andere Verbindung in einer Kette, die halten muss. Jede Mission, die auf dem Mars gelandet ist, hat dies überlebt, indem sie jeden Schritt richtig, in Ordnung, autonom, ohne zweite Chance bekam. Die Abfolge, die [Curiosity](/missions?id=curiosity) und [Perseverance](/missions?id=perseverance) erfolgreich flogen, ist nicht einfacher als diejenigen, die ihre Vorgänger töteten. Sie ist, wenn überhaupt, länger und elaborierter. Was anders ist, ist die Sicherheitsmarge — die Sorgfalt, mit der jeder potenzielle Fehlermodus identifiziert, getestet und entweder behoben oder entworfen wurde. Die sieben Minuten, die von außen wie Terror aussahen, waren von innen die sieben Minuten, die die Ingenieure Jahre damit verbrachten, langweilig zu machen."
+    },
+    {
+      "type": "figure",
+      "image": "missions/schiaparelli/01",
+      "kind": "photo",
+      "caption": "Schiaparelli sollte beweisen, dass Europa auf dem Mars landen kann. 2016 beschloss sein Computer, kurzzeitig verwirrt durch seine eigenen Sensoren, dass er bereits aufgesetzt war — ließ seinen Fallschirm los, schaltete seine Triebwerke ab und fiel die letzten Kilometer. Die Aufzeichnung der Ankünfte ist ebenso in Kratern geschrieben wie in Triumphen.",
+      "align": "wide",
+      "credit": "ESA/ATG medialab"
+    },
+    {
+      "type": "heading",
+      "text": "Der Teil, den man nicht testen kann"
+    },
+    {
+      "type": "prose",
+      "md": "Hier ist das, was dies von fast jedem anderen Ingenieursproblem unterscheidet: Man kann es nicht testen. Man kann den Fallschirm im Windkanal testen, den Sky Crane an einem Seilgerät, den Hitzeschild in einer Bogenstrahl-Anlage — aber man kann die vollständige Abfolge, in vollem Maßstab, in der tatsächlichen Atmosphäre des Mars nicht testen. Jede Mars-Landung ist ein Jungfernflug des kompletten Systems. Jedes EDL-Team in der Geschichte hat seine Maschine mit einer Reihe von Simulationen, einer Reihe von Ingenieurtests, einem Modell der Atmosphäre, die sie betreten werden, und dann gewartet losgeschickt. Die Marsatmosphäre ist nicht einheitlich; ihre Dichte variiert mit der Jahreszeit und Staubbelastung auf Weise, die die Modelle annähern, aber nicht perfekt erfassen. Ein Fallschirm, der sich in etwas dünnerer Luft als erwartet ausfaltet, muss ein paar Sekunden früher öffnen; ein Lander, der auf einer Steigung statt einer flachen Ebene aufsetzt, braucht eine etwas andere Bremsraketabfolge. Die Software backt diese Eventualitäten ein, aber die Atmosphäre hat eine Stimme."
+    },
+    {
+      "type": "prose",
+      "md": "Dies ist in einem bestimmten Sinne das, dem Navigation nie gegenübersteht. [Navigation](/essays/navigation) ist ein iteratives Geschäft — man zielt, überprüft, korrigiert, zielt wieder, Monate oder Jahre lang, jede Korrektur basierend auf der vorherigen. EDL ist ein einmaliges Ereignis. Die Trajektoriekorrektionen wurden vorgenommen; die Umlaufbahn wurde geformt; der Anflug wurde mit millimetrischer Sorgfalt abgestimmt. Dann trifft die Aeroshell die Atmosphäre und der Countdown beginnt, und jede Entscheidung von diesem Moment an wird von der Maschine getroffen, die Code ausführt, der Jahre zuvor von Ingenieuren geschrieben wurde, die jetzt in einem Zimmer in Pasadena sitzen und eine Zahl auf einem Bildschirm beobachten, die ihnen nur sagt, ob das Signal noch da ist."
+    },
+    {
+      "type": "prose",
+      "md": "Wenn dieses Signal verschwindet — wie es immer tut, für diese langen Minuten, während die Aeroshell ein Feuerball ist — wird der Raum still. Nicht weil sie nicht wissen, was passiert. Sie haben den Zeitplan auswendig gelernt. Sie wissen, auf die Sekunde genau, wann die Fallschirmabfolge stattfinden sollte, wann der Hitzeschild sich trennen sollte, wann der Sky Crane zünden sollte. Sie zählen es zusammen durch, in Stille, beobachten eine Uhr. Und wenn das Signal zurückkommt und sagt *Ich bin auf dem Boden*, was man aus diesem Raum hört, ist kein Satz. Es ist ein Laut, der keine Worte in sich hat, weil es keine Worte gibt, die für eine Maschine in der Größe eines Autos angemessen sind, die sich sicher auf einem anderen Planeten selbst landen, während die Menschen, die sie gebaut haben, elf Lichminuten entfernt standen, unfähig zu helfen."
+    },
+    {
+      "type": "figure",
+      "image": "essays/seven-minutes/blackout",
+      "kind": "diagram",
+      "caption": "Und man kann ihr nicht dabei helfen. Der Mars ist lichtnminuten entfernt — der ganze Abstieg passt in die Funklatenz. Bis das erste Wort des Eintritts die Erde erreicht, ist das Raumfahrzeug bereits unten, sicher oder tot, das Ergebnis entschieden Minuten bevor jemand hier wusste, dass es angefangen hat.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Das Schwierigste"
+    },
+    {
+      "type": "prose",
+      "md": "Jede Welt ist anders. Der Mond fordert Raketentreibstoff für jeden Meter pro Sekunde Abstieg. Der Mars fordert Aerodynamik, Fallschirme, Raketen, und dann — weil der Fallschirm dich nur bis zum Mittelpunkt bringt — Erfindung. Die Venus fordert Wärmepanzer und eine tickende Uhr. Der Titan bot das unerwartete Geschenk einer dicken Atmosphäre und nutzte es, um Huygens zweieinhalb Stunden Abstiegsdaten aus dem äußeren Sonnensystem zu geben, die am weitesten entfernte Landung in der Geschichte, immer noch unerreicht. Jede Lösung wird durch den Planeten geprägt, der sie zur Existenz zwang, und keine von ihnen überträgt sich sauber auf den nächsten Himmelskörper auf der Liste."
+    },
+    {
+      "type": "prose",
+      "md": "Was sie teilen, ist dies: Der Landungsmoment ist der Moment, wenn alles, das nicht rückgängig gemacht werden kann, passiert. Die Monate des Anflugs, die Jahre der Trajektorienverbesserung, die Jahrzehnte der Ingenieurskunst — all das ist auf ein Fenster von ein paar Minuten zugegangen, in dem die Maschine entweder das Ding macht oder nicht, und es gibt niemanden in der Nähe, um einzugreifen. Das [Navigationsproblem](/essays/navigation) wurde in Stücken, über siebzig Jahre, durch Iteration gelöst: Ziel, korrigieren, Ziel, korrigieren. Das Landeproblem muss im Voraus, komplett, gelöst werden und dann vertraut werden. Man kann einen Mars-Landung im Gange nicht korrigieren. Man kann nur die Uhr beobachten und die Schläge einer Abfolge zählen, die man nicht länger kontrolliert, und auf das Signal warten, das dir sagt, dass die Maschine tat, was du fragtest."
+    },
+    {
+      "type": "prose",
+      "md": "Perseverance ist jetzt auf dem Boden des [Jezero Crater](/mars), bahnt sich seinen Weg zur alten Geologie, die möglicherweise oder möglicherweise nicht das hält, was wir sie zu finden schickten. Viking 1s Gebeine sind immer noch auf Chryse Planitia. Huygens sitzt auf einer Ebene aus Eiskieseln mehr als eine Milliarde Kilometer entfernt. [Venera 13](/missions?id=venera-13) hielt 127 Minuten und verstummte. Jeder von ihnen kam unten, indem er ein anderes Problem mit einer anderen Antwort in einem anderen Satz von Minuten löste, die nicht wiederholt werden konnten. Der Anflugteil ist einfach. Die Physik trägt dich. Ankunft ist, wo die Arbeit ist — und jede Welt zwingt dich, die Arbeit von vorne zu erfinden."
+    }
+  ]
+}

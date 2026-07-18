@@ -1,0 +1,16 @@
+{
+  "missionId": "change4",
+  "siteId": "change4",
+  "body": "moon",
+  "landingSite": { "lat": -45.5, "lon": 177.6 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 1200,
+  "entryCdA": 0,
+  "retroPropellantKg": 170,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Chang'e-4 Mission — CNSA / NSSDC record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-103A" }
+  ]
+}

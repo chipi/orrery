@@ -1,0 +1,16 @@
+{
+  "missionId": "luna17",
+  "siteId": "luna17",
+  "body": "moon",
+  "landingSite": { "lat": 38.28, "lon": -35.0 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 1900,
+  "entryCdA": 0,
+  "retroPropellantKg": 280,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Luna 17 / Lunokhod 1 — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-095A" }
+  ]
+}

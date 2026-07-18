@@ -1,0 +1,24 @@
+{
+  "missionId": "schiaparelli",
+  "siteId": "schiaparelli",
+  "body": "mars",
+  "landingSite": { "lat": -2.07, "lon": -6.21 },
+  "entryState": { "altitudeM": 125000, "velocityMs": 5800, "flightPathAngleDeg": 7.5 },
+  "entryMassKg": 600,
+  "entryCdA": 14,
+  "retroPropellantKg": 4,
+  "archetype": "MARS_PARACHUTE_RETRO",
+  "params": {
+    "chuteDeployAltM": 8000,
+    "terminalHandoffAltM": 1500,
+    "parachuteCdA": 120,
+    "heatshieldKg": 80,
+    "backshellKg": 120,
+    "ispS": 225,
+    "terminalVelocityMs": 2.4
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Schiaparelli EDM crash reconstruction — ESA ExoMars 2016", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2016-017B" }
+  ]
+}

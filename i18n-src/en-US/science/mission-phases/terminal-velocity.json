@@ -1,0 +1,15 @@
+{
+  "title": "Terminal Velocity",
+  "intro_sentence": "Why a falling lander stops speeding up — the balance between drag and weight that sets how fast a parachute, or a planet's air, lets a spacecraft descend.",
+  "narrative_101": [
+    "Drop something and it accelerates — but not forever. The faster it falls, the harder the air pushes back, until the upward drag exactly balances the downward weight. From that moment the object stops speeding up and falls at a steady terminal velocity. A parachute works by making the drag side of that balance huge, so the balance is struck at a gentle speed.",
+    "How gentle depends on the air. Mars has an atmosphere about 1% as thick as Earth's, so even an enormous supersonic parachute — Curiosity's was over 20 metres across — only slows the vehicle to a few hundred kilometres per hour. That is far too fast to land, which is why Mars landers always need a second act: retro-rockets, airbags, or a sky-crane to finish the job.",
+    "Venus is the opposite. Its atmosphere is so dense — about 90 times Earth's surface pressure — that a Venera lander needed only a small parachute high up, then could jettison it and simply sink to the surface on a modest drag plate, drifting down for the better part of an hour. And the Moon, with no atmosphere at all, has no terminal velocity: a lunar lander has to cancel every metre per second of its speed with its engine, all the way to touchdown."
+  ],
+  "body_paragraphs": [
+    "The governing number is the ballistic coefficient — mass divided by drag area. A light vehicle with a big parachute (low ballistic coefficient) settles to a slow terminal velocity; a heavy, compact one (high ballistic coefficient) falls faster. Designers trade the two: a bigger chute buys a slower descent but weighs more and is harder to deploy supersonically in thin air.",
+    "Terminal velocity also changes with altitude, because air thins with height. A Venus lander descends fastest high up, where the air is thinnest, and slows continuously as it sinks into the denser lower atmosphere — touching down at a gentle handful of metres per second even with no active braking at the end.",
+    "On `/fly`, this is why the three bodies look so different in `?descent=1`. A Mars descent bleeds most of its speed under the parachute, then hands off to a powered or airbag landing; a Venus descent is a long, slow drift under drag alone; a Moon descent is powered from start to finish, because there is no air to help."
+  ],
+  "diagram_caption": "Terminal velocity: drag rises with speed until it balances weight; a parachute enlarges the drag area so the balance is reached at a soft descent speed."
+}

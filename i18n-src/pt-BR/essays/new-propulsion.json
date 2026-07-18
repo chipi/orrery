@@ -1,0 +1,155 @@
+{
+  "title": "As Saídas Que Sempre Conhecemos",
+  "dek": "O foguete químico é um teto centenário que cavalgamos com habilidade extraordinária. As estradas para sair — motores iônicos, [velas solares](/science/propulsion/solar-sail), motores [nucleares-térmicos](/science/propulsion/nuclear-thermal) — foram esboçadas antes do primeiro satélite voar. Apenas agora, hesitantemente, estão sendo construídas.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "Em algum momento da última década, se você tem acompanhado voos espaciais, pode ter notado uma duplicação estranha da palavra *revolucionário*. Ela se atribui a primeiros estágios reutilizáveis, a manifestos de rideshare, à queda vertiginosa do custo por quilograma em órbita. Estas são conquistas reais, genuinamente importantes — mas por baixo delas, se você rastreia a física, há uma máquina que Hermann Oberth descreveu em 1923 e Robert Goddard fez voar em 1926. O motor queima um combustível e um oxidante, aquece o gás e o expele para trás. Cem anos de metalurgia e manufatura a tornaram extraordinariamente boa. Não mudaram o que ela é."
+    },
+    {
+      "type": "prose",
+      "md": "A restrição não é engenharia. É química. Misture qualquer combustível com qualquer oxidante e a energia disponível é fixada — não por quão inteligentemente você projeta a câmara de combustão, mas pelas energias de ligação das moléculas que você está quebrando e formando. O melhor que se pode fazer com hidrogênio e oxigênio, queimando limpa no [impulso específico](/science/propulsion/specific-impulse) que mede com que eficiência um foguete usa seu propelente, é aproximadamente 450 segundos. O motor RS-25 que alimentou cada motor principal do Space Shuttle alcança 452 segundos no vácuo. O RL-10B-2, em 465 segundos, é o mais alto de qualquer motor químico de produção já construído, um número refinado ao longo de seis décadas de trabalho. O teto está próximo. Estamos contra ele."
+    },
+    {
+      "type": "prose",
+      "md": "E um teto importa por causa de uma armadilha. A [equação do foguete de Tsiolkovsky](/science/propulsion/tsiolkovsky) — derivada em 1903, três anos antes de Goddard acender seu primeiro motor — diz que a fração da massa inicial de um foguete que deve ser propelente cresce *exponencialmente* com a razão da mudança de velocidade necessária pela velocidade de exaustão. Dobre a velocidade necessária da missão e você não dobra a carga de combustível — você a eleva ao quadrado. Além de um certo ponto, o veículo se torna quase inteiramente propelente, deixando quase nenhum espaço para estrutura, instrumentos ou carga útil. Foguetes químicos atingiram esse ponto. Sair da órbita terrestre baixa para Marte em um motor químico leva meses; sair da órbita terrestre baixa para Marte *e voltar*, sem um depósito de propelente esperando no outro lado, é quase impossível. Chegar a qualquer lugar mais longe — o sistema solar externo em um prazo razoável, com uma carga útil que vale a pena enviar — não é uma questão de projetar um motor melhor. É uma questão de deixar a química para trás."
+    },
+    {
+      "type": "heading",
+      "text": "O impulso lento"
+    },
+    {
+      "type": "prose",
+      "md": "A primeira alternativa à química foi demonstrada não em um laboratório, mas no espaço, em 1998, a bordo de uma espaçonave chamada Deep Space 1. Seu motor consumia gás xenônio — inerte, pesado, fácil de armazenar — e em vez de queimá-lo, *ionizava*-o: despojava elétrons com um campo elétrico, acelerava os íons resultantes através de um gradiente de voltagem e os expelia a dezenas de quilômetros por segundo. O [propulsor iônico](/science/propulsion/ion-drive) que carregava produzia 92 milinewtons de empuxo. Isso é, muito próximo, o peso de uma maçã pequena. Com potência total queimava cerca de 3,25 miligramas de propelente por segundo — dez onças durante um dia inteiro de operação. Por toda medida convencional de um motor de foguete, era uma piada."
+    },
+    {
+      "type": "prose",
+      "md": "O que não era piada era a eficiência. Um motor iônico troca empuxo por impulso específico: onde o melhor motor químico atinge pico próximo de 450 segundos, um propulsor iônico bem projetado alcança 3.000 segundos ou mais — aproximadamente sete vezes a velocidade de exaustão, o que significa sete vezes mais mudança de velocidade por quilograma de propelente. O trade-off é tempo. Queimando continuamente uma força com o peso de uma maçã pequena por dias e meses, uma espaçonave acelera a velocidades que nenhuma queimada química poderia alcançar em nenhuma fração de propelente razoável. Deep Space 1 provou o conceito. [Dawn](/missions?id=dawn) provou-o em escala."
+    },
+    {
+      "type": "prose",
+      "md": "Dawn lançou em 2007 carregando três propulsores iônicos NSTAR — os descendentes diretos do motor do Deep Space 1 — e os usou para fazer algo que nenhuma espaçonave havia feito antes: orbitar um corpo no cinturão de asteroides, desacelerar para uma parada em [Vesta](/explore), orbitar isso por um ano, depois acender de novo e espiralar para um segundo corpo, [Ceres](/explore), e orbitar aquele também. Uma missão química com os mesmos objetivos teria exigido tanto propelente que não poderia ter sido lançada em nenhum foguete existente. Os motores iônicos, funcionando por um total de mais de cinco anos e meio de tempo de empuxo acumulado, fizeram a mesma jornada com 425 quilogramas de xenônio. O impulso específico de Dawn era 3.100 segundos. Cada quilograma de xenônio fez o trabalho de sete quilogramas de hidrogênio líquido."
+    },
+    {
+      "type": "prose",
+      "md": "O que lançou em outubro de 2023 em direção ao asteroide metálico Psyche levou a ideia mais adiante. [Psyche](/missions?id=psyche) usa propulsores de efeito Hall — uma arquitetura diferente, na qual o campo magnético captura elétrons e cria uma descarga em anel que acelera os íons mais eficientemente em menor potência. Os propulsores Hall são mais baratos, mais simples e compactos o suficiente para caber quatro deles em uma espaçonave da classe Discovery. Os propulsores de Psyche operam em cerca de 1.750 segundos de impulso específico, menor que os motores iônicos de Dawn, mas mais de quatro vezes o teto químico, e representam a primeira vez que propulsores Hall — máquinas de trabalho comuns da manutenção de estações de órbita terrestre — foram confiados para propulsão primária no espaço profundo. A mesma tecnologia que move satélites geoestacionários por centímetros por segundo agora está voando uma missão interplanetária."
+    },
+    {
+      "type": "figure",
+      "image": "essays/new-propulsion/ion-drive",
+      "kind": "diagram",
+      "caption": "Um foguete químico passa toda sua vida em alguns minutos de fúria, depois flutua. Um motor iônico empurra com o peso de uma moeda — mas nunca para. Dado tempo suficiente, ele silenciosamente ultrapassa o foguete que empurrou com mais força e continua subindo.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/dawn/01",
+      "kind": "photo",
+      "caption": "Dawn funcionava com um motor iônico de xenônio cujo empuxo você poderia ter balanceado na sua palma — e cavalgou esse sussurro por anos, se tornando a única nave que orbita dois mundos separados além da Terra: primeiro Vesta, depois Ceres.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Sem propelente"
+    },
+    {
+      "type": "prose",
+      "md": "Motores iônicos e Hall ainda carregam propelente. Eles carregam muito menos dele e o usam muito mais eficientemente, mas a equação do foguete ainda se aplica: o xenônio se esgota e, quando isso acontece, o empuxo para. A fuga mais radical da equação é não carregar propelente algum — para empurrar contra algo fora da espaçonave."
+    },
+    {
+      "type": "prose",
+      "md": "Fótons carregam momentum. A luz empurra. A pressão é minúscula — na distância da Terra do Sol, a luz solar exerce cerca de nove micronewtons por metro quadrado de superfície iluminada — mas é gratuita, inesgotável e nunca se esgota. Uma vela grande o suficiente e leve o suficiente acelera indefinidamente enquanto enfrenta o Sol, trocando empuxo por paciência da forma como um motor iônico faz, mas sem nenhum orçamento de propelente."
+    },
+    {
+      "type": "prose",
+      "md": "A ideia é anterior ao voo espacial por um século: Johannes Kepler notou em 1619 que caudas de cometas sempre apontam para longe do Sol e atribuiu isso, corretamente, à pressão solar. A matemática foi totalmente trabalhada pelos anos 1920. O que faltava era um material: uma vela leve o suficiente para importar, robusta o suficiente para sobreviver ao ambiente de radiação do espaço, implantável de um compartimento de carga de foguete. Durante a maior parte do século XX permaneceu uma ideia."
+    },
+    {
+      "type": "prose",
+      "md": "JAXA voou a primeira. Em 21 de maio de 2010, a espaçonave japonesa IKAROS — *Interplanetary Kite-craft Accelerating Radiation Of the Sun* — implantou uma vela de poliimida de 200 metros quadrados a caminho de Vênus e se tornou a primeira espaçonave a alcançar propulsão significativa apenas da luz solar no espaço profundo. Ela mediu a aceleração. Funcionou. O LightSail 2 da Planetary Society, lançado em 2019, foi mais adiante: um pequeno CubeSat empilhado como uma caixa de sapatos que implantou uma vela de 32 metros quadrados e se tornou a primeira espaçonave a aumentar mensuravelmente sua órbita usando apenas a pressão da luz. Ambas as missões foram pequenas, com orçamento baixo e amplamente ignoradas pela imprensa mais ampla. Entre elas estabeleceram que a navegação solar não é um experimento mental."
+    },
+    {
+      "type": "prose",
+      "md": "O Sistema Avançado de Vela Solar Composta da NASA — ACS3 — lançou em abril de 2024, carregando uma vela de 80 metros quadrados em braços de carga composta mais rígidos e leves que qualquer design anterior, demonstrando a tecnologia estrutural necessária para aumentar a escala. NEA Scout, que teria sido a primeira vela solar a visitar um asteroide próximo à Terra, lançou a bordo de Artemis I em novembro de 2022 e foi perdida — seu rádio nunca fez contato após a implantação, um lembrete de que pequenas missões voam pequenas margens. O retrocesso não cancelou o programa. A razão pela qual as velas valem a pena ser perseguidas não é a aceleração que elas dão hoje, mas a aceleração que elas dão amanhã: uma vela solar de dez quilômetros de extensão, lançada em direção ao sistema solar interno onde a luz solar é mais forte, alcançaria velocidades inatingíveis por qualquer sistema limitado por propelente. As velas são a única arquitetura para a qual *fazer a vela maior* melhora a física, sem adicionar massa de propelente."
+    },
+    {
+      "type": "heading",
+      "text": "O calor do núcleo"
+    },
+    {
+      "type": "prose",
+      "md": "Há uma terceira saída, e é a que, nos anos 1960, parecia mais provável de ser a primeira. Um reator nuclear funcionando em alta temperatura pode aquecer um propelente — o hidrogênio é a melhor escolha, sendo o gás mais leve e portanto o mais rápido quando expelido — e expeli-lo através de um bocal. Sem combustão. Sem energias de ligação. A fonte de calor é fissão, e as temperaturas que um reator pode sustentar são limitadas não pela química, mas pela metalurgia: quão quente podem os elementos combustíveis e a garganta do bocal ser feitos antes de falharem? A resposta, nos motores testados no Nevada Test Site de 1959 a 1969 sob o programa chamado NERVA, era quente o suficiente para alcançar impulsos específicos em torno de 825 segundos — quase o dobro do melhor motor químico, em níveis de empuxo medidos em dezenas de quilonewtons, útil para uma missão tripulada para Marte."
+    },
+    {
+      "type": "prose",
+      "md": "O reator Phoebus 2A, testado em 1968, foi o motor de foguete nuclear mais poderoso já disparado: 4.100 megawatts de potência térmica, o equivalente a quatro grandes usinas nucleares comerciais funcionando simultaneamente, tudo comprimido em uma estrutura do tamanho de um carro. O motor XE Prime, testado em 1969 em uma configuração projetada para simular disparo em altitude, demonstrou capacidade de reinicialização e regulação — exatamente a flexibilidade operacional que uma missão tripulada precisaria. O programa acumulou mais de duas horas de tempo total de execução, incluindo 28 minutos com potência total. Por toda medida técnica, funcionou."
+    },
+    {
+      "type": "prose",
+      "md": "E então parou. Em 1973, com o programa lunar terminado e orçamentos desabando e nenhuma missão para Marte em vista, NERVA foi cancelada. Os motores ficaram em Nevada. O conhecimento se espalhou em relatórios que envelheceram em arquivos. Por cinquenta anos, nenhum motor de foguete nuclear térmico voou ou foi seriamente agendado para voar. Os [auxílios gravitacionais](/science/transfers/gravity-assist) de [Voyager 2](/missions?id=voyager-2) tornaram os planetas exteriores alcançáveis sem propulsão nuclear. Os planetas exteriores foram o suficiente."
+    },
+    {
+      "type": "prose",
+      "md": "A ideia voltou lentamente nos anos 2010 e mais urgentemente nos anos 2020: uma missão tripulada para Marte, com um tempo de voo medido em meses em vez de anos, quase exige propulsão nucleotérmica. O programa DRACO da DARPA — *Demonstration Rocket for Agile Cislunar Operations* — foi a tentativa recente mais concreta de fechar a lacuna de cinquenta anos, visando demonstrar um motor nucleotérmico em órbita. Em junho de 2025, DARPA o cancelou. O raciocínio oficial citou custos de lançamento decrescentes que diminuíram o caso econômico e barreiras de infraestrutura em torno de testes em terra de um reator nuclear que foram subestimadas no início do programa. A decisão não foi um veredicto técnico: ninguém testou o motor e o achou inadequado. A lacuna simplesmente se ampliou novamente."
+    },
+    {
+      "type": "figure",
+      "image": "essays/new-propulsion/nuclear-thermal",
+      "kind": "diagram",
+      "caption": "Não há chama aqui em absoluto. Um reator aquece hidrogênio além de qualquer temperatura que um fogo químico pode alcançar e o lança do bocal em aproximadamente o dobro da velocidade — o mesmo combustível, valendo o dobro do empuxo, e um caminho mais curto e menos irradiado para Marte.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Por que continuam falhando em lançar"
+    },
+    {
+      "type": "prose",
+      "md": "A história da propulsão avançada não é, principalmente, uma história de fracasso técnico. Motores iônicos funcionam; toda espaçonave de espaço profundo que carregou um teve desempenho conforme previsto. Velas solares funcionam; IKAROS mediu o empuxo, LightSail 2 mudou sua órbita. Motores nucleotérmicos funcionaram; NERVA demonstrou isso em seis décadas de testes em terra nunca revisitados. Os fracassos são quase inteiramente no espaço entre uma tecnologia funcionando e uma missão financiada."
+    },
+    {
+      "type": "prose",
+      "md": "Parte disso é a natureza desses motores. Foguetes químicos são violentos e óbvios — balançam o chão e iluminam o céu e entregam seu resultado em minutos. Propulsores iônicos e Hall produzem uma força que você não pode sentir, funcionam por anos antes do resultado se tornar visível, e exigem paciência de financiadores que enfrentam ciclos orçamentários medidos em meses. Velas solares exigem estruturas grandes e delicadas que complicam o empacotamento de lançamento. Motores nucleotérmicos exigem um reator, e um reator no espaço tem uma complexidade regulatória que adiciona anos e incerteza a qualquer programa antes do primeiro componente ser usinado. Nenhum desses são barreiras fundamentais. Eles são, na linguagem da engenharia de sistemas, *problemas de integração ainda não resolvidos* — e problemas de integração são resolvidos quando há pressão suficiente por trás deles."
+    },
+    {
+      "type": "prose",
+      "md": "A pressão está crescendo. A [equação do foguete de Tsiolkovsky](/science/propulsion/tsiolkovsky) não mudou. Uma viagem de ida e volta tripulada para Marte com Isp químico não é impossível — é apenas enormemente cara em propelente, e portanto em massa de lançamento, e portanto em custo de lançamento, e portanto em vontade política. Conforme o custo por quilograma em órbita cai e a ambição das missões sobe, a lacuna entre o que a química pode fazer e o que a missão exige fica mais ampla. Todo novo alvo — os gigantes gelados, um asteroide em um cronograma curto, Marte em um voo tripulado que não exige pré-posicionamento de anos de propelente — pressiona o teto um pouco mais forte."
+    },
+    {
+      "type": "heading",
+      "text": "Para onde as saídas levam"
+    },
+    {
+      "type": "prose",
+      "md": "O que é estranho, ao examinar essa história, não é que as alternativas não tenham voado — é que elas estiveram prontas, em princípio, há tanto tempo. Os limites de impulso específico da propulsão nucleotérmica foram calculados antes do Sputnik. A física da navegação solar foram entendidas antes da Segunda Guerra Mundial. O conceito de propulsão iônica apareceu em uma memória de Esther Goddard descrevendo uma conversa com Robert Goddard em 1906, quatro anos antes dele fazer voar qualquer coisa. As ideias são antigas. O voo é novo."
+    },
+    {
+      "type": "prose",
+      "md": "O que [Dawn](/missions?id=dawn) estabeleceu é o parâmetro prático: propulsão iônica não é exótica. É a escolha correta para qualquer missão que exija múltiplos destinos, grandes mudanças de velocidade ou tempos de voo longo o suficiente para o empuxo contínuo se acumular. As missões que vêm depois de Psyche — sondas científicas robóticas para os gigantes gelados, carga de trânsito rápido para um Gateway lunar, prospectores no cinturão de asteroides interno — são os clientes naturais. Propulsores Hall na escala de [Psyche](/missions?id=psyche) serão de rotina dentro de uma década porque a economia já funciona."
+    },
+    {
+      "type": "prose",
+      "md": "A navegação solar está mais longe de ser rotina, mas a trajetória é clara: cada geração de vela é maior, os braços mais leves, os sistemas de controle mais sofisticados. A física recompensa a escala de uma forma que nenhum outro modo de propulsão faz. Uma vela do tamanho de um estádio de esportes, com um barramento de espaçonave da massa de uma mesa, acelerada por um laser do sistema solar interno em vez de pela luz solar ambiente — esta é a arquitetura proposta para missões de precursoras interestelares, atingindo velocidades de centenas de quilômetros por segundo. A vela não se importa com a equação do foguete. Ela não tem propelente para se esgotar."
+    },
+    {
+      "type": "prose",
+      "md": "Propulsão nucleotérmica é a chamada mais difícil. O cancelamento de DRACO em 2025 fechou o caminho de curto prazo mais concreto. Mas o caso técnico — 825 segundos de impulso específico em alto empuxo, a única combinação de eficiência e poder que abre um trânsito rápido para Marte tripulado — não enfraqueceu. O conhecimento de NERVA não foi perdido; foi arquivado. O que está faltando não é a engenharia. É um programa com longevidade suficiente para navegar o trabalho regulatório e de infraestrutura que os anos 1960 começaram, mas nunca terminaram. Se uma missão tripulada para Marte se tornar um objetivo político fixo em vez de uma aspiração recorrente, propulsão nucleotérmica quase certamente será parte de como isso é feito. Os motores funcionam. Estão esperando."
+    },
+    {
+      "type": "prose",
+      "md": "O foguete químico fez coisas extraordinárias. Levou doze pessoas para a superfície da Lua. Pousou um rover do tamanho de um carro em Marte ao final de sete minutos de terror automatizado. Colocou o Telescópio Espacial James Webb em sua órbita de halo L2 com tão pouco erro que a margem de combustível para manutenção de estação, originalmente orçada para dez anos, agora projeta durar vinte. Para levar massa da superfície da Terra contra a gravidade — a parte mais difícil de qualquer missão espacial — continuará sendo a ferramenta para o futuro previsível. A equação de Tsiolkovsky pune massa de propelente em órbita menos do que na terra, e nenhum propulsor iônico levantará qualquer coisa de uma plataforma de lançamento."
+    },
+    {
+      "type": "prose",
+      "md": "Mas o teto acima da órbita terrestre baixa é o teto da química, e o sistema solar acima dela é a armadilha da química. As saídas foram desenhadas no mapa por cem anos. Motores iônicos já estão voando. Velas já mudaram órbitas. A opção nuclear está em pausa, não na prateleira. Sabemos como deixar a era química desde antes dos maiores triunfos da era química. Lentamente, estamos aprendendo a ter esperança nisto."
+    },
+    {
+      "type": "figure",
+      "image": "essays/new-propulsion/isp-ladder",
+      "kind": "diagram",
+      "caption": "Alinhe as saídas pela eficiência e o padrão é claro: cada estrada para fora da era química troca empuxo bruto pela paciência de continuar empurrando. Todas elas foram esboçadas em papel antes do primeiro satélite voar.",
+      "align": "wide"
+    }
+  ]
+}

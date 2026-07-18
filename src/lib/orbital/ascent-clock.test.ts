@@ -6,11 +6,13 @@ import {
   formatAscentClock,
   formatClock,
   formatCruiseClock,
+  formatDescentClock,
   makeTimeline,
   pointToScrubber,
   scrubberToPoint,
   ASCENT_SPEED_MULTIPLIERS,
   CRUISE_DAYS_PER_SEC,
+  DESCENT_SPEED_MULTIPLIERS,
 } from './ascent-clock';
 import { expectCloseTo } from '../test-helpers/expect-close';
 
@@ -150,6 +152,77 @@ describe('defaultRegimeFor', () => {
       const regime = defaultRegimeFor(phase);
       expect(regime.ascentSpeedMult).toBe(ASCENT_SPEED_MULTIPLIERS[0]);
       expect(regime.cruiseDaysPerSec).toBe(CRUISE_DAYS_PER_SEC[0]);
+      expect(regime.descentSpeedMult).toBe(DESCENT_SPEED_MULTIPLIERS[0]);
     }
+  });
+});
+
+// ─── Descent tail (RFC-034 §9): a 3-segment ascent → cruise → descent bar ─────
+
+// 540 s ascent (15%), 259-day cruise, 420 s EDL owning the last 10% of the bar.
+const TLD = makeTimeline(540, 259, 0.15, 420, 0.1);
+
+describe('three-segment (descent) timeline', () => {
+  it('defaults to no descent tail — backward-compatible 2-segment bar', () => {
+    expect(TL.descentScrubberFraction).toBe(0);
+    expect(scrubberToPoint(1, TL).phase).toBe('cruise');
+  });
+
+  it('caps the descent tail so ascent + descent stay under the cruise', () => {
+    expect(makeTimeline(540, 259, 0.15, 420, 0.95).descentScrubberFraction).toBeLessThanOrEqual(
+      0.8,
+    );
+  });
+
+  it('the cruise now ends at 1 − descentFraction, then the tail is descent', () => {
+    expect(scrubberToPoint(0.9, TLD).phase).toBe('cruise'); // seam
+    const d = scrubberToPoint(0.95, TLD);
+    expect(d.phase).toBe('descent');
+    expectCloseTo(d.descentT ?? 0, 210, 1e-6, 'mid-descent E+');
+    expectCloseTo(scrubberToPoint(1, TLD).descentT ?? 0, 420, 1e-6, 'touchdown E+'); // touchdown
+  });
+
+  it('round-trips across all three segments', () => {
+    for (const u of [0, 0.15, 0.5, 0.9, 0.95, 1]) {
+      expectCloseTo(pointToScrubber(scrubberToPoint(u, TLD), TLD), u, 1e-9, `round-trip u=${u}`);
+    }
+  });
+
+  it('advanceClock crosses the cruise → descent seam with carry-over', () => {
+    // At 258 cruise-days with 1 day left, 100 day/s hits the seam in 0.01 wall-s;
+    // the remaining 0.99 wall-s run at 3× descent speed → 2.97 descent-seconds.
+    const p = advanceClock(
+      { phase: 'cruise', ascentT: 540, cruiseMetDays: 258, descentT: 0 },
+      1,
+      { ascentSpeedMult: 1, cruiseDaysPerSec: 100, descentSpeedMult: 3 },
+      TLD,
+    );
+    expect(p.phase).toBe('descent');
+    expectCloseTo(p.descentT ?? 0, 2.97, 1e-6, 'cruise→descent carry-over');
+  });
+
+  it('advanceClock advances descent in real seconds × multiplier and clamps at touchdown', () => {
+    const mid = advanceClock(
+      { phase: 'descent', ascentT: 540, cruiseMetDays: 259, descentT: 100 },
+      2,
+      { ascentSpeedMult: 1, cruiseDaysPerSec: 1, descentSpeedMult: 3 },
+      TLD,
+    );
+    expect(mid.descentT).toBe(106);
+    const end = advanceClock(
+      { phase: 'descent', ascentT: 540, cruiseMetDays: 259, descentT: 419 },
+      5,
+      { ascentSpeedMult: 1, cruiseDaysPerSec: 1, descentSpeedMult: 3 },
+      TLD,
+    );
+    expect(end.descentT).toBe(420); // clamped at touchdown
+  });
+
+  it('formats descent as E+MM:SS and phase-dispatches', () => {
+    expect(formatDescentClock(7)).toBe('E+00:07');
+    expect(formatDescentClock(132)).toBe('E+02:12');
+    expect(formatClock({ phase: 'descent', ascentT: 540, cruiseMetDays: 259, descentT: 65 })).toBe(
+      'E+01:05',
+    );
   });
 });

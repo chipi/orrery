@@ -1,0 +1,16 @@
+{
+  "missionId": "slim",
+  "siteId": "slim",
+  "body": "moon",
+  "landingSite": { "lat": -13.31, "lon": 25.24 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 200,
+  "entryCdA": 0,
+  "retroPropellantKg": 35,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "SLIM Smart Lander for Investigating Moon — JAXA mission overview", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2023-137C" }
+  ]
+}

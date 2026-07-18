@@ -1,0 +1,143 @@
+{
+  "title": "Más fuerte que un susurro",
+  "dek": "La Red del Espacio Profundo fue construida para un puñado de sondas. Está a punto de enfrentarse al tráfico de una civilización del sistema solar. Las soluciones —conjuntos de antenas, enlaces láser, una red de almacenamiento y reenvío— son reales, y ya se están construyendo. Ninguna de ellas supera la velocidad de la luz.",
+  "body": [
+    {
+      "type": "prose",
+      "md": "El [ensayo sobre comms](/essays/comms) terminaba en un tono tranquilo: tres parcelas desérticas, aproximadamente cuarenta antenas, un susurro de 22 vatios atravesando miles de millones de kilómetros, y el reconocimiento de que esta infraestructura precaria alberga todo lo que la humanidad ha aprendido jamás sobre el sistema solar exterior. El milagro, argumentaba ese ensayo, no era cuánto había perdido la Red del Espacio Profundo, sino cuán poco. Tres sitios, una banda de frecuencia por misión, un cronograma sobrecargado en un cuarenta por ciento, un programa de actualización con cinco años de retraso. Según cualquier estándar de ingeniería, la [DSN](/science/mission-phases/dsn) debería haber colapsado bajo la carga hace años. No lo ha hecho, principalmente porque la carga ha crecido lo suficientemente lenta, y los ingenieros han sido lo suficientemente pacientes, para que las grietas pudieran tapare una pista de antena a la vez."
+    },
+    {
+      "type": "prose",
+      "md": "Esta aritmética está a punto de dejar de funcionar. Los años 2020 y 2030 van a entregar una ola de misiones —vuelos Artemis tripulados con su apetito por datos de alta velocidad continua, sondas científicas a los gigantes de hielo, operadores comerciales a los que se les ha prometido tiempo de DSN sin que nadie haya contabilizado plenamente de dónde provendrá, y eventualmente una presencia humana sostenida en la Luna que requerirá algo más cercano a una conexión de banda ancha que una línea de télex. Las propias proyecciones de la NASA, publicadas en sucesivas revisiones estratégicas de la DSN, muestran que la demanda crece por un factor de diez antes de 2035. La infraestructura actual no fue diseñada para absorber un factor de diez. El cuello de botella, resulta, nunca ha sido la nave espacial. Siempre ha sido la tierra."
+    },
+    {
+      "type": "prose",
+      "md": "Se están construyendo tres enfoques en paralelo. Dejar de construir antenas más grandes e integrar muchas más pequeñas mediante software —conformación de conjuntos. Reemplazar la radio con luz láser para los enlaces descendentes de alta velocidad, lo que concentra órdenes de magnitud más datos en la misma potencia transmitida. Y aceptar que el sistema solar nunca tendrá una red en tiempo real, construyendo en su lugar una arquitectura diseñada para ese hecho: una red de almacenamiento y reenvío cuyos paquetes pasan horas en tránsito y llegan de todas formas. Cada uno ha sido demostrado. Ninguno de ellos cambia lo que no puede ser cambiado."
+    },
+    {
+      "type": "heading",
+      "text": "La tierra es el cuello de botella"
+    },
+    {
+      "type": "prose",
+      "md": "El [ensayo sobre comms](/essays/comms) analizaba el presupuesto de enlace: el transmisor de 22,4 vatios del [Voyager 1](/missions?id=voyager-1), la pérdida de la ley del cuadrado inverso a través de decenas de horas-luz, la señal de femtovatio que llega a un plato de 70 metros después de más de veintitrés horas-luz de viaje. Esa pérdida es real, y es por eso que las velocidades de datos desde los planetas exteriores se miden en bits por segundo. Pero no es la restricción vinculante para las misiones que se lanzan en este momento. En la Luna y Marte, las naves espaciales pueden transmitir más rápido de lo que la tierra puede programar tiempo para recibir. La DSN asigna tiempo de antena en bloques llamados pistas —típicamente ocho a diez horas por misión por día— disputadas por una cola de decenas de naves espaciales activas. El [MAVEN](/missions?id=maven), el orbitador de la atmósfera marciana que retransmite datos para misiones de superficie, puede generar y reenviar datos más rápido de lo que la DSN puede absorber en cualquier día dado. La nave espacial no es el problema. Los tres sitios, con su número fijo de platos y cadenas receptoras finitas, son el problema. La respuesta tradicional era construir un plato más grande: los gigantes de 70 metros en cada complejo se expandieron desde 64 metros específicamente para soportar el encuentro de [Voyager 2](/missions?id=voyager-2) con Neptuno en 1989 —una actualización civilizacional de la red global, para un sobrevuelo, de un planeta. Ese tipo de gasto no es repetible, y un plato de 70 metros está cerca del límite práctico de lo que puede ser dirigido como una estructura única de todas formas. La era del plato más grande ha terminado."
+    },
+    {
+      "type": "heading",
+      "text": "Muchos oídos en lugar de uno"
+    },
+    {
+      "type": "prose",
+      "md": "El principio detrás de la [conformación de conjuntos de antenas](/science/mission-phases/antenna-arrays) es sencillo, aunque la ingeniería no lo es. Toma una señal que llega simultáneamente a múltiples antenas separadas. Combina sus salidas —teniendo en cuenta con precisión la pequeña diferencia en el tiempo de llegada en cada plato, causada por sus diferentes posiciones en la tierra— y el sistema combinado se comporta como un plato único cuya área de recepción es la suma de todos los platos individuales. Ocho antenas de 34 metros combinadas coherentemente producen aproximadamente la sensibilidad de un plato único de 96 metros, que es más grande que cualquier cosa que la DSN haya construido jamás. La relación señal-ruido mejora como la raíz cuadrada del número de antenas; el costo de cada plato adicional es una fracción del costo de actualizar el principal para que coincida con la misma ganancia."
+    },
+    {
+      "type": "prose",
+      "md": "La DSN demostró la conformación de conjuntos ya en los años 1980, combinando Goldstone con el Conjunto de Antenas Muy Grande en Nuevo México durante el encuentro de Voyager 2 con Neptuno. Lo que es nuevo es la intención de convertirlo en lo predeterminado en lugar de una medida de emergencia. El programa de mejora de apertura de la NASA está construyendo platos adicionales de 34 metros en cada complejo específicamente para ser conformados en conjunto —añadiendo capacidad de forma incremental, con la resiliencia de que un plato único que se apague para mantenimiento ya no silencia el sitio. Y la conformación de conjuntos no es solo una preocupación americana. La ESA opera antenas de espacio profundo en Nueva Norcia, Cebreros y Malargüe; la JAXA ejecuta las redes de Usuda y Uchinoura; la ISRO tiene una estación de espacio profundo en Byalalu cerca de Bengaluru. La imagen emergente no es un monopolio americano de tres sitios sino un mosaico global de activos nacionales —un bien común que misiones de cualquier agencia negociarán."
+    },
+    {
+      "type": "figure",
+      "image": "essays/space-comm-arrays/arraying",
+      "kind": "diagram",
+      "caption": "En lugar de construir platos individuales cada vez más grandes, el futuro es conformar muchos más pequeños para que sus señales se combinen en una apertura virtual enorme —más barato de hacer crecer, redundante, degradándose de forma elegante. Fue la conformación de conjuntos, a través de cuatro continentes, la que sacó el susurro de Voyager 2 del ruido en Neptuno en 1989.",
+      "align": "wide"
+    },
+    {
+      "type": "figure",
+      "image": "missions/voyager-2/01",
+      "kind": "photo",
+      "caption": "Voyager 2 en Neptuno, 1989 —para entonces tan tenue que captar su velocidad de datos completa significaba combinar platos en cuatro continentes a la vez. Fue el caso que probó que la conformación de conjuntos funciona.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "El giro hacia la luz"
+    },
+    {
+      "type": "prose",
+      "md": "El ensayo sobre comms describía la primera demostración de [comunicaciones ópticas del espacio profundo](/science/mission-phases/optical-comms): el experimento DSOC a bordo de la nave espacial [Psyche](/missions?id=psyche-mission), que se lanzó en octubre de 2023 y logró algo que la radio no puede igualar con potencia equivalente. Para abril de 2024, DSOC había transmitido a 25 megabits por segundo desde 140 millones de millas —más rápido que la mayoría de banda ancha residencial, desde una distancia mayor que la separación Tierra-Sol. Para diciembre de 2024, había establecido un récord de distancia: retransmitiendo a velocidades útiles desde 307 millones de millas, 494 millones de kilómetros de distancia. En ambos casos, la comparación con el enlace de radio en la misma nave espacial es sobrecogedor: DSOC logró diez a cien veces el rendimiento para la misma potencia eléctrica y aproximadamente la misma masa."
+    },
+    {
+      "type": "prose",
+      "md": "La física detrás de la ventaja es la geometría. Las ondas de radio se propagan en un cono; el cono se ensancha con la distancia, y la mayor parte de la potencia transmitida pierde el objetivo. Un rayo láser es un lápiz. La misma potencia que la radio dispersa sobre millones de kilómetros cuadrados a distancias de Marte puede ser concentrada, con comms ópticas, en un punto de apenas decenas de metros de ancho en la estación terrestre. Más potencia por metro cuadrado llegando al receptor significa más señal; más señal significa velocidades de datos más altas para la misma potencia de transmisor, o la misma velocidad de datos de un transmisor más pequeño y ligero. Para una nave espacial donde cada kilogramo de masa cuesta miles de dólares para lanzar, ese intercambio es atractivo."
+    },
+    {
+      "type": "prose",
+      "md": "El inconveniente —y siempre hay un inconveniente— es el apuntamiento. Un haz lo suficientemente estrecho para aterrizar en un punto de decenas de metros de ancho en un objetivo a millones de kilómetros de distancia requiere que el telescopio transmisor esté apuntado con una precisión medida en nanorradianes. Una nave espacial que vibra ligeramente por el ruido de la rueda de reacción, la expansión térmica, o el microimpulso de impactos de rayos cósmicos debe rastrear un objetivo en la Tierra que se está moviendo, mientras el planeta rota y orbita el Sol, con una precisión que exige los mejores sistemas de control de actitud jamás construidos. DSOC resolvió esto con un espejo de dirección rápida y un bucle de retroalimentación que rastrea un rayo láser baliza enviado desde la tierra —la nave espacial persigue el haz de enlace ascendente y apunta su enlace descendente en consecuencia. Funciona. La complejidad es real."
+    },
+    {
+      "type": "prose",
+      "md": "El segundo inconveniente es el clima. Las ondas de radio pasan a través de las nubes. La luz láser no. Una estación terrestre que recibe un enlace descendente óptico de Marte se queda ciega siempre que las nubes pasen sobre ella —lo que en cualquier sitio dado en la Tierra sucede aproximadamente un tercio a la mitad del tiempo. La arquitectura para una red óptica de espacio profundo confiable y operacional requiere por lo tanto terminales terrestres distribuidas geográficamente: la instalación de Óptica a Orión (O2O) en White Sands en Nuevo México, el telescopio Haleakala en Hawái, sitios planeados en las Islas Canarias y en la región de Asia-Pacífico. Si un sitio está nublado, otro toma el enlace descendente. La misma estrategia que la DSN ya utiliza para la radio —tres sitios, 120 grados de separación— aplicada a la óptica, pero con una textura geográfica más fina y una dependencia más fuerte de la meteorología local. El seguidor de DSOC de la NASA, el Relé Óptico del Espacio Profundo, está diseñado para demostrar exactamente este traspaso multisitio para misiones operacionales a finales de los años 2020."
+    },
+    {
+      "type": "prose",
+      "md": "La visión a más largo plazo es una red que utiliza enlaces ópticos para los enlaces descendentes de alta velocidad —datos científicos, imágenes, vídeo— mientras retiene la radio para el enlace ascendente de baja velocidad todo clima y para el comando de emergencia. La [lección de escalas de distancia](/science/scales-time/light-minute) aún se aplica: DSOC no es una revolución de comunicaciones en el sentido de hacer que las distancias sean irrelevantes. Desde la ubicación de Psyche durante el récord de diciembre de 2024, el [tiempo de viaje de la luz](/science/scales-time/light-minute) unidireccional era aproximadamente 27 minutos. El láser llegó 27 minutos después de haber sido enviado. Ninguna cantidad de ingeniería de ancho de banda cambia ese número."
+    },
+    {
+      "type": "figure",
+      "image": "missions/psyche-mission/01",
+      "kind": "photo",
+      "caption": "El Psyche de la NASA llevaba el demorador de Comunicaciones Ópticas del Espacio Profundo, que en 2023–24 transmitió vídeo de alta definición a casa desde decenas de millones de kilómetros en un rayo de luz láser —diez a cien veces los datos que un enlace de radio podría transportar.",
+      "align": "wide",
+      "credit": "NASA/JPL-Caltech"
+    },
+    {
+      "type": "heading",
+      "text": "Una internet con una hora-luz de retardo"
+    },
+    {
+      "type": "prose",
+      "md": "Las comunicaciones por radio y ópticas resuelven el mismo problema: cómo mover bits más rápido. Ninguna resuelve el problema estructural que el sistema solar impone en cualquier red: los enlaces se cierren y abren mientras los planetas rotan, los nodos están separados por minutos-luz a horas-luz, y la latencia entre dos puntos finales no es milisegundos sino decenas de minutos. El protocolo de internet que lleva todo el tráfico de red de la Tierra —TCP/IP— fue diseñado para un mundo donde un paquete recibe un reconocimiento en menos de un segundo. El mecanismo central de TCP es un protocolo de enlace: envía, recibe reconocimiento, envía el siguiente. A distancias de Marte, un remitente transmitiría un paquete, esperaría cuarenta minutos un reconocimiento, transmitiría el siguiente, y así sucesivamente. Rendimiento: aproximadamente cero. TCP fue construido para un planeta."
+    },
+    {
+      "type": "prose",
+      "md": "La respuesta, desarrollada a finales de los años 1990 por un grupo de trabajo que incluía a Vint Cerf —uno de los arquitectos originales de internet— se llama [Red Tolerante a Retardos/Disrupciones](/science/mission-phases/interplanetary-internet), o DTN. Su idea rectora es almacenamiento y reenvío: un nodo DTN recibe un haz de datos, lo mantiene localmente, y lo reenvía cuando el siguiente enlace de la cadena se vuelve disponible. Un haz de un rover marciano viaja primero a un orbitador de Marte —[MAVEN](/missions?id=maven) ya retransmite datos de misiones de superficie de esta forma— que lo almacena y lo reenvía a la Tierra durante su siguiente contacto terrestre. El haz tarda horas en atravesar la cadena. Llega completo, sin requerir conectividad simultánea en ningún punto a lo largo de la ruta. DTN ha estado funcionando como experimento operacional a bordo de la Estación Espacial Internacional desde 2008. La Red de Retransmisión de Marte —la coordinación informal entre orbitadores de Marte asegurando que misiones de superficie siempre tengan un relé arriba— es la premisa arquitectónica de DTN hecha práctica. El trabajo restante es estandarizar el Protocolo de Haces entre todas las agencias, para que un rover, un orbitador, y una estación terrestre de tres naciones diferentes puedan pasar un paquete entre ellos del mismo modo que dos dispositivos cualesquiera en la Tierra intercambian un correo electrónico."
+    },
+    {
+      "type": "figure",
+      "image": "essays/space-comm-arrays/interplanetary-internet",
+      "kind": "diagram",
+      "caption": "La otra mitad de la respuesta es software. La Red Tolerante a Retardos/Disrupciones desactiva la suposición de internet ordinaria de un enlace de extremo a extremo activo: cada nodo mantiene un \"haz\" de datos y lo reenvía solo cuando el siguiente salto es alcanzable. Los orbitadores de Marte ya retransmiten para rovers de esta forma —una red interplanetaria real, estandarizada, no una metáfora.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Lo que aún no puede hacer"
+    },
+    {
+      "type": "prose",
+      "md": "Hay una tentación, al leer las capacidades anteriores, de escucharlas como soluciones al problema profundo —el aislamiento, la distancia, el silencio. No lo son. Son mejoras en la infraestructura. La estructura del sistema solar no es un problema de infraestructura; es un problema de geometría, y la geometría está fija. Marte está entre tres y veintidós [minutos-luz](/science/scales-time/light-minute) de la Tierra dependiendo de la posición orbital. Ninguna tecnología cambia ese número. Un rayo láser y una onda de radio viajan ambas a la velocidad de la luz, que es la velocidad de la causalidad en este universo y que no tiene nada que decir sobre ancho de banda o codificación. Más ancho de banda significa más datos cruzar la brecha por minuto. No significa que la brecha se encoja. No puedes tener una conversación en tiempo real con una tripulación en Marte —no una llamada de voz, no un enlace de vídeo, no un bucle de comando y reconocimiento. Un miembro de la tripulación enfrentándose a una emergencia médica no puede esperar veinticuatro minutos una respuesta, ni seis minutos en aproximación más cercana. Deciden con el conocimiento que tienen, en el tiempo que tienen. Los conjuntos, los láseres, la red DTN de internet facilitan enviar más información de antemano y recibir más en debriefing. Ninguno de ellos pone la mano de un cirujano de vuelo en un paciente a través de treinta millones de kilómetros."
+    },
+    {
+      "type": "prose",
+      "md": "El sistema solar exterior es más silencioso aún. El [New Horizons](/missions?id=new-horizons) durante su encuentro con Plutón estaba a cuatro y media horas-luz de la Tierra. El [Voyager 1](/missions?id=voyager-1), ahora a más de veintitrés horas-luz, recibe un comando el martes que fue enviado el domingo. Estos números no mejorarán. La trayectoria relevante para el [problema de la exploración interestelar](/essays/interstellar-exploration) es un orden de magnitud más allá de incluso eso: el sistema de estrellas más cercano, Alfa Centauri, está a cuatro años y un tercio de luz de distancia —una señal enviada hoy llegaría en 4,3 años. Las innovaciones de ancho de banda descritas en este ensayo son necesarias y útiles para todo dentro del sistema solar. Para cualquier cosa más allá de él, son irrelevantes. A distancias interestelares, el retardo no es un problema de ingeniería de comunicaciones. Es uno civilizacional."
+    },
+    {
+      "type": "figure",
+      "image": "essays/space-comm-arrays/the-lightspeed-floor",
+      "kind": "diagram",
+      "caption": "Nada supera la velocidad de la luz. Los enlaces ópticos y los conjuntos cuentan más de la historia, y la red tolerante a retardos impide que se pierda —pero una señal a Marte aún es tres a veintidós minutos en cada sentido. No hay ancho de banda, en ningún lugar, que compre una conversación en tiempo real con otro planeta.",
+      "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "El sistema nervioso de una especie multiplanetaria"
+    },
+    {
+      "type": "prose",
+      "md": "Aléjate de la ingeniería y considera lo que está siendo construido en realidad. La [Red del Espacio Profundo](/science/mission-phases/dsn) fue diseñada en 1963 para un sistema solar que contenía, en cualquier momento dado, quizás una docena de naves espaciales activas. Ha sido estirada, actualizada de forma incremental, y mantenida en funcionamiento a través de una combinación de ingenio de ingeniería y terquedad institucional. Lo que la reemplaza —los conjuntos, los enlaces ópticos, la red interplanetaria, las estaciones terrestres distribuidas globalmente— es algo cualitativamente diferente: una infraestructura de comunicaciones permanente para una especie que intenta estar en algún lugar que no sea la Tierra."
+    },
+    {
+      "type": "prose",
+      "md": "Por primera vez desde los años 1970, la intención de estar en algún lugar que no sea la Tierra está respaldada por hardware que se está construyendo y lanzando. El programa Artemis se ha comprometido con una arquitectura de comunicaciones lunar complementada por satélites relé comerciales en órbita lunar. La Red de Retransmisión de Marte es una infraestructura multiagencia en funcionamiento. DSOC probó que los enlaces ópticos funcionan a distancias planetarias. El Protocolo de Haces se está ejecutando en naves espaciales operacionales hoy. Estos no son programas de investigación esperando madurez. Son la primera versión de una infraestructura que estará en funcionamiento, en alguna forma, durante el resto de este siglo."
+    },
+    {
+      "type": "prose",
+      "md": "La analogía histórica que se ajusta más naturalmente aquí no es la red telefónica o internet, aunque esos son los paralelos estructurales. Es la centralita. Antes de la telefonía de larga distancia, cada pueblo que quería comunicarse con el pueblo siguiente negociaba su propio arreglo —una línea de telégrafo, una ruta postal, un mensajero. La centralita, y los intercambios que conectaba, transformaron esos arreglos bilaterales en una red: cada nodo que se unía podía alcanzar cada otro nodo, a través de una infraestructura compartida y estandarizada, sin necesidad de construir su propio enlace privado a cada destino. Lo que se está ensamblando ahora —lentamente, costosamente, internacionalmente— es la centralita para un sistema solar. No una metáfora de ella. La cosa literal, en el dominio donde no ha existido previamente."
+    },
+    {
+      "type": "prose",
+      "md": "La analogía también aclara lo que la centralita no puede hacer. La red telefónica temprana no colapsó la distancia entre continentes —hizo que la conexión fuera rutinaria en lugar de excepcional, una característica regular de cómo funcionaban los negocios y la familia y el gobierno, en lugar de una interrupción rara y costosa. Eso es hacia lo que trabaja la red interplanetaria: no la eliminación de la distancia sino la rutinización de hablar a través de ella. No la conversación en tiempo real, sino la expectativa de que los mensajes enviados llegarán, que las consultas serán respondidas, que los nodos allá en la oscuridad son nodos en la misma red que los de aquí. El [ensayo sobre comms](/essays/comms) cerró con una imagen de cartas enviadas entre personas que se han mudado para el momento en que cualquier respuesta llega. Eso seguirá siendo verdad en Marte, en las lunas de Júpiter, en todas partes donde la especie se propague. El sistema nervioso que se está construyendo es uno que funciona con esa física en lugar de fingir lo contrario —una red que almacena y reenvía, ruta alrededor del clima y la rotación lenta de un planeta, mantiene cada paquete en custodia hasta que el siguiente enlace se abre. Es la arquitectura correcta para un sistema solar. El susurro nunca iba a ser suficiente. Los conjuntos y los láseres y los protocolos interplanetarios son cómo se vuelve más fuerte. Lo que no pueden hacer —lo que nada puede hacer— es hacerlo más rápido. La luz aún toma el tiempo que toma."
+    }
+  ]
+}

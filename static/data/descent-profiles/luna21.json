@@ -1,0 +1,16 @@
+{
+  "missionId": "luna21",
+  "siteId": "luna21",
+  "body": "moon",
+  "landingSite": { "lat": 25.85, "lon": 30.45 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 1900,
+  "entryCdA": 0,
+  "retroPropellantKg": 280,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Luna 21 / Lunokhod 2 — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1973-001A" }
+  ]
+}

@@ -45,6 +45,7 @@
   import { buildTiangongProxyStation } from '$lib/tiangong-proxy-model';
   import { buildLauncherModel } from '$lib/three/launcher-models';
   import { buildDescentModel } from '$lib/three/descent-models';
+  import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
 
   type Entry = {
     /** Stable id → capture filename `model-<family>-<id>` / `craft-<id>`. */
@@ -393,6 +394,26 @@
       family: 'descent',
       build: () => buildDescentModel('huygens', 'titan', 1).root,
     },
+
+    // ── Lander cruise-configuration craft (transit stack carrying the lander) ─
+    ...[
+      'curiosity',
+      'perseverance',
+      'insight',
+      'phoenix',
+      'mars-pathfinder',
+      'spirit',
+      'opportunity',
+      'schiaparelli',
+      'viking1',
+      'mars3',
+      'tianwen1',
+    ].map((id) => ({
+      id,
+      label: id,
+      family: 'cruise',
+      build: () => buildLanderCruiseCraft(id),
+    })),
   ];
 
   type Card = {
@@ -549,7 +570,7 @@
     </p>
   </header>
   <div class="grid">
-    {#each ENTRIES as entry, i (entry.id)}
+    {#each ENTRIES as entry, i (entry.family + '-' + entry.id)}
       <figure class="card" data-model-id="{entry.family}-{entry.id}">
         <div class="canvas" bind:this={containers[i]}></div>
         <figcaption>

@@ -1807,6 +1807,83 @@
       "thumb": "/images/colophon/model-descent-titan-parachute.webp"
     },
     {
+      "title": "Curiosity cruise stage",
+      "what": "MSL cruise-stage disk over the aeroshell enclosing the rover.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-curiosity.webp"
+    },
+    {
+      "title": "Perseverance cruise stage",
+      "what": "Mars 2020 cruise stage + aeroshell (rover + Ingenuity sealed inside).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-perseverance.webp"
+    },
+    {
+      "title": "InSight cruise stage",
+      "what": "Cruise-stage disk over the aeroshell carrying the lander.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-insight.webp"
+    },
+    {
+      "title": "Phoenix cruise stage",
+      "what": "Cruise stage + aeroshell for the polar lander.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-phoenix.webp"
+    },
+    {
+      "title": "Pathfinder cruise stage",
+      "what": "Cruise stage + aeroshell (airbag lander + Sojourner inside).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-mars-pathfinder.webp"
+    },
+    {
+      "title": "Spirit cruise stage",
+      "what": "MER cruise stage + aeroshell.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-spirit.webp"
+    },
+    {
+      "title": "Opportunity cruise stage",
+      "what": "MER cruise stage + aeroshell.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-opportunity.webp"
+    },
+    {
+      "title": "Schiaparelli + TGO",
+      "what": "ExoMars Trace Gas Orbiter carrying the Schiaparelli entry capsule.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-schiaparelli.webp"
+    },
+    {
+      "title": "Viking orbiter + lander",
+      "what": "Viking orbiter with the bioshield-capsule lander below.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-viking1.webp"
+    },
+    {
+      "title": "Mars 3 bus",
+      "what": "Soviet M-71 bus with the descent capsule and solar wings.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-mars3.webp"
+    },
+    {
+      "title": "Tianwen-1 orbiter",
+      "what": "Orbiter bus carrying the entry capsule (Zhurong inside).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-tianwen1.webp"
+    },
+    {
       "title": "Hubble",
       "what": "Cylindrical observatory with aperture door and solar wings.",
       "where": "Earth orbital markers",
@@ -2036,7 +2113,7 @@
     "anatomy_art": 144,
     "diagrams_science": 102,
     "posters": 27,
-    "models3d": 77,
+    "models3d": 88,
     "canvas2d": 6,
     "ui": 4,
     "writing": 8

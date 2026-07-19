@@ -336,6 +336,38 @@ const descentModels = [
   ],
 ].map(mk('model-descent', 'Fly · descent/landing', '/fly'));
 
+// Lander cruise-configuration craft — the transit stack CARRYING the lander,
+// shown in the /fly cruise + approach act (lander-cruise-models.ts).
+const cruiseModels = [
+  [
+    'curiosity',
+    'Curiosity cruise stage',
+    'MSL cruise-stage disk over the aeroshell enclosing the rover.',
+  ],
+  [
+    'perseverance',
+    'Perseverance cruise stage',
+    'Mars 2020 cruise stage + aeroshell (rover + Ingenuity sealed inside).',
+  ],
+  ['insight', 'InSight cruise stage', 'Cruise-stage disk over the aeroshell carrying the lander.'],
+  ['phoenix', 'Phoenix cruise stage', 'Cruise stage + aeroshell for the polar lander.'],
+  [
+    'mars-pathfinder',
+    'Pathfinder cruise stage',
+    'Cruise stage + aeroshell (airbag lander + Sojourner inside).',
+  ],
+  ['spirit', 'Spirit cruise stage', 'MER cruise stage + aeroshell.'],
+  ['opportunity', 'Opportunity cruise stage', 'MER cruise stage + aeroshell.'],
+  [
+    'schiaparelli',
+    'Schiaparelli + TGO',
+    'ExoMars Trace Gas Orbiter carrying the Schiaparelli entry capsule.',
+  ],
+  ['viking1', 'Viking orbiter + lander', 'Viking orbiter with the bioshield-capsule lander below.'],
+  ['mars3', 'Mars 3 bus', 'Soviet M-71 bus with the descent capsule and solar wings.'],
+  ['tianwen1', 'Tianwen-1 orbiter', 'Orbiter bus carrying the entry capsule (Zhurong inside).'],
+].map(mk('model-cruise', 'Fly · cruise/approach', '/fly'));
+
 // Launch facility + the two station proxies.
 const facilityModels = [
   {
@@ -394,6 +426,7 @@ const models3d = [
   ...moonModels,
   ...marsModels,
   ...descentModels,
+  ...cruiseModels,
   ...satModels,
   ...facilityModels,
   ...overlayModels,

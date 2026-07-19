@@ -160,6 +160,7 @@
   import { computeHelioNonFlybyFrame } from '$lib/orbital/helio-non-flyby-frame';
   import { detectSubPhaseTransition } from '$lib/orbital/sub-phase-transition';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
+  import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { FlightTimelineEvent, Mission, MissionEvent } from '$types/mission';
@@ -3486,7 +3487,7 @@
         (scModel.userData.dispose as (() => void) | undefined)?.();
         scModel = null;
       }
-      scModel = buildInterplanetarySpacecraft(missionId);
+      scModel = buildInterplanetarySpacecraft(missionId) ?? buildLanderCruiseCraft(missionId);
       if (scModel) {
         scModel.scale.setScalar(1.5); // halved from 3.0 — the prior
         scModel.renderOrder = 999;

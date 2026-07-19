@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { heroSolar } from '../three/hero-materials';
 
 /**
  * ESA Beagle 2 Tier 1 — Isidis Planitia, Mars. Landed 25 Dec 2003,
@@ -13,20 +14,12 @@ import * as THREE from 'three';
  */
 
 const BEAGLE_SILVER = 0xc8c8c8;
-const SOLAR_BLUE = 0x152040;
 
 function bodyMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: BEAGLE_SILVER, metalness: 0.75, roughness: 0.4 });
 }
 function solarMat(): THREE.MeshStandardMaterial {
-  return new THREE.MeshStandardMaterial({
-    color: SOLAR_BLUE,
-    metalness: 0.4,
-    roughness: 0.3,
-    emissive: SOLAR_BLUE,
-    emissiveIntensity: 0.06,
-    side: THREE.DoubleSide,
-  });
+  return heroSolar();
 }
 
 export function buildBeagle2Hotspot(_accentColor: string): THREE.Group {

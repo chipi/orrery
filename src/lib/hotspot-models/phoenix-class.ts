@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { strutBetween } from '../three/model-geom';
+import { heroSolar } from '../three/hero-materials';
 
 /**
  * Phoenix + InSight Tier 1 engineering model — Phoenix-class lander
@@ -16,20 +17,13 @@ import { strutBetween } from '../three/model-geom';
  */
 
 const PHOENIX_GRAY = 0xb8b8b8;
-const SOLAR_BLUE = 0x152040;
 const ALU = 0x9a9a9a;
 
 function bodyMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: PHOENIX_GRAY, metalness: 0.65, roughness: 0.5 });
 }
 function solarMat(): THREE.MeshStandardMaterial {
-  return new THREE.MeshStandardMaterial({
-    color: SOLAR_BLUE,
-    metalness: 0.4,
-    roughness: 0.3,
-    emissive: SOLAR_BLUE,
-    emissiveIntensity: 0.08,
-  });
+  return heroSolar();
 }
 function aluMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: ALU, metalness: 0.75, roughness: 0.4 });

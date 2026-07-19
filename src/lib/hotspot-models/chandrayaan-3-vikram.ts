@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { strutBetween } from '../three/model-geom';
+import { heroSolar } from '../three/hero-materials';
 
 /**
  * Chandrayaan-3 Vikram lander + Pragyan rover Tier 1 (Manzinus
@@ -16,7 +17,6 @@ import { strutBetween } from '../three/model-geom';
 
 const ISRO_ORANGE = 0xff9933;
 const ALU = 0x9a9a9a;
-const SOLAR_BLUE = 0x152040;
 const TYRE = 0x303030;
 
 function bodyMat(): THREE.MeshStandardMaterial {
@@ -30,13 +30,7 @@ function aluMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: ALU, metalness: 0.75, roughness: 0.4 });
 }
 function solarMat(): THREE.MeshStandardMaterial {
-  return new THREE.MeshStandardMaterial({
-    color: SOLAR_BLUE,
-    metalness: 0.4,
-    roughness: 0.3,
-    emissive: SOLAR_BLUE,
-    emissiveIntensity: 0.08,
-  });
+  return heroSolar();
 }
 function tyreMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: TYRE, metalness: 0.3, roughness: 0.85 });

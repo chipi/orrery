@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { strutBetween } from '../three/model-geom';
+import { heroSolar } from '../three/hero-materials';
 
 /**
  * Chang'e 3 / 4 / 5 / 6 Tier 1 — CNSA lunar lander silhouette
@@ -22,7 +23,6 @@ import { strutBetween } from '../three/model-geom';
 
 const CMSA_GOLD = 0xc7a04e;
 const SILVER = 0xc0c0c0;
-const SOLAR_DARK = 0x152040;
 const ALU = 0x9a9a9a;
 
 function bodyMat(): THREE.MeshStandardMaterial {
@@ -38,13 +38,7 @@ function silverMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: SILVER, metalness: 0.85, roughness: 0.3 });
 }
 function solarMat(): THREE.MeshStandardMaterial {
-  return new THREE.MeshStandardMaterial({
-    color: SOLAR_DARK,
-    metalness: 0.4,
-    roughness: 0.3,
-    emissive: SOLAR_DARK,
-    emissiveIntensity: 0.08,
-  });
+  return heroSolar();
 }
 function aluMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: ALU, metalness: 0.75, roughness: 0.4 });

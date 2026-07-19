@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { heroSolar } from '../three/hero-materials';
 
 /**
  * Lunokhod 1 / Lunokhod 2 Tier 1 — first remote-controlled rovers on
@@ -19,7 +20,6 @@ import * as THREE from 'three';
  */
 
 const SOVIET_SILVER = 0xcdd0cc;
-const SOLAR_DARK = 0x1a2a40;
 const TYRE = 0x303030;
 const ALU = 0x9a9a9a;
 
@@ -27,13 +27,7 @@ function bodyMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: SOVIET_SILVER, metalness: 0.75, roughness: 0.4 });
 }
 function solarMat(): THREE.MeshStandardMaterial {
-  return new THREE.MeshStandardMaterial({
-    color: SOLAR_DARK,
-    metalness: 0.4,
-    roughness: 0.3,
-    emissive: SOLAR_DARK,
-    emissiveIntensity: 0.08,
-  });
+  return heroSolar();
 }
 function tyreMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: TYRE, metalness: 0.3, roughness: 0.85 });

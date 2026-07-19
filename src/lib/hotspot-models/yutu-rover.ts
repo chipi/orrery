@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { heroSolar } from '../three/hero-materials';
 
 /**
  * Yutu / Yutu-2 Tier 1 — CNSA lunar rover (deployed from Chang'e 3 /
@@ -15,7 +16,6 @@ import * as THREE from 'three';
  */
 
 const CMSA_GOLD = 0xc7a04e;
-const SOLAR_DARK = 0x152040;
 const TYRE = 0x303030;
 const ALU = 0x9a9a9a;
 
@@ -29,13 +29,7 @@ function bodyMat(): THREE.MeshStandardMaterial {
   });
 }
 function solarMat(): THREE.MeshStandardMaterial {
-  return new THREE.MeshStandardMaterial({
-    color: SOLAR_DARK,
-    metalness: 0.4,
-    roughness: 0.3,
-    emissive: SOLAR_DARK,
-    emissiveIntensity: 0.08,
-  });
+  return heroSolar();
 }
 function tyreMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: TYRE, metalness: 0.3, roughness: 0.85 });

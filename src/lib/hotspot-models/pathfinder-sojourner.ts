@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { heroSolar } from '../three/hero-materials';
 
 /**
  * Mars Pathfinder + Sojourner Tier 1 engineering model — paired
@@ -24,7 +25,6 @@ import * as THREE from 'three';
 
 const PATH_GRAY = 0xa6a6a0;
 const PETAL_BEIGE = 0xc4b896;
-const SOLAR_BLUE = 0x152040;
 const ALU = 0x9a9a9a;
 
 function bodyMat(): THREE.MeshStandardMaterial {
@@ -39,13 +39,7 @@ function petalMat(): THREE.MeshStandardMaterial {
   });
 }
 function solarMat(): THREE.MeshStandardMaterial {
-  return new THREE.MeshStandardMaterial({
-    color: SOLAR_BLUE,
-    metalness: 0.4,
-    roughness: 0.3,
-    emissive: SOLAR_BLUE,
-    emissiveIntensity: 0.1,
-  });
+  return heroSolar();
 }
 function aluMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: ALU, metalness: 0.75, roughness: 0.4 });

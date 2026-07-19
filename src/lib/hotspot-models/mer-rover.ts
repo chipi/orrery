@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { heroSolar } from '../three/hero-materials';
 
 /**
  * Mars Exploration Rover Tier 1 model — Spirit + Opportunity
@@ -15,7 +16,6 @@ import * as THREE from 'three';
  */
 
 const MER_BODY = 0xb0b0b0;
-const SOLAR_BLUE = 0x152040;
 const TYRE = 0x303030;
 const ALU = 0x9a9a9a;
 
@@ -23,13 +23,7 @@ function bodyMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: MER_BODY, metalness: 0.6, roughness: 0.55 });
 }
 function solarMat(): THREE.MeshStandardMaterial {
-  return new THREE.MeshStandardMaterial({
-    color: SOLAR_BLUE,
-    metalness: 0.4,
-    roughness: 0.3,
-    emissive: SOLAR_BLUE,
-    emissiveIntensity: 0.08,
-  });
+  return heroSolar();
 }
 function tyreMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: TYRE, metalness: 0.2, roughness: 0.9 });

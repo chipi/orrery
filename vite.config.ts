@@ -475,6 +475,12 @@ export default defineConfig(({ mode }) => {
           // descent-force-layers, the widened ascent-clock) each keep *.test.ts.
           'src/lib/three/descent-scene.ts',
           'src/lib/three/descent-models.ts',
+          // Tier-1 Earth-orbit re-entry (RFC-034 §13): the LEO orbit-coast render
+          // (fly-leo-coast-scene) + the procedural capsule models (capsule-models)
+          // instantiate Three.js jsdom can't run; the pure earth-orbit-registry
+          // keeps its *.test.ts.
+          'src/lib/three/fly-leo-coast-scene.ts',
+          'src/lib/three/capsule-models.ts',
           '*.config.{js,ts}',
           '.svelte-kit/',
         ],

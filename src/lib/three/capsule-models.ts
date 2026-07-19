@@ -253,3 +253,6 @@ const CAPSULE_BUILDERS: Record<string, () => THREE.Group> = {
 export function buildCapsuleById(capsuleId: string): THREE.Group {
   return (CAPSULE_BUILDERS[capsuleId] ?? buildMercuryCapsule)();
 }
+
+/** The capsule family ids that resolve to a dedicated builder (join-test guard). */
+export const CAPSULE_FAMILY_IDS = Object.keys(CAPSULE_BUILDERS);

@@ -414,11 +414,9 @@
   // US capsules splash down at sea; Soviet/Chinese capsules land on the steppe.
   const SPLASHDOWN_CAPSULES = new Set(['mercury', 'gemini', 'apollo-cm', 'dragon']);
   // Honest-failure captions — the re-entry outcome is not always a success.
-  const RECOVERY_CAPTIONS: Record<string, string> = {
-    'soyuz-1':
-      'Parachute failure — the descent module struck the ground at high speed. Vladimir Komarov was lost, the first in-flight spaceflight fatality.',
-    'soyuz-11':
-      'The capsule landed nominally, but a valve had opened at module separation; the three-man crew were lost to depressurization before touchdown.',
+  const RECOVERY_CAPTIONS: Record<string, () => string> = {
+    'soyuz-1': () => m.fly_recovery_caption_soyuz1(),
+    'soyuz-11': () => m.fly_recovery_caption_soyuz11(),
   };
   let recoveryOutcome = $derived.by(() => {
     const ok = descentSummaryFly?.touchdownSuccess ?? true;
@@ -7271,7 +7269,7 @@
         {Math.abs(descentProfile.landingSite.lon).toFixed(2)}° {descentProfile.landingSite.lon >= 0 ? 'E' : 'W'}
       </div>
       {#if mission.id && RECOVERY_CAPTIONS[mission.id]}
-        <div class="recovery-caption">{RECOVERY_CAPTIONS[mission.id]}</div>
+        <div class="recovery-caption">{RECOVERY_CAPTIONS[mission.id]()}</div>
       {/if}
       <button class="recovery-close" onclick={() => (showRecovery = false)}>CLOSE</button>
     </div>

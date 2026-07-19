@@ -1005,6 +1005,8 @@
   "plan_link_opens_new_tab": "{label} (opens in new tab)",
   "plan_view_in_fleet": "View {label} in Fleet",
   "fly_page_title": "Mission Arc · Orrery",
+  "fly_recovery_caption_soyuz1": "Parachute failure — the descent module struck the ground at high speed. Vladimir Komarov was lost, the first in-flight spaceflight fatality.",
+  "fly_recovery_caption_soyuz11": "The capsule landed nominally, but a valve had opened at module separation; the three-man crew were lost to depressurization before touchdown.",
   "earth_page_title": "Earth Orbit · Orrery",
   "earth_orbit_ruler_title": "ORBIT RULER",
   "earth_orbit_ruler_aria": "Altitude reference for Earth orbital regimes — tap a band to learn more",

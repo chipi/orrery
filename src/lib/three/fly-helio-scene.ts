@@ -10,6 +10,7 @@ import { buildSkydome } from './skydome';
 import { buildSunLensFlare, type SunLensFlare } from './sun-lens-flare';
 import { createLayeredStarField } from '$lib/three/star-field';
 import { createSceneRenderer } from '$lib/three/scene-renderer';
+import { heroEnvironment } from '$lib/three/hero-materials';
 import type { QualityConfig } from '$lib/quality/quality-tier';
 import {
   DESTINATIONS,
@@ -339,6 +340,11 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // stack we'll layer on top in subsequent waves.
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.1;
+  // Hero IBL — the PBR spacecraft/cruise models (MeshStandard) get real
+  // reflections + edge glints from the sun-lit space env. The planets +
+  // skydome are MeshBasic and the moon is MeshPhong, so none of the scene
+  // backdrop is touched; only the ships pick this up.
+  scene.environment = heroEnvironment(renderer);
 
   // Post-processing pipeline — composer chains a sequence of passes
   // operating on the previous pass's output. Skipped entirely on the

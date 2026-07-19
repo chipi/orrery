@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { heroGold, heroSolar, heroDark, heroWhite, heroMetal } from './hero-materials';
 
 /**
  * Per-mission CRUISE-configuration models for /fly's cruise + approach act —
@@ -9,25 +10,10 @@ import * as THREE from 'three';
  * these builders replace that glyph with the real cruise stack (cruise-stage +
  * aeroshell for Mars EDL, CSM + LM for Apollo, transfer bus for Luna, …).
  *
- * Style matches `interplanetary-spacecraft-models.ts`: MeshPhongMaterial with a
- * low emissive so the shared /fly rim-light shader (onBeforeCompile) reads the
- * silhouette against dark space. Every builder returns a THREE.Group roughly
- * 1.5–2 units long (the /fly scene scales it uniformly).
+ * Style matches `interplanetary-spacecraft-models.ts`: PBR MeshStandardMaterial
+ * driven by the scene's IBL environment (installHeroEnvironment). Every builder
+ * returns a THREE.Group roughly 1.5–2 units long (the /fly scene scales it).
  */
-
-// ── Shared palette (mirrors interplanetary-spacecraft-models.ts) ──────────
-const BUS_GREY = 0xb8b8b8;
-const DISH_WHITE = 0xeaeaea;
-const RTG_DARK = 0x3a3a3a;
-const GOLD_FOIL = 0xd9b863;
-const ACCENT_RED = 0xb45c5c;
-const SOLAR_BLUE = 0x1f3a72;
-const AEROSHELL_TAN = 0xcbb9a6; // backshell / heat-shield tile tan
-const WHITE_MLI = 0xf0f0ea;
-
-function mat(color: number, emissive = 0x111111, emissiveIntensity = 0.6): THREE.MeshPhongMaterial {
-  return new THREE.MeshPhongMaterial({ color, emissive, emissiveIntensity, shininess: 30 });
-}
 
 function dispose(group: THREE.Group): void {
   group.traverse((o) => {
@@ -48,13 +34,13 @@ function cruiseStage(radius: number, thickness = radius * 0.16): THREE.Group {
   const g = new THREE.Group();
   const disk = new THREE.Mesh(
     new THREE.CylinderGeometry(radius, radius, thickness, 36),
-    mat(SOLAR_BLUE, 0x0a1430, 0.5),
+    heroSolar(),
   );
   g.add(disk);
   // Grey hub cap so it doesn't read as a solid blue coin.
   const hub = new THREE.Mesh(
     new THREE.CylinderGeometry(radius * 0.4, radius * 0.4, thickness * 1.2, 24),
-    mat(BUS_GREY),
+    heroWhite(0xb8b8b8),
   );
   g.add(hub);
   return g;
@@ -65,40 +51,50 @@ function cruiseStage(radius: number, thickness = radius * 0.16): THREE.Group {
  * conical backshell (up). Returns the shell group; the lander rides hidden
  * inside during cruise (we don't add it — the silhouette is the shell).
  */
-function aeroshell(radius: number, tan = AEROSHELL_TAN): THREE.Group {
+function aeroshell(radius: number): THREE.Group {
   const g = new THREE.Group();
-  const heat = new THREE.Mesh(
-    new THREE.ConeGeometry(radius, radius * 0.5, 32),
-    mat(RTG_DARK, 0x201008),
-  );
+  const heatMat = heroDark();
+  heatMat.side = THREE.DoubleSide;
+  const heat = new THREE.Mesh(new THREE.ConeGeometry(radius, radius * 0.5, 32), heatMat);
   heat.rotation.x = Math.PI; // point down
   heat.position.y = -radius * 0.25;
-  const back = new THREE.Mesh(new THREE.ConeGeometry(radius, radius * 0.7, 32), mat(tan, 0x231c12));
+  const backMat = heroWhite(0xc7b494);
+  backMat.side = THREE.DoubleSide;
+  const back = new THREE.Mesh(new THREE.ConeGeometry(radius, radius * 0.7, 32), backMat);
   back.position.y = radius * 0.35;
   g.add(heat, back);
   return g;
 }
 
 /** Boxy equipment bus. */
-function bus(w: number, h: number, d: number, color = GOLD_FOIL): THREE.Mesh {
-  return new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat(color, 0x2a2113));
+function bus(w: number, h: number, d: number, color = 0xd9b45a): THREE.Mesh {
+  // color arg maps: GOLD_FOIL → heroGold, BUS_GREY → heroWhite(grey), WHITE_MLI → heroWhite
+  let mat: THREE.MeshStandardMaterial;
+  if (color === 0xd9b863 || color === 0xd9b45a) {
+    mat = heroGold();
+  } else if (color === 0xb8b8b8) {
+    mat = heroWhite(0xb8b8b8);
+  } else {
+    mat = heroWhite(color);
+  }
+  return new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
 }
 
 /** A flat solar-array wing at ±x offset. */
 function solarWing(w: number, h: number, x: number): THREE.Mesh {
-  const wing = new THREE.Mesh(
-    new THREE.BoxGeometry(w, 0.02 * w, h),
-    mat(SOLAR_BLUE, 0x0a1430, 0.5),
-  );
+  const wing = new THREE.Mesh(new THREE.BoxGeometry(w, 0.02 * w, h), heroSolar());
   wing.position.x = x;
   return wing;
 }
 
 /** High-gain dish on a short boom facing +z. */
 function dish(radius: number): THREE.Mesh {
+  // Partial SphereGeometry is open at the base — DoubleSide prevents see-through.
+  const mat = heroWhite(0xeef0f2);
+  mat.side = THREE.DoubleSide;
   const d = new THREE.Mesh(
     new THREE.SphereGeometry(radius, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2.3),
-    mat(DISH_WHITE, 0x333333),
+    mat,
   );
   d.rotation.x = -Math.PI / 2;
   return d;
@@ -106,7 +102,7 @@ function dish(radius: number): THREE.Mesh {
 
 /** Thin antenna / boom rod. */
 function boom(len: number, r = len * 0.02): THREE.Mesh {
-  return new THREE.Mesh(new THREE.CylinderGeometry(r, r, len, 8), mat(RTG_DARK, 0x151515));
+  return new THREE.Mesh(new THREE.CylinderGeometry(r, r, len, 8), heroMetal(0x9aa0a8));
 }
 
 // ── Per-mission cruise builders (Mars batch) ──────────────────────────────
@@ -151,7 +147,7 @@ function buildOpportunityCruise(): THREE.Group {
 function buildSchiaparelliCruise(): THREE.Group {
   // Rode attached to the Trace Gas Orbiter — small aeroshell + a bus.
   const g = marsCruise({ shellR: 0.5, cruiseR: 0.6 });
-  const tgo = bus(0.6, 0.3, 0.3, BUS_GREY);
+  const tgo = bus(0.6, 0.3, 0.3, 0xb8b8b8);
   tgo.position.y = 0.9;
   g.add(tgo, solarWing(0.9, 0.4, -0.75), solarWing(0.9, 0.4, 0.75));
   return g;
@@ -160,7 +156,7 @@ function buildViking1Cruise(): THREE.Group {
   // Viking = orbiter (octagonal bus + panels + dish) with the lander in its
   // bioshield aeroshell slung below.
   const g = new THREE.Group();
-  const orbiter = bus(0.8, 0.35, 0.8, GOLD_FOIL);
+  const orbiter = bus(0.8, 0.35, 0.8, 0xd9b863);
   orbiter.position.y = 0.55;
   const hgd = dish(0.4);
   hgd.position.set(0, 0.55, 0.5);
@@ -175,12 +171,15 @@ function buildMars3Cruise(): THREE.Group {
   const g = new THREE.Group();
   const busBody = new THREE.Mesh(
     new THREE.CylinderGeometry(0.45, 0.45, 0.9, 24),
-    mat(BUS_GREY, 0x222222),
+    heroWhite(0xb8b8b8),
   );
   busBody.position.y = -0.1;
+  // Half-sphere is open at the equator — DoubleSide prevents see-through.
+  const shellMat = heroWhite(0xc7b494);
+  shellMat.side = THREE.DoubleSide;
   const shell = new THREE.Mesh(
     new THREE.SphereGeometry(0.55, 24, 16, 0, Math.PI * 2, 0, Math.PI / 2),
-    mat(AEROSHELL_TAN, 0x231c12),
+    shellMat,
   );
   shell.position.y = 0.55;
   g.add(busBody, shell, solarWing(1.4, 0.5, -0.9), solarWing(1.4, 0.5, 0.9));
@@ -189,7 +188,7 @@ function buildMars3Cruise(): THREE.Group {
 function buildTianwen1Cruise(): THREE.Group {
   // Orbiter bus + the entry-capsule aeroshell (rover inside).
   const g = new THREE.Group();
-  const orbiter = bus(0.7, 0.4, 0.7, GOLD_FOIL);
+  const orbiter = bus(0.7, 0.4, 0.7, 0xd9b863);
   orbiter.position.y = 0.5;
   const shell = aeroshell(0.62);
   shell.position.y = -0.2;
@@ -212,40 +211,31 @@ function buildApolloCruise(): THREE.Group {
   const g = new THREE.Group();
 
   // Command Module — blunt cone, white MLI
-  const cm = new THREE.Mesh(new THREE.ConeGeometry(0.26, 0.38, 20), mat(WHITE_MLI, 0x282820));
+  const cm = new THREE.Mesh(new THREE.ConeGeometry(0.26, 0.38, 20), heroWhite(0xf0f0ea));
   cm.rotation.x = Math.PI; // point up (apex down toward SM)
   cm.position.y = 1.35;
 
   // Service Module — cylinder, gold
-  const sm = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.26, 0.26, 0.78, 20),
-    mat(GOLD_FOIL, 0x2a2113),
-  );
+  const sm = new THREE.Mesh(new THREE.CylinderGeometry(0.26, 0.26, 0.78, 20), heroGold());
   sm.position.y = 0.82;
 
   // SPS engine bell at aft of SM
-  const bell = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.14, 0.22, 0.32, 16),
-    mat(RTG_DARK, 0x151515),
-  );
+  const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.22, 0.32, 16), heroDark());
   bell.position.y = 0.3;
 
   // Docking adapter (short white stub between CSM and LM)
   const adapter = new THREE.Mesh(
     new THREE.CylinderGeometry(0.22, 0.28, 0.22, 20),
-    mat(WHITE_MLI, 0x282820),
+    heroWhite(0xf0f0ea),
   );
   adapter.position.y = 0.44;
 
   // LM descent stage — boxy, gold, wider
-  const lmDescent = bus(0.44, 0.28, 0.44, GOLD_FOIL);
+  const lmDescent = bus(0.44, 0.28, 0.44, 0xd9b863);
   lmDescent.position.y = 0.0;
 
   // LM ascent stage — octagonal boxy top
-  const lmAscent = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.2, 0.2, 0.28, 8),
-    mat(GOLD_FOIL, 0x2a2113),
-  );
+  const lmAscent = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.28, 8), heroGold());
   lmAscent.position.y = 0.28;
 
   // Four landing legs splayed out from descent stage
@@ -269,22 +259,16 @@ function buildOrionCruise(): THREE.Group {
   const g = new THREE.Group();
 
   // Crew module — blunt cone
-  const cm = new THREE.Mesh(new THREE.ConeGeometry(0.32, 0.4, 20), mat(WHITE_MLI, 0x282820));
+  const cm = new THREE.Mesh(new THREE.ConeGeometry(0.32, 0.4, 20), heroWhite(0xf0f0ea));
   cm.rotation.x = Math.PI;
   cm.position.y = 0.92;
 
   // European Service Module — cylinder
-  const esm = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.3, 0.3, 0.82, 20),
-    mat(BUS_GREY, 0x1a1a1a),
-  );
+  const esm = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.82, 20), heroWhite(0xb8b8b8));
   esm.position.y = 0.22;
 
   // Engine bell
-  const bell = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.12, 0.2, 0.28, 16),
-    mat(RTG_DARK, 0x151515),
-  );
+  const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.2, 0.28, 16), heroDark());
   bell.position.y = -0.28;
 
   // Four solar array wings in cross — pairs on X and Z
@@ -311,27 +295,21 @@ function buildLunaDirectCruise(): THREE.Group {
 
   const busBody = new THREE.Mesh(
     new THREE.CylinderGeometry(0.28, 0.32, 0.7, 20),
-    mat(BUS_GREY, 0x222222),
+    heroWhite(0xb8b8b8),
   );
   busBody.position.y = -0.2;
 
   // Spherical lander capsule
-  const capsule = new THREE.Mesh(new THREE.SphereGeometry(0.22, 20, 14), mat(WHITE_MLI, 0x282820));
+  const capsule = new THREE.Mesh(new THREE.SphereGeometry(0.22, 20, 14), heroWhite(0xf0f0ea));
   capsule.position.y = 0.37;
 
   // Main engine bell at base
-  const bell = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.1, 0.18, 0.24, 16),
-    mat(RTG_DARK, 0x151515),
-  );
+  const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.18, 0.24, 16), heroDark());
   bell.position.y = -0.66;
 
   // Four vernier nozzles
   for (let i = 0; i < 4; i++) {
-    const nozzle = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.035, 0.06, 0.14, 10),
-      mat(RTG_DARK, 0x151515),
-    );
+    const nozzle = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.06, 0.14, 10), heroDark());
     nozzle.position.set(
       Math.cos((i * Math.PI) / 2) * 0.32,
       -0.54,
@@ -355,13 +333,13 @@ function buildLunaSampleCruise(): THREE.Group {
   // Descent stage tank bus
   const descent = new THREE.Mesh(
     new THREE.CylinderGeometry(0.34, 0.34, 0.38, 20),
-    mat(BUS_GREY, 0x222222),
+    heroWhite(0xb8b8b8),
   );
   descent.position.y = -0.38;
 
   // Four spherical propellant tanks
   for (let i = 0; i < 4; i++) {
-    const tank = new THREE.Mesh(new THREE.SphereGeometry(0.14, 14, 10), mat(BUS_GREY, 0x1a1a1a));
+    const tank = new THREE.Mesh(new THREE.SphereGeometry(0.14, 14, 10), heroWhite(0xb8b8b8));
     tank.position.set(
       Math.cos((i * Math.PI) / 2) * 0.38,
       -0.44,
@@ -371,24 +349,15 @@ function buildLunaSampleCruise(): THREE.Group {
   }
 
   // Descent engine bell
-  const dbell = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.12, 0.22, 0.28, 16),
-    mat(RTG_DARK, 0x151515),
-  );
+  const dbell = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.22, 0.28, 16), heroDark());
   dbell.position.y = -0.7;
 
   // Ascent stage — slender cylinder
-  const ascent = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.16, 0.16, 0.52, 16),
-    mat(GOLD_FOIL, 0x2a2113),
-  );
+  const ascent = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.52, 16), heroGold());
   ascent.position.y = 0.08;
 
   // Return capsule sphere on top
-  const returnSphere = new THREE.Mesh(
-    new THREE.SphereGeometry(0.16, 16, 12),
-    mat(WHITE_MLI, 0x282820),
-  );
+  const returnSphere = new THREE.Mesh(new THREE.SphereGeometry(0.16, 16, 12), heroWhite(0xf0f0ea));
   returnSphere.position.y = 0.52;
 
   g.add(descent, dbell, ascent, returnSphere);
@@ -405,38 +374,31 @@ function buildLunokhodCarrierCruise(): THREE.Group {
   // Descent stage
   const descent = new THREE.Mesh(
     new THREE.CylinderGeometry(0.4, 0.4, 0.36, 20),
-    mat(BUS_GREY, 0x222222),
+    heroWhite(0xb8b8b8),
   );
   descent.position.y = -0.44;
 
   // Engine bell
-  const bell = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.14, 0.24, 0.3, 16),
-    mat(RTG_DARK, 0x151515),
-  );
+  const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.24, 0.3, 16), heroDark());
   bell.position.y = -0.75;
 
   // Lunokhod rover tub body
-  const tub = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.34, 0.34, 0.26, 10),
-    mat(GOLD_FOIL, 0x2a2113),
-  );
+  const tub = new THREE.Mesh(new THREE.CylinderGeometry(0.34, 0.34, 0.26, 10), heroGold());
   tub.position.y = -0.1;
 
-  // Clamshell solar-cell lid (flat half-cylinder)
+  // Clamshell solar-cell lid (half-cylinder) — open thetaLength → DoubleSide.
+  const lidMat = heroSolar();
+  lidMat.side = THREE.DoubleSide;
   const lid = new THREE.Mesh(
     new THREE.CylinderGeometry(0.34, 0.34, 0.06, 10, 1, false, 0, Math.PI),
-    mat(SOLAR_BLUE, 0x0a1430, 0.5),
+    lidMat,
   );
   lid.position.y = 0.14;
 
   // Eight wheels (simplified as small cylinders)
   for (let i = 0; i < 4; i++) {
     for (const side of [-1, 1]) {
-      const wheel = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.07, 0.07, 0.06, 10),
-        mat(RTG_DARK, 0x151515),
-      );
+      const wheel = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.06, 10), heroDark());
       wheel.rotation.z = Math.PI / 2;
       wheel.position.set(side * 0.4, -0.17, (i - 1.5) * 0.2);
       g.add(wheel);
@@ -455,14 +417,11 @@ function buildChange34Cruise(): THREE.Group {
   const g = new THREE.Group();
 
   // Descent lander box
-  const lander = bus(0.56, 0.36, 0.56, GOLD_FOIL);
+  const lander = bus(0.56, 0.36, 0.56, 0xd9b863);
   lander.position.y = -0.26;
 
   // Engine bell
-  const bell = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.12, 0.2, 0.28, 16),
-    mat(RTG_DARK, 0x151515),
-  );
+  const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.2, 0.28, 16), heroDark());
   bell.position.y = -0.58;
 
   // Four landing legs
@@ -479,7 +438,7 @@ function buildChange34Cruise(): THREE.Group {
   }
 
   // Yutu rover — small boxy unit on top
-  const rover = bus(0.3, 0.14, 0.36, GOLD_FOIL);
+  const rover = bus(0.3, 0.14, 0.36, 0xd9b863);
   rover.position.y = 0.07;
 
   // Yutu solar panels (folded, vertical)
@@ -490,7 +449,10 @@ function buildChange34Cruise(): THREE.Group {
   g.add(rp1, rp2);
 
   // ACCENT_RED stripe on rover for visual identity
-  const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.04, 0.04), mat(ACCENT_RED, 0x3a0000));
+  const stripe = new THREE.Mesh(
+    new THREE.BoxGeometry(0.3, 0.04, 0.04),
+    new THREE.MeshStandardMaterial({ color: 0xb45c5c, metalness: 0.3, roughness: 0.5 }),
+  );
   stripe.position.y = 0.12;
   stripe.position.z = 0.18;
   g.add(stripe);
@@ -507,32 +469,26 @@ function buildChange56Cruise(): THREE.Group {
   const g = new THREE.Group();
 
   // Orbiter bus at bottom
-  const orbiter = bus(0.46, 0.3, 0.46, BUS_GREY);
+  const orbiter = bus(0.46, 0.3, 0.46, 0xb8b8b8);
   orbiter.position.y = -0.62;
   g.add(solarWing(0.9, 0.36, -0.62));
   g.add(solarWing(0.9, 0.36, 0.62));
 
   // Returner capsule (small cone)
-  const returner = new THREE.Mesh(new THREE.ConeGeometry(0.18, 0.26, 16), mat(WHITE_MLI, 0x282820));
+  const returner = new THREE.Mesh(new THREE.ConeGeometry(0.18, 0.26, 16), heroWhite(0xf0f0ea));
   returner.rotation.x = Math.PI;
   returner.position.y = -0.22;
 
   // Ascender stage (short cylinder)
-  const ascender = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.18, 0.18, 0.32, 16),
-    mat(GOLD_FOIL, 0x2a2113),
-  );
+  const ascender = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 0.32, 16), heroGold());
   ascender.position.y = 0.14;
 
   // Lander at top (boxy, gold)
-  const lander = bus(0.4, 0.28, 0.4, GOLD_FOIL);
+  const lander = bus(0.4, 0.28, 0.4, 0xd9b863);
   lander.position.y = 0.5;
 
   // Lander engine bell
-  const bell = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.1, 0.16, 0.2, 14),
-    mat(RTG_DARK, 0x151515),
-  );
+  const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.16, 0.2, 14), heroDark());
   bell.position.y = 0.74;
 
   g.add(orbiter, returner, ascender, lander, bell);
@@ -547,7 +503,7 @@ function buildChandrayaan3Cruise(): THREE.Group {
   const g = new THREE.Group();
 
   // Propulsion module — boxy grey bus
-  const pm = bus(0.44, 0.5, 0.44, BUS_GREY);
+  const pm = bus(0.44, 0.5, 0.44, 0xb8b8b8);
   pm.position.y = -0.3;
 
   // Single solar wing on one side (ISRO style)
@@ -556,7 +512,7 @@ function buildChandrayaan3Cruise(): THREE.Group {
   g.add(wing);
 
   // Vikram lander on top — boxy gold with 4 legs
-  const vikram = bus(0.42, 0.3, 0.42, GOLD_FOIL);
+  const vikram = bus(0.42, 0.3, 0.42, 0xd9b863);
   vikram.position.y = 0.22;
 
   // Four legs
@@ -573,10 +529,7 @@ function buildChandrayaan3Cruise(): THREE.Group {
   }
 
   // Vikram engine bell
-  const bell = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.09, 0.15, 0.18, 14),
-    mat(RTG_DARK, 0x151515),
-  );
+  const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.15, 0.18, 14), heroDark());
   bell.position.y = 0.12;
 
   // HGA dish on PM
@@ -596,19 +549,16 @@ function buildSlimCruise(): THREE.Group {
   const g = new THREE.Group();
 
   // Main bus — flat and boxy
-  const body = bus(0.6, 0.22, 0.42, WHITE_MLI);
+  const body = bus(0.6, 0.22, 0.42, 0xf0f0ea);
   body.position.y = 0.0;
 
   // Spherical propellant tank
-  const tank = new THREE.Mesh(new THREE.SphereGeometry(0.16, 16, 12), mat(BUS_GREY, 0x1a1a1a));
+  const tank = new THREE.Mesh(new THREE.SphereGeometry(0.16, 16, 12), heroWhite(0xb8b8b8));
   tank.position.y = 0.22;
 
   // Two main engine bells (side by side)
   for (const x of [-0.1, 0.1]) {
-    const bell = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.05, 0.1, 0.2, 12),
-      mat(RTG_DARK, 0x151515),
-    );
+    const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.1, 0.2, 12), heroDark());
     bell.position.set(x, -0.2, 0);
     g.add(bell);
   }
@@ -630,24 +580,15 @@ function buildBeresheetCruise(): THREE.Group {
   const g = new THREE.Group();
 
   // Main body — squat cylinder, gold
-  const body = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.34, 0.34, 0.3, 20),
-    mat(GOLD_FOIL, 0x2a2113),
-  );
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(0.34, 0.34, 0.3, 20), heroGold());
   body.position.y = 0.0;
 
   // Top solar-cell disk
-  const solardisk = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.34, 0.34, 0.04, 20),
-    mat(SOLAR_BLUE, 0x0a1430, 0.5),
-  );
+  const solardisk = new THREE.Mesh(new THREE.CylinderGeometry(0.34, 0.34, 0.04, 20), heroSolar());
   solardisk.position.y = 0.17;
 
   // Engine bell
-  const bell = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.1, 0.18, 0.26, 16),
-    mat(RTG_DARK, 0x151515),
-  );
+  const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.18, 0.26, 16), heroDark());
   bell.position.y = -0.28;
 
   // Four landing legs
@@ -675,21 +616,15 @@ function buildBlueMoonCruise(): THREE.Group {
   const g = new THREE.Group();
 
   // Central propellant tank — tall cylinder, white
-  const tank = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.3, 0.3, 1.1, 20),
-    mat(WHITE_MLI, 0x282820),
-  );
+  const tank = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 1.1, 20), heroWhite(0xf0f0ea));
   tank.position.y = 0.1;
 
   // Engine bell at base
-  const bell = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.18, 0.3, 0.36, 16),
-    mat(RTG_DARK, 0x151515),
-  );
+  const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.3, 0.36, 16), heroDark());
   bell.position.y = -0.6;
 
   // Payload deck on top
-  const deck = bus(0.62, 0.1, 0.62, BUS_GREY);
+  const deck = bus(0.62, 0.1, 0.62, 0xb8b8b8);
   deck.position.y = 0.7;
 
   // Four wide landing legs on a lower truss ring
@@ -709,7 +644,7 @@ function buildBlueMoonCruise(): THREE.Group {
   for (let i = 0; i < 4; i++) {
     const pad = new THREE.Mesh(
       new THREE.CylinderGeometry(0.08, 0.08, 0.04, 10),
-      mat(BUS_GREY, 0x1a1a1a),
+      heroWhite(0xb8b8b8),
     );
     pad.position.set(
       Math.cos((i * Math.PI) / 2 + Math.PI / 4) * 0.68,
@@ -728,21 +663,18 @@ function buildBlueMoonCruise(): THREE.Group {
 function buildHayabusa1Cruise(): THREE.Group {
   // Boxy bus, two solar wings, a downward sampler horn, ion-engine cluster.
   const g = new THREE.Group();
-  const body = bus(0.7, 0.5, 0.7, GOLD_FOIL);
+  const body = bus(0.7, 0.5, 0.7, 0xd9b863);
   g.add(body, solarWing(1.6, 0.6, -1.0), solarWing(1.6, 0.6, 1.0));
-  const horn = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.05, 0.14, 0.5, 16, 1, true),
-    mat(BUS_GREY),
-  );
+  // Open-ended frustum (sampler horn) → DoubleSide to avoid see-through.
+  const hornMat = heroWhite(0xb8b8b8);
+  hornMat.side = THREE.DoubleSide;
+  const horn = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.14, 0.5, 16, 1, true), hornMat);
   horn.position.y = -0.5;
   const hgd = dish(0.28);
   hgd.position.set(0, 0.28, 0.4);
   // Ion thruster nozzles at the aft face.
   for (const x of [-0.15, 0.15]) {
-    const t = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.08, 0.1, 0.14, 12),
-      mat(RTG_DARK, 0x241a30),
-    );
+    const t = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.1, 0.14, 12), heroDark());
     t.position.set(x, 0, -0.42);
     t.rotation.x = Math.PI / 2;
     g.add(t);
@@ -754,7 +686,7 @@ function buildHayabusa1Cruise(): THREE.Group {
 function buildOsirisRexCruise(): THREE.Group {
   // Boxy bus, two angled solar wings in a V, the TAGSAM sampler arm extended.
   const g = new THREE.Group();
-  const body = bus(0.65, 0.8, 0.65, WHITE_MLI);
+  const body = bus(0.65, 0.8, 0.65, 0xf0f0ea);
   g.add(body);
   const wl = solarWing(1.3, 0.55, -0.95);
   wl.rotation.z = 0.35;
@@ -765,7 +697,10 @@ function buildOsirisRexCruise(): THREE.Group {
   const arm = boom(0.7);
   arm.position.set(0, -0.55, 0.2);
   arm.rotation.x = 0.5;
-  const head = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 0.08, 16), mat(BUS_GREY));
+  const head = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.12, 0.12, 0.08, 16),
+    heroWhite(0xb8b8b8),
+  );
   head.position.set(0, -0.85, 0.4);
   const hgd = dish(0.24);
   hgd.position.set(0, 0.45, 0.35);
@@ -776,10 +711,7 @@ function buildOsirisRexCruise(): THREE.Group {
 function buildNearShoemakerCruise(): THREE.Group {
   // NEAR: octagonal bus with FOUR fixed solar panels in a cross + a fixed dish.
   const g = new THREE.Group();
-  const body = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.45, 0.45, 0.7, 8),
-    mat(GOLD_FOIL, 0x2a2113),
-  );
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.45, 0.7, 8), heroGold());
   g.add(body);
   const w1 = solarWing(1.1, 0.5, -0.85);
   const w2 = solarWing(1.1, 0.5, 0.85);
@@ -801,17 +733,14 @@ function buildNearShoemakerCruise(): THREE.Group {
 function buildStarshipCruise(): THREE.Group {
   // Stainless Starship: tall cylinder + ogive nose, 2 fwd + 2 aft flaps, Raptors.
   const g = new THREE.Group();
-  const steel = 0xc4c8cc;
-  const body = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.4, 0.4, 1.5, 32),
-    mat(steel, 0x222428, 0.4),
-  );
-  const nose = new THREE.Mesh(new THREE.ConeGeometry(0.4, 0.55, 32), mat(steel, 0x222428, 0.4));
+  const steelMat = heroMetal(0xc4c8cc, 0.35);
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(0.4, 0.4, 1.5, 32), steelMat);
+  const nose = new THREE.Mesh(new THREE.ConeGeometry(0.4, 0.55, 32), heroMetal(0xc4c8cc, 0.35));
   nose.position.y = 1.025;
   g.add(body, nose);
   // Forward + aft flaps.
   const flap = (y: number, x: number, w: number): THREE.Mesh => {
-    const f = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.45, w), mat(steel, 0x1a1c20, 0.4));
+    const f = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.45, w), heroMetal(0xb8bcc2, 0.4));
     f.position.set(x, y, 0);
     return f;
   };
@@ -821,13 +750,12 @@ function buildStarshipCruise(): THREE.Group {
     flap(-0.65, 0.44, 0.5),
     flap(-0.65, -0.44, 0.5),
   );
-  // Raptor cluster.
+  // Raptor cluster — open-ended cone nozzles → DoubleSide.
   for (let i = 0; i < 6; i++) {
     const a = (i / 6) * Math.PI * 2;
-    const r = new THREE.Mesh(
-      new THREE.ConeGeometry(0.09, 0.16, 12, 1, true),
-      mat(RTG_DARK, 0x33210f),
-    );
+    const raptorMat = heroDark();
+    raptorMat.side = THREE.DoubleSide;
+    const r = new THREE.Mesh(new THREE.ConeGeometry(0.09, 0.16, 12, 1, true), raptorMat);
     r.position.set(Math.cos(a) * 0.2, -0.83, Math.sin(a) * 0.2);
     r.rotation.x = Math.PI;
     g.add(r);

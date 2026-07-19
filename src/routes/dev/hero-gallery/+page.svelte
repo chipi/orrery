@@ -25,6 +25,14 @@
   import { buildBeagle2Hotspot } from '$lib/hotspot-models/beagle-2';
   import { buildPerseveranceRoverHotspot } from '$lib/hotspot-models/mars-perseverance-rover';
   import { buildInsightLanderHotspot } from '$lib/hotspot-models/mars-insight-lander';
+  import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
+  import { buildDescentModel } from '$lib/three/descent-models';
+  import { buildLauncherModel } from '$lib/three/launcher-models';
+  import { buildSatelliteModel } from '$lib/earth-satellite-models';
+  import { buildLaunchpadModel } from '$lib/earth-launchpad-models';
+  import { buildIssProxyStation } from '$lib/iss-proxy-model';
+  import { buildTiangongProxyStation } from '$lib/tiangong-proxy-model';
+  import { buildVenusLanderModel } from '$lib/venus-lander-models';
 
   type Item = { id: string; label: string; build: () => THREE.Group | null };
 
@@ -103,6 +111,104 @@
       { id: 'zhurong', label: 'Zhurong', build: () => buildTianwenZhurongHotspot(CN) },
       { id: 'schiaparelli', label: 'Schiaparelli', build: () => buildSchiaparelliHotspot(EU) },
       { id: 'beagle-2', label: 'Beagle 2', build: () => buildBeagle2Hotspot(EU) },
+    ],
+    cruise: [
+      'curiosity',
+      'viking1',
+      'mars3',
+      'tianwen1',
+      'schiaparelli',
+      'apollo11',
+      'artemis3',
+      'luna9',
+      'luna16',
+      'luna17',
+      'change3',
+      'change5',
+      'chandrayaan3',
+      'slim',
+      'beresheet',
+      'blue-moon-mk1',
+      'hayabusa1',
+      'osiris-rex',
+      'near-shoemaker',
+      'starship-demo',
+    ].map((id) => ({ id, label: id, build: () => buildLanderCruiseCraft(id) })),
+    descent: [
+      { id: 'lunar', label: 'Lunar powered', b: () => buildDescentModel('apollo11', 'moon', 1) },
+      {
+        id: 'mars-retro',
+        label: 'Mars retro',
+        b: () => buildDescentModel('viking1-lander', 'mars', 1),
+      },
+      {
+        id: 'airbag',
+        label: 'Mars airbag',
+        b: () => buildDescentModel('mars-pathfinder', 'mars', 1),
+      },
+      {
+        id: 'skycrane',
+        label: 'Mars skycrane',
+        b: () => buildDescentModel('curiosity', 'mars', 1),
+      },
+      { id: 'venus', label: 'Venus aeroshell', b: () => buildDescentModel('venera13', 'venus', 1) },
+      {
+        id: 'asteroid',
+        label: 'Asteroid sampler',
+        b: () => buildDescentModel('hayabusa1', 'itokawa', 1),
+      },
+      { id: 'comet', label: 'Comet lander', b: () => buildDescentModel('philae', 'comet_67p', 1) },
+      {
+        id: 'jupiter',
+        label: 'Jupiter probe',
+        b: () => buildDescentModel('galileo-probe', 'jupiter', 1),
+      },
+      { id: 'titan', label: 'Titan parachute', b: () => buildDescentModel('huygens', 'titan', 1) },
+    ].map((e) => ({ id: e.id, label: e.label, build: () => e.b().root })),
+    launchers: [
+      'saturn-v',
+      'vostok-k',
+      'ariane-5',
+      'h-iia',
+      'space-shuttle-stack',
+      'falcon-9',
+      'atlas-v',
+      'proton-k',
+      'titan-ii-glv',
+      'atlas-lv-3b',
+      'long-march-2f',
+      'long-march-3b',
+      'long-march-5',
+      'pslv',
+      'lvm3',
+      'm-v',
+      'h3',
+      'ariane-1',
+    ].map((id) => ({ id, label: id, build: () => buildLauncherModel(id, 1.2).root })),
+    satellites: [
+      ['hubble', US],
+      ['jwst', US],
+      ['chandra', US],
+      ['xmm', EU],
+      ['gaia', EU],
+      ['lro', US],
+      ['geo', '#888'],
+      ['gps', US],
+      ['__generic__', '#9aa'],
+    ].map(([id, col]) => ({ id, label: id, build: () => buildSatelliteModel(id, col) })),
+    facilities: [
+      { id: 'iss', label: 'ISS', build: () => buildIssProxyStation() },
+      { id: 'tiangong', label: 'Tiangong', build: () => buildTiangongProxyStation() },
+      {
+        id: 'venera',
+        label: 'Venus lander',
+        build: () => buildVenusLanderModel('venera-13', 'lander', '#c9a45a', 'Roscosmos'),
+      },
+      {
+        id: 'launchpad',
+        label: 'Launch facility',
+        build: () => buildLaunchpadModel('lc-39a', undefined, '#9aa'),
+      },
     ],
   };
 

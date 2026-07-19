@@ -631,16 +631,926 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   };
 }
 
+/**
+ * Falcon 9 — identical to the generic body (octaweb + 9 engines + legs +
+ * grid fins) but registered under its own key so the scene picks it up
+ * explicitly instead of relying on the fallback.
+ */
+function buildFalcon9(vehLen: number): LauncherModel {
+  return buildGeneric(vehLen, 0);
+}
+
+/**
+ * Atlas V — wide expendable core (no legs, no grid fins), a twin RD-180 at
+ * the base (two bells side by side), a narrower Centaur upper stage with a
+ * single vacuum bell, and a wide bulbous fairing wider than the core.
+ */
+function buildAtlasV(vehLen: number): LauncherModel {
+  const p = palette(0xf0eeea, 0xc8c4bc);
+  const r = vehLen * 0.06; // wider than generic
+  const root = new THREE.Group();
+
+  // ── First stage: uniform cylinder, RD-180 twin-bell at the base.
+  const booster = new THREE.Group();
+  const stage1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.54, 40), p.body);
+  stage1.position.y = vehLen * 0.3;
+  booster.add(stage1);
+  // RD-180 — two bells side by side at the base.
+  for (const bx of [-r * 0.42, r * 0.42]) {
+    const b = nozzle(r * 0.28, vehLen * 0.055, p.eng);
+    b.position.set(bx, 0, 0);
+    booster.add(b);
+  }
+  // GEM-63 solid strap-ons — the SRB variants (501/511/541/551) fly with 1–5;
+  // three reads clearly as an Atlas V without cluttering the core silhouette.
+  strapOns(booster, 3, r, vehLen * 0.4, vehLen, p.accent, p.eng);
+  const interstage = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.82, r, vehLen * 0.04, 40),
+    p.dark,
+  );
+  interstage.position.y = vehLen * 0.59;
+  booster.add(interstage);
+  root.add(booster);
+
+  // ── Centaur upper stage: narrower, single RL-10 vacuum bell.
+  const upperStageBaseY = vehLen * 0.73;
+  const upperStage = new THREE.Group();
+  const centaur = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.82, r * 0.82, vehLen * 0.2, 40),
+    p.body,
+  );
+  centaur.position.y = upperStageBaseY;
+  const vacBell = nozzle(r * 0.6, vehLen * 0.07, p.eng);
+  vacBell.position.y = vehLen * 0.61;
+  upperStage.add(centaur, vacBell);
+  root.add(upperStage);
+
+  // ── Wide bulbous payload shroud (wider than the core) with an ogive nose —
+  //    Atlas V's most recognisable feature, not a slender pointed fairing.
+  const fairingBaseY = vehLen * 0.87;
+  const fR = r * 1.4;
+  const shH = vehLen * 0.16;
+  const mkHalf = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.CylinderGeometry(fR, fR, shH, 24, 1, true, theta, Math.PI), p.body);
+  const fairingL = mkHalf(Math.PI / 2);
+  const fairingR = mkHalf(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  // Shared ogive nose cap crowning the shroud.
+  const nose = new THREE.Mesh(new THREE.ConeGeometry(fR, vehLen * 0.11, 24), p.body);
+  nose.position.y = fairingBaseY + shH / 2 + vehLen * 0.05;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR, nose);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: stage1,
+    upperStage,
+    upperPlumeAnchor: centaur,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.85,
+  };
+}
+
+/**
+ * Proton-K / Proton-M — Soviet/Russian heavy. Distinctive cluster: a central
+ * oxidizer core with six outboard fuel tanks at the base, each carrying its
+ * own engine bell. Narrower 2nd and 3rd stages taper above.
+ */
+function buildProtonK(vehLen: number): LauncherModel {
+  const p = palette(0xdfe4dd, 0x9aaa9d); // grey-green Proton livery
+  const r = vehLen * 0.065; // stout
+  const root = new THREE.Group();
+
+  // ── First stage: central oxidizer tank + 6 outboard fuel tanks with bells.
+  const booster = new THREE.Group();
+  const core1 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.62, r * 0.62, vehLen * 0.42, 32),
+    p.body,
+  );
+  core1.position.y = vehLen * 0.24;
+  booster.add(core1);
+  // Six outboard tanks, each with an RD-253 bell.
+  const nTanks = 6;
+  const tankR = r * 0.28;
+  const tankLen = vehLen * 0.28;
+  for (let i = 0; i < nTanks; i++) {
+    const a = (i / nTanks) * Math.PI * 2;
+    const tank = new THREE.Mesh(
+      new THREE.CylinderGeometry(tankR, tankR * 1.06, tankLen, 20),
+      p.accent,
+    );
+    tank.position.set(Math.cos(a) * r * 0.94, tankLen / 2, Math.sin(a) * r * 0.94);
+    const tankBell = nozzle(tankR * 0.68, vehLen * 0.045, p.eng);
+    tankBell.position.set(Math.cos(a) * r * 0.94, 0, Math.sin(a) * r * 0.94);
+    booster.add(tank, tankBell);
+  }
+  root.add(booster);
+
+  // ── Second stage: slightly narrower, uniform cylinder.
+  const upperStageBaseY = vehLen * 0.5;
+  const upperStage = new THREE.Group();
+  const stage2 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.55, r * 0.62, vehLen * 0.22, 32),
+    p.body,
+  );
+  stage2.position.y = upperStageBaseY + vehLen * 0.11;
+  upperStage.add(stage2, bell(r * 0.32, vehLen * 0.05, p.eng, upperStageBaseY));
+  // Third stage — slimmer, tapers above.
+  const stage3 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.42, r * 0.55, vehLen * 0.14, 32),
+    p.body,
+  );
+  stage3.position.y = vehLen * 0.79;
+  upperStage.add(stage3, bell(r * 0.24, vehLen * 0.04, p.eng, vehLen * 0.72));
+  root.add(upperStage);
+
+  // ── Small fairing atop the third stage.
+  const fairingBaseY = vehLen * 0.88;
+  const mkShell = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(
+      new THREE.ConeGeometry(r * 0.44, vehLen * 0.15, 20, 1, true, theta, Math.PI),
+      p.body,
+    );
+  const fairingL = mkShell(Math.PI / 2);
+  const fairingR = mkShell(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: core1,
+    upperStage,
+    upperPlumeAnchor: stage2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.82,
+  };
+}
+
+/**
+ * Titan II GLV — Gemini's slender two-stage launcher. Uniform diameter top
+ * to bottom; first stage has two gimballed engine bells side by side, second
+ * stage has one. No fairing: the "fairing" slot holds a short Gemini capsule
+ * cone sitting on the second stage.
+ */
+function buildTitanIIGLV(vehLen: number): LauncherModel {
+  const p = palette(0xf5f5f2, 0x222222);
+  const r = vehLen * 0.045; // slender, uniform
+  const root = new THREE.Group();
+
+  // ── First stage: uniform cylinder + two LR-87 bells.
+  const booster = new THREE.Group();
+  const stage1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.54, 32), p.body);
+  stage1.position.y = vehLen * 0.3;
+  booster.add(stage1);
+  for (const bx of [-r * 0.44, r * 0.44]) {
+    const b = nozzle(r * 0.28, vehLen * 0.05, p.eng);
+    b.position.set(bx, 0, 0);
+    booster.add(b);
+  }
+  const interstage = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.03, 32), p.dark);
+  interstage.position.y = vehLen * 0.585;
+  booster.add(interstage);
+  root.add(booster);
+
+  // ── Second stage: same diameter, single LR-91 vacuum bell.
+  const upperStageBaseY = vehLen * 0.72;
+  const upperStage = new THREE.Group();
+  const stage2 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.24, 32), p.body);
+  stage2.position.y = upperStageBaseY;
+  const s2nozzle = nozzle(r * 0.45, vehLen * 0.055, p.eng);
+  s2nozzle.position.y = vehLen * 0.595;
+  upperStage.add(stage2, s2nozzle);
+  root.add(upperStage);
+
+  // ── Gemini capsule as the "fairing" — short truncated cone (wide base, narrow
+  //    top) riding directly atop the second stage.
+  const fairingBaseY = vehLen * 0.86;
+  const capsuleR = r * 1.08;
+  const mkShell = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(
+      new THREE.ConeGeometry(capsuleR, vehLen * 0.1, 20, 1, true, theta, Math.PI),
+      p.accent,
+    );
+  const fairingL = mkShell(Math.PI / 2);
+  const fairingR = mkShell(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: stage1,
+    upperStage,
+    upperPlumeAnchor: stage2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.88,
+  };
+}
+
+/**
+ * Atlas LV-3B (Mercury-Atlas) — "stage-and-a-half" balloon tank. Wider at
+ * the base skirt, three engine bells in the booster skirt (two large outboard
+ * boosters + one central sustainer), small Mercury capsule + escape tower on
+ * top as the fairing.
+ */
+function buildAtlasLV3B(vehLen: number): LauncherModel {
+  const p = palette(0xf0f2ef, 0xc0bfba);
+  // Balloon tank tapers slightly: wider at base, same radius through most of body.
+  const rBase = vehLen * 0.058;
+  const rTop = vehLen * 0.052;
+  const root = new THREE.Group();
+
+  // ── Booster skirt + balloon tank. No staging — the skirt drops at ~119 s
+  //    (booster-engine cutoff), the sustainer keeps burning. Model the whole
+  //    first-stage body as the `booster` group for drop choreography.
+  const booster = new THREE.Group();
+  const tank = new THREE.Mesh(new THREE.CylinderGeometry(rTop, rBase, vehLen * 0.72, 36), p.body);
+  tank.position.y = vehLen * 0.4;
+  // Distinctive flared booster skirt at the very base — noticeably wider than
+  //    the balloon tank, the Atlas silhouette's signature.
+  const skirt = new THREE.Mesh(
+    new THREE.CylinderGeometry(rBase * 1.12, rBase * 1.5, vehLen * 0.09, 36),
+    p.dark,
+  );
+  skirt.position.y = vehLen * 0.045;
+  booster.add(tank, skirt);
+  // Two large outboard booster bells (spread to the skirt edge) + a central
+  //    sustainer between them.
+  for (const bx of [-rBase * 1.0, rBase * 1.0]) {
+    const b = nozzle(rBase * 0.38, vehLen * 0.07, p.eng);
+    b.position.set(bx, -vehLen * 0.005, 0);
+    booster.add(b);
+  }
+  const sustainer = nozzle(rBase * 0.24, vehLen * 0.05, p.eng);
+  booster.add(sustainer);
+  root.add(booster);
+
+  // ── No true upper stage; sustainer keeps the tank group flying. Use a minimal
+  //    invisible group so the LauncherModel shape stays complete.
+  const upperStageBaseY = vehLen * 0.78;
+  const upperStage = new THREE.Group();
+  const sustainerBody = new THREE.Mesh(
+    new THREE.CylinderGeometry(rTop, rTop, vehLen * 0.01, 8),
+    p.body,
+  );
+  sustainerBody.position.y = upperStageBaseY;
+  upperStage.add(sustainerBody);
+  root.add(upperStage);
+
+  // ── Mercury capsule as the "fairing". Short truncated cone (bell-shape) +
+  //    thin escape tower spike above it (mirrors Saturn V escape tower).
+  const fairingBaseY = vehLen * 0.81;
+  const capR = rTop * 1.4;
+  const mkShell = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(
+      new THREE.ConeGeometry(capR, vehLen * 0.14, 20, 1, true, theta, Math.PI),
+      p.accent,
+    );
+  const fairingL = mkShell(Math.PI / 2);
+  const fairingR = mkShell(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  // Escape tower: thin tall cylinder rising above the capsule nose.
+  const tower = new THREE.Mesh(
+    new THREE.CylinderGeometry(rTop * 0.05, rTop * 0.05, vehLen * 0.12, 8),
+    p.dark,
+  );
+  tower.position.y = fairingBaseY + vehLen * 0.115;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR, tower);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: tank,
+    upperStage,
+    upperPlumeAnchor: sustainerBody,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.83,
+  };
+}
+
+/**
+ * Long March 2F — Chinese crewed launcher (Shenzhou). Central core + four
+ * tapered liquid strap-ons + launch-escape tower with capsule above the fairing.
+ */
+function buildLongMarch2F(vehLen: number): LauncherModel {
+  const p = palette(0xf0f2f4, 0xc8ccd2); // pale grey/white
+  const r = vehLen * 0.052;
+  const root = new THREE.Group();
+
+  const booster = new THREE.Group();
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.52, 32), p.body);
+  core.position.y = vehLen * 0.29;
+  booster.add(core, nozzle(r * 0.48, vehLen * 0.05, p.eng));
+  // Four liquid strap-ons, same construction as Soyuz but 4-fold symmetry.
+  strapOns(booster, 4, r, vehLen * 0.32, vehLen, p.accent, p.eng);
+  root.add(booster);
+
+  const upperStageBaseY = vehLen * 0.66;
+  const upperStage = new THREE.Group();
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.94, r, vehLen * 0.18, 32), p.body);
+  s2.position.y = upperStageBaseY;
+  upperStage.add(s2, bell(r * 0.38, vehLen * 0.05, p.eng, vehLen * 0.56));
+  root.add(upperStage);
+
+  // Capsule half-shells (Shenzhou) + escape tower above — mirrors Saturn V idiom.
+  const fairingBaseY = vehLen * 0.86;
+  const capsuleR = r * 1.06;
+  const mkShell = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(
+      new THREE.ConeGeometry(capsuleR, vehLen * 0.1, 20, 1, true, theta, Math.PI),
+      p.accent,
+    );
+  const fairingL = mkShell(Math.PI / 2);
+  const fairingR = mkShell(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  // Spiky escape tower rising above the capsule nose.
+  const tower = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.04, r * 0.04, vehLen * 0.09, 8),
+    p.dark,
+  );
+  tower.position.y = fairingBaseY + vehLen * 0.1;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR, tower);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: core,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.84,
+  };
+}
+
+/**
+ * Long March 3B — Chinese GTO launcher (Chang'e). Central core + four liquid
+ * strap-ons + standard payload fairing (bulbous ogive shroud, no escape tower).
+ */
+function buildLongMarch3B(vehLen: number): LauncherModel {
+  const p = palette(0xeef1f5, 0xc4c8d0);
+  const r = vehLen * 0.05;
+  const root = new THREE.Group();
+
+  const booster = new THREE.Group();
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.5, 32), p.body);
+  core.position.y = vehLen * 0.28;
+  booster.add(core, nozzle(r * 0.46, vehLen * 0.05, p.eng));
+  strapOns(booster, 4, r, vehLen * 0.3, vehLen, p.accent, p.eng);
+  const interstage = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.88, r, vehLen * 0.03, 32),
+    p.dark,
+  );
+  interstage.position.y = vehLen * 0.545;
+  booster.add(interstage);
+  root.add(booster);
+
+  const upperStageBaseY = vehLen * 0.68;
+  const upperStage = new THREE.Group();
+  const s2 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.88, r * 0.88, vehLen * 0.22, 32),
+    p.body,
+  );
+  s2.position.y = upperStageBaseY;
+  upperStage.add(s2, bell(r * 0.34, vehLen * 0.05, p.eng, vehLen * 0.565));
+  root.add(upperStage);
+
+  // Bulbous cylindrical shroud + ogive nose cap (wider-than-core, LM-3B style).
+  const fairingBaseY = vehLen * 0.845;
+  const fR = r * 1.3;
+  const shH = vehLen * 0.14;
+  const mkHalf = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.CylinderGeometry(fR, fR, shH, 24, 1, true, theta, Math.PI), p.body);
+  const fairingL = mkHalf(Math.PI / 2);
+  const fairingR = mkHalf(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const nose = new THREE.Mesh(new THREE.ConeGeometry(fR, vehLen * 0.1, 24), p.body);
+  nose.position.y = fairingBaseY + shH / 2 + vehLen * 0.05;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR, nose);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: core,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.86,
+  };
+}
+
+/**
+ * Long March 5 ("Fat Five") — Chinese heavy-lift. Notably fat cryogenic core +
+ * four LARGE liquid strap-on boosters reaching ~60% of core height + wide
+ * bulbous fairing.
+ */
+function buildLongMarch5(vehLen: number): LauncherModel {
+  const p = palette(0xedf2f7, 0xbcc4ce); // pale, hint of cryo blue-white
+  const r = vehLen * 0.07; // stout fat core
+  const root = new THREE.Group();
+
+  const booster = new THREE.Group();
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.52, 36), p.body);
+  core.position.y = vehLen * 0.3;
+  booster.add(core);
+  // Two YF-77 bells at the base (twin-engine cryogenic core stage).
+  for (const bx of [-r * 0.42, r * 0.42]) {
+    const b = nozzle(r * 0.3, vehLen * 0.055, p.eng);
+    b.position.set(bx, 0, 0);
+    booster.add(b);
+  }
+  // Four large strap-ons — wider and longer than LM-3B's, reaching 60% of core.
+  const soLen = vehLen * 0.36;
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2;
+    const gr = new THREE.Group();
+    const sbody = new THREE.Mesh(
+      new THREE.CylinderGeometry(r * 0.44, r * 0.6, soLen, 24),
+      p.accent,
+    );
+    sbody.position.y = soLen / 2;
+    const snose = new THREE.Mesh(new THREE.ConeGeometry(r * 0.44, soLen * 0.3, 24), p.accent);
+    snose.position.y = soLen + soLen * 0.15;
+    gr.add(sbody, snose, nozzle(r * 0.3, vehLen * 0.05, p.eng));
+    gr.position.set(Math.cos(a) * r * 1.3, 0, Math.sin(a) * r * 1.3);
+    booster.add(gr);
+  }
+  const interstage = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.8, r, vehLen * 0.035, 36),
+    p.dark,
+  );
+  interstage.position.y = vehLen * 0.565;
+  booster.add(interstage);
+  root.add(booster);
+
+  const upperStageBaseY = vehLen * 0.69;
+  const upperStage = new THREE.Group();
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.8, r * 0.8, vehLen * 0.2, 36), p.body);
+  s2.position.y = upperStageBaseY;
+  upperStage.add(s2, bell(r * 0.38, vehLen * 0.06, p.eng, vehLen * 0.58));
+  root.add(upperStage);
+
+  // Wide bulbous fairing — the "Fat Five" has a notably wide 5.2 m shroud.
+  const fairingBaseY = vehLen * 0.845;
+  const fR = r * 1.45;
+  const shH = vehLen * 0.17;
+  const mkHalf = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.CylinderGeometry(fR, fR, shH, 24, 1, true, theta, Math.PI), p.body);
+  const fairingL = mkHalf(Math.PI / 2);
+  const fairingR = mkHalf(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const nose = new THREE.Mesh(new THREE.ConeGeometry(fR, vehLen * 0.12, 24), p.body);
+  nose.position.y = fairingBaseY + shH / 2 + vehLen * 0.06;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR, nose);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: core,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.87,
+  };
+}
+
+/**
+ * PSLV — Indian Polar Satellite Launch Vehicle. Slender core with SIX solid
+ * strap-on boosters at the base (its signature), slim 4-stage stack, small fairing.
+ */
+function buildPSLV(vehLen: number): LauncherModel {
+  const p = palette(0xf2f0ec, 0xd4c8a8); // warm off-white / khaki accent
+  const r = vehLen * 0.046; // slender
+  const root = new THREE.Group();
+
+  const booster = new THREE.Group();
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.48, 32), p.body);
+  core.position.y = vehLen * 0.27;
+  booster.add(core, nozzle(r * 0.44, vehLen * 0.05, p.eng));
+  // Six PSOM solid strap-ons, slender, clustered at the base.
+  strapOns(booster, 6, r, vehLen * 0.22, vehLen, p.accent, p.eng);
+  const interstage = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.84, r, vehLen * 0.025, 32),
+    p.dark,
+  );
+  interstage.position.y = vehLen * 0.525;
+  booster.add(interstage);
+  root.add(booster);
+
+  // PS2 / PS3 / PS4 stacked above as upper stage (slimmer).
+  const upperStageBaseY = vehLen * 0.65;
+  const upperStage = new THREE.Group();
+  const s2 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.84, r * 0.84, vehLen * 0.24, 32),
+    p.body,
+  );
+  s2.position.y = upperStageBaseY;
+  upperStage.add(s2, bell(r * 0.32, vehLen * 0.045, p.eng, vehLen * 0.525));
+  root.add(upperStage);
+
+  // Small ogive fairing atop the slim upper stage.
+  const fairingBaseY = vehLen * 0.84;
+  const mkShell = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(
+      new THREE.ConeGeometry(r * 0.96, vehLen * 0.16, 20, 1, true, theta, Math.PI),
+      p.body,
+    );
+  const fairingL = mkShell(Math.PI / 2);
+  const fairingR = mkShell(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: core,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.79,
+  };
+}
+
+/**
+ * LVM3 (GSLV Mk III) — Indian heavy. A cryogenic core flanked by two very
+ * large S200 solid boosters — fat, nearly as tall as the core, one each side.
+ * Squat, powerful silhouette.
+ */
+function buildLVM3(vehLen: number): LauncherModel {
+  const p = palette(0xeff2f5, 0xc0baba);
+  const r = vehLen * 0.052;
+  const root = new THREE.Group();
+
+  const booster = new THREE.Group();
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.52, 32), p.body);
+  core.position.y = vehLen * 0.3;
+  booster.add(core, nozzle(r * 0.44, vehLen * 0.05, p.eng));
+  root.add(booster);
+
+  // Two large S200 solid boosters — fat (r*0.72) and nearly as tall as the core.
+  const strapOnGroup = new THREE.Group();
+  const s200Len = vehLen * 0.46;
+  for (const sx of [-1, 1]) {
+    const gr = new THREE.Group();
+    const sbody = new THREE.Mesh(
+      new THREE.CylinderGeometry(r * 0.72, r * 0.72, s200Len, 24),
+      p.accent,
+    );
+    sbody.position.y = s200Len / 2 + vehLen * 0.02;
+    const snose = new THREE.Mesh(new THREE.ConeGeometry(r * 0.72, vehLen * 0.1, 24), p.accent);
+    snose.position.y = s200Len + vehLen * 0.07;
+    gr.add(sbody, snose, nozzle(r * 0.5, vehLen * 0.05, p.eng));
+    gr.position.set(sx * r * 1.74, 0, 0);
+    strapOnGroup.add(gr);
+  }
+  root.add(strapOnGroup);
+
+  const upperStageBaseY = vehLen * 0.67;
+  const upperStage = new THREE.Group();
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.9, r, vehLen * 0.18, 32), p.body);
+  s2.position.y = upperStageBaseY;
+  upperStage.add(s2, bell(r * 0.36, vehLen * 0.055, p.eng, vehLen * 0.575));
+  root.add(upperStage);
+
+  const fairingBaseY = vehLen * 0.84;
+  const fR = r * 1.2;
+  const shH = vehLen * 0.12;
+  const mkHalf = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.CylinderGeometry(fR, fR, shH, 24, 1, true, theta, Math.PI), p.body);
+  const fairingL = mkHalf(Math.PI / 2);
+  const fairingR = mkHalf(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const nose = new THREE.Mesh(new THREE.ConeGeometry(fR, vehLen * 0.09, 24), p.body);
+  nose.position.y = fairingBaseY + shH / 2 + vehLen * 0.045;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR, nose);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: core,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.85,
+    strapOns: strapOnGroup,
+  };
+}
+
+/**
+ * M-V — Japanese all-solid 3-stage. Blunt, stubby, tapering three-segment
+ * stack, no strap-ons, single bell per stage, olive/dark body.
+ */
+function buildMV(vehLen: number): LauncherModel {
+  const p = palette(0x5a6040, 0x7a8060); // olive dark
+  const r = vehLen * 0.058; // stubby
+  const root = new THREE.Group();
+
+  // First stage — wide solid segment with a single bell.
+  const booster = new THREE.Group();
+  const stage1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.4, 32), p.body);
+  stage1.position.y = vehLen * 0.23;
+  booster.add(stage1, nozzle(r * 0.52, vehLen * 0.06, p.eng));
+  const interstage1 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.78, r, vehLen * 0.03, 32),
+    p.dark,
+  );
+  interstage1.position.y = vehLen * 0.445;
+  booster.add(interstage1);
+  root.add(booster);
+
+  // Second + third stages stacked above, tapering to slim nose.
+  const upperStageBaseY = vehLen * 0.54;
+  const upperStage = new THREE.Group();
+  const stage2 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.78, r * 0.78, vehLen * 0.24, 32),
+    p.body,
+  );
+  stage2.position.y = upperStageBaseY;
+  const stage3 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.54, r * 0.78, vehLen * 0.14, 32),
+    p.body,
+  );
+  stage3.position.y = vehLen * 0.78;
+  upperStage.add(
+    stage2,
+    bell(r * 0.42, vehLen * 0.05, p.eng, vehLen * 0.46),
+    stage3,
+    bell(r * 0.28, vehLen * 0.04, p.eng, vehLen * 0.7),
+  );
+  root.add(upperStage);
+
+  // Small blunt nose fairing.
+  const fairingBaseY = vehLen * 0.875;
+  const mkShell = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(
+      new THREE.ConeGeometry(r * 0.56, vehLen * 0.125, 20, 1, true, theta, Math.PI),
+      p.accent,
+    );
+  const fairingL = mkShell(Math.PI / 2);
+  const fairingR = mkShell(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: stage1,
+    upperStage,
+    upperPlumeAnchor: stage2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.82,
+  };
+}
+
+/**
+ * H3 — Japanese cryogenic launcher. Slender core + two (or four) solid strap-on
+ * boosters at the base, slim upper stage, bulbous fairing. Warm tan lower core.
+ */
+function buildH3(vehLen: number): LauncherModel {
+  const p = palette(0xd98a4a, 0xe8e0d5); // orange-tan core hint
+  const r = vehLen * 0.048;
+  const root = new THREE.Group();
+
+  const booster = new THREE.Group();
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.54, 32), p.body);
+  core.position.y = vehLen * 0.3;
+  booster.add(core);
+  // LE-9 engines — two bells side by side.
+  for (const bx of [-r * 0.4, r * 0.4]) {
+    const b = nozzle(r * 0.28, vehLen * 0.055, p.eng);
+    b.position.set(bx, 0, 0);
+    booster.add(b);
+  }
+  // Two SRB-3 solid strap-ons flanking the base (standard H3-22 config).
+  const strapOnGroup = new THREE.Group();
+  const srbLen = vehLen * 0.3;
+  for (const sx of [-1, 1]) {
+    const gr = new THREE.Group();
+    const sbody = new THREE.Mesh(
+      new THREE.CylinderGeometry(r * 0.5, r * 0.5, srbLen, 20),
+      p.accent,
+    );
+    sbody.position.y = srbLen / 2 + vehLen * 0.015;
+    const snose = new THREE.Mesh(new THREE.ConeGeometry(r * 0.5, vehLen * 0.07, 20), p.accent);
+    snose.position.y = srbLen + vehLen * 0.05;
+    gr.add(sbody, snose, nozzle(r * 0.3, vehLen * 0.04, p.eng));
+    gr.position.set(sx * r * 1.52, 0, 0);
+    strapOnGroup.add(gr);
+  }
+  const interstage = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.86, r, vehLen * 0.03, 32),
+    p.dark,
+  );
+  interstage.position.y = vehLen * 0.575;
+  booster.add(interstage);
+  root.add(booster);
+  root.add(strapOnGroup);
+
+  const upperStageBaseY = vehLen * 0.715;
+  const upperStage = new THREE.Group();
+  const s2 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.86, r * 0.86, vehLen * 0.19, 32),
+    p.body,
+  );
+  s2.position.y = upperStageBaseY;
+  upperStage.add(s2, bell(r * 0.36, vehLen * 0.05, p.eng, vehLen * 0.6));
+  root.add(upperStage);
+
+  // Bulbous 5.4 m-class fairing — wider than the core.
+  const fairingBaseY = vehLen * 0.865;
+  const fR = r * 1.35;
+  const shH = vehLen * 0.14;
+  const mkHalf = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.CylinderGeometry(fR, fR, shH, 24, 1, true, theta, Math.PI), p.body);
+  const fairingL = mkHalf(Math.PI / 2);
+  const fairingR = mkHalf(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const nose = new THREE.Mesh(new THREE.ConeGeometry(fR, vehLen * 0.1, 24), p.body);
+  nose.position.y = fairingBaseY + shH / 2 + vehLen * 0.05;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR, nose);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: core,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.87,
+    strapOns: strapOnGroup,
+  };
+}
+
+/**
+ * Ariane 1 — European 1979 three-stage stack. Clean, slender, no strap-ons,
+ * single first-stage bell, tapering toward the top. White body.
+ */
+function buildAriane1(vehLen: number): LauncherModel {
+  const p = palette(0xf6f6f4, 0x222228); // plain white, dark accent
+  const r = vehLen * 0.05;
+  const root = new THREE.Group();
+
+  // First stage (L140): uniform cylinder, single Viking bell.
+  const booster = new THREE.Group();
+  const stage1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.44, 32), p.body);
+  stage1.position.y = vehLen * 0.25;
+  booster.add(stage1, nozzle(r * 0.46, vehLen * 0.055, p.eng));
+  const is1 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.88, r, vehLen * 0.025, 32), p.dark);
+  is1.position.y = vehLen * 0.485;
+  booster.add(is1);
+  root.add(booster);
+
+  // Second (L33) + third (H8) stages — progressively slimmer.
+  const upperStageBaseY = vehLen * 0.625;
+  const upperStage = new THREE.Group();
+  const stage2 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.88, r * 0.88, vehLen * 0.2, 32),
+    p.body,
+  );
+  stage2.position.y = upperStageBaseY;
+  const stage3 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.65, r * 0.88, vehLen * 0.12, 32),
+    p.body,
+  );
+  stage3.position.y = vehLen * 0.785;
+  upperStage.add(
+    stage2,
+    bell(r * 0.36, vehLen * 0.05, p.eng, vehLen * 0.515),
+    stage3,
+    bell(r * 0.26, vehLen * 0.04, p.eng, vehLen * 0.72),
+  );
+  root.add(upperStage);
+
+  // Small slim conical fairing — the minimalist 1979 look.
+  const fairingBaseY = vehLen * 0.875;
+  const mkShell = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(
+      new THREE.ConeGeometry(r * 0.66, vehLen * 0.13, 20, 1, true, theta, Math.PI),
+      p.body,
+    );
+  const fairingL = mkShell(Math.PI / 2);
+  const fairingR = mkShell(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: stage1,
+    upperStage,
+    upperPlumeAnchor: stage2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.82,
+  };
+}
+
 /** Dispatch table — a dedicated silhouette per launcher; the rest fall back generic. */
 const BUILDERS: Record<string, (vehLen: number) => LauncherModel> = {
+  'falcon-9': buildFalcon9,
   'saturn-v': buildSaturnV,
   'saturn-ib': buildSaturnV,
   'vostok-k': buildSoyuz,
+  'atlas-v': buildAtlasV,
+  'proton-k': buildProtonK,
+  'titan-ii-glv': buildTitanIIGLV,
+  'atlas-lv-3b': buildAtlasLV3B,
   'ariane-5': (v) =>
     buildSideBooster(v, { boosterLen: 0.62, fairingR: 1.35, body: 0xeae6da, boost: 0xd8d2c4 }),
   'h-iia': (v) =>
     buildSideBooster(v, { boosterLen: 0.38, fairingR: 1.15, body: 0xf0f0f0, boost: 0xdedede }),
   'space-shuttle-stack': buildSpaceShuttle,
+  'long-march-2f': buildLongMarch2F,
+  'long-march-3b': buildLongMarch3B,
+  'long-march-5': buildLongMarch5,
+  pslv: buildPSLV,
+  lvm3: buildLVM3,
+  'm-v': buildMV,
+  h3: buildH3,
+  'ariane-1': buildAriane1,
 };
 
 /**

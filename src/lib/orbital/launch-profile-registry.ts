@@ -65,9 +65,13 @@ export function missionLauncherId(fleetRefs: FleetRef[] | undefined): string | u
 }
 
 /**
- * Free-text vehicle spellings → flagship id, ONE row per FLAGSHIP_IDS entry.
- * Ordered most-specific first so "Atlas LV-3B" doesn't fall to "Atlas V" and
- * "Saturn IB" doesn't fall to "Saturn V". Keep in sync with FLAGSHIP_IDS.
+ * Free-text vehicle spellings → launcher id, ordered most-specific first so
+ * "Atlas LV-3B" doesn't fall to "Atlas V" and "Saturn IB" doesn't fall to
+ * "Saturn V". Entries above the divider have a hand-authored flagship JSON
+ * (FLAGSHIP_IDS — real physics). Entries below map free-text variants onto a
+ * consolidated id that has a BESPOKE 3D MODEL but GENERIC physics (no JSON) —
+ * so e.g. every "PSLV-XL (C…)" shows the one PSLV model instead of slugging to
+ * a per-mission generic id with no dedicated mesh.
  */
 const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
   [['falcon 9', 'falcon-9'], 'falcon-9'],
@@ -83,6 +87,15 @@ const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
   [['ariane 5', 'ariane-5'], 'ariane-5'],
   [['h-iia', 'h-2a', 'h2a', 'h iia'], 'h-iia'],
   [['space shuttle', 'shuttle'], 'space-shuttle-stack'],
+  // ── Model-only ids (bespoke mesh, generic physics) — international fleet. ──
+  [['long march 2f', 'cz-2f'], 'long-march-2f'],
+  [['long march 5', 'cz-5'], 'long-march-5'],
+  [['long march 3', 'cz-3'], 'long-march-3b'],
+  [['pslv'], 'pslv'],
+  [['lvm3', 'gslv mk iii', 'gslv mk3', 'gslv mkiii'], 'lvm3'],
+  [['m-v', 'mu-5', 'mu-v'], 'm-v'],
+  [['h3-', 'h-3', 'h3 '], 'h3'],
+  [['ariane 1', 'ariane-1'], 'ariane-1'],
 ];
 
 /** Match a free-text vehicle string ("Atlas V 411") to a flagship id, if any. */

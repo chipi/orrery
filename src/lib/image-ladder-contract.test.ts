@@ -165,7 +165,13 @@ describe('image-ladder completeness (disk → manifest, bidirectional)', () => {
         // images/essays/) is bespoke, direct-referenced full-width art: the
         // /essays renderer uses a plain <img src>, not the responsive ladder,
         // so like posters and badges it carries no rungs and no manifest entry.
-        !rel.startsWith('images/essays/'),
+        !rel.startsWith('images/essays/') &&
+        // Colophon thumbnails (model-*/craft-*) are fixed-size 800px captured
+        // renders of our own 3D models (scripts/capture-colophon-thumbs.ts),
+        // shown in the /colophon grid via a plain <img> — not master-derived and
+        // not responsive, so like posters/badges/essays they carry no ladder
+        // rungs and no manifest entry.
+        !rel.startsWith('images/colophon/'),
     )
       .map((rel) => '/' + rel.replace(/\.webp$/, '')) // images/x/01.webp → /images/x/01
       .filter((key) => !(key in manifest));

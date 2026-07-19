@@ -37,8 +37,10 @@ SRCs, X-37B).
 ## Coverage (all 31 fly, 8 capsule families)
 
 `friendship-7`, `vostok-1`, `apollo7` + the 28-mission batch. Capsule models in
-`capsule-models.ts` (Mercury / Gemini / Vostok-sphere / Voskhod / Apollo-CM /
-Soyuz / Dragon / Shenzhou), resolved per-mission via `earth-orbit-registry.ts`.
+`capsule-models.ts` — **8 families → 6 distinct meshes**: Voskhod reuses the
+Vostok sphere and Shenzhou is a scaled Soyuz descent module (both historically
+correct — Voskhod *is* a modified Vostok, Shenzhou *is* Soyuz-derived), so
+`/dev/models` + colophon carry 6 cards. Resolved per-mission via `earth-orbit-registry.ts`.
 Data: `static/data/descent-profiles/*.json` (31 Earth profiles, FPA=4 +
 mass-scaled chute Cd·A template) + coast descriptors in the registry.
 

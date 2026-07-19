@@ -5578,7 +5578,11 @@
             coastDurationDays,
             coastMetDays + dt * (coastDurationDays / COAST_PLAY_S),
           );
-          if (coastMetDays >= coastDurationDays) {
+          if (coastMetDays >= coastDurationDays && descentProfile) {
+            // Cross to re-entry only once the descent profile has finished its
+            // async load — otherwise hold at the final coast frame (coastMetDays
+            // is clamped, so this branch retries each frame) rather than blanking
+            // to an empty scene at the deorbit seam.
             showCoast = false;
             startDescent();
           }

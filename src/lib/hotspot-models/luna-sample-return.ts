@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { strutBetween } from '../three/model-geom';
 
 /**
  * Luna 16 / 20 / 24 Tier 1 — first robotic lunar sample return
@@ -48,14 +49,15 @@ export function buildLunaSampleReturnHotspot(accentColor: string): THREE.Group {
   // 4 splayed legs.
   for (let i = 0; i < 4; i++) {
     const ang = (i / 4) * Math.PI * 2 + Math.PI / 4;
-    const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.42, 6), aluMat());
-    leg.position.set(Math.cos(ang) * 0.3, 0.18, Math.sin(ang) * 0.3);
-    leg.rotation.z = -Math.cos(ang) * 0.6;
-    leg.rotation.x = Math.sin(ang) * 0.6;
-    g.add(leg);
-    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.015, 8), aluMat());
-    pad.position.set(Math.cos(ang) * 0.5, 0.02, Math.sin(ang) * 0.5);
+    const c = Math.cos(ang);
+    const s = Math.sin(ang);
+    const padPos = new THREE.Vector3(c * 0.5, 0.03, s * 0.5);
+    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.02, 10), aluMat());
+    pad.position.copy(padPos);
     g.add(pad);
+    // Leg strut + brace connecting the descent stage to the pad.
+    g.add(strutBetween(new THREE.Vector3(c * 0.28, 0.26, s * 0.28), padPos, 0.018, aluMat(), 6));
+    g.add(strutBetween(new THREE.Vector3(c * 0.16, 0.12, s * 0.16), padPos, 0.013, aluMat(), 6));
   }
 
   // Sample-extraction drill arm — rotates out from one side.

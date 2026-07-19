@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { strutBetween } from '../three/model-geom';
 
 /**
  * Chang'e 3 / 4 / 5 / 6 Tier 1 — CNSA lunar lander silhouette
@@ -65,14 +66,15 @@ export function buildChangeLanderHotspot(
   // 4 splayed legs.
   for (let i = 0; i < 4; i++) {
     const ang = (i / 4) * Math.PI * 2 + Math.PI / 4;
-    const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.4, 6), aluMat());
-    leg.position.set(Math.cos(ang) * 0.28, 0.2, Math.sin(ang) * 0.28);
-    leg.rotation.z = -Math.cos(ang) * 0.5;
-    leg.rotation.x = Math.sin(ang) * 0.5;
-    g.add(leg);
-    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.015, 8), aluMat());
-    pad.position.set(Math.cos(ang) * 0.42, 0.02, Math.sin(ang) * 0.42);
+    const c = Math.cos(ang);
+    const s = Math.sin(ang);
+    const padPos = new THREE.Vector3(c * 0.44, 0.03, s * 0.44);
+    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.02, 10), aluMat());
+    pad.position.copy(padPos);
     g.add(pad);
+    // Leg strut + brace connecting the body to the pad.
+    g.add(strutBetween(new THREE.Vector3(c * 0.26, 0.26, s * 0.26), padPos, 0.018, aluMat(), 6));
+    g.add(strutBetween(new THREE.Vector3(c * 0.15, 0.12, s * 0.15), padPos, 0.013, aluMat(), 6));
   }
 
   // 2 deployed solar-panel wings.

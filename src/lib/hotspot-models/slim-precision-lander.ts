@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { strutBetween } from '../three/model-geom';
 
 /**
  * JAXA SLIM (Smart Lander for Investigating Moon) + LEV-1 + LEV-2
@@ -42,14 +43,14 @@ export function buildSLIMPrecisionLanderHotspot(accentColor: string): THREE.Grou
   // legs; render them at slightly varied angles.
   for (let i = 0; i < 5; i++) {
     const ang = (i / 5) * Math.PI * 2 + Math.PI / 5;
-    const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 0.22, 6), aluMat());
-    leg.position.set(Math.cos(ang) * 0.16, 0.12, Math.sin(ang) * 0.16);
-    leg.rotation.z = -Math.cos(ang) * 0.4;
-    leg.rotation.x = Math.sin(ang) * 0.4;
-    g.add(leg);
-    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.01, 8), aluMat());
-    pad.position.set(Math.cos(ang) * 0.22, 0.01, Math.sin(ang) * 0.22);
+    const c = Math.cos(ang);
+    const s = Math.sin(ang);
+    const padPos = new THREE.Vector3(c * 0.24, 0.02, s * 0.24);
+    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.015, 8), aluMat());
+    pad.position.copy(padPos);
     g.add(pad);
+    // Leg strut connecting the body edge to the pad.
+    g.add(strutBetween(new THREE.Vector3(c * 0.14, 0.16, s * 0.14), padPos, 0.014, aluMat(), 6));
   }
   // 2 small LEV hoppers nearby (LEV-1 spherical, LEV-2 baseball-
   // shaped). Tiny — read as small grey orbs beside the larger lander.

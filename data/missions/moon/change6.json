@@ -58,7 +58,11 @@
       "periapsis_km": 200,
       "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.82,
-      "source": "CNSA Chang'e 6 LOI Report (2024-05); far-side sample return required Queqiao-2 relay"
+      "source": "CNSA Chang'e 6 LOI Report (2024-05); far-side sample return required Queqiao-2 relay",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 5,

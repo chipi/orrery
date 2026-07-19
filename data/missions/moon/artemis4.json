@@ -34,8 +34,28 @@
   ],
   "flight_data_quality": "sparse",
   "fleet_refs": [
-    { "id": "sls-block-1", "role": "launcher" },
-    { "id": "orion", "role": "spacecraft" },
-    { "id": "lc-39b", "role": "launch-site" }
-  ]
+    {
+      "id": "sls-block-1",
+      "role": "launcher"
+    },
+    {
+      "id": "orion",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39b",
+      "role": "launch-site"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "SLS Exploration Upper Stage (EUS)"
+    },
+    "arrival": {
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
+    }
+  }
 }

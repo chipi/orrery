@@ -1,0 +1,49 @@
+{
+  "id": "ariane-5",
+  "name": "Ariane 5 ECA",
+  "source_tier": "flagship",
+  "payloadKg": 16000,
+  "fairingKg": 2900,
+  "fairingJettisonAltM": 110000,
+  "refAreaM2": 22,
+  "cd": 0.3,
+  "launchSite": { "lat": 5.24, "lon": -52.77, "name": "ELA-3 · Kourou" },
+  "pitchProgram": [[0, 90], [12, 89], [50, 70], [130, 45], [250, 25], [400, 12], [540, 4]],
+  "boosters": {
+    "name": "EAP",
+    "count": 2,
+    "wetKg": 277000,
+    "dryKg": 40000,
+    "thrustSlKN": 4910,
+    "thrustVacKN": 5400,
+    "ispSlS": 260,
+    "ispVacS": 274,
+    "chamberTempK": 3300
+  },
+  "stages": [
+    {
+      "name": "EPC",
+      "wetKg": 184700,
+      "dryKg": 14700,
+      "thrustSlKN": 960,
+      "thrustVacKN": 1390,
+      "ispSlS": 318,
+      "ispVacS": 432,
+      "engines": 1,
+      "chamberTempK": 3500
+    },
+    {
+      "name": "ESC-A",
+      "wetKg": 19400,
+      "dryKg": 4540,
+      "thrustVacKN": 67,
+      "ispVacS": 446,
+      "engines": 1,
+      "chamberTempK": 3300
+    }
+  ],
+  "provenance": [
+    { "l": "ArianeGroup / Arianespace — Ariane 5 User's Manual", "u": "https://www.arianespace.com/vehicle/ariane-5/" },
+    { "l": "Spaceflight101 — Ariane 5 ECA", "u": "https://spaceflight101.com/spacerockets/ariane-5-eca/" }
+  ]
+}

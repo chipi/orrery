@@ -1,0 +1,24 @@
+{
+  "missionId": "viking1",
+  "siteId": "viking1-lander",
+  "body": "mars",
+  "landingSite": { "lat": 22.4856, "lon": 312.0228 },
+  "entryState": { "altitudeM": 120000, "velocityMs": 4500, "flightPathAngleDeg": 9 },
+  "entryMassKg": 992,
+  "entryCdA": 14,
+  "retroPropellantKg": 130,
+  "archetype": "MARS_PARACHUTE_RETRO",
+  "params": {
+    "chuteDeployAltM": 6000,
+    "terminalHandoffAltM": 1500,
+    "parachuteCdA": 90,
+    "heatshieldKg": 130,
+    "backshellKg": 60,
+    "ispS": 220,
+    "terminalVelocityMs": 2.4
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Viking Lander EDL — Soffen & Snyder (1976)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C" }
+  ]
+}

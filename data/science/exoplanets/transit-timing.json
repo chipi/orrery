@@ -2,8 +2,8 @@
   "id": "transit-timing",
   "tab": "exoplanets",
   "order": 3,
-  "diagram": "exo-transit-timing.svg",
-  "diagram_quality": "schematic",
+  "diagram": "exo-transit-timing.webp",
+  "diagram_quality": "polished",
   "see_in_app": [
     {
       "route": "/explore",

@@ -35,6 +35,10 @@
   "flight_data_quality": "measured",
   "fleet_refs": [
     {
+      "id": "pslv-xl",
+      "role": "launcher"
+    },
+    {
       "id": "mangalyaan",
       "role": "spacecraft"
     },

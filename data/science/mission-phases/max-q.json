@@ -1,0 +1,23 @@
+{
+  "id": "max-q",
+  "tab": "mission-phases",
+  "order": 1,
+  "see_in_app": [
+    {
+      "route": "/fly",
+      "context_key": "The DYNAMIC PRESSURE chart in the launch telemetry peaks at Max-Q"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Max q",
+      "u": "https://en.wikipedia.org/wiki/Max_q",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Space Launch Basics (aerodynamic loads)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2017/08/space_launch_basics.pdf",
+      "t": "core"
+    }
+  ]
+}

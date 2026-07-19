@@ -1,0 +1,21 @@
+{
+  "missionId": "starship-demo",
+  "siteId": "starship-demo",
+  "body": "mars",
+  "landingSite": { "lat": 39.0, "lon": -164.0 },
+  "entryState": { "altitudeM": 125000, "velocityMs": 7500, "flightPathAngleDeg": 7.5 },
+  "entryMassKg": 120000,
+  "entryCdA": 900,
+  "retroPropellantKg": 120000,
+  "archetype": "MARS_PROPULSIVE",
+  "params": {
+    "terminalHandoffAltM": 2500,
+    "ispS": 363,
+    "terminalVelocityMs": 1.5,
+    "descentRateGain": 0.06
+  },
+  "source_tier": "generic",
+  "provenance": [
+    { "l": "SpaceX Starship Mars architecture overview", "u": "https://www.spacex.com/vehicles/starship/" }
+  ]
+}

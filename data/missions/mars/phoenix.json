@@ -35,6 +35,10 @@
   "flight_data_quality": "measured",
   "fleet_refs": [
     {
+      "id": "delta-ii",
+      "role": "launcher"
+    },
+    {
       "id": "phoenix",
       "role": "spacecraft"
     }
@@ -56,7 +60,10 @@
       "periapsis_km": null,
       "inclination_deg": null,
       "orbit_insertion_dv_km_s": null,
-      "source": "JPL Phoenix EDL Reconstruction (2008); direct atmospheric entry"
+      "source": "JPL Phoenix EDL Reconstruction (2008); direct atmospheric entry",
+      "edl_system": "parachute_retro",
+      "edl_duration_s": 2227,
+      "touchdown_velocity_ms": 2.4
     },
     "totals": {
       "total_dv_km_s": 5.7,

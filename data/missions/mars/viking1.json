@@ -55,7 +55,11 @@
       "periapsis_km": 1500,
       "inclination_deg": 38,
       "orbit_insertion_dv_km_s": 1.62,
-      "source": "Viking 1 Mission Operations Report; orbiter MOI on 1976-06-19"
+      "source": "Viking 1 Mission Operations Report; orbiter MOI on 1976-06-19",
+      "entry_velocity_km_s": 4.5,
+      "edl_system": "parachute_retro",
+      "edl_duration_s": 745,
+      "touchdown_velocity_ms": 2.4
     },
     "totals": {
       "total_dv_km_s": 4.5,

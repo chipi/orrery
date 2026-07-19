@@ -1,0 +1,25 @@
+{
+  "id": "aerobraking",
+  "tab": "mission-phases",
+  "order": 5,
+  "diagram": "aerobraking.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/fly",
+      "context_key": "Fly a Mars or Venus orbiter to its capture burn — many then aerobrake for months to trim the orbit"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Aerobraking",
+      "u": "https://en.wikipedia.org/wiki/Aerobraking",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Mars Reconnaissance Orbiter aerobraking",
+      "u": "https://mars.nasa.gov/mro/mission/timeline/mtaerobraking/",
+      "t": "core"
+    }
+  ]
+}

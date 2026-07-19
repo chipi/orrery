@@ -1,0 +1,21 @@
+{
+  "missionId": "starship-mars-crew",
+  "siteId": "starship-mars-crew",
+  "body": "mars",
+  "landingSite": { "lat": 39.2, "lon": -163.4 },
+  "entryState": { "altitudeM": 125000, "velocityMs": 7500, "flightPathAngleDeg": 7.5 },
+  "entryMassKg": 150000,
+  "entryCdA": 1000,
+  "retroPropellantKg": 170000,
+  "archetype": "MARS_PROPULSIVE",
+  "params": {
+    "terminalHandoffAltM": 2500,
+    "ispS": 363,
+    "terminalVelocityMs": 1.2,
+    "descentRateGain": 0.06
+  },
+  "source_tier": "generic",
+  "provenance": [
+    { "l": "SpaceX Starship crewed Mars mission architecture", "u": "https://www.spacex.com/vehicles/starship/" }
+  ]
+}

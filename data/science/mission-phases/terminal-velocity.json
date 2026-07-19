@@ -1,0 +1,26 @@
+{
+  "id": "terminal-velocity",
+  "tab": "mission-phases",
+  "order": 5,
+  "diagram": "terminal-velocity.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/fly",
+      "query": "?descent=1",
+      "context_key": "Compare the parachute descent on Mars with the propulsive-only Moon landing in ?descent=1"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Terminal velocity",
+      "u": "https://en.wikipedia.org/wiki/Terminal_velocity",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Glenn · Terminal velocity",
+      "u": "https://www.grc.nasa.gov/www/k-12/airplane/termv.html",
+      "t": "core"
+    }
+  ]
+}

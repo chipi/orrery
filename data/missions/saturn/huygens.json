@@ -1,0 +1,126 @@
+{
+  "id": "huygens",
+  "agency": "ESA",
+  "agency_full": "European Space Agency (Huygens probe, carried to Saturn by NASA/ASI Cassini orbiter)",
+  "sector": "gov",
+  "dest": "SATURN",
+  "color": "#FFD700",
+  "year": 1997,
+  "status": "FLOWN",
+  "departure_date": "1997-10-15",
+  "arrival_date": "2005-01-14",
+  "transit_days": 2648,
+  "vehicle": "Titan IVB / Centaur (Cassini carrier)",
+  "payload": "318 kg ESA entry probe — aeroshell, 3 parachutes, 6 science packages (HASI, GCMS, DISR, ACP, SSP, DWE). Designed to survive 2.5-hour atmospheric descent through Titan's nitrogen–methane atmosphere to the surface.",
+  "delta_v": "~6 km/s (entry deceleration from 6 km/s hypersonic to surface)",
+  "data_quality": "good",
+  "flight_data_quality": "sparse",
+  "credit": "© ESA / NASA / JPL-Caltech / University of Arizona — Huygens probe data public domain. The Huygens probe rode aboard NASA's Cassini spacecraft on the 7-year VVEJGA interplanetary cruise to the Saturn system. Released 2004-12-25, it coasted 20 days before entering Titan's atmosphere on 2005-01-14. A heat shield slowed it from 6 km/s to subsonic, then three parachute stages (main chute at 160 km, drogue at 120 km, stabiliser for the final descent) let it drift for 2 hours 27 minutes through the haze, transmitting 350 images and full atmospheric profiles before touching down on a floodplain of rounded water-ice pebbles and a thin veneer of liquid methane. The landing site (10.3°S, 192.3°W) lies in a dark lowland drained by methane rivers from brighter highlands. Huygens returned data from the surface for ~72 minutes until Cassini set below its radio horizon. First and only soft landing in the outer solar system.",
+  "links": [
+    {
+      "l": "Huygens probe — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Huygens_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "ESA — Huygens probe science results and images",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens/Huygens_facts_and_figures",
+      "t": "intro"
+    },
+    {
+      "l": "NASA / JPL — Cassini-Huygens mission overview",
+      "u": "https://science.nasa.gov/mission/cassini/",
+      "t": "core"
+    },
+    {
+      "l": "Lebreton et al. (2005) — An overview of the descent and landing of the Huygens probe on Titan (Nature 438)",
+      "u": "https://www.nature.com/articles/nature04347",
+      "t": "deep"
+    },
+    {
+      "l": "Tomasko et al. (2005) — Rain, winds and haze during the Huygens probe's descent (Nature 438)",
+      "u": "https://www.nature.com/articles/nature04126",
+      "t": "deep"
+    },
+    {
+      "l": "NSSDCA — Huygens master catalog entry",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1997-061C",
+      "t": "deep"
+    }
+  ],
+  "flight": {
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch (with Cassini)",
+        "description": "Titan IVB / Centaur lifts the 5712 kg Cassini–Huygens stack from Cape Canaveral. Huygens rides aboard Cassini as an attached entry probe; the 7-year VVEJGA cruise to Saturn begins."
+      },
+      {
+        "met_days": 193,
+        "type": "flyby",
+        "label": "Venus #1 — gravity assist",
+        "description": "First Venus flyby (1998-04-26, 284 km altitude). Gravity assist raises the spacecraft's aphelion as part of the energy-building VVEJGA sequence."
+      },
+      {
+        "met_days": 617,
+        "type": "flyby",
+        "label": "Venus #2 — gravity assist",
+        "description": "Second Venus flyby (1999-06-24, 600 km). Together with the first assist, sets up the Earth flyby 55 days later."
+      },
+      {
+        "met_days": 672,
+        "type": "flyby",
+        "label": "Earth — gravity assist",
+        "description": "1171 km above the South Pacific (1999-08-18). The orbit is now energetic enough to cross Jupiter's."
+      },
+      {
+        "met_days": 1172,
+        "type": "flyby",
+        "label": "Jupiter — gravity assist",
+        "description": "9.7 million km from Jupiter (2000-12-30). Final assist delivers the remaining velocity for Saturn arrival."
+      },
+      {
+        "met_days": 2451,
+        "type": "edl_or_oi",
+        "label": "Saturn orbit insertion (Cassini)",
+        "description": "Cassini's main-engine burn (2004-07-01) captures the stack into Saturn orbit. Huygens remains dormant, attached to Cassini, for the next six months while the orbiter homes in on a Titan flyby geometry."
+      },
+      {
+        "met_days": 2617,
+        "type": "separation",
+        "label": "Huygens release",
+        "description": "Huygens released from Cassini on 2004-12-25, coasting toward Titan on a ballistic trajectory with no propulsion. The probe then hibernated for 20 days."
+      },
+      {
+        "met_days": 2648,
+        "type": "edl_or_oi",
+        "label": "Titan atmosphere entry — EDL",
+        "description": "2005-01-14: entry at 6 km/s, heat shield slows to subsonic; main chute at 160 km deploys; 2.5-hour parachute descent through Titan's haze transmitting 350 images and full atmospheric profiles. Touchdown on a floodplain of rounded water-ice pebbles at 10.3°S, 192.3°W — the first and only soft landing in the outer solar system."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "saturn",
+      "transfer_type": "vvejga_gravity_assists",
+      "waypoints_helio_au": [
+        [0, 0.95, 0, 0.05],
+        [120, 0.72, 0, -0.4],
+        [207, 0.73, 0, -0.5],
+        [400, 1.4, 0, 0.3],
+        [600, 1, -0.1, 0.6],
+        [808, 0.71, -0.1, 0.35],
+        [894, 1, -0.1, 0],
+        [1500, 3.5, 0.5, 0.4],
+        [2226, 5.2, 1.5, 0.6],
+        [2451, 9.5, 1, 0.6],
+        [2648, 9.1, 1.2, 0.55]
+      ]
+    },
+    "launch": {
+      "vehicle_stage": "Centaur upper stage"
+    }
+  }
+}

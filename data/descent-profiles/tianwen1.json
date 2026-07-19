@@ -1,0 +1,24 @@
+{
+  "missionId": "tianwen1",
+  "siteId": "zhurong",
+  "body": "mars",
+  "landingSite": { "lat": 25.066, "lon": 109.925 },
+  "entryState": { "altitudeM": 125000, "velocityMs": 4800, "flightPathAngleDeg": 7.5 },
+  "entryMassKg": 1300,
+  "entryCdA": 14,
+  "retroPropellantKg": 200,
+  "archetype": "MARS_PARACHUTE_RETRO",
+  "params": {
+    "chuteDeployAltM": 8000,
+    "terminalHandoffAltM": 1500,
+    "parachuteCdA": 120,
+    "heatshieldKg": 100,
+    "backshellKg": 200,
+    "ispS": 225,
+    "terminalVelocityMs": 2.4
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Tianwen-1 / Zhurong EDL — CNSA mission report", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-049A" }
+  ]
+}

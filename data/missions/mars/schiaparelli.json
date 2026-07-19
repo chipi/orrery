@@ -45,6 +45,10 @@
   "flight_data_quality": "sparse",
   "fleet_refs": [
     {
+      "id": "proton-m",
+      "role": "launcher"
+    },
+    {
       "id": "schiaparelli",
       "role": "spacecraft"
     }
@@ -63,7 +67,11 @@
       "v_infinity_km_s": 5.5,
       "periapsis_km": 0,
       "inclination_deg": 7,
-      "source": "ESA mission archive; entry at 121 km altitude, 5.83 km/s, 12.4 km/s relative to surface"
+      "source": "ESA mission archive; entry at 121 km altitude, 5.83 km/s, 12.4 km/s relative to surface",
+      "entry_velocity_km_s": 5.8,
+      "edl_system": "parachute_retro",
+      "edl_duration_s": 1351,
+      "touchdown_velocity_ms": 43.51
     },
     "totals": {
       "total_dv_km_s": 5.5,

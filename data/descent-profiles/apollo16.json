@@ -1,0 +1,16 @@
+{
+  "missionId": "apollo16",
+  "siteId": "apollo16",
+  "body": "moon",
+  "landingSite": { "lat": -8.97, "lon": 15.5 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 7300,
+  "entryCdA": 0,
+  "retroPropellantKg": 1000,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Apollo 16 Mission Report (NASA MSC-07230)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-031C" }
+  ]
+}

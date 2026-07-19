@@ -32,5 +32,9 @@
       "u": "https://www.isro.gov.in/MarsOrbiterMissionSpacecraft.html",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "chandrayaan1",
+    "mangalyaan"
   ]
 }

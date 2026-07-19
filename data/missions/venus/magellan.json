@@ -35,6 +35,10 @@
   "flight_data_quality": "measured",
   "fleet_refs": [
     {
+      "id": "space-shuttle-stack",
+      "role": "launcher"
+    },
+    {
       "id": "magellan",
       "role": "spacecraft"
     }

@@ -94,6 +94,9 @@
         "label": "End of mission — propellant frozen",
         "description": "2009-06-30. Ulysses was decommissioned after 18 years of operation — far beyond the planned 5-year mission. The cause was thermal: as the RTG decayed below the threshold needed to keep hydrazine propellant lines warm, the propellant would have frozen and the spacecraft become unrecoverable. Three polar pass sets had been completed by then; the heliospheric data archive remains the standard reference."
       }
-    ]
+    ],
+    "launch": {
+      "vehicle_stage": "IUS + PAM-S upper stage"
+    }
   }
 }

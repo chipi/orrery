@@ -10,6 +10,10 @@
   },
   "see_in_app": [
     {
+      "route": "/fly",
+      "context_key": "Fly any lander's EDL end-to-end — ?descent=1 plays entry, parachute, retro / sky-crane and touchdown on Moon, Mars or Venus"
+    },
+    {
       "route": "/mars",
       "context_key": "Curiosity, Perseverance, Tianwen-1 — every Mars lander goes through EDL"
     }

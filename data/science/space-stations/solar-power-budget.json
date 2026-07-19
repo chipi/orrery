@@ -4,12 +4,12 @@
   "order": 3,
   "photo": {
     "src": "/images/science/solar-power-iss-arrays.webp",
-    "credit": "NASA \u00b7 ISS Expedition 17 (Aug 2008) \u2014 solar array against Earth's limb. The eight 34 \u00d7 12 m P-/S-arrays generate ~84 kW peak from the Sun-facing pass; battery banks carry the station through eclipse, and the budget is what drives ECLSS + science + crew comfort."
+    "credit": "NASA · ISS Expedition 17 (Aug 2008) — solar array against Earth's limb. The eight 34 × 12 m P-/S-arrays generate ~84 kW peak from the Sun-facing pass; battery banks carry the station through eclipse, and the budget is what drives ECLSS + science + crew comfort."
   },
   "see_in_app": [
     {
       "route": "/iss",
-      "context_key": "ISS solar arrays generate ~215 kW installed capacity, delivering 84\u2013120 kW to loads"
+      "context_key": "ISS solar arrays generate ~215 kW installed capacity, delivering 84–120 kW to loads"
     },
     {
       "route": "/tiangong",
@@ -18,16 +18,16 @@
   ],
   "links": [
     {
-      "l": "Wikipedia \u00b7 Photovoltaic system on ISS",
+      "l": "Wikipedia · Photovoltaic system on ISS",
       "u": "https://en.wikipedia.org/wiki/Electrical_system_of_the_International_Space_Station",
       "t": "intro"
     },
     {
-      "l": "NASA \u00b7 ISS power system",
+      "l": "NASA · ISS power system",
       "u": "https://www.nasa.gov/international-space-station/the-international-space-station-electrical-power-system/",
       "t": "core"
     }
   ],
-  "diagram": "solar-power-budget.svg",
+  "diagram": "solar-power-budget.webp",
   "diagram_quality": "polished"
 }

@@ -1,0 +1,21 @@
+{
+  "missionId": "vega-2",
+  "siteId": "vega-2",
+  "body": "venus",
+  "landingSite": { "lat": -8.5, "lon": 179.4 },
+  "entryState": { "altitudeM": 130000, "velocityMs": 10700, "flightPathAngleDeg": 65 },
+  "entryMassKg": 1650,
+  "entryCdA": 1.6,
+  "archetype": "VENUS_AEROSHELL",
+  "params": {
+    "chuteDeployAltM": 62000,
+    "terminalHandoffAltM": 47000,
+    "parachuteCdA": 24,
+    "terminalCdA": 3.2,
+    "backshellKg": 200
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Vega 2 Venus probe — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1984-128D" }
+  ]
+}

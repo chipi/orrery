@@ -710,6 +710,9 @@
           -21.446084
         ]
       ]
+    },
+    "launch": {
+      "vehicle_stage": "Centaur + TE-364-4 (Star-37E)"
     }
   }
 }

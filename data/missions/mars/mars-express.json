@@ -30,6 +30,10 @@
   "flight_data_quality": "measured",
   "fleet_refs": [
     {
+      "id": "soyuz-fg",
+      "role": "launcher"
+    },
+    {
       "id": "mars-express",
       "role": "spacecraft"
     }

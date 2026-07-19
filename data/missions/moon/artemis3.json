@@ -62,7 +62,11 @@
       "periapsis_km": 3000,
       "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.45,
-      "source": "NASA Artemis 3 mission plan; NRHO entry burn ~0.45 km/s vs Apollo's 0.89 km/s direct LLO insertion (NRHO is energetically favourable)"
+      "source": "NASA Artemis 3 mission plan; NRHO entry burn ~0.45 km/s vs Apollo's 0.89 km/s direct LLO insertion (NRHO is energetically favourable)",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 7.2,

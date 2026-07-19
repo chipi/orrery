@@ -2,8 +2,8 @@
   "id": "habitable-zone",
   "tab": "exoplanets",
   "order": 7,
-  "diagram": "exo-habitable-zone.svg",
-  "diagram_quality": "schematic",
+  "diagram": "exo-habitable-zone.webp",
+  "diagram_quality": "polished",
   "see_in_app": [
     {
       "route": "/explore",

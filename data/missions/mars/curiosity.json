@@ -1,6 +1,10 @@
 {
   "id": "curiosity",
-  "videos": [{ "id": "vid-98b4fdd31e64" }],
+  "videos": [
+    {
+      "id": "vid-98b4fdd31e64"
+    }
+  ],
   "agency": "NASA",
   "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
   "sector": "gov",
@@ -63,7 +67,10 @@
       "periapsis_km": null,
       "inclination_deg": null,
       "orbit_insertion_dv_km_s": null,
-      "source": "NASA MSL Press Kit (2012-08); JPL MSL EDL Telemetry"
+      "source": "NASA MSL Press Kit (2012-08); JPL MSL EDL Telemetry",
+      "edl_system": "skycrane",
+      "edl_duration_s": 351,
+      "touchdown_velocity_ms": 0.75
     },
     "totals": {
       "total_dv_km_s": 6.1,

@@ -34,7 +34,11 @@
     }
   ],
   "linked_missions": [
+    "mars-pathfinder",
+    "spirit",
+    "opportunity",
     "messenger",
-    "dawn"
+    "dawn",
+    "phoenix"
   ]
 }

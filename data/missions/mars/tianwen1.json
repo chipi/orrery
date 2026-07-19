@@ -68,7 +68,11 @@
       "periapsis_km": 265,
       "inclination_deg": 87,
       "orbit_insertion_dv_km_s": 1.1,
-      "source": "CNSA Tianwen-1 MOI Report (2021-02)"
+      "source": "CNSA Tianwen-1 MOI Report (2021-02)",
+      "entry_velocity_km_s": 4.8,
+      "edl_system": "parachute_retro",
+      "edl_duration_s": 645,
+      "touchdown_velocity_ms": 2.4
     },
     "totals": {
       "total_dv_km_s": 5,

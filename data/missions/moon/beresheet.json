@@ -40,6 +40,10 @@
   "flight_data_quality": "sparse",
   "fleet_refs": [
     {
+      "id": "falcon-9",
+      "role": "launcher"
+    },
+    {
       "id": "beresheet",
       "role": "spacecraft"
     }
@@ -58,7 +62,11 @@
       "v_infinity_km_s": 2.5,
       "periapsis_km": 200,
       "inclination_deg": 20,
-      "source": "SpaceIL flight ops; lunar-orbit capture 2019-04-04"
+      "source": "SpaceIL flight ops; lunar-orbit capture 2019-04-04",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 19,
+      "touchdown_velocity_ms": 128.17
     },
     "totals": {
       "total_dv_km_s": 6,

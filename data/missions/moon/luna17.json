@@ -40,6 +40,10 @@
   "flight_data_quality": "sparse",
   "fleet_refs": [
     {
+      "id": "proton-k",
+      "role": "launcher"
+    },
+    {
       "id": "lunokhod-1",
       "role": "spacecraft"
     }
@@ -59,7 +63,11 @@
       "periapsis_km": 85,
       "inclination_deg": 141,
       "orbit_insertion_dv_km_s": 0.75,
-      "source": "NASA NSSDCA Luna 17 archive; LOI placed Luna 17 in 85 × 141 km parking orbit before descent"
+      "source": "NASA NSSDCA Luna 17 archive; LOI placed Luna 17 in 85 × 141 km parking orbit before descent",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 3,

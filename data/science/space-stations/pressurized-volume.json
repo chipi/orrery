@@ -4,30 +4,30 @@
   "order": 1,
   "photo": {
     "src": "/images/science/pressurized-volume-destiny.webp",
-    "credit": "NASA \u00b7 Destiny laboratory interior. The US lab's ~106 m\u00b3 pressurised volume is one of the larger single modules on station \u2014 the spaces inside the racks (avionics, life-support, science) plus the open volume around them define how much \u00abroom\u00bb the crew actually has to work and live."
+    "credit": "NASA · Destiny laboratory interior. The US lab's ~106 m³ pressurised volume is one of the larger single modules on station — the spaces inside the racks (avionics, life-support, science) plus the open volume around them define how much «room» the crew actually has to work and live."
   },
   "see_in_app": [
     {
       "route": "/iss",
-      "context_key": "ISS habitable volume is roughly 388 m\u00b3; total pressurized volume is ~916 m\u00b3"
+      "context_key": "ISS habitable volume is roughly 388 m³; total pressurized volume is ~916 m³"
     },
     {
       "route": "/tiangong",
-      "context_key": "Tiangong's three modules have ~122 m\u00b3 habitable volume (~340 m\u00b3 total pressurized)"
+      "context_key": "Tiangong's three modules have ~122 m³ habitable volume (~340 m³ total pressurized)"
     }
   ],
   "links": [
     {
-      "l": "Wikipedia \u00b7 International Space Station",
+      "l": "Wikipedia · International Space Station",
       "u": "https://en.wikipedia.org/wiki/International_Space_Station",
       "t": "intro"
     },
     {
-      "l": "NASA \u00b7 ISS Reference Guide (PDF)",
+      "l": "NASA · ISS Reference Guide (PDF)",
       "u": "https://www.nasa.gov/wp-content/uploads/2017/09/np-2015-05-022-jsc-iss-guide-2015-update-111015-508c.pdf",
       "t": "core"
     }
   ],
-  "diagram": "pressurized-volume.svg",
+  "diagram": "pressurized-volume.webp",
   "diagram_quality": "polished"
 }

@@ -1,0 +1,17 @@
+{
+  "missionId": "luna9",
+  "siteId": "luna9",
+  "body": "moon",
+  "landingSite": { "lat": 7.08, "lon": -64.37 },
+  "entryState": { "altitudeM": 2000, "velocityMs": 140, "flightPathAngleDeg": 55 },
+  "entryMassKg": 100,
+  "entryCdA": 0,
+  "retroPropellantKg": 30,
+  "survivableTouchdownMs": 30,
+  "archetype": "LUNA_DIRECT_IMPACT",
+  "params": { "ispS": 287, "airbagReleaseMs": 15, "descentRateGain": 0.4 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Luna 9 — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A" }
+  ]
+}

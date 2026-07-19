@@ -1,0 +1,25 @@
+{
+  "missionId": "curiosity",
+  "siteId": "curiosity",
+  "body": "mars",
+  "landingSite": { "lat": -4.59, "lon": 137.44 },
+  "entryState": { "altitudeM": 125000, "velocityMs": 5845, "flightPathAngleDeg": 7.5 },
+  "entryMassKg": 3300,
+  "entryCdA": 24,
+  "retroPropellantKg": 450,
+  "archetype": "MARS_SKYCRANE",
+  "params": {
+    "chuteDeployAltM": 11000,
+    "terminalHandoffAltM": 1800,
+    "finalPhaseAltM": 21,
+    "parachuteCdA": 200,
+    "heatshieldKg": 380,
+    "backshellKg": 630,
+    "ispS": 225,
+    "terminalVelocityMs": 0.75
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "JPL MSL EDL — Way et al. (2013)", "u": "https://mars.nasa.gov/msl/timeline/surface-operations/entry-descent-landing/" }
+  ]
+}

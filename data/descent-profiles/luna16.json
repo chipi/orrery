@@ -1,0 +1,16 @@
+{
+  "missionId": "luna16",
+  "siteId": "luna16",
+  "body": "moon",
+  "landingSite": { "lat": -0.5, "lon": 56.3 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 1880,
+  "entryCdA": 0,
+  "retroPropellantKg": 270,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Luna 16 — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-072A" }
+  ]
+}

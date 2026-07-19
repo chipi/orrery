@@ -1,0 +1,38 @@
+{
+  "id": "saturn-ib",
+  "name": "Saturn IB",
+  "source_tier": "flagship",
+  "payloadKg": 10000,
+  "fairingKg": 0,
+  "fairingJettisonAltM": 100000,
+  "refAreaM2": 34,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.52, "lon": -80.56, "name": "LC-34 · Cape Kennedy" },
+  "pitchProgram": [[0, 90], [14, 89], [45, 70], [135, 45], [202, 25], [337, 10], [512, 3], [597, 1]],
+  "stages": [
+    {
+      "name": "S-IB",
+      "wetKg": 448650,
+      "dryKg": 41600,
+      "thrustSlKN": 7110,
+      "thrustVacKN": 8150,
+      "ispSlS": 262,
+      "ispVacS": 289,
+      "engines": 8,
+      "chamberTempK": 3400
+    },
+    {
+      "name": "S-IVB",
+      "wetKg": 119900,
+      "dryKg": 13500,
+      "thrustVacKN": 1033,
+      "ispVacS": 421,
+      "engines": 1,
+      "chamberTempK": 3300
+    }
+  ],
+  "provenance": [
+    { "l": "NASA — Saturn IB Flight Manual (SA-206)", "u": "https://ntrs.nasa.gov/citations/19730073381" },
+    { "l": "Spaceflight101 — Saturn IB", "u": "https://spaceflight101.com/spacerockets/saturn-ib/" }
+  ]
+}

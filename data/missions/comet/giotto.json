@@ -84,6 +84,9 @@
         "label": "Grigg-Skjellerup — extended-mission flyby",
         "description": "Closest approach 200 km from comet 26P/Grigg-Skjellerup on 1992-07-10. A bonus encounter possible only because Giotto survived Halley dust-storm damage. Showed Grigg-Skjellerup to be a much smaller and less dust-rich comet than Halley, broadening the early sample of in-situ cometary observations."
       }
-    ]
+    ],
+    "launch": {
+      "vehicle_stage": "Ariane 1 third stage"
+    }
   }
 }

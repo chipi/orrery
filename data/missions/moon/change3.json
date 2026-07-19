@@ -35,6 +35,10 @@
   "flight_data_quality": "sparse",
   "fleet_refs": [
     {
+      "id": "long-march-3b",
+      "role": "launcher"
+    },
+    {
       "id": "change-3",
       "role": "spacecraft"
     },
@@ -57,7 +61,11 @@
       "v_infinity_km_s": 2.4,
       "periapsis_km": 100,
       "inclination_deg": 90,
-      "source": "CNSA mission archive; lunar-orbit insertion 2013-12-06, landing 2013-12-14"
+      "source": "CNSA mission archive; lunar-orbit insertion 2013-12-06, landing 2013-12-14",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 3.8,

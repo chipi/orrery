@@ -1,0 +1,16 @@
+{
+  "missionId": "beresheet",
+  "siteId": "beresheet",
+  "body": "moon",
+  "landingSite": { "lat": 32.594, "lon": 19.348 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 585,
+  "entryCdA": 0,
+  "retroPropellantKg": 5,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Beresheet (SpaceIL) — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2019-009B" }
+  ]
+}

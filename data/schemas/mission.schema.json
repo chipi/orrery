@@ -301,6 +301,30 @@
               "minimum": 0,
               "maximum": 20
             },
+            "edl_system": {
+              "type": "string",
+              "enum": [
+                "powered",
+                "airbag",
+                "skycrane",
+                "aeroshell",
+                "parachute_retro",
+                "direct_impact"
+              ],
+              "description": "EDL system class (landers only), derived from the descent profile (RFC-034 §12). The descent-profile registry stays the source of truth."
+            },
+            "edl_duration_s": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10000,
+              "description": "EDL duration, entry interface to touchdown (s), derived from the descent profile."
+            },
+            "touchdown_velocity_ms": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2000,
+              "description": "Touchdown speed (m/s), derived from the descent profile (high = a crash)."
+            },
             "source": {
               "type": "string",
               "minLength": 1

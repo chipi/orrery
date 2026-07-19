@@ -1,0 +1,47 @@
+{
+  "id": "proton-k",
+  "name": "Proton-K",
+  "source_tier": "flagship",
+  "payloadKg": 14000,
+  "fairingKg": 4000,
+  "fairingJettisonAltM": 120000,
+  "refAreaM2": 40,
+  "cd": 0.3,
+  "launchSite": { "lat": 45.92, "lon": 63.34, "name": "Site 81/200 · Baikonur Cosmodrome" },
+  "pitchProgram": [[0, 90], [14, 89], [46, 70], [138, 45], [207, 25], [346, 10], [526, 3], [610, 1]],
+  "stages": [
+    {
+      "name": "Stage 1",
+      "wetKg": 450510,
+      "dryKg": 31100,
+      "thrustSlKN": 8847,
+      "thrustVacKN": 9784,
+      "ispSlS": 285,
+      "ispVacS": 316,
+      "engines": 6,
+      "chamberTempK": 3010
+    },
+    {
+      "name": "Stage 2",
+      "wetKg": 167828,
+      "dryKg": 11715,
+      "thrustVacKN": 2399,
+      "ispVacS": 327,
+      "engines": 4,
+      "chamberTempK": 3100
+    },
+    {
+      "name": "Stage 3",
+      "wetKg": 50747,
+      "dryKg": 4185,
+      "thrustVacKN": 613,
+      "ispVacS": 325,
+      "engines": 1,
+      "chamberTempK": 3100
+    }
+  ],
+  "provenance": [
+    { "l": "Spaceflight101 — Proton-K", "u": "https://spaceflight101.com/spacerockets/proton-k/" },
+    { "l": "RussianSpaceWeb — Proton (UR-500K)", "u": "https://www.russianspaceweb.com/proton.html" }
+  ]
+}

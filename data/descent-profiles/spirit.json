@@ -1,0 +1,23 @@
+{
+  "missionId": "spirit",
+  "siteId": "spirit",
+  "body": "mars",
+  "landingSite": { "lat": -14.57, "lon": 175.47 },
+  "entryState": { "altitudeM": 125000, "velocityMs": 5400, "flightPathAngleDeg": 7.5 },
+  "entryMassKg": 540,
+  "entryCdA": 14,
+  "retroPropellantKg": 25,
+  "archetype": "MARS_AIRBAG",
+  "params": {
+    "chuteDeployAltM": 9000,
+    "terminalHandoffAltM": 300,
+    "parachuteCdA": 60,
+    "heatshieldKg": 90,
+    "ispS": 200,
+    "airbagReleaseMs": 12
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "MER-A Spirit EDL — JPL Mars Exploration Rover mission overview", "u": "https://mars.nasa.gov/mer/mission/timeline/surfaceops/entry-descent-landing/" }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "missionId": "perseverance",
+  "siteId": "perseverance",
+  "body": "mars",
+  "landingSite": { "lat": 18.44, "lon": 77.45 },
+  "entryState": { "altitudeM": 125000, "velocityMs": 5400, "flightPathAngleDeg": 7.5 },
+  "entryMassKg": 3650,
+  "entryCdA": 24,
+  "retroPropellantKg": 450,
+  "archetype": "MARS_SKYCRANE",
+  "params": {
+    "chuteDeployAltM": 11000,
+    "terminalHandoffAltM": 2100,
+    "finalPhaseAltM": 21,
+    "parachuteCdA": 210,
+    "heatshieldKg": 440,
+    "backshellKg": 680,
+    "ispS": 225,
+    "terminalVelocityMs": 0.75
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "NASA Mars 2020 EDL press kit", "u": "https://mars.nasa.gov/mars2020/timeline/landing/entry-descent-landing/" }
+  ]
+}

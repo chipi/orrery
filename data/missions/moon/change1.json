@@ -58,6 +58,9 @@
       "return": {
         "type": "none"
       }
+    },
+    "launch": {
+      "vehicle_stage": "Long March 3A third stage (H-18)"
     }
   }
 }

@@ -1,0 +1,88 @@
+{
+  "id": "space-shuttle-stack",
+  "name": "Space Shuttle",
+  "source_tier": "flagship",
+  "payloadKg": 19000,
+  "fairingKg": 0,
+  "fairingJettisonAltM": 320000,
+  "refAreaM2": 55,
+  "cd": 0.4,
+  "launchSite": {
+    "lat": 28.608,
+    "lon": -80.604,
+    "name": "LC-39 · Kennedy Space Center"
+  },
+  "pitchProgram": [
+    [
+      0,
+      90
+    ],
+    [
+      12,
+      89
+    ],
+    [
+      40,
+      74
+    ],
+    [
+      120,
+      50
+    ],
+    [
+      240,
+      30
+    ],
+    [
+      400,
+      15
+    ],
+    [
+      500,
+      6
+    ]
+  ],
+  "boosters": {
+    "name": "SRB",
+    "count": 2,
+    "wetKg": 590000,
+    "dryKg": 91000,
+    "thrustSlKN": 12450,
+    "thrustVacKN": 13800,
+    "ispSlS": 237,
+    "ispVacS": 268,
+    "chamberTempK": 3500
+  },
+  "stages": [
+    {
+      "name": "SSME + ET",
+      "wetKg": 751000,
+      "dryKg": 26500,
+      "thrustSlKN": 5250,
+      "thrustVacKN": 6270,
+      "ispSlS": 366,
+      "ispVacS": 452,
+      "engines": 3,
+      "chamberTempK": 3600
+    },
+    {
+      "name": "Orbiter",
+      "wetKg": 100000,
+      "dryKg": 92000,
+      "thrustVacKN": 53,
+      "ispVacS": 316,
+      "engines": 2,
+      "chamberTempK": 3100
+    }
+  ],
+  "provenance": [
+    {
+      "l": "NASA — Space Shuttle Basics / Launch Vehicle",
+      "u": "https://www.nasa.gov/space-shuttle/"
+    },
+    {
+      "l": "Spaceflight101 — Space Shuttle",
+      "u": "https://spaceflight101.com/spacerockets/space-shuttle/"
+    }
+  ]
+}

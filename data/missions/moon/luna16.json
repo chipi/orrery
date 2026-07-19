@@ -40,6 +40,10 @@
   "flight_data_quality": "sparse",
   "fleet_refs": [
     {
+      "id": "proton-k",
+      "role": "launcher"
+    },
+    {
       "id": "luna-16",
       "role": "spacecraft"
     }
@@ -58,7 +62,11 @@
       "v_infinity_km_s": 2.3,
       "periapsis_km": 110,
       "inclination_deg": 70,
-      "source": "NASA NSSDCA Luna 16 archive; lunar-orbit insertion 1970-09-17"
+      "source": "NASA NSSDCA Luna 16 archive; lunar-orbit insertion 1970-09-17",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 3.5,

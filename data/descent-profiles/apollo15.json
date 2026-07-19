@@ -1,0 +1,16 @@
+{
+  "missionId": "apollo15",
+  "siteId": "apollo15",
+  "body": "moon",
+  "landingSite": { "lat": 26.13, "lon": 3.63 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 7300,
+  "entryCdA": 0,
+  "retroPropellantKg": 1000,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Apollo 15 Mission Report (NASA MSC-05161)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C" }
+  ]
+}

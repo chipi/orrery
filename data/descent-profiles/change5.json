@@ -1,0 +1,16 @@
+{
+  "missionId": "change5",
+  "siteId": "change5",
+  "body": "moon",
+  "landingSite": { "lat": 43.1, "lon": -51.8 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 1300,
+  "entryCdA": 0,
+  "retroPropellantKg": 185,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Chang'e-5 Mission — CNSA / NSSDC record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-087A" }
+  ]
+}

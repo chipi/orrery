@@ -1,0 +1,26 @@
+{
+  "id": "skycrane",
+  "tab": "mission-phases",
+  "order": 5,
+  "diagram": "skycrane.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/fly",
+      "query": "?descent=1",
+      "context_key": "Fly Curiosity or Perseverance in ?descent=1 to watch the sky-crane lower the rover on tethers"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Sky crane (landing system)",
+      "u": "https://en.wikipedia.org/wiki/Sky_crane_(landing_system)",
+      "t": "intro"
+    },
+    {
+      "l": "NASA JPL · Mars 2020 Entry, Descent & Landing",
+      "u": "https://mars.nasa.gov/mars2020/timeline/landing/entry-descent-landing/",
+      "t": "core"
+    }
+  ]
+}

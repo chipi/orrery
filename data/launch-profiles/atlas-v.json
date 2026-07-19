@@ -1,0 +1,38 @@
+{
+  "id": "atlas-v",
+  "name": "Atlas V 401",
+  "source_tier": "flagship",
+  "payloadKg": 9800,
+  "fairingKg": 2100,
+  "fairingJettisonAltM": 120000,
+  "refAreaM2": 11.4,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.58, "lon": -80.58, "name": "SLC-41 · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [15, 88], [50, 65], [130, 42], [200, 22], [260, 10]],
+  "stages": [
+    {
+      "name": "CCB",
+      "wetKg": 305000,
+      "dryKg": 21000,
+      "thrustSlKN": 3827,
+      "thrustVacKN": 4152,
+      "ispSlS": 311,
+      "ispVacS": 338,
+      "engines": 1,
+      "chamberTempK": 3600
+    },
+    {
+      "name": "Centaur",
+      "wetKg": 23000,
+      "dryKg": 2247,
+      "thrustVacKN": 99,
+      "ispVacS": 451,
+      "engines": 1,
+      "chamberTempK": 3300
+    }
+  ],
+  "provenance": [
+    { "l": "ULA Atlas V Launch Services User's Guide", "u": "https://www.ulalaunch.com/rockets/atlas-v" },
+    { "l": "Spaceflight101 — Atlas V 401", "u": "https://spaceflight101.com/spacerockets/atlas-v-401/" }
+  ]
+}

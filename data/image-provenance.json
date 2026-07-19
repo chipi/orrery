@@ -78990,6 +78990,258 @@
         "reencoded-webp"
       ],
       "fetched_at": "2026-07-14T12:34:18.357Z"
+    },
+    {
+      "id": "461baa771840fd47",
+      "path": "/images/launch-ground/cape-canaveral.jpg",
+      "source_type": "derived-mosaic",
+      "title": "EOX Sentinel-2 cloudless — Cape Canaveral / Kennedy Space Center",
+      "author": "EOX IT Services GmbH",
+      "agency": "EOX IT Services GmbH",
+      "source_url": "https://s2maps.eu",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "EOX Sentinel-2 cloudless (https://s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020.",
+      "modifications": [
+        "cropped",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "0c4ca77fed02679e",
+      "path": "/images/launch-ground/baikonur.jpg",
+      "source_type": "derived-mosaic",
+      "title": "EOX Sentinel-2 cloudless — Baikonur Cosmodrome",
+      "author": "EOX IT Services GmbH",
+      "agency": "EOX IT Services GmbH",
+      "source_url": "https://s2maps.eu",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "EOX Sentinel-2 cloudless (https://s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020.",
+      "modifications": [
+        "cropped",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "0098e2ecb0c92d58",
+      "path": "/images/launch-ground/kourou.jpg",
+      "source_type": "derived-mosaic",
+      "title": "EOX Sentinel-2 cloudless — Guiana Space Centre, Kourou",
+      "author": "EOX IT Services GmbH",
+      "agency": "EOX IT Services GmbH",
+      "source_url": "https://s2maps.eu",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "EOX Sentinel-2 cloudless (https://s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020.",
+      "modifications": [
+        "cropped",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "5f7cf4fc901aa7bf",
+      "path": "/images/launch-ground/jiuquan.jpg",
+      "source_type": "derived-mosaic",
+      "title": "EOX Sentinel-2 cloudless — Jiuquan Satellite Launch Center",
+      "author": "EOX IT Services GmbH",
+      "agency": "EOX IT Services GmbH",
+      "source_url": "https://s2maps.eu",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "EOX Sentinel-2 cloudless (https://s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020.",
+      "modifications": [
+        "cropped",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "6fe454585dfe10ba",
+      "path": "/images/launch-ground/plesetsk.jpg",
+      "source_type": "derived-mosaic",
+      "title": "EOX Sentinel-2 cloudless — Plesetsk Cosmodrome",
+      "author": "EOX IT Services GmbH",
+      "agency": "EOX IT Services GmbH",
+      "source_url": "https://s2maps.eu",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "EOX Sentinel-2 cloudless (https://s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020.",
+      "modifications": [
+        "cropped",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "15e2b299a6d39c32",
+      "path": "/images/launch-ground/sriharikota.jpg",
+      "source_type": "derived-mosaic",
+      "title": "EOX Sentinel-2 cloudless — Satish Dhawan Space Centre, Sriharikota",
+      "author": "EOX IT Services GmbH",
+      "agency": "EOX IT Services GmbH",
+      "source_url": "https://s2maps.eu",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "EOX Sentinel-2 cloudless (https://s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020.",
+      "modifications": [
+        "cropped",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "d7ae23aeade5a2b4",
+      "path": "/images/launch-ground/starbase.jpg",
+      "source_type": "derived-mosaic",
+      "title": "EOX Sentinel-2 cloudless — Starbase, Boca Chica",
+      "author": "EOX IT Services GmbH",
+      "agency": "EOX IT Services GmbH",
+      "source_url": "https://s2maps.eu",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "EOX Sentinel-2 cloudless (https://s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020.",
+      "modifications": [
+        "cropped",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "298aeb4530c6ad55",
+      "path": "/images/launch-ground/taiyuan.jpg",
+      "source_type": "derived-mosaic",
+      "title": "EOX Sentinel-2 cloudless — Taiyuan Satellite Launch Center",
+      "author": "EOX IT Services GmbH",
+      "agency": "EOX IT Services GmbH",
+      "source_url": "https://s2maps.eu",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "EOX Sentinel-2 cloudless (https://s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020.",
+      "modifications": [
+        "cropped",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "908c45bcc4c0e087",
+      "path": "/images/launch-ground/tanegashima.jpg",
+      "source_type": "derived-mosaic",
+      "title": "EOX Sentinel-2 cloudless — Tanegashima Space Center",
+      "author": "EOX IT Services GmbH",
+      "agency": "EOX IT Services GmbH",
+      "source_url": "https://s2maps.eu",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "EOX Sentinel-2 cloudless (https://s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020.",
+      "modifications": [
+        "cropped",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "432b091abf8a68eb",
+      "path": "/images/launch-ground/vandenberg.jpg",
+      "source_type": "derived-mosaic",
+      "title": "EOX Sentinel-2 cloudless — Vandenberg Space Force Base",
+      "author": "EOX IT Services GmbH",
+      "agency": "EOX IT Services GmbH",
+      "source_url": "https://s2maps.eu",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "EOX Sentinel-2 cloudless (https://s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020.",
+      "modifications": [
+        "cropped",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "74384455024a48b0",
+      "path": "/images/launch-ground/wenchang.jpg",
+      "source_type": "derived-mosaic",
+      "title": "EOX Sentinel-2 cloudless — Wenchang Space Launch Site",
+      "author": "EOX IT Services GmbH",
+      "agency": "EOX IT Services GmbH",
+      "source_url": "https://s2maps.eu",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "EOX Sentinel-2 cloudless (https://s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020.",
+      "modifications": [
+        "cropped",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "70bd6594c4e57c38",
+      "path": "/images/launch-ground/xichang.jpg",
+      "source_type": "derived-mosaic",
+      "title": "EOX Sentinel-2 cloudless — Xichang Satellite Launch Center",
+      "author": "EOX IT Services GmbH",
+      "agency": "EOX IT Services GmbH",
+      "source_url": "https://s2maps.eu",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "EOX Sentinel-2 cloudless (https://s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020.",
+      "modifications": [
+        "cropped",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-17T14:16:06.154Z"
     }
   ]
 }

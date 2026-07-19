@@ -40,6 +40,10 @@
   "flight_data_quality": "sparse",
   "fleet_refs": [
     {
+      "id": "proton-k",
+      "role": "launcher"
+    },
+    {
       "id": "lunokhod-2",
       "role": "spacecraft"
     }
@@ -58,7 +62,11 @@
       "v_infinity_km_s": 2.4,
       "periapsis_km": 90,
       "inclination_deg": 60,
-      "source": "NASA NSSDCA Luna 21 archive; lunar-orbit insertion 1973-01-12, landing 1973-01-15"
+      "source": "NASA NSSDCA Luna 21 archive; lunar-orbit insertion 1973-01-12, landing 1973-01-15",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 3,

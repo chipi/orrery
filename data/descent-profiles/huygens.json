@@ -1,0 +1,24 @@
+{
+  "missionId": "huygens",
+  "siteId": "huygens",
+  "body": "titan",
+  "landingSite": { "lat": -10.3, "lon": 192.3 },
+  "entryState": { "altitudeM": 800000, "velocityMs": 6000, "flightPathAngleDeg": 65 },
+  "entryMassKg": 320,
+  "entryCdA": 2.5,
+  "archetype": "TITAN_PARACHUTE",
+  "params": {
+    "chuteDeployAltM": 120000,
+    "terminalHandoffAltM": 80000,
+    "parachuteCdA": 8,
+    "terminalCdA": 2,
+    "heatshieldKg": 80
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Huygens probe descent to Titan — ESA/NASA",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens"
+    }
+  ]
+}

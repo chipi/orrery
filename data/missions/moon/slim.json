@@ -63,7 +63,11 @@
       "periapsis_km": 100,
       "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.75,
-      "source": "JAXA SLIM LOI Report (2023-12)"
+      "source": "JAXA SLIM LOI Report (2023-12)",
+      "entry_velocity_km_s": 0.15,
+      "edl_system": "powered",
+      "edl_duration_s": 100,
+      "touchdown_velocity_ms": 1
     },
     "totals": {
       "total_dv_km_s": 3,

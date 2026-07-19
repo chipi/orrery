@@ -40,6 +40,10 @@
   "flight_data_quality": "sparse",
   "fleet_refs": [
     {
+      "id": "proton-k",
+      "role": "launcher"
+    },
+    {
       "id": "mars-3",
       "role": "spacecraft"
     }
@@ -58,7 +62,11 @@
       "v_infinity_km_s": 5.7,
       "periapsis_km": 1500,
       "inclination_deg": 60,
-      "source": "NASA NSSDCA Mars 3 archive; orbital parameters approximate; lander descent ∆v ~1.5 km/s estimated from comparable Soviet probes"
+      "source": "NASA NSSDCA Mars 3 archive; orbital parameters approximate; lander descent ∆v ~1.5 km/s estimated from comparable Soviet probes",
+      "entry_velocity_km_s": 5.6,
+      "edl_system": "parachute_retro",
+      "edl_duration_s": 2169,
+      "touchdown_velocity_ms": 32.61
     },
     "totals": {
       "total_dv_km_s": 5.5,

@@ -1,0 +1,16 @@
+{
+  "missionId": "apollo11",
+  "siteId": "apollo11",
+  "body": "moon",
+  "landingSite": { "lat": 0.67, "lon": 23.47 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 7300,
+  "entryCdA": 0,
+  "retroPropellantKg": 8200,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Apollo 11 Mission Report (NASA SP-238)", "u": "https://www.nasa.gov/history/alsj/a11/a11missionreport.html" }
+  ]
+}

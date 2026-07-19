@@ -58,6 +58,9 @@
       "return": {
         "type": "none"
       }
+    },
+    "launch": {
+      "vehicle_stage": "Molniya-M Block-L upper stage"
     }
   }
 }

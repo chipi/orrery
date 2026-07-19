@@ -1,0 +1,16 @@
+{
+  "missionId": "chandrayaan3",
+  "siteId": "chandrayaan3",
+  "body": "moon",
+  "landingSite": { "lat": -69.37, "lon": 32.35 },
+  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
+  "entryMassKg": 1750,
+  "entryCdA": 0,
+  "retroPropellantKg": 250,
+  "archetype": "LUNAR_POWERED",
+  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "source_tier": "flagship",
+  "provenance": [
+    { "l": "Chandrayaan-3 Vikram EDL — ISRO mission report", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2023-098C" }
+  ]
+}

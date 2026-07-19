@@ -1,0 +1,38 @@
+{
+  "id": "titan-ii-glv",
+  "name": "Titan II GLV",
+  "source_tier": "flagship",
+  "payloadKg": 2800,
+  "fairingKg": 0,
+  "fairingJettisonAltM": 100000,
+  "refAreaM2": 7.3,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.51, "lon": -80.55, "name": "LC-19 · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [12, 89], [45, 66], [95, 45], [145, 28], [200, 15], [260, 6], [320, 2], [360, 0]],
+  "stages": [
+    {
+      "name": "Stage 1",
+      "wetKg": 122000,
+      "dryKg": 4090,
+      "thrustSlKN": 1913,
+      "thrustVacKN": 2097,
+      "ispSlS": 258,
+      "ispVacS": 296,
+      "engines": 1,
+      "chamberTempK": 3000
+    },
+    {
+      "name": "Stage 2",
+      "wetKg": 30000,
+      "dryKg": 2800,
+      "thrustVacKN": 445,
+      "ispVacS": 316,
+      "engines": 1,
+      "chamberTempK": 3000
+    }
+  ],
+  "provenance": [
+    { "l": "Spaceflight101 — Titan II", "u": "https://spaceflight101.com/spacerockets/titan-ii/" },
+    { "l": "Encyclopedia Astronautica — Titan II GLV", "u": "http://www.astronautix.com/t/titanii.html" }
+  ]
+}

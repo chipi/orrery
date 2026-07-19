@@ -1,0 +1,26 @@
+{
+  "id": "ballistic-coefficient",
+  "tab": "mission-phases",
+  "order": 5,
+  "diagram": "ballistic-coefficient.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/fly",
+      "query": "?descent=1",
+      "context_key": "Compare a light chuted lander with a heavy propulsive one in ?descent=1 — different ballistic coefficients, different descents"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Ballistic coefficient",
+      "u": "https://en.wikipedia.org/wiki/Ballistic_coefficient",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Entry, Descent & Landing (Mars 2020)",
+      "u": "https://mars.nasa.gov/mars2020/timeline/landing/entry-descent-landing/",
+      "t": "core"
+    }
+  ]
+}

@@ -37,15 +37,29 @@ export function buildMars3PetalHotspot(_accentColor: string): THREE.Group {
   body.position.y = 0.3;
   g.add(body);
 
-  // 4 deployed petals — large triangular plates fanned out on the
-  // surface, with their hinges at the equator of the capsule.
+  // 4 deployed petals — flat triangular plates hinged at the sphere equator,
+  // fanning outward and tilted up ~28°. Identical pivot approach to Luna 9
+  // but scaled for Mars 3's larger capsule (radius 0.3 vs 0.28).
   for (let i = 0; i < 4; i++) {
     const ang = (i / 4) * Math.PI * 2;
-    const petal = new THREE.Mesh(new THREE.ConeGeometry(0.32, 0.5, 3), petalMat());
-    petal.position.set(Math.cos(ang) * 0.34, 0.04, Math.sin(ang) * 0.34);
-    petal.rotation.y = ang + Math.PI / 6;
-    petal.rotation.x = Math.PI / 2;
-    g.add(petal);
+    const pivot = new THREE.Group();
+    // Hinge point: sphere surface at equator height.
+    pivot.position.set(Math.cos(ang) * 0.16, 0.16, Math.sin(ang) * 0.16);
+    // Rotate pivot so its local +x axis points radially outward.
+    pivot.rotation.y = -ang;
+
+    const geo = new THREE.ConeGeometry(0.16, 0.36, 3);
+    // Apex at origin → base at pivot origin, apex points outward along +x.
+    geo.rotateZ(-Math.PI / 2);
+    geo.translate(0.18, 0, 0);
+
+    const mesh = new THREE.Mesh(geo, petalMat());
+    // Flatten into a thin plate.
+    mesh.scale.y = 0.14;
+    // Tilt outer edge up ~28°.
+    mesh.rotation.z = 0.5;
+    pivot.add(mesh);
+    g.add(pivot);
   }
 
   // Camera mast — short cylindrical antenna on top.

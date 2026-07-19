@@ -23,6 +23,8 @@
   import { buildTianwenZhurongHotspot } from '$lib/hotspot-models/tianwen-zhurong';
   import { buildSchiaparelliHotspot } from '$lib/hotspot-models/schiaparelli';
   import { buildBeagle2Hotspot } from '$lib/hotspot-models/beagle-2';
+  import { buildPerseveranceRoverHotspot } from '$lib/hotspot-models/mars-perseverance-rover';
+  import { buildInsightLanderHotspot } from '$lib/hotspot-models/mars-insight-lander';
 
   type Item = { id: string; label: string; build: () => THREE.Group | null };
 
@@ -94,7 +96,9 @@
         label: 'Curiosity',
         build: () => buildCuriosityClassHotspot(US, { withIngenuity: true }),
       },
+      { id: 'perseverance', label: 'Perseverance', build: () => buildPerseveranceRoverHotspot(US) },
       { id: 'phoenix', label: 'Phoenix', build: () => buildPhoenixClassHotspot(US) },
+      { id: 'insight', label: 'InSight', build: () => buildInsightLanderHotspot(US) },
       { id: 'mars-3', label: 'Mars 3', build: () => buildMars3PetalHotspot(SU) },
       { id: 'zhurong', label: 'Zhurong', build: () => buildTianwenZhurongHotspot(CN) },
       { id: 'schiaparelli', label: 'Schiaparelli', build: () => buildSchiaparelliHotspot(EU) },

@@ -45,14 +45,33 @@ export function buildLuna9Hotspot(accentColor: string): THREE.Group {
   body.position.y = 0.28;
   g.add(body);
 
-  // 4 open petals — flat triangular plates angled outward.
+  // 4 open petals — flat triangular plates hinged at the sphere equator,
+  // fanning outward and tilted up ~28°. Each petal is built inside a pivot
+  // Group whose origin sits at the sphere's lower edge so the hinge reads
+  // correctly; the cone geometry is pre-rotated/translated so its base is
+  // at the pivot origin and its apex points radially outward (+x in pivot
+  // space), then flattened with scale.y to read as a thin plate.
   for (let i = 0; i < 4; i++) {
     const ang = (i / 4) * Math.PI * 2;
-    const petal = new THREE.Mesh(new THREE.ConeGeometry(0.24, 0.4, 3), petalMat());
-    petal.position.set(Math.cos(ang) * 0.36, 0.05, Math.sin(ang) * 0.36);
-    petal.rotation.y = ang;
-    petal.rotation.x = Math.PI / 2;
-    g.add(petal);
+    const pivot = new THREE.Group();
+    // Hinge point: sphere surface at equator height.
+    pivot.position.set(Math.cos(ang) * 0.14, 0.14, Math.sin(ang) * 0.14);
+    // Rotate pivot so its local +x axis points radially outward.
+    pivot.rotation.y = -ang;
+
+    const geo = new THREE.ConeGeometry(0.13, 0.3, 3);
+    // Apex of cone was at origin pointing +y; reorient so base is at
+    // pivot origin and apex points outward along +x.
+    geo.rotateZ(-Math.PI / 2);
+    geo.translate(0.15, 0, 0);
+
+    const mesh = new THREE.Mesh(geo, petalMat());
+    // Flatten into a thin plate.
+    mesh.scale.y = 0.14;
+    // Tilt outer edge up ~28° so the petal fans up from the ground.
+    mesh.rotation.z = 0.5;
+    pivot.add(mesh);
+    g.add(pivot);
   }
 
   // Imaging head on top — small cylindrical dome.
@@ -65,12 +84,16 @@ export function buildLuna9Hotspot(accentColor: string): THREE.Group {
   lens.position.set(0.08, 0.6, 0);
   g.add(lens);
 
-  // 2 whip antennas (long, thin).
-  for (const ang of [Math.PI / 3, -Math.PI / 3]) {
-    const whip = new THREE.Mesh(new THREE.CylinderGeometry(0.004, 0.004, 0.4, 4), bodyMat());
-    whip.rotation.z = ang;
-    whip.position.set(Math.sin(ang) * 0.2, 0.45, 0);
-    g.add(whip);
+  // 2 whip antennas — clean vertical rods standing from near the top of
+  // the sphere, spaced symmetrically either side of the imaging head.
+  for (const side of [-1, 1]) {
+    const rod = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.006, 0.006, 0.32, 6),
+      new THREE.MeshStandardMaterial({ color: SOVIET_SILVER, metalness: 0.8, roughness: 0.3 }),
+    );
+    // Base of rod sits at sphere surface ~45° from vertical.
+    rod.position.set(side * 0.14, 0.52, 0);
+    g.add(rod);
   }
 
   // Agency accent ring around the base.

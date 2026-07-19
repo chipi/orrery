@@ -79242,6 +79242,48 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "91357bb6fe0fc15f",
+      "path": "/images/missions/huygens/01.webp",
+      "source_type": "direct-other",
+      "title": "Uncurated panel image — missions/huygens",
+      "author": "ESA / NASA",
+      "agency": "ESA / NASA",
+      "source_url": "https://commons.wikimedia.org/",
+      "image_url": null,
+      "license_short": "CC-BY-SA-3.0-IGO",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
+      "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+      "modifications": [
+        "curated-no-upstream-record",
+        "walker-fallback"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-19T06:28:25.887Z"
+    },
+    {
+      "id": "c2244285c329adba",
+      "path": "/images/missions/near-shoemaker/01.webp",
+      "source_type": "direct-other",
+      "title": "Uncurated panel image — missions/near-shoemaker",
+      "author": "NASA / JHU APL",
+      "agency": "NASA / JHU APL",
+      "source_url": "https://commons.wikimedia.org/",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "curated-no-upstream-record",
+        "walker-fallback"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-19T06:28:25.888Z"
     }
   ]
 }

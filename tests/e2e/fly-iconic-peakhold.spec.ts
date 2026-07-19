@@ -91,7 +91,12 @@ async function loadMissionAndJumpToFlyby(
 // detection is the same scrub-adjacent UX that races touch pointer events.
 // Desktop covers the cinematic preset.
 test.beforeEach(({ page: _page }, testInfo) => {
-  test.skip(testInfo.project.name === 'mobile-chromium', 'desktop-only cinematic peakHold');
+  // Desktop-only: this spec drives the opening overlay's own "proceed to
+  // simulation" affordance and the desktop cinematic preset. Skip BOTH touch
+  // projects (portrait + landscape) — mirrors fly-render-validation's
+  // `!== 'desktop-chromium'` guard. The landscape variant previously ran by
+  // accident (skip predated the mobile-landscape project) and always failed.
+  test.skip(testInfo.project.name !== 'desktop-chromium', 'desktop-only cinematic peakHold');
 });
 
 test.describe('/fly iconic-shot peakHold smoke (one beat per planet)', () => {

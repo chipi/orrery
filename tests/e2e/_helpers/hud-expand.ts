@@ -89,11 +89,48 @@ export async function openControlsDrawer(page: Page): Promise<void> {
 }
 
 /**
+ * Dismiss the /fly Scene-0 opening overlay (the mission-intro / launch /
+ * descent chooser) when it's on screen. On the short landscape viewport
+ * (Pixel 5 landscape ≈ 851×393) the overlay sits over the bottom `.fly-mtabs`
+ * bar and intercepts the MISSION tap, so the HUD can't be expanded until the
+ * overlay is cleared — the SKIP affordance is present for every mission. No-op
+ * once dismissed / when absent (e.g. tall desktop where nothing intercepts).
+ */
+export async function dismissFlyOpening(page: Page): Promise<void> {
+  // Only the touch chrome routes the identity HUD through the bottom
+  // `.fly-mtabs` bar that the Scene-0 opening overlay covers. On desktop the
+  // overlay never blocks the HUD, and desktop-only specs (e.g.
+  // fly-iconic-peakhold) drive the overlay's own "proceed to simulation"
+  // affordance — so dismissing it there would break them. Gate on the stable
+  // `data-touch` html attribute (set at init, unlike a racy `.fly-mtabs`
+  // visibility probe right after navigation).
+  const isTouch = await page
+    .evaluate(() => document.documentElement.hasAttribute('data-touch'))
+    .catch(() => false);
+  if (!isTouch) return;
+  const skip = page.locator('[data-testid="fly-opening-skip"]').first();
+  // The overlay mounts a beat AFTER navigation, and callers invoke this right
+  // after page.goto(). A one-shot isVisible() check would race the mount and
+  // no-op, leaving the overlay to appear and swallow the MISSION tap. Wait a
+  // bounded grace for the SKIP affordance; absent after it → no overlay.
+  await skip.waitFor({ state: 'visible', timeout: 5_000 }).catch(() => {});
+  if ((await skip.count()) && (await skip.isVisible().catch(() => false))) {
+    await skip.click({ timeout: 5_000 }).catch(() => {});
+    // Wait for the overlay to actually tear down before returning so the
+    // MISSION tab underneath is tappable.
+    await skip.waitFor({ state: 'detached', timeout: 3_000 }).catch(() => {});
+  }
+}
+
+/**
  * Expand the /fly HUD on mobile. The identity hud-stack still collapses behind
  * `.hud-collapse` (◐) where that button is live; the secondary toggle rows live
  * in the controls drawer. Surface both so HUD-resident affordances lay out.
  */
 export async function expandFlyHud(page: Page): Promise<void> {
+  // The Scene-0 opening overlay must be cleared first — on short landscape it
+  // covers `.fly-mtabs` and swallows the MISSION tap that reveals the HUD.
+  await dismissFlyOpening(page);
   const btn = page.locator('.hud-collapse');
   if (await btn.count()) {
     const shown = (await btn.first().evaluate((el) => getComputedStyle(el).display)) !== 'none';
@@ -114,11 +151,12 @@ export async function expandFlyHud(page: Page): Promise<void> {
     .filter({ hasText: /mission/i })
     .first();
   if ((await missionTab.count()) && (await missionTab.isVisible().catch(() => false))) {
-    const hudShown = await page
-      .locator('[data-testid="mission-name"]')
-      .isVisible()
-      .catch(() => false);
-    if (!hudShown) {
+    const name = page.locator('[data-testid="mission-name"]');
+    // A single tap can be swallowed while the 3D scene paints; retry until the
+    // identity HUD lays out (non-zero box) or the budget runs. Mirrors the
+    // resilient tap loop in openDrawerTab.
+    for (let i = 0; i < 6; i++) {
+      if (await name.isVisible().catch(() => false)) break;
       await missionTab.click({ timeout: 5_000 }).catch(() => {});
       await page.waitForTimeout(250);
     }

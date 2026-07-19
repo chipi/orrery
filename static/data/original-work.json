@@ -1702,18 +1702,32 @@
       "thumb": "/images/colophon/model-mars-mer.webp"
     },
     {
-      "title": "Curiosity / Perseverance",
-      "what": "MSL-class RTG rover with mast + arm (and Ingenuity).",
+      "title": "Curiosity",
+      "what": "MSL-class RTG rover with mast + arm.",
       "where": "Mars landing sites",
       "route": "/mars",
       "thumb": "/images/colophon/model-mars-curiosity.webp"
     },
     {
-      "title": "Phoenix / InSight",
+      "title": "Perseverance + Ingenuity",
+      "what": "Mars 2020 rover with Mastcam-Z mast, sample-caching bay, and the Ingenuity helicopter.",
+      "where": "Mars landing sites",
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-perseverance-rover.webp"
+    },
+    {
+      "title": "Phoenix",
       "what": "Solar stationary lander with a robotic arm.",
       "where": "Mars landing sites",
       "route": "/mars",
       "thumb": "/images/colophon/model-mars-phoenix.webp"
+    },
+    {
+      "title": "InSight",
+      "what": "Decagonal solar-panelled geophysics lander with the SEIS seismometer and HP3 mole.",
+      "where": "Mars landing sites",
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-insight-lander.webp"
     },
     {
       "title": "Mars 3",
@@ -2225,7 +2239,7 @@
     "anatomy_art": 144,
     "diagrams_science": 102,
     "posters": 27,
-    "models3d": 104,
+    "models3d": 106,
     "canvas2d": 6,
     "ui": 4,
     "writing": 8

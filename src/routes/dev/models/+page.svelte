@@ -35,6 +35,8 @@
   import { buildMERRoverHotspot } from '$lib/hotspot-models/mer-rover';
   import { buildCuriosityClassHotspot } from '$lib/hotspot-models/curiosity-class';
   import { buildPhoenixClassHotspot } from '$lib/hotspot-models/phoenix-class';
+  import { buildPerseveranceRoverHotspot } from '$lib/hotspot-models/mars-perseverance-rover';
+  import { buildInsightLanderHotspot } from '$lib/hotspot-models/mars-insight-lander';
   import { buildMars3PetalHotspot } from '$lib/hotspot-models/mars-3-petal';
   import { buildTianwenZhurongHotspot } from '$lib/hotspot-models/tianwen-zhurong';
   import { buildSchiaparelliHotspot } from '$lib/hotspot-models/schiaparelli';
@@ -151,15 +153,27 @@
     },
     {
       id: 'curiosity',
-      label: 'Curiosity / Perseverance',
+      label: 'Curiosity',
       family: 'mars',
       build: () => buildCuriosityClassHotspot(US, { withIngenuity: true }),
     },
     {
+      id: 'perseverance-rover',
+      label: 'Perseverance + Ingenuity',
+      family: 'mars',
+      build: () => buildPerseveranceRoverHotspot(US),
+    },
+    {
       id: 'phoenix',
-      label: 'Phoenix / InSight',
+      label: 'Phoenix',
       family: 'mars',
       build: () => buildPhoenixClassHotspot(US),
+    },
+    {
+      id: 'insight-lander',
+      label: 'InSight',
+      family: 'mars',
+      build: () => buildInsightLanderHotspot(US),
     },
     { id: 'mars-3', label: 'Mars 3', family: 'mars', build: () => buildMars3PetalHotspot(SU) },
     {

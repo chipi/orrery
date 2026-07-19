@@ -33,6 +33,7 @@ export const MU_BODY_M3_S2: Record<DescentBody, number> = {
   mars: 4.2828374e13,
   venus: 3.24858592e14,
   titan: 8.978e12,
+  earth: 3.986004418e14,
   jupiter: 1.26686534e17,
   comet_67p: 6.662e2, // 67P/Churyumov–Gerasimenko, M≈9.98e12 kg
   itokawa: 2.342, // M≈3.51e10 kg
@@ -47,6 +48,7 @@ export const R_BODY_M: Record<DescentBody, number> = {
   mars: 3_389_500,
   venus: 6_051_800,
   titan: 2_574_700,
+  earth: 6_371_000,
   jupiter: 69_911_000, // 1-bar volumetric radius (the "datum"; probe descends below)
   comet_67p: 1_720, // mean radius of the bilobed nucleus
   itokawa: 165, // mean radius of the 535×294×209 m body
@@ -61,6 +63,7 @@ export const SURFACE_DENSITY_KGM3: Record<DescentBody, number> = {
   mars: 0.02,
   venus: 65,
   titan: 5.3, // dense cold N₂ at the surface (~1.5 bar, 94 K)
+  earth: 1.225, // ISA sea-level density (1013 hPa, 15 °C)
   jupiter: 0.16, // at the 1-bar datum; ρ(h)=ρ₀·exp(−h/H) rises as the probe sinks below
   comet_67p: 0, // airless
   itokawa: 0,
@@ -75,6 +78,7 @@ export const ATM_SCALE_HEIGHT_M: Record<DescentBody, number> = {
   mars: 11_000,
   venus: 15_900,
   titan: 40_000, // thick, cold, deep troposphere
+  earth: 8_500, // ISA troposphere single-exponential fit
   jupiter: 27_000,
   comet_67p: 1, // airless (density 0)
   itokawa: 1,
@@ -90,6 +94,7 @@ export const SOUND_SPEED_MS: Record<DescentBody, number> = {
   mars: 240,
   venus: 410,
   titan: 194, // cold N₂
+  earth: 340, // dry air, 15 °C
   jupiter: 800, // H₂/He
   comet_67p: 0, // airless → Mach meaningless
   itokawa: 0,
@@ -104,6 +109,7 @@ export const BODY_LABEL: Record<DescentBody, string> = {
   mars: 'Mars',
   venus: 'Venus',
   titan: 'Titan',
+  earth: 'Earth',
   jupiter: 'Jupiter',
   comet_67p: '67P/C-G',
   itokawa: 'Itokawa',

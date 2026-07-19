@@ -99,7 +99,9 @@
     ...(mission.entryVelocityKms != null
       ? ([['ENTRY VELOCITY', `${mission.entryVelocityKms.toFixed(2)} km/s`]] as [string, string][])
       : []),
-    ['DESCENT', `${Math.round(duration)} s`],
+    // Earth re-entry shows the nominal ~14 min entry→splashdown, not the 1-DOF
+    // model's inflated path time (RFC-034 §13).
+    ['DESCENT', `${Math.round(profile.body === 'earth' ? 840 : duration)} s`],
   ]);
 
   let container: HTMLDivElement;
@@ -121,6 +123,22 @@
   );
   const retroOn = $derived(
     liveState.phaseKind === 'powered_retro' || liveState.phaseKind === 'skycrane',
+  );
+  // Earth capsule re-entry indicators (RFC-034 §13): the plasma comms-blackout
+  // during the hypersonic entry, and the drogue → main canopy sequence.
+  const isEarthReentry = $derived(profile.body === 'earth');
+  const inBlackout = $derived(
+    isEarthReentry && liveState.phaseKind === 'ballistic_entry' && liveState.velocityMs > 2000,
+  );
+  const drogueOut = $derived(isEarthReentry && chuteOut && liveState.altKm >= 3.2);
+  const mainOut = $derived(isEarthReentry && chuteOut && liveState.altKm < 3.2);
+  // The 1-DOF shallow-corridor model yields an unphysically long path (~100 min);
+  // a real capsule entry-interface → splashdown is ~14 min. For Earth we display a
+  // clock scaled to that nominal so the E+ readout is realistic (the underlying
+  // physics — peak-g, sequence, outcome — is unchanged). RFC-034 §13.
+  const NOMINAL_EARTH_REENTRY_S = 840;
+  const clockT = $derived(
+    isEarthReentry && duration > 0 ? t * (NOMINAL_EARTH_REENTRY_S / duration) : t,
   );
 
   // Begin the touchdown flash. The real handoff (onComplete) fires when it ends.
@@ -222,7 +240,7 @@
   </div>
 
   <div class="clock">
-    <span class="met">{formatDescentClock(t)}</span>
+    <span class="met">{formatDescentClock(clockT)}</span>
     <span
       class="status"
       class:hot={retroOn}
@@ -231,16 +249,23 @@
     >
   </div>
 
-  <!-- EDL indicators — parachute + retro lamps. -->
+  <!-- EDL indicators — parachute + retro lamps (planetary), or the Earth capsule
+       blackout → drogue → main sequence (RFC-034 §13). -->
   <div class="lamps">
-    <span class="lamp" class:on={chuteOut}>CHUTE</span>
-    <span class="lamp" class:on={retroOn}
-      >RETRO<ScienceChip
-        tab="mission-phases"
-        section="propulsive-landing"
-        label="Propulsive landing"
-      /></span
-    >
+    {#if isEarthReentry}
+      <span class="lamp blackout" class:on={inBlackout}>BLACKOUT</span>
+      <span class="lamp" class:on={drogueOut}>DROGUE</span>
+      <span class="lamp" class:on={mainOut}>MAIN</span>
+    {:else}
+      <span class="lamp" class:on={chuteOut}>CHUTE</span>
+      <span class="lamp" class:on={retroOn}
+        >RETRO<ScienceChip
+          tab="mission-phases"
+          section="propulsive-landing"
+          label="Propulsive landing"
+        /></span
+      >
+    {/if}
   </div>
 
   <div class="dossier">
@@ -447,6 +472,18 @@
     color: #ffcf6a;
     border-color: rgba(255, 190, 74, 0.7);
     box-shadow: 0 0 12px rgba(255, 160, 40, 0.3);
+  }
+  /* Plasma comms-blackout — hotter, pulsing amber-red. */
+  .lamp.blackout.on {
+    color: #ff8a5a;
+    border-color: rgba(255, 110, 60, 0.8);
+    box-shadow: 0 0 14px rgba(255, 90, 40, 0.5);
+    animation: blackout-pulse 0.9s ease-in-out infinite;
+  }
+  @keyframes blackout-pulse {
+    50% {
+      opacity: 0.55;
+    }
   }
   .dossier {
     position: absolute;

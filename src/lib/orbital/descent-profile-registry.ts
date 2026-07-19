@@ -20,6 +20,7 @@ const DESCENT_BODIES = [
   'mars',
   'venus',
   'titan',
+  'earth',
   'jupiter',
   'comet_67p',
   'itokawa',
@@ -45,7 +46,8 @@ export type ArchetypeName =
   | 'ASTEROID_TOUCH_AND_GO'
   | 'COMET_HARPOON'
   | 'TITAN_PARACHUTE'
-  | 'JUPITER_PROBE';
+  | 'JUPITER_PROBE'
+  | 'EARTH_CAPSULE_REENTRY';
 
 /**
  * Per-mission knobs an archetype reads to build its phase sequence. Every field
@@ -300,6 +302,36 @@ const JUPITER_PROBE: ArchetypeBuilder = (p) => [
   },
 ];
 
+/** Earth-orbit capsule re-entry (Tier-1: Mercury/Gemini/Vostok/Voskhod/Apollo CM/
+ *  Soyuz/Dragon/Shenzhou — RFC-034 §13). A deorbited (or suborbital-lofted) blunt
+ *  capsule rides its ablative heat shield through a hypersonic ballistic entry
+ *  (entry/peak-heat/peak-decel auto-emitted), a drogue stabilises it through the
+ *  transonic band, then the main canopies deploy (the drogue is released as they
+ *  do) and carry it to a ~7 m·s⁻¹ splashdown/ground touchdown. Orbital vs
+ *  suborbital differ only in the JSON entry state (velocity/FPA) + the coast
+ *  layer — the EDL hardware is identical, so one archetype covers both. Soyuz-class
+ *  ground landings tune to a lower terminal via a larger main Cd·A; a failed main
+ *  (soyuz-1) is a low-Cd·A profile that busts the survivable limit → honest crash. */
+const EARTH_CAPSULE_REENTRY: ArchetypeBuilder = (p) => [
+  {
+    kind: 'ballistic_entry',
+    endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 8000 },
+  },
+  {
+    kind: 'parachute', // drogue — stabilises through the transonic band
+    endTrigger: { type: 'altitude_m', value: p.terminalHandoffAltM ?? 3000 },
+    cdA: p.parachuteCdA ?? 30,
+    jettisonKg: p.heatshieldKg ?? 0,
+    events: ['parachute_deploy'],
+  },
+  {
+    kind: 'parachute', // main canopies — the drogue is released as they open
+    endTrigger: { type: 'ground', value: 0 },
+    cdA: p.terminalCdA ?? 900,
+    events: ['parachute_jettison'],
+  },
+];
+
 const ARCHETYPES: Record<ArchetypeName, ArchetypeBuilder> = {
   LUNAR_POWERED,
   LUNA_DIRECT_IMPACT,
@@ -312,6 +344,7 @@ const ARCHETYPES: Record<ArchetypeName, ArchetypeBuilder> = {
   COMET_HARPOON,
   TITAN_PARACHUTE,
   JUPITER_PROBE,
+  EARTH_CAPSULE_REENTRY,
 };
 
 /** The default survivable-touchdown limit (m·s⁻¹) per archetype. */
@@ -327,6 +360,7 @@ const ARCHETYPE_SURVIVABLE: Record<ArchetypeName, number> = {
   COMET_HARPOON: 5, // Philae touched at ~1 m/s and survived the bounces
   TITAN_PARACHUTE: 8, // Huygens hit ~4.5 m/s
   JUPITER_PROBE: 60, // no touchdown — high limit so the crush isn't flagged a crash
+  EARTH_CAPSULE_REENTRY: 10, // splash/ground at ~7 m/s; a fouled main busts this → crash
 };
 
 // ─── Thin JSON shape + expansion ────────────────────────────────────
@@ -421,6 +455,41 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'rosetta', // Philae bounce-landing on comet 67P
   'huygens', // Titan parachute descent
   'near-shoemaker', // Eros soft landing (433 Eros)
+  // Tier-1 Earth-orbit capsule re-entry (RFC-034 §13). MVP first; the rest of the
+  // ~31 are added as their profiles land.
+  'friendship-7', // Mercury-Atlas 6 — John Glenn, 3 orbits, Atlantic splashdown
+  'vostok-1', // Gagarin — first human, 1 orbit, Saratov steppe landing
+  'apollo7', // first crewed Apollo — Apollo CM, 163 orbits, Atlantic splashdown
+  // The rest of the Tier-1 set (Mercury/Gemini/Vostok/Voskhod/Apollo CM/Soyuz/
+  // Dragon/Shenzhou + 2 Mercury-Redstone suborbital hops).
+  'aurora-7',
+  'sigma-7',
+  'faith-7',
+  'freedom-7',
+  'liberty-bell-7',
+  'gemini3',
+  'gemini4',
+  'gemini6a',
+  'gemini7',
+  'gemini8',
+  'gemini12',
+  'vostok-2',
+  'vostok-3',
+  'vostok-4',
+  'vostok-5',
+  'vostok-6',
+  'voskhod-1',
+  'voskhod-2',
+  'apollo9',
+  'apollo-soyuz',
+  'skylab-2',
+  'skylab-3',
+  'skylab-4',
+  'soyuz-1',
+  'soyuz-11',
+  'inspiration4',
+  'polaris-dawn',
+  'shenzhou-1',
 ]);
 
 /** True when a mission plays a descent act (has a hand-authored profile). */

@@ -30,6 +30,10 @@
   "flight_data_quality": "reconstructed",
   "fleet_refs": [
     {
+      "id": "soyuz",
+      "role": "launcher"
+    },
+    {
       "id": "soyuz-7k-ok",
       "role": "spacecraft"
     },

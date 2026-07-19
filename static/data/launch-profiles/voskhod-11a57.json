@@ -1,0 +1,80 @@
+{
+  "id": "voskhod-11a57",
+  "name": "Voskhod (11A57)",
+  "source_tier": "flagship",
+  "payloadKg": 4730,
+  "fairingKg": 0,
+  "fairingJettisonAltM": 100000,
+  "refAreaM2": 30,
+  "cd": 0.3,
+  "launchSite": {
+    "lat": 45.92,
+    "lon": 63.34,
+    "name": "Site 1 · Baikonur Cosmodrome"
+  },
+  "pitchProgram": [
+    [
+      0,
+      90
+    ],
+    [
+      13,
+      88
+    ],
+    [
+      55,
+      66
+    ],
+    [
+      130,
+      42
+    ],
+    [
+      220,
+      22
+    ],
+    [
+      300,
+      8
+    ]
+  ],
+  "boosters": {
+    "name": "Blok B-D",
+    "count": 4,
+    "wetKg": 43400,
+    "dryKg": 3400,
+    "thrustSlKN": 970,
+    "thrustVacKN": 1000,
+    "ispSlS": 252,
+    "ispVacS": 315,
+    "chamberTempK": 3200
+  },
+  "stages": [
+    {
+      "name": "Core",
+      "wetKg": 94000,
+      "dryKg": 7000,
+      "thrustSlKN": 912,
+      "thrustVacKN": 990,
+      "ispSlS": 248,
+      "ispVacS": 315,
+      "engines": 1,
+      "chamberTempK": 3200
+    },
+    {
+      "name": "Blok E",
+      "wetKg": 8100,
+      "dryKg": 1400,
+      "thrustVacKN": 300,
+      "ispVacS": 326,
+      "engines": 1,
+      "chamberTempK": 3100
+    }
+  ],
+  "provenance": [
+    {
+      "l": "RussianSpaceWeb — Voskhod (11A57)",
+      "u": "https://www.russianspaceweb.com/voskhod_lv.html"
+    }
+  ]
+}

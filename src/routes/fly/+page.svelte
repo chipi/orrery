@@ -173,6 +173,9 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import LaunchScene from '$lib/components/LaunchScene.svelte';
   import DescentScene from '$lib/components/DescentScene.svelte';
+  import CoastScene from '$lib/components/CoastScene.svelte';
+  import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
+  import { LOOP_CAP as LEO_LOOP_CAP } from '$lib/three/fly-leo-coast-scene';
   import {
     loadLaunchProfile,
     resolveLauncher,
@@ -337,6 +340,22 @@
   let descentProfile = $state<DescentProfile | null>(null);
   let descentT = $state(0);
   let descentSpeed = $state(3);
+  // ─── Orbit-coast act (RFC-034 §13 · Tier-1 Earth-orbit capsules) ──────
+  // For crewed capsules the flight is pad → orbit-COAST (loop Earth a while) →
+  // re-entry. The coast slots between the launch + descent overlays: LaunchScene
+  // onComplete hands to CoastScene (instead of revealing the cruise scene), which
+  // then hands to DescentScene. Gated on the earth-orbit registry.
+  let showCoast = $state(false);
+  let earthCoast = $derived(getEarthOrbitCoast(mission.id));
+  // The coast is the "cruise" act of the unified pad→orbit→re-entry timeline for
+  // Earth-orbit missions: `coastMetDays` is the elapsed on-orbit time (the master
+  // clock's cruiseMetDays), and `coastFrac` (0..1) drives CoastScene via its
+  // externalClock. The master scrubber owns both — one continuous timeline.
+  let coastMetDays = $state(0);
+  let coastDurationDays = $derived(earthCoast ? earthCoast.coastDurationS / 86400 : 0);
+  let coastFrac = $derived(
+    coastDurationDays > 0 ? Math.min(1, Math.max(0, coastMetDays / coastDurationDays)) : 0,
+  );
   // Load the mission's descent profile whenever the mission changes.
   $effect(() => {
     const id = mission.id;
@@ -384,8 +403,29 @@
     showDescent = false;
     if ((b === 'moon' || b === 'mars' || b === 'venus') && sid) {
       void goto(`${base}/${b}?site=${sid}&from=descent`);
+    } else if (b === 'earth') {
+      // Earth re-entry has no surface-explore route — rest on a recovery card
+      // (splashdown/steppe), the Tier-1 counterpart of the SurfaceScene handoff.
+      showRecovery = true;
     }
   }
+  // Recovery card shown after an Earth re-entry touchdown (RFC-034 §13).
+  let showRecovery = $state(false);
+  // US capsules splash down at sea; Soviet/Chinese capsules land on the steppe.
+  const SPLASHDOWN_CAPSULES = new Set(['mercury', 'gemini', 'apollo-cm', 'dragon']);
+  // Honest-failure captions — the re-entry outcome is not always a success.
+  const RECOVERY_CAPTIONS: Record<string, string> = {
+    'soyuz-1':
+      'Parachute failure — the descent module struck the ground at high speed. Vladimir Komarov was lost, the first in-flight spaceflight fatality.',
+    'soyuz-11':
+      'The capsule landed nominally, but a valve had opened at module separation; the three-man crew were lost to depressurization before touchdown.',
+  };
+  let recoveryOutcome = $derived.by(() => {
+    const ok = descentSummaryFly?.touchdownSuccess ?? true;
+    const splash = earthCoast ? SPLASHDOWN_CAPSULES.has(earthCoast.capsuleId) : true;
+    if (!ok) return { eyebrow: 'IMPACT', fail: true };
+    return { eyebrow: splash ? 'SPLASHDOWN · RECOVERY' : 'TOUCHDOWN · RECOVERY', fail: false };
+  });
   /** Opening CTA (landing missions only): jump straight to the EDL act, past the
    *  launch + cruise — the descent counterpart of startLaunch. */
   function startDescent() {
@@ -1517,11 +1557,23 @@
   // bar stays the 2-segment ascent→cruise, unchanged for orbiters.
   let descentSummaryFly = $derived(descentProfile ? integrateDescent(descentProfile) : null);
   let descentDurationS = $derived(descentSummaryFly ? descentSummaryFly.totalDurationS : 0);
+  // Compressive coast-band width (RFC-034 §13): a 1-orbit hop and an 84-day
+  // marathon shouldn't own the same slice of the scrubber. Shrink the ascent
+  // fraction with log(coast hours) so the coast band *widens* with real duration
+  // (~0.71 for one orbit → ~0.80 for months), bounded so the launch stays
+  // scrubbable. Interplanetary missions keep the default 0.15.
+  let coastAscentFrac = $derived(
+    earthCoast
+      ? Math.max(0.1, Math.min(0.2, 0.2 - 0.03 * Math.log10(Math.max(1, coastDurationDays * 24))))
+      : 0.15,
+  );
   let masterTimeline: JourneyTimeline = $derived(
     makeTimeline(
       launchDurationS,
-      Math.max(1, arcTotalDays),
-      0.15,
+      // Earth-orbit missions: the "cruise" act IS the orbit-coast, so its duration
+      // is the on-orbit time (days). Interplanetary: the transfer arc.
+      earthCoast ? Math.max(0.01, coastDurationDays) : Math.max(1, arcTotalDays),
+      coastAscentFrac,
       descentDurationS,
       descentProfile ? 0.1 : 0,
     ),
@@ -1551,19 +1603,24 @@
             {
               phase: 'descent',
               ascentT: launchDurationS,
-              cruiseMetDays: arcTotalDays,
+              cruiseMetDays: earthCoast ? coastDurationDays : arcTotalDays,
               descentT: Math.max(0, descentT),
             },
             masterTimeline,
           )
-        : pointToScrubber(
-            {
-              phase: 'cruise',
-              ascentT: launchDurationS,
-              cruiseMetDays: Math.max(0, simDay - arcTimeline.dep_day),
-            },
-            masterTimeline,
-          ),
+        : showCoast
+          ? pointToScrubber(
+              { phase: 'cruise', ascentT: launchDurationS, cruiseMetDays: coastMetDays },
+              masterTimeline,
+            )
+          : pointToScrubber(
+              {
+                phase: 'cruise',
+                ascentT: launchDurationS,
+                cruiseMetDays: Math.max(0, simDay - arcTimeline.dep_day),
+              },
+              masterTimeline,
+            ),
   );
   // The value the scrubber input + fill render: the master fraction once a
   // launch act exists, else the plain cruise progress (unchanged).
@@ -1601,13 +1658,21 @@
       // Scrubbing back into the ascent re-mounts LaunchScene fresh (resets any
       // completed warp) and drives it to the scrubbed MET.
       showDescent = false;
+      showCoast = false;
       if (!showLaunch) showLaunch = true;
       launchT = pt.ascentT;
     } else if (pt.phase === 'descent') {
       // Scrubbing into the tail enters the descent act at the scrubbed EDL time.
       showLaunch = false;
+      showCoast = false;
       if (!showDescent) showDescent = true;
       descentT = pt.descentT ?? 0;
+    } else if (earthCoast) {
+      // Cruise band of a Tier-1 Earth-orbit flight = the orbit-coast act.
+      showLaunch = false;
+      showDescent = false;
+      if (!showCoast) showCoast = true;
+      coastMetDays = pt.cruiseMetDays;
     } else {
       showLaunch = false;
       showDescent = false;
@@ -2370,6 +2435,52 @@
           y: cislunarSpacecraft?.position.y,
           z: cislunarSpacecraft?.position.z,
         },
+      });
+      // Tier-1 Earth-orbit re-entry diagnostic (RFC-034 §13) — the pad→coast→
+      // re-entry counterpart of __flyCislunarDebug, for chrome-devtools + e2e.
+      (window as Window & { __flyReentryDebug?: () => unknown }).__flyReentryDebug = () => ({
+        phase: showLaunch
+          ? 'launch'
+          : showCoast
+            ? 'coast'
+            : showDescent
+              ? 'descent'
+              : showRecovery
+                ? 'recovery'
+                : 'idle',
+        earthCoast: earthCoast
+          ? {
+              capsuleId: earthCoast.capsuleId,
+              suborbital: !!earthCoast.suborbital,
+              apogeeKm: earthCoast.apogeeKm,
+              perigeeKm: earthCoast.perigeeKm,
+              inclinationDeg: earthCoast.inclinationDeg,
+              revolutions: earthCoast.revolutions,
+              coastDurationDays,
+            }
+          : null,
+        coastFrac,
+        coastMetDays,
+        liveRev: earthCoast
+          ? Math.min(earthCoast.revolutions, Math.floor(coastFrac * earthCoast.revolutions) + 1)
+          : 0,
+        renderedLoops: earthCoast
+          ? earthCoast.suborbital
+            ? 0
+            : Math.min(LEO_LOOP_CAP, earthCoast.revolutions)
+          : 0,
+        masterU,
+        coastAscentFrac,
+        descent: descentSummaryFly
+          ? {
+              t: descentT,
+              durationS: descentDurationS,
+              peakG: descentSummaryFly.peakDecel.g,
+              touchdownMs: descentSummaryFly.touchdownVelocityMs,
+              success: descentSummaryFly.touchdownSuccess,
+            }
+          : null,
+        recovery: showRecovery ? recoveryOutcome.eyebrow : null,
       });
     }
 
@@ -5448,14 +5559,37 @@
         // clock-driven, externalClock=true). At touchdown DescentScene's own
         // loop fires the surface handoff → handleTouchdown navigates away.
         if (showDescent && isPlaying) {
-          descentT = Math.min(descentDurationS, descentT + dt * descentSpeed);
+          // Earth re-entry: the 1-DOF shallow-corridor model yields a long path
+          // (100+ min) that isn't watchable at a real-time multiplier, so compress
+          // it to a fixed ~30s wall-time play (scaled by the speed pills) — the HUD
+          // clock still ticks the honest MET. Planetary EDL keeps its real-time ×.
+          const earthReentry = descentProfile?.body === 'earth';
+          const rate = earthReentry
+            ? (descentDurationS / 30) * (descentSpeed / 3)
+            : descentSpeed;
+          descentT = Math.min(descentDurationS, descentT + dt * rate);
+        }
+        // Master clock — coast phase (Tier-1 Earth-orbit): advance the on-orbit
+        // days across a fixed ~22s wall-time play (the REV/date counters carry the
+        // real scale via the hybrid rule), then cross to re-entry at the deorbit seam.
+        if (showCoast && isPlaying && coastDurationDays > 0) {
+          const COAST_PLAY_S = 22;
+          coastMetDays = Math.min(
+            coastDurationDays,
+            coastMetDays + dt * (coastDurationDays / COAST_PLAY_S),
+          );
+          if (coastMetDays >= coastDurationDays) {
+            showCoast = false;
+            startDescent();
+          }
         }
         if (
           isPlaying &&
           now >= launchDwellUntil &&
           !cinematicFreeze &&
           !showLaunch &&
-          !showDescent
+          !showDescent &&
+          !showCoast
         ) {
           // Flyby slow-motion (#371): around closest approach, ease the
           // effective sim rate down so the gravity-assist swing is
@@ -7089,12 +7223,55 @@
     bind:speed={launchSpeed}
     externalClock={true}
     onComplete={() => {
-      // Seam crossed forward: reveal the transfer scene and keep playing so the
-      // cruise continues the one continuous timeline from MET 0.
       showLaunch = false;
-      isPlaying = true;
+      if (earthCoast) {
+        // Tier-1 Earth-orbit: ascent → coast (loop Earth) → re-entry. Hand to
+        // the coast act instead of revealing the interplanetary cruise scene;
+        // the master clock now advances coastMetDays across the coast band.
+        coastMetDays = 0;
+        showCoast = true;
+        isPlaying = true;
+      } else {
+        // Seam crossed forward: reveal the transfer scene and keep playing so the
+        // cruise continues the one continuous timeline from MET 0.
+        isPlaying = true;
+      }
     }}
   />
+{/if}
+
+{#if showCoast && earthCoast}
+  <CoastScene
+    coast={earthCoast}
+    missionName={mission.name}
+    agency={mission.agency ?? mission.agency_full ?? ''}
+    {hudHidden}
+    onToggleHud={toggleHud}
+    externalClock={true}
+    t={coastFrac}
+    onComplete={() => {
+      // Deorbit burn → re-entry act.
+      showCoast = false;
+      startDescent();
+    }}
+  />
+{/if}
+
+{#if showRecovery && descentProfile}
+  <div class="recovery-card" role="dialog" aria-label="Recovery">
+    <div class="recovery-inner" class:fail={recoveryOutcome.fail}>
+      <div class="recovery-eyebrow">{recoveryOutcome.eyebrow}</div>
+      <div class="recovery-name">{mission.name}</div>
+      <div class="recovery-line">
+        {descentProfile.landingSite.lat.toFixed(2)}° {descentProfile.landingSite.lat >= 0 ? 'N' : 'S'},
+        {Math.abs(descentProfile.landingSite.lon).toFixed(2)}° {descentProfile.landingSite.lon >= 0 ? 'E' : 'W'}
+      </div>
+      {#if mission.id && RECOVERY_CAPTIONS[mission.id]}
+        <div class="recovery-caption">{RECOVERY_CAPTIONS[mission.id]}</div>
+      {/if}
+      <button class="recovery-close" onclick={() => (showRecovery = false)}>CLOSE</button>
+    </div>
+  </div>
 {/if}
 
 {#if showDescent && descentProfile && descentDossier}
@@ -7126,7 +7303,59 @@
 {/if}
 
 {#snippet flyDebugContent()}
-  {#if mission.flight?.events && outPts.length > 0}
+  {#if earthCoast}
+    <!-- Tier-1 Earth-orbit re-entry (RFC-034 §13) — pad→coast→re-entry phase state,
+         the counterpart of the flyby/cislunar debug for the launch/descent acts. -->
+    {@const phase = showLaunch
+      ? 'LAUNCH'
+      : showCoast
+        ? 'COAST'
+        : showDescent
+          ? 'DESCENT'
+          : showRecovery
+            ? 'RECOVERY'
+            : 'IDLE'}
+    {@const renderedLoops = earthCoast.suborbital ? 0 : Math.min(LEO_LOOP_CAP, earthCoast.revolutions)}
+    {@const liveRev = Math.min(
+      earthCoast.revolutions,
+      Math.floor(coastFrac * earthCoast.revolutions) + 1,
+    )}
+    {@const coastBand = 1 - coastAscentFrac - (descentProfile ? 0.1 : 0)}
+    <div class="tier1-debug">
+      <div class="t1-header">TIER-1 EARTH-ORBIT · {phase}</div>
+      <div class="t1-row">
+        <strong>capsule</strong>
+        {earthCoast.capsuleId}{earthCoast.suborbital ? ' · SUBORBITAL' : ''}
+      </div>
+      <div class="t1-row">
+        <strong>orbit</strong>
+        {earthCoast.perigeeKm}×{earthCoast.apogeeKm} km · {earthCoast.inclinationDeg}° · {earthCoast.revolutions}
+        rev · {(earthCoast.coastDurationS / 86400).toFixed(2)}d
+      </div>
+      <div class="t1-row">
+        <strong>coast</strong>
+        frac {coastFrac.toFixed(3)} · met {coastMetDays.toFixed(3)}d · REV {liveRev}/{earthCoast.revolutions}
+        · rendered {renderedLoops} loops
+      </div>
+      <div class="t1-row">
+        <strong>scrubber</strong>
+        u {masterU.toFixed(3)} · ascentFrac {coastAscentFrac.toFixed(3)} · coastBand {coastBand.toFixed(
+          3,
+        )}
+      </div>
+      {#if descentSummaryFly}
+        <div class="t1-row">
+          <strong>re-entry</strong>
+          t {descentT.toFixed(0)}/{descentDurationS.toFixed(0)}s · peak {descentSummaryFly.peakDecel.g.toFixed(
+            1,
+          )}g · TD {descentSummaryFly.touchdownVelocityMs.toFixed(1)} m/s · {descentSummaryFly.touchdownSuccess
+            ? 'SURVIVE'
+            : 'IMPACT'}
+        </div>
+      {/if}
+      {#if showRecovery}<div class="t1-row"><strong>recovery</strong> {recoveryOutcome.eyebrow}</div>{/if}
+    </div>
+  {:else if mission.flight?.events && outPts.length > 0}
     {@const flybyEventsForDebug = (mission.flight.events ?? []).filter(
       (e) => (e.type === 'flyby' || e.type === 'edl_or_oi') && e.met_days != null,
     )}
@@ -7941,7 +8170,7 @@
   <div
     class="scrubber"
     class:cinematic-hidden={inCinematicHeldBeat}
-    class:launch-active={showLaunch}
+    class:launch-active={showLaunch || showCoast || showDescent}
     aria-label={m.fly_scrub_label()}
   >
     <button
@@ -8433,6 +8662,25 @@
   .cislunar-hero-comp {
     opacity: 0.7;
     font-style: italic;
+  }
+  /* Tier-1 Earth-orbit re-entry debug (RFC-034 §13). */
+  .tier1-debug {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.82rem;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  .t1-header {
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    opacity: 0.75;
+  }
+  .t1-row strong {
+    display: inline-block;
+    min-width: 5.5rem;
+    opacity: 0.6;
+    font-weight: 500;
   }
   .fly {
     position: absolute;
@@ -9071,6 +9319,65 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 4px;
+  }
+  /* Earth re-entry recovery card (RFC-034 §13) — the Tier-1 splashdown terminus. */
+  .recovery-card {
+    position: fixed;
+    inset: 0;
+    z-index: 260;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle at 50% 40%, rgba(20, 40, 66, 0.6), rgba(0, 0, 0, 0.9));
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  .recovery-inner {
+    text-align: center;
+    color: #cfe4ff;
+    display: grid;
+    gap: 0.5rem;
+    padding: 2rem 2.6rem;
+    border: 1px solid rgba(111, 183, 255, 0.35);
+    border-radius: 10px;
+    background: rgba(8, 16, 28, 0.72);
+    max-width: 30rem;
+  }
+  .recovery-inner.fail {
+    border-color: rgba(255, 120, 96, 0.5);
+  }
+  .recovery-eyebrow {
+    color: #6fb7ff;
+    letter-spacing: 0.2em;
+    font-size: 0.72rem;
+  }
+  .recovery-inner.fail .recovery-eyebrow {
+    color: #ff8a6a;
+  }
+  .recovery-caption {
+    color: #9fb6d0;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-top: 0.4rem;
+  }
+  .recovery-name {
+    font-size: 1.5rem;
+    letter-spacing: 0.03em;
+  }
+  .recovery-line {
+    color: #9fb6d0;
+    font-size: 0.9rem;
+  }
+  .recovery-close {
+    margin-top: 0.8rem;
+    justify-self: center;
+    background: rgba(111, 183, 255, 0.14);
+    color: #cfe4ff;
+    border: 1px solid rgba(111, 183, 255, 0.4);
+    border-radius: 5px;
+    padding: 0.5rem 1.2rem;
+    font-family: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
   }
   /* START WITH LAUNCH — the launch-act entry point (amber accent). */
   .opening-launch {

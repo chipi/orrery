@@ -1,0 +1,339 @@
+<!--
+  CoastScene — the /fly orbit-coast act (RFC-034 §13 · Tier-1 Earth-orbit).
+
+  The middle beat between LaunchScene (ascent) and DescentScene (re-entry): the
+  capsule coasts in low Earth orbit, looping the planet before the deorbit burn.
+  Renders `fly-leo-coast-scene` (Earth + orbit ring + capsule) and plays the
+  hybrid coast rule — a few representative loops while the HUD counters carry the
+  real MET + revolution count. Self-contained: owns its renderer + container,
+  mounts, plays a compressed coast, and fires `onComplete` to hand off to the
+  re-entry act.
+-->
+<script lang="ts">
+  import { onMount, onDestroy } from 'svelte';
+  import { base } from '$app/paths';
+  import { createLeoCoastScene, type LeoCoastScene } from '$lib/three/fly-leo-coast-scene';
+  import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
+  import { buildCapsuleById } from '$lib/three/capsule-models';
+  import { coastAltitudeKm, type EarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
+
+  interface Props {
+    coast: EarthOrbitCoast;
+    missionName: string;
+    agency: string;
+    onComplete?: () => void;
+    hudHidden?: boolean;
+    onToggleHud?: () => void;
+    /** Coast fraction [0,1]. Bindable — when `externalClock` is set, /fly's master
+     *  scrubber drives this (unified pad→orbit→re-entry timeline); otherwise the
+     *  scene self-advances it and writes it back. */
+    t?: number;
+    externalClock?: boolean;
+  }
+  let {
+    coast,
+    missionName,
+    agency,
+    onComplete,
+    hudHidden = false,
+    onToggleHud,
+    t = $bindable(0),
+    externalClock = false,
+  }: Props = $props();
+
+  /** Wall-clock seconds to play the whole compressed coast. */
+  const PLAY_S = 22;
+
+  let container: HTMLDivElement;
+  let sceneObj: LeoCoastScene | null = null;
+  let ar: AscentRenderer | null = null;
+  let raf = 0;
+  let done = false;
+
+  // The coast is a scrubbable player: `coastFraction` (0..1) is the single source
+  // of truth — auto-advanced while `playing`, set by dragging the scrubber, or
+  // (externalClock) driven by /fly's master scrubber via `t`. Everything (capsule
+  // position, REV counter, MET/date clock) derives from it, so scrubbing "moves
+  // the day" — Marko's ask.
+  let coastFraction = $state(0);
+  let playing = $state(true);
+  // When /fly's master clock drives us, mirror `t` into the render fraction.
+  $effect(() => {
+    if (externalClock) coastFraction = Math.min(1, Math.max(0, t));
+  });
+
+  const altKm = coastAltitudeKm(coast);
+  // Real elapsed seconds + revolution the counters read (the honest scale).
+  let metS = $derived(coastFraction * coast.coastDurationS);
+  let rev = $derived(Math.min(coast.revolutions, Math.floor(coastFraction * coast.revolutions) + 1));
+  let deorbitInS = $derived((1 - coastFraction) * coast.coastDurationS);
+
+  function onScrub(e: Event) {
+    playing = false;
+    coastFraction = Number((e.currentTarget as HTMLInputElement).value) / 1000;
+  }
+
+  function fmtClock(s: number): string {
+    const h = Math.floor(s / 3600);
+    const m = Math.floor((s % 3600) / 60);
+    const sec = Math.floor(s % 60);
+    return `${h}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+  }
+
+  function finish() {
+    if (done) return;
+    done = true;
+    onComplete?.();
+  }
+
+  onMount(() => {
+    sceneObj = createLeoCoastScene({
+      container,
+      aspect: container.clientWidth / container.clientHeight,
+      altitudeKm: altKm,
+      inclinationDeg: coast.inclinationDeg,
+      totalRevs: coast.revolutions,
+      suborbital: coast.suborbital,
+      buildCapsule: () => buildCapsuleById(coast.capsuleId),
+      earthTextureUrl: `${base}/textures/2k_earth_daymap.jpg`,
+    });
+    ar = createAscentRenderer(container, sceneObj);
+    let last = performance.now();
+    const loop = () => {
+      const now = performance.now();
+      const dt = (now - last) / 1000;
+      last = now;
+      // externalClock: /fly's master scrubber owns the fraction (via `t`); we only
+      // render. Standalone: advance the playhead while playing / scrubbing.
+      if (!externalClock && playing) coastFraction = Math.min(1, coastFraction + dt / PLAY_S);
+      sceneObj!.setState({ coastFraction, metS: coastFraction * coast.coastDurationS, rev });
+      ar!.render();
+      if (!externalClock && playing && coastFraction >= 1) {
+        finish();
+        return;
+      }
+      raf = requestAnimationFrame(loop);
+    };
+    loop();
+
+    const onResize = () => ar?.resize();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  });
+
+  onDestroy(() => {
+    cancelAnimationFrame(raf);
+    ar?.dispose();
+    sceneObj?.dispose();
+  });
+</script>
+
+<div class="coast" class:hud-hidden={hudHidden}>
+  <div class="canvas" bind:this={container}></div>
+
+  {#if !hudHidden}
+    <div class="hud">
+      <div class="title">
+        <span class="phase">{coast.suborbital ? 'SUBORBITAL' : 'ON ORBIT'}</span>
+        <span class="name">{missionName}</span>
+        {#if agency}<span class="agency">{agency}</span>{/if}
+      </div>
+
+      <div class="readouts">
+        <div class="ro"><span class="k">MET</span><span class="v">T+{fmtClock(metS)}</span></div>
+        {#if !coast.suborbital}
+          <div class="ro rev"><span class="k">REV</span><span class="v">{rev} / {coast.revolutions}</span></div>
+          <div class="ro"><span class="k">ORBIT</span><span class="v">{coast.perigeeKm}×{coast.apogeeKm} km · {coast.inclinationDeg}°</span></div>
+          <div class="ro"><span class="k">DEORBIT&nbsp;IN</span><span class="v">{fmtClock(deorbitInS)}</span></div>
+        {:else}
+          <div class="ro"><span class="k">APOGEE</span><span class="v">{coast.apogeeKm} km</span></div>
+          <div class="ro"><span class="k">SPLASHDOWN&nbsp;IN</span><span class="v">{fmtClock(deorbitInS)}</span></div>
+        {/if}
+      </div>
+
+      {#if !externalClock}
+        <div class="scrub">
+          <div class="scrub-fill" style="width:{coastFraction * 100}%"></div>
+          <input
+            class="scrub-input"
+            type="range"
+            min="0"
+            max="1000"
+            value={Math.round(coastFraction * 1000)}
+            oninput={onScrub}
+            aria-label="Scrub the orbit coast"
+          />
+        </div>
+      {/if}
+    </div>
+
+    {#if !externalClock}
+      <div class="controls">
+        <button
+          class="ctl"
+          onclick={() => (playing = !playing)}
+          aria-label={playing ? 'Pause' : 'Play'}
+        >
+          {playing ? '❚❚' : '▶'}
+        </button>
+        {#if onToggleHud}
+          <button class="ctl" onclick={onToggleHud} aria-label="Hide HUD">HUD</button>
+        {/if}
+        <button class="ctl skip" onclick={finish}>SKIP TO DE-ORBIT →</button>
+      </div>
+    {/if}
+  {:else if onToggleHud}
+    <button class="ctl show-hud" onclick={onToggleHud} aria-label="Show HUD">HUD</button>
+  {/if}
+</div>
+
+<style>
+  .coast {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: #000;
+  }
+  .canvas {
+    width: 100%;
+    height: 100%;
+  }
+  .hud {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    color: #cfe4ff;
+  }
+  .title {
+    position: absolute;
+    top: 1.1rem;
+    left: 1.2rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+  }
+  .phase {
+    color: #6fb7ff;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+  .name {
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+  }
+  .agency {
+    color: #7f93ad;
+    font-size: 0.75rem;
+  }
+  .readouts {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.2rem;
+    display: grid;
+    gap: 0.35rem;
+    text-align: right;
+  }
+  .ro {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: flex-end;
+    align-items: baseline;
+  }
+  .ro .k {
+    color: #7f93ad;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+  }
+  .ro .v {
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .ro.rev .v {
+    color: #8fd0ff;
+    font-weight: 600;
+  }
+  .scrub {
+    position: absolute;
+    left: 1.2rem;
+    right: 1.2rem;
+    bottom: 3.2rem;
+    height: 3px;
+    background: rgba(143, 208, 255, 0.18);
+    border-radius: 2px;
+  }
+  .scrub-fill {
+    height: 100%;
+    background: #6fb7ff;
+    border-radius: 2px;
+  }
+  .scrub-input {
+    position: absolute;
+    inset: -9px 0;
+    width: 100%;
+    height: 21px;
+    margin: 0;
+    pointer-events: auto;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+  }
+  .scrub-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #cfe4ff;
+    border: 2px solid #6fb7ff;
+    cursor: pointer;
+  }
+  .scrub-input::-moz-range-thumb {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #cfe4ff;
+    border: 2px solid #6fb7ff;
+    cursor: pointer;
+  }
+  .controls {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.2rem;
+    display: flex;
+    gap: 0.6rem;
+  }
+  .ctl {
+    pointer-events: auto;
+    background: rgba(20, 32, 50, 0.72);
+    color: #cfe4ff;
+    border: 1px solid rgba(111, 183, 255, 0.35);
+    border-radius: 4px;
+    padding: 0.4rem 0.7rem;
+    font-family: inherit;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+  .ctl:hover {
+    border-color: rgba(111, 183, 255, 0.7);
+  }
+  .ctl.skip {
+    color: #ffd9a3;
+    border-color: rgba(255, 217, 163, 0.4);
+  }
+  .show-hud {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.2rem;
+    pointer-events: auto;
+    background: rgba(20, 32, 50, 0.72);
+    color: #cfe4ff;
+    border: 1px solid rgba(111, 183, 255, 0.35);
+    border-radius: 4px;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.72rem;
+  }
+</style>

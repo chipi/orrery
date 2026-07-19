@@ -27,7 +27,7 @@ const loadRaw = (id: string): RawDescentProfile =>
   JSON.parse(readFileSync(profilePath(id), 'utf-8')) as RawDescentProfile;
 
 /** The three missions whose EDL is an honest failure (impact, not touchdown). */
-const CRASHES = new Set(['beresheet', 'schiaparelli', 'mars3']);
+const CRASHES = new Set(['beresheet', 'schiaparelli', 'mars3', 'soyuz-1']);
 
 /**
  * Peak-decel band (Earth-g) per body — a TIGHT regression guard calibrated to
@@ -42,6 +42,9 @@ const PEAK_G_BAND: Record<string, [number, number]> = {
   moon: [0, 7],
   mars: [4, 18],
   venus: [120, 320],
+  // Tier-1 manned Earth re-entry: the classic capsule g-band (Mercury/Apollo ~7–8 g
+  // ballistic; the drogue softens the main-canopy opening shock below the entry peak).
+  earth: [3, 12],
   // Phase 2 (RFC-034 §12): micro-g asteroids barely decelerate; the Galileo
   // Jupiter probe hits the fiercest entry of any probe (~200–260 g published).
   itokawa: [0, 2],

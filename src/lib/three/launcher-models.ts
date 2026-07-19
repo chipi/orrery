@@ -1534,6 +1534,8 @@ const BUILDERS: Record<string, (vehLen: number) => LauncherModel> = {
   'saturn-v': buildSaturnV,
   'saturn-ib': buildSaturnV,
   'vostok-k': buildSoyuz,
+  'voskhod-11a57': buildSoyuz,
+  soyuz: buildSoyuz,
   'atlas-v': buildAtlasV,
   'proton-k': buildProtonK,
   'titan-ii-glv': buildTitanIIGLV,

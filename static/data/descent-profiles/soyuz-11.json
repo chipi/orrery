@@ -1,0 +1,30 @@
+{
+  "missionId": "soyuz-11",
+  "siteId": "soyuz-11",
+  "body": "earth",
+  "landingSite": {
+    "lat": 47.35,
+    "lon": 70.15
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7820,
+    "flightPathAngleDeg": 4
+  },
+  "entryMassKg": 2900,
+  "entryCdA": 4.5,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7000,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 193,
+    "terminalCdA": 726
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "soyuz-11 — NASA/NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    }
+  ]
+}

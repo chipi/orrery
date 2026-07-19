@@ -31,6 +31,7 @@ const R_BODY_KM: Record<DescentBody, number> = {
   mars: 3389.5,
   venus: 6051.8,
   titan: 2574.7,
+  earth: 6371,
   jupiter: 69911,
   comet_67p: 1.72,
   itokawa: 0.165,
@@ -74,6 +75,16 @@ const SKY: Record<DescentBody, SkyConfig> = {
     stars: false, // opaque orange haze
     fadeKm: 200,
     rim: { color: 0xd8933c, opacity: 0.45 },
+  },
+  // Earth re-entry — the inverse of a launch: black space at the entry
+  // interface fades to a bright blue daytime sky as the capsule drops into
+  // the troposphere, with the iconic blue atmospheric limb on the horizon.
+  earth: {
+    high: new THREE.Color('#02040a'),
+    low: new THREE.Color('#6fa8dc'),
+    stars: true,
+    fadeKm: 100,
+    rim: { color: 0x6fb7ff, opacity: 0.45 },
   },
   jupiter: {
     high: new THREE.Color('#0b0805'),

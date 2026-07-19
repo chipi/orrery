@@ -1,0 +1,30 @@
+{
+  "missionId": "sigma-7",
+  "siteId": "sigma-7",
+  "body": "earth",
+  "landingSite": {
+    "lat": 32.1,
+    "lon": -174.5
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7820,
+    "flightPathAngleDeg": 4
+  },
+  "entryMassKg": 1350,
+  "entryCdA": 3,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7000,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 90,
+    "terminalCdA": 338
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "sigma-7 — NASA/NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    }
+  ]
+}

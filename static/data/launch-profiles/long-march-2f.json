@@ -1,0 +1,84 @@
+{
+  "id": "long-march-2f",
+  "name": "Long March 2F",
+  "source_tier": "flagship",
+  "payloadKg": 5500,
+  "fairingKg": 0,
+  "fairingJettisonAltM": 110000,
+  "refAreaM2": 13.2,
+  "cd": 0.3,
+  "launchSite": {
+    "lat": 40.96,
+    "lon": 100.29,
+    "name": "LC-921 · Jiuquan"
+  },
+  "pitchProgram": [
+    [
+      0,
+      90
+    ],
+    [
+      12,
+      88
+    ],
+    [
+      50,
+      66
+    ],
+    [
+      120,
+      44
+    ],
+    [
+      200,
+      24
+    ],
+    [
+      300,
+      8
+    ],
+    [
+      440,
+      0
+    ]
+  ],
+  "boosters": {
+    "name": "DaFY-20 booster",
+    "count": 4,
+    "wetKg": 41000,
+    "dryKg": 3200,
+    "thrustSlKN": 740,
+    "thrustVacKN": 814,
+    "ispSlS": 261,
+    "ispVacS": 289,
+    "chamberTempK": 3300
+  },
+  "stages": [
+    {
+      "name": "Core stage 1",
+      "wetKg": 198800,
+      "dryKg": 12500,
+      "thrustSlKN": 2962,
+      "thrustVacKN": 3256,
+      "ispSlS": 261,
+      "ispVacS": 289,
+      "engines": 4,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "Stage 2",
+      "wetKg": 86500,
+      "dryKg": 4500,
+      "thrustVacKN": 831,
+      "ispVacS": 298,
+      "engines": 1,
+      "chamberTempK": 3300
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Spaceflight101 — Long March 2F",
+      "u": "https://spaceflight101.com/spacerockets/cz-2f/"
+    }
+  ]
+}

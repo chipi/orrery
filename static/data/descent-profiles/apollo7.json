@@ -1,0 +1,23 @@
+{
+  "missionId": "apollo7",
+  "siteId": "apollo7",
+  "body": "earth",
+  "landingSite": { "lat": 27.53, "lon": -64.17 },
+  "entryState": { "altitudeM": 122000, "velocityMs": 7820, "flightPathAngleDeg": 4 },
+  "entryMassKg": 5560,
+  "entryCdA": 6,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7300,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 367,
+    "terminalCdA": 1392
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Apollo 7 Mission Report (NASA MSC-PA-R-68-15)",
+      "u": "https://www.nasa.gov/history/afj/ap07fj/"
+    }
+  ]
+}

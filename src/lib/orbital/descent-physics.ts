@@ -41,13 +41,16 @@ const DEG2RAD = Math.PI / 180;
  * into). Phase 1: Moon/Mars/Venus. Phase 2 (RFC-034 §12) adds Titan (thick cold
  * N₂), Jupiter (atmosphere, no solid surface), comet 67P and the sampled
  * asteroids (micro-g, airless), each keyed to its real μ/R so the felt-g and
- * timeline stay honest across ten-orders-of-magnitude gravity.
+ * timeline stay honest across ten-orders-of-magnitude gravity. Tier-1 Earth-orbit
+ * re-entry (RFC-034 §13) adds Earth — the one *return* body, where a capsule
+ * deorbits from LEO and rides a heat-shield + parachutes down to splashdown/ground.
  */
 export type DescentBody =
   | 'moon'
   | 'mars'
   | 'venus'
   | 'titan'
+  | 'earth'
   | 'jupiter'
   | 'comet_67p'
   | 'itokawa'

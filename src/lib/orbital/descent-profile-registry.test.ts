@@ -24,10 +24,13 @@ const viking1 = loadRaw('viking1');
 const apollo11 = loadRaw('apollo11');
 
 describe('hasDescentProfile gate', () => {
-  it('covers all 44 landers (37 Moon/Mars/Venus + 7 Phase-2 outer/small-body) and rejects the rest', () => {
-    expect(DESCENT_MISSION_IDS.size).toBe(44);
+  it('covers the 44 landers + Tier-1 Earth re-entry, and rejects the rest', () => {
+    // 37 Moon/Mars/Venus + 7 Phase-2 outer/small-body + Tier-1 Earth-orbit
+    // capsules (friendship-7 for the MVP; grows as the ~31-mission set lands).
+    expect(DESCENT_MISSION_IDS.size).toBe(75);
     expect(hasDescentProfile('apollo11')).toBe(true);
     expect(hasDescentProfile('curiosity')).toBe(true);
+    expect(hasDescentProfile('friendship-7')).toBe(true);
     // Orbiters / flybys must NOT play a descent act.
     expect(hasDescentProfile('juno')).toBe(false);
     expect(hasDescentProfile('voyager1')).toBe(false);

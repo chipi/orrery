@@ -492,9 +492,45 @@ const overlayModels = [
   },
 ];
 
+// Earth-orbit re-entry capsules — built by capsule-models.ts, flown on the /fly
+// Tier-1 orbit-coast + re-entry act (RFC-034 §13).
+const earthCapsules = [
+  [
+    'mercury-capsule',
+    'Mercury capsule',
+    'Blunt ablative heat shield, shingled cone, and the recovery + antenna section (Freedom 7 … Faith 7).',
+  ],
+  [
+    'gemini-capsule',
+    'Gemini capsule',
+    'Two-seat scaled-up Mercury with the rendezvous-radar nose and adapter module.',
+  ],
+  [
+    'vostok-sphere',
+    'Vostok / Voskhod',
+    'The spherical Sharik descent module with antenna straps and equipment collar.',
+  ],
+  [
+    'apollo-cm',
+    'Apollo Command Module',
+    'The classic steep blunt cone with the forward docking tunnel (Apollo 7/9, Skylab, ASTP).',
+  ],
+  [
+    'soyuz-sa',
+    'Soyuz descent module',
+    'The "headlamp" bell — spherical base heat shield with a conical crew top.',
+  ],
+  [
+    'dragon-capsule',
+    'Crew Dragon',
+    'Sleek conical body with the SuperDraco pods and the PICA-X heat shield (Inspiration4, Polaris Dawn).',
+  ],
+].map(mk('model-capsule', 'Earth-orbit re-entry', '/fly'));
+
 const models3d = [
   ...spacecraft,
   ...launchers,
+  ...earthCapsules,
   ...moonModels,
   ...marsModels,
   ...venusModels,

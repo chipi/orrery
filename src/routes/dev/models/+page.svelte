@@ -39,6 +39,14 @@
   import { buildInsightLanderHotspot } from '$lib/hotspot-models/mars-insight-lander';
   import { buildMars3PetalHotspot } from '$lib/hotspot-models/mars-3-petal';
   import { buildTianwenZhurongHotspot } from '$lib/hotspot-models/tianwen-zhurong';
+  import {
+    buildMercuryCapsule,
+    buildGeminiCapsule,
+    buildVostokSphere,
+    buildApolloCM,
+    buildSoyuzDescentModule,
+    buildDragonCapsule,
+  } from '$lib/three/capsule-models';
   import { buildSchiaparelliHotspot } from '$lib/hotspot-models/schiaparelli';
   import { buildBeagle2Hotspot } from '$lib/hotspot-models/beagle-2';
   import { buildSatelliteModel } from '$lib/earth-satellite-models';
@@ -99,6 +107,14 @@
       family: 'craft',
       build: () => buildInterplanetarySpacecraft(id),
     })),
+
+    // ── Earth-orbit re-entry capsules (Tier-1) ───────────────────────
+    { id: 'mercury-capsule', label: 'Mercury capsule', family: 'capsule', build: () => buildMercuryCapsule() },
+    { id: 'gemini-capsule', label: 'Gemini capsule', family: 'capsule', build: () => buildGeminiCapsule() },
+    { id: 'vostok-sphere', label: 'Vostok / Voskhod', family: 'capsule', build: () => buildVostokSphere() },
+    { id: 'apollo-cm', label: 'Apollo CM', family: 'capsule', build: () => buildApolloCM() },
+    { id: 'soyuz-sa', label: 'Soyuz descent module', family: 'capsule', build: () => buildSoyuzDescentModule() },
+    { id: 'dragon-capsule', label: 'Crew Dragon', family: 'capsule', build: () => buildDragonCapsule() },
 
     // ── Moon landers / rovers (Tier-1 engineering meshes) ─────────────
     { id: 'apollo-lm', label: 'Apollo LM', family: 'moon', build: () => buildApolloLMHotspot(US) },

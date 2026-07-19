@@ -2,6 +2,8 @@ import * as THREE from 'three';
 import type { DescentBody } from '../orbital/descent-physics';
 import { buildMoonLanderModel } from '../moon-lander-models';
 import { buildMarsLanderModel } from '../mars-lander-models';
+import { buildCapsuleById } from './capsule-models';
+import { getEarthOrbitCoast } from '../orbital/earth-orbit-registry';
 
 /**
  * Per-mission procedural EDL-stack models for /fly's descent act (RFC-034 §9) —
@@ -290,6 +292,9 @@ function resolveLander(siteId: string, body: DescentBody): THREE.Group {
   if (body === 'jupiter') return buildJupiterDescentModule();
   if (body === 'titan') return buildHuygensProbe();
   if (body === 'comet_67p') return buildPhilaeLander();
+  // Tier-1: the earth descent profile's siteId is the mission id — look up its
+  // capsule family from the coast registry (falls back to Mercury).
+  if (body === 'earth') return buildCapsuleById(getEarthOrbitCoast(siteId)?.capsuleId ?? 'mercury');
   return buildMarsLanderModel(siteId, 'lander', undefined, '#d0a884');
 }
 
@@ -603,10 +608,29 @@ const BUILDERS: Record<string, StackBuilder> = {
   'galileo-probe': buildJupiterProbeStack,
 };
 
+/** Earth capsule re-entry (Tier-1: Mercury/Gemini/Apollo CM/Soyuz/Dragon) — an
+ *  ablative aeroshell entry, then drogue + main canopies to a splashdown/ground
+ *  touchdown. No retro (aerodynamic; a Soyuz soft-landing burst can be added). */
+function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentModel {
+  const p = palette();
+  const m = scaffold(lander);
+  addAeroshell(m, p, vehLen);
+
+  m.parachuteBaseY = vehLen * 0.9;
+  m.parachute = parachuteCanopy(vehLen * 0.7, p, -vehLen * 0.86);
+  m.parachute.position.y = m.parachuteBaseY;
+  m.root.add(m.parachute);
+
+  lander.position.y = -vehLen * 0.02;
+  m.root.add(lander);
+  return m;
+}
+
 /** Per-body generic stack for missions without a dedicated builder. */
 function genericFor(body: DescentBody): StackBuilder {
   if (body === 'moon') return buildLunarStack;
   if (body === 'venus') return buildVenusStack;
+  if (body === 'earth') return buildEarthCapsuleStack;
   if (body === 'itokawa' || body === 'ryugu' || body === 'bennu' || body === 'eros')
     return buildAsteroidSamplerStack;
   if (body === 'jupiter') return buildJupiterProbeStack;

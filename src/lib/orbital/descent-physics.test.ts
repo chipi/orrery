@@ -9,6 +9,7 @@ import {
   type DescentProfile,
 } from './descent-physics';
 import { SURFACE_DENSITY_KGM3 } from './descent-physics-constants';
+import { expandDescentProfile, type RawDescentProfile } from './descent-profile-registry';
 import { expectCloseTo, expectInRange } from '../test-helpers/expect-close';
 
 // ─── Archetype test profiles (one per EDL class) ────────────────────
@@ -228,6 +229,58 @@ describe('EDL archetypes land soft', () => {
   });
 });
 
+// ─── Earth-orbit capsule re-entry (Tier-1, EARTH_CAPSULE_REENTRY) ─────
+
+const EARTH_ORBITAL: RawDescentProfile = {
+  missionId: 'test-friendship7',
+  siteId: 'test-atlantic-splashdown',
+  body: 'earth',
+  landingSite: { lat: 21.35, lon: -68.65 },
+  // Orbital re-entry: entry interface ~122 km at ~7.8 km/s, shallow effective
+  // corridor angle (1-DOF collapse angle, tuned — not the literal inertial FPA).
+  entryState: { altitudeM: 122_000, velocityMs: 7800, flightPathAngleDeg: 3 },
+  entryMassKg: 1350, // Mercury capsule re-entry mass
+  entryCdA: 3, // blunt ~1.9 m heat-shield face
+  archetype: 'EARTH_CAPSULE_REENTRY',
+  params: { chuteDeployAltM: 8000, terminalHandoffAltM: 3000, parachuteCdA: 30, terminalCdA: 440 },
+  source_tier: 'flagship',
+};
+
+const EARTH_SUBORBITAL: RawDescentProfile = {
+  ...EARTH_ORBITAL,
+  missionId: 'test-freedom7',
+  // Suborbital hop: lower, steeper — same capsule + chutes, different entry state.
+  entryState: { altitudeM: 90_000, velocityMs: 2300, flightPathAngleDeg: 30 },
+};
+
+const EARTH_CHUTE_FAIL: RawDescentProfile = {
+  ...EARTH_ORBITAL,
+  missionId: 'test-soyuz1',
+  // Main canopies fouled (Soyuz 1) — only a drogue-sized Cd·A survives → hard impact.
+  params: { ...EARTH_ORBITAL.params, terminalCdA: 18 },
+};
+
+describe('Earth capsule re-entry lands soft', () => {
+  it('orbital re-entry rides the heat shield + chutes to a survivable splashdown', () => {
+    const s = integrateDescent(expandDescentProfile(EARTH_ORBITAL));
+    expect(s.touchdownSuccess).toBe(true);
+    expect(s.touchdownVelocityMs).toBeLessThan(10);
+    // Manned entry g-band (loose, uncalibrated) — the peak is the main-canopy
+    // opening shock; well under a Venus aeroshell's ~100 g. See E2 for per-mission
+    // tuning of the corridor angle + chute Cd·A toward the published ~8 g histories.
+    expectInRange(s.peakDecel.g, 3, 16, 'Earth orbital re-entry peak decel (g)');
+  });
+
+  it('orbital entry heats far harder than the suborbital hop (heat ∝ v³)', () => {
+    const sub = integrateDescent(expandDescentProfile(EARTH_SUBORBITAL));
+    const orb = integrateDescent(expandDescentProfile(EARTH_ORBITAL));
+    expect(sub.touchdownSuccess).toBe(true);
+    expect(sub.touchdownVelocityMs).toBeLessThan(10);
+    // A 7.8 km/s orbital entry sheds vastly more energy as heat than a 2.3 km/s hop.
+    expect(orb.peakHeat.flux).toBeGreaterThan(sub.peakHeat.flux * 3);
+  });
+});
+
 // ─── Honest crash ────────────────────────────────────────────────────
 
 describe('crash landings read as failures', () => {
@@ -235,6 +288,12 @@ describe('crash landings read as failures', () => {
     const s = integrateDescent(MARS_CRASH);
     expect(s.touchdownSuccess).toBe(false);
     expect(s.touchdownVelocityMs).toBeGreaterThan(20);
+  });
+
+  it('a fouled main canopy (Soyuz 1) busts the survivable limit → crash', () => {
+    const s = integrateDescent(expandDescentProfile(EARTH_CHUTE_FAIL));
+    expect(s.touchdownSuccess).toBe(false);
+    expect(s.touchdownVelocityMs).toBeGreaterThan(15);
   });
 });
 

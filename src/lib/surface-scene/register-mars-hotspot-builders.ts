@@ -15,6 +15,8 @@ import { buildMars3PetalHotspot } from '$lib/hotspot-models/mars-3-petal';
 import { buildTianwenZhurongHotspot } from '$lib/hotspot-models/tianwen-zhurong';
 import { buildSchiaparelliHotspot } from '$lib/hotspot-models/schiaparelli';
 import { buildBeagle2Hotspot } from '$lib/hotspot-models/beagle-2';
+import { buildPerseveranceRoverHotspot } from '$lib/hotspot-models/mars-perseverance-rover';
+import { buildInsightLanderHotspot } from '$lib/hotspot-models/mars-insight-lander';
 
 export function registerMarsHotspotBuilders(): void {
   registerHotspotModelBuilder('viking-tripod', buildVikingTripodHotspot);
@@ -29,4 +31,6 @@ export function registerMarsHotspotBuilders(): void {
   registerHotspotModelBuilder('tianwen-zhurong', buildTianwenZhurongHotspot);
   registerHotspotModelBuilder('schiaparelli', buildSchiaparelliHotspot);
   registerHotspotModelBuilder('beagle-2', buildBeagle2Hotspot);
+  registerHotspotModelBuilder('perseverance-rover', buildPerseveranceRoverHotspot);
+  registerHotspotModelBuilder('insight-lander', buildInsightLanderHotspot);
 }

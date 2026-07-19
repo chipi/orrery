@@ -133,8 +133,13 @@
 
   {#if !hudHidden}
     <div class="hud">
+      <!-- 2026 HUD frame — thin corner brackets, no panel. -->
+      <span class="frame tl"></span>
+      <span class="frame tr"></span>
+      <span class="frame bl"></span>
+      <span class="frame br"></span>
       <div class="title">
-        <span class="phase">{coast.suborbital ? 'SUBORBITAL' : 'ON ORBIT'}</span>
+        <span class="phase"><span class="live-dot"></span>{coast.suborbital ? 'SUBORBITAL' : 'ON ORBIT'}</span>
         <span class="name">{missionName}</span>
         {#if agency}<span class="agency">{agency}</span>{/if}
       </div>
@@ -214,26 +219,48 @@
     gap: 0.8rem;
   }
   .phase {
-    color: #6fb7ff;
-    letter-spacing: 0.18em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #7fd4ff;
+    letter-spacing: 0.22em;
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.72rem;
+  }
+  /* Live pulse — the "on air" tell of a broadcast HUD. */
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #7fd4ff;
+    box-shadow: 0 0 8px rgba(127, 212, 255, 0.9);
+    animation: live-pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes live-pulse {
+    50% {
+      opacity: 0.3;
+    }
   }
   .name {
     font-size: 1.05rem;
     letter-spacing: 0.04em;
+    color: #eaf3ff;
   }
   .agency {
     color: #7f93ad;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
   }
+  /* Readout stack — hairline accent rail on the right, no panel. */
   .readouts {
     position: absolute;
     top: 1.1rem;
     right: 1.2rem;
     display: grid;
-    gap: 0.35rem;
+    gap: 0.4rem;
     text-align: right;
+    padding-right: 0.7rem;
+    border-right: 1px solid rgba(127, 212, 255, 0.35);
   }
   .ro {
     display: flex;
@@ -242,17 +269,50 @@
     align-items: baseline;
   }
   .ro .k {
-    color: #7f93ad;
-    font-size: 0.66rem;
-    letter-spacing: 0.14em;
+    color: #6b7d94;
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
   }
   .ro .v {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
+    color: #eaf3ff;
     font-variant-numeric: tabular-nums;
   }
   .ro.rev .v {
-    color: #8fd0ff;
+    color: #7fd4ff;
     font-weight: 600;
+  }
+  /* 2026 corner-bracket frame — thin cyan L's, no fill. */
+  .frame {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(127, 212, 255, 0.4);
+    pointer-events: none;
+  }
+  .frame.tl {
+    top: 0.7rem;
+    left: 0.7rem;
+    border-right: none;
+    border-bottom: none;
+  }
+  .frame.tr {
+    top: 0.7rem;
+    right: 0.7rem;
+    border-left: none;
+    border-bottom: none;
+  }
+  .frame.bl {
+    bottom: 0.7rem;
+    left: 0.7rem;
+    border-right: none;
+    border-top: none;
+  }
+  .frame.br {
+    bottom: 0.7rem;
+    right: 0.7rem;
+    border-left: none;
+    border-top: none;
   }
   .scrub {
     position: absolute;

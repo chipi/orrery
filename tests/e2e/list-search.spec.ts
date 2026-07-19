@@ -58,7 +58,7 @@ test.describe('/missions search (RFC-027)', () => {
     const input = page.locator('[data-testid="missions-search"]');
     await input.fill('');
     await expect(page).not.toHaveURL(/[?&]q=/);
-    await expect(cards).toHaveCount(123, { timeout: 5_000 });
+    await expect(cards).toHaveCount(125, { timeout: 5_000 });
   });
 
   test('AND semantics: ?q=mars&dest=MARS keeps both filters', async ({ page }) => {

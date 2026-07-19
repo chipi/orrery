@@ -166,11 +166,44 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
     return ringPts[idx].clone();
   };
 
-  // ── Camera framing: three-quarter view onto the orbit plane ───────────
+  // ── Cinematic camera (fly-cinematic-shot-language.md) — a shot schedule that
+  //    cuts across the coast: an establishing wide of the capsule against the
+  //    sunlit Earth → a trailing tracking shot → a low limb shot with the blue
+  //    atmosphere rim behind → a high ground-track shot. The pose lerps toward
+  //    each shot's target so the cuts read as smooth crane/dolly moves.
   const camDist = rOrbit * 2.4;
   const baseCamPos = new THREE.Vector3(camDist * 0.7, camDist * 0.55, camDist * 0.7);
   camera.position.copy(baseCamPos);
-  camera.lookAt(0, 0, 0);
+  const camLookAt = new THREE.Vector3(0, 0, 0);
+  camera.lookAt(camLookAt);
+
+  type CoastShot = { pos: THREE.Vector3; target: THREE.Vector3 };
+  const coastShotPose = (f: number, pos: THREE.Vector3, radial: THREE.Vector3): CoastShot => {
+    // In-plane basis around the capsule: tangent (velocity) + side.
+    const ahead2 = orbitPointAt(opts.suborbital ? Math.min(1, f + 0.02) : (f * renderedLoops + 0.02) % 1);
+    const tangent = ahead2.clone().sub(pos).normalize();
+    const side = tangent.clone().cross(radial).normalize();
+    const shot = opts.suborbital ? (f < 0.5 ? 0 : 1) : f < 0.28 ? 0 : f < 0.55 ? 1 : f < 0.82 ? 2 : 3;
+    switch (shot) {
+      case 1: // TRACK — trail behind + above the capsule
+        return {
+          pos: pos.clone().addScaledVector(tangent, -3400).addScaledVector(radial, 1700).addScaledVector(side, 700),
+          target: pos.clone().addScaledVector(tangent, 600),
+        };
+      case 2: // LIMB — off to the side + slightly below, Earth's blue rim behind
+        return {
+          pos: pos.clone().addScaledVector(side, 4200).addScaledVector(radial, -500).addScaledVector(tangent, -1200),
+          target: pos.clone(),
+        };
+      case 3: // GROUND-TRACK — high over the sub-satellite point, looking down
+        return {
+          pos: radial.clone().multiplyScalar(rOrbit + 8500).addScaledVector(tangent, -2600),
+          target: radial.clone().multiplyScalar(R_EARTH_KM + 200),
+        };
+      default: // ESTABLISH — wide, the capsule small against the full Earth
+        return { pos: baseCamPos.clone(), target: new THREE.Vector3(0, 0, 0) };
+    }
+  };
 
   let earthSpin = 0;
 
@@ -203,6 +236,12 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
       lastTrackFraction = s.coastFraction;
     }
     track.rotation.y = earthSpin; // ride the spin so the track stays on the ground
+
+    // Cinematic camera: lerp toward the active shot's pose for smooth crane moves.
+    const shot = coastShotPose(s.coastFraction, pos, radial);
+    camera.position.lerp(shot.pos, 0.06);
+    camLookAt.lerp(shot.target, 0.06);
+    camera.lookAt(camLookAt);
   };
 
   const setAspect = (aspect: number): void => {
@@ -242,7 +281,9 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
     setAspect,
     setForceVisible,
     setForcesVisible,
-    snapCamera: () => camera.position.copy(baseCamPos),
+    // The shot schedule + per-frame lerp own the camera; snap is a no-op so a
+    // scrub doesn't kick it back to the establishing wide every frame.
+    snapCamera: () => {},
     reset,
     dispose,
   };

@@ -218,6 +218,124 @@ const satModels = [
   ],
 ].map(mk('model-sat', 'Earth orbital markers', '/earth'));
 
+// Launch vehicles — per-vehicle ascent silhouettes (launcher-models.ts),
+// flown in the /fly launch/ascent act.
+const launchers = [
+  [
+    'generic',
+    'Generic launcher',
+    'Falcon-9-like two-stage body — the agency-keyed fallback silhouette.',
+  ],
+  [
+    'saturn-v',
+    'Saturn V',
+    'Tapered three-stage stack, five F-1 bells, and the escape tower (also Saturn IB).',
+  ],
+  ['vostok-k', 'Soyuz / R-7', 'Korolev-cross core with four tapered strap-on boosters.'],
+  [
+    'ariane-5',
+    'Ariane 5',
+    'Cryogenic core between two tall solid boosters under a bulbous fairing.',
+  ],
+  ['h-iia', 'H-IIA', 'Japanese cryogenic core with paired solid rocket boosters.'],
+  ['space-shuttle-stack', 'Space Shuttle', 'External tank, twin SRBs, and the delta-wing orbiter.'],
+  [
+    'falcon-9',
+    'Falcon 9',
+    'Slender two-stage body — an octaweb of nine engines, grid fins, and landing legs.',
+  ],
+  [
+    'atlas-v',
+    'Atlas V',
+    'Wide RD-180 core with a bulbous payload fairing and optional solid strap-ons.',
+  ],
+  ['proton-k', 'Proton-K', 'Soviet heavy — a central core ringed by six outboard fuel tanks.'],
+  [
+    'titan-ii-glv',
+    'Titan II GLV',
+    'Slender uniform two-stage that launched the crewed Gemini capsules.',
+  ],
+  [
+    'atlas-lv-3b',
+    'Atlas LV-3B',
+    'Mercury-Atlas stage-and-a-half with a booster-engine skirt and escape tower.',
+  ],
+  [
+    'long-march-2f',
+    'Long March 2F',
+    'China’s crewed launcher — core, four liquid strap-ons, and a launch-escape tower (Shenzhou).',
+  ],
+  [
+    'long-march-3b',
+    'Long March 3B',
+    'Chinese GTO workhorse — a core with four liquid strap-ons (Chang’e lunar missions).',
+  ],
+  [
+    'long-march-5',
+    'Long March 5',
+    'China’s heavy “Fat Five” — a wide cryogenic core with four large boosters.',
+  ],
+  ['pslv', 'PSLV', 'ISRO’s workhorse — a slender core ringed by six solid strap-on boosters.'],
+  [
+    'lvm3',
+    'LVM3 / GSLV Mk III',
+    'ISRO heavy-lift — a core flanked by two large S200 solid boosters (Chandrayaan-3).',
+  ],
+  ['m-v', 'M-V', 'JAXA’s all-solid three-stage launcher (Hayabusa).'],
+  ['h3', 'H3', 'JAXA’s new cryogenic core with solid strap-on boosters.'],
+  ['ariane-1', 'Ariane 1', 'Europe’s first launcher — a slender three-stage 1979 design (Giotto).'],
+].map(mk('model-launcher', 'Fly · launch/ascent', '/fly'));
+
+// EDL descent stacks — entry/descent/landing hardware (descent-models.ts),
+// flown in the /fly descent/landing act.
+const descentModels = [
+  [
+    'lunar-powered',
+    'Lunar powered descent',
+    'Vacuum retro-descent stage — no aeroshell or parachute (Apollo / Chang’e / Luna).',
+  ],
+  [
+    'mars-retro',
+    'Mars parachute + retro',
+    'Aeroshell, supersonic parachute, and terminal retro-rockets (Viking / Phoenix / InSight).',
+  ],
+  [
+    'airbag',
+    'Mars airbag bounce',
+    'Tetrahedral airbag cocoon that bounces to rest (Pathfinder / Spirit / Opportunity).',
+  ],
+  [
+    'skycrane',
+    'Mars skycrane',
+    'Rocket-powered descent stage that lowers the rover on tethers (Curiosity / Perseverance).',
+  ],
+  [
+    'venus-aeroshell',
+    'Venus aeroshell',
+    'Sphere-cone entry capsule and braking disk for the dense atmosphere (Venera / Vega).',
+  ],
+  [
+    'asteroid-sampler',
+    'Asteroid touch-and-go',
+    'Sampler bus with a collection horn — micro-gravity touch-and-go (Hayabusa / OSIRIS-REx).',
+  ],
+  [
+    'comet-lander',
+    'Comet harpoon lander',
+    'Three-leg micro-gravity lander with anchoring harpoons (Philae at comet 67P).',
+  ],
+  [
+    'jupiter-probe',
+    'Jupiter atmospheric probe',
+    'Sphere-cone aeroshell and parachute for a deep-atmosphere entry (Galileo probe).',
+  ],
+  [
+    'titan-parachute',
+    'Titan parachute descent',
+    'Aeroshell and large parachute for a slow descent through Titan’s haze (Huygens).',
+  ],
+].map(mk('model-descent', 'Fly · descent/landing', '/fly'));
+
 // Launch facility + the two station proxies.
 const facilityModels = [
   {
@@ -272,8 +390,10 @@ const overlayModels = [
 
 const models3d = [
   ...spacecraft,
+  ...launchers,
   ...moonModels,
   ...marsModels,
+  ...descentModels,
   ...satModels,
   ...facilityModels,
   ...overlayModels,

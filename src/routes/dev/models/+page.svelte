@@ -43,6 +43,8 @@
   import { buildLaunchpadModel } from '$lib/earth-launchpad-models';
   import { buildIssProxyStation } from '$lib/iss-proxy-model';
   import { buildTiangongProxyStation } from '$lib/tiangong-proxy-model';
+  import { buildLauncherModel } from '$lib/three/launcher-models';
+  import { buildDescentModel } from '$lib/three/descent-models';
 
   type Entry = {
     /** Stable id → capture filename `model-<family>-<id>` / `craft-<id>`. */
@@ -218,6 +220,178 @@
       label: 'Tiangong proxy',
       family: 'station',
       build: () => buildTiangongProxyStation(),
+    },
+
+    // ── Launch vehicles — per-vehicle ascent silhouettes (launcher-models.ts) ─
+    {
+      id: 'generic',
+      label: 'Generic launcher (Falcon-9-like)',
+      family: 'launcher',
+      build: () => buildLauncherModel(undefined, 1.2, 0).root,
+    },
+    {
+      id: 'saturn-v',
+      label: 'Saturn V',
+      family: 'launcher',
+      build: () => buildLauncherModel('saturn-v', 1.2).root,
+    },
+    {
+      id: 'vostok-k',
+      label: 'Soyuz / R-7 (Korolev cross)',
+      family: 'launcher',
+      build: () => buildLauncherModel('vostok-k', 1.2).root,
+    },
+    {
+      id: 'ariane-5',
+      label: 'Ariane 5',
+      family: 'launcher',
+      build: () => buildLauncherModel('ariane-5', 1.2).root,
+    },
+    {
+      id: 'h-iia',
+      label: 'H-IIA',
+      family: 'launcher',
+      build: () => buildLauncherModel('h-iia', 1.2).root,
+    },
+    {
+      id: 'space-shuttle-stack',
+      label: 'Space Shuttle stack',
+      family: 'launcher',
+      build: () => buildLauncherModel('space-shuttle-stack', 1.2).root,
+    },
+    {
+      id: 'falcon-9',
+      label: 'Falcon 9',
+      family: 'launcher',
+      build: () => buildLauncherModel('falcon-9', 1.2).root,
+    },
+    {
+      id: 'atlas-v',
+      label: 'Atlas V',
+      family: 'launcher',
+      build: () => buildLauncherModel('atlas-v', 1.2, 2).root,
+    },
+    {
+      id: 'proton-k',
+      label: 'Proton-K',
+      family: 'launcher',
+      build: () => buildLauncherModel('proton-k', 1.2).root,
+    },
+    {
+      id: 'titan-ii-glv',
+      label: 'Titan II GLV',
+      family: 'launcher',
+      build: () => buildLauncherModel('titan-ii-glv', 1.2).root,
+    },
+    {
+      id: 'atlas-lv-3b',
+      label: 'Atlas LV-3B (Mercury)',
+      family: 'launcher',
+      build: () => buildLauncherModel('atlas-lv-3b', 1.2).root,
+    },
+    {
+      id: 'long-march-2f',
+      label: 'Long March 2F (Shenzhou)',
+      family: 'launcher',
+      build: () => buildLauncherModel('long-march-2f', 1.2).root,
+    },
+    {
+      id: 'long-march-3b',
+      label: 'Long March 3B',
+      family: 'launcher',
+      build: () => buildLauncherModel('long-march-3b', 1.2).root,
+    },
+    {
+      id: 'long-march-5',
+      label: 'Long March 5',
+      family: 'launcher',
+      build: () => buildLauncherModel('long-march-5', 1.2).root,
+    },
+    {
+      id: 'pslv',
+      label: 'PSLV',
+      family: 'launcher',
+      build: () => buildLauncherModel('pslv', 1.2).root,
+    },
+    {
+      id: 'lvm3',
+      label: 'LVM3 / GSLV Mk III',
+      family: 'launcher',
+      build: () => buildLauncherModel('lvm3', 1.2).root,
+    },
+    {
+      id: 'm-v',
+      label: 'M-V',
+      family: 'launcher',
+      build: () => buildLauncherModel('m-v', 1.2).root,
+    },
+    {
+      id: 'h3',
+      label: 'H3',
+      family: 'launcher',
+      build: () => buildLauncherModel('h3', 1.2).root,
+    },
+    {
+      id: 'ariane-1',
+      label: 'Ariane 1',
+      family: 'launcher',
+      build: () => buildLauncherModel('ariane-1', 1.2).root,
+    },
+
+    // ── EDL descent stacks — entry/descent/landing hardware (descent-models.ts) ─
+    {
+      id: 'lunar-powered',
+      label: 'Lunar powered descent',
+      family: 'descent',
+      build: () => buildDescentModel('apollo11', 'moon', 1).root,
+    },
+    {
+      id: 'mars-retro',
+      label: 'Mars parachute + retro',
+      family: 'descent',
+      build: () => buildDescentModel('viking1-lander', 'mars', 1).root,
+    },
+    {
+      id: 'airbag',
+      label: 'Mars airbag bounce',
+      family: 'descent',
+      build: () => buildDescentModel('mars-pathfinder', 'mars', 1).root,
+    },
+    {
+      id: 'skycrane',
+      label: 'Mars skycrane',
+      family: 'descent',
+      build: () => buildDescentModel('curiosity', 'mars', 1).root,
+    },
+    {
+      id: 'venus-aeroshell',
+      label: 'Venus aeroshell',
+      family: 'descent',
+      build: () => buildDescentModel('venera13', 'venus', 1).root,
+    },
+    {
+      id: 'asteroid-sampler',
+      label: 'Asteroid touch-and-go',
+      family: 'descent',
+      build: () => buildDescentModel('hayabusa1', 'itokawa', 1).root,
+    },
+    {
+      id: 'comet-lander',
+      label: 'Comet harpoon lander',
+      family: 'descent',
+      build: () => buildDescentModel('philae', 'comet_67p', 1).root,
+    },
+    {
+      id: 'jupiter-probe',
+      label: 'Jupiter atmospheric probe',
+      family: 'descent',
+      build: () => buildDescentModel('galileo-probe', 'jupiter', 1).root,
+    },
+    {
+      id: 'titan-parachute',
+      label: 'Titan parachute descent',
+      family: 'descent',
+      build: () => buildDescentModel('huygens', 'titan', 1).root,
     },
   ];
 

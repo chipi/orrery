@@ -9323,63 +9323,67 @@
     margin-top: 4px;
   }
   /* Earth re-entry recovery card (RFC-034 §13) — the Tier-1 splashdown terminus. */
+  /* 2026 clean recovery terminus — a subtle scrim (the flight has ended) + a
+     top accent hairline, no bordered panel. Matches the coast/descent language. */
   .recovery-card {
     position: fixed;
     inset: 0;
     z-index: 260;
     display: grid;
     place-items: center;
-    background: radial-gradient(circle at 50% 40%, rgba(20, 40, 66, 0.6), rgba(0, 0, 0, 0.9));
+    background: radial-gradient(circle at 50% 42%, rgba(8, 18, 30, 0.35), rgba(0, 0, 0, 0.55));
     font-family: 'IBM Plex Mono', ui-monospace, monospace;
   }
   .recovery-inner {
     text-align: center;
-    color: #cfe4ff;
+    color: #eaf3ff;
     display: grid;
-    gap: 0.5rem;
-    padding: 2rem 2.6rem;
-    border: 1px solid rgba(111, 183, 255, 0.35);
-    border-radius: 10px;
-    background: rgba(8, 16, 28, 0.72);
+    gap: 0.55rem;
+    padding: 1.4rem 2.6rem 2rem;
+    border-top: 1px solid rgba(127, 212, 255, 0.4);
     max-width: 30rem;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
   }
   .recovery-inner.fail {
-    border-color: rgba(255, 120, 96, 0.5);
+    border-top-color: rgba(255, 120, 96, 0.55);
   }
   .recovery-eyebrow {
-    color: #6fb7ff;
-    letter-spacing: 0.2em;
-    font-size: 0.72rem;
+    color: #7fd4ff;
+    letter-spacing: 0.24em;
+    font-size: 0.7rem;
   }
   .recovery-inner.fail .recovery-eyebrow {
     color: #ff8a6a;
   }
   .recovery-caption {
-    color: #9fb6d0;
+    color: #a9c0d8;
     font-size: 0.82rem;
     line-height: 1.5;
     margin-top: 0.4rem;
   }
   .recovery-name {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     letter-spacing: 0.03em;
   }
   .recovery-line {
-    color: #9fb6d0;
+    color: #8ba2ba;
     font-size: 0.9rem;
   }
   .recovery-close {
     margin-top: 0.8rem;
     justify-self: center;
-    background: rgba(111, 183, 255, 0.14);
-    color: #cfe4ff;
-    border: 1px solid rgba(111, 183, 255, 0.4);
-    border-radius: 5px;
-    padding: 0.5rem 1.2rem;
+    background: transparent;
+    color: #7fd4ff;
+    border: 1px solid rgba(127, 212, 255, 0.45);
+    border-radius: 4px;
+    padding: 0.45rem 1.3rem;
     font-family: inherit;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
     cursor: pointer;
+  }
+  .recovery-close:hover {
+    border-color: rgba(127, 212, 255, 0.8);
   }
   /* START WITH LAUNCH — the launch-act entry point (amber accent). */
   .opening-launch {

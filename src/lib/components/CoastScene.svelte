@@ -336,4 +336,33 @@
     padding: 0.4rem 0.7rem;
     font-size: 0.72rem;
   }
+  /* Portrait phones: the title + top-right readouts collide at ~393px. Drop the
+     mission name/agency (the phase chip carries the context) + shrink the
+     readouts so the two top corners never meet. Landscape (>640px) is unaffected. */
+  @media (max-width: 640px) {
+    .title {
+      top: 0.7rem;
+      left: 0.8rem;
+    }
+    .name,
+    .agency {
+      display: none;
+    }
+    .readouts {
+      top: 0.7rem;
+      right: 0.8rem;
+      gap: 0.22rem;
+    }
+    .ro .k {
+      font-size: 0.56rem;
+      letter-spacing: 0.08em;
+    }
+    .ro .v {
+      font-size: 0.78rem;
+    }
+    .controls {
+      bottom: 0.7rem;
+      right: 0.8rem;
+    }
+  }
 </style>

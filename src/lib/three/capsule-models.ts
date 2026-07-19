@@ -11,7 +11,31 @@
  */
 
 import * as THREE from 'three';
-import { heroMetal, heroWhite, heroDark } from './hero-materials';
+import { heroMetal, heroWhite, heroDark, heroGold } from './hero-materials';
+
+// ── Shared capsule detail parts (bring the family to the lander polish bar) ──
+
+/** Dark reflective spacecraft glazing for crew/rendezvous windows. */
+function glass(): THREE.MeshStandardMaterial {
+  return new THREE.MeshStandardMaterial({ color: 0x0a0e16, metalness: 0.9, roughness: 0.12 });
+}
+
+/** A small window pane sitting proud of the hull, oriented outward at (angle, y). */
+function windowPane(g: THREE.Group, r: number, y: number, angle: number, w = 0.09, h = 0.11): void {
+  const pane = new THREE.Mesh(new THREE.BoxGeometry(w, h, 0.02), glass());
+  pane.position.set(Math.cos(angle) * r, y, Math.sin(angle) * r);
+  pane.lookAt(pane.position.x * 2, y, pane.position.z * 2);
+  g.add(pane);
+}
+
+/** A small RCS thruster nozzle nub (dark cone). */
+function rcsNub(g: THREE.Group, r: number, y: number, angle: number, mat: THREE.Material): void {
+  const n = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.024, 0.05, 8), mat);
+  n.position.set(Math.cos(angle) * r, y, Math.sin(angle) * r);
+  n.rotation.z = Math.PI / 2;
+  n.lookAt(n.position.x * 2, y, n.position.z * 2);
+  g.add(n);
+}
 
 /**
  * Mercury capsule (Freedom 7 … Faith 7). A blunt convex ablative heat shield,
@@ -60,14 +84,27 @@ export function buildMercuryCapsule(): THREE.Group {
   spike.position.y = 1.34;
   g.add(spike);
 
-  // Retropack — three straps crossing the heat shield (jettisoned pre-entry on
-  // the real flights, but iconic on the descending capsule).
+  // Pilot's trapezoidal window on the cone.
+  windowPane(g, 0.3, 0.55, Math.PI * 0.15, 0.11, 0.09);
+
+  // Retropack — the three broad titanium straps + the retro package clamped to
+  // the heat shield (jettisoned pre-entry, iconic on the descending capsule).
+  const strapMat = heroMetal(0x9a5a3a, 0.5); // titanium-strap bronze
   for (let i = 0; i < 3; i++) {
     const a = (i / 3) * Math.PI * 2;
-    const strap = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.5, 0.02), heroDark(0x3a3f45));
-    strap.position.set(Math.cos(a) * 0.34, 0.12, Math.sin(a) * 0.34);
-    strap.lookAt(0, 0.5, 0);
+    const strap = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.52, 0.03), strapMat);
+    strap.position.set(Math.cos(a) * 0.33, 0.12, Math.sin(a) * 0.33);
+    strap.lookAt(0, 0.55, 0);
     g.add(strap);
+  }
+  const retroPack = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.1, 16), heroDark(0x33383f));
+  retroPack.position.y = -0.02;
+  g.add(retroPack);
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2 + Math.PI / 6;
+    const nozzle = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.05, 0.09, 12), heroDark(0x1e2126));
+    nozzle.position.set(Math.cos(a) * 0.08, -0.09, Math.sin(a) * 0.08);
+    g.add(nozzle);
   }
 
   return g;
@@ -98,10 +135,21 @@ export function buildGeminiCapsule(): THREE.Group {
   const adapter = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.26, 0.36, 24), white);
   adapter.position.y = 0.8;
   g.add(adapter);
-  // Rendezvous radar nose cone.
+  // Rendezvous radar nose cone + dish.
   const nose = new THREE.Mesh(new THREE.ConeGeometry(0.24, 0.24, 24), skin);
   nose.position.y = 1.1;
   g.add(nose);
+  const dish = new THREE.Mesh(new THREE.SphereGeometry(0.1, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2), heroWhite(0xdedfe2));
+  dish.position.y = 1.24;
+  g.add(dish);
+
+  // Two side-by-side crew windows on the re-entry cone (Gemini's signature).
+  windowPane(g, 0.36, 0.55, Math.PI * 0.5 - 0.14, 0.08, 0.09);
+  windowPane(g, 0.36, 0.55, Math.PI * 0.5 + 0.14, 0.08, 0.09);
+
+  // Six RCS thruster nubs ringing the adapter.
+  const rcsMat = heroDark(0x1e2126);
+  for (let i = 0; i < 6; i++) rcsNub(g, 0.25, 0.86, (i / 6) * Math.PI * 2, rcsMat);
   return g;
 }
 
@@ -135,6 +183,30 @@ export function buildVostokSphere(): THREE.Group {
   const collar = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.14, 20), char);
   collar.position.y = 0.05;
   g.add(collar);
+
+  // Three portholes around the equator (rimmed) + the circular entry hatch.
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2;
+    const rim = new THREE.Mesh(new THREE.TorusGeometry(0.06, 0.014, 8, 16), heroMetal(0xb9bec6, 0.3));
+    rim.position.set(Math.cos(a) * 0.49, 0.55, Math.sin(a) * 0.49);
+    rim.lookAt(rim.position.x * 2, 0.55, rim.position.z * 2);
+    g.add(rim);
+    const pane = new THREE.Mesh(new THREE.CircleGeometry(0.05, 16), glass());
+    pane.position.copy(rim.position);
+    pane.lookAt(rim.position.x * 2, 0.55, rim.position.z * 2);
+    g.add(pane);
+  }
+  const hatch = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.13, 0.02, 20), heroMetal(0x8a8f96, 0.45));
+  hatch.position.set(0, 0.72, 0.46);
+  hatch.rotation.x = Math.PI / 2;
+  g.add(hatch);
+  // A couple of sensor/antenna nubs so the sphere isn't bare.
+  for (const a of [Math.PI * 0.35, Math.PI * 1.4]) {
+    const nub = new THREE.Mesh(new THREE.CylinderGeometry(0.01, 0.01, 0.16, 6), heroMetal(0xb9bec6, 0.3));
+    nub.position.set(Math.cos(a) * 0.5, 0.78, Math.sin(a) * 0.5);
+    nub.lookAt(nub.position.x * 2, 1.1, nub.position.z * 2);
+    g.add(nub);
+  }
   return g;
 }
 
@@ -157,10 +229,30 @@ export function buildApolloCM(): THREE.Group {
   const cone = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.6, 0.78, 32), skin);
   cone.position.y = 0.52;
   g.add(cone);
-  // Forward tunnel + docking ring.
+  // Forward tunnel + docking ring + probe.
   const tunnel = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.15, 0.12, 20), heroWhite(0xe0e2e5));
   tunnel.position.y = 0.97;
   g.add(tunnel);
+  const probe = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.035, 0.12, 10), heroMetal(0xb9bec6, 0.3));
+  probe.position.y = 1.09;
+  g.add(probe);
+
+  // Crew + rendezvous windows (Apollo had five; three read at this scale).
+  windowPane(g, 0.42, 0.62, Math.PI * 0.5, 0.1, 0.1);
+  windowPane(g, 0.4, 0.66, Math.PI * 0.5 - 0.5, 0.08, 0.08);
+  windowPane(g, 0.4, 0.66, Math.PI * 0.5 + 0.5, 0.08, 0.08);
+  // Side hatch.
+  const hatch = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.16, 0.02), heroMetal(0xb0b4ba, 0.3));
+  hatch.position.set(Math.cos(Math.PI) * 0.42, 0.5, Math.sin(Math.PI) * 0.42);
+  hatch.lookAt(hatch.position.x * 2, 0.5, hatch.position.z * 2);
+  g.add(hatch);
+  // Four RCS thruster quads around the cone.
+  const rcsMat = heroDark(0x1e2126);
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
+    rcsNub(g, 0.34, 0.7, a - 0.06, rcsMat);
+    rcsNub(g, 0.34, 0.7, a + 0.06, rcsMat);
+  }
   return g;
 }
 
@@ -190,6 +282,24 @@ export function buildSoyuzDescentModule(): THREE.Group {
   const hatch = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.18, 0.1, 20), skin);
   hatch.position.y = 0.88;
   g.add(hatch);
+
+  // Periscope (the Soyuz VSK optical sight) + a crew window on the bell.
+  const periscope = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.12, 10), heroDark(0x2a2f36));
+  periscope.position.set(0.14, 0.62, 0.14);
+  g.add(periscope);
+  windowPane(g, 0.42, 0.5, Math.PI * 0.5, 0.08, 0.08);
+  // Gold thermal-blanket band around the base of the bell.
+  const foil = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.5, 0.1, 30), heroGold(0xc7a04e));
+  foil.position.y = 0.28;
+  g.add(foil);
+  // Six soft-landing thruster ports on the base shield (fire just before touchdown).
+  const thrMat = heroDark(0x1a1c20);
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2;
+    const t = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.03, 0.05, 8), thrMat);
+    t.position.set(Math.cos(a) * 0.22, 0.02, Math.sin(a) * 0.22);
+    g.add(t);
+  }
   return g;
 }
 
@@ -220,10 +330,20 @@ export function buildDragonCapsule(): THREE.Group {
     pod.lookAt(0, 0.44, 0);
     g.add(pod);
   }
-  // Nose cone (closed in flight).
+  // Nose cone (closed in flight) + the hinge seam ring.
   const nose = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.34, 0.34, 32), white);
   nose.position.y = 1.01;
   g.add(nose);
+  const seam = new THREE.Mesh(new THREE.TorusGeometry(0.34, 0.008, 6, 32), heroMetal(0x9a9ea4, 0.3));
+  seam.rotation.x = Math.PI / 2;
+  seam.position.y = 0.84;
+  g.add(seam);
+
+  // Cupola windows (Crew Dragon's panoramic glazing) around the upper body.
+  for (let i = 0; i < 4; i++) windowPane(g, 0.4, 0.66, (i / 4) * Math.PI * 2 + Math.PI / 8, 0.11, 0.1);
+  // Draco RCS nubs between the SuperDraco pods.
+  const rcsMat = heroDark(0x1c1c20);
+  for (let i = 0; i < 4; i++) rcsNub(g, 0.46, 0.24, (i / 4) * Math.PI * 2 + Math.PI / 4, rcsMat);
   return g;
 }
 

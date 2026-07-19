@@ -27,6 +27,14 @@
   import { buildInsightLanderHotspot } from '$lib/hotspot-models/mars-insight-lander';
   import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
   import { buildDescentModel } from '$lib/three/descent-models';
+  import {
+    buildMercuryCapsule,
+    buildGeminiCapsule,
+    buildVostokSphere,
+    buildApolloCM,
+    buildSoyuzDescentModule,
+    buildDragonCapsule,
+  } from '$lib/three/capsule-models';
   import { buildLauncherModel } from '$lib/three/launcher-models';
   import { buildSatelliteModel } from '$lib/earth-satellite-models';
   import { buildLaunchpadModel } from '$lib/earth-launchpad-models';
@@ -46,6 +54,14 @@
 
   // Per-family model sets. Extend as each family is converted to hero materials.
   const FAMILIES: Record<string, Item[]> = {
+    capsule: [
+      { id: 'mercury', label: 'Mercury', build: () => buildMercuryCapsule() },
+      { id: 'gemini', label: 'Gemini', build: () => buildGeminiCapsule() },
+      { id: 'vostok', label: 'Vostok / Voskhod', build: () => buildVostokSphere() },
+      { id: 'apollo-cm', label: 'Apollo CM', build: () => buildApolloCM() },
+      { id: 'soyuz', label: 'Soyuz DM', build: () => buildSoyuzDescentModule() },
+      { id: 'dragon', label: 'Crew Dragon', build: () => buildDragonCapsule() },
+    ],
     spacecraft: [
       'cassini',
       'voyager-1',

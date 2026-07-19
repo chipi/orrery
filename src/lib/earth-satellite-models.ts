@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { heroSolar } from './three/hero-materials';
 
 /**
  * Per-spacecraft 3D model builders for the /earth scene.
@@ -29,7 +30,6 @@ import * as THREE from 'three';
  * colours (which would look unrealistic).
  */
 
-const PANEL_COLOR = 0x0b1840; // solar-array deep navy
 const MLI_WHITE = 0xeeeeee; // multi-layer insulation thermal blanket
 const SILVER = 0xb8b8b8; // bare aluminium / structural
 const GOLD = 0xd4af37; // kapton thermal blanket
@@ -62,13 +62,10 @@ function accentMat(color: string): THREE.MeshStandardMaterial {
 }
 
 function panelMat(): THREE.MeshStandardMaterial {
-  // Solar arrays — deep navy, mid-rough, slightly metallic for cell
-  // glint.
-  return new THREE.MeshStandardMaterial({
-    color: PANEL_COLOR,
-    metalness: 0.35,
-    roughness: 0.3,
-  });
+  // Solar arrays — the shared textured cell-grid material so panels read the
+  // same across the whole model fleet (brighter + detailed than the old flat
+  // navy).
+  return heroSolar(3);
 }
 
 function silverMat(): THREE.MeshStandardMaterial {
@@ -245,9 +242,11 @@ function buildChandra(color: string): THREE.Group {
   const g = new THREE.Group();
   const mat = bodyMat(color);
   // Telescope tube — long cone-cylinder taper (wider at instrument end).
+  // Aluminised thermal blanket: light + metallic so it catches the sun
+  // instead of reading as a near-black stick.
   const tube = new THREE.Mesh(
     new THREE.CylinderGeometry(0.08, 0.18, 1.4, 16),
-    new THREE.MeshStandardMaterial({ color: 0x1a1a2e, metalness: 0.55, roughness: 0.55 }),
+    new THREE.MeshStandardMaterial({ color: 0xa8adb6, metalness: 0.85, roughness: 0.38 }),
   );
   tube.rotation.z = Math.PI / 2;
   g.add(tube);

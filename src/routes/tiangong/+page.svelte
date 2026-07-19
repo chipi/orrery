@@ -31,6 +31,7 @@
   import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import { disposeScene } from '$lib/three/dispose-object3d';
   import { gmstRadians } from '$lib/earth-sidereal';
+  import { heroEnvironment } from '$lib/three/hero-materials';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
   import { getTiangongModules, getTiangongVisitors, getTiangongModuleGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
@@ -627,6 +628,9 @@
     renderer.setClearColor(0x04040c, 1);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.05;
+    // Hero IBL — the PBR station modules (MeshStandard) get real reflections.
+    // The Earth backdrop is MeshPhong (unaffected); ACES is already on above.
+    scene.environment = heroEnvironment(renderer);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.domElement.dataset.testid = 'tiangong-canvas';

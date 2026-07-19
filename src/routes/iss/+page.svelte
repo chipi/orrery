@@ -34,6 +34,7 @@
   import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import { disposeScene } from '$lib/three/dispose-object3d';
   import { gmstRadians } from '$lib/earth-sidereal';
+  import { heroEnvironment } from '$lib/three/hero-materials';
   import { getIssModules, getIssVisitors, getIssModuleGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { buildIssProxyStation, MODULE_BOXES } from '$lib/iss-proxy-model';
@@ -687,6 +688,9 @@
     // bright Earth backdrop stack on the sun-lit side of the station.
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.05;
+    // Hero IBL — the PBR station proxy (MeshStandard) gets real reflections.
+    // The Earth backdrop is MeshPhong (unaffected); ACES is already on above.
+    scene.environment = heroEnvironment(renderer);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.domElement.dataset.testid = 'iss-canvas';

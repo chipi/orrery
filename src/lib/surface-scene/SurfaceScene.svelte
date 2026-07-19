@@ -70,6 +70,7 @@
   import { getMissionIndex } from '$lib/data';
   import type { EarthObject } from '$types/earth-object';
   import { createSceneRenderer, disposeSceneRenderer } from '$lib/three/scene-renderer';
+  import { heroEnvironment } from '$lib/three/hero-materials';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
   import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
@@ -1092,6 +1093,11 @@
     const renderer = createSceneRenderer(container, {
       pixelRatioCap: quality.pixelRatioCap,
     });
+    // Hero IBL: give the PBR lander/rover models (MeshStandard) real
+    // reflections + glints. The terrain/sky/imagery are MeshBasic (unlit), so
+    // the environment doesn't touch them; only the models pick it up. Tone
+    // mapping is left as the renderer default so the surface look is unchanged.
+    scene.environment = heroEnvironment(renderer);
 
     // EffectComposer for hover-outline (mirrors /iss + /mars pattern).
     // Skipped on `minimal` / `low` tiers — those render directly via

@@ -398,6 +398,27 @@ const cruiseModels = [
     'Blue Moon MK1',
     'Blue Origin’s tall lander — central tank on a four-leg frame.',
   ],
+  // Small-body sample / rendezvous craft + Starship.
+  [
+    'hayabusa1',
+    'Hayabusa cruise',
+    'JAXA sample-return bus — solar wings, a sampler horn, and ion engines.',
+  ],
+  [
+    'osiris-rex',
+    'OSIRIS-REx cruise',
+    'Boxy bus with V-angled solar wings and the extended TAGSAM sampler arm.',
+  ],
+  [
+    'near-shoemaker',
+    'NEAR Shoemaker',
+    'Orbiter bus with four fixed solar panels in a cross and a fixed dish.',
+  ],
+  [
+    'starship-demo',
+    'Starship',
+    'Stainless upper stage — nose cone, fore/aft flaps, and a Raptor cluster (Mars transit).',
+  ],
 ].map(mk('model-cruise', 'Fly · cruise/approach', '/fly'));
 
 // Launch facility + the two station proxies.

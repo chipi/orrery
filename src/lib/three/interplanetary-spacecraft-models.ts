@@ -960,6 +960,8 @@ const BUILDERS: Record<string, () => THREE.Group> = {
   // Pre-existing iconic 5.
   cassini: buildCassini,
   'cassini-tour': buildCassini,
+  // Huygens rode to Saturn bolted to Cassini — its cruise craft IS Cassini.
+  huygens: buildCassini,
   'voyager-1': buildVoyager,
   'voyager-2': buildVoyager,
   galileo: buildGalileo,

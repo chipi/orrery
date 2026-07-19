@@ -1961,6 +1961,34 @@
       "thumb": "/images/colophon/model-cruise-blue-moon-mk1.webp"
     },
     {
+      "title": "Hayabusa cruise",
+      "what": "JAXA sample-return bus — solar wings, a sampler horn, and ion engines.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-hayabusa1.webp"
+    },
+    {
+      "title": "OSIRIS-REx cruise",
+      "what": "Boxy bus with V-angled solar wings and the extended TAGSAM sampler arm.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-osiris-rex.webp"
+    },
+    {
+      "title": "NEAR Shoemaker",
+      "what": "Orbiter bus with four fixed solar panels in a cross and a fixed dish.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-near-shoemaker.webp"
+    },
+    {
+      "title": "Starship",
+      "what": "Stainless upper stage — nose cone, fore/aft flaps, and a Raptor cluster (Mars transit).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-starship-demo.webp"
+    },
+    {
       "title": "Hubble",
       "what": "Cylindrical observatory with aperture door and solar wings.",
       "where": "Earth orbital markers",
@@ -2190,7 +2218,7 @@
     "anatomy_art": 144,
     "diagrams_science": 102,
     "posters": 27,
-    "models3d": 99,
+    "models3d": 103,
     "canvas2d": 6,
     "ui": 4,
     "writing": 8

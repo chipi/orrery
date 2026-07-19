@@ -424,6 +424,11 @@
       'slim',
       'beresheet',
       'blue-moon-mk1',
+      // Small-body + Starship
+      'hayabusa1',
+      'osiris-rex',
+      'near-shoemaker',
+      'starship-demo',
     ].map((id) => ({
       id,
       label: id,

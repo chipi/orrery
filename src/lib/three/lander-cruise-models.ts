@@ -723,6 +723,118 @@ function buildBlueMoonCruise(): THREE.Group {
   return g;
 }
 
+// ── Small-body sample / rendezvous craft ──────────────────────────────────
+
+function buildHayabusa1Cruise(): THREE.Group {
+  // Boxy bus, two solar wings, a downward sampler horn, ion-engine cluster.
+  const g = new THREE.Group();
+  const body = bus(0.7, 0.5, 0.7, GOLD_FOIL);
+  g.add(body, solarWing(1.6, 0.6, -1.0), solarWing(1.6, 0.6, 1.0));
+  const horn = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.05, 0.14, 0.5, 16, 1, true),
+    mat(BUS_GREY),
+  );
+  horn.position.y = -0.5;
+  const hgd = dish(0.28);
+  hgd.position.set(0, 0.28, 0.4);
+  // Ion thruster nozzles at the aft face.
+  for (const x of [-0.15, 0.15]) {
+    const t = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.08, 0.1, 0.14, 12),
+      mat(RTG_DARK, 0x241a30),
+    );
+    t.position.set(x, 0, -0.42);
+    t.rotation.x = Math.PI / 2;
+    g.add(t);
+  }
+  g.add(horn, hgd);
+  return g;
+}
+
+function buildOsirisRexCruise(): THREE.Group {
+  // Boxy bus, two angled solar wings in a V, the TAGSAM sampler arm extended.
+  const g = new THREE.Group();
+  const body = bus(0.65, 0.8, 0.65, WHITE_MLI);
+  g.add(body);
+  const wl = solarWing(1.3, 0.55, -0.95);
+  wl.rotation.z = 0.35;
+  const wr = solarWing(1.3, 0.55, 0.95);
+  wr.rotation.z = -0.35;
+  g.add(wl, wr);
+  // TAGSAM arm — a boom reaching down-forward with a sampler head.
+  const arm = boom(0.7);
+  arm.position.set(0, -0.55, 0.2);
+  arm.rotation.x = 0.5;
+  const head = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 0.08, 16), mat(BUS_GREY));
+  head.position.set(0, -0.85, 0.4);
+  const hgd = dish(0.24);
+  hgd.position.set(0, 0.45, 0.35);
+  g.add(arm, head, hgd);
+  return g;
+}
+
+function buildNearShoemakerCruise(): THREE.Group {
+  // NEAR: octagonal bus with FOUR fixed solar panels in a cross + a fixed dish.
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.45, 0.45, 0.7, 8),
+    mat(GOLD_FOIL, 0x2a2113),
+  );
+  g.add(body);
+  const w1 = solarWing(1.1, 0.5, -0.85);
+  const w2 = solarWing(1.1, 0.5, 0.85);
+  const w3 = solarWing(1.1, 0.5, 0);
+  w3.rotation.y = Math.PI / 2;
+  w3.position.z = -0.85;
+  const w4 = solarWing(1.1, 0.5, 0);
+  w4.rotation.y = Math.PI / 2;
+  w4.position.z = 0.85;
+  const hgd = dish(0.4);
+  hgd.position.y = 0.5;
+  hgd.rotation.x = 0;
+  g.add(w1, w2, w3, w4, hgd);
+  return g;
+}
+
+// ── Starship (its own vehicle — the cruise/transit upper stage) ────────────
+
+function buildStarshipCruise(): THREE.Group {
+  // Stainless Starship: tall cylinder + ogive nose, 2 fwd + 2 aft flaps, Raptors.
+  const g = new THREE.Group();
+  const steel = 0xc4c8cc;
+  const body = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.4, 0.4, 1.5, 32),
+    mat(steel, 0x222428, 0.4),
+  );
+  const nose = new THREE.Mesh(new THREE.ConeGeometry(0.4, 0.55, 32), mat(steel, 0x222428, 0.4));
+  nose.position.y = 1.025;
+  g.add(body, nose);
+  // Forward + aft flaps.
+  const flap = (y: number, x: number, w: number): THREE.Mesh => {
+    const f = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.45, w), mat(steel, 0x1a1c20, 0.4));
+    f.position.set(x, y, 0);
+    return f;
+  };
+  g.add(
+    flap(0.6, 0.42, 0.35),
+    flap(0.6, -0.42, 0.35),
+    flap(-0.65, 0.44, 0.5),
+    flap(-0.65, -0.44, 0.5),
+  );
+  // Raptor cluster.
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2;
+    const r = new THREE.Mesh(
+      new THREE.ConeGeometry(0.09, 0.16, 12, 1, true),
+      mat(RTG_DARK, 0x33210f),
+    );
+    r.position.set(Math.cos(a) * 0.2, -0.83, Math.sin(a) * 0.2);
+    r.rotation.x = Math.PI;
+    g.add(r);
+  }
+  return g;
+}
+
 // ── Dispatch ──────────────────────────────────────────────────────────────
 
 const BUILDERS: Record<string, () => THREE.Group> = {
@@ -759,6 +871,13 @@ const BUILDERS: Record<string, () => THREE.Group> = {
   slim: buildSlimCruise,
   beresheet: buildBeresheetCruise,
   'blue-moon-mk1': buildBlueMoonCruise,
+  // Small-body sample / rendezvous craft
+  hayabusa1: buildHayabusa1Cruise,
+  'osiris-rex': buildOsirisRexCruise,
+  'near-shoemaker': buildNearShoemakerCruise,
+  // Starship (its own transit vehicle)
+  'starship-demo': buildStarshipCruise,
+  'starship-mars-crew': buildStarshipCruise,
 };
 
 /**

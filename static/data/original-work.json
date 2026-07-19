@@ -1884,6 +1884,83 @@
       "thumb": "/images/colophon/model-cruise-tianwen1.webp"
     },
     {
+      "title": "Apollo CSM + LM",
+      "what": "Command/Service Module docked to the Lunar Module — the trans-lunar stack (Apollo 11–17).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-apollo11.webp"
+    },
+    {
+      "title": "Orion (Artemis)",
+      "what": "Orion crew capsule + European Service Module with four solar wings (Artemis III / IV).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-artemis3.webp"
+    },
+    {
+      "title": "Luna 9 direct-ascent",
+      "what": "Soviet direct bus with the spherical lander capsule on top.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-luna9.webp"
+    },
+    {
+      "title": "Luna sample-return",
+      "what": "Descent stage with spherical tanks, ascent stage, and return capsule (Luna 16 / 24).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-luna16.webp"
+    },
+    {
+      "title": "Lunokhod carrier",
+      "what": "Descent-stage bus carrying the Lunokhod rover (Luna 17 / 21).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-luna17.webp"
+    },
+    {
+      "title": "Chang’e 3 / 4",
+      "what": "CNSA lander descent stage with the Yutu rover stowed on top.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-change3.webp"
+    },
+    {
+      "title": "Chang’e 5 / 6",
+      "what": "Four-module sample-return stack — orbiter, returner, ascender, and lander.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-change5.webp"
+    },
+    {
+      "title": "Chandrayaan-3",
+      "what": "ISRO propulsion module carrying the Vikram lander.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-chandrayaan3.webp"
+    },
+    {
+      "title": "SLIM",
+      "what": "JAXA’s compact “Moon Sniper” cruise bus.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-slim.webp"
+    },
+    {
+      "title": "Beresheet",
+      "what": "SpaceIL’s small round four-leg lander in transit.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-beresheet.webp"
+    },
+    {
+      "title": "Blue Moon MK1",
+      "what": "Blue Origin’s tall lander — central tank on a four-leg frame.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-blue-moon-mk1.webp"
+    },
+    {
       "title": "Hubble",
       "what": "Cylindrical observatory with aperture door and solar wings.",
       "where": "Earth orbital markers",
@@ -2113,7 +2190,7 @@
     "anatomy_art": 144,
     "diagrams_science": 102,
     "posters": 27,
-    "models3d": 88,
+    "models3d": 99,
     "canvas2d": 6,
     "ui": 4,
     "writing": 8

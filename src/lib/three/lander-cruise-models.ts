@@ -109,11 +109,6 @@ function boom(len: number, r = len * 0.02): THREE.Mesh {
   return new THREE.Mesh(new THREE.CylinderGeometry(r, r, len, 8), mat(RTG_DARK, 0x151515));
 }
 
-// Referenced by later mission batches (antennas, red accents, MLI blankets).
-void ACCENT_RED;
-void WHITE_MLI;
-void boom;
-
 // ── Per-mission cruise builders (Mars batch) ──────────────────────────────
 
 /**
@@ -205,6 +200,529 @@ function buildTianwen1Cruise(): THREE.Group {
   return g;
 }
 
+// ── Per-mission cruise builders (Moon batch) ──────────────────────────────
+
+/**
+ * Apollo trans-lunar cruise: CSM (Command + Service Module) docked
+ * nose-to-nose with the LM (Lunar Module). The CSM is white/gold; the LM
+ * is a spidery gold-foil box on four landing legs with an octagonal ascent
+ * stage on top.
+ */
+function buildApolloCruise(): THREE.Group {
+  const g = new THREE.Group();
+
+  // Command Module — blunt cone, white MLI
+  const cm = new THREE.Mesh(new THREE.ConeGeometry(0.26, 0.38, 20), mat(WHITE_MLI, 0x282820));
+  cm.rotation.x = Math.PI; // point up (apex down toward SM)
+  cm.position.y = 1.35;
+
+  // Service Module — cylinder, gold
+  const sm = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.26, 0.26, 0.78, 20),
+    mat(GOLD_FOIL, 0x2a2113),
+  );
+  sm.position.y = 0.82;
+
+  // SPS engine bell at aft of SM
+  const bell = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.14, 0.22, 0.32, 16),
+    mat(RTG_DARK, 0x151515),
+  );
+  bell.position.y = 0.3;
+
+  // Docking adapter (short white stub between CSM and LM)
+  const adapter = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.22, 0.28, 0.22, 20),
+    mat(WHITE_MLI, 0x282820),
+  );
+  adapter.position.y = 0.44;
+
+  // LM descent stage — boxy, gold, wider
+  const lmDescent = bus(0.44, 0.28, 0.44, GOLD_FOIL);
+  lmDescent.position.y = 0.0;
+
+  // LM ascent stage — octagonal boxy top
+  const lmAscent = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.2, 0.2, 0.28, 8),
+    mat(GOLD_FOIL, 0x2a2113),
+  );
+  lmAscent.position.y = 0.28;
+
+  // Four landing legs splayed out from descent stage
+  for (let i = 0; i < 4; i++) {
+    const leg = boom(0.42, 0.015);
+    leg.rotation.z = Math.PI * 0.35;
+    leg.position.set(Math.cos((i * Math.PI) / 2) * 0.28, -0.18, Math.sin((i * Math.PI) / 2) * 0.28);
+    leg.rotation.y = (i * Math.PI) / 2;
+    g.add(leg);
+  }
+
+  g.add(cm, sm, bell, adapter, lmDescent, lmAscent);
+  return g;
+}
+
+/**
+ * Orion/ESM cruise: blunt capsule + ESM cylinder with 4 solar array wings
+ * in a cross pattern + main engine bell.
+ */
+function buildOrionCruise(): THREE.Group {
+  const g = new THREE.Group();
+
+  // Crew module — blunt cone
+  const cm = new THREE.Mesh(new THREE.ConeGeometry(0.32, 0.4, 20), mat(WHITE_MLI, 0x282820));
+  cm.rotation.x = Math.PI;
+  cm.position.y = 0.92;
+
+  // European Service Module — cylinder
+  const esm = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.3, 0.3, 0.82, 20),
+    mat(BUS_GREY, 0x1a1a1a),
+  );
+  esm.position.y = 0.22;
+
+  // Engine bell
+  const bell = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.12, 0.2, 0.28, 16),
+    mat(RTG_DARK, 0x151515),
+  );
+  bell.position.y = -0.28;
+
+  // Four solar array wings in cross — pairs on X and Z
+  g.add(solarWing(0.82, 0.36, -0.72));
+  g.add(solarWing(0.82, 0.36, 0.72));
+  const wZ1 = solarWing(0.82, 0.36, 0);
+  wZ1.rotation.y = Math.PI / 2;
+  wZ1.position.z = -0.72;
+  const wZ2 = solarWing(0.82, 0.36, 0);
+  wZ2.rotation.y = Math.PI / 2;
+  wZ2.position.z = 0.72;
+  g.add(wZ1, wZ2);
+
+  g.add(cm, esm, bell);
+  return g;
+}
+
+/**
+ * Luna 9 — direct-ascent probe: cylindrical propellant bus with a spherical
+ * lander capsule on top and four vernier nozzles around the base.
+ */
+function buildLunaDirectCruise(): THREE.Group {
+  const g = new THREE.Group();
+
+  const busBody = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.28, 0.32, 0.7, 20),
+    mat(BUS_GREY, 0x222222),
+  );
+  busBody.position.y = -0.2;
+
+  // Spherical lander capsule
+  const capsule = new THREE.Mesh(new THREE.SphereGeometry(0.22, 20, 14), mat(WHITE_MLI, 0x282820));
+  capsule.position.y = 0.37;
+
+  // Main engine bell at base
+  const bell = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.1, 0.18, 0.24, 16),
+    mat(RTG_DARK, 0x151515),
+  );
+  bell.position.y = -0.66;
+
+  // Four vernier nozzles
+  for (let i = 0; i < 4; i++) {
+    const nozzle = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.035, 0.06, 0.14, 10),
+      mat(RTG_DARK, 0x151515),
+    );
+    nozzle.position.set(
+      Math.cos((i * Math.PI) / 2) * 0.32,
+      -0.54,
+      Math.sin((i * Math.PI) / 2) * 0.32,
+    );
+    g.add(nozzle);
+  }
+
+  g.add(busBody, capsule, bell);
+  return g;
+}
+
+/**
+ * Luna 16/20/24 sample-return: a wide descent-stage tank bus with four
+ * spherical fuel tanks + engine bell, topped by a slender ascent stage and
+ * small return sphere.
+ */
+function buildLunaSampleCruise(): THREE.Group {
+  const g = new THREE.Group();
+
+  // Descent stage tank bus
+  const descent = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.34, 0.34, 0.38, 20),
+    mat(BUS_GREY, 0x222222),
+  );
+  descent.position.y = -0.38;
+
+  // Four spherical propellant tanks
+  for (let i = 0; i < 4; i++) {
+    const tank = new THREE.Mesh(new THREE.SphereGeometry(0.14, 14, 10), mat(BUS_GREY, 0x1a1a1a));
+    tank.position.set(
+      Math.cos((i * Math.PI) / 2) * 0.38,
+      -0.44,
+      Math.sin((i * Math.PI) / 2) * 0.38,
+    );
+    g.add(tank);
+  }
+
+  // Descent engine bell
+  const dbell = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.12, 0.22, 0.28, 16),
+    mat(RTG_DARK, 0x151515),
+  );
+  dbell.position.y = -0.7;
+
+  // Ascent stage — slender cylinder
+  const ascent = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.16, 0.16, 0.52, 16),
+    mat(GOLD_FOIL, 0x2a2113),
+  );
+  ascent.position.y = 0.08;
+
+  // Return capsule sphere on top
+  const returnSphere = new THREE.Mesh(
+    new THREE.SphereGeometry(0.16, 16, 12),
+    mat(WHITE_MLI, 0x282820),
+  );
+  returnSphere.position.y = 0.52;
+
+  g.add(descent, dbell, ascent, returnSphere);
+  return g;
+}
+
+/**
+ * Luna 17/21 Lunokhod carrier: a descent-stage bus with the Lunokhod rover
+ * (a tub-shaped body with clamshell lid) stowed on top.
+ */
+function buildLunokhodCarrierCruise(): THREE.Group {
+  const g = new THREE.Group();
+
+  // Descent stage
+  const descent = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.4, 0.4, 0.36, 20),
+    mat(BUS_GREY, 0x222222),
+  );
+  descent.position.y = -0.44;
+
+  // Engine bell
+  const bell = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.14, 0.24, 0.3, 16),
+    mat(RTG_DARK, 0x151515),
+  );
+  bell.position.y = -0.75;
+
+  // Lunokhod rover tub body
+  const tub = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.34, 0.34, 0.26, 10),
+    mat(GOLD_FOIL, 0x2a2113),
+  );
+  tub.position.y = -0.1;
+
+  // Clamshell solar-cell lid (flat half-cylinder)
+  const lid = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.34, 0.34, 0.06, 10, 1, false, 0, Math.PI),
+    mat(SOLAR_BLUE, 0x0a1430, 0.5),
+  );
+  lid.position.y = 0.14;
+
+  // Eight wheels (simplified as small cylinders)
+  for (let i = 0; i < 4; i++) {
+    for (const side of [-1, 1]) {
+      const wheel = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.07, 0.07, 0.06, 10),
+        mat(RTG_DARK, 0x151515),
+      );
+      wheel.rotation.z = Math.PI / 2;
+      wheel.position.set(side * 0.4, -0.17, (i - 1.5) * 0.2);
+      g.add(wheel);
+    }
+  }
+
+  g.add(descent, bell, tub, lid);
+  return g;
+}
+
+/**
+ * Chang'e 3/4: a boxy descent lander with four legs and engine bell, with
+ * the Yutu rover (a small boxy gold unit) stowed on top.
+ */
+function buildChange34Cruise(): THREE.Group {
+  const g = new THREE.Group();
+
+  // Descent lander box
+  const lander = bus(0.56, 0.36, 0.56, GOLD_FOIL);
+  lander.position.y = -0.26;
+
+  // Engine bell
+  const bell = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.12, 0.2, 0.28, 16),
+    mat(RTG_DARK, 0x151515),
+  );
+  bell.position.y = -0.58;
+
+  // Four landing legs
+  for (let i = 0; i < 4; i++) {
+    const leg = boom(0.46, 0.016);
+    leg.rotation.z = Math.PI * 0.35;
+    leg.position.set(
+      Math.cos((i * Math.PI) / 2 + Math.PI / 4) * 0.3,
+      -0.38,
+      Math.sin((i * Math.PI) / 2 + Math.PI / 4) * 0.3,
+    );
+    leg.rotation.y = (i * Math.PI) / 2;
+    g.add(leg);
+  }
+
+  // Yutu rover — small boxy unit on top
+  const rover = bus(0.3, 0.14, 0.36, GOLD_FOIL);
+  rover.position.y = 0.07;
+
+  // Yutu solar panels (folded, vertical)
+  const rp1 = solarWing(0.3, 0.22, -0.24);
+  rp1.position.y = 0.07;
+  const rp2 = solarWing(0.3, 0.22, 0.24);
+  rp2.position.y = 0.07;
+  g.add(rp1, rp2);
+
+  // ACCENT_RED stripe on rover for visual identity
+  const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.04, 0.04), mat(ACCENT_RED, 0x3a0000));
+  stripe.position.y = 0.12;
+  stripe.position.z = 0.18;
+  g.add(stripe);
+
+  g.add(lander, bell, rover);
+  return g;
+}
+
+/**
+ * Chang'e 5/6 sample-return: four-module stack bottom-up —
+ * orbiter (box bus + solar wings) → returner capsule → ascender → lander.
+ */
+function buildChange56Cruise(): THREE.Group {
+  const g = new THREE.Group();
+
+  // Orbiter bus at bottom
+  const orbiter = bus(0.46, 0.3, 0.46, BUS_GREY);
+  orbiter.position.y = -0.62;
+  g.add(solarWing(0.9, 0.36, -0.62));
+  g.add(solarWing(0.9, 0.36, 0.62));
+
+  // Returner capsule (small cone)
+  const returner = new THREE.Mesh(new THREE.ConeGeometry(0.18, 0.26, 16), mat(WHITE_MLI, 0x282820));
+  returner.rotation.x = Math.PI;
+  returner.position.y = -0.22;
+
+  // Ascender stage (short cylinder)
+  const ascender = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.18, 0.18, 0.32, 16),
+    mat(GOLD_FOIL, 0x2a2113),
+  );
+  ascender.position.y = 0.14;
+
+  // Lander at top (boxy, gold)
+  const lander = bus(0.4, 0.28, 0.4, GOLD_FOIL);
+  lander.position.y = 0.5;
+
+  // Lander engine bell
+  const bell = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.1, 0.16, 0.2, 14),
+    mat(RTG_DARK, 0x151515),
+  );
+  bell.position.y = 0.74;
+
+  g.add(orbiter, returner, ascender, lander, bell);
+  return g;
+}
+
+/**
+ * Chandrayaan-3: ISRO propulsion module (box bus + single solar wing on one
+ * side) with Vikram lander (4-leg box) mounted on top.
+ */
+function buildChandrayaan3Cruise(): THREE.Group {
+  const g = new THREE.Group();
+
+  // Propulsion module — boxy grey bus
+  const pm = bus(0.44, 0.5, 0.44, BUS_GREY);
+  pm.position.y = -0.3;
+
+  // Single solar wing on one side (ISRO style)
+  const wing = solarWing(0.88, 0.4, -0.66);
+  wing.position.y = -0.3;
+  g.add(wing);
+
+  // Vikram lander on top — boxy gold with 4 legs
+  const vikram = bus(0.42, 0.3, 0.42, GOLD_FOIL);
+  vikram.position.y = 0.22;
+
+  // Four legs
+  for (let i = 0; i < 4; i++) {
+    const leg = boom(0.44, 0.015);
+    leg.rotation.z = Math.PI * 0.35;
+    leg.position.set(
+      Math.cos((i * Math.PI) / 2 + Math.PI / 4) * 0.28,
+      0.12,
+      Math.sin((i * Math.PI) / 2 + Math.PI / 4) * 0.28,
+    );
+    leg.rotation.y = (i * Math.PI) / 2;
+    g.add(leg);
+  }
+
+  // Vikram engine bell
+  const bell = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.09, 0.15, 0.18, 14),
+    mat(RTG_DARK, 0x151515),
+  );
+  bell.position.y = 0.12;
+
+  // HGA dish on PM
+  const hgd = dish(0.18);
+  hgd.position.set(0.3, -0.14, 0.3);
+  g.add(hgd);
+
+  g.add(pm, vikram, bell);
+  return g;
+}
+
+/**
+ * SLIM "Moon Sniper": a compact boxy bus, spherical propellant tank,
+ * two engine bells, and a small solar panel. Petite craft.
+ */
+function buildSlimCruise(): THREE.Group {
+  const g = new THREE.Group();
+
+  // Main bus — flat and boxy
+  const body = bus(0.6, 0.22, 0.42, WHITE_MLI);
+  body.position.y = 0.0;
+
+  // Spherical propellant tank
+  const tank = new THREE.Mesh(new THREE.SphereGeometry(0.16, 16, 12), mat(BUS_GREY, 0x1a1a1a));
+  tank.position.y = 0.22;
+
+  // Two main engine bells (side by side)
+  for (const x of [-0.1, 0.1]) {
+    const bell = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.05, 0.1, 0.2, 12),
+      mat(RTG_DARK, 0x151515),
+    );
+    bell.position.set(x, -0.2, 0);
+    g.add(bell);
+  }
+
+  // Small solar panel
+  const panel = solarWing(0.54, 0.28, -0.48);
+  panel.position.y = 0.02;
+  g.add(panel);
+
+  g.add(body, tank);
+  return g;
+}
+
+/**
+ * Beresheet: small round lander cruising as itself — gold body, top disk of
+ * solar cells, single engine bell, four legs.
+ */
+function buildBeresheetCruise(): THREE.Group {
+  const g = new THREE.Group();
+
+  // Main body — squat cylinder, gold
+  const body = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.34, 0.34, 0.3, 20),
+    mat(GOLD_FOIL, 0x2a2113),
+  );
+  body.position.y = 0.0;
+
+  // Top solar-cell disk
+  const solardisk = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.34, 0.34, 0.04, 20),
+    mat(SOLAR_BLUE, 0x0a1430, 0.5),
+  );
+  solardisk.position.y = 0.17;
+
+  // Engine bell
+  const bell = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.1, 0.18, 0.26, 16),
+    mat(RTG_DARK, 0x151515),
+  );
+  bell.position.y = -0.28;
+
+  // Four landing legs
+  for (let i = 0; i < 4; i++) {
+    const leg = boom(0.44, 0.014);
+    leg.rotation.z = Math.PI * 0.38;
+    leg.position.set(
+      Math.cos((i * Math.PI) / 2 + Math.PI / 4) * 0.28,
+      -0.1,
+      Math.sin((i * Math.PI) / 2 + Math.PI / 4) * 0.28,
+    );
+    leg.rotation.y = (i * Math.PI) / 2;
+    g.add(leg);
+  }
+
+  g.add(body, solardisk, bell);
+  return g;
+}
+
+/**
+ * Blue Moon MK1: a tall lander — large central propellant tank (cylinder) on
+ * a wide 4-leg frame with engine bell, payload deck on top.
+ */
+function buildBlueMoonCruise(): THREE.Group {
+  const g = new THREE.Group();
+
+  // Central propellant tank — tall cylinder, white
+  const tank = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.3, 0.3, 1.1, 20),
+    mat(WHITE_MLI, 0x282820),
+  );
+  tank.position.y = 0.1;
+
+  // Engine bell at base
+  const bell = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.18, 0.3, 0.36, 16),
+    mat(RTG_DARK, 0x151515),
+  );
+  bell.position.y = -0.6;
+
+  // Payload deck on top
+  const deck = bus(0.62, 0.1, 0.62, BUS_GREY);
+  deck.position.y = 0.7;
+
+  // Four wide landing legs on a lower truss ring
+  for (let i = 0; i < 4; i++) {
+    const leg = boom(0.72, 0.022);
+    leg.rotation.z = Math.PI * 0.42;
+    leg.position.set(
+      Math.cos((i * Math.PI) / 2 + Math.PI / 4) * 0.38,
+      -0.26,
+      Math.sin((i * Math.PI) / 2 + Math.PI / 4) * 0.38,
+    );
+    leg.rotation.y = (i * Math.PI) / 2;
+    g.add(leg);
+  }
+
+  // Foot pads
+  for (let i = 0; i < 4; i++) {
+    const pad = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.08, 0.08, 0.04, 10),
+      mat(BUS_GREY, 0x1a1a1a),
+    );
+    pad.position.set(
+      Math.cos((i * Math.PI) / 2 + Math.PI / 4) * 0.68,
+      -0.62,
+      Math.sin((i * Math.PI) / 2 + Math.PI / 4) * 0.68,
+    );
+    g.add(pad);
+  }
+
+  g.add(tank, bell, deck);
+  return g;
+}
+
 // ── Dispatch ──────────────────────────────────────────────────────────────
 
 const BUILDERS: Record<string, () => THREE.Group> = {
@@ -219,6 +737,28 @@ const BUILDERS: Record<string, () => THREE.Group> = {
   viking1: buildViking1Cruise,
   mars3: buildMars3Cruise,
   tianwen1: buildTianwen1Cruise,
+  // Moon batch
+  apollo11: buildApolloCruise,
+  apollo12: buildApolloCruise,
+  apollo14: buildApolloCruise,
+  apollo15: buildApolloCruise,
+  apollo16: buildApolloCruise,
+  apollo17: buildApolloCruise,
+  artemis3: buildOrionCruise,
+  artemis4: buildOrionCruise,
+  luna9: buildLunaDirectCruise,
+  luna16: buildLunaSampleCruise,
+  luna24: buildLunaSampleCruise,
+  luna17: buildLunokhodCarrierCruise,
+  luna21: buildLunokhodCarrierCruise,
+  change3: buildChange34Cruise,
+  change4: buildChange34Cruise,
+  change5: buildChange56Cruise,
+  change6: buildChange56Cruise,
+  chandrayaan3: buildChandrayaan3Cruise,
+  slim: buildSlimCruise,
+  beresheet: buildBeresheetCruise,
+  'blue-moon-mk1': buildBlueMoonCruise,
 };
 
 /**

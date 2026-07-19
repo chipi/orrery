@@ -366,6 +366,38 @@ const cruiseModels = [
   ['viking1', 'Viking orbiter + lander', 'Viking orbiter with the bioshield-capsule lander below.'],
   ['mars3', 'Mars 3 bus', 'Soviet M-71 bus with the descent capsule and solar wings.'],
   ['tianwen1', 'Tianwen-1 orbiter', 'Orbiter bus carrying the entry capsule (Zhurong inside).'],
+  // Moon — one entry per distinct transit stack (shared across the missions noted).
+  [
+    'apollo11',
+    'Apollo CSM + LM',
+    'Command/Service Module docked to the Lunar Module — the trans-lunar stack (Apollo 11–17).',
+  ],
+  [
+    'artemis3',
+    'Orion (Artemis)',
+    'Orion crew capsule + European Service Module with four solar wings (Artemis III / IV).',
+  ],
+  ['luna9', 'Luna 9 direct-ascent', 'Soviet direct bus with the spherical lander capsule on top.'],
+  [
+    'luna16',
+    'Luna sample-return',
+    'Descent stage with spherical tanks, ascent stage, and return capsule (Luna 16 / 24).',
+  ],
+  ['luna17', 'Lunokhod carrier', 'Descent-stage bus carrying the Lunokhod rover (Luna 17 / 21).'],
+  ['change3', 'Chang’e 3 / 4', 'CNSA lander descent stage with the Yutu rover stowed on top.'],
+  [
+    'change5',
+    'Chang’e 5 / 6',
+    'Four-module sample-return stack — orbiter, returner, ascender, and lander.',
+  ],
+  ['chandrayaan3', 'Chandrayaan-3', 'ISRO propulsion module carrying the Vikram lander.'],
+  ['slim', 'SLIM', 'JAXA’s compact “Moon Sniper” cruise bus.'],
+  ['beresheet', 'Beresheet', 'SpaceIL’s small round four-leg lander in transit.'],
+  [
+    'blue-moon-mk1',
+    'Blue Moon MK1',
+    'Blue Origin’s tall lander — central tank on a four-leg frame.',
+  ],
 ].map(mk('model-cruise', 'Fly · cruise/approach', '/fly'));
 
 // Launch facility + the two station proxies.

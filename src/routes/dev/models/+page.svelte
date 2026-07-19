@@ -395,8 +395,12 @@
       build: () => buildDescentModel('huygens', 'titan', 1).root,
     },
 
-    // ── Lander cruise-configuration craft (transit stack carrying the lander) ─
+    // ── Lander cruise-configuration craft (transit stack carrying the lander).
+    //    One representative per DISTINCT model — missions that flew the same
+    //    cruise stack (Apollo ×6, Chang'e pairs…) share a builder, so we frame
+    //    the model once here rather than duplicating identical thumbnails.
     ...[
+      // Mars
       'curiosity',
       'perseverance',
       'insight',
@@ -408,6 +412,18 @@
       'viking1',
       'mars3',
       'tianwen1',
+      // Moon — one representative per distinct builder (shared stacks framed once)
+      'apollo11',
+      'artemis3',
+      'luna9',
+      'luna16',
+      'luna17',
+      'change3',
+      'change5',
+      'chandrayaan3',
+      'slim',
+      'beresheet',
+      'blue-moon-mk1',
     ].map((id) => ({
       id,
       label: id,

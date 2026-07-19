@@ -21,7 +21,9 @@ SRCs, X-37B).
 
 2. **The orbit-coast act** (`fly-leo-coast-scene.ts` + `CoastScene.svelte`) — an
    Earth-centred km-unit scene showing the capsule looping the planet on its orbit
-   ring with a building ground-track. **Hybrid loop rule (Marko's decision):**
+   ring with a building ground-track, under a **cinematic shot schedule**
+   (establish → track → limb → ground-track, lerped for smooth crane moves) per
+   `fly-cinematic-shot-language.md`, matching the launch + re-entry acts. **Hybrid loop rule (Marko's decision):**
    render `min(realRevs, LOOP_CAP=3)` loops — 1/2/3-orbit missions show exactly
    that many, marathons (Gemini-7 = 206, Skylab-4 = 1214) render ~3 representative
    loops while the **REV n/N + MET/date counters carry the real scale**.

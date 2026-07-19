@@ -5,6 +5,27 @@
   import { buildHeroDemoCraft } from '$lib/three/hero-demo';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { installHeroEnvironment } from '$lib/three/hero-materials';
+  import { buildApolloLMHotspot } from '$lib/hotspot-models/apollo-lm';
+  import { buildLuna9Hotspot } from '$lib/hotspot-models/luna-9-spherical';
+  import { buildLunokhodHotspot } from '$lib/hotspot-models/lunokhod-rover';
+  import { buildChandrayaan3VikramHotspot } from '$lib/hotspot-models/chandrayaan-3-vikram';
+  import { buildVikingTripodHotspot } from '$lib/hotspot-models/viking-tripod';
+  import { buildPhoenixClassHotspot } from '$lib/hotspot-models/phoenix-class';
+  import { buildTianwenZhurongHotspot } from '$lib/hotspot-models/tianwen-zhurong';
+  import { buildPathfinderSojournerHotspot } from '$lib/hotspot-models/pathfinder-sojourner';
+  import { buildMars3PetalHotspot } from '$lib/hotspot-models/mars-3-petal';
+
+  const HOTSPOT: Record<string, () => THREE.Group> = {
+    'apollo-lm': () => buildApolloLMHotspot('#0B3D91'),
+    'luna-9': () => buildLuna9Hotspot('#cc4444'),
+    lunokhod: () => buildLunokhodHotspot('#cc4444'),
+    vikram: () => buildChandrayaan3VikramHotspot('#FF9933'),
+    viking: () => buildVikingTripodHotspot('#0B3D91'),
+    phoenix: () => buildPhoenixClassHotspot('#0B3D91'),
+    zhurong: () => buildTianwenZhurongHotspot('#DE2910'),
+    pathfinder: () => buildPathfinderSojournerHotspot('#0B3D91'),
+    'mars-3': () => buildMars3PetalHotspot('#cc4444'),
+  };
 
   let host: HTMLDivElement;
 
@@ -27,7 +48,7 @@
 
     const which = $page.url.searchParams.get('model');
     const model = which
-      ? (buildInterplanetarySpacecraft(which) ?? buildHeroDemoCraft())
+      ? (HOTSPOT[which]?.() ?? buildInterplanetarySpacecraft(which) ?? buildHeroDemoCraft())
       : buildHeroDemoCraft();
     model.updateWorldMatrix(true, true);
     const box = new THREE.Box3().setFromObject(model);

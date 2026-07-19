@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { strutBetween } from '../three/model-geom';
 
 /**
  * Phoenix + InSight Tier 1 engineering model — Phoenix-class lander
@@ -45,15 +46,15 @@ export function buildPhoenixClassHotspot(_accentColor: string): THREE.Group {
   // 3 splayed legs (120° apart).
   for (let i = 0; i < 3; i++) {
     const ang = (i / 3) * Math.PI * 2;
-    const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.016, 0.016, 0.36, 6), aluMat());
-    leg.position.set(Math.cos(ang) * 0.16, 0.18, Math.sin(ang) * 0.16);
-    leg.rotation.z = -Math.cos(ang) * 0.5;
-    leg.rotation.x = Math.sin(ang) * 0.5;
-    g.add(leg);
-    // Footpad.
-    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.015, 8), aluMat());
-    pad.position.set(Math.cos(ang) * 0.26, 0.02, Math.sin(ang) * 0.26);
+    const c = Math.cos(ang);
+    const s = Math.sin(ang);
+    const padPos = new THREE.Vector3(c * 0.3, 0.03, s * 0.3);
+    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.02, 10), aluMat());
+    pad.position.copy(padPos);
     g.add(pad);
+    // Leg strut + brace, both physically connecting the body to the pad.
+    g.add(strutBetween(new THREE.Vector3(c * 0.16, 0.22, s * 0.16), padPos, 0.016, aluMat(), 6));
+    g.add(strutBetween(new THREE.Vector3(c * 0.08, 0.1, s * 0.08), padPos, 0.012, aluMat(), 6));
   }
 
   // Two circular solar panels (port + starboard).

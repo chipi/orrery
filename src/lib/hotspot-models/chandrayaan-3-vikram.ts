@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { strutBetween } from '../three/model-geom';
 
 /**
  * Chandrayaan-3 Vikram lander + Pragyan rover Tier 1 (Manzinus
@@ -69,14 +70,15 @@ export function buildChandrayaan3VikramHotspot(accentColor: string): THREE.Group
   g.add(body);
   for (let i = 0; i < 4; i++) {
     const ang = (i / 4) * Math.PI * 2 + Math.PI / 4;
-    const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.4, 6), aluMat());
-    leg.position.set(Math.cos(ang) * 0.26, 0.2, Math.sin(ang) * 0.26);
-    leg.rotation.z = -Math.cos(ang) * 0.55;
-    leg.rotation.x = Math.sin(ang) * 0.55;
-    g.add(leg);
-    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.015, 8), aluMat());
-    pad.position.set(Math.cos(ang) * 0.4, 0.02, Math.sin(ang) * 0.4);
+    const c = Math.cos(ang);
+    const s = Math.sin(ang);
+    const padPos = new THREE.Vector3(c * 0.42, 0.03, s * 0.42);
+    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.02, 10), aluMat());
+    pad.position.copy(padPos);
     g.add(pad);
+    // Leg strut + brace, both physically connecting the body to the pad.
+    g.add(strutBetween(new THREE.Vector3(c * 0.24, 0.26, s * 0.24), padPos, 0.018, aluMat(), 6));
+    g.add(strutBetween(new THREE.Vector3(c * 0.14, 0.12, s * 0.14), padPos, 0.013, aluMat(), 6));
   }
   // Deployed ramp + Pragyan rover.
   const ramp = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.01, 0.3), aluMat());

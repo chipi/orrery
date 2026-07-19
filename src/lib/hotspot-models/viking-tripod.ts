@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { strutBetween } from '../three/model-geom';
 
 /**
  * Viking 1 + Viking 2 Tier 1 engineering model (PRD-014 / RFC-017 §S4,
@@ -58,15 +59,17 @@ export function buildVikingTripodHotspot(_accentColor: string): THREE.Group {
   // 3 splayed legs spaced 120° apart.
   for (let i = 0; i < 3; i++) {
     const ang = (i / 3) * Math.PI * 2;
-    const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.34, 6), aluMat());
-    leg.position.set(Math.cos(ang) * 0.28, 0.15, Math.sin(ang) * 0.28);
-    leg.rotation.z = -Math.cos(ang) * 0.7;
-    leg.rotation.x = Math.sin(ang) * 0.7;
-    g.add(leg);
-    // Footpad.
-    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.02, 8), aluMat());
-    pad.position.set(Math.cos(ang) * 0.42, 0.02, Math.sin(ang) * 0.42);
+    const c = Math.cos(ang);
+    const s = Math.sin(ang);
+    // Footpad on the surface.
+    const padPos = new THREE.Vector3(c * 0.44, 0.03, s * 0.44);
+    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.025, 10), aluMat());
+    pad.position.copy(padPos);
     g.add(pad);
+    // Primary leg strut — body edge → pad (physically connected).
+    g.add(strutBetween(new THREE.Vector3(c * 0.24, 0.24, s * 0.24), padPos, 0.018, aluMat(), 6));
+    // A-frame brace — lower inboard point → pad.
+    g.add(strutBetween(new THREE.Vector3(c * 0.14, 0.1, s * 0.14), padPos, 0.013, aluMat(), 6));
   }
 
   // Two RTG canisters mounted on top.

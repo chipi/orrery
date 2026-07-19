@@ -4,8 +4,35 @@
   import * as THREE from 'three';
   import { installHeroEnvironment } from '$lib/three/hero-materials';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
+  import { buildApolloLMHotspot } from '$lib/hotspot-models/apollo-lm';
+  import { buildApolloLMExtendedHotspot } from '$lib/hotspot-models/apollo-lm-extended';
+  import { buildLuna9Hotspot } from '$lib/hotspot-models/luna-9-spherical';
+  import { buildLunaSampleReturnHotspot } from '$lib/hotspot-models/luna-sample-return';
+  import { buildLunokhodHotspot } from '$lib/hotspot-models/lunokhod-rover';
+  import { buildChangeLanderHotspot } from '$lib/hotspot-models/chang-e-lander';
+  import { buildYutuRoverHotspot } from '$lib/hotspot-models/yutu-rover';
+  import { buildChandrayaan3VikramHotspot } from '$lib/hotspot-models/chandrayaan-3-vikram';
+  import { buildSLIMPrecisionLanderHotspot } from '$lib/hotspot-models/slim-precision-lander';
+  import { buildBeresheetHotspot } from '$lib/hotspot-models/beresheet';
+  import { buildVikingTripodHotspot } from '$lib/hotspot-models/viking-tripod';
+  import { buildPathfinderSojournerHotspot } from '$lib/hotspot-models/pathfinder-sojourner';
+  import { buildMERRoverHotspot } from '$lib/hotspot-models/mer-rover';
+  import { buildCuriosityClassHotspot } from '$lib/hotspot-models/curiosity-class';
+  import { buildPhoenixClassHotspot } from '$lib/hotspot-models/phoenix-class';
+  import { buildMars3PetalHotspot } from '$lib/hotspot-models/mars-3-petal';
+  import { buildTianwenZhurongHotspot } from '$lib/hotspot-models/tianwen-zhurong';
+  import { buildSchiaparelliHotspot } from '$lib/hotspot-models/schiaparelli';
+  import { buildBeagle2Hotspot } from '$lib/hotspot-models/beagle-2';
 
   type Item = { id: string; label: string; build: () => THREE.Group | null };
+
+  const US = '#0B3D91';
+  const SU = '#cc4444';
+  const CN = '#DE2910';
+  const IN = '#FF9933';
+  const JP = '#003247';
+  const EU = '#003399';
+  const IL = '#0038B8';
 
   // Per-family model sets. Extend as each family is converted to hero materials.
   const FAMILIES: Record<string, Item[]> = {
@@ -26,6 +53,53 @@
       'vega-1',
       'venera-13',
     ].map((id) => ({ id, label: id, build: () => buildInterplanetarySpacecraft(id) })),
+    moon: [
+      { id: 'apollo-lm', label: 'Apollo LM', build: () => buildApolloLMHotspot(US) },
+      {
+        id: 'apollo-lm-extended',
+        label: 'Apollo LM + LRV',
+        build: () => buildApolloLMExtendedHotspot(US),
+      },
+      { id: 'luna-9', label: 'Luna 9', build: () => buildLuna9Hotspot(SU) },
+      {
+        id: 'luna-sample-return',
+        label: 'Luna sample-return',
+        build: () => buildLunaSampleReturnHotspot(SU),
+      },
+      { id: 'lunokhod', label: 'Lunokhod', build: () => buildLunokhodHotspot(SU) },
+      {
+        id: 'chang-e-lander',
+        label: "Chang'e lander",
+        build: () => buildChangeLanderHotspot(CN, { withAscentStage: true }),
+      },
+      { id: 'yutu', label: 'Yutu', build: () => buildYutuRoverHotspot(CN) },
+      {
+        id: 'chandrayaan-3-vikram',
+        label: 'Vikram',
+        build: () => buildChandrayaan3VikramHotspot(IN),
+      },
+      { id: 'slim', label: 'SLIM', build: () => buildSLIMPrecisionLanderHotspot(JP) },
+      { id: 'beresheet', label: 'Beresheet', build: () => buildBeresheetHotspot(IL) },
+    ],
+    mars: [
+      { id: 'viking', label: 'Viking', build: () => buildVikingTripodHotspot(US) },
+      {
+        id: 'pathfinder-sojourner',
+        label: 'Pathfinder + Sojourner',
+        build: () => buildPathfinderSojournerHotspot(US),
+      },
+      { id: 'mer', label: 'MER', build: () => buildMERRoverHotspot(US) },
+      {
+        id: 'curiosity',
+        label: 'Curiosity',
+        build: () => buildCuriosityClassHotspot(US, { withIngenuity: true }),
+      },
+      { id: 'phoenix', label: 'Phoenix', build: () => buildPhoenixClassHotspot(US) },
+      { id: 'mars-3', label: 'Mars 3', build: () => buildMars3PetalHotspot(SU) },
+      { id: 'zhurong', label: 'Zhurong', build: () => buildTianwenZhurongHotspot(CN) },
+      { id: 'schiaparelli', label: 'Schiaparelli', build: () => buildSchiaparelliHotspot(EU) },
+      { id: 'beagle-2', label: 'Beagle 2', build: () => buildBeagle2Hotspot(EU) },
+    ],
   };
 
   const family = $derived($page.url.searchParams.get('family') ?? 'spacecraft');

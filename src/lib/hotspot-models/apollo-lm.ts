@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { strutBetween } from '../three/model-geom';
 
 /**
  * Apollo 11 Lunar Module — Tier 1 engineering model (PRD-014 / RFC-017
@@ -97,30 +98,28 @@ export function buildApolloLMHotspot(accentColor: string): THREE.Group {
     g.add(vane);
   }
 
-  // ─── Landing legs (4 splayed) ────────────────────────────────
-  // Real span: 9.45 m tip-to-tip. Here: 1.2u tip-to-tip.
+  // ─── Landing legs (4 splayed) — each strut physically spans from the
+  //     descent-stage corner DOWN to its footpad, so the leg reads as a
+  //     connected A-frame instead of rods floating above the pads. ────
   for (let i = 0; i < 4; i++) {
     const ang = (i / 4) * Math.PI * 2 + Math.PI / 4;
-    // Primary strut — angles outward from descent stage edge.
-    const strutLen = 0.62;
-    const strut = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.022, 0.022, strutLen, 6),
-      silverFoil(),
-    );
-    strut.position.set(Math.cos(ang) * 0.46, 0.28, Math.sin(ang) * 0.46);
-    strut.rotation.z = -Math.cos(ang) * 0.55;
-    strut.rotation.x = Math.sin(ang) * 0.55;
-    g.add(strut);
-    // Secondary strut (the "knee" support that braces each primary).
-    const brace = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 0.38, 6), silverFoil());
-    brace.position.set(Math.cos(ang) * 0.5, 0.18, Math.sin(ang) * 0.5);
-    brace.rotation.z = -Math.cos(ang) * 0.95;
-    brace.rotation.x = Math.sin(ang) * 0.95;
-    g.add(brace);
-    // Footpad — circular disc resting on the regolith.
-    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 0.02, 12), silverFoil());
-    pad.position.set(Math.cos(ang) * 0.62, 0.02, Math.sin(ang) * 0.62);
+    const c = Math.cos(ang);
+    const s = Math.sin(ang);
+    // Footpad on the regolith.
+    const padPos = new THREE.Vector3(c * 0.64, 0.03, s * 0.64);
+    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 0.025, 12), silverFoil());
+    pad.position.copy(padPos);
     g.add(pad);
+    // Primary strut — descent-stage upper corner → pad.
+    const hip = new THREE.Vector3(c * 0.34, 0.36, s * 0.34);
+    g.add(strutBetween(hip, padPos, 0.022, silverFoil(), 6));
+    // Secondary knee brace — lower inboard body point → pad.
+    const knee = new THREE.Vector3(c * 0.2, 0.12, s * 0.2);
+    g.add(strutBetween(knee, padPos, 0.015, silverFoil(), 6));
+    // Down-lock leg cap where the primary meets the descent stage.
+    const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.05, 8), silverFoil());
+    cap.position.set(c * 0.34, 0.36, s * 0.34);
+    g.add(cap);
   }
 
   // ─── Ascent stage (above descent stage) ──────────────────────

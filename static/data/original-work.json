@@ -1744,6 +1744,13 @@
       "thumb": "/images/colophon/model-mars-beagle-2.webp"
     },
     {
+      "title": "Venera / Vega lander",
+      "what": "Soviet Venus surface lander — a pressure sphere on a toroidal crush-ring.",
+      "where": "Venus surface markers",
+      "route": "/venus",
+      "thumb": "/images/colophon/model-venus-venera.webp"
+    },
+    {
       "title": "Lunar powered descent",
       "what": "Vacuum retro-descent stage — no aeroshell or parachute (Apollo / Chang’e / Luna).",
       "where": "Fly · descent/landing",
@@ -2218,7 +2225,7 @@
     "anatomy_art": 144,
     "diagrams_science": 102,
     "posters": 27,
-    "models3d": 103,
+    "models3d": 104,
     "canvas2d": 6,
     "ui": 4,
     "writing": 8

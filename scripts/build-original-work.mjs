@@ -197,6 +197,15 @@ const marsModels = [
   ['beagle-2', 'Beagle 2', 'Clamshell ESA lander with petal solar panels.'],
 ].map(mk('model-mars', 'Mars landing sites', '/mars'));
 
+// Venus surface lander — venus-lander-models.ts, shown on /venus markers.
+const venusModels = [
+  [
+    'venera',
+    'Venera / Vega lander',
+    'Soviet Venus surface lander — a pressure sphere on a toroidal crush-ring.',
+  ],
+].map(mk('model-venus', 'Venus surface markers', '/venus'));
+
 // Earth satellites — earth-satellite-models.ts, shown as orbital markers.
 const satModels = [
   ['hubble', 'Hubble', 'Cylindrical observatory with aperture door and solar wings.'],
@@ -478,6 +487,7 @@ const models3d = [
   ...launchers,
   ...moonModels,
   ...marsModels,
+  ...venusModels,
   ...descentModels,
   ...cruiseModels,
   ...satModels,

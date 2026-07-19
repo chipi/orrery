@@ -46,6 +46,9 @@
   import { buildLauncherModel } from '$lib/three/launcher-models';
   import { buildDescentModel } from '$lib/three/descent-models';
   import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
+  import { buildVenusLanderModel } from '$lib/venus-lander-models';
+  import { buildHeroDemoCraft } from '$lib/three/hero-demo';
+  import { installHeroEnvironment } from '$lib/three/hero-materials';
 
   type Entry = {
     /** Stable id → capture filename `model-<family>-<id>` / `craft-<id>`. */
@@ -53,6 +56,8 @@
     label: string;
     family: string;
     build: () => THREE.Group | null;
+    /** Tier-B PBR entries: install the IBL environment + ACES tone mapping. */
+    hero?: boolean;
   };
 
   // Agency accent colours for the hotspot/pad builders (flag trim only).
@@ -214,6 +219,20 @@
       label: 'Launch facility',
       family: 'earth',
       build: () => buildLaunchpadModel('lc-39a', undefined, '#9aa'),
+    },
+    {
+      id: 'venera',
+      label: 'Venus surface lander',
+      family: 'venus',
+      build: () => buildVenusLanderModel('venera-13', 'lander', '#c9a45a', 'Roscosmos'),
+    },
+    // Tier-B hero-fidelity calibration demo (PBR + IBL + greebles + bevels).
+    {
+      id: 'demo',
+      label: 'HERO DEMO (Tier B)',
+      family: 'hero',
+      hero: true,
+      build: () => buildHeroDemoCraft(),
     },
     { id: 'iss', label: 'ISS proxy', family: 'station', build: () => buildIssProxyStation() },
     {
@@ -456,10 +475,13 @@
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x05060e);
     const camera = new THREE.PerspectiveCamera(FOV, 1, 0.001, 10000);
-    const key = new THREE.DirectionalLight(0xfff4d0, 2.1);
+    // Hero (PBR/IBL) cards let the environment do the filling, so the flat
+    // grey ambient + blue fill are dimmed right down — otherwise they wash out
+    // the high-contrast metal highlights the space env is there to create.
+    const key = new THREE.DirectionalLight(0xfff4d0, entry.hero ? 2.6 : 2.1);
     key.position.set(3, 2, 3);
     scene.add(key);
-    const fill = new THREE.DirectionalLight(0x6090ff, 0.6);
+    const fill = new THREE.DirectionalLight(0x6090ff, entry.hero ? 0.15 : 0.6);
     fill.position.set(-2, -1, -2);
     scene.add(fill);
     // A dim rim from behind lifts dark satellite/observatory hulls off the
@@ -467,7 +489,9 @@
     const rim = new THREE.DirectionalLight(0xffffff, 0.5);
     rim.position.set(-1, 1.5, -3);
     scene.add(rim);
-    scene.add(new THREE.AmbientLight(0x5a5a72, 0.7));
+    scene.add(new THREE.AmbientLight(0x5a5a72, entry.hero ? 0.12 : 0.7));
+    // Tier-B PBR entries reflect an image-based-lighting environment.
+    if (entry.hero && renderer) installHeroEnvironment(renderer, scene);
 
     let group: THREE.Group | null = null;
     try {

@@ -711,16 +711,16 @@
       opacity: 0.9;
     }
   }
+  /* 2026 clean dossier — no panel; hangs off a hairline cyan accent rail. */
   .dossier {
     position: absolute;
     top: 90px;
     right: 22px;
     width: 250px;
-    padding: 14px 16px;
-    background: rgba(4, 9, 20, 0.72);
-    border: 1px solid rgba(127, 223, 255, 0.25);
-    border-radius: 6px;
-    backdrop-filter: blur(6px);
+    padding: 2px 14px 2px 0;
+    border-right: 1px solid rgba(127, 212, 255, 0.35);
+    text-align: right;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
     opacity: 0;
     transform: translateX(20px);
     transition:

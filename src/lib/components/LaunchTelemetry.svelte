@@ -229,19 +229,18 @@
 </div>
 
 <style>
+  /* 2026 clean telemetry — no panel; the readout column hangs off a single
+     hairline cyan accent rail, matching the coast/descent/recovery language. */
   .console {
     display: flex;
     flex-direction: column;
     gap: 11px;
     width: 250px;
-    padding: 13px 14px;
-    background: linear-gradient(180deg, rgba(6, 12, 24, 0.82), rgba(4, 9, 18, 0.72));
-    border: 1px solid rgba(127, 223, 255, 0.22);
-    border-radius: 7px;
-    backdrop-filter: blur(7px);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    padding: 2px 0 2px 14px;
+    border-left: 1px solid rgba(127, 212, 255, 0.35);
     font-family: 'Space Mono', monospace;
-    color: #eaf2ff;
+    color: #eaf3ff;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
   }
   .console-title {
     display: flex;
@@ -250,9 +249,9 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 15px;
     letter-spacing: 2px;
-    color: #eafaff;
+    color: #7fd4ff;
     padding-bottom: 8px;
-    border-bottom: 1px solid rgba(127, 223, 255, 0.15);
+    border-bottom: 1px solid rgba(127, 212, 255, 0.2);
   }
   .console-title em {
     font-family: 'Space Mono', monospace;

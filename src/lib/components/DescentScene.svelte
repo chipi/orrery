@@ -218,6 +218,14 @@
 >
   <div class="stage" bind:this={container}></div>
 
+  {#if !flashing && !hudHidden}
+    <!-- 2026 HUD frame — thin cyan corner brackets, no panel. -->
+    <span class="frame tl"></span>
+    <span class="frame tr"></span>
+    <span class="frame bl"></span>
+    <span class="frame br"></span>
+  {/if}
+
   {#if flashing}
     <div class="flash" style="opacity:{Math.min(1, flashProgress / 0.7)}"></div>
   {/if}
@@ -236,7 +244,7 @@
 
   <div class="header">
     <div class="mission" data-testid="descent-mission">{mission.name}</div>
-    <div class="sub">EDL · {mission.agency}</div>
+    <div class="sub"><span class="live-dot"></span>EDL · {mission.agency}</div>
   </div>
 
   <div class="clock">
@@ -416,8 +424,24 @@
   .sub {
     font-size: 11px;
     letter-spacing: 2px;
-    color: #d0a884;
+    color: #7fd4ff;
     margin-top: 3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #7fd4ff;
+    box-shadow: 0 0 8px rgba(127, 212, 255, 0.9);
+    animation: live-pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes live-pulse {
+    50% {
+      opacity: 0.3;
+    }
   }
   .clock {
     position: absolute;
@@ -435,22 +459,17 @@
     letter-spacing: 4px;
     color: #eafaff;
   }
+  /* 2026 clean phase chip — no panel, just the accent word. */
   .status {
     font-size: 11px;
     letter-spacing: 3px;
-    color: #7fdfff;
-    border: 1px solid rgba(127, 223, 255, 0.4);
-    border-radius: 3px;
-    padding: 2px 9px;
-    background: rgba(3, 8, 18, 0.45);
+    color: #7fd4ff;
   }
   .status.hot {
     color: #ffcf6a;
-    border-color: rgba(255, 207, 106, 0.6);
   }
   .status.land {
     color: #6ff0a0;
-    border-color: rgba(111, 240, 160, 0.6);
   }
   .lamps {
     position: absolute;
@@ -469,9 +488,9 @@
     padding: 2px 8px;
   }
   .lamp.on {
-    color: #ffcf6a;
-    border-color: rgba(255, 190, 74, 0.7);
-    box-shadow: 0 0 12px rgba(255, 160, 40, 0.3);
+    color: #7fd4ff;
+    border-color: rgba(127, 212, 255, 0.7);
+    box-shadow: 0 0 12px rgba(127, 212, 255, 0.3);
   }
   /* Plasma comms-blackout — hotter, pulsing amber-red. */
   .lamp.blackout.on {
@@ -485,21 +504,53 @@
       opacity: 0.55;
     }
   }
+  /* 2026 corner-bracket frame — thin cyan L's, no fill. */
+  .frame {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(127, 212, 255, 0.4);
+    pointer-events: none;
+    z-index: 5;
+  }
+  .frame.tl {
+    top: 12px;
+    left: 12px;
+    border-right: none;
+    border-bottom: none;
+  }
+  .frame.tr {
+    top: 12px;
+    right: 12px;
+    border-left: none;
+    border-bottom: none;
+  }
+  .frame.bl {
+    bottom: 12px;
+    left: 12px;
+    border-right: none;
+    border-top: none;
+  }
+  .frame.br {
+    bottom: 12px;
+    right: 12px;
+    border-left: none;
+    border-top: none;
+  }
+  /* 2026 clean dossier — no panel; hangs off a single hairline accent rail. */
   .dossier {
     position: absolute;
     top: 90px;
     right: 22px;
     width: 250px;
-    padding: 14px 16px;
-    background: rgba(4, 9, 20, 0.72);
-    border: 1px solid rgba(216, 168, 130, 0.28);
-    border-radius: 6px;
-    backdrop-filter: blur(6px);
+    padding: 2px 14px 2px 0;
+    border-right: 1px solid rgba(127, 212, 255, 0.35);
+    text-align: right;
   }
   .dossier-title {
     font-size: 10px;
     letter-spacing: 2px;
-    color: #d0a884;
+    color: #7fd4ff;
     margin: 0 0 8px;
     display: flex;
     justify-content: space-between;
@@ -508,8 +559,8 @@
   .rep {
     font-size: 8px;
     letter-spacing: 1px;
-    color: #ffbe4a;
-    border: 1px solid rgba(255, 190, 74, 0.5);
+    color: #7fd4ff;
+    border: 1px solid rgba(127, 212, 255, 0.4);
     border-radius: 3px;
     padding: 1px 4px;
   }
@@ -672,13 +723,10 @@
       display: flex;
       align-items: baseline;
       gap: 14px;
-      padding: 5px 14px;
-      background: rgba(4, 9, 20, 0.72);
-      border: 1px solid rgba(216, 168, 130, 0.4);
-      border-radius: 20px;
-      backdrop-filter: blur(6px);
+      padding: 4px 0;
       z-index: 10;
       pointer-events: none;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
     }
   }
   .descent-mstrip .ms-phase {

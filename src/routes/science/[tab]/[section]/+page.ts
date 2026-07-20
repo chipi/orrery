@@ -26,6 +26,7 @@ const SECTION_ENTRIES: { tab: ScienceTabId; section: string }[] = [
   { tab: 'orbits', section: 'apsides' },
   { tab: 'orbits', section: 'orbit-regimes' },
   { tab: 'orbits', section: 'lagrange-points' },
+  { tab: 'orbits', section: 'hill-sphere' },
   { tab: 'transfers', section: 'hohmann-transfer' },
   { tab: 'transfers', section: 'lambert-problem' },
   { tab: 'transfers', section: 'transfer-ellipse' },

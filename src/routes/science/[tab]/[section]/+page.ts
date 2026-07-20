@@ -52,6 +52,7 @@ const SECTION_ENTRIES: { tab: ScienceTabId; section: string }[] = [
   { tab: 'mission-phases', section: 'met' },
   { tab: 'mission-phases', section: 'nrho' },
   { tab: 'mission-phases', section: 'mission-types' },
+  { tab: 'mission-phases', section: 'eva' },
   { tab: 'scales-time', section: 'au' },
   { tab: 'scales-time', section: 'light-minute' },
   { tab: 'scales-time', section: 'j2000' },

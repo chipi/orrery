@@ -218,6 +218,7 @@
   import MobileControlsDrawer from '$lib/components/MobileControlsDrawer.svelte';
   import { isLayerOn, onLayerChange, type LayerKey } from '$lib/science-layers';
   import { BoldArrow } from '$lib/three/bold-arrow';
+  import { buildTubeFromPoints } from '$lib/three/glow-line';
   import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
   import { track, trackMissionComplete } from '$lib/analytics';
 
@@ -380,9 +381,12 @@
   let availableLayers = $derived<LayerKey[]>([...SEGMENT_LAYERS[flySegment]]);
 
   // Segment-transition seam: the full-screen launch/coast/descent overlays swap
-  // instantly on an {#if}. A brief dark pulse on each segment change softens the
-  // hard cut into a clean beat. Skips the initial mount.
+  // instantly on an {#if}. To turn that into a clean film cut we SNAP to full
+  // black in the same tick as the swap (transition disabled → the swap is hidden
+  // behind black), hold a few frames for the incoming scene's first render, then
+  // fade in from black. Skips the initial mount.
   let seamFadeOpacity = $state(0);
+  let seamSnap = $state(false);
   let seamInit = false;
   let seamTimer: ReturnType<typeof setTimeout> | undefined;
   $effect(() => {
@@ -393,9 +397,13 @@
         seamInit = true;
         return;
       }
-      seamFadeOpacity = 0.85;
+      seamSnap = true; // disable the CSS transition → instant black
+      seamFadeOpacity = 1;
       clearTimeout(seamTimer);
-      seamTimer = setTimeout(() => (seamFadeOpacity = 0), 120);
+      seamTimer = setTimeout(() => {
+        seamSnap = false; // re-enable the transition → fade in from black
+        seamFadeOpacity = 0;
+      }, 90);
     });
     return () => clearTimeout(seamTimer);
   });
@@ -2735,7 +2743,7 @@
       spiral_earth: 0x4b9cd3,
       spiral_lunar: 0xc77dff,
     };
-    const cislunarPhaseLines: Map<string, THREE.Line> = new Map();
+    const cislunarPhaseLines: Map<string, THREE.Mesh> = new Map();
     // Lunar-phase lines live inside a Group that rides with the Moon.
     // The orbit / spiral_lunar / descent / ascent points are stored in
     // Moon-relative coords (= absolute_pt - moonAtFlyby × SCALE_CISLUNAR),
@@ -2795,10 +2803,13 @@
         transparent: false,
         depthWrite: true,
       });
-    function ensureCislunarPhaseLine(type: string): THREE.Line {
+    function ensureCislunarPhaseLine(type: string): THREE.Mesh {
       const existing = cislunarPhaseLines.get(type);
       if (existing) return existing;
-      const line = new THREE.Line(
+      // A tube mesh (not a 1px Line) so the cislunar mission arc reads as boldly
+      // as the heliocentric trajectory. The bright/dim past-future shader runs
+      // unchanged on the tube's per-vertex aT.
+      const line = new THREE.Mesh(
         new THREE.BufferGeometry(),
         buildCislunarLineMaterial(CISLUNAR_PHASE_COLORS[type] ?? 0xffffff),
       );
@@ -3024,7 +3035,6 @@
         const lunarLocal = LUNAR_LOCAL_PHASE_TYPES.has(phase.type);
         const n = phase.points.length;
         const verts = new Float32Array(n * 3);
-        const aTArr = new Float32Array(n);
         for (let i = 0; i < n; i++) {
           const p = phase.points[i];
           const x = lunarLocal ? p.x - moonAtFlybyRef.x : p.x;
@@ -3033,12 +3043,14 @@
           verts[i * 3] = x * SCALE_CISLUNAR;
           verts[i * 3 + 1] = y * SCALE_CISLUNAR;
           verts[i * 3 + 2] = z * SCALE_CISLUNAR;
-          aTArr[i] = n > 1 ? i / (n - 1) : 0;
+        }
+        // Bold tube (was a 1px line) — same aT-driven bright/dim shader.
+        const tubePts: THREE.Vector3[] = [];
+        for (let i = 0; i < n; i++) {
+          tubePts.push(new THREE.Vector3(verts[i * 3], verts[i * 3 + 1], verts[i * 3 + 2]));
         }
         line.geometry.dispose();
-        line.geometry = new THREE.BufferGeometry();
-        line.geometry.setAttribute('position', new THREE.BufferAttribute(verts, 3));
-        line.geometry.setAttribute('aT', new THREE.BufferAttribute(aTArr, 1));
+        line.geometry = buildTubeFromPoints(tubePts, 0.16);
         // Reset uProgress on rebuild; the per-frame updater will set
         // it correctly next tick based on current met_days.
         const mat = line.material as THREE.ShaderMaterial;
@@ -3297,6 +3309,8 @@
     // through the entire transit.
     const gravArrowEarth = buildGravityArrow('earth', 0x6aa9ff);
     const gravArrowSun = buildGravityArrow('sun', 0xffc850);
+    gravArrowEarth.setLabel('EARTH g', '#a8caff');
+    gravArrowSun.setLabel('SUN g', '#ffdf9a');
     scene.add(gravArrowEarth);
     scene.add(gravArrowSun);
 
@@ -3320,6 +3334,8 @@
       1.4,
       0.8,
     );
+    velocityArrow.setLabel('VELOCITY', '#bfeaff');
+    centripetalArrow.setLabel('CENTRIPETAL', '#ffb3b3');
     velocityArrow.userData.layerKey = 'velocity';
     centripetalArrow.userData.layerKey = 'centripetal';
     velocityArrow.visible = false;
@@ -7346,8 +7362,8 @@
   />
 {/if}
 
-<!-- Segment-transition seam pulse (see seamFadeOpacity effect above). -->
-<div class="seam-fade" style="opacity:{seamFadeOpacity}" aria-hidden="true"></div>
+<!-- Segment-transition seam: fade-through-black (see seamFadeOpacity effect). -->
+<div class="seam-fade" class:snap={seamSnap} style="opacity:{seamFadeOpacity}" aria-hidden="true"></div>
 
 <!-- Orbit-insertion beat (RFC-034 §12) — an orbiter's capture burn at arrival,
      the mirror of the launch injection burn. Top-center amber callout. -->
@@ -8650,7 +8666,10 @@
     z-index: 250;
     pointer-events: none;
     background: #03040a;
-    transition: opacity 0.32s ease-out;
+    transition: opacity 0.42s ease-out;
+  }
+  .seam-fade.snap {
+    transition: none;
   }
   .oi-callout {
     position: fixed;

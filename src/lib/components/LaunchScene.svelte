@@ -13,6 +13,7 @@
 <script lang="ts">
   import { onMount, onDestroy, untrack } from 'svelte';
   import { base } from '$app/paths';
+  import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { createAscentScene, VEHICLE_LENGTH_KM, type AscentScene } from '$lib/three/ascent-scene';
   import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
   import { resolveLaunchGround } from '$lib/three/launch-ground';
@@ -370,7 +371,13 @@
        fires to leave parking orbit onto the transfer. -->
   {#if injectionBeatActive && injection && !warping}
     <div class="injection" class:firing={injectionFiring}>
-      <div class="inj-type">{injectionBurnLabel(injection.burnType)}</div>
+      <div class="inj-type">
+        {injectionBurnLabel(injection.burnType)}<ScienceChip
+          tab="mission-phases"
+          section="orbit-insertion"
+          label="Orbit insertion"
+        />
+      </div>
       <div class="inj-stage">{injection.stageName}</div>
       {#if injectionFiring}
         <div class="inj-fuel" aria-label="injection burn progress">

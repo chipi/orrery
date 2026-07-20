@@ -1,0 +1,25 @@
+{
+  "id": "comms-blackout",
+  "tab": "mission-phases",
+  "order": 5,
+  "diagram": "comms-blackout.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/fly",
+      "context_key": "Fly an Earth-return capsule (?descent=1) — the blackout lamp lights through the peak-heating phase where telemetry would go dark"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Communications blackout (re-entry)",
+      "u": "https://en.wikipedia.org/wiki/Atmospheric_entry#Communications_blackout",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Radio blackout and the plasma sheath",
+      "u": "https://www.nasa.gov/",
+      "t": "core"
+    }
+  ]
+}

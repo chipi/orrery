@@ -12,6 +12,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { base } from '$app/paths';
+  import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { createLeoCoastScene, type LeoCoastScene } from '$lib/three/fly-leo-coast-scene';
   import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
   import { buildCapsuleById } from '$lib/three/capsule-models';
@@ -65,7 +66,9 @@
   const altKm = coastAltitudeKm(coast);
   // Real elapsed seconds + revolution the counters read (the honest scale).
   let metS = $derived(coastFraction * coast.coastDurationS);
-  let rev = $derived(Math.min(coast.revolutions, Math.floor(coastFraction * coast.revolutions) + 1));
+  let rev = $derived(
+    Math.min(coast.revolutions, Math.floor(coastFraction * coast.revolutions) + 1),
+  );
   let deorbitInS = $derived((1 - coastFraction) * coast.coastDurationS);
 
   function onScrub(e: Event) {
@@ -139,20 +142,58 @@
       <span class="frame bl"></span>
       <span class="frame br"></span>
       <div class="title">
-        <span class="phase"><span class="live-dot"></span>{coast.suborbital ? 'SUBORBITAL' : 'ON ORBIT'}</span>
+        <span class="phase"
+          ><span class="live-dot"></span>{coast.suborbital ? 'SUBORBITAL' : 'ON ORBIT'}</span
+        >
         <span class="name">{missionName}</span>
         {#if agency}<span class="agency">{agency}</span>{/if}
       </div>
 
       <div class="readouts">
-        <div class="ro"><span class="k">MET</span><span class="v">T+{fmtClock(metS)}</span></div>
+        <div class="ro">
+          <span class="k"
+            >MET<ScienceChip
+              tab="mission-phases"
+              section="met"
+              label="Mission Elapsed Time"
+            /></span
+          ><span class="v">T+{fmtClock(metS)}</span>
+        </div>
         {#if !coast.suborbital}
-          <div class="ro rev"><span class="k">REV</span><span class="v">{rev} / {coast.revolutions}</span></div>
-          <div class="ro"><span class="k">ORBIT</span><span class="v">{coast.perigeeKm}×{coast.apogeeKm} km · {coast.inclinationDeg}°</span></div>
-          <div class="ro"><span class="k">DEORBIT&nbsp;IN</span><span class="v">{fmtClock(deorbitInS)}</span></div>
+          <div class="ro rev">
+            <span class="k"
+              >REV<ScienceChip tab="orbits" section="orbit-regimes" label="Orbit regimes" /></span
+            ><span class="v">{rev} / {coast.revolutions}</span>
+          </div>
+          <div class="ro">
+            <span class="k"
+              >ORBIT<ScienceChip tab="orbits" section="apsides" label="Apogee & perigee" /></span
+            ><span class="v">{coast.perigeeKm}×{coast.apogeeKm} km · {coast.inclinationDeg}°</span>
+          </div>
+          <div class="ro">
+            <span class="k"
+              >DEORBIT&nbsp;IN<ScienceChip
+                tab="mission-phases"
+                section="deorbit-corridor"
+                label="Deorbit & the re-entry corridor"
+              /></span
+            ><span class="v">{fmtClock(deorbitInS)}</span>
+          </div>
         {:else}
-          <div class="ro"><span class="k">APOGEE</span><span class="v">{coast.apogeeKm} km</span></div>
-          <div class="ro"><span class="k">SPLASHDOWN&nbsp;IN</span><span class="v">{fmtClock(deorbitInS)}</span></div>
+          <div class="ro">
+            <span class="k"
+              >APOGEE<ScienceChip tab="orbits" section="apsides" label="Apogee & perigee" /></span
+            ><span class="v">{coast.apogeeKm} km</span>
+          </div>
+          <div class="ro">
+            <span class="k"
+              >SPLASHDOWN&nbsp;IN<ScienceChip
+                tab="mission-phases"
+                section="deorbit-corridor"
+                label="Deorbit & the re-entry corridor"
+              /></span
+            ><span class="v">{fmtClock(deorbitInS)}</span>
+          </div>
         {/if}
       </div>
 

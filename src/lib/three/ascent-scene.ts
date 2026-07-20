@@ -356,7 +356,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // Separation-event bursts (flash + frost/debris puff) at each sep plane —
   // parented to the vehicle so they sit at the interface. Driven by sepProgress
   // in updateForces(), so they're scrub-exact like every other sep animation.
-  const BURST_S = 1.9;
+  const BURST_S = 2.6;
   const boosterBurst = new SeparationBurst({ scale: vehLen * 0.55 });
   boosterBurst.position.y = 0;
   vehicle.add(boosterBurst);

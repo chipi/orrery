@@ -71,17 +71,22 @@ export function sepProgress(t: number, eventT: number | undefined, durationS: nu
   return Math.min(1, Math.max(0, (t - eventT) / durationS));
 }
 
-/** Half-width (s) of the slow-motion window centred on a separation event. */
+/** Reference half-width (s) of the slow-motion window centred on a sep event. */
 export const SEP_SLOWMO_WINDOW_S = 3.2;
-/** Play-rate multiplier at the separation instant (30% of nominal). */
-export const SEP_SLOWMO_MIN_FACTOR = 0.3;
+/** Play-rate multiplier at the separation instant (22% of nominal). */
+export const SEP_SLOWMO_MIN_FACTOR = 0.22;
 
 /**
  * Cinematic "beat": a play-rate multiplier (SEP_SLOWMO_MIN_FACTOR…1) that eases
- * the clock into slow-motion as it passes each separation event, then back to
- * full rate — so booster staging / fairing jettison / payload sep / heat-shield
- * & backshell sep read as an event instead of blitzing past at ×N. 1 far from
- * any event, dipping to SEP_SLOWMO_MIN_FACTOR at the event, smoothstep-eased.
+ * the clock into slow-motion as it passes each separation event, holds briefly
+ * at the event, then ramps back to full rate — so booster staging / fairing
+ * jettison / payload sep / heat-shield & backshell sep read as an *event*
+ * instead of blitzing past at ×N.
+ *
+ * The beat is deliberately *asymmetric*: a quick slow-IN as the clock
+ * approaches the event, a short flat HOLD straddling it (so the burst + drift
+ * land), then a longer, lingering ramp-OUT — the classic "punch then savor"
+ * shape rather than a symmetric dip.
  *
  * Pure + play-only: it scales the *advance*, never the scrubbed position, so
  * scrubbing stays exact. `eventTimes` are in the same time base as `t`.
@@ -92,15 +97,28 @@ export function sepSlowmoFactor(
   windowS = SEP_SLOWMO_WINDOW_S,
   minFactor = SEP_SLOWMO_MIN_FACTOR,
 ): number {
-  let nearest = Infinity;
+  // Nearest event, keeping the SIGNED offset (before vs after the event).
+  let signed = Infinity;
+  let abs = Infinity;
   for (const e of eventTimes) {
     if (e == null) continue;
-    const d = Math.abs(t - e);
-    if (d < nearest) nearest = d;
+    const s = t - e;
+    const a = Math.abs(s);
+    if (a < abs) {
+      abs = a;
+      signed = s;
+    }
   }
-  if (!Number.isFinite(nearest) || nearest >= windowS) return 1;
-  const p = nearest / windowS; // 0 at the event → 1 at the window edge
-  const eased = p * p * (3 - 2 * p); // smoothstep
+  if (!Number.isFinite(abs)) return 1;
+
+  const hold = windowS * 0.18; // flat full-slow zone straddling the event
+  const inW = windowS * 0.8; // quick slow-in (before the event)
+  const outW = windowS * 1.6; // lingering ramp-out (after the event) — savor
+  if (abs <= hold) return minFactor;
+  const span = signed < 0 ? inW : outW;
+  if (abs >= span) return 1;
+  const edge = (abs - hold) / (span - hold); // 0 at hold edge → 1 at full rate
+  const eased = edge * edge * (3 - 2 * edge); // smoothstep
   return minFactor + (1 - minFactor) * eased;
 }
 

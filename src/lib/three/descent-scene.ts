@@ -263,7 +263,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // Separation-event bursts (flash + debris) at the heat-shield jettison and the
   // backshell / chute-cut. Parented to the vehicle at the sep planes; driven by
   // sepProgress in updateForces() so they stay scrub-exact.
-  const DESCENT_BURST_S = 1.6;
+  const DESCENT_BURST_S = 2.2;
   const heatshieldBurst = new SeparationBurst({ scale: vehLen * 0.5, particleColor: 0xffd9b0 });
   heatshieldBurst.position.y = model.heatshieldBaseY;
   vehicle.add(heatshieldBurst);

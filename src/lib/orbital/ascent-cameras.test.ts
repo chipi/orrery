@@ -156,21 +156,30 @@ describe('sepSlowmoFactor', () => {
     expect(sepSlowmoFactor(150, events)).toBe(1); // exactly between, > window away
   });
 
-  it('dips to the minimum factor exactly at an event', () => {
+  it('holds at the minimum factor across the flat zone straddling the event', () => {
     expect(sepSlowmoFactor(200, events)).toBeCloseTo(SEP_SLOWMO_MIN_FACTOR, 6);
+    // A small offset within the hold zone is still full-slow.
+    const hold = SEP_SLOWMO_WINDOW_S * 0.18;
+    expect(sepSlowmoFactor(200 + hold * 0.5, events)).toBeCloseTo(SEP_SLOWMO_MIN_FACTOR, 6);
   });
 
   it('eases smoothly between full rate and the minimum inside the window', () => {
-    const half = SEP_SLOWMO_WINDOW_S / 2;
-    const mid = sepSlowmoFactor(100 + half, events);
+    const mid = sepSlowmoFactor(100 + SEP_SLOWMO_WINDOW_S * 0.5, events);
     expect(mid).toBeGreaterThan(SEP_SLOWMO_MIN_FACTOR);
     expect(mid).toBeLessThan(1);
-    // Monotone: closer to the event ⇒ slower.
-    expect(sepSlowmoFactor(100 + 0.5, events)).toBeLessThan(sepSlowmoFactor(100 + 2.5, events));
+    // Monotone on the ramp-out: closer to the event ⇒ slower.
+    expect(sepSlowmoFactor(100 + 0.8, events)).toBeLessThan(sepSlowmoFactor(100 + 2.5, events));
   });
 
-  it('is symmetric around an event', () => {
-    expect(sepSlowmoFactor(100 - 1.1, events)).toBeCloseTo(sepSlowmoFactor(100 + 1.1, events), 6);
+  it('is asymmetric — the ramp-out lingers longer than the slow-in', () => {
+    // Equal distance before vs after the event: the "after" side is still
+    // slower (longer savor ramp) than the "before" side at the same offset.
+    const off = SEP_SLOWMO_WINDOW_S; // beyond the slow-in half-width, inside ramp-out
+    expect(sepSlowmoFactor(100 + off, events)).toBeLessThan(sepSlowmoFactor(100 - off, events));
+    // Slow-in is the quicker side: a point one window before the event is full rate.
+    expect(sepSlowmoFactor(100 - off, events)).toBe(1);
+    // The mirror point after the event is still slowed.
+    expect(sepSlowmoFactor(100 + off, events)).toBeLessThan(1);
   });
 
   it('ignores undefined event times and returns 1 when none are defined', () => {
@@ -180,7 +189,7 @@ describe('sepSlowmoFactor', () => {
   });
 
   it('respects a custom window', () => {
-    // With a 100-s window, a point 40 s from the event is still slowed.
+    // With a 100-s window, a point 40 s after the event is still slowed.
     expect(sepSlowmoFactor(140, events, 100)).toBeLessThan(1);
     // With the default ~3-s window, the same point is full rate.
     expect(sepSlowmoFactor(140, events)).toBe(1);

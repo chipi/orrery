@@ -1,12 +1,12 @@
 {
-  "uid": "orrery-pipelines",
-  "title": "Orrery \u2014 Pipelines",
-  "tags": ["orrery", "pipeline"],
+  "uid": "orrery-overview",
+  "title": "Orrery \u2014 Overview",
+  "tags": ["orrery", "overview"],
   "timezone": "browser",
   "schemaVersion": 39,
   "refresh": "30s",
   "time": {
-    "from": "now-24h",
+    "from": "now-6h",
     "to": "now"
   },
   "templating": {
@@ -45,11 +45,11 @@
     {
       "id": 1,
       "type": "stat",
-      "title": "Pipeline runs \u00b7 24h",
+      "title": "Log lines \u00b7 6h",
       "gridPos": {
         "x": 0,
         "y": 0,
-        "w": 8,
+        "w": 6,
         "h": 6
       },
       "datasource": {
@@ -59,7 +59,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\" | stats by (container) count() c | stats count() runs",
+          "expr": "app:orrery AND env:$env | stats count() lines",
           "queryType": "stats"
         }
       ],
@@ -77,11 +77,11 @@
     {
       "id": 2,
       "type": "stat",
-      "title": "Error / failure lines \u00b7 24h",
+      "title": "Web requests \u00b7 6h",
       "gridPos": {
-        "x": 8,
+        "x": 6,
         "y": 0,
-        "w": 8,
+        "w": 6,
         "h": 6
       },
       "datasource": {
@@ -91,7 +91,39 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\" AND _msg:~\"(?i)error|panic|traceback|failed\" | stats count() errs",
+          "expr": "app:orrery AND env:$env AND surface:web AND _msg:~\"HTTP/1\" | stats count() reqs",
+          "queryType": "stats"
+        }
+      ],
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": ["lastNotNull"]
+        },
+        "colorMode": "value"
+      },
+      "fieldConfig": {
+        "defaults": {}
+      }
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Errors & warnings \u00b7 6h",
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 6,
+        "h": 6
+      },
+      "datasource": {
+        "type": "victoriametrics-logs-datasource",
+        "uid": "victorialogs"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "app:orrery AND env:$env AND _msg:~\"(?i)(error|err|warn|fatal|panic|exception|traceback|fail)\" | stats count() errs",
           "queryType": "stats"
         }
       ],
@@ -125,13 +157,13 @@
       }
     },
     {
-      "id": 3,
+      "id": 4,
       "type": "stat",
-      "title": "Log lines \u00b7 24h",
+      "title": "Pipeline runs \u00b7 24h",
       "gridPos": {
-        "x": 16,
+        "x": 18,
         "y": 0,
-        "w": 8,
+        "w": 6,
         "h": 6
       },
       "datasource": {
@@ -141,7 +173,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\" | stats count() lines",
+          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\" | stats by (container) count() c | stats count() runs",
           "queryType": "stats"
         }
       ],
@@ -157,13 +189,13 @@
       }
     },
     {
-      "id": 4,
+      "id": 5,
       "type": "timeseries",
-      "title": "Pipeline log volume / min (per container)",
+      "title": "Log volume by surface / min",
       "gridPos": {
         "x": 0,
         "y": 6,
-        "w": 24,
+        "w": 12,
         "h": 8
       },
       "datasource": {
@@ -173,9 +205,9 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\" | stats by (container) count() lines",
+          "expr": "app:orrery AND env:$env | stats by (surface) count() lines",
           "queryType": "statsRange",
-          "legendFormat": "{{container}}"
+          "legendFormat": "{{surface}}"
         }
       ],
       "fieldConfig": {
@@ -190,9 +222,42 @@
       }
     },
     {
-      "id": 5,
+      "id": 6,
+      "type": "timeseries",
+      "title": "Errors & warnings / min",
+      "gridPos": {
+        "x": 12,
+        "y": 6,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "victoriametrics-logs-datasource",
+        "uid": "victorialogs"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "app:orrery AND env:$env AND _msg:~\"(?i)(error|err|warn|fatal|panic|exception|traceback|fail)\" | stats by (surface) count() errs",
+          "queryType": "statsRange",
+          "legendFormat": "{{surface}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "custom": {
+            "drawStyle": "line",
+            "lineWidth": 2,
+            "fillOpacity": 10
+          }
+        }
+      }
+    },
+    {
+      "id": 7,
       "type": "logs",
-      "title": "Recent pipeline logs",
+      "title": "Recent errors & warnings (all surfaces)",
       "gridPos": {
         "x": 0,
         "y": 14,
@@ -206,34 +271,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\"",
-          "queryType": "instant"
-        }
-      ],
-      "options": {
-        "showTime": true,
-        "wrapLogMessage": true,
-        "sortOrder": "Descending"
-      }
-    },
-    {
-      "id": 6,
-      "type": "logs",
-      "title": "Error / failure lines",
-      "gridPos": {
-        "x": 0,
-        "y": 24,
-        "w": 24,
-        "h": 10
-      },
-      "datasource": {
-        "type": "victoriametrics-logs-datasource",
-        "uid": "victorialogs"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\" AND _msg:~\"(?i)error|panic|traceback|failed\"",
+          "expr": "app:orrery AND env:$env AND _msg:~\"(?i)(error|err|warn|fatal|panic|exception|traceback|fail)\"",
           "queryType": "instant"
         }
       ],

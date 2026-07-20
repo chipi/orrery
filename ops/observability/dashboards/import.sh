@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 #
-# Import Orrery dashboards into a Grafana instance.
+# Import the Orrery dashboards into the self-hosted Grafana.
 #
-# RFC-025 / ADR-068. Imports orrery-web-access.json + orrery-pipelines.json
-# via the Grafana HTTP API. Idempotent — re-imports update by `uid`.
+# RFC-025 / ADR-068. Imports the orrery-*.json dashboards (Overview, Web,
+# Pipelines) into the `orrery` folder via the Grafana HTTP API. Idempotent —
+# re-imports update by `uid`. All panels query VictoriaLogs (LogsQL).
 #
-# Auth: GRAFANA_HTTP_URL + GRAFANA_API_TOKEN env vars. For Grafana
-# Cloud the URL is your stack's "Grafana" endpoint (e.g.
-# https://<stack>.grafana.net). Create a service-account token with
-# `Editor` role under Administration → Service accounts → Add token.
+# Auth: GRAFANA_HTTP_URL + GRAFANA_API_TOKEN env vars. Point at the homelab
+# Grafana (tailnet), e.g. http://homelab:3000. Create a service-account
+# token with `Editor` role under Administration → Service accounts.
+# GRAFANA_FOLDER_UID selects the target folder (default `orrery`).
 #
 # Usage:
-#   GRAFANA_HTTP_URL=https://<stack>.grafana.net \
+#   GRAFANA_HTTP_URL=http://homelab:3000 \
 #   GRAFANA_API_TOKEN=glsa_... \
 #     ./ops/observability/dashboards/import.sh
 #
@@ -22,8 +23,9 @@
 
 set -euo pipefail
 
-: "${GRAFANA_HTTP_URL:?Set GRAFANA_HTTP_URL=https://<stack>.grafana.net}"
+: "${GRAFANA_HTTP_URL:?Set GRAFANA_HTTP_URL=http://homelab:3000}"
 : "${GRAFANA_API_TOKEN:?Set GRAFANA_API_TOKEN=<service-account-token>}"
+FOLDER_UID="${GRAFANA_FOLDER_UID:-orrery}"
 
 DIR="$(cd "$(dirname "$0")" && pwd)"
 
@@ -31,9 +33,10 @@ for dash in "$DIR"/*.json; do
   name="$(basename "$dash")"
   echo "→ Importing $name"
 
-  # Wrap the bare dashboard JSON in Grafana's import envelope.
-  body="$(jq --argjson d "$(cat "$dash")" \
-    '{dashboard: $d, overwrite: true, message: "Imported from ops/observability/dashboards (RFC-025)"}' \
+  # Wrap the bare dashboard JSON in Grafana's import envelope, into the
+  # orrery folder.
+  body="$(jq --argjson d "$(cat "$dash")" --arg folder "$FOLDER_UID" \
+    '{dashboard: $d, overwrite: true, folderUid: $folder, message: "Imported from ops/observability/dashboards (RFC-025)"}' \
     <<< '{}')"
 
   resp="$(curl -sf -X POST \

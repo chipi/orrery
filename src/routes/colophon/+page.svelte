@@ -161,7 +161,7 @@
       <section class="block" aria-labelledby="sec-{sec.id}">
         <h2 id="sec-{sec.id}">{sec.label}<span class="count">{sec.items.length}</span></h2>
         <ul class="item-list">
-          {#each sec.items as it (it.title)}
+          {#each sec.items as it (it.thumb)}
             <li class="item" class:has-thumb={it.thumb}>
               {#if it.thumb}
                 <button

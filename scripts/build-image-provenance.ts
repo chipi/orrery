@@ -2895,6 +2895,25 @@ async function main() {
     entries: entries.sort((a, b) => a.path.localeCompare(b.path)),
   };
   const prev = await loadPreviousManifest();
+  // ── Backstop (before ANY write): refuse a rebuild that drops a large share
+  // of entries. This is a full-corpus rebuild that resolves each image from
+  // sidecars + Commons; run on a fetchexcluded / offline / rate-limited tree
+  // it silently degrades rich rows to "walker-fallback" and shrinks both the
+  // manifest AND the diff report (2026-07-20: 64k lines of real credits
+  // dropped). Bypass with --allow-shrink for a genuine prune. Reproduce a real
+  // full rebuild with masters pulled (git lfs pull -I 'masters/**') + online.
+  const prevCount = prev?.entries.length ?? 0;
+  const nextCount = manifest.entries.length;
+  if (!process.argv.includes('--allow-shrink') && prevCount > 50 && nextCount < prevCount * 0.9) {
+    console.error(
+      `\n✗ refusing to write: ${nextCount} entries vs ${prevCount} existing — a ` +
+        `${Math.round((1 - nextCount / prevCount) * 100)}% drop (degraded-rebuild signature).\n` +
+        `  Ensure masters are pulled (git lfs pull -I 'masters/**') and Commons is reachable,\n` +
+        `  or pass --allow-shrink if the shrink is intentional. To add a few images, edit\n` +
+        `  static/data/image-provenance.json surgically instead of a full rebuild.`,
+    );
+    process.exit(1);
+  }
   await writeDiffReport(prev, manifest, failures);
   if (failures.length > 0) {
     console.error(`\n${failures.length} validation failure(s) — manifest NOT written.`);

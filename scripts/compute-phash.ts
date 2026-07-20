@@ -88,6 +88,31 @@ async function main(): Promise<void> {
   let failed = 0;
   const fresh: Record<string, string> = {};
 
+  // ── Guard: masters/ must be smudged (real bytes, not LFS pointer stubs) ──
+  // This script REWRITES the whole phash cache from masters/, and masters/**
+  // is `fetchexclude`d (.lfsconfig) — so on an un-pulled tree every file is a
+  // ~130-byte pointer stub that fails to hash and silently drops from the
+  // cache (2560 → 5 in the 2026-07-20 incident). The ladder builder guards
+  // this; this script didn't. Abort with the fix instead of degrading.
+  {
+    let sampled = 0;
+    let stubs = 0;
+    for (const disk of walkBaseJpgs(IMAGES_DIR)) {
+      if (readFileSync(disk).subarray(0, 40).toString('utf8').startsWith('version https://git-lfs'))
+        stubs++;
+      if (++sampled >= 40) break;
+    }
+    if (stubs > 0) {
+      console.error(
+        `✗ masters/ not smudged — ${stubs}/${sampled} sampled files are LFS pointer stubs.\n` +
+          `  This script rewrites the whole phash cache from masters/; running it now would\n` +
+          `  drop every un-pulled entry. To regenerate: git lfs pull -I 'masters/**' then retry.\n` +
+          `  To add a few images, edit static/data/image-phashes.json surgically instead.`,
+      );
+      process.exit(1);
+    }
+  }
+
   for (const disk of walkBaseJpgs(IMAGES_DIR)) {
     const urlPath = urlPathOf(disk);
     const mtime = statSync(disk).mtimeMs;
@@ -111,6 +136,21 @@ async function main(): Promise<void> {
     algorithm: 'phash-dct-8x8',
     phashes: Object.fromEntries(Object.entries(fresh).sort(([a], [b]) => a.localeCompare(b))),
   };
+
+  // ── Backstop: refuse to write a cache that drops a large share of entries ──
+  // Root-cause-agnostic — catches stub degradation, a bad walk, anything that
+  // would shrink the committed cache. Bypass with --allow-shrink for a real
+  // prune. (2026-07-20: silent 2560→5 shrink shipped before this existed.)
+  const existingCount = Object.keys(cache.phashes).length;
+  const newCount = Object.keys(out.phashes).length;
+  if (!process.argv.includes('--allow-shrink') && existingCount > 50 && newCount < existingCount * 0.9) {
+    console.error(
+      `✗ refusing to write: ${newCount} entries vs ${existingCount} existing — a ` +
+        `${Math.round((1 - newCount / existingCount) * 100)}% drop (degraded-regen signature).\n` +
+        `  Pull masters (git lfs pull -I 'masters/**') and retry, or pass --allow-shrink if intentional.`,
+    );
+    process.exit(1);
+  }
   writeFileSync(CACHE_PATH, JSON.stringify(out, null, 2) + '\n');
 
   const total = Object.keys(out.phashes).length;

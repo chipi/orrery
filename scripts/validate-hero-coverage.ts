@@ -72,7 +72,12 @@ interface SurfaceSpec {
 // runtime gallery loader's cross-surface fallback now resolves the
 // mission-side IDs.
 const MISSIONS_KNOWN_GAPS = new Set<string>([]);
-const FLEET_KNOWN_GAPS = new Set<string>([]);
+const FLEET_KNOWN_GAPS = new Set<string>([
+  // Soyuz 11A511 launcher — text-complete fleet entry (detail + 14-locale
+  // overlay + linked to soyuz-1/soyuz-11), gallery opted out (0) pending a
+  // real-image fetch. Tracked here so the entry resolves while imagery lands.
+  'soyuz',
+]);
 const MOON_SITES_KNOWN_GAPS = new Set<string>([]);
 const MARS_SITES_KNOWN_GAPS = new Set<string>([]);
 const EARTH_OBJECTS_KNOWN_GAPS = new Set<string>([]);

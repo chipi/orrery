@@ -1,0 +1,28 @@
+{
+  "id": "soyuz",
+  "name": "Soyuz (11A511)",
+  "category": "launcher",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "OKB-1 Korolev Bureau",
+  "first_flight": "1966-11-28",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "R-7-derived launcher for the first-generation Soyuz spacecraft — flew Soyuz 1 (1967) and Soyuz 11 (1971)",
+  "credit": "The Soyuz 11A511 was the R-7 derivative built to loft the first-generation Soyuz 7K-OK spacecraft, adding a more capable upper stage to the Vostok/Voskhod launcher lineage. Three-stage liquid-propellant (LOX + kerosene), ~50 metres tall, ~308 tonnes lift-off mass. It carried the crewed Soyuz programme's earliest flights, including its two fatal missions — Soyuz 1 (1967), lost when its recovery parachutes fouled, and Soyuz 11 (1971), whose crew died of depressurisation during descent. The 11A511 was succeeded by the Soyuz-U in 1973; the same R-7 lineage still flies crews as the Soyuz-2 today.",
+  "links": [
+    {
+      "l": "Soyuz (rocket) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_(rocket)",
+      "t": "intro"
+    },
+    {
+      "l": "R-7 family — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/R-7_(rocket_family)",
+      "t": "core"
+    }
+  ],
+  "linked_missions": ["soyuz-1", "soyuz-11"],
+  "linked_sites": []
+}

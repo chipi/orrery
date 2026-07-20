@@ -2976,6 +2976,18 @@
     "tagline": "Vostok-K successor — more thrust for the heavier Voskhod capsule. Launched Voskhod 1 (1964) + Voskhod 2 (1965 Leonov EVA)"
   },
   {
+    "id": "soyuz",
+    "name": "Soyuz (11A511)",
+    "category": "launcher",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1966-11-28",
+    "tagline": "R-7-derived launcher for the first-generation Soyuz spacecraft — flew Soyuz 1 (1967) and Soyuz 11 (1971)"
+  },
+  {
     "id": "gagarins-start",
     "name": "Gagarin's Start (Baikonur Site 1)",
     "category": "launch-site",

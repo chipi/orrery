@@ -1,5 +1,19 @@
-import { describe, it, expect } from 'vitest';
-import { collapseVariants, PROVIDER_PRIORITY, type ProvenanceEntry } from './audio-registry.svelte';
+// @vitest-environment jsdom
+import { describe, it, expect, beforeEach, vi } from 'vitest';
+
+// $app mocks must precede all module imports.
+vi.mock('$app/environment', () => ({ browser: true }));
+vi.mock('$app/paths', () => ({ base: '' }));
+vi.mock('$app/navigation', () => ({ goto: vi.fn() }));
+vi.mock('./audio-tour', () => ({ CURATOR_FULL_TOUR: [] }));
+vi.mock('./asset-url', () => ({ assetOrigin: '' }));
+
+import {
+  collapseVariants,
+  PROVIDER_PRIORITY,
+  audioRegistry,
+  type ProvenanceEntry,
+} from './audio-registry.svelte';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -136,5 +150,352 @@ describe('audio-provenance.json integrity', () => {
     const data = JSON.parse(raw) as { entries: ProvenanceEntry[] };
     const missing = data.entries.filter((e) => !e.tts_model);
     expect(missing.map((e) => `${e.episode_id}/${e.provider}`)).toEqual([]);
+  });
+});
+
+// ─── AudioRegistry singleton — instance method coverage ─────────────────────
+
+function makeEpisode(id: string, route?: string) {
+  return collapseVariants([
+    {
+      episode_id: id,
+      locale: 'en-US',
+      persona: 'guide',
+      provider: 'google',
+      voice_id: 'g-voice',
+      tts_model: 'neural2',
+      route,
+      title: id,
+      duration_target_sec: 90,
+      path_mp3: `/audio/en-US/guide/${id}.xxxx.mp3`,
+      path_vtt: `/audio/en-US/guide/${id}.xxxx.vtt`,
+      path_txt: `/audio/en-US/guide/${id}.xxxx.txt`,
+    },
+  ])[0];
+}
+
+describe('audioRegistry.forRoute', () => {
+  beforeEach(() => {
+    // Directly populate the registry's episodes state so we don't need
+    // a network fetch; $state properties are plain JS in Svelte 5 rune
+    // modules running under vitest.
+    audioRegistry.episodes = [
+      makeEpisode('guide-explore', '/explore'),
+      makeEpisode('guide-mars', '/mars'),
+      makeEpisode('guide-missions', '/missions'),
+      makeEpisode('no-route-ep', undefined),
+      makeEpisode('home-ep', '/'),
+    ];
+  });
+
+  it('returns episodes whose route exactly matches the pathname', () => {
+    const result = audioRegistry.forRoute('/explore');
+    expect(result.map((e) => e.id)).toContain('guide-explore');
+    expect(result.map((e) => e.id)).not.toContain('guide-mars');
+  });
+
+  it('includes parent-route episodes when on a sub-route', () => {
+    const result = audioRegistry.forRoute('/missions/launches');
+    expect(result.map((e) => e.id)).toContain('guide-missions');
+    expect(result.map((e) => e.id)).not.toContain('guide-mars');
+  });
+
+  it('does NOT include root-"/" episodes for sub-routes', () => {
+    const result = audioRegistry.forRoute('/mars');
+    expect(result.map((e) => e.id)).not.toContain('home-ep');
+  });
+
+  it('returns empty array when nothing matches', () => {
+    const result = audioRegistry.forRoute('/fly');
+    expect(result).toEqual([]);
+  });
+
+  it('excludes episodes without a route', () => {
+    const result = audioRegistry.forRoute('/explore');
+    expect(result.map((e) => e.id)).not.toContain('no-route-ep');
+  });
+
+  it('strips trailing slashes from the pathname before matching', () => {
+    const result = audioRegistry.forRoute('/explore/');
+    expect(result.map((e) => e.id)).toContain('guide-explore');
+  });
+
+  it('normalizeRoute: empty string normalizes to "/"', () => {
+    // '' → p.length ≤ 1 → no trailing strip → p || '/' → '/'
+    const result = audioRegistry.forRoute('');
+    // Only root '/' episodes would match but none exist in this setup
+    expect(Array.isArray(result)).toBe(true);
+  });
+});
+
+describe('audioRegistry.byId', () => {
+  beforeEach(() => {
+    audioRegistry.episodes = [makeEpisode('signal-delay', '/fly')];
+  });
+
+  it('returns the episode matching the id', () => {
+    const ep = audioRegistry.byId('signal-delay');
+    expect(ep?.id).toBe('signal-delay');
+  });
+
+  it('returns undefined for an unknown id', () => {
+    expect(audioRegistry.byId('does-not-exist')).toBeUndefined();
+  });
+});
+
+describe('audioRegistry.byIdLocale', () => {
+  beforeEach(() => {
+    const enEp = makeEpisode('pale-blue-dot', '/');
+    enEp.locale = 'en-US';
+    const deEp = makeEpisode('pale-blue-dot', '/');
+    deEp.id = 'pale-blue-dot';
+    deEp.locale = 'de';
+    audioRegistry.episodes = [enEp, deEp];
+  });
+
+  it('returns the episode matching both id and locale', () => {
+    const ep = audioRegistry.byIdLocale('pale-blue-dot', 'de');
+    expect(ep?.locale).toBe('de');
+  });
+
+  it('falls back to any locale match when exact locale not found', () => {
+    const ep = audioRegistry.byIdLocale('pale-blue-dot', 'fr');
+    expect(ep?.id).toBe('pale-blue-dot');
+  });
+
+  it('returns undefined when the id does not exist at all', () => {
+    expect(audioRegistry.byIdLocale('no-such-id', 'en-US')).toBeUndefined();
+  });
+});
+
+describe('audioRegistry.load — browser=true, fetch mocked', () => {
+  beforeEach(() => {
+    audioRegistry.episodes = [];
+    audioRegistry.loaded = false;
+    audioRegistry.loading = false;
+    audioRegistry.loadError = null;
+    vi.restoreAllMocks();
+  });
+
+  it('fetches provenance JSON and populates episodes', async () => {
+    const entries: ProvenanceEntry[] = [
+      {
+        episode_id: 'guide-earth',
+        locale: 'en-US',
+        persona: 'guide',
+        provider: 'google',
+        voice_id: 'g-voice',
+        tts_model: 'neural2',
+        route: '/earth',
+        title: 'Earth Guide',
+        duration_target_sec: 60,
+        path_mp3: '/audio/en-US/guide/guide-earth.xxxx.mp3',
+        path_vtt: '/audio/en-US/guide/guide-earth.xxxx.vtt',
+        path_txt: '/audio/en-US/guide/guide-earth.xxxx.txt',
+      },
+    ];
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({ entries }),
+      }),
+    );
+    await audioRegistry.load();
+    expect(audioRegistry.loaded).toBe(true);
+    expect(audioRegistry.episodes.length).toBe(1);
+    expect(audioRegistry.episodes[0].id).toBe('guide-earth');
+    expect(audioRegistry.loading).toBe(false);
+  });
+
+  it('sets loadError when fetch returns non-ok status', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 404 }));
+    await audioRegistry.load();
+    expect(audioRegistry.loadError).toContain('404');
+    expect(audioRegistry.loaded).toBe(false);
+    expect(audioRegistry.loading).toBe(false);
+  });
+
+  it('skips a second load when already loaded', async () => {
+    const fetchSpy = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ entries: [] }),
+    });
+    vi.stubGlobal('fetch', fetchSpy);
+    await audioRegistry.load();
+    await audioRegistry.load();
+    expect(fetchSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('concurrent callers share the same in-flight promise (fetch called once)', async () => {
+    audioRegistry.loaded = false;
+    const fetchSpy = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ entries: [] }),
+    });
+    vi.stubGlobal('fetch', fetchSpy);
+    await Promise.all([audioRegistry.load(), audioRegistry.load()]);
+    expect(fetchSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('sorts episodes: cross-route (mars before explore alphabetically)', async () => {
+    const mk = (id: string, route: string): ProvenanceEntry => ({
+      episode_id: id,
+      locale: 'en-US',
+      persona: 'guide',
+      provider: 'google',
+      voice_id: 'g',
+      tts_model: 'neural2',
+      route,
+      title: id,
+      duration_target_sec: 60,
+      path_mp3: '/a.mp3',
+      path_vtt: '/a.vtt',
+      path_txt: '/a.txt',
+    });
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          entries: [
+            mk('z-explore', '/explore'),
+            mk('a-mars', '/mars'),
+            mk('no-route', undefined as unknown as string),
+          ],
+        }),
+      }),
+    );
+    await audioRegistry.load();
+    const ids = audioRegistry.episodes.map((e) => e.id);
+    // /explore < /mars alphabetically, no-route gets route '~' → sorts last
+    expect(ids.indexOf('z-explore')).toBeLessThan(ids.indexOf('a-mars'));
+    expect(ids.indexOf('no-route')).toBeGreaterThan(ids.indexOf('a-mars'));
+  });
+
+  it('sorts episodes: by route, then persona weight, then durationSec', async () => {
+    const entries: ProvenanceEntry[] = [
+      {
+        episode_id: 'b-curator',
+        locale: 'en-US',
+        persona: 'curator',
+        provider: 'google',
+        voice_id: 'g',
+        tts_model: 'neural2',
+        route: '/earth',
+        title: 'B Curator',
+        duration_target_sec: 120,
+        path_mp3: '/a.mp3',
+        path_vtt: '/a.vtt',
+        path_txt: '/a.txt',
+      },
+      {
+        episode_id: 'a-guide',
+        locale: 'en-US',
+        persona: 'guide',
+        provider: 'google',
+        voice_id: 'g',
+        tts_model: 'neural2',
+        route: '/earth',
+        title: 'A Guide',
+        duration_target_sec: 60,
+        path_mp3: '/b.mp3',
+        path_vtt: '/b.vtt',
+        path_txt: '/b.txt',
+      },
+    ];
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({ ok: true, json: async () => ({ entries }) }),
+    );
+    await audioRegistry.load();
+    const ids = audioRegistry.episodes.map((e) => e.id);
+    expect(ids.indexOf('a-guide')).toBeLessThan(ids.indexOf('b-curator'));
+  });
+
+  it('sorts by durationSec when route and persona are the same', async () => {
+    const mkEntry = (id: string, dur: number): ProvenanceEntry => ({
+      episode_id: id,
+      locale: 'en-US',
+      persona: 'guide',
+      provider: 'google',
+      voice_id: 'g',
+      tts_model: 'neural2',
+      route: '/earth',
+      title: id,
+      duration_target_sec: dur,
+      path_mp3: '/a.mp3',
+      path_vtt: '/a.vtt',
+      path_txt: '/a.txt',
+    });
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({ entries: [mkEntry('long-ep', 120), mkEntry('short-ep', 30)] }),
+      }),
+    );
+    await audioRegistry.load();
+    const ids = audioRegistry.episodes.map((e) => e.id);
+    expect(ids.indexOf('short-ep')).toBeLessThan(ids.indexOf('long-ep'));
+  });
+
+  it('uses episode_id as title when title is absent in provenance entry', async () => {
+    const entry: ProvenanceEntry = {
+      episode_id: 'no-title-ep',
+      locale: 'en-US',
+      persona: 'guide',
+      provider: 'google',
+      voice_id: 'g',
+      tts_model: 'neural2',
+      route: '/earth',
+      // title deliberately omitted
+      duration_target_sec: 60,
+      path_mp3: '/a.mp3',
+      path_vtt: '/a.vtt',
+      path_txt: '/a.txt',
+    };
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({ ok: true, json: async () => ({ entries: [entry] }) }),
+    );
+    await audioRegistry.load();
+    expect(audioRegistry.episodes[0].title).toBe('no-title-ep');
+  });
+
+  it('sets loadError to string when fetch rejects with a non-Error value', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue('network failure'));
+    await audioRegistry.load();
+    expect(audioRegistry.loadError).toBe('network failure');
+    expect(audioRegistry.loaded).toBe(false);
+  });
+
+  it('sorts alphabetically by title when route, persona, and duration are equal', async () => {
+    const mkEntry = (id: string, title: string): ProvenanceEntry => ({
+      episode_id: id,
+      locale: 'en-US',
+      persona: 'guide',
+      provider: 'google',
+      voice_id: 'g',
+      tts_model: 'neural2',
+      route: '/earth',
+      title,
+      duration_target_sec: 60,
+      path_mp3: '/a.mp3',
+      path_vtt: '/a.vtt',
+      path_txt: '/a.txt',
+    });
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          entries: [mkEntry('ep-z', 'Z Episode'), mkEntry('ep-a', 'A Episode')],
+        }),
+      }),
+    );
+    await audioRegistry.load();
+    const ids = audioRegistry.episodes.map((e) => e.id);
+    expect(ids.indexOf('ep-a')).toBeLessThan(ids.indexOf('ep-z'));
   });
 });

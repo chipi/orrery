@@ -1,5 +1,21 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
+
+// Mock the cookie helpers — they touch document.cookie which is fine in jsdom,
+// but we want to isolate AudioState logic from ADR-075 write scheduling.
+vi.mock('./audio-tour-cookie', () => ({
+  clearTourCookie: vi.fn(),
+  flushTourCookieWrite: vi.fn(),
+  writeTourCookie: vi.fn(),
+  writeTourCookieDebounced: vi.fn(),
+}));
+
 import { audio, type Episode } from './audio-state.svelte';
+import {
+  clearTourCookie,
+  writeTourCookie,
+  writeTourCookieDebounced,
+  flushTourCookieWrite,
+} from './audio-tour-cookie';
 
 const ep = (id: string, persona: 'curator' | 'guide' | 'enthusiast' = 'curator'): Episode => ({
   id,
@@ -231,6 +247,210 @@ describe('audio-state', () => {
       expect(audio.currentEpisode?.id).toBe('pale-blue-dot');
       expect(audio.positionSec).toBe(42);
       expect(audio.compact).toBe(false);
+    });
+  });
+
+  // ── resumeTour ────────────────────────────────────────────────────────
+  describe('resumeTour', () => {
+    it('restores sequence + index without resetting index to 0', () => {
+      const seq = ['pale-blue-dot', 'guide-explore', 'guide-earth'];
+      audio.resumeTour(seq, 2);
+      expect(audio.tourActive).toBe(true);
+      expect(audio.tourIndex).toBe(2);
+      expect(audio.tourSequence).toEqual(seq);
+    });
+
+    it('clamps index below 0 to 0', () => {
+      audio.resumeTour(['a', 'b'], -5);
+      expect(audio.tourIndex).toBe(0);
+    });
+
+    it('clamps index beyond end to last index', () => {
+      audio.resumeTour(['a', 'b', 'c'], 99);
+      expect(audio.tourIndex).toBe(2);
+    });
+
+    it('does not call persistTourImmediate (no cookie write on resume)', () => {
+      vi.mocked(writeTourCookie).mockClear();
+      audio.resumeTour(['a'], 0);
+      // writeTourCookie is what persistTourImmediate calls
+      expect(writeTourCookie).not.toHaveBeenCalled();
+    });
+  });
+
+  // ── jumpTourToId ──────────────────────────────────────────────────────
+  describe('jumpTourToId', () => {
+    const seq = ['pale-blue-dot', 'guide-explore', 'guide-earth'];
+
+    it('returns false when tour is not active', () => {
+      // tour is stopped in beforeEach
+      expect(audio.jumpTourToId('guide-explore')).toBe(false);
+    });
+
+    it('returns false when id is not in the sequence', () => {
+      audio.startTour(seq);
+      expect(audio.jumpTourToId('not-in-sequence')).toBe(false);
+    });
+
+    it('jumps the pointer and returns true when id is found', () => {
+      audio.startTour(seq);
+      const moved = audio.jumpTourToId('guide-earth');
+      expect(moved).toBe(true);
+      expect(audio.tourIndex).toBe(2);
+    });
+
+    it('returns true without moving pointer when already pointing at id', () => {
+      audio.startTour(seq);
+      // starts at index 0 = pale-blue-dot
+      const moved = audio.jumpTourToId('pale-blue-dot');
+      expect(moved).toBe(true);
+      expect(audio.tourIndex).toBe(0);
+    });
+  });
+
+  // ── persistTourThrottled / persistTourImmediate ───────────────────────
+  describe('persist helpers', () => {
+    it('persistTourThrottled calls writeTourCookieDebounced when tour is active', () => {
+      audio.startTour(['pale-blue-dot', 'guide-explore']);
+      audio.loadEpisode(ep('pale-blue-dot'));
+      audio.positionSec = 10;
+      audio.persistTourThrottled();
+      expect(writeTourCookieDebounced).toHaveBeenCalled();
+    });
+
+    it('persistTourThrottled is a no-op when tour is not active', () => {
+      vi.mocked(writeTourCookieDebounced).mockClear();
+      audio.persistTourThrottled();
+      expect(writeTourCookieDebounced).not.toHaveBeenCalled();
+    });
+
+    it('persistTourImmediate flushes then writes the cookie', () => {
+      audio.startTour(['pale-blue-dot', 'guide-explore']);
+      audio.loadEpisode(ep('pale-blue-dot'));
+      vi.mocked(writeTourCookie).mockClear();
+      vi.mocked(flushTourCookieWrite).mockClear();
+      audio.persistTourImmediate();
+      expect(flushTourCookieWrite).toHaveBeenCalled();
+      expect(writeTourCookie).toHaveBeenCalled();
+    });
+
+    it('currentResumeState encodes compact, speed, and captions flags', () => {
+      audio.startTour(['pale-blue-dot', 'guide-explore']);
+      audio.loadEpisode(ep('pale-blue-dot'));
+      audio.positionSec = 42;
+      audio.compact = true;
+      audio.speed = 1.5;
+      audio.captionsOn = true;
+      vi.mocked(writeTourCookie).mockClear();
+      audio.persistTourImmediate();
+      const arg = vi.mocked(writeTourCookie).mock.calls[0][0];
+      expect(arg.cmp).toBe(1);
+      expect(arg.spd).toBe(1.5);
+      expect(arg.cc).toBe(1);
+      expect(arg.pos).toBe(42);
+    });
+
+    it('currentResumeState clamps negative positionSec to 0', () => {
+      audio.startTour(['pale-blue-dot', 'guide-explore']);
+      audio.loadEpisode(ep('pale-blue-dot'));
+      audio.positionSec = -5;
+      vi.mocked(writeTourCookie).mockClear();
+      audio.persistTourImmediate();
+      const arg = vi.mocked(writeTourCookie).mock.calls[0][0];
+      expect(arg.pos).toBe(0);
+    });
+  });
+
+  // ── closeOverlay with active tour (flush path) ────────────────────────
+  describe('closeOverlay with active tour', () => {
+    it('calls persistTourImmediate before closing', () => {
+      audio.startTour(['pale-blue-dot', 'guide-explore']);
+      audio.loadEpisode(ep('pale-blue-dot'));
+      vi.mocked(writeTourCookie).mockClear();
+      vi.mocked(flushTourCookieWrite).mockClear();
+      audio.closeOverlay();
+      expect(audio.open).toBe(false);
+      expect(flushTourCookieWrite).toHaveBeenCalled();
+    });
+  });
+
+  // ── stopTour calls clearTourCookie ────────────────────────────────────
+  describe('stopTour', () => {
+    it('calls clearTourCookie', () => {
+      audio.startTour(['pale-blue-dot']);
+      vi.mocked(clearTourCookie).mockClear();
+      audio.stopTour();
+      expect(clearTourCookie).toHaveBeenCalled();
+    });
+  });
+
+  // ── edge branches ─────────────────────────────────────────────────────
+  describe('endEpisode with no current episode', () => {
+    it('does not throw when currentEpisode is null', () => {
+      audio.currentEpisode = null;
+      expect(() => audio.endEpisode()).not.toThrow();
+      expect(audio.playing).toBe(false);
+    });
+  });
+
+  describe('switchVariant with no current episode', () => {
+    it('is a no-op when currentEpisode is null', () => {
+      audio.currentEpisode = null;
+      expect(() => audio.switchVariant('google')).not.toThrow();
+      expect(audio.currentEpisode).toBeNull();
+    });
+  });
+
+  describe('pause() while tour is active flushes cookie', () => {
+    it('calls persistTourImmediate on pause when tour is active', () => {
+      audio.startTour(['pale-blue-dot', 'guide-explore']);
+      audio.loadEpisode(ep('pale-blue-dot'));
+      audio.play();
+      vi.mocked(writeTourCookie).mockClear();
+      vi.mocked(flushTourCookieWrite).mockClear();
+      audio.pause();
+      expect(flushTourCookieWrite).toHaveBeenCalled();
+    });
+  });
+
+  describe('currentResumeState returns null when sequence is empty', () => {
+    it('persistTourThrottled is a no-op when tourSequence is empty despite tourActive', () => {
+      audio.startTour(['pale-blue-dot']);
+      // Empty the sequence without stopping the tour
+      audio.tourSequence = [];
+      vi.mocked(writeTourCookieDebounced).mockClear();
+      audio.persistTourThrottled();
+      expect(writeTourCookieDebounced).not.toHaveBeenCalled();
+    });
+
+    it('persistTourImmediate skips writeTourCookie when sequence is empty', () => {
+      audio.startTour(['pale-blue-dot']);
+      audio.tourSequence = [];
+      vi.mocked(writeTourCookie).mockClear();
+      audio.persistTourImmediate();
+      // flushTourCookieWrite is still called; writeTourCookie is skipped
+      expect(flushTourCookieWrite).toHaveBeenCalled();
+      expect(writeTourCookie).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('nextTourId / prevTourId when tour is not active', () => {
+    it('nextTourId returns null when tour is not active', () => {
+      // tour is stopped in beforeEach
+      expect(audio.nextTourId()).toBeNull();
+    });
+
+    it('prevTourId returns null when tour is not active', () => {
+      expect(audio.prevTourId()).toBeNull();
+    });
+  });
+
+  describe('tourCurrentId with out-of-range index', () => {
+    it('returns null via ?? null when index is beyond sequence', () => {
+      audio.startTour(['pale-blue-dot']);
+      // Force tourIndex past the end to trigger the ?? null branch
+      audio.tourIndex = 99;
+      expect(audio.tourCurrentId()).toBeNull();
     });
   });
 });

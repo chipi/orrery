@@ -15,6 +15,7 @@ import {
   getMoonSites,
   getMarsSites,
   getMarsTraverse,
+  getMoonTraverse,
   getPorkchopGrid,
   getPlanetGallery,
   getSunGallery,
@@ -22,6 +23,7 @@ import {
   getMoonSiteGallery,
   getMarsSiteGallery,
   getSmallBodyGallery,
+  getSmallBodyI18n,
   getMissionGallery,
   getIssModules,
   getIssModule,
@@ -70,6 +72,25 @@ import {
   getBlackHoles,
   getBlackHole,
   getCultureDoors,
+  getOrbitRegimes,
+  getOrbitRegimesMoon,
+  getOrbitRegimesMars,
+  getOrbitRegimesExplore,
+  marsSites,
+  getVenusSites,
+  getVenusSiteGallery,
+  getSatellites,
+  getSatelliteGallery,
+  getSatelliteI18n,
+  getBelts,
+  getBeltGallery,
+  getBeltI18n,
+  getSiteStory,
+  getAudioSourceProvenanceManifest,
+  getAudioProvenanceManifest,
+  getEpisodeSourcesManifest,
+  getEssay,
+  getEssayIndex,
   rockets,
   earthObjects,
   moonSites,
@@ -1260,5 +1281,284 @@ describe('/explore v2 data loaders', () => {
   it('getDataSources returns the catalogue bill of materials', async () => {
     const src = await getDataSources();
     expect(src?.entries.length).toBeGreaterThan(0);
+  });
+});
+
+// ─── Gap-closure: orbit regimes ──────────────────────────────────────────────
+
+describe('orbit regime loaders', () => {
+  it('getOrbitRegimes returns Earth orbit regimes merged with en-US overlay', async () => {
+    const regimes = await getOrbitRegimes();
+    expect(regimes.length).toBeGreaterThanOrEqual(5);
+    const leo = regimes.find((r) => r.id === 'LEO');
+    expect(leo).toBeDefined();
+    expect(leo!.altitude_km).toBeDefined();
+  });
+
+  it('getOrbitRegimes falls back to en-US for missing locale', async () => {
+    const regimes = await getOrbitRegimes('xx-TEST');
+    expect(regimes.length).toBeGreaterThanOrEqual(5);
+    const leo = regimes.find((r) => r.id === 'LEO');
+    expect(leo).toBeDefined();
+  });
+
+  it('getOrbitRegimesMoon returns Moon orbit regimes', async () => {
+    const regimes = await getOrbitRegimesMoon();
+    expect(regimes.length).toBeGreaterThanOrEqual(1);
+    const llo = regimes.find((r) => r.id === 'LLO');
+    expect(llo).toBeDefined();
+  });
+
+  it('getOrbitRegimesMars returns Mars orbit regimes', async () => {
+    const regimes = await getOrbitRegimesMars();
+    expect(regimes.length).toBeGreaterThanOrEqual(1);
+    const lmo = regimes.find((r) => r.id === 'LMO');
+    expect(lmo).toBeDefined();
+  });
+
+  it('getOrbitRegimesExplore returns heliocentric zone regimes', async () => {
+    const regimes = await getOrbitRegimesExplore();
+    expect(regimes.length).toBeGreaterThanOrEqual(1);
+  });
+});
+
+// ─── Gap-closure: Mars + Venus base loaders ──────────────────────────────────
+
+describe('marsSites base loader', () => {
+  it('returns the raw Mars catalogue without locale overlay', async () => {
+    const sites = await marsSites();
+    expect(sites.length).toBeGreaterThanOrEqual(16);
+    expect(sites[0]).toHaveProperty('id');
+    expect(sites[0]).toHaveProperty('nation');
+  });
+});
+
+describe('Venus sites', () => {
+  it('getVenusSites returns the three Venera/Vega landers', async () => {
+    const sites = await getVenusSites();
+    expect(sites.length).toBeGreaterThanOrEqual(3);
+    const venera = sites.find((s) => s.id === 'venera-13');
+    expect(venera).toBeDefined();
+  });
+
+  it('getVenusSites locale param is accepted (no overlays yet, same result)', async () => {
+    const en = await getVenusSites('en-US');
+    const de = await getVenusSites('de');
+    expect(en.length).toBe(de.length);
+  });
+
+  it('getVenusSiteGallery returns an empty array (no galleries yet)', async () => {
+    const urls = await getVenusSiteGallery();
+    expect(urls).toEqual([]);
+  });
+});
+
+// ─── Gap-closure: Moon traverse ──────────────────────────────────────────────
+
+describe('getMoonTraverse', () => {
+  it('returns a valid traverse for a known rover id', async () => {
+    const t = await getMoonTraverse('apollo17');
+    expect(t).not.toBeNull();
+    expect(t!.rover_id).toBe('apollo17');
+    expect(Array.isArray(t!.points)).toBe(true);
+    expect(t!.points.length).toBeGreaterThan(0);
+  });
+
+  it('returns null for an unknown rover id', async () => {
+    const t = await getMoonTraverse('ghost-moon-rover');
+    expect(t).toBeNull();
+  });
+});
+
+// ─── Gap-closure: small-body i18n ────────────────────────────────────────────
+
+describe('getSmallBodyI18n', () => {
+  it('returns null for a body not in the bundle', async () => {
+    const overlay = await getSmallBodyI18n('en-US', 'does-not-exist');
+    expect(overlay).toBeNull();
+  });
+
+  it('resolves to an object or null for a real body id', async () => {
+    const overlay = await getSmallBodyI18n('en-US', 'pluto');
+    expect(overlay === null || typeof overlay === 'object').toBe(true);
+  });
+});
+
+// ─── Gap-closure: satellites ─────────────────────────────────────────────────
+
+describe('satellites', () => {
+  it('getSatellites returns the curated satellite catalogue', async () => {
+    const sats = await getSatellites();
+    expect(sats.length).toBeGreaterThan(0);
+    const moon = sats.find((s) => s.id === 'moon');
+    expect(moon).toBeDefined();
+    expect(moon!.parent_planet_id).toBe('earth');
+  });
+
+  it('getSatelliteGallery returns an array for moon (possibly empty)', async () => {
+    const urls = await getSatelliteGallery('moon');
+    expect(Array.isArray(urls)).toBe(true);
+  });
+
+  it('getSatelliteGallery returns [] for an unknown satellite', async () => {
+    const urls = await getSatelliteGallery('ghost-moon-9999');
+    expect(urls).toEqual([]);
+  });
+
+  it('getSatelliteI18n resolves to an object for a satellite with an overlay', async () => {
+    const overlay = await getSatelliteI18n('en-US', 'moon');
+    expect(overlay === null || typeof overlay === 'object').toBe(true);
+    if (overlay) {
+      expect(overlay).toHaveProperty('description');
+    }
+  });
+
+  it('getSatelliteI18n returns null for a non-existent satellite', async () => {
+    const overlay = await getSatelliteI18n('en-US', 'ghost-moon-9999');
+    expect(overlay).toBeNull();
+  });
+});
+
+// ─── Gap-closure: belts ──────────────────────────────────────────────────────
+
+describe('belts', () => {
+  it('getBelts returns the belt catalogue (asteroid + kuiper)', async () => {
+    const belts = await getBelts();
+    expect(belts.length).toBeGreaterThanOrEqual(2);
+    const asteroid = belts.find((b) => b.id === 'asteroid');
+    expect(asteroid).toBeDefined();
+    expect(asteroid!.inner_au).toBeGreaterThan(0);
+  });
+
+  it('getBeltGallery returns an array for asteroid belt (possibly empty)', async () => {
+    const urls = await getBeltGallery('asteroid');
+    expect(Array.isArray(urls)).toBe(true);
+  });
+
+  it('getBeltGallery returns [] for an unknown belt id', async () => {
+    const urls = await getBeltGallery('ghost-belt');
+    expect(urls).toEqual([]);
+  });
+
+  it('getBeltI18n returns an object or null for a known belt', async () => {
+    const overlay = await getBeltI18n('en-US', 'asteroid');
+    expect(overlay === null || typeof overlay === 'object').toBe(true);
+  });
+
+  it('getBeltI18n returns null for a non-existent belt', async () => {
+    const overlay = await getBeltI18n('en-US', 'ghost-belt');
+    expect(overlay).toBeNull();
+  });
+});
+
+// ─── Gap-closure: site stories ───────────────────────────────────────────────
+
+describe('getSiteStory', () => {
+  it('returns a site story for a site in the index (apollo11)', async () => {
+    const story = await getSiteStory('apollo11');
+    expect(story).not.toBeNull();
+    expect(story!.site).toBe('apollo11');
+    expect(story!.intro.length).toBeGreaterThan(0);
+    expect(story!.chapters.length).toBeGreaterThan(0);
+  });
+
+  it('returns null for a site not in the story index', async () => {
+    const story = await getSiteStory('ghost-site-9999');
+    expect(story).toBeNull();
+  });
+
+  it('returns the en-US base when locale has no overlay', async () => {
+    const story = await getSiteStory('apollo11', 'de');
+    expect(story).not.toBeNull();
+    expect(story!.site).toBe('apollo11');
+    expect(story!.chapters.length).toBeGreaterThan(0);
+  });
+});
+
+// ─── Gap-closure: audio provenance manifests ─────────────────────────────────
+
+describe('getAudioSourceProvenanceManifest', () => {
+  it('returns the atmospheric audio provenance manifest', async () => {
+    const m = await getAudioSourceProvenanceManifest();
+    expect(m).not.toBeNull();
+    expect(typeof m!.schema_version).toBe('number');
+    expect(Array.isArray(m!.entries)).toBe(true);
+  });
+
+  it('second call returns the cached manifest (no extra fetch)', async () => {
+    const a = await getAudioSourceProvenanceManifest();
+    const b = await getAudioSourceProvenanceManifest();
+    expect(a).toBe(b);
+  });
+});
+
+describe('getAudioProvenanceManifest', () => {
+  it('returns the TTS audio provenance manifest', async () => {
+    const m = await getAudioProvenanceManifest();
+    expect(m).not.toBeNull();
+    expect(Array.isArray(m!.entries)).toBe(true);
+    expect(m!.entries.length).toBeGreaterThan(0);
+    expect(m!.entries[0]).toHaveProperty('episode_id');
+    expect(m!.entries[0]).toHaveProperty('path_mp3');
+  });
+
+  it('second call returns the same cached object', async () => {
+    const a = await getAudioProvenanceManifest();
+    const b = await getAudioProvenanceManifest();
+    expect(a).toBe(b);
+  });
+});
+
+describe('getEpisodeSourcesManifest', () => {
+  it('returns a manifest with the expected shape (episodes array)', async () => {
+    const m = await getEpisodeSourcesManifest();
+    expect(m).not.toBeNull();
+    expect(typeof m.schema_version).toBe('number');
+    expect(Array.isArray(m.episodes)).toBe(true);
+  });
+});
+
+// ─── Gap-closure: essays ─────────────────────────────────────────────────────
+
+describe('essays (The Long View)', () => {
+  it('getEssayIndex returns the full essay list', async () => {
+    const idx = await getEssayIndex();
+    expect(idx.length).toBeGreaterThanOrEqual(9);
+    const nav = idx.find((e) => e.slug === 'navigation');
+    expect(nav).toBeDefined();
+    expect(nav!.slug).toBe('navigation');
+  });
+
+  it('getEssayIndex localizes title+dek for en-US', async () => {
+    const idx = await getEssayIndex('en-US');
+    const nav = idx.find((e) => e.slug === 'navigation');
+    expect(nav).toBeDefined();
+    expect(nav!.title).toBe('Finding Mars in the Dark');
+  });
+
+  it('getEssayIndex falls back gracefully for an unknown locale', async () => {
+    const idx = await getEssayIndex('xx-TEST');
+    expect(idx.length).toBeGreaterThanOrEqual(9);
+  });
+
+  it('getEssay merges base + en-US overlay for a known slug', async () => {
+    const essay = await getEssay('navigation');
+    expect(essay).not.toBeNull();
+    expect(essay!.slug).toBe('navigation');
+    expect(essay!.title).toBe('Finding Mars in the Dark');
+    // body is an array of content blocks (prose/image/etc.)
+    expect(Array.isArray(essay!.body)).toBe(true);
+    expect((essay!.body as unknown[]).length).toBeGreaterThan(0);
+  });
+
+  it('getEssay returns null for an unknown slug', async () => {
+    const essay = await getEssay('not-a-real-essay');
+    expect(essay).toBeNull();
+  });
+
+  it('getEssay falls back to en-US for a missing locale', async () => {
+    const essay = await getEssay('navigation', 'xx-TEST');
+    expect(essay).not.toBeNull();
+    expect(essay!.title).toBe('Finding Mars in the Dark');
   });
 });

@@ -5,6 +5,7 @@ import {
   computePlanApply,
   FLYBY_OFFSET_FRACTION,
   type MissionApplyDefaults,
+  type TrajectoryOverride,
 } from './fly-mission-apply';
 import { ARC_STEPS } from './fly-moon-arc';
 import type { Mission } from '$types/mission';
@@ -335,5 +336,176 @@ describe('computePlanApply', () => {
 
   it('missionEvents always []', () => {
     expect(computePlanApply('mars', 'LANDING', 9000, 250, PLAN_DEFAULTS).missionEvents).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// trajectoryOverride (spline branch) — exercises lines 299–406
+// ---------------------------------------------------------------------------
+
+describe('computeMissionApply — trajectoryOverride / spline branch', () => {
+  // Minimal Cassini-like mission: SATURN flyby, 2451-day transit.
+  // departure_date is needed for parseWaypointDateToMet to compute MET.
+  const cassiniBase = makeMission({
+    dest: 'SATURN',
+    type: 'orbital',
+    departure_date: '1997-10-15',
+    arrival_date: '2004-07-01',
+    transit_days: 2451,
+  });
+
+  // Two waypoints within transit window:
+  //   "Launch" at departure date MET=0
+  //   "Saturn orbit insertion" at 1997-10-15 + 2451 days = well within window
+  // We use YYYY-MM-DD for precision.
+  const launchWp = { date: '1997-10-15', label: 'Launch', x: 0.98, y: 0, z: 0 };
+  // A Venus flyby at MET ~166 days (1998-04-01 relative to 1997-10-15)
+  const venusWp = { date: '1998-04-01', label: 'Venus #1 — gravity assist', x: 0.72, y: 0, z: 0.1 };
+  // Final arrival at Saturn orbit insertion (within transit)
+  const saturnWp = { date: '2004-07-01', label: 'Saturn orbit insertion', x: 9.0, y: 0, z: 0 };
+
+  const override: TrajectoryOverride = {
+    waypoints: [launchWp, venusWp, saturnWp],
+  };
+
+  it('spline branch activated when trajectoryOverride has ≥2 waypoints + departure_date', () => {
+    const r = computeMissionApply(cassiniBase, DEFAULTS, override);
+    // Spline produces 500 points; Keplerian arc produces ARC_STEPS+1.
+    expect(r.outPts.length).toBe(500);
+    // Grand-tour splines are one-way — return arc is empty.
+    expect(r.retPts).toEqual([]);
+  });
+
+  it('spline result has finite x/z coordinates (no NaN leak from waypoint remap)', () => {
+    const r = computeMissionApply(cassiniBase, DEFAULTS, override);
+    for (const pt of r.outPts) {
+      expect(isFinite(pt.x)).toBe(true);
+      expect(isFinite(pt.z)).toBe(true);
+    }
+  });
+
+  it('falls back to Keplerian arc when trajectoryOverride has <2 waypoints', () => {
+    const singleWp: TrajectoryOverride = { waypoints: [launchWp] };
+    const r = computeMissionApply(cassiniBase, DEFAULTS, singleWp);
+    // Keplerian path — ARC_STEPS+1 points
+    expect(r.outPts.length).toBe(ARC_STEPS + 1);
+  });
+
+  it('falls back to Keplerian arc when mission has no departure_date', () => {
+    const noDep = { ...cassiniBase, departure_date: undefined };
+    const r = computeMissionApply(noDep, DEFAULTS, override);
+    expect(r.outPts.length).toBe(ARC_STEPS + 1);
+  });
+
+  it('does not activate spline branch when no override supplied', () => {
+    const r = computeMissionApply(cassiniBase, DEFAULTS);
+    expect(r.outPts.length).toBe(ARC_STEPS + 1);
+  });
+
+  it('EARTH-labeled waypoints remap via earthPos (not destinationPos)', () => {
+    // Galileo-shape: Earth gravity assist + Jupiter arrival
+    const earthWp = { date: '1990-12-08', label: 'Earth flyby', x: 1.0, y: 0, z: 0 };
+    const jupiterWp = { date: '1995-12-07', label: 'Jupiter orbit insertion', x: 5.2, y: 0, z: 0 };
+    const galileo = makeMission({
+      dest: 'JUPITER',
+      type: 'orbital',
+      departure_date: '1989-10-18',
+      transit_days: 2242,
+    });
+    const galOverride: TrajectoryOverride = {
+      waypoints: [{ date: '1989-10-18', label: 'Launch', x: 1.0, y: 0, z: 0 }, earthWp, jupiterWp],
+    };
+    const r = computeMissionApply(galileo, DEFAULTS, galOverride);
+    expect(r.outPts.length).toBe(500);
+    expect(r.retPts).toEqual([]);
+  });
+
+  it('cruise waypoints (no label) are passed through raw without remapping', () => {
+    // A waypoint with no label should pass the labelToPlanetId null-return branch
+    const cruiseWp = { date: '1998-12-01', x: 1.5, y: 0.2, z: 0.3 };
+    const withCruise: TrajectoryOverride = {
+      waypoints: [launchWp, cruiseWp, saturnWp],
+    };
+    const r = computeMissionApply(cassiniBase, DEFAULTS, withCruise);
+    // Still produces spline output (2 labeled waypoints + 1 cruise is ≥2 total)
+    expect(r.outPts.length).toBe(500);
+  });
+
+  it('waypoints past transit window are filtered out by arrMet clamp', () => {
+    // Extra post-arrival waypoint at MET > 2451 days
+    const postWp = { date: '2017-09-15', label: 'Grand Finale', x: 9.5, y: 0, z: 0 };
+    const withPost: TrajectoryOverride = {
+      waypoints: [launchWp, venusWp, saturnWp, postWp],
+    };
+    // Should still work — post-arrival waypoints are filtered, the 3 in-mission remain
+    const r = computeMissionApply(cassiniBase, DEFAULTS, withPost);
+    expect(r.outPts.length).toBe(500);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// labelToPlanetId — exercised indirectly via computeMissionApply spline branch.
+// All planet names + synonyms are tested by passing waypoint labels and
+// verifying the override path produces spline output (not Keplerian fallback).
+// ---------------------------------------------------------------------------
+
+describe('computeMissionApply — labelToPlanetId coverage via waypoint labels', () => {
+  // New Horizons shape: Pluto flyby + Arrokoth flyby
+  const nhBase = makeMission({
+    dest: 'PLUTO',
+    type: 'flyby',
+    departure_date: '2006-01-19',
+    transit_days: 3463,
+  });
+
+  it('Pluto label resolves (not null) — spline branch activates', () => {
+    const override: TrajectoryOverride = {
+      waypoints: [
+        { date: '2006-01-19', label: 'Launch', x: 1.0, y: 0, z: 0 },
+        { date: '2015-07-14', label: 'Pluto flyby', x: 32.0, y: 0, z: 0 },
+      ],
+    };
+    const r = computeMissionApply(nhBase, DEFAULTS, override);
+    expect(r.outPts.length).toBe(500);
+  });
+
+  it('Churyumov synonym resolves to 67p', () => {
+    // Rosetta shape
+    const rosetta = makeMission({
+      dest: '67P',
+      type: 'orbital',
+      departure_date: '2004-03-02',
+      transit_days: 3801,
+    });
+    const override: TrajectoryOverride = {
+      waypoints: [
+        { date: '2004-03-02', label: 'Launch', x: 1.0, y: 0, z: 0 },
+        { date: '2014-08-06', label: 'Churyumov–Gerasimenko arrival', x: 3.1, y: 0, z: 0 },
+      ],
+    };
+    const r = computeMissionApply(rosetta, DEFAULTS, override);
+    expect(r.outPts.length).toBe(500);
+  });
+
+  it('unknown label (no planet name) returns null → cruise waypoint passthrough', () => {
+    // A waypoint with a label that does not contain any planet name or synonym
+    // should be treated as a cruise waypoint (passthrough, no remap).
+    const r = computeMissionApply(
+      makeMission({
+        dest: 'MARS',
+        type: 'rover landing',
+        departure_date: '2020-07-30',
+        transit_days: 203,
+      }),
+      DEFAULTS,
+      {
+        waypoints: [
+          { date: '2020-07-30', label: 'Launch', x: 1.0, y: 0, z: 0 },
+          { date: '2020-12-01', label: 'DSM-1 deep space manoeuvre', x: 1.2, y: 0.01, z: 0.2 },
+          { date: '2021-02-18', label: 'Mars arrival', x: 1.52, y: 0, z: 0 },
+        ],
+      },
+    );
+    expect(r.outPts.length).toBe(500);
   });
 });

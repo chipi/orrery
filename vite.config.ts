@@ -386,16 +386,20 @@ export default defineConfig(({ mode }) => {
           // wiring + content backfills) — measured at 84.72 on the
           // failing CI run. Held at observed-minus-~0.7pp so a meaningful
           // regression still trips the gate.
-          // 2026-06-23 refresh post orbit-ruler + regime-panel work
-          // (#354–#357): new components + helpers added without unit
-          // tests dragged functions to 82.86 + branches to 73.85.
-          // Thresholds eased by ~1pp; restoring/tightening is a v0.8
-          // follow-up once OrbitRuler / RegimePanel / regime-match
-          // unit tests land.
-          statements: 88,
-          branches: 73,
-          functions: 82,
-          lines: 90,
+          // 2026-07-20 coverage-strengthening pass (launch-epic finalization):
+          // added ~325 unit tests across data.ts, launches/manifest, image-srcset,
+          // fly-mission-apply, science-lens, a11y/roving-focus, hotspot-lod
+          // (pure math), audio-registry/state, native/{deep-links,back-gesture,
+          // webgl-recovery}, + the /fly descent-hud/force-layers/orbit-insertion;
+          // excluded the pure-3D builders (hotspot-models, hero-materials,
+          // model-geom, dispose-object3d). Actuals rose to
+          // stmts 92.36 / branches 80.52 / funcs 90.27 / lines 94.36 — thresholds
+          // tightened to just under that (fail-closed on any regression) with a
+          // ~1.5–2 pp margin so routine additions don't trip the gate.
+          statements: 91,
+          branches: 78,
+          functions: 88,
+          lines: 93,
         },
         exclude: [
           'node_modules/',
@@ -484,6 +488,19 @@ export default defineConfig(({ mode }) => {
           // keeps its *.test.ts.
           'src/lib/three/fly-leo-coast-scene.ts',
           'src/lib/three/capsule-models.ts',
+          // Shared 3D asset builders used by the model/scene files above — hero
+          // PBR materials + IBL (hero-materials) and the low-level geometry
+          // helper (model-geom) both instantiate Three.js materials/geometry
+          // jsdom can't run. Same policy as the scene/model builders.
+          'src/lib/three/hero-materials.ts',
+          'src/lib/three/model-geom.ts',
+          // Surface/flyby hotspot 3D models — every hotspot-models/*.ts is a
+          // procedural `buildXHotspot(): THREE.Group` builder (rovers, landers,
+          // spacecraft) that instantiates Three.js geometry jsdom can't run;
+          // same policy as the other model builders above. Verified visually on
+          // /dev/models + the surface/flyby routes.
+          'src/lib/hotspot-models/**',
+          'src/lib/three/dispose-object3d.ts',
           '*.config.{js,ts}',
           '.svelte-kit/',
         ],

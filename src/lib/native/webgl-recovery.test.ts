@@ -18,6 +18,8 @@ vi.mock('@capacitor/app', () => ({
   App: { addListener: vi.fn().mockResolvedValue({ remove: vi.fn() }) },
 }));
 
+import { App } from '@capacitor/app';
+
 describe('initWebglRecovery', () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -149,9 +151,11 @@ describe('initWebglRecovery', () => {
       document.body.appendChild(canvas1);
       document.body.appendChild(canvas2);
 
+      let teardown!: () => void;
       expect(() => {
-        initWebglRecovery();
+        teardown = initWebglRecovery();
       }).not.toThrow();
+      teardown();
 
       document.body.removeChild(canvas1);
       document.body.removeChild(canvas2);
@@ -180,6 +184,161 @@ describe('initWebglRecovery', () => {
         teardown();
       }).not.toThrow();
 
+      document.body.removeChild(canvas);
+    });
+  });
+
+  // ── anyContextLost via appStateChange ─────────────────────────────────
+  describe('anyContextLost + appStateChange integration', () => {
+    beforeEach(() => {
+      vi.mocked(Capacitor.isNativePlatform).mockReturnValue(true);
+      // Re-establish the App.addListener mock so it is callable after
+      // vi.clearAllMocks() strips the implementation in the outer beforeEach.
+      vi.mocked(App.addListener).mockResolvedValue({ remove: vi.fn() } as never);
+    });
+
+    it('reloads when foregrounded and a canvas context is lost', async () => {
+      // Stub location.reload (jsdom does not implement it).
+      const reloadSpy = vi.fn();
+      Object.defineProperty(window, 'location', {
+        value: { reload: reloadSpy },
+        writable: true,
+        configurable: true,
+      });
+
+      // Create a canvas whose WebGL context reports isContextLost() = true.
+      const canvas = document.createElement('canvas');
+      const fakeGl = {
+        isContextLost: () => true,
+      };
+      vi.spyOn(canvas, 'getContext').mockReturnValue(fakeGl as unknown as WebGL2RenderingContext);
+      document.body.appendChild(canvas);
+
+      // Capture the appStateChange handler.
+      let stateChangeHandler: ((arg: { isActive: boolean }) => void) | null = null;
+      vi.mocked(App.addListener).mockImplementation(async (event, handler) => {
+        if (event === 'appStateChange') {
+          stateChangeHandler = handler as (arg: { isActive: boolean }) => void;
+        }
+        return { remove: vi.fn() };
+      });
+
+      const teardown = initWebglRecovery();
+      await new Promise((r) => setTimeout(r, 0));
+
+      stateChangeHandler?.({ isActive: true });
+      expect(reloadSpy).toHaveBeenCalledOnce();
+
+      teardown();
+      document.body.removeChild(canvas);
+    });
+
+    it('does NOT reload when foregrounded but no context is lost', async () => {
+      const reloadSpy = vi.fn();
+      Object.defineProperty(window, 'location', {
+        value: { reload: reloadSpy },
+        writable: true,
+        configurable: true,
+      });
+
+      const canvas = document.createElement('canvas');
+      const healthyGl = { isContextLost: () => false };
+      vi.spyOn(canvas, 'getContext').mockReturnValue(
+        healthyGl as unknown as WebGL2RenderingContext,
+      );
+      document.body.appendChild(canvas);
+
+      let stateChangeHandler: ((arg: { isActive: boolean }) => void) | null = null;
+      vi.mocked(App.addListener).mockImplementation(async (event, handler) => {
+        if (event === 'appStateChange') {
+          stateChangeHandler = handler as (arg: { isActive: boolean }) => void;
+        }
+        return { remove: vi.fn() };
+      });
+
+      const teardown = initWebglRecovery();
+      await new Promise((r) => setTimeout(r, 0));
+
+      stateChangeHandler?.({ isActive: true });
+      expect(reloadSpy).not.toHaveBeenCalled();
+
+      teardown();
+      document.body.removeChild(canvas);
+    });
+
+    it('does NOT reload when appStateChange fires with isActive=false', async () => {
+      const reloadSpy = vi.fn();
+      Object.defineProperty(window, 'location', {
+        value: { reload: reloadSpy },
+        writable: true,
+        configurable: true,
+      });
+
+      let stateChangeHandler: ((arg: { isActive: boolean }) => void) | null = null;
+      vi.mocked(App.addListener).mockImplementation(async (event, handler) => {
+        if (event === 'appStateChange') {
+          stateChangeHandler = handler as (arg: { isActive: boolean }) => void;
+        }
+        return { remove: vi.fn() };
+      });
+
+      const teardown = initWebglRecovery();
+      await new Promise((r) => setTimeout(r, 0));
+
+      stateChangeHandler?.({ isActive: false });
+      expect(reloadSpy).not.toHaveBeenCalled();
+
+      teardown();
+    });
+
+    it('does NOT reload after teardown even if webglcontextrestored fires', () => {
+      const reloadSpy = vi.fn();
+      Object.defineProperty(window, 'location', {
+        value: { reload: reloadSpy },
+        writable: true,
+        configurable: true,
+      });
+
+      const teardown = initWebglRecovery();
+      teardown();
+
+      document.dispatchEvent(new Event('webglcontextrestored', { bubbles: true }));
+      expect(reloadSpy).not.toHaveBeenCalled();
+    });
+
+    it('detects lost context via webgl (webgl2 not available, fallback to webgl)', async () => {
+      const reloadSpy = vi.fn();
+      Object.defineProperty(window, 'location', {
+        value: { reload: reloadSpy },
+        writable: true,
+        configurable: true,
+      });
+
+      // Canvas: getContext('webgl2') → null; getContext('webgl') → lost context
+      const canvas = document.createElement('canvas');
+      const lostGl = { isContextLost: () => true };
+      vi.spyOn(canvas, 'getContext').mockImplementation((type) => {
+        if (type === 'webgl2') return null;
+        if (type === 'webgl') return lostGl as unknown as WebGL2RenderingContext;
+        return null;
+      });
+      document.body.appendChild(canvas);
+
+      let stateChangeHandler: ((arg: { isActive: boolean }) => void) | null = null;
+      vi.mocked(App.addListener).mockImplementation(async (event, handler) => {
+        if (event === 'appStateChange') {
+          stateChangeHandler = handler as (arg: { isActive: boolean }) => void;
+        }
+        return { remove: vi.fn() };
+      });
+
+      const teardown = initWebglRecovery();
+      await new Promise((r) => setTimeout(r, 0));
+
+      stateChangeHandler?.({ isActive: true });
+      expect(reloadSpy).toHaveBeenCalledOnce();
+
+      teardown();
       document.body.removeChild(canvas);
     });
   });

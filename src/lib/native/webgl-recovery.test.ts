@@ -23,8 +23,8 @@ import { App } from '@capacitor/app';
 // The Capacitor App.addListener type is a set of strict overloads; vi.mocked()
 // preserves them, making mockImplementation's handler param infer as never.
 // Cast once here to a loose signature for all per-test mockImplementation calls.
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const addListenerMock = App.addListener as unknown as {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   mockImplementation: (fn: (...args: any[]) => any) => void;
 };
 

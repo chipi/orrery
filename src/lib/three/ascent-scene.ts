@@ -466,10 +466,12 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       arr.position.copy(origin);
       _v.set(dx, dy, 0).normalize();
       arr.setDirection(_v);
-      arr.setLength(lenKm, vehLen * 0.3, vehLen * 0.11);
+      // Head proportional to the arrow's own length so the aspect matches the
+      // coast (capsule) arrows — slim, not the fat fixed head.
+      arr.setLength(lenKm, lenKm * 0.3, lenKm * 0.1);
     };
     // Thrust — up the commanded body axis.
-    const tl = (s.thrustN / FORCE_REF_N) * vehLen * 2.2;
+    const tl = (s.thrustN / FORCE_REF_N) * vehLen * 1.1;
     setArrow(
       arrThrust,
       'thrust',
@@ -484,12 +486,12 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       'weight',
       -s.downrangeKm,
       -(R_EARTH_KM + s.altKm),
-      (weightN / FORCE_REF_N) * vehLen * 2.2,
+      (weightN / FORCE_REF_N) * vehLen * 1.1,
     );
     // Velocity + drag (drag opposes velocity).
     const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
-    setArrow(arrVel, 'velocity', horiz, s.velUpKms, (s.speedKms / SPEED_REF) * vehLen * 2);
-    setArrow(arrDrag, 'drag', -horiz, -s.velUpKms, (s.dragN / DRAG_REF_N) * vehLen * 1.2);
+    setArrow(arrVel, 'velocity', horiz, s.velUpKms, (s.speedKms / SPEED_REF) * vehLen * 1.0);
+    setArrow(arrDrag, 'drag', -horiz, -s.velUpKms, (s.dragN / DRAG_REF_N) * vehLen * 0.6);
   };
 
   const setState = (s: AscentState): void => {

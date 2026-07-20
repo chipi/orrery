@@ -358,17 +358,18 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       arr.position.copy(origin);
       _v.set(0, dy, 0).normalize();
       arr.setDirection(_v);
-      arr.setLength(lenKm, vehLen * 0.3, vehLen * 0.11);
+      // Head proportional to arrow length so the aspect matches the coast arrows.
+      arr.setLength(lenKm, lenKm * 0.3, lenKm * 0.1);
     };
     // Thrust — retro, up.
-    setArrow(arrThrust, 'thrust', 1, s.thrustN > 0 ? (s.thrustN / FORCE_REF_N) * vehLen * 2 : 0);
+    setArrow(arrThrust, 'thrust', 1, s.thrustN > 0 ? (s.thrustN / FORCE_REF_N) * vehLen * 1.0 : 0);
     // Weight — toward the body centre, down.
     const weightN = s.massKg * bodyGravity(s.altM, body);
-    setArrow(arrWeight, 'weight', -1, (weightN / FORCE_REF_N) * vehLen * 2);
+    setArrow(arrWeight, 'weight', -1, (weightN / FORCE_REF_N) * vehLen * 1.0);
     // Velocity — descending, down.
-    setArrow(arrVel, 'velocity', -1, (s.velocityMs / SPEED_REF_MS) * vehLen * 2);
+    setArrow(arrVel, 'velocity', -1, (s.velocityMs / SPEED_REF_MS) * vehLen * 1.0);
     // Drag — opposes the descent, up.
-    setArrow(arrDrag, 'drag', 1, (s.dragN / DRAG_REF_N) * vehLen * 1.4);
+    setArrow(arrDrag, 'drag', 1, (s.dragN / DRAG_REF_N) * vehLen * 0.7);
   };
 
   // Separation event METs (undefined ⇒ that beat never fires).

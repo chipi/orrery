@@ -143,6 +143,9 @@
   let loop: AnimateLoop | undefined;
 
   let hud = $state({ altKm: 0, velKms: 0, stage: 'S1', met: 'T-00:12' });
+  // HUD-scrim strength: full on the pad (bright blue sky), gone by ~55 km where
+  // the sky has already faded to space-black and the panel-free HUD reads fine.
+  let scrimOpacity = $derived(Math.max(0, Math.min(1, 1 - hud.altKm / 55)));
   // Seeded once from the initial state, then reassigned every frame by applyState().
   let liveState = $state<AscentState>(untrack(() => summary.states[0]));
   // Re-basing warp: on completion the camera pulls back hard (Earth → a dot) +
@@ -326,6 +329,12 @@
 <div class="launch" class:hud-hidden={hudHidden} class:external={externalClock}>
   <div class="stage" bind:this={container}></div>
 
+  <!-- HUD legibility scrim: the 2026 HUD is panel-free, which reads perfectly
+       against dark space but washes the dim mono labels out against the bright
+       daytime launch sky. A soft edge-vignette darkens the frame corners where
+       the HUD sits and fades to nothing as the vehicle climbs into space. -->
+  <div class="hud-scrim" style="opacity:{scrimOpacity}" aria-hidden="true"></div>
+
   <!-- Left telemetry console -->
   {#if !warping}
     <div class="telemetry">
@@ -494,6 +503,21 @@
   .stage {
     position: absolute;
     inset: 0;
+  }
+  /* Legibility scrim — corner-weighted so the centre (the vehicle) stays clear
+     while the frame edges where the HUD lives get a soft darken. Sits above the
+     canvas, below the z-6 HUD text. Opacity is altitude-driven (inline). */
+  .hud-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 130% 90% at 50% 42%, transparent 46%, rgba(3, 6, 14, 0.62) 100%);
+    transition: opacity 0.4s linear;
+  }
+  .launch.hud-hidden .hud-scrim {
+    opacity: 0 !important;
   }
   .telemetry {
     position: absolute;

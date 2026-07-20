@@ -109,12 +109,37 @@
     })),
 
     // ── Earth-orbit re-entry capsules (Tier-1) ───────────────────────
-    { id: 'mercury-capsule', label: 'Mercury capsule', family: 'capsule', build: () => buildMercuryCapsule() },
-    { id: 'gemini-capsule', label: 'Gemini capsule', family: 'capsule', build: () => buildGeminiCapsule() },
-    { id: 'vostok-sphere', label: 'Vostok / Voskhod', family: 'capsule', build: () => buildVostokSphere() },
+    {
+      id: 'mercury-capsule',
+      label: 'Mercury capsule',
+      family: 'capsule',
+      build: () => buildMercuryCapsule(),
+    },
+    {
+      id: 'gemini-capsule',
+      label: 'Gemini capsule',
+      family: 'capsule',
+      build: () => buildGeminiCapsule(),
+    },
+    {
+      id: 'vostok-sphere',
+      label: 'Vostok / Voskhod',
+      family: 'capsule',
+      build: () => buildVostokSphere(),
+    },
     { id: 'apollo-cm', label: 'Apollo CM', family: 'capsule', build: () => buildApolloCM() },
-    { id: 'soyuz-sa', label: 'Soyuz descent module', family: 'capsule', build: () => buildSoyuzDescentModule() },
-    { id: 'dragon-capsule', label: 'Crew Dragon', family: 'capsule', build: () => buildDragonCapsule() },
+    {
+      id: 'soyuz-sa',
+      label: 'Soyuz descent module',
+      family: 'capsule',
+      build: () => buildSoyuzDescentModule(),
+    },
+    {
+      id: 'dragon-capsule',
+      label: 'Crew Dragon',
+      family: 'capsule',
+      build: () => buildDragonCapsule(),
+    },
 
     // ── Moon landers / rovers (Tier-1 engineering meshes) ─────────────
     { id: 'apollo-lm', label: 'Apollo LM', family: 'moon', build: () => buildApolloLMHotspot(US) },

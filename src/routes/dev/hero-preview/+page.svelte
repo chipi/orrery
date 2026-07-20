@@ -32,6 +32,7 @@
   onMount(() => {
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 3));
+    // eslint-disable-next-line svelte/no-dom-manipulating
     host.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();

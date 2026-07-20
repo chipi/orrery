@@ -512,8 +512,11 @@
     inset: 0;
     z-index: 2;
     pointer-events: none;
-    background:
-      radial-gradient(ellipse 130% 90% at 50% 42%, transparent 46%, rgba(3, 6, 14, 0.62) 100%);
+    background: radial-gradient(
+      ellipse 130% 90% at 50% 42%,
+      transparent 46%,
+      rgba(3, 6, 14, 0.62) 100%
+    );
     transition: opacity 0.4s linear;
   }
   .launch.hud-hidden .hud-scrim {

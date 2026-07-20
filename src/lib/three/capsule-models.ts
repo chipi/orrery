@@ -77,7 +77,10 @@ export function buildMercuryCapsule(): THREE.Group {
   g.add(recovery);
 
   // Antenna canister + spike.
-  const canister = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.15, 0.12, 20), heroWhite(0xdedfe2));
+  const canister = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.1, 0.15, 0.12, 20),
+    heroWhite(0xdedfe2),
+  );
   canister.position.y = 1.18;
   g.add(canister);
   const spike = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.2, 8), light);
@@ -97,12 +100,18 @@ export function buildMercuryCapsule(): THREE.Group {
     strap.lookAt(0, 0.55, 0);
     g.add(strap);
   }
-  const retroPack = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.1, 16), heroDark(0x33383f));
+  const retroPack = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.16, 0.16, 0.1, 16),
+    heroDark(0x33383f),
+  );
   retroPack.position.y = -0.02;
   g.add(retroPack);
   for (let i = 0; i < 3; i++) {
     const a = (i / 3) * Math.PI * 2 + Math.PI / 6;
-    const nozzle = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.05, 0.09, 12), heroDark(0x1e2126));
+    const nozzle = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.03, 0.05, 0.09, 12),
+      heroDark(0x1e2126),
+    );
     nozzle.position.set(Math.cos(a) * 0.08, -0.09, Math.sin(a) * 0.08);
     g.add(nozzle);
   }
@@ -139,7 +148,10 @@ export function buildGeminiCapsule(): THREE.Group {
   const nose = new THREE.Mesh(new THREE.ConeGeometry(0.24, 0.24, 24), skin);
   nose.position.y = 1.1;
   g.add(nose);
-  const dish = new THREE.Mesh(new THREE.SphereGeometry(0.1, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2), heroWhite(0xdedfe2));
+  const dish = new THREE.Mesh(
+    new THREE.SphereGeometry(0.1, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2),
+    heroWhite(0xdedfe2),
+  );
   dish.position.y = 1.24;
   g.add(dish);
 
@@ -167,13 +179,19 @@ export function buildVostokSphere(): THREE.Group {
   sphere.position.y = 0.5;
   g.add(sphere);
   // Charred ablative base cap.
-  const cap = new THREE.Mesh(new THREE.SphereGeometry(0.5, 32, 12, 0, Math.PI * 2, Math.PI * 0.62, Math.PI * 0.38), char);
+  const cap = new THREE.Mesh(
+    new THREE.SphereGeometry(0.5, 32, 12, 0, Math.PI * 2, Math.PI * 0.62, Math.PI * 0.38),
+    char,
+  );
   cap.position.y = 0.5;
   g.add(cap);
   // Antenna straps over the sphere.
   for (let i = 0; i < 4; i++) {
     const a = (i / 4) * Math.PI * 2;
-    const strap = new THREE.Mesh(new THREE.TorusGeometry(0.5, 0.01, 6, 40, Math.PI), heroDark(0x40454b));
+    const strap = new THREE.Mesh(
+      new THREE.TorusGeometry(0.5, 0.01, 6, 40, Math.PI),
+      heroDark(0x40454b),
+    );
     strap.rotation.y = a;
     strap.rotation.x = Math.PI / 2;
     strap.position.y = 0.5;
@@ -187,7 +205,10 @@ export function buildVostokSphere(): THREE.Group {
   // Three portholes around the equator (rimmed) + the circular entry hatch.
   for (let i = 0; i < 3; i++) {
     const a = (i / 3) * Math.PI * 2;
-    const rim = new THREE.Mesh(new THREE.TorusGeometry(0.06, 0.014, 8, 16), heroMetal(0xb9bec6, 0.3));
+    const rim = new THREE.Mesh(
+      new THREE.TorusGeometry(0.06, 0.014, 8, 16),
+      heroMetal(0xb9bec6, 0.3),
+    );
     rim.position.set(Math.cos(a) * 0.49, 0.55, Math.sin(a) * 0.49);
     rim.lookAt(rim.position.x * 2, 0.55, rim.position.z * 2);
     g.add(rim);
@@ -196,13 +217,19 @@ export function buildVostokSphere(): THREE.Group {
     pane.lookAt(rim.position.x * 2, 0.55, rim.position.z * 2);
     g.add(pane);
   }
-  const hatch = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.13, 0.02, 20), heroMetal(0x8a8f96, 0.45));
+  const hatch = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.13, 0.13, 0.02, 20),
+    heroMetal(0x8a8f96, 0.45),
+  );
   hatch.position.set(0, 0.72, 0.46);
   hatch.rotation.x = Math.PI / 2;
   g.add(hatch);
   // A couple of sensor/antenna nubs so the sphere isn't bare.
   for (const a of [Math.PI * 0.35, Math.PI * 1.4]) {
-    const nub = new THREE.Mesh(new THREE.CylinderGeometry(0.01, 0.01, 0.16, 6), heroMetal(0xb9bec6, 0.3));
+    const nub = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.01, 0.01, 0.16, 6),
+      heroMetal(0xb9bec6, 0.3),
+    );
     nub.position.set(Math.cos(a) * 0.5, 0.78, Math.sin(a) * 0.5);
     nub.lookAt(nub.position.x * 2, 1.1, nub.position.z * 2);
     g.add(nub);
@@ -230,10 +257,16 @@ export function buildApolloCM(): THREE.Group {
   cone.position.y = 0.52;
   g.add(cone);
   // Forward tunnel + docking ring + probe.
-  const tunnel = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.15, 0.12, 20), heroWhite(0xe0e2e5));
+  const tunnel = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.13, 0.15, 0.12, 20),
+    heroWhite(0xe0e2e5),
+  );
   tunnel.position.y = 0.97;
   g.add(tunnel);
-  const probe = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.035, 0.12, 10), heroMetal(0xb9bec6, 0.3));
+  const probe = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.015, 0.035, 0.12, 10),
+    heroMetal(0xb9bec6, 0.3),
+  );
   probe.position.y = 1.09;
   g.add(probe);
 
@@ -284,7 +317,10 @@ export function buildSoyuzDescentModule(): THREE.Group {
   g.add(hatch);
 
   // Periscope (the Soyuz VSK optical sight) + a crew window on the bell.
-  const periscope = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.12, 10), heroDark(0x2a2f36));
+  const periscope = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.03, 0.03, 0.12, 10),
+    heroDark(0x2a2f36),
+  );
   periscope.position.set(0.14, 0.62, 0.14);
   g.add(periscope);
   windowPane(g, 0.42, 0.5, Math.PI * 0.5, 0.08, 0.08);
@@ -313,7 +349,10 @@ export function buildDragonCapsule(): THREE.Group {
   const white = heroWhite(0xeceef0);
   const shield = heroDark(0x1c1c20);
 
-  const hs = new THREE.Mesh(new THREE.SphereGeometry(0.52, 30, 12, 0, Math.PI * 2, 0, 0.95), shield);
+  const hs = new THREE.Mesh(
+    new THREE.SphereGeometry(0.52, 30, 12, 0, Math.PI * 2, 0, 0.95),
+    shield,
+  );
   hs.rotation.x = Math.PI;
   hs.position.y = 0.1;
   hs.scale.y = 0.26;
@@ -334,13 +373,17 @@ export function buildDragonCapsule(): THREE.Group {
   const nose = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.34, 0.34, 32), white);
   nose.position.y = 1.01;
   g.add(nose);
-  const seam = new THREE.Mesh(new THREE.TorusGeometry(0.34, 0.008, 6, 32), heroMetal(0x9a9ea4, 0.3));
+  const seam = new THREE.Mesh(
+    new THREE.TorusGeometry(0.34, 0.008, 6, 32),
+    heroMetal(0x9a9ea4, 0.3),
+  );
   seam.rotation.x = Math.PI / 2;
   seam.position.y = 0.84;
   g.add(seam);
 
   // Cupola windows (Crew Dragon's panoramic glazing) around the upper body.
-  for (let i = 0; i < 4; i++) windowPane(g, 0.4, 0.66, (i / 4) * Math.PI * 2 + Math.PI / 8, 0.11, 0.1);
+  for (let i = 0; i < 4; i++)
+    windowPane(g, 0.4, 0.66, (i / 4) * Math.PI * 2 + Math.PI / 8, 0.11, 0.1);
   // Draco RCS nubs between the SuperDraco pods.
   const rcsMat = heroDark(0x1c1c20);
   for (let i = 0; i < 4; i++) rcsNub(g, 0.46, 0.24, (i / 4) * Math.PI * 2 + Math.PI / 4, rcsMat);

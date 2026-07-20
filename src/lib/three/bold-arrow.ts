@@ -84,8 +84,7 @@ export class BoldArrow extends THREE.Object3D {
     }
     const W = 256;
     const H = 64;
-    const canvas =
-      typeof document !== 'undefined' ? document.createElement('canvas') : null;
+    const canvas = typeof document !== 'undefined' ? document.createElement('canvas') : null;
     if (!canvas) return;
     canvas.width = W;
     canvas.height = H;
@@ -103,7 +102,12 @@ export class BoldArrow extends THREE.Object3D {
     const tex = new THREE.CanvasTexture(canvas);
     tex.minFilter = THREE.LinearFilter;
     const sprite = new THREE.Sprite(
-      new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }),
+      new THREE.SpriteMaterial({
+        map: tex,
+        transparent: true,
+        depthTest: false,
+        depthWrite: false,
+      }),
     );
     sprite.renderOrder = 1000;
     this.label = sprite;

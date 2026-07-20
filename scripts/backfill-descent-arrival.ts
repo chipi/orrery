@@ -34,6 +34,11 @@ const EDL_SYSTEM: Record<ArchetypeName, EDLSystemKind> = {
   COMET_HARPOON: 'harpoon',
   TITAN_PARACHUTE: 'aeroshell',
   JUPITER_PROBE: 'atmospheric_probe',
+  // Earth capsule re-entry is a parachute descent (some — Soyuz/Shenzhou — fire
+  // soft-landing retro); 'parachute_retro' is the closest EDL bucket. Only here
+  // to satisfy the exhaustive Record — this script's BODIES exclude 'earth', so
+  // no Earth mission is backfilled through it.
+  EARTH_CAPSULE_REENTRY: 'parachute_retro',
 };
 
 function missionPath(id: string): string | null {

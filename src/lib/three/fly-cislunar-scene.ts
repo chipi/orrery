@@ -275,7 +275,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
     ARROW_HEAD_LEN,
     ARROW_HEAD_W,
   );
-  gravityEarth.setLabel("EARTH g", "#a8caff");
+  gravityEarth.setLabel('EARTH g', '#a8caff');
   gravityEarth.visible = false;
   scene.add(gravityEarth);
 
@@ -287,7 +287,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
     ARROW_HEAD_LEN,
     ARROW_HEAD_W,
   );
-  gravityMoon.setLabel("MOON g", "#dcdcdc");
+  gravityMoon.setLabel('MOON g', '#dcdcdc');
   gravityMoon.visible = false;
   scene.add(gravityMoon);
 
@@ -299,8 +299,8 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
     ARROW_HEAD_LEN,
     ARROW_HEAD_W,
   );
-  velocity.setLabel("VELOCITY", "#bfeaff");
-    velocity.visible = false;
+  velocity.setLabel('VELOCITY', '#bfeaff');
+  velocity.visible = false;
   scene.add(velocity);
 
   const centripetal = new BoldArrow(
@@ -311,7 +311,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
     ARROW_HEAD_LEN,
     ARROW_HEAD_W,
   );
-  centripetal.setLabel("CENTRIPETAL", "#ffb3b3");
+  centripetal.setLabel('CENTRIPETAL', '#ffb3b3');
   centripetal.visible = false;
   scene.add(centripetal);
 

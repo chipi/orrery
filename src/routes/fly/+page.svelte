@@ -377,7 +377,7 @@
       'moons',
     ],
   } as const satisfies Record<string, LayerKey[]>;
-  let flySegment = $derived(
+  let flySegment: keyof typeof SEGMENT_LAYERS = $derived(
     showLaunch ? 'ascent' : showCoast ? 'coast' : showDescent ? 'descent' : 'cruise',
   );
   let availableLayers = $derived<LayerKey[]>([...SEGMENT_LAYERS[flySegment]]);
@@ -3288,10 +3288,7 @@
       buildTubeGeometry(outPts, 0.46),
       buildTubeMaterial(0x4488ff, 0.95, 0.22),
     );
-    retLine = new THREE.Mesh(
-      buildTubeGeometry(retPts, 0.4),
-      buildTubeMaterial(0x9966ff, 0.9, 0.2),
-    );
+    retLine = new THREE.Mesh(buildTubeGeometry(retPts, 0.4), buildTubeMaterial(0x9966ff, 0.9, 0.2));
     scene.add(outLine);
     scene.add(retLine);
     // Hoist the builder so the $effect can re-use it on mission swap.
@@ -7407,7 +7404,12 @@
 {/if}
 
 <!-- Segment-transition seam: fade-through-black (see seamFadeOpacity effect). -->
-<div class="seam-fade" class:snap={seamSnap} style="opacity:{seamFadeOpacity}" aria-hidden="true"></div>
+<div
+  class="seam-fade"
+  class:snap={seamSnap}
+  style="opacity:{seamFadeOpacity}"
+  aria-hidden="true"
+></div>
 
 <!-- Orbit-insertion beat (RFC-034 §12) — an orbiter's capture burn at arrival,
      the mirror of the launch injection burn. Top-center amber callout. -->

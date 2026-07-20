@@ -122,7 +122,10 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   }
   starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
   scene.add(
-    new THREE.Points(starGeo, new THREE.PointsMaterial({ color: 0xcfd8ff, size: 260, sizeAttenuation: true })),
+    new THREE.Points(
+      starGeo,
+      new THREE.PointsMaterial({ color: 0xcfd8ff, size: 260, sizeAttenuation: true }),
+    ),
   );
 
   // ── Orbit ring (one closed loop) or suborbital arc ────────────────────
@@ -135,7 +138,7 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
         return {
           x: rOrbit * Math.sin(ang) * 0.6,
           y: 0,
-          z: (R_EARTH_KM + opts.altitudeKm * Math.cos(ang)) - 0, // peak at apogee
+          z: R_EARTH_KM + opts.altitudeKm * Math.cos(ang) - 0, // peak at apogee
         };
       }).map((p) => ({ x: p.x, y: p.y, z: p.z }))
     : parkingOrbit(opts.altitudeKm, 0, 1, RING_STEPS);
@@ -221,24 +224,47 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   type CoastShot = { pos: THREE.Vector3; target: THREE.Vector3 };
   const coastShotPose = (f: number, pos: THREE.Vector3, radial: THREE.Vector3): CoastShot => {
     // In-plane basis around the capsule: tangent (velocity) + side.
-    const ahead2 = orbitPointAt(opts.suborbital ? Math.min(1, f + 0.02) : (f * renderedLoops + 0.02) % 1);
+    const ahead2 = orbitPointAt(
+      opts.suborbital ? Math.min(1, f + 0.02) : (f * renderedLoops + 0.02) % 1,
+    );
     const tangent = ahead2.clone().sub(pos).normalize();
     const side = tangent.clone().cross(radial).normalize();
-    const shot = opts.suborbital ? (f < 0.5 ? 0 : 1) : f < 0.28 ? 0 : f < 0.55 ? 1 : f < 0.82 ? 2 : 3;
+    const shot = opts.suborbital
+      ? f < 0.5
+        ? 0
+        : 1
+      : f < 0.28
+        ? 0
+        : f < 0.55
+          ? 1
+          : f < 0.82
+            ? 2
+            : 3;
     switch (shot) {
       case 1: // TRACK — trail behind + above the capsule
         return {
-          pos: pos.clone().addScaledVector(tangent, -3400).addScaledVector(radial, 1700).addScaledVector(side, 700),
+          pos: pos
+            .clone()
+            .addScaledVector(tangent, -3400)
+            .addScaledVector(radial, 1700)
+            .addScaledVector(side, 700),
           target: pos.clone().addScaledVector(tangent, 600),
         };
       case 2: // LIMB — off to the side + slightly below, Earth's blue rim behind
         return {
-          pos: pos.clone().addScaledVector(side, 4200).addScaledVector(radial, -500).addScaledVector(tangent, -1200),
+          pos: pos
+            .clone()
+            .addScaledVector(side, 4200)
+            .addScaledVector(radial, -500)
+            .addScaledVector(tangent, -1200),
           target: pos.clone(),
         };
       case 3: // GROUND-TRACK — high over the sub-satellite point, looking down
         return {
-          pos: radial.clone().multiplyScalar(rOrbit + 8500).addScaledVector(tangent, -2600),
+          pos: radial
+            .clone()
+            .multiplyScalar(rOrbit + 8500)
+            .addScaledVector(tangent, -2600),
           target: radial.clone().multiplyScalar(R_EARTH_KM + 200),
         };
       default: // ESTABLISH — wide, the capsule small against the full Earth

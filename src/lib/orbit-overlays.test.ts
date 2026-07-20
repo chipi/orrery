@@ -193,9 +193,7 @@ describe('buildGravityArrow', () => {
   it('uses the requested color', () => {
     const a = buildGravityArrow('earth', 0xff0000);
     // BoldArrow's shaft + head are child meshes with MeshBasicMaterial.
-    const mesh = a.children.find(
-      (c): c is THREE.Mesh => c instanceof THREE.Mesh,
-    ) as THREE.Mesh;
+    const mesh = a.children.find((c): c is THREE.Mesh => c instanceof THREE.Mesh) as THREE.Mesh;
     const mat = mesh.material as THREE.MeshBasicMaterial;
     expect(mat.color.getHex()).toBe(0xff0000);
   });

@@ -67,12 +67,12 @@ export class SeparationBurst extends THREE.Object3D {
   private readonly points: THREE.Points;
   private readonly dirs: Float32Array;
   private readonly basePos: Float32Array;
-  private readonly count: number;
+  private readonly ptCount: number;
   private readonly spread: number;
 
   constructor(opts: SeparationBurstOptions) {
     super();
-    this.count = opts.count ?? 30;
+    this.ptCount = opts.count ?? 30;
     this.spread = opts.scale * 2.6;
 
     // Flash — a bright additive sprite that pops then fades fast.
@@ -101,9 +101,9 @@ export class SeparationBurst extends THREE.Object3D {
 
     // Debris/frost — deterministic radial scatter (biased along ±axis so it
     // reads as a ring venting off the separation plane, not a uniform ball).
-    this.dirs = new Float32Array(this.count * 3);
-    this.basePos = new Float32Array(this.count * 3);
-    for (let i = 0; i < this.count; i++) {
+    this.dirs = new Float32Array(this.ptCount * 3);
+    this.basePos = new Float32Array(this.ptCount * 3);
+    for (let i = 0; i < this.ptCount; i++) {
       const a = i * 2.399963; // golden angle
       const ring = Math.sin(i * 1.7) * 0.5 + 0.5; // 0..1
       const y = (i % 2 === 0 ? 1 : -1) * (0.25 + 0.75 * ((i * 0.37) % 1));
@@ -154,7 +154,7 @@ export class SeparationBurst extends THREE.Object3D {
     const reach = this.spread * Math.sqrt(progress);
     const attr = this.points.geometry.attributes.position as THREE.BufferAttribute;
     const arr = attr.array as Float32Array;
-    for (let i = 0; i < this.count; i++) {
+    for (let i = 0; i < this.ptCount; i++) {
       arr[i * 3] = this.dirs[i * 3] * reach;
       arr[i * 3 + 1] = this.dirs[i * 3 + 1] * reach;
       arr[i * 3 + 2] = this.dirs[i * 3 + 2] * reach;

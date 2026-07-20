@@ -51,7 +51,11 @@ static/data/audit-report.html
 static/audit-report.html
 
 # Claude Code local state (per-user; runtime locks etc.)
-.claude/
+# Ignore everything under .claude/ EXCEPT shared project agents, which are
+# tracked so every worktree/clone gets them (see CLAUDE.md project-defined
+# agents). Personal state (settings.local.json, runtime locks) stays ignored.
+.claude/*
+!.claude/agents/
 
 # lean-ctx MCP server cache (per-session; not source)
 .lean-ctx/

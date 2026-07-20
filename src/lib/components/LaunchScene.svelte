@@ -39,6 +39,7 @@
   } from '$lib/orbital/ascent-hud';
   import { injectionBurnLabel, type InjectionBurnParams } from '$lib/orbital/injection-burn';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
+  import * as m from '$lib/paraglide/messages';
   import { buildShotSchedule, defaultTuning } from '$lib/orbital/ascent-cameras';
   import AscentCameraDebug from '$lib/components/AscentCameraDebug.svelte';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
@@ -326,7 +327,12 @@
   });
 </script>
 
-<div class="launch" class:hud-hidden={hudHidden} class:external={externalClock}>
+<div
+  class="launch"
+  class:hud-hidden={hudHidden}
+  class:external={externalClock}
+  data-testid="launch-scene"
+>
   <div class="stage" bind:this={container}></div>
 
   <!-- HUD legibility scrim: the 2026 HUD is panel-free, which reads perfectly
@@ -367,7 +373,7 @@
   {/if}
 
   <div class="header">
-    <div class="mission">{mission.name}</div>
+    <div class="mission" data-testid="launch-mission">{mission.name}</div>
     <div class="sub">{profile.name} · {mission.agency}</div>
   </div>
 
@@ -413,15 +419,17 @@
 
   <div class="dossier" class:open={dossierOpen}>
     <div class="dossier-title">
-      MISSION DOSSIER
-      {#if profile.source_tier === 'generic'}<span class="rep">REPRESENTATIVE</span>{/if}
+      {m.fly_launch_dossier_title()}
+      {#if profile.source_tier === 'generic'}<span class="rep"
+          >{m.fly_launch_dossier_representative()}</span
+        >{/if}
     </div>
     <dl>
-      <dt>VEHICLE</dt>
+      <dt>{m.fly_launch_dossier_vehicle()}</dt>
       <dd>{profile.name}</dd>
-      <dt>LAUNCH SITE</dt>
+      <dt>{m.fly_launch_dossier_site()}</dt>
       <dd>{mission.site}</dd>
-      <dt>DESTINATION</dt>
+      <dt>{m.fly_launch_dossier_destination()}</dt>
       <dd>{mission.destination}</dd>
       {#each vehStats as [k, v] (k)}
         <dt>{k}</dt>
@@ -459,7 +467,7 @@
   </div>
 
   {#if !warping}
-    <button class="continue" onclick={complete}>SKIP TO CRUISE →</button>
+    <button class="continue" onclick={complete}>{m.fly_launch_skip_cta()}</button>
   {/if}
 
   <!-- Launch camera-debug (?debug=1): shot timeline, live camera plot,

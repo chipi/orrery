@@ -1708,5 +1708,12 @@
   "star_hr_article_link": "별과 H–R 다이어그램",
   "credits_video_license_summary": "공공 도메인 기관 영상 및 저작권 영상 포함 (정상적 이용 기준으로 삽입됨, 호스팅 안 됨) — 각 클립은 아래 자체 근거를 명시합니다.",
   "fly_recovery_caption_soyuz1": "낙하산 고장으로 귀환 모듈이 고속으로 지면에 충돌했다. 블라디미르 코마로프가 사망했으며, 이는 우주 비행 중 최초의 사망 사고였다.",
-  "fly_recovery_caption_soyuz11": "캡슐은 정상적으로 착륙했지만 모듈 분리 시 밸브가 열렸고, 3인 승무원은 착륙 전 감압으로 사망했다."
+  "fly_recovery_caption_soyuz11": "캡슐은 정상적으로 착륙했지만 모듈 분리 시 밸브가 열렸고, 3인 승무원은 착륙 전 감압으로 사망했다.",
+  "fly_launch_dossier_title": "임무 경보",
+  "fly_launch_dossier_representative": "담당자",
+  "fly_launch_dossier_vehicle": "발사체",
+  "fly_launch_dossier_site": "발사장",
+  "fly_launch_dossier_destination": "목표",
+  "fly_launch_skip_cta": "순항 단계로 건너뛰기 →",
+  "fly_descent_dossier_title": "하강 경보"
 }

@@ -1708,5 +1708,12 @@
   "star_hr_article_link": "恒星与H-R图",
   "credits_video_license_summary": "公共领域机构视频，加上在合理使用基础上嵌入（从不托管）的版权视频——每个片段在下方列出其自身依据。",
   "fly_recovery_caption_soyuz1": "降落伞失效——返回舱高速撞向地面。弗拉基米尔·科马罗夫遇难，成为航天飞行史上首位罹难者。",
-  "fly_recovery_caption_soyuz11": "返回舱正常着陆，但在舱段分离时一个阀门被打开；三名机组人员在着陆前因失压而丧生。"
+  "fly_recovery_caption_soyuz11": "返回舱正常着陆，但在舱段分离时一个阀门被打开；三名机组人员在着陆前因失压而丧生。",
+  "fly_launch_dossier_title": "任务档案",
+  "fly_launch_dossier_representative": "代表机构",
+  "fly_launch_dossier_vehicle": "运载器",
+  "fly_launch_dossier_site": "发射场",
+  "fly_launch_dossier_destination": "目的地",
+  "fly_launch_skip_cta": "跳过至巡航阶段 →",
+  "fly_descent_dossier_title": "下降档案"
 }

@@ -812,7 +812,14 @@
     "live_all_launches": "संपूर्ण प्रक्षेपण कैलेंडर देखें →",
     "live_iss_watch": "ISS को लाइव देखें →",
     "live_iss_unavailable": "ISS लाइव स्ट्रीम वर्तमान में उपलब्ध नहीं है।",
-    "credits_video_license_summary": "सार्वजनिक-डोमेन एजेंसी फुटेज, और कॉपीराइट फुटेज एम्बेड किया गया (कभी होस्ट नहीं किया गया) उचित उपयोग के तहत — प्रत्येक क्लिप नीचे अपना आधार सूचीबद्ध करता है।"
+    "credits_video_license_summary": "सार्वजनिक-डोमेन एजेंसी फुटेज, और कॉपीराइट फुटेज एम्बेड किया गया (कभी होस्ट नहीं किया गया) उचित उपयोग के तहत — प्रत्येक क्लिप नीचे अपना आधार सूचीबद्ध करता है।",
+    "fly_launch_dossier_title": "मिशन डोसियर",
+    "fly_launch_dossier_representative": "प्रतिनिधि",
+    "fly_launch_dossier_vehicle": "वाहन",
+    "fly_launch_dossier_site": "प्रक्षेपण स्थल",
+    "fly_launch_dossier_destination": "गंतव्य",
+    "fly_launch_skip_cta": "क्रूज़ पर जाएँ →",
+    "fly_descent_dossier_title": "अवतरण डोसियर"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -1488,7 +1495,14 @@
     "live_all_launches": "打上げカレンダー全体を見る →",
     "live_iss_watch": "ISSをライブで視聴 →",
     "live_iss_unavailable": "ISSのライブストリームは現在利用できません。",
-    "credits_video_license_summary": "パブリックドメインの機関映像に加え、フェアユース下で埋め込まれた（ホストされていない）著作権保護映像 — 各クリップは以下に独自の根拠を記載しています。"
+    "credits_video_license_summary": "パブリックドメインの機関映像に加え、フェアユース下で埋め込まれた（ホストされていない）著作権保護映像 — 各クリップは以下に独自の根拠を記載しています。",
+    "fly_launch_dossier_title": "ミッション・ドシエ",
+    "fly_launch_dossier_representative": "代表機関",
+    "fly_launch_dossier_vehicle": "打上げ機",
+    "fly_launch_dossier_site": "打上げ基地",
+    "fly_launch_dossier_destination": "目的地",
+    "fly_launch_skip_cta": "巡航へ スキップ →",
+    "fly_descent_dossier_title": "降下・ドシエ"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -2345,7 +2359,14 @@
     "live_all_launches": "شاهد تقويم الإطلاق الكامل →",
     "live_iss_watch": "شاهد محطة الفضاء الدولية (ISS) مباشرة →",
     "live_iss_unavailable": "بث محطة الفضاء الدولية المباشر غير متاح حالياً.",
-    "credits_video_license_summary": "لقطات وكالات حكومية في الملك العام، بالإضافة إلى لقطات محمية بحقوق الطبع المدمجة (وليست مستضافة) بموجب الاستخدام العادل — تسرد كل لقطة أساسها الخاص أدناه."
+    "credits_video_license_summary": "لقطات وكالات حكومية في الملك العام، بالإضافة إلى لقطات محمية بحقوق الطبع المدمجة (وليست مستضافة) بموجب الاستخدام العادل — تسرد كل لقطة أساسها الخاص أدناه.",
+    "fly_launch_dossier_title": "ملف المهمة",
+    "fly_launch_dossier_representative": "الممثل",
+    "fly_launch_dossier_vehicle": "المركبة",
+    "fly_launch_dossier_site": "موقع الإطلاق",
+    "fly_launch_dossier_destination": "الوجهة",
+    "fly_launch_skip_cta": "انتقل إلى الإبحار →",
+    "fly_descent_dossier_title": "ملف الهبوط"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -3023,7 +3044,14 @@
     "live_all_launches": "전체 발사 일정 보기 →",
     "live_iss_watch": "ISS 실시간 보기 →",
     "live_iss_unavailable": "ISS 라이브 스트림이 현재 이용할 수 없습니다.",
-    "credits_video_license_summary": "공공 도메인 기관 영상 및 저작권 영상 포함 (정상적 이용 기준으로 삽입됨, 호스팅 안 됨) — 각 클립은 아래 자체 근거를 명시합니다."
+    "credits_video_license_summary": "공공 도메인 기관 영상 및 저작권 영상 포함 (정상적 이용 기준으로 삽입됨, 호스팅 안 됨) — 각 클립은 아래 자체 근거를 명시합니다.",
+    "fly_launch_dossier_title": "임무 경보",
+    "fly_launch_dossier_representative": "담당자",
+    "fly_launch_dossier_vehicle": "발사체",
+    "fly_launch_dossier_site": "발사장",
+    "fly_launch_dossier_destination": "목표",
+    "fly_launch_skip_cta": "순항 단계로 건너뛰기 →",
+    "fly_descent_dossier_title": "하강 경보"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -3672,7 +3700,14 @@
     "live_all_launches": "Vollständigen Startkalender anzeigen →",
     "live_iss_watch": "ISS live beobachten →",
     "live_iss_unavailable": "Der Live-Stream der ISS ist derzeit nicht verfügbar.",
-    "credits_video_license_summary": "Gemeinfrei-Material von Behörden, plus urheberrechtlich geschütztes Material eingebunden (nie gehostet) unter Fair Use – jeder Clip listet seine eigene Grundlage unten auf."
+    "credits_video_license_summary": "Gemeinfrei-Material von Behörden, plus urheberrechtlich geschütztes Material eingebunden (nie gehostet) unter Fair Use – jeder Clip listet seine eigene Grundlage unten auf.",
+    "fly_launch_dossier_title": "MISSIONSDOSSIER",
+    "fly_launch_dossier_representative": "VERTRETER",
+    "fly_launch_dossier_vehicle": "FAHRZEUG",
+    "fly_launch_dossier_site": "STARTPLATZ",
+    "fly_launch_dossier_destination": "ZIEL",
+    "fly_launch_skip_cta": "ZUR REISEFAHRT SPRINGEN →",
+    "fly_descent_dossier_title": "ABSTIEGSDOSSIER"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -4328,7 +4363,14 @@
     "live_all_launches": "Voir le calendrier complet des lancements →",
     "live_iss_watch": "Regarder l'ISS en direct →",
     "live_iss_unavailable": "Le flux en direct de l'ISS est actuellement indisponible.",
-    "credits_video_license_summary": "Vidéos du domaine public provenant d'agences spatiales, plus vidéos protégeables intégrées (jamais hébergées) en vertu d'une utilisation équitable — chaque clip indique sa base ci-dessous."
+    "credits_video_license_summary": "Vidéos du domaine public provenant d'agences spatiales, plus vidéos protégeables intégrées (jamais hébergées) en vertu d'une utilisation équitable — chaque clip indique sa base ci-dessous.",
+    "fly_launch_dossier_title": "DOSSIER DE MISSION",
+    "fly_launch_dossier_representative": "REPRÉSENTANT",
+    "fly_launch_dossier_vehicle": "VÉHICULE",
+    "fly_launch_dossier_site": "SITE DE LANCEMENT",
+    "fly_launch_dossier_destination": "DESTINATION",
+    "fly_launch_skip_cta": "PASSER À LA CROISIÈRE →",
+    "fly_descent_dossier_title": "DOSSIER DE DESCENTE"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -4952,7 +4994,14 @@
     "live_all_launches": "Vedi il calendario dei lanci completo →",
     "live_iss_watch": "Guarda l'ISS in diretta →",
     "live_iss_unavailable": "Lo streaming live della ISS non è attualmente disponibile.",
-    "credits_video_license_summary": "Filmati di agenzia di dominio pubblico, più filmati protetti da copyright incorporati (mai ospitati) secondo fair use — ogni clip elenca la propria base di seguito."
+    "credits_video_license_summary": "Filmati di agenzia di dominio pubblico, più filmati protetti da copyright incorporati (mai ospitati) secondo fair use — ogni clip elenca la propria base di seguito.",
+    "fly_launch_dossier_title": "DOSSIER DELLA MISSIONE",
+    "fly_launch_dossier_representative": "RAPPRESENTANTE",
+    "fly_launch_dossier_vehicle": "VEICOLO",
+    "fly_launch_dossier_site": "SITO DI LANCIO",
+    "fly_launch_dossier_destination": "DESTINAZIONE",
+    "fly_launch_skip_cta": "SALTA ALLA CROCIERA →",
+    "fly_descent_dossier_title": "DOSSIER DELLA DISCESA"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -5575,7 +5624,14 @@
     "live_all_launches": "Ver el calendario completo de lanzamientos →",
     "live_iss_watch": "Ver la ISS en directo →",
     "live_iss_unavailable": "La transmisión en directo de la ISS no está disponible en este momento.",
-    "credits_video_license_summary": "Vídeo de dominio público de agencias espaciales, más vídeo con derechos de autor incrustado (nunca alojado) bajo uso justo — cada clip indica su propia base a continuación."
+    "credits_video_license_summary": "Vídeo de dominio público de agencias espaciales, más vídeo con derechos de autor incrustado (nunca alojado) bajo uso justo — cada clip indica su propia base a continuación.",
+    "fly_launch_dossier_title": "EXPEDIENTE DE MISIÓN",
+    "fly_launch_dossier_representative": "REPRESENTANTE",
+    "fly_launch_dossier_vehicle": "VEHÍCULO",
+    "fly_launch_dossier_site": "CENTRO DE LANZAMIENTO",
+    "fly_launch_dossier_destination": "DESTINO",
+    "fly_launch_skip_cta": "SALTAR A CRUCERO →",
+    "fly_descent_dossier_title": "EXPEDIENTE DE DESCENSO"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -6204,7 +6260,14 @@
     "live_all_launches": "Bekijk de volledige lanceringscalender →",
     "live_iss_watch": "Bekijk het ISS live →",
     "live_iss_unavailable": "De live ISS-stream is momenteel niet beschikbaar.",
-    "credits_video_license_summary": "Openbare-domein agentuurbeelden, plus auteursrechtelijk beschermde beelden ingebed (nooit gehost) onder fair use — elk fragment vermeldt hieronder zijn eigen basis."
+    "credits_video_license_summary": "Openbare-domein agentuurbeelden, plus auteursrechtelijk beschermde beelden ingebed (nooit gehost) onder fair use — elk fragment vermeldt hieronder zijn eigen basis.",
+    "fly_launch_dossier_title": "MISSIEDOSSIER",
+    "fly_launch_dossier_representative": "VERTEGENWOORDIGER",
+    "fly_launch_dossier_vehicle": "VOERTUIG",
+    "fly_launch_dossier_site": "LANCEERPLEK",
+    "fly_launch_dossier_destination": "BESTEMMING",
+    "fly_launch_skip_cta": "NAAR CRUISE →",
+    "fly_descent_dossier_title": "AFDAALDOSSIER"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -6883,7 +6946,14 @@
     "live_all_launches": "Смотреть полный календарь запусков →",
     "live_iss_watch": "Смотреть МКС в прямом эфире →",
     "live_iss_unavailable": "Трансляция с МКС в данный момент недоступна.",
-    "credits_video_license_summary": "Видеофутаж в общественном достоянии от космических агентств, а также защищённый авторским правом видеоматериал, встроенный (никогда не размещаемый) в соответствии с добросовестным использованием — каждый клип указывает свою основу ниже."
+    "credits_video_license_summary": "Видеофутаж в общественном достоянии от космических агентств, а также защищённый авторским правом видеоматериал, встроенный (никогда не размещаемый) в соответствии с добросовестным использованием — каждый клип указывает свою основу ниже.",
+    "fly_launch_dossier_title": "ДОСЬЕ МИССИИ",
+    "fly_launch_dossier_representative": "ПРЕДСТАВИТЕЛЬ",
+    "fly_launch_dossier_vehicle": "АППАРАТ",
+    "fly_launch_dossier_site": "КОСМОДРОМ",
+    "fly_launch_dossier_destination": "ПУНКТ НАЗНАЧЕНИЯ",
+    "fly_launch_skip_cta": "ПЕРЕЙТИ К КРЕЙСЕРСКОМУ ПОЛЁТУ →",
+    "fly_descent_dossier_title": "ДОСЬЕ СПУСКА"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -7543,7 +7613,14 @@
     "live_all_launches": "查看完整发射日历 →",
     "live_iss_watch": "观看国际空间站直播 →",
     "live_iss_unavailable": "国际空间站直播目前无法使用。",
-    "credits_video_license_summary": "公共领域机构视频，加上在合理使用基础上嵌入（从不托管）的版权视频——每个片段在下方列出其自身依据。"
+    "credits_video_license_summary": "公共领域机构视频，加上在合理使用基础上嵌入（从不托管）的版权视频——每个片段在下方列出其自身依据。",
+    "fly_launch_dossier_title": "任务档案",
+    "fly_launch_dossier_representative": "代表机构",
+    "fly_launch_dossier_vehicle": "运载器",
+    "fly_launch_dossier_site": "发射场",
+    "fly_launch_dossier_destination": "目的地",
+    "fly_launch_skip_cta": "跳过至巡航阶段 →",
+    "fly_descent_dossier_title": "下降档案"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -8137,7 +8214,14 @@
     "live_all_launches": "Погледајте потпуни календар лансирања →",
     "live_iss_watch": "Гледајте МСС уживо →",
     "live_iss_unavailable": "Директни пренос МСС је тренутно недоступан.",
-    "credits_video_license_summary": "Снимци јавног домена од агенција, плус аутором заштићени снимци уклопљени (никад нису хостовани) под правилном употребом — сваки клип наводи своју основу испод."
+    "credits_video_license_summary": "Снимци јавног домена од агенција, плус аутором заштићени снимци уклопљени (никад нису хостовани) под правилном употребом — сваки клип наводи своју основу испод.",
+    "fly_launch_dossier_title": "ДОСИЈЕ МИСИЈЕ",
+    "fly_launch_dossier_representative": "ПРЕДСТАВНИК",
+    "fly_launch_dossier_vehicle": "ВОЗИЛО",
+    "fly_launch_dossier_site": "МЕСТО ЛАНСИРАЊА",
+    "fly_launch_dossier_destination": "ОДРЕДИШТЕ",
+    "fly_launch_skip_cta": "ПРЕСКОЧИ НА КРСТАРЕЊЕ →",
+    "fly_descent_dossier_title": "ДОСИЈЕ СИЛАЖЕЊА"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -8767,6 +8851,13 @@
     "live_all_launches": "Ver o calendário completo de lançamentos →",
     "live_iss_watch": "Assistir a ISS ao vivo →",
     "live_iss_unavailable": "A transmissão ao vivo da ISS está indisponível no momento.",
-    "credits_video_license_summary": "Vídeos de domínio público de agências espaciais, mais vídeos protegidos por direitos autorais incorporados (nunca hospedados) sob fair use — cada clipe lista sua própria base abaixo."
+    "credits_video_license_summary": "Vídeos de domínio público de agências espaciais, mais vídeos protegidos por direitos autorais incorporados (nunca hospedados) sob fair use — cada clipe lista sua própria base abaixo.",
+    "fly_launch_dossier_title": "DOSSIÊ DA MISSÃO",
+    "fly_launch_dossier_representative": "REPRESENTANTE",
+    "fly_launch_dossier_vehicle": "VEÍCULO",
+    "fly_launch_dossier_site": "BASE DE LANÇAMENTO",
+    "fly_launch_dossier_destination": "DESTINO",
+    "fly_launch_skip_cta": "PULAR PARA CRUZEIRO →",
+    "fly_descent_dossier_title": "DOSSIÊ DE DESCIDA"
   }
 }

@@ -829,6 +829,11 @@
       "cover": false
     },
     {
+      "title": "Comms Blackout",
+      "file": "/diagrams/science/comms-blackout.webp",
+      "cover": false
+    },
+    {
       "title": "Conic Sections",
       "file": "/diagrams/science/conic-sections.webp",
       "cover": false
@@ -836,6 +841,11 @@
     {
       "title": "Contour Reading",
       "file": "/diagrams/science/contour-reading.webp",
+      "cover": false
+    },
+    {
+      "title": "Deorbit Corridor",
+      "file": "/diagrams/science/deorbit-corridor.webp",
       "cover": false
     },
     {
@@ -1653,6 +1663,13 @@
       "thumb": "/images/colophon/model-capsule-dragon-capsule.webp"
     },
     {
+      "title": "Shenzhou reentry module",
+      "what": "The bell-shaped descent capsule between the orbital and service modules (Shenzhou-1 onward).",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-shenzhou-reentry.webp"
+    },
+    {
       "title": "Apollo Lunar Module",
       "what": "Descent + ascent stage, gold MLI foil, and RCS quads.",
       "where": "Moon landing sites",
@@ -2279,9 +2296,9 @@
   ],
   "totals": {
     "anatomy_art": 144,
-    "diagrams_science": 102,
+    "diagrams_science": 104,
     "posters": 27,
-    "models3d": 112,
+    "models3d": 113,
     "canvas2d": 6,
     "ui": 4,
     "writing": 8

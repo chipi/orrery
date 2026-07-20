@@ -525,6 +525,11 @@ const earthCapsules = [
     'Crew Dragon',
     'Sleek conical body with the SuperDraco pods and the PICA-X heat shield (Inspiration4, Polaris Dawn).',
   ],
+  [
+    'shenzhou-reentry',
+    'Shenzhou reentry module',
+    'The bell-shaped descent capsule between the orbital and service modules (Shenzhou-1 onward).',
+  ],
 ].map(mk('model-capsule', 'Earth-orbit re-entry', '/fly'));
 
 const models3d = [

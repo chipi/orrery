@@ -46,6 +46,7 @@
     buildApolloCM,
     buildSoyuzDescentModule,
     buildDragonCapsule,
+    buildShenzhouReentry,
   } from '$lib/three/capsule-models';
   import { buildSchiaparelliHotspot } from '$lib/hotspot-models/schiaparelli';
   import { buildBeagle2Hotspot } from '$lib/hotspot-models/beagle-2';
@@ -139,6 +140,12 @@
       label: 'Crew Dragon',
       family: 'capsule',
       build: () => buildDragonCapsule(),
+    },
+    {
+      id: 'shenzhou-reentry',
+      label: 'Shenzhou reentry module',
+      family: 'capsule',
+      build: () => buildShenzhouReentry(),
     },
 
     // ── Moon landers / rovers (Tier-1 engineering meshes) ─────────────

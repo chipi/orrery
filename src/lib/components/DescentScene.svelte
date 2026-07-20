@@ -309,7 +309,7 @@
   <div class="dossier">
     <div class="dossier-title">
       <span
-        >DESCENT DOSSIER<ScienceChip
+        >{m.fly_descent_dossier_title()}<ScienceChip
           tab="mission-phases"
           section="edl"
           label="Entry, Descent & Landing"

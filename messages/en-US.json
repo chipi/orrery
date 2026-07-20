@@ -1710,5 +1710,12 @@
   "programs_kind_station": "Space stations",
   "programs_kind_robotic": "Robotic exploration",
   "programs_kind_infrastructure": "Infrastructure",
-  "programs_kind_funding": "Funding lines"
+  "programs_kind_funding": "Funding lines",
+  "fly_launch_dossier_title": "MISSION DOSSIER",
+  "fly_launch_dossier_representative": "REPRESENTATIVE",
+  "fly_launch_dossier_vehicle": "VEHICLE",
+  "fly_launch_dossier_site": "LAUNCH SITE",
+  "fly_launch_dossier_destination": "DESTINATION",
+  "fly_launch_skip_cta": "SKIP TO CRUISE →",
+  "fly_descent_dossier_title": "DESCENT DOSSIER"
 }

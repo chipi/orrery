@@ -21,6 +21,8 @@ export class BoldArrow extends THREE.Object3D {
   private readonly head: THREE.Mesh;
   private readonly shaftMat: THREE.MeshBasicMaterial;
   private readonly headMat: THREE.MeshBasicMaterial;
+  private label: THREE.Sprite | null = null;
+  private tipY = 1;
 
   constructor(
     dir: THREE.Vector3 = UP,
@@ -63,6 +65,49 @@ export class BoldArrow extends THREE.Object3D {
     this.shaft.position.y = shaftLen / 2;
     this.head.scale.set(headWidth, headLength, headWidth);
     this.head.position.y = shaftLen + headLength / 2;
+    // Keep the tip label just past the head, sized relative to the arrow.
+    this.tipY = shaftLen + headLength;
+    if (this.label) {
+      this.label.position.y = this.tipY + headWidth * 1.6;
+      const s = headWidth * 4.6;
+      this.label.scale.set(s * 4, s, 1);
+    }
+  }
+
+  /** Attach a short always-facing text label at the arrow tip (e.g. "GRAVITY").
+   *  The sprite is a child so it inherits position + orientation. */
+  setLabel(text: string, color = '#eaf3ff'): void {
+    if (this.label) {
+      this.remove(this.label);
+      (this.label.material as THREE.SpriteMaterial).map?.dispose();
+      (this.label.material as THREE.SpriteMaterial).dispose();
+    }
+    const W = 256;
+    const H = 64;
+    const canvas =
+      typeof document !== 'undefined' ? document.createElement('canvas') : null;
+    if (!canvas) return;
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext('2d');
+    if (ctx) {
+      ctx.font = '700 34px "IBM Plex Mono", monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.lineWidth = 6;
+      ctx.strokeStyle = 'rgba(3,6,14,0.92)';
+      ctx.strokeText(text, W / 2, H / 2);
+      ctx.fillStyle = color;
+      ctx.fillText(text, W / 2, H / 2);
+    }
+    const tex = new THREE.CanvasTexture(canvas);
+    tex.minFilter = THREE.LinearFilter;
+    const sprite = new THREE.Sprite(
+      new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }),
+    );
+    sprite.renderOrder = 1000;
+    this.label = sprite;
+    this.add(sprite);
   }
 
   /** Orient the arrow (built along +Y) to point along `dir`. */

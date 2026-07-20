@@ -175,6 +175,9 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   const arrWeight = mkArrow(COAST_FORCE_COLORS.weight);
   const arrVel = mkArrow(COAST_FORCE_COLORS.velocity);
   const arrCentripetal = mkArrow(COAST_FORCE_COLORS.centripetal);
+  arrWeight.setLabel('GRAVITY', '#ffb3b3');
+  arrVel.setLabel('VELOCITY', '#bfeaff');
+  arrCentripetal.setLabel('CENTRIPETAL', '#ffdf9a');
   arrWeight.visible = false;
   arrVel.visible = false;
   arrCentripetal.visible = false;
@@ -275,7 +278,7 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
     // Offset the centripetal arrow slightly downrange so it reads as a distinct
     // vector beside gravity — the lesson being they coincide (gravity IS the
     // centripetal force).
-    arrCentripetal.position.copy(pos).addScaledVector(tangent, armLen * 0.22);
+    arrCentripetal.position.copy(pos).addScaledVector(tangent, armLen * 0.5);
     arrCentripetal.setDirection(inward);
 
     // Earth rotates through the coast (a full mission is many hours → visible spin).

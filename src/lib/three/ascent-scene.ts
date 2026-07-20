@@ -389,6 +389,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const arrWeight = mkArrow(FORCE_COLORS.weight);
   const arrDrag = mkArrow(FORCE_COLORS.drag);
   const arrVel = mkArrow(FORCE_COLORS.velocity);
+  arrThrust.setLabel('THRUST', '#8fe8b0');
+  arrWeight.setLabel('WEIGHT', '#ffb3b3');
+  arrDrag.setLabel('DRAG', '#a8c8ff');
+  arrVel.setLabel('VELOCITY', '#bfeaff');
   forces.add(arrThrust, arrWeight, arrDrag, arrVel);
   scene.add(forces);
   let showForces = false;

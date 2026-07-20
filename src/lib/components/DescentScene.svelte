@@ -133,13 +133,46 @@
   );
   const drogueOut = $derived(isEarthReentry && chuteOut && liveState.altKm >= 3.2);
   const mainOut = $derived(isEarthReentry && chuteOut && liveState.altKm < 3.2);
+  // ── Terminal-EDL re-pacing ────────────────────────────────────────────
+  // The 1-DOF entry model runs unphysically long, so a linear timeline leaves
+  // the terminal EDL — parachute, heat-shield jettison, backshell / skycrane,
+  // touchdown (the "seven minutes of terror" money shots) — an unreachable
+  // sliver at the very end. We warp the SAMPLE time so the entry owns the first
+  // ~45% of the scrubber and the terminal owns the rest; the clock + timeline
+  // markers derive from the same warp so everything stays in sync.
+  const ENTRY_TIMELINE_FRAC = 0.45;
+  // The entry ends when the phase leaves 'ballistic_entry' (chute deploy / first
+  // terminal phase) — robust across bodies + archetypes, and in the 1-DOF model
+  // this is very late in trajectory time (which is exactly why it needs warping).
+  const terminalStartT = $derived.by(() => {
+    const s = summary.states.find((st) => st.phaseKind !== 'ballistic_entry');
+    return s ? s.t : duration * 0.9;
+  });
+  function warpDescentTime(rawT: number): number {
+    if (duration <= 0) return rawT;
+    const f = Math.max(0, Math.min(1, rawT / duration));
+    const tB = terminalStartT;
+    if (f <= ENTRY_TIMELINE_FRAC) return (f / ENTRY_TIMELINE_FRAC) * tB;
+    return tB + ((f - ENTRY_TIMELINE_FRAC) / (1 - ENTRY_TIMELINE_FRAC)) * (duration - tB);
+  }
+  function unwarpDescentTime(trajT: number): number {
+    if (duration <= 0) return trajT;
+    const tB = terminalStartT;
+    if (trajT <= tB) return (tB > 0 ? trajT / tB : 0) * ENTRY_TIMELINE_FRAC * duration;
+    return (
+      (ENTRY_TIMELINE_FRAC + ((trajT - tB) / (duration - tB)) * (1 - ENTRY_TIMELINE_FRAC)) * duration
+    );
+  }
+
   // The 1-DOF shallow-corridor model yields an unphysically long path (~100 min);
   // a real capsule entry-interface → splashdown is ~14 min. For Earth we display a
   // clock scaled to that nominal so the E+ readout is realistic (the underlying
   // physics — peak-g, sequence, outcome — is unchanged). RFC-034 §13.
   const NOMINAL_EARTH_REENTRY_S = 840;
   const clockT = $derived(
-    isEarthReentry && duration > 0 ? t * (NOMINAL_EARTH_REENTRY_S / duration) : t,
+    isEarthReentry && duration > 0
+      ? warpDescentTime(t) * (NOMINAL_EARTH_REENTRY_S / duration)
+      : warpDescentTime(t),
   );
 
   // Begin the touchdown flash. The real handoff (onComplete) fires when it ends.
@@ -171,7 +204,7 @@
     );
 
     const applyState = () => {
-      const s = sampleDescentAt(summary.states, t);
+      const s = sampleDescentAt(summary.states, warpDescentTime(t));
       sceneObj!.setState(s);
       liveState = s;
     };
@@ -315,9 +348,9 @@
     {#each beats as b, i (b.label + b.t)}
       <div
         class="beat"
-        class:done={t >= b.t}
+        class:done={warpDescentTime(t) >= b.t}
         class:alt={i % 2 === 1}
-        style="left:{duration > 0 ? (b.t / duration) * 100 : 0}%"
+        style="left:{duration > 0 ? (unwarpDescentTime(b.t) / duration) * 100 : 0}%"
       >
         <span class="tick"></span><span class="lbl">{b.label}</span>
       </div>

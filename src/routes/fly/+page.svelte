@@ -1635,7 +1635,10 @@
       earthCoast ? Math.max(0.01, coastDurationDays) : Math.max(1, arcTotalDays),
       coastAscentFrac,
       descentDurationS,
-      descentProfile ? 0.1 : 0,
+      // The descent owns a wider band of the master scrubber (was 0.1) so the
+      // terminal EDL — parachute, skycrane, touchdown — is actually reachable by
+      // scrubbing, not crushed into a sliver next to the huge cruise.
+      descentProfile ? 0.2 : 0,
     ),
   );
   let hasLaunchAct = $derived(!!launchProfile);

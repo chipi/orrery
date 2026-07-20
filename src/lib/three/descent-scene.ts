@@ -16,6 +16,7 @@
 
 import * as THREE from 'three';
 import { BoldArrow } from './bold-arrow';
+import { SeparationBurst } from './separation-burst';
 import {
   bodyGravity,
   type DescentBody,
@@ -258,6 +259,18 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const rBodyRef = vehLen * 0.05; // plume scale reference
   const model = buildDescentModel(opts.siteId, body, vehLen);
   vehicle.add(model.root);
+
+  // Separation-event bursts (flash + debris) at the heat-shield jettison and the
+  // backshell / chute-cut. Parented to the vehicle at the sep planes; driven by
+  // sepProgress in updateForces() so they stay scrub-exact.
+  const DESCENT_BURST_S = 1.6;
+  const heatshieldBurst = new SeparationBurst({ scale: vehLen * 0.5, particleColor: 0xffd9b0 });
+  heatshieldBurst.position.y = model.heatshieldBaseY;
+  vehicle.add(heatshieldBurst);
+  const backshellBurst = new SeparationBurst({ scale: vehLen * 0.44, particleColor: 0xeaf1ff });
+  backshellBurst.position.y = model.backshellBaseY;
+  vehicle.add(backshellBurst);
+
   scene.add(vehicle);
 
   // Retro plume — a layered downward exhaust, lit only while braking.
@@ -459,6 +472,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     model.parachute.position.set(bp * vehLen * 0.5, model.parachuteBaseY + rise, 0);
     model.backshell.position.y = model.backshellBaseY + rise;
     model.backshell.rotation.z = bp * 1.6;
+
+    // Separation bursts — the pyro event at heat-shield jettison + chute-cut.
+    heatshieldBurst.update(sepProgress(s.t, hsT, DESCENT_BURST_S));
+    backshellBurst.update(sepProgress(s.t, bsT, DESCENT_BURST_S));
 
     // Skycrane rigging: shown only during the skycrane phase.
     model.skycraneRigging.visible = s.phaseKind === 'skycrane';

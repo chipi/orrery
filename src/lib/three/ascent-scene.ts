@@ -16,6 +16,7 @@
 
 import * as THREE from 'three';
 import { BoldArrow } from './bold-arrow';
+import { SeparationBurst } from './separation-burst';
 import { gravity, type AscentEvent, type AscentState } from '$lib/orbital/ascent-physics';
 import {
   activeShotAt,
@@ -352,6 +353,20 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   payload.visible = false;
   vehicle.add(payload);
 
+  // Separation-event bursts (flash + frost/debris puff) at each sep plane —
+  // parented to the vehicle so they sit at the interface. Driven by sepProgress
+  // in updateForces(), so they're scrub-exact like every other sep animation.
+  const BURST_S = 1.9;
+  const boosterBurst = new SeparationBurst({ scale: vehLen * 0.55 });
+  boosterBurst.position.y = 0;
+  vehicle.add(boosterBurst);
+  const fairingBurst = new SeparationBurst({ scale: vehLen * 0.42, particleColor: 0xeaf1ff });
+  fairingBurst.position.y = fairingBaseY;
+  vehicle.add(fairingBurst);
+  const payloadBurst = new SeparationBurst({ scale: vehLen * 0.34 });
+  payloadBurst.position.y = payloadBaseY;
+  vehicle.add(payloadBurst);
+
   scene.add(vehicle);
 
   // Plume (R4): a LAYERED exhaust — hot blue-white throat, a yellow core, a
@@ -552,6 +567,11 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     payload.position.y = payloadBaseY + pp * vehLen * 1.1;
     payload.rotation.y = s.t * 0.12;
     upperStage.position.y = -pp * vehLen * 1.4;
+
+    // Separation bursts — the visible pyro/pusher event at each sep plane.
+    boosterBurst.update(sepProgress(s.t, stagingT, BURST_S));
+    fairingBurst.update(sepProgress(s.t, fairingT, BURST_S));
+    payloadBurst.update(sepProgress(s.t, secoT, BURST_S));
 
     // Plume: only while a stage burns; re-parent to the firing stage,
     // flicker the length, taper in vacuum.

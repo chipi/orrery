@@ -466,6 +466,7 @@ export default defineConfig(({ mode }) => {
           // contract (flight-phase-scene.ts) is pure types — no runtime to cover.
           'src/lib/three/ascent-scene.ts',
           'src/lib/three/bold-arrow.ts',
+          'src/lib/three/glow-line.ts',
           'src/lib/three/ascent-renderer.ts',
           'src/lib/three/launcher-models.ts',
           'src/lib/three/launch-ground.ts',

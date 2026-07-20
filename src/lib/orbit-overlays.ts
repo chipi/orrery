@@ -65,7 +65,7 @@ export function buildSoIRing(
     color,
     wireframe: true,
     transparent: true,
-    opacity: 0.35,
+    opacity: 0.5,
     depthWrite: false,
   });
   const sphere = new THREE.Mesh(sphereGeo, sphereMat);

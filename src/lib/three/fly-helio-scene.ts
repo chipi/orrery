@@ -263,7 +263,7 @@ function buildOrbitRing(radius: number, color: number): THREE.LineLoop {
   }
   return new THREE.LineLoop(
     new THREE.BufferGeometry().setFromPoints(pts),
-    new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.4 }),
+    new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.6 }),
   );
 }
 
@@ -769,7 +769,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     }
     const orbit = new THREE.LineLoop(
       new THREE.BufferGeometry().setFromPoints(pts),
-      new THREE.LineBasicMaterial({ color: spec.color, transparent: true, opacity: 0.35 }),
+      new THREE.LineBasicMaterial({ color: spec.color, transparent: true, opacity: 0.55 }),
     );
     orbit.visible = false;
     scene.add(orbit);
@@ -850,7 +850,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     const mat = new THREE.LineBasicMaterial({
       color: HILL_COLOR,
       transparent: true,
-      opacity: 0.18,
+      opacity: 0.34,
       depthWrite: false,
     });
     const mesh = new THREE.LineSegments(geo, mat);

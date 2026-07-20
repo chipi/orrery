@@ -21,6 +21,7 @@ import * as THREE from 'three';
 import { parkingOrbit } from '$lib/orbital/cislunar/cislunar-geometry';
 import type { FlightPhaseScene, ForceKey } from './flight-phase-scene';
 import { BoldArrow } from './bold-arrow';
+import { buildGlowTube } from './glow-line';
 
 const R_EARTH_KM = 6371;
 /** Rendered orbit loops are capped here; the REV counter still shows real N. */
@@ -138,11 +139,17 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
         };
       }).map((p) => ({ x: p.x, y: p.y, z: p.z }))
     : parkingOrbit(opts.altitudeKm, 0, 1, RING_STEPS);
-  const ringPts = ringRaw.map((p) => inclined(p, incRad));
-  const ring = new THREE.Line(
-    new THREE.BufferGeometry().setFromPoints(ringPts),
-    new THREE.LineBasicMaterial({ color: 0x4b9cd3, transparent: true, opacity: 0.75 }),
-  );
+  const ringPts = ringRaw
+    .map((p) => inclined(p, incRad))
+    .map((p) => new THREE.Vector3(p.x, p.y, p.z));
+  // Bold glowing orbit tube (was a 1px line). ~28 km radius reads as a clean
+  // ribbon against the 6371 km Earth without swamping it.
+  const ring = buildGlowTube(ringPts, {
+    color: 0x5fb0ef,
+    radius: 28,
+    opacity: 0.9,
+    closed: !opts.suborbital,
+  });
   scene.add(ring);
 
   // ── Capsule ───────────────────────────────────────────────────────────
@@ -179,9 +186,12 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   const trackPositions = new Float32Array((RING_STEPS + 4) * 3);
   const trackGeo = new THREE.BufferGeometry();
   trackGeo.setAttribute('position', new THREE.BufferAttribute(trackPositions, 3));
+  // Ground-track grows point-by-point each frame, so it stays a Line (a tube
+  // would need a full rebuild per step) — but brighter + fully opaque so it
+  // reads as a crisp trail on the rotating Earth.
   const track = new THREE.Line(
     trackGeo,
-    new THREE.LineBasicMaterial({ color: 0x8fd0ff, transparent: true, opacity: 0.9 }),
+    new THREE.LineBasicMaterial({ color: 0x9fe0ff, transparent: true, opacity: 1 }),
   );
   trackGeo.setDrawRange(0, 0);
   scene.add(track);

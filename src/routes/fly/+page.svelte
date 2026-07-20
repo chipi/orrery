@@ -3217,11 +3217,11 @@
         depthWrite: true,
       });
     outLine = new THREE.Mesh(
-      buildTubeGeometry(outPts, 0.3),
+      buildTubeGeometry(outPts, 0.46),
       buildTubeMaterial(0x4488ff, 0.95, 0.22),
     );
     retLine = new THREE.Mesh(
-      buildTubeGeometry(retPts, 0.25),
+      buildTubeGeometry(retPts, 0.4),
       buildTubeMaterial(0x9966ff, 0.9, 0.2),
     );
     scene.add(outLine);

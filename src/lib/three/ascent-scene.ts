@@ -467,7 +467,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const fairingT = metOf('fairing_jettison');
   const secoT = metOf('seco');
   const BOOSTER_SEP_S = 5;
-  const FAIRING_SEP_S = 4;
+  // Fairing clamshell drifts slowly (item 4) so the halves linger in frame while
+  // the payload is revealed — a held beat, not a snap-away.
+  const FAIRING_SEP_S = 6.5;
 
   const _v = new THREE.Vector3();
   const updateForces = (s: AscentState): void => {
@@ -538,7 +540,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     booster.visible = bp < 1;
     booster.position.y = -bp * vehLen * 3;
     booster.rotation.set(bp * 2.4, 0, bp * 1.2);
-    booster.scale.setScalar(1 - 0.45 * bp);
+    // Only a gentle shrink (item 4) — the drift-away already recedes it via
+    // perspective; keep it big enough to read as a distinct spent stage.
+    booster.scale.setScalar(1 - 0.18 * bp);
 
     // Strap-on solids: at burnout they fall back + tumble away from the still-
     // climbing core (earlier than the core drop above).
@@ -547,7 +551,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       strapOnGroup.visible = sp < 1;
       strapOnGroup.position.y = -sp * vehLen * 2.6;
       strapOnGroup.rotation.set(sp * 1.6, 0, 0);
-      strapOnGroup.scale.setScalar(1 - 0.4 * sp);
+      strapOnGroup.scale.setScalar(1 - 0.18 * sp);
     }
 
     // Fairing: the two shells clamshell apart, rise, and tumble away.

@@ -55,7 +55,7 @@ export interface ScheduleInputs {
 const TOWER_CLEAR_END = 12;
 const PAD_END = 3;
 const STAGING_HOLD = 5;
-const FAIRING_HOLD = 5;
+const FAIRING_HOLD = 6.5; // matches FAIRING_SEP_S (item 4) — camera holds the reveal
 /** Seconds the payload-separation shot holds after SECO before the orbit
  *  coast — also the scene's payload-sep animation duration (kept in sync). */
 export const PAYLOAD_SEP_HOLD_S = 4;

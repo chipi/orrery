@@ -396,8 +396,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const bsT = metOf('backshell_sep');
   const chuteT = metOf('parachute_deploy');
   const airbagT = metOf('airbag_deploy');
-  const HS_SEP_S = 3;
-  const BS_SEP_S = 3;
+  // Slow the EDL separations (item 4) so heat-shield jettison + chute-cut linger
+  // as a held beat rather than a snap.
+  const HS_SEP_S = 4.5;
+  const BS_SEP_S = 4.5;
 
   // Smooth-camera convergence (mirrors the ascent scene).
   let camS: {
@@ -454,7 +456,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     model.heatshield.position.y = model.heatshieldBaseY - hp * vehLen * 5;
     model.heatshield.position.x = hp * vehLen * 0.6;
     model.heatshield.rotation.set(Math.PI + hp * 4, 0, hp * 2.6);
-    model.heatshield.scale.setScalar(1 - 0.4 * hp);
+    // Gentle shrink only (item 4) — the downward drift recedes it via perspective;
+    // keep it readable as the jettisoned shield tumbling toward the surface.
+    model.heatshield.scale.setScalar(1 - 0.18 * hp);
 
     // Parachute: mortar-fires and INFLATES over ~2 s at deploy, sways under the
     // descent, then flies away UP with the backshell (chute-cut) at sep.

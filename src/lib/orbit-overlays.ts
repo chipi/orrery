@@ -210,7 +210,7 @@ export function buildCoastLine(color = 0xffc850): THREE.Line {
     dashSize: 1.5,
     gapSize: 1.0,
     transparent: true,
-    opacity: 0.7,
+    opacity: 0.92,
     linewidth: 1,
   });
   const line = new THREE.Line(geom, mat);

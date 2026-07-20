@@ -312,7 +312,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
   scene.add(centripetal);
 
   const periMarker = new THREE.Mesh(
-    new THREE.SphereGeometry(0.3, 12, 12),
+    new THREE.SphereGeometry(0.5, 14, 14),
     new THREE.MeshBasicMaterial({
       color: 0xff6b6b,
       transparent: true,
@@ -325,7 +325,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
   scene.add(periMarker);
 
   const apoMarker = new THREE.Mesh(
-    new THREE.SphereGeometry(0.3, 12, 12),
+    new THREE.SphereGeometry(0.5, 14, 14),
     new THREE.MeshBasicMaterial({
       color: 0x6aa9ff,
       transparent: true,

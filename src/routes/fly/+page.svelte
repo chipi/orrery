@@ -216,7 +216,7 @@
   } from '$lib/orbit-overlays';
   import ConicSectionPanel from '$lib/components/ConicSectionPanel.svelte';
   import MobileControlsDrawer from '$lib/components/MobileControlsDrawer.svelte';
-  import { isLayerOn, onLayerChange } from '$lib/science-layers';
+  import { isLayerOn, onLayerChange, type LayerKey } from '$lib/science-layers';
   import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
   import { track, trackMissionComplete } from '$lib/analytics';
 
@@ -346,6 +346,38 @@
   // onComplete hands to CoastScene (instead of revealing the cruise scene), which
   // then hands to DescentScene. Gated on the earth-orbit registry.
   let showCoast = $state(false);
+
+  // ── Science-Lens layers offered per flight segment ────────────────────
+  // Ascent, coast, descent and cruise are physically different regimes, so the
+  // lens panel advertises only the layers that actually draw in the active
+  // scene: ascent = powered-climb forces, coast = the orbit trio, descent =
+  // atmospheric-entry forces, cruise = the full interplanetary orbital-mechanics
+  // set. Keeps the panel honest — no "thrust" toggle on a free-fall coast, no
+  // "conics" on a pad climb.
+  const SEGMENT_LAYERS = {
+    ascent: ['thrust', 'drag', 'gravity', 'velocity', 'ascent-losses'],
+    coast: ['gravity', 'velocity', 'centripetal', 'apsides'],
+    descent: ['thrust', 'drag', 'gravity', 'velocity'],
+    cruise: [
+      'hover',
+      'soi',
+      'gravity',
+      'velocity',
+      'centripetal',
+      'apsides',
+      'coast',
+      'conics',
+      'hill-sphere',
+      'lagrange-points',
+      'magnetosphere',
+      'moons',
+    ],
+  } as const satisfies Record<string, LayerKey[]>;
+  let flySegment = $derived(
+    showLaunch ? 'ascent' : showCoast ? 'coast' : showDescent ? 'descent' : 'cruise',
+  );
+  let availableLayers = $derived<LayerKey[]>([...SEGMENT_LAYERS[flySegment]]);
+
   let earthCoast = $derived(getEarthOrbitCoast(mission.id));
   // The coast is the "cruise" act of the unified pad→orbit→re-entry timeline for
   // Earth-orbit missions: `coastMetDays` is the elapsed on-orbit time (the master
@@ -8522,23 +8554,7 @@
     body="Every interplanetary trajectory is a slice of an ellipse with the Sun at one focus. Two endpoints (Earth at launch, the target at arrival) plus a time of flight pin a unique Lambert solution; the porkchop plot is the surface of all such solutions."
     tab="transfers"
     section="transfer-ellipse"
-    available={[
-      'hover',
-      'soi',
-      'gravity',
-      'velocity',
-      'thrust',
-      'drag',
-      'ascent-losses',
-      'centripetal',
-      'apsides',
-      'coast',
-      'conics',
-      'hill-sphere',
-      'lagrange-points',
-      'magnetosphere',
-      'moons',
-    ]}
+    available={availableLayers}
     historicalFoundations={[
       { tab: 'history', section: 'keplers-laws-1609', label: "Kepler's three laws, 1609" },
       { tab: 'history', section: 'newton-principia-1687', label: 'Newton · Principia, 1687' },

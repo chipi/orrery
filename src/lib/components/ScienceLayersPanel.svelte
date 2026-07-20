@@ -179,50 +179,66 @@
   function metaFor(key: LayerKey): LayerMeta {
     switch (key) {
       case 'soi':
-        return { label: m.science_layer_soi_label(), description: m.science_layer_soi_desc() };
+        return {
+          label: m.science_layer_soi_label(),
+          description: m.science_layer_soi_desc(),
+          learn: { tab: 'transfers', section: 'patched-conics' },
+        };
       case 'hover':
         return { label: m.science_layer_hover_label(), description: m.science_layer_hover_desc() };
       case 'gravity':
         return {
           label: m.science_layer_gravity_label(),
           description: m.science_layer_gravity_desc(),
+          learn: { tab: 'orbits', section: 'keplerian-orbit' },
         };
       case 'velocity':
         return {
           label: m.science_layer_velocity_label(),
           description: m.science_layer_velocity_desc(),
+          learn: { tab: 'orbits', section: 'vis-viva' },
         };
       case 'thrust':
         return {
           label: m.science_layer_thrust_label(),
           description: m.science_layer_thrust_desc(),
+          learn: { tab: 'propulsion', section: 'thrust-and-twr' },
         };
       case 'drag':
         return {
           label: m.science_layer_drag_label(),
           description: m.science_layer_drag_desc(),
+          learn: { tab: 'mission-phases', section: 'ballistic-coefficient' },
         };
       case 'ascent-losses':
         return {
           label: m.science_layer_ascent_losses_label(),
           description: m.science_layer_ascent_losses_desc(),
+          learn: { tab: 'propulsion', section: 'dv-budget' },
         };
       case 'centripetal':
         return {
           label: m.science_layer_centripetal_label(),
           description: m.science_layer_centripetal_desc(),
+          learn: { tab: 'orbits', section: 'keplerian-orbit' },
         };
       case 'apsides':
         return {
           label: m.science_layer_apsides_label(),
           description: m.science_layer_apsides_desc(),
+          learn: { tab: 'orbits', section: 'apsides' },
         };
       case 'coast':
-        return { label: m.science_layer_coast_label(), description: m.science_layer_coast_desc() };
+        return {
+          label: m.science_layer_coast_label(),
+          description: m.science_layer_coast_desc(),
+          learn: { tab: 'transfers', section: 'transfer-ellipse' },
+        };
       case 'conics':
         return {
           label: m.science_layer_conics_label(),
           description: m.science_layer_conics_desc(),
+          learn: { tab: 'transfers', section: 'conic-sections' },
         };
       case 'microgravity':
         return {

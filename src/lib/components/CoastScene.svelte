@@ -14,6 +14,7 @@
   import { base } from '$app/paths';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { createLeoCoastScene, type LeoCoastScene } from '$lib/three/fly-leo-coast-scene';
+  import { onLayerChange } from '$lib/science-layers';
   import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
   import { buildCapsuleById } from '$lib/three/capsule-models';
   import { coastAltitudeKm, type EarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
@@ -50,6 +51,7 @@
   let ar: AscentRenderer | null = null;
   let raf = 0;
   let done = false;
+  let layerStops: Array<(() => void) | undefined> = [];
 
   // The coast is a scrubbable player: `coastFraction` (0..1) is the single source
   // of truth — auto-advanced while `playing`, set by dragging the scrubber, or
@@ -101,6 +103,16 @@
       earthTextureUrl: `${base}/textures/2k_earth_daymap.jpg`,
     });
     ar = createAscentRenderer(container, sceneObj);
+
+    // Science-Lens force vectors — the orbit trio. Free-fall coast has no thrust
+    // or drag, so only gravity (weight, inward), velocity (tangent), and the
+    // centripetal acceleration gravity supplies are meaningful here.
+    layerStops = [
+      onLayerChange('gravity', (on) => sceneObj?.setForceVisible('weight', on)),
+      onLayerChange('velocity', (on) => sceneObj?.setForceVisible('velocity', on)),
+      onLayerChange('centripetal', (on) => sceneObj?.setCentripetalVisible(on)),
+    ];
+
     let last = performance.now();
     const loop = () => {
       const now = performance.now();
@@ -126,6 +138,7 @@
 
   onDestroy(() => {
     cancelAnimationFrame(raf);
+    layerStops.forEach((stop) => stop?.());
     ar?.dispose();
     sceneObj?.dispose();
   });

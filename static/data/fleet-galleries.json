@@ -43,6 +43,7 @@
   "change6": 5,
   "clementine": 5,
   "columbia": 5,
+  "commercial-stations": 1,
   "compton-gro": 5,
   "crew-dragon": 5,
   "crew-dragon-iva": 5,
@@ -171,6 +172,7 @@
   "pslv-xl": 5,
   "psyche-spacecraft": 4,
   "r-7-vostok": 5,
+  "ros": 1,
   "rosetta": 5,
   "salyut-1": 5,
   "salyut-2": 5,
@@ -194,8 +196,8 @@
   "sokol-kv-2": 5,
   "sokol-m": 5,
   "solar-orbiter": 5,
+  "soyuz": 4,
   "soyuz-2": 5,
-  "soyuz": 0,
   "soyuz-7k-ok": 5,
   "soyuz-fg": 5,
   "soyuz-ms": 5,
@@ -208,6 +210,7 @@
   "spektr-rg": 5,
   "spirit": 5,
   "spitzer": 5,
+  "sputnik": 1,
   "sriharikota-slp": 5,
   "starbase-orbital-a": 5,
   "starliner": 5,
@@ -252,8 +255,5 @@
   "xmm-newton": 5,
   "yutu": 5,
   "yutu-2": 5,
-  "zhurong": 5,
-  "commercial-stations": 1,
-  "ros": 1,
-  "sputnik": 1
+  "zhurong": 5
 }

@@ -76,6 +76,16 @@ const CURATED: Record<string, string[]> = {
     'Shenzhou launch pad',
   ],
   'fleet-galleries/mars6': ['Mars 6', 'Mars-6 spacecraft', 'Soviet Mars program'],
+  // Soyuz 11A511 — the first-gen Soyuz launcher (1966-1976). Commons indexes the
+  // R-7 derivative by museum display + period launch; the modern Soyuz-U/FG/2 are
+  // near-identical externally, so period + designation queries first, museum next.
+  'fleet-galleries/soyuz': [
+    'Soyuz 11A511',
+    'Soyuz 7K-OK rocket',
+    'Союз 11А511',
+    'Soyuz rocket Baikonur 1967',
+    'Soyuz launch vehicle museum',
+  ],
   'fleet-galleries/progress-7k-tg': [
     'Progress 7K-TG',
     'Progress spacecraft Soyuz',

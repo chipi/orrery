@@ -111,11 +111,19 @@ services:
     # MagicDNS name (`homelab`) — kept as a NAME in this file, never an IP.
     # Docker's embedded resolver can't see MagicDNS names, so resolve the
     # name → tailnet IP on the HOST (where Tailscale DNS works) and inject
-    # it here. No IP is hard-coded in git; it's derived from the name at
-    # up-time. Set it before `docker compose up`:
+    # it as an /etc/hosts entry. No IP is hard-coded in git; it's derived
+    # from the name at up-time. Set it before `docker compose up`:
     #   export HOMELAB_TAILNET_IP=$(tailscale ip -4 homelab | head -1)
     # (or use `npm run docker:o11y`). Works on macOS Docker Desktop + the
     # Linux VPS alike; Tailscale IPs are stable per-node.
+    #
+    # Do NOT replace this with `dns: [100.100.100.100]` (Tailscale MagicDNS).
+    # It resolves tailnet names on Linux, BUT setting `dns:` REPLACES docker's
+    # embedded resolver — which breaks compose service-name resolution inside
+    # the container (e.g. the metrics agent scraping `nginx-exporter:9113`).
+    # extra_hosts only adds an /etc/hosts entry; the embedded DNS stays intact.
+    # This is the estate-wide pattern (the podcast app uses the same) — verified
+    # by prod infra on the Linux VPS.
     extra_hosts:
       - 'homelab:${HOMELAB_TAILNET_IP:-127.0.0.1}'
     environment:

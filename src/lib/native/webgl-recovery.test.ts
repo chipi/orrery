@@ -20,6 +20,14 @@ vi.mock('@capacitor/app', () => ({
 
 import { App } from '@capacitor/app';
 
+// The Capacitor App.addListener type is a set of strict overloads; vi.mocked()
+// preserves them, making mockImplementation's handler param infer as never.
+// Cast once here to a loose signature for all per-test mockImplementation calls.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const addListenerMock = App.addListener as unknown as {
+  mockImplementation: (fn: (...args: any[]) => any) => void;
+};
+
 describe('initWebglRecovery', () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -214,19 +222,21 @@ describe('initWebglRecovery', () => {
       vi.spyOn(canvas, 'getContext').mockReturnValue(fakeGl as unknown as WebGL2RenderingContext);
       document.body.appendChild(canvas);
 
-      // Capture the appStateChange handler.
-      let stateChangeHandler: ((arg: { isActive: boolean }) => void) | null = null;
-      vi.mocked(App.addListener).mockImplementation(async (event, handler) => {
-        if (event === 'appStateChange') {
-          stateChangeHandler = handler as (arg: { isActive: boolean }) => void;
-        }
-        return { remove: vi.fn() };
-      });
+      // Object wrapper avoids TypeScript narrowing let-assigned closures to never.
+      const capture: { handler: ((arg: { isActive: boolean }) => void) | null } = { handler: null };
+      addListenerMock.mockImplementation(
+        async (event: string, handler: (arg: { isActive: boolean }) => void) => {
+          if (event === 'appStateChange') {
+            capture.handler = handler;
+          }
+          return { remove: vi.fn() };
+        },
+      );
 
       const teardown = initWebglRecovery();
       await new Promise((r) => setTimeout(r, 0));
 
-      stateChangeHandler?.({ isActive: true });
+      if (capture.handler) capture.handler({ isActive: true });
       expect(reloadSpy).toHaveBeenCalledOnce();
 
       teardown();
@@ -248,18 +258,20 @@ describe('initWebglRecovery', () => {
       );
       document.body.appendChild(canvas);
 
-      let stateChangeHandler: ((arg: { isActive: boolean }) => void) | null = null;
-      vi.mocked(App.addListener).mockImplementation(async (event, handler) => {
-        if (event === 'appStateChange') {
-          stateChangeHandler = handler as (arg: { isActive: boolean }) => void;
-        }
-        return { remove: vi.fn() };
-      });
+      const capture: { handler: ((arg: { isActive: boolean }) => void) | null } = { handler: null };
+      addListenerMock.mockImplementation(
+        async (event: string, handler: (arg: { isActive: boolean }) => void) => {
+          if (event === 'appStateChange') {
+            capture.handler = handler;
+          }
+          return { remove: vi.fn() };
+        },
+      );
 
       const teardown = initWebglRecovery();
       await new Promise((r) => setTimeout(r, 0));
 
-      stateChangeHandler?.({ isActive: true });
+      if (capture.handler) capture.handler({ isActive: true });
       expect(reloadSpy).not.toHaveBeenCalled();
 
       teardown();
@@ -274,18 +286,20 @@ describe('initWebglRecovery', () => {
         configurable: true,
       });
 
-      let stateChangeHandler: ((arg: { isActive: boolean }) => void) | null = null;
-      vi.mocked(App.addListener).mockImplementation(async (event, handler) => {
-        if (event === 'appStateChange') {
-          stateChangeHandler = handler as (arg: { isActive: boolean }) => void;
-        }
-        return { remove: vi.fn() };
-      });
+      const capture: { handler: ((arg: { isActive: boolean }) => void) | null } = { handler: null };
+      addListenerMock.mockImplementation(
+        async (event: string, handler: (arg: { isActive: boolean }) => void) => {
+          if (event === 'appStateChange') {
+            capture.handler = handler;
+          }
+          return { remove: vi.fn() };
+        },
+      );
 
       const teardown = initWebglRecovery();
       await new Promise((r) => setTimeout(r, 0));
 
-      stateChangeHandler?.({ isActive: false });
+      if (capture.handler) capture.handler({ isActive: false });
       expect(reloadSpy).not.toHaveBeenCalled();
 
       teardown();
@@ -324,18 +338,20 @@ describe('initWebglRecovery', () => {
       });
       document.body.appendChild(canvas);
 
-      let stateChangeHandler: ((arg: { isActive: boolean }) => void) | null = null;
-      vi.mocked(App.addListener).mockImplementation(async (event, handler) => {
-        if (event === 'appStateChange') {
-          stateChangeHandler = handler as (arg: { isActive: boolean }) => void;
-        }
-        return { remove: vi.fn() };
-      });
+      const capture: { handler: ((arg: { isActive: boolean }) => void) | null } = { handler: null };
+      addListenerMock.mockImplementation(
+        async (event: string, handler: (arg: { isActive: boolean }) => void) => {
+          if (event === 'appStateChange') {
+            capture.handler = handler;
+          }
+          return { remove: vi.fn() };
+        },
+      );
 
       const teardown = initWebglRecovery();
       await new Promise((r) => setTimeout(r, 0));
 
-      stateChangeHandler?.({ isActive: true });
+      if (capture.handler) capture.handler({ isActive: true });
       expect(reloadSpy).toHaveBeenCalledOnce();
 
       teardown();

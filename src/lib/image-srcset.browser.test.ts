@@ -13,7 +13,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 vi.mock('$app/environment', () => ({ browser: true }));
 vi.mock('$app/paths', () => ({ base: '' }));
 
-import { loadLadder, ladderSources, srcsetFor } from './image-srcset';
+import { loadLadder, srcsetFor } from './image-srcset';
 
 // Reset the module-level cache between tests so each test starts clean.
 // The module exposes no reset helper, but re-importing is blocked by module

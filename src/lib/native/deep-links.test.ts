@@ -21,6 +21,14 @@ import { Capacitor } from '@capacitor/core';
 import { App } from '@capacitor/app';
 import { goto } from '$app/navigation';
 
+// The Capacitor App.addListener type is a set of strict overloads; vi.mocked()
+// preserves them, making mockImplementation's handler param infer as never.
+// Cast once here to a loose signature for all per-test mockImplementation calls.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const addListenerMock = App.addListener as unknown as {
+  mockImplementation: (fn: (...args: any[]) => any) => void;
+};
+
 describe('deepLinkTarget', () => {
   it('maps scheme host → first path segment, carrying query', () => {
     expect(deepLinkTarget('orrery://fly?mission=curiosity')).toBe('/fly?mission=curiosity');
@@ -93,49 +101,56 @@ describe('initDeepLinks — native platform', () => {
   });
 
   it('calls goto() with the parsed route for orrery:// deep links', async () => {
-    let capturedHandler: ((arg: { url: string }) => void) | null = null;
-    vi.mocked(App.addListener).mockImplementation(async (_event, handler) => {
-      capturedHandler = handler as (arg: { url: string }) => void;
-      return { remove: vi.fn() };
-    });
+    // Object wrapper avoids TypeScript narrowing let-assigned closures to never.
+    const capture: { handler: ((arg: { url: string }) => void) | null } = { handler: null };
+    addListenerMock.mockImplementation(
+      async (_event: string, handler: (arg: { url: string }) => void) => {
+        capture.handler = handler;
+        return { remove: vi.fn() };
+      },
+    );
 
     initDeepLinks();
     await new Promise((r) => setTimeout(r, 0));
 
-    capturedHandler?.({ url: 'orrery://fly?mission=curiosity' });
+    if (capture.handler) capture.handler({ url: 'orrery://fly?mission=curiosity' });
     expect(goto).toHaveBeenCalledWith('/fly?mission=curiosity');
   });
 
   it('ignores non-orrery:// URLs', async () => {
-    let capturedHandler: ((arg: { url: string }) => void) | null = null;
-    vi.mocked(App.addListener).mockImplementation(async (_event, handler) => {
-      capturedHandler = handler as (arg: { url: string }) => void;
-      return { remove: vi.fn() };
-    });
+    const capture: { handler: ((arg: { url: string }) => void) | null } = { handler: null };
+    addListenerMock.mockImplementation(
+      async (_event: string, handler: (arg: { url: string }) => void) => {
+        capture.handler = handler;
+        return { remove: vi.fn() };
+      },
+    );
 
     initDeepLinks();
     await new Promise((r) => setTimeout(r, 0));
 
-    capturedHandler?.({ url: 'https://chipi.github.io/orrery/fly' });
+    if (capture.handler) capture.handler({ url: 'https://chipi.github.io/orrery/fly' });
     expect(goto).not.toHaveBeenCalled();
   });
 
   it('ignores malformed orrery:// URLs (deepLinkTarget returns null)', async () => {
-    let capturedHandler: ((arg: { url: string }) => void) | null = null;
-    vi.mocked(App.addListener).mockImplementation(async (_event, handler) => {
-      capturedHandler = handler as (arg: { url: string }) => void;
-      return { remove: vi.fn() };
-    });
+    const capture: { handler: ((arg: { url: string }) => void) | null } = { handler: null };
+    addListenerMock.mockImplementation(
+      async (_event: string, handler: (arg: { url: string }) => void) => {
+        capture.handler = handler;
+        return { remove: vi.fn() };
+      },
+    );
 
     initDeepLinks();
     await new Promise((r) => setTimeout(r, 0));
 
-    capturedHandler?.({ url: 'orrery://not a valid url' });
+    if (capture.handler) capture.handler({ url: 'orrery://not a valid url' });
     expect(goto).not.toHaveBeenCalled();
   });
 
   it('disposed before @capacitor/app loads — does not register listener', async () => {
-    vi.mocked(App.addListener).mockImplementation(
+    addListenerMock.mockImplementation(
       () => new Promise((r) => setTimeout(() => r({ remove: vi.fn() }), 100)),
     );
     const dispose = initDeepLinks();

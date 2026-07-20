@@ -18,6 +18,14 @@ import { backAction, initBackButton } from './back-gesture';
 import { Capacitor } from '@capacitor/core';
 import { App } from '@capacitor/app';
 
+// The Capacitor App.addListener type is a set of strict overloads; vi.mocked()
+// preserves them, making mockImplementation's handler param infer as never.
+// Cast once here to a loose signature for all per-test mockImplementation calls.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const addListenerMock = App.addListener as unknown as {
+  mockImplementation: (fn: (...args: any[]) => any) => void;
+};
+
 describe('backAction', () => {
   it('pops history while the WebView can still go back', () => {
     expect(backAction(true)).toBe('back');
@@ -71,32 +79,37 @@ describe('initBackButton — native platform', () => {
   });
 
   it('calls window.history.back() when canGoBack is true', async () => {
-    let capturedHandler: ((arg: { canGoBack: boolean }) => void) | null = null;
-    vi.mocked(App.addListener).mockImplementation(async (_event, handler) => {
-      capturedHandler = handler as (arg: { canGoBack: boolean }) => void;
-      return { remove: vi.fn() };
-    });
+    // Object wrapper avoids TypeScript narrowing let-assigned closures to never.
+    const capture: { handler: ((arg: { canGoBack: boolean }) => void) | null } = { handler: null };
+    addListenerMock.mockImplementation(
+      async (_event: string, handler: (arg: { canGoBack: boolean }) => void) => {
+        capture.handler = handler;
+        return { remove: vi.fn() };
+      },
+    );
 
     const backSpy = vi.spyOn(window.history, 'back').mockImplementation(() => {});
     initBackButton();
     await new Promise((r) => setTimeout(r, 0));
 
-    capturedHandler?.({ canGoBack: true });
+    if (capture.handler) capture.handler({ canGoBack: true });
     expect(backSpy).toHaveBeenCalledOnce();
     backSpy.mockRestore();
   });
 
   it('calls App.exitApp() when canGoBack is false', async () => {
-    let capturedHandler: ((arg: { canGoBack: boolean }) => void) | null = null;
-    vi.mocked(App.addListener).mockImplementation(async (_event, handler) => {
-      capturedHandler = handler as (arg: { canGoBack: boolean }) => void;
-      return { remove: vi.fn() };
-    });
+    const capture: { handler: ((arg: { canGoBack: boolean }) => void) | null } = { handler: null };
+    addListenerMock.mockImplementation(
+      async (_event: string, handler: (arg: { canGoBack: boolean }) => void) => {
+        capture.handler = handler;
+        return { remove: vi.fn() };
+      },
+    );
 
     initBackButton();
     await new Promise((r) => setTimeout(r, 0));
 
-    capturedHandler?.({ canGoBack: false });
+    if (capture.handler) capture.handler({ canGoBack: false });
     expect(App.exitApp).toHaveBeenCalledOnce();
   });
 

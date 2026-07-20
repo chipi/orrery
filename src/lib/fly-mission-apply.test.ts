@@ -392,7 +392,7 @@ describe('computeMissionApply — trajectoryOverride / spline branch', () => {
   });
 
   it('falls back to Keplerian arc when mission has no departure_date', () => {
-    const noDep = { ...cassiniBase, departure_date: undefined };
+    const noDep = { ...cassiniBase, departure_date: undefined } as unknown as Mission;
     const r = computeMissionApply(noDep, DEFAULTS, override);
     expect(r.outPts.length).toBe(ARC_STEPS + 1);
   });
@@ -472,7 +472,7 @@ describe('computeMissionApply — labelToPlanetId coverage via waypoint labels',
   it('Churyumov synonym resolves to 67p', () => {
     // Rosetta shape
     const rosetta = makeMission({
-      dest: '67P',
+      dest: 'COMET',
       type: 'orbital',
       departure_date: '2004-03-02',
       transit_days: 3801,

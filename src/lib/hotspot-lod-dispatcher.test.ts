@@ -8,7 +8,7 @@
  * lifecycle and add no regression signal beyond what the pure functions
  * below already cover.
  */
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, afterEach } from 'vitest';
 import {
   pickTargetTier,
   projectedPixelRadius,

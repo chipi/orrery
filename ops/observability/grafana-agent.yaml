@@ -1,15 +1,15 @@
-# Grafana Cloud Agent config for the Orrery docker stack
-# (RFC-025 / ADR-068).
+# Grafana Agent config for the Orrery docker stack (RFC-025 / ADR-068).
 #
-# Tails Docker container logs for the `orrery-web` and any
-# `orrery-pipeline-runner-*` containers, ships them to Grafana Cloud
-# Loki. Profile-gated by docker-compose; this file only loads when
-# `docker compose --profile observability up` is invoked.
+# Ships Docker container logs for `orrery-web` and any
+# `orrery-pipeline-runner-*` containers to the self-hosted VictoriaLogs on
+# the homelab (tailnet-only), Loki push protocol. Emit-open-formats /
+# ship-pluggably — see homelab docs/wip/orrery-o11y-handover.md. All three
+# environments ship to the same backend; the `env` label (dev / staging /
+# prod) slices them. Profile-gated by docker-compose; this file only loads
+# when `docker compose --profile observability up` is invoked.
 #
-# Silent default: if any of GRAFANA_CLOUD_LOKI_URL,
-# GRAFANA_CLOUD_LOKI_USER, or GRAFANA_CLOUD_API_KEY is empty, the Loki
-# client's remote_write target is empty and the agent never sends a
-# byte upstream. Confirm with:
+# Silent default: if GRAFANA_CLOUD_LOKI_URL is empty the entrypoint swaps in
+# the silent config and the agent never sends a byte upstream. Confirm with:
 #   docker exec orrery-grafana-agent ss -tn
 # should report zero established outbound connections.
 
@@ -17,23 +17,19 @@ server:
   log_level: warn
 
 # Logs subsystem only — no metrics scraping today (Orrery has no
-# /metrics endpoint until the future VPS RFC adds nginx-prometheus-
-# exporter). The `metrics:` block would live alongside `logs:` once
-# we have something to scrape.
+# /metrics endpoint until the future nginx-prometheus-exporter sidecar).
+# The `metrics:` block would live alongside `logs:` once we have
+# something to scrape.
 logs:
   configs:
     - name: orrery
       clients:
+        # VictoriaLogs (homelab, tailnet-only). No auth on the tailnet, so
+        # no basic_auth — unlike the retired Grafana Cloud target. The
+        # push path is Loki-compatible: /insert/loki/api/v1/push.
         - url: ${GRAFANA_CLOUD_LOKI_URL}
-          # basic_auth.password reads the API key as a token. Grafana
-          # Cloud's Loki accepts `glc_*` tokens in either the password
-          # field or as a Bearer header; password field is the
-          # documented default.
-          basic_auth:
-            username: ${GRAFANA_CLOUD_LOKI_USER}
-            password: ${GRAFANA_CLOUD_API_KEY}
-          # Labels attached to every log stream. `env` lets us slice
-          # local-dev vs the future VPS without two separate stacks.
+          # Labels attached to every log stream. `env` slices
+          # dev (local) / staging (GitHub) / prod (VPS) onto one stack.
           external_labels:
             env: ${GRAFANA_AGENT_ENV}
             app: orrery
@@ -51,11 +47,22 @@ logs:
           relabel_configs:
             # Restrict to Orrery containers. Without this we'd ship
             # logs from every container on the host — fine on the
-            # future VPS (single-purpose), wrong on a laptop running
-            # other docker-compose projects.
+            # single-purpose VPS, wrong on a laptop running other
+            # docker-compose projects.
             - source_labels: ['__meta_docker_container_name']
               regex: '/(orrery-web|orrery-pipeline-runner-.*)'
               action: keep
+            # surface: web (nginx access/error) vs pipeline (data runners).
+            # Mirrors the podcast player/pipeline split so the two orrery
+            # surfaces are differentiable in queries.
+            - source_labels: ['__meta_docker_container_name']
+              regex: '/orrery-web'
+              target_label: surface
+              replacement: 'web'
+            - source_labels: ['__meta_docker_container_name']
+              regex: '/orrery-pipeline-runner-.*'
+              target_label: surface
+              replacement: 'pipeline'
             # Pretty container label for queries — strip the leading
             # slash docker prepends.
             - source_labels: ['__meta_docker_container_name']

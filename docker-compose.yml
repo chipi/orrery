@@ -107,15 +107,27 @@ services:
       # discover orrery-* containers and tail their stdout/stderr.
       # Only mounted on the shipping path; silent config doesn't touch it.
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    # The Loki backend (VictoriaLogs) is addressed by its Tailscale
+    # MagicDNS name (`homelab`) — kept as a NAME in this file, never an IP.
+    # Docker's embedded resolver can't see MagicDNS names, so resolve the
+    # name → tailnet IP on the HOST (where Tailscale DNS works) and inject
+    # it here. No IP is hard-coded in git; it's derived from the name at
+    # up-time. Set it before `docker compose up`:
+    #   export HOMELAB_TAILNET_IP=$(tailscale ip -4 homelab | head -1)
+    # (or use `npm run docker:o11y`). Works on macOS Docker Desktop + the
+    # Linux VPS alike; Tailscale IPs are stable per-node.
+    extra_hosts:
+      - 'homelab:${HOMELAB_TAILNET_IP:-127.0.0.1}'
     environment:
+      # Loki push URL — VictoriaLogs on the tailnet, e.g.
+      # http://homelab:9428/insert/loki/api/v1/push. Empty → silent (no ship).
       - GRAFANA_CLOUD_LOKI_URL=${GRAFANA_CLOUD_LOKI_URL:-}
-      - GRAFANA_CLOUD_LOKI_USER=${GRAFANA_CLOUD_LOKI_USER:-}
-      - GRAFANA_CLOUD_API_KEY=${GRAFANA_CLOUD_API_KEY:-}
-      - GRAFANA_AGENT_ENV=${GRAFANA_AGENT_ENV:-local-dev}
+      # env label: dev (local) / staging (GitHub) / prod (VPS).
+      - GRAFANA_AGENT_ENV=${GRAFANA_AGENT_ENV:-dev}
     # Override the image's default entrypoint with our wrapper, which
-    # picks the right config based on env-var presence. Without this
-    # an empty GRAFANA_CLOUD_LOKI_URL crashes the agent in a restart
-    # loop on "client needs target URL".
+    # picks the shipping vs silent config based on whether a push URL is
+    # set. Without this an empty URL crashes the agent in a restart loop
+    # on "client needs target URL".
     entrypoint: ['/bin/sh', '/agent-entrypoint.sh']
     command: []
     restart: unless-stopped

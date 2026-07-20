@@ -31,6 +31,7 @@ This dir derives the WebP responsive display ladder, 1×1 thumbnails, and vision
 
 - **Masters not smudged:** build-display-ladder exits with "ENOENT" if masters are pointer stubs. Run `git lfs pull --include='masters/**'` first.
 - **Rebuild rewrites manifest:** build-display-ladder regenerates the entire `image-ladder.json` from a full `masters/` walk — all masters must exist; partial walks leave orphan entries.
+- **`compute-phash.ts` and `build-image-provenance.ts` also full-rebuild from `masters/` and DEGRADE on stubs.** Unlike the ladder builder (which ENOENTs), these two used to *silently rewrite the whole file degraded* on an un-pulled tree (2026-07-20: image-provenance −64k lines of credits, phash 2560→5). They now guard — compute-phash aborts on sampled stubs, both refuse a >10% entry drop (`--allow-shrink` to override). **To add a few images, edit the per-image rows surgically; do not full-rebuild.** A real rebuild needs `git lfs pull -I 'masters/**'` first (+ online Commons for provenance). See AGENTS.md §"Image pipeline — gotchas".
 - **Hotspots and posters are excluded:** the ladder builder skips any path containing `/hotspots/` or `/posters/`, and rekey-provenance does not re-path them. Verify exclusion if adding a new directory.
 
 ## Cross-references

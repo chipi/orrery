@@ -151,7 +151,7 @@ Served display images are WebP, derived from the git-LFS `masters/` store — sm
 - **Command** `npm run build-image-provenance` · `-- --offline`
 - **What** Walks disk image trees + curated source maps (re-imported from `fetch-assets.ts`), queries Commons `imageinfo`/`extmetadata` live, writes a TASL row per image to `static/data/image-provenance.json` + `docs/provenance/last-fetch-diff.md`. Fail-closed per ADR-047.
 - **When** After every sourcing/promote pass; part of `npm run fetch`.
-- **Gotchas** `--offline` skips Commons enrichment (which can hang). Never hand-write `author`/`license_short` — the Commons lookup is upstream-truth. **Walker-fallback agency lookup**: `buildWalkerFallbackEntries` falls through to the surface default if a non-NASA entity isn't found in the per-catalog HUMAN map → wrong credit. **Concurrent-write hotspot**: a parallel run can clobber fresh hotspot upserts via a load-snapshot race; re-run + verify before committing.
+- **Gotchas** `--offline` skips Commons enrichment (which can hang). Never hand-write `author`/`license_short` — the Commons lookup is upstream-truth. **Walker-fallback agency lookup**: `buildWalkerFallbackEntries` falls through to the surface default if a non-NASA entity isn't found in the per-catalog HUMAN map → wrong credit. **Concurrent-write hotspot**: a parallel run can clobber fresh hotspot upserts via a load-snapshot race; re-run + verify before committing. **Full-rebuild degrades on un-pulled masters / rate-limited Commons**: rewrites the WHOLE file; on a `fetchexclude`d tree it silently replaces rich rows with walker-fallbacks (2026-07-20: −64k lines). Now guarded — refuses a >10% entry drop (`--allow-shrink` to override). **To add a few images, edit the rows surgically, do not full-rebuild** (a real rebuild needs `git lfs pull -I 'masters/**'` + online).
 - **State** STANDING but huge (~105 KB) — carries the walker + all credit-derivation logic. Opportunity: extract the walker.
 
 ### `build-image-alt-baseline.ts` — alt-text baseline **(STANDING)**
@@ -176,9 +176,9 @@ Served display images are WebP, derived from the git-LFS `masters/` store — sm
 ### `compute-phash.ts` — pHash cache **(STANDING)**
 
 - **Command** `npx tsx scripts/compute-phash.ts [--force]`
-- **What** DCT pHash per base `.jpg` → `static/data/image-phashes.json` (URL-path keyed). Incremental by mtime. Feeds `validate-image-phash-dupes.ts` + the source-time fill guards.
+- **What** DCT pHash per base `.jpg` → `static/data/image-phashes.json` (URL-path keyed). Walks `masters/` (byte-stable across re-encodes). Incremental by mtime. Feeds `validate-image-phash-dupes.ts` + the source-time fill guards.
 - **When** After every fetch; **mandatory `--force` between any slot delete/rename and a fill run.**
-- **Gotchas** **Cache-staleness after slot rename** — the cache key is the URL path, so renaming `03.jpg → 02.jpg` leaves a stale entry and fill scripts let near-dupes through. Always `--force` rebuild after renames.
+- **Gotchas** **Cache-staleness after slot rename** — the cache key is the URL path, so renaming `03.jpg → 02.jpg` leaves a stale entry and fill scripts let near-dupes through. Always `--force` rebuild after renames. **Walks `masters/` (LFS `fetchexclude`d) and REWRITES the whole cache** — on an un-pulled tree the stubs fail to hash and the cache collapses (2026-07-20: 2560→5). Now guarded — aborts if sampled masters are pointer stubs, and refuses a >10% entry drop (`--allow-shrink`). Smudge first (`git lfs pull -I 'masters/**'`) for a real regen; **to add a few images, add the rows by hand.**
 - **State** STANDING. ~10–15 s on the ~2000-image corpus.
 
 ### `snapshot-phash-baseline.ts` — baseline allowlist **(STANDING, intent-only)**

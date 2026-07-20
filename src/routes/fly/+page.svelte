@@ -196,6 +196,8 @@
     DESCENT_SPEED_MULTIPLIERS,
     type JourneyTimeline,
   } from '$lib/orbital/ascent-clock';
+  import { sepSlowmoFactor } from '$lib/orbital/ascent-cameras';
+  import { terminalStartTime, unwarpDescentTime } from '$lib/orbital/descent-timewarp';
   import { T_MINUS_S, INJECTION_COAST_S, INJECTION_BURN_S } from '$lib/orbital/ascent-hud';
   import { resolveInjectionBurn } from '$lib/orbital/injection-burn';
   import { resolveOrbitInsertion } from '$lib/orbital/orbit-insertion';
@@ -1617,6 +1619,36 @@
   // bar stays the 2-segment ascent→cruise, unchanged for orbiters.
   let descentSummaryFly = $derived(descentProfile ? integrateDescent(descentProfile) : null);
   let descentDurationS = $derived(descentSummaryFly ? descentSummaryFly.totalDurationS : 0);
+  // Separation-event times for the cinematic slow-mo beat (item 3) — the play-
+  // clock eases into slow-motion as it passes each. Ascent times are already in
+  // the launch clock's base; descent times are in *trajectory* time, so they're
+  // unwarped into raw-scrubber time to align with where the sep actually renders
+  // (the descent scene warps its sample clock — descent-timewarp.ts).
+  let launchSepTimes = $derived(
+    launchSummaryFly
+      ? launchSummaryFly.events
+          .filter((e) => e.type === 'staging' || e.type === 'fairing_jettison' || e.type === 'seco')
+          .map((e) => e.t)
+      : [],
+  );
+  let descentSepTimes = $derived.by(() => {
+    if (!descentSummaryFly) return [] as number[];
+    const dur = descentSummaryFly.totalDurationS;
+    const tB = terminalStartTime(descentSummaryFly.states, dur);
+    const beats = new Set([
+      'parachute_deploy',
+      'heatshield_sep',
+      'backshell_sep',
+      'skycrane_lower',
+      'skycrane_flyaway',
+      'retro_ignition',
+      'airbag_deploy',
+      'touchdown',
+    ]);
+    return descentSummaryFly.events
+      .filter((e) => beats.has(e.type))
+      .map((e) => unwarpDescentTime(e.t, dur, tB));
+  });
   // Compressive coast-band width (RFC-034 §13): a 1-orbit hop and an 84-day
   // marathon shouldn't own the same slice of the scrubber. Shrink the ascent
   // fraction with log(coast hours) so the coast band *widens* with real duration
@@ -5624,7 +5656,10 @@
         // clock-driven, externalClock=true). At the seam LaunchScene's own loop
         // fires the orbit-reached warp → onComplete flips showLaunch off.
         if (showLaunch && isPlaying) {
-          launchT = Math.min(launchDurationS, launchT + dt * launchSpeed);
+          // Slow-mo beat (item 3): ease the clock down through staging / fairing /
+          // payload separation so each reads instead of blitzing past at ×N.
+          const slow = sepSlowmoFactor(launchT, launchSepTimes);
+          launchT = Math.min(launchDurationS, launchT + dt * launchSpeed * slow);
         }
         // Master clock — descent phase: advance the EDL time (DescentScene is
         // clock-driven, externalClock=true). At touchdown DescentScene's own
@@ -5636,7 +5671,13 @@
           // clock still ticks the honest MET. Planetary EDL keeps its real-time ×.
           const earthReentry = descentProfile?.body === 'earth';
           const rate = earthReentry ? (descentDurationS / 30) * (descentSpeed / 3) : descentSpeed;
-          descentT = Math.min(descentDurationS, descentT + dt * rate);
+          // Slow-mo beat (item 3): ease down through each EDL money shot —
+          // chute, heat-shield/backshell sep, skycrane, retro, touchdown. The
+          // window scales with duration so the heavily-compressed Earth re-entry
+          // (100+ min → 30 s wall) still gets a visible beat, not a 3-s blip.
+          const win = Math.max(3.2, descentDurationS * 0.015);
+          const slow = sepSlowmoFactor(descentT, descentSepTimes, win);
+          descentT = Math.min(descentDurationS, descentT + dt * rate * slow);
         }
         // Master clock — coast phase (Tier-1 Earth-orbit): advance the on-orbit
         // days across a fixed ~22s wall-time play (the REV/date counters carry the

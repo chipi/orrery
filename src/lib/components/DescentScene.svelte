@@ -35,6 +35,12 @@
     formatDescentAltitude,
   } from '$lib/orbital/descent-hud';
   import { formatDescentClock } from '$lib/orbital/ascent-clock';
+  import {
+    ENTRY_TIMELINE_FRAC,
+    terminalStartTime,
+    warpDescentTime as warpTime,
+    unwarpDescentTime as unwarpTime,
+  } from '$lib/orbital/descent-timewarp';
   import { BODY_LABEL } from '$lib/orbital/descent-physics-constants';
   import { onLayerChange } from '$lib/science-layers';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
@@ -140,29 +146,13 @@
   // sliver at the very end. We warp the SAMPLE time so the entry owns the first
   // ~45% of the scrubber and the terminal owns the rest; the clock + timeline
   // markers derive from the same warp so everything stays in sync.
-  const ENTRY_TIMELINE_FRAC = 0.45;
-  // The entry ends when the phase leaves 'ballistic_entry' (chute deploy / first
-  // terminal phase) — robust across bodies + archetypes, and in the 1-DOF model
-  // this is very late in trajectory time (which is exactly why it needs warping).
-  const terminalStartT = $derived.by(() => {
-    const s = summary.states.find((st) => st.phaseKind !== 'ballistic_entry');
-    return s ? s.t : duration * 0.9;
-  });
-  function warpDescentTime(rawT: number): number {
-    if (duration <= 0) return rawT;
-    const f = Math.max(0, Math.min(1, rawT / duration));
-    const tB = terminalStartT;
-    if (f <= ENTRY_TIMELINE_FRAC) return (f / ENTRY_TIMELINE_FRAC) * tB;
-    return tB + ((f - ENTRY_TIMELINE_FRAC) / (1 - ENTRY_TIMELINE_FRAC)) * (duration - tB);
-  }
-  function unwarpDescentTime(trajT: number): number {
-    if (duration <= 0) return trajT;
-    const tB = terminalStartT;
-    if (trajT <= tB) return (tB > 0 ? trajT / tB : 0) * ENTRY_TIMELINE_FRAC * duration;
-    return (
-      (ENTRY_TIMELINE_FRAC + ((trajT - tB) / (duration - tB)) * (1 - ENTRY_TIMELINE_FRAC)) * duration
-    );
-  }
+  // Entry/terminal warp lives in a shared pure module so the /fly play-clock can
+  // find where a sep event lands in raw scrubber time (descent-timewarp.ts).
+  const terminalStartT = $derived.by(() => terminalStartTime(summary.states, duration));
+  const warpDescentTime = (rawT: number): number =>
+    warpTime(rawT, duration, terminalStartT, ENTRY_TIMELINE_FRAC);
+  const unwarpDescentTime = (trajT: number): number =>
+    unwarpTime(trajT, duration, terminalStartT, ENTRY_TIMELINE_FRAC);
 
   // The 1-DOF shallow-corridor model yields an unphysically long path (~100 min);
   // a real capsule entry-interface → splashdown is ~14 min. For Earth we display a

@@ -5,6 +5,9 @@ import {
   composeShot,
   selectShot,
   sepProgress,
+  sepSlowmoFactor,
+  SEP_SLOWMO_MIN_FACTOR,
+  SEP_SLOWMO_WINDOW_S,
   type AscentShotName,
 } from './ascent-cameras';
 import { integrateAscent, type AscentState } from './ascent-physics';
@@ -142,5 +145,44 @@ describe('fairing shot', () => {
     const w = schedule.find((x) => x.name === 'fairing')!;
     expect(met).toBeGreaterThanOrEqual(w.tStart);
     expect(met).toBeLessThanOrEqual(w.tEnd);
+  });
+});
+
+describe('sepSlowmoFactor', () => {
+  const events = [100, 200, 300];
+
+  it('is full rate (1) far from any event', () => {
+    expect(sepSlowmoFactor(50, events)).toBe(1);
+    expect(sepSlowmoFactor(150, events)).toBe(1); // exactly between, > window away
+  });
+
+  it('dips to the minimum factor exactly at an event', () => {
+    expect(sepSlowmoFactor(200, events)).toBeCloseTo(SEP_SLOWMO_MIN_FACTOR, 6);
+  });
+
+  it('eases smoothly between full rate and the minimum inside the window', () => {
+    const half = SEP_SLOWMO_WINDOW_S / 2;
+    const mid = sepSlowmoFactor(100 + half, events);
+    expect(mid).toBeGreaterThan(SEP_SLOWMO_MIN_FACTOR);
+    expect(mid).toBeLessThan(1);
+    // Monotone: closer to the event ⇒ slower.
+    expect(sepSlowmoFactor(100 + 0.5, events)).toBeLessThan(sepSlowmoFactor(100 + 2.5, events));
+  });
+
+  it('is symmetric around an event', () => {
+    expect(sepSlowmoFactor(100 - 1.1, events)).toBeCloseTo(sepSlowmoFactor(100 + 1.1, events), 6);
+  });
+
+  it('ignores undefined event times and returns 1 when none are defined', () => {
+    expect(sepSlowmoFactor(200, [undefined, undefined])).toBe(1);
+    expect(sepSlowmoFactor(200, [])).toBe(1);
+    expect(sepSlowmoFactor(300.2, [undefined, 300])).toBeLessThan(1);
+  });
+
+  it('respects a custom window', () => {
+    // With a 100-s window, a point 40 s from the event is still slowed.
+    expect(sepSlowmoFactor(140, events, 100)).toBeLessThan(1);
+    // With the default ~3-s window, the same point is full rate.
+    expect(sepSlowmoFactor(140, events)).toBe(1);
   });
 });

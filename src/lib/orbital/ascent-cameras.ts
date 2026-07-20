@@ -71,6 +71,39 @@ export function sepProgress(t: number, eventT: number | undefined, durationS: nu
   return Math.min(1, Math.max(0, (t - eventT) / durationS));
 }
 
+/** Half-width (s) of the slow-motion window centred on a separation event. */
+export const SEP_SLOWMO_WINDOW_S = 3.2;
+/** Play-rate multiplier at the separation instant (30% of nominal). */
+export const SEP_SLOWMO_MIN_FACTOR = 0.3;
+
+/**
+ * Cinematic "beat": a play-rate multiplier (SEP_SLOWMO_MIN_FACTOR…1) that eases
+ * the clock into slow-motion as it passes each separation event, then back to
+ * full rate — so booster staging / fairing jettison / payload sep / heat-shield
+ * & backshell sep read as an event instead of blitzing past at ×N. 1 far from
+ * any event, dipping to SEP_SLOWMO_MIN_FACTOR at the event, smoothstep-eased.
+ *
+ * Pure + play-only: it scales the *advance*, never the scrubbed position, so
+ * scrubbing stays exact. `eventTimes` are in the same time base as `t`.
+ */
+export function sepSlowmoFactor(
+  t: number,
+  eventTimes: (number | undefined)[],
+  windowS = SEP_SLOWMO_WINDOW_S,
+  minFactor = SEP_SLOWMO_MIN_FACTOR,
+): number {
+  let nearest = Infinity;
+  for (const e of eventTimes) {
+    if (e == null) continue;
+    const d = Math.abs(t - e);
+    if (d < nearest) nearest = d;
+  }
+  if (!Number.isFinite(nearest) || nearest >= windowS) return 1;
+  const p = nearest / windowS; // 0 at the event → 1 at the window edge
+  const eased = p * p * (3 - 2 * p); // smoothstep
+  return minFactor + (1 - minFactor) * eased;
+}
+
 /**
  * Build the ordered shot schedule from the ascent beats. Missing beats
  * (e.g. a single-stage vehicle with no staging) fall back to sensible

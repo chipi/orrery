@@ -379,6 +379,27 @@
   );
   let availableLayers = $derived<LayerKey[]>([...SEGMENT_LAYERS[flySegment]]);
 
+  // Segment-transition seam: the full-screen launch/coast/descent overlays swap
+  // instantly on an {#if}. A brief dark pulse on each segment change softens the
+  // hard cut into a clean beat. Skips the initial mount.
+  let seamFadeOpacity = $state(0);
+  let seamInit = false;
+  let seamTimer: ReturnType<typeof setTimeout> | undefined;
+  $effect(() => {
+    const _seg = flySegment; // track segment changes
+    void _seg;
+    untrack(() => {
+      if (!seamInit) {
+        seamInit = true;
+        return;
+      }
+      seamFadeOpacity = 0.85;
+      clearTimeout(seamTimer);
+      seamTimer = setTimeout(() => (seamFadeOpacity = 0), 120);
+    });
+    return () => clearTimeout(seamTimer);
+  });
+
   let earthCoast = $derived(getEarthOrbitCoast(mission.id));
   // The coast is the "cruise" act of the unified pad→orbit→re-entry timeline for
   // Earth-orbit missions: `coastMetDays` is the elapsed on-orbit time (the master
@@ -7325,6 +7346,9 @@
   />
 {/if}
 
+<!-- Segment-transition seam pulse (see seamFadeOpacity effect above). -->
+<div class="seam-fade" style="opacity:{seamFadeOpacity}" aria-hidden="true"></div>
+
 <!-- Orbit-insertion beat (RFC-034 §12) — an orbiter's capture burn at arrival,
      the mirror of the launch injection burn. Top-center amber callout. -->
 {#if oiBeatActive && orbitInsertion && !hudHidden}
@@ -8618,6 +8642,16 @@
 <style>
   /* Orbit-insertion beat (RFC-034 §12) — top-center amber capture-burn callout
      at an orbiter's arrival, mirroring the launch injection-burn callout. */
+  /* Segment-transition seam pulse — a brief dark dip that softens the instant
+     launch/coast/descent overlay swap into a clean beat. */
+  .seam-fade {
+    position: fixed;
+    inset: 0;
+    z-index: 250;
+    pointer-events: none;
+    background: #03040a;
+    transition: opacity 0.32s ease-out;
+  }
   .oi-callout {
     position: fixed;
     top: 74px;

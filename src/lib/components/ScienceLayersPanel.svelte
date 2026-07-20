@@ -58,16 +58,12 @@
   let { available = [], title, body, tab, section, historicalFoundations = [] }: Props = $props();
 
   let lensOn = $state(false);
-  // Collapse state: panel ships expanded by default on desktop (room
-  // for the body + 12-layer toggle grid), collapsed by default on
-  // mobile (≤600 px) — the expanded panel was overlapping bottom-
-  // anchored content like /fly's CAPCOM ticker (issue #126), and the
-  // collapsed strip is enough on first paint to advertise that the
-  // lens is available. State is local-only — re-defaults on next
-  // route mount.
-  let expanded = $state(
-    typeof window === 'undefined' ? true : !window.matchMedia('(max-width: 600px)').matches,
-  );
+  // Collapse state: the panel ships COLLAPSED to its strip on first paint (all
+  // viewports). The expanded body + 12-layer grid eclipsed ~40% of the 3D scene
+  // on /fly — the whole point of turning the lens on is to SEE the overlays, so
+  // the scene wins by default and the strip ("SCIENCE LENS ▸") advertises the
+  // toggles a click away. State is local-only — re-defaults on next route mount.
+  let expanded = $state(false);
   // Per-layer reactive state mirroring the attribute store. Driven by
   // onLayerChange subscriptions so users see immediate feedback even if
   // another part of the app flipped a layer.

@@ -5562,9 +5562,7 @@
           // it to a fixed ~30s wall-time play (scaled by the speed pills) — the HUD
           // clock still ticks the honest MET. Planetary EDL keeps its real-time ×.
           const earthReentry = descentProfile?.body === 'earth';
-          const rate = earthReentry
-            ? (descentDurationS / 30) * (descentSpeed / 3)
-            : descentSpeed;
+          const rate = earthReentry ? (descentDurationS / 30) * (descentSpeed / 3) : descentSpeed;
           descentT = Math.min(descentDurationS, descentT + dt * rate);
         }
         // Master clock — coast phase (Tier-1 Earth-orbit): advance the on-orbit
@@ -7265,8 +7263,12 @@
       <div class="recovery-eyebrow">{recoveryOutcome.eyebrow}</div>
       <div class="recovery-name">{mission.name}</div>
       <div class="recovery-line">
-        {descentProfile.landingSite.lat.toFixed(2)}° {descentProfile.landingSite.lat >= 0 ? 'N' : 'S'},
-        {Math.abs(descentProfile.landingSite.lon).toFixed(2)}° {descentProfile.landingSite.lon >= 0 ? 'E' : 'W'}
+        {descentProfile.landingSite.lat.toFixed(2)}° {descentProfile.landingSite.lat >= 0
+          ? 'N'
+          : 'S'},
+        {Math.abs(descentProfile.landingSite.lon).toFixed(2)}° {descentProfile.landingSite.lon >= 0
+          ? 'E'
+          : 'W'}
       </div>
       {#if mission.id && RECOVERY_CAPTIONS[mission.id]}
         <div class="recovery-caption">{RECOVERY_CAPTIONS[mission.id]()}</div>
@@ -7317,7 +7319,9 @@
           : showRecovery
             ? 'RECOVERY'
             : 'IDLE'}
-    {@const renderedLoops = earthCoast.suborbital ? 0 : Math.min(LEO_LOOP_CAP, earthCoast.revolutions)}
+    {@const renderedLoops = earthCoast.suborbital
+      ? 0
+      : Math.min(LEO_LOOP_CAP, earthCoast.revolutions)}
     {@const liveRev = Math.min(
       earthCoast.revolutions,
       Math.floor(coastFrac * earthCoast.revolutions) + 1,
@@ -7355,7 +7359,10 @@
             : 'IMPACT'}
         </div>
       {/if}
-      {#if showRecovery}<div class="t1-row"><strong>recovery</strong> {recoveryOutcome.eyebrow}</div>{/if}
+      {#if showRecovery}<div class="t1-row">
+          <strong>recovery</strong>
+          {recoveryOutcome.eyebrow}
+        </div>{/if}
     </div>
   {:else if mission.flight?.events && outPts.length > 0}
     {@const flybyEventsForDebug = (mission.flight.events ?? []).filter(
@@ -7898,7 +7905,7 @@
             onclick={startLaunch}
           >
             <span aria-hidden="true">▲</span>
-            <span>START WITH LAUNCH</span>
+            <span>{m.fly_start_with_launch()}</span>
           </button>
         {/if}
         {#if descentProfile}
@@ -7909,7 +7916,7 @@
             onclick={startDescent}
           >
             <span aria-hidden="true">▼</span>
-            <span>SKIP TO LANDING</span>
+            <span>{m.fly_skip_to_landing()}</span>
           </button>
         {/if}
         <button

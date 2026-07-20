@@ -12,6 +12,7 @@
 -->
 <script lang="ts">
   import { onMount, onDestroy, untrack } from 'svelte';
+  import * as m from '$lib/paraglide/messages';
   import { base } from '$app/paths';
   import {
     createDescentScene,
@@ -261,7 +262,13 @@
        blackout → drogue → main sequence (RFC-034 §13). -->
   <div class="lamps">
     {#if isEarthReentry}
-      <span class="lamp blackout" class:on={inBlackout}>BLACKOUT</span>
+      <span class="lamp blackout" class:on={inBlackout}
+        >BLACKOUT<ScienceChip
+          tab="mission-phases"
+          section="comms-blackout"
+          label="Communications blackout"
+        /></span
+      >
       <span class="lamp" class:on={drogueOut}>DROGUE</span>
       <span class="lamp" class:on={mainOut}>MAIN</span>
     {:else}
@@ -283,7 +290,11 @@
           tab="mission-phases"
           section="edl"
           label="Entry, Descent & Landing"
-        />{#if mission.edlSystem === 'Sky-crane'}<ScienceChip
+        />{#if isEarthReentry}<ScienceChip
+            tab="mission-phases"
+            section="deorbit-corridor"
+            label="Deorbit & the re-entry corridor"
+          />{/if}{#if mission.edlSystem === 'Sky-crane'}<ScienceChip
             tab="mission-phases"
             section="skycrane"
             label="Sky-crane"
@@ -345,7 +356,7 @@
   </div>
 
   {#if !flashing}
-    <button class="continue" onclick={complete}>SKIP TO SURFACE →</button>
+    <button class="continue" onclick={complete}>{m.fly_skip_to_surface()} →</button>
   {/if}
 
   <!-- Compact always-on mobile strip — phase + altitude + velocity, shown on

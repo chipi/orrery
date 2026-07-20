@@ -78,7 +78,11 @@ function urlPathOf(diskPath: string): string {
 
 async function main(): Promise<void> {
   const force = process.argv.includes('--force');
-  const cache = force ? loadCache() : loadCache();
+  const cache = loadCache();
+  // Capture the committed entry count BEFORE --force wipes the working set —
+  // the shrink guard below compares against this, so a --force rebuild that
+  // degrades is still caught (previously --force zeroed the count → guard dead).
+  const priorCount = Object.keys(cache.phashes).length;
   if (force) cache.phashes = {};
   const cacheCutoff = new Date(cache.computed_at).getTime();
   const startedAt = new Date();
@@ -141,12 +145,11 @@ async function main(): Promise<void> {
   // Root-cause-agnostic — catches stub degradation, a bad walk, anything that
   // would shrink the committed cache. Bypass with --allow-shrink for a real
   // prune. (2026-07-20: silent 2560→5 shrink shipped before this existed.)
-  const existingCount = Object.keys(cache.phashes).length;
   const newCount = Object.keys(out.phashes).length;
-  if (!process.argv.includes('--allow-shrink') && existingCount > 50 && newCount < existingCount * 0.9) {
+  if (!process.argv.includes('--allow-shrink') && priorCount > 50 && newCount < priorCount * 0.9) {
     console.error(
-      `✗ refusing to write: ${newCount} entries vs ${existingCount} existing — a ` +
-        `${Math.round((1 - newCount / existingCount) * 100)}% drop (degraded-regen signature).\n` +
+      `✗ refusing to write: ${newCount} entries vs ${priorCount} existing — a ` +
+        `${Math.round((1 - newCount / priorCount) * 100)}% drop (degraded-regen signature).\n` +
         `  Pull masters (git lfs pull -I 'masters/**') and retry, or pass --allow-shrink if intentional.`,
     );
     process.exit(1);

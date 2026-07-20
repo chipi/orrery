@@ -15,6 +15,7 @@
  */
 
 import * as THREE from 'three';
+import { BoldArrow } from './bold-arrow';
 import { gravity, type AscentEvent, type AscentState } from '$lib/orbital/ascent-physics';
 import {
   activeShotAt,
@@ -382,15 +383,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const SPEED_REF = 7.8; // km/s → 2·vehLen
   const forces = new THREE.Group();
   forces.visible = false;
-  const mkArrow = (hex: number): THREE.ArrowHelper =>
-    new THREE.ArrowHelper(
-      new THREE.Vector3(0, 1, 0),
-      new THREE.Vector3(),
-      vehLen,
-      hex,
-      vehLen * 0.28,
-      vehLen * 0.16,
-    );
+  const mkArrow = (hex: number): BoldArrow =>
+    new BoldArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(), vehLen, hex);
   const arrThrust = mkArrow(FORCE_COLORS.thrust);
   const arrWeight = mkArrow(FORCE_COLORS.weight);
   const arrDrag = mkArrow(FORCE_COLORS.drag);
@@ -460,7 +454,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const updateForces = (s: AscentState): void => {
     const origin = new THREE.Vector3(s.downrangeKm, s.altKm, 0);
     const setArrow = (
-      arr: THREE.ArrowHelper,
+      arr: BoldArrow,
       key: ForceKey,
       dx: number,
       dy: number,
@@ -472,7 +466,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       arr.position.copy(origin);
       _v.set(dx, dy, 0).normalize();
       arr.setDirection(_v);
-      arr.setLength(lenKm, vehLen * 0.28, vehLen * 0.16);
+      arr.setLength(lenKm, vehLen * 0.3, vehLen * 0.11);
     };
     // Thrust — up the commanded body axis.
     const tl = (s.thrustN / FORCE_REF_N) * vehLen * 2.2;

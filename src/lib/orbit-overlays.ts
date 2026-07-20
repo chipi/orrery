@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { BoldArrow } from './three/bold-arrow';
 
 /**
  * Orbit-overlay helpers — Phase G of the /science integration roadmap.
@@ -93,13 +94,13 @@ export function buildSoIRing(
  * a source body. Length is set by the caller per frame based on a log
  * scaling so multiple arrows of vastly different magnitudes coexist.
  *
- * Returns a THREE.ArrowHelper pre-configured with style; the caller
+ * Returns a BoldArrow pre-configured with style; the caller
  * sets direction + length each frame via `setDirection()` + `setLength()`.
  */
-export function buildGravityArrow(label: 'earth' | 'sun', color = 0x6aa9ff): THREE.ArrowHelper {
+export function buildGravityArrow(label: 'earth' | 'sun', color = 0x6aa9ff): BoldArrow {
   const dir = new THREE.Vector3(1, 0, 0);
   const origin = new THREE.Vector3(0, 0, 0);
-  const arrow = new THREE.ArrowHelper(dir, origin, 1, color, 0.18, 0.1);
+  const arrow = new BoldArrow(dir, origin, 1, color, 0.3, 0.1);
   arrow.name = `gravity_${label}`;
   arrow.userData.layerKey = 'gravity';
   arrow.visible = false;

@@ -15,6 +15,7 @@
  */
 
 import * as THREE from 'three';
+import { BoldArrow } from './bold-arrow';
 import {
   bodyGravity,
   type DescentBody,
@@ -324,15 +325,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // ── Science-Lens force vectors (thrust up / weight down / drag up / velocity down).
   const forces = new THREE.Group();
   forces.visible = false;
-  const mkArrow = (hex: number): THREE.ArrowHelper =>
-    new THREE.ArrowHelper(
-      new THREE.Vector3(0, 1, 0),
-      new THREE.Vector3(),
-      vehLen,
-      hex,
-      vehLen * 0.28,
-      vehLen * 0.16,
-    );
+  const mkArrow = (hex: number): BoldArrow =>
+    new BoldArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(), vehLen, hex);
   const arrThrust = mkArrow(FORCE_COLORS.thrust);
   const arrWeight = mkArrow(FORCE_COLORS.weight);
   const arrDrag = mkArrow(FORCE_COLORS.drag);
@@ -357,14 +351,14 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const _v = new THREE.Vector3();
   const updateForces = (s: DescentState): void => {
     const origin = new THREE.Vector3(0, s.altKm, 0);
-    const setArrow = (arr: THREE.ArrowHelper, key: ForceKey, dy: number, lenKm: number): void => {
+    const setArrow = (arr: BoldArrow, key: ForceKey, dy: number, lenKm: number): void => {
       const on = forceVisible[key] && lenKm > vehLen * 0.05 && dy !== 0;
       arr.visible = on;
       if (!on) return;
       arr.position.copy(origin);
       _v.set(0, dy, 0).normalize();
       arr.setDirection(_v);
-      arr.setLength(lenKm, vehLen * 0.28, vehLen * 0.16);
+      arr.setLength(lenKm, vehLen * 0.3, vehLen * 0.11);
     };
     // Thrust — retro, up.
     setArrow(arrThrust, 'thrust', 1, s.thrustN > 0 ? (s.thrustN / FORCE_REF_N) * vehLen * 2 : 0);

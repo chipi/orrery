@@ -20,6 +20,7 @@
 import * as THREE from 'three';
 import { parkingOrbit } from '$lib/orbital/cislunar/cislunar-geometry';
 import type { FlightPhaseScene, ForceKey } from './flight-phase-scene';
+import { BoldArrow } from './bold-arrow';
 
 const R_EARTH_KM = 6371;
 /** Rendered orbit loops are capped here; the REV counter still shows real N. */
@@ -159,30 +160,11 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   // balance. Colors match the ascent/descent force legend (weight=red,
   // velocity=cyan) with a distinct gold centripetal.
   const COAST_FORCE_COLORS = { weight: 0xff5a5a, velocity: 0x7fe0ff, centripetal: 0xffc850 };
-  const FORCE_LEN = 3000; // km — reads against the orbit without swamping the frame
-  const mkArrow = (hex: number): THREE.ArrowHelper => {
-    const a = new THREE.ArrowHelper(
-      new THREE.Vector3(0, 1, 0),
-      new THREE.Vector3(),
-      FORCE_LEN,
-      hex,
-      FORCE_LEN * 0.26,
-      FORCE_LEN * 0.16,
-    );
-    // Draw the force vectors as always-on-top overlays so they stay legible
-    // against the bright Earth limb and aren't occluded by the capsule model —
-    // standard treatment for a physics-diagram vector.
-    for (const child of [a.line, a.cone]) {
-      const mat = child.material as THREE.Material;
-      mat.depthTest = false;
-      mat.depthWrite = false;
-      mat.transparent = true;
-    }
-    a.renderOrder = 999;
-    a.line.renderOrder = 999;
-    a.cone.renderOrder = 999;
-    return a;
-  };
+  // Length is set per-frame from the camera distance so the arrows hold a
+  // constant on-screen size (~11% of the view) instead of a fixed world size
+  // that balloons on the close TRACK shots — construct at a placeholder.
+  const mkArrow = (hex: number): BoldArrow =>
+    new BoldArrow(new THREE.Vector3(0, 1, 0), new THREE.Vector3(), 1, hex);
   const arrWeight = mkArrow(COAST_FORCE_COLORS.weight);
   const arrVel = mkArrow(COAST_FORCE_COLORS.velocity);
   const arrCentripetal = mkArrow(COAST_FORCE_COLORS.centripetal);
@@ -267,16 +249,23 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
     capsule.lookAt(ahead);
 
     // Science-Lens force arrows: velocity along the tangent, gravity + the
-    // centripetal it supplies both radially inward. Offset the centripetal
-    // arrow slightly downrange so it reads as a distinct vector, not one drawn
-    // twice — the lesson being that they coincide (gravity = centripetal force).
+    // centripetal it supplies both radially inward. Size them to a constant
+    // fraction of the camera distance so they read the same on-screen whether
+    // the camera is on the wide establishing shot or the close track shot.
     const inward = radial.clone().negate();
     const tangent = ahead.clone().sub(pos).normalize();
+    const armLen = camera.position.distanceTo(pos) * 0.13;
+    for (const a of [arrWeight, arrVel, arrCentripetal]) {
+      a.setLength(armLen, armLen * 0.3, armLen * 0.1);
+    }
     arrWeight.position.copy(pos);
     arrWeight.setDirection(inward);
     arrVel.position.copy(pos);
     arrVel.setDirection(tangent);
-    arrCentripetal.position.copy(pos).addScaledVector(tangent, FORCE_LEN * 0.16);
+    // Offset the centripetal arrow slightly downrange so it reads as a distinct
+    // vector beside gravity — the lesson being they coincide (gravity IS the
+    // centripetal force).
+    arrCentripetal.position.copy(pos).addScaledVector(tangent, armLen * 0.22);
     arrCentripetal.setDirection(inward);
 
     // Earth rotates through the coast (a full mission is many hours → visible spin).

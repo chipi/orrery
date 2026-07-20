@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { BoldArrow } from './bold-arrow';
 import { R_EARTH_KM, R_MOON_KM } from '$lib/orbital/cislunar/cislunar-geometry';
 
 /**
@@ -80,13 +81,13 @@ export interface CislunarSceneHandles {
 
 export interface CislunarOverlays {
   /** Earth-gravity arrow (blue) on the spacecraft → Earth direction. */
-  gravityEarth: THREE.ArrowHelper;
+  gravityEarth: BoldArrow;
   /** Moon-gravity arrow (gray) on the spacecraft → Moon direction. */
-  gravityMoon: THREE.ArrowHelper;
+  gravityMoon: BoldArrow;
   /** Velocity tangent arrow (teal). */
-  velocity: THREE.ArrowHelper;
+  velocity: BoldArrow;
   /** Centripetal arrow (red), points toward the dominant body. */
-  centripetal: THREE.ArrowHelper;
+  centripetal: BoldArrow;
   /** Perigee marker (pink) — placed each frame at the orbit's min-r
    *  point with respect to the active central body. */
   periMarker: THREE.Mesh;
@@ -266,7 +267,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
   const ARROW_HEAD_LEN = 0.7;
   const ARROW_HEAD_W = 0.4;
 
-  const gravityEarth = new THREE.ArrowHelper(
+  const gravityEarth = new BoldArrow(
     new THREE.Vector3(-1, 0, 0),
     new THREE.Vector3(0, 0, 0),
     ARROW_LEN,
@@ -277,7 +278,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
   gravityEarth.visible = false;
   scene.add(gravityEarth);
 
-  const gravityMoon = new THREE.ArrowHelper(
+  const gravityMoon = new BoldArrow(
     new THREE.Vector3(1, 0, 0),
     new THREE.Vector3(0, 0, 0),
     ARROW_LEN,
@@ -288,7 +289,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
   gravityMoon.visible = false;
   scene.add(gravityMoon);
 
-  const velocity = new THREE.ArrowHelper(
+  const velocity = new BoldArrow(
     new THREE.Vector3(1, 0, 0),
     new THREE.Vector3(0, 0, 0),
     ARROW_LEN,
@@ -299,7 +300,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
   velocity.visible = false;
   scene.add(velocity);
 
-  const centripetal = new THREE.ArrowHelper(
+  const centripetal = new BoldArrow(
     new THREE.Vector3(-1, 0, 0),
     new THREE.Vector3(0, 0, 0),
     ARROW_LEN,

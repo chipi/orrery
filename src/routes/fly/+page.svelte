@@ -217,6 +217,7 @@
   import ConicSectionPanel from '$lib/components/ConicSectionPanel.svelte';
   import MobileControlsDrawer from '$lib/components/MobileControlsDrawer.svelte';
   import { isLayerOn, onLayerChange, type LayerKey } from '$lib/science-layers';
+  import { BoldArrow } from '$lib/three/bold-arrow';
   import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
   import { track, trackMissionComplete } from '$lib/analytics';
 
@@ -3282,7 +3283,7 @@
     // gap-fill. Velocity is tangent to motion (teal), centripetal points
     // inward toward the Sun (red, paired with gravity). Lengths are
     // updated per frame in the animate() loop.
-    const velocityArrow = new THREE.ArrowHelper(
+    const velocityArrow = new BoldArrow(
       new THREE.Vector3(1, 0, 0),
       new THREE.Vector3(0, 0, 0),
       8,
@@ -3290,7 +3291,7 @@
       1.4,
       0.8,
     );
-    const centripetalArrow = new THREE.ArrowHelper(
+    const centripetalArrow = new BoldArrow(
       new THREE.Vector3(-1, 0, 0),
       new THREE.Vector3(0, 0, 0),
       8,

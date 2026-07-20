@@ -21,6 +21,7 @@ import {
   buildCoastLine,
   integrateCoast,
 } from './orbit-overlays';
+import { BoldArrow } from './three/bold-arrow';
 
 describe('SOI radii', () => {
   it('matches the known canonical sphere-of-influence values (within 5%)', () => {
@@ -177,9 +178,9 @@ describe('buildSoIRing', () => {
 });
 
 describe('buildGravityArrow', () => {
-  it('returns an ArrowHelper named gravity_<label>', () => {
+  it('returns a BoldArrow named gravity_<label>', () => {
     const a = buildGravityArrow('earth');
-    expect(a).toBeInstanceOf(THREE.ArrowHelper);
+    expect(a).toBeInstanceOf(BoldArrow);
     expect(a.name).toBe('gravity_earth');
   });
 
@@ -191,8 +192,12 @@ describe('buildGravityArrow', () => {
 
   it('uses the requested color', () => {
     const a = buildGravityArrow('earth', 0xff0000);
-    const lineMat = (a.line as THREE.Line).material as THREE.LineBasicMaterial;
-    expect(lineMat.color.getHex()).toBe(0xff0000);
+    // BoldArrow's shaft + head are child meshes with MeshBasicMaterial.
+    const mesh = a.children.find(
+      (c): c is THREE.Mesh => c instanceof THREE.Mesh,
+    ) as THREE.Mesh;
+    const mat = mesh.material as THREE.MeshBasicMaterial;
+    expect(mat.color.getHex()).toBe(0xff0000);
   });
 });
 

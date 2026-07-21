@@ -143,7 +143,13 @@ jobs:
           !startsWith(github.event.workflow_run.head_commit.message, 'chore(visual): regenerate snapshot')
         )
       }}
-    timeout-minutes: 45
+    # 45 → 60: the launch/ascent+descent epic (2026-07) added a large batch of
+    # /fly + surface 3D specs, pushing the heaviest shard (mobile-landscape 1-of-2:
+    # 21 min pre-epic → 36+ min) and desktop 1-of-2 (~40 min) close to / over the
+    # old 45-min cap. No test failures — a capacity cap, not a bug. Headroom to 60;
+    # if shards keep creeping up, split them further (the scalable fix) rather than
+    # raising this again.
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:

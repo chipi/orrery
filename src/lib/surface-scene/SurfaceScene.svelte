@@ -70,7 +70,6 @@
   import { getMissionIndex } from '$lib/data';
   import type { EarthObject } from '$types/earth-object';
   import { createSceneRenderer, disposeSceneRenderer } from '$lib/three/scene-renderer';
-  import { heroEnvironment } from '$lib/three/hero-materials';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
   import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
@@ -1093,11 +1092,13 @@
     const renderer = createSceneRenderer(container, {
       pixelRatioCap: quality.pixelRatioCap,
     });
-    // Hero IBL: give the PBR lander/rover models (MeshStandard) real
-    // reflections + glints. The terrain/sky/imagery are MeshBasic (unlit), so
-    // the environment doesn't touch them; only the models pick it up. Tone
-    // mapping is left as the renderer default so the surface look is unchanged.
-    scene.environment = heroEnvironment(renderer);
+    // NOTE: the hero IBL environment (scene.environment = heroEnvironment) was
+    // removed here — on the GPU-less CI runner (SwiftShader, no hardware GL) the
+    // per-frame IBL sampling on the surface's PBR models starved the rAF-driven
+    // smooth-zoom, tipping the heavy flat-patch / mount-perf desktop e2e tests
+    // past their 30s wall (consistent failure, not flake; regressed the
+    // previously-green docker-e2e). Reflections on the small lander/rover models
+    // aren't worth that cost on the surface scene; /fly + /iss keep their IBL.
 
     // EffectComposer for hover-outline (mirrors /iss + /mars pattern).
     // Skipped on `minimal` / `low` tiers — those render directly via

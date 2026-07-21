@@ -43,6 +43,12 @@ async function zoomIntoSurface(page: Page): Promise<void> {
 }
 
 test.describe('SurfaceFlatPatch — sphere → flat-patch transition (desktop)', () => {
+  // The heaviest interactive-3D flow in the suite: it pumps ~25 wheel events and
+  // relies on the rAF-driven smooth-zoom lerp to cross the flat-patch threshold.
+  // On the GPU-less CI runner (SwiftShader, no hardware GL) that render loop runs
+  // far slower than local, so the default 30s wall is too tight even though the
+  // feature works (~5-6s local). Triple the budget for this describe block.
+  test.slow();
   test.beforeEach(({ isMobile }) => {
     // Mobile-chromium can't simulate the wheel-zoom that fires the
     // sphere → flat-patch trigger. Playwright's touch-pinch helpers

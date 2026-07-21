@@ -79,6 +79,9 @@ for (const route of ROUTES) {
 test('/mars — selecting a rover lazily loads its route imagery (feature intact)', async ({
   page,
 }) => {
+  // Heavy /mars surface interaction (mount + rover select + lazy imagery); the
+  // GPU-less CI runner renders it far slower than local, so give it 3× the wall.
+  test.slow();
   const hotspotReqs: string[] = [];
   page.on('request', (r) => {
     if (r.resourceType() === 'image' && isHotspotImage(r.url())) hotspotReqs.push(r.url());

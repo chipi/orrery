@@ -82,6 +82,15 @@ export interface QualityConfig {
    *  existing Points-based star field. Wired at high+ — the additional
    *  sphere doubles overdraw, so we keep it off on weaker GPUs. */
   skydomeEnabled: boolean;
+  /** Whether to install the hero IBL environment (`heroEnvironment`) on the
+   *  scene. IBL gives the PBR hero models (rockets, capsules, landers, probes)
+   *  real reflections/glints — but per-fragment env sampling is a per-frame GPU
+   *  cost that starves the render loop on software-GL / GPU-less devices (it
+   *  tipped the surface + /fly-descent CI e2e past their timing walls). Wired at
+   *  high+ only, so capable GPUs get the cinematic reflections while weak/
+   *  software-GL renderers (incl. the CI SwiftShader runner, which resolves to
+   *  `medium`/`minimal`) skip it. See feedback_surface_perf_hogs. */
+  iblEnabled: boolean;
   /** Whether to attach a Sun lens flare — a set of additive-blend
    *  procedural sprite "ghosts" stretching from the Sun's screen
    *  position toward the camera center. Cinematic only — the rolling
@@ -110,6 +119,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     filmGrainEnabled: false,
     vignetteEnabled: false,
     skydomeEnabled: false,
+    iblEnabled: false,
     lensFlareEnabled: false,
   },
   low: {
@@ -131,6 +141,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     filmGrainEnabled: false,
     vignetteEnabled: false,
     skydomeEnabled: false,
+    iblEnabled: false,
     lensFlareEnabled: false,
   },
   medium: {
@@ -152,6 +163,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     filmGrainEnabled: true,
     vignetteEnabled: true,
     skydomeEnabled: false,
+    iblEnabled: false,
     lensFlareEnabled: false,
   },
   high: {
@@ -173,6 +185,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     filmGrainEnabled: true,
     vignetteEnabled: true,
     skydomeEnabled: true,
+    iblEnabled: true,
     lensFlareEnabled: false,
   },
   cinematic: {
@@ -194,6 +207,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     filmGrainEnabled: true,
     vignetteEnabled: true,
     skydomeEnabled: true,
+    iblEnabled: true,
     lensFlareEnabled: true,
   },
 };

@@ -20,6 +20,7 @@
     type DescentScene,
   } from '$lib/three/descent-scene';
   import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
+  import { resolveQualitySync } from '$lib/quality/quality-tier';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
   import {
     integrateDescent,
@@ -186,7 +187,11 @@
       events: summary.events,
       peakHeatFlux: summary.peakHeat.flux,
     });
-    ar = createAscentRenderer(container, sceneObj);
+    // Hero IBL only on capable GPUs (high+); software-GL / weak renderers skip
+    // the per-frame reflection cost. quality-tier.ts iblEnabled.
+    ar = createAscentRenderer(container, sceneObj, {
+      iblEnabled: resolveQualitySync().iblEnabled,
+    });
 
     // Science-Lens force vectors — the lens layers drive the scene's arrows.
     const forceLayerStops = DESCENT_FORCE_LAYER_ENTRIES.map(([layer, force]) =>

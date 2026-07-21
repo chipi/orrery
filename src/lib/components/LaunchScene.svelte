@@ -16,6 +16,7 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { createAscentScene, VEHICLE_LENGTH_KM, type AscentScene } from '$lib/three/ascent-scene';
   import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
+  import { resolveQualitySync } from '$lib/quality/quality-tier';
   import { resolveLaunchGround } from '$lib/three/launch-ground';
   import LaunchTelemetry from '$lib/components/LaunchTelemetry.svelte';
   import AscentLosses from '$lib/components/AscentLosses.svelte';
@@ -212,7 +213,11 @@
       })(),
     });
 
-    ar = createAscentRenderer(container, sceneObj);
+    // Hero IBL only on capable GPUs (high+); software-GL / weak renderers skip
+    // the per-frame reflection cost. quality-tier.ts iblEnabled.
+    ar = createAscentRenderer(container, sceneObj, {
+      iblEnabled: resolveQualitySync().iblEnabled,
+    });
 
     // Science-Lens force vectors — the lens panel's thrust / drag / gravity /
     // velocity layers drive the scene's force arrows (RFC-034 §11.2); the lens

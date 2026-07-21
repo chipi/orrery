@@ -343,8 +343,11 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // Hero IBL — the PBR spacecraft/cruise models (MeshStandard) get real
   // reflections + edge glints from the sun-lit space env. The planets +
   // skydome are MeshBasic and the moon is MeshPhong, so none of the scene
-  // backdrop is touched; only the ships pick this up.
-  scene.environment = heroEnvironment(renderer);
+  // backdrop is touched; only the ships pick this up. Tier-gated (high+): the
+  // per-fragment env sampling is a per-frame cost that starves software-GL /
+  // GPU-less renderers, so capable GPUs get the reflections and weak ones skip
+  // them (quality-tier.ts iblEnabled).
+  if (opts.quality.iblEnabled) scene.environment = heroEnvironment(renderer);
 
   // Post-processing pipeline — composer chains a sequence of passes
   // operating on the previous pass's output. Skipped entirely on the

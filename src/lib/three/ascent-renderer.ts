@@ -34,9 +34,19 @@ export interface AscentRenderer {
  * the canvas). Returns the renderer, the composer, and the resize / render /
  * dispose handles the caller drives from its mount + animate loop + teardown.
  */
+export interface AscentRendererOptions {
+  /** Install the hero IBL environment (reflections on the PBR launcher/capsule/
+   *  lander models). Tier-gated by the caller — high+ only. Default false: the
+   *  per-fragment env sampling is a per-frame cost that starves software-GL /
+   *  GPU-less renderers (it tipped the /fly-descent CI e2e handoff over its wall),
+   *  so opt in only when the quality tier can afford it. See quality-tier.ts. */
+  iblEnabled?: boolean;
+}
+
 export function createAscentRenderer(
   container: HTMLElement,
   scene: FlightPhaseScene,
+  opts: AscentRendererOptions = {},
 ): AscentRenderer {
   const w = container.clientWidth;
   const h = container.clientHeight;
@@ -49,8 +59,8 @@ export function createAscentRenderer(
   // Hero IBL — the bespoke launcher (metalness ~0.45) + earth curve pick up
   // real reflections/glints. The pad is rough (barely reflects) and the sky /
   // exhaust glows are MeshBasic (untouched). Layers on top of the scene's own
-  // sun light rather than replacing it.
-  scene.scene.environment = heroEnvironment(renderer);
+  // sun light rather than replacing it. Tier-gated (high+) by the caller.
+  if (opts.iblEnabled) scene.scene.environment = heroEnvironment(renderer);
   container.appendChild(renderer.domElement);
 
   const composer = new EffectComposer(renderer);

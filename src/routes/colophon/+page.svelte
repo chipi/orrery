@@ -213,7 +213,7 @@
         {m.colophon_section_writing()}<span class="count">{data.writing.length}</span>
       </h2>
       <ul class="item-list">
-        {#each data.writing as it (it.title)}
+        {#each data.writing as it (it.route + '@' + it.title)}
           <li class="item">
             <p class="it-title">{it.title}</p>
             <p class="it-what">{it.what}</p>

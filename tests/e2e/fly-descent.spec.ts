@@ -70,9 +70,13 @@ test.describe('descent EDL HUD (desktop)', () => {
     // Beresheet is the shortest descent (~19 s → a few wall-seconds at 3×), so the
     // full pad→surface handoff completes fast + deterministically. It closes the
     // circle onto /moon with the landing site pre-focused.
+    // The handoff plays the DescentScene then mounts the destination SurfaceScene;
+    // on the GPU-less CI runner that render sequence is slow, so the inner
+    // waitForURL must fit inside the 45s test budget (was 30s — too tight on CI,
+    // where it timed out even though the handoff completes; the feature works).
     test.setTimeout(45_000);
     await enterDescent(page, 'beresheet');
-    await page.waitForURL(/\/moon\?.*site=beresheet/, { timeout: 30_000 });
+    await page.waitForURL(/\/moon\?.*site=beresheet/, { timeout: 40_000 });
     expect(page.url()).toContain('from=descent');
   });
 });

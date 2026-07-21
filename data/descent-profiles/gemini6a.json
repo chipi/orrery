@@ -1,0 +1,30 @@
+{
+  "missionId": "gemini6a",
+  "siteId": "gemini6a",
+  "body": "earth",
+  "landingSite": {
+    "lat": 23.6,
+    "lon": -67.8
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7820,
+    "flightPathAngleDeg": 4
+  },
+  "entryMassKg": 2000,
+  "entryCdA": 4.5,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7000,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 133,
+    "terminalCdA": 501
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "gemini6a — NASA/NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    }
+  ]
+}

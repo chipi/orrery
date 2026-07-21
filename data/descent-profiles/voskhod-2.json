@@ -1,0 +1,30 @@
+{
+  "missionId": "voskhod-2",
+  "siteId": "voskhod-2",
+  "body": "earth",
+  "landingSite": {
+    "lat": 59.6,
+    "lon": 55.5
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7820,
+    "flightPathAngleDeg": 4
+  },
+  "entryMassKg": 2680,
+  "entryCdA": 5,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7000,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 179,
+    "terminalCdA": 671
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "voskhod-2 — NASA/NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    }
+  ]
+}

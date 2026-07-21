@@ -307,7 +307,7 @@
     },
     "perseverance": {
       "hotspot_tier_max": 3,
-      "hotspot_model": "curiosity-class-with-ingenuity",
+      "hotspot_model": "perseverance-rover",
       "hotspot_tier2_source": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
       "location_uncertainty_m": 50,
@@ -376,7 +376,7 @@
     },
     "insight": {
       "hotspot_tier_max": 3,
-      "hotspot_model": "phoenix-class",
+      "hotspot_model": "insight-lander",
       "hotspot_tier2_source": "/images/hotspots/mars/insight/tier2-hirise.jpg",
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],

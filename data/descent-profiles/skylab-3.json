@@ -1,0 +1,30 @@
+{
+  "missionId": "skylab-3",
+  "siteId": "skylab-3",
+  "body": "earth",
+  "landingSite": {
+    "lat": 30.8,
+    "lon": -120
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7820,
+    "flightPathAngleDeg": 4
+  },
+  "entryMassKg": 5560,
+  "entryCdA": 6,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7000,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 371,
+    "terminalCdA": 1392
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "skylab-3 — NASA/NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    }
+  ]
+}

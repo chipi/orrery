@@ -1,0 +1,30 @@
+{
+  "missionId": "apollo9",
+  "siteId": "apollo9",
+  "body": "earth",
+  "landingSite": {
+    "lat": 23.2,
+    "lon": -68
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7820,
+    "flightPathAngleDeg": 4
+  },
+  "entryMassKg": 5560,
+  "entryCdA": 6,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7000,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 371,
+    "terminalCdA": 1392
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "apollo9 — NASA/NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    }
+  ]
+}

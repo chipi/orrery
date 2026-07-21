@@ -1,0 +1,60 @@
+{
+  "id": "mercury-redstone",
+  "name": "Mercury-Redstone",
+  "source_tier": "flagship",
+  "payloadKg": 1830,
+  "fairingKg": 0,
+  "fairingJettisonAltM": 80000,
+  "refAreaM2": 4.9,
+  "cd": 0.3,
+  "launchSite": {
+    "lat": 28.44,
+    "lon": -80.57,
+    "name": "LC-5 · Cape Canaveral"
+  },
+  "pitchProgram": [
+    [
+      0,
+      90
+    ],
+    [
+      10,
+      86
+    ],
+    [
+      40,
+      70
+    ],
+    [
+      80,
+      52
+    ],
+    [
+      120,
+      45
+    ],
+    [
+      143,
+      45
+    ]
+  ],
+  "stages": [
+    {
+      "name": "Redstone",
+      "wetKg": 30000,
+      "dryKg": 4400,
+      "thrustSlKN": 350,
+      "thrustVacKN": 390,
+      "ispSlS": 215,
+      "ispVacS": 235,
+      "engines": 1,
+      "chamberTempK": 3000
+    }
+  ],
+  "provenance": [
+    {
+      "l": "NASA — Mercury-Redstone",
+      "u": "https://www.nasa.gov/mission/mercury-redstone-3/"
+    }
+  ]
+}

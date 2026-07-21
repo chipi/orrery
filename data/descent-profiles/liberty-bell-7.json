@@ -1,0 +1,30 @@
+{
+  "missionId": "liberty-bell-7",
+  "siteId": "liberty-bell-7",
+  "body": "earth",
+  "landingSite": {
+    "lat": 27.5,
+    "lon": -75.5
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 2300,
+    "flightPathAngleDeg": 18
+  },
+  "entryMassKg": 1350,
+  "entryCdA": 3,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 5000,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 90,
+    "terminalCdA": 338
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "liberty-bell-7 — NASA/NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    }
+  ]
+}

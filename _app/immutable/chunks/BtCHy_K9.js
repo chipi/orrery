@@ -1,0 +1,1 @@
+import{Ot as e,W as t,y as n}from"./Q63TN4Lo.js";function r(r,i,a,o,s=8){let c=new t(new n(a,a,r.distanceTo(i),s),o);return c.position.copy(r).add(i).multiplyScalar(.5),c.quaternion.setFromUnitVectors(new e(0,1,0),i.clone().sub(r).normalize()),c}export{r as t};

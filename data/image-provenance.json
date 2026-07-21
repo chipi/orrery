@@ -79242,6 +79242,128 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-07-17T14:16:06.154Z"
+    },
+    {
+      "id": "91357bb6fe0fc15f",
+      "path": "/images/missions/huygens/01.webp",
+      "source_type": "direct-other",
+      "title": "Uncurated panel image — missions/huygens",
+      "author": "ESA / NASA",
+      "agency": "ESA / NASA",
+      "source_url": "https://commons.wikimedia.org/",
+      "image_url": null,
+      "license_short": "CC-BY-SA-3.0-IGO",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
+      "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+      "modifications": [
+        "curated-no-upstream-record",
+        "walker-fallback"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-19T06:28:25.887Z"
+    },
+    {
+      "id": "c2244285c329adba",
+      "path": "/images/missions/near-shoemaker/01.webp",
+      "source_type": "direct-other",
+      "title": "Uncurated panel image — missions/near-shoemaker",
+      "author": "NASA / JHU APL",
+      "agency": "NASA / JHU APL",
+      "source_url": "https://commons.wikimedia.org/",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "curated-no-upstream-record",
+        "walker-fallback"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-19T06:28:25.888Z"
+    },
+    {
+      "id": "02d5b4be4571a6c6",
+      "path": "/images/fleet-galleries/soyuz/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Soyuz 18 booster.jpg",
+      "author": "User Audin (Wikimedia Commons)",
+      "agency": "Roscosmos",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz%2018%20booster.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Soyuz%2018%20booster.jpg",
+      "license_short": "PD-Russia",
+      "license_url": "https://en.wikipedia.org/wiki/Copyright_law_of_the_Soviet_Union",
+      "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain.",
+      "modifications": [
+        "curated-commons"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-20T07:35:26.150Z"
+    },
+    {
+      "id": "4c533db300e2d9d4",
+      "path": "/images/fleet-galleries/soyuz/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Soyuz rocket.jpg",
+      "author": "Bill Ingalls / NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz%20rocket.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Soyuz%20rocket.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105).",
+      "modifications": [
+        "curated-commons"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-20T07:35:26.150Z"
+    },
+    {
+      "id": "c5dfb0104bc567f5",
+      "path": "/images/fleet-galleries/soyuz/03.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Soyuz TMA-5 launch.jpg",
+      "author": "Bill Ingalls / NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz%20TMA-5%20launch.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Soyuz%20TMA-5%20launch.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105).",
+      "modifications": [
+        "curated-commons"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-20T07:35:26.150Z"
+    },
+    {
+      "id": "6e4e2271ef4069be",
+      "path": "/images/fleet-galleries/soyuz/04.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Lanzadera espacial Soyuz - Museo de las Ciencias Príncipe Felipe - 001.jpg",
+      "author": "Américo Toledano (Wikimedia Commons)",
+      "agency": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lanzadera%20espacial%20Soyuz%20-%20Museo%20de%20las%20Ciencias%20Pr%C3%ADncipe%20Felipe%20-%20001.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lanzadera%20espacial%20Soyuz%20-%20Museo%20de%20las%20Ciencias%20Pr%C3%ADncipe%20Felipe%20-%20001.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_rationale": "CC BY-SA 4.0 — attribution required (Américo Toledano).",
+      "modifications": [
+        "curated-commons"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-20T07:35:26.150Z"
     }
   ]
 }

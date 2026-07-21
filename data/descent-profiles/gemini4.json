@@ -1,0 +1,30 @@
+{
+  "missionId": "gemini4",
+  "siteId": "gemini4",
+  "body": "earth",
+  "landingSite": {
+    "lat": 27.7,
+    "lon": -74.2
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7820,
+    "flightPathAngleDeg": 4
+  },
+  "entryMassKg": 2000,
+  "entryCdA": 4.5,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7000,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 133,
+    "terminalCdA": 501
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "gemini4 — NASA/NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    }
+  ]
+}

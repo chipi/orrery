@@ -1,0 +1,34 @@
+{
+  "missionId": "friendship-7",
+  "siteId": "friendship-7",
+  "body": "earth",
+  "landingSite": {
+    "lat": 21.35,
+    "lon": -68.65
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7800,
+    "flightPathAngleDeg": 4
+  },
+  "entryMassKg": 1350,
+  "entryCdA": 3,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 6400,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 90,
+    "terminalCdA": 300
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Results of the First United States Manned Orbital Space Flight (NASA, 1962)",
+      "u": "https://www.nasa.gov/history/results-of-the-first-us-manned-orbital-space-flight/"
+    },
+    {
+      "l": "Mercury-Atlas 6 (Friendship 7) — NASA",
+      "u": "https://www.nasa.gov/mission/mercury-atlas-6/"
+    }
+  ]
+}

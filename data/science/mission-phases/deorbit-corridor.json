@@ -1,0 +1,25 @@
+{
+  "id": "deorbit-corridor",
+  "tab": "mission-phases",
+  "order": 5,
+  "diagram": "deorbit-corridor.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/fly",
+      "context_key": "Fly any Earth-return capsule (?descent=1) and watch the entry follow its flight-path angle through peak-g to splashdown"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Atmospheric entry (entry corridor)",
+      "u": "https://en.wikipedia.org/wiki/Atmospheric_entry",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Apollo re-entry and the entry corridor",
+      "u": "https://www.nasa.gov/history/afj/",
+      "t": "core"
+    }
+  ]
+}

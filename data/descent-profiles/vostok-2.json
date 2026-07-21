@@ -1,0 +1,30 @@
+{
+  "missionId": "vostok-2",
+  "siteId": "vostok-2",
+  "body": "earth",
+  "landingSite": {
+    "lat": 51.1,
+    "lon": 46.1
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7820,
+    "flightPathAngleDeg": 4
+  },
+  "entryMassKg": 2460,
+  "entryCdA": 5,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7000,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 164,
+    "terminalCdA": 616
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "vostok-2 — NASA/NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    }
+  ]
+}

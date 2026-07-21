@@ -829,6 +829,11 @@
       "cover": false
     },
     {
+      "title": "Comms Blackout",
+      "file": "/diagrams/science/comms-blackout.webp",
+      "cover": false
+    },
+    {
       "title": "Conic Sections",
       "file": "/diagrams/science/conic-sections.webp",
       "cover": false
@@ -836,6 +841,11 @@
     {
       "title": "Contour Reading",
       "file": "/diagrams/science/contour-reading.webp",
+      "cover": false
+    },
+    {
+      "title": "Deorbit Corridor",
+      "file": "/diagrams/science/deorbit-corridor.webp",
       "cover": false
     },
     {
@@ -1478,6 +1488,188 @@
       "thumb": "/images/colophon/craft-venera-13.webp"
     },
     {
+      "title": "Generic launcher",
+      "what": "Falcon-9-like two-stage body — the agency-keyed fallback silhouette.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-generic.webp"
+    },
+    {
+      "title": "Saturn V",
+      "what": "Tapered three-stage stack, five F-1 bells, and the escape tower (also Saturn IB).",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-saturn-v.webp"
+    },
+    {
+      "title": "Soyuz / R-7",
+      "what": "Korolev-cross core with four tapered strap-on boosters.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-vostok-k.webp"
+    },
+    {
+      "title": "Ariane 5",
+      "what": "Cryogenic core between two tall solid boosters under a bulbous fairing.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-ariane-5.webp"
+    },
+    {
+      "title": "H-IIA",
+      "what": "Japanese cryogenic core with paired solid rocket boosters.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-h-iia.webp"
+    },
+    {
+      "title": "Space Shuttle",
+      "what": "External tank, twin SRBs, and the delta-wing orbiter.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-space-shuttle-stack.webp"
+    },
+    {
+      "title": "Falcon 9",
+      "what": "Slender two-stage body — an octaweb of nine engines, grid fins, and landing legs.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-falcon-9.webp"
+    },
+    {
+      "title": "Atlas V",
+      "what": "Wide RD-180 core with a bulbous payload fairing and optional solid strap-ons.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-atlas-v.webp"
+    },
+    {
+      "title": "Proton-K",
+      "what": "Soviet heavy — a central core ringed by six outboard fuel tanks.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-proton-k.webp"
+    },
+    {
+      "title": "Titan II GLV",
+      "what": "Slender uniform two-stage that launched the crewed Gemini capsules.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-titan-ii-glv.webp"
+    },
+    {
+      "title": "Atlas LV-3B",
+      "what": "Mercury-Atlas stage-and-a-half with a booster-engine skirt and escape tower.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-atlas-lv-3b.webp"
+    },
+    {
+      "title": "Long March 2F",
+      "what": "China’s crewed launcher — core, four liquid strap-ons, and a launch-escape tower (Shenzhou).",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-long-march-2f.webp"
+    },
+    {
+      "title": "Long March 3B",
+      "what": "Chinese GTO workhorse — a core with four liquid strap-ons (Chang’e lunar missions).",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-long-march-3b.webp"
+    },
+    {
+      "title": "Long March 5",
+      "what": "China’s heavy “Fat Five” — a wide cryogenic core with four large boosters.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-long-march-5.webp"
+    },
+    {
+      "title": "PSLV",
+      "what": "ISRO’s workhorse — a slender core ringed by six solid strap-on boosters.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-pslv.webp"
+    },
+    {
+      "title": "LVM3 / GSLV Mk III",
+      "what": "ISRO heavy-lift — a core flanked by two large S200 solid boosters (Chandrayaan-3).",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-lvm3.webp"
+    },
+    {
+      "title": "M-V",
+      "what": "JAXA’s all-solid three-stage launcher (Hayabusa).",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-m-v.webp"
+    },
+    {
+      "title": "H3",
+      "what": "JAXA’s new cryogenic core with solid strap-on boosters.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-h3.webp"
+    },
+    {
+      "title": "Ariane 1",
+      "what": "Europe’s first launcher — a slender three-stage 1979 design (Giotto).",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-ariane-1.webp"
+    },
+    {
+      "title": "Mercury capsule",
+      "what": "Blunt ablative heat shield, shingled cone, and the recovery + antenna section (Freedom 7 … Faith 7).",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-mercury-capsule.webp"
+    },
+    {
+      "title": "Gemini capsule",
+      "what": "Two-seat scaled-up Mercury with the rendezvous-radar nose and adapter module.",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-gemini-capsule.webp"
+    },
+    {
+      "title": "Vostok / Voskhod",
+      "what": "The spherical Sharik descent module with antenna straps and equipment collar.",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-vostok-sphere.webp"
+    },
+    {
+      "title": "Apollo Command Module",
+      "what": "The classic steep blunt cone with the forward docking tunnel (Apollo 7/9, Skylab, ASTP).",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-apollo-cm.webp"
+    },
+    {
+      "title": "Soyuz descent module",
+      "what": "The \"headlamp\" bell — spherical base heat shield with a conical crew top.",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-soyuz-sa.webp"
+    },
+    {
+      "title": "Crew Dragon",
+      "what": "Sleek conical body with the SuperDraco pods and the PICA-X heat shield (Inspiration4, Polaris Dawn).",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-dragon-capsule.webp"
+    },
+    {
+      "title": "Shenzhou reentry module",
+      "what": "The bell-shaped descent capsule between the orbital and service modules (Shenzhou-1 onward).",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-shenzhou-reentry.webp"
+    },
+    {
       "title": "Apollo Lunar Module",
       "what": "Descent + ascent stage, gold MLI foil, and RCS quads.",
       "where": "Moon landing sites",
@@ -1569,18 +1761,32 @@
       "thumb": "/images/colophon/model-mars-mer.webp"
     },
     {
-      "title": "Curiosity / Perseverance",
-      "what": "MSL-class RTG rover with mast + arm (and Ingenuity).",
+      "title": "Curiosity",
+      "what": "MSL-class RTG rover with mast + arm.",
       "where": "Mars landing sites",
       "route": "/mars",
       "thumb": "/images/colophon/model-mars-curiosity.webp"
     },
     {
-      "title": "Phoenix / InSight",
+      "title": "Perseverance + Ingenuity",
+      "what": "Mars 2020 rover with Mastcam-Z mast, sample-caching bay, and the Ingenuity helicopter.",
+      "where": "Mars landing sites",
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-perseverance-rover.webp"
+    },
+    {
+      "title": "Phoenix",
       "what": "Solar stationary lander with a robotic arm.",
       "where": "Mars landing sites",
       "route": "/mars",
       "thumb": "/images/colophon/model-mars-phoenix.webp"
+    },
+    {
+      "title": "InSight",
+      "what": "Decagonal solar-panelled geophysics lander with the SEIS seismometer and HP3 mole.",
+      "where": "Mars landing sites",
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-insight-lander.webp"
     },
     {
       "title": "Mars 3",
@@ -1609,6 +1815,258 @@
       "where": "Mars landing sites",
       "route": "/mars",
       "thumb": "/images/colophon/model-mars-beagle-2.webp"
+    },
+    {
+      "title": "Venera / Vega lander",
+      "what": "Soviet Venus surface lander — a pressure sphere on a toroidal crush-ring.",
+      "where": "Venus surface markers",
+      "route": "/venus",
+      "thumb": "/images/colophon/model-venus-venera.webp"
+    },
+    {
+      "title": "Lunar powered descent",
+      "what": "Vacuum retro-descent stage — no aeroshell or parachute (Apollo / Chang’e / Luna).",
+      "where": "Fly · descent/landing",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-descent-lunar-powered.webp"
+    },
+    {
+      "title": "Mars parachute + retro",
+      "what": "Aeroshell, supersonic parachute, and terminal retro-rockets (Viking / Phoenix / InSight).",
+      "where": "Fly · descent/landing",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-descent-mars-retro.webp"
+    },
+    {
+      "title": "Mars airbag bounce",
+      "what": "Tetrahedral airbag cocoon that bounces to rest (Pathfinder / Spirit / Opportunity).",
+      "where": "Fly · descent/landing",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-descent-airbag.webp"
+    },
+    {
+      "title": "Mars skycrane",
+      "what": "Rocket-powered descent stage that lowers the rover on tethers (Curiosity / Perseverance).",
+      "where": "Fly · descent/landing",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-descent-skycrane.webp"
+    },
+    {
+      "title": "Venus aeroshell",
+      "what": "Sphere-cone entry capsule and braking disk for the dense atmosphere (Venera / Vega).",
+      "where": "Fly · descent/landing",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-descent-venus-aeroshell.webp"
+    },
+    {
+      "title": "Asteroid touch-and-go",
+      "what": "Sampler bus with a collection horn — micro-gravity touch-and-go (Hayabusa / OSIRIS-REx).",
+      "where": "Fly · descent/landing",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-descent-asteroid-sampler.webp"
+    },
+    {
+      "title": "Comet harpoon lander",
+      "what": "Three-leg micro-gravity lander with anchoring harpoons (Philae at comet 67P).",
+      "where": "Fly · descent/landing",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-descent-comet-lander.webp"
+    },
+    {
+      "title": "Jupiter atmospheric probe",
+      "what": "Sphere-cone aeroshell and parachute for a deep-atmosphere entry (Galileo probe).",
+      "where": "Fly · descent/landing",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-descent-jupiter-probe.webp"
+    },
+    {
+      "title": "Titan parachute descent",
+      "what": "Aeroshell and large parachute for a slow descent through Titan’s haze (Huygens).",
+      "where": "Fly · descent/landing",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-descent-titan-parachute.webp"
+    },
+    {
+      "title": "Curiosity cruise stage",
+      "what": "MSL cruise-stage disk over the aeroshell enclosing the rover.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-curiosity.webp"
+    },
+    {
+      "title": "Perseverance cruise stage",
+      "what": "Mars 2020 cruise stage + aeroshell (rover + Ingenuity sealed inside).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-perseverance.webp"
+    },
+    {
+      "title": "InSight cruise stage",
+      "what": "Cruise-stage disk over the aeroshell carrying the lander.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-insight.webp"
+    },
+    {
+      "title": "Phoenix cruise stage",
+      "what": "Cruise stage + aeroshell for the polar lander.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-phoenix.webp"
+    },
+    {
+      "title": "Pathfinder cruise stage",
+      "what": "Cruise stage + aeroshell (airbag lander + Sojourner inside).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-mars-pathfinder.webp"
+    },
+    {
+      "title": "Spirit cruise stage",
+      "what": "MER cruise stage + aeroshell.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-spirit.webp"
+    },
+    {
+      "title": "Opportunity cruise stage",
+      "what": "MER cruise stage + aeroshell.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-opportunity.webp"
+    },
+    {
+      "title": "Schiaparelli + TGO",
+      "what": "ExoMars Trace Gas Orbiter carrying the Schiaparelli entry capsule.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-schiaparelli.webp"
+    },
+    {
+      "title": "Viking orbiter + lander",
+      "what": "Viking orbiter with the bioshield-capsule lander below.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-viking1.webp"
+    },
+    {
+      "title": "Mars 3 bus",
+      "what": "Soviet M-71 bus with the descent capsule and solar wings.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-mars3.webp"
+    },
+    {
+      "title": "Tianwen-1 orbiter",
+      "what": "Orbiter bus carrying the entry capsule (Zhurong inside).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-tianwen1.webp"
+    },
+    {
+      "title": "Apollo CSM + LM",
+      "what": "Command/Service Module docked to the Lunar Module — the trans-lunar stack (Apollo 11–17).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-apollo11.webp"
+    },
+    {
+      "title": "Orion (Artemis)",
+      "what": "Orion crew capsule + European Service Module with four solar wings (Artemis III / IV).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-artemis3.webp"
+    },
+    {
+      "title": "Luna 9 direct-ascent",
+      "what": "Soviet direct bus with the spherical lander capsule on top.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-luna9.webp"
+    },
+    {
+      "title": "Luna sample-return",
+      "what": "Descent stage with spherical tanks, ascent stage, and return capsule (Luna 16 / 24).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-luna16.webp"
+    },
+    {
+      "title": "Lunokhod carrier",
+      "what": "Descent-stage bus carrying the Lunokhod rover (Luna 17 / 21).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-luna17.webp"
+    },
+    {
+      "title": "Chang’e 3 / 4",
+      "what": "CNSA lander descent stage with the Yutu rover stowed on top.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-change3.webp"
+    },
+    {
+      "title": "Chang’e 5 / 6",
+      "what": "Four-module sample-return stack — orbiter, returner, ascender, and lander.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-change5.webp"
+    },
+    {
+      "title": "Chandrayaan-3",
+      "what": "ISRO propulsion module carrying the Vikram lander.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-chandrayaan3.webp"
+    },
+    {
+      "title": "SLIM",
+      "what": "JAXA’s compact “Moon Sniper” cruise bus.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-slim.webp"
+    },
+    {
+      "title": "Beresheet",
+      "what": "SpaceIL’s small round four-leg lander in transit.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-beresheet.webp"
+    },
+    {
+      "title": "Blue Moon MK1",
+      "what": "Blue Origin’s tall lander — central tank on a four-leg frame.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-blue-moon-mk1.webp"
+    },
+    {
+      "title": "Hayabusa cruise",
+      "what": "JAXA sample-return bus — solar wings, a sampler horn, and ion engines.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-hayabusa1.webp"
+    },
+    {
+      "title": "OSIRIS-REx cruise",
+      "what": "Boxy bus with V-angled solar wings and the extended TAGSAM sampler arm.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-osiris-rex.webp"
+    },
+    {
+      "title": "NEAR Shoemaker",
+      "what": "Orbiter bus with four fixed solar panels in a cross and a fixed dish.",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-near-shoemaker.webp"
+    },
+    {
+      "title": "Starship",
+      "what": "Stainless upper stage — nose cone, fore/aft flaps, and a Raptor cluster (Mars transit).",
+      "where": "Fly · cruise/approach",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-cruise-starship-demo.webp"
     },
     {
       "title": "Hubble",
@@ -1838,9 +2296,9 @@
   ],
   "totals": {
     "anatomy_art": 144,
-    "diagrams_science": 102,
+    "diagrams_science": 104,
     "posters": 27,
-    "models3d": 49,
+    "models3d": 113,
     "canvas2d": 6,
     "ui": 4,
     "writing": 8

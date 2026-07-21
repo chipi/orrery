@@ -1,0 +1,30 @@
+{
+  "missionId": "vostok-6",
+  "siteId": "vostok-6",
+  "body": "earth",
+  "landingSite": {
+    "lat": 53.3,
+    "lon": 80.9
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7820,
+    "flightPathAngleDeg": 4
+  },
+  "entryMassKg": 2460,
+  "entryCdA": 5,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7000,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 164,
+    "terminalCdA": 616
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "vostok-6 — NASA/NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    }
+  ]
+}

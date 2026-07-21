@@ -372,10 +372,24 @@
   },
   {
     "tab": "mission-phases",
+    "section": "comms-blackout",
+    "title": "Communications Blackout",
+    "intro": "For a few minutes at the hottest part of re-entry, the air itself turns to plasma and swallows every radio signal — the capsule goes silent, and everyone on the ground can only wait.",
+    "haystack": "communications blackout for a few minutes at the hottest part of re-entry, the air itself turns to plasma and swallows every radio signal — the capsule goes silent, and everyone on the ground can only wait. the blackout is caused by the plasma sheath: the bow shock ahead of a blunt entry body compresses and heats the gas enough to ionise it, producing a layer of free electrons around the vehicle. a radio wave can only propagate through plasma above the local plasma frequency, which scales with electron density; during peak heating the electron density is high enough that this cutoff rises above the spacecraft's communication frequencies, and the signal is reflected and attenuated rather than transmitted. the link is lost in both directions."
+  },
+  {
+    "tab": "mission-phases",
     "section": "dead-reckoning",
     "title": "Dead reckoning",
     "intro": "Integrate the accelerometers to get velocity, integrate again to get position — works for hours, drifts noticeably over days, and is exactly why every cruise needs periodic ground-based fixes.",
     "haystack": "dead reckoning integrate the accelerometers to get velocity, integrate again to get position — works for hours, drifts noticeably over days, and is exactly why every cruise needs periodic ground-based fixes. between burns and outside the range of useful celestial landmarks, a spacecraft tracks its own state by integrating the output of its inertial measurement unit (imu): three accelerometers measuring linear acceleration, three gyroscopes measuring rotation rate. integrate acceleration once → velocity. integrate again → position. combined with the orientation from [star trackers](mission-phases/star-trackers), the spacecraft can propagate its full state vector forward in time without any external help."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "deorbit-corridor",
+    "title": "Deorbit & the Re-entry Corridor",
+    "intro": "A capsule doesn't fall out of orbit — it's nudged into a corridor barely a degree wide, where too steep burns the crew up and too shallow skips them back into space.",
+    "haystack": "deorbit & the re-entry corridor a capsule doesn't fall out of orbit — it's nudged into a corridor barely a degree wide, where too steep burns the crew up and too shallow skips them back into space. deorbit is a retrograde impulse that lowers perigee from orbital altitude to inside the sensible atmosphere — for a low-earth-orbit capsule, dropping perigee to roughly 40–60 km with a burn of only ~100 m/s. the vehicle then coasts, unpowered, down to entry interface at about 122 km, where aerodynamic forces take over. the single number that decides its fate is the entry flight-path angle: how far below the local horizontal the velocity vector points as it crosses that interface."
   },
   {
     "tab": "mission-phases",

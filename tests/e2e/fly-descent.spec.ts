@@ -70,13 +70,16 @@ test.describe('descent EDL HUD (desktop)', () => {
     // Beresheet is the shortest descent (~19 s → a few wall-seconds at 3×), so the
     // full pad→surface handoff completes fast + deterministically. It closes the
     // circle onto /moon with the landing site pre-focused.
-    // The handoff plays the DescentScene then mounts the destination SurfaceScene;
-    // on the GPU-less CI runner that render sequence is slow, so the inner
-    // waitForURL must fit inside the 45s test budget (was 30s — too tight on CI,
-    // where it timed out even though the handoff completes; the feature works).
-    test.setTimeout(45_000);
+    // This is the single heaviest end-to-end flow in the suite: it plays the full
+    // DescentScene EDL then mounts the destination SurfaceScene — two 3D scenes
+    // back to back. On the GPU-less CI runner (SwiftShader, per-frame IBL + a
+    // 3-pass composer) it measured ~47 s; the handoff DOES complete, the runner
+    // is just slow. Budget generously so it fits (was 30 s → 40 s, both too
+    // tight). The deeper /fly IBL/composer perf is a tracked cinematic-vs-perf
+    // decision (docs/wip/2026-07-21-latent-bug-class-sweep.md).
+    test.setTimeout(75_000);
     await enterDescent(page, 'beresheet');
-    await page.waitForURL(/\/moon\?.*site=beresheet/, { timeout: 40_000 });
+    await page.waitForURL(/\/moon\?.*site=beresheet/, { timeout: 65_000 });
     expect(page.url()).toContain('from=descent');
   });
 });

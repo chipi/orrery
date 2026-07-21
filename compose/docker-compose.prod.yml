@@ -154,13 +154,25 @@ services:
       # Read-only docker socket for docker_sd discovery of orrery-*
       # containers.
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    # The backend (self-hosted VictoriaLogs) is addressed by its Tailscale
+    # MagicDNS name `homelab`, which docker's embedded resolver can't see.
+    # Resolve the name → tailnet IP on the HOST at deploy time and inject it as
+    # an /etc/hosts entry (deploy-prod.yml stages HOMELAB_TAILNET_IP). NEVER use
+    # `dns: [100.100.100.100]` — it replaces the embedded resolver and breaks
+    # compose service-name resolution. Estate-wide pattern (matches dev + the
+    # podcast app). See ops/observability + the o11y handover.
+    extra_hosts:
+      - 'homelab:${HOMELAB_TAILNET_IP:-127.0.0.1}'
     environment:
+      # Loki push URL — self-hosted VictoriaLogs on the tailnet (no auth), e.g.
+      # http://homelab:9428/insert/loki/api/v1/push. Empty → silent (no ship).
+      # The old Grafana Cloud USER/API_KEY are gone — VictoriaLogs needs neither.
       - GRAFANA_CLOUD_LOKI_URL=${GRAFANA_CLOUD_LOKI_URL:-}
-      - GRAFANA_CLOUD_LOKI_USER=${GRAFANA_CLOUD_LOKI_USER:-}
-      - GRAFANA_CLOUD_API_KEY=${GRAFANA_CLOUD_API_KEY:-}
-      - GRAFANA_AGENT_ENV=${GRAFANA_AGENT_ENV:-production-orrery}
-    # Wrapper picks shipping vs silent config based on env-var presence.
-    # Without it, empty GRAFANA_CLOUD_LOKI_URL crashes the agent in a
+      # env label: dev (local) / staging (GitHub) / prod (VPS) — matches the
+      # Grafana dashboards' env selector.
+      - GRAFANA_AGENT_ENV=${GRAFANA_AGENT_ENV:-prod}
+    # Wrapper picks shipping vs silent config based on whether the push URL is
+    # set. Without it, empty GRAFANA_CLOUD_LOKI_URL crashes the agent in a
     # restart loop on "client needs target URL".
     entrypoint: ['/bin/sh', '/agent-entrypoint.sh']
     command: []

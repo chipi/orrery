@@ -3,7 +3,7 @@
   "agency": "NASA",
   "status": "ENDED",
   "snapshot_date": "2018-06-10",
-  "credit": "\u00a9 NASA/JPL-Caltech \u2014 Opportunity rover traverse, simplified hand-vendored polyline from Eagle Crater (Jan 2004) southeast across Meridiani Planum to Endeavour Crater (final position June 2018). V1 stub; the real 45.16 km marathon track is in the NASA Mars Exploration Rover archive.",
+  "credit": "© NASA/JPL-Caltech — Opportunity rover traverse, simplified hand-vendored polyline from Eagle Crater (Jan 2004) southeast across Meridiani Planum to Endeavour Crater (final position June 2018). V1 stub; the real 45.16 km marathon track is in the NASA Mars Exploration Rover archive.",
   "points": [
     [
       -1.9462,
@@ -251,5 +251,6 @@
       "kind": "feature",
       "id": "sol-4500"
     }
-  ]
+  ],
+  "has_route_patches": true
 }

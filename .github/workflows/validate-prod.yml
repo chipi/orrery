@@ -1,0 +1,55 @@
+name: Validate prod (scheduled)
+
+# Periodic health-and-correctness sweep of the LIVE public deployment, run
+# independently of the deploy pipeline. Drives scripts/validate-prod.mjs
+# (a real headless Chromium) against the public URL and asserts security
+# headers + the exact CSP directives, PWA/service-worker config, every route in
+# all 13 locales, the /data overlay, and a regression guard per prod bug fixed
+# on 2026-07-22 (VPS /data overlay, gallery-video frame-src, PWA locale-switch
+# shell, GlitchTip error-monitoring CSP+DSN, /moon route-patches 404). Catches
+# drift that a green deploy can't: an edge-config change, a cert/CDN issue, a
+# GH-secret edit that re-breaks the telemetry DSN, or a cron-written data file
+# that 404s. A red run pages via the normal Actions failure notification.
+#
+# No VALIDATE_ERROR_POST → config-only error-monitoring checks (DSN baked +
+# dashless key + CSP connect-src); it does NOT fire a synthetic error, so the
+# 6-hourly cadence never pollutes GlitchTip project 4.
+
+on:
+  schedule:
+    # Every 6 hours (UTC). Cheap (a single headless run) and catches edge/cert/
+    # data-overlay drift within a quarter-day.
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: "Deployment URL to validate (blank = the public prod URL)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-prod
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Validate the live public deployment
+        env:
+          # dispatch input wins; else the repo var; else the hardcoded public URL.
+          VALIDATE_URL: ${{ github.event.inputs.target_url || vars.PROD_PUBLIC_URL || 'https://www.orrerylearn.com' }}
+        run: npm run validate-prod

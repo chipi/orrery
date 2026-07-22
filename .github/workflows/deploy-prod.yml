@@ -67,6 +67,10 @@ jobs:
     # rules (required reviewers, deployment-branch policies) if you
     # want them later — settings → environments → prod → protection.
     environment: prod
+    outputs:
+      # Surfaced so the post-deploy `validate` job can skip when the deploy
+      # itself no-op'd (missing prereqs → nothing new was published).
+      skipped: ${{ steps.preflight.outputs.skip }}
     steps:
       - name: Pre-flight — required secrets/variables present?
         id: preflight
@@ -393,3 +397,35 @@ jobs:
           done
           echo "::error::tailnet probe did not succeed within 60s at $PROBE_URL"
           exit 1
+
+  # ── Post-deploy validation ────────────────────────────────────────────────
+  # Runs `npm run validate-prod` (scripts/validate-prod.mjs) against the PUBLIC
+  # URL from a GH runner over the open internet — exercises the full public
+  # serving path (nginx CSP + headers, the /data overlay, the service worker,
+  # every route in all 13 locales, the telemetry-config regression guards) that
+  # the tailnet health probes above cannot see. A red run here means "deployed
+  # but the public site is broken" — the exact class of bug that hid behind
+  # green edge checks on 2026-07-22.
+  #
+  # No VALIDATE_ERROR_POST → the error-monitoring guard does config-only checks
+  # (DSN baked + dashless key + CSP connect-src); it does NOT fire a synthetic
+  # error, so this never pollutes GlitchTip project 4 on every deploy.
+  validate:
+    needs: deploy
+    if: needs.deploy.outputs.skipped != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Validate the live public deployment
+        env:
+          VALIDATE_URL: ${{ vars.PROD_PUBLIC_URL || 'https://www.orrerylearn.com' }}
+        run: npm run validate-prod

@@ -70,5 +70,31 @@ regression guard here in the same change.
   (localhost), on amd64 software-GL; the pre-merge correctness gate.
 - **`validate-prod`** — the only gate that exercises the **live deployment** end
   to end (VPS serving layer: nginx CSP + headers, the `/data` overlay, the
-  service worker, real telemetry). Run it **after every prod deploy**. Candidate
-  follow-up: wire it as a post-`deploy-prod` smoke step (currently manual).
+  service worker, real telemetry). Run it **after every prod deploy**.
+
+## Automated runs (wired 2026-07-22)
+
+- **Post-deploy** — a `validate` job in `.github/workflows/deploy-prod.yml`
+  (`needs: deploy`, skipped when the deploy itself no-op'd) runs it against the
+  public URL from a GH runner right after each deploy. A red job = "deployed but
+  the public site is broken."
+- **Scheduled** — `.github/workflows/validate-prod.yml` runs it every 6 h
+  (`cron: 0 */6 * * *`) + `workflow_dispatch`, as a synthetic correctness
+  monitor (deeper than an UptimeRobot ping, coarser cadence). Catches edge/cert/
+  data-overlay/telemetry drift a green deploy can't.
+- Both use `vars.PROD_PUBLIC_URL` (fallback `https://www.orrerylearn.com`) and
+  **omit `VALIDATE_ERROR_POST`**, so the error-monitoring guard does config-only
+  checks (DSN baked + dashless key + CSP connect) and never fires a synthetic
+  event into GlitchTip project 4.
+
+## Gotcha — run it OFF the tailnet
+
+The origin firewalls **:443 to Cloudflare IPs only**; the public domain resolves
+to CF anycast. But a laptop on **Tailscale** gets the origin IP from MagicDNS and
+hits :443 directly (non-CF) → every request times out and the whole run reds with
+`HTTP -1` / `page.goto: Timeout`. This is a local DNS artifact, **not** an outage
+— confirm with `dig +short @1.1.1.1 www.orrerylearn.com` (CF IPs) +
+`curl --resolve www.orrerylearn.com:443:<cf-ip> https://www.orrerylearn.com/`
+(→ 200). The CI runners are off-tailnet, so the automated jobs see CF and pass;
+only local-from-tailnet runs are affected (exclude the domain from MagicDNS, or
+run it elsewhere).

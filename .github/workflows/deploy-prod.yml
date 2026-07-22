@@ -351,6 +351,26 @@ jobs:
              docker compose -f compose/docker-compose.prod.yml --project-directory . --env-file .env logs web; \
              exit 1"
 
+      - name: Prime + schedule the on-VPS launch-data refresh (RFC-035)
+        # Prod serves the launch manifest live from the /data overlay, but only
+        # updates it on a (manual) deploy. Run the refresh once now so this
+        # deploy ships current data, then install an idempotent deploy@ crontab
+        # so it keeps pulling the GitHub-committed refresh every 6h — no
+        # redeploy, no container. Non-fatal: a failure here doesn't fail the
+        # deploy (the site is already up); the log shows what happened.
+        if: steps.preflight.outputs.skip != 'true'
+        continue-on-error: true
+        env:
+          SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
+            'set -euo pipefail; cd /srv/orrery; \
+             bash ops/refresh-prod-data.sh; \
+             CRON="0 */6 * * * /usr/bin/env bash /srv/orrery/ops/refresh-prod-data.sh >> /srv/orrery/data-refresh.log 2>&1"; \
+             ( crontab -l 2>/dev/null | grep -v refresh-prod-data.sh; echo "$CRON" ) | crontab -; \
+             echo "installed crontab:"; crontab -l | grep refresh-prod-data.sh'
+
       - name: Re-arm tailscale serve via root-owned wrapper (NOPASSWD sudo)
         # Mirrors podcast_scraper/infra/deploy/deploy.sh:131-144 exactly.
         # Calls the cloud-init-installed wrapper at

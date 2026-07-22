@@ -33,8 +33,14 @@ export function initSentry(): void {
 
   Sentry.init({
     dsn,
-    environment: publicEnv.PUBLIC_SENTRY_ENVIRONMENT || 'production',
+    environment: publicEnv.PUBLIC_SENTRY_ENVIRONMENT || 'prod',
     release: publicEnv.PUBLIC_SENTRY_RELEASE || undefined,
+
+    // Tag every event `component: orrery` so streams stay separable in the
+    // self-hosted GlitchTip we share with the podcast app (orrery = GlitchTip
+    // project 2; the ingest-only public vhost lands events there — see the
+    // podcast_scraper-infra ORRERY-GLITCHTIP-CLIENT-ERRORS-BRIEF).
+    initialScope: { tags: { component: 'orrery' } },
 
     // Errors only — explicitly NO performance tracing, NO Web Vitals.
     tracesSampleRate: 0,

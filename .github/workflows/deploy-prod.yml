@@ -155,8 +155,16 @@ jobs:
         # no outbound traffic (fork-silent default).
         if: steps.preflight.outputs.skip != 'true'
         env:
+          # PUBLIC_SENTRY_DSN → self-hosted GlitchTip project 2 via the public
+          # ingest-only vhost (https://glitchtip.<domain>/2). Empty until the
+          # edge vhost is live — a not-yet-live DSN silently drops events, so
+          # keep the secret unset until podcast-infra confirms Phase 5.5 is up.
+          # The key is public (ships in the bundle); it stays a secret only to
+          # keep the repo clean. Browser-only; never point at the tailnet
+          # homelab:8090 (unreachable for public users).
           PUBLIC_SENTRY_DSN: ${{ secrets.PUBLIC_SENTRY_DSN }}
-          PUBLIC_SENTRY_ENVIRONMENT: production
+          # env label aligned with the o11y estate (dev / staging / prod).
+          PUBLIC_SENTRY_ENVIRONMENT: prod
           PUBLIC_SENTRY_RELEASE: gha-${{ steps.sha.outputs.short }}
         run: npm run build
 

@@ -365,7 +365,7 @@
     "library_episodes_back": "← लाइब्रेरी पर वापस",
     "library_episodes_credits_link": "/credits पर ऑडियो प्रोवेनेंस",
     "credits_storage_heading": "स्टोरेज और कुकीज़",
-    "credits_storage_intro": "Orrery कोई अकाउंट या एनालिटिक्स स्टोर नहीं करता। दो फंक्शनल प्रेफरेंस कुकीज़, प्रत्येक अपने ADR द्वारा गेटेड, ही एकमात्र परसिस्टेंट स्टेट हैं:",
+    "credits_storage_intro": "Orrery के पास खाते नहीं हैं और व्यक्तिगत डेटा नहीं एकत्र करता — केवल गुमनाम, कुकी-रहित उपयोग विश्लेषण और क्रैश रिपोर्ट, स्व-होस्ट किए गए और आपकी पहचान के लिए कभी उपयोग नहीं किए जाते। दो कार्यात्मक वरीयता कुकीज़, प्रत्येक अपने स्वयं के ADR द्वारा संरक्षित, एकमात्र स्थायी स्थिति हैं:",
     "credits_storage_locale_item": "{code} — आपकी स्पष्ट लोकेल पसंद, जब आप लैंग्वेज स्विचर में एक चुनते हैं (ADR-057)। 1 वर्ष। कोई ट्रैकिंग नहीं, कोई व्यक्तिगत डेटा नहीं।",
     "credits_storage_tour_item": "{code} — आपकी वर्तमान Curator Tour स्थिति, ताकि आप टैब बंद कर सकें और जहाँ छोड़ा था वहीं से फिर शुरू कर सकें (ADR-075)। 30 दिन। जब आप टूर रोकते हैं या यह स्वाभाविक रूप से समाप्त होता है तो क्लीयर हो जाता है। कोई ट्रैकिंग नहीं, कोई व्यक्तिगत डेटा नहीं।",
     "credits_storage_fine": "कोई {localStorage}, {sessionStorage}, IndexedDB, या थर्ड-पार्टी ट्रैकर नहीं। बाकी सब कुछ — सुने गए एपिसोड, मिशन फ़िल्टर, Science Lens — केवल मेमोरी में रखा जाता है और रीलोड पर रीसेट हो जाता है।",
@@ -1502,7 +1502,8 @@
     "fly_launch_dossier_site": "打上げ基地",
     "fly_launch_dossier_destination": "目的地",
     "fly_launch_skip_cta": "巡航へ スキップ →",
-    "fly_descent_dossier_title": "降下・ドシエ"
+    "fly_descent_dossier_title": "降下・ドシエ",
+    "credits_storage_intro": "Orreryはアカウントを持たず、個人データを収集しません。匿名のクッキーレス利用分析とクラッシュレポート（自社ホスト、あなたの特定には使用されない）のみです。2つの機能的プリファレンスクッキー（各々ADRで制御）が唯一の永続状態です："
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -1914,7 +1915,7 @@
     "library_episodes_back": "← العودة إلى المكتبة",
     "library_episodes_credits_link": "مصدر المقاطع الصوتية في /credits",
     "credits_storage_heading": "التخزين وملفات تعريف الارتباط",
-    "credits_storage_intro": "لا يخزّن Orrery أي حسابات ولا يجمع أي تحليلات. ملفا تعريف ارتباط وظيفيان للتفضيلات فقط، كل منهما محكوم بسجل قرار خاص، هما الحالة الدائمة الوحيدة:",
+    "credits_storage_intro": "Orrery لا تحتوي على حسابات ولا تجمع بيانات شخصية — فقط تحليلات استخدام مجهولة وخالية من ملفات تعريف الارتباط وتقارير أعطال مستضافة ذاتياً ولا تُستخدم أبداً لتحديد هويتك. ملفا تفضيل وظيفيان فقط، كل منهما محمي بـ ADR خاص به، يشكلان الحالة المستمرة الوحيدة:",
     "credits_storage_locale_item": "{code} — اختيارك الصريح للغة عند اختيارها من مبدّل اللغة (ADR-057). سنة واحدة. بدون تتبع، بدون بيانات شخصية.",
     "credits_storage_tour_item": "{code} — موضعك الحالي في جولة المرشد، لتتمكن من إغلاق التبويب واستئناف من حيث توقفت (ADR-075). 30 يوماً. يُحذف عند إيقاف الجولة أو انتهائها طبيعياً. بدون تتبع، بدون بيانات شخصية.",
     "credits_storage_fine": "بدون {localStorage} أو {sessionStorage} أو IndexedDB أو متتبعات طرف ثالث. كل ما عدا ذلك — الحلقات المسموعة، مرشحات المهام، عدسة العلوم — محفوظ في الذاكرة فقط ويُعاد ضبطه عند إعادة التحميل.",
@@ -3051,7 +3052,8 @@
     "fly_launch_dossier_site": "발사장",
     "fly_launch_dossier_destination": "목표",
     "fly_launch_skip_cta": "순항 단계로 건너뛰기 →",
-    "fly_descent_dossier_title": "하강 경보"
+    "fly_descent_dossier_title": "하강 경보",
+    "credits_storage_intro": "Orrery는 계정이 없으며 개인 데이터를 수집하지 않습니다. 익명의 쿠키 없는 사용 분석 및 충돌 보고서만 수집하며, 자체 호스팅되고 사용자 식별에 사용되지 않습니다. 각각 자체 ADR로 제어되는 두 개의 기능성 선호 쿠키만이 유일한 영속적 상태입니다:"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -3707,7 +3709,8 @@
     "fly_launch_dossier_site": "STARTPLATZ",
     "fly_launch_dossier_destination": "ZIEL",
     "fly_launch_skip_cta": "ZUR REISEFAHRT SPRINGEN →",
-    "fly_descent_dossier_title": "ABSTIEGSDOSSIER"
+    "fly_descent_dossier_title": "ABSTIEGSDOSSIER",
+    "credits_storage_intro": "Orrery hat keine Konten und sammelt keine persönlichen Daten – nur anonyme, cookielose Nutzungsanalytiken und Fehlerberichte, selbst gehostet und niemals zur Identifizierung verwendet. Zwei funktionale Präferenz-Cookies, jeweils durch ihre eigene ADR geschützt, sind der einzige persistente Zustand:"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -4370,7 +4373,8 @@
     "fly_launch_dossier_site": "SITE DE LANCEMENT",
     "fly_launch_dossier_destination": "DESTINATION",
     "fly_launch_skip_cta": "PASSER À LA CROISIÈRE →",
-    "fly_descent_dossier_title": "DOSSIER DE DESCENTE"
+    "fly_descent_dossier_title": "DOSSIER DE DESCENTE",
+    "credits_storage_intro": "Orrery n'a pas de comptes et ne collecte aucune donnée personnelle — seulement des analyses d'utilisation anonymes sans cookies et des rapports de crash, auto-hébergés et jamais utilisés pour vous identifier. Deux cookies de préférence fonctionnels, chacun contrôlé par son propre ADR, constituent le seul état persistant :"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -5001,7 +5005,8 @@
     "fly_launch_dossier_site": "SITO DI LANCIO",
     "fly_launch_dossier_destination": "DESTINAZIONE",
     "fly_launch_skip_cta": "SALTA ALLA CROCIERA →",
-    "fly_descent_dossier_title": "DOSSIER DELLA DISCESA"
+    "fly_descent_dossier_title": "DOSSIER DELLA DISCESA",
+    "credits_storage_intro": "Orrery non ha account e non raccoglie dati personali — solo analitiche di utilizzo anonime senza cookie e rapporti di crash, auto-ospitati e mai usati per identificarti. Due cookie funzionali di preferenza, ciascuno controllato da un proprio ADR, rappresentano l'unico stato persistente:"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -5631,7 +5636,8 @@
     "fly_launch_dossier_site": "CENTRO DE LANZAMIENTO",
     "fly_launch_dossier_destination": "DESTINO",
     "fly_launch_skip_cta": "SALTAR A CRUCERO →",
-    "fly_descent_dossier_title": "EXPEDIENTE DE DESCENSO"
+    "fly_descent_dossier_title": "EXPEDIENTE DE DESCENSO",
+    "credits_storage_intro": "Orrery no tiene cuentas y no recopila datos personales —solo análisis de uso anónimos sin cookies e informes de fallos, auto-alojados y nunca utilizados para identificarte. Dos cookies funcionales de preferencia, cada una controlada por su propio ADR, son el único estado persistente:"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -6267,7 +6273,8 @@
     "fly_launch_dossier_site": "LANCEERPLEK",
     "fly_launch_dossier_destination": "BESTEMMING",
     "fly_launch_skip_cta": "NAAR CRUISE →",
-    "fly_descent_dossier_title": "AFDAALDOSSIER"
+    "fly_descent_dossier_title": "AFDAALDOSSIER",
+    "credits_storage_intro": "Orrery heeft geen accounts en verzamelt geen persoonlijke gegevens — alleen anonieme, cookieloze gebruiksstatistieken en crashrapportages, zelf-gehost en nooit gebruikt om je te identificeren. Twee functionele voorkeurcookies, elk beschermd door zijn eigen ADR, zijn de enige persistente staat:"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -6953,7 +6960,8 @@
     "fly_launch_dossier_site": "КОСМОДРОМ",
     "fly_launch_dossier_destination": "ПУНКТ НАЗНАЧЕНИЯ",
     "fly_launch_skip_cta": "ПЕРЕЙТИ К КРЕЙСЕРСКОМУ ПОЛЁТУ →",
-    "fly_descent_dossier_title": "ДОСЬЕ СПУСКА"
+    "fly_descent_dossier_title": "ДОСЬЕ СПУСКА",
+    "credits_storage_intro": "Orrery не использует учётные записи и не собирает личные данные — только анонимную аналитику использования без cookies и отчёты об ошибках, размещаемые на собственных серверах и никогда не используемые для вашей идентификации. Единственное постоянное состояние — два функциональных cookie предпочтений, каждый защищённый собственным ADR:"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -7620,7 +7628,8 @@
     "fly_launch_dossier_site": "发射场",
     "fly_launch_dossier_destination": "目的地",
     "fly_launch_skip_cta": "跳过至巡航阶段 →",
-    "fly_descent_dossier_title": "下降档案"
+    "fly_descent_dossier_title": "下降档案",
+    "credits_storage_intro": "Orrery 没有账户，不收集个人数据——仅收集匿名、无 Cookie 使用分析和崩溃报告，自托管且不用于身份识别。两个功能性偏好 Cookie，各自受其 ADR 把控，是仅有的持久状态："
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -8221,7 +8230,8 @@
     "fly_launch_dossier_site": "МЕСТО ЛАНСИРАЊА",
     "fly_launch_dossier_destination": "ОДРЕДИШТЕ",
     "fly_launch_skip_cta": "ПРЕСКОЧИ НА КРСТАРЕЊЕ →",
-    "fly_descent_dossier_title": "ДОСИЈЕ СИЛАЖЕЊА"
+    "fly_descent_dossier_title": "ДОСИЈЕ СИЛАЖЕЊА",
+    "credits_storage_intro": "Orrery нема налога и не прикупља личне податке — само анонимну аналитику без колачића и извештаје о грешкама, самохостовану и никад коришћену за идентификацију. Два функционална колачића преференци, сваки заштићен сопственим ADR, су једино трајно стање:"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -8858,6 +8868,7 @@
     "fly_launch_dossier_site": "BASE DE LANÇAMENTO",
     "fly_launch_dossier_destination": "DESTINO",
     "fly_launch_skip_cta": "PULAR PARA CRUZEIRO →",
-    "fly_descent_dossier_title": "DOSSIÊ DE DESCIDA"
+    "fly_descent_dossier_title": "DOSSIÊ DE DESCIDA",
+    "credits_storage_intro": "Orrery não possui contas e não coleta dados pessoais — apenas análises de uso anônimas e sem cookies, além de relatórios de falhas, auto-hospedados e nunca usados para identificá-lo. Dois cookies funcionais de preferência, cada um protegido por seu próprio ADR, são o único estado persistente:"
   }
 }

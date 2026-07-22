@@ -1080,7 +1080,7 @@
   "library_episodes_back": "← ライブラリに戻る",
   "library_episodes_credits_link": "/credits でオーディオ出典を確認",
   "credits_storage_heading": "ストレージとクッキー",
-  "credits_storage_intro": "Orreryはアカウントもアナリティクスも保存しません。それぞれ独自のADRで管理される、機能的な設定クッキー2つだけが永続的な状態です:",
+  "credits_storage_intro": "Orreryはアカウントを持たず、個人データを収集しません。匿名のクッキーレス利用分析とクラッシュレポート（自社ホスト、あなたの特定には使用されない）のみです。2つの機能的プリファレンスクッキー（各々ADRで制御）が唯一の永続状態です：",
   "credits_storage_locale_item": "{code} — 言語スイッチャーで明示的に選択したロケール（ADR-057）。1年間。トラッキングなし、個人データなし。",
   "credits_storage_tour_item": "{code} — 現在のキュレーターツアー位置。タブを閉じても続きから再開できます（ADR-075）。30日間。ツアーを停止するか自然に終了するとクリアされます。トラッキングなし、個人データなし。",
   "credits_storage_fine": "{localStorage}、{sessionStorage}、IndexedDB、サードパーティトラッカーは一切使用しません。それ以外 — 視聴済みエピソード、ミッションフィルター、サイエンスレンズ — はメモリ内のみに保持され、リロードでリセットされます。",

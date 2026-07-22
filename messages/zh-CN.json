@@ -1080,7 +1080,7 @@
   "library_episodes_back": "← 返回图书馆",
   "library_episodes_credits_link": "音频出处见 /credits",
   "credits_storage_heading": "存储与 Cookie",
-  "credits_storage_intro": "Orrery 不存储任何账户，也不进行数据分析。仅有两项功能性偏好 Cookie，各自由独立 ADR 约束，是唯一的持久状态：",
+  "credits_storage_intro": "Orrery 没有账户，不收集个人数据——仅收集匿名、无 Cookie 使用分析和崩溃报告，自托管且不用于身份识别。两个功能性偏好 Cookie，各自受其 ADR 把控，是仅有的持久状态：",
   "credits_storage_locale_item": "{code} — 您在语言切换器中明确选择的语言（ADR-057）。保留 1 年。无跟踪，无个人数据。",
   "credits_storage_tour_item": "{code} — 您当前的策展人导览位置，便于您关闭标签后从中断处恢复（ADR-075）。保留 30 天。停止导览或自然结束时清除。无跟踪，无个人数据。",
   "credits_storage_fine": "不使用 {localStorage}、{sessionStorage}、IndexedDB 或第三方跟踪器。其他所有内容 — 已听节目、任务筛选、Science Lens — 仅保存在内存中，刷新后即重置。",

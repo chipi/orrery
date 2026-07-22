@@ -1080,7 +1080,7 @@
   "library_episodes_back": "← retour à la Bibliothèque",
   "library_episodes_credits_link": "Provenance audio sur /credits",
   "credits_storage_heading": "Stockage et cookies",
-  "credits_storage_intro": "Orrery ne stocke aucun compte ni aucune donnée d'analyse. Deux cookies fonctionnels de préférence, chacun encadré par son propre ADR, sont le seul état persistant :",
+  "credits_storage_intro": "Orrery n'a pas de comptes et ne collecte aucune donnée personnelle — seulement des analyses d'utilisation anonymes sans cookies et des rapports de crash, auto-hébergés et jamais utilisés pour vous identifier. Deux cookies de préférence fonctionnels, chacun contrôlé par son propre ADR, constituent le seul état persistant :",
   "credits_storage_locale_item": "{code} — votre choix explicite de langue, lorsque vous en sélectionnez une dans le sélecteur de langue (ADR-057). 1 an. Aucun suivi, aucune donnée personnelle.",
   "credits_storage_tour_item": "{code} — votre position actuelle dans la Visite du commissaire, afin que vous puissiez fermer l'onglet et reprendre là où vous vous étiez arrêté (ADR-075). 30 jours. Effacé lorsque vous arrêtez la visite ou qu'elle se termine naturellement. Aucun suivi, aucune donnée personnelle.",
   "credits_storage_fine": "Aucun {localStorage}, {sessionStorage}, IndexedDB ni traqueur tiers. Tout le reste — épisodes écoutés, filtres de missions, Science Lens — n'est conservé qu'en mémoire et se réinitialise au rechargement.",

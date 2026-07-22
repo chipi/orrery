@@ -1339,7 +1339,7 @@
   "library_episodes_back": "← back to Library",
   "library_episodes_credits_link": "Audio provenance on /credits",
   "credits_storage_heading": "Storage & cookies",
-  "credits_storage_intro": "Orrery stores no accounts and no analytics. Two functional preference cookies, each gated by its own ADR, are the only persistent state:",
+  "credits_storage_intro": "Orrery has no accounts and collects no personal data — only anonymous, cookieless usage analytics and crash reports, self-hosted and never used to identify you. Two functional preference cookies, each gated by its own ADR, are the only persistent state:",
   "credits_storage_locale_item": "{code} — your explicit locale pick, when you choose one in the language switcher (ADR-057). 1 year. No tracking, no personal data.",
   "credits_storage_tour_item": "{code} — your current Curator Tour position, so you can close the tab and resume where you left off (ADR-075). 30 days. Cleared when you stop the tour or it ends naturally. No tracking, no personal data.",
   "credits_storage_fine": "No {localStorage}, {sessionStorage}, IndexedDB, or third-party trackers. Everything else — heard episodes, mission filters, Science Lens — is held in memory only and resets on reload.",

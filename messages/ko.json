@@ -1080,7 +1080,7 @@
   "library_episodes_back": "← 라이브러리로 돌아가기",
   "library_episodes_credits_link": "/credits에서 오디오 출처 확인",
   "credits_storage_heading": "저장소 및 쿠키",
-  "credits_storage_intro": "Orrery는 계정과 분석 도구를 저장하지 않습니다. 각각 자체 ADR에 의해 관리되는 두 개의 기능적 환경설정 쿠키만이 유일한 영구 상태입니다:",
+  "credits_storage_intro": "Orrery는 계정이 없으며 개인 데이터를 수집하지 않습니다. 익명의 쿠키 없는 사용 분석 및 충돌 보고서만 수집하며, 자체 호스팅되고 사용자 식별에 사용되지 않습니다. 각각 자체 ADR로 제어되는 두 개의 기능성 선호 쿠키만이 유일한 영속적 상태입니다:",
   "credits_storage_locale_item": "{code} — 언어 전환기에서 명시적으로 선택한 로케일 (ADR-057). 1년. 추적이나 개인정보 수집은 없습니다.",
   "credits_storage_tour_item": "{code} — 현재 큐레이터 투어 위치로, 탭을 닫아도 중단된 지점에서 이어볼 수 있습니다 (ADR-075). 30일. 투어를 중지하거나 자연스럽게 종료되면 삭제됩니다. 추적이나 개인정보 수집은 없습니다.",
   "credits_storage_fine": "{localStorage}, {sessionStorage}, IndexedDB, 외부 추적기는 사용하지 않습니다. 청취한 에피소드, 미션 필터, Science Lens 등 그 외 모든 것은 메모리에만 보관되며 새로고침 시 초기화됩니다.",

@@ -1080,7 +1080,7 @@
   "library_episodes_back": "← terug naar Bibliotheek",
   "library_episodes_credits_link": "Audioherkomst op /credits",
   "credits_storage_heading": "Opslag & cookies",
-  "credits_storage_intro": "Orrery bewaart geen accounts en geen analytics. Twee functionele voorkeurscookies, elk geregeld door een eigen ADR, zijn de enige persistente staat:",
+  "credits_storage_intro": "Orrery heeft geen accounts en verzamelt geen persoonlijke gegevens — alleen anonieme, cookieloze gebruiksstatistieken en crashrapportages, zelf-gehost en nooit gebruikt om je te identificeren. Twee functionele voorkeurcookies, elk beschermd door zijn eigen ADR, zijn de enige persistente staat:",
   "credits_storage_locale_item": "{code} — je expliciete taalkeuze, wanneer je er een kiest in de taalwisselaar (ADR-057). 1 jaar. Geen tracking, geen persoonlijke gegevens.",
   "credits_storage_tour_item": "{code} — je huidige positie in de Curator-tour, zodat je het tabblad kunt sluiten en hervatten waar je gebleven was (ADR-075). 30 dagen. Wordt gewist wanneer je de tour stopt of wanneer deze natuurlijk eindigt. Geen tracking, geen persoonlijke gegevens.",
   "credits_storage_fine": "Geen {localStorage}, {sessionStorage}, IndexedDB of trackers van derden. Al het overige — beluisterde afleveringen, missiefilters, Science Lens — wordt alleen in het geheugen bewaard en wordt bij het herladen gereset.",

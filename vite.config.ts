@@ -146,6 +146,16 @@ export default defineConfig(({ mode }) => {
       }),
       SvelteKitPWA({
         strategies: 'generateSW',
+        // SvelteKit adapter fallback (svelte.config.js fallback:'404.html').
+        // Telling @vite-pwa about it (a) includes the neutral 404.html shell in
+        // the precache with a revision, and (b) makes navigateFallback resolve
+        // to it — so full-page navigations (deep links, the locale switch which
+        // does window.location.href) client-render the target route from a
+        // neutral shell instead of the HOME page. See the workbox.navigateFallback
+        // note below for the bug this fixes.
+        kit: {
+          adapterFallback: '404.html',
+        },
         // `autoUpdate` (vs the prior `prompt`) installs new service-worker
         // bundles silently on next navigation. The previous prompt-mode UI
         // surfaced a "new version · refresh" toast which asked users a
@@ -182,6 +192,12 @@ export default defineConfig(({ mode }) => {
             // (streamed via S3), so the precache manifest must reference
             // only en-US — otherwise SW install 404s on the pruned files.
             MOBILE ? 'client/data/i18n/en-US.json' : 'client/data/i18n/*.json',
+            // Keep a `prerendered/`-prefixed pattern here: @vite-pwa's
+            // buildGlobPatterns force-adds prerendered/**/*.{html,json} (~60 MB
+            // of data JSON → blows the precache budget) UNLESS some pattern
+            // starts with `prerendered/`. This one page is that suppressor; the
+            // neutral SPA shell for navigateFallback comes from kit.spa +
+            // kit.adapterFallback below, NOT from a glob.
             'prerendered/pages/index.html',
           ],
           // Don't precache the porkchop grid JSONs — large + per-route.
@@ -309,12 +325,17 @@ export default defineConfig(({ mode }) => {
               },
             },
           ],
-          // SPA fallback so deep links work offline. SvelteKit's static
-          // adapter writes 404.html as fallback (svelte.config.js:13).
-          // SPA fallback for offline deep-links: route to the precached home
-          // page (client routing renders the rest). Base-aware so it matches
-          // the precache key on GitHub Pages (/orrery/) and root (/) builds.
-          navigateFallback: `${(process.env.VITE_BASE ?? '').replace(/\/$/, '')}/`,
+          // SPA fallback for full-page navigations (deep links, and the
+          // locale switch which does window.location.href — LocalePicker).
+          // MUST be the NEUTRAL 404.html shell that client-renders the
+          // requested route, NOT index.html (the home PAGE): the SW serves the
+          // precached fallback for any full-page nav, and pointing it at home
+          // meant every locale switch / hard-reload rendered HOME (canvas-less
+          // home content at e.g. /de/explore) instead of the target route.
+          // 404.html is SvelteKit's adapter-static fallback (svelte.config.js
+          // fallback:'404.html') — an empty client-render shell. Base-aware so
+          // it matches the precache key on GH Pages (/orrery/) and root builds.
+          navigateFallback: `${(process.env.VITE_BASE ?? '').replace(/\/$/, '')}/404.html`,
         },
         devOptions: {
           // Don't run the SW in `vite dev` — only in `vite preview` /

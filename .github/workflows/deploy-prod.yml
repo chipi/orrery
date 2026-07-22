@@ -217,6 +217,30 @@ jobs:
                   -o StrictHostKeyChecking=accept-new -o BatchMode=yes" \
             build/ "${SSH_TARGET}:/srv/orrery/build/"
 
+      - name: Seed the /data overlay on the VPS with the built data
+        # nginx serves `/data/` from the `./static/data` bind-mount overlay
+        # (ADR-065), NOT from build/ — so the cron pipeline can write live data
+        # (launches, TLEs) that nginx serves without a rebuild. But the overlay
+        # dir also needs the GENERATED, git-IGNORED bundles the build produces —
+        # `static/data/i18n/` (per-locale i18n bundles from build-i18n-bundles.mjs).
+        # `git reset --hard` on the VPS only restores TRACKED files, so those
+        # bundles never arrived → every /data/i18n/*.json 404'd → programs pages
+        # + /explore overlays failed ("Missing overlay, no en-US fallback"), while
+        # GH Pages (which serves build/data/ directly, no overlay) worked. Fix:
+        # deliver the built data/ into the host's static/data/ so the overlay is
+        # complete. NO --delete — this dir is shared with the cron pipeline's live
+        # writes, so the seed is additive; build/data is identical to static/data
+        # post-build, so tracked files are just re-confirmed.
+        if: steps.preflight.outputs.skip != 'true'
+        env:
+          SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
+        run: |
+          set -euo pipefail
+          rsync -avz \
+            -e "ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
+                  -o StrictHostKeyChecking=accept-new -o BatchMode=yes" \
+            build/data/ "${SSH_TARGET}:/srv/orrery/static/data/"
+
       - name: Stage /srv/orrery/.env from GH Secrets (#263)
         # Mirror of podcast_scraper deploy.yml lines 147-218. Renders
         # the host-side .env from `prod`-scoped GH secrets every deploy.

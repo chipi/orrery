@@ -287,9 +287,10 @@
     // S7 / #194: Android back gesture pops WebView history, exits when empty.
     // Android-only event; no-op off-device. See RFC-018 §10.3.
     const stopBackButton = initBackButton();
-    // Privacy-respecting analytics. Loads only on the production host
-    // (chipi.github.io); localhost / vite preview / CI runs are
-    // silent. See src/lib/analytics.ts for the host gate + event API.
+    // Privacy-respecting analytics (self-hosted Umami). Loads only when the
+    // PUBLIC_UMAMI_* build vars are baked (production build); localhost / vite
+    // preview / CI runs are silent. See src/lib/analytics.ts for the env gate
+    // + event API.
     initAnalytics();
     // Stamp the session with the running build so the live version
     // distribution is visible in the dashboard — a cohort stuck on an old

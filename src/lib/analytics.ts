@@ -1,10 +1,22 @@
 /**
- * Umami analytics — production-only loader + typed event API.
+ * Umami analytics — env-gated loader + typed event API.
  *
- * The Umami `script.js` is intentionally NOT in `src/app.html` because
- * that loads it on every host (localhost, vite preview, CI smoke tests,
- * GitHub Pages). We only want production traffic from `chipi.github.io`
- * counted; local dev + preview stay silent.
+ * Points at the self-hosted Umami behind `analytics.orrerylearn.com`
+ * (browser → Cloudflare, origin-locked, tracking-only edge → homelab
+ * Umami — the same secure shape as the GlitchTip telemetry vhost).
+ *
+ * ── Enablement (mirrors src/lib/observability/sentry.ts, ADR-067) ─────
+ * Loading is gated on the two PUBLIC_ env vars being baked at build
+ * time, NOT on hostname. So:
+ *   • the deploy sets `PUBLIC_UMAMI_HOST` + `PUBLIC_UMAMI_WEBSITE_ID` →
+ *     analytics is live on the production build;
+ *   • local dev / vite preview / CI / screenshots leave them empty →
+ *     silent by construction (`dev` is also hard-blocked);
+ *   • forks populate their OWN vars in their CI and get their own
+ *     dashboard without editing this file.
+ * This replaced an earlier hostname allowlist that was pinned to the old
+ * `chipi.github.io/orrery` mirror and therefore never fired on the
+ * `orrerylearn.com` production domain.
  *
  * Privacy: Umami is cookieless, PII-free, GDPR-friendly. Free-text the
  * user typed (search queries) is length-capped before it leaves the
@@ -48,8 +60,8 @@
  *   external-link-click{ host, href, from }            (global click listener)
  */
 
-const UMAMI_SCRIPT_URL = 'https://cloud.umami.is/script.js';
-const UMAMI_WEBSITE_ID = 'fb07dfd6-1186-4a09-8e3b-524e6b5ac145';
+import { env as publicEnv } from '$env/dynamic/public';
+import { dev } from '$app/environment';
 
 /** The canonical event vocabulary. `track()` accepts only these. */
 export const EVENT_NAMES = [
@@ -87,31 +99,27 @@ export const EVENT_NAMES = [
 
 export type EventName = (typeof EVENT_NAMES)[number];
 
-/** Production URLs where Umami should actually load. (hostname, pathPrefix)
- *  pairs — both must match. chipi.github.io hosts the user's other repos
- *  too, so we scope to the `/orrery` sub-path. Localhost / preview /
- *  screenshot / e2e are silent. */
-const PRODUCTION_URLS: ReadonlyArray<{ hostname: string; pathPrefix: string }> = [
-  { hostname: 'chipi.github.io', pathPrefix: '/orrery' },
-];
-
-function isProductionUrl(): boolean {
-  if (typeof window === 'undefined') return false;
-  const { hostname, pathname } = window.location;
-  return PRODUCTION_URLS.some(
-    (entry) => entry.hostname === hostname && pathname.startsWith(entry.pathPrefix),
-  );
+/** Analytics fires only when BOTH env vars are baked (production build) and we
+ *  are not in `vite dev`. Fork-silent + local-dev-silent by construction,
+ *  mirroring `sentry.ts`. Empty vars → no script injected, every `track()` a
+ *  no-op. */
+function analyticsEnabled(): boolean {
+  return !dev && !!publicEnv.PUBLIC_UMAMI_HOST && !!publicEnv.PUBLIC_UMAMI_WEBSITE_ID;
 }
 
-/** Inject the Umami `<script>` exactly once, only on production URLs.
+/** Inject the self-hosted Umami `<script>` exactly once, only when enabled.
  *  Idempotent. Call from the root +layout's onMount. */
 export function initAnalytics(): void {
-  if (!isProductionUrl()) return;
+  if (dev) return;
+  if (typeof document === 'undefined') return;
+  const host = publicEnv.PUBLIC_UMAMI_HOST?.replace(/\/$/, '');
+  const websiteId = publicEnv.PUBLIC_UMAMI_WEBSITE_ID;
+  if (!host || !websiteId) return; // fork-silent + local-dev-silent
   if (document.querySelector('script[data-umami-installed]')) return;
   const s = document.createElement('script');
   s.defer = true;
-  s.src = UMAMI_SCRIPT_URL;
-  s.dataset.websiteId = UMAMI_WEBSITE_ID;
+  s.src = `${host}/script.js`;
+  s.dataset.websiteId = websiteId;
   s.setAttribute('data-umami-installed', '1');
   document.head.appendChild(s);
 }
@@ -122,9 +130,10 @@ type UmamiGlobal = {
 
 /** Track a custom event. Name is constrained to the registry (typos are
  *  compile errors). Safe before the Umami script loads (it queues), and a
- *  no-op on non-production URLs. */
+ *  no-op when analytics is disabled. */
 export function track(name: EventName, props?: Record<string, unknown>): void {
-  if (!isProductionUrl()) return;
+  if (!analyticsEnabled()) return;
+  if (typeof window === 'undefined') return;
   const u = (window as unknown as { umami?: UmamiGlobal }).umami;
   u?.track?.(name, props);
 }

@@ -79,3 +79,4 @@
 | ADR-078 | Mobile wrapper reshaped: iOS-first + stream-heavy bundle (reverses RFC-018 Android-first + §8.2) | Accepted | Jul 2026 |
 | ADR-079 | Asset-origin spine + source/derived separation + WebP delivery | Accepted | Jul 2026 |
 | ADR-080 | Responsive image size ladder + srcset delivery (mobile · web · Google TV) | Accepted | Jul 2026 |
+| ADR-081 | Self-hosted Umami analytics (env-var-gated, no committed IDs) | Accepted | Jul 2026 |

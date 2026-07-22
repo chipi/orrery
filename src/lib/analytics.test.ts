@@ -1,7 +1,25 @@
 // @vitest-environment jsdom
 import { describe, expect, it, vi, afterEach } from 'vitest';
+
+// Env-gated (mirrors sentry.ts): a mutable mocked env lets each test flip
+// analytics on/off; `dev: false` so the enabled path is reachable under vitest.
+vi.mock('$env/dynamic/public', () => ({ env: {} }));
+vi.mock('$app/environment', () => ({ dev: false }));
+import { env as publicEnv } from '$env/dynamic/public';
+
 import * as A from './analytics';
 import { EVENT_NAMES } from './analytics';
+
+const UMAMI_HOST = 'https://analytics.orrerylearn.com';
+const UMAMI_ID = '00000000-0000-0000-0000-000000000000';
+function enableAnalytics(): void {
+  publicEnv.PUBLIC_UMAMI_HOST = UMAMI_HOST;
+  publicEnv.PUBLIC_UMAMI_WEBSITE_ID = UMAMI_ID;
+}
+function disableAnalytics(): void {
+  delete publicEnv.PUBLIC_UMAMI_HOST;
+  delete publicEnv.PUBLIC_UMAMI_WEBSITE_ID;
+}
 
 // The event registry is the single source of truth for Umami dashboards.
 // These guard against the schema drift that previously crept in (parallel
@@ -35,24 +53,16 @@ describe('analytics EVENT_NAMES registry', () => {
   });
 });
 
-// Override window.location so isProductionUrl() can be flipped per-test.
-function setLocation(hostname: string, pathname: string): void {
-  Object.defineProperty(window, 'location', {
-    configurable: true,
-    writable: true,
-    value: { hostname, pathname },
-  });
-}
-
 describe('analytics tracking helpers', () => {
   afterEach(() => {
     vi.restoreAllMocks();
+    disableAnalytics();
     delete (window as unknown as { umami?: unknown }).umami;
     document.querySelectorAll('script[data-umami-installed]').forEach((s) => s.remove());
   });
 
-  it('every helper is a safe no-op on non-production URLs', () => {
-    setLocation('localhost', '/');
+  it('every helper is a safe no-op when analytics is disabled (no env vars)', () => {
+    disableAnalytics();
     const umami = { track: vi.fn() };
     (window as unknown as { umami: unknown }).umami = umami;
 
@@ -79,8 +89,8 @@ describe('analytics tracking helpers', () => {
     expect(umami.track).not.toHaveBeenCalled();
   });
 
-  it('emits typed events to umami on a production URL', () => {
-    setLocation('chipi.github.io', '/orrery/missions');
+  it('emits typed events to umami when enabled (env vars baked)', () => {
+    enableAnalytics();
     const umami = { track: vi.fn() };
     (window as unknown as { umami: unknown }).umami = umami;
 
@@ -102,14 +112,17 @@ describe('analytics tracking helpers', () => {
     });
   });
 
-  it('initAnalytics injects the umami script once, production-only', () => {
-    setLocation('localhost', '/');
+  it('initAnalytics injects the umami script once, only when enabled', () => {
+    disableAnalytics();
     A.initAnalytics();
     expect(document.querySelector('script[data-umami-installed]')).toBeNull();
 
-    setLocation('chipi.github.io', '/orrery/');
+    enableAnalytics();
     A.initAnalytics();
     A.initAnalytics(); // idempotent
-    expect(document.querySelectorAll('script[data-umami-installed]').length).toBe(1);
+    const scripts = document.querySelectorAll('script[data-umami-installed]');
+    expect(scripts.length).toBe(1);
+    expect(scripts[0].getAttribute('src')).toBe(`${UMAMI_HOST}/script.js`);
+    expect(scripts[0].getAttribute('data-website-id')).toBe(UMAMI_ID);
   });
 });

@@ -170,6 +170,15 @@ jobs:
           # env label aligned with the o11y estate (dev / staging / prod).
           PUBLIC_SENTRY_ENVIRONMENT: prod
           PUBLIC_SENTRY_RELEASE: gha-${{ steps.sha.outputs.short }}
+          # Self-hosted Umami — mirrors the Sentry wiring above exactly: the
+          # fixed edge host is hardcoded here (like PUBLIC_SENTRY_ENVIRONMENT),
+          # and the only operator-set value is the website id, kept in a secret
+          # like PUBLIC_SENTRY_DSN (it's public — ships in the bundle — but the
+          # secret keeps it out of the repo). src/lib/analytics.ts stays silent
+          # until the id secret is set, so an empty value is safe. Set it to the
+          # id of the Orrery website registered in the self-hosted Umami admin.
+          PUBLIC_UMAMI_HOST: https://analytics.orrerylearn.com
+          PUBLIC_UMAMI_WEBSITE_ID: ${{ secrets.PUBLIC_UMAMI_WEBSITE_ID }}
         run: npm run build
 
       - name: Join the tailnet

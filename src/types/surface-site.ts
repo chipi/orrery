@@ -306,6 +306,14 @@ export interface Traverse {
   /** Curated notable stops along the traverse. Optional. */
   stops?: TraverseStop[];
   /**
+   * True when a `<rover>.route-patches.json` sidecar exists. Gates the
+   * optional sidecar fetch in get{Mars,Moon}Traverse so traverses WITHOUT
+   * patches (most of the Moon set) don't fire a 404 for a file that was never
+   * generated. Absent/false ⇒ skip the fetch. `route_patches` below holds the
+   * loaded crops when this is set.
+   */
+  has_route_patches?: boolean;
+  /**
    * HiRISE detail crops sampled ALONG the route (#360) so there's zoom
    * capability anywhere the rover drove, not just at the landing site.
    * Loaded from `<rover>.route-patches.json` by getMarsTraverse. Each is

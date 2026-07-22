@@ -3,7 +3,7 @@
   "agency": "NASA",
   "status": "ACTIVE",
   "snapshot_date": "2025-12-15",
-  "credit": "\u00a9 NASA/JPL-Caltech \u2014 Curiosity rover traverse, simplified hand-vendored polyline approximating the rover's path through Gale Crater from Bradbury Landing (Aug 2012) toward the upper slopes of Mt. Sharp. V1 stub for visual continuity; refresh from NASA MSL Analyst's Notebook for high-fidelity coordinates.",
+  "credit": "© NASA/JPL-Caltech — Curiosity rover traverse, simplified hand-vendored polyline approximating the rover's path through Gale Crater from Bradbury Landing (Aug 2012) toward the upper slopes of Mt. Sharp. V1 stub for visual continuity; refresh from NASA MSL Analyst's Notebook for high-fidelity coordinates.",
   "points": [
     [
       -4.5895,
@@ -163,5 +163,6 @@
       "kind": "feature",
       "id": "sol-3500"
     }
-  ]
+  ],
+  "has_route_patches": true
 }

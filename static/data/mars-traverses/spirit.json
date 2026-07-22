@@ -3,7 +3,7 @@
   "agency": "NASA",
   "status": "ENDED",
   "snapshot_date": "2010-03-22",
-  "credit": "\u00a9 NASA/JPL-Caltech \u2014 Spirit rover traverse, simplified hand-vendored polyline from Spirit's Gusev Crater landing site (Jan 2004) across the Columbia Hills to Troy/Home Plate (final position March 2010). V1 stub.",
+  "credit": "© NASA/JPL-Caltech — Spirit rover traverse, simplified hand-vendored polyline from Spirit's Gusev Crater landing site (Jan 2004) across the Columbia Hills to Troy/Home Plate (final position March 2010). V1 stub.",
   "points": [
     [
       -14.5715,
@@ -159,9 +159,10 @@
       "sol": 2210,
       "lat": -14.59942,
       "lon": 175.53049,
-      "label": "Last contact \u2014 Troy",
+      "label": "Last contact — Troy",
       "kind": "feature",
       "id": "sol-2210"
     }
-  ]
+  ],
+  "has_route_patches": true
 }

@@ -536,12 +536,15 @@ export async function getMarsSites(locale = 'en-US'): Promise<MarsSite[]> {
 export async function getMarsTraverse(roverId: string): Promise<Traverse | null> {
   const t = await get<Traverse>(`mars-traverses/${roverId}.json`).catch(() => null);
   if (!t) return null;
-  // Along-route HiRISE patches (#360) — optional sidecar manifest. Absent
-  // for rovers not yet sampled; the traverse still renders without it.
-  const rp = await get<{ patches: RouteHirisePatch[] }>(
-    `mars-traverses/${roverId}.route-patches.json`,
-  ).catch(() => null);
-  if (rp?.patches?.length) t.route_patches = rp.patches;
+  // Along-route HiRISE patches (#360) — optional sidecar manifest. Only fetched
+  // when the traverse declares `has_route_patches`, so rovers without a sidecar
+  // don't 404 on a file that was never generated.
+  if (t.has_route_patches) {
+    const rp = await get<{ patches: RouteHirisePatch[] }>(
+      `mars-traverses/${roverId}.route-patches.json`,
+    ).catch(() => null);
+    if (rp?.patches?.length) t.route_patches = rp.patches;
+  }
   return t;
 }
 
@@ -550,10 +553,14 @@ export async function getMarsTraverse(roverId: string): Promise<Traverse | null>
 export async function getMoonTraverse(roverId: string): Promise<Traverse | null> {
   const t = await get<Traverse>(`moon-traverses/${roverId}.json`).catch(() => null);
   if (!t) return null;
-  const rp = await get<{ patches: RouteHirisePatch[] }>(
-    `moon-traverses/${roverId}.route-patches.json`,
-  ).catch(() => null);
-  if (rp?.patches?.length) t.route_patches = rp.patches;
+  // Only apollo16/apollo17 have a route-patches sidecar; gate on the flag so the
+  // other Moon traverses don't 404 (see getMarsTraverse).
+  if (t.has_route_patches) {
+    const rp = await get<{ patches: RouteHirisePatch[] }>(
+      `moon-traverses/${roverId}.route-patches.json`,
+    ).catch(() => null);
+    if (rp?.patches?.length) t.route_patches = rp.patches;
+  }
   return t;
 }
 

@@ -5,8 +5,10 @@
  * validator. Drives a real headless browser (Playwright/Chromium) against a
  * running deployment and asserts: reachability + security headers + the exact
  * CSP directives, PWA/service-worker config, a full route-health sweep
- * (every top-level route + key deep/dynamic routes + a localized sample →
- * 200, no page errors, no unexpected 4xx), data-overlay integrity, and a
+ * (every top-level route + key deep/dynamic routes → 200, no page errors, no
+ * unexpected 4xx), a FULL localized sweep (every top-level route × all 13
+ * non-base locales → served + correct <html lang>, catching home-fallback),
+ * data-overlay integrity, and a
  * REGRESSION-GUARD suite for every prod bug fixed on 2026-07-22 (VPS /data
  * overlay, gallery-video CSP frame-src, PWA locale-switch shell, GlitchTip
  * error-monitoring CSP+DSN, /moon route-patches 404) so they can't silently
@@ -66,17 +68,27 @@ const DEEP_ROUTES = [
   '/missions?id=apollo11',
   '/explore?id=mars',
 ];
-// A representative locale × route sample (full matrix is hundreds of pages).
-const LOCALE_SAMPLE = [
-  '/de/',
-  '/de/explore',
-  '/de/missions',
-  '/de/programs/apollo',
-  '/ja/fly',
-  '/fr/fleet',
-  '/ru/moon',
-  '/zh-CN/science',
+// All 13 non-base locales (project.inlang/settings.json). The full localized
+// route sweep (below) checks EVERY top-level route in EVERY language: served +
+// the served page's <html lang> matches the locale (a home-fallback shows
+// lang="en-US" — the exact failure mode the PWA-shell + prerender bugs caused).
+const LOCALES = [
+  'es',
+  'fr',
+  'de',
+  'pt-BR',
+  'it',
+  'nl',
+  'sr-Cyrl',
+  'zh-CN',
+  'ja',
+  'ko',
+  'hi',
+  'ar',
+  'ru',
 ];
+// Localized URL for a base route (mirrors svelte.config.js expandLocalizedRoots).
+const localizedPath = (locale, route) => (route === '/' ? `/${locale}/` : `/${locale}${route}`);
 
 // Console-error patterns that are benign noise, not failures.
 const IGNORE_CONSOLE = /Failed to load resource|favicon|\[vite\]|Download the .* DevTools|preload/i;
@@ -210,16 +222,57 @@ for (const r of DEEP_ROUTES) {
   await p.close();
 }
 
-// SUITE 5 — localized route sample (must serve their OWN page, not home fallback)
-suite('i18n-routes');
-for (const r of LOCALE_SAMPLE) {
-  const { p, status, pageErrors } = await load(desktop, r, { waitMs: 1200 });
-  record(
-    `locale ${r}`,
-    status >= 200 && status < 400 && !pageErrors.length,
-    (status >= 400 ? `HTTP ${status}` : '') + (pageErrors[0] ?? ''),
+// SUITE 5 — FULL localized sweep: every top-level route × all 13 locales.
+// Each localized route must (a) serve 2xx and (b) return its OWN page — detected
+// by the served <html lang="xx"> matching the locale (a home-fallback shows
+// lang="en-US"). fetch-based + parallel so 13 × N routes stays fast; rolled up
+// to one result per locale (failures listed) to keep the report readable.
+suite('i18n-full');
+{
+  const langRe = /<html[^>]*\blang="([^"]+)"/i;
+  const checkOne = async (locale, route) => {
+    const path = localizedPath(locale, route);
+    try {
+      const res = await fetch(BASE + path, { redirect: 'follow' });
+      if (res.status < 200 || res.status >= 400)
+        return { route, ok: false, why: `HTTP ${res.status}` };
+      const html = await res.text();
+      const lang = (langRe.exec(html)?.[1] || '').trim();
+      if (lang !== locale)
+        return { route, ok: false, why: `lang="${lang || '?'}" (home-fallback?)` };
+      return { route, ok: true };
+    } catch (e) {
+      return { route, ok: false, why: e.message.slice(0, 40) };
+    }
+  };
+  // Bounded concurrency across the whole locale×route matrix.
+  const jobs = [];
+  for (const locale of LOCALES) for (const route of TOP_ROUTES) jobs.push({ locale, route });
+  const CONCURRENCY = 12;
+  const byLocale = Object.fromEntries(LOCALES.map((l) => [l, []]));
+  let idx = 0;
+  await Promise.all(
+    Array.from({ length: CONCURRENCY }, async () => {
+      while (idx < jobs.length) {
+        const { locale, route } = jobs[idx++];
+        byLocale[locale].push(await checkOne(locale, route));
+      }
+    }),
   );
-  await p.close();
+  for (const locale of LOCALES) {
+    const rs = byLocale[locale];
+    const fails = rs.filter((r) => !r.ok);
+    record(
+      `locale ${locale} (${rs.length - fails.length}/${rs.length} routes)`,
+      fails.length === 0,
+      fails.length
+        ? fails
+            .slice(0, 4)
+            .map((f) => `${f.route}:${f.why}`)
+            .join(', ')
+        : '',
+    );
+  }
 }
 
 // SUITE 6 — data-overlay integrity (the VPS /data seed fix)

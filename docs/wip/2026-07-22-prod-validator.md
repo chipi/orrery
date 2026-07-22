@@ -39,8 +39,11 @@ context broken).
    2xx, no page errors, no unexpected 4xx.
 4. **deep-routes** — `/programs/<id>`, a `/science/<tab>/<section>`, `?id=` and
    `?site=` query routes.
-5. **i18n-routes** — a locale × route sample (de/ja/fr/ru/zh-CN) serves its OWN
-   page, not the home fallback.
+5. **i18n-full** — **every top-level route × all 13 non-base locales** (325
+   checks): each serves 2xx AND the served `<html lang="xx">` matches the locale.
+   A home-fallback (the PWA-shell / prerender failure mode) shows `lang="en-US"`
+   and fails. fetch-based + parallel (concurrency 12) so it stays fast; rolled up
+   to one result per locale (`locale de (25/25 routes)`), failures listed inline.
 6. **data** — `/data/i18n/*.json` bundles served (the VPS `/data`-overlay seed).
 7. **regression-guards** — one guard per prod bug fixed 2026-07-22, so they can't
    silently return:

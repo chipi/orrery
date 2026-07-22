@@ -738,6 +738,44 @@
     margin: 0 0 24px;
     margin-left: 50%;
     transform: translateX(-50%);
+    /* The illustration's backdrop is a touch lighter than --color-bg and
+       non-uniform (a faint glow toward the base), so the raw rectangle reads
+       as a framed box against the page. Feather all four edges to transparent
+       so the orrery melts into the page starfield instead of sitting in a box.
+       Two axis gradients intersected = a rectangular edge-vignette. */
+    --hero-fade: 8%;
+    -webkit-mask-image:
+      linear-gradient(
+        to right,
+        transparent 0,
+        #000 var(--hero-fade),
+        #000 calc(100% - var(--hero-fade)),
+        transparent 100%
+      ),
+      linear-gradient(
+        to bottom,
+        transparent 0,
+        #000 var(--hero-fade),
+        #000 calc(100% - var(--hero-fade)),
+        transparent 100%
+      );
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(
+        to right,
+        transparent 0,
+        #000 var(--hero-fade),
+        #000 calc(100% - var(--hero-fade)),
+        transparent 100%
+      ),
+      linear-gradient(
+        to bottom,
+        transparent 0,
+        #000 var(--hero-fade),
+        #000 calc(100% - var(--hero-fade)),
+        transparent 100%
+      );
+    mask-composite: intersect;
   }
   .wordmark {
     font-family: var(--font-display);

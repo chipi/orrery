@@ -113,7 +113,8 @@
     "test:e2e:smoke": "npm run build && playwright test --workers=1 --project=desktop-chromium tests/e2e/landing.spec.ts tests/e2e/smoke.spec.ts",
     "preflight:full:body": "npm run typecheck && npm run typecheck:scripts && npm run lint && npm run test && npm run validate-data && npm run audio:check-cost && npm run check-no-secrets:all && npm run build",
     "preflight:full": "node scripts/with-lock.mjs preflight -- npm run preflight:full:body",
-    "build-i18n-bundles": "node scripts/build-i18n-bundles.mjs"
+    "build-i18n-bundles": "node scripts/build-i18n-bundles.mjs",
+    "validate-prod": "node scripts/validate-prod.mjs"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.96.0",

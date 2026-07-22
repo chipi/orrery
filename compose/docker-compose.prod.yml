@@ -105,9 +105,16 @@ services:
       # Pipelines write to static/data on the host; the web container's
       # bind-mount picks up the change on next request.
       - ./static/data:/repo/static/data
-      # Read-only repo bind so the runner can invoke any
-      # scripts/<name>.ts entry-point.
-      - .:/repo:ro
+      # Repo bind so the runner can invoke any scripts/<name>.ts entry-point.
+      # WRITABLE (not :ro): fetch:launches creates + writes its `.launches-cache/`
+      # under /repo; without write access the fetch fails at the cache mkdir and
+      # truncates launches.json to 0 entries. (.launches-cache is gitignored.)
+      - .:/repo
+      # Preserve the image's baked node_modules. The bind above would otherwise
+      # shadow /repo/node_modules with the host checkout — which has NO
+      # node_modules on the VPS — so `npx tsx` breaks. This anonymous volume is
+      # populated from the image's /repo/node_modules and shadows the bind.
+      - /repo/node_modules
     environment:
       # No secrets by default — RFC-025 §3, ADR-067 / ADR-068 env vars
       # (Sentry, Grafana Cloud) are blank in phase 1. Wire later by

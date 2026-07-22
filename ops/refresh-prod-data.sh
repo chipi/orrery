@@ -1,21 +1,32 @@
 #!/usr/bin/env bash
 #
-# On-VPS launch-data refresh (RFC-035).
+# On-VPS launch-data refresh (RFC-035, true B2 — no GitHub in the loop).
 #
-# The launch manifest is served live from the /data overlay (nginx reads
-# static/data/), but the VPS only updates it on a manual deploy — so prod goes
-# stale between deploys. The GitHub refresh workflow already fetches fresh
-# launches every 6h and commits them to main; this script pulls just those data
-# files onto the live overlay, so nginx serves them without a redeploy. Keyless,
-# no container, no rebuild. Run once per deploy (to prime) and by the deploy@
-# crontab every 6h. Safe to run alongside the GitHub cron — both use the same
-# committed data.
+# Runs the launch fetch INSIDE the pipeline-runner container, straight from the
+# upstream sources (Launch Library 2, GCAT, NASA, SpaceX, ESA — all keyless),
+# writing the /data overlay nginx serves live. No rebuild, no redeploy, no
+# GitHub. Invoked once per deploy (to prime) and by the deploy@ crontab every
+# 6h.
+#
+# Safety: a total upstream failure makes the fetch write an (near-)empty
+# launches.json, which would blank the live launch list. So we back up the
+# current file, run the fetch, and keep the result only if it's plausibly
+# non-empty — otherwise restore the backup.
 set -euo pipefail
 cd /srv/orrery
 
-git fetch origin main -q
-# Overwrite only the data files from the freshly-fetched main; never touch code
-# (a deploy handles code). FETCH_HEAD is the just-fetched main tip.
-git checkout FETCH_HEAD -- static/data/launches.json static/data/launches-historic
+COMPOSE=(docker compose -f compose/docker-compose.prod.yml --project-directory . --env-file .env --profile manual run --rm pipeline-runner)
+LIVE=static/data/launches.json
+BAK="${LIVE}.prev"
+MIN_BYTES=10000 # a healthy manifest is ~500 KB; an empty/failed one is ~100 B
 
-echo "[refresh-prod-data] $(date -u +%FT%TZ) synced launches.json ($(wc -c < static/data/launches.json) bytes)"
+cp -f "$LIVE" "$BAK" 2>/dev/null || true
+
+if "${COMPOSE[@]}" scripts/fetch-launches.ts && [ "$(wc -c < "$LIVE")" -ge "$MIN_BYTES" ]; then
+  rm -f "$BAK"
+  echo "[refresh-prod-data] $(date -u +%FT%TZ) ok — launches.json $(wc -c < "$LIVE") bytes"
+else
+  echo "[refresh-prod-data] $(date -u +%FT%TZ) FETCH FAILED or empty — restoring previous launches.json" >&2
+  [ -f "$BAK" ] && mv -f "$BAK" "$LIVE"
+  exit 1
+fi

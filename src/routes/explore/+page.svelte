@@ -6278,12 +6278,17 @@
   <!-- Slice 7: the HR-diagram (property-space) lens overlay — the real star field
        re-projected onto temperature/luminosity axes. -->
   {#if view === '3d'}
-    <HrDiagram stars={hrStars} open={hrLensOpen && contextId === 'neighborhood'} />
+    <HrDiagram
+      stars={hrStars}
+      open={hrLensOpen && contextId === 'neighborhood'}
+      onClose={() => (hrLensOpen = false)}
+    />
     <CausalityMap
       field={causalityField}
       named={causalityNamed}
       shells={causalityShells}
       open={causalityOpen && contextId === 'neighborhood'}
+      onClose={() => (causalityOpen = false)}
     />
     <MassPeriodChart
       planets={allExoplanetPlanets}

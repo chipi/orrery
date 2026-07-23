@@ -21,8 +21,9 @@
     maxPc?: number;
     open: boolean;
     reducedMotion?: boolean;
+    onClose: () => void;
   };
-  let { field, named, shells, maxPc = 92, open, reducedMotion = false }: Props = $props();
+  let { field, named, shells, maxPc = 92, open, reducedMotion = false, onClose }: Props = $props();
 
   let canvas: HTMLCanvasElement | undefined = $state();
   let raf = 0;
@@ -194,6 +195,9 @@
       <div class="cz-title">{m.explore_causality_title()}</div>
       <div class="cz-note">{m.explore_causality_note()}</div>
     </div>
+    <button type="button" class="cz-close" aria-label={m.explore_anon_dismiss()} onclick={onClose}
+      >×</button
+    >
   </div>
 {/if}
 
@@ -228,6 +232,24 @@
     transform: translateX(-50%);
     max-width: min(90vw, 460px);
     text-align: center;
+  }
+  .cz-close {
+    position: absolute;
+    top: 74px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(10, 14, 22, 0.6);
+    color: #eaf6ff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .cz-close:hover {
+    background: rgba(30, 40, 55, 0.8);
   }
   .cz-title {
     font-family: 'Space Mono', monospace;

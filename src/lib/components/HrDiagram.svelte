@@ -13,8 +13,8 @@
   import * as m from '$lib/paraglide/messages';
 
   type Star = { bv: number; absMag: number };
-  type Props = { stars: Star[]; open: boolean; reducedMotion?: boolean };
-  let { stars, open, reducedMotion = false }: Props = $props();
+  type Props = { stars: Star[]; open: boolean; reducedMotion?: boolean; onClose: () => void };
+  let { stars, open, reducedMotion = false, onClose }: Props = $props();
 
   let canvas: HTMLCanvasElement | undefined = $state();
   let raf = 0;
@@ -174,6 +174,9 @@
   <div class="hr-overlay">
     <canvas bind:this={canvas} aria-label={m.explore_hr_badge()}></canvas>
     <div class="hr-badge" role="note">{m.explore_hr_badge()}</div>
+    <button type="button" class="hr-close" aria-label={m.explore_anon_dismiss()} onclick={onClose}
+      >×</button
+    >
   </div>
 {/if}
 
@@ -185,6 +188,24 @@
     pointer-events: none;
     background: #04060d;
     animation: hr-fade 500ms ease-out;
+  }
+  .hr-close {
+    position: absolute;
+    top: 74px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(10, 14, 22, 0.6);
+    color: #eaf6ff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    pointer-events: auto; /* overlay is click-through; the close button is not */
+  }
+  .hr-close:hover {
+    background: rgba(30, 40, 55, 0.8);
   }
   @keyframes hr-fade {
     from {

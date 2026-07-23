@@ -16,6 +16,7 @@
  * Privacy stance documented in README.md §Privacy.
  */
 import * as Sentry from '@sentry/sveltekit';
+import { Capacitor } from '@capacitor/core';
 import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
 
@@ -31,16 +32,26 @@ export function initSentry(): void {
   if (!dsn) return; // Fork-silent + local-dev-silent default.
   if (dev) return; // Vite dev never reports.
 
+  // Same web bundle runs on the web AND inside the Capacitor iOS/Android/TV
+  // shells (WKWebView/WebView). Split them in GlitchTip so a shell-only JS
+  // regression is obvious: native shells report under `mobile-<platform>` and
+  // carry a `platform` tag; the web keeps its configured environment. Native
+  // SHELL crashes (Swift/Kotlin) are still out of scope here — that's the
+  // @sentry/capacitor layer tracked in #428. Capacitor.getPlatform() returns
+  // 'web' off-device, so this is a no-op for the plain web build.
+  const platform = Capacitor.getPlatform(); // 'web' | 'ios' | 'android'
+  const isNative = platform !== 'web';
+
   Sentry.init({
     dsn,
-    environment: publicEnv.PUBLIC_SENTRY_ENVIRONMENT || 'prod',
+    environment: isNative ? `mobile-${platform}` : publicEnv.PUBLIC_SENTRY_ENVIRONMENT || 'prod',
     release: publicEnv.PUBLIC_SENTRY_RELEASE || undefined,
 
-    // Tag every event `component: orrery` so streams stay separable in the
-    // self-hosted GlitchTip we share with the podcast app (orrery = GlitchTip
-    // project 2; the ingest-only public vhost lands events there — see the
-    // podcast_scraper-infra ORRERY-GLITCHTIP-CLIENT-ERRORS-BRIEF).
-    initialScope: { tags: { component: 'orrery' } },
+    // Tag every event `component: orrery` (+ `platform`) so streams stay
+    // separable in the self-hosted GlitchTip we share with the podcast app
+    // (orrery = GlitchTip project 2; the ingest-only public vhost lands events
+    // there — see podcast_scraper-infra ORRERY-GLITCHTIP-CLIENT-ERRORS-BRIEF).
+    initialScope: { tags: { component: 'orrery', platform } },
 
     // Errors only — explicitly NO performance tracing, NO Web Vitals.
     tracesSampleRate: 0,

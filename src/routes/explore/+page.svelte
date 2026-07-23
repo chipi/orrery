@@ -41,6 +41,7 @@
     LOCAL_GROUP_CONTEXT,
     makeBodyContext,
     bodyContextId,
+    AU_PER_PARSEC,
   } from '$lib/universe/context-graph';
   import type { NeighborhoodScene } from '$lib/universe/neighborhood-scene';
   import type { BodyScene } from '$lib/universe/body-scene';
@@ -2947,7 +2948,12 @@
     // ceiling caps at 50× radius so the user can pan outward without
     // accidentally re-entering heliocentric framing.
     let camRMin = 60;
-    let camRMax = 1400;
+    // Solar-system zoom-out ceiling (AU). Also the OUT crossing distance into the
+    // Stellar Neighborhood (HELIO_CAM_R_MAX below). Raised from 1400 so you can
+    // zoom out further — toward the ~3000 AU sky shell, within SOLAR_FAR (~8000)
+    // — before the scene swaps. Tune to taste; NB_CAM_R_MIN derives from it so
+    // the return crossing stays at the same physical distance.
+    let camRMax = 2400;
     // Default heliocentric pose — captured once so the Reset View
     // button can fly back to a stable known framing.
     const HELIO_DEFAULT_CAMR = 680;
@@ -2978,7 +2984,10 @@
     let nbLoading = false;
     const HELIO_CAM_R_MAX = camRMax; // 1400 AU — the v1 heliocentric ceiling
     const NB_ENTRY_CAM_R = 0.05; // pc — entry framing just outside the Sun
-    const NB_CAM_R_MIN = 0.03; // pc
+    // The return (neighborhood → solar-system) crossing distance. Derived from
+    // the OUT ceiling so IN and OUT happen at the SAME physical distance (no
+    // hysteresis gap): HELIO_CAM_R_MAX AU expressed in pc.
+    const NB_CAM_R_MIN = HELIO_CAM_R_MAX / AU_PER_PARSEC; // pc (= HELIO_CAM_R_MAX AU)
     const NB_CAM_R_MAX = 60; // pc
     const NB_FAR = 1500; // pc — neighborhood far plane
     const SOLAR_FAR = camera.far; // 8000 AU

@@ -71,3 +71,17 @@ logs:
               replacement: '$1'
             - source_labels: ['__meta_docker_container_log_stream']
               target_label: stream
+
+        # Tail the on-VPS launch-data refresh log (RFC-035). This is a HOST FILE
+        # (the 6h cron's output), not a container — docker_sd can't see it, and
+        # the ~10s fetch container is usually gone before the 30s docker_sd poll.
+        # The file is the RELIABLE signal for "did the refresh run + succeed"
+        # (the `[refresh-prod-data] … ok` / `FETCH FAILED` lines). Mounted
+        # read-only into the agent (see docker-compose.prod.yml).
+        - job_name: orrery-data-refresh
+          static_configs:
+            - targets: [localhost]
+              labels:
+                surface: pipeline
+                job: orrery-data-refresh
+                __path__: /var/log/orrery/data-refresh.log

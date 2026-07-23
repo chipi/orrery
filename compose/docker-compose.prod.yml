@@ -161,6 +161,12 @@ services:
       # Read-only docker socket for docker_sd discovery of orrery-*
       # containers.
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      # The on-VPS launch-data refresh log (RFC-035) — a host file the cron
+      # appends to. Tailed by the agent's orrery-data-refresh job so the
+      # refresh's success/failure is queryable + alertable in Grafana. The
+      # deploy `touch`es it before this container starts so the bind mount
+      # finds a file, not a directory.
+      - ./data-refresh.log:/var/log/orrery/data-refresh.log:ro
     # The backend (self-hosted VictoriaLogs) is addressed by its Tailscale
     # MagicDNS name `homelab`, which docker's embedded resolver can't see.
     # Resolve the name → tailnet IP on the HOST at deploy time and inject it as

@@ -92,3 +92,6 @@ static/data/i18n/*.json
 # treehouse worktree tool config (local tooling, not app code)
 treehouse.toml
 /_quarantine/
+
+# On-VPS launch-data refresh log (RFC-035) — runtime, tailed by grafana-agent
+/data-refresh.log

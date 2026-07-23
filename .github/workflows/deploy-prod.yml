@@ -330,6 +330,7 @@ jobs:
             "set -euo pipefail; cd /srv/orrery; \
              git fetch --depth=50 origin '+refs/heads/main:refs/remotes/origin/main'; \
              git reset --hard origin/main; \
+             touch data-refresh.log; \
              . ./.env; \
              docker compose -f compose/docker-compose.prod.yml \
                --project-directory . --env-file .env --profile observability \

@@ -98,8 +98,13 @@ test('nav bar is visible on every screen and links target primary routes', async
     // Mobile: every link is in the (already-open) drawer. Desktop: most
     // routes now live behind the Explore / Catalog / Learn dropdowns
     // (2026-07 nav regroup), so reveal each via its group before asserting.
+    // Match the route exactly OR with a trigger query (e.g. the /explore
+    // "Solar System" child is ?context=solar-system so a bare click re-enters
+    // the scale) — but not a sub-path like /explore/hub.
     const link = isMobile
-      ? page.locator(`a.drawer-link[href$="${path}"]`).first()
+      ? page
+          .locator(`a.drawer-link[href$="${path}"], a.drawer-link[href*="${path}?"]`)
+          .first()
       : await revealDesktopNavLink(page, path);
     await expect(link, `nav link to ${path}`).toBeVisible();
   }

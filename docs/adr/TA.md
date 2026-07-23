@@ -624,6 +624,8 @@ npm run build         = i18n:compile
 
 The husky pre-push hook runs `preflight`. CI mirrors this chain exactly (per ADR-014 / ADR-015). The build is reproducible from a clean checkout in under 6 minutes locally, ~22 minutes in CI on `ubuntu-latest` single-worker per `playwright.config.ts`.
 
+**CI trigger map.** `ci.yml` (typecheck · lint · `test:coverage` · validate-data · build) and CodeQL run on `push`/`pull_request` to `main`; a green `ci.yml` chains the e2e + publish gates via `workflow_run` (`docker-e2e.yml` — sharded per W7/ADR-066 — and `mobile-e2e.yml`). Orrery merges feature branches straight to local `main` (no PRs), so a long-lived branch otherwise gets **zero Linux `npm ci` runs until it's already merged**. `lock-check.yml` closes that gap: on every push to a non-`main` branch it runs a cold `npm ci --ignore-scripts` on `ubuntu-latest`, surfacing lockfile drift on the branch push instead of post-merge. The drift it guards against: a macOS `npm install` silently strips Linux-only optional peer deps (`@emnapi/*`, pulled transitively by the optional `@rolldown/binding-wasm32-wasi` → `@napi-rs/wasm-runtime`) from `package-lock.json`, which then fails the cold Linux `npm ci` with `Missing @emnapi/... from lock file`. Regenerate the lock on Linux (`docker run --rm -v "$PWD":/app -w /app node:20 npm install --package-lock-only`), never macOS. The file lives on `main` so branches cut from it inherit the guard.
+
 ---
 
 ## §contracts

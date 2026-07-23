@@ -1,0 +1,1 @@
+import{X as e,_t as t,gt as n}from"./zEB-6H-K.js";import"./xihTtKlq.js";import{r}from"./CY6WH1vC.js";function i(i,a){t(a,!0),e(()=>(r({label:a.label,content:a.content??null}),()=>r({label:``,content:null}))),n()}export{i as t};

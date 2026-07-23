@@ -11,6 +11,9 @@
 // inputs (star selection, budget, context math) are tested separately.
 
 import * as THREE from 'three';
+import { LineSegments2 } from 'three/examples/jsm/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'three/examples/jsm/lines/LineSegmentsGeometry.js';
+import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
 import { selectVisibleStars, type ShellData } from './star-selection';
 import { createPointField, type PointFieldHandle } from './point-field';
 import { tierToStarBudget } from './budget';
@@ -38,6 +41,8 @@ export interface NeighborhoodScene {
   hrStars(maxCount?: number): Array<{ bv: number; absMag: number }>;
   /** Toggle the constellation-line overlay. */
   setConstellationsVisible(on: boolean): void;
+  /** Update the fat constellation lines' pixel resolution (call on resize). */
+  setSize(width: number, height: number): void;
   /** Toggle the deep-sky (Messier + gallery) glint layer. Off by default. */
   setDeepSkyVisible(on: boolean): void;
   /** The light-cone shells + a top-down census of stars within `maxPc` of the Sun,
@@ -239,26 +244,43 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
   // inside-out web. The overlay plots the same real named stars at true distance
   // against concentric light-horizon rings. `causalityData()` feeds it. ──
 
-  // ── Constellation-line overlay (one LineSegments draw call, off by default) ──
-  let constellationLines: THREE.LineSegments | null = null;
+  // ── Constellation-line overlay: fat, glowing neon figures (Line2), off by
+  //    default. A wide dim underlay + a crisp bright overlay make a soft glow,
+  //    and the material's pixel-width lines stay crisp at every zoom (basic GL
+  //    lines rendered as 1px hairlines). Width is nudged per-frame in update()
+  //    so the figures stay legible across the neighborhood's zoom range.
+  let constellationLines: THREE.Group | null = null;
+  const constellationMats: LineMaterial[] = [];
+  const CONSTELLATION_BASE_WIDTH = [8, 2.2] as const; // glow underlay, crisp overlay
   if (constellations.length > 0) {
     const all: number[] = [];
     for (const c of constellations) all.push(...c.vertices);
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute('position', new THREE.Float32BufferAttribute(all, 3));
-    geo.boundingSphere = new THREE.Sphere(new THREE.Vector3(0, 0, 0), 1e6);
-    constellationLines = new THREE.LineSegments(
-      geo,
-      new THREE.LineBasicMaterial({
-        color: 0x4ecdc4,
+    const geo = new LineSegmentsGeometry();
+    geo.setPositions(all);
+    const grp = new THREE.Group();
+    grp.frustumCulled = false;
+    const layers: Array<[number, number, number]> = [
+      [CONSTELLATION_BASE_WIDTH[0], 0x2f9e97, 0.14],
+      [CONSTELLATION_BASE_WIDTH[1], 0xa8f7ef, 0.8],
+    ];
+    for (const [w, color, op] of layers) {
+      const mat = new LineMaterial({
+        color,
+        linewidth: w,
         transparent: true,
-        opacity: 0.22,
+        opacity: op,
         depthWrite: false,
-      }),
-    );
-    constellationLines.frustumCulled = false;
-    constellationLines.visible = false;
-    scene.add(constellationLines);
+        depthTest: false,
+      });
+      mat.resolution.set(window.innerWidth || 1, window.innerHeight || 1);
+      constellationMats.push(mat);
+      const line = new LineSegments2(geo, mat);
+      line.frustumCulled = false;
+      grp.add(line);
+    }
+    grp.visible = false;
+    constellationLines = grp;
+    scene.add(grp);
   }
 
   const sun = makeSunSprite();
@@ -371,6 +393,9 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     setConstellationsVisible(on: boolean) {
       if (constellationLines) constellationLines.visible = on;
     },
+    setSize(width: number, height: number) {
+      for (const mat of constellationMats) mat.resolution.set(width, height);
+    },
     setDeepSkyVisible(on: boolean) {
       deepSky?.setVisible(on);
     },
@@ -435,6 +460,13 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       field.setOpacity(revealOpacity(camDistPc));
       applyMarkerScale(camera);
       if (camera) deepSky?.update(camDistPc, camera);
+      if (constellationLines?.visible && constellationMats.length) {
+        // Gentle zoom response: a touch thinner when zoomed out (so the figures
+        // don't look chunky across the whole field), fuller when framed in.
+        const s = Math.max(0.7, Math.min(1.3, 10 / Math.max(2, camDistPc)));
+        constellationMats[0].linewidth = CONSTELLATION_BASE_WIDTH[0] * s;
+        constellationMats[1].linewidth = CONSTELLATION_BASE_WIDTH[1] * s;
+      }
     },
     dispose() {
       field.dispose();
@@ -442,8 +474,8 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       sun.material.dispose();
       haloTex.dispose();
       if (constellationLines) {
-        constellationLines.geometry.dispose();
-        (constellationLines.material as THREE.Material).dispose();
+        for (const mat of constellationMats) mat.dispose();
+        (constellationLines.children[0] as LineSegments2 | undefined)?.geometry.dispose();
       }
       for (const m of markers) {
         (m.halo.material as THREE.SpriteMaterial).dispose();

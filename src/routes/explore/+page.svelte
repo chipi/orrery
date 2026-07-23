@@ -3180,6 +3180,10 @@
         });
         nbScene.setConstellationsVisible(showConstellations);
         nbScene.setDeepSkyVisible(showDeepSky);
+        nbScene.setSize(
+          container?.clientWidth ?? window.innerWidth,
+          container?.clientHeight ?? window.innerHeight,
+        );
         return nbScene;
       } catch (err) {
         console.error('[explore v2] neighborhood load failed', err);
@@ -5342,6 +5346,7 @@
       bloomPass?.setSize(container.clientWidth, container.clientHeight);
       mwScene?.setSize(container.clientWidth, container.clientHeight);
       lgScene?.setSize(container.clientWidth, container.clientHeight);
+      nbScene?.setSize(container.clientWidth, container.clientHeight);
       bhScene?.setSize(container.clientWidth, container.clientHeight, renderer.getPixelRatio());
       resize2d();
       // Iconic trajectories use Line2 with screen-pixel-aware
@@ -6147,15 +6152,6 @@
       <button
         type="button"
         class="nb-chip"
-        class:active={showCulture}
-        aria-pressed={showCulture}
-        onclick={() => (showCulture = !showCulture)}
-      >
-        {m.explore_culture_toggle()}
-      </button>
-      <button
-        type="button"
-        class="nb-chip"
         class:active={showDeepSky}
         aria-pressed={showDeepSky}
         onclick={() => {
@@ -6186,6 +6182,20 @@
       >
         {m.explore_lens_causality()}
       </button>
+      <!-- Culture layer — last chip (far right), and only shown when the current
+           selection actually has culture doors (they're sparse/deferred, so an
+           always-on toggle read as purposeless). -->
+      {#if starCultureDoors.length > 0 || exoCultureDoors.length > 0}
+        <button
+          type="button"
+          class="nb-chip"
+          class:active={showCulture}
+          aria-pressed={showCulture}
+          onclick={() => (showCulture = !showCulture)}
+        >
+          {m.explore_culture_toggle()}
+        </button>
+      {/if}
     </div>
     <StarIndex
       stars={namedStars}

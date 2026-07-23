@@ -158,12 +158,12 @@ function makeHaloTexture(): THREE.CanvasTexture {
   // Outer soft glow.
   const g = ctx.createRadialGradient(c, c, s * 0.28, c, c, s * 0.5);
   g.addColorStop(0, 'rgba(78,205,196,0)');
-  g.addColorStop(0.72, 'rgba(78,205,196,0.18)');
+  g.addColorStop(0.72, 'rgba(78,205,196,0.1)');
   g.addColorStop(1, 'rgba(78,205,196,0)');
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, s, s);
-  // Crisp accent ring.
-  ctx.strokeStyle = 'rgba(78,205,196,0.95)';
+  // Crisp accent ring — kept dim so the halos don't out-shine the stars inside.
+  ctx.strokeStyle = 'rgba(78,205,196,0.75)';
   ctx.lineWidth = s * 0.045;
   ctx.beginPath();
   ctx.arc(c, c, s * 0.36, 0, Math.PI * 2);
@@ -313,13 +313,15 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       const distToCam = camera ? Math.max(0.01, _camPos.distanceTo(m.group.position)) : 1;
       const base = distToCam * 0.04;
       const hi = m.id === highlightId;
-      const halo = base * (hi ? 1.7 : 1);
+      // Ring stays a constant size (hover only brightens it) — so a label that's
+      // already shown doesn't jump when you hover, and the ring doesn't grow.
+      const halo = base;
       m.halo.scale.set(halo, halo, 1);
-      const lh = base * 1.05;
+      const lh = base * 0.72; // smaller star-name labels (closer to the /explore v1 scale)
       m.label.scale.set(lh * m.labelAspect, lh, 1);
       m.label.position.set(0, halo * 1.1, 0);
       m.label.visible = m.alwaysLabel || hi;
-      (m.halo.material as THREE.SpriteMaterial).opacity = hi ? 1 : 0.8;
+      (m.halo.material as THREE.SpriteMaterial).opacity = hi ? 0.85 : 0.4;
     }
   }
 

@@ -301,26 +301,27 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     pickables.push(halo);
   }
 
-  // Our Solar System — a "you are here" label on the Sun at the origin. Always
-  // shown, and NOT pickable yet: the click-to-open-panel is a follow-up (the
-  // existing SunPanel's selectSun() crosses back OUT of the neighborhood, so an
-  // in-context panel or an explicit "enter the solar system" action is needed).
+  // Our Solar System — a "you are here" label + selectable ring on the Sun at
+  // the origin. Clicking it opens the Sun panel in-context (the page keeps you
+  // in the neighborhood — see selectSolInContext).
   {
     const { sprite: solLabel } = makeLabelSprite('Sol');
     solLabel.visible = true;
     const solHalo = new THREE.Sprite(
       new THREE.SpriteMaterial({
+        map: haloTex,
         transparent: true,
-        opacity: 0,
         depthWrite: false,
         depthTest: false,
       }),
     );
-    solHalo.visible = false; // no ring — just the label; the hidden sprite lets the shared scaler size it
+    solHalo.userData.starId = 'sol';
     const group = new THREE.Group(); // at the origin (the Sun)
+    group.userData.starId = 'sol';
     group.add(solHalo);
     group.add(solLabel);
     markerGroup.add(group);
+    pickables.push(solHalo);
     markers.push({
       id: 'sol',
       group,

@@ -2997,7 +2997,11 @@
     let mwLoading = false;
     const MW_SCENE_RADIUS = 340; // matches MW_DISK_RADIUS_SCENE
     const MW_ENTRY_CAM_R = MW_SCENE_RADIUS * 1.7; // framing just outside the disk
-    const MW_CAM_R_MIN = MW_SCENE_RADIUS * 0.35; // zoom-in floor → cross back to neighborhood
+    // Zoom-in floor → cross back to the neighborhood. Raised from 0.35 toward the
+    // 1.7 entry so the return is much easier: you drop back after a modest zoom-in
+    // rather than diving almost to the galactic centre. Tunable (trades away some
+    // deep-disk zoom for reversibility — the asymmetry feedback).
+    const MW_CAM_R_MIN = MW_SCENE_RADIUS * 0.85;
     const MW_CAM_R_MAX = MW_SCENE_RADIUS * 4; // zoom-out ceiling
     const MW_FAR = MW_SCENE_RADIUS * 12;
     const MW_ENTRY_CAM_P = 0.95; // polar angle — a tilted face-on 3/4 view of the disk
@@ -4352,6 +4356,21 @@
       const markerHits = ray3d.intersectObjects(nbScene.namedStarPickables, false);
       if (markerHits.length) {
         const id = markerHits[0].object.userData.starId as string | undefined;
+        if (id === 'sol') {
+          // Our Solar System — open the Sun panel but STAY in the neighborhood
+          // (unlike selectSun(), which crosses back out).
+          cue('select');
+          panelState.sun = true;
+          panelState.star = false;
+          panelState.planet = false;
+          panelState.smallBody = false;
+          panelState.satellite = false;
+          panelState.belt = false;
+          anonStar = null;
+          nbScene.highlightStar('sol');
+          trackItemClick('star', 'sol', '/explore');
+          return;
+        }
         if (id) {
           void selectStarFn?.(id);
           return;

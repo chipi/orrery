@@ -102,9 +102,7 @@ test('nav bar is visible on every screen and links target primary routes', async
     // "Solar System" child is ?context=solar-system so a bare click re-enters
     // the scale) — but not a sub-path like /explore/hub.
     const link = isMobile
-      ? page
-          .locator(`a.drawer-link[href$="${path}"], a.drawer-link[href*="${path}?"]`)
-          .first()
+      ? page.locator(`a.drawer-link[href$="${path}"], a.drawer-link[href*="${path}?"]`).first()
       : await revealDesktopNavLink(page, path);
     await expect(link, `nav link to ${path}`).toBeVisible();
   }

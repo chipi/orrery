@@ -23,6 +23,15 @@ MIN_BYTES=10000 # a healthy manifest is ~500 KB; an empty/failed one is ~100 B
 cp -f "$LIVE" "$BAK" 2>/dev/null || true
 
 if "${COMPOSE[@]}" scripts/fetch-launches.ts && [ "$(wc -c < "$LIVE")" -ge "$MIN_BYTES" ]; then
+  # nginx serves /data with brotli_static + gzip_static, i.e. it prefers a
+  # precompressed .br/.gz sibling if one exists. The deploy ships those (built
+  # from the old data), but the fetch only rewrites the plain .json — so nginx
+  # would keep serving the STALE compressed copy. Drop the precompressed
+  # siblings of every file the fetch regenerates; nginx then gzips the fresh
+  # .json on the fly (its documented behaviour for the dynamic /data path).
+  rm -f static/data/launches.json.gz static/data/launches.json.br \
+        static/data/launches-historic/*.json.gz static/data/launches-historic/*.json.br \
+        static/data/missions/index.json.gz static/data/missions/index.json.br 2>/dev/null || true
   rm -f "$BAK"
   echo "[refresh-prod-data] $(date -u +%FT%TZ) ok — launches.json $(wc -c < "$LIVE") bytes"
 else

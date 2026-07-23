@@ -271,22 +271,11 @@ jobs:
         env:
           SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
           IMAGE_TAG: ${{ steps.sha.outputs.tag }}
-          # Self-hosted VictoriaLogs on the tailnet (no auth). Non-secret + fixed
-          # tailnet endpoint, so it lives here, not in a secret. Overridable via
-          # the optional repo var PROD_LOKI_PUSH_URL. The old Grafana Cloud
-          # secrets (URL/USER/API_KEY) are retired — VictoriaLogs needs no auth.
-          PROD_LOKI_PUSH_URL: ${{ vars.PROD_LOKI_PUSH_URL }}
         run: |
           set -euo pipefail
-          # Loki push target: repo-var override, else the tailnet VictoriaLogs.
-          LOKI_URL="${PROD_LOKI_PUSH_URL:-http://homelab:9428/insert/loki/api/v1/push}"
-          # Resolve the homelab tailnet NAME → IP on this runner (it joined the
-          # tailnet in the preceding step) for the container's extra_hosts entry.
-          # docker's embedded DNS can't see MagicDNS names; extra_hosts injects it.
-          # Empty on failure → the compose ${HOMELAB_TAILNET_IP:-127.0.0.1}
-          # fallback keeps the agent from crashing (it just can't ship).
-          HOMELAB_IP="$(tailscale ip -4 homelab 2>/dev/null | head -1 || true)"
-          [ -z "$HOMELAB_IP" ] && echo "::warning::could not resolve 'homelab' tailnet IP — o11y shipping will be off until the VPS→homelab tailnet ACL is in place"
+          # Logs now ship via the shared node Alloy (ADR-121; ops/observability/
+          # orrery.alloy dropped into the box's config.d/). Orrery no longer runs
+          # its own agent, so no Loki URL / homelab-IP is staged here.
           ENVTMP=$(mktemp -p /dev/shm orrery-env.XXXXXX)
           trap 'shred -u "$ENVTMP" 2>/dev/null || rm -f "$ENVTMP"' EXIT
           chmod 600 "$ENVTMP"
@@ -295,11 +284,6 @@ jobs:
             printf '%s=%s\n' COMPOSE_PROJECT_NAME      orrery
             printf '%s=%s\n' ORRERY_PORT               8090
             printf '%s=%s\n' ORRERY_PIPELINE_IMAGE_TAG "$IMAGE_TAG"
-            # Self-hosted VictoriaLogs (no auth) + env label + tailnet-name→IP
-            # for the grafana-agent extra_hosts.
-            printf '%s=%s\n' GRAFANA_CLOUD_LOKI_URL  "$LOKI_URL"
-            printf '%s=%s\n' GRAFANA_AGENT_ENV       prod
-            printf '%s=%s\n' HOMELAB_TAILNET_IP      "$HOMELAB_IP"
           } > "$ENVTMP"
           scp -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new -o BatchMode=yes \
@@ -314,13 +298,15 @@ jobs:
         # zero-bootstrap. Sequence:
         #   1. `git fetch + reset --hard origin/main` brings the on-VPS
         #      checkout in lockstep with this workflow's commit.
-        #   2. `. ./.env` sources the just-staged env vars (from the
-        #      preceding Stage step) so docker compose CLI sees
-        #      ORRERY_PIPELINE_IMAGE_TAG and friends.
-        #   3. `docker compose pull/up` brings up `web` + `grafana-agent`
-        #      (under --profile observability). pipeline-runner stays
+        #   2. Drop ops/observability/orrery.alloy into the box's
+        #      config.d/ + HUP the shared node Alloy, and remove the
+        #      retired orrery-grafana-agent — same deploy, so logs don't
+        #      double-collect (ADR-121).
+        #   3. `. ./.env` sources the just-staged env vars so docker
+        #      compose CLI sees ORRERY_PIPELINE_IMAGE_TAG and friends.
+        #   4. `docker compose up` brings up `web`. pipeline-runner stays
         #      profiles: manual — invoked on-demand by cron.
-        #   4. Internal healthcheck against ORRERY_PORT.
+        #   5. Internal healthcheck against ORRERY_PORT.
         if: steps.preflight.outputs.skip != 'true'
         env:
           SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
@@ -331,16 +317,19 @@ jobs:
              git fetch --depth=50 origin '+refs/heads/main:refs/remotes/origin/main'; \
              git reset --hard origin/main; \
              touch data-refresh.log; \
+             cp ops/observability/orrery.alloy /opt/vps-observability/config.d/orrery.alloy; \
+             docker rm -f orrery-grafana-agent 2>/dev/null || true; \
+             docker kill -s HUP alloy 2>/dev/null || true; \
              . ./.env; \
              docker compose -f compose/docker-compose.prod.yml \
-               --project-directory . --env-file .env --profile observability \
-               pull pipeline-runner grafana-agent; \
+               --project-directory . --env-file .env --profile manual \
+               pull pipeline-runner; \
              docker compose -f compose/docker-compose.prod.yml \
                --project-directory . --env-file .env \
                build web; \
              docker compose -f compose/docker-compose.prod.yml \
-               --project-directory . --env-file .env --profile observability \
-               up -d web grafana-agent; \
+               --project-directory . --env-file .env \
+               up -d web; \
              PORT=\${ORRERY_PORT:-8090}; \
              for i in \$(seq 1 30); do \
                if curl -fsS \"http://127.0.0.1:\${PORT}/\" >/dev/null 2>&1; then \

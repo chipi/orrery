@@ -36,11 +36,9 @@
 #
 # Bring up (from /srv/orrery on the VPS):
 #   docker compose -f compose/docker-compose.prod.yml \
-#     --project-directory . --env-file .env \
-#     --profile observability pull
-#   docker compose -f compose/docker-compose.prod.yml \
-#     --project-directory . --env-file .env \
-#     --profile observability up -d
+#     --project-directory . --env-file .env up -d web
+# Logs ship via the shared node Alloy (ADR-121, ops/observability/orrery.alloy),
+# NOT a per-app agent in this file.
 #
 # The staged /srv/orrery/.env contains the per-deploy
 # ORRERY_PIPELINE_IMAGE_TAG=sha-<7> set by the workflow.
@@ -126,66 +124,3 @@ services:
       # Path is project-directory-relative (workflow passes
       # --project-directory .) so this resolves to /srv/orrery/.env.
       - .env
-
-  # ───────────────────────────────────────────────────────────────────
-  # Observability: Grafana Cloud Agent (ADR-068 / #263).
-  #
-  # Tails Docker container stdout/stderr of orrery-* containers via the
-  # docker_sd_configs in ops/observability/grafana-agent.yaml and ships
-  # them to Grafana Cloud Loki. Sidecar-shaped — no orrery code knows it
-  # exists; it watches via the read-only docker socket.
-  #
-  # Profile-gated: only spins up when the operator passes
-  # `--profile observability`. The deploy workflow always passes it; if
-  # GRAFANA_CLOUD_* env vars are empty the agent-entrypoint.sh wrapper
-  # swaps in grafana-agent.silent.yaml so the agent runs (idempotent
-  # restart) but ships zero bytes. This keeps the deploy idempotent —
-  # adding/rotating creds is just a re-run.
-  #
-  # Same Grafana Cloud stack as podcast_scraper is intentional — both
-  # apps' logs stream to the same Loki, separated by the `app` label
-  # (set by external_labels in grafana-agent.yaml). Query orrery-only
-  # with `{app="orrery"}`.
-  grafana-agent:
-    image: grafana/agent:v0.43.4
-    container_name: orrery-grafana-agent
-    profiles: ['observability']
-    restart: unless-stopped
-    volumes:
-      # Three configs: real (shipping), silent (no-op), and the
-      # entrypoint wrapper that picks based on env-var presence. Same
-      # files as the dev stack — committed in ops/observability/.
-      - ./ops/observability/grafana-agent.yaml:/etc/grafana-agent.yaml:ro
-      - ./ops/observability/grafana-agent.silent.yaml:/etc/grafana-agent.silent.yaml:ro
-      - ./ops/observability/agent-entrypoint.sh:/agent-entrypoint.sh:ro
-      # Read-only docker socket for docker_sd discovery of orrery-*
-      # containers.
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      # The on-VPS launch-data refresh log (RFC-035) — a host file the cron
-      # appends to. Tailed by the agent's orrery-data-refresh job so the
-      # refresh's success/failure is queryable + alertable in Grafana. The
-      # deploy `touch`es it before this container starts so the bind mount
-      # finds a file, not a directory.
-      - ./data-refresh.log:/var/log/orrery/data-refresh.log:ro
-    # The backend (self-hosted VictoriaLogs) is addressed by its Tailscale
-    # MagicDNS name `homelab`, which docker's embedded resolver can't see.
-    # Resolve the name → tailnet IP on the HOST at deploy time and inject it as
-    # an /etc/hosts entry (deploy-prod.yml stages HOMELAB_TAILNET_IP). NEVER use
-    # `dns: [100.100.100.100]` — it replaces the embedded resolver and breaks
-    # compose service-name resolution. Estate-wide pattern (matches dev + the
-    # podcast app). See ops/observability + the o11y handover.
-    extra_hosts:
-      - 'homelab:${HOMELAB_TAILNET_IP:-127.0.0.1}'
-    environment:
-      # Loki push URL — self-hosted VictoriaLogs on the tailnet (no auth), e.g.
-      # http://homelab:9428/insert/loki/api/v1/push. Empty → silent (no ship).
-      # The old Grafana Cloud USER/API_KEY are gone — VictoriaLogs needs neither.
-      - GRAFANA_CLOUD_LOKI_URL=${GRAFANA_CLOUD_LOKI_URL:-}
-      # env label: dev (local) / staging (GitHub) / prod (VPS) — matches the
-      # Grafana dashboards' env selector.
-      - GRAFANA_AGENT_ENV=${GRAFANA_AGENT_ENV:-prod}
-    # Wrapper picks shipping vs silent config based on whether the push URL is
-    # set. Without it, empty GRAFANA_CLOUD_LOKI_URL crashes the agent in a
-    # restart loop on "client needs target URL".
-    entrypoint: ['/bin/sh', '/agent-entrypoint.sh']
-    command: []

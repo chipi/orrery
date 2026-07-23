@@ -99,7 +99,6 @@
     "prepare": "git config core.hooksPath .husky 2>/dev/null || true",
     "docker:build": "docker compose build",
     "docker:up": "docker compose up -d web",
-    "docker:o11y": "HOMELAB_TAILNET_IP=$(tailscale ip -4 homelab | head -1) GRAFANA_CLOUD_LOKI_URL=http://homelab:9428/insert/loki/api/v1/push GRAFANA_AGENT_ENV=${GRAFANA_AGENT_ENV:-dev} docker compose --profile observability up -d web grafana-agent",
     "docker:down": "docker compose down",
     "docker:logs": "docker compose logs -f web",
     "docker:reset-data": "docker volume rm orrery-data orrery-cache 2>/dev/null || true",

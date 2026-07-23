@@ -1,0 +1,74 @@
+// orrery.alloy — Orrery's log rules for the shared node Alloy (ADR-121, podcast
+// infra issue #1268). Dropped into the box's /etc/alloy/config.d/ on deploy and
+// hot-reloaded (`docker kill -s HUP alloy`). Replaces the retired per-app
+// orrery-grafana-agent (grafana/agent v0.43, EOL), whose leaky docker_sd
+// keep-filter mislabelled podcast infra logs as app=orrery.
+//
+// References shared components defined in base.alloy:
+//   - discovery.docker "app"   — the Docker-socket container discovery
+//   - loki.write "logs_sink"   — the VictoriaLogs sink (sets instance/cluster;
+//                                app + per-stream labels are set HERE)
+// Do NOT touch base.alloy or the podcast sources.
+
+// ---------- Orrery containers: web (nginx) + ephemeral pipeline-runner ----------
+// Keep ONLY orrery-web + orrery-pipeline-runner-* (the leak the old agent had was
+// a too-broad keep). surface=web|pipeline mirrors the podcast split.
+discovery.relabel "orrery" {
+	targets = discovery.docker.app.targets
+
+	rule {
+		source_labels = ["__meta_docker_container_name"]
+		regex         = "/(orrery-web|orrery-pipeline-runner-.*)"
+		action        = "keep"
+	}
+
+	rule {
+		source_labels = ["__meta_docker_container_name"]
+		regex         = "/orrery-web"
+		target_label  = "surface"
+		replacement   = "web"
+	}
+
+	rule {
+		source_labels = ["__meta_docker_container_name"]
+		regex         = "/orrery-pipeline-runner-.*"
+		target_label  = "surface"
+		replacement   = "pipeline"
+	}
+
+	rule {
+		source_labels = ["__meta_docker_container_name"]
+		target_label  = "container"
+		regex         = "/(.*)"
+		replacement   = "$1"
+	}
+}
+
+loki.source.docker "orrery" {
+	host       = "unix:///var/run/docker.sock"
+	targets    = discovery.relabel.orrery.output
+	forward_to = [loki.write.logs_sink.receiver]
+	labels     = {app = "orrery"}
+}
+
+// ---------- On-VPS launch-data refresh log (RFC-035) ----------
+// Host file the 6h refresh cron appends to; Alloy sees the host root at /rootfs.
+// Carries the decisive `[refresh-prod-data] … ok — … bytes` / `FETCH FAILED`
+// lines that drive the orrery-launch-data-stale alert. MUST carry app=orrery so
+// the alert query `app:orrery job:orrery-data-refresh` matches (logs_sink no
+// longer sets app globally). file_match watches the path even before it exists.
+local.file_match "orrery_data_refresh" {
+	path_targets = [
+		{
+			__path__ = "/rootfs/srv/orrery/data-refresh.log",
+			app      = "orrery",
+			surface  = "pipeline",
+			job      = "orrery-data-refresh",
+		},
+	]
+}
+
+loki.source.file "orrery_data_refresh" {
+	targets    = local.file_match.orrery_data_refresh.targets
+	forward_to = [loki.write.logs_sink.receiver]
+}

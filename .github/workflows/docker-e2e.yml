@@ -258,7 +258,6 @@ jobs:
   # NOT published:
   #   - `web` container — it's stock nginx:alpine + bind-mounted ./build
   #     per ADR-063. The deploy unit is the static bundle, not an image.
-  #   - `grafana-agent` — vendor image (grafana/agent:v0.43.4).
   #
   # Tags pushed:
   #   :main         — track-latest-green-main tag

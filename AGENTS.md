@@ -22,8 +22,28 @@ Then drill into the matching doc by question type:
 | Image / link / text provenance? | `static/data/{image,link}-provenance.json` + ADR-046 / ADR-047 / ADR-051 |
 | How is a specific 3D scene built? | TA.md §rendering + `src/routes/<route>/+page.svelte` |
 | How does the build pipeline work? | TA.md §pipelines (10 pipelines documented) |
+| What lives in this folder / which of two look-alike functions do I touch? | the folder's own `README.md` (module map) — see below |
 
 **Anti-drift rule:** when code and TA.md disagree, one is wrong — fix it. The same applies to README, CHANGELOG, and TECH-BOM. Do not tolerate divergence.
+
+### Module READMEs — tactical maps next to code
+
+Some folders carry a short `README.md` **module map**: what lives where,
+which of the look-alike implementations serves which consumer, and the local
+conventions (units, frames, models, taxonomy rules) the code can't state.
+They exist because agents and humans both mis-target fixes without them.
+
+- **Before editing any file, read its folder's README if one exists.** It
+  answers "which file do I touch and what must my change respect" faster
+  than reading the code cold.
+- **If your task surfaced a wrong-file or wrong-layer confusion** in an area
+  with no module map, add one — recipe, placement, and validation:
+  [`docs/guides/module-readme-guide.md`](docs/guides/module-readme-guide.md).
+  Live examples: `src/lib/ar/README.md`, `scripts/README.md`,
+  `tests/e2e/README.md`.
+- Module READMEs carry the local *what/which/who-owns* only; the *why*
+  stays in ADR/PRD/RFC/TA.md — link up, never duplicate. The anti-drift
+  rule above applies to them fully.
 
 ---
 

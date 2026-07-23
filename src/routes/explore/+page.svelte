@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy, untrack } from 'svelte';
+  import { exploreContext } from '$lib/explore-context';
   import { page } from '$app/stores';
   import { afterNavigate, goto, replaceState } from '$app/navigation';
   import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
@@ -912,6 +913,13 @@
   let contextId = $state<
     'solar-system' | 'neighborhood' | 'milky-way' | 'local-group' | 'body-scene'
   >('solar-system');
+  // Publish the live scale context to the global store so the Nav highlights the
+  // active scale-shell menu item (the URL ?context is cleared after the jump, so
+  // it can't drive the highlight). Reset on leave.
+  $effect(() => {
+    exploreContext.set(contextId);
+  });
+  onDestroy(() => exploreContext.set(null));
   // Slice 2: the exoplanet host whose BodyScene is active (breadcrumb crumb) + the
   // set of host ids that have a system to descend into (drives "Enter system").
   let bodyHostName = $state('');

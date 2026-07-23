@@ -12,6 +12,7 @@
   import { roving } from '$lib/a11y/roving';
   import { trackScienceLensToggle } from '$lib/analytics';
   import { localizeHref } from '$lib/paraglide/runtime';
+  import { exploreContext, type ExploreContextId } from '$lib/explore-context';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
   import { audio } from '$lib/audio-state.svelte';
   import { sensory } from '$lib/sensory/state.svelte';
@@ -129,6 +130,24 @@
   }
   function groupActive(group: NavGroup, pathname: string): boolean {
     return group.children.some((c) => isActive(`${base}${c.path}`, pathname));
+  }
+  // The /explore scale-shell children map to a live context: the no-query child
+  // = "solar-system", each `?context=X` child = X. The URL can't drive this (the
+  // page clears ?context after the jump), so highlight against the live
+  // `exploreContext` store instead. Non-/explore children keep the plain
+  // path-match (the no-query variant). Passing `ctx` in makes the template
+  // re-evaluate when the store changes.
+  function childActive(
+    child: { path: string; query?: string },
+    url: URL,
+    ctx: ExploreContextId | null,
+  ): boolean {
+    if (!isActive(`${base}${child.path}`, url.pathname)) return false;
+    if (child.path === '/explore') {
+      const target = child.query ? new URLSearchParams(child.query).get('context') : 'solar-system';
+      return ctx === target;
+    }
+    return !child.query;
   }
 
   // Dropdown open-state — one group at a time. Closed by: Escape, an
@@ -300,8 +319,7 @@
                   href={`${base}${localizeHref(child.path)}${child.query ?? ''}`}
                   role="menuitem"
                   class="group-menu-link"
-                  class:active={!child.query &&
-                    isActive(`${base}${child.path}`, $page.url.pathname)}
+                  class:active={childActive(child, $page.url, $exploreContext)}
                   onclick={closeGroups}>{child.label()}</a
                 >
               {/each}
@@ -461,7 +479,7 @@
             <a
               href={`${base}${localizeHref(child.path)}${child.query ?? ''}`}
               class="drawer-link drawer-group-item"
-              class:active={!child.query && isActive(`${base}${child.path}`, $page.url.pathname)}
+              class:active={childActive(child, $page.url, $exploreContext)}
               onclick={closeMobileMenu}>{child.label()}</a
             >
           {/each}

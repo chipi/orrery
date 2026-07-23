@@ -13,9 +13,17 @@
  * outbound network traffic. Same posture as `src/lib/analytics.ts`
  * (Umami) — telemetry is opt-in by env var, never on by default.
  *
+ * Web uses `@sentry/sveltekit`; the Capacitor iOS/Android/TV shells use
+ * `@sentry/capacitor` (native crash handlers + the `@sentry/svelte` JS sibling)
+ * so native + JS crashes land in the same GlitchTip project, split by a
+ * `platform` tag + `mobile-<platform>` environment (#428). The whole `@sentry/*`
+ * stack is pinned to 10.60.0 — the version @sentry/capacitor@4 requires.
+ *
  * Privacy stance documented in README.md §Privacy.
  */
 import * as Sentry from '@sentry/sveltekit';
+import * as SentryCapacitor from '@sentry/capacitor';
+import { init as sentrySvelteInit } from '@sentry/svelte';
 import { Capacitor } from '@capacitor/core';
 import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
@@ -32,17 +40,15 @@ export function initSentry(): void {
   if (!dsn) return; // Fork-silent + local-dev-silent default.
   if (dev) return; // Vite dev never reports.
 
-  // Same web bundle runs on the web AND inside the Capacitor iOS/Android/TV
-  // shells (WKWebView/WebView). Split them in GlitchTip so a shell-only JS
-  // regression is obvious: native shells report under `mobile-<platform>` and
-  // carry a `platform` tag; the web keeps its configured environment. Native
-  // SHELL crashes (Swift/Kotlin) are still out of scope here — that's the
-  // @sentry/capacitor layer tracked in #428. Capacitor.getPlatform() returns
-  // 'web' off-device, so this is a no-op for the plain web build.
+  // The same web bundle runs on the web AND inside the Capacitor iOS/Android/TV
+  // shells (WKWebView/WebView). Native shells report under `mobile-<platform>`
+  // and every event carries a `platform` tag, so a shell-only regression stays
+  // separable from web in GlitchTip. Capacitor.getPlatform() returns 'web'
+  // off-device — the web takes the plain @sentry/sveltekit path below.
   const platform = Capacitor.getPlatform(); // 'web' | 'ios' | 'android'
   const isNative = platform !== 'web';
 
-  Sentry.init({
+  const options = {
     dsn,
     environment: isNative ? `mobile-${platform}` : publicEnv.PUBLIC_SENTRY_ENVIRONMENT || 'prod',
     release: publicEnv.PUBLIC_SENTRY_RELEASE || undefined,
@@ -68,7 +74,7 @@ export function initSentry(): void {
     // scrubbed below). Leaving `integrations` unset lets the SDK pick
     // its sensible defaults.
 
-    beforeSend(event) {
+    beforeSend(event: Sentry.ErrorEvent) {
       // 1. URL — preserve path, strip query + hash.
       if (event.request?.url) {
         try {
@@ -91,7 +97,7 @@ export function initSentry(): void {
       return event;
     },
 
-    beforeBreadcrumb(crumb) {
+    beforeBreadcrumb(crumb: Sentry.Breadcrumb) {
       // ui.input crumbs carry the typed value — drop entirely.
       if (crumb.category === 'ui.input') return null;
       // Navigation crumbs carry full URLs; strip query.
@@ -106,5 +112,17 @@ export function initSentry(): void {
       }
       return crumb;
     },
-  });
+  };
+
+  if (isNative) {
+    // Capacitor shells: @sentry/capacitor initialises the NATIVE crash handlers
+    // (sentry-cocoa / sentry-android) — Swift/Kotlin/plugin/startup/webview-
+    // process crashes — AND the JS layer via the @sentry/svelte sibling init,
+    // so native + JS land in the same GlitchTip project (correlation) with the
+    // `platform` tag. Native stack frames are unsymbolicated in GlitchTip 6.2.2
+    // (#428); App Store Connect / Play Console hold the symbolicated detail.
+    SentryCapacitor.init(options, sentrySvelteInit);
+  } else {
+    Sentry.init(options); // web — @sentry/sveltekit
+  }
 }

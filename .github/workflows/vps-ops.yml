@@ -1,0 +1,96 @@
+name: VPS ops (diagnostic / one-off)
+
+# Manual, read-mostly access to the prod VPS over Tailscale, for diagnostics
+# and one-off ops without a full deploy. Runs as deploy@ (same identity the
+# deploy uses). With no `command` input it dumps a standard health snapshot
+# (cron, docker, data-refresh log, overlay mtime); pass `command` to run an
+# arbitrary shell line on the box. Reuses the deploy's tailnet + SSH plumbing.
+#
+# Only operators with workflow-dispatch access can run this, and they already
+# effectively hold the deploy identity — so a free-form command input is an
+# accepted convenience, not a new exposure.
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "Shell line to run on the VPS (blank = standard diagnostic dump)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vps-ops
+  cancel-in-progress: false
+
+jobs:
+  ops:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: prod
+    steps:
+      - name: Pre-flight — required secrets/variables present?
+        id: preflight
+        env:
+          TS_AUTHKEY: ${{ secrets.TS_AUTHKEY }}
+          PROD_SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
+          PROD_TAILNET_FQDN: ${{ vars.PROD_TAILNET_FQDN }}
+        run: |
+          set -euo pipefail
+          MISSING=""
+          [ -z "${TS_AUTHKEY:-}" ]           && MISSING="$MISSING TS_AUTHKEY"
+          [ -z "${PROD_SSH_PRIVATE_KEY:-}" ] && MISSING="$MISSING PROD_SSH_PRIVATE_KEY"
+          [ -z "${PROD_TAILNET_FQDN:-}" ]    && MISSING="$MISSING PROD_TAILNET_FQDN"
+          if [ -n "$MISSING" ]; then
+            echo "::error::Missing prereqs:$MISSING"
+            exit 1
+          fi
+
+      - name: Join the tailnet
+        uses: tailscale/github-action@306e68a486fd2350f2bfc3b19fcd143891a4a2d8 # v4
+        with:
+          authkey: ${{ secrets.TS_AUTHKEY }}
+          tags: tag:gha-deployer
+          version: 1.96.4
+
+      - name: Install SSH identity for deploy@
+        env:
+          PROD_SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$PROD_SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          if ! ssh-keygen -y -f ~/.ssh/id_ed25519 > /dev/null 2>&1; then
+            echo "::error::PROD_SSH_PRIVATE_KEY is not a loadable OpenSSH/PEM key."
+            exit 1
+          fi
+          ssh-keyscan -t ed25519 -H "${{ vars.PROD_TAILNET_FQDN }}" \
+            >> ~/.ssh/known_hosts 2>/dev/null || true
+
+      - name: Run on VPS
+        env:
+          SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
+          CMD: ${{ github.event.inputs.command }}
+        run: |
+          set -euo pipefail
+          if [ -n "${CMD}" ]; then
+            REMOTE="$CMD"
+          else
+            REMOTE='
+              echo "== date (VPS, UTC) =="; date -u
+              echo "== crontab (deploy@) =="; crontab -l 2>/dev/null || echo "(no crontab)"
+              echo "== cron service =="; systemctl is-active cron 2>/dev/null || systemctl is-active cronie 2>/dev/null || service cron status 2>/dev/null || echo "cron status unknown"
+              echo "== which docker (non-login PATH, as cron sees it) =="; which docker || echo "docker NOT in PATH"
+              echo "== PATH =="; echo "$PATH"
+              echo "== cron.allow / cron.deny =="; ls -l /etc/cron.allow /etc/cron.deny 2>/dev/null || echo "(neither present)"
+              echo "== data-refresh.log (tail) =="; tail -30 /srv/orrery/data-refresh.log 2>/dev/null || echo "(no log yet — cron never wrote)"
+              echo "== launches.json mtime =="; ls -l /srv/orrery/static/data/launches.json
+            '
+          fi
+          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
+            "bash -c '$REMOTE'"

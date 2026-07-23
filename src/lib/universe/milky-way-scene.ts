@@ -59,8 +59,8 @@ const DEFAULT_BLOOM: MilkyWayBloomOptions = {
   threshold: 0.7,
 };
 
-const COOL = [0.72, 0.8, 1.0]; // arm star colour (blue-white)
-const WARM = [1.0, 0.86, 0.6]; // bulge / inner colour
+const COOL = [0.82, 0.93, 0.96]; // arm star colour — teal-white (brand), not pure blue
+const WARM = [1.0, 0.86, 0.6]; // bulge / inner colour (warm gold)
 
 function radialTexture(stops: Array<[number, string]>, size = 128): THREE.CanvasTexture {
   const cvs = document.createElement('canvas');
@@ -86,9 +86,13 @@ function labelSprite(
   weight: 'bold' | 'normal',
 ): { sprite: THREE.Sprite; texture: THREE.CanvasTexture; aspect: number } {
   const upper = text.toUpperCase();
-  const font = `${weight} 26px "Space Mono", monospace`;
+  // Lighter weight + wide tracking to match the neighborhood labels (modern/editorial
+  // rather than the old bold mono-HUD look). On-screen size trimmed at the call sites.
+  const font = `${weight === 'bold' ? '500' : '400'} 24px "Space Mono", monospace`;
+  const tracking = '2px';
   const measure = document.createElement('canvas').getContext('2d')!;
   measure.font = font;
+  measure.letterSpacing = tracking;
   const pad = 12;
   const w = Math.ceil(measure.measureText(upper).width) + pad * 2;
   const h = 40;
@@ -97,9 +101,10 @@ function labelSprite(
   cvs.height = h;
   const ctx = cvs.getContext('2d')!;
   ctx.font = font;
+  ctx.letterSpacing = tracking;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.shadowColor = 'rgba(0,0,0,0.95)';
+  ctx.shadowColor = 'rgba(0,0,0,0.9)';
   ctx.shadowBlur = 5;
   ctx.fillStyle = color;
   ctx.fillText(upper, w / 2, h / 2);
@@ -169,13 +174,13 @@ export function createMilkyWayScene(
   softSprite(
     track(
       radialTexture([
-        [0, 'rgba(120,150,220,0.06)'],
-        [0.5, 'rgba(100,130,210,0.03)'],
-        [1, 'rgba(80,110,200,0)'],
+        [0, 'rgba(70,150,165,0.06)'],
+        [0.5, 'rgba(52,120,140,0.03)'],
+        [1, 'rgba(40,95,120,0)'],
       ]),
     ),
     R * 2.6,
-  ); // faint aura so the disk sits in a glow, not on black
+  ); // faint teal-navy aura so the disk sits in a glow, not on black
   softSprite(
     track(
       radialTexture([
@@ -245,12 +250,12 @@ export function createMilkyWayScene(
       // ~4% of arm points seed a bright knot; the outer arms get pink HII.
       if (rr > 0.3 && rng() < 0.04) {
         knotPos.push(x, y, z);
-        if (rng() < 0.6) {
-          knotCol.push(0.85, 0.42, 0.6); // HII pink
-        } else if (rng() < 0.5) {
-          knotCol.push(0.6, 0.72, 0.9); // young blue cluster
+        if (rng() < 0.42) {
+          knotCol.push(0.95, 0.8, 0.55); // warm star-forming amber
+        } else if (rng() < 0.55) {
+          knotCol.push(0.45, 0.82, 0.78); // teal cluster (brand)
         } else {
-          knotCol.push(0.85, 0.82, 0.78); // white
+          knotCol.push(0.9, 0.9, 0.85); // white
         }
       }
     }
@@ -302,18 +307,20 @@ export function createMilkyWayScene(
 
   // ── Star-forming nebula blobs — soft pink glows along the outer arms, the
   // signature "spiral galaxy photo" pop (star nurseries lighting up the arms). ──
+  // Star-forming regions in the site's two accent families — warm gold nurseries
+  // + brand-teal clouds — instead of the off-palette pink/blue-purple.
   const hiiTex = track(
     radialTexture([
-      [0, 'rgba(255,180,205,0.9)'],
-      [0.4, 'rgba(255,120,170,0.35)'],
-      [1, 'rgba(230,90,150,0)'],
+      [0, 'rgba(255,224,180,0.5)'],
+      [0.4, 'rgba(240,196,150,0.18)'],
+      [1, 'rgba(220,175,130,0)'],
     ]),
   );
   const blueTex = track(
     radialTexture([
-      [0, 'rgba(190,220,255,0.85)'],
-      [0.45, 'rgba(140,180,255,0.28)'],
-      [1, 'rgba(120,160,255,0)'],
+      [0, 'rgba(170,235,225,0.7)'],
+      [0.45, 'rgba(110,205,195,0.24)'],
+      [1, 'rgba(90,190,180,0)'],
     ]),
   );
   for (let a = 0; a < MW_ARMS; a++) {
@@ -326,9 +333,9 @@ export function createMilkyWayScene(
       if (pr > R * 0.98) continue;
       const jit = pr * 0.06;
       const s = softSprite(
-        rng() < 0.7 ? hiiTex : blueTex,
-        R * (0.05 + rng() * 0.05),
-        0.7 + rng() * 0.3,
+        rng() < 0.5 ? hiiTex : blueTex,
+        R * (0.04 + rng() * 0.045),
+        0.5 + rng() * 0.26,
       );
       s.position.set(
         p.x + (rng() - 0.5) * jit,
@@ -392,7 +399,7 @@ export function createMilkyWayScene(
     const [lx, , lz] = galacticToScene(arm.label_x, arm.label_z, diskR);
     const { sprite, texture, aspect } = labelSprite(arm.name, 'rgba(190,210,255,0.62)', 'normal');
     disposables.push(texture, sprite.material as THREE.SpriteMaterial);
-    const h = MW_DISK_RADIUS_SCENE * 0.05;
+    const h = MW_DISK_RADIUS_SCENE * 0.036;
     sprite.scale.set(h * aspect, h, 1);
     sprite.position.set(lx, 0, lz);
     sprite.renderOrder = 5;
@@ -535,7 +542,7 @@ export function createMilkyWayScene(
         const g = dist * pin.baseScale * (hi ? 1.5 : 1);
         pin.glow.scale.setScalar(g);
         if (pin.ring) pin.ring.scale.setScalar(g * 1.6);
-        const lh = dist * 0.05;
+        const lh = dist * 0.038;
         pin.label.scale.set(lh * pin.labelAspect, lh, 1);
         pin.label.position.set(pin.position.x, pin.position.y + g * 0.9 + lh * 0.7, pin.position.z);
       }

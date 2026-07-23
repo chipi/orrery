@@ -83,6 +83,9 @@ export interface NeighborhoodOptions {
   pixelRatio?: number;
   /** Curated named stars to render as pickable markers + labels. */
   namedStars?: NamedStar[];
+  /** Exoplanet-host ids — always labelled (the enterable systems), so the notable
+   *  targets read at a glance rather than only on hover. */
+  hostIds?: Set<string>;
   /** Constellation line segments (baked 3D positions) for the overlay. */
   constellations?: ConstellationLines[];
   /** Deep-sky objects (Messier + gallery) for the off-by-default glint layer. */
@@ -179,10 +182,14 @@ function makeHaloTexture(): THREE.CanvasTexture {
 /** Canvas-backed text sprite for a star name (world-scaled; caller sizes it). */
 function makeLabelSprite(text: string): { sprite: THREE.Sprite; texture: THREE.CanvasTexture } {
   const upper = text.toUpperCase();
-  const pad = 10;
-  const font = 'bold 26px "Space Mono", monospace';
+  const pad = 12;
+  // Lighter weight + wide tracking reads modern/editorial rather than the old bold
+  // mono-HUD look; on-screen size is trimmed via the marker scale (applyMarkerScale).
+  const font = '400 24px "Space Mono", monospace';
+  const tracking = '2px';
   const measure = document.createElement('canvas').getContext('2d')!;
   measure.font = font;
+  measure.letterSpacing = tracking;
   const w = Math.ceil(measure.measureText(upper).width) + pad * 2;
   const h = 40;
   const cvs = document.createElement('canvas');
@@ -190,10 +197,11 @@ function makeLabelSprite(text: string): { sprite: THREE.Sprite; texture: THREE.C
   cvs.height = h;
   const ctx = cvs.getContext('2d')!;
   ctx.font = font;
+  ctx.letterSpacing = tracking;
   ctx.textBaseline = 'middle';
-  ctx.shadowColor = 'rgba(0,0,0,0.9)';
-  ctx.shadowBlur = 4;
-  ctx.fillStyle = '#eaf6ff';
+  ctx.shadowColor = 'rgba(0,0,0,0.85)';
+  ctx.shadowBlur = 5;
+  ctx.fillStyle = 'rgba(223, 236, 247, 0.92)';
   ctx.fillText(upper, pad, h / 2 + 1);
   const texture = new THREE.CanvasTexture(cvs);
   const sprite = new THREE.Sprite(
@@ -214,10 +222,30 @@ const ALWAYS_LABEL_MAG = 1.6;
 interface StarMarker {
   id: string;
   group: THREE.Group;
+  dot: THREE.Sprite;
   halo: THREE.Sprite;
   label: THREE.Sprite;
   labelAspect: number;
   alwaysLabel: boolean;
+}
+
+/** A small soft filled dot — the idle marker for a named star (the ring only shows
+ *  on hover/select). Radial white gradient so it reads as a crisp point + glow. */
+function makeDotTexture(): THREE.CanvasTexture {
+  const s = 64;
+  const cvs = document.createElement('canvas');
+  cvs.width = cvs.height = s;
+  const ctx = cvs.getContext('2d')!;
+  const c = s / 2;
+  const g = ctx.createRadialGradient(c, c, 0, c, c, c);
+  g.addColorStop(0, 'rgba(255,255,255,1)');
+  g.addColorStop(0.35, 'rgba(226,244,255,0.9)');
+  g.addColorStop(1, 'rgba(226,244,255,0)');
+  ctx.fillStyle = g;
+  ctx.beginPath();
+  ctx.arc(c, c, c, 0, Math.PI * 2);
+  ctx.fill();
+  return new THREE.CanvasTexture(cvs);
 }
 
 export function createNeighborhoodScene(opts: NeighborhoodOptions): NeighborhoodScene {
@@ -228,6 +256,7 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     namedStars = [],
     constellations = [],
     deepSkyObjects = [],
+    hostIds = new Set<string>(),
   } = opts;
 
   const scene = new THREE.Scene();
@@ -244,14 +273,19 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
   // inside-out web. The overlay plots the same real named stars at true distance
   // against concentric light-horizon rings. `causalityData()` feeds it. ──
 
-  // ── Constellation-line overlay: fat, glowing neon figures (Line2), off by
-  //    default. A wide dim underlay + a crisp bright overlay make a soft glow,
-  //    and the material's pixel-width lines stay crisp at every zoom (basic GL
-  //    lines rendered as 1px hairlines). Width is nudged per-frame in update()
-  //    so the figures stay legible across the neighborhood's zoom range.
+  const dotTex = makeDotTexture();
+
+  // ── Constellation-line overlay — matches the StarPanel ConstellationFinder
+  //    style: thin soft-blue figures with a whisper of glow + faint node dots at
+  //    each vertex. Off by default. The figures live on the celestial sphere
+  //    (r ≈ 700 pc); the whole group is re-scaled per-frame to track the camera
+  //    distance in update() so they scale + move as you zoom/pan (otherwise, at
+  //    fixed r ≫ camR, they'd sit frozen at infinity).
   let constellationLines: THREE.Group | null = null;
   const constellationMats: LineMaterial[] = [];
-  const CONSTELLATION_BASE_WIDTH = [8, 2.2] as const; // glow underlay, crisp overlay
+  const CONSTELLATION_BASE_WIDTH = [3, 1.5] as const; // faint glow underlay, crisp line
+  const CONSTELLATION_SPHERE_R = 700; // baked vertex radius (pc)
+  let constellationNodes: THREE.Points | null = null;
   if (constellations.length > 0) {
     const all: number[] = [];
     for (const c of constellations) all.push(...c.vertices);
@@ -259,9 +293,11 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     geo.setPositions(all);
     const grp = new THREE.Group();
     grp.frustumCulled = false;
+    // Soft blue like the finder (rgba(120,190,230)); a wider dim underlay gives a
+    // gentle glow without the old neon heaviness.
     const layers: Array<[number, number, number]> = [
-      [CONSTELLATION_BASE_WIDTH[0], 0x2f9e97, 0.14],
-      [CONSTELLATION_BASE_WIDTH[1], 0xa8f7ef, 0.8],
+      [CONSTELLATION_BASE_WIDTH[0], 0x6fa8d8, 0.14], // faint glow underlay
+      [CONSTELLATION_BASE_WIDTH[1], 0x9fd0ee, 0.72], // crisp soft-blue line
     ];
     for (const [w, color, op] of layers) {
       const mat = new LineMaterial({
@@ -278,6 +314,24 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       line.frustumCulled = false;
       grp.add(line);
     }
+    // Faint node dots at each vertex — the finder's endpoint dots.
+    const nodeGeo = new THREE.BufferGeometry();
+    nodeGeo.setAttribute('position', new THREE.Float32BufferAttribute(all, 3));
+    constellationNodes = new THREE.Points(
+      nodeGeo,
+      new THREE.PointsMaterial({
+        map: dotTex,
+        color: 0xc8dcff,
+        size: 7,
+        sizeAttenuation: false,
+        transparent: true,
+        opacity: 0.5,
+        depthWrite: false,
+        depthTest: false,
+      }),
+    );
+    constellationNodes.frustumCulled = false;
+    grp.add(constellationNodes);
     grp.visible = false;
     constellationLines = grp;
     scene.add(grp);
@@ -298,28 +352,50 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
   const pickables: THREE.Object3D[] = [];
   const markerGroup = new THREE.Group();
   for (const s of namedStars) {
+    // Idle marker: a subtle dot. The ring (halo) only fades in on hover/select.
+    const dot = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: dotTex,
+        transparent: true,
+        depthWrite: false,
+        depthTest: false,
+      }),
+    );
     const halo = new THREE.Sprite(
       new THREE.SpriteMaterial({
         map: haloTex,
         transparent: true,
         depthWrite: false,
         depthTest: false,
+        opacity: 0,
       }),
     );
     const { sprite: label, texture: labelTex } = makeLabelSprite(s.proper);
     void labelTex;
-    const alwaysLabel = s.mag < ALWAYS_LABEL_MAG;
+    // Always-label rule: the enterable systems (exoplanet hosts) + the brightest
+    // naked-eye stars. Everything else reveals its name on hover/select.
+    const alwaysLabel = s.mag < ALWAYS_LABEL_MAG || hostIds.has(s.id);
     label.visible = alwaysLabel;
 
     const group = new THREE.Group();
     group.position.set(s.x, s.y, s.z);
     group.userData.starId = s.id;
     halo.userData.starId = s.id;
+    dot.userData.starId = s.id;
     group.add(halo);
+    group.add(dot);
     group.add(label);
     markerGroup.add(group);
 
-    markers.push({ id: s.id, group, halo, label, labelAspect: label.userData.aspect, alwaysLabel });
+    markers.push({
+      id: s.id,
+      group,
+      dot,
+      halo,
+      label,
+      labelAspect: label.userData.aspect,
+      alwaysLabel,
+    });
     pickables.push(halo);
   }
 
@@ -335,18 +411,31 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
         transparent: true,
         depthWrite: false,
         depthTest: false,
+        color: new THREE.Color(0xffcf8f), // warm gold — the Sun reads apart from teal stars
       }),
     );
     solHalo.userData.starId = 'sol';
+    const solDot = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: dotTex,
+        transparent: true,
+        depthWrite: false,
+        depthTest: false,
+        color: new THREE.Color(0xffe1b0), // warm gold dot
+      }),
+    );
+    solDot.userData.starId = 'sol';
     const group = new THREE.Group(); // at the origin (the Sun)
     group.userData.starId = 'sol';
     group.add(solHalo);
+    group.add(solDot);
     group.add(solLabel);
     markerGroup.add(group);
     pickables.push(solHalo);
     markers.push({
       id: 'sol',
       group,
+      dot: solDot,
       halo: solHalo,
       label: solLabel,
       labelAspect: solLabel.userData.aspect,
@@ -355,9 +444,53 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
   }
   scene.add(markerGroup);
 
+  // ── "You are here": concentric light-year distance rings centred on the Sun.
+  // A persistent orientation + scale reference on the galactic plane (XZ), each
+  // shell a distinct colour so you can read distance at a glance and always find
+  // your way home. Subtle by design — a compass grid, not a foreground element.
+  const LY_PER_PC = 3.2615638;
+  // On-brand shells: warm gold → brand teal → soft accent-blue → pale white. No
+  // off-palette violet (site is gold/teal/white on navy).
+  const REFERENCE_SHELLS: Array<{ ly: number; color: number }> = [
+    { ly: 5, color: 0xffcf8f }, // warm gold — nearest neighbours
+    { ly: 10, color: 0x6fd8ce }, // brand teal
+    { ly: 25, color: 0x8fb8ff }, // soft accent-blue
+    { ly: 50, color: 0xcfe0ea }, // pale white — outer shell
+  ];
+  const referenceGroup = new THREE.Group();
+  const referenceMats: THREE.Material[] = [];
+  const referenceLabels: THREE.Sprite[] = [];
+  for (const shell of REFERENCE_SHELLS) {
+    const rPc = shell.ly / LY_PER_PC;
+    const SEG = 128;
+    const pts: number[] = [];
+    for (let i = 0; i <= SEG; i++) {
+      const a = (i / SEG) * Math.PI * 2;
+      pts.push(Math.cos(a) * rPc, 0, Math.sin(a) * rPc);
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
+    const mat = new THREE.LineBasicMaterial({
+      color: shell.color,
+      transparent: true,
+      opacity: 0.2,
+      depthWrite: false,
+      depthTest: false,
+    });
+    referenceMats.push(mat);
+    referenceGroup.add(new THREE.Line(geo, mat));
+    const { sprite: lbl } = makeLabelSprite(`${shell.ly} ly`);
+    lbl.position.set(rPc, 0, 0);
+    lbl.userData.refRadius = rPc;
+    referenceLabels.push(lbl);
+    referenceGroup.add(lbl);
+  }
+  scene.add(referenceGroup);
+
   let highlightId: string | null = null;
 
   const _camPos = new THREE.Vector3();
+  const _lblPos = new THREE.Vector3();
   function applyMarkerScale(camera?: THREE.Camera) {
     if (camera) camera.getWorldPosition(_camPos);
     for (const m of markers) {
@@ -366,15 +499,28 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       const distToCam = camera ? Math.max(0.01, _camPos.distanceTo(m.group.position)) : 1;
       const base = distToCam * 0.04;
       const hi = m.id === highlightId;
-      // Ring stays a constant size (hover only brightens it) — so a label that's
-      // already shown doesn't jump when you hover, and the ring doesn't grow.
-      const halo = base;
+      const isSol = m.id === 'sol';
+      // Idle marker is a small dot; the ring (halo) only fades in on hover/select
+      // so the field isn't cluttered with always-on teal rings. Sol keeps its ring
+      // as the persistent "you are here" anchor.
+      const dotS = (isSol ? 0.42 : 0.3) * base;
+      m.dot.scale.set(dotS, dotS, 1);
+      (m.dot.material as THREE.SpriteMaterial).opacity = hi ? 1 : isSol ? 0.95 : 0.8;
+      const halo = isSol ? base * 1.35 : base;
       m.halo.scale.set(halo, halo, 1);
-      const lh = base * 0.72; // smaller star-name labels (closer to the /explore v1 scale)
+      m.halo.position.set(0, 0, 0);
+      (m.halo.material as THREE.SpriteMaterial).opacity = isSol ? 0.92 : hi ? 0.9 : 0;
+      const lh = base * 0.55; // smaller, lighter star-name labels (less HUD-heavy)
       m.label.scale.set(lh * m.labelAspect, lh, 1);
       m.label.position.set(0, halo * 1.1, 0);
       m.label.visible = m.alwaysLabel || hi;
-      (m.halo.material as THREE.SpriteMaterial).opacity = hi ? 0.85 : 0.4;
+    }
+    // Reference-ring labels: constant screen size, pinned to each shell's +X edge.
+    if (camera) {
+      for (const lbl of referenceLabels) {
+        const s = Math.max(0.01, _camPos.distanceTo(lbl.getWorldPosition(_lblPos))) * 0.03;
+        lbl.scale.set(s * ((lbl.userData.aspect as number) ?? 3), s, 1);
+      }
     }
   }
 
@@ -460,12 +606,17 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       field.setOpacity(revealOpacity(camDistPc));
       applyMarkerScale(camera);
       if (camera) deepSky?.update(camDistPc, camera);
-      if (constellationLines?.visible && constellationMats.length) {
-        // Gentle zoom response: a touch thinner when zoomed out (so the figures
-        // don't look chunky across the whole field), fuller when framed in.
-        const s = Math.max(0.7, Math.min(1.3, 10 / Math.max(2, camDistPc)));
-        constellationMats[0].linewidth = CONSTELLATION_BASE_WIDTH[0] * s;
-        constellationMats[1].linewidth = CONSTELLATION_BASE_WIDTH[1] * s;
+      if (constellationLines?.visible) {
+        // Anchor the figures at a moderate radius that stays just ahead of the
+        // camera (instead of frozen at the baked 700 pc), so they visibly scale +
+        // shift as you zoom and pan rather than sitting fixed at infinity.
+        const effR = Math.max(80, camDistPc * 3);
+        constellationLines.scale.setScalar(effR / CONSTELLATION_SPHERE_R);
+        if (constellationMats.length) {
+          const s = Math.max(0.7, Math.min(1.3, 10 / Math.max(2, camDistPc)));
+          constellationMats[0].linewidth = CONSTELLATION_BASE_WIDTH[0] * s;
+          constellationMats[1].linewidth = CONSTELLATION_BASE_WIDTH[1] * s;
+        }
       }
     },
     dispose() {
@@ -473,14 +624,28 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       sun.material.map?.dispose();
       sun.material.dispose();
       haloTex.dispose();
+      dotTex.dispose();
       if (constellationLines) {
         for (const mat of constellationMats) mat.dispose();
         (constellationLines.children[0] as LineSegments2 | undefined)?.geometry.dispose();
       }
+      if (constellationNodes) {
+        constellationNodes.geometry.dispose();
+        (constellationNodes.material as THREE.PointsMaterial).dispose();
+      }
       for (const m of markers) {
+        (m.dot.material as THREE.SpriteMaterial).dispose();
         (m.halo.material as THREE.SpriteMaterial).dispose();
         (m.label.material as THREE.SpriteMaterial).map?.dispose();
         (m.label.material as THREE.SpriteMaterial).dispose();
+      }
+      for (const mat of referenceMats) mat.dispose();
+      for (const child of referenceGroup.children) {
+        if (child instanceof THREE.Line) child.geometry.dispose();
+        else if (child instanceof THREE.Sprite) {
+          child.material.map?.dispose();
+          child.material.dispose();
+        }
       }
       deepSky?.dispose();
     },

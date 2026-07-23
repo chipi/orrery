@@ -69,6 +69,7 @@
     getExoplanetSystem,
     getExoplanetI18n,
     getCultureDoors,
+    getCultureObjectIds,
     getDeepSkyObjects,
     getDeepSkyGallery,
     getMilkyWaySchematic,
@@ -925,6 +926,11 @@
   // set of host ids that have a system to descend into (drives "Enter system").
   let bodyHostName = $state('');
   let exoplanetHostIds = $state<Set<string>>(new Set());
+  // Host-id → full system, for the StarPanel "System" tab summary (planet count,
+  // sizes, periods) without re-fetching. Populated alongside exoplanetHostIds.
+  let exoplanetSystemsById = $state<Map<string, ExoplanetSystem>>(new Map());
+  // Object ids carrying a culture door — drives the star-index ◈ badge + filter.
+  let cultureObjectIds = $state<Set<string>>(new Set());
   // A distance caption shown during a Navigator warp into/out of a system.
   let warpCaption = $state('');
   let enterSystemFn: ((hostId: string, planetId?: string) => void) | null = null;
@@ -934,10 +940,9 @@
   let crossingFlashId = $state(0);
   // Constellation-line overlay toggle (neighborhood only).
   let showConstellations = $state(false);
-  // Slice 3 — optional "culture layer" (off by default): badged fiction / message
-  // story cards on objects that have them. Doors are fetched on selection; the
-  // panels show them only while this is on.
-  let showCulture = $state(false);
+  // Slice 3 — "culture layer": badged fiction / message story cards on objects
+  // that have them. Doors are fetched on selection and always render inline at the
+  // bottom of the detail panel when present (no separate toggle — they're sparse).
   let starCultureDoors = $state<LocalizedCultureDoor[]>([]);
   let exoCultureDoors = $state<LocalizedCultureDoor[]>([]);
   let setConstellationsFn: ((on: boolean) => void) | null = null;
@@ -980,6 +985,24 @@
   );
   // Named-star index (search + list) open state.
   let starIndexOpen = $state(false);
+  // Sun "compass": the needle angle (deg) toward the Sun's on-screen position,
+  // whether it's currently in frame, and camera→Sun distance (ly). Drives the
+  // persistent "you are here / home" indicator in the neighborhood (item: never
+  // get lost). Updated (throttled) from the render loop.
+  let sunCompass = $state<{ ang: number; on: boolean; ly: number } | null>(null);
+  // Reset-view lives in the breadcrumb row now; visible once the current scale's
+  // view is "dirty" (a selection, or the Sun panned out of frame).
+  let scaleResetVisible = $derived.by(() => {
+    if (contextId === 'neighborhood') return !!(selectedStarId || (sunCompass && !sunCompass.on));
+    if (contextId === 'milky-way') return !!selectedMwId;
+    if (contextId === 'local-group') return !!selectedLgMember;
+    return false;
+  });
+  function resetCurrentScale(): void {
+    if (contextId === 'neighborhood') resetNeighborhoodFn?.();
+    else if (contextId === 'milky-way') resetMilkyWayFn?.();
+    else if (contextId === 'local-group') resetLocalGroupFn?.();
+  }
   const rungLadder: ScaleRung[] = RUNG_LADDER;
   const fmtScale = (value: number): string =>
     value >= 1000 || value < 0.01
@@ -1079,6 +1102,12 @@
   // Set in onMount; called by Reset View so resetting while out in the stellar
   // neighborhood first crosses back to the solar system (no-op when already there).
   let exitNeighborhoodFn: (() => void) | null = null;
+  // Reset the neighborhood view (pan/zoom/selection) to a stable framed pose,
+  // staying in the scale — the neighborhood's own "Reset view".
+  let resetNeighborhoodFn: (() => void) | null = null;
+  // Same, for the Milky Way + Local Group scales.
+  let resetMilkyWayFn: (() => void) | null = null;
+  let resetLocalGroupFn: (() => void) | null = null;
   // Slice 2: leave an exoplanet BodyScene back out to the neighborhood.
   let exitBodySceneFn: (() => void) | null = null;
   // Slice 5: leave the Milky Way context back in to the neighborhood.
@@ -2941,6 +2970,9 @@
     // (#287) reads camera→planet distance, so planet-relative camR is
     // what makes the 4K texture fire for anything past Mercury.
     const focusOrigin = new THREE.Vector3(0, 0, 0);
+    // Scratch + throttle for the Sun-compass projection (see sunCompass state).
+    const _sunNdc = new THREE.Vector3();
+    let sunCompassTick = 0;
     // Per-mode zoom envelope. Heliocentric is the original [60, 1400].
     // When focused on a planet, the floor drops to ~1.5 × planet
     // radius (close enough that the camera grazes the LOD threshold
@@ -2996,15 +3028,18 @@
     let mwScene: import('$lib/universe/milky-way-scene').MilkyWayScene | null = null;
     let mwLoading = false;
     const MW_SCENE_RADIUS = 340; // matches MW_DISK_RADIUS_SCENE
-    const MW_ENTRY_CAM_R = MW_SCENE_RADIUS * 1.7; // framing just outside the disk
+    // Frame the bright spiral to fill the view (most of MW_SCENE_RADIUS is faint
+    // halo, so 1.7× left the disk small + islanded in dead space). 1.12× brings the
+    // spiral up to fill the screen like the solar system does on default /explore.
+    const MW_ENTRY_CAM_R = MW_SCENE_RADIUS * 1.12;
     // Zoom-in floor → cross back to the neighborhood. Raised from 0.35 toward the
     // 1.7 entry so the return is much easier: you drop back after a modest zoom-in
     // rather than diving almost to the galactic centre. Tunable (trades away some
     // deep-disk zoom for reversibility — the asymmetry feedback).
-    const MW_CAM_R_MIN = MW_SCENE_RADIUS * 0.85;
+    const MW_CAM_R_MIN = MW_SCENE_RADIUS * 0.55;
     const MW_CAM_R_MAX = MW_SCENE_RADIUS * 4; // zoom-out ceiling
     const MW_FAR = MW_SCENE_RADIUS * 12;
-    const MW_ENTRY_CAM_P = 0.95; // polar angle — a tilted face-on 3/4 view of the disk
+    const MW_ENTRY_CAM_P = 0.8; // polar angle — a little more face-on so the spiral fills + centres
 
     const inNeighborhood = () => contextGraph.active.id === 'neighborhood';
     const inMilkyWay = () => contextGraph.active.id === 'milky-way';
@@ -3105,7 +3140,7 @@
     let LG_CAM_R_MIN = 200;
     let LG_CAM_R_MAX = 900;
     let LG_FAR = 6000;
-    const LG_ENTRY_CAM_P = 1.05; // tilted 3/4 view of the group plane
+    const LG_ENTRY_CAM_P = 0.85; // a little more face-on so the group fills + centres
     const inLocalGroup = () => contextGraph.active.id === 'local-group';
 
     async function ensureLocalGroup(): Promise<typeof lgScene> {
@@ -3120,9 +3155,11 @@
         if (!data) return null;
         lgMembers = data.members;
         LG_SCENE_RADIUS = mod.LG_SCENE_RADIUS;
-        LG_ENTRY_CAM_R = LG_SCENE_RADIUS * 2.04;
-        LG_ENTRY_CAM_R_MOBILE = LG_SCENE_RADIUS * 3.3;
-        LG_CAM_R_MIN = LG_SCENE_RADIUS * 1.3; // zoom-in floor → cross back to the galaxy
+        // Frame the group to fill the view (was 2.04× — small + islanded in dead
+        // space, like the Milky Way before its reframe).
+        LG_ENTRY_CAM_R = LG_SCENE_RADIUS * 1.35;
+        LG_ENTRY_CAM_R_MOBILE = LG_SCENE_RADIUS * 2.0;
+        LG_CAM_R_MIN = LG_SCENE_RADIUS * 0.75; // zoom-in floor → cross back to the galaxy
         LG_CAM_R_MAX = LG_SCENE_RADIUS * 6; // zoom-out ceiling (outermost for now)
         LG_FAR = LG_SCENE_RADIUS * 40;
         lgScene = mod.createLocalGroupScene(data, {
@@ -3147,16 +3184,43 @@
       nbLoading = true;
       try {
         const mod = await import('$lib/universe/neighborhood-scene');
-        const [shells, stars, constellations, exoSystems, deepSky, dsGallery] = await Promise.all([
-          mod.loadNeighborhoodShells(fetch, base),
-          getNamedStars(fetch),
-          mod.loadConstellationLines(fetch, base),
-          getExoplanetSystems(fetch),
-          getDeepSkyObjects(fetch),
-          getDeepSkyGallery(fetch),
-        ]);
-        namedStars = stars;
+        const [shells, stars, constellations, exoSystems, deepSky, dsGallery, cultureIds] =
+          await Promise.all([
+            mod.loadNeighborhoodShells(fetch, base),
+            getNamedStars(fetch),
+            mod.loadConstellationLines(fetch, base),
+            getExoplanetSystems(fetch),
+            getDeepSkyObjects(fetch),
+            getDeepSkyGallery(fetch),
+            getCultureObjectIds(fetch),
+          ]);
+        cultureObjectIds = cultureIds;
+        // Exoplanet hosts that aren't in the curated named-star catalog (dim /
+        // telescope-only stars like TRAPPIST-1, TOI-700, Kepler-16, 51 Pegasi)
+        // still carry a name + 3D position in the systems file — synthesize marker
+        // records from that so all 11 systems are clickable + zoom-descendable, not
+        // just the 7 that happen to be famous naked-eye stars.
+        const namedIds = new Set(stars.map((s) => s.id));
+        const hostMarkers: NamedStar[] = exoSystems
+          .filter((s) => !namedIds.has(s.hostId))
+          .map((s) => ({
+            id: s.hostId,
+            hip: s.hip ?? null,
+            proper: s.star.name,
+            con: s.star.con,
+            spect: s.star.spect,
+            dist_pc: s.star.dist_pc,
+            mag: 12, // dim — label on hover/select, not always-on
+            absmag: 12,
+            bv: s.star.bv, // may be null → neutral swatch downstream
+            x: s.star.x,
+            y: s.star.y,
+            z: s.star.z,
+          }));
+        const allStars = [...stars, ...hostMarkers];
+        namedStars = allStars;
         exoplanetHostIds = new Set(exoSystems.map((s) => s.hostId));
+        exoplanetSystemsById = new Map(exoSystems.map((s) => [s.hostId, s]));
         // Slice 7 — flatten every planet with a known mass for the mass–period plot.
         allExoplanetPlanets = exoSystems.flatMap((s) =>
           s.planets
@@ -3174,7 +3238,8 @@
           shells,
           tier: quality.tier,
           pixelRatio: renderer.getPixelRatio(),
-          namedStars: stars,
+          namedStars: allStars,
+          hostIds: exoplanetHostIds,
           constellations,
           deepSkyObjects: deepSky,
         });
@@ -3264,6 +3329,64 @@
     }
     exitNeighborhoodFn = crossInToSolarSystem;
 
+    // Zoom-in past the neighborhood floor descends into whatever star is focused:
+    // a selected non-Sol exoplanet host → its planetary system; the Sun or nothing
+    // selected → our own solar system; a focused star with no known planets has
+    // nothing to descend into, so the caller clamps at the floor. Returns true iff
+    // a descent/cross actually fired.
+    function descendFromNeighborhood(): boolean {
+      const sel = selectedStarId;
+      if (sel && sel !== 'sol' && exoplanetHostIds.has(sel)) {
+        void enterBodyScene(sel);
+        return true;
+      }
+      if (!sel || sel === 'sol') {
+        crossInToSolarSystem();
+        return true;
+      }
+      return false;
+    }
+
+    // Neighborhood "Reset view": recentre on the Sun (undo any pan), return to a
+    // stable framed distance, and clear the selection — without leaving the scale.
+    const NB_DEFAULT_CAM_R = 12;
+    const NB_DEFAULT_CAM_P = 1.05;
+    const NB_DEFAULT_CAM_T = 0.6;
+    function resetNeighborhoodView(): void {
+      if (!inNeighborhood()) return;
+      dollyActive = false;
+      focusOrigin.set(0, 0, 0);
+      camP = NB_DEFAULT_CAM_P;
+      camT = NB_DEFAULT_CAM_T;
+      camR = Math.max(camRMin, Math.min(camRMax, NB_DEFAULT_CAM_R));
+      closeStarPanel();
+      anonStar = null;
+      updateCam();
+    }
+    resetNeighborhoodFn = resetNeighborhoodView;
+
+    function resetMilkyWayView(): void {
+      if (!inMilkyWay()) return;
+      dollyActive = false;
+      focusOrigin.set(0, 0, 0);
+      camP = MW_ENTRY_CAM_P;
+      camR = Math.max(camRMin, Math.min(camRMax, MW_ENTRY_CAM_R));
+      closeMwPanel();
+      updateCam();
+    }
+    resetMilkyWayFn = resetMilkyWayView;
+
+    function resetLocalGroupView(): void {
+      if (!inLocalGroup()) return;
+      dollyActive = false;
+      focusOrigin.set(0, 0, 0);
+      camP = LG_ENTRY_CAM_P;
+      camR = Math.max(camRMin, Math.min(camRMax, LG_ENTRY_CAM_R));
+      closeLgPanel();
+      updateCam();
+    }
+    resetLocalGroupFn = resetLocalGroupView;
+
     // ── Milky Way context (Slice 5) — zoom out of the neighborhood into the
     // galaxy. The schematic is not to scale, so this is a warp framing (nominal
     // units), mirroring the BodyScene entry rather than a physical re-base. ──
@@ -3284,8 +3407,8 @@
       if (reducedMotion) {
         camR = MW_ENTRY_CAM_R;
       } else {
-        camR = MW_SCENE_RADIUS * 2.6;
-        startCrossDolly(MW_SCENE_RADIUS * 2.6, MW_ENTRY_CAM_R, 1300);
+        camR = MW_SCENE_RADIUS * 1.8;
+        startCrossDolly(MW_SCENE_RADIUS * 1.8, MW_ENTRY_CAM_R, 1300);
         crossingFlashId++;
         showWarpCaption(`${(26700).toLocaleString()} ${m.explore_light_years()} · Sagittarius A*`);
       }
@@ -4606,7 +4729,9 @@
         const ratio = zoomingOut ? 1.07 : 1 / 1.07;
         const next = camR * ratio;
         if (!zoomingOut && next <= camRMin) {
-          crossInToSolarSystem();
+          if (descendFromNeighborhood()) return;
+          camR = camRMin; // focused star has no known system — hold at the floor.
+          updateCam();
           return;
         }
         if (zoomingOut && camR >= camRMax - 0.5) {
@@ -4687,7 +4812,10 @@
             return;
           }
           if (inNeighborhood() && ratio < 1 && camR * ratio <= camRMin) {
-            crossInToSolarSystem();
+            if (!descendFromNeighborhood()) {
+              camR = camRMin; // focused star has no known system — hold at the floor.
+              updateCam();
+            }
             pinchPrev3d = dist;
             return;
           }
@@ -5866,6 +5994,15 @@
             stepDeepSkyApproach();
             nbScene.update(camR, camera);
             renderer.render(nbScene.scene, camera);
+            // Sun-compass: project the Sun (origin) to screen ~10×/s and steer the
+            // "home" needle. On-screen → the gold marker speaks for itself; off-
+            // screen → the needle points the way back.
+            if ((sunCompassTick = (sunCompassTick + 1) % 6) === 0) {
+              _sunNdc.set(0, 0, 0).project(camera);
+              const on = _sunNdc.z < 1 && Math.abs(_sunNdc.x) <= 1 && Math.abs(_sunNdc.y) <= 1;
+              const ang = (Math.atan2(-_sunNdc.y, _sunNdc.x) * 180) / Math.PI;
+              sunCompass = { ang, on, ly: camera.position.length() * 3.2615638 };
+            }
             return;
           }
           if (inMilkyWay() && mwScene) {
@@ -6046,6 +6183,17 @@
         <span class="crumb current" aria-current="page">{m.explore_ctx_stellar_neighborhood()}</span
         >
       {/if}
+      {#if scaleResetVisible}
+        <span class="crumb-sep">·</span>
+        <button
+          type="button"
+          class="crumb crumb-reset"
+          onclick={resetCurrentScale}
+          data-testid="explore-scale-reset"
+        >
+          {m.ui_reset_view()}
+        </button>
+      {/if}
     </nav>
   {/if}
 
@@ -6110,101 +6258,101 @@
   {/if}
 
   <!-- Slice 7: the mass–period property-space plot — a lens inside an exoplanet
-       system (body-scene). Off by default. -->
+       system (body-scene). Off by default. Same top-left pill cluster as the other
+       scales; the overlay itself has a close button. -->
   {#if view === '3d' && contextId === 'body-scene' && !activeBlackHole && activeBodyHostId && exoplanetHostIds.has(activeBodyHostId)}
-    <div class="nb-controls">
-      <button
-        type="button"
-        class="nb-chip"
-        class:active={massPeriodOpen}
-        aria-pressed={massPeriodOpen}
-        onclick={() => (massPeriodOpen = !massPeriodOpen)}
-      >
-        {m.explore_lens_mass_period()}
-      </button>
+    <div class="nb-hud deep-space" role="group" aria-label={m.ui_visibility_layers()}>
+      <div class="ctrl-row chips">
+        <button
+          type="button"
+          class="chip"
+          class:active={massPeriodOpen}
+          aria-pressed={massPeriodOpen}
+          onclick={() => (massPeriodOpen = !massPeriodOpen)}
+        >
+          {m.explore_lens_mass_period()}
+        </button>
+      </div>
     </div>
   {/if}
 
-  <!-- v2 neighborhood layer toggles (Slice 1): constellation lines. -->
+  <!-- Sun compass — a "find your way home" cue that appears ONLY when the Sun has
+       been panned off-screen (when it's in frame, the gold marker + distance rings
+       are the reference; showing a needle then just reads as pointing at a Sun
+       that's plainly centred). The needle points toward the off-screen Sun. -->
+  {#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole && sunCompass && !sunCompass.on}
+    <div class="sun-compass" title={m.explore_hr_sun()}>
+      <div class="sc-dial">
+        <span
+          class="sc-needle"
+          style:transform="translate(-50%, -100%) rotate({90 - sunCompass.ang}deg)"
+        ></span>
+        <span class="sc-core">☉</span>
+      </div>
+      <span class="sc-ly">{sunCompass.ly.toFixed(sunCompass.ly < 10 ? 1 : 0)} ly · SOL</span>
+    </div>
+  {/if}
+
+  <!-- Neighborhood layer pills — the top-left cluster (reset now lives in the
+       breadcrumb row). Same .chip treatment as solar-system, slate-accented for the
+       deep-space scales. The star list lives in the left INDEX rail. -->
   {#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole}
-    <div class="nb-controls">
-      <button
-        type="button"
-        class="nb-chip"
-        class:active={starIndexOpen}
-        aria-pressed={starIndexOpen}
-        onclick={() => (starIndexOpen = !starIndexOpen)}
-      >
-        {m.explore_stars_toggle()}
-      </button>
-      <button
-        type="button"
-        class="nb-chip"
-        class:active={showConstellations}
-        aria-pressed={showConstellations}
-        onclick={() => {
-          showConstellations = !showConstellations;
-          setConstellationsFn?.(showConstellations);
-        }}
-      >
-        {m.explore_constellations_toggle()}
-      </button>
-      <button
-        type="button"
-        class="nb-chip"
-        class:active={showDeepSky}
-        aria-pressed={showDeepSky}
-        onclick={() => {
-          showDeepSky = !showDeepSky;
-          setDeepSkyFn?.(showDeepSky);
-        }}
-      >
-        {m.explore_deep_sky_toggle()}
-      </button>
-      <button
-        type="button"
-        class="nb-chip"
-        class:active={hrLensOpen}
-        aria-pressed={hrLensOpen}
-        onclick={() => toggleHrFn?.()}
-      >
-        {m.explore_lens_hr()}
-      </button>
-      <button
-        type="button"
-        class="nb-chip"
-        class:active={causalityOpen}
-        aria-pressed={causalityOpen}
-        onclick={() => {
-          causalityOpen = !causalityOpen;
-          if (causalityOpen) openCausalityFn?.();
-        }}
-      >
-        {m.explore_lens_causality()}
-      </button>
-      <!-- Culture layer — last chip (far right), and only shown when the current
-           selection actually has culture doors (they're sparse/deferred, so an
-           always-on toggle read as purposeless). -->
-      {#if starCultureDoors.length > 0 || exoCultureDoors.length > 0}
+    <div class="nb-hud deep-space" role="group" aria-label={m.ui_view_controls()}>
+      <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
         <button
           type="button"
-          class="nb-chip"
-          class:active={showCulture}
-          aria-pressed={showCulture}
-          onclick={() => (showCulture = !showCulture)}
+          class="chip"
+          class:active={showConstellations}
+          aria-pressed={showConstellations}
+          onclick={() => {
+            showConstellations = !showConstellations;
+            setConstellationsFn?.(showConstellations);
+          }}
         >
-          {m.explore_culture_toggle()}
+          {m.explore_constellations_toggle()}
         </button>
-      {/if}
+        <button
+          type="button"
+          class="chip"
+          class:active={showDeepSky}
+          aria-pressed={showDeepSky}
+          onclick={() => {
+            showDeepSky = !showDeepSky;
+            setDeepSkyFn?.(showDeepSky);
+          }}
+        >
+          {m.explore_deep_sky_toggle()}
+        </button>
+        <button
+          type="button"
+          class="chip"
+          class:active={hrLensOpen}
+          aria-pressed={hrLensOpen}
+          onclick={() => toggleHrFn?.()}
+        >
+          {m.explore_lens_hr()}
+        </button>
+        <button
+          type="button"
+          class="chip"
+          class:active={causalityOpen}
+          aria-pressed={causalityOpen}
+          onclick={() => {
+            causalityOpen = !causalityOpen;
+            if (causalityOpen) openCausalityFn?.();
+          }}
+        >
+          {m.explore_lens_causality()}
+        </button>
+      </div>
     </div>
     <StarIndex
       stars={namedStars}
       open={starIndexOpen}
       selectedId={selectedStarId}
-      onSelect={(id) => {
-        indexSelectStarFn?.(id);
-        starIndexOpen = false;
-      }}
+      hostIds={exoplanetHostIds}
+      cultureIds={cultureObjectIds}
+      onSelect={(id) => indexSelectStarFn?.(id)}
       onClose={() => (starIndexOpen = false)}
     />
   {/if}
@@ -6304,6 +6452,7 @@
       planets={allExoplanetPlanets}
       activeHostId={activeBodyHostId}
       open={massPeriodOpen && contextId === 'body-scene'}
+      onClose={() => (massPeriodOpen = false)}
     />
   {/if}
 
@@ -6980,8 +7129,9 @@
   star={localizedStar}
   open={panelState.star}
   hasSystem={selectedStarId ? exoplanetHostIds.has(selectedStarId) : false}
+  system={selectedStarId ? (exoplanetSystemsById.get(selectedStarId) ?? null) : null}
   onEnterSystem={() => selectedStarId && enterSystemFn?.(selectedStarId)}
-  cultureDoors={showCulture ? starCultureDoors : []}
+  cultureDoors={starCultureDoors}
   onClose={() => closeStarFn?.()}
 />
 
@@ -6989,7 +7139,7 @@
   planet={selectedExoplanet?.planet ?? null}
   hostName={selectedExoplanet?.hostName ?? ''}
   overlay={selectedExoplanet?.overlay ?? null}
-  cultureDoors={showCulture ? exoCultureDoors : []}
+  cultureDoors={exoCultureDoors}
   open={panelState.exoplanet}
   onClose={() => closeExoplanetFn?.()}
 />
@@ -7084,29 +7234,48 @@
      the surface index handle) toggles the searchable side panel — master → detail,
      stays open on select. Mobile uses the Index drawer tab. The accessible
      counterpart to canvas picking. -->
-<button
-  type="button"
-  class="body-index-handle body-index-toggle"
-  data-testid="explore-body-index-toggle"
-  aria-pressed={bodyIndexOpen}
-  aria-label={m.explore_body_index_aria()}
-  title={m.explore_body_index_aria()}
-  onclick={() => (bodyIndexOpen = !bodyIndexOpen)}
->
-  <span class="bih-label">{m.explore_body_index_toggle()}</span>
-</button>
-<ExploreBodyIndex
-  bodies={bodyIndexList}
-  {selectedId}
-  open={bodyIndexOpen}
-  onClose={() => (bodyIndexOpen = false)}
-  onSelect={(b) => {
-    if (b.kind === 'sun') selectSun();
-    else if (b.kind === 'planet') selectPlanet(b.id);
-    else selectSmallBody(b.id);
-    // Desktop master → detail: keep the index open on select (matches surface).
-  }}
-/>
+<!-- The body index is the solar-system's INDEX rail. Out in the stellar
+     neighborhood the star index (below) takes over the same left rail + handle,
+     so gate the body index to the solar-system context (no cross-scale bleed). -->
+{#if contextId === 'solar-system'}
+  <button
+    type="button"
+    class="body-index-handle body-index-toggle"
+    data-testid="explore-body-index-toggle"
+    aria-pressed={bodyIndexOpen}
+    aria-label={m.explore_body_index_aria()}
+    title={m.explore_body_index_aria()}
+    onclick={() => (bodyIndexOpen = !bodyIndexOpen)}
+  >
+    <span class="bih-label">{m.explore_body_index_toggle()}</span>
+  </button>
+  <ExploreBodyIndex
+    bodies={bodyIndexList}
+    {selectedId}
+    open={bodyIndexOpen}
+    onClose={() => (bodyIndexOpen = false)}
+    onSelect={(b) => {
+      if (b.kind === 'sun') selectSun();
+      else if (b.kind === 'planet') selectPlanet(b.id);
+      else selectSmallBody(b.id);
+      // Desktop master → detail: keep the index open on select (matches surface).
+    }}
+  />
+{/if}
+<!-- Neighborhood INDEX handle — same left-edge tab as the body index, toggles the
+     star index (the neighborhood's primary index). -->
+{#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole}
+  <button
+    type="button"
+    class="star-index-handle"
+    aria-pressed={starIndexOpen}
+    aria-label={m.star_index_aria()}
+    title={m.star_index_aria()}
+    onclick={() => (starIndexOpen = !starIndexOpen)}
+  >
+    <span class="bih-label">{m.explore_body_index_toggle()}</span>
+  </button>
+{/if}
 
 <div class="tour-anchors" aria-hidden="true">
   {#each ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'] as planetId (planetId)}
@@ -7265,6 +7434,118 @@
   }
 
   /* v2 neighborhood layer toggles — bottom-left (solar chrome is hidden here). */
+  .sun-compass {
+    position: absolute;
+    bottom: 62px;
+    left: 14px;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    pointer-events: none;
+    user-select: none;
+  }
+  .sc-dial {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 207, 143, 0.35);
+    background: radial-gradient(circle, rgba(10, 14, 26, 0.5), rgba(6, 10, 22, 0.3));
+    backdrop-filter: blur(4px);
+  }
+  .sc-needle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 19px solid #ffcf8f;
+    transform-origin: 50% 100%;
+    filter: drop-shadow(0 0 3px rgba(255, 207, 143, 0.6));
+    transition: transform 0.18s linear;
+  }
+  .sc-core {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #ffcf8f;
+    text-shadow: 0 0 6px rgba(255, 207, 143, 0.7);
+  }
+  .sc-ly {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: rgba(255, 224, 190, 0.82);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  /* Neighborhood top-left cluster — mirrors .hud-controls, offset well below the
+     breadcrumb+reset row so the two never collide. */
+  .nb-hud {
+    position: fixed;
+    top: calc(var(--nav-height) + 60px);
+    left: 16px;
+    z-index: 45;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    pointer-events: none;
+  }
+  .nb-hud .ctrl-row {
+    pointer-events: auto;
+  }
+  /* Deep-space scale cue — slate accent on the layer pills (vs the teal used at
+     solar-system scale) so the scale reads at a glance. */
+  .nb-hud.deep-space .chip {
+    border-color: rgba(154, 166, 189, 0.32);
+    color: rgba(220, 227, 240, 0.82);
+  }
+  .nb-hud.deep-space .chip:hover:not(.active) {
+    border-color: rgba(154, 166, 189, 0.6);
+  }
+  .nb-hud.deep-space .chip.active {
+    background: #8791a6;
+    border-color: #8791a6;
+    color: #0a0e16;
+  }
+  /* The neighborhood star-index handle mirrors the body-index tab but stays
+     available on touch — the body index falls back to a mobile drawer; the star
+     index has no drawer, so its handle must show at every viewport. */
+  .star-index-handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    z-index: 44;
+    writing-mode: vertical-rl;
+    transform: translateY(-50%) rotate(180deg);
+    padding: 12px 6px;
+    background: rgba(8, 10, 22, 0.85);
+    border: 1px solid rgba(154, 166, 189, 0.34);
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    color: rgba(220, 227, 240, 0.82);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+  }
+  .star-index-handle:hover,
+  .star-index-handle[aria-pressed='true'] {
+    color: #aab6cc;
+    border-color: rgba(154, 166, 189, 0.6);
+  }
   .nb-controls {
     position: absolute;
     left: 12px;
@@ -7408,42 +7689,65 @@
     color: #7a8299;
   }
 
-  /* v2 breadcrumb — top-left orientation + tap-back to the solar system. */
+  /* v2 breadcrumb — top-left orientation + tap-back. Chip-styled like the layer
+     pills (height/font), slate-accented as the deep-space scale cue; the Reset-view
+     shares this row. */
   .context-crumbs {
     position: absolute;
     top: 12px;
     left: 12px;
-    z-index: 6;
+    z-index: 7;
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 10px;
-    background: rgba(6, 10, 22, 0.6);
-    border: 1px solid rgba(78, 205, 196, 0.3);
-    border-radius: 6px;
+    min-height: 34px;
+    padding: 3px 10px;
+    background: rgba(10, 14, 24, 0.62);
+    border: 1px solid rgba(154, 166, 189, 0.34);
+    border-radius: 5px;
     backdrop-filter: blur(5px);
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
   }
-  .crumb.home {
+  .crumb {
     background: none;
     border: none;
-    color: #4ecdc4;
+    color: rgba(200, 210, 228, 0.82);
     cursor: pointer;
     font: inherit;
     padding: 4px 2px;
-    min-height: 32px;
   }
-  .crumb.home:hover,
-  .crumb.home:focus-visible {
-    color: #7ddfd8;
+  .crumb.home {
+    color: #aab6cc; /* slate — deep-space cue */
+    min-height: 30px;
+  }
+  .crumb:hover,
+  .crumb:focus-visible {
+    color: #d6deee;
     outline: none;
   }
   .crumb-sep {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.28);
   }
   .crumb.current {
     color: #fff;
+    cursor: default;
+  }
+  .crumb-reset {
+    margin-left: 2px;
+    padding: 4px 9px;
+    border: 1px solid rgba(154, 166, 189, 0.4);
+    border-radius: 4px;
+    background: rgba(154, 166, 189, 0.12);
+    color: #c8d2e6;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .crumb-reset:hover,
+  .crumb-reset:focus-visible {
+    background: rgba(154, 166, 189, 0.24);
+    color: #eaf1ff;
   }
 
   /* Compact the scale HUD on phones so it doesn't crowd the bottom edge. */

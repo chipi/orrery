@@ -64,7 +64,10 @@
       label: m.nav_group_explore,
       hub: '/explore/hub',
       children: [
-        { path: '/explore', label: m.nav_explore }, // "OUR SOLAR SYSTEM"
+        // Explicit ?context=solar-system so this jumps back to the solar system from
+        // any scale (a bare /explore is a no-op when you're already on /explore — the
+        // URL doesn't change, so nothing fires; the param gives the effect a trigger).
+        { path: '/explore', query: '?context=solar-system', label: m.nav_explore },
         // /explore v2 scale-shells — jump straight to a context (RFC-032).
         {
           path: '/explore',

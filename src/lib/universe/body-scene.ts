@@ -87,6 +87,45 @@ export function createBodyScene(system: ExoplanetSystem): BodyScene {
   const root = new THREE.Group();
   scene.add(root);
 
+  // Background starfield — distant stars so the system reads as a place in space,
+  // not a void (matches the solar-system view). Decorative; a far shell well inside
+  // BODY_FAR and beyond the outermost orbit.
+  {
+    const N = 1500;
+    const pos = new Float32Array(N * 3);
+    const col = new Float32Array(N * 3);
+    const R_SKY = R_DISPLAY * 26;
+    for (let i = 0; i < N; i++) {
+      const th = Math.acos(2 * Math.random() - 1);
+      const ph = Math.random() * Math.PI * 2;
+      const r = R_SKY * (0.92 + Math.random() * 0.16);
+      pos[i * 3] = r * Math.sin(th) * Math.cos(ph);
+      pos[i * 3 + 1] = r * Math.cos(th);
+      pos[i * 3 + 2] = r * Math.sin(th) * Math.sin(ph);
+      const t = 0.55 + Math.random() * 0.45;
+      const warm = Math.random() < 0.28;
+      col[i * 3] = t * (warm ? 1 : 0.82);
+      col[i * 3 + 1] = t * 0.9;
+      col[i * 3 + 2] = t * (warm ? 0.78 : 1);
+    }
+    const g = track(new THREE.BufferGeometry());
+    g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    g.setAttribute('color', new THREE.BufferAttribute(col, 3));
+    const m = track(
+      new THREE.PointsMaterial({
+        size: 1.7,
+        sizeAttenuation: false,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.85,
+        depthWrite: false,
+      }),
+    );
+    const stars = new THREE.Points(g, m);
+    stars.frustumCulled = false;
+    scene.add(stars);
+  }
+
   // Host is the light source; a dim fill keeps night sides legible.
   scene.add(new THREE.AmbientLight(0x223044, 0.5));
   const starLight = new THREE.PointLight(0xffffff, 2.4, 0, 0.25);

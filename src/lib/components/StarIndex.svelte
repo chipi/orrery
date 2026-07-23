@@ -1,28 +1,45 @@
 <!--
-  StarIndex — keyboard-reachable, searchable list of the curated named stars for
-  /explore v2 (Slice 1 Part 2). The DOM "mirror" for the neighborhood: every named
-  star is selectable without the canvas. Selecting frames + opens it.
+  StarIndex — the neighborhood's primary index: a searchable, keyboard-reachable
+  list of the curated named stars, styled to match the solar-system body index
+  (ExploreBodyIndex) for cross-scale cohesion. It's the DOM "mirror" of the star
+  field: every named star is selectable without the canvas, and rows are badged +
+  filterable by what you can do with them — ⊕ has a planetary system you can enter,
+  ◈ has a culture door. Selecting frames + opens the star.
 -->
 <script lang="ts">
+  import { roving } from '$lib/a11y/roving';
   import { constellationName } from '$lib/universe/iau-constellations';
   import * as m from '$lib/paraglide/messages';
   import type { NamedStar } from '$lib/data';
 
+  type Filter = 'all' | 'planets' | 'culture';
   type Props = {
     stars: NamedStar[];
     open: boolean;
     selectedId: string | null;
+    hostIds?: Set<string>;
+    cultureIds?: Set<string>;
     onSelect: (id: string) => void;
     onClose: () => void;
   };
-  let { stars, open, selectedId, onSelect, onClose }: Props = $props();
+  let {
+    stars,
+    open,
+    selectedId,
+    hostIds = new Set(),
+    cultureIds = new Set(),
+    onSelect,
+    onClose,
+  }: Props = $props();
 
   let query = $state('');
-  let input: HTMLInputElement | undefined = $state();
+  let filter = $state<Filter>('all');
 
   let filtered = $derived.by(() => {
     const q = query.trim().toLowerCase();
-    const list = [...stars].sort((a, b) => a.proper.localeCompare(b.proper));
+    let list = [...stars].sort((a, b) => a.proper.localeCompare(b.proper));
+    if (filter === 'planets') list = list.filter((s) => hostIds.has(s.id));
+    else if (filter === 'culture') list = list.filter((s) => cultureIds.has(s.id));
     if (!q) return list;
     return list.filter(
       (s) =>
@@ -30,41 +47,57 @@
         (s.con ? constellationName(s.con).toLowerCase().includes(q) : false),
     );
   });
-
-  $effect(() => {
-    if (open) input?.focus();
-  });
-
-  function onKeydown(e: KeyboardEvent) {
-    if (e.key === 'Escape') onClose();
-  }
 </script>
 
 {#if open}
-  <div class="star-index" aria-label={m.star_index_aria()}>
-    <div class="si-head">
+  <aside class="star-index" aria-label={m.star_index_aria()}>
+    <div class="si-top">
       <input
-        bind:this={input}
         bind:value={query}
         type="search"
+        class="si-input"
         placeholder={m.star_index_search_placeholder()}
         aria-label={m.star_index_search_aria()}
-        onkeydown={onKeydown}
       />
       <button type="button" class="si-close" aria-label={m.star_index_close()} onclick={onClose}
         >×</button
       >
     </div>
-    <ul class="si-list">
+    <div class="si-filters" role="group" aria-label={m.star_index_filter_aria()}>
+      <button type="button" class:active={filter === 'all'} onclick={() => (filter = 'all')}
+        >{m.star_index_filter_all()}</button
+      >
+      <button
+        type="button"
+        class:active={filter === 'planets'}
+        onclick={() => (filter = 'planets')}
+        title={m.star_index_filter_planets()}>⊕ {m.star_index_filter_planets()}</button
+      >
+      <button
+        type="button"
+        class:active={filter === 'culture'}
+        onclick={() => (filter = 'culture')}
+        title={m.star_index_filter_culture()}>◈ {m.star_index_filter_culture()}</button
+      >
+    </div>
+    <div class="si-count">{filtered.length} / {stars.length}</div>
+    <ul class="si-list" use:roving={{ orientation: 'vertical', wrap: true }}>
       {#each filtered as s (s.id)}
         <li>
           <button
             type="button"
-            class="si-item"
-            class:active={s.id === selectedId}
+            class="si-row"
+            class:selected={s.id === selectedId}
+            data-index-id={s.id}
             aria-current={s.id === selectedId ? 'true' : undefined}
             onclick={() => onSelect(s.id)}
           >
+            <span class="si-badges" aria-hidden="true">
+              {#if hostIds.has(s.id)}<span class="si-badge planets" title="Planetary system">⊕</span
+                >{/if}{#if cultureIds.has(s.id)}<span class="si-badge culture" title="Culture door"
+                  >◈</span
+                >{/if}
+            </span>
             <span class="si-name">{s.proper}</span>
             <span class="si-con">{s.con ? constellationName(s.con) : ''}</span>
           </button>
@@ -74,91 +107,159 @@
         <li class="si-empty">{m.star_index_no_match({ query })}</li>
       {/if}
     </ul>
-  </div>
+  </aside>
 {/if}
 
 <style>
+  /* Matches ExploreBodyIndex (.body-index) so the index reads the same at every
+     scale — left rail, search → filters → count → roving list. */
   .star-index {
-    position: absolute;
-    left: 12px;
-    top: 60px;
-    z-index: 8;
-    width: 240px;
-    max-height: 60vh;
     display: flex;
     flex-direction: column;
-    background: rgba(6, 10, 22, 0.82);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 8px;
-    backdrop-filter: blur(6px);
-    overflow: hidden;
+    position: fixed;
+    left: 12px;
+    top: 152px;
+    bottom: 12px;
+    z-index: 45;
+    width: min(300px, calc(100vw - 24px));
+    padding: 12px;
+    min-height: 0;
+    background: color-mix(in srgb, var(--bg-base, #04040c) 92%, transparent);
+    border: 1px solid var(--border-subtle, #23232e);
+    border-radius: 10px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    color: var(--text-base, #e8e8ed);
   }
-  .si-head {
+  .si-top {
     display: flex;
+    align-items: center;
     gap: 6px;
-    padding: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 8px;
   }
-  .si-head input {
+  .si-input {
     flex: 1;
     min-width: 0;
-    background: rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 4px;
-    color: #dde4ff;
-    font-family: 'Space Mono', monospace;
+    padding: 7px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 6px;
+    color: var(--text-base, #e8e8ed);
+    font: inherit;
     font-size: 12px;
-    padding: 6px 8px;
+  }
+  .si-input:focus-visible {
+    outline: none;
+    border-color: rgba(78, 205, 196, 0.6);
   }
   .si-close {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
     background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 18px;
+    border: 1px solid var(--border-subtle, #23232e);
+    border-radius: 8px;
+    color: var(--text-dim, #9a9aa7);
+    font-size: 20px;
+    line-height: 1;
     cursor: pointer;
-    min-width: 28px;
+  }
+  .si-filters {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 8px;
+  }
+  .si-filters button {
+    flex: 1;
+    padding: 5px 6px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.62);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .si-filters button.active {
+    color: #04121a;
+    background: #4ecdc4;
+    border-color: #4ecdc4;
+    font-weight: 700;
+  }
+  .si-filters button:hover:not(.active) {
+    border-color: rgba(78, 205, 196, 0.5);
+  }
+  .si-count {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: var(--text-dim, #9a9aa7);
+    margin-bottom: 4px;
   }
   .si-list {
     list-style: none;
     margin: 0;
-    padding: 6px;
+    padding: 0;
+    flex: 1;
+    min-height: 0;
     overflow-y: auto;
+    overscroll-behavior: contain;
   }
-  .si-item {
-    width: 100%;
+  .si-row {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
     gap: 8px;
+    width: 100%;
+    padding: 8px 10px;
     background: none;
-    border: none;
-    border-radius: 4px;
-    padding: 7px 8px;
-    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: var(--text-base, #e8e8ed);
+    font: inherit;
     text-align: left;
-    color: #dde4ff;
-    font-family: 'Space Mono', monospace;
+    cursor: pointer;
   }
-  .si-item:hover,
-  .si-item:focus-visible {
-    background: rgba(78, 205, 196, 0.12);
+  .si-row:hover,
+  .si-row:focus-visible {
+    background: color-mix(in srgb, var(--brand, #4a7dff) 18%, transparent);
     outline: none;
   }
-  .si-item.active {
-    background: rgba(78, 205, 196, 0.2);
+  .si-row.selected {
+    background: color-mix(in srgb, var(--brand, #4a7dff) 28%, transparent);
+    border-color: rgba(78, 205, 196, 0.55);
+  }
+  .si-badges {
+    display: inline-flex;
+    gap: 3px;
+    flex: none;
+    width: 26px;
+    font-size: 11px;
+  }
+  .si-badge.planets {
+    color: #6ad0ff;
+  }
+  .si-badge.culture {
+    color: #d3a4ff;
   }
   .si-name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: 13px;
   }
   .si-con {
     font-size: 10px;
     color: rgba(159, 232, 226, 0.8);
+    flex: none;
   }
   .si-empty {
-    color: rgba(255, 255, 255, 0.5);
-    font-family: 'Space Mono', monospace;
+    padding: 16px 8px;
+    color: var(--text-dim, #9a9aa7);
     font-size: 11px;
-    padding: 10px 8px;
+    text-align: center;
     list-style: none;
   }
 </style>

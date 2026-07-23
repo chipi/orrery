@@ -2154,6 +2154,12 @@ async function getCultureDoorCatalog(fetchFn: FetchLike = fetch): Promise<Cultur
   return cultureDoorsCache;
 }
 
+/** The set of object ids that have at least one culture door — drives the
+ *  "has culture" marker + filter in the star index (sparse: a handful of ids). */
+export async function getCultureObjectIds(fetchFn: FetchLike = fetch): Promise<Set<string>> {
+  return new Set((await getCultureDoorCatalog(fetchFn)).map((d) => d.objectId));
+}
+
 /** The culture doors attached to a given object id, localized. Empty if none. */
 export async function getCultureDoors(
   objectId: string,

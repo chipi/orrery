@@ -70,9 +70,12 @@ function labelSprite(
   weight: 'bold' | 'normal',
 ): { sprite: THREE.Sprite; texture: THREE.CanvasTexture; aspect: number } {
   const upper = text.toUpperCase();
-  const font = `${weight} 26px "Space Mono", monospace`;
+  // Lighter weight + wide tracking (matches the neighborhood + Milky Way labels).
+  const font = `${weight === 'bold' ? '500' : '400'} 24px "Space Mono", monospace`;
+  const tracking = '2px';
   const measure = document.createElement('canvas').getContext('2d')!;
   measure.font = font;
+  measure.letterSpacing = tracking;
   const pad = 12;
   const w = Math.ceil(measure.measureText(upper).width) + pad * 2;
   const h = 40;
@@ -81,9 +84,10 @@ function labelSprite(
   cvs.height = h;
   const ctx = cvs.getContext('2d')!;
   ctx.font = font;
+  ctx.letterSpacing = tracking;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.shadowColor = 'rgba(0,0,0,0.95)';
+  ctx.shadowColor = 'rgba(0,0,0,0.9)';
   ctx.shadowBlur = 5;
   ctx.fillStyle = color;
   ctx.fillText(upper, w / 2, h / 2);
@@ -105,15 +109,15 @@ function labelSprite(
 // irregulars a touch blue). Never pure white; the core reads as glow not blowout.
 const GLOW_STOPS: Record<LocalGroupKind, Array<[number, string]>> = {
   spiral: [
-    [0, 'rgba(230,224,205,0.42)'],
-    [0.3, 'rgba(150,175,230,0.24)'],
-    [0.62, 'rgba(110,140,215,0.09)'],
-    [1, 'rgba(90,120,205,0)'],
+    [0, 'rgba(228,236,232,0.42)'],
+    [0.3, 'rgba(120,206,196,0.22)'],
+    [0.62, 'rgba(92,182,176,0.08)'],
+    [1, 'rgba(70,160,158,0)'],
   ],
   irregular: [
-    [0, 'rgba(186,208,250,0.4)'],
-    [0.45, 'rgba(140,168,230,0.16)'],
-    [1, 'rgba(120,150,215,0)'],
+    [0, 'rgba(194,234,226,0.4)'],
+    [0.45, 'rgba(120,202,192,0.15)'],
+    [1, 'rgba(96,182,176,0)'],
   ],
   'dwarf-elliptical': [
     [0, 'rgba(250,222,172,0.44)'],
@@ -126,14 +130,14 @@ const GLOW_STOPS: Record<LocalGroupKind, Array<[number, string]>> = {
     [1, 'rgba(210,168,124,0)'],
   ],
   'dwarf-irregular': [
-    [0, 'rgba(190,214,250,0.38)'],
-    [0.5, 'rgba(148,176,230,0.12)'],
-    [1, 'rgba(130,160,215,0)'],
+    [0, 'rgba(198,232,226,0.38)'],
+    [0.5, 'rgba(128,200,192,0.12)'],
+    [1, 'rgba(108,182,176,0)'],
   ],
 };
 
-const ARM_COL = new THREE.Color(0.72, 0.8, 1.0);
-const CORE_COL = new THREE.Color(0.98, 0.86, 0.6);
+const ARM_COL = new THREE.Color(0.82, 0.93, 0.96); // teal-white (brand), not blue
+const CORE_COL = new THREE.Color(0.98, 0.86, 0.6); // warm gold core
 
 interface Pin {
   id: string;
@@ -377,7 +381,7 @@ export function createLocalGroupScene(
         // reveal their name on hover/selection, so the census reads without clutter.
         pin.label.visible = pin.alwaysLabel || hi;
         if (pin.label.visible) {
-          const lh = dist * (pin.headliner ? 0.05 : 0.042);
+          const lh = dist * (pin.headliner ? 0.038 : 0.032);
           pin.label.scale.set(lh * pin.labelAspect, lh, 1);
           pin.label.position.set(
             pin.position.x,

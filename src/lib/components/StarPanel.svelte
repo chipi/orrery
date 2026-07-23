@@ -19,15 +19,16 @@
   import { constellationName } from '$lib/universe/iau-constellations';
   import { bvToRgb, bvToKelvin } from '$lib/universe/bv-to-rgb';
   import { colorNameForKelvin } from '$lib/universe/anonymous-star';
-  import { getConstellationLines, type LocalizedNamedStar } from '$lib/data';
+  import { getConstellationLines, type LocalizedNamedStar, type ExoplanetSystem } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
 
-  type Tab = 'overview' | 'technical';
+  type Tab = 'overview' | 'technical' | 'system';
   type Props = {
     star: LocalizedNamedStar | null;
     cultureDoors?: LocalizedCultureDoor[];
     open: boolean;
     hasSystem?: boolean;
+    system?: ExoplanetSystem | null;
     onEnterSystem?: () => void;
     onClose: () => void;
   };
@@ -35,6 +36,7 @@
     star,
     open,
     hasSystem = false,
+    system = null,
     onEnterSystem,
     cultureDoors = [],
     onClose,
@@ -97,6 +99,36 @@
       }
     }
   });
+
+  // Mini top-down schematic of the host's planetary system for the System tab:
+  // orbit rings spread by rank (so tight real systems stay legible) + a dot per
+  // planet sized by radius, angles fanned so dots don't stack on one another.
+  let systemView = $derived.by(() => {
+    if (!system) return [];
+    const n = system.planets.length;
+    const cx = 120;
+    const cy = 60;
+    const inner = 26;
+    const outer = 104;
+    return system.planets.map((p, i) => {
+      const rx = n <= 1 ? 62 : inner + (i / (n - 1)) * (outer - inner);
+      const ry = rx * 0.4;
+      const ang = -0.7 + i * 1.9;
+      const r = p.radius_earth ?? 1;
+      // Warm rocky → teal sub-Neptune → blue giant, for a little visual variety.
+      const color = r < 1.6 ? '#ffc39a' : r < 4 ? '#8fe6d8' : '#a9c8ff';
+      return {
+        rx,
+        ry,
+        px: cx + rx * Math.cos(ang),
+        py: cy + ry * Math.sin(ang),
+        rad: Math.max(2.2, Math.min(5.5, r * 2.2)),
+        color,
+        letter: p.letter,
+        id: p.id,
+      };
+    });
+  });
 </script>
 
 <Panel {open} {onClose} {title}>
@@ -158,6 +190,17 @@
         aria-selected={tab === 'overview'}
         aria-controls="star-tabpanel">{m.panel_tab_overview()}</button
       >
+      {#if hasSystem && system}
+        <button
+          type="button"
+          id="star-tab-system"
+          class:active={tab === 'system'}
+          onclick={() => (tab = 'system')}
+          role="tab"
+          aria-selected={tab === 'system'}
+          aria-controls="star-tabpanel">{m.star_tab_system()}</button
+        >
+      {/if}
       <button
         type="button"
         id="star-tab-technical"
@@ -186,6 +229,63 @@
             <CultureDoorCard {door} />
           {/each}
         {/if}
+      {:else if tab === 'system' && system}
+        <div class="system-schematic">
+          <svg viewBox="0 0 240 124" role="img" aria-label={m.star_tab_system()}>
+            <defs>
+              <radialGradient id="host-glow">
+                <stop offset="0%" stop-color={swatch} stop-opacity="1" />
+                <stop offset="35%" stop-color={swatch} stop-opacity="0.55" />
+                <stop offset="100%" stop-color={swatch} stop-opacity="0" />
+              </radialGradient>
+              <radialGradient id="plane-wash" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#1a2c55" stop-opacity="0.55" />
+                <stop offset="100%" stop-color="#0a1024" stop-opacity="0" />
+              </radialGradient>
+              <filter id="pl-glow" x="-160%" y="-160%" width="420%" height="420%">
+                <feGaussianBlur stdDeviation="1.5" result="b" />
+                <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+            </defs>
+            <ellipse cx="120" cy="62" rx="116" ry="52" fill="url(#plane-wash)" />
+            {#each systemView as o (o.id)}
+              <ellipse cx="120" cy="60" rx={o.rx} ry={o.ry} class="orbit" />
+            {/each}
+            <circle cx="120" cy="60" r="30" fill="url(#host-glow)" />
+            <circle cx="120" cy="60" r="5" fill={swatch} class="host-core" filter="url(#pl-glow)" />
+            {#each systemView as o (o.id)}
+              <circle cx={o.px} cy={o.py} r={o.rad + 1.4} fill={o.color} opacity="0.28" />
+              <circle
+                cx={o.px}
+                cy={o.py}
+                r={o.rad}
+                fill={o.color}
+                filter="url(#pl-glow)"
+                class="planet-dot"
+              />
+              <text x={o.px} y={o.py - o.rad - 3} class="dot-label">{o.letter}</text>
+            {/each}
+          </svg>
+        </div>
+        <p class="editorial">{m.star_system_planet_count({ count: system.planets.length })}</p>
+        <ul class="planet-list">
+          {#each system.planets as p (p.id)}
+            <li class="planet-row">
+              <span class="pl-letter" aria-hidden="true">{p.letter}</span>
+              <span class="pl-body">
+                <span class="pl-name">{p.name}</span>
+                <span class="pl-facts">
+                  {#if p.radius_earth}{fmt(p.radius_earth, 2)} R⊕ ·
+                  {/if}{p.period_days < 10 ? fmt(p.period_days, 2) : fmt(p.period_days, 0)} d{#if p.disc_year}
+                    · {p.disc_year}{/if}
+                </span>
+              </span>
+            </li>
+          {/each}
+        </ul>
+        <button type="button" class="enter-system mt" onclick={() => onEnterSystem?.()}>
+          {m.star_enter_system()}
+        </button>
       {:else}
         <div class="grid">
           {#if colorName && kelvin !== null}
@@ -287,6 +387,79 @@
     background: rgba(78, 205, 196, 0.2);
     border-color: rgba(78, 205, 196, 0.7);
     outline: none;
+  }
+  .enter-system.mt {
+    margin-top: 14px;
+  }
+  .system-schematic {
+    position: relative;
+    background:
+      radial-gradient(ellipse at 50% 42%, rgba(26, 40, 78, 0.55), rgba(4, 7, 16, 0.85) 70%), #04060d;
+    border: 1px solid rgba(120, 160, 255, 0.16);
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow:
+      inset 0 0 32px rgba(0, 0, 0, 0.6),
+      0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+  .system-schematic svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .system-schematic .orbit {
+    fill: none;
+    stroke: rgba(150, 200, 255, 0.22);
+    stroke-width: 0.5;
+  }
+  .system-schematic .dot-label {
+    fill: rgba(210, 232, 255, 0.75);
+    font-family: 'Space Mono', monospace;
+    font-size: 6.5px;
+    letter-spacing: 0.5px;
+    text-anchor: middle;
+  }
+  .planet-list {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .planet-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 8px 10px;
+    background: rgba(78, 205, 196, 0.05);
+    border: 1px solid rgba(78, 205, 196, 0.16);
+    border-radius: 4px;
+  }
+  .pl-letter {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: #4ecdc4;
+    min-width: 14px;
+  }
+  .pl-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .pl-name {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.92);
+  }
+  .pl-facts {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: rgba(159, 232, 226, 0.85);
   }
   .star-hero {
     margin-bottom: 12px;

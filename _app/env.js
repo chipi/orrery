@@ -1,1 +1,1 @@
-export const env={PUBLIC_SENTRY_ENVIRONMENT:"production",PUBLIC_SENTRY_DSN:"",PUBLIC_SENTRY_RELEASE:"gha-31e95b29edfee6d92c5b70394d3bed035b8ef7e4"}
+export const env={PUBLIC_SENTRY_ENVIRONMENT:"staging",PUBLIC_SENTRY_DSN:"https://bb3908e53882411cb896caa31072a4db@telemetry.orrerylearn.com/6",PUBLIC_UMAMI_WEBSITE_ID:"6e7ddfce-1437-49b9-8b77-a36d3584ccad",PUBLIC_SENTRY_RELEASE:"gha-22f6b8851091b264dbdb96ee92005c8333d47f69",PUBLIC_UMAMI_HOST:"https://analytics.orrerylearn.com"}

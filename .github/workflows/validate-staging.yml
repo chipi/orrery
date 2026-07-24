@@ -1,0 +1,73 @@
+name: Validate staging (GitHub Pages)
+
+# Post-deploy smoke of the STAGING tier — reuses scripts/validate-prod.mjs
+# (VALIDATE_TIER=staging) against the GitHub Pages site. This is the last link
+# of the staging chain: ci.yml ──► docker-e2e.yml ──► preview.yml (deploy to
+# GitHub Pages) ──► THIS. It does NOT continue to prod — promotion to the VPS
+# is always a deliberate manual `deploy-prod.yml` dispatch.
+#
+# Tier differences vs the prod smoke (see scripts/validate-prod.mjs header):
+#   - VALIDATE_TIER=staging skips the nginx security-header/CSP suite (GitHub
+#     Pages is a static host; those are a VPS/nginx concern, N/A here).
+#   - VALIDATE_REQUIRE_DSN=1 makes a missing Sentry DSN a hard failure — the
+#     point of the tier is to confirm the Pages build emits Sentry (env=staging).
+#
+# Own concurrency group (NOT gh-pages-publish) so this ~read-only smoke never
+# delays a docs/app publish that races on the gh-pages branch.
+
+on:
+  workflow_run:
+    workflows: ['Deploy preview']
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-staging
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # workflow_run fires on every completion; only smoke a SUCCESSFUL deploy.
+    # Manual dispatch always proceeds.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    env:
+      STAGING_URL: ${{ vars.STAGING_URL || 'https://chipi.github.io/orrery' }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Wait for GitHub Pages to publish the new build
+        # Pages has a publish lag after preview.yml pushes to gh-pages. Poll the
+        # deploy fingerprint (written by preview.yml) until it's live. When the
+        # expected SHA is known (workflow_run) require an exact match; otherwise
+        # (manual dispatch) accept any served fingerprint. Never hard-fail here —
+        # if it never settles, fall through and let the smoke report reachability.
+        env:
+          EXPECTED_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          for i in $(seq 1 60); do
+            SERVED=$(curl -fsS --max-time 10 "$STAGING_URL/_deploy-sha.txt" 2>/dev/null | tr -d '[:space:]' || true)
+            if [ -n "$SERVED" ] && { [ -z "$EXPECTED_SHA" ] || [ "$SERVED" = "$EXPECTED_SHA" ]; }; then
+              echo "staging live — fingerprint $SERVED"; exit 0
+            fi
+            echo "waiting for Pages… served='${SERVED:-none}' expected='${EXPECTED_SHA:-any}' (${i}/60)"
+            sleep 5
+          done
+          echo "::warning::Pages fingerprint did not match within timeout — smoking whatever is live"
+      - name: Smoke the staging deployment
+        env:
+          VALIDATE_URL: ${{ env.STAGING_URL }}
+          VALIDATE_TIER: staging
+          VALIDATE_REQUIRE_DSN: '1'
+        run: npm run validate-prod

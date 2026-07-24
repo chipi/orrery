@@ -699,8 +699,9 @@
   // sidecar probe.
   onMount(() => {
     showDebug = $page.url.searchParams.get('debug') === '1';
-    // Sidecar fetch probe — fills the overlay's sidecarStatus.
-    fetch('/data/surface-hotspots.json')
+    // Sidecar fetch probe — fills the overlay's sidecarStatus. Base-relative so
+    // it resolves under a non-root deploy base (e.g. GitHub Pages /orrery/).
+    fetch(`${base}/data/surface-hotspots.json`)
       .then((r) => r.json())
       .then((d) => {
         debugInfo.sidecarStatus = `ok ${Object.keys(d.entries || {}).length} entries · apollo11 tier ${d.entries?.apollo11?.hotspot_tier_max ?? '?'}`;

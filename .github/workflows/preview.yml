@@ -65,18 +65,23 @@ jobs:
       - run: npm run build
         env:
           VITE_BASE: /orrery/
-          # Sentry — RFC-025 / ADR-067. SENTRY_DSN_WEB is set once in
-          # repo settings → Secrets → Actions; forks don't have it, so
-          # their build produces a bundle with empty PUBLIC_SENTRY_DSN
-          # and the SDK no-ops. PUBLIC_SENTRY_RELEASE is the GH SHA so
-          # Sentry can group errors per deploy.
-          PUBLIC_SENTRY_DSN: ${{ secrets.SENTRY_DSN_WEB }}
-          PUBLIC_SENTRY_ENVIRONMENT: production
+          # Sentry — RFC-025 / ADR-067. Same secret as deploy-prod
+          # (secrets.PUBLIC_SENTRY_DSN); the DSN key is public (ships in the
+          # bundle) and ingest-only. Forks lack it → empty DSN → the SDK
+          # no-ops. ENVIRONMENT is `staging` (this IS the staging tier —
+          # GitHub Pages) so Sentry separates staging events from prod's.
+          # PUBLIC_SENTRY_RELEASE is the GH SHA so Sentry groups per deploy.
+          PUBLIC_SENTRY_DSN: ${{ secrets.PUBLIC_SENTRY_DSN }}
+          PUBLIC_SENTRY_ENVIRONMENT: staging
           PUBLIC_SENTRY_RELEASE: gha-${{ github.sha }}
       - run: npm run docs:build
         env:
           DOCS_BASE: /orrery/docs/
       - run: cp -R docs/.vitepress/dist build/docs
+      # Deploy fingerprint the staging smoke polls to confirm the NEW build is
+      # live before validating (GitHub Pages has a publish lag). validate-
+      # staging.yml waits until /orrery/_deploy-sha.txt matches this SHA.
+      - run: git rev-parse HEAD > build/_deploy-sha.txt
       - uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

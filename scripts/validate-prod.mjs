@@ -24,6 +24,14 @@
  *   VALIDATE_URL=http://127.0.0.1:4173 node scripts/validate-prod.mjs   # local preview
  *   VALIDATE_JSON=/tmp/report.json node scripts/validate-prod.mjs       # + machine report
  *
+ * Tier (VALIDATE_TIER, default 'prod'): the security-header + CSP suite asserts
+ * directives that nginx sets on the VPS (prod). The 'staging' tier is GitHub
+ * Pages — a static host that does NOT emit those nginx headers — so on
+ * VALIDATE_TIER=staging that suite is skipped (surfaced as WARN, not FAIL):
+ * asserting an nginx config against a non-nginx host is an environment mismatch,
+ * not a real regression. Every other suite (routes, i18n, PWA, data overlay,
+ * regression guards, mobile) is build-output/app-behaviour and runs on any tier.
+ *
  * Exit code: 0 when every non-warn check passes; 1 on any failure. WARN checks
  * (environment-conditional, e.g. error-monitoring off on a DSN-less build)
  * never fail the run — they're surfaced, not gated.
@@ -32,6 +40,11 @@ import { chromium } from '@playwright/test';
 import { writeFileSync } from 'node:fs';
 
 const BASE = (process.env.VALIDATE_URL ?? 'https://www.orrerylearn.com').replace(/\/$/, '');
+const TIER = process.env.VALIDATE_TIER ?? 'prod';
+// The deploy's URL base path ('' on prod at root, '/orrery' on the GitHub Pages
+// staging site). Lets base-relative assertions (e.g. the SW fallback) stay
+// tier-correct instead of hard-coding a root path.
+const BASE_PATH = new URL(BASE).pathname.replace(/\/$/, '');
 const JSON_OUT = process.env.VALIDATE_JSON;
 
 // ── Route inventory (mirrors svelte.config.js SEED_ROUTES + key dynamic routes)
@@ -88,7 +101,10 @@ const LOCALES = [
   'ru',
 ];
 // Localized URL for a base route (mirrors svelte.config.js expandLocalizedRoots).
-const localizedPath = (locale, route) => (route === '/' ? `/${locale}/` : `/${locale}${route}`);
+// Localized home is `/<locale>` (no trailing slash) — the app's prerendered URL
+// shape. A forced trailing slash 404s on GitHub Pages' strict static serving even
+// though nginx (prod) is lenient about it.
+const localizedPath = (locale, route) => (route === '/' ? `/${locale}` : `/${locale}${route}`);
 
 // Console-error patterns that are benign noise, not failures.
 const IGNORE_CONSOLE = /Failed to load resource|favicon|\[vite\]|Download the .* DevTools|preload/i;
@@ -121,7 +137,10 @@ async function loadOnce(ctx, path, waitMs) {
   });
   p.on('response', (r) => {
     const u = r.url();
-    if (r.status() >= 400 && !/telemetry|umami|favicon|\.map$/.test(u))
+    // image-vision.json is intentionally pruned from the build (prune-build-
+    // staging.mjs) and its loader falls back to an empty manifest — a 404 is
+    // by-design + gracefully handled, not a route break, so don't gate on it.
+    if (r.status() >= 400 && !/telemetry|umami|favicon|\.map$|image-vision\.json/.test(u))
       bad4xx.push(`${r.status()} ${u.replace(BASE, '')}`);
   });
   let status;
@@ -154,7 +173,7 @@ async function load(ctx, path, { waitMs = 1500 } = {}) {
 const browser = await chromium.launch();
 const desktop = await browser.newContext({ viewport: { width: 1280, height: 800 } });
 
-console.log(`\n  Orrery prod validator → ${BASE}\n`);
+console.log(`\n  Orrery ${TIER} validator → ${BASE}\n`);
 
 // SUITE 1 — reachability + security headers + CSP directives
 suite('headers');
@@ -168,24 +187,37 @@ suite('headers');
   } catch (e) {
     record('site reachable (/ → 2xx)', false, e.message.slice(0, 60));
   }
-  const csp = headers['content-security-policy'] || '';
-  record('security: HSTS header', !!headers['strict-transport-security']);
-  record('security: X-Content-Type-Options', headers['x-content-type-options'] === 'nosniff');
-  record('security: X-Frame-Options', !!headers['x-frame-options']);
-  record('security: Referrer-Policy', !!headers['referrer-policy']);
-  record('security: CSP header present', !!csp);
-  // The exact directives today's fixes depend on:
-  record(
-    'CSP frame-src allows youtube (video embeds)',
-    /frame-src[^;]*youtube-nocookie/.test(csp),
-    'gallery videos',
-  );
-  record(
-    'CSP connect-src allows telemetry edge (error monitoring)',
-    /connect-src[^;]*telemetry\.orrerylearn\.com/.test(csp),
-    'GlitchTip POST',
-  );
-  record('CSP media-src present (agency <video>)', /media-src/.test(csp));
+  // Security headers + CSP directives are set by nginx on the VPS (prod). The
+  // staging tier is GitHub Pages — a static host that does not emit them — so
+  // asserting them there is an environment mismatch, not a regression. Skip on
+  // staging (surfaced as WARN), run in full on prod.
+  if (TIER === 'prod') {
+    const csp = headers['content-security-policy'] || '';
+    record('security: HSTS header', !!headers['strict-transport-security']);
+    record('security: X-Content-Type-Options', headers['x-content-type-options'] === 'nosniff');
+    record('security: X-Frame-Options', !!headers['x-frame-options']);
+    record('security: Referrer-Policy', !!headers['referrer-policy']);
+    record('security: CSP header present', !!csp);
+    // The exact directives today's fixes depend on:
+    record(
+      'CSP frame-src allows youtube (video embeds)',
+      /frame-src[^;]*youtube-nocookie/.test(csp),
+      'gallery videos',
+    );
+    record(
+      'CSP connect-src allows telemetry edge (error monitoring)',
+      /connect-src[^;]*telemetry\.orrerylearn\.com/.test(csp),
+      'GlitchTip POST',
+    );
+    record('CSP media-src present (agency <video>)', /media-src/.test(csp));
+  } else {
+    record(
+      'security headers + CSP directives',
+      true,
+      `skipped on ${TIER} — nginx/VPS concern, N/A on the GitHub Pages static host`,
+      { warn: true },
+    );
+  }
   await p.close();
 }
 
@@ -201,7 +233,7 @@ suite('pwa');
     // NOT '/' (home) — else full-page navs render home.
     record(
       'SW navigateFallback = /404.html (not home)',
-      /createHandlerBoundToURL\("\/404\.html"\)/.test(sw),
+      new RegExp(`createHandlerBoundToURL\\("${BASE_PATH}/404\\.html"\\)`).test(sw),
       sw.match(/createHandlerBoundToURL\("([^"]*)"\)/)?.[1] ?? '?',
     );
   } catch (e) {
@@ -437,9 +469,18 @@ suite('regression-guards');
     dsn = await readDsn().catch(() => null);
   }
   if (!dsn) {
-    record('error monitoring wired (DSN baked)', false, 'no DSN — monitoring off on this build', {
-      warn: true,
-    });
+    // On staging (VALIDATE_REQUIRE_DSN=1) a missing DSN is a hard failure — the
+    // whole point of that tier is to verify GitHub Pages emits Sentry. Elsewhere
+    // (e.g. a fork build with no DSN secret) it stays a benign WARN.
+    const requireDsn = process.env.VALIDATE_REQUIRE_DSN === '1';
+    record(
+      'error monitoring wired (DSN baked)',
+      false,
+      requireDsn
+        ? 'no DSN baked — staging must emit Sentry (check secrets.PUBLIC_SENTRY_DSN)'
+        : 'no DSN — monitoring off on this build',
+      { warn: !requireDsn },
+    );
   } else {
     record('error monitoring: DSN baked', true);
     // The public key must be dashless — the @sentry SDK's DSN parser uses \w+

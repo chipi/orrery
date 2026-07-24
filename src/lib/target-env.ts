@@ -89,3 +89,31 @@ export function setTargetEnv(env: TargetEnv): void {
 export function targetConfig(): TargetConfig {
   return CONFIG[getTargetEnv()];
 }
+
+/**
+ * Reconcile PRERENDERED image origins to the active target (internal builds only).
+ *
+ * `assetOrigin` is a module const baked into prerendered HTML at build time (the
+ * default tier). Svelte doesn't re-evaluate a non-reactive const on hydration, so
+ * the first prerendered page's `<img>` keep the build-default origin even when the
+ * runtime target differs — client-navigated pages already resolve correctly. This
+ * rewrites any non-active tier origin → the active one in src/srcset, so assets
+ * follow the switch everywhere. No-op in web/release (tree-shaken).
+ */
+export function reconcilePrerenderedAssetOrigins(): void {
+  if (!MOBILE_INTERNAL || typeof document === 'undefined') return;
+  const active = targetConfig().streamOrigin.replace(/\/+$/, '');
+  const others = TARGET_ENVS.map((e) => CONFIG[e].streamOrigin.replace(/\/+$/, '')).filter(
+    (o) => o !== active,
+  );
+  if (!others.length) return;
+  const rewrite = (s: string) => others.reduce((acc, o) => acc.split(o).join(active), s);
+  document.querySelectorAll<HTMLImageElement>('img[src]').forEach((el) => {
+    const next = rewrite(el.getAttribute('src') || '');
+    if (next !== el.getAttribute('src')) el.setAttribute('src', next);
+  });
+  document.querySelectorAll<HTMLElement>('[srcset]').forEach((el) => {
+    const next = rewrite(el.getAttribute('srcset') || '');
+    if (next !== el.getAttribute('srcset')) el.setAttribute('srcset', next);
+  });
+}

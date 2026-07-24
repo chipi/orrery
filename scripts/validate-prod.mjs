@@ -154,15 +154,20 @@ async function loadOnce(ctx, path, waitMs) {
   return { p, status, pageErrors, consoleErrors, bad4xx };
 }
 
-// Load a page, retrying once on a transient chunk-fetch failure so a CDN hiccup
-// can't false-fail a gating post-deploy run.
+// A sub-resource 5xx (e.g. GitHub Pages' CDN throwing a transient 503 on a large
+// texture/image during the concurrent sweep) — retryable, unlike a real 4xx.
+const hasTransient5xx = (res) => res.bad4xx.some((b) => /^5\d\d /.test(b));
+
+// Load a page, retrying once on a transient failure so a CDN hiccup can't
+// false-fail a gating post-deploy run.
 async function load(ctx, path, { waitMs = 1500 } = {}) {
   let res = await loadOnce(ctx, path, waitMs);
-  // Retry ONLY on the observed transient chunk-fetch pageerror. Deliberately do
-  // NOT retry on status < 0 — that's dominated by networkidle timeouts on heavy
-  // 3D routes (fly/explore/earth), and retrying just doubles a 30s wait for no
-  // gain.
-  if (res.pageErrors.some((e) => TRANSIENT.test(e))) {
+  // Retry on the observed transient chunk-fetch pageerror OR a transient 5xx
+  // sub-resource — a persistent failure still fails on the second attempt.
+  // Deliberately do NOT retry on status < 0 — that's dominated by networkidle
+  // timeouts on heavy 3D routes (fly/explore/earth), and retrying just doubles a
+  // 30s wait for no gain.
+  if (res.pageErrors.some((e) => TRANSIENT.test(e)) || hasTransient5xx(res)) {
     await res.p.close();
     res = await loadOnce(ctx, path, waitMs);
   }

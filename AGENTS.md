@@ -64,7 +64,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | 3D rendering | Three.js r128, local bundle | ADR-001 |
 | Bundler | Vite (via SvelteKit) | ADR-012 |
 | Routing | History API via SvelteKit router | ADR-013 |
-| CI + preview | GitHub Actions + GitHub Pages | ADR-014 |
+| CI + staging | GitHub Actions + GitHub Pages (staging tier; dev → staging → prod) | ADR-014 |
 | Unit tests | Vitest | ADR-015 |
 | E2e tests | Playwright | ADR-015 |
 | External assets | Resolved at build time | ADR-016 |
@@ -870,9 +870,9 @@ Where the body comes from the matching `## [X.Y.Z]` section in `CHANGELOG.md` (e
 |---|---|---|
 | `git tag v0.6.1` + `git push --tags` | Tag exists; gh sees it; CI deploy chain MAY fire | No GH Release entry; no release notes; no notification |
 | `gh release create v0.6.1 …` | Creates the Release entry tied to the tag | Doesn't trigger Pages deploy; doesn't move the tag |
-| `gh workflow run "Deploy preview" --ref main` | Manually publishes the live site from current main | Doesn't tag; doesn't create a Release |
+| `gh workflow run "Deploy preview" --ref main` | Manually publishes the **staging** site (GitHub Pages) from current main | Doesn't tag; doesn't create a Release; **does NOT touch prod** (the VPS) |
 
-All three steps are needed for a complete release: tag + GH Release + deploy. The deploy chain auto-fires from a push-to-main IF the CI + e2e workflows pass; if either is red, use `workflow_dispatch` to force the deploy.
+All three steps are needed for a complete release: tag + GH Release + deploy. The **staging** deploy (GitHub Pages, workflow "Deploy preview" / `preview.yml`) auto-fires from a push-to-main IF the CI + e2e workflows pass; if either is red, use `workflow_dispatch` to force it. **Prod (the VPS) is a separate, always-manual step** — `gh workflow run "Deploy to prod VPS (orrery)"` — never auto-triggered. Tiers: **dev → staging (GitHub Pages) → prod (VPS)**; see TA.md §pipelines "Deploy tiers".
 
 ---
 

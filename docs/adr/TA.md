@@ -624,7 +624,17 @@ npm run build         = i18n:compile
 
 The husky pre-push hook runs `preflight`. CI mirrors this chain exactly (per ADR-014 / ADR-015). The build is reproducible from a clean checkout in under 6 minutes locally, ~22 minutes in CI on `ubuntu-latest` single-worker per `playwright.config.ts`.
 
-**CI trigger map.** `ci.yml` (typecheck · lint · `test:coverage` · validate-data · build) and CodeQL run on `push`/`pull_request` to `main`; a green `ci.yml` chains the e2e + publish gates via `workflow_run` (`docker-e2e.yml` — sharded per W7/ADR-066 — and `mobile-e2e.yml`). Orrery merges feature branches straight to local `main` (no PRs), so a long-lived branch otherwise gets **zero Linux `npm ci` runs until it's already merged**. `lock-check.yml` closes that gap: on every push to a non-`main` branch it runs a cold `npm ci --ignore-scripts` on `ubuntu-latest`, surfacing lockfile drift on the branch push instead of post-merge. The drift it guards against: a macOS `npm install` silently strips Linux-only optional peer deps (`@emnapi/*`, pulled transitively by the optional `@rolldown/binding-wasm32-wasi` → `@napi-rs/wasm-runtime`) from `package-lock.json`, which then fails the cold Linux `npm ci` with `Missing @emnapi/... from lock file`. Regenerate the lock on Linux (`docker run --rm -v "$PWD":/app -w /app node:20 npm install --package-lock-only`), never macOS. The file lives on `main` so branches cut from it inherit the guard.
+**Deploy tiers — dev → staging → prod.** Three environments, and analytics are tagged by tier:
+
+| Tier | Host | Trigger | Workflow | URL |
+|---|---|---|---|---|
+| **dev** | local | `npm run dev` | — | `http://localhost` |
+| **staging** | **GitHub Pages** | **auto** after `docker-e2e` goes green on `main` (+ manual + weekly cron) | `preview.yml` (workflow name "Deploy preview") | the GitHub Pages site |
+| **prod** | Hetzner VPS (docker stack, ADR-063) | **manual only** — `gh workflow run "Deploy to prod VPS (orrery)"` | `deploy-prod.yml` | `https://www.orrerylearn.com` |
+
+Staging is **not** a conveyor to prod: main pushes auto-publish to GitHub Pages (staging) on every green build, but promotion to the VPS (prod) is a deliberate manual step — an operator chooses which good staging build to ship, and may iterate on staging many times without ever going live. The workflow that publishes staging is still literally named **"Deploy preview"** / `preview.yml` (the file predates the tier vocabulary); "preview" and "staging" refer to the same GitHub Pages tier. The `validate-prod` smoke test is URL-parameterized (`VALIDATE_URL`) so the same suite validates any tier; today it runs post-deploy against prod (`deploy-prod.yml`'s `validate` job) and on the 6-hourly `validate-prod.yml` schedule.
+
+**CI trigger map.** `ci.yml` (typecheck · lint · `test:coverage` · validate-data · build) and CodeQL run on `push`/`pull_request` to `main`; a green `ci.yml` chains the e2e + publish gates via `workflow_run` (`docker-e2e.yml` — sharded per W7/ADR-066 — and `mobile-e2e.yml`), and a green `docker-e2e` in turn triggers the **staging** publish (`preview.yml` → GitHub Pages) and the docs publish (`deploy-docs.yml`, ADR-070). Orrery merges feature branches straight to local `main` (no PRs), so a long-lived branch otherwise gets **zero Linux `npm ci` runs until it's already merged**. `lock-check.yml` closes that gap: on every push to a non-`main` branch it runs a cold `npm ci --ignore-scripts` on `ubuntu-latest`, surfacing lockfile drift on the branch push instead of post-merge. The drift it guards against: a macOS `npm install` silently strips Linux-only optional peer deps (`@emnapi/*`, pulled transitively by the optional `@rolldown/binding-wasm32-wasi` → `@napi-rs/wasm-runtime`) from `package-lock.json`, which then fails the cold Linux `npm ci` with `Missing @emnapi/... from lock file`. Regenerate the lock on Linux (`docker run --rm -v "$PWD":/app -w /app node:20 npm install --package-lock-only`), never macOS. The file lives on `main` so branches cut from it inherit the guard.
 
 ---
 
@@ -908,7 +918,7 @@ Locked technical choices. Each entry points to its ADR.
 | Mobile wrapper (iOS + Android) | Capacitor 8 · stream-heavy bundle · assetUrl origin spine · native safe-area shim | ADR-078, ADR-079 (see §mobile) |
 | Immersive Mode (AR + Exhibit) | `ArBackend` abstraction · WebXR (Android) + ARKit Capacitor (iPhone) · capability-gated · Exhibit kiosk loop · AR-astronomy modes (sky-pointing / real-now / station) on the `$lib/astronomy` + `$lib/satellite` engines + `$lib/geolocation` | PRD-019 / RFC-021 (see §immersive) |
 | Documentation site | VitePress + vitepress-sidebar at `/docs/` | ADR-021 |
-| CI + preview hosting | GitHub Actions + GitHub Pages | ADR-014 |
+| CI + staging hosting | GitHub Actions + GitHub Pages (the **staging** tier — see "Deploy tiers" in §pipelines) | ADR-014 |
 | Unit / integration tests | Vitest (+ jsdom + canvas polyfill) | ADR-015 |
 | End-to-end tests | Playwright (Chromium, single-worker CI) | ADR-015, ADR-056 |
 | External assets | Resolved at build time via GH Actions | ADR-016 |

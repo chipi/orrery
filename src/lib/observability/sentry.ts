@@ -53,20 +53,23 @@ export function initSentry(): void {
   if (!dsn) return;
 
   // The same web bundle runs on the web AND inside the Capacitor iOS/Android/TV
-  // shells (WKWebView/WebView). Native shells report under `mobile-<platform>`
-  // and every event carries a `platform` tag, so a shell-only regression stays
-  // separable from web in GlitchTip. Capacitor.getPlatform() returns 'web'
-  // off-device — the web takes the plain @sentry/sveltekit path below.
+  // shells (WKWebView/WebView). Every event carries a `platform` tag
+  // (web/ios/android) — the SEGMENT dimension — so a shell-only regression stays
+  // separable from web in GlitchTip while both ride the same environment tier.
+  // Capacitor.getPlatform() returns 'web' off-device — web takes the plain
+  // @sentry/sveltekit path below; native takes @sentry/capacitor (see end).
   const platform = Capacitor.getPlatform(); // 'web' | 'ios' | 'android'
   const isNative = platform !== 'web';
 
   const options = {
     dsn,
-    // Native shells → `mobile-<platform>` (#428). Web → the env ladder:
-    // deploy-injected PUBLIC_SENTRY_ENVIRONMENT (staging/prod) or, in `vite dev`, `dev`.
-    environment: isNative
-      ? `mobile-${platform}`
-      : publicEnv.PUBLIC_SENTRY_ENVIRONMENT || (dev ? 'dev' : 'prod'),
+    // Environment = the TIER (dev/staging/prod), uniform for web AND native (ADR-082
+    // amendment): deploy-injected PUBLIC_SENTRY_ENVIRONMENT wins, `vite dev` → `dev`,
+    // else `prod`. Mobile rides the SAME ladder — a simulator build bakes the staging
+    // DSN+env (→ staging project 6), a release build bakes prod (→ prod project 4). The
+    // `platform` tag below is the SEGMENT that splits app from browser; overloading
+    // `environment` with the platform (the old `mobile-<platform>`) collided with the tier.
+    environment: publicEnv.PUBLIC_SENTRY_ENVIRONMENT || (dev ? 'dev' : 'prod'),
     release: publicEnv.PUBLIC_SENTRY_RELEASE || undefined,
 
     // Tag every event `component: orrery` (+ `platform`) so streams stay separable in the

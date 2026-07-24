@@ -114,7 +114,29 @@ The switch is `src/lib/asset-url.ts` — `assetOrigin` / `assetUrl()` / `streame
 
 CI does **not** build the native binaries (no Xcode/Android SDK in the runners); mobile builds are local. Version lives in `package.json` (0.8.0-wip → PWA/footer), iOS `MARKETING_VERSION` (numeric, Apple requires it), Android `versionName`.
 
-1. `npm run sync:mobile` (build:mobile + cap sync).
+### Telemetry tier — bake it before `sync:mobile` (ADR-082)
+
+Native builds are local, so **the tier is whatever you `export` at build time.** Mobile is a *segment* of the ladder, not a separate app: `environment` = the tier, the `platform` tag (ios/android) separates the app from the browser (see [ADR-082 amendment](/adr/ADR-082)). Bake **both** Sentry and Umami for the tier, or the in-app telemetry is silent:
+
+```sh
+# Simulator / staging test build — crashes → GlitchTip project 6, pageviews → staging Umami
+export PUBLIC_SENTRY_DSN='https://<staging-key>@telemetry.orrerylearn.com/6'
+export PUBLIC_SENTRY_ENVIRONMENT=staging
+export PUBLIC_UMAMI_HOST='https://analytics.orrerylearn.com'
+export PUBLIC_UMAMI_WEBSITE_ID='<staging-umami-site-id>'
+npm run sync:mobile
+
+# Release / App Store build — ALWAYS prod: GlitchTip project 4, prod Umami
+export PUBLIC_SENTRY_DSN='https://<prod-key>@telemetry.orrerylearn.com/4'
+export PUBLIC_SENTRY_ENVIRONMENT=prod
+export PUBLIC_UMAMI_HOST='https://analytics.orrerylearn.com'
+export PUBLIC_UMAMI_WEBSITE_ID='<prod-umami-site-id>'
+npm run sync:mobile
+```
+
+Keys are public (they ship in the bundle); strip the dashes from the GlitchTip key (see `.env.example`). Native crash *symbolication* is a separate layer — App Store Connect / Play Console consoles (ADR-082 amendment / the #428 note). `STREAM_ORIGIN` (asset host) is independent of the telemetry tier.
+
+1. `npm run sync:mobile` (build:mobile + cap sync) — with the tier env exported above.
 2. `npm run open:ios` → in Xcode, select the **App** target → Signing & Capabilities → set your Apple Developer **Team** (auto-manage signing). This step needs your Apple ID; it can't be scripted here.
 3. Product → Archive → Distribute App → App Store Connect → upload.
 4. In App Store Connect, create the app record (bundle id `io.github.chipi.orrery`); it appears in **TestFlight** for internal testers.

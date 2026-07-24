@@ -59,7 +59,11 @@ export default defineConfig(({ mode }) => {
   // HEAD (CI/deploy builds), where it isn't read anyway.
   const devWorktree = (() => {
     try {
-      return execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf8' }).trim();
+      const branch = execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf8' }).trim();
+      // `--abbrev-ref HEAD` yields the literal 'HEAD' on a detached checkout
+      // (CI/deploy builds); normalise that to empty so the tag is truly absent
+      // there (it isn't read anyway — dev is false).
+      return branch === 'HEAD' ? '' : branch;
     } catch {
       return '';
     }

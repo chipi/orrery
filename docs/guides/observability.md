@@ -1,8 +1,18 @@
-# Observability — Sentry (client errors) + Grafana Cloud (docker logs)
+# Observability — GlitchTip (client errors) + Umami (usage) + docker logs
 
-Operator guide for the observability stack defined in **[RFC-025](../rfc/RFC-025.md)** with **[ADR-067](../adr/ADR-067.md)** (Sentry) and **[ADR-068](../adr/ADR-068.md)** (Grafana Agent). Reuses the operator's existing Sentry org + Grafana Cloud stack from `podcast_scraper` RFC-081.
+Operator guide for browser telemetry. **Source of truth: [ADR-082](../adr/ADR-082.md)** (the telemetry environment ladder), with **[ADR-067](../adr/ADR-067.md)** (Sentry SDK → GlitchTip) and **[ADR-081](../adr/ADR-081.md)** (Umami) as the per-integration decisions. RFC-025 is a historical snapshot — do not wire from its diagram.
 
-The integration shape is **load-bearing by env var, silent by default.** Empty environment variables mean both integrations short-circuit — Sentry's SDK returns before init, the Grafana Agent's entrypoint picks a no-clients config. Fork-friendly. No committed secrets anywhere in the repo.
+> **The error sink is self-hosted [GlitchTip](https://glitchtip.com/), not Sentry SaaS.** We use the `@sentry/sveltekit` SDK, but it points at our self-hosted GlitchTip at `telemetry.orrerylearn.com`. Anywhere below that still says "Sentry org / ingest.sentry.io", read "GlitchTip project".
+
+**The env ladder (ADR-082).** Both browser integrations report on three isolated rungs — **prod** (`orrerylearn.com`), **staging** (`chipi.github.io/orrery`), and the maintainer's **local `vite dev`** — each with its own GlitchTip project + Umami site, tagged by environment:
+
+| Rung | GlitchTip project | Umami site | env tag | selected by |
+|---|---|---|---|---|
+| prod | 4 | prod | `production` | `deploy-prod.yml` (`prod` GH env) |
+| staging | 6 | staging | `staging` | `staging.yml` (`staging` GH env) |
+| dev | 7 | dev | `dev` | `sentry.ts` / `analytics.ts` fallback, over the Tailscale `homelab` host |
+
+The integration shape is **env-gated, fork-silent by construction.** Deploy rungs bake `PUBLIC_*` from GH environment secrets a fork doesn't have; the dev rung's endpoints resolve only on our tailnet (`homelab`), so a stranger's `vite dev` transport-fails silently. `vite preview` / CI / screenshots are not `dev` and carry no baked vars → silent. No committed secrets — only the public DSN/site-id browser ids, which ship in the bundle by design.
 
 > **In-browser sibling:** for live, per-route inspection (FPS, current locale, page-specific debug views), use the in-app DebugPanel — append `?debug=1` to any route. Sentry catches production errors after the fact; the DebugPanel is the during-development surface. See AGENTS.md §"Debugging — `?debug=1` is the in-app inspector" for tabs, registrar pattern, and when to expand stubs.
 
@@ -18,41 +28,36 @@ The integration shape is **load-bearing by env var, silent by default.** Empty e
 
 See **[`src/lib/observability/sentry.ts`](../../src/lib/observability/sentry.ts)** for the full scrubber implementation.
 
-### One-time setup (Sentry org)
+### One-time setup (GlitchTip projects — one per rung)
 
-1. Sign in to the operator's Sentry org (same one as podcast_scraper).
-2. Create a new project: **Projects → New** → platform **JavaScript / SvelteKit** → name **`orrery-web`**.
-3. From the project's **Settings → Client Keys (DSN)**, copy the DSN string. It looks like `https://<32-char-public-key>@<numeric-org-id>.ingest.us.sentry.io/<numeric-project-id>`. This is the value of `PUBLIC_SENTRY_DSN`.
-4. (Recommended) Set **Data Scrubbing** under **Project → Settings → Security & Privacy** to "Scrub IP Addresses" and add `password`, `token`, `secret`, `api_key`, `apikey` to the sensitive-fields list. Belt-and-suspenders alongside the SDK's `beforeSend` hook.
+Done once on the self-hosted GlitchTip (over the tailnet). Already provisioned: **project 4** (prod), **project 6** (staging), **project 7** (dev). Each project's **Settings → Client Keys (DSN)** gives a public DSN of the form `http(s)://<32-hex-key>@<host>/<project-id>` — the project id at the end is what routes events to the right rung.
 
-### One-time setup (GH Actions secret)
+- **prod / staging** DSNs are set as the `PUBLIC_SENTRY_DSN` secret inside the **`prod`** and **`staging`** GH environments respectively (Repo → Settings → Environments → pick env → Secrets). Never at the repo level — the environment gate is the point.
+- **dev** DSN is the `DEV_SENTRY_DSN` constant in `src/lib/observability/sentry.ts` (project 7, `homelab:8090`). It's committed on purpose: a DSN is a public browser id, and the `homelab` host is tailnet-only, so it's inert off the tailnet.
 
-```
-Repo → Settings → Secrets and variables → Actions → New repository secret
-  Name:  SENTRY_DSN_WEB
-  Value: <the DSN from step 3>
-```
+### CI wiring (already in the workflows)
 
-That's the only secret the production build needs. `.github/workflows/preview.yml` threads it into the build's `env:` block as `PUBLIC_SENTRY_DSN`; SvelteKit inlines it into the static bundle at build time. Forks that don't have this secret in their own repo will build with an empty value and the SDK no-ops.
+- `deploy-prod.yml` (`environment: prod`) and `staging.yml` (`environment: staging`) each thread their environment's `PUBLIC_SENTRY_DSN` + `PUBLIC_UMAMI_*` into the build `env:` block, with `PUBLIC_SENTRY_ENVIRONMENT` = `production` / `staging`. SvelteKit inlines them at build time. A fork lacks both environments → empty → SDK no-ops.
+- There is **no repo-level `SENTRY_DSN_WEB` secret** anymore (that was the old single-env design); the value lives per-GH-environment.
 
-### Local-dev posture
+### Local-dev posture (the dev rung)
 
-- `npm run dev` and `npm run preview` both default to empty DSN → SDK does not initialise → no network requests. Verified in browser devtools network tab (search "ingest.sentry.io" → no hits).
-- If you want to test against a real Sentry project from your laptop: create a separate **`orrery-dev`** project in Sentry, copy its DSN into your local `.env` as `PUBLIC_SENTRY_DSN=…`, and **don't commit it**. The `.env` is gitignored; the `scripts/check-no-secrets.ts` preflight gate scans the staged diff and fails the commit if a DSN slips through.
+- `vite dev` **now reports** — with no `PUBLIC_SENTRY_*` override it falls back to the dev DSN (GlitchTip project 7) via `homelab:8090`. On the maintainer's tailnet this is live; off the tailnet the host doesn't resolve, the transport fails, and nothing leaves the browser (fork-silent by construction). Dev events carry a `worktree` tag (git branch) so parallel local sessions are separable.
+- `vite preview`, the screenshot pipeline, and CI are **not** `dev` and carry no baked vars → silent. To point local dev at a *different* project, set `PUBLIC_SENTRY_DSN=…` in your gitignored `.env` (the `scripts/check-no-secrets.ts` gate still scans the staged diff).
 
 ### Verifying it works
 
-Once `SENTRY_DSN_WEB` is set in GH Actions secrets and a deploy has run:
+Pick the rung. For **dev**: run `vite dev` on the tailnet, force-throw from the console, and confirm the event lands in GlitchTip **project 7** tagged `environment=dev` + your `worktree`. For a **deploy rung**: visit the route (`orrerylearn.com` for prod, `chipi.github.io/orrery` for staging) and do the same — it lands in project **4** / **6** tagged `production` / `staging`:
 
-1. Visit a production route on `chipi.github.io`, open browser devtools, and force-throw an error from the console:
+```js
+setTimeout(() => { throw new Error('GlitchTip smoke test'); }, 0);
+```
 
-   ```js
-   setTimeout(() => { throw new Error('Sentry smoke test from chipi.github.io'); }, 0);
-   ```
+The event shows `request.url` as the route path only (no query), `request.headers` undefined, `user.ip_address` as `0.0.0.0`. If it doesn't appear: confirm the DSN's project id matches the rung, and that `PUBLIC_SENTRY_DSN` is set in that GH environment (redacted in the deploy logs).
 
-2. Within ~30 seconds, the error lands in Sentry's **Issues** list under the `orrery-web` project, with `request.url` showing the route path only (no query), `request.headers` undefined, `user.ip_address` shown as `0.0.0.0`.
+### Umami (usage analytics) — same ladder
 
-3. If it doesn't appear: check the **Stats** view for rate-limited or filtered events; confirm `PUBLIC_SENTRY_DSN` is set in the deploy workflow's env (visible in the deploy workflow's logs as a redacted secret reference).
+Umami mirrors the above (ADR-081): prod/staging bake `PUBLIC_UMAMI_HOST` + `PUBLIC_UMAMI_WEBSITE_ID` (their own site ids) from the matching GH environment; `vite dev` falls back to the dev site via `homelab:3001`. Only the website id changes per rung — the host is the shared `analytics.orrerylearn.com` edge for deploys, `homelab` for dev. Fork-silence + the "not `dev` → silent" rule are identical. Event registry + privacy scrubbing live in `src/lib/analytics.ts`.
 
 ### Don't do this — PII leak vectors
 
@@ -68,6 +73,13 @@ If you need to capture context for debugging, redact at the call site: `Sentry.s
 ---
 
 ## Grafana Cloud Agent (docker-stack logs)
+
+> **Caveat — verify before relying on this section.** This covers server-side
+> **log shipping** (ADR-068), a separate concern from the browser telemetry
+> ladder above. It predates the estate's move to self-hosting and may be
+> superseded (logs were reported moving to **VictoriaLogs** — see ADR-081
+> context). It has not been re-verified in this pass; confirm against the current
+> infra before using the Grafana Cloud steps below.
 
 ### What it ships
 

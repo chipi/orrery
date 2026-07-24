@@ -2,7 +2,7 @@
 
 | Doc | Title | Status | Date |
 |---|---|---|---|
-| TA | Technical Authority | v2.2 | Jun 2026 |
+| TA | Technical Authority | v3.2 | Jul 2026 |
 | ADR-001 | Three.js 0.185.1 as 3D renderer (upgraded from r128, #203) | Accepted (amended Jul 2026) | Apr 2026 |
 | ADR-002 | Vanilla JS, no framework | Superseded by ADR-011, ADR-012 | Apr 2026 |
 | ADR-003 | Vite as bundler | Superseded by ADR-012 | Apr 2026 |
@@ -80,3 +80,4 @@
 | ADR-079 | Asset-origin spine + source/derived separation + WebP delivery | Accepted | Jul 2026 |
 | ADR-080 | Responsive image size ladder + srcset delivery (mobile · web · Google TV) | Accepted | Jul 2026 |
 | ADR-081 | Self-hosted Umami analytics (env-var-gated, no committed IDs) | Accepted | Jul 2026 |
+| ADR-082 | Telemetry environment ladder (dev → staging → prod, isolated GlitchTip + Umami projects) | Accepted | Jul 2026 |

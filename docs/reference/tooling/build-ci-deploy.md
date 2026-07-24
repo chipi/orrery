@@ -254,16 +254,16 @@ fallback) and offline-safe pipeline runs.
 
 ## Deploy — GitHub Actions workflows
 
-The deploy chain is `ci.yml → docker-e2e.yml → preview.yml`, with `deploy-docs.yml` branching
+The deploy chain is `ci.yml → docker-e2e.yml → staging.yml`, with `deploy-docs.yml` branching
 off CI directly and prod/release as separate manual/tag triggers.
 
-### Deploy preview (`preview.yml`) — GH Pages app + docs
+### Deploy staging (`staging.yml`) — GH Pages app + docs
 
 **Trigger** — `workflow_run` on **docker-e2e** completion (success only, branch main);
 also `workflow_dispatch` and a weekly Monday 06:00 UTC cron (fresh imagery, ADR-016).
 **What** — Builds with `VITE_BASE=/orrery/` + `npm run docs:build` (`DOCS_BASE=/orrery/docs/`),
 copies docs into `build/docs`, publishes the full `build/` to the `gh-pages` branch.
-**Manual** — `gh workflow run "Deploy preview" --ref main` (force-publish when the e2e gate
+**Manual** — `gh workflow run "Deploy staging" --ref main` (force-publish when the e2e gate
 blocked the auto-deploy).
 **Gotchas** — Deploys the exact SHA that passed docker-e2e. Shares concurrency group
 `gh-pages-publish` with deploy-docs (serialized, no cancel-in-progress).

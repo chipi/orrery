@@ -5,18 +5,23 @@
  * (browser → Cloudflare, origin-locked, tracking-only edge → homelab
  * Umami — the same secure shape as the GlitchTip telemetry vhost).
  *
- * ── Enablement (mirrors src/lib/observability/sentry.ts, ADR-067) ─────
- * Loading is gated on the two PUBLIC_ env vars being baked at build
- * time, NOT on hostname. So:
- *   • the deploy sets `PUBLIC_UMAMI_HOST` + `PUBLIC_UMAMI_WEBSITE_ID` →
- *     analytics is live on the production build;
- *   • local dev / vite preview / CI / screenshots leave them empty →
- *     silent by construction (`dev` is also hard-blocked);
- *   • forks populate their OWN vars in their CI and get their own
- *     dashboard without editing this file.
- * This replaced an earlier hostname allowlist that was pinned to the old
- * `chipi.github.io/orrery` mirror and therefore never fired on the
- * `orrerylearn.com` production domain.
+ * ── Enablement: the env ladder (mirrors sentry.ts; ADR-082) ──────────
+ * Gated on host + website id resolving for the current rung, NOT on
+ * hostname. Three rungs, each its own isolated Umami site:
+ *   • deploy (staging/prod) bakes `PUBLIC_UMAMI_HOST` +
+ *     `PUBLIC_UMAMI_WEBSITE_ID` → analytics live, tagged by environment;
+ *   • `vite dev` with no override falls back to the DEV_UMAMI_* defaults
+ *     below — the dev site, reachable ONLY over the Tailscale `homelab`
+ *     host (no fixed IP), so a fork's `vite dev` transport-fails silently;
+ *   • vite preview / CI / screenshots are not `dev` and carry no baked
+ *     vars → neither resolves → no script injected, every `track()` a
+ *     no-op;
+ *   • forks populate their OWN deploy vars and get their own dashboard
+ *     without editing this file.
+ * Fork-silence is by construction (empty deploy vars + a tailnet-only dev
+ * host), NOT a `dev` hard-block — `vite dev` on the maintainer's tailnet
+ * DOES report. This replaced an earlier hostname allowlist pinned to the
+ * old `chipi.github.io/orrery` mirror that never fired on `orrerylearn.com`.
  *
  * Privacy: Umami is cookieless, PII-free, GDPR-friendly. Free-text the
  * user typed (search queries) is length-capped before it leaves the

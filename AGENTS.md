@@ -256,7 +256,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
     ├── ci.yml
     ├── docker-e2e.yml         # canonical Playwright gate + GHCR publish (ADR-071 supersedes ADR-066 trigger surface)
     ├── deploy-docs.yml        # docs site, CI-gated (ADR-070)
-    ├── preview.yml            # full app+docs, docker-e2e-gated (ADR-070, retargeted by ADR-071)
+    ├── staging.yml            # full app+docs, docker-e2e-gated (ADR-070, retargeted by ADR-071)
     ├── deploy-prod.yml        # tailnet VPS deploy, manual (#260)
     ├── refresh-launches.yml   # cron — launches.json refresh
     ├── regen-snapshots.yml    # manual — visual-baseline regen
@@ -745,7 +745,7 @@ Hooks self-activate after `npm install` via the `prepare` script (`git config co
 
 ### Before tagging or releasing — full local e2e on BOTH projects
 
-**The pre-push hook is not enough to ship a release.** It runs preflight, which excludes e2e. The CI e2e gate is what holds the auto-deploy chain (`ci.yml` → `docker-e2e.yml` → `preview.yml`) together (per ADR-071); if docker-e2e is red on the tagged commit, the GH Pages deploy never fires and shipping turns into a CI ping-pong.
+**The pre-push hook is not enough to ship a release.** It runs preflight, which excludes e2e. The CI e2e gate is what holds the auto-deploy chain (`ci.yml` → `docker-e2e.yml` → `staging.yml`) together (per ADR-071); if docker-e2e is red on the tagged commit, the GH Pages deploy never fires and shipping turns into a CI ping-pong.
 
 **Rule: before moving a tag or cutting a GitHub Release, run the full e2e suite locally against both viewports until both are clean.**
 

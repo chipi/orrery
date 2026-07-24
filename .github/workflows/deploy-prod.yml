@@ -159,8 +159,8 @@ jobs:
         # no outbound traffic (fork-silent default).
         if: steps.preflight.outputs.skip != 'true'
         env:
-          # PUBLIC_SENTRY_DSN → self-hosted GlitchTip project 2 via the public
-          # ingest-only vhost (https://glitchtip.<domain>/2). Empty until the
+          # PUBLIC_SENTRY_DSN → self-hosted GlitchTip project 4 via the public
+          # ingest-only vhost (https://glitchtip.<domain>/4). Empty until the
           # edge vhost is live — a not-yet-live DSN silently drops events, so
           # keep the secret unset until podcast-infra confirms Phase 5.5 is up.
           # The key is public (ships in the bundle); it stays a secret only to

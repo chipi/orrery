@@ -1,0 +1,1 @@
+var e=globalThis.__sveltekit_1gk473r.env;export{e as t};

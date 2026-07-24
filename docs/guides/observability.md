@@ -72,155 +72,129 @@ If you need to capture context for debugging, redact at the call site: `Sentry.s
 
 ---
 
-## Grafana Cloud Agent (docker-stack logs)
+## Container + refresh logs — shared node Alloy → VictoriaLogs
 
-> **Caveat — verify before relying on this section.** This covers server-side
-> **log shipping** (ADR-068), a separate concern from the browser telemetry
-> ladder above. It predates the estate's move to self-hosting and may be
-> superseded (logs were reported moving to **VictoriaLogs** — see ADR-081
-> context). It has not been re-verified in this pass; confirm against the current
-> infra before using the Grafana Cloud steps below.
+Server-side log shipping, self-hosted. **The per-app `orrery-grafana-agent` (grafana/agent v0.43) is retired** — it was EOL and its `docker_sd` keep-filter leaked, mislabelling podcast-infra logs as `app=orrery`. It's replaced by a **shared node [Grafana Alloy](https://grafana.com/docs/alloy/)** that runs once on the box for all apps; Orrery contributes a config fragment. Anything below referencing "Grafana Cloud", "grafana-agent", `GRAFANA_CLOUD_*`, or a `--profile observability` service is historical.
+
+- **Shipper:** the shared node Alloy (owned by the infra repo, ADR-121 / podcast infra #1268), config in `/etc/alloy/config.d/`.
+- **Sink:** self-hosted **VictoriaLogs** (via the shared `loki.write "logs_sink"` component in `base.alloy`), queried with **LogsQL**.
+- **Dashboards / query UI:** self-hosted **Grafana** on the tailnet (`http://homelab:3000`) — a viewer over VictoriaLogs, *not* Grafana Cloud.
+
+### Orrery's config fragment — `ops/observability/orrery.alloy`
+
+This repo owns exactly one file: `ops/observability/orrery.alloy`, dropped into the box's `/etc/alloy/config.d/` on deploy and hot-reloaded with `docker kill -s HUP alloy` (never restart the shared Alloy). It references shared components from `base.alloy` (`discovery.docker "app"`, `loki.write "logs_sink"`) — **do not touch `base.alloy` or the podcast sources.**
 
 ### What it ships
 
-- **`orrery-web` container stdout/stderr.** nginx access logs + error log.
-- **`orrery-pipeline-runner-*` container stdout/stderr.** Pipeline invocation output (every `docker compose run --rm pipeline-runner …` creates a uniquely-named container; the agent's `docker_sd_configs` regex picks them up automatically).
+- **`orrery-web`** (nginx) stdout/stderr → labelled `surface=web`.
+- **`orrery-pipeline-runner-*`** (each on-demand `docker compose run --rm pipeline-runner …` container) → `surface=pipeline`.
+- **The on-VPS launch-data refresh log** — `/srv/orrery/data-refresh.log` (RFC-035, the 6-hourly cron; Alloy sees the host root at `/rootfs`), labelled `job=orrery-data-refresh`. Its `[refresh-prod-data] … ok — … bytes` / `FETCH FAILED` lines drive the **`orrery-launch-data-stale`** alert.
 
-NOT shipped: other docker containers running on the host (the `keep` action on `__meta_docker_container_name` matching `/(orrery-web|orrery-pipeline-runner-.*)` filters them out — important on a laptop running multiple compose projects).
+Every Orrery stream carries `app=orrery` (set in `orrery.alloy`, since `logs_sink` no longer sets `app` globally). A `discovery.relabel` `keep` on `/(orrery-web|orrery-pipeline-runner-.*)` scopes it tightly — the too-broad keep was the old agent's leak. Other containers on the host are not shipped under `app=orrery`.
 
-### One-time setup (Grafana Cloud stack)
+### Deploying the config (no per-app service, no cloud creds)
 
-1. Sign in to the operator's Grafana Cloud org (same one as podcast_scraper).
-2. From the operator's stack home page, click **Connect data → Loki**.
-3. Note the **Loki ingest URL** (the `host` field — e.g. `https://logs-prod-<NN>.grafana.net`). The full push URL is `<host>/loki/api/v1/push`. Note the numeric **instance ID** displayed alongside.
-4. Click **Access Policies → Create access policy**. Name `orrery-logs-write`. Scope: **logs:write** only. Click **Add token**, name `orrery-agent`. Copy the `glc_…` token immediately (Grafana shows it once).
-5. Set these in `.env` for local testing or in your production environment file:
-
-   ```ini
-   GRAFANA_CLOUD_LOKI_URL=https://logs-prod-<NN>.grafana.net/loki/api/v1/push
-   GRAFANA_CLOUD_LOKI_USER=<numeric-instance-id-from-step-3>
-   GRAFANA_CLOUD_API_KEY=glc_<token-from-step-4>
-   GRAFANA_AGENT_ENV=local-dev    # or 'staging' / 'production-vps'
-   ```
-
-### Bringing up the stack with observability
+There is nothing to bring up in Orrery's compose stack for logs — the shipper is the node-level Alloy, and Orrery only provides a config fragment. Deploy is: copy `ops/observability/orrery.alloy` into the box's `/etc/alloy/config.d/`, then hot-reload:
 
 ```bash
-# Web only (no agent — default for normal local-dev)
-docker compose up -d web
-
-# Web + agent (silent until env vars populated)
-docker compose --profile observability up -d
+# on the box (over the tailnet), after updating the fragment:
+docker kill -s HUP alloy   # reload config.d/ — do NOT restart the shared Alloy
 ```
 
-When `GRAFANA_CLOUD_*` env vars are empty (the local-dev default), `ops/observability/agent-entrypoint.sh` picks the no-clients `grafana-agent.silent.yaml` config — the agent starts, opens its HTTP server on `:12345`, and does nothing else. Zero outbound TCP traffic.
+No `GRAFANA_CLOUD_*` env vars, no Loki write token, no `--profile observability` service. The VictoriaLogs sink + Docker-socket discovery live in `base.alloy` (infra repo). A checkout without tailnet access to the box simply doesn't ship — there's no Orrery-side credential to leak.
 
-When the env vars are all populated, the entrypoint picks `grafana-agent.yaml` — full Promtail mode shipping to Grafana Cloud Loki.
-
-### Verifying the silent default
+### Verifying logs land
 
 ```bash
-docker compose --profile observability up -d grafana-agent
-sleep 5
-docker logs orrery-grafana-agent
-# → exactly one line:
-#   [agent-entrypoint] Grafana Cloud creds NOT present → starting in silent mode (no shipping)
-
-# Host-side outbound check from the agent container's PID:
-lsof -p $(docker inspect -f '{‌{.State.Pid}}' orrery-grafana-agent) | grep TCP
-# → no ESTABLISHED outbound connections, only the local listener on :12345
-```
-
-### Verifying the shipping default
-
-With creds populated in `.env`:
-
-```bash
-docker compose --profile observability up -d grafana-agent
-docker logs orrery-grafana-agent
-# → [agent-entrypoint] Grafana Cloud creds present → starting with shipping config
-# → (then Grafana Agent's normal Promtail/Loki client startup log)
-
-# Generate some web traffic
+# generate some web traffic against the running stack
 curl -s http://localhost:8080/ >/dev/null
-
-# Wait ~30 seconds, then check Grafana Cloud Loki:
-# In the Grafana UI under Explore → Loki:
-#   {app="orrery", env="local-dev", container="orrery-web"}
-# → log lines from the curl above should appear.
 ```
+
+Then query VictoriaLogs from the self-hosted Grafana (`http://homelab:3000`, Explore → VictoriaLogs datasource, LogsQL):
+
+```text
+app:orrery surface:web           # nginx access/error lines from the curl above
+app:orrery surface:pipeline      # pipeline-runner invocations
+app:orrery job:orrery-data-refresh   # the 6-hourly launch-data refresh cron
+```
+
+If nothing appears: confirm `orrery.alloy` is in `/etc/alloy/config.d/` and was hot-reloaded (`docker kill -s HUP alloy`), and that you're on the tailnet.
 
 ### Importing the dashboards
 
-Two dashboards live in `ops/observability/dashboards/`:
+Three dashboards live in `ops/observability/dashboards/` (all panels query VictoriaLogs via LogsQL):
 
-- `orrery-web-access.json` — web container log volume + stderr-incidence + recent lines.
+- `orrery-overview.json` — cross-surface health at a glance.
+- `orrery-web.json` — web container log volume + stderr incidence + recent lines.
 - `orrery-pipelines.json` — pipeline invocations + error-line detection + recent logs.
 
-Import them once per environment via the operator's Grafana Cloud Grafana instance:
+Import them into the self-hosted Grafana (tailnet) — idempotent, matched by `uid`:
 
 ```bash
-GRAFANA_HTTP_URL=https://<your-stack>.grafana.net \
+GRAFANA_HTTP_URL=http://homelab:3000 \
 GRAFANA_API_TOKEN=glsa_<service-account-token-with-editor-role> \
   ./ops/observability/dashboards/import.sh
 ```
 
-The script POSTs each dashboard JSON to `/api/dashboards/db` with `overwrite: true`. Re-running it updates the dashboards in-place (matched by `uid`). The Grafana API token is **not** the same as the Loki write token — it's a service account token with `Editor` role, created under **Administration → Service accounts → Add token**.
+The script POSTs each dashboard to `/api/dashboards/db` with `overwrite: true` into the `orrery` folder (`GRAFANA_FOLDER_UID`, default `orrery`). The token is a Grafana **service-account token with `Editor` role** (Administration → Service accounts → Add token) — unrelated to any log-ingest credential.
 
 ### Don't ship sensitive content through logs
 
-The Loki ship pipeline mirrors whatever the web + pipeline-runner containers print to stdout/stderr. Don't print:
+The pipeline mirrors whatever the web + pipeline-runner containers print to stdout/stderr. Don't print:
 
 - API keys, DSNs, OAuth tokens.
 - User-typed search strings (Orrery doesn't accept any today, but be aware if you add a feature that does).
 - Full request URLs from pipeline scripts when those URLs may contain query-string secrets (e.g. signed S3 URLs).
 
-For most existing scripts this is fine — they print mission IDs, agency names, status codes. Use structured logging (`JSON.stringify({ at: 'fetch-launches', stage: 'merge', count })`) when you want better Loki querying; unstructured stdout still works.
+For most existing scripts this is fine — they print mission IDs, agency names, status codes. Use structured logging (`JSON.stringify({ at: 'fetch-launches', stage: 'merge', count })`) when you want sharper VictoriaLogs (LogsQL) querying; unstructured stdout still works.
 
 ---
 
 ## Architecture summary
 
 ```
-┌────────────────── browser (chipi.github.io) ───────────────────┐
-│  SvelteKit app                                                 │
-│    → hooks.client.ts                                           │
-│      → initSentry()                                            │
-│        if PUBLIC_SENTRY_DSN empty → return (no-op)             │
-│        else → Sentry.init() with beforeSend scrubber           │
-│                ↓                                               │
-│                Sentry Cloud (operator's org / orrery-web)      │
-└────────────────────────────────────────────────────────────────┘
+┌──────── browser (prod orrerylearn.com · staging chipi.github.io) ───────┐
+│  SvelteKit app                                                          │
+│    → hooks.client.ts → initSentry()   +   +layout → initAnalytics()     │
+│        DSN/site id resolves for the rung? (ADR-082)                      │
+│          prod  → GlitchTip 4  + Umami prod   (env=production)            │
+│          staging → GlitchTip 6 + Umami staging (env=staging)             │
+│          vite dev → GlitchTip 7 + Umami dev  (env=dev, via homelab)      │
+│          else (fork / preview / CI) → no-op                             │
+│                ↓ (self-hosted, Cloudflare-fronted)                      │
+│      telemetry.orrerylearn.com (GlitchTip) · analytics.orrerylearn.com  │
+└─────────────────────────────────────────────────────────────────────────┘
 
-┌─────────────── docker-compose stack (local + future VPS) ──────┐
-│  web (nginx)                pipeline-runner (on-demand)        │
-│    stdout/stderr               stdout/stderr                   │
-│         ↓                          ↓                           │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │  grafana-agent (profile-gated)                          │   │
-│  │    agent-entrypoint.sh picks:                           │   │
-│  │      - grafana-agent.silent.yaml (no creds → silent)    │   │
-│  │      - grafana-agent.yaml (creds present → shipping)    │   │
-│  │                                                         │   │
-│  │  Shipping mode → Grafana Cloud Loki (operator's stack)  │   │
-│  └─────────────────────────────────────────────────────────┘   │
-└────────────────────────────────────────────────────────────────┘
+┌─────────────── the box (VPS + local docker stack) ──────────────────────┐
+│  orrery-web (nginx)        orrery-pipeline-runner-*   data-refresh.log   │
+│    stdout/stderr             stdout/stderr             (RFC-035 cron)    │
+│         ↓                        ↓                        ↓              │
+│  ┌───────────────────────────────────────────────────────────────────┐  │
+│  │  shared node Grafana Alloy  (infra repo · ADR-121)                 │  │
+│  │    /etc/alloy/config.d/orrery.alloy  (this repo's fragment)        │  │
+│  │    labels: app=orrery, surface=web|pipeline, job=orrery-data-...   │  │
+│  │                     ↓  loki.write "logs_sink" (base.alloy)         │  │
+│  │              self-hosted VictoriaLogs → Grafana (homelab:3000)     │  │
+│  └───────────────────────────────────────────────────────────────────┘  │
+└──────────────────────────────────────────────────────────────────────────┘
 ```
 
-Sentry observes the browser; Grafana Agent observes the docker stack. Both are silent by default. Neither has hardcoded credentials in the repo. The `scripts/check-no-secrets.ts` preflight gate scans every commit for DSN + API-key patterns.
+GlitchTip + Umami observe the browser (three isolated rungs, ADR-082); the shared node Alloy ships the box's logs to VictoriaLogs. The whole estate is self-hosted — no third-party SaaS. Orrery holds no ingest credential in the repo: browser DSN/site-ids are public, deploy secrets live in GH environments, and the log path is tailnet-only. The `scripts/check-no-secrets.ts` preflight gate scans every commit for DSN + API-key patterns.
 
 ---
 
 ## Reference
 
-- **RFC-025** · [`docs/rfc/RFC-025.md`](../rfc/RFC-025.md) — full architecture rationale + scope + risks.
-- **ADR-067** · [`docs/adr/ADR-067.md`](../adr/ADR-067.md) — Sentry config decisions.
-- **ADR-068** · [`docs/adr/ADR-068.md`](../adr/ADR-068.md) — Grafana Agent compose pattern.
-- **README §Privacy** — user-facing summary of what Sentry collects + doesn't.
-- **`src/lib/observability/sentry.ts`** — the scrubber.
-- **`ops/observability/`** — agent config + dashboards + entrypoint.
-- **podcast_scraper RFC-081 §Layer-2** — the original integration pattern this RFC adapts.
+- **ADR-082** · [`docs/adr/ADR-082.md`](../adr/ADR-082.md) — **the telemetry environment ladder (source of truth)**.
+- **ADR-067** · [`docs/adr/ADR-067.md`](../adr/ADR-067.md) — Sentry SDK → GlitchTip config (+ ADR-082 amendment).
+- **ADR-081** · [`docs/adr/ADR-081.md`](../adr/ADR-081.md) — self-hosted Umami (+ ADR-082 amendment).
+- **ADR-068** · [`docs/adr/ADR-068.md`](../adr/ADR-068.md) — original Grafana-Cloud log-shipper pattern, **superseded** by the shared node Alloy → VictoriaLogs (ADR-121, infra repo).
+- **RFC-025** · [`docs/rfc/RFC-025.md`](../rfc/RFC-025.md) — historical rationale (see its post-closure note).
+- **README §Privacy** — user-facing summary of what the browser telemetry collects + doesn't.
+- **`src/lib/observability/sentry.ts`** / **`src/lib/analytics.ts`** — the scrubbers + env-ladder resolution.
+- **`ops/observability/orrery.alloy`** + **`ops/observability/dashboards/`** — the log fragment + Grafana dashboards.
+- **podcast_scraper-infra ADR-121 / #1268** — the shared node Alloy + VictoriaLogs migration this repo plugs into.
 
 ---
 
-*Orrery · docs/guides/observability.md · 2026-05-22 — Slice 3 of RFC-025 implementation*
+*Orrery · docs/guides/observability.md · 2026-07-24 — realigned to self-hosted GlitchTip + Umami (ADR-082) and the shared node Alloy → VictoriaLogs log pipeline*

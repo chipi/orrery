@@ -6,6 +6,7 @@ import { defineConfig } from 'vitest/config';
 import { loadEnv } from 'vite';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { execSync } from 'node:child_process';
 // GH Pages compat — see scripts/gh-pages-compat.mjs header. Returns
 // `undefined` when VITE_BASE is empty, so the canonical no-base build
 // (VPS) is byte-identical to what it was before this file existed.
@@ -52,6 +53,17 @@ export default defineConfig(({ mode }) => {
   // Trailing slash stripped so `${STREAM_ORIGIN}${'/images/…'}` never yields a
   // `//` path (GitHub Pages 404s those with no redirect).
   const STREAM_ORIGIN = (env.STREAM_ORIGIN || 'https://chipi.github.io/orrery').replace(/\/+$/, '');
+  // Current git branch, injected as a build-time global. Used ONLY by the dev telemetry
+  // rung (sentry.ts) to tag dev events by worktree — each parallel worktree has its own
+  // branch, so a dev error can be traced to the session it came from. Empty on a detached
+  // HEAD (CI/deploy builds), where it isn't read anyway.
+  const devWorktree = (() => {
+    try {
+      return execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf8' }).trim();
+    } catch {
+      return '';
+    }
+  })();
   return {
     // Expose package.json version + build timestamp as globals at build
     // time so the footer can render `v0.3.0 · 2026-05-15` without runtime
@@ -68,6 +80,8 @@ export default defineConfig(({ mode }) => {
       // Per-build stream origin for the Capacitor bundle (see STREAM_ORIGIN
       // above). Injected here so asset-url.ts carries no hardcoded host.
       __STREAM_ORIGIN__: JSON.stringify(STREAM_ORIGIN),
+      // Git branch → dev-telemetry worktree tag (see devWorktree above).
+      __DEV_WORKTREE__: JSON.stringify(devWorktree),
     },
     // Dev / preview port reads VITE_DEV_PORT via loadEnv (covers .env.local,
     // which is gitignored). Falls back to 5273 if unset. Useful when

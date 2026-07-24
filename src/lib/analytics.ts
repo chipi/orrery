@@ -63,6 +63,22 @@
 import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
 
+// Dev rung of the env ladder (mirrors sentry.ts). In `vite dev`, with no deploy-injected
+// PUBLIC_UMAMI_* override, analytics go to the dedicated dev Umami site via the Tailscale
+// host `homelab` — NO fixed IP, so only the operator's tailnet machine reaches it; a
+// stranger who runs the repo silently sends nothing. Staging/prod override via env.
+const DEV_UMAMI_HOST = 'http://homelab:3001';
+const DEV_UMAMI_WEBSITE_ID = '1d2f214c-801c-45e4-b56b-446a333e88b2';
+
+/** The self-hosted Umami host for the current rung: env override (staging/prod) or, in
+ *  `vite dev`, the dev default. Empty otherwise (fork / non-dev build) → silent. */
+function umamiHost(): string {
+  return (publicEnv.PUBLIC_UMAMI_HOST || (dev ? DEV_UMAMI_HOST : '')).replace(/\/$/, '');
+}
+function umamiWebsiteId(): string {
+  return publicEnv.PUBLIC_UMAMI_WEBSITE_ID || (dev ? DEV_UMAMI_WEBSITE_ID : '');
+}
+
 /** The canonical event vocabulary. `track()` accepts only these. */
 export const EVENT_NAMES = [
   'route-enter',
@@ -99,22 +115,21 @@ export const EVENT_NAMES = [
 
 export type EventName = (typeof EVENT_NAMES)[number];
 
-/** Analytics fires only when BOTH env vars are baked (production build) and we
- *  are not in `vite dev`. Fork-silent + local-dev-silent by construction,
- *  mirroring `sentry.ts`. Empty vars → no script injected, every `track()` a
- *  no-op. */
+/** Analytics fires when a host + website id resolve for the current rung — a deploy env
+ *  override (staging/prod) or the `vite dev` default. Fork-silent by construction: a
+ *  non-dev build with no env vars resolves neither, so no script is injected and every
+ *  `track()` is a no-op. Mirrors `sentry.ts`. */
 function analyticsEnabled(): boolean {
-  return !dev && !!publicEnv.PUBLIC_UMAMI_HOST && !!publicEnv.PUBLIC_UMAMI_WEBSITE_ID;
+  return !!umamiHost() && !!umamiWebsiteId();
 }
 
 /** Inject the self-hosted Umami `<script>` exactly once, only when enabled.
  *  Idempotent. Call from the root +layout's onMount. */
 export function initAnalytics(): void {
-  if (dev) return;
   if (typeof document === 'undefined') return;
-  const host = publicEnv.PUBLIC_UMAMI_HOST?.replace(/\/$/, '');
-  const websiteId = publicEnv.PUBLIC_UMAMI_WEBSITE_ID;
-  if (!host || !websiteId) return; // fork-silent + local-dev-silent
+  const host = umamiHost();
+  const websiteId = umamiWebsiteId();
+  if (!host || !websiteId) return; // fork-silent (non-dev build, no env) by construction
   if (document.querySelector('script[data-umami-installed]')) return;
   const s = document.createElement('script');
   s.defer = true;

@@ -28,6 +28,17 @@ import { Capacitor } from '@capacitor/core';
 import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
 
+// Git branch, injected by vite.config's `define`. Tags dev events by worktree.
+declare const __DEV_WORKTREE__: string;
+
+// Dev rung of the env ladder (dev → staging → prod). In `vite dev`, with no deploy-injected
+// PUBLIC_SENTRY_* override, errors go to the dedicated dev GlitchTip project via the
+// Tailscale host `homelab` — NO fixed IP. Only a device ON the tailnet (the operator's
+// machine) resolves `homelab`, so a stranger who checks out + runs the repo reports nothing
+// (the transport silently fails). Staging/prod builds set PUBLIC_SENTRY_* and override this.
+// The DSN key is a public browser id (ships in the bundle) — safe to commit.
+const DEV_SENTRY_DSN = 'http://310ad519a9da49b7b9aebc50d7c1399e@homelab:8090/7';
+
 /**
  * Initialise Sentry. No-op when DSN is empty or in `vite dev`.
  *
@@ -36,9 +47,10 @@ import { dev } from '$app/environment';
  * SDK side effects.
  */
 export function initSentry(): void {
-  const dsn = publicEnv.PUBLIC_SENTRY_DSN;
-  if (!dsn) return; // Fork-silent + local-dev-silent default.
-  if (dev) return; // Vite dev never reports.
+  // Env ladder: a deploy-injected DSN (staging/prod) wins; in `vite dev` fall back to the
+  // dev DSN; otherwise (non-dev build, no env) stay fork-silent.
+  const dsn = publicEnv.PUBLIC_SENTRY_DSN || (dev ? DEV_SENTRY_DSN : '');
+  if (!dsn) return;
 
   // The same web bundle runs on the web AND inside the Capacitor iOS/Android/TV
   // shells (WKWebView/WebView). Native shells report under `mobile-<platform>`
@@ -50,14 +62,24 @@ export function initSentry(): void {
 
   const options = {
     dsn,
-    environment: isNative ? `mobile-${platform}` : publicEnv.PUBLIC_SENTRY_ENVIRONMENT || 'prod',
+    // Native shells → `mobile-<platform>` (#428). Web → the env ladder:
+    // deploy-injected PUBLIC_SENTRY_ENVIRONMENT (staging/prod) or, in `vite dev`, `dev`.
+    environment: isNative
+      ? `mobile-${platform}`
+      : publicEnv.PUBLIC_SENTRY_ENVIRONMENT || (dev ? 'dev' : 'prod'),
     release: publicEnv.PUBLIC_SENTRY_RELEASE || undefined,
 
-    // Tag every event `component: orrery` (+ `platform`) so streams stay
-    // separable in the self-hosted GlitchTip we share with the podcast app
-    // (orrery = GlitchTip project 2; the ingest-only public vhost lands events
-    // there — see podcast_scraper-infra ORRERY-GLITCHTIP-CLIENT-ERRORS-BRIEF).
-    initialScope: { tags: { component: 'orrery', platform } },
+    // Tag every event `component: orrery` (+ `platform`) so streams stay separable in the
+    // self-hosted GlitchTip shared with the podcast app. Per-environment projects: prod = 4,
+    // staging = 6, dev = 7 (the DSN's project id selects it). In dev, also tag the worktree
+    // (git branch) so parallel local sessions are distinguishable.
+    initialScope: {
+      tags: {
+        component: 'orrery',
+        platform,
+        ...(dev ? { worktree: __DEV_WORKTREE__ || 'unknown' } : {}),
+      },
+    },
 
     // Errors only — explicitly NO performance tracing, NO Web Vitals.
     tracesSampleRate: 0,

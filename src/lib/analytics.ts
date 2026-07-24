@@ -67,6 +67,7 @@
 
 import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
+import { MOBILE_INTERNAL, targetConfig } from './target-env';
 
 // Dev rung of the env ladder (mirrors sentry.ts). In `vite dev`, with no deploy-injected
 // PUBLIC_UMAMI_* override, analytics go to the dedicated dev Umami site via the Tailscale
@@ -75,12 +76,15 @@ import { dev } from '$app/environment';
 const DEV_UMAMI_HOST = 'http://homelab:3001';
 const DEV_UMAMI_WEBSITE_ID = '1d2f214c-801c-45e4-b56b-446a333e88b2';
 
-/** The self-hosted Umami host for the current rung: env override (staging/prod) or, in
+/** The self-hosted Umami host for the current rung: on an INTERNAL mobile build
+ *  (ADR-083) the runtime target's host; else an env override (staging/prod) or, in
  *  `vite dev`, the dev default. Empty otherwise (fork / non-dev build) → silent. */
 function umamiHost(): string {
+  if (MOBILE_INTERNAL) return targetConfig().umamiHost.replace(/\/$/, '');
   return (publicEnv.PUBLIC_UMAMI_HOST || (dev ? DEV_UMAMI_HOST : '')).replace(/\/$/, '');
 }
 function umamiWebsiteId(): string {
+  if (MOBILE_INTERNAL) return targetConfig().umamiWebsiteId;
   return publicEnv.PUBLIC_UMAMI_WEBSITE_ID || (dev ? DEV_UMAMI_WEBSITE_ID : '');
 }
 

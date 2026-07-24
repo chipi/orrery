@@ -34,6 +34,14 @@ declare global {
   const __STREAM_ORIGIN__: string;
 
   /**
+   * True only in an INTERNAL mobile build (`MOBILE_INTERNAL=1`, ADR-083) —
+   * simulator / TestFlight. Gates the runtime staging↔prod target switcher
+   * (`src/lib/target-env.ts`); `false` in web + App Store release builds, where
+   * the switcher + all-tier config tree-shake out.
+   */
+  const __MOBILE_INTERNAL__: boolean;
+
+  /**
    * Live-state windows used by /fly for chrome-devtools-mcp verification
    * + (in __flyDebug's case) for the foreground-ship offset math. Typed
    * here so component code can read `window.__flyDebug?.flybyId` etc.

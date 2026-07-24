@@ -42,6 +42,12 @@ export default defineConfig(({ mode }) => {
   // scripts/mobile/prune-streamed-assets.mjs (S2) and the runtimeCaching
   // block (S3). The browser build (MOBILE unset) is byte-unaffected.
   const MOBILE = env.MOBILE === '1';
+  // ADR-083: `MOBILE_INTERNAL=1` marks an INTERNAL mobile build (simulator /
+  // TestFlight) — it ships the all-tier config + the runtime staging↔prod
+  // switcher (src/lib/target-env.ts). Unset (web + App Store release) → the
+  // switcher tree-shakes out and the app uses its single baked tier. Never set
+  // it on a release build.
+  const MOBILE_INTERNAL = env.MOBILE_INTERNAL === '1';
   // Origin the Capacitor build streams pruned buckets (images / audio /
   // non-default-locale bundles) from. NOT hardcoded — set per build so a dev
   // build points at a local server and a release build points at the current
@@ -86,6 +92,9 @@ export default defineConfig(({ mode }) => {
       __STREAM_ORIGIN__: JSON.stringify(STREAM_ORIGIN),
       // Git branch → dev-telemetry worktree tag (see devWorktree above).
       __DEV_WORKTREE__: JSON.stringify(devWorktree),
+      // ADR-083: gates the mobile runtime env switcher. false → switcher +
+      // all-tier config tree-shake out (web + App Store release).
+      __MOBILE_INTERNAL__: JSON.stringify(MOBILE_INTERNAL),
     },
     // Dev / preview port reads VITE_DEV_PORT via loadEnv (covers .env.local,
     // which is gitignored). Falls back to 5273 if unset. Useful when

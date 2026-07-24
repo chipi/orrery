@@ -22,6 +22,7 @@
   import ExhibitOverlay from '$lib/components/ExhibitOverlay.svelte';
   import { exhibit } from '$lib/exhibit.svelte';
   import DebugPanel from '$lib/components/DebugPanel.svelte';
+  import TargetEnvSwitcher from '$lib/components/TargetEnvSwitcher.svelte';
   import {
     createDebugPanelContext,
     type RenderingDebugRegistration,
@@ -393,6 +394,7 @@
   <AudioOverlay />
   <ExhibitOverlay />
   <DebugPanel />
+  <TargetEnvSwitcher />
   <main>
     {@render children?.()}
   </main>

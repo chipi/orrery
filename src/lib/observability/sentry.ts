@@ -16,8 +16,9 @@
  * Web uses `@sentry/sveltekit`; the Capacitor iOS/Android/TV shells use
  * `@sentry/capacitor` (native crash handlers + the `@sentry/svelte` JS sibling)
  * so native + JS crashes land in the same GlitchTip project, split by a
- * `platform` tag + `mobile-<platform>` environment (#428). The whole `@sentry/*`
- * stack is pinned to 10.60.0 — the version @sentry/capacitor@4 requires.
+ * `platform` tag — both ride the same `environment` tier (ADR-082/083), not a
+ * separate `mobile-<platform>` environment. The whole `@sentry/*` stack is pinned
+ * to 10.60.0 — the version @sentry/capacitor@4 requires.
  *
  * Privacy stance documented in README.md §Privacy.
  */
@@ -27,6 +28,7 @@ import { init as sentrySvelteInit } from '@sentry/svelte';
 import { Capacitor } from '@capacitor/core';
 import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
+import { MOBILE_INTERNAL, targetConfig } from '../target-env';
 
 // Git branch, injected by vite.config's `define`. Tags dev events by worktree.
 declare const __DEV_WORKTREE__: string;
@@ -40,16 +42,23 @@ declare const __DEV_WORKTREE__: string;
 const DEV_SENTRY_DSN = 'http://310ad519a9da49b7b9aebc50d7c1399e@homelab:8090/7';
 
 /**
- * Initialise Sentry. No-op when DSN is empty or in `vite dev`.
+ * Initialise Sentry. No-op when the resolved DSN is empty (fork / non-dev build
+ * with no baked env). `vite dev` reports to the dev rung; internal mobile builds
+ * to the runtime target's tier (ADR-083).
  *
  * Safe to call at module-eval time of `src/hooks.client.ts` — Sentry's
  * `init()` is idempotent and the early-return paths fire before any
  * SDK side effects.
  */
 export function initSentry(): void {
-  // Env ladder: a deploy-injected DSN (staging/prod) wins; in `vite dev` fall back to the
-  // dev DSN; otherwise (non-dev build, no env) stay fork-silent.
-  const dsn = publicEnv.PUBLIC_SENTRY_DSN || (dev ? DEV_SENTRY_DSN : '');
+  // ADR-083: an INTERNAL mobile build resolves the DSN + tier from the runtime
+  // target (staging/prod). Web + App Store release (`MOBILE_INTERNAL` false)
+  // take the env ladder: a deploy-injected DSN (staging/prod) wins; in `vite dev`
+  // fall back to the dev DSN; otherwise (non-dev build, no env) stay fork-silent.
+  const target = MOBILE_INTERNAL ? targetConfig() : null;
+  const dsn = target
+    ? target.sentryDsn
+    : publicEnv.PUBLIC_SENTRY_DSN || (dev ? DEV_SENTRY_DSN : '');
   if (!dsn) return;
 
   // The same web bundle runs on the web AND inside the Capacitor iOS/Android/TV
@@ -69,7 +78,10 @@ export function initSentry(): void {
     // DSN+env (→ staging project 6), a release build bakes prod (→ prod project 4). The
     // `platform` tag below is the SEGMENT that splits app from browser; overloading
     // `environment` with the platform (the old `mobile-<platform>`) collided with the tier.
-    environment: publicEnv.PUBLIC_SENTRY_ENVIRONMENT || (dev ? 'dev' : 'prod'),
+    // Internal builds (ADR-083) take the tier from the runtime target instead.
+    environment: target
+      ? target.sentryEnvironment
+      : publicEnv.PUBLIC_SENTRY_ENVIRONMENT || (dev ? 'dev' : 'prod'),
     release: publicEnv.PUBLIC_SENTRY_RELEASE || undefined,
 
     // Tag every event `component: orrery` (+ `platform`) so streams stay separable in the

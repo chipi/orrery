@@ -47,6 +47,12 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # The `staging` GitHub Environment scopes the o11y secrets to their STAGING
+    # values (PUBLIC_SENTRY_DSN / PUBLIC_UMAMI_WEBSITE_ID are environment secrets,
+    # defined per-env with different values — prod vs staging — NOT repo-level).
+    # Without this the build gets an empty DSN and Sentry no-ops. The staging env
+    # has no protection rules, so this does not gate/pause the auto-deploy.
+    environment: staging
     # workflow_run fires on every completion; only deploy on success.
     # Manual + cron triggers always proceed.
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
@@ -65,15 +71,18 @@ jobs:
       - run: npm run build
         env:
           VITE_BASE: /orrery/
-          # Sentry — RFC-025 / ADR-067. Same secret as deploy-prod
-          # (secrets.PUBLIC_SENTRY_DSN); the DSN key is public (ships in the
-          # bundle) and ingest-only. Forks lack it → empty DSN → the SDK
-          # no-ops. ENVIRONMENT is `staging` (this IS the staging tier —
-          # GitHub Pages) so Sentry separates staging events from prod's.
-          # PUBLIC_SENTRY_RELEASE is the GH SHA so Sentry groups per deploy.
+          # o11y — RFC-025 / ADR-067. These are the `staging` GitHub Environment
+          # secrets (see `environment: staging` above) — same NAMES as prod,
+          # different VALUES, so staging events are separated from prod's. The
+          # DSN/Umami keys are public (ship in the bundle) + ingest-only. Forks
+          # lack the env → empty → the SDKs no-op. RELEASE = GH SHA for grouping.
           PUBLIC_SENTRY_DSN: ${{ secrets.PUBLIC_SENTRY_DSN }}
           PUBLIC_SENTRY_ENVIRONMENT: staging
           PUBLIC_SENTRY_RELEASE: gha-${{ github.sha }}
+          # Umami — staging has its OWN website id, so staging pageviews land in a
+          # separate Umami site and never pollute prod's numbers.
+          PUBLIC_UMAMI_HOST: https://analytics.orrerylearn.com
+          PUBLIC_UMAMI_WEBSITE_ID: ${{ secrets.PUBLIC_UMAMI_WEBSITE_ID }}
       - run: npm run docs:build
         env:
           DOCS_BASE: /orrery/docs/

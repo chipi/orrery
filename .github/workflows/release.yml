@@ -8,7 +8,7 @@ name: Auto-publish GH Release on tag push
 # This is the third leg of the release flow:
 #   1. `git tag vX.Y.Z` + `git push --tags`   → this workflow fires
 #   2. `gh release create …`                  → no longer manual
-#   3. `Deploy preview` workflow              → chained from CI + e2e
+#   3. `Deploy staging` workflow              → chained from CI + e2e
 #
 # Before v0.6.2 the maintainer had to manually run `gh release create`
 # after every tag push. That step was skipped for v0.6.0 + v0.6.1
@@ -16,7 +16,7 @@ name: Auto-publish GH Release on tag push
 # Closes GH issue #135.
 #
 # **Does NOT** trigger the Pages deploy. That still chains through
-# ci.yml → e2e.yml → preview.yml. Use `gh workflow run "Deploy preview"`
+# ci.yml → e2e.yml → staging.yml. Use `gh workflow run "Deploy staging"`
 # if the e2e gate blocks auto-deploy and you want to force a publish.
 
 on:

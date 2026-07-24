@@ -4,13 +4,13 @@ name: Deploy docs
 #
 # ADR-070: docs site correctness is independent of e2e regressions.
 # Mobile-only flakes in the app's Playwright suite shouldn't block docs
-# updates from publishing. This workflow + preview.yml split the
+# updates from publishing. This workflow + staging.yml split the
 # previous monolithic deploy:
 #
 #   * deploy-docs.yml (this file) — fires on CI success, publishes only
 #     build/docs/ to gh-pages with `keep_files: true` so the existing
 #     app bundle stays intact.
-#   * preview.yml — stays e2e-gated, publishes the full build/ (app +
+#   * staging.yml — stays e2e-gated, publishes the full build/ (app +
 #     docs together). Overwrites the docs subdir with whatever it built
 #     (same docs content, since both use `npm run docs:build`).
 #
@@ -18,7 +18,7 @@ name: Deploy docs
 # on the gh-pages branch so they don't race.
 #
 # History: GH #260 follow-up. May 2026 Vue interpolation parse error in
-# ADR docs blocked Deploy preview; that same chain stayed blocked for
+# ADR docs blocked Deploy staging; that same chain stayed blocked for
 # hours afterwards by unrelated mobile e2e regressions, with the docs
 # fix already on main but invisible. This workflow makes docs deploy
 # independent so future docs fixes ship as soon as CI is green.
@@ -34,7 +34,7 @@ permissions:
   contents: write
 
 concurrency:
-  # Serialize against preview.yml (the app+docs publisher) so two
+  # Serialize against staging.yml (the app+docs publisher) so two
   # workflows don't race on the gh-pages branch.
   group: gh-pages-publish
   cancel-in-progress: false
@@ -84,7 +84,7 @@ jobs:
           publish_dir: ./docs/.vitepress/dist
           publish_branch: gh-pages
           # CRITICAL: keep_files: true so this deploy doesn't wipe the
-          # app bundle that preview.yml previously published. With this
+          # app bundle that staging.yml previously published. With this
           # flag the deploy is overlay-style — only files inside
           # destination_dir get touched.
           destination_dir: docs

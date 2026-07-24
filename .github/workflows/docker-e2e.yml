@@ -10,7 +10,7 @@ name: docker-e2e
 #   1. After CI succeeds on main — workflow_run gate. CI is fast
 #      (~2-3 min); docker-e2e is heavy (~17-25 min). Chaining means a
 #      cheap typecheck/lint/unit-test failure short-circuits the heavy
-#      docker build + Playwright run, and the downstream preview.yml
+#      docker build + Playwright run, and the downstream staging.yml
 #      deploys only when both CI and docker-e2e are green.
 #   2. Manual workflow_dispatch — ad-hoc reruns.
 #   3. Nightly cron — catches EXTERNAL state drift (CDN outages,

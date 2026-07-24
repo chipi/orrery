@@ -136,6 +136,8 @@ npm run sync:mobile
 
 Keys are public (they ship in the bundle); strip the dashes from the GlitchTip key (see `.env.example`). Native crash *symbolication* is a separate layer — App Store Connect / Play Console consoles (ADR-082 amendment / the #428 note). `STREAM_ORIGIN` (asset host) is independent of the telemetry tier.
 
+> **Coming (ADR-083, pending — iOS thread):** internal / TestFlight / simulator builds get a **runtime "target environment" switcher** (staging↔prod) that repoints assets *and* telemetry together, so you won't rebuild to flip tiers. App Store release stays **prod-locked** (no switcher). Until it lands, the per-tier `export … && sync:mobile` above is how you switch.
+
 1. `npm run sync:mobile` (build:mobile + cap sync) — with the tier env exported above.
 2. `npm run open:ios` → in Xcode, select the **App** target → Signing & Capabilities → set your Apple Developer **Team** (auto-manage signing). This step needs your Apple ID; it can't be scripted here.
 3. Product → Archive → Distribute App → App Store Connect → upload.

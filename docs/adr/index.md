@@ -81,3 +81,4 @@
 | ADR-080 | Responsive image size ladder + srcset delivery (mobile · web · Google TV) | Accepted | Jul 2026 |
 | ADR-081 | Self-hosted Umami analytics (env-var-gated, no committed IDs) | Accepted | Jul 2026 |
 | ADR-082 | Telemetry environment ladder (dev → staging → prod, isolated GlitchTip + Umami projects) | Accepted | Jul 2026 |
+| ADR-083 | Mobile runtime environment switcher (internal builds only; release prod-locked) | Accepted (impl. deferred to iOS thread) | Jul 2026 |

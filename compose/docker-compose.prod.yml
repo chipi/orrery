@@ -114,10 +114,10 @@ services:
       # populated from the image's /repo/node_modules and shadows the bind.
       - /repo/node_modules
     environment:
-      # No secrets by default — RFC-025 §3, ADR-067 / ADR-068 env vars
-      # (Sentry, Grafana Cloud) are blank in phase 1. Wire later by
-      # adding an operator-staged `/srv/orrery/.env.secrets` as a
-      # second env_file with `required: false`.
+      # No secrets by default — RFC-025 §3, ADR-067 / ADR-068.
+      # GlitchTip DSN (PUBLIC_SENTRY_DSN) is baked into the static bundle
+      # at build time, not injected here. Log shipping is handled by the
+      # shared node Alloy (infra repo ADR-121) — no Grafana Cloud env vars needed.
       NODE_ENV: production
     env_file:
       # Staged from GH `prod`-scoped secrets every deploy (#263).

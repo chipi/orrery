@@ -67,14 +67,14 @@ After the prereqs above land, every deploy is just:
 3. Rsyncs the CI-built `build/` into `/srv/orrery/build/` (the static-bundle deploy artefact — ADR-063)
 4. **Stages `/srv/orrery/.env`** from GH `prod` env secrets (atomic: `mktemp -p /dev/shm` + trap shred + `printf` + scp `.env.deploy-staged` + atomic `mv`). Single source of truth — missing secrets → empty values → integrations no-op
 5. `git fetch --depth=50 origin main` + `git reset --hard origin/main` — brings the on-VPS checkout in lockstep with the deploying commit
-6. `source ./.env` then `docker compose --env-file .env --profile observability pull/up web grafana-agent` — pipeline-runner stays `profiles: manual` (invoked on-demand); grafana-agent ships logs to Loki when creds are present, otherwise runs silent
+6. `source ./.env` then `docker compose --env-file .env pull/up web` — pipeline-runner stays `profiles: manual` (invoked on-demand); log shipping via the shared node Alloy HUP (ADR-121), no grafana-agent container brought up
 7. Loopback healthcheck on `:ORRERY_PORT`
 8. Re-arms tailscale serve via the root-owned wrapper `sudo -n /usr/local/sbin/orrery-tailscale-serve.sh` (narrow NOPASSWD entry; podcast_scraper#838)
 9. External tailnet probe at `https://<PROD_TAILNET_FQDN>:8443/`
 
 **No sudo for the bulk of the work. No `.env` scaffolding by the operator. No `mkdir`.** All operations run as the `deploy@` user except the one narrow `sudo -n` call to the root-owned tailscale-serve wrapper.
 
-**The staged `/srv/orrery/.env`** is RAM-rendered + shipped atomically + `chmod 600` — never persists on the runner's disk. It contains both static config (`COMPOSE_PROJECT_NAME`, `ORRERY_PORT`, `ORRERY_PIPELINE_IMAGE_TAG`) AND runtime Grafana credentials. Regenerated every deploy from GH Secrets — those are the source of truth.
+**The staged `/srv/orrery/.env`** is RAM-rendered + shipped atomically + `chmod 600` — never persists on the runner's disk. It contains static config (`COMPOSE_PROJECT_NAME`, `ORRERY_PORT`, `ORRERY_PIPELINE_IMAGE_TAG`). Regenerated every deploy from GH Secrets — those are the source of truth. (Log shipping has no GH secrets — handled by shared node Alloy, ADR-121.)
 
 ---
 
@@ -147,14 +147,13 @@ All four can be left unset; integrations silently no-op (`${VAR:-}` defaults in 
 
 | Type | Name | Value |
 |---|---|---|
-| Secret | `PUBLIC_SENTRY_DSN` | Sentry project DSN. Public-by-design (identifies the project, doesn't authenticate). Baked into the static bundle at build time. Note: name omits `PROD_` prefix because the workflow passes it through unchanged as a `PUBLIC_*` SvelteKit env. |
-| Secret | `PROD_GRAFANA_CLOUD_LOKI_URL` | `https://logs-prod-<NN>.grafana.net/loki/api/v1/push` from your Grafana Cloud stack's Loki integration page. |
-| Secret | `PROD_GRAFANA_CLOUD_LOKI_USER` | Numeric instance ID, same page. |
-| Secret | `PROD_GRAFANA_CLOUD_API_KEY` | `glc_…` token from Grafana Cloud → Access policies. Same key as podcast_scraper if reusing the stack. |
+| Secret | `PUBLIC_SENTRY_DSN` | GlitchTip project DSN (self-hosted ingest at `telemetry.orrerylearn.com`). Public-by-design (identifies the project, doesn't authenticate). Baked into the static bundle at build time. Note: name omits `PROD_` prefix because the workflow passes it through unchanged as a `PUBLIC_*` SvelteKit env. |
+
+Log shipping needs no GH secrets — handled by the shared node Alloy (infra repo ADR-121); see `docs/guides/observability.md`.
 
 The workflow's **Stage `/srv/orrery/.env`** step renders all the runtime env (project name, port, image tag, Grafana creds) into `/srv/orrery/.env` atomically each deploy — mirrors podcast_scraper deploy.yml lines 147-218 exactly. Sentry vars are passed to the build step directly (PUBLIC_ prefix means SvelteKit bakes them into the bundle).
 
-Same Grafana Cloud stack as podcast_scraper is the recommended pattern — both apps' logs ship to the same Loki, separated by the `app` label (orrery's agent stamps `app=orrery` via `external_labels` in `ops/observability/grafana-agent.yaml`). Query orrery-only with `{app="orrery"}`.
+Log shipping uses the shared node Alloy (infra repo ADR-121, `ops/observability/orrery.alloy`) → self-hosted VictoriaLogs on the homelab Mac mini. Query orrery logs with LogsQL `app:orrery` in Grafana at http://homelab:3000. No per-app Grafana Cloud account needed.
 
 ---
 
@@ -178,7 +177,7 @@ The workflow:
 6. Installs the SSH key (validates it's a loadable OpenSSH PEM before continuing).
 7. Rsyncs `build/` to `/srv/orrery/build/`.
 8. **Stages `/srv/orrery/.env`** from GH `prod`-scoped secrets — atomic, shm-backed tmpfile, never on the runner's disk.
-9. SSH'es in: `git fetch + reset --hard origin/main` + `source ./.env` + `docker compose --env-file .env --profile observability pull/up web grafana-agent` + loopback healthcheck on `:ORRERY_PORT`.
+9. SSH'es in: `git fetch + reset --hard origin/main` + `source ./.env` + `docker compose --env-file .env pull/up web` + loopback healthcheck on `:ORRERY_PORT`. (Log shipping: shared node Alloy HUP, ADR-121 — no grafana-agent step.)
 10. Re-arms tailscale serve via the root-owned wrapper (`sudo -n /usr/local/sbin/orrery-tailscale-serve.sh`, 3-attempt retry, WARN-not-fail).
 11. External healthcheck over tailnet at `https://<PROD_TAILNET_FQDN>:8443/`.
 
@@ -302,6 +301,6 @@ sudo chown -R deploy:deploy /srv/orrery/build /srv/orrery/static/data
 
 - Public DNS / Let's Encrypt cert — phase 2 (#260 §"Phase 2").
 - Auto-deploy on push-to-main — defer until manual deploys have proven stable.
-- Grafana Cloud log shipping — ADR-068 has the wiring; env vars are blank by default. Set them in `/srv/orrery/.env` when you're ready.
+- Grafana Cloud log shipping — retired (ADR-068 Superseded). Log shipping is active via shared node Alloy + `ops/observability/orrery.alloy`; no env vars needed.
 - Sentry — ADR-067 same story.
 - Backup of `/srv/orrery/static/data` — the data is derivable (every pipeline run rebuilds it). If derivability turns out to be slow, add a backup job pattern from podcast_scraper.

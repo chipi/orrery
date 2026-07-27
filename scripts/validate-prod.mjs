@@ -287,25 +287,45 @@ for (const r of DEEP_ROUTES) {
 suite('i18n-full');
 {
   const langRe = /<html[^>]*\blang="([^"]+)"/i;
+  // A 12-way concurrent sweep of 14×N routes bursts ~350 requests at the CDN;
+  // GitHub Pages rate-limits that with transient 429/503 (a DIFFERENT route each
+  // run — the route itself is fine, it just got throttled mid-burst). Retry those
+  // (and network errors) with exponential backoff so a throttle can't false-fail a
+  // gating run; a genuinely broken route still fails all attempts. 4xx (except 429)
+  // are real and NOT retried.
+  const TRANSIENT_STATUS = (s) => s === 429 || s === 503 || s === 502 || s === 504;
   const checkOne = async (locale, route) => {
     const path = localizedPath(locale, route);
-    try {
-      const res = await fetch(BASE + path, { redirect: 'follow' });
-      if (res.status < 200 || res.status >= 400)
-        return { route, ok: false, why: `HTTP ${res.status}` };
-      const html = await res.text();
-      const lang = (langRe.exec(html)?.[1] || '').trim();
-      if (lang !== locale)
-        return { route, ok: false, why: `lang="${lang || '?'}" (home-fallback?)` };
-      return { route, ok: true };
-    } catch (e) {
-      return { route, ok: false, why: e.message.slice(0, 40) };
+    let lastWhy = '';
+    for (let attempt = 0; attempt < 4; attempt++) {
+      if (attempt > 0) await new Promise((r) => setTimeout(r, 400 * 2 ** (attempt - 1)));
+      try {
+        const res = await fetch(BASE + path, { redirect: 'follow' });
+        if (TRANSIENT_STATUS(res.status)) {
+          lastWhy = `HTTP ${res.status}`;
+          continue; // throttled — back off and retry
+        }
+        if (res.status < 200 || res.status >= 400)
+          return { route, ok: false, why: `HTTP ${res.status}` };
+        const html = await res.text();
+        const lang = (langRe.exec(html)?.[1] || '').trim();
+        if (lang !== locale)
+          return { route, ok: false, why: `lang="${lang || '?'}" (home-fallback?)` };
+        return { route, ok: true };
+      } catch (e) {
+        lastWhy = e.message.slice(0, 40); // network hiccup — retry
+      }
     }
+    return { route, ok: false, why: lastWhy || 'unreachable' };
   };
-  // Bounded concurrency across the whole locale×route matrix.
+  // Bounded concurrency across the whole locale×route matrix (13 × 25 = 325 jobs).
+  // Kept modest to stay within GitHub Pages' fair-use / rate limits — a hotter
+  // pool (was 12) bursts hard enough to draw 429/503 throttling. 8 in-flight is a
+  // gentler peak; `checkOne`'s retry-with-backoff then absorbs any residual
+  // throttle so a single hiccup can't false-fail a gating run.
   const jobs = [];
   for (const locale of LOCALES) for (const route of TOP_ROUTES) jobs.push({ locale, route });
-  const CONCURRENCY = 12;
+  const CONCURRENCY = 8;
   const byLocale = Object.fromEntries(LOCALES.map((l) => [l, []]));
   let idx = 0;
   await Promise.all(

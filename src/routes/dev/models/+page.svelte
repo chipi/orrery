@@ -316,6 +316,12 @@
       build: () => buildLauncherModel('saturn-v', 1.2).root,
     },
     {
+      id: 'saturn-ib',
+      label: 'Saturn IB',
+      family: 'launcher',
+      build: () => buildLauncherModel('saturn-ib', 1.2).root,
+    },
+    {
       id: 'vostok-k',
       label: 'Soyuz / R-7 (Korolev cross)',
       family: 'launcher',

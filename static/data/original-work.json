@@ -1496,10 +1496,17 @@
     },
     {
       "title": "Saturn V",
-      "what": "Tapered three-stage stack, five F-1 bells, and the escape tower (also Saturn IB).",
+      "what": "Tapered three-stage stack, five F-1 bells, roll-pattern livery, and the escape tower.",
       "where": "Fly · launch/ascent",
       "route": "/fly",
       "thumb": "/images/colophon/model-launcher-saturn-v.webp"
+    },
+    {
+      "title": "Saturn IB",
+      "what": "The Apollo LEO workhorse — a clustered S-IB first stage of eight H-1 engines under the same S-IVB + CSM.",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-saturn-ib.webp"
     },
     {
       "title": "Soyuz / R-7",
@@ -2307,7 +2314,7 @@
     "anatomy_art": 144,
     "diagrams_science": 104,
     "posters": 27,
-    "models3d": 106,
+    "models3d": 107,
     "capsules": 8,
     "canvas2d": 6,
     "ui": 4,

@@ -248,7 +248,12 @@ const launchers = [
   [
     'saturn-v',
     'Saturn V',
-    'Tapered three-stage stack, five F-1 bells, and the escape tower (also Saturn IB).',
+    'Tapered three-stage stack, five F-1 bells, roll-pattern livery, and the escape tower.',
+  ],
+  [
+    'saturn-ib',
+    'Saturn IB',
+    'The Apollo LEO workhorse — a clustered S-IB first stage of eight H-1 engines under the same S-IVB + CSM.',
   ],
   ['vostok-k', 'Soyuz / R-7', 'Korolev-cross core with four tapered strap-on boosters.'],
   [

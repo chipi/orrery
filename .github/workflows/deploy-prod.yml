@@ -59,7 +59,14 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # 30 (was 15): actions/checkout is intermittently slow on this repo —
+    # the shallow `git fetch` stalls in negotiation (no transfer progress)
+    # for 12–18 min on some runner/network draws, fast (<1 min) on others,
+    # all on the same commit (observed across CI/e2e jobs 2026-07-29). This
+    # single-job workflow only gets one checkout roll, so a 15-min budget
+    # was killed twice before the build could finish. 30 min absorbs a slow
+    # checkout and still leaves room for npm ci + build (~6 min) + deploy.
+    timeout-minutes: 30
     # Bind to the `prod` environment so this job can see the
     # environment-scoped secrets (TS_AUTHKEY, PROD_SSH_PRIVATE_KEY) +
     # variables (PROD_TAILNET_FQDN) staged in repo settings →

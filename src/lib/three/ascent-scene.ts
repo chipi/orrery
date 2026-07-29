@@ -337,6 +337,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const rBody = vehLen * 0.05; // plume scale reference
   const model = buildLauncherModel(opts.launcherId, vehLen, opts.boosterCount ?? 0);
   const strapOnGroup = model.strapOns;
+  const midStageGroup = model.midStage;
   const booster = model.booster;
   const upperStage = model.upperStage;
   const fairingGroup = model.fairingGroup;
@@ -466,6 +467,18 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const strapOnSepT = metOf('staging');
   const fairingT = metOf('fairing_jettison');
   const secoT = metOf('seco');
+  // Intermediate serial stage (e.g. Saturn V's S-II) drops at the SECOND core
+  // staging. Core stagings = the 'staging' events after the strap-on jettison
+  // (the first one, only when strap-ons exist); [0] is the booster drop (== MECO),
+  // [1] is the mid-stage. Falls back to SECO so a 2-stage vehicle mapped onto a
+  // 3-part mesh (e.g. Saturn IB) drops its mid-part with the upper stage instead
+  // of leaving it floating.
+  const coreStagingTimes = (opts.events ?? [])
+    .filter((e) => e.type === 'staging')
+    .map((e) => e.t)
+    .sort((a, b) => a - b)
+    .slice(strapOnGroup ? 1 : 0);
+  const midStageSepT = coreStagingTimes[1] ?? secoT;
   const BOOSTER_SEP_S = 5;
   // Fairing clamshell drifts slowly (item 4) so the halves linger in frame while
   // the payload is revealed — a held beat, not a snap-away.
@@ -543,6 +556,17 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // Only a gentle shrink (item 4) — the drift-away already recedes it via
     // perspective; keep it big enough to read as a distinct spent stage.
     booster.scale.setScalar(1 - 0.18 * bp);
+
+    // Mid stage (serial): the middle stage (Saturn V's S-II) drops at the second
+    // core staging — after the booster is gone and its own burn is spent, before
+    // the final upper stage. Same drift as the booster, from a higher sep plane.
+    if (midStageGroup) {
+      const mp = sepProgress(s.t, midStageSepT, BOOSTER_SEP_S);
+      midStageGroup.visible = mp < 1;
+      midStageGroup.position.y = -mp * vehLen * 3;
+      midStageGroup.rotation.set(mp * 2.4, 0, mp * 1.2);
+      midStageGroup.scale.setScalar(1 - 0.18 * mp);
+    }
 
     // Strap-on solids: at burnout they fall back + tumble away from the still-
     // climbing core (earlier than the core drop above).

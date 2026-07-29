@@ -35,6 +35,12 @@ export interface LauncherModel {
    *  Atlas V's variable AJ-60A count. Undefined when the vehicle has none or
    *  models them as part of the core `booster` group (Soyuz / Ariane / H-IIA). */
   strapOns?: THREE.Group;
+  /** Intermediate serial stage that jettisons at the SECOND core staging — the
+   *  stage BETWEEN `booster` (first stage) and `upperStage` (final stage), e.g.
+   *  Saturn V's S-II sitting between the S-IC and the S-IVB. Undefined for
+   *  2-stage vehicles. Any 3+ serial-stage builder can populate it and the scene
+   *  drops it on the second core staging event, matching the physics. */
+  midStage?: THREE.Group;
 }
 
 interface Palette {
@@ -247,7 +253,10 @@ function buildSaturnV(vehLen: number): LauncherModel {
   );
   root.add(booster);
 
-  const upperStage = new THREE.Group();
+  // S-II — the middle stage. Its own group so the S-IC→S-II→S-IVB serial staging
+  // is visible: it jettisons at the SECOND core staging (physics' staging(S-II)),
+  // between the S-IC booster drop and the S-IVB burn.
+  const midStage = new THREE.Group();
   const sii = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.62, r, vehLen * 0.05, 40), p.body); // interstage taper
   sii.position.y = vehLen * 0.47;
   const s2 = new THREE.Mesh(
@@ -255,12 +264,17 @@ function buildSaturnV(vehLen: number): LauncherModel {
     p.body,
   );
   s2.position.y = vehLen * 0.6;
+  midStage.add(sii, s2, bell(r * 0.3, vehLen * 0.05, p.eng, vehLen * 0.47));
+  root.add(midStage);
+
+  // S-IVB — the final stage that carries the CSM/LM to orbit + TLI.
+  const upperStage = new THREE.Group();
   const s4b = new THREE.Mesh(
     new THREE.CylinderGeometry(r * 0.42, r * 0.62, vehLen * 0.16, 40),
     p.body,
   );
   s4b.position.y = vehLen * 0.79;
-  upperStage.add(sii, s2, s4b, bell(r * 0.3, vehLen * 0.05, p.eng, vehLen * 0.47));
+  upperStage.add(s4b, bell(r * 0.26, vehLen * 0.045, p.eng, vehLen * 0.7));
   root.add(upperStage);
 
   // The Apollo stack rides as the "fairing": a conical CSM + a thin escape tower.
@@ -295,6 +309,7 @@ function buildSaturnV(vehLen: number): LauncherModel {
     upperStageBaseY: vehLen * 0.6,
     fairingBaseY,
     payloadMountY: vehLen * 0.82,
+    midStage,
   };
 }
 
@@ -760,16 +775,19 @@ function buildProtonK(vehLen: number): LauncherModel {
   }
   root.add(booster);
 
-  // ── Second stage: slightly narrower, uniform cylinder.
+  // ── Second stage (mid): own group so the 3-stage serial staging is visible —
+  //    drops at the SECOND core staging, between stage 1 and stage 3.
   const upperStageBaseY = vehLen * 0.5;
-  const upperStage = new THREE.Group();
+  const midStage = new THREE.Group();
   const stage2 = new THREE.Mesh(
     new THREE.CylinderGeometry(r * 0.55, r * 0.62, vehLen * 0.22, 32),
     p.body,
   );
   stage2.position.y = upperStageBaseY + vehLen * 0.11;
-  upperStage.add(stage2, bell(r * 0.32, vehLen * 0.05, p.eng, upperStageBaseY));
-  // Third stage — slimmer, tapers above.
+  midStage.add(stage2, bell(r * 0.32, vehLen * 0.05, p.eng, upperStageBaseY));
+  root.add(midStage);
+  // ── Third stage: the final stage, carries the payload. Tapers above.
+  const upperStage = new THREE.Group();
   const stage3 = new THREE.Mesh(
     new THREE.CylinderGeometry(r * 0.42, r * 0.55, vehLen * 0.14, 32),
     p.body,
@@ -805,6 +823,7 @@ function buildProtonK(vehLen: number): LauncherModel {
     upperStageBaseY,
     fairingBaseY,
     payloadMountY: vehLen * 0.82,
+    midStage,
   };
 }
 

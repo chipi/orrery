@@ -907,41 +907,30 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   );
   noseCap.scale.set(1.45, 1.1, 0.78);
   noseCap.position.set(0, yNoseBase + noseLen * 0.82, oz);
-  // Cockpit — the wraparound windshield: a row of individual glass panes set into
-  //    a black frame on the forward-upper fuselage (outboard +Z), so the crew
-  //    cabin reads as windows, not a black smudge.
+  // Cockpit windshield — a flat panel across the front of the crew module, TILTED
+  //    to face FORWARD-UP (the flight/nose direction, +Y), not sideways out. Black
+  //    frame + glass + mullions so it reads as the wrap-around windshield.
   const windows = new THREE.Group();
-  const winY = yNoseBase + noseLen * 0.42;
-  const frame = new THREE.Mesh(
-    new THREE.CylinderGeometry(
-      rFus * 0.73,
-      rFus * 0.8,
-      vehLen * 0.05,
-      28,
-      1,
-      true,
-      Math.PI * 0.24,
-      Math.PI * 0.52,
-    ),
+  windows.position.set(0, yNoseBase + noseLen * 0.32, oz + rFus * 0.5);
+  windows.rotation.x = -0.8; // normal tilts from +Z toward +Y (faces up-forward)
+  const wframe = new THREE.Mesh(
+    new THREE.BoxGeometry(rFus * 1.35, vehLen * 0.06, rFus * 0.05),
     tile,
   );
-  frame.scale.set(1.45, 1, 0.78);
-  frame.position.set(0, winY, oz);
-  windows.add(frame);
-  // Six forward panes across the windshield arc.
-  for (let i = 0; i < 6; i++) {
-    const a = Math.PI * 0.29 + (i / 5) * Math.PI * 0.42;
-    const pane = new THREE.Mesh(
-      new THREE.BoxGeometry(rFus * 0.16, vehLen * 0.03, rFus * 0.04),
-      glass,
+  const wglass = new THREE.Mesh(
+    new THREE.BoxGeometry(rFus * 1.15, vehLen * 0.042, rFus * 0.07),
+    glass,
+  );
+  wglass.position.z = rFus * 0.015;
+  windows.add(wframe, wglass);
+  // 3 mullions splitting the windshield into forward panes.
+  for (let i = 1; i < 4; i++) {
+    const mull = new THREE.Mesh(
+      new THREE.BoxGeometry(rFus * 0.03, vehLen * 0.05, rFus * 0.09),
+      tile,
     );
-    pane.position.set(
-      Math.cos(a) * rFus * 0.82 * 1.45,
-      winY,
-      oz + Math.sin(a) * rFus * 0.82 * 0.78,
-    );
-    pane.lookAt(pane.position.x * 1.6, winY, oz + (pane.position.z - oz) * 1.6);
-    windows.add(pane);
+    mull.position.set(rFus * 1.15 * (i / 4 - 0.5), 0, rFus * 0.02);
+    windows.add(mull);
   }
 
   // Big low double-delta wing — a shape in the body plane (span X, chord Y),
@@ -1009,44 +998,51 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   );
   bodyFlap.position.set(0, yA - vehLen * 0.02, oz - rFus * 0.2);
 
-  // ── Payload bay — the twin dorsal (+Z, outward) doors, shown cracked OPEN so
-  //    the bay + gold-foil radiators read (closed for launch; ajar to show the
-  //    doors articulate). Hinges run along the longerons parallel to the stack.
+  // ── Payload bay doors — CLOSED for launch (they only open on orbit), but their
+  //    outlines are drawn as thin seam lines on the white dorsal (+Z) surface so
+  //    it's clear these are the twin doors that hinge open: a centreline seam
+  //    (where the two doors meet), two longeron hinge lines at the shoulders, and
+  //    forward/aft bulkhead lines. Doors are the same white as the hull.
   const bay = new THREE.Group();
   const bayY0 = yA + bodyLen * 0.3;
   const bayY1 = yA + bodyLen * 0.92;
   const bayLen = bayY1 - bayY0;
   const bayMid = (bayY0 + bayY1) / 2;
-  // Dark bay cavity (an inset trough on the top face).
-  const trough = new THREE.Mesh(
-    new THREE.BoxGeometry(rFus * 1.5, bayLen, rFus * 0.55),
-    heroDark(0x0c0e11),
-  );
-  trough.position.set(0, bayMid, oz + rFus * 0.42);
-  bay.add(trough);
-  // Gold-foil radiator panels lining the bay floor.
-  const rad = new THREE.Mesh(
-    new THREE.BoxGeometry(rFus * 1.28, bayLen * 0.92, rFus * 0.02),
-    heroGold(0xcaa24a),
-  );
-  rad.position.set(0, bayMid, oz + rFus * 0.5);
-  bay.add(rad);
-  // Two doors on vertical (stack-parallel) hinges at the shoulder longerons,
-  // each swung open outward.
-  const doorW = rFus * 1.05;
+  const seamMat = heroDark(0x82878f); // grey panel-line seam
+  const seamW = rFus * 0.025;
+  // TWO door panels — proud white part-cylinder shells, one each side of the +Z
+  // apex (symmetric), so both doors are visibly present. Same white as the hull.
+  const apex = Math.PI / 2; // +Z (top) in cylinder θ
+  const arc = Math.PI * 0.3; // each door spans 0.3π from the centreline outward
   for (const side of [1, -1] as const) {
-    const hinge = new THREE.Group();
-    hinge.position.set(side * rFus * 1.45 * 0.72, bayMid, oz + rFus * 0.78 * 0.55);
-    const panel = new THREE.Mesh(new THREE.BoxGeometry(doorW, bayLen, rFus * 0.06), white);
-    panel.position.x = -side * doorW * 0.5; // extends toward the centreline
-    const foil = new THREE.Mesh(
-      new THREE.BoxGeometry(doorW * 0.86, bayLen * 0.9, rFus * 0.01),
-      heroGold(0xcaa24a),
+    const tStart = side === 1 ? apex - arc : apex; // right door below apex, left above
+    const door = new THREE.Mesh(
+      new THREE.CylinderGeometry(rFus * 1.006, rFus * 1.006, bayLen, 28, 1, true, tStart, arc),
+      white,
     );
-    foil.position.set(-side * doorW * 0.5, 0, rFus * 0.04); // radiator on the inner face
-    hinge.add(panel, foil);
-    hinge.rotation.y = side * 0.9; // swung open
-    bay.add(hinge);
+    door.scale.set(1.45, 1, 0.78);
+    door.position.set(0, bayMid, oz);
+    bay.add(door);
+  }
+  // Seam lines: centreline (where the doors meet) + two outboard longeron hinges.
+  for (const off of [0, arc, -arc]) {
+    const t = apex + off;
+    const line = new THREE.Mesh(new THREE.BoxGeometry(seamW, bayLen, seamW), seamMat);
+    line.position.set(
+      Math.cos(t) * rFus * 1.02 * 1.45,
+      bayMid,
+      oz + Math.sin(t) * rFus * 1.02 * 0.78,
+    );
+    bay.add(line);
+  }
+  // Forward + aft bulkhead seams across the doors (thin dark boxes spanning X).
+  for (const by of [bayY0, bayY1]) {
+    const bulk = new THREE.Mesh(
+      new THREE.BoxGeometry(rFus * 1.45 * 1.3, seamW, rFus * 0.06),
+      seamMat,
+    );
+    bulk.position.set(0, by, oz + rFus * 0.7);
+    bay.add(bulk);
   }
 
   // ── Agency markings — US flag on the port wing, "USA" on the starboard wing,
@@ -1096,17 +1092,21 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
     x.fillText('UNITED STATES', 0, 0);
     x.restore();
   });
-  const wingTopZ = oz + thick * 0.85 + r * 0.01;
-  const flagDecal = new THREE.Mesh(new THREE.PlaneGeometry(span * 0.5, span * 0.25), flagTex);
-  flagDecal.position.set(-span * 0.5, yWingTE + h * 0.3, wingTopZ);
-  const usaDecal = new THREE.Mesh(new THREE.PlaneGeometry(span * 0.4, span * 0.2), usaTex);
-  usaDecal.position.set(span * 0.5, yWingTE + h * 0.3, wingTopZ);
+  // Sit the wing decals JUST above the white wing top (oz + thick/2), low on the
+  // wing near the trailing edge + inboard so they're centred on the panel, not
+  // floating past the swept leading edge.
+  const wingTopZ = oz + thick * 0.55;
+  const flagDecal = new THREE.Mesh(new THREE.PlaneGeometry(span * 0.4, h * 0.14), flagTex);
+  flagDecal.position.set(-span * 0.5, yWingTE + h * 0.11, wingTopZ);
+  const usaDecal = new THREE.Mesh(new THREE.PlaneGeometry(span * 0.3, h * 0.15), usaTex);
+  usaDecal.position.set(span * 0.5, yWingTE + h * 0.11, wingTopZ);
+  // "UNITED STATES" runs along the aft fuselage side (+X face), reading up the stack.
   const unitedDecal = new THREE.Mesh(
-    new THREE.PlaneGeometry(vehLen * 0.03, bodyLen * 0.5),
+    new THREE.PlaneGeometry(vehLen * 0.028, bodyLen * 0.45),
     unitedTex,
   );
   unitedDecal.geometry.rotateZ(-Math.PI / 2);
-  unitedDecal.position.set(rFus * 1.2, yA + bodyLen * 0.5, oz + rFus * 0.2);
+  unitedDecal.position.set(rFus * 1.45 * 0.82, yA + bodyLen * 0.42, oz);
   unitedDecal.rotation.y = -Math.PI / 2;
 
   orbiter.add(

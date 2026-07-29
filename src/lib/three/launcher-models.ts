@@ -1,4 +1,16 @@
 import * as THREE from 'three';
+import { heroGold, heroWhite, heroDark } from './hero-materials';
+import { getLauncherEngines } from '$lib/orbital/launcher-engines';
+import {
+  agencyPalette,
+  ringFrames,
+  vStringers,
+  raceway,
+  sweptFin,
+  engineCluster,
+  livery,
+  stringerRoughness,
+} from './launcher-detail';
 
 /**
  * Per-launcher procedural rocket models for /fly's Scene 0 (RFC-034 §8 S11).
@@ -224,77 +236,150 @@ function engineRing(
  * the spindly launch-escape tower.
  */
 function buildSaturnV(vehLen: number): LauncherModel {
-  const p = palette(0xf2f2ee, 0x1a1a1a);
+  const spec = getLauncherEngines('saturn-v')!;
+  const pal = agencyPalette('NASA');
   const r = vehLen * 0.075; // stout
   const root = new THREE.Group();
 
+  // S-IC body wears the NASA livery (roll pattern + USA + flag); a ribbed
+  // roughness map + ring frames + a systems tunnel give the tank real skin.
+  const livMat = new THREE.MeshStandardMaterial({
+    map: livery({
+      rollPattern: true,
+      wordmark: { text: 'U S A', color: '#14161b', size: 0.11, y: 0.7 },
+      flag: 'usa',
+    }),
+    roughness: 0.5,
+    metalness: 0.15,
+    roughnessMap: stringerRoughness(80),
+  });
+
+  // ── S-IC (Stage 1) → booster ──────────────────────────────────────────────
   const booster = new THREE.Group();
-  const sic = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.42, 40), p.body);
+  const sic = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.42, 64), livMat);
   sic.position.y = vehLen * 0.23;
-  // black roll-pattern band near the base
-  const band = new THREE.Mesh(
-    new THREE.CylinderGeometry(r * 1.01, r * 1.01, vehLen * 0.05, 40),
-    p.dark,
+  booster.add(sic);
+  booster.add(ringFrames(r, vehLen * 0.04, vehLen * 0.43, 12, pal.frame));
+  booster.add(raceway(r, vehLen * 0.06, vehLen * 0.42, pal.dark));
+  const boat = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.9, r, vehLen * 0.05, 64), pal.frame);
+  boat.position.y = vehLen * 0.02;
+  booster.add(boat);
+  booster.add(
+    engineCluster(
+      spec.stages[0].arrangement,
+      spec.stages[0].mainNozzles,
+      r,
+      vehLen * 0.08,
+      0,
+      pal.frame,
+      pal.eng,
+    ),
   );
-  band.position.y = vehLen * 0.08;
-  const fins = new THREE.Group();
   for (let i = 0; i < 4; i++) {
     const a = (i / 4) * Math.PI * 2;
-    const fin = new THREE.Mesh(new THREE.BoxGeometry(r * 0.5, vehLen * 0.1, r * 0.12), p.dark);
-    fin.position.set(Math.cos(a) * r * 1.1, vehLen * 0.05, Math.sin(a) * r * 1.1);
-    fin.rotation.y = -a;
-    fins.add(fin);
+    booster.add(sweptFin(r * 1.02, vehLen * 0.12, vehLen * 0.11, r * 0.7, a, pal.dark));
   }
-  booster.add(
-    sic,
-    band,
-    fins,
-    engineRing(5, r * 0.55, r * 0.2, vehLen * 0.05, vehLen * 0.0, p.eng),
-  );
   root.add(booster);
 
-  // S-II — the middle stage. Its own group so the S-IC→S-II→S-IVB serial staging
-  // is visible: it jettisons at the SECOND core staging (physics' staging(S-II)),
-  // between the S-IC booster drop and the S-IVB burn.
+  // ── S-II (Stage 2) → midStage (jettisons at the SECOND core staging) ───────
   const midStage = new THREE.Group();
-  const sii = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.62, r, vehLen * 0.05, 40), p.body); // interstage taper
-  sii.position.y = vehLen * 0.47;
-  const s2 = new THREE.Mesh(
-    new THREE.CylinderGeometry(r * 0.62, r * 0.62, vehLen * 0.22, 40),
-    p.body,
+  const inter = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.99, r, vehLen * 0.055, 64),
+    pal.dark,
   );
-  s2.position.y = vehLen * 0.6;
-  midStage.add(sii, s2, bell(r * 0.3, vehLen * 0.05, p.eng, vehLen * 0.47));
+  inter.position.y = vehLen * 0.462;
+  midStage.add(inter);
+  midStage.add(vStringers(r * 0.99, vehLen * 0.438, vehLen * 0.488, 28, pal.frame));
+  const sii = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.99, r * 0.99, vehLen * 0.22, 64),
+    pal.body,
+  );
+  sii.position.y = vehLen * 0.6;
+  midStage.add(sii);
+  midStage.add(ringFrames(r * 0.99, vehLen * 0.5, vehLen * 0.7, 7, pal.frame));
+  midStage.add(raceway(r * 0.99, vehLen * 0.5, vehLen * 0.7, pal.dark));
+  midStage.add(
+    engineCluster(
+      spec.stages[1].arrangement,
+      spec.stages[1].mainNozzles,
+      r * 0.9,
+      vehLen * 0.05,
+      vehLen * 0.487,
+      pal.frame,
+      pal.eng,
+    ),
+  );
   root.add(midStage);
 
-  // S-IVB — the final stage that carries the CSM/LM to orbit + TLI.
+  // ── S-IVB (Stage 3) → upperStage ──────────────────────────────────────────
   const upperStage = new THREE.Group();
-  const s4b = new THREE.Mesh(
-    new THREE.CylinderGeometry(r * 0.42, r * 0.62, vehLen * 0.16, 40),
-    p.body,
+  const s4t = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.6, r * 0.99, vehLen * 0.06, 64),
+    pal.body,
   );
-  s4b.position.y = vehLen * 0.79;
-  upperStage.add(s4b, bell(r * 0.26, vehLen * 0.045, p.eng, vehLen * 0.7));
+  s4t.position.y = vehLen * 0.745;
+  const s4b = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.6, r * 0.6, vehLen * 0.14, 64),
+    pal.body,
+  );
+  s4b.position.y = vehLen * 0.85;
+  const foilBand = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.61, r * 0.61, vehLen * 0.03, 48),
+    heroGold(0xcaa658),
+  );
+  foilBand.position.y = vehLen * 0.79;
+  upperStage.add(s4t, s4b, foilBand);
+  upperStage.add(
+    engineCluster(
+      spec.stages[2].arrangement,
+      spec.stages[2].mainNozzles,
+      r * 0.6,
+      vehLen * 0.05,
+      vehLen * 0.775,
+      pal.frame,
+      pal.eng,
+    ),
+  );
   root.add(upperStage);
 
-  // The Apollo stack rides as the "fairing": a conical CSM + a thin escape tower.
-  const fairingBaseY = vehLen * 0.88;
+  // ── Apollo stack as the "fairing": SLA shells + CSM + BPC + LES tower ──────
+  const fairingBaseY = vehLen * 0.9;
   const mkShell = (theta: number): THREE.Mesh =>
     new THREE.Mesh(
-      new THREE.ConeGeometry(r * 0.42, vehLen * 0.14, 20, 1, true, theta, Math.PI),
-      p.accent,
+      new THREE.ConeGeometry(r * 0.6, vehLen * 0.09, 24, 1, true, theta, Math.PI),
+      pal.body,
     );
   const fairingL = mkShell(Math.PI / 2);
   const fairingR = mkShell(-Math.PI / 2);
   fairingL.position.y = fairingBaseY;
   fairingR.position.y = fairingBaseY;
-  const tower = new THREE.Mesh(
-    new THREE.CylinderGeometry(r * 0.04, r * 0.04, vehLen * 0.1, 8),
-    p.dark,
+  const sm = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.32, r * 0.32, vehLen * 0.05, 40),
+    pal.frame,
   );
-  tower.position.y = fairingBaseY + vehLen * 0.13;
+  sm.position.y = vehLen * 0.99;
+  const cm = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.15, r * 0.32, vehLen * 0.05, 40),
+    pal.body,
+  );
+  cm.position.y = vehLen * 1.035;
+  const bpc = new THREE.Mesh(
+    new THREE.ConeGeometry(r * 0.15, vehLen * 0.06, 32),
+    heroWhite(0xdfe2e6),
+  );
+  bpc.position.y = vehLen * 1.08;
+  const tower = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.028, r * 0.028, vehLen * 0.1, 10),
+    pal.dark,
+  );
+  tower.position.y = vehLen * 1.15;
+  const esc = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.08, r * 0.1, vehLen * 0.055, 20),
+    heroDark(0x2a2622),
+  );
+  esc.position.y = vehLen * 1.21;
   const fairingGroup = new THREE.Group();
-  fairingGroup.add(fairingL, fairingR, tower);
+  fairingGroup.add(fairingL, fairingR, sm, cm, bpc, tower, esc);
   root.add(fairingGroup);
 
   return {
@@ -302,13 +387,13 @@ function buildSaturnV(vehLen: number): LauncherModel {
     booster,
     boosterPlumeAnchor: sic,
     upperStage,
-    upperPlumeAnchor: s2,
+    upperPlumeAnchor: sii,
     fairingL,
     fairingR,
     fairingGroup,
     upperStageBaseY: vehLen * 0.6,
     fairingBaseY,
-    payloadMountY: vehLen * 0.82,
+    payloadMountY: vehLen * 0.9,
     midStage,
   };
 }

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { heroGold, heroWhite, heroDark } from './hero-materials';
+import { heroGold, heroWhite, heroDark, heroMetal } from './hero-materials';
 import { getLauncherEngines } from '$lib/orbital/launcher-engines';
 import {
   agencyPalette,
@@ -737,7 +737,104 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
  * explicitly instead of relying on the fallback.
  */
 function buildFalcon9(vehLen: number): LauncherModel {
-  return buildGeneric(vehLen, 0);
+  const spec = getLauncherEngines('falcon-9')!;
+  const white = heroWhite(0xf2f4f6);
+  const black = heroDark(0x1a1c20);
+  const frame = heroMetal(0xbfc4ca, 0.3);
+  const eng = heroMetal(0x3a3f47, 0.5);
+  const r = vehLen * 0.045; // slender
+  const root = new THREE.Group();
+  const livMat = new THREE.MeshStandardMaterial({
+    map: livery({
+      base: '#f2f4f6',
+      wordmark: { text: 'S P A C E X', color: '#18191c', size: 0.05, y: 0.58 },
+      flag: 'usa',
+    }),
+    roughness: 0.5,
+    metalness: 0.12,
+    roughnessMap: stringerRoughness(60),
+  });
+
+  // ── Stage 1: white body + black interstage, 9-Merlin octaweb, legs + grid fins.
+  const booster = new THREE.Group();
+  const s1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.5, 48), livMat);
+  s1.position.y = vehLen * 0.28;
+  booster.add(s1);
+  booster.add(ringFrames(r, vehLen * 0.05, vehLen * 0.5, 6, frame));
+  booster.add(raceway(r, vehLen * 0.06, vehLen * 0.5, black));
+  const octaweb = new THREE.Mesh(new THREE.CylinderGeometry(r, r * 0.94, vehLen * 0.03, 48), black);
+  octaweb.position.y = vehLen * 0.025;
+  booster.add(octaweb);
+  booster.add(
+    engineCluster(
+      spec.stages[0].arrangement,
+      spec.stages[0].mainNozzles,
+      r,
+      vehLen * 0.04,
+      vehLen * 0.005,
+      frame,
+      eng,
+    ),
+  );
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2;
+    const leg = new THREE.Mesh(new THREE.BoxGeometry(r * 0.12, vehLen * 0.18, r * 0.08), frame);
+    leg.position.set(Math.cos(a) * r * 1.02, vehLen * 0.11, Math.sin(a) * r * 1.02);
+    leg.rotation.y = -a;
+    booster.add(leg);
+    const af = a + Math.PI / 4;
+    const gf = new THREE.Mesh(new THREE.BoxGeometry(r * 0.4, vehLen * 0.015, r * 0.12), frame);
+    gf.position.set(Math.cos(af) * r * 1.12, vehLen * 0.48, Math.sin(af) * r * 1.12);
+    gf.rotation.y = -af;
+    booster.add(gf);
+  }
+  const interstage = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.04, 48), black);
+  interstage.position.y = vehLen * 0.55;
+  booster.add(interstage);
+  root.add(booster);
+
+  // ── Stage 2: single Merlin Vacuum.
+  const upperStageBaseY = vehLen * 0.67;
+  const upperStage = new THREE.Group();
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.2, 48), white);
+  s2.position.y = upperStageBaseY;
+  upperStage.add(s2);
+  upperStage.add(
+    engineCluster(
+      spec.stages[1].arrangement,
+      spec.stages[1].mainNozzles,
+      r,
+      vehLen * 0.06,
+      vehLen * 0.56,
+      frame,
+      eng,
+    ),
+  );
+  root.add(upperStage);
+
+  // ── Fairing clamshell.
+  const fairingBaseY = vehLen * 0.85;
+  const fairingL = fairingHalf(r, vehLen, Math.PI / 2, white);
+  const fairingR = fairingHalf(r, vehLen, -Math.PI / 2, white);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: s1,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.8,
+  };
 }
 
 /**
@@ -746,24 +843,46 @@ function buildFalcon9(vehLen: number): LauncherModel {
  * single vacuum bell, and a wide bulbous fairing wider than the core.
  */
 function buildAtlasV(vehLen: number, boosterCount = 3): LauncherModel {
-  const p = palette(0xf0eeea, 0xc8c4bc);
+  const spec = getLauncherEngines('atlas-v')!;
+  const cream = new THREE.MeshStandardMaterial({
+    map: livery({
+      base: '#efe9dc',
+      wordmark: { text: 'A T L A S  V', color: '#3a4a63', size: 0.042, y: 0.6 },
+      flag: 'usa',
+    }),
+    roughness: 0.5,
+    metalness: 0.14,
+    roughnessMap: stringerRoughness(60),
+  });
+  const body = heroWhite(0xefe9dc);
+  const frame = heroMetal(0xc7c2b6, 0.32);
+  const dark = heroDark(0x1e2127);
+  const eng = heroMetal(0x40454d, 0.5);
   const r = vehLen * 0.06; // wider than generic
   const root = new THREE.Group();
 
-  // ── First stage: uniform cylinder, RD-180 twin-bell at the base.
+  // ── First stage (CCB): uniform cylinder, RD-180 twin-bell at the base.
   const booster = new THREE.Group();
-  const stage1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.54, 40), p.body);
+  const stage1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.54, 48), cream);
   stage1.position.y = vehLen * 0.3;
   booster.add(stage1);
-  // RD-180 — two bells side by side at the base.
-  for (const bx of [-r * 0.42, r * 0.42]) {
-    const b = nozzle(r * 0.28, vehLen * 0.055, p.eng);
-    b.position.set(bx, 0, 0);
-    booster.add(b);
-  }
+  booster.add(ringFrames(r, vehLen * 0.05, vehLen * 0.56, 7, frame));
+  booster.add(raceway(r, vehLen * 0.06, vehLen * 0.55, dark));
+  // RD-180 — one engine, two nozzles (data-driven pair).
+  booster.add(
+    engineCluster(
+      spec.stages[1].arrangement,
+      spec.stages[1].mainNozzles,
+      r,
+      vehLen * 0.06,
+      0,
+      frame,
+      eng,
+    ),
+  );
   const interstage = new THREE.Mesh(
-    new THREE.CylinderGeometry(r * 0.82, r, vehLen * 0.04, 40),
-    p.dark,
+    new THREE.CylinderGeometry(r * 0.82, r, vehLen * 0.04, 48),
+    dark,
   );
   interstage.position.y = vehLen * 0.59;
   booster.add(interstage);
@@ -771,24 +890,32 @@ function buildAtlasV(vehLen: number, boosterCount = 3): LauncherModel {
 
   // AJ-60A solid strap-ons — the SRB variants (411/541/551) fly 1–5, the 401/501
   // fly none. In their OWN group (sibling of the core) so the scene jettisons them
-  // at strap-on burnout — BEFORE core MECO — instead of dropping them glued to the
-  // core. `boosterCount` is the profile's real per-variant count.
+  // at strap-on burnout — BEFORE core MECO. `boosterCount` is the real per-variant.
   const strapOnGroup = new THREE.Group();
   if (boosterCount > 0)
-    strapOns(strapOnGroup, boosterCount, r, vehLen * 0.4, vehLen, p.accent, p.eng);
+    strapOns(strapOnGroup, boosterCount, r, vehLen * 0.4, vehLen, heroWhite(0xe6e2d8), eng);
   root.add(strapOnGroup);
 
   // ── Centaur upper stage: narrower, single RL-10 vacuum bell.
   const upperStageBaseY = vehLen * 0.73;
   const upperStage = new THREE.Group();
   const centaur = new THREE.Mesh(
-    new THREE.CylinderGeometry(r * 0.82, r * 0.82, vehLen * 0.2, 40),
-    p.body,
+    new THREE.CylinderGeometry(r * 0.82, r * 0.82, vehLen * 0.2, 48),
+    body,
   );
   centaur.position.y = upperStageBaseY;
-  const vacBell = nozzle(r * 0.6, vehLen * 0.07, p.eng);
-  vacBell.position.y = vehLen * 0.61;
-  upperStage.add(centaur, vacBell);
+  upperStage.add(centaur);
+  upperStage.add(
+    engineCluster(
+      spec.stages[2].arrangement,
+      spec.stages[2].mainNozzles,
+      r * 0.82,
+      vehLen * 0.07,
+      vehLen * 0.61,
+      frame,
+      eng,
+    ),
+  );
   root.add(upperStage);
 
   // ── Wide bulbous payload shroud (wider than the core) with an ogive nose —
@@ -797,13 +924,13 @@ function buildAtlasV(vehLen: number, boosterCount = 3): LauncherModel {
   const fR = r * 1.4;
   const shH = vehLen * 0.16;
   const mkHalf = (theta: number): THREE.Mesh =>
-    new THREE.Mesh(new THREE.CylinderGeometry(fR, fR, shH, 24, 1, true, theta, Math.PI), p.body);
+    new THREE.Mesh(new THREE.CylinderGeometry(fR, fR, shH, 24, 1, true, theta, Math.PI), body);
   const fairingL = mkHalf(Math.PI / 2);
   const fairingR = mkHalf(-Math.PI / 2);
   fairingL.position.y = fairingBaseY;
   fairingR.position.y = fairingBaseY;
   // Shared ogive nose cap crowning the shroud.
-  const nose = new THREE.Mesh(new THREE.ConeGeometry(fR, vehLen * 0.11, 24), p.body);
+  const nose = new THREE.Mesh(new THREE.ConeGeometry(fR, vehLen * 0.11, 24), body);
   nose.position.y = fairingBaseY + shH / 2 + vehLen * 0.05;
   const fairingGroup = new THREE.Group();
   fairingGroup.add(fairingL, fairingR, nose);

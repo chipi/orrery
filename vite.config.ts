@@ -522,6 +522,12 @@ export default defineConfig(({ mode }) => {
           'src/lib/three/separation-burst.ts',
           'src/lib/three/ascent-renderer.ts',
           'src/lib/three/launcher-models.ts',
+          // The hero-PBR launcher detail kit (agency livery, engine clusters,
+          // ring frames, swept fins, canvas-drawn flags/wordmarks) is a pure
+          // Three.js geometry + CanvasTexture builder jsdom can't run — same
+          // policy as launcher-models.ts. The engine inventory it renders is
+          // data-covered by launcher-engines.ts (launcher-engines.test.ts).
+          'src/lib/three/launcher-detail.ts',
           'src/lib/three/launch-ground.ts',
           // /fly descent/landing WebGL builders (RFC-034 §12) — same policy: the
           // EDL Scene render (descent-scene) + the procedural EDL-stack models
@@ -536,6 +542,15 @@ export default defineConfig(({ mode }) => {
           // keeps its *.test.ts.
           'src/lib/three/fly-leo-coast-scene.ts',
           'src/lib/three/capsule-models.ts',
+          // Cruise-phase procedural craft — the per-mission interplanetary
+          // spacecraft (interplanetary-spacecraft-models) + their lander-cruise
+          // stacks (lander-cruise-models) are `buildX(): THREE.Group` WebGL
+          // builders jsdom can't run, same policy as launcher/capsule-models.
+          // They reach the counted module graph only transitively (via the
+          // excluded ascent-scene → launcher-models import chain that
+          // ascent-payload.test.ts loads); their pure ID exports carry no logic.
+          'src/lib/three/interplanetary-spacecraft-models.ts',
+          'src/lib/three/lander-cruise-models.ts',
           // Shared 3D asset builders used by the model/scene files above — hero
           // PBR materials + IBL (hero-materials) and the low-level geometry
           // helper (model-geom) both instantiate Three.js materials/geometry

@@ -645,7 +645,7 @@ function buildFalcon9(vehLen: number): LauncherModel {
  * the base (two bells side by side), a narrower Centaur upper stage with a
  * single vacuum bell, and a wide bulbous fairing wider than the core.
  */
-function buildAtlasV(vehLen: number): LauncherModel {
+function buildAtlasV(vehLen: number, boosterCount = 3): LauncherModel {
   const p = palette(0xf0eeea, 0xc8c4bc);
   const r = vehLen * 0.06; // wider than generic
   const root = new THREE.Group();
@@ -661,9 +661,6 @@ function buildAtlasV(vehLen: number): LauncherModel {
     b.position.set(bx, 0, 0);
     booster.add(b);
   }
-  // GEM-63 solid strap-ons — the SRB variants (501/511/541/551) fly with 1–5;
-  // three reads clearly as an Atlas V without cluttering the core silhouette.
-  strapOns(booster, 3, r, vehLen * 0.4, vehLen, p.accent, p.eng);
   const interstage = new THREE.Mesh(
     new THREE.CylinderGeometry(r * 0.82, r, vehLen * 0.04, 40),
     p.dark,
@@ -671,6 +668,15 @@ function buildAtlasV(vehLen: number): LauncherModel {
   interstage.position.y = vehLen * 0.59;
   booster.add(interstage);
   root.add(booster);
+
+  // AJ-60A solid strap-ons — the SRB variants (411/541/551) fly 1–5, the 401/501
+  // fly none. In their OWN group (sibling of the core) so the scene jettisons them
+  // at strap-on burnout — BEFORE core MECO — instead of dropping them glued to the
+  // core. `boosterCount` is the profile's real per-variant count.
+  const strapOnGroup = new THREE.Group();
+  if (boosterCount > 0)
+    strapOns(strapOnGroup, boosterCount, r, vehLen * 0.4, vehLen, p.accent, p.eng);
+  root.add(strapOnGroup);
 
   // ── Centaur upper stage: narrower, single RL-10 vacuum bell.
   const upperStageBaseY = vehLen * 0.73;
@@ -715,6 +721,7 @@ function buildAtlasV(vehLen: number): LauncherModel {
     upperStageBaseY,
     fairingBaseY,
     payloadMountY: vehLen * 0.85,
+    strapOns: strapOnGroup,
   };
 }
 
@@ -970,9 +977,12 @@ function buildLongMarch2F(vehLen: number): LauncherModel {
   const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.52, 32), p.body);
   core.position.y = vehLen * 0.29;
   booster.add(core, nozzle(r * 0.48, vehLen * 0.05, p.eng));
-  // Four liquid strap-ons, same construction as Soyuz but 4-fold symmetry.
-  strapOns(booster, 4, r, vehLen * 0.32, vehLen, p.accent, p.eng);
   root.add(booster);
+  // Four liquid strap-ons in their OWN group (not glued to the core) so the scene
+  // jettisons them at strap-on burnout, before core staging.
+  const strapOnGroup = new THREE.Group();
+  strapOns(strapOnGroup, 4, r, vehLen * 0.32, vehLen, p.accent, p.eng);
+  root.add(strapOnGroup);
 
   const upperStageBaseY = vehLen * 0.66;
   const upperStage = new THREE.Group();
@@ -1015,6 +1025,7 @@ function buildLongMarch2F(vehLen: number): LauncherModel {
     upperStageBaseY,
     fairingBaseY,
     payloadMountY: vehLen * 0.84,
+    strapOns: strapOnGroup,
   };
 }
 
@@ -1031,7 +1042,6 @@ function buildLongMarch3B(vehLen: number): LauncherModel {
   const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.5, 32), p.body);
   core.position.y = vehLen * 0.28;
   booster.add(core, nozzle(r * 0.46, vehLen * 0.05, p.eng));
-  strapOns(booster, 4, r, vehLen * 0.3, vehLen, p.accent, p.eng);
   const interstage = new THREE.Mesh(
     new THREE.CylinderGeometry(r * 0.88, r, vehLen * 0.03, 32),
     p.dark,
@@ -1039,6 +1049,10 @@ function buildLongMarch3B(vehLen: number): LauncherModel {
   interstage.position.y = vehLen * 0.545;
   booster.add(interstage);
   root.add(booster);
+  // Four liquid strap-ons in their OWN group — jettison at strap-on burnout.
+  const strapOnGroup = new THREE.Group();
+  strapOns(strapOnGroup, 4, r, vehLen * 0.3, vehLen, p.accent, p.eng);
+  root.add(strapOnGroup);
 
   const upperStageBaseY = vehLen * 0.68;
   const upperStage = new THREE.Group();
@@ -1078,6 +1092,7 @@ function buildLongMarch3B(vehLen: number): LauncherModel {
     upperStageBaseY,
     fairingBaseY,
     payloadMountY: vehLen * 0.86,
+    strapOns: strapOnGroup,
   };
 }
 
@@ -1101,7 +1116,9 @@ function buildLongMarch5(vehLen: number): LauncherModel {
     b.position.set(bx, 0, 0);
     booster.add(b);
   }
-  // Four large strap-ons — wider and longer than LM-3B's, reaching 60% of core.
+  // Four large strap-ons — in their OWN group so the scene jettisons them at
+  // strap-on burnout (before core staging), not glued to the fat core.
+  const strapOnGroup = new THREE.Group();
   const soLen = vehLen * 0.36;
   for (let i = 0; i < 4; i++) {
     const a = (i / 4) * Math.PI * 2;
@@ -1115,8 +1132,9 @@ function buildLongMarch5(vehLen: number): LauncherModel {
     snose.position.y = soLen + soLen * 0.15;
     gr.add(sbody, snose, nozzle(r * 0.3, vehLen * 0.05, p.eng));
     gr.position.set(Math.cos(a) * r * 1.3, 0, Math.sin(a) * r * 1.3);
-    booster.add(gr);
+    strapOnGroup.add(gr);
   }
+  root.add(strapOnGroup);
   const interstage = new THREE.Mesh(
     new THREE.CylinderGeometry(r * 0.8, r, vehLen * 0.035, 36),
     p.dark,
@@ -1160,6 +1178,7 @@ function buildLongMarch5(vehLen: number): LauncherModel {
     upperStageBaseY,
     fairingBaseY,
     payloadMountY: vehLen * 0.87,
+    strapOns: strapOnGroup,
   };
 }
 
@@ -1176,8 +1195,6 @@ function buildPSLV(vehLen: number): LauncherModel {
   const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.48, 32), p.body);
   core.position.y = vehLen * 0.27;
   booster.add(core, nozzle(r * 0.44, vehLen * 0.05, p.eng));
-  // Six PSOM solid strap-ons, slender, clustered at the base.
-  strapOns(booster, 6, r, vehLen * 0.22, vehLen, p.accent, p.eng);
   const interstage = new THREE.Mesh(
     new THREE.CylinderGeometry(r * 0.84, r, vehLen * 0.025, 32),
     p.dark,
@@ -1185,6 +1202,10 @@ function buildPSLV(vehLen: number): LauncherModel {
   interstage.position.y = vehLen * 0.525;
   booster.add(interstage);
   root.add(booster);
+  // Six PSOM solid strap-ons in their OWN group — jettison at strap-on burnout.
+  const strapOnGroup = new THREE.Group();
+  strapOns(strapOnGroup, 6, r, vehLen * 0.22, vehLen, p.accent, p.eng);
+  root.add(strapOnGroup);
 
   // PS2 / PS3 / PS4 stacked above as upper stage (slimmer).
   const upperStageBaseY = vehLen * 0.65;
@@ -1224,6 +1245,7 @@ function buildPSLV(vehLen: number): LauncherModel {
     upperStageBaseY,
     fairingBaseY,
     payloadMountY: vehLen * 0.79,
+    strapOns: strapOnGroup,
   };
 }
 
@@ -1529,7 +1551,7 @@ function buildAriane1(vehLen: number): LauncherModel {
 }
 
 /** Dispatch table — a dedicated silhouette per launcher; the rest fall back generic. */
-const BUILDERS: Record<string, (vehLen: number) => LauncherModel> = {
+const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => LauncherModel> = {
   'falcon-9': buildFalcon9,
   'saturn-v': buildSaturnV,
   'saturn-ib': buildSaturnV,
@@ -1565,7 +1587,10 @@ export function buildLauncherModel(
   boosterCount = 0,
 ): LauncherModel {
   const build = launcherId ? BUILDERS[launcherId] : undefined;
-  // Dedicated silhouettes draw their own (fixed-count) boosters; the generic
-  // body draws `boosterCount` strap-ons (Atlas V's variable AJ-60A count).
-  return build ? build(vehLen) : buildGeneric(vehLen, boosterCount);
+  // Both the dedicated silhouettes and the generic body receive the profile's real
+  // per-variant `boosterCount`, so strap-on vehicles draw their strap-ons into a
+  // separable group and the scene jettisons them at strap-on burnout (Atlas V's
+  // variable 1–5 AJ-60As; 0 = a boosterless variant). Builders that ignore the arg
+  // model a fixed cluster (e.g. Soyuz's 4).
+  return build ? build(vehLen, boosterCount) : buildGeneric(vehLen, boosterCount);
 }

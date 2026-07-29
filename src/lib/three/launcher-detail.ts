@@ -357,6 +357,8 @@ export interface LiveryOptions {
   base?: string; // body base color (default off-white)
   bands?: { y: number; color: string; h?: number }[]; // horizontal bands at UV-v
   wordmark?: { text: string; color: string; size?: number; y?: number };
+  /** Upright characters stacked top→bottom (e.g. 中国航天 for CNSA). */
+  stack?: { chars: string[]; color: string; size?: number; y?: number };
   flag?: FlagKind;
   rollPattern?: boolean; // NASA-style black roll quadrants near the top
 }
@@ -394,6 +396,15 @@ export function livery(opts: LiveryOptions): THREE.CanvasTexture {
     x.textBaseline = 'middle';
     x.fillText(opts.wordmark.text, 0, 0);
     x.restore();
+  }
+  if (opts.stack) {
+    x.fillStyle = opts.stack.color;
+    const size = Math.round(h * (opts.stack.size ?? 0.06));
+    x.font = `bold ${size}px "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif`;
+    x.textAlign = 'center';
+    x.textBaseline = 'middle';
+    const y0 = h * (opts.stack.y ?? 0.34);
+    opts.stack.chars.forEach((ch, i) => x.fillText(ch, cx, y0 + i * size * 1.15));
   }
   if (opts.flag) drawFlag(x, opts.flag, cx - w * 0.075, h * 0.26, w * 0.15);
   const t = new THREE.CanvasTexture(c);

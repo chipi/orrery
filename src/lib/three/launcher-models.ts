@@ -1397,27 +1397,74 @@ function buildAtlasLV3B(vehLen: number): LauncherModel {
  * Long March 2F — Chinese crewed launcher (Shenzhou). Central core + four
  * tapered liquid strap-ons + launch-escape tower with capsule above the fairing.
  */
+/** Shared CNSA livery + materials: white body, red bands, 中国航天, red-star flag. */
+function cnsaKit(stack: boolean): {
+  body: THREE.MeshStandardMaterial;
+  plain: THREE.MeshStandardMaterial;
+  frame: THREE.MeshStandardMaterial;
+  dark: THREE.MeshStandardMaterial;
+  eng: THREE.MeshStandardMaterial;
+} {
+  const body = new THREE.MeshStandardMaterial({
+    map: livery({
+      base: '#f0f2f4',
+      bands: [
+        { y: 0.5, color: '#c1121f', h: 0.016 },
+        { y: 0.84, color: '#c1121f', h: 0.02 },
+      ],
+      stack: stack
+        ? { chars: ['中', '国', '航', '天'], color: '#c1121f', size: 0.05, y: 0.32 }
+        : undefined,
+      flag: 'prc',
+    }),
+    roughness: 0.5,
+    metalness: 0.14,
+    roughnessMap: stringerRoughness(60),
+  });
+  return {
+    body,
+    plain: heroWhite(0xf0f2f4),
+    frame: heroMetal(0xc4c8ce, 0.3),
+    dark: heroDark(0x1c1f24),
+    eng: heroMetal(0x40454d, 0.5),
+  };
+}
+
 function buildLongMarch2F(vehLen: number): LauncherModel {
-  const p = palette(0xf0f2f4, 0xc8ccd2); // pale grey/white
+  const spec = getLauncherEngines('long-march-2f')!;
+  const k = cnsaKit(true);
   const r = vehLen * 0.052;
   const root = new THREE.Group();
 
   const booster = new THREE.Group();
-  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.52, 32), p.body);
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.52, 48), k.body);
   core.position.y = vehLen * 0.29;
-  booster.add(core, nozzle(r * 0.48, vehLen * 0.05, p.eng));
+  booster.add(core);
+  booster.add(ringFrames(r, vehLen * 0.05, vehLen * 0.53, 7, k.frame));
+  booster.add(raceway(r, vehLen * 0.06, vehLen * 0.52, k.dark));
+  // Core cluster: 4× YF-20 in a quad (data-driven from the spec).
+  booster.add(
+    engineCluster(
+      spec.stages[1].arrangement,
+      spec.stages[1].mainNozzles,
+      r,
+      vehLen * 0.05,
+      0,
+      k.frame,
+      k.eng,
+    ),
+  );
   root.add(booster);
-  // Four liquid strap-ons in their OWN group (not glued to the core) so the scene
-  // jettisons them at strap-on burnout, before core staging.
+  // Four liquid strap-ons in their OWN group — jettison at strap-on burnout.
   const strapOnGroup = new THREE.Group();
-  strapOns(strapOnGroup, 4, r, vehLen * 0.32, vehLen, p.accent, p.eng);
+  strapOns(strapOnGroup, 4, r, vehLen * 0.32, vehLen, k.plain, k.eng);
   root.add(strapOnGroup);
 
   const upperStageBaseY = vehLen * 0.66;
   const upperStage = new THREE.Group();
-  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.94, r, vehLen * 0.18, 32), p.body);
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.94, r, vehLen * 0.18, 48), k.plain);
   s2.position.y = upperStageBaseY;
-  upperStage.add(s2, bell(r * 0.38, vehLen * 0.05, p.eng, vehLen * 0.56));
+  upperStage.add(s2, bell(r * 0.38, vehLen * 0.05, k.eng, vehLen * 0.56));
   root.add(upperStage);
 
   // Capsule half-shells (Shenzhou) + escape tower above — mirrors Saturn V idiom.
@@ -1426,7 +1473,7 @@ function buildLongMarch2F(vehLen: number): LauncherModel {
   const mkShell = (theta: number): THREE.Mesh =>
     new THREE.Mesh(
       new THREE.ConeGeometry(capsuleR, vehLen * 0.1, 20, 1, true, theta, Math.PI),
-      p.accent,
+      k.plain,
     );
   const fairingL = mkShell(Math.PI / 2);
   const fairingR = mkShell(-Math.PI / 2);
@@ -1435,7 +1482,7 @@ function buildLongMarch2F(vehLen: number): LauncherModel {
   // Spiky escape tower rising above the capsule nose.
   const tower = new THREE.Mesh(
     new THREE.CylinderGeometry(r * 0.04, r * 0.04, vehLen * 0.09, 8),
-    p.dark,
+    k.dark,
   );
   tower.position.y = fairingBaseY + vehLen * 0.1;
   const fairingGroup = new THREE.Group();
@@ -1463,50 +1510,75 @@ function buildLongMarch2F(vehLen: number): LauncherModel {
  * strap-ons + standard payload fairing (bulbous ogive shroud, no escape tower).
  */
 function buildLongMarch3B(vehLen: number): LauncherModel {
-  const p = palette(0xeef1f5, 0xc4c8d0);
+  const spec = getLauncherEngines('long-march-3b')!;
+  const k = cnsaKit(false);
   const r = vehLen * 0.05;
   const root = new THREE.Group();
 
   const booster = new THREE.Group();
-  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.5, 32), p.body);
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.5, 48), k.body);
   core.position.y = vehLen * 0.28;
-  booster.add(core, nozzle(r * 0.46, vehLen * 0.05, p.eng));
+  booster.add(core);
+  booster.add(ringFrames(r, vehLen * 0.05, vehLen * 0.51, 6, k.frame));
+  booster.add(raceway(r, vehLen * 0.06, vehLen * 0.5, k.dark));
+  booster.add(
+    engineCluster(
+      spec.stages[1].arrangement,
+      spec.stages[1].mainNozzles,
+      r,
+      vehLen * 0.05,
+      0,
+      k.frame,
+      k.eng,
+    ),
+  );
   const interstage = new THREE.Mesh(
-    new THREE.CylinderGeometry(r * 0.88, r, vehLen * 0.03, 32),
-    p.dark,
+    new THREE.CylinderGeometry(r * 0.88, r, vehLen * 0.03, 48),
+    k.dark,
   );
   interstage.position.y = vehLen * 0.545;
   booster.add(interstage);
   root.add(booster);
   // Four liquid strap-ons in their OWN group — jettison at strap-on burnout.
   const strapOnGroup = new THREE.Group();
-  strapOns(strapOnGroup, 4, r, vehLen * 0.3, vehLen, p.accent, p.eng);
+  strapOns(strapOnGroup, 4, r, vehLen * 0.3, vehLen, k.plain, k.eng);
   root.add(strapOnGroup);
 
   const upperStageBaseY = vehLen * 0.68;
   const upperStage = new THREE.Group();
   const s2 = new THREE.Mesh(
-    new THREE.CylinderGeometry(r * 0.88, r * 0.88, vehLen * 0.22, 32),
-    p.body,
+    new THREE.CylinderGeometry(r * 0.88, r * 0.88, vehLen * 0.22, 48),
+    k.plain,
   );
   s2.position.y = upperStageBaseY;
-  upperStage.add(s2, bell(r * 0.34, vehLen * 0.05, p.eng, vehLen * 0.565));
+  upperStage.add(s2, bell(r * 0.34, vehLen * 0.05, k.eng, vehLen * 0.565));
   root.add(upperStage);
 
-  // Bulbous cylindrical shroud + ogive nose cap (wider-than-core, LM-3B style).
+  // Bulbous ogive bullet shroud (lathe) + boat-tail — wider than core, LM-3B style.
   const fairingBaseY = vehLen * 0.845;
   const fR = r * 1.3;
-  const shH = vehLen * 0.14;
+  const shH = vehLen * 0.26;
+  const prof: THREE.Vector2[] = [
+    new THREE.Vector2(fR, 0),
+    new THREE.Vector2(fR, shH * 0.44),
+    new THREE.Vector2(fR * 0.92, shH * 0.64),
+    new THREE.Vector2(fR * 0.66, shH * 0.82),
+    new THREE.Vector2(fR * 0.3, shH * 0.96),
+    new THREE.Vector2(0, shH * 1.03),
+  ];
   const mkHalf = (theta: number): THREE.Mesh =>
-    new THREE.Mesh(new THREE.CylinderGeometry(fR, fR, shH, 24, 1, true, theta, Math.PI), p.body);
+    new THREE.Mesh(new THREE.LatheGeometry(prof, 40, theta, Math.PI), k.plain);
   const fairingL = mkHalf(Math.PI / 2);
   const fairingR = mkHalf(-Math.PI / 2);
   fairingL.position.y = fairingBaseY;
   fairingR.position.y = fairingBaseY;
-  const nose = new THREE.Mesh(new THREE.ConeGeometry(fR, vehLen * 0.1, 24), p.body);
-  nose.position.y = fairingBaseY + shH / 2 + vehLen * 0.05;
+  const boatTail = new THREE.Mesh(
+    new THREE.CylinderGeometry(fR, r * 0.88, vehLen * 0.05, 40, 1, true),
+    k.plain,
+  );
+  boatTail.position.y = fairingBaseY - vehLen * 0.025;
   const fairingGroup = new THREE.Group();
-  fairingGroup.add(fairingL, fairingR, nose);
+  fairingGroup.add(fairingL, fairingR, boatTail);
   root.add(fairingGroup);
 
   return {
@@ -1531,42 +1603,53 @@ function buildLongMarch3B(vehLen: number): LauncherModel {
  * bulbous fairing.
  */
 function buildLongMarch5(vehLen: number): LauncherModel {
-  const p = palette(0xedf2f7, 0xbcc4ce); // pale, hint of cryo blue-white
+  const spec = getLauncherEngines('long-march-5')!;
+  const k = cnsaKit(false);
   const r = vehLen * 0.07; // stout fat core
   const root = new THREE.Group();
 
   const booster = new THREE.Group();
-  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.52, 36), p.body);
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.52, 48), k.body);
   core.position.y = vehLen * 0.3;
   booster.add(core);
-  // Two YF-77 bells at the base (twin-engine cryogenic core stage).
-  for (const bx of [-r * 0.42, r * 0.42]) {
-    const b = nozzle(r * 0.3, vehLen * 0.055, p.eng);
-    b.position.set(bx, 0, 0);
-    booster.add(b);
-  }
-  // Four large strap-ons — in their OWN group so the scene jettisons them at
-  // strap-on burnout (before core staging), not glued to the fat core.
+  booster.add(ringFrames(r, vehLen * 0.05, vehLen * 0.55, 8, k.frame));
+  booster.add(raceway(r, vehLen * 0.06, vehLen * 0.54, k.dark));
+  // Two YF-77 bells at the base (data-driven pair).
+  booster.add(
+    engineCluster(
+      spec.stages[1].arrangement,
+      spec.stages[1].mainNozzles,
+      r,
+      vehLen * 0.055,
+      0,
+      k.frame,
+      k.eng,
+    ),
+  );
+  // Four large strap-ons, each with TWO YF-100 nozzles (spec: 8 total) — in their
+  // OWN group so the scene jettisons them at strap-on burnout.
   const strapOnGroup = new THREE.Group();
   const soLen = vehLen * 0.36;
   for (let i = 0; i < 4; i++) {
     const a = (i / 4) * Math.PI * 2;
     const gr = new THREE.Group();
-    const sbody = new THREE.Mesh(
-      new THREE.CylinderGeometry(r * 0.44, r * 0.6, soLen, 24),
-      p.accent,
-    );
+    const sbody = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.44, r * 0.5, soLen, 32), k.plain);
     sbody.position.y = soLen / 2;
-    const snose = new THREE.Mesh(new THREE.ConeGeometry(r * 0.44, soLen * 0.3, 24), p.accent);
+    const snose = new THREE.Mesh(new THREE.ConeGeometry(r * 0.44, soLen * 0.3, 32), k.plain);
     snose.position.y = soLen + soLen * 0.15;
-    gr.add(sbody, snose, nozzle(r * 0.3, vehLen * 0.05, p.eng));
+    gr.add(sbody, snose);
+    for (const bz of [-r * 0.2, r * 0.2]) {
+      const nz = detailBell(r * 0.16, vehLen * 0.05, k.frame, k.eng);
+      nz.position.set(0, 0, bz);
+      gr.add(nz);
+    }
     gr.position.set(Math.cos(a) * r * 1.3, 0, Math.sin(a) * r * 1.3);
     strapOnGroup.add(gr);
   }
   root.add(strapOnGroup);
   const interstage = new THREE.Mesh(
-    new THREE.CylinderGeometry(r * 0.8, r, vehLen * 0.035, 36),
-    p.dark,
+    new THREE.CylinderGeometry(r * 0.8, r, vehLen * 0.035, 48),
+    k.dark,
   );
   interstage.position.y = vehLen * 0.565;
   booster.add(interstage);
@@ -1574,25 +1657,50 @@ function buildLongMarch5(vehLen: number): LauncherModel {
 
   const upperStageBaseY = vehLen * 0.69;
   const upperStage = new THREE.Group();
-  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.8, r * 0.8, vehLen * 0.2, 36), p.body);
+  const s2 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.8, r * 0.8, vehLen * 0.2, 48),
+    k.plain,
+  );
   s2.position.y = upperStageBaseY;
-  upperStage.add(s2, bell(r * 0.38, vehLen * 0.06, p.eng, vehLen * 0.58));
+  upperStage.add(s2);
+  upperStage.add(
+    engineCluster(
+      spec.stages[2].arrangement,
+      spec.stages[2].mainNozzles,
+      r * 0.8,
+      vehLen * 0.055,
+      vehLen * 0.585,
+      k.frame,
+      k.eng,
+    ),
+  );
   root.add(upperStage);
 
-  // Wide bulbous fairing — the "Fat Five" has a notably wide 5.2 m shroud.
+  // Wide bulbous ogive shroud — the "Fat Five" has a notably wide 5.2 m fairing.
   const fairingBaseY = vehLen * 0.845;
   const fR = r * 1.45;
-  const shH = vehLen * 0.17;
+  const shH = vehLen * 0.3;
+  const prof: THREE.Vector2[] = [
+    new THREE.Vector2(fR, 0),
+    new THREE.Vector2(fR, shH * 0.46),
+    new THREE.Vector2(fR * 0.92, shH * 0.66),
+    new THREE.Vector2(fR * 0.64, shH * 0.83),
+    new THREE.Vector2(fR * 0.28, shH * 0.96),
+    new THREE.Vector2(0, shH * 1.03),
+  ];
   const mkHalf = (theta: number): THREE.Mesh =>
-    new THREE.Mesh(new THREE.CylinderGeometry(fR, fR, shH, 24, 1, true, theta, Math.PI), p.body);
+    new THREE.Mesh(new THREE.LatheGeometry(prof, 40, theta, Math.PI), k.plain);
   const fairingL = mkHalf(Math.PI / 2);
   const fairingR = mkHalf(-Math.PI / 2);
   fairingL.position.y = fairingBaseY;
   fairingR.position.y = fairingBaseY;
-  const nose = new THREE.Mesh(new THREE.ConeGeometry(fR, vehLen * 0.12, 24), p.body);
-  nose.position.y = fairingBaseY + shH / 2 + vehLen * 0.06;
+  const boatTail = new THREE.Mesh(
+    new THREE.CylinderGeometry(fR, r * 0.8, vehLen * 0.06, 40, 1, true),
+    k.plain,
+  );
+  boatTail.position.y = fairingBaseY - vehLen * 0.03;
   const fairingGroup = new THREE.Group();
-  fairingGroup.add(fairingL, fairingR, nose);
+  fairingGroup.add(fairingL, fairingR, boatTail);
   root.add(fairingGroup);
 
   return {

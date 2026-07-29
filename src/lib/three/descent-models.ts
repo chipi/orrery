@@ -351,14 +351,17 @@ function buildLunarStack(lander: THREE.Group, vehLen: number): DescentModel {
  *  all atmospheric-entry archetypes. */
 function addAeroshell(m: DescentModel, p: Palette, vehLen: number): void {
   const r = vehLen * 0.42;
+  // Heat-shield (front) + backshell (aft) meet at the max-diameter joint to form
+  // a CLOSED capsule around the stowed lander — the heat-shield's wide rim sits
+  // at the joint (y≈0.04), not floating below with a gap.
   m.heatshield = sphereConeHeatshield(r, p.shield);
-  m.heatshieldBaseY = -vehLen * 0.24;
+  m.heatshieldBaseY = -vehLen * 0.076;
   m.heatshield.position.y = m.heatshieldBaseY;
   m.root.add(m.heatshield);
 
   m.backshell = new THREE.Group();
   const cover = new THREE.Mesh(
-    new THREE.SphereGeometry(r * 0.98, 28, 14, 0, Math.PI * 2, 0, Math.PI * 0.5),
+    new THREE.SphereGeometry(r, 28, 14, 0, Math.PI * 2, 0, Math.PI * 0.5),
     p.shell,
   );
   cover.position.y = vehLen * 0.04;

@@ -486,6 +486,21 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     heatshieldBurst.update(sepProgress(s.t, hsT, DESCENT_BURST_S));
     backshellBurst.update(sepProgress(s.t, bsT, DESCENT_BURST_S));
 
+    // Aeroshell-body landers (Mars/Venus) ride STOWED inside the closed aeroshell
+    // through entry + chute — only the heat-shield + backshell show. The rover +
+    // its powered descent stage / retro are revealed once the heat-shield drops
+    // away (exposing the terminal-descent hardware), never before. Earth capsules
+    // and Moon/airless landers ARE the vehicle, so they stay visible throughout.
+    const aeroshellBody = body === 'mars' || body === 'venus';
+    const terminalPhase =
+      s.phaseKind === 'skycrane' ||
+      s.phaseKind === 'powered_retro' ||
+      s.phaseKind === 'airbag_bounce';
+    const landerShown = !aeroshellBody || hp > 0.04 || terminalPhase;
+    model.lander.visible = landerShown;
+    model.descentStage.visible = landerShown;
+    model.retro.visible = landerShown;
+
     // Skycrane rigging: shown only during the skycrane phase.
     model.skycraneRigging.visible = s.phaseKind === 'skycrane';
 
@@ -616,6 +631,11 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     model.parachute.scale.setScalar(1);
     model.airbags.visible = false;
     model.skycraneRigging.visible = false;
+    // At the entry interface the Mars/Venus lander is stowed inside the aeroshell.
+    const stowed = body === 'mars' || body === 'venus';
+    model.lander.visible = !stowed;
+    model.descentStage.visible = !stowed;
+    model.retro.visible = !stowed;
     plume.visible = false;
     plasma.visible = false;
     dust.visible = false;

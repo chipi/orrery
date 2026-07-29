@@ -128,6 +128,7 @@ const FLAGSHIP_IDS = new Set<string>([
   'h-iia',
   'atlas-lv-3b',
   'space-shuttle-stack',
+  'starship',
 ]);
 
 interface FleetRef {

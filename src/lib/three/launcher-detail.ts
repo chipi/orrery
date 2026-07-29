@@ -26,9 +26,11 @@ export function agencyPalette(agency: string): LauncherPalette {
   const a = agency.toLowerCase();
   if (a.includes('spacex')) {
     return {
-      body: heroMetal(0xd8dce1, 0.16), // bare stainless — bright, low roughness
-      frame: heroMetal(0xb9bec6, 0.22),
-      dark: heroDark(0x16181d),
+      // Bare 304L stainless — brushed, so it catches the key light as bright
+      // silver instead of a black mirror (roughness kept mid, not near-zero).
+      body: heroMetal(0xeef1f5, 0.38),
+      frame: heroMetal(0xcdd2d8, 0.34),
+      dark: heroDark(0x2a2d33),
       eng: heroMetal(0x3a3f47, 0.5),
     };
   }
@@ -223,6 +225,12 @@ function clusterOffsets(arrangement: EngineArrangement, count: number): [number,
       return ring(count, 2.5);
     case 'octaweb-9':
       return [[0, 0], ...ring(count - 1, 2.3)];
+    case 'superheavy-33':
+      // 3 centre + 10 mid + 20 outer = the Raptor 2 Block-1 layout.
+      return [...ring(3, 0.9), ...ring(10, 2.4), ...ring(20, 4.2)];
+    case 'starship-6':
+      // 3 sea-level Raptor (inner) + 3 RVac (outer).
+      return [...ring(3, 1.0), ...ring(3, 2.3)];
     default:
       // 'per-booster' (handled by the builder) or unknown → single nozzle.
       return count > 1 ? ring(count, 2.3) : [[0, 0]];

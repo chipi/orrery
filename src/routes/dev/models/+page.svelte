@@ -310,6 +310,12 @@
       build: () => buildLauncherModel(undefined, 1.2, 0).root,
     },
     {
+      id: 'starship',
+      label: 'Starship / Super Heavy',
+      family: 'launcher',
+      build: () => buildLauncherModel('starship', 1.2).root,
+    },
+    {
       id: 'saturn-v',
       label: 'Saturn V',
       family: 'launcher',

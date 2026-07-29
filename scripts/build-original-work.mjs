@@ -269,6 +269,11 @@ const launchers = [
     'Slender two-stage body — an octaweb of nine engines, grid fins, and landing legs.',
   ],
   [
+    'starship',
+    'Starship / Super Heavy',
+    'Bare-stainless fully-reusable stack — 33 Raptors on Super Heavy, 6 on Starship, forward + aft flaps, and the ogive nose.',
+  ],
+  [
     'atlas-v',
     'Atlas V',
     'Wide RD-180 core with a bulbous payload fairing and optional solid strap-ons.',

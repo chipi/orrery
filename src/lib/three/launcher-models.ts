@@ -2223,6 +2223,157 @@ function buildH3(vehLen: number): LauncherModel {
 }
 
 /**
+ * Starship + Super Heavy (SpaceX) — the fully-reusable bare-stainless stack.
+ * Super Heavy booster (33 Raptors: 3 centre + 10 + 20 rings, 4 grid fins) is the
+ * `booster` (drops at hot-stage sep); Starship upper (6 Raptors: 3 sea-level + 3
+ * RVac, 2 forward + 2 aft flaps, ogive nose) is the `upperStage`. No jettisoned
+ * fairing — Starship IS the payload volume, so the nose rides as a non-splitting
+ * "fairing" (the launch profile omits the fairing event). Bare 304L stainless.
+ */
+function buildStarship(vehLen: number): LauncherModel {
+  const spec = getLauncherEngines('starship')!;
+  const pal = agencyPalette('SpaceX'); // bare stainless
+  const steel = pal.body;
+  const frame = pal.frame;
+  const dark = pal.dark;
+  const eng = pal.eng;
+  const black = heroDark(0x14161a); // chine / heat-shield tiles
+  const r = vehLen * 0.07; // fat 9 m body
+  const root = new THREE.Group();
+
+  // ── Super Heavy booster ──────────────────────────────────────────────────
+  const booster = new THREE.Group();
+  const shLen = vehLen * 0.56;
+  const sh = new THREE.Mesh(new THREE.CylinderGeometry(r, r, shLen, 56), steel);
+  sh.position.y = vehLen * 0.29;
+  booster.add(sh);
+  booster.add(ringFrames(r, vehLen * 0.04, vehLen * 0.56, 10, frame));
+  booster.add(raceway(r, vehLen * 0.05, vehLen * 0.55, dark));
+  // 33 Raptors (data-driven concentric rings) on the thrust puck.
+  const puck = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.98, r * 0.9, vehLen * 0.02, 56),
+    heroDark(0x24262b),
+  );
+  puck.position.y = vehLen * 0.02;
+  booster.add(puck);
+  booster.add(
+    engineCluster(
+      spec.stages[0].arrangement,
+      spec.stages[0].mainNozzles,
+      r,
+      vehLen * 0.05,
+      0,
+      frame,
+      eng,
+    ),
+  );
+  // 4 grid fins near the forward end.
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
+    const gf = new THREE.Mesh(new THREE.BoxGeometry(r * 0.34, vehLen * 0.05, r * 0.06), frame);
+    gf.position.set(Math.cos(a) * r * 1.12, vehLen * 0.5, Math.sin(a) * r * 1.12);
+    gf.rotation.y = -a;
+    booster.add(gf);
+  }
+  const hotStage = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.96, r, vehLen * 0.04, 56, 1, true),
+    dark,
+  );
+  hotStage.position.y = vehLen * 0.585;
+  booster.add(hotStage);
+  root.add(booster);
+
+  // ── Starship upper stage ─────────────────────────────────────────────────
+  const upperStageBaseY = vehLen * 0.74;
+  const upperStage = new THREE.Group();
+  const shipLen = vehLen * 0.32;
+  const ship = new THREE.Mesh(new THREE.CylinderGeometry(r, r, shipLen, 56), steel);
+  ship.position.y = upperStageBaseY;
+  upperStage.add(ship);
+  upperStage.add(ringFrames(r, vehLen * 0.6, vehLen * 0.88, 4, frame));
+  // Windward heat-shield tiles as a dark half-cylinder down one side.
+  const tiles = new THREE.Mesh(
+    new THREE.CylinderGeometry(
+      r * 1.005,
+      r * 1.005,
+      shipLen,
+      56,
+      1,
+      true,
+      Math.PI * 0.55,
+      Math.PI * 0.9,
+    ),
+    black,
+  );
+  tiles.position.y = upperStageBaseY;
+  upperStage.add(tiles);
+  // 6 Raptors (3 sea-level + 3 RVac).
+  upperStage.add(
+    engineCluster(
+      spec.stages[1].arrangement,
+      spec.stages[1].mainNozzles,
+      r * 0.9,
+      vehLen * 0.04,
+      vehLen * 0.585,
+      frame,
+      eng,
+    ),
+  );
+  // 2 aft flaps (lower) + 2 forward flaps (upper), on the tile side.
+  const flap = (y: number, w: number, h: number, side: 1 | -1): THREE.Mesh => {
+    const f = new THREE.Mesh(new THREE.BoxGeometry(r * 0.08, h, w), black);
+    const a = Math.PI + side * 0.5;
+    f.position.set(Math.cos(a) * r * 1.05, y, Math.sin(a) * r * 1.05);
+    f.rotation.y = -a;
+    return f;
+  };
+  upperStage.add(
+    flap(vehLen * 0.63, r * 0.7, vehLen * 0.09, 1),
+    flap(vehLen * 0.63, r * 0.7, vehLen * 0.09, -1),
+  );
+  upperStage.add(
+    flap(vehLen * 0.86, r * 0.5, vehLen * 0.07, 1),
+    flap(vehLen * 0.86, r * 0.5, vehLen * 0.07, -1),
+  );
+  root.add(upperStage);
+
+  // ── Ogive nose as a non-splitting "fairing" (Starship's payload volume). ──
+  const fairingBaseY = vehLen * 0.9;
+  const shH = vehLen * 0.2;
+  const prof: THREE.Vector2[] = [
+    new THREE.Vector2(r, 0),
+    new THREE.Vector2(r * 0.98, shH * 0.34),
+    new THREE.Vector2(r * 0.86, shH * 0.6),
+    new THREE.Vector2(r * 0.6, shH * 0.82),
+    new THREE.Vector2(r * 0.28, shH * 0.96),
+    new THREE.Vector2(0, shH * 1.02),
+  ];
+  const mkHalf = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.LatheGeometry(prof, 48, theta, Math.PI), steel);
+  const fairingL = mkHalf(Math.PI / 2);
+  const fairingR = mkHalf(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: sh,
+    upperStage,
+    upperPlumeAnchor: ship,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.86,
+  };
+}
+
+/**
  * Ariane 1 — European 1979 three-stage stack. Clean, slender, no strap-ons,
  * single first-stage bell, tapering toward the top. White body.
  */
@@ -2318,6 +2469,7 @@ function buildAriane1(vehLen: number): LauncherModel {
 /** Dispatch table — a dedicated silhouette per launcher; the rest fall back generic. */
 const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => LauncherModel> = {
   'falcon-9': buildFalcon9,
+  starship: buildStarship,
   'saturn-v': buildSaturnV,
   'saturn-ib': buildSaturnIB,
   'vostok-k': buildSoyuz,

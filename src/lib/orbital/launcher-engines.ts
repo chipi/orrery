@@ -25,6 +25,8 @@ export type EngineArrangement =
   | 'octagon-8' // eight in a ring (Saturn IB H-1)
   | 'octaweb-9' // one centre + eight ring (Falcon 9)
   | 'ring-6' // six around a central tank (Proton S1)
+  | 'superheavy-33' // 3 centre + 10 mid ring + 20 outer ring (Super Heavy)
+  | 'starship-6' // 3 sea-level centre + 3 RVac ring (Starship upper)
   | 'per-booster'; // count applies across N strap-on boosters (see boosterCount)
 
 export interface EngineStage {
@@ -342,6 +344,20 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       }),
       S('Stage 1 core', 'LE-9', 2, 1, 'pair', { note: 'H3-22 has 2; H3-30 has 3.' }),
       S('Stage 2', 'LE-5B-3', 1, 1, 'single'),
+    ],
+  },
+  starship: {
+    name: 'Starship / Super Heavy',
+    agency: 'SpaceX',
+    confidence: 'high',
+    sources: ['https://en.wikipedia.org/wiki/SpaceX_Starship'],
+    stages: [
+      S('Super Heavy (Booster)', 'Raptor 2', 33, 1, 'superheavy-33', {
+        note: '3 centre (gimballing) + 10 mid ring + 20 outer ring.',
+      }),
+      S('Starship (Upper)', 'Raptor / RVac', 6, 1, 'starship-6', {
+        note: '3 sea-level Raptor (centre) + 3 Raptor Vacuum (outer).',
+      }),
     ],
   },
 };

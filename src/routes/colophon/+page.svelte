@@ -24,6 +24,7 @@
     diagrams_science: Diagram[];
     posters: Poster[];
     models3d: Item[];
+    capsules: Item[];
     canvas2d: Item[];
     ui: Item[];
     writing: Item[];
@@ -156,8 +157,9 @@
       </ul>
     </section>
 
-    <!-- Live-rendered geometry/canvas: no static preview, link to the route. -->
-    {#each [{ id: 'models', label: m.colophon_section_models(), items: data.models3d }, { id: 'canvas', label: m.colophon_section_canvas(), items: data.canvas2d }] as sec (sec.id)}
+    <!-- Human-spaceflight capsules + live-rendered geometry/canvas. Each item
+         links to the route where its 3D model actually flies. -->
+    {#each [{ id: 'capsules', label: m.colophon_section_capsules(), items: data.capsules }, { id: 'models', label: m.colophon_section_models(), items: data.models3d }, { id: 'canvas', label: m.colophon_section_canvas(), items: data.canvas2d }] as sec (sec.id)}
       <section class="block" aria-labelledby="sec-{sec.id}">
         <h2 id="sec-{sec.id}">{sec.label}<span class="count">{sec.items.length}</span></h2>
         <ul class="item-list">

@@ -43,6 +43,7 @@
     buildMercuryCapsule,
     buildGeminiCapsule,
     buildVostokSphere,
+    buildVoskhodSphere,
     buildApolloCM,
     buildSoyuzDescentModule,
     buildDragonCapsule,
@@ -124,9 +125,15 @@
     },
     {
       id: 'vostok-sphere',
-      label: 'Vostok / Voskhod',
+      label: 'Vostok',
       family: 'capsule',
       build: () => buildVostokSphere(),
+    },
+    {
+      id: 'voskhod-sphere',
+      label: 'Voskhod',
+      family: 'capsule',
+      build: () => buildVoskhodSphere(),
     },
     { id: 'apollo-cm', label: 'Apollo CM', family: 'capsule', build: () => buildApolloCM() },
     {

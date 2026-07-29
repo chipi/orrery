@@ -8,6 +8,8 @@
  *
  * Honest-config, distinct where real: one model per capsule family covers the
  * ~31 missions (all six Mercury flights share the one Mercury capsule, etc.).
+ * Eight families, eight distinct hulls — Vostok/Voskhod and Soyuz/Shenzhou are
+ * lineage pairs but each gets its own mesh where the real hardware differs.
  */
 
 import * as THREE from 'three';
@@ -87,8 +89,10 @@ export function buildMercuryCapsule(): THREE.Group {
   spike.position.y = 1.34;
   g.add(spike);
 
-  // Pilot's trapezoidal window on the cone.
+  // Pilot's trapezoidal window on the cone + two small side portholes.
   windowPane(g, 0.3, 0.55, Math.PI * 0.15, 0.11, 0.09);
+  windowPane(g, 0.36, 0.5, Math.PI * 0.15 - 1.0, 0.045, 0.045);
+  windowPane(g, 0.36, 0.5, Math.PI * 0.15 + 1.0, 0.045, 0.045);
 
   // Retropack — the three broad titanium straps + the retro package clamped to
   // the heat shield (jettisoned pre-entry, iconic on the descending capsule).
@@ -166,9 +170,10 @@ export function buildGeminiCapsule(): THREE.Group {
 }
 
 /**
- * Vostok / Voskhod descent module — the distinctive SPHERE (Sharik). A 2.3 m
- * ablative sphere with the antenna straps + a small equipment collar; the crew
- * ejected (Vostok) or rode it down under a parachute (Voskhod).
+ * Vostok descent module — the distinctive SPHERE (Sharik). A 2.3 m ablative
+ * sphere with the antenna straps + a small equipment collar; the cosmonaut
+ * EJECTED at ~7 km and parachuted separately, so the bare sphere has no
+ * touchdown motor (that is the external tell vs Voskhod).
  */
 export function buildVostokSphere(): THREE.Group {
   const g = new THREE.Group();
@@ -238,6 +243,93 @@ export function buildVostokSphere(): THREE.Group {
 }
 
 /**
+ * Voskhod descent module — the same Sharik sphere as Vostok, but the crew rode
+ * it to the ground, so it gains the defining external tell: the solid-propellant
+ * SOFT-LANDING retro package slung on a short truss above the sphere (fires just
+ * above touchdown to cushion the landing). Two side portholes instead of three.
+ */
+export function buildVoskhodSphere(): THREE.Group {
+  const g = new THREE.Group();
+  const skin = heroMetal(0x9aa0a6, 0.4);
+  const char = heroDark(0x2b2622);
+  const steel = heroMetal(0xb9bec6, 0.3);
+
+  // Sharik sphere — the shared descent-module shell.
+  const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 32, 24), skin);
+  sphere.position.y = 0.5;
+  g.add(sphere);
+  const cap = new THREE.Mesh(
+    new THREE.SphereGeometry(0.5, 32, 12, 0, Math.PI * 2, Math.PI * 0.62, Math.PI * 0.38),
+    char,
+  );
+  cap.position.y = 0.5;
+  g.add(cap);
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2;
+    const strap = new THREE.Mesh(
+      new THREE.TorusGeometry(0.5, 0.01, 6, 40, Math.PI),
+      heroDark(0x40454b),
+    );
+    strap.rotation.y = a;
+    strap.rotation.x = Math.PI / 2;
+    strap.position.y = 0.5;
+    g.add(strap);
+  }
+  const collar = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.14, 20), char);
+  collar.position.y = 0.05;
+  g.add(collar);
+
+  // Two side portholes (Voskhod flew the Vzor sight + fewer viewports).
+  for (const a of [Math.PI * 0.22, Math.PI * 0.78]) {
+    const rim = new THREE.Mesh(new THREE.TorusGeometry(0.06, 0.014, 8, 16), steel);
+    rim.position.set(Math.cos(a) * 0.49, 0.55, Math.sin(a) * 0.49);
+    rim.lookAt(rim.position.x * 2, 0.55, rim.position.z * 2);
+    g.add(rim);
+    const pane = new THREE.Mesh(new THREE.CircleGeometry(0.05, 16), glass());
+    pane.position.copy(rim.position);
+    pane.lookAt(rim.position.x * 2, 0.55, rim.position.z * 2);
+    g.add(pane);
+  }
+  const hatch = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.13, 0.13, 0.02, 20),
+    heroMetal(0x8a8f96, 0.45),
+  );
+  hatch.position.set(0, 0.72, 0.46);
+  hatch.rotation.x = Math.PI / 2;
+  g.add(hatch);
+
+  // Soft-landing solid-retro package on a 3-strut truss above the sphere.
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.16, 0.012, 8, 24), steel);
+  ring.rotation.x = Math.PI / 2;
+  ring.position.y = 1.14;
+  g.add(ring);
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2;
+    const strut = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.24, 6), steel);
+    strut.position.set(Math.cos(a) * 0.13, 1.04, Math.sin(a) * 0.13);
+    strut.rotation.z = Math.cos(a) * 0.16;
+    strut.rotation.x = -Math.sin(a) * 0.16;
+    g.add(strut);
+  }
+  const retro = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.15, 0.17, 0.16, 20),
+    heroDark(0x33383f),
+  );
+  retro.position.y = 1.24;
+  g.add(retro);
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2;
+    const noz = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.02, 0.035, 0.06, 8),
+      heroDark(0x1a1c20),
+    );
+    noz.position.set(Math.cos(a) * 0.08, 1.14, Math.sin(a) * 0.08);
+    g.add(noz);
+  }
+  return g;
+}
+
+/**
  * Apollo Command Module (Apollo 7/9, Skylab ferries, ASTP). The classic ~3.9 m
  * blunt cone — a wide ablative heat shield, a steep silvered cone, and the
  * apex forward-hatch tunnel. Larger + steeper than Orion's crew module.
@@ -285,6 +377,16 @@ export function buildApolloCM(): THREE.Group {
     const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
     rcsNub(g, 0.34, 0.7, a - 0.06, rcsMat);
     rcsNub(g, 0.34, 0.7, a + 0.06, rcsMat);
+  }
+  // EVA handrails — two thin bars following the cone slope (Apollo's sea-of-
+  // storms umbilical/handrail detail), reads as fine surface hardware.
+  const rail = heroMetal(0xb9bec6, 0.3);
+  for (const a of [Math.PI * 0.28, Math.PI * 0.72]) {
+    const bar = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.008, 0.34, 6), rail);
+    bar.position.set(Math.cos(a) * 0.38, 0.56, Math.sin(a) * 0.38);
+    bar.rotation.z = Math.cos(a) * 0.32;
+    bar.rotation.x = -Math.sin(a) * 0.32;
+    g.add(bar);
   }
   return g;
 }
@@ -391,12 +493,54 @@ export function buildDragonCapsule(): THREE.Group {
 }
 
 /**
- * Shenzhou re-entry module — Soyuz-derived bell, slightly larger. Used for the
- * shenzhou-1 uncrewed test (Tier-1) and China's crewed flights.
+ * Shenzhou re-entry module — Soyuz-lineage bell but its own hull: broader base,
+ * more rounded profile, a lighter silver-white livery with a grey equipment band
+ * (no olive cast), and its own window pair. Used for shenzhou-1 (Tier-1) and
+ * China's crewed flights.
  */
 export function buildShenzhouReentry(): THREE.Group {
-  const g = buildSoyuzDescentModule();
-  g.scale.setScalar(1.06);
+  const g = new THREE.Group();
+  const skin = heroMetal(0xbfc4cb, 0.32); // lighter silver than Soyuz
+  const char = heroDark(0x26221f);
+  const band = heroMetal(0x7d848c, 0.42); // grey equipment band
+  const steel = heroMetal(0xb9bec6, 0.3);
+
+  // Base heat shield — broader sphere-cap than Soyuz.
+  const base = new THREE.Mesh(
+    new THREE.SphereGeometry(0.54, 30, 14, 0, Math.PI * 2, 0, 0.95),
+    char,
+  );
+  base.rotation.x = Math.PI;
+  base.position.y = 0.16;
+  base.scale.y = 0.44;
+  g.add(base);
+
+  // Bell body — wider + more rounded than the Soyuz SA.
+  const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.54, 0.48, 32), skin);
+  bell.position.y = 0.46;
+  g.add(bell);
+  // Grey equipment band near the shoulder.
+  const ring = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.32, 0.08, 32), band);
+  ring.position.y = 0.72;
+  g.add(ring);
+  // Top hatch tunnel (sits below the orbital module on the full stack).
+  const top = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.28, 0.16, 26), skin);
+  top.position.y = 0.84;
+  g.add(top);
+  const hatch = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.18, 0.08, 20), steel);
+  hatch.position.y = 0.96;
+  g.add(hatch);
+
+  // Two crew windows on the bell shoulder.
+  windowPane(g, 0.42, 0.52, Math.PI * 0.5 - 0.18, 0.08, 0.09);
+  windowPane(g, 0.42, 0.52, Math.PI * 0.5 + 0.18, 0.08, 0.09);
+  // Gold thermal band wrapping the base of the bell.
+  const foil = new THREE.Mesh(new THREE.CylinderGeometry(0.46, 0.54, 0.1, 32), heroGold(0xc7a04e));
+  foil.position.y = 0.3;
+  g.add(foil);
+  // RCS ports ringing the upper bell.
+  const rcsMat = heroDark(0x1a1c20);
+  for (let i = 0; i < 6; i++) rcsNub(g, 0.34, 0.6, (i / 6) * Math.PI * 2, rcsMat);
   return g;
 }
 
@@ -405,7 +549,7 @@ const CAPSULE_BUILDERS: Record<string, () => THREE.Group> = {
   mercury: buildMercuryCapsule,
   gemini: buildGeminiCapsule,
   vostok: buildVostokSphere,
-  voskhod: buildVostokSphere,
+  voskhod: buildVoskhodSphere,
   'apollo-cm': buildApolloCM,
   soyuz: buildSoyuzDescentModule,
   dragon: buildDragonCapsule,

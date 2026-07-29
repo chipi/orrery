@@ -1621,55 +1621,6 @@
       "thumb": "/images/colophon/model-launcher-ariane-1.webp"
     },
     {
-      "title": "Mercury capsule",
-      "what": "Blunt ablative heat shield, shingled cone, and the recovery + antenna section (Freedom 7 … Faith 7).",
-      "where": "Earth-orbit re-entry",
-      "route": "/fly",
-      "thumb": "/images/colophon/model-capsule-mercury-capsule.webp"
-    },
-    {
-      "title": "Gemini capsule",
-      "what": "Two-seat scaled-up Mercury with the rendezvous-radar nose and adapter module.",
-      "where": "Earth-orbit re-entry",
-      "route": "/fly",
-      "thumb": "/images/colophon/model-capsule-gemini-capsule.webp"
-    },
-    {
-      "title": "Vostok / Voskhod",
-      "what": "The spherical Sharik descent module with antenna straps and equipment collar.",
-      "where": "Earth-orbit re-entry",
-      "route": "/fly",
-      "thumb": "/images/colophon/model-capsule-vostok-sphere.webp"
-    },
-    {
-      "title": "Apollo Command Module",
-      "what": "The classic steep blunt cone with the forward docking tunnel (Apollo 7/9, Skylab, ASTP).",
-      "where": "Earth-orbit re-entry",
-      "route": "/fly",
-      "thumb": "/images/colophon/model-capsule-apollo-cm.webp"
-    },
-    {
-      "title": "Soyuz descent module",
-      "what": "The \"headlamp\" bell — spherical base heat shield with a conical crew top.",
-      "where": "Earth-orbit re-entry",
-      "route": "/fly",
-      "thumb": "/images/colophon/model-capsule-soyuz-sa.webp"
-    },
-    {
-      "title": "Crew Dragon",
-      "what": "Sleek conical body with the SuperDraco pods and the PICA-X heat shield (Inspiration4, Polaris Dawn).",
-      "where": "Earth-orbit re-entry",
-      "route": "/fly",
-      "thumb": "/images/colophon/model-capsule-dragon-capsule.webp"
-    },
-    {
-      "title": "Shenzhou reentry module",
-      "what": "The bell-shaped descent capsule between the orbital and service modules (Shenzhou-1 onward).",
-      "where": "Earth-orbit re-entry",
-      "route": "/fly",
-      "thumb": "/images/colophon/model-capsule-shenzhou-reentry.webp"
-    },
-    {
       "title": "Apollo Lunar Module",
       "what": "Descent + ascent stage, gold MLI foil, and RCS quads.",
       "where": "Moon landing sites",
@@ -2174,6 +2125,64 @@
       "thumb": "/images/colophon/model-trajectories.webp"
     }
   ],
+  "capsules": [
+    {
+      "title": "Mercury capsule",
+      "what": "Blunt ablative heat shield, shingled cone, and the recovery + antenna section (Freedom 7 … Faith 7).",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-mercury-capsule.webp"
+    },
+    {
+      "title": "Gemini capsule",
+      "what": "Two-seat scaled-up Mercury with the rendezvous-radar nose and adapter module.",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-gemini-capsule.webp"
+    },
+    {
+      "title": "Vostok",
+      "what": "The spherical Sharik descent module — antenna straps and equipment collar; the cosmonaut ejected and parachuted down separately.",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-vostok-sphere.webp"
+    },
+    {
+      "title": "Voskhod",
+      "what": "The same Sharik sphere, now carrying the solid-propellant soft-landing retro package on a strut truss — the crew rode it to the ground.",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-voskhod-sphere.webp"
+    },
+    {
+      "title": "Apollo Command Module",
+      "what": "The classic steep blunt cone with the forward docking tunnel (Apollo 7/9, Skylab, ASTP).",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-apollo-cm.webp"
+    },
+    {
+      "title": "Soyuz descent module",
+      "what": "The \"headlamp\" bell — spherical base heat shield with a conical crew top.",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-soyuz-sa.webp"
+    },
+    {
+      "title": "Crew Dragon",
+      "what": "Sleek conical body with the SuperDraco pods and the PICA-X heat shield (Inspiration4, Polaris Dawn).",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-dragon-capsule.webp"
+    },
+    {
+      "title": "Shenzhou reentry module",
+      "what": "A broad Soyuz-lineage bell — its own lighter-silver hull with a grey equipment band (Shenzhou-1 onward).",
+      "where": "Earth-orbit re-entry",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-capsule-shenzhou-reentry.webp"
+    }
+  ],
   "canvas2d": [
     {
       "title": "Landing-page hero",
@@ -2298,7 +2307,8 @@
     "anatomy_art": 144,
     "diagrams_science": 104,
     "posters": 27,
-    "models3d": 113,
+    "models3d": 106,
+    "capsules": 8,
     "canvas2d": 6,
     "ui": 4,
     "writing": 8

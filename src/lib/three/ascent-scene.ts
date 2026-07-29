@@ -28,6 +28,8 @@ import {
   type ShotWindow,
 } from '$lib/orbital/ascent-cameras';
 import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
+import { buildCapsuleById } from '$lib/three/capsule-models';
+import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
 import { buildLauncherModel } from '$lib/three/launcher-models';
 import {
   buildLaunchGround,
@@ -101,8 +103,10 @@ export const FORCE_COLORS = {
 } as const;
 
 /** Generic payload for the ~110 missions without a dedicated model — a small
- *  bus with two solar wings and a dish. Normalised to fit by buildPayload. */
-function buildGenericPayload(): THREE.Group {
+ *  bus with two solar wings and a dish. The wings ride on HINGE groups so the
+ *  scene can fold them against the bus during ascent and swing them out at
+ *  separation (`deployPayload`). Normalised to fit by buildPayload. */
+export function buildGenericPayload(): THREE.Group {
   const g = new THREE.Group();
   const bus = new THREE.Mesh(
     new THREE.BoxGeometry(0.55, 0.7, 0.55),
@@ -114,26 +118,95 @@ function buildGenericPayload(): THREE.Group {
     metalness: 0.3,
   });
   const panelGeo = new THREE.BoxGeometry(1.0, 0.03, 0.55);
-  const pL = new THREE.Mesh(panelGeo, panelMat);
-  pL.position.x = -0.85;
-  const pR = new THREE.Mesh(panelGeo, panelMat);
-  pR.position.x = 0.85;
+  // Each wing hangs off a hinge at the bus edge; the panel extends outward from
+  // the hinge. Deployed = flat (rotZ 0); stowed = folded up flat along the body
+  // (rotZ ≈ ∓90°). `deployPayload` lerps rotZ over the sep window.
+  const wing = (side: 1 | -1): THREE.Group => {
+    const hinge = new THREE.Group();
+    hinge.position.x = side * 0.28;
+    const panel = new THREE.Mesh(panelGeo, panelMat);
+    panel.position.x = side * 0.5; // extends outward from the hinge
+    hinge.add(panel);
+    hinge.userData.deploy = { closed: side * (Math.PI / 2), open: 0 };
+    return hinge;
+  };
+  // High-gain antenna on a boom hinged at the bus top: stowed folded down against
+  // the body (rotZ ≈ +112°), swings upright as it deploys (rotZ 0) — same lerp as
+  // the wings so `deployPayload` opens it in the same beat.
+  const antenna = new THREE.Group();
+  antenna.position.set(0.14, 0.36, 0);
+  const boom = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.02, 0.02, 0.34, 8),
+    new THREE.MeshStandardMaterial({ color: 0x8a8f96, roughness: 0.6, metalness: 0.4 }),
+  );
+  boom.position.y = 0.17;
   const dish = new THREE.Mesh(
-    new THREE.SphereGeometry(0.3, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2),
+    new THREE.SphereGeometry(0.28, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2),
     new THREE.MeshStandardMaterial({ color: 0xeaeaea, roughness: 0.6, side: THREE.DoubleSide }),
   );
-  dish.position.y = 0.5;
-  dish.rotation.x = Math.PI;
-  g.add(bus, pL, pR, dish);
+  dish.position.y = 0.36; // sits at the boom tip
+  dish.rotation.x = Math.PI; // concave face outward
+  antenna.add(boom, dish);
+  antenna.userData.deploy = { closed: Math.PI * 0.62, open: 0 };
+  g.add(bus, wing(-1), wing(1), antenna);
   return g;
 }
 
+/** A single compact "stowed payload" shroud shown while the payload is still
+ *  ATTACHED (fairing gone → separation) — represents the folded spacecraft on
+ *  its adapter, the way it really rides under the fairing. One shape for every
+ *  mission (operator decision 2026-07-29); the real deployed model appears +
+ *  unfolds at separation. Normalised like buildPayload so it fits the fairing. */
+function buildStowedPayload(vehLen: number): THREE.Group {
+  const body = new THREE.MeshStandardMaterial({ color: 0xd7dde3, roughness: 0.5, metalness: 0.4 });
+  const gold = new THREE.MeshStandardMaterial({ color: 0xb8912f, roughness: 0.45, metalness: 0.7 });
+  const g = new THREE.Group();
+  const w = vehLen * 0.11;
+  // Compact drum body (the folded spacecraft) + tucked panels flat against it.
+  const drum = new THREE.Mesh(new THREE.CylinderGeometry(w * 0.5, w * 0.5, w * 1.3, 20), body);
+  drum.position.y = w * 0.75;
+  const capMat = gold;
+  const cap = new THREE.Mesh(new THREE.ConeGeometry(w * 0.5, w * 0.6, 20), body);
+  cap.position.y = w * 1.7;
+  // Folded panel slabs hugging the drum (thin, vertical, against the sides).
+  for (const s of [1, -1]) {
+    const slab = new THREE.Mesh(new THREE.BoxGeometry(w * 0.04, w * 1.1, w * 0.7), capMat);
+    slab.position.set(s * w * 0.52, w * 0.75, 0);
+    g.add(slab);
+  }
+  // Payload adapter cone tapering down to the upper-stage forward dome.
+  const adapter = new THREE.Mesh(new THREE.CylinderGeometry(w * 0.5, w * 0.62, w * 0.4, 20), body);
+  adapter.position.y = w * 0.02;
+  g.add(drum, cap, adapter);
+  return g;
+}
+
+/** Drive a payload's deployment: `dp` 0 → 1 folds its hinged wings out and blooms
+ *  it to full scale. Any child tagged `userData.deploy = {closed, open}` lerps
+ *  its Z rotation; the whole holder scales 0.82 → 1 so even the static dedicated
+ *  models get a "spring to life" beat as they separate. No-op past dp = 1. */
+export function deployPayload(holder: THREE.Group, dp: number): void {
+  const k = Math.min(1, Math.max(0, dp));
+  holder.traverse((o) => {
+    const d = o.userData?.deploy as { closed: number; open: number } | undefined;
+    if (d) o.rotation.z = d.closed + (d.open - d.closed) * k;
+  });
+  const s = 0.82 + 0.18 * k;
+  holder.scale.setScalar(holder.userData.baseScale ? holder.userData.baseScale * s : s);
+}
+
 /** The payload group: the mission's dedicated spacecraft model when one exists
- *  (buildInterplanetarySpacecraft), else the generic bus — normalised so its
- *  largest dimension ≈ the fairing interior and re-centred on the body axis. */
-function buildPayload(spacecraftId: string | undefined, vehLen: number): THREE.Group {
-  const model =
-    (spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null) ?? buildGenericPayload();
+ *  — an interplanetary probe (buildInterplanetarySpacecraft) or, for crewed
+ *  flights, the bespoke re-entry capsule (buildCapsuleById via the earth-orbit
+ *  registry) — else the generic bus. Normalised so its largest dimension ≈ the
+ *  fairing interior and re-centred on the body axis. Capsules are tagged
+ *  `userData.isCapsule` so the ascent scene rides them exposed (no fairing/
+ *  shroud/solar-deploy) — see the payload branch in setState. */
+export function buildPayload(spacecraftId: string | undefined, vehLen: number): THREE.Group {
+  const probe = spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null;
+  const capsuleId =
+    !probe && spacecraftId ? getEarthOrbitCoast(spacecraftId)?.capsuleId : undefined;
+  const model = probe ?? (capsuleId ? buildCapsuleById(capsuleId) : null) ?? buildGenericPayload();
   const box = new THREE.Box3().setFromObject(model);
   const size = new THREE.Vector3();
   box.getSize(size);
@@ -142,8 +215,12 @@ function buildPayload(spacecraftId: string | undefined, vehLen: number): THREE.G
   box.getCenter(center);
   model.scale.setScalar(k);
   model.position.copy(center.multiplyScalar(-k));
+  // A capsule rides heat-shield-down ON the stage: seat its base at the mount
+  // rather than centre-mounting it like a satellite (else it sinks into the stage).
+  if (capsuleId) model.position.y += (size.y * k) / 2;
   const holder = new THREE.Group();
   holder.add(model);
+  if (capsuleId) holder.userData.isCapsule = true;
   return holder;
 }
 
@@ -347,12 +424,22 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const payloadBaseY = model.payloadMountY;
   vehicle.add(model.root);
 
-  // Payload — the mission's spacecraft (or a generic bus), stowed under the
-  // fairing, revealed at jettison, sprung free at SECO.
+  // Payload — TWO forms (#2 / operator decision 2026-07-29): a compact STOWED
+  // shroud while it rides the exposed stage (fairing gone → SECO), then the real
+  // deployed spacecraft (dedicated model or generic bus) springing free + its
+  // wings unfolding at separation. Real payloads ride folded under the fairing
+  // and deploy AFTER sep — showing the deployed model bolted to the rocket read
+  // wrong.
   const payload = buildPayload(opts.spacecraftId, vehLen);
+  // Crewed capsules ride exposed on top — no fairing, stowed shroud, or deploy.
+  const isCapsulePayload = payload.userData.isCapsule === true;
   payload.position.y = payloadBaseY;
   payload.visible = false;
   vehicle.add(payload);
+  const stowedPayload = buildStowedPayload(vehLen);
+  stowedPayload.position.y = payloadBaseY;
+  stowedPayload.visible = false;
+  vehicle.add(stowedPayload);
 
   // Separation-event bursts (flash + frost/debris puff) at each sep plane —
   // parented to the vehicle so they sit at the interface. Driven by sepProgress
@@ -483,6 +570,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // Fairing clamshell drifts slowly (item 4) so the halves linger in frame while
   // the payload is revealed — a held beat, not a snap-away.
   const FAIRING_SEP_S = 6.5;
+  // Payload deployment (#2): wings swing out + the bus blooms to full scale over
+  // this window after SECO, as the spacecraft springs free of the upper stage.
+  const PAYLOAD_DEPLOY_S = 3;
 
   const _v = new THREE.Vector3();
   const updateForces = (s: AscentState): void => {
@@ -578,22 +668,41 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       strapOnGroup.scale.setScalar(1 - 0.18 * sp);
     }
 
-    // Fairing: the two shells clamshell apart, rise, and tumble away.
-    const fp = sepProgress(s.t, fairingT, FAIRING_SEP_S);
-    fairingGroup.visible = fp < 1;
-    const spread = fp * vehLen * 2.4;
-    const rise = fairingBaseY + fp * vehLen * 1.2;
-    fairingHalfL.position.set(-spread, rise, 0);
-    fairingHalfR.position.set(spread, rise, 0);
-    fairingHalfL.rotation.z = fp * 1.3;
-    fairingHalfR.rotation.z = -fp * 1.3;
-
-    // Payload: revealed once the fairing is gone; springs free at SECO while
-    // the spent upper stage drifts back the other way.
+    // Payload separation. Two regimes: crewed capsules ride exposed on top;
+    // everything else rides folded under a jettisonable fairing.
     const pp = sepProgress(s.t, secoT, PAYLOAD_SEP_HOLD_S);
-    payload.visible = fairingT != null ? s.t >= fairingT : s.stageIndex < 0;
-    payload.position.y = payloadBaseY + pp * vehLen * 1.1;
-    payload.rotation.y = s.t * 0.12;
+    stowedPayload.position.y = payloadBaseY;
+    if (isCapsulePayload) {
+      // Crewed capsule: exposed the whole ascent (no fairing, no stowed shroud,
+      // no solar-wing deploy). At SECO it separates from the spent upper stage,
+      // which drifts back the other way (below).
+      fairingGroup.visible = false;
+      stowedPayload.visible = false;
+      payload.visible = true;
+      payload.position.y = payloadBaseY + pp * vehLen * 1.1;
+      payload.rotation.y = 0;
+    } else {
+      // Fairing: the two shells clamshell apart, rise, and tumble away.
+      const fp = sepProgress(s.t, fairingT, FAIRING_SEP_S);
+      fairingGroup.visible = fp < 1;
+      const spread = fp * vehLen * 2.4;
+      const rise = fairingBaseY + fp * vehLen * 1.2;
+      fairingHalfL.position.set(-spread, rise, 0);
+      fairingHalfR.position.set(spread, rise, 0);
+      fairingHalfL.rotation.z = fp * 1.3;
+      fairingHalfR.rotation.z = -fp * 1.3;
+
+      // While it rides the exposed stage (fairing gone → SECO) show the compact
+      // STOWED shroud; at SECO it springs free as the real deployed model, wings
+      // unfolding over the deploy window.
+      const exposed = fairingT != null ? s.t >= fairingT : s.stageIndex < 0;
+      const separated = secoT != null && s.t >= secoT;
+      stowedPayload.visible = exposed && !separated;
+      payload.visible = separated || (secoT == null && exposed);
+      payload.position.y = payloadBaseY + pp * vehLen * 1.1;
+      payload.rotation.y = s.t * 0.12;
+      deployPayload(payload, sepProgress(s.t, secoT, PAYLOAD_DEPLOY_S));
+    }
     upperStage.position.y = -pp * vehLen * 1.4;
 
     // Separation bursts — the visible pyro/pusher event at each sep plane.

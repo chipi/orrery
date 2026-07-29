@@ -507,8 +507,13 @@ const earthCapsules = [
   ],
   [
     'vostok-sphere',
-    'Vostok / Voskhod',
-    'The spherical Sharik descent module with antenna straps and equipment collar.',
+    'Vostok',
+    'The spherical Sharik descent module — antenna straps and equipment collar; the cosmonaut ejected and parachuted down separately.',
+  ],
+  [
+    'voskhod-sphere',
+    'Voskhod',
+    'The same Sharik sphere, now carrying the solid-propellant soft-landing retro package on a strut truss — the crew rode it to the ground.',
   ],
   [
     'apollo-cm',
@@ -528,14 +533,13 @@ const earthCapsules = [
   [
     'shenzhou-reentry',
     'Shenzhou reentry module',
-    'The bell-shaped descent capsule between the orbital and service modules (Shenzhou-1 onward).',
+    'A broad Soyuz-lineage bell — its own lighter-silver hull with a grey equipment band (Shenzhou-1 onward).',
   ],
 ].map(mk('model-capsule', 'Earth-orbit re-entry', '/fly'));
 
 const models3d = [
   ...spacecraft,
   ...launchers,
-  ...earthCapsules,
   ...moonModels,
   ...marsModels,
   ...venusModels,
@@ -716,6 +720,7 @@ const manifest = {
   diagrams_science: science,
   posters,
   models3d,
+  capsules: earthCapsules,
   canvas2d,
   ui,
   writing,
@@ -724,6 +729,7 @@ const manifest = {
     diagrams_science: science.length,
     posters: posters.length,
     models3d: models3d.length,
+    capsules: earthCapsules.length,
     canvas2d: canvas2d.length,
     ui: ui.length,
     writing: writing.length,

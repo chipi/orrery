@@ -1063,6 +1063,19 @@
           } else {
             selectSite(siteParam, { face: true });
           }
+          // Arriving from a completed /fly descent (?from=descent) → drop the user
+          // straight INTO the landing-site ground panorama once the arrival
+          // fly-in settles, rather than resting on the orbital marker. Graceful:
+          // sites without a tier-3 panorama just stay on the framed marker.
+          if ($page.url.searchParams.get('from') === 'descent') {
+            const arrivedSite = sites.find((x) => x.id === siteParam);
+            const pano = arrivedSite?.hotspot_tier3_panorama;
+            if (pano) {
+              setTimeout(() => {
+                if (!panoramaActive) enterPanorama(`${base}${pano}`, siteParam);
+              }, 1400);
+            }
+          }
         }
       })
       .catch((err) => {

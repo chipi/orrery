@@ -115,8 +115,11 @@ export function atlasVSrbCount(displayName: string | undefined): number {
   return m ? Number(m[2]) : 0;
 }
 
-/** Launcher ids with a hand-authored flagship JSON (real per-vehicle data). */
-const FLAGSHIP_IDS = new Set<string>([
+/** Launcher ids with a hand-authored flagship JSON (real per-vehicle data).
+ *  MUST list every file under static/data/launch-profiles/ — an id here but no
+ *  file (or a file but not here) means the mission silently falls back to the
+ *  generic profile. The launch-profile-registry test guards this both ways. */
+export const FLAGSHIP_IDS = new Set<string>([
   'falcon-9',
   'atlas-v',
   'saturn-v',
@@ -129,6 +132,13 @@ const FLAGSHIP_IDS = new Set<string>([
   'atlas-lv-3b',
   'space-shuttle-stack',
   'starship',
+  // These flagship JSONs existed but were absent from the allowlist, so missions
+  // silently fell back to the generic 2-stage profile — losing the real strap-on
+  // separation (e.g. Long March 2F's boosters + the R-7 Korolev cross). 2026-07.
+  'long-march-2f',
+  'soyuz',
+  'voskhod-11a57',
+  'mercury-redstone',
 ]);
 
 interface FleetRef {

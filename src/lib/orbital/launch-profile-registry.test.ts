@@ -6,6 +6,7 @@ import {
   buildGenericProfile,
   loadLaunchProfile,
   atlasVSrbCount,
+  FLAGSHIP_IDS,
 } from './launch-profile-registry';
 import { integrateAscent } from './ascent-physics';
 
@@ -254,5 +255,22 @@ describe('loadLaunchProfile — Atlas V variant SRBs (#412 follow-up)', () => {
     // The 5-SRB stack lights ~8,440 kN extra at liftoff → higher liftoff TWR.
     expect(s551.states[0].twr).toBeGreaterThan(s401.states[0].twr);
     expect(s551.states.length).toBeGreaterThan(1);
+  });
+});
+
+describe('FLAGSHIP_IDS ↔ launch-profiles/ files', () => {
+  it('every profile JSON is in FLAGSHIP_IDS and vice versa (no silent generic fallback)', async () => {
+    const { readdirSync } = await import('node:fs');
+    const { resolve } = await import('node:path');
+    const dir = resolve(__dirname, '../../../static/data/launch-profiles');
+    const files = readdirSync(dir)
+      .filter((f) => f.endsWith('.json'))
+      .map((f) => f.replace(/\.json$/, ''))
+      .sort();
+    const ids = [...FLAGSHIP_IDS].sort();
+    // A file with no allowlist entry → never loaded (silent generic fallback).
+    for (const f of files) expect(ids, `profile ${f}.json not in FLAGSHIP_IDS`).toContain(f);
+    // An allowlist entry with no file → loadLaunchProfile 404s to generic.
+    for (const id of ids) expect(files, `FLAGSHIP_IDS has ${id} but no profile file`).toContain(id);
   });
 });

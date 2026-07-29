@@ -1,0 +1,43 @@
+{
+  "id": "starship",
+  "name": "Starship / Super Heavy",
+  "source_tier": "flagship",
+  "payloadKg": 100000,
+  "fairingKg": 0,
+  "refAreaM2": 63.6,
+  "cd": 0.3,
+  "launchSite": { "lat": 25.997, "lon": -97.155, "name": "Starbase · Boca Chica" },
+  "pitchProgram": [[0, 90], [15, 89], [50, 68], [120, 44], [169, 30], [300, 12], [480, 3]],
+  "stages": [
+    {
+      "name": "Super Heavy",
+      "wetKg": 3675000,
+      "dryKg": 275000,
+      "thrustSlKN": 74400,
+      "thrustVacKN": 80300,
+      "ispSlS": 327,
+      "ispVacS": 347,
+      "engines": 33,
+      "chamberTempK": 3600
+    },
+    {
+      "name": "Starship",
+      "wetKg": 1500000,
+      "dryKg": 120000,
+      "thrustVacKN": 13500,
+      "ispVacS": 363,
+      "engines": 6,
+      "chamberTempK": 3600
+    }
+  ],
+  "provenance": [
+    {
+      "l": "SpaceX — Starship",
+      "u": "https://www.spacex.com/vehicles/starship/"
+    },
+    {
+      "l": "Wikipedia — SpaceX Starship",
+      "u": "https://en.wikipedia.org/wiki/SpaceX_Starship"
+    }
+  ]
+}

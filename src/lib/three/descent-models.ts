@@ -82,11 +82,45 @@ function palette(): Palette {
   };
 }
 
-/** A 70°-half-angle sphere-cone heat-shield, apex pointing DOWN (into the flow). */
-function sphereConeHeatshield(radius: number, mat: THREE.Material): THREE.Mesh {
-  const geo = new THREE.ConeGeometry(radius, radius * 0.55, 32, 1, false);
-  const m = new THREE.Mesh(geo, mat);
-  m.rotation.x = Math.PI; // apex down
+/**
+ * A 70° sphere-cone heat-shield (the real Mars/entry aeroshell forebody): a
+ * SHALLOW blunt cone with a spherically-rounded nose, not a steep point. Built
+ * nose-up (rim at y=0, tip at +y) so the scene's rotation.x=π puts the blunt
+ * nose forward. Concentric ablator tile rings + a bright structural rim give it
+ * real surface detail instead of reading as a smooth balloon.
+ */
+function sphereConeHeatshield(
+  radius: number,
+  mat: THREE.Material,
+  rimMat: THREE.Material,
+): THREE.Mesh {
+  const depth = radius * 0.4; // shallow — 70° sphere-cone, not a tall cone
+  const prof: THREE.Vector2[] = [
+    new THREE.Vector2(radius, 0), // rim (max diameter, the joint)
+    new THREE.Vector2(radius * 0.9, depth * 0.28),
+    new THREE.Vector2(radius * 0.7, depth * 0.54),
+    new THREE.Vector2(radius * 0.44, depth * 0.78),
+    new THREE.Vector2(radius * 0.2, depth * 0.94),
+    new THREE.Vector2(0, depth), // rounded nose
+  ];
+  const m = new THREE.Mesh(new THREE.LatheGeometry(prof, 44), mat);
+  // Concentric ablator tile grooves.
+  const groove = new THREE.MeshStandardMaterial({
+    color: 0x3a2817,
+    roughness: 0.9,
+    metalness: 0.08,
+  });
+  for (const f of [0.32, 0.56, 0.78]) {
+    const yr = depth * (1 - f) * 0.72;
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(radius * f, radius * 0.01, 6, 44), groove);
+    ring.rotation.x = Math.PI / 2;
+    ring.position.y = yr;
+    m.add(ring);
+  }
+  // Bright structural rim at the max-diameter joint.
+  const rim = new THREE.Mesh(new THREE.TorusGeometry(radius, radius * 0.03, 8, 48), rimMat);
+  rim.rotation.x = Math.PI / 2;
+  m.add(rim);
   return m;
 }
 
@@ -351,21 +385,43 @@ function buildLunarStack(lander: THREE.Group, vehLen: number): DescentModel {
  *  all atmospheric-entry archetypes. */
 function addAeroshell(m: DescentModel, p: Palette, vehLen: number): void {
   const r = vehLen * 0.42;
-  // Heat-shield (front) + backshell (aft) meet at the max-diameter joint to form
-  // a CLOSED capsule around the stowed lander — the heat-shield's wide rim sits
-  // at the joint (y≈0.04), not floating below with a gap.
-  m.heatshield = sphereConeHeatshield(r, p.shield);
-  m.heatshieldBaseY = -vehLen * 0.076;
+  const joint = vehLen * 0.04; // max-diameter joint where the two halves meet
+  // Heat-shield (front, 70° sphere-cone) — its wide rim sits AT the joint (nose
+  // down after rotation.x=π), closing the capsule around the stowed lander.
+  m.heatshield = sphereConeHeatshield(r, p.shield, p.metal);
+  m.heatshieldBaseY = joint;
   m.heatshield.position.y = m.heatshieldBaseY;
+  m.heatshield.rotation.x = Math.PI; // blunt nose forward (down)
   m.root.add(m.heatshield);
 
+  // Backshell (aft) — a truncated cone tapering to the parachute-cover cone, with
+  // longeron panel lines. Not a smooth hemisphere balloon.
   m.backshell = new THREE.Group();
-  const cover = new THREE.Mesh(
-    new THREE.SphereGeometry(r, 28, 14, 0, Math.PI * 2, 0, Math.PI * 0.5),
+  const frustumH = vehLen * 0.34;
+  const topR = r * 0.42;
+  const frustum = new THREE.Mesh(
+    new THREE.CylinderGeometry(topR, r, frustumH, 32, 1, true),
     p.shell,
   );
-  cover.position.y = vehLen * 0.04;
-  m.backshell.add(cover);
+  frustum.position.y = joint + frustumH / 2;
+  m.backshell.add(frustum);
+  // Parachute-cover cone cap on top.
+  const cap = new THREE.Mesh(
+    new THREE.CylinderGeometry(topR * 0.4, topR, vehLen * 0.08, 32),
+    p.shell,
+  );
+  cap.position.y = joint + frustumH + vehLen * 0.03;
+  m.backshell.add(cap);
+  // Structural seam rings around the backshell (lie flat on the cone).
+  const line = new THREE.MeshStandardMaterial({ color: 0x9a958a, roughness: 0.7, metalness: 0.25 });
+  for (const f of [0.28, 0.62]) {
+    const ry = joint + frustumH * f;
+    const rr = r + (topR - r) * f; // cone radius at this height
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(rr * 1.005, r * 0.012, 6, 40), line);
+    ring.rotation.x = Math.PI / 2;
+    ring.position.y = ry;
+    m.backshell.add(ring);
+  }
   m.backshellBaseY = 0;
   m.root.add(m.backshell);
 }

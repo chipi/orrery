@@ -495,7 +495,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const terminalPhase =
       s.phaseKind === 'skycrane' ||
       s.phaseKind === 'powered_retro' ||
-      s.phaseKind === 'airbag_bounce';
+      s.phaseKind === 'airbag_bounce' ||
+      s.phaseKind === 'aeroshell_descent'; // Venus: sphere descends after backshell sep
     const landerShown = !aeroshellBody || hp > 0.04 || terminalPhase;
     model.lander.visible = landerShown;
     model.descentStage.visible = landerShown;

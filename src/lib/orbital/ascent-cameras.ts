@@ -131,40 +131,55 @@ export function buildShotSchedule(inp: ScheduleInputs): ShotWindow[] {
   const tOf = (type: AscentEvent['type']): number | undefined =>
     inp.events.find((e) => e.type === type)?.t;
 
-  const staging = tOf('staging');
   const seco = tOf('seco') ?? inp.duration;
   const maxQ = Math.max(TOWER_CLEAR_END + 1, inp.maxQt || inp.duration * 0.2);
-  // Onboard phase runs from Max-Q to staging (or, absent staging, to SECO).
-  const onboardEnd = staging ?? seco;
-  const stagingEnd = staging != null ? staging + STAGING_HOLD : onboardEnd;
   // Payload separation holds briefly after SECO, then the serene orbit coast.
   const sepEnd = seco + PAYLOAD_SEP_HOLD_S;
-  // Dedicated fairing-jettison beat, if the fairing drops between staging + SECO.
   const fairing = tOf('fairing_jettison');
-  const fairingStart = fairing != null ? fairing - 1 : undefined;
-  const fairingEnd = fairing != null ? Math.min(seco, fairing + FAIRING_HOLD) : undefined;
-  const showFairing = fairingStart != null && fairingStart > stagingEnd && fairingStart < seco;
 
-  const raw: ShotWindow[] = [
+  // A dedicated camera beat for EVERY separation, not just the first: each
+  // 'staging' event (strap-on jettison, the core drop/MECO, and each mid-stage
+  // of a 3+-stage vehicle) plus fairing jettison, in time order. The
+  // AscentCameraDebug plot renders this schedule, so every separation gets both
+  // a camera cut AND a debug-window marker — previously only the first staging,
+  // fairing, and SECO were beated, so the core drop + mid-stage sep were unmarked.
+  const beats = [
+    ...inp.events
+      .filter((e) => e.type === 'staging')
+      .map((e) => ({ name: 'staging' as const, t: e.t })),
+    ...(fairing != null ? [{ name: 'fairing' as const, t: fairing }] : []),
+  ]
+    .filter((b) => b.t > maxQ && b.t < seco)
+    .sort((a, b) => a.t - b.t);
+
+  const windows: ShotWindow[] = [
     { name: 'pad', tStart: 0, tEnd: PAD_END },
     { name: 'tower_clear', tStart: PAD_END, tEnd: TOWER_CLEAR_END },
     { name: 'ascent', tStart: TOWER_CLEAR_END, tEnd: maxQ },
-    { name: 'onboard_down', tStart: maxQ, tEnd: onboardEnd },
-    ...(staging != null ? [{ name: 'staging' as const, tStart: staging, tEnd: stagingEnd }] : []),
-    ...(showFairing
-      ? [
-          { name: 'chase' as const, tStart: stagingEnd, tEnd: fairingStart! },
-          { name: 'fairing' as const, tStart: fairingStart!, tEnd: fairingEnd! },
-          { name: 'chase' as const, tStart: fairingEnd!, tEnd: seco },
-        ]
-      : [{ name: 'chase' as const, tStart: stagingEnd, tEnd: seco }]),
-    { name: 'separation', tStart: seco, tEnd: sepEnd },
-    { name: 'orbit', tStart: sepEnd, tEnd: Math.max(sepEnd, inp.duration) },
   ];
+  // Fill Max-Q → SECO: the gap before the FIRST separation is the below-the-
+  // rocket 'onboard_down'; later gaps are tracking 'chase' shots. `cursor` keeps
+  // the schedule contiguous (each window starts where the previous ends).
+  let cursor = maxQ;
+  let firstGap = true;
+  for (const b of beats) {
+    if (b.t <= cursor) continue; // overlapping / out of order — preserve contiguity
+    windows.push({ name: firstGap ? 'onboard_down' : 'chase', tStart: cursor, tEnd: b.t });
+    firstGap = false;
+    const hold = b.name === 'fairing' ? FAIRING_HOLD : STAGING_HOLD;
+    const holdEnd = Math.min(b.t + hold, seco);
+    windows.push({ name: b.name, tStart: b.t, tEnd: holdEnd });
+    cursor = holdEnd;
+  }
+  if (seco > cursor) {
+    windows.push({ name: firstGap ? 'onboard_down' : 'chase', tStart: cursor, tEnd: seco });
+  }
+  windows.push({ name: 'separation', tStart: seco, tEnd: sepEnd });
+  windows.push({ name: 'orbit', tStart: sepEnd, tEnd: Math.max(sepEnd, inp.duration) });
 
   // Drop inverted/empty windows (can happen when beats bunch up on a
   // short or underpowered flight) so the selector never sees a gap.
-  return raw.filter((w) => w.tEnd > w.tStart);
+  return windows.filter((w) => w.tEnd > w.tStart);
 }
 
 /** The active shot at time `t` — clamps to the first/last window. */

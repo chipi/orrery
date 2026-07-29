@@ -102,23 +102,27 @@ function buildVikingTripod(color: string): THREE.Group {
     pad.position.set(Math.cos(ang) * 0.6, 0.02, Math.sin(ang) * 0.6);
     g.add(pad);
   }
-  // S-band high-gain dish on a boom.
+  // S-band high-gain dish on a boom — deployed/aimed after landing.
+  const dishGroup = new THREE.Group();
+  dishGroup.userData.surfaceOnly = true;
   const boom = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 0.55, 4), silverMat());
   boom.position.set(0.3, 0.65, 0);
   boom.rotation.z = -0.7;
-  g.add(boom);
+  dishGroup.add(boom);
   const dish = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.04, 12), goldMat());
   dish.position.set(0.55, 0.95, 0);
   dish.rotation.x = -0.6;
-  g.add(dish);
+  dishGroup.add(dish);
+  g.add(dishGroup);
   // RTG cube on top.
   const rtg = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.16, 0.18), darkMat());
   rtg.position.set(-0.18, 0.55, 0);
   g.add(rtg);
-  // Surface-sampler arm — short articulated boom out the front.
+  // Surface-sampler arm — deployed after landing.
   const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.5, 4), silverMat());
   arm.position.set(0, 0.45, 0.4);
   arm.rotation.x = Math.PI / 2;
+  arm.userData.surfaceOnly = true;
   g.add(arm);
   return g;
 }
@@ -136,21 +140,27 @@ function buildPathfinder(color: string): THREE.Group {
   core.position.y = 0.2;
   g.add(core);
   // 4 deployed petals — flat panels splayed flat on the ground around
-  // the core. Solar cells on the upper face.
+  // the core. Solar cells on the upper face. Open only after touchdown.
+  const petals = new THREE.Group();
+  petals.userData.surfaceOnly = true;
   for (let i = 0; i < 4; i++) {
     const ang = (i / 4) * Math.PI * 2 + Math.PI / 4;
     const petal = new THREE.Mesh(new THREE.BoxGeometry(0.36, 0.025, 0.32), panelMat());
     petal.position.set(Math.cos(ang) * 0.38, 0.04, Math.sin(ang) * 0.38);
     petal.rotation.y = ang;
-    g.add(petal);
+    petals.add(petal);
   }
-  // Imager mast.
+  g.add(petals);
+  // Imager mast — erected after petal opening.
+  const mastGroup = new THREE.Group();
+  mastGroup.userData.surfaceOnly = true;
   const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 0.45, 4), silverMat());
   mast.position.set(0, 0.55, 0);
-  g.add(mast);
+  mastGroup.add(mast);
   const camera = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.05, 0.08), darkMat());
   camera.position.set(0, 0.82, 0);
-  g.add(camera);
+  mastGroup.add(camera);
+  g.add(mastGroup);
   // Sojourner — tiny microwave-oven-sized 6-wheel rover beside.
   const soj = new THREE.Group();
   const sojBody = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.08, 0.16), panelMat());
@@ -164,6 +174,7 @@ function buildPathfinder(color: string): THREE.Group {
     }
   }
   soj.position.set(0.55, 0, 0.1);
+  soj.userData.surfaceOnly = true; // rolled off the lander ramps after touchdown
   g.add(soj);
   return g;
 }
@@ -191,16 +202,20 @@ function buildMERRover(color: string): THREE.Group {
       g.add(wheel);
     }
   }
-  // Pancam mast.
+  // Pancam mast — erected after airbag bounce / petal opening.
+  const mastGroup = new THREE.Group();
+  mastGroup.userData.surfaceOnly = true;
   const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 0.55, 4), silverMat());
   mast.position.set(0.18, 0.62, 0);
-  g.add(mast);
+  mastGroup.add(mast);
   const head = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.06, 0.08), darkMat());
   head.position.set(0.18, 0.92, 0);
-  g.add(head);
-  // Low-gain antenna stub.
+  mastGroup.add(head);
+  g.add(mastGroup);
+  // Low-gain antenna stub — deployed after landing.
   const lga = new THREE.Mesh(new THREE.CylinderGeometry(0.01, 0.01, 0.2, 4), silverMat());
   lga.position.set(-0.2, 0.5, 0);
+  lga.userData.surfaceOnly = true;
   g.add(lga);
   return g;
 }
@@ -236,22 +251,27 @@ function buildMSLClass(color: string, withHelicopter: boolean): THREE.Group {
       g.add(wheel);
     }
   }
-  // Tall mast with camera head.
+  // Tall mast with camera head — erected after skycrane touchdown.
+  const mastGroup = new THREE.Group();
+  mastGroup.userData.surfaceOnly = true;
   const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.016, 0.016, 0.7, 4), silverMat());
   mast.position.set(0.22, 0.78, 0);
-  g.add(mast);
+  mastGroup.add(mast);
   const head = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.08, 0.1), darkMat());
   head.position.set(0.22, 1.16, 0);
-  g.add(head);
-  // High-gain antenna dish.
+  mastGroup.add(head);
+  g.add(mastGroup);
+  // High-gain antenna dish — deployed after landing.
   const dish = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.13, 0.03, 12), goldMat());
   dish.position.set(0.1, 0.5, -0.22);
   dish.rotation.x = -0.5;
+  dish.userData.surfaceOnly = true;
   g.add(dish);
-  // Robotic arm — folded against the front in stow pose.
+  // Robotic arm — unstowed after touchdown.
   const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.45, 4), silverMat());
   arm.position.set(0.42, 0.32, 0.18);
   arm.rotation.z = 0.5;
+  arm.userData.surfaceOnly = true;
   g.add(arm);
   if (withHelicopter) {
     g.add(buildIngenuity(color));
@@ -263,6 +283,7 @@ function buildMSLClass(color: string, withHelicopter: boolean): THREE.Group {
  *  Parked beside the Perseverance marker as a separate sub-group. */
 function buildIngenuity(color: string): THREE.Group {
   const h = new THREE.Group();
+  h.userData.surfaceOnly = true; // dropped from the rover belly after touchdown
   // 4 thin legs.
   for (let i = 0; i < 4; i++) {
     const ang = (i / 4) * Math.PI * 2 + Math.PI / 4;
@@ -317,17 +338,21 @@ function buildPhoenixClass(color: string): THREE.Group {
     pad.position.set(Math.cos(ang) * 0.5, 0.02, Math.sin(ang) * 0.5);
     g.add(pad);
   }
-  // Two large round solar arrays on opposite sides.
+  // Two large round solar arrays on opposite sides — unfurl after touchdown.
+  const solarArrays = new THREE.Group();
+  solarArrays.userData.surfaceOnly = true;
   for (const dx of [-1, 1]) {
     const array = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.32, 0.025, 16), panelMat());
     array.position.set(dx * 0.55, 0.4, 0);
     array.rotation.x = Math.PI / 2;
-    g.add(array);
+    solarArrays.add(array);
   }
-  // Robotic arm — folded to the front.
+  g.add(solarArrays);
+  // Robotic arm — deployed after landing.
   const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 0.45, 4), silverMat());
   arm.position.set(0, 0.4, 0.34);
   arm.rotation.x = 1.0;
+  arm.userData.surfaceOnly = true;
   g.add(arm);
   // Instrument dome on top.
   const dome = new THREE.Mesh(new THREE.SphereGeometry(0.09, 12, 8), darkMat());
@@ -350,18 +375,22 @@ function buildSovietPetal(color: string): THREE.Group {
   capsule.position.y = 0.42;
   g.add(capsule);
   // 4 deployed petals — flat triangular panels splayed out at ground
-  // level around the base.
+  // level around the base. Open after touchdown, not during descent.
+  const petals = new THREE.Group();
+  petals.userData.surfaceOnly = true;
   for (let i = 0; i < 4; i++) {
     const ang = (i / 4) * Math.PI * 2;
     const petal = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.02, 0.34), silverMat());
     petal.position.set(Math.cos(ang) * 0.42, 0.05, Math.sin(ang) * 0.42);
     petal.rotation.y = ang;
     petal.rotation.z = -0.35;
-    g.add(petal);
+    petals.add(petal);
   }
-  // Antenna whip on top.
+  g.add(petals);
+  // Antenna whip — deployed after touchdown.
   const antenna = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 0.4, 4), silverMat());
   antenna.position.y = 0.95;
+  antenna.userData.surfaceOnly = true;
   g.add(antenna);
   return g;
 }
@@ -379,12 +408,15 @@ function buildBeagle2(color: string): THREE.Group {
   disc.position.y = 0.08;
   g.add(disc);
   // 2 of 4 petals open — only "north" and "east" deployed; the other
-  // two stuck closed (matches HiRISE observation).
+  // two stuck closed (matches HiRISE observation). All petal states are
+  // post-touchdown deployment.
+  const petals = new THREE.Group();
+  petals.userData.surfaceOnly = true;
   for (const ang of [0, Math.PI / 2]) {
     const petal = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.02, 0.26), panelMat());
     petal.position.set(Math.cos(ang) * 0.36, 0.04, Math.sin(ang) * 0.36);
     petal.rotation.y = ang;
-    g.add(petal);
+    petals.add(petal);
   }
   // 2 petals stuck closed — represented as raised quarter-segments
   // around the disc.
@@ -392,13 +424,15 @@ function buildBeagle2(color: string): THREE.Group {
     const stuck = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.08, 0.16), silverMat());
     stuck.position.set(Math.cos(ang) * 0.22, 0.14, Math.sin(ang) * 0.22);
     stuck.rotation.y = ang;
-    g.add(stuck);
+    petals.add(stuck);
   }
+  g.add(petals);
   // Tiny instrument arm — Beagle 2 had the famous PAW (Position
-  // Adjustable Workbench). Render as a stubby arm out the front.
+  // Adjustable Workbench). Deployed after touchdown.
   const paw = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.22, 4), darkMat());
   paw.position.set(0.18, 0.18, 0);
   paw.rotation.z = 1.0;
+  paw.userData.surfaceOnly = true;
   g.add(paw);
   return g;
 }

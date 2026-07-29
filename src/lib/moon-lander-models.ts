@@ -192,6 +192,9 @@ function buildLuna9(color: string): THREE.Group {
   body.position.y = 0.28;
   g.add(body);
   // 4 open petals — flat triangles around the equator angled outward.
+  // Opened after touchdown, not during descent.
+  const petals = new THREE.Group();
+  petals.userData.surfaceOnly = true;
   for (let i = 0; i < 4; i++) {
     const ang = (i / 4) * Math.PI * 2;
     const petal = new THREE.Mesh(
@@ -207,17 +210,21 @@ function buildLuna9(color: string): THREE.Group {
     // Lay petal nearly flat, pointing outward.
     petal.rotation.z = -Math.cos(ang) * 1.35;
     petal.rotation.x = Math.sin(ang) * 1.35;
-    g.add(petal);
+    petals.add(petal);
   }
-  // Antennas — 4 thin wire whiskers reaching outward + up.
+  g.add(petals);
+  // Antennas — 4 thin wire whiskers deployed after landing.
+  const whiskers = new THREE.Group();
+  whiskers.userData.surfaceOnly = true;
   for (let i = 0; i < 4; i++) {
     const ang = (i / 4) * Math.PI * 2 + Math.PI / 4;
     const whisker = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.008, 0.55, 3), silverMat());
     whisker.position.set(Math.cos(ang) * 0.2, 0.55, Math.sin(ang) * 0.2);
     whisker.rotation.z = -Math.cos(ang) * 0.6;
     whisker.rotation.x = Math.sin(ang) * 0.6;
-    g.add(whisker);
+    whiskers.add(whisker);
   }
+  g.add(whiskers);
   // Accent ring.
   const ring = new THREE.Mesh(new THREE.TorusGeometry(0.3, 0.012, 6, 24), accentMat(color));
   ring.position.y = 0.28;
@@ -276,9 +283,11 @@ function buildLunokhod(color: string): THREE.Group {
   hull.position.y = 0.22;
   g.add(hull);
   // Conical lid hinged open at the back, exposing solar cells inside.
+  // Opens after deployment on the surface.
   const lid = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.34, 0.3, 16, 1, true), panelMat());
   lid.position.set(-0.05, 0.5, -0.18);
   lid.rotation.x = -0.7;
+  lid.userData.surfaceOnly = true;
   g.add(lid);
   // 8 wire-spoke wheels — 4 per side.
   for (const dz of [-0.22, 0.22]) {
@@ -289,13 +298,16 @@ function buildLunokhod(color: string): THREE.Group {
       g.add(wheel);
     }
   }
-  // Forward-mounted instrument boom + camera turret.
+  // Forward-mounted instrument boom + camera turret — deployed on surface.
+  const boomGroup = new THREE.Group();
+  boomGroup.userData.surfaceOnly = true;
   const boom = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 0.18, 4), silverMat());
   boom.position.set(0.32, 0.4, 0);
-  g.add(boom);
+  boomGroup.add(boom);
   const cam = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.05, 0.08), darkMat());
   cam.position.set(0.32, 0.5, 0);
-  g.add(cam);
+  boomGroup.add(cam);
+  g.add(boomGroup);
   // Accent stripe along the side for agency colour.
   const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.02, 0.02), accentMat(color));
   stripe.position.set(0, 0.31, 0.38);
@@ -327,19 +339,25 @@ function buildChangeLander(color: string): THREE.Group {
     pad.position.set(Math.cos(ang) * 0.48, 0.02, Math.sin(ang) * 0.48);
     g.add(pad);
   }
-  // Two long solar wings deployed horizontally.
+  // Two long solar wings deployed horizontally — unfold after touchdown.
+  const solarWings = new THREE.Group();
+  solarWings.userData.surfaceOnly = true;
   for (const dx of [-1, 1]) {
     const wing = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.02, 0.32), panelMat());
     wing.position.set(dx * 0.55, 0.42, 0);
-    g.add(wing);
+    solarWings.add(wing);
   }
-  // Top-mounted camera mast.
+  g.add(solarWings);
+  // Top-mounted camera mast — erected after landing.
+  const mastGroup = new THREE.Group();
+  mastGroup.userData.surfaceOnly = true;
   const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 0.4, 4), silverMat());
   mast.position.y = 0.65;
-  g.add(mast);
+  mastGroup.add(mast);
   const cam = new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.05, 0.05), darkMat());
   cam.position.y = 0.88;
-  g.add(cam);
+  mastGroup.add(cam);
+  g.add(mastGroup);
   // Accent ring.
   const ring = new THREE.Mesh(new THREE.TorusGeometry(0.32, 0.012, 6, 24), accentMat(color));
   ring.position.y = 0.18;
@@ -399,20 +417,26 @@ function buildYutuRover(color: string): THREE.Group {
       g.add(wheel);
     }
   }
-  // Two upright gold solar panels above the chassis.
+  // Two upright gold solar panels — fold out after rover is deployed.
+  const solarPanels = new THREE.Group();
+  solarPanels.userData.surfaceOnly = true;
   for (const dx of [-0.08, 0.08]) {
     const panel = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.18, 0.02), panelMat());
     panel.position.set(dx, 0.32, 0);
     panel.rotation.z = dx > 0 ? -0.3 : 0.3;
-    g.add(panel);
+    solarPanels.add(panel);
   }
-  // Camera mast.
+  g.add(solarPanels);
+  // Camera mast — erected after rover deployment.
+  const mastGroup = new THREE.Group();
+  mastGroup.userData.surfaceOnly = true;
   const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.22, 4), silverMat());
   mast.position.set(0.18, 0.34, 0);
-  g.add(mast);
+  mastGroup.add(mast);
   const cam = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.04, 0.05), darkMat());
   cam.position.set(0.18, 0.48, 0);
-  g.add(cam);
+  mastGroup.add(cam);
+  g.add(mastGroup);
   // Accent stripe.
   const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.02, 0.02), accentMat(color));
   stripe.position.set(0, 0.23, 0.15);
@@ -443,21 +467,27 @@ function buildVikram(color: string): THREE.Group {
     pad.position.set(Math.cos(ang) * 0.55, 0.02, Math.sin(ang) * 0.55);
     g.add(pad);
   }
-  // 2 solar panels mounted on top, angled.
+  // 2 solar panels mounted on top, angled — deployed after touchdown.
+  const solarPanels = new THREE.Group();
+  solarPanels.userData.surfaceOnly = true;
   for (const dx of [-0.3, 0.3]) {
     const panel = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.02, 0.3), panelMat());
     panel.position.set(dx, 0.55, 0);
     panel.rotation.z = dx > 0 ? -0.4 : 0.4;
-    g.add(panel);
+    solarPanels.add(panel);
   }
-  // High-gain antenna on top.
+  g.add(solarPanels);
+  // High-gain antenna on top — deployed after landing.
+  const antGroup = new THREE.Group();
+  antGroup.userData.surfaceOnly = true;
   const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.15, 4), silverMat());
   mast.position.set(0, 0.62, 0);
-  g.add(mast);
+  antGroup.add(mast);
   const dish = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.015, 12), silverMat());
   dish.position.set(0, 0.72, 0);
   dish.rotation.x = Math.PI / 2;
-  g.add(dish);
+  antGroup.add(dish);
+  g.add(antGroup);
   // Pragyan rover parked beside Vikram — small 6-wheeled box.
   const rover = new THREE.Group();
   const chassis = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.07, 0.14), bodyMat(color));
@@ -475,6 +505,7 @@ function buildVikram(color: string): THREE.Group {
   panel.position.y = 0.16;
   rover.add(panel);
   rover.position.set(-0.55, 0, 0.25);
+  rover.userData.surfaceOnly = true; // rolls off Vikram ramps after touchdown
   g.add(rover);
   // Accent ring.
   const ring = new THREE.Mesh(new THREE.TorusGeometry(0.32, 0.012, 6, 24), accentMat(color));

@@ -207,30 +207,6 @@ function buildGeneric(vehLen: number, boosterCount = 0): LauncherModel {
   };
 }
 
-/** A ring of `n` downward engine bells on a base. */
-function engineRing(
-  n: number,
-  ringR: number,
-  bellR: number,
-  bellLen: number,
-  y: number,
-  mat: THREE.Material,
-): THREE.Group {
-  const g = new THREE.Group();
-  const add = (x: number, z: number): void => {
-    const b = nozzle(bellR, bellLen, mat);
-    b.position.set(x, y, z);
-    g.add(b);
-  };
-  if (n % 2 === 1) add(0, 0);
-  const ring = n % 2 === 1 ? n - 1 : n;
-  for (let i = 0; i < ring; i++) {
-    const a = (i / ring) * Math.PI * 2;
-    add(Math.cos(a) * ringR, Math.sin(a) * ringR);
-  }
-  return g;
-}
-
 /**
  * Saturn V — the unmistakable tapering three-stage stack: a very wide S-IC with
  * five F-1 bells, a narrower S-II, a slim S-IVB, capped by the Apollo CSM and
@@ -791,63 +767,96 @@ function buildSideBooster(
  * is the `upperStage` (flies on to deploy the payload).
  */
 function buildSpaceShuttle(vehLen: number): LauncherModel {
-  const white = new THREE.MeshStandardMaterial({
-    color: 0xeef0f3,
-    roughness: 0.5,
-    metalness: 0.08,
-  });
+  const white = heroWhite(0xeef0f3);
   const tank = new THREE.MeshStandardMaterial({
-    color: 0xb15c22,
-    roughness: 0.92,
-    metalness: 0.03,
-  }); // foam
-  const tile = new THREE.MeshStandardMaterial({
-    color: 0x191b20,
-    roughness: 0.68,
-    metalness: 0.12,
-  }); // TPS
-  const dark = new THREE.MeshStandardMaterial({ color: 0x2a2d33, roughness: 0.5, metalness: 0.4 });
-  const eng = new THREE.MeshStandardMaterial({ color: 0x2b2f36, roughness: 0.4, metalness: 0.7 });
+    color: 0xbf6a2c,
+    roughness: 0.95,
+    metalness: 0.02,
+    roughnessMap: stringerRoughness(60), // sprayed-on foam texture
+  });
+  const tile = heroDark(0x17191e); // TPS black
+  const metal = heroMetal(0xc4c9cf, 0.32);
+  const eng = heroMetal(0x33373e, 0.5);
+  const glass = new THREE.MeshStandardMaterial({
+    color: 0x0a0e16,
+    metalness: 0.9,
+    roughness: 0.12,
+  });
   const r = vehLen * 0.05;
   const root = new THREE.Group();
 
-  // ── External Tank — the rust spine with an ogive nose. (in `booster`.)
+  // ── External Tank — ribbed foam spine, ogive nose + tip, intertank band, and
+  //    the LO2 feedline + cable tray running down the +X face. (in `booster`.)
   const booster = new THREE.Group();
   const rET = r * 1.15;
   const etLen = vehLen * 0.74;
-  const et = new THREE.Mesh(new THREE.CylinderGeometry(rET * 0.97, rET, etLen, 32), tank);
-  et.position.y = vehLen * 0.05 + etLen / 2;
+  const etY = vehLen * 0.05;
+  const et = new THREE.Mesh(new THREE.CylinderGeometry(rET * 0.97, rET, etLen, 40), tank);
+  et.position.y = etY + etLen / 2;
+  // Ogive LOX-tank nose (tapered) + a metal tip.
   const etNose = new THREE.Mesh(
-    new THREE.SphereGeometry(rET, 24, 16, 0, Math.PI * 2, 0, Math.PI / 2),
+    new THREE.SphereGeometry(rET, 28, 18, 0, Math.PI * 2, 0, Math.PI / 2),
     tank,
   );
-  etNose.scale.y = 1.6;
-  etNose.position.y = vehLen * 0.05 + etLen;
-  booster.add(et, etNose);
-
+  etNose.scale.y = 1.7;
+  etNose.position.y = etY + etLen;
+  const etTip = new THREE.Mesh(new THREE.ConeGeometry(rET * 0.12, vehLen * 0.04, 12), metal);
+  etTip.position.y = etY + etLen + rET * 1.7;
+  // Intertank band (ribbed metal ring between LOX + LH2 tanks).
+  const intertank = new THREE.Mesh(
+    new THREE.CylinderGeometry(rET * 1.01, rET * 1.01, vehLen * 0.06, 40),
+    tank,
+  );
+  intertank.position.y = etY + etLen * 0.62;
+  booster.add(et, etNose, etTip, intertank);
+  booster.add(ringFrames(rET, etY + etLen * 0.58, etY + etLen * 0.66, 4, heroDark(0x8a5a30)));
+  // LO2 feedline + cable tray down the tank face toward the orbiter (+Z).
+  const feed = new THREE.Mesh(new THREE.CapsuleGeometry(rET * 0.1, etLen * 0.8, 6, 12), metal);
+  feed.position.set(rET * 0.5, etY + etLen * 0.5, rET * 0.78);
+  const tray = new THREE.Mesh(
+    new THREE.BoxGeometry(rET * 0.14, etLen * 0.82, rET * 0.08),
+    heroDark(0x7a4d28),
+  );
+  tray.position.set(-rET * 0.55, etY + etLen * 0.5, rET * 0.74);
+  booster.add(feed, tray);
   root.add(booster);
 
-  // ── Two SRBs flanking the tank (±X), white, segmented, pointed nose + nozzle.
-  //    They jettison at ~124 s — long before the ET at MECO — so they live in
-  //    their own group the scene drops at booster-sep.
+  // ── Two SRBs flanking the tank (±X): segmented case, flared aft skirt, forward
+  //    nose cap + frustum + separation-motor cluster, canted gimbal nozzle. They
+  //    jettison at ~124 s (before ET MECO) — own group for booster-sep.
   const strapOnGroup = new THREE.Group();
   const rSRB = r * 0.6;
   const srbLen = vehLen * 0.64;
   for (const sx of [-1, 1]) {
     const srb = new THREE.Group();
-    const body = new THREE.Mesh(new THREE.CylinderGeometry(rSRB, rSRB, srbLen, 24), white);
-    body.position.y = vehLen * 0.05 + srbLen / 2;
-    const nose = new THREE.Mesh(new THREE.ConeGeometry(rSRB, vehLen * 0.12, 24), white);
-    nose.position.y = vehLen * 0.05 + srbLen + vehLen * 0.06;
-    srb.add(body, nose, bell(rSRB * 0.82, vehLen * 0.05, eng, vehLen * 0.03));
-    for (const f of [0.32, 0.55, 0.78]) {
-      const band = new THREE.Mesh(
-        new THREE.CylinderGeometry(rSRB * 1.03, rSRB * 1.03, vehLen * 0.01, 24),
-        dark,
-      );
-      band.position.y = vehLen * 0.05 + srbLen * f;
-      srb.add(band);
+    const body = new THREE.Mesh(new THREE.CylinderGeometry(rSRB, rSRB, srbLen, 32), white);
+    body.position.y = etY + srbLen / 2;
+    // Forward frustum + ogive nose cap (holds the separation motors + chute).
+    const frustum = new THREE.Mesh(
+      new THREE.CylinderGeometry(rSRB * 0.62, rSRB, vehLen * 0.05, 32),
+      white,
+    );
+    frustum.position.y = etY + srbLen + vehLen * 0.025;
+    const noseCap = new THREE.Mesh(new THREE.ConeGeometry(rSRB * 0.62, vehLen * 0.09, 32), white);
+    noseCap.position.y = etY + srbLen + vehLen * 0.095;
+    // Segment field-joint rings (the SRB's signature banding).
+    srb.add(body, frustum, noseCap);
+    for (const f of [0.22, 0.42, 0.62, 0.82]) {
+      const joint = new THREE.Mesh(new THREE.TorusGeometry(rSRB * 1.01, rSRB * 0.03, 8, 32), metal);
+      joint.rotation.x = Math.PI / 2;
+      joint.position.y = etY + srbLen * f;
+      srb.add(joint);
     }
+    // Flared aft skirt + a canted gimbal nozzle.
+    const skirt = new THREE.Mesh(
+      new THREE.CylinderGeometry(rSRB, rSRB * 1.24, vehLen * 0.08, 32),
+      white,
+    );
+    skirt.position.y = etY + vehLen * 0.02;
+    srb.add(skirt);
+    const noz = detailBell(rSRB * 0.66, vehLen * 0.06, metal, eng);
+    noz.position.y = etY - vehLen * 0.02;
+    srb.add(noz);
     srb.position.set(sx * (rET + rSRB * 0.98), 0, -rET * 0.12);
     strapOnGroup.add(srb);
   }
@@ -869,10 +878,16 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   const fus = new THREE.Mesh(new THREE.CylinderGeometry(rFus * 0.82, rFus, bodyLen, 24), white);
   fus.scale.set(1.45, 1, 0.78);
   fus.position.set(0, yA + bodyLen / 2, oz);
-  // Short chunky black-tile nose.
+  // Short chunky black-tile nose cap + a band of cockpit windows just aft of it.
   const nose = new THREE.Mesh(new THREE.ConeGeometry(rFus * 0.92, vehLen * 0.12, 24), tile);
   nose.scale.set(1.45, 1, 0.78);
   nose.position.set(0, yNoseBase + vehLen * 0.05, oz);
+  const windows = new THREE.Mesh(
+    new THREE.CylinderGeometry(rFus * 0.86, rFus * 0.9, vehLen * 0.028, 24, 1, true, -0.6, 1.2),
+    glass,
+  );
+  windows.scale.set(1.45, 1, 0.78);
+  windows.position.set(0, yNoseBase - vehLen * 0.008, oz + rFus * 0.1);
 
   // Big low double-delta wing — a shape in the body plane (span X, chord Y),
   // extruded thin in Z; it rides ALONG the aft half of the body and sweeps
@@ -912,22 +927,37 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   const tail = new THREE.Mesh(tailGeo, white);
   tail.position.set(0, 0, oz + rFus * 0.42);
 
-  // OMS pods — two bumps flanking the tail base.
+  // OMS/RCS pods — two bumps flanking the tail base, each with a small black
+  //    OMS nozzle poking aft.
   const oms = new THREE.Group();
   for (const sx of [-1, 1]) {
     const pod = new THREE.Mesh(new THREE.CapsuleGeometry(rFus * 0.24, vehLen * 0.05, 6, 10), white);
     pod.rotation.x = Math.PI / 2;
     pod.position.set(sx * rFus * 0.6, yA + vehLen * 0.05, oz + rFus * 0.28);
-    oms.add(pod);
+    const omsNoz = new THREE.Mesh(
+      new THREE.CylinderGeometry(rFus * 0.09, rFus * 0.12, vehLen * 0.03, 12),
+      tile,
+    );
+    omsNoz.rotation.x = Math.PI;
+    omsNoz.position.set(sx * rFus * 0.6, yA + vehLen * 0.02, oz + rFus * 0.02);
+    oms.add(pod, omsNoz);
   }
 
-  // Three SSME bells clustered at the aft base.
-  const ssme = engineRing(3, rFus * 0.46, rFus * 0.3, vehLen * 0.05, 0, eng);
+  // Three SSME bells in the aft triangle (1 upper + 2 lower) — detailed nozzles.
+  const ssme = engineCluster('triple', 3, rFus * 0.62, vehLen * 0.05, 0, metal, eng);
   ssme.position.set(0, yA - vehLen * 0.004, oz);
+
+  // Body flap below the SSMEs + black wing leading edges (RCC).
+  const bodyFlap = new THREE.Mesh(
+    new THREE.BoxGeometry(rFus * 1.4, vehLen * 0.03, rFus * 0.12),
+    tile,
+  );
+  bodyFlap.position.set(0, yA - vehLen * 0.02, oz - rFus * 0.2);
 
   orbiter.add(
     fus,
     nose,
+    windows,
     mkWing(1, tile, -thick * 0.85), // black underside, tucked toward the belly
     mkWing(-1, tile, -thick * 0.85),
     mkWing(1, white),
@@ -935,6 +965,7 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
     tail,
     oms,
     ssme,
+    bodyFlap,
   );
   root.add(orbiter);
 

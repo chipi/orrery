@@ -29,6 +29,82 @@ const ATLAS_V_AJ60A: Omit<LaunchBoosters, 'count'> = {
 };
 
 /**
+ * Strap-on packs for "model-only" launchers — vehicles that have a bespoke 3D
+ * silhouette but no hand-authored flagship JSON, so they otherwise fall through
+ * to the boosterless generic profile. Without a `boosters` block the ascent
+ * physics never emits a strap-on staging event, so the (now-separable) strap-ons
+ * jettison at CORE staging instead of the correct earlier time. Attaching a
+ * booster pack fixes the timing; masses/thrust/Isp are approximate published
+ * per-booster values (PRD-032: honest, not per-flight-exact). The `count` matches
+ * what each 3D builder draws (launcher-models.ts) so telemetry, physics, and mesh
+ * agree. Same mechanism as the Atlas V AJ-60A injection above.
+ */
+const MODEL_ONLY_BOOSTERS: Record<string, LaunchBoosters> = {
+  // 4 liquid (YF-25) strap-ons — UDMH/N2O4, ~2.6 min burn.
+  'long-march-3b': {
+    name: 'L-40 (YF-25)',
+    count: 4,
+    wetKg: 41000,
+    dryKg: 3200,
+    thrustSlKN: 740,
+    thrustVacKN: 814,
+    ispSlS: 261,
+    ispVacS: 289,
+    chamberTempK: 3200,
+  },
+  // 4 kerolox boosters (2× YF-100 each) — the "Fat Five" liquid strap-ons.
+  // Trimmed propellant + a touch more thrust so they burn out clearly before the
+  // (generic) core stage rather than a few seconds shy of it.
+  'long-march-5': {
+    name: 'K3 (2×YF-100)',
+    count: 4,
+    wetKg: 138000,
+    dryKg: 12500,
+    thrustSlKN: 2600,
+    thrustVacKN: 2800,
+    ispSlS: 300,
+    ispVacS: 335,
+    chamberTempK: 3500,
+  },
+  // 6 PSOM-XL solids (PSLV-XL) — ground-lit; the air-lit pair is modelled together.
+  pslv: {
+    name: 'PSOM-XL',
+    count: 6,
+    wetKg: 15200,
+    dryKg: 2400,
+    thrustSlKN: 719,
+    thrustVacKN: 799,
+    ispSlS: 262,
+    ispVacS: 291,
+    chamberTempK: 3000,
+  },
+  // 2 S200 solids — among the largest solids flown; short, very high thrust.
+  lvm3: {
+    name: 'S200',
+    count: 2,
+    wetKg: 236000,
+    dryKg: 31000,
+    thrustSlKN: 5150,
+    thrustVacKN: 5300,
+    ispSlS: 227,
+    ispVacS: 274,
+    chamberTempK: 3300,
+  },
+  // 2 SRB-3 solids (H3-22 config, matching the mesh's default).
+  h3: {
+    name: 'SRB-3',
+    count: 2,
+    wetKg: 75000,
+    dryKg: 9000,
+    thrustSlKN: 2160,
+    thrustVacKN: 2300,
+    ispSlS: 274,
+    ispVacS: 284,
+    chamberTempK: 3200,
+  },
+};
+
+/**
  * Atlas V solid-booster count from a variant name — the MIDDLE digit of the
  * 3-digit config code ("Atlas V 551" → 5, "Atlas V 401" → 0, "Atlas V 541" → 4,
  * "Atlas V 501 (AV-034)" → 0). Returns 0 when the name carries no parseable
@@ -122,14 +198,30 @@ function slug(s: string): string {
  * free-text `vehicle` string (matched to a flagship where possible, else a
  * slug for the generic model). Returns null only when the mission has neither.
  */
+/**
+ * Canonicalise variant fleet-ref launcher ids onto the id the registry actually
+ * keys its dedicated 3D model + profile/boosters under. A mission's `fleet_refs`
+ * may carry a sub-variant ("pslv-xl", "soyuz-fg") while the model + booster pack
+ * live under the family id ("pslv", "soyuz") — without this the variant falls
+ * through to the generic model with no strap-on staging (e.g. Chandrayaan-1's
+ * "pslv-xl" showed no PSOM separation).
+ */
+const LAUNCHER_ID_CANON: Record<string, string> = {
+  'pslv-xl': 'pslv',
+  'soyuz-fg': 'soyuz',
+  'r-7-vostok': 'vostok-k',
+  'proton-m': 'proton-k',
+};
+
 export function resolveLauncher(
   fleetRefs: FleetRef[] | undefined,
   vehicle: string | undefined,
 ): { id: string; name: string } | null {
-  const fromRefs = missionLauncherId(fleetRefs);
-  if (fromRefs) return { id: fromRefs, name: vehicle ?? prettyName(fromRefs) };
-  if (vehicle) return { id: matchFlagship(vehicle) ?? slug(vehicle), name: vehicle };
-  return null;
+  const raw =
+    missionLauncherId(fleetRefs) ?? (vehicle ? (matchFlagship(vehicle) ?? slug(vehicle)) : null);
+  if (raw == null) return null;
+  const id = LAUNCHER_ID_CANON[raw] ?? raw;
+  return { id, name: vehicle ?? prettyName(id) };
 }
 
 /** True when a mission can play a launch — via a launcher ref OR a vehicle string. */
@@ -249,5 +341,10 @@ export async function loadLaunchProfile(
       // fall through to the generic fallback
     }
   }
-  return buildGenericProfile(launcherId, displayName);
+  const generic = buildGenericProfile(launcherId, displayName);
+  // Model-only strap-on vehicles (bespoke mesh, generic physics): attach their
+  // booster pack so the ascent physics emits a strap-on staging event at the
+  // right (earlier) time — otherwise the strap-ons jettison at core staging.
+  const boosters = MODEL_ONLY_BOOSTERS[launcherId];
+  return boosters ? { ...generic, boosters } : generic;
 }

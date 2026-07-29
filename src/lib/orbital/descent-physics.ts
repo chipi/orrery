@@ -77,6 +77,7 @@ export type EDLPhaseKind =
 /** Discrete descent beats the HUD + scene key off. */
 export type DescentEventType =
   | 'entry'
+  | 'entry_flip' // capsule rotates from tip-first to heat-shield-forward (Earth crewed)
   | 'peak_heat'
   | 'peak_decel'
   | 'parachute_deploy'

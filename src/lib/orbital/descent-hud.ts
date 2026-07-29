@@ -28,6 +28,7 @@ export const EDL_PHASE_LABEL: Record<EDLPhaseKind, string> = {
 /** EDL event → short timeline-strip label. */
 export const EDL_BEAT_LABEL: Record<DescentEventType, string> = {
   entry: 'ENTRY',
+  entry_flip: 'FLIP',
   peak_heat: 'PEAK HEAT',
   peak_decel: 'MAX-G',
   parachute_deploy: 'CHUTE',

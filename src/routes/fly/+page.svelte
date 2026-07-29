@@ -1636,6 +1636,7 @@
     const dur = descentSummaryFly.totalDurationS;
     const tB = terminalStartTime(descentSummaryFly.states, dur);
     const beats = new Set([
+      'entry_flip',
       'parachute_deploy',
       'heatshield_sep',
       'backshell_sep',

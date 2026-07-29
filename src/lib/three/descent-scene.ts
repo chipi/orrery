@@ -396,10 +396,15 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const bsT = metOf('backshell_sep');
   const chuteT = metOf('parachute_deploy');
   const airbagT = metOf('airbag_deploy');
+  const flipT = metOf('entry_flip');
   // Slow the EDL separations (item 4) so heat-shield jettison + chute-cut linger
   // as a held beat rather than a snap.
   const HS_SEP_S = 4.5;
   const BS_SEP_S = 4.5;
+  // Entry attitude flip: hold tip-first for FLIP_HOLD_S after the beat, then pitch
+  // to heat-shield-forward over FLIP_S (descent-seconds; the beat is slow-mo'd).
+  const FLIP_HOLD_S = 6;
+  const FLIP_S = 30;
 
   // Smooth-camera convergence (mirrors the ascent scene).
   let camS: {
@@ -499,11 +504,29 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       plume.scale.set(1, flick, 1);
     }
 
+    // Entry attitude flip (Earth crewed re-entry, RFC-034 §13): the capsule comes
+    // off the deorbit burn falling TIP-FIRST (nose down), then rotates to HEAT-
+    // SHIELD-FORWARD as it bites into the upper atmosphere — before the plasma
+    // builds. Other bodies enter shield-forward already (or descend powered), so
+    // they stay at attitude 0. `entryFlip`: 0 = nose-down (tip first), 1 = heat-
+    // shield-down (entry attitude). Tied to the aero-heating onset so the flip
+    // completes exactly as the fireball would start.
+    const heat = Math.min(1, s.aeroHeatFlux / heatRef);
+    // Anchored to the `entry_flip` beat: hold tip-first briefly, then pitch around
+    // to heat-shield-forward over FLIP_S — a deliberate, slow-mo'd milestone
+    // (descentSepTimes includes entry_flip) rather than an instant snap.
+    let entryFlip = 1;
+    if (flipT != null && body === 'earth' && s.phaseKind === 'ballistic_entry') {
+      const fp = Math.min(1, Math.max(0, (s.t - (flipT + FLIP_HOLD_S)) / FLIP_S));
+      entryFlip = fp * fp * (3 - 2 * fp); // smoothstep 0→1
+    }
+    vehicle.rotation.x = Math.PI * (1 - entryFlip); // π (tip down) → 0 (shield down)
+
     // Entry fireball: glow tracks the normalised aero-heating proxy — the
     // hypersonic bow that peaks at peak heating then dies as the vehicle slows.
-    const heat = Math.min(1, s.aeroHeatFlux / heatRef);
+    // Gated until the capsule has flipped shield-forward (no plasma tip-first).
     const inEntry = s.phaseKind === 'ballistic_entry' || s.phaseKind === 'aeroshell_descent';
-    plasma.visible = inEntry && heat > 0.04;
+    plasma.visible = inEntry && heat > 0.04 && entryFlip > 0.6;
     if (plasma.visible) {
       const flick = 0.85 + 0.15 * Math.sin(frame * 1.3);
       plasmaCapMat.opacity = 0.7 * heat * flick;
@@ -524,7 +547,13 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     }
 
     // Camera: compose a per-phase target pose, ease the live camera toward it.
-    const sh = shotFor(s);
+    // The Earth entry FLIP gets its own tight beat so the tip-first → shield-first
+    // rotation is actually legible (otherwise it happens while the capsule is a
+    // distant speck at the entry interface).
+    let sh = shotFor(s);
+    if (body === 'earth' && s.phaseKind === 'ballistic_entry' && entryFlip < 0.985) {
+      sh = { dist: 3.4, height: 0.5, fov: 38 };
+    }
     const angle = 0.6 + frame * 0.0006; // gentle cinematic drift
     const dist = sh.dist * vehLen;
     const px = Math.sin(angle) * dist;

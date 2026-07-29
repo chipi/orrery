@@ -316,6 +316,9 @@ const EARTH_CAPSULE_REENTRY: ArchetypeBuilder = (p) => [
   {
     kind: 'ballistic_entry',
     endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 8000 },
+    // The capsule comes off the deorbit burn falling tip-first, then pitches
+    // around to heat-shield-forward before the plasma builds — a distinct beat.
+    events: ['entry_flip'],
   },
   {
     kind: 'parachute', // drogue — stabilises through the transonic band

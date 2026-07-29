@@ -918,22 +918,35 @@ function buildAtlasV(vehLen: number, boosterCount = 3): LauncherModel {
   );
   root.add(upperStage);
 
-  // ── Wide bulbous payload shroud (wider than the core) with an ogive nose —
-  //    Atlas V's most recognisable feature, not a slender pointed fairing.
-  const fairingBaseY = vehLen * 0.87;
+  // ── Wide bulbous payload shroud — a smooth OGIVE bullet (lathe profile), split
+  //    into clamshell halves, with a boat-tail flaring from the narrower Centaur
+  //    up to the shroud so it reads as one continuous shape (not a flat-top tube
+  //    with a cone perched on a smaller tube). Atlas V's signature 5 m fairing.
+  const fairingBaseY = vehLen * 0.86;
   const fR = r * 1.4;
-  const shH = vehLen * 0.16;
+  const shH = vehLen * 0.3;
+  const prof: THREE.Vector2[] = [
+    new THREE.Vector2(fR, 0),
+    new THREE.Vector2(fR, shH * 0.46),
+    new THREE.Vector2(fR * 0.95, shH * 0.62),
+    new THREE.Vector2(fR * 0.78, shH * 0.78),
+    new THREE.Vector2(fR * 0.5, shH * 0.9),
+    new THREE.Vector2(fR * 0.18, shH * 0.99),
+    new THREE.Vector2(0, shH * 1.04),
+  ];
   const mkHalf = (theta: number): THREE.Mesh =>
-    new THREE.Mesh(new THREE.CylinderGeometry(fR, fR, shH, 24, 1, true, theta, Math.PI), body);
+    new THREE.Mesh(new THREE.LatheGeometry(prof, 40, theta, Math.PI), body);
   const fairingL = mkHalf(Math.PI / 2);
   const fairingR = mkHalf(-Math.PI / 2);
   fairingL.position.y = fairingBaseY;
   fairingR.position.y = fairingBaseY;
-  // Shared ogive nose cap crowning the shroud.
-  const nose = new THREE.Mesh(new THREE.ConeGeometry(fR, vehLen * 0.11, 24), body);
-  nose.position.y = fairingBaseY + shH / 2 + vehLen * 0.05;
+  const boatTail = new THREE.Mesh(
+    new THREE.CylinderGeometry(fR, r * 0.82, vehLen * 0.06, 40, 1, true),
+    body,
+  );
+  boatTail.position.y = fairingBaseY - vehLen * 0.03;
   const fairingGroup = new THREE.Group();
-  fairingGroup.add(fairingL, fairingR, nose);
+  fairingGroup.add(fairingL, fairingR, boatTail);
   root.add(fairingGroup);
 
   return {

@@ -1700,6 +1700,113 @@ function buildAtlasLV3B(vehLen: number): LauncherModel {
 }
 
 /**
+ * Mercury-Redstone (Freedom 7, Liberty Bell 7) — America's first crewed launch
+ * vehicle. A slim single-stage Redstone (black roll-pattern near the top, four
+ * big aerodynamic tail fins, a single A-7 engine) topped by the Mercury capsule
+ * + the spindly launch-escape tower. Suborbital.
+ */
+function buildMercuryRedstone(vehLen: number): LauncherModel {
+  const spec = getLauncherEngines('mercury-redstone')!;
+  const body = new THREE.MeshStandardMaterial({
+    map: livery({
+      base: '#eef0f2',
+      rollPattern: true,
+      wordmark: { text: 'U N I T E D   S T A T E S', color: '#16181c', size: 0.032, y: 0.6 },
+      flag: 'usa',
+    }),
+    roughness: 0.5,
+    metalness: 0.14,
+    roughnessMap: stringerRoughness(50),
+  });
+  const plain = heroWhite(0xeef0f2);
+  const frame = heroMetal(0xbfc4ca, 0.3);
+  const dark = heroDark(0x1a1c20);
+  const eng = heroMetal(0x40454d, 0.5);
+  const r = vehLen * 0.04; // very slim
+  const root = new THREE.Group();
+
+  // ── Redstone booster (whole first stage — the only powered stage).
+  const booster = new THREE.Group();
+  const tank = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.62, 40), body);
+  tank.position.y = vehLen * 0.34;
+  booster.add(tank);
+  booster.add(ringFrames(r, vehLen * 0.06, vehLen * 0.64, 7, frame));
+  booster.add(raceway(r, vehLen * 0.07, vehLen * 0.62, dark));
+  // Tapered thrust-unit boat-tail + single A-7 engine.
+  const boat = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.72, r, vehLen * 0.07, 40), frame);
+  boat.position.y = vehLen * 0.055;
+  booster.add(boat);
+  booster.add(
+    engineCluster(
+      spec.stages[0].arrangement,
+      spec.stages[0].mainNozzles,
+      r * 0.72,
+      vehLen * 0.07,
+      0,
+      frame,
+      eng,
+    ),
+  );
+  // Four big Redstone tail fins.
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2;
+    booster.add(sweptFin(r * 0.95, vehLen * 0.1, vehLen * 0.11, r * 0.9, a, plain));
+  }
+  root.add(booster);
+
+  // ── Minimal upper (the instrument/adapter section carrying the capsule).
+  const upperStageBaseY = vehLen * 0.7;
+  const upperStage = new THREE.Group();
+  const adapter = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.7, r, vehLen * 0.06, 40), plain);
+  adapter.position.y = upperStageBaseY;
+  upperStage.add(adapter);
+  root.add(upperStage);
+
+  // ── Mercury capsule + escape tower as the "fairing".
+  const fairingBaseY = vehLen * 0.78;
+  const capR = r * 0.7;
+  const mkShell = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.ConeGeometry(capR, vehLen * 0.1, 20, 1, true, theta, Math.PI), plain);
+  const fairingL = mkShell(Math.PI / 2);
+  const fairingR = mkShell(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const recovery = new THREE.Mesh(
+    new THREE.CylinderGeometry(capR * 0.5, capR * 0.7, vehLen * 0.04, 20),
+    frame,
+  );
+  recovery.position.y = fairingBaseY + vehLen * 0.06;
+  // Escape tower: lattice mast + solid escape motor at the tip.
+  const tower = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.05, r * 0.05, vehLen * 0.16, 8),
+    dark,
+  );
+  tower.position.y = fairingBaseY + vehLen * 0.16;
+  const escMotor = new THREE.Mesh(
+    new THREE.CylinderGeometry(capR * 0.34, capR * 0.4, vehLen * 0.06, 16),
+    heroDark(0x2a2622),
+  );
+  escMotor.position.y = fairingBaseY + vehLen * 0.26;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR, recovery, tower, escMotor);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: tank,
+    upperStage,
+    upperPlumeAnchor: adapter,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.78,
+  };
+}
+
+/**
  * Long March 2F — Chinese crewed launcher (Shenzhou). Central core + four
  * tapered liquid strap-ons + launch-escape tower with capsule above the fairing.
  */
@@ -2683,6 +2790,7 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
   'proton-k': buildProtonK,
   'titan-ii-glv': buildTitanIIGLV,
   'atlas-lv-3b': buildAtlasLV3B,
+  'mercury-redstone': buildMercuryRedstone,
   'ariane-5': (v) =>
     buildSideBooster(v, {
       boosterLen: 0.62,

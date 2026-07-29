@@ -1579,6 +1579,13 @@
       "thumb": "/images/colophon/model-launcher-atlas-lv-3b.webp"
     },
     {
+      "title": "Mercury-Redstone",
+      "what": "America’s first crewed launcher — a slim single-engine Redstone with four tail fins, the Mercury capsule and escape tower (Freedom 7).",
+      "where": "Fly · launch/ascent",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-launcher-mercury-redstone.webp"
+    },
+    {
       "title": "Long March 2F",
       "what": "China’s crewed launcher — core, four liquid strap-ons, and a launch-escape tower (Shenzhou).",
       "where": "Fly · launch/ascent",
@@ -2321,7 +2328,7 @@
     "anatomy_art": 144,
     "diagrams_science": 104,
     "posters": 27,
-    "models3d": 108,
+    "models3d": 109,
     "capsules": 8,
     "canvas2d": 6,
     "ui": 4,

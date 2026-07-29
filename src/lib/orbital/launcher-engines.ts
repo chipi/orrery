@@ -349,6 +349,17 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Stage 2', 'LE-5B-3', 1, 1, 'single'),
     ],
   },
+  'mercury-redstone': {
+    name: 'Mercury-Redstone',
+    agency: 'NASA',
+    confidence: 'high',
+    sources: ['https://en.wikipedia.org/wiki/Mercury-Redstone_Launch_Vehicle'],
+    stages: [
+      S('Redstone (single stage)', 'Rocketdyne A-7', 1, 1, 'single', {
+        note: 'Suborbital man-rated Redstone; a single A-7 (79 kN).',
+      }),
+    ],
+  },
   starship: {
     name: 'Starship / Super Heavy',
     agency: 'SpaceX',

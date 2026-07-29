@@ -382,6 +382,12 @@
       build: () => buildLauncherModel('atlas-lv-3b', 1.2).root,
     },
     {
+      id: 'mercury-redstone',
+      label: 'Mercury-Redstone',
+      family: 'launcher',
+      build: () => buildLauncherModel('mercury-redstone', 1.2).root,
+    },
+    {
       id: 'long-march-2f',
       label: 'Long March 2F (Shenzhou)',
       family: 'launcher',

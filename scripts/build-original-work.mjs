@@ -290,6 +290,11 @@ const launchers = [
     'Mercury-Atlas stage-and-a-half with a booster-engine skirt and escape tower.',
   ],
   [
+    'mercury-redstone',
+    'Mercury-Redstone',
+    'America’s first crewed launcher — a slim single-engine Redstone with four tail fins, the Mercury capsule and escape tower (Freedom 7).',
+  ],
+  [
     'long-march-2f',
     'Long March 2F',
     'China’s crewed launcher — core, four liquid strap-ons, and a launch-escape tower (Shenzhou).',

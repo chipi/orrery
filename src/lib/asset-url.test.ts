@@ -61,6 +61,14 @@ describe('resolveLocaleBundleOrigin', () => {
     expect(resolveLocaleBundleOrigin('de', false, '/orrery', 'en-US')).toBe('/orrery');
     expect(resolveLocaleBundleOrigin('en-US', false, '', 'en-US')).toBe('');
   });
+  it('never streams during build-time prerender (ssr=true), even under mobile', () => {
+    // Regression: a MOBILE build's prerender used to fetch non-default-locale
+    // bundles from the external stream CDN, which intermittently 404'd and
+    // killed the prerender. Build-time must resolve every locale locally.
+    expect(resolveLocaleBundleOrigin('zh-CN', true, '/orrery', 'en-US', true)).toBe('/orrery');
+    expect(resolveLocaleBundleOrigin('de', true, '', 'en-US', true)).toBe('');
+    expect(resolveLocaleBundleOrigin('en-US', true, '/orrery', 'en-US', true)).toBe('/orrery');
+  });
 });
 
 describe('bound public API (browser build, __MOBILE__ === false)', () => {

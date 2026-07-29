@@ -57,13 +57,21 @@ export function resolveStreamedUrl(url: string, mobile: boolean): string {
     : url;
 }
 
-/** Per-locale bundle origin: default locale stays local; others stream under mobile. */
+/**
+ * Per-locale bundle origin: default locale stays local; others stream under
+ * mobile — but ONLY at device runtime. During build-time prerender (`ssr`),
+ * every per-locale bundle is present locally in the build, so we never reach
+ * for the stream CDN: doing so makes the build fetch bundles over the network
+ * (non-hermetic, intermittently 404s under mobile-e2e's stubbed CDN).
+ */
 export function resolveLocaleBundleOrigin(
   locale: string,
   mobile: boolean,
   localBase: string,
   defaultLocale: string = DEFAULT_LOCALE,
+  ssr: boolean = false,
 ): string {
+  if (ssr) return localBase;
   return mobile && locale !== defaultLocale ? ACTIVE_STREAM_ORIGIN : localBase;
 }
 
@@ -100,5 +108,8 @@ export function streamedUrl(url: string): string {
  * install; the other 13 locales are pruned and streamed under mobile.
  */
 export function localeBundleOrigin(locale: string): string {
-  return resolveLocaleBundleOrigin(locale, __MOBILE__, base);
+  // `import.meta.env.SSR` is a compile-time constant, so the on-device client
+  // bundle keeps the streaming path (the ssr branch tree-shakes away there);
+  // only build-time prerender is pinned to the local base.
+  return resolveLocaleBundleOrigin(locale, __MOBILE__, base, DEFAULT_LOCALE, import.meta.env.SSR);
 }

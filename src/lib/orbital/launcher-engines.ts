@@ -239,6 +239,9 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Orbiter (SSME)', 'RS-25', 3, 1, 'triple', {
         note: 'Triangular cluster; exact apex/numbering not authoritatively sourced.',
       }),
+      S('OMS ×2', 'AJ10-190', 2, 1, 'pair', {
+        note: 'Orbital Manoeuvring System pods flanking the tail (not ascent thrust).',
+      }),
     ],
   },
   'long-march-2f': {

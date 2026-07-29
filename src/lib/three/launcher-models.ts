@@ -907,22 +907,42 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   );
   noseCap.scale.set(1.45, 1.1, 0.78);
   noseCap.position.set(0, yNoseBase + noseLen * 0.82, oz);
-  // Forward-facing cockpit window band wrapping the nose shoulder (outboard +Z).
-  const windows = new THREE.Mesh(
+  // Cockpit — the wraparound windshield: a row of individual glass panes set into
+  //    a black frame on the forward-upper fuselage (outboard +Z), so the crew
+  //    cabin reads as windows, not a black smudge.
+  const windows = new THREE.Group();
+  const winY = yNoseBase + noseLen * 0.42;
+  const frame = new THREE.Mesh(
     new THREE.CylinderGeometry(
-      rFus * 0.7,
-      rFus * 0.78,
-      vehLen * 0.03,
-      24,
+      rFus * 0.73,
+      rFus * 0.8,
+      vehLen * 0.05,
+      28,
       1,
       true,
-      Math.PI * 0.2,
-      Math.PI * 0.6,
+      Math.PI * 0.24,
+      Math.PI * 0.52,
     ),
-    glass,
+    tile,
   );
-  windows.scale.set(1.45, 1, 0.78);
-  windows.position.set(0, yNoseBase + noseLen * 0.5, oz);
+  frame.scale.set(1.45, 1, 0.78);
+  frame.position.set(0, winY, oz);
+  windows.add(frame);
+  // Six forward panes across the windshield arc.
+  for (let i = 0; i < 6; i++) {
+    const a = Math.PI * 0.29 + (i / 5) * Math.PI * 0.42;
+    const pane = new THREE.Mesh(
+      new THREE.BoxGeometry(rFus * 0.16, vehLen * 0.03, rFus * 0.04),
+      glass,
+    );
+    pane.position.set(
+      Math.cos(a) * rFus * 0.82 * 1.45,
+      winY,
+      oz + Math.sin(a) * rFus * 0.82 * 0.78,
+    );
+    pane.lookAt(pane.position.x * 1.6, winY, oz + (pane.position.z - oz) * 1.6);
+    windows.add(pane);
+  }
 
   // Big low double-delta wing — a shape in the body plane (span X, chord Y),
   // extruded thin in Z; it rides ALONG the aft half of the body and sweeps
@@ -989,7 +1009,111 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   );
   bodyFlap.position.set(0, yA - vehLen * 0.02, oz - rFus * 0.2);
 
+  // ── Payload bay — the twin dorsal (+Z, outward) doors, shown cracked OPEN so
+  //    the bay + gold-foil radiators read (closed for launch; ajar to show the
+  //    doors articulate). Hinges run along the longerons parallel to the stack.
+  const bay = new THREE.Group();
+  const bayY0 = yA + bodyLen * 0.3;
+  const bayY1 = yA + bodyLen * 0.92;
+  const bayLen = bayY1 - bayY0;
+  const bayMid = (bayY0 + bayY1) / 2;
+  // Dark bay cavity (an inset trough on the top face).
+  const trough = new THREE.Mesh(
+    new THREE.BoxGeometry(rFus * 1.5, bayLen, rFus * 0.55),
+    heroDark(0x0c0e11),
+  );
+  trough.position.set(0, bayMid, oz + rFus * 0.42);
+  bay.add(trough);
+  // Gold-foil radiator panels lining the bay floor.
+  const rad = new THREE.Mesh(
+    new THREE.BoxGeometry(rFus * 1.28, bayLen * 0.92, rFus * 0.02),
+    heroGold(0xcaa24a),
+  );
+  rad.position.set(0, bayMid, oz + rFus * 0.5);
+  bay.add(rad);
+  // Two doors on vertical (stack-parallel) hinges at the shoulder longerons,
+  // each swung open outward.
+  const doorW = rFus * 1.05;
+  for (const side of [1, -1] as const) {
+    const hinge = new THREE.Group();
+    hinge.position.set(side * rFus * 1.45 * 0.72, bayMid, oz + rFus * 0.78 * 0.55);
+    const panel = new THREE.Mesh(new THREE.BoxGeometry(doorW, bayLen, rFus * 0.06), white);
+    panel.position.x = -side * doorW * 0.5; // extends toward the centreline
+    const foil = new THREE.Mesh(
+      new THREE.BoxGeometry(doorW * 0.86, bayLen * 0.9, rFus * 0.01),
+      heroGold(0xcaa24a),
+    );
+    foil.position.set(-side * doorW * 0.5, 0, rFus * 0.04); // radiator on the inner face
+    hinge.add(panel, foil);
+    hinge.rotation.y = side * 0.9; // swung open
+    bay.add(hinge);
+  }
+
+  // ── Agency markings — US flag on the port wing, "USA" on the starboard wing,
+  //    "UNITED STATES" along the aft fuselage side. Thin decal planes tangent to
+  //    each surface, facing outward (+Z), with a transparent-background texture.
+  const decalMat = (
+    draw: (x: CanvasRenderingContext2D, w: number, h: number) => void,
+  ): THREE.MeshBasicMaterial => {
+    const w = 512,
+      hh = 256;
+    const c = document.createElement('canvas');
+    c.width = w;
+    c.height = hh;
+    const x = c.getContext('2d')!;
+    draw(x, w, hh);
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace;
+    t.anisotropy = 8;
+    return new THREE.MeshBasicMaterial({ map: t, transparent: true, depthWrite: false });
+  };
+  const flagTex = decalMat((x, w, hh) => {
+    for (let s = 0; s < 7; s++) {
+      x.fillStyle = s % 2 ? '#eef1f5' : '#b22234';
+      x.fillRect(0, (s * hh) / 7, w, hh / 7);
+    }
+    x.fillStyle = '#3c3b6e';
+    x.fillRect(0, 0, w * 0.42, (hh * 4) / 7);
+    x.fillStyle = '#fff';
+    for (let r2 = 0; r2 < 5; r2++)
+      for (let cc = 0; cc < 6; cc++)
+        x.fillRect(w * 0.03 + cc * w * 0.066, hh * 0.03 + r2 * hh * 0.11, w * 0.02, hh * 0.03);
+  });
+  const usaTex = decalMat((x, w, hh) => {
+    x.fillStyle = '#14161b';
+    x.font = `900 ${Math.round(hh * 0.8)}px Helvetica, Arial, sans-serif`;
+    x.textAlign = 'center';
+    x.textBaseline = 'middle';
+    x.fillText('USA', w / 2, hh / 2);
+  });
+  const unitedTex = decalMat((x, w, hh) => {
+    x.save();
+    x.translate(w / 2, hh / 2);
+    x.fillStyle = '#14161b';
+    x.font = `bold ${Math.round(hh * 0.5)}px Helvetica, Arial, sans-serif`;
+    x.textAlign = 'center';
+    x.textBaseline = 'middle';
+    x.fillText('UNITED STATES', 0, 0);
+    x.restore();
+  });
+  const wingTopZ = oz + thick * 0.85 + r * 0.01;
+  const flagDecal = new THREE.Mesh(new THREE.PlaneGeometry(span * 0.5, span * 0.25), flagTex);
+  flagDecal.position.set(-span * 0.5, yWingTE + h * 0.3, wingTopZ);
+  const usaDecal = new THREE.Mesh(new THREE.PlaneGeometry(span * 0.4, span * 0.2), usaTex);
+  usaDecal.position.set(span * 0.5, yWingTE + h * 0.3, wingTopZ);
+  const unitedDecal = new THREE.Mesh(
+    new THREE.PlaneGeometry(vehLen * 0.03, bodyLen * 0.5),
+    unitedTex,
+  );
+  unitedDecal.geometry.rotateZ(-Math.PI / 2);
+  unitedDecal.position.set(rFus * 1.2, yA + bodyLen * 0.5, oz + rFus * 0.2);
+  unitedDecal.rotation.y = -Math.PI / 2;
+
   orbiter.add(
+    bay,
+    flagDecal,
+    usaDecal,
+    unitedDecal,
     fus,
     nose,
     noseCap,

@@ -620,7 +620,13 @@ function buildSoyuz(vehLen: number): LauncherModel {
   const upperStage = new THREE.Group();
   const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.9, r, vehLen * 0.2, 48), plain);
   s2.position.y = vehLen * 0.64;
-  upperStage.add(s2, bell(r * 0.4, vehLen * 0.05, eng, vehLen * 0.53));
+  upperStage.add(s2);
+  // Blok-I engine: RD-0110/0107 = 4 main chambers + 4 verniers (soyuz/voskhod);
+  // vostok-k's RD-0109 is single, but the shared quad reads correct for the pair.
+  const upperEng = new THREE.Group();
+  upperEng.position.y = vehLen * 0.54;
+  rd(upperEng, r * 0.9, r * 0.16, 4, 4);
+  upperStage.add(upperEng);
   root.add(upperStage);
 
   const fairingBaseY = vehLen * 0.82;
@@ -878,16 +884,45 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   const fus = new THREE.Mesh(new THREE.CylinderGeometry(rFus * 0.82, rFus, bodyLen, 24), white);
   fus.scale.set(1.45, 1, 0.78);
   fus.position.set(0, yA + bodyLen / 2, oz);
-  // Short chunky black-tile nose cap + a band of cockpit windows just aft of it.
-  const nose = new THREE.Mesh(new THREE.ConeGeometry(rFus * 0.92, vehLen * 0.12, 24), tile);
+  // Forward fuselage — a BLUNT, rounded ogive (the orbiter nose is rounded, not a
+  // sharp cone), lathe-turned so it curves to a small rounded tip. White body
+  // with the black RCC cap only at the very tip + chin.
+  const noseLen = vehLen * 0.15;
+  const nprof: THREE.Vector2[] = [
+    new THREE.Vector2(rFus * 0.82, 0),
+    new THREE.Vector2(rFus * 0.8, noseLen * 0.22),
+    new THREE.Vector2(rFus * 0.72, noseLen * 0.44),
+    new THREE.Vector2(rFus * 0.58, noseLen * 0.64),
+    new THREE.Vector2(rFus * 0.4, noseLen * 0.82),
+    new THREE.Vector2(rFus * 0.22, noseLen * 0.94),
+    new THREE.Vector2(rFus * 0.09, noseLen), // blunt rounded tip, not a point
+  ];
+  const nose = new THREE.Mesh(new THREE.LatheGeometry(nprof, 28), white);
   nose.scale.set(1.45, 1, 0.78);
-  nose.position.set(0, yNoseBase + vehLen * 0.05, oz);
+  nose.position.set(0, yNoseBase, oz);
+  // Black RCC nose cap over the rounded tip.
+  const noseCap = new THREE.Mesh(
+    new THREE.SphereGeometry(rFus * 0.24, 20, 12, 0, Math.PI * 2, 0, Math.PI * 0.62),
+    tile,
+  );
+  noseCap.scale.set(1.45, 1.1, 0.78);
+  noseCap.position.set(0, yNoseBase + noseLen * 0.82, oz);
+  // Forward-facing cockpit window band wrapping the nose shoulder (outboard +Z).
   const windows = new THREE.Mesh(
-    new THREE.CylinderGeometry(rFus * 0.86, rFus * 0.9, vehLen * 0.028, 24, 1, true, -0.6, 1.2),
+    new THREE.CylinderGeometry(
+      rFus * 0.7,
+      rFus * 0.78,
+      vehLen * 0.03,
+      24,
+      1,
+      true,
+      Math.PI * 0.2,
+      Math.PI * 0.6,
+    ),
     glass,
   );
   windows.scale.set(1.45, 1, 0.78);
-  windows.position.set(0, yNoseBase - vehLen * 0.008, oz + rFus * 0.1);
+  windows.position.set(0, yNoseBase + noseLen * 0.5, oz);
 
   // Big low double-delta wing — a shape in the body plane (span X, chord Y),
   // extruded thin in Z; it rides ALONG the aft half of the body and sweeps
@@ -957,6 +992,7 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   orbiter.add(
     fus,
     nose,
+    noseCap,
     windows,
     mkWing(1, tile, -thick * 0.85), // black underside, tucked toward the belly
     mkWing(-1, tile, -thick * 0.85),
@@ -1281,7 +1317,20 @@ function buildProtonK(vehLen: number): LauncherModel {
     p.body,
   );
   stage2.position.y = upperStageBaseY + vehLen * 0.11;
-  midStage.add(stage2, bell(r * 0.32, vehLen * 0.05, p.eng, upperStageBaseY));
+  // Stage 2 = 4× RD-0210/0211 (quad), data-driven from the spec.
+  const s2spec = getLauncherEngines('proton-k')!.stages[1];
+  midStage.add(
+    stage2,
+    engineCluster(
+      s2spec.arrangement,
+      s2spec.mainNozzles,
+      r * 0.55,
+      vehLen * 0.05,
+      upperStageBaseY,
+      frame,
+      p.eng,
+    ),
+  );
   root.add(midStage);
   // ── Third stage: the final stage, carries the payload. Tapers above.
   const upperStage = new THREE.Group();

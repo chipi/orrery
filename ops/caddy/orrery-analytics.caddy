@@ -1,0 +1,39 @@
+# Public Umami analytics vhost — TRACKING-ONLY — ROUTING OWNED BY THIS REPO.
+#
+# The shared Caddy edge engine is owned by podcast_scraper (ADR-114); this file is a
+# tenant vhost dropped into /etc/caddy/sites/orrery-analytics.caddy by
+# ops/deploy_caddy_vhosts.sh (`caddy adapt`-gated, then `sudo -n systemctl restart caddy`).
+#
+# WHY: the browser loads Umami's tracking script + POSTs events from the end user's
+# browser, which can only reach public endpoints — never the tailnet-only Umami on
+# homelab:3001. This vhost fronts ONLY the tracking surface through the shared public
+# edge (behind Cloudflare + origin-lock); the Umami DASHBOARD/login/API stays
+# tailnet-only (operator reaches it over the tailnet at homelab:3001).
+#
+# PUBLIC SURFACE (Umami v2, verified on the instance):
+#   GET  /script.js  — the tracking script the browser loads
+#   POST /api/send   — the event-collect endpoint the script POSTs to (+ CORS preflight)
+# Everything else (/, /login, the rest of /api, admin) → 404, not proxied.
+#
+# UPSTREAM (cross-repo dependency — consumed, not owned): Umami runs on **homelab**
+# (tailnet), addressed by its MagicDNS name `homelab` — the box's host resolver handles
+# it, so Caddy proxies by name (no hardcoded IP). The box→homelab:3001 tailnet ACL grant
+# must be live — that grant lives in podcast_scraper's tailscale/policy.hujson (GitOps
+# ACL, ADR-128). Umami sets its own CORS headers on /api/send.
+#
+# Rollback: `rm /etc/caddy/sites/orrery-analytics.caddy && sudo systemctl restart caddy`.
+analytics.orrerylearn.com {
+	import hardened
+
+	# Tracking-only surface — the script + the collect endpoint (any method, so the
+	# CORS OPTIONS preflight to /api/send is proxied and Umami answers it).
+	@track path /script.js /api/send
+	handle @track {
+		reverse_proxy homelab:3001
+	}
+
+	# Dashboard / login / rest of the API — NOT public. Refuse without revealing Umami.
+	handle {
+		respond "Not Found" 404
+	}
+}

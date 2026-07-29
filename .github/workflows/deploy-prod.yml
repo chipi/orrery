@@ -348,6 +348,24 @@ jobs:
              docker compose -f compose/docker-compose.prod.yml --project-directory . --env-file .env logs web; \
              exit 1"
 
+      - name: Deploy orrery Caddy routing (own the vhosts — ADR-114 tenant ownership)
+        # Orrery owns its three public vhosts (orrerylearn.com, telemetry.*, analytics.*).
+        # The shared Caddy edge ENGINE stays podcast_scraper's (ADR-114): the base Caddyfile
+        # `import`s /etc/caddy/sites/*.caddy, and deploy@ already owns that dir + has the
+        # `systemctl restart caddy` sudoers grant — no new box grant. The "Deploy" step above
+        # just `git reset`ed /srv/orrery, so ops/caddy/*.caddy is current on the box; the
+        # script installs them, `caddy adapt`-gates the merged config (adapt, not validate:
+        # validate opens caddy's root-owned logs and fails as deploy@), and restarts caddy
+        # only if valid (rollback otherwise — caddy never restarts on a broken config).
+        # Runs after web is up so orrery.caddy's 127.0.0.1:8090 upstream is live.
+        if: steps.preflight.outputs.skip != 'true'
+        env:
+          SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
+            "set -euo pipefail; cd /srv/orrery; bash ops/deploy_caddy_vhosts.sh"
+
       - name: Prime + schedule the on-VPS launch-data refresh (RFC-035)
         # Prod serves the launch manifest live from the /data overlay, but only
         # updates it on a (manual) deploy. Run the fetch once now so this deploy

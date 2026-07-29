@@ -40,6 +40,9 @@ export interface DescentModel {
   airbags: THREE.Group;
   /** The terminal landed craft (reused surface model). */
   lander: THREE.Group;
+  /** Orbiting mothership that UNDOCKS before the descent (Apollo CSM). Empty
+   *  group for missions with no separate orbiter. */
+  orbiter: THREE.Group;
   /** The object the retro plume attaches to while braking. */
   retroPlumeAnchor: THREE.Object3D;
   /** Base Y positions (scene units) before the scene applies sep offsets. */
@@ -342,6 +345,7 @@ function scaffold(lander: THREE.Group): DescentModel {
   const retro = new THREE.Group();
   const skycraneRigging = new THREE.Group();
   const airbags = new THREE.Group();
+  const orbiter = new THREE.Group();
   const retroPlumeAnchor = new THREE.Object3D();
   return {
     root,
@@ -353,6 +357,7 @@ function scaffold(lander: THREE.Group): DescentModel {
     skycraneRigging,
     airbags,
     lander,
+    orbiter,
     retroPlumeAnchor,
     heatshieldBaseY: 0,
     backshellBaseY: 0,
@@ -378,6 +383,57 @@ function buildLunarStack(lander: THREE.Group, vehLen: number): DescentModel {
   m.root.add(m.retro);
   m.retroPlumeAnchor.position.y = -vehLen * 0.14;
   m.root.add(m.retroPlumeAnchor);
+  return m;
+}
+
+/** The Apollo CSM (Command + Service Module) — a compact orbiter that stays in
+ *  lunar orbit: a conical command module, a cylindrical service module with the
+ *  SPS bell, and the docking probe that mates to the LM. */
+function buildApolloCSM(vehLen: number): THREE.Group {
+  const g = new THREE.Group();
+  const white = new THREE.MeshStandardMaterial({
+    color: 0xd7dbe0,
+    roughness: 0.42,
+    metalness: 0.55,
+  });
+  const dark = new THREE.MeshStandardMaterial({ color: 0x2b2f36, roughness: 0.5, metalness: 0.6 });
+  const r = vehLen * 0.16;
+  // Service module (cylinder) + SPS engine bell at the aft.
+  const sm = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.34, 24), white);
+  sm.position.y = vehLen * 0.17;
+  const sps = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.34, r * 0.16, vehLen * 0.12, 16, 1, true),
+    dark,
+  );
+  sps.position.y = -vehLen * 0.02;
+  // Command module (blunt cone) on top.
+  const cm = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.4, r, vehLen * 0.16, 24), white);
+  cm.position.y = vehLen * 0.42;
+  // Docking probe on the CM apex (points DOWN toward the LM when docked).
+  const probe = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.06, r * 0.06, vehLen * 0.06, 8),
+    dark,
+  );
+  probe.position.y = -vehLen * 0.03;
+  g.add(sm, sps, cm, probe);
+  return g;
+}
+
+/** Apollo lunar stack — the LM descent, plus the CSM docked above it that UNDOCKS
+ *  at the start of the descent (the scene animates it pulling away). */
+function buildApolloLunarStack(lander: THREE.Group, vehLen: number): DescentModel {
+  const m = buildLunarStack(lander, vehLen);
+  const csm = buildApolloCSM(vehLen);
+  // Docked above the LM ascent stage via a short docking tunnel (a clear gap so
+  // the CSM reads as a separate craft, not part of the LM).
+  csm.position.y = vehLen * 0.62;
+  const tunnel = new THREE.Mesh(
+    new THREE.CylinderGeometry(vehLen * 0.06, vehLen * 0.06, vehLen * 0.14, 12),
+    new THREE.MeshStandardMaterial({ color: 0xc4c9cf, roughness: 0.5, metalness: 0.5 }),
+  );
+  tunnel.position.y = vehLen * 0.5;
+  m.orbiter.add(csm, tunnel);
+  m.root.add(m.orbiter);
   return m;
 }
 
@@ -646,6 +702,13 @@ type StackBuilder = (lander: THREE.Group, vehLen: number) => DescentModel;
 
 /** siteId → dedicated stack builder. Falls back per-body when absent. */
 const BUILDERS: Record<string, StackBuilder> = {
+  // Apollo lunar landings — the LM descent with the CSM undock beat.
+  apollo11: buildApolloLunarStack,
+  apollo12: buildApolloLunarStack,
+  apollo14: buildApolloLunarStack,
+  apollo15: buildApolloLunarStack,
+  apollo16: buildApolloLunarStack,
+  apollo17: buildApolloLunarStack,
   // Skycrane
   curiosity: buildSkycraneStack,
   perseverance: buildSkycraneStack,

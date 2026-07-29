@@ -405,6 +405,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // to heat-shield-forward over FLIP_S (descent-seconds; the beat is slow-mo'd).
   const FLIP_HOLD_S = 6;
   const FLIP_S = 30;
+  // Apollo CSM/LM undock: hold docked, then the CSM separates over UNDOCK_S.
+  const UNDOCK_HOLD_S = 3;
+  const UNDOCK_S = 16;
 
   // Smooth-camera convergence (mirrors the ascent scene).
   let camS: {
@@ -454,6 +457,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
 
     // ── EDL separations — pure functions of the mission time vs event METs, so
     //    scrubbing the timeline is exact.
+    let undocking = false;
     // Heat-shield: jettisons DOWNWARD (below, toward the surface), tumbling in
     // two axes and shrinking as it recedes.
     const hp = sepProgress(s.t, hsT, HS_SEP_S);
@@ -504,6 +508,19 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
 
     // Skycrane rigging: shown only during the skycrane phase.
     model.skycraneRigging.visible = s.phaseKind === 'skycrane';
+
+    // Apollo CSM undock beat: the mothership starts docked above the LM, then
+    // separates — pulling up + drifting away — over the opening of the descent
+    // before the LM's powered descent. Scene-driven, gated on the orbiter part.
+    const hasOrbiter = model.orbiter.children.length > 0;
+    if (hasOrbiter) {
+      const up = Math.min(1, Math.max(0, (s.t - UNDOCK_HOLD_S) / UNDOCK_S));
+      const u = up * up * (3 - 2 * up); // smoothstep
+      model.orbiter.visible = u < 0.999;
+      model.orbiter.position.set(u * vehLen * 1.4, u * vehLen * 7, -u * vehLen * 1.6);
+      model.orbiter.rotation.y = u * 1.3;
+      undocking = u > 0.001 && u < 0.98;
+    }
 
     // Airbags: inflate at deploy, then hidden once past bounce (near ground).
     if (airbagT != null) {
@@ -569,6 +586,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     let sh = shotFor(s);
     if (body === 'earth' && s.phaseKind === 'ballistic_entry' && entryFlip < 0.985) {
       sh = { dist: 3.4, height: 0.5, fov: 38 };
+    }
+    if (undocking) {
+      sh = { dist: 5.2, height: 1.6, fov: 42 }; // frame both craft through the undock
     }
     const angle = 0.6 + frame * 0.0006; // gentle cinematic drift
     const dist = sh.dist * vehLen;
@@ -637,6 +657,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     model.lander.visible = !stowed;
     model.descentStage.visible = !stowed;
     model.retro.visible = !stowed;
+    model.orbiter.visible = model.orbiter.children.length > 0;
+    model.orbiter.position.set(0, 0, 0);
+    model.orbiter.rotation.set(0, 0, 0);
     plume.visible = false;
     plasma.visible = false;
     dust.visible = false;

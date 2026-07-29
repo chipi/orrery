@@ -569,32 +569,89 @@ function strapOns(
  * tapered nose, wrapped by four tapered conical strap-on boosters.
  */
 function buildSoyuz(vehLen: number): LauncherModel {
-  const p = palette(0xdfe4ea, 0x9aa3ad);
+  // Roscosmos grey-white R-7 livery + Russian flag. Shared by soyuz / vostok-k /
+  // voskhod-11a57 — the visible R-7 first stage is identical across them.
+  const body = new THREE.MeshStandardMaterial({
+    map: livery({ base: '#dfe4ea', flag: 'rus' }),
+    roughness: 0.52,
+    metalness: 0.14,
+    roughnessMap: stringerRoughness(50),
+  });
+  const plain = heroWhite(0xdfe4ea);
+  const frame = heroMetal(0xaab0b8, 0.3);
+  const eng = heroMetal(0x3a3f47, 0.5);
   const r = vehLen * 0.05;
   const root = new THREE.Group();
 
+  // RD-108 core: 4 main chambers (quad) + 4 verniers at the base.
+  const rd = (
+    g: THREE.Group,
+    stageR: number,
+    bellR: number,
+    mains: number,
+    verniers: number,
+  ): void => {
+    const hs = new THREE.Mesh(
+      new THREE.CylinderGeometry(stageR * 0.98, stageR * 0.9, vehLen * 0.01, 24),
+      heroDark(0x24262b),
+    );
+    g.add(hs);
+    for (let i = 0; i < mains; i++) {
+      const a = (i / mains) * Math.PI * 2 + Math.PI / 4;
+      const e = detailBell(bellR, vehLen * 0.05, frame, eng);
+      e.position.set(Math.cos(a) * stageR * 0.5, 0, Math.sin(a) * stageR * 0.5);
+      g.add(e);
+    }
+    for (let i = 0; i < verniers; i++) {
+      const a = (i / verniers) * Math.PI * 2;
+      const v = nozzle(bellR * 0.34, vehLen * 0.03, eng);
+      v.position.set(Math.cos(a) * stageR * 0.85, vehLen * 0.005, Math.sin(a) * stageR * 0.85);
+      g.add(v);
+    }
+  };
+
   const booster = new THREE.Group();
-  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.5, 32), p.body);
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.5, 48), body);
   core.position.y = vehLen * 0.28;
-  booster.add(core, nozzle(r * 0.5, vehLen * 0.05, p.eng));
+  booster.add(core);
+  booster.add(ringFrames(r, vehLen * 0.05, vehLen * 0.5, 5, frame));
+  const coreEng = new THREE.Group();
+  coreEng.position.y = vehLen * 0.03;
+  rd(coreEng, r, r * 0.2, 4, 4); // RD-108
+  booster.add(coreEng);
   root.add(booster);
-  // The four R-7 strap-ons jettison at the "Korolev cross" (~118 s), before the
-  // core burns out — their own group so the scene drops them at booster-sep.
+
+  // The four R-7 strap-ons (Blok B–D): tapered cones, each an RD-107 = 4 mains +
+  // 2 verniers. Jettison at the "Korolev cross" (~118 s), before core burnout.
   const strapOnGroup = new THREE.Group();
-  strapOns(strapOnGroup, 4, r, vehLen * 0.34, vehLen, p.accent, p.eng);
+  const soLen = vehLen * 0.36;
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2;
+    const gr = new THREE.Group();
+    const sb = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.42, r * 0.56, soLen, 32), plain);
+    sb.position.y = soLen / 2;
+    const sn = new THREE.Mesh(new THREE.ConeGeometry(r * 0.42, soLen * 0.42, 32), plain);
+    sn.position.y = soLen + soLen * 0.2;
+    gr.add(sb, sn);
+    const se = new THREE.Group();
+    rd(se, r * 0.56, r * 0.15, 4, 2); // RD-107
+    gr.add(se);
+    gr.position.set(Math.cos(a) * r * 1.28, 0, Math.sin(a) * r * 1.28);
+    strapOnGroup.add(gr);
+  }
   root.add(strapOnGroup);
 
   const upperStage = new THREE.Group();
-  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.9, r, vehLen * 0.2, 32), p.body);
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.9, r, vehLen * 0.2, 48), plain);
   s2.position.y = vehLen * 0.64;
-  upperStage.add(s2, bell(r * 0.4, vehLen * 0.05, p.eng, vehLen * 0.53));
+  upperStage.add(s2, bell(r * 0.4, vehLen * 0.05, eng, vehLen * 0.53));
   root.add(upperStage);
 
   const fairingBaseY = vehLen * 0.82;
   const mkShell = (theta: number): THREE.Mesh =>
     new THREE.Mesh(
       new THREE.ConeGeometry(r * 0.95, vehLen * 0.18, 20, 1, true, theta, Math.PI),
-      p.body,
+      plain,
     );
   const fairingL = mkShell(Math.PI / 2);
   const fairingR = mkShell(-Math.PI / 2);
@@ -1111,31 +1168,39 @@ function buildAtlasV(vehLen: number, boosterCount = 3): LauncherModel {
  */
 function buildProtonK(vehLen: number): LauncherModel {
   const p = palette(0xdfe4dd, 0x9aaa9d); // grey-green Proton livery
+  p.body.map = livery({ base: '#e2e6df', flag: 'rus' });
+  p.body.roughnessMap = stringerRoughness(50);
+  p.body.needsUpdate = true;
+  const frame = heroMetal(0xacb2ab, 0.3);
+  const tankMat = heroMetal(0x9aaa9d, 0.34); // grey-green outboard tanks
+  const eng = heroMetal(0x3a3f47, 0.5);
   const r = vehLen * 0.065; // stout
   const root = new THREE.Group();
 
   // ── First stage: central oxidizer tank + 6 outboard fuel tanks with bells.
   const booster = new THREE.Group();
   const core1 = new THREE.Mesh(
-    new THREE.CylinderGeometry(r * 0.62, r * 0.62, vehLen * 0.42, 32),
+    new THREE.CylinderGeometry(r * 0.62, r * 0.62, vehLen * 0.42, 48),
     p.body,
   );
   core1.position.y = vehLen * 0.24;
   booster.add(core1);
-  // Six outboard tanks, each with an RD-253 bell.
+  // Six outboard tanks, each with an RD-253 bell (ring-6, the Proton signature).
   const nTanks = 6;
   const tankR = r * 0.28;
   const tankLen = vehLen * 0.28;
   for (let i = 0; i < nTanks; i++) {
     const a = (i / nTanks) * Math.PI * 2;
     const tank = new THREE.Mesh(
-      new THREE.CylinderGeometry(tankR, tankR * 1.06, tankLen, 20),
-      p.accent,
+      new THREE.CylinderGeometry(tankR, tankR * 1.06, tankLen, 28),
+      tankMat,
     );
     tank.position.set(Math.cos(a) * r * 0.94, tankLen / 2, Math.sin(a) * r * 0.94);
-    const tankBell = nozzle(tankR * 0.68, vehLen * 0.045, p.eng);
+    const nose = new THREE.Mesh(new THREE.ConeGeometry(tankR, tankLen * 0.24, 28), tankMat);
+    nose.position.set(Math.cos(a) * r * 0.94, tankLen + tankLen * 0.12, Math.sin(a) * r * 0.94);
+    const tankBell = detailBell(tankR * 0.7, vehLen * 0.05, frame, eng);
     tankBell.position.set(Math.cos(a) * r * 0.94, 0, Math.sin(a) * r * 0.94);
-    booster.add(tank, tankBell);
+    booster.add(tank, nose, tankBell);
   }
   root.add(booster);
 

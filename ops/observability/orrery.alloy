@@ -47,7 +47,7 @@ discovery.relabel "orrery" {
 loki.source.docker "orrery" {
 	host       = "unix:///var/run/docker.sock"
 	targets    = discovery.relabel.orrery.output
-	forward_to = [loki.write.logs_sink.receiver]
+	forward_to = [loki.process.orrery_std.receiver]
 	labels     = {app = "orrery"}
 }
 
@@ -70,5 +70,21 @@ local.file_match "orrery_data_refresh" {
 
 loki.source.file "orrery_data_refresh" {
 	targets    = local.file_match.orrery_data_refresh.targets
+	forward_to = [loki.process.orrery_std.receiver]
+}
+
+// ---------- homelab log standard: trace_id -> structured_metadata ----------
+// See agentic-ai-homelab/infra/observability/LOG-STANDARD.md. Extracts the 32-hex
+// trace id from a W3C traceparent / Sentry sentry-trace pattern into
+// structured_metadata (a queryable field, NOT a high-cardinality stream label).
+// Inlined here (rather than referencing base's homelab_std) so this drop-in
+// deploys independently of a base.alloy rollout. Both orrery sources route through it.
+loki.process "orrery_std" {
+	stage.regex {
+		expression = "(?:00-)?(?P<trace_id>[a-f0-9]{32})-[a-f0-9]{16}"
+	}
+	stage.structured_metadata {
+		values = {trace_id = ""}
+	}
 	forward_to = [loki.write.logs_sink.receiver]
 }

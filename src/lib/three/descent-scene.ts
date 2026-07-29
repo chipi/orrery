@@ -260,6 +260,14 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const model = buildDescentModel(opts.siteId, body, vehLen);
   vehicle.add(model.root);
 
+  // Surface-only deployables (planted flag, driven-off rover, splayed petals) are
+  // baked into the reused LANDED model but must NOT show while the craft is still
+  // flying. Collect them once; the scene reveals them only at touchdown.
+  const surfaceOnly: THREE.Object3D[] = [];
+  model.lander.traverse((o) => {
+    if (o.userData?.surfaceOnly) surfaceOnly.push(o);
+  });
+
   // Separation-event bursts (flash + debris) at the heat-shield jettison and the
   // backshell / chute-cut. Parented to the vehicle at the sep planes; driven by
   // sepProgress in updateForces() so they stay scrub-exact.
@@ -397,6 +405,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const chuteT = metOf('parachute_deploy');
   const airbagT = metOf('airbag_deploy');
   const flipT = metOf('entry_flip');
+  const touchdownT = metOf('touchdown');
   // Slow the EDL separations (item 4) so heat-shield jettison + chute-cut linger
   // as a held beat rather than a snap.
   const HS_SEP_S = 4.5;
@@ -505,6 +514,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     model.lander.visible = landerShown;
     model.descentStage.visible = landerShown;
     model.retro.visible = landerShown;
+    // Surface-only deployables appear only once down (flag planted, rover driven
+    // off, petals splayed) — never mid-flight.
+    const landed = s.altM <= 2 || (touchdownT != null && s.t >= touchdownT);
+    for (const o of surfaceOnly) o.visible = landed;
 
     // Skycrane rigging: shown only during the skycrane phase.
     model.skycraneRigging.visible = s.phaseKind === 'skycrane';
@@ -660,6 +673,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     model.orbiter.visible = model.orbiter.children.length > 0;
     model.orbiter.position.set(0, 0, 0);
     model.orbiter.rotation.set(0, 0, 0);
+    for (const o of surfaceOnly) o.visible = false; // planted only at touchdown
     plume.visible = false;
     plasma.visible = false;
     dust.visible = false;

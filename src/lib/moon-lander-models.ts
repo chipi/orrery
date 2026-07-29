@@ -115,6 +115,9 @@ function buildUSFlag(color: string): THREE.Group {
   const flag = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.2, 0.015), accentMat(color));
   flag.position.set(0.72, 0.7, 0);
   g.add(flag);
+  // Planted post-landing by the crew — hidden while the lander is still in flight
+  // (the descent scene keys off userData.surfaceOnly).
+  g.userData.surfaceOnly = true;
   return g;
 }
 
@@ -167,6 +170,7 @@ function buildApolloLMExtended(color: string): THREE.Group {
   dish.rotation.x = Math.PI / 2;
   rover.add(dish);
   rover.position.set(-0.55, 0, 0.3);
+  rover.userData.surfaceOnly = true; // deployed + driven off only after landing
   g.add(rover);
   // Accent ring on descent stage.
   const ring = new THREE.Mesh(new THREE.TorusGeometry(0.36, 0.012, 6, 24), accentMat(color));

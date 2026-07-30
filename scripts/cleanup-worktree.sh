@@ -17,8 +17,16 @@
 #
 # SCOPE — what the DEFAULT run kills (and only this):
 #   A. Any dev/test process (vite, npm run dev/preview, vitest, playwright,
-#      svelte-kit, esbuild) whose CWD is inside this worktree — plus every
-#      descendant process it spawned (its browsers, renderers, workers).
+#      svelte-kit, esbuild, caffeinate) whose CWD is inside this worktree — plus
+#      every descendant process it spawned (its browsers, renderers, workers).
+#      `caffeinate` is the backgrounded keep-awake agents start for long sweeps
+#      (`caffeinate -i … &`); it leaks past the session and silently holds the
+#      machine awake for hours otherwise — cwd-guarded, so only this worktree's.
+#
+#   Docker is NOT this tool's job. It kills HOST dev/test processes by cwd;
+#   killing a docker build or compose stack mid-flight from here would be wrong
+#   and racy. The compose stack / any docker build orphans are out of scope by
+#   design — a separate docker-scoped reaper's concern, never this one's.
 #
 # OPT-IN (--orphans) — additionally kills:
 #   B. Orphaned automation browsers: chrome-headless-shell / chromium on a temp
@@ -174,7 +182,7 @@ owned=()        # Path A: cwd inside this worktree, + descendants
 orphan_roots=() # Path B: unattributable orphaned automation browsers
 
 # ── A. runners whose cwd is inside this worktree, + their descendants ─────────
-for pid in $(pgrep -f 'vite|playwright|vitest|esbuild|svelte-kit|npm run dev|npm run preview' 2>/dev/null | sort -un); do
+for pid in $(pgrep -f 'vite|playwright|vitest|esbuild|svelte-kit|npm run dev|npm run preview|caffeinate' 2>/dev/null | sort -un); do
   [ "$pid" = "$SELF" ] && continue
   cmd="$(pid_cmd "$pid")"
   is_protected_cmd "$cmd" && continue

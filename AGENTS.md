@@ -321,9 +321,9 @@ Prefer the direct `bash` form: cleanup is exactly when the toolchain may be brok
 
 **Isolation boundary = the worktree path** (`git rev-parse --show-toplevel`). Because the treehouse model is one worktree = one agent = one shell, scoping to the worktree scopes to *this* agent. Attribution is by process **cwd**, never by name, so parallel worktrees / agents / shells are never touched — not even another Orrery checkout like `orrery-fixes` (the trailing-slash match means a shared name prefix can't collide). The default run:
 
-- Kills every dev/test process (`vite`, `npm run dev/preview`, `vitest`, `playwright`, `esbuild`, `svelte-kit`) whose **cwd is inside this worktree**, plus all their descendants (browsers, renderers, workers).
+- Kills every dev/test process (`vite`, `npm run dev/preview`, `vitest`, `playwright`, `esbuild`, `svelte-kit`, `caffeinate`) whose **cwd is inside this worktree**, plus all their descendants (browsers, renderers, workers). `caffeinate` is the backgrounded keep-awake for long sweeps — it leaks past the session and holds the machine awake for hours otherwise.
 - **Reports but does NOT kill** orphaned automation browsers (`chrome-headless-shell` on a temp `playwright_*profile`, reparented to launchd). An orphan's cwd is `/` — it is unattributable to any worktree, so killing it by default could reap another agent's leftover. Pass `--orphans` only when you know it's yours and no other agent is mid-playwright-run.
-- **Never** touches: a parallel worktree/project (cwd-attributed — `orrery-fixes`, `podcast_scraper`, etc.), your real Chrome/Chromium profile, Claude Desktop, lean-ctx / MCP / language servers, or a live playwright run anywhere.
+- **Never** touches: a parallel worktree/project (cwd-attributed — `orrery-fixes`, `podcast_scraper`, etc.), your real Chrome/Chromium profile, Claude Desktop, lean-ctx / MCP / language servers, or a live playwright run anywhere. **Docker is out of scope by design** — this tool kills host processes by cwd; a docker build or compose stack is never killed here (that's a separate docker-scoped reaper's job, not this one's).
 
 This is a standing rule, not a suggestion: **the last thing you do before ending a work block is run the cleanup tool** — unless the human is actively using a server you started (e.g. a dev server they asked to keep up), in which case say so and leave it.
 

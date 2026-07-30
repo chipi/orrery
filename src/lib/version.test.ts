@@ -18,4 +18,9 @@ describe('formatDisplayVersion', () => {
     expect(formatDisplayVersion('0.9.0-rc.1')).toBe('0.9-rc.1');
     expect(formatDisplayVersion('1.2.3-rc.1')).toBe('1.2.3-rc.1');
   });
+
+  it('renders a dated build number (hyphenated pre-release, .0 patch collapsed)', () => {
+    expect(formatDisplayVersion('0.8.0-2026-07-30-1')).toBe('0.8-2026-07-30-1');
+    expect(formatDisplayVersion('0.8.0-2026-07-30-12')).toBe('0.8-2026-07-30-12');
+  });
 });

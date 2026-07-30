@@ -298,11 +298,24 @@ Highest-frequency surface: `npm run preflight` (pre-push gate, no e2e), `npm run
 When you finish a work block on a worktree — deployed, tested, compared, fixed, whatever — **leave the machine quiet**. Don't strand a `vite dev` server, a wedged `playwright` run, or an orphaned headless Chrome for the next session (or the human) to hunt down. A pegged runaway dev server eating 200% CPU for days is the failure mode this prevents.
 
 ```bash
-bash scripts/cleanup-worktree.sh            # canonical — no node dependency, works even when npm is wedged
-bash scripts/cleanup-worktree.sh --dry-run  # preview: list targets, kill nothing
-bash scripts/cleanup-worktree.sh --orphans  # also reap unattributable orphaned headless browsers
-npm run cleanup                             # convenience alias (needs a healthy node/npm)
+bash scripts/cleanup-worktree.sh               # canonical — no node dependency, works even when npm is wedged
+bash scripts/cleanup-worktree.sh --dry-run     # preview: list targets, kill nothing
+bash scripts/cleanup-worktree.sh --orphans     # also reap unattributable orphaned headless browsers
+bash scripts/cleanup-worktree.sh --stale-loops # also sweep runaway gh-run poll loops (>2h) — see below
+npm run cleanup                                # convenience alias (needs a healthy node/npm)
 ```
+
+**`--stale-loops` (opt-in) — runaway CI-watch loops.** Agents sometimes background a
+`while true; do gh run …; sleep; done` watcher and leak it when the session dies before
+its SessionEnd reaper fires; these orphans poll the GitHub API forever (observed: loops
+surviving 8–14 days). `--stale-loops` sweeps them by FAMILY + SHAPE + AGE: a `gh run` call in an unbounded
+`while/until` loop, older than 2h (`CLEANUP_MAX_LOOP_AGE`), whose CWD is in **this project's
+family** (project-name prefix of the worktree — run from `orrery-311982` it reaps
+`~/.treehouse/orrery*` loops, so `orrery-fixes` is swept but `podcast_scraper` is never
+touched). It reaches sibling worktrees but never another project. The automatic counterpart
+is the SessionEnd hook `~/.claude/hooks/session-reap.sh` (global, not in this repo), which
+family-scopes to the ending session's own project. Full reference for the global reaper —
+safety gates, env knobs, family rule: **`~/.claude/hooks/README.md`**.
 
 Prefer the direct `bash` form: cleanup is exactly when the toolchain may be broken (a stale `NODE_OPTIONS` preload, a wedged node), so the tool deliberately depends on nothing but `bash` + `ps`/`lsof`/`pgrep`.
 

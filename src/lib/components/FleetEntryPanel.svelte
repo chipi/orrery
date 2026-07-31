@@ -415,7 +415,11 @@
             {#each engineLaunchers as v (v.launcherId)}
               <li>
                 {#if knownIds?.has(v.launcherId) && onNavigate}
-                  <button type="button" class="xref-link" onclick={() => onNavigate?.(v.launcherId)}>
+                  <button
+                    type="button"
+                    class="xref-link"
+                    onclick={() => onNavigate?.(v.launcherId)}
+                  >
                     {v.launcherName}
                   </button>
                 {:else}
@@ -429,8 +433,10 @@
           <ul class="xref-list">
             {#each ENGINE_SCIENCE as s (s.slug)}
               <li>
-                <a class="xref-link" href="{base}/science/{s.slug}" data-sveltekit-preload-data="hover"
-                  >{s.label} →</a
+                <a
+                  class="xref-link"
+                  href="{base}/science/{s.slug}"
+                  data-sveltekit-preload-data="hover">{s.label} →</a
                 >
               </li>
             {/each}

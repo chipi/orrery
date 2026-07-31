@@ -136,7 +136,9 @@ export const ENGINE_REGISTRY: EngineMeta[] = [
     isp_sl_s: 255,
     mass_kg: 989,
     designations: ['H-1'],
-    links: [{ l: 'H-1 — Wikipedia', u: 'https://en.wikipedia.org/wiki/Rocketdyne_H-1', t: 'intro' }],
+    links: [
+      { l: 'H-1 — Wikipedia', u: 'https://en.wikipedia.org/wiki/Rocketdyne_H-1', t: 'intro' },
+    ],
     credit: 'Engine registry (PRD-032). Public-source nominal specs; NASA imagery.',
   },
   {
@@ -203,7 +205,11 @@ export const ENGINE_REGISTRY: EngineMeta[] = [
     isp_sl_s: 235,
     designations: ['Rocketdyne A-7'],
     links: [
-      { l: 'Redstone (rocket) — Wikipedia', u: 'https://en.wikipedia.org/wiki/PGM-11_Redstone', t: 'intro' },
+      {
+        l: 'Redstone (rocket) — Wikipedia',
+        u: 'https://en.wikipedia.org/wiki/PGM-11_Redstone',
+        t: 'intro',
+      },
     ],
     credit: 'Engine registry (PRD-032). Public-source nominal specs; NASA imagery.',
   },
@@ -217,7 +223,8 @@ export const ENGINE_REGISTRY: EngineMeta[] = [
     status: 'ACTIVE',
     era: '2011-now',
     epoch: 'commercial-era',
-    best_known_for: 'The reusable workhorse — nine lift Falcon 9, flown and re-flown dozens of times',
+    best_known_for:
+      'The reusable workhorse — nine lift Falcon 9, flown and re-flown dozens of times',
     cycle: 'gas-generator',
     propellant: 'LOX / RP-1',
     thrust_kn: 845,
@@ -251,7 +258,7 @@ export const ENGINE_REGISTRY: EngineMeta[] = [
     isp_vac_s: 350,
     isp_sl_s: 327,
     mass_kg: 1600,
-    designations: ['Raptor 2', 'Raptor', 'RVac'],
+    designations: ['Raptor 2', 'Raptor / RVac'],
     science: ['propulsion/staged-combustion', 'propulsion/methalox'],
     links: [
       { l: 'Raptor — Wikipedia', u: 'https://en.wikipedia.org/wiki/SpaceX_Raptor', t: 'intro' },
@@ -277,9 +284,7 @@ export const ENGINE_REGISTRY: EngineMeta[] = [
     isp_sl_s: 256,
     designations: ['RD-107', 'RD-108', 'RD-107A', 'RD-108A'],
     science: ['propulsion/thrust'],
-    links: [
-      { l: 'RD-107 — Wikipedia', u: 'https://en.wikipedia.org/wiki/RD-107', t: 'intro' },
-    ],
+    links: [{ l: 'RD-107 — Wikipedia', u: 'https://en.wikipedia.org/wiki/RD-107', t: 'intro' }],
     credit: 'Engine registry (PRD-032). Public-source nominal specs.',
   },
   {
@@ -389,7 +394,11 @@ export const ENGINE_REGISTRY: EngineMeta[] = [
     isp_sl_s: 248,
     designations: ['Viking 5', 'Viking 4'],
     links: [
-      { l: 'Viking (rocket engine) — Wikipedia', u: 'https://en.wikipedia.org/wiki/Viking_(rocket_engine)', t: 'intro' },
+      {
+        l: 'Viking (rocket engine) — Wikipedia',
+        u: 'https://en.wikipedia.org/wiki/Viking_(rocket_engine)',
+        t: 'intro',
+      },
     ],
     credit: 'Engine registry (PRD-032). Public-source nominal specs; ESA imagery.',
   },
@@ -451,7 +460,13 @@ export const ENGINE_REGISTRY: EngineMeta[] = [
     thrustNote: 'sea level',
     isp_sl_s: 262,
     designations: ['Vikas'],
-    links: [{ l: 'Vikas (rocket engine) — Wikipedia', u: 'https://en.wikipedia.org/wiki/Vikas_(rocket_engine)', t: 'intro' }],
+    links: [
+      {
+        l: 'Vikas (rocket engine) — Wikipedia',
+        u: 'https://en.wikipedia.org/wiki/Vikas_(rocket_engine)',
+        t: 'intro',
+      },
+    ],
     credit: 'Engine registry (PRD-032). Public-source nominal specs; ISRO imagery.',
   },
   {
@@ -564,9 +579,7 @@ export const ENGINE_REGISTRY: EngineMeta[] = [
 
 export const ENGINE_IDS: string[] = ENGINE_REGISTRY.map((e) => e.id);
 
-const BY_ID: Record<string, EngineMeta> = Object.fromEntries(
-  ENGINE_REGISTRY.map((e) => [e.id, e]),
-);
+const BY_ID: Record<string, EngineMeta> = Object.fromEntries(ENGINE_REGISTRY.map((e) => [e.id, e]));
 
 export function getEngineMeta(id: string): EngineMeta | undefined {
   return BY_ID[id];

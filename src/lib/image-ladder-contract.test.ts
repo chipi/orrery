@@ -35,10 +35,14 @@ const entries = Object.entries(manifest);
 /** `/images/<stem>` (+ optional suffix) → absolute path under `static/`. */
 const onDisk = (imagePath: string) => path.join(STATIC, imagePath.replace(/^\//, ''));
 
-/** All files under `static/images` matching `pred`, as `images/…`-relative POSIX paths. */
+/** All files under `static/images` matching `pred`, as `images/…`-relative POSIX paths.
+ * `_staging/` is the gitignored review scratch area (curated-fetch candidates,
+ * .jpg until promoted → .webp); it never ships (build prunes it) and isn't in git,
+ * so it's excluded here to keep the contract identical local + on CI. */
 function imageFiles(pred: (rel: string) => boolean): string[] {
   return readdirSync(IMAGES, { recursive: true })
     .map((e) => 'images/' + String(e).split(path.sep).join('/'))
+    .filter((rel) => !rel.startsWith('images/_staging/'))
     .filter(pred);
 }
 

@@ -3143,6 +3143,31 @@ const FLEET_GALLERY_MAX = 5;
  * falls back to a placeholder gradient on the card).
  */
 const FLEET_IMAGE_QUERIES: FleetImageQuery[] = [
+  // Engines (PRD-032) — the workhorse hardware. Agency-archive first, then
+  // Commons; native-language extraQueries for the non-Western archives per the
+  // sourcing rule (zh/ru/ja/fr terms find files English search misses).
+  { id: 'f-1', query: 'F-1 rocket engine Saturn V', agency: 'NASA', extraQueries: ['Rocketdyne F-1 engine'] },
+  { id: 'j-2', query: 'J-2 rocket engine Saturn', agency: 'NASA', extraQueries: ['Rocketdyne J-2 engine'] },
+  { id: 'h-1', query: 'H-1 rocket engine Saturn IB', agency: 'NASA', extraQueries: ['Rocketdyne H-1 engine'] },
+  { id: 'rs-25', query: 'RS-25 Space Shuttle Main Engine', agency: 'NASA', extraQueries: ['SSME engine test firing'] },
+  { id: 'rl10', query: 'RL10 rocket engine Centaur', agency: 'NASA', extraQueries: ['RL10 engine'] },
+  { id: 'rocketdyne-a7', query: 'Redstone rocket engine Rocketdyne A-7', agency: 'NASA', extraQueries: ['Mercury Redstone engine'] },
+  { id: 'merlin-1d', query: 'SpaceX Merlin engine', agency: 'SPACEX', extraQueries: ['Merlin 1D engine Falcon 9'] },
+  { id: 'raptor', query: 'SpaceX Raptor engine', agency: 'SPACEX', extraQueries: ['Raptor engine test firing'] },
+  { id: 'rd-107-108', query: 'RD-107 rocket engine', agency: 'ROSCOSMOS', extraQueries: ['РД-107 двигатель', 'RD-108 engine', 'RD-107A Soyuz engine'] },
+  { id: 'rd-180', query: 'RD-180 rocket engine', agency: 'ROSCOSMOS', extraQueries: ['РД-180 двигатель', 'RD-180 Atlas V engine'] },
+  { id: 'rd-253', query: 'RD-253 rocket engine Proton', agency: 'ROSCOSMOS', extraQueries: ['РД-253 двигатель'] },
+  { id: 'vulcain-2', query: 'Vulcain 2 rocket engine Ariane 5', agency: 'ESA', extraQueries: ['moteur Vulcain', 'Vulcain engine'] },
+  { id: 'hm7b', query: 'HM7B rocket engine Ariane', agency: 'ESA', extraQueries: ['HM7 engine', 'moteur HM7B'] },
+  { id: 'viking', query: 'Viking rocket engine Ariane', agency: 'ESA', extraQueries: ['moteur Viking Ariane'] },
+  { id: 'yf-100', query: 'YF-100 rocket engine', agency: 'CNSA', extraQueries: ['YF-100 发动机', 'Long March 5 engine'] },
+  { id: 'yf-77', query: 'YF-77 rocket engine', agency: 'CNSA', extraQueries: ['YF-77 发动机'] },
+  { id: 'vikas', query: 'Vikas rocket engine ISRO', agency: 'ISRO', extraQueries: ['Vikas engine PSLV'] },
+  { id: 'ce-20', query: 'CE-20 cryogenic engine ISRO', agency: 'ISRO', extraQueries: ['CE-20 engine LVM3'] },
+  { id: 'le-7a', query: 'LE-7A rocket engine H-IIA', agency: 'JAXA', extraQueries: ['LE-7 エンジン', 'LE-7A engine'] },
+  { id: 'le-9', query: 'LE-9 rocket engine H3', agency: 'JAXA', extraQueries: ['LE-9 エンジン'] },
+  { id: 'le-5b', query: 'LE-5B rocket engine', agency: 'JAXA', extraQueries: ['LE-5 エンジン'] },
+  { id: 'lr87', query: 'LR87 rocket engine Titan', agency: 'NASA', extraQueries: ['Aerojet LR87 engine'] },
   // Launchers
   { id: 'saturn-v', query: 'Saturn V launch Apollo lunar', agency: 'NASA' },
   {

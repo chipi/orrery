@@ -98,6 +98,29 @@ test.describe('/fleet', () => {
     expect(await cards.count()).toBeGreaterThanOrEqual(12);
   });
 
+  test('engine category filter (PRD-032) shows the ~22 curated engines', async ({ page }) => {
+    await page.goto('/fleet');
+    await waitForFleetReady(page);
+    await expandFilters(page);
+    await page.getByRole('radio', { name: /^Engine$/ }).click();
+    await expect(page).toHaveURL(/category=engine/);
+    const cards = page.locator('.fleet-grid .card');
+    // 22 engines shipped; keep the bound loose for future additions.
+    expect(await cards.count()).toBeGreaterThanOrEqual(20);
+  });
+
+  test('engine → launcher cross-link navigates the panel (PRD-032)', async ({ page }) => {
+    // Deep-link straight into an engine entry; the panel restores from ?id=.
+    await page.goto('/fleet?id=merlin-1d');
+    await waitForFleetReady(page);
+    // "Flies on" surfaces the derived launcher graph — Merlin 1D → Falcon 9.
+    const fliesOn = page.getByRole('button', { name: /Falcon 9/ });
+    await expect(fliesOn.first()).toBeVisible({ timeout: 8_000 });
+    await fliesOn.first().click();
+    // Cross-navigation opens the Falcon 9 launcher entry in place.
+    await expect(page).toHaveURL(/id=falcon-9/);
+  });
+
   test('epoch chip filter works (mobile carousel)', async ({ page }) => {
     // Mobile viewport activates the chip carousel rather than the axis.
     await page.setViewportSize({ width: 375, height: 800 });

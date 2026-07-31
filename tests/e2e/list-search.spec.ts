@@ -86,7 +86,7 @@ test.describe('/fleet search (RFC-027)', () => {
     // Cargo Dragon 2, Crew Dragon, Cargo Dragon v1 plus any tagline
     // matches (LC-39A, SpaceX IVA Suit). Lower-bound at 4.
     expect(count).toBeGreaterThanOrEqual(4);
-    expect(count).toBeLessThan(252);
+    expect(count).toBeLessThan(274);
   });
 
   test('typing into the input updates the URL', async ({ page }) => {
@@ -106,10 +106,13 @@ test.describe('/fleet search (RFC-027)', () => {
     const cards = page.locator('[data-testid^="fleet-card-"]');
     await expect(cards.first()).toBeVisible({ timeout: 10_000 });
     const narrowed = await cards.count();
-    expect(narrowed).toBeLessThan(252);
+    expect(narrowed).toBeLessThan(274);
     const input = page.locator('[data-testid="fleet-search"]');
     await input.fill('');
     await expect(page).not.toHaveURL(/[?&]q=/);
-    await expect(cards).toHaveCount(252, { timeout: 5_000 });
+    // Widened back to the full set — assert a floor rather than an exact count
+    // so adding fleet entries (e.g. the PRD-032 engine category) doesn't break it.
+    await expect.poll(() => cards.count(), { timeout: 5_000 }).toBeGreaterThanOrEqual(252);
+    expect(await cards.count()).toBeGreaterThan(narrowed);
   });
 });

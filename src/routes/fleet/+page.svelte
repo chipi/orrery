@@ -161,6 +161,7 @@
     'space-suit',
     'constellation',
     'launch-site',
+    'engine',
   ];
 
   const CATEGORY_LABEL: Record<FleetCategory, string> = {
@@ -175,6 +176,7 @@
     'space-suit': 'Suit',
     constellation: 'Constellation',
     'launch-site': 'Launch site',
+    engine: 'Engine',
   };
 
   const CATEGORY_COLOR: Record<FleetCategory, string> = {
@@ -189,6 +191,7 @@
     'space-suit': '#cbd5e1', // ice-white — pressure shell
     constellation: '#9bdbff', // pale sky-blue — Earth-orbiting collectives
     'launch-site': '#6b8e6b', // moss-green — Earth-surface launch sites (#285)
+    engine: '#e8734a', // ember-orange — the fire under every launcher (PRD-032)
   };
 
   const STATUSES: Array<FleetStatus> = ['ACTIVE', 'FLOWN', 'RETIRED', 'FAILED', 'PLANNED'];
@@ -316,6 +319,14 @@
       noScroll: true,
     });
     void loadEntry(entry.id);
+  }
+
+  // PRD-032 — cross-navigation from the panel (engine ↔ launcher). knownIds
+  // gates which cross-links become clickable so we never link a dead id.
+  const knownIds = $derived(new Set(entries.map((e) => e.id)));
+  function navigateToId(id: string) {
+    const summary = entries.find((e) => e.id === id);
+    if (summary) openEntry(summary);
   }
 
   function closePanel() {
@@ -682,6 +693,8 @@
   open={panelOpen}
   onClose={closePanel}
   galleryFetcher={getFleetGallery}
+  {knownIds}
+  onNavigate={navigateToId}
 />
 
 <style>

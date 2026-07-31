@@ -1,0 +1,29 @@
+{
+  "id": "j-2",
+  "name": "J-2",
+  "category": "engine",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Rocketdyne",
+  "first_flight": "1966-02-26",
+  "last_flight": "1975-07-15",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "lunar-era",
+  "best_known_for": "Restartable hydrogen upper-stage engine that sent Apollo translunar",
+  "specs": {
+    "cycle": "gas-generator",
+    "propellant": "LOX / LH2",
+    "thrust_kn_vac": 1033,
+    "isp_vac_s": 421,
+    "mass_kg": 1788
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs; NASA imagery.",
+  "links": [
+    {
+      "l": "J-2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Rocketdyne_J-2",
+      "t": "intro"
+    }
+  ]
+}

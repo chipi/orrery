@@ -72,7 +72,32 @@ interface SurfaceSpec {
 // runtime gallery loader's cross-surface fallback now resolves the
 // mission-side IDs.
 const MISSIONS_KNOWN_GAPS = new Set<string>([]);
-const FLEET_KNOWN_GAPS = new Set<string>([]);
+// PRD-032 engine category — heroes pending curated imagery (Slice 3). Cleared
+// per-id as fleet-galleries images land; do NOT leave populated once sourced.
+const FLEET_KNOWN_GAPS = new Set<string>([
+  'ce-20',
+  'f-1',
+  'h-1',
+  'hm7b',
+  'j-2',
+  'le-5b',
+  'le-7a',
+  'le-9',
+  'lr87',
+  'merlin-1d',
+  'raptor',
+  'rd-107-108',
+  'rd-180',
+  'rd-253',
+  'rl10',
+  'rocketdyne-a7',
+  'rs-25',
+  'vikas',
+  'viking',
+  'vulcain-2',
+  'yf-100',
+  'yf-77',
+]);
 const MOON_SITES_KNOWN_GAPS = new Set<string>([]);
 const MARS_SITES_KNOWN_GAPS = new Set<string>([]);
 const EARTH_OBJECTS_KNOWN_GAPS = new Set<string>([]);

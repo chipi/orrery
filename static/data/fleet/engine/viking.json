@@ -1,0 +1,28 @@
+{
+  "id": "viking",
+  "name": "Viking",
+  "category": "engine",
+  "agency": "CNES / ESA",
+  "country": "France",
+  "manufacturer": "SEP (Safran)",
+  "first_flight": "1979-12-24",
+  "last_flight": "2003-02-15",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "The French engine later licensed to India as Vikas — powered Ariane 1–4",
+  "specs": {
+    "cycle": "gas-generator",
+    "propellant": "N2O4 / UH25",
+    "thrust_kn_sl": 678,
+    "isp_sl_s": 248
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs; ESA imagery.",
+  "links": [
+    {
+      "l": "Viking (rocket engine) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Viking_(rocket_engine)",
+      "t": "intro"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "rocketdyne-a7",
+  "name": "Rocketdyne A-7",
+  "category": "engine",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Rocketdyne",
+  "first_flight": "1961-05-05",
+  "last_flight": "1963-05-15",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "The engine that launched the first American — Freedom 7",
+  "specs": {
+    "cycle": "gas-generator",
+    "propellant": "LOX / ethyl alcohol",
+    "thrust_kn_sl": 350,
+    "isp_sl_s": 235
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs; NASA imagery.",
+  "links": [
+    {
+      "l": "Redstone (rocket) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/PGM-11_Redstone",
+      "t": "intro"
+    }
+  ]
+}

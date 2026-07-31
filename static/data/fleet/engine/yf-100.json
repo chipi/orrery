@@ -1,0 +1,27 @@
+{
+  "id": "yf-100",
+  "name": "YF-100",
+  "category": "engine",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "AALPT (Xi’an)",
+  "first_flight": "2015-09-20",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "China's modern staged-combustion kerolox engine — Long March 5/6/7",
+  "specs": {
+    "cycle": "staged-combustion (ox-rich)",
+    "propellant": "LOX / RP-1",
+    "thrust_kn_sl": 1200,
+    "isp_sl_s": 300
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs.",
+  "links": [
+    {
+      "l": "YF-100 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/YF-100",
+      "t": "intro"
+    }
+  ]
+}

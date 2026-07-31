@@ -1,0 +1,27 @@
+{
+  "id": "le-5b",
+  "name": "LE-5B",
+  "category": "engine",
+  "agency": "JAXA",
+  "country": "Japan",
+  "manufacturer": "Mitsubishi Heavy Industries",
+  "first_flight": "2001-08-29",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Japan's restartable cryogenic upper stage — H-IIA through H3",
+  "specs": {
+    "cycle": "expander-bleed",
+    "propellant": "LOX / LH2",
+    "thrust_kn_vac": 137,
+    "isp_vac_s": 448
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs; JAXA imagery.",
+  "links": [
+    {
+      "l": "LE-5 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/LE-5",
+      "t": "intro"
+    }
+  ]
+}

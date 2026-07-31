@@ -690,6 +690,7 @@ const FLEET_CATEGORIES = [
   'space-suit',
   'constellation',
   'launch-site',
+  'engine',
 ];
 
 type FleetLinkedSite = { type: 'moon' | 'mars' | 'earth-object'; site_id: string };

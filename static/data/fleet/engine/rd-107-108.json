@@ -1,0 +1,27 @@
+{
+  "id": "rd-107-108",
+  "name": "RD-107 / RD-108",
+  "category": "engine",
+  "agency": "Roscosmos",
+  "country": "USSR / Russia",
+  "manufacturer": "NPO Energomash",
+  "first_flight": "1957-08-21",
+  "status": "ACTIVE",
+  "era": "1957-1969",
+  "epoch": "first-steps",
+  "best_known_for": "The R-7 engines — still flying humans on Soyuz after 65+ years",
+  "specs": {
+    "cycle": "gas-generator",
+    "propellant": "LOX / RP-1",
+    "thrust_kn_sl": 839,
+    "isp_sl_s": 256
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs.",
+  "links": [
+    {
+      "l": "RD-107 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/RD-107",
+      "t": "intro"
+    }
+  ]
+}

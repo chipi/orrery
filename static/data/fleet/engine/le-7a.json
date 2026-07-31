@@ -1,0 +1,29 @@
+{
+  "id": "le-7a",
+  "name": "LE-7A",
+  "category": "engine",
+  "agency": "JAXA",
+  "country": "Japan",
+  "manufacturer": "Mitsubishi Heavy Industries",
+  "first_flight": "2001-08-29",
+  "last_flight": "2024-09-14",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Japan's staged-combustion hydrogen core — powered H-IIA/H-IIB",
+  "specs": {
+    "cycle": "staged-combustion",
+    "propellant": "LOX / LH2",
+    "thrust_kn_vac": 1098,
+    "isp_vac_s": 440,
+    "mass_kg": 1800
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs; JAXA imagery.",
+  "links": [
+    {
+      "l": "LE-7 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/LE-7",
+      "t": "intro"
+    }
+  ]
+}

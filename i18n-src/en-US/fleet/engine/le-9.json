@@ -1,0 +1,6 @@
+{
+  "name": "LE-9",
+  "tagline": "The largest expander-bleed engine ever built — powering H3",
+  "description": "The LE-9 is a deliberate choice of elegance over complexity. Rather than the turbopump-preburner arrangement of staged combustion, it uses an expander-bleed cycle: hydrogen is heated by the chamber and nozzle walls, and a portion of that gas is bled off to drive the turbopumps before being dumped overboard. The cycle has inherently lower chamber pressures and a simpler hot-section design, trading some performance for a reduction in the mechanical failure modes that plagued earlier Japanese engines. Developed by Mitsubishi for JAXA's H3 rocket, the LE-9 first flew in March 2023 and is the largest engine of its type to reach operational service.",
+  "best_known_for": "The largest expander-bleed engine ever flown — the H3 core"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "h-1",
+  "name": "H-1",
+  "category": "engine",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Rocketdyne",
+  "first_flight": "1961-10-27",
+  "last_flight": "1975-07-15",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "Eight-cluster Saturn I/IB booster engine — the F-1 rehearsal",
+  "specs": {
+    "cycle": "gas-generator",
+    "propellant": "LOX / RP-1",
+    "thrust_kn_sl": 900,
+    "isp_sl_s": 255,
+    "mass_kg": 989
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs; NASA imagery.",
+  "links": [
+    {
+      "l": "H-1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Rocketdyne_H-1",
+      "t": "intro"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "raptor",
+  "name": "Raptor",
+  "category": "engine",
+  "agency": "SpaceX",
+  "country": "USA",
+  "manufacturer": "SpaceX",
+  "first_flight": "2023-04-20",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "mars-era",
+  "best_known_for": "First full-flow staged-combustion engine to fly — 33 lift Super Heavy",
+  "specs": {
+    "cycle": "staged-combustion (full-flow)",
+    "propellant": "LOX / liquid methane",
+    "thrust_kn_sl": 2258,
+    "isp_vac_s": 350,
+    "isp_sl_s": 327,
+    "mass_kg": 1600
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs.",
+  "links": [
+    {
+      "l": "Raptor — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/SpaceX_Raptor",
+      "t": "intro"
+    },
+    {
+      "l": "Starship (SpaceX)",
+      "u": "https://www.spacex.com/vehicles/starship/",
+      "t": "core"
+    }
+  ]
+}

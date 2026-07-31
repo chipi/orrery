@@ -1,0 +1,29 @@
+{
+  "id": "rd-180",
+  "name": "RD-180",
+  "category": "engine",
+  "agency": "Roscosmos",
+  "country": "Russia",
+  "manufacturer": "NPO Energomash",
+  "first_flight": "2000-05-24",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Oxygen-rich staged combustion the US could not match — flew on Atlas V",
+  "specs": {
+    "cycle": "staged-combustion (ox-rich)",
+    "propellant": "LOX / RP-1",
+    "thrust_kn_sl": 3830,
+    "isp_vac_s": 338,
+    "isp_sl_s": 311,
+    "mass_kg": 5480
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs.",
+  "links": [
+    {
+      "l": "RD-180 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/RD-180",
+      "t": "intro"
+    }
+  ]
+}

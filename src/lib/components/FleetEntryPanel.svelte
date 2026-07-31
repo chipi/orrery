@@ -12,6 +12,7 @@
   import MediaPlayer from './MediaPlayer.svelte';
   import VideoThumb from './VideoThumb.svelte';
   import { getVideosForEntity, type VideoProvenanceEntry } from '$lib/video-provenance';
+  import { launchersForEngine, enginesForLauncher } from '$lib/orbital/engine-registry';
 
   /**
    * Fleet detail panel. Six tabs (OVERVIEW / GALLERY / ANATOMY / CREW /
@@ -34,8 +35,12 @@
     open: boolean;
     onClose: () => void;
     galleryFetcher: (id: string) => Promise<string[]>;
+    /** All fleet ids present in the index — cross-links only linkify known ids. */
+    knownIds?: Set<string>;
+    /** Open another fleet entry in-place (engine ↔ launcher cross-navigation). */
+    onNavigate?: (id: string) => void;
   };
-  let { entry, open, onClose, galleryFetcher }: Props = $props();
+  let { entry, open, onClose, galleryFetcher, knownIds, onNavigate }: Props = $props();
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -133,8 +138,27 @@
     push('Wavelength', 'wavelengths');
     push('Mission target', 'mission_target');
     push('Instruments', 'instruments_count');
+    // Engine (PRD-032) — one of thrust_kn_sl/vac is present per engine.
+    push('Cycle', 'cycle');
+    push('Propellant', 'propellant');
+    push('Thrust', 'thrust_kn_sl', ' kN (sea level)');
+    push('Thrust', 'thrust_kn_vac', ' kN (vacuum)');
+    push('Specific impulse', 'isp_vac_s', ' s (vac)');
+    push('Specific impulse', 'isp_sl_s', ' s (sea level)');
     return rows;
   });
+
+  // PRD-032 — engine ↔ launcher graph, derived from launcher-engines.ts.
+  const isEngine = $derived(entry?.category === 'engine');
+  const engineLaunchers = $derived(isEngine && entry ? launchersForEngine(entry.id) : []);
+  const launcherEngines = $derived(
+    entry?.category === 'launcher' && entry ? enginesForLauncher(entry.id) : [],
+  );
+  // Every engine illustrates the same two propulsion primers.
+  const ENGINE_SCIENCE = [
+    { slug: 'propulsion/engine-types', label: 'How rocket engines work' },
+    { slug: 'propulsion/thrust-and-twr', label: 'Thrust & thrust-to-weight' },
+  ];
 
   function siteRoute(ls: FleetSiteLink): string {
     if (ls.type === 'moon') return `${base}/moon?site=${encodeURIComponent(ls.site_id)}`;
@@ -383,6 +407,53 @@
             </div>
           {/each}
         </dl>
+
+        <!-- PRD-032 — engine ↔ launcher cross-reference (the workhorse graph). -->
+        {#if isEngine && engineLaunchers.length > 0}
+          <h3 class="section-h">Flies on</h3>
+          <ul class="xref-list">
+            {#each engineLaunchers as v (v.launcherId)}
+              <li>
+                {#if knownIds?.has(v.launcherId) && onNavigate}
+                  <button type="button" class="xref-link" onclick={() => onNavigate?.(v.launcherId)}>
+                    {v.launcherName}
+                  </button>
+                {:else}
+                  <span class="xref-link xref-link--plain">{v.launcherName}</span>
+                {/if}
+                <span class="xref-sub">{v.stages.join(' · ')}</span>
+              </li>
+            {/each}
+          </ul>
+          <h3 class="section-h">Learn the science</h3>
+          <ul class="xref-list">
+            {#each ENGINE_SCIENCE as s (s.slug)}
+              <li>
+                <a class="xref-link" href="{base}/science/{s.slug}" data-sveltekit-preload-data="hover"
+                  >{s.label} →</a
+                >
+              </li>
+            {/each}
+          </ul>
+        {/if}
+
+        {#if entry.category === 'launcher' && launcherEngines.length > 0}
+          <h3 class="section-h">Engines</h3>
+          <ul class="xref-list">
+            {#each launcherEngines as e (e.id)}
+              <li>
+                {#if onNavigate}
+                  <button type="button" class="xref-link" onclick={() => onNavigate?.(e.id)}>
+                    {e.name}
+                  </button>
+                {:else}
+                  <span class="xref-link xref-link--plain">{e.name}</span>
+                {/if}
+                <span class="xref-sub">{e.best_known_for}</span>
+              </li>
+            {/each}
+          </ul>
+        {/if}
 
         {#if entry.linked_sites && entry.linked_sites.length > 0}
           <h3 class="section-h">{siteSectionHeading()}</h3>
@@ -842,6 +913,46 @@
     letter-spacing: 0.08em;
     color: rgba(255, 255, 255, 0.55);
     font-weight: normal;
+  }
+  /* PRD-032 — engine ↔ launcher cross-reference list. */
+  .xref-list {
+    list-style: none;
+    margin: 0 0 8px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .xref-list li {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+  }
+  .xref-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: 13px;
+    color: #e8734a;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+  }
+  .xref-link:hover,
+  .xref-link:focus-visible {
+    text-decoration: underline;
+  }
+  .xref-link--plain {
+    color: #fff;
+    cursor: default;
+    text-decoration: none;
+  }
+  .xref-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.45);
   }
   .site-list {
     list-style: none;

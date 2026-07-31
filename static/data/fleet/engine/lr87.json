@@ -1,0 +1,28 @@
+{
+  "id": "lr87",
+  "name": "LR87",
+  "category": "engine",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Aerojet",
+  "first_flight": "1959-02-06",
+  "last_flight": "2005-10-19",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "The twin-chamber first stage that launched Gemini crews on Titan II",
+  "specs": {
+    "cycle": "gas-generator",
+    "propellant": "N2O4 / Aerozine-50",
+    "thrust_kn_sl": 1900,
+    "isp_sl_s": 258
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs; NASA imagery.",
+  "links": [
+    {
+      "l": "LR87 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/LR87",
+      "t": "intro"
+    }
+  ]
+}

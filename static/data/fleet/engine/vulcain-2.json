@@ -1,0 +1,29 @@
+{
+  "id": "vulcain-2",
+  "name": "Vulcain 2",
+  "category": "engine",
+  "agency": "ESA",
+  "country": "Europe",
+  "manufacturer": "Snecma (Safran)",
+  "first_flight": "2002-12-11",
+  "last_flight": "2023-07-05",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Europe's hydrogen core engine — powered every Ariane 5",
+  "specs": {
+    "cycle": "gas-generator",
+    "propellant": "LOX / LH2",
+    "thrust_kn_vac": 1359,
+    "isp_vac_s": 429,
+    "mass_kg": 2100
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs; ESA imagery.",
+  "links": [
+    {
+      "l": "Vulcain — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vulcain",
+      "t": "intro"
+    }
+  ]
+}

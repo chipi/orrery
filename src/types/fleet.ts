@@ -14,7 +14,8 @@ export type FleetCategory =
   | 'observatory'
   | 'space-suit'
   | 'constellation'
-  | 'launch-site';
+  | 'launch-site'
+  | 'engine';
 
 export type FleetStatus = 'FLOWN' | 'ACTIVE' | 'RETIRED' | 'FAILED' | 'PLANNED';
 

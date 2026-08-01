@@ -1,0 +1,27 @@
+{
+  "id": "vikas",
+  "name": "Vikas",
+  "category": "engine",
+  "agency": "ISRO",
+  "country": "India",
+  "manufacturer": "ISRO (LPSC)",
+  "first_flight": "1993-09-20",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "India's workhorse — powers PSLV, GSLV and LVM3 to this day",
+  "specs": {
+    "cycle": "gas-generator",
+    "propellant": "N2O4 / UDMH",
+    "thrust_kn_sl": 725,
+    "isp_sl_s": 262
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs; ISRO imagery.",
+  "links": [
+    {
+      "l": "Vikas (rocket engine) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vikas_(rocket_engine)",
+      "t": "intro"
+    }
+  ]
+}

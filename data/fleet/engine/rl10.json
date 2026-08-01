@@ -1,0 +1,28 @@
+{
+  "id": "rl10",
+  "name": "RL10",
+  "category": "engine",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Aerojet Rocketdyne",
+  "first_flight": "1963-11-27",
+  "status": "ACTIVE",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "Longest-serving engine in spaceflight — the first hydrogen upper stage",
+  "specs": {
+    "cycle": "expander",
+    "propellant": "LOX / LH2",
+    "thrust_kn_vac": 110,
+    "isp_vac_s": 450,
+    "mass_kg": 301
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs; NASA imagery.",
+  "links": [
+    {
+      "l": "RL10 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/RL10",
+      "t": "intro"
+    }
+  ]
+}

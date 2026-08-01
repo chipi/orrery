@@ -1,0 +1,27 @@
+{
+  "id": "yf-77",
+  "name": "YF-77",
+  "category": "engine",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "AALPT",
+  "first_flight": "2016-11-03",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "China's first large hydrogen engine — the Long March 5 core",
+  "specs": {
+    "cycle": "gas-generator",
+    "propellant": "LOX / LH2",
+    "thrust_kn_vac": 700,
+    "isp_vac_s": 428
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs.",
+  "links": [
+    {
+      "l": "YF-77 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/YF-77",
+      "t": "intro"
+    }
+  ]
+}

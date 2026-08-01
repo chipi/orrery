@@ -1,0 +1,28 @@
+{
+  "id": "rd-253",
+  "name": "RD-253",
+  "category": "engine",
+  "agency": "Roscosmos",
+  "country": "USSR / Russia",
+  "manufacturer": "NPO Energomash",
+  "first_flight": "1965-07-16",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "Proton's hypergolic workhorse — six lifted every Proton first stage",
+  "specs": {
+    "cycle": "staged-combustion (ox-rich)",
+    "propellant": "N2O4 / UDMH",
+    "thrust_kn_sl": 1470,
+    "isp_sl_s": 285,
+    "mass_kg": 1080
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs.",
+  "links": [
+    {
+      "l": "RD-253 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/RD-253",
+      "t": "intro"
+    }
+  ]
+}

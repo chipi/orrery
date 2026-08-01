@@ -1,0 +1,29 @@
+{
+  "id": "rs-25",
+  "name": "RS-25 (SSME)",
+  "category": "engine",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Aerojet Rocketdyne",
+  "first_flight": "1981-04-12",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "Reusable staged-combustion engine — 135 Shuttle flights, now flies on SLS",
+  "specs": {
+    "cycle": "staged-combustion",
+    "propellant": "LOX / LH2",
+    "thrust_kn_vac": 2279,
+    "isp_vac_s": 452,
+    "isp_sl_s": 366,
+    "mass_kg": 3527
+  },
+  "credit": "Engine registry (PRD-032). Public-source nominal specs; NASA imagery.",
+  "links": [
+    {
+      "l": "RS-25 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/RS-25",
+      "t": "intro"
+    }
+  ]
+}

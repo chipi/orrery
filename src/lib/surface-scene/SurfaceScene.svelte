@@ -5434,17 +5434,6 @@
     </div>
   {/snippet}
 
-  {#snippet mobileIndexContent(close: () => void)}
-    <SurfaceIndexPanel
-      items={indexItems}
-      selectedId={indexSelectedId}
-      onSelect={(id) => {
-        selectSite(id, { face: true });
-        close();
-      }}
-    />
-  {/snippet}
-
   {#if !panoramaActive}
     <div
       class="hud-controls"
@@ -5504,7 +5493,6 @@
           { id: 'layers', label: 'Layers', icon: '▤', content: mobileLayersContent },
           { id: 'scan', label: 'Scan', icon: '◈', content: mobileScanContent },
           { id: 'nations', label: 'Nations', icon: '⚑', content: mobileNationsContent },
-          { id: 'index', label: m.surface_index_tab(), icon: '⌕', content: mobileIndexContent },
         ]}
         onOpen={(id) => (mobileDrawerOpen = id !== null)}
       />
@@ -6445,58 +6433,55 @@ sample      ${debugInfo.projectedPxSample}`}
      Mirrors the ISS modules handle. Hidden on touch (mobile uses the Index
      drawer tab); shown only for a fine pointer. The open panel is a left
      side-drawer — master list, with the detail panel opening on the right. */
-  .surface-index-handle,
-  .surface-index-desktop {
-    display: none;
+  /* A1: the object index is a left-edge pullout tab on ALL viewports
+     (was desktop-only via a hover gate; mobile used a bottom-drawer tab).
+     The panel width is already responsive, so it fits the 375px viewport. */
+  .surface-index-handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    /* Vertically centred on the left edge — away from the top-left control
+       chips, matching the /iss + /tiangong module handles (.handle-left). */
+    top: 50%;
+    z-index: 44;
+    writing-mode: vertical-rl;
+    transform: translateY(-50%) rotate(180deg);
+    padding: 12px 6px;
+    background: rgba(8, 10, 22, 0.85);
+    border: 1px solid var(--color-border);
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
   }
-  @media (hover: hover) and (pointer: fine) {
-    .surface-index-handle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      left: 0;
-      /* Vertically centred on the left edge — away from the top-left control
-         chips, matching the /iss + /tiangong module handles (.handle-left). */
-      top: 50%;
-      z-index: 44;
-      writing-mode: vertical-rl;
-      transform: translateY(-50%) rotate(180deg);
-      padding: 12px 6px;
-      background: rgba(8, 10, 22, 0.85);
-      border: 1px solid var(--color-border);
-      border-left: none;
-      border-radius: 0 6px 6px 0;
-      color: rgba(255, 255, 255, 0.8);
-      font-family: 'Space Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      backdrop-filter: blur(6px);
-    }
-    .surface-index-handle:hover,
-    .surface-index-handle[aria-pressed='true'] {
-      color: #4ecdc4;
-      border-color: rgba(78, 205, 196, 0.5);
-    }
-    .surface-index-desktop {
-      display: block;
-      position: fixed;
-      left: 12px;
-      /* Start below the top-left view controls (matches the ISS modules drawer
-         top:152) so the panel sits UNDER the buttons rather than over them. */
-      top: 152px;
-      bottom: 12px;
-      width: min(320px, calc(100vw - 24px));
-      z-index: 45;
-      padding: 12px;
-      background: var(--color-panel-bg);
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(8px);
-    }
+  .surface-index-handle:hover,
+  .surface-index-handle[aria-pressed='true'] {
+    color: #4ecdc4;
+    border-color: rgba(78, 205, 196, 0.5);
+  }
+  .surface-index-desktop {
+    display: block;
+    position: fixed;
+    left: 12px;
+    /* Start below the top-left view controls (matches the ISS modules drawer
+       top:152) so the panel sits UNDER the buttons rather than over them. */
+    top: 152px;
+    bottom: 12px;
+    width: min(320px, calc(100vw - 24px));
+    z-index: 45;
+    padding: 12px;
+    background: var(--color-panel-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
   }
   .hud-controls {
     position: fixed;

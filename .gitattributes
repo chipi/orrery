@@ -1,1 +1,6 @@
 masters/** filter=lfs diff=lfs merge=lfs -text
+# Generated-art backups (anatomy cutaways, launcher exploded views, science
+# covers). Never served — pure source backups like masters/ — so they belong in
+# LFS, not as raw git blobs. Go-forward policy: new files auto-track; the ~507 MB
+# already in history stays as blobs until a deliberate `git lfs migrate` pass.
+original-assets/** filter=lfs diff=lfs merge=lfs -text

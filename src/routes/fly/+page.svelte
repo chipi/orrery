@@ -7859,8 +7859,8 @@
        updateHelioAutoZoomTargets 'opening' branch). Skip button is
        always present while openingActive so users can fast-forward. -->
   {#if openingActive}
-    {@const depYear = mission.dep_label?.slice(0, 4) ?? ''}
-    {@const arrYear = mission.arr_label?.slice(0, 4) ?? ''}
+    {@const depYear = mission.dep_label?.match(/\d{4}/)?.[0] ?? ''}
+    {@const arrYear = mission.arr_label?.match(/\d{4}/)?.[0] ?? ''}
     {@const story = mission.description ?? ''}
     {@const agencyFull = mission.agency_full ?? ''}
     {@const agencyLogos = agencyToLogoEntries(mission.agency ?? agencyFull)}

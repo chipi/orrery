@@ -6484,6 +6484,15 @@ sample      ${debugInfo.projectedPxSample}`}
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(8px);
   }
+  /* Landscape phones are very short: the tall top:152 offset leaves too little
+     height and the search + wrapped filter chips squeeze the flex:1 list to 0.
+     Tighten the top/bottom on short viewports so the list keeps its scroll area. */
+  @media (max-height: 500px) {
+    .surface-index-desktop {
+      top: 60px;
+      bottom: 8px;
+    }
+  }
   .hud-controls {
     position: fixed;
     top: calc(var(--nav-height) + 12px);

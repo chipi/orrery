@@ -50,10 +50,12 @@ test.describe('surface object index', () => {
     expect(orbitOnly).toBeLessThan(all);
   });
 
-  test('landscape phone: the Index drawer tab shows the list', async ({ page }, testInfo) => {
+  test('landscape phone: the Index pullout tab shows the list', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'mobile-landscape-chromium', 'landscape-only');
     await page.goto('/mars', { waitUntil: 'networkidle' });
-    const indexTab = page.locator('.mdg-tab', { hasText: /index/i });
+    // A1: the object index is a left-edge pullout tab on all viewports (it used
+    // to be a bottom-drawer tab on mobile); open it via the same handle as desktop.
+    const indexTab = page.locator('[data-testid="surface-index-toggle"]');
     await expect(indexTab).toBeVisible({ timeout: 10_000 });
     await indexTab.click();
     await expect(page.locator('[data-testid="surface-index-list"]')).toBeVisible();

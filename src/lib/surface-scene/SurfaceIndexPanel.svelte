@@ -296,6 +296,19 @@
     overflow-y: auto;
     overscroll-behavior: contain;
   }
+  /* Landscape phones are short: the wrapped filter chips (esp. under Linux font
+     metrics) can eat the whole panel and squeeze the flex:1 list to zero. Cap
+     the filters so they scroll internally and the list always keeps a real
+     scroll area, and guarantee the list a minimum visible height. */
+  @media (max-height: 500px) {
+    .sidx-filters {
+      max-height: 42%;
+      overflow-y: auto;
+    }
+    .sidx-list {
+      min-height: 96px;
+    }
+  }
   .sidx-row {
     display: flex;
     align-items: center;

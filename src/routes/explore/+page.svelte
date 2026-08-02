@@ -7006,21 +7006,6 @@
       {/each}
     </div>
   {/snippet}
-  {#snippet mobileIndexContent(close: () => void)}
-    <ExploreBodyIndex
-      inline
-      bodies={bodyIndexList}
-      {selectedId}
-      open
-      onClose={close}
-      onSelect={(b) => {
-        if (b.kind === 'sun') selectSun();
-        else if (b.kind === 'planet') selectPlanet(b.id);
-        else selectSmallBody(b.id);
-        close();
-      }}
-    />
-  {/snippet}
   <!-- Mobile solar-system drawers (ruler/controls/missions/index) — solar-system
        only; the neighborhood + BodyScenes have their own chrome. -->
   {#if contextId === 'solar-system' && !activeBlackHole}
@@ -7029,7 +7014,6 @@
         { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
         { id: 'controls', label: 'Controls', icon: '▤', content: mobileControlsContent },
         { id: 'missions', label: 'Missions', icon: '➤', content: mobileIconicContent },
-        { id: 'index', label: 'Index', icon: '☰', content: mobileIndexContent },
       ]}
       onOpen={(id) => {
         if (id === 'missions') layers.paths = true;
@@ -8619,39 +8603,38 @@
   /* Desktop object-index edge-handle "little side tab" — mirrors the surface
      index handle. Hidden on touch (mobile uses the Index drawer tab); a fine
      pointer gets the left-edge vertical handle that toggles the side panel. */
+  /* A1: solar-system object index is a left-edge pullout tab on ALL viewports
+     (was desktop-only via a hover gate; mobile used a bottom-drawer tab) —
+     matching the stellar-neighborhood .star-index-handle and the body scenes. */
   .body-index-handle {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    /* Vertically centred on the left edge — away from the top-left control
+       chips, matching the /iss + /tiangong module handles (.handle-left). */
+    top: 50%;
+    z-index: 44;
+    writing-mode: vertical-rl;
+    transform: translateY(-50%) rotate(180deg);
+    padding: 12px 6px;
+    background: rgba(8, 10, 22, 0.85);
+    border: 1px solid var(--border-subtle, #23232e);
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
   }
-  @media (hover: hover) and (pointer: fine) {
-    .body-index-handle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      left: 0;
-      /* Vertically centred on the left edge — away from the top-left control
-         chips, matching the /iss + /tiangong module handles (.handle-left). */
-      top: 50%;
-      z-index: 44;
-      writing-mode: vertical-rl;
-      transform: translateY(-50%) rotate(180deg);
-      padding: 12px 6px;
-      background: rgba(8, 10, 22, 0.85);
-      border: 1px solid var(--border-subtle, #23232e);
-      border-left: none;
-      border-radius: 0 6px 6px 0;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      backdrop-filter: blur(6px);
-    }
-    .body-index-handle:hover,
-    .body-index-handle[aria-pressed='true'] {
-      color: #4ecdc4;
-      border-color: rgba(78, 205, 196, 0.5);
-    }
+  .body-index-handle:hover,
+  .body-index-handle[aria-pressed='true'] {
+    color: #4ecdc4;
+    border-color: rgba(78, 205, 196, 0.5);
   }
 
   .tour-anchors {

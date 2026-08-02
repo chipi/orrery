@@ -1,6 +1,6 @@
 {
   "site": "viking1-lander",
-  "intro": "Viking 1 touched down in Chryse Planitia on July 20, 1976 — the first successful US lander on Mars, exactly seven years after Apollo 11. Its 2,307-sol surface mission (6.3 years) included the first colour images from Mars, the first in-situ biology experiments (with ambiguous results), and a daily weather record. Final transmission November 1982 after a command upload accidentally overwrote the antenna-pointing parameters.",
+  "intro": "Viking 1 touched down in Chryse Planitia on July 20, 1976 — the first successful US lander on Mars, exactly seven years after Apollo 11. Its 2,245-sol surface mission (6.3 years) included the first colour images from Mars, the first in-situ biology experiments (with ambiguous results), and a daily weather record. Final transmission November 1982 after a command upload accidentally overwrote the antenna-pointing parameters.",
   "chapters": [
     {
       "id": "hardware",

@@ -5484,9 +5484,10 @@
           class="toggle"
           data-testid="surface-spin-toggle-mobile"
           aria-pressed={!autoSpin}
+          title={m.iss_btn_spin_title()}
           onclick={() => (autoSpin = !autoSpin)}
         >
-          {autoSpin ? m.iss_pause_spin() : m.iss_resume_spin()}
+          {m.iss_btn_spin()}
         </button>
       {/if}
       {#if arType}

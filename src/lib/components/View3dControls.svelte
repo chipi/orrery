@@ -25,7 +25,8 @@
   class="toggle"
   data-testid="spin-toggle"
   aria-pressed={!autoSpin}
+  title={m.iss_btn_spin_title()}
   onclick={onToggleSpin}
 >
-  {autoSpin ? m.iss_pause_spin() : m.iss_resume_spin()}
+  {m.iss_btn_spin()}
 </button>

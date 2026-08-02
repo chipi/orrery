@@ -110,6 +110,24 @@ const ORPHAN_ALLOWLIST: AllowlistEntry[] = [
     reason: 'PERMANENT-INDIRECT — local-group-galaxies.json science_section',
   },
 
+  // ── PERMANENT-INDIRECT — engine power-cycle cards (PRD-032 Phase 2) ──
+  // Every /fleet engine panel deep-links its cycle card at runtime via
+  // scienceSlugForCycle(specs.cycle) in FleetEntryPanel.svelte (+ the two
+  // primers). The reference is data-driven from the engine's `cycle` spec, so
+  // the literal-only regex misses it — reachable and intentional.
+  {
+    id: 'propulsion/gas-generator',
+    reason: 'PERMANENT-INDIRECT — FleetEntryPanel scienceSlugForCycle(specs.cycle)',
+  },
+  {
+    id: 'propulsion/staged-combustion',
+    reason: 'PERMANENT-INDIRECT — FleetEntryPanel scienceSlugForCycle(specs.cycle)',
+  },
+  {
+    id: 'propulsion/expander-cycle',
+    reason: 'PERMANENT-INDIRECT — FleetEntryPanel scienceSlugForCycle(specs.cycle)',
+  },
+
   // ── PERMANENT-BROWSE — /explore v2 exoplanet wing (RFC-032 S3) ──
   // These articles are reached via the /science/exoplanets tab and each
   // deep-links OUTWARD to a matching /explore BodyScene (see_in_app). The

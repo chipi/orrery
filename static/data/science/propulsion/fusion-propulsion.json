@@ -1,7 +1,7 @@
 {
   "id": "fusion-propulsion",
   "tab": "propulsion",
-  "order": 16,
+  "order": 19,
   "see_in_app": [
     {
       "route": "/explore",
@@ -10,22 +10,22 @@
   ],
   "links": [
     {
-      "l": "Wikipedia · Project Daedalus",
+      "l": "Wikipedia \u00b7 Project Daedalus",
       "u": "https://en.wikipedia.org/wiki/Project_Daedalus",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Fusion rocket",
+      "l": "Wikipedia \u00b7 Fusion rocket",
       "u": "https://en.wikipedia.org/wiki/Fusion_rocket",
       "t": "intro"
     },
     {
-      "l": "Wikipedia · Project Icarus (spacecraft)",
+      "l": "Wikipedia \u00b7 Project Icarus (spacecraft)",
       "u": "https://en.wikipedia.org/wiki/Project_Icarus_(spacecraft)",
       "t": "deep"
     },
     {
-      "l": "British Interplanetary Society · Daedalus study",
+      "l": "British Interplanetary Society \u00b7 Daedalus study",
       "u": "https://www.bis-space.com/what-we-do/projects/project-daedalus",
       "t": "deep"
     }

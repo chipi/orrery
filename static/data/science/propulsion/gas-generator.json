@@ -1,0 +1,28 @@
+{
+  "id": "gas-generator",
+  "tab": "propulsion",
+  "order": 8,
+  "see_in_app": [
+    {
+      "route": "/fleet",
+      "context_key": "F-1 (Saturn V), Merlin 1D (Falcon 9), RD-107/108 (Soyuz), Vikas (PSLV/LVM3) and Viking (Ariane 1-4) are all gas-generator engines — the most-flown cycle in history"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Gas-generator cycle",
+      "u": "https://en.wikipedia.org/wiki/Gas-generator_cycle",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Rocket engine cycles overview",
+      "u": "https://www.grc.nasa.gov/www/k-12/airplane/rktpow.html",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Rocket engine — pump-fed cycles",
+      "u": "https://en.wikipedia.org/wiki/Rocket_engine#Pump-fed",
+      "t": "deep"
+    }
+  ]
+}

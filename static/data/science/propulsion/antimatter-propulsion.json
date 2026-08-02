@@ -1,7 +1,7 @@
 {
   "id": "antimatter-propulsion",
   "tab": "propulsion",
-  "order": 17,
+  "order": 20,
   "see_in_app": [
     {
       "route": "/explore",
@@ -10,17 +10,17 @@
   ],
   "links": [
     {
-      "l": "NASA · Antimatter propulsion overview",
+      "l": "NASA \u00b7 Antimatter propulsion overview",
       "u": "https://www.nasa.gov/centers-and-facilities/marshall/antimatter-propulsion/",
       "t": "intro"
     },
     {
-      "l": "CERN · Antimatter — what it is and how we make it",
+      "l": "CERN \u00b7 Antimatter \u2014 what it is and how we make it",
       "u": "https://home.cern/science/physics/antimatter",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Antimatter rocket",
+      "l": "Wikipedia \u00b7 Antimatter rocket",
       "u": "https://en.wikipedia.org/wiki/Antimatter_rocket",
       "t": "deep"
     }

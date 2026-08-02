@@ -1,31 +1,31 @@
 {
   "id": "solar-sail",
   "tab": "propulsion",
-  "order": 14,
+  "order": 17,
   "see_in_app": [
     {
       "route": "/missions",
-      "context_key": "IKAROS (JAXA, 2010) — first interplanetary solar sail; LightSail 2 (Planetary Society, 2019) — first to raise orbit by sail alone"
+      "context_key": "IKAROS (JAXA, 2010) \u2014 first interplanetary solar sail; LightSail 2 (Planetary Society, 2019) \u2014 first to raise orbit by sail alone"
     }
   ],
   "links": [
     {
-      "l": "JAXA · IKAROS mission",
+      "l": "JAXA \u00b7 IKAROS mission",
       "u": "https://www.isas.jaxa.jp/en/missions/spacecraft/current/ikaros.html",
       "t": "intro"
     },
     {
-      "l": "Planetary Society · LightSail 2",
+      "l": "Planetary Society \u00b7 LightSail 2",
       "u": "https://www.planetary.org/sci-tech/lightsail",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Solar sail",
+      "l": "Wikipedia \u00b7 Solar sail",
       "u": "https://en.wikipedia.org/wiki/Solar_sail",
       "t": "core"
     },
     {
-      "l": "NASA · Advanced Composite Solar Sail System (ACS3)",
+      "l": "NASA \u00b7 Advanced Composite Solar Sail System (ACS3)",
       "u": "https://www.nasa.gov/missions/tech-demonstration/advanced-composite-solar-sail-system/",
       "t": "deep"
     }

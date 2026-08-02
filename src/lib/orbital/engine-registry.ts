@@ -616,3 +616,16 @@ export function enginesForLauncher(launcherId: string): EngineMeta[] {
   const flown = new Set(spec.stages.map((s) => s.engine));
   return ENGINE_REGISTRY.filter((e) => e.designations.some((d) => flown.has(d)));
 }
+
+/**
+ * The /science card that explains an engine's power cycle (PRD-032 Phase 2).
+ * Every engine deep-links its cycle from `specs.cycle` — one source of truth,
+ * so the panel and the cross-ref test agree. `pressure-fed` has no card yet
+ * (no curated engine uses it); a future one must add both the card and a case.
+ */
+export function scienceSlugForCycle(cycle: EngineCycle): string | null {
+  if (cycle.startsWith('staged-combustion')) return 'propulsion/staged-combustion';
+  if (cycle.startsWith('expander')) return 'propulsion/expander-cycle';
+  if (cycle === 'gas-generator') return 'propulsion/gas-generator';
+  return null;
+}

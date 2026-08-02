@@ -1,33 +1,39 @@
 {
   "id": "throttling-and-gimbaling",
   "tab": "propulsion",
-  "order": 12,
+  "order": 15,
   "photo": {
     "src": "/images/science/throttling-and-gimbaling-merlin-gimbal.webp",
-    "credit": "SpaceX · Falcon 9 Merlin 1D engine gimbal pivot installation. Engine gimbaling — vectoring thrust by physically tilting the engine bell — is how every modern liquid rocket steers, and how Falcon 9 boosters can return to the launch pad."
+    "credit": "SpaceX \u00b7 Falcon 9 Merlin 1D engine gimbal pivot installation. Engine gimbaling \u2014 vectoring thrust by physically tilting the engine bell \u2014 is how every modern liquid rocket steers, and how Falcon 9 boosters can return to the launch pad."
   },
   "see_in_app": [
-    { "route": "/fleet", "context_key": "Throttle ranges by vehicle: Merlin 1D (40-100%), Raptor 2 (40-100%), RS-25 (67-109%, no shutdown-mid-burn), F-1 (no throttle), solid boosters (zero throttle, profile cast at manufacture)" },
-    { "route": "/missions", "context_key": "Apollo LM descent engine — throttled deep (10-65%) for the powered descent; landings on Moon and Mars rely on deep throttle to hover-then-touch" }
+    {
+      "route": "/fleet",
+      "context_key": "Throttle ranges by vehicle: Merlin 1D (40-100%), Raptor 2 (40-100%), RS-25 (67-109%, no shutdown-mid-burn), F-1 (no throttle), solid boosters (zero throttle, profile cast at manufacture)"
+    },
+    {
+      "route": "/missions",
+      "context_key": "Apollo LM descent engine \u2014 throttled deep (10-65%) for the powered descent; landings on Moon and Mars rely on deep throttle to hover-then-touch"
+    }
   ],
   "links": [
     {
-      "l": "Wikipedia · Thrust vectoring",
+      "l": "Wikipedia \u00b7 Thrust vectoring",
       "u": "https://en.wikipedia.org/wiki/Thrust_vectoring",
       "t": "intro"
     },
     {
-      "l": "Wikipedia · Variable thrust rocket engine (throttling)",
+      "l": "Wikipedia \u00b7 Variable thrust rocket engine (throttling)",
       "u": "https://en.wikipedia.org/wiki/Variable_thrust_rocket_engine",
       "t": "core"
     },
     {
-      "l": "NASA · RS-25 throttle envelope",
+      "l": "NASA \u00b7 RS-25 throttle envelope",
       "u": "https://www.nasa.gov/wp-content/uploads/2018/06/rs-25_fact_sheet.pdf",
       "t": "core"
     },
     {
-      "l": "NASA · Apollo LM Descent Engine — deep-throttle development",
+      "l": "NASA \u00b7 Apollo LM Descent Engine \u2014 deep-throttle development",
       "u": "https://history.nasa.gov/SP-287/ch4.htm",
       "t": "deep"
     }

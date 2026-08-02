@@ -7,6 +7,7 @@ import {
   getEngineMeta,
   launchersForEngine,
   enginesForLauncher,
+  scienceSlugForCycle,
 } from './engine-registry';
 import { LAUNCHER_ENGINES } from './launcher-engines';
 
@@ -114,6 +115,14 @@ describe('engine → science cross-references resolve', () => {
     for (const e of ENGINE_REGISTRY)
       for (const slug of e.science ?? [])
         expect(scienceCardExists(slug), `${e.id}: science "${slug}" has no card`).toBe(true);
+  });
+
+  it('every engine cycle maps to an existing cycle card (PRD-032 Phase 2)', () => {
+    for (const e of ENGINE_REGISTRY) {
+      const slug = scienceSlugForCycle(e.cycle);
+      expect(slug, `${e.id}: cycle "${e.cycle}" maps to no science card`).not.toBeNull();
+      expect(scienceCardExists(slug!), `${e.id}: cycle card "${slug}" missing on disk`).toBe(true);
+    }
   });
 });
 

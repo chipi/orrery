@@ -1,32 +1,35 @@
 {
   "id": "rocket-stages",
   "tab": "propulsion",
-  "order": 11,
+  "order": 14,
   "photo": {
     "src": "/images/science/rocket-stages-saturn-v.webp",
-    "credit": "NASA · Kennedy Space Center · Saturn V vertical assembly showing all three stages: S-IC (5 × F-1 kerolox), S-II (5 × J-2 hydrolox), S-IVB (1 × J-2 hydrolox). Three stages were necessary — single-stage-to-Moon was impossible with 1969 chemistry."
+    "credit": "NASA \u00b7 Kennedy Space Center \u00b7 Saturn V vertical assembly showing all three stages: S-IC (5 \u00d7 F-1 kerolox), S-II (5 \u00d7 J-2 hydrolox), S-IVB (1 \u00d7 J-2 hydrolox). Three stages were necessary \u2014 single-stage-to-Moon was impossible with 1969 chemistry."
   },
   "see_in_app": [
-    { "route": "/fleet", "context_key": "Stage count per launcher: Falcon 9 (2), Soyuz (3 + strap-ons), Saturn V (3), SLS (1.5 + boosters + ICPS upper), Long March 5 (2 core + boosters + YZ-2 upper), Starship (2)" }
+    {
+      "route": "/fleet",
+      "context_key": "Stage count per launcher: Falcon 9 (2), Soyuz (3 + strap-ons), Saturn V (3), SLS (1.5 + boosters + ICPS upper), Long March 5 (2 core + boosters + YZ-2 upper), Starship (2)"
+    }
   ],
   "links": [
     {
-      "l": "Wikipedia · Multistage rocket",
+      "l": "Wikipedia \u00b7 Multistage rocket",
       "u": "https://en.wikipedia.org/wiki/Multistage_rocket",
       "t": "intro"
     },
     {
-      "l": "Wikipedia · Single-stage-to-orbit (why it has never been done)",
+      "l": "Wikipedia \u00b7 Single-stage-to-orbit (why it has never been done)",
       "u": "https://en.wikipedia.org/wiki/Single-stage-to-orbit",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Stage separation systems",
+      "l": "Wikipedia \u00b7 Stage separation systems",
       "u": "https://en.wikipedia.org/wiki/Stage_separation",
       "t": "core"
     },
     {
-      "l": "NASA · Saturn V — three-stage architecture",
+      "l": "NASA \u00b7 Saturn V \u2014 three-stage architecture",
       "u": "https://history.nasa.gov/SP-4206/ch7.htm",
       "t": "deep"
     }

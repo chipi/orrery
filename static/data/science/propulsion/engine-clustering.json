@@ -1,37 +1,40 @@
 {
   "id": "engine-clustering",
   "tab": "propulsion",
-  "order": 10,
+  "order": 13,
   "photo": {
     "src": "/images/science/engine-clustering-super-heavy.webp",
-    "credit": "SpaceX · Super Heavy booster with all 33 Raptor 2 engines installed — the highest engine count of any operational rocket. Clustering 33 medium engines to produce 76 MN of thrust is the modern alternative to developing a single F-1-class behemoth."
+    "credit": "SpaceX \u00b7 Super Heavy booster with all 33 Raptor 2 engines installed \u2014 the highest engine count of any operational rocket. Clustering 33 medium engines to produce 76 MN of thrust is the modern alternative to developing a single F-1-class behemoth."
   },
   "see_in_app": [
-    { "route": "/fleet", "context_key": "Engine count per vehicle: Saturn V S-IC (5 × F-1), Falcon 9 (9 × Merlin), Falcon Heavy (27 × Merlin across three cores), Starship Super Heavy (33 × Raptor), SLS (4 × RS-25 + 2 SRBs), N1 (30 × NK-15 — never made orbit)" }
+    {
+      "route": "/fleet",
+      "context_key": "Engine count per vehicle: Saturn V S-IC (5 \u00d7 F-1), Falcon 9 (9 \u00d7 Merlin), Falcon Heavy (27 \u00d7 Merlin across three cores), Starship Super Heavy (33 \u00d7 Raptor), SLS (4 \u00d7 RS-25 + 2 SRBs), N1 (30 \u00d7 NK-15 \u2014 never made orbit)"
+    }
   ],
   "links": [
     {
-      "l": "Wikipedia · Multiple engine clusters (N1, Falcon Heavy, Super Heavy)",
+      "l": "Wikipedia \u00b7 Multiple engine clusters (N1, Falcon Heavy, Super Heavy)",
       "u": "https://en.wikipedia.org/wiki/Multistage_rocket#Engine_clustering",
       "t": "intro"
     },
     {
-      "l": "Wikipedia · N1 (rocket) — clustering failure mode",
+      "l": "Wikipedia \u00b7 N1 (rocket) \u2014 clustering failure mode",
       "u": "https://en.wikipedia.org/wiki/N1_(rocket)",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Falcon Heavy",
+      "l": "Wikipedia \u00b7 Falcon Heavy",
       "u": "https://en.wikipedia.org/wiki/Falcon_Heavy",
       "t": "core"
     },
     {
-      "l": "Wikipedia · SpaceX Super Heavy",
+      "l": "Wikipedia \u00b7 SpaceX Super Heavy",
       "u": "https://en.wikipedia.org/wiki/SpaceX_Super_Heavy",
       "t": "core"
     },
     {
-      "l": "NASA · Saturn V F-1 development",
+      "l": "NASA \u00b7 Saturn V F-1 development",
       "u": "https://history.nasa.gov/SP-4206/ch4.htm",
       "t": "deep"
     }

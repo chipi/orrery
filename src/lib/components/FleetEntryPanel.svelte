@@ -12,7 +12,12 @@
   import MediaPlayer from './MediaPlayer.svelte';
   import VideoThumb from './VideoThumb.svelte';
   import { getVideosForEntity, type VideoProvenanceEntry } from '$lib/video-provenance';
-  import { launchersForEngine, enginesForLauncher } from '$lib/orbital/engine-registry';
+  import {
+    launchersForEngine,
+    enginesForLauncher,
+    scienceSlugForCycle,
+    type EngineCycle,
+  } from '$lib/orbital/engine-registry';
 
   /**
    * Fleet detail panel. Six tabs (OVERVIEW / GALLERY / ANATOMY / CREW /
@@ -164,13 +169,21 @@
     'propulsion/specific-impulse': 'Specific impulse',
     'propulsion/tsiolkovsky': 'The rocket equation',
     'propulsion/fuels-and-oxidizers': 'Fuels & oxidizers',
+    'propulsion/gas-generator': 'Gas-generator cycle',
+    'propulsion/staged-combustion': 'Staged combustion',
+    'propulsion/expander-cycle': 'Expander cycle',
   };
   const ENGINE_SCIENCE_PRIMERS = ['propulsion/engine-types', 'propulsion/thrust-and-twr'];
   const engineScience = $derived.by(() => {
+    // Two primers + this engine's power-cycle card (derived from specs.cycle,
+    // PRD-032 Phase 2) + any explicit registry science topics. Deduped.
+    const cycleSlug = entry?.specs?.cycle
+      ? scienceSlugForCycle(String(entry.specs.cycle) as EngineCycle)
+      : null;
     const seen = new Set<string>();
     const out: { slug: string; label: string }[] = [];
-    for (const slug of [...ENGINE_SCIENCE_PRIMERS, ...(entry?.science ?? [])]) {
-      if (seen.has(slug)) continue;
+    for (const slug of [...ENGINE_SCIENCE_PRIMERS, cycleSlug, ...(entry?.science ?? [])]) {
+      if (!slug || seen.has(slug)) continue;
       seen.add(slug);
       out.push({ slug, label: SCIENCE_LABELS[slug] ?? slug.split('/').pop()! });
     }

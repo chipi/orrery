@@ -297,7 +297,7 @@
     max-width: 760px;
     margin: 0 auto;
     padding: calc(var(--nav-height, 64px) + 24px) 20px 80px;
-    font-family: var(--font-sans, system-ui, sans-serif);
+    font-family: var(--font-editorial, 'Crimson Pro', serif);
     color: var(--color-text, #eef);
   }
   .crumb {

@@ -163,7 +163,7 @@
     border: 1px solid rgba(120, 180, 255, 0.35);
     border-radius: 12px;
     padding: 0.9rem 1.2rem 0.7rem;
-    font-family: var(--font-stack, system-ui), sans-serif;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     color: #cfe2ff;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
     z-index: 12;

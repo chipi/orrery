@@ -9,7 +9,7 @@
   "see_in_app": [
     { "route": "/iss", "context_key": "Quest (US-side airlock), Pirs (decommissioned 2021), Poisk (Russian airlock) — where every modern EVA begins" },
     { "route": "/tiangong", "context_key": "Wentian module — Tiangong's primary airlock + EVA staging" },
-    { "route": "/fleet", "context_key": "EMU, Orlan-MKS, Feitian, AxEMU — the four EVA suits currently in active service across the international fleet" },
+    { "route": "/fleet", "context_key": "EMU, Orlan-MKS, and Feitian — the EVA suits in active service, with the Axiom AxEMU in development for Artemis III" },
     { "route": "/missions", "context_key": "Apollo lunar EVAs, every Shuttle assembly flight, ISS construction expeditions — each mission's flight-events timeline lists its EVAs" }
   ],
   "links": [

@@ -1,6 +1,38 @@
 {
   "name": "Chang'e 1",
-  "type": "ORBITADOR ROBÓTICO · VOLADA",
-  "first": "Primera misión lunar de China + primer objeto chino en la superficie lunar",
-  "description": "La primera fase del Programa Chino de Exploración Lunar (CLEP) y la primera misión de la CNSA más allá de la Tierra. Lanzada el 24-10-2007 desde el Centro de Lanzamiento de Satélites de Xichang en un Larga Marcha 3A, Chang'e 1 (llamada así por la diosa de la Luna del folclore chino) entró en una órbita lunar polar circular de 200 km el 07-11-2007. Llevaba 8 instrumentos — una cámara estéreo CCD, un altímetro láser, un espectrómetro de imágenes, espectrómetros de rayos gamma y X, un radiómetro de microondas, un detector de viento solar y un detector de partículas de alta energía. Produjo el primer mapa topográfico global completo de la Luna de China con resolución de 120-200 m y mapas de abundancia elemental de Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. La misión terminó deliberadamente el 01-03-2009 con un impacto controlado en 1,50° S, 52,36° E en el Mare Fecunditatis — el primer objeto chino sobre la superficie lunar, allanando el camino para Chang'e 3 (aterrizaje 2013) y Chang'e 5 (retorno de muestras 2020). Operó 16 meses — 4 meses más allá de su vida útil nominal."
+  "type": "ORBITADOR ROBÓTICO · COMPLETADO",
+  "first": "La primera misión lunar de China y la primera nave espacial china en alcanzar la Luna",
+  "description": "La primera fase del Programa de Exploración Lunar de China (CLEP) y la primera misión de la CNSA más allá de la Tierra. Lanzado el 2007-10-24 desde el Centro de Lanzamiento de Satélites de Xichang en un Long March 3A, Chang'e 1 (nombrado según la diosa lunar de la mitología china) entró en una órbita polar lunar circular de 200 km el 2007-11-07. Llevaba 8 instrumentos — una cámara estéreo CCD, un altímetro láser, un espectrógrafo de imagen, espectrómetros de rayos gamma y rayos X, un radiómetro de microondas, un detector de viento solar y un detector de partículas de alta energía. Produjo el primer mapa topográfico lunar global completo de China a una resolución de 120-200 m y mapas de abundancia de elementos Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. La misión terminó deliberadamente el 2009-03-01 con un impacto controlado en 1,50° S, 52,36° E en Mare Fecunditatis — el primer objeto de China en la superficie lunar, allanando el camino para Chang'e 3 (aterrizaje en superficie 2013) y Chang'e 5 (retorno de muestras 2020). Operado durante 16 meses — 4 meses más allá de lo nominal.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Long March 3A desde Xichang LC-3 el 2007-10-24 10:05 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Inyección translunar mediante órbita de estacionamiento terrestre + órbitas de alineación.",
+      "type": "nominal"
+    },
+    {
+      "met": 14.2,
+      "label": "LOI",
+      "note": "Inserción en órbita lunar el 2007-11-07 — primera nave espacial china en la Luna.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "MAPA TOPOGRÁFICO GLOBAL",
+      "note": "Cámara estéreo CCD + altímetro láser producen el primer mapa topográfico lunar global completo de China a una resolución de 120-200 m.",
+      "type": "info"
+    },
+    {
+      "met": 494,
+      "label": "IMPACTO EN MARE FECUNDITATIS",
+      "note": "Impacto controlado en 1,50° S, 52,36° E el 2009-03-01 — el primer objeto de China en la superficie lunar.",
+      "type": "nominal"
+    }
+  ]
 }

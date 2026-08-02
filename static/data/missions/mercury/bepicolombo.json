@@ -9,7 +9,7 @@
   "status": "ACTIVE",
   "departure_date": "2018-10-20",
   "arrival_date": "2026-11-21",
-  "transit_days": 2968,
+  "transit_days": 2954,
   "vehicle": "Ariane 5 ECA",
   "payload": "4100 kg launch stack: MTM (Mercury Transfer Module, ESA — 4 ion thrusters, solar arrays) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 instruments) + MIO (Mercury Magnetospheric Orbiter, JAXA, 285 kg, 5 instruments) + MOSIF sunshield. Two science orbiters separate after Mercury arrival.",
   "delta_v": "~7.2 km/s (ion-cruise + 9 gravity assists + MOI)",

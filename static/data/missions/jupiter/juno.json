@@ -72,7 +72,7 @@
         "description": "Cape Canaveral, 2011-08-05. Juno is the first solar-powered spacecraft to reach Jupiter — three massive solar arrays span 20 m tip-to-tip, generating 14 kW at Earth distance but only ~500 W at Jupiter (5.4 AU). The polar orbit was chosen to minimise time inside Jupiter's lethal radiation belts."
       },
       {
-        "met_days": 749,
+        "met_days": 796,
         "type": "flyby",
         "label": "Earth — gravity assist",
         "description": "Closest approach 559 km on 2013-10-09. The flyby added 7.3 km/s to Juno's heliocentric velocity — the boost needed to reach Jupiter directly (a Hohmann transfer from Earth would have required a far larger launch vehicle than the Atlas V provides)."

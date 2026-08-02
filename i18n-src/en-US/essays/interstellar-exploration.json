@@ -55,7 +55,7 @@
     },
     {
       "type": "prose",
-      "md": "Nuclear-thermal propulsion — heating hydrogen in a reactor and expelling it through a nozzle — roughly doubles the exhaust velocity, achieving specific impulses around 825 seconds in the best ground-tested engines of the NERVA programme. Doubling the exhaust velocity does not halve the required mass ratio; it squares the relationship. At interstellar velocities, nuclear-thermal propulsion is still categorically inadequate. The rocket equation does not care how the propellant is heated. It cares only how fast it leaves. And no propellant-burning architecture yet conceived can expel matter fast enough to reach a meaningful fraction of c without requiring a fuel load that makes the mission impossible on its face."
+      "md": "Nuclear-thermal propulsion — heating hydrogen in a reactor and expelling it through a nozzle — roughly doubles the exhaust velocity, achieving specific impulses around 825 seconds in the best ground-tested engines of the NERVA programme. Doubling the exhaust velocity does not halve the required mass ratio; it takes the square root of it — a far larger gain. At interstellar velocities, nuclear-thermal propulsion is still categorically inadequate. The rocket equation does not care how the propellant is heated. It cares only how fast it leaves. And no propellant-burning architecture yet conceived can expel matter fast enough to reach a meaningful fraction of c without requiring a fuel load that makes the mission impossible on its face."
     },
     {
       "type": "heading",

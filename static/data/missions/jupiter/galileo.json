@@ -10,7 +10,7 @@
   "departure_date": "1989-10-18",
   "arrival_date": "1995-12-07",
   "transit_days": 2242,
-  "vehicle": "Space Shuttle Atlantis + IUS + Centaur",
+  "vehicle": "Space Shuttle Atlantis + IUS",
   "payload": "Galileo probe and atmospheric entry probe; ~2.5 t dry mass",
   "delta_v": "~14 km/s (approx)",
   "data_quality": "partial",
@@ -111,7 +111,7 @@
         "description": "Closest approach 2,400 km from asteroid 243 Ida on 1993-08-28. Discovered Ida's tiny moon Dactyl (1.4 km diameter) — the first confirmed binary asteroid system. Confirmed that asteroids could host satellites stably, reshaping models of asteroid dynamics."
       },
       {
-        "met_days": 2242,
+        "met_days": 2094,
         "type": "arrival",
         "label": "Probe release",
         "description": "Galileo's atmospheric probe separated 5 months before Jupiter arrival, on 1995-07-13, on a slightly-different ballistic trajectory targeting the giant planet's atmosphere. The probe carried no propulsion — its arrival geometry was set entirely by the separation manoeuvre."

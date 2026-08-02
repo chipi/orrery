@@ -90,7 +90,7 @@ export class BoldArrow extends THREE.Object3D {
     canvas.height = H;
     const ctx = canvas.getContext('2d');
     if (ctx) {
-      ctx.font = '700 34px "IBM Plex Mono", monospace';
+      ctx.font = '700 34px "Space Mono", monospace';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.lineWidth = 6;

@@ -261,7 +261,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     color: #cfe4ff;
   }
   .title {

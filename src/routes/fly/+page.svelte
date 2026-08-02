@@ -8795,7 +8795,7 @@
     flex-direction: column;
     gap: 0.3rem;
     font-size: 0.82rem;
-    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
   }
   .t1-header {
     font-weight: 600;
@@ -9456,7 +9456,7 @@
     display: grid;
     place-items: center;
     background: radial-gradient(circle at 50% 42%, rgba(8, 18, 30, 0.35), rgba(0, 0, 0, 0.55));
-    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
   }
   .recovery-inner {
     text-align: center;

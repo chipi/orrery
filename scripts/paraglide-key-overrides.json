@@ -821,7 +821,8 @@
     "fly_launch_skip_cta": "क्रूज़ पर जाएँ →",
     "fly_descent_dossier_title": "अवतरण डोसियर",
     "why_samples_body": "लौटाए गए नमूनों का विश्लेषण द्रव्यमान स्पेक्ट्रोमीटर, इलेक्ट्रॉन माइक्रोस्कोप, समस्थानिक डेटिंग — ऐसे उपकरणों से किया जा सकता है जो उड़ान भरने के लिए बहुत बड़े या बिजली-भूखे हैं। अपोलो ने 382 किग्रा लाया; Chang'e 5 ने युवा निकट-पक्ष रेगोलिथ का 1.7 किग्रा लाया (Oceanus Procellarum)। प्रत्येक किलोग्राम दशकों के अनुवर्ती विज्ञान को अनलॉक करता है।",
-    "chip_label_eccentricity": "विकेंद्रता — वृत्त (0), दीर्घवृत्त (<1), परवलय/पलायन (1), अतिपरवलय (>1)"
+    "chip_label_eccentricity": "विकेंद्रता — वृत्त (0), दीर्घवृत्त (<1), परवलय/पलायन (1), अतिपरवलय (>1)",
+    "plan_touch_hint": "देखने के लिए दबाकर रखें"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -1507,7 +1508,8 @@
     "fly_descent_dossier_title": "降下・ドシエ",
     "credits_storage_intro": "Orreryはアカウントを持たず、個人データを収集しません。匿名のクッキーレス利用分析とクラッシュレポート（自社ホスト、あなたの特定には使用されない）のみです。2つの機能的プリファレンスクッキー（各々ADRで制御）が唯一の永続状態です：",
     "why_samples_body": "帰還したサンプルは、質量分析計、電子顕微鏡、同位体年代測定など、飛行させるには大きすぎるか電力消費が大きすぎる機器で分析できます。アポロは382 kgを持ち帰り、嫦娥5号は月の海(Oceanus Procellarum)から1.7 kgの若いレゴリスを採取しました。1キログラムで数十年分の後続科学調査が可能になります。",
-    "chip_label_eccentricity": "離心率 — 円 (0)、楕円 (<1)、放物線/脱出軌道 (1)、双曲線 (>1)"
+    "chip_label_eccentricity": "離心率 — 円 (0)、楕円 (<1)、放物線/脱出軌道 (1)、双曲線 (>1)",
+    "plan_touch_hint": "タッチして長押しでプレビュー"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -2373,7 +2375,8 @@
     "fly_launch_skip_cta": "انتقل إلى الإبحار →",
     "fly_descent_dossier_title": "ملف الهبوط",
     "why_samples_body": "يمكن تحليل العينات المرتجعة باستخدام مطياف الكتلة وميكروسكوبات الإلكترون وتأريخ النظائر — أجهزة كبيرة جداً أو تستهلك طاقة كبيرة جداً لكي تُحمل على المركبات. أعادت أبولو 382 كغ؛ أعادت تشانج إي 5 مقدار 1.7 كغ من الريجوليث الصغير في الجانب القريب (أوقيانوس بروكيليروم). كل كيلوغرام يفتح عقوداً من الأبحاث العلمية اللاحقة.",
-    "chip_label_eccentricity": "الاختلاف المركزي — دائرة (0)، إهليلج (<1)، قطع مكافئ/هروب (1)، قطع زائد (>1)"
+    "chip_label_eccentricity": "الاختلاف المركزي — دائرة (0)، إهليلج (<1)، قطع مكافئ/هروب (1)، قطع زائد (>1)",
+    "plan_touch_hint": "اضغط مع الاستمرار للمعاينة"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -3061,7 +3064,8 @@
     "fly_descent_dossier_title": "하강 경보",
     "credits_storage_intro": "Orrery는 계정이 없으며 개인 데이터를 수집하지 않습니다. 익명의 쿠키 없는 사용 분석 및 충돌 보고서만 수집하며, 자체 호스팅되고 사용자 식별에 사용되지 않습니다. 각각 자체 ADR로 제어되는 두 개의 기능성 선호 쿠키만이 유일한 영속적 상태입니다:",
     "why_samples_body": "반환된 샘플은 질량분석기, 전자현미경, 동위원소 연대측정법으로 분석할 수 있습니다 — 이러한 장비들은 너무 크거나 전력 소비가 많아 우주선에 탑재할 수 없습니다. Apollo는 382 kg을 가져왔고; Chang'e 5는 더 젊은 근지 레골리스(Oceanus Procellarum) 1.7 kg을 가져왔습니다. 각 킬로그램은 수십 년의 후속 과학 연구를 가능하게 합니다.",
-    "chip_label_eccentricity": "이심률 — 원(0), 타원(<1), 포물선/탈출(1), 쌍곡선(>1)"
+    "chip_label_eccentricity": "이심률 — 원(0), 타원(<1), 포물선/탈출(1), 쌍곡선(>1)",
+    "plan_touch_hint": "터치하고 길게 누르면 미리보기"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -3720,7 +3724,8 @@
     "fly_descent_dossier_title": "ABSTIEGSDOSSIER",
     "credits_storage_intro": "Orrery hat keine Konten und sammelt keine persönlichen Daten – nur anonyme, cookielose Nutzungsanalytiken und Fehlerberichte, selbst gehostet und niemals zur Identifizierung verwendet. Zwei funktionale Präferenz-Cookies, jeweils durch ihre eigene ADR geschützt, sind der einzige persistente Zustand:",
     "why_samples_body": "Zurückgebrachte Proben können mit Massenspektrometern, Elektronenmikroskopen, Isotopenanalyseverfahren analysiert werden – Instrumente, die zu groß oder stromhungrig sind, um sie zu fliegen. Apollo brachte 382 kg zurück; Chang'e 5 brachte 1,7 kg jüngeres Regolith der Mondvorderseite (Oceanus Procellarum). Jedes Kilogramm eröffnet Jahrzehnte wissenschaftlicher Folgeforschung.",
-    "chip_label_eccentricity": "Exzentrizität — Kreis (0), Ellipse (<1), Parabel/Fluchtbahn (1), Hyperbel (>1)"
+    "chip_label_eccentricity": "Exzentrizität — Kreis (0), Ellipse (<1), Parabel/Fluchtbahn (1), Hyperbel (>1)",
+    "plan_touch_hint": "Berühren & halten zum Vorschauen"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -4386,7 +4391,8 @@
     "fly_descent_dossier_title": "DOSSIER DE DESCENTE",
     "credits_storage_intro": "Orrery n'a pas de comptes et ne collecte aucune donnée personnelle — seulement des analyses d'utilisation anonymes sans cookies et des rapports de crash, auto-hébergés et jamais utilisés pour vous identifier. Deux cookies de préférence fonctionnels, chacun contrôlé par son propre ADR, constituent le seul état persistant :",
     "why_samples_body": "Les échantillons retournés peuvent être analysés avec des spectromètres de masse, des microscopes électroniques, des datations isotopiques — des instruments trop volumineux ou gourmands en énergie pour voler. Apollo a ramené 382 kg ; Chang'e 5 a ramené 1,7 kg de régolithe plus jeune de la face proche (Oceanus Procellarum). Chaque kilogramme déverrouille des décennies de science de suivi.",
-    "chip_label_eccentricity": "Excentricité — cercle (0), ellipse (<1), parabole/échappatoire (1), hyperbole (>1)"
+    "chip_label_eccentricity": "Excentricité — cercle (0), ellipse (<1), parabole/échappatoire (1), hyperbole (>1)",
+    "plan_touch_hint": "Appuyez et maintenez pour apercevoir"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -5020,7 +5026,8 @@
     "fly_descent_dossier_title": "DOSSIER DELLA DISCESA",
     "credits_storage_intro": "Orrery non ha account e non raccoglie dati personali — solo analitiche di utilizzo anonime senza cookie e rapporti di crash, auto-ospitati e mai usati per identificarti. Due cookie funzionali di preferenza, ciascuno controllato da un proprio ADR, rappresentano l'unico stato persistente:",
     "why_samples_body": "I campioni riportati possono essere analizzati con spettrometri di massa, microscopi elettronici, datazione isotopica — strumenti troppo grandi o affamati di energia per volare. Apollo ne riportò 382 kg; Chang'e 5 ne riportò 1,7 kg di regolite più giovane del versante vicino (Oceanus Procellarum). Ogni chilogrammo sblocca decenni di ricerca scientifica successiva.",
-    "chip_label_eccentricity": "Eccentricità — cerchio (0), ellisse (<1), parabola/fuga (1), iperbole (>1)"
+    "chip_label_eccentricity": "Eccentricità — cerchio (0), ellisse (<1), parabola/fuga (1), iperbole (>1)",
+    "plan_touch_hint": "Tocca e tieni premuto per visualizzare"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -5653,7 +5660,8 @@
     "fly_descent_dossier_title": "EXPEDIENTE DE DESCENSO",
     "credits_storage_intro": "Orrery no tiene cuentas y no recopila datos personales —solo análisis de uso anónimos sin cookies e informes de fallos, auto-alojados y nunca utilizados para identificarte. Dos cookies funcionales de preferencia, cada una controlada por su propio ADR, son el único estado persistente:",
     "why_samples_body": "Las muestras devueltas pueden analizarse con espectrómetros de masas, microscopios electrónicos, datación isotópica — instrumentos demasiado grandes o que consumen demasiada energía para volar. Apolo trajo 382 kg; Chang'e 5 trajo 1,7 kg de regolito más joven de la cara cercana (Oceanus Procellarum). Cada kilogramo abre décadas de ciencia posterior.",
-    "chip_label_eccentricity": "Excentricidad — círculo (0), elipse (<1), parábola/escape (1), hipérbola (>1)"
+    "chip_label_eccentricity": "Excentricidad — círculo (0), elipse (<1), parábola/escape (1), hipérbola (>1)",
+    "plan_touch_hint": "Toca y mantén pulsado para previsualizar"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -6292,7 +6300,8 @@
     "fly_descent_dossier_title": "AFDAALDOSSIER",
     "credits_storage_intro": "Orrery heeft geen accounts en verzamelt geen persoonlijke gegevens — alleen anonieme, cookieloze gebruiksstatistieken en crashrapportages, zelf-gehost en nooit gebruikt om je te identificeren. Twee functionele voorkeurcookies, elk beschermd door zijn eigen ADR, zijn de enige persistente staat:",
     "why_samples_body": "Teruggebrachte monsters kunnen worden geanalyseerd met massaspectrometers, elektronenmicroscopen, isotopenveroudering — instrumenten die te groot of te energiehongerig zijn om mee te vliegen. Apollo bracht 382 kg mee; Chang'e 5 bracht 1,7 kg jonger regoliet van de nabijzijde (Oceanus Procellarum). Elk kilogram opent decennia's aan vervolgonderzoek.",
-    "chip_label_eccentricity": "Excentriciteit — cirkel (0), ellips (<1), parabool/ontsnapping (1), hyperbool (>1)"
+    "chip_label_eccentricity": "Excentriciteit — cirkel (0), ellips (<1), parabool/ontsnapping (1), hyperbool (>1)",
+    "plan_touch_hint": "Aanraken en vasthouden om te bekijken"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -6981,7 +6990,8 @@
     "fly_descent_dossier_title": "ДОСЬЕ СПУСКА",
     "credits_storage_intro": "Orrery не использует учётные записи и не собирает личные данные — только анонимную аналитику использования без cookies и отчёты об ошибках, размещаемые на собственных серверах и никогда не используемые для вашей идентификации. Единственное постоянное состояние — два функциональных cookie предпочтений, каждый защищённый собственным ADR:",
     "why_samples_body": "Возвращённые образцы можно анализировать с помощью масс-спектрометров, электронных микроскопов, методов изотопного датирования — приборов, слишком больших или энергоёмких для полёта. «Аполлон» доставил 382 кг; «Чанъэ-5» доставила 1,7 кг молодого реголита с видимой стороны (Океан Бурь). Каждый килограмм открывает десятилетия дальнейших научных исследований.",
-    "chip_label_eccentricity": "Эксцентриситет — круг (0), эллипс (<1), парабола/побег (1), гипербола (>1)"
+    "chip_label_eccentricity": "Эксцентриситет — круг (0), эллипс (<1), парабола/побег (1), гипербола (>1)",
+    "plan_touch_hint": "Нажмите и держите для предпросмотра"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -7651,7 +7661,8 @@
     "fly_descent_dossier_title": "下降档案",
     "credits_storage_intro": "Orrery 没有账户，不收集个人数据——仅收集匿名、无 Cookie 使用分析和崩溃报告，自托管且不用于身份识别。两个功能性偏好 Cookie，各自受其 ADR 把控，是仅有的持久状态：",
     "why_samples_body": "返回的样品可以用质谱仪、电子显微镜、同位素测年等仪器分析——这些仪器太大或耗电太多，无法飞行。阿波罗带回了382公斤；嫦娥五号带回了1.7公斤较年轻的月球正面月壤（风暴洋）。每一公斤样品都能解锁数十年的后续科学研究。",
-    "chip_label_eccentricity": "离心率 — 圆形 (0)、椭圆 (<1)、抛物线/逃逸轨道 (1)、双曲线 (>1)"
+    "chip_label_eccentricity": "离心率 — 圆形 (0)、椭圆 (<1)、抛物线/逃逸轨道 (1)、双曲线 (>1)",
+    "plan_touch_hint": "长按查看"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -8255,7 +8266,8 @@
     "fly_descent_dossier_title": "ДОСИЈЕ СИЛАЖЕЊА",
     "credits_storage_intro": "Orrery нема налога и не прикупља личне податке — само анонимну аналитику без колачића и извештаје о грешкама, самохостовану и никад коришћену за идентификацију. Два функционална колачића преференци, сваки заштићен сопственим ADR, су једино трајно стање:",
     "why_samples_body": "Враћени узорци могу се анализирати масеним спектрометрима, електронским микроскопима, изотопским датирањем — инструментима који су превише велики или захтевају превише енергије да би летели. Аполо је донео 382 kg; Чанг'е 5 је донела 1,7 kg млађег реголита са близине (Oceanus Procellarum). Сваки килограм откључава деценије наставне науке.",
-    "chip_label_eccentricity": "Екcентрицитет — круг (0), елипса (<1), парабола/бегство (1), хипербола (>1)"
+    "chip_label_eccentricity": "Екcентрицитет — круг (0), елипса (<1), парабола/бегство (1), хипербола (>1)",
+    "plan_touch_hint": "Додирни и држи да видиш"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -8895,6 +8907,7 @@
     "fly_descent_dossier_title": "DOSSIÊ DE DESCIDA",
     "credits_storage_intro": "Orrery não possui contas e não coleta dados pessoais — apenas análises de uso anônimas e sem cookies, além de relatórios de falhas, auto-hospedados e nunca usados para identificá-lo. Dois cookies funcionais de preferência, cada um protegido por seu próprio ADR, são o único estado persistente:",
     "why_samples_body": "Amostras retornadas podem ser analisadas com espectrômetros de massa, microscópios eletrônicos, datação isotópica — instrumentos grandes demais ou que consomem muita energia para voar. Apollo trouxe 382 kg; Chang'e 5 trouxe 1,7 kg de regolito mais jovem do lado próximo (Oceanus Procellarum). Cada quilograma desbloqueia décadas de pesquisa subsequente.",
-    "chip_label_eccentricity": "Excentricidade — círculo (0), elipse (<1), parábola/escape (1), hipérbole (>1)"
+    "chip_label_eccentricity": "Excentricidade — círculo (0), elipse (<1), parábola/escape (1), hipérbole (>1)",
+    "plan_touch_hint": "Toque e segure para visualizar"
   }
 }

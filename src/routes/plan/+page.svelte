@@ -943,7 +943,7 @@
          of the visual the moment it's been understood. Visible only
          on (hover: none) devices via CSS. -->
     {#if !mag}
-      <p class="touch-hint" aria-hidden="true">Touch &amp; hold to peek</p>
+      <p class="touch-hint" aria-hidden="true">{m.plan_touch_hint()}</p>
     {/if}
 
     {#if mag}

@@ -187,6 +187,7 @@
   "plan_empty_title": "PICK A LAUNCH WINDOW",
   "plan_empty_hint_desktop": "Tap a cell on the porkchop plot. Cool blue zones are cheap; hot red zones are expensive launch energy.",
   "plan_empty_hint_mobile": "On mobile, touch and hold the plot to open the magnifier.",
+  "plan_touch_hint": "Touch & hold to peek",
   "plan_label_departure": "DEPARTURE",
   "plan_label_arrival": "ARRIVAL",
   "plan_label_transit": "TRANSIT",

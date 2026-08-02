@@ -1,0 +1,30 @@
+{
+  "id": "staged-combustion",
+  "tab": "propulsion",
+  "order": 9,
+  "diagram": "staged-combustion.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/fleet",
+      "context_key": "RS-25 (Space Shuttle / SLS, fuel-rich), RD-180 and RD-253 (oxidiser-rich, Russian), YF-100 (Long March), LE-7A (H-IIA) and Raptor (full-flow, Starship) are staged-combustion engines"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia \u00b7 Staged combustion cycle",
+      "u": "https://en.wikipedia.org/wiki/Staged_combustion_cycle",
+      "t": "intro"
+    },
+    {
+      "l": "NASA \u00b7 Space Shuttle Main Engine (RS-25)",
+      "u": "https://www.nasa.gov/reference/space-launch-system/rs-25-engine/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia \u00b7 Full-flow staged combustion (Raptor)",
+      "u": "https://en.wikipedia.org/wiki/Full-flow_staged_combustion_cycle",
+      "t": "deep"
+    }
+  ]
+}

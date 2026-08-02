@@ -37,6 +37,11 @@
       "cover": false
     },
     {
+      "title": "Atlas LV-3B",
+      "file": "/images/anatomy/atlas-lv-3b.webp",
+      "cover": false
+    },
+    {
       "title": "Atlas V",
       "file": "/images/anatomy/atlas-v.webp",
       "cover": false
@@ -347,6 +352,11 @@
       "cover": false
     },
     {
+      "title": "M V",
+      "file": "/images/anatomy/m-v.webp",
+      "cover": false
+    },
+    {
       "title": "Magellan",
       "file": "/images/anatomy/magellan.webp",
       "cover": false
@@ -482,6 +492,11 @@
       "cover": false
     },
     {
+      "title": "Proton-K",
+      "file": "/images/anatomy/proton-k.webp",
+      "cover": false
+    },
+    {
       "title": "Proton-M",
       "file": "/images/anatomy/proton-m.webp",
       "cover": false
@@ -489,6 +504,11 @@
     {
       "title": "PSLV-XL",
       "file": "/images/anatomy/pslv-xl.webp",
+      "cover": false
+    },
+    {
+      "title": "Pslv",
+      "file": "/images/anatomy/pslv.webp",
       "cover": false
     },
     {
@@ -582,6 +602,11 @@
       "cover": false
     },
     {
+      "title": "Soyuz (11A511)",
+      "file": "/images/anatomy/soyuz.webp",
+      "cover": false
+    },
+    {
       "title": "Space Shuttle Orbiter",
       "file": "/images/anatomy/space-shuttle-orbiter.webp",
       "cover": false
@@ -652,6 +677,11 @@
       "cover": false
     },
     {
+      "title": "Titan II GLV",
+      "file": "/images/anatomy/titan-ii-glv.webp",
+      "cover": false
+    },
+    {
       "title": "Ulysses",
       "file": "/images/anatomy/ulysses.webp",
       "cover": false
@@ -674,6 +704,16 @@
     {
       "title": "Vikram (Chandrayaan-3)",
       "file": "/images/anatomy/vikram-cy3.webp",
+      "cover": false
+    },
+    {
+      "title": "Voskhod (11A57)",
+      "file": "/images/anatomy/voskhod-11a57.webp",
+      "cover": false
+    },
+    {
+      "title": "Vostok-K (8K72K)",
+      "file": "/images/anatomy/vostok-k.webp",
       "cover": false
     },
     {
@@ -934,6 +974,11 @@
       "cover": false
     },
     {
+      "title": "Expander Cycle",
+      "file": "/diagrams/science/expander-cycle.webp",
+      "cover": false
+    },
+    {
       "title": "Expedition Cadence",
       "file": "/diagrams/science/expedition-cadence.webp",
       "cover": false
@@ -951,6 +996,11 @@
     {
       "title": "Fusion Propulsion",
       "file": "/diagrams/science/fusion-propulsion.webp",
+      "cover": false
+    },
+    {
+      "title": "Gas Generator",
+      "file": "/diagrams/science/gas-generator.webp",
       "cover": false
     },
     {
@@ -1191,6 +1241,11 @@
     {
       "title": "Specific Impulse",
       "file": "/diagrams/science/specific-impulse.webp",
+      "cover": false
+    },
+    {
+      "title": "Staged Combustion",
+      "file": "/diagrams/science/staged-combustion.webp",
       "cover": false
     },
     {
@@ -2325,8 +2380,8 @@
     }
   ],
   "totals": {
-    "anatomy_art": 144,
-    "diagrams_science": 104,
+    "anatomy_art": 152,
+    "diagrams_science": 107,
     "posters": 27,
     "models3d": 109,
     "capsules": 8,

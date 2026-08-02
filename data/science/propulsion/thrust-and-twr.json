@@ -1,32 +1,35 @@
 {
   "id": "thrust-and-twr",
   "tab": "propulsion",
-  "order": 9,
+  "order": 12,
   "photo": {
     "src": "/images/science/thrust-and-twr-f1-static.webp",
-    "credit": "NASA · Marshall Space Flight Center · F-1 engine static test at the Mississippi Test Facility. Each F-1 produced 6.77 MN of sea-level thrust — five of them on Saturn V's first stage gave a lift-off thrust-to-weight ratio of about 1.18."
+    "credit": "NASA \u00b7 Marshall Space Flight Center \u00b7 F-1 engine static test at the Mississippi Test Facility. Each F-1 produced 6.77 MN of sea-level thrust \u2014 five of them on Saturn V's first stage gave a lift-off thrust-to-weight ratio of about 1.18."
   },
   "see_in_app": [
-    { "route": "/fleet", "context_key": "Lift-off TWR for every launcher in fleet view — Saturn V (1.18), Falcon 9 (1.4), SLS (1.4), Starship (1.5), Long March 5 (1.3), N1 (1.07, marginal)" }
+    {
+      "route": "/fleet",
+      "context_key": "Lift-off TWR for every launcher in fleet view \u2014 Saturn V (1.18), Falcon 9 (1.4), SLS (1.4), Starship (1.5), Long March 5 (1.3), N1 (1.07, marginal)"
+    }
   ],
   "links": [
     {
-      "l": "Wikipedia · Thrust",
+      "l": "Wikipedia \u00b7 Thrust",
       "u": "https://en.wikipedia.org/wiki/Thrust",
       "t": "intro"
     },
     {
-      "l": "Wikipedia · Thrust-to-weight ratio",
+      "l": "Wikipedia \u00b7 Thrust-to-weight ratio",
       "u": "https://en.wikipedia.org/wiki/Thrust-to-weight_ratio",
       "t": "core"
     },
     {
-      "l": "NASA · The Thrust Equation",
+      "l": "NASA \u00b7 The Thrust Equation",
       "u": "https://www.grc.nasa.gov/www/k-12/airplane/thrsteq.html",
       "t": "core"
     },
     {
-      "l": "NASA · Gravity losses during ascent",
+      "l": "NASA \u00b7 Gravity losses during ascent",
       "u": "https://ntrs.nasa.gov/citations/19720001581",
       "t": "deep"
     }

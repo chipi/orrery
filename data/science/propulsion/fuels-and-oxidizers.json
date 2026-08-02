@@ -1,38 +1,44 @@
 {
   "id": "fuels-and-oxidizers",
   "tab": "propulsion",
-  "order": 8,
+  "order": 11,
   "photo": {
     "src": "/images/science/fuels-and-oxidizers-lox-loading.webp",
-    "credit": "NASA · Kennedy Space Center · Liquid oxygen being loaded into the SLS core stage. LOX is the dominant oxidiser of orbital launch — every cryogenic stack (hydrolox, kerolox, methalox) needs hundreds of tonnes of it."
+    "credit": "NASA \u00b7 Kennedy Space Center \u00b7 Liquid oxygen being loaded into the SLS core stage. LOX is the dominant oxidiser of orbital launch \u2014 every cryogenic stack (hydrolox, kerolox, methalox) needs hundreds of tonnes of it."
   },
   "see_in_app": [
-    { "route": "/fleet", "context_key": "Falcon 9 / Atlas V (kerolox), SLS / Delta IV / Ariane 6 upper / Long March 5 (hydrolox), Starship / Vulcan / Neutron (methalox), older Russian / Chinese / Indian craft (hypergolic UDMH/N2O4)" },
-    { "route": "/missions", "context_key": "Interplanetary missions almost all use hypergolic storables for course corrections — the propellant can sit unrefrigerated for years and ignites on contact" }
+    {
+      "route": "/fleet",
+      "context_key": "Falcon 9 / Atlas V (kerolox), SLS / Delta IV / Ariane 6 upper / Long March 5 (hydrolox), Starship / Vulcan / Neutron (methalox), older Russian / Chinese / Indian craft (hypergolic UDMH/N2O4)"
+    },
+    {
+      "route": "/missions",
+      "context_key": "Interplanetary missions almost all use hypergolic storables for course corrections \u2014 the propellant can sit unrefrigerated for years and ignites on contact"
+    }
   ],
   "links": [
     {
-      "l": "Wikipedia · Rocket propellant",
+      "l": "Wikipedia \u00b7 Rocket propellant",
       "u": "https://en.wikipedia.org/wiki/Rocket_propellant",
       "t": "intro"
     },
     {
-      "l": "Wikipedia · Hypergolic propellant",
+      "l": "Wikipedia \u00b7 Hypergolic propellant",
       "u": "https://en.wikipedia.org/wiki/Hypergolic_propellant",
       "t": "core"
     },
     {
-      "l": "Wikipedia · RP-1 (kerosene rocket grade)",
+      "l": "Wikipedia \u00b7 RP-1 (kerosene rocket grade)",
       "u": "https://en.wikipedia.org/wiki/RP-1",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Methalox (liquid methane / liquid oxygen)",
+      "l": "Wikipedia \u00b7 Methalox (liquid methane / liquid oxygen)",
       "u": "https://en.wikipedia.org/wiki/Liquid_methane_rocket",
       "t": "core"
     },
     {
-      "l": "NASA · Solid propellant history",
+      "l": "NASA \u00b7 Solid propellant history",
       "u": "https://www.nasa.gov/centers-and-facilities/marshall/solid-rocket-boosters/",
       "t": "deep"
     }

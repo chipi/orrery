@@ -16,6 +16,9 @@
     "thrust_kn_vac": 1471,
     "isp_vac_s": 425
   },
+  "science": [
+    "propulsion/engine-types"
+  ],
   "credit": "Engine registry (PRD-032). Public-source nominal specs; JAXA imagery.",
   "links": [
     {

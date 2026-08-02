@@ -1,31 +1,31 @@
 {
   "id": "laser-sail",
   "tab": "propulsion",
-  "order": 18,
+  "order": 21,
   "see_in_app": [
     {
       "route": "/missions",
-      "context_key": "Voyager 1 and 2 as the only hardware to reach interstellar space — Starshot's target is 2000× faster"
+      "context_key": "Voyager 1 and 2 as the only hardware to reach interstellar space \u2014 Starshot's target is 2000\u00d7 faster"
     }
   ],
   "links": [
     {
-      "l": "Breakthrough Starshot · official site",
+      "l": "Breakthrough Starshot \u00b7 official site",
       "u": "https://breakthroughinitiatives.org/initiative/3",
       "t": "intro"
     },
     {
-      "l": "Wikipedia · Breakthrough Starshot",
+      "l": "Wikipedia \u00b7 Breakthrough Starshot",
       "u": "https://en.wikipedia.org/wiki/Breakthrough_Starshot",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Beam-powered propulsion",
+      "l": "Wikipedia \u00b7 Beam-powered propulsion",
       "u": "https://en.wikipedia.org/wiki/Beam-powered_propulsion",
       "t": "deep"
     },
     {
-      "l": "Wikipedia · Solar sail (for contrast with laser-driven variants)",
+      "l": "Wikipedia \u00b7 Solar sail (for contrast with laser-driven variants)",
       "u": "https://en.wikipedia.org/wiki/Solar_sail",
       "t": "deep"
     }

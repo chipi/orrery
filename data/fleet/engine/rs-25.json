@@ -18,6 +18,10 @@
     "isp_sl_s": 366,
     "mass_kg": 3527
   },
+  "science": [
+    "propulsion/engine-types",
+    "propulsion/specific-impulse"
+  ],
   "credit": "Engine registry (PRD-032). Public-source nominal specs; NASA imagery.",
   "links": [
     {

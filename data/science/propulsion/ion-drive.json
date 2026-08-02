@@ -1,7 +1,7 @@
 {
   "id": "ion-drive",
   "tab": "propulsion",
-  "order": 13,
+  "order": 16,
   "see_in_app": [
     {
       "route": "/missions",
@@ -10,22 +10,22 @@
   ],
   "links": [
     {
-      "l": "NASA · Ion Propulsion",
+      "l": "NASA \u00b7 Ion Propulsion",
       "u": "https://www.nasa.gov/directorates/stmd/game-changing-development/ion-propulsion/",
       "t": "intro"
     },
     {
-      "l": "NASA · Dawn Mission Overview",
+      "l": "NASA \u00b7 Dawn Mission Overview",
       "u": "https://science.nasa.gov/mission/dawn/",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Ion thruster",
+      "l": "Wikipedia \u00b7 Ion thruster",
       "u": "https://en.wikipedia.org/wiki/Ion_thruster",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Hall-effect thruster",
+      "l": "Wikipedia \u00b7 Hall-effect thruster",
       "u": "https://en.wikipedia.org/wiki/Hall-effect_thruster",
       "t": "deep"
     }

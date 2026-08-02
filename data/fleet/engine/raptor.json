@@ -18,6 +18,10 @@
     "isp_sl_s": 327,
     "mass_kg": 1600
   },
+  "science": [
+    "propulsion/engine-types",
+    "propulsion/fuels-and-oxidizers"
+  ],
   "credit": "Engine registry (PRD-032). Public-source nominal specs.",
   "links": [
     {

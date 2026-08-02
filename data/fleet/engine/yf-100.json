@@ -16,6 +16,9 @@
     "thrust_kn_sl": 1200,
     "isp_sl_s": 300
   },
+  "science": [
+    "propulsion/engine-types"
+  ],
   "credit": "Engine registry (PRD-032). Public-source nominal specs.",
   "links": [
     {

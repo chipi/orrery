@@ -23,8 +23,9 @@ name: Deploy to prod VPS (orrery)
 #
 # Operator prerequisites (set on the canonical repo, settings →
 # environments → prod → secrets/vars):
-#   - secrets.TS_AUTHKEY              — tailnet auth key with
-#                                        tag:gha-deployer
+#   - secrets.TS_OAUTH_CLIENT_ID       — Tailscale OAuth client (shared chipi
+#   - secrets.TS_OAUTH_SECRET            deployer identity; scoped to tag:gha-deployer).
+#                                        Does not expire like an auth key.
 #   - secrets.PROD_SSH_PRIVATE_KEY     — Ed25519 PEM for deploy@
 #                                        user on the VPS
 #   - vars.PROD_TAILNET_FQDN          — e.g.
@@ -68,7 +69,7 @@ jobs:
     # checkout and still leaves room for npm ci + build (~6 min) + deploy.
     timeout-minutes: 30
     # Bind to the `prod` environment so this job can see the
-    # environment-scoped secrets (TS_AUTHKEY, PROD_SSH_PRIVATE_KEY) +
+    # environment-scoped secrets (TS_OAUTH_CLIENT_ID/TS_OAUTH_SECRET, PROD_SSH_PRIVATE_KEY) +
     # variables (PROD_TAILNET_FQDN) staged in repo settings →
     # Environments → prod. Environment binding also enables protection
     # rules (required reviewers, deployment-branch policies) if you
@@ -82,13 +83,15 @@ jobs:
       - name: Pre-flight — required secrets/variables present?
         id: preflight
         env:
-          TS_AUTHKEY: ${{ secrets.TS_AUTHKEY }}
+          TS_OAUTH_CLIENT_ID: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          TS_OAUTH_SECRET: ${{ secrets.TS_OAUTH_SECRET }}
           PROD_SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
           PROD_TAILNET_FQDN: ${{ vars.PROD_TAILNET_FQDN }}
         run: |
           set -euo pipefail
           MISSING=""
-          [ -z "${TS_AUTHKEY:-}" ]            && MISSING="$MISSING TS_AUTHKEY"
+          [ -z "${TS_OAUTH_CLIENT_ID:-}" ]    && MISSING="$MISSING TS_OAUTH_CLIENT_ID"
+          [ -z "${TS_OAUTH_SECRET:-}" ]       && MISSING="$MISSING TS_OAUTH_SECRET"
           [ -z "${PROD_SSH_PRIVATE_KEY:-}" ]  && MISSING="$MISSING PROD_SSH_PRIVATE_KEY"
           [ -z "${PROD_TAILNET_FQDN:-}" ]     && MISSING="$MISSING PROD_TAILNET_FQDN"
           if [ -n "$MISSING" ]; then
@@ -192,7 +195,11 @@ jobs:
         if: steps.preflight.outputs.skip != 'true'
         uses: tailscale/github-action@306e68a486fd2350f2bfc3b19fcd143891a4a2d8 # v4
         with:
-          authkey: ${{ secrets.TS_AUTHKEY }}
+          # OAuth client (shared chipi deployer identity, same as podcast_scraper) — does not
+          # expire like an auth key did (2026-08-02: the old TS_AUTHKEY lapsed and blocked prod
+          # deploys). Reuses the same tailnet + tag:gha-deployer + target box.
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:gha-deployer
           # Pin to a known-good version. `latest` has broken sha256
           # verification in GHA before (podcast_scraper RFC-082).

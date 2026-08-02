@@ -3232,36 +3232,51 @@ const FLEET_IMAGE_QUERIES: FleetImageQuery[] = [
   },
   {
     id: 'yf-100',
-    query: 'YF-100 rocket engine',
+    query: 'YF-100 rocket engine test',
     agency: 'CNSA',
-    extraQueries: ['YF-100 发动机', 'Long March 5 engine'],
+    extraQueries: ['YF-100 发动机 试车', '长征五号 液氧煤油发动机'],
   },
-  { id: 'yf-77', query: 'YF-77 rocket engine', agency: 'CNSA', extraQueries: ['YF-77 发动机'] },
+  {
+    id: 'yf-77',
+    query: 'YF-77 rocket engine test',
+    agency: 'CNSA',
+    extraQueries: ['YF-77 发动机', '长征五号 氢氧发动机'],
+  },
   {
     id: 'vikas',
-    query: 'Vikas rocket engine ISRO',
+    query: 'Vikas rocket engine test',
     agency: 'ISRO',
-    extraQueries: ['Vikas engine PSLV'],
+    extraQueries: ['ISRO Vikas engine', 'GSLV Vikas engine', 'PSLV liquid engine'],
   },
   {
     id: 'ce-20',
-    query: 'CE-20 cryogenic engine ISRO',
+    query: 'CE-20 cryogenic engine test',
     agency: 'ISRO',
-    extraQueries: ['CE-20 engine LVM3'],
+    extraQueries: ['ISRO cryogenic engine', 'C25 cryogenic stage engine'],
   },
   {
     id: 'le-7a',
-    query: 'LE-7A rocket engine H-IIA',
+    query: 'LE-7 rocket engine test firing',
     agency: 'JAXA',
-    extraQueries: ['LE-7 エンジン', 'LE-7A engine'],
+    extraQueries: ['LE-7A エンジン 燃焼試験', 'H-IIA rocket engine', 'JAXA liquid rocket engine'],
   },
-  { id: 'le-9', query: 'LE-9 rocket engine H3', agency: 'JAXA', extraQueries: ['LE-9 エンジン'] },
-  { id: 'le-5b', query: 'LE-5B rocket engine', agency: 'JAXA', extraQueries: ['LE-5 エンジン'] },
+  {
+    id: 'le-9',
+    query: 'LE-9 rocket engine test',
+    agency: 'JAXA',
+    extraQueries: ['LE-9 エンジン 燃焼試験', 'H3 rocket first stage engine'],
+  },
+  {
+    id: 'le-5b',
+    query: 'LE-5 rocket engine',
+    agency: 'JAXA',
+    extraQueries: ['LE-5B エンジン', 'H-II upper stage engine test'],
+  },
   {
     id: 'lr87',
-    query: 'LR87 rocket engine Titan',
+    query: 'LR87 rocket engine Titan II',
     agency: 'NASA',
-    extraQueries: ['Aerojet LR87 engine'],
+    extraQueries: ['Titan II first stage engine', 'Aerojet LR-87 engine'],
   },
   // Launchers
   { id: 'saturn-v', query: 'Saturn V launch Apollo lunar', agency: 'NASA' },
@@ -4001,9 +4016,13 @@ async function fetchFleetImages(onlyIds?: string[]): Promise<number> {
     process.stdout.write(` → ${saved}\n`);
   }
 
+  // Sources persist in BOTH modes: a staged image still needs its Commons
+  // source recorded, or it can never be credited on promote and validate-data
+  // fails closed on the missing provenance row (ADR-047). Only the count
+  // manifest stays staged until /dev/staging promotes the slots.
+  await writeFile(FLEET_IMAGE_SOURCES_MANIFEST, JSON.stringify(sources, null, 2) + '\n');
   if (!STAGE_FETCH) {
     await writeFile(FLEET_GALLERIES_MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
-    await writeFile(FLEET_IMAGE_SOURCES_MANIFEST, JSON.stringify(sources, null, 2) + '\n');
   } else {
     console.log('  (staged: fleet gallery counts unchanged — promote in /dev/staging)');
   }

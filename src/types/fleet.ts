@@ -87,6 +87,8 @@ export interface FleetEntryBase {
   epoch: FleetEpoch;
   best_known_for?: string;
   specs?: Record<string, number | string | boolean>;
+  /** /science article slugs this entry illustrates (PRD-032 engine cross-ref). */
+  science?: string[];
   linked_missions?: string[];
   linked_sites?: FleetSiteLink[];
   flights?: FleetFlight[];

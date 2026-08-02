@@ -154,11 +154,28 @@
   const launcherEngines = $derived(
     entry?.category === 'launcher' && entry ? enginesForLauncher(entry.id) : [],
   );
-  // Every engine illustrates the same two propulsion primers.
-  const ENGINE_SCIENCE = [
-    { slug: 'propulsion/engine-types', label: 'How rocket engines work' },
-    { slug: 'propulsion/thrust-and-twr', label: 'Thrust & thrust-to-weight' },
-  ];
+  // Every engine illustrates the two propulsion primers; per-engine `science`
+  // slugs (from the registry, PRD-032) append the specific topics that engine
+  // demonstrates — e.g. staged-combustion cycle, the rocket equation. Deduped;
+  // primers first. Labels here mirror the science-card titles.
+  const SCIENCE_LABELS: Record<string, string> = {
+    'propulsion/engine-types': 'How rocket engines work',
+    'propulsion/thrust-and-twr': 'Thrust & thrust-to-weight',
+    'propulsion/specific-impulse': 'Specific impulse',
+    'propulsion/tsiolkovsky': 'The rocket equation',
+    'propulsion/fuels-and-oxidizers': 'Fuels & oxidizers',
+  };
+  const ENGINE_SCIENCE_PRIMERS = ['propulsion/engine-types', 'propulsion/thrust-and-twr'];
+  const engineScience = $derived.by(() => {
+    const seen = new Set<string>();
+    const out: { slug: string; label: string }[] = [];
+    for (const slug of [...ENGINE_SCIENCE_PRIMERS, ...(entry?.science ?? [])]) {
+      if (seen.has(slug)) continue;
+      seen.add(slug);
+      out.push({ slug, label: SCIENCE_LABELS[slug] ?? slug.split('/').pop()! });
+    }
+    return out;
+  });
 
   function siteRoute(ls: FleetSiteLink): string {
     if (ls.type === 'moon') return `${base}/moon?site=${encodeURIComponent(ls.site_id)}`;
@@ -431,7 +448,7 @@
           </ul>
           <h3 class="section-h">Learn the science</h3>
           <ul class="xref-list">
-            {#each ENGINE_SCIENCE as s (s.slug)}
+            {#each engineScience as s (s.slug)}
               <li>
                 <a
                   class="xref-link"

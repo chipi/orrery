@@ -18,6 +18,9 @@
     "isp_vac_s": 421,
     "mass_kg": 1788
   },
+  "science": [
+    "propulsion/specific-impulse"
+  ],
   "credit": "Engine registry (PRD-032). Public-source nominal specs; NASA imagery.",
   "links": [
     {

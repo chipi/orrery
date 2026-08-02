@@ -25,7 +25,10 @@
       "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
       "minLength": 2
     },
-    "name": { "type": "string", "minLength": 1 },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
     "category": {
       "type": "string",
       "enum": [
@@ -43,29 +46,67 @@
         "engine"
       ]
     },
-    "agency": { "type": "string", "minLength": 1 },
-    "country": { "type": "string", "minLength": 1 },
-    "manufacturer": { "type": "string", "minLength": 1 },
+    "agency": {
+      "type": "string",
+      "minLength": 1
+    },
+    "country": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manufacturer": {
+      "type": "string",
+      "minLength": 1
+    },
     "first_flight": {
       "oneOf": [
-        { "type": "string", "format": "date" },
-        { "type": "string", "pattern": "^[0-9]{4}$" },
-        { "type": "string", "enum": ["planned"] }
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9]{4}$"
+        },
+        {
+          "type": "string",
+          "enum": [
+            "planned"
+          ]
+        }
       ]
     },
     "last_flight": {
       "oneOf": [
-        { "type": "string", "format": "date" },
-        { "type": "string", "pattern": "^[0-9]{4}$" }
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9]{4}$"
+        }
       ]
     },
     "status": {
       "type": "string",
-      "enum": ["FLOWN", "ACTIVE", "RETIRED", "FAILED", "PLANNED"]
+      "enum": [
+        "FLOWN",
+        "ACTIVE",
+        "RETIRED",
+        "FAILED",
+        "PLANNED"
+      ]
     },
     "era": {
       "type": "string",
-      "enum": ["1957-1969", "1969-1981", "1981-2011", "2011-now", "planned"]
+      "enum": [
+        "1957-1969",
+        "1969-1981",
+        "1981-2011",
+        "2011-now",
+        "planned"
+      ]
     },
     "epoch": {
       "type": "string",
@@ -81,7 +122,9 @@
         "mars-era"
       ]
     },
-    "best_known_for": { "type": "string" },
+    "best_known_for": {
+      "type": "string"
+    },
     "lat": {
       "type": "number",
       "minimum": -90,
@@ -99,21 +142,40 @@
       "description": "Category-specific specs; permissive shape, validated per category in validate-data.ts.",
       "additionalProperties": {
         "oneOf": [
-          { "type": "number" },
-          { "type": "string" },
-          { "type": "boolean" }
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "boolean"
+          }
         ]
       }
+    },
+    "science": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "/science article slugs this engine illustrates (PRD-032 cross-ref)."
     },
     "linked_missions": {
       "type": "array",
       "description": "Mission IDs from missions/index.json. Curated explicitly per RFC-016 OQ-2.",
-      "items": { "type": "string", "minLength": 1 }
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "linked_iss_modules": {
       "type": "array",
-      "description": "ISS module IDs (from iss-modules.json) this entry is the reciprocal of. Used on Shuttle orbiter entries to surface which ISS modules each orbiter delivered (e.g. Endeavour → [unity, canadarm2, tranquility, cupola]).",
-      "items": { "type": "string", "minLength": 1 }
+      "description": "ISS module IDs (from iss-modules.json) this entry is the reciprocal of. Used on Shuttle orbiter entries to surface which ISS modules each orbiter delivered (e.g. Endeavour \u2192 [unity, canadarm2, tranquility, cupola]).",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "linked_sites": {
       "type": "array",
@@ -121,13 +183,23 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["type", "site_id"],
+        "required": [
+          "type",
+          "site_id"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["moon", "mars", "earth-object"]
+            "enum": [
+              "moon",
+              "mars",
+              "earth-object"
+            ]
           },
-          "site_id": { "type": "string", "minLength": 1 }
+          "site_id": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     },
@@ -137,23 +209,49 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["mission_id", "flight_designation"],
+        "required": [
+          "mission_id",
+          "flight_designation"
+        ],
         "properties": {
-          "mission_id": { "type": "string", "minLength": 1 },
-          "flight_designation": { "type": "string", "minLength": 1 },
-          "patch_path": { "type": "string" },
+          "mission_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "flight_designation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "patch_path": {
+            "type": "string"
+          },
           "crew": {
             "type": "array",
             "items": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["name", "role"],
+              "required": [
+                "name",
+                "role"
+              ],
               "properties": {
-                "name": { "type": "string", "minLength": 1 },
-                "role": { "type": "string", "minLength": 1 },
-                "agency": { "type": "string" },
-                "country": { "type": "string" },
-                "portrait_path": { "type": "string" }
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "role": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "agency": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "portrait_path": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -162,21 +260,41 @@
     },
     "explorer_route": {
       "type": "string",
-      "description": "Optional route to dedicated explorer (e.g., '/iss', '/tiangong'). Renders 'Open Explorer →' CTA in OVERVIEW per RFC-016 OQ-12.",
+      "description": "Optional route to dedicated explorer (e.g., '/iss', '/tiangong'). Renders 'Open Explorer \u2192' CTA in OVERVIEW per RFC-016 OQ-12.",
       "pattern": "^/[a-z][a-z0-9-]*$"
     },
-    "credit": { "type": "string", "minLength": 1 },
+    "credit": {
+      "type": "string",
+      "minLength": 1
+    },
     "links": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["l", "u", "t"],
+        "required": [
+          "l",
+          "u",
+          "t"
+        ],
         "properties": {
-          "l": { "type": "string", "minLength": 1 },
-          "u": { "type": "string", "format": "uri" },
-          "t": { "type": "string", "enum": ["intro", "core", "deep"] }
+          "l": {
+            "type": "string",
+            "minLength": 1
+          },
+          "u": {
+            "type": "string",
+            "format": "uri"
+          },
+          "t": {
+            "type": "string",
+            "enum": [
+              "intro",
+              "core",
+              "deep"
+            ]
+          }
         }
       }
     },
@@ -186,9 +304,14 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
-          "id": { "type": "string", "pattern": "^vid-[a-f0-9]{12}$" }
+          "id": {
+            "type": "string",
+            "pattern": "^vid-[a-f0-9]{12}$"
+          }
         }
       }
     }
@@ -197,10 +320,17 @@
     {
       "description": "launch-site entries must carry geographic coordinates (used by #285 Phase 2 to place markers on the Earth sphere via the shared SurfaceScene contract).",
       "if": {
-        "properties": { "category": { "const": "launch-site" } }
+        "properties": {
+          "category": {
+            "const": "launch-site"
+          }
+        }
       },
       "then": {
-        "required": ["lat", "lon"]
+        "required": [
+          "lat",
+          "lon"
+        ]
       }
     }
   ]

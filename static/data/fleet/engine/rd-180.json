@@ -18,6 +18,9 @@
     "isp_sl_s": 311,
     "mass_kg": 5480
   },
+  "science": [
+    "propulsion/engine-types"
+  ],
   "credit": "Engine registry (PRD-032). Public-source nominal specs.",
   "links": [
     {

@@ -47,6 +47,7 @@ for (const e of ENGINE_REGISTRY) {
     epoch: e.epoch,
     best_known_for: e.best_known_for,
     specs,
+    ...(e.science?.length ? { science: e.science } : {}),
     credit: e.credit,
     links: e.links,
   };

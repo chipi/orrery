@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest';
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 import {
   ENGINE_REGISTRY,
   ENGINE_IDS,
@@ -7,6 +9,13 @@ import {
   enginesForLauncher,
 } from './engine-registry';
 import { LAUNCHER_ENGINES } from './launcher-engines';
+
+// The two propulsion primers every engine panel links (FleetEntryPanel
+// ENGINE_SCIENCE_PRIMERS). Mirrored here so a renamed / deleted science card
+// fails the cross-ref gate, not just silently 404s in the UI.
+const SCIENCE_PRIMERS = ['propulsion/engine-types', 'propulsion/thrust-and-twr'];
+const scienceCardExists = (slug: string) =>
+  existsSync(resolve(__dirname, '../../../static/data/science', `${slug}.json`));
 
 describe('ENGINE_REGISTRY', () => {
   it('holds the curated set with unique, url-safe ids', () => {
@@ -69,5 +78,52 @@ describe('enginesForLauncher (forward index)', () => {
 
   it('returns [] for an unknown launcher', () => {
     expect(enginesForLauncher('nope')).toEqual([]);
+  });
+});
+
+// PRD-032 — the operator's cross-reference gate: the engine↔launcher graph must
+// be symmetric both ways, and every science / external link an engine points at
+// must actually resolve. This is what "cross-referenced well" means.
+describe('engine ↔ launcher round-trip symmetry', () => {
+  it('every launcher an engine claims lists that engine back', () => {
+    for (const e of ENGINE_REGISTRY)
+      for (const v of launchersForEngine(e.id)) {
+        const back = enginesForLauncher(v.launcherId).map((x) => x.id);
+        expect(back, `${e.id} → ${v.launcherId} but ${v.launcherId} omits ${e.id}`).toContain(e.id);
+      }
+  });
+
+  it('every engine a launcher lists claims that launcher back', () => {
+    for (const launcherId of Object.keys(LAUNCHER_ENGINES))
+      for (const eng of enginesForLauncher(launcherId)) {
+        const back = launchersForEngine(eng.id).map((x) => x.launcherId);
+        expect(back, `${launcherId} → ${eng.id} but ${eng.id} omits ${launcherId}`).toContain(
+          launcherId,
+        );
+      }
+  });
+});
+
+describe('engine → science cross-references resolve', () => {
+  it('both propulsion primers exist as science cards', () => {
+    for (const slug of SCIENCE_PRIMERS)
+      expect(scienceCardExists(slug), `primer "${slug}" has no science card`).toBe(true);
+  });
+
+  it('every per-engine science slug resolves to a real science card', () => {
+    for (const e of ENGINE_REGISTRY)
+      for (const slug of e.science ?? [])
+        expect(scienceCardExists(slug), `${e.id}: science "${slug}" has no card`).toBe(true);
+  });
+});
+
+describe('engine → external links are well-formed', () => {
+  it('every link has a label, an http(s) url, and a section tag', () => {
+    for (const e of ENGINE_REGISTRY)
+      for (const l of e.links) {
+        expect(l.l?.trim(), `${e.id}: link missing label`).toBeTruthy();
+        expect(l.u, `${e.id}: link "${l.l}" url not http(s)`).toMatch(/^https?:\/\//);
+        expect(l.t?.trim(), `${e.id}: link "${l.l}" missing section tag`).toBeTruthy();
+      }
   });
 });

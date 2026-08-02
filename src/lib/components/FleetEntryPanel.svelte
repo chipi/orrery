@@ -3,7 +3,7 @@
   import AgencyRow from './AgencyRow.svelte';
   import { base } from '$app/paths';
   import { getBadges } from '$lib/data';
-  import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
+  import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
   import { track, trackGalleryImageOpen } from '$lib/analytics';
   import type { FleetEntry, FleetSiteLink } from '$types/fleet';
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
@@ -84,6 +84,9 @@
   // as new SVGs land in Phase F).
   let diagramPath = $derived(entry ? spacecraftDiagramPath(entry.id) : null);
   let hasDiagram = $derived(diagramPath !== null);
+  // Exploded-stage watercolor cutaway — a richer companion to the pencil
+  // anatomy, shown alongside it in the DETAIL tab for launch vehicles.
+  let cutawayPath = $derived(entry ? launcherCutawayPath(entry.id) : null);
 
   let hasGallery = $derived(gallery.length > 0);
   let hasVideos = $derived(videos.length > 0);
@@ -322,7 +325,7 @@
           aria-selected={tab === 'gallery'}>GALLERY</button
         >
       {/if}
-      {#if hasDiagram || hasLinks}
+      {#if hasDiagram || cutawayPath || hasLinks}
         <!-- ANATOMY + LEARN merged (user direction) to keep the tab row from
              overflowing. Shows the diagram (if any) then the tiered links. -->
         <button
@@ -553,7 +556,7 @@
             {/key}
           </div>
         {/if}
-      {:else if tab === 'anatomy' && (diagramPath || hasLinks)}
+      {:else if tab === 'anatomy' && (diagramPath || cutawayPath || hasLinks)}
         {#if diagramPath}
           <div class="anatomy">
             <button
@@ -570,6 +573,24 @@
               />
             </button>
             <p class="anatomy-caption">{m.fleet_anatomy_caption()}</p>
+          </div>
+        {/if}
+        {#if cutawayPath}
+          <div class="anatomy">
+            <button
+              type="button"
+              class="anatomy-open"
+              onclick={() => (lightboxSrc = cutawayPath)}
+              aria-label="Open {entry.name} exploded cutaway full-size"
+            >
+              <img
+                src={cutawayPath}
+                alt="Exploded-stage cutaway for {entry.name}"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+            <p class="anatomy-caption">{m.fleet_exploded_caption()}</p>
           </div>
         {/if}
         {#if hasLinks}

@@ -132,7 +132,10 @@ const diagrams = {
 for (const [slug, svg] of Object.entries(diagrams)) {
   const svgPath = path.join(OUT, `${slug}.svg`);
   fs.writeFileSync(svgPath, svg);
-  await sharp(Buffer.from(svg)).resize(2048).png().toFile(path.join(OUT, `${slug}.png`));
+  await sharp(Buffer.from(svg))
+    .resize(2048)
+    .png()
+    .toFile(path.join(OUT, `${slug}.png`));
   console.log('  ', slug);
 }
 console.log('done:', Object.keys(diagrams).length, 'cycle sketches →', OUT);

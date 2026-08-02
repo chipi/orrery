@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 1120" width="1680" height="1120"><rect width="1680" height="1120" fill="#0a0e18"/><g font-family="monospace" fill="#cfe3fb">
+  <text x="70" y="70" font-size="34" text-anchor="start" fill="#7fb0e0" letter-spacing="0.6">SATURN V — EXPLODED</text>
+  <text x="70" y="106" font-size="20" text-anchor="start" fill="#cfe3fb" letter-spacing="0.6">broken into its stages — assembled reference at left, to human scale</text>
+
+  <!-- REFERENCE STACK (assembled, true proportion) + human + scale -->
+  <rect x="128" y="739.2" width="74" height="310.8" rx="6" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="1.6"/><rect x="128" y="553.2" width="74" height="185" rx="6" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="1.6"/><rect x="140" y="419" width="50" height="133.20000000000002" rx="6" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="1.6"/><rect x="140" y="410.6" width="50" height="7.4" rx="6" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="1.6"/><rect x="145" y="346.70000000000005" width="40" height="62.900000000000006" rx="6" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="1.6"/><rect x="150" y="264.30000000000007" width="30" height="81.4" rx="6" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="1.6"/><rect x="160" y="189.30000000000007" width="10" height="74" rx="6" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="1.6"/>
+  <circle cx="227" cy="1039.92" r="1.92" fill="#ffffff"/><rect x="225.92" y="1041.072" width="2.16" height="6.6000000000000005" rx="0.72" fill="#ffffff"/><line x1="226.4" y1="1046.64" x2="225.92" y2="1050" stroke="#ffffff" stroke-width="0.6000000000000001"/><line x1="227.6" y1="1046.64" x2="228.08" y2="1050" stroke="#ffffff" stroke-width="0.6000000000000001"/>
+  <line x1="95" y1="1050" x2="95" y2="188.30000000000007" stroke="#cfe3fb" stroke-width="1"/>
+  <line x1="90" y1="1050" x2="100" y2="1050" stroke="#cfe3fb" stroke-width="1"/>
+  <line x1="90" y1="188.30000000000007" x2="100" y2="188.30000000000007" stroke="#cfe3fb" stroke-width="1"/>
+  <text x="85" y="619.1500000000001" font-size="18" text-anchor="end" fill="#ffffff" letter-spacing="0.6">111 m</text>
+  <text x="245" y="1046" font-size="14" text-anchor="start" fill="#ffffff" letter-spacing="0.6">1.8 m</text>
+  <text x="165" y="1084" font-size="16" text-anchor="middle" fill="#cfe3fb" letter-spacing="0.6">ASSEMBLED · TO SCALE</text>
+
+  <!-- COLUMN 1 — the two big stages, exploded + cut open. TRUE proportion,
+       tall + narrow like the reference stack (S-II ~2.5:1, S-IC ~4:1). -->
+  <rect x="464" y="150" width="112" height="280" rx="14" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="2.5"/><rect x="471" y="157" width="98" height="114.19999999999999" rx="8" fill="rgba(127,176,224,0.10)" stroke="#7fb0e0" stroke-width="1"/><rect x="471" y="275.2" width="98" height="147.8" rx="8" fill="rgba(255,210,127,0.10)" stroke="#ffd27f" stroke-width="1"/><text x="520" y="261.2" font-size="18" text-anchor="middle" fill="#cfe3fb" letter-spacing="0.6">LOX</text><text x="520" y="305.2" font-size="18" text-anchor="middle" fill="#ffd27f" letter-spacing="0.6">LH2</text><path d="M 511.2 438 L 528.8 438 L 536 462 L 504 462 Z" fill="rgba(255,210,127,0.14)" stroke="#7fb0e0" stroke-width="1.6"/><path d="M 476 438 L 493.6 438 L 500.8 462 L 468.8 462 Z" fill="rgba(255,210,127,0.14)" stroke="#7fb0e0" stroke-width="1.6"/><path d="M 546.4000000000001 438 L 564 438 L 571.2 462 L 539.2 462 Z" fill="rgba(255,210,127,0.14)" stroke="#7fb0e0" stroke-width="1.6"/><path d="M 493.59999999999997 438 L 511.2 438 L 518.4 462 L 486.4 462 Z" fill="rgba(255,210,127,0.14)" stroke="#7fb0e0" stroke-width="1.6"/><path d="M 528.8000000000001 438 L 546.4 438 L 553.6 462 L 521.6 462 Z" fill="rgba(255,210,127,0.14)" stroke="#7fb0e0" stroke-width="1.6"/>
+  <text x="605" y="285" font-size="22" text-anchor="start" fill="#ffffff" letter-spacing="0.6">S-II · STAGE 2</text> <text x="605" y="311" font-size="15" text-anchor="start" fill="#cfe3fb" letter-spacing="0.6">5× J-2 · hydrogen upper stage</text>
+  <rect x="466" y="500" width="108" height="450" rx="14" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="2.5"/><rect x="473" y="507" width="94" height="189" rx="8" fill="rgba(127,176,224,0.10)" stroke="#7fb0e0" stroke-width="1"/><rect x="473" y="700" width="94" height="243" rx="8" fill="rgba(255,210,127,0.10)" stroke="#ffd27f" stroke-width="1"/><text x="520" y="686" font-size="18" text-anchor="middle" fill="#cfe3fb" letter-spacing="0.6">LOX</text><text x="520" y="730" font-size="18" text-anchor="middle" fill="#ffd27f" letter-spacing="0.6">RP-1</text><path d="M 510.65 958 L 529.35 958 L 537 983.5 L 503 983.5 Z" fill="rgba(255,210,127,0.14)" stroke="#7fb0e0" stroke-width="1.6"/><path d="M 473.25 958 L 491.95000000000005 958 L 499.6 983.5 L 465.6 983.5 Z" fill="rgba(255,210,127,0.14)" stroke="#7fb0e0" stroke-width="1.6"/><path d="M 548.05 958 L 566.75 958 L 574.4 983.5 L 540.4 983.5 Z" fill="rgba(255,210,127,0.14)" stroke="#7fb0e0" stroke-width="1.6"/><path d="M 491.95 958 L 510.65000000000003 958 L 518.3 983.5 L 484.3 983.5 Z" fill="rgba(255,210,127,0.14)" stroke="#7fb0e0" stroke-width="1.6"/><path d="M 529.35 958 L 548.0500000000001 958 L 555.7 983.5 L 521.7 983.5 Z" fill="rgba(255,210,127,0.14)" stroke="#7fb0e0" stroke-width="1.6"/>
+  <text x="605" y="720" font-size="24" text-anchor="start" fill="#ffffff" letter-spacing="0.6">S-IC · STAGE 1</text> <text x="605" y="746" font-size="16" text-anchor="start" fill="#cfe3fb" letter-spacing="0.6">5× F-1 · 34 MN at liftoff</text>
+
+  <!-- COLUMN 2 — upper pieces, exploded top→bottom, true (narrow) proportion -->
+  <!-- Launch Escape System: tall thin tower -->
+  <polygon points="1116,268 1144,268 1137,182 1123,182" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="2"/>
+  <line x1="1130" y1="182" x2="1130" y2="152" stroke="#7fb0e0" stroke-width="2"/>
+  <text x="1215" y="214" font-size="20" text-anchor="start" fill="#ffffff" letter-spacing="0.6">LAUNCH ESCAPE SYSTEM</text> <text x="1215" y="239" font-size="14" text-anchor="start" fill="#cfe3fb" letter-spacing="0.6">aborts pull the crew clear</text>
+
+  <!-- Apollo CSM: command cone + narrow service module + SPS bell -->
+  <polygon points="1104,362 1156,362 1142,322 1118,322" fill="rgba(127,176,224,0.13)" stroke="#ffffff" stroke-width="2.5"/>
+  <rect x="1106" y="366" width="48" height="118" rx="7" fill="rgba(127,176,224,0.13)" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M 1118 484 L 1142 484 L 1150 508 L 1110 508 Z" fill="rgba(255,210,127,0.14)" stroke="#7fb0e0" stroke-width="1.4"/>
+  <text x="1215" y="408" font-size="20" text-anchor="start" fill="#ffffff" letter-spacing="0.6">APOLLO CSM · PAYLOAD</text> <text x="1215" y="433" font-size="14" text-anchor="start" fill="#cfe3fb" letter-spacing="0.6">command + service module</text>
+
+  <!-- Lunar Module in the spacecraft-LM adapter (frustum) -->
+  <polygon points="1092,626 1168,626 1156,556 1104,556" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="2.5"/>
+  <rect x="1112" y="574" width="36" height="40" rx="5" fill="rgba(127,176,224,0.10)" stroke="#ffd27f" stroke-width="1.3"/>
+  <text x="1215" y="588" font-size="20" text-anchor="start" fill="#ffffff" letter-spacing="0.6">LUNAR MODULE · in adapter</text> <text x="1215" y="613" font-size="14" text-anchor="start" fill="#cfe3fb" letter-spacing="0.6">the lander, folded away</text>
+
+  <!-- Instrument Unit: short guidance ring -->
+  <rect x="1096" y="654" width="68" height="24" rx="5" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="2"/>
+  <text x="1215" y="672" font-size="18" text-anchor="start" fill="#cfe3fb" letter-spacing="0.6">INSTRUMENT UNIT · guidance</text>
+
+  <!-- S-IVB (Stage 3): narrow, cut open, 1× J-2 -->
+  <rect x="1092" y="710" width="76" height="200" rx="14" fill="rgba(127,176,224,0.13)" stroke="#7fb0e0" stroke-width="2.5"/><rect x="1099" y="717" width="62" height="79" rx="8" fill="rgba(127,176,224,0.10)" stroke="#7fb0e0" stroke-width="1"/><rect x="1099" y="800" width="62" height="103" rx="8" fill="rgba(255,210,127,0.10)" stroke="#ffd27f" stroke-width="1"/><text x="1130" y="786" font-size="18" text-anchor="middle" fill="#cfe3fb" letter-spacing="0.6">LOX</text><text x="1130" y="830" font-size="18" text-anchor="middle" fill="#ffd27f" letter-spacing="0.6">LH2</text><path d="M 1120.1 918 L 1139.9 918 L 1148 945 L 1112 945 Z" fill="rgba(255,210,127,0.14)" stroke="#7fb0e0" stroke-width="1.6"/>
+  <text x="1215" y="810" font-size="22" text-anchor="start" fill="#ffffff" letter-spacing="0.6">S-IVB · STAGE 3</text> <text x="1215" y="836" font-size="15" text-anchor="start" fill="#cfe3fb" letter-spacing="0.6">1× J-2 · translunar injection</text>
+
+  <text x="840" y="1085" font-size="19" text-anchor="middle" fill="#7fb0e0" letter-spacing="0.6">each stage burns, sheds, and falls away — the rocket equation made physical</text>
+</g></svg>

@@ -7017,9 +7017,11 @@
   {#if contextId === 'solar-system' && !activeBlackHole}
     <MobileDrawerGroup
       tabs={[
+        // B3: fixed semantic slot order [Measure][Overlays][Highlight][Scene];
+        // empty slots (no Overlays in solar-system) are simply omitted.
         { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
-        { id: 'controls', label: 'Controls', icon: '▤', content: mobileControlsContent },
         { id: 'missions', label: 'Missions', icon: '➤', content: mobileIconicContent },
+        { id: 'controls', label: 'Controls', icon: '▤', content: mobileControlsContent },
       ]}
       onOpen={(id) => {
         if (id === 'missions') layers.paths = true;

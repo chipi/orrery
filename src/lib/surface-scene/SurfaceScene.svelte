@@ -5489,10 +5489,11 @@
            they otherwise overlap the true-scale provenance card. -->
       <MobileDrawerGroup
         tabs={[
+          // B3: fixed semantic slot order [Measure][Overlays][Highlight][Scene].
           { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
           { id: 'layers', label: 'Layers', icon: '▤', content: mobileLayersContent },
-          { id: 'scan', label: 'Scan', icon: '◈', content: mobileScanContent },
           { id: 'nations', label: 'Nations', icon: '⚑', content: mobileNationsContent },
+          { id: 'scan', label: 'Scan', icon: '◈', content: mobileScanContent },
         ]}
         onOpen={(id) => (mobileDrawerOpen = id !== null)}
       />

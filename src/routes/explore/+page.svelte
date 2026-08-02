@@ -7734,10 +7734,12 @@
     color: #eaf1ff;
   }
 
-  /* Compact the scale HUD on phones so it doesn't crowd the bottom edge. */
+  /* Compact the scale HUD on phones and lift it ABOVE the two stacked bottom
+     bars (the Ruler/Controls/Missions drawer + the Scale/time controls, which
+     together occupy ~96px from the bottom edge) so it no longer overlaps them. */
   @media (max-width: 767px) {
     .scale-hud {
-      bottom: 12px;
+      bottom: 104px;
       padding: 7px 9px;
       max-width: 190px;
     }

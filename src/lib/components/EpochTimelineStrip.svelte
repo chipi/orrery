@@ -225,7 +225,7 @@
     z-index: 2;
   }
   .band-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -244,7 +244,7 @@
      "make sure all labels are readable".) */
   .band-meta {
     margin-top: 2px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     color: rgba(255, 255, 255, 0.78);
     line-height: 1;
@@ -283,7 +283,7 @@
   .tick {
     position: absolute;
     top: 2px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     color: rgba(255, 255, 255, 0.72);
     transform: translateX(-50%);
@@ -319,7 +319,7 @@
     color: color-mix(in srgb, var(--band-color, #4ecdc4) 25%, white);
     padding: 6px 12px;
     border-radius: 14px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     cursor: pointer;
     white-space: nowrap;

@@ -238,7 +238,7 @@
     width: 250px;
     padding: 2px 0 2px 14px;
     border-left: 1px solid rgba(127, 212, 255, 0.35);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     color: #eaf3ff;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
   }
@@ -254,7 +254,7 @@
     border-bottom: 1px solid rgba(127, 212, 255, 0.2);
   }
   .console-title em {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-style: normal;
     font-size: 9px;
     letter-spacing: 1px;

@@ -709,7 +709,7 @@
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
     padding: 60px 20px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
   }
 
@@ -756,7 +756,7 @@
     color: rgba(255, 255, 255, 0.85);
     padding: 4px 8px;
     border-radius: 4px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     cursor: pointer;
   }
@@ -826,7 +826,7 @@
     grid-template-columns: 2fr 1fr 1.2fr 0.6fr 0.7fr;
     align-items: center;
     gap: 10px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11.5px;
   }
   .list-row:hover {

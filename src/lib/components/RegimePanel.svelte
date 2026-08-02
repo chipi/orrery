@@ -200,7 +200,7 @@
     gap: 8px;
   }
   .kind {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: var(--regime-color);
@@ -221,7 +221,7 @@
     gap: 12px;
   }
   .stat-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.55);
@@ -229,7 +229,7 @@
     margin-bottom: 4px;
   }
   .stat-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
     color: var(--color-text);
   }
@@ -255,7 +255,7 @@
   }
 
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.45);
@@ -281,7 +281,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: rgba(255, 255, 255, 0.88);
     line-height: 1.45;
@@ -296,7 +296,7 @@
     display: grid;
     grid-template-columns: 52px 1fr;
     gap: 8px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: rgba(255, 255, 255, 0.88);
     line-height: 1.45;
@@ -338,7 +338,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
   .library-heading {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     text-transform: uppercase;

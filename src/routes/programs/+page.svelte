@@ -194,7 +194,7 @@
     margin: 16px 0 8px;
   }
   .toggle button {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     padding: 7px 14px;
@@ -219,7 +219,7 @@
     color: #cfe3fb;
   }
   .group h2 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -259,7 +259,7 @@
     display: flex;
     align-items: center;
     gap: 7px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1.5px;
     text-transform: uppercase;

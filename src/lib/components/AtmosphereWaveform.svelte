@@ -327,7 +327,7 @@
     height: 74px;
   }
   .wave-caption {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.55);

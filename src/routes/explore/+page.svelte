@@ -7347,7 +7347,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 6px;
     backdrop-filter: blur(5px);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     color: #dde4ff;
     pointer-events: none;
     max-width: 260px;
@@ -7471,7 +7471,7 @@
     text-shadow: 0 0 6px rgba(255, 207, 143, 0.7);
   }
   .sc-ly {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: rgba(255, 224, 190, 0.82);
@@ -7526,7 +7526,7 @@
     border-left: none;
     border-radius: 0 6px 6px 0;
     color: rgba(220, 227, 240, 0.82);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -7551,7 +7551,7 @@
     max-width: calc(100vw - 24px);
   }
   .nb-chip {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.7);
@@ -7595,7 +7595,7 @@
     transform: translateX(-50%);
     z-index: 6;
     padding: 6px 14px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -7632,7 +7632,7 @@
     z-index: 6;
     max-width: 380px;
     padding: 7px 14px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     line-height: 1.4;
     text-align: center;
@@ -7650,7 +7650,7 @@
     z-index: 6;
     width: 240px;
     padding: 12px 14px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     background: rgba(8, 11, 20, 0.82);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -7698,7 +7698,7 @@
     border: 1px solid rgba(154, 166, 189, 0.34);
     border-radius: 5px;
     backdrop-filter: blur(5px);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.5px;
   }
@@ -7780,7 +7780,7 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 6px;
     backdrop-filter: blur(5px);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     color: #dde4ff;
   }
   .anon-title {
@@ -7878,7 +7878,7 @@
     transform: translate(-50%, -50%);
     z-index: 8;
     pointer-events: none;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -7949,7 +7949,7 @@
     display: block;
   }
   .earth-compare-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 1.4px;
     color: rgba(255, 255, 255, 0.5);
@@ -8020,7 +8020,7 @@
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(68, 102, 255, 0.4);
     color: #dde4ff;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0.06em;
     border-radius: 4px;
@@ -8054,7 +8054,7 @@
     background: rgba(8, 10, 22, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.18);
     color: rgba(255, 255, 255, 0.55);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1.2px;
     text-align: center;
@@ -8165,7 +8165,7 @@
     border-right: 1px solid rgba(75, 156, 211, 0.18);
     background: rgba(15, 18, 35, 0.4);
     color: rgba(207, 224, 255, 0.55);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.04em;
     cursor: pointer;
@@ -8204,7 +8204,7 @@
     border-radius: 5px;
     background: rgba(15, 18, 35, 0.35);
     color: rgba(207, 224, 255, 0.82);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.04em;
     white-space: nowrap;
@@ -8224,7 +8224,7 @@
     gap: 6px;
     margin-bottom: 8px;
     padding: 4px 10px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.08em;
     color: rgba(207, 224, 255, 0.6);
@@ -8297,7 +8297,7 @@
     border-radius: 3px;
     cursor: pointer;
     text-align: left;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0.04em;
     min-height: 36px;
@@ -8353,7 +8353,7 @@
     margin-bottom: 4px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     color: rgba(221, 228, 255, 0.65);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.02em;
     text-decoration: none;
@@ -8560,7 +8560,7 @@
     border: 1px solid rgba(68, 102, 255, 0.5);
     border-radius: 4px;
     padding: 8px 12px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     backdrop-filter: blur(6px);
   }
   /* Lens-on expanded card: gold border (matches the lens family) +
@@ -8746,7 +8746,7 @@
     color: inherit;
   }
   .earth-compact-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.5px;
     line-height: 1;

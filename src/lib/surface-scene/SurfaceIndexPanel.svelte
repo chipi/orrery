@@ -207,7 +207,7 @@
     min-height: 0;
     height: 100%;
     color: var(--color-text);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
   }
   .sidx-top {
     display: flex;
@@ -223,7 +223,7 @@
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 6px;
     color: var(--color-text);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
   }
   .sidx-input:focus-visible {
@@ -262,7 +262,7 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 999px;
     color: rgba(207, 224, 255, 0.75);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.4px;
     text-transform: uppercase;

@@ -172,7 +172,7 @@
   .si-filters button {
     flex: 1;
     padding: 5px 6px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.62);

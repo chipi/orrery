@@ -56,7 +56,7 @@
     border-radius: 2px;
     padding: 2px 6px;
     color: rgba(230, 232, 238, 0.6);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -77,7 +77,7 @@
     background: rgba(4, 4, 12, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.12);
     list-style: none;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(230, 232, 238, 0.8);
   }

@@ -221,7 +221,7 @@
     display: inline-block;
     padding: 2px 8px;
     border-radius: 4px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.06em;

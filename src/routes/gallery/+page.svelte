@@ -218,7 +218,7 @@
     overflow: hidden;
   }
   .go {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 1.5px;
     color: #cfe3fb;

@@ -70,7 +70,7 @@
     border: 1px solid rgba(78, 205, 196, 0.55);
     border-radius: 4px;
     color: #4ecdc4;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0.06em;
     text-decoration: none;

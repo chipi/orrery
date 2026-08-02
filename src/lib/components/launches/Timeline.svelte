@@ -41,7 +41,7 @@
 
   .empty {
     margin: 32px 16px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
     color: rgba(230, 232, 238, 0.5);
     text-align: center;
@@ -75,7 +75,7 @@
   }
 
   .month-count {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(230, 232, 238, 0.5);
     text-transform: uppercase;

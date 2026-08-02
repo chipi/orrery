@@ -341,7 +341,7 @@
     gap: 8px;
   }
   .kind {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: rgba(184, 164, 112, 0.85);
@@ -361,7 +361,7 @@
     gap: 12px;
   }
   .stat-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.55);
@@ -369,7 +369,7 @@
     margin-bottom: 4px;
   }
   .stat-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
     color: var(--color-text);
   }
@@ -397,7 +397,7 @@
     border-bottom: 2px solid transparent;
     padding: 8px 4px;
     color: rgba(255, 255, 255, 0.55);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1.5px;
     cursor: pointer;
@@ -424,14 +424,14 @@
     margin: 0 0 10px;
   }
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.55);
     margin-bottom: 4px;
   }
   .cell-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.4;
@@ -472,14 +472,14 @@
     outline: none;
   }
   .science-cta {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1.8px;
     color: rgba(78, 205, 196, 0.95);
     text-transform: uppercase;
   }
   .science-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     color: rgba(255, 255, 255, 0.55);
     letter-spacing: 1.2px;
@@ -490,7 +490,7 @@
     list-style: none;
   }
   .member-list li {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(255, 255, 255, 0.85);
     padding: 6px 0;
@@ -546,7 +546,7 @@
     text-decoration: underline;
   }
   .tier-pill {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 1.5px;
     text-transform: uppercase;

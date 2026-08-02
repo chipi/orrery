@@ -426,7 +426,7 @@
     margin: 2px 10px 4px;
     font-size: 11px;
     color: rgba(255, 255, 255, 0.45);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     letter-spacing: 0.5px;
   }
 

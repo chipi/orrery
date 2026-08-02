@@ -58,7 +58,7 @@
     margin-bottom: 14px;
   }
   .eyebrow {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     color: rgba(160, 200, 255, 0.85);

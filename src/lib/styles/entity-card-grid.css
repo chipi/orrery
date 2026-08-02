@@ -143,7 +143,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 7px;
   letter-spacing: 2px;
   font-weight: 700;
@@ -166,7 +166,7 @@
 }
 
 .entity-card-grid .card-status {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 7px;
   letter-spacing: 2px;
   font-weight: 700;
@@ -214,7 +214,7 @@
    never emit the markup — the rules cost nothing if no element
    matches. */
 .entity-card-grid .card-quality {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 7px;
   letter-spacing: 2px;
   font-weight: 700;
@@ -270,7 +270,7 @@
   margin: 0;
 }
 .entity-card-grid .card-type {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 7px;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.7);
@@ -279,7 +279,7 @@
 .entity-card-grid .card-meta {
   display: flex;
   gap: 10px;
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 8px;
   letter-spacing: 1px;
   color: rgba(255, 255, 255, 0.65);
@@ -296,7 +296,7 @@
   white-space: nowrap;
 }
 .entity-card-grid .card-first {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 9px;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;

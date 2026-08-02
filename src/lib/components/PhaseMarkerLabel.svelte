@@ -118,7 +118,7 @@
     position: absolute;
     transform: translate(-50%, -50%);
     pointer-events: none; /* dot is decorative; label/chip re-enable below */
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(255, 255, 255, 0.95);
     z-index: 12; /* above trajectory tube, below CAPCOM panel */

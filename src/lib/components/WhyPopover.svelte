@@ -133,7 +133,7 @@
     border: 1px solid rgba(255, 200, 80, 0.45);
     border-radius: 7px;
     color: rgba(255, 200, 80, 0.85);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -171,7 +171,7 @@
     margin-bottom: 6px;
   }
   .eyebrow {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: #ffc850;
@@ -207,7 +207,7 @@
   }
   .more {
     display: inline-block;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.85);

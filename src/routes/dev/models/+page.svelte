@@ -725,7 +725,7 @@
     margin: 0 0 8px;
   }
   header p {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.68);
@@ -768,7 +768,7 @@
     text-transform: uppercase;
   }
   .id {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9.5px;
     letter-spacing: 1.4px;
     color: rgba(255, 255, 255, 0.5);

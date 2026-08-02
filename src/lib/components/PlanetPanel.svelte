@@ -434,7 +434,7 @@
     margin-bottom: 12px;
   }
   .type {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 3px;
     color: rgba(255, 255, 255, 0.25);
@@ -461,7 +461,7 @@
   }
   .stat-label,
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 6px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.25);
@@ -469,7 +469,7 @@
   }
   .stat-value,
   .cell-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: var(--color-text);
     font-weight: 700;
@@ -512,7 +512,7 @@
     border-radius: 4px;
   }
   .shape-meta {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 6px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.22);
@@ -522,7 +522,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     color: rgba(255, 255, 255, 0.4);
   }
@@ -535,14 +535,14 @@
   }
 
   .dist-row {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     color: rgba(255, 255, 255, 0.35);
     margin-bottom: 10px;
   }
 
   .src {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     color: rgba(255, 255, 255, 0.15);
     line-height: 1.8;
@@ -563,7 +563,7 @@
     border-radius: 4px;
     cursor: pointer;
     color: #fff;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 3px;
     font-weight: 700;

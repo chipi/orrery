@@ -530,7 +530,7 @@
   }
   .footer-link {
     pointer-events: auto;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.6);
@@ -547,13 +547,13 @@
   .footer-sep {
     pointer-events: none;
     color: rgba(255, 255, 255, 0.22);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     user-select: none;
   }
   .footer-version {
     pointer-events: auto;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.5px;
     /* Was 0.4 — bumped to 0.6 (F3) to clear AA at 10 px against the
@@ -578,7 +578,7 @@
     align-items: center;
   }
   .footer-about-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.6);

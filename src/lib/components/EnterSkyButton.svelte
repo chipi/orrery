@@ -48,7 +48,7 @@
     border: 1px solid rgba(122, 162, 255, 0.6);
     border-radius: 4px;
     color: #9fc0ff;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0.06em;
     text-decoration: none;

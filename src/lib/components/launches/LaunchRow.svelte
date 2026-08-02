@@ -114,7 +114,7 @@
   }
 
   .net {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: #ffc850;
     text-transform: uppercase;
@@ -127,7 +127,7 @@
     gap: 4px;
     font-size: 10px;
     color: #ff5252;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     text-transform: uppercase;
   }
 
@@ -184,7 +184,7 @@
     border: 1px solid rgba(78, 205, 196, 0.4);
     border-radius: 2px;
     color: #4ecdc4;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -197,7 +197,7 @@
 
   .meta {
     margin: 4px 0 0;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(230, 232, 238, 0.7);
   }
@@ -210,7 +210,7 @@
   }
 
   .tier {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     padding: 3px 8px;
     border-radius: 2px;
@@ -232,7 +232,7 @@
   }
 
   .status {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     color: rgba(230, 232, 238, 0.7);
   }

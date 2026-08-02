@@ -870,7 +870,7 @@
     color: rgba(255, 255, 255, 0.6);
     padding: 6px 12px;
     border-radius: 3px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.08em;
     cursor: pointer;
@@ -897,7 +897,7 @@
     color: rgba(255, 255, 255, 0.6);
     padding: 6px 10px;
     border-radius: 3px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.08em;
     cursor: pointer;
@@ -917,7 +917,7 @@
     color: #fff;
     padding: 6px 10px;
     border-radius: 3px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.08em;
     display: flex;
@@ -940,13 +940,13 @@
     color: #fff;
     padding: 6px 10px;
     border-radius: 3px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.08em;
     backdrop-filter: blur(4px);
   }
   .mono {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
   }
   .upsample-warning {
     position: absolute;

@@ -136,7 +136,7 @@
     outline: none;
   }
   .eyebrow {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: #ffc850;
@@ -183,14 +183,14 @@
     gap: 1px;
   }
   .vital dt {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
     margin: 0;
   }
   .vital dd {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(255, 255, 255, 0.92);
     margin: 0;
@@ -202,7 +202,7 @@
   }
   .link {
     margin-top: 4px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.85);

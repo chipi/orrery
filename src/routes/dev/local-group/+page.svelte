@@ -101,7 +101,7 @@
     left: 50%;
     transform: translateX(-50%);
     padding: 6px 14px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;

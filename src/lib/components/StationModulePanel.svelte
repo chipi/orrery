@@ -401,7 +401,7 @@
     line-height: 1.5;
   }
   .first {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
@@ -424,14 +424,14 @@
     padding: 8px 10px;
   }
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 6px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.25);
     margin-bottom: 3px;
   }
   .cell-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: var(--color-text);
     font-weight: 700;
@@ -442,7 +442,7 @@
     color: rgba(255, 255, 255, 0.65);
   }
   .credit {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     color: rgba(255, 255, 255, 0.25);
     line-height: 1.6;
@@ -474,7 +474,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
   .related-science h3 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 2px;
     /* Muted accent, distinct from INTRO teal / CORE blue / DEEP gold
@@ -502,7 +502,7 @@
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 4px;
     color: rgba(255, 255, 255, 0.75);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     text-decoration: none;
     line-height: 1.5;

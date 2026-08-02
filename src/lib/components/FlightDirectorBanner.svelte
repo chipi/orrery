@@ -259,14 +259,14 @@
     outline: none;
   }
   .chevron {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
   }
   .banner.collapsed {
     padding: 8px 36px 7px 18px;
   }
   .banner-eyebrow {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 3px;
     color: #ffc850;
@@ -288,7 +288,7 @@
     margin-bottom: 6px;
   }
   .banner-link {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.85);

@@ -116,7 +116,7 @@
     font-size: 13px;
   }
   .error-path code {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     background: rgba(94, 234, 212, 0.1);
     padding: 2px 6px;
     border-radius: 3px;
@@ -135,7 +135,7 @@
     color: rgba(220, 230, 245, 0.85);
   }
   .error-hint code {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     background: rgba(0, 0, 0, 0.25);
     padding: 1px 5px;
     border-radius: 3px;
@@ -166,7 +166,7 @@
     text-align: center;
   }
   .error-cta-primary code {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: normal;
     background: rgba(4, 4, 12, 0.25);
@@ -191,7 +191,7 @@
     color: rgba(220, 230, 245, 0.6);
   }
   .error-tip code {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     background: rgba(94, 234, 212, 0.1);
     padding: 1px 4px;
     border-radius: 2px;

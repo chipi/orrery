@@ -104,7 +104,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 3px;
     color: var(--color-text);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;

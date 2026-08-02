@@ -379,7 +379,7 @@
   }
   .agency-badge,
   .status {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -429,14 +429,14 @@
     padding: 8px 10px;
   }
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 6px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.25);
     margin-bottom: 3px;
   }
   .cell-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: var(--color-text);
     font-weight: 700;
@@ -471,7 +471,7 @@
     color: #fff;
     text-decoration: none;
     border-radius: 3px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -484,7 +484,7 @@
     outline: none;
   }
   .credit {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     color: rgba(255, 255, 255, 0.25);
     line-height: 1.6;
@@ -499,7 +499,7 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
   }
   .related-orbital-concepts li {

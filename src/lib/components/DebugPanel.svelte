@@ -495,7 +495,7 @@
     border: 1px solid rgba(94, 234, 212, 0.4);
     border-radius: 6px;
     color: rgba(220, 230, 245, 0.95);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(8px);
@@ -623,7 +623,7 @@
     accent-color: #4ecdc4;
   }
   .debug-slider-val {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     color: rgba(94, 234, 212, 0.8);
     min-width: 32px;

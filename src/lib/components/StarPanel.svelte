@@ -369,7 +369,7 @@
     width: 100%;
     margin: 0 0 12px;
     padding: 10px 12px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -416,7 +416,7 @@
   }
   .system-schematic .dot-label {
     fill: rgba(210, 232, 255, 0.75);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 6.5px;
     letter-spacing: 0.5px;
     text-anchor: middle;
@@ -439,7 +439,7 @@
     border-radius: 4px;
   }
   .pl-letter {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
     font-weight: 700;
     color: #4ecdc4;
@@ -456,7 +456,7 @@
     color: rgba(255, 255, 255, 0.92);
   }
   .pl-facts {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.5px;
     color: rgba(159, 232, 226, 0.85);
@@ -475,7 +475,7 @@
     margin-bottom: 12px;
   }
   .hero-caption {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -495,7 +495,7 @@
     flex: 0 0 auto;
   }
   .kind {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: var(--accent, rgba(255, 255, 255, 0.6));
@@ -531,14 +531,14 @@
     gap: 10px 16px;
   }
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.45);
     margin-bottom: 2px;
   }
   .cell-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: rgba(255, 255, 255, 0.92);
   }
@@ -557,7 +557,7 @@
   .hr-article-link {
     display: inline-block;
     margin-top: 14px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0.5px;
     color: #4ecdc4;
@@ -582,7 +582,7 @@
   .learn-list :global(a) {
     color: #4ecdc4;
     text-decoration: none;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     padding: 8px 10px;

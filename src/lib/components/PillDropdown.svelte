@@ -193,7 +193,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     color: rgba(255, 255, 255, 0.4);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -265,7 +265,7 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 3px;
     color: #e6e8ee;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.5px;
   }
@@ -288,7 +288,7 @@
     margin: 0;
     padding: 12px;
     color: rgba(230, 232, 238, 0.5);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     text-align: center;
   }
@@ -303,7 +303,7 @@
     border: none;
     border-radius: 2px;
     color: rgba(255, 255, 255, 0.75);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     cursor: pointer;

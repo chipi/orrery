@@ -63,7 +63,7 @@
     margin: 8px 0 0;
     padding: 8px 0 0;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     line-height: 1.5;
     letter-spacing: 0.5px;

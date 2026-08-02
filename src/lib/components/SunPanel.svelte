@@ -318,7 +318,7 @@
     margin-bottom: 12px;
   }
   .type {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 3px;
     color: rgba(255, 220, 100, 0.5);
@@ -345,7 +345,7 @@
   }
   .stat-label,
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 6px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.25);
@@ -353,7 +353,7 @@
   }
   .stat-value,
   .cell-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: var(--color-text);
     font-weight: 700;
@@ -362,7 +362,7 @@
     color: #ffc850;
   }
   .cell-sub {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     color: rgba(255, 255, 255, 0.3);
     margin-top: 2px;
@@ -395,7 +395,7 @@
     padding: 8px 10px;
   }
   .src {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     color: rgba(255, 255, 255, 0.15);
     line-height: 1.8;

@@ -1273,7 +1273,7 @@
     min-height: 44px;
   }
   .selector-key {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.5);
@@ -1286,7 +1286,7 @@
     color: var(--color-text);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 4px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     cursor: pointer;
@@ -1306,7 +1306,7 @@
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.12);
     color: rgba(255, 255, 255, 0.7);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -1365,7 +1365,7 @@
     background: rgba(193, 68, 14, 0.18);
     border: 1px solid rgba(193, 68, 14, 0.55);
     color: #ffc850;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     border-radius: 4px;
@@ -1391,7 +1391,7 @@
     border: 1px solid rgba(78, 205, 196, 0.35);
     border-radius: 4px;
     color: rgba(78, 205, 196, 0.85);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.5px;
     pointer-events: none;
@@ -1451,7 +1451,7 @@
     transition: width 0.1s;
   }
   .loading-pct {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     color: rgba(255, 255, 255, 0.3);
     margin-top: 8px;
@@ -1510,7 +1510,7 @@
     transform: rotate(90deg);
   }
   .explainer-title {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     color: #4466ff;
@@ -1535,7 +1535,7 @@
     gap: 8px;
   }
   .explainer-list dt {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 2px;
     color: rgba(78, 205, 196, 0.85);
@@ -1544,7 +1544,7 @@
   }
   .explainer-list dd {
     margin: 0;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.7);
@@ -1579,7 +1579,7 @@
   .color-bar-labels {
     display: flex;
     justify-content: space-between;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     color: rgba(255, 255, 255, 0.4);
     letter-spacing: 1px;
@@ -1625,7 +1625,7 @@
     margin: 2px 0 4px;
   }
   .rocket-link {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.5px;
     color: var(--color-tier-intro);
@@ -1662,13 +1662,13 @@
     min-width: 0;
   }
   .readout-grid .cell .label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.4);
   }
   .readout-grid .cell .value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(255, 255, 255, 0.92);
     overflow: hidden;
@@ -1681,13 +1681,13 @@
     font-size: 12px;
   }
   .label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.35);
   }
   .value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(255, 255, 255, 0.85);
   }
@@ -1717,7 +1717,7 @@
     border: 1px dashed rgba(255, 200, 80, 0.5);
     border-radius: 4px;
     color: rgba(255, 200, 80, 0.85);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1.5px;
     cursor: pointer;
@@ -1749,14 +1749,14 @@
     margin-bottom: 4px;
   }
   .sandbox-eyebrow {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: #ffc850;
   }
   .sandbox-pin-summary {
     flex: 1;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     color: rgba(255, 255, 255, 0.78);
   }
@@ -1764,7 +1764,7 @@
     background: transparent;
     border: none;
     color: rgba(255, 200, 80, 0.7);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     cursor: pointer;
@@ -1790,14 +1790,14 @@
     gap: 8px;
   }
   .sandbox-row dt {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.4);
     margin: 0;
   }
   .sandbox-row dd {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(255, 255, 255, 0.85);
     margin: 0;
@@ -1829,7 +1829,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     color: var(--color-text);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     cursor: pointer;
   }
@@ -1878,7 +1878,7 @@
     z-index: 1;
     text-align: center;
     line-height: 24px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.95);
@@ -1907,7 +1907,7 @@
     border: 1px solid rgba(68, 102, 255, 0.55);
     border-radius: 4px;
     color: #fff;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 3px;
     font-weight: 700;

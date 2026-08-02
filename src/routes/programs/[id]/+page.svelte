@@ -301,7 +301,7 @@
     color: var(--color-text, #eef);
   }
   .crumb {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
@@ -328,7 +328,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -352,7 +352,7 @@
   }
   .chip {
     display: inline-block;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     padding: 4px 9px;
@@ -383,7 +383,7 @@
   .see-also h2,
   .related h2,
   .sources h2 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -464,7 +464,7 @@
     border: 2px solid rgba(255, 255, 255, 0.25);
   }
   .timeline .t-year {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.45);
@@ -560,7 +560,7 @@
     display: block;
   }
   .d-meta {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -643,7 +643,7 @@
     background: rgba(127, 176, 224, 0.06);
   }
   .surface-list .s-body {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -668,7 +668,7 @@
   }
   .see-also .k {
     display: inline-block;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -694,7 +694,7 @@
   }
   .hardware .role {
     display: block;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;

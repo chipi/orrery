@@ -296,7 +296,7 @@
       border: 1px solid rgba(75, 156, 211, 0.3);
       border-radius: 8px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-      font-family: 'Space Mono', monospace;
+      font-family: var(--font-mono, 'Space Mono', monospace);
       font-size: 10px;
       letter-spacing: 0.6px;
       color: rgba(207, 224, 255, 0.75);

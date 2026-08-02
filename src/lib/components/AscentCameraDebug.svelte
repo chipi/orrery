@@ -353,7 +353,7 @@
     border: 1px solid rgba(127, 223, 255, 0.25);
     border-radius: 7px;
     padding: 10px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     color: #cfe3f5;
   }
   .dbg-head {

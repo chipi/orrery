@@ -8914,7 +8914,7 @@
     position: absolute;
     transform: translate(-50%, 0);
     white-space: nowrap;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
@@ -9060,7 +9060,7 @@
     background: rgba(193, 68, 14, 0.2);
     border: 1px solid rgba(193, 68, 14, 0.5);
     color: #ffc850;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2px;
     border-radius: 4px;
@@ -9085,7 +9085,7 @@
     transition: opacity 200ms linear;
   }
   .finale-caption-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 4px;
     color: rgba(255, 200, 80, 0.85);
@@ -9127,7 +9127,7 @@
     transition: opacity 400ms linear;
   }
   .epilogue-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 5px;
     color: rgba(127, 212, 255, 0.85);
@@ -9221,7 +9221,7 @@
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
   }
   .opening-agency {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 5px;
     color: rgba(127, 212, 255, 0.85);
@@ -9247,7 +9247,7 @@
     outline: none;
   }
   .opening-years {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 14px;
     letter-spacing: 3px;
     color: rgba(255, 200, 80, 0.85);
@@ -9304,14 +9304,14 @@
     gap: 4px;
   }
   .opening-stat-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2.5px;
     color: rgba(127, 212, 255, 0.7);
     text-transform: uppercase;
   }
   .opening-stat-val {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.92);
@@ -9330,7 +9330,7 @@
     padding-top: 14px;
   }
   .opening-fleet-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 3.5px;
     color: rgba(255, 200, 80, 0.78);
@@ -9375,14 +9375,14 @@
     -webkit-backdrop-filter: blur(4px);
   }
   .opening-fleet-role {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2px;
     color: rgba(127, 212, 255, 0.8);
     text-transform: uppercase;
   }
   .opening-fleet-id {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.92);
@@ -9418,7 +9418,7 @@
     border: 1px solid rgba(127, 212, 255, 0.5);
     border-radius: 4px;
     color: rgba(255, 255, 255, 0.92);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
@@ -9519,7 +9519,7 @@
     border: 1px solid rgba(255, 190, 74, 0.55);
     border-radius: 4px;
     color: rgba(255, 236, 200, 0.95);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
@@ -9547,7 +9547,7 @@
     border: 1px solid rgba(216, 168, 130, 0.55);
     border-radius: 4px;
     color: rgba(240, 216, 191, 0.95);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
@@ -9745,7 +9745,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     backdrop-filter: blur(6px);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
@@ -9786,7 +9786,7 @@
     text-align: center;
     white-space: nowrap;
     border-radius: 3px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -9961,7 +9961,7 @@
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(78, 205, 196, 0.4);
     color: rgba(220, 230, 245, 0.95);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
@@ -10020,7 +10020,7 @@
     border-radius: 6px;
     padding: 10px 12px;
     color: rgba(220, 230, 245, 0.95);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
@@ -10079,7 +10079,7 @@
     margin-bottom: 6px;
   }
   .flight-caveat-banner {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1.5px;
     color: #ffc850;
@@ -10304,7 +10304,7 @@
     opacity: 1;
   }
   .fd-stage-tooltip-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -10383,7 +10383,7 @@
     opacity: 1;
   }
   .milestone-tooltip-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.06em;
@@ -10391,7 +10391,7 @@
     text-transform: uppercase;
   }
   .milestone-tooltip-met {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(255, 200, 80, 0.85);
     letter-spacing: 0.05em;
@@ -10417,7 +10417,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     color: rgba(255, 255, 255, 0.5);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     font-weight: 700;
@@ -10545,7 +10545,7 @@
       background: rgba(8, 10, 22, 0.92);
       border: 1px solid rgba(255, 255, 255, 0.14);
       color: rgba(255, 255, 255, 0.6);
-      font-family: 'Space Mono', monospace;
+      font-family: var(--font-mono, 'Space Mono', monospace);
       font-size: 10px;
       letter-spacing: 1.5px;
       border-radius: 6px;
@@ -10628,7 +10628,7 @@
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(68, 102, 255, 0.4);
     color: #dde4ff;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.04em;
     border-radius: 4px;
@@ -10696,7 +10696,7 @@
     flex-direction: column;
     gap: 0;
     overflow: hidden;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     color: rgba(255, 255, 255, 0.85);
   }
   .capcom-header {

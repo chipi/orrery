@@ -269,7 +269,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     color: rgba(255, 255, 255, 0.75);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 1px;
     cursor: pointer;
@@ -307,7 +307,7 @@
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 2px;
     color: rgba(255, 255, 255, 0.6);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
   }
   .tab-list {
     /* Mobile: single-row horizontal scroll strip -- no wrap, swipe to

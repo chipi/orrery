@@ -142,7 +142,7 @@
     margin: 0 0 10px;
   }
   .chapter-title {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 1.6px;
@@ -196,7 +196,7 @@
     top: 8px;
     left: 8px;
     padding: 3px 8px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     font-weight: 600;
     letter-spacing: 1.2px;

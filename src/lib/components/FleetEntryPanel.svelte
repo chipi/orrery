@@ -696,7 +696,7 @@
     background: rgba(255, 255, 255, 0.06);
   }
   .category-chip {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -764,7 +764,7 @@
     padding: 10px 14px;
     border-radius: 4px;
     text-decoration: none;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -795,7 +795,7 @@
     padding: 10px 12px;
     border-radius: 4px;
     color: #fff;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     cursor: pointer;
     text-decoration: none;
     display: inline-flex;
@@ -896,7 +896,7 @@
     margin: 0;
   }
   .spec dt {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9.5px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -905,7 +905,7 @@
   }
   .spec dd {
     margin: 0;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: #fff;
     word-break: break-word;
@@ -913,7 +913,7 @@
 
   .section-h {
     margin: 14px 0 6px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10.5px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -956,7 +956,7 @@
     text-decoration: none;
   }
   .xref-sub {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     color: rgba(255, 255, 255, 0.45);
   }
@@ -973,7 +973,7 @@
     display: inline-block;
     color: #4ecdc4;
     text-decoration: none;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     padding: 4px 8px;
     border-radius: 3px;
@@ -1112,13 +1112,13 @@
     font-size: 18px;
   }
   .crew-name {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: #fff;
     line-height: 1.2;
   }
   .crew-role {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9.5px;
     color: rgba(255, 255, 255, 0.5);
     text-transform: uppercase;
@@ -1144,7 +1144,7 @@
   }
   .tier h4 {
     margin: 0 0 4px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10.5px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -1162,7 +1162,7 @@
   .tier ul a {
     color: #4ecdc4;
     text-decoration: none;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
   }
   .tier ul a:hover {

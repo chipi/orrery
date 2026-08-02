@@ -164,7 +164,7 @@
     border-radius: 8px;
     color: #dde4ff;
     backdrop-filter: blur(6px);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
   }
   .hud h1 {
     font-family: 'Bebas Neue', sans-serif;
@@ -174,7 +174,7 @@
     color: #fff;
   }
   .tag {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     color: #4ecdc4;

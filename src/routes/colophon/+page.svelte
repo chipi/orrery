@@ -308,7 +308,7 @@
     margin: 0 0 10px;
   }
   .attribution {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: rgba(201, 170, 111, 0.85);
     margin: 0 0 8px;
@@ -321,7 +321,7 @@
   }
   .loading {
     color: rgba(255, 255, 255, 0.4);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
   }
 
   .block {
@@ -338,7 +338,7 @@
     gap: 10px;
   }
   .count {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0;
     color: rgba(255, 255, 255, 0.4);
@@ -453,7 +453,7 @@
     margin: 0 0 10px;
   }
   .it-where {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(255, 255, 255, 0.55);
     text-decoration: none;
@@ -492,7 +492,7 @@
     gap: 7px;
   }
   .iv-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8.5px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -549,7 +549,7 @@
     flex-shrink: 0;
   }
   .ep-action {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.5px;
     text-decoration: none;
@@ -618,7 +618,7 @@
     color: #fff;
   }
   .lb-route {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: #4ecdc4;
     text-decoration: none;

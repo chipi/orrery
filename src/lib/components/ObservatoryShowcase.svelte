@@ -109,7 +109,7 @@
   }
   .status {
     color: rgba(255, 255, 255, 0.55);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     padding: 16px 0;
   }
@@ -167,7 +167,7 @@
   }
   figcaption {
     padding: 6px 8px 8px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
   }
   .name {
     display: block;

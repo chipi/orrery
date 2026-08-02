@@ -92,7 +92,7 @@
     border: 1px solid rgba(255, 200, 80, 0.4);
     border-radius: 4px;
     backdrop-filter: blur(6px);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
@@ -117,7 +117,7 @@
      family (was 8px/1px letter-spacing/0.55 alpha vs the rest at
      7px/2px/0.35 — looked off when stacked together). */
   .row dt {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -128,7 +128,7 @@
     gap: 2px;
   }
   .row dd {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.9);

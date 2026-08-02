@@ -102,7 +102,7 @@
     color: var(--color-text, #eef);
   }
   .crumb {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
@@ -183,7 +183,7 @@
     }
   }
   .fig figcaption {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     line-height: 1.5;
     letter-spacing: 0.3px;
@@ -197,7 +197,7 @@
     font-size: 11px;
   }
   .body h2 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -227,7 +227,7 @@
   }
   .doors h3,
   .sources h3 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -252,7 +252,7 @@
   }
   .doors .tag {
     margin-left: 8px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;

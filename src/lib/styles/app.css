@@ -199,7 +199,7 @@ html.ar-active body > *:not(.ar-canvas):not(.ar-exit-btn):not(.ar-hint):not(.ar-
   border: 1px solid rgba(78, 205, 196, 0.6);
   border-radius: 8px;
   color: #4ecdc4;
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 13px;
   letter-spacing: 1px;
   cursor: pointer;
@@ -219,7 +219,7 @@ html.ar-active body > *:not(.ar-canvas):not(.ar-exit-btn):not(.ar-hint):not(.ar-
   border: 1px solid rgba(78, 205, 196, 0.35);
   border-radius: 22px;
   color: #eaf6f5;
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 13px;
   line-height: 1.35;
   text-align: center;

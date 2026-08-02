@@ -145,14 +145,14 @@
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
   .tab-tag {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     color: rgba(78, 205, 196, 0.85);
     text-transform: uppercase;
   }
   .more {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.55);

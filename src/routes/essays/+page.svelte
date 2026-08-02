@@ -112,7 +112,7 @@
     margin-top: 44px;
   }
   .movement h2 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -166,7 +166,7 @@
     flex: 1;
   }
   .go {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: #7fb0e0;

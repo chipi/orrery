@@ -104,7 +104,7 @@
 
   .section-title {
     margin: 0 0 8px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     color: rgba(230, 232, 238, 0.6);
     text-transform: uppercase;
@@ -130,7 +130,7 @@
     gap: 8px;
     padding: 6px 0;
     align-items: baseline;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: #e6e8ee;
     text-decoration: none;
@@ -165,7 +165,7 @@
   .see-all {
     display: inline-block;
     margin-top: 10px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: #4ecdc4;
     text-decoration: none;

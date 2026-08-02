@@ -68,7 +68,7 @@
     border-radius: 6px;
     backdrop-filter: blur(4px);
     pointer-events: none;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     display: none;
   }
   .cr-flux {

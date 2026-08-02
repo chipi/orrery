@@ -57,14 +57,14 @@
     margin: 0 auto 28px;
   }
   h1 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 22px;
     letter-spacing: 4px;
     text-transform: uppercase;
     margin: 0 0 8px;
   }
   header p {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.68);
@@ -104,7 +104,7 @@
     gap: 8px;
   }
   .vlabel {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -119,7 +119,7 @@
     background: rgba(12, 16, 28, 0.95);
   }
   .name {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 1.5px;
     color: #fff;
@@ -136,6 +136,6 @@
     color: rgba(255, 200, 80, 0.7);
   }
   .mono {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
   }
 </style>

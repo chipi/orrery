@@ -237,7 +237,7 @@
   .ep-index-meta {
     margin: 0;
     color: rgba(255, 255, 255, 0.45);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
   }
 
@@ -291,7 +291,7 @@
     min-width: 0;
   }
   .tour-chip {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -321,7 +321,7 @@
   .ep-route {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
   }
   .ep-route:hover,
   .ep-route:focus-visible {
@@ -330,7 +330,7 @@
     outline: none;
   }
   .ep-dur {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-variant-numeric: tabular-nums;
   }
   .ep-author {

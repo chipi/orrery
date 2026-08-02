@@ -149,7 +149,7 @@
     max-width: 720px;
   }
   .crumb {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.45);
@@ -211,7 +211,7 @@
   }
   .section-photo figcaption {
     padding: 8px 12px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1.2px;
     color: rgba(255, 255, 255, 0.55);
@@ -219,7 +219,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
   .hero-diagram figcaption {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.55);
@@ -260,7 +260,7 @@
     overflow-x: auto;
   }
   .formula figcaption {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.55);
@@ -300,7 +300,7 @@
   }
   .see-in-app li,
   .learn-more li {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
   }
   .see-in-app a,

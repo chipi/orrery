@@ -501,7 +501,7 @@
     inset: 0;
     background: #03050c;
     color: #eaf2ff;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     z-index: 200;
   }
   /* Driven by the shared /fly master scrubber (externalClock): the launch's own
@@ -906,7 +906,7 @@
     position: absolute;
     right: 22px;
     bottom: 26px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 2px;
     color: #cfeaff;

@@ -491,7 +491,7 @@
     border-radius: 3px;
   }
   .chevron {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: rgba(255, 200, 80, 0.85);
     transition: color 120ms;
@@ -500,7 +500,7 @@
     color: #ffc850;
   }
   .eyebrow {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: #ffc850;
@@ -542,7 +542,7 @@
     margin-bottom: 6px;
   }
   .lens-link {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.85);
@@ -556,7 +556,7 @@
     margin-top: 4px;
   }
   .foundations-eyebrow {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     color: rgba(255, 200, 80, 0.65);
@@ -571,7 +571,7 @@
     gap: 4px 12px;
   }
   .foundations-link {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(255, 220, 150, 0.85);
     text-decoration: none;
@@ -635,7 +635,7 @@
     outline-offset: 2px;
   }
   .row-name {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.92);
@@ -652,7 +652,7 @@
     display: inline-block;
     margin-left: 6px;
     color: rgba(255, 215, 102, 0.85);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-style: normal;
     font-size: 9px;
     letter-spacing: 1.5px;

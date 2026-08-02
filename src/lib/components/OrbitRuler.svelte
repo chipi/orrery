@@ -171,7 +171,7 @@
     z-index: 1;
     pointer-events: none;
     color: rgba(255, 255, 255, 0.92);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     background: rgba(8, 12, 22, 0.62);
     backdrop-filter: blur(8px);

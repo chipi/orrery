@@ -133,7 +133,7 @@
     margin-bottom: 14px;
   }
   .status {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -160,7 +160,7 @@
   }
   .date {
     margin-left: auto;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(255, 255, 255, 0.4);
   }
@@ -171,7 +171,7 @@
     margin-bottom: 14px;
   }
   .chip {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.5px;
     padding: 3px 8px;
@@ -187,7 +187,7 @@
   }
   .k {
     display: block;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;

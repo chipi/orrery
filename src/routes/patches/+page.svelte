@@ -146,7 +146,7 @@
     color: var(--color-text, #eef);
   }
   .crumb {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
@@ -176,7 +176,7 @@
     color: #cfe3fb;
   }
   .group h2 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -230,7 +230,7 @@
   }
   .b-credit {
     display: block;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 0.5px;
     text-transform: uppercase;

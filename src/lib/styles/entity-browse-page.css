@@ -52,7 +52,7 @@
   padding: 12px 14px;
   min-height: 44px;
   color: rgba(255, 255, 255, 0.85);
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 13px;
   transition: border-color 120ms;
 }
@@ -76,7 +76,7 @@
   padding: 8px 12px;
   margin-bottom: 12px;
   color: rgba(255, 255, 255, 0.65);
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   cursor: pointer;
   transition:
     border-color 120ms,
@@ -106,7 +106,7 @@
   gap: 12px;
 }
 .entity-browse-page .filters-count {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 9px;
   letter-spacing: 2px;
 }
@@ -130,7 +130,7 @@
   color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 3px;
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 10px;
   letter-spacing: 2px;
   cursor: pointer;
@@ -161,7 +161,7 @@
   flex-wrap: wrap;
 }
 .entity-browse-page .filter-label {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 7px;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.3);
@@ -177,7 +177,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 3px;
   color: rgba(255, 255, 255, 0.4);
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 8px;
   letter-spacing: 2px;
   font-weight: 700;

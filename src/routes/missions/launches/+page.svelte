@@ -419,7 +419,7 @@
     margin-bottom: 8px;
     padding: 4px 8px;
     color: rgba(255, 255, 255, 0.6);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0.04em;
     text-decoration: none;
@@ -463,7 +463,7 @@
     border: 1px solid rgba(255, 82, 82, 0.4);
     border-radius: 3px;
     color: #ff5252;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -477,7 +477,7 @@
   .empty {
     padding: 40px 16px;
     color: rgba(230, 232, 238, 0.5);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     text-align: center;
@@ -487,7 +487,7 @@
     margin-top: 24px;
     padding-top: 14px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: rgba(230, 232, 238, 0.45);

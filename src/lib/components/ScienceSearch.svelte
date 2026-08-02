@@ -268,7 +268,7 @@
   }
   .result-meta {
     grid-area: meta;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     color: rgba(78, 205, 196, 0.85);
@@ -284,7 +284,7 @@
   }
   .empty {
     padding: 14px 18px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: rgba(255, 255, 255, 0.45);
   }
@@ -292,7 +292,7 @@
     padding: 8px 18px;
     background: rgba(255, 255, 255, 0.02);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
@@ -303,7 +303,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.05);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     color: rgba(255, 255, 255, 0.85);
     margin-right: 2px;

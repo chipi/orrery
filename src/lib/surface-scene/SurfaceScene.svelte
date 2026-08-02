@@ -6341,7 +6341,7 @@ sample      ${debugInfo.projectedPxSample}`}
     background: rgba(8, 10, 22, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.78);
@@ -6526,7 +6526,7 @@ sample      ${debugInfo.projectedPxSample}`}
     color: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 2px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 1.4px;
@@ -6569,7 +6569,7 @@ sample      ${debugInfo.projectedPxSample}`}
     color: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 2px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 1.4px;
@@ -6645,7 +6645,7 @@ sample      ${debugInfo.projectedPxSample}`}
     color: #fff;
     border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 80%, transparent);
     border-radius: 3px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 1.2px;
@@ -6711,7 +6711,7 @@ sample      ${debugInfo.projectedPxSample}`}
     background: rgba(8, 10, 22, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.18);
     color: rgba(255, 255, 255, 0.55);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8.5px;
     letter-spacing: 1.5px;
     text-align: center;
@@ -6754,7 +6754,7 @@ sample      ${debugInfo.projectedPxSample}`}
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(190, 195, 210, 0.4);
     color: #d6d9e2;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     line-height: 1.15;
     letter-spacing: 0.04em;
@@ -6844,7 +6844,7 @@ sample      ${debugInfo.projectedPxSample}`}
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(190, 195, 210, 0.4);
     color: #d6d9e2;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.04em;
     border-radius: 4px;
@@ -6869,7 +6869,7 @@ sample      ${debugInfo.projectedPxSample}`}
     background: rgba(193, 68, 14, 0.2);
     border: 1px solid rgba(193, 68, 14, 0.5);
     color: #ffc850;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     border-radius: 4px;
@@ -6891,7 +6891,7 @@ sample      ${debugInfo.projectedPxSample}`}
     padding: 3px 10px;
     background: rgba(4, 5, 14, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 1.2px;
@@ -6968,7 +6968,7 @@ sample      ${debugInfo.projectedPxSample}`}
     margin: 0 0 4px;
   }
   .type {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.4);
@@ -6987,14 +6987,14 @@ sample      ${debugInfo.projectedPxSample}`}
     padding: 8px 10px;
   }
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 6px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.25);
     margin-bottom: 3px;
   }
   .cell-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: var(--color-text);
     font-weight: 700;
@@ -7013,7 +7013,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border-radius: 0 4px 4px 0;
   }
   .left-block h3 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 2px;
     margin: 0 0 6px;
@@ -7059,14 +7059,14 @@ sample      ${debugInfo.projectedPxSample}`}
     margin-bottom: 14px;
   }
   .capability-block h3 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 2px;
     color: #4ecdc4;
     margin: 0 0 4px;
   }
   .capability-block p {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     color: rgba(255, 255, 255, 0.85);
     margin: 0;
@@ -7083,7 +7083,7 @@ sample      ${debugInfo.projectedPxSample}`}
     color: #fff;
     text-decoration: none;
     border-radius: 3px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -7103,7 +7103,7 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .launches-from-here h3 {
     margin: 0 0 8px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2.5px;
     color: rgba(255, 255, 255, 0.45);
@@ -7125,7 +7125,7 @@ sample      ${debugInfo.projectedPxSample}`}
     color: #4ecdc4;
     text-decoration: none;
     border-radius: 999px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1.5px;
     font-weight: 700;
@@ -7140,7 +7140,7 @@ sample      ${debugInfo.projectedPxSample}`}
   }
 
   .credit {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     color: rgba(255, 255, 255, 0.25);
     line-height: 1.6;

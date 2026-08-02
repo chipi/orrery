@@ -2010,7 +2010,7 @@
   }
   .mod-meta {
     display: block;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.4);
@@ -2086,7 +2086,7 @@
     background: rgba(8, 10, 22, 0.82);
     color: rgba(255, 255, 255, 0.78);
     border: 1px solid rgba(255, 255, 255, 0.18);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 2px;
     padding: 0;
@@ -2138,7 +2138,7 @@
     line-height: 22px;
   }
   .hint {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.45);
@@ -2163,7 +2163,7 @@
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(68, 102, 255, 0.4);
     color: #dde4ff;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.04em;
     border-radius: 4px;
@@ -2186,7 +2186,7 @@
     border-color: rgba(68, 102, 255, 0.18);
   }
   .banner {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 0.04em;
     line-height: 1.45;
@@ -2205,7 +2205,7 @@
   }
   .load-banner {
     padding: 24px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     color: #ff8c8c;
   }
   /* Mobile-only top cluster: view toggle + Reset View, mirroring the

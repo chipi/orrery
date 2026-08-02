@@ -412,7 +412,7 @@
     gap: 8px;
   }
   .kind {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: var(--accent, rgba(255, 255, 255, 0.6));
@@ -439,7 +439,7 @@
     color: rgba(255, 255, 255, 0.4);
   }
   .note {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.8);
@@ -454,14 +454,14 @@
     gap: 10px 16px;
   }
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.45);
     margin-bottom: 2px;
   }
   .cell-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: rgba(255, 255, 255, 0.92);
   }
@@ -472,7 +472,7 @@
     margin-top: 14px;
     padding-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     color: rgba(255, 255, 255, 0.7);
   }
@@ -490,7 +490,7 @@
   .learn-list :global(a) {
     color: #4ecdc4;
     text-decoration: none;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     padding: 8px 10px;

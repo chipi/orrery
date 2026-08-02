@@ -958,7 +958,7 @@
     margin: 0 0 4px;
   }
   .type {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.4);
@@ -983,14 +983,14 @@
     grid-column: 1 / -1;
   }
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 6px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.25);
     margin-bottom: 3px;
   }
   .cell-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: var(--color-text);
     font-weight: 700;
@@ -1031,7 +1031,7 @@
   }
 
   .first {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
@@ -1052,7 +1052,7 @@
   }
 
   .credit {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     color: rgba(255, 255, 255, 0.25);
     line-height: 1.6;
@@ -1064,7 +1064,7 @@
     display: inline-block;
     margin: 0 0 14px;
     padding: 6px 10px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -1102,7 +1102,7 @@
     border: 1px solid rgba(193, 68, 14, 0.55);
     border-radius: 4px;
     color: #ffd2c0;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -1127,7 +1127,7 @@
     border: 1px solid rgba(68, 102, 255, 0.55);
     border-radius: 4px;
     color: #fff;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 3px;
     font-weight: 700;
@@ -1176,7 +1176,7 @@
     padding: 10px 12px;
     border-radius: 4px;
     color: #fff;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     cursor: pointer;
     text-decoration: none;
     display: flex;
@@ -1300,7 +1300,7 @@
     border-radius: 2px;
   }
   .flight-caveat {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
     color: #ffc850;
@@ -1345,14 +1345,14 @@
     margin: 0;
   }
   .flight-rows dt {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 2px;
     color: rgba(180, 200, 255, 0.55);
     align-self: center;
   }
   .flight-rows dd {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: #fff;
     margin: 0;
@@ -1390,13 +1390,13 @@
     border-radius: 2px;
   }
   .flight-events .event-met {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: #4ecdc4;
     font-weight: 700;
   }
   .flight-events .event-type {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.85);

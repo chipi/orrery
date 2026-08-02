@@ -193,7 +193,7 @@
     opacity: 0.92;
   }
   .story-fig figcaption {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.55);
@@ -214,7 +214,7 @@
     color: rgba(255, 255, 255, 0.7);
   }
   .empty {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
     color: rgba(255, 255, 255, 0.55);
   }

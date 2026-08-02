@@ -272,7 +272,7 @@
     gap: 8px;
   }
   .kind {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: rgba(160, 200, 255, 0.85);
@@ -292,7 +292,7 @@
     gap: 12px;
   }
   .stat-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.55);
@@ -300,7 +300,7 @@
     margin-bottom: 4px;
   }
   .stat-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
     color: var(--color-text);
   }
@@ -326,7 +326,7 @@
     border: 0;
     border-bottom: 2px solid transparent;
     color: rgba(255, 255, 255, 0.45);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     padding: 8px 12px;
@@ -357,7 +357,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.45);
@@ -365,7 +365,7 @@
     text-transform: uppercase;
   }
   .cell-value {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: rgba(255, 255, 255, 0.92);
     line-height: 1.45;
@@ -405,7 +405,7 @@
   .learn-list a {
     color: #4ecdc4;
     text-decoration: none;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     padding: 8px 10px;
@@ -429,7 +429,7 @@
     min-height: 44px;
     padding: 12px;
     border-radius: 4px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 3px;
     font-weight: 700;

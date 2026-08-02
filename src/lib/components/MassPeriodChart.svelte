@@ -248,7 +248,7 @@
     text-align: center;
   }
   .mp-title {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0.16em;
     text-transform: uppercase;

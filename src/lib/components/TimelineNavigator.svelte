@@ -360,7 +360,7 @@
   .tick {
     position: absolute;
     transform: translateX(-50%);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     color: rgba(180, 200, 255, 0.55);
     letter-spacing: 1px;
@@ -398,7 +398,7 @@
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 1.5px;
     color: rgba(255, 200, 80, 0.85);
@@ -458,7 +458,7 @@
     top: -18px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     font-weight: 700;
     color: #4ecdc4;
@@ -472,7 +472,7 @@
     position: absolute;
     top: 4px;
     right: 6px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.7);
@@ -525,7 +525,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1.5px;
     color: rgba(180, 200, 255, 0.85);
@@ -538,12 +538,12 @@
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 3px;
     color: #fff;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
   }
   .rm-reset {
     margin-left: auto;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.7);

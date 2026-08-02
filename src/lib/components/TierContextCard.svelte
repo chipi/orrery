@@ -69,7 +69,7 @@
     background: rgba(8, 10, 22, 0.86);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 6px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.85);

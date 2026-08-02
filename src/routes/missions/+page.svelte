@@ -850,7 +850,7 @@
   .empty {
     padding: 40px;
     text-align: center;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.4);
@@ -863,7 +863,7 @@
     border: 1px solid rgba(193, 68, 14, 0.5);
     border-radius: 4px;
     color: #ffc850;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     text-align: center;

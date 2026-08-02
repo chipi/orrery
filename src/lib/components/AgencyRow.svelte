@@ -41,7 +41,7 @@
   .agency-badge,
   .agency-row :global(.status),
   .agency-row :global(.quality) {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 2px;
     font-weight: 700;

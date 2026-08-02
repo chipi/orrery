@@ -48,7 +48,7 @@
 
 <style>
   .regime-chip {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 2px;
     font-weight: 700;

@@ -63,7 +63,7 @@
     border-radius: 7px;
     backdrop-filter: blur(7px);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     color: #eaf2ff;
   }
   .title {

@@ -198,14 +198,14 @@
       background: rgba(255, 255, 255, 0.28);
     }
     .mcd-tab {
-      font-family: 'Space Mono', monospace;
+      font-family: var(--font-mono, 'Space Mono', monospace);
       font-size: 11px;
       letter-spacing: 1.5px;
       color: rgba(255, 255, 255, 0.9);
     }
     .mcd-chev {
       margin-left: auto;
-      font-family: 'Space Mono', monospace;
+      font-family: var(--font-mono, 'Space Mono', monospace);
       font-size: 12px;
       color: rgba(255, 255, 255, 0.55);
     }

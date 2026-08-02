@@ -107,7 +107,7 @@
 
   .eyebrow {
     margin: 0;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: #4466ff;
     text-transform: uppercase;
@@ -124,7 +124,7 @@
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -141,7 +141,7 @@
     background: #fff;
   }
   .all-link {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: #4ecdc4;
     text-decoration: none;
@@ -201,7 +201,7 @@
   }
 
   .countdown {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: #ffc850;
     text-transform: uppercase;
@@ -227,7 +227,7 @@
 
   .mission {
     margin: 2px 0 0;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: #4ecdc4;
   }
@@ -242,7 +242,7 @@
 
   .meta {
     margin: 6px 0 0;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     color: rgba(230, 232, 238, 0.6);
   }

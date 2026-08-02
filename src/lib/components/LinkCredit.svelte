@@ -60,7 +60,7 @@
     flex-wrap: wrap;
     gap: 6px;
     align-items: baseline;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 0.4px;
     color: rgba(255, 255, 255, 0.45);

@@ -291,7 +291,7 @@
     margin-bottom: 26px;
   }
   .crumb {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
@@ -328,7 +328,7 @@
     max-width: 900px;
   }
   .chip {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.7);
@@ -446,7 +446,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
@@ -467,7 +467,7 @@
     opacity: 0.9;
   }
   .t-desig {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -559,14 +559,14 @@
     margin-bottom: 10px;
   }
   .lb-obs {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #e9c46a;
   }
   .lb-desig {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -604,7 +604,7 @@
     text-align: center;
   }
   .lb-facts dt {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -621,7 +621,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px 16px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.55);

@@ -305,7 +305,7 @@
     color: #fff;
   }
   .head h2 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -323,7 +323,7 @@
   .totals,
   .newest,
   .disclaimer {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
@@ -344,7 +344,7 @@
     padding: 0;
   }
   .data-sources h3 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -372,7 +372,7 @@
   }
 
   .loading {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: rgba(255, 255, 255, 0.6);
     padding: 32px 0;
@@ -386,7 +386,7 @@
     border-radius: 4px;
   }
   .toc h3 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -401,7 +401,7 @@
     gap: 8px;
   }
   .toc li {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     line-height: 1.5;
   }
@@ -457,7 +457,7 @@
   }
   .src-license,
   .src-counts {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.55);
@@ -494,7 +494,7 @@
     flex-wrap: wrap;
     gap: 6px;
     align-items: baseline;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     margin: 0 0 8px;
   }
@@ -533,7 +533,7 @@
     border-radius: 0 3px 3px 0;
   }
   .ln-row {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     line-height: 1.5;
     /* WCAG AA pass on 11 px text against the .link wash background

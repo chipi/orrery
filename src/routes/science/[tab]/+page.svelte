@@ -73,7 +73,7 @@
 
 <style>
   .crumb {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.45);
@@ -143,7 +143,7 @@
     margin-bottom: 0;
   }
   .hint {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);

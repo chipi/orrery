@@ -216,14 +216,14 @@
     outline: none;
   }
   .chevron {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
   }
   .banner.collapsed {
     padding: 8px 36px 7px 18px;
   }
   .banner-eyebrow {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 3px;
     color: #ffc850;
@@ -241,7 +241,7 @@
     gap: 2px;
   }
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.5);
@@ -278,7 +278,7 @@
     align-items: baseline;
   }
   .banner-link {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-style: normal;
     font-size: 10px;
     letter-spacing: 1px;

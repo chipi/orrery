@@ -641,7 +641,7 @@
   .audio-body {
     flex: 0 0 auto;
     min-width: 46px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -731,7 +731,7 @@
     border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
   }
   .d-catalog {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(255, 255, 255, 0.5);
   }
@@ -743,7 +743,7 @@
     margin: 0 0 6px;
   }
   .d-row {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.55);
@@ -780,7 +780,7 @@
     margin: 0 0 10px;
   }
   .storage-blurb :global(code) {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     background: rgba(0, 0, 0, 0.3);
     padding: 1px 5px;
     border-radius: 2px;
@@ -797,7 +797,7 @@
     margin-bottom: 6px;
   }
   .storage-list :global(code) {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     background: rgba(0, 0, 0, 0.3);
     padding: 1px 5px;
     border-radius: 2px;
@@ -822,7 +822,7 @@
     color: #fff;
   }
   .head h2 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -839,7 +839,7 @@
   }
   .totals,
   .disclaimer {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
@@ -850,7 +850,7 @@
   }
 
   .loading {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     color: rgba(255, 255, 255, 0.6);
     padding: 32px 0;
@@ -864,7 +864,7 @@
     border-radius: 4px;
   }
   .toc h3 {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -879,7 +879,7 @@
     gap: 8px;
   }
   .toc li {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     line-height: 1.5;
   }
@@ -937,7 +937,7 @@
     border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
   }
   .src-license {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.55);
@@ -951,7 +951,7 @@
   }
 
   .bom-heading {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -1007,7 +1007,7 @@
   }
 
   .ph-title {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.85);
@@ -1015,7 +1015,7 @@
   }
   .ph-row,
   .t-row {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.55);
@@ -1077,7 +1077,7 @@
     font-size: 9px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
   }
   .ph-row.stems {
     margin-top: 2px;
@@ -1115,7 +1115,7 @@
     margin: 6px 0 4px;
   }
   .t-loc {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     color: rgba(255, 255, 255, 0.35);
     margin: 0;

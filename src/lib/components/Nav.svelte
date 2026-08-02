@@ -1217,7 +1217,7 @@
   }
   .drawer-link-sm {
     padding: 9px 18px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -1232,7 +1232,7 @@
   .drawer-about-label {
     display: block;
     padding: 9px 18px 2px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.38);
@@ -1244,7 +1244,7 @@
   .drawer-version {
     display: block;
     padding: 10px 18px 12px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.35);

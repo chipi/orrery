@@ -6323,27 +6323,33 @@
         >
           {m.explore_deep_sky_toggle()}
         </button>
-        <button
-          type="button"
-          class="chip"
-          class:active={hrLensOpen}
-          aria-pressed={hrLensOpen}
-          onclick={() => toggleHrFn?.()}
-        >
-          {m.explore_lens_hr()}
-        </button>
-        <button
-          type="button"
-          class="chip"
-          class:active={causalityOpen}
-          aria-pressed={causalityOpen}
-          onclick={() => {
-            causalityOpen = !causalityOpen;
-            if (causalityOpen) openCausalityFn?.();
-          }}
-        >
-          {m.explore_lens_causality()}
-        </button>
+        <!-- A3: HR Diagram + Light cones are hardcore-science overlays — they
+             live under the science lens, so only surface as chips when the
+             science lens is active. Constellations + Deep Sky stay as the
+             default exploratory chips (keeps the row to one line). -->
+        {#if layerState.lens}
+          <button
+            type="button"
+            class="chip"
+            class:active={hrLensOpen}
+            aria-pressed={hrLensOpen}
+            onclick={() => toggleHrFn?.()}
+          >
+            {m.explore_lens_hr()}
+          </button>
+          <button
+            type="button"
+            class="chip"
+            class:active={causalityOpen}
+            aria-pressed={causalityOpen}
+            onclick={() => {
+              causalityOpen = !causalityOpen;
+              if (causalityOpen) openCausalityFn?.();
+            }}
+          >
+            {m.explore_lens_causality()}
+          </button>
+        {/if}
       </div>
     </div>
     <StarIndex
@@ -7990,13 +7996,19 @@
     pointer-events: auto;
   }
   .ctrl-row.chips {
-    /* Mobile: chip row wraps horizontally so 4 chips fit on a 375 px
-       viewport without scroll. At @min-width: 769 the rail returns to
-       a vertical column matching the toggle row's stretch width. */
+    /* Mobile: chip row is a single horizontally-scrollable line (A3) so it
+       never wraps to a second row and crowds the top edge — even when the
+       science lens adds its HR/Light-cone chips. At @min-width: 769 the rail
+       returns to a vertical column matching the toggle row's stretch width. */
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     max-width: calc(100vw - 24px);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .ctrl-row.chips::-webkit-scrollbar {
+    display: none;
   }
   .toggle {
     min-width: 44px;

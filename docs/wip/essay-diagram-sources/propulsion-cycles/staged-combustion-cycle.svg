@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900"><rect width="1600" height="900" fill="#0a0e18"/><g font-family="monospace" fill="#cfe3fb">
+    <text x="80" y="84" font-size="30" text-anchor="start" fill="#7fb0e0" letter-spacing="1">WASTE NOTHING</text>
+    <text x="80" y="122" font-size="19" text-anchor="start" fill="#cfe3fb" letter-spacing="1">staged combustion — the pump drive gas is fed back and burned in the main chamber</text>
+    <rect x="120" y="200" width="150" height="90" rx="8" fill="rgba(127,176,224,0.14)" stroke="#7fb0e0" stroke-width="2.5"/><text x="195" y="252" font-size="20" text-anchor="middle" fill="#ffffff" letter-spacing="1">FUEL</text>
+    <rect x="120" y="330" width="150" height="90" rx="8" fill="rgba(127,176,224,0.14)" stroke="#7fb0e0" stroke-width="2.5"/><text x="195" y="382" font-size="20" text-anchor="middle" fill="#ffffff" letter-spacing="1">OXIDISER</text>
+    <path d="M 270 245 L 420 300" fill="none" stroke="#cfe3fb" stroke-width="3"/>
+    <path d="M 270 375 L 420 340" fill="none" stroke="#cfe3fb" stroke-width="3"/>
+    <rect x="420" y="275" width="150" height="110" rx="8" fill="rgba(127,176,224,0.14)" stroke="#7fb0e0" stroke-width="2.5"/> <text x="495" y="320" font-size="18" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">TURBO</text> <text x="495" y="344" font-size="18" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">PUMP</text>
+    <!-- preburner off the pump -->
+    <path d="M 495 385 L 495 500" fill="none" stroke="#7fb0e0" stroke-width="3"/> <polygon points="495,500 487,486 503,486" fill="#7fb0e0"/>
+    <rect x="400" y="500" width="190" height="95" rx="8" fill="rgba(127,176,224,0.14)" stroke="#ffd27f" stroke-width="2.5"/> <text x="495" y="535" font-size="17" text-anchor="middle" fill="#ffd27f" letter-spacing="1">PREBURNER</text> <text x="495" y="565" font-size="13" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">fuel-rich / ox-rich</text>
+    <!-- turbine drive returns to pump -->
+    <path d="M 400 545 C 320 545, 320 330, 420 330" fill="none" stroke="#7fb0e0" stroke-width="2.5" stroke-dasharray="8 6"/> <polygon points="422,330 408,322 408,338" fill="#7fb0e0"/>
+    <text x="300" y="450" font-size="13" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">spins the</text> <text x="300" y="470" font-size="13" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">turbine</text>
+    <!-- KEY: preburner exhaust routed INTO the main chamber (closed) -->
+    <path d="M 590 547 C 760 547, 820 430, 830 392" fill="none" stroke="#ffffff" stroke-width="5"/> <polygon points="831,392 823,406 839,406" fill="#ffffff"/>
+    <text x="720" y="500" font-size="16" text-anchor="middle" fill="#ffffff" letter-spacing="1">ALL flow → chamber</text> <text x="720" y="522" font-size="13" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">(nothing overboard)</text>
+    <rect x="760" y="280" width="150" height="110" rx="8" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="2.5"/> <text x="835" y="322" font-size="18" text-anchor="middle" fill="#ffffff" letter-spacing="1">MAIN</text> <text x="835" y="346" font-size="18" text-anchor="middle" fill="#ffffff" letter-spacing="1">CHAMBER</text>
+    <path d="M 610 330 L 760 330" fill="none" stroke="#ffffff" stroke-width="4"/> <polygon points="760,330 746,322 746,338" fill="#ffffff"/>
+    <path d="M 910 295 L 1000 265 L 1000 405 L 910 375 Z" fill="rgba(127,176,224,0.14)" stroke="#7fb0e0" stroke-width="2.5"/><path d="M 1000 280 C 1170 295, 1170 375, 1000 390" fill="rgba(255,210,127,0.16)" stroke="#ffd27f" stroke-width="2"/><text x="1085" y="340" font-size="18" text-anchor="middle" fill="#ffd27f" letter-spacing="1">thrust →</text>
+    <text x="800" y="800" font-size="18" text-anchor="middle" fill="#7fb0e0" letter-spacing="1">closed cycle — nothing wasted. higher pressure, higher Isp, the hardest plumbing in engineering.</text>
+  </g></svg>

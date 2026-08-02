@@ -2,6 +2,8 @@
   "id": "expander-cycle",
   "tab": "propulsion",
   "order": 10,
+  "diagram": "expander-cycle.webp",
+  "diagram_quality": "polished",
   "see_in_app": [
     {
       "route": "/fleet",
@@ -10,17 +12,17 @@
   ],
   "links": [
     {
-      "l": "Wikipedia · Expander cycle",
+      "l": "Wikipedia \u00b7 Expander cycle",
       "u": "https://en.wikipedia.org/wiki/Expander_cycle",
       "t": "intro"
     },
     {
-      "l": "Wikipedia · RL10",
+      "l": "Wikipedia \u00b7 RL10",
       "u": "https://en.wikipedia.org/wiki/RL10",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Expander-bleed cycle (LE-5B, LE-9)",
+      "l": "Wikipedia \u00b7 Expander-bleed cycle (LE-5B, LE-9)",
       "u": "https://en.wikipedia.org/wiki/Expander_cycle#Expander_bleed_cycle",
       "t": "deep"
     }

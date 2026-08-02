@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900"><rect width="1600" height="900" fill="#0a0e18"/><g font-family="monospace" fill="#cfe3fb">
+    <text x="80" y="84" font-size="30" text-anchor="start" fill="#7fb0e0" letter-spacing="1">THROW A LITTLE AWAY</text>
+    <text x="80" y="122" font-size="19" text-anchor="start" fill="#cfe3fb" letter-spacing="1">gas-generator cycle — a small side flame spins the pumps, then dumps overboard</text>
+    <rect x="120" y="200" width="150" height="90" rx="8" fill="rgba(127,176,224,0.14)" stroke="#7fb0e0" stroke-width="2.5"/><text x="195" y="252" font-size="20" text-anchor="middle" fill="#ffffff" letter-spacing="1">FUEL</text>
+    <rect x="120" y="330" width="150" height="90" rx="8" fill="rgba(127,176,224,0.14)" stroke="#7fb0e0" stroke-width="2.5"/><text x="195" y="382" font-size="20" text-anchor="middle" fill="#ffffff" letter-spacing="1">OXIDISER</text>
+    <!-- feed lines to turbopump -->
+    <path d="M 270 245 L 430 300" fill="none" stroke="#cfe3fb" stroke-width="3"/>
+    <path d="M 270 375 L 430 340" fill="none" stroke="#cfe3fb" stroke-width="3"/>
+    <rect x="430" y="275" width="150" height="110" rx="8" fill="rgba(127,176,224,0.14)" stroke="#7fb0e0" stroke-width="2.5"/> <text x="505" y="320" font-size="18" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">TURBO</text> <text x="505" y="344" font-size="18" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">PUMP</text>
+    <!-- MAIN flow: pump -> chamber -> nozzle (thick, bright) -->
+    <path d="M 580 330 L 760 330" fill="none" stroke="#ffffff" stroke-width="5"/> <polygon points="760,330 746,322 746,338" fill="#ffffff"/>
+    <rect x="760" y="280" width="150" height="110" rx="8" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="2.5"/> <text x="835" y="322" font-size="18" text-anchor="middle" fill="#ffffff" letter-spacing="1">MAIN</text> <text x="835" y="346" font-size="18" text-anchor="middle" fill="#ffffff" letter-spacing="1">CHAMBER</text>
+    <path d="M 910 295 L 1000 265 L 1000 405 L 910 375 Z" fill="rgba(127,176,224,0.14)" stroke="#7fb0e0" stroke-width="2.5"/><path d="M 1000 280 C 1170 295, 1170 375, 1000 390" fill="rgba(255,210,127,0.16)" stroke="#ffd27f" stroke-width="2"/><text x="1085" y="340" font-size="18" text-anchor="middle" fill="#ffd27f" letter-spacing="1">thrust →</text>
+    <text x="670" y="300" font-size="14" text-anchor="middle" fill="#ffffff" letter-spacing="1">most of the propellant</text>
+    <!-- SIDE branch: tap -> gas generator -> turbine -> OVERBOARD dump (thin, dashed) -->
+    <path d="M 505 385 L 505 520" fill="none" stroke="#7fb0e0" stroke-width="2.5" stroke-dasharray="8 6"/> <polygon points="505,520 497,506 513,506" fill="#7fb0e0"/>
+    <rect x="430" y="520" width="150" height="90" rx="8" fill="rgba(127,176,224,0.14)" stroke="#ffd27f" stroke-width="2.5"/> <text x="505" y="552" font-size="16" text-anchor="middle" fill="#ffd27f" letter-spacing="1">GAS</text> <text x="505" y="574" font-size="16" text-anchor="middle" fill="#ffd27f" letter-spacing="1">GENERATOR</text>
+    <text x="505" y="632" font-size="13" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">fuel-rich (cool)</text>
+    <path d="M 430 565 C 340 565, 340 330, 430 330" fill="none" stroke="#7fb0e0" stroke-width="2.5" stroke-dasharray="8 6"/> <polygon points="432,330 418,322 418,338" fill="#7fb0e0"/>
+    <text x="300" y="470" font-size="13" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">drives the</text> <text x="300" y="490" font-size="13" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">turbine</text>
+    <path d="M 580 565 L 780 565" fill="none" stroke="#ffd27f" stroke-width="2.5" stroke-dasharray="8 6"/> <polygon points="780,565 766,557 766,573" fill="#ffd27f"/>
+    <text x="880" y="570" font-size="18" text-anchor="middle" fill="#ffd27f" letter-spacing="1">OVERBOARD DUMP</text>
+    <text x="880" y="596" font-size="14" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">the small Isp cost</text>
+    <text x="800" y="800" font-size="18" text-anchor="middle" fill="#7fb0e0" letter-spacing="1">open cycle — the turbine exhaust is thrown away. simple, robust, the most-flown design.</text>
+  </g></svg>

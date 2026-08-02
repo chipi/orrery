@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900"><rect width="1600" height="900" fill="#0a0e18"/><g font-family="monospace" fill="#cfe3fb">
+    <text x="80" y="84" font-size="30" text-anchor="start" fill="#7fb0e0" letter-spacing="1">POWERED BY HEAT, NOT FIRE</text>
+    <text x="80" y="122" font-size="19" text-anchor="start" fill="#cfe3fb" letter-spacing="1">expander cycle — cryogenic fuel boils in the nozzle jacket and spins the pump</text>
+    <rect x="120" y="300" width="150" height="90" rx="8" fill="rgba(127,176,224,0.14)" stroke="#7fb0e0" stroke-width="2.5"/><text x="195" y="352" font-size="20" text-anchor="middle" fill="#ffffff" letter-spacing="1">FUEL (LH₂)</text>
+    <path d="M 270 345 L 400 345" fill="none" stroke="#cfe3fb" stroke-width="3"/> <polygon points="400,345 386,337 386,353" fill="#cfe3fb"/>
+    <rect x="400" y="300" width="150" height="100" rx="8" fill="rgba(127,176,224,0.14)" stroke="#7fb0e0" stroke-width="2.5"/> <text x="475" y="340" font-size="18" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">TURBO</text> <text x="475" y="364" font-size="18" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">PUMP</text>
+    <!-- fuel routed through the nozzle cooling jacket (channels around the wall) -->
+    <path d="M 550 350 L 760 350" fill="none" stroke="#cfe3fb" stroke-width="3"/> <polygon points="760,350 746,342 746,358" fill="#cfe3fb"/>
+    <path d="M 760 300 L 900 270 L 900 430 L 760 400 Z" fill="rgba(127,176,224,0.14)" stroke="#7fb0e0" stroke-width="2.5"/>
+    <g stroke="#ffd27f" stroke-width="1.6" opacity="0.85">
+      <path d="M 772 312 L 888 292"/><path d="M 772 336 L 892 322"/><path d="M 772 360 L 892 352"/><path d="M 772 384 L 888 388"/>
+    </g>
+    <text x="830" y="470" font-size="15" text-anchor="middle" fill="#ffd27f" letter-spacing="1">NOZZLE COOLING JACKET</text> <text x="830" y="492" font-size="13" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">fuel soaks up the heat</text>
+    <path d="M 900 310 L 990 280 L 990 420 L 900 390 Z" fill="rgba(127,176,224,0.14)" stroke="#7fb0e0" stroke-width="2.5"/><path d="M 990 295 C 1160 310, 1160 390, 990 405" fill="rgba(255,210,127,0.16)" stroke="#ffd27f" stroke-width="2"/><text x="1075" y="355" font-size="18" text-anchor="middle" fill="#ffd27f" letter-spacing="1">thrust →</text>
+    <!-- vaporised gas leaves the jacket, drives the turbine, then to the chamber -->
+    <path d="M 830 270 C 830 170, 520 170, 500 300" fill="none" stroke="#ffd27f" stroke-width="3"/> <polygon points="500,300 492,286 508,286" fill="#ffd27f"/>
+    <text x="660" y="158" font-size="15" text-anchor="middle" fill="#ffd27f" letter-spacing="1">VAPORISED GAS drives the turbine →</text>
+    <rect x="300" y="560" width="260" height="90" rx="8" fill="rgba(127,176,224,0.14)" stroke="#ffffff" stroke-width="2.5"/> <text x="430" y="594" font-size="16" text-anchor="middle" fill="#ffffff" letter-spacing="1">NO GAS GENERATOR</text> <text x="430" y="620" font-size="16" text-anchor="middle" fill="#ffffff" letter-spacing="1">NO PREBURNER</text>
+    <text x="430" y="690" font-size="15" text-anchor="middle" fill="#cfe3fb" letter-spacing="1">the engine heat itself is the power source</text>
+    <text x="800" y="800" font-size="18" text-anchor="middle" fill="#7fb0e0" letter-spacing="1">closed, clean, restartable — but heat scales with area, so a big first stage is impossible.</text>
+  </g></svg>

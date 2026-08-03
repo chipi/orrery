@@ -2009,6 +2009,15 @@
     openingTitleOpacity = 0;
     openingContextOpacity = 0;
     openingFleetOpacity = 0;
+    // Earth-orbit missions (Mercury/Vostok/Voskhod/Gemini…) have no interplanetary
+    // cruise — their arc is launch → LEO/suborbital coast → reentry. Enter via the
+    // launch chain instead of dropping into the cislunar/heliocentric cruise
+    // fallback (which, with no transit arc, reads as a fat line over a tiny Earth
+    // and a runaway day-clock). The launch's onComplete hands off to CoastScene.
+    if (earthCoast && launchAvailable) {
+      startLaunch();
+      return;
+    }
     // Give 600 ms of prelaunch settle so the camera has time to
     // lerp from the wide top-down to the Earth-closeup before sim
     // starts advancing.
@@ -5701,7 +5710,8 @@
           !cinematicFreeze &&
           !showLaunch &&
           !showDescent &&
-          !showCoast
+          !showCoast &&
+          !earthCoast
         ) {
           // Flyby slow-motion (#371): around closest approach, ease the
           // effective sim rate down so the gravity-assist swing is

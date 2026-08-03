@@ -31,6 +31,8 @@ import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecr
 import { buildCapsuleById } from '$lib/three/capsule-models';
 import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
 import { buildLauncherModel } from '$lib/three/launcher-models';
+import { clusterOffsets } from '$lib/three/launcher-detail';
+import { getLauncherEngines } from '$lib/orbital/launcher-engines';
 import {
   buildLaunchGround,
   type LaunchGround,
@@ -471,10 +473,47 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
         depthWrite: false,
       }),
     );
+  // One exhaust per REAL engine nozzle (Falcon 9's 9-Merlin octaweb, Saturn V's
+  // 5-F-1 quincunx, …) so multi-engine boosters light ALL bells, not just the
+  // axis. Layout mirrors engineCluster's nozzle grid; re-laid-out on stage change
+  // (the usually single-engine upper stage collapses to one central bell).
+  const engSpec = opts.launcherId ? getLauncherEngines(opts.launcherId) : undefined;
+  const stageNozzleLayout = (stageIdx: number): { offsets: [number, number][]; bellR: number } => {
+    const st = engSpec?.stages[stageIdx];
+    const offsets = clusterOffsets(st?.arrangement ?? 'single', st?.mainNozzles ?? 1);
+    const anchor = (
+      stageIdx >= 1 ? model.upperPlumeAnchor : model.boosterPlumeAnchor
+    ) as THREE.Mesh;
+    const geo = anchor.geometry as THREE.CylinderGeometry | undefined;
+    const stageR = geo?.parameters?.radiusTop ?? rBody;
+    const spread = Math.max(1, ...offsets.map(([x, z]) => Math.hypot(x, z)));
+    const bellR = Math.min(stageR * 0.34, (stageR * 0.92) / (spread + 1));
+    return { offsets, bellR };
+  };
+  const refBellR = Math.max(stageNozzleLayout(0).bellR, rBody * 0.18);
+  const nozzleCount = Math.max(
+    stageNozzleLayout(0).offsets.length,
+    stageNozzleLayout(1).offsets.length,
+  );
   const plume = new THREE.Group();
-  const plumeGlow = plumeCone(rBody * 0.8, vehLen * 0.36, 0xff8a3c, 0.15);
-  const plumeCore = plumeCone(rBody * 0.5, vehLen * 0.28, 0xffcf80, 0.38);
-  plume.add(plumeGlow, plumeCore);
+  const nozzlePlumes: THREE.Group[] = [];
+  for (let i = 0; i < nozzleCount; i++) {
+    const nz = new THREE.Group();
+    nz.add(plumeCone(refBellR * 1.35, vehLen * 0.26, 0xff8a3c, 0.15));
+    nz.add(plumeCone(refBellR * 0.85, vehLen * 0.2, 0xffcf80, 0.38));
+    plume.add(nz);
+    nozzlePlumes.push(nz);
+  }
+  const layoutPlumes = (stageIdx: number): void => {
+    const { offsets, bellR } = stageNozzleLayout(stageIdx);
+    nozzlePlumes.forEach((nz, i) => {
+      const on = i < offsets.length;
+      nz.visible = on;
+      if (on) nz.position.set(offsets[i][0] * bellR, 0, offsets[i][1] * bellR);
+    });
+  };
+  let plumeStage = 0;
+  layoutPlumes(0);
   plume.rotation.z = Math.PI; // point down (−Y)
   booster.add(plume);
 
@@ -715,10 +754,15 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     const burning = s.stageIndex >= 0;
     plume.visible = burning || injectionBurning;
     if (burning) {
-      const firing = s.stageIndex >= 1 ? model.upperPlumeAnchor : model.boosterPlumeAnchor;
+      const stageForPlume = s.stageIndex >= 1 ? 1 : 0;
+      const firing = stageForPlume >= 1 ? model.upperPlumeAnchor : model.boosterPlumeAnchor;
       if (plume.parent !== firing) {
         plume.parent?.remove(plume);
         firing.add(plume);
+      }
+      if (plumeStage !== stageForPlume) {
+        layoutPlumes(stageForPlume);
+        plumeStage = stageForPlume;
       }
       const flick = 1 + 0.09 * Math.sin(frame * 0.7) + 0.05 * Math.sin(frame * 1.9);
       // Upper-stage plume is longer + thinner in vacuum; wider in thick air.
@@ -733,6 +777,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       if (plume.parent !== firing) {
         plume.parent?.remove(plume);
         firing.add(plume);
+      }
+      if (plumeStage !== 1) {
+        layoutPlumes(1);
+        plumeStage = 1;
       }
       const flick = 1 + 0.09 * Math.sin(frame * 0.7);
       plume.scale.set(0.85, flick * 1.9, 0.85);

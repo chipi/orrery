@@ -195,7 +195,7 @@ function ring(n: number, r: number): [number, number][] {
  * `count`. `count` is authoritative from the verified engine spec, so ring
  * layouts render exactly that many nozzles.
  */
-function clusterOffsets(arrangement: EngineArrangement, count: number): [number, number][] {
+export function clusterOffsets(arrangement: EngineArrangement, count: number): [number, number][] {
   switch (arrangement) {
     case 'single':
       return [[0, 0]];

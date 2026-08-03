@@ -93,10 +93,23 @@ function fairingHalf(
   thetaStart: number,
   mat: THREE.Material,
 ): THREE.Mesh {
-  return new THREE.Mesh(
-    new THREE.ConeGeometry(rBody * 1.02, vehLen * 0.17, 24, 1, true, thetaStart, Math.PI),
-    mat,
-  );
+  // Rounded ogive (payload bay + curved nose), not a sharp cone — the real
+  // silhouette. Centered like the old ConeGeometry (base low, tip high) so
+  // every caller's `position.y` still lands correctly.
+  const fR = rBody * 1.04;
+  const fH = vehLen * 0.17;
+  const y0 = -fH / 2;
+  const pts: THREE.Vector2[] = [new THREE.Vector2(fR, y0), new THREE.Vector2(fR, y0 + fH * 0.38)];
+  for (let i = 1; i <= 10; i++) {
+    const t = i / 10;
+    pts.push(
+      new THREE.Vector2(
+        Math.max(fR * Math.cos((t * Math.PI) / 2) ** 0.72, fR * 0.03),
+        y0 + fH * (0.38 + 0.62 * t),
+      ),
+    );
+  }
+  return new THREE.Mesh(new THREE.LatheGeometry(pts, 28, thetaStart, Math.PI), mat);
 }
 
 /**
@@ -215,7 +228,7 @@ function buildGeneric(vehLen: number, boosterCount = 0): LauncherModel {
 function buildSaturnV(vehLen: number): LauncherModel {
   const spec = getLauncherEngines('saturn-v')!;
   const pal = agencyPalette('NASA');
-  const r = vehLen * 0.075; // stout
+  const r = vehLen * 0.05; // Saturn V is stubby (~11:1) but not this fat
   const root = new THREE.Group();
 
   // S-IC body wears the NASA livery (roll pattern + USA + flag); a ribbed
@@ -629,14 +642,11 @@ function buildSoyuz(vehLen: number): LauncherModel {
   upperStage.add(upperEng);
   root.add(upperStage);
 
+  // Payload shroud — the crewed sphere (Vostok/Voskhod) + Soyuz payloads fly
+  // under a rounded ogive shroud, not a pointed spike.
   const fairingBaseY = vehLen * 0.82;
-  const mkShell = (theta: number): THREE.Mesh =>
-    new THREE.Mesh(
-      new THREE.ConeGeometry(r * 0.95, vehLen * 0.18, 20, 1, true, theta, Math.PI),
-      plain,
-    );
-  const fairingL = mkShell(Math.PI / 2);
-  const fairingR = mkShell(-Math.PI / 2);
+  const fairingL = fairingHalf(r * 0.92, vehLen, Math.PI / 2, plain);
+  const fairingR = fairingHalf(r * 0.92, vehLen, -Math.PI / 2, plain);
   fairingL.position.y = fairingBaseY;
   fairingR.position.y = fairingBaseY;
   const fairingGroup = new THREE.Group();
@@ -1166,7 +1176,7 @@ function buildFalcon9(vehLen: number): LauncherModel {
   const black = heroDark(0x1a1c20);
   const frame = heroMetal(0xbfc4ca, 0.3);
   const eng = heroMetal(0x3a3f47, 0.5);
-  const r = vehLen * 0.045; // slender
+  const r = vehLen * 0.028; // slender — real F9 is ~19:1 length:diameter
   const root = new THREE.Group();
   const livMat = new THREE.MeshStandardMaterial({
     map: livery({
@@ -1236,10 +1246,26 @@ function buildFalcon9(vehLen: number): LauncherModel {
   );
   root.add(upperStage);
 
-  // ── Fairing clamshell.
-  const fairingBaseY = vehLen * 0.85;
-  const fairingL = fairingHalf(r, vehLen, Math.PI / 2, white);
-  const fairingR = fairingHalf(r, vehLen, -Math.PI / 2, white);
+  // ── Fairing: hammerhead ogive (F9's 5.2 m fairing is ~1.4× the 3.7 m body),
+  // a rounded bullet — cylindrical payload bay + ogive nose, not a sharp cone.
+  // Kept as clamshell halves so /fly can still split + jettison it.
+  const fairingBaseY = vehLen * 0.83;
+  const fR = r * 1.35;
+  const fH = vehLen * 0.16;
+  const ogive: THREE.Vector2[] = [new THREE.Vector2(fR, 0), new THREE.Vector2(fR, fH * 0.42)];
+  for (let i = 1; i <= 10; i++) {
+    const t = i / 10;
+    ogive.push(
+      new THREE.Vector2(
+        Math.max(fR * Math.cos((t * Math.PI) / 2) ** 0.72, fR * 0.03),
+        fH * (0.42 + 0.58 * t),
+      ),
+    );
+  }
+  const mkFairing = (thetaStart: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.LatheGeometry(ogive, 28, thetaStart, Math.PI), white);
+  const fairingL = mkFairing(Math.PI / 2);
+  const fairingR = mkFairing(-Math.PI / 2);
   fairingL.position.y = fairingBaseY;
   fairingR.position.y = fairingBaseY;
   const fairingGroup = new THREE.Group();
@@ -1282,7 +1308,7 @@ function buildAtlasV(vehLen: number, boosterCount = 3): LauncherModel {
   const frame = heroMetal(0xc7c2b6, 0.32);
   const dark = heroDark(0x1e2127);
   const eng = heroMetal(0x40454d, 0.5);
-  const r = vehLen * 0.06; // wider than generic
+  const r = vehLen * 0.045; // Atlas V core ~15:1 (SRBs add girth separately)
   const root = new THREE.Group();
 
   // ── First stage (CCB): uniform cylinder, RD-180 twin-bell at the base.
@@ -1567,10 +1593,20 @@ function buildTitanIIGLV(vehLen: number): LauncherModel {
   // ── Gemini capsule as the "fairing" — short truncated cone (wide base, narrow
   //    top) riding directly atop the second stage.
   const fairingBaseY = vehLen * 0.86;
-  const capsuleR = r * 1.08;
+  const capsuleR = r * 0.82; // Gemini (2.3 m) is narrower than the 3 m Titan body
   const mkShell = (theta: number): THREE.Mesh =>
     new THREE.Mesh(
-      new THREE.ConeGeometry(capsuleR, vehLen * 0.1, 20, 1, true, theta, Math.PI),
+      // blunt truncated cone (gumdrop), not a pointed spike
+      new THREE.CylinderGeometry(
+        capsuleR * 0.42,
+        capsuleR,
+        vehLen * 0.08,
+        20,
+        1,
+        true,
+        theta,
+        Math.PI,
+      ),
       plain,
     );
   const fairingL = mkShell(Math.PI / 2);
@@ -1664,10 +1700,11 @@ function buildAtlasLV3B(vehLen: number): LauncherModel {
   // ── Mercury capsule as the "fairing". Short truncated cone (bell-shape) +
   //    thin escape tower spike above it (mirrors Saturn V escape tower).
   const fairingBaseY = vehLen * 0.81;
-  const capR = rTop * 1.4;
+  const capR = rTop * 1.0; // small Mercury capsule — not a giant wide cone
   const mkShell = (theta: number): THREE.Mesh =>
     new THREE.Mesh(
-      new THREE.ConeGeometry(capR, vehLen * 0.14, 20, 1, true, theta, Math.PI),
+      // blunt bell (truncated cone), not a pointed spike
+      new THREE.CylinderGeometry(capR * 0.4, capR, vehLen * 0.085, 20, 1, true, theta, Math.PI),
       p.accent,
     );
   const fairingL = mkShell(Math.PI / 2);
@@ -1764,9 +1801,13 @@ function buildMercuryRedstone(vehLen: number): LauncherModel {
 
   // ── Mercury capsule + escape tower as the "fairing".
   const fairingBaseY = vehLen * 0.78;
-  const capR = r * 0.7;
+  const capR = r * 0.92; // Mercury (1.9 m) ≈ the 1.8 m Redstone body
   const mkShell = (theta: number): THREE.Mesh =>
-    new THREE.Mesh(new THREE.ConeGeometry(capR, vehLen * 0.1, 20, 1, true, theta, Math.PI), plain);
+    new THREE.Mesh(
+      // blunt bell, not a pointed spike
+      new THREE.CylinderGeometry(capR * 0.4, capR, vehLen * 0.075, 20, 1, true, theta, Math.PI),
+      plain,
+    );
   const fairingL = mkShell(Math.PI / 2);
   const fairingR = mkShell(-Math.PI / 2);
   fairingL.position.y = fairingBaseY;
@@ -1846,7 +1887,7 @@ function cnsaKit(stack: boolean): {
 function buildLongMarch2F(vehLen: number): LauncherModel {
   const spec = getLauncherEngines('long-march-2f')!;
   const k = cnsaKit(true);
-  const r = vehLen * 0.052;
+  const r = vehLen * 0.03; // CZ-2F 3.35 m core ~18:1 (crewed Shenzhou stack)
   const root = new THREE.Group();
 
   const booster = new THREE.Group();
@@ -1882,10 +1923,20 @@ function buildLongMarch2F(vehLen: number): LauncherModel {
 
   // Capsule half-shells (Shenzhou) + escape tower above — mirrors Saturn V idiom.
   const fairingBaseY = vehLen * 0.86;
-  const capsuleR = r * 1.06;
+  const capsuleR = r * 1.15; // Shenzhou fairing/capsule sits wider than the slim core
   const mkShell = (theta: number): THREE.Mesh =>
     new THREE.Mesh(
-      new THREE.ConeGeometry(capsuleR, vehLen * 0.1, 20, 1, true, theta, Math.PI),
+      // blunt shroud/capsule (truncated cone), not a pointed spike
+      new THREE.CylinderGeometry(
+        capsuleR * 0.42,
+        capsuleR,
+        vehLen * 0.09,
+        20,
+        1,
+        true,
+        theta,
+        Math.PI,
+      ),
       k.plain,
     );
   const fairingL = mkShell(Math.PI / 2);
@@ -1925,7 +1976,7 @@ function buildLongMarch2F(vehLen: number): LauncherModel {
 function buildLongMarch3B(vehLen: number): LauncherModel {
   const spec = getLauncherEngines('long-march-3b')!;
   const k = cnsaKit(false);
-  const r = vehLen * 0.05;
+  const r = vehLen * 0.032; // CZ-3B 3.35 m core ~17:1
   const root = new THREE.Group();
 
   const booster = new THREE.Group();
@@ -2018,7 +2069,7 @@ function buildLongMarch3B(vehLen: number): LauncherModel {
 function buildLongMarch5(vehLen: number): LauncherModel {
   const spec = getLauncherEngines('long-march-5')!;
   const k = cnsaKit(false);
-  const r = vehLen * 0.07; // stout fat core
+  const r = vehLen * 0.048; // LM5 5 m core ~11:1 (boosters add girth)
   const root = new THREE.Group();
 
   const booster = new THREE.Group();
@@ -2163,7 +2214,7 @@ function isroKit(): {
 function buildPSLV(vehLen: number): LauncherModel {
   const spec = getLauncherEngines('pslv')!;
   const k = isroKit();
-  const r = vehLen * 0.046; // slender
+  const r = vehLen * 0.034; // PSLV 2.8 m ~16:1
   const root = new THREE.Group();
 
   const booster = new THREE.Group();
@@ -2351,7 +2402,7 @@ function buildMV(vehLen: number): LauncherModel {
   const frame = heroMetal(0x8a906e, 0.32);
   const dark = heroDark(0x30341f);
   const eng = heroMetal(0x3a3f47, 0.5);
-  const r = vehLen * 0.058; // stubby
+  const r = vehLen * 0.043; // M-V ~12:1
   const root = new THREE.Group();
 
   // First stage — wide solid segment with a single bell (all-solid, no cluster).
@@ -2549,7 +2600,7 @@ function buildStarship(vehLen: number): LauncherModel {
   const dark = pal.dark;
   const eng = pal.eng;
   const black = heroDark(0x14161a); // chine / heat-shield tiles
-  const r = vehLen * 0.07; // fat 9 m body
+  const r = vehLen * 0.04; // Starship 9 m body ~13:1 (chunky but not this fat)
   const root = new THREE.Group();
 
   // ── Super Heavy booster ──────────────────────────────────────────────────
@@ -2700,7 +2751,7 @@ function buildAriane1(vehLen: number): LauncherModel {
   const frame = heroMetal(0xc0c4ca, 0.3);
   const dark = heroDark(0x1e2126);
   const eng = heroMetal(0x40454d, 0.5);
-  const r = vehLen * 0.05;
+  const r = vehLen * 0.04; // Ariane 1 3.8 m ~13:1
   const root = new THREE.Group();
 
   // First stage (L140): uniform cylinder, 4 Viking engines in a quad.

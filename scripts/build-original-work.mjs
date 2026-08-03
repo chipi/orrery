@@ -88,19 +88,25 @@ const science = scanDiagrams('static/diagrams/science', '/diagrams/science');
 const fleetNames = Object.fromEntries(
   JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8')).map((e) => [e.id, e.name]),
 );
+const anatomyIdSet = new Set(JSON.parse(readFileSync('src/lib/anatomy-ids.json', 'utf8')));
 const anatomyArt = (() => {
   try {
-    return readdirSync('static/images/anatomy')
-      .filter((f) => f.endsWith('.webp'))
-      .sort()
-      .map((f) => {
-        const id = f.replace(/\.webp$/, '');
-        return {
-          title: fleetNames[id] ?? humanize(id),
-          file: `/images/anatomy/${f}`,
-          cover: false,
-        };
-      });
+    return (
+      readdirSync('static/images/anatomy')
+        // Only the canonical base `{id}.webp` are artworks; the width-suffixed
+        // responsive-ladder rungs ({id}-1280.webp …) are not (and some real ids
+        // end in a number, so filter by the id set, not a numeric-suffix regex).
+        .filter((f) => f.endsWith('.webp') && anatomyIdSet.has(f.replace(/\.webp$/, '')))
+        .sort()
+        .map((f) => {
+          const id = f.replace(/\.webp$/, '');
+          return {
+            title: fleetNames[id] ?? humanize(id),
+            file: `/images/anatomy/${f}`,
+            cover: false,
+          };
+        })
+    );
   } catch {
     return [];
   }

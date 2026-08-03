@@ -1,36 +1,27 @@
 /**
- * build-anatomy-webp.mjs — derive web-sized .webp display versions of the
- * generated spacecraft anatomy art (#367). The full-res .png originals are
- * kept alongside; the app + /colophon reference the .webp (≈10× smaller).
+ * build-anatomy-webp.mjs — derive the anatomy id manifest from the masters (#367).
  *
  *   node scripts/build-anatomy-webp.mjs
+ *
+ * Source of truth is now `masters/anatomy/{id}.webp` (full-res, git-LFS) — the
+ * legacy 1100px `original-assets/anatomy/*.png` archive was retired once the set
+ * was re-mastered at 4K and folded into the responsive ladder (RFC-030/ADR-080).
+ * The served display images (`static/images/anatomy/{id}.webp` + width-suffixed
+ * rungs) are produced by `scripts/vision/build-display-ladder.mjs` from the same
+ * masters — this script no longer resizes anything; it only emits the id list so
+ * `src/lib/spacecraft-diagrams.ts` derives its manifest automatically.
  */
-import { readdirSync, statSync, writeFileSync } from 'node:fs';
-import sharp from 'sharp';
+import { readdirSync, writeFileSync } from 'node:fs';
 
-// Full-res .png originals are kept in original-assets/ (committed as the
-// archival backup); the resized ~5 MB webp display set lives under static/
-// and is what the app + build actually serve.
-const SRC = 'original-assets/anatomy';
-const OUT = 'static/images/anatomy';
-const MAX = 1100; // longest edge — crisp at any panel/thumbnail size, small bytes
+const MASTERS = 'masters/anatomy';
 
-const pngs = readdirSync(SRC).filter((f) => f.endsWith('.png'));
-let done = 0;
-for (const f of pngs) {
-  const src = `${SRC}/${f}`;
-  const out = `${OUT}/${f.replace(/\.png$/, '.webp')}`;
-  await sharp(src)
-    .resize(MAX, MAX, { fit: 'inside', withoutEnlargement: true })
-    .webp({ quality: 82 })
-    .toFile(out);
-  const kb = (statSync(out).size / 1024).toFixed(0);
-  console.log(`${f.replace(/\.png$/, '')} → webp ${kb} KB`);
-  done++;
-}
+// Masters hold only the unsuffixed canonical `{id}.webp` (the width-suffixed
+// ladder rungs live under static/images, not here), and many real ids end in a
+// number (mars-3, soyuz-2, pioneer-10) — so take every .webp basename verbatim.
+const ids = readdirSync(MASTERS)
+  .filter((f) => f.endsWith('.webp'))
+  .map((f) => f.replace(/\.webp$/, ''))
+  .sort();
 
-// Emit the id list so src/lib/spacecraft-diagrams.ts derives its anatomy
-// manifest automatically — no hand-editing the set as art is added.
-const ids = pngs.map((f) => f.replace(/\.png$/, '')).sort();
 writeFileSync('src/lib/anatomy-ids.json', JSON.stringify(ids, null, 0) + '\n');
-console.log(`\n${done} anatomy webp derivatives written; ${ids.length} ids → anatomy-ids.json.`);
+console.log(`${ids.length} anatomy ids → src/lib/anatomy-ids.json (from ${MASTERS}).`);

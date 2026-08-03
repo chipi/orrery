@@ -94,16 +94,25 @@ Keep one watercolor ref + one pencil ref handy and reuse them across the batch.
 
 ---
 
-## 4. Download → resize → wire (per wave)
+## 4. Download → master → wire (per wave)
+
+The set was re-mastered at 4K and folded into the responsive ladder
+(RFC-030/ADR-080); `original-assets/anatomy/` was retired. Masters are now the
+source of truth. **Save the highest-res render you have** (upscale to ~4K via
+Higgsfield `upscale_image` if the generator capped it) as the master:
 
 ```bash
-# 1. Download each result PNG into the committed originals dir, named by id:
-curl -s -o original-assets/anatomy/<id>.png "<rawUrl>"
+# 1. Save the full-res render as the master (git-LFS tracked), named by id:
+#    (encode PNG → webp; keep it big — the ladder downscales from it)
+cwebp -q 90 <id>-4k.png -o masters/anatomy/<id>.webp   # or sharp/any encoder
 
-# 2. Resize to webp + regenerate the id manifest (anatomy-ids.json):
+# 2. Derive the served responsive ladder (base {id}.webp + width rungs) from it:
+node scripts/vision/build-display-ladder.mjs            # scope to masters/anatomy if iterating
+
+# 3. Regenerate the id manifest (anatomy-ids.json) from the masters:
 node scripts/build-anatomy-webp.mjs
 
-# 3. Regenerate the colophon bill-of-materials:
+# 4. Regenerate the colophon bill-of-materials:
 node scripts/build-original-work.mjs
 ```
 
@@ -126,12 +135,13 @@ Commit **only** the anatomy files (parallel agents work this repo — never
 `git add -A`):
 
 ```bash
-git add original-assets/anatomy static/images/anatomy src/lib/anatomy-ids.json \
-        static/data/original-work.json
+git add masters/anatomy static/images/anatomy static/data/image-ladder.json \
+        src/lib/anatomy-ids.json static/data/original-work.json
 ```
 
-Full-res PNGs live in `original-assets/anatomy/` (committed backup); the app
-serves the ~130 KB webp from `static/images/anatomy/`.
+Full-res masters live in `masters/anatomy/*.webp` (git-LFS, 4K); the app serves
+the responsive ladder (`static/images/anatomy/{id}.webp` + width rungs) via
+`<img srcset>`. The legacy `original-assets/anatomy/*.png` archive was purged.
 
 ---
 
@@ -175,11 +185,13 @@ instead), progress-7k-tg
 
 | Thing | Path |
 |---|---|
-| Generated originals (committed backup) | `original-assets/anatomy/*.png` |
-| Served display images | `static/images/anatomy/*.webp` |
-| Id manifest (auto-derived) | `src/lib/anatomy-ids.json` |
+| Full-res masters (git-LFS, 4K) | `masters/anatomy/*.webp` |
+| Served responsive ladder | `static/images/anatomy/{id}.webp` + `{id}-<w>.webp` |
+| Ladder manifest | `static/data/image-ladder.json` |
+| Id manifest (auto-derived from masters) | `src/lib/anatomy-ids.json` |
 | Resolver + visitor aliases | `src/lib/spacecraft-diagrams.ts` |
-| Resize + ids script | `scripts/build-anatomy-webp.mjs` |
+| Ladder builder | `scripts/vision/build-display-ladder.mjs` |
+| Ids script (from masters) | `scripts/build-anatomy-webp.mjs` |
 | Colophon bill-of-materials | `scripts/build-original-work.mjs` → `static/data/original-work.json` |
 | Consistency test | `src/lib/spacecraft-diagrams.test.ts` |
 | Fleet DETAIL tab render | `src/lib/components/FleetEntryPanel.svelte` |

@@ -252,8 +252,8 @@ Served display images are WebP, derived from the git-LFS `masters/` store — sm
 ### `build-anatomy-webp.mjs` — anatomy art manifest **(STANDING)**
 
 - **Command** `node scripts/build-anatomy-webp.mjs`
-- **What** Derives web-sized `.webp` (≈10× smaller, 1100 px longest edge) from the full-res `.png` anatomy originals in `original-assets/anatomy/` → `static/images/anatomy/`. Surfaced on the fleet DETAIL tab + `/colophon` (#367). Auto-derives `src/lib/anatomy-ids.json`.
-- **When** After generating new anatomy art.
+- **What** Auto-derives `src/lib/anatomy-ids.json` from the `masters/anatomy/*.webp` basenames (the 4K masters, git-LFS). The served display images (`static/images/anatomy/{id}.webp` + width rungs) come from `scripts/vision/build-display-ladder.mjs` (RFC-030/ADR-080) — this script no longer resizes. The legacy `original-assets/anatomy/*.png` archive was retired once the set was re-mastered at 4K. Surfaced on the fleet DETAIL tab + `/colophon` (#367).
+- **When** After adding/re-mastering anatomy art (rebuild the ladder first).
 - **Gotchas** This is NOT the photo pipeline — it's AI-generated watercolor/pencil cutaways. To generate more without style drift, follow [`docs/anatomy-art-runbook.md`](../../anatomy-art-runbook.md) (verbatim prompts, fixed model/aspect, reference-image anti-drift). Do NOT hand-edit `anatomy-ids.json` — it's regenerated here.
 - **State** STANDING.
 

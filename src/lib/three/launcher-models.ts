@@ -805,7 +805,7 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   //    the LO2 feedline + cable tray running down the +X face. (in `booster`.)
   const booster = new THREE.Group();
   const rET = r * 1.15;
-  const etLen = vehLen * 0.74;
+  const etLen = vehLen * 0.82;
   const etY = vehLen * 0.05;
   const et = new THREE.Mesh(new THREE.CylinderGeometry(rET * 0.97, rET, etLen, 40), tank);
   et.position.y = etY + etLen / 2;
@@ -887,7 +887,7 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   const rFus = r * 0.86; // chunky, wide body
   const oz = rET + rFus * 0.66; // belly nestles against the tank
   const yA = vehLen * 0.055; // aft (engine plane)
-  const bodyLen = vehLen * 0.34; // SHORT fuselage: aft → nose base
+  const bodyLen = vehLen * 0.5; // fuselage: aft → nose base
   const yNoseBase = yA + bodyLen;
 
   // Fuselage — a short, wide, flattened white body (much wider than deep).
@@ -2020,8 +2020,8 @@ function buildLongMarch3B(vehLen: number): LauncherModel {
 
   // Bulbous ogive bullet shroud (lathe) + boat-tail — wider than core, LM-3B style.
   const fairingBaseY = vehLen * 0.845;
-  const fR = r * 1.3;
-  const shH = vehLen * 0.26;
+  const fR = r * 1.2;
+  const shH = vehLen * 0.19; // LM-3B fairing ~9.6 m of 55 m, not a quarter of the stack
   const prof: THREE.Vector2[] = [
     new THREE.Vector2(fR, 0),
     new THREE.Vector2(fR, shH * 0.44),
@@ -2243,7 +2243,7 @@ function buildPSLV(vehLen: number): LauncherModel {
   root.add(booster);
   // Six PSOM solid strap-ons in their OWN group — jettison at strap-on burnout.
   const strapOnGroup = new THREE.Group();
-  strapOns(strapOnGroup, 6, r, vehLen * 0.22, vehLen, k.boost, k.eng);
+  strapOns(strapOnGroup, 6, r, vehLen * 0.36, vehLen, k.boost, k.eng);
   root.add(strapOnGroup);
 
   // PS2 / PS3 / PS4 stacked above as upper stage (slimmer).
@@ -2543,8 +2543,8 @@ function buildH3(vehLen: number): LauncherModel {
 
   // Bulbous 5.4 m-class ogive fairing — wider than the core.
   const fairingBaseY = vehLen * 0.865;
-  const fR = r * 1.35;
-  const shH = vehLen * 0.28;
+  const fR = r * 1.1; // H3 5.4 m fairing ≈ the 5.2 m core, only slightly wider
+  const shH = vehLen * 0.25;
   const prof: THREE.Vector2[] = [
     new THREE.Vector2(fR, 0),
     new THREE.Vector2(fR, shH * 0.44),
@@ -2701,7 +2701,7 @@ function buildStarship(vehLen: number): LauncherModel {
 
   // ── Ogive nose as a non-splitting "fairing" (Starship's payload volume). ──
   const fairingBaseY = vehLen * 0.9;
-  const shH = vehLen * 0.2;
+  const shH = vehLen * 0.13;
   const prof: THREE.Vector2[] = [
     new THREE.Vector2(r, 0),
     new THREE.Vector2(r * 0.98, shH * 0.34),

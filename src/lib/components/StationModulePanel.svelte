@@ -12,6 +12,7 @@
   import LearnLink from './LearnLink.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
+  import { loadLadder, ladderSources } from '$lib/image-srcset';
 
   type StationLinks = NonNullable<StationModule['links']>;
   type Tab = 'overview' | 'gallery' | 'anatomy' | 'learn';
@@ -51,6 +52,12 @@
 
   let diagramPath = $derived(mod ? spacecraftDiagramPath(mod.id) : null);
   let hasDiagram = $derived(diagramPath !== null);
+
+  // Responsive WebP ladder for the anatomy diagram once the manifest loads;
+  // plain webp until then / when no ladder exists (RFC-030 Slice 3).
+  let ladderReady = $state(false);
+  loadLadder().then(() => (ladderReady = true));
+  let diagramLadder = $derived(ladderReady && diagramPath ? ladderSources(diagramPath) : null);
 
   let linksByTier = $derived.by(() => {
     if (!mod?.links)
@@ -229,13 +236,25 @@
       {:else if tab === 'anatomy'}
         {#if diagramPath}
           <div class="anatomy-frame">
-            <img
-              src={diagramPath}
-              alt="{mod.name} anatomy diagram"
-              class="anatomy-svg"
-              loading="lazy"
-              decoding="async"
-            />
+            {#if diagramLadder}
+              <img
+                src={diagramLadder.src}
+                srcset={diagramLadder.srcset}
+                sizes="(max-width: 640px) 100vw, 640px"
+                alt="{mod.name} anatomy diagram"
+                class="anatomy-svg"
+                loading="lazy"
+                decoding="async"
+              />
+            {:else}
+              <img
+                src={diagramPath}
+                alt="{mod.name} anatomy diagram"
+                class="anatomy-svg"
+                loading="lazy"
+                decoding="async"
+              />
+            {/if}
           </div>
           <p class="anatomy-caption">
             Hand-drawn schematic showing the spacecraft's named subsystems. Not to scale —

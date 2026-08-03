@@ -4,6 +4,7 @@
   import { base } from '$app/paths';
   import { getBadges } from '$lib/data';
   import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
+  import { loadLadder, ladderSources } from '$lib/image-srcset';
   import { track, trackGalleryImageOpen } from '$lib/analytics';
   import type { FleetEntry, FleetSiteLink } from '$types/fleet';
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
@@ -87,6 +88,14 @@
   // Exploded-stage watercolor cutaway — a richer companion to the pencil
   // anatomy, shown alongside it in the DETAIL tab for launch vehicles.
   let cutawayPath = $derived(entry ? launcherCutawayPath(entry.id) : null);
+
+  // Upgrade the pencil anatomy + exploded cutaway to their responsive WebP
+  // ladders once the manifest loads; plain webp until then / when no ladder
+  // exists (RFC-030 Slice 3, mirrors PanelHeroImage).
+  let ladderReady = $state(false);
+  loadLadder().then(() => (ladderReady = true));
+  let diagramLadder = $derived(ladderReady && diagramPath ? ladderSources(diagramPath) : null);
+  let cutawayLadder = $derived(ladderReady && cutawayPath ? ladderSources(cutawayPath) : null);
 
   let hasGallery = $derived(gallery.length > 0);
   let hasVideos = $derived(videos.length > 0);
@@ -565,12 +574,23 @@
               onclick={() => (lightboxSrc = diagramPath)}
               aria-label="Open {entry.name} anatomy full-size"
             >
-              <img
-                src={diagramPath}
-                alt="Anatomy diagram for {entry.name}"
-                loading="lazy"
-                decoding="async"
-              />
+              {#if diagramLadder}
+                <img
+                  src={diagramLadder.src}
+                  srcset={diagramLadder.srcset}
+                  sizes="(max-width: 640px) 100vw, 640px"
+                  alt="Anatomy diagram for {entry.name}"
+                  loading="lazy"
+                  decoding="async"
+                />
+              {:else}
+                <img
+                  src={diagramPath}
+                  alt="Anatomy diagram for {entry.name}"
+                  loading="lazy"
+                  decoding="async"
+                />
+              {/if}
             </button>
             <p class="anatomy-caption">{m.fleet_anatomy_caption()}</p>
           </div>
@@ -583,12 +603,23 @@
               onclick={() => (lightboxSrc = cutawayPath)}
               aria-label="Open {entry.name} exploded cutaway full-size"
             >
-              <img
-                src={cutawayPath}
-                alt="Exploded-stage cutaway for {entry.name}"
-                loading="lazy"
-                decoding="async"
-              />
+              {#if cutawayLadder}
+                <img
+                  src={cutawayLadder.src}
+                  srcset={cutawayLadder.srcset}
+                  sizes="(max-width: 640px) 100vw, 640px"
+                  alt="Exploded-stage cutaway for {entry.name}"
+                  loading="lazy"
+                  decoding="async"
+                />
+              {:else}
+                <img
+                  src={cutawayPath}
+                  alt="Exploded-stage cutaway for {entry.name}"
+                  loading="lazy"
+                  decoding="async"
+                />
+              {/if}
             </button>
             <p class="anatomy-caption">{m.fleet_exploded_caption()}</p>
           </div>

@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["/orrery/_app/immutable/chunks/Bhnrb0gJ2.js","/orrery/_app/immutable/chunks/BDdlKBnh.js"])))=>i.map(i=>d[i]);
+import{t as e}from"./HclGiUj8.js";import{r as t}from"./BDdlKBnh.js";var n=t(`Share`,{web:()=>e(()=>import(`./Bhnrb0gJ2.js`).then(e=>new e.ShareWeb),__vite__mapDeps([0,1]),import.meta.url)});export{n as Share};

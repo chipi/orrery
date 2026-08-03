@@ -37,6 +37,19 @@ export interface CoastState {
   rev: number;
 }
 
+/** Live camera state for the DebugPanel coast-camera view + __flyCoastCamDebug. */
+export interface CoastCamDebug {
+  shot: string;
+  shotIndex: number;
+  shotCount: number;
+  fraction: number;
+  rev: number;
+  suborbital: boolean;
+  camPos: [number, number, number];
+  lookAt: [number, number, number];
+  camDistKm: number;
+}
+
 export interface LeoCoastSceneOptions {
   container: HTMLElement;
   aspect: number;
@@ -57,6 +70,8 @@ export interface LeoCoastScene extends FlightPhaseScene<CoastState> {
   /** Toggle the centripetal-acceleration arrow. Orbit-specific — centripetal is
    *  the role gravity plays, not a `ForceKey`, so it gets its own control. */
   setCentripetalVisible(on: boolean): void;
+  /** Live camera + active-shot state for the DebugPanel (dev-only). */
+  getCameraDebug(): CoastCamDebug | null;
 }
 
 /** Rotate a local-equatorial orbit point into the inclined plane (about +X). */
@@ -221,6 +236,16 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   const camLookAt = new THREE.Vector3(0, 0, 0);
   camera.lookAt(camLookAt);
 
+  // Active shot index over the coast — SINGLE source (the pose + the debug
+  // readout both call it, so they can never drift). Suborbital hops get 2 shots
+  // (there's little time); full orbits get the 4-shot establish→track→limb→
+  // ground-track sequence.
+  const SHOT_NAMES = opts.suborbital
+    ? ['ESTABLISH', 'TRACK']
+    : ['ESTABLISH', 'TRACK', 'LIMB', 'GROUND-TRACK'];
+  const shotIndexAt = (f: number): number =>
+    opts.suborbital ? (f < 0.5 ? 0 : 1) : f < 0.28 ? 0 : f < 0.55 ? 1 : f < 0.82 ? 2 : 3;
+
   type CoastShot = { pos: THREE.Vector3; target: THREE.Vector3 };
   const coastShotPose = (f: number, pos: THREE.Vector3, radial: THREE.Vector3): CoastShot => {
     // In-plane basis around the capsule: tangent (velocity) + side.
@@ -229,17 +254,7 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
     );
     const tangent = ahead2.clone().sub(pos).normalize();
     const side = tangent.clone().cross(radial).normalize();
-    const shot = opts.suborbital
-      ? f < 0.5
-        ? 0
-        : 1
-      : f < 0.28
-        ? 0
-        : f < 0.55
-          ? 1
-          : f < 0.82
-            ? 2
-            : 3;
+    const shot = shotIndexAt(f);
     switch (shot) {
       case 1: // TRACK — trail behind + above the capsule
         return {
@@ -273,6 +288,7 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   };
 
   let earthSpin = 0;
+  let camDebug: CoastCamDebug | null = null;
 
   const setState = (s: CoastState): void => {
     // Hybrid rule: the rendered angle sweeps `renderedLoops` loops over the coast;
@@ -329,6 +345,20 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
     camera.position.lerp(shot.pos, 0.06);
     camLookAt.lerp(shot.target, 0.06);
     camera.lookAt(camLookAt);
+
+    // Debug mirror for the DebugPanel + __flyCoastCamDebug hook (dev-only).
+    const si = shotIndexAt(s.coastFraction);
+    camDebug = {
+      shot: SHOT_NAMES[si] ?? String(si),
+      shotIndex: si,
+      shotCount: SHOT_NAMES.length,
+      fraction: s.coastFraction,
+      rev: s.rev,
+      suborbital: !!opts.suborbital,
+      camPos: [camera.position.x, camera.position.y, camera.position.z],
+      lookAt: [camLookAt.x, camLookAt.y, camLookAt.z],
+      camDistKm: camera.position.distanceTo(pos),
+    };
   };
 
   const setAspect = (aspect: number): void => {
@@ -380,6 +410,7 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
     setForceVisible,
     setForcesVisible,
     setCentripetalVisible,
+    getCameraDebug: () => camDebug,
     // The shot schedule + per-frame lerp own the camera; snap is a no-op so a
     // scrub doesn't kick it back to the establishing wide every frame.
     snapCamera: () => {},

@@ -13,7 +13,11 @@
   import { onMount, onDestroy } from 'svelte';
   import { base } from '$app/paths';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
-  import { createLeoCoastScene, type LeoCoastScene } from '$lib/three/fly-leo-coast-scene';
+  import {
+    createLeoCoastScene,
+    type LeoCoastScene,
+    type CoastCamDebug,
+  } from '$lib/three/fly-leo-coast-scene';
   import { onLayerChange } from '$lib/science-layers';
   import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
   import { buildCapsuleById } from '$lib/three/capsule-models';
@@ -60,6 +64,15 @@
   // the day" — Marko's ask.
   let coastFraction = $state(0);
   let playing = $state(true);
+
+  // Camera-debug overlay (?debug=1): the coast analogue of the ascent camera
+  // debug, so this flight type's shot rig is visible + inspectable like the
+  // others. Mirrors the scene's live camera + active shot each frame.
+  const debugOn =
+    typeof window !== 'undefined' &&
+    new URLSearchParams(window.location.search).get('debug') === '1';
+  let camDbg = $state<CoastCamDebug | null>(null);
+  const fmt3 = (v: [number, number, number]): string => v.map((n) => n.toFixed(0)).join(', ');
   // When /fly's master clock drives us, mirror `t` into the render fraction.
   $effect(() => {
     if (externalClock) coastFraction = Math.min(1, Math.max(0, t));
@@ -104,6 +117,12 @@
     });
     ar = createAscentRenderer(container, sceneObj);
 
+    if (debugOn && typeof window !== 'undefined') {
+      (
+        window as unknown as { __flyCoastCamDebug?: () => CoastCamDebug | null }
+      ).__flyCoastCamDebug = () => sceneObj?.getCameraDebug() ?? null;
+    }
+
     // Science-Lens force vectors — the orbit trio. Free-fall coast has no thrust
     // or drag, so only gravity (weight, inward), velocity (tangent), and the
     // centripetal acceleration gravity supplies are meaningful here.
@@ -123,6 +142,7 @@
       if (!externalClock && playing) coastFraction = Math.min(1, coastFraction + dt / PLAY_S);
       sceneObj!.setState({ coastFraction, metS: coastFraction * coast.coastDurationS, rev });
       ar!.render();
+      if (debugOn) camDbg = sceneObj!.getCameraDebug();
       if (!externalClock && playing && coastFraction >= 1) {
         finish();
         return;
@@ -146,6 +166,24 @@
 
 <div class="coast" class:hud-hidden={hudHidden}>
   <div class="canvas" bind:this={container}></div>
+
+  {#if debugOn && camDbg}
+    <div class="cam-debug">
+      <div class="cd-title">COAST CAMERA · {camDbg.suborbital ? 'SUBORBITAL' : 'ORBITAL'}</div>
+      <div class="cd-row">
+        <span>SHOT</span><b>{camDbg.shot}</b><span>{camDbg.shotIndex + 1}/{camDbg.shotCount}</span>
+      </div>
+      <div class="cd-strip">
+        {#each Array(camDbg.shotCount) as _, i (i)}
+          <span class="cd-seg" class:active={i === camDbg.shotIndex}></span>
+        {/each}
+      </div>
+      <div class="cd-row"><span>FRAC</span><b>{(camDbg.fraction * 100).toFixed(1)}%</b></div>
+      <div class="cd-row"><span>CAM</span><b>{fmt3(camDbg.camPos)}</b></div>
+      <div class="cd-row"><span>LOOK</span><b>{fmt3(camDbg.lookAt)}</b></div>
+      <div class="cd-row"><span>DIST</span><b>{camDbg.camDistKm.toFixed(0)} km</b></div>
+    </div>
+  {/if}
 
   {#if !hudHidden}
     <div class="hud">
@@ -256,6 +294,57 @@
   .canvas {
     width: 100%;
     height: 100%;
+  }
+  /* Coast camera-debug overlay (?debug=1) — the coast analogue of AscentCameraDebug. */
+  .cam-debug {
+    position: absolute;
+    top: 4.5rem;
+    left: 1.2rem;
+    z-index: 300;
+    pointer-events: none;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 0.62rem;
+    letter-spacing: 0.05em;
+    color: #9fe0ff;
+    background: rgba(6, 12, 22, 0.72);
+    border: 1px solid rgba(127, 212, 255, 0.3);
+    border-radius: 4px;
+    padding: 0.5rem 0.65rem;
+    display: grid;
+    gap: 0.22rem;
+    min-width: 190px;
+  }
+  .cd-title {
+    color: #7fd4ff;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.15rem;
+  }
+  .cd-row {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+  .cd-row span {
+    color: #6b7d94;
+  }
+  .cd-row b {
+    color: #eaf3ff;
+    font-weight: 500;
+  }
+  .cd-strip {
+    display: flex;
+    gap: 3px;
+    margin: 0.15rem 0;
+  }
+  .cd-seg {
+    flex: 1;
+    height: 4px;
+    background: rgba(127, 212, 255, 0.2);
+    border-radius: 2px;
+  }
+  .cd-seg.active {
+    background: #7fd4ff;
   }
   .hud {
     position: absolute;

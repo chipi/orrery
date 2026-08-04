@@ -65,15 +65,9 @@ jobs:
           echo "$audit_json" | python3 -c "
           import json,sys
           d=json.loads(sys.stdin.read() or '{}')
-          # GHSA-rgw5-rvv9-x895: brace-expansion DoS, reachable ONLY via the
-          # Sentry build-time bundler plugin glob (sveltekit -> vite-plugin ->
-          # bundler-plugins -> glob -> minimatch -> brace-expansion). Build-time
-          # only, not in the shipped static bundle. Bumping it needs a Docker
-          # Linux lockfile regen (macOS npm-audit-fix strips Linux-only
-          # optionals) - tracked to do at the next lockfile touch.
           # NOTE: keep this block ASCII with NO backticks - it lives inside a
           # bash double-quoted string, so backticks would run as a subshell.
-          ALLOWLIST={'GHSA-gv7w-rqvm-qjhr', 'GHSA-fx2h-pf6j-xcff', 'GHSA-rgw5-rvv9-x895'}
+          ALLOWLIST={'GHSA-gv7w-rqvm-qjhr', 'GHSA-fx2h-pf6j-xcff'}
           bad=[]
           for name, info in d.get('vulnerabilities', {}).items():
               for via in info.get('via', []):

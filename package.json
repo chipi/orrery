@@ -174,5 +174,10 @@
     "katex": "^0.17.0",
     "qrcode": "1.5.4",
     "three": "0.185.1"
+  },
+  "overrides": {
+    "@sentry/sveltekit": {
+      "brace-expansion": "5.0.9"
+    }
   }
 }

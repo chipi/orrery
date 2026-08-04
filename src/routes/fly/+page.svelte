@@ -221,6 +221,14 @@
   import { isLayerOn, onLayerChange, type LayerKey } from '$lib/science-layers';
   import { BoldArrow } from '$lib/three/bold-arrow';
   import { buildTubeFromPoints } from '$lib/three/glow-line';
+  import {
+    trajectoryTubeRadius,
+    shouldRebuildTube,
+    HELIO_TUBE_BOUNDS,
+    CISLUNAR_TUBE_BOUNDS,
+    HELIO_REBUILD_THRESHOLD,
+    CISLUNAR_REBUILD_THRESHOLD,
+  } from '$lib/three/trajectory-tube';
   import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
   import { track, trackMissionComplete } from '$lib/analytics';
 
@@ -281,13 +289,10 @@
   let launchT = $state(-T_MINUS_S);
   let launchSpeed = $state(5);
   let launchAvailable = $derived(hasLaunchProfile(mission.fleet_refs, mission.vehicle));
-  // #83 — trajectory-tube thickness invariant. A world-space tube radius reads
-  // FATTER the closer the camera gets; to keep constant *on-screen* thickness the
-  // radius MUST scale with camera distance (apparent px ≈ radius/dist ≈ const).
-  // This ONE coefficient drives both the heliocentric AND cislunar/earth tubes so
-  // every trajectory reads identically thin at every zoom. Never hard-code a fixed
-  // tube radius for a trajectory. See memory: fly-trajectory-line-thickness.
-  const TRAJ_TUBE_RADIUS_PER_CAMDIST = 0.00225;
+  // #83 — trajectory-tube thickness invariant now lives in
+  // $lib/three/trajectory-tube (pure + unit-tested): trajectoryTubeRadius()
+  // scales the world radius with camera distance so every trajectory reads
+  // identically thin at every zoom. Never hard-code a fixed tube radius.
   // The post-SECO injection burn for this mission (RFC-034 §3.1) — the kick /
   // upper stage that leaves parking orbit. Null when the mission has no
   // injection stage; the LaunchScene beat is then absent.
@@ -6985,14 +6990,9 @@
             flyUpdaters?.helio.rebuildTubeGeometry
           ) {
             const tubeUd = outLine.geometry.userData as { tubeRadius?: number };
-            // Halved per user feedback — trajectory line was reading too
-            // thick at all framings. clamp [0.09,0.8], default fallback 0.175.
-            const desiredRadius = Math.max(
-              0.09,
-              Math.min(0.8, camR * TRAJ_TUBE_RADIUS_PER_CAMDIST),
-            );
+            const desiredRadius = trajectoryTubeRadius(camR, HELIO_TUBE_BOUNDS);
             const currentRadius = tubeUd.tubeRadius ?? 0.175;
-            if (Math.abs(desiredRadius - currentRadius) > 0.05) {
+            if (shouldRebuildTube(desiredRadius, currentRadius, HELIO_REBUILD_THRESHOLD)) {
               outLine.geometry.dispose();
               outLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(outPts, desiredRadius);
               (outLine.geometry.userData as { tubeRadius?: number }).tubeRadius = desiredRadius;
@@ -7015,15 +7015,12 @@
           // zoom-in (the regression re-flagged). Rebuild each visible tube so its
           // radius tracks cislunarCamR → identical thin look at every zoom.
           if (viewMode === 'cislunar' && cislunarPhaseLines.size) {
-            const cisDesired = Math.max(
-              0.015,
-              Math.min(0.8, cislunarCamR * TRAJ_TUBE_RADIUS_PER_CAMDIST),
-            );
+            const cisDesired = trajectoryTubeRadius(cislunarCamR, CISLUNAR_TUBE_BOUNDS);
             for (const line of cislunarPhaseLines.values()) {
               if (!line.visible) continue;
               const ud = line.userData as { srcPts?: THREE.Vector3[]; tubeRadius?: number };
               if (!ud.srcPts || ud.srcPts.length < 2) continue;
-              if (Math.abs(cisDesired - (ud.tubeRadius ?? 0.16)) > 0.02) {
+              if (shouldRebuildTube(cisDesired, ud.tubeRadius ?? 0.16, CISLUNAR_REBUILD_THRESHOLD)) {
                 line.geometry.dispose();
                 line.geometry = buildTubeFromPoints(ud.srcPts, cisDesired);
                 ud.tubeRadius = cisDesired;

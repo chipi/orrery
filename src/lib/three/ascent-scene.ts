@@ -204,7 +204,11 @@ export function deployPayload(holder: THREE.Group, dp: number): void {
  *  fairing interior and re-centred on the body axis. Capsules are tagged
  *  `userData.isCapsule` so the ascent scene rides them exposed (no fairing/
  *  shroud/solar-deploy) — see the payload branch in setState. */
-export function buildPayload(spacecraftId: string | undefined, vehLen: number): THREE.Group {
+export function buildPayload(
+  spacecraftId: string | undefined,
+  vehLen: number,
+  bodyRadius?: number,
+): THREE.Group {
   const probe = spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null;
   const capsuleId =
     !probe && spacecraftId ? getEarthOrbitCoast(spacecraftId)?.capsuleId : undefined;
@@ -212,7 +216,15 @@ export function buildPayload(spacecraftId: string | undefined, vehLen: number): 
   const box = new THREE.Box3().setFromObject(model);
   const size = new THREE.Vector3();
   box.getSize(size);
-  const k = (vehLen * 0.19) / (Math.max(size.x, size.y, size.z) || 1);
+  // A capsule mates to the top of the stage, so its base diameter is at most the
+  // launcher body diameter (real capsules equal it or taper narrower via an
+  // adapter — never WIDER). Scale a capsule by its WIDTH against the body radius,
+  // not its largest dimension, so it can never end up fatter than the rocket
+  // (the Gemini-wider-than-Titan bug). Satellites still normalise to the fairing.
+  const k =
+    capsuleId && bodyRadius && bodyRadius > 0
+      ? (bodyRadius * 2 * 0.92) / (Math.max(size.x, size.z) || 1)
+      : (vehLen * 0.19) / (Math.max(size.x, size.y, size.z) || 1);
   const center = new THREE.Vector3();
   box.getCenter(center);
   model.scale.setScalar(k);
@@ -222,9 +234,20 @@ export function buildPayload(spacecraftId: string | undefined, vehLen: number): 
   if (capsuleId) model.position.y += (size.y * k) / 2;
   const holder = new THREE.Group();
   holder.add(model);
-  if (capsuleId) holder.userData.isCapsule = true;
+  if (capsuleId) {
+    holder.userData.isCapsule = true;
+    // Soviet/Chinese capsules flew under an aerodynamic nose fairing that
+    // jettisoned once past the atmosphere (Vostok's shroud dropped at ~T+2:34) —
+    // they did NOT ride a bare capsule exposed the way Mercury/Gemini/Apollo/
+    // Dragon did. Tag them so the scene rides them under a shroud, then exposes
+    // the capsule after jettison.
+    if (FAIRED_CAPSULES.has(capsuleId)) holder.userData.fairedCapsule = true;
+  }
   return holder;
 }
+
+/** Capsules that ascended under a jettisonable nose fairing (not exposed). */
+export const FAIRED_CAPSULES = new Set(['vostok', 'voskhod', 'soyuz', 'shenzhou']);
 
 export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const vehLen = opts.vehicleLengthKm ?? VEHICLE_LENGTH_KM;
@@ -426,15 +449,26 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const payloadBaseY = model.payloadMountY;
   vehicle.add(model.root);
 
+  // Measure the upper-stage body radius so a capsule payload is sized to the
+  // rocket it mates to (never wider than the body). Half the stage's X extent.
+  const _usBox = new THREE.Box3().setFromObject(upperStage);
+  const _usSize = new THREE.Vector3();
+  _usBox.getSize(_usSize);
+  const upperStageRadius = Math.max(_usSize.x, _usSize.z) / 2;
+
   // Payload — TWO forms (#2 / operator decision 2026-07-29): a compact STOWED
   // shroud while it rides the exposed stage (fairing gone → SECO), then the real
   // deployed spacecraft (dedicated model or generic bus) springing free + its
   // wings unfolding at separation. Real payloads ride folded under the fairing
   // and deploy AFTER sep — showing the deployed model bolted to the rocket read
   // wrong.
-  const payload = buildPayload(opts.spacecraftId, vehLen);
+  const payload = buildPayload(opts.spacecraftId, vehLen, upperStageRadius);
   // Crewed capsules ride exposed on top — no fairing, stowed shroud, or deploy.
   const isCapsulePayload = payload.userData.isCapsule === true;
+  // …except the Soviet/Chinese capsules, which rode under a nose fairing that
+  // jettisoned once past the atmosphere. They still separate at SECO like any
+  // capsule — they just wear a shroud on the way up.
+  const isFairedCapsule = payload.userData.fairedCapsule === true;
   payload.position.y = payloadBaseY;
   payload.visible = false;
   vehicle.add(payload);
@@ -442,6 +476,28 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   stowedPayload.position.y = payloadBaseY;
   stowedPayload.visible = false;
   vehicle.add(stowedPayload);
+
+  // Payload adapter — the connecting structure (spacecraft adapter / trunk /
+  // service section) between the capsule base and the top of the upper stage.
+  // Without it the capsule floats above the rocket with a visible gap. Built
+  // into the capsule holder so it rides + separates WITH the spacecraft (a
+  // Dragon keeps its trunk, an Apollo its SM). Only capsules — satellites carry
+  // their own adapter under the fairing.
+  if (isCapsulePayload) {
+    const capBox = new THREE.Box3().setFromObject(payload);
+    const capSize = new THREE.Vector3();
+    capBox.getSize(capSize);
+    const capsuleR = Math.max(capSize.x, capSize.z) / 2;
+    const gapH = payloadBaseY - _usBox.max.y;
+    if (gapH > vehLen * 0.005 && upperStageRadius > 0) {
+      const adapter = new THREE.Mesh(
+        new THREE.CylinderGeometry(capsuleR * 0.98, upperStageRadius, gapH, 28, 1, false),
+        new THREE.MeshStandardMaterial({ color: 0x363b43, roughness: 0.6, metalness: 0.5 }),
+      );
+      adapter.position.y = -gapH / 2; // holder-local: capsule base at 0, adapter below it
+      payload.add(adapter);
+    }
+  }
 
   // Separation-event bursts (flash + frost/debris puff) at each sep plane —
   // parented to the vehicle so they sit at the interface. Driven by sepProgress
@@ -711,7 +767,26 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // everything else rides folded under a jettisonable fairing.
     const pp = sepProgress(s.t, secoT, PAYLOAD_SEP_HOLD_S);
     stowedPayload.position.y = payloadBaseY;
-    if (isCapsulePayload) {
+    if (isFairedCapsule) {
+      // Nose-fairing capsule (Vostok/Voskhod/Soyuz/Shenzhou): a shroud covers the
+      // capsule through the atmosphere, clamshells away once above it (~40% of the
+      // way to orbit ≈ Vostok's real T+2:34), then the bare capsule coasts to SECO
+      // and separates. No stowed shroud + no solar-wing deploy — it's a capsule.
+      const jettT = secoT != null ? secoT * 0.42 : fairingT;
+      const fp = sepProgress(s.t, jettT, FAIRING_SEP_S);
+      fairingGroup.visible = fp < 1;
+      const spread = fp * vehLen * 2.4;
+      const rise = fairingBaseY + fp * vehLen * 1.2;
+      fairingHalfL.position.set(-spread, rise, 0);
+      fairingHalfR.position.set(spread, rise, 0);
+      fairingHalfL.rotation.z = fp * 1.3;
+      fairingHalfR.rotation.z = -fp * 1.3;
+      stowedPayload.visible = false;
+      // Capsule hidden under the shroud until jettison, then exposed to SECO.
+      payload.visible = jettT != null ? s.t >= jettT : true;
+      payload.position.y = payloadBaseY + pp * vehLen * 1.1;
+      payload.rotation.y = 0;
+    } else if (isCapsulePayload) {
       // Crewed capsule: exposed the whole ascent (no fairing, no stowed shroud,
       // no solar-wing deploy). At SECO it separates from the spent upper stage,
       // which drifts back the other way (below).
@@ -742,7 +817,18 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       payload.rotation.y = s.t * 0.12;
       deployPayload(payload, sepProgress(s.t, secoT, PAYLOAD_DEPLOY_S));
     }
-    upperStage.position.y = -pp * vehLen * 1.4;
+    if (isCapsulePayload) {
+      // A crewed capsule is a direct-insertion flight: it sprang free at SECO,
+      // so the spent upper stage must tumble AWAY + shrink (like the booster) —
+      // otherwise it lingers right beside the capsule and reads as "the capsule
+      // never separated / the launcher is what's in orbit" (the exact bug Marko
+      // flagged on Titan/Gemini). Only the spacecraft is left coasting.
+      upperStage.position.y = -pp * vehLen * 4.5;
+      upperStage.rotation.set(pp * 2.0, 0, pp * 1.0);
+      upperStage.scale.setScalar(1 - 0.34 * pp);
+    } else {
+      upperStage.position.y = -pp * vehLen * 1.4;
+    }
 
     // Separation bursts — the visible pyro/pusher event at each sep plane.
     boosterBurst.update(sepProgress(s.t, stagingT, BURST_S));
@@ -752,7 +838,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // Plume: only while a stage burns; re-parent to the firing stage,
     // flicker the length, taper in vacuum.
     const burning = s.stageIndex >= 0;
-    plume.visible = burning || injectionBurning;
+    // A capsule has already separated by the injection beat, so its spent stage
+    // must NOT re-light — only satellites ride the kick stage through injection.
+    const injecting = injectionBurning && !isCapsulePayload;
+    plume.visible = burning || injecting;
     if (burning) {
       const stageForPlume = s.stageIndex >= 1 ? 1 : 0;
       const firing = stageForPlume >= 1 ? model.upperPlumeAnchor : model.boosterPlumeAnchor;
@@ -770,7 +859,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       plume.scale.set(1, flick * vac, 1);
       // S1 plume emanates from the octaweb; S2 from its vacuum bell.
       plume.position.y = -(s.stageIndex >= 1 ? vehLen * 0.14 : vehLen * 0.3);
-    } else if (injectionBurning) {
+    } else if (injecting) {
       // Post-SECO injection: the kick/upper stage re-lights — a long, thin
       // vacuum plume from the upper bell (the payload is still attached).
       const firing = model.upperPlumeAnchor;
@@ -795,7 +884,23 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       ? activeShotAt(schedule, s.t)
       : { name: 'ascent' as const, progress: 0.5 };
     activeShot = shot.name;
-    const p = composeShot(activeShot, s, vehLen, shot.progress, opts.tuning?.[activeShot]);
+    // Capsule world position — feeds the separation/orbit shots so the camera
+    // tracks the spacecraft (not the empty vehicle origin) once the spent stage
+    // recedes. Rotate the payload's body-axis offset by the live vehicle attitude.
+    const capsuleFocus = isCapsulePayload
+      ? {
+          x: s.downrangeKm - payload.position.y * Math.sin(vehicle.rotation.z),
+          y: s.altKm + payload.position.y * Math.cos(vehicle.rotation.z),
+        }
+      : null;
+    const p = composeShot(
+      activeShot,
+      s,
+      vehLen,
+      shot.progress,
+      opts.tuning?.[activeShot],
+      capsuleFocus,
+    );
     if (!camS) {
       camS = { px: p.px, py: p.py, pz: p.pz, tx: p.tx, ty: p.ty, tz: p.tz, fov: p.fov };
     } else {

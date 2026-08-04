@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import * as THREE from 'three';
-import { buildGenericPayload, deployPayload, buildPayload } from './ascent-scene';
+import { buildGenericPayload, deployPayload, buildPayload, FAIRED_CAPSULES } from './ascent-scene';
 
 // Issue #2 — the generic bus rides stowed (wings folded ±90°, antenna folded down)
 // while attached, then swings its panels flat and its antenna upright (all → 0°)
@@ -77,6 +77,28 @@ describe('buildPayload', () => {
     expect(apollo.userData.isCapsule).toBe(true);
     const dragon = buildPayload('inspiration4', 1.2); // Falcon 9 / Crew Dragon
     expect(dragon.userData.isCapsule).toBe(true);
+  });
+
+  it('Soviet/Chinese capsule families are marked faired (ride under a nose shroud)', () => {
+    // Vostok/Voskhod/Soyuz/Shenzhou flew under a jettisonable nose fairing; the
+    // set is the source of truth the scene reads to ride them covered, not bare.
+    for (const id of ['vostok', 'voskhod', 'soyuz', 'shenzhou']) {
+      expect(FAIRED_CAPSULES.has(id)).toBe(true);
+    }
+    for (const id of ['mercury', 'gemini', 'apollo-cm', 'dragon']) {
+      expect(FAIRED_CAPSULES.has(id)).toBe(false);
+    }
+  });
+
+  it('a faired capsule is tagged fairedCapsule; an exposed one is not', () => {
+    // Integration on the headless-buildable capsule models (Soyuz/Shenzhou use a
+    // canvas texture unavailable in jsdom, so their membership is covered above).
+    const vostok = buildPayload('vostok-1', 1.2);
+    expect(vostok.userData.isCapsule).toBe(true);
+    expect(vostok.userData.fairedCapsule).toBe(true);
+    const mercury = buildPayload('friendship-7', 1.2);
+    expect(mercury.userData.isCapsule).toBe(true);
+    expect(mercury.userData.fairedCapsule).toBeUndefined();
   });
 
   it('interplanetary probe → dedicated model, NOT tagged a capsule', () => {

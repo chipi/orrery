@@ -127,24 +127,25 @@ function sphereConeHeatshield(
   return m;
 }
 
-/** A parachute: a hemispherical canopy with an alternating disk-gap-band look. */
-function parachuteCanopy(radius: number, p: Palette, mountY: number): THREE.Group {
+/** A striped canopy dome (no lines) — a shallow, wider-than-tall spherical cap,
+ *  like a real ringsail/ribbon canopy at full inflation, not a balloon. */
+function canopyDome(radius: number, p: Palette): THREE.Group {
   const g = new THREE.Group();
   const canopy = new THREE.Mesh(
-    new THREE.SphereGeometry(radius, 24, 12, 0, Math.PI * 2, 0, Math.PI / 2),
+    new THREE.SphereGeometry(radius, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2),
     p.chute,
   );
   g.add(canopy);
-  // Two red bands so the chute reads as a Mars disk-gap-band chute.
+  // Two contrasting bands so the canopy reads as a striped recovery chute.
   for (const [t0, t1] of [
-    [0.62, 0.74],
-    [0.86, 0.98],
+    [0.5, 0.62],
+    [0.76, 0.88],
   ] as const) {
     const band = new THREE.Mesh(
       new THREE.SphereGeometry(
-        radius * 1.002,
-        24,
-        6,
+        radius * 1.004,
+        32,
+        8,
         0,
         Math.PI * 2,
         (Math.PI / 2) * t0,
@@ -154,16 +155,45 @@ function parachuteCanopy(radius: number, p: Palette, mountY: number): THREE.Grou
     );
     g.add(band);
   }
-  // Risers converging to the mount below.
-  const riserMat = new THREE.LineBasicMaterial({ color: 0xcfd3d8 });
-  const riser = new THREE.BufferGeometry();
+  g.scale.y = 0.62; // flatten the hemisphere into a shallow dome
+  return g;
+}
+
+/** Thin suspension lines fanning from a canopy rim (centred on `apex`, rim
+ *  radius `rimR`) down to a shared confluence knot. Long + fine, like the real
+ *  thing — never a fat short cone. */
+function suspensionLines(
+  rimR: number,
+  apex: THREE.Vector3,
+  confluence: THREE.Vector3,
+  count = 22,
+): THREE.LineSegments {
+  const mat = new THREE.LineBasicMaterial({ color: 0xd9dde2, transparent: true, opacity: 0.5 });
   const pts: number[] = [];
-  for (let i = 0; i < 8; i++) {
-    const a = (i / 8) * Math.PI * 2;
-    pts.push(Math.cos(a) * radius * 0.9, 0, Math.sin(a) * radius * 0.9, 0, mountY, 0);
+  for (let i = 0; i < count; i++) {
+    const a = (i / count) * Math.PI * 2;
+    pts.push(
+      apex.x + Math.cos(a) * rimR,
+      apex.y,
+      apex.z + Math.sin(a) * rimR,
+      confluence.x,
+      confluence.y,
+      confluence.z,
+    );
   }
-  riser.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
-  g.add(new THREE.LineSegments(riser, riserMat));
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
+  return new THREE.LineSegments(geo, mat);
+}
+
+/** A single centred parachute (canopy + fine lines to a knot at `mountY`) —
+ *  used by the planetary aeroshell stacks (Mars / Venus / Titan / Jupiter). */
+function parachuteCanopy(radius: number, p: Palette, mountY: number): THREE.Group {
+  const g = new THREE.Group();
+  g.add(canopyDome(radius, p));
+  g.add(
+    suspensionLines(radius * 0.9, new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, mountY, 0), 18),
+  );
   return g;
 }
 
@@ -331,7 +361,12 @@ function resolveLander(siteId: string, body: DescentBody): THREE.Group {
   if (body === 'comet_67p') return buildPhilaeLander();
   // Tier-1: the earth descent profile's siteId is the mission id — look up its
   // capsule family from the coast registry (falls back to Mercury).
-  if (body === 'earth') return buildCapsuleById(getEarthOrbitCoast(siteId)?.capsuleId ?? 'mercury');
+  if (body === 'earth') {
+    const capsuleId = getEarthOrbitCoast(siteId)?.capsuleId ?? 'mercury';
+    const cap = buildCapsuleById(capsuleId);
+    cap.userData.capsuleId = capsuleId; // read by buildEarthCapsuleStack for chute count
+    return cap;
+  }
   return buildMarsLanderModel(siteId, 'lander', undefined, '#d0a884');
 }
 
@@ -733,14 +768,44 @@ const BUILDERS: Record<string, StackBuilder> = {
 /** Earth capsule re-entry (Tier-1: Mercury/Gemini/Apollo CM/Soyuz/Dragon) — an
  *  ablative aeroshell entry, then drogue + main canopies to a splashdown/ground
  *  touchdown. No retro (aerodynamic; a Soyuz soft-landing burst can be added). */
+/** Main-chute count per capsule — real recovery configurations. */
+const CAPSULE_MAIN_CHUTES: Record<string, number> = {
+  'apollo-cm': 3,
+  dragon: 4,
+};
+
 function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentModel {
   const p = palette();
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
 
-  m.parachuteBaseY = vehLen * 0.9;
-  m.parachute = parachuteCanopy(vehLen * 0.7, p, -vehLen * 0.86);
-  m.parachute.position.y = m.parachuteBaseY;
+  // Recovery chutes, modelled off the Apollo-14-under-three-mains photo: a
+  // cluster of shallow canopies riding HIGH on long, fine suspension lines that
+  // converge to a knot just above the capsule. The capsule hangs small and far
+  // below — not a fat balloon sitting on a short stub. Canopy count follows the
+  // real capsule (Apollo 3, Dragon 4, everything else a single main).
+  const capsuleId = (lander.userData.capsuleId as string | undefined) ?? 'mercury';
+  const n = CAPSULE_MAIN_CHUTES[capsuleId] ?? 1;
+  const canopyR = vehLen * (n >= 3 ? 1.0 : 1.4);
+  const apexY = vehLen * 3.0; // canopies ride high → long elegant leash
+  const confluence = new THREE.Vector3(0, vehLen * 0.15, 0); // knot just above capsule
+  const spread = n > 1 ? canopyR * 0.82 : 0;
+  const chutes = new THREE.Group();
+  for (let i = 0; i < n; i++) {
+    const ang = n > 1 ? (i / n) * Math.PI * 2 : 0;
+    const cx = Math.cos(ang) * spread;
+    const cz = Math.sin(ang) * spread;
+    const dome = canopyDome(canopyR, p);
+    dome.position.set(cx, apexY, cz);
+    if (n > 1) {
+      dome.rotation.z = -Math.cos(ang) * 0.16; // fan the cluster outward a touch
+      dome.rotation.x = Math.sin(ang) * 0.16;
+    }
+    chutes.add(dome);
+    chutes.add(suspensionLines(canopyR * 0.92, new THREE.Vector3(cx, apexY, cz), confluence, 24));
+  }
+  m.parachute = chutes;
+  m.parachuteBaseY = 0; // canopies already placed at apexY inside the group
   m.root.add(m.parachute);
 
   lander.position.y = -vehLen * 0.02;

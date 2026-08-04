@@ -260,9 +260,16 @@ export function composeShot(
   vehLen: number,
   p = 0.5,
   tune: ShotTune = NO_TUNE,
+  focus?: { x: number; y: number } | null,
 ): CameraPose {
   const dr = s.downrangeKm;
   const alt = s.altKm;
+  // When the scene supplies a focus point (the separated capsule's world
+  // position) the payload/orbit shots track IT instead of the empty vehicle
+  // origin — otherwise the spacecraft drifts out of frame once the spent stage
+  // recedes and the shot goes empty. Falls back to the vehicle for satellites.
+  const fx = focus?.x ?? dr;
+  const fy = focus?.y ?? alt;
   const e = ease(p);
   // Subtle handheld wobble — tiny, time-keyed, so a locked frame still breathes.
   const wob = vehLen * 0.04;
@@ -381,38 +388,35 @@ export function composeShot(
     }
     case 'separation': {
       // TIGHT hero shot of the spacecraft springing free of the spent stage.
-      // The payload/stage sit ~1 unit UP THE BODY axis from the origin, which
-      // is world-downrange once the stack is horizontal at SECO — so target
-      // that body-offset point (robust to attitude), framed close from the side.
-      // At orbital insertion the stack is ~horizontal, so the payload leads
-      // downrange (+x) and the spent stage trails behind — frame the GAP
-      // between them (the vehicle origin) from the side + slightly above,
-      // pulled back so BOTH bodies read as they drift apart, Earth limb below.
-      const d = vehLen * (3.7 - 0.6 * e);
+      // Track the capsule focus (when supplied) from the side + slightly above,
+      // close enough that the small capsule reads as the hero while the spent
+      // stage tumbles away behind it. Falls back to the vehicle for satellites.
+      const d = vehLen * (focus ? 2.2 - 0.4 * e : 3.7 - 0.6 * e);
       const ang = -0.34 - p * 0.28;
       out = pose(
-        dr + Math.sin(ang) * d,
-        alt + d * 0.32,
+        fx + Math.sin(ang) * d,
+        fy + d * 0.3,
         Math.cos(ang) * d,
-        dr,
-        alt + vehLen * 0.15,
+        fx,
+        fy + (focus ? 0 : vehLen * 0.15),
         0,
-        40,
+        focus ? 42 : 40,
       );
       break;
     }
     case 'orbit': {
-      // Settled in orbit — the payload coasting above the curved limb, a slow
-      // serene dolly-back. Locked to the VEHICLE (not altitude) so the craft
-      // stays a visible hero glinting over the Earth, space opening up behind.
-      const d = vehLen * (3.6 + 1.8 * e);
+      // Settled in orbit — the spacecraft coasting above the curved limb, a slow
+      // serene dolly-back. Locked to the capsule focus (when supplied) so the
+      // craft stays a visible hero glinting over the Earth, the spent stage long
+      // gone. Falls back to the vehicle for satellites.
+      const d = vehLen * (focus ? 2.0 + 0.9 * e : 3.6 + 1.8 * e);
       const ang = -0.36 - p * 0.24;
       out = pose(
-        dr + Math.sin(ang) * d,
-        alt + d * 0.44,
+        fx + Math.sin(ang) * d,
+        fy + d * 0.42,
         Math.cos(ang) * d,
-        dr,
-        alt + vehLen * 0.5,
+        fx,
+        fy + (focus ? 0 : vehLen * 0.5),
         0,
         40,
       );

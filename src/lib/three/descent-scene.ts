@@ -440,7 +440,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       case 'ballistic_entry':
         return { dist: 9, height: 2.4, fov: 54 };
       case 'parachute':
-        return { dist: 6, height: 1.6, fov: 48 };
+        // Frame the whole tall chute stack (capsule → long lines → canopy). The
+        // look-at is raised to the stack middle below (not the default look-below).
+        return { dist: 9, height: 1.7, fov: 52 };
       case 'aeroshell_descent':
         return { dist: 7, height: 1.2, fov: 50 };
       case 'powered_retro':
@@ -609,8 +611,13 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const py = s.altKm + sh.height * vehLen;
     const pz = Math.cos(angle) * dist;
     // Look slightly below the lander so the surface stays in frame as it nears.
+    // Exception: under parachute the stack towers ~3·vehLen above the capsule, so
+    // look UP at its middle instead — otherwise the canopy is cut off at frame top.
     const tx = 0;
-    const ty = s.altKm - Math.min(s.altKm, dist * 0.25);
+    const ty =
+      s.phaseKind === 'parachute'
+        ? s.altKm + 1.7 * vehLen
+        : s.altKm - Math.min(s.altKm, dist * 0.25);
     const tz = 0;
     if (!camS) {
       camS = { px, py, pz, tx, ty, tz, fov: sh.fov };

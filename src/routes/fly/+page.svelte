@@ -281,6 +281,13 @@
   let launchT = $state(-T_MINUS_S);
   let launchSpeed = $state(5);
   let launchAvailable = $derived(hasLaunchProfile(mission.fleet_refs, mission.vehicle));
+  // #83 — trajectory-tube thickness invariant. A world-space tube radius reads
+  // FATTER the closer the camera gets; to keep constant *on-screen* thickness the
+  // radius MUST scale with camera distance (apparent px ≈ radius/dist ≈ const).
+  // This ONE coefficient drives both the heliocentric AND cislunar/earth tubes so
+  // every trajectory reads identically thin at every zoom. Never hard-code a fixed
+  // tube radius for a trajectory. See memory: fly-trajectory-line-thickness.
+  const TRAJ_TUBE_RADIUS_PER_CAMDIST = 0.00225;
   // The post-SECO injection burn for this mission (RFC-034 §3.1) — the kick /
   // upper stage that leaves parking orbit. Null when the mission has no
   // injection stage; the LaunchScene beat is then absent.
@@ -3096,6 +3103,10 @@
         }
         line.geometry.dispose();
         line.geometry = buildTubeFromPoints(tubePts, 0.16);
+        // Keep the source points + current radius on the line so the per-frame
+        // zoom-invariant thickness pass (#83) can rebuild the tube as camR drifts.
+        line.userData.srcPts = tubePts;
+        line.userData.tubeRadius = 0.16;
         // Reset uProgress on rebuild; the per-frame updater will set
         // it correctly next tick based on current met_days.
         const mat = line.material as THREE.ShaderMaterial;
@@ -6975,9 +6986,11 @@
           ) {
             const tubeUd = outLine.geometry.userData as { tubeRadius?: number };
             // Halved per user feedback — trajectory line was reading too
-            // thick at all framings. 0.0045 → 0.00225, clamp [0.18,1.6]
-            // → [0.09,0.8], default fallback 0.35 → 0.175.
-            const desiredRadius = Math.max(0.09, Math.min(0.8, camR * 0.00225));
+            // thick at all framings. clamp [0.09,0.8], default fallback 0.175.
+            const desiredRadius = Math.max(
+              0.09,
+              Math.min(0.8, camR * TRAJ_TUBE_RADIUS_PER_CAMDIST),
+            );
             const currentRadius = tubeUd.tubeRadius ?? 0.175;
             if (Math.abs(desiredRadius - currentRadius) > 0.05) {
               outLine.geometry.dispose();
@@ -6991,6 +7004,29 @@
                 );
                 (retLine.geometry.userData as { tubeRadius?: number }).tubeRadius =
                   desiredRadius * 0.85;
+              }
+            }
+          }
+
+          // #83 (cislunar/earth) — the SAME constant-on-screen-thickness rule as
+          // the helio block above, which is gated `!isMoonMission` and so never
+          // touched the moon/earth tubes. Without this the cislunar phase lines
+          // kept their fixed 0.16 world radius and ballooned to fat sausages on
+          // zoom-in (the regression re-flagged). Rebuild each visible tube so its
+          // radius tracks cislunarCamR → identical thin look at every zoom.
+          if (viewMode === 'cislunar' && cislunarPhaseLines.size) {
+            const cisDesired = Math.max(
+              0.015,
+              Math.min(0.8, cislunarCamR * TRAJ_TUBE_RADIUS_PER_CAMDIST),
+            );
+            for (const line of cislunarPhaseLines.values()) {
+              if (!line.visible) continue;
+              const ud = line.userData as { srcPts?: THREE.Vector3[]; tubeRadius?: number };
+              if (!ud.srcPts || ud.srcPts.length < 2) continue;
+              if (Math.abs(cisDesired - (ud.tubeRadius ?? 0.16)) > 0.02) {
+                line.geometry.dispose();
+                line.geometry = buildTubeFromPoints(ud.srcPts, cisDesired);
+                ud.tubeRadius = cisDesired;
               }
             }
           }

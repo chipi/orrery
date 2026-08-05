@@ -23,7 +23,10 @@ import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
-const SCIENCE = (loc) => path.join(ROOT, 'i18n-src', loc, 'science');
+// Subdir under i18n-src/<loc>/ holding the overlay. Defaults to 'science' (the
+// encyclopedia); pass --dir= (empty) or --dir=planets etc. for body overlays.
+let SUBDIR = 'science';
+const SCIENCE = (loc) => path.join(ROOT, 'i18n-src', loc, SUBDIR);
 const MODEL = 'claude-haiku-4-5';
 
 const NAMES = {
@@ -57,9 +60,10 @@ const args = Object.fromEntries(
   }),
 );
 if (!args.file || !args.paths) {
-  console.error('usage: --file=<tab>/<id> --paths=field[.idx],... [--locales=all|de,ja]');
+  console.error('usage: --file=<tab>/<id> --paths=field[.idx],... [--locales=all|de,ja] [--dir=science]');
   process.exit(1);
 }
+if (args.dir !== undefined) SUBDIR = args.dir;
 const paths = args.paths.split(',').map((p) => p.trim()).filter(Boolean);
 const locales = !args.locales || args.locales === 'all' ? ALL : args.locales.split(',');
 

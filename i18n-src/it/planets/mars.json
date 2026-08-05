@@ -1,1 +1,56 @@
-{"name":"Marte","type":"Obiettivo della missione","fact":"Le finestre di lancio Terra-Marte si aprono ogni 26 mesi, guidate dalla risonanza orbitale. Perdere la finestra e aspettare due anni.","bio":"La più alta eccentricità dei pianeti interni (e=0,093). Marte è il 25% più lontano dalla Terra all'afelio rispetto al perielio: ecco perché le finestre di lancio sono così importanti.","missionable":true,"links":[{"l":"Marte – Wikipedia","u":"https://en.wikipedia.org/wiki/Mars","t":"intro"},{"l":"Marte (NASA Esplorazione del Sistema Solare)","u":"https://science.nasa.gov/mars/","t":"intro"},{"l":"Programma di esplorazione di Marte (NASA)","u":"https://mars.nasa.gov/","t":"core"},{"l":"Finestre di lancio Terra-Marte - Wikipedia","u":"https://en.wikipedia.org/wiki/Mars_landing","t":"core"}],"science_sections":[{"tab":"planets","section":"axial-tilt-and-seasons","why":"L'inclinazione assiale di Marte di 25,2° è straordinariamente simile a quella terrestre — ma combinata con la sua eccentricità, le estati meridionali sono intensamente calde e brevi mentre le estati settentrionali sono lunghe e miti."},{"tab":"orbits","section":"eccentricity","why":"L'eccentricità di Marte di 0,0935 (sei volte quella terrestre) produce un'oscillazione del 20 % del flusso solare per orbita — il motore dietro le tempeste di polvere globali che possono avvolgere il pianeta per mesi."},{"tab":"transfers","section":"hohmann-transfer","why":"Le finestre di lancio verso Marte si aprono ogni 26 mesi — il periodo sinodico tra Marte e la Terra — e il trasferimento di Hohmann è la ragione per cui ogni missione verso Marte parte in una di queste finestre."},{"tab":"planets","section":"moons-of-the-system","why":"Marte possiede due piccoli satelliti catturati — Phobos (orbitante al di sotto dell'altitudine sincrona, spiralizzante verso l'interno) e Deimos (lentamente allontanandosi)."},{"tab":"planets","section":"active-spacecraft-survey","why":"Marte ospita il censimento più denso di veicoli spaziali attivi oltre la Terra — orbiter da cinque agenzie e rover / lander di superficie da tre."}]}
+{
+  "name": "Marte",
+  "type": "Obiettivo della missione",
+  "fact": "Le finestre di lancio Terra-Marte si aprono ogni 26 mesi, guidate dalla risonanza orbitale. Perdere la finestra e aspettare due anni.",
+  "bio": "L'eccentricità più elevata dei pianeti interni (e=0,093) — Marte oscilla ~20% più lontano dal Sole all'afelio rispetto al perielio, generando ampie variazioni stagionali e tempeste di polvere. Le finestre di lancio, al contrario, sono determinate dal periodo sinodico Terra–Marte di ~26 mesi.",
+  "missionable": true,
+  "links": [
+    {
+      "l": "Marte – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars",
+      "t": "intro"
+    },
+    {
+      "l": "Marte (NASA Esplorazione del Sistema Solare)",
+      "u": "https://science.nasa.gov/mars/",
+      "t": "intro"
+    },
+    {
+      "l": "Programma di esplorazione di Marte (NASA)",
+      "u": "https://mars.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Finestre di lancio Terra-Marte - Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_landing",
+      "t": "core"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "L'inclinazione assiale di Marte di 25,2° è straordinariamente simile a quella terrestre — ma combinata con la sua eccentricità, le estati meridionali sono intensamente calde e brevi mentre le estati settentrionali sono lunghe e miti."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "L'eccentricità di Marte di 0,0935 (sei volte quella terrestre) produce un'oscillazione del 20 % del flusso solare per orbita — il motore dietro le tempeste di polvere globali che possono avvolgere il pianeta per mesi."
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "Le finestre di lancio verso Marte si aprono ogni 26 mesi — il periodo sinodico tra Marte e la Terra — e il trasferimento di Hohmann è la ragione per cui ogni missione verso Marte parte in una di queste finestre."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Marte possiede due piccoli satelliti catturati — Phobos (orbitante al di sotto dell'altitudine sincrona, spiralizzante verso l'interno) e Deimos (lentamente allontanandosi)."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Marte ospita il censimento più denso di veicoli spaziali attivi oltre la Terra — orbiter da cinque agenzie e rover / lander di superficie da tre."
+    }
+  ]
+}

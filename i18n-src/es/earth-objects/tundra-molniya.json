@@ -1,6 +1,6 @@
 {
   "name": "Molniya + Tundra (HEO 63,4°)",
   "short": "Molniya/Tundra",
-  "description": "Órbitas de alta excentricidad a 63,4° de inclinación crítica. Molniya (12 horas, 600 × 40 000 km) — comunicaciones rusas en latitudes altas + alerta temprana Oko/Meridian desde 1965. Tundra (24 horas, 25 000 × 35 786 km) — Sirius XM Satellite Radio + sensores US SBIRS-HEO.",
+  "description": "Órbitas de alta excentricidad a 63,4° de inclinación crítica. Molniya (12 horas, 600 × 40.000 km) — comunicaciones de altas latitudes rusas + sistemas de alerta temprana Oko/Meridian desde 1965. Tundra (24 horas, ~25.000 × ~47.000 km) — Sirius XM Satellite Radio + sensores SBIRS-HEO estadounidenses.",
   "scale_fact": "La inclinación de 63,4° no es casualidad — es la 'inclinación crítica' donde la perturbación J2 de la Tierra fija el apogeo sobre el hemisferio elegido."
 }

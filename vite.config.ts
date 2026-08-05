@@ -535,6 +535,11 @@ export default defineConfig(({ mode }) => {
           // the ratio (jsdom can construct but not render), structure smoke-tested
           // in fly-helio-overlays.test.ts.
           'src/lib/three/fly-helio-overlays.ts',
+          // /fly cislunar mission-overlay builders (RFC-036 WS-B/B3) — the star
+          // field, per-phase trajectory-line shader, spacecraft-glyph CanvasTexture,
+          // and ∆v annotation sprites extracted from the fly/+page.svelte onMount.
+          // Same policy; structure smoke-tested in fly-cislunar-overlays.test.ts.
+          'src/lib/three/fly-cislunar-overlays.ts',
           // Shared 3D asset builders used by the model/scene files above — hero
           // PBR materials + IBL (hero-materials) and the low-level geometry
           // helper (model-geom) both instantiate Three.js materials/geometry

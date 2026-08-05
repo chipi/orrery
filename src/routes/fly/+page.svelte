@@ -7020,7 +7020,9 @@
               if (!line.visible) continue;
               const ud = line.userData as { srcPts?: THREE.Vector3[]; tubeRadius?: number };
               if (!ud.srcPts || ud.srcPts.length < 2) continue;
-              if (shouldRebuildTube(cisDesired, ud.tubeRadius ?? 0.16, CISLUNAR_REBUILD_THRESHOLD)) {
+              if (
+                shouldRebuildTube(cisDesired, ud.tubeRadius ?? 0.16, CISLUNAR_REBUILD_THRESHOLD)
+              ) {
                 line.geometry.dispose();
                 line.geometry = buildTubeFromPoints(ud.srcPts, cisDesired);
                 ud.tubeRadius = cisDesired;

@@ -49,7 +49,7 @@ They exist because agents and humans both mis-target fixes without them.
 
 ## What this project is
 
-Orrery is a browser-based solar system explorer, mission simulator, encyclopedia, station explorer, and spaceflight fleet inventory rolled into one. Eleven primary nav destinations, real orbital mechanics, **113 missions** in the catalog (Moon + Mars + inner-planet + outer-system probes), **251 fleet entries** across 9 categories cross-linked bidirectionally to the rest of the corpus, and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised in **14 locales** at 100% UI parity (en-US + es / fr / de / pt-BR / it / nl / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl).
+Orrery is a browser-based solar system explorer, mission simulator, encyclopedia, station explorer, and spaceflight fleet inventory rolled into one. Real orbital mechanics, a full mission catalog (Moon + Mars + inner-planet + outer-system probes), a fleet inventory cross-linked bidirectionally to the rest of the corpus, and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. (Canonical corpus counts live in the generated block in `docs/adr/TA.md` — `npm run gen:doc-counts` — never hand-maintained here.) It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised in **14 locales** at 100% UI parity (en-US + es / fr / de / pt-BR / it / nl / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl).
 
 The eleven primary nav destinations:
 
@@ -64,8 +64,8 @@ The eleven primary nav destinations:
 | `/mars` | Martian surface map — rectangular hotspot regions, per-mission lander glyphs, rover traverses with curated stops, atmosphere shell, 25.19° axial tilt, sphere → flat-patch view at deep zoom | `src/routes/mars/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
 | `/iss` | ISS Explorer (18 pickable modules + visiting spacecraft) | `src/routes/iss/+page.svelte` |
 | `/tiangong` | Tiangong Explorer (Tianhe + Wentian + Mengtian with module overlays) | `src/routes/tiangong/+page.svelte` |
-| `/science` | Encyclopedia (85 sections × 10 tabs + Space-101 landing) | `src/routes/science/+page.svelte` |
-| `/fleet` | Spaceflight Fleet (166 entries × 11 categories — `launcher`, `crewed-spacecraft`, `cargo-spacecraft`, `station`, `rover`, `lander`, `orbiter`, `observatory`, `space-suit`, `constellation`, `launch-site` — with bidirectional cross-links) | `src/routes/fleet/+page.svelte` |
+| `/science` | Encyclopedia (sections × 10 tabs + Space-101 landing; counts in the TA.md generated block) | `src/routes/science/+page.svelte` |
+| `/fleet` | Spaceflight Fleet (entries across the categories `launcher`, `crewed-spacecraft`, `cargo-spacecraft`, `station`, `rover`, `lander`, `orbiter`, `observatory`, `space-suit`, `constellation`, `launch-site`, `engine` — with bidirectional cross-links; counts in the TA.md generated block) | `src/routes/fleet/+page.svelte` |
 
 Plus three read-only pages: `/credits` (per-image provenance + text-source attributions), `/library` (bill-of-links across the entire app — every outbound LEARN link with provenance), and `/posters` (Orrery art-print gallery — 11 hand-authored SVG posters across three style families: JPL travel-poster, era-matched, indie-pop).
 
@@ -110,7 +110,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | `/fly` cislunar view | Earth-centered second camera + per-mission `flight.cislunar_profile` block on Moon missions; auto-switches when destination is MOON | ADR-058 |
 | Science Lens + multi-layer state | Attribute-on-`<html>` + MutationObserver subscription; 12 per-layer toggles gated on the master lens; CSS reacts via `:global([data-science-layer-*='on'])` with zero imports | ADR-055 |
 | Fleet schema + cross-refs | Per-category folders + generated index manifest; bidirectional `fleet_refs` ↔ `linked_missions`/`linked_sites` enforced by symmetric-link validator (fail-closed) | ADR-052 |
-| Fleet imagery + i18n | Same agency-first pipeline as the rest of the corpus; 251 entries × 14 locales = 3,514 overlay files translated in-session by the LLM | ADR-053, ADR-054 |
+| Fleet imagery + i18n | Same agency-first pipeline as the rest of the corpus; every fleet entry × 14 locales of overlay files translated in-session by the LLM | ADR-053, ADR-054 |
 | E2e readiness signals | Every canvas route exposes `window.__pickAt(x, y)` + `data-route-ready` + `data-loading` attributes; no `sleep(N)` polling in Playwright tests | ADR-056 |
 | Locale persistence | Single `orrery_locale` cookie is the ONLY exception to "no client storage"; everything else stays runtime-only | ADR-057 |
 
@@ -133,7 +133,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 ├── .gitignore
 │
 ├── src/
-│   ├── routes/             ← SvelteKit file-based routing (11 primary nav + 3 read-only)
+│   ├── routes/             ← SvelteKit file-based routing (user-facing routes + nav hubs; counts in TA.md generated block)
 │   │   ├── +layout.svelte  ← nav bar, i18n provider, locale picker, footer
 │   │   ├── explore/+page.svelte
 │   │   ├── plan/+page.svelte
@@ -215,7 +215,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   │   │   ├── mars/       ← base mission files (language-neutral) — `flight.interplanetary_profile` per ADR-058 third amendment
 │   │   │   ├── moon/       ← Moon missions (incl. `flight.cislunar_profile` per ADR-058)
 │   │   │   ├── ceres/ jupiter/ neptune/ pluto/  ← outer-system missions (`flight.interplanetary_profile`)
-│   │   ├── fleet/          ← 137 entries × 9 categories (ADR-052; PRD-012 / RFC-016)
+│   │   ├── fleet/          ← fleet entries across categories (ADR-052; PRD-012 / RFC-016)
 │   │   │   ├── index.json                    ← generated manifest (drives /fleet card grid)
 │   │   │   ├── launcher/                     ← per-entry base files (language-neutral)
 │   │   │   ├── crewed-spacecraft/
@@ -223,7 +223,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   │   │   ├── station/  rover/  lander/  orbiter/  observatory/  space-suit/
 │   │   ├── mars-traverses/ ← rover route polylines (Curiosity, Perseverance, Opportunity, Spirit)
 │   │   ├── scenarios/      ← ORRERY-1 free-return + others
-│   │   ├── science/        ← 10 tab folders × ~7 sections each (ADR-034); 85 sections total
+│   │   ├── science/        ← 10 tab folders (ADR-034); section count in TA.md generated block
 │   │   ├── i18n/
 │   │   │   ├── en-US/      ← English overlays (source language)
 │   │   │   ├── es/  fr/  de/  pt-BR/  it/  nl/  ← Wave 1 locales (Latin)

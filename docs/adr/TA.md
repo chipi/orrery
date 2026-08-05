@@ -49,7 +49,29 @@ One shared interaction model for **keyboard, screen reader, and TV D-pad remote*
 
 ### Routes
 
-The production app ships **13 primary routes** (the core experience below; nav-hub pages `/catalog` · `/learn` · `/explore/hub` and `/programs` are additional). Each is a SvelteKit page module under `src/routes/<route>/+page.svelte`. Pages do not share mutable state directly — they communicate via the data client + URL search params (`$page.url.searchParams`).
+The production app ships a set of user-facing routes (the core experience below; nav-hub pages `/catalog` · `/learn` · `/explore/hub` and `/programs` are additional). Each is a SvelteKit page module under `src/routes/<route>/+page.svelte`. Pages do not share mutable state directly — they communicate via the data client + URL search params (`$page.url.searchParams`). Canonical corpus counts (routes, missions, fleet, …) are the generated block below — never hand-maintain them:
+
+<!-- GENERATED:corpus-counts:start (npm run gen:doc-counts) -->
+
+> Auto-generated from the filesystem — do not hand-edit. Run `npm run gen:doc-counts`.
+> Counting rule: `*.json` under each data dir (excluding `index.json` / `_`-prefixed);
+> routes = top-level `src/routes/<name>/+page.svelte` (excluding `dev/` + dynamic `[..]`).
+
+| Corpus | Count |
+| --- | --- |
+| User-facing routes (top-level) | **24** |
+| Missions | **125** |
+| Fleet entries | **274** |
+| Science sections | **162** |
+| Programs | **42** |
+| Descent profiles | **75** |
+| Launch profiles | **16** |
+| AJV schemas | **56** |
+| Essays | **13** |
+
+_Top-level routes: catalog · colophon · credits · earth · essays · explore · fleet · fly · gallery · iss · learn · library · live · mars · missions · moon · patches · plan · posters · programs · science · sourcing · tiangong · venus_
+
+<!-- GENERATED:corpus-counts:end -->
 
 | Route | Purpose | Anchored by |
 |---|---|---|
@@ -63,8 +85,8 @@ The production app ships **13 primary routes** (the core experience below; nav-h
 | `/mars` | Mars Surface Map · equirectangular + 3D globe; 16 surface sites + 11 orbiters; rover traverses | PRD-007 / ADR-037 / ADR-038 / RFC-012 |
 | `/iss` | ISS Explorer · 18 modules raycast-pickable; visiting spacecraft diagrams | PRD-010 / RFC-013 / ADR-040 / ADR-041 / ADR-042 |
 | `/tiangong` | Tiangong Explorer · Tianhe + Wentian + Mengtian module overlays | PRD-011 / RFC-014 / ADR-048 / ADR-049 / ADR-050 |
-| `/science` | Science Encyclopedia · 85 sections × 10 tabs · KaTeX · 71 SVG diagrams · ?-chip deep-links · Cmd-K search | PRD-008 / RFC-011 / ADR-034 / ADR-035 / ADR-036 |
-| `/fleet` | Spaceflight Fleet · 137 entries × 9 categories with bidirectional cross-refs | PRD-012 / RFC-016 / ADR-052 / ADR-053 / ADR-054 |
+| `/science` | Science Encyclopedia · sections × 10 tabs · KaTeX · SVG diagrams · ?-chip deep-links · Cmd-K search (counts: generated block above) | PRD-008 / RFC-011 / ADR-034 / ADR-035 / ADR-036 |
+| `/fleet` | Spaceflight Fleet · entries × categories with bidirectional cross-refs (counts: generated block above) | PRD-012 / RFC-016 / ADR-052 / ADR-053 / ADR-054 |
 | `/live` | Live feeds · pinned NASA ISS stream (click-to-load facade) + launch broadcasts time-gated off `$lib/launches` (link-out). Under the Catalog nav group. | PRD-031 / RFC-033 |
 
 **Sub-routes + dev tooling (not in the route grid):** `/science/reading-list` + `/science/watch-list` (curated book / documentary / podcast / channel lists), `/library/episodes` (audio episode index, RFC-019). `/dev/*` (model preview, staging-ground review per RFC-029, Slice-A approval, UI style-guide) are **developer-only** — `src/routes/dev/+layout.ts` 404s the subtree in any non-dev build.
@@ -385,7 +407,7 @@ Every route's `onDestroy` calls `disposeScene(scene)` from `src/lib/three/dispos
 
 ### Long-list rendering perf
 
-Routes with mostly-text long lists — `/fleet` (137 entries × 9 categories), `/library` (per-entity outbound link blocks), `/credits` (per-image provenance rows) — apply CSS `content-visibility: auto` + `contain-intrinsic-size` per `<li>` / `.source-block`. Browser skips rendering off-screen items until they near the viewport. Browser-native (Chromium ≥ 85, Safari ≥ 18); no JS virtualisation library. Cuts initial paint cost and scroll smoothness on slow devices (W4).
+Routes with mostly-text long lists — `/fleet` (many entries across categories), `/library` (per-entity outbound link blocks), `/credits` (per-image provenance rows) — apply CSS `content-visibility: auto` + `contain-intrinsic-size` per `<li>` / `.source-block`. Browser skips rendering off-screen items until they near the viewport. Browser-native (Chromium ≥ 85, Safari ≥ 18); no JS virtualisation library. Cuts initial paint cost and scroll smoothness on slow devices (W4).
 
 ---
 
@@ -958,7 +980,7 @@ Locked technical choices. Each entry points to its ADR.
 | Tiangong Explorer | Same pattern as ISS — proxy model, pickability, fallback | ADR-048, ADR-049, ADR-050 |
 | Fleet schema | Per-category folders + generated index + bidirectional cross-refs | ADR-052 |
 | Fleet imagery | Agency-first; hand-authored ANATOMY SVG; mission patches + crew portraits | ADR-053 |
-| Fleet i18n | 137 entries × 14 locales × overlay merge | ADR-054 |
+| Fleet i18n | entries × 14 locales × overlay merge | ADR-054 |
 | `/fly` cislunar view | Earth-centered second camera; per-mission `flight.cislunar_profile` | ADR-058 |
 | Client error tracking | Sentry SDK (`@sentry/sveltekit`) → **self-hosted GlitchTip** (`telemetry.orrerylearn.com`); errors only, PII-scrubbed; env-ladder dev/staging/prod, fork-silent by construction | ADR-067, ADR-082 |
 | Usage analytics | **Self-hosted Umami** (`analytics.orrerylearn.com`), cookieless, PII-free, env-var-gated; same dev/staging/prod ladder | ADR-081, ADR-082 |

@@ -1,10 +1,16 @@
 # `/fly` restructure — implementation plan (RFC-036)
 
-*2026-08-05 · plan for RFC-036 · WS-A = #440 · WS-B = #441 (blocked-by #440)*
+*2026-08-05 · plan for RFC-036 · WS-A = #440 · WS-B = #441 (blocked-by #440) · WS-C = #443 (/explore)*
 
 The detailed, sliced execution plan for RFC-036. Read the RFC first for the *why*
 and the seam contract (§4). This doc is the *how* + the order. Every slice ends
 green (typecheck + relevant tests) and is a small, revertible commit.
+
+## Pickup state (2026-08-05, for a fresh session or resume)
+- **Branch:** `content` = `origin/main` + 3 unpushed commits (RFC-036 docs · #274 launch-list content-visibility · #419 2-DOF descent). Working tree clean; **preflight green**.
+- **origin/main:** `d61b9eb6ff` (the ADR-084 data.ts decomposition + architectural-review fixes R2–R8, docker-e2e-green). Operator has parallel work landing on main — **rebase `content` onto `origin/main` + re-preflight before push**, and **hold for the operator's explicit push green-light**.
+- **Done this arc:** architectural-review R1–R8 (R1 = this RFC, not yet built); issues closed #439/#327/#77/#274/#419 + mobile-AR cluster folded into #442.
+- **NEXT = WS-A slice A0** (below): read `/fly/+page.svelte`, enumerate the phase state (flags, transitions, deep-links, scrub→phase), freeze the `FlightPhaseState` contract. No context from the originating chat is required — RFC-036 + this doc + issues #440/#441/#443 are self-contained.
 
 **Guard rails (both workstreams):**
 - Byte-identical behavior — no visual/timing/UX change. Parity is the gate, not a nicety.

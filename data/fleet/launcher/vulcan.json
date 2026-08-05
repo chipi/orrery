@@ -9,7 +9,7 @@
   "status": "ACTIVE",
   "era": "2011-now",
   "epoch": "commercial-era",
-  "best_known_for": "Atlas V + Delta IV successor; certifies for NSSL Phase 3 + carries Dream Chaser / Starliner",
+  "best_known_for": "Atlas V + Delta IV successor",
   "credit": "Fleet launcher entry added to wire up Vulcan launches into LauncherFlightsWidget (Option 4 follow-up to #306). VCxL/VCxS variants all map to vulcan.",
   "links": [
     {

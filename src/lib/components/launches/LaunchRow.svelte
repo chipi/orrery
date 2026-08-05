@@ -98,6 +98,13 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     align-items: start;
     min-height: 60px;
+    /* W4 (GH #274) — /missions/launches paints ~346 rows. content-visibility
+     * lets the browser skip layout + paint for off-screen rows (the last of the
+     * four long-list routes to get this; /fleet, /library, /credits already do).
+     * intrinsic-size ≈ a row's height so the scrollbar + anchor offsets stay
+     * stable while rows are culled. */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 72px;
   }
 
   @media (min-width: 768px) {

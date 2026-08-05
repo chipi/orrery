@@ -184,6 +184,12 @@
     type MilestoneRender,
   } from '$lib/fly/fly-frame-projections';
   import { sampleForwardArc, integrateEarthCoastPreview } from '$lib/fly/fly-frame-coast';
+  import {
+    findActiveBurn,
+    burnExhaustDir,
+    BURN_TABLE,
+    BURN_WINDOW_DAYS_DEFAULT,
+  } from '$lib/fly/fly-frame-burn';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { Mission, MissionEvent } from '$types/mission';
@@ -6143,62 +6149,17 @@
         //   - edl_or_oi: exhaust prograde (retrograde deceleration)
         // Opacity ramps in/out across ±BURN_WINDOW_DAYS.
         if (!isMoonMission && mission.flight?.events) {
-          const BURN_WINDOW_DAYS_DEFAULT = 2;
-          type BurnConfig = {
-            scale: number;
-            mode: 'inward' | 'retro' | 'pro';
-            /** Optional per-event-type window override. Launch gets a
-             *  wider window because it's the mission's emotional hero
-             *  moment — the audience should see a sustained dramatic
-             *  plume, not a 2-day blink. */
-            windowDays?: number;
-          };
-          const BURN_TABLE: Record<string, BurnConfig> = {
-            launch: { scale: 2.6, mode: 'inward', windowDays: 5 },
-            tli_or_tmi: { scale: 1.6, mode: 'retro' },
-            tcm: { scale: 0.6, mode: 'retro' },
-            edl_or_oi: { scale: 1.8, mode: 'pro' },
-          };
-          // Find the closest in-window burn event — per-event window
-          // override so launch can hold longer than the default 2 days.
-          let activeBurn: { type: string; met_days: number; daysFromEvent: number } | null = null;
-          const simMet = simDay - arcTimeline.dep_day;
-          for (const evt of mission.flight.events) {
-            if (!(evt.type in BURN_TABLE) || evt.met_days == null) continue;
-            const daysFromEvent = Math.abs(simMet - evt.met_days);
-            const win = BURN_TABLE[evt.type].windowDays ?? BURN_WINDOW_DAYS_DEFAULT;
-            if (daysFromEvent > win) continue;
-            if (!activeBurn || daysFromEvent < activeBurn.daysFromEvent) {
-              activeBurn = { type: evt.type, met_days: evt.met_days, daysFromEvent };
-            }
-          }
+          // Burn selection + exhaust-direction math extracted to
+          // $lib/fly/fly-frame-burn (WS-B/B4) — byte-identical. The plume-mesh
+          // application (position / lookAt / scale / opacity) stays here.
+          const activeBurn = findActiveBurn(mission.flight.events, simDay - arcTimeline.dep_day);
           if (activeBurn) {
             const cfg = BURN_TABLE[activeBurn.type];
             // Sample next-frame position for velocity vector
             const sc1 = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
             const vx = (sc1.x - sc.pos.x) * SCALE_3D;
             const vz = (sc1.z - sc.pos.z) * SCALE_3D;
-            const vMag = Math.hypot(vx, vz);
-            // Compute exhaust direction (the target the cone tip points at)
-            let exDx = 0;
-            let exDz = 0;
-            if (cfg.mode === 'inward') {
-              // From spacecraft toward Earth (or destination for early-mission Earth)
-              const earthW = earthMesh.position;
-              const idx = earthW.x - scWorld.x;
-              const idz = earthW.z - scWorld.z;
-              const idm = Math.hypot(idx, idz) || 1;
-              exDx = idx / idm;
-              exDz = idz / idm;
-            } else if (cfg.mode === 'retro' && vMag > 0.0001) {
-              // Opposite velocity
-              exDx = -vx / vMag;
-              exDz = -vz / vMag;
-            } else if (cfg.mode === 'pro' && vMag > 0.0001) {
-              // Along velocity
-              exDx = vx / vMag;
-              exDz = vz / vMag;
-            }
+            const { exDx, exDz } = burnExhaustDir(cfg.mode, vx, vz, earthMesh.position, scWorld);
             plumeMesh.position.copy(scWorld);
             plumeMesh.lookAt(scWorld.x + exDx, scWorld.y, scWorld.z + exDz);
             plumeMesh.scale.setScalar(cfg.scale);

@@ -140,7 +140,6 @@
   } from '$lib/orbital/find-flyby-planet';
   import { computeIconicFrame } from '$lib/orbital/iconic-frame';
   import { predictShipPosAtMet } from '$lib/orbital/predict-ship-pos';
-  import { findApsidesIndices } from '$lib/orbital/find-apsides';
   import { findActiveFlybyMet } from '$lib/orbital/find-active-flyby';
   import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
   import { buildFlyDebugFrameSnapshot } from '$lib/orbital/fly-debug-frame';
@@ -184,6 +183,7 @@
     type MilestoneRender,
   } from '$lib/fly/fly-frame-projections';
   import { sampleForwardArc, integrateEarthCoastPreview } from '$lib/fly/fly-frame-coast';
+  import { buildHelioReactiveOverlays } from '$lib/three/fly-helio-reactive';
   import {
     findActiveBurn,
     burnExhaustDir,
@@ -235,20 +235,10 @@
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import SpacecraftInfoCard from '$lib/components/SpacecraftInfoCard.svelte';
-  import {
-    buildSoIRing,
-    buildGravityArrow,
-    soiRadiusInScene,
-    gravityAccel,
-    logScaleLength,
-    BODY_MASS_KG,
-    buildCoastLine,
-    classifyConic,
-  } from '$lib/orbit-overlays';
+  import { gravityAccel, logScaleLength, BODY_MASS_KG, classifyConic } from '$lib/orbit-overlays';
   import ConicSectionPanel from '$lib/components/ConicSectionPanel.svelte';
   import MobileControlsDrawer from '$lib/components/MobileControlsDrawer.svelte';
   import { isLayerOn, onLayerChange, type LayerKey } from '$lib/science-layers';
-  import { BoldArrow } from '$lib/three/bold-arrow';
   import { buildTubeFromPoints } from '$lib/three/glow-line';
   import {
     trajectoryTubeRadius,
@@ -3090,218 +3080,41 @@
     // camera distance of 360. 8× visual boost keeps the relative
     // proportions correct (Earth SoI > Mars SoI) while making the
     // rings actually readable when the lens is on.
-    const SOI_VISUAL_BOOST = 8;
-    const earthSoI = buildSoIRing(
-      'earth',
-      soiRadiusInScene('earth', SCALE_3D) * SOI_VISUAL_BOOST,
-      0x6aa9ff,
-    );
-    const marsSoI = buildSoIRing(
-      'mars',
-      soiRadiusInScene('mars', SCALE_3D) * SOI_VISUAL_BOOST,
-      0xff8866,
-    );
-    // Moon SoI for cislunar missions. The real Moon SoI is 66 100 km
-    // = 0.035 scene units at heliocentric scale — invisible even with
-    // the standard ×8 boost. Hand-tuned to 3.0u so it sits visibly
-    // around the 2.0u Moon mesh and reads as a clear "you crossed into
-    // the Moon's gravity well" cue when the spacecraft approaches.
-    // Hidden in non-Moon modes (animate loop toggles visibility per
-    // isMoonMission alongside the moonOrbitRing).
-    const moonSoI = buildSoIRing('moon', 3.0, 0xcfcfcf);
-    scene.add(earthSoI);
-    scene.add(marsSoI);
-    scene.add(moonSoI);
+    // Helio reactive overlay layer (SoI rings, gravity/velocity/centripetal arrows,
+    // coast line, apsides markers, moon mesh) + its science-layer listeners + the
+    // three frame-shared flags (soiLayerOn / cinemaForceMoons / lastLayerMoonsOn)
+    // now live in $lib/three/fly-helio-reactive (RFC-036 WS-B) — byte-identical. The
+    // mesh refs destructure back into the same names the frame loop already uses; the
+    // shared flags stay on `helioReactive` (accessed via the handle in the loop).
+    const helioReactive = buildHelioReactiveOverlays({
+      scene,
+      setHillSpheresVisible: helioHandles.setHillSpheresVisible,
+      setLagrangePointsVisible: helioHandles.setLagrangePointsVisible,
+      setMagnetospheresVisible: helioHandles.setMagnetospheresVisible,
+      setMoonsVisible: helioHandles.setMoonsVisible,
+      base,
+      getIsMoonMission: () => isMoonMission,
+      getActiveDestination: () => activeDestination,
+      getSimDay: () => simDay,
+      getOutPts: () => outPts,
+    });
+    const {
+      earthSoI,
+      marsSoI,
+      moonSoI,
+      gravArrowEarth,
+      gravArrowSun,
+      velocityArrow,
+      centripetalArrow,
+      coastLine,
+      moonMesh,
+      recomputeApsides,
+    } = helioReactive;
 
-    // ─── Science Layers G.3 — Gravity arrows on the spacecraft ───────
-    // Two ArrowHelpers parented to the scene; positioned + reoriented
-    // each frame to point from sc.pos toward Earth and Sun respectively.
-    // Length is log-scaled by acceleration magnitude so both stay visible
-    // through the entire transit.
-    const gravArrowEarth = buildGravityArrow('earth', 0x6aa9ff);
-    const gravArrowSun = buildGravityArrow('sun', 0xffc850);
-    gravArrowEarth.setLabel('EARTH g', '#a8caff');
-    gravArrowSun.setLabel('SUN g', '#ffdf9a');
-    scene.add(gravArrowEarth);
-    scene.add(gravArrowSun);
-
-    // Velocity tangent + centripetal arrows on the spacecraft — Phase H
-    // gap-fill. Velocity is tangent to motion (teal), centripetal points
-    // inward toward the Sun (red, paired with gravity). Lengths are
-    // updated per frame in the animate() loop.
-    const velocityArrow = new BoldArrow(
-      new THREE.Vector3(1, 0, 0),
-      new THREE.Vector3(0, 0, 0),
-      8,
-      0x4ecdc4,
-      1.4,
-      0.8,
-    );
-    const centripetalArrow = new BoldArrow(
-      new THREE.Vector3(-1, 0, 0),
-      new THREE.Vector3(0, 0, 0),
-      8,
-      0xff6b6b,
-      1.4,
-      0.8,
-    );
-    velocityArrow.setLabel('VELOCITY', '#bfeaff');
-    centripetalArrow.setLabel('CENTRIPETAL', '#ffb3b3');
-    velocityArrow.userData.layerKey = 'velocity';
-    centripetalArrow.userData.layerKey = 'centripetal';
-    velocityArrow.visible = false;
-    centripetalArrow.visible = false;
-    scene.add(velocityArrow);
-    scene.add(centripetalArrow);
-
-    // Layer-state listeners: flip visibility on each layer toggle. The
-    // listeners are returned as unsubs in cleanupThree below.
-    // Cached "is the SoI layer currently on?" so the mission-swap
-    // $effect below can re-apply the right visibility split when
-    // isMoonMission flips without needing to consult the DOM each time.
-    let soiLayerOn = false;
-    const stopSoiLayer = onLayerChange('soi', (on) => {
-      // Earth's SoI shows for every mission (the spacecraft always
-      // departs from inside it). Mars + Moon rings each show only
-      // when their body is the live destination — Mars in heliocentric
-      // missions, Moon in cislunar — so the ring you see is the one
-      // whose gravity well actually matters for this flight.
-      soiLayerOn = on;
-      earthSoI.visible = on;
-      // marsSoI ring is sized for Mars's SoI radius — gate on the
-      // active destination so it doesn't visually pretend to surround
-      // Jupiter / Neptune / Pluto / Ceres at the wrong scale.
-      marsSoI.visible = on && !isMoonMission && activeDestination === 'mars';
-      moonSoI.visible = on && isMoonMission;
-    });
-    const stopGravityLayer = onLayerChange('gravity', (on) => {
-      gravArrowEarth.visible = on;
-      gravArrowSun.visible = on;
-    });
-    const stopFlyVelocityLayer = onLayerChange('velocity', (on) => {
-      velocityArrow.visible = on;
-    });
-    const stopFlyCentripetalLayer = onLayerChange('centripetal', (on) => {
-      centripetalArrow.visible = on;
-    });
-
-    // ─── Science Layers G.5 — Engine-off coast preview ───────────────
-    // Dashed line projecting the spacecraft's heliocentric coast
-    // forward 200 days from the current sim moment. Recomputed each
-    // frame from finite-difference velocity, integrated under Sun
-    // gravity only.
-    const coastLine = buildCoastLine(0xffc850);
-    scene.add(coastLine);
-    const stopCoastLayer = onLayerChange('coast', (on) => {
-      coastLine.visible = on;
-    });
-
-    // ─── Science Layers H.4 — Apsides markers on the transfer arc ────
-    // Find the heliocentric ellipse's perihelion (closest to Sun) and
-    // aphelion (farthest) from outPts and place small marker spheres
-    // at each. Geometry recomputed via $effect when outPts changes
-    // (mission swap). Layer-gated.
-    const periMarker = new THREE.Mesh(
-      new THREE.SphereGeometry(1.6, 16, 16),
-      new THREE.MeshBasicMaterial({
-        color: 0xff6b6b,
-        transparent: true,
-        opacity: 0.85,
-        // Always-on-top so the perihelion marker stays visible when it
-        // coincides with Earth at t=launch (peri ≈ Earth's orbital
-        // distance for an inbound-Hohmann; the marker would otherwise
-        // sit inside the Earth sphere and read as missing). Keeps the
-        // apsides pair symmetric — aphelion at Mars's arrival point is
-        // already exposed because Mars hasn't reached that point yet.
-        depthTest: false,
-      }),
-    );
-    const apoMarker = new THREE.Mesh(
-      new THREE.SphereGeometry(1.6, 16, 16),
-      new THREE.MeshBasicMaterial({
-        color: 0x6aa9ff,
-        transparent: true,
-        opacity: 0.85,
-        depthTest: false,
-      }),
-    );
-    periMarker.renderOrder = 999;
-    apoMarker.renderOrder = 999;
-    periMarker.userData.layerKey = 'apsides';
-    apoMarker.userData.layerKey = 'apsides';
-    periMarker.visible = false;
-    apoMarker.visible = false;
-    scene.add(periMarker);
-    scene.add(apoMarker);
-
-    function recomputeApsides() {
-      // Heliocentric trips: centre = Sun at (0,0). Cislunar: centre =
-      // Earth at its current heliocentric xz (Sun-relative apsides
-      // collapse when both endpoints are at ~1 AU). The pure index-
-      // finder lives in $lib/orbital/find-apsides; this closure just
-      // wires the THREE.js marker positions to the result.
-      const centreX = isMoonMission ? earthPos(simDay).x : 0;
-      const centreZ = isMoonMission ? earthPos(simDay).z : 0;
-      const apsides = findApsidesIndices(outPts, centreX, centreZ);
-      if (!apsides) return;
-      const peri = outPts[apsides.periIdx];
-      const apo = outPts[apsides.apoIdx];
-      periMarker.position.set(peri.x * SCALE_3D, 0, peri.z * SCALE_3D);
-      apoMarker.position.set(apo.x * SCALE_3D, 0, apo.z * SCALE_3D);
-    }
-    recomputeApsides();
-    // recomputeApsides published via flyUpdaters.helio at end of onMount (W9 wave B).
-
-    const stopApsidesLayer = onLayerChange('apsides', (on) => {
-      periMarker.visible = on;
-      apoMarker.visible = on;
-    });
-    // Hill sphere + Lagrange L1 / L2 overlays — wireframe shells + gold
-    // markers around every planet. Mirrors /explore (PRD-023 Slice B).
-    const stopHillSphereLayer = onLayerChange('hill-sphere', (on) => {
-      helioHandles.setHillSpheresVisible(on);
-    });
-    const stopLagrangeLayer = onLayerChange('lagrange-points', (on) => {
-      helioHandles.setLagrangePointsVisible(on);
-    });
-    const stopMagnetosphereLayer = onLayerChange('magnetosphere', (on) => {
-      helioHandles.setMagnetospheresVisible(on);
-    });
-    // Major moons overlay — Galilean at Jupiter, Titan-Enceladus-Iapetus
-    // at Saturn, the Moon at Earth, Phobos/Deimos at Mars, Triton at
-    // Neptune. Gated on the science-lens master toggle; hidden by
-    // default. Briefly defaulted visible during polish wave 2 — the
-    // orbit rings + moon dots read as distraction during the flyby
-    // cinema, fighting the ship-as-hero composition. Back to lens-
-    // gated: users who want moons turn the science lens on.
-    //
-    // cinemaForceMoons + lastLayerMoonsOn are hoisted here (rather than
-    // declared further down with the other helio-loop state) because
-    // onLayerChange invokes its callback SYNCHRONOUSLY during
-    // subscription (science-layers.ts:137) — if we declared them
-    // below this call, the synchronous emit would hit a TDZ
-    // ReferenceError, the animate loop would never start, and the
-    // whole canvas would render blank.
-    let cinemaForceMoons = false;
-    let lastLayerMoonsOn = false;
-    const stopMoonsLayer = onLayerChange('moons', (on) => {
-      lastLayerMoonsOn = on;
-      // #2 — during flyby cinema we force moons visible regardless of
-      // the layer state; the cinema-enter/exit transitions handle the
-      // visibility flip. Outside cinema the layer state wins.
-      if (!cinemaForceMoons) helioHandles.setMoonsVisible(on);
-    });
-
-    // Moon mesh for Moon-mission mode (Apollo, Luna, Chang'e, etc.).
-    // Hidden by default; shown only when isMoonMission is true.
-    const moonTexLoader = new THREE.TextureLoader();
-    const moonTex = moonTexLoader.load(`${base}/textures/2k_moon.jpg`);
-    const moonMesh = new THREE.Mesh(
-      new THREE.SphereGeometry(2.0, 32, 32),
-      new THREE.MeshPhongMaterial({ map: moonTex, color: 0xffffff, shininess: 4 }),
-    );
-    moonMesh.visible = false;
-    scene.add(moonMesh);
+    // (The layer listeners, coast line, apsides markers + recomputeApsides, the
+    // hill/lagrange/magnetosphere/moons overlays, and the moon mesh all moved into
+    // buildHelioReactiveOverlays above — RFC-036 WS-B. The soiLayerOn /
+    // cinemaForceMoons / lastLayerMoonsOn flags live on `helioReactive`.)
 
     // Spacecraft — small camera-facing sprite glyph at sc.pos. Satellite
     // billboard: red rounded body + two gold solar-panel wings + a tiny
@@ -4011,11 +3824,11 @@
           // visible; exiting restores whatever the science-lens layer
           // last asked for.
           if (subPhaseTransition.enteredFlybyCinema) {
-            cinemaForceMoons = true;
+            helioReactive.cinemaForceMoons = true;
             helioHandles.setMoonsVisible(true);
           } else if (subPhaseTransition.exitedFlybyCinema) {
-            cinemaForceMoons = false;
-            helioHandles.setMoonsVisible(lastLayerMoonsOn);
+            helioReactive.cinemaForceMoons = false;
+            helioHandles.setMoonsVisible(helioReactive.lastLayerMoonsOn);
           }
         }
         helioAutoZoomTargetR = targetR;
@@ -4067,8 +3880,8 @@
         helioAutoZoomActive = true;
         // #2 — exit flyby cinema → restore moons to layer state
         if (wasInFlybyCinema) {
-          cinemaForceMoons = false;
-          helioHandles.setMoonsVisible(lastLayerMoonsOn);
+          helioReactive.cinemaForceMoons = false;
+          helioHandles.setMoonsVisible(helioReactive.lastLayerMoonsOn);
         }
         // Secondary-flyby destinationMesh swap-back. If we swapped the
         // mesh to a flyby-only body (Arrokoth, Pluto if not primary,
@@ -6041,8 +5854,9 @@
         // layer-on flag itself comes from the onLayerChange subscription.
         // marsSoI is also gated on activeDestination === 'mars' so it
         // doesn't render at the wrong scale for outer-planet missions.
-        marsSoI.visible = soiLayerOn && !isMoonMission && activeDestination === 'mars';
-        moonSoI.visible = soiLayerOn && isMoonMission;
+        marsSoI.visible =
+          helioReactive.soiLayerOn && !isMoonMission && activeDestination === 'mars';
+        moonSoI.visible = helioReactive.soiLayerOn && isMoonMission;
         if (earthSoI.visible) earthSoI.position.copy(earthWorld);
         if (marsSoI.visible) marsSoI.position.copy(marsWorld);
         if (moonSoI.visible) moonSoI.position.copy(moonMesh.position);
@@ -6701,22 +6515,15 @@
     // are only present when their corresponding overlay registered.
     lifecycle.add(() => frameMonitor.stop());
     if (stopLensWatch) lifecycle.add(stopLensWatch);
-    if (stopSoiLayer) lifecycle.add(stopSoiLayer);
+    // Helio science-layer listeners now unsubscribe via helioReactive.dispose
+    // (RFC-036 WS-B). The cislunar-layer stops stay here.
+    lifecycle.add(helioReactive.dispose);
     if (stopSoiLayerCislunar) lifecycle.add(stopSoiLayerCislunar);
-    if (stopGravityLayer) lifecycle.add(stopGravityLayer);
     if (stopGravityLayerCislunar) lifecycle.add(stopGravityLayerCislunar);
-    if (stopFlyVelocityLayer) lifecycle.add(stopFlyVelocityLayer);
     if (stopVelocityLayerCislunar) lifecycle.add(stopVelocityLayerCislunar);
-    if (stopFlyCentripetalLayer) lifecycle.add(stopFlyCentripetalLayer);
     if (stopCentripetalLayerCislunar) lifecycle.add(stopCentripetalLayerCislunar);
-    if (stopCoastLayer) lifecycle.add(stopCoastLayer);
     if (stopCoastLayerCislunar) lifecycle.add(stopCoastLayerCislunar);
-    if (stopApsidesLayer) lifecycle.add(stopApsidesLayer);
     if (stopApsidesLayerCislunar) lifecycle.add(stopApsidesLayerCislunar);
-    if (stopHillSphereLayer) lifecycle.add(stopHillSphereLayer);
-    if (stopLagrangeLayer) lifecycle.add(stopLagrangeLayer);
-    if (stopMagnetosphereLayer) lifecycle.add(stopMagnetosphereLayer);
-    if (stopMoonsLayer) lifecycle.add(stopMoonsLayer);
     lifecycle.add(() => disposeScene(scene));
     // ADR-058: dispose the cislunar scene's GPU resources too.
     lifecycle.add(() => disposeScene(cislunarScene));

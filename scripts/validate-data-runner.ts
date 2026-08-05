@@ -27,10 +27,23 @@ interface Task {
   /** Command + argv. */
   cmd: string;
   args: string[];
+  /**
+   * Optional group tags. `npm run validate-image-integrity` (and any
+   * `validate-data -- --group=<g>`) runs only the tasks tagged with that group.
+   * `image` = the complete image-pipeline integrity umbrella (R5): every guard
+   * that protects gallery/hero/provenance/credits/phash/variant integrity. The
+   * omnibus `validate-data` is included because it carries the inline image
+   * gates (license/on-disk/no-dupes, the half-baked-tile Tier-2 variant check,
+   * duplicate-manifest routing). Untagged tasks run only in the full pass.
+   */
+  groups?: string[];
 }
 
 const TASKS: Task[] = [
-  { name: 'validate-data', cmd: 'tsx', args: ['scripts/validate-data.ts'] },
+  // validate-data is the omnibus — tagged `image` because it holds the core
+  // inline image gates (provenance license/on-disk/dupes, half-baked-tile
+  // variant resolve, sidecar dup-manifest) alongside its non-image checks.
+  { name: 'validate-data', cmd: 'tsx', args: ['scripts/validate-data.ts'], groups: ['image'] },
   { name: 'validate-diagrams', cmd: 'tsx', args: ['scripts/validate-diagrams.ts'] },
   {
     name: 'check-science-map-refs',
@@ -41,32 +54,47 @@ const TASKS: Task[] = [
   { name: 'check-doc-counts', cmd: 'node', args: ['scripts/gen-doc-counts.mjs', '--check'] },
   { name: 'validate-satellites', cmd: 'tsx', args: ['scripts/validate-satellites.ts'] },
   { name: 'validate-universe-stars', cmd: 'tsx', args: ['scripts/validate-universe-stars.ts'] },
-  { name: 'validate-hero-coverage', cmd: 'tsx', args: ['scripts/validate-hero-coverage.ts'] },
-  { name: 'validate-image-dupes', cmd: 'tsx', args: ['scripts/validate-image-dupes.ts'] },
+  {
+    name: 'validate-hero-coverage',
+    cmd: 'tsx',
+    args: ['scripts/validate-hero-coverage.ts'],
+    groups: ['image'],
+  },
+  {
+    name: 'validate-image-dupes',
+    cmd: 'tsx',
+    args: ['scripts/validate-image-dupes.ts'],
+    groups: ['image'],
+  },
   {
     name: 'validate-image-phash-dupes',
     cmd: 'tsx',
     args: ['scripts/validate-image-phash-dupes.ts'],
+    groups: ['image'],
   },
   {
     name: 'validate-gallery-counts',
     cmd: 'tsx',
     args: ['scripts/validate-gallery-counts.ts'],
+    groups: ['image'],
   },
   {
     name: 'validate-provenance-walker',
     cmd: 'tsx',
     args: ['scripts/validate-provenance-walker.ts'],
+    groups: ['image'],
   },
   {
     name: 'validate-allowlist-discipline',
     cmd: 'tsx',
     args: ['scripts/validate-allowlist-discipline.ts'],
+    groups: ['image'],
   },
   {
     name: 'validate-credits-bundling',
     cmd: 'tsx',
     args: ['scripts/validate-credits-bundling.ts'],
+    groups: ['image'],
   },
 ];
 
@@ -105,8 +133,18 @@ function runTask(task: Task): Promise<TaskResult> {
   });
 }
 
+// `--group=<g>` runs only the tasks tagged with that group (e.g. the R5
+// image-integrity umbrella). No flag → the full pass.
+const groupArg = process.argv.find((a) => a.startsWith('--group='))?.slice('--group='.length);
+const selected = groupArg ? TASKS.filter((t) => t.groups?.includes(groupArg)) : TASKS;
+if (groupArg && selected.length === 0) {
+  process.stderr.write(`validate-data-runner: no tasks in group '${groupArg}'.\n`);
+  process.exit(2);
+}
+const label = groupArg ? `validate-data (group: ${groupArg})` : 'validate-data';
+
 const overallStartedAt = Date.now();
-const results = await Promise.all(TASKS.map(runTask));
+const results = await Promise.all(selected.map(runTask));
 const overallDurationMs = Date.now() - overallStartedAt;
 
 let worstExit = 0;
@@ -122,7 +160,7 @@ for (const result of results) {
 const overallSec = (overallDurationMs / 1000).toFixed(1);
 const verdict = worstExit === 0 ? 'all green' : 'failures present';
 process.stdout.write(
-  `\n──── parallel validate-data: ${verdict} (wall-clock ${overallSec}s) ────\n`,
+  `\n──── parallel ${label}: ${verdict} (${selected.length} tasks, wall-clock ${overallSec}s) ────\n`,
 );
 
 process.exit(worstExit);

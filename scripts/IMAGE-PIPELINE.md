@@ -191,8 +191,12 @@ node scripts/vision/rekey-provenance-webp.mjs    # .jpg → .webp path rekey (me
 # 4. GALLERY COUNTS — rebuilt from disk (counts NN.webp bases, NOT NN.jpg).
 npx tsx scripts/rebuild-gallery-manifests.ts
 
-# 5. VALIDATE — all image gates.
-npm run validate-data
+# 5. VALIDATE — the single image-integrity umbrella (R5). Runs every guard that
+#    protects gallery/hero/provenance/credits/phash/variant integrity in one
+#    command (a filtered subset of validate-data — same task definitions, no
+#    drift). Full `npm run validate-data` is a superset that also runs the
+#    non-image validators; the pre-push hook + CI run the full pass.
+npm run validate-image-integrity
 
 # 6. Browser-verify (hero, gallery, lightbox, credits, alt-text), then commit the
 #    masters/ addition + the static/images webp + every touched static/data JSON.

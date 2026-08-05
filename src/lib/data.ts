@@ -7,7 +7,8 @@
  */
 
 import { base } from '$app/paths';
-import { assetOrigin, localeBundleOrigin } from './asset-url';
+import { assetOrigin } from './asset-url';
+import { get, resetCoreCache, type FetchLike } from './data/core';
 import { loadHeroOverrides, applyHeroOverride } from '$lib/image-hero';
 import type { Destination, Mission, MissionIndex } from '$types/mission';
 import type { LocalizedPlanet, PlanetOverlay, PlanetsData } from '$types/planet';
@@ -45,64 +46,9 @@ import type {
   ScienceTabIntro,
 } from '$types/science';
 
-const cache = new Map<string, unknown>();
-
-type FetchLike = typeof fetch;
-
-// Per-locale i18n overlay bundles. The overlay system ships ~740 tiny JSON
-// files per locale (~10,360 across 14 locales); fetching and precaching them
-// individually is what stalls the service-worker install on mobile WebKit
-// (the 0.6.3-stuck bug). They are built into one bundle per locale
-// (scripts/build-i18n-bundles.mjs, served at /data/i18n/{locale}.json). We
-// fetch a bundle once and index by each file path relative to the locale dir
-// (e.g. "sun.json", "planets/mars.json", "science/orbits/vis-viva.json").
-const i18nBundles = new Map<string, Promise<Record<string, unknown>>>();
-
-function loadI18nBundle(locale: string, fetchFn: FetchLike): Promise<Record<string, unknown>> {
-  let p = i18nBundles.get(locale);
-  if (!p) {
-    const url = `${localeBundleOrigin(locale)}/data/i18n/${locale}.json`;
-    p = (async () => {
-      const res = await fetchFn(url);
-      if (!res.ok) throw new Error(`Failed to fetch ${url}: HTTP ${res.status}`);
-      return (await res.json()) as Record<string, unknown>;
-    })();
-    // Drop the cached promise on failure so a missing bundle (e.g. `vite dev`
-    // before a build emits it) retries and can fall back to per-file fetch.
-    p.catch(() => i18nBundles.delete(locale));
-    i18nBundles.set(locale, p);
-  }
-  return p;
-}
-
-async function get<T>(path: string, fetchFn: FetchLike = fetch): Promise<T> {
-  // i18n overlays resolve from the per-locale bundle. A genuine miss (key
-  // absent from a bundle that DID load) throws so callers en-US fallback
-  // fires; a missing bundle (dev without a build) falls through to the
-  // legacy per-file fetch below.
-  const i18n = /^i18n\/([^/]+)\/(.+)$/.exec(path);
-  if (i18n) {
-    const [, locale, key] = i18n;
-    let bundle: Record<string, unknown> | undefined;
-    try {
-      bundle = await loadI18nBundle(locale, fetchFn);
-    } catch {
-      bundle = undefined;
-    }
-    if (bundle) {
-      if (!(key in bundle)) throw new Error(`i18n overlay not found: ${locale}/${key}`);
-      return bundle[key] as T;
-    }
-  }
-
-  const url = `${base}/data/${path}`;
-  if (cache.has(url)) return cache.get(url) as T;
-  const res = await fetchFn(url);
-  if (!res.ok) throw new Error(`Failed to fetch ${url}: HTTP ${res.status}`);
-  const data = (await res.json()) as T;
-  cache.set(url, data);
-  return data;
-}
+// The fetch + cache + i18n-overlay keystone moved to ./data/core (ADR-084) —
+// `get<T>()`, the cache, and the i18n-bundle resolution are the single source
+// of the caching contract, imported at the top of this file.
 
 export async function getMissionIndex(fetchFn: FetchLike = fetch): Promise<MissionIndex[]> {
   return get<MissionIndex[]>('missions/index.json', fetchFn);
@@ -2547,8 +2493,7 @@ export async function getScienceTab(
 
 /** Internal: clear the in-memory fetch cache. Test-only — not for app use. */
 export function __resetCache(): void {
-  cache.clear();
-  i18nBundles.clear();
+  resetCoreCache(); // clears the shared fetch cache + i18n bundles (./data/core)
   provenanceManifest = null;
   provenanceIndex = null;
 }

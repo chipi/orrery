@@ -64,11 +64,14 @@ export interface FlightPhaseState {
 
 /** Events the page dispatches — one per site that flips a boolean today. */
 export type FlightPhaseEvent =
+  | { type: 'enterOpening' } // mission swap / scrub back to MET 0 replays the opening
+  | { type: 'openingComplete' } // the timed opening overlay fades out on its own
   | { type: 'startLaunch' } // CTA / ?launch deep-link / skipOpening (earth-orbit)
   | { type: 'launchComplete' } // LaunchScene onComplete (ascent → coast|cruise)
   | { type: 'coastComplete' } // CoastScene onComplete / coast auto-cross → descent
   | { type: 'startDescent' } // deep-link / lander arrival / coastComplete
   | { type: 'touchdown' } // DescentScene onComplete (earth → recovery)
+  | { type: 'closeRecovery' } // user dismisses the recovery card
   | { type: 'skipOpening' } // user skips the opening overlay
   | { type: 'scrubTo'; phase: ScrubPhase }; // master scrubber drag
 
@@ -114,6 +117,15 @@ export function reduceFlyAct(
   event: FlightPhaseEvent,
 ): FlyAct {
   switch (event.type) {
+    case 'enterOpening':
+      return 'opening';
+    case 'openingComplete':
+      // The timed opening fades to the transfer scene (byte-identical to the
+      // legacy auto-end, which only cleared openingActive → cruise fallback).
+      return 'cruise';
+    case 'closeRecovery':
+      // Dismissing the recovery card reveals the scene behind it (cruise).
+      return 'cruise';
     case 'startLaunch':
       return inputs.launchAvailable ? 'ascent' : act;
     case 'launchComplete':

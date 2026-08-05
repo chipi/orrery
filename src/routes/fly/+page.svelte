@@ -229,6 +229,11 @@
     HELIO_REBUILD_THRESHOLD,
     CISLUNAR_REBUILD_THRESHOLD,
   } from '$lib/three/trajectory-tube';
+  import {
+    reduceFlyAct,
+    type FlyAct,
+    type FlightPhaseEvent,
+  } from '$lib/fly/flight-phase-controller';
   import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
   import { track, trackMissionComplete } from '$lib/analytics';
 
@@ -280,7 +285,43 @@
   // the mission's launcher has an ascent profile, the opening offers START WITH
   // LAUNCH (plays the launch act → warp → transfer) alongside PROCEED TO
   // SIMULATION (fly from mid-point, exactly as before). ?launch=1 auto-starts.
-  let showLaunch = $state(false);
+  // ─── Flight-act state machine (RFC-036 WS-A · #440) ───────────────
+  // `flyAct` is the single source of truth for which /fly act is on screen
+  // (opening→ascent→coast→cruise→descent→recovery); the legacy show* booleans
+  // are now derived from it, and every transition goes through the pure,
+  // unit-tested reducer via dispatchPhase(). The show* flags depend only on
+  // flyAct (declared first), so no forward-ref TDZ hazard. See the A0 contract in
+  // docs/wip/2026-08-05-fly-restructure-plan.md + flight-phase-controller.ts.
+  let flyAct = $state<FlyAct>('opening');
+  const showLaunch = $derived(flyAct === 'ascent');
+  const showCoast = $derived(flyAct === 'coast');
+  const showDescent = $derived(flyAct === 'descent');
+  const showRecovery = $derived(flyAct === 'recovery');
+  const openingActive = $derived(flyAct === 'opening');
+  /** Apply a phase event through the reducer, reading the live mission inputs at
+   *  call time (a function, so it captures later-declared vars without TDZ). */
+  function dispatchPhase(event: FlightPhaseEvent): void {
+    const db = descentProfile?.body;
+    flyAct = reduceFlyAct(
+      flyAct,
+      {
+        isMoonMission,
+        launchAvailable,
+        earthCoast: !!earthCoast,
+        descentAvailable: descentProfile != null,
+        // The controller only distinguishes earth (→ recovery card) from the
+        // surface-route bodies (page does the goto); collapse anything wider
+        // (e.g. a gas-giant descentProfile.body) to null.
+        descentBody: db === 'earth' || db === 'moon' || db === 'mars' || db === 'venus' ? db : null,
+        deepLink: {
+          launch: wantLaunchDeep,
+          descent: wantDescentDeep,
+          missionMatches: deepMissionId == null || mission.id === deepMissionId,
+        },
+      },
+      event,
+    );
+  }
   let launchProfile = $state<LaunchProfile | null>(null);
   // Master-clock state for the unified pad→arrival scrubber (RFC-034 §4/§11).
   // `launchT` is the ascent MET (s) the /fly rAF loop advances during the launch
@@ -322,8 +363,7 @@
     void loadLaunchProfile(launcher.id, fetch, base, launcher.name).then((p) => {
       if (!p) return;
       launchProfile = p;
-      showLaunch = true;
-      openingActive = false;
+      dispatchPhase({ type: 'startLaunch' });
     });
   }
   // ?launch=1 deep-link → auto-start once the URL-requested mission is loaded.
@@ -352,7 +392,7 @@
   // cruise ends at arrival, then the EDL act flies the lander down to the
   // surface (DescentScene, clock-driven, externalClock=true) and hands off to
   // the body's SurfaceScene. Gated on `hasDescentProfile`; orbiters never enter.
-  let showDescent = $state(false);
+  // showDescent is derived from flyAct (see the flight-act block above).
   let descentProfile = $state<DescentProfile | null>(null);
   let descentT = $state(0);
   let descentSpeed = $state(3);
@@ -361,7 +401,7 @@
   // re-entry. The coast slots between the launch + descent overlays: LaunchScene
   // onComplete hands to CoastScene (instead of revealing the cruise scene), which
   // then hands to DescentScene. Gated on the earth-orbit registry.
-  let showCoast = $state(false);
+  // showCoast is derived from flyAct (see the flight-act block above).
 
   // ── Science-Lens layers offered per flight segment ────────────────────
   // Ascent, coast, descent and cruise are physically different regimes, so the
@@ -476,17 +516,17 @@
   function handleTouchdown() {
     const b = descentProfile?.body;
     const sid = descentProfile?.siteId;
-    showDescent = false;
     if ((b === 'moon' || b === 'mars' || b === 'venus') && sid) {
       void goto(`${base}/${b}?site=${sid}&from=descent`);
-    } else if (b === 'earth') {
-      // Earth re-entry has no surface-explore route — rest on a recovery card
-      // (splashdown/steppe), the Tier-1 counterpart of the SurfaceScene handoff.
-      showRecovery = true;
+    } else {
+      // Earth re-entry has no surface-explore route — the reducer routes touchdown
+      // by descentBody: earth → the recovery card; anything else stays put (the
+      // goto above already left the route for a surface body).
+      dispatchPhase({ type: 'touchdown' });
     }
   }
   // Recovery card shown after an Earth re-entry touchdown (RFC-034 §13).
-  let showRecovery = $state(false);
+  // showRecovery is derived from flyAct (see the flight-act block above).
   // US capsules splash down at sea; Soviet/Chinese capsules land on the steppe.
   const SPLASHDOWN_CAPSULES = new Set(['mercury', 'gemini', 'apollo-cm', 'dragon']);
   // Honest-failure captions — the re-entry outcome is not always a success.
@@ -504,10 +544,8 @@
    *  launch + cruise — the descent counterpart of startLaunch. */
   function startDescent() {
     if (!descentProfile) return;
-    showLaunch = false;
-    showDescent = true;
+    dispatchPhase({ type: 'startDescent' });
     descentT = 0;
-    openingActive = false;
   }
   // ?descent=1 deep-link → jump straight to the EDL act once the profile loads
   // (mirrors ?launch=1). Deterministic entry for browser/e2e checks + a direct
@@ -522,10 +560,8 @@
       (deepMissionId == null || mission.id === deepMissionId)
     ) {
       descentAutoStarted = true;
-      showLaunch = false;
-      showDescent = true;
+      dispatchPhase({ type: 'startDescent' });
       descentT = 0;
-      openingActive = false;
     }
   });
 
@@ -1765,25 +1801,19 @@
     if (pt.phase === 'ascent') {
       // Scrubbing back into the ascent re-mounts LaunchScene fresh (resets any
       // completed warp) and drives it to the scrubbed MET.
-      showDescent = false;
-      showCoast = false;
-      if (!showLaunch) showLaunch = true;
+      dispatchPhase({ type: 'scrubTo', phase: 'ascent' });
       launchT = pt.ascentT;
     } else if (pt.phase === 'descent') {
       // Scrubbing into the tail enters the descent act at the scrubbed EDL time.
-      showLaunch = false;
-      showCoast = false;
-      if (!showDescent) showDescent = true;
+      dispatchPhase({ type: 'scrubTo', phase: 'descent' });
       descentT = pt.descentT ?? 0;
     } else if (earthCoast) {
-      // Cruise band of a Tier-1 Earth-orbit flight = the orbit-coast act.
-      showLaunch = false;
-      showDescent = false;
-      if (!showCoast) showCoast = true;
+      // Cruise band of a Tier-1 Earth-orbit flight = the orbit-coast act (the
+      // reducer maps the cruise band → coast when earthCoast is set).
+      dispatchPhase({ type: 'scrubTo', phase: 'cruise' });
       coastMetDays = pt.cruiseMetDays;
     } else {
-      showLaunch = false;
-      showDescent = false;
+      dispatchPhase({ type: 'scrubTo', phase: 'cruise' });
       simDay = arcTimeline.dep_day + pt.cruiseMetDays;
     }
   }
@@ -1852,7 +1882,7 @@
     // Duration scales with description length + fleet asset count so
     // longer missions get more read time. Base 9.5 s, capped at 22 s.
     openingStartedAt = performance.now();
-    openingActive = true;
+    dispatchPhase({ type: 'enterOpening' });
     openingTitleOpacity = 0;
     openingContextOpacity = 0;
     openingFleetOpacity = 0;
@@ -2017,15 +2047,17 @@
    *  composition take over for a brief settle before launch fires. */
   function skipOpening() {
     if (!openingActive) return;
-    openingActive = false;
+    // The reducer forks skipOpening on earthCoast: earth-orbit → ascent (the
+    // LaunchScene stays gated on launchProfile until the async load below lands,
+    // so no blank flash), everything else → the cruise transfer scene.
+    dispatchPhase({ type: 'skipOpening' });
     openingTitleOpacity = 0;
     openingContextOpacity = 0;
     openingFleetOpacity = 0;
     // Earth-orbit missions (Mercury/Vostok/Voskhod/Gemini…) have no interplanetary
-    // cruise — their arc is launch → LEO/suborbital coast → reentry. Enter via the
-    // launch chain instead of dropping into the cislunar/heliocentric cruise
-    // fallback (which, with no transit arc, reads as a fat line over a tiny Earth
-    // and a runaway day-clock). The launch's onComplete hands off to CoastScene.
+    // cruise — their arc is launch → LEO/suborbital coast → reentry. Load the
+    // launch profile (the reducer already put us in ascent); the launch's
+    // onComplete hands off to CoastScene.
     if (earthCoast && launchAvailable) {
       startLaunch();
       return;
@@ -2083,7 +2115,7 @@
   //   9.5-13.5s existing W3.3 prelaunch dwell (4 s of static Earth)
   //           then launch fires.
   let openingStartedAt = 0;
-  let openingActive = $state(false);
+  // openingActive is derived from flyAct (see the flight-act block above).
   let openingTitleOpacity = $state(0);
   let openingContextOpacity = $state(0);
   let openingFleetOpacity = $state(0);
@@ -2145,7 +2177,7 @@
       // opening. Re-arm opening state + extend the dwell to cover the
       // 9.5 s opening + 4 s prelaunch.
       openingStartedAt = performance.now();
-      openingActive = true;
+      dispatchPhase({ type: 'enterOpening' });
       openingTitleOpacity = 0;
       openingContextOpacity = 0;
       openingFleetOpacity = 0;
@@ -5715,8 +5747,8 @@
             // Cross to re-entry only once the descent profile has finished its
             // async load — otherwise hold at the final coast frame (coastMetDays
             // is clamped, so this branch retries each frame) rather than blanking
-            // to an empty scene at the deorbit seam.
-            showCoast = false;
+            // to an empty scene at the deorbit seam. startDescent() dispatches the
+            // coast→descent transition (showCoast falls to false via the reducer).
             startDescent();
           }
         }
@@ -5745,7 +5777,7 @@
           // looping the cruise — closing the flight circle (RFC-034 §9).
           if (descentProfile && simDay >= arcTimeline.arr_day) {
             simDay = arcTimeline.arr_day;
-            showDescent = true;
+            dispatchPhase({ type: 'startDescent' });
             descentT = 0;
           } else if (simDay > arcTimeline.arr_day + 30) {
             simDay = arcTimeline.dep_day;
@@ -6340,7 +6372,7 @@
           }
           // End opening at adaptive endAt
           if (elapsedO >= endAt) {
-            openingActive = false;
+            dispatchPhase({ type: 'openingComplete' });
             openingTitleOpacity = 0;
             openingContextOpacity = 0;
             openingFleetOpacity = 0;
@@ -7380,19 +7412,13 @@
     bind:speed={launchSpeed}
     externalClock={true}
     onComplete={() => {
-      showLaunch = false;
-      if (earthCoast) {
-        // Tier-1 Earth-orbit: ascent → coast (loop Earth) → re-entry. Hand to
-        // the coast act instead of revealing the interplanetary cruise scene;
-        // the master clock now advances coastMetDays across the coast band.
-        coastMetDays = 0;
-        showCoast = true;
-        isPlaying = true;
-      } else {
-        // Seam crossed forward: reveal the transfer scene and keep playing so the
-        // cruise continues the one continuous timeline from MET 0.
-        isPlaying = true;
-      }
+      // ascent → coast (Tier-1 Earth-orbit: loop Earth → re-entry) or → cruise
+      // (interplanetary transfer). The reducer forks on earthCoast; showCoast /
+      // the cruise fallback follow flyAct. Keep playing so the one continuous
+      // timeline from MET 0 flows across the seam.
+      dispatchPhase({ type: 'launchComplete' });
+      if (earthCoast) coastMetDays = 0;
+      isPlaying = true;
     }}
   />
 {/if}
@@ -7407,8 +7433,8 @@
     externalClock={true}
     t={coastFrac}
     onComplete={() => {
-      // Deorbit burn → re-entry act.
-      showCoast = false;
+      // Deorbit burn → re-entry act. startDescent() dispatches coast→descent
+      // (showCoast falls to false via the reducer).
       startDescent();
     }}
   />
@@ -7430,7 +7456,9 @@
       {#if mission.id && RECOVERY_CAPTIONS[mission.id]}
         <div class="recovery-caption">{RECOVERY_CAPTIONS[mission.id]()}</div>
       {/if}
-      <button class="recovery-close" onclick={() => (showRecovery = false)}>CLOSE</button>
+      <button class="recovery-close" onclick={() => dispatchPhase({ type: 'closeRecovery' })}
+        >CLOSE</button
+      >
     </div>
   </div>
 {/if}

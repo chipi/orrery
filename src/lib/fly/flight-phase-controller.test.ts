@@ -114,6 +114,21 @@ describe('reduceFlyAct — transition table', () => {
     ).toBe('coast');
   });
 
+  it('enterOpening returns to opening (mission swap / scrub-to-MET-0 replay)', () => {
+    expect(reduceFlyAct('cruise', inputs(), { type: 'enterOpening' })).toBe('opening');
+    expect(reduceFlyAct('ascent', inputs(), { type: 'enterOpening' })).toBe('opening');
+  });
+
+  it('openingComplete fades to cruise (timed auto-end)', () => {
+    expect(reduceFlyAct('opening', inputs(), { type: 'openingComplete' })).toBe('cruise');
+  });
+
+  it('closeRecovery dismisses the card back to cruise', () => {
+    expect(
+      reduceFlyAct('recovery', inputs({ descentBody: 'earth' }), { type: 'closeRecovery' }),
+    ).toBe('cruise');
+  });
+
   it('is pure — same (act, inputs, event) always yields the same act', () => {
     const a = reduceFlyAct('ascent', inputs({ earthCoast: true }), { type: 'launchComplete' });
     const b = reduceFlyAct('ascent', inputs({ earthCoast: true }), { type: 'launchComplete' });

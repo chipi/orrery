@@ -92,6 +92,16 @@
           "t": { "type": "string", "enum": ["intro", "core", "deep"] }
         }
       }
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the section's editorial content last passed science-reviewer. Stamp with scripts/stamp-science-review.mjs after applying findings. Paired with review_hash so validate-data can warn when content drifts."
+    },
+    "review_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{12}$",
+      "description": "sha256(first 12 hex) of the en-US overlay editorial fields (title + intro_sentence + body_paragraphs) at reviewed_at. Written by scripts/stamp-science-review.mjs; validate-data recomputes it and warns on mismatch (content changed since review)."
     }
   }
 }

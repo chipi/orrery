@@ -86,6 +86,7 @@
     "gen:doc-counts": "node scripts/gen-doc-counts.mjs",
     "validate-diagrams": "tsx scripts/validate-diagrams.ts",
     "build-science-index": "tsx scripts/build-science-index.ts",
+    "stamp-science-review": "tsx scripts/stamp-science-review.ts",
     "build-universe-stars": "tsx scripts/build-universe-stars.ts",
     "build-named-stars": "tsx scripts/build-named-stars.ts",
     "build-constellation-lines": "tsx scripts/build-constellation-lines.ts",

@@ -12,7 +12,39 @@
  * - ADR-052 bidirectional fleet ↔ missions cross-reference drift
  * - ADR-052 bidirectional fleet ↔ sites/earth-objects cross-reference drift
  * - PRD-020 / RFC-023 launches manifest integrity gates
+ * - Science-section editorial review-freshness hash (scienceReviewHash)
  */
+
+import { createHash } from 'node:crypto';
+
+/**
+ * Canonical content hash of a /science section's en-US editorial fields — the
+ * reader-facing prose that the `science-reviewer` gate actually vets. Used by
+ * both the review-freshness gate in `validate-data.ts` and the stamping tool
+ * `scripts/stamp-science-review.ts`, so they MUST agree byte-for-byte; keep the
+ * field list and ordering here as the single source of truth.
+ *
+ * Returns the first 12 hex chars of the sha256 (matches the `review_hash`
+ * schema pattern). Pure: deterministic, no I/O.
+ */
+export function scienceReviewHash(overlay: {
+  title?: unknown;
+  intro_sentence?: unknown;
+  narrative_101?: unknown;
+  body_paragraphs?: unknown;
+  diagram_caption?: unknown;
+  formula_caption?: unknown;
+}): string {
+  const canonical = JSON.stringify([
+    overlay.title ?? null,
+    overlay.intro_sentence ?? null,
+    overlay.narrative_101 ?? null,
+    overlay.body_paragraphs ?? null,
+    overlay.diagram_caption ?? null,
+    overlay.formula_caption ?? null,
+  ]);
+  return createHash('sha256').update(canonical).digest('hex').slice(0, 12);
+}
 
 // ─── PRD-020 / RFC-023 launches manifest integrity ────────────────────
 

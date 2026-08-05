@@ -37,6 +37,15 @@ Severity: 🔴 wrong fact · 🟠 claim > evidence · 🟡 needs source/softenin
   - **0🔴 · 10🟠 · 5🟡 · 10🔵** across 25 findings
   - Key 🟠 issues: Antares status ACTIVE (230+ retired 2023); Energia tagline implies 1 flight (flew twice); Falcon 9 Block 5 name vs 2010 first_flight mismatch; H-IIA overlay says "retired after first flight 2001" (actually 50 flights, retired June 2025); H3 first_flight "2024" erases the 2023 failure; Atlas V agency="NASA" (should be ULA); LVM3 first_flight "2014" is suborbital test (orbital debut 2017); Falcon Heavy "second-most-powerful" contestable with Starship; Ariane 5 "Galileo" risks confusion with NASA Galileo probe
 
+## Follow-up pass — Science-Lens overlay microcopy (2026-08-05)
+
+The `science_layer_*_desc` layer descriptions (`messages/en-US.json`, shown in
+`ScienceLayersPanel`) were **outside** the 2026-07-14 corpus above (which covered
+the encyclopedia article tree). A dedicated pass reviewed all 33: 3 fixed
+(🔴 `centripetal` force-equilibrium fallacy, 🟠 `soi` hard-boundary caveat,
+🔵 `apsides` stale "ν = 42°"), applied + re-translated to all 13 locales.
+→ [`science-lens-overlays.md`](science-lens-overlays.md)
+
 ## Detail files (25)
 
 ### Missions (123)

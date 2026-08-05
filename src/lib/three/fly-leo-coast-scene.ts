@@ -179,10 +179,10 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
 
   // ── Science-Lens force vectors (orbit trio) ───────────────────────────
   // A LEO coast is free-fall: no thrust or drag. The teachable diagram is
-  // velocity (tangent) balanced by gravity (radially inward) — and the whole
+  // velocity (tangent) plus gravity (radially inward) — and the whole
   // point of orbit is that gravity IS the centripetal force, so the inward
-  // gravity + inward centripetal arrows sit alongside each other to show the
-  // balance. Colors match the ascent/descent force legend (weight=red,
+  // gravity + inward centripetal arrows sit alongside each other to show they
+  // coincide. Colors match the ascent/descent force legend (weight=red,
   // velocity=cyan) with a distinct gold centripetal.
   const COAST_FORCE_COLORS = { weight: 0xff5a5a, velocity: 0x7fe0ff, centripetal: 0xffc850 };
   // Length is set per-frame from the camera distance so the arrows hold a

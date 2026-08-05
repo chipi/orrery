@@ -29,6 +29,7 @@ import {
   findLaunchesMissingCitations,
   findLaunchesOrphanLauncherRefs,
   findLaunchesOrphanRocketMappingTargets,
+  scienceReviewHash,
   type FleetRef,
   type LicenseWaiver,
   type SiteType,
@@ -661,6 +662,70 @@ if (existsSync(SCIENCE_TABS_DIR)) {
       if (file.endsWith('_index.json')) continue;
       validateFile(file, validateScienceSection);
     }
+  }
+}
+
+// ────────────────────────────────────────────────────────────────────
+// Science editorial review-freshness gate (soft). Each science section
+// MAY carry `reviewed_at` + `review_hash` (stamped by
+// scripts/stamp-science-review.ts after the section passes the
+// science-reviewer). validate-data recomputes the en-US editorial hash
+// and warns when a STAMPED section's content has drifted since review —
+// the exact drift the 2026-07-14 fact-check sweep had to catch by hand.
+// Unstamped sections are counted in one quiet info line, so the gate is
+// silent until adoption rather than screaming on every build. The rule
+// lives outside ajv because it compares base metadata to overlay prose.
+// ────────────────────────────────────────────────────────────────────
+if (existsSync(SCIENCE_TABS_DIR)) {
+  let stampedFresh = 0;
+  let unstamped = 0;
+  const drifted: string[] = [];
+  const missingOverlay: string[] = [];
+  for (const tab of readdirSync(SCIENCE_TABS_DIR)) {
+    const tabDir = join(SCIENCE_TABS_DIR, tab);
+    if (!statSync(tabDir).isDirectory()) continue;
+    for (const file of listJson(tabDir)) {
+      if (file.endsWith('_index.json')) continue;
+      let base: { id?: string; reviewed_at?: string; review_hash?: string };
+      try {
+        base = readJson(file) as typeof base;
+      } catch {
+        continue; // schema pass already reported the parse error
+      }
+      const id = base.id ?? file;
+      if (!base.review_hash) {
+        unstamped += 1;
+        continue;
+      }
+      const overlayPath = join(I18N_SRC, 'en-US', 'science', tab, `${id}.json`);
+      if (!existsSync(overlayPath)) {
+        missingOverlay.push(id);
+        continue;
+      }
+      const overlay = readJson(overlayPath) as Parameters<typeof scienceReviewHash>[0];
+      if (scienceReviewHash(overlay) === base.review_hash) {
+        stampedFresh += 1;
+      } else {
+        drifted.push(id);
+      }
+    }
+  }
+  if (drifted.length > 0) {
+    console.warn(
+      `  ⚠ ${drifted.length} science section(s) changed since last review — ` +
+        `re-review + re-stamp (\`npm run stamp-science-review -- <id>\`): ${drifted.join(', ')}`,
+    );
+  }
+  if (missingOverlay.length > 0) {
+    console.warn(
+      `  ⚠ ${missingOverlay.length} stamped section(s) with no en-US overlay: ${missingOverlay.join(', ')}`,
+    );
+  }
+  if (drifted.length === 0 && missingOverlay.length === 0) {
+    console.log(
+      `  ✓ science review-freshness: ${stampedFresh} stamped section(s) current` +
+        (unstamped > 0 ? ` (${unstamped} not yet review-stamped)` : ''),
+    );
   }
 }
 

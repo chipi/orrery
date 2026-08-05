@@ -87,3 +87,40 @@ Goal: the ~4,870-line `onMount` becomes a `fly-scene-host` + the existing `fly-*
 3. WS-B (B0→B6) — #441, land + validate.
 4. **WS-C — #443 (`/explore`, RFC-036 §8):** apply the SAME pattern (scale-shell controller + explore-scene-host) after /fly proves it. Its own sliced plan gets written when WS-A/WS-B are done and the seam is proven — not detailed here to avoid designing against an unproven seam.
 5. Close #440/#441/#443 referencing RFC-036; update TA.md §fly + §explore to the new architecture.
+
+---
+
+## A0 — the frozen /fly phase contract (mapped 2026-08-05)
+
+**Acts** (what scene is active): `opening · ascent · coast · cruise · descent · recovery`.
+`cruise` = the interplanetary/cislunar transfer scene; `viewMode = isMoonMission ? 'cislunar' : 'heliocentric'` selects which. The old scattered booleans map 1:1 to acts:
+
+| act | flag today | scene |
+|---|---|---|
+| opening | `openingActive` | opening title/fleet overlay |
+| ascent | `showLaunch` | LaunchScene |
+| coast | `showCoast` (earthCoast only) | CoastScene |
+| descent | `showDescent` | DescentScene |
+| recovery | `showRecovery` (earth only) | recovery card |
+| cruise | none of the above | helio/cislunar transfer |
+
+**Inputs** (mission capabilities, read by the controller): `isMoonMission`, `launchAvailable`, `earthCoast` (getEarthOrbitCoast≠null), `descentAvailable` (profile loaded), `descentBody` (moon/mars/venus/earth), `deepLink {launch, descent, missionMatches}`. Continuous clock (launchT/coastMetDays/descentT/simDay/isPlaying/speeds) stays in the page — the controller owns the ACT, not the clock.
+
+**Transition table** (event → act, with guards):
+
+| # | event (source) | from | guard | to | side-effects |
+|---|---|---|---|---|---|
+| 1 | `startLaunch` (CTA / deep-link / skipOpening-earthCoast) | opening/cruise | launcher resolves; profile loads | **ascent** | openingActive=false |
+| 2 | `?launch=1` effect | opening | wantLaunch & !started & launchAvailable & mission matches | → startLaunch | launchAutoStarted=true |
+| 3 | `launchComplete` (LaunchScene onComplete) | ascent | earthCoast? | **coast** (else **cruise**) | coastMetDays=0; isPlaying=true |
+| 4 | `coastComplete` (CoastScene onComplete) | coast | — | → startDescent | — |
+| 5 | coast auto-cross (animate loop) | coast | coastMetDays≥dur & descentProfile loaded | → startDescent | — |
+| 6 | `startDescent` (coast / deep-link / lander arrival) | any | descentProfile loaded | **descent** | showLaunch=false; descentT=0; openingActive=false |
+| 7 | `?descent=1` effect | opening/cruise | wantDescent & !started & profile & (no mission or match) | **descent** | descentAutoStarted=true |
+| 8 | `touchdown` (DescentScene onComplete) | descent | body=earth → recovery; moon/mars/venus → goto surface | **recovery** / (leave route) | — |
+| 9 | `skipOpening` | opening | earthCoast & launchAvailable → startLaunch; else settle | **ascent** / **cruise** | openingActive=false; launchDwellUntil |
+| 10 | `scrubTo(phase)` (onMasterScrub) | any | phase∈{ascent,descent,cruise/coast} | that act | sets launchT/descentT/coastMetDays/simDay |
+
+**Bug the tests must catch (the session's earth-orbit regression):** a crewed/suborbital mission (earthCoast≠null) at the opening must route via **ascent→coast→descent**, NOT drop into the heliocentric **cruise** fallback (transitions 3 + 9 gate on `earthCoast`). Deep-links `?launch`/`?descent` (2,7) and touchdown→recovery (8) are the other must-test edges.
+
+**Contract:** the controller is a pure reducer `(state, inputs, event) → state` exposing `{ act, viewMode, show* flags, segment }`. Clock stays in the page; the page calls `dispatch(event)` from the same sites that flip the booleans today.

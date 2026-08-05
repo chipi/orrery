@@ -60,15 +60,22 @@ const args = Object.fromEntries(
   }),
 );
 if (!args.file || !args.paths) {
-  console.error('usage: --file=<tab>/<id> --paths=field[.idx],... [--locales=all|de,ja] [--dir=science]');
+  console.error(
+    'usage: --file=<tab>/<id> --paths=field[.idx],... [--locales=all|de,ja] [--dir=science]',
+  );
   process.exit(1);
 }
 if (args.dir !== undefined) SUBDIR = args.dir;
-const paths = args.paths.split(',').map((p) => p.trim()).filter(Boolean);
+const paths = args.paths
+  .split(',')
+  .map((p) => p.trim())
+  .filter(Boolean);
 const locales = !args.locales || args.locales === 'all' ? ALL : args.locales.split(',');
 
 function getAt(obj, dotted) {
-  return dotted.split('.').reduce((o, seg) => (o == null ? o : o[/^\d+$/.test(seg) ? Number(seg) : seg]), obj);
+  return dotted
+    .split('.')
+    .reduce((o, seg) => (o == null ? o : o[/^\d+$/.test(seg) ? Number(seg) : seg]), obj);
 }
 function setAt(obj, dotted, val) {
   const segs = dotted.split('.');

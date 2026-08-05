@@ -124,3 +124,46 @@ Goal: the ~4,870-line `onMount` becomes a `fly-scene-host` + the existing `fly-*
 **Bug the tests must catch (the session's earth-orbit regression):** a crewed/suborbital mission (earthCoast≠null) at the opening must route via **ascent→coast→descent**, NOT drop into the heliocentric **cruise** fallback (transitions 3 + 9 gate on `earthCoast`). Deep-links `?launch`/`?descent` (2,7) and touchdown→recovery (8) are the other must-test edges.
 
 **Contract:** the controller is a pure reducer `(state, inputs, event) → state` exposing `{ act, viewMode, show* flags, segment }`. Clock stays in the page; the page calls `dispatch(event)` from the same sites that flip the booleans today.
+
+---
+
+## WS-A — LANDED (2026-08-05, commits on `content`, unpushed)
+
+- **A1+A2** (`10b459b2ca`): `$lib/fly/flight-phase-controller.ts` (pure reducer) + 21-test suite.
+- **A3** (`aa765da617`): `+page.svelte` wired — the 5 `$state` booleans (`showLaunch`/`showCoast`/`showDescent`/`showRecovery`/`openingActive`) collapsed to one `flyAct = $state<FlyAct>('opening')` + `$derived` flags; every write site dispatches a typed event through `dispatchPhase()` (reads live mission inputs at call time → no forward-ref TDZ). Non-act side-effects preserved verbatim (`descentT`/`coastMetDays` resets, `isPlaying`, `launchDwellUntil`, opacity fades, the moon/mars/venus surface `goto`, the async launch/descent profile loads). `descentProfile.body` narrowed to the controller's `DescentBody` (gas-giant bodies → null; reducer only forks earth→recovery).
+- **A4 verification (evidence):**
+  - `npm run check` → **0 errors**.
+  - controller unit tests → **21/21 pass**.
+  - `prettier --check --no-cache` + `eslint --no-cache` on the 3 files → **clean**.
+  - Headless browser (dev :5390) per-act render + zero console errors: **5/5** — default→opening, `friendship-7&launch=1`→ascent, `friendship-7&descent=1`→descent, `friendship-7` scrub-to-cruise-band→**CoastScene** (the earth-orbit routing guard, visually confirmed — orbit arc + MA-6 HUD, NOT heliocentric cruise), `curiosity&descent=1`→descent.
+  - `/fly` Playwright e2e (desktop-chromium, 7 fly specs) → **116 passed (5.3m)**.
+  - **NOT run for WS-A:** mobile-chromium e2e (deferred to B6, which mandates both projects) and the flyby-hero/cislunar reference-screenshot pixel diff (WS-A is phase-logic only, no scene/WebGL change — the DOM-marker + console-clean check is the parity gate here). No pixel-diff baseline was captured pre-A3.
+
+**WS-B seam is now proven:** the page holds `flyAct` + the continuous clock; the scene layer (WS-B) will read `flyAct`/clock one-way. Nothing in WS-A touched `onMount`/WebGL.
+
+---
+
+## B0 — onMount closure map (mapped 2026-08-05, read-only)
+
+`onMount(async () => …)` spans **lines 2518–7393** (~4,875 lines). Region ranges below are the B1–B5 extraction targets.
+
+**Already-delegated `$lib` modules (the seam is partly built):**
+- `$lib/three/fly-helio-scene` → `buildHelioScene()` — sun/planets/orbit-rings/bloom/EffectComposer/skydome (the whole static helio graph).
+- `$lib/three/fly-cislunar-scene` → `buildCislunarScene()` — Earth/Moon meshes, SoI rings, overlay arrows, LOD.
+- `$lib/three/fly-updaters` → `FlyUpdaters` type (typed per-frame handle, published at onMount end).
+- `$lib/fly-scene-constants` (tube radius R2, SoI rings, gravity arrows, coast line, FD stages), `$lib/fly-cinematic-frame` (`runCinematicFrame`), `$lib/fly-cinematic-beats`, `$lib/three/fly-leo-coast-scene` (`LOOP_CAP`).
+
+**Regions (line ranges):**
+| region | lines | inline vs delegated | B-slice |
+|---|---|---|---|
+| (a) renderer/camera/host setup | 2636–2728 | delegated to `buildHelioScene` (renderer/scene/camera all inside it); no separate DOM-attach — `el3d = renderer.domElement` grabbed at 4960 | B1 |
+| (b) helio scene assembly | 2678–2728 (delegated) **+ 3219–3955 inline** | ~737 inline lines: `buildTubeGeometry`/`buildTubeMaterial` + out/ret arc meshes, SoI rings, gravity/velocity/centripetal arrows, sc-sprite Canvas2D glyph, engine plume shader, `applyMissionSpacecraftModel`, dep/arr/ret torus markers, moon-orbit ring, label-sprite system | **B2** |
+| (c) cislunar scene assembly | 2730–3217 (~488) | delegated core + inline star field, `buildCislunarLineMaterial` GLSL, phase-line map, moon-frame group, cislunar sc-sprite, annotations, `rebuildCislunarLines`/`updateCislunarLineProgress`/`updateCislunarSpacecraft` | **B3** |
+| (d) host-state (not helio/cislunar) | 3982–4188, 4688–4710, 4960, 5128–5148 | camera orbit state (camR/P/T, targets), auto-zoom state, montage state, 2D-canvas state, `el3d` | B1 |
+| (e) per-frame `onFrame` body | **5654–7324 (~1670)** — built via `createAnimateLoop`, `loop.start()` at 7327 | the monolith: frame bookkeeping+`runCinematicFrame`, phase-clock advances, simDay+moonDrift, cruise/flyby cine camera, `updateCam`, montage, **helio frame update 6038–6144**, sc sprite/model positioning, phase visibility, arrival/epilogue/opening, helio science-layers, tube shader progress, **cislunar frame 6700–7063**, render branch 7065–7098, DEV snapshot, phase-marker + FD + milestone screen projection, 2D fallback | **B4** |
+| (f) input listeners | 4960–5127 + 5630 | mouse/wheel/touch drag handlers + `onResize`, registered via `lifecycle.on(...)` | B1/B5 |
+| (g) cleanup/dispose | 7329–7393 | `flyUpdaters` publish + `lifecycle.add(...)` (17 layer-stops, `disposeScene` ×2, `renderer.dispose/forceContextLoss`, `el3d.remove`) → `cleanup`; `onDestroy` at 7395 | B1/B5 |
+
+**Prime extraction candidates (largest contiguous inline):** (1) the `onFrame` body 5654–7324 — most tangled, B4; (2) helio inline 3219–3955 (~737) — B2; (3) cislunar inline net ~365 lines within 2730–3217 — B3.
+
+**Closure-capture risk:** the `onFrame` loop closes over ~50 `let`/`const` declared inside `onMount` (renderer, scene, camera, all meshes/groups/materials, camR/P/T orbit state, auto-zoom + montage state, `el3d`, 2D canvas ctx, `lastTime`/`moonDriftSec`/`scLastWorld`). B1's `fly-scene-host` must own these as host fields; B2/B3 move the mesh/material bundles into their scene modules' returned handles; B4's `frame(state)` receives the clock + `flyAct` and dispatches by act. This dense capture is exactly the TDZ-hazard class WS-B eliminates.

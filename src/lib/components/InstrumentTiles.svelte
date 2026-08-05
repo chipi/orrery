@@ -14,6 +14,7 @@
   import { BODY_PALETTE } from '$lib/planet-stats';
   import type { PlanetStats } from '$lib/planet-stats';
   import * as m from '$lib/paraglide/messages';
+  import { createAnimateLoop } from '$lib/three/animate-loop';
 
   let {
     bodyKey,
@@ -197,22 +198,23 @@
       cellAir(cw * 2, cw, h);
     };
 
-    let raf = 0;
-    let disposed = false;
     if (reduce) {
       draw(0.55);
     } else {
       const start = performance.now();
-      const loop = () => {
-        if (disposed) return;
-        draw((performance.now() - start) / 1000);
-        raf = requestAnimationFrame(loop);
+      const loop = createAnimateLoop({
+        onFrame: () => {
+          draw((performance.now() - start) / 1000);
+        },
+        reducedMotion: () => false,
+      });
+      loop.start();
+      return () => {
+        loop.cleanup();
+        ro.disconnect();
       };
-      raf = requestAnimationFrame(loop);
     }
     return () => {
-      disposed = true;
-      cancelAnimationFrame(raf);
       ro.disconnect();
     };
   });

@@ -13,6 +13,7 @@
  */
 import * as THREE from 'three';
 import { onLayerChange, type LayerKey } from '$lib/science-layers';
+import { createAnimateLoop } from '$lib/three/animate-loop';
 
 export interface MarsLayerHandle {
   object: THREE.Object3D;
@@ -149,15 +150,16 @@ export function buildPolarCaps(opts: PolarCapsOpts): MarsLayerHandle {
   if (opts.seasonal && !reduce) {
     const periodMs = (opts.seasonalPeriodSec ?? 16) * 1000;
     const start = performance.now();
-    let raf = 0;
-    const tick = () => {
-      const p = Math.sin(((performance.now() - start) / periodMs) * Math.PI * 2); // -1..1
-      northMat.opacity = 0.22 + 0.55 * (0.5 + 0.5 * p);
-      southMat.opacity = 0.22 + 0.55 * (0.5 - 0.5 * p);
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    disposables.push({ dispose: () => cancelAnimationFrame(raf) });
+    const loop = createAnimateLoop({
+      onFrame: () => {
+        const p = Math.sin(((performance.now() - start) / periodMs) * Math.PI * 2); // -1..1
+        northMat.opacity = 0.22 + 0.55 * (0.5 + 0.5 * p);
+        southMat.opacity = 0.22 + 0.55 * (0.5 - 0.5 * p);
+      },
+      reducedMotion: () => false,
+    });
+    loop.start();
+    disposables.push({ dispose: () => loop.cleanup() });
   }
 
   return gate(group, 'polar-caps', disposables);

@@ -6,7 +6,6 @@
   THIS system sits among all the others — and next to Earth, Jupiter, Saturn.
 -->
 <script lang="ts">
-  import { onMount } from 'svelte';
   import {
     mpX,
     mpY,
@@ -17,6 +16,7 @@
     SOLAR_REFERENCES,
   } from '$lib/universe/property-space';
   import * as m from '$lib/paraglide/messages';
+  import { createAnimateLoop } from '$lib/three/animate-loop';
 
   type Planet = { name: string; periodDays: number; massEarth: number; hostId: string };
   type Props = {
@@ -29,23 +29,14 @@
   let { planets, activeHostId, open, reducedMotion = false, onClose }: Props = $props();
 
   let canvas: HTMLCanvasElement | undefined = $state();
-  let raf = 0;
   let startMs = 0;
 
-  onMount(() => () => cancelAnimationFrame(raf));
-
   $effect(() => {
-    if (!open || !canvas) {
-      cancelAnimationFrame(raf);
-      return;
-    }
+    if (!open || !canvas) return;
     startMs = performance.now();
-    const draw = () => {
-      render();
-      raf = requestAnimationFrame(draw);
-    };
-    raf = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(raf);
+    const loop = createAnimateLoop({ onFrame: () => render(), reducedMotion: () => false });
+    loop.start();
+    return () => loop.cleanup();
   });
 
   function render(): void {

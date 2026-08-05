@@ -12,6 +12,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { base } from '$app/paths';
+  import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import {
     createLeoCoastScene,
@@ -53,7 +54,7 @@
   let container: HTMLDivElement;
   let sceneObj: LeoCoastScene | null = null;
   let ar: AscentRenderer | null = null;
-  let raf = 0;
+  let animLoop: AnimateLoop | null = null;
   let done = false;
   let layerStops: Array<(() => void) | undefined> = [];
 
@@ -132,24 +133,23 @@
       onLayerChange('centripetal', (on) => sceneObj?.setCentripetalVisible(on)),
     ];
 
-    let last = performance.now();
-    const loop = () => {
-      const now = performance.now();
-      const dt = (now - last) / 1000;
-      last = now;
-      // externalClock: /fly's master scrubber owns the fraction (via `t`); we only
-      // render. Standalone: advance the playhead while playing / scrubbing.
-      if (!externalClock && playing) coastFraction = Math.min(1, coastFraction + dt / PLAY_S);
-      sceneObj!.setState({ coastFraction, metS: coastFraction * coast.coastDurationS, rev });
-      ar!.render();
-      if (debugOn) camDbg = sceneObj!.getCameraDebug();
-      if (!externalClock && playing && coastFraction >= 1) {
-        finish();
-        return;
-      }
-      raf = requestAnimationFrame(loop);
-    };
-    loop();
+    animLoop = createAnimateLoop({
+      onFrame: ({ dt }) => {
+        // externalClock: /fly's master scrubber owns the fraction (via `t`); we only
+        // render. Standalone: advance the playhead while playing / scrubbing.
+        if (!externalClock && playing) coastFraction = Math.min(1, coastFraction + dt / PLAY_S);
+        sceneObj!.setState({ coastFraction, metS: coastFraction * coast.coastDurationS, rev });
+        ar!.render();
+        if (debugOn) camDbg = sceneObj!.getCameraDebug();
+        if (!externalClock && playing && coastFraction >= 1) {
+          finish();
+          animLoop?.stop();
+          return;
+        }
+      },
+      reducedMotion: () => false,
+    });
+    animLoop.start();
 
     const onResize = () => ar?.resize();
     window.addEventListener('resize', onResize);
@@ -157,7 +157,7 @@
   });
 
   onDestroy(() => {
-    cancelAnimationFrame(raf);
+    animLoop?.cleanup();
     layerStops.forEach((stop) => stop?.());
     ar?.dispose();
     sceneObj?.dispose();

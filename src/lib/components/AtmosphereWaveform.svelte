@@ -25,6 +25,7 @@
   import { base } from '$app/paths';
   import { BODY_PALETTE } from '$lib/planet-stats';
   import * as m from '$lib/paraglide/messages';
+  import { createAnimateLoop } from '$lib/three/animate-loop';
 
   let { bodyKey }: { bodyKey: string } = $props();
 
@@ -215,32 +216,31 @@
 
     const render = (t: number) => (p.amp === 0 ? drawFlat() : drawSiri(t));
 
-    let raf = 0;
-    let disposed = false;
+    let animLoop;
     if (reduce && !playing) {
       render(0.9);
       // Still animate while playing even under reduced-motion? No — respect
       // the pref; a paused static frame is the idle. Re-render on play via
       // a lightweight loop only while playing.
-      const loopReduced = () => {
-        if (disposed) return;
-        if (playing) render(performance.now() / 1000);
-        raf = requestAnimationFrame(loopReduced);
-      };
-      raf = requestAnimationFrame(loopReduced);
+      animLoop = createAnimateLoop({
+        onFrame: () => {
+          if (playing) render(performance.now() / 1000);
+        },
+        reducedMotion: () => false,
+      });
     } else {
       const start = performance.now();
-      const loop = () => {
-        if (disposed) return;
-        render((performance.now() - start) / 1000);
-        raf = requestAnimationFrame(loop);
-      };
-      raf = requestAnimationFrame(loop);
+      animLoop = createAnimateLoop({
+        onFrame: () => {
+          render((performance.now() - start) / 1000);
+        },
+        reducedMotion: () => false,
+      });
     }
+    animLoop.start();
 
     return () => {
-      disposed = true;
-      cancelAnimationFrame(raf);
+      animLoop.cleanup();
       ro.disconnect();
       stop();
       audioCtx?.close().catch(() => {});

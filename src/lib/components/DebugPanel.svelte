@@ -13,6 +13,7 @@
   import { page } from '$app/stores';
   import { onMount } from 'svelte';
   import { getDebugPanelContext } from '$lib/components/debug-panel-context';
+  import { createAnimateLoop } from '$lib/three/animate-loop';
 
   // Read the page-registration state from context (set up in
   // +layout.svelte). The layout owns the reactive object so siblings
@@ -53,36 +54,38 @@
 
     let last = performance.now();
     let frameCount = 0;
-    let rafId = 0;
-    const tick = (now: number) => {
-      frameCount++;
-      const elapsed = now - last;
-      if (elapsed >= 1000) {
-        fps = Math.round((frameCount * 1000) / elapsed);
-        frameTimeMs = Math.round(elapsed / Math.max(1, frameCount));
-        last = now;
-        frameCount = 0;
-        // Sample renderer.info once per second; the values reset on
-        // every render call so reading them between frames is fine.
-        const rdr = debugCtx?.rendering.value?.renderer;
-        if (rdr) {
-          drawCalls = rdr.info.render.calls;
-          triangles = rdr.info.render.triangles;
-          points = rdr.info.render.points;
-          lines = rdr.info.render.lines;
-          texCount = rdr.info.memory.textures;
-          geoCount = rdr.info.memory.geometries;
+    const loop = createAnimateLoop({
+      onFrame: () => {
+        const now = performance.now();
+        frameCount++;
+        const elapsed = now - last;
+        if (elapsed >= 1000) {
+          fps = Math.round((frameCount * 1000) / elapsed);
+          frameTimeMs = Math.round(elapsed / Math.max(1, frameCount));
+          last = now;
+          frameCount = 0;
+          // Sample renderer.info once per second; the values reset on
+          // every render call so reading them between frames is fine.
+          const rdr = debugCtx?.rendering.value?.renderer;
+          if (rdr) {
+            drawCalls = rdr.info.render.calls;
+            triangles = rdr.info.render.triangles;
+            points = rdr.info.render.points;
+            lines = rdr.info.render.lines;
+            texCount = rdr.info.memory.textures;
+            geoCount = rdr.info.memory.geometries;
+          }
+          const fm = debugCtx?.rendering.value?.frameMonitor;
+          if (fm) {
+            frameMonitorAvgMs = fm.getAvgFrameMs();
+            frameMonitorLastStruggleAt = fm.getLastStruggleAt();
+          }
         }
-        const fm = debugCtx?.rendering.value?.frameMonitor;
-        if (fm) {
-          frameMonitorAvgMs = fm.getAvgFrameMs();
-          frameMonitorLastStruggleAt = fm.getLastStruggleAt();
-        }
-      }
-      rafId = requestAnimationFrame(tick);
-    };
-    rafId = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafId);
+      },
+      reducedMotion: () => false,
+    });
+    loop.start();
+    return () => loop.cleanup();
   });
 
   function toggleOpen() {

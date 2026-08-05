@@ -7,7 +7,7 @@
   cores (the Milky-Way balance), elegant teal axes, region + Sun labels.
 -->
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { createAnimateLoop } from '$lib/three/animate-loop';
   import { bvToRgb } from '$lib/universe/bv-to-rgb';
   import { hrX, hrY, SPECTRAL_CLASSES, SUN_BV, SUN_ABSMAG } from '$lib/universe/property-space';
   import * as m from '$lib/paraglide/messages';
@@ -17,7 +17,6 @@
   let { stars, open, reducedMotion = false, onClose }: Props = $props();
 
   let canvas: HTMLCanvasElement | undefined = $state();
-  let raf = 0;
   let startMs = 0;
 
   // Deterministic scatter origin per star (stable across frames).
@@ -26,22 +25,15 @@
     return s - Math.floor(s);
   }
 
-  onMount(() => {
-    return () => cancelAnimationFrame(raf);
-  });
-
   $effect(() => {
-    if (!open || !canvas || stars.length === 0) {
-      cancelAnimationFrame(raf);
-      return;
-    }
+    if (!open || !canvas || stars.length === 0) return;
     startMs = performance.now();
-    const draw = () => {
-      render();
-      raf = requestAnimationFrame(draw);
-    };
-    raf = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(raf);
+    // createAnimateLoop adds the document.hidden pause + teardown the raw raf
+    // lacked; render() keeps its own reduced-motion handling (reducedMotion
+    // prop), so the factory's reduce gate is disabled here.
+    const loop = createAnimateLoop({ onFrame: () => render(), reducedMotion: () => false });
+    loop.start();
+    return () => loop.cleanup();
   });
 
   function render(): void {

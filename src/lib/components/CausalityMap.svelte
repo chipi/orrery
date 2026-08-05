@@ -7,10 +7,10 @@
   camera sits inside the shells, where 3-D wireframe spheres read as an inside-out web.
 -->
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { bvToRgb } from '$lib/universe/bv-to-rgb';
   import type { LightShell } from '$lib/universe/causality';
   import * as m from '$lib/paraglide/messages';
+  import { createAnimateLoop } from '$lib/three/animate-loop';
 
   type FieldStar = { x: number; z: number; bv: number };
   type NamedStar = { name: string; distPc: number; x: number; z: number; bv: number };
@@ -26,23 +26,14 @@
   let { field, named, shells, maxPc = 92, open, reducedMotion = false, onClose }: Props = $props();
 
   let canvas: HTMLCanvasElement | undefined = $state();
-  let raf = 0;
   let startMs = 0;
 
-  onMount(() => () => cancelAnimationFrame(raf));
-
   $effect(() => {
-    if (!open || !canvas) {
-      cancelAnimationFrame(raf);
-      return;
-    }
+    if (!open || !canvas) return;
     startMs = performance.now();
-    const draw = () => {
-      render();
-      raf = requestAnimationFrame(draw);
-    };
-    raf = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(raf);
+    const loop = createAnimateLoop({ onFrame: () => render(), reducedMotion: () => false });
+    loop.start();
+    return () => loop.cleanup();
   });
 
   function render(): void {

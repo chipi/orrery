@@ -21,6 +21,7 @@
  */
 import * as THREE from 'three';
 import { onLayerChange, type LayerKey } from '$lib/science-layers';
+import { createAnimateLoop } from '$lib/three/animate-loop';
 
 const DEG = Math.PI / 180;
 
@@ -152,16 +153,17 @@ export function buildSubSolarPoint(opts: SubSolarOpts): SunLayerHandle {
     } else {
       const periodMs = (opts.seasonal.periodSec ?? 14) * 1000;
       const q = new THREE.Quaternion();
-      let raf = 0;
       const start = performance.now();
-      const tick = () => {
-        const t = (performance.now() - start) / periodMs;
-        q.setFromAxisAngle(axis, eps * Math.sin(t * Math.PI * 2));
-        group.quaternion.copy(q);
-        raf = requestAnimationFrame(tick);
-      };
-      raf = requestAnimationFrame(tick);
-      disposables.push({ dispose: () => cancelAnimationFrame(raf) });
+      const loop = createAnimateLoop({
+        onFrame: () => {
+          const t = (performance.now() - start) / periodMs;
+          q.setFromAxisAngle(axis, eps * Math.sin(t * Math.PI * 2));
+          group.quaternion.copy(q);
+        },
+        reducedMotion: () => false,
+      });
+      loop.start();
+      disposables.push({ dispose: () => loop.cleanup() });
     }
   }
 

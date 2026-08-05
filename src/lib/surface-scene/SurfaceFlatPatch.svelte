@@ -19,6 +19,7 @@
    */
   import { onMount } from 'svelte';
   import { viewport } from '$lib/viewport.svelte';
+  import { createAnimateLoop } from '$lib/three/animate-loop';
   import * as m from '$lib/paraglide/messages';
   import { colorFor } from '$lib/surface-map/nation-palette';
   import type { SurfaceSite, Traverse } from '$types/surface-site';
@@ -623,7 +624,6 @@
   }
 
   // ─── Resize + redraw loop ──────────────────────────────────────────
-  let rafId = 0;
   onMount(() => {
     const resize = () => {
       if (!canvas) return;
@@ -633,13 +633,10 @@
     resize();
     const onResize = () => resize();
     window.addEventListener('resize', onResize);
-    const loop = () => {
-      draw();
-      rafId = requestAnimationFrame(loop);
-    };
-    rafId = requestAnimationFrame(loop);
+    const loop = createAnimateLoop({ onFrame: () => draw(), reducedMotion: () => false });
+    loop.start();
     return () => {
-      cancelAnimationFrame(rafId);
+      loop.cleanup();
       window.removeEventListener('resize', onResize);
     };
   });

@@ -1,7 +1,7 @@
 {
   "name": "Geostationary Orbit",
   "short": "GEO",
-  "story": "Exactly 35,786 km up — the altitude where an orbit takes exactly 24 hours, so the satellite hangs motionless over a fixed longitude on the equator. Weather satellites stare at the same continent forever; communications satellites paint a dish-sized footprint and never move. There are no parking spaces, only parking slots — each operator gets a longitude band assigned by the ITU.",
+  "story": "Exactly 35,786 km up — the altitude where an orbit takes one sidereal day (23 h 56 min), so the satellite hangs motionless over a fixed longitude on the equator. Weather satellites stare at the same continent forever; communications satellites paint a dish-sized footprint and never move. There are no parking spaces, only parking slots — each operator gets a longitude band assigned by the ITU.",
   "comparison": "About 1/11th of the way to the Moon. A round-trip TV signal via GEO comsat takes ~240 ms — long enough to hear on a phone call (\"satellite delay\").",
   "residents": [
     {

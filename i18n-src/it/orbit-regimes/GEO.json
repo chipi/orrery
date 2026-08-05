@@ -1,7 +1,7 @@
 {
   "name": "Orbita Geostazionaria",
   "short": "GEO",
-  "story": "Esattamente 35.786 km di altitudine — l'altezza in cui un'orbita impiega esattamente 24 ore, così il satellite rimane immobile sopra una longitudine fissa sull'equatore. I satelliti meteorologici osservano lo stesso continente per sempre; i satelliti per comunicazioni proiettano un'impronta delle dimensioni di un'antenna parabolica e non si muovono mai. Non ci sono parcheggi, solo slot di parcheggio — ogni operatore ottiene una banda di longitudine assegnata dall'ITU.",
+  "story": "Esattamente 35.786 km di altitudine — la quota dove un'orbita richiede un giorno sidereo (23 h 56 min), così che il satellite rimane immobile su una longitudine fissa all'equatore. I satelliti meteorologici osservano lo stesso continente per sempre; i satelliti di comunicazione tracciavano un'impronta grande quanto un'antenna e non si muovono mai. Non ci sono posti auto, solo slot di parcheggio — a ogni operatore viene assegnata una banda di longitudine dall'ITU.",
   "comparison": "Circa 1/11 della distanza fino alla Luna. Un segnale TV di andata e ritorno tramite comsat GEO richiede ~240 ms — abbastanza lungo da sentire in una telefonata («ritardo satellitare»).",
   "residents": [
     {

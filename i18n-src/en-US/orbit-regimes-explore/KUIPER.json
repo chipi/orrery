@@ -2,7 +2,7 @@
   "name": "Kuiper Belt",
   "short": "KUIPER",
   "story": "A ring of icy bodies beyond Neptune — 30 to 50 AU. The frozen analog of the asteroid belt: hundreds of thousands of bodies of which only the largest few have been resolved. Composed of methane, ammonia, water ice + rock. Pluto was the first member identified, in 1930, though the belt wasn't recognised as a population until the 1990s when Jewitt + Luu found the second member (1992 QB1). New Horizons gave humanity its first close looks at TWO Kuiper objects — Pluto in 2015 and Arrokoth in 2019.",
-  "comparison": "If the asteroid belt is a thin ring around the inner solar system, the Kuiper belt is 1,000× wider and contains ~25× more mass. Sunlight at Pluto is 1/1,600th its strength at Earth.",
+  "comparison": "If the asteroid belt is a thin ring around the inner solar system, the Kuiper belt is 1,000× wider and contains dozens of times more mass (~50×+). Sunlight at Pluto is 1/1,600th its strength at Earth.",
   "residents": [
     { "id": "pluto", "label": "Pluto — 39.5 AU, largest known", "agency": "NATURAL" },
     { "id": "eris", "label": "Eris — 96.4 AU (scattered disc)", "agency": "NATURAL" },

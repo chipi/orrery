@@ -1,7 +1,7 @@
 {
   "name": "Órbita Geoestacionaria",
   "short": "GEO",
-  "story": "Exactamente 35.786 km de altura — la altitud donde una órbita tarda exactamente 24 horas, por lo que el satélite permanece inmóvil sobre una longitud fija en el ecuador. Los satélites meteorológicos observan el mismo continente eternamente; los satélites de comunicaciones proyectan una huella del tamaño de un plato y nunca se mueven. No hay plazas de aparcamiento, solo ranuras de aparcamiento — cada operador recibe una banda de longitud asignada por la ITU.",
+  "story": "Exactamente 35.786 km de altitud — la altura a la que una órbita tarda un día sidéreo (23 h 56 min), de modo que el satélite permanece inmóvil sobre una longitud fija en el ecuador. Los satélites meteorológicos contemplan el mismo continente eternamente; los satélites de comunicaciones proyectan una huella del tamaño de una antena parabólica y nunca se desplazan. No hay espacios de estacionamiento, solo ranuras de estacionamiento — cada operador recibe una banda de longitud asignada por la UIT.",
   "comparison": "Aproximadamente 1/11 del camino a la Luna. Una señal de TV de ida y vuelta a través de un satélite de comunicaciones GEO tarda ~240 ms — lo suficiente para escucharse en una llamada telefónica («retardo satelital»).",
   "residents": [
     {

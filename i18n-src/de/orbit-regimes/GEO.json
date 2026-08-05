@@ -1,7 +1,7 @@
 {
   "name": "Geostationärer Orbit",
   "short": "GEO",
-  "story": "Exakt 35.786 km hoch — die Höhe, bei der ein Orbit genau 24 Stunden dauert, sodass der Satellit bewegungslos über einem festen Längengrad am Äquator schwebt. Wettersatelliten starren für immer auf denselben Kontinent; Kommunikationssatelliten malen einen schüsselgroßen Fußabdruck und bewegen sich nie. Es gibt keine Parkplätze, nur Parkschlitze — jeder Betreiber erhält ein Längengradband, das von der ITU zugewiesen wird.",
+  "story": "Exakt 35.786 km hoch – die Höhe, in der eine Umlaufbahn genau einen Sterntag dauert (23 h 56 min), sodass der Satellit regungslos über einer festen Länge am Äquator schwebt. Wettersatelliten starren für immer auf denselben Kontinent; Kommunikationssatelliten zeichnen einen schüsselförmigen Footprint und regen sich nicht vom Fleck. Es gibt keine Parkplätze, nur Parkplätze – jeder Betreiber erhält vom ITU einen Längengradbereich zugewiesen.",
   "comparison": "Etwa 1/11 des Weges zum Mond. Ein Hin- und Rücksignal per GEO-Comsat dauert ~240 ms — lang genug, um es bei einem Telefonat zu hören („Satellitenverzögerung\").",
   "residents": [
     {

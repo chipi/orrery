@@ -2,7 +2,7 @@
   "name": "Órbita Halo Quase-Retilínea",
   "short": "NRHO",
   "story": "Não é exatamente uma órbita ao redor da Lua — mas sim um longo figura-8 em torno dos pontos de Lagrange L1 e L2 do sistema Terra-Lua, mergulhando perto do polo sul lunar no perilúnio (~3.000 km) e estendendo-se muito acima do polo norte no apolúnio (~70.000 km). A geometria oferece duas vantagens: linha de visão contínua de volta à Terra (sem interrupção de comunicação) e consumo muito baixo de combustível para manutenção de estação — alguns m/s por ano. O Lunar Gateway da NASA, quando voar, residirá em NRHO. CAPSTONE voou até lá em 2022 como precursor.",
-  "comparison": "Uma NRHO completa uma volta a cada ~7 dias — aproximadamente um quarto do período orbital da própria Lua. A espaçonave está sempre próxima à região do polo sul, mas nunca diretamente acima dela.",
+  "comparison": "Uma NRHO completa um ciclo a cada ~6,5 dias — aproximadamente um quarto do período orbital da Lua. A espaçonave fica sempre próxima à região do pólo sul, mas nunca diretamente acima dela.",
   "residents": [
     {
       "id": "capstone",

@@ -1,7 +1,7 @@
 {
   "name": "Órbita Geoestacionária",
   "short": "GEO",
-  "story": "Exatamente 35.786 km acima — a altitude onde uma órbita leva exatamente 24 horas, de modo que o satélite permanece imóvel sobre uma longitude fixa no equador. Satélites meteorológicos observam o mesmo continente para sempre; satélites de comunicação pintam uma área de cobertura do tamanho de uma antparabólica e nunca se movem. Não há vagas de estacionamento, apenas faixas — cada operador recebe uma banda de longitude atribuída pela ITU.",
+  "story": "Exatamente 35.786 km de altitude — a altura em que uma órbita leva um dia sideral (23 h 56 min), de modo que o satélite fica imóvel sobre uma longitude fixa no equador. Satélites meteorológicos observam o mesmo continente para sempre; satélites de comunicações iluminam uma pegada do tamanho de uma antena parabólica e nunca se deslocam. Não há vagas de estacionamento, apenas espaços de estacionamento — cada operador recebe uma faixa de longitude atribuída pela UIT.",
   "comparison": "Cerca de 1/11 do caminho até a Lua. Um sinal de TV de ida e volta via satélite GEO leva ~240 ms — tempo suficiente para perceber em uma ligação telefônica (\"atraso de satélite\").",
   "residents": [
     {

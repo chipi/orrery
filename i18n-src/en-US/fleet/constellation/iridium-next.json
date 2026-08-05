@@ -1,6 +1,6 @@
 {
   "name": "Iridium NEXT",
-  "tagline": "Polar LEO comms — 75 sats, GMDSS partner, global voice/data",
+  "tagline": "Polar LEO comms — 66 operational sats +9 spares, GMDSS partner, global voice/data",
   "description": "Second-generation Iridium constellation — 66 operational satellites at 780 km in 6 polar planes (11 per plane), with 9 on-orbit spares, deployed 2017-2019 to replace the original 1998 Iridium fleet. Total of 75 satellites were launched; 5 additional ground spares were launched in May 2023. Carries voice + data + machine-to-machine + sat-phone services. One of two GMDSS (Global Maritime Distress and Safety System) satellite providers (alongside Inmarsat) — ocean-going vessels can fulfill GMDSS requirements via Iridium OR Inmarsat. The collision of the original Iridium 33 with derelict Cosmos 2251 in 2009 was the first known satellite-to-satellite collision in history.",
-  "best_known_for": "Polar LEO comms — 75 sats, GMDSS partner, global voice/data"
+  "best_known_for": "Polar LEO comms — 66 operational sats +9 spares, GMDSS partner, global voice/data"
 }

@@ -1,6 +1,6 @@
 {
   "name": "Starlink",
-  "tagline": "Largest LEO broadband constellation — ~6,500–7,000 active satellites",
-  "description": "SpaceX's broadband LEO constellation — ~6,500–7,000 active satellites at 550 km altitude split across multiple shells (53°, 70°, 97.6° inclinations). First operational service 2019; achieved global coverage 2023. Each Gen-2 satellite carries laser inter-satellite links, allowing the constellation to route packets between satellites without ground station hops. Autonomous collision-avoidance system performs tens of thousands of manoeuvres per year — more than every other LEO operator combined.",
+  "tagline": "Largest LEO broadband constellation — over 10,800 active satellites",
+  "description": "SpaceX's broadband LEO constellation — over 10,800 active satellites at 550 km altitude split across multiple shells (53°, 70°, 97.6° inclinations). First operational service 2019; achieved global coverage 2023. Each Gen-2 satellite carries laser inter-satellite links, allowing the constellation to route packets between satellites without ground station hops. Autonomous collision-avoidance system performs tens of thousands of manoeuvres per year — more than every other LEO operator combined.",
   "best_known_for": "Largest LEO broadband constellation — ~6,500–7,000 active satellites"
 }

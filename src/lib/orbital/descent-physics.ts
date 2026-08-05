@@ -6,18 +6,22 @@
  * Three.js, no DOM — the same module drives the animated DescentScene AND
  * the headless profile validation harness.
  *
- * Model: a 1-DOF along-track integration in SI units. The state is speed `v`
- * (magnitude) and altitude `h`; a per-phase flight-path angle γ (below the
- * local horizontal) projects speed onto the vertical (dh/dt = −v·sinγ). The
- * hypersonic entry stays shallow (the profile's entry angle) so the vehicle
- * skims into denser air and sheds most of its speed to DRAG before the
- * terminal phases go near-vertical. Each EDL phase (ballistic entry →
- * parachute → heat-shield sep → powered-retro / skycrane / airbag →
- * touchdown) swaps in its own drag area + retro thrust and ends on an
- * altitude / velocity / duration / ground trigger. This 1-DOF abstraction is
- * the load-bearing simplification: it produces HONEST altitude, velocity,
- * deceleration-g, Mach and dynamic-pressure readouts (what the descent HUD
- * teaches) without a full 3-DOF trajectory the scene never renders.
+ * Model: a planar 2-DOF entry integration in SI units (RFC-036 / #419). The
+ * state is speed `v`, altitude `h`, and — for sub-circular orbital-decay reentry
+ * — the flight-path angle γ (below the local horizontal), integrated as a second
+ * degree of freedom: v·dγ/dt = g·cosγ − L/m − (v²/(R+h))·cosγ. At orbital speed
+ * the curvature term v²/(R+h) ≈ g so the trajectory skims shallow (long,
+ * realistic duration); as drag sheds v, gravity wins and γ steepens into the
+ * deceleration spike — so honest *duration* and *peak-g* emerge together.
+ * SUPER-circular interplanetary arrivals (v > v_circ: Mars/Venus/Titan/Jupiter)
+ * keep the 1-DOF fixed-γ model (a lift-free 2-DOF would skip out); guided
+ * (powered_retro/skycrane) + explicit-γ + terminal phases also hold γ fixed.
+ * Each EDL phase (ballistic entry → parachute → heat-shield sep → powered-retro /
+ * skycrane / airbag → touchdown) swaps in its own drag area (with a chute-
+ * inflation ramp) + retro thrust and ends on an altitude / velocity / duration /
+ * ground trigger. It produces HONEST altitude, velocity, deceleration-g, Mach and
+ * dynamic-pressure readouts (what the descent HUD teaches) without a full 3-DOF
+ * trajectory the scene never renders.
  *
  * Units: SI internally (m, s, kg, N, Pa). Summaries expose km where natural
  * but keep velocities in m·s⁻¹ (EDL spans 6 km·s⁻¹ entry → <1 m·s⁻¹ touchdown).
@@ -160,6 +164,15 @@ export interface DescentProfile {
   entryMassKg: number;
   /** Ballistic entry drag area Cd·A (m²) — the heat-shield. */
   entryCdA: number;
+  /**
+   * Lift-to-drag ratio for the 2-DOF flight-path-angle integration (RFC-036 / #419).
+   * 0 = purely ballistic (a non-lifting capsule flying zero angle of attack —
+   * Mercury / Vostok / Voskhod / ballistic-mode Soyuz). A small positive L/D
+   * (Apollo CM ~0.3, Gemini/Soyuz lifting ~0.2) flattens the corridor + lowers
+   * peak-g. Default 0. Only the free-aerodynamic phases (entry / chute /
+   * aeroshell) integrate γ; guided + explicit-γ phases ignore it.
+   */
+  liftToDragRatio?: number;
   /** Descent-stage retro propellant (kg) for the fuel gauge. Default ∞ (never gates). */
   retroPropellantKg?: number;
   /** Ordered EDL phases; the last should end on `ground`. */
@@ -295,6 +308,29 @@ function gammaDegFor(phase: EDLPhase, profile: DescentProfile): number {
   return 90; // terminal phases descend near-vertically
 }
 
+/**
+ * Free-aerodynamic-flight phases whose flight-path angle γ is INTEGRATED as a
+ * second degree of freedom (2-DOF, RFC-036 / #419) rather than held at a fixed
+ * per-phase constant. Only these carry the entry-corridor dynamics that make
+ * realistic *duration* and *peak-g* emerge together: at orbital speed the
+ * curvature term v²/(R+h) nearly cancels gravity so the trajectory skims
+ * shallow (long duration); as drag sheds v, gravity wins and γ steepens into
+ * the deceleration spike. Guided phases (powered_retro / skycrane) track a
+ * descent-rate schedule, and any phase with an explicit `flightPathAngleDeg`
+ * is a hard author constraint — both keep the fixed-γ behaviour.
+ */
+const GAMMA_DYNAMICAL: ReadonlySet<EDLPhaseKind> = new Set([
+  'ballistic_entry',
+  'parachute',
+  'aeroshell_descent',
+  'coast',
+]);
+
+/** Whether a phase integrates γ (2-DOF) vs. holds it fixed. */
+function gammaIsDynamical(phase: EDLPhase): boolean {
+  return phase.flightPathAngleDeg == null && GAMMA_DYNAMICAL.has(phase.kind);
+}
+
 /** A powered phase is throttle-guided (descent-rate schedule); the rest are
  *  pure force integration (drag + gravity). */
 function isGuidedPhase(kind: EDLPhaseKind): boolean {
@@ -352,6 +388,36 @@ export function integrateDescent(
   let propUsed = 0;
   let t = 0;
 
+  // Flight-path angle γ (rad below horizontal), the 2-DOF state (#419). Seeded
+  // from the entry angle (== gammaDegFor for a ballistic-entry first phase);
+  // integrated while in a GAMMA_DYNAMICAL phase, else pinned to gammaDegFor each
+  // step. `liftBonus` = L/D applied as a fraction of drag in the γ EOM.
+  let gammaRad = gammaDegFor(profile.phases[0], profile) * DEG2RAD;
+  const liftBonus = profile.liftToDragRatio ?? 0;
+  const bodyRadiusM = R_BODY_M[body];
+  // 2-DOF γ integration is enabled for SUB-CIRCULAR (orbital-decay) reentry — the
+  // #419 Earth-capsule case, where the shallow-skim corridor produces the honest
+  // duration + peak-g. SUPER-circular interplanetary arrivals (v > v_circ: Mars /
+  // Venus / Titan / Jupiter probes) sit in the skip/aerocapture regime, where a
+  // purely ballistic (lift-free) 2-DOF trajectory would skim out unrealistically;
+  // those keep the validated fixed-γ model until per-profile lift data is authored.
+  const vCircEntry = Math.sqrt(
+    bodyGravity(profile.entryState.altitudeM, body) * (bodyRadiusM + profile.entryState.altitudeM),
+  );
+  const subCircular = profile.entryState.velocityMs <= vCircEntry * 1.02;
+  // Drag-area a phase inflates FROM (the previous phase's Cd·A). A chute/aeroshell
+  // deploy is not instantaneous — it inflates over ~INFLATION_S, so the effective
+  // Cd·A ramps up smoothly instead of applying full area at deploy velocity (which
+  // explicit Euler turns into a spurious multi-g opening spike). Only increases
+  // ramp; a jettison (area drop) is instant.
+  let deployFromCdA = profile.phases[0]?.cdA ?? profile.entryCdA;
+  // Base chute-inflation time. Real reefed mains disreef over several seconds;
+  // bigger area jumps take longer to inflate, so the per-deploy time scales
+  // (mildly) with the area ratio — this spreads the opening shock to the
+  // physical few-g range instead of a one-step spike. Capped so a huge ratio
+  // can't stall the descent.
+  const INFLATION_BASE_S = 3.5;
+
   // Force locals for the current instant — updated each step, read by makeState.
   let curThrustN = 0;
   let curDragN = 0;
@@ -364,8 +430,7 @@ export function integrateDescent(
 
   const makeState = (): DescentState => {
     const phase = profile.phases[phaseIndex];
-    const gammaDeg = gammaDegFor(phase, profile);
-    const sinG = Math.sin(gammaDeg * DEG2RAD);
+    const sinG = Math.sin(gammaRad); // the live 2-DOF flight-path angle
     const rho = bodyAirDensity(h, body);
     return {
       t,
@@ -383,7 +448,7 @@ export function integrateDescent(
       dynamicPressurePa: dynamicPressure(rho, v),
       aeroHeatFlux: Math.sqrt(rho) * v * v * v,
       propRemainingKg: Number.isFinite(propTotal) ? Math.max(0, propTotal - propUsed) : Infinity,
-      flightPathAngleDeg: gammaDeg,
+      flightPathAngleDeg: gammaRad / DEG2RAD,
     };
   };
 
@@ -401,11 +466,25 @@ export function integrateDescent(
 
   while (t < maxT) {
     const phase = profile.phases[phaseIndex];
-    const gammaDeg = gammaDegFor(phase, profile);
-    const sinG = Math.sin(gammaDeg * DEG2RAD);
+    // 2-DOF flight-path angle (#419): a free-aerodynamic phase evolves γ (below);
+    // every other phase pins it to the profile/default constant. sinG/cosG are
+    // read from the live γ at the start of the step (semi-implicit Euler with h).
+    const dynamicalGamma = subCircular && gammaIsDynamical(phase);
+    if (!dynamicalGamma) gammaRad = gammaDegFor(phase, profile) * DEG2RAD;
+    const sinG = Math.sin(gammaRad);
+    const cosG = Math.cos(gammaRad);
     const rho = bodyAirDensity(h, body);
     const g = bodyGravity(h, body);
-    const cdA = phase.cdA ?? profile.entryCdA;
+    // Cd·A with inflation ramp: a deploy grows the drag area from the prior
+    // phase's over INFLATION_S; a jettison (smaller area) applies instantly.
+    const targetCdA = phase.cdA ?? profile.entryCdA;
+    let cdA = targetCdA;
+    if (targetCdA > deployFromCdA) {
+      const ratio = targetCdA / Math.max(1e-6, deployFromCdA);
+      const inflationS = Math.min(8, INFLATION_BASE_S * Math.sqrt(Math.max(1, ratio)) * 0.25);
+      const inflateFrac = Math.min(1, (t - phaseStartT) / inflationS);
+      cdA = deployFromCdA + (targetCdA - deployFromCdA) * inflateFrac;
+    }
     const drag = 0.5 * rho * v * v * cdA;
 
     if (isGuidedPhase(phase.kind)) {
@@ -430,11 +509,42 @@ export function integrateDescent(
     } else {
       // Aerodynamic / ballistic: gravity component adds speed, drag sheds it.
       const dvdt = g * sinG - drag / Math.max(1, mass);
-      v += dvdt * dt;
-      if (v < 0) v = 0;
+      let vNext = v + dvdt * dt;
+      if (vNext < 0) vNext = 0;
+      // A body decelerating under drag asymptotes to its terminal velocity and
+      // never overshoots it. Explicit Euler with a stiff chute WOULD overshoot in
+      // one step — a spurious multi-g spike at deploy (v snapping 133→25 m/s).
+      // Clamp to terminal velocity (drag balances the along-track weight); the
+      // felt-g then reads the physical sustained value, not the numerical artifact.
+      if (drag > 0 && v > 0) {
+        const sinGabs = Math.max(Math.abs(sinG), 1e-3);
+        const vTerm = Math.sqrt((2 * Math.max(1, mass) * g * sinGabs) / (rho * cdA));
+        if (v > vTerm && vNext < vTerm) vNext = vTerm;
+      }
+      // Report drag + felt-g at the resolved velocity (post-clamp) so a deploy
+      // step reads the sustained load, not the pre-clamp overshoot.
+      const effDrag = 0.5 * rho * vNext * vNext * cdA;
+      v = vNext;
       curThrustN = 0;
-      curDragN = drag;
-      curDecelG = drag / (mass * G0);
+      curDragN = effDrag;
+      curDecelG = effDrag / (mass * G0);
+
+      // 2-DOF: integrate the flight-path angle (#419). v·dγ/dt = g·cosγ − L/m −
+      // (v²/(R+h))·cosγ — gravity steepens the dive, lift + planetary curvature
+      // flatten it. At orbital speed v²/(R+h) ≈ g so the trajectory skims shallow
+      // (long duration); as drag sheds v the curvature term collapses, gravity
+      // wins, and γ steepens into the deceleration spike — realistic duration AND
+      // peak-g from one model. Guided/explicit/terminal phases skip this (γ pinned).
+      if (dynamicalGamma) {
+        const lift = liftBonus * drag; // L = (L/D)·D
+        const dGammaDt =
+          (g * cosG - lift / Math.max(1, mass) - (v * v * cosG) / (bodyRadiusM + h)) /
+          Math.max(v, 1);
+        gammaRad += dGammaDt * dt;
+        if (gammaRad < 0.0017)
+          gammaRad = 0.0017; // ~0.1° floor — never fly upward here
+        else if (gammaRad > Math.PI / 2) gammaRad = Math.PI / 2; // cap at vertical
+      }
     }
 
     if (curDecelG > peakDecel.g) peakDecel = { t, g: curDecelG, altKm: h / 1000 };
@@ -470,6 +580,8 @@ export function integrateDescent(
       triggerMet(phase.endTrigger, h, v, t - phaseStartT, bodyAmbientPressurePa(h, body))
     ) {
       if (phaseIndex < profile.phases.length - 1) {
+        // Remember the drag area we're leaving so the next phase inflates FROM it.
+        deployFromCdA = phase.cdA ?? profile.entryCdA;
         phaseIndex += 1;
         phaseStartT = t;
         mass = Math.max(1, mass - (profile.phases[phaseIndex].jettisonKg ?? 0));

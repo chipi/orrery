@@ -183,6 +183,7 @@
     type FdPhaseMarkerRender,
     type MilestoneRender,
   } from '$lib/fly/fly-frame-projections';
+  import { sampleForwardArc, integrateEarthCoastPreview } from '$lib/fly/fly-frame-coast';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { Mission, MissionEvent } from '$types/mission';
@@ -6055,15 +6056,8 @@
           const total = arcTimeline.arr_day - arcTimeline.dep_day;
           const t =
             total > 0 ? Math.max(0, Math.min(1, (simDay - arcTimeline.dep_day) / total)) : 0;
-          const startIdx = Math.floor(t * (outPts.length - 1));
-          const samples = outPts.length - startIdx;
-          const scenePositions = new Float32Array(samples * 3);
-          for (let i = 0; i < samples; i++) {
-            const p = outPts[startIdx + i];
-            scenePositions[i * 3] = p.x * SCALE_3D;
-            scenePositions[i * 3 + 1] = (p.y ?? 0) * SCALE_3D;
-            scenePositions[i * 3 + 2] = p.z * SCALE_3D;
-          }
+          // Forward-arc sampler extracted to $lib/fly/fly-frame-coast (WS-B/B4).
+          const scenePositions = sampleForwardArc(outPts, t, SCALE_3D);
           const geom = coastLine.geometry as THREE.BufferGeometry;
           geom.setAttribute('position', new THREE.BufferAttribute(scenePositions, 3));
           geom.attributes.position.needsUpdate = true;
@@ -6496,33 +6490,13 @@
             // simplification: ignores Moon gravity (acceptable outside
             // lunar SoI).
             if (cisCoastLine.visible) {
-              const MU_EARTH = 398600.4418; // km³/s²
-              const STEPS = 200;
-              const DT = 600; // 600 s per step → 200×600 = 33 h preview
-              let rx = p0.x;
-              let ry = p0.y;
-              let rz = p0.z;
-              let rvx = vx;
-              let rvy = vy;
-              let rvz = vz;
-              const verts = new Float32Array((STEPS + 1) * 3);
-              verts[0] = rx * SCALE_CISLUNAR;
-              verts[1] = ry * SCALE_CISLUNAR;
-              verts[2] = rz * SCALE_CISLUNAR;
-              for (let i = 1; i <= STEPS; i++) {
-                const rMag = Math.hypot(rx, ry, rz);
-                if (rMag < R_EARTH_KM) break; // collided
-                const a = -MU_EARTH / (rMag * rMag * rMag);
-                rvx += a * rx * DT;
-                rvy += a * ry * DT;
-                rvz += a * rz * DT;
-                rx += rvx * DT;
-                ry += rvy * DT;
-                rz += rvz * DT;
-                verts[i * 3] = rx * SCALE_CISLUNAR;
-                verts[i * 3 + 1] = ry * SCALE_CISLUNAR;
-                verts[i * 3 + 2] = rz * SCALE_CISLUNAR;
-              }
+              // Two-body Euler integrator extracted to $lib/fly/fly-frame-coast
+              // (WS-B/B4) — byte-identical.
+              const verts = integrateEarthCoastPreview(
+                { x: p0.x, y: p0.y, z: p0.z },
+                { x: vx, y: vy, z: vz },
+                SCALE_CISLUNAR,
+              );
               cisCoastLine.geometry.dispose();
               cisCoastLine.geometry = new THREE.BufferGeometry();
               cisCoastLine.geometry.setAttribute('position', new THREE.BufferAttribute(verts, 3));

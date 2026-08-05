@@ -177,9 +177,10 @@
     buildCislunarSpacecraftSprite,
     buildAnnotationSprite,
   } from '$lib/three/fly-cislunar-overlays';
+  import { pickVisibleMilestones, fdLegProgress } from '$lib/fly/fly-frame-selectors';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
-  import type { FlightTimelineEvent, Mission, MissionEvent } from '$types/mission';
+  import type { Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
   import { cue } from '$lib/sensory/feedback';
@@ -6799,14 +6800,7 @@
             // of the round-trip = deep into the return leg. Leg-relative
             // progress keeps stage thresholds intuitive on both one-way
             // and round-trip missions.
-            const outboundT =
-              sc.phase === 'pre-launch' ? 0 : sc.phase === 'outbound' ? sc.progress * 2 : 1;
-            const returnT =
-              sc.phase === 'pre-launch' || sc.phase === 'outbound'
-                ? 0
-                : sc.phase === 'return'
-                  ? (sc.progress - 0.5) * 2
-                  : 1;
+            const { outboundT, returnT } = fdLegProgress(sc.phase, sc.progress);
             for (const s of FD_STAGES) {
               // Skip return-leg stages on one-way missions (no retPts).
               if (s.leg === 'return' && !hasReturnArc) continue;
@@ -6865,29 +6859,13 @@
             const ACTIVE_APPROACH_DAYS = 30;
             const ACTIVE_DEPART_DAYS = 20;
             const currentMet = simDay - arcTimeline.dep_day;
-            const labeled = (mission.flight?.events ?? [])
-              .filter((e) => e.label && e.met_days != null)
-              .sort((a, b) => (a.met_days ?? 0) - (b.met_days ?? 0));
-            let latestPast: FlightTimelineEvent | null = null;
-            let nextFuture: FlightTimelineEvent | null = null;
-            const actives: FlightTimelineEvent[] = [];
-            for (const evt of labeled) {
-              const delta = currentMet - (evt.met_days ?? 0);
-              if (delta > ACTIVE_DEPART_DAYS) {
-                latestPast = evt; // overwrite — keep the MOST RECENT past
-              } else if (delta >= -ACTIVE_APPROACH_DAYS) {
-                actives.push(evt);
-              } else if (!nextFuture) {
-                nextFuture = evt; // first future encountered
-              }
-            }
-            const picked: Array<{
-              evt: FlightTimelineEvent;
-              state: 'past' | 'active' | 'future';
-            }> = [];
-            if (latestPast) picked.push({ evt: latestPast, state: 'past' });
-            for (const a of actives) picked.push({ evt: a, state: 'active' });
-            if (nextFuture) picked.push({ evt: nextFuture, state: 'future' });
+            // Selection brains extracted to $lib/fly/fly-frame-selectors (WS-B/B4)
+            // — byte-identical past/active/future picking; the THREE projection
+            // stays here (already using the extracted helioAuToScreenPx helper).
+            const picked = pickVisibleMilestones(mission.flight?.events ?? [], currentMet, {
+              approachDays: ACTIVE_APPROACH_DAYS,
+              departDays: ACTIVE_DEPART_DAYS,
+            });
             const msNext: MilestoneRender[] = [];
             for (const { evt, state } of picked) {
               const eventSimDay = arcTimeline.dep_day + evt.met_days!;

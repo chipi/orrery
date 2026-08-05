@@ -161,6 +161,14 @@
   import { detectSubPhaseTransition } from '$lib/orbital/sub-phase-transition';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
+  import {
+    buildTubeGeometry,
+    buildTubeMaterial,
+    buildSpacecraftSprite,
+    buildEnginePlume,
+    buildLabelSprite,
+    drawLabelTexture,
+  } from '$lib/three/fly-helio-overlays';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { FlightTimelineEvent, Mission, MissionEvent } from '$types/mission';
@@ -3236,112 +3244,11 @@
     //   3. Fragment interpolation of vT crosses uProgress at exactly
     //      the same world position as lerpPoint(pts, uProgress) —
     //      i.e. where the sprite sits. No drift possible by construction.
-    /** Manual tube builder. Cross-section i sits at pts[i]; vertex
-     *  carries aT = i/(N-1). Returns empty geometry for <2 pts. */
-    const buildTubeGeometry = (pts: Vec2[], radius: number): THREE.BufferGeometry => {
-      const geom = new THREE.BufferGeometry();
-      if (pts.length < 2) return geom;
-      const radialSegs = 8;
-      const ringCount = pts.length;
-      const vertsPerRing = radialSegs + 1; // duplicate at theta=0/2π for UV seam
-      const totalVerts = ringCount * vertsPerRing;
-      const positions = new Float32Array(totalVerts * 3);
-      const aTArr = new Float32Array(totalVerts);
-      for (let i = 0; i < ringCount; i++) {
-        const p = pts[i];
-        // Tangent computation uses the XZ projection (the arc's
-        // dominant plane for cross-section orientation). Y component
-        // is included in the point's world position so multi-waypoint
-        // splines that climb out of the ecliptic (Cassini → Jupiter
-        // → Saturn, Voyager → Neptune) render with the right vertical
-        // shape; the cross-section ring still sits flat to XZ.
-        const prev = pts[Math.max(0, i - 1)];
-        const next = pts[Math.min(ringCount - 1, i + 1)];
-        const tx = next.x - prev.x;
-        const tz = next.z - prev.z;
-        const tLen = Math.hypot(tx, tz) || 1;
-        // Side vector = tangent rotated 90° in XZ.
-        const sNx = -tz / tLen;
-        const sNz = tx / tLen;
-        const py = (p.y ?? 0) * SCALE_3D;
-        const t = i / (ringCount - 1);
-        for (let r = 0; r <= radialSegs; r++) {
-          const theta = (r / radialSegs) * Math.PI * 2;
-          const cosT = Math.cos(theta);
-          const sinT = Math.sin(theta);
-          const idx = i * vertsPerRing + r;
-          positions[idx * 3 + 0] = p.x * SCALE_3D + radius * sinT * sNx;
-          positions[idx * 3 + 1] = py + radius * cosT;
-          positions[idx * 3 + 2] = p.z * SCALE_3D + radius * sinT * sNz;
-          aTArr[idx] = t;
-        }
-      }
-      const indices: number[] = [];
-      for (let i = 0; i < ringCount - 1; i++) {
-        for (let r = 0; r < radialSegs; r++) {
-          const a = i * vertsPerRing + r;
-          const b = (i + 1) * vertsPerRing + r;
-          const c = (i + 1) * vertsPerRing + r + 1;
-          const d = i * vertsPerRing + r + 1;
-          indices.push(a, b, d);
-          indices.push(b, c, d);
-        }
-      }
-      geom.setIndex(indices);
-      geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      geom.setAttribute('aT', new THREE.BufferAttribute(aTArr, 1));
-      geom.computeVertexNormals();
-      return geom;
-    };
-    /** Gradient ShaderMaterial. `vT < uProgress` → bright, else dim.
-     *  Fragment interpolation of vT puts the bright/dim boundary at
-     *  exactly the same world position as the sprite. */
-    const buildTubeMaterial = (
-      colorHex: number,
-      brightOpacity: number,
-      dimOpacity: number,
-    ): THREE.ShaderMaterial =>
-      new THREE.ShaderMaterial({
-        uniforms: {
-          uProgress: { value: 0 },
-          uColor: { value: new THREE.Color(colorHex) },
-          uBrightOpacity: { value: brightOpacity },
-          uDimOpacity: { value: dimOpacity },
-        },
-        vertexShader: `
-          attribute float aT;
-          varying float vT;
-          void main() {
-            vT = aT;
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-          }
-        `,
-        fragmentShader: `
-          uniform float uProgress;
-          uniform vec3 uColor;
-          uniform float uBrightOpacity;
-          uniform float uDimOpacity;
-          varying float vT;
-          void main() {
-            // Past-vs-future split — past segments render at full
-            // uColor, future segments at a 30%-mixed dim version of
-            // the same hue so the trajectory clearly reads "what's
-            // behind us is bright, what's ahead is faded preview."
-            // Opaque-pass with alpha=1 (and a no-op uBrightOpacity/
-            // uDimOpacity kept for back-compat with the prior shader
-            // contract) so depth-test still hides line segments
-            // behind planet bodies during flyby (#85).
-            bool past = vT < uProgress;
-            vec3 dimColor = uColor * 0.28;
-            vec3 finalColor = past ? uColor : dimColor;
-            float a = past ? uBrightOpacity : uDimOpacity;
-            if (a < 0.05) discard;
-            gl_FragColor = vec4(finalColor, 1.0);
-          }
-        `,
-        transparent: false,
-        depthWrite: true,
-      });
+    // buildTubeGeometry (manual cross-section-at-pts[i] tube) + buildTubeMaterial
+    // (bright/dim gradient shader) now live in $lib/three/fly-helio-overlays
+    // (RFC-036 WS-B/B2a) — imported above, byte-identical. buildTubeGeometry is
+    // still published via flyUpdaters.helio.rebuildTubeGeometry for the mission-
+    // swap $effect.
     outLine = new THREE.Mesh(
       buildTubeGeometry(outPts, 0.46),
       buildTubeMaterial(0x4488ff, 0.95, 0.22),
@@ -3590,116 +3497,10 @@
     // problem on curved arcs. The red body preserves the visibility
     // the prior circle gave; the gold wings carry the spacecraft
     // identity, matching the FD banner palette.
-    const SC_GLYPH_PX = 64;
-    const SC_COLOR_BODY = '#ff3a4c';
-    const SC_COLOR_PANEL = '#ffc850';
-    const scTexCanvas = document.createElement('canvas');
-    scTexCanvas.width = SC_GLYPH_PX;
-    scTexCanvas.height = SC_GLYPH_PX;
-    {
-      const tctx = scTexCanvas.getContext('2d')!;
-      tctx.clearRect(0, 0, SC_GLYPH_PX, SC_GLYPH_PX);
-      const cx = SC_GLYPH_PX / 2;
-      const cy = SC_GLYPH_PX / 2;
-
-      // Soft glow halo for visibility against bright trajectory tubes.
-      const glow = tctx.createRadialGradient(cx, cy, 4, cx, cy, SC_GLYPH_PX / 2);
-      glow.addColorStop(0, 'rgba(255,90,90,0.42)');
-      glow.addColorStop(1, 'rgba(255,90,90,0)');
-      tctx.fillStyle = glow;
-      tctx.fillRect(0, 0, SC_GLYPH_PX, SC_GLYPH_PX);
-
-      // Geometry — proportions match the SVG mock (viewBox 40×32).
-      // body: 12×14 centered on (cx,cy)
-      // panels: 10×10 squares flanking the body, gap 2u
-      // antenna: vertical stub above the body
-      const bodyW = SC_GLYPH_PX * 0.3;
-      const bodyH = SC_GLYPH_PX * 0.35;
-      const panelW = SC_GLYPH_PX * 0.25;
-      const panelH = SC_GLYPH_PX * 0.25;
-      const gap = SC_GLYPH_PX * 0.05;
-      const bodyX = cx - bodyW / 2;
-      const bodyY = cy - bodyH / 2;
-      const lPanelX = bodyX - gap - panelW;
-      const rPanelX = bodyX + bodyW + gap;
-      const panelY = cy - panelH / 2;
-
-      // Solar panels — filled gold, outlined white, with a center spar
-      // line that reads as the panel join.
-      function drawPanel(px: number) {
-        tctx.fillStyle = SC_COLOR_PANEL;
-        tctx.globalAlpha = 0.85;
-        tctx.fillRect(px, panelY, panelW, panelH);
-        tctx.globalAlpha = 1;
-        tctx.strokeStyle = 'rgba(255,255,255,0.85)';
-        tctx.lineWidth = 1;
-        tctx.strokeRect(px + 0.5, panelY + 0.5, panelW - 1, panelH - 1);
-        tctx.beginPath();
-        tctx.moveTo(px + panelW / 2, panelY + 1);
-        tctx.lineTo(px + panelW / 2, panelY + panelH - 1);
-        tctx.strokeStyle = 'rgba(255,255,255,0.55)';
-        tctx.stroke();
-      }
-      drawPanel(lPanelX);
-      drawPanel(rPanelX);
-
-      // Antenna stub above the body — thin line + tiny disc tip.
-      const antTopY = bodyY - SC_GLYPH_PX * 0.1;
-      tctx.beginPath();
-      tctx.moveTo(cx, bodyY);
-      tctx.lineTo(cx, antTopY);
-      tctx.strokeStyle = 'rgba(255,255,255,0.9)';
-      tctx.lineWidth = 1.4;
-      tctx.stroke();
-      tctx.beginPath();
-      tctx.arc(cx, antTopY, SC_GLYPH_PX * 0.025, 0, Math.PI * 2);
-      tctx.fillStyle = '#fff';
-      tctx.fill();
-
-      // Central body — red rounded rectangle with a thin white outline.
-      // The red core preserves the "I am the spacecraft" visibility the
-      // old circle provided.
-      const r = 3;
-      tctx.beginPath();
-      tctx.moveTo(bodyX + r, bodyY);
-      tctx.lineTo(bodyX + bodyW - r, bodyY);
-      tctx.quadraticCurveTo(bodyX + bodyW, bodyY, bodyX + bodyW, bodyY + r);
-      tctx.lineTo(bodyX + bodyW, bodyY + bodyH - r);
-      tctx.quadraticCurveTo(bodyX + bodyW, bodyY + bodyH, bodyX + bodyW - r, bodyY + bodyH);
-      tctx.lineTo(bodyX + r, bodyY + bodyH);
-      tctx.quadraticCurveTo(bodyX, bodyY + bodyH, bodyX, bodyY + bodyH - r);
-      tctx.lineTo(bodyX, bodyY + r);
-      tctx.quadraticCurveTo(bodyX, bodyY, bodyX + r, bodyY);
-      tctx.closePath();
-      tctx.fillStyle = SC_COLOR_BODY;
-      tctx.shadowColor = 'rgba(255,58,76,0.8)';
-      tctx.shadowBlur = 4;
-      tctx.fill();
-      tctx.shadowBlur = 0;
-      tctx.strokeStyle = 'rgba(255,255,255,0.85)';
-      tctx.lineWidth = 1;
-      tctx.stroke();
-
-      // Small white pip at body center to read as the bus's "active"
-      // indicator at very small sizes (camera far away).
-      tctx.beginPath();
-      tctx.arc(cx, cy, SC_GLYPH_PX * 0.035, 0, Math.PI * 2);
-      tctx.fillStyle = 'rgba(255,255,255,0.95)';
-      tctx.fill();
-    }
-    const scTex = new THREE.CanvasTexture(scTexCanvas);
-    scTex.minFilter = THREE.LinearFilter;
-    scTex.magFilter = THREE.LinearFilter;
-    const scSprite = new THREE.Sprite(
-      new THREE.SpriteMaterial({
-        map: scTex,
-        transparent: true,
-        depthWrite: false,
-        depthTest: false, // always render on top of arc tube
-      }),
-    );
-    scSprite.scale.set(2.5, 2.5, 1);
-    scSprite.renderOrder = 999;
+    // The glyph drawing + sprite construction now live in buildSpacecraftSprite()
+    // ($lib/three/fly-helio-overlays, RFC-036 WS-B/B2a) — byte-identical (same 64px
+    // canvas, same scale 2.5 / renderOrder 999 / depthTest:false).
+    const { sprite: scSprite } = buildSpacecraftSprite();
     scene.add(scSprite);
 
     // #1 Engine plume — directed cone at the spacecraft position
@@ -3708,41 +3509,11 @@
     // orange→yellow-white gradient with squared falloff toward the tip
     // (visually narrow tapering exhaust). Hidden between burns. Per-
     // event orientation + scale + opacity in the animate loop below.
-    const plumeGeo = new THREE.ConeGeometry(0.35, 2.4, 16, 1, true);
-    plumeGeo.rotateX(Math.PI / 2);
-    plumeGeo.translate(0, 0, -1.2);
-    const plumeMat = new THREE.ShaderMaterial({
-      uniforms: {
-        uOpacity: { value: 0 },
-        uColorBase: { value: new THREE.Color(0xffaa44) },
-        uColorTip: { value: new THREE.Color(0xfff0aa) },
-      },
-      vertexShader: `
-        varying float vAlongAxis;
-        void main() {
-          vAlongAxis = (-position.z) / 2.4;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        }
-      `,
-      fragmentShader: `
-        uniform float uOpacity;
-        uniform vec3 uColorBase;
-        uniform vec3 uColorTip;
-        varying float vAlongAxis;
-        void main() {
-          vec3 color = mix(uColorBase, uColorTip, vAlongAxis);
-          float alpha = uOpacity * (1.0 - vAlongAxis * vAlongAxis);
-          gl_FragColor = vec4(color, alpha);
-        }
-      `,
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      side: THREE.DoubleSide,
-    });
-    const plumeMesh = new THREE.Mesh(plumeGeo, plumeMat);
-    plumeMesh.visible = false;
-    plumeMesh.renderOrder = 998;
+    // The plume cone + gradient shader now live in buildEnginePlume()
+    // ($lib/three/fly-helio-overlays, RFC-036 WS-B/B2a) — byte-identical (same
+    // ConeGeometry, same shader, additive, hidden, renderOrder 998). plumeMat's
+    // uOpacity + plumeMesh transform are driven per burn-event in the animate loop.
+    const { mesh: plumeMesh, material: plumeMat } = buildEnginePlume();
     scene.add(plumeMesh);
 
     // Per-mission spacecraft model — replaces the generic sprite
@@ -3895,40 +3666,10 @@
     // / arr_label date. Texture is redrawn into a single canvas owned
     // by each sprite each time refreshLabelSprites is called — no
     // texture allocation per mission swap.
-    const drawLabelTexture = (
-      canvas: HTMLCanvasElement,
-      line1: string,
-      line2: string,
-      colorHex: string,
-    ): void => {
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-      ctx.shadowBlur = 8;
-      ctx.fillStyle = colorHex;
-      ctx.font = "bold 28px 'Space Mono', monospace";
-      ctx.fillText(line1, canvas.width / 2, canvas.height * 0.32);
-      ctx.font = "20px 'Space Mono', monospace";
-      ctx.fillStyle = '#e6ecff';
-      ctx.fillText(line2, canvas.width / 2, canvas.height * 0.7);
-    };
-    const buildLabelSprite = (): { sprite: THREE.Sprite; canvas: HTMLCanvasElement } => {
-      const canvas = document.createElement('canvas');
-      canvas.width = 320;
-      canvas.height = 96;
-      const texture = new THREE.Texture(canvas);
-      texture.needsUpdate = true;
-      texture.minFilter = THREE.LinearFilter;
-      texture.magFilter = THREE.LinearFilter;
-      const sprite = new THREE.Sprite(
-        new THREE.SpriteMaterial({ map: texture, transparent: true, depthWrite: false }),
-      );
-      sprite.scale.set(34, 10, 1);
-      return { sprite, canvas };
-    };
+    // drawLabelTexture + buildLabelSprite now live in $lib/three/fly-helio-overlays
+    // (RFC-036 WS-B/B2a) — imported above, byte-identical (320×96 canvas, 34×10
+    // sprite, same fonts + shadow). refreshSpriteTextures below still closes over
+    // the dep/arr/ret canvases + sprites and calls the imported drawLabelTexture.
     const dep = buildLabelSprite();
     const arr = buildLabelSprite();
     const ret = buildLabelSprite();

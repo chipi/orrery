@@ -528,6 +528,13 @@ export default defineConfig(({ mode }) => {
           // ascent-payload.test.ts loads); their pure ID exports carry no logic.
           'src/lib/three/interplanetary-spacecraft-models.ts',
           'src/lib/three/lander-cruise-models.ts',
+          // /fly heliocentric mission-overlay builders (RFC-036 WS-B/B2) — the
+          // trajectory-tube geometry/shader, spacecraft-glyph CanvasTexture, engine
+          // plume, and label sprites extracted from the fly/+page.svelte onMount.
+          // Same policy as every sibling WebGL/CanvasTexture builder: excluded from
+          // the ratio (jsdom can construct but not render), structure smoke-tested
+          // in fly-helio-overlays.test.ts.
+          'src/lib/three/fly-helio-overlays.ts',
           // Shared 3D asset builders used by the model/scene files above — hero
           // PBR materials + IBL (hero-materials) and the low-level geometry
           // helper (model-geom) both instantiate Three.js materials/geometry

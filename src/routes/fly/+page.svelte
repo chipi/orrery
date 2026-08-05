@@ -19,7 +19,7 @@
     type MissionTimeline,
     type Vec2,
   } from '$lib/orbital/mission-arc';
-  import { MOON_FLY_RADIUS_AU, moonHelioPos, buildArcs } from '$lib/fly-moon-arc';
+  import { moonHelioPos, buildArcs } from '$lib/fly-moon-arc';
   import { defaultEventLabel } from '$lib/fly-event-labels';
   import {
     SCALE_3D,
@@ -153,15 +153,10 @@
   } from '$lib/orbital/cislunar/cislunar-hero-shot';
   import { computeHelioNonFlybyFrame } from '$lib/orbital/helio-non-flyby-frame';
   import { detectSubPhaseTransition } from '$lib/orbital/sub-phase-transition';
-  import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
-  import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
   import {
     buildTubeGeometry,
-    buildTubeMaterial,
     buildSpacecraftSprite,
     buildEnginePlume,
-    buildLabelSprite,
-    drawLabelTexture,
   } from '$lib/three/fly-helio-overlays';
   import {
     makeProjectorFactory,
@@ -176,6 +171,7 @@
   import { sampleForwardArc, integrateEarthCoastPreview } from '$lib/fly/fly-frame-coast';
   import { buildHelioReactiveOverlays } from '$lib/three/fly-helio-reactive';
   import { buildCislunarReactiveOverlays } from '$lib/three/fly-cislunar-reactive';
+  import { buildHelioMissionOverlays } from '$lib/three/fly-helio-mission';
   import {
     findActiveBurn,
     burnExhaustDir,
@@ -2778,20 +2774,22 @@
     //   3. Fragment interpolation of vT crosses uProgress at exactly
     //      the same world position as lerpPoint(pts, uProgress) —
     //      i.e. where the sprite sits. No drift possible by construction.
-    // buildTubeGeometry (manual cross-section-at-pts[i] tube) + buildTubeMaterial
-    // (bright/dim gradient shader) now live in $lib/three/fly-helio-overlays
-    // (RFC-036 WS-B/B2a) — imported above, byte-identical. buildTubeGeometry is
-    // still published via flyUpdaters.helio.rebuildTubeGeometry for the mission-
-    // swap $effect.
-    outLine = new THREE.Mesh(
-      buildTubeGeometry(outPts, 0.46),
-      buildTubeMaterial(0x4488ff, 0.95, 0.22),
-    );
-    retLine = new THREE.Mesh(buildTubeGeometry(retPts, 0.4), buildTubeMaterial(0x9966ff, 0.9, 0.2));
-    scene.add(outLine);
-    scene.add(retLine);
-    // Hoist the builder so the $effect can re-use it on mission swap.
-    // buildTubeGeometry published via flyUpdaters.helio at end of onMount.
+    // The per-mission helio overlays — trajectory tubes, the spacecraft model
+    // (applyMissionSpacecraftModel), the LAUNCH/ARRIVAL/RETURN anchor rings, the
+    // moon orbit ring, and the anchor label sprites (refreshSpriteTextures) — now
+    // live in $lib/three/fly-helio-mission (RFC-036 WS-B), byte-identical. The refs
+    // are assigned into the component-scope `let`s the mission-swap $effects already
+    // reference; helioMission.scModel + the two swap methods are read via the handle.
+    const helioMission = buildHelioMissionOverlays({ scene, outPts, retPts });
+    outLine = helioMission.outLine;
+    retLine = helioMission.retLine;
+    depMarker = helioMission.depMarker;
+    arrMarker = helioMission.arrMarker;
+    retMarker = helioMission.retMarker;
+    moonOrbitRing = helioMission.moonOrbitRing;
+    depLabelSprite = helioMission.depLabelSprite;
+    arrLabelSprite = helioMission.arrLabelSprite;
+    retLabelSprite = helioMission.retLabelSprite;
 
     // earthMesh + destination mesh (`marsMesh` for historic reasons),
     // orbit rings, DEST_STYLE catalogue, and the destination-swap
@@ -2872,210 +2870,6 @@
     // uOpacity + plumeMesh transform are driven per burn-event in the animate loop.
     const { mesh: plumeMesh, material: plumeMat } = buildEnginePlume();
     scene.add(plumeMesh);
-
-    // Per-mission spacecraft model — replaces the generic sprite
-    // glyph with a recognisable 3D silhouette for iconic missions.
-    // Built fresh when the mission swaps; null for missions without
-    // a dedicated builder (those keep the scSprite glyph).
-    let scModel: THREE.Group | null = null;
-    function applyMissionSpacecraftModel(missionId: string): void {
-      if (scModel) {
-        scene.remove(scModel);
-        (scModel.userData.dispose as (() => void) | undefined)?.();
-        scModel = null;
-      }
-      scModel = buildInterplanetarySpacecraft(missionId) ?? buildLanderCruiseCraft(missionId);
-      if (scModel) {
-        scModel.scale.setScalar(1.5); // halved from 3.0 — the prior
-        scModel.renderOrder = 999;
-        // Rim-light injection — the single biggest "cinematic
-        // spacecraft" upgrade per the shot-language guide (T6).
-        // Brighten grazing-angle pixels with a warm tint so the
-        // model reads as a silhouette with a glowing edge instead
-        // of a flat-lit diagram. Implemented via onBeforeCompile
-        // patching the existing MeshPhongMaterial fragment shader
-        // — adds a Fresnel term to emissive intensity at minimal
-        // perf cost. Walks every Mesh child since the builder
-        // packs the bus + dish + boom as separate meshes.
-        scModel.traverse((obj) => {
-          const mesh = obj as THREE.Mesh;
-          if (!mesh.isMesh) return;
-          const mat = mesh.material as THREE.MeshPhongMaterial;
-          if (!mat || mat.userData?.rimPatched) return;
-          mat.onBeforeCompile = (shader) => {
-            // Per-part colour preservation (#84). User reported the
-            // ship reading as "a giant white lollipop" — the rim
-            // strength 1.25 + ACES tone mapping + bloom were washing
-            // out the gold bus / white dish / dark RTG / gold Huygens
-            // colour distinction. Pulled rim strength down to 0.5 so
-            // the silhouette still reads against bright planets but
-            // doesn't dominate the per-part diffuse colours. Power
-            // bumped to 3.0 so the rim is tighter at the silhouette
-            // edge instead of bleeding into the body's interior.
-            shader.uniforms.rimColor = { value: new THREE.Color(0xffd9a3) };
-            shader.uniforms.rimStrength = { value: 0.5 };
-            shader.uniforms.rimPower = { value: 3.0 };
-            shader.fragmentShader = shader.fragmentShader.replace(
-              '#include <common>',
-              `#include <common>
-              uniform vec3 rimColor;
-              uniform float rimStrength;
-              uniform float rimPower;`,
-            );
-            shader.fragmentShader = shader.fragmentShader.replace(
-              '#include <emissivemap_fragment>',
-              `#include <emissivemap_fragment>
-              {
-                vec3 viewDir = normalize(-vViewPosition);
-                vec3 nrm = normalize(normal);
-                float rim = 1.0 - max(dot(viewDir, nrm), 0.0);
-                rim = pow(rim, rimPower) * rimStrength;
-                totalEmissiveRadiance += rimColor * rim;
-              }`,
-            );
-          };
-          // #84 — bump emissive so the per-part colour (gold bus,
-          // white dish, dark RTG, gold Huygens, etc.) reads through
-          // ACES tone mapping + bloom. ACES crushes mid-tone diffuse
-          // colour at high exposure; emissive bypasses tone-mapping
-          // saturation curves and keeps the colour vibrant. ×2.0 of
-          // the model's declared intensity, capped at 1.0 to avoid
-          // overcooking already-bright parts.
-          mat.emissiveIntensity = Math.min(1.0, (mat.emissiveIntensity ?? 0.4) * 2.0);
-          mat.userData = { ...(mat.userData ?? {}), rimPatched: true };
-          mat.needsUpdate = true;
-        });
-        scene.add(scModel);
-      }
-    }
-    // Initial application defers to applyMissionAsLoaded — that path
-    // owns mission.id resolution; the publish below wires it through
-    // flyUpdaters so mission swaps trigger a fresh model build.
-
-    // DEPARTURE + ARRIVAL anchor markers — fixed rings at the
-    // mission's launch and landing positions. v0.1.9: scaled up
-    // (radius 5u vs 3u) and given Sprite labels ("LAUNCH", "ARRIVAL")
-    // so each mission's start + end are unambiguous regardless of
-    // camera angle. Updated by a $effect when arcTimeline /
-    // activeDestination / isMoonMission changes.
-    depMarker = new THREE.Mesh(
-      new THREE.TorusGeometry(12, 0.25, 12, 64),
-      new THREE.MeshBasicMaterial({
-        color: 0x4b9cd3,
-        transparent: true,
-        opacity: 0.85,
-        depthWrite: false,
-      }),
-    );
-    depMarker.rotation.x = Math.PI / 2;
-    scene.add(depMarker);
-    arrMarker = new THREE.Mesh(
-      new THREE.TorusGeometry(12, 0.25, 12, 64),
-      new THREE.MeshBasicMaterial({
-        color: 0xc1440e,
-        transparent: true,
-        opacity: 0.85,
-        depthWrite: false,
-      }),
-    );
-    arrMarker.rotation.x = Math.PI / 2;
-    scene.add(arrMarker);
-    // Round-trip RETURN anchor — third torus at retPts[last] (Earth
-    // on return-arrival day). Hidden by default; the $effect below
-    // toggles visibility based on retPts.length. Same blue as LAUNCH
-    // because both rings sit at Earth — visually consistent "this is
-    // Earth" anchors, distinguished by the LAUNCH/RETURN sprite label
-    // rather than by colour.
-    retMarker = new THREE.Mesh(
-      new THREE.TorusGeometry(12, 0.25, 12, 64),
-      new THREE.MeshBasicMaterial({
-        color: 0x4b9cd3,
-        transparent: true,
-        opacity: 0.85,
-        depthWrite: false,
-      }),
-    );
-    retMarker.rotation.x = Math.PI / 2;
-    retMarker.visible = false;
-    scene.add(retMarker);
-
-    // Moon's orbit ring around Earth — only visible during cislunar
-    // missions. Radius = MOON_FLY_RADIUS_AU × SCALE_3D so it lines up
-    // exactly with where the Moon mesh travels each frame, and gives
-    // the cislunar arc a visible reference circle to read against.
-    moonOrbitRing = new THREE.Mesh(
-      new THREE.TorusGeometry(MOON_FLY_RADIUS_AU * SCALE_3D, 0.05, 8, 96),
-      new THREE.MeshBasicMaterial({
-        color: 0xcfcfcf,
-        transparent: true,
-        opacity: 0.25,
-        depthWrite: false,
-      }),
-    );
-    moonOrbitRing.rotation.x = Math.PI / 2;
-    moonOrbitRing.visible = false;
-    scene.add(moonOrbitRing);
-
-    // Sprite labels — billboard text floating above each marker so
-    // the user always sees "LAUNCH · <date>" / "<DEST> · <date>"
-    // regardless of view angle. Two-line texture: top = identity
-    // (LAUNCH or destination name), bottom = the mission's dep_label
-    // / arr_label date. Texture is redrawn into a single canvas owned
-    // by each sprite each time refreshLabelSprites is called — no
-    // texture allocation per mission swap.
-    // drawLabelTexture + buildLabelSprite now live in $lib/three/fly-helio-overlays
-    // (RFC-036 WS-B/B2a) — imported above, byte-identical (320×96 canvas, 34×10
-    // sprite, same fonts + shadow). refreshSpriteTextures below still closes over
-    // the dep/arr/ret canvases + sprites and calls the imported drawLabelTexture.
-    const dep = buildLabelSprite();
-    const arr = buildLabelSprite();
-    const ret = buildLabelSprite();
-    depLabelSprite = dep.sprite;
-    arrLabelSprite = arr.sprite;
-    retLabelSprite = ret.sprite;
-    const depCanvas = dep.canvas;
-    const arrCanvas = arr.canvas;
-    const retCanvas = ret.canvas;
-    drawLabelTexture(depCanvas, 'LAUNCH', '—', '#4b9cd3');
-    drawLabelTexture(arrCanvas, 'ARRIVAL', '—', '#c1440e');
-    drawLabelTexture(retCanvas, 'RETURN', '—', '#4b9cd3');
-    (depLabelSprite.material.map as THREE.Texture).needsUpdate = true;
-    (arrLabelSprite.material.map as THREE.Texture).needsUpdate = true;
-    (retLabelSprite.material.map as THREE.Texture).needsUpdate = true;
-    retLabelSprite.visible = false;
-    scene.add(depLabelSprite);
-    scene.add(arrLabelSprite);
-    scene.add(retLabelSprite);
-
-    // Refresh callback for the LAUNCH / ARRIVAL / RETURN sprite
-    // textures. Published via flyUpdaters.helio.refreshLabelSprites at
-    // the end of onMount; the $effect at component scope calls it on
-    // mission swap. Ret params are optional — passed only when the
-    // loaded mission is a round-trip (retPts.length > 0); otherwise
-    // the ret sprite stays hidden and its texture is left untouched.
-    const refreshSpriteTextures = (
-      depLine1: string,
-      depLine2: string,
-      depColor: string,
-      arrLine1: string,
-      arrLine2: string,
-      arrColor: string,
-      retLine1?: string,
-      retLine2?: string,
-      retColor?: string,
-    ) => {
-      drawLabelTexture(depCanvas, depLine1, depLine2, depColor);
-      drawLabelTexture(arrCanvas, arrLine1, arrLine2, arrColor);
-      const depTex = (depLabelSprite!.material as THREE.SpriteMaterial).map;
-      const arrTex = (arrLabelSprite!.material as THREE.SpriteMaterial).map;
-      if (depTex) depTex.needsUpdate = true;
-      if (arrTex) arrTex.needsUpdate = true;
-      if (retLine1 != null && retLine2 != null && retColor != null) {
-        drawLabelTexture(retCanvas, retLine1, retLine2, retColor);
-        const retTex = (retLabelSprite!.material as THREE.SpriteMaterial).map;
-        if (retTex) retTex.needsUpdate = true;
-      }
-    };
 
     // Camera
     let camR = 360;
@@ -5249,8 +5043,8 @@
         // Per-mission 3D model rides the same position. Visibility +
         // arrival-hide handled by the same code path that owns scSprite
         // a few lines below; here we only update the transform.
-        if (scModel) {
-          scModel.position.copy(scSprite.position);
+        if (helioMission.scModel) {
+          helioMission.scModel.position.copy(scSprite.position);
         }
         // During flyby cinema the camera is tight on the planet (camR =
         // 2.4 × body radius). The default 4×4 sprite + 3.0 model scale
@@ -5290,7 +5084,7 @@
           if (dist > 0.01 && !montageNonHero) {
             camToShip.multiplyScalar((bodyR * overrideCamR) / dist);
             scSprite.position.add(camToShip);
-            if (scModel) scModel.position.copy(scSprite.position);
+            if (helioMission.scModel) helioMission.scModel.position.copy(scSprite.position);
           }
           // Scale the ship to read as a foreground hero without
           // swamping the body. Each flyby tunes its own scale via
@@ -5304,7 +5098,7 @@
             toCameraR: 1.4,
           };
           scSprite.scale.set(overrides.spriteScale, overrides.spriteScale, 1);
-          if (scModel) scModel.scale.setScalar(overrides.modelScale);
+          if (helioMission.scModel) helioMission.scModel.scale.setScalar(overrides.modelScale);
           // Boom orientation: rotate the 3D model so its iconic-front
           // axis faces (roughly) the camera and the long magnetometer
           // boom angles AWAY from the planet's limb. Each builder model
@@ -5315,18 +5109,18 @@
           // an additional tilt around local Z lifts the boom off the
           // planet-ship-camera plane so it reads as a graceful sweep
           // across the frame instead of running through the planet.
-          if (scModel) {
-            scModel.lookAt(camera.position);
-            scModel.rotateY(Math.PI / 2);
-            scModel.rotateZ(-0.35); // 20° tilt so the boom angles up-left
+          if (helioMission.scModel) {
+            helioMission.scModel.lookAt(camera.position);
+            helioMission.scModel.rotateY(Math.PI / 2);
+            helioMission.scModel.rotateZ(-0.35); // 20° tilt so the boom angles up-left
           }
         } else {
           scSprite.scale.set(2.5, 2.5, 1);
-          if (scModel) {
-            scModel.scale.setScalar(1.5);
+          if (helioMission.scModel) {
+            helioMission.scModel.scale.setScalar(1.5);
             // Cruise: reset to identity orientation so the model rides
             // along the trajectory without the cinema-specific tilt.
-            scModel.rotation.set(0, 0, 0);
+            helioMission.scModel.rotation.set(0, 0, 0);
           }
         }
 
@@ -5529,9 +5323,9 @@
         // Keep the ship visible at arrival so the final frame reads as
         // "spacecraft is now in orbit" (Cassini at Saturn) or "returned
         // home" (round-trip at Earth) instead of "ship gone."
-        if (scModel) {
+        if (helioMission.scModel) {
           scSprite.visible = false;
-          scModel.visible = true;
+          helioMission.scModel.visible = true;
         } else {
           scSprite.visible = true;
         }
@@ -6229,8 +6023,8 @@
         updateMagnetosphereForBody: helioHandles.updateMagnetosphereForBody,
         setMoonsVisible: helioHandles.setMoonsVisible,
         updateMoonsForParent: helioHandles.updateMoonsForParent,
-        setSpacecraftModel: applyMissionSpacecraftModel,
-        refreshLabelSprites: refreshSpriteTextures,
+        setSpacecraftModel: helioMission.applyMissionSpacecraftModel,
+        refreshLabelSprites: helioMission.refreshSpriteTextures,
       },
       cislunar: {
         rebuildLines: rebuildCislunarLines,

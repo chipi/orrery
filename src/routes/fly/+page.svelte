@@ -102,12 +102,8 @@
     type ScienceRef,
   } from '$lib/orbital/cislunar/cislunar-events';
   import {
-    eciKmToScreenPx,
     eciKmToCanvas2dPx,
-    helioAuToScreenPx,
     helioAuToCanvas2dPx,
-    type ScreenPoint,
-    type MinimalProjector,
   } from '$lib/orbital/cislunar/cislunar-screen-projection';
   import { type InterplanetaryTrajectory } from '$lib/interplanetary-geometry';
   import {
@@ -116,7 +112,7 @@
     primaryInterplanetaryPhaseScienceRef,
     type InterplanetaryPhaseMarker,
   } from '$lib/interplanetary-events';
-  import { markerStateFor, type RevealResult } from '$lib/orbital/cislunar/cislunar-marker-reveal';
+  import { markerStateFor } from '$lib/orbital/cislunar/cislunar-marker-reveal';
   import PhaseMarkerLabel from '$lib/components/PhaseMarkerLabel.svelte';
   import FdPhaseMarkerLabel from '$lib/components/FdPhaseMarkerLabel.svelte';
   import FlybyDebugViewer from '$lib/components/FlybyDebugViewer.svelte';
@@ -177,7 +173,16 @@
     buildCislunarSpacecraftSprite,
     buildAnnotationSprite,
   } from '$lib/three/fly-cislunar-overlays';
-  import { pickVisibleMilestones, fdLegProgress } from '$lib/fly/fly-frame-selectors';
+  import {
+    makeProjectorFactory,
+    buildPhaseMarkerScreens,
+    buildFdPhaseMarkerScreens,
+    buildMilestoneScreens,
+    type PhaseMarkerRenderState,
+    type FdStage,
+    type FdPhaseMarkerRender,
+    type MilestoneRender,
+  } from '$lib/fly/fly-frame-projections';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { Mission, MissionEvent } from '$types/mission';
@@ -786,13 +791,7 @@
   // to screen pixels via the projection helpers and writes the result
   // here. $state.raw because we re-assign the whole array each frame
   // (deep reactivity would over-trigger).
-  interface PhaseMarkerRenderState {
-    event: PhaseMarker['event'];
-    scienceRef: ScienceRef | null;
-    screen: ScreenPoint;
-    reveal: RevealResult;
-    eventLabel: string;
-  }
+  // PhaseMarkerRenderState imported from $lib/fly/fly-frame-projections (WS-B/B4).
   let phaseMarkers: PhaseMarker[] = $derived.by(() =>
     isMoonMission ? phaseMarkerKmPositions(mission.flight?.events, cislunarTrajectory) : [],
   );
@@ -858,31 +857,8 @@
    *  INJECTION's start tick is suppressed because it coincides with the
    *  LAUNCH anchor ring at arc 0; the ARRIVAL anchor ring covers
    *  arc 1.0 the same way. */
-  interface FdStage {
-    id:
-      | 'injection'
-      | 'separation'
-      | 'cruise'
-      | 'approach'
-      | 'arrival'
-      | 'cruise-return'
-      | 'approach-earth'
-      | 'arrival-earth';
-    /** Which arc the tickArc indexes into — outPts for outbound stages
-     *  (INJECTION → ARRIVAL at destination) and retPts for return
-     *  stages (CRUISE → ARRIVAL at Earth). Return stages only render
-     *  on round-trip missions (retPts.length > 0). */
-    leg: 'out' | 'return';
-    /** Where the diamond visually anchors on its arc (0–1 along the
-     *  arc's outPts or retPts). Sits at stage midpoints rather than
-     *  literal transitions so the diamond reads distinctly from the
-     *  LAUNCH / ARRIVAL anchor rings. */
-    tickArc: number;
-    /** Reveal threshold against the LEG-relative progress
-     *  (outboundT for `leg: 'out'`, returnT for `leg: 'return'`). */
-    arcThreshold: number;
-    label: () => string;
-  }
+  // FdStage imported from $lib/fly/fly-frame-projections (WS-B/B4). FD_STAGES stays
+  // here — its labels call the component's i18n m.* messages.
   const FD_STAGES: FdStage[] = [
     // Outbound leg — INJECTION sits at LAUNCH (no diamond, the LAUNCH
     // ring is its visual anchor); SEPARATION / CRUISE / APPROACH /
@@ -965,13 +941,7 @@
       label: () => m.fly_fd_marker_arrival(),
     },
   ];
-  interface FdPhaseMarkerRender {
-    id: FdStage['id'];
-    label: string;
-    tickScreen: ScreenPoint;
-    showTick: boolean;
-    revealed: boolean;
-  }
+  // FdPhaseMarkerRender imported from $lib/fly/fly-frame-projections (WS-B/B4).
   let fdPhaseMarkerScreens = $state.raw<FdPhaseMarkerRender[]>([]);
 
   /** Milestone overlay (#306-companion) — labeled `flight.events[]`
@@ -982,21 +952,7 @@
    *  historical narrative beats backfilled from /explore's labeled
    *  trajectory waypoints (Cassini's "Venus #1 — gravity assist",
    *  Voyager 2's "Neptune closest approach", etc.). */
-  interface MilestoneRender {
-    label: string;
-    description?: string;
-    met_days: number;
-    screen: ScreenPoint;
-    /** Legacy flag — true when state === 'active'. Kept so existing
-     *  template bindings don't break. */
-    active: boolean;
-    /** 3-state visibility: 'past' = latest milestone behind us
-     *  (compact, dimmed, top-right); 'active' = currently within
-     *  ±active window (full card with description, top-centre);
-     *  'future' = next milestone ahead (compact, "NEXT" label,
-     *  top-left). */
-    state: 'past' | 'active' | 'future';
-  }
+  // MilestoneRender imported from $lib/fly/fly-frame-projections (WS-B/B4).
   let milestoneScreens = $state.raw<MilestoneRender[]>([]);
 
   // defaultEventLabel: extracted to $lib/fly-event-labels (W9 / #279).
@@ -6722,173 +6678,54 @@
               now: performance.now(),
             });
           }
-          // GH #107 — phase marker projection (3D view). Compute pixel
-          // positions for every event marker against the active cislunar
-          // camera + canvas size, then write the resulting
-          // PhaseMarkerRenderState[] in a single $state.raw assignment so
-          // the template re-renders once per frame.
-          // Shared Vector3 factory for the two marker pipelines below.
-          // Hoisted out of the `if (hasPhaseMarkers)` guard so the FD
-          // marker projection (later) can reuse it without depending on
-          // whether the mission has a flight.events[] roster.
-          const factory =
-            container == null
-              ? null
-              : (x: number, y: number, z: number): MinimalProjector => {
-                  const v = new THREE.Vector3(x, y, z);
-                  return {
-                    project(cam) {
-                      v.project(cam as unknown as THREE.Camera);
-                      return v;
-                    },
-                  };
-                };
+          // HUD-overlay projections (phase markers / FD stages / milestones) —
+          // the projection assembly is extracted to $lib/fly/fly-frame-projections
+          // (WS-B/B4), byte-identical. Each builder returns the render array or null
+          // (guard failed → clear the $state). The shared projector factory + the
+          // $state assignment/clear semantics stay here.
+          const factory = makeProjectorFactory(container);
+          const pmScreens = buildPhaseMarkerScreens({
+            hasPhaseMarkers,
+            container,
+            factory,
+            viewMode,
+            phaseMarkers,
+            interplanetaryPhaseMarkers,
+            cislunarCamera,
+            camera,
+            simMet: simDay - mission.timeline.dep_day,
+            reducedMotion,
+          });
+          if (pmScreens) phaseMarkerScreens = pmScreens;
+          else if (phaseMarkerScreens.length > 0) phaseMarkerScreens = [];
 
-          if (hasPhaseMarkers && container && factory) {
-            const cw = container.clientWidth;
-            const ch = container.clientHeight;
-            const simMet = simDay - mission.timeline.dep_day;
-            const next: PhaseMarkerRenderState[] = [];
-            // Moon path: ECI km → CSS pixels via the cislunar camera.
-            if (viewMode === 'cislunar' && phaseMarkers.length > 0) {
-              for (const mk of phaseMarkers) {
-                next.push({
-                  event: mk.event,
-                  scienceRef: mk.scienceRef,
-                  screen: eciKmToScreenPx(mk.posKm, factory, cislunarCamera, cw, ch),
-                  reveal: markerStateFor(mk.event.met_days ?? 0, simMet, { reducedMotion }),
-                  eventLabel: defaultEventLabel(mk.event.type),
-                });
-              }
-            }
-            // Mars / outer-system path: heliocentric AU → CSS pixels via
-            // the main camera (helio scene already uses AU as scene units).
-            if (viewMode === 'heliocentric' && interplanetaryPhaseMarkers.length > 0) {
-              for (const mk of interplanetaryPhaseMarkers) {
-                next.push({
-                  event: mk.event,
-                  scienceRef: mk.scienceRef,
-                  screen: helioAuToScreenPx(mk.posAu, factory, camera, cw, ch),
-                  reveal: markerStateFor(mk.event.met_days ?? 0, simMet, { reducedMotion }),
-                  eventLabel: defaultEventLabel(mk.event.type),
-                });
-              }
-            }
-            phaseMarkerScreens = next;
-          } else if (phaseMarkerScreens.length > 0) {
-            phaseMarkerScreens = [];
-          }
+          const fdScreens = buildFdPhaseMarkerScreens({
+            viewMode,
+            outPts,
+            retPts,
+            container,
+            factory,
+            camera,
+            stages: FD_STAGES,
+            scPhase: sc.phase,
+            scProgress: sc.progress,
+          });
+          if (fdScreens) fdPhaseMarkerScreens = fdScreens;
+          else if (fdPhaseMarkerScreens.length > 0) fdPhaseMarkerScreens = [];
 
-          // FlightDirectorBanner stage markers (heliocentric only — Moon
-          // missions already have the cislunar PhaseMarker pipeline). Each
-          // stage projects ONE point: a diamond tick on the path at the
-          // stage's startArc — the chip's leader line ends at that
-          // diamond, so the label visually anchors to the trajectory
-          // (not to a Sun-derived midpoint). The Sun's projected position
-          // is still passed so each chip can push itself off the Sun blob.
-          if (viewMode === 'heliocentric' && outPts.length >= 2 && container && factory) {
-            const fdNext: FdPhaseMarkerRender[] = [];
-            const cwFd = container.clientWidth;
-            const chFd = container.clientHeight;
-            const outLastIdx = outPts.length - 1;
-            const retLastIdx = retPts.length - 1;
-            const hasReturnArc = retPts.length >= 2;
-            // Leg-relative progress (0 → 1 across each leg's own arc),
-            // used to gate stage reveal. For round-trip missions
-            // arcProgress is normalised over the WHOLE mission so an
-            // outbound-arrival threshold at 0.95 wouldn't fire until ~95%
-            // of the round-trip = deep into the return leg. Leg-relative
-            // progress keeps stage thresholds intuitive on both one-way
-            // and round-trip missions.
-            const { outboundT, returnT } = fdLegProgress(sc.phase, sc.progress);
-            for (const s of FD_STAGES) {
-              // Skip return-leg stages on one-way missions (no retPts).
-              if (s.leg === 'return' && !hasReturnArc) continue;
-              const arc = s.leg === 'out' ? outPts : retPts;
-              const lastIdx = s.leg === 'out' ? outLastIdx : retLastIdx;
-              const legT = s.leg === 'out' ? outboundT : returnT;
-              const tickIdx = Math.max(0, Math.min(lastIdx, Math.round(s.tickArc * lastIdx)));
-              const tickPt = arc[tickIdx];
-              // Use the sample point's actual Y. The spline waypoints have
-              // non-zero Y at intermediate flybys (the +y offset that lifts
-              // the path above the planet rather than through it), so we
-              // can't hard-code Y=0 — that would render the diamond on the
-              // ecliptic plane while the spacecraft sits above it on the arc.
-              fdNext.push({
-                id: s.id,
-                label: s.label(),
-                tickScreen: helioAuToScreenPx(
-                  {
-                    x: tickPt.x * SCALE_3D,
-                    y: (tickPt.y ?? 0) * SCALE_3D,
-                    z: tickPt.z * SCALE_3D,
-                  },
-                  factory,
-                  camera,
-                  cwFd,
-                  chFd,
-                ),
-                // INJECTION hides its diamond + leader because the LAUNCH
-                // ring at the same arc position is the visual anchor.
-                // ARRIVAL-EARTH similarly suppresses its diamond because
-                // the RETURN ring at retPts[last] sits right there.
-                showTick: s.id !== 'injection' && s.id !== 'arrival-earth',
-                revealed: legT >= s.arcThreshold,
-              });
-            }
-            fdPhaseMarkerScreens = fdNext;
-          } else if (fdPhaseMarkerScreens.length > 0) {
-            fdPhaseMarkerScreens = [];
-          }
-
-          // Milestone overlay projection — labeled flight.events render
-          // as teal chips at the spacecraft's projected position at the
-          // event's MET. Only milestones the ship has already REACHED
-          // (plus the one within an ±15-day "active" window) render, and
-          // we cap at the 2 most-recent past plus the active one — so
-          // the scene shows the current beat + one immediate predecessor
-          // for narrative context, not the whole roster (which would
-          // clutter the canvas for grand-tour missions like BepiColombo).
-          if (viewMode === 'heliocentric' && container && factory) {
-            const cwMs = container.clientWidth;
-            const chMs = container.clientHeight;
-            // 3-state milestone visibility: always show "where we came
-            // from" + "where we are" + "where we're going". The user
-            // wants to know the next milestone is coming even when
-            // they're still cruising far from it.
-            const ACTIVE_APPROACH_DAYS = 30;
-            const ACTIVE_DEPART_DAYS = 20;
-            const currentMet = simDay - arcTimeline.dep_day;
-            // Selection brains extracted to $lib/fly/fly-frame-selectors (WS-B/B4)
-            // — byte-identical past/active/future picking; the THREE projection
-            // stays here (already using the extracted helioAuToScreenPx helper).
-            const picked = pickVisibleMilestones(mission.flight?.events ?? [], currentMet, {
-              approachDays: ACTIVE_APPROACH_DAYS,
-              departDays: ACTIVE_DEPART_DAYS,
-            });
-            const msNext: MilestoneRender[] = [];
-            for (const { evt, state } of picked) {
-              const eventSimDay = arcTimeline.dep_day + evt.met_days!;
-              const evtSc = spacecraftPos(eventSimDay, arcTimeline, outPts, retPts);
-              msNext.push({
-                label: evt.label!,
-                description: evt.description,
-                met_days: evt.met_days!,
-                screen: helioAuToScreenPx(
-                  { x: evtSc.pos.x * SCALE_3D, y: 0, z: evtSc.pos.z * SCALE_3D },
-                  factory,
-                  camera,
-                  cwMs,
-                  chMs,
-                ),
-                active: state === 'active',
-                state,
-              });
-            }
-            milestoneScreens = msNext;
-          } else if (milestoneScreens.length > 0) {
-            milestoneScreens = [];
-          }
+          const msScreens = buildMilestoneScreens({
+            viewMode,
+            container,
+            factory,
+            camera,
+            mission,
+            simDay,
+            arcTimeline,
+            outPts,
+            retPts,
+          });
+          if (msScreens) milestoneScreens = msScreens;
+          else if (milestoneScreens.length > 0) milestoneScreens = [];
         } else draw2d();
       },
     });

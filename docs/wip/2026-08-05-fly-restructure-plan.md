@@ -68,6 +68,9 @@ Goal: the ~4,870-line `onMount` becomes a `fly-scene-host` + the existing `fly-*
 
 ### B3 — Extract cislunar scene assembly
 - Same for the cislunar scene (moon-frame group, phase-line tubes — trajectory-tube radius logic already extracted in R2) into `fly-cislunar-scene`.
+- **LANDED (`a6bc66a58f`).** Pure cislunar builders → `$lib/three/fly-cislunar-overlays.ts`: `buildCislunarStarField`, `buildCislunarLineMaterial` (+ `CISLUNAR_PHASE_COLORS` / `LUNAR_LOCAL_PHASE_TYPES`), `buildCislunarSpacecraftSprite`, `buildAnnotationSprite`. 6-case jsdom smoke test; coverage-excluded. Apollo 11 cislunar scene renders byte-identical (star field + TLI trajectory + spacecraft sprite), zero console errors. The reactive-coupled machinery (`ensureCislunarPhaseLine` over the phase-line Map + moon-frame group, `rebuildCislunarAnnotations` over the live trajectory/mission, the layer listeners, the per-frame updaters) stays in the page → B4.
+
+> **Checkpoint (2026-08-05):** WS-A complete + verified; B0/B1/B2a/B3 landed. Full unit suite green (`vitest run src/lib/{fly,three,orbital}` → 1185 passed). All committed on `content`, unpushed. **Remaining B4/B5 = the deep frame-loop surgery** — implement `createFlySceneHost` to move the ~1,670-line `onFrame` + the reactive-coupled overlays (which bidirectionally read/write page `$state`: HUD readouts, `phaseMarkerScreens`, `simDay`, camera-orbit state). Highest-risk slice; gated by the full B6 e2e-both-projects + visual-diff.
 
 ### B4 — Extract `onFrame` into composed updaters
 - Decompose the per-frame body into keyed updaters (helio-frame, cislunar-frame, ascent/coast/descent handled by their existing scenes). `frame(state)` dispatches by `state.act`. Preserve the exact per-frame math (dt clamp already via `createAnimateLoop` from R7).

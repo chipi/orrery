@@ -92,7 +92,6 @@
     R_MOON_KM,
     moonEciPos,
     type CislunarTrajectory,
-    type Vec3Km,
   } from '$lib/orbital/cislunar/cislunar-geometry';
   import {
     phaseMarkerKmPositions,
@@ -165,14 +164,6 @@
     drawLabelTexture,
   } from '$lib/three/fly-helio-overlays';
   import {
-    CISLUNAR_PHASE_COLORS,
-    LUNAR_LOCAL_PHASE_TYPES,
-    buildCislunarStarField,
-    buildCislunarLineMaterial,
-    buildCislunarSpacecraftSprite,
-    buildAnnotationSprite,
-  } from '$lib/three/fly-cislunar-overlays';
-  import {
     makeProjectorFactory,
     buildPhaseMarkerScreens,
     buildFdPhaseMarkerScreens,
@@ -184,6 +175,7 @@
   } from '$lib/fly/fly-frame-projections';
   import { sampleForwardArc, integrateEarthCoastPreview } from '$lib/fly/fly-frame-coast';
   import { buildHelioReactiveOverlays } from '$lib/three/fly-helio-reactive';
+  import { buildCislunarReactiveOverlays } from '$lib/three/fly-cislunar-reactive';
   import {
     findActiveBurn,
     burnExhaustDir,
@@ -2720,13 +2712,6 @@
     const cislunarEarthSoI = cislunarHandles.earthSoI;
     const cislunarMoonSoI = cislunarHandles.moonSoI;
 
-    // Subscribe to the 'soi' layer toggle so checking/unchecking in
-    // the Science Layers panel actually flips ring visibility.
-    const stopSoiLayerCislunar = onLayerChange('soi', (on) => {
-      cislunarEarthSoI.visible = on;
-      cislunarMoonSoI.visible = on;
-    });
-
     // ─── Cislunar Science Layers (ADR-058 follow-up) ─────────────────
     // Overlay object construction (gravity / velocity / centripetal
     // arrows + apsides markers + coast line) moved to the scene
@@ -2740,287 +2725,32 @@
     const cisApoMarker = cislunarHandles.overlays.apoMarker;
     const cisCoastLine = cislunarHandles.overlays.coastLine;
 
-    const stopGravityLayerCislunar = onLayerChange('gravity', (on) => {
-      cisGravEarthArrow.visible = on;
-      cisGravMoonArrow.visible = on;
+    // The cislunar reactive overlay layer — the science-layer listeners, the
+    // per-phase trajectory tubes (+ ensureCislunarPhaseLine + the moon-frame group),
+    // the ∆v annotations, the spacecraft marker, and the per-frame updaters — now
+    // live in $lib/three/fly-cislunar-reactive (RFC-036 WS-B), byte-identical. The
+    // updaters + refs destructure back into the same names the frame loop +
+    // mission-swap effect use; live reactive reads (arcTimeline/mission) thread as
+    // getter deps. The static overlay refs above stay (the frame loop mutates them).
+    const cisReactive = buildCislunarReactiveOverlays({
+      scene: cislunarScene,
+      moon: cislunarMoon,
+      scaleCislunar: SCALE_CISLUNAR,
+      earthSoI: cislunarEarthSoI,
+      moonSoI: cislunarMoonSoI,
+      overlays: cislunarHandles.overlays,
+      getArcTimeline: () => arcTimeline,
+      getMission: () => mission,
     });
-    const stopVelocityLayerCislunar = onLayerChange('velocity', (on) => {
-      cisVelocityArrow.visible = on;
-    });
-    const stopCentripetalLayerCislunar = onLayerChange('centripetal', (on) => {
-      cisCentripetalArrow.visible = on;
-    });
-    const stopApsidesLayerCislunar = onLayerChange('apsides', (on) => {
-      cisPeriMarker.visible = on;
-      cisApoMarker.visible = on;
-    });
-    const stopCoastLayerCislunar = onLayerChange('coast', (on) => {
-      cisCoastLine.visible = on;
-    });
-
-    // Stars for the cislunar scene — sparser, pushed further out. Builder now in
-    // $lib/three/fly-cislunar-overlays (RFC-036 WS-B/B3) — byte-identical.
-    cislunarScene.add(buildCislunarStarField());
-
-    // Trajectory lines — one Three.js Line per phase, color-coded by phase type
-    // (CISLUNAR_PHASE_COLORS + LUNAR_LOCAL_PHASE_TYPES + buildCislunarLineMaterial
-    // now imported from $lib/three/fly-cislunar-overlays, RFC-036 WS-B/B3). Lines
-    // are mutated in-place when the mission changes (geometry.setFromPoints +
-    // needsUpdate) so we don't churn the scene graph on each mission load.
-    const cislunarPhaseLines: Map<string, THREE.Mesh> = new Map();
-    // Lunar-phase lines live inside a Group that rides with the Moon.
-    // The orbit / spiral_lunar / descent / ascent points are stored in
-    // Moon-relative coords (= absolute_pt - moonAtFlyby × SCALE_CISLUNAR),
-    // and the group's position is updated each frame to
-    // (currentMoon - moonAtFlyby) × SCALE_CISLUNAR. End result: the
-    // orbit ring tracks the Moon as it drifts forward through ECI,
-    // instead of staying anchored where the Moon was at flyby_day.
-    const cislunarMoonFrameGroup = new THREE.Group();
-    cislunarScene.add(cislunarMoonFrameGroup);
-    // LUNAR_LOCAL_PHASE_TYPES + buildCislunarLineMaterial imported from
-    // $lib/three/fly-cislunar-overlays (RFC-036 WS-B/B3) — byte-identical.
-    function ensureCislunarPhaseLine(type: string): THREE.Mesh {
-      const existing = cislunarPhaseLines.get(type);
-      if (existing) return existing;
-      // A tube mesh (not a 1px Line) so the cislunar mission arc reads as boldly
-      // as the heliocentric trajectory. The bright/dim past-future shader runs
-      // unchanged on the tube's per-vertex aT.
-      const line = new THREE.Mesh(
-        new THREE.BufferGeometry(),
-        buildCislunarLineMaterial(CISLUNAR_PHASE_COLORS[type] ?? 0xffffff),
-      );
-      if (LUNAR_LOCAL_PHASE_TYPES.has(type)) {
-        cislunarMoonFrameGroup.add(line);
-      } else {
-        cislunarScene.add(line);
-      }
-      cislunarPhaseLines.set(type, line);
-      return line;
-    }
-
-    // Spacecraft marker for the cislunar scene. Sprite-based so it
-    // stays constant size on-screen regardless of cislunar camera zoom
-    // (the prior sphere was 0.08 scene units = ~4% of Earth's visual
-    // size, invisible). Red filled circle + soft halo, matching the
-    // heliocentric scSprite glyph for visual consistency. Red is
-    // distinct from every phase colour so the spacecraft never blends
-    // into its own trail.
-    // The glyph drawing + sprite construction now live in
-    // buildCislunarSpacecraftSprite() ($lib/three/fly-cislunar-overlays, RFC-036
-    // WS-B/B3) — byte-identical (same 64px canvas, scale 1 / renderOrder 999 /
-    // depthTest:false). Sprite scale is re-set dynamically each frame in
-    // updateCislunarCam (∝ cislunarCamR) so on-screen size stays roughly constant.
-    const { sprite: cislunarSpacecraft } = buildCislunarSpacecraftSprite();
-    cislunarScene.add(cislunarSpacecraft);
-
-    // Phase-boundary ∆v annotation sprites (ADR-058 Stage 3). Rendered
-    // only when the Science Lens is on. Each label is a small canvas
-    // texture so any number can be allocated cheaply.
-    const cislunarAnnotations: THREE.Sprite[] = [];
-    // buildAnnotationSprite imported from $lib/three/fly-cislunar-overlays
-    // (RFC-036 WS-B/B3) — byte-identical (256×96 canvas, 8×3 sprite).
-    function clearCislunarAnnotations(): void {
-      for (const s of cislunarAnnotations) {
-        cislunarScene.remove(s);
-        s.material.map?.dispose();
-        s.material.dispose();
-      }
-      cislunarAnnotations.length = 0;
-    }
-    function rebuildCislunarAnnotations(
-      traj: CislunarTrajectory | null,
-      profile: import('$lib/orbital/cislunar/cislunar-geometry').CislunarProfile | undefined,
-    ): void {
-      clearCislunarAnnotations();
-      if (!traj) return;
-      // Find phase boundaries to annotate. Each entry: { phaseType, line1, line2, accent }.
-      const annotations: Array<{
-        position: Vec3Km;
-        line1: string;
-        line2: string;
-        accent: string;
-      }> = [];
-
-      // TLI burn — start of the first tli_coast / spiral_earth phase.
-      const tliPhase = traj.phases.find((p) => p.type === 'tli_coast' || p.type === 'spiral_earth');
-      const tliDv = profile?.tli?.dv_kms;
-      if (tliPhase && tliPhase.points.length > 0 && tliDv != null) {
-        annotations.push({
-          position: tliPhase.points[0],
-          line1: 'TLI',
-          line2: `${tliDv.toFixed(2)} km/s`,
-          accent: '#ffd166',
-        });
-      }
-
-      // Periselene / closest approach — visible for free-return + hybrid.
-      // For phase type 'tli_coast' the apogee (last point) IS the closest
-      // approach to the Moon. Skip if we have a separate lunar_orbit phase
-      // (LOI annotation covers it).
-      const hasLunarPhase = traj.phases.some(
-        (p) => p.type === 'lunar_orbit' || p.type === 'spiral_lunar',
-      );
-      if (!hasLunarPhase && tliPhase && profile?.lunar_arrival?.periselene_km != null) {
-        const last = tliPhase.points[tliPhase.points.length - 1];
-        annotations.push({
-          position: last,
-          line1: 'PERISELENE',
-          line2: `${profile.lunar_arrival.periselene_km.toLocaleString()} km`,
-          accent: '#ff9933',
-        });
-      }
-
-      // LOI — start of lunar_orbit, with the orbit insertion ∆v.
-      const lunarPhase = traj.phases.find((p) => p.type === 'lunar_orbit');
-      const loiDv =
-        profile?.lunar_arrival?.type === 'orbit' || profile?.lunar_arrival?.type === 'lor_orbit'
-          ? // No dedicated field; pull from flight.arrival.orbit_insertion_dv_km_s via mission state.
-            mission.flight?.arrival?.orbit_insertion_dv_km_s
-          : undefined;
-      if (lunarPhase && lunarPhase.points.length > 0 && loiDv != null) {
-        annotations.push({
-          position: lunarPhase.points[0],
-          line1: 'LOI',
-          line2: `${loiDv.toFixed(2)} km/s`,
-          accent: '#c77dff',
-        });
-      }
-
-      // TEI — start of tei_coast.
-      const teiPhase = traj.phases.find((p) => p.type === 'tei_coast');
-      const teiDv = profile?.return?.dv_kms;
-      if (teiPhase && teiPhase.points.length > 0 && teiDv != null) {
-        annotations.push({
-          position: teiPhase.points[0],
-          line1: 'TEI',
-          line2: `${teiDv.toFixed(2)} km/s`,
-          accent: '#06d6a0',
-        });
-      }
-
-      for (const a of annotations) {
-        const sprite = buildAnnotationSprite(a.line1, a.line2, a.accent);
-        sprite.position.set(
-          a.position.x * SCALE_CISLUNAR,
-          a.position.y * SCALE_CISLUNAR + 2,
-          a.position.z * SCALE_CISLUNAR,
-        );
-        cislunarScene.add(sprite);
-        cislunarAnnotations.push(sprite);
-      }
-      // Visibility follows the global lens state.
-      const lensOn = isScienceLensOn();
-      for (const s of cislunarAnnotations) s.visible = lensOn;
-    }
-    const stopLensWatch = onScienceLensChange((on) => {
-      for (const s of cislunarAnnotations) s.visible = on;
-    });
-
-    function rebuildCislunarLines(traj: CislunarTrajectory | null): void {
-      for (const line of cislunarPhaseLines.values()) line.visible = false;
-      if (!traj) {
-        cislunarSpacecraft.visible = false;
-        cislunarMoon.visible = false;
-        return;
-      }
-      cislunarSpacecraft.visible = true;
-      cislunarMoon.visible = true;
-      // Reference Moon position used when this mission's trajectory
-      // was built — lunar phase points are absolute in ECI but anchored
-      // to where the Moon was at flyby_day. We subtract this reference
-      // to get Moon-relative points and put them in the moon-frame
-      // group so the orbit + descent track the moving Moon mesh.
-      const moonAtFlybyRef = moonEciPos(arcTimeline.flyby_day);
-      for (const phase of traj.phases) {
-        const line = ensureCislunarPhaseLine(phase.type);
-        const lunarLocal = LUNAR_LOCAL_PHASE_TYPES.has(phase.type);
-        const n = phase.points.length;
-        const verts = new Float32Array(n * 3);
-        for (let i = 0; i < n; i++) {
-          const p = phase.points[i];
-          const x = lunarLocal ? p.x - moonAtFlybyRef.x : p.x;
-          const y = lunarLocal ? p.y - moonAtFlybyRef.y : p.y;
-          const z = lunarLocal ? p.z - moonAtFlybyRef.z : p.z;
-          verts[i * 3] = x * SCALE_CISLUNAR;
-          verts[i * 3 + 1] = y * SCALE_CISLUNAR;
-          verts[i * 3 + 2] = z * SCALE_CISLUNAR;
-        }
-        // Bold tube (was a 1px line) — same aT-driven bright/dim shader.
-        const tubePts: THREE.Vector3[] = [];
-        for (let i = 0; i < n; i++) {
-          tubePts.push(new THREE.Vector3(verts[i * 3], verts[i * 3 + 1], verts[i * 3 + 2]));
-        }
-        line.geometry.dispose();
-        line.geometry = buildTubeFromPoints(tubePts, 0.16);
-        // Keep the source points + current radius on the line so the per-frame
-        // zoom-invariant thickness pass (#83) can rebuild the tube as camR drifts.
-        line.userData.srcPts = tubePts;
-        line.userData.tubeRadius = 0.16;
-        // Reset uProgress on rebuild; the per-frame updater will set
-        // it correctly next tick based on current met_days.
-        const mat = line.material as THREE.ShaderMaterial;
-        mat.uniforms.uProgress.value = 0;
-        line.visible = true;
-      }
-    }
-
-    /** Per-frame: drive each phase line's uProgress uniform from the
-     *  spacecraft's met_days. Phases fully behind the spacecraft are
-     *  bright (uProgress=1); ahead are dim (uProgress=0); the active
-     *  phase is mid-gradient. Mirrors the heliocentric outLine/retLine
-     *  treatment from #228. */
-    function updateCislunarLineProgress(traj: CislunarTrajectory | null, met_days: number): void {
-      if (!traj) return;
-      for (const phase of traj.phases) {
-        const line = cislunarPhaseLines.get(phase.type);
-        if (!line) continue;
-        const mat = line.material as THREE.ShaderMaterial;
-        const span = phase.end_met_days - phase.start_met_days;
-        let progress: number;
-        if (span <= 0) progress = met_days >= phase.end_met_days ? 1 : 0;
-        else if (met_days <= phase.start_met_days) progress = 0;
-        else if (met_days >= phase.end_met_days) progress = 1;
-        else progress = (met_days - phase.start_met_days) / span;
-        mat.uniforms.uProgress.value = progress;
-      }
-    }
-
-    function updateCislunarSpacecraft(traj: CislunarTrajectory | null, met_days: number): void {
-      if (!traj || traj.phases.length === 0) return;
-      let phase = traj.phases[0];
-      for (const p of traj.phases) {
-        if (met_days >= p.start_met_days && met_days <= p.end_met_days) {
-          phase = p;
-          break;
-        }
-      }
-      const span = phase.end_met_days - phase.start_met_days;
-      const t = span > 0 ? Math.max(0, Math.min(1, (met_days - phase.start_met_days) / span)) : 0;
-      const last = phase.points.length - 1;
-      const f = t * last;
-      const i = Math.min(last - 1, Math.max(0, Math.floor(f)));
-      const frac = f - i;
-      const a = phase.points[i];
-      const b = phase.points[i + 1] ?? a;
-      // For lunar-local phases, the sprite rides with the Moon. Add
-      // (currentMoon - moonAtFlyby) so its position tracks the moving
-      // Moon mesh — same offset the moonFrameGroup applies to lines.
-      let offsetX = 0;
-      let offsetY = 0;
-      let offsetZ = 0;
-      if (LUNAR_LOCAL_PHASE_TYPES.has(phase.type)) {
-        const moonNow = moonEciPos(arcTimeline.dep_day + met_days);
-        const moonRef = moonEciPos(arcTimeline.flyby_day);
-        offsetX = moonNow.x - moonRef.x;
-        offsetY = moonNow.y - moonRef.y;
-        offsetZ = moonNow.z - moonRef.z;
-      }
-      cislunarSpacecraft.position.set(
-        (a.x + (b.x - a.x) * frac + offsetX) * SCALE_CISLUNAR,
-        (a.y + (b.y - a.y) * frac + offsetY) * SCALE_CISLUNAR,
-        (a.z + (b.z - a.z) * frac + offsetZ) * SCALE_CISLUNAR,
-      );
-    }
+    const {
+      cislunarMoonFrameGroup,
+      cislunarSpacecraft,
+      cislunarPhaseLines,
+      rebuildCislunarLines,
+      updateCislunarLineProgress,
+      updateCislunarSpacecraft,
+      rebuildCislunarAnnotations,
+    } = cisReactive;
 
     // Expose to outer scope so applyMissionAsLoaded can call rebuild
     // when a Moon mission's cislunar_profile lands.
@@ -6514,16 +6244,10 @@
     // drain so renderer / el3d teardowns run last; layer-stop watches
     // are only present when their corresponding overlay registered.
     lifecycle.add(() => frameMonitor.stop());
-    if (stopLensWatch) lifecycle.add(stopLensWatch);
-    // Helio science-layer listeners now unsubscribe via helioReactive.dispose
-    // (RFC-036 WS-B). The cislunar-layer stops stay here.
+    // Helio + cislunar science-layer listeners unsubscribe via the reactive-layer
+    // dispose() handles (RFC-036 WS-B) — including the cislunar lens watch.
     lifecycle.add(helioReactive.dispose);
-    if (stopSoiLayerCislunar) lifecycle.add(stopSoiLayerCislunar);
-    if (stopGravityLayerCislunar) lifecycle.add(stopGravityLayerCislunar);
-    if (stopVelocityLayerCislunar) lifecycle.add(stopVelocityLayerCislunar);
-    if (stopCentripetalLayerCislunar) lifecycle.add(stopCentripetalLayerCislunar);
-    if (stopCoastLayerCislunar) lifecycle.add(stopCoastLayerCislunar);
-    if (stopApsidesLayerCislunar) lifecycle.add(stopApsidesLayerCislunar);
+    lifecycle.add(cisReactive.dispose);
     lifecycle.add(() => disposeScene(scene));
     // ADR-058: dispose the cislunar scene's GPU resources too.
     lifecycle.add(() => disposeScene(cislunarScene));

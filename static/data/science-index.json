@@ -269,8 +269,8 @@
     "tab": "life-in-space",
     "section": "lunar-surface-ops",
     "title": "Lunar surface operations — 1/6 g, regolith, day/night",
-    "intro": "Apollo gave humanity 12 lunar walkers, 22 EVAs, 73 surface-hours, 382 kg of samples. Every crew came back wishing for different things. Artemis is rebuilding the lunar EVA playbook against what those 12 learned.",
-    "haystack": "lunar surface operations — 1/6 g, regolith, day/night apollo gave humanity 12 lunar walkers, 22 evas, 73 surface-hours, 382 kg of samples. every crew came back wishing for different things. artemis is rebuilding the lunar eva playbook against what those 12 learned. locomotion in 1/6 g is the first surprise. apollo crews trained at the langley 9.5° simulator + kc-135 parabolas, and everyone still landed expecting a clumsy walk. reality was the opposite: walking at 1/6 g is *over*-stable in some axes (the body's mass-times-1/6g restoring force is small, so you settle slowly), and *under*-stable in others (forward momentum from a step persists much longer than on earth, and there's no atmosphere to slow you). the apollo crews converged on three locomotion modes: walking (good for slow + careful), the loping-jog (good for medium-distance, both feet off the ground for an extended period), and the kangaroo-hop (aldrin's discovery on apollo 11 — push off with both feet, glide). the apollo 17 eva-3 transcript has cernan and schmitt openly negotiating which mode to use for each segment of the traverse; the answer is mostly loping."
+    "intro": "Apollo gave humanity 12 lunar walkers, 22 EVAs, ~80 surface-hours, 382 kg of samples. Every crew came back wishing for different things. Artemis is rebuilding the lunar EVA playbook against what those 12 learned.",
+    "haystack": "lunar surface operations — 1/6 g, regolith, day/night apollo gave humanity 12 lunar walkers, 22 evas, ~80 surface-hours, 382 kg of samples. every crew came back wishing for different things. artemis is rebuilding the lunar eva playbook against what those 12 learned. locomotion in 1/6 g is the first surprise. apollo crews trained at the langley 9.5° simulator + kc-135 parabolas, and everyone still landed expecting a clumsy walk. reality was the opposite: walking at 1/6 g is *over*-stable in some axes (the body's mass-times-1/6g restoring force is small, so you settle slowly), and *under*-stable in others (forward momentum from a step persists much longer than on earth, and there's no atmosphere to slow you). the apollo crews converged on three locomotion modes: walking (good for slow + careful), the loping-jog (good for medium-distance, both feet off the ground for an extended period), and the kangaroo-hop (aldrin's discovery on apollo 11 — push off with both feet, glide). the apollo 17 eva-3 transcript has cernan and schmitt openly negotiating which mode to use for each segment of the traverse; the answer is mostly loping."
   },
   {
     "tab": "life-in-space",
@@ -312,7 +312,7 @@
     "section": "radiation-exposure",
     "title": "Radiation exposure",
     "intro": "Galactic cosmic rays + solar particle events + Earth's trapped belts — the radiation environment outside the magnetosphere is the biggest unsolved problem for a human Mars mission.",
-    "haystack": "radiation exposure galactic cosmic rays + solar particle events + earth's trapped belts — the radiation environment outside the magnetosphere is the biggest unsolved problem for a human mars mission. earth's surface gets about 3 msv (millisieverts) of background radiation per year — radon, rocks, food, cosmic rays attenuated by 100 km of atmosphere. the iss, in low earth orbit and still partially shielded by the magnetosphere, gets about **200 msv per year**. deep space, outside the magnetosphere, gets about **600 msv per year** — and that's with no solar storms."
+    "haystack": "radiation exposure galactic cosmic rays + solar particle events + earth's trapped belts — the radiation environment outside the magnetosphere is the biggest unsolved problem for a human mars mission. earth's surface gets about 3 msv (millisieverts) of background radiation per year — radon, rocks, food, cosmic rays attenuated by 100 km of atmosphere. the iss, in low earth orbit and still partially shielded by the magnetosphere, gets about **150 msv per year**. deep space, outside the magnetosphere, gets about **600 msv per year** — and that's with no solar storms."
   },
   {
     "tab": "life-in-space",
@@ -326,7 +326,7 @@
     "section": "suit-lineage",
     "title": "Suit lineage — Sokol to Orlan to Feitian, A7L to AxEMU",
     "intro": "Every modern spacesuit traces to one of three families: American Apollo-derived, Soviet/Russian Sokol + Orlan, and Chinese Feitian (itself derived from Orlan). Six decades, three lineages, lots of cross-pollination.",
-    "haystack": "suit lineage — sokol to orlan to feitian, a7l to axemu every modern spacesuit traces to one of three families: american apollo-derived, soviet/russian sokol + orlan, and chinese feitian (itself derived from orlan). six decades, three lineages, lots of cross-pollination. the original iva suit problem was simple and terrible: keep the crew alive if the spacecraft loses pressure. vostok and voskhod cosmonauts wore sk-1 / berkut suits. mercury used a modified navy mark iv. gemini used the g3c / g4c. none of these were tested as full-decompression life-savers because no flight had ever lost cabin pressure. then in june 1971 soyuz 11 returned with the crew dead from rapid decompression during separation — dobrovolsky, volkov, patsayev were in shirtsleeves because the soyuz cabin couldn't fit three suited cosmonauts. the soviet response was the sokol k-v (1973), a lightweight rubberised-fabric pressure suit designed specifically to fit inside the soyuz couch and inflate in seconds if the cabin failed. every soyuz crew since wears a descendant of sokol — the current sokol-m (introduced 2023) is the fifth-generation variant."
+    "haystack": "suit lineage — sokol to orlan to feitian, a7l to axemu every modern spacesuit traces to one of three families: american apollo-derived, soviet/russian sokol + orlan, and chinese feitian (itself derived from orlan). six decades, three lineages, lots of cross-pollination. the original iva suit problem was simple and terrible: keep the crew alive if the spacecraft loses pressure. vostok and voskhod cosmonauts wore sk-1 / berkut suits. mercury used a modified navy mark iv. gemini used the g3c / g4c. none of these were tested as full-decompression life-savers because no flight had ever lost cabin pressure. then in june 1971 soyuz 11 returned with the crew dead from rapid decompression during separation — dobrovolsky, volkov, patsayev were in shirtsleeves because the soyuz cabin couldn't fit three suited cosmonauts. the soviet response was the sokol k-v (1973), a lightweight rubberised-fabric pressure suit designed specifically to fit inside the soyuz couch and inflate in seconds if the cabin failed. every soyuz crew since wears a descendant of sokol — the current sokol-m is its latest modernised variant."
   },
   {
     "tab": "life-in-space",
@@ -767,7 +767,7 @@
     "section": "lunar-ice",
     "title": "Lunar Ice — water in the permanent dark",
     "intro": "Near the lunar poles, some crater floors have never seen sunlight — and in that perpetual cold, water ice delivered by comets and asteroids over billions of years has accumulated and been trapped.",
-    "haystack": "lunar ice — water in the permanent dark near the lunar poles, some crater floors have never seen sunlight — and in that perpetual cold, water ice delivered by comets and asteroids over billions of years has accumulated and been trapped. the moon's axial tilt is only about 1.5 degrees, far less than earth's 23.5 degrees. as a result, sunlight near the poles arrives almost horizontally, and the floors of deep polar craters fall permanently in shadow. these permanently shadowed regions (psrs) are among the coldest places in the solar system: measured temperatures run below 100 k (−170°c), and some spots near the lunar south pole approach 40 k. at those temperatures, water ice is stable for billions of years — it simply does not sublimate."
+    "haystack": "lunar ice — water in the permanent dark near the lunar poles, some crater floors have never seen sunlight — and in that perpetual cold, water ice delivered by comets and asteroids over billions of years has accumulated and been trapped. the moon's axial tilt is only about 1.5 degrees, far less than earth's 23.5 degrees. as a result, sunlight near the poles arrives almost horizontally, and the floors of deep polar craters fall permanently in shadow. these permanently shadowed regions (psrs) are among the coldest places in the solar system: measured temperatures run below 100 k (−170°c), and some spots near the lunar south pole approach ~25 k. at those temperatures, water ice is stable for billions of years — it simply does not sublimate."
   },
   {
     "tab": "planets",
@@ -890,6 +890,13 @@
   },
   {
     "tab": "propulsion",
+    "section": "expander-cycle",
+    "title": "Expander cycle — powered by heat, not fire",
+    "intro": "Let the cryogenic fuel soak up heat off the engine's own nozzle, flash to gas, and spin the turbopump with it. No gas generator, no preburner — the engine's waste heat is the power source. Clean and reliable, but it cannot scale up.",
+    "haystack": "expander cycle — powered by heat, not fire let the cryogenic fuel soak up heat off the engine's own nozzle, flash to gas, and spin the turbopump with it. no gas generator, no preburner — the engine's waste heat is the power source. clean and reliable, but it cannot scale up. a rocket chamber and nozzle are ferociously hot, and a cryogenic engine already pumps its freezing fuel through channels in the chamber walls to keep them from melting — regenerative cooling. the expander cycle turns that cooling job into the engine's power plant. liquid hydrogen (or methane) enters the wall channels near the nozzle, absorbs a huge amount of heat, and flashes into a hot, high-pressure gas. that gas is expanded through the turbine to drive the turbopump, and only then is it delivered to the main chamber to burn. no propellant is set on fire just to run the pumps, so the turbine gas is benign, soot-free, and gentle on the hardware — which is why expander engines are famously reliable and restartable."
+  },
+  {
+    "tab": "propulsion",
     "section": "fuels-and-oxidizers",
     "title": "Fuels and oxidisers — kerolox, hydrolox, methalox, hypergolics, solids",
     "intro": "Five propellant combinations cover almost every orbital flight ever flown. Each one is a trade between specific impulse, density, storability, handling, and what you can make on Mars.",
@@ -901,6 +908,13 @@
     "title": "Fusion Propulsion — the star we cannot yet light",
     "intro": "Fusing light atomic nuclei releases far more energy per kilogram than any chemical reaction, making fusion propulsion the most credible path to high-speed interstellar transit — if anyone can build a working fusion engine, which no one has.",
     "haystack": "fusion propulsion — the star we cannot yet light fusing light atomic nuclei releases far more energy per kilogram than any chemical reaction, making fusion propulsion the most credible path to high-speed interstellar transit — if anyone can build a working fusion engine, which no one has. the physics is straightforward. fusing deuterium and tritium (or deuterium and helium-3) converts a small fraction of their mass directly into energy. the yield per kilogram is roughly ten million times that of the best chemical propellant. translated into specific impulse, a fusion drive could reach tens of thousands to hundreds of thousands of seconds — compare the best chemical engine at 450 s and the best ion drive at 9,000 s. that gap is the difference between a centuries-long interstellar trip and one measured in decades."
+  },
+  {
+    "tab": "propulsion",
+    "section": "gas-generator",
+    "title": "Gas-generator cycle — the workhorse",
+    "intro": "Burn a sliver of the propellant in a small side chamber, use the hot gas to spin the turbopumps, then throw it overboard. It costs a little performance, but it is simple, robust, and the most widely flown way to build a rocket engine.",
+    "haystack": "gas-generator cycle — the workhorse burn a sliver of the propellant in a small side chamber, use the hot gas to spin the turbopumps, then throw it overboard. it costs a little performance, but it is simple, robust, and the most widely flown way to build a rocket engine. every pump-fed engine has the same problem: to force propellant into a combustion chamber at hundreds of atmospheres, you need turbopumps, and to spin those pumps you need a power source. the gas-generator cycle solves it the blunt way. a few percent of the fuel and oxidiser are tapped off and burned in a separate small chamber — the gas generator — producing a stream of hot gas that drives a turbine on the pump shaft. because that gas has done its job before it ever reaches the main chamber, it is simply dumped overboard, usually through a separate exhaust duct or fed into the nozzle skirt where the pressure is already low. this makes it an *open* cycle: some propellant leaves the engine without passing through the main combustion chamber."
   },
   {
     "tab": "propulsion",
@@ -950,6 +964,13 @@
     "title": "Specific Impulse (Isp)",
     "intro": "How efficient an engine is — how many seconds a kilogram of propellant produces a kilogram of thrust.",
     "haystack": "specific impulse (isp) how efficient an engine is — how many seconds a kilogram of propellant produces a kilogram of thrust. isp is the fuel-economy number for rockets. higher is better. definition: divide thrust by propellant mass-flow rate, divide by `g₀` (standard gravity), get a number in seconds. burn one kilogram of propellant per second, get `isp × g₀` newtons of thrust."
+  },
+  {
+    "tab": "propulsion",
+    "section": "staged-combustion",
+    "title": "Staged combustion — closing the cycle",
+    "intro": "Instead of dumping the turbopump's drive gas overboard, feed it into the main chamber and burn it too. Nothing is wasted, so the engine runs hotter, at higher pressure, and with more performance — at the cost of fearsome plumbing.",
+    "haystack": "staged combustion — closing the cycle instead of dumping the turbopump's drive gas overboard, feed it into the main chamber and burn it too. nothing is wasted, so the engine runs hotter, at higher pressure, and with more performance — at the cost of fearsome plumbing. staged combustion takes the gas-generator idea and closes the loop. a preburner still burns propellant to drive the turbopumps, but its exhaust — thick with unburned fuel or oxidiser — is not dumped. it is routed into the main combustion chamber and burned a second time, so every gram of propellant ends up producing thrust. closing the cycle buys two things at once: higher specific impulse, because nothing is thrown away, and much higher chamber pressure, because the pumps can be driven harder. higher chamber pressure means a smaller, more powerful engine for the same thrust. the price is brutal operating conditions — the turbine now sits in the full propellant flow at extreme temperature and pressure."
   },
   {
     "tab": "propulsion",

@@ -405,45 +405,22 @@ export default defineConfig(({ mode }) => {
       coverage: {
         provider: 'v8',
         reporter: ['text', 'html', 'lcov'],
-        // Fail-closed thresholds — `npm run test:coverage` exits non-zero
-        // when any axis drops below the floor. Tune these together with
-        // a baseline refresh after a deliberate test-removal landed.
+        // Fail-closed thresholds — `npm run test:coverage` exits non-zero when
+        // any axis drops below the floor. These are set ~1.5–2 pp under the
+        // measured actuals (2026-07-20: stmts 92.36 / branches 80.52 /
+        // funcs 90.27 / lines 94.36) so routine feature additions don't trip the
+        // gate but a meaningful regression does.
+        //
+        // FROZEN POLICY (architectural-review R8): these numbers are a RATCHET —
+        // they may go UP, never DOWN. The coverage-excluded surface here is large
+        // (all WebGL builders + the two route god-files), so new feature code
+        // exercised only by Playwright silently dilutes the ratio. The historical
+        // fix pattern was to shave the threshold down to just-under-actual after
+        // each drop; that slowly erodes the guarantee. Instead, when a change
+        // drops coverage below the floor, RECOVER IT BY ADDING TESTS — do not
+        // lower the threshold. (Deliberate, reviewed test removals are the only
+        // exception, and get their own commit + rationale.)
         thresholds: {
-          // v0.7 baseline refresh — image-vision.ts runtime loader + the
-          // satellite/PRD-023 widening pushed statements 92 → 91.69 in
-          // commit 4e26c6b5d. The 2026-06-06 belts + science articles +
-          // BeltPanel + /fly textures pass pushed functions 86 → 85.57
-          // and lines 94 → 93.81. The 2026-06-10 /fly polish wave (Hill
-          // spheres, magnetosphere, Lagrange, YouTube scrubber, ship-
-          // hero flyby framing) added another ~1pp of Three.js scene-
-          // builder code in fly-helio-scene + scrubber CSS+template in
-          // routes/fly/+page.svelte — same drift pattern (new feature
-          // code exercised by Playwright, not vitest), measured at
-          // 90.66 / 75.12 on the failing CI run. The 2026-06-13
-          // hero-override wiring added 4 new lines each in getMission/
-          // getFleetGallery (loadHeroOverrides + applyHeroOverride) —
-          // these execute under SSR (browser=false, no-op cache fill)
-          // so the early-exit shortcut hides them from v8 coverage and
-          // the existing data.test.ts cases don't materially trace them,
-          // dropping lines 93.81 → 92.69. The 2026-06-13 second pass
-          // (slices 20-32 — runCinematicFrame extract + QualitySettingsModal
-          // + cinematic post stack ports to /explore + /iss + /tiangong
-          // + DebugPanel Rendering tab + CAPCOM backfill + +error route)
-          // pushed function-count up without proportionally extending the
-          // unit-test surface (Playwright-side coverage of new scene
-          // wiring + content backfills) — measured at 84.72 on the
-          // failing CI run. Held at observed-minus-~0.7pp so a meaningful
-          // regression still trips the gate.
-          // 2026-07-20 coverage-strengthening pass (launch-epic finalization):
-          // added ~325 unit tests across data.ts, launches/manifest, image-srcset,
-          // fly-mission-apply, science-lens, a11y/roving-focus, hotspot-lod
-          // (pure math), audio-registry/state, native/{deep-links,back-gesture,
-          // webgl-recovery}, + the /fly descent-hud/force-layers/orbit-insertion;
-          // excluded the pure-3D builders (hotspot-models, hero-materials,
-          // model-geom, dispose-object3d). Actuals rose to
-          // stmts 92.36 / branches 80.52 / funcs 90.27 / lines 94.36 — thresholds
-          // tightened to just under that (fail-closed on any regression) with a
-          // ~1.5–2 pp margin so routine additions don't trip the gate.
           statements: 91,
           branches: 78,
           functions: 88,

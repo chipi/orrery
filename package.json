@@ -96,6 +96,7 @@
     "docs:build": "vitepress build docs && cp -R docs/prototypes docs/.vitepress/dist/prototypes",
     "docs:preview": "vitepress preview docs",
     "preflight": "node scripts/with-lock.mjs preflight -- node scripts/preflight-smart.mjs",
+    "preflight:coverage": "npm run preflight && npm run test:coverage",
     "ci": "npm run preflight",
     "cleanup": "bash scripts/cleanup-worktree.sh",
     "prepare": "git config core.hooksPath .husky 2>/dev/null || true",

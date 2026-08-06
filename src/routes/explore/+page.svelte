@@ -43,6 +43,11 @@
     bodyContextId,
     AU_PER_PARSEC,
   } from '$lib/universe/context-graph';
+  import {
+    resolveSolarBodyTarget,
+    contextLevel,
+    isValidShellTarget,
+  } from '$lib/explore/scale-shell-controller';
   import type { NeighborhoodScene } from '$lib/universe/neighborhood-scene';
   import type { BodyScene } from '$lib/universe/body-scene';
   import {
@@ -1248,30 +1253,32 @@
     void planetById;
     void smallBodyById;
     const id = $page.url.searchParams.get('id');
-    if (!id) return;
-    if (id === 'sun') {
-      selectSun();
-    } else if (id === 'pluto' && smallBodyById.has(id)) {
-      // Pluto is in BOTH planets.json (legacy orbital ring) and
-      // small-bodies.json (IAU 2006 dwarf-planet classification).
-      // The small-body panel carries the curated science_sections
-      // with body-specific `why` prefixes; the planet panel has
-      // only the minimal name/type/fact/bio overlay. Prefer the
-      // richer surface for deep-link landings.
-      selectSmallBody(id);
-    } else if (planetById.has(id)) {
-      selectPlanet(id);
-    } else if (smallBodyById.has(id)) {
-      selectSmallBody(id);
-    } else if (id === 'asteroid-belt' || id === 'belt:asteroid') {
-      selectBelt('asteroid');
-    } else if (id === 'kuiper-belt' || id === 'belt:kuiper') {
-      selectBelt('kuiper');
-    } else if (id.includes(':')) {
-      const [parent, sat] = id.split(':', 2);
-      if (parent && sat && planetById.has(parent)) selectSatellite(parent, sat);
+    // The ?id= routing ladder — incl. the Pluto-in-two-catalogues nuance (it lives in
+    // both planets.json + small-bodies.json; the small-body surface's curated
+    // science_sections win for deep-link landings) — lives in scale-shell-controller,
+    // pure + unit-tested (RFC-036 WS-C/C1). Unknown id → null → no-op, never crash.
+    const target = resolveSolarBodyTarget(id, {
+      isPlanet: (x) => planetById.has(x),
+      isSmallBody: (x) => smallBodyById.has(x),
+    });
+    if (!target) return;
+    switch (target.kind) {
+      case 'sun':
+        selectSun();
+        break;
+      case 'planet':
+        selectPlanet(target.id);
+        break;
+      case 'smallBody':
+        selectSmallBody(target.id);
+        break;
+      case 'belt':
+        selectBelt(target.belt);
+        break;
+      case 'satellite':
+        selectSatellite(target.parentId, target.satelliteId);
+        break;
     }
-    // Unknown id → no-op; do not crash.
   });
 
   // #29 back-chain — mirror the open body panel into ?id= so mission
@@ -4606,9 +4613,9 @@
 
     // Nav shortcuts jump straight to a scale-shell. Climb OUT (cross-out) or back
     // IN (cross-in) one level at a time until the active context is the target.
-    const CTX_ORDER = ['solar-system', 'neighborhood', 'milky-way', 'local-group'];
+    // Ladder + level math live in scale-shell-controller (RFC-036 WS-C/C1, tested).
     const curCtxLevel = () =>
-      CTX_ORDER.indexOf(
+      contextLevel(
         inLocalGroup()
           ? 'local-group'
           : inMilkyWay()
@@ -4618,7 +4625,7 @@
               : 'solar-system',
       );
     contextDeepLinkFn = async (target: string) => {
-      const t = CTX_ORDER.indexOf(target);
+      const t = contextLevel(target);
       if (t < 0) return;
       let guard = 0;
       while (curCtxLevel() < t && guard++ < 6) {
@@ -4638,7 +4645,7 @@
     // reactive $effect above only catches later in-session URL changes).
     {
       const ctx0 = new URL(window.location.href).searchParams.get('context');
-      if (ctx0 && CTX_ORDER.includes(ctx0)) {
+      if (isValidShellTarget(ctx0)) {
         lastContextJump = ctx0;
         void contextDeepLinkFn(ctx0).then(() => {
           const url = new URL(window.location.href);

@@ -554,6 +554,9 @@ export default defineConfig(({ mode }) => {
           'src/lib/three/fly-frame-runner.ts',
           'src/lib/three/fly-input-handlers.ts',
           'src/lib/three/fly-scene-host.ts',
+          // /explore scene-host teardown (RFC-036 WS-C) — imperative Three.js scene
+          // assembly lifted from the explore/+page.svelte onMount; same WebGL policy.
+          'src/lib/three/explore-solar-scene.ts',
           // Shared 3D asset builders used by the model/scene files above — hero
           // PBR materials + IBL (hero-materials) and the low-level geometry
           // helper (model-geom) both instantiate Three.js materials/geometry

@@ -540,6 +540,18 @@ export default defineConfig(({ mode }) => {
           // and ∆v annotation sprites extracted from the fly/+page.svelte onMount.
           // Same policy; structure smoke-tested in fly-cislunar-overlays.test.ts.
           'src/lib/three/fly-cislunar-overlays.ts',
+          // /fly scene-host teardown — imperative subsystems lifted VERBATIM out of
+          // the fly/+page.svelte onMount (RFC-036 WS-B). Each drives Three.js scene
+          // objects / cameras / EffectComposer that jsdom can construct but not
+          // render, so they follow the same WebGL exclusion policy as the builders
+          // above. The PURE logic they call (fly-frame-selectors/projections/coast/
+          // burn) stays coverage-counted and unit-tested; these orchestration shells
+          // are gated by the /fly Playwright e2e suite instead.
+          'src/lib/three/fly-helio-reactive.ts',
+          'src/lib/three/fly-cislunar-reactive.ts',
+          'src/lib/three/fly-helio-mission.ts',
+          'src/lib/three/fly-camera-controller.ts',
+          'src/lib/three/fly-frame-runner.ts',
           // Shared 3D asset builders used by the model/scene files above — hero
           // PBR materials + IBL (hero-materials) and the low-level geometry
           // helper (model-geom) both instantiate Three.js materials/geometry

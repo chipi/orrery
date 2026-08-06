@@ -44,11 +44,14 @@ Unlike `/fly`, the shell *transitions* already live in `ContextGraph`. C1 extrac
 
 Pure (no svelte/three/dom), coverage-gated, unit-tested. The page keeps the scene-coupled `crossOut*`/`crossIn*` execution but drives it from the controller's plan.
 
-## C2 — `explore-scene-host.ts` + per-shell modules
-Move onMount scene assembly (solar-system inline build + the ensure*/cross* orchestration + onFrame) into a host over the existing `$lib/universe/*-scene` seam. Bridge the frame-written `$state` (contextId/scaleReadout/…) like WS-B. Highest-risk slice.
+## C2 + C3 — scene host + thin page: **LANDED (2026-08-07)**
 
-## C3 — thin the page
-onMount → create host + wire listeners + deep-link effects (driven by C1) + cleanup. Target the same "wiring only" shape as `/fly`.
+Two slices, both committed on `content`:
 
-## C4 — verify + land
-`/explore` e2e both projects + per-shell manual confirm (solar → neighbourhood → galaxy → Local Group → universe) + shell-boundary visual/geometry check. Byte-identical.
+- **C2a (`25a9077067`) — `explore-solar-scene.ts`.** The inline solar-system assembly (belts, planets + satellites + orbiters + science overlays, small bodies, selection ring, LOD/satellite updaters) → `createExploreSolarScene(deps)`. Construction only, no `$state` writes; 5 getter deps. Page 8,823 → 7,677.
+- **C2b + C3 (`a2a3e958bb`) — `explore-scene-host.ts`.** The WHOLE remaining onMount (camera + per-frame loop + draw2d + all pointer/pick/hover input + the scale-shell orchestration: ensure/cross for every shell, deep-link cold-load resolvers, causality/HR/deep-sky) → `createExploreSceneHost(bridge, deps)`. A **68-var bridge** (get/set over the frame-written `$state` + the `last*` deep-link guards) + **34 fn-pointers** on the handle. `reducedMotion` is now page-owned (both layers read it via getter). Page 7,677 → 4,767; the scene onMount **~4,580 → ~523 lines** (C3's wiring-only goal met).
+
+**Boundary lessons (same as WS-B, plus new):** the bridge retarget mangled object **keys** (`namedStars:` → `bridge.namedStars:`) and a **spread** (`...selectedExoplanet`); a JSDoc `*/` inside `ensure*/cross*` prematurely closed the comment (spilling comment words as "undefined names"); `$page` store refs must thread as `deps.getPage()`; and the lens/hover sub-cleanup handles are page-assigned (early onMount) → **deps**, not handle returns.
+
+## C4 — verify + land: **DONE**
+`svelte-check` 0 errors / 3330 files · `/explore` e2e **both projects — desktop 27 + mobile 20 = 47 passed** · browser: solar renders, `?id=jupiter` → planet panel, `?id=pluto` → dwarf-planet panel, `?context=milky-way` climbs the walker to the galactic shell, zero console errors · pure C1 controller coverage-counted, the 3 imperative modules coverage-excluded. **Byte-identical:** the one mobile `reset-to-today` failure is **pre-existing** — proven by running it against the pre-C2b baseline, where it fails identically (original inline code); the refactor preserves it exactly.

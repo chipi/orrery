@@ -552,6 +552,8 @@ export default defineConfig(({ mode }) => {
           'src/lib/three/fly-helio-mission.ts',
           'src/lib/three/fly-camera-controller.ts',
           'src/lib/three/fly-frame-runner.ts',
+          'src/lib/three/fly-input-handlers.ts',
+          'src/lib/three/fly-scene-host.ts',
           // Shared 3D asset builders used by the model/scene files above — hero
           // PBR materials + IBL (hero-materials) and the low-level geometry
           // helper (model-geom) both instantiate Three.js materials/geometry

@@ -10,6 +10,8 @@
   import { disposeScene } from '$lib/three/dispose-object3d';
   import { createAnimateLoop } from '$lib/three/animate-loop';
   import { createFlyFrameRunner } from '$lib/three/fly-frame-runner';
+  import { createFlyInputHandlers } from '$lib/three/fly-input-handlers';
+  import { createFlySceneHost } from '$lib/three/fly-scene-host';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
   import {
     earthPos,
@@ -25,8 +27,6 @@
     GRAVITY_ASSIST_CAVEAT_DESTINATIONS,
     DESTINATION_LABEL_COLORS,
   } from '$lib/fly-scene-constants';
-  import { buildCislunarScene } from '$lib/three/fly-cislunar-scene';
-  import { buildHelioScene } from '$lib/three/fly-helio-scene';
   import {
     resolveQualitySync,
     kickOffBackgroundDetect,
@@ -76,11 +76,7 @@
     heliocentricSpeed as flyHeliocentricSpeed,
     signalDelayMin as flySignalDelayMin,
   } from '$lib/orbital/fly-physics';
-  import {
-    A_MOON_KM,
-    R_MOON_KM,
-    type CislunarTrajectory,
-  } from '$lib/orbital/cislunar/cislunar-geometry';
+  import { type CislunarTrajectory } from '$lib/orbital/cislunar/cislunar-geometry';
   import {
     phaseMarkerKmPositions,
     currentPhaseFor,
@@ -119,28 +115,19 @@
     CISLUNAR_HERO_LEAD_DAYS,
   } from '$lib/orbital/cislunar/cislunar-hero-shot';
 
-  import {
-    buildTubeGeometry,
-    buildSpacecraftSprite,
-    buildEnginePlume,
-  } from '$lib/three/fly-helio-overlays';
+  import { buildTubeGeometry } from '$lib/three/fly-helio-overlays';
   import {
     type PhaseMarkerRenderState,
     type FdStage,
     type FdPhaseMarkerRender,
     type MilestoneRender,
   } from '$lib/fly/fly-frame-projections';
-  import { buildHelioReactiveOverlays } from '$lib/three/fly-helio-reactive';
-  import { buildCislunarReactiveOverlays } from '$lib/three/fly-cislunar-reactive';
-  import { buildHelioMissionOverlays } from '$lib/three/fly-helio-mission';
-  import { createFlyCameraController } from '$lib/three/fly-camera-controller';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
   import { cue } from '$lib/sensory/feedback';
-  import { gyro } from '$lib/sensory/device-orientation';
   import { sensory } from '$lib/sensory/state.svelte';
   import { flyVelocitySon } from '$lib/sensory/sonify/fly-velocity';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
@@ -2579,264 +2566,25 @@
         perfToastVisible = true;
       },
     });
-    const helioHandles = buildHelioScene({
+    // ──────────────────────────────────────────────────────────────
+    // 3D scene host (RFC-036 WS-B/1c) — heliocentric + cislunar scenes, the
+    // reactive overlay layers, per-mission overlays, spacecraft sprite + plume,
+    // and the cinematic camera controller. Live page reads thread in as getter
+    // closures; every ref returns on the handle. Component-$state a module can't
+    // write (DebugPanel live* passes, mission-swap `let`s, moon-mesh refs) is
+    // assigned from the handle below.
+    // ──────────────────────────────────────────────────────────────
+    const sceneHost = createFlySceneHost({
       container,
-      aspect: container.clientWidth / container.clientHeight,
       quality,
-      // 2026-06-06 — give /fly the same /explore-grade body imagery for
-      // Sun + Earth + every destination. 2K throughout (camera here
-      // sits closer than /explore but bodies are compressed, so 2K
-      // matches the pixel density without a 4K LOD swap).
-      bodyTextures: {
-        sun: `${base}/textures/2k_sun.jpg`,
-        earth: `${base}/textures/2k_earth_daymap.jpg`,
-        mercury: `${base}/textures/2k_mercury.jpg`,
-        venus: `${base}/textures/2k_venus_atmosphere.jpg`,
-        mars: `${base}/textures/2k_mars.jpg`,
-        jupiter: `${base}/textures/2k_jupiter.jpg`,
-        saturn: `${base}/textures/2k_saturn.jpg`,
-        uranus: `${base}/textures/2k_uranus.jpg`,
-        neptune: `${base}/textures/2k_neptune.jpg`,
-        pluto: `${base}/textures/4k_pluto.jpg`,
-        // No Ceres texture in the catalogue today — falls back to the
-        // DEST_STYLE colour. Add `2k_ceres.jpg` to the texture pack to
-        // light it up automatically.
-      },
-    });
-    const scene = helioHandles.scene;
-    const camera = helioHandles.camera;
-    // Base FOV to restore when a montage shot (which may set its own FOV)
-    // is not active. Captured from the scene's camera at setup. (#371)
-    const baseFov = camera.fov;
-    const renderer = helioHandles.renderer;
-    // Expose to the DebugPanel "Rendering" tab (#334) — the template-
-    // mounted <RenderingDebugRegistrar> picks these up reactively.
-    // bloomPass is null on minimal/low tiers (no bloom built); the
-    // Rendering tab degrades gracefully (sliders hidden, on/off flag
-    // falls back to the static quality value).
-    liveRenderer = renderer;
-    liveQuality = quality;
-    liveQualitySource = resolveQualitySource($page.url);
-    liveBloomPass = helioHandles.bloomPass;
-    liveBokehPass = helioHandles.bokehPass;
-    liveFilmPass = helioHandles.filmPass;
-    liveVignettePass = helioHandles.vignettePass;
-    liveSkydomeMesh = helioHandles.skydomeMesh;
-    liveSunLensFlareGroup = helioHandles.sunLensFlare?.group ?? null;
-    liveFrameMonitor = frameMonitor;
-    const sunCore = helioHandles.sunCore;
-    const sunGlow = helioHandles.sunGlow;
-    const earthMesh = helioHandles.earthMesh;
-    const marsMesh = helioHandles.destinationMesh;
-    const earthOrbitLine = helioHandles.earthOrbitLine;
-    const applyDestinationVisuals = helioHandles.setDestination;
-
-    // ──────────────────────────────────────────────────────────────
-    // Cislunar scene (ADR-058) — Earth-centred, km-scale. Static
-    // construction (scene, camera, lights, Earth+Moon meshes, SoI
-    // rings) lives in $lib/three/fly-cislunar-scene (W9 wave 8).
-    // Layer-toggle subscription stays here because it owns the
-    // cleanup contract for onDestroy.
-    // ──────────────────────────────────────────────────────────────
-    const cislunarHandles = buildCislunarScene({
-      aspect: container.clientWidth / container.clientHeight,
-      earthTextureUrl: `${base}/textures/2k_earth_daymap.jpg`,
-      // __MOBILE__: 4K earth/moon are pruned off-device (ADR-079 D3). Passing
-      // undefined makes fly-cislunar-scene skip the LOD upgrade and stay at 2K.
-      earthTextureUrl4k: __MOBILE__ ? undefined : `${base}/textures/4k_earth_daymap.jpg`,
-      moonTextureUrl: `${base}/textures/2k_moon.jpg`,
-      moonTextureUrl4k: __MOBILE__ ? undefined : `${base}/textures/4k_moon.jpg`,
-    });
-    const cislunarScene = cislunarHandles.scene;
-    const cislunarCamera = cislunarHandles.camera;
-    const SCALE_CISLUNAR = cislunarHandles.scaleCislunar;
-    const cislunarMoon = cislunarHandles.moon;
-    const cislunarEarthSoI = cislunarHandles.earthSoI;
-    const cislunarMoonSoI = cislunarHandles.moonSoI;
-
-    // ─── Cislunar Science Layers (ADR-058 follow-up) ─────────────────
-    // Overlay object construction (gravity / velocity / centripetal
-    // arrows + apsides markers + coast line) moved to the scene
-    // builder; component owns the per-layer subscriptions and the
-    // per-frame position / direction updates.
-    const cisGravEarthArrow = cislunarHandles.overlays.gravityEarth;
-    const cisGravMoonArrow = cislunarHandles.overlays.gravityMoon;
-    const cisVelocityArrow = cislunarHandles.overlays.velocity;
-    const cisCentripetalArrow = cislunarHandles.overlays.centripetal;
-    const cisPeriMarker = cislunarHandles.overlays.periMarker;
-    const cisApoMarker = cislunarHandles.overlays.apoMarker;
-    const cisCoastLine = cislunarHandles.overlays.coastLine;
-
-    // The cislunar reactive overlay layer — the science-layer listeners, the
-    // per-phase trajectory tubes (+ ensureCislunarPhaseLine + the moon-frame group),
-    // the ∆v annotations, the spacecraft marker, and the per-frame updaters — now
-    // live in $lib/three/fly-cislunar-reactive (RFC-036 WS-B), byte-identical. The
-    // updaters + refs destructure back into the same names the frame loop +
-    // mission-swap effect use; live reactive reads (arcTimeline/mission) thread as
-    // getter deps. The static overlay refs above stay (the frame loop mutates them).
-    const cisReactive = buildCislunarReactiveOverlays({
-      scene: cislunarScene,
-      moon: cislunarMoon,
-      scaleCislunar: SCALE_CISLUNAR,
-      earthSoI: cislunarEarthSoI,
-      moonSoI: cislunarMoonSoI,
-      overlays: cislunarHandles.overlays,
+      cine,
       getArcTimeline: () => arcTimeline,
       getMission: () => mission,
-    });
-    const {
-      cislunarMoonFrameGroup,
-      cislunarSpacecraft,
-      cislunarPhaseLines,
-      rebuildCislunarLines,
-      updateCislunarLineProgress,
-      updateCislunarSpacecraft,
-      rebuildCislunarAnnotations,
-    } = cisReactive;
-
-    // Expose to outer scope so applyMissionAsLoaded can call rebuild
-    // when a Moon mission's cislunar_profile lands.
-    // Cislunar closures published via flyUpdaters.cislunar at end of onMount.
-    cislunarMoonMeshRef = cislunarMoon;
-    cislunarMoonFrameGroupRef = cislunarMoonFrameGroup;
-
-    // Sun + star field + orbit rings: built by the helio scene builder
-    // (W9 wave A); refs already destructured into scope above.
-
-    // v0.6.3 #228 rewrite: ONE tube per leg. The fragment shader paints
-    // each fragment bright (visited) if vT < uProgress, dim (preview)
-    // otherwise. uProgress is set each frame from outFraction /
-    // retFraction. Why this works where the v0.1.10 four-tube +
-    // drawRange + vertex-mutation approach didn't:
-    //
-    //   1. Cross-sections sit at EXACTLY pts[i] (manual builder below,
-    //      NOT THREE.TubeGeometry — TubeGeometry sampled the curve via
-    //      getPointAt(arc-length) which disagreed with lerpPoint at
-    //      uniform-t for Kepler ellipses sampled at uniform true
-    //      anomaly; that's what caused the 0.5 → 20.3 scene-unit
-    //      sprite-vs-tube-tip gap visible in the v0.6.2 debug log).
-    //   2. Each vertex carries `aT = i / (pts.length - 1)`, the same
-    //      parameter the sprite uses (sc.pos = lerpPoint(pts, t)).
-    //   3. Fragment interpolation of vT crosses uProgress at exactly
-    //      the same world position as lerpPoint(pts, uProgress) —
-    //      i.e. where the sprite sits. No drift possible by construction.
-    // The per-mission helio overlays — trajectory tubes, the spacecraft model
-    // (applyMissionSpacecraftModel), the LAUNCH/ARRIVAL/RETURN anchor rings, the
-    // moon orbit ring, and the anchor label sprites (refreshSpriteTextures) — now
-    // live in $lib/three/fly-helio-mission (RFC-036 WS-B), byte-identical. The refs
-    // are assigned into the component-scope `let`s the mission-swap $effects already
-    // reference; helioMission.scModel + the two swap methods are read via the handle.
-    const helioMission = buildHelioMissionOverlays({ scene, outPts, retPts });
-    outLine = helioMission.outLine;
-    retLine = helioMission.retLine;
-    depMarker = helioMission.depMarker;
-    arrMarker = helioMission.arrMarker;
-    retMarker = helioMission.retMarker;
-    moonOrbitRing = helioMission.moonOrbitRing;
-    depLabelSprite = helioMission.depLabelSprite;
-    arrLabelSprite = helioMission.arrLabelSprite;
-    retLabelSprite = helioMission.retLabelSprite;
-
-    // earthMesh + destination mesh (`marsMesh` for historic reasons),
-    // orbit rings, DEST_STYLE catalogue, and the destination-swap
-    // method all live in $lib/three/fly-helio-scene (W9 wave A). Refs
-    // already destructured from helioHandles above. The historical-
-    // Mars arcs visibility toggle is wired via the onDestinationChange
-    // callback at builder construction.
-    // applyDestinationVisuals published via flyUpdaters.helio at end of onMount.
-
-    // ─── Science Layers G.2 — SoI rings around Earth + Mars ──────────
-    // Sized by physical SoI radii (Earth 924 000 km, Mars 577 000 km)
-    // mapped through SCALE_3D (1 AU = 80 scene units), so the ring
-    // matches the actual transition the spacecraft experiences.
-    // SoI radii are tiny at physical scale (Earth's 924 000 km →
-    // 0.49 scene units at SCALE_3D=80), invisible at the default
-    // camera distance of 360. 8× visual boost keeps the relative
-    // proportions correct (Earth SoI > Mars SoI) while making the
-    // rings actually readable when the lens is on.
-    // Helio reactive overlay layer (SoI rings, gravity/velocity/centripetal arrows,
-    // coast line, apsides markers, moon mesh) + its science-layer listeners + the
-    // three frame-shared flags (soiLayerOn / cinemaForceMoons / lastLayerMoonsOn)
-    // now live in $lib/three/fly-helio-reactive (RFC-036 WS-B) — byte-identical. The
-    // mesh refs destructure back into the same names the frame loop already uses; the
-    // shared flags stay on `helioReactive` (accessed via the handle in the loop).
-    const helioReactive = buildHelioReactiveOverlays({
-      scene,
-      setHillSpheresVisible: helioHandles.setHillSpheresVisible,
-      setLagrangePointsVisible: helioHandles.setLagrangePointsVisible,
-      setMagnetospheresVisible: helioHandles.setMagnetospheresVisible,
-      setMoonsVisible: helioHandles.setMoonsVisible,
-      base,
       getIsMoonMission: () => isMoonMission,
       getActiveDestination: () => activeDestination,
-      getSimDay: () => simDay,
-      getOutPts: () => outPts,
-    });
-    const {
-      earthSoI,
-      marsSoI,
-      moonSoI,
-      gravArrowEarth,
-      gravArrowSun,
-      velocityArrow,
-      centripetalArrow,
-      coastLine,
-      moonMesh,
-      recomputeApsides,
-    } = helioReactive;
-
-    // (The layer listeners, coast line, apsides markers + recomputeApsides, the
-    // hill/lagrange/magnetosphere/moons overlays, and the moon mesh all moved into
-    // buildHelioReactiveOverlays above — RFC-036 WS-B. The soiLayerOn /
-    // cinemaForceMoons / lastLayerMoonsOn flags live on `helioReactive`.)
-
-    // Spacecraft — small camera-facing sprite glyph at sc.pos. Satellite
-    // billboard: red rounded body + two gold solar-panel wings + a tiny
-    // white antenna stub, surrounded by a soft red glow halo. Rendered
-    // as a THREE.Sprite so it's always face-camera — no orbital
-    // rotation math, sidestepping the chevron's "wrong direction"
-    // problem on curved arcs. The red body preserves the visibility
-    // the prior circle gave; the gold wings carry the spacecraft
-    // identity, matching the FD banner palette.
-    // The glyph drawing + sprite construction now live in buildSpacecraftSprite()
-    // ($lib/three/fly-helio-overlays, RFC-036 WS-B/B2a) — byte-identical (same 64px
-    // canvas, same scale 2.5 / renderOrder 999 / depthTest:false).
-    const { sprite: scSprite } = buildSpacecraftSprite();
-    scene.add(scSprite);
-
-    // #1 Engine plume — directed cone at the spacecraft position
-    // during burn events. Geometry tip along -Z so THREE.Object3D.lookAt
-    // orients tip at any world-space target. Shader paints a base→tip
-    // orange→yellow-white gradient with squared falloff toward the tip
-    // (visually narrow tapering exhaust). Hidden between burns. Per-
-    // event orientation + scale + opacity in the animate loop below.
-    // The plume cone + gradient shader now live in buildEnginePlume()
-    // ($lib/three/fly-helio-overlays, RFC-036 WS-B/B2a) — byte-identical (same
-    // ConeGeometry, same shader, additive, hidden, renderOrder 998). plumeMat's
-    // uOpacity + plumeMesh transform are driven per burn-event in the animate loop.
-    const { mesh: plumeMesh, material: plumeMat } = buildEnginePlume();
-    scene.add(plumeMesh);
-
-    // Camera + cinematic-camera subsystem extracted to
-    // $lib/three/fly-camera-controller (RFC-036 WS-B). The controller owns the
-    // camera-orbit state + the auto-zoom / cinematic-camera drivers; the frame loop
-    // + input handlers read/write its state via the handle (flyCam.camR etc.) and
-    // call flyCam.updateCam() / flyCam.panActiveCamera() etc.
-    const flyCam = createFlyCameraController({
-      camera,
-      cislunarCamera,
-      cislunarSpacecraft,
-      cislunarHandles,
-      helioHandles,
-      helioReactive,
-      cine,
       getSimDay: () => simDay,
       getSimSpeed: () => simSpeed,
       getViewMode: () => viewMode,
-      getIsMoonMission: () => isMoonMission,
-      getActiveDestination: () => activeDestination,
-      getMission: () => mission,
-      getArcTimeline: () => arcTimeline,
       getOutPts: () => outPts,
       getRetPts: () => retPts,
       getCislunarTrajectory: () => cislunarTrajectory,
@@ -2849,6 +2597,79 @@
       setCurrentDestMeshId: (id: DestinationId) => (currentDestMeshId = id),
       getFlyUpdaters: () => flyUpdaters,
     });
+    const {
+      helioHandles,
+      scene,
+      camera,
+      baseFov,
+      renderer,
+      sunCore,
+      sunGlow,
+      earthMesh,
+      marsMesh,
+      earthOrbitLine,
+      applyDestinationVisuals,
+      cislunarHandles,
+      cislunarScene,
+      cislunarCamera,
+      SCALE_CISLUNAR,
+      cislunarMoon,
+      cisGravEarthArrow,
+      cisGravMoonArrow,
+      cisVelocityArrow,
+      cisCentripetalArrow,
+      cisPeriMarker,
+      cisApoMarker,
+      cisCoastLine,
+      cisReactive,
+      cislunarMoonFrameGroup,
+      cislunarSpacecraft,
+      cislunarPhaseLines,
+      rebuildCislunarLines,
+      updateCislunarLineProgress,
+      updateCislunarSpacecraft,
+      rebuildCislunarAnnotations,
+      helioMission,
+      helioReactive,
+      earthSoI,
+      marsSoI,
+      moonSoI,
+      gravArrowEarth,
+      gravArrowSun,
+      velocityArrow,
+      centripetalArrow,
+      coastLine,
+      moonMesh,
+      recomputeApsides,
+      scSprite,
+      plumeMesh,
+      plumeMat,
+      flyCam,
+    } = sceneHost;
+    // Backflow — component $state a $lib module can't write. DebugPanel "Rendering"
+    // tab live* passes + the mission-swap `let`s the page's $effects bind + the
+    // moon-mesh refs, assigned from the scene-host handle.
+    liveRenderer = renderer;
+    liveQuality = quality;
+    liveQualitySource = resolveQualitySource($page.url);
+    liveBloomPass = helioHandles.bloomPass;
+    liveBokehPass = helioHandles.bokehPass;
+    liveFilmPass = helioHandles.filmPass;
+    liveVignettePass = helioHandles.vignettePass;
+    liveSkydomeMesh = helioHandles.skydomeMesh;
+    liveSunLensFlareGroup = helioHandles.sunLensFlare?.group ?? null;
+    liveFrameMonitor = frameMonitor;
+    cislunarMoonMeshRef = cislunarMoon;
+    cislunarMoonFrameGroupRef = cislunarMoonFrameGroup;
+    outLine = helioMission.outLine;
+    retLine = helioMission.retLine;
+    depMarker = helioMission.depMarker;
+    arrMarker = helioMission.arrMarker;
+    retMarker = helioMission.retMarker;
+    moonOrbitRing = helioMission.moonOrbitRing;
+    depLabelSprite = helioMission.depLabelSprite;
+    arrLabelSprite = helioMission.arrLabelSprite;
+    retLabelSprite = helioMission.retLabelSprite;
     // Page-owned state that lived in the old camera block but belongs with the
     // frame loop / input handlers (montage cut-detection, flyby constants, drag).
     let lastMontageShotKind: ShotKind | null = null;
@@ -2891,153 +2712,16 @@
       neptune: { spriteScale: 1.7, modelScale: 1.3, toCameraR: 0.5 },
     };
     const el3d = renderer.domElement;
-    let isDrag = false;
-    let dragMode: 'orbit' | 'pan' = 'orbit';
-    let lmx = 0;
-    let lmy = 0;
-    const onMouseDown = (e: MouseEvent) => {
-      isDrag = true;
-      // Right-button (2), middle-button (1), or Shift+left-button → pan.
-      // Plain left-button → orbit (existing behaviour).
-      dragMode = e.button === 2 || e.button === 1 || e.shiftKey ? 'pan' : 'orbit';
-      lmx = e.clientX;
-      lmy = e.clientY;
-      el3d.style.cursor = dragMode === 'pan' ? 'move' : 'grabbing';
-    };
-    const onMouseMove = (e: MouseEvent) => {
-      if (!isDrag) return;
-      const dx = e.clientX - lmx;
-      const dy = e.clientY - lmy;
-      lmx = e.clientX;
-      lmy = e.clientY;
-      if (dragMode === 'pan') {
-        flyCam.panActiveCamera(dx, dy);
-        return;
-      }
-      if (viewMode === 'cislunar') {
-        flyCam.cislunarCamT -= dx * 0.005;
-        flyCam.cislunarCamP = Math.max(
-          0.08,
-          Math.min(Math.PI * 0.48, flyCam.cislunarCamP + dy * 0.005),
-        );
-        flyCam.updateCislunarCam();
-      } else {
-        flyCam.camT -= dx * 0.005;
-        flyCam.camP = Math.max(0.08, Math.min(Math.PI * 0.48, flyCam.camP + dy * 0.005));
-        flyCam.updateCam();
-      }
-    };
-    const onMouseUp = () => {
-      isDrag = false;
-      el3d.style.cursor = 'grab';
-    };
-    // Suppress browser right-click context menu so right-drag pan
-    // doesn't pop a menu after each pan stroke.
-    const onContextMenu = (e: MouseEvent) => e.preventDefault();
-    const onWheel = (e: WheelEvent) => {
-      // Trackpad pinch on macOS dispatches a synthetic wheel event
-      // with ctrlKey=true; without preventDefault the browser zooms
-      // the whole page. preventDefault keeps the gesture bound to
-      // the 3D camera. Listener also needs `passive: false`.
-      e.preventDefault();
-      if (viewMode === 'cislunar') {
-        const minR = R_MOON_KM * SCALE_CISLUNAR * 5;
-        const maxR = A_MOON_KM * SCALE_CISLUNAR * 6;
-        flyCam.cislunarCamR = Math.max(minR, Math.min(maxR, flyCam.cislunarCamR + e.deltaY * 0.05));
-        // User-initiated zoom wins over auto-zoom for the rest of this
-        // phase. Next phase transition re-arms flyCam.autoZoomActive.
-        flyCam.autoZoomActive = false;
-        flyCam.updateCislunarCam();
-      } else {
-        flyCam.camR = Math.max(80, Math.min(4000, flyCam.camR + e.deltaY * 0.5));
-        // User-initiated zoom wins over auto-zoom for the rest of this
-        // sub-phase. Next sub-phase transition re-arms flyCam.helioAutoZoomActive.
-        flyCam.helioAutoZoomActive = false;
-        flyCam.updateCam();
-      }
-    };
-    // Touch — single-finger orbit + two-finger pinch-zoom AND
-    // two-finger drag pan per CLAUDE.md mobile rules. The pinch and
-    // pan happen simultaneously: pinch ratio drives zoom, midpoint
-    // drift drives pan.
-    let touchActive = false;
-    let pinchPrev = 0;
-    let pinchMidX = 0;
-    let pinchMidZ = 0;
-    const touchDist = (a: Touch, b: Touch) =>
-      Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
-    const onTouchStart = (e: TouchEvent) => {
-      if (e.touches.length === 1) {
-        touchActive = true;
-        lmx = e.touches[0].clientX;
-        lmy = e.touches[0].clientY;
-      } else if (e.touches.length === 2) {
-        touchActive = false;
-        pinchPrev = touchDist(e.touches[0], e.touches[1]);
-        pinchMidX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-        pinchMidZ = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-      }
-    };
-    const onTouchMove = (e: TouchEvent) => {
-      if (e.touches.length === 2 && pinchPrev > 0) {
-        const dist = touchDist(e.touches[0], e.touches[1]);
-        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-        // Pinch → zoom (active camera).
-        const ratio = pinchPrev / dist;
-        if (viewMode === 'cislunar') {
-          const minR = R_MOON_KM * SCALE_CISLUNAR * 5;
-          const maxR = A_MOON_KM * SCALE_CISLUNAR * 6;
-          flyCam.cislunarCamR = Math.max(minR, Math.min(maxR, flyCam.cislunarCamR * ratio));
-          flyCam.autoZoomActive = false;
-        } else {
-          flyCam.camR = Math.max(80, Math.min(4000, flyCam.camR * ratio));
-          flyCam.helioAutoZoomActive = false;
-        }
-        // Midpoint drift → pan.
-        const dx = midX - pinchMidX;
-        const dy = midY - pinchMidZ;
-        if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) {
-          flyCam.panActiveCamera(dx, dy);
-        } else if (viewMode === 'cislunar') {
-          flyCam.updateCislunarCam();
-        } else {
-          flyCam.updateCam();
-        }
-        pinchPrev = dist;
-        pinchMidX = midX;
-        pinchMidZ = midY;
-        return;
-      }
-      if (!touchActive || e.touches.length !== 1) return;
-      flyCam.camT -= (e.touches[0].clientX - lmx) * 0.005;
-      flyCam.camP = Math.max(
-        0.08,
-        Math.min(Math.PI * 0.48, flyCam.camP + (e.touches[0].clientY - lmy) * 0.005),
-      );
-      lmx = e.touches[0].clientX;
-      lmy = e.touches[0].clientY;
-      flyCam.updateCam();
-    };
-    const onTouchEnd = (e: TouchEvent) => {
-      if (e.touches.length < 2) pinchPrev = 0;
-      if (e.touches.length === 0) touchActive = false;
-      // T-B: pause + re-home gyro for 200ms after a drag (RFC-020 §6).
-      gyro.recordTouchEnd();
-    };
-
-    el3d.style.cursor = 'grab';
-    lifecycle.on(el3d, 'mousedown', onMouseDown);
-    lifecycle.on(el3d, 'contextmenu', onContextMenu);
-    lifecycle.on(window, 'mousemove', onMouseMove);
-    lifecycle.on(window, 'mouseup', onMouseUp);
-    // passive: false so onWheel can preventDefault against trackpad
-    // pinch (macOS Ctrl+wheel) hijacking browser zoom.
-    lifecycle.on(el3d, 'wheel', onWheel, { passive: false });
-    lifecycle.on(el3d, 'touchstart', onTouchStart, { passive: true });
-    lifecycle.on(el3d, 'touchmove', onTouchMove, { passive: true });
-    lifecycle.on(el3d, 'touchend', onTouchEnd);
-    lifecycle.on(el3d, 'touchcancel', onTouchEnd);
+    // Pointer/touch camera input handlers (RFC-036 WS-B/1c) — mouse orbit/pan,
+    // wheel zoom, one-finger orbit / two-finger pinch-zoom+pan. Owns its own drag
+    // bookkeeping; the frame loop reads flyInput.isDrag / .touchActive each tick.
+    const flyInput = createFlyInputHandlers({
+      el3d,
+      flyCam,
+      getViewMode: () => viewMode,
+      scaleCislunar: SCALE_CISLUNAR,
+      lifecycle,
+    });
 
     const onResize = () => {
       if (!container) return;
@@ -3178,10 +2862,8 @@
       set currentDestMeshId(v) { currentDestMeshId = v; },
       get lastMontageShotKind() { return lastMontageShotKind; },
       set lastMontageShotKind(v) { lastMontageShotKind = v; },
-      get isDrag() { return isDrag; },
-      set isDrag(v) { isDrag = v; },
-      get touchActive() { return touchActive; },
-      set touchActive(v) { touchActive = v; },
+      get isDrag() { return flyInput.isDrag; },
+      get touchActive() { return flyInput.touchActive; },
       get coastDurationDays() { return coastDurationDays; },
       get descentDurationS() { return descentDurationS; },
       get descentSepTimes() { return descentSepTimes; },

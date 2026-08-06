@@ -1,137 +1,324 @@
-import type { FlyAct, FlightPhaseState } from '$lib/fly/flight-phase-controller';
-import type { FlyUpdaters } from '$lib/three/fly-updaters';
+import { base } from '$app/paths';
+import { buildHelioScene } from '$lib/three/fly-helio-scene';
+import { buildCislunarScene } from '$lib/three/fly-cislunar-scene';
+import { buildCislunarReactiveOverlays } from '$lib/three/fly-cislunar-reactive';
+import { buildHelioMissionOverlays } from '$lib/three/fly-helio-mission';
+import { buildHelioReactiveOverlays } from '$lib/three/fly-helio-reactive';
+import { buildSpacecraftSprite, buildEnginePlume } from '$lib/three/fly-helio-overlays';
+import { createFlyCameraController } from '$lib/three/fly-camera-controller';
 
 /**
- * `/fly` scene-host contract (RFC-036 WS-B · #441).
+ * `/fly` 3D scene host (RFC-036 WS-B/1c — the B1 `fly-scene-host` contract).
  *
- * The typed seam between the phase controller (WS-A) and the 3D scene layer.
- * WS-A made *what act is active* a pure reducer; WS-B makes *rendering that act*
- * a host that owns the Three.js scene graph, the two cameras, and the per-frame
- * `onFrame` — extracted from the ~4,875-line `onMount` closure in
- * `src/routes/fly/+page.svelte` (B0 map: docs/wip/2026-08-05-fly-restructure-plan.md).
- *
- * Data-flow is ONE-WAY, matching the RFC §4 invariant:
- *   controller/page  ──(FlyFrameInputs, per rAF)──▶  host.frame()  ──▶  renders
- *   host  ──(FlySceneHostEvents callbacks)──▶  page  ──▶  controller.dispatch()
- * The host NEVER mutates phase. It reads the composed inputs and renders; when a
- * scene event occurs (touchdown, ascent-complete) it reports it through a
- * callback the page routes into `dispatchPhase(...)`.
- *
- * This module is **types-only** at B1 — the same staging `fly-updaters.ts` used
- * (its closures lived in `onMount` until the contract stabilised). B2 (helio
- * assembly) → B3 (cislunar assembly) → B4 (`onFrame` → keyed updaters) → B5 (thin
- * the page) implement `createFlySceneHost` against this contract; each lands
- * behind green `/fly` e2e + per-act visual parity.
- *
- * NOTE — reconciling RFC §4 with the WS-A reality:
- * - **Clock stays in the page.** RFC §4 sketched `clock` *inside* the controller
- *   state; WS-A deliberately kept the continuous clock (`simDay`/`launchT`/…) in
- *   the page (the controller owns only the ACT). So the clock arrives as part of
- *   {@link FlyFrameInputs} each frame — sourced from the page's live `$state`,
- *   not the reducer.
- * - **`act` is the 6-member {@link FlyAct}, not RFC §4's 8-member sketch.** The
- *   RFC's `cislunar` / `flyby` are NOT phase acts — they are a `viewMode` and a
- *   camera sub-state of the `cruise` act. The host keys scene selection on
- *   (`act`, `viewMode`): `cruise` + `viewMode==='cislunar'` → the cislunar scene;
- *   `cruise` + `viewMode==='heliocentric'` → the helio scene (a flyby is a helio
- *   camera state within it). This keeps the act machine minimal + the mapping in
- *   the render layer, where it belongs.
+ * Assembles the whole 3D layer — heliocentric + cislunar scenes, the reactive
+ * overlay layers, the per-mission overlays, the spacecraft sprite + engine plume,
+ * and the cinematic camera controller — lifted VERBATIM out of the fly/+page.svelte
+ * onMount. Live page reads (arcTimeline / mission / simDay / camera-orbit source
+ * state) thread in as getter closures on `deps`; every built ref returns on the
+ * handle. Component-$state backflow a module can't write (the DebugPanel `live*`
+ * passes, the mission-swap `let`s the page's $effects bind, the moon-mesh refs)
+ * stays in the page, assigned from this handle. Byte-identical to the inline code.
  */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export function createFlySceneHost(deps: any) {
+    const helioHandles = buildHelioScene({
+      container: deps.container,
+      aspect: deps.container.clientWidth / deps.container.clientHeight,
+      quality: deps.quality,
+      // 2026-06-06 — give /fly the same /explore-grade body imagery for
+      // Sun + Earth + every destination. 2K throughout (camera here
+      // sits closer than /explore but bodies are compressed, so 2K
+      // matches the pixel density without a 4K LOD swap).
+      bodyTextures: {
+        sun: `${base}/textures/2k_sun.jpg`,
+        earth: `${base}/textures/2k_earth_daymap.jpg`,
+        mercury: `${base}/textures/2k_mercury.jpg`,
+        venus: `${base}/textures/2k_venus_atmosphere.jpg`,
+        mars: `${base}/textures/2k_mars.jpg`,
+        jupiter: `${base}/textures/2k_jupiter.jpg`,
+        saturn: `${base}/textures/2k_saturn.jpg`,
+        uranus: `${base}/textures/2k_uranus.jpg`,
+        neptune: `${base}/textures/2k_neptune.jpg`,
+        pluto: `${base}/textures/4k_pluto.jpg`,
+        // No Ceres texture in the catalogue today — falls back to the
+        // DEST_STYLE colour. Add `2k_ceres.jpg` to the texture pack to
+        // light it up automatically.
+      },
+    });
+    const scene = helioHandles.scene;
+    const camera = helioHandles.camera;
+    // Base FOV to restore when a montage shot (which may set its own FOV)
+    // is not active. Captured from the scene's camera at setup. (#371)
+    const baseFov = camera.fov;
+    const renderer = helioHandles.renderer;
+    // Expose to the DebugPanel "Rendering" tab (#334) — the template-
+    // mounted <RenderingDebugRegistrar> picks these up reactively.
+    // bloomPass is null on minimal/low tiers (no bloom built); the
+    // Rendering tab degrades gracefully (sliders hidden, on/off flag
+    // falls back to the static quality value).
+    const sunCore = helioHandles.sunCore;
+    const sunGlow = helioHandles.sunGlow;
+    const earthMesh = helioHandles.earthMesh;
+    const marsMesh = helioHandles.destinationMesh;
+    const earthOrbitLine = helioHandles.earthOrbitLine;
+    const applyDestinationVisuals = helioHandles.setDestination;
 
-/** The continuous playback clock the page owns and advances (the reducer owns the
- *  ACT, not the clock). Passed into {@link FlySceneHost.frame} every rAF tick. */
-export interface FlyClock {
-  /** Heliocentric/cruise sim time in absolute days (arc dep_day .. arr_day+). */
-  simDay: number;
-  /** Ascent MET (s) the LaunchScene renders to during the `ascent` act. */
-  launchT: number;
-  /** Earth-orbit coast MET (days) advanced across the `coast` act. */
-  coastMetDays: number;
-  /** Entry-descent-landing MET (s) advanced across the `descent` act. */
-  descentT: number;
-  /** Master play/pause — gates every clock advance in `onFrame`. */
-  playing: boolean;
+    // ──────────────────────────────────────────────────────────────
+    // Cislunar scene (ADR-058) — Earth-centred, km-scale. Static
+    // construction (scene, camera, lights, Earth+Moon meshes, SoI
+    // rings) lives in $lib/three/fly-cislunar-scene (W9 wave 8).
+    // Layer-toggle subscription stays here because it owns the
+    // cleanup contract for onDestroy.
+    // ──────────────────────────────────────────────────────────────
+    const cislunarHandles = buildCislunarScene({
+      aspect: deps.container.clientWidth / deps.container.clientHeight,
+      earthTextureUrl: `${base}/textures/2k_earth_daymap.jpg`,
+      // __MOBILE__: 4K earth/moon are pruned off-device (ADR-079 D3). Passing
+      // undefined makes fly-cislunar-scene skip the LOD upgrade and stay at 2K.
+      earthTextureUrl4k: __MOBILE__ ? undefined : `${base}/textures/4k_earth_daymap.jpg`,
+      moonTextureUrl: `${base}/textures/2k_moon.jpg`,
+      moonTextureUrl4k: __MOBILE__ ? undefined : `${base}/textures/4k_moon.jpg`,
+    });
+    const cislunarScene = cislunarHandles.scene;
+    const cislunarCamera = cislunarHandles.camera;
+    const SCALE_CISLUNAR = cislunarHandles.scaleCislunar;
+    const cislunarMoon = cislunarHandles.moon;
+    const cislunarEarthSoI = cislunarHandles.earthSoI;
+    const cislunarMoonSoI = cislunarHandles.moonSoI;
+
+    // ─── Cislunar Science Layers (ADR-058 follow-up) ─────────────────
+    // Overlay object construction (gravity / velocity / centripetal
+    // arrows + apsides markers + coast line) moved to the scene
+    // builder; component owns the per-layer subscriptions and the
+    // per-frame position / direction updates.
+    const cisGravEarthArrow = cislunarHandles.overlays.gravityEarth;
+    const cisGravMoonArrow = cislunarHandles.overlays.gravityMoon;
+    const cisVelocityArrow = cislunarHandles.overlays.velocity;
+    const cisCentripetalArrow = cislunarHandles.overlays.centripetal;
+    const cisPeriMarker = cislunarHandles.overlays.periMarker;
+    const cisApoMarker = cislunarHandles.overlays.apoMarker;
+    const cisCoastLine = cislunarHandles.overlays.coastLine;
+
+    // The cislunar reactive overlay layer — the science-layer listeners, the
+    // per-phase trajectory tubes (+ ensureCislunarPhaseLine + the moon-frame group),
+    // the ∆v annotations, the spacecraft marker, and the per-frame updaters — now
+    // live in $lib/three/fly-cislunar-reactive (RFC-036 WS-B), byte-identical. The
+    // updaters + refs destructure back into the same names the frame loop +
+    // mission-swap effect use; live reactive reads (arcTimeline/mission) thread as
+    // getter deps. The static overlay refs above stay (the frame loop mutates them).
+    const cisReactive = buildCislunarReactiveOverlays({
+      scene: cislunarScene,
+      moon: cislunarMoon,
+      scaleCislunar: SCALE_CISLUNAR,
+      earthSoI: cislunarEarthSoI,
+      moonSoI: cislunarMoonSoI,
+      overlays: cislunarHandles.overlays,
+      getArcTimeline: deps.getArcTimeline,
+      getMission: deps.getMission,
+    });
+    const {
+      cislunarMoonFrameGroup,
+      cislunarSpacecraft,
+      cislunarPhaseLines,
+      rebuildCislunarLines,
+      updateCislunarLineProgress,
+      updateCislunarSpacecraft,
+      rebuildCislunarAnnotations,
+    } = cisReactive;
+
+    // Expose to outer scope so applyMissionAsLoaded can call rebuild
+    // when a Moon mission's cislunar_profile lands.
+    // Cislunar closures published via flyUpdaters.cislunar at end of onMount.
+
+    // Sun + star field + orbit rings: built by the helio scene builder
+    // (W9 wave A); refs already destructured into scope above.
+
+    // v0.6.3 #228 rewrite: ONE tube per leg. The fragment shader paints
+    // each fragment bright (visited) if vT < uProgress, dim (preview)
+    // otherwise. uProgress is set each frame from outFraction /
+    // retFraction. Why this works where the v0.1.10 four-tube +
+    // drawRange + vertex-mutation approach didn't:
+    //
+    //   1. Cross-sections sit at EXACTLY pts[i] (manual builder below,
+    //      NOT THREE.TubeGeometry — TubeGeometry sampled the curve via
+    //      getPointAt(arc-length) which disagreed with lerpPoint at
+    //      uniform-t for Kepler ellipses sampled at uniform true
+    //      anomaly; that's what caused the 0.5 → 20.3 scene-unit
+    //      sprite-vs-tube-tip gap visible in the v0.6.2 debug log).
+    //   2. Each vertex carries `aT = i / (pts.length - 1)`, the same
+    //      parameter the sprite uses (sc.pos = lerpPoint(pts, t)).
+    //   3. Fragment interpolation of vT crosses uProgress at exactly
+    //      the same world position as lerpPoint(pts, uProgress) —
+    //      i.e. where the sprite sits. No drift possible by construction.
+    // The per-mission helio overlays — trajectory tubes, the spacecraft model
+    // (applyMissionSpacecraftModel), the LAUNCH/ARRIVAL/RETURN anchor rings, the
+    // moon orbit ring, and the anchor label sprites (refreshSpriteTextures) — now
+    // live in $lib/three/fly-helio-mission (RFC-036 WS-B), byte-identical. The refs
+    // are assigned into the component-scope `let`s the mission-swap $effects already
+    // reference; helioMission.scModel + the two swap methods are read via the handle.
+    const helioMission = buildHelioMissionOverlays({ scene, outPts: deps.getOutPts(), retPts: deps.getRetPts() });
+
+    // earthMesh + destination mesh (`marsMesh` for historic reasons),
+    // orbit rings, DEST_STYLE catalogue, and the destination-swap
+    // method all live in $lib/three/fly-helio-scene (W9 wave A). Refs
+    // already destructured from helioHandles above. The historical-
+    // Mars arcs visibility toggle is wired via the onDestinationChange
+    // callback at builder construction.
+    // applyDestinationVisuals published via flyUpdaters.helio at end of onMount.
+
+    // ─── Science Layers G.2 — SoI rings around Earth + Mars ──────────
+    // Sized by physical SoI radii (Earth 924 000 km, Mars 577 000 km)
+    // mapped through SCALE_3D (1 AU = 80 scene units), so the ring
+    // matches the actual transition the spacecraft experiences.
+    // SoI radii are tiny at physical scale (Earth's 924 000 km →
+    // 0.49 scene units at SCALE_3D=80), invisible at the default
+    // camera distance of 360. 8× visual boost keeps the relative
+    // proportions correct (Earth SoI > Mars SoI) while making the
+    // rings actually readable when the lens is on.
+    // Helio reactive overlay layer (SoI rings, gravity/velocity/centripetal arrows,
+    // coast line, apsides markers, moon mesh) + its science-layer listeners + the
+    // three frame-shared flags (soiLayerOn / cinemaForceMoons / lastLayerMoonsOn)
+    // now live in $lib/three/fly-helio-reactive (RFC-036 WS-B) — byte-identical. The
+    // mesh refs destructure back into the same names the frame loop already uses; the
+    // shared flags stay on `helioReactive` (accessed via the handle in the loop).
+    const helioReactive = buildHelioReactiveOverlays({
+      scene,
+      setHillSpheresVisible: helioHandles.setHillSpheresVisible,
+      setLagrangePointsVisible: helioHandles.setLagrangePointsVisible,
+      setMagnetospheresVisible: helioHandles.setMagnetospheresVisible,
+      setMoonsVisible: helioHandles.setMoonsVisible,
+      base,
+      getIsMoonMission: deps.getIsMoonMission,
+      getActiveDestination: deps.getActiveDestination,
+      getSimDay: deps.getSimDay,
+      getOutPts: deps.getOutPts,
+    });
+    const {
+      earthSoI,
+      marsSoI,
+      moonSoI,
+      gravArrowEarth,
+      gravArrowSun,
+      velocityArrow,
+      centripetalArrow,
+      coastLine,
+      moonMesh,
+      recomputeApsides,
+    } = helioReactive;
+
+    // (The layer listeners, coast line, apsides markers + recomputeApsides, the
+    // hill/lagrange/magnetosphere/moons overlays, and the moon mesh all moved into
+    // buildHelioReactiveOverlays above — RFC-036 WS-B. The soiLayerOn /
+    // cinemaForceMoons / lastLayerMoonsOn flags live on `helioReactive`.)
+
+    // Spacecraft — small camera-facing sprite glyph at sc.pos. Satellite
+    // billboard: red rounded body + two gold solar-panel wings + a tiny
+    // white antenna stub, surrounded by a soft red glow halo. Rendered
+    // as a THREE.Sprite so it's always face-camera — no orbital
+    // rotation math, sidestepping the chevron's "wrong direction"
+    // problem on curved arcs. The red body preserves the visibility
+    // the prior circle gave; the gold wings carry the spacecraft
+    // identity, matching the FD banner palette.
+    // The glyph drawing + sprite construction now live in buildSpacecraftSprite()
+    // ($lib/three/fly-helio-overlays, RFC-036 WS-B/B2a) — byte-identical (same 64px
+    // canvas, same scale 2.5 / renderOrder 999 / depthTest:false).
+    const { sprite: scSprite } = buildSpacecraftSprite();
+    scene.add(scSprite);
+
+    // #1 Engine plume — directed cone at the spacecraft position
+    // during burn events. Geometry tip along -Z so THREE.Object3D.lookAt
+    // orients tip at any world-space target. Shader paints a base→tip
+    // orange→yellow-white gradient with squared falloff toward the tip
+    // (visually narrow tapering exhaust). Hidden between burns. Per-
+    // event orientation + scale + opacity in the animate loop below.
+    // The plume cone + gradient shader now live in buildEnginePlume()
+    // ($lib/three/fly-helio-overlays, RFC-036 WS-B/B2a) — byte-identical (same
+    // ConeGeometry, same shader, additive, hidden, renderOrder 998). plumeMat's
+    // uOpacity + plumeMesh transform are driven per burn-event in the animate loop.
+    const { mesh: plumeMesh, material: plumeMat } = buildEnginePlume();
+    scene.add(plumeMesh);
+
+    // Camera + cinematic-camera subsystem extracted to
+    // $lib/three/fly-camera-controller (RFC-036 WS-B). The controller owns the
+    // camera-orbit state + the auto-zoom / cinematic-camera drivers; the frame loop
+    // + input handlers read/write its state via the handle (flyCam.camR etc.) and
+    // call flyCam.updateCam() / flyCam.panActiveCamera() etc.
+    const flyCam = createFlyCameraController({
+      camera,
+      cislunarCamera,
+      cislunarSpacecraft,
+      cislunarHandles,
+      helioHandles,
+      helioReactive,
+      cine: deps.cine,
+      getSimDay: deps.getSimDay,
+      getSimSpeed: deps.getSimSpeed,
+      getViewMode: deps.getViewMode,
+      getIsMoonMission: deps.getIsMoonMission,
+      getActiveDestination: deps.getActiveDestination,
+      getMission: deps.getMission,
+      getArcTimeline: deps.getArcTimeline,
+      getOutPts: deps.getOutPts,
+      getRetPts: deps.getRetPts,
+      getCislunarTrajectory: deps.getCislunarTrajectory,
+      getEpilogueActive: deps.getEpilogueActive,
+      getOpeningActive: deps.getOpeningActive,
+      getOpeningStartedAt: deps.getOpeningStartedAt,
+      getOpeningDurationMs: deps.getOpeningDurationMs,
+      getCamSnapUntil: deps.getCamSnapUntil,
+      getCurrentDestMeshId: deps.getCurrentDestMeshId,
+      setCurrentDestMeshId: deps.setCurrentDestMeshId,
+      getFlyUpdaters: deps.getFlyUpdaters,
+    });
+  return {
+    helioHandles,
+    scene,
+    camera,
+    baseFov,
+    renderer,
+    sunCore,
+    sunGlow,
+    earthMesh,
+    marsMesh,
+    earthOrbitLine,
+    applyDestinationVisuals,
+    cislunarHandles,
+    cislunarScene,
+    cislunarCamera,
+    SCALE_CISLUNAR,
+    cislunarMoon,
+    cislunarEarthSoI,
+    cislunarMoonSoI,
+    cisGravEarthArrow,
+    cisGravMoonArrow,
+    cisVelocityArrow,
+    cisCentripetalArrow,
+    cisPeriMarker,
+    cisApoMarker,
+    cisCoastLine,
+    cisReactive,
+    cislunarMoonFrameGroup,
+    cislunarSpacecraft,
+    cislunarPhaseLines,
+    rebuildCislunarLines,
+    updateCislunarLineProgress,
+    updateCislunarSpacecraft,
+    rebuildCislunarAnnotations,
+    helioMission,
+    helioReactive,
+    earthSoI,
+    marsSoI,
+    moonSoI,
+    gravArrowEarth,
+    gravArrowSun,
+    velocityArrow,
+    centripetalArrow,
+    coastLine,
+    moonMesh,
+    recomputeApsides,
+    scSprite,
+    plumeMesh,
+    plumeMat,
+    flyCam,
+  };
 }
-
-/**
- * The composite the host reads each frame — the WS-B seam's render context.
- * Assembled by the page from the controller's derived {@link FlightPhaseState},
- * the page-owned {@link FlyClock}, and the reactive render knobs the frame body
- * consumes. B4 finalises the exact field set as it moves the `onFrame` sub-blocks
- * (science-layer toggles, cinematic-beat state, montage, gyro) out of the page;
- * B1 fixes only the stable core so the two layers agree on the seam shape.
- */
-export interface FlyFrameInputs {
-  /** The controller's read-only view — the active act + viewMode + show* flags. */
-  phase: FlightPhaseState;
-  /** The page-owned continuous clock (see {@link FlyClock}). */
-  clock: FlyClock;
-  /** Wall-clock delta (s) for this frame, already clamped by `createAnimateLoop`
-   *  (R7). The host must not re-derive dt from `performance.now()`. */
-  dt: number;
-  /** Wall-clock timestamp (ms) for this frame, from the shared animate loop. */
-  now: number;
-}
-
-/**
- * Events the host reports back to the page (one-way: host → page → controller).
- * The page wires each to a `dispatchPhase(...)` call so a scene-driven transition
- * (a landing completing, a launch cinematic finishing) routes through the same
- * reducer as a user action — the host never touches phase state itself.
- */
-export interface FlySceneHostEvents {
-  /** DescentScene reached the surface → page dispatches `{ type: 'touchdown' }`. */
-  onTouchdown?: () => void;
-  /** LaunchScene cinematic completed → page dispatches `{ type: 'launchComplete' }`. */
-  onAscentComplete?: () => void;
-  /** Earth-orbit coast reached the deorbit seam → `{ type: 'coastComplete' }`. */
-  onCoastComplete?: () => void;
-}
-
-/** Construction options for {@link createFlySceneHost}. The full option surface
- *  (quality config, debug bridges, layer subscriptions) is finalised in B2 as the
- *  helio/cislunar assembly moves in; B1 fixes the container + event callbacks. */
-export interface FlySceneHostOptions extends FlySceneHostEvents {
-  /** The DOM element the renderer canvas mounts into (`renderer.domElement`). */
-  container: HTMLElement;
-}
-
-/**
- * The host handle the page holds in place of the ~50 closure-captured scene vars
- * (renderer, both scenes, both cameras, every mesh/material/group, camera-orbit
- * state, the 2D-canvas ctx) the B0 map enumerated. The page keeps the clock + the
- * reactive UI state and drives the host through this narrow surface.
- */
-export interface FlySceneHost {
-  /** The existing per-frame + per-mission updater seam (helio.* / cislunar.*),
-   *  now produced by the host's factories instead of inline `onMount` closures.
-   *  Unchanged contract → the page's mission-swap `$effect`s keep calling it. */
-  readonly updaters: FlyUpdaters;
-  /** React to an act transition — set per-scene visibility for the new act
-   *  (which scene renders, which overlays show). Called from the page whenever
-   *  `flyAct` changes. Pure visibility; no clock advance. */
-  applyAct(phase: FlightPhaseState): void;
-  /** Run exactly one animation frame for the given inputs: advance the active
-   *  scene, update cameras, render the correct target (cislunar / helio-post /
-   *  helio-direct), and project the HUD screen-space markers. Byte-identical to
-   *  the legacy inline `onFrame` body (B0 region (e), lines 5654–7324). */
-  frame(inputs: FlyFrameInputs): void;
-  /** Tear down: dispose both scenes, the renderer (+ forceContextLoss), the LOD
-   *  textures, unsubscribe every layer listener, remove the canvas. Mirrors the
-   *  legacy `onMount` cleanup (B0 region (g), lines 7329–7393). */
-  dispose(): void;
-}
-
-/**
- * Build the `/fly` scene host: assemble both 3D scenes over the existing
- * `buildHelioScene` / `buildCislunarScene` seam plus the remaining inline objects,
- * wire input listeners, and return the {@link FlySceneHost} handle.
- *
- * Implemented across B2–B5. B1 declares the signature so the contract is fixed
- * before any WebGL code moves. (Types-only until then — see the module docstring.)
- */
-export type CreateFlySceneHost = (opts: FlySceneHostOptions) => FlySceneHost;
-
-/** Re-export for callers that key scene selection on the act (see the module
- *  docstring's RFC-§4 reconciliation note). */
-export type { FlyAct };

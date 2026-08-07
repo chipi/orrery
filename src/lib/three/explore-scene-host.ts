@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-explicit-any, no-useless-assignment */
 import * as THREE from 'three';
 import { goto, replaceState } from '$app/navigation';
 import { createAnimateLoop } from '$lib/three/animate-loop';
@@ -116,7 +116,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     stopLensWatch,
     stopHoverLayerWatch,
   } = deps;
-  let iconicTrajectoryHandles: any = [];
+  const iconicTrajectoryHandles: any = [];
   let closeExoplanetFn: any = null;
   let resetSimToToday: any = null;
   let enterSystemFn: any = null;

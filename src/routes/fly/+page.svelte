@@ -109,7 +109,6 @@
   import { biasJumpToIconicMoment } from '$lib/orbital/jump-to-met-bias';
   import { PLANET_SIZES } from '$lib/orbital/find-flyby-planet';
 
-
   import {
     MOON_COMPOSITION,
     CISLUNAR_HERO_LEAD_DAYS,
@@ -2738,7 +2737,6 @@
     };
     lifecycle.on(window, 'resize', onResize);
 
-
     // W9 wave B: assemble the typed updater handle. Mirrors the 9
     // freestanding `*Ref` assignments above so callers can address
     // one typed object instead of nine nullable refs. Future commits
@@ -2774,112 +2772,324 @@
     // accessors; $derived are read-only getters). Every scene ref / handle / updater
     // passes by reference via `frameRefs`. Byte-identical to the old inline onFrame.
     const frameBridge = {
-      get activeDestination() { return activeDestination; },
-      set activeDestination(v) { activeDestination = v; },
-      get arcTimeline() { return arcTimeline; },
-      set arcTimeline(v) { arcTimeline = v; },
-      get cislunarTrajectory() { return cislunarTrajectory; },
-      set cislunarTrajectory(v) { cislunarTrajectory = v; },
-      get coastMetDays() { return coastMetDays; },
-      set coastMetDays(v) { coastMetDays = v; },
-      get conicStateCislunar() { return conicStateCislunar; },
-      set conicStateCislunar(v) { conicStateCislunar = v; },
-      get container() { return container; },
-      set container(v) { container = v; },
-      get cutBlackOpacity() { return cutBlackOpacity; },
-      set cutBlackOpacity(v) { cutBlackOpacity = v; },
-      get debugCamTargetWorld() { return debugCamTargetWorld; },
-      set debugCamTargetWorld(v) { debugCamTargetWorld = v; },
-      get debugCamWorld() { return debugCamWorld; },
-      set debugCamWorld(v) { debugCamWorld = v; },
-      get debugMontageShot() { return debugMontageShot; },
-      set debugMontageShot(v) { debugMontageShot = v; },
-      get descentProfile() { return descentProfile; },
-      set descentProfile(v) { descentProfile = v; },
-      get descentSpeed() { return descentSpeed; },
-      set descentSpeed(v) { descentSpeed = v; },
-      get descentT() { return descentT; },
-      set descentT(v) { descentT = v; },
-      get epilogueActive() { return epilogueActive; },
-      set epilogueActive(v) { epilogueActive = v; },
-      get epilogueCaptionOpacity() { return epilogueCaptionOpacity; },
-      set epilogueCaptionOpacity(v) { epilogueCaptionOpacity = v; },
-      get fdPhaseMarkerScreens() { return fdPhaseMarkerScreens; },
-      set fdPhaseMarkerScreens(v) { fdPhaseMarkerScreens = v; },
-      get finaleBlackOpacity() { return finaleBlackOpacity; },
-      set finaleBlackOpacity(v) { finaleBlackOpacity = v; },
-      get finaleCaptionOpacity() { return finaleCaptionOpacity; },
-      set finaleCaptionOpacity(v) { finaleCaptionOpacity = v; },
-      get inCinematicHeldBeat() { return inCinematicHeldBeat; },
-      set inCinematicHeldBeat(v) { inCinematicHeldBeat = v; },
-      get inMissionFinale() { return inMissionFinale; },
-      set inMissionFinale(v) { inMissionFinale = v; },
-      get isMoonMission() { return isMoonMission; },
-      set isMoonMission(v) { isMoonMission = v; },
-      get isPlaying() { return isPlaying; },
-      set isPlaying(v) { isPlaying = v; },
-      get launchSpeed() { return launchSpeed; },
-      set launchSpeed(v) { launchSpeed = v; },
-      get launchT() { return launchT; },
-      set launchT(v) { launchT = v; },
-      get milestoneScreens() { return milestoneScreens; },
-      set milestoneScreens(v) { milestoneScreens = v; },
-      get mission() { return mission; },
-      set mission(v) { mission = v; },
-      get openingContextOpacity() { return openingContextOpacity; },
-      set openingContextOpacity(v) { openingContextOpacity = v; },
-      get openingFleetOpacity() { return openingFleetOpacity; },
-      set openingFleetOpacity(v) { openingFleetOpacity = v; },
-      get openingTitleOpacity() { return openingTitleOpacity; },
-      set openingTitleOpacity(v) { openingTitleOpacity = v; },
-      get outPts() { return outPts; },
-      set outPts(v) { outPts = v; },
-      get phaseMarkerScreens() { return phaseMarkerScreens; },
-      set phaseMarkerScreens(v) { phaseMarkerScreens = v; },
-      get reducedMotion() { return reducedMotion; },
-      set reducedMotion(v) { reducedMotion = v; },
-      get retPts() { return retPts; },
-      set retPts(v) { retPts = v; },
-      get simDay() { return simDay; },
-      set simDay(v) { simDay = v; },
-      get simSpeed() { return simSpeed; },
-      set simSpeed(v) { simSpeed = v; },
-      get view() { return view; },
-      set view(v) { view = v; },
-      get canvas2d() { return canvas2d; },
-      set canvas2d(v) { canvas2d = v; },
-      get camSnapUntil() { return camSnapUntil; },
-      set camSnapUntil(v) { camSnapUntil = v; },
-      get epilogueStartedAt() { return epilogueStartedAt; },
-      set epilogueStartedAt(v) { epilogueStartedAt = v; },
-      get openingStartedAt() { return openingStartedAt; },
-      set openingStartedAt(v) { openingStartedAt = v; },
-      get openingDurationMs() { return openingDurationMs; },
-      set openingDurationMs(v) { openingDurationMs = v; },
-      get launchDwellUntil() { return launchDwellUntil; },
-      set launchDwellUntil(v) { launchDwellUntil = v; },
-      get currentDestMeshId() { return currentDestMeshId; },
-      set currentDestMeshId(v) { currentDestMeshId = v; },
-      get lastMontageShotKind() { return lastMontageShotKind; },
-      set lastMontageShotKind(v) { lastMontageShotKind = v; },
-      get isDrag() { return flyInput.isDrag; },
-      get touchActive() { return flyInput.touchActive; },
-      get coastDurationDays() { return coastDurationDays; },
-      get descentDurationS() { return descentDurationS; },
-      get descentSepTimes() { return descentSepTimes; },
-      get earthCoast() { return earthCoast; },
-      get heliocentricKms() { return heliocentricKms; },
-      get interplanetaryPhaseMarkers() { return interplanetaryPhaseMarkers; },
-      get launchDurationS() { return launchDurationS; },
-      get launchSepTimes() { return launchSepTimes; },
-      get phaseMarkers() { return phaseMarkers; },
-      get viewMode() { return viewMode; },
-      get showLaunch() { return showLaunch; },
-      get showCoast() { return showCoast; },
-      get showDescent() { return showDescent; },
-      get openingActive() { return openingActive; },
-      get hasPhaseMarkers() { return hasPhaseMarkers; },
-      get cruiseHoldTriggerSimDay() { return cruiseHoldTriggerSimDay; },
+      get activeDestination() {
+        return activeDestination;
+      },
+      set activeDestination(v) {
+        activeDestination = v;
+      },
+      get arcTimeline() {
+        return arcTimeline;
+      },
+      set arcTimeline(v) {
+        arcTimeline = v;
+      },
+      get cislunarTrajectory() {
+        return cislunarTrajectory;
+      },
+      set cislunarTrajectory(v) {
+        cislunarTrajectory = v;
+      },
+      get coastMetDays() {
+        return coastMetDays;
+      },
+      set coastMetDays(v) {
+        coastMetDays = v;
+      },
+      get conicStateCislunar() {
+        return conicStateCislunar;
+      },
+      set conicStateCislunar(v) {
+        conicStateCislunar = v;
+      },
+      get container() {
+        return container;
+      },
+      set container(v) {
+        container = v;
+      },
+      get cutBlackOpacity() {
+        return cutBlackOpacity;
+      },
+      set cutBlackOpacity(v) {
+        cutBlackOpacity = v;
+      },
+      get debugCamTargetWorld() {
+        return debugCamTargetWorld;
+      },
+      set debugCamTargetWorld(v) {
+        debugCamTargetWorld = v;
+      },
+      get debugCamWorld() {
+        return debugCamWorld;
+      },
+      set debugCamWorld(v) {
+        debugCamWorld = v;
+      },
+      get debugMontageShot() {
+        return debugMontageShot;
+      },
+      set debugMontageShot(v) {
+        debugMontageShot = v;
+      },
+      get descentProfile() {
+        return descentProfile;
+      },
+      set descentProfile(v) {
+        descentProfile = v;
+      },
+      get descentSpeed() {
+        return descentSpeed;
+      },
+      set descentSpeed(v) {
+        descentSpeed = v;
+      },
+      get descentT() {
+        return descentT;
+      },
+      set descentT(v) {
+        descentT = v;
+      },
+      get epilogueActive() {
+        return epilogueActive;
+      },
+      set epilogueActive(v) {
+        epilogueActive = v;
+      },
+      get epilogueCaptionOpacity() {
+        return epilogueCaptionOpacity;
+      },
+      set epilogueCaptionOpacity(v) {
+        epilogueCaptionOpacity = v;
+      },
+      get fdPhaseMarkerScreens() {
+        return fdPhaseMarkerScreens;
+      },
+      set fdPhaseMarkerScreens(v) {
+        fdPhaseMarkerScreens = v;
+      },
+      get finaleBlackOpacity() {
+        return finaleBlackOpacity;
+      },
+      set finaleBlackOpacity(v) {
+        finaleBlackOpacity = v;
+      },
+      get finaleCaptionOpacity() {
+        return finaleCaptionOpacity;
+      },
+      set finaleCaptionOpacity(v) {
+        finaleCaptionOpacity = v;
+      },
+      get inCinematicHeldBeat() {
+        return inCinematicHeldBeat;
+      },
+      set inCinematicHeldBeat(v) {
+        inCinematicHeldBeat = v;
+      },
+      get inMissionFinale() {
+        return inMissionFinale;
+      },
+      set inMissionFinale(v) {
+        inMissionFinale = v;
+      },
+      get isMoonMission() {
+        return isMoonMission;
+      },
+      set isMoonMission(v) {
+        isMoonMission = v;
+      },
+      get isPlaying() {
+        return isPlaying;
+      },
+      set isPlaying(v) {
+        isPlaying = v;
+      },
+      get launchSpeed() {
+        return launchSpeed;
+      },
+      set launchSpeed(v) {
+        launchSpeed = v;
+      },
+      get launchT() {
+        return launchT;
+      },
+      set launchT(v) {
+        launchT = v;
+      },
+      get milestoneScreens() {
+        return milestoneScreens;
+      },
+      set milestoneScreens(v) {
+        milestoneScreens = v;
+      },
+      get mission() {
+        return mission;
+      },
+      set mission(v) {
+        mission = v;
+      },
+      get openingContextOpacity() {
+        return openingContextOpacity;
+      },
+      set openingContextOpacity(v) {
+        openingContextOpacity = v;
+      },
+      get openingFleetOpacity() {
+        return openingFleetOpacity;
+      },
+      set openingFleetOpacity(v) {
+        openingFleetOpacity = v;
+      },
+      get openingTitleOpacity() {
+        return openingTitleOpacity;
+      },
+      set openingTitleOpacity(v) {
+        openingTitleOpacity = v;
+      },
+      get outPts() {
+        return outPts;
+      },
+      set outPts(v) {
+        outPts = v;
+      },
+      get phaseMarkerScreens() {
+        return phaseMarkerScreens;
+      },
+      set phaseMarkerScreens(v) {
+        phaseMarkerScreens = v;
+      },
+      get reducedMotion() {
+        return reducedMotion;
+      },
+      set reducedMotion(v) {
+        reducedMotion = v;
+      },
+      get retPts() {
+        return retPts;
+      },
+      set retPts(v) {
+        retPts = v;
+      },
+      get simDay() {
+        return simDay;
+      },
+      set simDay(v) {
+        simDay = v;
+      },
+      get simSpeed() {
+        return simSpeed;
+      },
+      set simSpeed(v) {
+        simSpeed = v;
+      },
+      get view() {
+        return view;
+      },
+      set view(v) {
+        view = v;
+      },
+      get canvas2d() {
+        return canvas2d;
+      },
+      set canvas2d(v) {
+        canvas2d = v;
+      },
+      get camSnapUntil() {
+        return camSnapUntil;
+      },
+      set camSnapUntil(v) {
+        camSnapUntil = v;
+      },
+      get epilogueStartedAt() {
+        return epilogueStartedAt;
+      },
+      set epilogueStartedAt(v) {
+        epilogueStartedAt = v;
+      },
+      get openingStartedAt() {
+        return openingStartedAt;
+      },
+      set openingStartedAt(v) {
+        openingStartedAt = v;
+      },
+      get openingDurationMs() {
+        return openingDurationMs;
+      },
+      set openingDurationMs(v) {
+        openingDurationMs = v;
+      },
+      get launchDwellUntil() {
+        return launchDwellUntil;
+      },
+      set launchDwellUntil(v) {
+        launchDwellUntil = v;
+      },
+      get currentDestMeshId() {
+        return currentDestMeshId;
+      },
+      set currentDestMeshId(v) {
+        currentDestMeshId = v;
+      },
+      get lastMontageShotKind() {
+        return lastMontageShotKind;
+      },
+      set lastMontageShotKind(v) {
+        lastMontageShotKind = v;
+      },
+      get isDrag() {
+        return flyInput.isDrag;
+      },
+      get touchActive() {
+        return flyInput.touchActive;
+      },
+      get coastDurationDays() {
+        return coastDurationDays;
+      },
+      get descentDurationS() {
+        return descentDurationS;
+      },
+      get descentSepTimes() {
+        return descentSepTimes;
+      },
+      get earthCoast() {
+        return earthCoast;
+      },
+      get heliocentricKms() {
+        return heliocentricKms;
+      },
+      get interplanetaryPhaseMarkers() {
+        return interplanetaryPhaseMarkers;
+      },
+      get launchDurationS() {
+        return launchDurationS;
+      },
+      get launchSepTimes() {
+        return launchSepTimes;
+      },
+      get phaseMarkers() {
+        return phaseMarkers;
+      },
+      get viewMode() {
+        return viewMode;
+      },
+      get showLaunch() {
+        return showLaunch;
+      },
+      get showCoast() {
+        return showCoast;
+      },
+      get showDescent() {
+        return showDescent;
+      },
+      get openingActive() {
+        return openingActive;
+      },
+      get hasPhaseMarkers() {
+        return hasPhaseMarkers;
+      },
+      get cruiseHoldTriggerSimDay() {
+        return cruiseHoldTriggerSimDay;
+      },
     };
     const frameRefs = {
       scene,

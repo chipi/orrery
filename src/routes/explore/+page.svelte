@@ -28,19 +28,11 @@
   // /explore v2 "The Known Universe" (PRD-030 / RFC-032). The neighborhood scene
   // is dynamically imported at the boundary so v1's bundle + first paint stay
   // untouched (RFC C-F).
-  import {
-    resolveSolarBodyTarget,
-  } from '$lib/explore/scale-shell-controller';
+  import { resolveSolarBodyTarget } from '$lib/explore/scale-shell-controller';
   import { createExploreSolarScene } from '$lib/three/explore-solar-scene';
   import { createExploreSceneHost } from '$lib/three/explore-scene-host';
-  import {
-    RUNG_LADDER,
-    type ScaleReadout,
-    type ScaleRung,
-  } from '$lib/universe/scale-readout';
-  import {
-    type IconicTrajectoryHandle,
-  } from '$lib/three/iconic-trajectory';
+  import { RUNG_LADDER, type ScaleReadout, type ScaleRung } from '$lib/universe/scale-readout';
+  import { type IconicTrajectoryHandle } from '$lib/three/iconic-trajectory';
   import {
     getPlanets,
     getSun,
@@ -1782,126 +1774,366 @@
     // template + URL $effects call return on the handle and assign back here.
     // ──────────────────────────────────────────────────────────────
     const bridge = {
-      get view() { return view; },
-      set view(v) { view = v; },
-      get namedStars() { return namedStars; },
-      set namedStars(v) { namedStars = v; },
-      get selectedExoplanet() { return selectedExoplanet; },
-      set selectedExoplanet(v) { selectedExoplanet = v; },
-      get selectedStarId() { return selectedStarId; },
-      set selectedStarId(v) { selectedStarId = v; },
-      get localizedStar() { return localizedStar; },
-      set localizedStar(v) { localizedStar = v; },
-      get anonStar() { return anonStar; },
-      set anonStar(v) { anonStar = v; },
-      get simDateLabel() { return simDateLabel; },
-      set simDateLabel(v) { simDateLabel = v; },
-      get scaleReadout() { return scaleReadout; },
-      set scaleReadout(v) { scaleReadout = v; },
-      get scaleBarPx() { return scaleBarPx; },
-      set scaleBarPx(v) { scaleBarPx = v; },
-      get scaleBarLabel() { return scaleBarLabel; },
-      set scaleBarLabel(v) { scaleBarLabel = v; },
-      get contextId() { return contextId; },
-      set contextId(v) { contextId = v; },
-      get bodyHostName() { return bodyHostName; },
-      set bodyHostName(v) { bodyHostName = v; },
-      get exoplanetHostIds() { return exoplanetHostIds; },
-      set exoplanetHostIds(v) { exoplanetHostIds = v; },
-      get exoplanetSystemsById() { return exoplanetSystemsById; },
-      set exoplanetSystemsById(v) { exoplanetSystemsById = v; },
-      get cultureObjectIds() { return cultureObjectIds; },
-      set cultureObjectIds(v) { cultureObjectIds = v; },
-      get warpCaption() { return warpCaption; },
-      set warpCaption(v) { warpCaption = v; },
-      get activeBodyHostId() { return activeBodyHostId; },
-      set activeBodyHostId(v) { activeBodyHostId = v; },
-      get crossingFlashId() { return crossingFlashId; },
-      set crossingFlashId(v) { crossingFlashId = v; },
-      get starCultureDoors() { return starCultureDoors; },
-      set starCultureDoors(v) { starCultureDoors = v; },
-      get exoCultureDoors() { return exoCultureDoors; },
-      set exoCultureDoors(v) { exoCultureDoors = v; },
-      get hrLensOpen() { return hrLensOpen; },
-      set hrLensOpen(v) { hrLensOpen = v; },
-      get hrStars() { return hrStars; },
-      set hrStars(v) { hrStars = v; },
-      get causalityShells() { return causalityShells; },
-      set causalityShells(v) { causalityShells = v; },
-      get causalityField() { return causalityField; },
-      set causalityField(v) { causalityField = v; },
-      get causalityNamed() { return causalityNamed; },
-      set causalityNamed(v) { causalityNamed = v; },
-      get massPeriodOpen() { return massPeriodOpen; },
-      set massPeriodOpen(v) { massPeriodOpen = v; },
-      get allExoplanetPlanets() { return allExoplanetPlanets; },
-      set allExoplanetPlanets(v) { allExoplanetPlanets = v; },
-      get deepSkyObjects() { return deepSkyObjects; },
-      set deepSkyObjects(v) { deepSkyObjects = v; },
-      get selectedDeepSkyId() { return selectedDeepSkyId; },
-      set selectedDeepSkyId(v) { selectedDeepSkyId = v; },
-      get deepSkyGallery() { return deepSkyGallery; },
-      set deepSkyGallery(v) { deepSkyGallery = v; },
-      get activeDeepSky() { return activeDeepSky; },
-      set activeDeepSky(v) { activeDeepSky = v; },
-      get deepSkyImmersed() { return deepSkyImmersed; },
-      set deepSkyImmersed(v) { deepSkyImmersed = v; },
-      get deepSkyPhotoUrl() { return deepSkyPhotoUrl; },
-      set deepSkyPhotoUrl(v) { deepSkyPhotoUrl = v; },
-      get deepSkyPanelOpen() { return deepSkyPanelOpen; },
-      set deepSkyPanelOpen(v) { deepSkyPanelOpen = v; },
-      get sunCompass() { return sunCompass; },
-      set sunCompass(v) { sunCompass = v; },
-      get mwObjects() { return mwObjects; },
-      set mwObjects(v) { mwObjects = v; },
-      get selectedMwId() { return selectedMwId; },
-      set selectedMwId(v) { selectedMwId = v; },
-      get mwPanelOpen() { return mwPanelOpen; },
-      set mwPanelOpen(v) { mwPanelOpen = v; },
-      get selectedLgMember() { return selectedLgMember; },
-      set selectedLgMember(v) { selectedLgMember = v; },
-      get lgPanelOpen() { return lgPanelOpen; },
-      set lgPanelOpen(v) { lgPanelOpen = v; },
-      get activeBlackHole() { return activeBlackHole; },
-      set activeBlackHole(v) { activeBlackHole = v; },
-      get bhPanelOpen() { return bhPanelOpen; },
-      set bhPanelOpen(v) { bhPanelOpen = v; },
-      get bhCurvatureLens() { return bhCurvatureLens; },
-      set bhCurvatureLens(v) { bhCurvatureLens = v; },
-      get bhTimeLens() { return bhTimeLens; },
-      set bhTimeLens(v) { bhTimeLens = v; },
-      get bhCultureDoors() { return bhCultureDoors; },
-      set bhCultureDoors(v) { bhCultureDoors = v; },
-      get hoverData() { return hoverData; },
-      set hoverData(v) { hoverData = v; },
-      get lastGoto() { return lastGoto; },
-      set lastGoto(v) { lastGoto = v; },
-      get lastSystem() { return lastSystem; },
-      set lastSystem(v) { lastSystem = v; },
-      get lastDeepSky() { return lastDeepSky; },
-      set lastDeepSky(v) { lastDeepSky = v; },
-      get lastGalaxy() { return lastGalaxy; },
-      set lastGalaxy(v) { lastGalaxy = v; },
-      get lastBh() { return lastBh; },
-      set lastBh(v) { lastBh = v; },
-      get lastContextJump() { return lastContextJump; },
-      set lastContextJump(v) { lastContextJump = v; },
-      get container() { return container; },
-      get canvas2d() { return canvas2d; },
-      get selectedId() { return selectedId; },
-      get panelState() { return panelState; },
-      get namedStarById() { return namedStarById; },
-      get cameraState() { return cameraState; },
-      get selectedSatelliteKey() { return selectedSatelliteKey; },
-      get layers() { return layers; },
-      get simSpeed() { return simSpeed; },
-      get simPaused() { return simPaused; },
-      get overlayMission() { return overlayMission; },
-      get overlayArcPx() { return overlayArcPx; },
-      get overlayArrivalPx() { return overlayArrivalPx; },
-      get planetById() { return planetById; },
-      get showConstellations() { return showConstellations; },
-      get showDeepSky() { return showDeepSky; },
+      get view() {
+        return view;
+      },
+      set view(v) {
+        view = v;
+      },
+      get namedStars() {
+        return namedStars;
+      },
+      set namedStars(v) {
+        namedStars = v;
+      },
+      get selectedExoplanet() {
+        return selectedExoplanet;
+      },
+      set selectedExoplanet(v) {
+        selectedExoplanet = v;
+      },
+      get selectedStarId() {
+        return selectedStarId;
+      },
+      set selectedStarId(v) {
+        selectedStarId = v;
+      },
+      get localizedStar() {
+        return localizedStar;
+      },
+      set localizedStar(v) {
+        localizedStar = v;
+      },
+      get anonStar() {
+        return anonStar;
+      },
+      set anonStar(v) {
+        anonStar = v;
+      },
+      get simDateLabel() {
+        return simDateLabel;
+      },
+      set simDateLabel(v) {
+        simDateLabel = v;
+      },
+      get scaleReadout() {
+        return scaleReadout;
+      },
+      set scaleReadout(v) {
+        scaleReadout = v;
+      },
+      get scaleBarPx() {
+        return scaleBarPx;
+      },
+      set scaleBarPx(v) {
+        scaleBarPx = v;
+      },
+      get scaleBarLabel() {
+        return scaleBarLabel;
+      },
+      set scaleBarLabel(v) {
+        scaleBarLabel = v;
+      },
+      get contextId() {
+        return contextId;
+      },
+      set contextId(v) {
+        contextId = v;
+      },
+      get bodyHostName() {
+        return bodyHostName;
+      },
+      set bodyHostName(v) {
+        bodyHostName = v;
+      },
+      get exoplanetHostIds() {
+        return exoplanetHostIds;
+      },
+      set exoplanetHostIds(v) {
+        exoplanetHostIds = v;
+      },
+      get exoplanetSystemsById() {
+        return exoplanetSystemsById;
+      },
+      set exoplanetSystemsById(v) {
+        exoplanetSystemsById = v;
+      },
+      get cultureObjectIds() {
+        return cultureObjectIds;
+      },
+      set cultureObjectIds(v) {
+        cultureObjectIds = v;
+      },
+      get warpCaption() {
+        return warpCaption;
+      },
+      set warpCaption(v) {
+        warpCaption = v;
+      },
+      get activeBodyHostId() {
+        return activeBodyHostId;
+      },
+      set activeBodyHostId(v) {
+        activeBodyHostId = v;
+      },
+      get crossingFlashId() {
+        return crossingFlashId;
+      },
+      set crossingFlashId(v) {
+        crossingFlashId = v;
+      },
+      get starCultureDoors() {
+        return starCultureDoors;
+      },
+      set starCultureDoors(v) {
+        starCultureDoors = v;
+      },
+      get exoCultureDoors() {
+        return exoCultureDoors;
+      },
+      set exoCultureDoors(v) {
+        exoCultureDoors = v;
+      },
+      get hrLensOpen() {
+        return hrLensOpen;
+      },
+      set hrLensOpen(v) {
+        hrLensOpen = v;
+      },
+      get hrStars() {
+        return hrStars;
+      },
+      set hrStars(v) {
+        hrStars = v;
+      },
+      get causalityShells() {
+        return causalityShells;
+      },
+      set causalityShells(v) {
+        causalityShells = v;
+      },
+      get causalityField() {
+        return causalityField;
+      },
+      set causalityField(v) {
+        causalityField = v;
+      },
+      get causalityNamed() {
+        return causalityNamed;
+      },
+      set causalityNamed(v) {
+        causalityNamed = v;
+      },
+      get massPeriodOpen() {
+        return massPeriodOpen;
+      },
+      set massPeriodOpen(v) {
+        massPeriodOpen = v;
+      },
+      get allExoplanetPlanets() {
+        return allExoplanetPlanets;
+      },
+      set allExoplanetPlanets(v) {
+        allExoplanetPlanets = v;
+      },
+      get deepSkyObjects() {
+        return deepSkyObjects;
+      },
+      set deepSkyObjects(v) {
+        deepSkyObjects = v;
+      },
+      get selectedDeepSkyId() {
+        return selectedDeepSkyId;
+      },
+      set selectedDeepSkyId(v) {
+        selectedDeepSkyId = v;
+      },
+      get deepSkyGallery() {
+        return deepSkyGallery;
+      },
+      set deepSkyGallery(v) {
+        deepSkyGallery = v;
+      },
+      get activeDeepSky() {
+        return activeDeepSky;
+      },
+      set activeDeepSky(v) {
+        activeDeepSky = v;
+      },
+      get deepSkyImmersed() {
+        return deepSkyImmersed;
+      },
+      set deepSkyImmersed(v) {
+        deepSkyImmersed = v;
+      },
+      get deepSkyPhotoUrl() {
+        return deepSkyPhotoUrl;
+      },
+      set deepSkyPhotoUrl(v) {
+        deepSkyPhotoUrl = v;
+      },
+      get deepSkyPanelOpen() {
+        return deepSkyPanelOpen;
+      },
+      set deepSkyPanelOpen(v) {
+        deepSkyPanelOpen = v;
+      },
+      get sunCompass() {
+        return sunCompass;
+      },
+      set sunCompass(v) {
+        sunCompass = v;
+      },
+      get mwObjects() {
+        return mwObjects;
+      },
+      set mwObjects(v) {
+        mwObjects = v;
+      },
+      get selectedMwId() {
+        return selectedMwId;
+      },
+      set selectedMwId(v) {
+        selectedMwId = v;
+      },
+      get mwPanelOpen() {
+        return mwPanelOpen;
+      },
+      set mwPanelOpen(v) {
+        mwPanelOpen = v;
+      },
+      get selectedLgMember() {
+        return selectedLgMember;
+      },
+      set selectedLgMember(v) {
+        selectedLgMember = v;
+      },
+      get lgPanelOpen() {
+        return lgPanelOpen;
+      },
+      set lgPanelOpen(v) {
+        lgPanelOpen = v;
+      },
+      get activeBlackHole() {
+        return activeBlackHole;
+      },
+      set activeBlackHole(v) {
+        activeBlackHole = v;
+      },
+      get bhPanelOpen() {
+        return bhPanelOpen;
+      },
+      set bhPanelOpen(v) {
+        bhPanelOpen = v;
+      },
+      get bhCurvatureLens() {
+        return bhCurvatureLens;
+      },
+      set bhCurvatureLens(v) {
+        bhCurvatureLens = v;
+      },
+      get bhTimeLens() {
+        return bhTimeLens;
+      },
+      set bhTimeLens(v) {
+        bhTimeLens = v;
+      },
+      get bhCultureDoors() {
+        return bhCultureDoors;
+      },
+      set bhCultureDoors(v) {
+        bhCultureDoors = v;
+      },
+      get hoverData() {
+        return hoverData;
+      },
+      set hoverData(v) {
+        hoverData = v;
+      },
+      get lastGoto() {
+        return lastGoto;
+      },
+      set lastGoto(v) {
+        lastGoto = v;
+      },
+      get lastSystem() {
+        return lastSystem;
+      },
+      set lastSystem(v) {
+        lastSystem = v;
+      },
+      get lastDeepSky() {
+        return lastDeepSky;
+      },
+      set lastDeepSky(v) {
+        lastDeepSky = v;
+      },
+      get lastGalaxy() {
+        return lastGalaxy;
+      },
+      set lastGalaxy(v) {
+        lastGalaxy = v;
+      },
+      get lastBh() {
+        return lastBh;
+      },
+      set lastBh(v) {
+        lastBh = v;
+      },
+      get lastContextJump() {
+        return lastContextJump;
+      },
+      set lastContextJump(v) {
+        lastContextJump = v;
+      },
+      get container() {
+        return container;
+      },
+      get canvas2d() {
+        return canvas2d;
+      },
+      get selectedId() {
+        return selectedId;
+      },
+      get panelState() {
+        return panelState;
+      },
+      get namedStarById() {
+        return namedStarById;
+      },
+      get cameraState() {
+        return cameraState;
+      },
+      get selectedSatelliteKey() {
+        return selectedSatelliteKey;
+      },
+      get layers() {
+        return layers;
+      },
+      get simSpeed() {
+        return simSpeed;
+      },
+      get simPaused() {
+        return simPaused;
+      },
+      get overlayMission() {
+        return overlayMission;
+      },
+      get overlayArcPx() {
+        return overlayArcPx;
+      },
+      get overlayArrivalPx() {
+        return overlayArrivalPx;
+      },
+      get planetById() {
+        return planetById;
+      },
+      get showConstellations() {
+        return showConstellations;
+      },
+      get showDeepSky() {
+        return showDeepSky;
+      },
     };
     const deps = {
       scene,

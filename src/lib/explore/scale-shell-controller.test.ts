@@ -16,7 +16,18 @@ import {
 // A membership fixture: real planet ids + a couple of small bodies. Pluto is a
 // planet-catalogue id AND a small-body id (the whole point of the nuance).
 const membership: BodyMembership = {
-  isPlanet: (id) => ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto'].includes(id),
+  isPlanet: (id) =>
+    [
+      'mercury',
+      'venus',
+      'earth',
+      'mars',
+      'jupiter',
+      'saturn',
+      'uranus',
+      'neptune',
+      'pluto',
+    ].includes(id),
   isSmallBody: (id) => ['pluto', 'ceres', 'eris', 'halley'].includes(id),
 };
 
@@ -34,7 +45,10 @@ describe('resolveSolarBodyTarget — the ?id= routing ladder', () => {
       isPlanet: membership.isPlanet,
       isSmallBody: (id) => id !== 'pluto' && membership.isSmallBody(id),
     };
-    expect(resolveSolarBodyTarget('pluto', noPlutoSmallBody)).toEqual({ kind: 'planet', id: 'pluto' });
+    expect(resolveSolarBodyTarget('pluto', noPlutoSmallBody)).toEqual({
+      kind: 'planet',
+      id: 'pluto',
+    });
   });
 
   it('a known planet → planet', () => {
@@ -48,15 +62,30 @@ describe('resolveSolarBodyTarget — the ?id= routing ladder', () => {
   it('planet catalogue wins over small-body for a shared non-pluto id', () => {
     // halley is only a small body here; but if it were also a planet id, planet
     // membership is checked first (after the pluto special-case).
-    const both: BodyMembership = { isPlanet: (id) => id === 'halley' || membership.isPlanet(id), isSmallBody: membership.isSmallBody };
+    const both: BodyMembership = {
+      isPlanet: (id) => id === 'halley' || membership.isPlanet(id),
+      isSmallBody: membership.isSmallBody,
+    };
     expect(resolveSolarBodyTarget('halley', both)).toEqual({ kind: 'planet', id: 'halley' });
   });
 
   it('belt aliases both resolve', () => {
-    expect(resolveSolarBodyTarget('asteroid-belt', membership)).toEqual({ kind: 'belt', belt: 'asteroid' });
-    expect(resolveSolarBodyTarget('belt:asteroid', membership)).toEqual({ kind: 'belt', belt: 'asteroid' });
-    expect(resolveSolarBodyTarget('kuiper-belt', membership)).toEqual({ kind: 'belt', belt: 'kuiper' });
-    expect(resolveSolarBodyTarget('belt:kuiper', membership)).toEqual({ kind: 'belt', belt: 'kuiper' });
+    expect(resolveSolarBodyTarget('asteroid-belt', membership)).toEqual({
+      kind: 'belt',
+      belt: 'asteroid',
+    });
+    expect(resolveSolarBodyTarget('belt:asteroid', membership)).toEqual({
+      kind: 'belt',
+      belt: 'asteroid',
+    });
+    expect(resolveSolarBodyTarget('kuiper-belt', membership)).toEqual({
+      kind: 'belt',
+      belt: 'kuiper',
+    });
+    expect(resolveSolarBodyTarget('belt:kuiper', membership)).toEqual({
+      kind: 'belt',
+      belt: 'kuiper',
+    });
   });
 
   it('parent:satellite (parent is a planet) → satellite', () => {

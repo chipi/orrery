@@ -1756,5 +1756,11 @@
   "star_index_filter_all": "모두",
   "star_index_filter_planets": "행성",
   "star_index_filter_culture": "문화",
-  "nav_programs": "프로그램"
+  "nav_programs": "프로그램",
+  "explore_ctx_local_sheet": "국부 시트",
+  "explore_ls_schematic_badge": "국부 시트 · 개략도 · 축척 없음",
+  "explore_ls_kind_group": "은하단",
+  "explore_ls_kind_cloud": "은하 구름",
+  "explore_ls_blurb": "국부 은하군 바로 너머에 있는 중력으로 결합된, 비록 느슨하게 구성되어 있지만, 은하들의 모음입니다. 이것은 국부 시트에 속합니다 — 약 10 메가파섹 크기의 가까운 은하단들로 이루어진 얇고 대략 평면형의 판판한 구조 — 자체가 천문학자들이 은하 단위로 지도화한 ~10 Mpc 반지름 구의 더 넓은 국부 부피에 포함되어 있습니다.",
+  "explore_ls_anchor_blurb": "당신은 여기에 있습니다. 전체 국부 은하군 — 은하수, 안드로메다, 그리고 수십 개의 위성 은하들 — 은 이 축척에서 하나의 점이며, 더 넓은 국부 시트의 한 멤버입니다."
 }

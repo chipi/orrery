@@ -863,7 +863,13 @@
     "star_index_filter_all": "सभी",
     "star_index_filter_planets": "ग्रह",
     "star_index_filter_culture": "संस्कृति",
-    "nav_programs": "कार्यक्रम"
+    "nav_programs": "कार्यक्रम",
+    "explore_ctx_local_sheet": "स्थानीय शीट",
+    "explore_ls_schematic_badge": "स्थानीय शीट · आरेखीय · पैमाने के अनुसार नहीं",
+    "explore_ls_kind_group": "आकाशगंगा समूह",
+    "explore_ls_kind_cloud": "आकाशगंगा बादल",
+    "explore_ls_blurb": "गुरुत्वाकर्षण से बंधा हुआ, भले ही ढीले ढंग से संरचित, स्थानीय समूह के ठीक बाहर आकाशगंगाओं का एक संग्रह। यह स्थानीय शीट से संबंधित है — पास की आकाशगंगा समूहों की एक पतली, लगभग समतल पट्टी जो लगभग 10 मेगापार्सेक की दूरी तक फैली हुई है — जो स्वयं व्यापक स्थानीय मात्रा में एम्बेड है, लगभग 10-Mpc-त्रिज्या वाला गोला जिसे खगोलविदों ने आकाशगंगा दर आकाशगंगा मैप किया है।",
+    "explore_ls_anchor_blurb": "आप यहां हैं। पूरा स्थानीय समूह — मिल्की वे, एंड्रोमेडा, और उनके दर्जनों साथी — इस पैमाने पर एक एकल बिंदु है, व्यापक स्थानीय शीट का एक सदस्य।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -1591,7 +1597,13 @@
     "star_index_filter_all": "すべて",
     "star_index_filter_planets": "惑星",
     "star_index_filter_culture": "文化",
-    "nav_programs": "プログラム"
+    "nav_programs": "プログラム",
+    "explore_ctx_local_sheet": "局所シート",
+    "explore_ls_schematic_badge": "局所シート · 模式図 · スケール外",
+    "explore_ls_kind_group": "銀河群",
+    "explore_ls_kind_cloud": "銀河雲",
+    "explore_ls_blurb": "局所銀河群のすぐ外側にある、重力的に結合された（ただし構造は疎な）銀河の集合です。約10メガパーセクの広さをもつ薄い平面状の板である局所シートに属しており、この局所シート自体はより広い局所宇宙（銀河ごとに観測された半径約10メガパーセクの球体）に埋め込まれています。",
+    "explore_ls_anchor_blurb": "ここがあなたの位置です。銀河系、アンドロメダ銀河、およびそれらの数十の衛星銀河からなる局所銀河群全体は、このスケールでは単一の点であり、より広い局所シートの1つのメンバーです。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -2498,7 +2510,13 @@
     "star_index_filter_all": "الكل",
     "star_index_filter_planets": "الكواكب",
     "star_index_filter_culture": "الثقافة",
-    "nav_programs": "البرامج"
+    "nav_programs": "البرامج",
+    "explore_ctx_local_sheet": "الرقعة المحلية",
+    "explore_ls_schematic_badge": "الرقعة المحلية · مخطط توضيحي · غير مرسوم بمقياس",
+    "explore_ls_kind_group": "مجموعة مجرات",
+    "explore_ls_kind_cloud": "سحابة مجرات",
+    "explore_ls_blurb": "مجموعة من المجرات مرتبطة بقوة الجاذبية، وإن كانت هيكليتها فضفاضة، تقع خارج المجموعة المحلية مباشرة. وهي تنتمي إلى الرقعة المحلية — لوح رقيق خشن تقريباً من مجموعات المجرات القريبة يبلغ عرضه حوالي 10 ميغاپارسك — وهو نفسه مدمج في الحجم المحلي الأوسع، كرة نصف قطرها حوالي 10 ميغاپارسك قام الفلكيون برسم خريطة لها مجرة تلو الأخرى.",
+    "explore_ls_anchor_blurb": "أنت هنا. المجموعة المحلية بأكملها — درب التبانة، أندروميدا، وعشرات رفاقتيهما — نقطة واحدة فقط بهذا المقياس، وهي عضو واحد من الرقعة المحلية الأوسع."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -3228,7 +3246,13 @@
     "star_index_filter_all": "모두",
     "star_index_filter_planets": "행성",
     "star_index_filter_culture": "문화",
-    "nav_programs": "프로그램"
+    "nav_programs": "프로그램",
+    "explore_ctx_local_sheet": "국부 시트",
+    "explore_ls_schematic_badge": "국부 시트 · 개략도 · 축척 없음",
+    "explore_ls_kind_group": "은하단",
+    "explore_ls_kind_cloud": "은하 구름",
+    "explore_ls_blurb": "국부 은하군 바로 너머에 있는 중력으로 결합된, 비록 느슨하게 구성되어 있지만, 은하들의 모음입니다. 이것은 국부 시트에 속합니다 — 약 10 메가파섹 크기의 가까운 은하단들로 이루어진 얇고 대략 평면형의 판판한 구조 — 자체가 천문학자들이 은하 단위로 지도화한 ~10 Mpc 반지름 구의 더 넓은 국부 부피에 포함되어 있습니다.",
+    "explore_ls_anchor_blurb": "당신은 여기에 있습니다. 전체 국부 은하군 — 은하수, 안드로메다, 그리고 수십 개의 위성 은하들 — 은 이 축척에서 하나의 점이며, 더 넓은 국부 시트의 한 멤버입니다."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -3929,7 +3953,13 @@
     "star_index_filter_all": "Alle",
     "star_index_filter_planets": "Planeten",
     "star_index_filter_culture": "Kultur",
-    "nav_programs": "PROGRAMME"
+    "nav_programs": "PROGRAMME",
+    "explore_ctx_local_sheet": "Lokales Blatt",
+    "explore_ls_schematic_badge": "Lokales Blatt · Schema · nicht maßstabsgetreu",
+    "explore_ls_kind_group": "Galaxiengruppe",
+    "explore_ls_kind_cloud": "Galaxienwolke",
+    "explore_ls_blurb": "Eine gravitativ gebundene, wenn auch locker strukturierte Ansammlung von Galaxien jenseits der Lokalen Gruppe. Sie gehört zum Lokalen Blatt — eine dünne, etwa ebene Scheibe von nahe gelegenen Galaxiengruppen mit etwa 10 Megaparsec Durchmesser — selbst eingebettet in das größere Lokale Volumen, die ~10-Mpc-Radius-Sphäre, die Astronomen Galaxie für Galaxie kartiert haben.",
+    "explore_ls_anchor_blurb": "Sie sind hier. Die gesamte Lokale Gruppe — die Milchstraße, Andromeda und ihre Dutzende von Begleitern — ist in diesem Maßstab ein einzelner Punkt, ein Mitglied des größeren Lokalen Blatts."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -4637,7 +4667,13 @@
     "star_index_filter_all": "Tous",
     "star_index_filter_planets": "Planètes",
     "star_index_filter_culture": "Culture",
-    "nav_programs": "PROGRAMMES"
+    "nav_programs": "PROGRAMMES",
+    "explore_ctx_local_sheet": "Feuille Locale",
+    "explore_ls_schematic_badge": "Feuille Locale · schéma · sans échelle",
+    "explore_ls_kind_group": "Groupe de galaxies",
+    "explore_ls_kind_cloud": "Nuage de galaxies",
+    "explore_ls_blurb": "Un ensemble de galaxies lié gravitationnellement, bien que faiblement structuré, situé juste au-delà du Groupe Local. Il appartient à la Feuille Locale — une fine plaque approximativement plane de groupes de galaxies proches s'étendant sur environ 10 mégaparsecs — elle-même intégrée dans le Volume Local plus vaste, la sphère de ~10 Mpc de rayon que les astronomes ont cartographiée galaxie par galaxie.",
+    "explore_ls_anchor_blurb": "Vous êtes ici. L'ensemble du Groupe Local — la Voie lactée, Andromède, et leurs dizaines de compagnons — n'est qu'un point à cette échelle, un membre de la Feuille Locale plus vaste."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -5313,7 +5349,13 @@
     "star_index_filter_all": "Tutti",
     "star_index_filter_planets": "Pianeti",
     "star_index_filter_culture": "Cultura",
-    "nav_programs": "PROGRAMMI"
+    "nav_programs": "PROGRAMMI",
+    "explore_ctx_local_sheet": "Foglio Locale",
+    "explore_ls_schematic_badge": "Foglio Locale · schema · non in scala",
+    "explore_ls_kind_group": "Gruppo di galassie",
+    "explore_ls_kind_cloud": "Nube di galassie",
+    "explore_ls_blurb": "Una collezione di galassie gravitazionalmente legata, anche se debolmente strutturata, appena oltre il Gruppo Locale. Appartiene al Foglio Locale — una sottile lamina grosso modo planare di gruppi di galassie vicine di circa 10 megaparsec di estensione — essa stessa immersa nel più vasto Volume Locale, la sfera di raggio ~10 Mpc che gli astronomi hanno mappato galassia per galassia.",
+    "explore_ls_anchor_blurb": "Siete qui. L'intero Gruppo Locale — la Via Lattea, Andromeda e le loro decine di compagne — è un singolo punto a questa scala, un membro del più vasto Foglio Locale."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -5988,7 +6030,13 @@
     "star_index_filter_all": "Todos",
     "star_index_filter_planets": "Planetas",
     "star_index_filter_culture": "Cultura",
-    "nav_programs": "PROGRAMAS"
+    "nav_programs": "PROGRAMAS",
+    "explore_ctx_local_sheet": "Lámina Local",
+    "explore_ls_schematic_badge": "Lámina Local · esquemático · sin escala",
+    "explore_ls_kind_group": "Grupo de galaxias",
+    "explore_ls_kind_cloud": "Nube de galaxias",
+    "explore_ls_blurb": "Una colección de galaxias ligada gravitacionalmente, aunque de estructura laxa, situada justo más allá del Grupo Local. Pertenece a la Lámina Local —una lámina delgada y aproximadamente plana de grupos de galaxias cercanas de unos 10 megapársecs de extensión— que a su vez está incrustada en el Volumen Local más amplio, la esfera de ~10 megapársecs de radio que los astrónomos han cartografiado galaxia por galaxia.",
+    "explore_ls_anchor_blurb": "Estás aquí. Todo el Grupo Local —la Vía Láctea, Andrómeda y sus decenas de acompañantes— es un único punto a esta escala, un miembro de la Lámina Local más amplia."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -6669,7 +6717,13 @@
     "star_index_filter_all": "Alles",
     "star_index_filter_planets": "Planeten",
     "star_index_filter_culture": "Cultuur",
-    "nav_programs": "PROGRAMMA'S"
+    "nav_programs": "PROGRAMMA'S",
+    "explore_ctx_local_sheet": "Lokaal Blad",
+    "explore_ls_schematic_badge": "Lokaal Blad · schematisch · niet op schaal",
+    "explore_ls_kind_group": "Galaxiegroep",
+    "explore_ls_kind_cloud": "Galaxiewolk",
+    "explore_ls_blurb": "Een zwaartekrachtgebonden, zij het los gestructureerde verzameling van sterrenstelsels net buiten de Lokale Groep. Het behoort tot het Lokale Blad — een dunne, ruwweg vlakke schijf van nabije galaxiegroepen ongeveer 10 megaparsec breed — zelf ingebed in het bredere Lokale Volume, de ~10-Mpc-straalsfeer die astronomen galaxy voor galaxy hebben in kaart gebracht.",
+    "explore_ls_anchor_blurb": "U bevindt zich hier. De hele Lokale Groep — de Melkweg, Andromeda en hun tientallen begeleiders — is op deze schaal één puntje, één lid van het bredere Lokale Blad."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -7400,7 +7454,13 @@
     "star_index_filter_all": "Все",
     "star_index_filter_planets": "Планеты",
     "star_index_filter_culture": "Культура",
-    "nav_programs": "ПРОГРАММЫ"
+    "nav_programs": "ПРОГРАММЫ",
+    "explore_ctx_local_sheet": "Местный лист",
+    "explore_ls_schematic_badge": "Местный лист · схема · не в масштабе",
+    "explore_ls_kind_group": "Группа галактик",
+    "explore_ls_kind_cloud": "Облако галактик",
+    "explore_ls_blurb": "Гравитационно связанная, хотя и рыхлая структура, совокупность галактик чуть за пределами Местной группы. Она входит в состав Местного листа — тонкого, примерно плоского слоя близлежащих групп галактик шириной около 10 мегапарсеков — который сам встроен в более обширный Местный объём, сферу радиусом ~10 Мпк, которую астрономы картографировали галактика за галактикой.",
+    "explore_ls_anchor_blurb": "Вы находитесь здесь. Вся Местная группа — Млечный путь, Андромеда и их десятки спутников — это просто одна точка в этом масштабе, один член более обширного Местного листа."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -8112,7 +8172,13 @@
     "star_index_filter_all": "全部",
     "star_index_filter_planets": "行星",
     "star_index_filter_culture": "文化",
-    "nav_programs": "项目"
+    "nav_programs": "项目",
+    "explore_ctx_local_sheet": "本地片层",
+    "explore_ls_schematic_badge": "本地片层·示意图·不按比例",
+    "explore_ls_kind_group": "星系群",
+    "explore_ls_kind_cloud": "星系云",
+    "explore_ls_blurb": "一个引力束缚的、虽然结构松散的星系集合，位于本星系群之外。它属于本地片层——一个厚度较薄、大致平面的邻近星系群薄板，跨度约10百万秒差距——本身嵌入在更广阔的本地体积中，这是天文学家已绘制的星系分布范围，半径约为10百万秒差距的球体。",
+    "explore_ls_anchor_blurb": "你在这里。整个本星系群——银河系、仙女星系及其数十个伴星系——在这个尺度上只是一个点，是更广阔的本地片层中的一个成员。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -8758,7 +8824,13 @@
     "star_index_filter_all": "Све",
     "star_index_filter_planets": "Планете",
     "star_index_filter_culture": "Култура",
-    "nav_programs": "ПРОГРАМИ"
+    "nav_programs": "ПРОГРАМИ",
+    "explore_ctx_local_sheet": "Локални лист",
+    "explore_ls_schematic_badge": "Локални лист · шематски приказ · без мерила",
+    "explore_ls_kind_group": "Група галаксија",
+    "explore_ls_kind_cloud": "Облак галаксија",
+    "explore_ls_blurb": "Гравитационо везана, иако лабаво структурирана, колекција галаксија управо изван Локалне групе. Она припада Lokalnom листу — танкој, отприлике равној плочи обилних група галаксија пречника око 10 мегапарсека — која је сама уграђена у шири Локални волумен, сферу радијуса ~10 Мпц коју су астрономи пресликали галаксију по галаксију.",
+    "explore_ls_anchor_blurb": "Находите се овде. Читава Локална група — Млечна стаза, Андромеда и њихов дуцин пратиоца — је једна тачка у овој размери, један члан ширег Lokalnog листа."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -9440,6 +9512,12 @@
     "star_index_filter_all": "Todos",
     "star_index_filter_planets": "Planetas",
     "star_index_filter_culture": "Cultura",
-    "nav_programs": "PROGRAMAS"
+    "nav_programs": "PROGRAMAS",
+    "explore_ctx_local_sheet": "Folha Local",
+    "explore_ls_schematic_badge": "Folha Local · esquemático · fora de escala",
+    "explore_ls_kind_group": "Grupo de galáxias",
+    "explore_ls_kind_cloud": "Nuvem de galáxias",
+    "explore_ls_blurb": "Uma coleção de galáxias gravitacionalmente ligada, ainda que fracamente estruturada, logo além do Grupo Local. Pertence à Folha Local — uma lâmina fina e aproximadamente planar de grupos de galáxias próximas com cerca de 10 megaparsecs de extensão — ela própria imersa no Volume Local mais amplo, a esfera de ~10 megaparsecs de raio que os astrônomos mapearam galáxia por galáxia.",
+    "explore_ls_anchor_blurb": "Você está aqui. O Grupo Local inteiro — a Via Láctea, Andrômeda e suas dezenas de companheiras — é um único ponto nesta escala, um membro da Folha Local mais ampla."
   }
 }

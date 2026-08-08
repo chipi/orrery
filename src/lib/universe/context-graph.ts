@@ -81,8 +81,21 @@ export const MILKY_WAY_CONTEXT: Context = {
  */
 export const LOCAL_GROUP_CONTEXT: Context = {
   id: 'local-group',
-  parent: null, // outermost for now; the wider universe arrives later
+  parent: 'local-sheet', // WS-1 — zoom out past the Local Group into the Local Sheet
   child: 'milky-way',
+  units: 'pc',
+  sceneUnitsPerParsec: 1,
+  outerBoundaryScene: Number.POSITIVE_INFINITY,
+  innerBoundaryScene: 0,
+};
+
+// #454 (WS-1) — the Local Sheet / Local Volume: the galaxy groups within ~10 Mpc.
+// Schematic like the Local Group + Milky Way shells; outermost for now (the Virgo
+// / Laniakea / cosmic-web tiers extend the chain past it).
+export const LOCAL_SHEET_CONTEXT: Context = {
+  id: 'local-sheet',
+  parent: null,
+  child: 'local-group',
   units: 'pc',
   sceneUnitsPerParsec: 1,
   outerBoundaryScene: Number.POSITIVE_INFINITY,

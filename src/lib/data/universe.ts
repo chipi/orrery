@@ -331,6 +331,34 @@ export async function getLocalGroup(fetchFn: FetchLike = fetch): Promise<LocalGr
   return localGroupCache;
 }
 
+// #454 (WS-1) — the Local Sheet / Local Volume: the galaxy groups within ~10 Mpc,
+// the shell one step out from the Local Group. Schematic, real distances (matching
+// the local-group precedent).
+export type LocalSheetKind = 'group' | 'cloud';
+export interface LocalSheetMember {
+  id: string;
+  name: string;
+  kind: LocalSheetKind;
+  headliner: boolean;
+  dist_mpc: number;
+  diam_mly: number;
+  x: number;
+  y: number;
+  z: number;
+}
+export interface LocalSheetData {
+  extent_mpc: number;
+  members: LocalSheetMember[];
+}
+let localSheetCache: Promise<LocalSheetData | null> | null = null;
+/** The Local Sheet schematic census (cached), or null if unavailable. */
+export async function getLocalSheet(fetchFn: FetchLike = fetch): Promise<LocalSheetData | null> {
+  if (!localSheetCache) {
+    localSheetCache = get<LocalSheetData>('universe/local-sheet.json', fetchFn).catch(() => null);
+  }
+  return localSheetCache;
+}
+
 // Black holes (Slice 6) — three real + one fictional (Gargantua), rendered with
 // the geodesic gravitational-lensing shader. Real cited GR parameters; Gargantua
 // is badged fiction.

@@ -10,6 +10,7 @@ import {
   NEIGHBORHOOD_CONTEXT,
   MILKY_WAY_CONTEXT,
   LOCAL_GROUP_CONTEXT,
+  LOCAL_SHEET_CONTEXT,
   makeBodyContext,
   bodyContextId,
   AU_PER_PARSEC,
@@ -40,6 +41,7 @@ import {
   getExoplanetSystem,
   getExoplanetSystems,
   getLocalGroup,
+  getLocalSheet,
   getMilkyWaySchematic,
   getNamedStarI18n,
   getNamedStars,
@@ -149,7 +151,9 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   let mwDeepLinkFn: any = null;
   let contextDeepLinkFn: any = null;
   let exitLocalGroupFn: any = null;
+  let exitLocalSheetFn: any = null;
   let closeLgFn: any = null;
+  let closeLsFn: any = null;
   let exitBlackHoleFn: any = null;
   let bhDeepLinkFn: any = null;
   let setBhCurvatureFn: any = null;
@@ -208,7 +212,13 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   // in. Scroll back in past the inner edge to return. v1's zoom range + render
   // path are unchanged — the neighborhood is a second scene, loaded lazily.
   const contextGraph = new ContextGraph(
-    [SOLAR_SYSTEM_CONTEXT, NEIGHBORHOOD_CONTEXT, MILKY_WAY_CONTEXT, LOCAL_GROUP_CONTEXT],
+    [
+      SOLAR_SYSTEM_CONTEXT,
+      NEIGHBORHOOD_CONTEXT,
+      MILKY_WAY_CONTEXT,
+      LOCAL_GROUP_CONTEXT,
+      LOCAL_SHEET_CONTEXT,
+    ],
     'solar-system',
   );
   let nbScene: NeighborhoodScene | null = null;
@@ -406,6 +416,44 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       return null;
     } finally {
       lgLoading = false;
+    }
+  }
+
+  // #454 (WS-1) — the Local Sheet schematic (one shell out from the Local Group).
+  let lsScene: import('$lib/universe/local-sheet-scene').LocalSheetScene | null = null;
+  let lsLoading = false;
+  let LS_SCENE_RADIUS = 150;
+  let LS_ENTRY_CAM_R = 200;
+  let LS_CAM_R_MIN = 112;
+  let LS_CAM_R_MAX = 900;
+  let LS_FAR = 6000;
+  const LS_ENTRY_CAM_P = 0.85;
+  const inLocalSheet = () => contextGraph.active.id === 'local-sheet';
+
+  async function ensureLocalSheet(): Promise<typeof lsScene> {
+    if (lsScene) return lsScene;
+    if (lsLoading) return null;
+    lsLoading = true;
+    try {
+      const [mod, data] = await Promise.all([
+        import('$lib/universe/local-sheet-scene'),
+        getLocalSheet(fetch),
+      ]);
+      if (!data) return null;
+      bridge.lsMembers = data.members;
+      LS_SCENE_RADIUS = mod.LS_SCENE_RADIUS;
+      LS_ENTRY_CAM_R = LS_SCENE_RADIUS * 1.35;
+      LS_CAM_R_MIN = LS_SCENE_RADIUS * 0.75; // zoom-in floor → cross back to the Local Group
+      LS_CAM_R_MAX = LS_SCENE_RADIUS * 6; // zoom-out ceiling (outermost for now)
+      LS_FAR = LS_SCENE_RADIUS * 40;
+      lsScene = mod.createLocalSheetScene(data);
+      lsScene.setSize(bridge.container?.clientWidth ?? 1, bridge.container?.clientHeight ?? 1);
+      return lsScene;
+    } catch (err) {
+      console.error('[explore v2] local sheet load failed', err);
+      return null;
+    } finally {
+      lsLoading = false;
     }
   }
 
@@ -716,6 +764,53 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     updateCam();
   }
   exitLocalGroupFn = crossInToMilkyWay;
+
+  // ── WS-1: Local Group ↔ Local Sheet crossing (same machinery). ────────────
+  async function crossOutToLocalSheet(): Promise<void> {
+    if (inLocalSheet()) return;
+    const scene = await ensureLocalSheet();
+    if (!scene) return; // load failed — stay in the Local Group
+    bridge.lgPanelOpen = false;
+    bridge.selectedLgMember = null;
+    lgScene?.highlight(null);
+    contextGraph.setActive('local-sheet');
+    bridge.contextId = 'local-sheet'; // flip chrome immediately
+    camRMin = LS_CAM_R_MIN;
+    camRMax = LS_CAM_R_MAX;
+    camera.far = LS_FAR;
+    camera.near = 1;
+    camera.updateProjectionMatrix();
+    camP = LS_ENTRY_CAM_P;
+    if (deps.getReducedMotion()) {
+      camR = LS_ENTRY_CAM_R;
+    } else {
+      camR = LS_ENTRY_CAM_R * 1.3;
+      startCrossDolly(LS_ENTRY_CAM_R * 1.3, LS_ENTRY_CAM_R, 1300);
+      bridge.crossingFlashId++;
+      showWarpCaption(`${(11000000).toLocaleString()} ${m.explore_light_years()} · IC 342 Group`);
+    }
+    updateCam();
+  }
+
+  function crossInToLocalGroup(): void {
+    if (!inLocalSheet()) return;
+    dollyActive = false;
+    if (!deps.getReducedMotion()) bridge.crossingFlashId++;
+    bridge.lsPanelOpen = false;
+    bridge.selectedLsMember = null;
+    lsScene?.highlight(null);
+    contextGraph.setActive('local-group');
+    bridge.contextId = 'local-group'; // flip chrome immediately
+    camRMin = LG_CAM_R_MIN;
+    camRMax = LG_CAM_R_MAX;
+    camR = LG_CAM_R_MAX; // re-enter at the Local Group's outer edge
+    camera.far = LG_FAR;
+    camera.near = 1;
+    camera.updateProjectionMatrix();
+    camP = LG_ENTRY_CAM_P;
+    updateCam();
+  }
+  exitLocalSheetFn = crossInToLocalGroup;
 
   // ── Exoplanet BodyScene (Slice 2) ────────────────────────────────────────
   // Descend from the neighborhood into a host star's mini-orrery via a 1–2 s
@@ -1126,13 +1221,15 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     bridge.scaleReadout = describeDistanceAu(au);
     bridge.contextId = inBodyScene()
       ? 'body-scene'
-      : inLocalGroup()
-        ? 'local-group'
-        : inMilkyWay()
-          ? 'milky-way'
-          : inNeighborhood()
-            ? 'neighborhood'
-            : 'solar-system';
+      : inLocalSheet()
+        ? 'local-sheet'
+        : inLocalGroup()
+          ? 'local-group'
+          : inMilkyWay()
+            ? 'milky-way'
+            : inNeighborhood()
+              ? 'neighborhood'
+              : 'solar-system';
     const vh = bridge.container?.clientHeight ?? 1;
     const worldPerPx = (2 * Math.tan((camera.fov * Math.PI) / 180 / 2) * camR) / vh;
     const unitToAu = inNeighborhood() ? AU_PER_PC : 1;
@@ -1527,6 +1624,15 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       if (bridge.hoverData) bridge.hoverData = null;
       return;
     }
+    // WS-1 — in the Local Sheet, hover highlights + names a member group.
+    if (inLocalSheet()) {
+      const mh = lsScene ? ray3dHover.intersectObjects(lsScene.pickables, false) : [];
+      const id = (mh[0]?.object.userData.lsId as string | undefined) ?? null;
+      lsScene?.highlight(id ?? bridge.selectedLsMember?.id ?? null);
+      el3d.style.cursor = id ? 'pointer' : 'grab';
+      if (bridge.hoverData) bridge.hoverData = null;
+      return;
+    }
     // v2: in the stellar neighborhood, hover highlights + names the nearest
     // named star; nothing else is hoverable there.
     if (inNeighborhood()) {
@@ -1848,6 +1954,35 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     lgScene?.highlight(null);
   }
   closeLgFn = closeLgPanel;
+
+  // #454 (WS-1) — pick a Local Sheet member group → open the LocalSheetPanel.
+  function pickLocalSheet(e: { clientX: number; clientY: number }): void {
+    if (!lsScene) return;
+    const rect = el3d.getBoundingClientRect();
+    const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+    const hits = ray3d.intersectObjects(lsScene.pickables, false);
+    if (hits.length) {
+      const id = hits[0].object.userData.lsId as string | undefined;
+      if (id) selectLocalSheet(id);
+    }
+  }
+  function selectLocalSheet(id: string): void {
+    const member = (bridge.lsMembers ?? []).find((mm: any) => mm.id === id);
+    if (!member) return;
+    cue('select');
+    bridge.selectedLsMember = member;
+    bridge.lsPanelOpen = true;
+    lsScene?.highlight(id);
+    trackItemClick('marker', id, '/explore');
+  }
+  function closeLsPanel(): void {
+    bridge.lsPanelOpen = false;
+    bridge.selectedLsMember = null;
+    lsScene?.highlight(null);
+  }
+  closeLsFn = closeLsPanel;
   async function resolveGalaxyDeepLink(id: string): Promise<void> {
     if (!inMilkyWay()) {
       if (!inNeighborhood()) await crossOutToNeighborhood();
@@ -1866,27 +2001,31 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   // Ladder + level math live in scale-shell-controller (RFC-036 WS-C/C1, tested).
   const curCtxLevel = () =>
     contextLevel(
-      inLocalGroup()
-        ? 'local-group'
-        : inMilkyWay()
-          ? 'milky-way'
-          : inNeighborhood()
-            ? 'neighborhood'
-            : 'solar-system',
+      inLocalSheet()
+        ? 'local-sheet'
+        : inLocalGroup()
+          ? 'local-group'
+          : inMilkyWay()
+            ? 'milky-way'
+            : inNeighborhood()
+              ? 'neighborhood'
+              : 'solar-system',
     );
   contextDeepLinkFn = async (target: string) => {
     const t = contextLevel(target);
     if (t < 0) return;
     let guard = 0;
-    while (curCtxLevel() < t && guard++ < 6) {
+    while (curCtxLevel() < t && guard++ < 8) {
       const cur = curCtxLevel();
       if (cur === 0) await crossOutToNeighborhood();
       else if (cur === 1) await crossOutToMilkyWay();
       else if (cur === 2) await crossOutToLocalGroup();
+      else if (cur === 3) await crossOutToLocalSheet();
     }
-    while (curCtxLevel() > t && guard++ < 6) {
+    while (curCtxLevel() > t && guard++ < 8) {
       const cur = curCtxLevel();
-      if (cur === 3) crossInToMilkyWay();
+      if (cur === 4) crossInToLocalGroup();
+      else if (cur === 3) crossInToMilkyWay();
       else if (cur === 2) crossInToNeighborhood();
       else if (cur === 1) crossInToSolarSystem();
     }
@@ -1925,6 +2064,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       if (inBodyScene()) pickBodyScene(e);
       else if (inMilkyWay()) pickMilkyWay(e);
       else if (inLocalGroup()) pickLocalGroup(e);
+      else if (inLocalSheet()) pickLocalSheet(e);
       else if (inNeighborhood()) pickNeighborhood(e);
       else tryPick3d(e);
     }
@@ -1941,14 +2081,33 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     // — see the addEventListener call below.
     e.preventDefault();
     const zoomingOut = e.deltaY > 0;
-    // Slice 8 — the Local Group is the outermost context: multiplicative zoom;
-    // scroll-in past the inner edge drops back into the Milky Way.
+    // The Local Group: multiplicative zoom; scroll-in past the inner edge drops
+    // back into the Milky Way, scroll-out past the ceiling crosses to the Local
+    // Sheet (WS-1).
     if (inLocalGroup()) {
       dollyActive = false;
       const ratio = zoomingOut ? 1.07 : 1 / 1.07;
       const next = camR * ratio;
       if (!zoomingOut && next <= camRMin) {
         crossInToMilkyWay();
+        return;
+      }
+      if (zoomingOut && camR >= camRMax - 0.5) {
+        void crossOutToLocalSheet();
+        return;
+      }
+      camR = Math.max(camRMin, Math.min(camRMax, next));
+      updateCam();
+      return;
+    }
+    // WS-1 — the Local Sheet is the outermost context (for now): multiplicative
+    // zoom; scroll-in past the inner edge drops back into the Local Group.
+    if (inLocalSheet()) {
+      dollyActive = false;
+      const ratio = zoomingOut ? 1.07 : 1 / 1.07;
+      const next = camR * ratio;
+      if (!zoomingOut && next <= camRMin) {
+        crossInToLocalGroup();
         return;
       }
       camR = Math.max(camRMin, Math.min(camRMax, next));
@@ -2037,6 +2196,23 @@ export function createExploreSceneHost(bridge: any, deps: any) {
         if (inLocalGroup()) {
           if (ratio < 1 && camR * ratio <= camRMin) {
             crossInToMilkyWay();
+            pinchPrev3d = dist;
+            return;
+          }
+          if (ratio > 1 && camR >= camRMax - 0.5) {
+            void crossOutToLocalSheet();
+            pinchPrev3d = dist;
+            return;
+          }
+          dollyActive = false;
+          camR = Math.max(camRMin, Math.min(camRMax, camR * ratio));
+          updateCam();
+          pinchPrev3d = dist;
+          return;
+        }
+        if (inLocalSheet()) {
+          if (ratio < 1 && camR * ratio <= camRMin) {
+            crossInToLocalGroup();
             pinchPrev3d = dist;
             return;
           }
@@ -2730,6 +2906,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     bloomPass?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     mwScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     lgScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
+    lsScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     nbScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     bhScene?.setSize(
       bridge.container.clientWidth,
@@ -3267,6 +3444,12 @@ export function createExploreSceneHost(bridge: any, deps: any) {
           lgScene.render(renderer, camera); // cinematic bloom composer
           return;
         }
+        if (inLocalSheet() && lsScene) {
+          stepCrossDolly();
+          lsScene.update(camera);
+          lsScene.render(renderer, camera);
+          return;
+        }
 
         // Frame throttle — render 1 of every 4 frames when a right-
         // side detail panel covers the canvas. See module-level
@@ -3361,6 +3544,8 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     contextDeepLinkFn,
     exitLocalGroupFn,
     closeLgFn,
+    exitLocalSheetFn,
+    closeLsFn,
     exitBlackHoleFn,
     bhDeepLinkFn,
     setBhCurvatureFn,

@@ -1756,5 +1756,11 @@
   "star_index_filter_all": "すべて",
   "star_index_filter_planets": "惑星",
   "star_index_filter_culture": "文化",
-  "nav_programs": "プログラム"
+  "nav_programs": "プログラム",
+  "explore_ctx_local_sheet": "局所シート",
+  "explore_ls_schematic_badge": "局所シート · 模式図 · スケール外",
+  "explore_ls_kind_group": "銀河群",
+  "explore_ls_kind_cloud": "銀河雲",
+  "explore_ls_blurb": "局所銀河群のすぐ外側にある、重力的に結合された（ただし構造は疎な）銀河の集合です。約10メガパーセクの広さをもつ薄い平面状の板である局所シートに属しており、この局所シート自体はより広い局所宇宙（銀河ごとに観測された半径約10メガパーセクの球体）に埋め込まれています。",
+  "explore_ls_anchor_blurb": "ここがあなたの位置です。銀河系、アンドロメダ銀河、およびそれらの数十の衛星銀河からなる局所銀河群全体は、このスケールでは単一の点であり、より広い局所シートの1つのメンバーです。"
 }

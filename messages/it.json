@@ -1756,5 +1756,11 @@
   "star_index_filter_all": "Tutti",
   "star_index_filter_planets": "Pianeti",
   "star_index_filter_culture": "Cultura",
-  "nav_programs": "PROGRAMMI"
+  "nav_programs": "PROGRAMMI",
+  "explore_ctx_local_sheet": "Foglio Locale",
+  "explore_ls_schematic_badge": "Foglio Locale · schema · non in scala",
+  "explore_ls_kind_group": "Gruppo di galassie",
+  "explore_ls_kind_cloud": "Nube di galassie",
+  "explore_ls_blurb": "Una collezione di galassie gravitazionalmente legata, anche se debolmente strutturata, appena oltre il Gruppo Locale. Appartiene al Foglio Locale — una sottile lamina grosso modo planare di gruppi di galassie vicine di circa 10 megaparsec di estensione — essa stessa immersa nel più vasto Volume Locale, la sfera di raggio ~10 Mpc che gli astronomi hanno mappato galassia per galassia.",
+  "explore_ls_anchor_blurb": "Siete qui. L'intero Gruppo Locale — la Via Lattea, Andromeda e le loro decine di compagne — è un singolo punto a questa scala, un membro del più vasto Foglio Locale."
 }

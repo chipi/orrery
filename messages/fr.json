@@ -1756,5 +1756,11 @@
   "star_index_filter_all": "Tous",
   "star_index_filter_planets": "Planètes",
   "star_index_filter_culture": "Culture",
-  "nav_programs": "PROGRAMMES"
+  "nav_programs": "PROGRAMMES",
+  "explore_ctx_local_sheet": "Feuille Locale",
+  "explore_ls_schematic_badge": "Feuille Locale · schéma · sans échelle",
+  "explore_ls_kind_group": "Groupe de galaxies",
+  "explore_ls_kind_cloud": "Nuage de galaxies",
+  "explore_ls_blurb": "Un ensemble de galaxies lié gravitationnellement, bien que faiblement structuré, situé juste au-delà du Groupe Local. Il appartient à la Feuille Locale — une fine plaque approximativement plane de groupes de galaxies proches s'étendant sur environ 10 mégaparsecs — elle-même intégrée dans le Volume Local plus vaste, la sphère de ~10 Mpc de rayon que les astronomes ont cartographiée galaxie par galaxie.",
+  "explore_ls_anchor_blurb": "Vous êtes ici. L'ensemble du Groupe Local — la Voie lactée, Andromède, et leurs dizaines de compagnons — n'est qu'un point à cette échelle, un membre de la Feuille Locale plus vaste."
 }

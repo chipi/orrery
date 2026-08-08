@@ -17,7 +17,13 @@
  */
 
 /** The four scale-shells that form the zoom ladder, innermost → outermost. */
-export const CTX_ORDER = ['solar-system', 'neighborhood', 'milky-way', 'local-group'] as const;
+export const CTX_ORDER = [
+  'solar-system',
+  'neighborhood',
+  'milky-way',
+  'local-group',
+  'local-sheet',
+] as const;
 export type ShellId = (typeof CTX_ORDER)[number];
 
 /**

@@ -1756,5 +1756,11 @@
   "star_index_filter_all": "全部",
   "star_index_filter_planets": "行星",
   "star_index_filter_culture": "文化",
-  "nav_programs": "项目"
+  "nav_programs": "项目",
+  "explore_ctx_local_sheet": "本地片层",
+  "explore_ls_schematic_badge": "本地片层·示意图·不按比例",
+  "explore_ls_kind_group": "星系群",
+  "explore_ls_kind_cloud": "星系云",
+  "explore_ls_blurb": "一个引力束缚的、虽然结构松散的星系集合，位于本星系群之外。它属于本地片层——一个厚度较薄、大致平面的邻近星系群薄板，跨度约10百万秒差距——本身嵌入在更广阔的本地体积中，这是天文学家已绘制的星系分布范围，半径约为10百万秒差距的球体。",
+  "explore_ls_anchor_blurb": "你在这里。整个本星系群——银河系、仙女星系及其数十个伴星系——在这个尺度上只是一个点，是更广阔的本地片层中的一个成员。"
 }

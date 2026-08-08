@@ -40,6 +40,7 @@
     getMission,
     type MilkyWayObject,
     type LocalGroupMember,
+    type LocalSheetMember,
     type BlackHole,
     type NamedStar,
     type LocalizedNamedStar,
@@ -58,6 +59,7 @@
   import CausalityMap from '$lib/components/CausalityMap.svelte';
   import MilkyWayPanel from '$lib/components/MilkyWayPanel.svelte';
   import LocalGroupPanel from '$lib/components/LocalGroupPanel.svelte';
+  import LocalSheetPanel from '$lib/components/LocalSheetPanel.svelte';
   import BlackHolePanel from '$lib/components/BlackHolePanel.svelte';
   import CultureDoorCard from '$lib/components/CultureDoorCard.svelte';
   import StarIndex from '$lib/components/StarIndex.svelte';
@@ -896,7 +898,7 @@
   let scaleBarPx = $state(0);
   let scaleBarLabel = $state('');
   let contextId = $state<
-    'solar-system' | 'neighborhood' | 'milky-way' | 'local-group' | 'body-scene'
+    'solar-system' | 'neighborhood' | 'milky-way' | 'local-group' | 'local-sheet' | 'body-scene'
   >('solar-system');
   // Publish the live scale context to the global store so the Nav highlights the
   // active scale-shell menu item (the URL ?context is cleared after the jump, so
@@ -1128,6 +1130,12 @@
   let selectedLgMember = $state<LocalGroupMember | null>(null);
   let lgPanelOpen = $state(false);
   let closeLgFn: (() => void) | null = null;
+  // #454 (WS-1) — the Local Sheet shell.
+  let exitLocalSheetFn: (() => void) | null = null;
+  let selectedLsMember = $state<LocalSheetMember | null>(null);
+  let lsPanelOpen = $state(false);
+  let lsMembers = $state<LocalSheetMember[]>([]);
+  let closeLsFn: (() => void) | null = null;
   // Slice 6 — the black hole currently rendered full-screen (geodesic lensing).
   let activeBlackHole = $state<BlackHole | null>(null);
   let bhPanelOpen = $state(false);
@@ -2064,6 +2072,24 @@
       set lgPanelOpen(v) {
         lgPanelOpen = v;
       },
+      get selectedLsMember() {
+        return selectedLsMember;
+      },
+      set selectedLsMember(v) {
+        selectedLsMember = v;
+      },
+      get lsPanelOpen() {
+        return lsPanelOpen;
+      },
+      set lsPanelOpen(v) {
+        lsPanelOpen = v;
+      },
+      get lsMembers() {
+        return lsMembers;
+      },
+      set lsMembers(v) {
+        lsMembers = v;
+      },
       get activeBlackHole() {
         return activeBlackHole;
       },
@@ -2271,6 +2297,8 @@
     contextDeepLinkFn = exploreHost.contextDeepLinkFn;
     exitLocalGroupFn = exploreHost.exitLocalGroupFn;
     closeLgFn = exploreHost.closeLgFn;
+    exitLocalSheetFn = exploreHost.exitLocalSheetFn;
+    closeLsFn = exploreHost.closeLsFn;
     exitBlackHoleFn = exploreHost.exitBlackHoleFn;
     bhDeepLinkFn = exploreHost.bhDeepLinkFn;
     setBhCurvatureFn = exploreHost.setBhCurvatureFn;
@@ -2334,15 +2362,18 @@
       <span class="crumb-sep">›</span>
       <span class="crumb current" aria-current="page">{activeBlackHole.name}</span>
     </nav>
-  {:else if view === '3d' && (contextId === 'neighborhood' || contextId === 'milky-way' || contextId === 'local-group' || contextId === 'body-scene')}
+  {:else if view === '3d' && (contextId === 'neighborhood' || contextId === 'milky-way' || contextId === 'local-group' || contextId === 'local-sheet' || contextId === 'body-scene')}
     <nav class="context-crumbs" aria-label={m.explore_location_aria()}>
       <button
         type="button"
         class="crumb home"
         onclick={() => {
+          // Each exit fn guards on the live context, so calling them in order
+          // walks all the way in to the solar system from any shell.
           if (contextId === 'body-scene') exitBodySceneFn?.();
-          if (contextId === 'local-group') exitLocalGroupFn?.();
-          if (contextId === 'milky-way' || contextId === 'local-group') exitMilkyWayFn?.();
+          exitLocalSheetFn?.();
+          exitLocalGroupFn?.();
+          exitMilkyWayFn?.();
           exitNeighborhoodFn?.();
         }}
       >
@@ -2373,6 +2404,12 @@
         </button>
         <span class="crumb-sep">›</span>
         <span class="crumb current" aria-current="page">{m.explore_ctx_local_group()}</span>
+      {:else if contextId === 'local-sheet'}
+        <button type="button" class="crumb" onclick={() => exitLocalSheetFn?.()}>
+          {m.explore_ctx_local_group()}
+        </button>
+        <span class="crumb-sep">›</span>
+        <span class="crumb current" aria-current="page">{m.explore_ctx_local_sheet()}</span>
       {:else}
         <span class="crumb current" aria-current="page">{m.explore_ctx_stellar_neighborhood()}</span
         >
@@ -2425,6 +2462,9 @@
         >{m.science_learn_more()} →</a
       >
     </div>
+  {/if}
+  {#if view === '3d' && contextId === 'local-sheet' && !activeBlackHole}
+    <div class="mw-badge" role="note">{m.explore_ls_schematic_badge()}</div>
   {/if}
 
   <!-- Slice 6: the black-hole render is a geodesic GR ray-trace — label it. -->
@@ -3417,6 +3457,8 @@
 />
 
 <LocalGroupPanel member={selectedLgMember} open={lgPanelOpen} onClose={() => closeLgFn?.()} />
+
+<LocalSheetPanel member={selectedLsMember} open={lsPanelOpen} onClose={() => closeLsFn?.()} />
 
 <BlackHolePanel
   hole={activeBlackHole}

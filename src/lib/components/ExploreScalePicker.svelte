@@ -46,6 +46,8 @@
         return m.explore_ctx_milky_way();
       case 'local-group':
         return m.explore_ctx_local_group();
+      case 'local-sheet':
+        return m.explore_ctx_local_sheet();
     }
   }
 

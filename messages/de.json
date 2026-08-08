@@ -1756,5 +1756,11 @@
   "star_index_filter_all": "Alle",
   "star_index_filter_planets": "Planeten",
   "star_index_filter_culture": "Kultur",
-  "nav_programs": "PROGRAMME"
+  "nav_programs": "PROGRAMME",
+  "explore_ctx_local_sheet": "Lokales Blatt",
+  "explore_ls_schematic_badge": "Lokales Blatt · Schema · nicht maßstabsgetreu",
+  "explore_ls_kind_group": "Galaxiengruppe",
+  "explore_ls_kind_cloud": "Galaxienwolke",
+  "explore_ls_blurb": "Eine gravitativ gebundene, wenn auch locker strukturierte Ansammlung von Galaxien jenseits der Lokalen Gruppe. Sie gehört zum Lokalen Blatt — eine dünne, etwa ebene Scheibe von nahe gelegenen Galaxiengruppen mit etwa 10 Megaparsec Durchmesser — selbst eingebettet in das größere Lokale Volumen, die ~10-Mpc-Radius-Sphäre, die Astronomen Galaxie für Galaxie kartiert haben.",
+  "explore_ls_anchor_blurb": "Sie sind hier. Die gesamte Lokale Gruppe — die Milchstraße, Andromeda und ihre Dutzende von Begleitern — ist in diesem Maßstab ein einzelner Punkt, ein Mitglied des größeren Lokalen Blatts."
 }

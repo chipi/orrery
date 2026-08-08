@@ -7,6 +7,7 @@ import {
   NEIGHBORHOOD_CONTEXT,
   MILKY_WAY_CONTEXT,
   LOCAL_GROUP_CONTEXT,
+  LOCAL_SHEET_CONTEXT,
   bodyContextId,
   makeBodyContext,
   type Context,
@@ -113,12 +114,18 @@ describe('MilkyWay ↔ LocalGroup contexts (Slice 5/8)', () => {
     { ...NEIGHBORHOOD_CONTEXT },
     { ...MILKY_WAY_CONTEXT },
     { ...LOCAL_GROUP_CONTEXT },
+    { ...LOCAL_SHEET_CONTEXT },
   ];
 
-  it('the Local Group is the outermost context (parent null, boundary Infinity)', () => {
-    expect(LOCAL_GROUP_CONTEXT.parent).toBeNull();
+  it('the Local Sheet is the outermost context (parent null, boundary Infinity)', () => {
+    expect(LOCAL_SHEET_CONTEXT.parent).toBeNull();
+    expect(LOCAL_SHEET_CONTEXT.child).toBe('local-group');
+    expect(LOCAL_SHEET_CONTEXT.outerBoundaryScene).toBe(Number.POSITIVE_INFINITY);
+  });
+
+  it('the Local Group now nests inside the Local Sheet (parent chain LG → LS)', () => {
+    expect(LOCAL_GROUP_CONTEXT.parent).toBe('local-sheet');
     expect(LOCAL_GROUP_CONTEXT.child).toBe('milky-way');
-    expect(LOCAL_GROUP_CONTEXT.outerBoundaryScene).toBe(Number.POSITIVE_INFINITY);
   });
 
   it('the Milky Way now nests inside the Local Group (parent chain MW → LG)', () => {
@@ -126,14 +133,14 @@ describe('MilkyWay ↔ LocalGroup contexts (Slice 5/8)', () => {
     expect(MILKY_WAY_CONTEXT.child).toBe('neighborhood');
   });
 
-  it('does not cross out of the Local Group (outermost — page drives warps directly)', () => {
-    const g = new ContextGraph(full(), 'local-group');
+  it('does not cross out of the Local Sheet (outermost — page drives warps directly)', () => {
+    const g = new ContextGraph(full(), 'local-sheet');
     expect(g.evaluate(1e9)).toBeNull();
   });
 
   it('every context in the full chain is registered + reachable', () => {
     const g = new ContextGraph(full(), 'solar-system');
-    for (const id of ['solar-system', 'neighborhood', 'milky-way', 'local-group']) {
+    for (const id of ['solar-system', 'neighborhood', 'milky-way', 'local-group', 'local-sheet']) {
       g.setActive(id);
       expect(g.active.id).toBe(id);
     }

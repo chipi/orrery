@@ -51,7 +51,15 @@ export type LayerKey =
   | 'dead-dynamo' // O1 — Mars crustal-magnetism patches (dead global field)
   | 'polar-caps' // O2 — Mars seasonal CO₂/H₂O ice caps
   | 'mars-moons' // O3 — Phobos + Deimos orbit rings + markers (/mars)
-  | 'climate'; // P1 — climate bands + insolation ("Sun is life", #386, surface scenes)
+  | 'climate' // P1 — climate bands + insolation ("Sun is life", #386, surface scenes)
+  // WS-3 (RFC-037 Contract D) — /explore teaching layers, unified into the lens.
+  | 'constellations' // Q1 — constellation figures over the stellar neighbourhood
+  | 'deep-sky' // Q2 — deep-sky objects (nebulae, clusters, galaxies) in the neighbourhood
+  | 'hr-diagram' // Q3 — Hertzsprung–Russell diagram of the nearby stars
+  | 'light-cones' // Q4 — causal light-cones / look-back shells around the Sun
+  | 'rotation-curve' // Q5 — Milky Way rotation curve overlay
+  | 'dark-matter-halo' // Q6 — Milky Way dark-matter halo overlay
+  | 'stellar-populations'; // Q7 — Milky Way stellar-population (disc/halo/bulge) overlay
 
 /** All layers in canonical display order — used by the UI panel. */
 export const LAYER_ORDER: readonly LayerKey[] = [
@@ -87,6 +95,14 @@ export const LAYER_ORDER: readonly LayerKey[] = [
   'dead-dynamo',
   'polar-caps',
   'mars-moons',
+  // WS-3 — /explore teaching layers (neighbourhood then Milky Way).
+  'constellations',
+  'deep-sky',
+  'hr-diagram',
+  'light-cones',
+  'rotation-curve',
+  'dark-matter-halo',
+  'stellar-populations',
 ];
 
 /** Default visibility when the lens first activates. Sensible "starter
@@ -125,6 +141,14 @@ export const LAYER_DEFAULTS: Record<LayerKey, boolean> = {
   'dead-dynamo': false,
   'polar-caps': false,
   'mars-moons': false,
+  // WS-3 — neighbourhood scenery reads on lens-on; the heavier overlays stay opt-in.
+  constellations: true,
+  'deep-sky': true,
+  'hr-diagram': false,
+  'light-cones': false,
+  'rotation-curve': false,
+  'dark-matter-halo': false,
+  'stellar-populations': false,
 };
 
 const ATTR_PREFIX = 'data-science-layer-';

@@ -100,6 +100,13 @@
     'dead-dynamo': false,
     'polar-caps': false,
     'mars-moons': false,
+    constellations: false,
+    'deep-sky': false,
+    'hr-diagram': false,
+    'light-cones': false,
+    'rotation-curve': false,
+    'dark-matter-halo': false,
+    'stellar-populations': false,
   });
 
   let stops: Array<() => void> = [];
@@ -352,6 +359,49 @@
         return {
           label: m.science_layer_mars_moons_label(),
           description: m.science_layer_mars_moons_desc(),
+        };
+      // WS-3 (RFC-037 Contract D) — /explore teaching layers. Labels reuse the
+      // former chip keys; descriptions + learn links are new.
+      case 'constellations':
+        return {
+          label: m.explore_constellations_toggle(),
+          description: m.science_layer_constellations_desc(),
+        };
+      case 'deep-sky':
+        return {
+          label: m.explore_deep_sky_toggle(),
+          description: m.science_layer_deep_sky_desc(),
+          learn: { tab: 'observation', section: 'galaxy-types' },
+        };
+      case 'hr-diagram':
+        return {
+          label: m.explore_lens_hr(),
+          description: m.science_layer_hr_diagram_desc(),
+          learn: { tab: 'observation', section: 'hertzsprung-russell' },
+        };
+      case 'light-cones':
+        return {
+          label: m.explore_lens_causality(),
+          description: m.science_layer_light_cones_desc(),
+          learn: { tab: 'scales-time', section: 'light-minute' },
+        };
+      case 'rotation-curve':
+        return {
+          label: m.explore_mw_lens_rotation(),
+          description: m.science_layer_rotation_curve_desc(),
+          learn: { tab: 'observation', section: 'our-galaxy' },
+        };
+      case 'dark-matter-halo':
+        return {
+          label: m.explore_mw_lens_darkmatter(),
+          description: m.science_layer_dark_matter_halo_desc(),
+          learn: { tab: 'observation', section: 'our-galaxy' },
+        };
+      case 'stellar-populations':
+        return {
+          label: m.explore_mw_lens_populations(),
+          description: m.science_layer_stellar_populations_desc(),
+          learn: { tab: 'observation', section: 'our-galaxy' },
         };
     }
   }

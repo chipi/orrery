@@ -102,8 +102,9 @@
   import { agencyToLogoPaths } from '$lib/agency-logo';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import { audio } from '$lib/audio-state.svelte';
-  import { onLayerChange } from '$lib/science-layers';
+  import { onLayerChange, type LayerKey } from '$lib/science-layers';
   import { onScienceLensChange } from '$lib/science-lens';
+  import type { ScienceTabId } from '$types/science';
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
@@ -907,6 +908,83 @@
     exploreContext.set(contextId);
   });
   onDestroy(() => exploreContext.set(null));
+
+  // WS-3 (RFC-037 Contract D) — the science lens is now uniform across every scale
+  // shell. One ScienceLayersPanel, its props derived from the active shell: each
+  // shell gets a lens-story (title + body + a → science learn link) and the set of
+  // teaching layers that make sense at that scale. Solar-system keeps its Kepler/
+  // Newton historical foundations; the outer shells surface their overlays or, where
+  // the per-tier lens is still to come (WS-5), just the story + learn link.
+  type LensPanelProps = {
+    title?: string;
+    body?: string;
+    tab?: ScienceTabId;
+    section?: string;
+    available: LayerKey[];
+    historicalFoundations?: Array<{ tab: ScienceTabId; section: string; label: string }>;
+  };
+  let lensPanel = $derived.by((): LensPanelProps => {
+    switch (contextId) {
+      case 'neighborhood':
+        return {
+          title: m.explore_lens_story_nb_title(),
+          body: m.explore_lens_story_nb_body(),
+          tab: 'observation',
+          section: 'hertzsprung-russell',
+          available: ['constellations', 'deep-sky', 'hr-diagram', 'light-cones'],
+        };
+      case 'milky-way':
+        return {
+          title: m.explore_lens_story_mw_title(),
+          body: m.explore_lens_story_mw_body(),
+          tab: 'observation',
+          section: 'our-galaxy',
+          available: ['rotation-curve', 'dark-matter-halo', 'stellar-populations'],
+        };
+      case 'local-group':
+        return {
+          title: m.explore_lens_story_lg_title(),
+          body: m.explore_lens_story_lg_body(),
+          tab: 'observation',
+          section: 'local-group',
+          available: [],
+        };
+      case 'local-sheet':
+        return {
+          title: m.explore_lens_story_ls_title(),
+          body: m.explore_lens_story_ls_body(),
+          tab: 'observation',
+          section: 'galaxy-types',
+          available: [],
+        };
+      case 'solar-system':
+        return {
+          title: m.explore_2d_view_title(),
+          body: `Every planet's orbit is an ellipse with the Sun at one focus. Same five Keplerian numbers (size, shape, tilt, orientation, position) describe each one — same six laws move them.`,
+          tab: 'orbits',
+          section: 'keplerian-orbit',
+          available: [
+            'hover',
+            'gravity',
+            'velocity',
+            'centripetal',
+            'galaxies',
+            'hill-sphere',
+            'lagrange-points',
+            'magnetosphere',
+            'sub-solar',
+            'planet-stats',
+          ],
+          historicalFoundations: [
+            { tab: 'history', section: 'keplers-laws-1609', label: "Kepler's three laws, 1609" },
+            { tab: 'history', section: 'newton-principia-1687', label: 'Newton · Principia, 1687' },
+          ],
+        };
+      default:
+        // body-scene + black-hole takeovers own the viewport; no lens surface.
+        return { available: [] };
+    }
+  });
   // Slice 2: the exoplanet host whose BodyScene is active (breadcrumb crumb) + the
   // set of host ids that have a system to descend into (drives "Enter system").
   let bodyHostName = $state('');
@@ -1095,20 +1173,11 @@
   // Same, for the Milky Way + Local Group scales.
   let resetMilkyWayFn: (() => void) | null = null;
   let resetLocalGroupFn: (() => void) | null = null;
-  // #451 (WS-2) — the first Milky Way science lens (rotation curve · dark-matter
-  // halo · stellar populations), gated on the global science lens like the
-  // neighborhood's HR + causality overlays.
-  type MwLensKey = 'rotation-curve' | 'dark-matter-halo' | 'stellar-populations';
+  // #451 (WS-2) — the Milky Way science lens overlays (rotation curve · dark-matter
+  // halo · stellar populations). WS-3 (RFC-037 Contract D) promoted these to
+  // standard science-layer keys, so they're driven by the ScienceLayersPanel via
+  // onLayerChange rather than a bespoke chip row; this pointer reaches the scene.
   let setMwLensFn: ((key: string, on: boolean) => void) | null = null;
-  let mwLens = $state<Record<MwLensKey, boolean>>({
-    'rotation-curve': false,
-    'dark-matter-halo': false,
-    'stellar-populations': false,
-  });
-  function toggleMwLens(key: MwLensKey): void {
-    mwLens[key] = !mwLens[key];
-    setMwLensFn?.(key, mwLens[key]);
-  }
   // Slice 2: leave an exoplanet BodyScene back out to the neighborhood.
   let exitBodySceneFn: (() => void) | null = null;
   // Slice 5: leave the Milky Way context back in to the neighborhood.
@@ -1533,6 +1602,44 @@
     stopHoverLayerWatch = onLayerChange('hover', (on) => {
       layerState.hover = on;
     });
+
+    // WS-3 (RFC-037 Contract D) — the /explore teaching layers are now standard
+    // science-layer keys, driven uniformly through the ScienceLayersPanel lens.
+    // Each subscription mirrors the effective (lens-coupled) layer state onto the
+    // existing scene wiring. Constellations + deep-sky feed page state that the
+    // neighborhood scene reads at build time (host §nbScene sync); HR + light-cones
+    // drive their overlays; the three Milky Way overlays reach the scene directly.
+    const addLayerWatch = (stop: (() => void) | undefined) => {
+      if (stop) lifecycle.add(stop);
+    };
+    addLayerWatch(
+      onLayerChange('constellations', (on) => {
+        showConstellations = on;
+        setConstellationsFn?.(on);
+      }),
+    );
+    addLayerWatch(
+      onLayerChange('deep-sky', (on) => {
+        showDeepSky = on;
+        setDeepSkyFn?.(on);
+      }),
+    );
+    addLayerWatch(
+      onLayerChange('hr-diagram', (on) => {
+        if (on !== hrLensOpen) toggleHrFn?.();
+      }),
+    );
+    addLayerWatch(
+      onLayerChange('light-cones', (on) => {
+        if (on !== causalityOpen) {
+          causalityOpen = on;
+          if (on) openCausalityFn?.();
+        }
+      }),
+    );
+    for (const key of ['rotation-curve', 'dark-matter-halo', 'stellar-populations'] as const) {
+      addLayerWatch(onLayerChange(key, (on) => setMwLensFn?.(key, on)));
+    }
 
     // Async-load localised planet + sun data; safe to run alongside scene setup.
     const initialLocale = localeFromPage($page);
@@ -2549,65 +2656,12 @@
     </div>
   {/if}
 
-  <!-- Neighborhood layer pills — the top-left cluster (reset now lives in the
-       breadcrumb row). Same .chip treatment as solar-system, slate-accented for the
-       deep-space scales. The star list lives in the left INDEX rail. -->
+  <!-- Neighborhood star index — the left INDEX rail. WS-3 (RFC-037 Contract D)
+       retired the bespoke .nb-hud chip row: constellations, deep-sky, the H–R
+       diagram and light-cones are now standard science layers, surfaced uniformly
+       through the ScienceLayersPanel lens (see lensPanel derived + onLayerChange
+       subscriptions). -->
   {#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole}
-    <div class="nb-hud deep-space" role="group" aria-label={m.ui_view_controls()}>
-      <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-        <button
-          type="button"
-          class="chip"
-          class:active={showConstellations}
-          aria-pressed={showConstellations}
-          onclick={() => {
-            showConstellations = !showConstellations;
-            setConstellationsFn?.(showConstellations);
-          }}
-        >
-          {m.explore_constellations_toggle()}
-        </button>
-        <button
-          type="button"
-          class="chip"
-          class:active={showDeepSky}
-          aria-pressed={showDeepSky}
-          onclick={() => {
-            showDeepSky = !showDeepSky;
-            setDeepSkyFn?.(showDeepSky);
-          }}
-        >
-          {m.explore_deep_sky_toggle()}
-        </button>
-        <!-- A3: HR Diagram + Light cones are hardcore-science overlays — they
-             live under the science lens, so only surface as chips when the
-             science lens is active. Constellations + Deep Sky stay as the
-             default exploratory chips (keeps the row to one line). -->
-        {#if layerState.lens}
-          <button
-            type="button"
-            class="chip"
-            class:active={hrLensOpen}
-            aria-pressed={hrLensOpen}
-            onclick={() => toggleHrFn?.()}
-          >
-            {m.explore_lens_hr()}
-          </button>
-          <button
-            type="button"
-            class="chip"
-            class:active={causalityOpen}
-            aria-pressed={causalityOpen}
-            onclick={() => {
-              causalityOpen = !causalityOpen;
-              if (causalityOpen) openCausalityFn?.();
-            }}
-          >
-            {m.explore_lens_causality()}
-          </button>
-        {/if}
-      </div>
-    </div>
     <StarIndex
       stars={namedStars}
       open={starIndexOpen}
@@ -2619,42 +2673,9 @@
     />
   {/if}
 
-  <!-- #451 (WS-2) — Milky Way science lens: rotation curve / dark-matter halo /
-       stellar populations. Only under the science lens (like the neighborhood
-       HR + causality chips). -->
-  {#if view === '3d' && contextId === 'milky-way' && !activeBlackHole && layerState.lens}
-    <div class="nb-hud deep-space" role="group" aria-label={m.ui_view_controls()}>
-      <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-        <button
-          type="button"
-          class="chip"
-          class:active={mwLens['rotation-curve']}
-          aria-pressed={mwLens['rotation-curve']}
-          onclick={() => toggleMwLens('rotation-curve')}
-        >
-          {m.explore_mw_lens_rotation()}
-        </button>
-        <button
-          type="button"
-          class="chip"
-          class:active={mwLens['dark-matter-halo']}
-          aria-pressed={mwLens['dark-matter-halo']}
-          onclick={() => toggleMwLens('dark-matter-halo')}
-        >
-          {m.explore_mw_lens_darkmatter()}
-        </button>
-        <button
-          type="button"
-          class="chip"
-          class:active={mwLens['stellar-populations']}
-          aria-pressed={mwLens['stellar-populations']}
-          onclick={() => toggleMwLens('stellar-populations')}
-        >
-          {m.explore_mw_lens_populations()}
-        </button>
-      </div>
-    </div>
-  {/if}
+  <!-- #451 (WS-2) — the Milky Way science lens (rotation curve / dark-matter halo /
+       stellar populations) now lives in the unified ScienceLayersPanel, like every
+       other shell's teaching layers. WS-3 (RFC-037 Contract D). -->
 
   <!-- v2 scale ruler (PRD-030 / RFC-032): the fitting distance measure for the
        current zoom — km → AU → light-year → parsec — plus light-travel time and
@@ -3601,35 +3622,21 @@
   >
 </div>
 
-<!-- Unified Science Lens panel — lens story + layer toggles in one
-     collapse. Replaces the previous two-panel arrangement (banner +
-     layers) per the v0.6 Science-Lens UX pass. /explore wires four
-     layers: hover-cards (lens-on tooltip expansion), gravity (per-
-     planet arrow toward Sun), velocity (tangent), centripetal (paired
-     inward arrow). SoI and apsides are omitted — planets render on
-     circular orbits at this visual scale, so apsides degenerate to
-     single points and SoIs are sub-pixel. -->
+<!-- Unified Science Lens panel — one lens surface for every scale shell (WS-3,
+     RFC-037 Contract D). The story + teaching layers are derived from the active
+     shell (see `lensPanel`): solar-system keeps its Kepler/Newton foundations;
+     the neighbourhood surfaces constellations / deep-sky / H–R / light-cones; the
+     Milky Way its rotation-curve / dark-matter / stellar-population overlays; the
+     Local Group + Local Sheet carry the lens-story + → science link ahead of their
+     per-tier overlays (WS-5). Service chips (planets/dwarfs/comets/…) stay in the
+     HUD; only teaching layers live here. -->
 <ScienceLayersPanel
-  title={m.explore_2d_view_title()}
-  body="Every planet's orbit is an ellipse with the Sun at one focus. Same five Keplerian numbers (size, shape, tilt, orientation, position) describe each one — same six laws move them."
-  tab="orbits"
-  section="keplerian-orbit"
-  available={[
-    'hover',
-    'gravity',
-    'velocity',
-    'centripetal',
-    'galaxies',
-    'hill-sphere',
-    'lagrange-points',
-    'magnetosphere',
-    'sub-solar',
-    'planet-stats',
-  ]}
-  historicalFoundations={[
-    { tab: 'history', section: 'keplers-laws-1609', label: "Kepler's three laws, 1609" },
-    { tab: 'history', section: 'newton-principia-1687', label: 'Newton · Principia, 1687' },
-  ]}
+  title={lensPanel.title}
+  body={lensPanel.body}
+  tab={lensPanel.tab}
+  section={lensPanel.section}
+  available={lensPanel.available}
+  historicalFoundations={lensPanel.historicalFoundations}
 />
 
 <style>

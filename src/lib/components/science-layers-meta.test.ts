@@ -40,8 +40,23 @@ import * as m from '$lib/paraglide/messages';
 // new one lands hardcoded, add it here (or, preferably, add the key).
 const HARDCODED_IN_COMPONENT = new Set<string>([]);
 
+// WS-3 (RFC-037 Contract D): the /explore teaching layers reuse their former
+// chip label keys instead of minting duplicate `science_layer_<key>_label`
+// strings (labels stay identical; only descriptions + learn links are new). The
+// coverage guarantee — every layer has a real, non-empty label source — still
+// holds; the source is just the reused key named here.
+const REUSED_LABEL_KEY: Record<string, string> = {
+  constellations: 'explore_constellations_toggle',
+  'deep-sky': 'explore_deep_sky_toggle',
+  'hr-diagram': 'explore_lens_hr',
+  'light-cones': 'explore_lens_causality',
+  'rotation-curve': 'explore_mw_lens_rotation',
+  'dark-matter-halo': 'explore_mw_lens_darkmatter',
+  'stellar-populations': 'explore_mw_lens_populations',
+};
+
 function paraglideKey(layer: string): string {
-  return `science_layer_${layer.replace(/-/g, '_')}_label`;
+  return REUSED_LABEL_KEY[layer] ?? `science_layer_${layer.replace(/-/g, '_')}_label`;
 }
 
 describe('ScienceLayersPanel — metaFor coverage', () => {

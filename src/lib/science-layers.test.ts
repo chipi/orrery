@@ -34,7 +34,7 @@ describe('science-layers — config', () => {
     expect(new Set(LAYER_ORDER)).toEqual(new Set(Object.keys(LAYER_DEFAULTS) as LayerKey[]));
   });
 
-  it('LAYER_ORDER has 31 layers (matches docs)', () => {
+  it('LAYER_ORDER has 39 layers (matches docs)', () => {
     // Tracked by README + user-guide as the sub-toggleable layer
     // count; this test breaks if a layer is added/removed without
     // doc update. 12th was ozone (v0.6); 13th added v0.7 = galaxies
@@ -56,7 +56,11 @@ describe('science-layers — config', () => {
     // (weight = the shared `gravity` layer; velocity = `velocity`).
     // 32nd added same day by the same epic — `ascent-losses`, the
     // gravity/drag/steering Δv-loss ledger panel (RFC-034 §11.2 · S8).
-    expect(LAYER_ORDER.length).toBe(32);
+    // 33rd–39th added 2026-08-08 by WS-3 (RFC-037 Contract D) — the /explore
+    // teaching layers unified into the science lens: constellations, deep-sky,
+    // hr-diagram, light-cones (neighbourhood) + rotation-curve, dark-matter-halo,
+    // stellar-populations (Milky Way).
+    expect(LAYER_ORDER.length).toBe(39);
   });
 });
 

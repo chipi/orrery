@@ -23,6 +23,22 @@ The narrative arc: Moon Map (prologue) → Solar System Explorer (Act 1) → Mis
 | Mission Arc | `/fly` | `src/routes/fly/+page.svelte` | Three.js 3D + Canvas 2D toggle |
 | Mission Catalog | `/missions` | `src/routes/missions/+page.svelte` | CSS grid card layout |
 | Earth Orbit | `/earth` | `src/routes/earth/+page.svelte` | Canvas 2D logarithmic scale |
+| Physics Lab | `/lab` | `src/routes/lab/+page.svelte` | SVG figures on the `station-blueprint` teal grid (Notebook / Focus; Canvas at T2) |
+
+*(This table predates several later surfaces — `/missions`, `/science`, `/iss`, `/programs`, etc. — and is maintained additively; the "six screens" framing in §overview is historical.)*
+
+---
+
+## §lab
+
+The Physics Lab (`/lab`) is a subsystem, not a single screen — **one card model rendered in three views** (specified in UXS-015; built per RFC-037).
+
+- A **card** is a formula instance: a kernel formula + bound inputs + optional wiring + the `FigureSpec` it emits. It is portable, serializable data.
+- **Notebook** (v1 home) — an ordered, narrated, exportable column of cards. Mobile-first.
+- **Focus** (v1 detail) — one card full-screen: big figure stage + control rail + `/science` derivation. Uses the `Panel` bottom-sheet on mobile.
+- **Canvas** (T2, second workspace) — a spatial graph with output→input wiring; desktop-first, read-only fallback on mobile.
+
+Cards **promote** from Canvas into a Notebook. The Lab reuses the shared tokens (§shared-tokens) and components (`Panel`, `ScienceChip`, `WhyPopover`, `.readout-grid`, `ImageCredit`) wholesale; the teal figure grid is `station-blueprint.ts`. Colour discipline: teal = figure/selection, **gold = explanation**, mars-red = fail-honest. The Lab is the first surface to persist state (see §state-persistence).
 
 ---
 
@@ -74,6 +90,8 @@ History API routing is locked in ADR-013 (superseding ADR-004). RFC-001 is close
 /missions?dest=MARS&status=ACTIVE&agency=NASA  Mission Catalog filtered (ADR-024)
 /earth                                         Earth Orbit
 /moon                                          Moon Map
+/lab                                           Physics Lab (empty Notebook)
+/lab?doc=<compact>                             Shared worksheet (URL-encoded card graph; grammar frozen in RFC-037 D-serialize)
 ```
 
 Routes resolve client-side via SvelteKit's router. Servers must serve `index.html` for unmatched paths (`try_files $uri /index.html` in nginx, `404.html` SPA-redirect on GitHub Pages — see ADR-014).
@@ -165,9 +183,11 @@ color-spacex:     #005288
 
 ## §state-persistence
 
-No state is persisted between sessions. `localStorage` and `sessionStorage` are not used. All screen state is held in memory and reset on navigation.
+No state is persisted between sessions on the original surfaces. All screen state is held in memory and reset on navigation.
 
-The one exception is URL-encoded state: mission ID and filter params in the URL hash allow a specific view to be bookmarked and shared.
+The one cross-surface exception is URL-encoded state: mission ID and filter params allow a specific view to be bookmarked and shared.
+
+**The Physics Lab (`/lab`) is the deliberate exception** — a worksheet is a document the user builds, so it persists: URL-compact for sharing, `localStorage` for the working session, and a `.orrlab.json` export/import for durable documents (one codec, RFC-037 §5 / D-serialize). This is scoped to `/lab`; the other surfaces remain memory-only.
 
 ---
 
@@ -209,3 +229,4 @@ SvelteKit's standard entry: `src/app.html` is the document shell; `src/routes/+l
 |---|---|---|
 | v1.0 | April 2026 | Initial version — surfaces, tokens, shell regions extracted from 05_Design_System.md and six prototypes |
 | v1.1 | April 2026 | §overview, §surfaces, §navigation, §url-structure, §entry-points updated to reflect History API routing (ADR-013) and SvelteKit routes/components (ADR-012). Hash-routing examples replaced with clean URLs. |
+| v1.2 | August 2026 | Added §lab (Physics Lab surface — one card model, three views; UXS-015 / RFC-037 / PRD-033), §surfaces + §url-structure rows for `/lab`, and the §state-persistence exception for Lab worksheet persistence. |

@@ -104,78 +104,85 @@
 </Panel>
 
 <style>
+  /* Aligned to the shared detail-panel family (StarPanel / DeepSkyPanel /
+     MilkyWayPanel): rem units, var(--muted)/var(--text) tokens, teal #4ecdc4
+     accent — NOT bespoke px / colours. */
   .sub {
-    font-size: 11px;
-    color: var(--muted, #8aa0b8);
-    letter-spacing: 0.4px;
-    margin: 0 0 12px;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--muted, #9aa4bf);
+    margin: 0 0 0.75rem;
   }
   .status {
     list-style: none;
-    margin: 0 0 4px;
+    margin: 0 0 0.5rem;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 0.4rem;
   }
   .status li {
     display: flex;
-    gap: 9px;
+    gap: 0.5rem;
     align-items: flex-start;
-    font-size: 12.5px;
+    font-size: 0.82rem;
     line-height: 1.45;
+    color: var(--text, #e9eefc);
   }
   .dot {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    margin-top: 5px;
+    margin-top: 0.3rem;
     flex: none;
   }
   .d-dist {
-    background: #7fd4ff;
+    background: #4ecdc4;
   }
   .d-inter {
-    background: #ffd33d;
+    background: #ffc850;
   }
   .block {
-    margin-top: 15px;
-    padding-top: 13px;
-    border-top: 1px solid rgba(154, 166, 189, 0.18);
+    margin-top: 0.9rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
   .block-h {
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--muted, #6f8aa6);
-    margin: 0 0 7px;
+    color: var(--muted, #9aa4bf);
+    margin: 0 0 0.4rem;
   }
   .heading {
-    font-size: 12.5px;
+    font-size: 0.82rem;
     line-height: 1.5;
     margin: 0;
+    color: var(--text, #e9eefc);
   }
   .arrow {
-    color: #7fd4ff;
+    color: #4ecdc4;
     font-weight: 700;
   }
   .body {
-    font-size: 12px;
-    line-height: 1.55;
+    font-size: 0.85rem;
+    line-height: 1.5;
     margin: 0;
+    color: var(--text, #e9eefc);
   }
   .muted {
-    color: var(--muted, #8aa0b8);
+    color: var(--muted, #9aa4bf);
   }
   .mission-link {
-    margin-top: 16px;
+    display: inline-block;
+    margin-top: 0.9rem;
     padding: 0;
     background: none;
     border: none;
-    color: #7fd4ff;
+    color: #4ecdc4;
     font: inherit;
-    font-size: 12px;
-    letter-spacing: 0.4px;
+    font-size: 0.8rem;
+    font-weight: 600;
     cursor: pointer;
   }
   .mission-link:hover,

@@ -305,7 +305,39 @@ export function createExploreSceneHost(bridge: any, deps: any) {
         getMilkyWaySchematic(fetch),
       ]);
       if (!data) return null;
-      bridge.mwObjects = data.objects;
+      // #451 (WS-2) — merge the globulars, Magellanic Clouds, and (clickable)
+      // arms into the selectable set so the existing selectMilkyWay → MilkyWayPanel
+      // flow surfaces them all, not just the Sun + Sag A*.
+      bridge.mwObjects = [
+        ...data.objects,
+        ...(data.globulars ?? []).map((g: any) => ({
+          id: g.id,
+          name: g.name,
+          kind: 'globular-cluster',
+          x: g.x,
+          z: g.z,
+          dist_from_sun_ly: g.dist_from_sun_ly,
+          science_section: 'our-galaxy',
+        })),
+        ...(data.magellanic ?? []).map((m: any) => ({
+          id: m.id,
+          name: m.name,
+          kind: 'satellite-galaxy',
+          x: m.x,
+          z: m.z,
+          dist_from_sun_ly: m.dist_from_sun_ly,
+          diam_kly: m.diam_kly,
+          science_section: 'galaxy-types',
+        })),
+        ...data.arms.map((a: any) => ({
+          id: a.id,
+          name: a.name,
+          kind: 'spiral-arm',
+          x: a.label_x,
+          z: a.label_z,
+          science_section: a.science_section ?? 'our-galaxy',
+        })),
+      ];
       // Cinematic bloom — reuse the device quality tier's bloom budget so it
       // scales gracefully (disabled on minimal/low, stronger on cinematic).
       mwScene = mod.createMilkyWayScene(data, {
@@ -3318,6 +3350,9 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     exitNeighborhoodFn,
     resetNeighborhoodFn,
     resetMilkyWayFn,
+    // #451 (WS-2) — toggle a Milky Way science-lens overlay. Arrow reads mwScene
+    // at call time (it's lazily built on first MW crossing).
+    setMilkyWayLens: (key: string, on: boolean) => mwScene?.setLens(key, on),
     resetLocalGroupFn,
     exitBodySceneFn,
     exitMilkyWayFn,

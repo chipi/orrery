@@ -1093,6 +1093,20 @@
   // Same, for the Milky Way + Local Group scales.
   let resetMilkyWayFn: (() => void) | null = null;
   let resetLocalGroupFn: (() => void) | null = null;
+  // #451 (WS-2) — the first Milky Way science lens (rotation curve · dark-matter
+  // halo · stellar populations), gated on the global science lens like the
+  // neighborhood's HR + causality overlays.
+  type MwLensKey = 'rotation-curve' | 'dark-matter-halo' | 'stellar-populations';
+  let setMwLensFn: ((key: string, on: boolean) => void) | null = null;
+  let mwLens = $state<Record<MwLensKey, boolean>>({
+    'rotation-curve': false,
+    'dark-matter-halo': false,
+    'stellar-populations': false,
+  });
+  function toggleMwLens(key: MwLensKey): void {
+    mwLens[key] = !mwLens[key];
+    setMwLensFn?.(key, mwLens[key]);
+  }
   // Slice 2: leave an exoplanet BodyScene back out to the neighborhood.
   let exitBodySceneFn: (() => void) | null = null;
   // Slice 5: leave the Milky Way context back in to the neighborhood.
@@ -2248,6 +2262,7 @@
     exitNeighborhoodFn = exploreHost.exitNeighborhoodFn;
     resetNeighborhoodFn = exploreHost.resetNeighborhoodFn;
     resetMilkyWayFn = exploreHost.resetMilkyWayFn;
+    setMwLensFn = exploreHost.setMilkyWayLens;
     resetLocalGroupFn = exploreHost.resetLocalGroupFn;
     exitBodySceneFn = exploreHost.exitBodySceneFn;
     exitMilkyWayFn = exploreHost.exitMilkyWayFn;
@@ -2399,9 +2414,17 @@
         >{m.science_learn_more()} →</a
       >
     </div>
+    <!-- #451 (WS-2) — a distance reference for the MW shell (the disk diameter is
+         a real fact; the generic AU-based scale bar has no kpc rung). -->
+    <div class="mw-scale" role="note">{m.explore_mw_scale_note()}</div>
   {/if}
   {#if view === '3d' && contextId === 'local-group' && !activeBlackHole}
-    <div class="mw-badge" role="note">{m.explore_lg_schematic_badge()}</div>
+    <div class="mw-badge" role="note">
+      {m.explore_lg_schematic_badge()}
+      <a class="mw-badge-link" href="{base}/science/observation/local-group"
+        >{m.science_learn_more()} →</a
+      >
+    </div>
   {/if}
 
   <!-- Slice 6: the black-hole render is a geodesic GR ray-trace — label it. -->
@@ -2554,6 +2577,43 @@
       onSelect={(id) => indexSelectStarFn?.(id)}
       onClose={() => (starIndexOpen = false)}
     />
+  {/if}
+
+  <!-- #451 (WS-2) — Milky Way science lens: rotation curve / dark-matter halo /
+       stellar populations. Only under the science lens (like the neighborhood
+       HR + causality chips). -->
+  {#if view === '3d' && contextId === 'milky-way' && !activeBlackHole && layerState.lens}
+    <div class="nb-hud deep-space" role="group" aria-label={m.ui_view_controls()}>
+      <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
+        <button
+          type="button"
+          class="chip"
+          class:active={mwLens['rotation-curve']}
+          aria-pressed={mwLens['rotation-curve']}
+          onclick={() => toggleMwLens('rotation-curve')}
+        >
+          {m.explore_mw_lens_rotation()}
+        </button>
+        <button
+          type="button"
+          class="chip"
+          class:active={mwLens['dark-matter-halo']}
+          aria-pressed={mwLens['dark-matter-halo']}
+          onclick={() => toggleMwLens('dark-matter-halo')}
+        >
+          {m.explore_mw_lens_darkmatter()}
+        </button>
+        <button
+          type="button"
+          class="chip"
+          class:active={mwLens['stellar-populations']}
+          aria-pressed={mwLens['stellar-populations']}
+          onclick={() => toggleMwLens('stellar-populations')}
+        >
+          {m.explore_mw_lens_populations()}
+        </button>
+      </div>
+    </div>
   {/if}
 
   <!-- v2 scale ruler (PRD-030 / RFC-032): the fitting distance measure for the
@@ -3817,6 +3877,25 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 20px;
     backdrop-filter: blur(5px);
+    pointer-events: none;
+  }
+
+  /* #451 (WS-2) — MW distance reference, lower-left. */
+  .mw-scale {
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    z-index: 6;
+    padding: 5px 11px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9fb2cf;
+    background: rgba(10, 14, 26, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    backdrop-filter: blur(4px);
     pointer-events: none;
   }
 

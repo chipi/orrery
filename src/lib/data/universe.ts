@@ -229,11 +229,20 @@ export async function getDeepSkyGallery(fetchFn: FetchLike = fetch): Promise<Dee
 export interface MilkyWayObject {
   id: string;
   name: string;
-  kind: 'supermassive-black-hole' | 'star';
+  kind:
+    | 'supermassive-black-hole'
+    | 'star'
+    | 'globular-cluster'
+    | 'satellite-galaxy'
+    | 'spiral-arm';
   x: number;
   z: number;
   mass_solar?: number;
   dist_from_sun_ly?: number;
+  /** #451 (WS-2) — the Sun's distance from the Galactic Centre, for its panel. */
+  galactocentric_ly?: number;
+  /** #451 (WS-2) — satellite-galaxy diameter (Magellanic Clouds). */
+  diam_kly?: number;
   arm?: string;
   science_section: string;
 }
@@ -243,6 +252,30 @@ export interface MilkyWayArm {
   label_x: number;
   label_z: number;
   minor: boolean;
+  /** #451 (WS-2) — arm → science article (arms become clickable). */
+  science_section?: string;
+}
+/** #451 (WS-2) — a halo globular cluster (schematic position, real distance). */
+export interface MilkyWayGlobular {
+  id: string;
+  name: string;
+  dist_from_sun_ly: number;
+  x: number;
+  z: number;
+  headliner: boolean;
+}
+/** #451 (WS-2) — a Magellanic Cloud (schematic disc-edge position, real distance). */
+export interface MilkyWayMagellanic {
+  id: string;
+  name: string;
+  dist_from_sun_ly: number;
+  x: number;
+  z: number;
+  diam_kly?: number;
+}
+export interface MilkyWayBar {
+  half_length_kpc: number;
+  position_angle_deg: number;
 }
 export interface MilkyWaySchematic {
   disk_radius_kpc: number;
@@ -250,6 +283,10 @@ export interface MilkyWaySchematic {
   sun_galactocentric_ly: number;
   objects: MilkyWayObject[];
   arms: MilkyWayArm[];
+  /** #451 (WS-2) — the galactic bar, globular halo, Magellanic Clouds. */
+  bar?: MilkyWayBar;
+  globulars?: MilkyWayGlobular[];
+  magellanic?: MilkyWayMagellanic[];
 }
 let milkyWayCache: Promise<MilkyWaySchematic | null> | null = null;
 /** The Milky Way schematic (cached), or null if unavailable. */

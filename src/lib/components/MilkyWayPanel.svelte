@@ -19,9 +19,34 @@
   };
   let { object, learnHref, open, onClose }: Props = $props();
 
-  let isBH = $derived(object?.kind === 'supermassive-black-hole');
-  let kindLabel = $derived(isBH ? m.explore_mw_kind_black_hole() : m.explore_mw_kind_star());
-  let blurb = $derived(isBH ? m.explore_mw_sag_a_blurb() : m.explore_mw_sun_blurb());
+  let kindLabel = $derived.by(() => {
+    switch (object?.kind) {
+      case 'supermassive-black-hole':
+        return m.explore_mw_kind_black_hole();
+      case 'globular-cluster':
+        return m.explore_mw_kind_globular();
+      case 'satellite-galaxy':
+        return m.explore_mw_kind_satellite();
+      case 'spiral-arm':
+        return m.explore_mw_kind_arm();
+      default:
+        return m.explore_mw_kind_star();
+    }
+  });
+  let blurb = $derived.by(() => {
+    switch (object?.kind) {
+      case 'supermassive-black-hole':
+        return m.explore_mw_sag_a_blurb();
+      case 'globular-cluster':
+        return m.explore_mw_globular_blurb();
+      case 'satellite-galaxy':
+        return m.explore_mw_satellite_blurb();
+      case 'spiral-arm':
+        return m.explore_mw_arm_blurb();
+      default:
+        return m.explore_mw_sun_blurb();
+    }
+  });
   let title = $derived(object?.name ?? '');
   const fmt = (n: number): string => n.toLocaleString(undefined, { maximumFractionDigits: 0 });
 </script>
@@ -47,10 +72,20 @@
       {/if}
       {#if object.dist_from_sun_ly}
         <div class="cell">
-          <div class="cell-label">
-            {isBH ? m.explore_mw_label_dist_sun() : m.explore_mw_label_dist_centre()}
-          </div>
+          <div class="cell-label">{m.explore_mw_label_dist_sun()}</div>
           <div class="cell-value">{fmt(object.dist_from_sun_ly)} ly</div>
+        </div>
+      {/if}
+      {#if object.galactocentric_ly}
+        <div class="cell">
+          <div class="cell-label">{m.explore_mw_label_dist_centre()}</div>
+          <div class="cell-value">{fmt(object.galactocentric_ly)} ly</div>
+        </div>
+      {/if}
+      {#if object.diam_kly}
+        <div class="cell">
+          <div class="cell-label">{m.explore_mw_label_diam()}</div>
+          <div class="cell-value">{fmt(object.diam_kly * 1000)} ly</div>
         </div>
       {/if}
       {#if object.arm}

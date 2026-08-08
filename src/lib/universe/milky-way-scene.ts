@@ -15,6 +15,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import type { MilkyWaySchematic } from '$lib/data';
+import * as m from '$lib/paraglide/messages';
 import {
   galacticToScene,
   logSpiralPoint,
@@ -33,6 +34,9 @@ export interface MilkyWayScene {
   objectPosition(id: string): THREE.Vector3 | null;
   /** Emphasize one pin (hover/selection), or clear with null. */
   highlight(id: string | null): void;
+  /** #451 (WS-2) — toggle a science-lens overlay:
+   *  'dark-matter-halo' | 'rotation-curve' | 'stellar-populations'. */
+  setLens(key: string, on: boolean): void;
   /** Per-frame: keep pins screen-constant + pulse the highlight. */
   update(camera: THREE.Camera): void;
   /** Render with the cinematic bloom composer (call instead of renderer.render).
@@ -127,7 +131,8 @@ interface Pin {
   id: string;
   glow: THREE.Sprite;
   ring?: THREE.Sprite;
-  label: THREE.Sprite;
+  /** Optional — non-headliner globulars are label-less until hovered/picked. */
+  label?: THREE.Sprite;
   labelAspect: number;
   position: THREE.Vector3;
   baseScale: number;
@@ -393,7 +398,8 @@ export function createMilkyWayScene(
   dustPlane.renderOrder = 4;
   scene.add(dustPlane);
 
-  // ── Arm labels (always on, faint) ───────────────────────────────────────
+  // ── Arm labels (always on, faint) — #451 (WS-2) now clickable ────────────
+  const armPickables: THREE.Sprite[] = [];
   for (const arm of data.arms) {
     if (arm.id === 'orion-spur') continue; // labelled at the Sun pin instead
     const [lx, , lz] = galacticToScene(arm.label_x, arm.label_z, diskR);
@@ -403,13 +409,15 @@ export function createMilkyWayScene(
     sprite.scale.set(h * aspect, h, 1);
     sprite.position.set(lx, 0, lz);
     sprite.renderOrder = 5;
+    sprite.userData.mwObjectId = arm.id;
     scene.add(sprite);
+    armPickables.push(sprite);
   }
 
   // ── Pins: Sagittarius A* (centre) + the Sun (Orion Spur) ────────────────
   const pins: Pin[] = [];
   const byId = new Map<string, Pin>();
-  const pickables: THREE.Object3D[] = [];
+  const pickables: THREE.Object3D[] = [...armPickables];
 
   for (const obj of data.objects) {
     const [x, , z] = galacticToScene(obj.x, obj.z, diskR);
@@ -496,6 +504,218 @@ export function createMilkyWayScene(
     byId.set(obj.id, pin);
   }
 
+  // ── #451 (WS-2) galactic bar — an elongated warm core glow, rotated to the
+  //    bar's position angle. Schematic (the Galaxy is a barred spiral); a flat
+  //    ellipse in the disc plane, under the particle disk. Not pickable.
+  if (data.bar) {
+    const barTex = track(
+      radialTexture([
+        [0, 'rgba(255,226,176,0.5)'],
+        [0.55, 'rgba(255,214,150,0.22)'],
+        [1, 'rgba(255,210,150,0)'],
+      ]),
+    );
+    const barMesh = new THREE.Mesh(
+      new THREE.PlaneGeometry(1, 1),
+      track(
+        new THREE.MeshBasicMaterial({
+          map: barTex,
+          transparent: true,
+          depthTest: false,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+        }),
+      ),
+    );
+    disposables.push(barMesh.geometry);
+    barMesh.rotation.x = -Math.PI / 2; // lie flat in the XZ disc plane
+    const barLen = data.bar.half_length_kpc * 2 * scale * 1.15;
+    barMesh.scale.set(barLen, barLen * 0.34, 1);
+    const barGroup = new THREE.Group();
+    barGroup.rotation.y = (data.bar.position_angle_deg * Math.PI) / 180;
+    barGroup.position.y = -0.4; // just beneath the disk particles
+    barGroup.add(barMesh);
+    barGroup.renderOrder = 4;
+    scene.add(barGroup);
+  }
+
+  // ── #451 (WS-2) globular-cluster halo — pale glow pins scattered off the disc.
+  //    Pickable; headliners (ω Cen · 47 Tuc · M13) get a label. Real distances,
+  //    schematic positions (see the data _note).
+  for (const g of data.globulars ?? []) {
+    const [gx, , gz] = galacticToScene(g.x, g.z, diskR);
+    const position = new THREE.Vector3(gx, 0, gz);
+    const glow = new THREE.Sprite(
+      track(
+        new THREE.SpriteMaterial({
+          map: track(
+            radialTexture([
+              [0, 'rgba(226,232,255,0.82)'],
+              [0.5, 'rgba(198,214,255,0.36)'],
+              [1, 'rgba(176,200,255,0)'],
+            ]),
+          ),
+          transparent: true,
+          depthTest: false,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+        }),
+      ),
+    );
+    glow.position.copy(position);
+    glow.userData.mwObjectId = g.id;
+    glow.renderOrder = 10;
+    scene.add(glow);
+    pickables.push(glow);
+    let label: THREE.Sprite | undefined;
+    let labelAspect = 1;
+    if (g.headliner) {
+      const {
+        sprite,
+        texture: labelTex,
+        aspect,
+      } = labelSprite(g.name, 'rgba(200,214,255,0.85)', 'normal');
+      disposables.push(labelTex, sprite.material as THREE.SpriteMaterial);
+      sprite.position.copy(position);
+      sprite.renderOrder = 11;
+      scene.add(sprite);
+      label = sprite;
+      labelAspect = aspect;
+    }
+    const pin: Pin = { id: g.id, glow, label, labelAspect, position, baseScale: 0.05 };
+    pins.push(pin);
+    byId.set(g.id, pin);
+  }
+
+  // ── #451 (WS-2) the Magellanic Clouds — fuzzy satellite blobs at the disc edge.
+  //    Pickable + labelled. Schematic placement, real distances.
+  for (const mc of data.magellanic ?? []) {
+    const [mx, , mz] = galacticToScene(mc.x, mc.z, diskR);
+    const position = new THREE.Vector3(mx, 0, mz);
+    const glow = new THREE.Sprite(
+      track(
+        new THREE.SpriteMaterial({
+          map: track(
+            radialTexture([
+              [0, 'rgba(214,226,255,0.6)'],
+              [0.45, 'rgba(190,210,255,0.28)'],
+              [1, 'rgba(170,196,255,0)'],
+            ]),
+          ),
+          transparent: true,
+          depthTest: false,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+        }),
+      ),
+    );
+    glow.position.copy(position);
+    glow.userData.mwObjectId = mc.id;
+    glow.renderOrder = 10;
+    scene.add(glow);
+    pickables.push(glow);
+    const {
+      sprite,
+      texture: labelTex,
+      aspect,
+    } = labelSprite(mc.name, 'rgba(200,214,255,0.8)', 'normal');
+    disposables.push(labelTex, sprite.material as THREE.SpriteMaterial);
+    sprite.position.copy(position);
+    sprite.renderOrder = 11;
+    scene.add(sprite);
+    const pin: Pin = {
+      id: mc.id,
+      glow,
+      label: sprite,
+      labelAspect: aspect,
+      position,
+      baseScale: 0.11,
+    };
+    pins.push(pin);
+    byId.set(mc.id, pin);
+  }
+
+  // ── #451 (WS-2) science-lens overlays — hidden until the lens toggles them ──
+  const mkOverlayLabel = (text: string, color: string, wFrac: number): THREE.Sprite => {
+    const { sprite, texture, aspect } = labelSprite(text, color, 'normal');
+    disposables.push(texture, sprite.material as THREE.SpriteMaterial);
+    const h = R * wFrac;
+    sprite.scale.set(h * aspect, h, 1);
+    sprite.renderOrder = 12;
+    return sprite;
+  };
+
+  // Dark-matter halo: a vast faint glow far beyond the visible disc + a label.
+  const dmGroup = new THREE.Group();
+  dmGroup.visible = false;
+  const dmHalo = new THREE.Sprite(
+    track(
+      new THREE.SpriteMaterial({
+        map: track(
+          radialTexture([
+            [0, 'rgba(120,150,255,0.12)'],
+            [0.55, 'rgba(110,140,255,0.06)'],
+            [1, 'rgba(110,140,255,0)'],
+          ]),
+        ),
+        transparent: true,
+        depthTest: false,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    ),
+  );
+  dmHalo.scale.setScalar(R * 4.6);
+  dmHalo.position.set(0, -1, 0);
+  dmHalo.renderOrder = 2;
+  dmGroup.add(dmHalo);
+  const dmLabel = mkOverlayLabel(m.explore_mw_lens_dm_label(), 'rgba(160,185,255,0.9)', 0.05);
+  dmLabel.position.set(0, 0, -R * 2.1);
+  dmGroup.add(dmLabel);
+  scene.add(dmGroup);
+
+  // Rotation curve: concentric rings, each tagged with the ~flat orbital speed.
+  const rcGroup = new THREE.Group();
+  rcGroup.visible = false;
+  for (const frac of [0.4, 0.65, 0.9, 1.15]) {
+    const rr = R * frac;
+    const pts: THREE.Vector3[] = [];
+    for (let i = 0; i <= 72; i++) {
+      const a = (i / 72) * Math.PI * 2;
+      pts.push(new THREE.Vector3(Math.cos(a) * rr, 0, Math.sin(a) * rr));
+    }
+    const ring = new THREE.LineLoop(
+      track(new THREE.BufferGeometry().setFromPoints(pts)),
+      track(new THREE.LineBasicMaterial({ color: 0x66ccff, transparent: true, opacity: 0.38 })),
+    );
+    ring.renderOrder = 6;
+    rcGroup.add(ring);
+    const tag = mkOverlayLabel(m.explore_mw_lens_rc_speed(), 'rgba(120,205,255,0.9)', 0.03);
+    tag.position.set(0, 0, -rr);
+    rcGroup.add(tag);
+  }
+  const rcLabel = mkOverlayLabel(m.explore_mw_lens_rc_label(), 'rgba(120,205,255,0.92)', 0.045);
+  rcLabel.position.set(0, 0, R * 1.45);
+  rcGroup.add(rcLabel);
+  scene.add(rcGroup);
+
+  // Stellar populations: label the old bulge/halo vs the young disc/arms.
+  const spGroup = new THREE.Group();
+  spGroup.visible = false;
+  const spOld = mkOverlayLabel(m.explore_mw_lens_pop_old(), 'rgba(255,200,150,0.92)', 0.045);
+  spOld.position.set(0, 0, -R * 0.28);
+  spGroup.add(spOld);
+  const spYoung = mkOverlayLabel(m.explore_mw_lens_pop_young(), 'rgba(150,205,255,0.92)', 0.045);
+  spYoung.position.set(0, 0, R * 0.75);
+  spGroup.add(spYoung);
+  scene.add(spGroup);
+
+  const lensGroups: Record<string, THREE.Group> = {
+    'dark-matter-halo': dmGroup,
+    'rotation-curve': rcGroup,
+    'stellar-populations': spGroup,
+  };
+
   let highlightId: string | null = null;
   const _cam = new THREE.Vector3();
 
@@ -534,6 +754,10 @@ export function createMilkyWayScene(
     highlight(id) {
       highlightId = id;
     },
+    setLens(key, on) {
+      const g = lensGroups[key];
+      if (g) g.visible = on;
+    },
     update(camera) {
       camera.getWorldPosition(_cam);
       for (const pin of pins) {
@@ -542,9 +766,15 @@ export function createMilkyWayScene(
         const g = dist * pin.baseScale * (hi ? 1.5 : 1);
         pin.glow.scale.setScalar(g);
         if (pin.ring) pin.ring.scale.setScalar(g * 1.6);
-        const lh = dist * 0.038;
-        pin.label.scale.set(lh * pin.labelAspect, lh, 1);
-        pin.label.position.set(pin.position.x, pin.position.y + g * 0.9 + lh * 0.7, pin.position.z);
+        if (pin.label) {
+          const lh = dist * 0.038;
+          pin.label.scale.set(lh * pin.labelAspect, lh, 1);
+          pin.label.position.set(
+            pin.position.x,
+            pin.position.y + g * 0.9 + lh * 0.7,
+            pin.position.z,
+          );
+        }
       }
     },
     render(renderer, camera) {

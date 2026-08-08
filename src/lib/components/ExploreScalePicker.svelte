@@ -50,6 +50,8 @@
         return m.explore_ctx_local_sheet();
       case 'virgo':
         return m.explore_ctx_virgo();
+      case 'laniakea':
+        return m.explore_ctx_laniakea();
     }
   }
 

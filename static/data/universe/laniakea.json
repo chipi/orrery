@@ -1,0 +1,95 @@
+{
+  "_note": "The Laniakea Supercluster (WS-5c, RFC-037) — the ~160 Mpc basin of attraction our Virgo Supercluster is one lobe of, defined by Tully et al. (2014) as the region where galaxy flows all stream toward a common gravitational focus, the Great Attractor. A SCHEMATIC, NOT TO SCALE (PRD-030 principle 2): the Virgo Supercluster sits at the origin as the 'you are here' anchor out on Laniakea's edge, the Great Attractor is the dominant central focus, and the other constituent superclusters/clusters are placed in an illustrative layout flattened toward the supergalactic plane (small z). This is a selected sample of Laniakea's named components, not the full roster. Distances (dist_mpc) + classifications are real; the xyz layout is hand-authored for legibility.",
+  "_provenance": "Distances + types: Tully et al. (2014) Nature 'The Laniakea supercluster of galaxies'; NASA/IPAC NED; Cosmicflows-2 velocity field. Schematic positions hand-authored for legibility. Science-reviewed 2026-08-08 (Great Attractor→68 Mpc, Centaurus→52 Mpc, Hydra-Centaurus→45 Mpc; Ophiuchus Supercluster added).",
+  "extent_mpc": 160,
+  "members": [
+    {
+      "id": "virgo-supercluster",
+      "name": "Virgo Supercluster",
+      "kind": "supercluster",
+      "headliner": true,
+      "dist_mpc": 0,
+      "diam_mly": 110,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    {
+      "id": "great-attractor",
+      "name": "Great Attractor (Norma)",
+      "kind": "attractor",
+      "headliner": true,
+      "dist_mpc": 68,
+      "diam_mly": 90,
+      "x": 45,
+      "y": 2,
+      "z": 10
+    },
+    {
+      "id": "hydra-centaurus",
+      "name": "Hydra–Centaurus Supercluster",
+      "kind": "supercluster",
+      "headliner": true,
+      "dist_mpc": 45,
+      "diam_mly": 80,
+      "x": 34,
+      "y": -3,
+      "z": 18
+    },
+    {
+      "id": "centaurus-cluster",
+      "name": "Centaurus Cluster (A3526)",
+      "kind": "cluster",
+      "headliner": false,
+      "dist_mpc": 52,
+      "diam_mly": 40,
+      "x": 38,
+      "y": 1,
+      "z": 6
+    },
+    {
+      "id": "pavo-indus",
+      "name": "Pavo–Indus Supercluster",
+      "kind": "supercluster",
+      "headliner": false,
+      "dist_mpc": 70,
+      "diam_mly": 70,
+      "x": 40,
+      "y": -2,
+      "z": -22
+    },
+    {
+      "id": "ophiuchus-supercluster",
+      "name": "Ophiuchus Supercluster",
+      "kind": "supercluster",
+      "headliner": false,
+      "dist_mpc": 119,
+      "diam_mly": 60,
+      "x": 62,
+      "y": 2.5,
+      "z": -6
+    },
+    {
+      "id": "fornax-eridanus",
+      "name": "Fornax–Eridanus (Southern)",
+      "kind": "supercluster",
+      "headliner": false,
+      "dist_mpc": 20,
+      "diam_mly": 45,
+      "x": 12,
+      "y": -1.5,
+      "z": -20
+    },
+    {
+      "id": "antlia-cluster",
+      "name": "Antlia Cluster",
+      "kind": "cluster",
+      "headliner": false,
+      "dist_mpc": 40,
+      "diam_mly": 30,
+      "x": 26,
+      "y": 0.5,
+      "z": 12
+    }
+  ]
+}

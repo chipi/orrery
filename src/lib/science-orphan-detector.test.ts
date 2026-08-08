@@ -58,6 +58,10 @@ const ORPHAN_ALLOWLIST: AllowlistEntry[] = [
     reason: 'PERMANENT-BROWSE — cosmology tab; /explore Virgo lens links it',
   },
   {
+    id: 'cosmology/laniakea-and-the-great-attractor',
+    reason: 'PERMANENT-BROWSE — cosmology tab; /explore Laniakea lens links it',
+  },
+  {
     id: 'cosmology/cosmic-distance-ladder',
     reason: 'PERMANENT-BROWSE — cosmology tab; underpins every outer-shell distance',
   },

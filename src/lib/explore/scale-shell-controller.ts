@@ -24,6 +24,7 @@ export const CTX_ORDER = [
   'local-group',
   'local-sheet',
   'virgo',
+  'laniakea',
 ] as const;
 export type ShellId = (typeof CTX_ORDER)[number];
 

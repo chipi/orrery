@@ -894,7 +894,17 @@
     "explore_virgo_anchor_blurb": "आप यहाँ हैं, महासुपरक्लस्टर के किनारे पर। संपूर्ण स्थानीय समूह एक ही बिंदु है, कन्या महासुपरक्लस्टर में फैले कई समूहों में से एक, और कन्या समूह की ओर धीरे-धीरे गिर रहा है।",
     "explore_lens_story_virgo_title": "कन्या महासुपरक्लस्टर",
     "explore_lens_story_virgo_body": "हमारा घर महासुपरक्लस्टर — सौ या अधिक आकाशगंगा समूह और समूह लगभग 33 मेगापार्सेक (लगभग 110 मिलियन प्रकाश-वर्ष, और कुछ परिभाषाओं के अनुसार बड़ा) में फैले हुए हैं, जो कन्या समूह द्वारा प्रभावित है। लंबे समय तक सोचा जाता था कि यह सबसे बड़ी संरचना है जिससे हम संबंधित हैं; लनियाकिया ने बाद में इसे कुछ बहुत बड़ी चीज़ का एक पालि होने का खुलासा किया।",
-    "science_tab_cosmology": "ब्रह्मांड विज्ञान"
+    "science_tab_cosmology": "ब्रह्मांड विज्ञान",
+    "explore_ctx_laniakea": "लनियाकिया",
+    "explore_laniakea_schematic_badge": "लनियाकिया सुपरक्लस्टर · आरेख · स्केल के अनुसार नहीं",
+    "explore_laniakea_kind_supercluster": "सुपरक्लस्टर",
+    "explore_laniakea_kind_cluster": "गैलेक्सी क्लस्टर",
+    "explore_laniakea_kind_attractor": "गुरुत्वाकर्षण केंद्र",
+    "explore_laniakea_blurb": "लनियाकिया के भीतर एक सुपरक्लस्टर या क्लस्टर — ~160-मेगापार्सेक आकर्षण बेसिन जिसका वर्गो सुपरक्लस्टर केवल एक पालि है। यहाँ सब कुछ, ब्रह्मांडीय समय में, एक ही गुरुत्वाकर्षण निम्न बिंदु की ओर प्रवाहित होता है: ग्रेट एट्रैक्टर।",
+    "explore_laniakea_anchor_blurb": "आप यहाँ हैं। संपूर्ण वर्गो सुपरक्लस्टर — स्थानीय समूह, वर्गो क्लस्टर, सब कुछ — लनियाकिया का एक ही पालि है, प्रवाह के किनारे पर जो ग्रेट एट्रैक्टर की ओर निकलता है।",
+    "explore_laniakea_attractor_blurb": "ग्रेट एट्रैक्टर — लनियाकिया का गुरुत्वाकर्षण निम्न बिंदु, नॉर्मा क्लस्टर के पास मिल्की वे के तल के पीछे। हजारों गैलेक्सियों की गतियाँ, हमारी अपनी सहित, सभी इस क्षेत्र की ओर झुकी हुई हैं; यह वही है जो लनियाकिया को एक एकल संरचना के रूप में परिभाषित करता है।",
+    "explore_lens_story_laniakea_title": "लनियाकिया",
+    "explore_lens_story_laniakea_body": "हवाईयन में 'विशाल आकाश' — 2014 में परिभाषित सुपरक्लस्टर जो यह नहीं बताता कि गैलेक्सियाँ कहाँ हैं बल्कि वे कहाँ प्रवाहित होती हैं। लगभग 160 मेगापार्सेक (500 मिलियन प्रकाश-वर्ष) व्यास में, लगभग 100,000 गैलेक्सियों को समाहित करते हुए, लनियाकिया वह आकर्षण बेसिन है जिसमें हमारा वर्गो सुपरक्लस्टर ग्रेट एट्रैक्टर की ओर निकलता है। और लनियाकिया, अपने पड़ोसियों के साथ, कुछ और बड़े की ओर एक व्यापक प्रवाह का हिस्सा है: शेपली सांद्रता।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -1653,7 +1663,17 @@
     "explore_virgo_anchor_blurb": "ここがあなたの位置です。超銀河団の端にいます。局所銀河群全体がたった1つの点であり、おとめ座超銀河団に点在する多くの銀河群の1つに過ぎず、ゆっくりとおとめ座銀河団に向かって落下しています。",
     "explore_lens_story_virgo_title": "おとめ座超銀河団",
     "explore_lens_story_virgo_body": "私たちの故郷超銀河団 — 100個以上の銀河群と銀河団が約33メガパーセク（約1億1,000万光年で、定義によってはさらに大きい）に広がり、おとめ座銀河団が支配しています。長い間、私たちが属する最大の構造だと考えられていましたが、ラニアケアの発見により、それがはるかに大きな構造の1つの葉状部であることが明らかになりました。",
-    "science_tab_cosmology": "宇宙論"
+    "science_tab_cosmology": "宇宙論",
+    "explore_ctx_laniakea": "ラニアケア",
+    "explore_laniakea_schematic_badge": "ラニアケア超銀河団・概略図・縮尺なし",
+    "explore_laniakea_kind_supercluster": "超銀河団",
+    "explore_laniakea_kind_cluster": "銀河団",
+    "explore_laniakea_kind_attractor": "重力焦点",
+    "explore_laniakea_blurb": "ラニアケア内の超銀河団または銀河団 — 約160メガパーセクの引力圏盆地であり、我々の処女座超銀河団はその一つの葉に過ぎない。ここにあるすべては、宇宙的時間スケールで同じ重力の最低点へ流れ込む：大アトラクタである。",
+    "explore_laniakea_anchor_blurb": "あなたはここにいます。全処女座超銀河団 — 局部銀河群、処女座銀河団、すべて — はラニアケアの単一の葉であり、大アトラクタへ向かう流れの縁上に位置している。",
+    "explore_laniakea_attractor_blurb": "大アトラクタ — ラニアケアの重力の最低点であり、銀河系の平面の背後の規矩座銀河団近くに位置する。数千個の銀河の運動、我々の銀河を含めすべてが、この領域へ傾斜している。これがラニアケアを単一の構造として定義するものである。",
+    "explore_lens_story_laniakea_title": "ラニアケア",
+    "explore_lens_story_laniakea_body": "ハワイ語で「広大な天」 — 銀河がどこに位置するかではなく、どこへ流れるかによって2014年に定義された超銀河団。約160メガパーセク（5億光年）の広がりで、約100,000個の銀河を含むラニアケアは、我々の処女座超銀河団が大アトラクタへ向かって流れ込む引力圏盆地である。そしてラニアケアはその近傍とともに、さらに大きな何かへ向かうより広い流れの一部である：シャプレー濃集。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -2591,7 +2611,17 @@
     "explore_virgo_anchor_blurb": "أنت هنا، على حافة العنقود العظيم. مجموعتنا المحلية بأكملها نقطة واحدة، واحدة من بين العديد من المجموعات الممتدة عبر العنقود العظيم العذراء والتي تسقط ببطء نحو عنقود العذراء.",
     "explore_lens_story_virgo_title": "العنقود العظيم العذراء",
     "explore_lens_story_virgo_body": "عنقودنا العظيم الموطن — مئة أو أكثر من مجموعات وعناقيد المجرات الممتدة عبر حوالي 33 ميجابارسيك (حوالي 110 ملايين سنة ضوئية، وأكبر بموجب بعض التعاريف)، يهيمن عليها عنقود العذراء. طالما اعتُقد أنه أكبر هيكل ننتمي إليه؛ لاحقاً كشف لانياكيا أنه أحد فصوص شيء أكبر بكثير.",
-    "science_tab_cosmology": "الكونيات"
+    "science_tab_cosmology": "الكونيات",
+    "explore_ctx_laniakea": "لانياكيا",
+    "explore_laniakea_schematic_badge": "مجموعة لانياكيا الفائقة · مخطط تخطيطي · غير مرسوم بمقياس",
+    "explore_laniakea_kind_supercluster": "مجموعة فائقة",
+    "explore_laniakea_kind_cluster": "مجموعة مجرات",
+    "explore_laniakea_kind_attractor": "البؤرة الثقالية",
+    "explore_laniakea_blurb": "مجموعة فائقة أو مجموعة مجرات ضمن لانياكيا — حوض الجذب الذي يبلغ حوالي 160 ميجابارسك، والذي تشكل مجموعة العذراء الفائقة حسب واحد فقط. كل شيء هنا ينجرف، عبر الزمن الكوني، نحو نفس النقطة الثقالية المنخفضة: الجاذب الأعظم.",
+    "explore_laniakea_anchor_blurb": "أنت هنا. مجموعة العذراء الفائقة بأكملها — المجموعة المحلية، مجموعة العذراء، كل ذلك — يشكل فصاً واحداً فقط من لانياكيا، على حافة التدفق الذي ينساب نحو الجاذب الأعظم.",
+    "explore_laniakea_attractor_blurb": "الجاذب الأعظم — النقطة الثقالية المنخفضة في لانياكيا، بالقرب من مجموعة نورما خلف مستوى قرص درب التبانة. تحركات آلاف المجرات، بما فيها مجرتنا، كلها تنحني نحو هذه المنطقة؛ وهو ما يعرّف لانياكيا كهيكل موحد.",
+    "explore_lens_story_laniakea_title": "لانياكيا",
+    "explore_lens_story_laniakea_body": "تعني 'السماء الهائلة' باللغة الهاوايية — المجموعة الفائقة التي عُرّفت عام 2014 ليس بمكان وجود المجرات بل باتجاه تدفقها. يبلغ عرضها حوالي 160 ميجابارسك (500 مليون سنة ضوئية)، وتحتوي على حوالي 100,000 مجرة؛ لانياكيا هي حوض الجذب الذي تنساب مجموعة العذراء الفائقة إليه، نحو الجاذب الأعظم. ولانياكيا، مع جيرانها، تشكل جزءاً من تدفق أوسع نحو شيء أكبر: تركز شابلي."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -3352,7 +3382,17 @@
     "explore_virgo_anchor_blurb": "당신은 여기, 초은하단의 가장자리에 있습니다. 전체 국부은하군은 단 한 점이며, 처녀자리 초은하단을 통해 펼쳐진 수많은 은하군 중 하나이고 천천히 처녀자리 은하단으로 떨어지고 있습니다.",
     "explore_lens_story_virgo_title": "처녀자리 초은하단",
     "explore_lens_story_virgo_body": "우리 집 초은하단 — 약 33메가파섹(약 1억 1,000만 광년, 일부 정의에 따르면 더 큼)에 걸쳐 펼쳐진 100개 이상의 은하군과 은하단으로 처녀자리 은하단이 지배하고 있습니다. 오랫동안 우리가 속한 최대 구조라고 생각했지만, 라니아케아는 이것이 훨씬 더 큰 것의 한 엽일 뿐임을 밝혀냈습니다.",
-    "science_tab_cosmology": "우주론"
+    "science_tab_cosmology": "우주론",
+    "explore_ctx_laniakea": "라니아케아",
+    "explore_laniakea_schematic_badge": "라니아케아 초은하단 · 개략도 · 축척 없음",
+    "explore_laniakea_kind_supercluster": "초은하단",
+    "explore_laniakea_kind_cluster": "은하단",
+    "explore_laniakea_kind_attractor": "중력 초점",
+    "explore_laniakea_blurb": "라니아케아 내의 초은하단 또는 은하단 — 우리의 처녀자리 초은하단이 단지 한 엽엽일 뿐인 약 160 메가파섹 규모의 중력 집수 분지. 이곳의 모든 것은 우주의 시간에 걸쳐 동일한 중력 저점인 대인력자(Great Attractor)로 흘러간다.",
+    "explore_laniakea_anchor_blurb": "당신은 여기입니다. 전체 처녀자리 초은하단 — 국부 은하군, 처녀자리 은하단, 모두 — 은 라니아케아의 단일 엽엽이며, 대인력자로 흘러가는 흐름의 가장자리에 있다.",
+    "explore_laniakea_attractor_blurb": "대인력자 — 라니아케아의 중력 저점이며, 은하수 평면 뒤의 노르마 은하단 근처에 위치. 수천 개의 은하들을 포함한 우리 은하의 운동이 모두 이 지역으로 향하며, 이것이 라니아케아를 단일 구조로 정의하는 것이다.",
+    "explore_lens_story_laniakea_title": "라니아케아",
+    "explore_lens_story_laniakea_body": "하와이어로 '광대한 하늘' — 2014년에 은하들이 어디에 위치하는지가 아니라 어디로 흘러가는지에 따라 정의된 초은하단. 약 160 메가파섹(5억 광년) 규모로, 약 100,000개의 은하를 포함하며, 라니아케아는 우리의 처녀자리 초은하단이 대인력자로 흘러가는 중력 집수 분지이다. 그리고 라니아케아는 이웃 구조들과 함께 더욱 거대한 무언가인 샤플리 집중(Shapley Concentration)을 향한 광범위한 흐름의 일부이다."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -4084,7 +4124,17 @@
     "explore_virgo_anchor_blurb": "Du befindest dich hier, am Rand des Superhaufens. Die gesamte Lokale Gruppe ist ein einzelner Punkt, eine von vielen Gruppen, die durch den Virgo-Superhaufen verteilt sind und langsam zum Virgo-Cluster fallen.",
     "explore_lens_story_virgo_title": "Der Virgo-Superhaufen",
     "explore_lens_story_virgo_body": "Unser Heimat-Superhaufen — hundert oder mehr Galaxiengruppen und -haufen über etwa 33 Megaparsec verteilt (etwa 110 Millionen Lichtjahre, und nach manchen Definitionen noch größer), dominiert vom Virgo-Cluster. Man hielt ihn lange für die größte Struktur, der wir angehören; Laniakea offenbarte später, dass er nur ein Lappen von etwas viel Größerem ist.",
-    "science_tab_cosmology": "KOSMOLOGIE"
+    "science_tab_cosmology": "KOSMOLOGIE",
+    "explore_ctx_laniakea": "Laniakea",
+    "explore_laniakea_schematic_badge": "Laniakea-Supercluster · Schematische Darstellung · nicht maßstabsgetreu",
+    "explore_laniakea_kind_supercluster": "Supercluster",
+    "explore_laniakea_kind_cluster": "Galaxienhaufen",
+    "explore_laniakea_kind_attractor": "Gravitativer Anziehungspunkt",
+    "explore_laniakea_blurb": "Ein Supercluster oder Galaxienhaufen innerhalb von Laniakea — des ~160-Megaparsec-Einzugsbereichs, von dem unser Virgo-Supercluster nur ein Lappen ist. Alles hier strömt über kosmische Zeiten hinweg zum gleichen gravitativen Tiefpunkt: dem Great Attractor.",
+    "explore_laniakea_anchor_blurb": "Du bist hier. Der gesamte Virgo-Supercluster — die Lokale Gruppe, der Virgo-Cluster, alles — ist ein einzelner Lappen von Laniakea, am Rand einer Strömung, die zum Great Attractor hinführt.",
+    "explore_laniakea_attractor_blurb": "Der Great Attractor — der gravitative Tiefpunkt von Laniakea, nahe des Norma-Clusters hinter der Ebene der Milchstraße. Die Bewegungen von Tausenden Galaxien, einschließlich unserer eigenen, neigen sich diesem Gebiet zu; es ist das, was Laniakea als einzige Struktur definiert.",
+    "explore_lens_story_laniakea_title": "Laniakea",
+    "explore_lens_story_laniakea_body": "‚Immenser Himmel' auf Hawaiianisch — der Supercluster, der 2014 definiert wurde nicht nach dem Ort der Galaxien, sondern nach ihrer Strömungsrichtung. Mit etwa 160 Megaparsec (500 Millionen Lichtjahre) Durchmesser und etwa 100.000 Galaxien ist Laniakea das Einzugsgebiet, in das unser Virgo-Supercluster zum Great Attractor hin abfließt. Und Laniakea bildet mit seinen Nachbarn Teil einer breiteren Strömung zu etwas noch Größerem hin: der Shapley-Konzentration."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -4823,7 +4873,17 @@
     "explore_virgo_anchor_blurb": "Vous êtes ici, à la lisière du superamas. Tout le Groupe local n'est qu'un point unique, l'un des nombreux groupes dispersés dans le Superamas de la Vierge et tombant, lentement, vers l'Amas de la Vierge.",
     "explore_lens_story_virgo_title": "Le Superamas de la Vierge",
     "explore_lens_story_virgo_body": "Notre superamas natal — une centaine de groupes et d'amas de galaxies dispersés sur environ 33 mégaparsecs (environ 110 millions d'années-lumière, et plus grand selon certaines définitions), dominé par l'Amas de la Vierge. On a longtemps cru que c'était la plus grande structure à laquelle nous appartenions ; Laniakea a révélé plus tard qu'il s'agissait d'un lobe de quelque chose de bien plus grand.",
-    "science_tab_cosmology": "COSMOLOGIE"
+    "science_tab_cosmology": "COSMOLOGIE",
+    "explore_ctx_laniakea": "Laniakea",
+    "explore_laniakea_schematic_badge": "Superamas Laniakea · schématique · pas à l'échelle",
+    "explore_laniakea_kind_supercluster": "Superamas",
+    "explore_laniakea_kind_cluster": "Amas galactique",
+    "explore_laniakea_kind_attractor": "Foyer gravitationnel",
+    "explore_laniakea_blurb": "Un superamas ou amas au sein de Laniakea — le bassin d'attraction d'environ 160 mégaparsecs dont notre Superamas de la Vierge n'est qu'un lobe. Tout ici s'écoule, à l'échelle cosmique, vers le même point bas gravitationnel : le Grand Attracteur.",
+    "explore_laniakea_anchor_blurb": "Vous êtes ici. Le Superamas de la Vierge entier — le Groupe Local, l'Amas de la Vierge, tout cela — est un seul lobe de Laniakea, à la périphérie d'un flux qui s'écoule vers le Grand Attracteur.",
+    "explore_laniakea_attractor_blurb": "Le Grand Attracteur — le point bas gravitationnel de Laniakea, près de l'Amas de la Norma derrière le plan de la Voie Lactée. Les mouvements de milliers de galaxies, la nôtre comprise, convergent tous vers cette région ; c'est ce qui définit Laniakea comme une structure unique.",
+    "explore_lens_story_laniakea_title": "Laniakea",
+    "explore_lens_story_laniakea_body": "« Immense ciel » en hawaïen — le superamas défini en 2014 non pas par où les galaxies se situent mais par où elles s'écoulent. S'étendant sur environ 160 mégaparsecs (500 millions d'années-lumière) et contenant quelque 100 000 galaxies, Laniakea est le bassin d'attraction vers lequel s'écoule notre Superamas de la Vierge, en direction du Grand Attracteur. Et Laniakea, avec ses voisins, fait partie d'un flux plus large vers quelque chose de plus grand encore : la Concentration de Shapley."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -5530,7 +5590,17 @@
     "explore_virgo_anchor_blurb": "Sei qui, sul bordo del superammasso. L'intero Gruppo Locale è un singolo punto, uno tra i tanti gruppi disseminati nel Superammasso della Vergine e in caduta, lentamente, verso l'Ammasso della Vergine.",
     "explore_lens_story_virgo_title": "Il Superammasso della Vergine",
     "explore_lens_story_virgo_body": "Il nostro superammasso — cento o più gruppi e ammassi di galassie sparsi su circa 33 megaparsec (circa 110 milioni di anni luce, e più grande secondo alcune definizioni), dominato dall'Ammasso della Vergine. A lungo si è creduto fosse la più grande struttura a cui apparteniamo; Laniakea ha successivamente rivelato che è uno dei lobi di qualcosa di molto più grande.",
-    "science_tab_cosmology": "COSMOLOGIA"
+    "science_tab_cosmology": "COSMOLOGIA",
+    "explore_ctx_laniakea": "Laniakea",
+    "explore_laniakea_schematic_badge": "Superammasso Laniakea · schema · non in scala",
+    "explore_laniakea_kind_supercluster": "Superammasso",
+    "explore_laniakea_kind_cluster": "Ammasso di galassie",
+    "explore_laniakea_kind_attractor": "Fuoco gravitazionale",
+    "explore_laniakea_blurb": "Un superammasso o ammasso all'interno di Laniakea — il bacino di attrazione di ~160 megaparsec di cui il nostro Superammasso della Vergine è solo un lobo. Tutto qui confluisce, nel corso del tempo cosmico, verso lo stesso punto di equilibrio gravitazionale: il Grande Attrattore.",
+    "explore_laniakea_anchor_blurb": "Sei qui. L'intero Superammasso della Vergine — il Gruppo Locale, l'Ammasso della Vergine, tutto — è un singolo lobo di Laniakea, sul bordo di un flusso che drena verso il Grande Attrattore.",
+    "explore_laniakea_attractor_blurb": "Il Grande Attrattore — il punto di equilibrio gravitazionale di Laniakea, vicino all'Ammasso della Norma dietro il piano della Via Lattea. I moti di migliaia di galassie, inclusa la nostra, convergono tutti verso questa regione; è ciò che definisce Laniakea come una struttura unica.",
+    "explore_lens_story_laniakea_title": "Laniakea",
+    "explore_lens_story_laniakea_body": "'Cielo immenso' in hawaiano — il superammasso definito nel 2014 non da dove si trovano le galassie ma da dove fluiscono. Esteso per circa 160 megaparsec (500 milioni di anni luce), contenente circa 100.000 galassie, Laniakea è il bacino di attrazione in cui drena il nostro Superammasso della Vergine, verso il Grande Attrattore. E Laniakea, con i suoi vicini, fa parte di un flusso più ampio verso qualcosa di ancora più grande: la Concentrazione di Shapley."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -6236,7 +6306,17 @@
     "explore_virgo_anchor_blurb": "Estás aquí, en el borde del supercúmulo. Todo el Grupo Local es un único punto, uno de muchos grupos dispersos por el Supercúmulo de Virgo y cayendo, lentamente, hacia el Cúmulo de Virgo.",
     "explore_lens_story_virgo_title": "El Supercúmulo de Virgo",
     "explore_lens_story_virgo_body": "Nuestro supercúmulo local — cien o más grupos y cúmulos de galaxias dispersos en aproximadamente 33 megapársecs (unos 110 millones de años luz, y más grande según algunas definiciones), dominado por el Cúmulo de Virgo. Se creía durante mucho tiempo que era la estructura mayor a la que pertenecemos; Laniakea reveló posteriormente que es uno de los lóbulos de algo mucho más grande.",
-    "science_tab_cosmology": "COSMOLOGÍA"
+    "science_tab_cosmology": "COSMOLOGÍA",
+    "explore_ctx_laniakea": "Laniakea",
+    "explore_laniakea_schematic_badge": "Supercúmulo Laniakea · esquemático · sin escala",
+    "explore_laniakea_kind_supercluster": "Supercúmulo",
+    "explore_laniakea_kind_cluster": "Cúmulo de galaxias",
+    "explore_laniakea_kind_attractor": "Foco gravitacional",
+    "explore_laniakea_blurb": "Un supercúmulo o cúmulo dentro de Laniakea — la cuenca de atracción de ~160 megaparsecs de la que nuestro Supercúmulo de Virgo es solo un lóbulo. Todo aquí fluye, a lo largo del tiempo cósmico, hacia el mismo punto bajo gravitacional: el Gran Atractor.",
+    "explore_laniakea_anchor_blurb": "Estás aquí. Todo el Supercúmulo de Virgo — el Grupo Local, el Cúmulo de Virgo, todo ello — es un único lóbulo de Laniakea, en el borde de un flujo que se dirige hacia el Gran Atractor.",
+    "explore_laniakea_attractor_blurb": "El Gran Atractor — el punto bajo gravitacional de Laniakea, cerca del Cúmulo de Norma detrás del plano de la Vía Láctea. Los movimientos de miles de galaxias, la nuestra incluida, convergen todos hacia esta región; es lo que define Laniakea como una única estructura.",
+    "explore_lens_story_laniakea_title": "Laniakea",
+    "explore_lens_story_laniakea_body": "'Cielo inmenso' en hawaiano — el supercúmulo definido en 2014 no por dónde se sitúan las galaxias sino por dónde fluyen. Con unos 160 megaparsecs (500 millones de años luz) de diámetro, conteniendo aproximadamente 100 000 galaxias, Laniakea es la cuenca de atracción hacia la que drena nuestro Supercúmulo de Virgo, hacia el Gran Atractor. Y Laniakea, junto con sus vecinos, forma parte de un flujo más amplio hacia algo aún mayor: la Concentración de Shapley."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -6948,7 +7028,17 @@
     "explore_virgo_anchor_blurb": "U bevindt zich hier, aan de rand van de supercluster. De hele Lokale Groep is slechts een enkel puntje, één van vele groepen verspreid door de Virgosupercluster en langzaam vallend naar het Virgocluster.",
     "explore_lens_story_virgo_title": "De Virgosupercluster",
     "explore_lens_story_virgo_body": "Onze thuis-supercluster — honderd of meer galaxiegroepen en -clusters verspreid over ongeveer 33 megaparsec (zo'n 110 miljoen lichtjaar, en volgens sommige definities groter), gedomineerd door het Virgocluster. Lange tijd werd gedacht dat dit de grootste structuur was waartoe wij behoren; Laniakea onthulde later dat het slechts één lob van iets veel groters is.",
-    "science_tab_cosmology": "KOSMOLOGIE"
+    "science_tab_cosmology": "KOSMOLOGIE",
+    "explore_ctx_laniakea": "Laniakea",
+    "explore_laniakea_schematic_badge": "Laniakea Supercluster · schematisch · niet op schaal",
+    "explore_laniakea_kind_supercluster": "Supercluster",
+    "explore_laniakea_kind_cluster": "Galaxienhoop",
+    "explore_laniakea_kind_attractor": "Zwaartekrachtcentrum",
+    "explore_laniakea_blurb": "Een supercluster of hoop binnen Laniakea — het ~160-megaparsec aantrekkingsgebied waarvan onze Maagdencluster slechts één lob is. Alles hier stroomt over kosmische tijd heen naar dezelfde zwaartekrachtdiepte: de Grote Attractor.",
+    "explore_laniakea_anchor_blurb": "U bent hier. De gehele Maagdencluster — de Lokale Groep, de Maagdenhoop, alles — is één lob van Laniakea, op de rand van een stroming die naar de Grote Attractor afwatert.",
+    "explore_laniakea_attractor_blurb": "De Grote Attractor — het zwaartekrachtcentrum van Laniakea, dicht bij de Normahoop achter het vlak van de Melkweg. De bewegingen van duizenden sterrenstelsels, ook het onze, buigen allemaal af naar deze regio; dit bepaalt Laniakea als één structuur.",
+    "explore_lens_story_laniakea_title": "Laniakea",
+    "explore_lens_story_laniakea_body": "'Immense hemel' in het Hawaiiaans — de supercluster gedefinieerd in 2014 niet door waar sterrenstelsels zitten maar door waar zij stromen. Ongeveer 160 megaparsec (500 miljoen lichtjaar) in omvang, bevattend zo'n 100.000 sterrenstelsels, Laniakea is het aantrekkingsgebied waarin onze Maagdencluster afwatert, naar de Grote Attractor. En Laniakea, samen met zijn buren, is deel van een bredere stroming naar iets groters: de Shapley-concentratie."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -7710,7 +7800,17 @@
     "explore_virgo_anchor_blurb": "Вы находитесь здесь, на краю сверхскопления. Вся Местная группа — это всего одна точка, одна из многих групп, разбросанных по Сверхскоплению Девы и медленно падающих в сторону скопления Девы.",
     "explore_lens_story_virgo_title": "Сверхскопление Девы",
     "explore_lens_story_virgo_body": "Наше родное сверхскопление — сотня и более групп и скоплений галактик, распределённые по примерно 33 мегапарсекам (около 110 миллионов световых лет, а по некоторым определениям — ещё больше), во главе со скоплением Девы. Долгое время считалось крупнейшей структурой, к которой мы принадлежим; позднее Ланиакея раскрыла, что это всего одна доля чего-то намного большего.",
-    "science_tab_cosmology": "КОСМОЛОГИЯ"
+    "science_tab_cosmology": "КОСМОЛОГИЯ",
+    "explore_ctx_laniakea": "Laniaкея",
+    "explore_laniakea_schematic_badge": "Сверхскопление Лaniакея · схема · без масштаба",
+    "explore_laniakea_kind_supercluster": "Сверхскопление",
+    "explore_laniakea_kind_cluster": "Скопление галактик",
+    "explore_laniakea_kind_attractor": "Гравитационный центр",
+    "explore_laniakea_blurb": "Сверхскопление или скопление в составе Лaniакеи — области гравитационного притяжения объёмом ~160 мегапарсек, одной из долей которой является наше Дево Сверхскопление. Всё здесь, в течение космического времени, стекает к одной точке гравитационного минимума: Великому Аттрактору.",
+    "explore_laniakea_anchor_blurb": "Вы находитесь здесь. Всё Дево Сверхскопление — Местная группа, Скопление Девы, всё целиком — это одна доля Лaniакеи, расположенная на краю потока, устремляющегося к Великому Аттрактору.",
+    "explore_laniakea_attractor_blurb": "Великий Аттрактор — гравитационный минимум Лaniакеи, находящийся рядом со Скоплением Норма позади плоскости Млечного Пути. Движения тысяч галактик, включая нашу, направлены в этот регион; именно он определяет Лaniакею как единую структуру.",
+    "explore_lens_story_laniakea_title": "Лaniакея",
+    "explore_lens_story_laniakea_body": "«Безмерное небо» на гавайском языке — сверхскопление, определённое в 2014 году не по расположению галактик, а по направлению их движения. Лaniакея простирается примерно на 160 мегапарсек (500 миллионов световых лет), содержит около 100 000 галактик и является областью гравитационного притяжения, в которую стекает наше Дево Сверхскопление, направляясь к Великому Аттрактору. А Лaniакея вместе с соседними структурами входит в состав более крупного потока, устремляющегося к Концентрации Шепли."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -8453,7 +8553,17 @@
     "explore_virgo_anchor_blurb": "你在这里，位于超星系团的边缘。整个本星系群只是一个点，是散布在处女座超星系团中众多星系群之一，并缓慢向处女座星系团坠落。",
     "explore_lens_story_virgo_title": "处女座超星系团",
     "explore_lens_story_virgo_body": "我们的家乡超星系团——超过一百个星系群和星系团散布在约33兆秒差距（约1.1亿光年，按某些定义更大）的范围内，由处女座星系团主导。人们长期以为它是我们所属的最大结构；后来兰尼亚凯亚的发现揭示它只是更庞大天体的一个叶瓣。",
-    "science_tab_cosmology": "宇宙学"
+    "science_tab_cosmology": "宇宙学",
+    "explore_ctx_laniakea": "兰尼亚凯亚",
+    "explore_laniakea_schematic_badge": "兰尼亚凯亚超星系团 · 示意图 · 非按比例",
+    "explore_laniakea_kind_supercluster": "超星系团",
+    "explore_laniakea_kind_cluster": "星系团",
+    "explore_laniakea_kind_attractor": "引力焦点",
+    "explore_laniakea_blurb": "兰尼亚凯亚内的一个超星系团或星系团 — 这个约160百万秒差距的吸引域盆地中，我们的室女座超星系团仅是其中的一个叶片。这里的所有物质在宇宙时间尺度上都流向同一个引力低点：大吸引子。",
+    "explore_laniakea_anchor_blurb": "你在这里。整个室女座超星系团 — 本星系群、室女座星系团及所有这些 — 是兰尼亚凯亚的单一叶片，位于流向大吸引子的流场边缘。",
+    "explore_laniakea_attractor_blurb": "大吸引子 — 兰尼亚凯亚的引力低点，位于银河系平面后方的天龙座星系团附近。数千个星系的运动，包括我们自己的星系，都朝向这个区域倾斜；它正是定义兰尼亚凯亚为单一结构的因素。",
+    "explore_lens_story_laniakea_title": "兰尼亚凯亚",
+    "explore_lens_story_laniakea_body": "夏威夷语中意为'广阔的天空'——2014年定义的超星系团，不是按星系所处位置而是按星系流动方向来划分。兰尼亚凯亚超星系团跨度约160百万秒差距（5亿光年），包含约10万个星系，是我们本星系群引力流向之处，朝向大引子方向。兰尼亚凯亚及其邻近星系团都是一个更大引力流的组成部分：沙普利浓集区。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -9130,7 +9240,17 @@
     "explore_virgo_anchor_blurb": "Ви сте овде, на ободу супергалаксије. Целокупна Локална група је једна тачка, једна од многих група распоређених кроз Супергалаксију Девице и полако падају ка Скупу Девице.",
     "explore_lens_story_virgo_title": "Супергалаксија Девице",
     "explore_lens_story_virgo_body": "Наша домаћа супергалаксија — стотина или више група и скупова галаксија распоређених кроз око 33 мегапарсека (примерно 110 милиона светлосних година, и већа према неким дефиницијама), коју доминира Скуп Девице. Дуго је сматрана највећом структуром којој припадамо; Лениакеја је касније открила да је то само jedan лоб нечега далеко већег.",
-    "science_tab_cosmology": "КОСМОЛОГИЈА"
+    "science_tab_cosmology": "КОСМОЛОГИЈА",
+    "explore_ctx_laniakea": "Лaниакеја",
+    "explore_laniakea_schematic_badge": "Лaниакеја суперскуп · шематски приказ · није у размери",
+    "explore_laniakea_kind_supercluster": "Суперскуп",
+    "explore_laniakea_kind_cluster": "Скуп галаксија",
+    "explore_laniakea_kind_attractor": "Гравитациона жаришта",
+    "explore_laniakea_blurb": "Суперскуп или скуп у Лaниакеји — басену гравитационе привлачности од ~160 мегапарсека од којег је наша Virgo суперскуп само један дел. Све овде тече, кроз космичко време, према истој гравитационој депресији: Великом Атрактору.",
+    "explore_laniakea_anchor_blurb": "Налазите се овде. Читав Virgo суперскуп — Локална група, Virgo скуп, све то — је једина лоба Лaниакеје, на рубу протока који се дренира према Великом Атрактору.",
+    "explore_laniakea_attractor_blurb": "Велики Атрактор — гравитациона депресија Лaниакеје, близу Norma скупа иза равни Млечног пута. Кретања хиљаду галаксија, укључујући и нашу, све се нагињу према овој области; она је оно што дефинише Лaниакеју као једну структуру.",
+    "explore_lens_story_laniakea_title": "Лaниакеја",
+    "explore_lens_story_laniakea_body": "'Огроман небески свод' на хавајском — суперскуп дефинисан 2014. године не по томе где галаксије седе већ по томе где текут. Преко 160 мегапарсека (500 милиона светлосних година), садржи отприлике 100.000 галаксија, Лaниакеја је басен привлачности у који се наш Virgo суперскуп дренира, према Великом Атрактору. И Лaниакеја, са својим суседима, является дел ширег протока према нечем већем: Shapley концентрацији."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -9843,6 +9963,16 @@
     "explore_virgo_anchor_blurb": "Você está aqui, na borda do superaglomerado. Todo o Grupo Local é um único ponto, um de muitos grupos espalhados pelo Superaglomerado de Virgem e caindo, lentamente, em direção ao Aglomerado de Virgem.",
     "explore_lens_story_virgo_title": "O Superaglomerado de Virgem",
     "explore_lens_story_virgo_body": "Nosso superaglomerado — uma centena ou mais de grupos e aglomerados de galáxias espalhados por cerca de 33 megaparsecs (aproximadamente 110 milhões de anos-luz, e maior por algumas definições), dominado pelo Aglomerado de Virgem. Por muito tempo pensou-se que era a maior estrutura à qual pertencemos; Laniakea revelou posteriormente ser um lobo de algo muito maior.",
-    "science_tab_cosmology": "COSMOLOGIA"
+    "science_tab_cosmology": "COSMOLOGIA",
+    "explore_ctx_laniakea": "Laniakea",
+    "explore_laniakea_schematic_badge": "Superaglomerado Laniakea · esquemático · fora de escala",
+    "explore_laniakea_kind_supercluster": "Superaglomerado",
+    "explore_laniakea_kind_cluster": "Aglomerado de galáxias",
+    "explore_laniakea_kind_attractor": "Foco gravitacional",
+    "explore_laniakea_blurb": "Um superaglomerado ou aglomerado dentro de Laniakea — a bacia de atração de ~160 megaparsecs da qual nosso Superaglomerado de Virgem é apenas um lobo. Tudo aqui flui, ao longo do tempo cósmico, em direção ao mesmo ponto gravitacional baixo: o Grande Atrator.",
+    "explore_laniakea_anchor_blurb": "Você está aqui. Todo o Superaglomerado de Virgem — o Grupo Local, o Aglomerado de Virgem, tudo — é um único lobo de Laniakea, na borda de um fluxo que drena em direção ao Grande Atrator.",
+    "explore_laniakea_attractor_blurb": "O Grande Atrator — o ponto gravitacional baixo de Laniakea, perto do Aglomerado de Norma atrás do plano da Via Láctea. Os movimentos de milhares de galáxias, incluindo a nossa, todos se inclinam em direção a essa região; é isso que define Laniakea como uma estrutura única.",
+    "explore_lens_story_laniakea_title": "Laniakea",
+    "explore_lens_story_laniakea_body": "'Céu imenso' em havaiano — o superaglomerado definido em 2014 não por onde as galáxias estão, mas para onde fluem. Com aproximadamente 160 megaparsecs (500 milhões de anos-luz) de extensão, contendo cerca de 100.000 galáxias, Laniakea é a bacia de atração para a qual nosso Superaglomerado de Virgem drena, em direção ao Grande Atrator. E Laniakea, com seus vizinhos, faz parte de um fluxo mais amplo em direção a algo ainda maior: a Concentração de Shapley."
   }
 }

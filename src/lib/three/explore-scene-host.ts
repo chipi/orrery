@@ -12,6 +12,7 @@ import {
   LOCAL_GROUP_CONTEXT,
   LOCAL_SHEET_CONTEXT,
   VIRGO_CONTEXT,
+  LANIAKEA_CONTEXT,
   makeBodyContext,
   bodyContextId,
   AU_PER_PARSEC,
@@ -44,6 +45,7 @@ import {
   getLocalGroup,
   getLocalSheet,
   getVirgo,
+  getLaniakea,
   getMilkyWaySchematic,
   getNamedStarI18n,
   getNamedStars,
@@ -155,9 +157,11 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   let exitLocalGroupFn: any = null;
   let exitLocalSheetFn: any = null;
   let exitVirgoFn: any = null;
+  let exitLaniakeaFn: any = null;
   let closeLgFn: any = null;
   let closeLsFn: any = null;
   let closeVirgoFn: any = null;
+  let closeLaniakeaFn: any = null;
   let exitBlackHoleFn: any = null;
   let bhDeepLinkFn: any = null;
   let setBhCurvatureFn: any = null;
@@ -223,6 +227,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       LOCAL_GROUP_CONTEXT,
       LOCAL_SHEET_CONTEXT,
       VIRGO_CONTEXT,
+      LANIAKEA_CONTEXT,
     ],
     'solar-system',
   );
@@ -485,7 +490,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       VIRGO_SCENE_RADIUS = mod.VIRGO_SCENE_RADIUS;
       VIRGO_ENTRY_CAM_R = VIRGO_SCENE_RADIUS * 1.35;
       VIRGO_CAM_R_MIN = VIRGO_SCENE_RADIUS * 0.75; // zoom-in floor → cross back to the Local Sheet
-      VIRGO_CAM_R_MAX = VIRGO_SCENE_RADIUS * 6; // zoom-out ceiling (outermost for now)
+      VIRGO_CAM_R_MAX = VIRGO_SCENE_RADIUS * 6; // zoom-out ceiling → cross out to Laniakea
       VIRGO_FAR = VIRGO_SCENE_RADIUS * 40;
       virgoScene = mod.createVirgoScene(data);
       virgoScene.setSize(bridge.container?.clientWidth ?? 1, bridge.container?.clientHeight ?? 1);
@@ -495,6 +500,48 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       return null;
     } finally {
       virgoLoading = false;
+    }
+  }
+
+  // #456 (WS-5c) — the Laniakea Supercluster schematic (one shell out from Virgo).
+  // Outermost shell for now (the cosmic-web tier extends past it).
+  let laniakeaScene: import('$lib/universe/laniakea-scene').LaniakeaScene | null = null;
+  let laniakeaLoading = false;
+  let LANIAKEA_SCENE_RADIUS = 150;
+  let LANIAKEA_ENTRY_CAM_R = 200;
+  let LANIAKEA_CAM_R_MIN = 112;
+  let LANIAKEA_CAM_R_MAX = 900;
+  let LANIAKEA_FAR = 6000;
+  const LANIAKEA_ENTRY_CAM_P = 0.85;
+  const inLaniakea = () => contextGraph.active.id === 'laniakea';
+
+  async function ensureLaniakea(): Promise<typeof laniakeaScene> {
+    if (laniakeaScene) return laniakeaScene;
+    if (laniakeaLoading) return null;
+    laniakeaLoading = true;
+    try {
+      const [mod, data] = await Promise.all([
+        import('$lib/universe/laniakea-scene'),
+        getLaniakea(fetch),
+      ]);
+      if (!data) return null;
+      bridge.laniakeaMembers = data.members;
+      LANIAKEA_SCENE_RADIUS = mod.LANIAKEA_SCENE_RADIUS;
+      LANIAKEA_ENTRY_CAM_R = LANIAKEA_SCENE_RADIUS * 1.35;
+      LANIAKEA_CAM_R_MIN = LANIAKEA_SCENE_RADIUS * 0.75; // zoom-in floor → cross back to Virgo
+      LANIAKEA_CAM_R_MAX = LANIAKEA_SCENE_RADIUS * 6; // zoom-out ceiling (outermost for now)
+      LANIAKEA_FAR = LANIAKEA_SCENE_RADIUS * 40;
+      laniakeaScene = mod.createLaniakeaScene(data);
+      laniakeaScene.setSize(
+        bridge.container?.clientWidth ?? 1,
+        bridge.container?.clientHeight ?? 1,
+      );
+      return laniakeaScene;
+    } catch (err) {
+      console.error('[explore v2] laniakea load failed', err);
+      return null;
+    } finally {
+      laniakeaLoading = false;
     }
   }
 
@@ -899,6 +946,55 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     updateCam();
   }
   exitVirgoFn = crossInToLocalSheet;
+
+  // ── WS-5c: Virgo ↔ Laniakea Supercluster crossing (same machinery). ─────────
+  async function crossOutToLaniakea(): Promise<void> {
+    if (inLaniakea()) return;
+    const scene = await ensureLaniakea();
+    if (!scene) return; // load failed — stay in Virgo
+    bridge.virgoPanelOpen = false;
+    bridge.selectedVirgoMember = null;
+    virgoScene?.highlight(null);
+    contextGraph.setActive('laniakea');
+    bridge.contextId = 'laniakea'; // flip chrome immediately
+    camRMin = LANIAKEA_CAM_R_MIN;
+    camRMax = LANIAKEA_CAM_R_MAX;
+    camera.far = LANIAKEA_FAR;
+    camera.near = 1;
+    camera.updateProjectionMatrix();
+    camP = LANIAKEA_ENTRY_CAM_P;
+    if (deps.getReducedMotion()) {
+      camR = LANIAKEA_ENTRY_CAM_R;
+    } else {
+      camR = LANIAKEA_ENTRY_CAM_R * 1.3;
+      startCrossDolly(LANIAKEA_ENTRY_CAM_R * 1.3, LANIAKEA_ENTRY_CAM_R, 1300);
+      bridge.crossingFlashId++;
+      showWarpCaption(
+        `${(222000000).toLocaleString()} ${m.explore_light_years()} · Great Attractor`,
+      );
+    }
+    updateCam();
+  }
+
+  function crossInToVirgo(): void {
+    if (!inLaniakea()) return;
+    dollyActive = false;
+    if (!deps.getReducedMotion()) bridge.crossingFlashId++;
+    bridge.laniakeaPanelOpen = false;
+    bridge.selectedLaniakeaMember = null;
+    laniakeaScene?.highlight(null);
+    contextGraph.setActive('virgo');
+    bridge.contextId = 'virgo'; // flip chrome immediately
+    camRMin = VIRGO_CAM_R_MIN;
+    camRMax = VIRGO_CAM_R_MAX;
+    camR = VIRGO_CAM_R_MAX; // re-enter at Virgo's outer edge
+    camera.far = VIRGO_FAR;
+    camera.near = 1;
+    camera.updateProjectionMatrix();
+    camP = VIRGO_ENTRY_CAM_P;
+    updateCam();
+  }
+  exitLaniakeaFn = crossInToVirgo;
 
   // ── Exoplanet BodyScene (Slice 2) ────────────────────────────────────────
   // Descend from the neighborhood into a host star's mini-orrery via a 1–2 s
@@ -1309,17 +1405,19 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     bridge.scaleReadout = describeDistanceAu(au);
     bridge.contextId = inBodyScene()
       ? 'body-scene'
-      : inVirgo()
-        ? 'virgo'
-        : inLocalSheet()
-          ? 'local-sheet'
-          : inLocalGroup()
-            ? 'local-group'
-            : inMilkyWay()
-              ? 'milky-way'
-              : inNeighborhood()
-                ? 'neighborhood'
-                : 'solar-system';
+      : inLaniakea()
+        ? 'laniakea'
+        : inVirgo()
+          ? 'virgo'
+          : inLocalSheet()
+            ? 'local-sheet'
+            : inLocalGroup()
+              ? 'local-group'
+              : inMilkyWay()
+                ? 'milky-way'
+                : inNeighborhood()
+                  ? 'neighborhood'
+                  : 'solar-system';
     const vh = bridge.container?.clientHeight ?? 1;
     const worldPerPx = (2 * Math.tan((camera.fov * Math.PI) / 180 / 2) * camR) / vh;
     const unitToAu = inNeighborhood() ? AU_PER_PC : 1;
@@ -1732,6 +1830,15 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       if (bridge.hoverData) bridge.hoverData = null;
       return;
     }
+    // WS-5c — in Laniakea, hover highlights + names a member supercluster.
+    if (inLaniakea()) {
+      const mh = laniakeaScene ? ray3dHover.intersectObjects(laniakeaScene.pickables, false) : [];
+      const id = (mh[0]?.object.userData.laniakeaId as string | undefined) ?? null;
+      laniakeaScene?.highlight(id ?? bridge.selectedLaniakeaMember?.id ?? null);
+      el3d.style.cursor = id ? 'pointer' : 'grab';
+      if (bridge.hoverData) bridge.hoverData = null;
+      return;
+    }
     // v2: in the stellar neighborhood, hover highlights + names the nearest
     // named star; nothing else is hoverable there.
     if (inNeighborhood()) {
@@ -2111,6 +2218,35 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     virgoScene?.highlight(null);
   }
   closeVirgoFn = closeVirgoPanel;
+
+  // #456 (WS-5c) — pick a Laniakea member supercluster → open the LaniakeaPanel.
+  function pickLaniakea(e: { clientX: number; clientY: number }): void {
+    if (!laniakeaScene) return;
+    const rect = el3d.getBoundingClientRect();
+    const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+    const hits = ray3d.intersectObjects(laniakeaScene.pickables, false);
+    if (hits.length) {
+      const id = hits[0].object.userData.laniakeaId as string | undefined;
+      if (id) selectLaniakea(id);
+    }
+  }
+  function selectLaniakea(id: string): void {
+    const member = (bridge.laniakeaMembers ?? []).find((mm: any) => mm.id === id);
+    if (!member) return;
+    cue('select');
+    bridge.selectedLaniakeaMember = member;
+    bridge.laniakeaPanelOpen = true;
+    laniakeaScene?.highlight(id);
+    trackItemClick('marker', id, '/explore');
+  }
+  function closeLaniakeaPanel(): void {
+    bridge.laniakeaPanelOpen = false;
+    bridge.selectedLaniakeaMember = null;
+    laniakeaScene?.highlight(null);
+  }
+  closeLaniakeaFn = closeLaniakeaPanel;
   async function resolveGalaxyDeepLink(id: string): Promise<void> {
     if (!inMilkyWay()) {
       if (!inNeighborhood()) await crossOutToNeighborhood();
@@ -2129,33 +2265,37 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   // Ladder + level math live in scale-shell-controller (RFC-036 WS-C/C1, tested).
   const curCtxLevel = () =>
     contextLevel(
-      inVirgo()
-        ? 'virgo'
-        : inLocalSheet()
-          ? 'local-sheet'
-          : inLocalGroup()
-            ? 'local-group'
-            : inMilkyWay()
-              ? 'milky-way'
-              : inNeighborhood()
-                ? 'neighborhood'
-                : 'solar-system',
+      inLaniakea()
+        ? 'laniakea'
+        : inVirgo()
+          ? 'virgo'
+          : inLocalSheet()
+            ? 'local-sheet'
+            : inLocalGroup()
+              ? 'local-group'
+              : inMilkyWay()
+                ? 'milky-way'
+                : inNeighborhood()
+                  ? 'neighborhood'
+                  : 'solar-system',
     );
   contextDeepLinkFn = async (target: string) => {
     const t = contextLevel(target);
     if (t < 0) return;
     let guard = 0;
-    while (curCtxLevel() < t && guard++ < 10) {
+    while (curCtxLevel() < t && guard++ < 12) {
       const cur = curCtxLevel();
       if (cur === 0) await crossOutToNeighborhood();
       else if (cur === 1) await crossOutToMilkyWay();
       else if (cur === 2) await crossOutToLocalGroup();
       else if (cur === 3) await crossOutToLocalSheet();
       else if (cur === 4) await crossOutToVirgo();
+      else if (cur === 5) await crossOutToLaniakea();
     }
-    while (curCtxLevel() > t && guard++ < 10) {
+    while (curCtxLevel() > t && guard++ < 12) {
       const cur = curCtxLevel();
-      if (cur === 5) crossInToLocalSheet();
+      if (cur === 6) crossInToVirgo();
+      else if (cur === 5) crossInToLocalSheet();
       else if (cur === 4) crossInToLocalGroup();
       else if (cur === 3) crossInToMilkyWay();
       else if (cur === 2) crossInToNeighborhood();
@@ -2198,6 +2338,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       else if (inLocalGroup()) pickLocalGroup(e);
       else if (inLocalSheet()) pickLocalSheet(e);
       else if (inVirgo()) pickVirgo(e);
+      else if (inLaniakea()) pickLaniakea(e);
       else if (inNeighborhood()) pickNeighborhood(e);
       else tryPick3d(e);
     }
@@ -2252,14 +2393,33 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       updateCam();
       return;
     }
-    // WS-5b — the Virgo Supercluster is the outermost context (for now):
-    // multiplicative zoom; scroll-in past the inner edge drops back to the Local Sheet.
+    // WS-5b — the Virgo Supercluster: multiplicative zoom; scroll-in past the
+    // inner edge drops back to the Local Sheet, scroll-out past the ceiling
+    // crosses to Laniakea (WS-5c).
     if (inVirgo()) {
       dollyActive = false;
       const ratio = zoomingOut ? 1.07 : 1 / 1.07;
       const next = camR * ratio;
       if (!zoomingOut && next <= camRMin) {
         crossInToLocalSheet();
+        return;
+      }
+      if (zoomingOut && camR >= camRMax - 0.5) {
+        void crossOutToLaniakea();
+        return;
+      }
+      camR = Math.max(camRMin, Math.min(camRMax, next));
+      updateCam();
+      return;
+    }
+    // WS-5c — Laniakea is the outermost context (for now): multiplicative zoom;
+    // scroll-in past the inner edge drops back to the Virgo Supercluster.
+    if (inLaniakea()) {
+      dollyActive = false;
+      const ratio = zoomingOut ? 1.07 : 1 / 1.07;
+      const next = camR * ratio;
+      if (!zoomingOut && next <= camRMin) {
+        crossInToVirgo();
         return;
       }
       camR = Math.max(camRMin, Math.min(camRMax, next));
@@ -2382,6 +2542,23 @@ export function createExploreSceneHost(bridge: any, deps: any) {
         if (inVirgo()) {
           if (ratio < 1 && camR * ratio <= camRMin) {
             crossInToLocalSheet();
+            pinchPrev3d = dist;
+            return;
+          }
+          if (ratio > 1 && camR >= camRMax - 0.5) {
+            void crossOutToLaniakea();
+            pinchPrev3d = dist;
+            return;
+          }
+          dollyActive = false;
+          camR = Math.max(camRMin, Math.min(camRMax, camR * ratio));
+          updateCam();
+          pinchPrev3d = dist;
+          return;
+        }
+        if (inLaniakea()) {
+          if (ratio < 1 && camR * ratio <= camRMin) {
+            crossInToVirgo();
             pinchPrev3d = dist;
             return;
           }
@@ -3077,6 +3254,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     lgScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     lsScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     virgoScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
+    laniakeaScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     nbScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     bhScene?.setSize(
       bridge.container.clientWidth,
@@ -3626,6 +3804,12 @@ export function createExploreSceneHost(bridge: any, deps: any) {
           virgoScene.render(renderer, camera);
           return;
         }
+        if (inLaniakea() && laniakeaScene) {
+          stepCrossDolly();
+          laniakeaScene.update(camera);
+          laniakeaScene.render(renderer, camera);
+          return;
+        }
 
         // Frame throttle — render 1 of every 4 frames when a right-
         // side detail panel covers the canvas. See module-level
@@ -3724,6 +3908,8 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     closeLsFn,
     exitVirgoFn,
     closeVirgoFn,
+    exitLaniakeaFn,
+    closeLaniakeaFn,
     exitBlackHoleFn,
     bhDeepLinkFn,
     setBhCurvatureFn,

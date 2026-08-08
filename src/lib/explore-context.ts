@@ -18,6 +18,7 @@ export type ExploreContextId =
   | 'local-group'
   | 'local-sheet'
   | 'virgo'
+  | 'laniakea'
   | 'body-scene';
 
 export const exploreContext = writable<ExploreContextId | null>(null);

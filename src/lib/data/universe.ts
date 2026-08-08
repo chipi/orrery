@@ -388,6 +388,34 @@ export async function getVirgo(fetchFn: FetchLike = fetch): Promise<VirgoData | 
   return virgoCache;
 }
 
+// #456 (WS-5c) — the Laniakea Supercluster: the ~160 Mpc basin of attraction our
+// Virgo Supercluster is one lobe of. One shell out from Virgo. Schematic, real
+// distances. `supercluster` + `attractor` join the kinds.
+export type LaniakeaKind = 'supercluster' | 'cluster' | 'attractor';
+export interface LaniakeaMember {
+  id: string;
+  name: string;
+  kind: LaniakeaKind;
+  headliner: boolean;
+  dist_mpc: number;
+  diam_mly: number;
+  x: number;
+  y: number;
+  z: number;
+}
+export interface LaniakeaData {
+  extent_mpc: number;
+  members: LaniakeaMember[];
+}
+let laniakeaCache: Promise<LaniakeaData | null> | null = null;
+/** The Laniakea Supercluster schematic census (cached), or null if unavailable. */
+export async function getLaniakea(fetchFn: FetchLike = fetch): Promise<LaniakeaData | null> {
+  if (!laniakeaCache) {
+    laniakeaCache = get<LaniakeaData>('universe/laniakea.json', fetchFn).catch(() => null);
+  }
+  return laniakeaCache;
+}
+
 // Black holes (Slice 6) — three real + one fictional (Gargantua), rendered with
 // the geodesic gravitational-lensing shader. Real cited GR parameters; Gargantua
 // is badged fiction.

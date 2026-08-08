@@ -1,0 +1,28 @@
+{
+  "id": "laniakea-and-the-great-attractor",
+  "tab": "cosmology",
+  "order": 2,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Laniakea context: the Virgo Supercluster as one lobe of a ~160 Mpc basin of flows draining toward the Great Attractor"
+    }
+  ],
+  "links": [
+    {
+      "l": "Tully et al. · The Laniakea Supercluster of galaxies (Nature 2014)",
+      "u": "https://www.nature.com/articles/nature13674",
+      "t": "core"
+    },
+    {
+      "l": "Nature video · Laniakea: Our home supercluster",
+      "u": "https://www.youtube.com/watch?v=rENyyRwxpHo",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Laniakea Supercluster",
+      "u": "https://en.wikipedia.org/wiki/Laniakea_Supercluster",
+      "t": "deep"
+    }
+  ]
+}

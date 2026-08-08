@@ -106,8 +106,21 @@ export const LOCAL_SHEET_CONTEXT: Context = {
 // outermost for now (the Laniakea / cosmic-web tiers extend the chain past it).
 export const VIRGO_CONTEXT: Context = {
   id: 'virgo',
-  parent: null,
+  parent: 'laniakea', // WS-5c — zoom out past the Virgo Supercluster into Laniakea
   child: 'local-sheet',
+  units: 'pc',
+  sceneUnitsPerParsec: 1,
+  outerBoundaryScene: Number.POSITIVE_INFINITY,
+  innerBoundaryScene: 0,
+};
+
+// #456 (WS-5c) — the Laniakea Supercluster: the ~160 Mpc basin of attraction the
+// Virgo Supercluster is one lobe of. Outermost for now (the cosmic-web tier
+// extends the chain past it).
+export const LANIAKEA_CONTEXT: Context = {
+  id: 'laniakea',
+  parent: null,
+  child: 'virgo',
   units: 'pc',
   sceneUnitsPerParsec: 1,
   outerBoundaryScene: Number.POSITIVE_INFINITY,

@@ -42,6 +42,7 @@
     type LocalGroupMember,
     type LocalSheetMember,
     type VirgoMember,
+    type LaniakeaMember,
     type BlackHole,
     type NamedStar,
     type LocalizedNamedStar,
@@ -62,6 +63,7 @@
   import LocalGroupPanel from '$lib/components/LocalGroupPanel.svelte';
   import LocalSheetPanel from '$lib/components/LocalSheetPanel.svelte';
   import VirgoPanel from '$lib/components/VirgoPanel.svelte';
+  import LaniakeaPanel from '$lib/components/LaniakeaPanel.svelte';
   import BlackHolePanel from '$lib/components/BlackHolePanel.svelte';
   import CultureDoorCard from '$lib/components/CultureDoorCard.svelte';
   import StarIndex from '$lib/components/StarIndex.svelte';
@@ -907,6 +909,7 @@
     | 'local-group'
     | 'local-sheet'
     | 'virgo'
+    | 'laniakea'
     | 'body-scene'
   >('solar-system');
   // Publish the live scale context to the global store so the Nav highlights the
@@ -971,6 +974,14 @@
           body: m.explore_lens_story_virgo_body(),
           tab: 'cosmology',
           section: 'large-scale-structure',
+          available: [],
+        };
+      case 'laniakea':
+        return {
+          title: m.explore_lens_story_laniakea_title(),
+          body: m.explore_lens_story_laniakea_body(),
+          tab: 'cosmology',
+          section: 'laniakea-and-the-great-attractor',
           available: [],
         };
       case 'solar-system':
@@ -1227,6 +1238,12 @@
   let virgoPanelOpen = $state(false);
   let virgoMembers = $state<VirgoMember[]>([]);
   let closeVirgoFn: (() => void) | null = null;
+  // #456 (WS-5c) — the Laniakea Supercluster shell.
+  let exitLaniakeaFn: (() => void) | null = null;
+  let selectedLaniakeaMember = $state<LaniakeaMember | null>(null);
+  let laniakeaPanelOpen = $state(false);
+  let laniakeaMembers = $state<LaniakeaMember[]>([]);
+  let closeLaniakeaFn: (() => void) | null = null;
   // Slice 6 — the black hole currently rendered full-screen (geodesic lensing).
   let activeBlackHole = $state<BlackHole | null>(null);
   let bhPanelOpen = $state(false);
@@ -2237,6 +2254,24 @@
       set virgoMembers(v) {
         virgoMembers = v;
       },
+      get selectedLaniakeaMember() {
+        return selectedLaniakeaMember;
+      },
+      set selectedLaniakeaMember(v) {
+        selectedLaniakeaMember = v;
+      },
+      get laniakeaPanelOpen() {
+        return laniakeaPanelOpen;
+      },
+      set laniakeaPanelOpen(v) {
+        laniakeaPanelOpen = v;
+      },
+      get laniakeaMembers() {
+        return laniakeaMembers;
+      },
+      set laniakeaMembers(v) {
+        laniakeaMembers = v;
+      },
       get activeBlackHole() {
         return activeBlackHole;
       },
@@ -2448,6 +2483,8 @@
     closeLsFn = exploreHost.closeLsFn;
     exitVirgoFn = exploreHost.exitVirgoFn;
     closeVirgoFn = exploreHost.closeVirgoFn;
+    exitLaniakeaFn = exploreHost.exitLaniakeaFn;
+    closeLaniakeaFn = exploreHost.closeLaniakeaFn;
     exitBlackHoleFn = exploreHost.exitBlackHoleFn;
     bhDeepLinkFn = exploreHost.bhDeepLinkFn;
     setBhCurvatureFn = exploreHost.setBhCurvatureFn;
@@ -2511,7 +2548,7 @@
       <span class="crumb-sep">›</span>
       <span class="crumb current" aria-current="page">{activeBlackHole.name}</span>
     </nav>
-  {:else if view === '3d' && (contextId === 'neighborhood' || contextId === 'milky-way' || contextId === 'local-group' || contextId === 'local-sheet' || contextId === 'virgo' || contextId === 'body-scene')}
+  {:else if view === '3d' && (contextId === 'neighborhood' || contextId === 'milky-way' || contextId === 'local-group' || contextId === 'local-sheet' || contextId === 'virgo' || contextId === 'laniakea' || contextId === 'body-scene')}
     <nav class="context-crumbs" aria-label={m.explore_location_aria()}>
       <button
         type="button"
@@ -2520,6 +2557,7 @@
           // Each exit fn guards on the live context, so calling them in order
           // walks all the way in to the solar system from any shell.
           if (contextId === 'body-scene') exitBodySceneFn?.();
+          exitLaniakeaFn?.();
           exitVirgoFn?.();
           exitLocalSheetFn?.();
           exitLocalGroupFn?.();
@@ -2566,6 +2604,12 @@
         </button>
         <span class="crumb-sep">›</span>
         <span class="crumb current" aria-current="page">{m.explore_ctx_virgo()}</span>
+      {:else if contextId === 'laniakea'}
+        <button type="button" class="crumb" onclick={() => exitLaniakeaFn?.()}>
+          {m.explore_ctx_virgo()}
+        </button>
+        <span class="crumb-sep">›</span>
+        <span class="crumb current" aria-current="page">{m.explore_ctx_laniakea()}</span>
       {:else}
         <span class="crumb current" aria-current="page">{m.explore_ctx_stellar_neighborhood()}</span
         >
@@ -2624,6 +2668,9 @@
   {/if}
   {#if view === '3d' && contextId === 'virgo' && !activeBlackHole}
     <div class="mw-badge" role="note">{m.explore_virgo_schematic_badge()}</div>
+  {/if}
+  {#if view === '3d' && contextId === 'laniakea' && !activeBlackHole}
+    <div class="mw-badge" role="note">{m.explore_laniakea_schematic_badge()}</div>
   {/if}
 
   <!-- Slice 6: the black-hole render is a geodesic GR ray-trace — label it. -->
@@ -3533,6 +3580,11 @@
 
 <LocalSheetPanel member={selectedLsMember} open={lsPanelOpen} onClose={() => closeLsFn?.()} />
 <VirgoPanel member={selectedVirgoMember} open={virgoPanelOpen} onClose={() => closeVirgoFn?.()} />
+<LaniakeaPanel
+  member={selectedLaniakeaMember}
+  open={laniakeaPanelOpen}
+  onClose={() => closeLaniakeaFn?.()}
+/>
 
 <BlackHolePanel
   hole={activeBlackHole}

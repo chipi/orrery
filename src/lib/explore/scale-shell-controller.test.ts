@@ -109,7 +109,7 @@ describe('resolveSolarBodyTarget — the ?id= routing ladder', () => {
 });
 
 describe('contextLevel — ladder rung of a context', () => {
-  it('maps the six shells to 0..5 in ladder order', () => {
+  it('maps the seven shells to 0..6 in ladder order', () => {
     expect(CTX_ORDER).toEqual([
       'solar-system',
       'neighborhood',
@@ -117,6 +117,7 @@ describe('contextLevel — ladder rung of a context', () => {
       'local-group',
       'local-sheet',
       'virgo',
+      'laniakea',
     ]);
     expect(contextLevel('solar-system')).toBe(0);
     expect(contextLevel('neighborhood')).toBe(1);
@@ -124,6 +125,7 @@ describe('contextLevel — ladder rung of a context', () => {
     expect(contextLevel('local-group')).toBe(3);
     expect(contextLevel('local-sheet')).toBe(4);
     expect(contextLevel('virgo')).toBe(5);
+    expect(contextLevel('laniakea')).toBe(6);
   });
 
   it('off-ladder contexts (body-scene) and unknowns → -1', () => {

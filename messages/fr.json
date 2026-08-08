@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "DOSSIER DE DESCENTE",
   "plan_touch_hint": "Appuyez et maintenez pour apercevoir",
   "explore_scale_jump_aria": "Aller à l'échelle",
-  "explore_scale_change": "Modifier l'échelle"
+  "explore_scale_change": "Modifier l'échelle",
+  "explore_msg_launched": "Lancé {date}",
+  "explore_msg_heading_label": "En route vers",
+  "explore_msg_signal_label": "Portée du signal",
+  "explore_msg_signal_body": "Un signal à sens unique en provenance de la Terre l'atteint en environ {hours} heures-lumière.",
+  "explore_msg_carries_label": "Le message qu'il porte",
+  "explore_msg_no_message": "Il ne porte aucun message officiel — mais il est désormais, lui aussi, en route vers les étoiles.",
+  "explore_msg_mission_details": "Détails complets de la mission",
+  "explore_heading_voyager_1": "Gliese 445, dans la Girafe — passage au plus proche dans environ 40 000 ans",
+  "explore_heading_voyager_2": "Ross 248, dans Andromède — passage au plus proche dans environ 42 000 ans",
+  "explore_heading_pioneer_10": "la direction générale d'Aldébaran, dans le Taureau — une dérive de 2 millions d'années, pas un passage au plus proche",
+  "explore_heading_pioneer_11": "la constellation de l'Aigle — son étoile la plus proche dans environ 4 millions d'années",
+  "explore_heading_new_horizons": "la constellation du Sagittaire — aucune rencontre stellaire rapprochée n'est prédite"
 }

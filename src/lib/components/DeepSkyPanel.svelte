@@ -10,6 +10,7 @@
   import Panel from './Panel.svelte';
   import type { DeepSkyObject, DeepSkyCategory } from '$lib/data';
   import type { DeepSkyImage } from '$lib/deep-sky';
+  import type { Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
 
   type Props = {
@@ -20,8 +21,11 @@
     onClose: () => void;
     /** Called when the forming-system gateway CTA is used (star-forming only). */
     onGateway?: (hostId: string) => void;
+    /** Optional extra content — e.g. a culture door (#410: the Arecibo message
+     *  was beamed at M13). */
+    children?: Snippet;
   };
-  let { object, image, galleryHref, open, onClose, onGateway }: Props = $props();
+  let { object, image, galleryHref, open, onClose, onGateway, children }: Props = $props();
 
   const CAT_LABEL: Record<DeepSkyCategory, () => string> = {
     galaxy: m.explore_ds_cat_galaxy,
@@ -82,6 +86,8 @@
         </button>
       </div>
     {/if}
+
+    {#if children}<div class="doors">{@render children()}</div>{/if}
 
     {#if image?.credit}<p class="credit">{image.credit}</p>{/if}
 

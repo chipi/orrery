@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "AFDAALDOSSIER",
   "plan_touch_hint": "Aanraken en vasthouden om te bekijken",
   "explore_scale_jump_aria": "Spring naar schaal",
-  "explore_scale_change": "Schaal wijzigen"
+  "explore_scale_change": "Schaal wijzigen",
+  "explore_msg_launched": "Gelanceerd {date}",
+  "explore_msg_heading_label": "Koerst af naar",
+  "explore_msg_signal_label": "Signaalbereik",
+  "explore_msg_signal_body": "Een eenrichtingssignaal van aarde bereikt het in ongeveer {hours} lichttuur.",
+  "explore_msg_carries_label": "De boodschap aan boord",
+  "explore_msg_no_message": "Het draagt geen officiële boodschap — maar ook dit is nu op weg naar de sterren.",
+  "explore_msg_mission_details": "Volledige missiedetails",
+  "explore_heading_voyager_1": "Gliese 445, in Camelopardalis — dichtstbij in ongeveer 40.000 jaar",
+  "explore_heading_voyager_2": "Ross 248, in Andromeda — dichtstbij in ongeveer 42.000 jaar",
+  "explore_heading_pioneer_10": "de richting van Aldebaran, in Stier — een drift van 2 miljoen jaar, geen dichte passage",
+  "explore_heading_pioneer_11": "het sterrenbeeld Aquila — zijn dichtstbijzijnde ster in ongeveer 4 miljoen jaar",
+  "explore_heading_new_horizons": "het sterrenbeeld Boogschutter — geen dichte stellaire ontmoeting voorspeld"
 }

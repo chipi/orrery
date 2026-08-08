@@ -117,6 +117,17 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     stopHoverLayerWatch,
   } = deps;
   const iconicTrajectoryHandles: any = [];
+  // #410 — mission_ids of the interstellar-bound craft (Voyagers, Pioneers,
+  // New Horizons), populated as their trajectories build. Drives the click
+  // routing to the MessagePanel.
+  const interstellarCraftIds = new Set<string>();
+  // #410 — object ids that carry a culture door, so a photo-less deep-sky object
+  // that IS a message target (M13 ← the Arecibo message) still opens a flat panel
+  // to surface it, rather than the highlight-only path.
+  const cultureObjectIds = new Set<string>();
+  void getCultureObjectIds(fetch).then((s) => {
+    for (const id of s) cultureObjectIds.add(id);
+  });
   let closeExoplanetFn: any = null;
   let resetSimToToday: any = null;
   let enterSystemFn: any = null;
@@ -864,9 +875,23 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     if (!obj) return;
     bridge.selectedDeepSkyId = id;
     nbScene?.highlightDeepSky(id);
-    // Catalogue-only dots (no photo) don't immerse — just a highlighted label.
+    // Load any culture door(s) attached to this object (#410: the Arecibo message
+    // was beamed at M13) so the panel can surface them.
+    bridge.deepSkyCultureDoors = [];
+    void getCultureDoors(id, getLocale(), fetch).then((d) => {
+      if (bridge.selectedDeepSkyId === id) bridge.deepSkyCultureDoors = d;
+    });
+    // Catalogue-only dots (no photo) don't immerse. But a photo-less object that
+    // carries a message door (M13) still opens a flat, non-immersive panel so the
+    // door is reachable; the rest just highlight.
     if (!obj.photoKey) {
       cue('select');
+      if (cultureObjectIds.has(id)) {
+        bridge.activeDeepSky = obj;
+        closeStarPanel();
+        bridge.anonStar = null;
+        bridge.deepSkyPanelOpen = true;
+      }
       return;
     }
     cue('select');
@@ -1325,6 +1350,12 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       scene.add(handle.group);
       iconicTrajectoryHandles.push(handle);
       pickables.push(handle.clickTarget);
+      // #410 — remember which craft are interstellar-bound so a Today-marker
+      // click opens the MessagePanel (the message it carries) instead of the
+      // regular MissionPanel.
+      if (data.category?.includes('interstellar-bound') && data.mission_id) {
+        interstellarCraftIds.add(data.mission_id);
+      }
       // Yield to the event loop — separates each build into its own
       // macrotask so the browser can render + process input between
       // builds instead of starving for the whole roster's duration.
@@ -1387,8 +1418,14 @@ export function createExploreSceneHost(bridge: any, deps: any) {
         // both open the mission's detail panel inline on /explore
         // instead of navigating away to /missions, so the camera +
         // scene state survives the click. Same MissionPanel surface
-        // used by the PATHS legend rows.
-        void iconic.openMission(trajectoryMissionId, localeFromPage(deps.getPage()));
+        // used by the PATHS legend rows — except the interstellar-bound
+        // craft (#410), which open the MessagePanel (the message they
+        // carry) with a "Full mission details" hand-off to MissionPanel.
+        if (interstellarCraftIds.has(trajectoryMissionId)) {
+          deps.openMessageCraft?.(trajectoryMissionId, localeFromPage(deps.getPage()));
+        } else {
+          void iconic.openMission(trajectoryMissionId, localeFromPage(deps.getPage()));
+        }
       }
       return;
     }

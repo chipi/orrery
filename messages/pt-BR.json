@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "DOSSIÊ DE DESCIDA",
   "plan_touch_hint": "Toque e segure para visualizar",
   "explore_scale_jump_aria": "Pular para escala",
-  "explore_scale_change": "Alterar escala"
+  "explore_scale_change": "Alterar escala",
+  "explore_msg_launched": "Lançada em {date}",
+  "explore_msg_heading_label": "Rumo a",
+  "explore_msg_signal_label": "Alcance do sinal",
+  "explore_msg_signal_body": "Um sinal de mão única da Terra leva cerca de {hours} horas-luz para chegar lá.",
+  "explore_msg_carries_label": "A mensagem que carrega",
+  "explore_msg_no_message": "Não carrega uma mensagem formal — mas também está agora destinada às estrelas.",
+  "explore_msg_mission_details": "Detalhes completos da missão",
+  "explore_heading_voyager_1": "Gliese 445, em Camelopardalis — passagem mais próxima em cerca de 40.000 anos",
+  "explore_heading_voyager_2": "Ross 248, em Andromeda — passagem mais próxima em cerca de 42.000 anos",
+  "explore_heading_pioneer_10": "a direção geral de Aldebarã, em Touro — uma deriva de 2 milhões de anos, não uma passagem próxima",
+  "explore_heading_pioneer_11": "a constelação Aquila — sua estrela mais próxima em cerca de 4 milhões de anos",
+  "explore_heading_new_horizons": "a constelação Sagitário — nenhum encontro estelar próximo é previsto"
 }

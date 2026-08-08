@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "ДОСИЈЕ СИЛАЖЕЊА",
   "plan_touch_hint": "Додирни и држи да видиш",
   "explore_scale_jump_aria": "Скочи на скалу",
-  "explore_scale_change": "Промени скалу"
+  "explore_scale_change": "Промени скалу",
+  "explore_msg_launched": "Лансирано {date}",
+  "explore_msg_heading_label": "Курс ка",
+  "explore_msg_signal_label": "Досег сигнала",
+  "explore_msg_signal_body": "Једносмеран сигнал са Земље до њега стиже за око {hours} светлосних сати.",
+  "explore_msg_carries_label": "Порука коју носи",
+  "explore_msg_no_message": "Не носи званичну поруку — али је и она сада упутена ка звездама.",
+  "explore_msg_mission_details": "Потпуни детаљи мисије",
+  "explore_heading_voyager_1": "Gliese 445, у Жирафи — најближи пролазак за око 40.000 година",
+  "explore_heading_voyager_2": "Росс 248, у Андромеди — најближи пролазак за око 42.000 години",
+  "explore_heading_pioneer_10": "опште смере према Алдебарану, у Телцу — дрифт од 2 милиона година, без блиског проласка",
+  "explore_heading_pioneer_11": "сазвежђе Орла — његова најближа звезда за око 4 милиона година",
+  "explore_heading_new_horizons": "сазвежђе Стрелца — не предвиђа се близак звездани сусрет"
 }

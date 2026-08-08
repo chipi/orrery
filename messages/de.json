@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "ABSTIEGSDOSSIER",
   "plan_touch_hint": "Berühren & halten zum Vorschauen",
   "explore_scale_jump_aria": "Zur Skala springen",
-  "explore_scale_change": "Skala ändern"
+  "explore_scale_change": "Skala ändern",
+  "explore_msg_launched": "Gestartet {date}",
+  "explore_msg_heading_label": "Kurs auf",
+  "explore_msg_signal_label": "Signalreichweite",
+  "explore_msg_signal_body": "Ein Einweg-Signal von der Erde erreicht es in etwa {hours} Lichtstunden.",
+  "explore_msg_carries_label": "Die Botschaft an Bord",
+  "explore_msg_no_message": "Es trägt keine formale Botschaft — doch auch es ist nun zu den Sternen unterwegs.",
+  "explore_msg_mission_details": "Vollständige Missionsdetails",
+  "explore_heading_voyager_1": "Gliese 445 in der Giraffe — engste Annäherung in etwa 40.000 Jahren",
+  "explore_heading_voyager_2": "Ross 248 in der Andromeda — engste Annäherung in etwa 42.000 Jahren",
+  "explore_heading_pioneer_10": "die allgemeine Richtung des Aldebaran im Stier — eine 2-Millionen-Jahre-Drift, keine enge Annäherung",
+  "explore_heading_pioneer_11": "das Sternbild Adler — sein nächster Stern in etwa 4 Millionen Jahren",
+  "explore_heading_new_horizons": "das Sternbild Schütze — kein nahe Sternbegegnung vorhergesagt"
 }

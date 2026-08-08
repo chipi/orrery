@@ -35,6 +35,19 @@ export interface IconicTrajectoryData {
   current_distance_label: string;
   interstellar_since?: string;
   interstellar_since_label?: string;
+  /** #410 — operating agency (all current interstellar craft are NASA). */
+  agency?: string;
+  /** #410 — culture-door object id for the message this craft carries
+   *  (e.g. 'voyager' → Golden Record, 'pioneer' → Pioneer Plaque). Absent
+   *  when the craft carries no formal message (e.g. New Horizons). */
+  culture_object_id?: string;
+  /** #410 — the star/constellation this craft is heading toward, for the
+   *  message-panel + direction indicator. `star` is null when there is no
+   *  close stellar encounter (New Horizons → Sagittarius, no target star). */
+  heading?: {
+    star: string | null;
+    constellation: string;
+  };
   waypoints: IconicTrajectoryWaypoint[];
 }
 
@@ -334,6 +347,56 @@ function buildLabelSprite(
   return sprite;
 }
 
+// #410 — one-line "→ <star>" heading label for the direction indicator at a
+// craft's Today endpoint. Smaller + lighter than the encounter labels; always
+// visible (dim) with the trajectory rather than highlight-gated, so the eye
+// reads "this one is leaving for the stars" without a hover.
+const DIR_LABEL_TEXTURE_W = 224;
+const DIR_LABEL_TEXTURE_H = 56;
+const DIR_LABEL_SCALE_X = 60;
+const DIR_LABEL_SCALE_Y = 15;
+// Length (scene units) of the short arrow continuing past Today along the
+// craft's final heading — enough to read as "onward", short enough not to
+// collide with neighbouring trajectories in the outer scene.
+const DIR_ARROW_LEN = 62;
+
+export function buildDirectionLabelSprite(text: string, color: string): THREE.Sprite {
+  const canvas = document.createElement('canvas');
+  canvas.width = DIR_LABEL_TEXTURE_W;
+  canvas.height = DIR_LABEL_TEXTURE_H;
+  const ctx = canvas.getContext('2d');
+  if (ctx) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'rgba(15, 18, 35, 0.7)';
+    const padX = 8;
+    const padY = 6;
+    ctx.beginPath();
+    ctx.roundRect(padX, padY, canvas.width - padX * 2, canvas.height - padY * 2, 8);
+    ctx.fill();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.textBaseline = 'middle';
+    ctx.textAlign = 'left';
+    ctx.fillStyle = color;
+    ctx.font = 'bold 20px "Space Mono", monospace';
+    ctx.fillText(text, padX + 12, canvas.height / 2 + 1);
+  }
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.anisotropy = 4;
+  const sprite = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: texture,
+      transparent: true,
+      depthTest: false,
+      depthWrite: false,
+    }),
+  );
+  sprite.scale.set(DIR_LABEL_SCALE_X, DIR_LABEL_SCALE_Y, 1);
+  sprite.renderOrder = 10;
+  return sprite;
+}
+
 export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTrajectoryHandle {
   const { data, auToPx, width, height, lineWidth = DEFAULT_LINE_WIDTH, visible = false } = opts;
 
@@ -465,6 +528,33 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
   group.add(ring);
   hoverTargets.push(clickTarget);
 
+  // ── #410 heading indicator ───────────────────────────────────────
+  //    For an interstellar-bound craft, a short arrow continues past
+  //    Today along its final heading, capped by a "→ <star>" label.
+  //    This is the honest substitute for a to-scale line into the
+  //    stellar neighbourhood: at parsec scale these craft (~0.001 pc
+  //    out) would be a dot on the Sun, so we point rather than draw.
+  let dirLineGeo: THREE.BufferGeometry | null = null;
+  let dirLineMat: THREE.LineBasicMaterial | null = null;
+  let dirLabel: THREE.Sprite | null = null;
+  if (data.heading?.star && projected.length >= 2) {
+    const prev = projected[projected.length - 2];
+    const dir = new THREE.Vector3().subVectors(todayPos, prev).normalize();
+    const tip = new THREE.Vector3().copy(todayPos).addScaledVector(dir, DIR_ARROW_LEN);
+    dirLineGeo = new THREE.BufferGeometry().setFromPoints([todayPos.clone(), tip]);
+    dirLineMat = new THREE.LineBasicMaterial({
+      color: new THREE.Color(data.color).getHex(),
+      transparent: true,
+      opacity: 0.55,
+    });
+    const dirLine = new THREE.Line(dirLineGeo, dirLineMat);
+    dirLine.userData = { kind: 'iconic-trajectory-heading', id: data.id };
+    group.add(dirLine);
+    dirLabel = buildDirectionLabelSprite(`→ ${data.heading.star}`, data.color);
+    dirLabel.position.copy(tip);
+    group.add(dirLabel);
+  }
+
   return {
     group,
     clickTarget,
@@ -563,6 +653,10 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
         sprite.material.map?.dispose();
         sprite.material.dispose();
       }
+      dirLineGeo?.dispose();
+      dirLineMat?.dispose();
+      dirLabel?.material.map?.dispose();
+      dirLabel?.material.dispose();
     },
   };
 }

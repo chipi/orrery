@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "降下・ドシエ",
   "plan_touch_hint": "タッチして長押しでプレビュー",
   "explore_scale_jump_aria": "スケールにジャンプ",
-  "explore_scale_change": "スケールを変更"
+  "explore_scale_change": "スケールを変更",
+  "explore_msg_launched": "{date}に打ち上げられた",
+  "explore_msg_heading_label": "向かう先",
+  "explore_msg_signal_label": "信号到達距離",
+  "explore_msg_signal_body": "地球からの一方向信号は約{hours}光時間で到達します。",
+  "explore_msg_carries_label": "搭載メッセージ",
+  "explore_msg_no_message": "正式なメッセージは搭載していませんが、これも星々へ向かう運命にあります。",
+  "explore_msg_mission_details": "ミッション詳細 →",
+  "explore_heading_voyager_1": "きりん座のGliese 445 — 最接近は約40,000年後",
+  "explore_heading_voyager_2": "アンドロメダ座のRoss 248 — 最接近は約42,000年後",
+  "explore_heading_pioneer_10": "牡牛座のアルデバランの方向 — 2,000,000年の移動、接近ではなく",
+  "explore_heading_pioneer_11": "わし座の方向 — 最も近い恒星との接近は約400万年後",
+  "explore_heading_new_horizons": "射手座の方向 — 恒星への接近は予測されていません"
 }

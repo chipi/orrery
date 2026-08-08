@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "ДОСЬЕ СПУСКА",
   "plan_touch_hint": "Нажмите и держите для предпросмотра",
   "explore_scale_jump_aria": "Перейти к масштабу",
-  "explore_scale_change": "Изменить масштаб"
+  "explore_scale_change": "Изменить масштаб",
+  "explore_msg_launched": "Запущен {date}",
+  "explore_msg_heading_label": "Курс на",
+  "explore_msg_signal_label": "Дальность сигнала",
+  "explore_msg_signal_body": "Односторонний сигнал с Земли достигает его примерно за {hours} световых часов.",
+  "explore_msg_carries_label": "Послание на борту",
+  "explore_msg_no_message": "Он не несёт официального послания — но и он теперь связан с путешествием к звёздам.",
+  "explore_msg_mission_details": "Полная информация о миссии",
+  "explore_heading_voyager_1": "Глизе 445 в Жирафе — ближайшее сближение примерно через 40 000 лет",
+  "explore_heading_voyager_2": "Росс 248 в Андромеде — ближайшее сближение примерно через 42 000 лет",
+  "explore_heading_pioneer_10": "в направлении Альдебарана в Тельце — дрейф на протяжении 2 миллионов лет, а не тесное сближение",
+  "explore_heading_pioneer_11": "в созвездие Орла — её ближайшая звезда примерно через 4 миллиона лет",
+  "explore_heading_new_horizons": "в созвездие Стрельца — тесные встречи со звёздами не предсказаны"
 }

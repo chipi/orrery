@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "EXPEDIENTE DE DESCENSO",
   "plan_touch_hint": "Toca y mantén pulsado para previsualizar",
   "explore_scale_jump_aria": "Saltar a escala",
-  "explore_scale_change": "Cambiar escala"
+  "explore_scale_change": "Cambiar escala",
+  "explore_msg_launched": "Lanzada {date}",
+  "explore_msg_heading_label": "Con rumbo hacia",
+  "explore_msg_signal_label": "Alcance de la señal",
+  "explore_msg_signal_body": "Una señal de ida desde la Tierra llega en aproximadamente {hours} horas luz.",
+  "explore_msg_carries_label": "El mensaje que transporta",
+  "explore_msg_no_message": "No transporta ningún mensaje formal — pero también está destinada a las estrellas.",
+  "explore_msg_mission_details": "Detalles completos de la misión",
+  "explore_heading_voyager_1": "Gliese 445, en Camelopardalis — máxima aproximación en unos 40 000 años",
+  "explore_heading_voyager_2": "Ross 248, en Andrómeda — máxima aproximación en unos 42 000 años",
+  "explore_heading_pioneer_10": "la dirección general de Aldebarán, en Tauro — una deriva de 2 millones de años, no un acercamiento",
+  "explore_heading_pioneer_11": "la constelación del Águila — su estrella más cercana en unos 4 millones de años",
+  "explore_heading_new_horizons": "la constelación de Sagitario — no se predice ningún encuentro estelar cercano"
 }

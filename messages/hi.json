@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "अवतरण डोसियर",
   "plan_touch_hint": "देखने के लिए दबाकर रखें",
   "explore_scale_jump_aria": "स्केल पर जाएँ",
-  "explore_scale_change": "स्केल बदलें"
+  "explore_scale_change": "स्केल बदलें",
+  "explore_msg_launched": "{date} को लॉन्च किया गया",
+  "explore_msg_heading_label": "दिशा",
+  "explore_msg_signal_label": "सिग्नल पहुँच",
+  "explore_msg_signal_body": "पृथ्वी से एक-तरफा सिग्नल इसे लगभग {hours} प्रकाश-घंटे में पहुंचता है।",
+  "explore_msg_carries_label": "इसका संदेश",
+  "explore_msg_no_message": "इसमें कोई औपचारिक संदेश नहीं है — लेकिन यह भी अब तारों की ओर प्रस्थान के लिए बंधा है।",
+  "explore_msg_mission_details": "पूरी मिशन विवरण",
+  "explore_heading_voyager_1": "Gliese 445, Camelopardalis में — लगभग 40,000 वर्षों में निकटतम गुजरना",
+  "explore_heading_voyager_2": "Ross 248, Andromeda में — लगभग 42,000 वर्षों में निकटतम गुजरना",
+  "explore_heading_pioneer_10": "Aldebaran की सामान्य दिशा, Taurus में — 2 मिलियन-वर्ष की गति, निकटतम गुजरना नहीं",
+  "explore_heading_pioneer_11": "Aquila तारामंडल — इसका निकटतम तारा लगभग 4 मिलियन वर्षों में",
+  "explore_heading_new_horizons": "Sagittarius तारामंडल — किसी निकट तारकीय मुठभेड़ की भविष्यवाणी नहीं की गई है"
 }

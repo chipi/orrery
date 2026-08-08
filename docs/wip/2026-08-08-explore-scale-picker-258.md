@@ -86,5 +86,8 @@ Two new keys for the control chrome (`explore_scale_jump_aria`,
 - Only 2 of the 3 sub-view guard conditions were exercised live/e2e (2D toggle +
   black-hole `?bh=`); deep-sky and body-scene share the same boolean conjuncts in
   the same expression but were not individually triggered.
-- Full `preflight` (typecheck → lint → test → validate-data → build) + the
-  coverage gate: [run at end of Slice 4].
+- Full `preflight` (typecheck → lint → test → validate-data → build): **green,
+  `PREFLIGHT_EXIT=0`** (0 typecheck/lint errors, 4816 tests, build ✓). The
+  separate coverage gate (`test:coverage`, not in preflight) was **not** run — but
+  no `lib/*.ts` logic changed (only a `.svelte` component + page wiring), so no
+  coverage-floor regression is expected.

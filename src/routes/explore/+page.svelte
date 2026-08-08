@@ -86,6 +86,8 @@
   import SunPanel from '$lib/components/SunPanel.svelte';
   import ExploreBodyIndex from '$lib/components/ExploreBodyIndex.svelte';
   import ExploreScalePicker from '$lib/components/ExploreScalePicker.svelte';
+  import MessagePanel from '$lib/components/MessagePanel.svelte';
+  import { getInterstellarCraft, type InterstellarCraft } from '$lib/data/interstellar';
   import SizesCanvas from '$lib/components/SizesCanvas.svelte';
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import SatellitePanel from '$lib/components/SatellitePanel.svelte';
@@ -387,6 +389,35 @@
   // Idiomatic Svelte 5 pattern (per docs §"$state in classes / modules":
   // mutate-not-reassign on the shared object).
   const iconic = createIconicSelectionService();
+
+  // #410 — interstellar-craft MessagePanel. A Today-marker click on a
+  // Voyager/Pioneer/New Horizons path opens this (the message it carries)
+  // instead of the MissionPanel; the panel's "Full mission details" hands
+  // off to iconic.openMission. Seq-guarded so the latest click wins.
+  // The interstellar-bound craft whose legend row / trajectory opens the
+  // MessagePanel rather than the MissionPanel (mirrors the host's category
+  // detection for the canvas Today-marker click).
+  const INTERSTELLAR_CRAFT = new Set([
+    'voyager-1',
+    'voyager-2',
+    'pioneer-10',
+    'pioneer-11',
+    'new-horizons',
+  ]);
+  let activeCraft = $state<InterstellarCraft | null>(null);
+  let craftPanelOpen = $state(false);
+  let craftOpenSeq = 0;
+  async function openMessageCraft(craftId: string, locale: string): Promise<void> {
+    const seq = ++craftOpenSeq;
+    const c = await getInterstellarCraft(craftId, locale);
+    if (seq !== craftOpenSeq || !c) return;
+    activeCraft = c;
+    craftPanelOpen = true;
+  }
+  function openCraftMission(missionId: string): void {
+    craftPanelOpen = false;
+    void iconic.openMission(missionId, localeFromPage($page));
+  }
 
   /** Visibility-layer master toggles (NOT the per-body layer flags —
    *  those live in `layers` further down). */
@@ -926,6 +957,8 @@
   // `deepSkyPhotoUrl` swaps thumb → full-res as the LOD blooms.
   let deepSkyGallery = $state<DeepSkyImage[]>([]);
   let activeDeepSky = $state<DeepSkyObject | null>(null);
+  // #410 — culture door(s) for the selected deep-sky object (M13 ← Arecibo).
+  let deepSkyCultureDoors = $state<LocalizedCultureDoor[]>([]);
   let deepSkyImmersed = $state(false);
   let deepSkyPhotoUrl = $state('');
   let deepSkyPanelOpen = $state(false);
@@ -2047,6 +2080,12 @@
       set bhCultureDoors(v) {
         bhCultureDoors = v;
       },
+      get deepSkyCultureDoors() {
+        return deepSkyCultureDoors;
+      },
+      set deepSkyCultureDoors(v) {
+        deepSkyCultureDoors = v;
+      },
       get hoverData() {
         return hoverData;
       },
@@ -2162,6 +2201,7 @@
       DAYS_PER_YEAR,
       fmtScale,
       iconic,
+      openMessageCraft,
       sizePathsLegend,
       selectSun,
       selectPlanet,
@@ -2935,7 +2975,10 @@
             class:is-selected={iconic.state.selectedId === entry.mission_id}
             class:is-hovered={iconic.state.hoveredId === entry.mission_id}
             aria-pressed={iconic.state.selectedId === entry.mission_id}
-            onclick={() => iconic.selectMission(entry.mission_id, localeFromPage($page))}
+            onclick={() =>
+              INTERSTELLAR_CRAFT.has(entry.mission_id)
+                ? openMessageCraft(entry.mission_id, localeFromPage($page))
+                : iconic.selectMission(entry.mission_id, localeFromPage($page))}
             onkeydown={(e) => onLegendKeydown(e, i)}
             onmouseenter={() => {
               iconic.state.hoveredId = entry.mission_id;
@@ -3132,7 +3175,11 @@
           class:is-hovered={iconic.state.hoveredId === entry.mission_id}
           aria-pressed={iconic.state.selectedId === entry.mission_id}
           onclick={() => {
-            iconic.selectMission(entry.mission_id, localeFromPage($page));
+            if (INTERSTELLAR_CRAFT.has(entry.mission_id)) {
+              void openMessageCraft(entry.mission_id, localeFromPage($page));
+            } else {
+              iconic.selectMission(entry.mission_id, localeFromPage($page));
+            }
             close();
           }}
           onkeydown={(e) => onLegendKeydown(e, i)}
@@ -3296,7 +3343,11 @@
   open={deepSkyPanelOpen}
   onClose={() => exitDeepSkyFn?.()}
   onGateway={(hostId) => deepSkyGatewayFn?.(hostId)}
-/>
+>
+  {#each deepSkyCultureDoors as door (door.id)}
+    <CultureDoorCard {door} />
+  {/each}
+</DeepSkyPanel>
 
 <MilkyWayPanel
   object={selectedMwObject}
@@ -3317,6 +3368,15 @@
     <CultureDoorCard {door} />
   {/each}
 </BlackHolePanel>
+
+<!-- #410 — the message an interstellar craft carries. Opened from its PATHS
+     trajectory Today marker; "Full mission details" hands off to MissionPanel. -->
+<MessagePanel
+  craft={activeCraft}
+  open={craftPanelOpen}
+  onClose={() => (craftPanelOpen = false)}
+  onMissionDetails={openCraftMission}
+/>
 
 <SmallBodyPanel
   body={selectedSmallBody}

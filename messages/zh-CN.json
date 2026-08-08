@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "下降档案",
   "plan_touch_hint": "长按查看",
   "explore_scale_jump_aria": "跳转到比例",
-  "explore_scale_change": "更改比例"
+  "explore_scale_change": "更改比例",
+  "explore_msg_launched": "发射时间：{date}",
+  "explore_msg_heading_label": "前往方向",
+  "explore_msg_signal_label": "信号传播",
+  "explore_msg_signal_body": "来自地球的单向信号到达它需要约 {hours} 光时。",
+  "explore_msg_carries_label": "它携带的讯息",
+  "explore_msg_no_message": "它未携带正式讯息——但现在它也注定要飞向群星。",
+  "explore_msg_mission_details": "完整任务详情",
+  "explore_heading_voyager_1": "鹿豹座的格利泽 445 — 约 40,000 年后的最近接近",
+  "explore_heading_voyager_2": "仙女座的罗斯 248 — 约 42,000 年后的最近接近",
+  "explore_heading_pioneer_10": "金牛座毕宿五的方向 — 漂移约 200 万年，非最近接近",
+  "explore_heading_pioneer_11": "鹰星座的方向 — 约 400 万年后接近最近的恒星",
+  "explore_heading_new_horizons": "人马座的方向 — 预测没有近距离恒星相遇"
 }

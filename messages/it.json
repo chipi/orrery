@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "DOSSIER DELLA DISCESA",
   "plan_touch_hint": "Tocca e tieni premuto per visualizzare",
   "explore_scale_jump_aria": "Salta a scala",
-  "explore_scale_change": "Cambia scala"
+  "explore_scale_change": "Cambia scala",
+  "explore_msg_launched": "Lanciata {date}",
+  "explore_msg_heading_label": "Rotta verso",
+  "explore_msg_signal_label": "Portata del segnale",
+  "explore_msg_signal_body": "Un segnale unidirezionale dalla Terra la raggiunge in circa {hours} ore luce.",
+  "explore_msg_carries_label": "Il messaggio che trasporta",
+  "explore_msg_no_message": "Non trasporta un messaggio formale — ma anche lei è ormai destinata alle stelle.",
+  "explore_msg_mission_details": "Dettagli completi della missione",
+  "explore_heading_voyager_1": "Gliese 445, in Camelopardalis — passaggio più vicino tra circa 40.000 anni",
+  "explore_heading_voyager_2": "Ross 248, in Andromeda — passaggio più vicino tra circa 42.000 anni",
+  "explore_heading_pioneer_10": "la direzione generale di Aldebaran, nel Toro — una deriva di 2 milioni di anni, non un passaggio ravvicinato",
+  "explore_heading_pioneer_11": "la costellazione dell'Aquila — la sua stella più vicina tra circa 4 milioni di anni",
+  "explore_heading_new_horizons": "la costellazione del Sagittario — non è previsto alcun incontro stellare ravvicinato"
 }

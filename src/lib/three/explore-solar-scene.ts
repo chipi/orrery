@@ -3,6 +3,7 @@ import { Line2 } from 'three/examples/jsm/lines/Line2.js';
 import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
 import { PLANETS, type PlanetVisual, type SatelliteDef } from '$lib/explore-scene';
+import { buildDirectionLabelSprite } from '$lib/three/iconic-trajectory';
 import { onLayerChange } from '$lib/science-layers';
 import { buildLocalGroupLayer } from '$lib/galaxies-layer';
 import { gravityAccel, BODY_MASS_KG, buildArrowTipLabel } from '$lib/orbit-overlays';
@@ -1147,6 +1148,24 @@ export function createExploreSolarScene(deps: any) {
         depthWrite: false,
       }),
     );
+    // #410 — ʻOumuamua's inbound radiant vector. It arrived from the direction
+    // of Vega (Lyra); annotate the inbound asymptote end of the hyperbola with a
+    // short "← Vega" arrow + label. Added as a CHILD of the orbit line so it
+    // inherits the interstellar layer's visibility toggle. Schematic like the
+    // arc itself — a direction cue, not a to-scale line to Vega (25 ly away).
+    if (b.type === 'interstellar' && b.inbound_radiant && orbitPts.length >= 2) {
+      const inEnd = orbitPts[0];
+      const inDir = new THREE.Vector3().subVectors(orbitPts[0], orbitPts[1]).normalize();
+      const tip = new THREE.Vector3().copy(inEnd).addScaledVector(inDir, 70);
+      const vec = new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints([inEnd.clone(), tip]),
+        new THREE.LineBasicMaterial({ color: trajColor, transparent: true, opacity: 0.55 }),
+      );
+      orbit.add(vec);
+      const label = buildDirectionLabelSprite(`← ${b.inbound_radiant}`, `#${b.color.slice(1)}`);
+      label.position.copy(tip);
+      orbit.add(label);
+    }
     scene.add(orbit);
 
     // Body mesh — tiny coloured sphere.

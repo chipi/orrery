@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "ملف الهبوط",
   "plan_touch_hint": "اضغط مع الاستمرار للمعاينة",
   "explore_scale_jump_aria": "الانتقال إلى المقياس",
-  "explore_scale_change": "تغيير المقياس"
+  "explore_scale_change": "تغيير المقياس",
+  "explore_msg_launched": "أُطلقت في {date}",
+  "explore_msg_heading_label": "متجهة نحو",
+  "explore_msg_signal_label": "مدى الإشارة",
+  "explore_msg_signal_body": "تستغرق إشارة ذات اتجاه واحد من الأرض حوالي {hours} ساعة ضوئية للوصول إليها.",
+  "explore_msg_carries_label": "الرسالة التي تحملها",
+  "explore_msg_no_message": "لا تحمل رسالة رسمية — لكنها أيضاً الآن مقيدة بالانطلاق نحو النجوم.",
+  "explore_msg_mission_details": "تفاصيل المهمة الكاملة",
+  "explore_heading_voyager_1": "غليز 445، في كاميلوباردليس — أقرب اقتراب في حوالي 40,000 سنة",
+  "explore_heading_voyager_2": "روس 248، في أندروميدا — أقرب اقتراب في حوالي 42,000 سنة",
+  "explore_heading_pioneer_10": "الاتجاه العام نحو الدبران، في الثور — انجراف يستغرق مليوني سنة، وليس اقتراباً وثيقاً",
+  "explore_heading_pioneer_11": "كوكبة العقاب — أقرب نجم لها في حوالي 4 ملايين سنة",
+  "explore_heading_new_horizons": "كوكبة الرامي — لا يُتنبأ بأي التقاء نجمي وثيق"
 }

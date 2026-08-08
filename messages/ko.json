@@ -1720,5 +1720,17 @@
   "fly_descent_dossier_title": "하강 경보",
   "plan_touch_hint": "터치하고 길게 누르면 미리보기",
   "explore_scale_jump_aria": "스케일로 이동",
-  "explore_scale_change": "스케일 변경"
+  "explore_scale_change": "스케일 변경",
+  "explore_msg_launched": "{date}에 발사됨",
+  "explore_msg_heading_label": "향하는 방향",
+  "explore_msg_signal_label": "신호 도달 거리",
+  "explore_msg_signal_body": "지구에서 발송한 편도 신호가 도달하는 데 약 {hours} 광시간이 걸립니다.",
+  "explore_msg_carries_label": "실린 메시지",
+  "explore_msg_no_message": "공식적인 메시지는 없지만, 이 탐사선 역시 이제 별을 향해 나아가고 있습니다.",
+  "explore_msg_mission_details": "전체 임무 정보",
+  "explore_heading_voyager_1": "기린자리의 글리제 445 — 약 40,000년 후 최근접",
+  "explore_heading_voyager_2": "안드로메다자리의 로스 248 — 약 42,000년 후 최근접",
+  "explore_heading_pioneer_10": "황소자리의 알데바란 방향 — 200만 년에 걸친 표류, 최근접은 아님",
+  "explore_heading_pioneer_11": "독수리자리 — 약 400만 년 후 최근접 별",
+  "explore_heading_new_horizons": "궁수자리 — 예상되는 항성 근접 접근 없음"
 }

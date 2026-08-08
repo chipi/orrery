@@ -48,6 +48,8 @@
         return m.explore_ctx_local_group();
       case 'local-sheet':
         return m.explore_ctx_local_sheet();
+      case 'virgo':
+        return m.explore_ctx_virgo();
     }
   }
 

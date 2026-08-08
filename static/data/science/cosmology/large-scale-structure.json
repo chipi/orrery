@@ -1,0 +1,28 @@
+{
+  "id": "large-scale-structure",
+  "tab": "cosmology",
+  "order": 1,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Virgo Supercluster context: our home supercluster — the Local Group falling toward the Virgo Cluster, one node of the cosmic web"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · The Cosmic Web",
+      "u": "https://science.nasa.gov/universe/the-universe-at-large/",
+      "t": "intro"
+    },
+    {
+      "l": "Tully et al. · The Laniakea Supercluster (Nature 2014)",
+      "u": "https://www.nature.com/articles/nature13674",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Observable universe — large-scale structure",
+      "u": "https://en.wikipedia.org/wiki/Observable_universe#Large-scale_structure",
+      "t": "deep"
+    }
+  ]
+}

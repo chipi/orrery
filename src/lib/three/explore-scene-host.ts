@@ -11,6 +11,7 @@ import {
   MILKY_WAY_CONTEXT,
   LOCAL_GROUP_CONTEXT,
   LOCAL_SHEET_CONTEXT,
+  VIRGO_CONTEXT,
   makeBodyContext,
   bodyContextId,
   AU_PER_PARSEC,
@@ -42,6 +43,7 @@ import {
   getExoplanetSystems,
   getLocalGroup,
   getLocalSheet,
+  getVirgo,
   getMilkyWaySchematic,
   getNamedStarI18n,
   getNamedStars,
@@ -152,8 +154,10 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   let contextDeepLinkFn: any = null;
   let exitLocalGroupFn: any = null;
   let exitLocalSheetFn: any = null;
+  let exitVirgoFn: any = null;
   let closeLgFn: any = null;
   let closeLsFn: any = null;
+  let closeVirgoFn: any = null;
   let exitBlackHoleFn: any = null;
   let bhDeepLinkFn: any = null;
   let setBhCurvatureFn: any = null;
@@ -218,6 +222,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       MILKY_WAY_CONTEXT,
       LOCAL_GROUP_CONTEXT,
       LOCAL_SHEET_CONTEXT,
+      VIRGO_CONTEXT,
     ],
     'solar-system',
   );
@@ -454,6 +459,42 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       return null;
     } finally {
       lsLoading = false;
+    }
+  }
+
+  // #455 (WS-5b) — the Virgo Supercluster schematic (one shell out from the Local
+  // Sheet). Outermost shell for now (Laniakea / cosmic-web tiers extend past it).
+  let virgoScene: import('$lib/universe/virgo-scene').VirgoScene | null = null;
+  let virgoLoading = false;
+  let VIRGO_SCENE_RADIUS = 150;
+  let VIRGO_ENTRY_CAM_R = 200;
+  let VIRGO_CAM_R_MIN = 112;
+  let VIRGO_CAM_R_MAX = 900;
+  let VIRGO_FAR = 6000;
+  const VIRGO_ENTRY_CAM_P = 0.85;
+  const inVirgo = () => contextGraph.active.id === 'virgo';
+
+  async function ensureVirgo(): Promise<typeof virgoScene> {
+    if (virgoScene) return virgoScene;
+    if (virgoLoading) return null;
+    virgoLoading = true;
+    try {
+      const [mod, data] = await Promise.all([import('$lib/universe/virgo-scene'), getVirgo(fetch)]);
+      if (!data) return null;
+      bridge.virgoMembers = data.members;
+      VIRGO_SCENE_RADIUS = mod.VIRGO_SCENE_RADIUS;
+      VIRGO_ENTRY_CAM_R = VIRGO_SCENE_RADIUS * 1.35;
+      VIRGO_CAM_R_MIN = VIRGO_SCENE_RADIUS * 0.75; // zoom-in floor → cross back to the Local Sheet
+      VIRGO_CAM_R_MAX = VIRGO_SCENE_RADIUS * 6; // zoom-out ceiling (outermost for now)
+      VIRGO_FAR = VIRGO_SCENE_RADIUS * 40;
+      virgoScene = mod.createVirgoScene(data);
+      virgoScene.setSize(bridge.container?.clientWidth ?? 1, bridge.container?.clientHeight ?? 1);
+      return virgoScene;
+    } catch (err) {
+      console.error('[explore v2] virgo load failed', err);
+      return null;
+    } finally {
+      virgoLoading = false;
     }
   }
 
@@ -811,6 +852,53 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     updateCam();
   }
   exitLocalSheetFn = crossInToLocalGroup;
+
+  // ── WS-5b: Local Sheet ↔ Virgo Supercluster crossing (same machinery). ──────
+  async function crossOutToVirgo(): Promise<void> {
+    if (inVirgo()) return;
+    const scene = await ensureVirgo();
+    if (!scene) return; // load failed — stay in the Local Sheet
+    bridge.lsPanelOpen = false;
+    bridge.selectedLsMember = null;
+    lsScene?.highlight(null);
+    contextGraph.setActive('virgo');
+    bridge.contextId = 'virgo'; // flip chrome immediately
+    camRMin = VIRGO_CAM_R_MIN;
+    camRMax = VIRGO_CAM_R_MAX;
+    camera.far = VIRGO_FAR;
+    camera.near = 1;
+    camera.updateProjectionMatrix();
+    camP = VIRGO_ENTRY_CAM_P;
+    if (deps.getReducedMotion()) {
+      camR = VIRGO_ENTRY_CAM_R;
+    } else {
+      camR = VIRGO_ENTRY_CAM_R * 1.3;
+      startCrossDolly(VIRGO_ENTRY_CAM_R * 1.3, VIRGO_ENTRY_CAM_R, 1300);
+      bridge.crossingFlashId++;
+      showWarpCaption(`${(53800000).toLocaleString()} ${m.explore_light_years()} · Virgo Cluster`);
+    }
+    updateCam();
+  }
+
+  function crossInToLocalSheet(): void {
+    if (!inVirgo()) return;
+    dollyActive = false;
+    if (!deps.getReducedMotion()) bridge.crossingFlashId++;
+    bridge.virgoPanelOpen = false;
+    bridge.selectedVirgoMember = null;
+    virgoScene?.highlight(null);
+    contextGraph.setActive('local-sheet');
+    bridge.contextId = 'local-sheet'; // flip chrome immediately
+    camRMin = LS_CAM_R_MIN;
+    camRMax = LS_CAM_R_MAX;
+    camR = LS_CAM_R_MAX; // re-enter at the Local Sheet's outer edge
+    camera.far = LS_FAR;
+    camera.near = 1;
+    camera.updateProjectionMatrix();
+    camP = LS_ENTRY_CAM_P;
+    updateCam();
+  }
+  exitVirgoFn = crossInToLocalSheet;
 
   // ── Exoplanet BodyScene (Slice 2) ────────────────────────────────────────
   // Descend from the neighborhood into a host star's mini-orrery via a 1–2 s
@@ -1221,15 +1309,17 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     bridge.scaleReadout = describeDistanceAu(au);
     bridge.contextId = inBodyScene()
       ? 'body-scene'
-      : inLocalSheet()
-        ? 'local-sheet'
-        : inLocalGroup()
-          ? 'local-group'
-          : inMilkyWay()
-            ? 'milky-way'
-            : inNeighborhood()
-              ? 'neighborhood'
-              : 'solar-system';
+      : inVirgo()
+        ? 'virgo'
+        : inLocalSheet()
+          ? 'local-sheet'
+          : inLocalGroup()
+            ? 'local-group'
+            : inMilkyWay()
+              ? 'milky-way'
+              : inNeighborhood()
+                ? 'neighborhood'
+                : 'solar-system';
     const vh = bridge.container?.clientHeight ?? 1;
     const worldPerPx = (2 * Math.tan((camera.fov * Math.PI) / 180 / 2) * camR) / vh;
     const unitToAu = inNeighborhood() ? AU_PER_PC : 1;
@@ -1633,6 +1723,15 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       if (bridge.hoverData) bridge.hoverData = null;
       return;
     }
+    // WS-5b — in the Virgo Supercluster, hover highlights + names a member.
+    if (inVirgo()) {
+      const mh = virgoScene ? ray3dHover.intersectObjects(virgoScene.pickables, false) : [];
+      const id = (mh[0]?.object.userData.virgoId as string | undefined) ?? null;
+      virgoScene?.highlight(id ?? bridge.selectedVirgoMember?.id ?? null);
+      el3d.style.cursor = id ? 'pointer' : 'grab';
+      if (bridge.hoverData) bridge.hoverData = null;
+      return;
+    }
     // v2: in the stellar neighborhood, hover highlights + names the nearest
     // named star; nothing else is hoverable there.
     if (inNeighborhood()) {
@@ -1983,6 +2082,35 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     lsScene?.highlight(null);
   }
   closeLsFn = closeLsPanel;
+
+  // #455 (WS-5b) — pick a Virgo Supercluster member → open the VirgoPanel.
+  function pickVirgo(e: { clientX: number; clientY: number }): void {
+    if (!virgoScene) return;
+    const rect = el3d.getBoundingClientRect();
+    const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+    const hits = ray3d.intersectObjects(virgoScene.pickables, false);
+    if (hits.length) {
+      const id = hits[0].object.userData.virgoId as string | undefined;
+      if (id) selectVirgo(id);
+    }
+  }
+  function selectVirgo(id: string): void {
+    const member = (bridge.virgoMembers ?? []).find((mm: any) => mm.id === id);
+    if (!member) return;
+    cue('select');
+    bridge.selectedVirgoMember = member;
+    bridge.virgoPanelOpen = true;
+    virgoScene?.highlight(id);
+    trackItemClick('marker', id, '/explore');
+  }
+  function closeVirgoPanel(): void {
+    bridge.virgoPanelOpen = false;
+    bridge.selectedVirgoMember = null;
+    virgoScene?.highlight(null);
+  }
+  closeVirgoFn = closeVirgoPanel;
   async function resolveGalaxyDeepLink(id: string): Promise<void> {
     if (!inMilkyWay()) {
       if (!inNeighborhood()) await crossOutToNeighborhood();
@@ -2001,30 +2129,34 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   // Ladder + level math live in scale-shell-controller (RFC-036 WS-C/C1, tested).
   const curCtxLevel = () =>
     contextLevel(
-      inLocalSheet()
-        ? 'local-sheet'
-        : inLocalGroup()
-          ? 'local-group'
-          : inMilkyWay()
-            ? 'milky-way'
-            : inNeighborhood()
-              ? 'neighborhood'
-              : 'solar-system',
+      inVirgo()
+        ? 'virgo'
+        : inLocalSheet()
+          ? 'local-sheet'
+          : inLocalGroup()
+            ? 'local-group'
+            : inMilkyWay()
+              ? 'milky-way'
+              : inNeighborhood()
+                ? 'neighborhood'
+                : 'solar-system',
     );
   contextDeepLinkFn = async (target: string) => {
     const t = contextLevel(target);
     if (t < 0) return;
     let guard = 0;
-    while (curCtxLevel() < t && guard++ < 8) {
+    while (curCtxLevel() < t && guard++ < 10) {
       const cur = curCtxLevel();
       if (cur === 0) await crossOutToNeighborhood();
       else if (cur === 1) await crossOutToMilkyWay();
       else if (cur === 2) await crossOutToLocalGroup();
       else if (cur === 3) await crossOutToLocalSheet();
+      else if (cur === 4) await crossOutToVirgo();
     }
-    while (curCtxLevel() > t && guard++ < 8) {
+    while (curCtxLevel() > t && guard++ < 10) {
       const cur = curCtxLevel();
-      if (cur === 4) crossInToLocalGroup();
+      if (cur === 5) crossInToLocalSheet();
+      else if (cur === 4) crossInToLocalGroup();
       else if (cur === 3) crossInToMilkyWay();
       else if (cur === 2) crossInToNeighborhood();
       else if (cur === 1) crossInToSolarSystem();
@@ -2065,6 +2197,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       else if (inMilkyWay()) pickMilkyWay(e);
       else if (inLocalGroup()) pickLocalGroup(e);
       else if (inLocalSheet()) pickLocalSheet(e);
+      else if (inVirgo()) pickVirgo(e);
       else if (inNeighborhood()) pickNeighborhood(e);
       else tryPick3d(e);
     }
@@ -2100,14 +2233,33 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       updateCam();
       return;
     }
-    // WS-1 — the Local Sheet is the outermost context (for now): multiplicative
-    // zoom; scroll-in past the inner edge drops back into the Local Group.
+    // WS-1 — the Local Sheet: multiplicative zoom; scroll-in past the inner edge
+    // drops back into the Local Group, scroll-out past the ceiling crosses to the
+    // Virgo Supercluster (WS-5b).
     if (inLocalSheet()) {
       dollyActive = false;
       const ratio = zoomingOut ? 1.07 : 1 / 1.07;
       const next = camR * ratio;
       if (!zoomingOut && next <= camRMin) {
         crossInToLocalGroup();
+        return;
+      }
+      if (zoomingOut && camR >= camRMax - 0.5) {
+        void crossOutToVirgo();
+        return;
+      }
+      camR = Math.max(camRMin, Math.min(camRMax, next));
+      updateCam();
+      return;
+    }
+    // WS-5b — the Virgo Supercluster is the outermost context (for now):
+    // multiplicative zoom; scroll-in past the inner edge drops back to the Local Sheet.
+    if (inVirgo()) {
+      dollyActive = false;
+      const ratio = zoomingOut ? 1.07 : 1 / 1.07;
+      const next = camR * ratio;
+      if (!zoomingOut && next <= camRMin) {
+        crossInToLocalSheet();
         return;
       }
       camR = Math.max(camRMin, Math.min(camRMax, next));
@@ -2213,6 +2365,23 @@ export function createExploreSceneHost(bridge: any, deps: any) {
         if (inLocalSheet()) {
           if (ratio < 1 && camR * ratio <= camRMin) {
             crossInToLocalGroup();
+            pinchPrev3d = dist;
+            return;
+          }
+          if (ratio > 1 && camR >= camRMax - 0.5) {
+            void crossOutToVirgo();
+            pinchPrev3d = dist;
+            return;
+          }
+          dollyActive = false;
+          camR = Math.max(camRMin, Math.min(camRMax, camR * ratio));
+          updateCam();
+          pinchPrev3d = dist;
+          return;
+        }
+        if (inVirgo()) {
+          if (ratio < 1 && camR * ratio <= camRMin) {
+            crossInToLocalSheet();
             pinchPrev3d = dist;
             return;
           }
@@ -2907,6 +3076,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     mwScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     lgScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     lsScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
+    virgoScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     nbScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     bhScene?.setSize(
       bridge.container.clientWidth,
@@ -3450,6 +3620,12 @@ export function createExploreSceneHost(bridge: any, deps: any) {
           lsScene.render(renderer, camera);
           return;
         }
+        if (inVirgo() && virgoScene) {
+          stepCrossDolly();
+          virgoScene.update(camera);
+          virgoScene.render(renderer, camera);
+          return;
+        }
 
         // Frame throttle — render 1 of every 4 frames when a right-
         // side detail panel covers the canvas. See module-level
@@ -3546,6 +3722,8 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     closeLgFn,
     exitLocalSheetFn,
     closeLsFn,
+    exitVirgoFn,
+    closeVirgoFn,
     exitBlackHoleFn,
     bhDeepLinkFn,
     setBhCurvatureFn,

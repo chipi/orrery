@@ -359,6 +359,35 @@ export async function getLocalSheet(fetchFn: FetchLike = fetch): Promise<LocalSh
   return localSheetCache;
 }
 
+// #455 (WS-5b) — the Virgo Supercluster / Local Supercluster: the ~33 Mpc
+// supercluster the Local Group belongs to, dominated by the Virgo Cluster. One
+// shell out from the Local Sheet. Schematic, real distances (matching the
+// local-sheet precedent). `cluster` joins the group/cloud kinds.
+export type VirgoKind = 'group' | 'cloud' | 'cluster';
+export interface VirgoMember {
+  id: string;
+  name: string;
+  kind: VirgoKind;
+  headliner: boolean;
+  dist_mpc: number;
+  diam_mly: number;
+  x: number;
+  y: number;
+  z: number;
+}
+export interface VirgoData {
+  extent_mpc: number;
+  members: VirgoMember[];
+}
+let virgoCache: Promise<VirgoData | null> | null = null;
+/** The Virgo Supercluster schematic census (cached), or null if unavailable. */
+export async function getVirgo(fetchFn: FetchLike = fetch): Promise<VirgoData | null> {
+  if (!virgoCache) {
+    virgoCache = get<VirgoData>('universe/virgo-cluster.json', fetchFn).catch(() => null);
+  }
+  return virgoCache;
+}
+
 // Black holes (Slice 6) — three real + one fictional (Gargantua), rendered with
 // the geodesic gravitational-lensing shader. Real cited GR parameters; Gargantua
 // is badged fiction.

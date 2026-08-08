@@ -8,6 +8,7 @@ import {
   MILKY_WAY_CONTEXT,
   LOCAL_GROUP_CONTEXT,
   LOCAL_SHEET_CONTEXT,
+  VIRGO_CONTEXT,
   bodyContextId,
   makeBodyContext,
   type Context,
@@ -115,12 +116,18 @@ describe('MilkyWay ↔ LocalGroup contexts (Slice 5/8)', () => {
     { ...MILKY_WAY_CONTEXT },
     { ...LOCAL_GROUP_CONTEXT },
     { ...LOCAL_SHEET_CONTEXT },
+    { ...VIRGO_CONTEXT },
   ];
 
-  it('the Local Sheet is the outermost context (parent null, boundary Infinity)', () => {
-    expect(LOCAL_SHEET_CONTEXT.parent).toBeNull();
+  it('the Virgo Supercluster is the outermost context (parent null, boundary Infinity)', () => {
+    expect(VIRGO_CONTEXT.parent).toBeNull();
+    expect(VIRGO_CONTEXT.child).toBe('local-sheet');
+    expect(VIRGO_CONTEXT.outerBoundaryScene).toBe(Number.POSITIVE_INFINITY);
+  });
+
+  it('the Local Sheet now nests inside the Virgo Supercluster (parent chain LS → Virgo)', () => {
+    expect(LOCAL_SHEET_CONTEXT.parent).toBe('virgo');
     expect(LOCAL_SHEET_CONTEXT.child).toBe('local-group');
-    expect(LOCAL_SHEET_CONTEXT.outerBoundaryScene).toBe(Number.POSITIVE_INFINITY);
   });
 
   it('the Local Group now nests inside the Local Sheet (parent chain LG → LS)', () => {
@@ -133,14 +140,21 @@ describe('MilkyWay ↔ LocalGroup contexts (Slice 5/8)', () => {
     expect(MILKY_WAY_CONTEXT.child).toBe('neighborhood');
   });
 
-  it('does not cross out of the Local Sheet (outermost — page drives warps directly)', () => {
-    const g = new ContextGraph(full(), 'local-sheet');
+  it('does not cross out of the Virgo Supercluster (outermost — page drives warps directly)', () => {
+    const g = new ContextGraph(full(), 'virgo');
     expect(g.evaluate(1e9)).toBeNull();
   });
 
   it('every context in the full chain is registered + reachable', () => {
     const g = new ContextGraph(full(), 'solar-system');
-    for (const id of ['solar-system', 'neighborhood', 'milky-way', 'local-group', 'local-sheet']) {
+    for (const id of [
+      'solar-system',
+      'neighborhood',
+      'milky-way',
+      'local-group',
+      'local-sheet',
+      'virgo',
+    ]) {
       g.setActive(id);
       expect(g.active.id).toBe(id);
     }

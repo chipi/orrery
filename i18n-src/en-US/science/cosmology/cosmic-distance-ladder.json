@@ -1,0 +1,11 @@
+{
+  "title": "The cosmic distance ladder",
+  "intro_sentence": "No single method measures every cosmic distance. Astronomers build a ladder: each technique reaches a little farther and is calibrated by the rung beneath it, from radar in the solar system out to the edge of the observable universe.",
+  "body_paragraphs": [
+    "The bottom rung is geometry. Bounce radar off a planet and you know the astronomical unit directly. Watch a nearby star shift back and forth against the background over a year — parallax — and simple trigonometry gives its distance; ESA's Gaia mission has done this for nearly two billion stars, reaching tens of thousands of light-years with precision.",
+    "Beyond parallax, geometry runs out and you switch to standard candles — objects whose true brightness you know, so their apparent faintness reveals their distance. Cepheid variable stars pulse with a period that tracks their luminosity: time the pulse, read off the true brightness, compare with how bright it looks. Cepheids, calibrated by parallax, carry the ladder out to nearby galaxy clusters — this is how the Virgo Cluster is pinned near 16.5 megaparsecs.",
+    "For the far rungs you need a brighter candle. Type Ia supernovae — the thermonuclear explosion of a white dwarf — all peak at nearly the same luminosity and can briefly rival the total light of their host galaxy, so they are visible across billions of light-years. Calibrated by Cepheids in galaxies where both appear, they extend the ladder deep into the expanding universe.",
+    "At the top, distance and cosmic expansion merge. The farther a galaxy, the faster it recedes and the more its light is redshifted — Hubble's law. Once the ladder has calibrated the expansion rate, redshift itself becomes the yardstick for the most distant galaxies. Each rung leans on the one below, so an error low down propagates all the way up — which is why the persistent disagreement over the exact expansion rate (the 'Hubble tension') is taken so seriously."
+  ],
+  "diagram_caption": "The ladder, rung by rung: radar and parallax (geometry) → Cepheid variables (calibrated by parallax) → Type Ia supernovae (calibrated by Cepheids) → redshift and Hubble's law. Each method hands off to the next; the megaparsec distances on the /explore outer shells all rest on this chain."
+}

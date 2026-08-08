@@ -1,0 +1,28 @@
+{
+  "id": "cosmic-distance-ladder",
+  "tab": "cosmology",
+  "order": 2,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "The outer scale shells — every megaparsec distance shown (Local Sheet, Virgo) rests on the rungs of this ladder"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA/ESA · How do we measure cosmic distances?",
+      "u": "https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-distance-ladder/",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Cosmic distance ladder",
+      "u": "https://en.wikipedia.org/wiki/Cosmic_distance_ladder",
+      "t": "core"
+    },
+    {
+      "l": "SH0ES · Riess et al. — the local Hubble constant",
+      "u": "https://arxiv.org/abs/2112.04510",
+      "t": "deep"
+    }
+  ]
+}

@@ -23,6 +23,7 @@ export const CTX_ORDER = [
   'milky-way',
   'local-group',
   'local-sheet',
+  'virgo',
 ] as const;
 export type ShellId = (typeof CTX_ORDER)[number];
 

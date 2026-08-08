@@ -90,12 +90,24 @@ export const LOCAL_GROUP_CONTEXT: Context = {
 };
 
 // #454 (WS-1) — the Local Sheet / Local Volume: the galaxy groups within ~10 Mpc.
-// Schematic like the Local Group + Milky Way shells; outermost for now (the Virgo
-// / Laniakea / cosmic-web tiers extend the chain past it).
+// Schematic like the Local Group + Milky Way shells.
 export const LOCAL_SHEET_CONTEXT: Context = {
   id: 'local-sheet',
-  parent: null,
+  parent: 'virgo', // WS-5b — zoom out past the Local Sheet into the Virgo Supercluster
   child: 'local-group',
+  units: 'pc',
+  sceneUnitsPerParsec: 1,
+  outerBoundaryScene: Number.POSITIVE_INFINITY,
+  innerBoundaryScene: 0,
+};
+
+// #455 (WS-5b) — the Virgo Supercluster / Local Supercluster: the ~33 Mpc
+// supercluster the Local Group belongs to. Schematic like the shells within it;
+// outermost for now (the Laniakea / cosmic-web tiers extend the chain past it).
+export const VIRGO_CONTEXT: Context = {
+  id: 'virgo',
+  parent: null,
+  child: 'local-sheet',
   units: 'pc',
   sceneUnitsPerParsec: 1,
   outerBoundaryScene: Number.POSITIVE_INFINITY,

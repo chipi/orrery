@@ -12,6 +12,12 @@ import { writable } from 'svelte/store';
  * path matching).
  */
 export type ExploreContextId =
-  'solar-system' | 'neighborhood' | 'milky-way' | 'local-group' | 'local-sheet' | 'body-scene';
+  | 'solar-system'
+  | 'neighborhood'
+  | 'milky-way'
+  | 'local-group'
+  | 'local-sheet'
+  | 'virgo'
+  | 'body-scene';
 
 export const exploreContext = writable<ExploreContextId | null>(null);

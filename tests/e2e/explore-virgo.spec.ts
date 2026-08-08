@@ -1,0 +1,46 @@
+import { test, expect, type Page } from '@playwright/test';
+
+/**
+ * /explore Virgo Supercluster shell (#455, WS-5b) — the ladder extended past the
+ * Local Sheet to a 6th, outermost shell. Reached via the build-safe
+ * ?context=virgo cold-load deep-link (crosses out through all the intermediate
+ * shells). Verifies the shell renders with its honesty badge + the extended
+ * (now 6-rung) scale picker. Asserts on aria-current so it holds whether the rail
+ * is a visible vertical rail (desktop) or a collapsed popover (mobile).
+ */
+
+const toggle = (p: Page) => p.getByTestId('explore-scale-toggle');
+const rung = (p: Page, shell: string) => p.getByTestId(`explore-scale-rung-${shell}`);
+
+/** Jump to a shell; on mobile the rail is a popover, so open it first. */
+async function jumpTo(page: Page, shell: string, isMobile: boolean): Promise<void> {
+  if (isMobile && (await toggle(page).getAttribute('aria-expanded')) !== 'true') {
+    await toggle(page).click();
+    await page.waitForTimeout(150);
+  }
+  await rung(page, shell).click();
+}
+
+test.describe('/explore — Virgo Supercluster shell (#455)', () => {
+  test('the Virgo shell shows its badge + a 6-rung scale picker', async ({ page }) => {
+    await page.goto('/explore?context=virgo');
+    await expect(page.getByText('Virgo Supercluster', { exact: false }).first()).toBeVisible({
+      timeout: 15_000,
+    });
+    await expect(page.getByRole('navigation', { name: /location/i })).toContainText(
+      /Virgo Supercluster/i,
+    );
+    await expect(rung(page, 'virgo')).toHaveAttribute('aria-current', 'true', { timeout: 15_000 });
+    // The Local Sheet rung is still on the ladder, one step in.
+    await expect(rung(page, 'local-sheet')).toHaveCount(1);
+  });
+
+  test('jumping in from Virgo to the Local Sheet via the picker', async ({ page, isMobile }) => {
+    await page.goto('/explore?context=virgo');
+    await expect(rung(page, 'virgo')).toHaveAttribute('aria-current', 'true', { timeout: 15_000 });
+    await jumpTo(page, 'local-sheet', isMobile);
+    await expect(rung(page, 'local-sheet')).toHaveAttribute('aria-current', 'true', {
+      timeout: 15_000,
+    });
+  });
+});

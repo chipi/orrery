@@ -749,6 +749,7 @@ describe('SCIENCE_TABS', () => {
       'space-stations',
       'life-in-space',
       'observation',
+      'cosmology',
       'history',
       'reading-list',
       'watch-list',

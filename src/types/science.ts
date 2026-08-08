@@ -10,6 +10,9 @@ export type ScienceTabId =
   | 'space-stations'
   | 'history'
   | 'observation'
+  // RFC-037 Contract E / WS-5b — the cosmology learning surface: the universe
+  // at large (large-scale structure, the distance ladder, and the tiers beyond).
+  | 'cosmology'
   | 'life-in-space'
   // PRD-024 — planet-level body science. Hosts the articles that pair
   // with PRD-023's /explore lens annotations + always-on overlays.

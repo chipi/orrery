@@ -28,7 +28,7 @@
   // /explore v2 "The Known Universe" (PRD-030 / RFC-032). The neighborhood scene
   // is dynamically imported at the boundary so v1's bundle + first paint stay
   // untouched (RFC C-F).
-  import { resolveSolarBodyTarget } from '$lib/explore/scale-shell-controller';
+  import { resolveSolarBodyTarget, type ShellId } from '$lib/explore/scale-shell-controller';
   import { createExploreSolarScene } from '$lib/three/explore-solar-scene';
   import { createExploreSceneHost } from '$lib/three/explore-scene-host';
   import { RUNG_LADDER, type ScaleReadout, type ScaleRung } from '$lib/universe/scale-readout';
@@ -85,6 +85,7 @@
   import PlanetPanel from '$lib/components/PlanetPanel.svelte';
   import SunPanel from '$lib/components/SunPanel.svelte';
   import ExploreBodyIndex from '$lib/components/ExploreBodyIndex.svelte';
+  import ExploreScalePicker from '$lib/components/ExploreScalePicker.svelte';
   import SizesCanvas from '$lib/components/SizesCanvas.svelte';
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import SatellitePanel from '$lib/components/SatellitePanel.svelte';
@@ -1069,9 +1070,11 @@
   let mwPanelOpen = $state(false);
   let closeMwFn: (() => void) | null = null;
   let mwDeepLinkFn: ((id: string) => void) | null = null;
-  // Nav shortcuts + `?context=` deep-link: jump straight to a scale-shell context
-  // (solar-system | neighborhood | milky-way | local-group), climbing out or in.
-  let contextDeepLinkFn: ((ctx: string) => Promise<void>) | null = null;
+  // Nav shortcuts + `?context=` deep-link + the #258 scale picker: jump straight to
+  // a scale-shell context (solar-system | neighborhood | milky-way | local-group),
+  // climbing out or in. `$state` so the picker's `disabled` gate flips reactively
+  // once onMount wires the host handle (it's null until the scene is ready).
+  let contextDeepLinkFn = $state<((ctx: string) => Promise<void>) | null>(null);
   // Slice 8: the Local Group context — leave it back in to the Milky Way; the
   // selected member galaxy → LocalGroupPanel.
   let exitLocalGroupFn: (() => void) | null = null;
@@ -2331,6 +2334,20 @@
         </button>
       {/if}
     </nav>
+  {/if}
+
+  <!-- #258 scale picker — quick-jump between the four nested shells. Only in a
+       shell context (3D, no full-screen sub-view takeover): `contextDeepLinkFn`
+       walks the shell ladder only, not body-scene/black-hole/deep-sky. -->
+  {#if view === '3d' && !activeBlackHole && !activeDeepSky && contextId !== 'body-scene'}
+    <ExploreScalePicker
+      activeShell={contextId as ShellId}
+      disabled={!contextDeepLinkFn}
+      onJump={(shell) => {
+        cue('select');
+        void contextDeepLinkFn?.(shell);
+      }}
+    />
   {/if}
 
   <!-- Slice 5/8: honesty badge — the Milky Way + Local Group views are labelled

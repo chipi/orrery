@@ -825,7 +825,9 @@
     "plan_touch_hint": "देखने के लिए दबाकर रखें",
     "science_layer_centripetal_desc": "अंतर्मुखी त्वरण जो पथ को कक्षा में मोड़ता है — गुरुत्वाकर्षण ही इसे प्रदान करता है (a = v²/r), इसलिए यह गुरुत्वाकर्षण तीर की ही दिशा में इंगित करता है।",
     "science_layer_soi_desc": "अर्धपारदर्शी वलय जो दर्शाते हैं कि प्रत्येक पिंड का गुरुत्वाकर्षण कहाँ प्रभावी है — प्रक्षेपवक्र योजना के लिए एक सन्निकटन, न कि कोई भौतिक दीवार।",
-    "science_layer_apsides_desc": "पेरिहेलियन / अपहेलियन चिह्नक + लाइव ट्रू-एनोमली (ν) कोण।"
+    "science_layer_apsides_desc": "पेरिहेलियन / अपहेलियन चिह्नक + लाइव ट्रू-एनोमली (ν) कोण।",
+    "explore_scale_jump_aria": "स्केल पर जाएँ",
+    "explore_scale_change": "स्केल बदलें"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -1515,7 +1517,9 @@
     "plan_touch_hint": "タッチして長押しでプレビュー",
     "science_layer_centripetal_desc": "軌道を曲げるための内向きの加速度。重力がそれを供給するため（a = v²/r）、重力矢印と同じ方向を指します。",
     "science_layer_soi_desc": "各天体の重力が支配的な領域を示す半透明の環。軌道計画用の近似値であり、物理的な壁ではありません。",
-    "science_layer_apsides_desc": "近日点／遠日点マーカーと真近点角（ν）のリアルタイム値。"
+    "science_layer_apsides_desc": "近日点／遠日点マーカーと真近点角（ν）のリアルタイム値。",
+    "explore_scale_jump_aria": "スケールにジャンプ",
+    "explore_scale_change": "スケールを変更"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -2384,7 +2388,9 @@
     "chip_label_eccentricity": "الاختلاف المركزي — دائرة (0)، إهليلج (<1)، قطع مكافئ/هروب (1)، قطع زائد (>1)",
     "plan_touch_hint": "اضغط مع الاستمرار للمعاينة",
     "science_layer_soi_desc": "حلقات شفافة تحدد حيث تهيمن جاذبية كل جسم — تقريب لتخطيط المسارات، وليست جدارًا فيزيائيًا.",
-    "science_layer_apsides_desc": "مؤشرات الحضيض / الأوج + زاوية الشذوذ الحقيقي (ν) المباشرة."
+    "science_layer_apsides_desc": "مؤشرات الحضيض / الأوج + زاوية الشذوذ الحقيقي (ν) المباشرة.",
+    "explore_scale_jump_aria": "الانتقال إلى المقياس",
+    "explore_scale_change": "تغيير المقياس"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -3076,7 +3082,9 @@
     "plan_touch_hint": "터치하고 길게 누르면 미리보기",
     "science_layer_centripetal_desc": "궤도로 경로를 구부리는 내향 가속도 — 중력이 직접 제공하므로(a = v²/r), 중력 화살표와 같은 방향을 가리킵니다.",
     "science_layer_soi_desc": "각 천체의 중력이 지배하는 영역을 표시하는 반투명 고리 — 궤도 계획을 위한 근삿값이며, 물리적 벽은 아닙니다.",
-    "science_layer_apsides_desc": "근일점 / 원일점 마커 + 실시간 진정근점각(ν) 각도."
+    "science_layer_apsides_desc": "근일점 / 원일점 마커 + 실시간 진정근점각(ν) 각도.",
+    "explore_scale_jump_aria": "스케일로 이동",
+    "explore_scale_change": "스케일 변경"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -3739,7 +3747,9 @@
     "plan_touch_hint": "Berühren & halten zum Vorschauen",
     "science_layer_centripetal_desc": "Beschleunigung nach innen, die die Bahn in eine Umlaufbahn krümmt — die Gravitation selbst liefert sie (a = v²/r), daher zeigt sie in dieselbe Richtung wie der Gravitationspfeil.",
     "science_layer_soi_desc": "Durchsichtige Ringe, die markieren, wo die Gravitation jedes Körpers dominiert — eine Näherung zur Bahnplanung, keine physische Wand.",
-    "science_layer_apsides_desc": "Perihelium-/Aphelium-Markierungen + die aktuelle wahre Anomalie (ν) Winkel."
+    "science_layer_apsides_desc": "Perihelium-/Aphelium-Markierungen + die aktuelle wahre Anomalie (ν) Winkel.",
+    "explore_scale_jump_aria": "Zur Skala springen",
+    "explore_scale_change": "Skala ändern"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -4409,7 +4419,9 @@
     "plan_touch_hint": "Appuyez et maintenez pour apercevoir",
     "science_layer_centripetal_desc": "Accélération dirigée vers l'intérieur qui courbe la trajectoire en orbite — la gravité elle-même la fournit (a = v²/r), donc elle pointe dans la même direction que la flèche de gravité.",
     "science_layer_soi_desc": "Anneaux translucides marquant où la gravité de chaque corps domine — une approximation pour planifier les trajectoires, pas une barrière physique.",
-    "science_layer_apsides_desc": "Marqueurs de périhélie / aphélie + l'angle d'anomalie vraie (ν) en direct."
+    "science_layer_apsides_desc": "Marqueurs de périhélie / aphélie + l'angle d'anomalie vraie (ν) en direct.",
+    "explore_scale_jump_aria": "Aller à l'échelle",
+    "explore_scale_change": "Modifier l'échelle"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -5047,7 +5059,9 @@
     "plan_touch_hint": "Tocca e tieni premuto per visualizzare",
     "science_layer_centripetal_desc": "Accelerazione verso l'interno che piega il percorso in un'orbita — la gravità stessa la fornisce (a = v²/r), quindi punta nella stessa direzione della freccia di gravità.",
     "science_layer_soi_desc": "Anelli traslucidi che segnano dove la gravità di ogni corpo domina — un'approssimazione per pianificare le traiettorie, non una barriera fisica.",
-    "science_layer_apsides_desc": "Marcatori di perielio / afelio + l'angolo anomalia vera (ν) in tempo reale."
+    "science_layer_apsides_desc": "Marcatori di perielio / afelio + l'angolo anomalia vera (ν) in tempo reale.",
+    "explore_scale_jump_aria": "Salta a scala",
+    "explore_scale_change": "Cambia scala"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -5684,7 +5698,9 @@
     "plan_touch_hint": "Toca y mantén pulsado para previsualizar",
     "science_layer_centripetal_desc": "Aceleración hacia adentro que curva la trayectoria en una órbita — la gravedad misma la proporciona (a = v²/r), por lo que apunta en la misma dirección que la flecha de gravedad.",
     "science_layer_soi_desc": "Anillos translúcidos que marcan dónde domina la gravedad de cada cuerpo — una aproximación para planificar trayectorias, no una barrera física.",
-    "science_layer_apsides_desc": "Marcadores de perihelio / afelio + el ángulo de anomalía verdadera (ν) en vivo."
+    "science_layer_apsides_desc": "Marcadores de perihelio / afelio + el ángulo de anomalía verdadera (ν) en vivo.",
+    "explore_scale_jump_aria": "Saltar a escala",
+    "explore_scale_change": "Cambiar escala"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -6327,7 +6343,9 @@
     "plan_touch_hint": "Aanraken en vasthouden om te bekijken",
     "science_layer_centripetal_desc": "Inwaartse versnelling die het pad in een baan buigt — zwaartekracht zorgt ervoor (a = v²/r), dus wijst in dezelfde richting als de zwaartekrachtpijl.",
     "science_layer_soi_desc": "Doorschijnende ringen die aangeven waar de zwaartekracht van elk hemellichaam dominant is — een benadering voor trajectplannen, geen fysieke muur.",
-    "science_layer_apsides_desc": "Perihelium / aphelium markeringen + de live ware anomaliehoek (ν)."
+    "science_layer_apsides_desc": "Perihelium / aphelium markeringen + de live ware anomaliehoek (ν).",
+    "explore_scale_jump_aria": "Spring naar schaal",
+    "explore_scale_change": "Schaal wijzigen"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -7020,7 +7038,9 @@
     "plan_touch_hint": "Нажмите и держите для предпросмотра",
     "science_layer_centripetal_desc": "Ускорение, направленное внутрь и искривляющее траекторию в орбиту — его обеспечивает сама гравитация (a = v²/r), поэтому оно указывает в том же направлении, что и вектор гравитации.",
     "science_layer_soi_desc": "Полупрозрачные кольца, обозначающие область, где гравитация каждого тела доминирует — приближение для планирования траекторий, а не физическая стена.",
-    "science_layer_apsides_desc": "Маркеры перигелия / афелия и текущий угол истинной аномалии (ν)."
+    "science_layer_apsides_desc": "Маркеры перигелия / афелия и текущий угол истинной аномалии (ν).",
+    "explore_scale_jump_aria": "Перейти к масштабу",
+    "explore_scale_change": "Изменить масштаб"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -7694,7 +7714,9 @@
     "plan_touch_hint": "长按查看",
     "science_layer_centripetal_desc": "使轨道路径弯曲的向心加速度——重力本身提供了它（a = v²/r），因此它指向与重力箭头相同的方向。",
     "science_layer_soi_desc": "标记每个天体重力主导范围的半透明环——这是用于轨迹规划的近似值，不是物理屏障。",
-    "science_layer_apsides_desc": "近日点/远日点标记 + 实时真近点角（ν）。"
+    "science_layer_apsides_desc": "近日点/远日点标记 + 实时真近点角（ν）。",
+    "explore_scale_jump_aria": "跳转到比例",
+    "explore_scale_change": "更改比例"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -8302,7 +8324,9 @@
     "plan_touch_hint": "Додирни и држи да видиш",
     "science_layer_centripetal_desc": "Убрзање усмерено ка центру које криви путању у орбиту — гравитација га обезбеђује (a = v²/r), тако да показује у истом смеру као стрела гравитације.",
     "science_layer_soi_desc": "Полупровидни прстенови који означавају где гравитација сваког тела доминира — апроксимација за планирање трајекторија, а не физички зид.",
-    "science_layer_apsides_desc": "Перихелијум / афелијум маркери + угао живе праве аномалије (ν)."
+    "science_layer_apsides_desc": "Перихелијум / афелијум маркери + угао живе праве аномалије (ν).",
+    "explore_scale_jump_aria": "Скочи на скалу",
+    "explore_scale_change": "Промени скалу"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -8946,6 +8970,8 @@
     "plan_touch_hint": "Toque e segure para visualizar",
     "science_layer_centripetal_desc": "Aceleração centrípeta que encurva a trajetória numa órbita — a gravidade fornece isso (a = v²/r), então aponta na mesma direção da seta gravitacional.",
     "science_layer_soi_desc": "Anéis translúcidos marcando onde a gravidade de cada corpo domina — uma aproximação para planejamento de trajetórias, não uma parede física.",
-    "science_layer_apsides_desc": "Marcadores de periélio / afélio + o ângulo de anomalia verdadeira (ν) em tempo real."
+    "science_layer_apsides_desc": "Marcadores de periélio / afélio + o ângulo de anomalia verdadeira (ν) em tempo real.",
+    "explore_scale_jump_aria": "Pular para escala",
+    "explore_scale_change": "Alterar escala"
   }
 }

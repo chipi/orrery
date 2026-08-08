@@ -52,6 +52,8 @@
         return m.explore_ctx_virgo();
       case 'laniakea':
         return m.explore_ctx_laniakea();
+      case 'cosmic-web':
+        return m.explore_ctx_cosmic_web();
     }
   }
 

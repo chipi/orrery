@@ -43,6 +43,7 @@
     type LocalSheetMember,
     type VirgoMember,
     type LaniakeaMember,
+    type CosmicWebMember,
     type BlackHole,
     type NamedStar,
     type LocalizedNamedStar,
@@ -64,6 +65,7 @@
   import LocalSheetPanel from '$lib/components/LocalSheetPanel.svelte';
   import VirgoPanel from '$lib/components/VirgoPanel.svelte';
   import LaniakeaPanel from '$lib/components/LaniakeaPanel.svelte';
+  import CosmicWebPanel from '$lib/components/CosmicWebPanel.svelte';
   import BlackHolePanel from '$lib/components/BlackHolePanel.svelte';
   import CultureDoorCard from '$lib/components/CultureDoorCard.svelte';
   import StarIndex from '$lib/components/StarIndex.svelte';
@@ -910,6 +912,7 @@
     | 'local-sheet'
     | 'virgo'
     | 'laniakea'
+    | 'cosmic-web'
     | 'body-scene'
   >('solar-system');
   // Publish the live scale context to the global store so the Nav highlights the
@@ -982,6 +985,14 @@
           body: m.explore_lens_story_laniakea_body(),
           tab: 'cosmology',
           section: 'laniakea-and-the-great-attractor',
+          available: [],
+        };
+      case 'cosmic-web':
+        return {
+          title: m.explore_lens_story_cosmic_web_title(),
+          body: m.explore_lens_story_cosmic_web_body(),
+          tab: 'cosmology',
+          section: 'large-scale-structure',
           available: [],
         };
       case 'solar-system':
@@ -1244,6 +1255,12 @@
   let laniakeaPanelOpen = $state(false);
   let laniakeaMembers = $state<LaniakeaMember[]>([]);
   let closeLaniakeaFn: (() => void) | null = null;
+  // #457 (WS-5d) — the Cosmic Web shell (outermost).
+  let exitCosmicWebFn: (() => void) | null = null;
+  let selectedCosmicWebMember = $state<CosmicWebMember | null>(null);
+  let cosmicWebPanelOpen = $state(false);
+  let cosmicWebMembers = $state<CosmicWebMember[]>([]);
+  let closeCosmicWebFn: (() => void) | null = null;
   // Slice 6 — the black hole currently rendered full-screen (geodesic lensing).
   let activeBlackHole = $state<BlackHole | null>(null);
   let bhPanelOpen = $state(false);
@@ -2272,6 +2289,24 @@
       set laniakeaMembers(v) {
         laniakeaMembers = v;
       },
+      get selectedCosmicWebMember() {
+        return selectedCosmicWebMember;
+      },
+      set selectedCosmicWebMember(v) {
+        selectedCosmicWebMember = v;
+      },
+      get cosmicWebPanelOpen() {
+        return cosmicWebPanelOpen;
+      },
+      set cosmicWebPanelOpen(v) {
+        cosmicWebPanelOpen = v;
+      },
+      get cosmicWebMembers() {
+        return cosmicWebMembers;
+      },
+      set cosmicWebMembers(v) {
+        cosmicWebMembers = v;
+      },
       get activeBlackHole() {
         return activeBlackHole;
       },
@@ -2485,6 +2520,8 @@
     closeVirgoFn = exploreHost.closeVirgoFn;
     exitLaniakeaFn = exploreHost.exitLaniakeaFn;
     closeLaniakeaFn = exploreHost.closeLaniakeaFn;
+    exitCosmicWebFn = exploreHost.exitCosmicWebFn;
+    closeCosmicWebFn = exploreHost.closeCosmicWebFn;
     exitBlackHoleFn = exploreHost.exitBlackHoleFn;
     bhDeepLinkFn = exploreHost.bhDeepLinkFn;
     setBhCurvatureFn = exploreHost.setBhCurvatureFn;
@@ -2548,7 +2585,7 @@
       <span class="crumb-sep">›</span>
       <span class="crumb current" aria-current="page">{activeBlackHole.name}</span>
     </nav>
-  {:else if view === '3d' && (contextId === 'neighborhood' || contextId === 'milky-way' || contextId === 'local-group' || contextId === 'local-sheet' || contextId === 'virgo' || contextId === 'laniakea' || contextId === 'body-scene')}
+  {:else if view === '3d' && (contextId === 'neighborhood' || contextId === 'milky-way' || contextId === 'local-group' || contextId === 'local-sheet' || contextId === 'virgo' || contextId === 'laniakea' || contextId === 'cosmic-web' || contextId === 'body-scene')}
     <nav class="context-crumbs" aria-label={m.explore_location_aria()}>
       <button
         type="button"
@@ -2557,6 +2594,7 @@
           // Each exit fn guards on the live context, so calling them in order
           // walks all the way in to the solar system from any shell.
           if (contextId === 'body-scene') exitBodySceneFn?.();
+          exitCosmicWebFn?.();
           exitLaniakeaFn?.();
           exitVirgoFn?.();
           exitLocalSheetFn?.();
@@ -2610,6 +2648,12 @@
         </button>
         <span class="crumb-sep">›</span>
         <span class="crumb current" aria-current="page">{m.explore_ctx_laniakea()}</span>
+      {:else if contextId === 'cosmic-web'}
+        <button type="button" class="crumb" onclick={() => exitCosmicWebFn?.()}>
+          {m.explore_ctx_laniakea()}
+        </button>
+        <span class="crumb-sep">›</span>
+        <span class="crumb current" aria-current="page">{m.explore_ctx_cosmic_web()}</span>
       {:else}
         <span class="crumb current" aria-current="page">{m.explore_ctx_stellar_neighborhood()}</span
         >
@@ -2671,6 +2715,9 @@
   {/if}
   {#if view === '3d' && contextId === 'laniakea' && !activeBlackHole}
     <div class="mw-badge" role="note">{m.explore_laniakea_schematic_badge()}</div>
+  {/if}
+  {#if view === '3d' && contextId === 'cosmic-web' && !activeBlackHole}
+    <div class="mw-badge" role="note">{m.explore_cosmic_web_schematic_badge()}</div>
   {/if}
 
   <!-- Slice 6: the black-hole render is a geodesic GR ray-trace — label it. -->
@@ -3580,6 +3627,11 @@
 
 <LocalSheetPanel member={selectedLsMember} open={lsPanelOpen} onClose={() => closeLsFn?.()} />
 <VirgoPanel member={selectedVirgoMember} open={virgoPanelOpen} onClose={() => closeVirgoFn?.()} />
+<CosmicWebPanel
+  member={selectedCosmicWebMember}
+  open={cosmicWebPanelOpen}
+  onClose={() => closeCosmicWebFn?.()}
+/>
 <LaniakeaPanel
   member={selectedLaniakeaMember}
   open={laniakeaPanelOpen}

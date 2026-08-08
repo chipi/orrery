@@ -10,6 +10,7 @@ import {
   LOCAL_SHEET_CONTEXT,
   VIRGO_CONTEXT,
   LANIAKEA_CONTEXT,
+  COSMIC_WEB_CONTEXT,
   bodyContextId,
   makeBodyContext,
   type Context,
@@ -119,12 +120,18 @@ describe('MilkyWay ↔ LocalGroup contexts (Slice 5/8)', () => {
     { ...LOCAL_SHEET_CONTEXT },
     { ...VIRGO_CONTEXT },
     { ...LANIAKEA_CONTEXT },
+    { ...COSMIC_WEB_CONTEXT },
   ];
 
-  it('Laniakea is the outermost context (parent null, boundary Infinity)', () => {
-    expect(LANIAKEA_CONTEXT.parent).toBeNull();
+  it('the Cosmic Web is the outermost context (parent null, boundary Infinity)', () => {
+    expect(COSMIC_WEB_CONTEXT.parent).toBeNull();
+    expect(COSMIC_WEB_CONTEXT.child).toBe('laniakea');
+    expect(COSMIC_WEB_CONTEXT.outerBoundaryScene).toBe(Number.POSITIVE_INFINITY);
+  });
+
+  it('Laniakea now nests inside the Cosmic Web (parent chain Laniakea → cosmic-web)', () => {
+    expect(LANIAKEA_CONTEXT.parent).toBe('cosmic-web');
     expect(LANIAKEA_CONTEXT.child).toBe('virgo');
-    expect(LANIAKEA_CONTEXT.outerBoundaryScene).toBe(Number.POSITIVE_INFINITY);
   });
 
   it('the Virgo Supercluster now nests inside Laniakea (parent chain Virgo → Laniakea)', () => {
@@ -147,8 +154,8 @@ describe('MilkyWay ↔ LocalGroup contexts (Slice 5/8)', () => {
     expect(MILKY_WAY_CONTEXT.child).toBe('neighborhood');
   });
 
-  it('does not cross out of Laniakea (outermost — page drives warps directly)', () => {
-    const g = new ContextGraph(full(), 'laniakea');
+  it('does not cross out of the Cosmic Web (outermost — the ladder ends here)', () => {
+    const g = new ContextGraph(full(), 'cosmic-web');
     expect(g.evaluate(1e9)).toBeNull();
   });
 
@@ -162,6 +169,7 @@ describe('MilkyWay ↔ LocalGroup contexts (Slice 5/8)', () => {
       'local-sheet',
       'virgo',
       'laniakea',
+      'cosmic-web',
     ]) {
       g.setActive(id);
       expect(g.active.id).toBe(id);

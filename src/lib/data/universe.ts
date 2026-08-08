@@ -416,6 +416,34 @@ export async function getLaniakea(fetchFn: FetchLike = fetch): Promise<LaniakeaD
   return laniakeaCache;
 }
 
+// #457 (WS-5d) — the Cosmic Web: the largest scale in the ladder, the foam of
+// superclusters, great walls, and voids of the nearby observable universe.
+// Outermost shell. Heavily schematic. `wall` + `void` + `concentration` join.
+export type CosmicWebKind = 'supercluster' | 'wall' | 'void' | 'concentration';
+export interface CosmicWebMember {
+  id: string;
+  name: string;
+  kind: CosmicWebKind;
+  headliner: boolean;
+  dist_mpc: number;
+  diam_mly: number;
+  x: number;
+  y: number;
+  z: number;
+}
+export interface CosmicWebData {
+  extent_mpc: number;
+  members: CosmicWebMember[];
+}
+let cosmicWebCache: Promise<CosmicWebData | null> | null = null;
+/** The Cosmic Web schematic census (cached), or null if unavailable. */
+export async function getCosmicWeb(fetchFn: FetchLike = fetch): Promise<CosmicWebData | null> {
+  if (!cosmicWebCache) {
+    cosmicWebCache = get<CosmicWebData>('universe/cosmic-web.json', fetchFn).catch(() => null);
+  }
+  return cosmicWebCache;
+}
+
 // Black holes (Slice 6) — three real + one fictional (Gargantua), rendered with
 // the geodesic gravitational-lensing shader. Real cited GR parameters; Gargantua
 // is badged fiction.

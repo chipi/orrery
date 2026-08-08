@@ -1,0 +1,84 @@
+{
+  "_note": "The Cosmic Web (WS-5d, RFC-037) — the largest scale in the /explore ladder: the foam of superclusters, filaments, and great walls wrapped around vast voids that structures the nearby observable universe (out to roughly 1 gigaparsec / a few billion light-years). A HEAVILY SCHEMATIC MODEL, NOT TO SCALE and NOT A SURVEY (PRD-030 principle 2 + RFC-037 Gpc-honesty risk): Laniakea sits at the origin as the 'you are here' anchor, and the great named structures are placed in an illustrative layout. Distances (dist_mpc) are real order-of-magnitude values; the xyz layout is hand-authored to convey the web's topology (nodes + walls + voids), NOT true positions. Treat it as a diagram of an idea, not a map.",
+  "_provenance": "Structures + rough distances: NASA/IPAC NED; 2dF + SDSS redshift surveys (Sloan Great Wall, Gott et al. 2005); Boötes Void (Kirshner et al. 1981); Shapley Concentration; Horologium-Reticulum Supercluster. Schematic positions hand-authored. Science-review pending (WS-5d).",
+  "extent_mpc": 320,
+  "members": [
+    {
+      "id": "laniakea",
+      "name": "Laniakea",
+      "kind": "supercluster",
+      "headliner": true,
+      "dist_mpc": 0,
+      "diam_mly": 520,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    {
+      "id": "shapley-concentration",
+      "name": "Shapley Concentration",
+      "kind": "concentration",
+      "headliner": true,
+      "dist_mpc": 200,
+      "diam_mly": 260,
+      "x": 24,
+      "y": 2,
+      "z": 8
+    },
+    {
+      "id": "perseus-pisces",
+      "name": "Perseus–Pisces Supercluster",
+      "kind": "wall",
+      "headliner": false,
+      "dist_mpc": 70,
+      "diam_mly": 300,
+      "x": -20,
+      "y": -3,
+      "z": -14
+    },
+    {
+      "id": "coma-great-wall",
+      "name": "Coma Supercluster (CfA2 Great Wall)",
+      "kind": "wall",
+      "headliner": false,
+      "dist_mpc": 100,
+      "diam_mly": 750,
+      "x": -8,
+      "y": 4,
+      "z": 20
+    },
+    {
+      "id": "sloan-great-wall",
+      "name": "Sloan Great Wall",
+      "kind": "wall",
+      "headliner": true,
+      "dist_mpc": 300,
+      "diam_mly": 1400,
+      "x": 30,
+      "y": -2,
+      "z": -18
+    },
+    {
+      "id": "bootes-void",
+      "name": "Boötes Void",
+      "kind": "void",
+      "headliner": false,
+      "dist_mpc": 210,
+      "diam_mly": 330,
+      "x": 6,
+      "y": 1,
+      "z": 26
+    },
+    {
+      "id": "horologium-reticulum",
+      "name": "Horologium–Reticulum Supercluster",
+      "kind": "supercluster",
+      "headliner": false,
+      "dist_mpc": 210,
+      "diam_mly": 550,
+      "x": 20,
+      "y": -3,
+      "z": -26
+    }
+  ]
+}

@@ -19,6 +19,7 @@ export type ExploreContextId =
   | 'local-sheet'
   | 'virgo'
   | 'laniakea'
+  | 'cosmic-web'
   | 'body-scene';
 
 export const exploreContext = writable<ExploreContextId | null>(null);

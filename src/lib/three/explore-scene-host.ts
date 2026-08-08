@@ -13,6 +13,7 @@ import {
   LOCAL_SHEET_CONTEXT,
   VIRGO_CONTEXT,
   LANIAKEA_CONTEXT,
+  COSMIC_WEB_CONTEXT,
   makeBodyContext,
   bodyContextId,
   AU_PER_PARSEC,
@@ -46,6 +47,7 @@ import {
   getLocalSheet,
   getVirgo,
   getLaniakea,
+  getCosmicWeb,
   getMilkyWaySchematic,
   getNamedStarI18n,
   getNamedStars,
@@ -158,10 +160,12 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   let exitLocalSheetFn: any = null;
   let exitVirgoFn: any = null;
   let exitLaniakeaFn: any = null;
+  let exitCosmicWebFn: any = null;
   let closeLgFn: any = null;
   let closeLsFn: any = null;
   let closeVirgoFn: any = null;
   let closeLaniakeaFn: any = null;
+  let closeCosmicWebFn: any = null;
   let exitBlackHoleFn: any = null;
   let bhDeepLinkFn: any = null;
   let setBhCurvatureFn: any = null;
@@ -228,6 +232,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       LOCAL_SHEET_CONTEXT,
       VIRGO_CONTEXT,
       LANIAKEA_CONTEXT,
+      COSMIC_WEB_CONTEXT,
     ],
     'solar-system',
   );
@@ -504,7 +509,6 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   }
 
   // #456 (WS-5c) — the Laniakea Supercluster schematic (one shell out from Virgo).
-  // Outermost shell for now (the cosmic-web tier extends past it).
   let laniakeaScene: import('$lib/universe/laniakea-scene').LaniakeaScene | null = null;
   let laniakeaLoading = false;
   let LANIAKEA_SCENE_RADIUS = 150;
@@ -529,7 +533,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       LANIAKEA_SCENE_RADIUS = mod.LANIAKEA_SCENE_RADIUS;
       LANIAKEA_ENTRY_CAM_R = LANIAKEA_SCENE_RADIUS * 1.35;
       LANIAKEA_CAM_R_MIN = LANIAKEA_SCENE_RADIUS * 0.75; // zoom-in floor → cross back to Virgo
-      LANIAKEA_CAM_R_MAX = LANIAKEA_SCENE_RADIUS * 6; // zoom-out ceiling (outermost for now)
+      LANIAKEA_CAM_R_MAX = LANIAKEA_SCENE_RADIUS * 6; // zoom-out ceiling → cross out to the cosmic web
       LANIAKEA_FAR = LANIAKEA_SCENE_RADIUS * 40;
       laniakeaScene = mod.createLaniakeaScene(data);
       laniakeaScene.setSize(
@@ -542,6 +546,48 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       return null;
     } finally {
       laniakeaLoading = false;
+    }
+  }
+
+  // #457 (WS-5d) — the Cosmic Web schematic (one shell out from Laniakea). The
+  // outermost shell — the ladder ends here.
+  let cosmicWebScene: import('$lib/universe/cosmic-web-scene').CosmicWebScene | null = null;
+  let cosmicWebLoading = false;
+  let COSMIC_WEB_SCENE_RADIUS = 150;
+  let COSMIC_WEB_ENTRY_CAM_R = 200;
+  let COSMIC_WEB_CAM_R_MIN = 112;
+  let COSMIC_WEB_CAM_R_MAX = 900;
+  let COSMIC_WEB_FAR = 6000;
+  const COSMIC_WEB_ENTRY_CAM_P = 0.85;
+  const inCosmicWeb = () => contextGraph.active.id === 'cosmic-web';
+
+  async function ensureCosmicWeb(): Promise<typeof cosmicWebScene> {
+    if (cosmicWebScene) return cosmicWebScene;
+    if (cosmicWebLoading) return null;
+    cosmicWebLoading = true;
+    try {
+      const [mod, data] = await Promise.all([
+        import('$lib/universe/cosmic-web-scene'),
+        getCosmicWeb(fetch),
+      ]);
+      if (!data) return null;
+      bridge.cosmicWebMembers = data.members;
+      COSMIC_WEB_SCENE_RADIUS = mod.COSMIC_WEB_SCENE_RADIUS;
+      COSMIC_WEB_ENTRY_CAM_R = COSMIC_WEB_SCENE_RADIUS * 1.35;
+      COSMIC_WEB_CAM_R_MIN = COSMIC_WEB_SCENE_RADIUS * 0.75; // zoom-in floor → cross back to Laniakea
+      COSMIC_WEB_CAM_R_MAX = COSMIC_WEB_SCENE_RADIUS * 6; // zoom-out ceiling (outermost — the ladder ends)
+      COSMIC_WEB_FAR = COSMIC_WEB_SCENE_RADIUS * 40;
+      cosmicWebScene = mod.createCosmicWebScene(data);
+      cosmicWebScene.setSize(
+        bridge.container?.clientWidth ?? 1,
+        bridge.container?.clientHeight ?? 1,
+      );
+      return cosmicWebScene;
+    } catch (err) {
+      console.error('[explore v2] cosmic web load failed', err);
+      return null;
+    } finally {
+      cosmicWebLoading = false;
     }
   }
 
@@ -996,6 +1042,55 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   }
   exitLaniakeaFn = crossInToVirgo;
 
+  // ── WS-5d: Laniakea ↔ Cosmic Web crossing (same machinery, the ladder's top). ─
+  async function crossOutToCosmicWeb(): Promise<void> {
+    if (inCosmicWeb()) return;
+    const scene = await ensureCosmicWeb();
+    if (!scene) return; // load failed — stay in Laniakea
+    bridge.laniakeaPanelOpen = false;
+    bridge.selectedLaniakeaMember = null;
+    laniakeaScene?.highlight(null);
+    contextGraph.setActive('cosmic-web');
+    bridge.contextId = 'cosmic-web'; // flip chrome immediately
+    camRMin = COSMIC_WEB_CAM_R_MIN;
+    camRMax = COSMIC_WEB_CAM_R_MAX;
+    camera.far = COSMIC_WEB_FAR;
+    camera.near = 1;
+    camera.updateProjectionMatrix();
+    camP = COSMIC_WEB_ENTRY_CAM_P;
+    if (deps.getReducedMotion()) {
+      camR = COSMIC_WEB_ENTRY_CAM_R;
+    } else {
+      camR = COSMIC_WEB_ENTRY_CAM_R * 1.3;
+      startCrossDolly(COSMIC_WEB_ENTRY_CAM_R * 1.3, COSMIC_WEB_ENTRY_CAM_R, 1300);
+      bridge.crossingFlashId++;
+      showWarpCaption(
+        `${(652000000).toLocaleString()} ${m.explore_light_years()} · Shapley Concentration`,
+      );
+    }
+    updateCam();
+  }
+
+  function crossInToLaniakea(): void {
+    if (!inCosmicWeb()) return;
+    dollyActive = false;
+    if (!deps.getReducedMotion()) bridge.crossingFlashId++;
+    bridge.cosmicWebPanelOpen = false;
+    bridge.selectedCosmicWebMember = null;
+    cosmicWebScene?.highlight(null);
+    contextGraph.setActive('laniakea');
+    bridge.contextId = 'laniakea'; // flip chrome immediately
+    camRMin = LANIAKEA_CAM_R_MIN;
+    camRMax = LANIAKEA_CAM_R_MAX;
+    camR = LANIAKEA_CAM_R_MAX; // re-enter at Laniakea's outer edge
+    camera.far = LANIAKEA_FAR;
+    camera.near = 1;
+    camera.updateProjectionMatrix();
+    camP = LANIAKEA_ENTRY_CAM_P;
+    updateCam();
+  }
+  exitCosmicWebFn = crossInToLaniakea;
+
   // ── Exoplanet BodyScene (Slice 2) ────────────────────────────────────────
   // Descend from the neighborhood into a host star's mini-orrery via a 1–2 s
   // cinematic Navigator warp; zoom out or tap the crumb to return.
@@ -1405,19 +1500,21 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     bridge.scaleReadout = describeDistanceAu(au);
     bridge.contextId = inBodyScene()
       ? 'body-scene'
-      : inLaniakea()
-        ? 'laniakea'
-        : inVirgo()
-          ? 'virgo'
-          : inLocalSheet()
-            ? 'local-sheet'
-            : inLocalGroup()
-              ? 'local-group'
-              : inMilkyWay()
-                ? 'milky-way'
-                : inNeighborhood()
-                  ? 'neighborhood'
-                  : 'solar-system';
+      : inCosmicWeb()
+        ? 'cosmic-web'
+        : inLaniakea()
+          ? 'laniakea'
+          : inVirgo()
+            ? 'virgo'
+            : inLocalSheet()
+              ? 'local-sheet'
+              : inLocalGroup()
+                ? 'local-group'
+                : inMilkyWay()
+                  ? 'milky-way'
+                  : inNeighborhood()
+                    ? 'neighborhood'
+                    : 'solar-system';
     const vh = bridge.container?.clientHeight ?? 1;
     const worldPerPx = (2 * Math.tan((camera.fov * Math.PI) / 180 / 2) * camR) / vh;
     const unitToAu = inNeighborhood() ? AU_PER_PC : 1;
@@ -1839,6 +1936,15 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       if (bridge.hoverData) bridge.hoverData = null;
       return;
     }
+    // WS-5d — in the Cosmic Web, hover highlights + names a structure.
+    if (inCosmicWeb()) {
+      const mh = cosmicWebScene ? ray3dHover.intersectObjects(cosmicWebScene.pickables, false) : [];
+      const id = (mh[0]?.object.userData.cosmicWebId as string | undefined) ?? null;
+      cosmicWebScene?.highlight(id ?? bridge.selectedCosmicWebMember?.id ?? null);
+      el3d.style.cursor = id ? 'pointer' : 'grab';
+      if (bridge.hoverData) bridge.hoverData = null;
+      return;
+    }
     // v2: in the stellar neighborhood, hover highlights + names the nearest
     // named star; nothing else is hoverable there.
     if (inNeighborhood()) {
@@ -2247,6 +2353,35 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     laniakeaScene?.highlight(null);
   }
   closeLaniakeaFn = closeLaniakeaPanel;
+
+  // #457 (WS-5d) — pick a Cosmic Web structure → open the CosmicWebPanel.
+  function pickCosmicWeb(e: { clientX: number; clientY: number }): void {
+    if (!cosmicWebScene) return;
+    const rect = el3d.getBoundingClientRect();
+    const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+    const hits = ray3d.intersectObjects(cosmicWebScene.pickables, false);
+    if (hits.length) {
+      const id = hits[0].object.userData.cosmicWebId as string | undefined;
+      if (id) selectCosmicWeb(id);
+    }
+  }
+  function selectCosmicWeb(id: string): void {
+    const member = (bridge.cosmicWebMembers ?? []).find((mm: any) => mm.id === id);
+    if (!member) return;
+    cue('select');
+    bridge.selectedCosmicWebMember = member;
+    bridge.cosmicWebPanelOpen = true;
+    cosmicWebScene?.highlight(id);
+    trackItemClick('marker', id, '/explore');
+  }
+  function closeCosmicWebPanel(): void {
+    bridge.cosmicWebPanelOpen = false;
+    bridge.selectedCosmicWebMember = null;
+    cosmicWebScene?.highlight(null);
+  }
+  closeCosmicWebFn = closeCosmicWebPanel;
   async function resolveGalaxyDeepLink(id: string): Promise<void> {
     if (!inMilkyWay()) {
       if (!inNeighborhood()) await crossOutToNeighborhood();
@@ -2265,25 +2400,27 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   // Ladder + level math live in scale-shell-controller (RFC-036 WS-C/C1, tested).
   const curCtxLevel = () =>
     contextLevel(
-      inLaniakea()
-        ? 'laniakea'
-        : inVirgo()
-          ? 'virgo'
-          : inLocalSheet()
-            ? 'local-sheet'
-            : inLocalGroup()
-              ? 'local-group'
-              : inMilkyWay()
-                ? 'milky-way'
-                : inNeighborhood()
-                  ? 'neighborhood'
-                  : 'solar-system',
+      inCosmicWeb()
+        ? 'cosmic-web'
+        : inLaniakea()
+          ? 'laniakea'
+          : inVirgo()
+            ? 'virgo'
+            : inLocalSheet()
+              ? 'local-sheet'
+              : inLocalGroup()
+                ? 'local-group'
+                : inMilkyWay()
+                  ? 'milky-way'
+                  : inNeighborhood()
+                    ? 'neighborhood'
+                    : 'solar-system',
     );
   contextDeepLinkFn = async (target: string) => {
     const t = contextLevel(target);
     if (t < 0) return;
     let guard = 0;
-    while (curCtxLevel() < t && guard++ < 12) {
+    while (curCtxLevel() < t && guard++ < 14) {
       const cur = curCtxLevel();
       if (cur === 0) await crossOutToNeighborhood();
       else if (cur === 1) await crossOutToMilkyWay();
@@ -2291,10 +2428,12 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       else if (cur === 3) await crossOutToLocalSheet();
       else if (cur === 4) await crossOutToVirgo();
       else if (cur === 5) await crossOutToLaniakea();
+      else if (cur === 6) await crossOutToCosmicWeb();
     }
-    while (curCtxLevel() > t && guard++ < 12) {
+    while (curCtxLevel() > t && guard++ < 14) {
       const cur = curCtxLevel();
-      if (cur === 6) crossInToVirgo();
+      if (cur === 7) crossInToLaniakea();
+      else if (cur === 6) crossInToVirgo();
       else if (cur === 5) crossInToLocalSheet();
       else if (cur === 4) crossInToLocalGroup();
       else if (cur === 3) crossInToMilkyWay();
@@ -2339,6 +2478,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       else if (inLocalSheet()) pickLocalSheet(e);
       else if (inVirgo()) pickVirgo(e);
       else if (inLaniakea()) pickLaniakea(e);
+      else if (inCosmicWeb()) pickCosmicWeb(e);
       else if (inNeighborhood()) pickNeighborhood(e);
       else tryPick3d(e);
     }
@@ -2412,14 +2552,33 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       updateCam();
       return;
     }
-    // WS-5c — Laniakea is the outermost context (for now): multiplicative zoom;
-    // scroll-in past the inner edge drops back to the Virgo Supercluster.
+    // WS-5c — Laniakea: multiplicative zoom; scroll-in past the inner edge drops
+    // back to the Virgo Supercluster, scroll-out past the ceiling crosses to the
+    // Cosmic Web (WS-5d).
     if (inLaniakea()) {
       dollyActive = false;
       const ratio = zoomingOut ? 1.07 : 1 / 1.07;
       const next = camR * ratio;
       if (!zoomingOut && next <= camRMin) {
         crossInToVirgo();
+        return;
+      }
+      if (zoomingOut && camR >= camRMax - 0.5) {
+        void crossOutToCosmicWeb();
+        return;
+      }
+      camR = Math.max(camRMin, Math.min(camRMax, next));
+      updateCam();
+      return;
+    }
+    // WS-5d — the Cosmic Web is the outermost context (the ladder's top):
+    // multiplicative zoom; scroll-in past the inner edge drops back to Laniakea.
+    if (inCosmicWeb()) {
+      dollyActive = false;
+      const ratio = zoomingOut ? 1.07 : 1 / 1.07;
+      const next = camR * ratio;
+      if (!zoomingOut && next <= camRMin) {
+        crossInToLaniakea();
         return;
       }
       camR = Math.max(camRMin, Math.min(camRMax, next));
@@ -2559,6 +2718,23 @@ export function createExploreSceneHost(bridge: any, deps: any) {
         if (inLaniakea()) {
           if (ratio < 1 && camR * ratio <= camRMin) {
             crossInToVirgo();
+            pinchPrev3d = dist;
+            return;
+          }
+          if (ratio > 1 && camR >= camRMax - 0.5) {
+            void crossOutToCosmicWeb();
+            pinchPrev3d = dist;
+            return;
+          }
+          dollyActive = false;
+          camR = Math.max(camRMin, Math.min(camRMax, camR * ratio));
+          updateCam();
+          pinchPrev3d = dist;
+          return;
+        }
+        if (inCosmicWeb()) {
+          if (ratio < 1 && camR * ratio <= camRMin) {
+            crossInToLaniakea();
             pinchPrev3d = dist;
             return;
           }
@@ -3255,6 +3431,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     lsScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     virgoScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     laniakeaScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
+    cosmicWebScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     nbScene?.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
     bhScene?.setSize(
       bridge.container.clientWidth,
@@ -3810,6 +3987,12 @@ export function createExploreSceneHost(bridge: any, deps: any) {
           laniakeaScene.render(renderer, camera);
           return;
         }
+        if (inCosmicWeb() && cosmicWebScene) {
+          stepCrossDolly();
+          cosmicWebScene.update(camera);
+          cosmicWebScene.render(renderer, camera);
+          return;
+        }
 
         // Frame throttle — render 1 of every 4 frames when a right-
         // side detail panel covers the canvas. See module-level
@@ -3910,6 +4093,8 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     closeVirgoFn,
     exitLaniakeaFn,
     closeLaniakeaFn,
+    exitCosmicWebFn,
+    closeCosmicWebFn,
     exitBlackHoleFn,
     bhDeepLinkFn,
     setBhCurvatureFn,

@@ -119,8 +119,21 @@ export const VIRGO_CONTEXT: Context = {
 // extends the chain past it).
 export const LANIAKEA_CONTEXT: Context = {
   id: 'laniakea',
-  parent: null,
+  parent: 'cosmic-web', // WS-5d — zoom out past Laniakea into the cosmic web
   child: 'virgo',
+  units: 'pc',
+  sceneUnitsPerParsec: 1,
+  outerBoundaryScene: Number.POSITIVE_INFINITY,
+  innerBoundaryScene: 0,
+};
+
+// #457 (WS-5d) — the Cosmic Web: the largest scale in the /explore ladder, the
+// foam of superclusters, walls, and voids of the nearby observable universe.
+// The outermost context — the ladder ends here.
+export const COSMIC_WEB_CONTEXT: Context = {
+  id: 'cosmic-web',
+  parent: null,
+  child: 'laniakea',
   units: 'pc',
   sceneUnitsPerParsec: 1,
   outerBoundaryScene: Number.POSITIVE_INFINITY,

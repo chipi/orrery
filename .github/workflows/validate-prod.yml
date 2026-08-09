@@ -1,4 +1,4 @@
-name: Validate prod (scheduled)
+name: Validate prod
 
 # Periodic health-and-correctness sweep of the LIVE public deployment, run
 # independently of the deploy pipeline. Drives scripts/validate-prod.mjs
@@ -16,10 +16,19 @@ name: Validate prod (scheduled)
 # 6-hourly cadence never pollutes GlitchTip project 4.
 
 on:
+  # Deep-validate the moment a prod deploy completes — mirrors the staging chain
+  # (Deploy preview → Validate staging). The job-level guard below only proceeds
+  # when the deploy actually SUCCEEDED.
+  workflow_run:
+    workflows: ['Deploy to prod VPS (orrery)']
+    types: [completed]
   schedule:
-    # Every 6 hours (UTC). Cheap (a single headless run) and catches edge/cert/
-    # data-overlay drift within a quarter-day.
-    - cron: "0 */6 * * *"
+    # Once daily (UTC) as the drift safety-net for deploy-INDEPENDENT breakage a
+    # post-deploy run structurally can't see: the on-VPS data-overlay refresh cron
+    # (RFC-035) staling/corrupting content, TLS-cert expiry, a VPS reboot, or an
+    # external asset/CDN 404. (Was every 6h; dropped to daily now that every deploy
+    # self-validates — the cron only has to catch no-deploy drift.)
+    - cron: "0 6 * * *"
   workflow_dispatch:
     inputs:
       target_url:
@@ -38,6 +47,9 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    # workflow_run fires on every deploy completion; only validate a SUCCESSFUL
+    # deploy. Schedule + manual dispatch always proceed.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:

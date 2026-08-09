@@ -1,0 +1,143 @@
+<!doctype html><html><head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<style>
+:root{
+  --bg:#04040c; --panel:rgba(8,10,22,0.95); --hud:rgba(8,10,22,0.88);
+  --border:rgba(255,255,255,0.10); --rule:rgba(255,255,255,0.07);
+  --text:#fff; --dim:rgba(255,255,255,0.55); --faint:rgba(255,255,255,0.30);
+  --accent:#4466ff; --teal:#4ecdc4; --gold:#ffc850; --mars:#c1440e; --earth:#4b9cd3;
+  --grid:rgba(78,205,196,0.09); --grid2:rgba(78,205,196,0.045);
+  --disp:'Bebas Neue',sans-serif; --mono:'Space Mono',monospace; --serif:'Crimson Pro',serif;
+  --r:4px; --r-lg:6px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:12px;-webkit-font-smoothing:antialiased}
+/* graph-paper substrate (station-blueprint.ts: 32px teal hairline) */
+.grid{position:absolute;inset:0;
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+    linear-gradient(var(--grid2) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid2) 1px,transparent 1px);
+  background-size:128px 128px,128px 128px,32px 32px,32px 32px;
+}
+/* nav */
+.nav{position:relative;z-index:5;display:flex;align-items:center;gap:22px;height:52px;padding:0 22px;
+  background:rgba(4,4,12,0.86);border-bottom:1px solid var(--rule);backdrop-filter:blur(8px)}
+.wordmark{font-family:var(--disp);font-size:24px;letter-spacing:5px}
+.nav a{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--dim);text-decoration:none}
+.nav a.on{color:var(--text)}
+.nav .sp{flex:1}
+.nav .pill{font-size:10px;letter-spacing:2px;color:var(--faint);border:1px solid var(--rule);border-radius:var(--r);padding:4px 8px}
+/* card */
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--r-lg);
+  box-shadow:0 12px 32px rgba(0,0,0,.45);backdrop-filter:blur(10px)}
+.card-h{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--rule)}
+.card-h .t{font-family:var(--disp);font-size:16px;letter-spacing:3px}
+.eq{padding:8px 14px 4px;color:rgba(255,255,255,.9)}
+.eq .katex{font-size:1.02em}
+.body{padding:12px 14px}
+/* chips */
+.chip{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;
+  border:1px solid rgba(78,205,196,.55);color:rgba(78,205,196,.95);font-size:11px;line-height:1}
+.why{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:1.5px;color:var(--gold);
+  border:1px solid rgba(255,200,80,.55);border-radius:7px;padding:2px 7px;background:rgba(255,200,80,.06)}
+.eyebrow{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:2px;color:var(--gold)}
+/* controls */
+.ctrl{display:flex;align-items:center;gap:10px;margin:9px 0}
+.ctrl .k{font-size:7px;font-weight:700;letter-spacing:2px;color:var(--faint);width:34px}
+.ctrl input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:2px;background:rgba(255,255,255,.18);border-radius:2px}
+.ctrl input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #0b0e1a;box-shadow:0 0 0 1px var(--accent)}
+.ctrl .v{font-size:11px;font-weight:700;width:46px;text-align:right}
+/* readout grid */
+.readout{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--rule)}
+.cell .lbl{font-size:7px;font-weight:700;letter-spacing:2px;color:var(--faint)}
+.cell .num{font-size:11px;font-weight:700;color:rgba(255,255,255,.9)}
+.cell.strong .num{font-size:15px;color:var(--teal)}
+.cell.bad .num{color:var(--mars)}
+/* figure frame */
+.fig{position:relative;border:1px solid var(--rule);border-radius:var(--r);overflow:hidden;background:rgba(255,255,255,.015)}
+.fig .cap{position:absolute;left:8px;bottom:6px;font-size:8px;letter-spacing:1px;color:var(--faint)}
+.prov{font-size:8px;letter-spacing:.5px;color:rgba(255,255,255,.4);border-top:1px solid rgba(255,255,255,.07);padding-top:6px;margin-top:8px}
+.prov b{color:var(--teal);font-weight:400}
+/* socket + wire (canvas mode) */
+.sock{width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--teal)}
+</style></head><body>
+<div class="grid"></div><div class="nav"><span class="wordmark">ORRERY</span>
+  <a>HOME</a><a>EXPLORE</a><a>FLY</a><a>PLAN</a><a class="on">LAB</a><a>SCIENCE</a>
+  <span class="sp"></span><span class="pill">EN</span><span class="pill">◑</span></div>
+<div style="position:relative;height:calc(100% - 52px)">
+  <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none">
+    <path d="M 352 250 C 430 250, 470 300, 548 300" fill="none" stroke="var(--teal)" stroke-width="1.5" opacity=".8"/>
+  </svg>
+  <div style="position:absolute;left:40px;top:120px"><div class="card" style="width:300px">
+    <div class="card-h"><span class="t">TSIOLKOVSKY</span><span class="chip">ⓘ</span><span style="flex:1"></span><span class="sock" title="Δv out"></span></div>
+    <div class="eq"><span id="eqA"></span><script>window.addEventListener('load',()=>{try{katex.render("\\Delta v = I_{sp}\\, g_0 \\ln\\dfrac{m_0}{m_f}",document.getElementById("eqA"),{displayMode:false})}catch(e){}});</script></div>
+    <div class="body">
+      <div class="ctrl"><span class="k">ISP</span><input type="range" min="200" max="470" value="350"><span class="v">350 s</span></div>
+      <div class="ctrl"><span class="k">M₀/Mf</span><input type="range" min="2" max="25" value="12"><span class="v">12.0</span></div>
+      <div class="fig" style="height:150px;margin-top:6px"><svg viewBox="0 0 300 180" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block">
+    <line x1="38" y1="150" x2="280" y2="150" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+    <line x1="38" y1="150" x2="38" y2="22" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+    <path d="M38.0 150.0 L44.1 131.3 L50.1 118.6 L56.1 109.1 L62.2 101.3 L68.3 94.9 L74.3 89.3 L80.3 84.4 L86.4 80.1 L92.4 76.2 L98.5 72.6 L104.5 69.3 L110.6 66.3 L116.7 63.5 L122.7 60.9 L128.8 58.4 L134.8 56.1 L140.8 53.9 L146.9 51.9 L152.9 49.9 L159.0 48.0 L165.1 46.2 L171.1 44.5 L177.1 42.8 L183.2 41.3 L189.3 39.7 L195.3 38.3 L201.3 36.9 L207.4 35.5 L213.4 34.2 L219.5 32.9 L225.5 31.7 L231.6 30.5 L237.7 29.3 L243.7 28.2 L249.8 27.1 L255.8 26.0 L261.9 25.0 L267.9 24.0 L273.9 23.0 L280.0 22.0" fill="none" stroke="var(--teal)" stroke-width="1.6"/>
+    <line x1="148.91666666666666" y1="150" x2="148.91666666666666" y2="51.18660411950262" stroke="rgba(255,200,80,.5)" stroke-dasharray="3 3" stroke-width="1"/>
+    <line x1="38" y1="51.18660411950262" x2="148.91666666666666" y2="51.18660411950262" stroke="rgba(255,200,80,.5)" stroke-dasharray="3 3" stroke-width="1"/>
+    <circle cx="148.91666666666666" cy="51.18660411950262" r="3.5" fill="var(--gold)"/>
+    <text x="280" y="163" fill="var(--faint)" font-family="var(--mono)" font-size="8" text-anchor="end">mass ratio m₀/m_f →</text>
+    <text x="32" y="24" fill="var(--faint)" font-family="var(--mono)" font-size="8" text-anchor="end" transform="rotate(-90 32 24)">Δv</text>
+    <text x="154.91666666666666" y="47.18660411950262" fill="var(--gold)" font-family="var(--mono)" font-size="8">MR 12 → 8.6</text>
+  </svg><span class="cap">Δv sensitivity · computed</span></div>
+      <div class="readout">
+        <div class="cell strong"><div class="lbl">Δv IDEAL</div><div class="num">8.60 km/s</div></div>
+        <div class="cell"><div class="lbl">EXHAUST V</div><div class="num">3.43 km/s</div></div>
+      </div>
+      <div style="margin-top:9px"><span class="why">WHY?</span> <span style="color:var(--dim);font-family:var(--serif);font-style:italic;font-size:12px">dead tank mass caps the ratio — so we stage.</span></div>
+      <div class="prov">computed · <b>orrery-kernel · ascent-physics</b> · G0 9.80665 m/s²</div>
+    </div>
+  </div></div>
+  <div style="position:absolute;left:548px;top:150px"><div class="card" style="width:340px">
+    <div class="card-h"><span class="sock" title="Δv in"></span><span class="t">TRANSFER</span><span class="chip">ⓘ</span></div>
+    <div class="eq"><span id="eqB"></span><script>window.addEventListener('load',()=>{try{katex.render("v = \\sqrt{\\mu\\left(\\dfrac{2}{r}-\\dfrac{1}{a}\\right)}",document.getElementById("eqB"),{displayMode:false})}catch(e){}});</script></div>
+    <div class="body">
+      <div class="fig" style="height:190px"><svg viewBox="0 0 440 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block">
+    <circle cx="170" cy="195" r="74" fill="none" stroke="rgba(75,156,211,.35)" stroke-width="1"/>
+    <circle cx="170" cy="195" r="128" fill="none" stroke="rgba(193,68,14,.4)" stroke-width="1"/>
+    <path d="M 244 195 A 150 150 0 0 0 80 104" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <circle cx="170" cy="195" r="5" fill="var(--gold)"/>
+    <text x="170" y="211" fill="var(--faint)" font-family="var(--mono)" font-size="8" text-anchor="middle" letter-spacing="1">SUN</text>
+    <circle cx="244" cy="195" r="4.5" fill="var(--earth)"/>
+    <text x="244" y="186" fill="rgba(75,156,211,.9)" font-family="var(--mono)" font-size="8" text-anchor="middle">EARTH · DEP</text>
+    <circle cx="80" cy="104" r="4.5" fill="var(--mars)"/>
+    <text x="80" y="96" fill="rgba(193,68,14,.95)" font-family="var(--mono)" font-size="8" text-anchor="middle">MARS · ARR</text>
+    <circle cx="188" cy="99" r="3" fill="#fff"/>
+    <circle cx="188" cy="99" r="7" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+    <line x1="188" y1="99" x2="240" y2="75" stroke="rgba(255,200,80,.5)" stroke-width="1"/>
+    <text x="244" y="76" fill="var(--gold)" font-family="var(--mono)" font-size="9" font-weight="700">Δv 3.6 km/s</text>
+  </svg><span class="cap">heliocentric · Lambert · computed</span></div>
+      <div class="readout">
+        <div class="cell"><div class="lbl">TOF</div><div class="num">259 d</div></div>
+        <div class="cell strong"><div class="lbl">Δv REQUIRED</div><div class="num">3.61 km/s</div></div>
+        <div class="cell"><div class="lbl">C3</div><div class="num">12.9 km²/s²</div></div>
+        <div class="cell"><div class="lbl">ARR V∞</div><div class="num">2.64 km/s</div></div>
+      </div>
+      <div class="prov">computed · <b>orrery-kernel · lambert + mission-arc</b></div>
+    </div>
+  </div></div>
+  <div style="position:absolute;left:930px;top:120px;width:250px" class="card">
+    <div class="card-h"><span class="t">DESCENT · EDL</span><span class="chip">ⓘ</span></div>
+    <div class="body">
+      <div class="ctrl"><span class="k">BODY</span><input type="range" min="0" max="3" value="1"><span class="v">MARS</span></div>
+      <div class="fig" style="height:120px;display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:9px">entry corridor · alt vs v</div>
+      <div class="readout"><div class="cell strong"><div class="lbl">PEAK q</div><div class="num">11.4 kPa</div></div><div class="cell bad"><div class="lbl">MARGIN</div><div class="num">LOW</div></div></div>
+      <div class="prov">computed · <b>descent-physics</b> · fail-honest</div>
+    </div>
+  </div>
+  <div style="position:absolute;left:40px;bottom:26px;color:var(--faint);font-size:9px;letter-spacing:1px">drag cards freely · drag a socket to wire output → input · + ADD FORMULA</div>
+</div>
+</body></html>

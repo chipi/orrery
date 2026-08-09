@@ -154,6 +154,13 @@ describe('planShellJump — the cross-out / cross-in walker plan', () => {
     expect(planShellJump(2, 1)).toEqual(['in']);
   });
 
+  it('walks the FULL 8-shell ladder end to end (guard is generous enough)', () => {
+    // solar-system (0) → cosmic-web (7): 7 OUT hops, none truncated.
+    expect(planShellJump(0, 7)).toEqual(Array(7).fill('out'));
+    // cosmic-web (7) → solar-system (0): 7 IN hops.
+    expect(planShellJump(7, 0)).toEqual(Array(7).fill('in'));
+  });
+
   it('off-ladder endpoints → no steps', () => {
     expect(planShellJump(-1, 2)).toEqual([]);
     expect(planShellJump(1, -1)).toEqual([]);

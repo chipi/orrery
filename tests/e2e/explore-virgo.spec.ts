@@ -2,11 +2,11 @@ import { test, expect, type Page } from '@playwright/test';
 
 /**
  * /explore Virgo Supercluster shell (#455, WS-5b) — the ladder extended past the
- * Local Sheet to a 6th, outermost shell. Reached via the build-safe
- * ?context=virgo cold-load deep-link (crosses out through all the intermediate
- * shells). Verifies the shell renders with its honesty badge + the extended
- * (now 6-rung) scale picker. Asserts on aria-current so it holds whether the rail
- * is a visible vertical rail (desktop) or a collapsed popover (mobile).
+ * Local Sheet to the 6th shell (one step out from the Local Sheet). Reached via
+ * the build-safe ?context=virgo cold-load deep-link (crosses out through all the
+ * intermediate shells). Verifies the shell renders with its honesty badge + the
+ * extended 8-rung scale picker. Asserts on aria-current so it holds whether the
+ * rail is a visible vertical rail (desktop) or a collapsed popover (mobile).
  */
 
 const toggle = (p: Page) => p.getByTestId('explore-scale-toggle');
@@ -22,7 +22,7 @@ async function jumpTo(page: Page, shell: string, isMobile: boolean): Promise<voi
 }
 
 test.describe('/explore — Virgo Supercluster shell (#455)', () => {
-  test('the Virgo shell shows its badge + a 6-rung scale picker', async ({ page }) => {
+  test('the Virgo shell shows its badge + an 8-rung scale picker', async ({ page }) => {
     await page.goto('/explore?context=virgo');
     await expect(page.getByText('Virgo Supercluster', { exact: false }).first()).toBeVisible({
       timeout: 15_000,

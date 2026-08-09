@@ -99,19 +99,22 @@ export type ShellStep = 'out' | 'in';
  * Plan the sequence of cross-out / cross-in steps that walks the shell ladder from
  * `fromLevel` to `toLevel`, one rung at a time — the pure core of the page's
  * `contextDeepLinkFn` walker. Climbs OUT while below the target, IN while above.
- * Bounded to 6 steps (the ladder is 4 rungs; the guard mirrors the page's).
+ * Bounded to 10 steps (the ladder is 8 rungs, indices 0–7; the guard is
+ * deliberately generous to be safe). The page walker uses a separate guard
+ * of 14 — they are independent.
  * Returns `[]` when already at the target or when either level is off-ladder (-1).
  */
 export function planShellJump(fromLevel: number, toLevel: number): ShellStep[] {
   const steps: ShellStep[] = [];
   if (fromLevel < 0 || toLevel < 0) return steps;
   let cur = fromLevel;
-  let guard = 0;
-  while (cur < toLevel && guard++ < 6) {
+  let outGuard = 0;
+  let inGuard = 0;
+  while (cur < toLevel && outGuard++ < 10) {
     steps.push('out');
     cur++;
   }
-  while (cur > toLevel && guard++ < 6) {
+  while (cur > toLevel && inGuard++ < 10) {
     steps.push('in');
     cur--;
   }

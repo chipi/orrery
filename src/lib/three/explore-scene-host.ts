@@ -459,7 +459,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       LS_SCENE_RADIUS = mod.LS_SCENE_RADIUS;
       LS_ENTRY_CAM_R = LS_SCENE_RADIUS * 1.35;
       LS_CAM_R_MIN = LS_SCENE_RADIUS * 0.75; // zoom-in floor → cross back to the Local Group
-      LS_CAM_R_MAX = LS_SCENE_RADIUS * 6; // zoom-out ceiling (outermost for now)
+      LS_CAM_R_MAX = LS_SCENE_RADIUS * 6; // zoom-out ceiling → cross out to Virgo Supercluster
       LS_FAR = LS_SCENE_RADIUS * 40;
       lsScene = mod.createLocalSheetScene(data);
       lsScene.setSize(bridge.container?.clientWidth ?? 1, bridge.container?.clientHeight ?? 1);
@@ -2818,8 +2818,16 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       e.touches.length === 0
     ) {
       const t = e.changedTouches[0];
-      if (inNeighborhood()) pickNeighborhood({ clientX: t.clientX, clientY: t.clientY });
-      else tryPick3d({ clientX: t.clientX, clientY: t.clientY } as MouseEvent);
+      const ev = { clientX: t.clientX, clientY: t.clientY };
+      if (inBodyScene()) pickBodyScene(ev as MouseEvent);
+      else if (inMilkyWay()) pickMilkyWay(ev);
+      else if (inLocalGroup()) pickLocalGroup(ev);
+      else if (inLocalSheet()) pickLocalSheet(ev);
+      else if (inVirgo()) pickVirgo(ev);
+      else if (inLaniakea()) pickLaniakea(ev);
+      else if (inCosmicWeb()) pickCosmicWeb(ev);
+      else if (inNeighborhood()) pickNeighborhood(ev);
+      else tryPick3d(ev as MouseEvent);
     }
   };
 

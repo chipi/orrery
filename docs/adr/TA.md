@@ -75,7 +75,7 @@ _Top-level routes: catalog · colophon · credits · earth · essays · explore 
 
 | Route | Purpose | Anchored by |
 |---|---|---|
-| `/` | 30-second orientation; 11-card route grid | PRD-013 |
+| `/` | Sectioned discovery grid — 22 leaf cards in 5 nav-mirroring sections (EXPLORE · WORLDS · PLAN & FLY · CATALOG · LEARN), hero CTA + about prose | PRD-013 / RFC-038 / IA.md §home-cards |
 | `/explore` | Solar System Explorer · 3D orrery + per-body Science Lens layers · per-planet 4K texture LOD swap (#287) for Mercury/Venus/Earth/Mars/Jupiter/Saturn/Sun; Uranus + Neptune stay 2K (SSS publishes no higher res) · user time controls — pause / 1×–100× days-per-sec / reset-to-today over a real-J2000-anchored sim clock (#351) | PRD-001 / ADR-012 / #287 / #351 |
 | `/plan` | Mission Configurator · porkchop plot (9 destinations) | PRD-002 / RFC-006 / ADR-023 / ADR-026 / ADR-028 |
 | `/fly` | Mission Arc · one continuous pad→arrival scrubber — **launch/ascent** (Scene 0: pad → orbit, integrated ascent EOM + per-vehicle launch profiles + procedural launchers), orbit-coast, heliocentric transfer (+ cislunar Earth-centered view), and **EDL descent** to touchdown/splashdown; force-vector Science Lens across every segment | PRD-003 / PRD-032 / RFC-034 / ADR-030 / ADR-058 / #412 |
@@ -85,7 +85,7 @@ _Top-level routes: catalog · colophon · credits · earth · essays · explore 
 | `/mars` | Mars Surface Map · equirectangular + 3D globe; 16 surface sites + 11 orbiters; rover traverses | PRD-007 / ADR-037 / ADR-038 / RFC-012 |
 | `/iss` | ISS Explorer · 18 modules raycast-pickable; visiting spacecraft diagrams | PRD-010 / RFC-013 / ADR-040 / ADR-041 / ADR-042 |
 | `/tiangong` | Tiangong Explorer · Tianhe + Wentian + Mengtian module overlays | PRD-011 / RFC-014 / ADR-048 / ADR-049 / ADR-050 |
-| `/science` | Science Encyclopedia · sections × 10 tabs · KaTeX · SVG diagrams · ?-chip deep-links · Cmd-K search (counts: generated block above) | PRD-008 / RFC-011 / ADR-034 / ADR-035 / ADR-036 |
+| `/science` | Science Encyclopedia · sections × 15 tabs (cosmology tab added RFC-037/WS-5b) · KaTeX · SVG diagrams · ?-chip deep-links · Cmd-K search (counts: generated block above) | PRD-008 / RFC-011 / ADR-034 / ADR-035 / ADR-036 |
 | `/fleet` | Spaceflight Fleet · entries × categories with bidirectional cross-refs (counts: generated block above) | PRD-012 / RFC-016 / ADR-052 / ADR-053 / ADR-054 |
 | `/live` | Live feeds · pinned NASA ISS stream (click-to-load facade) + launch broadcasts time-gated off `$lib/launches` (link-out). Under the Catalog nav group. | PRD-031 / RFC-033 |
 
@@ -285,7 +285,7 @@ Extends `/explore` outward from the solar system into the real stellar neighborh
 - **Coverage** — the pure `$lib/universe` math is coverage-counted + tested; the WebGL builders (`point-field.ts`, `neighborhood-scene.ts`) are coverage-excluded per the `explore-scene.ts` policy.
 - **Credits** — `static/data/data-sources.json` powers a `/credits` "Data & catalogues" section (HYG · GCAT · Launch Library 2).
 
-Since-shipped in explore-v2 (RFC-032 §7): S1 object selection / Panel / named stars / constellations / `?goto=` · S2 warp + exoplanet mini-orreries · S3 /science + culture · S4 deep-sky · S5 Milky Way · S6 black holes + physics lenses · S7 property-space / causality overlays · S8 Local Group. Still deferred: S9+ (message-object trajectories, grand-tour narration).
+Since-shipped in explore-v2 (RFC-032 §7): S1 object selection / Panel / named stars / constellations / `?goto=` · S2 warp + exoplanet mini-orreries · S3 /science + culture · S4 deep-sky · S5 Milky Way · S6 black holes + physics lenses · S7 property-space / causality overlays · S8 Local Group. + WS-5 (RFC-037): Local Sheet · Virgo Supercluster · Laniakea · Cosmic Web (4 cosmology shells, schematic/not-to-scale, each with backing article). RFC-038: WORLDS nav group split (Earth/Moon/Mars/Venus moved out of EXPLORE dropdown; /worlds hub added). Still deferred: S9+ (message-objects, grand-tour narration).
 
 ### Scene 1 — `/explore` (heliocentric solar-system)
 

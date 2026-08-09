@@ -27,9 +27,9 @@ test.describe('/explore — Virgo Supercluster shell (#455)', () => {
   // The ?context=<deep-shell> cold-load builds up to 7 Three.js scenes sequentially;
   // on the 2-CPU mobile-landscape docker shard that exceeds the per-test budget. The
   // behaviour is viewport-agnostic and covered on desktop + mobile-chromium.
-  test.beforeEach(({}, testInfo) => {
+  test.beforeEach(() => {
     test.skip(
-      testInfo.project.name === 'mobile-landscape-chromium',
+      test.info().project.name === 'mobile-landscape-chromium',
       'heavy sequential multi-scene cold-load starves the 2-CPU landscape shard',
     );
   });

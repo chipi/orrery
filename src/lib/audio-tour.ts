@@ -87,8 +87,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // VTT 00:00:22.4 "Look at the cards on this page."
     { at_sec: 22, action: 'scroll-to', target: '[data-audio-stage="route-grid"]' },
     { at_sec: 24, action: 'flash', target: '[data-audio-stage="route-grid"]' },
-    // VTT 00:00:28.2 "Explore opens the whole solar system…"
-    { at_sec: 29, action: 'flash', target: '[data-audio-stage="route-card-explore"]' },
+    // VTT 00:00:28.2 "Explore opens the whole solar system…" — the Explore
+    // section's first card is now Our Solar System (glyph `solar-system`) after
+    // the 2026-08 nav-tree home restructure (RFC-038 / IA.md §home-cards).
+    { at_sec: 29, action: 'flash', target: '[data-audio-stage="route-card-solar-system"]' },
     // VTT 00:00:35.4 "Earth, Moon, and Mars are the places we know best…"
     // (9 s sentence — spaced ~3 s each for breathing room, not crammed.)
     { at_sec: 37, action: 'flash', target: '[data-audio-stage="route-card-earth"]' },
@@ -166,8 +168,8 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     {
       at_sec: 87,
       action: 'flash',
-      target: '[data-audio-stage="route-card-explore"]',
-      note: 'Pulse the /explore card on "Take the tour. See where we are."',
+      target: '[data-audio-stage="route-card-solar-system"]',
+      note: 'Pulse the /explore (Our Solar System) card on "Take the tour. See where we are."',
     },
   ],
 

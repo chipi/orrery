@@ -2,9 +2,10 @@
   import * as m from '$lib/paraglide/messages';
   import SectionHub from '$lib/components/SectionHub.svelte';
 
-  // Explore hub — Our Solar System first, then the four worlds we can stand
-  // on, then the two crewed stations. Names are the nav labels; titles/descs
-  // come from the shared landing_card_* catalogue (localized to 14 locales).
+  // Explore hub — the zoom-out scale ladder: Our Solar System, then the outward
+  // scale shells (neighborhood → Local Group). The worlds you can stand on moved
+  // to the WORLDS group / /worlds hub (RFC-038 nav split). Names are the nav
+  // labels; titles/descs come from the shared landing_card_* catalogue (14 locales).
   const cards = $derived([
     {
       route: '/explore',
@@ -33,24 +34,6 @@
       name: m.explore_ctx_local_group(),
       title: m.explore_hub_shortcut_localgroup(),
       desc: m.explore_hub_desc_localgroup(),
-    },
-    {
-      route: '/earth',
-      name: m.nav_earth(),
-      title: m.landing_card_earth_title(),
-      desc: m.landing_card_earth_desc(),
-    },
-    {
-      route: '/moon',
-      name: m.nav_moon(),
-      title: m.landing_card_moon_title(),
-      desc: m.landing_card_moon_desc(),
-    },
-    {
-      route: '/mars',
-      name: m.nav_mars(),
-      title: m.landing_card_mars_title(),
-      desc: m.landing_card_mars_desc(),
     },
   ]);
 </script>

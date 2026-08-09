@@ -806,9 +806,9 @@
   "landing_section_tour_p2": "Encuentra una misión que te importe en /missions: Curiosity, Apolo 11, lo que sea desde Sputnik en adelante. Lee su pestaña FLIGHT para ver el presupuesto real de ∆v desglosado en las cinco fases de cualquier vuelo espacial: lanzamiento, inyección trans-X, crucero, inserción en órbita, EDL.",
   "landing_section_tour_p3": "Cuando algo no tenga sentido, cuando un número en el HUD o una etiqueta en un gráfico te confunda, cada término está enlazado a /science. La enciclopedia se puede leer en orden o saltar entre secciones según lo que necesites.",
   "landing_section_tour_p4": "/plan y /fly son la parte más profunda. /plan calcula diagramas porkchop para cualquier destino: elige un año de lanzamiento y mira cuándo se abren las ventanas. /fly toma una misión y te lleva por su trayectoria fase por fase. El HUD muestra todo en unidades reales.",
-  "landing_section_cards_heading": "Los 11 destinos",
-  "landing_card_explore_title": "El sistema solar en 3D",
-  "landing_card_explore_desc": "Gira, haz zoom, haz clic en cualquier planeta para elementos orbitales en vivo.",
+  "landing_section_cards_heading": "Los 12 destinos",
+  "landing_card_explore_title": "Del Sol a la trama cósmica",
+  "landing_card_explore_desc": "Aleja la vista a través de ocho escalas anidadas — sistema solar, galaxia, Grupo Local, la trama cósmica — cada una a distancia real.",
   "landing_card_plan_title": "Elige una ventana de lanzamiento",
   "landing_card_plan_desc": "Diagramas porkchop para cualquier destino — descubre cuándo la naturaleza abarata el viaje.",
   "landing_card_fly_title": "Vuela la trayectoria",
@@ -1797,5 +1797,10 @@
   "explore_laniakea_anchor_blurb": "Estás aquí. Todo el Supercúmulo de Virgo — el Grupo Local, el Cúmulo de Virgo, todo ello — es un único lóbulo de Laniakea, en el borde de un flujo que se dirige hacia el Gran Atractor.",
   "explore_laniakea_attractor_blurb": "El Gran Atractor — el punto bajo gravitacional de Laniakea, cerca del Cúmulo de Norma detrás del plano de la Vía Láctea. Los movimientos de miles de galaxias, la nuestra incluida, convergen todos hacia esta región; es lo que define Laniakea como una única estructura.",
   "explore_lens_story_laniakea_title": "Laniakea",
-  "explore_lens_story_laniakea_body": "'Cielo inmenso' en hawaiano — el supercúmulo definido en 2014 no por dónde se sitúan las galaxias sino por dónde fluyen. Con unos 160 megaparsecs (500 millones de años luz) de diámetro, conteniendo aproximadamente 100 000 galaxias, Laniakea es la cuenca de atracción hacia la que drena nuestro Supercúmulo de Virgo, hacia el Gran Atractor. Y Laniakea, junto con sus vecinos, forma parte de un flujo más amplio hacia algo aún mayor: la Concentración de Shapley."
+  "explore_lens_story_laniakea_body": "'Cielo inmenso' en hawaiano — el supercúmulo definido en 2014 no por dónde se sitúan las galaxias sino por dónde fluyen. Con unos 160 megaparsecs (500 millones de años luz) de diámetro, conteniendo aproximadamente 100 000 galaxias, Laniakea es la cuenca de atracción hacia la que drena nuestro Supercúmulo de Virgo, hacia el Gran Atractor. Y Laniakea, junto con sus vecinos, forma parte de un flujo más amplio hacia algo aún mayor: la Concentración de Shapley.",
+  "landing_card_venus_title": "Mapa de la superficie de Venus",
+  "landing_card_venus_desc": "Bajo la capa de nubes — donde los módulos de descenso Venera y Vega tocaron tierra y sobrevivieron al horno, aunque fuera solo durante horas.",
+  "nav_group_worlds": "MUNDOS",
+  "worlds_hub_intro": "Los mundos donde puedes pisar — cada uno construido a partir de datos reales, lo suficientemente detallados para mirar alrededor. Desciende a una superficie, traza la ruta de un róver, observa cómo se mueve el terminador.",
+  "landing_section_do_heading": "PLANIFICA Y VUELA"
 }

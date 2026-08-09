@@ -806,9 +806,9 @@
   "landing_section_tour_p2": "Encontre uma missão que te interessa em /missions — Curiosity, Apollo 11, qualquer coisa desde o Sputnik. Leia sua aba FLIGHT para ver o orçamento real de ∆v dividido nas cinco fases de qualquer voo espacial: lançamento, injeção trans-X, cruzeiro, inserção em órbita, EDL.",
   "landing_section_tour_p3": "Quando algo não fizer sentido — quando um número no HUD ou um rótulo em um gráfico te confundir — cada termo está vinculado a /science. A enciclopédia é feita para ser lida em ordem ou saltada conforme você precisar.",
   "landing_section_tour_p4": "/plan e /fly são a parte mais profunda. /plan calcula diagramas porkchop para qualquer destino — escolha um ano de lançamento, veja quando as janelas se abrem. /fly pega uma missão e te leva pela trajetória fase por fase. O HUD mostra tudo em unidades reais.",
-  "landing_section_cards_heading": "Todos os 11 destinos",
-  "landing_card_explore_title": "O sistema solar em 3D",
-  "landing_card_explore_desc": "Gire, dê zoom, clique em qualquer planeta para elementos orbitais ao vivo.",
+  "landing_section_cards_heading": "Todos os 12 destinos",
+  "landing_card_explore_title": "Do Sol à teia cósmica",
+  "landing_card_explore_desc": "Afaste a visão através de oito escalas aninhadas — sistema solar, galáxia, Grupo Local, a teia cósmica — cada uma em distância real.",
   "landing_card_plan_title": "Escolha uma janela de lançamento",
   "landing_card_plan_desc": "Diagramas porkchop para qualquer destino — veja quando a natureza torna a viagem barata.",
   "landing_card_fly_title": "Voe a trajetória",
@@ -1797,5 +1797,10 @@
   "explore_laniakea_anchor_blurb": "Você está aqui. Todo o Superaglomerado de Virgem — o Grupo Local, o Aglomerado de Virgem, tudo — é um único lobo de Laniakea, na borda de um fluxo que drena em direção ao Grande Atrator.",
   "explore_laniakea_attractor_blurb": "O Grande Atrator — o ponto gravitacional baixo de Laniakea, perto do Aglomerado de Norma atrás do plano da Via Láctea. Os movimentos de milhares de galáxias, incluindo a nossa, todos se inclinam em direção a essa região; é isso que define Laniakea como uma estrutura única.",
   "explore_lens_story_laniakea_title": "Laniakea",
-  "explore_lens_story_laniakea_body": "'Céu imenso' em havaiano — o superaglomerado definido em 2014 não por onde as galáxias estão, mas para onde fluem. Com aproximadamente 160 megaparsecs (500 milhões de anos-luz) de extensão, contendo cerca de 100.000 galáxias, Laniakea é a bacia de atração para a qual nosso Superaglomerado de Virgem drena, em direção ao Grande Atrator. E Laniakea, com seus vizinhos, faz parte de um fluxo mais amplo em direção a algo ainda maior: a Concentração de Shapley."
+  "explore_lens_story_laniakea_body": "'Céu imenso' em havaiano — o superaglomerado definido em 2014 não por onde as galáxias estão, mas para onde fluem. Com aproximadamente 160 megaparsecs (500 milhões de anos-luz) de extensão, contendo cerca de 100.000 galáxias, Laniakea é a bacia de atração para a qual nosso Superaglomerado de Virgem drena, em direção ao Grande Atrator. E Laniakea, com seus vizinhos, faz parte de um fluxo mais amplo em direção a algo ainda maior: a Concentração de Shapley.",
+  "landing_card_venus_title": "Mapa da superfície de Vênus",
+  "landing_card_venus_desc": "Sob o manto de nuvens — onde os landers Venera e Vega tocaram o solo e sobreviveram à fornalha, ainda que por poucas horas.",
+  "nav_group_worlds": "MUNDOS",
+  "worlds_hub_intro": "Os mundos em que você pode pousar — cada um construído a partir de dados reais, próximos o suficiente para explorar. Desça até uma superfície, rastreie o caminho de um rover, observe o terminador se mover.",
+  "landing_section_do_heading": "PLANEJAR & VOAR"
 }

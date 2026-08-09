@@ -806,9 +806,9 @@
   "landing_section_tour_p2": "Trova una missione che ti interessa in /missions — Curiosity, Apollo 11, qualsiasi cosa da Sputnik in poi. Leggi la sua scheda FLIGHT per vedere il budget ∆v reale scomposto nelle cinque fasi di ogni volo spaziale: lancio, iniezione trans-X, crociera, inserimento in orbita, EDL.",
   "landing_section_tour_p3": "Quando qualcosa non ha senso — quando un numero nell'HUD o un'etichetta in un grafico ti confonde — ogni termine è collegato a /science. L'enciclopedia è pensata per essere letta in ordine o saltata in base a ciò che ti serve.",
   "landing_section_tour_p4": "/plan e /fly sono la parte più profonda. /plan calcola diagrammi porkchop per qualsiasi destinazione — scegli un anno di lancio, vedi quando si aprono le finestre. /fly prende una missione e ti porta attraverso la sua traiettoria fase per fase. L'HUD mostra tutto in unità reali.",
-  "landing_section_cards_heading": "Tutte le 11 destinazioni",
-  "landing_card_explore_title": "Il sistema solare in 3D",
-  "landing_card_explore_desc": "Ruota, zoom, clicca su qualsiasi pianeta per elementi orbitali live.",
+  "landing_section_cards_heading": "Tutti i 12 destinazioni",
+  "landing_card_explore_title": "Dal Sole alla ragnatela cosmica",
+  "landing_card_explore_desc": "Zoom attraverso otto scale nidificate — sistema solare, galassia, Gruppo Locale, ragnatela cosmica — ognuna a distanza reale.",
   "landing_card_plan_title": "Scegli una finestra di lancio",
   "landing_card_plan_desc": "Diagrammi porkchop per qualsiasi destinazione — vedi quando la natura rende economico il viaggio.",
   "landing_card_fly_title": "Vola la traiettoria",
@@ -1797,5 +1797,10 @@
   "explore_laniakea_anchor_blurb": "Sei qui. L'intero Superammasso della Vergine — il Gruppo Locale, l'Ammasso della Vergine, tutto — è un singolo lobo di Laniakea, sul bordo di un flusso che drena verso il Grande Attrattore.",
   "explore_laniakea_attractor_blurb": "Il Grande Attrattore — il punto di equilibrio gravitazionale di Laniakea, vicino all'Ammasso della Norma dietro il piano della Via Lattea. I moti di migliaia di galassie, inclusa la nostra, convergono tutti verso questa regione; è ciò che definisce Laniakea come una struttura unica.",
   "explore_lens_story_laniakea_title": "Laniakea",
-  "explore_lens_story_laniakea_body": "'Cielo immenso' in hawaiano — il superammasso definito nel 2014 non da dove si trovano le galassie ma da dove fluiscono. Esteso per circa 160 megaparsec (500 milioni di anni luce), contenente circa 100.000 galassie, Laniakea è il bacino di attrazione in cui drena il nostro Superammasso della Vergine, verso il Grande Attrattore. E Laniakea, con i suoi vicini, fa parte di un flusso più ampio verso qualcosa di ancora più grande: la Concentrazione di Shapley."
+  "explore_lens_story_laniakea_body": "'Cielo immenso' in hawaiano — il superammasso definito nel 2014 non da dove si trovano le galassie ma da dove fluiscono. Esteso per circa 160 megaparsec (500 milioni di anni luce), contenente circa 100.000 galassie, Laniakea è il bacino di attrazione in cui drena il nostro Superammasso della Vergine, verso il Grande Attrattore. E Laniakea, con i suoi vicini, fa parte di un flusso più ampio verso qualcosa di ancora più grande: la Concentrazione di Shapley.",
+  "landing_card_venus_title": "Mappa della superficie di Venere",
+  "landing_card_venus_desc": "Sotto la coltre nuvolosa — dove i lander Venera e Vega toccarono e sopravvissero alla fornace, anche se solo per poche ore.",
+  "nav_group_worlds": "MONDI",
+  "worlds_hub_intro": "I mondi su cui puoi stare in piedi — ognuno costruito da dati reali, abbastanza dettagliati per guardarti intorno. Atterra su una superficie, traccia il percorso di un rover, osserva il terminatore muoversi.",
+  "landing_section_do_heading": "PIANIFICA & VOLA"
 }

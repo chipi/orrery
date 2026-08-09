@@ -806,9 +806,9 @@
   "landing_section_tour_p2": "Finde eine Mission, die dich interessiert, in /missions — Curiosity, Apollo 11, alles ab Sputnik. Lies ihren FLIGHT-Tab, um das tatsächliche ∆v-Budget zu sehen, aufgeschlüsselt nach den fünf Phasen jedes Raumflugs: Start, Trans-X-Injektion, Kreuzfahrt, Bahninsertion, EDL.",
   "landing_section_tour_p3": "Wenn etwas keinen Sinn ergibt — wenn eine Zahl im HUD oder ein Label in einem Diagramm dich verwirrt — jeder Begriff ist mit /science verlinkt. Die Enzyklopädie ist dafür gedacht, der Reihe nach gelesen oder je nach Bedarf durchsprungen zu werden.",
   "landing_section_tour_p4": "/plan und /fly sind das tiefere Ende. /plan berechnet Porkchop-Diagramme für jedes Ziel — wähle ein Startjahr, sieh, wann die Fenster sich öffnen. /fly nimmt eine Mission und führt dich phasenweise durch ihre Trajektorie. Das HUD zeigt alles in echten Einheiten.",
-  "landing_section_cards_heading": "Alle 11 Ziele",
-  "landing_card_explore_title": "Das Sonnensystem in 3D",
-  "landing_card_explore_desc": "Drehen, zoomen, jeden Planeten anklicken für Live-Bahnelemente.",
+  "landing_section_cards_heading": "Alle 12 Ziele",
+  "landing_card_explore_title": "Von der Sonne zum kosmischen Netz",
+  "landing_card_explore_desc": "Zoome durch acht verschachtelte Skalen hinaus — Sonnensystem, Galaxie, Lokale Gruppe, das kosmische Netz — jede in echter Entfernung.",
   "landing_card_plan_title": "Startfenster wählen",
   "landing_card_plan_desc": "Porkchop-Diagramme für jedes Ziel — sieh, wann die Natur die Reise günstig macht.",
   "landing_card_fly_title": "Trajektorie fliegen",
@@ -1797,5 +1797,10 @@
   "explore_laniakea_anchor_blurb": "Du bist hier. Der gesamte Virgo-Supercluster — die Lokale Gruppe, der Virgo-Cluster, alles — ist ein einzelner Lappen von Laniakea, am Rand einer Strömung, die zum Great Attractor hinführt.",
   "explore_laniakea_attractor_blurb": "Der Great Attractor — der gravitative Tiefpunkt von Laniakea, nahe des Norma-Clusters hinter der Ebene der Milchstraße. Die Bewegungen von Tausenden Galaxien, einschließlich unserer eigenen, neigen sich diesem Gebiet zu; es ist das, was Laniakea als einzige Struktur definiert.",
   "explore_lens_story_laniakea_title": "Laniakea",
-  "explore_lens_story_laniakea_body": "‚Immenser Himmel' auf Hawaiianisch — der Supercluster, der 2014 definiert wurde nicht nach dem Ort der Galaxien, sondern nach ihrer Strömungsrichtung. Mit etwa 160 Megaparsec (500 Millionen Lichtjahre) Durchmesser und etwa 100.000 Galaxien ist Laniakea das Einzugsgebiet, in das unser Virgo-Supercluster zum Great Attractor hin abfließt. Und Laniakea bildet mit seinen Nachbarn Teil einer breiteren Strömung zu etwas noch Größerem hin: der Shapley-Konzentration."
+  "explore_lens_story_laniakea_body": "‚Immenser Himmel' auf Hawaiianisch — der Supercluster, der 2014 definiert wurde nicht nach dem Ort der Galaxien, sondern nach ihrer Strömungsrichtung. Mit etwa 160 Megaparsec (500 Millionen Lichtjahre) Durchmesser und etwa 100.000 Galaxien ist Laniakea das Einzugsgebiet, in das unser Virgo-Supercluster zum Great Attractor hin abfließt. Und Laniakea bildet mit seinen Nachbarn Teil einer breiteren Strömung zu etwas noch Größerem hin: der Shapley-Konzentration.",
+  "landing_card_venus_title": "Venusoberflächen-Karte",
+  "landing_card_venus_desc": "Unter der Wolkendecke — wo die Lander Venera und Vega landeten und den Ofen überlebten, wenn auch nur für Stunden.",
+  "nav_group_worlds": "WELTEN",
+  "worlds_hub_intro": "Die Welten, auf denen du stehen kannst — jede aus echten Daten gebaut, nah genug zum Umschauen. Lande auf einer Oberfläche, verfolge den Weg eines Rovers, beobachte den Terminator.",
+  "landing_section_do_heading": "PLANEN & FLIEGEN"
 }

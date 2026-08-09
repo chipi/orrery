@@ -806,9 +806,9 @@
   "landing_section_tour_p2": "Trouvez une mission qui vous intéresse dans /missions — Curiosity, Apollo 11, n'importe quoi depuis Spoutnik. Lisez son onglet FLIGHT pour voir le budget ∆v réel décomposé en cinq phases de tout vol spatial : lancement, injection trans-X, croisière, insertion en orbite, EDL.",
   "landing_section_tour_p3": "Quand quelque chose n'a pas de sens — quand un nombre sur le HUD ou une étiquette sur un graphique vous embrouille — chaque terme est lié à /science. L'encyclopédie peut être lue dans l'ordre ou parcourue selon vos besoins.",
   "landing_section_tour_p4": "/plan et /fly sont la partie plus avancée. /plan calcule des diagrammes porkchop pour n'importe quelle destination — choisissez une année de lancement, voyez quand les fenêtres s'ouvrent. /fly prend une mission et vous fait parcourir sa trajectoire phase par phase. Le HUD affiche tout en unités réelles.",
-  "landing_section_cards_heading": "Les 11 destinations",
-  "landing_card_explore_title": "Le système solaire en 3D",
-  "landing_card_explore_desc": "Faites tourner, zoomez, cliquez sur n'importe quelle planète pour des éléments orbitaux en direct.",
+  "landing_section_cards_heading": "Les 12 destinations",
+  "landing_card_explore_title": "Du Soleil à la toile cosmique",
+  "landing_card_explore_desc": "Dézoomez à travers huit échelles imbriquées — système solaire, galaxie, Groupe Local, toile cosmique — chacune à la vraie distance.",
   "landing_card_plan_title": "Choisissez une fenêtre de lancement",
   "landing_card_plan_desc": "Diagrammes porkchop pour toute destination — voyez quand la nature rend le voyage bon marché.",
   "landing_card_fly_title": "Volez la trajectoire",
@@ -1797,5 +1797,10 @@
   "explore_laniakea_anchor_blurb": "Vous êtes ici. Le Superamas de la Vierge entier — le Groupe Local, l'Amas de la Vierge, tout cela — est un seul lobe de Laniakea, à la périphérie d'un flux qui s'écoule vers le Grand Attracteur.",
   "explore_laniakea_attractor_blurb": "Le Grand Attracteur — le point bas gravitationnel de Laniakea, près de l'Amas de la Norma derrière le plan de la Voie Lactée. Les mouvements de milliers de galaxies, la nôtre comprise, convergent tous vers cette région ; c'est ce qui définit Laniakea comme une structure unique.",
   "explore_lens_story_laniakea_title": "Laniakea",
-  "explore_lens_story_laniakea_body": "« Immense ciel » en hawaïen — le superamas défini en 2014 non pas par où les galaxies se situent mais par où elles s'écoulent. S'étendant sur environ 160 mégaparsecs (500 millions d'années-lumière) et contenant quelque 100 000 galaxies, Laniakea est le bassin d'attraction vers lequel s'écoule notre Superamas de la Vierge, en direction du Grand Attracteur. Et Laniakea, avec ses voisins, fait partie d'un flux plus large vers quelque chose de plus grand encore : la Concentration de Shapley."
+  "explore_lens_story_laniakea_body": "« Immense ciel » en hawaïen — le superamas défini en 2014 non pas par où les galaxies se situent mais par où elles s'écoulent. S'étendant sur environ 160 mégaparsecs (500 millions d'années-lumière) et contenant quelque 100 000 galaxies, Laniakea est le bassin d'attraction vers lequel s'écoule notre Superamas de la Vierge, en direction du Grand Attracteur. Et Laniakea, avec ses voisins, fait partie d'un flux plus large vers quelque chose de plus grand encore : la Concentration de Shapley.",
+  "landing_card_venus_title": "Carte de surface de Vénus",
+  "landing_card_venus_desc": "Sous la couche nuageuse — où les atterrisseurs Venera et Vega se sont posés et ont survécu à la fournaise, ne serait-ce que quelques heures.",
+  "nav_group_worlds": "MONDES",
+  "worlds_hub_intro": "Les mondes sur lesquels vous pouvez vous tenir — chacun construit à partir de données réelles, assez précis pour regarder autour de vous. Posez-vous sur une surface, tracez le chemin d'un rover, regardez le terminateur se déplacer.",
+  "landing_section_do_heading": "PLANIFIER & VOLER"
 }

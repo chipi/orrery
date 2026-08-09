@@ -806,9 +806,9 @@
   "landing_section_tour_p2": "Zoek een missie die je interesseert in /missions — Curiosity, Apollo 11, alles vanaf Spoetnik. Lees het FLIGHT-tabblad om het werkelijke ∆v-budget te zien uitgesplitst in de vijf fasen van elke ruimtevlucht: lancering, trans-X-injectie, kruisvaart, baan-insertie, EDL.",
   "landing_section_tour_p3": "Wanneer iets geen zin heeft — wanneer een nummer in de HUD of een label op een grafiek je verwart — is elke term gekoppeld aan /science. De encyclopedie is bedoeld om in volgorde te lezen of er doorheen te springen afhankelijk van wat je nodig hebt.",
   "landing_section_tour_p4": "/plan en /fly zijn de diepere kant. /plan berekent porkchop-diagrammen voor elke bestemming — kies een lanceerjaar, zie wanneer de vensters opengaan. /fly neemt een missie en loopt fase voor fase door zijn baan. De HUD toont alles in echte eenheden.",
-  "landing_section_cards_heading": "Alle 11 bestemmingen",
-  "landing_card_explore_title": "Het zonnestelsel in 3D",
-  "landing_card_explore_desc": "Draaien, zoomen, klik op een planeet voor live baanelementen.",
+  "landing_section_cards_heading": "Alle 12 bestemmingen",
+  "landing_card_explore_title": "Van de Zon tot het kosmische web",
+  "landing_card_explore_desc": "Zoom uit door acht geneste schalen — zonnestelsel, sterrenstelsel, Lokale Groep, het kosmische web — elk op echte afstand.",
   "landing_card_plan_title": "Kies een lanceervenster",
   "landing_card_plan_desc": "Porkchop-diagrammen voor elke bestemming — zie wanneer de natuur de reis goedkoop maakt.",
   "landing_card_fly_title": "Vlieg de baan",
@@ -1797,5 +1797,10 @@
   "explore_laniakea_anchor_blurb": "U bent hier. De gehele Maagdencluster — de Lokale Groep, de Maagdenhoop, alles — is één lob van Laniakea, op de rand van een stroming die naar de Grote Attractor afwatert.",
   "explore_laniakea_attractor_blurb": "De Grote Attractor — het zwaartekrachtcentrum van Laniakea, dicht bij de Normahoop achter het vlak van de Melkweg. De bewegingen van duizenden sterrenstelsels, ook het onze, buigen allemaal af naar deze regio; dit bepaalt Laniakea als één structuur.",
   "explore_lens_story_laniakea_title": "Laniakea",
-  "explore_lens_story_laniakea_body": "'Immense hemel' in het Hawaiiaans — de supercluster gedefinieerd in 2014 niet door waar sterrenstelsels zitten maar door waar zij stromen. Ongeveer 160 megaparsec (500 miljoen lichtjaar) in omvang, bevattend zo'n 100.000 sterrenstelsels, Laniakea is het aantrekkingsgebied waarin onze Maagdencluster afwatert, naar de Grote Attractor. En Laniakea, samen met zijn buren, is deel van een bredere stroming naar iets groters: de Shapley-concentratie."
+  "explore_lens_story_laniakea_body": "'Immense hemel' in het Hawaiiaans — de supercluster gedefinieerd in 2014 niet door waar sterrenstelsels zitten maar door waar zij stromen. Ongeveer 160 megaparsec (500 miljoen lichtjaar) in omvang, bevattend zo'n 100.000 sterrenstelsels, Laniakea is het aantrekkingsgebied waarin onze Maagdencluster afwatert, naar de Grote Attractor. En Laniakea, samen met zijn buren, is deel van een bredere stroming naar iets groters: de Shapley-concentratie.",
+  "landing_card_venus_title": "Venusoppervlaktekaart",
+  "landing_card_venus_desc": "Onder het wolkendek — waar de Venera- en Vega-landingsmodules neerkwamen en de oven doorstonden, al was het maar voor uren.",
+  "nav_group_worlds": "WERELDEN",
+  "worlds_hub_intro": "De werelden waar je op kunt staan — elk gebouwd uit echte gegevens, dicht genoeg om rond te kijken. Land op een oppervlak, volg het pad van een rover, kijk hoe de terminator beweegt.",
+  "landing_section_do_heading": "PLANNEN & VLIEGEN"
 }

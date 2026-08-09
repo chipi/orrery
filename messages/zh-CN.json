@@ -832,9 +832,9 @@
   "landing_section_tour_p2": "寻找一个你关心的任务——好奇心,阿波罗11号,任何来自斯普特尼克的继续. 阅读其FLIGHT分页,看看实际的XQv预算在发射、转X注入、巡航、轨道插入、EDL等每个空间飞行的五个阶段都有细分。",
   "landing_section_tour_p3": "当某事不合理时——当HUD上的数字或图表上的标签令你困惑时,每个术语都与/science联系在一起. 百科全书的意思是按顺序阅读,或者根据需要跳过.",
   "landing_section_tour_p4": "计划与飞行是更深的终点. /计划计算任意目的地的猪肉跳图——选择一个发射年,看窗户何时打开. 飞走一个任务, 让你通过它的轨迹阶段。 HUD显示一切真实单位.",
-  "landing_section_cards_heading": "所有11个目的地",
-  "landing_card_explore_title": "3D中的太阳系",
-  "landing_card_explore_desc": "旋转、放大、点击任何行星进行轨道活动。",
+  "landing_section_cards_heading": "全部 12 个目的地",
+  "landing_card_explore_title": "从太阳到宇宙网",
+  "landing_card_explore_desc": "逐级缩放八个嵌套尺度——太阳系、银河系、本星系群、宇宙网——每一层都按真实距离呈现。",
   "landing_card_plan_title": "选择一个发射窗口",
   "landing_card_plan_desc": "任何目的地的猪笼草图——看看大自然何时使旅行变得便宜.",
   "landing_card_fly_title": "飞向轨道",
@@ -1797,5 +1797,10 @@
   "explore_laniakea_anchor_blurb": "你在这里。整个室女座超星系团 — 本星系群、室女座星系团及所有这些 — 是兰尼亚凯亚的单一叶片，位于流向大吸引子的流场边缘。",
   "explore_laniakea_attractor_blurb": "大吸引子 — 兰尼亚凯亚的引力低点，位于银河系平面后方的天龙座星系团附近。数千个星系的运动，包括我们自己的星系，都朝向这个区域倾斜；它正是定义兰尼亚凯亚为单一结构的因素。",
   "explore_lens_story_laniakea_title": "兰尼亚凯亚",
-  "explore_lens_story_laniakea_body": "夏威夷语中意为'广阔的天空'——2014年定义的超星系团，不是按星系所处位置而是按星系流动方向来划分。兰尼亚凯亚超星系团跨度约160百万秒差距（5亿光年），包含约10万个星系，是我们本星系群引力流向之处，朝向大引子方向。兰尼亚凯亚及其邻近星系团都是一个更大引力流的组成部分：沙普利浓集区。"
+  "explore_lens_story_laniakea_body": "夏威夷语中意为'广阔的天空'——2014年定义的超星系团，不是按星系所处位置而是按星系流动方向来划分。兰尼亚凯亚超星系团跨度约160百万秒差距（5亿光年），包含约10万个星系，是我们本星系群引力流向之处，朝向大引子方向。兰尼亚凯亚及其邻近星系团都是一个更大引力流的组成部分：沙普利浓集区。",
+  "nav_group_worlds": "星球",
+  "worlds_hub_intro": "你可以踏足的星球——每一颗都基于真实数据构建，足够逼真让你环顾四周。降落到表面，追踪火星车的路径，观察终日圈移动。",
+  "landing_section_do_heading": "规划与飞行",
+  "landing_card_venus_title": "金星表面地图",
+  "landing_card_venus_desc": "云层之下——Venera 和 Vega 着陆器曾在此着陆并在极端环境中存活过，尽管只有数小时。"
 }

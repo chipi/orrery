@@ -76,6 +76,19 @@
         },
         { path: '/explore', query: '?context=milky-way', label: m.explore_ctx_milky_way },
         { path: '/explore', query: '?context=local-group', label: m.explore_ctx_local_group },
+      ],
+    },
+    // WORLDS (2026-08 IA split, RFC-038) — the worlds you can stand on. Split out
+    // of the EXPLORE group so EXPLORE reads as the pure zoom-out scale ladder and
+    // WORLDS as the close-up body views. Only bodies with a real page of their own
+    // (a SurfaceScene) — Earth/Moon/Mars/Venus today; grows as surface scenes ship.
+    // TV: the group collapses to its big-box hub (/worlds), like the other groups.
+    {
+      kind: 'group',
+      key: 'worlds',
+      label: m.nav_group_worlds,
+      hub: '/worlds',
+      children: [
         { path: '/earth', label: m.nav_earth },
         { path: '/moon', label: m.nav_moon },
         { path: '/mars', label: m.nav_mars },
@@ -677,6 +690,19 @@
     border: 1px solid transparent;
     transition: all 0.15s;
     white-space: nowrap;
+  }
+
+  /* Long-locale crunch fix (measured 2026-08): at ~1100–1300px the seven
+     top-level items in the wide locales (fr/es/pt-BR/ru) run right up to the
+     control cluster — French essentially overflows at 1150px. Tighten the item
+     padding in that band so the row always clears the controls; wide screens
+     (≥1320px) keep the roomier 10px. Fine-pointer desktop only (≤640 / touch is
+     the hamburger drawer, which is unaffected). */
+  @media (min-width: 641px) and (max-width: 1319px) {
+    .link {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
   }
 
   .link:hover {

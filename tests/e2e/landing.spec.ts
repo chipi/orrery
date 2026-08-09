@@ -7,7 +7,9 @@ import { expect, test } from '@playwright/test';
  */
 
 test.describe('landing page (/)', () => {
-  test('renders hero, all 11 cards, and footer block; no console errors', async ({ page }) => {
+  test('renders hero, all 18 cards in 5 sections, and footer block; no console errors', async ({
+    page,
+  }) => {
     const errors: string[] = [];
     page.on('console', (msg) => {
       if (msg.type() === 'error') errors.push(msg.text());
@@ -19,26 +21,30 @@ test.describe('landing page (/)', () => {
     await expect(page.locator('h1.wordmark')).toContainText('ORRERY');
     await expect(page.locator('p.tagline')).toContainText('solar system');
 
-    // Cards: exactly 11
-    const cards = page.locator('[data-testid="landing-cards"] > li');
-    await expect(cards).toHaveCount(11);
+    // The landing is the whole nav tree, sectioned (RFC-038 / IA.md §home-cards):
+    // 18 leaf cards under 5 section headers that mirror the nav groups.
+    const cards = page.locator('[data-testid="landing-cards"] a.card');
+    await expect(cards).toHaveCount(18);
 
-    // Card slugs in canonical Nav order (explore · missions · fleet · plan · fly ...)
-    const expectedSlugs = [
-      '/explore',
-      '/missions',
-      '/fleet',
+    const headings = page.locator('[data-testid="landing-cards"] .grid-section-heading');
+    await expect(headings).toHaveCount(5);
+    await expect(headings.nth(0)).toHaveText(/EXPLORE/i);
+    await expect(headings.nth(1)).toHaveText(/WORLDS/i);
+    await expect(headings.nth(3)).toHaveText(/CATALOG/i);
+    await expect(headings.nth(4)).toHaveText(/LEARN/i);
+
+    // A sample of destinations across every section is reachable as a card.
+    for (const href of [
+      'context=solar-system',
+      'context=milky-way',
+      '/venus',
       '/plan',
-      '/fly',
-      '/earth',
-      '/moon',
-      '/mars',
-      '/iss',
-      '/tiangong',
+      '/programs',
+      '/live',
+      '/essays',
       '/science',
-    ];
-    for (let i = 0; i < expectedSlugs.length; i++) {
-      await expect(cards.nth(i).locator('.card-route')).toHaveText(expectedSlugs[i]);
+    ]) {
+      await expect(page.locator(`[data-testid="landing-cards"] a[href*="${href}"]`)).toHaveCount(1);
     }
 
     // About-this-project section has prose only (link list moved to
@@ -72,8 +78,8 @@ test.describe('landing page (/)', () => {
 
   test('cards navigate to their canonical routes', async ({ page }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
-    // /science is now the 11th (last) card after the reorder.
-    await page.locator('[data-testid="landing-cards"] > li:nth-child(11) a').click();
+    // Science is the last card, under the LEARN section.
+    await page.locator('[data-testid="landing-cards"] a[href*="/science"]').first().click();
     await page.waitForLoadState('networkidle');
     await expect(page).toHaveURL(/\/science(\?|$)/);
   });
@@ -111,7 +117,7 @@ test.describe('landing page (/)', () => {
 
     // Cards stack: each card occupies roughly the full width (within 16px-padding tolerance)
     const firstCardWidth = await page
-      .locator('[data-testid="landing-cards"] li')
+      .locator('[data-testid="landing-cards"] a.card')
       .first()
       .evaluate((el) => el.getBoundingClientRect().width);
     expect(firstCardWidth).toBeGreaterThan(300); // single-column ~ full width

@@ -29,6 +29,7 @@ const SEED_ROUTES = [
   '/',
   '/explore',
   '/explore/hub',
+  '/worlds',
   '/catalog',
   '/learn',
   '/missions',

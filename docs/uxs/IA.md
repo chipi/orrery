@@ -1,5 +1,10 @@
 # IA — Information Architecture
-*Orrery · Reference document · v1.1 · April 2026*
+*Orrery · Reference document · v1.2 · August 2026*
+
+> **Note (v1.2):** the app has grown well past the original "six screens" this
+> doc opens with. §overview / §surfaces below are historical; **§nav-groups
+> (2026-08)** is the current top-level information architecture and supersedes
+> §navigation for the nav bar + landing.
 
 This is the reference document for the UX plane. UXSes anchor to it by section. When surfaces, navigation, tokens, or shell regions change, this document is amended.
 
@@ -74,6 +79,75 @@ History API routing via SvelteKit's built-in router. Format: `/[screen]` with op
 Navigation triggers: nav bar links, "PLAN A MISSION" button in explore screen, "FLY THIS MISSION" button in missions screen.
 
 History API routing is locked in ADR-013 (superseding ADR-004). RFC-001 is closed — SvelteKit's router replaces the hand-written router originally proposed.
+
+---
+
+## §nav-groups (2026-08 — current top-level IA)
+
+The nav bar (`src/lib/components/Nav.svelte`) is **grouped**, not flat. There are
+six top-level slots: two standalone links and four dropdown groups.
+
+```
+HOME  ·  EXPLORE ▾  ·  WORLDS ▾  ·  FLY  ·  PLAN  ·  CATALOG ▾  ·  LEARN ▾
+```
+
+| Slot | Kind | Members (children) | Group hub (TV) |
+|---|---|---|---|
+| Home | link → `/` | — | — |
+| **Explore** | group | Solar System · Stellar Neighborhood · Milky Way · Local Group (the `/explore` scale shells, via `?context=`) | `/explore/hub` |
+| **Worlds** | group | Earth · Moon · Mars · Venus (the `SurfaceScene` routes) | `/worlds` |
+| Fly | link → `/fly` | — | — |
+| Plan | link → `/plan` | — | — |
+| **Catalog** | group | Programs · Missions · Fleet · ISS · Tiangong · Live | `/catalog` |
+| **Learn** | group | Essays · Science | `/learn` |
+
+**Two axes — Explore vs Worlds (2026-08 split).** `/explore` was doing two jobs:
+the zoom-out *scale* ladder (solar system → cosmic web) **and** the close-up of a
+single *body*. These are different questions — "how far out am I looking" vs
+"which world am I on" — so the nav splits them: **Explore = scope** (the scale
+shells), **Worlds = bodies** (only bodies with their own dedicated page, i.e. a
+`SurfaceScene`: Earth/Moon/Mars/Venus today; the group grows only as new surface
+scenes ship). `/explore` itself is **not renamed** — the 375+ `SeeInApp`
+`route:"/explore"` records, the `orrery://explore` deep-link scheme, and e2e all
+keep working. Cosmology content is **not** an Explore nav item: it lives under
+`/science` (a cosmology tab) in the **Learn** group; the scale shells link to it
+contextually via each shell's science-lens "→ Read in /science" link.
+
+**TV (10-foot / D-pad).** A dropdown is unusable with a D-pad, so on TV each
+group renders as a single link to its **big-box hub** (`/explore/hub`, `/worlds`,
+`/catalog`, `/learn`), each a `SectionHub` tile grid of the group's members.
+Desktop + mobile are unchanged (gated on `isTv`).
+
+## §home-cards (2026-08 — the landing IA)
+
+The landing (`src/routes/+page.svelte`) card grid is a **discovery** surface, and
+that is a *different job* from the nav's **wayfinding**. Principle: the nav is
+persistent and must stay compact (hence dropdowns); the landing has room and
+should reveal breadth. So the two need not be identical — only **reconcilable**
+(no card leads somewhere the nav can't reach). Applied:
+
+- The landing shows **the whole nav tree, unpacked and sectioned** — every group
+  is a labeled section, every leaf its own rich card (with a hand-drawn glyph):
+  **Explore** (the 4 scale shells) · **Worlds** (Earth/Moon/Mars/Venus) · **Plan
+  & Fly** · **Catalog** (all six) · **Learn** (Essays · Science).
+- Section headers **reuse the nav group labels**, so the landing *teaches* the
+  nav's grouping by showing it — the two surfaces reinforce each other.
+- Why unpacked (not one card per group): **information scent.** "Missions",
+  "Science", "Milky Way" are concrete, high-scent cues; "Catalog"/"Learn" are
+  abstract. On a discovery surface, concrete leaf labels win; progressive
+  disclosure belongs in the nav, not the front door.
+- Cards that share a route (the Explore scale shells all live at `/explore`)
+  carry a `name` + `glyph` id so they render a distinct label + icon and a unique
+  `{#each}` key. Everything else keys/labels off its `/route`.
+
+**Nav width note (measured 2026-08).** The seven top-level items clear the
+right-side controls comfortably at ≥1280px in every locale, but at ~1100–1300px
+the wide locales (fr/es/pt-BR/ru) crunch — French essentially overflowed at
+1150px. Fixed with a scoped `@media (min-width:641px) and (max-width:1319px)`
+that tightens `.link` padding (10px → 6px) in that band; wide screens keep the
+roomier spacing. Consolidating Fly+Plan into one group was considered and
+**rejected** — it's a blunt tool for a narrow-band problem and both are core
+features that warrant top-level prominence.
 
 ---
 

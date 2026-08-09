@@ -41,32 +41,149 @@
   // Title + description come from message catalogue; route is the
   // canonical app path.
   // Card order matches the Nav (Nav.svelte): explore · missions · fleet ·
-  // plan · fly · earth · moon · mars · iss · tiangong · science.
-  const cards = $derived([
+  // plan · fly · earth · moon · mars · venus · iss · tiangong · science.
+  // Sectioned landing grid (IA.md §home-cards, 2026-08). The home page is a
+  // DISCOVERY surface, not the compact wayfinding nav — so it shows every leaf
+  // destination with its own rich card, grouped under headers that mirror the nav
+  // (Explore · Plan & Fly · Catalog · Learn). Headers reuse the nav labels so the
+  // landing teaches the nav's grouping by showing it. Interspersed heading rows
+  // span the full grid width (grid-column: 1 / -1).
+  // Each card carries a `glyph` id (which hand-drawn icon to render) and an
+  // optional `name` (the big label — used when the card doesn't map to a unique
+  // route, e.g. the scale shells all share /explore) and `query`.
+  type GridCard = {
+    route: string;
+    query?: string;
+    name?: string;
+    glyph: string;
+    title: string;
+    desc: string;
+  };
+  type GridItem = { heading: string } | GridCard;
+  const grid: GridItem[] = $derived([
+    // EXPLORE — the zoom-out scale shells (all jump into /explore at a scale).
+    { heading: m.nav_group_explore() },
     {
       route: '/explore',
+      query: '?context=solar-system',
+      name: m.explore_ctx_solar_system(),
+      glyph: 'solar-system',
       title: m.landing_card_explore_title(),
       desc: m.landing_card_explore_desc(),
     },
     {
+      route: '/explore',
+      query: '?context=neighborhood',
+      name: m.explore_ctx_stellar_neighborhood(),
+      glyph: 'neighborhood',
+      title: m.explore_hub_shortcut_neighborhood(),
+      desc: m.explore_hub_desc_neighborhood(),
+    },
+    {
+      route: '/explore',
+      query: '?context=milky-way',
+      name: m.explore_ctx_milky_way(),
+      glyph: 'milky-way',
+      title: m.explore_hub_shortcut_milkyway(),
+      desc: m.explore_hub_desc_milkyway(),
+    },
+    {
+      route: '/explore',
+      query: '?context=local-group',
+      name: m.explore_ctx_local_group(),
+      glyph: 'local-group',
+      title: m.explore_hub_shortcut_localgroup(),
+      desc: m.explore_hub_desc_localgroup(),
+    },
+    // WORLDS — the worlds you can stand on.
+    { heading: m.nav_group_worlds() },
+    {
+      route: '/earth',
+      glyph: 'earth',
+      title: m.landing_card_earth_title(),
+      desc: m.landing_card_earth_desc(),
+    },
+    {
+      route: '/moon',
+      glyph: 'moon',
+      title: m.landing_card_moon_title(),
+      desc: m.landing_card_moon_desc(),
+    },
+    {
+      route: '/mars',
+      glyph: 'mars',
+      title: m.landing_card_mars_title(),
+      desc: m.landing_card_mars_desc(),
+    },
+    {
+      route: '/venus',
+      glyph: 'venus',
+      title: m.landing_card_venus_title(),
+      desc: m.landing_card_venus_desc(),
+    },
+    // PLAN & FLY — the mission tools.
+    { heading: m.landing_section_do_heading() },
+    {
+      route: '/plan',
+      glyph: 'plan',
+      title: m.landing_card_plan_title(),
+      desc: m.landing_card_plan_desc(),
+    },
+    {
+      route: '/fly',
+      glyph: 'fly',
+      title: m.landing_card_fly_title(),
+      desc: m.landing_card_fly_desc(),
+    },
+    // CATALOG — the record.
+    { heading: m.nav_catalog() },
+    {
+      route: '/programs',
+      glyph: 'programs',
+      title: m.landing_card_programs_title(),
+      desc: m.landing_card_programs_desc(),
+    },
+    {
       route: '/missions',
+      glyph: 'missions',
       title: m.landing_card_missions_title(),
       desc: m.landing_card_missions_desc(),
     },
-    { route: '/fleet', title: m.landing_card_fleet_title(), desc: m.landing_card_fleet_desc() },
-    { route: '/plan', title: m.landing_card_plan_title(), desc: m.landing_card_plan_desc() },
-    { route: '/fly', title: m.landing_card_fly_title(), desc: m.landing_card_fly_desc() },
-    { route: '/earth', title: m.landing_card_earth_title(), desc: m.landing_card_earth_desc() },
-    { route: '/moon', title: m.landing_card_moon_title(), desc: m.landing_card_moon_desc() },
-    { route: '/mars', title: m.landing_card_mars_title(), desc: m.landing_card_mars_desc() },
-    { route: '/iss', title: m.landing_card_iss_title(), desc: m.landing_card_iss_desc() },
+    {
+      route: '/fleet',
+      glyph: 'fleet',
+      title: m.landing_card_fleet_title(),
+      desc: m.landing_card_fleet_desc(),
+    },
+    {
+      route: '/iss',
+      glyph: 'iss',
+      title: m.landing_card_iss_title(),
+      desc: m.landing_card_iss_desc(),
+    },
     {
       route: '/tiangong',
+      glyph: 'tiangong',
       title: m.landing_card_tiangong_title(),
       desc: m.landing_card_tiangong_desc(),
     },
     {
+      route: '/live',
+      glyph: 'live',
+      title: m.landing_card_live_title(),
+      desc: m.landing_card_live_desc(),
+    },
+    // LEARN — read + study.
+    { heading: m.nav_learn() },
+    {
+      route: '/essays',
+      glyph: 'essays',
+      title: m.landing_card_essays_title(),
+      desc: m.landing_card_essays_desc(),
+    },
+    {
       route: '/science',
+      glyph: 'science',
       title: m.landing_card_science_title(),
       desc: m.landing_card_science_desc(),
     },
@@ -182,6 +299,15 @@
           <stop offset="50%" stop-color="#c89968" />
           <stop offset="100%" stop-color="#4a3520" />
         </radialGradient>
+        <radialGradient id="ic-venus" cx="0.35" cy="0.35" r="0.7">
+          <stop offset="0%" stop-color="#fbe6c0" />
+          <stop offset="50%" stop-color="#d9a441" />
+          <stop offset="100%" stop-color="#5a3a12" />
+        </radialGradient>
+        <radialGradient id="ic-glow-gold" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="40%" stop-color="#e6b84a" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#e6b84a" stop-opacity="0" />
+        </radialGradient>
         <radialGradient id="ic-craft" cx="0.5" cy="0.5" r="0.5">
           <stop offset="0%" stop-color="#a0fff0" />
           <stop offset="60%" stop-color="#4ecdc4" />
@@ -220,482 +346,702 @@
     </svg>
 
     <ul class="card-grid" data-testid="landing-cards" data-audio-stage="route-grid">
-      {#each cards as card (card.route)}
-        <li>
-          <a
-            class="card"
-            href={withLang(`${base}${card.route}`)}
-            aria-label={`${card.route}: ${card.title}`}
-            data-audio-stage="route-card-{card.route.slice(1)}"
-          >
-            <span class="card-head">
-              <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-                {#if card.route === '/explore'}
-                  <!-- Mini solar system: gradient Sun + corona, three orbital ellipses
-                       (slight perspective tilt), Earth + Mars with halos. -->
-                  <circle cx="24" cy="26" r="14" fill="url(#ic-sun-corona)" />
-                  <ellipse
-                    cx="24"
-                    cy="26"
-                    rx="9"
-                    ry="3.5"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.35)"
-                    stroke-width="0.8"
-                  />
-                  <ellipse
-                    cx="24"
-                    cy="26"
-                    rx="15"
-                    ry="6"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.55)"
-                    stroke-width="1"
-                  />
-                  <ellipse
-                    cx="24"
-                    cy="26"
-                    rx="21"
-                    ry="8"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.25)"
-                    stroke-width="0.7"
-                    stroke-dasharray="2 2"
-                  />
-                  <circle cx="24" cy="26" r="3.2" fill="url(#ic-sun)" />
-                  <circle cx="33" cy="26" r="3" fill="url(#ic-glow-blue)" />
-                  <circle cx="33" cy="26" r="1.8" fill="url(#ic-earth)" />
-                  <circle cx="9" cy="26" r="3" fill="url(#ic-glow-red)" />
-                  <circle cx="9" cy="26" r="1.6" fill="url(#ic-mars)" />
-                {:else if card.route === '/missions'}
-                  <!-- Capsule with engine glow on a rising trajectory + planet horizon -->
-                  <path d="M 0 44 Q 24 36 48 44 L 48 48 L 0 48 Z" fill="rgba(75,156,211,0.4)" />
-                  <path
-                    d="M 0 44 Q 24 36 48 44"
-                    fill="none"
-                    stroke="rgba(168,224,255,0.7)"
-                    stroke-width="0.8"
-                  />
-                  <path
-                    d="M 6 38 Q 24 6 42 18"
-                    fill="none"
-                    stroke="url(#ic-traj)"
-                    stroke-width="1.6"
-                    stroke-dasharray="3 2"
-                  />
-                  <circle cx="24" cy="16" r="5" fill="url(#ic-glow-teal)" />
-                  <ellipse cx="24" cy="16" rx="2" ry="3" fill="url(#ic-craft)" />
-                  <ellipse cx="24" cy="22" rx="1.6" ry="1.6" fill="#ffc850" opacity="0.85" />
-                  <text
-                    x="24"
-                    y="33"
-                    font-family="'Space Mono', monospace"
-                    font-size="4.5"
-                    fill="rgba(255,255,255,0.45)"
-                    text-anchor="middle">T+254 d</text
-                  >
-                {:else if card.route === '/fleet'}
-                  <!-- Three spacecraft silhouettes, layered with depth (back row dim, front bright teal) -->
-                  <g opacity="0.55">
+      {#each grid as item ('heading' in item ? item.heading : item.glyph)}
+        {#if 'heading' in item}
+          <li class="grid-section"><h3 class="grid-section-heading">{item.heading}</h3></li>
+        {:else}
+          {@const card = item}
+          <li>
+            <a
+              class="card"
+              href={withLang(`${base}${card.route}${card.query ?? ''}`)}
+              aria-label={`${card.name ?? card.route}: ${card.title}`}
+              data-audio-stage="route-card-{card.glyph}"
+            >
+              <span class="card-head">
+                <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                  {#if card.glyph === 'solar-system'}
+                    <!-- Nested scale-shells: a bright solar-system core zooming OUT
+                       through the galaxy and Local Group to the faint cosmic web at
+                       the rim — the 8-shell ladder /explore now is. Warm core → cool
+                       rim; a few web-node dots on the outer shells. -->
+                    <circle cx="24" cy="24" r="15" fill="url(#ic-sun-corona)" opacity="0.5" />
+                    <!-- Shell 4 — the cosmic web (faint, dashed, with node dots) -->
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="21"
+                      fill="none"
+                      stroke="rgba(193,74,216,0.4)"
+                      stroke-width="0.7"
+                      stroke-dasharray="1.5 2.5"
+                    />
+                    <circle cx="24" cy="3" r="1.1" fill="rgba(193,74,216,0.8)" />
+                    <circle cx="43" cy="30" r="0.9" fill="rgba(193,74,216,0.6)" />
+                    <circle cx="7" cy="18" r="0.9" fill="rgba(120,169,255,0.6)" />
+                    <!-- Shell 3 — the Local Group -->
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="15.5"
+                      fill="none"
+                      stroke="rgba(120,169,255,0.45)"
+                      stroke-width="0.8"
+                      stroke-dasharray="3 2"
+                    />
+                    <!-- Shell 2 — the galaxy -->
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="10"
+                      fill="none"
+                      stroke="rgba(160,255,240,0.6)"
+                      stroke-width="1"
+                    />
+                    <!-- Shell 1 — the solar system -->
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="5.5"
+                      fill="none"
+                      stroke="rgba(255,216,120,0.75)"
+                      stroke-width="1.1"
+                    />
+                    <!-- Core: the Sun -->
+                    <circle cx="24" cy="24" r="4.5" fill="url(#ic-sun-corona)" />
+                    <circle cx="24" cy="24" r="2.4" fill="url(#ic-sun)" />
+                  {:else if card.glyph === 'neighborhood'}
+                    <!-- Stellar neighborhood — a field of nearby stars, the Sun
+                       highlighted at centre, with faint constellation lines. -->
+                    <circle cx="24" cy="24" r="3" fill="url(#ic-glow-teal)" />
+                    <circle cx="24" cy="24" r="1.6" fill="#fff7e0" />
+                    <circle cx="10" cy="12" r="1" fill="rgba(255,255,255,0.8)" />
+                    <circle cx="38" cy="10" r="1.2" fill="rgba(200,220,255,0.85)" />
+                    <circle cx="41" cy="30" r="0.9" fill="rgba(255,255,255,0.6)" />
+                    <circle cx="12" cy="36" r="1.1" fill="rgba(255,230,200,0.8)" />
+                    <circle cx="31" cy="38" r="0.8" fill="rgba(255,255,255,0.55)" />
+                    <circle cx="15" cy="23" r="0.7" fill="rgba(255,255,255,0.5)" />
+                    <circle cx="34" cy="20" r="0.9" fill="rgba(200,220,255,0.7)" />
+                    <line
+                      x1="10"
+                      y1="12"
+                      x2="15"
+                      y2="23"
+                      stroke="rgba(120,169,255,0.28)"
+                      stroke-width="0.5"
+                    />
+                    <line
+                      x1="38"
+                      y1="10"
+                      x2="34"
+                      y2="20"
+                      stroke="rgba(120,169,255,0.28)"
+                      stroke-width="0.5"
+                    />
+                  {:else if card.glyph === 'milky-way'}
+                    <!-- Milky Way — a face-on spiral: bright bar core + two arms. -->
+                    <circle cx="24" cy="24" r="13" fill="url(#ic-glow-blue)" opacity="0.35" />
+                    <path
+                      d="M 24 24 Q 35 21 40 29 Q 42 35 33 37"
+                      fill="none"
+                      stroke="rgba(180,205,255,0.6)"
+                      stroke-width="1.4"
+                    />
+                    <path
+                      d="M 24 24 Q 13 27 8 19 Q 6 13 15 11"
+                      fill="none"
+                      stroke="rgba(180,205,255,0.6)"
+                      stroke-width="1.4"
+                    />
+                    <ellipse
+                      cx="24"
+                      cy="24"
+                      rx="5"
+                      ry="2.3"
+                      fill="url(#ic-sun-corona)"
+                      transform="rotate(-25 24 24)"
+                    />
+                    <ellipse
+                      cx="24"
+                      cy="24"
+                      rx="3"
+                      ry="1.4"
+                      fill="#ffd87a"
+                      transform="rotate(-25 24 24)"
+                    />
+                    <circle cx="37" cy="31" r="0.7" fill="#fff" />
+                    <circle cx="11" cy="16" r="0.7" fill="#fff" />
+                  {:else if card.glyph === 'local-group'}
+                    <!-- Local Group — galaxies bound together: Milky Way + Andromeda
+                       + a couple of dwarfs, inside a faint binding halo. -->
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="18"
+                      fill="none"
+                      stroke="rgba(120,169,255,0.16)"
+                      stroke-width="0.6"
+                      stroke-dasharray="2 3"
+                    />
+                    <ellipse
+                      cx="18"
+                      cy="20"
+                      rx="7"
+                      ry="2.6"
+                      fill="rgba(108,169,255,0.2)"
+                      stroke="rgba(108,169,255,0.6)"
+                      stroke-width="0.8"
+                      transform="rotate(-20 18 20)"
+                    />
+                    <circle cx="18" cy="20" r="1.4" fill="#ffd87a" />
+                    <ellipse
+                      cx="32"
+                      cy="30"
+                      rx="6"
+                      ry="2.2"
+                      fill="rgba(255,200,120,0.18)"
+                      stroke="rgba(255,216,160,0.6)"
+                      stroke-width="0.8"
+                      transform="rotate(30 32 30)"
+                    />
+                    <circle cx="32" cy="30" r="1.2" fill="#fff2d0" />
+                    <circle cx="34" cy="14" r="2" fill="rgba(180,205,255,0.3)" />
+                    <circle cx="34" cy="14" r="0.9" fill="#cfe0ff" />
+                    <circle cx="12" cy="34" r="1.6" fill="rgba(180,205,255,0.25)" />
+                    <circle cx="12" cy="34" r="0.7" fill="#cfe0ff" />
+                  {:else if card.glyph === 'earth'}
+                    <!-- Earth: blue gradient + atmosphere halo + ISS orbit + GPS dot -->
+                    <circle cx="24" cy="24" r="16" fill="url(#ic-glow-blue)" />
+                    <circle cx="24" cy="24" r="11" fill="url(#ic-earth)" />
+                    <path
+                      d="M 18 22 Q 22 18 26 22 Q 28 26 24 28 Q 20 26 18 22 Z"
+                      fill="rgba(140,180,120,0.55)"
+                    />
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="11.5"
+                      fill="none"
+                      stroke="rgba(168,224,255,0.45)"
+                      stroke-width="0.6"
+                    />
+                    <ellipse
+                      cx="24"
+                      cy="24"
+                      rx="18"
+                      ry="6"
+                      fill="none"
+                      stroke="#4ecdc4"
+                      stroke-width="1"
+                      stroke-dasharray="2 2"
+                    />
+                    <circle cx="42" cy="24" r="2" fill="url(#ic-glow-teal)" />
+                    <circle cx="42" cy="24" r="1.2" fill="#4ecdc4" />
+                  {:else if card.glyph === 'moon'}
+                    <!-- Moon: grey disc + craters + Apollo flag marker -->
+                    <circle cx="22" cy="24" r="16" fill="rgba(75,156,211,0.18)" />
+                    <circle cx="22" cy="24" r="13" fill="url(#ic-moon)" />
+                    <ellipse cx="18" cy="20" rx="2.4" ry="2.2" fill="rgba(60,55,50,0.7)" />
+                    <ellipse cx="18.5" cy="19.5" rx="1.8" ry="1.6" fill="rgba(168,160,156,0.7)" />
+                    <ellipse cx="27" cy="26" rx="3" ry="2.6" fill="rgba(60,55,50,0.65)" />
+                    <ellipse cx="27.5" cy="25.5" rx="2.4" ry="2" fill="rgba(168,160,156,0.7)" />
+                    <ellipse cx="20" cy="30" rx="1.6" ry="1.4" fill="rgba(60,55,50,0.6)" />
+                    <line
+                      x1="25"
+                      y1="22"
+                      x2="25"
+                      y2="17"
+                      stroke="rgba(255,255,255,0.7)"
+                      stroke-width="0.6"
+                    />
+                    <polygon points="25,17 28,18 25,19" fill="#c1440e" />
+                  {:else if card.glyph === 'mars'}
+                    <!-- Mars: red gradient + polar caps + Olympus Mons hint -->
+                    <circle cx="24" cy="24" r="16" fill="url(#ic-glow-red)" />
+                    <circle cx="24" cy="24" r="13" fill="url(#ic-mars)" />
+                    <ellipse cx="24" cy="12.5" rx="5" ry="2" fill="rgba(255,255,255,0.85)" />
+                    <ellipse cx="24" cy="35.5" rx="4" ry="1.6" fill="rgba(245,235,225,0.78)" />
+                    <ellipse cx="19" cy="22" rx="2.6" ry="1.5" fill="rgba(80,28,8,0.55)" />
+                    <ellipse cx="29" cy="27" rx="2" ry="1.2" fill="rgba(80,28,8,0.55)" />
+                    <circle cx="20" cy="26" r="1.4" fill="rgba(255,200,140,0.55)" />
+                    <circle cx="20" cy="26" r="0.6" fill="rgba(120,40,8,0.7)" />
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="13.5"
+                      fill="none"
+                      stroke="rgba(244,178,152,0.5)"
+                      stroke-width="0.5"
+                    />
+                  {:else if card.glyph === 'venus'}
+                    <!-- Venus: cream-gold disc under an opaque cloud deck -->
+                    <circle cx="24" cy="24" r="16" fill="url(#ic-glow-gold)" />
+                    <circle cx="24" cy="24" r="13" fill="url(#ic-venus)" />
+                    <path
+                      d="M 12 20 Q 24 17 36 21"
+                      fill="none"
+                      stroke="rgba(255,240,210,0.4)"
+                      stroke-width="1.2"
+                    />
+                    <path
+                      d="M 12 25 Q 24 28 36 24"
+                      fill="none"
+                      stroke="rgba(210,160,90,0.45)"
+                      stroke-width="1.4"
+                    />
+                    <path
+                      d="M 14 30 Q 24 32 34 29"
+                      fill="none"
+                      stroke="rgba(255,240,210,0.32)"
+                      stroke-width="1"
+                    />
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="13.6"
+                      fill="none"
+                      stroke="rgba(255,236,190,0.55)"
+                      stroke-width="0.9"
+                    />
+                  {:else if card.glyph === 'missions'}
+                    <!-- Capsule with engine glow on a rising trajectory + planet horizon -->
+                    <path d="M 0 44 Q 24 36 48 44 L 48 48 L 0 48 Z" fill="rgba(75,156,211,0.4)" />
+                    <path
+                      d="M 0 44 Q 24 36 48 44"
+                      fill="none"
+                      stroke="rgba(168,224,255,0.7)"
+                      stroke-width="0.8"
+                    />
+                    <path
+                      d="M 6 38 Q 24 6 42 18"
+                      fill="none"
+                      stroke="url(#ic-traj)"
+                      stroke-width="1.6"
+                      stroke-dasharray="3 2"
+                    />
+                    <circle cx="24" cy="16" r="5" fill="url(#ic-glow-teal)" />
+                    <ellipse cx="24" cy="16" rx="2" ry="3" fill="url(#ic-craft)" />
+                    <ellipse cx="24" cy="22" rx="1.6" ry="1.6" fill="#ffc850" opacity="0.85" />
+                    <text
+                      x="24"
+                      y="33"
+                      font-family="'Space Mono', monospace"
+                      font-size="4.5"
+                      fill="rgba(255,255,255,0.45)"
+                      text-anchor="middle">T+254 d</text
+                    >
+                  {:else if card.glyph === 'fleet'}
+                    <!-- Three spacecraft silhouettes, layered with depth (back row dim, front bright teal) -->
+                    <g opacity="0.55">
+                      <rect
+                        x="6"
+                        y="9"
+                        width="12"
+                        height="6"
+                        rx="1"
+                        fill="rgba(255,255,255,0.18)"
+                        stroke="rgba(255,255,255,0.55)"
+                        stroke-width="0.7"
+                      />
+                      <rect x="3" y="10" width="3" height="4" fill="rgba(120,180,220,0.6)" />
+                      <rect x="18" y="10" width="3" height="4" fill="rgba(120,180,220,0.6)" />
+                    </g>
+                    <g>
+                      <rect
+                        x="20"
+                        y="20"
+                        width="20"
+                        height="9"
+                        rx="1.2"
+                        fill="rgba(78,205,196,0.18)"
+                        stroke="#4ecdc4"
+                        stroke-width="1.2"
+                      />
+                      <rect x="15" y="22" width="5" height="5" fill="url(#ic-panel)" />
+                      <rect x="40" y="22" width="5" height="5" fill="url(#ic-panel)" />
+                      <circle cx="30" cy="24.5" r="1.2" fill="#a0fff0" />
+                    </g>
+                    <g opacity="0.7">
+                      <rect
+                        x="10"
+                        y="36"
+                        width="14"
+                        height="6"
+                        rx="1"
+                        fill="rgba(193,74,216,0.12)"
+                        stroke="rgba(193,74,216,0.7)"
+                        stroke-width="0.9"
+                      />
+                      <rect x="6" y="37" width="4" height="4" fill="url(#ic-panel-gold)" />
+                      <rect x="24" y="37" width="4" height="4" fill="url(#ic-panel-gold)" />
+                    </g>
+                  {:else if card.glyph === 'plan'}
+                    <!-- Vivid porkchop heatmap (5×5 grid, gradient of cool→hot cells like a real plot) -->
                     <rect
                       x="6"
-                      y="9"
-                      width="12"
-                      height="6"
-                      rx="1"
-                      fill="rgba(255,255,255,0.18)"
-                      stroke="rgba(255,255,255,0.55)"
+                      y="6"
+                      width="36"
+                      height="36"
+                      fill="rgba(10,12,28,0.5)"
+                      stroke="rgba(255,255,255,0.18)"
+                      stroke-width="0.6"
+                    />
+                    <!-- Row 1 (bottom = cheapest, brightest teal lobe in middle) -->
+                    <rect x="7" y="7" width="6.8" height="6.8" fill="rgba(193,68,14,0.6)" />
+                    <rect x="14" y="7" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
+                    <rect x="21" y="7" width="6.8" height="6.8" fill="rgba(240,160,60,0.8)" />
+                    <rect x="28" y="7" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
+                    <rect x="35" y="7" width="6.8" height="6.8" fill="rgba(193,68,14,0.5)" />
+                    <rect x="7" y="14" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
+                    <rect x="14" y="14" width="6.8" height="6.8" fill="rgba(240,200,80,0.85)" />
+                    <rect x="21" y="14" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
+                    <rect x="28" y="14" width="6.8" height="6.8" fill="rgba(240,200,80,0.85)" />
+                    <rect x="35" y="14" width="6.8" height="6.8" fill="rgba(220,108,40,0.6)" />
+                    <rect x="7" y="21" width="6.8" height="6.8" fill="rgba(240,200,80,0.7)" />
+                    <rect x="14" y="21" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
+                    <rect x="21" y="21" width="6.8" height="6.8" fill="#4ecdc4" />
+                    <rect x="28" y="21" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
+                    <rect x="35" y="21" width="6.8" height="6.8" fill="rgba(240,200,80,0.7)" />
+                    <rect x="7" y="28" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
+                    <rect x="14" y="28" width="6.8" height="6.8" fill="rgba(240,200,80,0.85)" />
+                    <rect x="21" y="28" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
+                    <rect x="28" y="28" width="6.8" height="6.8" fill="rgba(240,200,80,0.85)" />
+                    <rect x="35" y="28" width="6.8" height="6.8" fill="rgba(220,108,40,0.6)" />
+                    <rect x="7" y="35" width="6.8" height="6.8" fill="rgba(193,68,14,0.6)" />
+                    <rect x="14" y="35" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
+                    <rect x="21" y="35" width="6.8" height="6.8" fill="rgba(240,160,60,0.7)" />
+                    <rect x="28" y="35" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
+                    <rect x="35" y="35" width="6.8" height="6.8" fill="rgba(193,68,14,0.5)" />
+                    <!-- Pin marker on the cheap centre cell -->
+                    <circle cx="24.4" cy="24.4" r="2" fill="none" stroke="#fff" stroke-width="1" />
+                    <circle cx="24.4" cy="24.4" r="0.8" fill="#fff" />
+                  {:else if card.glyph === 'fly'}
+                    <!-- Earth → Mars trajectory: gradient transfer arc + glowing spacecraft -->
+                    <circle cx="6" cy="38" r="6" fill="url(#ic-glow-blue)" />
+                    <circle cx="6" cy="38" r="3.5" fill="url(#ic-earth)" />
+                    <circle cx="42" cy="12" r="6" fill="url(#ic-glow-red)" />
+                    <circle cx="42" cy="12" r="3" fill="url(#ic-mars)" />
+                    <path
+                      d="M 9 36 Q 24 0 40 14"
+                      fill="none"
+                      stroke="url(#ic-traj)"
+                      stroke-width="1.8"
+                      stroke-dasharray="3 2"
+                    />
+                    <circle cx="24" cy="14" r="4" fill="url(#ic-glow-teal)" />
+                    <polygon points="20,14 28,18 20,22 22,18" fill="url(#ic-craft)" />
+                  {:else if card.glyph === 'iss'}
+                    <!-- ISS: glowing solar panels (gradient teal) + truss with depth + Earth glow at bottom -->
+                    <ellipse cx="24" cy="46" rx="24" ry="6" fill="rgba(75,156,211,0.18)" />
+                    <line
+                      x1="6"
+                      y1="22"
+                      x2="42"
+                      y2="22"
+                      stroke="rgba(255,255,255,0.65)"
+                      stroke-width="1"
+                    />
+                    <line
+                      x1="6"
+                      y1="26"
+                      x2="42"
+                      y2="26"
+                      stroke="rgba(255,255,255,0.45)"
                       stroke-width="0.7"
                     />
-                    <rect x="3" y="10" width="3" height="4" fill="rgba(120,180,220,0.6)" />
-                    <rect x="18" y="10" width="3" height="4" fill="rgba(120,180,220,0.6)" />
-                  </g>
-                  <g>
+                    <!-- Solar panels (glowing) -->
+                    <rect
+                      x="2"
+                      y="18"
+                      width="6"
+                      height="12"
+                      fill="url(#ic-panel)"
+                      stroke="rgba(160,255,240,0.6)"
+                      stroke-width="0.5"
+                    />
+                    <rect
+                      x="40"
+                      y="18"
+                      width="6"
+                      height="12"
+                      fill="url(#ic-panel)"
+                      stroke="rgba(160,255,240,0.6)"
+                      stroke-width="0.5"
+                    />
+                    <line
+                      x1="2"
+                      y1="22"
+                      x2="8"
+                      y2="22"
+                      stroke="rgba(15,40,38,0.6)"
+                      stroke-width="0.4"
+                    />
+                    <line
+                      x1="40"
+                      y1="22"
+                      x2="46"
+                      y2="22"
+                      stroke="rgba(15,40,38,0.6)"
+                      stroke-width="0.4"
+                    />
+                    <line
+                      x1="2"
+                      y1="26"
+                      x2="8"
+                      y2="26"
+                      stroke="rgba(15,40,38,0.6)"
+                      stroke-width="0.4"
+                    />
+                    <line
+                      x1="40"
+                      y1="26"
+                      x2="46"
+                      y2="26"
+                      stroke="rgba(15,40,38,0.6)"
+                      stroke-width="0.4"
+                    />
+                    <!-- Pressurised modules -->
+                    <rect
+                      x="13"
+                      y="20"
+                      width="22"
+                      height="8"
+                      fill="rgba(255,255,255,0.18)"
+                      stroke="rgba(255,255,255,0.7)"
+                      stroke-width="0.8"
+                    />
+                    <rect
+                      x="22"
+                      y="12"
+                      width="4"
+                      height="8"
+                      fill="rgba(255,255,255,0.22)"
+                      stroke="rgba(255,255,255,0.7)"
+                      stroke-width="0.8"
+                    />
+                    <rect
+                      x="22"
+                      y="28"
+                      width="4"
+                      height="8"
+                      fill="rgba(255,255,255,0.22)"
+                      stroke="rgba(255,255,255,0.7)"
+                      stroke-width="0.8"
+                    />
+                    <!-- Cupola dot -->
+                    <circle cx="24" cy="36" r="1.4" fill="#4ecdc4" />
+                  {:else if card.glyph === 'tiangong'}
+                    <!-- Tiangong: T-shape with multi-color modules + glowing solar panels -->
+                    <ellipse cx="24" cy="46" rx="24" ry="6" fill="rgba(193,68,14,0.18)" />
+                    <!-- Tianhe core (vertical) -->
                     <rect
                       x="20"
+                      y="6"
+                      width="8"
+                      height="36"
+                      fill="rgba(255,200,120,0.18)"
+                      stroke="rgba(255,216,160,0.85)"
+                      stroke-width="0.9"
+                    />
+                    <line
+                      x1="20"
+                      y1="14"
+                      x2="28"
+                      y2="14"
+                      stroke="rgba(255,216,160,0.5)"
+                      stroke-width="0.4"
+                    />
+                    <line
+                      x1="20"
+                      y1="22"
+                      x2="28"
+                      y2="22"
+                      stroke="rgba(255,216,160,0.5)"
+                      stroke-width="0.4"
+                    />
+                    <line
+                      x1="20"
+                      y1="30"
+                      x2="28"
+                      y2="30"
+                      stroke="rgba(255,216,160,0.5)"
+                      stroke-width="0.4"
+                    />
+                    <line
+                      x1="20"
+                      y1="38"
+                      x2="28"
+                      y2="38"
+                      stroke="rgba(255,216,160,0.5)"
+                      stroke-width="0.4"
+                    />
+                    <!-- Wentian + Mengtian (horizontal labs in teal) -->
+                    <rect
+                      x="6"
                       y="20"
-                      width="20"
-                      height="9"
-                      rx="1.2"
+                      width="36"
+                      height="8"
                       fill="rgba(78,205,196,0.18)"
+                      stroke="#4ecdc4"
+                      stroke-width="0.9"
+                    />
+                    <line
+                      x1="14"
+                      y1="20"
+                      x2="14"
+                      y2="28"
+                      stroke="rgba(78,205,196,0.4)"
+                      stroke-width="0.4"
+                    />
+                    <line
+                      x1="34"
+                      y1="20"
+                      x2="34"
+                      y2="28"
+                      stroke="rgba(78,205,196,0.4)"
+                      stroke-width="0.4"
+                    />
+                    <!-- Solar panel wings (gold) -->
+                    <rect x="0" y="22" width="6" height="4" fill="url(#ic-panel-gold)" />
+                    <rect x="42" y="22" width="6" height="4" fill="url(#ic-panel-gold)" />
+                    <!-- Center docking port glow -->
+                    <circle cx="24" cy="24" r="2.5" fill="url(#ic-glow-teal)" />
+                    <circle cx="24" cy="24" r="1.2" fill="#4ecdc4" />
+                  {:else if card.glyph === 'science'}
+                    <!-- Atomic / orbital science glyph: nucleus + 3 multi-colored electron orbits + ∆v formula -->
+                    <ellipse
+                      cx="24"
+                      cy="24"
+                      rx="20"
+                      ry="7"
+                      fill="none"
                       stroke="#4ecdc4"
                       stroke-width="1.2"
                     />
-                    <rect x="15" y="22" width="5" height="5" fill="url(#ic-panel)" />
-                    <rect x="40" y="22" width="5" height="5" fill="url(#ic-panel)" />
-                    <circle cx="30" cy="24.5" r="1.2" fill="#a0fff0" />
-                  </g>
-                  <g opacity="0.7">
-                    <rect
-                      x="10"
-                      y="36"
-                      width="14"
-                      height="6"
-                      rx="1"
-                      fill="rgba(193,74,216,0.12)"
-                      stroke="rgba(193,74,216,0.7)"
-                      stroke-width="0.9"
+                    <ellipse
+                      cx="24"
+                      cy="24"
+                      rx="20"
+                      ry="7"
+                      fill="none"
+                      stroke="#c14ad8"
+                      stroke-width="1.2"
+                      transform="rotate(60 24 24)"
                     />
-                    <rect x="6" y="37" width="4" height="4" fill="url(#ic-panel-gold)" />
-                    <rect x="24" y="37" width="4" height="4" fill="url(#ic-panel-gold)" />
-                  </g>
-                {:else if card.route === '/plan'}
-                  <!-- Vivid porkchop heatmap (5×5 grid, gradient of cool→hot cells like a real plot) -->
-                  <rect
-                    x="6"
-                    y="6"
-                    width="36"
-                    height="36"
-                    fill="rgba(10,12,28,0.5)"
-                    stroke="rgba(255,255,255,0.18)"
-                    stroke-width="0.6"
-                  />
-                  <!-- Row 1 (bottom = cheapest, brightest teal lobe in middle) -->
-                  <rect x="7" y="7" width="6.8" height="6.8" fill="rgba(193,68,14,0.6)" />
-                  <rect x="14" y="7" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
-                  <rect x="21" y="7" width="6.8" height="6.8" fill="rgba(240,160,60,0.8)" />
-                  <rect x="28" y="7" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
-                  <rect x="35" y="7" width="6.8" height="6.8" fill="rgba(193,68,14,0.5)" />
-                  <rect x="7" y="14" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
-                  <rect x="14" y="14" width="6.8" height="6.8" fill="rgba(240,200,80,0.85)" />
-                  <rect x="21" y="14" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
-                  <rect x="28" y="14" width="6.8" height="6.8" fill="rgba(240,200,80,0.85)" />
-                  <rect x="35" y="14" width="6.8" height="6.8" fill="rgba(220,108,40,0.6)" />
-                  <rect x="7" y="21" width="6.8" height="6.8" fill="rgba(240,200,80,0.7)" />
-                  <rect x="14" y="21" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
-                  <rect x="21" y="21" width="6.8" height="6.8" fill="#4ecdc4" />
-                  <rect x="28" y="21" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
-                  <rect x="35" y="21" width="6.8" height="6.8" fill="rgba(240,200,80,0.7)" />
-                  <rect x="7" y="28" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
-                  <rect x="14" y="28" width="6.8" height="6.8" fill="rgba(240,200,80,0.85)" />
-                  <rect x="21" y="28" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
-                  <rect x="28" y="28" width="6.8" height="6.8" fill="rgba(240,200,80,0.85)" />
-                  <rect x="35" y="28" width="6.8" height="6.8" fill="rgba(220,108,40,0.6)" />
-                  <rect x="7" y="35" width="6.8" height="6.8" fill="rgba(193,68,14,0.6)" />
-                  <rect x="14" y="35" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
-                  <rect x="21" y="35" width="6.8" height="6.8" fill="rgba(240,160,60,0.7)" />
-                  <rect x="28" y="35" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
-                  <rect x="35" y="35" width="6.8" height="6.8" fill="rgba(193,68,14,0.5)" />
-                  <!-- Pin marker on the cheap centre cell -->
-                  <circle cx="24.4" cy="24.4" r="2" fill="none" stroke="#fff" stroke-width="1" />
-                  <circle cx="24.4" cy="24.4" r="0.8" fill="#fff" />
-                {:else if card.route === '/fly'}
-                  <!-- Earth → Mars trajectory: gradient transfer arc + glowing spacecraft -->
-                  <circle cx="6" cy="38" r="6" fill="url(#ic-glow-blue)" />
-                  <circle cx="6" cy="38" r="3.5" fill="url(#ic-earth)" />
-                  <circle cx="42" cy="12" r="6" fill="url(#ic-glow-red)" />
-                  <circle cx="42" cy="12" r="3" fill="url(#ic-mars)" />
-                  <path
-                    d="M 9 36 Q 24 0 40 14"
-                    fill="none"
-                    stroke="url(#ic-traj)"
-                    stroke-width="1.8"
-                    stroke-dasharray="3 2"
-                  />
-                  <circle cx="24" cy="14" r="4" fill="url(#ic-glow-teal)" />
-                  <polygon points="20,14 28,18 20,22 22,18" fill="url(#ic-craft)" />
-                {:else if card.route === '/earth'}
-                  <!-- Earth: blue gradient + atmosphere halo + ISS orbit + GPS dot -->
-                  <circle cx="24" cy="24" r="16" fill="url(#ic-glow-blue)" />
-                  <circle cx="24" cy="24" r="11" fill="url(#ic-earth)" />
-                  <!-- Continent hint -->
-                  <path
-                    d="M 18 22 Q 22 18 26 22 Q 28 26 24 28 Q 20 26 18 22 Z"
-                    fill="rgba(140,180,120,0.55)"
-                  />
-                  <path
-                    d="M 28 26 Q 31 24 32 27"
-                    fill="none"
-                    stroke="rgba(140,180,120,0.45)"
-                    stroke-width="1"
-                  />
-                  <!-- Atmosphere ring -->
-                  <circle
-                    cx="24"
-                    cy="24"
-                    r="11.5"
-                    fill="none"
-                    stroke="rgba(168,224,255,0.45)"
-                    stroke-width="0.6"
-                  />
-                  <!-- ISS orbit -->
-                  <ellipse
-                    cx="24"
-                    cy="24"
-                    rx="18"
-                    ry="6"
-                    fill="none"
-                    stroke="#4ecdc4"
-                    stroke-width="1"
-                    stroke-dasharray="2 2"
-                  />
-                  <circle cx="42" cy="24" r="2" fill="url(#ic-glow-teal)" />
-                  <circle cx="42" cy="24" r="1.2" fill="#4ecdc4" />
-                {:else if card.route === '/moon'}
-                  <!-- Moon: gradient grey disc + craters with shading + Earth-glow on horizon -->
-                  <circle cx="22" cy="24" r="16" fill="rgba(75,156,211,0.18)" />
-                  <circle cx="22" cy="24" r="13" fill="url(#ic-moon)" />
-                  <!-- Craters with shadow -->
-                  <ellipse cx="18" cy="20" rx="2.4" ry="2.2" fill="rgba(60,55,50,0.7)" />
-                  <ellipse cx="18.5" cy="19.5" rx="1.8" ry="1.6" fill="rgba(168,160,156,0.7)" />
-                  <ellipse cx="27" cy="26" rx="3" ry="2.6" fill="rgba(60,55,50,0.65)" />
-                  <ellipse cx="27.5" cy="25.5" rx="2.4" ry="2" fill="rgba(168,160,156,0.7)" />
-                  <ellipse cx="20" cy="30" rx="1.6" ry="1.4" fill="rgba(60,55,50,0.6)" />
-                  <!-- Apollo flag marker -->
-                  <line
-                    x1="25"
-                    y1="22"
-                    x2="25"
-                    y2="17"
-                    stroke="rgba(255,255,255,0.7)"
-                    stroke-width="0.6"
-                  />
-                  <polygon points="25,17 28,18 25,19" fill="#c1440e" />
-                {:else if card.route === '/mars'}
-                  <!-- Mars: rich red gradient + polar caps + Olympus Mons hint + atmosphere -->
-                  <circle cx="24" cy="24" r="16" fill="url(#ic-glow-red)" />
-                  <circle cx="24" cy="24" r="13" fill="url(#ic-mars)" />
-                  <!-- Polar caps -->
-                  <ellipse cx="24" cy="12.5" rx="5" ry="2" fill="rgba(255,255,255,0.85)" />
-                  <ellipse cx="24" cy="35.5" rx="4" ry="1.6" fill="rgba(245,235,225,0.78)" />
-                  <!-- Surface features -->
-                  <ellipse cx="19" cy="22" rx="2.6" ry="1.5" fill="rgba(80,28,8,0.55)" />
-                  <ellipse cx="29" cy="27" rx="2" ry="1.2" fill="rgba(80,28,8,0.55)" />
-                  <!-- Olympus Mons -->
-                  <circle cx="20" cy="26" r="1.4" fill="rgba(255,200,140,0.55)" />
-                  <circle cx="20" cy="26" r="0.6" fill="rgba(120,40,8,0.7)" />
-                  <!-- Thin atmosphere -->
-                  <circle
-                    cx="24"
-                    cy="24"
-                    r="13.5"
-                    fill="none"
-                    stroke="rgba(244,178,152,0.5)"
-                    stroke-width="0.5"
-                  />
-                {:else if card.route === '/iss'}
-                  <!-- ISS: glowing solar panels (gradient teal) + truss with depth + Earth glow at bottom -->
-                  <ellipse cx="24" cy="46" rx="24" ry="6" fill="rgba(75,156,211,0.18)" />
-                  <line
-                    x1="6"
-                    y1="22"
-                    x2="42"
-                    y2="22"
-                    stroke="rgba(255,255,255,0.65)"
-                    stroke-width="1"
-                  />
-                  <line
-                    x1="6"
-                    y1="26"
-                    x2="42"
-                    y2="26"
-                    stroke="rgba(255,255,255,0.45)"
-                    stroke-width="0.7"
-                  />
-                  <!-- Solar panels (glowing) -->
-                  <rect
-                    x="2"
-                    y="18"
-                    width="6"
-                    height="12"
-                    fill="url(#ic-panel)"
-                    stroke="rgba(160,255,240,0.6)"
-                    stroke-width="0.5"
-                  />
-                  <rect
-                    x="40"
-                    y="18"
-                    width="6"
-                    height="12"
-                    fill="url(#ic-panel)"
-                    stroke="rgba(160,255,240,0.6)"
-                    stroke-width="0.5"
-                  />
-                  <line
-                    x1="2"
-                    y1="22"
-                    x2="8"
-                    y2="22"
-                    stroke="rgba(15,40,38,0.6)"
-                    stroke-width="0.4"
-                  />
-                  <line
-                    x1="40"
-                    y1="22"
-                    x2="46"
-                    y2="22"
-                    stroke="rgba(15,40,38,0.6)"
-                    stroke-width="0.4"
-                  />
-                  <line
-                    x1="2"
-                    y1="26"
-                    x2="8"
-                    y2="26"
-                    stroke="rgba(15,40,38,0.6)"
-                    stroke-width="0.4"
-                  />
-                  <line
-                    x1="40"
-                    y1="26"
-                    x2="46"
-                    y2="26"
-                    stroke="rgba(15,40,38,0.6)"
-                    stroke-width="0.4"
-                  />
-                  <!-- Pressurised modules -->
-                  <rect
-                    x="13"
-                    y="20"
-                    width="22"
-                    height="8"
-                    fill="rgba(255,255,255,0.18)"
-                    stroke="rgba(255,255,255,0.7)"
-                    stroke-width="0.8"
-                  />
-                  <rect
-                    x="22"
-                    y="12"
-                    width="4"
-                    height="8"
-                    fill="rgba(255,255,255,0.22)"
-                    stroke="rgba(255,255,255,0.7)"
-                    stroke-width="0.8"
-                  />
-                  <rect
-                    x="22"
-                    y="28"
-                    width="4"
-                    height="8"
-                    fill="rgba(255,255,255,0.22)"
-                    stroke="rgba(255,255,255,0.7)"
-                    stroke-width="0.8"
-                  />
-                  <!-- Cupola dot -->
-                  <circle cx="24" cy="36" r="1.4" fill="#4ecdc4" />
-                {:else if card.route === '/tiangong'}
-                  <!-- Tiangong: T-shape with multi-color modules + glowing solar panels -->
-                  <ellipse cx="24" cy="46" rx="24" ry="6" fill="rgba(193,68,14,0.18)" />
-                  <!-- Tianhe core (vertical) -->
-                  <rect
-                    x="20"
-                    y="6"
-                    width="8"
-                    height="36"
-                    fill="rgba(255,200,120,0.18)"
-                    stroke="rgba(255,216,160,0.85)"
-                    stroke-width="0.9"
-                  />
-                  <line
-                    x1="20"
-                    y1="14"
-                    x2="28"
-                    y2="14"
-                    stroke="rgba(255,216,160,0.5)"
-                    stroke-width="0.4"
-                  />
-                  <line
-                    x1="20"
-                    y1="22"
-                    x2="28"
-                    y2="22"
-                    stroke="rgba(255,216,160,0.5)"
-                    stroke-width="0.4"
-                  />
-                  <line
-                    x1="20"
-                    y1="30"
-                    x2="28"
-                    y2="30"
-                    stroke="rgba(255,216,160,0.5)"
-                    stroke-width="0.4"
-                  />
-                  <line
-                    x1="20"
-                    y1="38"
-                    x2="28"
-                    y2="38"
-                    stroke="rgba(255,216,160,0.5)"
-                    stroke-width="0.4"
-                  />
-                  <!-- Wentian + Mengtian (horizontal labs in teal) -->
-                  <rect
-                    x="6"
-                    y="20"
-                    width="36"
-                    height="8"
-                    fill="rgba(78,205,196,0.18)"
-                    stroke="#4ecdc4"
-                    stroke-width="0.9"
-                  />
-                  <line
-                    x1="14"
-                    y1="20"
-                    x2="14"
-                    y2="28"
-                    stroke="rgba(78,205,196,0.4)"
-                    stroke-width="0.4"
-                  />
-                  <line
-                    x1="34"
-                    y1="20"
-                    x2="34"
-                    y2="28"
-                    stroke="rgba(78,205,196,0.4)"
-                    stroke-width="0.4"
-                  />
-                  <!-- Solar panel wings (gold) -->
-                  <rect x="0" y="22" width="6" height="4" fill="url(#ic-panel-gold)" />
-                  <rect x="42" y="22" width="6" height="4" fill="url(#ic-panel-gold)" />
-                  <!-- Center docking port glow -->
-                  <circle cx="24" cy="24" r="2.5" fill="url(#ic-glow-teal)" />
-                  <circle cx="24" cy="24" r="1.2" fill="#4ecdc4" />
-                {:else if card.route === '/science'}
-                  <!-- Atomic / orbital science glyph: nucleus + 3 multi-colored electron orbits + ∆v formula -->
-                  <ellipse
-                    cx="24"
-                    cy="24"
-                    rx="20"
-                    ry="7"
-                    fill="none"
-                    stroke="#4ecdc4"
-                    stroke-width="1.2"
-                  />
-                  <ellipse
-                    cx="24"
-                    cy="24"
-                    rx="20"
-                    ry="7"
-                    fill="none"
-                    stroke="#c14ad8"
-                    stroke-width="1.2"
-                    transform="rotate(60 24 24)"
-                  />
-                  <ellipse
-                    cx="24"
-                    cy="24"
-                    rx="20"
-                    ry="7"
-                    fill="none"
-                    stroke="#ffc850"
-                    stroke-width="1.2"
-                    transform="rotate(-60 24 24)"
-                  />
-                  <!-- Electron / planet markers on each orbit -->
-                  <circle cx="44" cy="24" r="1.6" fill="#4ecdc4" />
-                  <circle cx="14" cy="14" r="1.6" fill="#c14ad8" />
-                  <circle cx="34" cy="36" r="1.6" fill="#ffc850" />
-                  <!-- Nucleus glow -->
-                  <circle cx="24" cy="24" r="6" fill="url(#ic-sun-corona)" />
-                  <circle cx="24" cy="24" r="3.2" fill="url(#ic-sun)" />
-                {/if}
-              </svg>
-              <span class="card-route">{card.route}</span>
-            </span>
-            <span class="card-title">{card.title}</span>
-            <span class="card-desc">{card.desc}</span>
-          </a>
-        </li>
+                    <ellipse
+                      cx="24"
+                      cy="24"
+                      rx="20"
+                      ry="7"
+                      fill="none"
+                      stroke="#ffc850"
+                      stroke-width="1.2"
+                      transform="rotate(-60 24 24)"
+                    />
+                    <!-- Electron / planet markers on each orbit -->
+                    <circle cx="44" cy="24" r="1.6" fill="#4ecdc4" />
+                    <circle cx="14" cy="14" r="1.6" fill="#c14ad8" />
+                    <circle cx="34" cy="36" r="1.6" fill="#ffc850" />
+                    <!-- Nucleus glow -->
+                    <circle cx="24" cy="24" r="6" fill="url(#ic-sun-corona)" />
+                    <circle cx="24" cy="24" r="3.2" fill="url(#ic-sun)" />
+                  {:else if card.glyph === 'programs'}
+                    <!-- Programs — an era spine: a vertical timeline with program-era
+                       dots (each a different agency accent) + a small pennant. -->
+                    <line
+                      x1="14"
+                      y1="6"
+                      x2="14"
+                      y2="42"
+                      stroke="rgba(255,255,255,0.35)"
+                      stroke-width="1"
+                    />
+                    <polygon points="14,7 30,10 14,13" fill="rgba(78,205,196,0.7)" />
+                    <circle cx="14" cy="12" r="2.4" fill="#4ecdc4" />
+                    <circle cx="14" cy="22" r="2.4" fill="#ffc850" />
+                    <circle cx="14" cy="32" r="2.4" fill="#c14ad8" />
+                    <circle cx="14" cy="40" r="2.4" fill="#6aa9ff" />
+                    <line
+                      x1="18"
+                      y1="22"
+                      x2="34"
+                      y2="22"
+                      stroke="rgba(255,200,80,0.5)"
+                      stroke-width="0.7"
+                    />
+                    <line
+                      x1="18"
+                      y1="32"
+                      x2="30"
+                      y2="32"
+                      stroke="rgba(193,74,216,0.5)"
+                      stroke-width="0.7"
+                    />
+                  {:else if card.glyph === 'live'}
+                    <!-- Live — a broadcast: concentric signal arcs + a red REC dot. -->
+                    <circle cx="18" cy="30" r="2.6" fill="#e23b3b" />
+                    <path
+                      d="M 23 30 A 7 7 0 0 1 23 24"
+                      fill="none"
+                      stroke="rgba(226,59,59,0.7)"
+                      stroke-width="1.4"
+                      transform="rotate(-45 18 30)"
+                    />
+                    <path
+                      d="M 12 22 A 12 12 0 0 1 30 22"
+                      fill="none"
+                      stroke="rgba(255,255,255,0.5)"
+                      stroke-width="1.2"
+                    />
+                    <path
+                      d="M 8 20 A 18 18 0 0 1 36 20"
+                      fill="none"
+                      stroke="rgba(255,255,255,0.28)"
+                      stroke-width="1"
+                    />
+                    <path
+                      d="M 4 18 A 24 24 0 0 1 42 18"
+                      fill="none"
+                      stroke="rgba(78,205,196,0.35)"
+                      stroke-width="0.8"
+                      stroke-dasharray="2 2"
+                    />
+                  {:else if card.glyph === 'essays'}
+                    <!-- Essays — an open book: two facing pages with text lines + a
+                       bookmark ribbon. -->
+                    <path
+                      d="M 24 12 Q 14 9 6 12 L 6 36 Q 14 33 24 36 Z"
+                      fill="rgba(78,205,196,0.1)"
+                      stroke="#4ecdc4"
+                      stroke-width="1"
+                    />
+                    <path
+                      d="M 24 12 Q 34 9 42 12 L 42 36 Q 34 33 24 36 Z"
+                      fill="rgba(255,255,255,0.04)"
+                      stroke="rgba(255,255,255,0.5)"
+                      stroke-width="1"
+                    />
+                    <line x1="24" y1="13" x2="24" y2="35" stroke="rgba(255,255,255,0.4)" />
+                    <g stroke="rgba(160,255,240,0.5)" stroke-width="0.7">
+                      <line x1="10" y1="17" x2="20" y2="16" />
+                      <line x1="10" y1="21" x2="20" y2="20" />
+                      <line x1="10" y1="25" x2="19" y2="24" />
+                    </g>
+                    <g stroke="rgba(255,255,255,0.4)" stroke-width="0.7">
+                      <line x1="28" y1="16" x2="38" y2="17" />
+                      <line x1="28" y1="20" x2="38" y2="21" />
+                      <line x1="29" y1="24" x2="37" y2="25" />
+                    </g>
+                    <polygon points="34,12 38,12 38,20 36,18 34,20" fill="#ffc850" />
+                  {/if}
+                </svg>
+                <span class="card-route">{card.name ?? card.route}</span>
+              </span>
+              <span class="card-title">{card.title}</span>
+              <span class="card-desc">{card.desc}</span>
+            </a>
+          </li>
+        {/if}
       {/each}
     </ul>
   </section>
@@ -898,6 +1244,25 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+  /* Section headers (IA.md §home-cards) — full-width dividers that group the
+     cards under nav-mirroring labels. First one sits flush; later ones get top
+     breathing room. */
+  .grid-section {
+    grid-column: 1 / -1;
+    margin: 8px 0 -4px;
+  }
+  .grid-section:first-child {
+    margin-top: 0;
+  }
+  .grid-section-heading {
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.45);
+    margin: 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   .card {
     display: flex;

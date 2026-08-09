@@ -95,6 +95,38 @@
       title: m.explore_hub_shortcut_localgroup(),
       desc: m.explore_hub_desc_localgroup(),
     },
+    {
+      route: '/explore',
+      query: '?context=local-sheet',
+      name: m.explore_ctx_local_sheet(),
+      glyph: 'local-sheet',
+      title: m.explore_lens_story_ls_title(),
+      desc: m.explore_hub_desc_localsheet(),
+    },
+    {
+      route: '/explore',
+      query: '?context=virgo',
+      name: m.explore_ctx_virgo(),
+      glyph: 'virgo',
+      title: m.explore_lens_story_virgo_title(),
+      desc: m.explore_hub_desc_virgo(),
+    },
+    {
+      route: '/explore',
+      query: '?context=laniakea',
+      name: m.explore_ctx_laniakea(),
+      glyph: 'laniakea',
+      title: m.explore_lens_story_laniakea_title(),
+      desc: m.explore_hub_desc_laniakea(),
+    },
+    {
+      route: '/explore',
+      query: '?context=cosmic-web',
+      name: m.explore_ctx_cosmic_web(),
+      glyph: 'cosmic-web',
+      title: m.explore_lens_story_cosmic_web_title(),
+      desc: m.explore_hub_desc_cosmicweb(),
+    },
     // WORLDS — the worlds you can stand on.
     { heading: m.nav_group_worlds() },
     {
@@ -509,6 +541,90 @@
                     <circle cx="34" cy="14" r="0.9" fill="#cfe0ff" />
                     <circle cx="12" cy="34" r="1.6" fill="rgba(180,205,255,0.25)" />
                     <circle cx="12" cy="34" r="0.7" fill="#cfe0ff" />
+                  {:else if card.glyph === 'local-sheet'}
+                    <!-- Local Sheet — a thin, near-flat slab of galaxy groups, seen
+                         slightly edge-on: dots scattered in a shallow band. -->
+                    <ellipse
+                      cx="24"
+                      cy="24"
+                      rx="20"
+                      ry="5"
+                      fill="rgba(120,169,255,0.08)"
+                      stroke="rgba(120,169,255,0.3)"
+                      stroke-width="0.7"
+                      transform="rotate(-12 24 24)"
+                    />
+                    <g transform="rotate(-12 24 24)">
+                      <circle cx="24" cy="24" r="1.6" fill="#4ecdc4" />
+                      <circle cx="10" cy="23" r="1.3" fill="#dfe8ff" />
+                      <circle cx="16" cy="26" r="1" fill="#cfe0ff" />
+                      <circle cx="32" cy="22" r="1.4" fill="#ffe6c0" />
+                      <circle cx="38" cy="25" r="1.1" fill="#dfe8ff" />
+                      <circle cx="20" cy="22" r="0.8" fill="#cfe0ff" />
+                      <circle cx="29" cy="26" r="0.9" fill="#cfe0ff" />
+                    </g>
+                  {:else if card.glyph === 'virgo'}
+                    <!-- Virgo Supercluster — a dominant warm central cluster + the
+                         teal "you are here" group + scattered smaller groups. -->
+                    <circle cx="28" cy="22" r="9" fill="url(#ic-glow-gold)" />
+                    <circle cx="28" cy="22" r="4" fill="url(#ic-sun-corona)" />
+                    <circle cx="28" cy="22" r="2" fill="#ffd87a" />
+                    <circle cx="13" cy="32" r="3" fill="url(#ic-glow-teal)" />
+                    <circle cx="13" cy="32" r="1.4" fill="#4ecdc4" />
+                    <circle cx="16" cy="14" r="1.2" fill="#dfe8ff" />
+                    <circle cx="38" cy="34" r="1.3" fill="#dfe8ff" />
+                    <circle cx="40" cy="16" r="1" fill="#cfe0ff" />
+                    <circle cx="22" cy="36" r="1" fill="#cfe0ff" />
+                  {:else if card.glyph === 'laniakea'}
+                    <!-- Laniakea — a basin of flows: streamlines curving inward to a
+                         bright focus (the Great Attractor), our group on the rim. -->
+                    <circle cx="30" cy="26" r="7" fill="url(#ic-glow-gold)" />
+                    <circle cx="30" cy="26" r="2.4" fill="#ffcf6a" />
+                    <path
+                      d="M 6 10 Q 20 18 29 24"
+                      fill="none"
+                      stroke="rgba(160,255,240,0.55)"
+                      stroke-width="1"
+                    />
+                    <path
+                      d="M 8 38 Q 22 32 29 27"
+                      fill="none"
+                      stroke="rgba(160,255,240,0.5)"
+                      stroke-width="1"
+                    />
+                    <path
+                      d="M 44 12 Q 36 18 31 24"
+                      fill="none"
+                      stroke="rgba(180,205,255,0.45)"
+                      stroke-width="0.9"
+                    />
+                    <circle cx="6" cy="10" r="2" fill="url(#ic-glow-teal)" />
+                    <circle cx="6" cy="10" r="1" fill="#4ecdc4" />
+                  {:else if card.glyph === 'cosmic-web'}
+                    <!-- Cosmic Web — nodes joined by faint filaments around a dark
+                         void: the largest-scale foam. -->
+                    <circle
+                      cx="26"
+                      cy="24"
+                      r="9"
+                      fill="none"
+                      stroke="rgba(255,255,255,0.08)"
+                      stroke-width="0.6"
+                      stroke-dasharray="2 3"
+                    />
+                    <g stroke="rgba(180,205,255,0.3)" stroke-width="0.7" fill="none">
+                      <path d="M 8 12 L 20 20 L 34 10 L 42 20" />
+                      <path d="M 10 36 L 22 30 L 36 38" />
+                      <path d="M 20 20 L 22 30" />
+                      <path d="M 34 10 L 36 38" />
+                      <path d="M 8 12 L 10 36" />
+                    </g>
+                    <circle cx="20" cy="20" r="1.6" fill="#dfe8ff" />
+                    <circle cx="34" cy="10" r="1.4" fill="#ffe6c0" />
+                    <circle cx="36" cy="38" r="1.5" fill="#dfe8ff" />
+                    <circle cx="22" cy="30" r="1.2" fill="#cfe0ff" />
+                    <circle cx="42" cy="20" r="1" fill="#cfe0ff" />
+                    <circle cx="8" cy="12" r="1.1" fill="#cfe0ff" />
                   {:else if card.glyph === 'earth'}
                     <!-- Earth: blue gradient + atmosphere halo + ISS orbit + GPS dot -->
                     <circle cx="24" cy="24" r="16" fill="url(#ic-glow-blue)" />

@@ -2827,7 +2827,7 @@
        current zoom — km → AU → light-year → parsec — plus light-travel time and
        a map-style scale bar. Teaches which unit fits which scale as you zoom.
        English chrome for now; i18n before the slice ships. -->
-  {#if view === '3d' && scaleReadout && contextId !== 'body-scene' && contextId !== 'milky-way'}
+  {#if view === '3d' && scaleReadout && (contextId === 'solar-system' || contextId === 'neighborhood')}
     <div class="scale-hud" class:neighborhood={contextId === 'neighborhood'} aria-hidden="true">
       <div class="scale-ladder">
         {#each rungLadder as rung (rung)}

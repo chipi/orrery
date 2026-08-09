@@ -7,7 +7,7 @@ import { expect, test } from '@playwright/test';
  */
 
 test.describe('landing page (/)', () => {
-  test('renders hero, all 18 cards in 5 sections, and footer block; no console errors', async ({
+  test('renders hero, all 22 cards in 5 sections, and footer block; no console errors', async ({
     page,
   }) => {
     const errors: string[] = [];
@@ -22,9 +22,10 @@ test.describe('landing page (/)', () => {
     await expect(page.locator('p.tagline')).toContainText('solar system');
 
     // The landing is the whole nav tree, sectioned (RFC-038 / IA.md §home-cards):
-    // 18 leaf cards under 5 section headers that mirror the nav groups.
+    // 22 leaf cards (Explore's 8 scale shells + Worlds 4 + Plan&Fly 2 + Catalog 6
+    // + Learn 2) under 5 section headers that mirror the nav groups.
     const cards = page.locator('[data-testid="landing-cards"] a.card');
-    await expect(cards).toHaveCount(18);
+    await expect(cards).toHaveCount(22);
 
     const headings = page.locator('[data-testid="landing-cards"] .grid-section-heading');
     await expect(headings).toHaveCount(5);

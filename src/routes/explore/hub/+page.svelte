@@ -35,6 +35,34 @@
       title: m.explore_hub_shortcut_localgroup(),
       desc: m.explore_hub_desc_localgroup(),
     },
+    {
+      route: '/explore',
+      query: '?context=local-sheet',
+      name: m.explore_ctx_local_sheet(),
+      title: m.explore_lens_story_ls_title(),
+      desc: m.explore_hub_desc_localsheet(),
+    },
+    {
+      route: '/explore',
+      query: '?context=virgo',
+      name: m.explore_ctx_virgo(),
+      title: m.explore_lens_story_virgo_title(),
+      desc: m.explore_hub_desc_virgo(),
+    },
+    {
+      route: '/explore',
+      query: '?context=laniakea',
+      name: m.explore_ctx_laniakea(),
+      title: m.explore_lens_story_laniakea_title(),
+      desc: m.explore_hub_desc_laniakea(),
+    },
+    {
+      route: '/explore',
+      query: '?context=cosmic-web',
+      name: m.explore_ctx_cosmic_web(),
+      title: m.explore_lens_story_cosmic_web_title(),
+      desc: m.explore_hub_desc_cosmicweb(),
+    },
   ]);
 </script>
 

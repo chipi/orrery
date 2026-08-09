@@ -912,7 +912,11 @@
     "landing_card_explore_desc": "आठ नेस्टेड स्केल के माध्यम से जूम आउट करें — सौर मंडल, आकाशगंगा, स्थानीय समूह, ब्रह्मांडीय जाल — हर एक वास्तविक दूरी पर।",
     "landing_card_venus_title": "शुक्र सतह मानचित्र",
     "landing_card_venus_desc": "बादल के डेक के नीचे — जहाँ वेनेरा और वेगा लैंडर उतरे थे और केवल कुछ घंटों के लिए भट्टी से बच गए थे।",
-    "landing_section_cards_heading": "सभी 12 गंतव्य"
+    "landing_section_cards_heading": "सभी 12 गंतव्य",
+    "explore_hub_desc_localsheet": "स्थानीय समूह के ठीक बाद आकाशगंगा समूहों का समतल स्लैब — ब्रह्मांडीय संरचना का पहला संकेत।",
+    "explore_hub_desc_virgo": "हमारा घर महासुपरक्लस्टर — कन्या क्लस्टर की ओर खींचे गए सौ आकाशगंगा समूह।",
+    "explore_hub_desc_laniakea": "~160-Mpc आकाशगंगा प्रवाह की बेसिन जिसमें हमारा महासुपरक्लस्टर बहता है, महान आकर्षक की ओर।",
+    "explore_hub_desc_cosmicweb": "सबसे बड़ा पैमाना — महासुपरक्लस्टर, दीवारें, और तंतुओं के जाल में रिक्त स्थान (एक योजनाबद्ध मॉडल)।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -1689,7 +1693,11 @@
     "landing_card_explore_desc": "8つのネストされたスケール — 太陽系、銀河、局部銀河群、宇宙ウェブ — すべて実際の距離で拡大/縮小します。",
     "landing_card_venus_title": "金星表面地図",
     "landing_card_venus_desc": "雲の層の下 — VeneraおよびVegaランダーが着陸し、数時間でも灼熱に耐えた場所。",
-    "landing_section_cards_heading": "全12の目的地"
+    "landing_section_cards_heading": "全12の目的地",
+    "explore_hub_desc_localsheet": "局部銀河群のすぐ先にある銀河群の平坦な層 — 宇宙構造の最初の兆候。",
+    "explore_hub_desc_virgo": "わたしたちの家の超銀河団 — おおとめ座銀河団に引き寄せられた百個の銀河群。",
+    "explore_hub_desc_laniakea": "わたしたちの超銀河団が流れ込む約160 Mpcの銀河流の盆地、大アトラクターに向かって。",
+    "explore_hub_desc_cosmicweb": "最大規模 — フィラメントの網の中の超銀河団、壁、そしてボイド（概略的なモデル）。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -2645,7 +2653,11 @@
     "landing_card_explore_desc": "تكبير بثمانية مقاييس متداخلة — النظام الشمسي، المجرة، المجموعة المحلية، الكون الفسيح — كل واحدة بمسافات حقيقية.",
     "landing_card_venus_title": "خريطة سطح الزهرة",
     "landing_card_venus_desc": "تحت غطاء السحب — حيث هبطت مسابر فينيرا وفيجا واستطاعت الصمود أمام الفرن، ولو لساعات فقط.",
-    "landing_section_cards_heading": "جميع 12 وجهة"
+    "landing_section_cards_heading": "جميع 12 وجهة",
+    "explore_hub_desc_localsheet": "الصفيحة المسطحة من مجموعات المجرات بعد المجموعة المحلية مباشرة — أول إشارة إلى البنية الكونية.",
+    "explore_hub_desc_virgo": "العنقود الفائق الذي يحتضننا — مائة مجموعة مجرات منجذبة نحو عنقود العذراء.",
+    "explore_hub_desc_laniakea": "حوض بقطر ~160 ميجا بارسك من تدفقات المجرات الذي ينجرف إليه عنقودنا الفائق، نحو الجاذب الأعظم.",
+    "explore_hub_desc_cosmicweb": "أكبر مقياس — عناقيد فائقة وجدران وفراغات في شبكة من الخيوط (نموذج تخطيطي)."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -3424,7 +3436,11 @@
     "landing_card_explore_desc": "8개의 중첩된 규모를 통해 확대 — 태양계, 은하, 국부군, 우주의 웹 — 모두 실제 거리 기준입니다.",
     "landing_card_venus_title": "금성 표면 지도",
     "landing_card_venus_desc": "구름층 아래 — 베네라와 베가 착륙선이 착륙했고 용광로 같은 환경에서 몇 시간이나마 생존했던 곳입니다.",
-    "landing_section_cards_heading": "12개 목적지 모두"
+    "landing_section_cards_heading": "12개 목적지 모두",
+    "explore_hub_desc_localsheet": "국부은하단을 막 넘어선 은하군들의 평평한 판 — 우주 구조의 첫 징후.",
+    "explore_hub_desc_virgo": "우리 집단초은하 — 처녀자리 은하단을 향해 끌려가는 수백 개의 은하군.",
+    "explore_hub_desc_laniakea": "우리 집단초은하가 대인력자를 향해 흘러드는 ~160-Mpc 규모의 은하 흐름 분지.",
+    "explore_hub_desc_cosmicweb": "가장 큰 규모 — 필라멘트의 거미줄 속 초은하단, 벽, 공동 (개념도)."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -4174,7 +4190,11 @@
     "landing_card_explore_desc": "Zoome durch acht verschachtelte Skalen hinaus — Sonnensystem, Galaxie, Lokale Gruppe, das kosmische Netz — jede in echter Entfernung.",
     "landing_card_venus_title": "Venusoberflächen-Karte",
     "landing_card_venus_desc": "Unter der Wolkendecke — wo die Lander Venera und Vega landeten und den Ofen überlebten, wenn auch nur für Stunden.",
-    "landing_section_cards_heading": "Alle 12 Ziele"
+    "landing_section_cards_heading": "Alle 12 Ziele",
+    "explore_hub_desc_localsheet": "Die flache Scheibe von Galaxienhaufen direkt hinter der Lokalen Gruppe — der erste Hinweis auf kosmische Struktur.",
+    "explore_hub_desc_virgo": "Unser Heimat-Supercluster — hundert Galaxienhaufen, die zum Virgo-Cluster hingezogen werden.",
+    "explore_hub_desc_laniakea": "Das ~160-Mpc-Becken von Galaxienströmungen, in das unser Supercluster drainiert, in Richtung des Great Attractor.",
+    "explore_hub_desc_cosmicweb": "Die größte Skala — Superclusters, Wände und Voids in einem Netz von Filamenten (ein schematisches Modell)."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -4931,7 +4951,11 @@
     "landing_card_explore_desc": "Dézoomez à travers huit échelles imbriquées — système solaire, galaxie, Groupe Local, toile cosmique — chacune à la vraie distance.",
     "landing_card_venus_title": "Carte de surface de Vénus",
     "landing_card_venus_desc": "Sous la couche nuageuse — où les atterrisseurs Venera et Vega se sont posés et ont survécu à la fournaise, ne serait-ce que quelques heures.",
-    "landing_section_cards_heading": "Les 12 destinations"
+    "landing_section_cards_heading": "Les 12 destinations",
+    "explore_hub_desc_localsheet": "La plaque plate de groupes de galaxies juste au-delà du Groupe local — la première indication de la structure cosmique.",
+    "explore_hub_desc_virgo": "Notre superamas d'accueil — une centaine de groupes de galaxies attirés vers l'Amas de la Vierge.",
+    "explore_hub_desc_laniakea": "Le bassin de ~160 Mpc des flots de galaxies dans lequel notre superamas s'écoule, vers le Grand Attracteur.",
+    "explore_hub_desc_cosmicweb": "L'échelle la plus grande — superamas, murs et vides en toile de filaments (un modèle schématique)."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -5656,7 +5680,11 @@
     "landing_card_explore_desc": "Zoom attraverso otto scale nidificate — sistema solare, galassia, Gruppo Locale, ragnatela cosmica — ognuna a distanza reale.",
     "landing_card_venus_title": "Mappa della superficie di Venere",
     "landing_card_venus_desc": "Sotto la coltre nuvolosa — dove i lander Venera e Vega toccarono e sopravvissero alla fornace, anche se solo per poche ore.",
-    "landing_section_cards_heading": "Tutti i 12 destinazioni"
+    "landing_section_cards_heading": "Tutti i 12 destinazioni",
+    "explore_hub_desc_localsheet": "La lastra piatta di gruppi di galassie subito oltre il Gruppo Locale — il primo indizio della struttura cosmica.",
+    "explore_hub_desc_virgo": "Il nostro ammasso di supergalassie — cento gruppi di galassie attratti verso l'Ammasso della Vergine.",
+    "explore_hub_desc_laniakea": "Il bacino di ~160 Mpc dei flussi di galassie nel quale il nostro ammasso di supergalassie confluisce, verso il Grande Attrattore.",
+    "explore_hub_desc_cosmicweb": "La scala più grande — ammassi di supergalassie, muri e vuoti in una rete di filamenti (un modello schematico)."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -6380,7 +6408,11 @@
     "landing_card_explore_desc": "Aleja la vista a través de ocho escalas anidadas — sistema solar, galaxia, Grupo Local, la trama cósmica — cada una a distancia real.",
     "landing_card_venus_title": "Mapa de la superficie de Venus",
     "landing_card_venus_desc": "Bajo la capa de nubes — donde los módulos de descenso Venera y Vega tocaron tierra y sobrevivieron al horno, aunque fuera solo durante horas.",
-    "landing_section_cards_heading": "Los 12 destinos"
+    "landing_section_cards_heading": "Los 12 destinos",
+    "explore_hub_desc_localsheet": "La losa plana de grupos de galaxias justo más allá del Grupo Local — el primer indicio de estructura cósmica.",
+    "explore_hub_desc_virgo": "Nuestro supercúmulo de origen — un centenar de grupos de galaxias atraídos hacia el Cúmulo de Virgo.",
+    "explore_hub_desc_laniakea": "La cuenca de ~160 Mpc de flujos galácticos hacia los que se drena nuestro supercúmulo, hacia el Gran Atractor.",
+    "explore_hub_desc_cosmicweb": "La mayor escala — supercúmulos, paredes y vacíos en una red de filamentos (un modelo esquemático)."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -7110,7 +7142,11 @@
     "landing_card_explore_desc": "Zoom uit door acht geneste schalen — zonnestelsel, sterrenstelsel, Lokale Groep, het kosmische web — elk op echte afstand.",
     "landing_card_venus_title": "Venusoppervlaktekaart",
     "landing_card_venus_desc": "Onder het wolkendek — waar de Venera- en Vega-landingsmodules neerkwamen en de oven doorstonden, al was het maar voor uren.",
-    "landing_section_cards_heading": "Alle 12 bestemmingen"
+    "landing_section_cards_heading": "Alle 12 bestemmingen",
+    "explore_hub_desc_localsheet": "De platte laag van galaxiehopen net voorbij de Lokale Groep — de eerste aanwijzing van kosmische structuur.",
+    "explore_hub_desc_virgo": "Onze thuissupercluster — honderd galaxiehopen aangetrokken naar het Maagdencluster.",
+    "explore_hub_desc_laniakea": "Het ~160-Mpc bekken van galaxiestromen waarin onze supercluster afwatert, naar de Grote Aantrekker.",
+    "explore_hub_desc_cosmicweb": "De grootste schaal — superclusterss, muren en voids in een web van filamenten (een schematisch model)."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -7890,7 +7926,11 @@
     "landing_card_explore_desc": "Масштабируйте в восьми вложенных масштабах — солнечная система, галактика, Местная группа, космическая сеть — каждый в реальном расстоянии.",
     "landing_card_venus_title": "Карта поверхности Венеры",
     "landing_card_venus_desc": "Под облачным слоем — где посадочные аппараты «Венера» и «Вега» приземлились и пережили печь, пусть всего на несколько часов.",
-    "landing_section_cards_heading": "Все 12 пунктов назначения"
+    "landing_section_cards_heading": "Все 12 пунктов назначения",
+    "explore_hub_desc_localsheet": "Плоский слой групп галактик за пределами Местной группы — первый признак космической структуры.",
+    "explore_hub_desc_virgo": "Наш домашний сверхскопление — сотня групп галактик, притянутых к скоплению Девы.",
+    "explore_hub_desc_laniakea": "Бассейн размером ~160 Мпк потоков галактик, в который стекает наше сверхскопление, в направлении Великого Аттрактора.",
+    "explore_hub_desc_cosmicweb": "Наибольший масштаб — сверхскопления, стены и войды в сети филаментов (схематическая модель)."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -8651,7 +8691,11 @@
     "landing_card_explore_desc": "逐级缩放八个嵌套尺度——太阳系、银河系、本星系群、宇宙网——每一层都按真实距离呈现。",
     "landing_card_venus_title": "金星表面地图",
     "landing_card_venus_desc": "云层之下——Venera 和 Vega 着陆器曾在此着陆并在极端环境中存活过，尽管只有数小时。",
-    "landing_section_cards_heading": "全部 12 个目的地"
+    "landing_section_cards_heading": "全部 12 个目的地",
+    "explore_hub_desc_localsheet": "本星系群之外的星系群平板——宇宙结构的首个迹象。",
+    "explore_hub_desc_virgo": "我们的本超星系团——一百个星系群被室女座星系团吸引。",
+    "explore_hub_desc_laniakea": "约160 Mpc的星系流盆地，我们的超星系团汇入其中，指向大吸引子。",
+    "explore_hub_desc_cosmicweb": "最大尺度——超星系团、星系墙和空洞构成的细丝网（示意模型）。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -9346,7 +9390,11 @@
     "landing_card_explore_desc": "Умањи кроз осам угнежђених скала — сончев систем, галаксија, Локална група, космичка мрежа — свака на правој удаљености.",
     "landing_card_venus_title": "Мапа Венеринове површине",
     "landing_card_venus_desc": "Испод облачног слоја — где су Венера и Вега слетачи слетели и преживели печат, макар и сатима.",
-    "landing_section_cards_heading": "Свих 12 одредишта"
+    "landing_section_cards_heading": "Свих 12 одредишта",
+    "explore_hub_desc_localsheet": "Равна плоча група галаксија одмах иза Локалне групе — први знак космичке структуре.",
+    "explore_hub_desc_virgo": "Наш дом суперкластер — стотина група галаксија привучене према Дјеви кластеру.",
+    "explore_hub_desc_laniakea": "Басен од ~160 Mpc галаксијских токова у које се наш суперкластер слива, према Великом привлачивачу.",
+    "explore_hub_desc_cosmicweb": "Највећа скала — суперкластери, зидови и празнине у мрежи филамената (шематски модел)."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -10077,6 +10125,10 @@
     "landing_card_explore_desc": "Afaste a visão através de oito escalas aninhadas — sistema solar, galáxia, Grupo Local, a teia cósmica — cada uma em distância real.",
     "landing_card_venus_title": "Mapa da superfície de Vênus",
     "landing_card_venus_desc": "Sob o manto de nuvens — onde os landers Venera e Vega tocaram o solo e sobreviveram à fornalha, ainda que por poucas horas.",
-    "landing_section_cards_heading": "Todos os 12 destinos"
+    "landing_section_cards_heading": "Todos os 12 destinos",
+    "explore_hub_desc_localsheet": "A laje plana de grupos de galáxias logo além do Grupo Local — o primeiro indício de estrutura cósmica.",
+    "explore_hub_desc_virgo": "Nosso superaglomerado de origem — uma centena de grupos de galáxias atraídos pelo Aglomerado de Virgem.",
+    "explore_hub_desc_laniakea": "A bacia de ~160 Mpc de fluxos galáticos para a qual nosso superaglomerado se drena, em direção ao Grande Atrator.",
+    "explore_hub_desc_cosmicweb": "A maior escala — superaglomerados, muros e vazios em uma teia de filamentos (um modelo esquemático)."
   }
 }

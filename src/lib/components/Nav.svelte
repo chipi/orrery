@@ -76,7 +76,7 @@
         },
         { path: '/explore', query: '?context=milky-way', label: m.explore_ctx_milky_way },
         { path: '/explore', query: '?context=local-group', label: m.explore_ctx_local_group },
-        // The outward cosmology tiers (RFC-037 shells; surfaced 2026-08).
+        // The outward cosmology tiers (RFC-039 shells; surfaced 2026-08).
         { path: '/explore', query: '?context=local-sheet', label: m.explore_ctx_local_sheet },
         { path: '/explore', query: '?context=virgo', label: m.explore_ctx_virgo },
         { path: '/explore', query: '?context=laniakea', label: m.explore_ctx_laniakea },

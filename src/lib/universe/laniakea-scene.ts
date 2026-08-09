@@ -1,5 +1,5 @@
 /**
- * The Laniakea Supercluster scene for /explore (WS-5c, RFC-037) — the shell one
+ * The Laniakea Supercluster scene for /explore (WS-5c, RFC-039) — the shell one
  * step out from the Virgo Supercluster. A SCHEMATIC, NOT TO SCALE model (PRD-030
  * principle 2): each constituent supercluster/cluster is a soft glowing blob at
  * its schematic position, with the Virgo Supercluster at the origin as the "you

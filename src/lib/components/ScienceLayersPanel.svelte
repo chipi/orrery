@@ -360,7 +360,7 @@
           label: m.science_layer_mars_moons_label(),
           description: m.science_layer_mars_moons_desc(),
         };
-      // WS-3 (RFC-037 Contract D) — /explore teaching layers. Labels reuse the
+      // WS-3 (RFC-039 Contract D) — /explore teaching layers. Labels reuse the
       // former chip keys; descriptions + learn links are new.
       case 'constellations':
         return {

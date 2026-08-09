@@ -49,7 +49,7 @@ interface AllowlistEntry {
 }
 
 const ORPHAN_ALLOWLIST: AllowlistEntry[] = [
-  // ── PERMANENT-BROWSE — the cosmology tab (RFC-037 WS-5b) ──
+  // ── PERMANENT-BROWSE — the cosmology tab (RFC-039 WS-5b) ──
   // The /explore Virgo lens links large-scale-structure; the distance-ladder
   // article is browse-reachable via the cosmology tab and pairs with the outer
   // scale shells. Foundational cosmology articles land with their tiers (WS-5c/d).

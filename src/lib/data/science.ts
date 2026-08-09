@@ -34,7 +34,7 @@ export const SCIENCE_TABS: readonly ScienceTabId[] = [
   'space-stations', // 8. Sustained presence at LEO
   'life-in-space', // 9. Human physiology in microgravity
   'observation', // 10. Looking outward (telescopes, optical / radio / IR)
-  'cosmology', // 10b. The universe at large (RFC-037 — large-scale structure, distance ladder)
+  'cosmology', // 10b. The universe at large (RFC-039 — large-scale structure, distance ladder)
   'history', // 11. What's been done, when, by whom
   // v0.6.3 — curated companion lists, anchored at the bottom of the rail
   // so the encyclopedia tabs read as a coherent block above them and

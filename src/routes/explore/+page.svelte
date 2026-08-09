@@ -923,7 +923,7 @@
   });
   onDestroy(() => exploreContext.set(null));
 
-  // WS-3 (RFC-037 Contract D) — the science lens is now uniform across every scale
+  // WS-3 (RFC-039 Contract D) — the science lens is now uniform across every scale
   // shell. One ScienceLayersPanel, its props derived from the active shell: each
   // shell gets a lens-story (title + body + a → science learn link) and the set of
   // teaching layers that make sense at that scale. Solar-system keeps its Kepler/
@@ -1212,7 +1212,7 @@
   let resetMilkyWayFn: (() => void) | null = null;
   let resetLocalGroupFn: (() => void) | null = null;
   // #451 (WS-2) — the Milky Way science lens overlays (rotation curve · dark-matter
-  // halo · stellar populations). WS-3 (RFC-037 Contract D) promoted these to
+  // halo · stellar populations). WS-3 (RFC-039 Contract D) promoted these to
   // standard science-layer keys, so they're driven by the ScienceLayersPanel via
   // onLayerChange rather than a bespoke chip row; this pointer reaches the scene.
   let setMwLensFn: ((key: string, on: boolean) => void) | null = null;
@@ -1659,7 +1659,7 @@
       layerState.hover = on;
     });
 
-    // WS-3 (RFC-037 Contract D) — the /explore teaching layers are now standard
+    // WS-3 (RFC-039 Contract D) — the /explore teaching layers are now standard
     // science-layer keys, driven uniformly through the ScienceLayersPanel lens.
     // Each subscription mirrors the effective (lens-coupled) layer state onto the
     // existing scene wiring. Constellations + deep-sky feed page state that the
@@ -2802,7 +2802,7 @@
     </div>
   {/if}
 
-  <!-- Neighborhood star index — the left INDEX rail. WS-3 (RFC-037 Contract D)
+  <!-- Neighborhood star index — the left INDEX rail. WS-3 (RFC-039 Contract D)
        retired the bespoke .nb-hud chip row: constellations, deep-sky, the H–R
        diagram and light-cones are now standard science layers, surfaced uniformly
        through the ScienceLayersPanel lens (see lensPanel derived + onLayerChange
@@ -2821,7 +2821,7 @@
 
   <!-- #451 (WS-2) — the Milky Way science lens (rotation curve / dark-matter halo /
        stellar populations) now lives in the unified ScienceLayersPanel, like every
-       other shell's teaching layers. WS-3 (RFC-037 Contract D). -->
+       other shell's teaching layers. WS-3 (RFC-039 Contract D). -->
 
   <!-- v2 scale ruler (PRD-030 / RFC-032): the fitting distance measure for the
        current zoom — km → AU → light-year → parsec — plus light-travel time and
@@ -3780,7 +3780,7 @@
 </div>
 
 <!-- Unified Science Lens panel — one lens surface for every scale shell (WS-3,
-     RFC-037 Contract D). The story + teaching layers are derived from the active
+     RFC-039 Contract D). The story + teaching layers are derived from the active
      shell (see `lensPanel`): solar-system keeps its Kepler/Newton foundations;
      the neighbourhood surfaces constellations / deep-sky / H–R / light-cones; the
      Milky Way its rotation-curve / dark-matter / stellar-population overlays; the

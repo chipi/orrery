@@ -40,7 +40,7 @@ import * as m from '$lib/paraglide/messages';
 // new one lands hardcoded, add it here (or, preferably, add the key).
 const HARDCODED_IN_COMPONENT = new Set<string>([]);
 
-// WS-3 (RFC-037 Contract D): the /explore teaching layers reuse their former
+// WS-3 (RFC-039 Contract D): the /explore teaching layers reuse their former
 // chip label keys instead of minting duplicate `science_layer_<key>_label`
 // strings (labels stay identical; only descriptions + learn links are new). The
 // coverage guarantee — every layer has a real, non-empty label source — still

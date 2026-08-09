@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "milky-way.schema.json",
-  "title": "Milky Way schematic (PRD-030 / RFC-032, Slice 5; WS-2 leveling, RFC-037)",
+  "title": "Milky Way schematic (PRD-030 / RFC-032, Slice 5; WS-2 leveling, RFC-039)",
   "description": "Face-on galactocentric SCHEMATIC of the Milky Way — a labelled model, not to scale (PRD-030 principle 2). Positions are schematic; the Sun's galactocentric distance, Sag A*'s mass, the bar geometry, and each globular / Magellanic Cloud distance are real, cited astrometry. Drives the /explore v2 Milky Way context.",
   "type": "object",
   "required": [

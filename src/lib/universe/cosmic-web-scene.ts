@@ -1,5 +1,5 @@
 /**
- * The Cosmic Web scene for /explore (WS-5d, RFC-037) — the largest, outermost
+ * The Cosmic Web scene for /explore (WS-5d, RFC-039) — the largest, outermost
  * shell. A HEAVILY SCHEMATIC MODEL, NOT TO SCALE and not a survey (PRD-030
  * principle 2 + the Gpc-honesty risk): Laniakea sits at the origin as the "you
  * are here" anchor, the great named structures are glowing nodes, and the great

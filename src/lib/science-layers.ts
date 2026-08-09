@@ -52,7 +52,7 @@ export type LayerKey =
   | 'polar-caps' // O2 — Mars seasonal CO₂/H₂O ice caps
   | 'mars-moons' // O3 — Phobos + Deimos orbit rings + markers (/mars)
   | 'climate' // P1 — climate bands + insolation ("Sun is life", #386, surface scenes)
-  // WS-3 (RFC-037 Contract D) — /explore teaching layers, unified into the lens.
+  // WS-3 (RFC-039 Contract D) — /explore teaching layers, unified into the lens.
   | 'constellations' // Q1 — constellation figures over the stellar neighbourhood
   | 'deep-sky' // Q2 — deep-sky objects (nebulae, clusters, galaxies) in the neighbourhood
   | 'hr-diagram' // Q3 — Hertzsprung–Russell diagram of the nearby stars

@@ -56,7 +56,7 @@ describe('science-layers — config', () => {
     // (weight = the shared `gravity` layer; velocity = `velocity`).
     // 32nd added same day by the same epic — `ascent-losses`, the
     // gravity/drag/steering Δv-loss ledger panel (RFC-034 §11.2 · S8).
-    // 33rd–39th added 2026-08-08 by WS-3 (RFC-037 Contract D) — the /explore
+    // 33rd–39th added 2026-08-08 by WS-3 (RFC-039 Contract D) — the /explore
     // teaching layers unified into the science lens: constellations, deep-sky,
     // hr-diagram, light-cones (neighbourhood) + rotation-curve, dark-matter-halo,
     // stellar-populations (Milky Way).

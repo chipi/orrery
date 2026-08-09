@@ -1,7 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 
 /**
- * /explore science lens on every scale shell (WS-3, RFC-037 Contract D). The
+ * /explore science lens on every scale shell (WS-3, RFC-039 Contract D). The
  * former bespoke chip rows (neighbourhood constellations/deep-sky/HR/light-cones,
  * Milky Way rotation/dark-matter/populations) are retired: every shell now surfaces
  * its teaching layers + lens-story through the one ScienceLayersPanel. Each shell is

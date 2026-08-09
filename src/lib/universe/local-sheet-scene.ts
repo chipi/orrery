@@ -1,5 +1,5 @@
 /**
- * The Local Sheet / Local Volume scene for /explore (WS-1, RFC-037) — the shell
+ * The Local Sheet / Local Volume scene for /explore (WS-1, RFC-039) — the shell
  * one step out from the Local Group. A SCHEMATIC, NOT TO SCALE model (PRD-030
  * principle 2): each neighbouring galaxy group is a soft glowing blob at its
  * schematic position, with the Local Group at the centre as the "you are here"

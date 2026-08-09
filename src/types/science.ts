@@ -10,7 +10,7 @@ export type ScienceTabId =
   | 'space-stations'
   | 'history'
   | 'observation'
-  // RFC-037 Contract E / WS-5b — the cosmology learning surface: the universe
+  // RFC-039 Contract E / WS-5b — the cosmology learning surface: the universe
   // at large (large-scale structure, the distance ladder, and the tiers beyond).
   | 'cosmology'
   | 'life-in-space'

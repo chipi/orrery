@@ -1,5 +1,5 @@
 /**
- * The Virgo Supercluster / Local Supercluster scene for /explore (WS-5b, RFC-037)
+ * The Virgo Supercluster / Local Supercluster scene for /explore (WS-5b, RFC-039)
  * — the shell one step out from the Local Sheet. A SCHEMATIC, NOT TO SCALE model
  * (PRD-030 principle 2): each member group/cloud/cluster is a soft glowing blob at
  * its schematic position, with the Local Group at the origin as the "you are here"

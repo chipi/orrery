@@ -1,1 +1,0 @@
-import"./CYNtelQ5.js";

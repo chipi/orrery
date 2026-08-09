@@ -1,8 +1,13 @@
 {
-  "_note": "Face-on galactocentric schematic of the Milky Way for /explore v2 (RFC-032 S5, decision C-E). POSITIONS ARE SCHEMATIC — a labelled model, NOT to scale. The Galaxy's spiral structure is genuinely uncertain, so an honest labelled diagram beats a fake to-scale render (PRD-030 principle 2). The astrometric FACTS are real and cited: the Sun's distance to the Galactic Centre (GRAVITY Collaboration 2019) and the mass of Sagittarius A* (GRAVITY Collaboration 2022). Units: kiloparsecs in the galactic plane, Sagittarius A* at the origin; x = toward the Galactic anticentre through the Sun is handled by the scene.",
+  "_note": "Face-on galactocentric schematic of the Milky Way for /explore v2 (RFC-032 S5 · WS-2 leveling, RFC-039). POSITIONS ARE SCHEMATIC — a labelled model, NOT to scale. The Galaxy's spiral structure + the exact 3D placement of halo objects are genuinely uncertain, so an honest labelled diagram beats a fake to-scale render (PRD-030 principle 2). The astrometric FACTS are real + cited: Sun→Galactic-Centre distance (GRAVITY 2019), Sag A* mass (GRAVITY 2022), the bar's half-length + angle, and each globular / Magellanic Cloud's distance-from-Sun (Harris 2010 catalogue · Pietrzyński 2019 for the LMC · Graczyk 2020 for the SMC). Globular + Magellanic x/z are illustrative halo/edge placements, NOT catalogue galactocentric coordinates. Units: kiloparsecs in the galactic plane, Sagittarius A* at the origin. New facts science-reviewed 2026-08-08 (distances corrected to Gaia-era values; bar stated as a range).",
   "disk_radius_kpc": 16,
   "sun_galactocentric_kpc": 8.178,
   "sun_galactocentric_ly": 26700,
+  "bar": {
+    "half_length_kpc": 4.4,
+    "position_angle_deg": 27,
+    "_fact": "The Milky Way is a barred spiral. Bar half-length estimates are method-dependent — ~3.5–5.0 kpc — at an angle of ~25–30° to the Sun–Galactic-Centre line (Wegg et al. 2015; APOGEE+Gaia 2021). Drawn schematically at a representative ~4.4 kpc / 27°."
+  },
   "objects": [
     {
       "id": "sagittarius-a-star",
@@ -21,20 +26,150 @@
       "x": -3.457,
       "z": 7.412,
       "arm": "Orion Spur",
-      "science_section": "local-group"
+      "galactocentric_ly": 26700,
+      "science_section": "our-galaxy"
     }
   ],
   "arms": [
-    { "id": "perseus", "name": "Perseus Arm", "label_x": -12.5, "label_z": -3.5, "minor": false },
+    {
+      "id": "perseus",
+      "name": "Perseus Arm",
+      "label_x": -12.5,
+      "label_z": -3.5,
+      "minor": false,
+      "science_section": "our-galaxy"
+    },
     {
       "id": "scutum-centaurus",
       "name": "Scutum–Centaurus Arm",
       "label_x": 8.5,
       "label_z": 10.5,
-      "minor": false
+      "minor": false,
+      "science_section": "our-galaxy"
     },
-    { "id": "sagittarius", "name": "Sagittarius Arm", "label_x": 7.5, "label_z": -11.5, "minor": false },
-    { "id": "norma", "name": "Norma Arm", "label_x": -9.5, "label_z": 11.5, "minor": false },
-    { "id": "orion-spur", "name": "Orion Spur", "label_x": -3.457, "label_z": 7.412, "minor": true }
+    {
+      "id": "sagittarius",
+      "name": "Sagittarius Arm",
+      "label_x": 7.5,
+      "label_z": -11.5,
+      "minor": false,
+      "science_section": "our-galaxy"
+    },
+    {
+      "id": "norma",
+      "name": "Norma Arm",
+      "label_x": -9.5,
+      "label_z": 11.5,
+      "minor": false,
+      "science_section": "our-galaxy"
+    },
+    {
+      "id": "orion-spur",
+      "name": "Orion Spur",
+      "label_x": -3.457,
+      "label_z": 7.412,
+      "minor": true,
+      "science_section": "our-galaxy"
+    }
+  ],
+  "globulars": [
+    {
+      "id": "omega-centauri",
+      "name": "Omega Centauri",
+      "dist_from_sun_ly": 16000,
+      "x": -5.4,
+      "z": 3.4,
+      "headliner": true
+    },
+    {
+      "id": "47-tucanae",
+      "name": "47 Tucanae",
+      "dist_from_sun_ly": 14500,
+      "x": 4.6,
+      "z": -5.8,
+      "headliner": true
+    },
+    {
+      "id": "m13",
+      "name": "M13 (Hercules Cluster)",
+      "dist_from_sun_ly": 25000,
+      "x": -7.2,
+      "z": 10.6,
+      "headliner": true
+    },
+    {
+      "id": "m22",
+      "name": "M22",
+      "dist_from_sun_ly": 10400,
+      "x": 1.8,
+      "z": 2.4,
+      "headliner": false
+    },
+    {
+      "id": "m4",
+      "name": "M4",
+      "dist_from_sun_ly": 6000,
+      "x": -1.6,
+      "z": 4.9,
+      "headliner": false
+    },
+    {
+      "id": "m5",
+      "name": "M5",
+      "dist_from_sun_ly": 24500,
+      "x": -8.6,
+      "z": 5.5,
+      "headliner": false
+    },
+    {
+      "id": "m15",
+      "name": "M15",
+      "dist_from_sun_ly": 33600,
+      "x": -6.9,
+      "z": 13.8,
+      "headliner": false
+    },
+    {
+      "id": "m3",
+      "name": "M3",
+      "dist_from_sun_ly": 33900,
+      "x": -12.2,
+      "z": 4.2,
+      "headliner": false
+    },
+    {
+      "id": "ngc-6752",
+      "name": "NGC 6752",
+      "dist_from_sun_ly": 13000,
+      "x": 3.1,
+      "z": -2.6,
+      "headliner": false
+    },
+    {
+      "id": "m92",
+      "name": "M92",
+      "dist_from_sun_ly": 26700,
+      "x": -9.4,
+      "z": 9.1,
+      "headliner": false
+    }
+  ],
+  "magellanic": [
+    {
+      "id": "lmc",
+      "name": "Large Magellanic Cloud",
+      "dist_from_sun_ly": 163000,
+      "x": -14,
+      "z": -12.5,
+      "diam_kly": 32
+    },
+    {
+      "id": "smc",
+      "name": "Small Magellanic Cloud",
+      "dist_from_sun_ly": 200000,
+      "x": -12,
+      "z": -14.5,
+      "diam_kly": 18.9
+    }
   ]
 }

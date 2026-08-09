@@ -6,28 +6,128 @@
   "color": "#f97583",
   "schema_version": 1,
   "_doc": "Iconic trajectory for /explore PATHS layer (#306 Slice C). Launch 1972-03-03 → Jupiter flyby 1973-12-04 → drift outward through asteroid belt onto a near-ecliptic interstellar-bound trajectory heading toward the constellation Taurus (RA ~05h, Dec +26°, ecl. lat ~+3°). Final contact 2003-01-23 from ~82 AU; coasting today at ~135 AU per JPL Horizons projection. Heliocentric ecliptic J2000 AU. Not ephemeris-grade; sufficient for the heliocentric log-scale view at /explore.",
-  "current_position_au": [98.0, 78.0, 8.0],
-  "current_distance_au": 135.0,
+  "current_position_au": [
+    98,
+    78,
+    8
+  ],
+  "current_distance_au": 135,
   "current_distance_label": "135 AU · ~18.8 light-hours from the Sun (last contact 2003-01-23)",
   "interstellar_since": null,
   "interstellar_since_label": "Last contact 2003 — coasting toward Taurus, will pass near Aldebaran in ~2 million years",
+  "agency": "NASA",
+  "culture_object_id": "pioneer",
+  "heading": {
+    "star": "Aldebaran",
+    "constellation": "Taurus"
+  },
   "waypoints": [
-    { "date": "1972-03-03", "label": "Launch", "x": 1.0, "y": 0.0, "z": 0.0 },
-    { "date": "1972-07", "x": 1.8, "y": 0.5, "z": 0.0 },
-    { "date": "1972-11", "x": 2.6, "y": 1.0, "z": 0.0 },
-    { "date": "1973-04", "x": 3.6, "y": 1.6, "z": 0.0 },
-    { "date": "1973-08", "x": 4.4, "y": 2.2, "z": 0.1 },
-    { "date": "1973-12-04", "label": "Jupiter", "x": 5.0, "y": 2.6, "z": 0.1 },
-    { "date": "1974-08", "x": 6.2, "y": 3.5, "z": 0.2 },
-    { "date": "1976-01", "x": 8.5, "y": 5.2, "z": 0.3 },
-    { "date": "1979-01", "x": 13.0, "y": 8.5, "z": 0.5 },
-    { "date": "1983-06", "label": "Past Pluto orbit", "x": 22.0, "y": 14.5, "z": 1.0 },
-    { "date": "1990-01", "x": 32.0, "y": 22.0, "z": 1.8 },
-    { "date": "1995-06", "x": 41.0, "y": 28.5, "z": 2.5 },
-    { "date": "2000-01", "x": 49.0, "y": 34.0, "z": 3.0 },
-    { "date": "2003-01-23", "label": "Last contact", "x": 53.0, "y": 37.0, "z": 3.3 },
-    { "date": "2010-01", "x": 64.0, "y": 45.0, "z": 4.5 },
-    { "date": "2018-06", "x": 79.0, "y": 60.0, "z": 6.0 },
-    { "date": "2026-06-05", "label": "Today", "x": 98.0, "y": 78.0, "z": 8.0 }
+    {
+      "date": "1972-03-03",
+      "label": "Launch",
+      "x": 1,
+      "y": 0,
+      "z": 0
+    },
+    {
+      "date": "1972-07",
+      "x": 1.8,
+      "y": 0.5,
+      "z": 0
+    },
+    {
+      "date": "1972-11",
+      "x": 2.6,
+      "y": 1,
+      "z": 0
+    },
+    {
+      "date": "1973-04",
+      "x": 3.6,
+      "y": 1.6,
+      "z": 0
+    },
+    {
+      "date": "1973-08",
+      "x": 4.4,
+      "y": 2.2,
+      "z": 0.1
+    },
+    {
+      "date": "1973-12-04",
+      "label": "Jupiter",
+      "x": 5,
+      "y": 2.6,
+      "z": 0.1
+    },
+    {
+      "date": "1974-08",
+      "x": 6.2,
+      "y": 3.5,
+      "z": 0.2
+    },
+    {
+      "date": "1976-01",
+      "x": 8.5,
+      "y": 5.2,
+      "z": 0.3
+    },
+    {
+      "date": "1979-01",
+      "x": 13,
+      "y": 8.5,
+      "z": 0.5
+    },
+    {
+      "date": "1983-06",
+      "label": "Past Pluto orbit",
+      "x": 22,
+      "y": 14.5,
+      "z": 1
+    },
+    {
+      "date": "1990-01",
+      "x": 32,
+      "y": 22,
+      "z": 1.8
+    },
+    {
+      "date": "1995-06",
+      "x": 41,
+      "y": 28.5,
+      "z": 2.5
+    },
+    {
+      "date": "2000-01",
+      "x": 49,
+      "y": 34,
+      "z": 3
+    },
+    {
+      "date": "2003-01-23",
+      "label": "Last contact",
+      "x": 53,
+      "y": 37,
+      "z": 3.3
+    },
+    {
+      "date": "2010-01",
+      "x": 64,
+      "y": 45,
+      "z": 4.5
+    },
+    {
+      "date": "2018-06",
+      "x": 79,
+      "y": 60,
+      "z": 6
+    },
+    {
+      "date": "2026-06-05",
+      "label": "Today",
+      "x": 98,
+      "y": 78,
+      "z": 8
+    }
   ]
 }

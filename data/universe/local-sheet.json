@@ -1,0 +1,106 @@
+{
+  "_note": "The Local Sheet / Local Volume (WS-1, RFC-039) — the galaxy groups within ~10 Mpc of the Local Group, arranged in the flattened Local Sheet. A SCHEMATIC, NOT TO SCALE (PRD-030 principle 2): the Local Group sits at the origin as the 'you are here' anchor, and each neighbouring group is placed in a thin illustrative layout. Distances (dist_mpc) + classifications are real; the xyz layout is hand-authored for legibility (matching the local-group.json precedent). The precise supergalactic-coordinate placement is deferred to the Virgo / Laniakea tiers where the plane's structure carries meaning.",
+  "_provenance": "Distances + types: NASA/IPAC NED, Karachentsev Local Volume catalogue (2013), Anand et al. TRGB distances (2018–2019), Tully et al. Cosmicflows. Schematic positions hand-authored for legibility. Science-reviewed 2026-08-08 (IC 342 + Maffei split into distinct groups; NGC 6946 → 7.7 Mpc; Sculptor → 3.7 Mpc).",
+  "extent_mpc": 10,
+  "members": [
+    {
+      "id": "local-group",
+      "name": "Local Group",
+      "kind": "group",
+      "headliner": true,
+      "dist_mpc": 0,
+      "diam_mly": 10,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    {
+      "id": "ic-342-group",
+      "name": "IC 342 Group",
+      "kind": "group",
+      "headliner": true,
+      "dist_mpc": 3.3,
+      "diam_mly": 3,
+      "x": -2.6,
+      "y": 0.4,
+      "z": 1.9
+    },
+    {
+      "id": "m81-group",
+      "name": "M81 Group (Bode's Galaxy)",
+      "kind": "group",
+      "headliner": true,
+      "dist_mpc": 3.6,
+      "diam_mly": 4,
+      "x": -3.2,
+      "y": 0.8,
+      "z": -1.4
+    },
+    {
+      "id": "centaurus-a-group",
+      "name": "Centaurus A / M83 Complex",
+      "kind": "group",
+      "headliner": true,
+      "dist_mpc": 3.7,
+      "diam_mly": 5,
+      "x": 2.9,
+      "y": -0.6,
+      "z": -2.2
+    },
+    {
+      "id": "sculptor-group",
+      "name": "Sculptor Group (NGC 253)",
+      "kind": "group",
+      "headliner": true,
+      "dist_mpc": 3.7,
+      "diam_mly": 3,
+      "x": 1.4,
+      "y": -0.5,
+      "z": 3.1
+    },
+    {
+      "id": "canes-venatici-i",
+      "name": "Canes Venatici I Cloud",
+      "kind": "cloud",
+      "headliner": false,
+      "dist_mpc": 4,
+      "diam_mly": 4,
+      "x": -3.6,
+      "y": 0.3,
+      "z": 1.2
+    },
+    {
+      "id": "maffei-group",
+      "name": "Maffei Group",
+      "kind": "group",
+      "headliner": false,
+      "dist_mpc": 5.7,
+      "diam_mly": 3,
+      "x": -4.6,
+      "y": 0.9,
+      "z": 3.2
+    },
+    {
+      "id": "ngc-6946-group",
+      "name": "NGC 6946 Group (Fireworks)",
+      "kind": "group",
+      "headliner": false,
+      "dist_mpc": 7.7,
+      "diam_mly": 2,
+      "x": -5.6,
+      "y": 0.6,
+      "z": 3.6
+    },
+    {
+      "id": "m101-group",
+      "name": "M101 Group (Pinwheel)",
+      "kind": "group",
+      "headliner": false,
+      "dist_mpc": 6.4,
+      "diam_mly": 3,
+      "x": -5.2,
+      "y": 1,
+      "z": -2.6
+    }
+  ]
+}

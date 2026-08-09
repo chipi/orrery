@@ -99,7 +99,7 @@
     },
     {
       "id": "arecibo-message",
-      "objectId": "arecibo",
+      "objectId": "m13",
       "objectType": "message",
       "type": "message",
       "work": "The Arecibo Message",
@@ -110,6 +110,22 @@
         {
           "l": "Wikipedia · Arecibo message",
           "u": "https://en.wikipedia.org/wiki/Arecibo_message"
+        }
+      ]
+    },
+    {
+      "id": "pioneer-plaque",
+      "objectId": "pioneer",
+      "objectType": "message",
+      "type": "message",
+      "work": "The Pioneer Plaque",
+      "year": 1972,
+      "author": "Carl Sagan, Frank Drake & Linda Salzman Sagan",
+      "media": "engraved gold-anodised plaque",
+      "links": [
+        {
+          "l": "NASA · The Pioneer Plaque",
+          "u": "https://science.nasa.gov/mission/pioneer-10/"
         }
       ]
     }

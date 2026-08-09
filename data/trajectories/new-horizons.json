@@ -6,24 +6,104 @@
   "color": "#ffd33d",
   "schema_version": 1,
   "_doc": "Iconic trajectory for /explore PATHS layer (#306 Slice A.2). Launch 2006-01-19 on Atlas V 551 — the fastest spacecraft launched from Earth (Earth-escape velocity 16.26 km/s). Jupiter gravity assist 2007-02-28 raised the heliocentric speed to 23 km/s. Pluto-Charon closest approach 2015-07-14, the first close-range images of the dwarf planet. Arrokoth (2014 MU69) flyby 2019-01-01 — the most distant object ever visited (44 AU). Now in extended mission heading into the Kuiper belt's outer edge; direction toward galactic anti-center near Sagittarius (ecl. lat ~+1.7°). Currently ~62 AU and travelling outward at ~13 km/s. Heliocentric ecliptic J2000 AU.",
-  "current_position_au": [27.0, -54.0, -1.8],
-  "current_distance_au": 62.0,
-  "current_distance_label": "62 AU · in extended mission — heading toward stagnation region of the heliosphere",
+  "current_position_au": [
+    29.5,
+    -59,
+    -2
+  ],
+  "current_distance_au": 66,
+  "current_distance_label": "66 AU · in extended mission — heading toward the stagnation region of the heliosphere",
   "interstellar_since": null,
   "interstellar_since_label": "Will cross the heliopause around 2040 — third probe destined to reach interstellar space",
+  "agency": "NASA",
+  "heading": {
+    "star": null,
+    "constellation": "Sagittarius"
+  },
   "waypoints": [
-    { "date": "2006-01-19", "label": "Launch", "x": 1.0, "y": 0.0, "z": 0.0 },
-    { "date": "2006-06-13", "label": "Asteroid APL", "x": 1.6, "y": -0.4, "z": 0.0 },
-    { "date": "2006-09", "x": 2.0, "y": -0.7, "z": 0.0 },
-    { "date": "2006-12", "x": 2.5, "y": -1.1, "z": 0.0 },
-    { "date": "2007-02-28", "label": "Jupiter assist", "x": 4.1, "y": -3.2, "z": -0.05 },
-    { "date": "2008-06", "x": 6.8, "y": -7.5, "z": -0.15 },
-    { "date": "2010-01", "x": 9.0, "y": -13.0, "z": -0.25 },
-    { "date": "2012-06", "x": 12.5, "y": -22.0, "z": -0.45 },
-    { "date": "2015-07-14", "label": "Pluto", "x": 14.0, "y": -29.0, "z": -0.6 },
-    { "date": "2017-01", "x": 15.5, "y": -33.0, "z": -0.7 },
-    { "date": "2019-01-01", "label": "Arrokoth", "x": 17.5, "y": -40.0, "z": -1.0 },
-    { "date": "2022-06", "x": 22.0, "y": -47.0, "z": -1.4 },
-    { "date": "2026-06-05", "label": "Today", "x": 27.0, "y": -54.0, "z": -1.8 }
+    {
+      "date": "2006-01-19",
+      "label": "Launch",
+      "x": 1,
+      "y": 0,
+      "z": 0
+    },
+    {
+      "date": "2006-06-13",
+      "label": "Asteroid APL",
+      "x": 1.6,
+      "y": -0.4,
+      "z": 0
+    },
+    {
+      "date": "2006-09",
+      "x": 2,
+      "y": -0.7,
+      "z": 0
+    },
+    {
+      "date": "2006-12",
+      "x": 2.5,
+      "y": -1.1,
+      "z": 0
+    },
+    {
+      "date": "2007-02-28",
+      "label": "Jupiter assist",
+      "x": 4.1,
+      "y": -3.2,
+      "z": -0.05
+    },
+    {
+      "date": "2008-06",
+      "x": 6.8,
+      "y": -7.5,
+      "z": -0.15
+    },
+    {
+      "date": "2010-01",
+      "x": 9,
+      "y": -13,
+      "z": -0.25
+    },
+    {
+      "date": "2012-06",
+      "x": 12.5,
+      "y": -22,
+      "z": -0.45
+    },
+    {
+      "date": "2015-07-14",
+      "label": "Pluto",
+      "x": 14,
+      "y": -29,
+      "z": -0.6
+    },
+    {
+      "date": "2017-01",
+      "x": 15.5,
+      "y": -33,
+      "z": -0.7
+    },
+    {
+      "date": "2019-01-01",
+      "label": "Arrokoth",
+      "x": 17.5,
+      "y": -40,
+      "z": -1
+    },
+    {
+      "date": "2022-06",
+      "x": 22,
+      "y": -47,
+      "z": -1.4
+    },
+    {
+      "date": "2026-08-08",
+      "label": "Today",
+      "x": 29.5,
+      "y": -59,
+      "z": -2
+    }
   ]
 }

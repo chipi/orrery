@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["/orrery/_app/immutable/chunks/BMt628Mn2.js","/orrery/_app/immutable/chunks/BDdlKBnh.js"])))=>i.map(i=>d[i]);
+import{t as e}from"./HclGiUj8.js";import{r as t}from"./BDdlKBnh.js";var n=t(`Browser`,{web:()=>e(()=>import(`./BMt628Mn2.js`).then(e=>new e.BrowserWeb),__vite__mapDeps([0,1]),import.meta.url)});export{n as Browser};

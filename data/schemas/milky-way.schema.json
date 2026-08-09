@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "milky-way.schema.json",
-  "title": "Milky Way schematic (PRD-030 / RFC-032, Slice 5)",
-  "description": "Face-on galactocentric SCHEMATIC of the Milky Way — a labelled model, not to scale (PRD-030 principle 2). Positions are schematic; the Sun's galactocentric distance and Sagittarius A*'s mass are real, cited astrometry. Drives the /explore v2 Milky Way context: procedural spiral disk + Sun pin + Sag A* pin.",
+  "title": "Milky Way schematic (PRD-030 / RFC-032, Slice 5; WS-2 leveling, RFC-039)",
+  "description": "Face-on galactocentric SCHEMATIC of the Milky Way — a labelled model, not to scale (PRD-030 principle 2). Positions are schematic; the Sun's galactocentric distance, Sag A*'s mass, the bar geometry, and each globular / Magellanic Cloud distance are real, cited astrometry. Drives the /explore v2 Milky Way context.",
   "type": "object",
   "required": [
     "disk_radius_kpc",
@@ -17,6 +17,16 @@
     "disk_radius_kpc": { "type": "number", "exclusiveMinimum": 0 },
     "sun_galactocentric_kpc": { "type": "number", "exclusiveMinimum": 0 },
     "sun_galactocentric_ly": { "type": "number", "exclusiveMinimum": 0 },
+    "bar": {
+      "type": "object",
+      "required": ["half_length_kpc", "position_angle_deg"],
+      "additionalProperties": false,
+      "properties": {
+        "half_length_kpc": { "type": "number", "exclusiveMinimum": 0 },
+        "position_angle_deg": { "type": "number" },
+        "_fact": { "type": "string" }
+      }
+    },
     "objects": {
       "type": "array",
       "minItems": 2,
@@ -32,6 +42,7 @@
           "z": { "type": "number" },
           "mass_solar": { "type": "number", "exclusiveMinimum": 0 },
           "dist_from_sun_ly": { "type": "number", "exclusiveMinimum": 0 },
+          "galactocentric_ly": { "type": "number", "exclusiveMinimum": 0 },
           "arm": { "type": "string", "minLength": 1 },
           "science_section": { "type": "string", "pattern": "^[a-z0-9-]+$" }
         }
@@ -49,7 +60,42 @@
           "name": { "type": "string", "minLength": 1 },
           "label_x": { "type": "number" },
           "label_z": { "type": "number" },
-          "minor": { "type": "boolean" }
+          "minor": { "type": "boolean" },
+          "science_section": { "type": "string", "pattern": "^[a-z0-9-]+$" }
+        }
+      }
+    },
+    "globulars": {
+      "type": "array",
+      "description": "Globular clusters of the halo. Distances are real (Harris 2010); x/z are illustrative schematic halo placements, not catalogue galactocentric coordinates.",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "dist_from_sun_ly", "x", "z", "headliner"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "type": "string", "minLength": 1 },
+          "dist_from_sun_ly": { "type": "number", "exclusiveMinimum": 0 },
+          "x": { "type": "number" },
+          "z": { "type": "number" },
+          "headliner": { "type": "boolean" }
+        }
+      }
+    },
+    "magellanic": {
+      "type": "array",
+      "description": "The Magellanic Clouds — MW satellites at ~50–62 kpc, drawn schematically at the disc edge.",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "dist_from_sun_ly", "x", "z"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "type": "string", "minLength": 1 },
+          "dist_from_sun_ly": { "type": "number", "exclusiveMinimum": 0 },
+          "x": { "type": "number" },
+          "z": { "type": "number" },
+          "diam_kly": { "type": "number", "exclusiveMinimum": 0 }
         }
       }
     }

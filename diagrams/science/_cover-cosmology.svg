@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="A cosmology chapter cover — a stylised cosmic web of galaxy-cluster nodes joined by faint filaments around dark voids, with one teal node marked as our own position.">
+  <style>
+    .stroke-soft { stroke: rgba(255,255,255,0.16); stroke-width: 0.8; fill: none; }
+    .stroke-mid { stroke: rgba(255,255,255,0.32); stroke-width: 1; fill: none; }
+    .filament { stroke: rgba(255,255,255,0.22); stroke-width: 0.8; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
+    .node { fill: rgba(255,255,255,0.55); }
+    .node-dim { fill: rgba(255,255,255,0.28); }
+    .node-bright { fill: rgba(255,255,255,0.8); }
+    .accent-node { fill: #4ecdc4; }
+    .accent-fill { fill: rgba(78,205,196,0.12); }
+    .void { fill: none; stroke: rgba(255,255,255,0.08); stroke-width: 0.6; stroke-dasharray: 2 4; }
+    .label { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 7px; letter-spacing: 1.5px; }
+    .label-accent { fill: rgba(78,205,196,0.85); font-family: 'Space Mono', monospace; font-size: 7px; letter-spacing: 1.5px; }
+  </style>
+
+  <!-- Faint background starfield -->
+  <circle class="node-dim" cx="40" cy="26" r="0.6" />
+  <circle class="node-dim" cx="300" cy="18" r="0.5" />
+  <circle class="node-dim" cx="560" cy="34" r="0.6" />
+  <circle class="node-dim" cx="120" cy="230" r="0.5" />
+  <circle class="node-dim" cx="470" cy="238" r="0.5" />
+
+  <!-- The cosmic web: filaments connecting cluster nodes around voids -->
+  <g>
+    <!-- Filaments (threads of the web) -->
+    <path class="filament" d="M 70 90 L 165 70 L 250 110 L 360 80 L 470 120 L 545 95" />
+    <path class="filament" d="M 90 180 L 200 165 L 300 200 L 410 170 L 520 195" />
+    <path class="filament" d="M 165 70 L 200 165" />
+    <path class="filament" d="M 250 110 L 300 200" />
+    <path class="filament" d="M 360 80 L 410 170" />
+    <path class="filament" d="M 470 120 L 520 195" />
+    <path class="filament" d="M 70 90 L 90 180" />
+    <path class="filament" d="M 545 95 L 520 195" />
+    <path class="filament" d="M 250 110 L 360 80" />
+    <path class="stroke-soft" d="M 200 165 L 250 110" />
+    <path class="stroke-soft" d="M 410 170 L 470 120" />
+
+    <!-- Voids (near-empty regions, drawn as faint dashed ellipses) -->
+    <ellipse class="void" cx="300" cy="130" rx="60" ry="42" />
+    <ellipse class="void" cx="140" cy="130" rx="34" ry="34" />
+    <ellipse class="void" cx="490" cy="150" rx="34" ry="30" />
+
+    <!-- Cluster + group nodes at the filament junctions -->
+    <circle class="node-bright" cx="165" cy="70" r="3.2" />
+    <circle class="accent-fill" cx="360" cy="80" r="7" />
+    <circle class="node-bright" cx="360" cy="80" r="3.6" />
+    <circle class="node" cx="250" cy="110" r="2.6" />
+    <circle class="node" cx="470" cy="120" r="3" />
+    <circle class="node-dim" cx="70" cy="90" r="2.2" />
+    <circle class="node-dim" cx="545" cy="95" r="2.2" />
+    <circle class="node" cx="200" cy="165" r="2.6" />
+    <circle class="node-dim" cx="300" cy="200" r="2.2" />
+    <circle class="node" cx="410" cy="170" r="2.8" />
+    <circle class="node-dim" cx="90" cy="180" r="2" />
+    <circle class="node-dim" cx="520" cy="195" r="2.2" />
+
+    <!-- Our position: a teal node with a "you are here" ring, out on a filament -->
+    <circle class="accent" cx="200" cy="165" r="8" />
+    <circle class="accent-node" cx="200" cy="165" r="2.4" />
+  </g>
+
+  <!-- Labels -->
+  <text class="label" x="330" y="66">VIRGO CLUSTER</text>
+  <text class="label-accent" x="150" y="192">YOU ARE HERE</text>
+  <text class="label" x="270" y="128">VOID</text>
+  <text class="label" x="60" y="240">LARGE-SCALE STRUCTURE · the cosmic web</text>
+</svg>

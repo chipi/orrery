@@ -1,5 +1,26 @@
 [
   {
+    "tab": "cosmology",
+    "section": "cosmic-distance-ladder",
+    "title": "The cosmic distance ladder",
+    "intro": "No single method measures every cosmic distance. Astronomers build a ladder: each technique reaches a little farther and is calibrated by the rung beneath it, from radar in the solar system out to the edge of the observable universe.",
+    "haystack": "the cosmic distance ladder no single method measures every cosmic distance. astronomers build a ladder: each technique reaches a little farther and is calibrated by the rung beneath it, from radar in the solar system out to the edge of the observable universe. the bottom rung is geometry. bounce radar off a planet and you know the astronomical unit directly. watch a nearby star shift back and forth against the background over a year — parallax — and simple trigonometry gives its distance; esa's gaia mission has done this for nearly two billion stars, reaching tens of thousands of light-years with precision."
+  },
+  {
+    "tab": "cosmology",
+    "section": "laniakea-and-the-great-attractor",
+    "title": "Laniakea and the Great Attractor",
+    "intro": "In 2014 astronomers redrew the map of our cosmic address — not by charting where galaxies sit, but by tracing where they flow. The answer was Laniakea, a supercluster far larger than the Virgo Supercluster we thought was home.",
+    "haystack": "laniakea and the great attractor in 2014 astronomers redrew the map of our cosmic address — not by charting where galaxies sit, but by tracing where they flow. the answer was laniakea, a supercluster far larger than the virgo supercluster we thought was home. the idea is a watershed. on earth, a drainage basin is defined not by a fence but by which way the rain runs: every drop that flows to the same river mouth belongs to the same basin. brent tully's team applied the same logic to galaxies. using the cosmicflows survey of galaxy velocities, they mapped which way each galaxy is drifting once the overall expansion of the universe is subtracted, and drew the boundary where the flows diverge."
+  },
+  {
+    "tab": "cosmology",
+    "section": "large-scale-structure",
+    "title": "Large-scale structure — the cosmic web",
+    "intro": "On the largest scales, galaxies are not scattered at random. They gather into groups and clusters, strung along filaments and sheets that wrap around vast near-empty voids — a foam-like pattern astronomers call the cosmic web.",
+    "haystack": "large-scale structure — the cosmic web on the largest scales, galaxies are not scattered at random. they gather into groups and clusters, strung along filaments and sheets that wrap around vast near-empty voids — a foam-like pattern astronomers call the cosmic web. the hierarchy nests. stars gather into galaxies; galaxies fall together into groups (like our local group) and rich clusters (like the virgo cluster, over a thousand galaxies bound in one gravitational well). groups and clusters are themselves drawn into superclusters — loose, sprawling concentrations tens of megaparsecs across. our local group sits on the outskirts of the virgo supercluster, ~33 megaparsecs (about 110 million light-years) wide and centred on the virgo cluster."
+  },
+  {
     "tab": "exoplanets",
     "section": "are-we-alone",
     "title": "Are We Alone?",

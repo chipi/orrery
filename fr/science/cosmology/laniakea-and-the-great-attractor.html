@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <title>Orrery</title>
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <link href="/orrery/_app/immutable/entry/start.0EJzAWdH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DNmDn0xf.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/zEB-6H-K.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.DRtcmaOP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/HclGiUj8.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/JduO4dCE.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BDdlKBnh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D9LEWOUD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B2-DRRjD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.LVUILOMR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DG_Lt0tK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/eQPiexrW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CY6WH1vC.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CexYrVr-.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BoeuE3fF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C1Njvt2C.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CPy_0_2V.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DlCfuXK2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C3vyJluZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CQdSZbaL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYMF4ksm.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CJOVYe8l.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/eZK5-0Xu.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DRQcatSJ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/poz0EnlD2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DIxOEHv6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Ds1XlFOW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C3u6yrRA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-dFY9B5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DlmHGD8O.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKMRGM-U.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/jFGYgkM9.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/QCnT9Zhu.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DrM5Os-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/_hII40BR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvTmgAOF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BdyAn3Ak.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/qcm0vtbB.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CqhgC8P4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/3.Dg01FytB.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CYZwxkx0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CfqPLfjN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BBHGD8lv.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BzpYCQT_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BDYzOPR-.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CkAE5DKJ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/rDxotkMb.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/X8KdyLoT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B9LC-T2u.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dd0roKN4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYaFnwK_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DQje1GZx.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C88dFG4S.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/sYX6rM9h.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bvbh-lTV.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BCYPF97y.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DK3JTyNz.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bwi9E1Cu.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CyGsy99I.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DQRBb9Jb.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YUaI4vp9.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B-FkaQC4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/KhQ0RzN6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CNZQWeDL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BwNq82dt2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/-w17xGNi2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CEoD5G512.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DWz62loc2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/o1TbHaGC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CVAm9bVD2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DEtlhtzP2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/plQCMjbE2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DSWjdQKV2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ymWDQKcf2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ZzJLH5ZK2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Cx0j4sIw2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DoT-xsdI2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B3GUu7R52.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BiZP9n_r2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CoMHPTkU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ekesGvUg2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmZYom282.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CUzR1ner2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CoYAjn482.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/gNmesWTC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CIqi0d9Z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/KIOw4ADo2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/cWKrxpl22.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvI_Ah_d2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4IknvNg.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DBMi2NWO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bq7gdIkH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DNfUzvC0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/TQT7s-Mw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/lFuPyXaS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKIb7Gxn.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CommPzVw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CrgX7qeO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B_w8W2aF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BIEmj4jC.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bld1epyA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CZmE8Y2y.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/44.DmCkk-S2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DsC71hw9.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--mk168d--><meta name="description" content="En 2014, les astronomes ont redésiné la carte de notre adresse cosmique en traçant les flux de galaxies plutôt que leur position. La réponse était Laniakea, un superamas bien plus grand que le Superamas de la Vierge."/><!----><title>Laniakea et le Grand Attracteur · Science · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.CCJEjTQz.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/3.CtitOcuZ.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/44.CJLomz_T.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><nav aria-label="Navigation principale" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — accueil"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">ACCUEIL</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">EXPLORER<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">MONDES<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">VOL</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">PLANIFIER</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">CATALOGUE<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">APPRENDRE<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="Ouvrir le menu de navigation" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="Faire la visite" aria-pressed="false" title="Faire la visite"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="Langue" aria-haspopup="listbox" aria-expanded="false" title="Choisir la langue">FR</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="Activer la lentille scientifique (unavailable on this page)" aria-pressed="false" title="Afficher la couche de physique (superpositions de mécanique orbitale) (unavailable on this page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="Activer le mode contraste élevé" aria-pressed="false" title="Activer le mode contraste élevé">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="PARAMÈTRES" aria-haspopup="dialog" aria-expanded="false" title="PARAMÈTRES"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="Partager cette vue" title="Partager cette vue"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main class="svelte-12qhfyh"><!--[0--><!--[--><div class="science-root svelte-1kywmug"><div class="page svelte-1kywmug has-right-rail"><div class="layout svelte-1kywmug"><aside class="rail rail-left svelte-1kywmug" aria-label="Onglets de l'encyclopédie"><button type="button" class="search-button svelte-1kywmug" data-audio-stage="science-search-button" aria-label="Rechercher dans l'encyclopédie (⌘K)"><span class="search-icon svelte-1kywmug" aria-hidden="true">⌕</span> <span class="search-label svelte-1kywmug">Rechercher</span> <kbd class="search-hint svelte-1kywmug">⌘K</kbd></button> <h2 class="rail-heading svelte-1kywmug">Sections</h2> <ul class="tab-list svelte-1kywmug" data-audio-stage="science-tabs"><!--[--><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-scales-time" href="/orrery/science/scales-time" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">ÉCHELLES &amp; TEMPS</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-planets" href="/orrery/science/planets" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">Planets</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-exoplanets" href="/orrery/science/exoplanets" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">EXOPLANÈTES</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-orbits" href="/orrery/science/orbits" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">ORBITES</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-transfers" href="/orrery/science/transfers" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">TRANSFERTS</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-porkchop" href="/orrery/science/porkchop" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">PORKCHOP</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-propulsion" href="/orrery/science/propulsion" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">PROPULSION</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-mission-phases" href="/orrery/science/mission-phases" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">PHASES DE MISSION</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-space-stations" href="/orrery/science/space-stations" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">STATIONS SPATIALES</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-life-in-space" href="/orrery/science/life-in-space" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">VIE DANS L’ESPACE</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-observation" href="/orrery/science/observation" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">OBSERVATION</span></a></li><li><a class="tab-card svelte-1kywmug active" data-audio-stage="science-tab-cosmology" href="/orrery/science/cosmology" aria-current="page" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">COSMOLOGIE</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-history" href="/orrery/science/history" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">HISTOIRE</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-reading-list" href="/orrery/science/reading-list" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">LECTURES</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-watch-list" href="/orrery/science/watch-list" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">À REGARDER</span></a></li><!--]--></ul></aside> <div class="content svelte-1kywmug"><!--[--><article class="reading svelte-mk168d"><nav class="crumb svelte-mk168d"><a href="/orrery/science" class="svelte-mk168d">SCIENCE</a> <span class="sep svelte-mk168d">›</span> <a href="/orrery/science/cosmology" class="svelte-mk168d">COSMOLOGIE</a> <span class="sep svelte-mk168d">›</span> <span>Laniakea et le Grand Attracteur</span></nav> <header><h1 class="svelte-mk168d">Laniakea et le Grand Attracteur</h1> <p class="lede svelte-mk168d">En 2014, les astronomes ont redésiné la carte de notre adresse cosmique en traçant les flux de galaxies plutôt que leur position. La réponse était Laniakea, un superamas bien plus grand que le Superamas de la Vierge.</p></header> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[-1--><!--]--> <div class="body svelte-mk168d"><!--[--><p class="svelte-mk168d">L'idée est révolutionnaire. Sur Terre, un bassin versant est défini non par une clôture, mais par la direction de l'écoulement des eaux : chaque goutte de pluie qui s'écoule vers le même embouchure appartient au même bassin. L'équipe de Brent Tully a appliqué la même logique aux galaxies. Utilisant le relevé Cosmicflows des vitesses galactiques, ils ont cartographié la direction vers laquelle chaque galaxie dérive une fois soustraite l'expansion globale de l'univers, et tracé la limite où les flux divergent.</p><p class="svelte-mk168d">Le résultat est Laniakea — hawaïen pour « ciel immense » — environ 160 mégaparsecs (500 millions d'années-lumière) de diamètre et home environ 100 000 galaxies. Notre Superamas de la Vierge, autrefois considéré comme le quartier entier, s'avère être un simple lobe périphérique. Tout ce qui se trouve à Laniakea s'écoule lentement vers un seul point gravitationnel bas.</p><p class="svelte-mk168d">Ce point focal est le Grand Attracteur, une concentration de masse autour de l'Amas de la Norma (Abell 3627), à environ 65 mégaparsecs de distance. Il est difficile à étudier car il se cache derrière les denses nuages d'étoiles et la poussière du disque de notre propre Voie lactée — la « Zone d'Évitement » — donc une grande partie de ce que nous savons provient de relevés radio et infrarouge qui voient à travers l'obscuration, et des mouvements des galaxies elles-mêmes.</p><p class="svelte-mk168d">Cela ne s'arrête pas là. Laniakea lui-même n'est pas au repos : le superamas entier, avec ses voisins, est entraîné dans un flux plus large vers une concentration de masse encore plus grande au-delà de sa frontière — la Concentration de Shapley, la collection de amas galactiques la plus dense connue dans l'univers proche. Un bassin dans une pente.</p><p class="svelte-mk168d">Et il y a une dernière surprise. Ces flux se sont construits au cours de milliards d'années, mais l'énergie noire accélère maintenant l'expansion de l'univers. Au fil du temps cosmique, cette accélération gagne : Laniakea n'est pas lié gravitationnellement et ne s'effondrera pas en un seul objet. C'est un instantané d'un flux, non une structure durable — un moyen utile de nommer notre lieu, pas une maison permanente.</p><!--]--></div> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[0--><section class="see-in-app svelte-mk168d"><h2 class="svelte-mk168d">VOIR DANS L’APP</h2> <ul class="svelte-mk168d"><!--[--><li class="svelte-mk168d"><a href="/orrery/explore" class="svelte-mk168d">/explore</a> <span class="ctx svelte-mk168d">Laniakea context: the Virgo Supercluster as one lobe of a ~160 Mpc basin of flows draining toward the Great Attractor</span></li><!--]--></ul></section><!--]--> <!--[0--><section class="learn-more svelte-mk168d"><h2 class="svelte-mk168d">EN SAVOIR PLUS</h2> <ul class="svelte-mk168d"><!--[--><li class="svelte-mk168d"><span class="tier tier-core svelte-mk168d">core</span> <a href="https://www.nature.com/articles/nature13674" target="_blank" rel="noopener noreferrer external" class="svelte-mk168d">Tully et al. · The Laniakea Supercluster of galaxies (Nature 2014)</a></li><li class="svelte-mk168d"><span class="tier tier-intro svelte-mk168d">intro</span> <a href="https://www.youtube.com/watch?v=rENyyRwxpHo" target="_blank" rel="noopener noreferrer external" class="svelte-mk168d">Nature video · Laniakea: Our home supercluster</a></li><li class="svelte-mk168d"><span class="tier tier-deep svelte-mk168d">deep</span> <a href="https://en.wikipedia.org/wiki/Laniakea_Supercluster" target="_blank" rel="noopener noreferrer external" class="svelte-mk168d">Wikipedia · Laniakea Supercluster</a></li><!--]--></ul></section><!--]--></article><!--]--><!----></div> <!--[0--><aside class="rail rail-right svelte-1kywmug" aria-label="Sections de cet onglet"><h2 class="rail-heading svelte-1kywmug">COSMOLOGIE</h2> <ul class="section-list svelte-1kywmug"><!--[--><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-large-scale-structure" href="/orrery/science/cosmology/large-scale-structure" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Structure à grande échelle — la toile cosmique</span></a></li><li><a class="section-row svelte-1kywmug active" data-audio-stage="science-section-laniakea-and-the-great-attractor" href="/orrery/science/cosmology/laniakea-and-the-great-attractor" aria-current="page" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Laniakea et le Grand Attracteur</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-cosmic-distance-ladder" href="/orrery/science/cosmology/cosmic-distance-ladder" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">L'échelle des distances cosmiques</span></a></li><!--]--></ul></aside><!--]--></div></div> <!--[-1--><!--]--><!----></div><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="Pied de page du site"><nav class="footer-menu svelte-12qhfyh" aria-label="Liens du pied de page"><a class="footer-link svelte-12qhfyh" href="/orrery/gallery">Galerie</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">Crédits</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">Colophon</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">Bibliothèque</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">À propos</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="À propos"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">Licence</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="Version de build + date de déploiement (ouvre le CHANGELOG sur GitHub): v0.8-2026-08-09-1 · 2026-08-09" hreflang="en">v0.8-2026-08-09-1</a></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_ul20sf = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_ul20sf.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.0EJzAWdH.js"),
+							import("/orrery/_app/immutable/entry/app.DRtcmaOP.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 3, 44],
+									data: [null,null,null],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

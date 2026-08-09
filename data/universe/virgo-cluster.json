@@ -1,0 +1,84 @@
+{
+  "_note": "The Virgo Supercluster / Local Supercluster (WS-5b, RFC-039) — the ~33 Mpc supercluster our Local Group belongs to, dominated by the Virgo Cluster at its gravitational heart. A SCHEMATIC, NOT TO SCALE (PRD-030 principle 2): the Local Group sits at the origin as the 'you are here' anchor on the supercluster's outskirts, the Virgo Cluster is the dominant central concentration, and the surrounding clouds/groups are placed in a thin illustrative layout flattened toward the supergalactic plane (small z). Distances (dist_mpc) + classifications are real; the xyz layout is hand-authored for legibility, matching the local-sheet.json precedent.",
+  "_provenance": "Distances + types: NASA/IPAC NED, Tully (1982) Local Supercluster clouds, Tully et al. Cosmicflows, Mould et al. Virgo distance. Schematic positions hand-authored for legibility. Science-reviewed 2026-08-08 (Virgo III→Virgo II Groups distance correction; Fornax + Eridanus dropped as Southern-Supercluster non-members; Canes Venatici Spur added; Ursa Major → 18.6 Mpc).",
+  "extent_mpc": 32,
+  "members": [
+    {
+      "id": "local-group",
+      "name": "Local Group",
+      "kind": "group",
+      "headliner": true,
+      "dist_mpc": 0,
+      "diam_mly": 10,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    {
+      "id": "virgo-cluster",
+      "name": "Virgo Cluster (M87)",
+      "kind": "cluster",
+      "headliner": true,
+      "dist_mpc": 16.5,
+      "diam_mly": 15,
+      "x": 12,
+      "y": 0.5,
+      "z": 3
+    },
+    {
+      "id": "canes-venatici-spur",
+      "name": "Canes Venatici Spur",
+      "kind": "cloud",
+      "headliner": false,
+      "dist_mpc": 8,
+      "diam_mly": 7,
+      "x": -2,
+      "y": 0.8,
+      "z": 6
+    },
+    {
+      "id": "leo-i-cloud",
+      "name": "Leo I Cloud (M96 Group)",
+      "kind": "cloud",
+      "headliner": false,
+      "dist_mpc": 11,
+      "diam_mly": 8,
+      "x": 6,
+      "y": -0.5,
+      "z": 5
+    },
+    {
+      "id": "ursa-major-cloud",
+      "name": "Ursa Major Cloud",
+      "kind": "cloud",
+      "headliner": false,
+      "dist_mpc": 18.6,
+      "diam_mly": 10,
+      "x": -4,
+      "y": 1,
+      "z": 8
+    },
+    {
+      "id": "virgo-ii-groups",
+      "name": "Virgo II Groups",
+      "kind": "cloud",
+      "headliner": false,
+      "dist_mpc": 18,
+      "diam_mly": 8,
+      "x": 15,
+      "y": -1,
+      "z": -4
+    },
+    {
+      "id": "ngc-5846-group",
+      "name": "NGC 5846 Group (Virgo III)",
+      "kind": "group",
+      "headliner": false,
+      "dist_mpc": 26,
+      "diam_mly": 5,
+      "x": 18,
+      "y": 1.2,
+      "z": 2
+    }
+  ]
+}

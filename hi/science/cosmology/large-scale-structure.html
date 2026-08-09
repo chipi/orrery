@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <title>Orrery</title>
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <link href="/orrery/_app/immutable/entry/start.0EJzAWdH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DNmDn0xf.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/zEB-6H-K.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.DRtcmaOP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/HclGiUj8.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/JduO4dCE.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BDdlKBnh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D9LEWOUD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B2-DRRjD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.LVUILOMR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DG_Lt0tK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/eQPiexrW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CY6WH1vC.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CexYrVr-.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BoeuE3fF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C1Njvt2C.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CPy_0_2V.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DlCfuXK2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C3vyJluZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CQdSZbaL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYMF4ksm.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CJOVYe8l.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/eZK5-0Xu.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DRQcatSJ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/poz0EnlD2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DIxOEHv6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Ds1XlFOW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C3u6yrRA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-dFY9B5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DlmHGD8O.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKMRGM-U.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/jFGYgkM9.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/QCnT9Zhu.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DrM5Os-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/_hII40BR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvTmgAOF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BdyAn3Ak.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/qcm0vtbB.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CqhgC8P4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/3.Dg01FytB.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CYZwxkx0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CfqPLfjN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BBHGD8lv.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BzpYCQT_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BDYzOPR-.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CkAE5DKJ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/rDxotkMb.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/X8KdyLoT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B9LC-T2u.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dd0roKN4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYaFnwK_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DQje1GZx.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C88dFG4S.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/sYX6rM9h.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bvbh-lTV.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BCYPF97y.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DK3JTyNz.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bwi9E1Cu.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CyGsy99I.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DQRBb9Jb.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YUaI4vp9.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B-FkaQC4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/KhQ0RzN6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CNZQWeDL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BwNq82dt2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/-w17xGNi2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CEoD5G512.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DWz62loc2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/o1TbHaGC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CVAm9bVD2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DEtlhtzP2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/plQCMjbE2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DSWjdQKV2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ymWDQKcf2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ZzJLH5ZK2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Cx0j4sIw2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DoT-xsdI2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B3GUu7R52.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BiZP9n_r2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CoMHPTkU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ekesGvUg2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmZYom282.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CUzR1ner2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CoYAjn482.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/gNmesWTC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CIqi0d9Z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/KIOw4ADo2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/cWKrxpl22.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvI_Ah_d2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4IknvNg.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DBMi2NWO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bq7gdIkH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DNfUzvC0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/TQT7s-Mw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/lFuPyXaS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKIb7Gxn.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CommPzVw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CrgX7qeO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B_w8W2aF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BIEmj4jC.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bld1epyA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CZmE8Y2y.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/44.DmCkk-S2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DsC71hw9.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--mk168d--><meta name="description" content="सबसे बड़े पैमानों पर, आकाशगंगाएँ यादृच्छिक रूप से बिखरी नहीं हैं। वे समूहों और समूहों में इकट्ठा होती हैं, जो विशाल लगभग-खाली शून्य के चारों ओर तंतु और चादरों के साथ जुड़ी होती हैं।"/><!----><title>बड़े पैमाने की संरचना — ब्रह्मांडीय जाल · विज्ञान</title>
+		<link href="/orrery/_app/immutable/assets/0.CCJEjTQz.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/3.CtitOcuZ.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/44.CJLomz_T.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><nav aria-label="मुख्य नेविगेशन" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery - घर"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">घर</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">खोजें<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">दुनिया<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">FLY</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">पीएलएन</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">सूची<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">सीखें<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="नेविगेशन मेनू खोलें" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="टूर लें" aria-pressed="false" title="टूर लें"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="भाषा" aria-haspopup="listbox" aria-expanded="false" title="भाषा चुनें">HI</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="विज्ञान लेंस टॉगल करें (unavailable on this page)" aria-pressed="false" title="भौतिकी परत दिखाएँ (कक्षीय यांत्रिकी ओवरले) (unavailable on this page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="टॉगल उच्च विपरीत मोड" aria-pressed="false" title="टॉगल उच्च विपरीत मोड">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="सेटिंग्स" aria-haspopup="dialog" aria-expanded="false" title="सेटिंग्स"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="यह दृश्य साझा करें" title="यह दृश्य साझा करें"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main class="svelte-12qhfyh"><!--[0--><!--[--><div class="science-root svelte-1kywmug"><div class="page svelte-1kywmug has-right-rail"><div class="layout svelte-1kywmug"><aside class="rail rail-left svelte-1kywmug" aria-label="विश्वकोश टैब"><button type="button" class="search-button svelte-1kywmug" data-audio-stage="science-search-button" aria-label="विश्वकोश खोजें (⌘K)"><span class="search-icon svelte-1kywmug" aria-hidden="true">⌕</span> <span class="search-label svelte-1kywmug">खोजें</span> <kbd class="search-hint svelte-1kywmug">⌘K</kbd></button> <h2 class="rail-heading svelte-1kywmug">अनुभाग</h2> <ul class="tab-list svelte-1kywmug" data-audio-stage="science-tabs"><!--[--><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-scales-time" href="/orrery/science/scales-time" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">SCALES</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-planets" href="/orrery/science/planets" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">Planets</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-exoplanets" href="/orrery/science/exoplanets" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">बाह्यग्रह</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-orbits" href="/orrery/science/orbits" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">ORBITS</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-transfers" href="/orrery/science/transfers" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">स्थानांतरण</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-porkchop" href="/orrery/science/porkchop" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">पोर्चोप</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-propulsion" href="/orrery/science/propulsion" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">प्रस्तावना</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-mission-phases" href="/orrery/science/mission-phases" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">प्रवेश पत्र</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-space-stations" href="/orrery/science/space-stations" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">स्पेस स्टेशन</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-life-in-space" href="/orrery/science/life-in-space" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">स्पेस में जीवन</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-observation" href="/orrery/science/observation" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">प्रकाशन</span></a></li><li><a class="tab-card svelte-1kywmug active" data-audio-stage="science-tab-cosmology" href="/orrery/science/cosmology" aria-current="page" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">ब्रह्मांड विज्ञान</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-history" href="/orrery/science/history" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">इतिहास</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-reading-list" href="/orrery/science/reading-list" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">पढ़ना</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-watch-list" href="/orrery/science/watch-list" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">वॉच लिस्ट</span></a></li><!--]--></ul></aside> <div class="content svelte-1kywmug"><!--[--><article class="reading svelte-mk168d"><nav class="crumb svelte-mk168d"><a href="/orrery/science" class="svelte-mk168d">विज्ञान</a> <span class="sep svelte-mk168d">›</span> <a href="/orrery/science/cosmology" class="svelte-mk168d">ब्रह्मांड विज्ञान</a> <span class="sep svelte-mk168d">›</span> <span>बड़े पैमाने की संरचना — ब्रह्मांडीय जाल</span></nav> <header><h1 class="svelte-mk168d">बड़े पैमाने की संरचना — ब्रह्मांडीय जाल</h1> <p class="lede svelte-mk168d">सबसे बड़े पैमानों पर, आकाशगंगाएँ यादृच्छिक रूप से बिखरी नहीं हैं। वे समूहों और समूहों में इकट्ठा होती हैं, जो विशाल लगभग-खाली शून्य के चारों ओर तंतु और चादरों के साथ जुड़ी होती हैं।</p></header> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[-1--><!--]--> <div class="body svelte-mk168d"><!--[--><p class="svelte-mk168d">पदानुक्रम नेस्ट करता है। तारे आकाशगंगाओं में इकट्ठा होते हैं; आकाशगंगाएँ समूहों में एक साथ आती हैं (जैसे हमारा स्थानीय समूह) और समृद्ध समूह (जैसे कन्या समूह, एक गुरुत्वाकर्षण कुआं में एक हजार से अधिक आकाशगंगाएँ)। समूह और समूह स्वयं सुपरकलस्टर में खींचे जाते हैं — ढीली, विस्तृत सांद्रताएँ जो दसियों मेगापार्सेक के पार हैं। हमारा स्थानीय समूह कन्या सुपरकलस्टर के बाहरी इलाके में बैठा है, ~33 मेगापार्सेक (लगभग 110 मिलियन प्रकाश-वर्ष) चौड़ा और कन्या समूह पर केंद्रित है।</p><p class="svelte-mk168d">सुपरकलस्टर शीर्ष नहीं हैं। आकाशगंगाओं की गतियों को केवल उनकी स्थितियों के बजाय मैप करें और कन्या सुपरकलस्टर एक बहुत बड़े आकर्षण बेसिन — लानियाकेआ का एक लोब निकलता है, कुछ 160 मेगापार्सेक के पार, 2014 में उस क्षेत्र के रूप में परिभाषित किया गया है जहाँ आकाशगंगा प्रवाह महान आकर्षक के पास एक सामान्य गुरुत्वाकर्षण फोकस की ओर सभी बहते हैं। लानियाकेआ बदले में आकाश भर में पड़ोसी सुपरकलस्टर को सीमान्त करता है।</p><p class="svelte-mk168d">उज्ज्वल तंतु के बीच शून्य निहित हैं — विशाल, लगभग गोलाकार क्षेत्र जो दसियों मेगापार्सेक के पार हैं और आकाशगंगाओं के लगभग खाली हैं। ब्रह्मांड का अधिकांश आयतन शून्य है; अधिकांश आकाशगंगाएँ उनके बीच पतली दीवारों और तंतु में रहती हैं। सबसे बड़े पैमाने पर देखा जाए, तो वितरण एक स्पंज या अंधेरे बुलबुलों के चारों ओर चमकते हुए तंतु के एक जाल की तरह दिखता है।</p><p class="svelte-mk168d">यह पैटर्न सजावटी नहीं है — यह प्रारंभिक ब्रह्मांड का जीवाश्म है। जब ब्रह्मांड 380,000 वर्ष का था तब मौजूद छोटी घनत्व की तरंगें, ब्रह्मांडीय माइक्रोवेव पृष्ठभूमि पर अंकित थीं, अरबों वर्षों में गुरुत्वाकर्षण द्वारा बढ़ाई गई थीं: घने क्षेत्रों ने अधिक पदार्थ खींचा और बढ़े, खाली क्षेत्र और खाली हुए। गहरा पदार्थ, जो सामान्य पदार्थ को लगभग पाँच से एक अनुपात में ऊपर करता है, अधिकांश खींचा और दृश्यमान आकाशगंगाओं को बाद में प्रकाश देने के लिए काठी रखा।</p><p class="svelte-mk168d">ब्रह्मांडीय जाल भी ईमानदार नक्शे की सीमा है। इन दूरियों पर स्थितियाँ टेप माप नहीं, रेडशिफ्ट से आती हैं, और सबसे अच्छी संरचना मॉडल-निर्भर है — यही कारण है कि ऑर्रेरी बाहरी पैमाने के गोले को स्पष्ट योजनाओं के रूप में प्रस्तुत करता है, एक सचित्र लेआउट पर वास्तविक दूरियाँ, बजाय उस सटीकता का दावा करने के जो किसी सर्वेक्षण के पास अभी नहीं है।</p><!--]--></div> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[0--><section class="see-in-app svelte-mk168d"><h2 class="svelte-mk168d">एपीपी में देखें</h2> <ul class="svelte-mk168d"><!--[--><li class="svelte-mk168d"><a href="/orrery/explore" class="svelte-mk168d">/explore</a> <span class="ctx svelte-mk168d">Virgo Supercluster context: our home supercluster — the Local Group falling toward the Virgo Cluster, one node of the cosmic web</span></li><!--]--></ul></section><!--]--> <!--[0--><section class="learn-more svelte-mk168d"><h2 class="svelte-mk168d">अधिक पढ़ें</h2> <ul class="svelte-mk168d"><!--[--><li class="svelte-mk168d"><span class="tier tier-intro svelte-mk168d">intro</span> <a href="https://science.nasa.gov/universe/the-universe-at-large/" target="_blank" rel="noopener noreferrer external" class="svelte-mk168d">NASA · The Cosmic Web</a></li><li class="svelte-mk168d"><span class="tier tier-core svelte-mk168d">core</span> <a href="https://www.nature.com/articles/nature13674" target="_blank" rel="noopener noreferrer external" class="svelte-mk168d">Tully et al. · The Laniakea Supercluster (Nature 2014)</a></li><li class="svelte-mk168d"><span class="tier tier-deep svelte-mk168d">deep</span> <a href="https://en.wikipedia.org/wiki/Observable_universe#Large-scale_structure" target="_blank" rel="noopener noreferrer external" class="svelte-mk168d">Wikipedia · Observable universe — large-scale structure</a></li><!--]--></ul></section><!--]--></article><!--]--><!----></div> <!--[0--><aside class="rail rail-right svelte-1kywmug" aria-label="इस टैब में अनुभाग"><h2 class="rail-heading svelte-1kywmug">ब्रह्मांड विज्ञान</h2> <ul class="section-list svelte-1kywmug"><!--[--><li><a class="section-row svelte-1kywmug active" data-audio-stage="science-section-large-scale-structure" href="/orrery/science/cosmology/large-scale-structure" aria-current="page" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">बड़े पैमाने की संरचना — ब्रह्मांडीय जाल</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-laniakea-and-the-great-attractor" href="/orrery/science/cosmology/laniakea-and-the-great-attractor" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">लनियाकेआ और महान आकर्षक</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-cosmic-distance-ladder" href="/orrery/science/cosmology/cosmic-distance-ladder" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">ब्रह्मांडीय दूरी की सीढ़ी</span></a></li><!--]--></ul></aside><!--]--></div></div> <!--[-1--><!--]--><!----></div><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="साइट फ़ुटर"><nav class="footer-menu svelte-12qhfyh" aria-label="फ़ुटर लिंक"><a class="footer-link svelte-12qhfyh" href="/orrery/gallery">गैलरी</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">ऋण</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">कोलोफ़ोन</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">पुस्तकालय</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">About</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="परिचय"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">लाइसेंस</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">पढ़ना</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="बिल्ड संस्करण + तैनाती तिथि (GitHub पर CHANGELOG खोलता है): v0.8-2026-08-09-1 · 2026-08-09" hreflang="en">v0.8-2026-08-09-1</a></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_ul20sf = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_ul20sf.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.0EJzAWdH.js"),
+							import("/orrery/_app/immutable/entry/app.DRtcmaOP.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 3, 44],
+									data: [null,null,null],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

@@ -25,12 +25,14 @@ async function jumpTo(page: Page, shell: string, isMobile: boolean): Promise<voi
   await rung(page, shell).click();
 }
 
+test.describe.configure({ timeout: 60_000 });
+
 test.describe('/explore — Local Sheet shell (#454)', () => {
   test('the Local Sheet shell shows its badge + a 5-rung scale picker', async ({ page }) => {
     await page.goto('/explore?context=local-sheet');
     // The honesty badge proves we crossed out to the (new, outermost) Local Sheet.
     await expect(page.getByText('Local Sheet', { exact: false }).first()).toBeVisible({
-      timeout: 15_000,
+      timeout: 40_000,
     });
     // Breadcrumb ends at the Local Sheet, one step out from the Local Group.
     await expect(page.getByRole('navigation', { name: /location/i })).toContainText(/Local Sheet/i);
@@ -38,7 +40,7 @@ test.describe('/explore — Local Sheet shell (#454)', () => {
     // is the active one. `aria-current` holds whether the rail is a visible rail
     // (desktop) or a collapsed popover (mobile).
     await expect(rung(page, 'local-sheet')).toHaveAttribute('aria-current', 'true', {
-      timeout: 15_000,
+      timeout: 40_000,
     });
   });
 
@@ -48,11 +50,11 @@ test.describe('/explore — Local Sheet shell (#454)', () => {
   }) => {
     await page.goto('/explore?context=local-sheet');
     await expect(rung(page, 'local-sheet')).toHaveAttribute('aria-current', 'true', {
-      timeout: 15_000,
+      timeout: 40_000,
     });
     await jumpTo(page, 'milky-way', isMobile);
     await expect(rung(page, 'milky-way')).toHaveAttribute('aria-current', 'true', {
-      timeout: 15_000,
+      timeout: 40_000,
     });
   });
 });

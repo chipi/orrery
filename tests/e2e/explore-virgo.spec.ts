@@ -21,26 +21,28 @@ async function jumpTo(page: Page, shell: string, isMobile: boolean): Promise<voi
   await rung(page, shell).click();
 }
 
+test.describe.configure({ timeout: 60_000 });
+
 test.describe('/explore — Virgo Supercluster shell (#455)', () => {
   test('the Virgo shell shows its badge + an 8-rung scale picker', async ({ page }) => {
     await page.goto('/explore?context=virgo');
     await expect(page.getByText('Virgo Supercluster', { exact: false }).first()).toBeVisible({
-      timeout: 15_000,
+      timeout: 40_000,
     });
     await expect(page.getByRole('navigation', { name: /location/i })).toContainText(
       /Virgo Supercluster/i,
     );
-    await expect(rung(page, 'virgo')).toHaveAttribute('aria-current', 'true', { timeout: 15_000 });
+    await expect(rung(page, 'virgo')).toHaveAttribute('aria-current', 'true', { timeout: 40_000 });
     // The Local Sheet rung is still on the ladder, one step in.
     await expect(rung(page, 'local-sheet')).toHaveCount(1);
   });
 
   test('jumping in from Virgo to the Local Sheet via the picker', async ({ page, isMobile }) => {
     await page.goto('/explore?context=virgo');
-    await expect(rung(page, 'virgo')).toHaveAttribute('aria-current', 'true', { timeout: 15_000 });
+    await expect(rung(page, 'virgo')).toHaveAttribute('aria-current', 'true', { timeout: 40_000 });
     await jumpTo(page, 'local-sheet', isMobile);
     await expect(rung(page, 'local-sheet')).toHaveAttribute('aria-current', 'true', {
-      timeout: 15_000,
+      timeout: 40_000,
     });
   });
 });

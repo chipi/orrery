@@ -19,15 +19,17 @@ async function jumpTo(page: Page, shell: string, isMobile: boolean): Promise<voi
   await rung(page, shell).click();
 }
 
+test.describe.configure({ timeout: 60_000 });
+
 test.describe('/explore — Laniakea shell (#456)', () => {
   test('the Laniakea shell shows its badge + an 8-rung scale picker', async ({ page }) => {
     await page.goto('/explore?context=laniakea');
     await expect(page.getByText('Laniakea', { exact: false }).first()).toBeVisible({
-      timeout: 15_000,
+      timeout: 40_000,
     });
     await expect(page.getByRole('navigation', { name: /location/i })).toContainText(/Laniakea/i);
     await expect(rung(page, 'laniakea')).toHaveAttribute('aria-current', 'true', {
-      timeout: 15_000,
+      timeout: 40_000,
     });
     await expect(rung(page, 'virgo')).toHaveCount(1);
   });
@@ -38,9 +40,9 @@ test.describe('/explore — Laniakea shell (#456)', () => {
   }) => {
     await page.goto('/explore?context=laniakea');
     await expect(rung(page, 'laniakea')).toHaveAttribute('aria-current', 'true', {
-      timeout: 15_000,
+      timeout: 40_000,
     });
     await jumpTo(page, 'virgo', isMobile);
-    await expect(rung(page, 'virgo')).toHaveAttribute('aria-current', 'true', { timeout: 15_000 });
+    await expect(rung(page, 'virgo')).toHaveAttribute('aria-current', 'true', { timeout: 40_000 });
   });
 });

@@ -49,7 +49,10 @@
   let signalHours = $derived(craft ? craft.signalLightHours.toFixed(1) : '0');
 </script>
 
-<Panel {open} {onClose} title={craft?.name}>
+<!-- grabFocus={false}: mirrors MissionPanel — a craft's legend row / Today-marker
+     opens this panel, and focus must stay on the triggering iconic-legend row so
+     arrow-key legend nav works immediately after the first click. -->
+<Panel {open} {onClose} grabFocus={false} title={craft?.name}>
   {#if craft}
     <div data-testid="explore-message-panel" data-craft={craft.id}>
       <p class="sub">{craft.agency} · {m.explore_msg_launched({ date: launchLabel })}</p>

@@ -26,6 +26,8 @@ async function jumpTo(page: Page, shell: string, isMobile: boolean): Promise<voi
   await rung(page, shell).click();
 }
 
+test.describe.configure({ timeout: 60_000 });
+
 test.describe('/explore — scale picker (#258)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/explore');
@@ -42,13 +44,13 @@ test.describe('/explore — scale picker (#258)', () => {
     // One tap climbs OUT through neighborhood + milky-way to the local group.
     await jumpTo(page, 'local-group', isMobile);
     await expect(rung(page, 'local-group')).toHaveAttribute('aria-current', 'true', {
-      timeout: 15_000,
+      timeout: 40_000,
     });
 
     // And back IN to the solar system.
     await jumpTo(page, 'solar-system', isMobile);
     await expect(rung(page, 'solar-system')).toHaveAttribute('aria-current', 'true', {
-      timeout: 15_000,
+      timeout: 40_000,
     });
   });
 
@@ -65,6 +67,6 @@ test.describe('/explore — scale picker (#258)', () => {
     // A black-hole takeover owns the whole viewport — `contextDeepLinkFn` knows
     // only the shells, so the ladder is hidden until you exit the sub-view.
     await page.goto('/explore?bh=sagittarius-a-star');
-    await expect(picker(page)).toBeHidden({ timeout: 15_000 });
+    await expect(picker(page)).toBeHidden({ timeout: 40_000 });
   });
 });

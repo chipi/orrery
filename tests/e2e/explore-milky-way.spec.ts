@@ -39,10 +39,14 @@ test.describe('/explore — Milky Way leveling (#451)', () => {
     await expect(page.getByText('across', { exact: false }).first()).toBeVisible({
       timeout: 12_000,
     });
-    await page.getByRole('button', { name: /science lens/i }).click();
-    await expect(page.getByRole('button', { name: /rotation curve/i })).toBeVisible({
-      timeout: 6_000,
-    });
-    await expect(page.getByRole('button', { name: /dark-matter halo/i })).toBeVisible();
+    // The lens ships COLLAPSED to its strip on first paint (all viewports) — turn
+    // it on (same attribute the Nav toggle writes) and expand before the chips show.
+    await page.evaluate(() => document.documentElement.setAttribute('data-science-lens', 'on'));
+    const head = page.locator('[data-testid="science-lens-panel"] .panel-head');
+    await expect(head).toBeVisible({ timeout: 15_000 });
+    if ((await head.getAttribute('aria-expanded')) !== 'true') await head.click();
+    const panel = page.locator('[data-testid="science-lens-panel"]');
+    await expect(panel).toContainText(/Rotation curve/i);
+    await expect(panel).toContainText(/Dark-matter halo/i);
   });
 });

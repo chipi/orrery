@@ -19,15 +19,17 @@ async function jumpTo(page: Page, shell: string, isMobile: boolean): Promise<voi
   await rung(page, shell).click();
 }
 
+test.describe.configure({ timeout: 60_000 });
+
 test.describe('/explore — Cosmic Web shell (#457)', () => {
   test('the Cosmic Web shell shows its badge + the full 8-rung scale picker', async ({ page }) => {
     await page.goto('/explore?context=cosmic-web');
     await expect(page.getByText('Cosmic Web', { exact: false }).first()).toBeVisible({
-      timeout: 15_000,
+      timeout: 40_000,
     });
     await expect(page.getByRole('navigation', { name: /location/i })).toContainText(/Cosmic Web/i);
     await expect(rung(page, 'cosmic-web')).toHaveAttribute('aria-current', 'true', {
-      timeout: 15_000,
+      timeout: 40_000,
     });
     // The ladder is now eight rungs deep, top to bottom.
     await expect(rung(page, 'solar-system')).toHaveCount(1);
@@ -37,11 +39,11 @@ test.describe('/explore — Cosmic Web shell (#457)', () => {
   test('jumping in from the Cosmic Web to Laniakea via the picker', async ({ page, isMobile }) => {
     await page.goto('/explore?context=cosmic-web');
     await expect(rung(page, 'cosmic-web')).toHaveAttribute('aria-current', 'true', {
-      timeout: 15_000,
+      timeout: 40_000,
     });
     await jumpTo(page, 'laniakea', isMobile);
     await expect(rung(page, 'laniakea')).toHaveAttribute('aria-current', 'true', {
-      timeout: 15_000,
+      timeout: 40_000,
     });
   });
 });

@@ -55,6 +55,15 @@ jobs:
       #     a Mac/Linux project building a static SPA — no dev server
       #     in production, no Windows hosts in our pipeline. Re-evaluate
       #     when SvelteKit ships a vite ≥6.4.3 compatible release.
+      #
+      #   GHSA-2v37-7h3g-55p8 — nanoid <3.3.17 can loop indefinitely when
+      #     a custom alphabet is combined with size 0. Reaches us only as
+      #     a build-time transitive (@sentry/sveltekit → vite → postcss →
+      #     nanoid), where postcss generates source-map/module IDs with a
+      #     fixed non-zero size — never attacker-controlled and never
+      #     shipped to the static client. Fix is nanoid ≥3.3.17 (in
+      #     postcss's ^3.3.12 range); lift this when postcss/vite bump the
+      #     pinned nanoid (Dependabot PR already open).
       - name: npm audit (high+critical, prod deps only)
         run: |
           set -o pipefail
@@ -67,7 +76,7 @@ jobs:
           d=json.loads(sys.stdin.read() or '{}')
           # NOTE: keep this block ASCII with NO backticks - it lives inside a
           # bash double-quoted string, so backticks would run as a subshell.
-          ALLOWLIST={'GHSA-gv7w-rqvm-qjhr', 'GHSA-fx2h-pf6j-xcff'}
+          ALLOWLIST={'GHSA-gv7w-rqvm-qjhr', 'GHSA-fx2h-pf6j-xcff', 'GHSA-2v37-7h3g-55p8'}
           bad=[]
           for name, info in d.get('vulnerabilities', {}).items():
               for via in info.get('via', []):

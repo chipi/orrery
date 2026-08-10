@@ -5779,7 +5779,7 @@ sample      ${debugInfo.projectedPxSample}`}
       title={m.surface_exit_panorama_title()}
     >
       <span class="x mono" aria-hidden="true">✕</span>
-      <span>Exit panorama</span>
+      <span>{m.surface_exit_panorama()}</span>
     </button>
   {/if}
   {#if flatPatchActive && !panoramaActive && !panelOpen}
@@ -5791,7 +5791,7 @@ sample      ${debugInfo.projectedPxSample}`}
       title="Exit zoom view (Esc)"
     >
       <span class="x mono" aria-hidden="true">✕</span>
-      <span>Exit zoom</span>
+      <span>{m.surface_exit_zoom()}</span>
     </button>
   {/if}
   <!-- #380 — route-view auto-closes the panel on mobile (so the whole route is
@@ -5806,7 +5806,7 @@ sample      ${debugInfo.projectedPxSample}`}
       title="Exit route view (Esc)"
     >
       <span class="x mono" aria-hidden="true">✕</span>
-      <span>Exit route view</span>
+      <span>{m.surface_exit_route()}</span>
     </button>
   {/if}
 
@@ -5938,7 +5938,7 @@ sample      ${debugInfo.projectedPxSample}`}
                 title="Exit route view (Esc)"
               >
                 <span class="icon" aria-hidden="true">✕</span>
-                <span>Exit route view</span>
+                <span>{m.surface_exit_route()}</span>
               </button>
             {:else}
               <button
@@ -5948,7 +5948,7 @@ sample      ${debugInfo.projectedPxSample}`}
                 onclick={() => selected && enterRouteView(selected)}
               >
                 <span class="icon" aria-hidden="true">🛰</span>
-                <span>View entire route</span>
+                <span>{m.surface_view_route()}</span>
               </button>
             {/if}
           {/if}
@@ -5962,7 +5962,7 @@ sample      ${debugInfo.projectedPxSample}`}
                 title="Exit zoom view (Esc)"
               >
                 <span class="icon" aria-hidden="true">✕</span>
-                <span>Exit zoom view</span>
+                <span>{m.surface_exit_zoom_view()}</span>
               </button>
             {:else}
               <button
@@ -5978,7 +5978,7 @@ sample      ${debugInfo.projectedPxSample}`}
                 }}
               >
                 <span class="icon" aria-hidden="true">⤓</span>
-                <span>Zoom to detail</span>
+                <span>{m.surface_zoom_detail()}</span>
               </button>
             {/if}
           {/if}

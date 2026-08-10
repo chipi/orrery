@@ -5,6 +5,7 @@
   import { base } from '$app/paths';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetOrigin } from '$lib/asset-url';
+  import * as m from '$lib/paraglide/messages';
   import { agencyToLogoEntries } from '$lib/agency-logo';
   import type { DeepSkyImage } from '$lib/deep-sky';
   import type { PageData } from './$types';
@@ -159,7 +160,7 @@
     </p>
   </header>
 
-  <div class="filters" role="tablist" aria-label="Filter by observatory">
+  <div class="filters" role="tablist" aria-label={m.deepsky_filter_observatory()}>
     {#each CHIP_ORDER as chip (chip)}
       {#if counts[chip]}
         <button
@@ -217,9 +218,9 @@
 {#if current}
   <div class="lightbox" role="dialog" aria-modal="true" aria-label={current.title} tabindex="-1">
     <!-- Full-area backdrop; a real <button> so click-to-close is keyboard-accessible. -->
-    <button class="lb-backdrop" onclick={close} aria-label="Close"></button>
-    <button class="lb-close" onclick={close} aria-label="Close">×</button>
-    <button class="lb-nav lb-prev" onclick={() => step(-1)} aria-label="Previous">‹</button>
+    <button class="lb-backdrop" onclick={close} aria-label={m.deepsky_close()}></button>
+    <button class="lb-close" onclick={close} aria-label={m.deepsky_close()}>×</button>
+    <button class="lb-nav lb-prev" onclick={() => step(-1)} aria-label={m.deepsky_prev()}>‹</button>
     <figure class="lb-figure">
       <img src="{assetOrigin}/images/deep-sky/{current.key}.jpg" alt={current.title} />
       <figcaption>
@@ -275,7 +276,7 @@
         {/if}
       </figcaption>
     </figure>
-    <button class="lb-nav lb-next" onclick={() => step(1)} aria-label="Next">›</button>
+    <button class="lb-nav lb-next" onclick={() => step(1)} aria-label={m.deepsky_next()}>›</button>
   </div>
 {/if}
 

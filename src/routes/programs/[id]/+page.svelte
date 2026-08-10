@@ -8,6 +8,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
+  import * as m from '$lib/paraglide/messages';
   import type { ProgramRosterItem } from '$types/program';
   import type { PageData } from './$types';
 
@@ -244,7 +245,7 @@
 
   {#if p.surface_sites && p.surface_sites.length}
     <section class="surface">
-      <h2>On the surface</h2>
+      <h2>{m.programs_on_surface()}</h2>
       <ul class="surface-list">
         {#each p.surface_sites as s (s.surface + s.site)}
           <li>
@@ -260,7 +261,7 @@
 
   {#if p.see_also && p.see_also.length}
     <section class="see-also">
-      <h2>Go deeper in Orrery</h2>
+      <h2>{m.programs_go_deeper()}</h2>
       <ul>
         {#each p.see_also as s (s.href)}
           <li>
@@ -273,7 +274,7 @@
 
   {#if p.related_programs && p.related_programs.length}
     <section class="related">
-      <h2>Related programs</h2>
+      <h2>{m.programs_related()}</h2>
       <p>
         {#each p.related_programs as rid (rid)}
           <a class="rel" href="{base}/programs/{rid}">{pretty(rid)}</a>

@@ -143,7 +143,7 @@
   <button
     type="button"
     class="mdg-dim"
-    aria-label="Close panel"
+    aria-label={m.drawer_close_panel_aria()}
     tabindex="-1"
     onclick={() => (openId = null)}
   ></button>

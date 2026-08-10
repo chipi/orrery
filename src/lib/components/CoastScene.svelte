@@ -12,6 +12,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { base } from '$app/paths';
+  import * as m from '$lib/paraglide/messages';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import {
@@ -258,7 +259,7 @@
             max="1000"
             value={Math.round(coastFraction * 1000)}
             oninput={onScrub}
-            aria-label="Scrub the orbit coast"
+            aria-label={m.coast_scrub_aria()}
           />
         </div>
       {/if}
@@ -274,13 +275,13 @@
           {playing ? '❚❚' : '▶'}
         </button>
         {#if onToggleHud}
-          <button class="ctl" onclick={onToggleHud} aria-label="Hide HUD">HUD</button>
+          <button class="ctl" onclick={onToggleHud} aria-label={m.coast_hide_hud()}>HUD</button>
         {/if}
         <button class="ctl skip" onclick={finish}>SKIP TO DE-ORBIT →</button>
       </div>
     {/if}
   {:else if onToggleHud}
-    <button class="ctl show-hud" onclick={onToggleHud} aria-label="Show HUD">HUD</button>
+    <button class="ctl show-hud" onclick={onToggleHud} aria-label={m.coast_show_hud()}>HUD</button>
   {/if}
 </div>
 

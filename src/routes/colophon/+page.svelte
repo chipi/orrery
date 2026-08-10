@@ -112,7 +112,9 @@
 
     <!-- Gallery posters: ORRERY originals, AI-generated (/posters). -->
     <section class="block" aria-labelledby="sec-posters">
-      <h2 id="sec-posters">Gallery posters<span class="count">{data.posters.length}</span></h2>
+      <h2 id="sec-posters">
+        {m.colophon_gallery_posters()}<span class="count">{data.posters.length}</span>
+      </h2>
       <p class="block-note">
         The <a href="{base}/posters">/posters</a> gallery is {data.posters.length} ORRERY-original art
         prints, AI-generated, then captioned and wordmarked in-house. They are not works of any space

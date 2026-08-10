@@ -471,7 +471,7 @@
               </li>
             {/each}
           </ul>
-          <h3 class="section-h">Learn the science</h3>
+          <h3 class="section-h">{m.fleet_entry_learn_science()}</h3>
           <ul class="xref-list">
             {#each engineScience as s (s.slug)}
               <li>

@@ -554,10 +554,10 @@
             onchange={(e) =>
               setSort((e.currentTarget as HTMLSelectElement).value as typeof sortMode)}
           >
-            <option value="chrono-desc">Newest first</option>
-            <option value="chrono-asc">Oldest first</option>
+            <option value="chrono-desc">{m.fleet_sort_newest()}</option>
+            <option value="chrono-asc">{m.fleet_sort_oldest()}</option>
             <option value="alpha">Alphabetical</option>
-            <option value="category">By category</option>
+            <option value="category">{m.fleet_sort_category()}</option>
           </select>
         </div>
       </nav>

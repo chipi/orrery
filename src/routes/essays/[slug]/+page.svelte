@@ -8,6 +8,7 @@
   import { base } from '$app/paths';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { essayInlineHtml } from '$lib/essay-md';
+  import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
@@ -71,7 +72,7 @@
 
   {#if essay.read_next && essay.read_next.length}
     <section class="doors">
-      <h3>Read next</h3>
+      <h3>{m.essays_read_next()}</h3>
       <ul>
         {#each essay.read_next as r (r.href)}
           <li>

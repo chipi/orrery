@@ -153,7 +153,7 @@
     <p class="disclaimer">{m.no_endorsement_disclaimer()}</p>
 
     <aside class="data-sources" aria-label={m.library_transcripts_aria()}>
-      <h3>Audio episodes</h3>
+      <h3>{m.library_audio_episodes()}</h3>
       <p>
         Read every Curator Tour episode without playing the audio —
         <a href="{base}/library/episodes" data-sveltekit-preload-data="hover"
@@ -163,7 +163,7 @@
     </aside>
 
     <aside class="data-sources" aria-label={m.library_launches_sources_aria()}>
-      <h3>Launches data</h3>
+      <h3>{m.library_launches_data()}</h3>
       <p>
         Historic launches:
         <a

@@ -3227,7 +3227,7 @@
 {/if}
 
 {#if showRecovery && descentProfile}
-  <div class="recovery-card" role="dialog" aria-label="Recovery">
+  <div class="recovery-card" role="dialog" aria-label={m.fly_recovery_aria()}>
     <div class="recovery-inner" class:fail={recoveryOutcome.fail}>
       <div class="recovery-eyebrow">{recoveryOutcome.eyebrow}</div>
       <div class="recovery-name">{mission.name}</div>
@@ -3518,7 +3518,9 @@
         <button type="button" class="perf-toast-apply" onclick={applyPerfSuggestion}
           >Apply & reload</button
         >
-        <button type="button" class="perf-toast-dismiss" onclick={dismissPerfToast}>Not now</button>
+        <button type="button" class="perf-toast-dismiss" onclick={dismissPerfToast}
+          >{m.fly_not_now()}</button
+        >
       </div>
     </div>
   {/if}

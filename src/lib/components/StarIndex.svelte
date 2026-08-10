@@ -93,9 +93,12 @@
             onclick={() => onSelect(s.id)}
           >
             <span class="si-badges" aria-hidden="true">
-              {#if hostIds.has(s.id)}<span class="si-badge planets" title="Planetary system">⊕</span
-                >{/if}{#if cultureIds.has(s.id)}<span class="si-badge culture" title="Culture door"
-                  >◈</span
+              {#if hostIds.has(s.id)}<span
+                  class="si-badge planets"
+                  title={m.star_index_planetary_system()}>⊕</span
+                >{/if}{#if cultureIds.has(s.id)}<span
+                  class="si-badge culture"
+                  title={m.star_index_culture_door()}>◈</span
                 >{/if}
             </span>
             <span class="si-name">{s.proper}</span>

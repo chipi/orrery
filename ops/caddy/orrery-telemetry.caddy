@@ -32,7 +32,15 @@ telemetry.orrerylearn.com {
 	# cross-origin POST + OPTIONS preflight work without extra Caddy config.
 	@ingest path_regexp ^/api/[0-9]+/(envelope|store|security)/?$
 	handle @ingest {
-		reverse_proxy {$GLITCHTIP_UPSTREAM}
+		# Level-3 migration: off raw homelab:8090 → the caddy-tailscale TLS node.
+		# header_up Host is REQUIRED — the node matches strictly on Host and SILENTLY
+		# drops a foreign Host (returns an empty 200, event lost). reverse_proxy forwards
+		# the incoming public Host by default, so we must override it to the node name.
+		# __TAILNET__ is sed-rendered at deploy from PROD_TAILNET_FQDN (deploy-prod.yml) —
+		# never hardcode the tailnet in-repo (operator-identifier deny-list gate).
+		reverse_proxy https://glitchtip.__TAILNET__ {
+			header_up Host glitchtip.__TAILNET__
+		}
 	}
 
 	# Everything else (dashboard, login, admin, the rest of the API) is NOT public.

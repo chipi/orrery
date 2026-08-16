@@ -368,10 +368,23 @@ jobs:
         if: steps.preflight.outputs.skip != 'true'
         env:
           SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
+          PROD_TAILNET_FQDN: ${{ vars.PROD_TAILNET_FQDN }}
         run: |
+          # The telemetry/analytics vhosts proxy to the caddy-tailscale TLS nodes
+          # (glitchtip.<tailnet> / umami.<tailnet>) and carry a __TAILNET__ placeholder —
+          # the tailnet is never hardcoded in-repo (operator-identifier deny-list gate).
+          # Derive it here (everything after the first label of PROD_TAILNET_FQDN) and
+          # sed it into the box checkout before deploy_caddy_vhosts.sh installs the vhosts.
+          TAILNET="${PROD_TAILNET_FQDN#*.}"
+          [ -n "$TAILNET" ] && [ "$TAILNET" != "$PROD_TAILNET_FQDN" ] \
+            || { echo "::error::could not derive TAILNET from PROD_TAILNET_FQDN='$PROD_TAILNET_FQDN'"; exit 1; }
           ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
-            "set -euo pipefail; cd /srv/orrery; bash ops/deploy_caddy_vhosts.sh"
+            "set -euo pipefail; cd /srv/orrery; \
+             sed -i 's/__TAILNET__/${TAILNET}/g' ops/caddy/orrery-telemetry.caddy ops/caddy/orrery-analytics.caddy; \
+             if grep -l __TAILNET__ ops/caddy/orrery-telemetry.caddy ops/caddy/orrery-analytics.caddy; then \
+               echo '::error::__TAILNET__ placeholder unresolved after sed'; exit 1; fi; \
+             bash ops/deploy_caddy_vhosts.sh"
 
       - name: Prime + schedule the on-VPS launch-data refresh (RFC-035)
         # Prod serves the launch manifest live from the /data overlay, but only

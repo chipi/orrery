@@ -29,7 +29,15 @@ analytics.orrerylearn.com {
 	# CORS OPTIONS preflight to /api/send is proxied and Umami answers it).
 	@track path /script.js /api/send
 	handle @track {
-		reverse_proxy homelab:3001
+		# Level-3 migration: off raw homelab:3001 → the caddy-tailscale TLS node.
+		# header_up Host is REQUIRED — the node matches strictly on Host and SILENTLY
+		# drops a foreign Host (returns an empty 200, event lost). reverse_proxy forwards
+		# the incoming public Host by default, so we must override it to the node name.
+		# __TAILNET__ is sed-rendered at deploy from PROD_TAILNET_FQDN (deploy-prod.yml) —
+		# never hardcode the tailnet in-repo (operator-identifier deny-list gate).
+		reverse_proxy https://umami.__TAILNET__ {
+			header_up Host umami.__TAILNET__
+		}
 	}
 
 	# Dashboard / login / rest of the API — NOT public. Refuse without revealing Umami.

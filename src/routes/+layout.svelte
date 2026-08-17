@@ -613,6 +613,22 @@
     opacity: 1;
     pointer-events: auto;
   }
+  /* The extra links are `.footer-link`, which sets `pointer-events: auto`
+     unconditionally (so the main footer links stay clickable over the
+     pointer-events:none footer). That child value overrides the CLOSED
+     popover's `pointer-events: none`, so the invisible (opacity:0) License /
+     README links kept intercepting clicks on whatever sits above the footer —
+     e.g. /explore's scale-picker bottom rung (SOLAR SYSTEM), which shares the
+     bottom-right corner. Gate the children to the open state too. Uses
+     pointer-events (not visibility) so the links stay keyboard-focusable and
+     `:focus-within` can still open the popover. */
+  .footer-about-menu .footer-link-extra {
+    pointer-events: none;
+  }
+  .footer-about-group:hover .footer-about-menu .footer-link-extra,
+  .footer-about-group:focus-within .footer-about-menu .footer-link-extra {
+    pointer-events: auto;
+  }
   .footer-about-menu li {
     margin: 0;
     padding: 0;

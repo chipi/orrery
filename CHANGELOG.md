@@ -10,6 +10,65 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
+## [0.8.0] — 2026-08-DD
+
+> **Draft — release candidate.** Version frozen at `0.8.0` for the pre-release visual
+> review; the date is finalized at tag time and this section may still gain the fixes
+> from the review pass before `v0.8.0` is tagged.
+
+Orrery's biggest release yet. It becomes a **native mobile app with augmented reality**,
+gains a **launch-to-orbit cinematic `/fly`**, extends `/explore` **across the observable
+universe**, ships **33 space programs**, and reaches **full localization in 14 languages**.
+
+### Native app + augmented reality (new platform)
+
+- **Native iOS + Android apps** via Capacitor 7 — premium splash + app icons, a
+  device-independent runtime target switcher, and a stream-first asset pipeline.
+- **Augmented reality** (ARKit + ARCore) — tabletop planet/Moon globes, a "look at the
+  sky" heading-gated mode, an auto-playing AR narrator, and AR-specific haptics, with
+  Android↔iOS parity.
+- **Sensory layer** — haptics, sonification, and gyro-driven parallax across the app.
+
+### `/fly` — launch to orbit, made cinematic
+
+- **"Scene 0" powered ascent** prepended to every mission: an integrated pad→orbit
+  ascent-physics engine (thrust, gravity, drag, staging) as one continuous scrub.
+- **Broadcast-grade camera** — a multi-camera cinematic montage with a shot language,
+  cinematic re-basing warps at trajectory handoffs, and a live camera debug/tuning panel.
+- 100% mission coverage via vehicle-string fallback + flagship matching.
+
+### `/explore` — The Known Universe
+
+- The zoom-out **scale ladder extended to 8 shells** — Solar System → Stellar
+  Neighborhood → Milky Way → Local Group → Local Sheet → Virgo Supercluster → Laniakea →
+  Cosmic Web (schematic, honestly badged not-to-scale).
+- **Scale picker** quick-jump, **time playback** controls, and **message-object
+  trajectories** (the interstellar craft and their messages).
+- **New information architecture** — Explore (scale) split from a new **Worlds** group
+  (Earth / Moon / Mars / Venus), a sectioned landing page, and a `/worlds` TV hub.
+- A new **cosmology** tab in `/science` woven through the outer shells.
+
+### `/programs` — 33 space programs
+
+- First-steps → futures narratives for Apollo, Artemis, Ariane, Buran, Chandrayaan,
+  Chang'e, and 27 more, with sourced insignia, a patches wall, and 3D module rosters.
+
+### Catalog & content
+
+- **Engines** as a new `/fleet` category (~22 curated engines).
+- Deep-sky gallery, a regenerated posters set, mission + fleet **badges/patches**, and
+  expanded credits/colophon provenance.
+
+### Platform, quality & reach
+
+- **Three.js r128 → 0.185** engine upgrade.
+- **Full internationalization** — every UI string and content overlay across all 14
+  locales; 0 missing keys.
+- **Accessibility** pass (keyboard nav, ARIA, honest canvas labels).
+- **Observability** — self-hosted error monitoring (GlitchTip) + privacy-preserving
+  analytics (Umami), served over the tailnet via TLS; metrics/logs to Grafana Cloud.
+- **TV mode** refinements across the hubs.
+
 ## [0.7.3] — 2026-07-09
 
 ### Added

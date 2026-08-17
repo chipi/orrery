@@ -1,13 +1,13 @@
 PODS:
-  - Capacitor (8.4.1):
+  - Capacitor (8.4.2):
     - CapacitorCordova
-  - CapacitorApp (8.1.0):
+  - CapacitorApp (8.1.1):
     - Capacitor
   - CapacitorBrowser (8.0.3):
     - Capacitor
   - CapacitorCommunitySafeArea (8.0.1):
     - Capacitor
-  - CapacitorCordova (8.4.1)
+  - CapacitorCordova (8.4.2)
   - CapacitorHaptics (8.0.2):
     - Capacitor
   - CapacitorShare (8.0.1):
@@ -57,11 +57,11 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@sentry/capacitor"
 
 SPEC CHECKSUMS:
-  Capacitor: 35242afe195b1e53c58ca1b827d1b444c5e6602b
-  CapacitorApp: 449ffe26375e96f8aaaee625ac6e01e5c57c8650
+  Capacitor: 52f999235b8bd6a7d01694753f4f4d54d182e3a3
+  CapacitorApp: 305bd13c44f6f9d164e2ee66a4faa956ed8c0e06
   CapacitorBrowser: c987c73d09d8bd3b5ec13f06338b1e14d5d2be69
   CapacitorCommunitySafeArea: 91738f4ae7f47d2d94e06e429e16fb73cd8fdc48
-  CapacitorCordova: eebe6bcf807b1b06f3f48237650f96bbcd0eef09
+  CapacitorCordova: 345eacdc4c8282415446aea4acd8c77d82480bd4
   CapacitorHaptics: 296f771ecd89c7a1bd92a7b6826a7d268e2e70f5
   CapacitorShare: 0c58305114538568059bfc07111f22dcb9cb2a82
   CapacitorSplashScreen: 4b46c72298db552b3c57ce021ef028b6dc7f1fa7

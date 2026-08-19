@@ -44,18 +44,17 @@
 {/if}
 
 <style>
+  /* Renders inline at the bottom of the mobile nav drawer — moved out of a
+     floating bottom-left panel (2026-08 user direction). MOBILE_INTERNAL-only. */
   .target-switcher {
-    position: fixed;
-    left: 8px;
-    bottom: 8px;
-    z-index: 9999;
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 4px 8px;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 8px 10px;
     border-radius: 8px;
-    background: rgba(4, 4, 12, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     font:
       11px / 1.4 ui-monospace,
       monospace;

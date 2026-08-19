@@ -14,6 +14,7 @@
   import { localizeHref } from '$lib/paraglide/runtime';
   import { exploreContext, type ExploreContextId } from '$lib/explore-context';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
+  import TargetEnvSwitcher from '$lib/components/TargetEnvSwitcher.svelte';
   import { audio } from '$lib/audio-state.svelte';
   import { sensory } from '$lib/sensory/state.svelte';
   import SensorySheet from '$lib/components/SensorySheet.svelte';
@@ -589,6 +590,10 @@
       title="{m.version_info_title()}: v{displayVersion} · {__BUILD_DATE__}"
       hreflang="en">v{displayVersion}</a
     >
+    <!-- Internal-only staging↔prod target switcher — lives at the very bottom of
+         the drawer (moved out of the floating bottom-left panel, 2026-08 user
+         direction). MOBILE_INTERNAL-gated inside the component → no-op elsewhere. -->
+    <TargetEnvSwitcher />
   </div>
   <button
     type="button"

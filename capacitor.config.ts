@@ -33,7 +33,14 @@ const config: CapacitorConfig = {
     webContentsDebuggingEnabled: false, // enable only in debug builds
   },
   ios: {
-    contentInset: 'always',
+    // 'never', NOT 'always': the app already handles the safe area in CSS via
+    // `var(--safe-area-inset-*, env(safe-area-inset-*))` — the native
+    // SafeAreaViewController shim (AppDelegate.swift) injects the real UIView
+    // insets, and the nav/footer pad by them. `contentInset: 'always'` made
+    // WKWebView ALSO inset the content, double-counting the safe area: the
+    // sticky header got pushed below the true top and an empty band stuck there
+    // on scroll/overscroll (2026-08 on-device bug). 'never' = single inset.
+    contentInset: 'never',
     backgroundColor: '#04040c',
     // scrollEnabled must stay true — false killed scrolling on ALL content
     // pages (landing, science, missions…), not just the 3D routes. The 3D

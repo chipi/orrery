@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { fade } from 'svelte/transition';
   import { base } from '$app/paths';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { page } from '$app/stores';
@@ -78,12 +77,6 @@
   // drift. Raw `__APP_VERSION__` stays for Sentry releases + analytics.
   const displayVersion = formatDisplayVersion(__APP_VERSION__);
   let activeLocale = $derived(localeFromPage($page));
-
-  // Native-app splash coda (2026-08): the native launch splash (a centered mark
-  // on #04040c) auto-hides at ~1.8s; this web overlay continues that same dark
-  // field with the wordmark + running version beneath it, then fades — so the
-  // build version is visible on the splash. Native (Capacitor) only; no-op web.
-  let showAppSplash = $state(false);
 
   // DebugPanel context — created HERE (layout), not inside DebugPanel,
   // so descendant pages (which are children of `<main>`) can see it via
@@ -308,12 +301,6 @@
     // distribution is visible in the dashboard — a cohort stuck on an old
     // build (e.g. the iOS-precache freeze) is then obvious, not a surprise.
     track('app-load', { version: __APP_VERSION__ });
-    // Show the web splash coda on native so the running version is visible on
-    // the splash; hold it across the native splash's ~1.8s auto-hide, then fade.
-    if (Capacitor.isNativePlatform()) {
-      showAppSplash = true;
-      setTimeout(() => (showAppSplash = false), 2000);
-    }
     // Suppress both Chrome's native install banner and any in-app
     // prompt. preventDefault stops the browser from auto-showing.
     const onPromptable = (e: Event) => e.preventDefault();
@@ -405,15 +392,6 @@
   <link rel="icon" href="{base}/favicon.svg" type="image/svg+xml" />
 </svelte:head>
 
-{#if showAppSplash}
-  <div class="app-splash" transition:fade={{ duration: 450 }} aria-hidden="true">
-    <div class="app-splash-inner">
-      <span class="app-splash-wordmark">ORRERY</span>
-      <span class="app-splash-version">v{displayVersion}</span>
-    </div>
-  </div>
-{/if}
-
 {#key activeLocale}
   <Nav />
   <CommandPalette items={commandItems} open={commandOpen} onClose={() => (commandOpen = false)} />
@@ -486,38 +464,6 @@
 {/key}
 
 <style>
-  /* Native-app splash coda — continues the native launch splash's dark field
-     with the wordmark + running version, then fades (see showAppSplash). */
-  .app-splash {
-    position: fixed;
-    inset: 0;
-    z-index: 9998;
-    display: grid;
-    place-items: center;
-    background: #04040c;
-    pointer-events: none;
-  }
-  .app-splash-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    /* nudge up so the pair sits over the native mark's optical centre */
-    transform: translateY(-4%);
-  }
-  .app-splash-wordmark {
-    font-family: var(--font-display, 'Bebas Neue', sans-serif);
-    font-size: 56px;
-    letter-spacing: 8px;
-    line-height: 1;
-    color: var(--color-text, #eef1f8);
-  }
-  .app-splash-version {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 13px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
-  }
   main {
     min-height: calc(100vh - var(--nav-height));
   }

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,11 +13,38 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" id="snD-IY-ifK">
+                    <!-- Root view: the full-bleed splash image + a version label in the
+                         empty space below the ORRERY wordmark. The label shows on BOTH
+                         the OS launch screen AND the @capacitor/splash-screen plugin
+                         splash — the plugin instantiates THIS storyboard (see
+                         SplashScreen.swift: UILaunchStoryboardName). So it's the one
+                         splash, with the version on it — not a second splash overlay.
+                         Text is the release line (v0.8); the app footer/nav render the
+                         exact dynamic build. Update on version bump (release checklist). -->
+                    <view key="view" contentMode="scaleToFill" id="ROOT-vw-001">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" image="Splash" id="snD-IY-ifK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v0.8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VERS-lb-001">
+                                <rect key="frame" x="163.5" y="586" width="48" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.45" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </imageView>
+                        <constraints>
+                            <constraint firstItem="snD-IY-ifK" firstAttribute="top" secondItem="ROOT-vw-001" secondAttribute="top" id="cst-img-top"/>
+                            <constraint firstItem="snD-IY-ifK" firstAttribute="leading" secondItem="ROOT-vw-001" secondAttribute="leading" id="cst-img-lead"/>
+                            <constraint firstItem="snD-IY-ifK" firstAttribute="trailing" secondItem="ROOT-vw-001" secondAttribute="trailing" id="cst-img-trail"/>
+                            <constraint firstItem="snD-IY-ifK" firstAttribute="bottom" secondItem="ROOT-vw-001" secondAttribute="bottom" id="cst-img-bot"/>
+                            <constraint firstItem="VERS-lb-001" firstAttribute="centerX" secondItem="ROOT-vw-001" secondAttribute="centerX" id="cst-lbl-cx"/>
+                            <constraint firstItem="VERS-lb-001" firstAttribute="centerY" secondItem="ROOT-vw-001" secondAttribute="centerY" multiplier="1.78" id="cst-lbl-cy"/>
+                        </constraints>
+                    </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

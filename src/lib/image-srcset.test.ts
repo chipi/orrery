@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'node:fs';
 import { srcsetFor, loadLadder, ladderSources } from './image-srcset';
 
 describe('srcsetFor', () => {
@@ -58,5 +59,21 @@ describe('ladderSources', () => {
     // No successful browser-side loadLadder has run, so the cache is null
     // and callers fall back to the plain <img src>.
     expect(ladderSources('https://x/images/missions/curiosity/01.jpg')).toBeNull();
+  });
+});
+
+describe('image-ladder manifest — mobile-rung invariant (PRD-035 Part 1 / #482)', () => {
+  // Every laddered image MUST expose a rung a phone can use (≤1280px); its base
+  // counts as a rung. Guards against a regression re-introducing the over-serve
+  // that `scripts/mobile/add-mobile-rung.mjs` fixed. If this fails after adding
+  // large images, run: node scripts/mobile/add-mobile-rung.mjs
+  const manifest: Record<string, number[]> = JSON.parse(
+    readFileSync('static/data/image-ladder.json', 'utf8'),
+  );
+  it('every ladder entry has a rung ≤ 1280px', () => {
+    const overserve = Object.entries(manifest).filter(
+      ([, widths]) => !widths.some((w) => w <= 1280),
+    );
+    expect(overserve).toEqual([]);
   });
 });

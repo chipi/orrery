@@ -15,9 +15,16 @@
 
   function pick(env: TargetEnv) {
     if (env === current) return;
-    setTargetEnv(env); // takes effect next launch (native crash sink rebinds then)
+    setTargetEnv(env); // persisted; the origin is read at module load, so apply = reload
     current = env;
     changed = true;
+  }
+
+  // assetOrigin + Sentry DSN bind once at module init, so a target switch needs a
+  // fresh init. A WebView reload re-runs init (re-reads the persisted target) and
+  // applies the switch — no need to force-quit the native app.
+  function relaunch() {
+    location.reload();
   }
 </script>
 
@@ -38,7 +45,7 @@
       {/each}
     </div>
     {#if changed}
-      <span class="hint">relaunch to apply</span>
+      <button type="button" class="relaunch" onclick={relaunch}>Relaunch to apply</button>
     {/if}
   </aside>
 {/if}
@@ -82,7 +89,15 @@
     background: #2b6cb0;
     color: #fff;
   }
-  .hint {
+  .relaunch {
     color: #f6ad55;
+    border: 1px solid rgba(246, 173, 85, 0.5);
+    border-radius: 5px;
+    padding: 3px 10px;
+    text-transform: none;
+    font-weight: 600;
+  }
+  .relaunch:hover {
+    background: rgba(246, 173, 85, 0.15);
   }
 </style>

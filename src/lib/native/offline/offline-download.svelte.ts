@@ -66,6 +66,25 @@ export const offline = $state({
 let backend: StorageBackend | null = null;
 let cancelled = false;
 
+/** Tell the PWA service worker to refresh its offline-cache index. */
+function notifySW(msg: string): void {
+  try {
+    navigator.serviceWorker?.controller?.postMessage(msg);
+  } catch {
+    /* no SW controller yet — the index is rebuilt at the SW's next activate */
+  }
+}
+
+/**
+ * Arm the read side after a tier is available. Filesystem (native) rewrites URLs to
+ * local files via the resolver; Cache (PWA) needs no rewrite — the SW serves the
+ * cached requests, so we just refresh its index.
+ */
+async function armOffline(urls: string[]): Promise<void> {
+  if (backend?.kind === 'filesystem') await initOfflineResolver(urls);
+  else notifySW('orrery-offline-updated');
+}
+
 /** Call once at app start (mobile). Resolves the backend + restores prior state. */
 export async function initOffline(): Promise<void> {
   backend = await getStorageBackend();
@@ -88,7 +107,7 @@ export async function initOffline(): Promise<void> {
     offline.bytesTotal = meta.bytes;
     offline.status = 'done';
     // Arm the read-side resolver so cached assets serve offline from this launch.
-    if (manifest) await initOfflineResolver(manifest[meta.tier].urls);
+    if (manifest) await armOffline(manifest[meta.tier].urls);
   }
 }
 
@@ -188,12 +207,14 @@ export async function downloadTier(tier: OfflineTier, allowCellular = false): Pr
     offline.status = 'idle';
     return;
   }
-  const stored = await backend.size();
-  saveMeta({ tier, version: manifest.version, bytes: stored });
-  offline.bytesDone = stored;
+  // Record the tier's known total (from the manifest) rather than measuring the
+  // store — avoids an O(files) walk (slow on the Cache backend) and is accurate for
+  // a completed download. backend.size() stays available for diagnostics.
+  saveMeta({ tier, version: manifest.version, bytes });
+  offline.bytesDone = bytes;
   offline.status = 'done';
-  // Arm the read-side resolver so the just-downloaded assets serve offline now.
-  await initOfflineResolver(urls);
+  // Arm the read side so the just-downloaded assets serve offline now.
+  await armOffline(urls);
 }
 
 /** Stop an in-flight download (the partial tree stays usable). */
@@ -205,7 +226,8 @@ export function cancelDownload(): void {
 export async function removeOffline(): Promise<void> {
   if (!backend) return;
   await backend.clear();
-  clearOfflineResolver();
+  clearOfflineResolver(); // filesystem: disarm the URL rewrite (no-op otherwise)
+  notifySW('orrery-offline-updated'); // cache: SW drops the now-empty index
   saveMeta(null);
   offline.tier = null;
   offline.done = 0;

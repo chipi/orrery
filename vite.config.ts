@@ -255,6 +255,12 @@ export default defineConfig(({ mode }) => {
           skipWaiting: true,
           clientsClaim: true,
           cleanupOutdatedCaches: true,
+          // PRD-035 Part 3 (PWA offline): inject the offline-serve handler into the
+          // generated SW. It serves pre-downloaded streamed assets from the dedicated
+          // `orrery-offline` cache, and only for pathnames actually downloaded — so
+          // workbox's own routing + non-downloaded users are untouched. See
+          // static/offline-sw.js.
+          importScripts: ['offline-sw.js'],
           runtimeCaching: [
             {
               // Imagery — runtime-cached on demand, NOT precached (precaching

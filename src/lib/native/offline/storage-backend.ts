@@ -39,6 +39,27 @@ export async function getStorageBackend(): Promise<StorageBackend | null> {
     const { FilesystemBackend } = await import('./filesystem-backend');
     return new FilesystemBackend();
   }
-  // Part 3 (PWA): return a CacheStorageBackend when caches + a SW are present.
+  // Installed PWA (standalone) with Cache Storage + a service worker → the Cache
+  // backend (Part 3). A plain browser tab returns null (no offline UI for a random
+  // visitor — the download is opt-in from an installed app).
+  if (
+    typeof caches !== 'undefined' &&
+    typeof navigator !== 'undefined' &&
+    'serviceWorker' in navigator &&
+    isStandalonePWA()
+  ) {
+    const { CacheStorageBackend } = await import('./cache-storage-backend');
+    return new CacheStorageBackend();
+  }
   return null;
+}
+
+/** True when running as an installed PWA (Android/desktop standalone or iOS). */
+function isStandalonePWA(): boolean {
+  if (typeof window === 'undefined') return false;
+  return (
+    window.matchMedia?.('(display-mode: standalone)').matches === true ||
+    // iOS Safari home-screen web app
+    (navigator as unknown as { standalone?: boolean }).standalone === true
+  );
 }

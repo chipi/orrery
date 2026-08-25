@@ -230,9 +230,9 @@
       </section>
     {/if}
 
-    <!-- Offline download — mobile app only (durable native storage). Hidden where
-         unsupported (web / no backend). Strings are English for the internal build;
-         i18n before App Store ship (follow-up). -->
+    <!-- Offline download — native app (durable Filesystem) OR installed PWA (Cache
+         Storage; Part 3). Hidden in a plain browser tab / where unsupported. Strings
+         are English for now; i18n before App Store ship (follow-up). -->
     {#if offline.status !== 'unsupported'}
       <section class="section">
         <div class="section-title">Offline</div>

@@ -8,12 +8,18 @@ PODS:
   - CapacitorCommunitySafeArea (8.0.1):
     - Capacitor
   - CapacitorCordova (8.4.2)
+  - CapacitorFilesystem (8.1.3):
+    - Capacitor
+    - IONFilesystemLib (~> 1.1.1)
   - CapacitorHaptics (8.0.2):
+    - Capacitor
+  - CapacitorNetwork (8.0.1):
     - Capacitor
   - CapacitorShare (8.0.1):
     - Capacitor
   - CapacitorSplashScreen (8.0.1):
     - Capacitor
+  - IONFilesystemLib (1.1.2)
   - Sentry (9.16.1):
     - Sentry/Core (= 9.16.1)
   - Sentry/Core (9.16.1)
@@ -27,13 +33,16 @@ DEPENDENCIES:
   - "CapacitorBrowser (from `../../node_modules/@capacitor/browser`)"
   - "CapacitorCommunitySafeArea (from `../../node_modules/@capacitor-community/safe-area`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorFilesystem (from `../../node_modules/@capacitor/filesystem`)"
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
+  - "CapacitorNetwork (from `../../node_modules/@capacitor/network`)"
   - "CapacitorShare (from `../../node_modules/@capacitor/share`)"
   - "CapacitorSplashScreen (from `../../node_modules/@capacitor/splash-screen`)"
   - "SentryCapacitor (from `../../node_modules/@sentry/capacitor`)"
 
 SPEC REPOS:
   trunk:
+    - IONFilesystemLib
     - Sentry
 
 EXTERNAL SOURCES:
@@ -47,8 +56,12 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor-community/safe-area"
   CapacitorCordova:
     :path: "../../node_modules/@capacitor/ios"
+  CapacitorFilesystem:
+    :path: "../../node_modules/@capacitor/filesystem"
   CapacitorHaptics:
     :path: "../../node_modules/@capacitor/haptics"
+  CapacitorNetwork:
+    :path: "../../node_modules/@capacitor/network"
   CapacitorShare:
     :path: "../../node_modules/@capacitor/share"
   CapacitorSplashScreen:
@@ -62,12 +75,15 @@ SPEC CHECKSUMS:
   CapacitorBrowser: c987c73d09d8bd3b5ec13f06338b1e14d5d2be69
   CapacitorCommunitySafeArea: 91738f4ae7f47d2d94e06e429e16fb73cd8fdc48
   CapacitorCordova: 345eacdc4c8282415446aea4acd8c77d82480bd4
+  CapacitorFilesystem: b2bbd84bb91c177906c9dbc252864cb71ab9957b
   CapacitorHaptics: 296f771ecd89c7a1bd92a7b6826a7d268e2e70f5
+  CapacitorNetwork: 8812ce60d11fb63d8f2e4ba51a49b2e59892ebe2
   CapacitorShare: 0c58305114538568059bfc07111f22dcb9cb2a82
   CapacitorSplashScreen: 4b46c72298db552b3c57ce021ef028b6dc7f1fa7
+  IONFilesystemLib: 21a63377696b2d8fab5632ecfb7d2ac67bddb68a
   Sentry: e5d82a3c1f2d951f75c04c57215a0abb1facbd51
   SentryCapacitor: 865c2ef0d0d010cb50509b0846dd0a9848006b05
 
-PODFILE CHECKSUM: e1458a0c0b7a866535ae4375f9865e2f85d16c07
+PODFILE CHECKSUM: 19d32798256faec2a5cf3a3c0e9592ade580f159
 
 COCOAPODS: 1.16.2

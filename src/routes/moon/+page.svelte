@@ -63,7 +63,11 @@
       observerView = view;
       // Orient to the sub-Earth selenographic point so the near side (wobbled by
       // tonight's libration) faces the camera — "what part you'd actually see".
-      surfaceScene?.faceLatLon(view.libration.latDeg, view.libration.lonDeg);
+      // Frame the WHOLE disk (large targetR) so the phase terminator reads.
+      surfaceScene?.faceLatLon(view.libration.latDeg, view.libration.lonDeg, 150);
+      // Light it from the real sub-solar point so the terminator matches tonight's
+      // phase (faceLatLon froze the spin, so both stay consistent with the globe).
+      surfaceScene?.aimSunAtBodyLatLon(view.subSolar.latDeg, view.subSolar.lonDeg);
     } finally {
       locating = false;
     }

@@ -3,11 +3,26 @@ import {
   moonPhase,
   moonLibration,
   opticalLibration,
+  subSolarPoint,
   moonObserverView,
+  type MoonLibration,
 } from './moon-observer';
 import { centuriesSinceJ2000 } from './time';
 
 const norm360 = (d: number): number => ((d % 360) + 360) % 360;
+
+// Selenographic (lon, lat) → unit vector, and the angle between two points.
+function unit(p: MoonLibration): [number, number, number] {
+  const la = (p.latDeg * Math.PI) / 180;
+  const lo = (p.lonDeg * Math.PI) / 180;
+  return [Math.cos(la) * Math.cos(lo), Math.cos(la) * Math.sin(lo), Math.sin(la)];
+}
+function angleBetween(a: MoonLibration, b: MoonLibration): number {
+  const [ax, ay, az] = unit(a);
+  const [bx, by, bz] = unit(b);
+  const dot = Math.min(1, Math.max(-1, ax * bx + ay * by + az * bz));
+  return (Math.acos(dot) * 180) / Math.PI;
+}
 
 describe('moonPhase — against known 2024 lunar-phase instants', () => {
   // Almanac phase times (UTC).
@@ -77,6 +92,33 @@ describe('moonLibration — physically bounded amplitude over a year', () => {
     // A units/sign bug would collapse the swing toward zero — assert it's real.
     expect(maxLon).toBeGreaterThan(5);
     expect(maxLat).toBeGreaterThan(5);
+  });
+});
+
+describe('subSolarPoint — drives the terminator', () => {
+  it('sits a phase-angle away from the sub-Earth point, all year (so the lit '
+    + 'hemisphere is correct)', () => {
+    const start = Date.UTC(2024, 0, 1);
+    for (let day = 0; day < 366; day += 3) {
+      const date = new Date(start + day * 86_400_000);
+      const gap = angleBetween(subSolarPoint(date), moonLibration(date));
+      const phaseAngle = moonPhase(date).phaseAngleDeg;
+      // Same body-frame rotation ⇒ the selenographic gap equals the space-angle
+      // between Moon→Sun and Moon→Earth = the phase angle.
+      expect(Math.abs(gap - phaseAngle)).toBeLessThan(1.5);
+    }
+  });
+
+  it('coincides with the sub-Earth point at full moon (near side fully lit)', () => {
+    const FULL = new Date('2024-01-25T17:54:00Z');
+    const gap = angleBetween(subSolarPoint(FULL), moonLibration(FULL));
+    expect(gap).toBeLessThan(12); // small phase angle near full
+  });
+
+  it('is nearly antipodal to the sub-Earth point at new moon (far side lit)', () => {
+    const NEW = new Date('2024-01-11T11:57:00Z');
+    const gap = angleBetween(subSolarPoint(NEW), moonLibration(NEW));
+    expect(gap).toBeGreaterThan(168); // phase angle near 180
   });
 });
 

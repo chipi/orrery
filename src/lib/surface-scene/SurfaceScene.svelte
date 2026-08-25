@@ -869,10 +869,20 @@
   // in onMount (captures the fly-tween vars); exposed via the faceLatLon handle.
   let faceLatLonImpl: ((latDeg: number, lonDeg: number, targetR?: number) => void) | undefined;
   /** Fly the camera to face a geographic lat/lon (#48). The parent calls this
-   *  via `bind:this` after resolving the observer's GPS location. No-op until the
-   *  scene has mounted (faceLatLonImpl is assigned in onMount). */
-  export function faceLatLon(latDeg: number, lonDeg: number): void {
-    faceLatLonImpl?.(latDeg, lonDeg);
+   *  via `bind:this` after resolving the observer's GPS location. `targetR` sets
+   *  the landing distance — small frames a region (/earth); large frames the
+   *  whole disk (/moon observer view). No-op until the scene has mounted. */
+  export function faceLatLon(latDeg: number, lonDeg: number, targetR?: number): void {
+    faceLatLonImpl?.(latDeg, lonDeg, targetR);
+  }
+  // Aim the sun light so a body-frame lat/lon (e.g. the Moon's sub-solar point)
+  // is the sub-solar point of the lighting — i.e. the terminator matches the
+  // real phase (#48). Assigned in onMount (captures the sun light + planetMesh).
+  let aimSunAtBodyLatLonImpl: ((latDeg: number, lonDeg: number) => void) | undefined;
+  /** Point the sun light at a body-frame lat/lon so the lit hemisphere is
+   *  centred there (#48 — /moon terminator). No-op until mounted. */
+  export function aimSunAtBodyLatLon(latDeg: number, lonDeg: number): void {
+    aimSunAtBodyLatLonImpl?.(latDeg, lonDeg);
   }
   // Lazily build a rover's along-route HiRISE imagery the first time it's
   // selected (#363 perf) — invoked from selectSite before the camera
@@ -1550,6 +1560,21 @@
       flyStart = performance.now();
       flyActive = true;
       autoSpin = false;
+    };
+    // #48 — aim the sun so a body-frame lat/lon is the sub-solar point of the
+    // lighting (the /moon terminator). Same local→world path faceLatLon uses, so
+    // the camera (sub-Earth) and light (sub-solar) stay consistent with the
+    // globe's frozen orientation (faceLatLon stops the spin). A DirectionalLight
+    // shines from `position` toward the origin, so placing it along the point's
+    // world direction lights exactly that hemisphere.
+    aimSunAtBodyLatLonImpl = (latDeg: number, lonDeg: number) => {
+      const v = latLonToUnitSphere(latDeg, lonDeg);
+      planetMesh.updateMatrixWorld(true);
+      const worldDir = new THREE.Vector3(v.x, v.y, v.z)
+        .applyMatrix4(planetMesh.matrixWorld)
+        .normalize();
+      const dist = sun.position.length() || 200;
+      sun.position.copy(worldDir.multiplyScalar(dist));
     };
 
     // CORE-2 (#351 follow-up) — orbital-object focus. Reads the sat's

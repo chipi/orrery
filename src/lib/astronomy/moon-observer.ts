@@ -127,23 +127,55 @@ export function opticalLibration(
   return { lonDeg: lon, latDeg: lat };
 }
 
+// Mean ascending node (Ω) and argument of latitude (F) of the Moon at `t`
+// Julian centuries (Meeus 47.7 / 22) — the body-frame reference the libration
+// projection uses.
+function nodeAndArgLat(t: number): { omega: number; argLat: number } {
+  return {
+    omega: norm360(125.04452 - 1934.136261 * t + 0.0020708 * t * t),
+    argLat: norm360(93.272095 + 483202.0175233 * t - 0.0036539 * t * t),
+  };
+}
+
 /** Optical libration of the Moon at `date` (drives the sub-Earth orientation). */
 export function moonLibration(date: Date): MoonLibration {
   const jd = julianDay(date);
-  const t = centuriesSinceJ2000(jd);
   const m = geocentricMoon(jd);
   const r = m.distanceAu;
   const lambda = norm360(Math.atan2(m.pos.y, m.pos.x) * RAD);
   const beta = Math.asin(Math.min(1, Math.max(-1, m.pos.z / r))) * RAD;
-  // Mean ascending node and argument of latitude of the Moon (Meeus 47.7 / 22).
-  const omega = norm360(125.04452 - 1934.136261 * t + 0.0020708 * t * t);
-  const argLat = norm360(93.272095 + 483202.0175233 * t - 0.0036539 * t * t);
+  const { omega, argLat } = nodeAndArgLat(centuriesSinceJ2000(jd));
   return opticalLibration(lambda, beta, omega, argLat);
+}
+
+/**
+ * Sub-solar selenographic point — where the Sun is overhead on the Moon, in the
+ * SAME selenographic frame as the sub-Earth libration. Projecting the Sun→Moon
+ * direction through the identical body-frame rotation means the angular gap
+ * between this point and the sub-Earth point is exactly the phase angle, so
+ * lighting the globe from here produces the correct terminator (#48).
+ */
+export function subSolarPoint(date: Date): MoonLibration {
+  const jd = julianDay(date);
+  const m = geocentricMoon(jd);
+  const s = geocentricSun(jd);
+  // Sun→Moon direction (ecliptic): the point facing it is lit.
+  const vx = m.pos.x - s.x;
+  const vy = m.pos.y - s.y;
+  const vz = m.pos.z - s.z;
+  const r = Math.hypot(vx, vy, vz);
+  const lambdaH = norm360(Math.atan2(vy, vx) * RAD);
+  const betaH = Math.asin(Math.min(1, Math.max(-1, vz / r))) * RAD;
+  const { omega, argLat } = nodeAndArgLat(centuriesSinceJ2000(jd));
+  return opticalLibration(lambdaH, betaH, omega, argLat);
 }
 
 export interface MoonObserverView {
   phase: MoonPhase;
   libration: MoonLibration;
+  /** Sub-solar selenographic point — aim the globe's sun light here for the
+   *  correct terminator (same frame as `libration`). */
+  subSolar: MoonLibration;
   /** Moon altitude above the horizon, degrees (negative = below). */
   altitudeDeg: number;
   /** Moon azimuth from true north, degrees. */
@@ -165,6 +197,7 @@ export interface MoonObserverView {
 export function moonObserverView(date: Date, latDeg: number, lonDeg: number): MoonObserverView {
   const phase = moonPhase(date);
   const libration = moonLibration(date);
+  const subSolar = subSolarPoint(date);
   const moon = skyPosition('moon', date, latDeg, lonDeg);
   const sun = skyPosition('sun', date, latDeg, lonDeg);
 
@@ -192,6 +225,7 @@ export function moonObserverView(date: Date, latDeg: number, lonDeg: number): Mo
   return {
     phase,
     libration,
+    subSolar,
     altitudeDeg: moon.altRad * RAD,
     azimuthDeg: wrap(moon.azRad * RAD),
     aboveHorizon: moon.aboveHorizon,

@@ -10,6 +10,7 @@
 import * as THREE from 'three';
 import { pickSkyView, type SkyView } from './sky-view';
 import { skyPosition, skyDirectionENU, SKY_BODIES, type SkyBody } from '../astronomy';
+import { moonPhase } from '../astronomy/moon-observer';
 import { getObserverLocation, type ObserverLocation } from '../geolocation';
 import {
   resolveStationTle,
@@ -53,6 +54,20 @@ const BODY_LABEL: Record<SkyBody, string> = {
 const STATION_LABEL: Record<StationId, string> = { iss: 'ISS', tiangong: 'Tiangong' };
 const STATION_COLOR: Record<StationId, string> = { iss: '#7cff9e', tiangong: '#ff9edc' };
 
+// Marker disc radius (canvas px) ~ by brightness, so Venus reads brighter than
+// Mars and the dim ice giants stay small (#51 visual).
+const BODY_RADIUS: Record<SkyBody, number> = {
+  sun: 56,
+  moon: 56,
+  venus: 48,
+  jupiter: 44,
+  saturn: 40,
+  mars: 36,
+  mercury: 34,
+  uranus: 27,
+  neptune: 25,
+};
+
 export interface SkySceneOptions {
   /** Called when the AR session ends. */
   onExit?: () => void;
@@ -71,36 +86,104 @@ export interface SkySceneHandle {
   location(): ObserverLocation | null;
 }
 
-/** A reticle + label sprite — a canvas texture so it stays crisp. */
+/** Phase shading for the Moon marker (#51 visual). */
+export interface MarkerPhase {
+  /** 0 (new) → 1 (full). */
+  illuminatedFraction: number;
+  /** Lit on the leading (right) limb when true. */
+  waxing: boolean;
+}
+
+/** Draw a glowing body disc + label onto a canvas the sprite maps (#51). The
+ *  body reads as its real colour, sized by brightness; the Moon shows its phase.
+ *  Returns the redraw fn so the Moon can repaint as its phase updates. */
+function drawMarker(
+  ctx: CanvasRenderingContext2D,
+  size: number,
+  label: string,
+  color: string,
+  bodyRadius: number,
+  phase?: MarkerPhase,
+): void {
+  const cx = size / 2;
+  const cy = size * 0.4;
+  ctx.clearRect(0, 0, size, size);
+
+  // Soft glow so bright bodies bloom.
+  const glow = ctx.createRadialGradient(cx, cy, bodyRadius * 0.4, cx, cy, bodyRadius * 2.6);
+  glow.addColorStop(0, color);
+  glow.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.globalAlpha = 0.5;
+  ctx.fillStyle = glow;
+  ctx.beginPath();
+  ctx.arc(cx, cy, bodyRadius * 2.6, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.globalAlpha = 1;
+
+  if (phase) {
+    // Moon phase, clipped to the disc: fill the lit half, then the terminator
+    // ellipse either CARVES it to a crescent (k<½, erase with the dark shade) or
+    // EXTENDS it to a gibbous (k>½, add the lit shade).
+    const dark = 'rgba(70,74,86,0.95)';
+    ctx.fillStyle = dark;
+    ctx.beginPath();
+    ctx.arc(cx, cy, bodyRadius, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(cx, cy, bodyRadius, 0, Math.PI * 2);
+    ctx.clip();
+    const k = Math.max(0, Math.min(1, phase.illuminatedFraction));
+    const litRight = phase.waxing;
+    const termX = bodyRadius * Math.abs(1 - 2 * k);
+    // Lit half.
+    ctx.fillStyle = color;
+    ctx.fillRect(litRight ? cx : cx - bodyRadius, cy - bodyRadius, bodyRadius, bodyRadius * 2);
+    // Terminator ellipse.
+    ctx.fillStyle = k < 0.5 ? dark : color;
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, termX, bodyRadius, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+    ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(cx, cy, bodyRadius, 0, Math.PI * 2);
+    ctx.stroke();
+  } else {
+    // Planet/Sun/station: a filled disc with a thin bright rim.
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(cx, cy, bodyRadius, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.55)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
+
+  // Label.
+  ctx.font = '600 30px "Space Mono", monospace';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = '#ffffff';
+  ctx.shadowColor = 'rgba(0,0,0,0.9)';
+  ctx.shadowBlur = 6;
+  ctx.fillText(label, cx, size * 0.82);
+  ctx.shadowBlur = 0;
+}
+
 function makeMarker(
   label: string,
   color: string,
-): { group: THREE.Group; texture: THREE.CanvasTexture } {
+  bodyRadius = 40,
+  phase?: MarkerPhase,
+): { group: THREE.Group; texture: THREE.CanvasTexture; canvas: HTMLCanvasElement; size: number } {
   const size = 256;
   const canvas = document.createElement('canvas');
   canvas.width = size;
   canvas.height = size;
   const ctx = canvas.getContext('2d')!;
-
-  // Reticle ring + centre dot.
-  ctx.strokeStyle = color;
-  ctx.lineWidth = 6;
-  ctx.beginPath();
-  ctx.arc(size / 2, size * 0.38, 46, 0, Math.PI * 2);
-  ctx.stroke();
-  ctx.fillStyle = color;
-  ctx.beginPath();
-  ctx.arc(size / 2, size * 0.38, 8, 0, Math.PI * 2);
-  ctx.fill();
-
-  // Label.
-  ctx.font = '600 34px "Space Mono", monospace';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.fillStyle = '#ffffff';
-  ctx.shadowColor = 'rgba(0,0,0,0.85)';
-  ctx.shadowBlur = 6;
-  ctx.fillText(label, size / 2, size * 0.74);
+  drawMarker(ctx, size, label, color, bodyRadius, phase);
 
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
@@ -115,8 +198,39 @@ function makeMarker(
   sprite.scale.set(6, 6, 1);
   const group = new THREE.Group();
   group.add(sprite);
-  return { group, texture };
+  return { group, texture, canvas, size };
 }
+
+/** A crisp text sprite (cardinal marks). */
+function makeTextSprite(text: string, color: string): THREE.Sprite {
+  const size = 128;
+  const c = document.createElement('canvas');
+  c.width = size;
+  c.height = size;
+  const ctx = c.getContext('2d')!;
+  ctx.font = '700 64px "Space Mono", monospace';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = color;
+  ctx.shadowColor = 'rgba(0,0,0,0.9)';
+  ctx.shadowBlur = 8;
+  ctx.fillText(text, size / 2, size / 2);
+  const tex = new THREE.CanvasTexture(c);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  const sprite = new THREE.Sprite(
+    new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }),
+  );
+  sprite.scale.set(3, 3, 1);
+  return sprite;
+}
+
+// The four cardinal directions as horizon ENU unit vectors (North=−z, East=+x).
+const CARDINALS: Array<{ text: string; dir: [number, number, number] }> = [
+  { text: 'N', dir: [0, 0, -1] },
+  { text: 'E', dir: [1, 0, 0] },
+  { text: 'S', dir: [0, 0, 1] },
+  { text: 'W', dir: [-1, 0, 0] },
+];
 
 export function createSkyScene(
   canvas: HTMLCanvasElement,
@@ -150,7 +264,14 @@ export function createSkyScene(
     { group: THREE.Group; texture: THREE.CanvasTexture; dir: THREE.Vector3 }
   >();
   for (const body of SKY_BODIES) {
-    const { group, texture } = makeMarker(BODY_LABEL[body], BODY_COLOR[body]);
+    // Phase is ~constant over a session, so paint the Moon once at start.
+    const phase = body === 'moon' ? moonPhase(new Date()) : undefined;
+    const { group, texture } = makeMarker(
+      BODY_LABEL[body],
+      BODY_COLOR[body],
+      BODY_RADIUS[body],
+      phase,
+    );
     group.visible = false;
     scene.add(group);
     markers.set(body, { group, texture, dir: new THREE.Vector3() });
@@ -166,6 +287,69 @@ export function createSkyScene(
     group.visible = false;
     scene.add(group);
     stationMarkers.set(id, { group, texture, tle: null, dir: new THREE.Vector3() });
+  }
+
+  // Cardinal marks on the horizon so the sky is oriented (#51 visual).
+  const cardinals = CARDINALS.map((c) => {
+    const sprite = makeTextSprite(c.text, 'rgba(190,205,225,0.85)');
+    scene.add(sprite);
+    return { sprite, dir: new THREE.Vector3(...c.dir) };
+  });
+
+  // Find-arrows (#51): a DOM overlay pointing to up-bodies outside the current
+  // view, so a single narrow field-of-view doesn't hide the rest of the sky.
+  const arrowLayer =
+    typeof document !== 'undefined' ? document.createElement('div') : null;
+  if (arrowLayer) {
+    arrowLayer.className = 'ar-find-arrows';
+    arrowLayer.style.cssText = 'position:fixed;inset:0;z-index:9998;pointer-events:none;';
+    document.body.appendChild(arrowLayer);
+  }
+  const arrowEls = new Map<string, HTMLDivElement>();
+  const ndc = new THREE.Vector3();
+  const viewPos = new THREE.Vector3();
+  function updateArrow(key: string, label: string, color: string, world: THREE.Vector3): void {
+    if (!arrowLayer) return;
+    viewPos.copy(world).applyMatrix4(camera.matrixWorldInverse); // camera space, −z fwd
+    const behind = viewPos.z > 0;
+    ndc.copy(world).project(camera);
+    const onScreen = !behind && Math.abs(ndc.x) <= 1 && Math.abs(ndc.y) <= 1;
+    let el = arrowEls.get(key);
+    if (onScreen) {
+      if (el) el.style.display = 'none';
+      return;
+    }
+    if (!el) {
+      el = document.createElement('div');
+      el.style.cssText =
+        'position:absolute;transform-origin:center;font:600 12px "Space Mono",monospace;' +
+        'white-space:nowrap;text-shadow:0 1px 3px rgba(0,0,0,0.9);will-change:transform;';
+      arrowLayer.appendChild(el);
+      arrowEls.set(key, el);
+    }
+    el.style.display = 'block';
+    el.style.color = color;
+    el.textContent = `▲ ${label}`;
+    // Screen-space direction from centre toward the (possibly behind) body.
+    const dx = behind ? -viewPos.x : viewPos.x;
+    const dy = behind ? -viewPos.y : viewPos.y;
+    const ang = Math.atan2(-dy, dx); // screen y is down
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const cx = w / 2;
+    const cy = h / 2;
+    const margin = 46;
+    // Clamp the arrow onto a rounded rectangle just inside the screen edge.
+    const rx = cx - margin;
+    const ry = cy - margin;
+    const t = Math.min(rx / Math.max(Math.abs(Math.cos(ang)), 1e-3), ry / Math.max(Math.abs(Math.sin(ang)), 1e-3));
+    const px = cx + t * Math.cos(ang);
+    const py = cy - t * Math.sin(ang);
+    // Point the ▲ outward (toward the body); it points up at 0°, so rotate.
+    const rot = 90 - (ang * 180) / Math.PI;
+    el.style.left = `${px}px`;
+    el.style.top = `${py}px`;
+    el.style.transform = `translate(-50%,-50%) rotate(${rot}deg)`;
   }
 
   let view: SkyView | null = null;
@@ -240,18 +424,27 @@ export function createSkyScene(
       // correct sky direction regardless of small translation). The view maps
       // the stored ENU direction into the render world (identity for a
       // heading-aligned/compass-corrected substrate, a yaw for raw WebXR).
-      for (const { group, dir } of markers.values()) {
+      // Cardinal marks ride the horizon at their fixed azimuths.
+      for (const { sprite, dir } of cardinals) {
+        worldDir.copy(dir);
+        view.toWorldDir(worldDir);
+        sprite.position.copy(camPos).addScaledVector(worldDir, MARKER_RADIUS);
+      }
+      camera.updateMatrixWorld();
+      for (const [body, { group, dir }] of markers) {
         if (!group.visible) continue;
         worldDir.copy(dir);
         view.toWorldDir(worldDir);
         group.position.copy(camPos).addScaledVector(worldDir, MARKER_RADIUS);
+        updateArrow(body, BODY_LABEL[body], BODY_COLOR[body], group.position);
       }
       // Stations move fast (deg/s) — recompute every frame from their TLE.
       if (observer) {
         const nowD = new Date(t);
-        for (const sm of stationMarkers.values()) {
+        for (const [id, sm] of stationMarkers) {
           if (!sm.tle) {
             sm.group.visible = false;
+            arrowEls.get(id)?.style.setProperty('display', 'none');
             continue;
           }
           const la = lookAngleForTle(sm.tle, nowD, observer.latDeg, observer.lonDeg);
@@ -262,8 +455,10 @@ export function createSkyScene(
             view.toWorldDir(worldDir);
             sm.group.position.copy(camPos).addScaledVector(worldDir, MARKER_RADIUS);
             sm.group.visible = true;
+            updateArrow(id, STATION_LABEL[id], STATION_COLOR[id], sm.group.position);
           } else {
             sm.group.visible = false;
+            arrowEls.get(id)?.style.setProperty('display', 'none');
           }
         }
       }
@@ -284,6 +479,9 @@ export function createSkyScene(
     view = null;
     for (const { texture } of markers.values()) texture.dispose();
     for (const { texture } of stationMarkers.values()) texture.dispose();
+    for (const { sprite } of cardinals) (sprite.material.map as THREE.Texture | null)?.dispose();
+    arrowLayer?.remove();
+    arrowEls.clear();
     scene.traverse((o) => {
       const s = o as THREE.Sprite;
       s.material?.dispose?.();

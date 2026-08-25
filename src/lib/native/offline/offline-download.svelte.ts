@@ -96,7 +96,7 @@ export async function initOffline(): Promise<void> {
 // (not the stream origin) — so it's reachable offline. Never route it through
 // assetUrl (which points at the stream CDN).
 async function fetchManifest(): Promise<Manifest> {
-  const res = await fetch(`${base}/offline-manifest.json`, { cache: 'no-store' });
+  const res = await fetch(`${base}/data/offline-manifest.json`, { cache: 'no-store' });
   if (!res.ok) throw new Error(`manifest ${res.status}`);
   return res.json();
 }

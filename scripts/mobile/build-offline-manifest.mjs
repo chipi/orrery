@@ -15,7 +15,7 @@
  * "Hero" = slot 01 by default, or the slot named in `<bucket>-hero-overrides.json`.
  * Images resolve to their MOBILE RUNG (≤1280 file if one exists, else the base) —
  * the same pixels `<img srcset>` serves. URLs are RELATIVE; the engine prepends the
- * runtime STREAM_ORIGIN. Output: static/offline-manifest.json.
+ * runtime STREAM_ORIGIN. Output: static/data/offline-manifest.json.
  *
  * Run: node scripts/mobile/build-offline-manifest.mjs
  */
@@ -144,7 +144,7 @@ for (const f of execSync(`find static/audio -type f`, { maxBuffer: 1e9 })
 }
 
 writeFileSync(
-  'static/offline-manifest.json',
+  'static/data/offline-manifest.json',
   JSON.stringify({
     version: VERSION,
     basic: { bytes: tally.basicBytes, urls: basic },

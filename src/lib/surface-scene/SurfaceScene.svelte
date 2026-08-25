@@ -864,6 +864,16 @@
   // Click handlers don't pass `face` so picking a marker on screen
   // doesn't lurch the camera off whatever the user was looking at.
   let faceCameraAtSite: ((site: SurfaceSite, targetR?: number) => void) | undefined;
+  // Fly the camera to face an arbitrary lat/lon (#48 — /earth "center on my
+  // location"). Mirrors faceCameraAtSite's tween without a site lookup. Assigned
+  // in onMount (captures the fly-tween vars); exposed via the faceLatLon handle.
+  let faceLatLonImpl: ((latDeg: number, lonDeg: number, targetR?: number) => void) | undefined;
+  /** Fly the camera to face a geographic lat/lon (#48). The parent calls this
+   *  via `bind:this` after resolving the observer's GPS location. No-op until the
+   *  scene has mounted (faceLatLonImpl is assigned in onMount). */
+  export function faceLatLon(latDeg: number, lonDeg: number): void {
+    faceLatLonImpl?.(latDeg, lonDeg);
+  }
   // Lazily build a rover's along-route HiRISE imagery the first time it's
   // selected (#363 perf) — invoked from selectSite before the camera
   // fly-in. Assigned in onMount once the traverse system exists.
@@ -1511,6 +1521,30 @@
       // start = end so nothing visible happened).
       flyToR = targetR;
       // Surface sites orbit the body origin — clear any object orbit-target.
+      flyFromOffset.copy(focusOffset);
+      flyToOffset.set(0, 0, 0);
+      flyStart = performance.now();
+      flyActive = true;
+      autoSpin = false;
+    };
+    // #48 — fly to any lat/lon (the /earth "center on my location" GPS button).
+    // Same tween as a site, minus the site/route lookup; a mid-distance landing
+    // so the whole region around the point sits framed. Holds (spin off) so the
+    // located point stays facing the camera instead of drifting away.
+    faceLatLonImpl = (latDeg: number, lonDeg: number, targetR = 46) => {
+      const v = latLonToUnitSphere(latDeg, lonDeg);
+      planetMesh.updateMatrixWorld(true);
+      const worldPos = new THREE.Vector3(v.x, v.y, v.z).applyMatrix4(planetMesh.matrixWorld);
+      const dir = worldPos.clone().normalize();
+      flyFromP = camP;
+      flyFromT = camT;
+      flyFromR = camR;
+      flyToP = Math.acos(Math.max(-1, Math.min(1, dir.y)));
+      let to = Math.atan2(dir.x, dir.z);
+      while (to - flyFromT > Math.PI) to -= 2 * Math.PI;
+      while (to - flyFromT < -Math.PI) to += 2 * Math.PI;
+      flyToT = to;
+      flyToR = targetR;
       flyFromOffset.copy(focusOffset);
       flyToOffset.set(0, 0, 0);
       flyStart = performance.now();

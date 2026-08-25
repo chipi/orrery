@@ -32,9 +32,27 @@
   import { getLocale } from '$lib/paraglide/runtime';
   import type { OrbitRegime } from '$types/orbit-regime';
   import { viewerLatLon } from '$lib/viewer-location';
+  import { getObserverLocation } from '$lib/geolocation';
   import * as m from '$lib/paraglide/messages';
 
   const earthSurfaceConfig = makeEarthLaunchSitesConfig(base);
+
+  // #48 — "center on my location": opt-in precise GPS centering, layered on top
+  // of the coarse timezone auto-orient. One tap resolves the observer's location
+  // (getObserverLocation: GPS → timezone → default, the same primitive AR uses)
+  // and flies the Earth so that point faces the camera. No auto-prompt on load.
+  let surfaceScene: SurfaceScene | undefined = $state();
+  let locating = $state(false);
+  async function centerOnMe(): Promise<void> {
+    if (locating) return;
+    locating = true;
+    try {
+      const loc = await getObserverLocation();
+      surfaceScene?.faceLatLon(loc.latDeg, loc.lonDeg);
+    } finally {
+      locating = false;
+    }
+  }
 
   // Orbit-ruler + regime-panel state (#354). Regimes load asynchronously
   // from the i18n overlay pipeline; the ruler renders nothing until the
@@ -149,6 +167,7 @@
 <DebugPanelRegistrar label="EARTH" />
 
 <SurfaceScene
+  bind:this={surfaceScene}
   config={earthSurfaceConfig}
   body="earth"
   loadSites={getEarthLaunchSites}
@@ -159,6 +178,20 @@
   onRegimeOpen={openRegime}
   onOrbitsInViewChange={(v) => (orbitsInView = v)}
 />
+
+<!-- #48 — opt-in precise centering. Coarse timezone orient still happens on
+     load; this flies to the GPS fix on demand (no auto-prompt). -->
+<button
+  type="button"
+  class="locate-me"
+  onclick={centerOnMe}
+  disabled={locating}
+  data-testid="earth-locate-me"
+  title={m.earth_locate_me()}
+>
+  <span class="locate-icon" aria-hidden="true">◎</span>
+  {locating ? m.earth_locate_working() : m.earth_locate_me()}
+</button>
 
 <TourAnchors route="earth" anchors={EARTH_TOUR_ANCHORS} />
 
@@ -190,6 +223,40 @@
 />
 
 <style>
+  /* #48 — "center on my location" button. Bottom-left, above the agency legend
+     and clear of the top-left reset/spin cluster + the left-edge layer chips. */
+  .locate-me {
+    position: absolute;
+    bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+    left: 12px;
+    z-index: 7;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 12px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-base, #e8e8ed);
+    background: rgba(8, 10, 22, 0.62);
+    border: 1px solid rgba(78, 205, 196, 0.35);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    min-height: 34px;
+  }
+  .locate-me:hover:not(:disabled) {
+    border-color: rgba(78, 205, 196, 0.7);
+  }
+  .locate-me:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+  .locate-icon {
+    color: #4ecdc4;
+    font-size: 14px;
+    line-height: 1;
+  }
   .ruler-desktop-only {
     display: contents;
   }

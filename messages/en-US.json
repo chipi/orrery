@@ -575,6 +575,8 @@
   "earth_year_scrubber_label": "YEAR",
   "earth_year_scrubber_aria": "Earth-orbit timeline scrubber, {min} to {max}",
   "earth_year_visible": "{count} visible",
+  "earth_locate_me": "Center on my location",
+  "earth_locate_working": "Locating…",
   "panel_label_from_sun": "FROM SUN",
   "panel_label_orbital_period": "ORBITAL PERIOD",
   "panel_label_semi_major_axis": "SEMI-MAJOR AXIS",

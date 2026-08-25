@@ -120,6 +120,13 @@ export function createCameraSkyView(): SkyView {
   let alpha = 0;
   let beta = 90; // upright default → look at the horizon before the first event
   let gamma = 0;
+  // True-north lock (#51). On iOS the DeviceOrientation `alpha` is RELATIVE (an
+  // arbitrary launch offset that drifts), so driving the camera from it alone
+  // makes the whole sky slide as you move. `webkitCompassHeading` (and Android's
+  // absolute `alpha`) give true north; we recover it here and correct the ENU
+  // directions each frame via a yaw offset — exactly as the WebXR path does.
+  let heading: number | null = null;
+  let yawOffset = 0;
   const q = new THREE.Quaternion();
 
   async function requestOrientationPermission(): Promise<void> {
@@ -149,6 +156,14 @@ export function createCameraSkyView(): SkyView {
         if (o.alpha != null) alpha = o.alpha;
         if (o.beta != null) beta = o.beta;
         if (o.gamma != null) gamma = o.gamma;
+        // Recover true north from the compass (iOS webkitCompassHeading, or
+        // Android's absolute alpha). Null on devices with no magnetometer → we
+        // fall back to the raw relative frame (no worse than before).
+        const h = compassHeadingRad(
+          { alpha: o.alpha, webkitCompassHeading: o.webkitCompassHeading },
+          screenAngleDeg(),
+        );
+        if (h != null) heading = h;
       };
       window.addEventListener('deviceorientationabsolute', onOrient);
       window.addEventListener('deviceorientation', onOrient);
@@ -205,9 +220,13 @@ export function createCameraSkyView(): SkyView {
     updateCamera(camera) {
       camera.position.set(0, 0, 0);
       camera.quaternion.copy(deviceQuaternion(alpha, beta, gamma, screenAngleDeg(), q));
+      // North-lock: the yaw that brings the (possibly relative) camera frame onto
+      // true north. Self-cancels to ~0 when alpha is already absolute (Android),
+      // and corrects the launch offset + drift when it isn't (iOS).
+      if (heading != null) yawOffset = skyYawOffset(camera.quaternion, heading);
     },
-    toWorldDir() {
-      /* identity — DeviceOrientation already yields an ENU-world camera */
+    toWorldDir(dir) {
+      if (yawOffset) dir.applyAxisAngle(Y, yawOffset);
     },
     onEnded() {
       /* no system-initiated end; exit is the button only */

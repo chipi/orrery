@@ -136,6 +136,13 @@ export function createSkyScene(
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
   }
+  // On portrait↔landscape the aspect must be re-derived or the billboarded
+  // reticles stretch into ellipses (#51). `orientationchange` fires BEFORE iOS
+  // updates the viewport dimensions, so resize now AND after it settles.
+  function onOrientationChange(): void {
+    resize();
+    setTimeout(resize, 300);
+  }
   resize();
 
   const markers = new Map<
@@ -192,7 +199,10 @@ export function createSkyScene(
       stop();
       opts.onExit?.();
     });
-    if (typeof window !== 'undefined') window.addEventListener('resize', resize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', resize);
+      window.addEventListener('orientationchange', onOrientationChange);
+    }
     recomputeDirections();
 
     // Resolve fresh TLEs, then surface each station's next visible pass (#405).
@@ -266,7 +276,10 @@ export function createSkyScene(
     if (disposed) return;
     disposed = true;
     renderer.setAnimationLoop(null);
-    if (typeof window !== 'undefined') window.removeEventListener('resize', resize);
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', resize);
+      window.removeEventListener('orientationchange', onOrientationChange);
+    }
     view?.stop();
     view = null;
     for (const { texture } of markers.values()) texture.dispose();

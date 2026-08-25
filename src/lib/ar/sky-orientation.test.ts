@@ -77,6 +77,77 @@ describe('deviceQuaternion', () => {
   });
 });
 
+// ---------------------------------------------------------------------------
+// Device-pointing harness (#51). The old deviceQuaternion tests checked the
+// azimuth-change MAGNITUDE but explicitly not its sign ("device-dependent"),
+// which let a mirrored/ drifting sky pass. This pins the full contract:
+//   • where the back camera points (azimuth/altitude) for given device angles;
+//   • that the compass yaw-offset corrects a relative/drifting alpha so a body
+//     at its true azimuth lands where the phone actually points.
+// This is the deterministic substitute for a real phone (jsdom has no sensors).
+// ---------------------------------------------------------------------------
+describe('device-pointing harness', () => {
+  const Y = new THREE.Vector3(0, 1, 0);
+  // Where the back camera looks, in ENU (x=East, y=Up, z=South → North=−z).
+  function forward(alpha: number, beta: number, gamma: number, screen = 0) {
+    const q = deviceQuaternion(alpha, beta, gamma, screen);
+    const f = new THREE.Vector3(0, 0, -1).applyQuaternion(q);
+    return {
+      azDeg: (normRad(Math.atan2(f.x, -f.z)) * 180) / Math.PI,
+      altDeg: (Math.asin(Math.max(-1, Math.min(1, f.y))) * 180) / Math.PI,
+    };
+  }
+  // ENU unit direction for a sky azimuth/altitude.
+  function enu(azDeg: number, altDeg: number) {
+    const a = (azDeg * Math.PI) / 180;
+    const e = (altDeg * Math.PI) / 180;
+    const c = Math.cos(e);
+    return new THREE.Vector3(c * Math.sin(a), Math.sin(e), -c * Math.cos(a));
+  }
+
+  it('upright (beta=90) looks at the true compass azimuth = 360−alpha', () => {
+    // Android absolute alpha is counter-clockwise; 360−alpha is the true heading.
+    expect(forward(0, 90, 0).azDeg).toBeCloseTo(0, 0); // north
+    expect(forward(90, 90, 0).azDeg).toBeCloseTo(270, 0); // → west
+    expect(forward(270, 90, 0).azDeg).toBeCloseTo(90, 0); // → east
+    for (const a of [0, 90, 180, 270]) expect(Math.abs(forward(a, 90, 0).altDeg)).toBeLessThan(1);
+  });
+
+  it('tilting the top back (beta 90→180) sweeps the aim up to the zenith', () => {
+    expect(forward(0, 110, 0).altDeg).toBeCloseTo(20, 0);
+    expect(forward(0, 135, 0).altDeg).toBeCloseTo(45, 0);
+    expect(forward(0, 160, 0).altDeg).toBeCloseTo(70, 0);
+  });
+
+  it('compass yaw-offset corrects a drifting/relative alpha (the iOS fix)', () => {
+    // iOS: alpha is relative (arbitrary launch offset) but webkitCompassHeading
+    // gives the TRUE heading. Whatever the relative alpha, a body at the true
+    // azimuth the phone points at must end up centred in view.
+    for (const relAlpha of [0, 137, 200, 305]) {
+      const trueHeadingDeg = (360 - relAlpha) % 360; // pretend the compass reads this
+      const camQ = deviceQuaternion(relAlpha, 90, 0);
+      const yaw = skyYawOffset(camQ, (trueHeadingDeg * Math.PI) / 180);
+      // Body at the true azimuth, rotated by the offset (toWorldDir), then into
+      // camera space — should sit dead ahead (local ≈ 0,0,−1).
+      const dir = enu(trueHeadingDeg, 0).applyAxisAngle(Y, yaw);
+      const local = dir.applyQuaternion(camQ.clone().invert());
+      expect(local.z).toBeLessThan(-0.99); // forward
+      expect(Math.abs(local.x)).toBeLessThan(0.02); // centred horizontally
+    }
+  });
+
+  it('without the compass offset, a relative-alpha sky is wrong (proves the bug)', () => {
+    // Same as above but yaw=0 (current camera-path behaviour): a body at the true
+    // azimuth is NOT where the phone points when alpha carries a launch offset.
+    const relAlpha = 200;
+    const trueHeadingDeg = 90; // phone really pointing east
+    const camQ = deviceQuaternion(relAlpha, 90, 0);
+    const dir = enu(trueHeadingDeg, 0); // no toWorldDir correction
+    const local = dir.applyQuaternion(camQ.clone().invert());
+    expect(local.z).toBeGreaterThan(-0.9); // NOT centred → mis-placed
+  });
+});
+
 describe('skyYawOffset', () => {
   const Y = new THREE.Vector3(0, 1, 0);
   // A camera yawed by θ about +y has look-heading normRad(−θ).

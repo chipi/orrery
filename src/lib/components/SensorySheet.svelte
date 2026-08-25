@@ -21,6 +21,19 @@
     writeUserChoice,
     ALL_TIERS,
   } from '$lib/quality/quality-tier';
+  import {
+    offline,
+    downloadTier,
+    removeOffline,
+    cancelDownload,
+    type OfflineTier,
+  } from '$lib/native/offline/offline-download.svelte';
+
+  const fmtMB = (bytes: number) => `${(bytes / 1048576).toFixed(0)} MB`;
+  function pickTier(t: 'off' | OfflineTier) {
+    if (t === 'off') void removeOffline();
+    else void downloadTier(t);
+  }
 
   let dialogEl = $state<HTMLDivElement | null>(null);
   let opener: HTMLElement | null = null;
@@ -213,6 +226,79 @@
               >{m.settings_reload_now()}</button
             >
           </div>
+        {/if}
+      </section>
+    {/if}
+
+    <!-- Offline download — mobile app only (durable native storage). Hidden where
+         unsupported (web / no backend). Strings are English for the internal build;
+         i18n before App Store ship (follow-up). -->
+    {#if offline.status !== 'unsupported'}
+      <section class="section">
+        <div class="section-title">Offline</div>
+        <div class="section-hint">Download the app to browse without a connection.</div>
+        <label class="radio">
+          <input
+            type="radio"
+            name="offline"
+            checked={offline.tier === null}
+            disabled={offline.status === 'downloading'}
+            onchange={() => pickTier('off')}
+          />
+          <span>Off — stream on demand</span>
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            name="offline"
+            checked={offline.tier === 'basic'}
+            disabled={offline.status === 'downloading'}
+            onchange={() => pickTier('basic')}
+          />
+          <span
+            >Basic{offline.tierSizes.basic ? ` — ${fmtMB(offline.tierSizes.basic)}` : ''} · every page
+            + detail</span
+          >
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            name="offline"
+            checked={offline.tier === 'full'}
+            disabled={offline.status === 'downloading'}
+            onchange={() => pickTier('full')}
+          />
+          <span
+            >Full{offline.tierSizes.full ? ` — ${fmtMB(offline.tierSizes.full)}` : ''} · + galleries,
+            posters, audio</span
+          >
+        </label>
+
+        {#if offline.status === 'downloading'}
+          <div class="offline-bar">
+            <div
+              class="offline-fill"
+              style="width:{offline.total ? (offline.done / offline.total) * 100 : 0}%"
+            ></div>
+          </div>
+          <div class="section-hint">
+            {offline.done} / {offline.total} files · {fmtMB(offline.bytesDone)}
+            <button type="button" class="reload-btn" onclick={cancelDownload}>Cancel</button>
+          </div>
+        {:else if offline.status === 'needs-cellular-confirm'}
+          <div class="reload-hint">
+            On cellular — this is a large download.
+            <button
+              type="button"
+              class="reload-btn"
+              onclick={() => offline.pendingTier && downloadTier(offline.pendingTier, true)}
+              >Download anyway</button
+            >
+          </div>
+        {:else if offline.status === 'error'}
+          <div class="section-hint offline-error">{offline.error}</div>
+        {:else if offline.tier}
+          <div class="section-hint">Downloaded · {fmtMB(offline.bytesDone)}</div>
         {/if}
       </section>
     {/if}
@@ -448,5 +534,22 @@
       max-height: 70vh;
       border-radius: 14px;
     }
+  }
+
+  /* Offline download progress + error. */
+  .offline-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+    margin: 8px 0 4px;
+  }
+  .offline-fill {
+    height: 100%;
+    background: var(--color-accent, #4aa3ff);
+    transition: width 0.2s ease;
+  }
+  .offline-error {
+    color: #f6ad55;
   }
 </style>

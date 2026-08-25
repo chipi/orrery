@@ -8,8 +8,10 @@
  * needs an explicit confirm. The "what's downloaded" state persists in localStorage
  * so Settings reflects it across launches.
  */
+import { base } from '$app/paths';
 import { assetUrl } from '$lib/asset-url';
 import { getStorageBackend, type StorageBackend } from './storage-backend';
+import { initOfflineResolver, clearOfflineResolver } from './offline-assets';
 
 export type OfflineTier = 'basic' | 'full';
 export type OfflineStatus =
@@ -57,6 +59,8 @@ export const offline = $state({
   backendKind: '' as string,
   /** set when a cellular download is pending user confirmation */
   pendingTier: null as OfflineTier | null,
+  /** tier download sizes (bytes) from the manifest, for the UI labels */
+  tierSizes: { basic: 0, full: 0 },
 });
 
 let backend: StorageBackend | null = null;
@@ -70,17 +74,29 @@ export async function initOffline(): Promise<void> {
     return;
   }
   offline.backendKind = backend.kind;
+  let manifest: Manifest | null = null;
+  try {
+    manifest = await fetchManifest();
+    offline.tierSizes = { basic: manifest.basic.bytes, full: manifest.full.bytes };
+  } catch {
+    /* sizes stay 0 — the UI just shows tiers without a size hint */
+  }
   const meta = loadMeta();
   if (meta) {
     offline.tier = meta.tier;
     offline.bytesDone = meta.bytes;
     offline.bytesTotal = meta.bytes;
     offline.status = 'done';
+    // Arm the read-side resolver so cached assets serve offline from this launch.
+    if (manifest) await initOfflineResolver(manifest[meta.tier].urls);
   }
 }
 
+// The manifest ships in the app bundle (static/), served from the LOCAL app origin
+// (not the stream origin) — so it's reachable offline. Never route it through
+// assetUrl (which points at the stream CDN).
 async function fetchManifest(): Promise<Manifest> {
-  const res = await fetch(assetUrl('/offline-manifest.json'), { cache: 'no-store' });
+  const res = await fetch(`${base}/offline-manifest.json`, { cache: 'no-store' });
   if (!res.ok) throw new Error(`manifest ${res.status}`);
   return res.json();
 }
@@ -176,6 +192,8 @@ export async function downloadTier(tier: OfflineTier, allowCellular = false): Pr
   saveMeta({ tier, version: manifest.version, bytes: stored });
   offline.bytesDone = stored;
   offline.status = 'done';
+  // Arm the read-side resolver so the just-downloaded assets serve offline now.
+  await initOfflineResolver(urls);
 }
 
 /** Stop an in-flight download (the partial tree stays usable). */
@@ -187,6 +205,7 @@ export function cancelDownload(): void {
 export async function removeOffline(): Promise<void> {
   if (!backend) return;
   await backend.clear();
+  clearOfflineResolver();
   saveMeta(null);
   offline.tier = null;
   offline.done = 0;

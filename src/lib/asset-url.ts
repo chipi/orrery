@@ -1,6 +1,7 @@
 import { base } from '$app/paths';
 import { DEFAULT_LOCALE } from './locale';
 import { targetConfig } from './target-env';
+import { resolveOffline } from './native/offline/offline-assets';
 
 /**
  * Asset-origin spine (ADR-079 D1).
@@ -86,9 +87,14 @@ export const assetOrigin: string = resolveAssetOrigin(__MOBILE__, base);
 /**
  * Build a URL for a streamed asset. `path` is root-relative with a leading
  * slash, e.g. `/images/fleet-galleries/dawn/01.webp`.
+ *
+ * When an offline tier is downloaded (native), a stored asset resolves to its
+ * local Filesystem copy so it loads with no connectivity; otherwise it streams.
+ * `resolveOffline` is a no-op until the resolver is armed (SSR / web / no
+ * download), so this stays byte-identical everywhere else.
  */
 export function assetUrl(path: string): string {
-  return `${assetOrigin}${path}`;
+  return resolveOffline(path) ?? `${assetOrigin}${path}`;
 }
 
 /**

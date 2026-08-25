@@ -59,11 +59,23 @@ export async function loadLadder(): Promise<LadderManifest> {
   return inflight;
 }
 
+// Offline resolver, injected by $lib/native/offline/offline-assets (avoids an
+// import cycle — that module imports loadLadder from here). Null until a tier is
+// downloaded on native; a no-op everywhere else.
+let offlineResolver: ((url: string) => string | null) | null = null;
+export function setOfflineResolver(fn: ((url: string) => string | null) | null): void {
+  offlineResolver = fn;
+}
+
 /**
  * Sync accessor for render code: returns the `srcset`/`src` pair if the manifest
  * is already loaded and the image has a ladder, else `null` (caller falls back
  * to the plain `<img src>`). Reactive callers re-run once `loadLadder` resolves.
  */
 export function ladderSources(url: string): { src: string; srcset: string } | null {
+  // Offline (native, tier downloaded): only the mobile rung is stored, so serve it
+  // as a single src with no multi-width srcset (a wider srcset entry isn't cached).
+  const local = offlineResolver?.(url);
+  if (local) return { src: local, srcset: '' };
   return cache ? srcsetFor(url, cache) : null;
 }

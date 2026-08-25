@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { initOffline } from '$lib/native/offline/offline-download.svelte';
   import { base } from '$app/paths';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { page } from '$app/stores';
@@ -301,6 +302,10 @@
     // distribution is visible in the dashboard — a cohort stuck on an old
     // build (e.g. the iOS-precache freeze) is then obvious, not a surprise.
     track('app-load', { version: __APP_VERSION__ });
+    // Offline (PRD-035 Part 2): resolve the storage backend + arm the read-side
+    // resolver if a tier is already downloaded, so cached assets serve offline
+    // from launch. Self-guards to native (no backend on web → no-op).
+    void initOffline();
     // Suppress both Chrome's native install banner and any in-app
     // prompt. preventDefault stops the browser from auto-showing.
     const onPromptable = (e: Event) => e.preventDefault();

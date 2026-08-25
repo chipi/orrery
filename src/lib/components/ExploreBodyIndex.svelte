@@ -82,27 +82,26 @@
 {/if}
 
 <style>
-  /* Desktop side panel — matches the surface index panel (left, top:152→bottom,
-     master → detail on the right). Hidden on touch; mobile uses the drawer tab. */
+  /* Left side panel — matches the surface index panel (left, top:152→bottom,
+     master → detail on the right). Shown on ALL viewports: the body-index handle
+     is a left-edge pullout tab on every viewport (A1), so the panel it toggles
+     must render on touch too — a prior desktop-only `@media (hover) and (pointer:
+     fine)` gate here left the mobile handle opening nothing (dead button). The
+     `min(320px, 100vw-24px)` width already fits a phone. */
   .body-index {
-    display: none;
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .body-index {
-      display: flex;
-      position: fixed;
-      left: 12px;
-      top: 152px;
-      bottom: 12px;
-      z-index: 45;
-      width: min(320px, calc(100vw - 24px));
-      padding: 12px;
-      background: color-mix(in srgb, var(--bg-base, #04040c) 92%, transparent);
-      border: 1px solid var(--border-subtle, #23232e);
-      border-radius: 10px;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(8px);
-    }
+    display: flex;
+    position: fixed;
+    left: 12px;
+    top: 152px;
+    bottom: 12px;
+    z-index: 45;
+    width: min(320px, calc(100vw - 24px));
+    padding: 12px;
+    background: color-mix(in srgb, var(--bg-base, #04040c) 92%, transparent);
+    border: 1px solid var(--border-subtle, #23232e);
+    border-radius: 10px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
   }
   .bidx {
     display: flex;

@@ -16,6 +16,7 @@
   import ImageCredit from './ImageCredit.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import { base } from '$app/paths';
+  import { assetUrl } from '$lib/asset-url';
   import { constellationName } from '$lib/universe/iau-constellations';
   import { bvToRgb, bvToKelvin } from '$lib/universe/bv-to-rgb';
   import { colorNameForKelvin } from '$lib/universe/anonymous-star';
@@ -153,7 +154,7 @@
       <div class="panel-hero star-hero">
         <img
           class="real-photo"
-          src="{base}{star.photo.src}"
+          src={assetUrl(star.photo.src)}
           alt={star.name ?? star.proper}
           decoding="async"
         />

@@ -3479,6 +3479,21 @@
       {/each}
     </div>
   {/snippet}
+  <!-- Mobile "Scan" tab (#49) — the planet-stats tactical scan folded into the
+       drawer, mirroring the surface route's Scan tab (#386). The floating overlay
+       is desktop-only (too tall for a phone); on mobile this inline copy is the
+       readout. Only present when the camera has settled on a planet with stats. -->
+  {#snippet mobileScanContent(_close: () => void)}
+    <div class="mobile-scan">
+      <TacticalScan
+        stats={focusedStats}
+        bodyLabel={selectedId?.toUpperCase() ?? ''}
+        rotationHours={focusedRotationHours}
+        lightTime={focusedLightTime}
+        inline
+      />
+    </div>
+  {/snippet}
   <!-- Mobile solar-system drawers (ruler/controls/missions/index) — solar-system
        only; the neighborhood + BodyScenes have their own chrome. -->
   {#if contextId === 'solar-system' && !activeBlackHole}
@@ -3489,6 +3504,10 @@
         { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
         { id: 'missions', label: 'Missions', icon: '➤', content: mobileIconicContent },
         { id: 'controls', label: 'Controls', icon: '▤', content: mobileControlsContent },
+        // Scan appears only when a focused planet has a tactical readout (#49).
+        ...(cameraState.focusedOnPlanet && focusedStats
+          ? [{ id: 'scan', label: 'Scan', icon: '◈', content: mobileScanContent }]
+          : []),
       ]}
       onOpen={(id) => {
         if (id === 'missions') layers.paths = true;
@@ -4460,6 +4479,13 @@
   }
   /* Tactical Scan overlay styles now live in TacticalScan.svelte
      (shared with the surface routes, #382). */
+  /* Mobile "Scan" drawer tab body (#49) — stacks the inline tactical scan;
+     mirrors the surface route's .mobile-scan. */
+  .mobile-scan {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
   /* HUD controls cluster — top-left, opposite the detail panel.
      Two rows (mode toggles + visibility chips). Stays under the nav
      but always above the canvas. Pinned to the left so it never

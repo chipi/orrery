@@ -5,6 +5,7 @@
   import { afterNavigate, goto } from '$app/navigation';
   import { setCurrentCard, trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
   import { base } from '$app/paths';
+  import { assetUrl } from '$lib/asset-url';
   import { getMissionsForLibrary, getBadges } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import type { Destination, Mission, MissionStatus } from '$types/mission';
@@ -742,7 +743,7 @@
                 {#if badges[`mission:${mission.id}`]}
                   <img
                     class="card-badge"
-                    src="{base}{badges[`mission:${mission.id}`]}"
+                    src={assetUrl(badges[`mission:${mission.id}`])}
                     alt=""
                     loading="lazy"
                     decoding="async"

@@ -3,7 +3,7 @@
   import AgencyRow from './AgencyRow.svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
-  import { assetOrigin } from '$lib/asset-url';
+  import { assetOrigin, assetUrl } from '$lib/asset-url';
   import { trackMissionView, trackGalleryImageOpen } from '$lib/analytics';
   import { getMissionGallery, getMarsSites, getMoonSites, getBadges } from '$lib/data';
   import type { SurfaceSite } from '$types/surface-site';
@@ -267,7 +267,7 @@
         {#if badges[`mission:${mission.id}`]}
           <img
             class="panel-badge"
-            src="{base}{badges[`mission:${mission.id}`]}"
+            src={assetUrl(badges[`mission:${mission.id}`])}
             alt=""
             decoding="async"
           />
@@ -837,10 +837,10 @@
               <button
                 type="button"
                 class="gallery-thumb badge-thumb"
-                onclick={() => (lightboxSrc = `${base}${badges[`mission:${mission.id}`]}`)}
+                onclick={() => (lightboxSrc = assetUrl(badges[`mission:${mission.id}`]))}
                 aria-label="{mission.name ?? mission.id} insignia"
               >
-                <img src="{base}{badges[`mission:${mission.id}`]}" alt="" decoding="async" />
+                <img src={assetUrl(badges[`mission:${mission.id}`])} alt="" decoding="async" />
                 <span class="badge-tag">Insignia</span>
               </button>
             {/if}

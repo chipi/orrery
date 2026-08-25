@@ -7,6 +7,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import * as m from '$lib/paraglide/messages';
   import type { ProgramRosterItem } from '$types/program';
@@ -32,10 +33,10 @@
       const coll = parts[0];
       const id = parts.slice(1, -1).join('/');
       const n = parts[parts.length - 1];
-      if (coll === 'missions') return `${base}/images/missions/${id}/${n}.webp`;
-      if (coll === 'fleet') return `${base}/images/fleet-galleries/${id}/${n}.webp`;
+      if (coll === 'missions') return assetUrl(`/images/missions/${id}/${n}.webp`);
+      if (coll === 'fleet') return assetUrl(`/images/fleet-galleries/${id}/${n}.webp`);
     }
-    if (image.id) return `${base}/images/programs/${p.id}/${image.id}.webp`;
+    if (image.id) return assetUrl(`/images/programs/${p.id}/${image.id}.webp`);
     return '';
   }
 
@@ -125,7 +126,7 @@
       <div class="title-row">
         <h1>{p.name}</h1>
         {#if badges[`program:${p.id}`]}
-          <img class="prog-badge" src="{base}{badges[`program:${p.id}`]}" alt="" />
+          <img class="prog-badge" src={assetUrl(badges[`program:${p.id}`])} alt="" />
         {/if}
       </div>
       <p class="tagline">{p.tagline}</p>
@@ -191,7 +192,7 @@
             <span class="t-body">
               {#if r.linked_id}
                 {#if badges[`mission:${r.linked_id}`]}
-                  <img class="t-patch" src="{base}{badges[`mission:${r.linked_id}`]}" alt="" />
+                  <img class="t-patch" src={assetUrl(badges[`mission:${r.linked_id}`])} alt="" />
                 {/if}
                 <button
                   type="button"

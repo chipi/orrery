@@ -25,6 +25,7 @@
   } from '$lib/data';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import { base } from '$app/paths';
+  import { assetUrl } from '$lib/asset-url';
   import ScienceCard from './ScienceCard.svelte';
   import type { ScienceTabId } from '$types/science';
 
@@ -118,7 +119,7 @@
 
     {#if gallery.length > 0}
       <div class="panel-hero">
-        <img src={`${base}${gallery[0]}`} alt="" fetchpriority="high" decoding="async" />
+        <img src={assetUrl(gallery[0])} alt="" fetchpriority="high" decoding="async" />
       </div>
     {/if}
 
@@ -185,7 +186,7 @@
           <ul class="gallery-grid">
             {#each gallery as src (src)}
               <li>
-                <img src={`${base}${src}`} alt="" loading="lazy" decoding="async" />
+                <img src={assetUrl(src)} alt="" loading="lazy" decoding="async" />
               </li>
             {/each}
           </ul>

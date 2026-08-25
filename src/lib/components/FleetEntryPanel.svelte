@@ -2,6 +2,7 @@
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { base } from '$app/paths';
+  import { assetUrl } from '$lib/asset-url';
   import { getBadges } from '$lib/data';
   import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
   import { loadLadder, ladderSources } from '$lib/image-srcset';
@@ -270,7 +271,7 @@
         {#if badges[`fleet:${entry.id}`]}
           <img
             class="panel-badge"
-            src="{base}{badges[`fleet:${entry.id}`]}"
+            src={assetUrl(badges[`fleet:${entry.id}`])}
             alt=""
             decoding="async"
           />
@@ -548,11 +549,11 @@
               <button
                 type="button"
                 class="thumb badge-thumb"
-                onclick={() => (lightboxSrc = `${base}/images/badges/fleet/${entry.id}.webp`)}
+                onclick={() => (lightboxSrc = assetUrl(`/images/badges/fleet/${entry.id}.webp`))}
                 aria-label="{entry.name} insignia"
               >
                 <img
-                  src="{base}/images/badges/fleet/{entry.id}.webp"
+                  src={assetUrl(`/images/badges/fleet/${entry.id}.webp`)}
                   alt=""
                   decoding="async"
                   onerror={(e) => {

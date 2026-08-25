@@ -6,6 +6,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { assetUrl } from '$lib/asset-url';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { essayInlineHtml } from '$lib/essay-md';
   import * as m from '$lib/paraglide/messages';
@@ -22,10 +23,10 @@
     const coll = parts[0];
     const id = parts.slice(1, -1).join('/');
     const n = parts[parts.length - 1];
-    if (coll === 'missions') return `${base}/images/missions/${id}/${n}.webp`;
-    if (coll === 'fleet') return `${base}/images/fleet-galleries/${id}/${n}.webp`;
-    if (coll === 'essays') return `${base}/images/essays/${id}/${n}.webp`;
-    return `${base}/images/${ref}.webp`;
+    if (coll === 'missions') return assetUrl(`/images/missions/${id}/${n}.webp`);
+    if (coll === 'fleet') return assetUrl(`/images/fleet-galleries/${id}/${n}.webp`);
+    if (coll === 'essays') return assetUrl(`/images/essays/${id}/${n}.webp`);
+    return assetUrl(`/images/${ref}.webp`);
   }
 </script>
 

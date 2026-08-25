@@ -5,6 +5,7 @@
   import { afterNavigate, goto } from '$app/navigation';
   import { trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
   import { base } from '$app/paths';
+  import { assetUrl } from '$lib/asset-url';
   import { getFleet, getFleetGallery, getFleetIndex, getBadges } from '$lib/data';
   import type {
     FleetCategory,
@@ -642,7 +643,7 @@
                   {#if badges[`fleet:${entry.id}`]}
                     <img
                       class="card-badge"
-                      src="{base}{badges[`fleet:${entry.id}`]}"
+                      src={assetUrl(badges[`fleet:${entry.id}`])}
                       alt=""
                       loading="lazy"
                       decoding="async"

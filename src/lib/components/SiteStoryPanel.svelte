@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { assetUrl } from '$lib/asset-url';
   import { type SiteStory, getImageProvenanceManifest, type ImageProvenanceEntry } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
   import { getImageAlt } from '$lib/image-alt';
@@ -96,11 +96,11 @@
             <button
               type="button"
               class="thumb"
-              onclick={() => onLightbox(`${base}${img.src}`)}
+              onclick={() => onLightbox(assetUrl(img.src))}
               aria-label="Open {img.caption}"
             >
               <img
-                src="{base}{img.src}"
+                src={assetUrl(img.src)}
                 alt={getImageAlt(img.src, getLocale()) || img.caption}
                 loading="lazy"
                 decoding="async"

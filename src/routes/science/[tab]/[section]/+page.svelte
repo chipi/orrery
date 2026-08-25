@@ -9,6 +9,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
+  import { assetUrl } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
   import { track } from '$lib/analytics';
@@ -102,7 +103,7 @@
   {#if section.photo}
     <figure class="section-photo">
       <img
-        src="{base}{section.photo.src}"
+        src={assetUrl(section.photo.src)}
         alt={section.photo.alt_key ?? ''}
         loading="lazy"
         decoding="async"

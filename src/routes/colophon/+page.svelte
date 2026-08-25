@@ -10,7 +10,7 @@
     the relative fetch never runs during prerender.
   */
   import { base } from '$app/paths';
-  import { assetOrigin } from '$lib/asset-url';
+  import { assetOrigin, assetUrl } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { getAudioProvenanceManifest } from '$lib/data';
@@ -33,6 +33,11 @@
   // colophon, not /credits. Two contributions: the written script
   // (transcript) and the synthesized audio (listen).
   type Episode = { id: string; title: string; route: string; txt: string; mp3: string };
+
+  // Streamed `/images/…` assets (anatomy art, posters) are pruned from the
+  // Capacitor bundle and served from the asset origin (ADR-079); hand-authored
+  // `/diagrams/…` SVGs/webp stay bundled, so they keep the local `base`.
+  const srcOf = (p: string): string => (p.startsWith('/images/') ? assetUrl(p) : `${base}${p}`);
 
   let data = $state<Manifest | null>(null);
   let episodes = $state<Episode[]>([]);
@@ -100,9 +105,9 @@
               type="button"
               class="thumb-open"
               onclick={() =>
-                (lightbox = { src: `${base}${d.file}`, title: d.title, route: '/fleet' })}
+                (lightbox = { src: srcOf(d.file), title: d.title, route: '/fleet' })}
             >
-              <img src="{base}{d.file}" alt={d.title} loading="lazy" decoding="async" />
+              <img src={srcOf(d.file)} alt={d.title} loading="lazy" decoding="async" />
             </button>
             <span class="thumb-title">{d.title}</span>
           </li>
@@ -127,9 +132,9 @@
               type="button"
               class="thumb-open"
               onclick={() =>
-                (lightbox = { src: `${base}${p.file}`, title: p.title, route: '/posters' })}
+                (lightbox = { src: srcOf(p.file), title: p.title, route: '/posters' })}
             >
-              <img src="{base}{p.thumb}" alt={p.title} loading="lazy" decoding="async" />
+              <img src={srcOf(p.thumb)} alt={p.title} loading="lazy" decoding="async" />
             </button>
             <span class="thumb-title">{p.title}</span>
           </li>
@@ -149,9 +154,9 @@
               type="button"
               class="thumb-open"
               onclick={() =>
-                (lightbox = { src: `${base}${d.file}`, title: d.title, route: '/science' })}
+                (lightbox = { src: srcOf(d.file), title: d.title, route: '/science' })}
             >
-              <img src="{base}{d.file}" alt={d.title} loading="lazy" decoding="async" />
+              <img src={srcOf(d.file)} alt={d.title} loading="lazy" decoding="async" />
             </button>
             <span class="thumb-title">{d.title}</span>
           </li>

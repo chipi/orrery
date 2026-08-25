@@ -5,6 +5,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import * as m from '$lib/paraglide/messages';
   import type { ProgramIndexEntry } from '$types/program';
@@ -59,8 +60,8 @@
     const coll = parts[0];
     const id = parts.slice(1, -1).join('/');
     const n = parts[parts.length - 1];
-    if (coll === 'missions') return `${base}/images/missions/${id}/${n}.webp`;
-    if (coll === 'fleet') return `${base}/images/fleet-galleries/${id}/${n}.webp`;
+    if (coll === 'missions') return assetUrl(`/images/missions/${id}/${n}.webp`);
+    if (coll === 'fleet') return assetUrl(`/images/fleet-galleries/${id}/${n}.webp`);
     return '';
   }
 
@@ -144,7 +145,7 @@
                 {#if badges[`program:${p.id}`]}
                   <img
                     class="c-badge"
-                    src="{base}{badges[`program:${p.id}`]}"
+                    src={assetUrl(badges[`program:${p.id}`])}
                     alt=""
                     loading="lazy"
                   />

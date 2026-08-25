@@ -13,6 +13,7 @@
 <script lang="ts">
   import { onMount, onDestroy, untrack } from 'svelte';
   import { base } from '$app/paths';
+  import { streamedUrl } from '$lib/asset-url';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { createAscentScene, VEHICLE_LENGTH_KM, type AscentScene } from '$lib/three/ascent-scene';
   import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
@@ -209,7 +210,7 @@
       boosterCount: profile.boosters?.count ?? 0,
       groundSite: (() => {
         const g = resolveLaunchGround(launchSite);
-        return g ? { ...g, textureUrl: `${base}${g.textureUrl}` } : undefined;
+        return g ? { ...g, textureUrl: streamedUrl(`${base}${g.textureUrl}`) } : undefined;
       })(),
     });
 

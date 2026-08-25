@@ -28,7 +28,7 @@
     type DataSourcesManifest,
   } from '$lib/data';
   import { groupBySource, pathToRouteKey, type CreditsGroup } from '$lib/credits-grouping';
-  import { assetOrigin } from '$lib/asset-url';
+  import { assetOrigin, assetUrl } from '$lib/asset-url';
   import {
     getVideoManifest,
     posterUrlFor,
@@ -283,7 +283,7 @@
                   aria-label={photo.title}
                 >
                   <img
-                    src="{base}{photo.path}"
+                    src={assetUrl(photo.path)}
                     alt=""
                     width="64"
                     height="64"

@@ -30,6 +30,7 @@ import { getLocale } from '$lib/paraglide/runtime';
 import * as m from '$lib/paraglide/messages';
 import { localeFromPage } from '$lib/locale';
 import { assetOrigin } from '$lib/asset-url';
+import { coalesceLatest } from '$lib/async-coalesce';
 import { trackItemClick } from '$lib/analytics';
 import { exhibit } from '$lib/exhibit.svelte';
 import type { BodyScene } from '$lib/universe/body-scene';
@@ -2416,7 +2417,9 @@ export function createExploreSceneHost(bridge: any, deps: any) {
                     ? 'neighborhood'
                     : 'solar-system',
     );
-  contextDeepLinkFn = async (target: string) => {
+  // Walk the shell ladder OUT or IN until the scene sits at `target`'s level.
+  // Each crossOut* awaits an animated camera dolly; the crossIn* are synchronous.
+  const walkToContext = async (target: string): Promise<void> => {
     const t = contextLevel(target);
     if (t < 0) return;
     let guard = 0;
@@ -2441,6 +2444,13 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       else if (cur === 1) crossInToSolarSystem();
     }
   };
+  // Serialise scale-picker transitions (#46): a walk awaits animated dollies, so
+  // a second picker click mid-transition would otherwise start a concurrent
+  // walker that races the first over shared scene/camera state — repeated rapid
+  // jumps could then wedge the route on slower (mobile) GPUs. coalesceLatest runs
+  // one walk at a time and, for clicks arriving mid-walk, keeps only the latest
+  // target to run when the current walk settles (last click wins).
+  contextDeepLinkFn = coalesceLatest(walkToContext);
   // Resolve a cold-load ?context=<...> now that the crossing fns exist (the
   // reactive $effect above only catches later in-session URL changes).
   {

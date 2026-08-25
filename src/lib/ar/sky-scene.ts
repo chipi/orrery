@@ -380,10 +380,13 @@ export function createSkyScene(
   const hud = typeof document !== 'undefined' ? document.createElement('div') : null;
   if (hud) {
     hud.className = 'ar-debug-hud';
+    // Top, full-width, bright — impossible to miss, and the tag confirms the
+    // running build. Tap anywhere on it to cycle the roll.
     hud.style.cssText =
-      'position:fixed;left:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px));z-index:10000;' +
-      'font:600 11px/1.45 "Space Mono",monospace;color:#4ecdc4;background:rgba(0,0,0,.66);' +
-      'padding:8px 10px;border-radius:8px;white-space:pre;pointer-events:auto;border:1px solid #4ecdc4';
+      'position:fixed;left:0;right:0;top:calc(8px + env(safe-area-inset-top,0px));z-index:2147483647;' +
+      'margin:0 8px;font:700 13px/1.5 "Space Mono",monospace;color:#04121a;background:#4ecdc4;' +
+      'padding:8px 10px;border-radius:8px;white-space:pre;pointer-events:auto;text-align:center;' +
+      'box-shadow:0 4px 16px rgba(0,0,0,.5)';
     hud.addEventListener('click', () => {
       const steps = [0, 90, 180, 270, -90];
       arRollDeg = steps[(steps.indexOf(arRollDeg) + 1) % steps.length];
@@ -464,8 +467,8 @@ export function createSkyScene(
         let nUp = 0;
         for (const mk of markers.values()) if (mk.group.visible) nUp++;
         hud.textContent =
-          `[${view.kind}] scr:${screenAngle()}°  roll:${arRollDeg}° (tap me)\n` +
-          `look az:${az.toFixed(0)}°  alt:${alt.toFixed(0)}°  tilt:${tilt.toFixed(0)}°  up:${nUp}`;
+          `AR-DBG b3 · [${view.kind}] scr:${screenAngle()}° · roll:${arRollDeg}° · TAP TO CYCLE\n` +
+          `look az:${az.toFixed(0)}°  alt:${alt.toFixed(0)}°  tilt:${tilt.toFixed(0)}°  bodies-up:${nUp}`;
       }
 
       const t = Date.now();

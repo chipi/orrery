@@ -47,9 +47,19 @@ const bases = execSync(
   .filter(Boolean);
 
 const targets = [];
+const skippedNonWebp = [];
 for (const f of bases) {
   const top = f.split('/')[2];
   if (top === 'hotspots' || top === 'posters') continue;
+  // The ladder + srcsetFor are WEBP-only: the manifest's largest width is the
+  // unsuffixed `NN.webp` base. A .jpg-base image can't join the ladder without a
+  // .webp base too (a format change — deferred; deep-sky/launch-ground, ~22 MB).
+  // Skip them here so we never register a webp entry with no webp base (which
+  // breaks image-ladder-contract.test.ts).
+  if (!/\.webp$/i.test(f)) {
+    skippedNonWebp.push(f);
+    continue;
+  }
   const stem = '/' + f.replace(/^static\//, '').replace(/\.(webp|jpe?g|png)$/i, '');
   const widths = manifest[stem];
   const hasMobileRung = widths?.some((w) => w <= MOBILE);
@@ -61,6 +71,12 @@ for (const f of bases) {
 console.log(
   `\n  ${targets.length} over-serve images → generating ${MOBILE}px rung${DRY ? ' (DRY)' : ''}\n`,
 );
+if (skippedNonWebp.length) {
+  console.log(
+    `  skipped ${skippedNonWebp.length} non-webp-base over-serve images (deep-sky/launch-ground) —` +
+      ` need a .webp base first (format-conversion follow-up, ~22 MB).\n`,
+  );
+}
 
 let written = 0;
 for (const { file, stem, baseWidth } of targets) {

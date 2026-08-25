@@ -29,6 +29,45 @@
   import { regimeForAltitude } from '$lib/orbit-regime-match';
   import { getLocale } from '$lib/paraglide/runtime';
   import * as m from '$lib/paraglide/messages';
+  import { getObserverLocation } from '$lib/geolocation';
+  import {
+    moonObserverView,
+    type MoonObserverView,
+    type MoonPhaseName,
+  } from '$lib/astronomy/moon-observer';
+
+  // #48 — "view from my location": resolve the observer (getObserverLocation:
+  // GPS → timezone → default, shared with AR + /earth), compute tonight's Moon
+  // for that place, orient the globe to the real sub-Earth point (near side +
+  // libration) and surface the phase / visibility as a readout. Opt-in — no
+  // prompt on load.
+  let surfaceScene: SurfaceScene | undefined = $state();
+  let locating = $state(false);
+  let observerView = $state<MoonObserverView | null>(null);
+  const PHASE_LABEL: Record<MoonPhaseName, () => string> = {
+    new: m.moon_phase_new,
+    'waxing-crescent': m.moon_phase_waxing_crescent,
+    'first-quarter': m.moon_phase_first_quarter,
+    'waxing-gibbous': m.moon_phase_waxing_gibbous,
+    full: m.moon_phase_full,
+    'waning-gibbous': m.moon_phase_waning_gibbous,
+    'last-quarter': m.moon_phase_last_quarter,
+    'waning-crescent': m.moon_phase_waning_crescent,
+  };
+  async function viewFromMyLocation(): Promise<void> {
+    if (locating) return;
+    locating = true;
+    try {
+      const loc = await getObserverLocation();
+      const view = moonObserverView(new Date(), loc.latDeg, loc.lonDeg);
+      observerView = view;
+      // Orient to the sub-Earth selenographic point so the near side (wobbled by
+      // tonight's libration) faces the camera — "what part you'd actually see".
+      surfaceScene?.faceLatLon(view.libration.latDeg, view.libration.lonDeg);
+    } finally {
+      locating = false;
+    }
+  }
 
   // Hidden tour anchors emit data-audio-stage="moon-select-{audio}".
   // The audio-tour test (src/lib/audio-tour.test.ts) scans this file
@@ -207,6 +246,7 @@
 <DebugPanelRegistrar label="MOON" />
 
 <SurfaceScene
+  bind:this={surfaceScene}
   config={MOON_CONFIG}
   body="moon"
   loadSites={getMoonSites}
@@ -217,6 +257,41 @@
   onRegimeOpen={openRegime}
   onOrbitsInViewChange={(v) => (orbitsInView = v)}
 />
+
+<!-- #48 — observer view. Opt-in (no prompt on load): resolves the observer's
+     location, orients to tonight's sub-Earth point + surfaces phase/visibility. -->
+<button
+  type="button"
+  class="locate-me"
+  onclick={viewFromMyLocation}
+  disabled={locating}
+  data-testid="moon-locate-me"
+  title={m.moon_locate_me()}
+>
+  <span class="locate-icon" aria-hidden="true">☾</span>
+  {locating ? m.moon_locate_working() : m.moon_locate_me()}
+</button>
+
+{#if observerView}
+  <div class="moon-observer" data-testid="moon-observer-readout">
+    <div class="mo-eyebrow">{m.moon_view_eyebrow()}</div>
+    <div class="mo-phase">{PHASE_LABEL[observerView.phase.phaseName]()}</div>
+    <div class="mo-row">{m.moon_view_lit({ pct: Math.round(observerView.phase.illuminatedFraction * 100) })}</div>
+    <div class="mo-row">
+      {#if observerView.aboveHorizon}
+        {m.moon_view_alt_above({ deg: Math.round(observerView.altitudeDeg) })}
+      {:else}
+        {m.moon_view_alt_below()}
+      {/if}
+    </div>
+    <div class="mo-row mo-dim">
+      {m.moon_view_libration({
+        lon: `${observerView.libration.lonDeg >= 0 ? '+' : ''}${observerView.libration.lonDeg.toFixed(1)}°`,
+        lat: `${observerView.libration.latDeg >= 0 ? '+' : ''}${observerView.libration.latDeg.toFixed(1)}°`,
+      })}
+    </div>
+  </div>
+{/if}
 
 <TourAnchors route="moon" anchors={MOON_TOUR_ANCHORS} />
 
@@ -239,6 +314,75 @@
 />
 
 <style>
+  /* #48 — observer button + readout, bottom-left. Same treatment as /earth;
+     the readout stacks above the button when a location has been resolved. */
+  .locate-me {
+    position: absolute;
+    bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+    left: 12px;
+    z-index: 7;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 12px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-base, #e8e8ed);
+    background: rgba(8, 10, 22, 0.62);
+    border: 1px solid rgba(78, 205, 196, 0.35);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    min-height: 34px;
+  }
+  .locate-me:hover:not(:disabled) {
+    border-color: rgba(78, 205, 196, 0.7);
+  }
+  .locate-me:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+  .locate-icon {
+    color: #4ecdc4;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .moon-observer {
+    position: absolute;
+    bottom: calc(106px + env(safe-area-inset-bottom, 0px));
+    left: 12px;
+    z-index: 7;
+    min-width: 190px;
+    max-width: min(70vw, 260px);
+    padding: 10px 12px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    color: var(--text-base, #e8e8ed);
+    background: rgba(8, 10, 22, 0.72);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+  }
+  .mo-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: rgba(78, 205, 196, 0.85);
+    margin-bottom: 6px;
+  }
+  .mo-phase {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .mo-row {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .mo-dim {
+    color: var(--text-dim, #9a9aa7);
+    font-size: 11px;
+    margin-top: 2px;
+  }
   .ruler-desktop-only {
     display: contents;
   }

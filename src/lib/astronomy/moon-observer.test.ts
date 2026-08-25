@@ -5,7 +5,7 @@ import {
   opticalLibration,
   moonObserverView,
 } from './moon-observer';
-import { julianDay, centuriesSinceJ2000 } from './time';
+import { centuriesSinceJ2000 } from './time';
 
 const norm360 = (d: number): number => ((d % 360) + 360) % 360;
 

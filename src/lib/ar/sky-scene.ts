@@ -8,10 +8,16 @@
 // read as "at infinity".
 
 import * as THREE from 'three';
+import { base } from '$app/paths';
 import { pickSkyView, type SkyView } from './sky-view';
-import { skyPosition, skyDirectionENU, SKY_BODIES, type SkyBody } from '../astronomy';
+import { skyPosition, skyDirectionENU, SKY_BODIES, type SkyBody, julianDay } from '../astronomy';
 import { moonPhase } from '../astronomy/moon-observer';
 import { getObserverLocation, type ObserverLocation } from '../geolocation';
+import {
+  equatorialXyzToSkyDir,
+  loadConstellationFigures,
+  type ConstellationFigure,
+} from './celestial-sky';
 import {
   resolveStationTle,
   lookAngleForTle,
@@ -85,6 +91,8 @@ export interface SkySceneHandle {
   stop(): void;
   /** The observer location actually used (available after start()). */
   location(): ObserverLocation | null;
+  /** Toggle the constellation-figure layer (RFC-041). Default on. */
+  setConstellationsVisible(on: boolean): void;
 }
 
 /** Phase shading for the Moon marker (#51 visual). */
@@ -297,6 +305,30 @@ export function createSkyScene(
     return { sprite, dir: new THREE.Vector3(...c.dir) };
   });
 
+  // Constellation figures (RFC-041 S1) — the real constellations on the same sky
+  // as the planets. One THREE.LineSegments for all 89 figures; positions are
+  // recomputed at the ephemeris cadence (§below) and the whole group rides the
+  // camera like the markers. Subtle, depth-test-off so it draws over the passthrough
+  // and behind the body markers.
+  let constellationFigures: ConstellationFigure[] = [];
+  let constellationPositions: Float32Array | null = null;
+  let showConstellations = true;
+  const constellationLines = new THREE.LineSegments(
+    new THREE.BufferGeometry(),
+    new THREE.LineBasicMaterial({
+      color: 0x6f86d6,
+      transparent: true,
+      opacity: 0.4,
+      depthTest: false,
+      depthWrite: false,
+    }),
+  );
+  constellationLines.renderOrder = -1; // behind the body markers + labels
+  constellationLines.frustumCulled = false;
+  constellationLines.visible = false; // until the data loads
+  scene.add(constellationLines);
+  const _cstDir = new THREE.Vector3(); // scratch for the per-vertex conversion
+
   // Find-arrows (#51): a DOM overlay pointing to up-bodies outside the current
   // view, so a single narrow field-of-view doesn't hide the rest of the sky.
   const arrowLayer = typeof document !== 'undefined' ? document.createElement('div') : null;
@@ -418,6 +450,33 @@ export function createSkyScene(
     }
   }
 
+  // Bake every constellation vertex into the LineSegments buffer as
+  // toWorldDir(ENU)·R, in the constellation group's local frame (the group itself
+  // is re-anchored to the camera each frame). Done at the ephemeris cadence, so
+  // it's cheap; the field tracks sidereal rotation. On the heading-aligned (ARKit)
+  // substrate toWorldDir is identity; on the compass paths it carries the live yaw
+  // (up to one interval stale, imperceptible for the slow star field).
+  function recomputeConstellations(): void {
+    if (!observer || !view || !constellationPositions || !constellationFigures.length) return;
+    const jd = julianDay(new Date());
+    const latRad = (observer.latDeg * Math.PI) / 180;
+    const lonRad = (observer.lonDeg * Math.PI) / 180;
+    const pos = constellationPositions;
+    let i = 0;
+    for (const fig of constellationFigures) {
+      const v = fig.vertices;
+      for (let k = 0; k + 2 < v.length; k += 3) {
+        const [e, u, n] = equatorialXyzToSkyDir(v[k], v[k + 1], v[k + 2], jd, latRad, lonRad);
+        _cstDir.set(e, u, n);
+        view.toWorldDir(_cstDir);
+        pos[i++] = _cstDir.x * MARKER_RADIUS;
+        pos[i++] = _cstDir.y * MARKER_RADIUS;
+        pos[i++] = _cstDir.z * MARKER_RADIUS;
+      }
+    }
+    constellationLines.geometry.attributes.position.needsUpdate = true;
+  }
+
   async function start(): Promise<boolean> {
     view = opts.view ?? (await pickSkyView());
     if (!view || !(await view.start())) return false;
@@ -431,6 +490,22 @@ export function createSkyScene(
       window.addEventListener('orientationchange', onOrientationChange);
     }
     recomputeDirections();
+
+    // Load the constellation figures (RFC-041 S1) + size the shared buffer. Async,
+    // non-blocking: the sky is usable immediately and the figures pop in when ready.
+    void loadConstellationFigures(base).then((figs) => {
+      if (disposed) return;
+      constellationFigures = figs;
+      const totalVerts = figs.reduce((s, f) => s + Math.floor(f.vertices.length / 3), 0);
+      if (totalVerts === 0) return;
+      constellationPositions = new Float32Array(totalVerts * 3);
+      constellationLines.geometry.setAttribute(
+        'position',
+        new THREE.BufferAttribute(constellationPositions, 3),
+      );
+      recomputeConstellations();
+      constellationLines.visible = showConstellations;
+    });
 
     // Resolve fresh TLEs, then surface each station's next visible pass (#405).
     for (const id of STATION_IDS) {
@@ -469,8 +544,12 @@ export function createSkyScene(
       const t = Date.now();
       if (t - lastEphemeris >= EPHEMERIS_INTERVAL_MS) {
         recomputeDirections();
+        recomputeConstellations();
         lastEphemeris = t;
       }
+      // The constellation figures are baked as directions·R in their own frame; the
+      // group rides the camera so they stay "at infinity" (like the markers).
+      constellationLines.position.copy(camPos);
       // Anchor each visible marker at cameraPos + worldDir·R (stays at the
       // correct sky direction regardless of small translation). The view maps
       // the stored ENU direction into the render world (identity for a
@@ -543,6 +622,8 @@ export function createSkyScene(
     for (const { texture } of markers.values()) texture.dispose();
     for (const { texture } of stationMarkers.values()) texture.dispose();
     for (const { sprite } of cardinals) (sprite.material.map as THREE.Texture | null)?.dispose();
+    constellationLines.geometry.dispose();
+    (constellationLines.material as THREE.Material).dispose();
     arrowLayer?.remove();
     arrowEls.clear();
     scene.traverse((o) => {
@@ -552,5 +633,11 @@ export function createSkyScene(
     renderer.dispose();
   }
 
-  return { start, stop, location: () => observer };
+  function setConstellationsVisible(on: boolean): void {
+    showConstellations = on;
+    // Only actually show once the buffer is populated (visible stays false until load).
+    constellationLines.visible = on && !!constellationPositions;
+  }
+
+  return { start, stop, location: () => observer, setConstellationsVisible };
 }

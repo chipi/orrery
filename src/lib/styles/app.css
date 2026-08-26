@@ -192,8 +192,9 @@ html.ar-active
   ):not(.ar-layers) {
   visibility: hidden !important;
 }
-/* Sky-mode layer toggles (RFC-041) — bottom-left chip row; same dark-glass idiom
-   as the exit button (which is confirmed to render in AR). */
+/* Sky-mode layer toggles (RFC-041 redesign) — ONE dark-glass strip of text
+   buttons (no emoji, no per-chip borders). On = teal text + a teal dot; off =
+   dim. Editorial, matches the /fly HUD idiom rather than a debug chip pile. */
 .ar-layers {
   position: fixed;
   left: max(10px, env(safe-area-inset-left, 10px));
@@ -201,27 +202,51 @@ html.ar-active
   z-index: 9999;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  max-width: min(70vw, 320px);
+  gap: 2px 4px;
+  max-width: min(74vw, 340px);
+  padding: 5px 7px;
+  background: var(--color-hud-bg, rgba(5, 5, 20, 0.88));
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.09));
+  border-radius: var(--border-radius-lg, 6px);
+  backdrop-filter: blur(10px);
 }
 .ar-layer-btn {
-  min-height: 34px;
-  padding: 0 10px;
-  background: rgba(8, 10, 22, 0.75);
-  border: 1px solid rgba(78, 205, 196, 0.55);
-  border-radius: 18px;
-  color: #cdeeeb;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 28px;
+  padding: 0 7px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: var(--color-teal, #4ecdc4);
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 12px;
-  letter-spacing: 0.5px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
-  backdrop-filter: blur(8px);
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+/* Teal status dot before each on-label. */
+.ar-layer-btn::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-teal, #4ecdc4);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 .ar-layer-btn.off {
-  border-color: rgba(255, 255, 255, 0.22);
-  color: rgba(205, 214, 230, 0.5);
-  opacity: 0.7;
+  color: var(--color-text-dim, rgba(255, 255, 255, 0.35));
+}
+.ar-layer-btn.off::before {
+  background: transparent;
+  transform: scale(0.5);
 }
 .ar-exit-btn {
   position: fixed;
@@ -249,16 +274,17 @@ html.ar-active
   transform: translateX(-50%);
   z-index: 9999;
   max-width: min(88vw, 360px);
-  padding: 10px 18px;
-  background: rgba(8, 10, 22, 0.75);
-  border: 1px solid rgba(78, 205, 196, 0.35);
-  border-radius: 22px;
+  padding: 9px 18px;
+  background: var(--color-hud-bg, rgba(5, 5, 20, 0.88));
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.09));
+  border-radius: var(--border-radius-lg, 6px);
   color: #eaf6f5;
-  font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 13px;
+  font-family: var(--font-editorial, 'Crimson Pro', serif);
+  font-style: italic;
+  font-size: 15px;
   line-height: 1.35;
   text-align: center;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   pointer-events: none;
 }
 

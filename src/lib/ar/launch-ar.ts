@@ -153,9 +153,14 @@ export async function launchSkyScene(): Promise<boolean> {
 
   const canvas = document.createElement('canvas');
   canvas.className = 'ar-canvas';
+  // Fade the 3D overlay in over the camera feed (P12) — reduced-motion collapses
+  // the transition via the global @media rule in app.css.
   canvas.style.cssText =
-    'position:fixed;inset:0;width:100vw;height:100vh;z-index:9997;background:transparent;';
+    'position:fixed;inset:0;width:100vw;height:100vh;z-index:9997;background:transparent;opacity:0;transition:opacity 0.45s ease;';
   document.body.appendChild(canvas);
+  requestAnimationFrame(() => {
+    canvas.style.opacity = '1';
+  });
 
   const exitBtn = document.createElement('button');
   exitBtn.type = 'button';
@@ -166,8 +171,7 @@ export async function launchSkyScene(): Promise<boolean> {
 
   const hint = document.createElement('div');
   hint.className = 'ar-hint';
-  hint.textContent =
-    'Point your phone at the sky — Sun, Moon, planets, constellations & stars, plus the ISS & Tiangong';
+  hint.textContent = 'Point your phone at the sky.';
   document.body.appendChild(hint);
 
   document.documentElement.classList.add('ar-active');
@@ -213,10 +217,10 @@ export async function launchSkyScene(): Promise<boolean> {
   return true;
 }
 
-/** Build the sky-mode layer toggles (RFC-041): Planets · Figures · Stars ·
- *  Nebulas · Stations. Everything starts on; tapping a chip toggles that layer + its
- *  pressed/off state. Styled via `.ar-layers` / `.ar-layer-btn` in app.css and
- *  whitelisted in the `.ar-active` chrome-hide rule. */
+/** Build the sky-mode layer toggles (RFC-041): a single dark-glass strip of text
+ *  buttons — no emoji, no per-chip borders. On = teal text + a teal dot; off =
+ *  dim. Everything starts on except All-names + Below-horizon. Styled via
+ *  `.ar-layers` / `.ar-layer-btn` in app.css, whitelisted in the chrome-hide rule. */
 function buildSkyLayerToggles(handle: {
   setPlanetsVisible(on: boolean): void;
   setConstellationsVisible(on: boolean): void;
@@ -224,6 +228,7 @@ function buildSkyLayerToggles(handle: {
   setDeepSkyVisible(on: boolean): void;
   setSunEventsVisible(on: boolean): void;
   setStationsVisible(on: boolean): void;
+  setAllLabelsVisible(on: boolean): void;
   setBelowHorizonVisible(on: boolean): void;
 }): HTMLDivElement {
   const wrap = document.createElement('div');
@@ -245,14 +250,15 @@ function buildSkyLayerToggles(handle: {
     return b;
   };
   wrap.append(
-    mk('☉ Planets', (v) => handle.setPlanetsVisible(v)),
-    mk('✦ Figures', (v) => handle.setConstellationsVisible(v)),
-    mk('★ Stars', (v) => handle.setStarsVisible(v)),
-    mk('✧ Nebulas', (v) => handle.setDeepSkyVisible(v)),
-    mk('☀ Rise/set', (v) => handle.setSunEventsVisible(v)),
-    mk('🛰 Stations', (v) => handle.setStationsVisible(v)),
-    // Below-horizon starts OFF (sub-horizon sky hidden by default).
-    mk('◡ Below horizon', (v) => handle.setBelowHorizonVisible(v), false),
+    mk('Planets', (v) => handle.setPlanetsVisible(v)),
+    mk('Stars', (v) => handle.setStarsVisible(v)),
+    mk('Figures', (v) => handle.setConstellationsVisible(v)),
+    mk('Nebulae', (v) => handle.setDeepSkyVisible(v)),
+    mk('Rise/set', (v) => handle.setSunEventsVisible(v)),
+    mk('Stations', (v) => handle.setStationsVisible(v)),
+    // Off by default: reveal every label; show the sub-horizon sky.
+    mk('All names', (v) => handle.setAllLabelsVisible(v), false),
+    mk('Below horizon', (v) => handle.setBelowHorizonVisible(v), false),
   );
   return wrap;
 }

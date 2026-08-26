@@ -240,7 +240,11 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   let nbScene: NeighborhoodScene | null = null;
   let nbLoading = false;
   const HELIO_CAM_R_MAX = camRMax; // 1400 AU — the v1 heliocentric ceiling
-  const NB_ENTRY_CAM_R = 0.05; // pc — entry framing just outside the Sun
+  // pc — the framed neighborhood distance: far enough that the nearest stars
+  // (Alpha Centauri ~1.3 pc) read as a field, not glued to the Sun. Used for BOTH
+  // the solar→neighborhood cross-out landing AND Reset View, so entering and
+  // resetting frame the same way.
+  const NB_FRAMED_CAM_R = 12;
   // The return (neighborhood → solar-system) crossing distance. Derived from
   // the OUT ceiling so IN and OUT happen at the SAME physical distance (no
   // hysteresis gap): HELIO_CAM_R_MAX AU expressed in pc.
@@ -714,12 +718,12 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     camera.near = 0.001;
     camera.updateProjectionMatrix();
     if (deps.getReducedMotion()) {
-      camR = NB_ENTRY_CAM_R;
+      camR = NB_FRAMED_CAM_R;
     } else {
-      // Enter close (Sun still large), then dolly out so the field fades in
-      // with motion.
+      // Emerge from the Sun, then dolly all the way OUT to the framed distance so
+      // the neighborhood field is revealed with motion (not left glued to the Sun).
       camR = 0.035;
-      startCrossDolly(0.035, 0.32, 1100);
+      startCrossDolly(0.035, NB_FRAMED_CAM_R, 1500);
       bridge.crossingFlashId++;
     }
     updateCam();
@@ -761,9 +765,9 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     return false;
   }
 
-  // Neighborhood "Reset view": recentre on the Sun (undo any pan), return to a
-  // stable framed distance, and clear the selection — without leaving the scale.
-  const NB_DEFAULT_CAM_R = 12;
+  // Neighborhood "Reset view": recentre on the Sun (undo any pan), return to the
+  // framed distance (same as cross-out entry), and clear the selection — without
+  // leaving the scale.
   const NB_DEFAULT_CAM_P = 1.05;
   const NB_DEFAULT_CAM_T = 0.6;
   function resetNeighborhoodView(): void {
@@ -772,7 +776,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     focusOrigin.set(0, 0, 0);
     camP = NB_DEFAULT_CAM_P;
     camT = NB_DEFAULT_CAM_T;
-    camR = Math.max(camRMin, Math.min(camRMax, NB_DEFAULT_CAM_R));
+    camR = Math.max(camRMin, Math.min(camRMax, NB_FRAMED_CAM_R));
     closeStarPanel();
     bridge.anonStar = null;
     updateCam();

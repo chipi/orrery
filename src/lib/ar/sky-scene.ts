@@ -16,7 +16,9 @@ import { getObserverLocation, type ObserverLocation } from '../geolocation';
 import {
   equatorialXyzToSkyDir,
   loadConstellationFigures,
+  loadBrightStars,
   type ConstellationFigure,
+  type BrightStar,
 } from './celestial-sky';
 import {
   resolveStationTle,
@@ -93,6 +95,8 @@ export interface SkySceneHandle {
   location(): ObserverLocation | null;
   /** Toggle the constellation-figure layer (RFC-041). Default on. */
   setConstellationsVisible(on: boolean): void;
+  /** Toggle the bright-star layer (RFC-041). Default on. */
+  setStarsVisible(on: boolean): void;
 }
 
 /** Phase shading for the Moon marker (#51 visual). */
@@ -233,6 +237,29 @@ function makeTextSprite(text: string, color: string): THREE.Sprite {
   return sprite;
 }
 
+/** A soft round white dot (radial gradient) shared by every star sprite (S2). */
+function makeStarDotTexture(): THREE.CanvasTexture {
+  const s = 64;
+  const c = document.createElement('canvas');
+  c.width = c.height = s;
+  const ctx = c.getContext('2d')!;
+  const g = ctx.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
+  g.addColorStop(0, 'rgba(255,255,255,1)');
+  g.addColorStop(0.35, 'rgba(255,255,255,0.8)');
+  g.addColorStop(1, 'rgba(255,255,255,0)');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, s, s);
+  const tex = new THREE.CanvasTexture(c);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
+}
+
+/** World-unit sprite scale for a star of apparent magnitude `mag` — brighter
+ *  (lower mag) reads bigger; clamped so nothing dominates or vanishes. */
+function starScale(mag: number): number {
+  return Math.max(0.5, Math.min(2.2, 1.7 - mag * 0.5));
+}
+
 // The four cardinal directions as horizon ENU unit vectors (North=−z, East=+x).
 const CARDINALS: Array<{ text: string; dir: [number, number, number] }> = [
   { text: 'N', dir: [0, 0, -1] },
@@ -328,6 +355,32 @@ export function createSkyScene(
   constellationLines.visible = false; // until the data loads
   scene.add(constellationLines);
   const _cstDir = new THREE.Vector3(); // scratch for the per-vertex conversion
+
+  // Bright named stars (RFC-041 S2) — Sirius, Vega, … on the same sky. One shared
+  // soft-dot texture (additive glow), one Sprite per star scaled by magnitude, and
+  // a name label on the brightest few only (clutter guard). Positions bake at the
+  // ephemeris cadence like the constellations; the group rides the camera.
+  const starGroup = new THREE.Group();
+  starGroup.visible = false; // until the data loads
+  scene.add(starGroup);
+  let showStars = true;
+  const starSprites: {
+    sprite: THREE.Sprite;
+    label: THREE.Sprite | null;
+    x: number;
+    y: number;
+    z: number;
+  }[] = [];
+  const STAR_LABEL_MAG = 1.6; // label only stars brighter than this
+  const _starDir = new THREE.Vector3();
+  const starDotTexture = makeStarDotTexture();
+  const starDotMaterial = new THREE.SpriteMaterial({
+    map: starDotTexture,
+    transparent: true,
+    depthTest: false,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
+  });
 
   // Find-arrows (#51): a DOM overlay pointing to up-bodies outside the current
   // view, so a single narrow field-of-view doesn't hide the rest of the sky.
@@ -477,6 +530,26 @@ export function createSkyScene(
     constellationLines.geometry.attributes.position.needsUpdate = true;
   }
 
+  // Re-place each bright-star sprite at toWorldDir(dir)·R (relative to the star
+  // group, which rides the camera). Same cadence + substrate mapping as the
+  // constellations. Cheap — ≤~62 stars.
+  function recomputeStars(): void {
+    if (!observer || !view || !starSprites.length) return;
+    const jd = julianDay(new Date());
+    const latRad = (observer.latDeg * Math.PI) / 180;
+    const lonRad = (observer.lonDeg * Math.PI) / 180;
+    for (const s of starSprites) {
+      const [e, u, n] = equatorialXyzToSkyDir(s.x, s.y, s.z, jd, latRad, lonRad);
+      _starDir.set(e, u, n);
+      view.toWorldDir(_starDir);
+      const px = _starDir.x * MARKER_RADIUS;
+      const py = _starDir.y * MARKER_RADIUS;
+      const pz = _starDir.z * MARKER_RADIUS;
+      s.sprite.position.set(px, py, pz);
+      if (s.label) s.label.position.set(px, py + 1.2, pz); // just above the star
+    }
+  }
+
   async function start(): Promise<boolean> {
     view = opts.view ?? (await pickSkyView());
     if (!view || !(await view.start())) return false;
@@ -505,6 +578,27 @@ export function createSkyScene(
       );
       recomputeConstellations();
       constellationLines.visible = showConstellations;
+    });
+
+    // Load the bright named stars (RFC-041 S2) + build one sprite each (+ a label
+    // on the brightest). Async, non-blocking, same as the figures.
+    void loadBrightStars(base).then((stars: BrightStar[]) => {
+      if (disposed || !stars.length) return;
+      for (const st of stars) {
+        const sprite = new THREE.Sprite(starDotMaterial);
+        const sc = starScale(st.mag);
+        sprite.scale.set(sc, sc, 1);
+        starGroup.add(sprite);
+        let label: THREE.Sprite | null = null;
+        if (st.mag < STAR_LABEL_MAG && st.proper) {
+          label = makeTextSprite(st.proper, 'rgba(210,222,245,0.85)');
+          label.scale.set(2, 2, 1);
+          starGroup.add(label); // sibling, not child — so it doesn't inherit `sc`
+        }
+        starSprites.push({ sprite, label, x: st.x, y: st.y, z: st.z });
+      }
+      recomputeStars();
+      starGroup.visible = showStars;
     });
 
     // Resolve fresh TLEs, then surface each station's next visible pass (#405).
@@ -545,11 +639,13 @@ export function createSkyScene(
       if (t - lastEphemeris >= EPHEMERIS_INTERVAL_MS) {
         recomputeDirections();
         recomputeConstellations();
+        recomputeStars();
         lastEphemeris = t;
       }
-      // The constellation figures are baked as directions·R in their own frame; the
-      // group rides the camera so they stay "at infinity" (like the markers).
+      // The constellation figures + stars are baked as directions·R in their own
+      // frame; the groups ride the camera so they stay "at infinity" (like markers).
       constellationLines.position.copy(camPos);
+      starGroup.position.copy(camPos);
       // Anchor each visible marker at cameraPos + worldDir·R (stays at the
       // correct sky direction regardless of small translation). The view maps
       // the stored ENU direction into the render world (identity for a
@@ -624,6 +720,9 @@ export function createSkyScene(
     for (const { sprite } of cardinals) (sprite.material.map as THREE.Texture | null)?.dispose();
     constellationLines.geometry.dispose();
     (constellationLines.material as THREE.Material).dispose();
+    for (const s of starSprites) (s.label?.material.map as THREE.Texture | null)?.dispose();
+    starDotTexture.dispose();
+    starDotMaterial.dispose();
     arrowLayer?.remove();
     arrowEls.clear();
     scene.traverse((o) => {
@@ -639,5 +738,10 @@ export function createSkyScene(
     constellationLines.visible = on && !!constellationPositions;
   }
 
-  return { start, stop, location: () => observer, setConstellationsVisible };
+  function setStarsVisible(on: boolean): void {
+    showStars = on;
+    starGroup.visible = on && starSprites.length > 0;
+  }
+
+  return { start, stop, location: () => observer, setConstellationsVisible, setStarsVisible };
 }

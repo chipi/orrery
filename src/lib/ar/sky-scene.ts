@@ -12,6 +12,8 @@ import { base } from '$app/paths';
 import { pickSkyView, type SkyView } from './sky-view';
 import { skyPosition, skyDirectionENU, SKY_BODIES, type SkyBody, julianDay } from '../astronomy';
 import { moonPhase } from '../astronomy/moon-observer';
+import { heliocentric, geocentricPlanet, geocentricSun } from '../astronomy/planets';
+import { bakePlanetTextures, type BakedPlanets, type PlanetBakeSpec } from './planet-bake';
 import { getObserverLocation, type ObserverLocation } from '../geolocation';
 import {
   equatorialXyzToSkyDir,
@@ -70,16 +72,83 @@ const STATION_COLOR: Record<StationId, string> = { iss: '#7cff9e', tiangong: '#f
 // Marker disc radius (canvas px) ~ by brightness, so Venus reads brighter than
 // Mars and the dim ice giants stay small (#51 visual).
 const BODY_RADIUS: Record<SkyBody, number> = {
-  sun: 56,
+  sun: 60,
   moon: 56,
   venus: 48,
-  jupiter: 44,
-  saturn: 40,
-  mars: 36,
-  mercury: 34,
-  uranus: 27,
-  neptune: 25,
+  jupiter: 46,
+  saturn: 38, // disc; the rings extend it well past this
+  mars: 32,
+  mercury: 28,
+  uranus: 24,
+  neptune: 22,
 };
+
+// Equirectangular surface maps we ship (static/textures) — baked into the AR
+// marker sprites at start (Path B). Venus uses its cloud atlas.
+const BODY_TEXTURE: Record<SkyBody, string> = {
+  sun: '2k_sun.jpg',
+  moon: '2k_moon.jpg',
+  mercury: '2k_mercury.jpg',
+  venus: '2k_venus_atmosphere.jpg',
+  mars: '2k_mars.jpg',
+  jupiter: '2k_jupiter.jpg',
+  saturn: '2k_saturn.jpg',
+  uranus: '2k_uranus.jpg',
+  neptune: '2k_neptune.jpg',
+};
+
+// Physical mean radius (km) — drives the apparent-diameter size model (advisor §2).
+const BODY_RADIUS_KM: Record<SkyBody, number> = {
+  sun: 696000,
+  moon: 1737,
+  mercury: 2440,
+  venus: 6052,
+  mars: 3390,
+  jupiter: 69911,
+  saturn: 58232,
+  uranus: 25362,
+  neptune: 24622,
+};
+const AU_KM = 149597870.7;
+
+// World-unit sprite scale from a body's apparent angular diameter (arcsec), log-
+// compressed so Neptune (~2.3″) stays legible and the Sun/Moon (~1800″) don't
+// blow out — Sun≈Moon (as they truly are), and Mars visibly grows toward
+// opposition. Size encodes geometry; brightness lives in the glow, phase in the
+// lighting (advisor: one honest quantity per channel).
+function markerWorldScale(diamArcsec: number): number {
+  const s = 2.6 + 2.4 * Math.log10(Math.max(2.3, diamArcsec) / 2.3);
+  return Math.max(2.6, Math.min(7.5, s));
+}
+function apparentDiameterArcsec(body: SkyBody, distanceAu: number): number {
+  return 2 * Math.asin(BODY_RADIUS_KM[body] / (distanceAu * AU_KM)) * 206265;
+}
+
+/** Phase of a body for the texture bake: `phaseAngleRad` (0 = full/opposition,
+ *  π = new) sets the lit fraction, `litSign` which limb is lit. The Sun is flat;
+ *  the Moon uses its computed illumination; planets use the real Sun–body–Earth
+ *  geometry so Mercury/Venus show their crescents. */
+function bodyPhase(body: SkyBody, jd: number): { phaseAngleRad: number; litSign: number } {
+  if (body === 'sun') return { phaseAngleRad: 0, litSign: 1 };
+  if (body === 'moon') {
+    const mp = moonPhase(new Date());
+    const cosA = 2 * Math.max(0, Math.min(1, mp.illuminatedFraction)) - 1;
+    return {
+      phaseAngleRad: Math.acos(Math.max(-1, Math.min(1, cosA))),
+      litSign: mp.waxing ? 1 : -1,
+    };
+  }
+  const helio = heliocentric(body, jd); // planet relative to the Sun
+  const geo = geocentricPlanet(body, jd); // planet relative to the Earth
+  // planet→Sun = −helio, planet→Earth = −geo; cos α is their normalised dot.
+  const hm = Math.hypot(helio.x, helio.y, helio.z) || 1;
+  const gm = Math.hypot(geo.x, geo.y, geo.z) || 1;
+  const cosA = (helio.x * geo.x + helio.y * geo.y + helio.z * geo.z) / (hm * gm);
+  const phaseAngleRad = Math.acos(Math.max(-1, Math.min(1, cosA)));
+  const sun = geocentricSun(jd);
+  const litSign = Math.sign(sun.x * geo.y - sun.y * geo.x) || 1;
+  return { phaseAngleRad, litSign };
+}
 
 export interface SkySceneOptions {
   /** Called when the AR session ends. */
@@ -124,20 +193,206 @@ export interface MarkerPhase {
   waxing: boolean;
 }
 
+/** Per-planet surface character so the AR markers read like the real bodies
+ *  (operator note): a lit sphere with gradient shading, Jupiter/Saturn bands, the
+ *  Great Red Spot, Saturn's rings and the Sun's corona — not flat discs. */
+interface PlanetStyle {
+  light: string; // sunlit highlight
+  base: string; // mid tone
+  shade: string; // limb / terminator
+  /** Horizontal bands: [centre y as fraction of radius (−1 top…1 bottom), half-height frac, colour]. */
+  bands?: [number, number, string][];
+  /** Great-Red-Spot-style feature: [x frac, y frac, radius frac, colour]. */
+  spot?: [number, number, number, string];
+  /** Ring system (Saturn): tilt in radians + tint. */
+  rings?: { tilt: number; color: string; bright: string };
+  /** Polar cap tint (Mars): colour drawn as a small cap at the top. */
+  cap?: string;
+  /** Corona glow (Sun): colour of the soft outer bloom. */
+  corona?: string;
+}
+const PLANET_STYLE: Partial<Record<SkyBody, PlanetStyle>> = {
+  sun: { light: '#fff6d0', base: '#ffd24a', shade: '#f2a41e', corona: 'rgba(255,206,110,0.55)' },
+  mercury: { light: '#d7cec2', base: '#9a9188', shade: '#5c554d' },
+  venus: {
+    light: '#fff3d6',
+    base: '#e6d3a3',
+    shade: '#b0925e',
+    bands: [
+      [-0.3, 0.14, 'rgba(255,244,214,0.35)'],
+      [0.35, 0.16, 'rgba(176,146,94,0.3)'],
+    ],
+  },
+  mars: {
+    light: '#e88a55',
+    base: '#c25428',
+    shade: '#792a12',
+    cap: 'rgba(240,240,255,0.7)',
+    bands: [[0.15, 0.2, 'rgba(120,44,20,0.35)']],
+  },
+  jupiter: {
+    light: '#f0d8b8',
+    base: '#d3aa7c',
+    shade: '#9a744c',
+    bands: [
+      [-0.55, 0.1, 'rgba(120,86,54,0.55)'],
+      [-0.2, 0.12, 'rgba(244,226,200,0.5)'],
+      [0.12, 0.11, 'rgba(120,86,54,0.6)'],
+      [0.45, 0.12, 'rgba(226,196,158,0.45)'],
+    ],
+    spot: [0.32, 0.16, 0.16, 'rgba(196,86,52,0.85)'],
+  },
+  saturn: {
+    light: '#f2e6bc',
+    base: '#d9c07a',
+    shade: '#a88f52',
+    bands: [
+      [-0.3, 0.16, 'rgba(244,232,190,0.4)'],
+      [0.28, 0.16, 'rgba(168,143,82,0.4)'],
+    ],
+    rings: { tilt: -0.42, color: 'rgba(214,196,150,0.75)', bright: 'rgba(244,232,196,0.95)' },
+  },
+  uranus: {
+    light: '#d6f2f6',
+    base: '#a4d6e0',
+    shade: '#6698a6',
+  },
+  neptune: {
+    light: '#86a0ee',
+    base: '#4f6fd0',
+    shade: '#2c4392',
+    bands: [[0.2, 0.14, 'rgba(134,160,238,0.4)']],
+  },
+};
+
+/** A soft ring arc (Saturn) — split into a back half (behind the disc) and a front
+ *  half (over the disc) so the planet occludes the far side. `a0..a1` is the arc. */
+function drawRingArc(
+  ctx: CanvasRenderingContext2D,
+  cx: number,
+  cy: number,
+  r: number,
+  tilt: number,
+  style: NonNullable<PlanetStyle['rings']>,
+  a0: number,
+  a1: number,
+): void {
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.rotate(tilt);
+  const rx = r * 1.7;
+  const ry = rx * 0.32;
+  const g = ctx.createLinearGradient(-rx, 0, rx, 0);
+  g.addColorStop(0, 'rgba(0,0,0,0)');
+  g.addColorStop(0.16, style.color);
+  g.addColorStop(0.5, style.bright);
+  g.addColorStop(0.84, style.color);
+  g.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.strokeStyle = g;
+  ctx.lineWidth = r * 0.5;
+  ctx.beginPath();
+  ctx.ellipse(0, 0, rx, ry, 0, a0, a1);
+  ctx.stroke();
+  // A thin Cassini-gap line just inside.
+  ctx.strokeStyle = 'rgba(20,24,32,0.5)';
+  ctx.lineWidth = Math.max(1, r * 0.04);
+  ctx.beginPath();
+  ctx.ellipse(0, 0, rx * 0.86, ry * 0.86, 0, a0, a1);
+  ctx.stroke();
+  ctx.restore();
+}
+
+/** Draw a planet as a shaded, banded sphere (with rings / corona / cap per style). */
+function drawPlanet(
+  ctx: CanvasRenderingContext2D,
+  cx: number,
+  cy: number,
+  r: number,
+  style: PlanetStyle,
+): void {
+  // Corona bloom (Sun) behind everything.
+  if (style.corona) {
+    const cg = ctx.createRadialGradient(cx, cy, r * 0.7, cx, cy, r * 2.8);
+    cg.addColorStop(0, style.corona);
+    cg.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = cg;
+    ctx.beginPath();
+    ctx.arc(cx, cy, r * 2.8, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  // Back half of the rings (behind the disc).
+  if (style.rings) drawRingArc(ctx, cx, cy, r, style.rings.tilt, style.rings, Math.PI, Math.PI * 2);
+
+  ctx.save();
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  ctx.clip();
+  // Lit-ball base: highlight offset toward the upper-left, shading to the limb.
+  const ball = ctx.createRadialGradient(cx - r * 0.34, cy - r * 0.34, r * 0.1, cx, cy, r * 1.08);
+  ball.addColorStop(0, style.light);
+  ball.addColorStop(0.5, style.base);
+  ball.addColorStop(1, style.shade);
+  ctx.fillStyle = ball;
+  ctx.fillRect(cx - r, cy - r, r * 2, r * 2);
+  // Bands (drawn semi-transparent so the shading shows through).
+  if (style.bands)
+    for (const [yf, hf, col] of style.bands) {
+      ctx.fillStyle = col;
+      ctx.fillRect(cx - r, cy + yf * r - hf * r, r * 2, hf * 2 * r);
+    }
+  // Mars polar cap.
+  if (style.cap) {
+    ctx.fillStyle = style.cap;
+    ctx.beginPath();
+    ctx.ellipse(cx, cy - r * 0.82, r * 0.5, r * 0.28, 0, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  // Great-Red-Spot-style feature.
+  if (style.spot) {
+    const [sx, sy, sr, col] = style.spot;
+    ctx.fillStyle = col;
+    ctx.beginPath();
+    ctx.ellipse(cx + sx * r, cy + sy * r, sr * r, sr * 0.7 * r, 0, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  // Limb darkening to restore roundness over the bands.
+  const limb = ctx.createRadialGradient(cx, cy, r * 0.55, cx, cy, r);
+  limb.addColorStop(0, 'rgba(0,0,0,0)');
+  limb.addColorStop(1, 'rgba(0,0,0,0.4)');
+  ctx.fillStyle = limb;
+  ctx.fillRect(cx - r, cy - r, r * 2, r * 2);
+  // Specular highlight.
+  const spec = ctx.createRadialGradient(cx - r * 0.36, cy - r * 0.4, 0, cx - r * 0.36, cy - r * 0.4, r * 0.9);
+  spec.addColorStop(0, 'rgba(255,255,255,0.28)');
+  spec.addColorStop(1, 'rgba(255,255,255,0)');
+  ctx.fillStyle = spec;
+  ctx.fillRect(cx - r, cy - r, r * 2, r * 2);
+  ctx.restore();
+
+  // Front half of the rings (over the disc).
+  if (style.rings) drawRingArc(ctx, cx, cy, r, style.rings.tilt, style.rings, 0, Math.PI);
+}
+
 /** Draw a glowing body disc + label onto a canvas the sprite maps (#51). The
  *  body reads as its real colour, sized by brightness; the Moon shows its phase.
  *  Returns the redraw fn so the Moon can repaint as its phase updates. */
 function drawMarker(
   ctx: CanvasRenderingContext2D,
   size: number,
-  label: string,
   color: string,
   bodyRadius: number,
   phase?: MarkerPhase,
+  style?: PlanetStyle,
 ): void {
   const cx = size / 2;
-  const cy = size * 0.4;
+  const cy = size / 2; // disc centred on the marker direction (label is a sibling now)
   ctx.clearRect(0, 0, size, size);
+
+  // Planets/Sun render as shaded, banded spheres (Saturn rings, Sun corona).
+  if (style && !phase) {
+    drawPlanet(ctx, cx, cy, bodyRadius, style);
+    return;
+  }
 
   // Soft glow so bright bodies bloom.
   const glow = ctx.createRadialGradient(cx, cy, bodyRadius * 0.4, cx, cy, bodyRadius * 2.6);
@@ -181,39 +436,42 @@ function drawMarker(
     ctx.arc(cx, cy, bodyRadius, 0, Math.PI * 2);
     ctx.stroke();
   } else {
-    // Planet/Sun/station: a filled disc with a thin bright rim.
+    // Planet/Sun/station: a filled disc with a bright core and a soft edge (no
+    // hard white rim — that read as a map pin).
     ctx.fillStyle = color;
     ctx.beginPath();
     ctx.arc(cx, cy, bodyRadius, 0, Math.PI * 2);
     ctx.fill();
-    ctx.strokeStyle = 'rgba(255,255,255,0.55)';
-    ctx.lineWidth = 2;
-    ctx.stroke();
+    // A small bright core so the body reads as luminous.
+    const core = ctx.createRadialGradient(cx, cy, 0, cx, cy, bodyRadius);
+    core.addColorStop(0, 'rgba(255,255,255,0.5)');
+    core.addColorStop(0.5, 'rgba(255,255,255,0.08)');
+    core.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = core;
+    ctx.beginPath();
+    ctx.arc(cx, cy, bodyRadius, 0, Math.PI * 2);
+    ctx.fill();
   }
-
-  // Label.
-  ctx.font = '600 30px "Space Mono", monospace';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.fillStyle = '#ffffff';
-  ctx.shadowColor = 'rgba(0,0,0,0.9)';
-  ctx.shadowBlur = 6;
-  ctx.fillText(label, cx, size * 0.82);
-  ctx.shadowBlur = 0;
 }
 
 function makeMarker(
-  label: string,
   color: string,
   bodyRadius = 40,
   phase?: MarkerPhase,
-): { group: THREE.Group; texture: THREE.CanvasTexture; canvas: HTMLCanvasElement; size: number } {
+  style?: PlanetStyle,
+): {
+  group: THREE.Group;
+  sprite: THREE.Sprite;
+  texture: THREE.CanvasTexture;
+  canvas: HTMLCanvasElement;
+  size: number;
+} {
   const size = 256;
   const canvas = document.createElement('canvas');
   canvas.width = size;
   canvas.height = size;
   const ctx = canvas.getContext('2d')!;
-  drawMarker(ctx, size, label, color, bodyRadius, phase);
+  drawMarker(ctx, size, color, bodyRadius, phase, style);
 
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
@@ -228,7 +486,7 @@ function makeMarker(
   sprite.scale.set(6, 6, 1);
   const group = new THREE.Group();
   group.add(sprite);
-  return { group, texture, canvas, size };
+  return { group, sprite, texture, canvas, size };
 }
 
 // Label tiers (RFC-041 redesign) — typography does the hierarchy, not boxes.
@@ -523,10 +781,16 @@ export function createSkyScene(
   }
   resize();
 
+  // Body/station display labels ride this camPos-anchored group (so a label's
+  // local position is worldDir·R, the same convention the declutter pass uses).
+  const bodyLabelGroup = new THREE.Group();
+  scene.add(bodyLabelGroup);
+
   const markers = new Map<
     SkyBody,
     {
       group: THREE.Group;
+      sprite: THREE.Sprite;
       texture: THREE.CanvasTexture;
       dir: THREE.Vector3;
       /** Display-tier name label (P9) — sibling sprite, decluttered like the rest. */
@@ -538,15 +802,20 @@ export function createSkyScene(
   for (const body of SKY_BODIES) {
     // Phase is ~constant over a session, so paint the Moon once at start.
     const phase = body === 'moon' ? moonPhase(new Date()) : undefined;
-    const { group, texture } = makeMarker(
-      BODY_LABEL[body],
+    const { group, sprite, texture } = makeMarker(
       BODY_COLOR[body],
       BODY_RADIUS[body],
       phase,
+      PLANET_STYLE[body],
     );
     group.visible = false;
     scene.add(group);
-    markers.set(body, { group, texture, dir: new THREE.Vector3() });
+    // Display-tier name label (P9) — a sibling in the camPos-anchored label group,
+    // positioned below the disc each frame + decluttered against everything else.
+    const label = makeTextSprite(BODY_LABEL[body], 'display');
+    label.visible = false;
+    bodyLabelGroup.add(label);
+    markers.set(body, { group, sprite, texture, dir: new THREE.Vector3(), label });
   }
 
   // Stations (ISS/Tiangong) — fast-moving; TLEs resolved fresh on start.
@@ -562,10 +831,13 @@ export function createSkyScene(
     }
   >();
   for (const id of STATION_IDS) {
-    const { group, texture } = makeMarker(STATION_LABEL[id], STATION_COLOR[id]);
+    const { group, texture } = makeMarker(STATION_COLOR[id]);
     group.visible = false;
     scene.add(group);
-    stationMarkers.set(id, { group, texture, tle: null, dir: new THREE.Vector3() });
+    const label = makeTextSprite(STATION_LABEL[id], 'display');
+    label.visible = false;
+    bodyLabelGroup.add(label);
+    stationMarkers.set(id, { group, texture, tle: null, dir: new THREE.Vector3(), label });
   }
 
   // Cardinal marks on the horizon so the sky is oriented (#51 visual).
@@ -865,6 +1137,57 @@ export function createSkyScene(
   const screenAngle = (): number =>
     (typeof window !== 'undefined' && window.screen?.orientation?.angle) || 0;
 
+  // Baked planet textures (Path B) — filled once the maps load; disposed on stop().
+  let bakedPlanets: BakedPlanets | null = null;
+  function loadTexture(file: string): Promise<THREE.Texture> {
+    return new Promise((resolve, reject) => {
+      new THREE.TextureLoader().load(
+        `${base}/textures/${file}`,
+        (t) => {
+          t.colorSpace = THREE.SRGBColorSpace;
+          resolve(t);
+        },
+        undefined,
+        reject,
+      );
+    });
+  }
+  async function bakePlanets(): Promise<void> {
+    try {
+      const jd = julianDay(new Date());
+      const loaded = await Promise.all(
+        SKY_BODIES.map(async (b) => ({ b, tex: await loadTexture(BODY_TEXTURE[b]) })),
+      );
+      if (disposed) {
+        for (const { tex } of loaded) tex.dispose();
+        return;
+      }
+      const specs: PlanetBakeSpec[] = loaded.map(({ b, tex }) => {
+        const ph = bodyPhase(b, jd);
+        return {
+          key: b,
+          texture: tex,
+          phaseAngleRad: ph.phaseAngleRad,
+          litSign: ph.litSign,
+          unlit: b === 'sun',
+          rings: b === 'saturn',
+        };
+      });
+      bakedPlanets = bakePlanetTextures(renderer, specs);
+      for (const { b, tex } of loaded) {
+        const baked = bakedPlanets.get(b);
+        const m = markers.get(b);
+        if (baked && m) {
+          m.sprite.material.map = baked;
+          m.sprite.material.needsUpdate = true;
+        }
+        tex.dispose(); // the source map is baked into the target now
+      }
+    } catch {
+      /* keep the procedural canvas markers as the fallback */
+    }
+  }
+
   function recomputeDirections(): void {
     if (!observer) return;
     const now = new Date();
@@ -875,6 +1198,10 @@ export function createSkyScene(
         const [x, y, z] = skyDirectionENU(pos);
         m.dir.set(x, y, z);
         m.group.visible = true;
+        // Apparent-diameter size model (advisor §2) — repaint scale only on a
+        // meaningful change (distances move over weeks; Mars grows at opposition).
+        const target = markerWorldScale(apparentDiameterArcsec(body, pos.distanceAu));
+        if (Math.abs(m.sprite.scale.x - target) > 0.05) m.sprite.scale.set(target, target, 1);
       } else {
         m.group.visible = false; // below the horizon (layer off / below-horizon off)
       }
@@ -1114,6 +1441,11 @@ export function createSkyScene(
     }
     recomputeDirections();
 
+    // Bake the real planet textures into the marker sprites (Path B). Async +
+    // non-blocking: the procedural canvas markers show until the textures land,
+    // then each sprite upgrades to its lit, textured, correctly-phased self.
+    void bakePlanets();
+
     // Load the constellation figures (RFC-041 S1) + size the shared buffer. Async,
     // non-blocking: the sky is usable immediately and the figures pop in when ready.
     void loadConstellationFigures(base).then((figs) => {
@@ -1291,6 +1623,7 @@ export function createSkyScene(
       starGroup.position.copy(camPos);
       deepSkyGroup.position.copy(camPos);
       sunEventGroup.position.copy(camPos);
+      bodyLabelGroup.position.copy(camPos);
       // Re-anchor the sunrise/sunset marks on the horizon at their azimuth.
       for (const m of sunEventMarkers) {
         _seDir.copy(m.dir);
@@ -1320,16 +1653,26 @@ export function createSkyScene(
       // Collect this frame's off-screen arrow requests, then lay them all out at
       // once (layoutArrows declutters + hides anything no longer in the sky).
       arrowReqs.length = 0;
-      for (const [body, { group, dir }] of markers) {
-        if (!group.visible) continue;
-        worldDir.copy(dir);
+      for (const [body, m] of markers) {
+        if (!m.group.visible) {
+          m.labelEligible = false;
+          if (m.label) m.label.visible = false;
+          continue;
+        }
+        worldDir.copy(m.dir);
         view.toWorldDir(worldDir);
-        group.position.copy(camPos).addScaledVector(worldDir, MARKER_RADIUS);
+        m.group.position.copy(camPos).addScaledVector(worldDir, MARKER_RADIUS);
+        if (m.label) {
+          // Local = worldDir·R (bodyLabelGroup is at camPos), nudged below the disc.
+          m.label.position.copy(worldDir).multiplyScalar(MARKER_RADIUS);
+          m.label.position.y -= 3.6;
+          m.labelEligible = true;
+        }
         arrowReqs.push({
           key: body,
           label: BODY_LABEL[body],
           color: BODY_COLOR[body],
-          world: group.position,
+          world: m.group.position,
         });
       }
       // Stations move fast (deg/s) — recompute every frame from their TLE.
@@ -1338,6 +1681,8 @@ export function createSkyScene(
         for (const [id, sm] of stationMarkers) {
           if (!sm.tle || !showStations) {
             sm.group.visible = false;
+            sm.labelEligible = false;
+            if (sm.label) sm.label.visible = false;
             continue;
           }
           const la = lookAngleForTle(sm.tle, nowD, observer.latDeg, observer.lonDeg);
@@ -1348,6 +1693,11 @@ export function createSkyScene(
             view.toWorldDir(worldDir);
             sm.group.position.copy(camPos).addScaledVector(worldDir, MARKER_RADIUS);
             sm.group.visible = true;
+            if (sm.label) {
+              sm.label.position.copy(worldDir).multiplyScalar(MARKER_RADIUS);
+              sm.label.position.y -= 3.6;
+              sm.labelEligible = true;
+            }
             arrowReqs.push({
               key: id,
               label: STATION_LABEL[id],
@@ -1356,6 +1706,8 @@ export function createSkyScene(
             });
           } else {
             sm.group.visible = false;
+            sm.labelEligible = false;
+            if (sm.label) sm.label.visible = false;
           }
         }
       }
@@ -1394,6 +1746,10 @@ export function createSkyScene(
       (m.sprite.material as THREE.Material).dispose();
       (m.label.material.map as THREE.Texture | null)?.dispose();
     }
+    for (const m of markers.values()) (m.label?.material.map as THREE.Texture | null)?.dispose();
+    for (const sm of stationMarkers.values())
+      (sm.label?.material.map as THREE.Texture | null)?.dispose();
+    bakedPlanets?.dispose();
     dotTexture.dispose();
     spikeTexture.dispose();
     for (const t of deepSkyTexCache.values()) t.dispose();

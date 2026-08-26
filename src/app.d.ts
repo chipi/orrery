@@ -17,6 +17,13 @@ declare global {
    */
   const __BUILD_DATE__: string;
   /**
+   * Build timestamp ("MM-DD HH:MM") injected at build time. Shown as the
+   * visible build tag on the splash + the menu version so builds are
+   * distinguishable at a glance (#51). Shared with the native storyboard
+   * stamp via the BUILD_TAG env.
+   */
+  const __BUILD_TAG__: string;
+  /**
    * True only in the Capacitor stream-heavy build (MOBILE=1, ADR-078).
    * App + SW code branch on this to fetch pruned asset buckets (images,
    * audio, non-default-locale overlays) from chipi.github.io. `false` in

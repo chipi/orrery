@@ -84,6 +84,13 @@ export default defineConfig(({ mode }) => {
     define: {
       __APP_VERSION__: JSON.stringify(pkg.version),
       __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
+      // Build timestamp ("MM-DD HH:MM") for the visible build tag on the splash +
+      // menu (#51 — so builds are distinguishable at a glance). Shared via the
+      // BUILD_TAG env so the native storyboard stamp + the web bundle agree; falls
+      // back to the local build time when the env isn't set (plain web build).
+      __BUILD_TAG__: JSON.stringify(
+        process.env.BUILD_TAG || new Date().toISOString().slice(5, 16).replace('T', ' '),
+      ),
       // True only in the Capacitor stream-heavy build. App + SW code branch
       // on this to route pruned buckets at chipi.github.io (S3).
       __MOBILE__: JSON.stringify(MOBILE),

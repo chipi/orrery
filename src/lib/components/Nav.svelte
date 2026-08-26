@@ -588,7 +588,7 @@
       target="_blank"
       rel="noopener noreferrer external"
       title="{m.version_info_title()}: v{displayVersion} · {__BUILD_DATE__}"
-      hreflang="en">v{displayVersion}</a
+      hreflang="en">v{displayVersion} · {__BUILD_TAG__}</a
     >
     <!-- Internal-only staging↔prod target switcher — lives at the very bottom of
          the drawer (moved out of the floating bottom-left panel, 2026-08 user

@@ -162,7 +162,8 @@ export async function launchSkyScene(): Promise<boolean> {
 
   const hint = document.createElement('div');
   hint.className = 'ar-hint';
-  hint.textContent = 'Point your phone at the sky — Sun, Moon, planets + the ISS & Tiangong';
+  hint.textContent =
+    'Point your phone at the sky — Sun, Moon, planets, constellations & stars, plus the ISS & Tiangong';
   document.body.appendChild(hint);
 
   document.documentElement.classList.add('ar-active');

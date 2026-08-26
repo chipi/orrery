@@ -222,16 +222,18 @@ function buildSkyLayerToggles(handle: {
   setConstellationsVisible(on: boolean): void;
   setStarsVisible(on: boolean): void;
   setStationsVisible(on: boolean): void;
+  setBelowHorizonVisible(on: boolean): void;
 }): HTMLDivElement {
   const wrap = document.createElement('div');
   wrap.className = 'ar-layers';
-  const mk = (label: string, set: (on: boolean) => void) => {
+  const mk = (label: string, set: (on: boolean) => void, initialOn = true) => {
     const b = document.createElement('button');
     b.type = 'button';
     b.className = 'ar-layer-btn';
     b.textContent = label;
-    b.setAttribute('aria-pressed', 'true');
-    let on = true;
+    let on = initialOn;
+    b.setAttribute('aria-pressed', String(on));
+    b.classList.toggle('off', !on);
     b.onclick = () => {
       on = !on;
       set(on);
@@ -245,6 +247,8 @@ function buildSkyLayerToggles(handle: {
     mk('✦ Figures', (v) => handle.setConstellationsVisible(v)),
     mk('★ Stars', (v) => handle.setStarsVisible(v)),
     mk('🛰 Stations', (v) => handle.setStationsVisible(v)),
+    // Below-horizon starts OFF (sub-horizon sky hidden by default).
+    mk('◡ Below horizon', (v) => handle.setBelowHorizonVisible(v), false),
   );
   return wrap;
 }

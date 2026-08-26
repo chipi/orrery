@@ -102,6 +102,8 @@ export interface SkySceneHandle {
   setPlanetsVisible(on: boolean): void;
   /** Toggle the ISS/Tiangong station markers (RFC-041). Default on. */
   setStationsVisible(on: boolean): void;
+  /** Show/hide sub-horizon sky (stars/figures/planets). Default hidden (#488). */
+  setBelowHorizonVisible(on: boolean): void;
 }
 
 /** Phase shading for the Moon marker (#51 visual). */
@@ -417,7 +419,13 @@ export function createSkyScene(
   const constellationLabelGroup = new THREE.Group();
   constellationLabelGroup.visible = false;
   scene.add(constellationLabelGroup);
-  const constellationLabels: { sprite: THREE.Sprite; x: number; y: number; z: number }[] = [];
+  const constellationLabels: {
+    sprite: THREE.Sprite;
+    x: number;
+    y: number;
+    z: number;
+    above?: boolean;
+  }[] = [];
 
   // Horizon line (#488) — the altitude-0 circle. It is STATIC in the ENU frame
   // (same at any time/place, and a compass yaw maps the circle onto itself), so
@@ -458,12 +466,14 @@ export function createSkyScene(
   let showStars = true;
   let showPlanets = true; // Sun / Moon / planets markers
   let showStations = true; // ISS / Tiangong markers
+  let showBelowHorizon = false; // #488 — hide sub-horizon sky by default (toggleable)
   const starSprites: {
     sprite: THREE.Sprite;
     label: THREE.Sprite | null;
     x: number;
     y: number;
     z: number;
+    above?: boolean;
   }[] = [];
   const _starDir = new THREE.Vector3();
   const starDotMaterial = new THREE.SpriteMaterial({
@@ -585,12 +595,12 @@ export function createSkyScene(
     for (const body of SKY_BODIES) {
       const pos = skyPosition(body, now, observer.latDeg, observer.lonDeg);
       const m = markers.get(body)!;
-      if (pos.aboveHorizon && showPlanets) {
+      if ((pos.aboveHorizon || showBelowHorizon) && showPlanets) {
         const [x, y, z] = skyDirectionENU(pos);
         m.dir.set(x, y, z);
         m.group.visible = true;
       } else {
-        m.group.visible = false; // below the horizon, or the layer is off
+        m.group.visible = false; // below the horizon (layer off / below-horizon off)
       }
     }
   }
@@ -606,40 +616,57 @@ export function createSkyScene(
     const jd = julianDay(new Date());
     const latRad = (observer.latDeg * Math.PI) / 180;
     const lonRad = (observer.lonDeg * Math.PI) / 180;
+    // Lines are LineSegments (every 2 verts = 1 drawn segment). Pack only the
+    // segments to draw at the front + setDrawRange, so below-horizon segments are
+    // dropped without leaving stray geometry (#488). A segment is dropped if
+    // either endpoint is below the horizon (unless the below-horizon layer is on).
     const pos = constellationPositions;
-    let i = 0;
+    let w = 0;
     for (const fig of constellationFigures) {
       const v = fig.vertices;
-      for (let k = 0; k + 2 < v.length; k += 3) {
-        const [e, u, n] = equatorialXyzToSkyDir(v[k], v[k + 1], v[k + 2], jd, latRad, lonRad);
-        _cstDir.set(e, u, n);
+      for (let k = 0; k + 5 < v.length; k += 6) {
+        const a = equatorialXyzToSkyDir(v[k], v[k + 1], v[k + 2], jd, latRad, lonRad);
+        const b = equatorialXyzToSkyDir(v[k + 3], v[k + 4], v[k + 5], jd, latRad, lonRad);
+        if (!showBelowHorizon && (a[1] <= 0 || b[1] <= 0)) continue;
+        _cstDir.set(a[0], a[1], a[2]);
         view.toWorldDir(_cstDir);
-        pos[i++] = _cstDir.x * MARKER_RADIUS;
-        pos[i++] = _cstDir.y * MARKER_RADIUS;
-        pos[i++] = _cstDir.z * MARKER_RADIUS;
+        pos[w++] = _cstDir.x * MARKER_RADIUS;
+        pos[w++] = _cstDir.y * MARKER_RADIUS;
+        pos[w++] = _cstDir.z * MARKER_RADIUS;
+        _cstDir.set(b[0], b[1], b[2]);
+        view.toWorldDir(_cstDir);
+        pos[w++] = _cstDir.x * MARKER_RADIUS;
+        pos[w++] = _cstDir.y * MARKER_RADIUS;
+        pos[w++] = _cstDir.z * MARKER_RADIUS;
       }
     }
+    constellationLines.geometry.setDrawRange(0, w / 3);
     constellationLines.geometry.attributes.position.needsUpdate = true;
 
-    // The vertex dots (#488) — same conversion over the deduped figure stars.
+    // The vertex dots (#488) — same conversion over the deduped figure stars, with
+    // the same draw-range pack for below-horizon culling.
     if (constellationDotPositions) {
       const dp = constellationDotPositions;
       const s = constellationStarXyz;
       let j = 0;
       for (let k = 0; k + 2 < s.length; k += 3) {
         const [e, u, n] = equatorialXyzToSkyDir(s[k], s[k + 1], s[k + 2], jd, latRad, lonRad);
+        if (!showBelowHorizon && u <= 0) continue;
         _cstDir.set(e, u, n);
         view.toWorldDir(_cstDir);
         dp[j++] = _cstDir.x * MARKER_RADIUS;
         dp[j++] = _cstDir.y * MARKER_RADIUS;
         dp[j++] = _cstDir.z * MARKER_RADIUS;
       }
+      constellationDots.geometry.setDrawRange(0, j / 3);
       constellationDots.geometry.attributes.position.needsUpdate = true;
     }
 
-    // Figure name labels — at the centroid direction.
+    // Figure name labels — at the centroid direction; remember above/below horizon
+    // so the per-frame cull can drop the below-horizon ones.
     for (const l of constellationLabels) {
       const [e, u, n] = equatorialXyzToSkyDir(l.x, l.y, l.z, jd, latRad, lonRad);
+      l.above = u > 0;
       _cstDir.set(e, u, n);
       view.toWorldDir(_cstDir);
       l.sprite.position.set(
@@ -660,6 +687,9 @@ export function createSkyScene(
     const lonRad = (observer.lonDeg * Math.PI) / 180;
     for (const s of starSprites) {
       const [e, u, n] = equatorialXyzToSkyDir(s.x, s.y, s.z, jd, latRad, lonRad);
+      const above = u > 0;
+      s.above = above;
+      s.sprite.visible = above || showBelowHorizon; // hide sub-horizon stars (#488)
       _starDir.set(e, u, n);
       view.toWorldDir(_starDir);
       const px = _starDir.x * MARKER_RADIUS;
@@ -838,8 +868,17 @@ export function createSkyScene(
       // Cull labels that fall near/off the screen edge so they don't clip (the
       // operator's cut-off-labels note) + it thins the clutter. Project each
       // label's world position (group is at camPos, label local = dir·R).
-      if (showConstellations) for (const l of constellationLabels) cullLabel(l.sprite);
-      if (showStars) for (const s of starSprites) if (s.label) cullLabel(s.label);
+      if (showConstellations)
+        for (const l of constellationLabels) {
+          if (!l.above && !showBelowHorizon) l.sprite.visible = false;
+          else cullLabel(l.sprite);
+        }
+      if (showStars)
+        for (const s of starSprites)
+          if (s.label) {
+            if (!s.above && !showBelowHorizon) s.label.visible = false;
+            else cullLabel(s.label);
+          }
 
       // Collect this frame's off-screen arrow requests, then lay them all out at
       // once (layoutArrows declutters + hides anything no longer in the sky).
@@ -946,6 +985,14 @@ export function createSkyScene(
     // when re-enabled the render loop re-shows above-horizon stations next frame
   }
 
+  function setBelowHorizonVisible(on: boolean): void {
+    showBelowHorizon = on;
+    // Re-pack / re-evaluate visibility across every layer immediately.
+    recomputeDirections();
+    recomputeConstellations();
+    recomputeStars();
+  }
+
   return {
     start,
     stop,
@@ -954,5 +1001,6 @@ export function createSkyScene(
     setStarsVisible,
     setPlanetsVisible,
     setStationsVisible,
+    setBelowHorizonVisible,
   };
 }

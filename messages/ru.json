@@ -1847,5 +1847,22 @@
   "deepsky_filter_observatory": "Фильтр по обсерватории",
   "deepsky_close": "Закрыть",
   "deepsky_prev": "Назад",
-  "deepsky_next": "Далее"
+  "deepsky_next": "Далее",
+  "earth_locate_me": "Центрировать по моему местоположению",
+  "earth_locate_working": "Определение…",
+  "moon_locate_me": "Вид с моего местоположения",
+  "moon_locate_working": "Определение…",
+  "moon_view_eyebrow": "КАК ВИДНО С ВАШЕГО МЕСТОПОЛОЖЕНИЯ",
+  "moon_view_lit": "{pct}% освещена",
+  "moon_view_alt_above": "{deg}° над горизонтом",
+  "moon_view_alt_below": "Сейчас под горизонтом",
+  "moon_view_libration": "Либрация {lon} · {lat}",
+  "moon_phase_new": "Новолуние",
+  "moon_phase_waxing_crescent": "Растущий полумесяц",
+  "moon_phase_first_quarter": "Первая четверть",
+  "moon_phase_waxing_gibbous": "Растущая луна",
+  "moon_phase_full": "Полнолуние",
+  "moon_phase_waning_gibbous": "Убывающая луна",
+  "moon_phase_last_quarter": "Последняя четверть",
+  "moon_phase_waning_crescent": "Убывающий полумесяц"
 }

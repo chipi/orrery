@@ -1847,5 +1847,22 @@
   "deepsky_filter_observatory": "वेधशाला के अनुसार फ़िल्टर करें",
   "deepsky_close": "बंद करें",
   "deepsky_prev": "पिछला",
-  "deepsky_next": "अगला"
+  "deepsky_next": "अगला",
+  "earth_locate_me": "मेरे स्थान पर केंद्रित करें",
+  "earth_locate_working": "स्थान खोज रहे हैं…",
+  "moon_locate_me": "मेरे स्थान से देखें",
+  "moon_locate_working": "स्थान खोज रहे हैं…",
+  "moon_view_eyebrow": "आपसे जैसा दिख रहा है",
+  "moon_view_lit": "{pct}% प्रकाशित",
+  "moon_view_alt_above": "क्षितिज से {deg}° ऊपर",
+  "moon_view_alt_below": "अभी क्षितिज के नीचे है",
+  "moon_view_libration": "लिब्रेशन {lon} · {lat}",
+  "moon_phase_new": "नया चंद्रमा",
+  "moon_phase_waxing_crescent": "बढ़ता अर्धचंद्र",
+  "moon_phase_first_quarter": "प्रथम चतुर्थांश",
+  "moon_phase_waxing_gibbous": "बढ़ता गिबस",
+  "moon_phase_full": "पूर्ण चंद्रमा",
+  "moon_phase_waning_gibbous": "घटता गिबस",
+  "moon_phase_last_quarter": "अंतिम चतुर्थांश",
+  "moon_phase_waning_crescent": "घटता अर्धचंद्र"
 }

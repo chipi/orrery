@@ -1847,5 +1847,22 @@
   "deepsky_filter_observatory": "按天文台筛选",
   "deepsky_close": "关闭",
   "deepsky_prev": "上一个",
-  "deepsky_next": "下一个"
+  "deepsky_next": "下一个",
+  "earth_locate_me": "在我的位置居中",
+  "earth_locate_working": "定位中…",
+  "moon_locate_me": "从我的位置查看",
+  "moon_locate_working": "定位中…",
+  "moon_view_eyebrow": "从您的角度看",
+  "moon_view_lit": "{pct}% 亮度",
+  "moon_view_alt_above": "地平线上方 {deg}°",
+  "moon_view_alt_below": "现在在地平线下",
+  "moon_view_libration": "章动 {lon} · {lat}",
+  "moon_phase_new": "新月",
+  "moon_phase_waxing_crescent": "上弦月（初期）",
+  "moon_phase_first_quarter": "上弦月",
+  "moon_phase_waxing_gibbous": "上弦月（后期）",
+  "moon_phase_full": "满月",
+  "moon_phase_waning_gibbous": "下弦月（后期）",
+  "moon_phase_last_quarter": "下弦月",
+  "moon_phase_waning_crescent": "下弦月（初期）"
 }

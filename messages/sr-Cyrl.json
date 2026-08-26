@@ -1847,5 +1847,22 @@
   "deepsky_filter_observatory": "Филтрирај по опсерваторијуму",
   "deepsky_close": "Затвори",
   "deepsky_prev": "Претходни",
-  "deepsky_next": "Следећи"
+  "deepsky_next": "Следећи",
+  "earth_locate_me": "Центрирај на моју локацију",
+  "earth_locate_working": "Лоцирам…",
+  "moon_locate_me": "Поглед из моје локације",
+  "moon_locate_working": "Лоцирам…",
+  "moon_view_eyebrow": "КАКО ВИДИШ ТИ",
+  "moon_view_lit": "{pct}% осветљена",
+  "moon_view_alt_above": "{deg}° изнад хоризонта",
+  "moon_view_alt_below": "Испод хоризонта сада",
+  "moon_view_libration": "Либрација {lon} · {lat}",
+  "moon_phase_new": "Млада луна",
+  "moon_phase_waxing_crescent": "Растућа полумесец",
+  "moon_phase_first_quarter": "Прва четвртина",
+  "moon_phase_waxing_gibbous": "Растућа пуна луна",
+  "moon_phase_full": "Пуна луна",
+  "moon_phase_waning_gibbous": "Опадајућа пуна луна",
+  "moon_phase_last_quarter": "Последња четвртина",
+  "moon_phase_waning_crescent": "Опадајућа полумесец"
 }

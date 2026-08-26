@@ -1847,5 +1847,22 @@
   "deepsky_filter_observatory": "천문대별 필터",
   "deepsky_close": "닫기",
   "deepsky_prev": "이전",
-  "deepsky_next": "다음"
+  "deepsky_next": "다음",
+  "earth_locate_me": "내 위치로 이동",
+  "earth_locate_working": "위치 확인 중…",
+  "moon_locate_me": "내 위치에서 보기",
+  "moon_locate_working": "위치 확인 중…",
+  "moon_view_eyebrow": "당신에게서 본 모습",
+  "moon_view_lit": "{pct}% 조명됨",
+  "moon_view_alt_above": "수평선 위 {deg}°",
+  "moon_view_alt_below": "현재 수평선 아래",
+  "moon_view_libration": "천동 {lon} · {lat}",
+  "moon_phase_new": "신월",
+  "moon_phase_waxing_crescent": "증가 초승달",
+  "moon_phase_first_quarter": "상현",
+  "moon_phase_waxing_gibbous": "증가 볼록달",
+  "moon_phase_full": "만월",
+  "moon_phase_waning_gibbous": "감소 볼록달",
+  "moon_phase_last_quarter": "하현",
+  "moon_phase_waning_crescent": "감소 초승달"
 }

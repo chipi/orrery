@@ -1847,5 +1847,22 @@
   "deepsky_filter_observatory": "تصفية حسب المرصد",
   "deepsky_close": "إغلاق",
   "deepsky_prev": "السابق",
-  "deepsky_next": "التالي"
+  "deepsky_next": "التالي",
+  "earth_locate_me": "ركّز على موقعي",
+  "earth_locate_working": "جاري البحث عن الموقع…",
+  "moon_locate_me": "اعرض المنظر من موقعي",
+  "moon_locate_working": "جاري تحديد الموقع…",
+  "moon_view_eyebrow": "كما يبدو من موقعك",
+  "moon_view_lit": "{pct}% مضاء",
+  "moon_view_alt_above": "{deg}° فوق الأفق",
+  "moon_view_alt_below": "تحت الأفق الآن",
+  "moon_view_libration": "التذبذب {lon} · {lat}",
+  "moon_phase_new": "قمر جديد",
+  "moon_phase_waxing_crescent": "هلال متنامٍ",
+  "moon_phase_first_quarter": "التربيع الأول",
+  "moon_phase_waxing_gibbous": "أحدب متنامٍ",
+  "moon_phase_full": "بدر",
+  "moon_phase_waning_gibbous": "أحدب متناقص",
+  "moon_phase_last_quarter": "التربيع الأخير",
+  "moon_phase_waning_crescent": "هلال متناقص"
 }

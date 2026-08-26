@@ -1847,5 +1847,22 @@
   "deepsky_filter_observatory": "Filteren op observatorium",
   "deepsky_close": "Sluiten",
   "deepsky_prev": "Vorige",
-  "deepsky_next": "Volgende"
+  "deepsky_next": "Volgende",
+  "earth_locate_me": "Centreer op mijn locatie",
+  "earth_locate_working": "Loceren…",
+  "moon_locate_me": "Bekijk vanuit mijn locatie",
+  "moon_locate_working": "Loceren…",
+  "moon_view_eyebrow": "ZOALS GEZIEN VANUIT JOU",
+  "moon_view_lit": "{pct}% verlicht",
+  "moon_view_alt_above": "{deg}° boven horizon",
+  "moon_view_alt_below": "Nu onder de horizon",
+  "moon_view_libration": "Libratie {lon} · {lat}",
+  "moon_phase_new": "Nieuwe maan",
+  "moon_phase_waxing_crescent": "Wassende sikkel",
+  "moon_phase_first_quarter": "Eerste kwartier",
+  "moon_phase_waxing_gibbous": "Wassende gibbous",
+  "moon_phase_full": "Volle maan",
+  "moon_phase_waning_gibbous": "Afnemende gibbous",
+  "moon_phase_last_quarter": "Laatste kwartier",
+  "moon_phase_waning_crescent": "Afnemende sikkel"
 }

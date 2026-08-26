@@ -1847,5 +1847,22 @@
   "deepsky_filter_observatory": "Filtrer par observatoire",
   "deepsky_close": "Fermer",
   "deepsky_prev": "Précédent",
-  "deepsky_next": "Suivant"
+  "deepsky_next": "Suivant",
+  "earth_locate_me": "Me centrer sur ma localisation",
+  "earth_locate_working": "Localisation en cours…",
+  "moon_locate_me": "Vue depuis ma localisation",
+  "moon_locate_working": "Localisation en cours…",
+  "moon_view_eyebrow": "VUE DEPUIS VOTRE POSITION",
+  "moon_view_lit": "{pct} % illuminée",
+  "moon_view_alt_above": "{deg}° au-dessus de l'horizon",
+  "moon_view_alt_below": "Sous l'horizon actuellement",
+  "moon_view_libration": "Libration {lon} · {lat}",
+  "moon_phase_new": "Nouvelle lune",
+  "moon_phase_waxing_crescent": "Croissant croissant",
+  "moon_phase_first_quarter": "Premier quartier",
+  "moon_phase_waxing_gibbous": "Gibbeuse croissante",
+  "moon_phase_full": "Pleine lune",
+  "moon_phase_waning_gibbous": "Gibbeuse décroissante",
+  "moon_phase_last_quarter": "Dernier quartier",
+  "moon_phase_waning_crescent": "Croissant décroissant"
 }

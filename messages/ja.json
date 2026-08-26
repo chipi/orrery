@@ -1847,5 +1847,22 @@
   "deepsky_filter_observatory": "天文台でフィルタ",
   "deepsky_close": "閉じる",
   "deepsky_prev": "前へ",
-  "deepsky_next": "次へ"
+  "deepsky_next": "次へ",
+  "earth_locate_me": "現在地を中心に表示",
+  "earth_locate_working": "位置情報取得中…",
+  "moon_locate_me": "現在地からの眺め",
+  "moon_locate_working": "位置情報取得中…",
+  "moon_view_eyebrow": "あなたから見た月",
+  "moon_view_lit": "照面率{pct}%",
+  "moon_view_alt_above": "地平線上{deg}°",
+  "moon_view_alt_below": "現在地平線下",
+  "moon_view_libration": "章動 {lon} · {lat}",
+  "moon_phase_new": "新月",
+  "moon_phase_waxing_crescent": "三日月",
+  "moon_phase_first_quarter": "上弦",
+  "moon_phase_waxing_gibbous": "十日月",
+  "moon_phase_full": "満月",
+  "moon_phase_waning_gibbous": "二十日月",
+  "moon_phase_last_quarter": "下弦",
+  "moon_phase_waning_crescent": "殊月"
 }

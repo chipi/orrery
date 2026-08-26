@@ -18,6 +18,11 @@
   let badges = $derived(data.badges ?? {});
   let mode = $state<'era' | 'kind' | 'agency'>('era');
 
+  // Opening graphic: a wall of the iconic program mission patches (existing,
+  // vetted assets). Thematically the page's subject IS programs, and patches are
+  // their signature. Capped so the header stays a band, not a gallery.
+  let patchWall = $derived(Object.values(badges).slice(0, 28));
+
   // Group by a stable key; the heading label resolves per-locale via m.*().
   const ERA_KEY: Record<string, string> = {
     'first-steps': 'space-race',
@@ -105,6 +110,13 @@
 
 <div class="programs-index">
   <header class="head">
+    {#if patchWall.length}
+      <div class="patch-wall" aria-hidden="true">
+        {#each patchWall as src (src)}
+          <img src={assetUrl(src)} alt="" loading="eager" decoding="async" />
+        {/each}
+      </div>
+    {/if}
     <h1>{m.programs_index_title()}</h1>
     <p class="intro">
       <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output only, no user input -->
@@ -169,6 +181,45 @@
        it and left a ~60px gap above the title. */
     padding: 24px 20px 80px;
     color: var(--color-text, #eef);
+  }
+  /* Opening graphic — a masked band of program mission patches (#programs hero). */
+  .patch-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px 14px;
+    max-height: 128px;
+    overflow: hidden;
+    margin: 4px 0 20px;
+    opacity: 0.92;
+    /* Fade the band into the page at the horizontal edges + soften the clipped
+       bottom row so it reads as a backdrop, not a cut-off grid. */
+    -webkit-mask-image:
+      linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent),
+      linear-gradient(#000 62%, transparent);
+    mask-image:
+      linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent),
+      linear-gradient(#000 62%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+  }
+  .patch-wall img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    flex: none;
+    filter: drop-shadow(0 2px 7px rgba(0, 0, 0, 0.55));
+  }
+  @media (max-width: 560px) {
+    .patch-wall {
+      max-height: 104px;
+      gap: 10px 12px;
+    }
+    .patch-wall img {
+      width: 44px;
+      height: 44px;
+    }
   }
   h1 {
     font-family: 'Bebas Neue', 'Space Mono', sans-serif;

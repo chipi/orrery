@@ -3621,6 +3621,14 @@ export function createExploreSceneHost(bridge: any, deps: any) {
         updateSatellites(dt);
       }
 
+      // #51 — don't draw the flat scene while an AR overlay covers the app. AR
+      // opens a SECOND WebGL context (the sky/tabletop canvas); on WKWebView two
+      // contexts drawing in parallel can make the compositor evict this one,
+      // leaving /explore blank after AR exits ("nav came back, scene didn't").
+      // The state above (sim time, positions, LODs) still advances, so the scene
+      // is current the instant AR closes and .ar-active is removed.
+      if (document.documentElement.classList.contains('ar-active')) return;
+
       if (bridge.view === '3d') {
         // Apply layer visibility (issue #32). Cheap — just sets the
         // .visible flag on the existing scene refs each frame so

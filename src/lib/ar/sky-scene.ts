@@ -116,6 +116,24 @@ const BODY_RADIUS_KM: Record<SkyBody, number> = {
 };
 const AU_KM = 149597870.7;
 
+// Typical apparent magnitude — drives the per-body aura (brightness channel).
+const BODY_MAGNITUDE: Record<SkyBody, number> = {
+  sun: -26.7,
+  moon: -12.7,
+  venus: -4.2,
+  jupiter: -2.2,
+  mars: -1.0,
+  mercury: -0.2,
+  saturn: 0.6,
+  uranus: 5.7,
+  neptune: 7.8,
+};
+// Aura opacity from magnitude — brighter bodies (Venus, Jupiter) bloom more;
+// the faint ice giants barely glow. Size stays geometry; brightness lives here.
+function auraAlpha(mag: number): number {
+  return Math.max(0.04, Math.min(0.5, 0.42 - mag * 0.05));
+}
+
 // Ortho half-extent each body is baked in. Saturn needs a wider frame so its
 // rings (out to 2.3× the disc) aren't clipped; the sprite scale is compensated by
 // the same factor (below) so the DISC keeps its apparent-diameter size.
@@ -499,6 +517,27 @@ function makeMarker(
   return { group, sprite, texture, canvas, size };
 }
 
+/** A station marker (ISS/Tiangong) — a small diamond glyph, not a planet disc. */
+function makeStationMarker(color: string): {
+  group: THREE.Group;
+  sprite: THREE.Sprite;
+  texture: THREE.CanvasTexture;
+} {
+  const size = 128;
+  const canvas = document.createElement('canvas');
+  canvas.width = canvas.height = size;
+  drawStationGlyph(canvas.getContext('2d')!, size, color);
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  const sprite = new THREE.Sprite(
+    new THREE.SpriteMaterial({ map: texture, transparent: true, depthTest: false, depthWrite: false }),
+  );
+  sprite.scale.set(3.2, 3.2, 1);
+  const group = new THREE.Group();
+  group.add(sprite);
+  return { group, sprite, texture };
+}
+
 // Label tiers (RFC-041 redesign) — typography does the hierarchy, not boxes.
 // Every label is UPPERCASE Space Mono with a dark shadow-halo (the /fly milestone
 // idiom), tracked out like a printed star atlas. Constellations whisper (faint,
@@ -616,6 +655,50 @@ function makeStarDotTexture(): THREE.CanvasTexture {
   const tex = new THREE.CanvasTexture(c);
   tex.colorSpace = THREE.SRGBColorSpace;
   return tex;
+}
+
+/** A very soft round glow (wide falloff) for the per-body brightness aura. */
+function makeSoftGlowTexture(): THREE.CanvasTexture {
+  const s = 128;
+  const c = document.createElement('canvas');
+  c.width = c.height = s;
+  const ctx = c.getContext('2d')!;
+  const g = ctx.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
+  g.addColorStop(0, 'rgba(255,255,255,0.9)');
+  g.addColorStop(0.25, 'rgba(255,255,255,0.35)');
+  g.addColorStop(1, 'rgba(255,255,255,0)');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, s, s);
+  const tex = new THREE.CanvasTexture(c);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
+}
+
+/** A station glyph (ISS/Tiangong) — a small hollow diamond + centre dot in the
+ *  station colour, drawn onto a marker canvas. Stations are hardware, not worlds,
+ *  so they read as a distinct mark, not a planet disc (advisor §8). */
+function drawStationGlyph(ctx: CanvasRenderingContext2D, size: number, color: string): void {
+  const cx = size / 2;
+  const cy = size / 2;
+  const r = size * 0.2;
+  ctx.clearRect(0, 0, size, size);
+  ctx.strokeStyle = color;
+  ctx.lineWidth = Math.max(3, size * 0.022);
+  ctx.lineJoin = 'round';
+  ctx.shadowColor = 'rgba(4,8,16,0.9)';
+  ctx.shadowBlur = size * 0.05;
+  ctx.beginPath();
+  ctx.moveTo(cx, cy - r);
+  ctx.lineTo(cx + r, cy);
+  ctx.lineTo(cx, cy + r);
+  ctx.lineTo(cx - r, cy);
+  ctx.closePath();
+  ctx.stroke();
+  ctx.shadowBlur = 0;
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.arc(cx, cy, size * 0.04, 0, Math.PI * 2);
+  ctx.fill();
 }
 
 /** Like the star dot but with thin 4-point diffraction spikes — used only for the
@@ -795,6 +878,7 @@ export function createSkyScene(
   // local position is worldDir·R, the same convention the declutter pass uses).
   const bodyLabelGroup = new THREE.Group();
   scene.add(bodyLabelGroup);
+  const glowTexture = makeSoftGlowTexture(); // per-body brightness aura
 
   const markers = new Map<
     SkyBody,
@@ -803,6 +887,8 @@ export function createSkyScene(
       sprite: THREE.Sprite;
       texture: THREE.CanvasTexture;
       dir: THREE.Vector3;
+      /** Brightness aura sprite behind the disc (magnitude-scaled). */
+      glow?: THREE.Sprite;
       /** Display-tier name label (P9) — sibling sprite, decluttered like the rest. */
       label?: THREE.Sprite | null;
       /** True when the body is up (or below-horizon shown) + the layer is on. */
@@ -818,6 +904,20 @@ export function createSkyScene(
       phase,
       PLANET_STYLE[body],
     );
+    // Brightness aura behind the disc (added first → renders behind).
+    const glow = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: glowTexture,
+        color: new THREE.Color(BODY_COLOR[body]),
+        transparent: true,
+        opacity: auraAlpha(BODY_MAGNITUDE[body]),
+        depthTest: false,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    glow.renderOrder = -1; // behind the disc (sprite renderOrder 0)
+    group.add(glow);
     group.visible = false;
     scene.add(group);
     // Display-tier name label (P9) — a sibling in the camPos-anchored label group,
@@ -825,7 +925,7 @@ export function createSkyScene(
     const label = makeTextSprite(BODY_LABEL[body], 'display');
     label.visible = false;
     bodyLabelGroup.add(label);
-    markers.set(body, { group, sprite, texture, dir: new THREE.Vector3(), label });
+    markers.set(body, { group, sprite, glow, texture, dir: new THREE.Vector3(), label });
   }
 
   // Stations (ISS/Tiangong) — fast-moving; TLEs resolved fresh on start.
@@ -841,7 +941,7 @@ export function createSkyScene(
     }
   >();
   for (const id of STATION_IDS) {
-    const { group, texture } = makeMarker(STATION_COLOR[id]);
+    const { group, texture } = makeStationMarker(STATION_COLOR[id]);
     group.visible = false;
     scene.add(group);
     const label = makeTextSprite(STATION_LABEL[id], 'display');
@@ -1213,9 +1313,16 @@ export function createSkyScene(
         // meaningful change (distances move over weeks; Mars grows at opposition).
         // Bodies baked in a wider frame (Saturn, for its rings) are compensated so
         // the DISC keeps the same apparent size as the tightly-framed bodies.
+        const base = markerWorldScale(apparentDiameterArcsec(body, pos.distanceAu));
         const comp = (BODY_FRUSTUM_HALF[body] ?? DEFAULT_FRUSTUM_HALF) / DEFAULT_FRUSTUM_HALF;
-        const target = markerWorldScale(apparentDiameterArcsec(body, pos.distanceAu)) * comp;
+        const target = base * comp;
         if (Math.abs(m.sprite.scale.x - target) > 0.05) m.sprite.scale.set(target, target, 1);
+        // Aura tracks the disc's on-screen size (glow fills its own sprite, so it
+        // uses the un-compensated base — uniform ~1.8× the disc across bodies).
+        if (m.glow) {
+          const gs = base * 1.35;
+          if (Math.abs(m.glow.scale.x - gs) > 0.05) m.glow.scale.set(gs, gs, 1);
+        }
       } else {
         m.group.visible = false; // below the horizon (layer off / below-horizon off)
       }
@@ -1766,6 +1873,7 @@ export function createSkyScene(
     bakedPlanets?.dispose();
     dotTexture.dispose();
     spikeTexture.dispose();
+    glowTexture.dispose();
     for (const t of deepSkyTexCache.values()) t.dispose();
     starDotMaterial.dispose();
     starSpikeMaterial.dispose();

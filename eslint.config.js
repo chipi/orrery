@@ -18,6 +18,7 @@ export default [
         // Vite-injected build-time constants — see vite.config.ts `define`.
         __APP_VERSION__: 'readonly',
         __BUILD_DATE__: 'readonly',
+        __BUILD_TAG__: 'readonly',
         __MOBILE__: 'readonly',
       },
     },

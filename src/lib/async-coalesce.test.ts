@@ -5,7 +5,7 @@ import { coalesceLatest } from './async-coalesce';
 // resolve by hand, so tests drive the exact interleaving.
 function deferredTask() {
   const started: number[] = [];
-  let resolvers: Array<() => void> = [];
+  const resolvers: Array<() => void> = [];
   const run = coalesceLatest<number>((arg) => {
     started.push(arg);
     return new Promise<void>((resolve) => resolvers.push(resolve));

@@ -48,7 +48,7 @@
 
   // Seed the local open/closed state from the prop's initial value once; the
   // drawer owns `expanded` after mount (capturing the initial prop is intended).
-  // eslint-disable-next-line svelte/valid-compile
+
   let expanded = $state(startExpanded);
 
   // Swipe-down on the drawer collapses it.

@@ -1,7 +1,31 @@
-# /explore nav redesign — #45 (mockup for approval)
+# /explore nav redesign — #45
 
-Status: **mockup, awaiting operator approval before implementation.**
+Status: **IMPLEMENTED 2026-08-26** (operator approved the mockup: "mockup is ok;
+we might fine tune after it is done"). Browser-verified at solar-system /
+neighborhood / milky-way; back·chip·reset all wired; unit typecheck + lint +
+prettier green. e2e specs updated (see below) — run in the pre-push gate.
 Visual: `2026-08-25-explore-nav-redesign-mockup.png` (before/after, neighborhood + Milky Way).
+
+## Resolved open questions (operator, 2026-08-26)
+1. **`‹` back arrow** — kept. It walks OUT one shell level (the single most common
+   move); the chip's `▾` dropdown still jumps to ANY scale. In a full-screen
+   takeover (black-hole / body-scene / deep-sky) the back arrow is the ONLY control
+   shown and exits the takeover.
+2. **"Hanging speaker"** — identified as the GLOBAL nav audio/narration toggle
+   (`∿`, in `Nav.svelte`), not a /explore element. Left in place (moving it would
+   change every route). Considered resolved-by-clarification.
+3. **Unify the scale strip** — YES, done. One `.scale-strip` box on every shell
+   (Solar/Neighborhood = km→AU→ly→pc ruler; Milky Way…Cosmic Web = schematic note +
+   Learn-more). Replaced `.scale-hud` + the scattered `.mw-badge` / `.mw-scale`.
+
+## Deviations from the mockup (candidates for the "fine-tune after" pass)
+- **Placement: top-CENTRE, not top-left.** The mockup drew the navigator top-left
+  (where the breadcrumb was), but the solar-system layer-chip cluster occupies the
+  top-left. Top-centre clears it on every scale. Trade-off: when a body/star DETAIL
+  panel is open it sits over the top-centre nav (`.panel-dock`) — close the panel to
+  navigate. (The old wide breadcrumb was likewise occluded by an open panel.)
+- **Desktop picker** is now the same chip+popover as mobile (the always-on vertical
+  rail is retired) — one code path, matches the mockup's single-chip form.
 
 ## The problems (operator report, on-device)
 1. **Breadcrumb is redundant with the scale picker.** The top breadcrumb

@@ -5,16 +5,16 @@ import { test, expect, type Page } from '@playwright/test';
  * Local Sheet to the 6th shell (one step out from the Local Sheet). Reached via
  * the build-safe ?context=virgo cold-load deep-link (crosses out through all the
  * intermediate shells). Verifies the shell renders with its honesty badge + the
- * extended 8-rung scale picker. Asserts on aria-current so it holds whether the
- * rail is a visible vertical rail (desktop) or a collapsed popover (mobile).
+ * extended 8-rung scale picker. Asserts on aria-current so it holds regardless of
+ * viewport (#45 promoted the picker to one chip+popover on every viewport).
  */
 
 const toggle = (p: Page) => p.getByTestId('explore-scale-toggle');
 const rung = (p: Page, shell: string) => p.getByTestId(`explore-scale-rung-${shell}`);
 
-/** Jump to a shell; on mobile the rail is a popover, so open it first. */
-async function jumpTo(page: Page, shell: string, isMobile: boolean): Promise<void> {
-  if (isMobile && (await toggle(page).getAttribute('aria-expanded')) !== 'true') {
+/** Jump to a shell; the ladder is a popover on every viewport, so open it first. */
+async function jumpTo(page: Page, shell: string): Promise<void> {
+  if ((await toggle(page).getAttribute('aria-expanded')) !== 'true') {
     await toggle(page).click();
     await page.waitForTimeout(150);
   }
@@ -48,10 +48,10 @@ test.describe('/explore — Virgo Supercluster shell (#455)', () => {
     await expect(rung(page, 'local-sheet')).toHaveCount(1);
   });
 
-  test('jumping in from Virgo to the Local Sheet via the picker', async ({ page, isMobile }) => {
+  test('jumping in from Virgo to the Local Sheet via the picker', async ({ page }) => {
     await page.goto('/explore?context=virgo');
     await expect(rung(page, 'virgo')).toHaveAttribute('aria-current', 'true', { timeout: 40_000 });
-    await jumpTo(page, 'local-sheet', isMobile);
+    await jumpTo(page, 'local-sheet');
     await expect(rung(page, 'local-sheet')).toHaveAttribute('aria-current', 'true', {
       timeout: 40_000,
     });

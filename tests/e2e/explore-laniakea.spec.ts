@@ -5,14 +5,15 @@ import { test, expect, type Page } from '@playwright/test';
  * Supercluster to the 7th shell (one step out from Virgo). Reached via the
  * build-safe ?context=laniakea cold-load deep-link. Verifies the shell renders
  * with its honesty badge + the extended 8-rung scale picker. Asserts on
- * aria-current so it holds on both the desktop rail and the mobile popover.
+ * aria-current so it holds regardless of viewport (#45 promoted the picker to one
+ * chip+popover on every viewport, so the ladder opens via the toggle on desktop).
  */
 
 const toggle = (p: Page) => p.getByTestId('explore-scale-toggle');
 const rung = (p: Page, shell: string) => p.getByTestId(`explore-scale-rung-${shell}`);
 
-async function jumpTo(page: Page, shell: string, isMobile: boolean): Promise<void> {
-  if (isMobile && (await toggle(page).getAttribute('aria-expanded')) !== 'true') {
+async function jumpTo(page: Page, shell: string): Promise<void> {
+  if ((await toggle(page).getAttribute('aria-expanded')) !== 'true') {
     await toggle(page).click();
     await page.waitForTimeout(150);
   }
@@ -46,15 +47,12 @@ test.describe('/explore — Laniakea shell (#456)', () => {
     await expect(rung(page, 'virgo')).toHaveCount(1);
   });
 
-  test('jumping in from Laniakea to the Virgo Supercluster via the picker', async ({
-    page,
-    isMobile,
-  }) => {
+  test('jumping in from Laniakea to the Virgo Supercluster via the picker', async ({ page }) => {
     await page.goto('/explore?context=laniakea');
     await expect(rung(page, 'laniakea')).toHaveAttribute('aria-current', 'true', {
       timeout: 40_000,
     });
-    await jumpTo(page, 'virgo', isMobile);
+    await jumpTo(page, 'virgo');
     await expect(rung(page, 'virgo')).toHaveAttribute('aria-current', 'true', { timeout: 40_000 });
   });
 });

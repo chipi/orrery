@@ -6,8 +6,8 @@ import { test, expect, type Page } from '@playwright/test';
  * already crosses via wheel/pinch. Each rung drives the host's `contextDeepLinkFn`,
  * which walks the shell ladder OUT or IN (`scale-shell-controller` · `planShellJump`).
  *
- * Desktop shows an always-on vertical rail; mobile (≤640 px) collapses to a
- * "Scale" toggle chip that opens the same ladder as a popover and auto-closes on
+ * #45 promoted the picker to one "Scale" chip on every viewport (desktop no longer
+ * has an always-on rail); the chip opens the ladder as a popover and auto-closes on
  * pick. The active rung mirrors the live `contextId`, which only flips once a
  * crossing completes — so `aria-current` is a true end-to-end assertion that the
  * jump actually happened, not just that a button was pressed.
@@ -17,9 +17,9 @@ const picker = (p: Page) => p.getByTestId('explore-scale-picker');
 const toggle = (p: Page) => p.getByTestId('explore-scale-toggle');
 const rung = (p: Page, shell: string) => p.getByTestId(`explore-scale-rung-${shell}`);
 
-/** Jump to a shell; on mobile the rail is a popover, so open it first. */
-async function jumpTo(page: Page, shell: string, isMobile: boolean): Promise<void> {
-  if (isMobile && (await toggle(page).getAttribute('aria-expanded')) !== 'true') {
+/** Jump to a shell; the ladder is a popover on every viewport, so open it first. */
+async function jumpTo(page: Page, shell: string): Promise<void> {
+  if ((await toggle(page).getAttribute('aria-expanded')) !== 'true') {
     await toggle(page).click();
     await page.waitForTimeout(150);
   }
@@ -36,7 +36,6 @@ test.describe('/explore — scale picker (#258)', () => {
 
   test('jumps out to Local Group (multi-step) and back in to Solar System', async ({
     page,
-    isMobile,
   }, testInfo) => {
     // The multi-step out-then-back walk builds several Three.js scenes; on the 2-CPU
     // mobile-landscape docker shard that exceeds the per-test budget. Covered on
@@ -51,13 +50,13 @@ test.describe('/explore — scale picker (#258)', () => {
     });
 
     // One tap climbs OUT through neighborhood + milky-way to the local group.
-    await jumpTo(page, 'local-group', isMobile);
+    await jumpTo(page, 'local-group');
     await expect(rung(page, 'local-group')).toHaveAttribute('aria-current', 'true', {
       timeout: 40_000,
     });
 
     // And back IN to the solar system.
-    await jumpTo(page, 'solar-system', isMobile);
+    await jumpTo(page, 'solar-system');
     await expect(rung(page, 'solar-system')).toHaveAttribute('aria-current', 'true', {
       timeout: 40_000,
     });

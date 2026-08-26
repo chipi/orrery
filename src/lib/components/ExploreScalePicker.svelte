@@ -1,18 +1,20 @@
 <!--
-  #258 — the /explore scale picker: a quick-jump between the four nested scale
-  shells (Solar System → Stellar Neighbourhood → Milky Way → Local Group) that the
-  scene already crosses via wheel/pinch. Each rung drives the host's
-  `contextDeepLinkFn`, which walks OUT or IN the shell ladder (see
+  #258 / #45 — the /explore scale picker: a quick-jump between the eight nested
+  scale shells (Solar System → Stellar Neighbourhood → Milky Way → Local Group →
+  … → Cosmic Web) that the scene already crosses via wheel/pinch. Each rung drives
+  the host's `contextDeepLinkFn`, which walks OUT or IN the shell ladder (see
   `scale-shell-controller` · `planShellJump`).
 
-  Responsive: desktop shows an always-on vertical rail (Local Group at top →
-  Solar System at bottom, mirroring "zoom out is up"); mobile collapses to one
-  "Scale" chip that opens the same ladder as a popover and auto-closes on pick,
-  so it never fights the packed bottom control stack.
+  #45 promoted this into the top scale-navigator: on EVERY viewport it renders as
+  one "Scale" chip (`◉ <current shell> ▾`) that opens the ladder as a popover
+  DOWNWARD and auto-closes on pick. It replaces both the old always-on desktop
+  rail and the redundant breadcrumb — the chip is the single "where am I + jump to
+  any scale" control, flanked by the host's back/reset affordances. The parent
+  positions it (this component is layout-neutral: `position: relative`).
 
   The caller hides this entirely during full-screen sub-views (body-scene /
-  black-hole / deep-sky) — `contextDeepLinkFn` only knows the four shells, not
-  those takeovers, so the ladder is only meaningful in a shell context.
+  black-hole / deep-sky) — `contextDeepLinkFn` only knows the shells, not those
+  takeovers, so the ladder is only meaningful in a shell context.
 -->
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
@@ -119,37 +121,95 @@
 </div>
 
 <style>
-  /* Desktop: an always-on vertical rail, lower-right above the scale bar. Slate
-     glass tokens mirror the .context-crumbs breadcrumb so it reads as native
-     chrome, not a new widget. */
+  /* #45 — one chip on every viewport; the parent (the top scale-navigator)
+     positions it, so this stays layout-neutral. `position: relative` anchors the
+     popover ladder, which drops DOWNWARD from the chip. Slate glass tokens mirror
+     the surrounding nav chrome so it reads as native, not a new widget. */
   .scale-picker {
-    position: absolute;
-    right: 16px;
-    bottom: 64px;
-    z-index: 7;
-    display: flex;
+    position: relative;
+    display: inline-flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 6px;
     font-family: var(--font-mono, 'Space Mono', monospace);
   }
 
+  /* The trigger chip: current shell + a caret. Shown on all viewports now. */
+  .toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 34px;
+    padding: 6px 12px;
+    background: rgba(10, 14, 24, 0.62);
+    border: 1px solid rgba(90, 200, 210, 0.5);
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    color: #d7f6f6;
+    font: inherit;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      border-color 120ms,
+      background 120ms,
+      color 120ms;
+  }
+  .toggle::before {
+    /* The ◉ "you are here" dot from the mockup. */
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #5ac8d2;
+    box-shadow: 0 0 8px rgba(90, 200, 210, 0.7);
+    flex: none;
+  }
+  .toggle:hover:not(:disabled),
+  .toggle:focus-visible:not(:disabled) {
+    background: rgba(90, 200, 210, 0.18);
+    border-color: rgba(90, 200, 210, 0.7);
+    color: #eaffff;
+    outline: none;
+  }
+  .toggle:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+  .caret {
+    opacity: 0.7;
+    font-size: 10px;
+  }
+
+  /* Popover ladder: hidden until open, then drops down below the chip. */
   .rail {
-    display: flex;
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
     flex-direction: column;
     gap: 6px;
+    padding: 8px;
+    background: rgba(8, 18, 26, 0.95);
+    border: 1px solid rgba(90, 200, 210, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+    z-index: 2;
+  }
+  .scale-picker.open .rail {
+    display: flex;
   }
 
   .rung {
     display: flex;
     align-items: center;
     gap: 8px;
-    min-height: 34px;
+    min-height: 40px;
     padding: 6px 12px;
     background: rgba(10, 14, 24, 0.62);
     border: 1px solid rgba(154, 166, 189, 0.34);
     border-radius: 5px;
-    backdrop-filter: blur(5px);
     color: rgba(200, 210, 228, 0.82);
     font: inherit;
     font-size: 11px;
@@ -193,58 +253,11 @@
     box-shadow: 0 0 8px rgba(90, 200, 210, 0.7);
   }
 
-  /* The mobile trigger chip is hidden on desktop — the rail is always open. */
-  .toggle {
-    display: none;
-  }
-
-  /* Mobile: collapse to the trigger chip; the rail becomes a popover above it,
-     shown only when open. Sits in empty scene space so the bottom control stack
-     (scale bar / ruler-missions-controls / time bar) is never covered. */
+  /* Touch: bigger tap targets. */
   @media (max-width: 640px) {
-    .scale-picker {
-      right: 12px;
-      bottom: 210px;
-      align-items: flex-end;
-    }
     .toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
       min-height: 44px;
       padding: 8px 12px;
-      background: rgba(10, 14, 24, 0.82);
-      border: 1px solid rgba(90, 200, 210, 0.5);
-      border-radius: 6px;
-      backdrop-filter: blur(6px);
-      color: #d7f6f6;
-      font: inherit;
-      font-size: 11px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-    .toggle:disabled {
-      opacity: 0.4;
-      cursor: default;
-    }
-    .caret {
-      opacity: 0.7;
-      font-size: 10px;
-    }
-    /* Popover: hidden until open, then floats above the trigger. */
-    .rail {
-      display: none;
-      order: -1;
-      padding: 8px;
-      background: rgba(8, 18, 26, 0.95);
-      border: 1px solid rgba(90, 200, 210, 0.3);
-      border-radius: 10px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
-    }
-    .scale-picker.open .rail {
-      display: flex;
     }
     .rung {
       min-height: 44px;
@@ -252,7 +265,8 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .rung {
+    .rung,
+    .toggle {
       transition: none;
     }
   }

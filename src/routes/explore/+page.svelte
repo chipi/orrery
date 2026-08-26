@@ -1287,6 +1287,38 @@
   let gotoStarFn: ((id: string) => void) | null = null;
   let indexSelectStarFn: ((id: string) => void) | null = null;
 
+  // #45 — the top scale-navigator's back affordance. Walks OUT one shell level,
+  // or exits the current full-screen takeover (black-hole / body-scene / deep-sky).
+  // Returns null at the solar system (innermost shell — nowhere further in). The
+  // returned closure reads the exit-fn pointer at click-time, so the plain `let`
+  // pointers above don't need to be reactive; only contextId + the takeover flags
+  // (all $state) drive which branch is chosen.
+  let scaleNavBack: { run: () => void; label: string } | null = $derived.by(() => {
+    if (activeBlackHole) return { run: () => exitBlackHoleFn?.(), label: m.explore_ctx_back() };
+    if (contextId === 'body-scene')
+      return { run: () => exitBodySceneFn?.(), label: m.explore_ctx_stellar_neighborhood() };
+    if (activeDeepSky)
+      return { run: () => exitDeepSkyFn?.(), label: m.explore_ctx_stellar_neighborhood() };
+    switch (contextId) {
+      case 'neighborhood':
+        return { run: () => exitNeighborhoodFn?.(), label: m.explore_ctx_solar_system() };
+      case 'milky-way':
+        return { run: () => exitMilkyWayFn?.(), label: m.explore_ctx_stellar_neighborhood() };
+      case 'local-group':
+        return { run: () => exitLocalGroupFn?.(), label: m.explore_ctx_milky_way() };
+      case 'local-sheet':
+        return { run: () => exitLocalSheetFn?.(), label: m.explore_ctx_local_group() };
+      case 'virgo':
+        return { run: () => exitVirgoFn?.(), label: m.explore_ctx_local_sheet() };
+      case 'laniakea':
+        return { run: () => exitLaniakeaFn?.(), label: m.explore_ctx_virgo() };
+      case 'cosmic-web':
+        return { run: () => exitCosmicWebFn?.(), label: m.explore_ctx_laniakea() };
+      default:
+        return null;
+    }
+  });
+
   // Panel mutex: each select* below opens its own panel and explicitly
   // closes the four other planet/sun/smallBody/satellite/belt panels.
   // The full `resetExplorePanelState()` funnel is deliberately NOT used
@@ -2574,151 +2606,58 @@
     aria-label={m.explore_canvas_aria_2d()}
   ></canvas>
 
-  <!-- v2 breadcrumb (UXS-014 "you always know where you are"): shown out in the
-       stellar neighborhood + inside a system; each crumb warps to that level. -->
-  {#if view === '3d' && activeBlackHole}
-    <!-- Slice 6: a black hole takes over the view — a single back crumb exits it. -->
-    <nav class="context-crumbs" aria-label={m.explore_location_aria()}>
-      <button type="button" class="crumb home" onclick={() => exitBlackHoleFn?.()}>
-        ‹ {m.explore_ctx_back()}
-      </button>
-      <span class="crumb-sep">›</span>
-      <span class="crumb current" aria-current="page">{activeBlackHole.name}</span>
-    </nav>
-  {:else if view === '3d' && (contextId === 'neighborhood' || contextId === 'milky-way' || contextId === 'local-group' || contextId === 'local-sheet' || contextId === 'virgo' || contextId === 'laniakea' || contextId === 'cosmic-web' || contextId === 'body-scene')}
-    <nav class="context-crumbs" aria-label={m.explore_location_aria()}>
-      <button
-        type="button"
-        class="crumb home"
-        onclick={() => {
-          // Each exit fn guards on the live context, so calling them in order
-          // walks all the way in to the solar system from any shell.
-          if (contextId === 'body-scene') exitBodySceneFn?.();
-          exitCosmicWebFn?.();
-          exitLaniakeaFn?.();
-          exitVirgoFn?.();
-          exitLocalSheetFn?.();
-          exitLocalGroupFn?.();
-          exitMilkyWayFn?.();
-          exitNeighborhoodFn?.();
-        }}
-      >
-        ‹ {m.explore_ctx_solar_system()}
-      </button>
-      <span class="crumb-sep">›</span>
-      {#if contextId === 'body-scene'}
-        <button type="button" class="crumb" onclick={() => exitBodySceneFn?.()}>
-          {m.explore_ctx_stellar_neighborhood()}
-        </button>
-        <span class="crumb-sep">›</span>
-        <span class="crumb current" aria-current="page">{bodyHostName}</span>
-      {:else if activeDeepSky}
-        <button type="button" class="crumb" onclick={() => exitDeepSkyFn?.()}>
-          {m.explore_ctx_stellar_neighborhood()}
-        </button>
-        <span class="crumb-sep">›</span>
-        <span class="crumb current" aria-current="page">{activeDeepSky.name}</span>
-      {:else if contextId === 'milky-way'}
-        <button type="button" class="crumb" onclick={() => exitMilkyWayFn?.()}>
-          {m.explore_ctx_stellar_neighborhood()}
-        </button>
-        <span class="crumb-sep">›</span>
-        <span class="crumb current" aria-current="page">{m.explore_ctx_milky_way()}</span>
-      {:else if contextId === 'local-group'}
-        <button type="button" class="crumb" onclick={() => exitLocalGroupFn?.()}>
-          {m.explore_ctx_milky_way()}
-        </button>
-        <span class="crumb-sep">›</span>
-        <span class="crumb current" aria-current="page">{m.explore_ctx_local_group()}</span>
-      {:else if contextId === 'local-sheet'}
-        <button type="button" class="crumb" onclick={() => exitLocalSheetFn?.()}>
-          {m.explore_ctx_local_group()}
-        </button>
-        <span class="crumb-sep">›</span>
-        <span class="crumb current" aria-current="page">{m.explore_ctx_local_sheet()}</span>
-      {:else if contextId === 'virgo'}
-        <button type="button" class="crumb" onclick={() => exitVirgoFn?.()}>
-          {m.explore_ctx_local_sheet()}
-        </button>
-        <span class="crumb-sep">›</span>
-        <span class="crumb current" aria-current="page">{m.explore_ctx_virgo()}</span>
-      {:else if contextId === 'laniakea'}
-        <button type="button" class="crumb" onclick={() => exitLaniakeaFn?.()}>
-          {m.explore_ctx_virgo()}
-        </button>
-        <span class="crumb-sep">›</span>
-        <span class="crumb current" aria-current="page">{m.explore_ctx_laniakea()}</span>
-      {:else if contextId === 'cosmic-web'}
-        <button type="button" class="crumb" onclick={() => exitCosmicWebFn?.()}>
-          {m.explore_ctx_laniakea()}
-        </button>
-        <span class="crumb-sep">›</span>
-        <span class="crumb current" aria-current="page">{m.explore_ctx_cosmic_web()}</span>
-      {:else}
-        <span class="crumb current" aria-current="page">{m.explore_ctx_stellar_neighborhood()}</span
-        >
-      {/if}
-      {#if scaleResetVisible}
-        <span class="crumb-sep">·</span>
+  <!-- #45 top scale-navigator (replaces the v2 breadcrumb + the old bottom-right
+       picker; UXS-014 "you always know where you are"). One row under the nav:
+       `‹ back` (out one shell, or exit a takeover) · the scale chip (jump to ANY
+       shell) · `⟲ reset`. The chip alone names the current scale, so the redundant
+       breadcrumb is gone. In a full-screen takeover (black-hole / body-scene /
+       deep-sky) only the back arrow shows — the ladder isn't meaningful there. -->
+  {#if view === '3d'}
+    <nav class="scale-nav" aria-label={m.explore_location_aria()}>
+      {#if scaleNavBack}
         <button
           type="button"
-          class="crumb crumb-reset"
-          onclick={resetCurrentScale}
-          data-testid="explore-scale-reset"
+          class="scale-back"
+          onclick={() => {
+            cue('select');
+            scaleNavBack.run();
+          }}
+          aria-label={scaleNavBack.label}
+          title={scaleNavBack.label}
+          data-testid="explore-scale-back"
         >
-          {m.ui_reset_view()}
+          ‹
         </button>
+      {/if}
+
+      {#if !activeBlackHole && !activeDeepSky && contextId !== 'body-scene'}
+        <ExploreScalePicker
+          activeShell={contextId as ShellId}
+          disabled={!contextDeepLinkFn}
+          onJump={(shell) => {
+            cue('select');
+            void contextDeepLinkFn?.(shell);
+          }}
+        />
+        {#if scaleResetVisible}
+          <button
+            type="button"
+            class="scale-reset"
+            onclick={resetCurrentScale}
+            aria-label={m.ui_reset_view()}
+            title={m.ui_reset_view()}
+            data-testid="explore-scale-reset"
+          >
+            ⟲
+          </button>
+        {/if}
       {/if}
     </nav>
   {/if}
 
-  <!-- #258 scale picker — quick-jump between the four nested shells. Only in a
-       shell context (3D, no full-screen sub-view takeover): `contextDeepLinkFn`
-       walks the shell ladder only, not body-scene/black-hole/deep-sky. -->
-  {#if view === '3d' && !activeBlackHole && !activeDeepSky && contextId !== 'body-scene'}
-    <ExploreScalePicker
-      activeShell={contextId as ShellId}
-      disabled={!contextDeepLinkFn}
-      onJump={(shell) => {
-        cue('select');
-        void contextDeepLinkFn?.(shell);
-      }}
-    />
-  {/if}
-
-  <!-- Slice 5/8: honesty badge — the Milky Way + Local Group views are labelled
-       schematics, not to scale (PRD-030 principle 2). -->
-  {#if view === '3d' && contextId === 'milky-way' && !activeBlackHole}
-    <div class="mw-badge" role="note">
-      {m.explore_mw_schematic_badge()}
-      <a class="mw-badge-link" href="{base}/science/observation/our-galaxy"
-        >{m.science_learn_more()} →</a
-      >
-    </div>
-    <!-- #451 (WS-2) — a distance reference for the MW shell (the disk diameter is
-         a real fact; the generic AU-based scale bar has no kpc rung). -->
-    <div class="mw-scale" role="note">{m.explore_mw_scale_note()}</div>
-  {/if}
-  {#if view === '3d' && contextId === 'local-group' && !activeBlackHole}
-    <div class="mw-badge" role="note">
-      {m.explore_lg_schematic_badge()}
-      <a class="mw-badge-link" href="{base}/science/observation/local-group"
-        >{m.science_learn_more()} →</a
-      >
-    </div>
-  {/if}
-  {#if view === '3d' && contextId === 'local-sheet' && !activeBlackHole}
-    <div class="mw-badge" role="note">{m.explore_ls_schematic_badge()}</div>
-  {/if}
-  {#if view === '3d' && contextId === 'virgo' && !activeBlackHole}
-    <div class="mw-badge" role="note">{m.explore_virgo_schematic_badge()}</div>
-  {/if}
-  {#if view === '3d' && contextId === 'laniakea' && !activeBlackHole}
-    <div class="mw-badge" role="note">{m.explore_laniakea_schematic_badge()}</div>
-  {/if}
-  {#if view === '3d' && contextId === 'cosmic-web' && !activeBlackHole}
-    <div class="mw-badge" role="note">{m.explore_cosmic_web_schematic_badge()}</div>
-  {/if}
+  <!-- Slice 5/8 honesty badges (Milky Way … Cosmic Web are labelled schematics,
+       PRD-030 principle 2) now live in the unified `.scale-strip` below, so the
+       scale readout sits in one consistent place on every shell (#45). -->
 
   <!-- Slice 6: the black-hole render is a geodesic GR ray-trace — label it. -->
   {#if view === '3d' && activeBlackHole}
@@ -2823,12 +2762,15 @@
        stellar populations) now lives in the unified ScienceLayersPanel, like every
        other shell's teaching layers. WS-3 (RFC-039 Contract D). -->
 
-  <!-- v2 scale ruler (PRD-030 / RFC-032): the fitting distance measure for the
-       current zoom — km → AU → light-year → parsec — plus light-travel time and
-       a map-style scale bar. Teaches which unit fits which scale as you zoom.
-       English chrome for now; i18n before the slice ships. -->
+  <!-- #45 unified scale strip (PRD-030 / RFC-032): ONE readout in ONE place on
+       every shell. Solar System + Neighborhood show the km → AU → ly → pc ruler
+       (distance + light-time + map-scale bar); Milky Way … Cosmic Web show the
+       schematic honesty note (+ a Learn-more link where an article exists). The
+       old bottom-right `.scale-hud` and the scattered `.mw-badge` / `.mw-scale`
+       floats collapsed into this single box, so it never fights the picker (now
+       up top) and reads the same on every zoom. -->
   {#if view === '3d' && scaleReadout && (contextId === 'solar-system' || contextId === 'neighborhood')}
-    <div class="scale-hud" class:neighborhood={contextId === 'neighborhood'} aria-hidden="true">
+    <div class="scale-strip" class:neighborhood={contextId === 'neighborhood'} aria-hidden="true">
       <div class="scale-ladder">
         {#each rungLadder as rung (rung)}
           <span
@@ -2866,6 +2808,35 @@
         </div>
       {/if}
       <div class="scale-context">{contextLabel()}</div>
+    </div>
+  {:else if view === '3d' && !activeBlackHole && (contextId === 'milky-way' || contextId === 'local-group' || contextId === 'local-sheet' || contextId === 'virgo' || contextId === 'laniakea' || contextId === 'cosmic-web')}
+    <div class="scale-strip schematic" role="note">
+      {#if contextId === 'milky-way'}
+        <div class="scale-schematic-size">{m.explore_mw_scale_note()}</div>
+        <div class="scale-schematic-note">
+          <span>{m.explore_mw_schematic_badge()}</span>
+          <a class="mw-badge-link" href="{base}/science/observation/our-galaxy"
+            >{m.science_learn_more()} →</a
+          >
+        </div>
+      {:else if contextId === 'local-group'}
+        <div class="scale-schematic-note">
+          <span>{m.explore_lg_schematic_badge()}</span>
+          <a class="mw-badge-link" href="{base}/science/observation/local-group"
+            >{m.science_learn_more()} →</a
+          >
+        </div>
+      {:else if contextId === 'local-sheet'}
+        <div class="scale-schematic-note"><span>{m.explore_ls_schematic_badge()}</span></div>
+      {:else if contextId === 'virgo'}
+        <div class="scale-schematic-note"><span>{m.explore_virgo_schematic_badge()}</span></div>
+      {:else if contextId === 'laniakea'}
+        <div class="scale-schematic-note"><span>{m.explore_laniakea_schematic_badge()}</span></div>
+      {:else if contextId === 'cosmic-web'}
+        <div class="scale-schematic-note">
+          <span>{m.explore_cosmic_web_schematic_badge()}</span>
+        </div>
+      {/if}
     </div>
   {/if}
 
@@ -3835,7 +3806,10 @@
   }
 
   /* v2 scale ruler HUD (PRD-030 / RFC-032). Bottom-left, unobtrusive. */
-  .scale-hud {
+  /* #45 unified scale strip — one bottom-right box on every shell. Same slot the
+     old .scale-hud used (proven not to overlap the bottom control stack); the
+     picker no longer shares this corner, so nothing collides here now. */
+  .scale-strip {
     position: absolute;
     right: 12px;
     bottom: 46px;
@@ -3850,8 +3824,30 @@
     pointer-events: none;
     max-width: 260px;
   }
-  .scale-hud.neighborhood {
+  .scale-strip.neighborhood {
     border-color: rgba(78, 205, 196, 0.35);
+  }
+  /* Schematic shells (Milky Way … Cosmic Web): the honesty note + optional
+     Learn-more link, in the same box. Slate-accented to read as "not to scale". */
+  .scale-strip.schematic {
+    border-color: rgba(255, 255, 255, 0.18);
+    color: #cdd4e6;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 1.5;
+    pointer-events: auto; /* the Learn-more link is focusable */
+  }
+  .scale-schematic-size {
+    color: #9fb2cf;
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+  .scale-schematic-note {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px;
   }
   .scale-ladder {
     display: flex;
@@ -4105,25 +4101,6 @@
     pointer-events: none;
   }
 
-  /* #451 (WS-2) — MW distance reference, lower-left. */
-  .mw-scale {
-    position: absolute;
-    bottom: 60px;
-    left: 20px;
-    z-index: 6;
-    padding: 5px 11px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #9fb2cf;
-    background: rgba(10, 14, 26, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 5px;
-    backdrop-filter: blur(4px);
-    pointer-events: none;
-  }
-
   /* Milky Way schematic → the /science overview article (S5 · our-galaxy). */
   .mw-badge-link {
     margin-left: 10px;
@@ -4198,72 +4175,61 @@
     color: #7a8299;
   }
 
-  /* v2 breadcrumb — top-left orientation + tap-back. Chip-styled like the layer
-     pills (height/font), slate-accented as the deep-space scale cue; the Reset-view
-     shares this row. */
-  .context-crumbs {
+  /* #45 top scale-navigator — one row under the nav: back · scale chip · reset.
+     Top-CENTRE so it clears the solar-system layer-chip cluster on the left (which
+     only shows at the solar system) and the app-nav icons above. On neighborhood+
+     that cluster is hidden, so the row simply sits alone at the top. */
+  .scale-nav {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    z-index: 7;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 8;
     display: flex;
     align-items: center;
     gap: 6px;
+    max-width: calc(100vw - 24px);
+    font-family: var(--font-mono, 'Space Mono', monospace);
+  }
+  /* Shared square affordances flanking the chip (back ‹ / reset ⟲). Slate glass
+     to match the chip; generous tap target. */
+  .scale-back,
+  .scale-reset {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
     min-height: 34px;
-    padding: 3px 10px;
+    padding: 0 8px;
     background: rgba(10, 14, 24, 0.62);
     border: 1px solid rgba(154, 166, 189, 0.34);
     border-radius: 5px;
     backdrop-filter: blur(5px);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 0.5px;
-  }
-  .crumb {
-    background: none;
-    border: none;
-    color: rgba(200, 210, 228, 0.82);
+    color: #c8d2e6;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1;
     cursor: pointer;
-    font: inherit;
-    padding: 4px 2px;
+    transition:
+      border-color 120ms,
+      background 120ms,
+      color 120ms;
   }
-  .crumb.home {
-    color: #aab6cc; /* slate — deep-space cue */
-    min-height: 30px;
-  }
-  .crumb:hover,
-  .crumb:focus-visible {
-    color: #d6deee;
+  .scale-back:hover,
+  .scale-back:focus-visible,
+  .scale-reset:hover,
+  .scale-reset:focus-visible {
+    background: rgba(154, 166, 189, 0.22);
+    border-color: rgba(154, 166, 189, 0.6);
+    color: #eaf1ff;
     outline: none;
   }
-  .crumb-sep {
-    color: rgba(255, 255, 255, 0.28);
-  }
-  .crumb.current {
-    color: #fff;
-    cursor: default;
-  }
-  .crumb-reset {
-    margin-left: 2px;
-    padding: 4px 9px;
-    border: 1px solid rgba(154, 166, 189, 0.4);
-    border-radius: 4px;
-    background: rgba(154, 166, 189, 0.12);
-    color: #c8d2e6;
-    font-size: 10px;
-    letter-spacing: 1px;
-  }
-  .crumb-reset:hover,
-  .crumb-reset:focus-visible {
-    background: rgba(154, 166, 189, 0.24);
-    color: #eaf1ff;
-  }
 
-  /* Compact the scale HUD on phones and lift it ABOVE the two stacked bottom
+  /* Compact the scale strip on phones and lift it ABOVE the two stacked bottom
      bars (the Ruler/Controls/Missions drawer + the Scale/time controls, which
      together occupy ~96px from the bottom edge) so it no longer overlaps them. */
   @media (max-width: 767px) {
-    .scale-hud {
+    .scale-strip {
       bottom: 104px;
       padding: 7px 9px;
       max-width: 190px;
@@ -4271,13 +4237,10 @@
     .scale-readout .primary {
       font-size: 13px;
     }
-    .context-crumbs {
-      font-size: 11px;
-    }
-    .crumb.home {
+    .scale-back,
+    .scale-reset {
+      min-width: 44px;
       min-height: 44px;
-      display: inline-flex;
-      align-items: center;
     }
   }
 

@@ -5,14 +5,15 @@ import { test, expect, type Page } from '@playwright/test';
  * the top of the scale ladder. Reached via the build-safe ?context=cosmic-web
  * cold-load deep-link. Verifies the shell renders with its "schematic model"
  * honesty badge + the full 8-rung scale picker. Asserts on aria-current so it
- * holds on both the desktop rail and the mobile popover.
+ * holds regardless of viewport (#45 promoted the picker to one chip+popover on
+ * every viewport, so the ladder opens via the toggle on desktop too).
  */
 
 const toggle = (p: Page) => p.getByTestId('explore-scale-toggle');
 const rung = (p: Page, shell: string) => p.getByTestId(`explore-scale-rung-${shell}`);
 
-async function jumpTo(page: Page, shell: string, isMobile: boolean): Promise<void> {
-  if (isMobile && (await toggle(page).getAttribute('aria-expanded')) !== 'true') {
+async function jumpTo(page: Page, shell: string): Promise<void> {
+  if ((await toggle(page).getAttribute('aria-expanded')) !== 'true') {
     await toggle(page).click();
     await page.waitForTimeout(150);
   }
@@ -48,12 +49,12 @@ test.describe('/explore — Cosmic Web shell (#457)', () => {
     await expect(rung(page, 'laniakea')).toHaveCount(1);
   });
 
-  test('jumping in from the Cosmic Web to Laniakea via the picker', async ({ page, isMobile }) => {
+  test('jumping in from the Cosmic Web to Laniakea via the picker', async ({ page }) => {
     await page.goto('/explore?context=cosmic-web');
     await expect(rung(page, 'cosmic-web')).toHaveAttribute('aria-current', 'true', {
       timeout: 40_000,
     });
-    await jumpTo(page, 'laniakea', isMobile);
+    await jumpTo(page, 'laniakea');
     await expect(rung(page, 'laniakea')).toHaveAttribute('aria-current', 'true', {
       timeout: 40_000,
     });

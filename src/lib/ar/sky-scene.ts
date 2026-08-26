@@ -359,45 +359,17 @@ export function createSkyScene(
   const camPos = new THREE.Vector3();
   const worldDir = new THREE.Vector3(); // scratch: ENU dir → render-world dir
 
-  // #51 — on-device AR frame calibration. ARKit's camera transform is in the
-  // device's native (landscape) frame; in portrait it needs a roll onto the
-  // interface, and the exact sign is device-specific. A tap-cycled roll about the
-  // view axis + a live pose HUD let us converge on the right value on-device, then
-  // bake it in. XR path only (the camera path already compensates screen angle).
-  const AR_ROLL_KEY = 'orrery-ar-roll-deg';
-  let arRollDeg = 0;
-  try {
-    arRollDeg = Number(localStorage.getItem(AR_ROLL_KEY)) || 0;
-  } catch {
-    /* no storage */
-  }
+  // #51 — ARKit's frame.camera.transform is in the device's NATIVE (landscape)
+  // frame, so in portrait the sky reads rolled 90° (bodies drift diagonally, the
+  // horizon marks tilt). Roll the XR pose onto the current interface: 90° in
+  // portrait (screen angle 0), 0° in landscape (90) — i.e. `90 − screenAngle`.
+  // Confirmed on-device (iPhone 15 Pro: the level-portrait roll dropped tilt from
+  // ~90° to ~0° at this value). The camera (magic-window) path already
+  // compensates screen angle inside deviceQuaternion, so this is XR-only.
   const rollAxis = new THREE.Vector3(0, 0, 1);
   const rollQ = new THREE.Quaternion();
-  const dbgFwd = new THREE.Vector3();
-  const dbgUp = new THREE.Vector3();
   const screenAngle = (): number =>
     (typeof window !== 'undefined' && window.screen?.orientation?.angle) || 0;
-  const hud = typeof document !== 'undefined' ? document.createElement('div') : null;
-  if (hud) {
-    hud.className = 'ar-debug-hud';
-    // Top, full-width, bright — impossible to miss, and the tag confirms the
-    // running build. Tap anywhere on it to cycle the roll.
-    hud.style.cssText =
-      'position:fixed;left:0;right:0;top:calc(8px + env(safe-area-inset-top,0px));z-index:2147483647;' +
-      'margin:0 8px;font:700 13px/1.5 "Space Mono",monospace;color:#04121a;background:#4ecdc4;' +
-      'padding:8px 10px;border-radius:8px;white-space:pre;pointer-events:auto;text-align:center;' +
-      'box-shadow:0 4px 16px rgba(0,0,0,.5)';
-    hud.addEventListener('click', () => {
-      const steps = [0, 90, 180, 270, -90];
-      arRollDeg = steps[(steps.indexOf(arRollDeg) + 1) % steps.length];
-      try {
-        localStorage.setItem(AR_ROLL_KEY, String(arRollDeg));
-      } catch {
-        /* no storage */
-      }
-    });
-    document.body.appendChild(hud);
-  }
 
   function recomputeDirections(): void {
     if (!observer) return;
@@ -453,23 +425,13 @@ export function createSkyScene(
     renderer.setAnimationLoop(() => {
       if (disposed || !view) return;
       view.updateCamera(camera);
-      // #51 calibration: roll the ARKit pose onto the current interface.
-      if (view.kind === 'xr' && arRollDeg) {
-        camera.quaternion.multiply(rollQ.setFromAxisAngle(rollAxis, (arRollDeg * Math.PI) / 180));
+      // #51: roll the ARKit (landscape-native) pose onto the current interface.
+      if (view.kind === 'xr') {
+        const rollDeg = 90 - screenAngle();
+        if (rollDeg)
+          camera.quaternion.multiply(rollQ.setFromAxisAngle(rollAxis, (rollDeg * Math.PI) / 180));
       }
       camPos.copy(camera.position);
-      if (hud) {
-        dbgFwd.set(0, 0, -1).applyQuaternion(camera.quaternion);
-        dbgUp.set(0, 1, 0).applyQuaternion(camera.quaternion);
-        const az = ((Math.atan2(dbgFwd.x, -dbgFwd.z) * 180) / Math.PI + 360) % 360;
-        const alt = (Math.asin(Math.max(-1, Math.min(1, dbgFwd.y))) * 180) / Math.PI;
-        const tilt = (Math.atan2(dbgUp.x, dbgUp.y) * 180) / Math.PI;
-        let nUp = 0;
-        for (const mk of markers.values()) if (mk.group.visible) nUp++;
-        hud.textContent =
-          `AR-DBG b3 · [${view.kind}] scr:${screenAngle()}° · roll:${arRollDeg}° · TAP TO CYCLE\n` +
-          `look az:${az.toFixed(0)}°  alt:${alt.toFixed(0)}°  tilt:${tilt.toFixed(0)}°  bodies-up:${nUp}`;
-      }
 
       const t = Date.now();
       if (t - lastEphemeris >= EPHEMERIS_INTERVAL_MS) {
@@ -538,7 +500,6 @@ export function createSkyScene(
     for (const { sprite } of cardinals) (sprite.material.map as THREE.Texture | null)?.dispose();
     arrowLayer?.remove();
     arrowEls.clear();
-    hud?.remove();
     scene.traverse((o) => {
       const s = o as THREE.Sprite;
       s.material?.dispose?.();

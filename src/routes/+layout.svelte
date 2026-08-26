@@ -182,6 +182,30 @@
     // means /sw.js isn't served, so the registration fetch 404s and
     // pollutes the dev server log. Preview + prod still register.
     if (import.meta.env.DEV) return;
+    // #53 — the native Capacitor app must NOT run the workbox service worker.
+    // It's a browser/PWA mechanism that precaches the JS shell (~481 assets) and
+    // serves it cache-first, which strands the app on OLD code across .app
+    // updates: the update installs the new bundle, but the persisted SW keeps
+    // serving the old shell. The native app doesn't need it — the shell loads
+    // from the app bundle (fresh every install), assets stream from the CDN, and
+    // offline uses the Filesystem backend (FilesystemBackend + resolveOffline),
+    // NOT the SW's Cache Storage. So on native: actively unregister any SW +
+    // purge its caches (so already-shipped stale registrations self-heal the
+    // first time this code runs) and never register. The SW stays for the
+    // browser/installed-PWA path below.
+    if (Capacitor.isNativePlatform()) {
+      try {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map((r) => r.unregister()));
+        if (typeof caches !== 'undefined') {
+          const keys = await caches.keys();
+          await Promise.all(keys.map((k) => caches.delete(k)));
+        }
+      } catch {
+        /* best-effort cleanup */
+      }
+      return;
+    }
     // Register the SW from the absolute root path. Previously delegated
     // to `virtual:pwa-register/svelte`'s `useRegisterSW`, which on
     // sub-routes (`/missions`, `/science`, …) issued the registration

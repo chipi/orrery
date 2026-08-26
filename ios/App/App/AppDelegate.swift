@@ -60,8 +60,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        purgeStaleServiceWorker()
         return true
+    }
+
+    // #53 — one-time purge of the WKWebView service worker + web caches. A workbox
+    // SW (now removed from the native build) precached the JS shell and served it
+    // cache-first, stranding the app on OLD code across .app updates: the update
+    // shipped a new bundle, but the persisted SW kept serving the old shell. This
+    // clears it once so already-installed builds self-heal even before the JS
+    // layer loads; the JS layer no longer registers a SW on native. localStorage,
+    // cookies and the Capacitor Filesystem (offline downloads) are left intact.
+    // Bump the key to force a re-purge if this class of stale cache recurs.
+    private func purgeStaleServiceWorker() {
+        let key = "sw-purge-v1"
+        guard !UserDefaults.standard.bool(forKey: key) else { return }
+        let types: Set<String> = [
+            WKWebsiteDataTypeServiceWorkerRegistrations,
+            WKWebsiteDataTypeFetchCache,
+            WKWebsiteDataTypeDiskCache,
+            WKWebsiteDataTypeMemoryCache,
+            WKWebsiteDataTypeOfflineWebApplicationCache,
+        ]
+        WKWebsiteDataStore.default().removeData(
+            ofTypes: types,
+            modifiedSince: Date(timeIntervalSince1970: 0)
+        ) {
+            UserDefaults.standard.set(true, forKey: key)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

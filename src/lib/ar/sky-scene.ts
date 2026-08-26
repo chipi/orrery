@@ -219,26 +219,42 @@ function makeMarker(
   return { group, texture, canvas, size };
 }
 
-/** A crisp text sprite (cardinal marks). */
-function makeTextSprite(text: string, color: string): THREE.Sprite {
-  const size = 128;
+/** A text label as a dark PILL + opaque text, sized to the text. The pill is the
+ *  key: over the bright additive star/figure glows, plain text washes out and reads
+ *  as "behind" even when it's technically on top — the dark backing makes it a
+ *  clearly-foreground chip. `worldHeight` is the sprite height in world units; the
+ *  width follows the text so the aspect never squishes. */
+function makeTextSprite(text: string, color: string, worldHeight = 2.4): THREE.Sprite {
+  const SS = 2; // supersample for crisp text
+  const fontPx = 52 * SS;
+  const padX = 18 * SS;
+  const padY = 9 * SS;
+  const meas = document.createElement('canvas').getContext('2d')!;
+  meas.font = `700 ${fontPx}px "Space Mono", monospace`;
+  const tw = Math.ceil(meas.measureText(text).width);
+  const w = tw + padX * 2;
+  const h = fontPx + padY * 2;
   const c = document.createElement('canvas');
-  c.width = size;
-  c.height = size;
+  c.width = w;
+  c.height = h;
   const ctx = c.getContext('2d')!;
-  ctx.font = '700 64px "Space Mono", monospace';
+  ctx.font = `700 ${fontPx}px "Space Mono", monospace`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
+  // Dark rounded pill so the label reads over bright glows.
+  ctx.fillStyle = 'rgba(4,8,16,0.68)';
+  ctx.beginPath();
+  if (ctx.roundRect) ctx.roundRect(0, 0, w, h, h * 0.3);
+  else ctx.rect(0, 0, w, h);
+  ctx.fill();
   ctx.fillStyle = color;
-  ctx.shadowColor = 'rgba(0,0,0,0.9)';
-  ctx.shadowBlur = 8;
-  ctx.fillText(text, size / 2, size / 2);
+  ctx.fillText(text, w / 2, h / 2 + SS);
   const tex = new THREE.CanvasTexture(c);
   tex.colorSpace = THREE.SRGBColorSpace;
   const sprite = new THREE.Sprite(
     new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }),
   );
-  sprite.scale.set(3, 3, 1);
+  sprite.scale.set(worldHeight * (w / h), worldHeight, 1);
   // Text labels always draw in the FOREGROUND (everything is depth-test-off, so
   // renderOrder is the only z — the lines/dots/stars sit well below this).
   sprite.renderOrder = 20;
@@ -335,7 +351,7 @@ export function createSkyScene(
 
   // Cardinal marks on the horizon so the sky is oriented (#51 visual).
   const cardinals = CARDINALS.map((c) => {
-    const sprite = makeTextSprite(c.text, 'rgba(190,205,225,0.85)');
+    const sprite = makeTextSprite(c.text, 'rgba(210,224,245,1)', 3.2);
     scene.add(sprite);
     return { sprite, dir: new THREE.Vector3(...c.dir) };
   });
@@ -724,8 +740,7 @@ export function createSkyScene(
           cz += v[k + 2];
           n++;
         }
-        const label = makeTextSprite(constellationName(f.con), 'rgba(150,200,235,0.85)');
-        label.scale.set(2.6, 2.6, 1);
+        const label = makeTextSprite(constellationName(f.con), 'rgba(170,212,245,1)', 2.6);
         constellationLabelGroup.add(label);
         constellationLabels.push({ sprite: label, x: cx / n, y: cy / n, z: cz / n });
       }
@@ -749,8 +764,7 @@ export function createSkyScene(
         // can't be named, so the constellation NAME labels below cover those areas.
         let label: THREE.Sprite | null = null;
         if (st.proper) {
-          label = makeTextSprite(st.proper, 'rgba(200,220,255,0.9)');
-          label.scale.set(1.8, 1.8, 1);
+          label = makeTextSprite(st.proper, 'rgba(224,234,255,1)', 1.9);
           starGroup.add(label); // sibling, not child — so it doesn't inherit `sc`
         }
         starSprites.push({ sprite, label, x: st.x, y: st.y, z: st.z });

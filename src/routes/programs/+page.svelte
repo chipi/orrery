@@ -164,7 +164,10 @@
   .programs-index {
     max-width: 1040px;
     margin: 0 auto;
-    padding: calc(var(--nav-height, 64px) + 24px) 20px 80px;
+    /* The sticky nav already occupies its height in flow (like /library, /fleet),
+       so only breathing room here — NOT another --nav-height, which double-counted
+       it and left a ~60px gap above the title. */
+    padding: 24px 20px 80px;
     color: var(--color-text, #eef);
   }
   h1 {

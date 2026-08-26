@@ -97,6 +97,10 @@ export interface SkySceneHandle {
   setConstellationsVisible(on: boolean): void;
   /** Toggle the bright-star layer (RFC-041). Default on. */
   setStarsVisible(on: boolean): void;
+  /** Toggle the Sun/Moon/planet markers (RFC-041). Default on. */
+  setPlanetsVisible(on: boolean): void;
+  /** Toggle the ISS/Tiangong station markers (RFC-041). Default on. */
+  setStationsVisible(on: boolean): void;
 }
 
 /** Phase shading for the Moon marker (#51 visual). */
@@ -364,6 +368,8 @@ export function createSkyScene(
   starGroup.visible = false; // until the data loads
   scene.add(starGroup);
   let showStars = true;
+  let showPlanets = true; // Sun / Moon / planets markers
+  let showStations = true; // ISS / Tiangong markers
   const starSprites: {
     sprite: THREE.Sprite;
     label: THREE.Sprite | null;
@@ -493,12 +499,12 @@ export function createSkyScene(
     for (const body of SKY_BODIES) {
       const pos = skyPosition(body, now, observer.latDeg, observer.lonDeg);
       const m = markers.get(body)!;
-      if (pos.aboveHorizon) {
+      if (pos.aboveHorizon && showPlanets) {
         const [x, y, z] = skyDirectionENU(pos);
         m.dir.set(x, y, z);
         m.group.visible = true;
       } else {
-        m.group.visible = false; // below the horizon
+        m.group.visible = false; // below the horizon, or the layer is off
       }
     }
   }
@@ -676,7 +682,7 @@ export function createSkyScene(
       if (observer) {
         const nowD = new Date(t);
         for (const [id, sm] of stationMarkers) {
-          if (!sm.tle) {
+          if (!sm.tle || !showStations) {
             sm.group.visible = false;
             continue;
           }
@@ -743,5 +749,25 @@ export function createSkyScene(
     starGroup.visible = on && starSprites.length > 0;
   }
 
-  return { start, stop, location: () => observer, setConstellationsVisible, setStarsVisible };
+  function setPlanetsVisible(on: boolean): void {
+    showPlanets = on;
+    if (!on) for (const { group } of markers.values()) group.visible = false;
+    else recomputeDirections(); // re-apply above-horizon visibility
+  }
+
+  function setStationsVisible(on: boolean): void {
+    showStations = on;
+    if (!on) for (const { group } of stationMarkers.values()) group.visible = false;
+    // when re-enabled the render loop re-shows above-horizon stations next frame
+  }
+
+  return {
+    start,
+    stop,
+    location: () => observer,
+    setConstellationsVisible,
+    setStarsVisible,
+    setPlanetsVisible,
+    setStationsVisible,
+  };
 }

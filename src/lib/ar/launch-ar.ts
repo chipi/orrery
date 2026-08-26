@@ -30,6 +30,8 @@ let active: {
   exitBtn: HTMLButtonElement;
   hint: HTMLDivElement;
   stop: () => void;
+  /** Extra overlay nodes to remove on teardown (e.g. the sky-mode layer toggles). */
+  extra?: HTMLElement[];
 } | null = null;
 
 // True while a launch is mid-flight (between the guard and `active` being set).
@@ -53,10 +55,12 @@ function teardownArDom(
   canvas: HTMLCanvasElement,
   exitBtn: HTMLButtonElement,
   hint: HTMLDivElement,
+  extra: HTMLElement[] = [],
 ): void {
   canvas.remove();
   exitBtn.remove();
   hint.remove();
+  for (const el of extra) el.remove();
   document.documentElement.classList.remove('ar-active');
 }
 
@@ -169,8 +173,11 @@ export async function launchSkyScene(): Promise<boolean> {
   document.documentElement.classList.add('ar-active');
 
   const { createSkyScene } = await import('./sky-scene');
+  // The layer-toggle control (RFC-041 S3) is built after the handle exists (it wires
+  // the handle's setters); cleanup removes it alongside the rest of the overlay.
+  let layers: HTMLElement | null = null;
   const cleanup = () => {
-    teardownArDom(canvas, exitBtn, hint);
+    teardownArDom(canvas, exitBtn, hint, layers ? [layers] : []);
     active = null;
   };
 
@@ -187,6 +194,10 @@ export async function launchSkyScene(): Promise<boolean> {
     },
   });
 
+  // Layer toggles: everything is on by default; tap to declutter (RFC-041 S3).
+  layers = buildSkyLayerToggles(handle);
+  document.body.appendChild(layers);
+
   // See launchArScene: a rejected/failed start must tear down fully (dispose the
   // WebGL context + the appended .ar-find-arrows layer via stop(), clear the
   // hint timer, drop .ar-active) so a retry starts clean and the app isn't bricked.
@@ -198,8 +209,44 @@ export async function launchSkyScene(): Promise<boolean> {
     cleanup();
     return false;
   }
-  active = { canvas, exitBtn, hint, stop: handle.stop };
+  active = { canvas, exitBtn, hint, stop: handle.stop, extra: layers ? [layers] : [] };
   return true;
+}
+
+/** Build the sky-mode layer toggles (RFC-041): Planets · Figures · Stars ·
+ *  Stations. Everything starts on; tapping a chip toggles that layer + its
+ *  pressed/off state. Styled via `.ar-layers` / `.ar-layer-btn` in app.css and
+ *  whitelisted in the `.ar-active` chrome-hide rule. */
+function buildSkyLayerToggles(handle: {
+  setPlanetsVisible(on: boolean): void;
+  setConstellationsVisible(on: boolean): void;
+  setStarsVisible(on: boolean): void;
+  setStationsVisible(on: boolean): void;
+}): HTMLDivElement {
+  const wrap = document.createElement('div');
+  wrap.className = 'ar-layers';
+  const mk = (label: string, set: (on: boolean) => void) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'ar-layer-btn';
+    b.textContent = label;
+    b.setAttribute('aria-pressed', 'true');
+    let on = true;
+    b.onclick = () => {
+      on = !on;
+      set(on);
+      b.setAttribute('aria-pressed', String(on));
+      b.classList.toggle('off', !on);
+    };
+    return b;
+  };
+  wrap.append(
+    mk('☉ Planets', (v) => handle.setPlanetsVisible(v)),
+    mk('✦ Figures', (v) => handle.setConstellationsVisible(v)),
+    mk('★ Stars', (v) => handle.setStarsVisible(v)),
+    mk('🛰 Stations', (v) => handle.setStationsVisible(v)),
+  );
+  return wrap;
 }
 
 /** Force-exit the active AR scene (Exit-AR button / route change). */
@@ -210,5 +257,5 @@ export function exitArScene(): void {
   active = null;
   if (!current) return;
   current.stop();
-  teardownArDom(current.canvas, current.exitBtn, current.hint);
+  teardownArDom(current.canvas, current.exitBtn, current.hint, current.extra);
 }

@@ -189,8 +189,39 @@ html.ar-active
   body
   > *:not(.ar-canvas):not(.ar-exit-btn):not(.ar-hint):not(.ar-camera-feed):not(.ar-find-arrows):not(
     .ar-debug-hud
-  ) {
+  ):not(.ar-layers) {
   visibility: hidden !important;
+}
+/* Sky-mode layer toggles (RFC-041) — bottom-left chip row; same dark-glass idiom
+   as the exit button (which is confirmed to render in AR). */
+.ar-layers {
+  position: fixed;
+  left: max(10px, env(safe-area-inset-left, 10px));
+  bottom: max(14px, calc(env(safe-area-inset-bottom, 0px) + 14px));
+  z-index: 9999;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: min(70vw, 320px);
+}
+.ar-layer-btn {
+  min-height: 34px;
+  padding: 0 10px;
+  background: rgba(8, 10, 22, 0.75);
+  border: 1px solid rgba(78, 205, 196, 0.55);
+  border-radius: 18px;
+  color: #cdeeeb;
+  font-family: var(--font-mono, 'Space Mono', monospace);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+.ar-layer-btn.off {
+  border-color: rgba(255, 255, 255, 0.22);
+  color: rgba(205, 214, 230, 0.5);
+  opacity: 0.7;
 }
 .ar-exit-btn {
   position: fixed;

@@ -30,6 +30,7 @@ import {
   type Tle,
 } from '../satellite';
 import { arrowScreenAngle, arrowEdgePlacement, spreadByAngle } from './find-arrow-layout';
+import { constellationName } from '../universe/iau-constellations';
 
 // How far (metres) to place the markers. Far enough to read as sky; re-anchored
 // to the camera each frame so walking doesn't shift the angular direction.
@@ -238,6 +239,9 @@ function makeTextSprite(text: string, color: string): THREE.Sprite {
     new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }),
   );
   sprite.scale.set(3, 3, 1);
+  // Text labels always draw in the FOREGROUND (everything is depth-test-off, so
+  // renderOrder is the only z — the lines/dots/stars sit well below this).
+  sprite.renderOrder = 20;
   return sprite;
 }
 
@@ -347,18 +351,86 @@ export function createSkyScene(
   const constellationLines = new THREE.LineSegments(
     new THREE.BufferGeometry(),
     new THREE.LineBasicMaterial({
-      color: 0x6f86d6,
+      // Match the /explore ConstellationFinder panel: rgba(120,190,230,0.7) — a
+      // clear blue tinge, stronger than the first pass which read as barely-there.
+      color: 0x78bee6,
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.7,
       depthTest: false,
       depthWrite: false,
     }),
   );
-  constellationLines.renderOrder = -1; // behind the body markers + labels
+  constellationLines.renderOrder = -8; // background (labels are foreground, +20)
   constellationLines.frustumCulled = false;
   constellationLines.visible = false; // until the data loads
   scene.add(constellationLines);
   const _cstDir = new THREE.Vector3(); // scratch for the per-vertex conversion
+
+  // Shared soft round-dot texture for the star sprites AND the constellation
+  // vertex points (without a map, THREE.Points renders as squares).
+  const dotTexture = makeStarDotTexture();
+
+  // Constellation vertex dots (#488) — a highlighted star at each figure vertex so
+  // the lines read as connected stars (Big/Little Bear). One THREE.Points over the
+  // deduped figure vertices, part of the constellations layer.
+  let constellationStarXyz: number[] = []; // unique equatorial XYZ triples
+  let constellationDotPositions: Float32Array | null = null;
+  const constellationDots = new THREE.Points(
+    new THREE.BufferGeometry(),
+    new THREE.PointsMaterial({
+      size: 1.6,
+      map: dotTexture, // round, not the default square point
+      sizeAttenuation: true,
+      transparent: true,
+      alphaTest: 0.02,
+      depthTest: false,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      color: 0xc8dcff, // rgba(200,220,255) — the panel's star colour
+    }),
+  );
+  constellationDots.renderOrder = -7;
+  constellationDots.frustumCulled = false;
+  constellationDots.visible = false;
+  scene.add(constellationDots);
+
+  // Constellation NAME labels (#488) — the figure name (Orion, Gemini, Ursa Major)
+  // at each figure's centroid, so the well-known shapes are called out and the
+  // anonymous figure stars have context. Their own group (tied to the constellations
+  // layer) rides the camera like the star group.
+  const constellationLabelGroup = new THREE.Group();
+  constellationLabelGroup.visible = false;
+  scene.add(constellationLabelGroup);
+  const constellationLabels: { sprite: THREE.Sprite; x: number; y: number; z: number }[] = [];
+
+  // Horizon line (#488) — the altitude-0 circle. It is STATIC in the ENU frame
+  // (same at any time/place, and a compass yaw maps the circle onto itself), so
+  // build it once; the group just rides the camera. A soft ring for orientation.
+  const horizonLine = (() => {
+    const N = 96;
+    const pts = new Float32Array((N + 1) * 3);
+    for (let i = 0; i <= N; i++) {
+      const az = (i / N) * Math.PI * 2;
+      pts[i * 3] = Math.sin(az) * MARKER_RADIUS;
+      pts[i * 3 + 1] = 0;
+      pts[i * 3 + 2] = -Math.cos(az) * MARKER_RADIUS;
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(pts, 3));
+    return new THREE.Line(
+      g,
+      new THREE.LineBasicMaterial({
+        color: 0x4a6a92,
+        transparent: true,
+        opacity: 0.5,
+        depthTest: false,
+        depthWrite: false,
+      }),
+    );
+  })();
+  horizonLine.renderOrder = -9;
+  horizonLine.frustumCulled = false;
+  scene.add(horizonLine);
 
   // Bright named stars (RFC-041 S2) — Sirius, Vega, … on the same sky. One shared
   // soft-dot texture (additive glow), one Sprite per star scaled by magnitude, and
@@ -377,11 +449,9 @@ export function createSkyScene(
     y: number;
     z: number;
   }[] = [];
-  const STAR_LABEL_MAG = 1.6; // label only stars brighter than this
   const _starDir = new THREE.Vector3();
-  const starDotTexture = makeStarDotTexture();
   const starDotMaterial = new THREE.SpriteMaterial({
-    map: starDotTexture,
+    map: dotTexture,
     transparent: true,
     depthTest: false,
     depthWrite: false,
@@ -534,6 +604,34 @@ export function createSkyScene(
       }
     }
     constellationLines.geometry.attributes.position.needsUpdate = true;
+
+    // The vertex dots (#488) — same conversion over the deduped figure stars.
+    if (constellationDotPositions) {
+      const dp = constellationDotPositions;
+      const s = constellationStarXyz;
+      let j = 0;
+      for (let k = 0; k + 2 < s.length; k += 3) {
+        const [e, u, n] = equatorialXyzToSkyDir(s[k], s[k + 1], s[k + 2], jd, latRad, lonRad);
+        _cstDir.set(e, u, n);
+        view.toWorldDir(_cstDir);
+        dp[j++] = _cstDir.x * MARKER_RADIUS;
+        dp[j++] = _cstDir.y * MARKER_RADIUS;
+        dp[j++] = _cstDir.z * MARKER_RADIUS;
+      }
+      constellationDots.geometry.attributes.position.needsUpdate = true;
+    }
+
+    // Figure name labels — at the centroid direction.
+    for (const l of constellationLabels) {
+      const [e, u, n] = equatorialXyzToSkyDir(l.x, l.y, l.z, jd, latRad, lonRad);
+      _cstDir.set(e, u, n);
+      view.toWorldDir(_cstDir);
+      l.sprite.position.set(
+        _cstDir.x * MARKER_RADIUS,
+        _cstDir.y * MARKER_RADIUS,
+        _cstDir.z * MARKER_RADIUS,
+      );
+    }
   }
 
   // Re-place each bright-star sprite at toWorldDir(dir)·R (relative to the star
@@ -554,6 +652,16 @@ export function createSkyScene(
       s.sprite.position.set(px, py, pz);
       if (s.label) s.label.position.set(px, py + 1.2, pz); // just above the star
     }
+  }
+
+  // Hide a label when its anchor is behind the camera or near the screen edge, so
+  // it never clips off the edge (and the view stays legible). Group is at camPos,
+  // so the label's world position is camPos + its local (dir·R) position.
+  const _labelNdc = new THREE.Vector3();
+  function cullLabel(sprite: THREE.Sprite): void {
+    _labelNdc.copy(sprite.position).add(camPos).project(camera);
+    sprite.visible =
+      _labelNdc.z < 1 && Math.abs(_labelNdc.x) < 0.88 && Math.abs(_labelNdc.y) < 0.84;
   }
 
   async function start(): Promise<boolean> {
@@ -582,8 +690,49 @@ export function createSkyScene(
         'position',
         new THREE.BufferAttribute(constellationPositions, 3),
       );
+      // Dedup the figure vertices into unique stars for the dots (#488). Vertices
+      // at the same star share XYZ exactly (shared segment endpoints), so a rounded
+      // key collapses them.
+      const seen = new Set<string>();
+      const uniq: number[] = [];
+      for (const f of figs) {
+        const v = f.vertices;
+        for (let k = 0; k + 2 < v.length; k += 3) {
+          const key = `${v[k].toFixed(1)},${v[k + 1].toFixed(1)},${v[k + 2].toFixed(1)}`;
+          if (seen.has(key)) continue;
+          seen.add(key);
+          uniq.push(v[k], v[k + 1], v[k + 2]);
+        }
+      }
+      constellationStarXyz = uniq;
+      constellationDotPositions = new Float32Array(uniq.length);
+      constellationDots.geometry.setAttribute(
+        'position',
+        new THREE.BufferAttribute(constellationDotPositions, 3),
+      );
+      // One name label per figure, at the vertex centroid.
+      for (const f of figs) {
+        const v = f.vertices;
+        if (v.length < 3) continue;
+        let cx = 0;
+        let cy = 0;
+        let cz = 0;
+        let n = 0;
+        for (let k = 0; k + 2 < v.length; k += 3) {
+          cx += v[k];
+          cy += v[k + 1];
+          cz += v[k + 2];
+          n++;
+        }
+        const label = makeTextSprite(constellationName(f.con), 'rgba(150,200,235,0.85)');
+        label.scale.set(2.6, 2.6, 1);
+        constellationLabelGroup.add(label);
+        constellationLabels.push({ sprite: label, x: cx / n, y: cy / n, z: cz / n });
+      }
       recomputeConstellations();
       constellationLines.visible = showConstellations;
+      constellationDots.visible = showConstellations;
+      constellationLabelGroup.visible = showConstellations;
     });
 
     // Load the bright named stars (RFC-041 S2) + build one sprite each (+ a label
@@ -595,10 +744,13 @@ export function createSkyScene(
         const sc = starScale(st.mag);
         sprite.scale.set(sc, sc, 1);
         starGroup.add(sprite);
+        // Label EVERY named star (operator: "each star clearly labeled") — the 62
+        // catalog stars all have proper names; the anonymous figure-vertex dots
+        // can't be named, so the constellation NAME labels below cover those areas.
         let label: THREE.Sprite | null = null;
-        if (st.mag < STAR_LABEL_MAG && st.proper) {
-          label = makeTextSprite(st.proper, 'rgba(210,222,245,0.85)');
-          label.scale.set(2, 2, 1);
+        if (st.proper) {
+          label = makeTextSprite(st.proper, 'rgba(200,220,255,0.9)');
+          label.scale.set(1.8, 1.8, 1);
           starGroup.add(label); // sibling, not child — so it doesn't inherit `sc`
         }
         starSprites.push({ sprite, label, x: st.x, y: st.y, z: st.z });
@@ -648,9 +800,12 @@ export function createSkyScene(
         recomputeStars();
         lastEphemeris = t;
       }
-      // The constellation figures + stars are baked as directions·R in their own
-      // frame; the groups ride the camera so they stay "at infinity" (like markers).
+      // The constellation figures + dots + stars + horizon are baked as directions·R
+      // in their own frame; each rides the camera so it stays "at infinity".
       constellationLines.position.copy(camPos);
+      constellationDots.position.copy(camPos);
+      constellationLabelGroup.position.copy(camPos);
+      horizonLine.position.copy(camPos);
       starGroup.position.copy(camPos);
       // Anchor each visible marker at cameraPos + worldDir·R (stays at the
       // correct sky direction regardless of small translation). The view maps
@@ -663,6 +818,13 @@ export function createSkyScene(
         sprite.position.copy(camPos).addScaledVector(worldDir, MARKER_RADIUS);
       }
       camera.updateMatrixWorld();
+
+      // Cull labels that fall near/off the screen edge so they don't clip (the
+      // operator's cut-off-labels note) + it thins the clutter. Project each
+      // label's world position (group is at camPos, label local = dir·R).
+      if (showConstellations) for (const l of constellationLabels) cullLabel(l.sprite);
+      if (showStars) for (const s of starSprites) if (s.label) cullLabel(s.label);
+
       // Collect this frame's off-screen arrow requests, then lay them all out at
       // once (layoutArrows declutters + hides anything no longer in the sky).
       arrowReqs.length = 0;
@@ -726,8 +888,13 @@ export function createSkyScene(
     for (const { sprite } of cardinals) (sprite.material.map as THREE.Texture | null)?.dispose();
     constellationLines.geometry.dispose();
     (constellationLines.material as THREE.Material).dispose();
+    constellationDots.geometry.dispose();
+    (constellationDots.material as THREE.Material).dispose();
+    horizonLine.geometry.dispose();
+    (horizonLine.material as THREE.Material).dispose();
+    for (const l of constellationLabels) (l.sprite.material.map as THREE.Texture | null)?.dispose();
     for (const s of starSprites) (s.label?.material.map as THREE.Texture | null)?.dispose();
-    starDotTexture.dispose();
+    dotTexture.dispose();
     starDotMaterial.dispose();
     arrowLayer?.remove();
     arrowEls.clear();
@@ -742,6 +909,8 @@ export function createSkyScene(
     showConstellations = on;
     // Only actually show once the buffer is populated (visible stays false until load).
     constellationLines.visible = on && !!constellationPositions;
+    constellationDots.visible = on && !!constellationDotPositions;
+    constellationLabelGroup.visible = on && constellationLabels.length > 0;
   }
 
   function setStarsVisible(on: boolean): void {

@@ -18,6 +18,7 @@ import {
   loadConstellationFigures,
   loadBrightStars,
   loadDeepSky,
+  sunRiseSetEvents,
   type ConstellationFigure,
   type BrightStar,
   type DeepSkyObject,
@@ -102,6 +103,8 @@ export interface SkySceneHandle {
   setStarsVisible(on: boolean): void;
   /** Toggle the deep-sky (nebula/galaxy/cluster) layer (#488). Default on. */
   setDeepSkyVisible(on: boolean): void;
+  /** Toggle today's sunrise/sunset horizon markers (#488). Default on. */
+  setSunEventsVisible(on: boolean): void;
   /** Toggle the Sun/Moon/planet markers (RFC-041). Default on. */
   setPlanetsVisible(on: boolean): void;
   /** Toggle the ISS/Tiangong station markers (RFC-041). Default on. */
@@ -516,6 +519,20 @@ export function createSkyScene(
   }[] = [];
   const _dsDir = new THREE.Vector3();
 
+  // Sunrise/sunset markers (#488) — where the Sun crosses the horizon today, as
+  // two glowing points that ride the horizon ring at their rise/set azimuth. Own
+  // group + toggle; rebuilt only when the calendar day rolls over.
+  const sunEventGroup = new THREE.Group();
+  scene.add(sunEventGroup);
+  let showSunEvents = true;
+  let sunEventsDay = '';
+  const sunEventMarkers: {
+    sprite: THREE.Sprite;
+    label: THREE.Sprite;
+    dir: THREE.Vector3;
+  }[] = [];
+  const _seDir = new THREE.Vector3();
+
   // Find-arrows (#51): a DOM overlay pointing to up-bodies outside the current
   // view, so a single narrow field-of-view doesn't hide the rest of the sky.
   const arrowLayer = typeof document !== 'undefined' ? document.createElement('div') : null;
@@ -752,6 +769,47 @@ export function createSkyScene(
     }
   }
 
+  // Sunrise/sunset markers — rebuilt only when the day changes (the rise/set
+  // azimuths barely move within a day). Each marker sits on the horizon ring at
+  // its crossing azimuth; positions are re-anchored every frame in the loop.
+  function buildSunEvents(): void {
+    if (!observer) return;
+    const day = new Date().toDateString();
+    if (day === sunEventsDay && sunEventMarkers.length) return;
+    sunEventsDay = day;
+    for (const m of sunEventMarkers) {
+      (m.sprite.material as THREE.Material).dispose();
+      (m.label.material.map as THREE.Texture | null)?.dispose();
+    }
+    sunEventGroup.clear();
+    sunEventMarkers.length = 0;
+    const events = sunRiseSetEvents(new Date(), observer.latDeg, observer.lonDeg);
+    for (const ev of events) {
+      const gold = ev.kind === 'sunrise' ? 0xffd27f : 0xff8a3c;
+      const sprite = new THREE.Sprite(
+        new THREE.SpriteMaterial({
+          map: dotTexture,
+          color: gold,
+          transparent: true,
+          depthTest: false,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+        }),
+      );
+      sprite.scale.set(3, 3, 1);
+      sprite.renderOrder = -5;
+      sunEventGroup.add(sprite);
+      const label = makeTextSprite(
+        ev.kind === 'sunrise' ? '☀ Sunrise' : '☀ Sunset',
+        'rgba(255,210,140,1)',
+        1.7,
+      );
+      sunEventGroup.add(label);
+      sunEventMarkers.push({ sprite, label, dir: new THREE.Vector3(...ev.dir) });
+    }
+    sunEventGroup.visible = showSunEvents && sunEventMarkers.length > 0;
+  }
+
   // Hide a label when its anchor is behind the camera or near the screen edge, so
   // it never clips off the edge (and the view stays legible). Group is at camPos,
   // so the label's world position is camPos + its local (dir·R) position.
@@ -932,6 +990,7 @@ export function createSkyScene(
         recomputeConstellations();
         recomputeStars();
         recomputeDeepSky();
+        buildSunEvents();
         lastEphemeris = t;
       }
       // The constellation figures + dots + stars + horizon are baked as directions·R
@@ -942,6 +1001,17 @@ export function createSkyScene(
       horizonLine.position.copy(camPos);
       starGroup.position.copy(camPos);
       deepSkyGroup.position.copy(camPos);
+      sunEventGroup.position.copy(camPos);
+      // Re-anchor the sunrise/sunset marks on the horizon at their azimuth.
+      for (const m of sunEventMarkers) {
+        _seDir.copy(m.dir);
+        view.toWorldDir(_seDir);
+        const sx = _seDir.x * MARKER_RADIUS;
+        const sy = _seDir.y * MARKER_RADIUS;
+        const sz = _seDir.z * MARKER_RADIUS;
+        m.sprite.position.set(sx, sy, sz);
+        m.label.position.set(sx, sy + 1.6, sz);
+      }
       // Anchor each visible marker at cameraPos + worldDir·R (stays at the
       // correct sky direction regardless of small translation). The view maps
       // the stored ENU direction into the render world (identity for a
@@ -974,6 +1044,7 @@ export function createSkyScene(
             if (!o.above && !showBelowHorizon) o.label.visible = false;
             else cullLabel(o.label);
           }
+      if (showSunEvents) for (const m of sunEventMarkers) cullLabel(m.label);
 
       // Collect this frame's off-screen arrow requests, then lay them all out at
       // once (layoutArrows declutters + hides anything no longer in the sky).
@@ -1048,6 +1119,10 @@ export function createSkyScene(
       (o.sprite.material as THREE.Material).dispose();
       (o.label?.material.map as THREE.Texture | null)?.dispose();
     }
+    for (const m of sunEventMarkers) {
+      (m.sprite.material as THREE.Material).dispose();
+      (m.label.material.map as THREE.Texture | null)?.dispose();
+    }
     dotTexture.dispose();
     starDotMaterial.dispose();
     arrowLayer?.remove();
@@ -1075,6 +1150,11 @@ export function createSkyScene(
   function setDeepSkyVisible(on: boolean): void {
     showDeepSky = on;
     deepSkyGroup.visible = on && deepSkyObjects.length > 0;
+  }
+
+  function setSunEventsVisible(on: boolean): void {
+    showSunEvents = on;
+    sunEventGroup.visible = on && sunEventMarkers.length > 0;
   }
 
   function setPlanetsVisible(on: boolean): void {
@@ -1105,6 +1185,7 @@ export function createSkyScene(
     setConstellationsVisible,
     setStarsVisible,
     setDeepSkyVisible,
+    setSunEventsVisible,
     setPlanetsVisible,
     setStationsVisible,
     setBelowHorizonVisible,

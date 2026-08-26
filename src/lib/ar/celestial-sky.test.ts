@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { equatorialXyzToSkyDir, loadDeepSky } from './celestial-sky';
+import { equatorialXyzToSkyDir, loadDeepSky, sunRiseSetEvents } from './celestial-sky';
 
 // The AR render frame is ENU: [East, Up, −North] (a unit vector). The celestial
 // POLE is the ideal deterministic check: it sits on Earth's rotation axis, so its
@@ -82,5 +82,35 @@ describe('loadDeepSky — deep-sky filtering (#488)', () => {
       throw new Error('offline');
     }) as unknown as typeof fetch);
     expect(failed).toEqual([]);
+  });
+});
+
+describe('sunRiseSetEvents — horizon crossings (#488)', () => {
+  const deg = (r: number) => ((r * 180) / Math.PI + 360) % 360;
+
+  it('near the equinox on the equator, the Sun rises ~due east and sets ~due west', () => {
+    // Equinox: sunrise ≈ 90° az, sunset ≈ 270° az, independent of longitude.
+    const events = sunRiseSetEvents(new Date('2026-03-20T06:00:00Z'), 0, 0);
+    const rise = events.find((e) => e.kind === 'sunrise');
+    const set = events.find((e) => e.kind === 'sunset');
+    expect(rise).toBeDefined();
+    expect(set).toBeDefined();
+    expect(deg(rise!.azRad)).toBeGreaterThan(80);
+    expect(deg(rise!.azRad)).toBeLessThan(100);
+    expect(deg(set!.azRad)).toBeGreaterThan(260);
+    expect(deg(set!.azRad)).toBeLessThan(280);
+  });
+
+  it('each event direction sits on the horizon (up-component ≈ 0)', () => {
+    for (const e of sunRiseSetEvents(new Date('2026-08-27T12:00:00Z'), -17.53, -149.57)) {
+      expect(Math.abs(e.dir[1])).toBeLessThan(1e-3);
+      expect(Math.hypot(...e.dir)).toBeCloseTo(1, 6);
+    }
+  });
+
+  it('returns at most one sunrise and one sunset', () => {
+    const events = sunRiseSetEvents(new Date('2026-08-27T00:00:00Z'), 40, -74);
+    expect(events.filter((e) => e.kind === 'sunrise').length).toBeLessThanOrEqual(1);
+    expect(events.filter((e) => e.kind === 'sunset').length).toBeLessThanOrEqual(1);
   });
 });

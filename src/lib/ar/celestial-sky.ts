@@ -7,7 +7,7 @@
 // astronomy. Kept out of sky-scene.ts so the coordinate maths are unit-testable.
 
 import { equatorialToHorizontal } from '../astronomy/horizontal';
-import { skyDirectionENU } from '../astronomy';
+import { skyDirectionENU, skyPosition } from '../astronomy';
 
 // Stars/constellations are effectively at infinity; a huge distance makes the
 // topocentric-parallax term in equatorialToHorizontal vanish (as it should).
@@ -33,6 +33,73 @@ export function equatorialXyzToSkyDir(
   return skyDirectionENU(
     equatorialToHorizontal({ raRad, decRad, distanceAu: FAR_AU }, jd, latRad, lonRad),
   );
+}
+
+/** A Sun horizon event — where the Sun crosses the horizon today (#488). `dir`
+ *  is the render-frame ENU unit direction at the crossing (alt ≈ 0), so a marker
+ *  placed at `dir·R` sits right on the horizon ring at the rise/set azimuth. */
+export interface SunHorizonEvent {
+  kind: 'sunrise' | 'sunset';
+  /** Azimuth of the crossing, radians (0 = north, clockwise). */
+  azRad: number;
+  dir: [number, number, number];
+}
+
+/**
+ * Find today's sunrise + sunset azimuths for an observer, by scanning the Sun's
+ * altitude across a 24 h window centred on `date` and refining each horizon
+ * crossing by bisection. Returns at most one of each kind (the nearest in the
+ * window); empty in polar day/night when the Sun never crosses the horizon.
+ */
+export function sunRiseSetEvents(
+  date: Date,
+  latDeg: number,
+  lonDeg: number,
+): SunHorizonEvent[] {
+  const STEP_MIN = 10;
+  const HALF_WINDOW_MIN = 12 * 60;
+  const t0 = date.getTime() - HALF_WINDOW_MIN * 60_000;
+  const altAt = (ms: number): number =>
+    skyPosition('sun', new Date(ms), latDeg, lonDeg).altRad;
+
+  const events: SunHorizonEvent[] = [];
+  let prevMs = t0;
+  let prevAlt = altAt(t0);
+  const steps = (2 * HALF_WINDOW_MIN) / STEP_MIN;
+  for (let i = 1; i <= steps; i++) {
+    const ms = t0 + i * STEP_MIN * 60_000;
+    const alt = altAt(ms);
+    if (prevAlt === 0 || Math.sign(alt) !== Math.sign(prevAlt)) {
+      const rising = alt > prevAlt;
+      const kind = rising ? 'sunrise' : 'sunset';
+      if (!events.some((e) => e.kind === kind)) {
+        // Bisect the [prevMs, ms] bracket to the horizon crossing.
+        let lo = prevMs;
+        let hi = ms;
+        let loAlt = prevAlt;
+        for (let b = 0; b < 24; b++) {
+          const mid = (lo + hi) / 2;
+          const midAlt = altAt(mid);
+          if (Math.sign(midAlt) === Math.sign(loAlt)) {
+            lo = mid;
+            loAlt = midAlt;
+          } else {
+            hi = mid;
+          }
+        }
+        const pos = skyPosition('sun', new Date((lo + hi) / 2), latDeg, lonDeg);
+        events.push({
+          kind,
+          azRad: pos.azRad,
+          dir: skyDirectionENU({ altRad: 0, azRad: pos.azRad }),
+        });
+      }
+    }
+    prevMs = ms;
+    prevAlt = alt;
+    if (events.length === 2) break;
+  }
+  return events;
 }
 
 /** One constellation figure: `con` code + a flat `vertices` list in HYG equatorial

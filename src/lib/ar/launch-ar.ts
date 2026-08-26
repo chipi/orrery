@@ -222,6 +222,7 @@ function buildSkyLayerToggles(handle: {
   setConstellationsVisible(on: boolean): void;
   setStarsVisible(on: boolean): void;
   setDeepSkyVisible(on: boolean): void;
+  setSunEventsVisible(on: boolean): void;
   setStationsVisible(on: boolean): void;
   setBelowHorizonVisible(on: boolean): void;
 }): HTMLDivElement {
@@ -248,6 +249,7 @@ function buildSkyLayerToggles(handle: {
     mk('✦ Figures', (v) => handle.setConstellationsVisible(v)),
     mk('★ Stars', (v) => handle.setStarsVisible(v)),
     mk('✧ Nebulas', (v) => handle.setDeepSkyVisible(v)),
+    mk('☀ Rise/set', (v) => handle.setSunEventsVisible(v)),
     mk('🛰 Stations', (v) => handle.setStationsVisible(v)),
     // Below-horizon starts OFF (sub-horizon sky hidden by default).
     mk('◡ Below horizon', (v) => handle.setBelowHorizonVisible(v), false),

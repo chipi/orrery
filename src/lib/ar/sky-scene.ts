@@ -21,6 +21,7 @@ import {
   type Pass,
   type Tle,
 } from '../satellite';
+import { arrowScreenAngle, arrowEdgePlacement, spreadByAngle } from './find-arrow-layout';
 
 // How far (metres) to place the markers. Far enough to read as sky; re-anchored
 // to the camera each frame so walking doesn't shift the angular direction.
@@ -298,58 +299,88 @@ export function createSkyScene(
 
   // Find-arrows (#51): a DOM overlay pointing to up-bodies outside the current
   // view, so a single narrow field-of-view doesn't hide the rest of the sky.
-  const arrowLayer =
-    typeof document !== 'undefined' ? document.createElement('div') : null;
+  const arrowLayer = typeof document !== 'undefined' ? document.createElement('div') : null;
   if (arrowLayer) {
     arrowLayer.className = 'ar-find-arrows';
     arrowLayer.style.cssText = 'position:fixed;inset:0;z-index:9998;pointer-events:none;';
     document.body.appendChild(arrowLayer);
   }
-  const arrowEls = new Map<string, HTMLDivElement>();
+  // Each off-screen body gets one arrow element = a rotating ▲ (points AT the body)
+  // + an upright label (so it stays readable regardless of the ▲'s angle).
+  type ArrowEl = { el: HTMLDivElement; tri: HTMLSpanElement; lbl: HTMLSpanElement };
+  const arrowEls = new Map<string, ArrowEl>();
   const ndc = new THREE.Vector3();
   const viewPos = new THREE.Vector3();
-  function updateArrow(key: string, label: string, color: string, world: THREE.Vector3): void {
+  // Requests collected each frame, then laid out together so labels can be spread
+  // apart (a per-body updateArrow can't declutter — it can't see its neighbours).
+  type ArrowReq = { key: string; label: string; color: string; world: THREE.Vector3 };
+  const arrowReqs: ArrowReq[] = [];
+  // Minimum angular gap between two edge arrows so their labels don't stack. ~16°
+  // reads clean for the ≤10 sky bodies/stations we ever show at once.
+  const MIN_ARROW_GAP = (16 * Math.PI) / 180;
+
+  function ensureArrowEl(key: string): ArrowEl {
+    let a = arrowEls.get(key);
+    if (a) return a;
+    const el = document.createElement('div');
+    el.style.cssText =
+      'position:absolute;display:flex;align-items:center;gap:5px;' +
+      'font:600 12px "Space Mono",monospace;white-space:nowrap;' +
+      'text-shadow:0 1px 3px rgba(0,0,0,0.9);will-change:transform,left,top;';
+    const tri = document.createElement('span');
+    tri.textContent = '▲';
+    tri.style.cssText = 'display:inline-block;will-change:transform;';
+    const lbl = document.createElement('span');
+    el.append(tri, lbl);
+    arrowLayer!.appendChild(el);
+    a = { el, tri, lbl };
+    arrowEls.set(key, a);
+    return a;
+  }
+
+  // Two-phase: (1) find which bodies are off-screen + their screen-edge angle,
+  // (2) spread clustered angles apart, (3) place each. Fixes both the overlap
+  // (labels stacking) and the direction (the old single-pass double-negated the
+  // vertical axis, so "up" pointed down).
+  function layoutArrows(reqs: ArrowReq[]): void {
     if (!arrowLayer) return;
-    viewPos.copy(world).applyMatrix4(camera.matrixWorldInverse); // camera space, −z fwd
-    const behind = viewPos.z > 0;
-    ndc.copy(world).project(camera);
-    const onScreen = !behind && Math.abs(ndc.x) <= 1 && Math.abs(ndc.y) <= 1;
-    let el = arrowEls.get(key);
-    if (onScreen) {
-      if (el) el.style.display = 'none';
-      return;
-    }
-    if (!el) {
-      el = document.createElement('div');
-      el.style.cssText =
-        'position:absolute;transform-origin:center;font:600 12px "Space Mono",monospace;' +
-        'white-space:nowrap;text-shadow:0 1px 3px rgba(0,0,0,0.9);will-change:transform;';
-      arrowLayer.appendChild(el);
-      arrowEls.set(key, el);
-    }
-    el.style.display = 'block';
-    el.style.color = color;
-    el.textContent = `▲ ${label}`;
-    // Screen-space direction from centre toward the (possibly behind) body.
-    const dx = behind ? -viewPos.x : viewPos.x;
-    const dy = behind ? -viewPos.y : viewPos.y;
-    const ang = Math.atan2(-dy, dx); // screen y is down
     const w = window.innerWidth;
     const h = window.innerHeight;
-    const cx = w / 2;
-    const cy = h / 2;
     const margin = 46;
-    // Clamp the arrow onto a rounded rectangle just inside the screen edge.
-    const rx = cx - margin;
-    const ry = cy - margin;
-    const t = Math.min(rx / Math.max(Math.abs(Math.cos(ang)), 1e-3), ry / Math.max(Math.abs(Math.sin(ang)), 1e-3));
-    const px = cx + t * Math.cos(ang);
-    const py = cy - t * Math.sin(ang);
-    // Point the ▲ outward (toward the body); it points up at 0°, so rotate.
-    const rot = 90 - (ang * 180) / Math.PI;
-    el.style.left = `${px}px`;
-    el.style.top = `${py}px`;
-    el.style.transform = `translate(-50%,-50%) rotate(${rot}deg)`;
+
+    const seen = new Set<string>();
+    const cand: { key: string; label: string; color: string; ang: number }[] = [];
+    for (const { key, label, color, world } of reqs) {
+      seen.add(key);
+      viewPos.copy(world).applyMatrix4(camera.matrixWorldInverse); // camera space, −z fwd
+      const behind = viewPos.z > 0;
+      ndc.copy(world).project(camera);
+      const onScreen = !behind && Math.abs(ndc.x) <= 1 && Math.abs(ndc.y) <= 1;
+      if (onScreen) {
+        arrowEls.get(key)?.el.style.setProperty('display', 'none');
+        continue;
+      }
+      cand.push({ key, label, color, ang: arrowScreenAngle(viewPos.x, viewPos.y, viewPos.z) });
+    }
+    // Hide arrows whose body left the sky this frame (below horizon / no TLE).
+    for (const [key, a] of arrowEls) if (!seen.has(key)) a.el.style.display = 'none';
+
+    // Spread clustered arrows so their labels never stack, then place each on the
+    // screen-edge rounded rectangle.
+    for (const { key, label, color, ang } of spreadByAngle(cand, MIN_ARROW_GAP)) {
+      const { el, tri, lbl } = ensureArrowEl(key);
+      el.style.display = 'flex';
+      el.style.color = color;
+      lbl.textContent = label;
+      const { px, py, rotDeg, rightSide } = arrowEdgePlacement(ang, w, h, margin);
+      // Anchor the ▲ at the edge point; grow the label INWARD so it never runs off
+      // the edge. On the right half the label sits left of the ▲, and vice-versa.
+      el.style.flexDirection = rightSide ? 'row-reverse' : 'row';
+      el.style.left = `${px}px`;
+      el.style.top = `${py}px`;
+      el.style.transform = `translate(${rightSide ? '-100%' : '0'}, -50%)`;
+      tri.style.transform = `rotate(${rotDeg}deg)`;
+    }
   }
 
   let view: SkyView | null = null;
@@ -449,12 +480,20 @@ export function createSkyScene(
         sprite.position.copy(camPos).addScaledVector(worldDir, MARKER_RADIUS);
       }
       camera.updateMatrixWorld();
+      // Collect this frame's off-screen arrow requests, then lay them all out at
+      // once (layoutArrows declutters + hides anything no longer in the sky).
+      arrowReqs.length = 0;
       for (const [body, { group, dir }] of markers) {
         if (!group.visible) continue;
         worldDir.copy(dir);
         view.toWorldDir(worldDir);
         group.position.copy(camPos).addScaledVector(worldDir, MARKER_RADIUS);
-        updateArrow(body, BODY_LABEL[body], BODY_COLOR[body], group.position);
+        arrowReqs.push({
+          key: body,
+          label: BODY_LABEL[body],
+          color: BODY_COLOR[body],
+          world: group.position,
+        });
       }
       // Stations move fast (deg/s) — recompute every frame from their TLE.
       if (observer) {
@@ -462,7 +501,6 @@ export function createSkyScene(
         for (const [id, sm] of stationMarkers) {
           if (!sm.tle) {
             sm.group.visible = false;
-            arrowEls.get(id)?.style.setProperty('display', 'none');
             continue;
           }
           const la = lookAngleForTle(sm.tle, nowD, observer.latDeg, observer.lonDeg);
@@ -473,13 +511,18 @@ export function createSkyScene(
             view.toWorldDir(worldDir);
             sm.group.position.copy(camPos).addScaledVector(worldDir, MARKER_RADIUS);
             sm.group.visible = true;
-            updateArrow(id, STATION_LABEL[id], STATION_COLOR[id], sm.group.position);
+            arrowReqs.push({
+              key: id,
+              label: STATION_LABEL[id],
+              color: STATION_COLOR[id],
+              world: sm.group.position,
+            });
           } else {
             sm.group.visible = false;
-            arrowEls.get(id)?.style.setProperty('display', 'none');
           }
         }
       }
+      layoutArrows(arrowReqs);
       renderer.render(scene, camera);
     });
     return true;

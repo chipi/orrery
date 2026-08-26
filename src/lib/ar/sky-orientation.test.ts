@@ -126,7 +126,7 @@ describe('device-pointing harness', () => {
     for (const relAlpha of [0, 137, 200, 305]) {
       const trueHeadingDeg = (360 - relAlpha) % 360; // pretend the compass reads this
       const camQ = deviceQuaternion(relAlpha, 90, 0);
-      const yaw = skyYawOffset(camQ, (trueHeadingDeg * Math.PI) / 180);
+      const yaw = skyYawOffset(camQ, (trueHeadingDeg * Math.PI) / 180)!; // horizon → non-null
       // Body at the true azimuth, rotated by the offset (toWorldDir), then into
       // camera space — should sit dead ahead (local ≈ 0,0,−1).
       const dir = enu(trueHeadingDeg, 0).applyAxisAngle(Y, yaw);
@@ -157,17 +157,28 @@ describe('skyYawOffset', () => {
     const theta = 0.7;
     const cam = camYaw(theta);
     const camHeading = headingOfDir(new THREE.Vector3(0, 0, -1).applyQuaternion(cam));
-    expect(Math.abs(skyYawOffset(cam, camHeading))).toBeLessThan(1e-6);
+    expect(Math.abs(skyYawOffset(cam, camHeading)!)).toBeLessThan(1e-6);
   });
   it('applying the offset to an ENU dir lands it where the phone points', () => {
     const cam = camYaw(1.1);
     const trueHeading = 2.0; // the phone is really pointing at 2.0 rad
-    const delta = skyYawOffset(cam, trueHeading);
+    const delta = skyYawOffset(cam, trueHeading)!;
     // The ENU dir for the true heading, rotated by the offset, should match the
     // camera's local-space look direction.
     const enuDir = new THREE.Vector3(Math.sin(trueHeading), 0, -Math.cos(trueHeading));
     enuDir.applyAxisAngle(Y, delta);
     const camHeading = headingOfDir(new THREE.Vector3(0, 0, -1).applyQuaternion(cam));
     expect(Math.abs(wrapSignedRad(headingOfDir(enuDir) - camHeading))).toBeLessThan(1e-6);
+  });
+
+  it('returns null near the zenith so the caller holds the last offset (#51 M5)', () => {
+    // Phone pointed ~straight up: forward ≈ (0, 1, 0), horizontal magnitude ≈ 0,
+    // so the look azimuth is indeterminate — the old code let the sky spin here.
+    const X = new THREE.Vector3(1, 0, 0);
+    const up = new THREE.Quaternion().setFromAxisAngle(X, Math.PI / 2); // (0,0,−1) → (0,1,0)
+    expect(skyYawOffset(up, 0)).toBeNull();
+    // Steep but clear of the zenith (~70°) is still resolvable → a number.
+    const nearUp = new THREE.Quaternion().setFromAxisAngle(X, (70 * Math.PI) / 180);
+    expect(typeof skyYawOffset(nearUp, 0)).toBe('number');
   });
 });

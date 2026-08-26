@@ -105,7 +105,10 @@ export function createXrSkyView(): SkyView {
       camera.quaternion.set(...pose.rotation);
       if (backend.name === 'webxr' && heading != null) {
         scratch.set(...pose.rotation);
-        yawOffset = skyYawOffset(scratch, heading);
+        // null near the zenith (indeterminate azimuth) → hold the last offset so
+        // the sky doesn't spin while the phone is pointed up (#51 review M5).
+        const y = skyYawOffset(scratch, heading);
+        if (y != null) yawOffset = y;
       }
     },
     toWorldDir(dir) {
@@ -238,8 +241,12 @@ export function createCameraSkyView(): SkyView {
       camera.quaternion.copy(deviceQuaternion(alpha, beta, gamma, screenAngleDeg(), q));
       // North-lock: the yaw that brings the (possibly relative) camera frame onto
       // true north. Self-cancels to ~0 when alpha is already absolute (Android),
-      // and corrects the launch offset + drift when it isn't (iOS).
-      if (heading != null) yawOffset = skyYawOffset(camera.quaternion, heading);
+      // and corrects the launch offset + drift when it isn't (iOS). null near the
+      // zenith (indeterminate azimuth) → hold the last offset (#51 review M5).
+      if (heading != null) {
+        const y = skyYawOffset(camera.quaternion, heading);
+        if (y != null) yawOffset = y;
+      }
     },
     toWorldDir(dir) {
       if (yawOffset) dir.applyAxisAngle(Y, yawOffset);

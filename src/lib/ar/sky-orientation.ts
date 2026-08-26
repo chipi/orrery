@@ -93,6 +93,15 @@ export function headingOfDir(dir: THREE.Vector3): number {
 }
 
 /**
+ * Below this horizontal-component magnitude of the camera-forward vector, the
+ * look azimuth is sensor noise (≈0.2 ⇒ pitch ≳ 78° from horizontal — the phone is
+ * pointed near the zenith/nadir). {@link skyYawOffset} returns null there so the
+ * caller HOLDS its last good offset instead of letting the sky spin. Sky mode is
+ * "hold the phone up", so this regime is common, not an edge case.
+ */
+export const ZENITH_HORIZ_MIN = 0.2;
+
+/**
  * Yaw (radians) to rotate every ENU direction by — around world up (+y) — so
  * that, in the WebXR session's arbitrarily-yawed `local` space, a body's true
  * azimuth lines up with where the phone actually points. Derived from the live
@@ -101,9 +110,14 @@ export function headingOfDir(dir: THREE.Vector3): number {
  * A `Ry(Δ)` rotation shifts a direction's heading by `−Δ`; we want the ENU dir at
  * heading `trueHeading` to end up at the camera's current `local`-space heading,
  * hence `Δ = trueHeading − xrHeading`.
+ *
+ * Returns **null** when the phone points too near the zenith/nadir for the look
+ * azimuth to be meaningful (see {@link ZENITH_HORIZ_MIN}); the caller should keep
+ * its previous offset (holding the sky steady) rather than apply a noisy value.
  */
-export function skyYawOffset(cameraQuat: THREE.Quaternion, trueHeadingRad: number): number {
+export function skyYawOffset(cameraQuat: THREE.Quaternion, trueHeadingRad: number): number | null {
   const fwd = new THREE.Vector3(0, 0, -1).applyQuaternion(cameraQuat);
+  if (Math.hypot(fwd.x, fwd.z) < ZENITH_HORIZ_MIN) return null;
   const xrHeading = normRad(Math.atan2(fwd.x, -fwd.z));
   return wrapSignedRad(trueHeadingRad - xrHeading);
 }

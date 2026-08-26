@@ -202,8 +202,8 @@ export function moonObserverView(date: Date, latDeg: number, lonDeg: number): Mo
   const sun = skyPosition('sun', date, latDeg, lonDeg);
 
   // Bright-limb position angle (Meeus 48.5), from the equatorial coords.
-  const aMoon = (moon.raHours * 15) * DEG;
-  const aSun = (sun.raHours * 15) * DEG;
+  const aMoon = moon.raHours * 15 * DEG;
+  const aSun = sun.raHours * 15 * DEG;
   const dMoon = moon.decDeg * DEG;
   const dSun = sun.decDeg * DEG;
   const brightLimb = Math.atan2(

@@ -57,8 +57,9 @@ describe('asset-origin guard — no streamed bucket resolved through bare base',
         }
       });
     }
-    expect(offenders, `Streamed-bucket assets built from bare base:\n${offenders.join('\n')}`).toEqual(
-      [],
-    );
+    expect(
+      offenders,
+      `Streamed-bucket assets built from bare base:\n${offenders.join('\n')}`,
+    ).toEqual([]);
   });
 });

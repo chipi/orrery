@@ -185,7 +185,11 @@ html.ar-active,
 html.ar-active body {
   background: transparent !important;
 }
-html.ar-active body > *:not(.ar-canvas):not(.ar-exit-btn):not(.ar-hint):not(.ar-camera-feed):not(.ar-find-arrows):not(.ar-debug-hud) {
+html.ar-active
+  body
+  > *:not(.ar-canvas):not(.ar-exit-btn):not(.ar-hint):not(.ar-camera-feed):not(.ar-find-arrows):not(
+    .ar-debug-hud
+  ) {
   visibility: hidden !important;
 }
 .ar-exit-btn {

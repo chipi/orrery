@@ -96,18 +96,21 @@ describe('moonLibration — physically bounded amplitude over a year', () => {
 });
 
 describe('subSolarPoint — drives the terminator', () => {
-  it('sits a phase-angle away from the sub-Earth point, all year (so the lit '
-    + 'hemisphere is correct)', () => {
-    const start = Date.UTC(2024, 0, 1);
-    for (let day = 0; day < 366; day += 3) {
-      const date = new Date(start + day * 86_400_000);
-      const gap = angleBetween(subSolarPoint(date), moonLibration(date));
-      const phaseAngle = moonPhase(date).phaseAngleDeg;
-      // Same body-frame rotation ⇒ the selenographic gap equals the space-angle
-      // between Moon→Sun and Moon→Earth = the phase angle.
-      expect(Math.abs(gap - phaseAngle)).toBeLessThan(1.5);
-    }
-  });
+  it(
+    'sits a phase-angle away from the sub-Earth point, all year (so the lit ' +
+      'hemisphere is correct)',
+    () => {
+      const start = Date.UTC(2024, 0, 1);
+      for (let day = 0; day < 366; day += 3) {
+        const date = new Date(start + day * 86_400_000);
+        const gap = angleBetween(subSolarPoint(date), moonLibration(date));
+        const phaseAngle = moonPhase(date).phaseAngleDeg;
+        // Same body-frame rotation ⇒ the selenographic gap equals the space-angle
+        // between Moon→Sun and Moon→Earth = the phase angle.
+        expect(Math.abs(gap - phaseAngle)).toBeLessThan(1.5);
+      }
+    },
+  );
 
   it('coincides with the sub-Earth point at full moon (near side fully lit)', () => {
     const FULL = new Date('2024-01-25T17:54:00Z');
@@ -138,7 +141,9 @@ describe('moonObserverView — the location effect', () => {
     const north = moonObserverView(FULL, 60, 0);
     const south = moonObserverView(FULL, -50, 0);
     // Signed angular separation of the two orientations, 0..180.
-    const diff = Math.abs((((north.limbToZenithDeg - south.limbToZenithDeg) % 360) + 540) % 360 - 180);
+    const diff = Math.abs(
+      ((((north.limbToZenithDeg - south.limbToZenithDeg) % 360) + 540) % 360) - 180,
+    );
     // Substantial — the disk is visibly rotated between the hemispheres, not the
     // same orientation. (Not exactly 180°: it depends on hour angle.)
     expect(diff).toBeGreaterThan(60);

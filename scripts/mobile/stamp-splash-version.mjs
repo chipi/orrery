@@ -19,8 +19,7 @@ const version = pre.length ? `${base}-${pre.join('-')}` : base;
 
 // Use the shared BUILD_TAG env so the splash matches the in-app menu exactly;
 // fall back to the local build time (UTC, matching the vite define's format).
-const stamp =
-  process.env.BUILD_TAG || new Date().toISOString().slice(5, 16).replace('T', ' ');
+const stamp = process.env.BUILD_TAG || new Date().toISOString().slice(5, 16).replace('T', ' ');
 const tag = `v${version} · ${stamp}`;
 
 let sb = readFileSync(SB, 'utf8');

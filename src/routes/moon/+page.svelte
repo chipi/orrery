@@ -280,7 +280,9 @@
   <div class="moon-observer" data-testid="moon-observer-readout">
     <div class="mo-eyebrow">{m.moon_view_eyebrow()}</div>
     <div class="mo-phase">{PHASE_LABEL[observerView.phase.phaseName]()}</div>
-    <div class="mo-row">{m.moon_view_lit({ pct: Math.round(observerView.phase.illuminatedFraction * 100) })}</div>
+    <div class="mo-row">
+      {m.moon_view_lit({ pct: Math.round(observerView.phase.illuminatedFraction * 100) })}
+    </div>
     <div class="mo-row">
       {#if observerView.aboveHorizon}
         {m.moon_view_alt_above({ deg: Math.round(observerView.altitudeDeg) })}

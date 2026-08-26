@@ -11,10 +11,7 @@ import { fileURLToPath } from 'node:url';
 // capacitor:// origin on mobile, where the image no longer exists → a 404 and no
 // hero. The seam is `assetUrl()` (offline copy → stream origin → local `base`),
 // exactly as MissionPanel / StationTimelineStrip do for their heroes.
-const src = readFileSync(
-  fileURLToPath(new URL('./StarPanel.svelte', import.meta.url)),
-  'utf8',
-);
+const src = readFileSync(fileURLToPath(new URL('./StarPanel.svelte', import.meta.url)), 'utf8');
 
 describe('StarPanel star hero image origin', () => {
   it('resolves the hero photo through assetUrl (streamed/offline-aware), not base', () => {

@@ -69,7 +69,8 @@ describe('coalesceLatest', () => {
     let rejectFirst: (() => void) | null = null;
     const run = coalesceLatest<number>((arg) => {
       started.push(arg);
-      if (arg === 1) return new Promise<void>((_, reject) => (rejectFirst = () => reject(new Error('x'))));
+      if (arg === 1)
+        return new Promise<void>((_, reject) => (rejectFirst = () => reject(new Error('x'))));
       return Promise.resolve();
     });
     const p = run(1).catch(() => {});

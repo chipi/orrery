@@ -9,10 +9,7 @@ import { fileURLToPath } from 'node:url';
 // did nothing. The fix mirrors the surface pattern: an inline TacticalScan in a
 // mobile drawer tab. These two invariants keep that reachable.
 
-const scan = readFileSync(
-  fileURLToPath(new URL('./TacticalScan.svelte', import.meta.url)),
-  'utf8',
-);
+const scan = readFileSync(fileURLToPath(new URL('./TacticalScan.svelte', import.meta.url)), 'utf8');
 const explore = readFileSync(
   fileURLToPath(new URL('../../routes/explore/+page.svelte', import.meta.url)),
   'utf8',

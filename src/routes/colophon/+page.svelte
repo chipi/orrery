@@ -104,8 +104,7 @@
             <button
               type="button"
               class="thumb-open"
-              onclick={() =>
-                (lightbox = { src: srcOf(d.file), title: d.title, route: '/fleet' })}
+              onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: '/fleet' })}
             >
               <img src={srcOf(d.file)} alt={d.title} loading="lazy" decoding="async" />
             </button>
@@ -131,8 +130,7 @@
             <button
               type="button"
               class="thumb-open"
-              onclick={() =>
-                (lightbox = { src: srcOf(p.file), title: p.title, route: '/posters' })}
+              onclick={() => (lightbox = { src: srcOf(p.file), title: p.title, route: '/posters' })}
             >
               <img src={srcOf(p.thumb)} alt={p.title} loading="lazy" decoding="async" />
             </button>
@@ -153,8 +151,7 @@
             <button
               type="button"
               class="thumb-open"
-              onclick={() =>
-                (lightbox = { src: srcOf(d.file), title: d.title, route: '/science' })}
+              onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: '/science' })}
             >
               <img src={srcOf(d.file)} alt={d.title} loading="lazy" decoding="async" />
             </button>

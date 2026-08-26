@@ -2613,7 +2613,11 @@
        breadcrumb is gone. In a full-screen takeover (black-hole / body-scene /
        deep-sky) only the back arrow shows — the ladder isn't meaningful there. -->
   {#if view === '3d'}
-    <nav class="scale-nav" aria-label={m.explore_location_aria()}>
+    <nav
+      class="scale-nav"
+      class:at-solar={contextId === 'solar-system' && !activeBlackHole}
+      aria-label={m.explore_location_aria()}
+    >
       {#if scaleNavBack}
         <button
           type="button"
@@ -4176,20 +4180,26 @@
   }
 
   /* #45 top scale-navigator — one row under the nav: back · scale chip · reset.
-     Top-CENTRE so it clears the solar-system layer-chip cluster on the left (which
-     only shows at the solar system) and the app-nav icons above. On neighborhood+
-     that cluster is hidden, so the row simply sits alone at the top. */
+     Flush LEFT by default (neighborhood+ hide the solar-system control cluster, so
+     the top-left is free and the row sits exactly where the old breadcrumb did).
+     `top: 8px` lines it up with the mobile control row (.hud-top-mobile, top nav+8)
+     so they share a baseline. At the SOLAR SYSTEM scale the top-left is taken by
+     that cluster (2D / AR / SKY + layer chips), so the nav flips to flush RIGHT
+     (.at-solar) to clear it — no overlap with the SKY button. */
   .scale-nav {
     position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 8px;
+    left: 8px;
     z-index: 8;
     display: flex;
     align-items: center;
     gap: 6px;
-    max-width: calc(100vw - 24px);
+    max-width: calc(100vw - 16px);
     font-family: var(--font-mono, 'Space Mono', monospace);
+  }
+  .scale-nav.at-solar {
+    left: auto;
+    right: 8px;
   }
   /* Shared square affordances flanking the chip (back ‹ / reset ⟲). Slate glass
      to match the chip; generous tap target. */

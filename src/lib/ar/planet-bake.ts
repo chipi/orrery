@@ -26,7 +26,14 @@ export interface PlanetBakeSpec {
   unlit?: boolean;
   /** Ring system (Saturn). */
   rings?: boolean;
+  /** Ortho half-extent the body is framed in (sphere radius = 1). Ringed bodies
+   *  need a wider frame so the rings aren't clipped; the caller compensates the
+   *  sprite scale by the same factor so the DISC keeps its apparent size. */
+  frustumHalf?: number;
 }
+
+/** Default ortho half-extent — the sphere (r=1) fills most of the frame. */
+export const DEFAULT_FRUSTUM_HALF = 1.32;
 
 export interface BakedPlanets {
   get(key: string): THREE.Texture | undefined;
@@ -99,7 +106,8 @@ export function bakePlanetTextures(
     rt.texture.colorSpace = THREE.SRGBColorSpace;
 
     const scene = new THREE.Scene();
-    const cam = new THREE.OrthographicCamera(-1.32, 1.32, 1.32, -1.32, 0.1, 10);
+    const half = spec.frustumHalf ?? DEFAULT_FRUSTUM_HALF;
+    const cam = new THREE.OrthographicCamera(-half, half, half, -half, 0.1, 10);
     cam.position.set(0, 0, 4);
     cam.lookAt(0, 0, 0);
 

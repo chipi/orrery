@@ -13,7 +13,12 @@ import { pickSkyView, type SkyView } from './sky-view';
 import { skyPosition, skyDirectionENU, SKY_BODIES, type SkyBody, julianDay } from '../astronomy';
 import { moonPhase } from '../astronomy/moon-observer';
 import { heliocentric, geocentricPlanet, geocentricSun } from '../astronomy/planets';
-import { bakePlanetTextures, type BakedPlanets, type PlanetBakeSpec } from './planet-bake';
+import {
+  bakePlanetTextures,
+  DEFAULT_FRUSTUM_HALF,
+  type BakedPlanets,
+  type PlanetBakeSpec,
+} from './planet-bake';
 import { getObserverLocation, type ObserverLocation } from '../geolocation';
 import {
   equatorialXyzToSkyDir,
@@ -110,6 +115,11 @@ const BODY_RADIUS_KM: Record<SkyBody, number> = {
   neptune: 24622,
 };
 const AU_KM = 149597870.7;
+
+// Ortho half-extent each body is baked in. Saturn needs a wider frame so its
+// rings (out to 2.3× the disc) aren't clipped; the sprite scale is compensated by
+// the same factor (below) so the DISC keeps its apparent-diameter size.
+const BODY_FRUSTUM_HALF: Partial<Record<SkyBody, number>> = { saturn: 2.7 };
 
 // World-unit sprite scale from a body's apparent angular diameter (arcsec), log-
 // compressed so Neptune (~2.3″) stays legible and the Sun/Moon (~1800″) don't
@@ -1171,6 +1181,7 @@ export function createSkyScene(
           litSign: ph.litSign,
           unlit: b === 'sun',
           rings: b === 'saturn',
+          frustumHalf: BODY_FRUSTUM_HALF[b],
         };
       });
       bakedPlanets = bakePlanetTextures(renderer, specs);
@@ -1200,7 +1211,10 @@ export function createSkyScene(
         m.group.visible = true;
         // Apparent-diameter size model (advisor §2) — repaint scale only on a
         // meaningful change (distances move over weeks; Mars grows at opposition).
-        const target = markerWorldScale(apparentDiameterArcsec(body, pos.distanceAu));
+        // Bodies baked in a wider frame (Saturn, for its rings) are compensated so
+        // the DISC keeps the same apparent size as the tightly-framed bodies.
+        const comp = (BODY_FRUSTUM_HALF[body] ?? DEFAULT_FRUSTUM_HALF) / DEFAULT_FRUSTUM_HALF;
+        const target = markerWorldScale(apparentDiameterArcsec(body, pos.distanceAu)) * comp;
         if (Math.abs(m.sprite.scale.x - target) > 0.05) m.sprite.scale.set(target, target, 1);
       } else {
         m.group.visible = false; // below the horizon (layer off / below-horizon off)

@@ -8,33 +8,40 @@ const deg = (rad: number) => (rad * 180) / Math.PI;
 
 describe('arrowScreenAngle — the direction a find-arrow points', () => {
   it('a body to the RIGHT points right (0°)', () => {
-    expect(deg(arrowScreenAngle(1, 0, -1))).toBeCloseTo(0, 5);
+    expect(deg(arrowScreenAngle(1, 0))).toBeCloseTo(0, 5);
   });
 
   it('a body straight UP points up (−90°), NOT down — the on-device inversion bug', () => {
     // Regression guard for #51: the old single-pass double-negated the vertical
     // axis, so a body overhead pointed the arrow to the bottom of the screen.
-    expect(deg(arrowScreenAngle(0, 1, -1))).toBeCloseTo(-90, 5);
+    expect(deg(arrowScreenAngle(0, 1))).toBeCloseTo(-90, 5);
   });
 
   it('a body straight DOWN points down (+90°)', () => {
-    expect(deg(arrowScreenAngle(0, -1, -1))).toBeCloseTo(90, 5);
+    expect(deg(arrowScreenAngle(0, -1))).toBeCloseTo(90, 5);
   });
 
   it('a body to the LEFT points left (±180°)', () => {
-    expect(Math.abs(deg(arrowScreenAngle(-1, 0, -1)))).toBeCloseTo(180, 5);
+    expect(Math.abs(deg(arrowScreenAngle(-1, 0)))).toBeCloseTo(180, 5);
   });
 
   it('an up-and-to-the-right body points into the top-right quadrant', () => {
-    const a = deg(arrowScreenAngle(1, 1, -1));
+    const a = deg(arrowScreenAngle(1, 1));
     expect(a).toBeGreaterThan(-90);
     expect(a).toBeLessThan(0); // between up (−90) and right (0)
   });
 
-  it('reflects a body BEHIND the camera through the centre (shorter turn)', () => {
-    // Behind + physically up (vy>0, vz>0): reflected → arrow points DOWN (+90°),
-    // i.e. turn around; you will find it by sweeping the opposite way.
-    expect(deg(arrowScreenAngle(0, 1, 1))).toBeCloseTo(90, 5);
+  it('a body behind-and-up points UP — the shortest turn, not a 180° reflection', () => {
+    // Regression guard for B1: the transverse component (vx, vy) is the shortest
+    // turn toward the body whether it's in front or behind. Behind-and-up (vy>0)
+    // must still point up (−90°); the old code reflected it to down (+90°).
+    expect(deg(arrowScreenAngle(0, 1))).toBeCloseTo(-90, 5);
+  });
+
+  it('a body behind-and-right points RIGHT — turn the short way, not the long way', () => {
+    // A body behind + to the right is reached by turning right (~170°), not left
+    // (~190°); its arrow points right (0°), matching its transverse component.
+    expect(deg(arrowScreenAngle(1, 0))).toBeCloseTo(0, 5);
   });
 });
 

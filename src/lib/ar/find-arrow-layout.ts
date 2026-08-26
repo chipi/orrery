@@ -6,16 +6,17 @@
 
 /**
  * Screen-space angle (radians, x-right / y-DOWN, CW positive) from the screen
- * centre toward a body at camera-space position (vx right, vy up, −vz forward,
- * the Three.js convention). Camera-up (+vy) maps to screen-up (−y). A body BEHIND
- * the camera (vz > 0) is reflected through the centre so the arrow points toward
- * the shorter turn to bring it on-screen.
+ * centre toward a body at camera-space position (vx right, vy up, −z forward, the
+ * Three.js convention). The direction is the body's TRANSVERSE component `(vx, vy)`
+ * — which points toward the shortest turn to bring it on-axis whether it is in
+ * front OR behind the camera — mapped to screen space (camera-up +vy → screen-up
+ * −y). (An earlier version reflected behind-camera bodies through the centre; that
+ * sent the arrow the long way round and flipped 180° at the 90°-off boundary.)
+ * A body exactly on the view axis (`vx ≈ vy ≈ 0`) is degenerate — any direction is
+ * fine, and `atan2(0, 0)` returns 0.
  */
-export function arrowScreenAngle(vx: number, vy: number, vz: number): number {
-  const behind = vz > 0;
-  const sdx = behind ? -vx : vx; // screen x, right positive
-  const sdy = behind ? vy : -vy; // screen y, down positive (camera-up → screen-up)
-  return Math.atan2(sdy, sdx);
+export function arrowScreenAngle(vx: number, vy: number): number {
+  return Math.atan2(-vy, vx);
 }
 
 export interface ArrowPlacement {

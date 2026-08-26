@@ -24,6 +24,14 @@ const Y = new THREE.Vector3(0, 1, 0);
 export interface SkyView {
   /** Passthrough substrate: 'xr' (device compositor) or 'camera' (video feed). */
   readonly kind: 'xr' | 'camera';
+  /**
+   * True when the pose is delivered in the device's NATIVE (landscape) frame and
+   * the caller must roll it onto the current interface orientation itself — i.e.
+   * ARKit only. WebXR viewer poses are already screen-oriented by the UA, and the
+   * camera (magic-window) path compensates screen angle inside its quaternion, so
+   * both are false (rolling them would double-count). Only meaningful after start().
+   */
+  readonly needsInterfaceRoll: boolean;
   /** Begin the session / sensors. Resolves false if the substrate can't start. */
   start(): Promise<boolean>;
   /** Per-frame: write the current pose into `camera`. */
@@ -77,6 +85,11 @@ export function createXrSkyView(): SkyView {
 
   return {
     kind: 'xr',
+    // Only ARKit delivers a landscape-native pose that needs the interface roll;
+    // WebXR poses are already screen-oriented by the UA. Resolved after start().
+    get needsInterfaceRoll() {
+      return backend?.name === 'arkit-capacitor';
+    },
     async start() {
       backend = await getArBackend();
       if (!backend || !(await backend.isSupported())) return false;
@@ -197,6 +210,9 @@ export function createCameraSkyView(): SkyView {
 
   return {
     kind: 'camera',
+    // The magic-window path already compensates screen angle inside deviceQuaternion,
+    // so the caller must NOT roll it again.
+    needsInterfaceRoll: false,
     async start() {
       await requestOrientationPermission();
       const okOrient = await startOrientation();

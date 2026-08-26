@@ -59,11 +59,36 @@ describe('launchArScene', () => {
   it('tears down + returns false when the session fails to start', async () => {
     start.mockResolvedValue(false);
     expect(await launchArScene('mars')).toBe(false);
-    expect(stop).not.toHaveBeenCalled(); // failure path calls cleanup, not stop
+    // #51 review M2: failure now also stop()s the handle so the WebGL context +
+    // any appended overlay layer are disposed, not leaked.
+    expect(stop).toHaveBeenCalledTimes(1);
     expect(arCanvas()).toBeNull(); // canvas removed on failure
     // active was cleared → a subsequent launch is allowed
     start.mockResolvedValue(true);
     expect(await launchArScene('mars')).toBe(true);
+  });
+
+  it('#51 M1: a REJECTED start() is caught — returns false, tears down, no throw', async () => {
+    start.mockRejectedValue(new Error('permission denied'));
+    // Must not propagate: an uncaught reject would strand `.ar-active` (whole app
+    // hidden) with a dead exit button.
+    expect(await launchArScene('mars')).toBe(false);
+    expect(stop).toHaveBeenCalledTimes(1);
+    expect(arCanvas()).toBeNull();
+    // Recovered cleanly → a subsequent launch still works.
+    start.mockResolvedValue(true);
+    expect(await launchArScene('mars')).toBe(true);
+  });
+
+  it('#51 M3: a second launch DURING an in-flight start builds only one scene', async () => {
+    let releaseStart: (v: boolean) => void = () => {};
+    start.mockReturnValueOnce(new Promise<boolean>((res) => (releaseStart = res)));
+    const first = launchArScene('mars'); // sets `launching` synchronously, parks on start()
+    const second = await launchArScene('mars'); // fires during the await window
+    expect(second).toBe(false); // guarded by `launching` — no second scene
+    releaseStart(true);
+    expect(await first).toBe(true);
+    expect(createArScene).toHaveBeenCalledTimes(1); // exactly one scene ever built
   });
 });
 

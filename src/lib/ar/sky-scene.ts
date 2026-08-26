@@ -360,7 +360,7 @@ export function createSkyScene(
         arrowEls.get(key)?.el.style.setProperty('display', 'none');
         continue;
       }
-      cand.push({ key, label, color, ang: arrowScreenAngle(viewPos.x, viewPos.y, viewPos.z) });
+      cand.push({ key, label, color, ang: arrowScreenAngle(viewPos.x, viewPos.y) });
     }
     // Hide arrows whose body left the sky this frame (below horizon / no TLE).
     for (const [key, a] of arrowEls) if (!seen.has(key)) a.el.style.display = 'none';
@@ -457,7 +457,9 @@ export function createSkyScene(
       if (disposed || !view) return;
       view.updateCamera(camera);
       // #51: roll the ARKit (landscape-native) pose onto the current interface.
-      if (view.kind === 'xr') {
+      // Gated on needsInterfaceRoll, NOT kind==='xr' — WebXR is also kind 'xr' but
+      // its UA already screen-orients the pose, so rolling it would double-count.
+      if (view.needsInterfaceRoll) {
         const rollDeg = 90 - screenAngle();
         if (rollDeg)
           camera.quaternion.multiply(rollQ.setFromAxisAngle(rollAxis, (rollDeg * Math.PI) / 180));

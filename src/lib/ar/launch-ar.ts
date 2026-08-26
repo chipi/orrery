@@ -32,6 +32,12 @@ let active: {
   stop: () => void;
 } | null = null;
 
+// True while a launch is mid-flight (between the guard and `active` being set).
+// A mobile double-tap fires the second handler during the first launch's awaits
+// (`import()` + `start()`), which would otherwise pass the `active` check and
+// start a second canvas / renderer / session. Guarded in both launchers.
+let launching = false;
+
 // What the user is placing, for the on-screen instruction.
 const SCENE_LABEL: Record<ArSceneType, string> = {
   explore: 'the Solar System',
@@ -75,7 +81,8 @@ async function playGuideNarration(type: ArSceneType, episodeId: string): Promise
  * is unaffected either way). Idempotent — a second call while active is a no-op.
  */
 export async function launchArScene(type: ArSceneType): Promise<boolean> {
-  if (active || typeof document === 'undefined') return false;
+  if (active || launching || typeof document === 'undefined') return false;
+  launching = true;
 
   const canvas = document.createElement('canvas');
   canvas.className = 'ar-canvas';
@@ -114,8 +121,14 @@ export async function launchArScene(type: ArSceneType): Promise<boolean> {
     onPlaced: () => hint.remove(),
   });
 
-  const ok = await handle.start();
+  // A rejected start() (WebXR permission denial, unsupported device) must NOT
+  // propagate — otherwise cleanup never runs, `.ar-active` stays on <html> (the
+  // whole app is visibility:hidden), and the app is bricked until reload. Always
+  // stop() the handle on failure so its renderer/session are disposed (not leaked).
+  const ok = await handle.start().catch(() => false);
+  launching = false;
   if (!ok) {
+    handle.stop();
     cleanup();
     return false;
   }
@@ -131,7 +144,8 @@ export async function launchArScene(type: ArSceneType): Promise<boolean> {
  * feed + compass). Idempotent with the tabletop launcher — one AR view at a time.
  */
 export async function launchSkyScene(): Promise<boolean> {
-  if (active || typeof document === 'undefined') return false;
+  if (active || launching || typeof document === 'undefined') return false;
+  launching = true;
 
   const canvas = document.createElement('canvas');
   canvas.className = 'ar-canvas';
@@ -172,8 +186,13 @@ export async function launchSkyScene(): Promise<boolean> {
     },
   });
 
-  const ok = await handle.start();
+  // See launchArScene: a rejected/failed start must tear down fully (dispose the
+  // WebGL context + the appended .ar-find-arrows layer via stop(), clear the
+  // hint timer, drop .ar-active) so a retry starts clean and the app isn't bricked.
+  const ok = await handle.start().catch(() => false);
+  launching = false;
   if (!ok) {
+    handle.stop();
     clearTimeout(hintTimer);
     cleanup();
     return false;

@@ -35,7 +35,8 @@
   import { loadLocaleAltText } from '$lib/image-alt';
   import * as m from '$lib/paraglide/messages';
   import { initAnalytics, track, trackRouteEnter } from '$lib/analytics';
-  import { afterNavigate, replaceState } from '$app/navigation';
+  import { afterNavigate, beforeNavigate, replaceState } from '$app/navigation';
+  import { exitArScene } from '$lib/ar/launch-ar';
 
   let { children } = $props();
 
@@ -263,6 +264,13 @@
       // works on Android.
     }
   });
+
+  // Tear down any active AR scene before leaving the route (#51 review M7). AR
+  // immersive mode hides the whole app (visibility:hidden) except the AR DOM;
+  // an iOS edge-swipe-back navigates the hidden app underneath while the camera,
+  // ARKit session and .ar-active class persist. beforeNavigate fires on that
+  // popstate; exitArScene is idempotent (a no-op when nothing is active).
+  beforeNavigate(() => exitArScene());
 
   // Phase 14 (#342) — route-enter / route-exit + nav-flow telemetry.
   // SvelteKit fires afterNavigate on every successful nav (initial mount

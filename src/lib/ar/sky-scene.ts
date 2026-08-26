@@ -227,8 +227,8 @@ function makeMarker(
 function makeTextSprite(text: string, color: string, worldHeight = 2.4): THREE.Sprite {
   const SS = 2; // supersample for crisp text
   const fontPx = 52 * SS;
-  const padX = 18 * SS;
-  const padY = 9 * SS;
+  const padX = 14 * SS;
+  const padY = 7 * SS;
   const meas = document.createElement('canvas').getContext('2d')!;
   meas.font = `700 ${fontPx}px "Space Mono", monospace`;
   const tw = Math.ceil(meas.measureText(text).width);
@@ -726,23 +726,25 @@ export function createSkyScene(
         'position',
         new THREE.BufferAttribute(constellationDotPositions, 3),
       );
-      // One name label per figure, at the vertex centroid.
+      // One name label per CONSTELLATION (aggregate all figures that share a code,
+      // e.g. the two Serpens halves), at the combined vertex centroid.
+      const byCon = new Map<string, { cx: number; cy: number; cz: number; n: number }>();
       for (const f of figs) {
         const v = f.vertices;
-        if (v.length < 3) continue;
-        let cx = 0;
-        let cy = 0;
-        let cz = 0;
-        let n = 0;
+        let acc = byCon.get(f.con);
+        if (!acc) byCon.set(f.con, (acc = { cx: 0, cy: 0, cz: 0, n: 0 }));
         for (let k = 0; k + 2 < v.length; k += 3) {
-          cx += v[k];
-          cy += v[k + 1];
-          cz += v[k + 2];
-          n++;
+          acc.cx += v[k];
+          acc.cy += v[k + 1];
+          acc.cz += v[k + 2];
+          acc.n++;
         }
-        const label = makeTextSprite(constellationName(f.con), 'rgba(170,212,245,1)', 2.6);
+      }
+      for (const [con, a] of byCon) {
+        if (a.n === 0) continue;
+        const label = makeTextSprite(constellationName(con), 'rgba(170,212,245,1)', 2.2);
         constellationLabelGroup.add(label);
-        constellationLabels.push({ sprite: label, x: cx / n, y: cy / n, z: cz / n });
+        constellationLabels.push({ sprite: label, x: a.cx / a.n, y: a.cy / a.n, z: a.cz / a.n });
       }
       recomputeConstellations();
       constellationLines.visible = showConstellations;
@@ -764,7 +766,7 @@ export function createSkyScene(
         // can't be named, so the constellation NAME labels below cover those areas.
         let label: THREE.Sprite | null = null;
         if (st.proper) {
-          label = makeTextSprite(st.proper, 'rgba(224,234,255,1)', 1.9);
+          label = makeTextSprite(st.proper, 'rgba(224,234,255,1)', 1.7);
           starGroup.add(label); // sibling, not child — so it doesn't inherit `sc`
         }
         starSprites.push({ sprite, label, x: st.x, y: st.y, z: st.z });

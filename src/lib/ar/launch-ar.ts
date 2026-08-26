@@ -214,13 +214,14 @@ export async function launchSkyScene(): Promise<boolean> {
 }
 
 /** Build the sky-mode layer toggles (RFC-041): Planets · Figures · Stars ·
- *  Stations. Everything starts on; tapping a chip toggles that layer + its
+ *  Nebulas · Stations. Everything starts on; tapping a chip toggles that layer + its
  *  pressed/off state. Styled via `.ar-layers` / `.ar-layer-btn` in app.css and
  *  whitelisted in the `.ar-active` chrome-hide rule. */
 function buildSkyLayerToggles(handle: {
   setPlanetsVisible(on: boolean): void;
   setConstellationsVisible(on: boolean): void;
   setStarsVisible(on: boolean): void;
+  setDeepSkyVisible(on: boolean): void;
   setStationsVisible(on: boolean): void;
   setBelowHorizonVisible(on: boolean): void;
 }): HTMLDivElement {
@@ -246,6 +247,7 @@ function buildSkyLayerToggles(handle: {
     mk('☉ Planets', (v) => handle.setPlanetsVisible(v)),
     mk('✦ Figures', (v) => handle.setConstellationsVisible(v)),
     mk('★ Stars', (v) => handle.setStarsVisible(v)),
+    mk('✧ Nebulas', (v) => handle.setDeepSkyVisible(v)),
     mk('🛰 Stations', (v) => handle.setStationsVisible(v)),
     // Below-horizon starts OFF (sub-horizon sky hidden by default).
     mk('◡ Below horizon', (v) => handle.setBelowHorizonVisible(v), false),

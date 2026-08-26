@@ -17,8 +17,10 @@ import {
   equatorialXyzToSkyDir,
   loadConstellationFigures,
   loadBrightStars,
+  loadDeepSky,
   type ConstellationFigure,
   type BrightStar,
+  type DeepSkyObject,
 } from './celestial-sky';
 import {
   resolveStationTle,
@@ -98,6 +100,8 @@ export interface SkySceneHandle {
   setConstellationsVisible(on: boolean): void;
   /** Toggle the bright-star layer (RFC-041). Default on. */
   setStarsVisible(on: boolean): void;
+  /** Toggle the deep-sky (nebula/galaxy/cluster) layer (#488). Default on. */
+  setDeepSkyVisible(on: boolean): void;
   /** Toggle the Sun/Moon/planet markers (RFC-041). Default on. */
   setPlanetsVisible(on: boolean): void;
   /** Toggle the ISS/Tiangong station markers (RFC-041). Default on. */
@@ -284,6 +288,17 @@ function makeStarDotTexture(): THREE.CanvasTexture {
  *  (lower mag) reads bigger; clamped so nothing dominates or vanishes. */
 function starScale(mag: number): number {
   return Math.max(0.5, Math.min(2.2, 1.7 - mag * 0.5));
+}
+
+/** A soft glow colour per deep-sky category (#488), so nebulae/galaxies/clusters
+ *  read distinct from the white point-stars. */
+function deepSkyColor(category: string): number {
+  if (/galaxy/.test(category)) return 0x9ab4ff; // cool blue
+  if (/globular|cluster/.test(category)) return 0xc8ecff; // white-cyan
+  if (/planetary/.test(category)) return 0x8af0dc; // teal
+  if (/supernova/.test(category)) return 0xff9ab4; // pink-red
+  if (/dark/.test(category)) return 0x9a8aa0; // dusty grey-purple
+  return 0xffaad0; // nebula pink
 }
 
 // The four cardinal directions as horizon ENU unit vectors (North=−z, East=+x).
@@ -483,6 +498,23 @@ export function createSkyScene(
     depthWrite: false,
     blending: THREE.AdditiveBlending,
   });
+
+  // Deep-sky layer (#488) — nebulae, galaxies, clusters as soft colour glows +
+  // name labels, so there are "big clouds in the distance" to orient by. Own group
+  // (rides the camera), own toggle, hidden below the horizon like the stars.
+  const deepSkyGroup = new THREE.Group();
+  deepSkyGroup.visible = false;
+  scene.add(deepSkyGroup);
+  let showDeepSky = true;
+  const deepSkyObjects: {
+    sprite: THREE.Sprite;
+    label: THREE.Sprite | null;
+    x: number;
+    y: number;
+    z: number;
+    above?: boolean;
+  }[] = [];
+  const _dsDir = new THREE.Vector3();
 
   // Find-arrows (#51): a DOM overlay pointing to up-bodies outside the current
   // view, so a single narrow field-of-view doesn't hide the rest of the sky.
@@ -700,6 +732,26 @@ export function createSkyScene(
     }
   }
 
+  // Deep-sky objects — same placement + below-horizon gating as the stars.
+  function recomputeDeepSky(): void {
+    if (!observer || !view || !deepSkyObjects.length) return;
+    const jd = julianDay(new Date());
+    const latRad = (observer.latDeg * Math.PI) / 180;
+    const lonRad = (observer.lonDeg * Math.PI) / 180;
+    for (const o of deepSkyObjects) {
+      const [e, u, n] = equatorialXyzToSkyDir(o.x, o.y, o.z, jd, latRad, lonRad);
+      o.above = u > 0;
+      o.sprite.visible = u > 0 || showBelowHorizon;
+      _dsDir.set(e, u, n);
+      view.toWorldDir(_dsDir);
+      const px = _dsDir.x * MARKER_RADIUS;
+      const py = _dsDir.y * MARKER_RADIUS;
+      const pz = _dsDir.z * MARKER_RADIUS;
+      o.sprite.position.set(px, py, pz);
+      if (o.label) o.label.position.set(px, py + 1.4, pz);
+    }
+  }
+
   // Hide a label when its anchor is behind the camera or near the screen edge, so
   // it never clips off the edge (and the view stays legible). Group is at camPos,
   // so the label's world position is camPos + its local (dir·R) position.
@@ -805,6 +857,41 @@ export function createSkyScene(
       starGroup.visible = showStars;
     });
 
+    // Load the deep-sky objects (#488) — a soft colour glow + name label each.
+    void loadDeepSky(base).then((objs: DeepSkyObject[]) => {
+      if (disposed || !objs.length) return;
+      for (const o of objs) {
+        const sprite = new THREE.Sprite(
+          new THREE.SpriteMaterial({
+            map: dotTexture,
+            color: deepSkyColor(o.category),
+            transparent: true,
+            // Faint + additive so they read as diffuse clouds you can orient by,
+            // not hard points like the stars sitting on top of them.
+            opacity: 0.5,
+            depthTest: false,
+            depthWrite: false,
+            blending: THREE.AdditiveBlending,
+          }),
+        );
+        // Big soft glows (brighter/lower-mag ones larger) — cloud-like landmarks.
+        const sc = Math.max(4, Math.min(8, 8 - o.mag * 0.35));
+        sprite.scale.set(sc, sc, 1);
+        sprite.renderOrder = -6; // behind stars, above constellation lines
+        deepSkyGroup.add(sprite);
+        let label: THREE.Sprite | null = null;
+        if (o.name) {
+          // Dim rose label so the deep-sky names sit quietly under the brighter
+          // star/figure labels rather than competing with them.
+          label = makeTextSprite(o.name, 'rgba(226,170,196,0.92)', 1.35);
+          deepSkyGroup.add(label);
+        }
+        deepSkyObjects.push({ sprite, label, x: o.x, y: o.y, z: o.z });
+      }
+      recomputeDeepSky();
+      deepSkyGroup.visible = showDeepSky;
+    });
+
     // Resolve fresh TLEs, then surface each station's next visible pass (#405).
     for (const id of STATION_IDS) {
       void resolveStationTle(id).then((tle) => {
@@ -844,6 +931,7 @@ export function createSkyScene(
         recomputeDirections();
         recomputeConstellations();
         recomputeStars();
+        recomputeDeepSky();
         lastEphemeris = t;
       }
       // The constellation figures + dots + stars + horizon are baked as directions·R
@@ -853,6 +941,7 @@ export function createSkyScene(
       constellationLabelGroup.position.copy(camPos);
       horizonLine.position.copy(camPos);
       starGroup.position.copy(camPos);
+      deepSkyGroup.position.copy(camPos);
       // Anchor each visible marker at cameraPos + worldDir·R (stays at the
       // correct sky direction regardless of small translation). The view maps
       // the stored ENU direction into the render world (identity for a
@@ -878,6 +967,12 @@ export function createSkyScene(
           if (s.label) {
             if (!s.above && !showBelowHorizon) s.label.visible = false;
             else cullLabel(s.label);
+          }
+      if (showDeepSky)
+        for (const o of deepSkyObjects)
+          if (o.label) {
+            if (!o.above && !showBelowHorizon) o.label.visible = false;
+            else cullLabel(o.label);
           }
 
       // Collect this frame's off-screen arrow requests, then lay them all out at
@@ -949,6 +1044,10 @@ export function createSkyScene(
     (horizonLine.material as THREE.Material).dispose();
     for (const l of constellationLabels) (l.sprite.material.map as THREE.Texture | null)?.dispose();
     for (const s of starSprites) (s.label?.material.map as THREE.Texture | null)?.dispose();
+    for (const o of deepSkyObjects) {
+      (o.sprite.material as THREE.Material).dispose();
+      (o.label?.material.map as THREE.Texture | null)?.dispose();
+    }
     dotTexture.dispose();
     starDotMaterial.dispose();
     arrowLayer?.remove();
@@ -973,6 +1072,11 @@ export function createSkyScene(
     starGroup.visible = on && starSprites.length > 0;
   }
 
+  function setDeepSkyVisible(on: boolean): void {
+    showDeepSky = on;
+    deepSkyGroup.visible = on && deepSkyObjects.length > 0;
+  }
+
   function setPlanetsVisible(on: boolean): void {
     showPlanets = on;
     if (!on) for (const { group } of markers.values()) group.visible = false;
@@ -991,6 +1095,7 @@ export function createSkyScene(
     recomputeDirections();
     recomputeConstellations();
     recomputeStars();
+    recomputeDeepSky();
   }
 
   return {
@@ -999,6 +1104,7 @@ export function createSkyScene(
     location: () => observer,
     setConstellationsVisible,
     setStarsVisible,
+    setDeepSkyVisible,
     setPlanetsVisible,
     setStationsVisible,
     setBelowHorizonVisible,

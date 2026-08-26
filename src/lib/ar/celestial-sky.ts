@@ -71,6 +71,50 @@ export async function loadConstellationFigures(
   }
 }
 
+/** A deep-sky object (nebula / galaxy / cluster) for the AR sky (#488). */
+export interface DeepSkyObject {
+  id: string;
+  name: string;
+  category: string;
+  mag: number;
+  x: number;
+  y: number;
+  z: number;
+}
+
+/** Fetch the deep-sky objects (static/data/universe/deep-sky-objects.json).
+ *  Drops the `star` category (we already have the bright-star layer) + any entry
+ *  without a usable position. Resolves to [] on failure. */
+export async function loadDeepSky(
+  base = '',
+  fetchFn: typeof fetch = fetch,
+): Promise<DeepSkyObject[]> {
+  try {
+    const doc = (await (
+      await fetchFn(`${base}/data/universe/deep-sky-objects.json`)
+    ).json()) as { objects?: Partial<DeepSkyObject>[] };
+    return (doc.objects ?? [])
+      .filter(
+        (o): o is DeepSkyObject =>
+          o.category !== 'star' &&
+          typeof o.x === 'number' &&
+          typeof o.y === 'number' &&
+          typeof o.z === 'number',
+      )
+      .map((o) => ({
+        id: String(o.id ?? ''),
+        name: String(o.name ?? o.id ?? ''),
+        category: String(o.category ?? 'other'),
+        mag: typeof o.mag === 'number' ? o.mag : 6,
+        x: o.x,
+        y: o.y,
+        z: o.z,
+      }));
+  } catch {
+    return [];
+  }
+}
+
 /** Fetch the bright named stars (static/data/universe/named-stars.json). Keeps
  *  only what the sky renderer needs; resolves to [] on failure. */
 export async function loadBrightStars(

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { equatorialXyzToSkyDir } from './celestial-sky';
+import { equatorialXyzToSkyDir, loadDeepSky } from './celestial-sky';
 
 // The AR render frame is ENU: [East, Up, −North] (a unit vector). The celestial
 // POLE is the ideal deterministic check: it sits on Earth's rotation axis, so its
@@ -42,5 +42,45 @@ describe('equatorialXyzToSkyDir — data direction → observer sky', () => {
     const a = equatorialXyzToSkyDir(0, 0, 1, 2451545, 50 * DEG, 10 * DEG);
     const b = equatorialXyzToSkyDir(0, 0, 1, 2460000, 50 * DEG, -120 * DEG);
     for (let i = 0; i < 3; i++) expect(a[i]).toBeCloseTo(b[i], 6);
+  });
+});
+
+describe('loadDeepSky — deep-sky filtering (#488)', () => {
+  const fetchWith = (objects: unknown[]): typeof fetch =>
+    (async () => ({ json: async () => ({ objects }) })) as unknown as typeof fetch;
+
+  it('drops the star category (the bright-star layer already covers those)', async () => {
+    const out = await loadDeepSky(
+      '',
+      fetchWith([
+        { id: 'a', name: 'Sirius', category: 'star', x: 1, y: 0, z: 0, mag: -1.4 },
+        { id: 'b', name: 'M31', category: 'galaxy', x: 0, y: 1, z: 0, mag: 3.4 },
+      ]),
+    );
+    expect(out.map((o) => o.id)).toEqual(['b']);
+  });
+
+  it('drops entries without a usable position', async () => {
+    const out = await loadDeepSky(
+      '',
+      fetchWith([
+        { id: 'ok', name: 'M42', category: 'nebula', x: 0.1, y: 0.2, z: 0.9, mag: 4 },
+        { id: 'no-xyz', name: 'M13', category: 'cluster', mag: 5.8 },
+        { id: 'partial', name: 'M57', category: 'planetary', x: 0.3, y: 0.4, mag: 8.8 },
+      ]),
+    );
+    expect(out.map((o) => o.id)).toEqual(['ok']);
+  });
+
+  it('defaults a missing magnitude to 6 and resolves [] on fetch failure', async () => {
+    const [obj] = await loadDeepSky(
+      '',
+      fetchWith([{ id: 'x', name: 'X', category: 'galaxy', x: 1, y: 0, z: 0 }]),
+    );
+    expect(obj.mag).toBe(6);
+    const failed = await loadDeepSky('', (async () => {
+      throw new Error('offline');
+    }) as unknown as typeof fetch);
+    expect(failed).toEqual([]);
   });
 });

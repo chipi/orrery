@@ -10,11 +10,7 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
-## [0.8.0] — 2026-08-DD
-
-> **Draft — release candidate.** Version frozen at `0.8.0` for the pre-release visual
-> review; the date is finalized at tag time and this section may still gain the fixes
-> from the review pass before `v0.8.0` is tagged.
+## [0.8.0] — 2026-08-27
 
 Orrery's biggest release yet. It becomes a **native mobile app with augmented reality**,
 gains a **launch-to-orbit cinematic `/fly`**, extends `/explore` **across the observable
@@ -76,6 +72,19 @@ universe**, ships **33 space programs**, and reaches **full localization in 14 l
 - **Observability** — self-hosted error monitoring (GlitchTip) + privacy-preserving
   analytics (Umami), served over the tailnet via TLS; metrics/logs to Grafana Cloud.
 - **TV mode** refinements across the hubs.
+
+### Release hardening
+
+- **Deploy chunk-skew guard** — after a deploy rotates asset hashes, a stale tab that
+  lazily imports a now-404'd chunk reloads once to the fresh build instead of throwing.
+- **Graceful WebGL fallback** — devices that can't create a 3D context show an honest
+  "3D unavailable" notice instead of a crash (#474/#470/#430).
+- **`/explore` cold deep-links** no longer throw when a `?context=`/`?id=` link is opened
+  before the router initializes (#465).
+- **DebugPanel lifecycle fix** — navigating away from a 3D route (`/iss`, `/tiangong`,
+  `/moon`, `/mars`, `/earth`, `/fly`) no longer throws `lifecycle_outside_component` (#466).
+- **`/explore` date readout** shows the viewer's **local** calendar day — it previously
+  showed the prior day for negative-UTC-offset viewers (the Americas).
 
 ## [0.7.3] — 2026-07-09
 

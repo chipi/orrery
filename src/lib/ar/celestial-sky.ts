@@ -51,16 +51,11 @@ export interface SunHorizonEvent {
  * crossing by bisection. Returns at most one of each kind (the nearest in the
  * window); empty in polar day/night when the Sun never crosses the horizon.
  */
-export function sunRiseSetEvents(
-  date: Date,
-  latDeg: number,
-  lonDeg: number,
-): SunHorizonEvent[] {
+export function sunRiseSetEvents(date: Date, latDeg: number, lonDeg: number): SunHorizonEvent[] {
   const STEP_MIN = 10;
   const HALF_WINDOW_MIN = 12 * 60;
   const t0 = date.getTime() - HALF_WINDOW_MIN * 60_000;
-  const altAt = (ms: number): number =>
-    skyPosition('sun', new Date(ms), latDeg, lonDeg).altRad;
+  const altAt = (ms: number): number => skyPosition('sun', new Date(ms), latDeg, lonDeg).altRad;
 
   const events: SunHorizonEvent[] = [];
   let prevMs = t0;
@@ -157,9 +152,9 @@ export async function loadDeepSky(
   fetchFn: typeof fetch = fetch,
 ): Promise<DeepSkyObject[]> {
   try {
-    const doc = (await (
-      await fetchFn(`${base}/data/universe/deep-sky-objects.json`)
-    ).json()) as { objects?: Partial<DeepSkyObject>[] };
+    const doc = (await (await fetchFn(`${base}/data/universe/deep-sky-objects.json`)).json()) as {
+      objects?: Partial<DeepSkyObject>[];
+    };
     return (doc.objects ?? [])
       .filter(
         (o): o is DeepSkyObject =>

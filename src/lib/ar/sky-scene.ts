@@ -390,7 +390,14 @@ function drawPlanet(
   ctx.fillStyle = limb;
   ctx.fillRect(cx - r, cy - r, r * 2, r * 2);
   // Specular highlight.
-  const spec = ctx.createRadialGradient(cx - r * 0.36, cy - r * 0.4, 0, cx - r * 0.36, cy - r * 0.4, r * 0.9);
+  const spec = ctx.createRadialGradient(
+    cx - r * 0.36,
+    cy - r * 0.4,
+    0,
+    cx - r * 0.36,
+    cy - r * 0.4,
+    r * 0.9,
+  );
   spec.addColorStop(0, 'rgba(255,255,255,0.28)');
   spec.addColorStop(1, 'rgba(255,255,255,0)');
   ctx.fillStyle = spec;
@@ -533,7 +540,12 @@ function makeStationMarker(
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   const sprite = new THREE.Sprite(
-    new THREE.SpriteMaterial({ map: texture, transparent: true, depthTest: false, depthWrite: false }),
+    new THREE.SpriteMaterial({
+      map: texture,
+      transparent: true,
+      depthTest: false,
+      depthWrite: false,
+    }),
   );
   sprite.scale.set(4, 4, 1);
   const group = new THREE.Group();
@@ -823,7 +835,9 @@ const CLUSTER_SPECKLES: [number, number, number][] = [
 /** A shaped, believable deep-sky glow texture (white alpha; tinted by the sprite
  *  material colour). galaxy = tilted ellipse, cluster = speckle of micro-stars,
  *  planetary = soft ring, nebula = two offset overlapping clouds. */
-function makeDeepSkyTexture(shape: 'galaxy' | 'cluster' | 'planetary' | 'nebula'): THREE.CanvasTexture {
+function makeDeepSkyTexture(
+  shape: 'galaxy' | 'cluster' | 'planetary' | 'nebula',
+): THREE.CanvasTexture {
   const s = 128;
   const m = s / 2;
   const c = document.createElement('canvas');

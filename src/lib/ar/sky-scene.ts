@@ -263,9 +263,12 @@ interface PlanetStyle {
   cap?: string;
   /** Corona glow (Sun): colour of the soft outer bloom. */
   corona?: string;
+  /** Render as a clean white-gold disc + hairline limb ring (the Sun) — the
+   *  eclipse-diagram idiom, legible over a bright daytime camera feed. */
+  cleanDisc?: boolean;
 }
 const PLANET_STYLE: Partial<Record<SkyBody, PlanetStyle>> = {
-  sun: { light: '#fff6d0', base: '#ffd24a', shade: '#f2a41e', corona: 'rgba(255,206,110,0.55)' },
+  sun: { light: '#fff8e0', base: '#ffd24a', shade: '#f0a81e', cleanDisc: true },
   mercury: { light: '#d7cec2', base: '#9a9188', shade: '#5c554d' },
   venus: {
     light: '#fff3d6',
@@ -363,6 +366,24 @@ function drawPlanet(
   r: number,
   style: PlanetStyle,
 ): void {
+  // Clean solar disc: a white-gold radial + a hairline limb ring. No corona (a
+  // fuzzy bloom washes out over a bright daytime feed and clipped the canvas).
+  if (style.cleanDisc) {
+    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+    g.addColorStop(0, style.light);
+    g.addColorStop(0.55, style.base);
+    g.addColorStop(1, style.shade);
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,246,220,0.85)';
+    ctx.lineWidth = Math.max(1.5, r * 0.03);
+    ctx.beginPath();
+    ctx.arc(cx, cy, r - ctx.lineWidth, 0, Math.PI * 2);
+    ctx.stroke();
+    return;
+  }
   // Corona bloom (Sun) behind everything.
   if (style.corona) {
     const cg = ctx.createRadialGradient(cx, cy, r * 0.7, cx, cy, r * 2.8);
@@ -1370,8 +1391,12 @@ export function createSkyScene(
       const obs = observer;
       if (!obs) return;
       const now = new Date();
+      // The Sun keeps its procedural clean disc (daytime legibility) — bake the rest.
       const loaded = await Promise.all(
-        SKY_BODIES.map(async (b) => ({ b, tex: await loadTexture(BODY_TEXTURE[b]) })),
+        SKY_BODIES.filter((b) => b !== 'sun').map(async (b) => ({
+          b,
+          tex: await loadTexture(BODY_TEXTURE[b]),
+        })),
       );
       if (disposed) {
         for (const { tex } of loaded) tex.dispose();
@@ -1384,7 +1409,6 @@ export function createSkyScene(
           texture: tex,
           phaseAngleRad: ph.phaseAngleRad,
           limbAngleRad: ph.limbAngleRad,
-          unlit: b === 'sun',
           rings: b === 'saturn',
           frustumHalf: BODY_FRUSTUM_HALF[b],
         };

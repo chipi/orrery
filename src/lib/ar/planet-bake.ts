@@ -20,8 +20,9 @@ export interface PlanetBakeSpec {
   texture: THREE.Texture;
   /** Phase angle: 0 = fully lit (opposition), π = new (between us and the Sun). */
   phaseAngleRad: number;
-  /** Which limb is lit (+1 / −1) — flips the crescent side. */
-  litSign: number;
+  /** Bright-limb position angle (rad, from "up"/zenith toward the Sun) — orients
+   *  the crescent as seen when looking at the body in the observer's sky. */
+  limbAngleRad: number;
   /** The Sun (+ any self-luminous body): render flat-bright, unlit, no phase. */
   unlit?: boolean;
   /** Ring system (Saturn). */
@@ -135,17 +136,21 @@ export function bakePlanetTextures(
       disposables.push(rGeo, rMat);
     }
 
-    // Tilt the body: Saturn gets a wide ring-opening 3/4 view; others a slight tip.
-    group.rotation.x = spec.rings ? 0.46 : 0.12;
+    // Tilt: Saturn gets a wide ring-opening 3/4 view. Phased bodies stay upright
+    // so the baked terminator's on-screen angle matches the real bright-limb angle.
+    group.rotation.x = spec.rings ? 0.46 : 0;
     group.rotation.z = spec.rings ? -0.2 : 0;
     scene.add(group);
 
     if (!spec.unlit) {
       // Directional light at the phase angle from the view axis (+Z): the visible
-      // lit fraction is (1+cos α)/2, so α=0 → full, α=π → new. litSign flips limb.
+      // lit fraction is (1+cos α)/2, so α=0 → full, α=π → new. The transverse
+      // component points toward the real bright limb (limbAngleRad from +Y/up),
+      // so Mercury/Venus/Moon crescents lean the correct way.
       const a = spec.phaseAngleRad;
+      const chi = spec.limbAngleRad;
       const light = new THREE.DirectionalLight(0xfff4e6, 3.0);
-      light.position.set(Math.sin(a) * (spec.litSign >= 0 ? 1 : -1), 0.18, Math.cos(a));
+      light.position.set(Math.sin(a) * Math.sin(chi), Math.sin(a) * Math.cos(chi), Math.cos(a));
       scene.add(light);
       // A faint cool fill so the unlit limb still reads as a disc over dark sky.
       scene.add(new THREE.AmbientLight(0x2a3d5c, 0.85));

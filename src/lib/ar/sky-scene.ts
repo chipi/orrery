@@ -12,7 +12,7 @@ import { base } from '$app/paths';
 import { pickSkyView, type SkyView } from './sky-view';
 import { skyPosition, skyDirectionENU, SKY_BODIES, type SkyBody, julianDay } from '../astronomy';
 import { moonPhase } from '../astronomy/moon-observer';
-import { heliocentric, geocentricPlanet, geocentricSun } from '../astronomy/planets';
+import { heliocentric, geocentricPlanet } from '../astronomy/planets';
 import {
   bakePlanetTextures,
   DEFAULT_FRUSTUM_HALF,
@@ -152,30 +152,55 @@ function apparentDiameterArcsec(body: SkyBody, distanceAu: number): number {
   return 2 * Math.asin(BODY_RADIUS_KM[body] / (distanceAu * AU_KM)) * 206265;
 }
 
-/** Phase of a body for the texture bake: `phaseAngleRad` (0 = full/opposition,
- *  π = new) sets the lit fraction, `litSign` which limb is lit. The Sun is flat;
- *  the Moon uses its computed illumination; planets use the real Sun–body–Earth
- *  geometry so Mercury/Venus show their crescents. */
-function bodyPhase(body: SkyBody, jd: number): { phaseAngleRad: number; litSign: number } {
-  if (body === 'sun') return { phaseAngleRad: 0, litSign: 1 };
+// Phase angle (0 = full/opposition, π = new) from the real Sun–body–Earth geometry.
+function bodyPhaseAngle(body: SkyBody, jd: number): number {
+  if (body === 'sun') return 0;
   if (body === 'moon') {
-    const mp = moonPhase(new Date());
-    const cosA = 2 * Math.max(0, Math.min(1, mp.illuminatedFraction)) - 1;
-    return {
-      phaseAngleRad: Math.acos(Math.max(-1, Math.min(1, cosA))),
-      litSign: mp.waxing ? 1 : -1,
-    };
+    const cosA = 2 * Math.max(0, Math.min(1, moonPhase(new Date()).illuminatedFraction)) - 1;
+    return Math.acos(Math.max(-1, Math.min(1, cosA)));
   }
   const helio = heliocentric(body, jd); // planet relative to the Sun
   const geo = geocentricPlanet(body, jd); // planet relative to the Earth
-  // planet→Sun = −helio, planet→Earth = −geo; cos α is their normalised dot.
   const hm = Math.hypot(helio.x, helio.y, helio.z) || 1;
   const gm = Math.hypot(geo.x, geo.y, geo.z) || 1;
   const cosA = (helio.x * geo.x + helio.y * geo.y + helio.z * geo.z) / (hm * gm);
-  const phaseAngleRad = Math.acos(Math.max(-1, Math.min(1, cosA)));
-  const sun = geocentricSun(jd);
-  const litSign = Math.sign(sun.x * geo.y - sun.y * geo.x) || 1;
-  return { phaseAngleRad, litSign };
+  return Math.acos(Math.max(-1, Math.min(1, cosA)));
+}
+
+/** Phase of a body for the texture bake: `phaseAngleRad` sets the lit fraction;
+ *  `limbAngleRad` is the bright-limb position angle in the observer's sky (from
+ *  "up"/zenith, toward the Sun), so the crescent points the right way as seen when
+ *  looking at the body. The Moon + inner planets get real crescents. */
+function bodyPhase(
+  body: SkyBody,
+  date: Date,
+  latDeg: number,
+  lonDeg: number,
+): { phaseAngleRad: number; limbAngleRad: number } {
+  const jd = julianDay(date);
+  const phaseAngleRad = bodyPhaseAngle(body, jd);
+  if (body === 'sun') return { phaseAngleRad, limbAngleRad: 0 };
+  // Body + Sun unit directions in the render ENU frame [E, Up, −N].
+  const db = skyDirectionENU(skyPosition(body, date, latDeg, lonDeg));
+  const ds = skyDirectionENU(skyPosition('sun', date, latDeg, lonDeg));
+  const dot = (a: number[], b: number[]): number => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+  const norm = (a: number[]): number[] => {
+    const m = Math.hypot(a[0], a[1], a[2]) || 1;
+    return [a[0] / m, a[1] / m, a[2] / m];
+  };
+  const up = [0, 1, 0];
+  // "up" and the Sun direction, each projected into the sky plane at the body.
+  const upDot = dot(up, db);
+  const upPerp = norm([up[0] - upDot * db[0], up[1] - upDot * db[1], up[2] - upDot * db[2]]);
+  const rightPerp = norm([
+    upPerp[1] * db[2] - upPerp[2] * db[1],
+    upPerp[2] * db[0] - upPerp[0] * db[2],
+    upPerp[0] * db[1] - upPerp[1] * db[0],
+  ]);
+  const sDot = dot(ds, db);
+  const dsPerp = [ds[0] - sDot * db[0], ds[1] - sDot * db[1], ds[2] - sDot * db[2]];
+  const limbAngleRad = Math.atan2(dot(dsPerp, rightPerp), dot(dsPerp, upPerp));
+  return { phaseAngleRad, limbAngleRad };
 }
 
 export interface SkySceneOptions {
@@ -1342,7 +1367,9 @@ export function createSkyScene(
   }
   async function bakePlanets(): Promise<void> {
     try {
-      const jd = julianDay(new Date());
+      const obs = observer;
+      if (!obs) return;
+      const now = new Date();
       const loaded = await Promise.all(
         SKY_BODIES.map(async (b) => ({ b, tex: await loadTexture(BODY_TEXTURE[b]) })),
       );
@@ -1351,12 +1378,12 @@ export function createSkyScene(
         return;
       }
       const specs: PlanetBakeSpec[] = loaded.map(({ b, tex }) => {
-        const ph = bodyPhase(b, jd);
+        const ph = bodyPhase(b, now, obs.latDeg, obs.lonDeg);
         return {
           key: b,
           texture: tex,
           phaseAngleRad: ph.phaseAngleRad,
-          litSign: ph.litSign,
+          limbAngleRad: ph.limbAngleRad,
           unlit: b === 'sun',
           rings: b === 'saturn',
           frustumHalf: BODY_FRUSTUM_HALF[b],

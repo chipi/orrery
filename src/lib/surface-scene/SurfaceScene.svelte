@@ -69,7 +69,11 @@
   import { regimeForAltitude } from '$lib/orbit-regime-match';
   import { getMissionIndex } from '$lib/data';
   import type { EarthObject } from '$types/earth-object';
-  import { createSceneRenderer, disposeSceneRenderer } from '$lib/three/scene-renderer';
+  import {
+    createSceneRenderer,
+    disposeSceneRenderer,
+    WebGLUnavailableError,
+  } from '$lib/three/scene-renderer';
   import { heroEnvironment } from '$lib/three/hero-materials';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
   import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
@@ -1124,9 +1128,16 @@
     // resolveQualitySync wiring. Resolved BEFORE createSceneRenderer so
     // the pixel-ratio cap is threaded in at construction (single set).
     const quality: QualityConfig = resolveQualitySync($page.url);
-    const renderer = createSceneRenderer(container, {
-      pixelRatioCap: quality.pixelRatioCap,
-    });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = createSceneRenderer(container, {
+        pixelRatioCap: quality.pixelRatioCap,
+      });
+    } catch (e) {
+      // WebGL unavailable — fallback notice is shown in the container; bail init.
+      if (e instanceof WebGLUnavailableError) return;
+      throw e;
+    }
     // Hero IBL — reflections/glints on the PBR lander/rover models. Tier-gated
     // (high+): the per-frame env sampling starves software-GL / GPU-less
     // renderers (on the CI SwiftShader runner it tipped the flat-patch /

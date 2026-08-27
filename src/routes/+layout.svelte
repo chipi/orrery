@@ -168,6 +168,27 @@
   onMount(() => {
     if (typeof window === 'undefined') return;
     initDebugMode(); // #54 — seed debug mode from localStorage + ?debug=1
+
+    // Deploy chunk-skew guard (retires the "Failed to fetch dynamically imported
+    // module" cluster). Vite fires `vite:preloadError` when a lazily-imported
+    // chunk 404s — almost always because a deploy rotated the hashed filenames
+    // while this tab still holds the old manifest. Reload once (rate-limited) to
+    // pull the fresh build instead of surfacing the error to the user. If it just
+    // reloaded and STILL fails, let it surface (the chunk is genuinely gone, not
+    // skew) rather than loop.
+    const SKEW_KEY = 'orrery.skew-reload-at';
+    window.addEventListener('vite:preloadError', (e) => {
+      const last = Number(sessionStorage.getItem(SKEW_KEY) || '0');
+      if (Date.now() - last < 20000) return;
+      e.preventDefault();
+      try {
+        sessionStorage.setItem(SKEW_KEY, String(Date.now()));
+      } catch {
+        /* storage unavailable */
+      }
+      window.location.reload();
+    });
+
     const handler = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
       if (!target) return;

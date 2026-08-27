@@ -9,7 +9,7 @@
   import { createLayeredStarField } from '$lib/three/star-field';
   import { PLANETS } from '$lib/explore-scene';
   import { trackItemClick, trackViewToggle, trackLayerToggle } from '$lib/analytics';
-  import { createSceneRenderer } from '$lib/three/scene-renderer';
+  import { createSceneRenderer, WebGLUnavailableError } from '$lib/three/scene-renderer';
   import {
     resolveQualitySync,
     kickOffBackgroundDetect,
@@ -1768,12 +1768,20 @@
     // __MOBILE__: the Capacitor build ships 2K only (4K planet textures are
     // pruned off-device, ADR-079 D3) — force 2K regardless of resolved tier.
     const tex4kAllowed = quality.tier !== 'minimal' && quality.tier !== 'low' && !__MOBILE__;
-    const renderer = createSceneRenderer(container, {
-      pixelRatioCap: quality.pixelRatioCap,
-      // Pure black surrounding space (matches /earth /moon /mars) rather than the
-      // default dark-indigo clear (0x04040c).
-      clearColor: 0x000000,
-    });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = createSceneRenderer(container, {
+        pixelRatioCap: quality.pixelRatioCap,
+        // Pure black surrounding space (matches /earth /moon /mars) rather than the
+        // default dark-indigo clear (0x04040c).
+        clearColor: 0x000000,
+      });
+    } catch (e) {
+      // WebGL unavailable (#474/#470/#430) — the fallback notice is shown in the
+      // container; bail the scene init instead of an uncaught crash.
+      if (e instanceof WebGLUnavailableError) return;
+      throw e;
+    }
 
     // Per-frame scratch vectors for the velocity-arrow overlay — reused
     // each frame instead of allocating `new THREE.Vector3()` per visible

@@ -11,6 +11,32 @@
  */
 import * as THREE from 'three';
 
+/** Thrown when the browser can't create a WebGL context (WebGL disabled, a weak
+ *  GPU, or too many live contexts). Callers catch it to bail their scene init
+ *  gracefully — a fallback message is already shown in the container (#474/#470/#430). */
+export class WebGLUnavailableError extends Error {
+  constructor(cause?: unknown) {
+    super('WebGL is unavailable on this device');
+    this.name = 'WebGLUnavailableError';
+    this.cause = cause;
+  }
+}
+
+/** Inject an honest "3D unavailable" notice into the scene container. */
+function showWebglFallback(container: HTMLElement): void {
+  if (container.querySelector('.webgl-unavailable')) return;
+  const el = document.createElement('div');
+  el.className = 'webgl-unavailable';
+  el.setAttribute('role', 'note');
+  el.style.cssText =
+    'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;' +
+    'padding:24px;text-align:center;color:rgba(255,255,255,0.7);' +
+    "font:14px/1.6 var(--font-mono,'Space Mono',monospace);background:#04040c;";
+  el.textContent =
+    "This view needs 3D graphics (WebGL), which this device or browser can't start right now. Try another browser, or enable hardware acceleration.";
+  container.appendChild(el);
+}
+
 export function createSceneRenderer(
   container: HTMLElement,
   {
@@ -18,7 +44,16 @@ export function createSceneRenderer(
     pixelRatioCap = 2,
   }: { clearColor?: number; pixelRatioCap?: number } = {},
 ): THREE.WebGLRenderer {
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+  let renderer: THREE.WebGLRenderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+  } catch (err) {
+    // Context creation can throw on constrained devices / disabled WebGL. Show a
+    // fallback + throw a typed error so callers bail init instead of an uncaught
+    // crash flooding telemetry (#474/#470/#430).
+    showWebglFallback(container);
+    throw new WebGLUnavailableError(err);
+  }
   // Pixel-ratio cap is the single biggest fill-rate lever on Retina/mobile.
   // Callers pass `quality.pixelRatioCap` (minimal 0.75 / low 1.0 / … / 2.0)
   // so weak GPUs don't render at full DPR; defaults to 2 (the historical cap)

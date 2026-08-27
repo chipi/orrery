@@ -112,6 +112,20 @@ export function initSentry(): void {
     // its sensible defaults.
 
     beforeSend(event: Sentry.ErrorEvent) {
+      // 0. Drop expected, non-actionable errors:
+      //    - WebGLUnavailableError — the device can't start a 3D context; a
+      //      fallback notice is shown (#474/#470/#430), not a bug to report.
+      //    - deploy chunk-skew — a lazily-imported chunk 404s after a deploy; the
+      //      vite:preloadError guard reloads to the fresh build.
+      const exc = event.exception?.values?.[0];
+      const sig = `${exc?.type ?? ''} ${exc?.value ?? ''}`;
+      if (
+        /WebGLUnavailableError|Failed to fetch dynamically imported module|error loading dynamically imported module|Importing a module script failed/i.test(
+          sig,
+        )
+      ) {
+        return null;
+      }
       // 1. URL — preserve path, strip query + hash.
       if (event.request?.url) {
         try {

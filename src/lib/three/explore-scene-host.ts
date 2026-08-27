@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, no-useless-assignment */
 import * as THREE from 'three';
-import { goto, replaceState } from '$app/navigation';
+import { goto } from '$app/navigation';
+import { safeReplaceState } from '$lib/safe-replace-state';
 import { createAnimateLoop } from '$lib/three/animate-loop';
 import { disposeScene } from '$lib/three/dispose-object3d';
 import { buildIconicTrajectory, type IconicTrajectoryData } from '$lib/three/iconic-trajectory';
@@ -2465,7 +2466,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
         const url = new URL(window.location.href);
         if (url.searchParams.get('context') === ctx0) {
           url.searchParams.delete('context');
-          replaceState(url, deps.getPage().state);
+          safeReplaceState(url, deps.getPage().state);
         }
       });
     }

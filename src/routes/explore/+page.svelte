@@ -2,7 +2,8 @@
   import { onMount, onDestroy, untrack } from 'svelte';
   import { exploreContext } from '$lib/explore-context';
   import { page } from '$app/stores';
-  import { afterNavigate, goto, replaceState } from '$app/navigation';
+  import { afterNavigate, goto } from '$app/navigation';
+  import { safeReplaceState } from '$lib/safe-replace-state';
   import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
   import { base } from '$app/paths';
   import * as THREE from 'three';
@@ -1470,7 +1471,7 @@
         // only clear once a body has actually been open (a real user close).
         if (id) url.searchParams.set('id', id);
         else url.searchParams.delete('id');
-        replaceState(url, $page.state);
+        safeReplaceState(url, $page.state);
       }
       // Record which card is on screen for the back-chain (the shallow
       // replaceState above doesn't reach SvelteKit's nav.from).
@@ -1507,7 +1508,7 @@
         if (id) url.searchParams.set('goto', id);
         else url.searchParams.delete('goto');
         lastGoto = id; // keep the resolver from re-firing on our own write
-        replaceState(url, $page.state);
+        safeReplaceState(url, $page.state);
       }
     });
   });
@@ -1539,7 +1540,7 @@
         if (host && planet) url.searchParams.set('planet', planet);
         else url.searchParams.delete('planet');
         lastSystem = host; // don't re-fire the resolver on our own write
-        if (host || everEnteredSystem) replaceState(url, $page.state);
+        if (host || everEnteredSystem) safeReplaceState(url, $page.state);
       }
     });
   });
@@ -1569,7 +1570,7 @@
         // clear, or a transient URL write (e.g. the gateway's ?system write
         // racing our ?deepsky removal) would re-fire the resolver + re-immerse.
         if (d) lastDeepSky = d;
-        replaceState(url, $page.state);
+        safeReplaceState(url, $page.state);
       }
     });
   });
@@ -1596,7 +1597,7 @@
         if (g) url.searchParams.set('galaxy', g);
         else url.searchParams.delete('galaxy');
         if (g) lastGalaxy = g; // don't re-fire the resolver on our own write
-        replaceState(url, $page.state);
+        safeReplaceState(url, $page.state);
       }
     });
   });
@@ -1623,7 +1624,7 @@
         if (v) url.searchParams.set('bh', v);
         else url.searchParams.delete('bh');
         if (v) lastBh = v;
-        replaceState(url, $page.state);
+        safeReplaceState(url, $page.state);
       }
     });
   });
@@ -1641,7 +1642,7 @@
           const url = new URL($page.url);
           if (url.searchParams.get('context') === c) {
             url.searchParams.delete('context');
-            replaceState(url, $page.state);
+            safeReplaceState(url, $page.state);
           }
         });
       });

@@ -15,6 +15,7 @@
   import { createSkyScene, type SkySceneHandle } from '$lib/ar/sky-scene';
   import type { SkyView } from '$lib/ar/sky-view';
   import { skyPositions } from '$lib/astronomy';
+  import { resolveStationTle, lookAngleForTle, STATION_IDS } from '$lib/satellite';
 
   let canvas: HTMLCanvasElement;
   let handle: SkySceneHandle | null = null;
@@ -77,6 +78,19 @@
           [(s.azRad * 180) / Math.PI, (s.altRad * 180) / Math.PI],
         ]),
       );
+    // Station look-angles too, once their TLEs resolve (so a driver can aim at
+    // the ISS/Tiangong glyphs). Below-horizon stations report a negative alt.
+    void Promise.all(
+      STATION_IDS.map(async (id) => {
+        const tle = await resolveStationTle(id);
+        if (!tle) return [id, null] as const;
+        const la = lookAngleForTle(tle, new Date(), lat, lon);
+        return [id, [(la.azRad * 180) / Math.PI, (la.altRad * 180) / Math.PI]] as const;
+      }),
+    ).then((rows) => {
+      (window as unknown as { __stationAzEl?: Record<string, unknown> }).__stationAzEl =
+        Object.fromEntries(rows);
+    });
     // Signal for a screenshot driver to wait on.
     (window as unknown as { __skyPreviewReady?: boolean }).__skyPreviewReady = true;
   });

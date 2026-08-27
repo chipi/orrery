@@ -1807,7 +1807,7 @@ export function createSkyScene(
             continue;
           }
           const la = lookAngleForTle(sm.tle, nowD, observer.latDeg, observer.lonDeg);
-          if (la.aboveHorizon) {
+          if (la.aboveHorizon || showBelowHorizon) {
             const [x, y, z] = skyDirectionENU(la);
             sm.dir.set(x, y, z);
             worldDir.copy(sm.dir);

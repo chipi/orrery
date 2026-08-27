@@ -145,14 +145,15 @@
   .lv-hero {
     position: relative;
     width: 100%;
-    aspect-ratio: 1200 / 300;
-    max-height: 320px;
+    /* A clamped HEIGHT (not a fixed aspect ratio) so the banner never collapses
+       into a thin strip on portrait phones — always tall enough for the title. */
+    height: clamp(172px, 26vw, 300px);
     border-radius: 12px;
     overflow: hidden;
     background:
       radial-gradient(120% 140% at 78% 42%, rgba(30, 44, 92, 0.5), transparent 60%), #05060e;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    margin-bottom: 26px;
+    margin-bottom: 22px;
   }
   .lv-art {
     position: absolute;

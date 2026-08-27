@@ -93,18 +93,72 @@
     setDebugMode(false); // the X turns debug mode off (unified switch)
   }
 
+  // Draggable by its header, so on mobile it can be moved off the nav / content.
+  let dragX = $state(0);
+  let dragY = $state(0);
+  let dragging = false;
+  let startX = 0;
+  let startY = 0;
+  let baseX = 0;
+  let baseY = 0;
+  function onDragStart(e: PointerEvent) {
+    // Don't hijack the close button (or other controls) in the header.
+    if ((e.target as HTMLElement).closest('button')) return;
+    dragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    baseX = dragX;
+    baseY = dragY;
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    e.preventDefault();
+  }
+  function onDragMove(e: PointerEvent) {
+    if (!dragging) return;
+    dragX = baseX + (e.clientX - startX);
+    dragY = baseY + (e.clientY - startY);
+  }
+  function onDragEnd(e: PointerEvent) {
+    dragging = false;
+    try {
+      (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+    } catch {
+      /* pointer already released */
+    }
+  }
+
   // If a page registers content, default to the Page tab; otherwise
   // start on Perf.
   $effect(() => {
     if (pageReg.content && activeTab === 'perf') activeTab = 'page';
   });
+
+  // Reset the drag offset whenever the panel reopens, so it can never get stranded
+  // off-screen (toggle debug off → on to recover it).
+  $effect(() => {
+    if (open) {
+      dragX = 0;
+      dragY = 0;
+    }
+  });
 </script>
 
 {#if mounted && open}
-  <aside class="debug-panel" data-testid="debug-panel" aria-label="Debug panel">
-    <header class="debug-header">
+  <aside
+    class="debug-panel"
+    data-testid="debug-panel"
+    aria-label="Debug panel"
+    style="transform: translate({dragX}px, {dragY}px)"
+  >
+    <header
+      class="debug-header"
+      onpointerdown={onDragStart}
+      onpointermove={onDragMove}
+      onpointerup={onDragEnd}
+      onpointercancel={onDragEnd}
+    >
       <div class="debug-title">
         <span class="debug-label">DEBUG</span>
+        <span class="debug-grip" aria-hidden="true">⠿</span>
         {#if pageReg.label}<span class="debug-page-label">· {pageReg.label}</span>{/if}
       </div>
       <div class="debug-meta">
@@ -490,10 +544,11 @@
 <style>
   .debug-panel {
     position: fixed;
-    top: 80px;
-    right: 16px;
-    width: 360px;
-    max-height: calc(100vh - 100px);
+    /* Start just below the nav (so it never covers it) — then drag anywhere. */
+    top: calc(var(--nav-height, 64px) + 10px);
+    right: 12px;
+    width: min(360px, calc(100vw - 24px));
+    max-height: calc(100vh - var(--nav-height, 64px) - 24px);
     z-index: 90;
     background: rgba(8, 10, 22, 0.92);
     border: 1px solid rgba(94, 234, 212, 0.4);
@@ -515,6 +570,20 @@
     padding: 8px 12px;
     border-bottom: 1px solid rgba(94, 234, 212, 0.25);
     background: rgba(8, 10, 22, 0.5);
+    /* Drag handle — grab to move the panel off the nav / content (esp. mobile). */
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .debug-header:active {
+    cursor: grabbing;
+  }
+  .debug-grip {
+    margin-left: 4px;
+    color: rgba(94, 234, 212, 0.55);
+    font-size: 13px;
+    letter-spacing: -1px;
   }
   .debug-title {
     display: flex;

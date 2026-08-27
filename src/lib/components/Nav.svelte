@@ -1395,7 +1395,8 @@
       gap: 2px;
     }
     .right :global(.locale-picker),
-    .right .contrast-toggle {
+    .right .contrast-toggle,
+    .right .debug-toggle {
       display: none;
     }
     /* ...and surface them in the drawer instead. On wider touch screens

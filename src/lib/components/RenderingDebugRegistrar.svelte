@@ -35,7 +35,11 @@
   import type { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
   import type { QualityConfig } from '$lib/quality/quality-tier';
   import type { FrameMonitorHandle } from '$lib/quality/frame-monitor';
-  import { setRenderingDebugRegistration, type QualitySource } from './debug-panel-context';
+  import {
+    getDebugPanelContext,
+    setRenderingDebugRegistration,
+    type QualitySource,
+  } from './debug-panel-context';
 
   let {
     renderer,
@@ -61,8 +65,13 @@
     frameMonitor?: FrameMonitorHandle | null;
   } = $props();
 
+  // Capture the context at init — getContext MUST NOT run inside the
+  // effect/teardown below (#466). The teardown fires on unmount with no
+  // component context, which would throw lifecycle_outside_component.
+  const debugCtx = getDebugPanelContext();
+
   $effect(() => {
-    setRenderingDebugRegistration({
+    setRenderingDebugRegistration(debugCtx, {
       renderer,
       quality,
       qualitySource,
@@ -74,6 +83,6 @@
       sunLensFlareGroup,
       frameMonitor,
     });
-    return () => setRenderingDebugRegistration(null);
+    return () => setRenderingDebugRegistration(debugCtx, null);
   });
 </script>

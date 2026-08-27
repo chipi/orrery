@@ -14,12 +14,17 @@
 -->
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import { setPageDebugContent } from './debug-panel-context';
+  import { getDebugPanelContext, setPageDebugContent } from './debug-panel-context';
 
   let { label, content }: { label: string; content?: Snippet } = $props();
 
+  // Capture the context at init — getContext MUST NOT run inside the
+  // effect/teardown below (#466), which fires on unmount with no
+  // component context and would throw lifecycle_outside_component.
+  const debugCtx = getDebugPanelContext();
+
   $effect(() => {
-    setPageDebugContent({ label, content: content ?? null });
-    return () => setPageDebugContent({ label: '', content: null });
+    setPageDebugContent(debugCtx, { label, content: content ?? null });
+    return () => setPageDebugContent(debugCtx, { label: '', content: null });
   });
 </script>

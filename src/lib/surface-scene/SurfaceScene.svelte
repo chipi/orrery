@@ -20,7 +20,10 @@
     resolveQualitySource,
     type QualityConfig,
   } from '$lib/quality/quality-tier';
-  import { setRenderingDebugRegistration } from '$lib/components/debug-panel-context';
+  import {
+    getDebugPanelContext,
+    setRenderingDebugRegistration,
+  } from '$lib/components/debug-panel-context';
   import { attachFrameMonitor, type FrameMonitorHandle } from '$lib/quality/frame-monitor';
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
@@ -698,6 +701,12 @@
   const surfaceChipLabel = (): string =>
     surfaceOff ? 'SURFACE · OFF' : `SURFACE · ${hotspotsParam.value.toUpperCase()}`;
 
+  // Capture the DebugPanel context at init — getContext MUST NOT run in
+  // the deferred setup / lifecycle teardown below (#466). On unmount the
+  // teardown runs with no component context, which throws
+  // lifecycle_outside_component.
+  const debugPanelCtx = getDebugPanelContext();
+
   // useUrlParam handles the initial URL read + the goto write.
   // The remaining initial-mount work is the debug-flag read +
   // sidecar probe.
@@ -1172,14 +1181,14 @@
     // auto-tier-downgrade here (that UX is /fly-only) — this is the
     // observability signal only, so onStruggle is a no-op.
     const frameMonitor: FrameMonitorHandle = attachFrameMonitor({ onStruggle: () => {} });
-    setRenderingDebugRegistration({
+    setRenderingDebugRegistration(debugPanelCtx, {
       renderer,
       quality,
       qualitySource: resolveQualitySource($page.url),
       frameMonitor,
     });
     lifecycle.add(() => {
-      setRenderingDebugRegistration(null);
+      setRenderingDebugRegistration(debugPanelCtx, null);
       frameMonitor.stop();
     });
 

@@ -1,10 +1,13 @@
 <!--
   Generic debug side panel — surfaced on every route via the root
   layout. Opens with ?debug=1. Pages can OPTIONALLY register their
-  own page-specific debug surface via the context helper:
+  own page-specific debug surface via the <DebugPanelRegistrar> bridge,
+  or directly with the context helpers — capturing the context once at
+  init (getContext must NOT run in an effect/teardown, see #466):
 
-    import { setPageDebugContent } from '$lib/components/debug-panel-context';
-    setPageDebugContent({ label: 'FLY', content: pageDebugSnippet });
+    import { getDebugPanelContext, setPageDebugContent } from '$lib/components/debug-panel-context';
+    const ctx = getDebugPanelContext();
+    setPageDebugContent(ctx, { label: 'FLY', content: pageDebugSnippet });
 
   If no page registers content, the "Page" tab is hidden and only
   the generic Perf / i18n / Route tabs show.

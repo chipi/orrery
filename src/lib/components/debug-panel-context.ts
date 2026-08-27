@@ -98,19 +98,38 @@ export function createDebugPanelContext(
   return ctx;
 }
 
+/**
+ * Read the DebugPanel context. `getContext` MUST run during component
+ * initialisation — capture the result once at the top of a registrar's
+ * `<script>` and pass it to the setters below. Calling `getContext` from
+ * an `$effect`, its teardown, or any deferred callback throws
+ * `lifecycle_outside_component` (#466): on component destroy Svelte runs
+ * effect teardowns with `component_context === null`, so a setter that
+ * re-derived the context via `getContext` blew up during unmount.
+ */
 export function getDebugPanelContext(): DebugPanelContext | null {
   return getContext<DebugPanelContext | null>(DEBUG_PANEL_KEY) ?? null;
 }
 
-export function setPageDebugContent(reg: PageDebugRegistration): void {
-  const ctx = getDebugPanelContext();
+/**
+ * Pure mutators — they take the already-captured context and never call
+ * `getContext`, so they are safe to invoke from effects and teardowns.
+ * `null` ctx (route mounted outside the layout that owns the context) is
+ * a no-op.
+ */
+export function setPageDebugContent(
+  ctx: DebugPanelContext | null,
+  reg: PageDebugRegistration,
+): void {
   if (!ctx) return;
   ctx.registration.label = reg.label;
   ctx.registration.content = reg.content;
 }
 
-export function setRenderingDebugRegistration(reg: RenderingDebugRegistration | null): void {
-  const ctx = getDebugPanelContext();
+export function setRenderingDebugRegistration(
+  ctx: DebugPanelContext | null,
+  reg: RenderingDebugRegistration | null,
+): void {
   if (!ctx) return;
   ctx.rendering.value = reg;
 }

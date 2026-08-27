@@ -298,7 +298,7 @@
   .program {
     max-width: 760px;
     margin: 0 auto;
-    padding: calc(var(--nav-height, 64px) + 24px) 20px 80px;
+    padding: calc(var(--nav-height, 64px) + 10px) 20px 80px;
     font-family: var(--font-editorial, 'Crimson Pro', serif);
     color: var(--color-text, #eef);
   }
@@ -307,7 +307,7 @@
     font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 18px;
+    margin-bottom: 6px;
   }
   .crumb a {
     color: rgba(255, 255, 255, 0.7);

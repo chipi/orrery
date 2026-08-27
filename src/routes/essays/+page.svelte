@@ -6,9 +6,19 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { localizeHref } from '$lib/paraglide/runtime';
+  import { assetUrl } from '$lib/asset-url';
+  import LongViewHero from '$lib/components/LongViewHero.svelte';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
+
+  // Resolve an essay image ref (e.g. `essays/<slug>/<name>`) to its webp — mirrors
+  // the per-essay page's helper so the landing can show each essay's hero.
+  function imgSrc(ref: string): string {
+    const [coll, id, n] = ref.split('/');
+    if (coll === 'essays' && id && n) return assetUrl(`/images/essays/${id}/${n}.webp`);
+    return assetUrl(`/images/${ref}.webp`);
+  }
 
   // The spiral, in order. Essays without a listed movement fall to the end.
   const MOVEMENTS: { key: string; label: string; blurb: string }[] = [
@@ -62,7 +72,7 @@
 
 <section class="longview" data-route-ready="true">
   <header class="head">
-    <h1>The Long View</h1>
+    <LongViewHero />
     <p class="intro">
       Essays that step back from any one mission and take in the whole subject — how we find our way
       out there, how we get off the ground, how we go farther, and what seventy years of it all adds
@@ -77,6 +87,9 @@
       <div class="cards">
         {#each g.essays as e (e.slug)}
           <a class="card" href="{base}{localizeHref(`/essays/${e.slug}`)}">
+            {#if e.hero}
+              <img class="card-hero" src={imgSrc(e.hero)} alt="" loading="lazy" decoding="async" />
+            {/if}
             <h3>{e.title}</h3>
             <p class="card-dek">{e.dek}</p>
             <span class="go">Read →</span>
@@ -91,14 +104,8 @@
   .longview {
     max-width: 1000px;
     margin: 0 auto;
-    padding: calc(var(--nav-height, 64px) + 28px) 20px 96px;
+    padding: calc(var(--nav-height, 64px) + 14px) 20px 96px;
     color: var(--color-text, #eef);
-  }
-  h1 {
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: clamp(48px, 10vw, 84px);
-    letter-spacing: 1px;
-    margin: 0 0 14px;
   }
   .intro {
     font-family: 'Crimson Pro', Georgia, serif;
@@ -149,6 +156,16 @@
   .card:hover {
     border-color: rgba(127, 176, 224, 0.6);
     transform: translateY(-2px);
+  }
+  /* Full-bleed hero at the top of the card (bleeds out of the 20px padding). */
+  .card-hero {
+    display: block;
+    width: calc(100% + 40px);
+    height: 148px;
+    margin: -20px -20px 4px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    background: rgba(8, 12, 22, 0.6);
   }
   .card h3 {
     font-family: 'Bebas Neue', 'Space Mono', sans-serif;

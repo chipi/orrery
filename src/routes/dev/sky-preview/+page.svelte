@@ -84,6 +84,9 @@
     handle = createSkyScene(canvas, {
       view: mock,
       location: { latDeg: lat, lonDeg: lon, source: 'default' },
+      onDebug: (d) => {
+        (window as unknown as { __skyDebug?: unknown }).__skyDebug = d;
+      },
     });
     await handle.start();
     // Debug affordances: ?below=1 reveals sub-horizon bodies (so every planet is

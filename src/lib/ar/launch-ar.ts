@@ -177,11 +177,19 @@ export async function launchSkyScene(): Promise<boolean> {
   document.documentElement.classList.add('ar-active');
 
   const { createSkyScene } = await import('./sky-scene');
+  // AR diagnostic HUD (#54) — built only when debug mode is on (read once at
+  // launch; the nav is hidden in AR so it can't toggle mid-session). Whitelisted
+  // in the `.ar-active` chrome-hide rule so it survives the AR blanket.
+  const { debugMode } = await import('$lib/debug-mode.svelte');
+  const debugHud = debugMode.enabled ? buildSkyDebugHud() : null;
+  if (debugHud) document.body.appendChild(debugHud);
+
   // The layer-toggle control (RFC-041 S3) is built after the handle exists (it wires
   // the handle's setters); cleanup removes it alongside the rest of the overlay.
   let layers: HTMLElement | null = null;
+  const extras = (): HTMLElement[] => [layers, debugHud].filter((e): e is HTMLElement => !!e);
   const cleanup = () => {
-    teardownArDom(canvas, exitBtn, hint, layers ? [layers] : []);
+    teardownArDom(canvas, exitBtn, hint, extras());
     active = null;
   };
 
@@ -196,6 +204,7 @@ export async function launchSkyScene(): Promise<boolean> {
       if (!hint.isConnected) document.body.appendChild(hint);
       hint.textContent = [...passLines.values()].join('   ·   ');
     },
+    onDebug: debugHud ? (d) => updateSkyDebugHud(debugHud, d) : undefined,
   });
 
   // Layer toggles: everything is on by default; tap to declutter (RFC-041 S3).
@@ -213,8 +222,27 @@ export async function launchSkyScene(): Promise<boolean> {
     cleanup();
     return false;
   }
-  active = { canvas, exitBtn, hint, stop: handle.stop, extra: layers ? [layers] : [] };
+  active = { canvas, exitBtn, hint, stop: handle.stop, extra: extras() };
   return true;
+}
+
+/** Build the AR diagnostic HUD (#54) — a small monospace readout, top-left. */
+function buildSkyDebugHud(): HTMLDivElement {
+  const el = document.createElement('div');
+  el.className = 'ar-debug-hud';
+  el.textContent = 'AR DEBUG · waiting…';
+  return el;
+}
+
+/** Repaint the AR debug HUD from a diagnostics tick. */
+function updateSkyDebugHud(el: HTMLElement, d: import('./sky-scene').SkyDebugData): void {
+  el.textContent =
+    `AR DEBUG\n` +
+    `substrate  ${d.substrate}\n` +
+    `heading    ${d.headingDeg.toFixed(1)}°\n` +
+    `pitch/roll ${d.pitchDeg.toFixed(1)}° / ${d.rollDeg.toFixed(1)}°\n` +
+    `observer   ${d.latDeg.toFixed(2)}, ${d.lonDeg.toFixed(2)}\n` +
+    `up bodies  ${d.upBodies}   fov ${d.fovDeg.toFixed(0)}°`;
 }
 
 /** Build the sky-mode layer toggles (RFC-041): a single dark-glass strip of text

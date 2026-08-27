@@ -203,6 +203,25 @@ function bodyPhase(
   return { phaseAngleRad, limbAngleRad };
 }
 
+/** Live diagnostics for the AR debug HUD (#54) — helps diagnose #51 on-device. */
+export interface SkyDebugData {
+  /** Substrate: 'xr' (ARKit/WebXR) or 'camera' (magic window). */
+  substrate: string;
+  /** Compass heading the camera faces (deg, 0 = N, clockwise). */
+  headingDeg: number;
+  /** Camera elevation above the horizon (deg). */
+  pitchDeg: number;
+  /** Interface roll applied to the camera (deg). */
+  rollDeg: number;
+  /** Observer position. */
+  latDeg: number;
+  lonDeg: number;
+  /** Sun/Moon/planet markers currently above the horizon + shown. */
+  upBodies: number;
+  /** Camera vertical field of view (deg). */
+  fovDeg: number;
+}
+
 export interface SkySceneOptions {
   /** Called when the AR session ends. */
   onExit?: () => void;
@@ -212,6 +231,8 @@ export interface SkySceneOptions {
   onPass?: (id: StationId, pass: Pass | null) => void;
   /** Inject a substrate (tests); else the best available is picked on start. */
   view?: SkyView;
+  /** Live diagnostics tick (~4 Hz) for the debug HUD (#54). */
+  onDebug?: (d: SkyDebugData) => void;
 }
 
 export interface SkySceneHandle {
@@ -1206,6 +1227,12 @@ export function createSkyScene(
     stations: { target: 1, current: 1 },
   };
   let lastFrameMs = 0;
+  // Debug HUD (#54): throttled diagnostics emit + scratch vectors.
+  let lastDebugMs = 0;
+  const _dbgFwd = new THREE.Vector3();
+  const _dbgUp = new THREE.Vector3();
+  const _dbgExp = new THREE.Vector3();
+  const _dbgCross = new THREE.Vector3();
   const starSprites: {
     sprite: THREE.Sprite;
     label: THREE.Sprite | null;
@@ -1903,6 +1930,32 @@ export function createSkyScene(
       // Declutter every label in one screen-space pass (priority + overlap +
       // edge-fit + the primary/all-names budget) — see declutterLabels.
       declutterLabels();
+
+      // Debug HUD diagnostics (#54) — ~4 Hz. Heading/pitch from the camera
+      // forward; roll = signed angle of the camera's up from level about forward.
+      if (opts.onDebug && t - lastDebugMs >= 250) {
+        lastDebugMs = t;
+        camera.getWorldDirection(_dbgFwd);
+        const headingDeg = ((Math.atan2(_dbgFwd.x, -_dbgFwd.z) * 180) / Math.PI + 360) % 360;
+        const pitchDeg = (Math.asin(Math.max(-1, Math.min(1, _dbgFwd.y))) * 180) / Math.PI;
+        _dbgUp.set(0, 1, 0).applyQuaternion(camera.quaternion);
+        const upDot = _dbgFwd.y; // worldUp · fwd = fwd.y
+        _dbgExp.set(-upDot * _dbgFwd.x, 1 - upDot * _dbgFwd.y, -upDot * _dbgFwd.z).normalize();
+        _dbgCross.copy(_dbgExp).cross(_dbgUp);
+        const rollDeg = (Math.atan2(_dbgCross.dot(_dbgFwd), _dbgExp.dot(_dbgUp)) * 180) / Math.PI;
+        let up = 0;
+        for (const { group } of markers.values()) if (group.visible) up++;
+        opts.onDebug({
+          substrate: view.kind,
+          headingDeg,
+          pitchDeg,
+          rollDeg,
+          latDeg: observer?.latDeg ?? 0,
+          lonDeg: observer?.lonDeg ?? 0,
+          upBodies: up,
+          fovDeg: camera.fov,
+        });
+      }
 
       // Collect this frame's off-screen arrow requests, then lay them all out at
       // once (layoutArrows declutters + hides anything no longer in the sky).

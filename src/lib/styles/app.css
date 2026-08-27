@@ -192,6 +192,27 @@ html.ar-active
   ):not(.ar-layers) {
   visibility: hidden !important;
 }
+/* AR diagnostic HUD (#54) — top-left monospace readout, gated on debug mode.
+   Whitelisted in the `.ar-active` chrome-hide rule above so it survives AR. */
+.ar-debug-hud {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top, 12px));
+  left: max(10px, env(safe-area-inset-left, 10px));
+  z-index: 9999;
+  padding: 7px 10px;
+  background: rgba(5, 5, 20, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  color: #b8f0d8;
+  font:
+    11px / 1.5 ui-monospace,
+    'Space Mono',
+    monospace;
+  white-space: pre;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+}
+
 /* Sky-mode layer toggles (RFC-041 redesign) — ONE dark-glass strip of text
    buttons (no emoji, no per-chip borders). On = teal text + a teal dot; off =
    dim. Editorial, matches the /fly HUD idiom rather than a debug chip pile. */

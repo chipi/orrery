@@ -27,6 +27,14 @@ universe**, ships **33 space programs**, and reaches **full localization in 14 l
 - **Augmented reality** (ARKit + ARCore) — tabletop planet/Moon globes, a "look at the
   sky" heading-gated mode, an auto-playing AR narrator, and AR-specific haptics, with
   Android↔iOS parity.
+- **AR night sky — one sky, everything on it** (RFC-041) — point your phone up and the
+  real sky is marked: Sun/Moon/planets/stations **plus** constellation figures, bright
+  named stars, deep-sky objects (nebulae/galaxies/clusters), a horizon ring and today's
+  sunrise/sunset points, on one screen with per-layer toggles. Planets are rendered from
+  their real textures with correct phases and Saturn's rings; marker size tracks each
+  body's apparent diameter (Mars grows toward opposition) and brightness drives a soft
+  aura. Star-atlas typography, screen-space label declutter, and line-art ISS/Tiangong
+  glyphs.
 - **Sensory layer** — haptics, sonification, and gyro-driven parallax across the app.
 
 ### `/fly` — launch to orbit, made cinematic

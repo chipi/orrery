@@ -3555,7 +3555,17 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       // #351 Layer 2-B — surface the simulated calendar date. Reformat
       // only when the day index or locale changes (cheap guard; the
       // formatter is the only per-change cost, never per-frame).
-      const simDayIndex = Math.floor((simEpochMs + simT * DAYS_PER_YEAR * 86_400_000) / 86_400_000);
+      // Format the actual sim instant in the viewer's LOCAL timezone so the
+      // chip reads the day their wall clock shows. Flooring raw ms to a day
+      // index yields the UTC day; formatting that UTC midnight in local tz
+      // renders the PREVIOUS day for negative-UTC offsets (all of the
+      // Americas) — reset-to-today showed yesterday. Offset-adjust the guard
+      // so it reformats when the LOCAL calendar day flips.
+      const simInstantMs = simEpochMs + simT * DAYS_PER_YEAR * 86_400_000;
+      const simInstant = new Date(simInstantMs);
+      const simDayIndex = Math.floor(
+        (simInstantMs - simInstant.getTimezoneOffset() * 60_000) / 86_400_000,
+      );
       const dateLocale = getLocale();
       if (simDayIndex !== lastSimDayIndex || dateLocale !== lastDateLocale) {
         lastSimDayIndex = simDayIndex;
@@ -3566,7 +3576,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
           // 2-digit day so the string never changes length as the day
           // ticks 9 → 10 (#351 Layer 2-B) — keeps the chip width stable.
           day: '2-digit',
-        }).format(new Date(simDayIndex * 86_400_000));
+        }).format(simInstant);
       }
 
       // Fly-to-body tween (#287 polish). When focused on a planet, the

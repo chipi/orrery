@@ -119,3 +119,40 @@ test.describe('/explore — time playback controls', () => {
     await expect(date(page)).toHaveText(expected, { timeout: 5_000 });
   });
 });
+
+/**
+ * Release hardening — the sim-date chip must read the viewer's LOCAL calendar
+ * day. The prior logic floored the instant to a UTC day index and formatted
+ * that UTC midnight in local tz, so every negative-UTC-offset viewer (all of
+ * the Americas) saw YESTERDAY after reset-to-today. It ran green on CI for
+ * months only because CI runs in UTC. Pinning a negative-offset timezone
+ * exercises that path regardless of the runner clock, so a regression can't
+ * hide behind a UTC-only CI again.
+ */
+test.describe('/explore — sim date honors a negative-UTC timezone', () => {
+  test.use({ timezoneId: 'America/Los_Angeles' });
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/explore');
+    await expect(play(page)).toBeVisible({ timeout: 8_000 });
+  });
+
+  test('reset-to-today shows the local calendar day, not the UTC day', async ({
+    page,
+    isMobile,
+  }) => {
+    await pickSpeed(page, 100, isMobile);
+    await play(page).click();
+    await reset(page).click();
+
+    const expected = await page.evaluate(() => {
+      const loc = document.documentElement.lang || undefined;
+      return new Intl.DateTimeFormat(loc, {
+        year: 'numeric',
+        month: 'short',
+        day: '2-digit',
+      }).format(new Date());
+    });
+    await expect(date(page)).toHaveText(expected, { timeout: 5_000 });
+  });
+});

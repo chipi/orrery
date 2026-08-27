@@ -992,6 +992,7 @@ export function createSkyScene(
     StationId,
     {
       group: THREE.Group;
+      sprite: THREE.Sprite;
       texture: THREE.CanvasTexture;
       tle: Tle | null;
       dir: THREE.Vector3;
@@ -1000,13 +1001,13 @@ export function createSkyScene(
     }
   >();
   for (const id of STATION_IDS) {
-    const { group, texture } = makeStationMarker(STATION_COLOR[id], id);
+    const { group, sprite, texture } = makeStationMarker(STATION_COLOR[id], id);
     group.visible = false;
     scene.add(group);
     const label = makeTextSprite(STATION_LABEL[id], 'display');
     label.visible = false;
     bodyLabelGroup.add(label);
-    stationMarkers.set(id, { group, texture, tle: null, dir: new THREE.Vector3(), label });
+    stationMarkers.set(id, { group, sprite, texture, tle: null, dir: new THREE.Vector3(), label });
   }
 
   // Cardinal marks on the horizon so the sky is oriented (#51 visual).
@@ -1141,6 +1142,24 @@ export function createSkyScene(
   // brightest star names + famous deep-sky names — so the sky isn't a wall of text.
   // The "All names" toggle reveals the rest (fainter stars, catalog IDs).
   let showAllLabels = false;
+
+  // Per-layer cross-fade (P12): a toggle sets a fade target (0/1); the render loop
+  // lerps the current value and scales each layer's material opacity by it, so a
+  // layer fades in/out over ~220 ms instead of popping. Reduced-motion snaps.
+  type FadeKey = 'planets' | 'constellations' | 'stars' | 'deepsky' | 'sun' | 'stations';
+  const FADE_KEYS: FadeKey[] = ['planets', 'constellations', 'stars', 'deepsky', 'sun', 'stations'];
+  const FADE_MS = 220;
+  const reduceMotion =
+    typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const layerFade: Record<FadeKey, { target: number; current: number }> = {
+    planets: { target: 1, current: 1 },
+    constellations: { target: 1, current: 1 },
+    stars: { target: 1, current: 1 },
+    deepsky: { target: 1, current: 1 },
+    sun: { target: 1, current: 1 },
+    stations: { target: 1, current: 1 },
+  };
+  let lastFrameMs = 0;
   const starSprites: {
     sprite: THREE.Sprite;
     label: THREE.Sprite | null;
@@ -1786,6 +1805,10 @@ export function createSkyScene(
       camPos.copy(camera.position);
 
       const t = Date.now();
+      // Per-layer cross-fade step (clamp dt so a backgrounded tab doesn't jump).
+      const dtMs = lastFrameMs ? Math.min(50, t - lastFrameMs) : 16;
+      lastFrameMs = t;
+      stepFades(dtMs);
       if (t - lastEphemeris >= EPHEMERIS_INTERVAL_MS) {
         recomputeDirections();
         recomputeConstellations();
@@ -1945,27 +1968,123 @@ export function createSkyScene(
     renderer.dispose();
   }
 
+  // Collect a layer's materials so the fade can scale their opacity uniformly.
+  function layerMaterials(key: FadeKey): THREE.Material[] {
+    const out: THREE.Material[] = [];
+    const push = (m?: THREE.Material | null): void => {
+      if (m) out.push(m);
+    };
+    if (key === 'planets')
+      for (const m of markers.values()) {
+        push(m.sprite.material);
+        if (m.glow) push(m.glow.material);
+        if (m.label) push(m.label.material);
+      }
+    else if (key === 'constellations') {
+      push(constellationLines.material as THREE.Material);
+      push(constellationDots.material as THREE.Material);
+      for (const l of constellationLabels) push(l.sprite.material);
+    } else if (key === 'stars') {
+      push(starDotMaterial);
+      push(starSpikeMaterial);
+      for (const s of starSprites) if (s.label) push(s.label.material);
+    } else if (key === 'deepsky')
+      for (const o of deepSkyObjects) {
+        push(o.sprite.material);
+        if (o.label) push(o.label.material);
+      }
+    else if (key === 'sun')
+      for (const m of sunEventMarkers) {
+        push(m.sprite.material);
+        push(m.label.material);
+      }
+    else
+      for (const sm of stationMarkers.values()) {
+        push(sm.sprite.material);
+        if (sm.label) push(sm.label.material);
+      }
+    return out;
+  }
+
+  // Scale each material's opacity by `f`, capturing its design opacity once (the
+  // first apply is always at full opacity, so the captured base is unscaled).
+  function applyLayerOpacity(key: FadeKey, f: number): void {
+    for (const m of layerMaterials(key)) {
+      const mm = m as THREE.Material & { opacity: number };
+      if (mm.userData.baseOpacity === undefined) mm.userData.baseOpacity = mm.opacity;
+      mm.opacity = (mm.userData.baseOpacity as number) * f;
+      mm.transparent = true;
+    }
+  }
+
+  // Flip a layer's LOGIC flag (drives recompute + declutter) + its group visibility.
+  function setLayerLogicOn(key: FadeKey, on: boolean): void {
+    if (key === 'planets') {
+      showPlanets = on;
+      if (!on) for (const { group } of markers.values()) group.visible = false;
+      else recomputeDirections();
+    } else if (key === 'stations') {
+      showStations = on;
+      if (!on) for (const { group } of stationMarkers.values()) group.visible = false;
+    } else if (key === 'constellations') {
+      showConstellations = on;
+      constellationLines.visible = on && !!constellationPositions;
+      constellationDots.visible = on && !!constellationDotPositions;
+      constellationLabelGroup.visible = on && constellationLabels.length > 0;
+    } else if (key === 'stars') {
+      showStars = on;
+      starGroup.visible = on && starSprites.length > 0;
+    } else if (key === 'deepsky') {
+      showDeepSky = on;
+      deepSkyGroup.visible = on && deepSkyObjects.length > 0;
+    } else {
+      showSunEvents = on;
+      sunEventGroup.visible = on && sunEventMarkers.length > 0;
+    }
+  }
+
+  // Toggle a layer with a cross-fade. On enable: render immediately + fade opacity
+  // up. On disable: keep the layer logically on (so recompute/declutter keep
+  // placing it) and fade opacity down; the loop flips it fully off at 0.
+  function fadeLayer(key: FadeKey, on: boolean): void {
+    if (reduceMotion) {
+      setLayerLogicOn(key, on);
+      layerFade[key].current = layerFade[key].target = on ? 1 : 0;
+      applyLayerOpacity(key, on ? 1 : 0);
+      return;
+    }
+    if (on) setLayerLogicOn(key, true);
+    layerFade[key].target = on ? 1 : 0;
+  }
+
+  // Step every layer's fade toward its target; hide a layer once fully faded out.
+  function stepFades(dtMs: number): void {
+    for (const key of FADE_KEYS) {
+      const fd = layerFade[key];
+      if (fd.current === fd.target) continue;
+      const dir = Math.sign(fd.target - fd.current);
+      fd.current += dir * (dtMs / FADE_MS);
+      if ((dir > 0 && fd.current >= fd.target) || (dir < 0 && fd.current <= fd.target))
+        fd.current = fd.target;
+      applyLayerOpacity(key, fd.current);
+      if (fd.current === 0) setLayerLogicOn(key, false);
+    }
+  }
+
   function setConstellationsVisible(on: boolean): void {
-    showConstellations = on;
-    // Only actually show once the buffer is populated (visible stays false until load).
-    constellationLines.visible = on && !!constellationPositions;
-    constellationDots.visible = on && !!constellationDotPositions;
-    constellationLabelGroup.visible = on && constellationLabels.length > 0;
+    fadeLayer('constellations', on);
   }
 
   function setStarsVisible(on: boolean): void {
-    showStars = on;
-    starGroup.visible = on && starSprites.length > 0;
+    fadeLayer('stars', on);
   }
 
   function setDeepSkyVisible(on: boolean): void {
-    showDeepSky = on;
-    deepSkyGroup.visible = on && deepSkyObjects.length > 0;
+    fadeLayer('deepsky', on);
   }
 
   function setSunEventsVisible(on: boolean): void {
-    showSunEvents = on;
-    sunEventGroup.visible = on && sunEventMarkers.length > 0;
+    fadeLayer('sun', on);
   }
 
   function setAllLabelsVisible(on: boolean): void {
@@ -1973,15 +2092,11 @@ export function createSkyScene(
   }
 
   function setPlanetsVisible(on: boolean): void {
-    showPlanets = on;
-    if (!on) for (const { group } of markers.values()) group.visible = false;
-    else recomputeDirections(); // re-apply above-horizon visibility
+    fadeLayer('planets', on);
   }
 
   function setStationsVisible(on: boolean): void {
-    showStations = on;
-    if (!on) for (const { group } of stationMarkers.values()) group.visible = false;
-    // when re-enabled the render loop re-shows above-horizon stations next frame
+    fadeLayer('stations', on);
   }
 
   function setBelowHorizonVisible(on: boolean): void {

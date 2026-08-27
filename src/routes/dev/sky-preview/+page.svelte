@@ -30,9 +30,29 @@
     };
     const lat = num('lat', -17.53); // Tahiti, French Polynesia
     const lon = num('lon', -149.57);
-    const az = num('az', 0); // heading: 0 = due north
-    const el = num('el', 25); // camera elevation above the horizon
-    info = `${lat}°, ${lon}° · facing ${az}° az, ${el}° up · ${new Date().toUTCString()}`;
+    let az = num('az', 0); // heading: 0 = due north
+    let el = num('el', 25); // camera elevation above the horizon
+
+    // ?aim=<body|station> centres the camera on that object's live direction, so a
+    // fast mover (ISS/Tiangong) is framed regardless of when the page loads.
+    const aim = p.get('aim');
+    if (aim) {
+      const DEGr = Math.PI / 180;
+      const planet = skyPositions(new Date(), lat, lon).find((s) => s.body === aim);
+      if (planet) {
+        az = (planet.azRad * 180) / Math.PI;
+        el = (planet.altRad * 180) / Math.PI;
+      } else if ((STATION_IDS as readonly string[]).includes(aim)) {
+        const tle = await resolveStationTle(aim as (typeof STATION_IDS)[number]);
+        if (tle) {
+          const la = lookAngleForTle(tle, new Date(), lat, lon);
+          az = (la.azRad * 180) / Math.PI;
+          el = (la.altRad * 180) / Math.PI;
+        }
+      }
+      void DEGr;
+    }
+    info = `${lat}°, ${lon}° · facing ${az.toFixed(1)}° az, ${el.toFixed(1)}° up · ${new Date().toUTCString()}`;
 
     // Fixed camera in the render ENU frame [East, Up, −North]: look along (az, el).
     const DEG = Math.PI / 180;

@@ -517,8 +517,11 @@ function makeMarker(
   return { group, sprite, texture, canvas, size };
 }
 
-/** A station marker (ISS/Tiangong) — a small diamond glyph, not a planet disc. */
-function makeStationMarker(color: string): {
+/** A station marker (ISS/Tiangong) — a line-art spacecraft glyph, not a planet disc. */
+function makeStationMarker(
+  color: string,
+  id: StationId,
+): {
   group: THREE.Group;
   sprite: THREE.Sprite;
   texture: THREE.CanvasTexture;
@@ -526,13 +529,13 @@ function makeStationMarker(color: string): {
   const size = 128;
   const canvas = document.createElement('canvas');
   canvas.width = canvas.height = size;
-  drawStationGlyph(canvas.getContext('2d')!, size, color);
+  drawStationGlyph(canvas.getContext('2d')!, size, color, id);
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   const sprite = new THREE.Sprite(
     new THREE.SpriteMaterial({ map: texture, transparent: true, depthTest: false, depthWrite: false }),
   );
-  sprite.scale.set(3.2, 3.2, 1);
+  sprite.scale.set(4, 4, 1);
   const group = new THREE.Group();
   group.add(sprite);
   return { group, sprite, texture };
@@ -674,30 +677,72 @@ function makeSoftGlowTexture(): THREE.CanvasTexture {
   return tex;
 }
 
-/** A station glyph (ISS/Tiangong) — a small hollow diamond + centre dot in the
- *  station colour, drawn onto a marker canvas. Stations are hardware, not worlds,
- *  so they read as a distinct mark, not a planet disc (advisor §8). */
-function drawStationGlyph(ctx: CanvasRenderingContext2D, size: number, color: string): void {
+/** A line-art spacecraft glyph per station (ISS = central truss + 4 solar-array
+ *  wings; Tiangong = T-shaped core + 2 panels), drawn in the station colour with
+ *  a dark halo for legibility. Stations are hardware, not worlds, so they read as
+ *  a stylised craft, not a planet disc (advisor §8; operator's pick). */
+function drawStationGlyph(
+  ctx: CanvasRenderingContext2D,
+  size: number,
+  color: string,
+  id: StationId,
+): void {
   const cx = size / 2;
   const cy = size / 2;
-  const r = size * 0.2;
   ctx.clearRect(0, 0, size, size);
   ctx.strokeStyle = color;
-  ctx.lineWidth = Math.max(3, size * 0.022);
-  ctx.lineJoin = 'round';
-  ctx.shadowColor = 'rgba(4,8,16,0.9)';
-  ctx.shadowBlur = size * 0.05;
-  ctx.beginPath();
-  ctx.moveTo(cx, cy - r);
-  ctx.lineTo(cx + r, cy);
-  ctx.lineTo(cx, cy + r);
-  ctx.lineTo(cx - r, cy);
-  ctx.closePath();
-  ctx.stroke();
-  ctx.shadowBlur = 0;
   ctx.fillStyle = color;
+  ctx.lineWidth = Math.max(2.5, size * 0.026);
+  ctx.lineJoin = 'round';
+  ctx.lineCap = 'round';
+  ctx.shadowColor = 'rgba(4,8,16,0.95)';
+  ctx.shadowBlur = size * 0.06;
+
+  // A solar-array panel: outlined rectangle with a centre cell line.
+  const panel = (x: number, y: number, w: number, h: number, vertical: boolean) => {
+    ctx.strokeRect(x - w / 2, y - h / 2, w, h);
+    ctx.beginPath();
+    if (vertical) {
+      ctx.moveTo(x, y - h / 2);
+      ctx.lineTo(x, y + h / 2);
+    } else {
+      ctx.moveTo(x - w / 2, y);
+      ctx.lineTo(x + w / 2, y);
+    }
+    ctx.stroke();
+  };
+
+  if (id === 'iss') {
+    const t = size * 0.33; // half truss length
+    // Horizontal integrated truss.
+    ctx.beginPath();
+    ctx.moveTo(cx - t, cy);
+    ctx.lineTo(cx + t, cy);
+    ctx.stroke();
+    // Four solar-array wings — a pair above + below at each truss end.
+    const pw = size * 0.2;
+    const ph = size * 0.13;
+    for (const sx of [-1, 1])
+      for (const sy of [-1, 1]) panel(cx + sx * t * 0.72, cy + sy * ph * 1.05, pw, ph, false);
+    // Central pressurised-module stack.
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, size * 0.05, size * 0.11, 0, 0, Math.PI * 2);
+    ctx.stroke();
+  } else {
+    // Tiangong — T-shaped core (Tianhe + two lab modules) + a panel each side.
+    const core = size * 0.11;
+    // Horizontal core module.
+    ctx.strokeRect(cx - size * 0.2, cy - core / 2, size * 0.4, core);
+    // Perpendicular module (the T stem).
+    ctx.strokeRect(cx - core / 2, cy, core, size * 0.2);
+    // A solar panel off each end of the core.
+    panel(cx - size * 0.31, cy, size * 0.12, size * 0.16, true);
+    panel(cx + size * 0.31, cy, size * 0.12, size * 0.16, true);
+  }
+  ctx.shadowBlur = 0;
+  // A bright centre dot so the craft still has a locatable point.
   ctx.beginPath();
-  ctx.arc(cx, cy, size * 0.04, 0, Math.PI * 2);
+  ctx.arc(cx, cy, size * 0.028, 0, Math.PI * 2);
   ctx.fill();
 }
 
@@ -941,7 +986,7 @@ export function createSkyScene(
     }
   >();
   for (const id of STATION_IDS) {
-    const { group, texture } = makeStationMarker(STATION_COLOR[id]);
+    const { group, texture } = makeStationMarker(STATION_COLOR[id], id);
     group.visible = false;
     scene.add(group);
     const label = makeTextSprite(STATION_LABEL[id], 'display');

@@ -309,11 +309,13 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       params: { factor: 1.55 },
       note: "Zoom out so the full Voyager 2 trajectory reads against Neptune's orbit.",
     },
-    // Close the Voyager 2 mission panel + reset camera so the
-    // canvas is clean before the Science Lens beat. Also toggle the
-    // PATHS layer back OFF so the Voyager 2 arc isn't still drawn
-    // through the next beats.
-    { at_sec: 92, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
+    // Toggle the PATHS layer back OFF so the Voyager 2 arc isn't still
+    // drawn through the next beats. (The iconic-mission click only
+    // highlights the trajectory — it never opens a panel or selects a
+    // body — so there is nothing here for `explore-reset-view` to act
+    // on: that button only mounts while a body/sun is selected. The
+    // earlier reset-view stage at this beat was a no-op after the
+    // /explore IA refactor and was removed.)
     { at_sec: 93, action: 'click', target: '[data-audio-stage="explore-layer-paths"]' },
     // Science Lens beat — moved 4 s earlier (was 99/101 → now 95/97)
     // so there's enough room for the layer-checkbox demo + the
@@ -321,6 +323,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // the Sun beat at 121 s. (2026-06-19 user directions #2 → #5.)
     { at_sec: 95, action: 'flash', target: '[data-audio-stage="science-lens-toggle"]' },
     { at_sec: 97, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
+    // Expand the lens panel before demoing the layers. Turning the lens
+    // ON (t=97) mounts the panel COLLAPSED (deliberate — the expanded
+    // 12-layer grid otherwise eclipses ~40% of the 3D scene), so the
+    // layer checkboxes aren't in the DOM until the header is clicked to
+    // expand. Without this the layer clicks below all no-op'd.
+    { at_sec: 98, action: 'click', target: '[data-audio-stage="science-lens-collapse"]' },
     // Turn on 5 representative lens layers so the canvas demonstrates
     // the gamut of effects (per-planet arrows + magnetosphere shell +
     // the tactical-scan stat overlay). Then collapse the lens panel
@@ -570,6 +578,13 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
 
   // ── /missions · guide-missions — VTT 136 s ────────────────────────
   'guide-missions': [
+    // Expand the filters first — /missions ships them COLLAPSED behind the
+    // `.filters-toggle` (they only auto-expand when a filter URL-param is
+    // present, and the first filtered navigate isn't until t=29). Without
+    // this the scroll-to + flash below target a `#missions-filters` that
+    // isn't in the DOM yet, so the "use the filters" beat highlighted
+    // nothing.
+    { at_sec: 19, action: 'click', target: '[data-audio-stage="missions-filters-toggle"]' },
     // VTT § 00:00:20.6 "Use the filters at the top"
     { at_sec: 20, action: 'scroll-to', target: '[data-audio-stage="missions-filters"]' },
     { at_sec: 22, action: 'flash', target: '[data-audio-stage="missions-filters"]' },

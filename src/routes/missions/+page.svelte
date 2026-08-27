@@ -413,6 +413,7 @@
     aria-expanded={filterState.expanded}
     aria-controls={filterState.expanded ? 'missions-filters' : undefined}
     onclick={() => (filterState.expanded = !filterState.expanded)}
+    data-audio-stage="missions-filters-toggle"
   >
     <span class="filters-eyebrow">{m.filters_eyebrow()}</span>
     <span class="filters-right">

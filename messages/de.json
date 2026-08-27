@@ -80,6 +80,8 @@
   "chip_label_mission_types": "Missionstypen — Vorbeiflug, Orbiter, Lander, Rover, Probenrückführung",
   "nav_subtitle": "MISSIONS-SIMULATOR",
   "nav_high_contrast_aria": "Modus mit hohem Kontrast umschalten",
+  "nav_debug_aria": "Debug-Overlays umschalten",
+  "nav_debug_title": "Debug-Modus — Entwickler-Overlays",
   "nav_locale_picker_aria": "Sprache",
   "plan_explainer_title": "DEN PORKCHOP LESEN",
   "plan_explainer_intro": "Jede Zelle fragt: „Wenn ich am Tag X starte und am Tag X+TOF ankomme, wie viel Treibstoff brauche ich?“ Kleinere Zahlen = günstigere Missionen.",

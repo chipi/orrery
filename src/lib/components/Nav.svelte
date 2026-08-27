@@ -4,6 +4,7 @@
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import { onHighContrastChange, toggleHighContrast } from '$lib/high-contrast';
+  import { debugMode, toggleDebugMode } from '$lib/debug-mode.svelte';
   import {
     onScienceLensAvailableChange,
     onScienceLensChange,
@@ -441,6 +442,36 @@
     >
       <ShareIcon />
     </button>
+    <!-- Unified debug toggle (#54) — gates every debug overlay (the DebugPanel
+         + the AR diagnostic HUD). Available in all builds so an on-device
+         prod/staging build can flip it on to diagnose. -->
+    <button
+      type="button"
+      class="debug-toggle"
+      class:active={debugMode.enabled}
+      aria-label={m.nav_debug_aria()}
+      aria-pressed={debugMode.enabled}
+      title={m.nav_debug_title()}
+      onclick={toggleDebugMode}
+    >
+      <!-- Simple bug glyph as inline SVG (reliable across font stacks). -->
+      <svg
+        viewBox="0 0 24 24"
+        width="18"
+        height="18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="8" y="6" width="8" height="12" rx="4" />
+        <path
+          d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2"
+        />
+      </svg>
+    </button>
     {@render right?.()}
   </div>
 </nav>
@@ -590,6 +621,20 @@
       title="{m.version_info_title()}: v{displayVersion} · {__BUILD_DATE__}"
       hreflang="en">v{displayVersion} · {__BUILD_TAG__}</a
     >
+    <!-- Unified debug toggle (#54) — sits next to the prod/stage switcher; gates
+         all debug overlays (DebugPanel + AR HUD). All builds; default off. -->
+    <aside class="debug-switcher" aria-label="Debug overlays">
+      <span class="label">Debug</span>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={debugMode.enabled}
+        class:active={debugMode.enabled}
+        onclick={toggleDebugMode}
+      >
+        {debugMode.enabled ? 'On' : 'Off'}
+      </button>
+    </aside>
     <!-- Internal-only staging↔prod target switcher — lives at the very bottom of
          the drawer (moved out of the floating bottom-left panel, 2026-08 user
          direction). MOBILE_INTERNAL-gated inside the component → no-op elsewhere. -->
@@ -921,7 +966,8 @@
      need it, and when it needs it add hover and glow as for other
      buttons".) */
   .settings-toggle,
-  .share-toggle {
+  .share-toggle,
+  .debug-toggle {
     width: 32px;
     height: 32px;
     min-width: 44px;
@@ -941,14 +987,57 @@
       color 120ms;
   }
   .settings-toggle :global(svg),
-  .share-toggle :global(svg) {
+  .share-toggle :global(svg),
+  .debug-toggle :global(svg) {
     display: block;
   }
   .share-toggle:hover,
-  .share-toggle:focus-visible {
+  .share-toggle:focus-visible,
+  .debug-toggle:hover,
+  .debug-toggle:focus-visible {
     border-color: rgba(78, 205, 196, 0.55);
     color: rgba(78, 205, 196, 0.95);
     outline: none;
+  }
+  /* Debug toggle lit when debug mode is on. */
+  .debug-toggle.active {
+    border-color: rgba(246, 173, 85, 0.7);
+    color: #f6ad55;
+    background: rgba(246, 173, 85, 0.12);
+  }
+  /* Drawer debug row — mirrors the .target-switcher idiom just below it. */
+  .debug-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font:
+      11px / 1.4 ui-monospace,
+      monospace;
+    color: #cfd3e0;
+  }
+  .debug-switcher .label {
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .debug-switcher button {
+    padding: 2px 12px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+  .debug-switcher button.active {
+    background: #f6ad55;
+    border-color: #f6ad55;
+    color: #1a1207;
+    font-weight: 600;
   }
   /* Hover + focus glow only when the route surfaces settings (i.e. the
      button isn't [disabled]). Teal accent — matches the popup panel's

@@ -7,6 +7,7 @@
   import { goto } from '$app/navigation';
   import { browser } from '$app/environment';
   import { initViewport } from '$lib/viewport.svelte';
+  import { initDebugMode } from '$lib/debug-mode.svelte';
   import { Capacitor } from '@capacitor/core';
   import { openExternal } from '$lib/external-link';
   import { formatDisplayVersion } from '$lib/version';
@@ -166,6 +167,7 @@
   // copying a URL is still trivial. This is friction, not protection.
   onMount(() => {
     if (typeof window === 'undefined') return;
+    initDebugMode(); // #54 — seed debug mode from localStorage + ?debug=1
     const handler = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
       if (!target) return;

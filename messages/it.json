@@ -80,6 +80,8 @@
   "chip_label_mission_types": "Tipi di missione — sorvolo, orbiter, lander, rover, ritorno di campioni",
   "nav_subtitle": "SIMULATORE DI MISSIONE",
   "nav_high_contrast_aria": "Attiva/disattiva modalità ad alto contrasto",
+  "nav_debug_aria": "Attiva/disattiva overlay di debug",
+  "nav_debug_title": "Modalità debug — overlay per sviluppatori",
   "nav_locale_picker_aria": "Lingua",
   "plan_explainer_title": "COME LEGGERE IL PORKCHOP",
   "plan_explainer_intro": "Ogni cella risponde alla domanda: se parto nella data X e arrivo nella data X+TOF, quanto carburante serve? Numeri più bassi = missioni più economiche.",

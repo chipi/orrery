@@ -148,6 +148,8 @@
   "chip_label_dsn": "DSN — Deep Space Network ranging + Doppler, three antennas at 120°",
   "nav_subtitle": "MISSION SIMULATOR",
   "nav_high_contrast_aria": "Toggle high-contrast mode",
+  "nav_debug_aria": "Toggle debug overlays",
+  "nav_debug_title": "Debug mode — developer overlays",
   "nav_locale_picker_aria": "Language",
   "plan_explainer_title": "READING THE PORKCHOP",
   "plan_explainer_intro": "Each cell asks: \"if I launch on date X and arrive on date X+TOF, how much fuel does it take?\" Lower numbers = cheaper missions.",

@@ -104,6 +104,8 @@
   "chip_label_dsn": "DSN — 深度空间网络范围为+多普勒,三台天线在120°",
   "nav_subtitle": "访问团",
   "nav_high_contrast_aria": "切换高相冲突模式",
+  "nav_debug_aria": "切换调试叠加层",
+  "nav_debug_title": "调试模式 — 开发者叠加层",
   "nav_locale_picker_aria": "语言",
   "plan_explainer_title": "读波克丘",
   "plan_explainer_intro": "每个细胞都问:\"如果我在日期X发射并在日期QQTOF到达,需要多少燃料?\". 数目较少=任务费用较低。",

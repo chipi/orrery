@@ -80,6 +80,8 @@
   "chip_label_mission_types": "Tipos de missão — sobrevoo, orbitador, módulo de pouso, rover, retorno de amostras",
   "nav_subtitle": "SIMULADOR DE MISSÕES",
   "nav_high_contrast_aria": "Alternar modo de alto contraste",
+  "nav_debug_aria": "Alternar sobreposições de depuração",
+  "nav_debug_title": "Modo de depuração — sobreposições de desenvolvedor",
   "nav_locale_picker_aria": "Idioma",
   "plan_explainer_title": "COMO LER O PORKCHOP",
   "plan_explainer_intro": "Cada célula responde: se eu lanço na data X e chego na data X+TOF, quanto combustível custa? Números menores = missões mais baratas.",

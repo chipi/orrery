@@ -104,6 +104,8 @@
   "chip_label_dsn": "DSN - Deep Space Network ranging + Doppler, three antennas at 120°",
   "nav_subtitle": "البعثة",
   "nav_high_contrast_aria": "نضال أسلوب التجارة العالية",
+  "nav_debug_aria": "تبديل تراكبات التصحيح",
+  "nav_debug_title": "وضع التصحيح — تراكبات المطوّر",
   "nav_locale_picker_aria": "اللغة",
   "plan_explainer_title": "إعادة البناء",
   "plan_explainer_intro": "كل خلية تسأل: \"إذا أطلقت في الموعد العاشر ووصلت في التاريخ X+TF، كم من الوقود يستغرق؟ عدد أقل = بعثات أرخص.",

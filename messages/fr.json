@@ -80,6 +80,8 @@
   "chip_label_mission_types": "Types de mission — survol, orbiteur, atterrisseur, rover, retour d'échantillons",
   "nav_subtitle": "SIMULATEUR DE MISSION",
   "nav_high_contrast_aria": "Activer le mode contraste élevé",
+  "nav_debug_aria": "Basculer les surcouches de débogage",
+  "nav_debug_title": "Mode débogage — surcouches développeur",
   "nav_locale_picker_aria": "Langue",
   "plan_explainer_title": "LIRE LE DIAGRAMME « PORKCHOP »",
   "plan_explainer_intro": "Chaque case répond à la question : si je décolle à la date X et j'arrive à la date X+TOF, combien de carburant faut-il ? Des nombres plus bas = missions moins coûteuses.",

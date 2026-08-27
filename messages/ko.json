@@ -104,6 +104,8 @@
   "chip_label_dsn": "DSN — Deep Space Network ranging + Doppler, 120°에서 세 개의 안테나",
   "nav_subtitle": "MISSION 시뮬레이터",
   "nav_high_contrast_aria": "높은 콘트라스트 모드",
+  "nav_debug_aria": "디버그 오버레이 전환",
+  "nav_debug_title": "디버그 모드 — 개발자 오버레이",
   "nav_locale_picker_aria": "한국어",
   "plan_explainer_title": "PORKCHOP 자세히 보기",
   "plan_explainer_intro": "각 셀은 다음과 같이 묻습니다. \"일시 X에서 실행하고 날짜 X + TOF에 도착하면 연료가 얼마나 걸리는지?\" 더 낮은 숫자 = 더 싼 임무.",

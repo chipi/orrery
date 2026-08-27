@@ -104,6 +104,8 @@
   "chip_label_dsn": "DSN — 120° の 3 つのアンテナの + ドップラー、及ぶ深いスペース ネットワーク",
   "nav_subtitle": "ミッション・シミュレーター",
   "nav_high_contrast_aria": "高コントラストモードを切り替える",
+  "nav_debug_aria": "デバッグオーバーレイを切り替え",
+  "nav_debug_title": "デバッグモード — 開発者オーバーレイ",
   "nav_locale_picker_aria": "日本語 English",
   "plan_explainer_title": "PORKCHOPを読んで",
   "plan_explainer_intro": "各セルは「日付Xで起動し、日付X+TOFに到着したら、燃料はどのくらいかかりますか?」と尋ねます。 より低い番号 = より安いミッション。",

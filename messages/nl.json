@@ -82,6 +82,8 @@
   "chip_label_mission_types": "Missietypes — flyby, orbiter, lander, rover, monsterretour",
   "nav_subtitle": "MISSIESIMULATOR",
   "nav_high_contrast_aria": "Hoog-contrastmodus omschakelen",
+  "nav_debug_aria": "Debug-overlays in-/uitschakelen",
+  "nav_debug_title": "Debugmodus — ontwikkelaarsoverlays",
   "nav_locale_picker_aria": "Taal",
   "plan_explainer_title": "DE PORKCHOP LEZEN",
   "plan_explainer_intro": "Elke cel vraagt: \"als ik op datum X lanceer en op X+TOF aankom, hoeveel brandstof kost dat?\" Lagere getallen = goedkopere missies.",

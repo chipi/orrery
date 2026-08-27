@@ -14,6 +14,7 @@
   import { onMount } from 'svelte';
   import { getDebugPanelContext } from '$lib/components/debug-panel-context';
   import { createAnimateLoop } from '$lib/three/animate-loop';
+  import { debugMode, setDebugMode } from '$lib/debug-mode.svelte';
 
   // Read the page-registration state from context (set up in
   // +layout.svelte). The layout owns the reactive object so siblings
@@ -26,7 +27,9 @@
   let renderingReg = $derived(debugCtx?.rendering.value ?? null);
 
   let mounted = $state(false);
-  let open = $state(false);
+  // The panel is shown whenever debug mode is on (menu toggle / ?debug=1). The
+  // close button turns debug mode off globally (task #54 — one unified switch).
+  const open = $derived(debugMode.enabled);
   let activeTab = $state<'page' | 'perf' | 'i18n' | 'route' | 'rendering'>('perf');
 
   let fps = $state(0);
@@ -49,8 +52,6 @@
 
   onMount(() => {
     mounted = true;
-    const url = $page.url;
-    if (url.searchParams.get('debug') === '1') open = true;
 
     let last = performance.now();
     let frameCount = 0;
@@ -88,8 +89,8 @@
     return () => loop.cleanup();
   });
 
-  function toggleOpen() {
-    open = !open;
+  function closePanel() {
+    setDebugMode(false); // the X turns debug mode off (unified switch)
   }
 
   // If a page registers content, default to the Page tab; otherwise
@@ -111,8 +112,8 @@
         <button
           type="button"
           class="debug-close"
-          onclick={toggleOpen}
-          title="Close panel · or set ?debug=0 in the URL to keep it closed"
+          onclick={closePanel}
+          title="Turn off debug mode (also in the menu ⚙ Debug toggle)"
           aria-label="Close debug panel">×</button
         >
       </div>

@@ -87,7 +87,7 @@
   // every URL points at the production origin, so staging/GH-Pages copies
   // canonicalise to their prod twin instead of competing for the index. Emitted
   // in every locale's copy of the page → the hreflang set is reciprocal.
-  let seoRoute = $derived(canonicalRoute($page.url.pathname, base));
+  let seoRoute = $derived(canonicalRoute(page.url.pathname, base));
   let canonicalHref = $derived(canonicalUrl(seoRoute, activeLocale));
   let hreflangs = $derived(hreflangAlternates(seoRoute));
 

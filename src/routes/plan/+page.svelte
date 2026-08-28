@@ -215,6 +215,7 @@
   });
 
   let isLandingAvailable = $derived(MISSION_TYPES.includes('LANDING'));
+  let isFlybyAvailable = $derived(MISSION_TYPES.includes('FLYBY'));
 
   // RFC-006 Option C magnifier (mobile)
   let mag = $state<{ x: number; y: number; i: number; j: number } | null>(null);
@@ -943,9 +944,11 @@
         <button
           type="button"
           class="mission-type-pill"
-          class:active={missionType === 'FLYBY'}
+          class:active={missionType === 'FLYBY' && isFlybyAvailable}
           role="radio"
           aria-checked={missionType === 'FLYBY'}
+          aria-disabled={!isFlybyAvailable}
+          disabled={!isFlybyAvailable}
           onclick={() => setMissionType('FLYBY')}
         >
           {m.plan_mission_type_flyby()}

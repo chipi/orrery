@@ -1,0 +1,66 @@
+# Fastlane — Orrery iOS beta pipeline (TestFlight).
+#
+# Usage (from the repo root):  npm run beta
+#   → runs `npm run sync:mobile` (web build + prune + cap sync) then this `beta`
+#     lane. Export the telemetry tier env FIRST (see docs/guides/
+#     mobile-build-and-deploy.md §5) so the bundle's Sentry/Umami point at prod.
+#
+# Or directly (from ios/App):  bundle exec fastlane beta --env beta
+#
+# Auth is an App Store Connect API key read from env (fastlane/.env.beta,
+# gitignored) — no Apple-ID password or 2FA. The build number is derived from
+# the latest TestFlight build so every upload is unique WITHOUT editing the
+# Xcode project (Info.plist CFBundleVersion is already $(CURRENT_PROJECT_VERSION)).
+#
+# Prereq once: create the App Store Connect app record for the bundle id, and an
+# API key (Users and Access → Integrations). See fastlane/.env.beta.example.
+
+default_platform(:ios)
+
+APP_IDENTIFIER = "io.github.chipi.orrery".freeze
+
+platform :ios do
+  desc "Archive the App target and upload it to TestFlight"
+  lane :beta do
+    asc_key = app_store_connect_api_key(
+      key_id: ENV.fetch("ASC_KEY_ID"),
+      issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+      key_filepath: ENV.fetch("ASC_KEY_PATH"),
+    )
+
+    # +1 on the highest build already on TestFlight for this version. On the very
+    # first upload there are none → initial_build_number 0, so this becomes 1.
+    next_build = latest_testflight_build_number(
+      api_key: asc_key,
+      app_identifier: APP_IDENTIFIER,
+      initial_build_number: 0,
+    ) + 1
+    UI.message("Next TestFlight build number: #{next_build}")
+
+    build_app(
+      workspace: "App.xcworkspace",
+      scheme: "App",
+      configuration: "Release",
+      export_method: "app-store",
+      # Inject the build number + let automatic signing mint the distribution
+      # profile on the fly (the machine must be signed into Xcode with an
+      # account on team 3P3PX275ZM).
+      xcargs: "CURRENT_PROJECT_VERSION=#{next_build} -allowProvisioningUpdates",
+      output_directory: "build",
+      output_name: "Orrery.ipa",
+      clean: true,
+    )
+
+    upload_to_testflight(
+      api_key: asc_key,
+      app_identifier: APP_IDENTIFIER,
+      # Return as soon as the binary is uploaded; Apple processes it async and
+      # it appears to internal testers in ~15-30 min. Flip to external + a
+      # public link in App Store Connect once a build has passed Beta App Review.
+      skip_waiting_for_build_processing: true,
+      distribute_external: false,
+    )
+
+    UI.success("Uploaded Orrery build #{next_build} to TestFlight.")
+  end
+end

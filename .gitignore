@@ -99,3 +99,13 @@ treehouse.toml
 
 # On-VPS launch-data refresh log (RFC-035) — runtime, tailed by grafana-agent
 /data-refresh.log
+
+# Fastlane / iOS TestFlight — secrets + generated artifacts (NEVER commit)
+ios/App/fastlane/.env.beta
+ios/App/fastlane/report.xml
+ios/App/fastlane/Preview.html
+ios/App/fastlane/test_output/
+ios/App/vendor/bundle/
+ios/App/.bundle/
+ios/App/build/
+*.p8

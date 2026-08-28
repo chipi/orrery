@@ -1,0 +1,4 @@
+# Fastlane app identity. TestFlight auth is an App Store Connect API key
+# (see fastlane/.env.beta.example) — no apple_id / password needed here.
+app_identifier("io.github.chipi.orrery")
+team_id("3P3PX275ZM") # Apple Developer Team ID (matches DEVELOPMENT_TEAM in the Xcode project)

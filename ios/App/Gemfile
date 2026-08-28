@@ -1,0 +1,6 @@
+# Ruby tooling for the iOS app. Fastlane drives the TestFlight beta pipeline
+# (see fastlane/Fastfile). Run `bundle install` here once, then `npm run beta`
+# from the repo root (or `bundle exec fastlane beta --env beta` from this dir).
+source "https://rubygems.org"
+
+gem "fastlane"

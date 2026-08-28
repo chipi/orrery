@@ -138,10 +138,49 @@ Keys are public (they ship in the bundle); strip the dashes from the GlitchTip k
 
 > **Coming (ADR-083, pending — iOS thread):** internal / TestFlight / simulator builds get a **runtime "target environment" switcher** (staging↔prod) that repoints assets *and* telemetry together, so you won't rebuild to flip tiers. App Store release stays **prod-locked** (no switcher). Until it lands, the per-tier `export … && sync:mobile` above is how you switch.
 
+#### Manual (Xcode)
+
 1. `npm run sync:mobile` (build:mobile + cap sync) — with the tier env exported above.
 2. `npm run open:ios` → in Xcode, select the **App** target → Signing & Capabilities → set your Apple Developer **Team** (auto-manage signing). This step needs your Apple ID; it can't be scripted here.
 3. Product → Archive → Distribute App → App Store Connect → upload.
 4. In App Store Connect, create the app record (bundle id `io.github.chipi.orrery`); it appears in **TestFlight** for internal testers.
+
+#### Automated — `npm run beta` (Fastlane)
+
+One command builds, archives, and uploads to TestFlight (Fastlane + `pilot`). No
+Xcode clicking, no Apple-ID 2FA per upload, and the build number is taken from
+the latest TestFlight build so every push is unique.
+
+**One-time setup:**
+
+1. **App record** must exist in App Store Connect for `io.github.chipi.orrery`
+   (Apps → ＋ → New App). TestFlight can't accept a build before the record exists.
+2. **App Store Connect API key** — App Store Connect → Users and Access →
+   Integrations → App Store Connect API → generate a key (role **App Manager**).
+   Download the `AuthKey_*.p8` (one download only) and store it **outside the repo**.
+3. `cp ios/App/fastlane/.env.beta.example ios/App/fastlane/.env.beta` and fill in
+   `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_PATH`. **`.env.beta` and `*.p8` are
+   gitignored — never commit them.**
+4. Install the Ruby tooling once: `cd ios/App && bundle install`.
+5. Be signed into Xcode with an account on team `3P3PX275ZM` (automatic signing
+   mints the distribution profile during the archive).
+
+**Every release after that:**
+
+```sh
+# export the telemetry tier (prod for a real beta) as in the block above, then:
+npm run beta        # = sync:mobile → fastlane beta (archive + upload)
+```
+
+The build lands in **TestFlight → Internal Testing** in ~15-30 min. To share with
+people outside your team, add them to an **External** group in App Store Connect,
+fill in the "What to test" info, submit the build for the one-time **Beta App
+Review** (~1 day), then hand out the public TestFlight link. (The lane uploads
+with `distribute_external: false`; external distribution is an App Store Connect
+toggle, not a code change.)
+
+Lane + identity live in `ios/App/fastlane/{Fastfile,Appfile}`; `ITSAppUsesNonExemptEncryption=false`
+in `Info.plist` skips the export-compliance prompt (the app uses only standard HTTPS).
 
 **Android (later):** `npm run open:android` → Build → Generate Signed App Bundle → upload the `.aab` to Play Console (Internal Testing track). Needs JDK 21.
 

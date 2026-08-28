@@ -43,16 +43,26 @@ export function lambertTOF(a: number, s: number, c: number, mu: number): number 
  * semi-major axis. Returns null if the transfer is not feasible
  * (TOF below parabolic minimum, or outside the bisection bounds).
  *
- * @param r1 heliocentric position vector at departure (AU)
- * @param r2 heliocentric position vector at arrival (AU)
- * @param tof time of flight (years)
- * @param mu heliocentric gravitational parameter (AU³/yr²; ≈ 4π² for the Sun)
+ * Units are set by the caller and must be self-consistent across all
+ * four numeric args: the heliocentric grids use AU + years + µ(AU³/yr²);
+ * the geocentric Earth→Moon grid (ADR-085) uses km + seconds + µ(km³/s²).
+ * The solver is µ-agnostic but NOT scale-agnostic — the bisection ceiling
+ * `aMax` is the one bound that must grow with the transfer scale (an
+ * Earth–Moon transfer needs a ≈ 1.8–3.5×10⁵ km, far above the AU-scale
+ * default). Pass a larger `aMax` for non-heliocentric transfers.
+ *
+ * @param r1 position vector at departure (AU or km)
+ * @param r2 position vector at arrival (same units as r1)
+ * @param tof time of flight (years or seconds, matching µ)
+ * @param mu gravitational parameter (AU³/yr² ≈ 4π² for the Sun; km³/s² for Earth)
+ * @param aMax bisection ceiling on the transfer semi-major axis (same units as r1); default AU-scale
  */
 export function solveLambert(
   r1: readonly [number, number],
   r2: readonly [number, number],
   tof: number,
   mu: number,
+  aMax: number = 200.0,
 ): LambertResult | null {
   const r1mag = Math.hypot(r1[0], r1[1]);
   const r2mag = Math.hypot(r2[0], r2[1]);
@@ -64,7 +74,7 @@ export function solveLambert(
   if (tof < tParabolic * 0.98) return null;
 
   let aLo = s / 2 + 1e-6;
-  let aHi = 200.0;
+  let aHi = aMax;
 
   // Out-of-bounds checks: lambertTOF is monotonically decreasing in a.
   if (lambertTOF(aLo, s, c, mu) < tof) return null;

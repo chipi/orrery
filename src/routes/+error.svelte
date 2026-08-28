@@ -11,7 +11,7 @@
   if it ever shows on production traffic.
 -->
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { base } from '$app/paths';
   import { browser } from '$app/environment';
 
@@ -30,16 +30,16 @@
     );
   }
 
-  // SvelteKit blocks `$page.url.search` access during prerender: the
+  // SvelteKit blocks `page.url.search` access during prerender: the
   // 404.html fallback is prerendered once at build time without a
   // search context, and throws if any reactive expression touches
   // `.search`. Gate behind `browser` so the prerender pass takes the
   // null branch and the runtime hydration computes the suggestion
   // once the real error URL is known.
   let suggestion = $derived(
-    browser ? suggestedCorrection($page.url.pathname, $page.url.search) : null,
+    browser ? suggestedCorrection(page.url.pathname, page.url.search) : null,
   );
-  let pathSuffix = $derived(browser ? $page.url.pathname + $page.url.search : $page.url.pathname);
+  let pathSuffix = $derived(browser ? page.url.pathname + page.url.search : page.url.pathname);
 </script>
 
 <svelte:head>
@@ -48,7 +48,7 @@
 
 <main class="error-shell">
   <div class="error-card">
-    <p class="error-status">{$page.status}</p>
+    <p class="error-status">{page.status}</p>
     <h1 class="error-title">Page not found</h1>
     <p class="error-path">
       <code>{pathSuffix}</code>

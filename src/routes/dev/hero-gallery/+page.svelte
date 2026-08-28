@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import * as THREE from 'three';
   import { installHeroEnvironment } from '$lib/three/hero-materials';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
@@ -228,7 +228,7 @@
     ],
   };
 
-  const family = $derived($page.url.searchParams.get('family') ?? 'spacecraft');
+  const family = $derived(page.url.searchParams.get('family') ?? 'spacecraft');
   const items = $derived(FAMILIES[family] ?? []);
 
   let cells: HTMLDivElement[] = $state([]);

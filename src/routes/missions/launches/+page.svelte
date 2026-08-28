@@ -11,7 +11,7 @@
    */
 
   import { onMount, untrack } from 'svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import {
@@ -193,18 +193,18 @@
     if (filterState.year !== 'ALL') params.set('year', filterState.year);
     const qs = params.toString();
     const target = `${base}/missions/launches${qs ? `?${qs}` : ''}`;
-    if (target !== $page.url.pathname + $page.url.search) {
+    if (target !== page.url.pathname + page.url.search) {
       goto(target, { replaceState: true, keepFocus: true, noScroll: true });
     }
   }
 
   onMount(() => {
-    applyUrl($page.url);
+    applyUrl(page.url);
     void loadForMode(mode);
   });
 
   $effect(() => {
-    const url = $page.url;
+    const url = page.url;
     untrack(() => {
       applyUrl(url);
       void loadForMode(mode);

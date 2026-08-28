@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { setLocale } from '$lib/paraglide/runtime';
   import { SUPPORTED_LOCALES, localeFromPage, type LocaleCode } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import { track } from '$lib/analytics';
 
   let open = $state(false);
-  let active = $derived<LocaleCode>(localeFromPage($page));
+  let active = $derived<LocaleCode>(localeFromPage(page));
   let activeEntry = $derived(
     SUPPORTED_LOCALES.find((l) => l.code === active) ?? SUPPORTED_LOCALES[0],
   );

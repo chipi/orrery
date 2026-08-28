@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy, untrack } from 'svelte';
   import { exploreContext } from '$lib/explore-context';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { afterNavigate, goto } from '$app/navigation';
   import { safeReplaceState } from '$lib/safe-replace-state';
   import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
@@ -385,7 +385,7 @@
   $effect(() => {
     void exploreRegimes;
     if (exploreRegimes.length === 0) return;
-    const id = $page.url.searchParams.get('regime');
+    const id = page.url.searchParams.get('regime');
     if (id && exploreRegimes.some((r) => r.id === id)) {
       selectedExploreRegimeId = id;
       exploreRegimePanelOpen = true;
@@ -426,7 +426,7 @@
   }
   function openCraftMission(missionId: string): void {
     craftPanelOpen = false;
-    void iconic.openMission(missionId, localeFromPage($page));
+    void iconic.openMission(missionId, localeFromPage(page));
   }
 
   /** Visibility-layer master toggles (NOT the per-body layer flags —
@@ -863,7 +863,7 @@
   // 'medium' default; onMount updates it to the actually-resolved tier.
   let activeQualityTier: QualityTier = $state('medium');
   $effect(() => {
-    const id = $page.url.searchParams.get('mission');
+    const id = page.url.searchParams.get('mission');
     if (!id) {
       overlayMission = null;
       overlayArcPx = [];
@@ -875,7 +875,7 @@
       const idx = await getMissionIndex();
       const entry = idx.find((m) => m.id === id);
       if (!entry || cancelled) return;
-      const mission = await getMission(id, entry.dest, localeFromPage($page));
+      const mission = await getMission(id, entry.dest, localeFromPage(page));
       if (!mission || cancelled) return;
       const depDay = dateToSimDay(mission.departure_date) ?? 0;
       const earthDep = earthPos(depDay);
@@ -1412,7 +1412,7 @@
     // when planetById updates from empty Map → 9 entries.
     void planetById;
     void smallBodyById;
-    const id = $page.url.searchParams.get('id');
+    const id = page.url.searchParams.get('id');
     // The ?id= routing ladder — incl. the Pluto-in-two-catalogues nuance (it lives in
     // both planets.json + small-bodies.json; the small-body surface's curated
     // science_sections win for deep-link landings) — lives in scale-shell-controller,
@@ -1464,14 +1464,14 @@
     const id = openBodyUrlId;
     if (id) everOpenedBody = true;
     untrack(() => {
-      const url = new URL($page.url);
+      const url = new URL(page.url);
       const cur = url.searchParams.get('id') ?? null;
       if (cur !== id && (id || everOpenedBody)) {
         // Never clobber a fresh ?id= deep-link before the resolver opens it —
         // only clear once a body has actually been open (a real user close).
         if (id) url.searchParams.set('id', id);
         else url.searchParams.delete('id');
-        safeReplaceState(url, $page.state);
+        safeReplaceState(url, page.state);
       }
       // Record which card is on screen for the back-chain (the shallow
       // replaceState above doesn't reach SvelteKit's nav.from).
@@ -1487,7 +1487,7 @@
   // value, which must not re-fire the resolver).
   let lastGoto: string | null = null;
   $effect(() => {
-    const g = $page.url.searchParams.get('goto');
+    const g = page.url.searchParams.get('goto');
     // gotoStarFn is set in onMount and isn't reactive, so a cold-load ?goto= is
     // resolved directly in onMount; this handles later in-session URL changes.
     if (g && g !== lastGoto && gotoStarFn) {
@@ -1502,13 +1502,13 @@
     const id = openStarUrlId;
     if (id) everOpenedStar = true;
     untrack(() => {
-      const url = new URL($page.url);
+      const url = new URL(page.url);
       const cur = url.searchParams.get('goto') ?? null;
       if (cur !== id && (id || everOpenedStar)) {
         if (id) url.searchParams.set('goto', id);
         else url.searchParams.delete('goto');
         lastGoto = id; // keep the resolver from re-firing on our own write
-        safeReplaceState(url, $page.state);
+        safeReplaceState(url, page.state);
       }
     });
   });
@@ -1516,8 +1516,8 @@
   // v2 Slice 2 — ?system=<hostId>[&planet=<planetId>] deep-links into a BodyScene.
   let lastSystem: string | null = null;
   $effect(() => {
-    const s = $page.url.searchParams.get('system');
-    const pl = $page.url.searchParams.get('planet');
+    const s = page.url.searchParams.get('system');
+    const pl = page.url.searchParams.get('planet');
     if (s && s !== lastSystem && enterSystemFn) {
       lastSystem = s;
       untrack(() => enterSystemFn?.(s, pl ?? undefined));
@@ -1531,7 +1531,7 @@
     const planet = panelState.exoplanet && selectedExoplanet ? selectedExoplanet.planet.id : null;
     if (host) everEnteredSystem = true;
     untrack(() => {
-      const url = new URL($page.url);
+      const url = new URL(page.url);
       const curSys = url.searchParams.get('system') ?? null;
       const curPl = url.searchParams.get('planet') ?? null;
       if (curSys !== host || curPl !== planet) {
@@ -1540,7 +1540,7 @@
         if (host && planet) url.searchParams.set('planet', planet);
         else url.searchParams.delete('planet');
         lastSystem = host; // don't re-fire the resolver on our own write
-        if (host || everEnteredSystem) safeReplaceState(url, $page.state);
+        if (host || everEnteredSystem) safeReplaceState(url, page.state);
       }
     });
   });
@@ -1548,7 +1548,7 @@
   // v2 Slice 4 — ?deepsky=<designation> deep-links into the immersive view.
   let lastDeepSky: string | null = null;
   $effect(() => {
-    const d = $page.url.searchParams.get('deepsky');
+    const d = page.url.searchParams.get('deepsky');
     if (d && d !== lastDeepSky && deepSkyDeepLinkFn) {
       lastDeepSky = d;
       untrack(() => deepSkyDeepLinkFn?.(d));
@@ -1561,7 +1561,7 @@
     const d = deepSkyUrlDesignation;
     if (d) everImmersedDeepSky = true;
     untrack(() => {
-      const url = new URL($page.url);
+      const url = new URL(page.url);
       const cur = url.searchParams.get('deepsky') ?? null;
       if (cur !== d && (d || everImmersedDeepSky)) {
         if (d) url.searchParams.set('deepsky', d);
@@ -1570,7 +1570,7 @@
         // clear, or a transient URL write (e.g. the gateway's ?system write
         // racing our ?deepsky removal) would re-fire the resolver + re-immerse.
         if (d) lastDeepSky = d;
-        safeReplaceState(url, $page.state);
+        safeReplaceState(url, page.state);
       }
     });
   });
@@ -1578,7 +1578,7 @@
   // v2 Slice 5 — ?galaxy=<pinId> deep-links into the Milky Way + selects a pin.
   let lastGalaxy: string | null = null;
   $effect(() => {
-    const g = $page.url.searchParams.get('galaxy');
+    const g = page.url.searchParams.get('galaxy');
     if (g && g !== lastGalaxy && mwDeepLinkFn) {
       lastGalaxy = g;
       untrack(() => mwDeepLinkFn?.(g));
@@ -1591,13 +1591,13 @@
     const g = galaxyUrlId;
     if (g) everEnteredGalaxy = true;
     untrack(() => {
-      const url = new URL($page.url);
+      const url = new URL(page.url);
       const cur = url.searchParams.get('galaxy') ?? null;
       if (cur !== g && (g || everEnteredGalaxy)) {
         if (g) url.searchParams.set('galaxy', g);
         else url.searchParams.delete('galaxy');
         if (g) lastGalaxy = g; // don't re-fire the resolver on our own write
-        safeReplaceState(url, $page.state);
+        safeReplaceState(url, page.state);
       }
     });
   });
@@ -1605,7 +1605,7 @@
   // v2 Slice 6 — ?bh=<id> deep-links into a black hole's lensing render.
   let lastBh: string | null = null;
   $effect(() => {
-    const v = $page.url.searchParams.get('bh');
+    const v = page.url.searchParams.get('bh');
     if (v && v !== lastBh && bhDeepLinkFn) {
       lastBh = v;
       untrack(() => bhDeepLinkFn?.(v));
@@ -1618,13 +1618,13 @@
     const v = bhUrlId;
     if (v) everEnteredBh = true;
     untrack(() => {
-      const url = new URL($page.url);
+      const url = new URL(page.url);
       const cur = url.searchParams.get('bh') ?? null;
       if (cur !== v && (v || everEnteredBh)) {
         if (v) url.searchParams.set('bh', v);
         else url.searchParams.delete('bh');
         if (v) lastBh = v;
-        safeReplaceState(url, $page.state);
+        safeReplaceState(url, page.state);
       }
     });
   });
@@ -1634,15 +1634,15 @@
   // staleness once you zoom onward).
   let lastContextJump: string | null = null;
   $effect(() => {
-    const c = $page.url.searchParams.get('context');
+    const c = page.url.searchParams.get('context');
     if (c && c !== lastContextJump && contextDeepLinkFn) {
       lastContextJump = c;
       untrack(() => {
         void contextDeepLinkFn?.(c).then(() => {
-          const url = new URL($page.url);
+          const url = new URL(page.url);
           if (url.searchParams.get('context') === c) {
             url.searchParams.delete('context');
-            safeReplaceState(url, $page.state);
+            safeReplaceState(url, page.state);
           }
         });
       });
@@ -1654,8 +1654,8 @@
   // trajectories already visible. `?focus=saturn` additionally selects
   // Saturn so the Cassini orbital tour is in view at panel zoom.
   $effect(() => {
-    const paths = $page.url.searchParams.get('paths');
-    const focus = $page.url.searchParams.get('focus');
+    const paths = page.url.searchParams.get('paths');
+    const focus = page.url.searchParams.get('focus');
     if (paths === '1') layers.paths = true;
     if (focus && planetById.has(focus)) selectPlanet(focus);
   });
@@ -1731,7 +1731,7 @@
     }
 
     // Async-load localised planet + sun data; safe to run alongside scene setup.
-    const initialLocale = localeFromPage($page);
+    const initialLocale = localeFromPage(page);
     getPlanets(initialLocale)
       .then((p) => {
         localizedPlanets = p;
@@ -2529,7 +2529,7 @@
       stopLensWatch,
       stopHoverLayerWatch,
       getReducedMotion: () => reducedMotion,
-      getPage: () => $page,
+      getPage: () => page,
     };
     const exploreHost = createExploreSceneHost(bridge, deps);
     closeExoplanetFn = exploreHost.closeExoplanetFn;
@@ -3228,8 +3228,8 @@
             aria-pressed={iconic.state.selectedId === entry.mission_id}
             onclick={() =>
               INTERSTELLAR_CRAFT.has(entry.mission_id)
-                ? openMessageCraft(entry.mission_id, localeFromPage($page))
-                : iconic.selectMission(entry.mission_id, localeFromPage($page))}
+                ? openMessageCraft(entry.mission_id, localeFromPage(page))
+                : iconic.selectMission(entry.mission_id, localeFromPage(page))}
             onkeydown={(e) => onLegendKeydown(e, i)}
             onmouseenter={() => {
               iconic.state.hoveredId = entry.mission_id;
@@ -3427,9 +3427,9 @@
           aria-pressed={iconic.state.selectedId === entry.mission_id}
           onclick={() => {
             if (INTERSTELLAR_CRAFT.has(entry.mission_id)) {
-              void openMessageCraft(entry.mission_id, localeFromPage($page));
+              void openMessageCraft(entry.mission_id, localeFromPage(page));
             } else {
-              iconic.selectMission(entry.mission_id, localeFromPage($page));
+              iconic.selectMission(entry.mission_id, localeFromPage(page));
             }
             close();
           }}

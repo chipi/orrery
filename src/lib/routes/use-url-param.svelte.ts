@@ -35,8 +35,7 @@
 
 import { browser } from '$app/environment';
 import { goto } from '$app/navigation';
-import { page } from '$app/stores';
-import { get } from 'svelte/store';
+import { page } from '$app/state';
 import { untrack } from 'svelte';
 
 // ─── Pure helpers (exported for testability) ────────────────────────
@@ -128,29 +127,26 @@ export function useUrlParam<T>(
   // Initial read — on the server (prerender), $page.url has no search params
   // for runtime users, so this collapses to `parse(null)` and lets the caller
   // pick its own default. On the client, take the live URL via $page store.
-  const initialRaw = browser ? get(page).url.searchParams.get(key) : null;
+  const initialRaw = browser ? page.url.searchParams.get(key) : null;
   const state = $state<{ current: T }>({ current: parse(initialRaw) });
   // Track what we last pushed to the URL so the state→URL effect can short-
   // circuit when the state matches the URL already (avoids the URL→state→URL
   // self-fire that would otherwise need a manual untrack at every caller).
   let lastSerialized = serialize(state.current);
 
-  // URL → state. The page store fires on every navigation (incl. browser
-  // back / forward / external goto). Subscribing manually inside an $effect
-  // gives us deterministic ordering against the state→URL effect below; an
-  // alternative `$state` mirror of the store + a $derived would be louder
-  // without buying anything since the inner read is wrapped in untrack().
+  // URL → state. `page.url` (rune-backed, $app/state) is fine-grained reactive:
+  // reading it here re-runs this effect on every navigation (incl. browser
+  // back / forward / external goto) without re-firing when unrelated page
+  // fields change. The write is wrapped in untrack() so it can't self-fire the
+  // state→URL effect below.
   $effect(() => {
-    const unsub = page.subscribe((p) => {
-      const next = parse(p.url.searchParams.get(key));
-      untrack(() => {
-        if (!Object.is(state.current, next)) {
-          state.current = next;
-          lastSerialized = serialize(next);
-        }
-      });
+    const next = parse(page.url.searchParams.get(key));
+    untrack(() => {
+      if (!Object.is(state.current, next)) {
+        state.current = next;
+        lastSerialized = serialize(next);
+      }
     });
-    return unsub;
   });
 
   // State → URL. Debounced — slider scrub use case fires this many times per

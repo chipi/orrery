@@ -24,7 +24,7 @@
   import RegimePanel from '$lib/components/RegimePanel.svelte';
   import { base } from '$app/paths';
   import { onMount } from 'svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { goto } from '$app/navigation';
   import { makeEarthLaunchSitesConfig } from './earth-launch-sites-config';
   import { getEarthLaunchSites, getEarthLaunchSiteGallery } from '$lib/earth-launch-site-adapter';
@@ -126,7 +126,7 @@
   $effect(() => {
     void regimes;
     if (regimes.length === 0) return;
-    const id = $page.url.searchParams.get('regime');
+    const id = page.url.searchParams.get('regime');
     if (id && regimes.some((r) => r.id === id)) {
       selectedRegimeId = id;
       regimePanelOpen = true;

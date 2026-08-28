@@ -1,7 +1,7 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { base } from '$app/paths';
   import { assetOrigin, assetUrl } from '$lib/asset-url';
   import { trackMissionView, trackGalleryImageOpen } from '$lib/analytics';
@@ -96,7 +96,7 @@
       crossSite = null;
       // Popularity signal: a mission detail was opened. `open` gates it so
       // a prefetched/derived mission that never shows isn't counted.
-      if (open) trackMissionView(mission.id, $page.url.pathname);
+      if (open) trackMissionView(mission.id, page.url.pathname);
       void getMissionGallery(mission.id).then((urls) => {
         if (mission && mission.id === lastId) gallery = urls;
       });
@@ -111,7 +111,7 @@
         sites.find((s) => s.mission_id === mission!.id) ??
         sites.find((s) => s.id === mission!.id) ??
         null;
-      const loc = localeFromPage($page);
+      const loc = localeFromPage(page);
       if (mission.dest === 'MARS') {
         void getMarsSites(loc).then((list) => {
           if (mission && mission.id === lastId) crossSite = findSite(list);
@@ -202,7 +202,7 @@
   }
   function fmtInt(value: number | null | undefined): string {
     if (value == null) return '—';
-    return formatNumber(Math.round(value), localeFromPage($page));
+    return formatNumber(Math.round(value), localeFromPage(page));
   }
 
   // Map an event type enum to its localised label so the EVENTS list

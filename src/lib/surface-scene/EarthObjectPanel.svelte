@@ -14,7 +14,7 @@
    * via $effect — same behaviour as the original EarthOrbitalScene
    * implementation.
    */
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { base } from '$app/paths';
   import Panel from '$lib/components/Panel.svelte';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
@@ -148,7 +148,7 @@
             {m.earth_alt_km({
               value: formatNumber(
                 selected.altitude_km ?? selected.earth_distance_km,
-                localeFromPage($page),
+                localeFromPage(page),
               ),
             })}
           </div>

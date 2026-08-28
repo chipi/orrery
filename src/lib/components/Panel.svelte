@@ -2,7 +2,7 @@
   import { fly } from 'svelte/transition';
   import type { Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { cardChain, goBackCard, isCardUrl } from '$lib/card-chain.svelte';
 
   type Props = {
@@ -52,7 +52,7 @@
 
   // Back affordance (#29): only when we arrived here by following an in-card
   // link (chain non-empty) AND this view is itself a ?id= detail card.
-  let canGoBack = $derived(cardChain.stack.length > 0 && isCardUrl($page.url));
+  let canGoBack = $derived(cardChain.stack.length > 0 && isCardUrl(page.url));
 
   $effect(() => {
     if (!open) return;

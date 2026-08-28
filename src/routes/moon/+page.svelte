@@ -12,7 +12,7 @@
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
   import RegimePanel from '$lib/components/RegimePanel.svelte';
   import { onMount } from 'svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
@@ -208,7 +208,7 @@
   $effect(() => {
     void regimes;
     if (regimes.length === 0) return;
-    const id = $page.url.searchParams.get('regime');
+    const id = page.url.searchParams.get('regime');
     if (id && regimes.some((r) => r.id === id)) {
       selectedRegimeId = id;
       regimePanelOpen = true;

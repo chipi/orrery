@@ -3,8 +3,7 @@
   import { onMount, onDestroy } from 'svelte';
   import { audio } from '$lib/audio-state.svelte';
   import { trackItemClick } from '$lib/analytics';
-  import { get } from 'svelte/store';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
@@ -193,7 +192,7 @@
     requestIssMaterialRefresh();
   });
 
-  const loc = $derived(localeFromPage($page));
+  const loc = $derived(localeFromPage(page));
 
   $effect(() => {
     const L = loc;
@@ -584,7 +583,7 @@
   }
 
   $effect(() => {
-    const id = $page.url.searchParams.get('module');
+    const id = page.url.searchParams.get('module');
     if (modules.length === 0 && visitors.length === 0) return;
     if (!id) {
       ignoreModuleParamUntilClear = false;
@@ -1277,7 +1276,7 @@
 
   onMount(() => {
     if (!browser) return;
-    const u = get(page).url;
+    const u = page.url;
     // Default the index drawer open on pointer/desktop (room for both canvas +
     // sidebar). Closed on touch to keep the canvas unobstructed; user can hit
     // INDEX to peek.

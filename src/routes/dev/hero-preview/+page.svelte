@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import * as THREE from 'three';
   import { buildHeroDemoCraft } from '$lib/three/hero-demo';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
@@ -47,7 +47,7 @@
 
     const camera = new THREE.PerspectiveCamera(30, 1, 0.01, 100);
 
-    const which = $page.url.searchParams.get('model');
+    const which = page.url.searchParams.get('model');
     const model = which
       ? (HOTSPOT[which]?.() ?? buildInterplanetarySpacecraft(which) ?? buildHeroDemoCraft())
       : buildHeroDemoCraft();

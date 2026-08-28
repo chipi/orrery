@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy, untrack } from 'svelte';
   import { goto } from '$app/navigation';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { base } from '$app/paths';
   import { dvToRGB, dvToCss, dayToLongDate, dayToShortDate } from '$lib/porkchop';
   import { trackFilterChange } from '$lib/analytics';
@@ -339,7 +339,7 @@
       // default 'mars'. Without this, loading /plan?dest=jupiter would
       // strip ?dest before it takes effect. Same three-tier guard as the
       // dep/tof preservation below. (#312 — dormant under the Mars-only cut.)
-      const urlDest = ($page.url.searchParams.get('dest') ?? '').toLowerCase();
+      const urlDest = (page.url.searchParams.get('dest') ?? '').toLowerCase();
       if ((DESTINATION_IDS as string[]).includes(urlDest) && urlDest !== 'mars') {
         params.set('dest', urlDest);
       }
@@ -365,8 +365,8 @@
       params.set('dep', String(Math.round(pendingSelectedDeepLink.dep)));
       params.set('tof', String(Math.round(pendingSelectedDeepLink.tof)));
     } else {
-      const urlDep = $page.url.searchParams.get('dep');
-      const urlTof = $page.url.searchParams.get('tof');
+      const urlDep = page.url.searchParams.get('dep');
+      const urlTof = page.url.searchParams.get('tof');
       if (urlDep != null && urlTof != null) {
         params.set('dep', urlDep);
         params.set('tof', urlTof);
@@ -381,7 +381,7 @@
     // Spanish" smoke after the 2026-06-09 Mars-only-/plan regression
     // (commit 47b35a024).
     const target = `${localizeHref(`${base}/plan`)}${qs ? `?${qs}` : ''}`;
-    if (target !== $page.url.pathname + $page.url.search) {
+    if (target !== page.url.pathname + page.url.search) {
       goto(target, { replaceState: true, keepFocus: true, noScroll: true });
     }
   }
@@ -848,15 +848,15 @@
 
   // Re-sync from URL on back/forward navigation per the /missions pattern.
   $effect(() => {
-    applyUrlFilters($page.url);
+    applyUrlFilters(page.url);
   });
 
   onMount(() => {
-    applyUrlFilters($page.url);
+    applyUrlFilters(page.url);
     // Pre-warm fleet hero overrides for the rocket-photo reference shot.
     void loadHeroOverrides('fleet');
 
-    getRockets(localeFromPage($page)).then((list) => {
+    getRockets(localeFromPage(page)).then((list) => {
       rocketList = list;
       // Initial pick: no porkchop cell selected yet, so use a typical
       // Mars-class ∆v as the seed (~10 km/s). The $effect that watches

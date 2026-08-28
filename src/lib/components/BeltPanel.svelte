@@ -18,7 +18,7 @@
   import ImageCredit from './ImageCredit.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import * as m from '$lib/paraglide/messages';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { base } from '$app/paths';
   import { goto } from '$app/navigation';
   import { localeFromPage, DEFAULT_LOCALE } from '$lib/locale';
@@ -26,7 +26,7 @@
   import type { ScienceTabId } from '$types/science';
   import { getBelts, getBeltGallery, getBeltI18n, type BeltEntry, type BeltI18n } from '$lib/data';
 
-  const loc = $derived(localeFromPage($page));
+  const loc = $derived(localeFromPage(page));
 
   // 2026-06-21 — LIBRARY tab dropped; entry.library[] now renders at
   // the bottom of OVERVIEW (BeltPanel has no TECHNICAL tab; its

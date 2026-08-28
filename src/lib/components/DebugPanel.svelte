@@ -13,7 +13,7 @@
   the generic Perf / i18n / Route tabs show.
 -->
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { onMount } from 'svelte';
   import { getDebugPanelContext } from '$lib/components/debug-panel-context';
   import { createAnimateLoop } from '$lib/three/animate-loop';
@@ -243,15 +243,15 @@
         <div class="debug-section">
           <div class="debug-row">
             <span class="debug-key">Path</span>
-            <span class="debug-val">{$page.url.pathname}</span>
+            <span class="debug-val">{page.url.pathname}</span>
           </div>
           <div class="debug-row">
             <span class="debug-key">Search</span>
-            <span class="debug-val">{$page.url.search || '—'}</span>
+            <span class="debug-val">{page.url.search || '—'}</span>
           </div>
           <div class="debug-row">
             <span class="debug-key">Hash</span>
-            <span class="debug-val">{$page.url.hash || '—'}</span>
+            <span class="debug-val">{page.url.hash || '—'}</span>
           </div>
         </div>
       {:else if activeTab === 'rendering' && renderingReg}

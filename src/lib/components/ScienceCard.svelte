@@ -17,7 +17,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import * as m from '$lib/paraglide/messages';
   import { getScienceSection } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
@@ -43,7 +43,7 @@
   let { tab, section, heading, expanded = true, why }: Props = $props();
 
   let sectionData = $state<ScienceSection | null>(null);
-  const locale = $derived(localeFromPage($page));
+  const locale = $derived(localeFromPage(page));
 
   onMount(async () => {
     sectionData = await getScienceSection(tab, section, locale);

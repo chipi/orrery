@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
   import { setCurrentCard, trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
@@ -241,7 +241,7 @@
     if (filterState.q.trim() !== '') params.set('q', filterState.q.trim());
     const qs = params.toString();
     const target = `${base}/missions${qs ? `?${qs}` : ''}`;
-    if (target !== $page.url.pathname + $page.url.search) {
+    if (target !== page.url.pathname + page.url.search) {
       // replaceState avoids littering the back-button history with
       // every filter toggle.
       goto(target, { replaceState: true, keepFocus: true, noScroll: true });
@@ -314,7 +314,7 @@
     // and an in-card link out (e.g. the launcher → /fleet?id=) would start a
     // fresh chain with no back button. Register it directly, same as the
     // explore / surface shallow-overlay hosts do.
-    const cardUrl = new URL($page.url);
+    const cardUrl = new URL(page.url);
     cardUrl.searchParams.set('id', id);
     setCurrentCard(cardUrl);
   }
@@ -344,7 +344,7 @@
 
   // ─── Load ────────────────────────────────────────────────────────
   onMount(() => {
-    applyUrlFilters($page.url);
+    applyUrlFilters(page.url);
     // Pre-warm the hero overrides cache so the first paint of mission
     // cards picks up any Marko-blessed override slot. Falls back to
     // `<id>/01.jpg` silently when no override file exists; safe to
@@ -355,7 +355,7 @@
   // Re-fetch when the URL `?lang=` changes so locale switches replace
   // the merged mission overlay set without a full page reload.
   $effect(() => {
-    const locale = localeFromPage($page);
+    const locale = localeFromPage(page);
     missionsRequest = rdLoading();
     getMissionsForLibrary(locale)
       .then((list) => {
@@ -363,7 +363,7 @@
         // Apply ?id= deep-link after data lands so the cross-link from
         // /mars or /moon ("FULL MISSION CARD" chip) opens the right
         // mission's panel pre-selected.
-        const idParam = $page.url.searchParams.get('id');
+        const idParam = page.url.searchParams.get('id');
         if (idParam && list.some((mission) => mission.id === idParam)) {
           selectedId = idParam;
           panelOpen = true;
@@ -378,7 +378,7 @@
   // Keep filters in sync if the user navigates with the back/forward
   // button (URL changes without onMount re-firing).
   $effect(() => {
-    applyUrlFilters($page.url);
+    applyUrlFilters(page.url);
   });
 </script>
 

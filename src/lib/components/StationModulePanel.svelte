@@ -4,7 +4,7 @@
   import { base } from '$app/paths';
   import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import type { StationModule } from '$types/station';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
@@ -68,7 +68,7 @@
   });
   let hasLinks = $derived((mod?.links?.length ?? 0) > 0);
 
-  const loc = $derived(localeFromPage($page));
+  const loc = $derived(localeFromPage(page));
   // Status + label vocabulary is shared between /iss and /tiangong; the
   // existing iss_* Paraglide keys are reused as the station vocabulary.
   // A follow-up rename to station_* is tracked under PRD-011 cleanup.

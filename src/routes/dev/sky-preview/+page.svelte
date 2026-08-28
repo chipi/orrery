@@ -11,7 +11,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import * as THREE from 'three';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { createSkyScene, type SkySceneHandle } from '$lib/ar/sky-scene';
   import type { SkyView } from '$lib/ar/sky-view';
   import { skyPositions } from '$lib/astronomy';
@@ -22,7 +22,7 @@
   let info = $state('');
 
   onMount(async () => {
-    const p = $page.url.searchParams;
+    const p = page.url.searchParams;
     const num = (k: string, d: number) => {
       const raw = p.get(k);
       const v = Number(raw);

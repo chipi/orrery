@@ -5,7 +5,7 @@
    * RouteCardGrid of the group's destinations. The nav links straight here
    * instead of opening a dropdown (2026-07 IA: dropdown → hub).
    */
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { base } from '$app/paths';
   import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
   import RouteCardGrid from '$lib/components/RouteCardGrid.svelte';
@@ -32,7 +32,7 @@
     gridAudioStage: string;
   } = $props();
 
-  const activeLocale = $derived(localeFromPage($page));
+  const activeLocale = $derived(localeFromPage(page));
 
   function withLang(path: string): string {
     if (activeLocale === DEFAULT_LOCALE) return path;

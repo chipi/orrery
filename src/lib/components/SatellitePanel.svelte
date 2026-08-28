@@ -12,7 +12,7 @@
    * overlay loader for translated content.
    */
   import Panel from './Panel.svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { formatKm } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
@@ -29,7 +29,7 @@
   import ScienceCard from './ScienceCard.svelte';
   import type { ScienceTabId } from '$types/science';
 
-  const loc = $derived(localeFromPage($page));
+  const loc = $derived(localeFromPage(page));
 
   // 2026-06-21 — LIBRARY tab dropped; entry.library[] now renders at
   // the bottom of TECHNICAL, matching the B2 pattern adopted across

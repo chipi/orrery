@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount, untrack } from 'svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
   import { trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
@@ -236,7 +236,7 @@
   }
 
   function syncUrl() {
-    const url = new URL($page.url);
+    const url = new URL(page.url);
     const params = url.searchParams;
     if (categoryFilter === 'ALL') params.delete('category');
     else params.set('category', categoryFilter);
@@ -309,7 +309,7 @@
 
   function openEntry(entry: FleetIndexEntry) {
     cue('select');
-    const url = new URL($page.url);
+    const url = new URL(page.url);
     url.searchParams.set('id', entry.id);
     goto(url.pathname + `?${url.searchParams}`, {
       replaceState: false,
@@ -333,7 +333,7 @@
   function closePanel() {
     panelOpen = false;
     selectedEntry = null;
-    const url = new URL($page.url);
+    const url = new URL(page.url);
     url.searchParams.delete('id');
     goto(url.pathname + (url.searchParams.toString() ? `?${url.searchParams}` : ''), {
       replaceState: true,
@@ -357,7 +357,7 @@
   });
 
   onMount(async () => {
-    applyUrl($page.url);
+    applyUrl(page.url);
     // Pre-warm hero override cache so card covers pick up override
     // slots on first paint; safe to fire-and-forget.
     void loadHeroOverrides('fleet');
@@ -369,7 +369,7 @@
     }
 
     // Pre-select an entry if ?id= is in the URL on first visit.
-    const id = $page.url.searchParams.get('id');
+    const id = page.url.searchParams.get('id');
     if (id) void loadEntry(id);
   });
 
@@ -379,7 +379,7 @@
     // tracked here they would feed back through syncUrl → goto → page
     // store and cause an effect_update_depth_exceeded loop on first
     // load with `?id=` deep-links. untrack isolates the write batch.
-    const url = $page.url;
+    const url = page.url;
     untrack(() => {
       applyUrl(url);
       const id = url.searchParams.get('id');

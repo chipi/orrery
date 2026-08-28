@@ -3,7 +3,7 @@
   import { initOffline } from '$lib/native/offline/offline-download.svelte';
   import { base } from '$app/paths';
   import { localizeHref } from '$lib/paraglide/runtime';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { goto } from '$app/navigation';
   import { browser } from '$app/environment';
   import { initViewport } from '$lib/viewport.svelte';
@@ -80,7 +80,7 @@
   // patch (`0.8.0-wip` → `0.8-wip`). Shared helper so the Nav mirror can't
   // drift. Raw `__APP_VERSION__` stays for Sentry releases + analytics.
   const displayVersion = formatDisplayVersion(__APP_VERSION__);
-  let activeLocale = $derived(localeFromPage($page));
+  let activeLocale = $derived(localeFromPage(page));
 
   // SEO — canonical + hreflang for the current page. The route is reduced to
   // its un-localized form (base + locale prefix stripped, query dropped) and
@@ -134,7 +134,7 @@
   const handledAudioIds = new Set<string>();
   $effect(() => {
     if (!browser) return;
-    const id = $page.url.searchParams.get('audio');
+    const id = page.url.searchParams.get('audio');
     if (!id) return;
     if (handledAudioIds.has(id)) return;
     handledAudioIds.add(id);
@@ -143,13 +143,13 @@
       await audioRegistry.load();
       const ep = audioRegistry.byId(id);
       if (!ep) return;
-      const here = $page.url.pathname.replace(/\/+$/, '') || '/';
+      const here = page.url.pathname.replace(/\/+$/, '') || '/';
       const target = ep.route ? (base + ep.route).replace(/\/+$/, '') || '/' : null;
       if (target && target !== here) {
         // Re-arm so the post-nav effect actually plays. Carry the
         // ?audio= param onto the target URL so the layout re-evaluates.
         handledAudioIds.delete(id);
-        const destUrl = new URL($page.url);
+        const destUrl = new URL(page.url);
         destUrl.pathname = target;
         await goto(destUrl.pathname + destUrl.search, { noScroll: true, keepFocus: true });
         return;

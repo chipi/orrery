@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy, untrack } from 'svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { afterNavigate, replaceState } from '$app/navigation';
   import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
   import { audio } from '$lib/audio-state.svelte';
@@ -711,7 +711,7 @@
   // The remaining initial-mount work is the debug-flag read +
   // sidecar probe.
   onMount(() => {
-    showDebug = $page.url.searchParams.get('debug') === '1';
+    showDebug = page.url.searchParams.get('debug') === '1';
     // Sidecar fetch probe — fills the overlay's sidecarStatus. Base-relative so
     // it resolves under a non-root deploy base (e.g. GitHub Pages /orrery/).
     fetch(`${base}/data/surface-hotspots.json`)
@@ -852,7 +852,7 @@
       loadPanelData({
         siteId: selected.id,
         missionId: selected.mission_id,
-        locale: localeFromPage($page),
+        locale: localeFromPage(page),
         fetchGallery: loadGallery,
         isStillCurrent: () => selected != null && selected.id === lastSelectedId,
         onGallery: (urls) => (panelGallery = urls),
@@ -935,7 +935,7 @@
         selected = null;
         autoSpin = false;
         faceCameraAtObject?.(o);
-        trackItemClick('marker', id, $page.url.pathname);
+        trackItemClick('marker', id, page.url.pathname);
       }
       return;
     }
@@ -946,7 +946,7 @@
       // #380 — leave route-view when switching sites; the new selection's
       // fly-in below takes over the camera.
       routeViewActive = false;
-      trackItemClick('marker', id, $page.url.pathname);
+      trackItemClick('marker', id, page.url.pathname);
       // Build this rover's deferred route imagery NOW (before the fly-in
       // below reads its routeViewCenters framing). No-op for non-rover
       // sites and for rovers already built (#363 perf).
@@ -985,7 +985,7 @@
     const card = openSurfaceCard;
     if (card) everOpenedSurfaceCard = true;
     untrack(() => {
-      const url = new URL($page.url);
+      const url = new URL(page.url);
       const wantSite = card?.param === 'site' ? card.id : null;
       const wantObj = card?.param === 'object' ? card.id : null;
       const changed =
@@ -996,7 +996,7 @@
         else url.searchParams.delete('site');
         if (wantObj) url.searchParams.set('object', wantObj);
         else url.searchParams.delete('object');
-        replaceState(url, $page.state);
+        replaceState(url, page.state);
       }
       if (everOpenedSurfaceCard) setCurrentCard(card ? url : null);
     });
@@ -1068,7 +1068,7 @@
       ).__surfaceSceneExitRouteView = () => exitRouteView();
     }
 
-    loadSites(localeFromPage($page))
+    loadSites(localeFromPage(page))
       .then((list) => {
         sites = list;
         // Deep-link: ?site=<id> opens the panel pre-selected. The
@@ -1076,8 +1076,8 @@
         // the camera (issue #227) — otherwise the halo opens but the
         // site itself can be on the far side, invisible until the
         // user manually drags.
-        const siteParam = $page.url.searchParams.get('site');
-        const traverseStopParam = $page.url.searchParams.get('traverse_stop');
+        const siteParam = page.url.searchParams.get('site');
+        const traverseStopParam = page.url.searchParams.get('traverse_stop');
         if (siteParam) {
           // A deep-link arrival should land on OVERVIEW and stay there —
           // suppress the one-shot OVERVIEW→STORY auto-promote that would
@@ -1100,7 +1100,7 @@
           // straight INTO the landing-site ground panorama once the arrival
           // fly-in settles, rather than resting on the orbital marker. Graceful:
           // sites without a tier-3 panorama just stay on the framed marker.
-          if ($page.url.searchParams.get('from') === 'descent') {
+          if (page.url.searchParams.get('from') === 'descent') {
             const arrivedSite = sites.find((x) => x.id === siteParam);
             const pano = arrivedSite?.hotspot_tier3_panorama;
             if (pano) {
@@ -1136,7 +1136,7 @@
     // 2× DPR fill cost on every /earth /moon /mars visit. Mirrors /fly's
     // resolveQualitySync wiring. Resolved BEFORE createSceneRenderer so
     // the pixel-ratio cap is threaded in at construction (single set).
-    const quality: QualityConfig = resolveQualitySync($page.url);
+    const quality: QualityConfig = resolveQualitySync(page.url);
     let renderer: THREE.WebGLRenderer;
     try {
       renderer = createSceneRenderer(container, {
@@ -1184,7 +1184,7 @@
     setRenderingDebugRegistration(debugPanelCtx, {
       renderer,
       quality,
-      qualitySource: resolveQualitySource($page.url),
+      qualitySource: resolveQualitySource(page.url),
       frameMonitor,
     });
     lifecycle.add(() => {
@@ -1424,7 +1424,7 @@
       if (eol.satellites) {
         const satCfg = eol.satellites;
         satCfg
-          .loadObjects(localeFromPage($page))
+          .loadObjects(localeFromPage(page))
           .then((raw) => {
             const objects = raw as EarthObject[];
 
@@ -1466,7 +1466,7 @@
 
             // Deep-link: ?object=<id> opens the panel pre-selected.
             // Same param name as the legacy EarthOrbitalScene.
-            const objParam = $page.url.searchParams.get('object');
+            const objParam = page.url.searchParams.get('object');
             if (objParam) {
               const o = objects.find((x) => x.id === objParam);
               if (o) {
@@ -3103,7 +3103,7 @@
       // ?pano=<entry-id> picks the panorama-set entry; ?yaw=&pitch=
       // restore camera orientation. Defaults: null entry → default,
       // 0/0 → looking forward at horizon.
-      const urlState = readPanoramaUrlState($page.url);
+      const urlState = readPanoramaUrlState(page.url);
       panoramaCurrentEntryId = urlState?.entryId ?? null;
       // saveData users get a heads-up affordance handled outside; if
       // we reach here, the user explicitly opted in.
@@ -3169,7 +3169,7 @@
       panoramaCurrentEntryId = null;
       // PRD-022 / ADR-074 Phase 3B — strip pano/yaw/pitch from URL so
       // the bar doesn't carry stale state back to the orbital view.
-      syncPanoramaUrl($page.url, null);
+      syncPanoramaUrl(page.url, null);
       teardownPanoramaSkybox(panoramaSkybox);
       panoramaSkybox = null;
       planetMesh.visible = true;
@@ -4116,7 +4116,7 @@
           // writes (e.g. when the user holds the camera still).
           if (now - panoramaUrlLastWriteMs > 300) {
             panoramaUrlLastWriteMs = now;
-            syncPanoramaUrl($page.url, {
+            syncPanoramaUrl(page.url, {
               entryId: panoramaCurrentEntryId,
               yawDeg: panoramaYawDeg,
               pitchDeg: panoramaPitchDeg,

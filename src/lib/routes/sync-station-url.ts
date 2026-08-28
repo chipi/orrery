@@ -19,8 +19,7 @@
 
 import { goto } from '$app/navigation';
 import { base } from '$app/paths';
-import { page } from '$app/stores';
-import { get } from 'svelte/store';
+import { page } from '$app/state';
 
 export type StationView = '3d' | '2d-top' | '2d-side' | '2d-front' | 'list';
 
@@ -36,7 +35,7 @@ export interface StationUrlUpdate {
  * avoids redundant goto() calls when the URL is already in sync.
  */
 export function syncStationUrl(routePath: '/iss' | '/tiangong', partial: StationUrlUpdate): void {
-  const url = get(page).url;
+  const url = page.url;
   const params = new URLSearchParams(url.searchParams);
   if (partial.view === 'list') params.set('view', 'list');
   else if (partial.view === '2d-top') params.set('view', '2d-top');

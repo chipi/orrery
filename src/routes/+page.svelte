@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { base } from '$app/paths';
   import { assetOrigin } from '$lib/asset-url';
   import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
@@ -9,7 +9,7 @@
   import { CURATOR_FULL_TOUR } from '$lib/audio-tour';
   import { AudioWaveIcon } from '$lib/components/icons';
 
-  const activeLocale = $derived(localeFromPage($page));
+  const activeLocale = $derived(localeFromPage(page));
 
   function withLang(path: string): string {
     return activeLocale === DEFAULT_LOCALE

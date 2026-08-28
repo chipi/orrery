@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onDestroy, onMount, untrack } from 'svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import { onHighContrastChange, toggleHighContrast } from '$lib/high-contrast';
@@ -262,7 +262,7 @@
   // a custom event the /science/+layout.svelte listens for and uses to
   // call `searchEl?.open_()`. Outside /science routes the row is hidden
   // (there's no Cmd-K dialog mounted; the rail isn't on those pages).
-  const onScience = $derived($page.url.pathname.includes('/science'));
+  const onScience = $derived(page.url.pathname.includes('/science'));
   function openCmdKFromDrawer() {
     closeMobileMenu();
     if (typeof document !== 'undefined') {
@@ -302,7 +302,7 @@
       href={`${base}${localizeHref('/')}`}
       class="brand"
       aria-label={m.nav_brand_home_aria()}
-      class:active={isActive(`${base}/`, $page.url.pathname)}
+      class:active={isActive(`${base}/`, page.url.pathname)}
     >
       <span class="wordmark">ORRERY</span>
     </a>
@@ -314,21 +314,21 @@
         <a
           href={`${base}${localizeHref(item.path)}`}
           class="link"
-          class:active={isActive(`${base}${item.path}`, $page.url.pathname)}>{item.label()}</a
+          class:active={isActive(`${base}${item.path}`, page.url.pathname)}>{item.label()}</a
         >
       {:else if isTv}
         <!-- TV: the group is a plain link to its big-box hub (no dropdown). -->
         <a
           href={`${base}${localizeHref(item.hub)}`}
           class="link"
-          class:active={groupActive(item, $page.url.pathname)}>{item.label()}</a
+          class:active={groupActive(item, page.url.pathname)}>{item.label()}</a
         >
       {:else}
         <div class="nav-group">
           <button
             type="button"
             class="link group-trigger"
-            class:active={groupActive(item, $page.url.pathname)}
+            class:active={groupActive(item, page.url.pathname)}
             aria-haspopup="true"
             aria-expanded={openGroup === item.key}
             onclick={() => toggleGroup(item.key)}
@@ -342,7 +342,7 @@
                   href={`${base}${localizeHref(child.path)}${child.query ?? ''}`}
                   role="menuitem"
                   class="group-menu-link"
-                  class:active={childActive(child, $page.url, $exploreContext)}
+                  class:active={childActive(child, page.url, $exploreContext)}
                   onclick={closeGroups}>{child.label()}</a
                 >
               {/each}
@@ -510,7 +510,7 @@
         <a
           href={`${base}${localizeHref(item.path)}`}
           class="drawer-link"
-          class:active={isActive(`${base}${item.path}`, $page.url.pathname)}
+          class:active={isActive(`${base}${item.path}`, page.url.pathname)}
           onclick={closeMobileMenu}>{item.label()}</a
         >
       {:else if isTv}
@@ -519,7 +519,7 @@
         <a
           href={`${base}${localizeHref(item.hub)}`}
           class="drawer-link"
-          class:active={groupActive(item, $page.url.pathname)}
+          class:active={groupActive(item, page.url.pathname)}
           onclick={closeMobileMenu}>{item.label()}</a
         >
       {:else}
@@ -532,7 +532,7 @@
             <a
               href={`${base}${localizeHref(child.path)}${child.query ?? ''}`}
               class="drawer-link drawer-group-item"
-              class:active={childActive(child, $page.url, $exploreContext)}
+              class:active={childActive(child, page.url, $exploreContext)}
               onclick={closeMobileMenu}>{child.label()}</a
             >
           {/each}

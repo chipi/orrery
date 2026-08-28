@@ -30,8 +30,7 @@
  * per-drag-frame full-navigation the docstring warned about.
  */
 import { replaceState } from '$app/navigation';
-import { page } from '$app/stores';
-import { get } from 'svelte/store';
+import { page } from '$app/state';
 
 export interface PanoramaUrlState {
   entryId: string | null;
@@ -56,7 +55,7 @@ export function syncPanoramaUrl(currentUrl: URL, state: PanoramaUrlState | null)
     url.searchParams.delete('pano');
     url.searchParams.delete('yaw');
     url.searchParams.delete('pitch');
-    replaceState(url, get(page).state);
+    replaceState(url, page.state);
     return;
   }
 
@@ -71,7 +70,7 @@ export function syncPanoramaUrl(currentUrl: URL, state: PanoramaUrlState | null)
   url.searchParams.set('pano', state.entryId);
   url.searchParams.set('yaw', yawStr);
   url.searchParams.set('pitch', pitchStr);
-  replaceState(url, get(page).state);
+  replaceState(url, page.state);
 }
 
 /**

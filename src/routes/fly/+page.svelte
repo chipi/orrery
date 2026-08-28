@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy, untrack } from 'svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { base } from '$app/paths';
   import { goto } from '$app/navigation';
   import { viewport } from '$lib/viewport.svelte';
@@ -2309,7 +2309,7 @@
       }
     }
 
-    const locale = localeFromPage($page);
+    const locale = localeFromPage(page);
     if (!id) {
       // No ?mission= param → fetch the locale overlay for the default
       // scenario (so non-en-US locales get translated strings); fall
@@ -2380,22 +2380,22 @@
   // cross-route navigation that lands here with a different ?mission=).
   // ADR-024 contract: "URL is the source of truth on entry."
   //
-  // Follow-up 3: dep-track ONLY $page.url; isolate the body in
+  // Follow-up 3: dep-track ONLY page.url; isolate the body in
   // untrack() so the many $state writes inside loadMissionFromUrl
   // (outPts, simDay, mission, isMoonMission, …) don't re-fire this
-  // effect mid-run. Pre-fix the effect read $page reactively via
-  // localeFromPage($page) and was thus dirty against every $page
+  // effect mid-run. Pre-fix the effect read page reactively via
+  // localeFromPage(page) and was thus dirty against every page
   // mutation — that masked URL-change re-fires when the data hadn't
   // changed (rapid SPA swap V2 → V1 → A11 left mission stuck on the
   // first-arrived load while later URL changes silently dropped). The
   // source-of-truth guard also short-circuits same-URL re-fires when
-  // SvelteKit batches $page updates around HMR / hover-prefetch.
+  // SvelteKit batches page updates around HMR / hover-prefetch.
   $effect(() => {
-    const url = $page.url;
+    const url = page.url;
     untrack(() => {
       // Source-of-truth short-circuit: if URL's ?mission= matches what's
       // already loaded, skip. Avoids re-running the full apply chain on
-      // unrelated $page mutations (locale switch, HMR, hover-prefetch).
+      // unrelated page mutations (locale switch, HMR, hover-prefetch).
       // /plan-driven entries (no ?mission, has ?dep+?tof) still re-run
       // through loadMissionFromUrl — applyPlanSelection is idempotent on
       // identical params, and currentLoadId guards in-flight races.
@@ -2544,7 +2544,7 @@
     // gross knob (pixelRatio, bloom on/off, sphere segments, particle
     // counts) so a single dial demotes the whole pipeline gracefully
     // on a low-end GPU. See src/lib/quality/quality-tier.ts.
-    const quality = resolveQualitySync($page.url);
+    const quality = resolveQualitySync(page.url);
     // Surface the active tier to the Settings panel for display.
     activeQualityTier = quality.tier;
     // Kick off detect-gpu in the background; the result populates
@@ -2650,7 +2650,7 @@
     // moon-mesh refs, assigned from the scene-host handle.
     liveRenderer = renderer;
     liveQuality = quality;
-    liveQualitySource = resolveQualitySource($page.url);
+    liveQualitySource = resolveQualitySource(page.url);
     liveBloomPass = helioHandles.bloomPass;
     liveBokehPass = helioHandles.bokehPass;
     liveFilmPass = helioHandles.filmPass;

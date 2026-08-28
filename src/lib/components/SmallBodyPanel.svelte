@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import Panel from './Panel.svelte';
   import { getSmallBodyGallery, getSmallBodyI18n, type SmallBodyI18n } from '$lib/data';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
@@ -87,7 +87,7 @@
   let scienceSections = $derived<ScienceSectionRef[]>(
     overlay?.science_sections ?? body?.science_sections ?? SMALL_BODY_SCIENCE_SECTIONS,
   );
-  const loc = $derived(localeFromPage($page));
+  const loc = $derived(localeFromPage(page));
 
   let lastId = $state<string | null>(null);
   $effect(() => {
@@ -304,7 +304,7 @@
             <div class="cell">
               <div class="cell-label">{m.sbp_label_radius()}</div>
               <div class="cell-value">
-                {formatKm(body.radius_km, localeFromPage($page))}
+                {formatKm(body.radius_km, localeFromPage(page))}
               </div>
             </div>
           {/if}

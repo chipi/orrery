@@ -3,29 +3,24 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { flushSync } from 'svelte';
 
 // ─── Mock $app/* modules ─────────────────────────────────────────
-// The rune reads `page` (store) + writes via `goto`. Real SvelteKit
-// versions of these only resolve inside a running app; we substitute
-// a hand-rolled subscribable page store and a vi.fn goto so the test
-// can drive both sides without a navigation runtime.
+// The rune reads `page.url` ($app/state, rune-backed) + writes via `goto`.
+// Real SvelteKit versions of these only resolve inside a running app; we
+// substitute a hand-rolled page object with a live `url` getter and a vi.fn
+// goto so the test can drive both sides without a navigation runtime.
 //
 // vi.hoisted is required because vi.mock factories are hoisted above
 // the file's imports — referencing module-local consts inside the
 // factory throws "There was an error when mocking a module."
 
 const { mocks } = vi.hoisted(() => {
-  type PageValue = { url: URL };
-  const subscribers = new Set<(value: PageValue) => void>();
-  let current: PageValue = { url: new URL('https://orrery.test/explore') };
+  let current: { url: URL } = { url: new URL('https://orrery.test/explore') };
   const page = {
-    subscribe(fn: (value: PageValue) => void) {
-      subscribers.add(fn);
-      fn(current);
-      return () => subscribers.delete(fn);
+    get url() {
+      return current.url;
     },
   };
   const setPage = (url: URL) => {
     current = { url };
-    for (const fn of subscribers) fn(current);
   };
   return {
     mocks: {
@@ -42,7 +37,7 @@ vi.mock('$app/environment', () => ({
     return mocks.browser.current;
   },
 }));
-vi.mock('$app/stores', () => ({ page: mocks.page }));
+vi.mock('$app/state', () => ({ page: mocks.page }));
 vi.mock('$app/navigation', () => ({ goto: mocks.goto }));
 
 import { useUrlParam, buildNextUrl, urlValueMatches } from './use-url-param.svelte';

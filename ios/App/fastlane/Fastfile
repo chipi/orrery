@@ -42,9 +42,10 @@ platform :ios do
       scheme: "App",
       configuration: "Release",
       export_method: "app-store",
-      # Inject the build number + let automatic signing mint the distribution
-      # profile on the fly (the machine must be signed into Xcode with an
-      # account on team 3P3PX275ZM).
+      # Account-based automatic signing: the machine is signed into Xcode with an
+      # Apple ID on team 3P3PX275ZM, and an "Apple Distribution" cert exists in the
+      # keychain. `-allowProvisioningUpdates` then creates/downloads the App Store
+      # profile via that account. (The ASC API key stays for the upload only.)
       xcargs: "CURRENT_PROJECT_VERSION=#{next_build} -allowProvisioningUpdates",
       output_directory: "build",
       output_name: "Orrery.ipa",
@@ -54,11 +55,19 @@ platform :ios do
     upload_to_testflight(
       api_key: asc_key,
       app_identifier: APP_IDENTIFIER,
-      # Return as soon as the binary is uploaded; Apple processes it async and
-      # it appears to internal testers in ~15-30 min. Flip to external + a
-      # public link in App Store Connect once a build has passed Beta App Review.
-      skip_waiting_for_build_processing: true,
-      distribute_external: false,
+      # Hand the build to the "Close Beta" external group (invite-by-email).
+      # PREREQ: the group must already exist in App Store Connect → Orrery →
+      # TestFlight → External Testing. The FIRST external build triggers a
+      # one-time Beta App Review (~1 day); later builds to the same group go out
+      # quickly. You (as an internal tester) get every build automatically,
+      # independent of this — internal delivery isn't gated on review.
+      distribute_external: true,
+      groups: ["Close Beta"],
+      changelog: ENV.fetch("BETA_CHANGELOG", "Orrery beta — latest build."),
+      # Must WAIT for Apple to finish processing before it can distribute +
+      # submit for review (a still-processing build can't be released). Adds
+      # ~10-20 min to the lane. Override the notes with BETA_CHANGELOG=... .
+      skip_waiting_for_build_processing: false,
     )
 
     UI.success("Uploaded Orrery build #{next_build} to TestFlight.")

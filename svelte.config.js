@@ -1,4 +1,3 @@
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 // GH Pages compat — see scripts/gh-pages-compat.mjs header. Used here
@@ -7,102 +6,22 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 // or without VITE_BASE; SvelteKit prepends the base internally at
 // render time.
 import { expandLocalizedRoots } from './scripts/gh-pages-compat.mjs';
+// The un-localized route list — shared with src/routes/sitemap.xml so the
+// sitemap can't drift from what actually prerenders. See site-routes.mjs.
+import { collectCanonicalRoutes } from './scripts/site-routes.mjs';
 
 const base = (process.env.VITE_BASE ?? '').replace(/\/$/, '');
 
-// Seed every prerender pass with one entry per locale × top-level
-// route. For en-US (baseLocale) that's `/`, `/missions`, etc.; other
-// locales get `/{locale}/`, `/{locale}/missions`, etc. per the URL
-// strategy in vite.config.ts. SvelteKit's prerender crawler then
-// follows nav + content links from each seed — and Nav.svelte uses
-// `localizeHref(...)` which stays within the seed's locale — so the
-// crawl discovers per-locale sub-pages.
-//
-// Sub-routes are enumerated explicitly because the crawler doesn't
-// always follow conditionally-rendered content links (e.g. the
-// LaunchesBanner's "VIEW ALL LAUNCHES" link inside /missions, which
-// fired for en-US but missed the /de/missions instance — the de
-// LaunchesBanner crawl didn't generate /de/missions/launches.html).
-// Listing them keeps the per-locale prerender complete without
-// having to debug per-locale crawl race conditions.
-const SEED_ROUTES = [
-  '/',
-  '/explore',
-  '/explore/hub',
-  '/worlds',
-  '/catalog',
-  '/learn',
-  '/missions',
-  '/missions/launches',
-  '/fleet',
-  '/plan',
-  '/fly',
-  '/earth',
-  '/moon',
-  '/mars',
-  '/venus',
-  '/iss',
-  '/tiangong',
-  '/science',
-  '/live',
-  '/credits',
-  '/library',
-  '/gallery',
-  '/posters',
-  '/patches',
-  '/sourcing',
-];
-
-// Every /science tab + section route, read from the section indexes. The
-// section pages link to each other with base-relative hrefs that the
-// per-locale crawl doesn't follow into /<locale>/, so enumerate them here
-// — expandLocalizedRoots then prerenders each in all 14 locales, and the
-// load() resolves the right overlay via getLocale().
-function scienceRoutes() {
-  const root = 'static/data/science';
-  const routes = [];
-  for (const tab of readdirSync(root, { withFileTypes: true })) {
-    if (!tab.isDirectory()) continue;
-    const idx = `${root}/${tab.name}/_index.json`;
-    if (!existsSync(idx)) continue;
-    routes.push(`/science/${tab.name}`);
-    const { ids } = JSON.parse(readFileSync(idx, 'utf8'));
-    for (const id of ids ?? []) routes.push(`/science/${tab.name}/${id}`);
-  }
-  return routes;
-}
-
-// Every /programs route, read from the program index. Like the science
-// sections, the program cards link with base-relative hrefs the per-locale
-// crawl doesn't follow into /<locale>/, so enumerate them here — expandLocalizedRoots
-// then prerenders /programs and each /programs/<id> in all 14 locales, and the
-// load() resolves the right overlay via getLocale() (same as /science).
-function programsRoutes() {
-  const idxPath = 'static/data/programs/index.json';
-  if (!existsSync(idxPath)) return [];
-  const idx = JSON.parse(readFileSync(idxPath, 'utf8'));
-  const routes = ['/programs'];
-  for (const p of idx) routes.push(`/programs/${p.id}`);
-  return routes;
-}
-
-// The Long View essays — index route + one per published essay slug (same
-// pattern + rationale as programsRoutes).
-function essaysRoutes() {
-  const idxPath = 'static/data/essays/index.json';
-  if (!existsSync(idxPath)) return [];
-  const idx = JSON.parse(readFileSync(idxPath, 'utf8'));
-  const routes = ['/essays'];
-  for (const e of idx) if (e.status === 'published') routes.push(`/essays/${e.slug}`);
-  return routes;
-}
-
-const localizedRoots = expandLocalizedRoots([
-  ...SEED_ROUTES,
-  ...scienceRoutes(),
-  ...programsRoutes(),
-  ...essaysRoutes(),
-]);
+// Seed every prerender pass with one entry per locale × canonical route.
+// For en-US (baseLocale) that's `/`, `/missions`, etc.; other locales get
+// `/{locale}/`, `/{locale}/missions`, etc. per the URL strategy in
+// vite.config.ts. SvelteKit's prerender crawler then follows nav + content
+// links from each seed — and Nav.svelte uses `localizeHref(...)` which
+// stays within the seed's locale — so the crawl discovers per-locale
+// sub-pages. The canonical route list (top-level + explicitly-enumerated
+// sub-routes the crawler doesn't reliably follow) lives in site-routes.mjs,
+// shared with the sitemap so the two can't drift.
+const localizedRoots = expandLocalizedRoots(collectCanonicalRoutes());
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -142,7 +61,10 @@ const config = {
       '$i18nSrc/*': './i18n-src/*',
     },
     prerender: {
-      entries: localizedRoots,
+      // /sitemap.xml is unreachable by link-crawl (nothing on-page links to
+      // it), so it needs an explicit entry or the prerenderer errors on it as
+      // an "unseen prerderable route". Single entry — it's locale-agnostic.
+      entries: [...localizedRoots, '/sitemap.xml'],
       // /science/[tab] dynamic + /science/reading-list static overlap.
       // The static page wins via SvelteKit's specificity rules but the
       // crawler still flags it. Ignore — same behaviour as before #328

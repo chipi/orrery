@@ -118,8 +118,10 @@ export default defineConfig(({ mode }) => {
       // Allow imports from static/ — used by $data/ alias for build-time
       // JSON imports (planets, small-bodies, scenarios). Without this,
       // Vite's default fs.allow excludes static/ and dev-only 404s flood
-      // the console.
-      fs: { allow: ['static', 'i18n-src'] },
+      // the console. `scripts/` is here so /sitemap.xml can import the shared
+      // route list (site-routes.mjs) in dev — it's prerendered in prod builds
+      // where fs.allow doesn't apply, but this keeps the dev server serving it.
+      fs: { allow: ['static', 'i18n-src', 'scripts'] },
       // Don't watch the Capacitor native build dirs. `cap sync` copies the
       // web build into android/ + ios/, and if the dev server watches those it
       // fires spurious reloads + dep re-optimization mid-session — which breaks

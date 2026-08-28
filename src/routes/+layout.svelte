@@ -33,6 +33,7 @@
   import { audio } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
   import { localeFromPage, syncDocumentLocaleAttributes } from '$lib/locale';
+  import { canonicalRoute, canonicalUrl, hreflangAlternates } from '$lib/seo';
   import { loadLocaleAltText } from '$lib/image-alt';
   import * as m from '$lib/paraglide/messages';
   import { initAnalytics, track, trackRouteEnter } from '$lib/analytics';
@@ -80,6 +81,15 @@
   // drift. Raw `__APP_VERSION__` stays for Sentry releases + analytics.
   const displayVersion = formatDisplayVersion(__APP_VERSION__);
   let activeLocale = $derived(localeFromPage($page));
+
+  // SEO — canonical + hreflang for the current page. The route is reduced to
+  // its un-localized form (base + locale prefix stripped, query dropped) and
+  // every URL points at the production origin, so staging/GH-Pages copies
+  // canonicalise to their prod twin instead of competing for the index. Emitted
+  // in every locale's copy of the page → the hreflang set is reciprocal.
+  let seoRoute = $derived(canonicalRoute($page.url.pathname, base));
+  let canonicalHref = $derived(canonicalUrl(seoRoute, activeLocale));
+  let hreflangs = $derived(hreflangAlternates(seoRoute));
 
   // DebugPanel context — created HERE (layout), not inside DebugPanel,
   // so descendant pages (which are children of `<main>`) can see it via
@@ -448,6 +458,14 @@
 </script>
 
 <svelte:head>
+  <!-- Default title — pages override via their own <svelte:head><title>; Svelte
+       dedupes so exactly one survives. Replaces the former hardcoded title in
+       app.html, which duplicated the per-page one. -->
+  <title>Orrery</title>
+  <link rel="canonical" href={canonicalHref} />
+  {#each hreflangs as alt (alt.hreflang)}
+    <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+  {/each}
   <link rel="manifest" href="{base}/manifest.webmanifest" />
   <link rel="icon" href="{base}/favicon.svg" type="image/svg+xml" />
 </svelte:head>

@@ -108,4 +108,5 @@ ios/App/fastlane/test_output/
 ios/App/vendor/bundle/
 ios/App/.bundle/
 ios/App/build/
+ios/App/ipa-output/
 *.p8

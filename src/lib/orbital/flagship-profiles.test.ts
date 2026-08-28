@@ -7,30 +7,45 @@
  *     multi-stage profile (wet > dry, Isp in a physical band, ≥ 2 stages).
  *     Catches a mass/thrust/Isp digit typo in the sourced data.
  *
- *  2. GENUINE ORBIT — the profile integrates to a STABLE orbit: it is still
- *     up (near circular speed at LEO altitude) after the post-SECO coast,
- *     not a suborbital lob that trips the orbit gate on the way *down*.
+ *  2. GENUINE ORBIT — the profile integrates to a STABLE orbit: perigee above
+ *     the decaying atmosphere, near circular speed at LEO altitude, still up
+ *     after the post-SECO coast — not a suborbital lob that trips the orbit gate
+ *     on the way *down*.
  *
- * Closed-loop guidance (#415 Track 1) on true 2-body dynamics (#415 Track 2 —
- * gravity toward Earth's centre) plus the parallel-boost stage (#415 Track 3 —
- * strap-on boosters that fire with the core then jettison) fly every
- * adequately-powered stack to a stable orbit: falcon-9, titan-ii-glv,
- * saturn-ib, proton-k, saturn-v, and the strap-on **vostok-k**.
- *
- * Still excluded — all for the SAME reason, a low-TWR upper stage that can't
- * circularise a wildly-eccentric insertion; each flies an accurate ascent and
- * soft-inserts to space, awaiting proper PEG (#416):
- *  - atlas-v (Centaur), ariane-5 (ESC-A), h-iia (LE-5B), and the
- *    space-shuttle-stack (the 53 kN Orbiter OMS — MECO is near-orbital at
- *    ~7.3 km/s, exactly as the real Shuttle, but the low-thrust OMS can't
- *    close the orbit without PEG).
- * (delta-ii is a strap-on vehicle not yet profiled.)
+ * As of #416, ALL 14 flagships reach a genuine orbit. The three enabling pieces:
+ *  - Earth-rotation launch credit (the pad carries 465·cos(lat) m/s eastward,
+ *    airspeed-relative drag + steering) — the missing physics that put the two
+ *    thinnest-margin, most-equatorial vehicles (ariane-5 @ Kourou 5.2°, h-iia @
+ *    Tanegashima 30.4°) over the line.
+ *  - PEG + lofted-boost guidance for the genuinely low-TWR upper stages
+ *    (Centaur, ESC-A, LE-5B) — they fly a lofted direct injection, gated by the
+ *    `loftBoost` profile flag; adequately-powered vehicles are untouched.
+ *  - Spec corrections: Shuttle Orbiter empty mass (real 78 t), atlas-v as the
+ *    541 heavy variant, ariane-5 at a representative dual-GTO payload.
  */
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { describe, it, expect } from 'vitest';
 import { integrateAscent, type LaunchProfile } from './ascent-physics';
+import { R_EARTH_M, MU_EARTH_M3_S2 } from './ascent-physics-constants';
+
+/** Osculating perigee/apoapsis/eccentricity from the final integrated state. */
+function orbitElements(s: ReturnType<typeof integrateAscent>) {
+  const last = s.states[s.states.length - 1];
+  const r = R_EARTH_M + s.finalAltKm * 1000;
+  const v = s.finalSpeedKms * 1000;
+  const vr = (last?.velUpKms ?? 0) * 1000;
+  const vh = Math.sqrt(Math.max(0, v * v - vr * vr));
+  const energy = (v * v) / 2 - MU_EARTH_M3_S2 / r;
+  const a = -MU_EARTH_M3_S2 / (2 * energy);
+  const ecc = Math.sqrt(Math.max(0, 1 + (2 * energy * (r * vh) ** 2) / MU_EARTH_M3_S2 ** 2));
+  return {
+    periKm: (a * (1 - ecc) - R_EARTH_M) / 1000,
+    apoKm: (a * (1 + ecc) - R_EARTH_M) / 1000,
+    ecc,
+  };
+}
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../');
 
@@ -56,18 +71,8 @@ const ALL_FLAGSHIPS = [
   'soyuz',
   'long-march-2f',
 ];
-const GENUINE_ORBIT = [
-  'falcon-9',
-  'titan-ii-glv',
-  'saturn-ib',
-  'proton-k',
-  'saturn-v',
-  'vostok-k',
-  'atlas-lv-3b',
-  'voskhod-11a57',
-  'soyuz',
-  'long-march-2f',
-];
+// All 14 now reach a genuine orbit (#416).
+const GENUINE_ORBIT = ALL_FLAGSHIPS;
 
 describe.each(ALL_FLAGSHIPS)('flagship profile %s — data shape', (id) => {
   const p = load(id);
@@ -82,6 +87,9 @@ describe.each(ALL_FLAGSHIPS)('flagship profile %s — data shape', (id) => {
       expect(st.ispVacS).toBeLessThan(500);
       expect(st.thrustVacKN).toBeGreaterThan(0);
     }
+    // A launch latitude is required — the Earth-rotation credit (#416) reads it.
+    expect(typeof p.launchSite?.lat).toBe('number');
+    expect(Math.abs(p.launchSite!.lat)).toBeLessThanOrEqual(90);
   });
 });
 
@@ -92,14 +100,25 @@ describe.each(GENUINE_ORBIT)('flagship profile %s — genuine orbit', (id) => {
     expect(s.reachedOrbit).toBe(true);
   });
 
-  it('is still in a stable orbit after the post-SECO coast', () => {
-    // A genuine orbit stays up at ~circular speed; a lob has fallen back.
+  it('inserts into a stable, non-decaying orbit', () => {
+    const o = orbitElements(s);
+    // Perigee above the decaying atmosphere is the honest stability measure. A
+    // very-low-TWR direct insertion (Centaur) legitimately lands slightly
+    // elliptical — real Atlas V parking orbits do too — so the ecc bound is
+    // loose; perigee is the load-bearing check.
+    expect(o.periKm).toBeGreaterThan(130);
+    expect(o.ecc).toBeLessThan(0.05);
+  });
+
+  it('is still up at ~circular speed after the post-SECO coast', () => {
     expect(s.finalAltKm).toBeGreaterThan(90);
     expect(s.finalSpeedKms).toBeGreaterThan(7.0);
     expect(s.finalSpeedKms).toBeLessThan(8.5);
     const seco = s.events.find((e) => e.type === 'seco');
     expect(seco).toBeDefined();
     expect(seco!.t).toBeGreaterThan(120);
-    expect(seco!.t).toBeLessThan(900);
+    // A single-RL10 Centaur / LE-5B insertion burn runs 12–15 min — widened from
+    // 900 s (#416); the 2000 s integrator cap still bounds a runaway.
+    expect(seco!.t).toBeLessThan(1500);
   });
 });

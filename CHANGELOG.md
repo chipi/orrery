@@ -85,6 +85,15 @@ universe**, ships **33 space programs**, and reaches **full localization in 14 l
   `/moon`, `/mars`, `/earth`, `/fly`) no longer throws `lifecycle_outside_component` (#466).
 - **`/explore` date readout** shows the viewer's **local** calendar day — it previously
   showed the prior day for negative-UTC-offset viewers (the Americas).
+- **Interactive audio tour** — repaired three cue↔UI sync regressions from the release's
+  screen/nav changes (collapsed `/missions` filters, an orphan `/explore` reset, the
+  science-lens layers) and added a full-timeline e2e gate that drives every episode.
+- **`/fly` launch sim — all 14 flagship launchers now reach a genuine orbit** (#416). The
+  missing physics was Earth's rotation: the pad now carries its eastward launch credit
+  (`465·cos(lat)`), with air-relative drag/steering — the reason the two most-equatorial
+  vehicles (Ariane 5 @ Kourou, H-IIA @ Tanegashima) fell short. Plus PEG + lofted-boost
+  guidance for genuinely low-TWR upper stages (Centaur/ESC-A/LE-5B) and spec corrections
+  (real Shuttle Orbiter mass, Atlas V 541 variant). Ascent losses are now realistic.
 
 ## [0.7.3] — 2026-07-09
 

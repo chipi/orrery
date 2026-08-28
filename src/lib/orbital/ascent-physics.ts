@@ -113,6 +113,16 @@ export interface LaunchProfile {
    * different domain. "flagship" (hand-authored) | "generic" (parameterized).
    */
   source_tier?: 'flagship' | 'generic';
+  /**
+   * Lofted-ascent handoff (RFC-034 §5.1 · #416). Set on vehicles whose FINAL
+   * stage is very low TWR (Centaur, ESC-A, LE-5B) — real ones fly a lofted
+   * direct injection: the boost phase keeps raising apoapsis PAST target instead
+   * of altitude-holding, so the weak upper stage ignites while still climbing
+   * (v_r > 0) with apoapsis ahead. It then coasts UP during the long burn (the
+   * time budget it needs), and PEG circularises. Without this the boost phase
+   * hands the upper stage a dead at-apoapsis state it cannot fly out of.
+   */
+  loftBoost?: boolean;
   /** Provenance rows (publisher + source URL) for the shipped JSON. */
   provenance?: { l: string; u: string }[];
 }
@@ -409,6 +419,199 @@ export function commandedPitchRad(
   return table * (1 - blend) + guided * blend;
 }
 
+// ─── Powered Explicit Guidance — low-TWR upper stages (RFC-034 §5.1 · #416) ──
+
+/**
+ * PEG tuning — ONE shared set, never per vehicle. The altitude-hold law above
+ * demands *instantaneous* altitude hold (`sinγ = (aDes + gDeficit)/a`); a
+ * Centaur-class final stage (~0.3 TWR) can only satisfy the altitude constraint
+ * *integrated over the whole burn* — a lofted arc that dips through apoapsis
+ * while horizontal speed builds. That two-point boundary problem is PEG:
+ * linear-tangent steering (`sinγ` linear in time) with a gravity/centrifugal
+ * feed-forward, solved each major cycle. PEG only STEERS — the honest osculating
+ * perigee gate in `integrateAscent` still decides SECO + `reachedOrbit`, so a
+ * guidance error can never fabricate an orbit.
+ */
+export const PEG = {
+  /** Major guidance cycle (s): re-solve A,B,tgo this often, not every step. */
+  majorCycleS: 1,
+  /** Freeze A,B when time-to-go drops below this — the 2×2 goes singular near burnout. */
+  freezeTgoS: 8,
+  /** Cap |sin(pitch)| ≈ 30°. Above this the prograde (speed-building) component
+   *  collapses (cos 0.5 → 87% of thrust wasted vertically) and a low-TWR stage
+   *  pins itself up while not accelerating. A stage that can't hold with 30° of
+   *  up-pitch should be allowed to dip (a dip is free — altitude converts to
+   *  speed at zero Δv cost); only the atmosphere/ground is fatal. */
+  maxSinPitch: 0.5,
+  /** Coast-to-apoapsis hysteresis (s) — only coast if apoapsis is comfortably
+   *  more than half the remaining burn away, so the relight centres the burn. */
+  coastGuardS: 60,
+  /** Lofted-boost target time-to-apoapsis (s) at the boost stage: hold the
+   *  burnout runway near this so the upper stage stages climbing with apoapsis
+   *  a useful distance ahead — not at apoapsis, not over-lofted into a descent. */
+  loftTApoRefS: 105,
+  /** Feedback gain (rad per second of time-to-apoapsis error) around prograde. */
+  loftTApoGainRadPerS: 0.002,
+};
+
+/** Solved linear-tangent steering coefficients + predicted time-to-go. */
+export interface PegState {
+  /** sin(pitch) intercept at the solve instant (feed-forward removed). */
+  A: number;
+  /** sin(pitch) slope (s⁻¹). */
+  B: number;
+  /** Predicted time-to-go to cutoff (s). */
+  tgo: number;
+  /** Whether the last solve produced a usable A,B (else hold the prior). */
+  ok: boolean;
+}
+
+/**
+ * Solve the linear-tangent radial boundary problem at the current instant.
+ * Pure. Steers so the RADIAL channel hits `(r=rT, vr=0)` over the remaining
+ * burn while the horizontal channel builds circular speed. `prior` warm-starts
+ * the iteration (pass `null` on the first PEG cycle). Returns updated {A,B,tgo}.
+ *
+ * Pure linear-tangent steering `sin(pitch) = A + B·t` (NO pointwise gravity
+ * feed-forward — that pins a low-TWR stage at max-up pitch and it sinks, the
+ * very failure we're fixing). Gravity enters as a PREDICTED integral on the
+ * boundary RHS (the "gravity integral"), computed by numerically integrating
+ * the predicted trajectory forward each cycle with the current steering — the
+ * crude analytic `½·gDeficit·T` estimate over-predicts the fall for a stage
+ * that must dip and recover, forcing an infeasible up-pitch. Radial boundary
+ * (mass-depleting thrust integrals):
+ *   Δv_r:  A·b0 + B·b1 = (0 − v_r) + G_r
+ *   Δr:    A·c0 + B·c1 = (r_T − r − v_r·T) + G_pos
+ * where `G_r = ∫₀ᵀ (g − v_h²/r) dt` and `G_pos = ∫₀ᵀ ∫₀ᵗ (g − v_h²/r)` along the
+ * PREDICTED path. Time-to-go from the horizontal angular-momentum channel.
+ */
+export function pegSolve(
+  r: number,
+  vr: number,
+  vh: number,
+  a: number,
+  ve: number,
+  g: number,
+  rT: number,
+  vhT: number,
+  maxBurnS: number,
+  prior: PegState | null,
+): PegState {
+  if (a <= 1e-6 || ve <= 1e-6) return prior ?? { A: 0, B: 0, tgo: 0, ok: false };
+  const tau = ve / a; // mass-flow time constant (a(t) = a/(1 − t/τ))
+  const capT = Math.max(0.1, Math.min(0.98 * tau, maxBurnS));
+
+  let T = prior?.ok
+    ? Math.min(prior.tgo, capT)
+    : Math.min(tau * (1 - Math.exp(-Math.max(0, vhT - vh) / ve)), capT);
+  T = Math.max(0.1, T);
+  let A = prior?.ok ? prior.A : 0;
+  let B = prior?.ok ? prior.B : 0;
+  let ok = prior?.ok ?? false;
+
+  const iters = prior?.ok ? 3 : 10; // fixed-point on the gravity integral
+  for (let i = 0; i < iters; i++) {
+    T = Math.max(0.1, Math.min(T, capT));
+    const b0 = -ve * Math.log(1 - T / tau); // = ∫₀ᵀ a(t) dt  (Δv over T)
+    const b1 = b0 * tau - ve * T; // = ∫₀ᵀ a(t)·t dt
+    const c0 = b0 * T - b1; // = ∫₀ᵀ (∫₀ᵗ a) dt
+    const c1 = c0 * tau - (ve * T * T) / 2;
+    const det = b0 * c1 - b1 * c0;
+    if (!Number.isFinite(det) || Math.abs(det) < 1e-9) break; // singular → hold last A,B
+
+    // Predict the trajectory forward with the current steering to integrate the
+    // net gravity deficit (g − v_h²/r) over the burn — velocity integral G_r and
+    // position double-integral G_pos. Coarse Euler; the deficit shrinks as the
+    // predicted v_h builds, so this credits the centrifugal relief the analytic
+    // estimate ignored.
+    const M = 24;
+    const h = T / M;
+    let pr = r;
+    let pvr = vr;
+    let pvh = vh;
+    let gr = 0;
+    let gpos = 0;
+    let cum = 0; // running ∫₀ᵗ deficit dt
+    for (let k = 0; k < M; k++) {
+      const tk = k * h;
+      const ak = a / (1 - tk / tau); // thrust accel (mass depletes)
+      const gk = MU_EARTH_M3_S2 / (pr * pr);
+      const deficit = gk - (pvh * pvh) / pr;
+      gpos += cum * h + 0.5 * deficit * h * h;
+      gr += deficit * h;
+      cum += deficit * h;
+      const sinp = Math.max(-PEG.maxSinPitch, Math.min(PEG.maxSinPitch, A + B * tk));
+      const cosp = Math.sqrt(Math.max(0, 1 - sinp * sinp));
+      pvr += (ak * sinp - deficit) * h;
+      pvh += (ak * cosp - (pvr * pvh) / pr) * h;
+      pr += pvr * h;
+    }
+
+    const dvr = -vr + gr;
+    const dr = rT - r - vr * T + gpos;
+    A = (c1 * dvr - b1 * dr) / det;
+    B = (b0 * dr - c0 * dvr) / det;
+    ok = true;
+
+    // Re-estimate T from the horizontal (angular-momentum) channel, using the
+    // predicted final horizontal speed for the mean thrust-cosine.
+    const dh = rT * vhT - r * vh;
+    if (dh <= 0) {
+      T = 0.1; // already at/over target angular momentum → cut essentially now
+      break;
+    }
+    const rbar = (r + rT) / 2;
+    const fr0 = A; // radial thrust fraction now (no feed-forward)
+    const frT = A + B * T; // …at cutoff
+    const fbarH = Math.max(0.1, 1 - (fr0 * fr0 + fr0 * frT + frT * frT) / 6); // mean √(1−f_r²)
+    const dv = dh / (rbar * fbarH);
+    const Tnew = Math.min(tau * (1 - Math.exp(-dv / ve)), capT);
+    if (Math.abs(Tnew - T) < 0.5 && i >= 2) {
+      T = Tnew;
+      break;
+    }
+    T = Tnew;
+  }
+  return { A, B, tgo: T, ok };
+}
+
+/**
+ * PEG commanded flight-path angle (rad from local horizontal): pure
+ * linear-tangent `sin(pitch) = A + B·Δt`, clamped. `Δt` is the time since the
+ * coefficients were solved. `cos(pitch) ≥ 0` always → thrust never points
+ * retrograde. Wider clamp than the heuristic's `maxDiveRad` — `f_r < 0` (thrust
+ * below horizontal, trading altitude for speed) is legitimate on a lofted
+ * low-TWR arc, and the gravity integral in `pegSolve` already accounts for it.
+ */
+export function pegPitchRad(st: PegState, dtSinceSolveS: number): number {
+  const fr = st.A + st.B * dtSinceSolveS;
+  return Math.asin(Math.max(-PEG.maxSinPitch, Math.min(PEG.maxSinPitch, fr)));
+}
+
+/**
+ * Time (s) from the current osculating state to apoapsis, via Kepler's
+ * equation. `Infinity` for a non-elliptical (escape) arc; `0` for (near-)
+ * circular. Used by the coast-to-apoapsis + relight rule for a final stage that
+ * can't circularise in a single continuous burn (Shuttle-OMS, Centaur two-burn).
+ */
+export function timeToApoapsisS(r: number, vr: number, vh: number): number {
+  const v2 = vr * vr + vh * vh;
+  const energy = v2 / 2 - MU_EARTH_M3_S2 / r;
+  if (energy >= 0) return Infinity;
+  const a = -MU_EARTH_M3_S2 / (2 * energy);
+  const h = r * vh;
+  const ecc = Math.sqrt(Math.max(0, 1 + (2 * energy * h * h) / (MU_EARTH_M3_S2 * MU_EARTH_M3_S2)));
+  if (ecc < 1e-4) return 0; // already circular — "at apoapsis"
+  const cosE = Math.max(-1, Math.min(1, (1 - r / a) / ecc));
+  let E = Math.acos(cosE); // [0, π]
+  if (vr < 0) E = 2 * Math.PI - E; // descending → past periapsis, before next apoapsis
+  const M = E - ecc * Math.sin(E); // mean anomaly
+  const n = Math.sqrt(MU_EARTH_M3_S2 / (a * a * a)); // mean motion
+  let dM = Math.PI - M; // apoapsis is at mean anomaly π
+  if (dM < 0) dM += 2 * Math.PI;
+  return dM / n;
+}
+
 // ─── Integrator ─────────────────────────────────────────────────────
 
 export interface AscentOptions {
@@ -437,6 +640,16 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   const maxT = opts.maxTS ?? 2000; // a low-TWR upper stage burns for many minutes
   const refArea = profile.refAreaM2 ?? 10;
   const cd = profile.cd ?? 0.3;
+
+  // Earth-rotation launch credit (the missing physics — #416). The pad rotates
+  // eastward at 465.1·cos(lat) m/s; every published stage-Δv budget closes
+  // BECAUSE of this free velocity, and it's the reason equatorial sites exist
+  // (Kourou at 5.2° gets the most). The vehicle starts with it, and the
+  // co-rotating atmosphere means drag acts on air-RELATIVE speed, not inertial.
+  // Assumes an eastward (prograde) launch — true for every flagship LEO profile.
+  const EARTH_SURFACE_SPEED_EQ_MS = 465.1;
+  const siteLatRad = ((profile.launchSite?.lat ?? 28.5) * Math.PI) / 180;
+  const siteSpeed = EARTH_SURFACE_SPEED_EQ_MS * Math.cos(siteLatRad);
 
   // Mass bookkeeping: dropped stages are gone; the current stage carries
   // its dry mass + remaining propellant; upper stages ride as full wet.
@@ -472,10 +685,11 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     );
   };
 
-  // Planar state: x downrange, y altitude (m); vx, vy (m·s⁻¹).
+  // Planar state: x downrange, y altitude (m); vx, vy (m·s⁻¹). The pad already
+  // carries Earth's eastward (downrange) rotation speed — the launch credit.
   let x = 0;
   let y = 0;
-  let vx = 0;
+  let vx = siteSpeed;
   let vy = 0;
   let t = 0;
 
@@ -493,6 +707,15 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   // Cache the last-commanded pitch so the snapshot's HUD value matches the
   // dynamics exactly (the guidance is stateful across the trajectory).
   let lastPitch = Math.PI / 2;
+
+  // PEG state for the final stage (#416): solved coefficients + when they were
+  // solved (major cycle), and a coast-to-apoapsis flag for a stage that can't
+  // circularise in one continuous burn.
+  let peg: PegState | null = null;
+  let pegSolveT = -Infinity;
+  let coasting = false;
+  // Latched once the heuristic altitude-hold saturates (a too-weak final stage).
+  let pegLatched = false;
 
   const snapshot = (): AscentState => {
     // Radial frame: position from Earth's centre, altitude above the surface,
@@ -565,10 +788,12 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     const velUp = vx * upX + vy * upY; // radial (vertical) speed
     const horizSpeed = vx * horizX + vy * horizY; // downrange speed
 
-    // Osculating orbit's perigee — the orbit gate fires when it's a stable,
-    // non-decaying orbit. velHoriz is the tangential speed, so h = r·velHoriz.
+    // Osculating orbit's perigee + apoapsis — the orbit gate fires when perigee
+    // is a stable, non-decaying altitude. velHoriz is the tangential speed, so
+    // h = r·velHoriz. Apoapsis drives the PEG coast-to-apoapsis rule.
     const energy = (speed * speed) / 2 - MU_EARTH_M3_S2 / r;
     let perigeeAltM = -Infinity;
+    let apoapsisAltM = Infinity;
     if (energy < 0) {
       const hMom = r * horizSpeed;
       const semiMajor = -MU_EARTH_M3_S2 / (2 * energy);
@@ -576,28 +801,137 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
         Math.max(0, 1 + (2 * energy * hMom * hMom) / (MU_EARTH_M3_S2 * MU_EARTH_M3_S2)),
       );
       perigeeAltM = semiMajor * (1 - ecc) - R_EARTH_M;
+      apoapsisAltM = semiMajor * (1 + ecc) - R_EARTH_M;
     }
 
-    // Thrust: the active stage plus, during the boost phase, the strap-on
-    // boosters firing in parallel along the same body axis.
-    const coreThrust =
-      stageIndex >= 0 && remainingProp > 0 ? stageThrustN(profile.stages[stageIndex], alt) : 0;
+    // Strap-on boosters (fire in parallel with stage 0 along the body axis).
     const boostThrust =
       boostersOn && stageIndex === 0 && boosterProp > 0 ? stageThrustN(boosterStage!, alt) : 0;
-    const thrust = coreThrust + boostThrust;
+    // Core thrust IF the engine is lit (propellant remaining on the active stage).
+    const coreThrustLit =
+      stageIndex >= 0 && remainingProp > 0 ? stageThrustN(profile.stages[stageIndex], alt) : 0;
 
-    // Guidance: closed-loop insertion (raise apoapsis prograde, then
-    // altitude-hold to circularise), commanded from the local horizontal.
-    const pitch = commandedPitchRad(profile, t, alt, velUp, Math.abs(horizSpeed), thrust / m);
+    // Guidance. Below the handover the aero-safe pitch table drives the gravity
+    // turn; above it, adequately-powered stages + all lower stages use the
+    // closed-loop apoapsis-raise/altitude-hold heuristic. The FINAL stage above
+    // the handover flies PEG (RFC-034 §5.1 · #416) — the only law that closes a
+    // very-low-TWR upper stage — with a coast-to-apoapsis + relight for a stage
+    // that can't circularise in one continuous burn. PEG only STEERS; the honest
+    // perigee gate below still decides SECO + reachedOrbit.
+    const isFinalStage = stageIndex === profile.stages.length - 1;
+    const targetAltM = profile.targetOrbitAltM ?? GUIDANCE.targetAltM;
+    let pitch: number;
+    let engineOn: boolean; // set by every guidance branch below
+
+    // The heuristic altitude-hold flies every ADEQUATELY-powered final stage to
+    // orbit. It only fails for a very-low-TWR upper stage (Centaur ~0.3 TWR),
+    // where holding altitude at apoapsis demands `sinγ > 1` — the stage saturates
+    // and sinks. So: run the heuristic by default; the instant its circularise
+    // command provably saturates, LATCH onto PEG for the rest of the stage (no
+    // vehicle list, no chatter). PEG then flies the lofted low-TWR insertion.
+    if (!pegLatched && isFinalStage && coreThrustLit > 0 && alt > GUIDANCE.handoverAltM) {
+      if (profile.loftBoost) {
+        // Lofted low-TWR upper stage: we know it's PEG's job — latch on ignition.
+        pegLatched = true;
+      } else if (energy < 0 && apoapsisAltM >= targetAltM) {
+        // Otherwise latch only when the heuristic altitude-hold provably saturates.
+        const aDes = GUIDANCE.kAlt * (targetAltM - alt) - GUIDANCE.kVy * velUp;
+        const gDeficit = g - (horizSpeed * horizSpeed) / r;
+        if ((aDes + gDeficit) / (coreThrustLit / m) > 0.98) pegLatched = true;
+      }
+    }
+
+    if (pegLatched && isFinalStage && coreThrustLit > 0) {
+      const ve = stageIspS(profile.stages[stageIndex], alt) * G0;
+      const a = coreThrustLit / m;
+      const mdot = coreThrustLit / ve;
+      const maxBurnS = mdot > 0 ? remainingProp / mdot : 0;
+      // A lofted stage circularises at the altitude it lofted to (its apoapsis),
+      // not the nominal low target it has already climbed past.
+      const circAltM = profile.loftBoost ? Math.max(targetAltM, apoapsisAltM - 10_000) : targetAltM;
+      const rT = R_EARTH_M + circAltM;
+      const vhT = Math.sqrt(MU_EARTH_M3_S2 / rT);
+      const vhAbs = Math.abs(horizSpeed);
+
+      // Coast-to-apoapsis + relight: if apoapsis is at/above target but we're
+      // still more than half the remaining burn away from it, coast so the burn
+      // centres on apoapsis; relight when time-to-apoapsis drops to tgo/2.
+      // A lofted-boost vehicle ignites its upper stage still climbing (apoapsis
+      // ahead) and burns continuously — no coast (coasting toward apoapsis would
+      // re-create the dead at-apoapsis state the loft exists to avoid).
+      const tApo = timeToApoapsisS(r, velUp, vhAbs);
+      const tgo = peg?.ok ? peg.tgo : maxBurnS;
+      if (
+        !profile.loftBoost &&
+        !coasting &&
+        apoapsisAltM >= targetAltM &&
+        tApo > tgo / 2 + PEG.coastGuardS
+      ) {
+        coasting = true;
+      } else if (coasting && tApo <= tgo / 2) {
+        coasting = false;
+      }
+
+      if (coasting) {
+        engineOn = false;
+        pitch = lastPitch; // hold attitude, engine dark
+      } else {
+        // Major cycle: re-solve unless inside the near-burnout freeze band (the
+        // 2×2 goes singular as tgo → 0 — hold the last coefficients).
+        const frozen = peg?.ok === true && peg.tgo < PEG.freezeTgoS;
+        if (!frozen && (t - pegSolveT >= PEG.majorCycleS || !peg?.ok)) {
+          peg = pegSolve(r, velUp, vhAbs, a, ve, g, rT, vhT, maxBurnS, peg);
+          pegSolveT = t;
+        }
+        pitch = peg?.ok ? pegPitchRad(peg, t - pegSolveT) : Math.atan2(velUp, vhAbs);
+        engineOn = true;
+      }
+    } else if (profile.loftBoost && !isFinalStage && alt > GUIDANCE.handoverAltM) {
+      // Lofted boost (#416): fly near-prograde but steer the burnout GEOMETRY —
+      // keep the time-to-apoapsis near a reference so the low-TWR upper stage
+      // stages while still CLIMBING with apoapsis a useful runway ahead (not at
+      // apoapsis, and not over-lofted so the core arcs over and descends). A
+      // small feedback around prograde (±12°) keeps steering loss cosine-small.
+      const tApo = timeToApoapsisS(r, velUp, Math.max(1, Math.abs(horizSpeed)));
+      const prograde = Math.atan2(velUp, Math.max(1, Math.abs(horizSpeed)));
+      const guided = Math.max(
+        prograde - 0.21,
+        Math.min(prograde + 0.21, prograde + PEG.loftTApoGainRadPerS * (PEG.loftTApoRefS - tApo)),
+      );
+      const table = pitchAngleRad(profile, t);
+      const blend = Math.max(0, Math.min(1, (alt - GUIDANCE.handoverAltM) / GUIDANCE.blendM));
+      pitch = table * (1 - blend) + guided * blend;
+      engineOn = coreThrustLit > 0;
+    } else {
+      // Table (low) / heuristic (raise + adequately-powered circularise).
+      pitch = commandedPitchRad(
+        profile,
+        t,
+        alt,
+        velUp,
+        Math.abs(horizSpeed),
+        (coreThrustLit + boostThrust) / m,
+      );
+      engineOn = coreThrustLit > 0;
+    }
+
+    const coreThrust = engineOn ? coreThrustLit : 0;
+    const thrust = coreThrust + boostThrust;
     lastPitch = pitch;
     const thrustDirX = Math.cos(pitch) * horizX + Math.sin(pitch) * upX;
     const thrustDirY = Math.cos(pitch) * horizY + Math.sin(pitch) * upY;
 
-    // Drag opposes the velocity vector.
-    const q = dynamicPressure(rho, speed);
+    // Drag acts on AIR-relative velocity — the atmosphere co-rotates eastward
+    // with Earth (≈ siteSpeed downrange), so the pad's rotation velocity is not
+    // airspeed and must not register dynamic pressure. Below ~90 km (where drag
+    // matters) the co-rotation speed is ≈ siteSpeed.
+    const vRelX = vx - siteSpeed * horizX;
+    const vRelY = vy - siteSpeed * horizY;
+    const airspeed = Math.hypot(vRelX, vRelY);
+    const q = dynamicPressure(rho, airspeed);
     const drag = q * cd * refArea;
-    const dragDirX = speed > 1e-6 ? -vx / speed : 0;
-    const dragDirY = speed > 1e-6 ? -vy / speed : 0;
+    const dragDirX = airspeed > 1e-6 ? -vRelX / airspeed : 0;
+    const dragDirY = airspeed > 1e-6 ? -vRelY / airspeed : 0;
 
     // Net acceleration (m·s⁻²): thrust + drag + gravity toward Earth's centre.
     const ax = (thrust * thrustDirX + drag * dragDirX) / m - g * upX;
@@ -610,8 +944,13 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       // angle here is relative to the LOCAL horizontal (velUp / speed).
       losses.gravity += g * (speed > 1e-3 ? velUp / speed : Math.sin(pitch)) * dt;
       losses.drag += (drag / m) * dt;
-      if (speed > 1e-3) {
-        const cosAlpha = (thrustDirX * vx + thrustDirY * vy) / speed; // thrust·v̂
+      // Steering (cosine) loss is measured against the AIR-relative velocity, not
+      // inertial — at liftoff the vehicle already carries Earth's horizontal
+      // rotation speed, so booking thrust-vs-inertial-velocity would charge a
+      // huge phantom steering loss for simply thrusting straight up. Air-relative
+      // is ~0 on the pad and aligns with the flight path through the ascent.
+      if (airspeed > 1e-3) {
+        const cosAlpha = (thrustDirX * vRelX + thrustDirY * vRelY) / airspeed; // thrust·v̂_air
         losses.steering += (thrust / m) * (1 - Math.max(-1, Math.min(1, cosAlpha))) * dt;
       }
     }
@@ -685,18 +1024,21 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       }
     }
 
-    // Soft-insertion stopgap (#416): a very-low-TWR final stage can climb to
-    // orbital altitude but not close the orbit (needs PEG). Rather than burn
-    // on into a re-entry, cut the engine once it's over the top (descending
-    // from apoapsis, above the Kármán line, on a still-sub-orbital arc) and
-    // hand off to /fly there. reachedOrbit stays honestly false — no orbit
-    // was achieved — but the ascent reads as reaching space instead of
-    // cratering. Removed once PEG lands.
+    // Soft-insertion floor (#416): a very-low-TWR final stage whose PEG solve
+    // can't close the orbit from the energy state its boost phase delivered
+    // still can't circularise. Rather than burn on into a re-entry / crater, cut
+    // the engine once it's over the top (descending, above the Kármán line, on a
+    // still-sub-orbital arc) and hand off to /fly there. reachedOrbit stays
+    // honestly false — no orbit was achieved, no data faked.
+    // Only fire when the insertion is genuinely unrecoverable — descending back
+    // toward the atmosphere. A high-altitude dip during a low-TWR circularisation
+    // is FREE (altitude converts to speed at no Δv cost) and must be allowed to
+    // recover; cutting it there manufactured the huge steering loss (#416).
     if (
       !orbitSeen &&
       stageIndex === profile.stages.length - 1 &&
-      alt >= KARMAN_LINE_M &&
-      velUp < -100 &&
+      alt < KARMAN_LINE_M + 30_000 &&
+      velUp < -150 &&
       perigeeAltM < 0
     ) {
       pushEvent('seco', `${profile.stages[stageIndex].name} — apoapsis (insertion pending PEG)`);

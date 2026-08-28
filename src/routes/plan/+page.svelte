@@ -372,11 +372,11 @@
     //   2. pendingSelectedDeepLink (pre-resolve)  → write its target
     //   3. fallback: copy whatever dep/tof the current URL carries
     if (selected && depDays.length > 0 && arrDays.length > 0) {
-      params.set('dep', String(Math.round(depDays[selected.i])));
-      params.set('tof', String(Math.round(arrDays[selected.j])));
+      params.set('dep', planCoord(depDays[selected.i]));
+      params.set('tof', planCoord(arrDays[selected.j]));
     } else if (pendingSelectedDeepLink) {
-      params.set('dep', String(Math.round(pendingSelectedDeepLink.dep)));
-      params.set('tof', String(Math.round(pendingSelectedDeepLink.tof)));
+      params.set('dep', planCoord(pendingSelectedDeepLink.dep));
+      params.set('tof', planCoord(pendingSelectedDeepLink.tof));
     } else {
       const urlDep = page.url.searchParams.get('dep');
       const urlTof = page.url.searchParams.get('tof');
@@ -766,6 +766,14 @@
     const t = geoTransferDv(depDays[selected.i], arrDays[selected.j]);
     return t.feasible ? t : null;
   });
+
+  /** URL-encode a dep/tof day value. The geocentric Moon grid's rows are ~0.03 d
+   *  apart on the [2.5, 5.5] d band, so integer rounding would snap a selected
+   *  cell to a different transfer on reload / on the /fly handoff (review fix).
+   *  Heliocentric grids are ~10 d/row, so integers are lossless there. */
+  function planCoord(v: number): string {
+    return isGeoDestination ? v.toFixed(2) : String(Math.round(v));
+  }
 
   function flyMission() {
     if (!viable || !readout || !selected) return;

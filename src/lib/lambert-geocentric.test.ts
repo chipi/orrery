@@ -15,18 +15,19 @@ const TOF_MAX = 5.5;
 
 /**
  * Scan a year of departures × the feasible TOF band; return the **minimum-energy**
- * cell (lowest TLI). That is the physically canonical cheapest lunar departure —
- * a near-Hohmann tangential transfer, where the scalar-v∞ LOI approximation is
- * exact (ADR-085 D2 / Fable-5). The grid is shaded by `total`, but the honesty
- * bar is anchored to this well-defined cell rather than a global-min-total that
- * the direction-ignoring scalar v∞ could nudge slightly optimistic.
+ * cell (lowest TOTAL ∆v) — the one the porkchop shades cheapest and the user
+ * actually clicks. With the vector-v∞ LOI (review fix), the honest minimum is a
+ * near-Hohmann transfer, so anchoring the honesty bar here is both correct and
+ * exactly what the UI presents. (An earlier scalar-v∞ form put the grid minimum
+ * on the fastest-TOF edge and inverted the gradient — the gradient test below
+ * guards against that regression.)
  */
-function minEnergyCell() {
-  let best = { tli: Infinity, loi: 0, total: Infinity, dep: -1, tof: -1 };
+function minTotalCell() {
+  let best = { tli: 0, loi: 0, total: Infinity, dep: -1, tof: -1 };
   for (let dep = 0; dep <= 365; dep += 1) {
     for (let tof = TOF_MIN; tof <= TOF_MAX + 1e-9; tof += 0.25) {
       const r = geoTransferDv(dep, tof);
-      if (r.feasible && r.tli < best.tli) {
+      if (r.feasible && r.total < best.total) {
         best = { tli: r.tli, loi: r.loi, total: r.total, dep, tof };
       }
     }
@@ -44,7 +45,7 @@ describe('geoTransferDv — sanity constants', () => {
 });
 
 describe('geoTransferDv — honesty bar (Apollo bands, ADR-085)', () => {
-  const best = minEnergyCell();
+  const best = minTotalCell();
 
   it('finds a feasible minimum-∆v transfer', () => {
     expect(best.total).toBeLessThan(Infinity);
@@ -64,6 +65,20 @@ describe('geoTransferDv — honesty bar (Apollo bands, ADR-085)', () => {
   it('total LEO→LLO ∆v lands near the real ~3.9–4.05 km/s budget', () => {
     expect(best.total).toBeGreaterThanOrEqual(3.8);
     expect(best.total).toBeLessThanOrEqual(4.15);
+  });
+});
+
+describe('geoTransferDv — TOF gradient (review regression guard)', () => {
+  it('a fast transfer costs MORE than a near-Hohmann one — not less', () => {
+    // Same departure; a 2.5-day arrival must be more expensive than a ~4-day
+    // near-Hohmann arrival. The scalar-v∞ bug had this backwards (fast=cheap),
+    // which taught a false intuition. Physically, fast arrivals carry a large
+    // radial v∞ → higher LOI.
+    const dep = 160;
+    const fast = geoTransferDv(dep, 2.6);
+    const hohmann = geoTransferDv(dep, 4.4);
+    expect(fast.feasible && hohmann.feasible).toBe(true);
+    expect(fast.total).toBeGreaterThan(hohmann.total);
   });
 });
 

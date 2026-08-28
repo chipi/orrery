@@ -2307,6 +2307,11 @@
     mission = r.missionMeta;
     simDay = r.timeline.dep_day;
     missionEvents = r.missionEvents;
+    // Cislunar trips are 2.5–5.5 days, not the 100–500 d of a helio plan; the
+    // default 7 d/s would play the whole flight in under a second. Match the
+    // Moon-mission cadence (review fix — the helio applyPlanSelection relies on
+    // the 7 d/s default, which is right for its long transfers).
+    simSpeed = 0.4;
     resetCinematicForMissionSwap();
     launchDwellUntil = performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
     lastAppliedMissionId = r.appliedId;

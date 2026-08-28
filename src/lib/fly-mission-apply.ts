@@ -675,11 +675,18 @@ export function computePlanApplyMoon(
     flyby_day: depDay + tofDays,
     arr_day: depDay + tofDays,
   };
-  const cislunarTrajectory = buildCislunarTrajectory(undefined, {
-    dep_day_sim: depDay,
-    transit_days: tofDays,
-    is_return_trip: false,
-  });
+  // `type: 'orbit'` (not the default 'flyby') so a one-way LANDING trip places
+  // the lunar arrival at the END of the transit (tliEndMET = transit_days) and
+  // renders a lunar orbit — a 'flyby' default puts the pass mid-mission, wrong
+  // for a trip whose TOF is time-to-Moon (review fix).
+  const cislunarTrajectory = buildCislunarTrajectory(
+    { lunar_arrival: { type: 'orbit', altitude_km: 110 } },
+    {
+      dep_day_sim: depDay,
+      transit_days: tofDays,
+      is_return_trip: false,
+    },
+  );
   const { outPts, retPts } = buildCislunarArcs(timeline, false);
   return {
     timeline,

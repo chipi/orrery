@@ -60,14 +60,22 @@ export function geoTransferDv(depDay: number, tofDay: number): GeoTransfer {
   const res = solveLambert(r1, r2, tofSec, MU_EARTH, AMAX_GEO);
   if (!res) return INFEASIBLE;
 
-  // TLI — both speeds geocentric.
+  // TLI — both speeds geocentric. The transfer is ≥99.9% tangential at LEO
+  // (perigee of the 180° arc), so the scalar departure ∆v is exact to 2nd order.
   const tli = Math.abs(res.v1 - V_LEO_CIRC);
 
-  // LOI — patched-conic at the Moon (Fable-5 B1): v∞ relative to the Moon,
-  // then hyperbolic-excess → circular-capture burn. Scalar v∞ mirrors the
-  // heliocentric arrival-∆v convention (exact at the tangential min-∆v cell).
+  // LOI — patched-conic at the Moon with a VECTOR v∞ (review fix — a scalar
+  // |v2 − vMoon| collapses on fast transfers and inverts the TOF gradient,
+  // teaching "faster is cheaper", which is false). The 180° antipodal geometry
+  // makes the semi-latus-rectum exact: p = 2·r1·r2/(r1+r2). Decompose the
+  // arrival velocity into tangential (along the Moon's motion) + radial
+  // (perpendicular to it); the Moon's velocity is ~tangential. Fast arrivals
+  // carry a large radial component the scalar form ignored.
+  const p = (2 * R_LEO * r2mag) / (R_LEO + r2mag);
+  const vt2 = Math.sqrt(MU_EARTH * p) / r2mag; // tangential (horizontal) speed at the Moon
+  const vr2 = Math.sqrt(Math.max(0, res.v2 * res.v2 - vt2 * vt2)); // radial (climb) speed
   const vMoon = moonSpeedKmS(jdArr);
-  const vInf = Math.abs(res.v2 - vMoon);
+  const vInf = Math.hypot(vr2, vt2 - vMoon);
   const loi = Math.sqrt(vInf * vInf + (2 * MU_MOON) / R_LLO) - V_LLO_CIRC;
 
   const total = tli + loi;

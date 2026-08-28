@@ -15,7 +15,10 @@ import { expect, test } from '@playwright/test';
  *   - element scope is rectangle-stable once mounted, regardless of
  *     how long the rest of the page takes to settle
  *
- * Tracks 3 layout-stable surfaces × desktop + mobile = 6 baselines.
+ * Tracks the layout-stable filter/tab/head/list/selector surfaces ×
+ * desktop + mobile. #388 adds the station (/iss, /tiangong module lists)
+ * + /plan (selector bar) routes; the surface routes (/mars, /moon, /earth)
+ * are pending a stable-HUD-anchor pass (see the note in STABLE_ELEMENTS).
  *
  * **First-run behaviour:** Playwright writes new baselines under
  * `tests/e2e/visual.spec.ts-snapshots/` and reports "missing".
@@ -77,6 +80,32 @@ const STABLE_ELEMENTS = [
     path: '/fly',
     label: 'fly-mobile-tabs',
     selector: '.fly-mtabs',
+  },
+  // ── #388 — station + plan route coverage (the churned 0.7.3 surfaces) ──
+  // Element-scoped on deterministic chrome (a fixed module list / selector
+  // bar), NOT the 3D canvas. /iss + /tiangong module lists are a fixed roster;
+  // /plan's selector bar is the destination + mission-type controls.
+  //
+  // NOTE: the surface routes (/mars, /moon, /earth) are intentionally NOT here
+  // yet — their HUD chrome is dynamic (per-site selects, live climate/scan
+  // readouts, science-lens layers) with no stable single-element anchor from
+  // static inspection. Snapshotting a shifting element would flake (net-negative,
+  // like the dropped /library baseline above). They need a browser-DOM pass to
+  // pin a genuinely stable HUD element before they're added — tracked in #388.
+  {
+    path: '/plan',
+    label: 'plan-selector-bar',
+    selector: '[data-audio-stage="plan-selector-bar"], .selector-bar',
+  },
+  {
+    path: '/iss',
+    label: 'iss-module-list',
+    selector: '[data-audio-stage="iss-module-list"], .module-list',
+  },
+  {
+    path: '/tiangong',
+    label: 'tiangong-module-list',
+    selector: '[data-audio-stage="tiangong-module-list"], .module-list',
   },
 ];
 

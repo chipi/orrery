@@ -20,9 +20,19 @@ const STOPS: Array<[number, [number, number, number]]> = [
   [1.0, [120, 10, 10]],
 ];
 
-/** Map a Δv value (km/s) to RGB triple in 0..255. */
-export function dvToRGB(dv: number): [number, number, number] {
-  const t = Math.max(0, Math.min(1, (dv - DV_MIN_KMS) / (DV_MAX_KMS - DV_MIN_KMS)));
+/**
+ * Map a Δv value (km/s) to RGB triple in 0..255. `min`/`max` set the
+ * normalisation window; the heliocentric grids use the default
+ * [3.2, 16.2] km/s span, but a destination with a much narrower range
+ * (the geocentric Earth→Moon grid, ~3.9–4.3 km/s — ADR-085) passes its
+ * own `dv_color_range` so the heatmap isn't a flat single-colour blob.
+ */
+export function dvToRGB(
+  dv: number,
+  min: number = DV_MIN_KMS,
+  max: number = DV_MAX_KMS,
+): [number, number, number] {
+  const t = Math.max(0, Math.min(1, (dv - min) / (max - min)));
   for (let i = 0; i < STOPS.length - 1; i++) {
     const [t0, c0] = STOPS[i];
     const [t1, c1] = STOPS[i + 1];
@@ -38,9 +48,9 @@ export function dvToRGB(dv: number): [number, number, number] {
   return [120, 10, 10];
 }
 
-/** CSS colour string for a Δv value (km/s). */
-export function dvToCss(dv: number): string {
-  const [r, g, b] = dvToRGB(dv);
+/** CSS colour string for a Δv value (km/s). See `dvToRGB` for `min`/`max`. */
+export function dvToCss(dv: number, min: number = DV_MIN_KMS, max: number = DV_MAX_KMS): string {
+  const [r, g, b] = dvToRGB(dv, min, max);
   return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
 }
 

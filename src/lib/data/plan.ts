@@ -1,6 +1,6 @@
 import { get } from './core';
 import type { PorkchopGrid } from '$types/porkchop-grid';
-import type { DestinationId } from '$lib/lambert-grid.constants';
+import type { PlanDestinationId } from '$lib/lambert-grid.constants';
 
 /**
  * Pre-computed porkchop grid for a destination (v0.1.6 / ADR-026).
@@ -8,7 +8,9 @@ import type { DestinationId } from '$lib/lambert-grid.constants';
  * by scripts/precompute-porkchops.ts. /plan loads them via this
  * function for instant first paint and full offline capability.
  */
-export async function getPorkchopGrid(destinationId: DestinationId): Promise<PorkchopGrid | null> {
+export async function getPorkchopGrid(
+  destinationId: PlanDestinationId,
+): Promise<PorkchopGrid | null> {
   try {
     return await get<PorkchopGrid>(`porkchop/earth-to-${destinationId}.json`);
   } catch {

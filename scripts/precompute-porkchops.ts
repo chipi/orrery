@@ -20,6 +20,7 @@ import { join } from 'node:path';
 import { computePorkchopGrid, DV_FAILED, type LambertRequest } from '../src/lib/lambert-grid';
 import type { DestinationId } from '../src/lib/lambert-grid.constants';
 import type { MissionType } from '../src/types/porkchop-grid';
+import { geoTransferDv } from '../src/lib/lambert-geocentric';
 
 interface DestinationSpec {
   id: DestinationId;
@@ -184,6 +185,62 @@ async function precomputeOne(spec: DestinationSpec): Promise<string> {
   return JSON.stringify(out, null, 2) + '\n';
 }
 
+// ─── Geocentric Earth→Moon grid (ADR-085) ──────────────────────────
+// The Moon has no heliocentric orbit, so it is NOT a heliocentric Lambert
+// destination — its grid is built geocentrically here via `geoTransferDv`
+// (µ_Earth, TLI + patched-conic LOI). Same [width, height] as the helio grids
+// so the mobile magnifier stays valid; its own dep/tof ranges + colour scale.
+
+const MOON_DEP_RANGE_DAYS: [number, number] = [0, 365];
+const MOON_TOF_RANGE_DAYS: [number, number] = [2.5, 5.5];
+
+function precomputeGeoMoon(): string {
+  const [w, h] = STEPS;
+  const [depStart, depEnd] = MOON_DEP_RANGE_DAYS;
+  const [tofStart, tofEnd] = MOON_TOF_RANGE_DAYS;
+
+  const grid: number[][] = new Array(h);
+  let failed = 0;
+  let dvMin = Infinity;
+  let dvMax = -Infinity;
+  for (let j = 0; j < h; j++) {
+    const tof = tofStart + (j / (h - 1)) * (tofEnd - tofStart);
+    grid[j] = new Array(w);
+    for (let i = 0; i < w; i++) {
+      const dep = depStart + (i / (w - 1)) * (depEnd - depStart);
+      const t = geoTransferDv(dep, tof);
+      const dv = quantise(t.total);
+      grid[j][i] = dv;
+      if (t.feasible) {
+        if (dv < dvMin) dvMin = dv;
+        if (dv > dvMax) dvMax = dv;
+      } else {
+        failed++;
+      }
+    }
+  }
+  const cells = w * h;
+  const convPct = Math.round((100 * (cells - failed)) / cells);
+  // A touch of headroom so the cheapest cells aren't pinned to the darkest stop.
+  const colorRange: [number, number] = [quantise(dvMin - 0.1), quantise(dvMax + 0.1)];
+
+  const out = {
+    destination: 'moon' as const,
+    dep_range_days: MOON_DEP_RANGE_DAYS,
+    tof_range_days: MOON_TOF_RANGE_DAYS,
+    steps: STEPS,
+    mission_types: ['LANDING'] as MissionType[],
+    // LOI is baked per-cell into the grid total (it varies with lunar distance),
+    // so no fixed insertion is added at display time — unlike the heliocentric path.
+    dv_orbit_insertion: { LANDING: 0 } as Partial<Record<MissionType, number>>,
+    tof_axis_unit: 'days' as const,
+    dv_color_range: colorRange,
+    grid,
+    credit: `Computed at build time via the geocentric Lambert model (src/lib/lambert-geocentric.ts, ADR-085). Earth→Moon: ${convPct}% cells feasible (${failed} of ${cells} outside the short-way TOF band). ∆v = TLI (µ_Earth LEO departure) + LOI (patched-conic, µ_Moon). Moon ephemeris: src/lib/astronomy/moon.ts (Schlyter/Brown analytic). Representative two-body estimate — validated against Apollo TLI ~3.05–3.15 / LOI ~0.8–0.9 km/s.`,
+  };
+  return JSON.stringify(out, null, 2) + '\n';
+}
+
 async function main() {
   await mkdir(OUT_DIR, { recursive: true });
   console.log('Pre-computing porkchop grids:');
@@ -194,7 +251,13 @@ async function main() {
     await writeFile(path, json);
     process.stdout.write(` ${(json.length / 1024).toFixed(0)} KB\n`);
   }
-  console.log(`Done. ${DESTINATIONS.length} grids written to ${OUT_DIR}/`);
+  // Geocentric Moon grid (ADR-085).
+  process.stdout.write('  moon (geocentric)…');
+  const moonJson = precomputeGeoMoon();
+  await writeFile(join(OUT_DIR, 'earth-to-moon.json'), moonJson);
+  process.stdout.write(` ${(moonJson.length / 1024).toFixed(0)} KB\n`);
+
+  console.log(`Done. ${DESTINATIONS.length + 1} grids written to ${OUT_DIR}/`);
 }
 
 main().catch((err) => {

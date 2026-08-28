@@ -95,6 +95,23 @@ export type DestinationId =
   | 'patroclus'
   | 'menoetius';
 
+/**
+ * Geocentric (planet-orbiting) destinations. These have NO heliocentric orbit,
+ * so they are deliberately NOT in `DestinationId` / the heliocentric
+ * `DESTINATIONS` table / the Lambert worker — their porkchops are built
+ * geocentrically in the precompute via `lambert-geocentric.ts` (ADR-085). The
+ * Moon is the first; planetocentric moons of the giants follow.
+ */
+export type GeoDestinationId = 'moon';
+
+/**
+ * Every destination `/plan` can select and load a porkchop for: the
+ * heliocentric Lambert set plus the geocentric ones (ADR-085). Use this where
+ * a value spans both models (the `/plan` selector, the porkchop JSON contract,
+ * `getPorkchopGrid`); keep `DestinationId` for the heliocentric-only Lambert path.
+ */
+export type PlanDestinationId = DestinationId | GeoDestinationId;
+
 export interface DestinationConstants {
   id: DestinationId;
   /** Heliocentric semi-major axis, AU. */

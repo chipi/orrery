@@ -1,4 +1,4 @@
-import type { DestinationId } from '$lib/lambert-grid.constants';
+import type { PlanDestinationId } from '$lib/lambert-grid.constants';
 
 /**
  * Pre-computed porkchop grid (v0.1.6 / ADR-026). Schema:
@@ -9,7 +9,7 @@ import type { DestinationId } from '$lib/lambert-grid.constants';
 export type MissionType = 'LANDING' | 'FLYBY';
 
 export interface PorkchopGrid {
-  destination: DestinationId;
+  destination: PlanDestinationId;
   /** Departure-day range [start, end] in days from epoch. */
   dep_range_days: [number, number];
   /** Transfer-time range [start, end] in days. Per-destination
@@ -27,6 +27,10 @@ export interface PorkchopGrid {
   /** Y-axis tick label unit. ADR-026 §Y-axis units: auto-switch to
    *  years when tof_range_days[1] > 730. */
   tof_axis_unit: 'days' | 'years';
+  /** Optional colour-scale window [min, max] km/s for the heatmap. Omitted →
+   *  the default heliocentric span [3.2, 16.2]. The geocentric Earth→Moon grid
+   *  sets a narrow range (~3.9–4.3) so its porkchop isn't a flat blob (ADR-085). */
+  dv_color_range?: [number, number];
   /** 2D grid of ∆v values, [row][col]. Row = TOF axis, col = dep axis.
    *  Values in km/s; sentinel 28 marks no-solution cells. */
   grid: number[][];

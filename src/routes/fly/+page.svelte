@@ -43,6 +43,7 @@
     computeMissionApply,
     computeScenarioApply,
     computePlanApply,
+    computePlanApplyMoon,
     type LoadedMission,
     type MissionApplyDefaults,
     type TrajectoryOverride,
@@ -2282,6 +2283,35 @@
     lastAppliedMissionId = r.appliedId;
   }
 
+  /**
+   * Cislunar sibling of {@link applyPlanSelection} for the geocentric Moon
+   * (ADR-085 · #308). `?dest=moon&dep&tof` from /plan's Earth→Moon porkchop
+   * synthesises a cislunar flight so the trip you plan is the trip you fly.
+   */
+  function applyPlanSelectionMoon(depDay: number, tofDays: number) {
+    const r = computePlanApplyMoon(depDay, tofDays, {
+      dvFallback: defaultScenarioBase.dv_total_km_s,
+    });
+    arcTimeline = r.timeline;
+    isFreeReturn = r.isFreeReturn;
+    activeDestination = r.activeDestination;
+    flyUpdaters?.helio.applyDestination(r.activeDestination);
+    currentDestMeshId = r.activeDestination;
+    flyUpdaters?.helio.setSpacecraftModel('');
+    isMoonMission = r.isMoonMission;
+    cislunarTrajectory = r.cislunarTrajectory;
+    interplanetaryTrajectory = r.interplanetaryTrajectory;
+    outPts = r.outPts;
+    retPts = r.retPts;
+    flyUpdaters?.helio.resetCamera();
+    mission = r.missionMeta;
+    simDay = r.timeline.dep_day;
+    missionEvents = r.missionEvents;
+    resetCinematicForMissionSwap();
+    launchDwellUntil = performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
+    lastAppliedMissionId = r.appliedId;
+  }
+
   async function loadMissionFromUrl(url: URL): Promise<void> {
     loadFailed = false;
     const id = url.searchParams.get('mission');
@@ -2297,15 +2327,20 @@
     // an outbound-only arc to the chosen destination.
     if (!id && depParam !== null && tofParam !== null) {
       const destResolved = destParam || 'mars';
-      if (Object.prototype.hasOwnProperty.call(DESTINATIONS, destResolved)) {
+      const depDay = Number(depParam);
+      const tofDays = Number(tofParam);
+      const validPlanParams = Number.isFinite(depDay) && Number.isFinite(tofDays) && tofDays > 0;
+      // Geocentric Moon (ADR-085): not a heliocentric DESTINATIONS entry — route
+      // it to the cislunar synthesis so /plan's Earth→Moon selection flies here.
+      if (destResolved === 'moon' && validPlanParams) {
+        applyPlanSelectionMoon(depDay, tofDays);
+        return;
+      }
+      if (Object.prototype.hasOwnProperty.call(DESTINATIONS, destResolved) && validPlanParams) {
         const dest = destResolved as DestinationId;
         const type: 'LANDING' | 'FLYBY' = typeParam === 'FLYBY' ? 'FLYBY' : 'LANDING';
-        const depDay = Number(depParam);
-        const tofDays = Number(tofParam);
-        if (Number.isFinite(depDay) && Number.isFinite(tofDays) && tofDays > 0) {
-          applyPlanSelection(dest, type, depDay, tofDays);
-          return;
-        }
+        applyPlanSelection(dest, type, depDay, tofDays);
+        return;
       }
     }
 

@@ -637,3 +637,71 @@ export function computePlanApply(
     appliedId: `plan-${dest}-${type}`,
   };
 }
+
+/**
+ * Cislunar variant of {@link PlanApplyResult}. The heliocentric result locks
+ * `isMoonMission: false` / `cislunarTrajectory: null`; the Moon path (ADR-085)
+ * is the mirror — a cislunar trajectory, no heliocentric arcs of its own.
+ */
+export interface MoonPlanApplyResult {
+  timeline: MissionTimeline;
+  isFreeReturn: false;
+  isMoonMission: true;
+  activeDestination: DestinationId;
+  outPts: Vec2[];
+  retPts: Vec2[];
+  cislunarTrajectory: CislunarTrajectory;
+  interplanetaryTrajectory: null;
+  missionMeta: LoadedMission;
+  missionEvents: MissionEvent[];
+  appliedId: string;
+}
+
+/**
+ * Pure /plan → /fly state for the geocentric Moon (ADR-085 · #308). Used when
+ * /fly receives `?dest=moon&dep=N&tof=N` — the trip planned on /plan's
+ * Earth→Moon porkchop becomes the cislunar trip /fly flies, so the two routes
+ * stay consistent. One-way (LANDING): the porkchop TOF is the translunar
+ * transit; a default parametric cislunar trajectory is built from dep + tof
+ * (no per-mission `cislunar_profile` — this is a synthesised teaching flight).
+ */
+export function computePlanApplyMoon(
+  depDay: number,
+  tofDays: number,
+  defaults: PlanApplyDefaults,
+): MoonPlanApplyResult {
+  const timeline: MissionTimeline = {
+    dep_day: depDay,
+    flyby_day: depDay + tofDays,
+    arr_day: depDay + tofDays,
+  };
+  const cislunarTrajectory = buildCislunarTrajectory(undefined, {
+    dep_day_sim: depDay,
+    transit_days: tofDays,
+    is_return_trip: false,
+  });
+  const { outPts, retPts } = buildCislunarArcs(timeline, false);
+  return {
+    timeline,
+    isFreeReturn: false,
+    isMoonMission: true,
+    activeDestination: missionDestToHeliocentricDestinationId('MOON') ?? ('mars' as DestinationId),
+    outPts,
+    retPts,
+    cislunarTrajectory,
+    interplanetaryTrajectory: null,
+    missionMeta: {
+      name: 'EARTH → MOON · LANDING',
+      vehicle: '—',
+      payload: '—',
+      dv_total: defaults.dvFallback,
+      dv_used: defaults.dvFallback * 0.94,
+      dep_label: `Day ${depDay}`,
+      arr_label: `Day ${depDay + tofDays}`,
+      timeline,
+      isFromData: true,
+    },
+    missionEvents: [],
+    appliedId: 'plan-moon-landing',
+  };
+}

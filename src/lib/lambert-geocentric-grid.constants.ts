@@ -38,11 +38,15 @@ export const V_LLO_CIRC = Math.sqrt(MU_MOON / R_LLO);
 export const AMAX_GEO = 2_000_000;
 
 /**
- * Julian Day at grid epoch (depDay = 0). Pinned to J2000, the same epoch the
- * heliocentric `planets.json` mean-longitudes (L0) are referenced to, so the
- * two porkchops share one clock (ADR-085 D5).
+ * Julian Day at grid epoch (depDay = 0) = **2026-01-01 00:00 UTC**.
+ *
+ * This MUST match the display epoch `porkchop.ts#dayToDate` uses (`epochYear
+ * 2026`) — the Moon moves ~13°/day, so an epoch offset would put the porkchop's
+ * perigee-distance structure out of phase with the departure dates the UI
+ * renders (ADR-085 D5; caught in the /plan integration review). JD for the
+ * Gregorian calendar date 2026-01-01 00:00 UT.
  */
-export const EPOCH_JD = 2_451_545.0;
+export const EPOCH_JD = 2_461_041.5;
 
 /** Finite-difference half-step for the Moon velocity, days. */
 const V_DIFF_DAYS = 0.02;

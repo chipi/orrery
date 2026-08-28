@@ -4,13 +4,14 @@
   import { page } from '$app/state';
   import { base } from '$app/paths';
   import { dvToRGB, dvToCss, dayToLongDate, dayToShortDate } from '$lib/porkchop';
+  import { geoTransferDv } from '$lib/lambert-geocentric';
   import { trackFilterChange } from '$lib/analytics';
   import { getRockets, getPorkchopGrid } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { localizeHref } from '$lib/paraglide/runtime';
   import type { Rocket } from '$types/rocket';
   import type { PorkchopGrid, MissionType } from '$types/porkchop-grid';
-  import type { DestinationId } from '$lib/lambert-grid.constants';
+  import type { DestinationId, PlanDestinationId } from '$lib/lambert-grid.constants';
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { TrajectoryArrowIcon } from '$lib/components/icons';
@@ -34,7 +35,8 @@
   // + Pluto. FLYBY_ONLY marks destinations with no LANDING at this fidelity (no
   // LOI ∆v term); GRAVITY_ASSIST_CAVEAT_DESTINATIONS flags those whose realistic
   // trajectory needs a gravity assist.
-  const DESTINATION_IDS: DestinationId[] = [
+  const DESTINATION_IDS: PlanDestinationId[] = [
+    'moon',
     'mercury',
     'venus',
     'mars',
@@ -80,8 +82,10 @@
     'proton-m': 'proton-m',
   };
 
-  function destinationLabel(id: DestinationId): string {
+  function destinationLabel(id: PlanDestinationId): string {
     switch (id) {
+      case 'moon':
+        return m.plan_destination_moon();
       case 'mercury':
         return m.plan_destination_mercury();
       case 'venus':
@@ -153,7 +157,7 @@
   const activeGrid = $derived(isSuccess(gridRD) ? gridRD.data : null);
   const computing = $derived(isLoading(gridRD));
   const loadFailed = $derived(isError(gridRD));
-  let destinationId = $state<DestinationId>('mars');
+  let destinationId = $state<PlanDestinationId>('mars');
   let missionType = $state<MissionType>('LANDING');
   let loadId = 0;
 
@@ -190,6 +194,12 @@
     activeGrid?.mission_types ?? (['LANDING', 'FLYBY'] as MissionType[]),
   );
   let DV_ORBIT_INSERTION = $derived(activeGrid?.dv_orbit_insertion ?? {});
+  /** Optional per-grid heatmap colour window (geo Moon has a narrow range,
+   *  ADR-085). `null` → dvToRGB/dvToCss use their heliocentric defaults. */
+  let DV_COLOR_RANGE = $derived(activeGrid?.dv_color_range ?? null);
+  /** True for a geocentric destination (the Moon): different ∆v semantics
+   *  (TLI+LOI from LEO), narrow colour range, cislunar /fly handoff. ADR-085. */
+  let isGeoDestination = $derived(destinationId === 'moon');
   let grid: number[][] | null = $derived(activeGrid?.grid ?? null);
   let depDays: number[] = $derived.by(() => {
     if (!activeGrid) return [];
@@ -344,7 +354,10 @@
         params.set('dest', urlDest);
       }
     }
-    if (missionType !== (FLYBY_ONLY.includes(destinationId) ? 'FLYBY' : 'LANDING')) {
+    if (
+      missionType !==
+      ((FLYBY_ONLY as readonly string[]).includes(destinationId) ? 'FLYBY' : 'LANDING')
+    ) {
       params.set('type', missionType.toLowerCase());
     }
     // Porkchop point selection (#337 gap 4). Rounded to integer days
@@ -425,10 +438,10 @@
     untrack(() => pushFiltersToUrl());
   });
 
-  function setDestination(value: DestinationId) {
+  function setDestination(value: PlanDestinationId) {
     destinationId = value;
     // Reset mission type per the destination's defaults.
-    missionType = FLYBY_ONLY.includes(value) ? 'FLYBY' : 'LANDING';
+    missionType = (FLYBY_ONLY as readonly string[]).includes(value) ? 'FLYBY' : 'LANDING';
     // Different destination = different ∆v regime; let the auto-suggester
     // pick a fitting rocket again instead of holding onto the prior pick.
     userPickedRocket = false;
@@ -446,7 +459,7 @@
   // Each destination's grid is committed at static/data/porkchop/.
   // Race-guarded by monotonic loadId — if the user switches destination
   // while a load is in flight, the older promise resolves into a no-op.
-  async function loadGrid(id: DestinationId) {
+  async function loadGrid(id: PlanDestinationId) {
     const myId = ++loadId;
     progress = 0;
     gridRD = loading();
@@ -473,7 +486,7 @@
       const srcRow = grid[GRID_H - 1 - j];
       for (let i = 0; i < GRID_W; i++) {
         const dv = srcRow[i];
-        const [r, g, b] = dvToRGB(dv);
+        const [r, g, b] = dvToRGB(dv, DV_COLOR_RANGE?.[0], DV_COLOR_RANGE?.[1]);
         const idx = (j * GRID_W + i) * 4;
         img.data[idx] = r;
         img.data[idx + 1] = g;
@@ -746,6 +759,14 @@
   let dvDeficit = $derived(readout && dvBudget ? readout.dv - dvBudget : 0);
   let viable = $derived(readout !== null && dvBudget > 0 && dvDeficit <= 0);
 
+  /** For the geocentric Moon: the TLI/LOI breakdown of the selected cell,
+   *  recomputed from the pure kernel (the grid only stores the total). ADR-085. */
+  let geoSplit = $derived.by(() => {
+    if (!isGeoDestination || !selected) return null;
+    const t = geoTransferDv(depDays[selected.i], arrDays[selected.j]);
+    return t.feasible ? t : null;
+  });
+
   function flyMission() {
     if (!viable || !readout || !selected) return;
     // Pass destination + mission type + the selected cell's dep_day
@@ -791,7 +812,7 @@
         const j = mag.j - dy; // Flip so dy positive = visually up
         if (i < 0 || i >= GRID_W || j < 0 || j >= GRID_H) continue;
         const dv = grid[j][i];
-        ctx.fillStyle = dvToCss(dv);
+        ctx.fillStyle = dvToCss(dv, DV_COLOR_RANGE?.[0], DV_COLOR_RANGE?.[1]);
         ctx.fillRect(
           (dx + halfWindow) * cellSize,
           (dy + halfWindow) * cellSize,
@@ -1066,6 +1087,12 @@
               section="dv-budget"
             />
           </span>
+          {#if isGeoDestination}
+            <span class="label geo-caveat">
+              {m.plan_dv_from_leo()}{#if geoSplit}
+                · TLI {geoSplit.tli.toFixed(2)} + LOI {geoSplit.loi.toFixed(2)}{/if}
+            </span>
+          {/if}
         </div>
       </div>
 
@@ -1205,7 +1232,7 @@
         </div>
       {/if}
 
-      {#if GRAVITY_ASSIST_CAVEAT_DESTINATIONS.includes(destinationId)}
+      {#if (GRAVITY_ASSIST_CAVEAT_DESTINATIONS as readonly string[]).includes(destinationId)}
         <p class="gravity-caveat">{m.plan_gravity_assist_caveat()}</p>
       {/if}
       <button class="fly" type="button" disabled={!viable} onclick={flyMission}>

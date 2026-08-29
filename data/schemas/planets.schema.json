@@ -81,6 +81,10 @@
             "type": "number",
             "description": "Mean longitude at J2000 epoch (radians)"
           },
+          "varpi": {
+            "type": "number",
+            "description": "Longitude of perihelion ϖ at J2000 epoch (radians). Phases the eccentric-orbit conic so perihelion sits at ϖ, not ecliptic longitude 0 (S2). Optional; inert for the circular position model (e=0)."
+          },
           "incl": {
             "type": "number",
             "minimum": -180,

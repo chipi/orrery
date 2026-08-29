@@ -10,6 +10,54 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
+## [0.8.1] — 2026-08-28
+
+A correctness-and-polish point release on top of 0.8.0 — mobile/PWA fixes, a new
+`/plan` transfer set, and a full physics audit of every orbital and sky
+subsystem (independent review; ten findings, all fixed with expanded tests).
+
+### `/plan` — transfers
+
+- **Earth→Moon full TOF band** — the geocentric porkchop now spans the complete
+  3–14 day transfer range via a high-branch (long-way) Lambert solve, not just
+  the fast side (#308, ADR-085).
+- **Nine planetary-moon porkchops** — Phobos/Deimos, the four Galileans, Titan,
+  Enceladus and Triton, each a multi-leg patched-conic (heliocentric Earth→host
+  + moon-orbit insertion) with an honest direct-capture upper bound (#308,
+  ADR-086).
+
+### Physics correctness (independent audit)
+
+- **Arrival v∞ is now a vector** — the interplanetary and moon-transfer grids
+  priced the arrival hyperbolic excess as a scalar speed difference, which
+  collapsed on faster-than-Hohmann transfers and inverted the cost gradient.
+  Split into tangential (√(µp)/r) + radial components (B1/S1).
+- **Perihelion is placed at ϖ** — the porkchop and `/fly` conic phased position
+  by mean longitude directly, pinning every body's perihelion at ecliptic
+  longitude 0. Added the longitude of perihelion ϖ to the ephemerides and solve
+  Kepler's equation properly (Pluto's 2026 distance now reads ~35.6 AU, not the
+  mis-phased value) (S2).
+- **Ascent HUD reads the true flight frame** — dynamic pressure, drag and heat
+  flux now use air-relative airspeed (co-rotating atmosphere), thrust/TWR read
+  the live engine state, the ∆v-to-orbit budget credits the launch-site rotation
+  and targets the real orbit altitude, and parallel booster staging no longer
+  double-counts (B2/S3/M2–M4).
+- **AR sky pointing is precessed to date** — planet/Sun positions (J2000
+  ephemeris) are now precessed onto the equinox of date before the of-date
+  obliquity + sidereal-time steps, removing a ~0.36° framing error (verified
+  against Meeus ex. 13.b) (M1).
+
+### Mobile / PWA / platform
+
+- **AR "look at the sky" on the installed PWA** now matches native iOS — the
+  planetarium no longer hard-requires a camera grant and shows a dark-sky
+  backdrop (#393).
+- **Essays / long-view header gap** on the mobile PWA fixed — sticky nav with
+  corrected flow padding, no more black band under the title (#491).
+- **Edge caching + response-header contract** for the VPS Caddy edge (#387).
+- **`$app/stores` → `$app/state`** migration completed (#359).
+- **Full visual-regression baseline coverage** across 22 routes (#388).
+
 ## [0.8.0] — 2026-08-27
 
 Orrery's biggest release yet. It becomes a **native mobile app with augmented reality**,

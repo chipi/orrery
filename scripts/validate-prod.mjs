@@ -435,8 +435,19 @@ suite('regression-guards');
     .first()
     .click()
     .catch(() => {});
-  await p.waitForTimeout(3000);
+  // Wait for the /de/explore route to actually mount its 3D scene rather than
+  // racing a fixed timeout: a plain waitForTimeout(3000) intermittently sampled
+  // canvas=0 in CI's headless SwiftShader WebGL (no GPU → slow context init),
+  // failing a HEALTHY prod that renders canvas=2 in any real browser. Poll for
+  // the canvas element to attach (≤15s) — robust to slow software-WebGL, still
+  // fast when it mounts quickly.
+  await p.waitForTimeout(400);
   const url = p.url();
+  await p
+    .locator('canvas')
+    .first()
+    .waitFor({ state: 'attached', timeout: 15000 })
+    .catch(() => {});
   const canvas = await p.locator('canvas').count();
   const isHome = /Ein Sonnensystem-Explorer|solar system explorer/i.test(
     await p
@@ -575,7 +586,14 @@ suite('interactions');
   }
   // mobile explore 3D
   {
-    const { p } = await load(mob, '/explore', { waitMs: 2500 });
+    const { p } = await load(mob, '/explore', { waitMs: 500 });
+    // Same slow-software-WebGL guard as the desktop locale-switch check: wait for
+    // the canvas to attach instead of trusting a fixed post-load delay.
+    await p
+      .locator('canvas')
+      .first()
+      .waitFor({ state: 'attached', timeout: 15000 })
+      .catch(() => {});
     record('mobile /explore 3D canvas', (await p.locator('canvas').count()) > 0);
     await p.close();
   }

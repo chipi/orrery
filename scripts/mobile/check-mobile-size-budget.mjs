@@ -15,16 +15,22 @@
  * Headroom: cumulative real-data growth (the /science + /programs + essays waves,
  * and the /explore v2 "Known Universe" catalogues — ~4 MB of minified HYG star
  * shells + exoplanet/deep-sky/black-hole/local-group JSON) took the pruned build
- * to ~67 MB. Budget raised 65 → 68 MB to fit that (a data floor, not a leak). Still
- * trips on a structural re-leak (a ~20 MB 4K-texture bucket → ~87 MB ≫ 68) and
- * stays well under the iOS 200 MB cellular-OTA cap. Headroom is now thin (~1 MB);
- * re-baseline (or re-prune the outer star shells for mobile) if it trips again.
+ * to ~67 MB. Budget raised 65 → 68 MB to fit that (a data floor, not a leak).
+ *
+ * v0.8.1 re-baseline 68 → 70 MB (again a data floor, not a leak): the physics-
+ * audit porkchop-grid recompute (B1/S1/S2 rewrote every grid's bytes; the /plan
+ * set is now ~3.6 MB) plus the 14-locale quality sweep (native-script CJK /
+ * Arabic / Devanagari strings are multi-byte, so the repaired locales grew the
+ * i18n bundles) took the pruned build 67 → 69 MB. Both are legitimate content.
+ * Still trips on a structural re-leak (a ~20 MB 4K-texture bucket → ~87 MB ≫ 70)
+ * and stays well under the iOS 200 MB cellular-OTA cap. Headroom is again thin
+ * (~1 MB); re-baseline (or re-prune the outer star shells for mobile) if it trips.
  */
 import { statSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 
 const BUILD = path.resolve(process.cwd(), 'build');
-const BUDGET_MB = 68;
+const BUDGET_MB = 70;
 
 if (process.env.MOBILE !== '1') {
   console.log('[size-budget] MOBILE != 1 — skipping (browser build is not budgeted).');

@@ -137,15 +137,19 @@ export function skyAvailability(xrSupported: boolean, magicWindow: boolean): ArA
 }
 
 /**
- * Whether the non-XR magic-window sky substrate could run: a DeviceOrientation
- * API + a camera getter on a MOBILE device. The mobile gate (coarse pointer /
- * touch) is what keeps it off desktop browsers, which also expose
- * DeviceOrientationEvent + a webcam but have no usable compass. Real event
- * delivery is re-confirmed when the view actually starts. */
+ * Whether the non-XR sky substrate could run: a DeviceOrientation API on a
+ * MOBILE device. The gyro is the hard requirement (it drives the camera pose);
+ * the rear camera is an OPTIONAL backdrop — where `getUserMedia` is absent or
+ * blocked (notably iOS Safari home-screen PWAs, which don't expose it) the
+ * substrate still runs as a dark-sky **planetarium** (`createCameraSkyView`
+ * degrades gracefully). Requiring the camera here is what wrongly hid the whole
+ * sky feature in the iOS PWA — so it's gated on the gyro + a mobile pointer, not
+ * the camera. The mobile gate (coarse pointer / touch) keeps it off desktop
+ * browsers, which expose DeviceOrientationEvent but have no usable compass; real
+ * event delivery is re-confirmed when the view actually starts. */
 export function isMobileSkyCapable(): boolean {
   if (typeof window === 'undefined' || typeof navigator === 'undefined') return false;
   if (typeof DeviceOrientationEvent === 'undefined') return false;
-  if (!navigator.mediaDevices?.getUserMedia) return false;
   const coarse = window.matchMedia?.('(pointer: coarse)')?.matches ?? false;
   const touch = (navigator.maxTouchPoints ?? 0) > 0;
   return coarse || touch;

@@ -131,6 +131,7 @@ export function createXrSkyView(): SkyView {
 export function createCameraSkyView(): SkyView {
   let stream: MediaStream | null = null;
   let video: HTMLVideoElement | null = null;
+  let backdrop: HTMLElement | null = null;
   let onOrient: ((e: Event) => void) | null = null;
   let gotEvent = false;
   let alpha = 0;
@@ -211,6 +212,19 @@ export function createCameraSkyView(): SkyView {
     void video.play().catch(() => {});
   }
 
+  // Planetarium fallback: with no camera (iOS PWA / blocked), the sky canvas is
+  // transparent over pure black, which reads as broken. A night-sky gradient
+  // (lighter toward the horizon, deep space at the zenith) behind the same
+  // transparent canvas turns it into a proper star-map — the closest the web
+  // PWA gets to the native ARKit view without passthrough.
+  function attachPlanetariumBackdrop(): void {
+    backdrop = document.createElement('div');
+    backdrop.className = 'ar-sky-backdrop';
+    backdrop.style.cssText =
+      'position:fixed;inset:0;z-index:9996;background:radial-gradient(ellipse at 50% 118%, #10203f 0%, #081428 42%, #030713 72%, #01030a 100%);';
+    document.body.appendChild(backdrop);
+  }
+
   return {
     kind: 'camera',
     // The magic-window path already compensates screen angle inside deviceQuaternion,
@@ -232,7 +246,10 @@ export function createCameraSkyView(): SkyView {
         });
         attachVideo(stream);
       } catch {
+        // No camera (blocked, or getUserMedia absent as on iOS home-screen PWAs)
+        // → run as a dark-sky planetarium behind the same star map.
         stream = null;
+        attachPlanetariumBackdrop();
       }
       return true;
     },
@@ -260,6 +277,8 @@ export function createCameraSkyView(): SkyView {
       stream = null;
       video?.remove();
       video = null;
+      backdrop?.remove();
+      backdrop = null;
     },
   };
 

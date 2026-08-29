@@ -123,6 +123,15 @@ describe('isMobileSkyCapable (magic-window gate)', () => {
     setMobile();
     expect(isMobileSkyCapable()).toBe(true);
   });
+  it('true on a touch device with DeviceOrientation but NO getUserMedia (iOS PWA planetarium)', () => {
+    // iOS Safari home-screen PWAs don't expose getUserMedia. The camera is only
+    // an optional backdrop — the gyro sky must still be offered (regression guard
+    // for the "PWA sky looks basic" gap; the substrate degrades to a dark-sky
+    // planetarium when no camera).
+    setMobile();
+    delete (navigator as { mediaDevices?: unknown }).mediaDevices;
+    expect(isMobileSkyCapable()).toBe(true);
+  });
   it('false without the DeviceOrientation API', () => {
     setMobile();
     (globalThis as { DeviceOrientationEvent?: unknown }).DeviceOrientationEvent = undefined;

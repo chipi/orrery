@@ -115,3 +115,47 @@ describe('solveLambert — degenerate geometries', () => {
     if (a1 && a2) expect(Math.abs(a1 - a2)).toBeGreaterThan(0.01);
   });
 });
+
+describe('solveLambert — high branch (slow / phasing transfers, ADR-085)', () => {
+  const r1mag = Math.hypot(r1[0], r1[1]);
+  const r2mag = Math.hypot(r2[0], r2[1]);
+  const cChord = Math.hypot(r2[0] - r1[0], r2[1] - r1[1]);
+  const sSemi = (r1mag + r2mag + cChord) / 2;
+
+  it('solves a slow transfer the low branch rejects (opt-in highPath)', () => {
+    // 600-day TOF here is slower than the minimum-energy ellipse — the default
+    // low branch returns null (asserted above); the high branch (α→2π−α) solves it.
+    const tof = 600 / 365.25;
+    expect(solveLambert(r1, r2, tof, MU_SUN)).toBeNull();
+    const high = solveLambert(r1, r2, tof, MU_SUN, 200, { highPath: true });
+    expect(high).not.toBeNull();
+    expect(Number.isFinite(high!.a)).toBe(true);
+    expect(high!.a).toBeGreaterThan(0);
+  });
+
+  it('round-trip on the high branch: lambertTOF(a, …, true) ≈ input TOF', () => {
+    // The strongest correctness check for the new branch — the bisection's `a`
+    // must reproduce the input TOF through the high-path TOF function.
+    const tof = 500 / 365.25;
+    const r = solveLambert(r1, r2, tof, MU_SUN, 200, { highPath: true });
+    expect(r).not.toBeNull();
+    const tofRecomputed = lambertTOF(r!.a, sSemi, cChord, MU_SUN, true);
+    expect(tofRecomputed).toBeCloseTo(tof, 4);
+  });
+
+  it('high-path lambertTOF is monotonically INCREASING in a (opposite the low path)', () => {
+    // The bisection direction in solveLambert depends on this; the low path
+    // decreases in a, the high path increases.
+    const tofAtA = (a: number) => lambertTOF(a, sSemi, cChord, MU_SUN, true);
+    expect(tofAtA(2)).toBeGreaterThan(tofAtA(1.5));
+    expect(tofAtA(3)).toBeGreaterThan(tofAtA(2));
+  });
+
+  it('the low path remains byte-identical when highPath is omitted', () => {
+    // Guard the byte-identical promise for every existing (heliocentric) caller.
+    const a = 1.7;
+    const explicitLow = lambertTOF(a, sSemi, cChord, MU_SUN, false);
+    const defaultLow = lambertTOF(a, sSemi, cChord, MU_SUN);
+    expect(defaultLow).toBe(explicitLow);
+  });
+});

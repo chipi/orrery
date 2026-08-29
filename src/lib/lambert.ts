@@ -25,15 +25,31 @@ export interface LambertResult {
 }
 
 /**
- * Lagrange-Gauss short-way TOF as a function of semi-major axis.
+ * Lagrange-Gauss TOF as a function of semi-major axis.
  * Exported primarily for round-trip testing — the inverse of
  * `solveLambert`. Production code should not normally need it.
+ *
+ * `highPath` selects the branch on the same geometry:
+ *  - false (default): the LOW/short path — α as computed. Covers TOF from the
+ *    parabolic floor up to the minimum-energy ellipse (a = s/2, α = π), and is
+ *    monotonically DECREASING in a. This is the original behaviour; the value
+ *    is byte-identical to the pre-branch solver for every heliocentric grid.
+ *  - true: the HIGH path — α → 2π − α. Covers TOF from minimum-energy upward
+ *    (slow / phasing transfers), monotonically INCREASING in a. Needed for the
+ *    geocentric Earth→Moon grid's long TOF band (ADR-085): beyond ~5 d the
+ *    minimum-energy ceiling, the only feasible transfer is the high path.
  */
-export function lambertTOF(a: number, s: number, c: number, mu: number): number {
+export function lambertTOF(
+  a: number,
+  s: number,
+  c: number,
+  mu: number,
+  highPath: boolean = false,
+): number {
   if (a <= s / 2 + 1e-9) return 1e9;
   const sinAlpha = Math.sqrt(Math.min(1, s / (2 * a)));
   const sinBeta = Math.sqrt(Math.max(0, (s - c) / (2 * a)));
-  const alpha = 2 * Math.asin(sinAlpha);
+  const alpha = highPath ? 2 * Math.PI - 2 * Math.asin(sinAlpha) : 2 * Math.asin(sinAlpha);
   const beta = 2 * Math.asin(sinBeta);
   return Math.sqrt((a * a * a) / mu) * (alpha - Math.sin(alpha) - (beta - Math.sin(beta)));
 }
@@ -56,6 +72,9 @@ export function lambertTOF(a: number, s: number, c: number, mu: number): number 
  * @param tof time of flight (years or seconds, matching µ)
  * @param mu gravitational parameter (AU³/yr² ≈ 4π² for the Sun; km³/s² for Earth)
  * @param aMax bisection ceiling on the transfer semi-major axis (same units as r1); default AU-scale
+ * @param opts `highPath: true` solves the slow/phasing HIGH branch (α → 2π − α),
+ *   for TOF beyond the minimum-energy ceiling. Default (omitted / false) is the
+ *   original LOW-branch solve — byte-identical for every existing caller.
  */
 export function solveLambert(
   r1: readonly [number, number],
@@ -63,7 +82,9 @@ export function solveLambert(
   tof: number,
   mu: number,
   aMax: number = 200.0,
+  opts: { highPath?: boolean } = {},
 ): LambertResult | null {
+  const highPath = opts.highPath ?? false;
   const r1mag = Math.hypot(r1[0], r1[1]);
   const r2mag = Math.hypot(r2[0], r2[1]);
   const c = Math.hypot(r2[0] - r1[0], r2[1] - r1[1]);
@@ -76,14 +97,26 @@ export function solveLambert(
   let aLo = s / 2 + 1e-6;
   let aHi = aMax;
 
-  // Out-of-bounds checks: lambertTOF is monotonically decreasing in a.
-  if (lambertTOF(aLo, s, c, mu) < tof) return null;
-  if (lambertTOF(aHi, s, c, mu) > tof) return null;
-
-  for (let i = 0; i < 52; i++) {
-    const aMid = (aLo + aHi) / 2;
-    if (lambertTOF(aMid, s, c, mu) > tof) aLo = aMid;
-    else aHi = aMid;
+  if (!highPath) {
+    // LOW branch: lambertTOF is monotonically DECREASING in a.
+    if (lambertTOF(aLo, s, c, mu) < tof) return null;
+    if (lambertTOF(aHi, s, c, mu) > tof) return null;
+    for (let i = 0; i < 52; i++) {
+      const aMid = (aLo + aHi) / 2;
+      if (lambertTOF(aMid, s, c, mu) > tof) aLo = aMid;
+      else aHi = aMid;
+    }
+  } else {
+    // HIGH branch: lambertTOF(..., true) is monotonically INCREASING in a
+    // (min-energy TOF at a = s/2, →∞ as a grows). tof below the min-energy
+    // floor belongs to the low branch; tof above aMax's reach is unsolvable.
+    if (lambertTOF(aLo, s, c, mu, true) > tof) return null;
+    if (lambertTOF(aHi, s, c, mu, true) < tof) return null;
+    for (let i = 0; i < 52; i++) {
+      const aMid = (aLo + aHi) / 2;
+      if (lambertTOF(aMid, s, c, mu, true) < tof) aLo = aMid;
+      else aHi = aMid;
+    }
   }
   const a = (aLo + aHi) / 2;
   if (!isFinite(a) || a <= 0) return null;

@@ -57,7 +57,13 @@ export function geoTransferDv(depDay: number, tofDay: number): GeoTransfer {
   const r1: [number, number] = [(-r2[0] / r2mag) * R_LEO, (-r2[1] / r2mag) * R_LEO];
 
   const tofSec = tofDay * 86_400;
-  const res = solveLambert(r1, r2, tofSec, MU_EARTH, AMAX_GEO);
+  // Low branch covers fast transfers up to the ~5 d minimum-energy ceiling;
+  // beyond it the only feasible 180° transfer is the HIGH branch (slow /
+  // phasing arcs, out to the 14 d TOF axis — ADR-085). Try low first (keeps
+  // every fast cell byte-identical), fall back to high for the slow band.
+  const res =
+    solveLambert(r1, r2, tofSec, MU_EARTH, AMAX_GEO) ??
+    solveLambert(r1, r2, tofSec, MU_EARTH, AMAX_GEO, { highPath: true });
   if (!res) return INFEASIBLE;
 
   // TLI — both speeds geocentric. The transfer is ≥99.9% tangential at LEO

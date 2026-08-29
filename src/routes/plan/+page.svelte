@@ -768,8 +768,8 @@
     return t.feasible ? t : null;
   });
 
-  /** URL-encode a dep/tof day value. The geocentric Moon grid's rows are ~0.03 d
-   *  apart on the [2.5, 5.5] d band, so integer rounding would snap a selected
+  /** URL-encode a dep/tof day value. The geocentric Moon grid's rows are ~0.1 d
+   *  apart on the [3, 14] d band, so integer rounding would snap a selected
    *  cell to a different transfer on reload / on the /fly handoff (review fix).
    *  Heliocentric grids are ~10 d/row, so integers are lossless there. */
   function planCoord(v: number): string {

@@ -9,9 +9,10 @@ import { V_LEO_CIRC, V_LLO_CIRC } from './lambert-geocentric-grid.constants';
  * If these fail, the MODEL is wrong, not the test (PA §"fail honestly").
  */
 
-// TOF axis is [2.5, 5.5] d (ADR-085 D2 — the short-way solver's feasible band).
-const TOF_MIN = 2.5;
-const TOF_MAX = 5.5;
+// TOF axis is [3, 14] d (ADR-085 — low-branch Lambert to the ~5 d minimum-energy
+// ceiling + the high branch (α → 2π − α) for the slow/phasing transfers above it).
+const TOF_MIN = 3;
+const TOF_MAX = 14;
 
 /**
  * Scan a year of departures × the feasible TOF band; return the **minimum-energy**
@@ -68,17 +69,45 @@ describe('geoTransferDv — honesty bar (Apollo bands, ADR-085)', () => {
   });
 });
 
-describe('geoTransferDv — TOF gradient (review regression guard)', () => {
-  it('a fast transfer costs MORE than a near-Hohmann one — not less', () => {
-    // Same departure; a 2.5-day arrival must be more expensive than a ~4-day
-    // near-Hohmann arrival. The scalar-v∞ bug had this backwards (fast=cheap),
-    // which taught a false intuition. Physically, fast arrivals carry a large
-    // radial v∞ → higher LOI.
+describe('geoTransferDv — TOF gradient (V-shape around minimum-energy)', () => {
+  it('both a fast AND a slow transfer cost more than near-Hohmann', () => {
+    // The porkchop is V-shaped in TOF: cheapest at the ~5 d minimum-energy
+    // ellipse, more expensive on both sides.
+    //  • Fast (low branch): large radial v∞ → higher LOI. The scalar-v∞ bug had
+    //    this backwards (fast=cheap), teaching a false intuition.
+    //  • Slow (high branch, α→2π−α): a bigger, slower ellipse also costs more —
+    //    and must NOT read as cheaper, or the slow band would teach the same lie.
     const dep = 160;
-    const fast = geoTransferDv(dep, 2.6);
-    const hohmann = geoTransferDv(dep, 4.4);
-    expect(fast.feasible && hohmann.feasible).toBe(true);
+    const fast = geoTransferDv(dep, 3.2); // low branch, fast edge
+    const hohmann = geoTransferDv(dep, 4.7); // near minimum-energy
+    const slow = geoTransferDv(dep, 12); // high branch, slow phasing arc
+    expect(fast.feasible && hohmann.feasible && slow.feasible).toBe(true);
     expect(fast.total).toBeGreaterThan(hohmann.total);
+    expect(slow.total).toBeGreaterThan(hohmann.total);
+  });
+});
+
+describe('geoTransferDv — high branch (#308 full [3,14 d] band)', () => {
+  it('slow transfers above the ~5 d minimum-energy ceiling are now feasible', () => {
+    // These cells were false-"unreachable" under the short-way-only solver —
+    // the whole point of the high branch. A feasible cislunar transfer, not the
+    // DV_FAILED sentinel.
+    for (const tof of [6, 8, 10, 12, 14]) {
+      const r = geoTransferDv(120, tof);
+      expect(r.feasible, `tof=${tof} d must be feasible on the high branch`).toBe(true);
+      expect(r.total).toBeGreaterThan(3.5);
+      expect(r.total).toBeLessThan(6); // sane budget, not the >20 sentinel
+    }
+  });
+
+  it('the low↔high branch handoff at minimum-energy is continuous (no ∆v jump)', () => {
+    // Either side of the ~5 d ceiling the two branches must meet smoothly —
+    // a discontinuity would draw a false seam across the porkchop.
+    const dep = 120;
+    const low = geoTransferDv(dep, 4.9);
+    const high = geoTransferDv(dep, 5.1);
+    expect(low.feasible && high.feasible).toBe(true);
+    expect(Math.abs(high.total - low.total)).toBeLessThan(0.1);
   });
 });
 

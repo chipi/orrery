@@ -192,7 +192,11 @@ async function precomputeOne(spec: DestinationSpec): Promise<string> {
 // so the mobile magnifier stays valid; its own dep/tof ranges + colour scale.
 
 const MOON_DEP_RANGE_DAYS: [number, number] = [0, 365];
-const MOON_TOF_RANGE_DAYS: [number, number] = [2.5, 5.5];
+// Full #308 band [3, 14 d]: the low-branch Lambert covers the fast side up to
+// the ~5 d minimum-energy ceiling; the high branch (α → 2π − α, ADR-085) covers
+// the slow / phasing transfers out to 14 d. No more false-"unreachable" cells
+// above 5 d.
+const MOON_TOF_RANGE_DAYS: [number, number] = [3, 14];
 
 function precomputeGeoMoon(): string {
   const [w, h] = STEPS;
@@ -236,7 +240,7 @@ function precomputeGeoMoon(): string {
     tof_axis_unit: 'days' as const,
     dv_color_range: colorRange,
     grid,
-    credit: `Computed at build time via the geocentric Lambert model (src/lib/lambert-geocentric.ts, ADR-085). Earth→Moon: ${convPct}% cells feasible (${failed} of ${cells} outside the short-way TOF band). ∆v = TLI (µ_Earth LEO departure) + LOI (patched-conic, µ_Moon). Moon ephemeris: src/lib/astronomy/moon.ts (Schlyter/Brown analytic). Representative two-body estimate — validated against Apollo TLI ~3.05–3.15 / LOI ~0.8–0.9 km/s.`,
+    credit: `Computed at build time via the geocentric Lambert model (src/lib/lambert-geocentric.ts, ADR-085). Earth→Moon: ${convPct}% cells feasible (${failed} of ${cells} below the parabolic floor). Full [3, 14 d] TOF band — low-branch Lambert to the ~5 d minimum-energy ceiling, high branch (α → 2π − α) for the slow/phasing transfers above it. ∆v = TLI (µ_Earth LEO departure) + LOI (patched-conic, µ_Moon). Moon ephemeris: src/lib/astronomy/moon.ts (Schlyter/Brown analytic). Representative two-body estimate — validated against Apollo TLI ~3.05–3.15 / LOI ~0.8–0.9 km/s.`,
   };
   return JSON.stringify(out, null, 2) + '\n';
 }

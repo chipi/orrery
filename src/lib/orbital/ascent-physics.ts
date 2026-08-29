@@ -22,7 +22,6 @@ import {
   ATM_SCALE_HEIGHT_M,
   G0,
   KARMAN_LINE_M,
-  LEO_REF_ALT_M,
   MU_EARTH_M3_S2,
   N_PER_KN,
   R_EARTH_M,
@@ -167,12 +166,19 @@ export interface AscentState {
    * relative HUD gauges (peaks after Max-Q), never as an absolute flux.
    */
   aeroHeatFlux: number;
-  /** Running Δv gravity loss to this instant (km·s⁻¹). Monotonic non-decreasing;
-   *  the final sample equals `AscentSummary.losses.gravityKms`. For the ledger. */
+  /** Running Δv gravity loss to this instant (km·s⁻¹) = ∫ g·sinγ dt over powered
+   *  flight; the final sample equals `AscentSummary.losses.gravityKms`. NOT
+   *  strictly monotonic — it dips slightly during a powered lofted descent
+   *  (flight-path angle < 0). Note: the ledger itemises gravity + drag + steering
+   *  only; the atmospheric back-pressure (reduced sea-level Isp) loss ~0.1–0.3
+   *  km/s is inside the integrator's delivered Δv but not broken out, so
+   *  `idealDv − these three` won't reconcile to the delivered Δv exactly. */
   lossGravityKms: number;
-  /** Running Δv drag loss to this instant (km·s⁻¹). Monotonic non-decreasing. */
+  /** Running Δv drag loss to this instant (km·s⁻¹). Monotonic non-decreasing
+   *  (drag always opposes motion). */
   lossDragKms: number;
-  /** Running Δv steering loss to this instant (km·s⁻¹). Monotonic non-decreasing. */
+  /** Running Δv steering (cosine) loss to this instant (km·s⁻¹). Monotonic
+   *  non-decreasing (a cosine loss is always ≥ 0). */
   lossSteeringKms: number;
 }
 
@@ -203,6 +209,10 @@ export interface AscentSummary {
   losses: { gravityKms: number; dragKms: number; steeringKms: number };
   /** Ideal Δv capacity (km·s⁻¹) — Tsiolkovsky summed over stages, vacuum Isp. */
   idealDvKms: number;
+  /** Free eastward Δv the launch site donates via Earth's rotation (km·s⁻¹) =
+   *  EARTH_SURFACE_SPEED_EQ·cos(lat). The rocket needs this much LESS than the
+   *  target orbital speed, so it offsets dvRequired (M2). */
+  siteRotationCreditKms: number;
   /** Total flight duration (s) — the MET of the final sampled state. */
   totalDurationS: number;
 }
@@ -287,20 +297,42 @@ export function stackIdealDv(profile: LaunchProfile): number {
     return m;
   };
   let dv = 0;
-  for (let i = 0; i < profile.stages.length; i++) {
+  // Upper stages (1+): serial Tsiolkovsky, each against the mass it carries.
+  for (let i = 1; i < profile.stages.length; i++) {
     const s = profile.stages[i];
     const above = upperMass(i + 1);
-    const m0 = above + s.wetKg;
-    const mf = above + s.dryKg;
-    dv += tsiolkovskyDv(s.ispVacS, m0, mf);
+    dv += tsiolkovskyDv(s.ispVacS, above + s.wetKg, above + s.dryKg);
   }
-  // Strap-on boosters add Δv over the parallel boost phase (burning against
-  // the full stack) — approximate, for the HUD's ideal-Δv readout.
-  if (profile.boosters) {
-    const b = combinedBoosterStage(profile.boosters);
-    const full = upperMass(0) + b.wetKg;
-    dv += tsiolkovskyDv(b.ispVacS, full, full - stagePropellant(b));
+  const core = profile.stages[0];
+  const aboveCore = upperMass(1);
+  if (!profile.boosters) {
+    // No strap-ons: stage 0 is a plain serial stage.
+    return dv + tsiolkovskyDv(core.ispVacS, aboveCore + core.wetKg, aboveCore + core.dryKg);
   }
+  // Parallel boost (M4). The core + boosters burn TOGETHER, so the boost phase is
+  // ONE combined burn at the mass-flow-weighted exhaust velocity — NOT the core's
+  // full solo Δv PLUS the boosters' Δv, which double-counted the phase and
+  // inflated the ideal-Δv / payload-margin readout. Then the core burns alone.
+  const b = combinedBoosterStage(profile.boosters);
+  const Tc = core.thrustVacKN * 1000;
+  const Tb = (b.thrustVacKN ?? 0) * 1000;
+  const veC = core.ispVacS * G0;
+  const veB = b.ispVacS * G0;
+  const mdotC = veC > 0 ? Tc / veC : 0;
+  const mdotB = veB > 0 ? Tb / veB : 0;
+  const coreProp = stagePropellant(core);
+  const boosterProp = stagePropellant(b);
+  const tBoost = mdotB > 0 ? boosterProp / mdotB : 0; // booster burn time
+  const coreDuringBoost = Math.min(coreProp, mdotC * tBoost); // core prop spent in parallel
+  const m0 = aboveCore + core.wetKg + b.wetKg; // full stack on the pad
+  // Phase A — parallel burn: booster propellant + the core prop consumed during it.
+  const veA = mdotC + mdotB > 0 ? (Tc + Tb) / (mdotC + mdotB) : veC;
+  const burnA = boosterProp + coreDuringBoost;
+  if (burnA > 0 && m0 - burnA > 0) dv += veA * Math.log(m0 / (m0 - burnA));
+  // Booster jettison, then Phase B — the core alone burns its remaining propellant.
+  const m0B = m0 - burnA - b.dryKg;
+  const burnB = coreProp - coreDuringBoost;
+  if (burnB > 0 && m0B - burnB > 0) dv += veC * Math.log(m0B / (m0B - burnB));
   return dv;
 }
 
@@ -707,6 +739,9 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   // Cache the last-commanded pitch so the snapshot's HUD value matches the
   // dynamics exactly (the guidance is stateful across the trajectory).
   let lastPitch = Math.PI / 2;
+  // Actual delivered thrust from the last integrator step (0 during a coast) so
+  // the HUD reports engine-dark coasts honestly instead of full stage thrust (S3).
+  let lastThrust = 0;
 
   // PEG state for the final stage (#416): solved coefficients + when they were
   // solved (major cycle), and a coast-to-apoapsis flag for a stage that can't
@@ -723,14 +758,23 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     const ry = y + R_EARTH_M;
     const r = Math.hypot(x, ry) || R_EARTH_M;
     const alt = r - R_EARTH_M;
-    const speed = Math.hypot(vx, vy);
+    const speed = Math.hypot(vx, vy); // inertial speed (orbital-mechanics frame)
     const velUp = (vx * x + vy * ry) / r;
     const rho = airDensity(alt);
     const g = gravity(alt);
     const m = currentMass();
-    const thrust =
-      (stageIndex >= 0 ? stageThrustN(profile.stages[stageIndex], alt) : 0) +
-      (boostersOn && stageIndex === 0 && boosterProp > 0 ? stageThrustN(boosterStage!, alt) : 0);
+    // Aero terms use AIR-RELATIVE airspeed, not inertial speed (B2). The
+    // atmosphere co-rotates eastward with Earth (≈ siteSpeed downrange), so the
+    // pad's rotation velocity is NOT airspeed — otherwise the HUD shows ~100 kPa
+    // dynamic pressure and hundreds of kN of drag on a vehicle sitting still on
+    // the pad. Mirrors the integrator's vRel (see the loop body).
+    const horizX = ry / r; // local horizontal, +downrange
+    const horizY = -x / r;
+    const airspeed = Math.hypot(vx - siteSpeed * horizX, vy - siteSpeed * horizY);
+    const q = dynamicPressure(rho, airspeed);
+    // Actual delivered thrust from the last integrator step — 0 during a
+    // coast-to-apoapsis (S3), so TWR / thrust / chamber-temp read engine-dark
+    // instead of full stage thrust.
     return {
       t,
       altKm: alt / 1000,
@@ -739,19 +783,19 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       velUpKms: velUp / 1000,
       massKg: m,
       stageIndex,
-      qPa: dynamicPressure(rho, speed),
-      twr: m > 0 ? thrust / (m * g) : 0,
-      thrustN: thrust,
-      dragN: dynamicPressure(rho, speed) * cd * refArea,
+      qPa: q,
+      twr: m > 0 ? lastThrust / (m * g) : 0,
+      thrustN: lastThrust,
+      dragN: q * cd * refArea,
       pitchRad: lastPitch,
       propRemainingKg: stageIndex >= 0 ? Math.max(0, remainingProp) : 0,
       boosterPropRemainingKg: boostersOn ? Math.max(0, boosterProp) : 0,
       boostersActive: boostersOn && stageIndex === 0 && boosterProp > 0,
       chamberTempK:
-        stageIndex >= 0 && thrust > 0 ? (profile.stages[stageIndex].chamberTempK ?? 3500) : 0,
+        stageIndex >= 0 && lastThrust > 0 ? (profile.stages[stageIndex].chamberTempK ?? 3500) : 0,
       // Sutton-Graves form (proportional): stagnation heating rises with v³
       // but needs air (√ρ), so it peaks inside the atmosphere then vanishes.
-      aeroHeatFlux: Math.sqrt(rho) * speed * speed * speed,
+      aeroHeatFlux: Math.sqrt(rho) * airspeed * airspeed * airspeed,
       // Running Δv-loss ledger (m·s⁻¹ → km·s⁻¹), snapshotted each sample so the
       // ledger layer can read the live tally at any scrubbed time t.
       lossGravityKms: losses.gravity / 1000,
@@ -765,6 +809,11 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     events.push({ type, t, altKm: s.altKm, speedKms: s.speedKms, massKg: s.massKg, note });
   };
 
+  // Liftoff: engine lit at full stage-0 (+ booster) thrust so the t=0 snapshot
+  // isn't engine-dark before the loop first updates lastThrust.
+  lastThrust =
+    stageThrustN(profile.stages[0], 0) +
+    (boostersOn && boosterStage ? stageThrustN(boosterStage, 0) : 0);
   pushEvent('liftoff');
   states.push(snapshot());
   let nextSampleT = sampleDt;
@@ -918,6 +967,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     const coreThrust = engineOn ? coreThrustLit : 0;
     const thrust = coreThrust + boostThrust;
     lastPitch = pitch;
+    lastThrust = thrust; // HUD reads the real delivered thrust (0 on coast, B2/S3)
     const thrustDirX = Math.cos(pitch) * horizX + Math.sin(pitch) * upX;
     const thrustDirY = Math.cos(pitch) * horizY + Math.sin(pitch) * upY;
 
@@ -1080,6 +1130,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       steeringKms: losses.steering / 1000,
     },
     idealDvKms: stackIdealDv(profile) / 1000,
+    siteRotationCreditKms: siteSpeed / 1000,
     totalDurationS: final.t,
   };
 }
@@ -1155,7 +1206,11 @@ export interface AscentPlanSummary {
 export function ascentToOrbit(profile: LaunchProfile, opts?: AscentOptions): AscentPlanSummary {
   const s = integrateAscent(profile, opts);
   const totalLossKms = s.losses.gravityKms + s.losses.dragKms + s.losses.steeringKms;
-  const dvRequiredKms = circularSpeed(LEO_REF_ALT_M) / 1000 + totalLossKms;
+  // Δv the rocket must supply = orbital speed at the ACTUAL target altitude
+  // (not a fixed 200 km ref) + losses − the free launch-site rotation credit the
+  // vehicle already carries off the pad (M2 — was inconsistent on both terms).
+  const targetAltM = profile.targetOrbitAltM ?? GUIDANCE.targetAltM;
+  const dvRequiredKms = circularSpeed(targetAltM) / 1000 + totalLossKms - s.siteRotationCreditKms;
   return {
     idealDvKms: s.idealDvKms,
     dvRequiredKms,

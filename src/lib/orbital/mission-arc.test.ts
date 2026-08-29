@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import {
   A_TRANSFER,
   E_TRANSFER,
+  destinationPos,
   earthPos,
   marsPos,
   outboundArc,
@@ -10,7 +11,7 @@ import {
   spacecraftHeading,
   transferEllipse,
 } from './mission-arc';
-import { R_EARTH_AU, R_MARS_AU } from '$lib/lambert-grid.constants';
+import { DESTINATIONS, R_EARTH_AU, R_MARS_AU } from '$lib/lambert-grid.constants';
 
 describe('orbital constants', () => {
   it('A_TRANSFER is the average of Earth and Mars semi-major axes', () => {
@@ -44,6 +45,45 @@ describe('earthPos / marsPos', () => {
     const b = earthPos(365.256);
     expect(b.x).toBeCloseTo(a.x, 4);
     expect(b.z).toBeCloseTo(a.z, 4);
+  });
+});
+
+describe('destinationPos — longitude of perihelion ϖ (S2)', () => {
+  // /fly's destination mesh and /plan's porkchop must agree on where a body is.
+  // Both phase the conic by mean anomaly M = L − ϖ, so an eccentric destination's
+  // perihelion sits at ϖ (carried through DESTINATIONS from the data layer), not
+  // at ecliptic longitude 0 as the pre-S2 model placed it.
+  it('DESTINATIONS carries ϖ for the eccentric destinations (Pluto, Bennu)', () => {
+    expect(DESTINATIONS.pluto.varpi).toBeCloseTo(3.90956, 4);
+    expect(DESTINATIONS.bennu.varpi).toBeCloseTo(1.19178, 4);
+  });
+
+  it("Pluto's perihelion (min r over the orbit) sits at ϖ, not at longitude 0", () => {
+    const { a, e = 0, meanMotionRadPerDay: n, varpi = 0 } = DESTINATIONS.pluto;
+    const T = (2 * Math.PI) / n;
+    let minR = Infinity,
+      thetaAtMin = 0;
+    for (let d = 0; d < T; d += T / 4000) {
+      const p = destinationPos(d, 'pluto');
+      const r = Math.hypot(p.x, p.z);
+      if (r < minR) {
+        minR = r;
+        thetaAtMin = Math.atan2(p.z, p.x);
+      }
+    }
+    expect(minR).toBeCloseTo(a * (1 - e), 2); // perihelion distance a(1−e)
+    expect((thetaAtMin + 2 * Math.PI) % (2 * Math.PI)).toBeCloseTo(varpi, 1);
+  });
+
+  it('a circular destination (Jupiter, e=0) is a pure [a·cos L, a·sin L] ring — ϖ inert', () => {
+    const { a, a0, meanMotionRadPerDay: n } = DESTINATIONS.jupiter;
+    for (const day of [0, 500, 4000]) {
+      const p = destinationPos(day, 'jupiter');
+      const L = a0 + n * day;
+      expect(p.x).toBeCloseTo(a * Math.cos(L), 10);
+      expect(p.z).toBeCloseTo(a * Math.sin(L), 10);
+      expect(Math.hypot(p.x, p.z)).toBeCloseTo(a, 10); // constant radius
+    }
   });
 });
 
@@ -168,31 +208,36 @@ describe('transferEllipse', () => {
 });
 
 describe('destinationPos (v0.1.6 + ADR-028)', () => {
-  it('returns heliocentric r matching kepler-style radius at day 0 for all destinations', () => {
+  it('returns heliocentric r matching the corrected Kepler conic (M = L − ϖ) at day 0 for all destinations', () => {
     return import('./mission-arc').then(({ destinationPos }) =>
-      import('$lib/lambert-grid.constants').then(({ DESTINATIONS }) => {
-        for (const id of [
-          'mercury',
-          'venus',
-          'mars',
-          'jupiter',
-          'saturn',
-          'uranus',
-          'neptune',
-          'pluto',
-          'ceres',
-          'vesta',
-          'psyche',
-          'bennu',
-        ] as const) {
-          const d = DESTINATIONS[id];
-          const e = d.e ?? 0;
-          const nu = d.a0;
-          const rExp = (d.a * (1 - e * e)) / (1 + e * Math.cos(nu));
-          const p = destinationPos(0, id);
-          expect(Math.hypot(p.x, p.z)).toBeCloseTo(rExp, 3);
-        }
-      }),
+      import('$lib/lambert-grid.constants').then(({ DESTINATIONS }) =>
+        import('$lib/universe/kepler').then(({ eccentricAnomaly }) => {
+          for (const id of [
+            'mercury',
+            'venus',
+            'mars',
+            'jupiter',
+            'saturn',
+            'uranus',
+            'neptune',
+            'pluto',
+            'ceres',
+            'vesta',
+            'psyche',
+            'bennu',
+          ] as const) {
+            const d = DESTINATIONS[id];
+            const e = d.e ?? 0;
+            // Independent recompute of the S2 conic: mean anomaly M = L − ϖ at
+            // day 0 (L = a0), eccentric anomaly, then r = a(1 − e·cos E). For the
+            // circular bodies (e = 0) this is exactly a.
+            const rExp =
+              e === 0 ? d.a : d.a * (1 - e * Math.cos(eccentricAnomaly(d.a0 - (d.varpi ?? 0), e)));
+            const p = destinationPos(0, id);
+            expect(Math.hypot(p.x, p.z)).toBeCloseTo(rExp, 3);
+          }
+        }),
+      ),
     );
   });
 

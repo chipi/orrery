@@ -78,6 +78,64 @@ describe('keplerPos', () => {
   });
 });
 
+describe('keplerPos — longitude of perihelion ϖ (S2)', () => {
+  // The pre-S2 model phased the conic by mean longitude directly, pinning
+  // perihelion at ecliptic longitude 0 for every body. With ϖ the perihelion
+  // must sit at ϖ, and the body's date-anchored radius must match reality.
+  it('perihelion (min r) occurs at ecliptic longitude ϖ, not at 0', () => {
+    const a = 39.482,
+      e = 0.2488,
+      L0 = 4.17,
+      T = 90560,
+      varpi = 3.90956; // Pluto (J2000)
+    let minR = Infinity,
+      thetaAtMin = 0;
+    for (let t = 0; t < T; t += T / 4000) {
+      const p = keplerPos(a, e, L0, T, t, varpi);
+      if (p.r < minR) {
+        minR = p.r;
+        thetaAtMin = Math.atan2(p.y, p.x);
+      }
+    }
+    expect(minR).toBeCloseTo(a * (1 - e), 3); // perihelion distance a(1−e)
+    const wrapped = (thetaAtMin + 2 * Math.PI) % (2 * Math.PI);
+    expect(wrapped).toBeCloseTo(varpi, 2); // …located AT ϖ, not 0
+  });
+
+  it('with ϖ omitted (=0) perihelion falls at longitude 0 — the pre-S2 behaviour', () => {
+    const a = 39.482,
+      e = 0.2488,
+      L0 = 4.17,
+      T = 90560;
+    let minR = Infinity,
+      thetaAtMin = 0;
+    for (let t = 0; t < T; t += T / 4000) {
+      const p = keplerPos(a, e, L0, T, t); // no ϖ
+      if (p.r < minR) {
+        minR = p.r;
+        thetaAtMin = Math.atan2(p.y, p.x);
+      }
+    }
+    expect(Math.abs(thetaAtMin)).toBeLessThan(0.02); // perihelion at longitude 0
+  });
+
+  it("Pluto's date-anchored radius is physical (≈35–36 AU in 2026, moving out from 1989 perihelion)", () => {
+    // J2000 = 2000-01-01; ~2026-01-01 ≈ day 9497. Pluto's real heliocentric
+    // distance is ~35.6 AU then (perihelion 29.66 AU was 1989). The pre-S2
+    // conic, with perihelion mis-placed at longitude 0, cannot reproduce this.
+    const p = keplerPos(39.482, 0.2488, 4.17, 90560, 9497, 3.90956);
+    expect(p.r).toBeGreaterThan(34);
+    expect(p.r).toBeLessThan(37);
+  });
+
+  it('circular orbit ignores ϖ entirely (position identical with or without it)', () => {
+    const withVarpi = keplerPos(1.524, 0, 5.1361, 686.98, 1234, 5.86529);
+    const without = keplerPos(1.524, 0, 5.1361, 686.98, 1234);
+    expect(withVarpi.x).toBe(without.x);
+    expect(withVarpi.y).toBe(without.y);
+  });
+});
+
 describe('orbital constants match data/planets.json', () => {
   it('MU_SUN matches planets.json constants.mu_sun', () => {
     expect(MU_SUN).toBeCloseTo(planetsData.constants.mu_sun, 10);

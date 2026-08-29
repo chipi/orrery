@@ -4,11 +4,13 @@ import {
   ambientPressure,
   ascentToOrbit,
   circularSpeed,
+  combinedBoosterStage,
   commandedPitchRad,
   dynamicPressure,
   gravity,
   GUIDANCE,
   integrateAscent,
+  type LaunchProfile,
   pitchAngleRad,
   pressureRatio,
   sampleAscentAt,
@@ -165,6 +167,45 @@ describe('integrateAscent (Falcon 9 smoke test)', () => {
   });
 });
 
+describe('integrateAscent — HUD frame correctness (B2/S3 regression)', () => {
+  const s = integrateAscent(FALCON9);
+
+  it('reports ZERO dynamic pressure + drag + heat flux on the pad (air-relative, not inertial)', () => {
+    // At liftoff the vehicle carries Earth's rotation speed inertially (~409 m/s),
+    // but the co-rotating atmosphere means air-relative airspeed ≈ 0 → the HUD must
+    // read q = 0, drag = 0 (was ~100 kPa / ~330 kN — inertial-frame bug B2).
+    expect(s.states[0].qPa).toBeLessThan(1);
+    expect(s.states[0].dragN).toBeLessThan(1);
+    expect(s.states[0].aeroHeatFlux).toBeLessThan(1);
+  });
+
+  it('peak HUD dynamic pressure agrees with the integrator maxQ (same air-relative frame + time)', () => {
+    let peakQ = 0;
+    let peakT = 0;
+    for (const st of s.states)
+      if (st.qPa > peakQ) {
+        peakQ = st.qPa;
+        peakT = st.t;
+      }
+    // Was ~3× the integrator maxQ at the wrong time; now both air-relative.
+    expect(peakQ).toBeGreaterThan(s.maxQ.qPa * 0.85);
+    expect(peakQ).toBeLessThan(s.maxQ.qPa * 1.2);
+    expect(Math.abs(peakT - s.maxQ.t)).toBeLessThan(8);
+  });
+
+  it('thrust honesty: every engine-dark state reports zero thrust/TWR/chamber-temp (S3)', () => {
+    for (const st of s.states) {
+      if (st.thrustN === 0) {
+        expect(st.twr, `TWR at t=${st.t}`).toBe(0);
+        expect(st.chamberTempK, `chamberTempK at t=${st.t}`).toBe(0);
+      }
+    }
+    // Liftoff itself is engine-lit.
+    expect(s.states[0].thrustN).toBeGreaterThan(0);
+    expect(s.states[0].twr).toBeGreaterThan(1);
+  });
+});
+
 describe('ascentToOrbit (/plan reuse)', () => {
   const plan = ascentToOrbit(FALCON9);
 
@@ -272,5 +313,62 @@ describe('Δv-loss ledger (running totals per state)', () => {
   it('gravity loss dominates for a vertical-launch stack (physical sanity)', () => {
     const last = s.states.at(-1)!;
     expect(last.lossGravityKms).toBeGreaterThan(last.lossDragKms);
+  });
+});
+
+describe('ascentToOrbit — dvRequired uses target alt + rotation credit (M2)', () => {
+  const s = integrateAscent(FALCON9);
+  const plan = ascentToOrbit(FALCON9);
+
+  it('exposes a positive launch-site rotation credit (< equatorial 0.465 km/s)', () => {
+    expect(s.siteRotationCreditKms).toBeGreaterThan(0.2);
+    expect(s.siteRotationCreditKms).toBeLessThan(0.465);
+  });
+
+  it('dvRequired = circular(target alt) + losses − rotation credit', () => {
+    const targetAltM = FALCON9.targetOrbitAltM ?? GUIDANCE.targetAltM;
+    const totalLoss = plan.losses.gravityKms + plan.losses.dragKms + plan.losses.steeringKms;
+    const expected = circularSpeed(targetAltM) / 1000 + totalLoss - s.siteRotationCreditKms;
+    expect(plan.dvRequiredKms).toBeCloseTo(expected, 6);
+    // The credit genuinely lowers what the rocket must supply.
+    expect(plan.dvRequiredKms).toBeLessThan(circularSpeed(targetAltM) / 1000 + totalLoss);
+  });
+
+  it('payloadMargin is exactly idealDv − dvRequired', () => {
+    expect(plan.payloadMarginKms).toBeCloseTo(plan.idealDvKms - plan.dvRequiredKms, 9);
+  });
+});
+
+describe('stackIdealDv — parallel boosters not double-counted (M4)', () => {
+  const boosted: LaunchProfile = {
+    ...FALCON9,
+    boosters: {
+      name: 'test strap-ons',
+      count: 2,
+      wetKg: 45_000,
+      dryKg: 4_500,
+      thrustSlKN: 1_400,
+      thrustVacKN: 1_550,
+      ispSlS: 260,
+      ispVacS: 285,
+    },
+  };
+
+  it('boosters raise idealDv but by LESS than summing their solo burn (no double-count)', () => {
+    const coreDv = stackIdealDv(FALCON9);
+    const boostedDv = stackIdealDv(boosted);
+    expect(boostedDv).toBeGreaterThan(coreDv); // strap-ons add real capability
+
+    // The old bug summed the core's FULL solo Δv + the boosters' solo Δv, which
+    // overcounts the parallel phase (the core actually burns against the heavier
+    // stack while the boosters fire). The combined-burn model must come in under it.
+    const b = combinedBoosterStage(boosted.boosters!);
+    const fullStack =
+      boosted.payloadKg +
+      (boosted.fairingKg ?? 0) +
+      boosted.stages.reduce((m, st) => m + st.wetKg, 0) +
+      b.wetKg;
+    const overcount = coreDv + tsiolkovskyDv(b.ispVacS, fullStack, fullStack - stagePropellant(b));
+    expect(boostedDv).toBeLessThan(overcount);
   });
 });

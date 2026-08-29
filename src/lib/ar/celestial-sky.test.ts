@@ -1,12 +1,14 @@
 import { describe, it, expect } from 'vitest';
 import { equatorialXyzToSkyDir, loadDeepSky, sunRiseSetEvents } from './celestial-sky';
 
-// The AR render frame is ENU: [East, Up, −North] (a unit vector). The celestial
-// POLE is the ideal deterministic check: it sits on Earth's rotation axis, so its
-// horizontal position is independent of time (jd) and longitude — the north
-// celestial pole is due north at an altitude equal to the observer's latitude.
+// The AR render frame is ENU: [East, Up, −North] (a unit vector). At the J2000
+// epoch the equatorial precession is the identity, so a star at the catalogue
+// pole (0,0,1) sits exactly on the rotation axis: due north at an altitude equal
+// to the observer's latitude — the deterministic check used below. Away from
+// J2000 that same J2000-pole star precesses off the true pole (M1), which the
+// last test guards.
 const DEG = Math.PI / 180;
-const JD = 2451545; // J2000 — value is irrelevant for the pole, any jd works.
+const JD = 2451545; // J2000 — precession is identity here, so (0,0,1) is the true pole.
 
 describe('equatorialXyzToSkyDir — data direction → observer sky', () => {
   it('returns a unit vector', () => {
@@ -38,10 +40,18 @@ describe('equatorialXyzToSkyDir — data direction → observer sky', () => {
     expect(up).toBeLessThan(0);
   });
 
-  it('is time/longitude-independent at the pole (on the rotation axis)', () => {
+  it('the J2000 pole star precesses off true north away from J2000 (M1)', () => {
+    // At J2000 (0,0,1) is exactly the pole; ~24 yr later precession has carried
+    // it ≈0.3° away, so its horizon direction is no longer identical across
+    // epochs (real: pole stars drift). Longitude is varied too to confirm the
+    // shift is precession, not sidereal rotation (the pole is ~invariant to lon).
     const a = equatorialXyzToSkyDir(0, 0, 1, 2451545, 50 * DEG, 10 * DEG);
     const b = equatorialXyzToSkyDir(0, 0, 1, 2460000, 50 * DEG, -120 * DEG);
-    for (let i = 0; i < 3; i++) expect(a[i]).toBeCloseTo(b[i], 6);
+    const sepDeg =
+      (Math.acos(Math.max(-1, Math.min(1, a[0] * b[0] + a[1] * b[1] + a[2] * b[2]))) * 180) /
+      Math.PI;
+    expect(sepDeg).toBeGreaterThan(0.05); // moved — precession is active (was ~0 pre-M1)
+    expect(sepDeg).toBeLessThan(0.4); // but still near the pole (~0.13° in the horizon frame)
   });
 });
 

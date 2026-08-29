@@ -5,8 +5,14 @@
 // direction converts straight to the observer's horizontal frame and then to the
 // AR render's ENU direction — reusing the exact pipeline the planets use, no new
 // astronomy. Kept out of sky-scene.ts so the coordinate maths are unit-testable.
+//
+// Frame note (M1): the HYG catalogue is J2000 equatorial, so its directions are
+// precessed to the mean equator + equinox OF DATE via the rigorous IAU 1976
+// rotation matrix (`precessEquatorialJ2000ToDate`) before the of-date sidereal
+// time consumes them — matching the planet path's precession, so stars and
+// planets sit on one consistent of-date sky (removes the ~0.36°-in-2026 residual).
 
-import { equatorialToHorizontal } from '../astronomy/horizontal';
+import { equatorialToHorizontal, precessEquatorialJ2000ToDate } from '../astronomy/horizontal';
 import { skyDirectionENU, skyPosition } from '../astronomy';
 
 // Stars/constellations are effectively at infinity; a huge distance makes the
@@ -27,9 +33,12 @@ export function equatorialXyzToSkyDir(
   latRad: number,
   lonRad: number,
 ): [number, number, number] {
-  const r = Math.hypot(x, y, z) || 1;
-  const raRad = Math.atan2(y, x);
-  const decRad = Math.asin(Math.max(-1, Math.min(1, z / r)));
+  // Precess the J2000 equatorial direction to of-date before RA/Dec, so it
+  // lines up with the of-date sidereal time in equatorialToHorizontal (M1).
+  const d = precessEquatorialJ2000ToDate({ x, y, z }, jd);
+  const r = Math.hypot(d.x, d.y, d.z) || 1;
+  const raRad = Math.atan2(d.y, d.x);
+  const decRad = Math.asin(Math.max(-1, Math.min(1, d.z / r)));
   return skyDirectionENU(
     equatorialToHorizontal({ raRad, decRad, distanceAu: FAR_AU }, jd, latRad, lonRad),
   );

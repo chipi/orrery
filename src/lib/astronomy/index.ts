@@ -10,7 +10,12 @@
 import { julianDay, DEG } from './time';
 import { geocentricPlanet, geocentricSun, type PlanetId, type Vec3 } from './planets';
 import { geocentricMoon } from './moon';
-import { eclipticToEquatorial, equatorialToHorizontal, type Horizontal } from './horizontal';
+import {
+  eclipticToEquatorial,
+  equatorialToHorizontal,
+  precessEclipticJ2000ToDate,
+  type Horizontal,
+} from './horizontal';
 
 export type SkyBody = 'sun' | 'moon' | Exclude<PlanetId, 'earth'>;
 
@@ -40,9 +45,14 @@ export interface SkyPosition extends Horizontal {
 }
 
 function geocentricEcliptic(body: SkyBody, jd: number): Vec3 {
-  if (body === 'sun') return geocentricSun(jd);
+  // Sun + planets come from the Standish elements referenced to the J2000
+  // equinox, so precess them onto the equinox OF DATE (M1) before the of-date
+  // obliquity + of-date sidereal-time steps downstream — otherwise the frames
+  // are mixed and the sky pointing carries a ~0.36°-in-2026 precession error.
+  // The Moon (Schlyter) is already ecliptic-of-date and must NOT be precessed.
+  if (body === 'sun') return precessEclipticJ2000ToDate(geocentricSun(jd), jd);
   if (body === 'moon') return geocentricMoon(jd).pos;
-  return geocentricPlanet(body, jd);
+  return precessEclipticJ2000ToDate(geocentricPlanet(body, jd), jd);
 }
 
 /**

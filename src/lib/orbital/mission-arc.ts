@@ -23,6 +23,7 @@ import {
   R_MARS_AU,
   type DestinationId,
 } from '$lib/lambert-grid.constants';
+import { eccentricAnomaly } from '$lib/universe/kepler';
 
 /** Mars-specific Hohmann transfer constants — kept as named exports for
  *  back-compat with /fly free-return rendering (ORRERY DEMO scenario). */
@@ -58,9 +59,21 @@ export function marsPos(day: number): Vec2 {
 export function destinationPos(day: number, id: DestinationId): Vec2 {
   const d = DESTINATIONS[id];
   const e = d.e ?? 0;
-  const nu = d.a0 + d.meanMotionRadPerDay * day;
-  const r = (d.a * (1 - e * e)) / (1 + e * Math.cos(nu));
-  return { x: Math.cos(nu) * r, z: Math.sin(nu) * r };
+  // `a0 + n·day` is the mean longitude L, not the true anomaly. On an eccentric
+  // orbit perihelion sits at the longitude of perihelion ϖ (`varpi`), not at 0
+  // (S2): phase via mean anomaly M = L − ϖ → Kepler → true anomaly, placing the
+  // body at ecliptic longitude ν + ϖ. Circular bodies (e = 0) reduce exactly to
+  // [a·cos L, a·sin L] — byte-identical to the pre-ϖ model, so every giant-planet
+  // arc (and its hand-tuned trajectory.json) is untouched. Kept in lockstep with
+  // lambert-grid.destinationHelioXY so /fly render and /plan porkchop agree.
+  const L = d.a0 + d.meanMotionRadPerDay * day;
+  if (e === 0) return { x: Math.cos(L) * d.a, z: Math.sin(L) * d.a };
+  const varpi = d.varpi ?? 0;
+  const E = eccentricAnomaly(L - varpi, e);
+  const r = d.a * (1 - e * Math.cos(E));
+  const nu = Math.atan2(Math.sqrt(1 - e * e) * Math.sin(E), Math.cos(E) - e);
+  const theta = nu + varpi;
+  return { x: Math.cos(theta) * r, z: Math.sin(theta) * r };
 }
 
 /**

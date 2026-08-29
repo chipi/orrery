@@ -20,6 +20,7 @@
  */
 
 import { solveLambert } from './lambert';
+import { eccentricAnomaly } from './universe/kepler';
 import { DV_FAILED } from './lambert-grid';
 import {
   EARTH_A0,
@@ -43,6 +44,9 @@ export interface HostElements {
   a0: number;
   meanMotionRadPerDay: number;
   e?: number;
+  /** Longitude of perihelion ϖ (rad); phases the eccentric conic (S2). Inert
+   *  for the circular host model (e=0) the giant-planet hosts currently use. */
+  varpi?: number;
 }
 
 export interface MoonMissionDv {
@@ -66,12 +70,21 @@ const INFEASIBLE: MoonMissionDv = {
   feasible: false,
 };
 
-/** Host heliocentric position (AU), matching `lambert-grid.destinationHelioXY`. */
+/** Host heliocentric position (AU), matching `lambert-grid.destinationHelioXY`.
+ *  `a0 + n·day` is the mean longitude L; on an eccentric orbit perihelion sits
+ *  at ϖ (`varpi`), not longitude 0 (S2) — phase via M = L − ϖ → Kepler → true
+ *  anomaly at longitude ν + ϖ. Circular hosts (e=0) reduce to [a·cos L, a·sin L],
+ *  byte-identical to the pre-ϖ model (the giant-planet hosts are all circular). */
 function hostHelioXY(day: number, host: HostElements): [number, number] {
   const e = host.e ?? 0;
-  const nu = host.a0 + host.meanMotionRadPerDay * day;
-  const r = (host.a * (1 - e * e)) / (1 + e * Math.cos(nu));
-  return [r * Math.cos(nu), r * Math.sin(nu)];
+  const L = host.a0 + host.meanMotionRadPerDay * day;
+  if (e === 0) return [host.a * Math.cos(L), host.a * Math.sin(L)];
+  const varpi = host.varpi ?? 0;
+  const E = eccentricAnomaly(L - varpi, e);
+  const r = host.a * (1 - e * Math.cos(E));
+  const nu = Math.atan2(Math.sqrt(1 - e * e) * Math.sin(E), Math.cos(E) - e);
+  const theta = nu + varpi;
+  return [r * Math.cos(theta), r * Math.sin(theta)];
 }
 
 /**
@@ -97,8 +110,15 @@ export function interplanetaryMoonDv(
   if (!result) return INFEASIBLE;
 
   const departure = Math.abs(result.v1 - V_EARTH_CIRC) * AU_PER_YR_TO_KMS;
-  // Hyperbolic excess w.r.t. the host — carried into the moon leg, not captured.
-  const vInfHost = Math.abs(vDest - result.v2) * AU_PER_YR_TO_KMS;
+  // VECTOR hyperbolic excess w.r.t. the host — carried into the moon leg, not
+  // captured (B1). A scalar |vDest − v2| collapses on fast (faster-than-Hohmann)
+  // transfers, where the speeds match but the velocity VECTORS diverge (large
+  // radial component) — the exact bug ADR-085 §D2 fixed for the Moon, and it
+  // bites hardest here because v∞ is squared into the well-drop. Split the
+  // arrival velocity into tangential √(µp)/r2 + radial; the host moves ~tangentially.
+  const vt2 = Math.sqrt(MU_SUN * result.p) / r2mag;
+  const vr2 = Math.sqrt(Math.max(0, result.v2 * result.v2 - vt2 * vt2));
+  const vInfHost = Math.hypot(vr2, vt2 - vDest) * AU_PER_YR_TO_KMS;
 
   // ── Leg 2: host well → moon-orbit insertion (patched-conic) ──
   const muHost = MU_HOST[moon.host];

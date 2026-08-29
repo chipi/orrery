@@ -66,8 +66,9 @@ export function moonEclipticXYKm(jd: number): [number, number] {
 
 /**
  * Moon geocentric speed in the 2D ecliptic plane at `jd`, km/s, by central
- * finite difference of `moonEclipticXYKm`. ≈ 1.02–1.08 km/s. Used for the
- * patched-conic v∞ at the Moon (ADR-085 D2 / Fable-5 B1).
+ * finite difference of `moonEclipticXYKm`. Ranges ≈ 0.97 km/s (apogee) to
+ * ≈ 1.09 km/s (perigee) over an anomalistic month — ~1.09 at the 2026 epoch.
+ * Used for the patched-conic v∞ at the Moon (ADR-085 D2 / Fable-5 B1).
  */
 export function moonSpeedKmS(jd: number): number {
   const [xa, ya] = moonEclipticXYKm(jd + V_DIFF_DAYS);

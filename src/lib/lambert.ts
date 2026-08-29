@@ -22,6 +22,12 @@ export interface LambertResult {
   v1: number;
   /** Heliocentric speed at r2 (AU/yr) */
   v2: number;
+  /** Transfer ellipse semi-latus rectum p = a(1−e²), same units as a. Lets the
+   *  caller split the endpoint velocity into tangential (√(µp)/r) + radial parts
+   *  and compute a VECTOR arrival v∞ instead of a scalar speed difference — the
+   *  scalar form collapses on fast transfers and inverts the TOF gradient
+   *  (ADR-085 §D2, and the same bug the moon/helio grids must avoid). */
+  p: number;
 }
 
 /**
@@ -125,5 +131,18 @@ export function solveLambert(
   const v1 = Math.sqrt(Math.max(0, mu * (2 / r1mag - 1 / a)));
   const v2 = Math.sqrt(Math.max(0, mu * (2 / r2mag - 1 / a)));
 
-  return { a, v1, v2 };
+  // Semi-latus rectum from the Lagrange solution at the solved a (branch-aware
+  // via α). p = (4a(s−r1)(s−r2)/c²)·sin²((α+β)/2). Reduces exactly to the 180°
+  // form 2·r1·r2/(r1+r2) when β = 0. Lets callers split the endpoint velocity
+  // into tangential √(µp)/r + radial and take a vector v∞ (ADR-085/086).
+  const sinAlpha = Math.sqrt(Math.min(1, s / (2 * a)));
+  const sinBeta = Math.sqrt(Math.max(0, (s - c) / (2 * a)));
+  const alpha = highPath ? 2 * Math.PI - 2 * Math.asin(sinAlpha) : 2 * Math.asin(sinAlpha);
+  const beta = 2 * Math.asin(sinBeta);
+  const p =
+    c > 1e-12
+      ? ((4 * a * (s - r1mag) * (s - r2mag)) / (c * c)) * Math.sin((alpha + beta) / 2) ** 2
+      : a; // degenerate (coincident endpoints) — unused, avoid /0
+
+  return { a, v1, v2, p };
 }

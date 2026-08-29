@@ -159,3 +159,26 @@ describe('solveLambert — high branch (slow / phasing transfers, ADR-085)', () 
     expect(defaultLow).toBe(explicitLow);
   });
 });
+
+describe('solveLambert — semi-latus rectum p (vector-v∞ decomposition support)', () => {
+  it('returns a p consistent with angular momentum h = √(µp) = r2·v_tangential', () => {
+    const r = solveLambert(r1, r2, 220 / 365.25, MU_SUN)!;
+    const r2mag = Math.hypot(r2[0], r2[1]);
+    const vt2 = Math.sqrt(MU_SUN * r.p) / r2mag; // tangential speed at r2
+    expect(r.p).toBeGreaterThan(0);
+    // Tangential component can't exceed the total speed → real radial component.
+    expect(vt2).toBeLessThanOrEqual(r.v2 + 1e-9);
+    // Definition: √(µp) = h = r2 · v_tangential.
+    expect(Math.sqrt(MU_SUN * r.p)).toBeCloseTo(r2mag * vt2, 6);
+  });
+
+  it('p reduces to 2·r1·r2/(r1+r2) for a 180° (antipodal) transfer (β = 0)', () => {
+    const r1A: [number, number] = [1.0, 0];
+    const r2A: [number, number] = [-1.524, 0]; // exactly antipodal
+    const r = solveLambert(r1A, r2A, 250 / 365.25, MU_SUN);
+    if (r) {
+      const expectedP = (2 * 1.0 * 1.524) / (1.0 + 1.524);
+      expect(r.p).toBeCloseTo(expectedP, 4);
+    }
+  });
+});

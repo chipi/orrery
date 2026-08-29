@@ -19,6 +19,8 @@ type PlanetEntry = {
   e: number;
   T: number;
   L0: number;
+  /** Longitude of perihelion ϖ at J2000 (rad); see S2. */
+  varpi?: number;
 };
 
 type SmallBodyEntry = {
@@ -27,6 +29,8 @@ type SmallBodyEntry = {
   e: number;
   T: number;
   L0: number;
+  /** Longitude of perihelion ϖ at J2000 (rad); see S2. */
+  varpi?: number;
 };
 
 function planet(name: string): PlanetEntry {
@@ -159,6 +163,10 @@ export interface DestinationConstants {
   meanMotionRadPerDay: number;
   /** Eccentricity; omitted or 0 ⇒ circular position model. ADR-028: required for Pluto (and populated for all bodies from data). */
   e?: number;
+  /** Longitude of perihelion ϖ at J2000 (rad). Phases the eccentric conic so
+   *  perihelion sits at ϖ, not at ecliptic longitude 0 (S2). Inert when e is
+   *  0/omitted (circular model). Sourced from the data layer. */
+  varpi?: number;
 }
 
 function buildPlanetDestination(id: DestinationId, name: string): DestinationConstants {
@@ -168,6 +176,7 @@ function buildPlanetDestination(id: DestinationId, name: string): DestinationCon
     a: p.a,
     a0: p.L0,
     meanMotionRadPerDay: (2 * Math.PI) / p.T,
+    varpi: p.varpi,
   };
 }
 
@@ -178,6 +187,7 @@ function buildDwarfDestination(id: 'ceres' | 'pluto'): DestinationConstants {
     a: p.a,
     a0: p.L0,
     meanMotionRadPerDay: (2 * Math.PI) / p.T,
+    varpi: p.varpi,
     /** ADR-028: eccentric arrival only for Pluto. Ceres uses a circular a (e≈0.08 breaks Lambert porkchop convergence across the grid). */
     ...(id === 'pluto' ? { e: p.e } : {}),
   };
@@ -190,6 +200,7 @@ function buildKboDestination(id: 'arrokoth'): DestinationConstants {
     a: p.a,
     a0: p.L0,
     meanMotionRadPerDay: (2 * Math.PI) / p.T,
+    varpi: p.varpi,
     /** Arrokoth's e≈0.041 is below the Lambert convergence breakage
      *  threshold (Bennu at 0.20 is where eccentric arrival kicks in),
      *  so the circular model is fine. Listed separately from the
@@ -205,6 +216,7 @@ function buildCometDestination(id: 'halley' | '67p'): DestinationConstants {
     a: p.a,
     a0: p.L0,
     meanMotionRadPerDay: (2 * Math.PI) / p.T,
+    varpi: p.varpi,
     /** Halley (e=0.967) and 67P (e=0.64) are highly eccentric. For
      *  /fly's flyby-cinema purpose we only need their heliocentric
      *  position at the flyby moment (1986-03-14 for Halley, 2014-08-06
@@ -223,6 +235,7 @@ function buildAsteroidDestination(id: 'vesta' | 'psyche' | 'bennu'): Destination
     a: p.a,
     a0: p.L0,
     meanMotionRadPerDay: (2 * Math.PI) / p.T,
+    varpi: p.varpi,
     /** Bennu's e≈0.20 matches Pluto's regime so it gets eccentric arrival;
      *  Vesta + Psyche stay circular (same Ceres-style approximation —
      *  their e≈0.09 / 0.13 break Lambert convergence across the grid). */
@@ -256,6 +269,7 @@ function buildSmallBodyDestination(id: SmallBodyDestId): DestinationConstants {
     a: p.a,
     a0: p.L0,
     meanMotionRadPerDay: (2 * Math.PI) / p.T,
+    varpi: p.varpi,
     /** Dimorphos + Didymos at e≈0.38, Donaldjohanson at e≈0.19,
      *  Itokawa at e≈0.28 — above Bennu's 0.20 threshold so the
      *  eccentric model applies. Trojans (Eurybates/Polymele/Leucus/

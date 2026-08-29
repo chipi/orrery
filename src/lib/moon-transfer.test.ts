@@ -107,3 +107,30 @@ describe('interplanetaryMoonDv — honesty bar (ADR-086)', () => {
     }
   });
 });
+
+describe('interplanetaryMoonDv — vector v∞ regression guard (B1)', () => {
+  const europa = moon('europa');
+  const host = DESTINATIONS[europa.host as keyof typeof DESTINATIONS];
+  // Same departure; vary only TOF across the Hohmann floor.
+  const fast = interplanetaryMoonDv(280, 280 + 1.2 * 365.25, 1.2, host, europa);
+  const nearHohmann = interplanetaryMoonDv(280, 280 + 2.4 * 365.25, 2.4, host, europa);
+
+  it('a faster-than-Hohmann arrival does NOT collapse v∞ (was 0.24 km/s; reality ~13)', () => {
+    // The scalar |vDest − v2| priced a 1.2-yr Earth→Jupiter transfer at
+    // v∞ ≈ 0.24 km/s — matched speeds, diverging vectors. The vector v∞ must
+    // carry the real ~13 km/s radial excess.
+    expect(fast.feasible).toBe(true);
+    expect(fast.vInfHost).toBeGreaterThan(10);
+  });
+
+  it('faster transfers are MORE expensive (correct TOF gradient, not inverted)', () => {
+    expect(fast.feasible && nearHohmann.feasible).toBe(true);
+    expect(fast.vInfHost).toBeGreaterThan(nearHohmann.vInfHost);
+    expect(fast.total).toBeGreaterThan(nearHohmann.total);
+  });
+
+  it('the near-Hohmann arrival v∞ is in the Galileo/Europa-Clipper band (~5–7 km/s)', () => {
+    expect(nearHohmann.vInfHost).toBeGreaterThan(4.5);
+    expect(nearHohmann.vInfHost).toBeLessThan(8);
+  });
+});

@@ -16,6 +16,7 @@
  */
 
 import { solveLambert } from './lambert';
+import { eccentricAnomaly } from './universe/kepler';
 import {
   DESTINATIONS,
   EARTH_A0,
@@ -114,7 +115,16 @@ export function computePorkchopGrid(
 }
 
 /** Heliocentric position (AU) in the ecliptic plane. Matches
- * `mission-arc.destinationPos` (x/z) mapped to Lambert's [x,y]. */
+ * `mission-arc.destinationPos` (x/z) mapped to Lambert's [x,y].
+ *
+ * `a0 + n·day` is the **mean longitude** L (not the true anomaly). For an
+ * eccentric orbit the body's angular rate and radius both vary along the orbit,
+ * with perihelion at the **longitude of perihelion** ϖ (`varpi`) — NOT at
+ * ecliptic longitude 0 (S2). Phase the conic correctly: mean anomaly M = L − ϖ,
+ * solve Kepler for the eccentric anomaly E, then r = a(1 − e·cos E) and true
+ * anomaly ν, positioning the body at ecliptic longitude ν + ϖ. For a circular
+ * model (e = 0, ϖ undefined) this reduces exactly to [a·cos L, a·sin L] — the
+ * pre-ϖ behaviour, so every circular destination's grid stays byte-identical. */
 function destinationHelioXY(
   day: number,
   destination: {
@@ -122,12 +132,18 @@ function destinationHelioXY(
     a0: number;
     meanMotionRadPerDay: number;
     e?: number;
+    varpi?: number;
   },
 ): [number, number] {
   const e = destination.e ?? 0;
-  const nu = destination.a0 + destination.meanMotionRadPerDay * day;
-  const r = (destination.a * (1 - e * e)) / (1 + e * Math.cos(nu));
-  return [r * Math.cos(nu), r * Math.sin(nu)];
+  const L = destination.a0 + destination.meanMotionRadPerDay * day;
+  if (e === 0) return [destination.a * Math.cos(L), destination.a * Math.sin(L)];
+  const varpi = destination.varpi ?? 0;
+  const E = eccentricAnomaly(L - varpi, e);
+  const r = destination.a * (1 - e * Math.cos(E));
+  const nu = Math.atan2(Math.sqrt(1 - e * e) * Math.sin(E), Math.cos(E) - e);
+  const theta = nu + varpi;
+  return [r * Math.cos(theta), r * Math.sin(theta)];
 }
 
 /** Heliocentric ∆v (km/s) for an Earth → destination transfer. Uses
@@ -137,7 +153,7 @@ function computeDv(
   depDay: number,
   arrDay: number,
   tofYr: number,
-  destination: { a: number; a0: number; meanMotionRadPerDay: number; e?: number },
+  destination: { a: number; a0: number; meanMotionRadPerDay: number; e?: number; varpi?: number },
 ): number {
   const tE = EARTH_A0 + EARTH_MEAN_MOTION_RAD_PER_DAY * depDay;
   const r1: [number, number] = [R_EARTH_AU * Math.cos(tE), R_EARTH_AU * Math.sin(tE)];
@@ -148,7 +164,15 @@ function computeDv(
   const result = solveLambert(r1, r2, tofYr, MU_SUN);
   if (!result) return DV_FAILED;
 
-  const dvAuPerYr = Math.abs(result.v1 - V_EARTH_CIRC) + Math.abs(vDest - result.v2);
+  // Arrival ∆v = VECTOR hyperbolic excess at the destination (S1). The scalar
+  // |vDest − v2| collapses on fast (faster-than-Hohmann) transfers — matched
+  // speeds but diverging velocity vectors — which under-prices the fast half of
+  // every grid and flattens the TOF gradient. Split the arrival velocity into
+  // tangential √(µp)/r2 + radial; the destination moves ~tangentially at vDest.
+  const vt2 = Math.sqrt(MU_SUN * result.p) / r2mag;
+  const vr2 = Math.sqrt(Math.max(0, result.v2 * result.v2 - vt2 * vt2));
+  const vInfArrival = Math.hypot(vr2, vt2 - vDest);
+  const dvAuPerYr = Math.abs(result.v1 - V_EARTH_CIRC) + vInfArrival;
   const dvKmS = dvAuPerYr * AU_PER_YR_TO_KMS;
   return Math.max(3.2, Math.min(dvKmS, DV_FAILED));
 }

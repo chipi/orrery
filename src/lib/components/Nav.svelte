@@ -650,8 +650,18 @@
 
 <style>
   nav {
-    position: sticky;
+    /* FIXED, not sticky: every route already pads its content by
+       `calc(var(--nav-height) + N)` to clear the bar, which only works if the
+       bar is OUT of normal flow. As `sticky` the bar ALSO consumed nav-height of
+       flow space, so at scroll-top that padding double-counted the bar — a
+       nav-height gap of dead space above the content (60px in a browser tab,
+       ~107px in the standalone PWA where nav-height includes the notch). `fixed`
+       + left/right:0 removes the flow box so the padding lands the content
+       exactly one intended gap below the bar. */
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 40;
     /* --nav-height already includes the iOS safe area (tokens.css); the
        padding-top pushes the bar's own content below the status bar /

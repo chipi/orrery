@@ -18,9 +18,14 @@
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { computePorkchopGrid, DV_FAILED, type LambertRequest } from '../src/lib/lambert-grid';
-import type { DestinationId } from '../src/lib/lambert-grid.constants';
+import {
+  DESTINATIONS as DEST_ELEMENTS,
+  type DestinationId,
+} from '../src/lib/lambert-grid.constants';
 import type { MissionType } from '../src/types/porkchop-grid';
 import { geoTransferDv } from '../src/lib/lambert-geocentric';
+import { interplanetaryMoonDv } from '../src/lib/moon-transfer';
+import { MOONS } from '../src/lib/moon-transfer.constants';
 
 interface DestinationSpec {
   id: DestinationId;
@@ -245,6 +250,66 @@ function precomputeGeoMoon(): string {
   return JSON.stringify(out, null, 2) + '\n';
 }
 
+// ─── Earth→(planetary moon) multi-leg grids (ADR-086) ──────────────
+// Each moon rides its host planet's heliocentric departure/TOF axes, so the
+// grid reuses the host's DestinationSpec ranges + unit. The cell ∆v is the
+// multi-leg total (heliocentric departure + moon-orbit insertion).
+
+function hostSpec(host: DestinationId): DestinationSpec {
+  const spec = DESTINATIONS.find((d) => d.id === host);
+  if (!spec) throw new Error(`no host DestinationSpec for '${host}'`);
+  return spec;
+}
+
+function precomputeMoonMission(moon: (typeof MOONS)[number]): string {
+  const [w, h] = STEPS;
+  const host = DEST_ELEMENTS[moon.host as DestinationId]; // heliocentric elements
+  const spec = hostSpec(moon.host as DestinationId);
+  const [tofStart, tofEnd] = spec.tof_range_days;
+  const [depStart, depEnd] = DEP_RANGE_DAYS;
+
+  const grid: number[][] = new Array(h);
+  let failed = 0;
+  let dvMin = Infinity;
+  let dvMax = -Infinity;
+  for (let j = 0; j < h; j++) {
+    const tofDays = tofStart + (j / (h - 1)) * (tofEnd - tofStart);
+    const tofYr = tofDays / 365.25;
+    grid[j] = new Array(w);
+    for (let i = 0; i < w; i++) {
+      const dep = depStart + (i / (w - 1)) * (depEnd - depStart);
+      const t = interplanetaryMoonDv(dep, dep + tofDays, tofYr, host, moon);
+      const dv = quantise(t.total);
+      grid[j][i] = dv;
+      if (t.feasible) {
+        if (dv < dvMin) dvMin = dv;
+        if (dv > dvMax) dvMax = dv;
+      } else {
+        failed++;
+      }
+    }
+  }
+  const cells = w * h;
+  const convPct = Math.round((100 * (cells - failed)) / cells);
+  const colorRange: [number, number] = [quantise(dvMin - 0.2), quantise(dvMax + 0.2)];
+
+  const out = {
+    destination: moon.id,
+    dep_range_days: DEP_RANGE_DAYS,
+    tof_range_days: spec.tof_range_days,
+    steps: STEPS,
+    mission_types: ['LANDING'] as MissionType[],
+    // MOI is baked per-cell into the total (it varies with the arrival v∞), so
+    // nothing is added at display time — same convention as the geo Moon grid.
+    dv_orbit_insertion: { LANDING: 0 } as Partial<Record<MissionType, number>>,
+    tof_axis_unit: spec.tof_axis_unit,
+    dv_color_range: colorRange,
+    grid,
+    credit: `Computed at build time via the multi-leg patched-conic model (src/lib/moon-transfer.ts, ADR-086). Earth→${moon.host}→${moon.id}: ${convPct}% cells feasible. ∆v = heliocentric Earth→${moon.host} departure + ${moon.id}-orbit insertion (arrival v∞ carried down the host well, µ_host then µ_moon; moon radius from its sidereal period via Kepler). Two-body teaching estimate — the honest direct-capture upper bound; real missions use gravity-assist tours to reduce the moon leg.`,
+  };
+  return JSON.stringify(out, null, 2) + '\n';
+}
+
 async function main() {
   await mkdir(OUT_DIR, { recursive: true });
   console.log('Pre-computing porkchop grids:');
@@ -261,7 +326,15 @@ async function main() {
   await writeFile(join(OUT_DIR, 'earth-to-moon.json'), moonJson);
   process.stdout.write(` ${(moonJson.length / 1024).toFixed(0)} KB\n`);
 
-  console.log(`Done. ${DESTINATIONS.length + 1} grids written to ${OUT_DIR}/`);
+  // Planetary-moon multi-leg grids (ADR-086).
+  for (const moon of MOONS) {
+    process.stdout.write(`  ${moon.id} (via ${moon.host})…`);
+    const json = precomputeMoonMission(moon);
+    await writeFile(join(OUT_DIR, `earth-to-${moon.id}.json`), json);
+    process.stdout.write(` ${(json.length / 1024).toFixed(0)} KB\n`);
+  }
+
+  console.log(`Done. ${DESTINATIONS.length + 1 + MOONS.length} grids written to ${OUT_DIR}/`);
 }
 
 main().catch((err) => {

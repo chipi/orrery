@@ -1868,5 +1868,15 @@
   "moon_phase_full": "満月",
   "moon_phase_waning_gibbous": "二十日月",
   "moon_phase_last_quarter": "下弦",
-  "moon_phase_waning_crescent": "殊月"
+  "moon_phase_waning_crescent": "殊月",
+  "plan_destination_phobos": "フォボス",
+  "plan_destination_deimos": "ダイモス",
+  "plan_destination_io": "イオ",
+  "plan_destination_europa": "エウロパ",
+  "plan_destination_ganymede": "ガニメデ",
+  "plan_destination_callisto": "カリスト",
+  "plan_destination_titan": "タイタン",
+  "plan_destination_enceladus": "エンケラドス",
+  "plan_destination_triton": "トリトン",
+  "plan_dv_multileg": "地球 → 惑星 → 月軌道"
 }

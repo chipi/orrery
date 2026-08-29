@@ -1868,5 +1868,15 @@
   "moon_phase_full": "पूर्ण चंद्रमा",
   "moon_phase_waning_gibbous": "घटता गिबस",
   "moon_phase_last_quarter": "अंतिम चतुर्थांश",
-  "moon_phase_waning_crescent": "घटता अर्धचंद्र"
+  "moon_phase_waning_crescent": "घटता अर्धचंद्र",
+  "plan_destination_phobos": "फोबोस",
+  "plan_destination_deimos": "डिमोस",
+  "plan_destination_io": "आयो",
+  "plan_destination_europa": "यूरोपा",
+  "plan_destination_ganymede": "गैनिमीड",
+  "plan_destination_callisto": "कैलिस्टो",
+  "plan_destination_titan": "टाइटन",
+  "plan_destination_enceladus": "एनसेलेडस",
+  "plan_destination_triton": "ट्राइटन",
+  "plan_dv_multileg": "पृथ्वी → ग्रह → चंद्रमा कक्षा"
 }

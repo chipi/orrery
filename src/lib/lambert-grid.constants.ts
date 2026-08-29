@@ -105,12 +105,49 @@ export type DestinationId =
 export type GeoDestinationId = 'moon';
 
 /**
- * Every destination `/plan` can select and load a porkchop for: the
- * heliocentric Lambert set plus the geocentric ones (ADR-085). Use this where
- * a value spans both models (the `/plan` selector, the porkchop JSON contract,
- * `getPorkchopGrid`); keep `DestinationId` for the heliocentric-only Lambert path.
+ * Planetary moons of the giants + Mars (ADR-086). Reached via a multi-leg
+ * patched-conic mission (heliocentric Earth→host + moon-orbit insertion), NOT a
+ * single Lambert arc — so they are their own category, distinct from the
+ * geocentric Earth→Moon path. Their porkchops are built in the precompute via
+ * `moon-transfer.ts` and ride their host planet's departure/TOF axes.
  */
-export type PlanDestinationId = DestinationId | GeoDestinationId;
+export type MoonMissionDestId =
+  | 'phobos'
+  | 'deimos'
+  | 'io'
+  | 'europa'
+  | 'ganymede'
+  | 'callisto'
+  | 'titan'
+  | 'enceladus'
+  | 'triton';
+
+/** Iteration/order-of-appearance list for the moon-mission destinations. */
+export const MOON_MISSION_DEST_IDS: MoonMissionDestId[] = [
+  'phobos',
+  'deimos',
+  'io',
+  'europa',
+  'ganymede',
+  'callisto',
+  'titan',
+  'enceladus',
+  'triton',
+];
+
+/** Type guard: is this a multi-leg moon-mission destination (ADR-086)? */
+export function isMoonMissionDest(id: PlanDestinationId): id is MoonMissionDestId {
+  return (MOON_MISSION_DEST_IDS as string[]).includes(id);
+}
+
+/**
+ * Every destination `/plan` can select and load a porkchop for: the
+ * heliocentric Lambert set, the geocentric Earth→Moon path (ADR-085), and the
+ * multi-leg moon missions (ADR-086). Use this where a value spans the models
+ * (the `/plan` selector, the porkchop JSON contract, `getPorkchopGrid`); keep
+ * `DestinationId` for the heliocentric-only Lambert path.
+ */
+export type PlanDestinationId = DestinationId | GeoDestinationId | MoonMissionDestId;
 
 export interface DestinationConstants {
   id: DestinationId;

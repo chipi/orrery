@@ -1868,5 +1868,15 @@
   "moon_phase_full": "Пуна луна",
   "moon_phase_waning_gibbous": "Опадајућа пуна луна",
   "moon_phase_last_quarter": "Последња четвртина",
-  "moon_phase_waning_crescent": "Опадајућа полумесец"
+  "moon_phase_waning_crescent": "Опадајућа полумесец",
+  "plan_destination_phobos": "Фобос",
+  "plan_destination_deimos": "Деймос",
+  "plan_destination_io": "Ио",
+  "plan_destination_europa": "Европа",
+  "plan_destination_ganymede": "Ганимед",
+  "plan_destination_callisto": "Калисто",
+  "plan_destination_titan": "Титан",
+  "plan_destination_enceladus": "Енцелад",
+  "plan_destination_triton": "Тритон",
+  "plan_dv_multileg": "Земља → планета → месечева орбита"
 }

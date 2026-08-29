@@ -1868,5 +1868,15 @@
   "moon_phase_full": "Volle maan",
   "moon_phase_waning_gibbous": "Afnemende gibbous",
   "moon_phase_last_quarter": "Laatste kwartier",
-  "moon_phase_waning_crescent": "Afnemende sikkel"
+  "moon_phase_waning_crescent": "Afnemende sikkel",
+  "plan_destination_phobos": "Phobos",
+  "plan_destination_deimos": "Deimos",
+  "plan_destination_io": "Io",
+  "plan_destination_europa": "Europa",
+  "plan_destination_ganymede": "Ganymedes",
+  "plan_destination_callisto": "Callisto",
+  "plan_destination_titan": "Titan",
+  "plan_destination_enceladus": "Enceladus",
+  "plan_destination_triton": "Triton",
+  "plan_dv_multileg": "Aarde → planeet → maanbaan"
 }

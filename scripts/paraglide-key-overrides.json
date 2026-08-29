@@ -984,7 +984,17 @@
     "moon_phase_full": "पूर्ण चंद्रमा",
     "moon_phase_waning_gibbous": "घटता गिबस",
     "moon_phase_last_quarter": "अंतिम चतुर्थांश",
-    "moon_phase_waning_crescent": "घटता अर्धचंद्र"
+    "moon_phase_waning_crescent": "घटता अर्धचंद्र",
+    "plan_destination_phobos": "फोबोस",
+    "plan_destination_deimos": "डिमोस",
+    "plan_destination_io": "आयो",
+    "plan_destination_europa": "यूरोपा",
+    "plan_destination_ganymede": "गैनिमीड",
+    "plan_destination_callisto": "कैलिस्टो",
+    "plan_destination_titan": "टाइटन",
+    "plan_destination_enceladus": "एनसेलेडस",
+    "plan_destination_triton": "ट्राइटन",
+    "plan_dv_multileg": "पृथ्वी → ग्रह → चंद्रमा कक्षा"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -1832,7 +1842,17 @@
     "moon_phase_full": "満月",
     "moon_phase_waning_gibbous": "二十日月",
     "moon_phase_last_quarter": "下弦",
-    "moon_phase_waning_crescent": "殊月"
+    "moon_phase_waning_crescent": "殊月",
+    "plan_destination_phobos": "フォボス",
+    "plan_destination_deimos": "ダイモス",
+    "plan_destination_io": "イオ",
+    "plan_destination_europa": "エウロパ",
+    "plan_destination_ganymede": "ガニメデ",
+    "plan_destination_callisto": "カリスト",
+    "plan_destination_titan": "タイタン",
+    "plan_destination_enceladus": "エンケラドス",
+    "plan_destination_triton": "トリトン",
+    "plan_dv_multileg": "地球 → 惑星 → 月軌道"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -2860,7 +2880,17 @@
     "moon_phase_full": "بدر",
     "moon_phase_waning_gibbous": "أحدب متناقص",
     "moon_phase_last_quarter": "التربيع الأخير",
-    "moon_phase_waning_crescent": "هلال متناقص"
+    "moon_phase_waning_crescent": "هلال متناقص",
+    "plan_destination_phobos": "فوبوس",
+    "plan_destination_deimos": "ديموس",
+    "plan_destination_io": "آيو",
+    "plan_destination_europa": "أوروبا",
+    "plan_destination_ganymede": "جانيميد",
+    "plan_destination_callisto": "كاليستو",
+    "plan_destination_titan": "تيتان",
+    "plan_destination_enceladus": "إنسيلادوس",
+    "plan_destination_triton": "تريتون",
+    "plan_dv_multileg": "الأرض → كوكب → مدار القمر"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -3710,7 +3740,17 @@
     "moon_phase_full": "만월",
     "moon_phase_waning_gibbous": "감소 볼록달",
     "moon_phase_last_quarter": "하현",
-    "moon_phase_waning_crescent": "감소 초승달"
+    "moon_phase_waning_crescent": "감소 초승달",
+    "plan_destination_phobos": "포보스",
+    "plan_destination_deimos": "데이모스",
+    "plan_destination_io": "이오",
+    "plan_destination_europa": "유로파",
+    "plan_destination_ganymede": "가니메데",
+    "plan_destination_callisto": "칼리스토",
+    "plan_destination_titan": "타이탄",
+    "plan_destination_enceladus": "엔셀라두스",
+    "plan_destination_triton": "트리톤",
+    "plan_dv_multileg": "지구 → 행성 → 위성 궤도"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -4531,7 +4571,17 @@
     "moon_phase_full": "Vollmond",
     "moon_phase_waning_gibbous": "Abnehmend Mond",
     "moon_phase_last_quarter": "Letztes Viertel",
-    "moon_phase_waning_crescent": "Abnehmende Sichel"
+    "moon_phase_waning_crescent": "Abnehmende Sichel",
+    "plan_destination_phobos": "Phobos",
+    "plan_destination_deimos": "Deimos",
+    "plan_destination_io": "Io",
+    "plan_destination_europa": "Europa",
+    "plan_destination_ganymede": "Ganymed",
+    "plan_destination_callisto": "Kallisto",
+    "plan_destination_titan": "Titan",
+    "plan_destination_enceladus": "Enceladus",
+    "plan_destination_triton": "Triton",
+    "plan_dv_multileg": "Erde → Planet → Mondumlaufbahn"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -5360,7 +5410,17 @@
     "moon_phase_full": "Pleine lune",
     "moon_phase_waning_gibbous": "Gibbeuse décroissante",
     "moon_phase_last_quarter": "Dernier quartier",
-    "moon_phase_waning_crescent": "Croissant décroissant"
+    "moon_phase_waning_crescent": "Croissant décroissant",
+    "plan_destination_phobos": "Phobos",
+    "plan_destination_deimos": "Déimos",
+    "plan_destination_io": "Io",
+    "plan_destination_europa": "Europe",
+    "plan_destination_ganymede": "Ganymède",
+    "plan_destination_callisto": "Callisto",
+    "plan_destination_titan": "Titan",
+    "plan_destination_enceladus": "Encelade",
+    "plan_destination_triton": "Triton",
+    "plan_dv_multileg": "Terre → planète → orbite lunaire"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -6156,7 +6216,17 @@
     "moon_phase_full": "Luna piena",
     "moon_phase_waning_gibbous": "Gibbosa calante",
     "moon_phase_last_quarter": "Ultimo quarto",
-    "moon_phase_waning_crescent": "Falce calante"
+    "moon_phase_waning_crescent": "Falce calante",
+    "plan_destination_phobos": "Fobos",
+    "plan_destination_deimos": "Deimos",
+    "plan_destination_io": "Io",
+    "plan_destination_europa": "Europa",
+    "plan_destination_ganymede": "Ganimede",
+    "plan_destination_callisto": "Callisto",
+    "plan_destination_titan": "Titano",
+    "plan_destination_enceladus": "Encelado",
+    "plan_destination_triton": "Tritone",
+    "plan_dv_multileg": "Terra → pianeta → orbita lunare"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -6951,7 +7021,17 @@
     "moon_phase_full": "Luna llena",
     "moon_phase_waning_gibbous": "Luna gibosa menguante",
     "moon_phase_last_quarter": "Cuarto menguante",
-    "moon_phase_waning_crescent": "Luna menguante"
+    "moon_phase_waning_crescent": "Luna menguante",
+    "plan_destination_phobos": "Fobos",
+    "plan_destination_deimos": "Deimos",
+    "plan_destination_io": "Ío",
+    "plan_destination_europa": "Europa",
+    "plan_destination_ganymede": "Ganímedes",
+    "plan_destination_callisto": "Calisto",
+    "plan_destination_titan": "Titán",
+    "plan_destination_enceladus": "Encélado",
+    "plan_destination_triton": "Tritón",
+    "plan_dv_multileg": "Tierra → planeta → órbita lunar"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -7753,7 +7833,17 @@
     "moon_phase_full": "Volle maan",
     "moon_phase_waning_gibbous": "Afnemende gibbous",
     "moon_phase_last_quarter": "Laatste kwartier",
-    "moon_phase_waning_crescent": "Afnemende sikkel"
+    "moon_phase_waning_crescent": "Afnemende sikkel",
+    "plan_destination_phobos": "Phobos",
+    "plan_destination_deimos": "Deimos",
+    "plan_destination_io": "Io",
+    "plan_destination_europa": "Europa",
+    "plan_destination_ganymede": "Ganymedes",
+    "plan_destination_callisto": "Callisto",
+    "plan_destination_titan": "Titan",
+    "plan_destination_enceladus": "Enceladus",
+    "plan_destination_triton": "Triton",
+    "plan_dv_multileg": "Aarde → planeet → maanbaan"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -8604,7 +8694,17 @@
     "moon_phase_full": "Полнолуние",
     "moon_phase_waning_gibbous": "Убывающая луна",
     "moon_phase_last_quarter": "Последняя четверть",
-    "moon_phase_waning_crescent": "Убывающий полумесяц"
+    "moon_phase_waning_crescent": "Убывающий полумесяц",
+    "plan_destination_phobos": "Фобос",
+    "plan_destination_deimos": "Деймос",
+    "plan_destination_io": "Ио",
+    "plan_destination_europa": "Европа",
+    "plan_destination_ganymede": "Ганимед",
+    "plan_destination_callisto": "Каллисто",
+    "plan_destination_titan": "Титан",
+    "plan_destination_enceladus": "Энцелад",
+    "plan_destination_triton": "Тритон",
+    "plan_dv_multileg": "Земля → планета → орбита луны"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -9436,7 +9536,17 @@
     "moon_phase_full": "满月",
     "moon_phase_waning_gibbous": "下弦月（后期）",
     "moon_phase_last_quarter": "下弦月",
-    "moon_phase_waning_crescent": "下弦月（初期）"
+    "moon_phase_waning_crescent": "下弦月（初期）",
+    "plan_destination_phobos": "火卫一",
+    "plan_destination_deimos": "火卫二",
+    "plan_destination_io": "木卫一",
+    "plan_destination_europa": "木卫二",
+    "plan_destination_ganymede": "木卫三",
+    "plan_destination_callisto": "木卫四",
+    "plan_destination_titan": "土卫六",
+    "plan_destination_enceladus": "土卫二",
+    "plan_destination_triton": "海卫一",
+    "plan_dv_multileg": "地球 → 行星 → 卫星轨道"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -10202,7 +10312,17 @@
     "moon_phase_full": "Пуна луна",
     "moon_phase_waning_gibbous": "Опадајућа пуна луна",
     "moon_phase_last_quarter": "Последња четвртина",
-    "moon_phase_waning_crescent": "Опадајућа полумесец"
+    "moon_phase_waning_crescent": "Опадајућа полумесец",
+    "plan_destination_phobos": "Фобос",
+    "plan_destination_deimos": "Деймос",
+    "plan_destination_io": "Ио",
+    "plan_destination_europa": "Европа",
+    "plan_destination_ganymede": "Ганимед",
+    "plan_destination_callisto": "Калисто",
+    "plan_destination_titan": "Титан",
+    "plan_destination_enceladus": "Енцелад",
+    "plan_destination_triton": "Тритон",
+    "plan_dv_multileg": "Земља → планета → месечева орбита"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -11004,6 +11124,16 @@
     "moon_phase_full": "Lua cheia",
     "moon_phase_waning_gibbous": "Lua gibosa minguante",
     "moon_phase_last_quarter": "Quarto minguante",
-    "moon_phase_waning_crescent": "Lua minguante"
+    "moon_phase_waning_crescent": "Lua minguante",
+    "plan_destination_phobos": "Fobos",
+    "plan_destination_deimos": "Deimos",
+    "plan_destination_io": "Io",
+    "plan_destination_europa": "Europa",
+    "plan_destination_ganymede": "Ganimedes",
+    "plan_destination_callisto": "Calisto",
+    "plan_destination_titan": "Titã",
+    "plan_destination_enceladus": "Encélado",
+    "plan_destination_triton": "Tritão",
+    "plan_dv_multileg": "Terra → planeta → órbita lunar"
   }
 }

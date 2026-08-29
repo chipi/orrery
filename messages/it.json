@@ -1868,5 +1868,15 @@
   "moon_phase_full": "Luna piena",
   "moon_phase_waning_gibbous": "Gibbosa calante",
   "moon_phase_last_quarter": "Ultimo quarto",
-  "moon_phase_waning_crescent": "Falce calante"
+  "moon_phase_waning_crescent": "Falce calante",
+  "plan_destination_phobos": "Fobos",
+  "plan_destination_deimos": "Deimos",
+  "plan_destination_io": "Io",
+  "plan_destination_europa": "Europa",
+  "plan_destination_ganymede": "Ganimede",
+  "plan_destination_callisto": "Callisto",
+  "plan_destination_titan": "Titano",
+  "plan_destination_enceladus": "Encelado",
+  "plan_destination_triton": "Tritone",
+  "plan_dv_multileg": "Terra → pianeta → orbita lunare"
 }

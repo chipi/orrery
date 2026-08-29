@@ -1868,5 +1868,15 @@
   "moon_phase_full": "Lua cheia",
   "moon_phase_waning_gibbous": "Lua gibosa minguante",
   "moon_phase_last_quarter": "Quarto minguante",
-  "moon_phase_waning_crescent": "Lua minguante"
+  "moon_phase_waning_crescent": "Lua minguante",
+  "plan_destination_phobos": "Fobos",
+  "plan_destination_deimos": "Deimos",
+  "plan_destination_io": "Io",
+  "plan_destination_europa": "Europa",
+  "plan_destination_ganymede": "Ganimedes",
+  "plan_destination_callisto": "Calisto",
+  "plan_destination_titan": "Titã",
+  "plan_destination_enceladus": "Encélado",
+  "plan_destination_triton": "Tritão",
+  "plan_dv_multileg": "Terra → planeta → órbita lunar"
 }

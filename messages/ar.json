@@ -1868,5 +1868,15 @@
   "moon_phase_full": "بدر",
   "moon_phase_waning_gibbous": "أحدب متناقص",
   "moon_phase_last_quarter": "التربيع الأخير",
-  "moon_phase_waning_crescent": "هلال متناقص"
+  "moon_phase_waning_crescent": "هلال متناقص",
+  "plan_destination_phobos": "فوبوس",
+  "plan_destination_deimos": "ديموس",
+  "plan_destination_io": "آيو",
+  "plan_destination_europa": "أوروبا",
+  "plan_destination_ganymede": "جانيميد",
+  "plan_destination_callisto": "كاليستو",
+  "plan_destination_titan": "تيتان",
+  "plan_destination_enceladus": "إنسيلادوس",
+  "plan_destination_triton": "تريتون",
+  "plan_dv_multileg": "الأرض → كوكب → مدار القمر"
 }

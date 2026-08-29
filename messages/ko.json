@@ -1868,5 +1868,15 @@
   "moon_phase_full": "만월",
   "moon_phase_waning_gibbous": "감소 볼록달",
   "moon_phase_last_quarter": "하현",
-  "moon_phase_waning_crescent": "감소 초승달"
+  "moon_phase_waning_crescent": "감소 초승달",
+  "plan_destination_phobos": "포보스",
+  "plan_destination_deimos": "데이모스",
+  "plan_destination_io": "이오",
+  "plan_destination_europa": "유로파",
+  "plan_destination_ganymede": "가니메데",
+  "plan_destination_callisto": "칼리스토",
+  "plan_destination_titan": "타이탄",
+  "plan_destination_enceladus": "엔셀라두스",
+  "plan_destination_triton": "트리톤",
+  "plan_dv_multileg": "지구 → 행성 → 위성 궤도"
 }

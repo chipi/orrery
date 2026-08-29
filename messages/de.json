@@ -1209,7 +1209,7 @@
   "explore_iconic_tagline_juno": "Kartiert Jupiters Inneres + Magnetfeld aus dem Polarorbit.",
   "explore_iconic_tagline_hayabusa2": "Brachte Proben vom Asteroiden Ryugu zurück.",
   "explore_iconic_tagline_bepicolombo": "Doppel-Mercury-Orbiter (MPO + Mio) seit 2018 unterwegs.",
-  "explore_iconic_tagline_juice": "Drei Vorbeiflüge an Galileischen Monden + Ganymede-Orbit voraus.",
+  "explore_iconic_tagline_juice": "Drei Vorbeiflüge an Galileischen Monden + Ganymed-Orbit voraus.",
   "explore_iconic_tagline_placeholder": "Bewegen Sie den Mauszeiger über ein Raumschiff, um zu lesen, warum es ikonisch ist.",
   "explore_speed_tip_1": "1 Tag pro Sekunde",
   "explore_speed_tip_10": "10 Tage pro Sekunde",
@@ -1868,5 +1868,15 @@
   "moon_phase_full": "Vollmond",
   "moon_phase_waning_gibbous": "Abnehmend Mond",
   "moon_phase_last_quarter": "Letztes Viertel",
-  "moon_phase_waning_crescent": "Abnehmende Sichel"
+  "moon_phase_waning_crescent": "Abnehmende Sichel",
+  "plan_destination_phobos": "Phobos",
+  "plan_destination_deimos": "Deimos",
+  "plan_destination_io": "Io",
+  "plan_destination_europa": "Europa",
+  "plan_destination_ganymede": "Ganymed",
+  "plan_destination_callisto": "Kallisto",
+  "plan_destination_titan": "Titan",
+  "plan_destination_enceladus": "Enceladus",
+  "plan_destination_triton": "Triton",
+  "plan_dv_multileg": "Erde → Planet → Mondumlaufbahn"
 }

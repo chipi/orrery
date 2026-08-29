@@ -5,13 +5,20 @@
   import { base } from '$app/paths';
   import { dvToRGB, dvToCss, dayToLongDate, dayToShortDate } from '$lib/porkchop';
   import { geoTransferDv } from '$lib/lambert-geocentric';
+  import { interplanetaryMoonDv } from '$lib/moon-transfer';
+  import { MOONS } from '$lib/moon-transfer.constants';
   import { trackFilterChange } from '$lib/analytics';
   import { getRockets, getPorkchopGrid } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { localizeHref } from '$lib/paraglide/runtime';
   import type { Rocket } from '$types/rocket';
   import type { PorkchopGrid, MissionType } from '$types/porkchop-grid';
-  import type { DestinationId, PlanDestinationId } from '$lib/lambert-grid.constants';
+  import {
+    DESTINATIONS,
+    isMoonMissionDest,
+    type DestinationId,
+    type PlanDestinationId,
+  } from '$lib/lambert-grid.constants';
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { TrajectoryArrowIcon } from '$lib/components/icons';
@@ -35,18 +42,28 @@
   // + Pluto. FLYBY_ONLY marks destinations with no LANDING at this fidelity (no
   // LOI ∆v term); GRAVITY_ASSIST_CAVEAT_DESTINATIONS flags those whose realistic
   // trajectory needs a gravity assist.
+  // Ordered as an outward tour — each planet's moons follow it (ADR-086).
   const DESTINATION_IDS: PlanDestinationId[] = [
     'moon',
     'mercury',
     'venus',
     'mars',
+    'phobos',
+    'deimos',
     'vesta',
     'ceres',
     'psyche',
     'jupiter',
+    'io',
+    'europa',
+    'ganymede',
+    'callisto',
     'saturn',
+    'titan',
+    'enceladus',
     'uranus',
     'neptune',
+    'triton',
     'pluto',
     'bennu',
   ];
@@ -137,6 +154,25 @@
         return m.plan_destination_patroclus();
       case 'menoetius':
         return m.plan_destination_menoetius();
+      // ADR-086 planetary moons.
+      case 'phobos':
+        return m.plan_destination_phobos();
+      case 'deimos':
+        return m.plan_destination_deimos();
+      case 'io':
+        return m.plan_destination_io();
+      case 'europa':
+        return m.plan_destination_europa();
+      case 'ganymede':
+        return m.plan_destination_ganymede();
+      case 'callisto':
+        return m.plan_destination_callisto();
+      case 'titan':
+        return m.plan_destination_titan();
+      case 'enceladus':
+        return m.plan_destination_enceladus();
+      case 'triton':
+        return m.plan_destination_triton();
       default: {
         const _exhaustive: never = id;
         return _exhaustive;
@@ -200,6 +236,10 @@
   /** True for a geocentric destination (the Moon): different ∆v semantics
    *  (TLI+LOI from LEO), narrow colour range, cislunar /fly handoff. ADR-085. */
   let isGeoDestination = $derived(destinationId === 'moon');
+  /** True for a multi-leg planetary-moon mission (ADR-086): the readout shows a
+   *  departure + moon-orbit-insertion split (not TLI/LOI), and the axes are the
+   *  host planet's heliocentric departure/TOF (integer-scale, like any planet). */
+  let isMoonMissionDestination = $derived(isMoonMissionDest(destinationId));
   let grid: number[][] | null = $derived(activeGrid?.grid ?? null);
   let depDays: number[] = $derived.by(() => {
     if (!activeGrid) return [];
@@ -768,6 +808,26 @@
     return t.feasible ? t : null;
   });
 
+  /** For a planetary-moon mission (ADR-086): the departure + moon-orbit-insertion
+   *  breakdown of the selected cell, recomputed from the multi-leg model (the
+   *  grid stores only the total). depDays[i] = Earth-departure day, arrDays[j] =
+   *  the heliocentric Earth→host TOF (days). */
+  let moonSplit = $derived.by(() => {
+    if (!isMoonMissionDestination || !selected) return null;
+    const moon = MOONS.find((mn) => mn.id === destinationId);
+    if (!moon) return null;
+    const depDay = depDays[selected.i];
+    const tofDays = arrDays[selected.j];
+    const t = interplanetaryMoonDv(
+      depDay,
+      depDay + tofDays,
+      tofDays / 365.25,
+      DESTINATIONS[moon.host],
+      moon,
+    );
+    return t.feasible ? t : null;
+  });
+
   /** URL-encode a dep/tof day value. The geocentric Moon grid's rows are ~0.1 d
    *  apart on the [3, 14] d band, so integer rounding would snap a selected
    *  cell to a different transfer on reload / on the /fly handoff (review fix).
@@ -1102,6 +1162,11 @@
             <span class="label geo-caveat">
               {m.plan_dv_from_leo()}{#if geoSplit}
                 · TLI {geoSplit.tli.toFixed(2)} + LOI {geoSplit.loi.toFixed(2)}{/if}
+            </span>
+          {:else if isMoonMissionDestination}
+            <span class="label geo-caveat">
+              {m.plan_dv_multileg()}{#if moonSplit}
+                · DEP {moonSplit.departure.toFixed(1)} + MOI {moonSplit.moi.toFixed(1)}{/if}
             </span>
           {/if}
         </div>

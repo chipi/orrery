@@ -1868,5 +1868,15 @@
   "moon_phase_full": "Полнолуние",
   "moon_phase_waning_gibbous": "Убывающая луна",
   "moon_phase_last_quarter": "Последняя четверть",
-  "moon_phase_waning_crescent": "Убывающий полумесяц"
+  "moon_phase_waning_crescent": "Убывающий полумесяц",
+  "plan_destination_phobos": "Фобос",
+  "plan_destination_deimos": "Деймос",
+  "plan_destination_io": "Ио",
+  "plan_destination_europa": "Европа",
+  "plan_destination_ganymede": "Ганимед",
+  "plan_destination_callisto": "Каллисто",
+  "plan_destination_titan": "Титан",
+  "plan_destination_enceladus": "Энцелад",
+  "plan_destination_triton": "Тритон",
+  "plan_dv_multileg": "Земля → планета → орбита луны"
 }

@@ -104,7 +104,7 @@
   .longview {
     max-width: 1000px;
     margin: 0 auto;
-    padding: calc(var(--nav-height, 64px) + 14px) 20px 96px;
+    padding: 14px 20px 96px;
     color: var(--color-text, #eef);
   }
   .intro {

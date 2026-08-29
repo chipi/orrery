@@ -298,7 +298,7 @@
   .program {
     max-width: 760px;
     margin: 0 auto;
-    padding: calc(var(--nav-height, 64px) + 10px) 20px 80px;
+    padding: 10px 20px 80px;
     font-family: var(--font-editorial, 'Crimson Pro', serif);
     color: var(--color-text, #eef);
   }

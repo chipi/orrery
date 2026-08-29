@@ -100,7 +100,7 @@
   .essay {
     max-width: 720px;
     margin: 0 auto;
-    padding: calc(var(--nav-height, 64px) + 12px) 20px 96px;
+    padding: 12px 20px 96px;
     color: var(--color-text, #eef);
   }
   .crumb {

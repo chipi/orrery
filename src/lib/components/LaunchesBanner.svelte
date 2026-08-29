@@ -147,6 +147,10 @@
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    /* Keep the link clear of the sticky nav when it's scrolled into view
+       (anchor scroll + Playwright's scrollIntoView both align it to the
+       viewport top, where the stuck nav would otherwise intercept the click). */
+    scroll-margin-top: calc(var(--nav-height, 64px) + 12px);
   }
 
   .all-link:hover {

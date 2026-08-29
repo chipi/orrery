@@ -1,68 +1,63 @@
 import { expect, test } from '@playwright/test';
 
 /**
- * Visual regression baseline (S8 — pilot scope: stable non-canvas
- * elements only).
+ * Visual regression baseline — element-scoped, stable surfaces only.
  *
- * Per the test-coverage gap-closure plan, this slice seeds Playwright
+ * Per the test-coverage gap-closure plan, this seeds Playwright
  * `toHaveScreenshot` baselines on layout-stable DOM elements. 3D
  * canvas frames are explicitly OUT of scope (locale/font/retina drift
  * makes them flaky beyond their cost-benefit).
  *
- * Element-scoped (NOT full-page) baselines because:
- *   - `/credits` + `/library` render very tall pages whose first-paint
- *     hydration races full-page stability detection
- *   - element scope is rectangle-stable once mounted, regardless of
- *     how long the rest of the page takes to settle
+ * Element-scoped (NOT full-page) baselines because element scope is
+ * rectangle-stable once mounted, regardless of how long the rest of the
+ * page takes to settle (tall pages whose first-paint hydration races
+ * full-page stability detection).
  *
- * Tracks the layout-stable filter/tab/head/list/selector surfaces ×
- * desktop + mobile. #388 adds /plan (selector bar). The station module lists
- * (/iss, /tiangong) and the surface routes (/mars, /moon, /earth) are pending a
- * stable, motion-free anchor pass — the station lists render over a live 3D
- * scene and never reach snapshot stability (see the note in STABLE_ELEMENTS).
+ * #388 FULL-COVERAGE EXPANSION — every user-facing static route now has a
+ * baseline, each pinned to a genuinely motion-free anchor (verified
+ * stable in-browser before landing, not guessed):
+ *   • Bodies (/venus /mars /moon /earth): the fixed `surface-hud` chip
+ *     strip. It's `position:fixed` so it stays box-stable over the live
+ *     3D scene — but it's DESKTOP-ONLY (display:none on hover:none /
+ *     pointer:coarse), so these are `desktopOnly` and skip mobile.
+ *   • Stations (/iss /tiangong): navigated with `?view=list`, which makes
+ *     the route skip `startThree()` entirely and render the module roster
+ *     as a static fullscreen list — no 3D, stable on every viewport.
+ *   • Content routes: SSR-synchronous headers / hub grids that paint
+ *     before any manifest/image hydration.
+ *
+ * The 3D-heavy routes (/explore, /fly's canvas) and live-data routes
+ * (/live, /missions/launches) stay out of scope — their content moves or
+ * streams, so an element snapshot would be a net-negative flake.
  *
  * **First-run behaviour:** Playwright writes new baselines under
- * `tests/e2e/visual.spec.ts-snapshots/` and reports "missing".
- * Re-run to confirm stability. CI may need to re-baseline once on
- * first push to commit the CI-machine snapshots if they differ from
- * local renderings (font hinting / sub-pixel rendering varies across
- * GPUs).
+ * `tests/e2e/visual.spec.ts-snapshots/` and reports "missing". The CI
+ * "Regenerate visual snapshots" workflow commits the Linux PNGs.
  */
 
+/** @typedef {{ path: string; label: string; selector: string; desktopOnly?: boolean }} StableElement */
+
+/** @type {StableElement[]} */
 const STABLE_ELEMENTS = [
-  // /credits header — title + intro + ToC; renders synchronously
-  // and doesn't depend on manifest hydration.
+  // ── established baselines (pre-#388) ─────────────────────────────
+  // /credits header — title + intro + ToC; renders synchronously.
   {
     path: '/credits',
     label: 'credits-head',
     selector: 'section.credits > header.head',
   },
-  // /science Space-101 landing card grid — the page is a static
-  // chapter list with hand-authored SVG covers, no manifest hydration.
-  // Captures the tab-card row.
+  // /science Space-101 landing — static chapter list, no manifest hydration.
   {
     path: '/science',
     label: 'science-tabs',
     selector: 'main, .science-page, nav.tabs, body',
   },
-  // PREVIOUSLY: a third baseline on `/library` (library-head) was
-  // dropped 2026-05-22. Library header is a high-churn surface
-  // (every launches-calendar / library-section feature grows it
-  // by a row); the snapshot was failing more often than it was
-  // catching real regressions. Net negative as a tripwire — see
-  // docs/guides/visual-regression-baselines.md §"What to snapshot"
-  // for the criteria.
+  // PREVIOUSLY: a /library (library-head) baseline was dropped 2026-05-22 —
+  // the full header is high-churn (live totals row grows every launch/link).
+  // #388 re-adds /library below with a NARROW title-only anchor that dodges
+  // the churn. See docs/guides/visual-regression-baselines.md §"What to snapshot".
   //
-  // ── #342 Phase 38 — mobile coverage ────────────────────────────
-  // Every entry below is element-scoped on a stable fixed-position
-  // HUD or filter strip; the 3D canvas frames stay out of scope
-  // (per the file-level comment). Playwright auto-suffixes each
-  // baseline with project + platform, so each entry produces a
-  // desktop-chromium AND a mobile-chromium snapshot — mobile
-  // regressions in any Phase 23–32 surface get caught automatically.
-  //
-  // /missions filter strip — covers Phase 29 wrap behaviour, Phase
-  // 32 search-input height, Phase 28 catalog touch targets.
+  // /missions filter strip — Phase 29 wrap, Phase 32 search height, Phase 28 targets.
   {
     path: '/missions',
     label: 'missions-filters',
@@ -74,80 +69,180 @@ const STABLE_ELEMENTS = [
     label: 'fleet-filters',
     selector: '.filters, [data-audio-stage="fleet-filters"]',
   },
-  // /fly mobile control bar — the touch declutter surface (MISSION /
-  // EVENTS / … tabs) that replaced the old hud-collapse chrome. Mobile-
-  // only (display:none on hover devices). Stable selector — no canvas.
+  // /fly mobile control bar — the touch declutter surface. Mobile-only
+  // (display:none on hover devices). Stable selector — no canvas.
   {
     path: '/fly',
     label: 'fly-mobile-tabs',
     selector: '.fly-mtabs',
   },
-  // ── #388 — /plan route coverage (the churned 0.7.3 surface) ──
-  // Element-scoped on deterministic chrome (the /plan selector bar: destination
-  // + mission-type controls), NOT the 3D canvas.
+  // /plan selector bar — destination + mission-type controls.
   {
     path: '/plan',
     label: 'plan-selector-bar',
     selector: '[data-audio-stage="plan-selector-bar"], .selector-bar',
   },
-  // NOTE: the station module lists (/iss, /tiangong) AND the surface routes
-  // (/mars, /moon, /earth) are intentionally NOT here yet.
-  //   • /iss + /tiangong render the roster as a `drawer-mode` <aside> layered
-  //     over the live 3D station scene. The element RESOLVES, but never reaches
-  //     Playwright bounding-box stability (the rAF scene keeps it in motion), so
-  //     `toHaveScreenshot` times out on "waiting for element to be stable" —
-  //     confirmed in the CI regen run 2026-08-28: all 4 retries ✘ on desktop AND
-  //     mobile. They need a motion-free anchor (or a scene-pause test hook, like
-  //     /fly's `__flySetSimDay`) before they can be snapshotted.
-  //   • /mars, /moon, /earth have dynamic HUD chrome (per-site selects, live
-  //     climate/scan readouts, science-lens layers) with no stable single-element
-  //     anchor from static inspection.
-  // Snapshotting a shifting element flakes (net-negative, like the dropped
-  // /library baseline above). Both sets need a browser-DOM pass to pin a stable,
-  // motion-free element first — tracked in #388.
+
+  // ── #388 bodies — surface-route HUD (desktop-only; fixed over the 3D scene) ──
+  {
+    path: '/venus',
+    label: 'venus-surface-hud',
+    selector: '[data-audio-stage="surface-hud"]',
+    desktopOnly: true,
+  },
+  {
+    path: '/mars',
+    label: 'mars-surface-hud',
+    selector: '[data-audio-stage="surface-hud"]',
+    desktopOnly: true,
+  },
+  {
+    path: '/moon',
+    label: 'moon-surface-hud',
+    selector: '[data-audio-stage="surface-hud"]',
+    desktopOnly: true,
+  },
+  {
+    path: '/earth',
+    label: 'earth-surface-hud',
+    selector: '[data-audio-stage="surface-hud"]',
+    desktopOnly: true,
+  },
+
+  // ── #388 stations — ?view=list skips the 3D scene → static fullscreen list ──
+  {
+    path: '/iss?view=list',
+    label: 'iss-module-list',
+    selector: '[data-audio-stage="iss-module-list"], .list-layer',
+  },
+  {
+    path: '/tiangong?view=list',
+    label: 'tiangong-module-list',
+    selector: '[data-audio-stage="tiangong-module-list"], .list-layer',
+  },
+
+  // ── #388 programs & recent builds — SSR-synchronous headers / hub grids ──
+  {
+    path: '/programs',
+    label: 'programs-head',
+    selector: '.programs-index > header.head',
+  },
+  {
+    path: '/patches',
+    label: 'patches-head',
+    selector: 'article.patches > header',
+  },
+  {
+    path: '/sourcing',
+    label: 'sourcing-head',
+    selector: 'article.sourcing > header',
+  },
+  {
+    path: '/posters',
+    label: 'posters-head',
+    selector: 'article.gallery > header',
+  },
+  {
+    // snapshot the synchronous header only — the body is gated on an async fetch.
+    path: '/colophon',
+    label: 'colophon-head',
+    selector: 'section.colophon > header.head',
+  },
+  {
+    path: '/catalog',
+    label: 'catalog-hub-grid',
+    selector: '[data-audio-stage="catalog-hub-grid"]',
+  },
+
+  // ── #388 galleries & content ─────────────────────────────────────
+  {
+    path: '/gallery',
+    label: 'gallery-head',
+    selector: 'article.gallery-hub > header',
+  },
+  {
+    path: '/gallery/deep-sky',
+    label: 'deep-sky-head',
+    selector: 'article.gallery > header',
+  },
+  {
+    path: '/essays',
+    label: 'essays-head',
+    selector: 'section.longview > header.head',
+  },
+  {
+    path: '/learn',
+    label: 'learn-hub-grid',
+    selector: '[data-audio-stage="learn-hub-grid"]',
+  },
+  {
+    // NARROW title-only anchor — dodges the high-churn live-totals row that
+    // got the old full-header baseline dropped.
+    path: '/library',
+    label: 'library-title',
+    selector: 'section.library .head h1',
+  },
+  {
+    path: '/library/episodes',
+    label: 'library-episodes-head',
+    selector: 'section.ep-index > .ep-index-head',
+  },
+  {
+    path: '/science/reading-list',
+    label: 'reading-list-head',
+    selector: 'article.resources > header.head',
+  },
+  {
+    path: '/science/watch-list',
+    label: 'watch-list-head',
+    selector: 'article.resources > header.head',
+  },
+  {
+    path: '/worlds',
+    label: 'worlds-hub-grid',
+    selector: '[data-audio-stage="worlds-hub-grid"]',
+  },
+  {
+    path: '/explore/hub',
+    label: 'explore-hub-grid',
+    selector: '[data-audio-stage="explore-hub-grid"]',
+  },
 ];
 
-test.describe('visual regression baselines (S8 — element-scoped, stable surfaces only)', () => {
-  // Baselines are committed for LINUX ONLY (CI runners). Maintainer
-  // local runs on macOS would produce `*-darwin.png` files; those are
-  // gitignored to prevent platform drift accumulating in the repo.
+test.describe('visual regression baselines (#388 full-coverage — element-scoped, stable surfaces only)', () => {
+  // Baselines are committed for LINUX ONLY (CI runners). Maintainer local
+  // runs on macOS produce `*-darwin.png` files; those are gitignored.
   //
   // Regeneration workflow (one click, no Docker needed):
   //   gh workflow run "Regenerate visual snapshots" --ref <branch>
   //
-  // The workflow runs Playwright in CI's Linux environment, commits
-  // the refreshed PNGs back to the triggered branch via
-  // LAUNCHES_BOT_TOKEN. Manual `--update-snapshots` locally still
-  // works but the result lands as `*-darwin.png` which CI ignores.
-  //
   // Full failure-mode reference: docs/guides/visual-regression-baselines.md
 
-  for (const { path, label, selector } of STABLE_ELEMENTS) {
+  for (const { path, label, selector, desktopOnly } of STABLE_ELEMENTS) {
     test(`${label} — element screenshot baseline`, async ({ page }, testInfo) => {
-      // fly-mobile-tabs is a mobile-only affordance — the .fly-mtabs bar is
-      // display:none on hover-capable devices. The desktop snapshot would
-      // capture a hidden node, which Playwright's toBeVisible() correctly
-      // rejects. Skip the desktop baseline; the mobile-chromium baseline is
-      // what this snapshot is for.
+      const isMobileProject = testInfo.project.name.startsWith('mobile');
+      // fly-mobile-tabs is a mobile-only affordance — display:none on hover devices.
       test.skip(
         label === 'fly-mobile-tabs' && testInfo.project.name === 'desktop-chromium',
         'fly-mobile-tabs only renders on touch viewports (display:none on hover)',
       );
-      // mobile-landscape-chromium was added to the CI gate for the functional
-      // suite; its Linux visual baselines don't exist yet (local runs only
-      // produce gitignored *-darwin.png). FOLLOW-UP: run the "Regenerate visual
-      // snapshots" workflow to commit the landscape baselines, then drop this
-      // skip so landscape visual regressions are gated too.
+      // surface-hud (the body-route HUD) is desktop-only — display:none on
+      // (hover:none)/(pointer:coarse). Skip it on the mobile projects.
+      test.skip(
+        Boolean(desktopOnly) && isMobileProject,
+        `${label} anchor is desktop-only (surface HUD is hidden on touch viewports)`,
+      );
+      // mobile-landscape-chromium Linux visual baselines don't exist yet
+      // (local runs only produce gitignored *-darwin.png). FOLLOW-UP: run the
+      // regen workflow to commit the landscape baselines, then drop this skip.
       test.skip(
         testInfo.project.name === 'mobile-landscape-chromium',
         'landscape visual baselines pending CI regeneration',
       );
       await page.goto(path, { waitUntil: 'networkidle' });
-      // #342 Phase 29 — /missions and /fleet collapse the filter
-      // strip behind .filters-toggle on mobile. Expand it before the
-      // selector resolves so the screenshot captures the strip
-      // contents, not a hidden node. No-op on desktop (toggle is
-      // display:none on hover devices).
+      // /missions and /fleet collapse the filter strip behind .filters-toggle
+      // on mobile. Expand it before the selector resolves so the screenshot
+      // captures the strip, not a hidden node. No-op on desktop.
       if (label === 'missions-filters' || label === 'fleet-filters') {
         const toggle = page.locator('.filters-toggle');
         if (await toggle.count()) {
@@ -163,24 +258,19 @@ test.describe('visual regression baselines (S8 — element-scoped, stable surfac
         () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))),
       );
 
-      // Pick the first matching element from the selector list. Each
-      // route uses one of several possible anchors; using a comma-
-      // separated locator lets the page evolve without test churn.
+      // Pick the first matching element from the selector list. Comma-separated
+      // locators let the page evolve without test churn.
       const target = page.locator(selector).first();
       await expect(target).toBeVisible({ timeout: 10_000 });
 
-      // Snapshot is keyed by label only; Playwright auto-suffixes
-      // -${project}-${platform}.png so desktop and mobile produce
-      // separate baselines.
+      // Snapshot keyed by label only; Playwright auto-suffixes
+      // -${project}-${platform}.png so desktop and mobile produce separate baselines.
       await expect(target).toHaveScreenshot(`${label}.png`, {
-        // Modest tolerance — 2% pixel-diff cap absorbs anti-alias
-        // jitter without becoming a noise filter.
+        // Modest tolerance — 2% pixel-diff cap absorbs anti-alias jitter.
         maxDiffPixelRatio: 0.02,
         animations: 'disabled',
       });
 
-      // Reference unused testInfo to keep tsc happy if the param is
-      // reintroduced for per-test logging later.
       void testInfo;
     });
   }

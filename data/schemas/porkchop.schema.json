@@ -19,22 +19,22 @@
   "properties": {
     "destination": {
       "type": "string",
-      "enum": ["mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto", "ceres", "vesta", "psyche", "bennu"],
-      "description": "Destination id. Matches the DestinationId enum in $lib/lambert-grid.constants (ADR-026 + ADR-028)."
+      "enum": ["mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto", "ceres", "vesta", "psyche", "bennu", "moon"],
+      "description": "Destination id. Matches the PlanDestinationId enum in $lib/lambert-grid.constants (ADR-026 + ADR-028; 'moon' is geocentric per ADR-085)."
     },
     "dep_range_days": {
       "type": "array",
-      "items": { "type": "integer" },
+      "items": { "type": "number" },
       "minItems": 2,
       "maxItems": 2,
       "description": "Departure-day range [start, end] in days from epoch."
     },
     "tof_range_days": {
       "type": "array",
-      "items": { "type": "integer" },
+      "items": { "type": "number" },
       "minItems": 2,
       "maxItems": 2,
-      "description": "Transfer-time range [start, end] in days. Per-destination calibration; Mars stays [80, 520] for no-regression."
+      "description": "Transfer-time range [start, end] in days. Per-destination calibration; Mars stays [80, 520] for no-regression. Fractional allowed (the Moon uses [2.5, 5.5], ADR-085)."
     },
     "steps": {
       "type": "array",
@@ -77,6 +77,13 @@
       "type": "string",
       "minLength": 1,
       "description": "Provenance + how the grid was computed. Required so future readers can trace the values back."
+    },
+    "dv_color_range": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "Optional heatmap colour-scale window [min, max] in km/s. Omitted → default heliocentric span [3.2, 16.2]. The geocentric Earth→Moon grid sets a narrow range (~3.9–4.3) so its porkchop isn't a flat single-colour blob (ADR-085)."
     }
   }
 }

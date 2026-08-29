@@ -1,0 +1,1 @@
+import{vt as e}from"./g-6jpy_p.js";e();

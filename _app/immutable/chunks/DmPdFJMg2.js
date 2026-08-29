@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["/orrery/_app/immutable/chunks/-T_e2vIs2.js","/orrery/_app/immutable/chunks/DnWHc8jb.js","/orrery/_app/immutable/chunks/g-6jpy_p.js"])))=>i.map(i=>d[i]);
+import{t as e}from"./HclGiUj8.js";import{a as t}from"./DnWHc8jb.js";var n=t(`App`,{web:()=>e(()=>import(`./-T_e2vIs2.js`).then(e=>new e.AppWeb),__vite__mapDeps([0,1,2]),import.meta.url)});export{n as App};

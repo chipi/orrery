@@ -422,6 +422,68 @@ export const projectileFormula: FormulaDef<{ v0Ms: number; angleDeg: number; bod
   },
 };
 
+/**
+ * Δv verdict — rung 6 of "launch a rocket": do you have enough? margin =
+ * capacity − required. Fail-honest when negative (you can't reach it). The
+ * `capacity` input is wired from Tsiolkovsky's Δv output in the goal (S2c).
+ */
+export const deltaVMargin: FormulaDef<{ capacityKms: number; requiredKms: number }> = {
+  id: 'delta-v-margin',
+  titleKey: 'lab.f.delta-v-margin.title',
+  domain: 'transfer',
+  tier: 5,
+  prereqs: ['tsiolkovsky'],
+  inputs: [
+    {
+      key: 'capacityKms',
+      labelKey: 'lab.f.dvm.capacity',
+      units: 'km/s',
+      kind: 'number',
+      default: 8.5,
+      min: 0,
+      max: 50,
+    },
+    {
+      key: 'requiredKms',
+      labelKey: 'lab.f.dvm.required',
+      units: 'km/s',
+      kind: 'number',
+      default: 9.4,
+      min: 0,
+      max: 50,
+    },
+  ],
+  outputs: [{ key: 'margin', labelKey: 'lab.f.dvm.margin', units: 'km/s' }],
+  compute: ({ capacityKms, requiredKms }) => {
+    const margin = capacityKms - requiredKms;
+    const base = {
+      assumptions: ['lab.assume.ideal-no-losses'],
+      figure: {
+        kind: 'dv-waterfall' as const,
+        provenance: { fidelity: 'computed' as const, module: 'transfer/delta-v-margin' },
+        assumptions: ['lab.assume.ideal-no-losses'],
+        segments: [
+          { labelKey: 'lab.f.dvm.capacity', dv: capacityKms, kind: 'gain' as const },
+          { labelKey: 'lab.f.dvm.required', dv: requiredKms, kind: 'cost' as const },
+        ],
+      },
+    };
+    if (margin < 0) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.dvm.err-insufficient' },
+        ...base,
+      } satisfies FormulaResult;
+    }
+    return {
+      values: { margin: { value: margin, units: 'km/s' } },
+      status: { ok: true },
+      ...base,
+    } satisfies FormulaResult;
+  },
+};
+
 /** All registered formulas, keyed by id. Add a formula in exactly one place. */
 export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [tsiolkovsky.id, tsiolkovsky],
@@ -431,6 +493,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [twrFormula.id, twrFormula],
   [freeFallFormula.id, freeFallFormula],
   [projectileFormula.id, projectileFormula],
+  [deltaVMargin.id, deltaVMargin],
 ]);
 
 /** Default input record for a formula (drives a first compute / the invariant tests). */

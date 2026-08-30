@@ -385,6 +385,66 @@
         {seg.dv.toFixed(1)}
       </text>
     {/each}
+  {:else if figure.kind === 'transfer-ellipse'}
+    <!-- Transfer ellipse (M2, geocentric): primary at centre, the start + target
+         circular orbits (radii read from the two burn marks), and the half-ellipse
+         transfer arc between them. Coords are normalised to the larger orbit. -->
+    {@const fs = fidelityStyle(figure.provenance.fidelity)}
+    {@const cx = W / 2}
+    {@const cy = H / 2 - 4}
+    {@const RS = 108}
+    {@const px = (x: number) => cx + x * RS}
+    {@const py = (y: number) => cy - y * RS}
+    {@const arcPts = figure.arc.map((p) => `${px(p.x)},${py(p.y)}`).join(' ')}
+
+    <!-- start + target circular orbits -->
+    {#each figure.marks as mk (mk.labelKey)}
+      <circle
+        {cx}
+        {cy}
+        r={Math.hypot(mk.at.x, mk.at.y) * RS}
+        fill="none"
+        stroke="rgba(78,205,196,0.28)"
+        stroke-width="1"
+      />
+    {/each}
+
+    <!-- the transfer half-ellipse -->
+    <polyline
+      points={arcPts}
+      fill="none"
+      stroke={fs.stroke}
+      stroke-width="2"
+      opacity={fs.opacity}
+      stroke-dasharray={fs.dasharray === 'none' ? undefined : fs.dasharray}
+      class={fs.registerClass}
+    />
+
+    <!-- primary body at the focus -->
+    <circle
+      cx={px(figure.bodies[0]?.at.x ?? 0)}
+      cy={py(figure.bodies[0]?.at.y ?? 0)}
+      r="6"
+      fill={TEAL}
+    />
+    {#if figure.bodies[0]}
+      <text
+        x={px(figure.bodies[0].at.x)}
+        y={py(figure.bodies[0].at.y) + 18}
+        class="te-label"
+        text-anchor="middle"
+      >
+        {t(figure.bodies[0].labelKey)}
+      </text>
+    {/if}
+
+    <!-- burn points + labels -->
+    {#each figure.marks as mk (mk.labelKey)}
+      <circle cx={px(mk.at.x)} cy={py(mk.at.y)} r="3.5" fill={GOLD} />
+      <text x={px(mk.at.x)} y={py(mk.at.y) - 8} class="te-label" text-anchor="middle">
+        {t(mk.labelKey)}
+      </text>
+    {/each}
   {:else}
     <!-- Unknown-kind fallback: honest, never throws -->
     <rect
@@ -467,6 +527,12 @@
     font-family: 'Space Mono', monospace;
     font-size: 8px;
     fill: rgba(255, 255, 255, 0.55);
+  }
+
+  .te-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    fill: rgba(232, 232, 232, 0.7);
   }
 
   .fallback-label {

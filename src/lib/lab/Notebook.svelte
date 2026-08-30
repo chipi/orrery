@@ -248,6 +248,13 @@
           .filter((w) => w.fromIndex !== i)
           .map((w) => ({ ...w, fromIndex: w.fromIndex > i ? w.fromIndex - 1 : w.fromIndex })),
       }));
+    // Keep ?focus pointing at the same card after the index shift (review MINOR-3):
+    // the removed card clears focus; a card before it shifts down by one.
+    const fi = focusIndex;
+    if (fi !== null) {
+      if (i === fi) setFocus(null);
+      else if (i < fi) setFocus(fi - 1);
+    }
   }
 
   function labelFor(id: string): string {

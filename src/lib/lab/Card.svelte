@@ -78,6 +78,33 @@
     if (Math.abs(v) >= 100) return v.toFixed(2);
     return v.toFixed(4);
   }
+
+  // a11y (review M-3): the visible readout updates on every slider tick, which would
+  // flood a polite live region. Announce a settled summary on a debounce instead, via
+  // a dedicated visually-hidden region — the visible readout carries no aria-live.
+  const summary = $derived(
+    blocked
+      ? blockedMessage
+      : result?.status.ok
+        ? formula.outputs
+            .map((o) => {
+              const q = result.values[o.key];
+              return q ? `${t(o.labelKey)} ${fmt(q.value)} ${q.units}` : '';
+            })
+            .filter(Boolean)
+            .join(', ')
+        : result && !result.status.ok
+          ? t(result.status.reasonKey)
+          : '',
+  );
+  let announced = $state('');
+  let announceTimer: ReturnType<typeof setTimeout> | undefined;
+  $effect(() => {
+    const next = summary;
+    clearTimeout(announceTimer);
+    announceTimer = setTimeout(() => (announced = next), 500);
+    return () => clearTimeout(announceTimer);
+  });
 </script>
 
 <article class="card" class:card--fail={failed}>
@@ -192,12 +219,14 @@
     </div>
   {/if}
 
-  <!-- Readout grid -->
+  <!-- Debounced screen-reader announcement (settled result only, review M-3) -->
+  <div class="card__sr" aria-live="polite">{announced}</div>
+
+  <!-- Readout grid — visible; no aria-live (the card__sr region announces) -->
   <section
     class="card__readout"
     class:card__readout--fail={failed}
     aria-label={t('lab.ui.aria-results')}
-    aria-live="polite"
   >
     {#if blocked}
       <!-- blocked: no honest result (upstream-failed / invalid-wire / compute-error). -->
@@ -422,6 +451,19 @@
   .card__figure {
     border-radius: 2px;
     overflow: hidden;
+  }
+
+  /* Visually-hidden live region for the debounced result announcement */
+  .card__sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
   /* ─── Readout grid ───────────────────────────────────────────────────── */

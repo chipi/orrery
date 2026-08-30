@@ -167,7 +167,7 @@
   let loadError = $state('');
 
   function saveFile(): void {
-    const title = restored ? 'Your notebook' : t(goal.titleKey);
+    const title = restored ? t('lab.ui.your-notebook') : t(goal.titleKey);
     const doc = encodeOrrlab(cells, title);
     const blob = new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -320,16 +320,16 @@
           type="button"
           class="nb__act"
           onclick={() => setFocus(focusIndex === i ? null : i)}
-          aria-label={focusIndex === i ? 'Exit focus' : 'Focus this cell'}
-          title="Focus this cell">⤢</button
+          aria-label={focusIndex === i ? t('lab.ui.exit-focus') : t('lab.ui.focus-cell')}
+          title={t('lab.ui.focus-cell')}>⤢</button
         >
         {#if cell.removable}
           <button
             type="button"
             class="nb__act nb__act--danger"
             onclick={() => removeCell(i)}
-            aria-label="Remove this cell"
-            title="Remove cell">&times;</button
+            aria-label={t('lab.ui.remove-cell')}
+            title={t('lab.ui.remove-cell')}>&times;</button
           >
         {/if}
       </div>
@@ -348,7 +348,7 @@
   {/if}
 {/snippet}
 
-<section class="nb" aria-label="Notebook">
+<section class="nb" aria-label={t('lab.ui.aria-notebook')}>
   {#if focusIndex !== null}
     <!-- Focus mode — one card full-width, back link clears ?focus -->
     {@const cell = cells[focusIndex]}
@@ -376,7 +376,7 @@
           class="nb__tool nb__tool--accent"
           class:nb__tool--done={shareState === 'copied'}
           onclick={share}
-          aria-label="Share this notebook — copy a link"
+          aria-label={t('lab.ui.aria-share')}
         >
           {shareState === 'copied'
             ? '✓ ' + t('lab.ui.share-copied')
@@ -384,14 +384,14 @@
               ? t('lab.ui.share-in-url')
               : t('lab.ui.share')}
         </button>
-        <button type="button" class="nb__tool" onclick={saveFile} aria-label="Save as a file"
+        <button type="button" class="nb__tool" onclick={saveFile} aria-label={t('lab.ui.aria-save')}
           >{t('lab.ui.save')}</button
         >
         <button
           type="button"
           class="nb__tool"
           onclick={() => fileInput?.click()}
-          aria-label="Load a notebook file">{t('lab.ui.load')}</button
+          aria-label={t('lab.ui.aria-load')}>{t('lab.ui.load')}</button
         >
         <input
           bind:this={fileInput}

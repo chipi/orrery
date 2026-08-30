@@ -89,28 +89,28 @@
       <a
         href="{base}/science/{formula.citationKey}"
         class="card__why"
-        aria-label="Why? — derivation on /science"
-        title="Why? See derivation">?</a
+        aria-label={t('lab.ui.aria-why')}
+        title={t('lab.ui.why-title')}>?</a
       >
     {/if}
   </header>
 
   <!-- Equation — pre-rendered KaTeX HTML, never calls renderKatex at runtime -->
   {#if equationHtml}
-    <div class="card__equation" aria-label="Formula equation">
+    <div class="card__equation" aria-label={t('lab.ui.aria-equation')}>
       <!-- eslint-disable-next-line svelte/no-at-html-tags -- KaTeX server-rendered HTML, ADR-034 -->
       {@html equationHtml}
     </div>
   {/if}
 
   <!-- Parameter controls -->
-  <section class="card__controls" aria-label="Parameters">
+  <section class="card__controls" aria-label={t('lab.ui.aria-parameters')}>
     {#each formula.inputs as field (field.key)}
       <div class="card__field" class:card__field--wired={wired.has(field.key)}>
         <label class="card__label" for="field-{formula.id}-{field.key}">
           {t(field.labelKey)}{field.units ? ` (${field.units})` : ''}
           {#if wired.has(field.key)}
-            <span class="card__wired-chip" title="Wired from an earlier cell"
+            <span class="card__wired-chip" title={t('lab.ui.wired-title')}
               >&#8592; {t('lab.ui.wired')}</span
             >
           {/if}
@@ -136,7 +136,7 @@
               step={field.step ?? ((field.max ?? 1000) - (field.min ?? 0)) / 500}
               value={numVal(inputs[field.key])}
               oninput={(e) => handleNumberInput(field, e)}
-              aria-label="{t(field.labelKey)} slider"
+              aria-label={t('lab.ui.aria-slider', { label: t(field.labelKey) })}
             />
             <input
               type="number"
@@ -147,7 +147,7 @@
               value={numVal(inputs[field.key])}
               oninput={(e) => handleNumberInput(field, e)}
               aria-labelledby="field-{formula.id}-{field.key}"
-              aria-label="{t(field.labelKey)} value"
+              aria-label={t('lab.ui.aria-value', { label: t(field.labelKey) })}
             />
           </div>
         {:else if field.kind === 'enum'}
@@ -196,7 +196,7 @@
   <section
     class="card__readout"
     class:card__readout--fail={failed}
-    aria-label="Results"
+    aria-label={t('lab.ui.aria-results')}
     aria-live="polite"
   >
     {#if blocked}

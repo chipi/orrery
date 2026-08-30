@@ -388,8 +388,8 @@ export const projectileFormula: FormulaDef<{ v0Ms: number; angleDeg: number; bod
   ],
   outputs: [
     { key: 'range', labelKey: 'lab.f.projectile.range', units: 'm' },
-    { key: 'maxHeight', labelKey: 'lab.f.projectile.maxHeight', units: 'm' },
-    { key: 'flightTime', labelKey: 'lab.f.projectile.flightTime', units: 's' },
+    { key: 'maxHeight', labelKey: 'lab.f.projectile.max-height', units: 'm' },
+    { key: 'flightTime', labelKey: 'lab.f.projectile.flight-time', units: 's' },
   ],
   compute: ({ v0Ms, angleDeg, body }) => {
     const gMs2 = bodyGravityMs2(body);

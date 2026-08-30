@@ -38,7 +38,7 @@
 </script>
 
 <svelte:head>
-  <title>Physics Lab · Orrery</title>
+  <title>{t('lab.ui.doc-title')}</title>
 </svelte:head>
 
 <div class="lab">
@@ -58,7 +58,7 @@
         id="goal-select"
         class="lab__picker-select"
         bind:value={selectedGoalId}
-        aria-label="Select goal"
+        aria-label={t('lab.ui.aria-select-goal')}
       >
         {#each [...GOALS.keys()] as id (id)}
           <option value={id}>{goalLabel(id)}</option>

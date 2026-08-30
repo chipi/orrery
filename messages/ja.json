@@ -1945,7 +1945,7 @@
   "lab_goal_lar_momentum": "ロケットは質量を後方へ放出して進む。排気に与えた運動量が、前進する運動量となる。",
   "lab_goal_lar_tsiolkovsky": "推進剤を燃やすと速度が上がる。ロケット方程式は、排気の速さと搭載する推進剤の量を、得られるデルタVに結びつける。",
   "lab_goal_lar_twr": "離陸には推力が重量を上回る必要がある。推力重量比が1未満なら、ロケットは射点を離れられない。",
-  "lab_goal_lar_verdict": "軌道到達には決まったデルタV予算が必要だ。今築いたデルタVは、旅に必要な分を満たしているか？",
+  "lab_goal_lar_verdict": "さあ合計してみましょう。ロケットのΔvに打ち上げ地点からの無料の初速を加え、軌道が要求する値と比べます。より良い地点はマージンを生み出します。あるいは同じ任務をより小さなロケットでこなせます。",
   "lab_goal_lar_weight": "重力はあらゆる質量に力を及ぼし、これを重量と呼ぶ。地上を離れるには、これより強く押し返すものが必要だ。",
   "lab_goal_launch_a_rocket_title": "ロケットを打ち上げる",
   "lab_goal_motion_drop": "質量を放せば、あとは重力に任せる——落ちながら加速する。どれだけ時間がかかり、底ではどれほど速いか？",
@@ -2026,5 +2026,17 @@
   "lab_goal_rtm_visviva": "軌道はすべて円というわけではありません。ヴィス・ヴィヴァを使えば、たった2つの数値 — 現在位置と軌道の大きさ — から、あらゆる軌道上のあらゆる点での速度が求まります。すべての遷移はこの式から組み立てられます。",
   "lab_mark_burn_1": "噴射1",
   "lab_mark_burn_2": "噴射2",
-  "lab_f_orbits_err_unknown_body": "その天体はここでは周回できません — 地球または月を選んでください。"
+  "lab_f_orbits_err_unknown_body": "その天体はここでは周回できません — 地球または月を選んでください。",
+  "lab_axis_latitude": "緯度",
+  "lab_f_launch_site_title": "打ち上げ地点",
+  "lab_f_launchsite_body": "天体",
+  "lab_f_launchsite_boost": "自転による初速",
+  "lab_f_launchsite_lat": "緯度",
+  "lab_f_reach_orbit_boost": "打ち上げ地点ブースト",
+  "lab_f_reach_orbit_title": "軌道到達",
+  "lab_goal_lar_launch_site": "地球上のどこから打ち上げるかは、無料の初速になります。惑星の自転がすでに発射台を東向きに運んでいるのです。赤道で最速、極ではゼロです。だからこそArianeはKourouから打ち上げられ、企業は海上まで発射プラットフォームを曳航するのです。",
+  "lab_mark_baikonur": "Baikonur",
+  "lab_mark_canaveral": "Canaveral",
+  "lab_mark_kourou": "Kourou",
+  "lab_mark_sea_launch": "海上（赤道）"
 }

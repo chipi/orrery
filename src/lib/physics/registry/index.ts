@@ -15,25 +15,15 @@ import { momentum } from '../mechanics/momentum';
 import { freeFall, projectile } from '../mechanics/kinematics';
 import { circularVelocityKms, visVivaKms, hohmannTransfer } from '../mechanics/orbits';
 import { bodyGravityMs2 } from '../mechanics/bodies';
-import {
-  R_EARTH_KM,
-  R_MOON_KM,
-  MU_EARTH_KM3_S2,
-  MU_MOON_KM3_S2,
-  MOON_ORBIT_RADIUS_KM,
-} from '../util/constants';
+import { locationModel, rotationVelocityKms } from '../util/location';
+import { MOON_ORBIT_RADIUS_KM } from '../util/constants';
 
-/** Primaries a learner can orbit (M2). Each maps to its radius + µ (D10 home). */
-const ORBIT_BODIES = {
-  earth: { rKm: R_EARTH_KM, muKm3s2: MU_EARTH_KM3_S2 },
-  moon: { rKm: R_MOON_KM, muKm3s2: MU_MOON_KM3_S2 },
-} as const;
-const ORBIT_BODY_IDS = ['earth', 'moon'] as const;
-// Returns undefined for an unknown id — the caller fails HONEST rather than
-// silently computing Earth physics (review MAJOR-2: the fail-honest body contract
-// that bodyGravityMs2 enforces for M1 must hold for the M2 orbital formulas too).
-const orbitBody = (id: string): { rKm: number; muKm3s2: number } | undefined =>
-  ORBIT_BODIES[id as keyof typeof ORBIT_BODIES];
+// Primaries a learner can orbit — resolved through the ONE launch-location model
+// (radius + µ + rotation from PLANET_STATS), so the orbital formulas run on any
+// body, not a hardcoded Earth. `locationModel` returns undefined for an unknown id,
+// and every compute fails HONEST on undefined (review MAJOR-2 + the operator's
+// "separate Earth from physics" — no silent Earth default).
+const ORBIT_BODY_IDS = ['earth', 'moon', 'mars', 'venus', 'mercury'] as const;
 
 /**
  * Tsiolkovsky ideal rocket equation: Δv = Isp·g₀·ln(m₀/m_f). Rung 4 of the
@@ -539,7 +529,7 @@ export const orbitalVelocity: FormulaDef<{ altitudeKm: number; body: string }> =
   ],
   outputs: [{ key: 'vCirc', labelKey: 'lab.f.orbvel.vcirc', units: 'km/s' }],
   compute: ({ altitudeKm, body }) => {
-    const b = orbitBody(body);
+    const b = locationModel(body);
     if (!b) {
       const values: Record<string, Quantity> = {};
       return {
@@ -611,7 +601,7 @@ export const visVivaFormula: FormulaDef<{ rKm: number; aKm: number; body: string
   ],
   outputs: [{ key: 'v', labelKey: 'lab.f.visviva.v', units: 'km/s' }],
   compute: ({ rKm, aKm, body }) => {
-    const b = orbitBody(body);
+    const b = locationModel(body);
     if (!b) {
       const values: Record<string, Quantity> = {};
       return {
@@ -699,7 +689,7 @@ export const hohmannFormula: FormulaDef<{ r1Km: number; r2Km: number; body: stri
     { key: 'tof', labelKey: 'lab.f.hohmann.tof', units: 'day' },
   ],
   compute: ({ r1Km, r2Km, body }) => {
-    const b = orbitBody(body);
+    const b = locationModel(body);
     if (!b) {
       const values: Record<string, Quantity> = {};
       return {
@@ -756,6 +746,174 @@ export const hohmannFormula: FormulaDef<{ r1Km: number; r2Km: number; body: stri
   },
 };
 
+/**
+ * Launch-site head-start: the free eastward speed a launch gets from the planet's
+ * rotation, v = v_eq·cos(latitude). THE practical-impact lesson (operator 2026-08-30)
+ * — choose a point on Earth and see what it's worth: near the equator (Kourou, a sea
+ * platform) the planet hands you the most; near the poles, nothing. That saved Δv is
+ * exponential in the rocket equation, so the site choice reaches all the way into the
+ * rocket's size. Marks the famous pads so the "why launch from Guiana / from the sea"
+ * is visible. Removes a slice of the "launch from rest" assumption.
+ */
+export const launchSite: FormulaDef<{ latitudeDeg: number; body: string }> = {
+  id: 'launch-site',
+  titleKey: 'lab.f.launch-site.title',
+  domain: 'ascent',
+  tier: 3,
+  prereqs: [],
+  latex: 'v_{\\text{boost}} = v_{\\text{eq}}\\cos\\varphi',
+  inputs: [
+    {
+      key: 'latitudeDeg',
+      labelKey: 'lab.f.launchsite.lat',
+      units: 'deg',
+      kind: 'number',
+      default: 5.2, // Kourou
+      min: 0,
+      max: 90,
+    },
+    {
+      key: 'body',
+      labelKey: 'lab.f.launchsite.body',
+      units: '',
+      kind: 'body',
+      default: 'earth',
+      bodyIds: [...ORBIT_BODY_IDS],
+    },
+  ],
+  outputs: [{ key: 'boost', labelKey: 'lab.f.launchsite.boost', units: 'km/s' }],
+  compute: ({ latitudeDeg, body }) => {
+    const loc = locationModel(body);
+    if (!loc) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions: ['lab.assume.rigid-body'],
+      } satisfies FormulaResult;
+    }
+    const boost = rotationVelocityKms(loc, latitudeDeg);
+    const points: Vec2[] = [];
+    for (let lat = 0; lat <= 90.001; lat += 2) {
+      points.push({ x: lat, y: rotationVelocityKms(loc, lat) });
+    }
+    const marks = [
+      {
+        at: { x: latitudeDeg, y: boost },
+        labelKey: 'lab.mark.you-are-here',
+        kind: 'point' as const,
+      },
+    ];
+    // Real pads make the lesson concrete — Earth only (their latitudes are Earth sites).
+    if (body === 'earth') {
+      for (const pad of [
+        { lat: 0, key: 'lab.mark.sea-launch' },
+        { lat: 5.2, key: 'lab.mark.kourou' },
+        { lat: 28.5, key: 'lab.mark.canaveral' },
+        { lat: 45.9, key: 'lab.mark.baikonur' },
+      ]) {
+        marks.push({
+          at: { x: pad.lat, y: rotationVelocityKms(loc, pad.lat) },
+          labelKey: pad.key,
+          kind: 'point' as const,
+        });
+      }
+    }
+    return {
+      values: { boost: { value: boost, units: 'km/s' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.rigid-body'],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'util/location' },
+        assumptions: ['lab.assume.rigid-body'],
+        x: { labelKey: 'lab.axis.latitude', units: 'deg' },
+        y: { labelKey: 'lab.axis.speed', units: 'km/s' },
+        series: [{ points }],
+        marks,
+      },
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Reach-orbit verdict — the M1 payoff that CONNECTS the dots: your rocket's Δv plus
+ * the launch-site head-start, against the Δv orbit demands. margin = capacity + boost
+ * − required. `capacity` wires from Tsiolkovsky, `boost` from launch-site — so a
+ * better site visibly buys margin (or lets the rocket shrink). Fail-honest if short.
+ */
+export const reachOrbitVerdict: FormulaDef<{
+  capacityKms: number;
+  boostKms: number;
+  requiredKms: number;
+}> = {
+  id: 'reach-orbit-verdict',
+  titleKey: 'lab.f.reach-orbit.title',
+  domain: 'ascent',
+  tier: 5,
+  prereqs: ['tsiolkovsky', 'launch-site'],
+  latex: '\\text{margin} = v_{\\text{cap}} + v_{\\text{boost}} - v_{\\text{req}}',
+  inputs: [
+    {
+      key: 'capacityKms',
+      labelKey: 'lab.f.dvm.capacity',
+      units: 'km/s',
+      kind: 'number',
+      default: 8.5,
+      min: 0,
+      max: 50,
+    },
+    {
+      key: 'boostKms',
+      labelKey: 'lab.f.reach-orbit.boost',
+      units: 'km/s',
+      kind: 'number',
+      default: 0.46,
+      min: 0,
+      max: 1,
+    },
+    {
+      key: 'requiredKms',
+      labelKey: 'lab.f.dvm.required',
+      units: 'km/s',
+      kind: 'number',
+      default: 9.4,
+      min: 0,
+      max: 50,
+    },
+  ],
+  outputs: [{ key: 'margin', labelKey: 'lab.f.dvm.margin', units: 'km/s' }],
+  compute: ({ capacityKms, boostKms, requiredKms }) => {
+    const margin = capacityKms + boostKms - requiredKms;
+    const base = {
+      assumptions: ['lab.assume.ideal-no-losses'],
+      figure: {
+        kind: 'dv-waterfall' as const,
+        provenance: { fidelity: 'computed' as const, module: 'ascent/reach-orbit' },
+        assumptions: ['lab.assume.ideal-no-losses'],
+        segments: [
+          { labelKey: 'lab.f.dvm.capacity', dv: capacityKms, kind: 'gain' as const },
+          { labelKey: 'lab.f.reach-orbit.boost', dv: boostKms, kind: 'gain' as const },
+          { labelKey: 'lab.f.dvm.required', dv: requiredKms, kind: 'cost' as const },
+        ],
+      },
+    };
+    if (margin < 0) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.dvm.err-insufficient' },
+        ...base,
+      } satisfies FormulaResult;
+    }
+    return {
+      values: { margin: { value: margin, units: 'km/s' } },
+      status: { ok: true },
+      ...base,
+    } satisfies FormulaResult;
+  },
+};
+
 /** All registered formulas, keyed by id. Add a formula in exactly one place. */
 export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [tsiolkovsky.id, tsiolkovsky],
@@ -766,6 +924,8 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [freeFallFormula.id, freeFallFormula],
   [projectileFormula.id, projectileFormula],
   [deltaVMargin.id, deltaVMargin],
+  [launchSite.id, launchSite],
+  [reachOrbitVerdict.id, reachOrbitVerdict],
   [orbitalVelocity.id, orbitalVelocity],
   [visVivaFormula.id, visVivaFormula],
   [hohmannFormula.id, hohmannFormula],

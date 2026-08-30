@@ -1945,7 +1945,7 @@
   "lab_goal_lar_momentum": "Een raket beweegt door massa naar achteren uit te stoten. Het momentum dat het aan de uitlaat geeft, is het momentum dat het vooruit wint.",
   "lab_goal_lar_tsiolkovsky": "Het verbranden van brandstof bouwt snelheid op. De raketvergelijking verbindt hoe snel de uitlaat ontsnapt en hoeveel brandstof je meeneemt met de delta-v die je wint.",
   "lab_goal_lar_twr": "Voor liftoff moet de stuwkracht het gewicht overwinnen. Als de stuwkracht-gewichtsverhouding onder één ligt, verlaat de raket het platform nooit.",
-  "lab_goal_lar_verdict": "Om een baan te bereiken is een bepaalde delta-v-budget nodig. Haalt de delta-v die je zojuist hebt gebouwd wat de reis vereist?",
+  "lab_goal_lar_verdict": "Tel het nu bij elkaar op: jouw raket's Δv plus het gratis voordeel van je lanceerplaats, tegen wat de baan eist. Een betere locatie geeft je speelruimte — of laat je een kleinere raket voor dezelfde klus vliegen.",
   "lab_goal_lar_weight": "Zwaartekracht trekt aan elke massa met een kracht die we gewicht noemen. Om de grond te verlaten, moet iets harder terugduwen dan dit.",
   "lab_goal_launch_a_rocket_title": "Launch een raket",
   "lab_goal_motion_drop": "Laat een massa los en zwaartekracht doet de rest — het versnelt terwijl het valt. Hoe lang duurt het, en hoe snel is het onderaan?",
@@ -2026,5 +2026,17 @@
   "lab_goal_rtm_visviva": "Banen zijn niet allemaal cirkels. Vis-viva geeft je snelheid op elk punt van elke baan met slechts twee getallen — waar je bent en hoe groot de baan is. Het is het gereedschap waarop elke transferbaan is gebouwd.",
   "lab_mark_burn_1": "Stuwing 1",
   "lab_mark_burn_2": "Stuwing 2",
-  "lab_f_orbits_err_unknown_body": "Die wereld kunt u hier niet omcirkelen — kies Aarde of de Maan."
+  "lab_f_orbits_err_unknown_body": "Die wereld kunt u hier niet omcirkelen — kies Aarde of de Maan.",
+  "lab_axis_latitude": "Breedtegraad",
+  "lab_f_launch_site_title": "Lanceerplaats",
+  "lab_f_launchsite_body": "Aarde",
+  "lab_f_launchsite_boost": "Rotatieversnelling",
+  "lab_f_launchsite_lat": "Breedtegraad",
+  "lab_f_reach_orbit_boost": "Lanceerplaats-voordeel",
+  "lab_f_reach_orbit_title": "Bereik baan",
+  "lab_goal_lar_launch_site": "Waar op aarde je lanceert is een gratis voordeel: de planeetrotatie draagt het platform al naar het oosten — het snelst op de evenaar, niks op de polen. Daarom vliegt Ariane vanuit Kourou, en waarom bedrijven platforms naar zee slepen.",
+  "lab_mark_baikonur": "Baikonur",
+  "lab_mark_canaveral": "Canaveral",
+  "lab_mark_kourou": "Kourou",
+  "lab_mark_sea_launch": "Zee (evenaar)"
 }

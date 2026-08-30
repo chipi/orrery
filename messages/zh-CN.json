@@ -1945,7 +1945,7 @@
   "lab_goal_lar_momentum": "火箭靠向后抛出质量前进。它赋予喷流的动量，就是它前进所获得的动量。",
   "lab_goal_lar_tsiolkovsky": "燃烧推进剂积累速度。火箭方程将喷流的喷出速度和携带的推进剂量，与你获得的 delta-v 联系起来。",
   "lab_goal_lar_twr": "要起飞，推力必须胜过重力。若推重比低于一，火箭永远离不开发射台。",
-  "lab_goal_lar_verdict": "入轨需要一定的 delta-v 预算。你刚刚积累的 delta-v 能满足此行程的需求吗？",
+  "lab_goal_lar_verdict": "现在算一算：火箭的 Δv 加上发射场带来的免费初速，对比轨道所需的能量。更好的发射场带来余量——或让你用更小的火箭完成同样的任务。",
   "lab_goal_lar_weight": "引力以一种我们称为重力的力拉扯每一份质量。要离开地面，必须有物体推得比它更用力。",
   "lab_goal_launch_a_rocket_title": "发射火箭",
   "lab_goal_motion_drop": "放开一个质量，剩下的交给引力——它在下落中加速。需要多久，落到底部时又有多快？",
@@ -2026,5 +2026,17 @@
   "lab_goal_rtm_visviva": "轨道并非都是圆形。活力公式仅凭两个数字——你所在的位置，以及轨道的大小——就能算出你在任意轨道任意点的速度。它是每一次转移的构建基石。",
   "lab_mark_burn_1": "点火 1",
   "lab_mark_burn_2": "点火 2",
-  "lab_f_orbits_err_unknown_body": "该天体无法在此绕行——请选择地球或月球。"
+  "lab_f_orbits_err_unknown_body": "该天体无法在此绕行——请选择地球或月球。",
+  "lab_axis_latitude": "纬度",
+  "lab_f_launch_site_title": "发射场",
+  "lab_f_launchsite_body": "天体",
+  "lab_f_launchsite_boost": "自转初速",
+  "lab_f_launchsite_lat": "纬度",
+  "lab_f_reach_orbit_boost": "发射场增益",
+  "lab_f_reach_orbit_title": "进入轨道",
+  "lab_goal_lar_launch_site": "你在地球上从哪里发射就是一份免费的初始优势：行星的自转已经把发射台向东带动——赤道最快，两极为零。这正是阿丽亚娜从库鲁发射的原因，也是企业把平台拖到海上的原因。",
+  "lab_mark_baikonur": "拜科努尔",
+  "lab_mark_canaveral": "卡纳维拉尔",
+  "lab_mark_kourou": "库鲁",
+  "lab_mark_sea_launch": "海上（赤道）"
 }

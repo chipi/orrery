@@ -1945,7 +1945,7 @@
   "lab_goal_lar_momentum": "Une fusée se déplace en expulsant de la masse vers l'arrière. L'impulsion qu'elle donne à l'échappement est l'impulsion qu'elle gagne vers l'avant.",
   "lab_goal_lar_tsiolkovsky": "Brûler du carburant accumule de la vitesse. L'équation de Tsiolkovsky lie la vitesse d'éjection de l'échappement et la quantité de carburant transportée au delta-v gagné.",
   "lab_goal_lar_twr": "Pour le décollage, la poussée doit surpasser le poids. Si le rapport poussée-poids est inférieur à un, la fusée ne quitte jamais le pas de tir.",
-  "lab_goal_lar_verdict": "Atteindre l'orbite demande un budget delta-v défini. Le delta-v que tu viens de construire satisfait-il ce que le voyage exige ?",
+  "lab_goal_lar_verdict": "Maintenant, additionnez : le Δv de votre fusée plus l'avantage gratuit de votre site de lancement, contre ce que l'orbite exige. Un meilleur site offre de la marge — ou vous permet de voler une plus petite fusée pour le même travail.",
   "lab_goal_lar_weight": "La gravité exerce une force sur chaque masse, que nous appelons le poids. Pour quitter le sol, quelque chose doit pousser plus fort que cela.",
   "lab_goal_launch_a_rocket_title": "Lance une fusée",
   "lab_goal_motion_drop": "Lâche une masse et la gravité fait le reste — elle accélère en tombant. Combien de temps cela prend-il, et quelle est sa vitesse en bas ?",
@@ -2026,5 +2026,17 @@
   "lab_goal_rtm_visviva": "Les orbites ne sont pas tous des cercles. Vis-viva donne votre vitesse en tout point de n'importe quelle orbite à partir de seulement deux nombres — où vous êtes, et la taille de l'orbite. C'est l'outil sur lequel se construit tout transfert.",
   "lab_mark_burn_1": "Impulsion 1",
   "lab_mark_burn_2": "Impulsion 2",
-  "lab_f_orbits_err_unknown_body": "Ce monde n'est pas un que vous pouvez orbiter ici — choisissez la Terre ou la Lune."
+  "lab_f_orbits_err_unknown_body": "Ce monde n'est pas un que vous pouvez orbiter ici — choisissez la Terre ou la Lune.",
+  "lab_axis_latitude": "Latitude",
+  "lab_f_launch_site_title": "Site de lancement",
+  "lab_f_launchsite_body": "Monde",
+  "lab_f_launchsite_boost": "Avance de rotation",
+  "lab_f_launchsite_lat": "Latitude",
+  "lab_f_reach_orbit_boost": "Avance du site de lancement",
+  "lab_f_reach_orbit_title": "Atteindre l'orbite",
+  "lab_goal_lar_launch_site": "L'endroit sur Terre d'où vous lancez est un avantage gratuit : la rotation de la planète porte déjà le pas vers l'est — plus vite à l'équateur, rien aux pôles. C'est pourquoi Ariane vole depuis Kourou, et pourquoi les entreprises remorquent des plates-formes en mer.",
+  "lab_mark_baikonur": "Baïkonour",
+  "lab_mark_canaveral": "Canaveral",
+  "lab_mark_kourou": "Kourou",
+  "lab_mark_sea_launch": "Mer (équateur)"
 }

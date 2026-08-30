@@ -1945,7 +1945,7 @@
   "lab_goal_lar_momentum": "Eine Rakete bewegt sich, indem sie Masse nach hinten ausstößt. Der Impuls, den sie dem Abgas gibt, ist der Impuls, den sie nach vorne gewinnt.",
   "lab_goal_lar_tsiolkovsky": "Das Verbrennen von Treibstoff baut Geschwindigkeit auf. Die Raketengleichung verbindet die Ausströmungsgeschwindigkeit und die Treibstoffmenge mit dem erreichbaren Delta-v.",
   "lab_goal_lar_twr": "Zum Abheben muss der Schub das Gewicht überwinden. Liegt das Schub-zu-Gewicht-Verhältnis unter eins, verlässt die Rakete nie die Startrampe.",
-  "lab_goal_lar_verdict": "Um eine Umlaufbahn zu erreichen, benötigt man ein bestimmtes Delta-v-Budget. Reicht das Delta-v, das du gerade gebaut hast, für die geforderte Reise aus?",
+  "lab_goal_lar_verdict": "Addiere nun alles zusammen: das Δv deiner Rakete plus den kostenlosen Vorsprung von deinem Startplatz gegen die Anforderungen der Umlaufbahn. Ein besserer Standort verschafft dir Spielraum — oder ermöglicht dir, eine kleinere Rakete für dieselbe Aufgabe zu fliegen.",
   "lab_goal_lar_weight": "Die Schwerkraft zieht mit einer Kraft, die wir Gewicht nennen, auf jede Masse. Um den Boden zu verlassen, muss etwas stärker zurückdrücken.",
   "lab_goal_launch_a_rocket_title": "Eine Rakete starten",
   "lab_goal_motion_drop": "Lass eine Masse los und die Schwerkraft erledigt den Rest — sie beschleunigt beim Fallen. Wie lange dauert es, und wie schnell ist sie unten?",
@@ -2026,5 +2026,17 @@
   "lab_goal_rtm_visviva": "Umlaufbahnen sind nicht alle Kreise. Die Vis-Viva-Gleichung gibt dir die Geschwindigkeit an jedem Punkt einer beliebigen Umlaufbahn aus nur zwei Zahlen — wo du bist und wie groß die Umlaufbahn ist. Sie ist das Werkzeug, auf dem jede Manöver aufgebaut ist.",
   "lab_mark_burn_1": "Zündung 1",
   "lab_mark_burn_2": "Zündung 2",
-  "lab_f_orbits_err_unknown_body": "Dieser Himmelskörper kann hier nicht umkreist werden — wählen Sie Erde oder Mond."
+  "lab_f_orbits_err_unknown_body": "Dieser Himmelskörper kann hier nicht umkreist werden — wählen Sie Erde oder Mond.",
+  "lab_axis_latitude": "Breitengrad",
+  "lab_f_launch_site_title": "Startplatz",
+  "lab_f_launchsite_body": "Erde",
+  "lab_f_launchsite_boost": "Rotationsvorsprung",
+  "lab_f_launchsite_lat": "Breitengrad",
+  "lab_f_reach_orbit_boost": "Startplatz-Vorsprung",
+  "lab_f_reach_orbit_title": "Umlaufbahn erreichen",
+  "lab_goal_lar_launch_site": "Der Ort, von dem du auf der Erde startest, ist ein kostenloser Vorsprung: Die Planeten­rotation trägt die Startrampe bereits ostwärts — am schnellsten am Äquator, nichts an den Polen. Deshalb fliegt Ariane von Kourou, und deshalb schleppen Unternehmen Plattformen aufs Meer.",
+  "lab_mark_baikonur": "Baikonur",
+  "lab_mark_canaveral": "Canaveral",
+  "lab_mark_kourou": "Kourou",
+  "lab_mark_sea_launch": "Meer (Äquator)"
 }

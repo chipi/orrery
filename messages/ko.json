@@ -1945,7 +1945,7 @@
   "lab_goal_lar_momentum": "로켓은 질량을 뒤로 내뿜어 움직입니다. 배기가스에 준 운동량만큼 앞으로 나아가는 운동량을 얻습니다.",
   "lab_goal_lar_tsiolkovsky": "추진제를 태우면 속도가 쌓입니다. 로켓 방정식은 배기가스가 얼마나 빠르게 나가는지와 추진제를 얼마나 싣는지를 얻게 되는 delta-v와 연결합니다.",
   "lab_goal_lar_twr": "이륙하려면 추력이 무게를 이겨야 합니다. 추력 대 무게 비가 1보다 작으면 로켓은 발사대를 떠나지 못합니다.",
-  "lab_goal_lar_verdict": "궤도에 도달하려면 정해진 delta-v 예산이 필요합니다. 방금 쌓은 delta-v가 이 여정이 요구하는 만큼을 넘어서나요?",
+  "lab_goal_lar_verdict": "이제 합산해 보세요. 로켓의 Δv에 발사장에서 얻는 공짜 초기 이점을 더한 값을, 궤도가 요구하는 값과 비교합니다. 더 나은 발사장은 여유를 벌어 주거나, 같은 임무를 더 작은 로켓으로 수행하게 해 줍니다.",
   "lab_goal_lar_weight": "중력은 모든 질량을 무게라 부르는 힘으로 끌어당깁니다. 지면을 떠나려면 무언가가 이보다 더 세게 밀어내야 합니다.",
   "lab_goal_launch_a_rocket_title": "로켓 발사하기",
   "lab_goal_motion_drop": "질량을 놓으면 나머지는 중력이 합니다 — 떨어지며 속도가 붙습니다. 얼마나 걸리고, 바닥에서 얼마나 빠를까요?",
@@ -2026,5 +2026,17 @@
   "lab_goal_rtm_visviva": "궤도가 모두 원인 것은 아닙니다. 비스-비바 방정식은 단 두 개의 값 — 현재 위치와 궤도의 크기 — 만으로 어떤 궤도의 어떤 지점에서든 속력을 알려줍니다. 모든 전이의 기반이 되는 도구입니다.",
   "lab_mark_burn_1": "분사 1",
   "lab_mark_burn_2": "분사 2",
-  "lab_f_orbits_err_unknown_body": "여기서 궤도를 돌 수 있는 천체가 아닙니다 — 지구 또는 달을 선택하세요."
+  "lab_f_orbits_err_unknown_body": "여기서 궤도를 돌 수 있는 천체가 아닙니다 — 지구 또는 달을 선택하세요.",
+  "lab_axis_latitude": "위도",
+  "lab_f_launch_site_title": "발사장",
+  "lab_f_launchsite_body": "천체",
+  "lab_f_launchsite_boost": "자전 초기 이점",
+  "lab_f_launchsite_lat": "위도",
+  "lab_f_reach_orbit_boost": "발사장 부스트",
+  "lab_f_reach_orbit_title": "궤도 진입",
+  "lab_goal_lar_launch_site": "지구 어디에서 발사하느냐가 공짜 초기 이점입니다. 행성의 자전이 이미 발사대를 동쪽으로 실어 나르는데, 적도에서 가장 빠르고 극지방에서는 전혀 없습니다. 이것이 Ariane이 Kourou에서 발사하는 이유이며, 기업들이 해상으로 플랫폼을 예인하는 이유입니다.",
+  "lab_mark_baikonur": "Baikonur",
+  "lab_mark_canaveral": "Canaveral",
+  "lab_mark_kourou": "Kourou",
+  "lab_mark_sea_launch": "해상 (적도)"
 }

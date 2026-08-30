@@ -1945,7 +1945,7 @@
   "lab_goal_lar_momentum": "Un razzo si muove buttando massa all'indietro. La quantità di moto che dà al gas di scarico è la quantità di moto che guadagna andando avanti.",
   "lab_goal_lar_tsiolkovsky": "Bruciare il propellente accumula velocità. L'equazione del razzo lega la velocità di scarico e la quantità di propellente al delta-v che guadagni.",
   "lab_goal_lar_twr": "Per il decollo, la spinta deve superare il peso. Se il rapporto spinta-peso è sotto uno, il razzo non lascia mai la rampa.",
-  "lab_goal_lar_verdict": "Raggiungere l'orbita richiede un budget di delta-v definito. Il delta-v che hai appena costruito soddisfa i requisiti della missione?",
+  "lab_goal_lar_verdict": "Ora somma il tutto: il Δv del tuo razzo più il vantaggio gratuito del sito di lancio, contro quanto richiede l'orbita. Un sito migliore offre margine — o ti permette di volare con un razzo più piccolo per lo stesso compito.",
   "lab_goal_lar_weight": "La gravità tira ogni massa con una forza che chiamiamo peso. Per lasciare il suolo, qualcosa deve spingere indietro più forte di questo.",
   "lab_goal_launch_a_rocket_title": "Lancia un razzo",
   "lab_goal_motion_drop": "Lascia andare una massa e la gravità fa il resto — accelera mentre cade. Quanto tempo impiega, e quale velocità ha in fondo?",
@@ -2026,5 +2026,17 @@
   "lab_goal_rtm_visviva": "Le orbite non sono tutte circolari. Vis-viva ti dà la velocità in qualunque punto di qualunque orbita con solo due numeri — dove sei e quanto grande è l'orbita. È lo strumento su cui si costruisce ogni trasferimento.",
   "lab_mark_burn_1": "Impulso 1",
   "lab_mark_burn_2": "Impulso 2",
-  "lab_f_orbits_err_unknown_body": "Quel mondo non è uno che puoi orbitare qui — scegli la Terra o la Luna."
+  "lab_f_orbits_err_unknown_body": "Quel mondo non è uno che puoi orbitare qui — scegli la Terra o la Luna.",
+  "lab_axis_latitude": "Latitudine",
+  "lab_f_launch_site_title": "Sito di lancio",
+  "lab_f_launchsite_body": "Mondo",
+  "lab_f_launchsite_boost": "Vantaggio rotazionale",
+  "lab_f_launchsite_lat": "Latitudine",
+  "lab_f_reach_orbit_boost": "Vantaggio del sito di lancio",
+  "lab_f_reach_orbit_title": "Raggiungi l'orbita",
+  "lab_goal_lar_launch_site": "Il luogo da cui si lancia sulla Terra è un vantaggio gratuito: la rotazione del pianeta porta già il pad verso est — più veloce all'equatore, nulla ai poli. Per questo Ariane decolla da Kourou, e perché le aziende traslano le piattaforme in mare.",
+  "lab_mark_baikonur": "Baikonur",
+  "lab_mark_canaveral": "Canaveral",
+  "lab_mark_kourou": "Kourou",
+  "lab_mark_sea_launch": "Mare (equatore)"
 }

@@ -1945,7 +1945,7 @@
   "lab_goal_lar_momentum": "Un cohete se mueve expulsando masa hacia atrás. El momento que comunica al escape es el momento que gana hacia adelante.",
   "lab_goal_lar_tsiolkovsky": "Quemar propelente acumula velocidad. La ecuación del cohete vincula la velocidad de salida del escape y la cantidad de propelente que llevas con el delta-v que ganas.",
   "lab_goal_lar_twr": "Para despegar, el empuje debe superar el peso. Si la relación empuje-peso está por debajo de uno, el cohete nunca abandona la plataforma.",
-  "lab_goal_lar_verdict": "Alcanzar órbita requiere un presupuesto de delta-v establecido. ¿El delta-v que acabas de construir supera lo que el viaje exige?",
+  "lab_goal_lar_verdict": "Ahora suma todo: el Δv de tu cohete más la ventaja gratuita de tu centro de lanzamiento, contra lo que demanda la órbita. Un sitio mejor te da margen, o te permite lanzar un cohete más pequeño para el mismo trabajo.",
   "lab_goal_lar_weight": "La gravedad tira de cada masa con una fuerza que llamamos peso. Para abandonar el suelo, algo debe empujar más fuerte que esto.",
   "lab_goal_launch_a_rocket_title": "Lanza un cohete",
   "lab_goal_motion_drop": "Suelta una masa y la gravedad hace el resto — se acelera conforme cae. ¿Cuánto tiempo tarda, y qué velocidad tiene en el fondo?",
@@ -2026,5 +2026,17 @@
   "lab_goal_rtm_visviva": "Las órbitas no son todas círculos. Vis-viva da tu velocidad en cualquier punto de cualquier órbita con solo dos números — dónde estás y cuán grande es la órbita. Es la herramienta con la que se construye cada transferencia.",
   "lab_mark_burn_1": "Impulso 1",
   "lab_mark_burn_2": "Impulso 2",
-  "lab_f_orbits_err_unknown_body": "Ese mundo no es uno que puedas orbitar aquí — elige la Tierra o la Luna."
+  "lab_f_orbits_err_unknown_body": "Ese mundo no es uno que puedas orbitar aquí — elige la Tierra o la Luna.",
+  "lab_axis_latitude": "Latitud",
+  "lab_f_launch_site_title": "Centro de Lanzamiento",
+  "lab_f_launchsite_body": "Mundo",
+  "lab_f_launchsite_boost": "Ventaja por rotación",
+  "lab_f_launchsite_lat": "Latitud",
+  "lab_f_reach_orbit_boost": "Ventaja del centro de lanzamiento",
+  "lab_f_reach_orbit_title": "Alcanzar Órbita",
+  "lab_goal_lar_launch_site": "Dónde lances desde la Tierra es una ventaja gratuita: la rotación del planeta ya lleva la plataforma hacia el este, más rápido en el ecuador, nada en los polos. Por eso Ariane vuela desde Kourou, y por eso las empresas remolcan plataformas hacia el mar.",
+  "lab_mark_baikonur": "Baikónur",
+  "lab_mark_canaveral": "Cabo Cañaveral",
+  "lab_mark_kourou": "Kourou",
+  "lab_mark_sea_launch": "Mar (ecuador)"
 }

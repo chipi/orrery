@@ -23,7 +23,7 @@ test.describe('/lab — Physics Lab', () => {
     // The goal ladder rendered: 6 rungs of the launch-a-rocket goal.
     await expect(page.locator('.nb__goal-title')).toBeVisible();
     const cards = page.locator('.card');
-    await expect(cards).toHaveCount(6);
+    await expect(cards).toHaveCount(7);
 
     // KaTeX equation is server-prerendered into the card (ADR-034, no runtime katex).
     await expect(page.locator('.card__equation .katex').first()).toBeVisible();
@@ -50,10 +50,10 @@ test.describe('/lab — Physics Lab', () => {
     await page.goto('/lab', { waitUntil: 'networkidle' });
     await expect(page.locator('.nb__goal-title')).toBeVisible();
 
-    // The verdict rung (last card) consumes Δv via a wire → a read-only derived cell,
-    // NOT an editable slider. The gold "derived" output proves the wire is live.
+    // The verdict rung (last card) consumes TWO wires → two read-only gold "derived"
+    // cells (the rocket's Δv from Tsiolkovsky + the launch-site boost), not sliders.
     const verdict = page.locator('.card').last();
-    await expect(verdict.locator('.card__derived')).toBeVisible();
+    await expect(verdict.locator('.card__derived')).toHaveCount(2);
 
     // Editing the first number input recomputes its readout (live).
     const firstNumber = page.locator('.card__number').first();
@@ -83,7 +83,7 @@ test.describe('/lab — Physics Lab', () => {
     await expect(page.locator('.nb__back')).toBeVisible();
     await expect(page.locator('.card')).toHaveCount(1);
     await page.locator('.nb__back').click();
-    await expect(page.locator('.card')).toHaveCount(6);
+    await expect(page.locator('.card')).toHaveCount(7);
   });
 
   test('fail-honest: an infeasible input surfaces a reason and blocks the wired verdict', async ({

@@ -8,6 +8,8 @@ import {
   orbitalVelocity,
   visVivaFormula,
   hohmannFormula,
+  launchSite,
+  reachOrbitVerdict,
 } from './index';
 import { bodyGravityMs2 } from '../mechanics/bodies';
 import type { FormulaDef } from '../spec';
@@ -157,12 +159,41 @@ describe('M2 orbital formulas — happy-path numbers + fail branches', () => {
   });
 
   it('an unknown body fails HONEST — never silently computes Earth (review MAJOR-2)', () => {
+    // Every PLANET_STATS body now resolves (physics runs on any planet); only a
+    // truly-unknown id must be rejected.
     const forms: FormulaDef[] = [orbitalVelocity, visVivaFormula, hohmannFormula];
     for (const f of forms) {
-      const r = f.compute({ ...defaultInputs(f), body: 'jupiter' });
+      const r = f.compute({ ...defaultInputs(f), body: 'not-a-planet' });
       expect(r.status.ok, `${f.id} should reject unknown body`).toBe(false);
       if (!r.status.ok) expect(r.status.reasonKey).toContain('unknown-body');
     }
+  });
+
+  it('launch-site: rotation head-start peaks near the equator, honest curve', () => {
+    const eq = launchSite.compute({ latitudeDeg: 0, body: 'earth' });
+    const pole = launchSite.compute({ latitudeDeg: 90, body: 'earth' });
+    expect(eq.status.ok && pole.status.ok).toBe(true);
+    expect(eq.values.boost.value).toBeCloseTo(0.465, 2); // ~equatorial
+    expect(pole.values.boost.value).toBeCloseTo(0, 3);
+    expect(eq.figure?.kind).toBe('curve');
+  });
+
+  it('reach-orbit-verdict: the launch-site boost adds to the margin (the connection)', () => {
+    const withBoost = reachOrbitVerdict.compute({
+      capacityKms: 9,
+      boostKms: 0.46,
+      requiredKms: 9.4,
+    });
+    const noBoost = reachOrbitVerdict.compute({ capacityKms: 9, boostKms: 0, requiredKms: 9.4 });
+    expect(withBoost.status.ok).toBe(true); // 9 + 0.46 − 9.4 = +0.06
+    expect(noBoost.status.ok).toBe(false); // 9 + 0 − 9.4 = −0.4 → can't reach orbit
+    if (withBoost.status.ok) expect(withBoost.values.margin.value).toBeCloseTo(0.06, 2);
+  });
+
+  it('launch-site rejects an unknown body fail-honest', () => {
+    const r = launchSite.compute({ latitudeDeg: 5, body: 'not-a-planet' });
+    expect(r.status.ok).toBe(false);
+    if (!r.status.ok) expect(r.status.reasonKey).toContain('unknown-body');
   });
 
   it('every ORBIT_BODY_IDS entry actually resolves (the resolver M2 uses)', () => {

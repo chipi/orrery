@@ -125,6 +125,13 @@ export default [
           selector: 'ImportExpression',
           message: 'physics kernel: no dynamic import() — static imports only (RFC-037 §3).',
         },
+        {
+          // Ban `x as Unit` — it smuggles a wrong unit past the compiler (the exact
+          // hazard the closed Unit union prevents; S2a/B4). Use a Unit-union literal.
+          selector: "TSAsExpression[typeAnnotation.typeName.name='Unit']",
+          message:
+            'physics kernel: no `as Unit` cast — assign a literal member of the Unit union instead (S2a B4).',
+        },
       ],
       'no-restricted-globals': [
         'error',

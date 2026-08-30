@@ -24,6 +24,7 @@ import {
   type DestinationId,
 } from './lambert-grid.constants';
 import { eccentricAnomaly } from '../ephemeris/kepler';
+import { MU_SUN_AU3_YR2, AUPYR_TO_KMS } from '../util/constants';
 
 /** Mars-specific Hohmann transfer constants — kept as named exports for
  *  back-compat with /fly free-return rendering (ORRERY DEMO scenario). */
@@ -116,9 +117,7 @@ export function outboundArc(
   // re-solve would belong in the Lambert worker.
   if (arrivalVInfKms != null && arrivalVInfKms > 0) {
     // Compute the Hohmann-baseline V∞ for the destination via vis-viva.
-    // µ_Sun = 4π² in AU³/yr²; AU/yr → km/s = 4.7404 (IAU 2012).
-    const MU_SUN_AU3_YR2 = 4 * Math.PI * Math.PI;
-    const AUPYR_TO_KMS = 4.7404;
+    // µ_Sun = 4π² in AU³/yr²; AU/yr → km/s = 4.7404 (IAU 2012). Both from ../util/constants (D10).
     const vTransferArrival = Math.sqrt(MU_SUN_AU3_YR2 * (2 / destA - 1 / a)) * AUPYR_TO_KMS;
     const vDestCircular = Math.sqrt(MU_SUN_AU3_YR2 / destA) * AUPYR_TO_KMS;
     const hohmannVInfKms = Math.abs(vTransferArrival - vDestCircular);
@@ -244,8 +243,6 @@ export function transferEllipse(
     chord > 1e-15 &&
     Number.isFinite(arrivalVInfKms)
   ) {
-    const MU_SUN_AU3_YR2 = 4 * Math.PI * Math.PI;
-    const AUPYR_TO_KMS = 4.7404;
     const vTransferArrival = Math.sqrt(MU_SUN_AU3_YR2 * (2 / r2 - 1 / a)) * AUPYR_TO_KMS;
     const vDestCircular = Math.sqrt(MU_SUN_AU3_YR2 / r2) * AUPYR_TO_KMS;
     const hohmannVInfKms = Math.abs(vTransferArrival - vDestCircular);

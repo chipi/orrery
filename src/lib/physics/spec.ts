@@ -61,7 +61,8 @@ export interface OutputSpec {
 export interface FormulaDef<I = Record<string, number | string>> {
   id: string;
   titleKey: string;
-  domain: 'ephemeris' | 'transfer' | 'ascent' | 'descent' | 'propulsion' | 'satellite' | 'mechanics';
+  domain:
+    'ephemeris' | 'transfer' | 'ascent' | 'descent' | 'propulsion' | 'satellite' | 'mechanics';
   tier: number; // difficulty rank (concept graph)
   prereqs: string[]; // FormulaDef ids that should precede
   inputs: FieldSpec[];
@@ -126,10 +127,26 @@ export interface FigureBase {
 
 export type FigureSpec = FigureBase &
   (
-    | { kind: 'curve'; x: Axis; y: Axis; series: { labelKey?: string; points: Vec2[] }[]; marks?: Annotation[] }
-    | { kind: 'force-diagram'; bodyLabelKey: string; vectors: { labelKey: string; dir: Vec2; magN: number }[] }
+    | {
+        kind: 'curve';
+        x: Axis;
+        y: Axis;
+        series: { labelKey?: string; points: Vec2[] }[];
+        marks?: Annotation[];
+      }
+    | {
+        kind: 'force-diagram';
+        bodyLabelKey: string;
+        vectors: { labelKey: string; dir: Vec2; magN: number }[];
+      }
     | { kind: 'dv-waterfall'; segments: { labelKey: string; dv: number; kind: 'gain' | 'cost' }[] }
-    | { kind: 'transfer-ellipse'; frame: 'heliocentric'; bodies: { labelKey: string; at: Vec2 }[]; arc: Vec2[]; marks: Annotation[] }
+    | {
+        kind: 'transfer-ellipse';
+        frame: 'heliocentric';
+        bodies: { labelKey: string; at: Vec2 }[];
+        arc: Vec2[];
+        marks: Annotation[];
+      }
     // `tofDays` = Time-of-Flight (the kernel grid rows are TOF, not arrival dates).
     | { kind: 'porkchop'; depDays: number[]; tofDays: number[]; grid: number[][]; units: Unit }
     // Additive per goal (renderers demand-driven); typed now so the union is stable.

@@ -26,7 +26,7 @@
 
   type Props = {
     figure: FigureSpec;
-    t: (key: string) => string;
+    t: (key: string, params?: Record<string, string | number>) => string;
     ariaLabelKey?: string;
   };
   let { figure, t, ariaLabelKey }: Props = $props();
@@ -41,10 +41,10 @@
 
   // ─── Honesty line ───────────────────────────────────────────────────────────
   const provenanceText = $derived(
-    `${fidelityLabel(figure.provenance.fidelity)} · ${figure.provenance.module}`,
+    `${t('lab.fidelity.' + fidelityLabel(figure.provenance.fidelity))} · ${figure.provenance.module}`,
   );
   const assumptionsText = $derived(
-    figure.assumptions.length > 0 ? figure.assumptions.map(t).join(' · ') : '',
+    figure.assumptions.length > 0 ? figure.assumptions.map((k) => t(k)).join(' · ') : '',
   );
 
   const ariaLabel = $derived(ariaLabelKey ? t(ariaLabelKey) : `Physics figure · ${provenanceText}`);

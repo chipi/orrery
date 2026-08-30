@@ -29,7 +29,7 @@
   type Props = {
     formula: FormulaDef;
     equationHtml: string;
-    t: (key: string) => string;
+    t: (key: string, params?: Record<string, string | number>) => string;
     inputs: Record<string, number | string>;
     result: FormulaResult | null;
     onInput: (key: string, value: number | string) => void;
@@ -110,7 +110,9 @@
         <label class="card__label" for="field-{formula.id}-{field.key}">
           {t(field.labelKey)}{field.units ? ` (${field.units})` : ''}
           {#if wired.has(field.key)}
-            <span class="card__wired-chip" title="Wired from an earlier cell">&#8592; wired</span>
+            <span class="card__wired-chip" title="Wired from an earlier cell"
+              >&#8592; {t('lab.ui.wired')}</span
+            >
           {/if}
         </label>
 
@@ -118,7 +120,7 @@
           <!-- Wire-driven input: read-only derived value (not user-editable) -->
           <output id="field-{formula.id}-{field.key}" class="card__derived">
             {#if blocked}
-              <span class="card__derived-void">no value</span>
+              <span class="card__derived-void">{t('lab.ui.no-value')}</span>
             {:else}
               {fmt(numVal(inputs[field.key]))}<span class="card__derived-unit">{field.units}</span>
             {/if}

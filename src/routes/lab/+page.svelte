@@ -4,11 +4,13 @@
   A goal picker selects one Goal; the keyed <Notebook> renders it as a narrated
   ladder of formula cards with live index-order recompute (a wired step consumes
   an earlier step's output). The equation-HTML map is built at prerender time in
-  +page.ts so KaTeX never ships to the browser (ADR-034). The t() resolver is a
-  humanizing passthrough for now; S3d wires the real paraglide bundle.
+  +page.server.ts so KaTeX never ships to the browser (ADR-034). `t` resolves the
+  registry's dotted keys (`lab.f.tsiolkovsky.title`) against the flat snake_case
+  paraglide bundle (`lab_f_tsiolkovsky_title`) — S3d, dot/hyphen → underscore.
 -->
 <script lang="ts">
   import 'katex/dist/katex.min.css';
+  import * as m from '$lib/paraglide/messages';
   import { GOALS } from '$lib/physics/registry/goals';
   import Notebook from '$lib/lab/Notebook.svelte';
   import type { PageData } from './$types';
@@ -20,11 +22,13 @@
   let selectedGoalId = $state('launch-a-rocket');
   const goal = $derived(GOALS.get(selectedGoalId) ?? [...GOALS.values()][0]);
 
-  // Humanizing passthrough: last dot-segment, title-cased.
-  // S3d replaces this with the real paraglide resolver.
-  function t(key: string): string {
-    const seg = key.split('.').at(-1) ?? key;
-    return seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  // The registry uses dotted keys; paraglide ids are flat snake_case. Map
+  // dot/hyphen → underscore and call the message fn (params for the few
+  // parametrised strings). Falls back to the key if a message is missing.
+  const messages = m as unknown as Record<string, (inputs?: Record<string, unknown>) => string>;
+  function t(key: string, params?: Record<string, string | number>): string {
+    const fn = messages[key.replace(/[.-]/g, '_')];
+    return typeof fn === 'function' ? fn(params ?? {}) : key;
   }
 
   function goalLabel(id: string): string {
@@ -43,13 +47,13 @@
 
   <main class="lab__main">
     <header class="lab__header">
-      <h1 class="lab__title">PHYSICS LAB</h1>
-      <p class="lab__subtitle">First-principles physics, one goal at a time</p>
+      <h1 class="lab__title">{t('lab.ui.title')}</h1>
+      <p class="lab__subtitle">{t('lab.ui.subtitle')}</p>
     </header>
 
     <!-- Goal picker -->
     <div class="lab__picker">
-      <label for="goal-select" class="lab__picker-label">Goal</label>
+      <label for="goal-select" class="lab__picker-label">{t('lab.ui.goal-picker')}</label>
       <select
         id="goal-select"
         class="lab__picker-select"

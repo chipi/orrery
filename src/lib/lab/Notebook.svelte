@@ -34,7 +34,7 @@
   type Props = {
     goal: Goal;
     equationHtml: Record<string, string>;
-    t: (key: string) => string;
+    t: (key: string, params?: Record<string, string | number>) => string;
   };
 
   let { goal, equationHtml, t }: Props = $props();
@@ -185,7 +185,7 @@
     if (!file) return;
     loadError = '';
     if (file.size > MAX_ORRLAB_BYTES) {
-      loadError = 'That file is too large to be a notebook.';
+      loadError = t('lab.ui.load-error-toobig');
       return;
     }
     try {
@@ -194,10 +194,10 @@
         cells = fromCodec(decoded.cells);
         restored = true;
       } else {
-        loadError = 'Not a valid .orrlab notebook.';
+        loadError = t('lab.ui.load-error-invalid');
       }
     } catch {
-      loadError = 'Could not read that file.';
+      loadError = t('lab.ui.load-error-read');
     }
   }
 
@@ -288,17 +288,20 @@
       case 'upstream-failed':
         return {
           ...base,
-          message: `Upstream failed — step ${state.fromIndex + 1} produced no value to wire in.`,
+          message: t('lab.blocked.upstream-failed', { step: state.fromIndex + 1 }),
         };
       case 'invalid-wire':
         return {
           ...base,
-          message: `Invalid wire — step ${state.fromIndex + 1} has no output '${state.output}'.`,
+          message: t('lab.blocked.invalid-wire', {
+            step: state.fromIndex + 1,
+            output: state.output,
+          }),
         };
       case 'compute-error':
-        return { ...base, message: 'Could not evaluate this formula with these inputs.' };
+        return { ...base, message: t('lab.blocked.compute-error') };
       case 'unknown-formula':
-        return { ...base, message: `Unknown formula: ${state.formulaId}` };
+        return { ...base, message: t('lab.ui.unknown-formula', { id: state.formulaId }) };
     }
   }
 </script>
@@ -308,7 +311,7 @@
   {@const state = computed[i]}
   {@const formula = REGISTRY.get(cell.formulaId)}
   {#if !formula}
-    <p class="nb__unknown" role="alert">Unknown formula: {cell.formulaId}</p>
+    <p class="nb__unknown" role="alert">{t('lab.ui.unknown-formula', { id: cell.formulaId })}</p>
   {:else}
     {@const v = view(state, cell)}
     <div class="nb__card">
@@ -351,7 +354,7 @@
     {@const cell = cells[focusIndex]}
     <div class="nb__focus-view">
       <button type="button" class="nb__back" onclick={() => setFocus(null)}>
-        ← Back to notebook
+        ← {t('lab.ui.back-to-notebook')}
       </button>
       <div class="nb__focus-head">
         <span class="nb__index">{focusIndex + 1}</span>
@@ -362,8 +365,10 @@
   {:else}
     <header class="nb__head">
       <div class="nb__goal">
-        <span class="nb__goal-kicker">{restored ? 'Custom notebook' : 'Goal'}</span>
-        <h2 class="nb__goal-title">{restored ? 'Your notebook' : t(goal.titleKey)}</h2>
+        <span class="nb__goal-kicker"
+          >{restored ? t('lab.ui.custom-notebook') : t('lab.ui.goal')}</span
+        >
+        <h2 class="nb__goal-title">{restored ? t('lab.ui.your-notebook') : t(goal.titleKey)}</h2>
       </div>
       <div class="nb__tools">
         <button
@@ -373,16 +378,20 @@
           onclick={share}
           aria-label="Share this notebook — copy a link"
         >
-          {shareState === 'copied' ? '✓ COPIED' : shareState === 'failed' ? 'IN URL' : 'SHARE'}
+          {shareState === 'copied'
+            ? '✓ ' + t('lab.ui.share-copied')
+            : shareState === 'failed'
+              ? t('lab.ui.share-in-url')
+              : t('lab.ui.share')}
         </button>
         <button type="button" class="nb__tool" onclick={saveFile} aria-label="Save as a file"
-          >SAVE</button
+          >{t('lab.ui.save')}</button
         >
         <button
           type="button"
           class="nb__tool"
           onclick={() => fileInput?.click()}
-          aria-label="Load a notebook file">LOAD</button
+          aria-label="Load a notebook file">{t('lab.ui.load')}</button
         >
         <input
           bind:this={fileInput}
@@ -419,13 +428,13 @@
 
     <!-- + ADD CELL — append any registered formula as an unwired sandbox card -->
     <div class="nb__add">
-      <label class="nb__add-label" for="nb-add-select">Add cell</label>
+      <label class="nb__add-label" for="nb-add-select">{t('lab.ui.add-cell')}</label>
       <select id="nb-add-select" class="nb__add-select" bind:value={addId}>
         {#each [...REGISTRY.keys()] as id (id)}
           <option value={id}>{labelFor(id)}</option>
         {/each}
       </select>
-      <button type="button" class="nb__add-btn" onclick={addCell}>+ ADD CELL</button>
+      <button type="button" class="nb__add-btn" onclick={addCell}>+ {t('lab.ui.add-cell')}</button>
     </div>
   {/if}
 </section>

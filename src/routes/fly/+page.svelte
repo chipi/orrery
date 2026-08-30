@@ -20,7 +20,7 @@
     spacecraftPos,
     type MissionTimeline,
     type Vec2,
-  } from '$lib/orbital/mission-arc';
+  } from '$lib/physics/transfer/mission-arc';
   import { buildArcs } from '$lib/fly-moon-arc';
   import {
     SCALE_3D,
@@ -59,7 +59,7 @@
     R_EARTH_AU,
     R_MARS_AU,
     type DestinationId,
-  } from '$lib/lambert-grid.constants';
+  } from '$lib/physics/transfer/lambert-grid.constants';
   import {
     getMission,
     getMissionIndex,
@@ -158,8 +158,8 @@
   } from '$lib/orbital/ascent-clock';
   import { terminalStartTime, unwarpDescentTime } from '$lib/orbital/descent-timewarp';
   import { T_MINUS_S, INJECTION_COAST_S, INJECTION_BURN_S } from '$lib/orbital/ascent-hud';
-  import { resolveInjectionBurn } from '$lib/orbital/injection-burn';
-  import { resolveOrbitInsertion } from '$lib/orbital/orbit-insertion';
+  import { resolveInjectionBurn } from '$lib/physics/transfer/injection-burn';
+  import { resolveOrbitInsertion } from '$lib/physics/transfer/orbit-insertion';
   import PhasePanel from '$lib/components/PhasePanel.svelte';
   import FlightDirectorBanner from '$lib/components/FlightDirectorBanner.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';

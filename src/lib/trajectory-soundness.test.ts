@@ -27,9 +27,9 @@ import {
   returnArc,
   spacecraftPos,
   transferEllipse,
-} from './orbital/mission-arc';
+} from '$lib/physics/transfer/mission-arc';
 import { missionDestToHeliocentricDestinationId } from './mission-dest';
-import type { DestinationId } from './lambert-grid.constants';
+import type { DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 import { moonOutboundArc, moonReturnArc, moonPositionAtMet } from './orbital/fly-physics';
 import { dateToSimDay } from './sim-day';
 import { expectCloseTo } from './test-helpers/expect-close';

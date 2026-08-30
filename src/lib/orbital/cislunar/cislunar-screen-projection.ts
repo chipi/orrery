@@ -22,7 +22,7 @@
  * scene units). Exposed here so callers don't repeat the magic number.
  */
 
-import { AU_TO_KM } from '../../orbital';
+import { AU_TO_KM } from '$lib/physics/transfer/orbital';
 import type { Vec3Km } from './cislunar-geometry';
 import type { Vec3Au } from '$lib/interplanetary-geometry';
 

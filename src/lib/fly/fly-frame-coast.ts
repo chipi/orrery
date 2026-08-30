@@ -1,5 +1,5 @@
 import { R_EARTH_KM } from '$lib/orbital/cislunar/cislunar-geometry';
-import type { Vec2 } from '$lib/orbital/mission-arc';
+import type { Vec2 } from '$lib/physics/transfer/mission-arc';
 
 /**
  * Pure per-frame coast-preview geometry builders for /fly (RFC-036 WS-B/B4).

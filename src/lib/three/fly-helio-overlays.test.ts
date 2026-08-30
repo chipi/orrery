@@ -9,7 +9,7 @@ import {
   buildLabelSprite,
   drawLabelTexture,
 } from './fly-helio-overlays';
-import type { Vec2 } from '$lib/orbital/mission-arc';
+import type { Vec2 } from '$lib/physics/transfer/mission-arc';
 
 // Structural smoke tests for the pure helio-overlay builders (RFC-036 WS-B/B2a).
 // jsdom can construct Three.js geometry/materials + a 2D canvas (it just can't

@@ -80,12 +80,12 @@
   import EnterArButton from '$lib/components/EnterArButton.svelte';
   import EnterSkyButton from '$lib/components/EnterSkyButton.svelte';
   import { launchArScene, launchSkyScene } from '$lib/ar/launch-ar';
-  import { earthPos, outboundArc, type Vec2 } from '$lib/orbital/mission-arc';
+  import { earthPos, outboundArc, type Vec2 } from '$lib/physics/transfer/mission-arc';
   import { PLANET_STATS, auLightTime } from '$lib/physics/util/planet-stats';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
   import { missionDestToHeliocentricDestinationId } from '$lib/mission-dest';
   import { dateToSimDay } from '$lib/sim-day';
-  import { DESTINATIONS, type DestinationId } from '$lib/lambert-grid.constants';
+  import { DESTINATIONS, type DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
   import smallBodiesData from '$data/small-bodies.json';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import type { LocalizedPlanet } from '$types/planet';

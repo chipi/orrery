@@ -18,7 +18,7 @@ import {
   MOON_VISUAL_DISTANCE,
 } from '$lib/fly-physics-constants';
 import { expectCloseTo } from '../test-helpers/expect-close';
-import { outboundArc } from './mission-arc';
+import { outboundArc } from '$lib/physics/transfer/mission-arc';
 
 describe('heliocentricSpeed (vis-viva)', () => {
   it('Earth-circular at r=1.0, a=1.0 ≈ 29.78 km/s (NASA fact sheet)', () => {

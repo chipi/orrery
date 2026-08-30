@@ -5,7 +5,7 @@ import {
   DESTINATION_LABEL_COLORS,
   cameraDistanceFor,
 } from './fly-scene-constants';
-import { DESTINATIONS, type DestinationId } from './lambert-grid.constants';
+import { DESTINATIONS, type DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 
 describe('SCALE_3D', () => {
   it('matches the /fly heliocentric scene scale (1 AU = 80u)', () => {

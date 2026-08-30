@@ -39,7 +39,10 @@
     injectionPhaseStatus,
     padState,
   } from '$lib/orbital/ascent-hud';
-  import { injectionBurnLabel, type InjectionBurnParams } from '$lib/orbital/injection-burn';
+  import {
+    injectionBurnLabel,
+    type InjectionBurnParams,
+  } from '$lib/physics/transfer/injection-burn';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
   import * as m from '$lib/paraglide/messages';
   import { buildShotSchedule, defaultTuning } from '$lib/orbital/ascent-cameras';

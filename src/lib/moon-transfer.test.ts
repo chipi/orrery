@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { interplanetaryMoonDv } from './moon-transfer';
 import { MOONS, moonOrbitRadiusKm, type MoonParams } from './moon-transfer.constants';
-import { DESTINATIONS } from './lambert-grid.constants';
+import { DESTINATIONS } from '$lib/physics/transfer/lambert-grid.constants';
 
 /**
  * Honesty bar for ADR-086: the Earth→moon multi-leg model is a 2D two-body

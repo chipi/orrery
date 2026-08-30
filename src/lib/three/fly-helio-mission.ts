@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { MOON_FLY_RADIUS_AU } from '$lib/fly-moon-arc';
 import { SCALE_3D } from '$lib/fly-scene-constants';
-import type { Vec2 } from '$lib/orbital/mission-arc';
+import type { Vec2 } from '$lib/physics/transfer/mission-arc';
 import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
 import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
 import {

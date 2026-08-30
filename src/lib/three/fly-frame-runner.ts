@@ -32,8 +32,8 @@ import {
   marsPos,
   spacecraftHeading,
   spacecraftPos,
-} from '$lib/orbital/mission-arc';
-import type { Vec2 } from '$lib/orbital/mission-arc';
+} from '$lib/physics/transfer/mission-arc';
+import type { Vec2 } from '$lib/physics/transfer/mission-arc';
 import {
   eciKmToCanvas2dPx,
   helioAuToCanvas2dPx,
@@ -46,7 +46,7 @@ import { isLayerOn } from '$lib/science-layers';
 import { markerStateFor } from '$lib/orbital/cislunar/cislunar-marker-reveal';
 import { moonHelioPos } from '$lib/fly-moon-arc';
 import { parseFlybyMetFromSubPhase } from '$lib/fly-cinematic-beats';
-import { R_EARTH_AU, R_MARS_AU } from '$lib/lambert-grid.constants';
+import { R_EARTH_AU, R_MARS_AU } from '$lib/physics/transfer/lambert-grid.constants';
 import { runCinematicFrame } from '$lib/fly-cinematic-frame';
 import { SCALE_3D } from '$lib/fly-scene-constants';
 import { sensory } from '$lib/sensory/state.svelte';

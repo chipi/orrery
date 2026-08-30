@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { sampleForwardArc, integrateEarthCoastPreview } from './fly-frame-coast';
 import { R_EARTH_KM } from '$lib/orbital/cislunar/cislunar-geometry';
-import type { Vec2 } from '$lib/orbital/mission-arc';
+import type { Vec2 } from '$lib/physics/transfer/mission-arc';
 
 // Pure coast-preview geometry builders (RFC-036 WS-B/B4). Lock the forward-arc
 // sampling window + the two-body Euler integrator (constants + collision cutoff).

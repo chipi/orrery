@@ -22,13 +22,17 @@
  * arrives mid-computation, the worker compares its current id against
  * the latest request and bails before posting stale results.
  *
- * The actual grid math lives in `$lib/lambert-grid.ts` so it can be
+ * The actual grid math lives in `$lib/physics/transfer/lambert-grid.ts` so it can be
  * unit-tested without a Worker context. This file is the thin shell
  * that wires `self.addEventListener('message', …)` to that function.
  */
 
-import { computePorkchopGrid } from '$lib/lambert-grid';
-import type { LambertGrid, LambertProgress, LambertRequest } from '$lib/lambert-grid';
+import { computePorkchopGrid } from '$lib/physics/transfer/lambert-grid';
+import type {
+  LambertGrid,
+  LambertProgress,
+  LambertRequest,
+} from '$lib/physics/transfer/lambert-grid';
 
 let currentId = -1;
 

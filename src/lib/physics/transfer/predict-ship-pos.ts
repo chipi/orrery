@@ -21,7 +21,7 @@
  * the lift is a verbatim move + a few tests.
  */
 
-import type { Vec2 } from '$lib/orbital/mission-arc';
+import type { Vec2 } from './mission-arc';
 
 export interface ShipScenePos {
   x: number;

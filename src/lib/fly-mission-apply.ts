@@ -4,8 +4,8 @@ import {
   returnArc,
   type MissionTimeline,
   type Vec2,
-} from '$lib/orbital/mission-arc';
-import { type DestinationId } from '$lib/lambert-grid.constants';
+} from '$lib/physics/transfer/mission-arc';
+import { type DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 import { ARC_STEPS, moonHelioPos, moonHelioArc, buildArcs } from '$lib/fly-moon-arc';
 import {
   buildSplineFromTrajectoryWaypoints,

@@ -4,7 +4,7 @@
  */
 
 import type { Destination } from '$types/mission';
-import type { DestinationId } from '$lib/lambert-grid.constants';
+import type { DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 
 /** Every allowed `Mission.dest` / `MissionIndex.dest` value. */
 export const MISSION_CATALOG_DESTS: readonly Destination[] = [

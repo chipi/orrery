@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { findApsidesIndices } from './find-apsides';
-import type { Vec2 } from '$lib/orbital/mission-arc';
+import type { Vec2 } from './mission-arc';
 
 describe('findApsidesIndices', () => {
   it('returns null for fewer than 3 points', () => {

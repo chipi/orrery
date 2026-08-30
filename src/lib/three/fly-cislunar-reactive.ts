@@ -9,7 +9,7 @@ import {
   type CislunarProfile,
 } from '$lib/orbital/cislunar/cislunar-geometry';
 import type { BoldArrow } from '$lib/three/bold-arrow';
-import type { MissionTimeline } from '$lib/orbital/mission-arc';
+import type { MissionTimeline } from '$lib/physics/transfer/mission-arc';
 import type { LoadedMission } from '$lib/fly-mission-apply';
 import {
   CISLUNAR_PHASE_COLORS,

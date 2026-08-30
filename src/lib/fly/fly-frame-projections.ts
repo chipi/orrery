@@ -8,7 +8,7 @@ import {
 import { markerStateFor, type RevealResult } from '$lib/orbital/cislunar/cislunar-marker-reveal';
 import { defaultEventLabel } from '$lib/fly-event-labels';
 import type { PhaseMarker, ScienceRef } from '$lib/orbital/cislunar/cislunar-events';
-import { spacecraftPos, type MissionTimeline, type Vec2 } from '$lib/orbital/mission-arc';
+import { spacecraftPos, type MissionTimeline, type Vec2 } from '$lib/physics/transfer/mission-arc';
 import { SCALE_3D } from '$lib/fly-scene-constants';
 import { pickVisibleMilestones, fdLegProgress } from '$lib/fly/fly-frame-selectors';
 import type { LoadedMission } from '$lib/fly-mission-apply';

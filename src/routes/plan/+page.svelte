@@ -4,7 +4,7 @@
   import { page } from '$app/state';
   import { base } from '$app/paths';
   import { dvToRGB, dvToCss, dayToLongDate, dayToShortDate } from '$lib/porkchop';
-  import { geoTransferDv } from '$lib/lambert-geocentric';
+  import { geoTransferDv } from '$lib/physics/transfer/lambert-geocentric';
   import { interplanetaryMoonDv } from '$lib/moon-transfer';
   import { MOONS } from '$lib/moon-transfer.constants';
   import { trackFilterChange } from '$lib/analytics';
@@ -18,7 +18,7 @@
     isMoonMissionDest,
     type DestinationId,
     type PlanDestinationId,
-  } from '$lib/lambert-grid.constants';
+  } from '$lib/physics/transfer/lambert-grid.constants';
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { TrajectoryArrowIcon } from '$lib/components/icons';

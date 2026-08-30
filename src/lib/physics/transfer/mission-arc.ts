@@ -22,8 +22,8 @@ import {
   R_EARTH_AU,
   R_MARS_AU,
   type DestinationId,
-} from '$lib/lambert-grid.constants';
-import { eccentricAnomaly } from '$lib/physics/ephemeris/kepler';
+} from './lambert-grid.constants';
+import { eccentricAnomaly } from '../ephemeris/kepler';
 
 /** Mars-specific Hohmann transfer constants — kept as named exports for
  *  back-compat with /fly free-return rendering (ORRERY DEMO scenario). */

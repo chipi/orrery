@@ -59,8 +59,8 @@ import { fetchAgencyPrimaryImageUrls, normalizeAgency } from './agency-mission-s
 import type { Destination } from '../src/types/mission.ts';
 import { join, dirname } from 'node:path';
 import { createCanvas } from 'canvas';
-import { earthPos, outboundArc } from '../src/lib/orbital/mission-arc.ts';
-import { DESTINATIONS, R_EARTH_AU } from '../src/lib/lambert-grid.constants.ts';
+import { earthPos, outboundArc } from '../src/lib/physics/transfer/mission-arc.ts';
+import { DESTINATIONS, R_EARTH_AU } from '../src/lib/physics/transfer/lambert-grid.constants.ts';
 import { missionDestToHeliocentricDestinationId } from '../src/lib/mission-dest.ts';
 import { dateToSimDay } from '../src/lib/sim-day.ts';
 import {

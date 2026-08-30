@@ -19,15 +19,15 @@
  * patched-conic here is the honest *upper* bound, and the caption says so.
  */
 
-import { solveLambert } from './lambert';
+import { solveLambert } from '$lib/physics/transfer/lambert';
 import { eccentricAnomaly } from './physics/ephemeris/kepler';
-import { DV_FAILED } from './lambert-grid';
+import { DV_FAILED } from '$lib/physics/transfer/lambert-grid';
 import {
   EARTH_A0,
   EARTH_MEAN_MOTION_RAD_PER_DAY,
   MU_SUN,
   R_EARTH_AU,
-} from './lambert-grid.constants';
+} from '$lib/physics/transfer/lambert-grid.constants';
 import {
   MU_HOST,
   lowOrbitRadiusKm,

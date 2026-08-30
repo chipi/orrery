@@ -23,8 +23,8 @@ import {
   destinationPos,
   transferEllipse,
   type Vec2,
-} from './orbital/mission-arc';
-import type { DestinationId } from './lambert-grid.constants';
+} from '$lib/physics/transfer/mission-arc';
+import type { DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 
 /** Heliocentric position in AU. y is ecliptic-out-of-plane (0 for the
  *  default in-plane transfers we support today). */

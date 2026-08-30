@@ -34,7 +34,7 @@ import {
   type InterplanetaryProfile,
   type Vec3Au,
 } from '../../src/lib/interplanetary-geometry.ts';
-import type { DestinationId } from '../../src/lib/lambert-grid.constants.ts';
+import type { DestinationId } from '../../src/lib/physics/transfer/lambert-grid.constants.ts';
 
 const TARGET_WAYPOINTS = 100;
 

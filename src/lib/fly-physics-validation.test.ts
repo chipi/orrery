@@ -19,8 +19,8 @@
 import { describe, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { earthPos, outboundArc } from './orbital/mission-arc';
-import { DESTINATIONS, R_EARTH_AU, R_MARS_AU } from './lambert-grid.constants';
+import { earthPos, outboundArc } from '$lib/physics/transfer/mission-arc';
+import { DESTINATIONS, R_EARTH_AU, R_MARS_AU } from '$lib/physics/transfer/lambert-grid.constants';
 import { dateToSimDay } from './sim-day';
 import { heliocentricSpeed } from './orbital/fly-physics';
 import { expectCloseTo } from './test-helpers/expect-close';

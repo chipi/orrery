@@ -10,8 +10,8 @@
  * v0.3.x (ADR-028): + Uranus, Neptune, Pluto, Ceres (9 destinations).
  */
 
-import planetsData from '../../static/data/planets.json';
-import smallBodiesData from '../../static/data/small-bodies.json';
+import planetsData from '../../../../static/data/planets.json';
+import smallBodiesData from '../../../../static/data/small-bodies.json';
 
 type PlanetEntry = {
   name: string;

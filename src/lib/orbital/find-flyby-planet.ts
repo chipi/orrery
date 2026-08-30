@@ -19,8 +19,8 @@
  * upcoming animate-loop split (post-#332 §3).
  */
 
-import { earthPos, destinationPos } from '$lib/orbital/mission-arc';
-import type { DestinationId } from '$lib/lambert-grid.constants';
+import { earthPos, destinationPos } from '$lib/physics/transfer/mission-arc';
+import type { DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 
 // Earth isn't a `DestinationId` (it's the universal departure body in
 // the Lambert grid), but flyby cinema treats Earth like any other

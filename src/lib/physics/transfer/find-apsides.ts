@@ -19,7 +19,7 @@
  * need scene objects.
  */
 
-import type { Vec2 } from '$lib/orbital/mission-arc';
+import type { Vec2 } from './mission-arc';
 
 export interface ApsidesIndices {
   /** Index of the point closest to (centreX, centreZ). */

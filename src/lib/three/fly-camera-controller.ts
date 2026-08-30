@@ -3,7 +3,7 @@ import type { HelioSceneHandles } from '$lib/three/fly-helio-scene';
 import type { FlyUpdaters } from '$lib/three/fly-updaters';
 import type { HelioReactiveOverlays } from '$lib/three/fly-helio-reactive';
 import type { CinematicBeatState } from '$lib/fly-cinematic-beats';
-import type { MissionTimeline, Vec2 } from '$lib/orbital/mission-arc';
+import type { MissionTimeline, Vec2 } from '$lib/physics/transfer/mission-arc';
 import type { LoadedMission } from '$lib/fly-mission-apply';
 import {
   A_MOON_KM,
@@ -12,11 +12,11 @@ import {
   moonEciPos,
   type CislunarTrajectory,
 } from '$lib/orbital/cislunar/cislunar-geometry';
-import { R_EARTH_AU, type DestinationId } from '$lib/lambert-grid.constants';
+import { R_EARTH_AU, type DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 import type { CislunarSceneHandles } from '$lib/three/fly-cislunar-scene';
 import { SCALE_3D, cameraDistanceFor } from '$lib/fly-scene-constants';
 import { moonHelioPos } from '$lib/fly-moon-arc';
-import { earthPos, destinationPos, spacecraftPos } from '$lib/orbital/mission-arc';
+import { earthPos, destinationPos, spacecraftPos } from '$lib/physics/transfer/mission-arc';
 import {
   CINEMATIC_TIMINGS,
   computeAfterglowCameraFrame,
@@ -48,7 +48,7 @@ import {
   PLANET_SIZES,
 } from '$lib/orbital/find-flyby-planet';
 import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
-import { predictShipPosAtMet } from '$lib/orbital/predict-ship-pos';
+import { predictShipPosAtMet } from '$lib/physics/transfer/predict-ship-pos';
 import { sampleCislunarSpacecraftPos } from '$lib/orbital/sample-cislunar-spacecraft';
 
 /**
@@ -215,7 +215,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
    *  deps.getOutPts() (which already encode the planned deps.getMission() curve). Used to
    *  predict the spacecraft's position at the flyby peak so the
    *  camera knows which side of the planet the ship will be on. */
-  // predictShipPosAtMet lives in $lib/orbital/predict-ship-pos — pure
+  // predictShipPosAtMet lives in $lib/physics/transfer/predict-ship-pos — pure
   // helper, unit-tested. The closure used to be inline here.
   // The previous computeFlybyChoreographyCamT (perpendicular
   // azimuth + 90° pan sweep) was replaced by the inline

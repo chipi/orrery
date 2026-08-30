@@ -25,8 +25,8 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { computeMissionApply, type MissionApplyDefaults } from '../src/lib/fly-mission-apply';
-import { earthPos, destinationPos } from '../src/lib/orbital/mission-arc';
-import { predictShipPosAtMet } from '../src/lib/orbital/predict-ship-pos';
+import { earthPos, destinationPos } from '../src/lib/physics/transfer/mission-arc';
+import { predictShipPosAtMet } from '../src/lib/physics/transfer/predict-ship-pos';
 import { PLANET_SIZES, findFlybyPlanetFromLabel } from '../src/lib/orbital/find-flyby-planet';
 import {
   planFlybyShot,

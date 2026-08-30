@@ -1,6 +1,6 @@
 import { get } from './core';
 import type { PorkchopGrid } from '$types/porkchop-grid';
-import type { PlanDestinationId } from '$lib/lambert-grid.constants';
+import type { PlanDestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 
 /**
  * Pre-computed porkchop grid for a destination (v0.1.6 / ADR-026).

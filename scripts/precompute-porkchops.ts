@@ -17,13 +17,17 @@
 
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { computePorkchopGrid, DV_FAILED, type LambertRequest } from '../src/lib/lambert-grid';
+import {
+  computePorkchopGrid,
+  DV_FAILED,
+  type LambertRequest,
+} from '../src/lib/physics/transfer/lambert-grid';
 import {
   DESTINATIONS as DEST_ELEMENTS,
   type DestinationId,
-} from '../src/lib/lambert-grid.constants';
+} from '../src/lib/physics/transfer/lambert-grid.constants';
 import type { MissionType } from '../src/types/porkchop-grid';
-import { geoTransferDv } from '../src/lib/lambert-geocentric';
+import { geoTransferDv } from '../src/lib/physics/transfer/lambert-geocentric';
 import { interplanetaryMoonDv } from '../src/lib/moon-transfer';
 import { MOONS } from '../src/lib/moon-transfer.constants';
 

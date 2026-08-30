@@ -7,9 +7,9 @@ import {
   buildCoastLine,
 } from '$lib/orbit-overlays';
 import { BoldArrow } from '$lib/three/bold-arrow';
-import { findApsidesIndices } from '$lib/orbital/find-apsides';
+import { findApsidesIndices } from '$lib/physics/transfer/find-apsides';
 import { onLayerChange } from '$lib/science-layers';
-import { earthPos, type Vec2 } from '$lib/orbital/mission-arc';
+import { earthPos, type Vec2 } from '$lib/physics/transfer/mission-arc';
 
 /**
  * `/fly` heliocentric REACTIVE overlay layer (RFC-036 WS-B — scene-host teardown).

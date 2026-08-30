@@ -17,7 +17,7 @@ import {
   R_EARTH_AU,
   R_MARS_AU,
   type DestinationId,
-} from '$lib/lambert-grid.constants';
+} from '$lib/physics/transfer/lambert-grid.constants';
 import { SCALE_3D } from '$lib/fly-scene-constants';
 
 /**

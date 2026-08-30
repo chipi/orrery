@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import type { Vec2 } from '$lib/orbital/mission-arc';
+import type { Vec2 } from '$lib/physics/transfer/mission-arc';
 import { SCALE_3D } from '$lib/fly-scene-constants';
 
 /**

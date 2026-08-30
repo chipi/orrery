@@ -1,7 +1,7 @@
 import type * as THREE from 'three';
-import type { Vec2 } from '$lib/orbital/mission-arc';
+import type { Vec2 } from '$lib/physics/transfer/mission-arc';
 import type { CislunarTrajectory, CislunarProfile } from '$lib/orbital/cislunar/cislunar-geometry';
-import type { DestinationId } from '$lib/lambert-grid.constants';
+import type { DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 
 /**
  * Typed contracts for the /fly per-frame + per-mission updater

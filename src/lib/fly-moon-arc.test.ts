@@ -7,7 +7,7 @@ import {
   moonHelioArc,
   buildArcs,
 } from './fly-moon-arc';
-import { earthPos, marsPos } from './orbital/mission-arc';
+import { earthPos, marsPos } from '$lib/physics/transfer/mission-arc';
 
 describe('fly-moon-arc constants', () => {
   it('ARC_STEPS density matches /fly +page.svelte intent (≥ 256)', () => {

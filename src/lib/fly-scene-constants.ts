@@ -1,4 +1,4 @@
-import { DESTINATIONS, type DestinationId } from '$lib/lambert-grid.constants';
+import { DESTINATIONS, type DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 
 /**
  * Pure scene-scale constants + camera helper for /fly's heliocentric

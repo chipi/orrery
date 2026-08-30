@@ -31,5 +31,13 @@ export const MU_MOON_KM3_S2 = 4902.8;
 
 // ─── Earth geometry + standard gravity ───────────────────────────────────────
 export const R_EARTH_M = 6_371_000; // IUGG mean (volumetric) radius
+/** Earth mean radius (km) = R_EARTH_M / 1000. */
+export const R_EARTH_KM = 6371;
 /** Standard gravity g₀ (m/s²) — the reference for Isp and Earth-relative weights. */
 export const G0 = 9.80665;
+
+// ─── Moon geometry + orbit (M2 · "reach the Moon") ───────────────────────────
+/** Moon mean radius (km). */
+export const R_MOON_KM = 1737.4;
+/** Moon mean orbital radius / semi-major axis about Earth (km). */
+export const MOON_ORBIT_RADIUS_KM = 384_400;

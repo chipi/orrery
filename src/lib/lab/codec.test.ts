@@ -1,5 +1,13 @@
 import { describe, it, expect } from 'vitest';
-import { encodeNotebook, decodeNotebook, NOTEBOOK_CODEC_VERSION, type CodecCell } from './codec';
+import {
+  encodeNotebook,
+  decodeNotebook,
+  encodeOrrlab,
+  decodeOrrlab,
+  NOTEBOOK_CODEC_VERSION,
+  type CodecCell,
+  type OrrlabCell,
+} from './codec';
 import { recomputeNotebook } from './notebook';
 import { REGISTRY, defaultInputs } from '$lib/physics/registry';
 import { GOALS } from '$lib/physics/registry/goals';
@@ -137,5 +145,80 @@ describe('codec · hostile / malformed input degrades fail-honest', () => {
     const back = decodeNotebook(hostile, REGISTRY);
     expect(back).not.toBeNull();
     expect(() => recomputeNotebook(back!, REGISTRY)).not.toThrow();
+  });
+});
+
+// ─── .orrlab.json (id-wire ↔ index-wire) ────────────────────────────────────
+function m1OrrlabCells(): OrrlabCell[] {
+  return m1Cells().map((c, i) => ({ ...c, id: `s${i}` }));
+}
+
+describe('codec · .orrlab round-trip (id wires ↔ index wires)', () => {
+  it('encode → decode preserves formulaId, inputs, and rehydrates index wires', () => {
+    const cells = m1OrrlabCells();
+    const doc = encodeOrrlab(cells, 'My launch');
+    expect(doc.orrlab).toBe(1);
+    expect(doc.title).toBe('My launch');
+    // the verdict card serialises its wire as an ID reference (fromCard), not an index
+    const verdict = doc.cards[5];
+    expect(verdict.wires?.[0].fromCard).toBe('s4');
+
+    const back = decodeOrrlab(doc, REGISTRY);
+    expect(back).not.toBeNull();
+    expect(back!.title).toBe('My launch');
+    expect(back!.cells).toHaveLength(6);
+    // id wire 's4' rehydrated back to index 4
+    expect(back!.cells[5].wires?.[0]).toEqual({
+      fromIndex: 4,
+      output: 'deltaV',
+      toInput: 'capacityKms',
+    });
+    const states = recomputeNotebook(back!.cells, REGISTRY);
+    expect(states[5].status === 'ok' || states[5].status === 'fail').toBe(true);
+  });
+
+  it('the file carries per-card note (kept OUT of the URL codec)', () => {
+    const cells = m1OrrlabCells();
+    cells[0].note = 'start here';
+    const doc = encodeOrrlab(cells, 'x');
+    expect(doc.cards[0].note).toBe('start here');
+  });
+});
+
+describe('codec · .orrlab hostile / malformed', () => {
+  it('wrong or missing version → null', () => {
+    expect(decodeOrrlab({ orrlab: 2, cards: [] }, REGISTRY)).toBeNull();
+    expect(decodeOrrlab({ cards: [] }, REGISTRY)).toBeNull();
+    expect(decodeOrrlab({ orrlab: 1 }, REGISTRY)).toBeNull();
+    expect(decodeOrrlab('nope', REGISTRY)).toBeNull();
+  });
+
+  it('a wire to an unknown card id is dropped', () => {
+    const doc = {
+      orrlab: 1,
+      title: 't',
+      cards: [
+        { id: 'a', formulaId: 'tsiolkovsky', inputs: {} },
+        {
+          id: 'b',
+          formulaId: 'delta-v-margin',
+          inputs: { capacityKms: 12, requiredKms: 9.4 },
+          wires: [{ fromCard: 'ghost', output: 'deltaV', toInput: 'capacityKms' }],
+        },
+      ],
+    };
+    const back = decodeOrrlab(doc, REGISTRY)!;
+    expect(back.cells[1].wires ?? []).toHaveLength(0);
+  });
+
+  it('an out-of-domain body input is clamped on decode', () => {
+    const bodyField = REGISTRY.get('weight')!.inputs.find((f) => f.kind === 'body')!;
+    const doc = {
+      orrlab: 1,
+      title: 't',
+      cards: [{ id: 'a', formulaId: 'weight', inputs: { massKg: 1, body: 'xyzzy' } }],
+    };
+    const back = decodeOrrlab(doc, REGISTRY)!;
+    expect(back.cells[0].inputs.body).toBe(bodyField.default);
   });
 });

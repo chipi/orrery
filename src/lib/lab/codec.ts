@@ -25,8 +25,8 @@
  *     further un-honours forward/cyclic/out-of-range indices);
  *   - an unknown `formulaId` is preserved verbatim so the engine surfaces `unknown-formula`.
  */
-import type { Registry, FormulaDef, FieldSpec } from '$lib/physics/spec';
-import type { Cell } from './notebook';
+import type { Registry, FormulaDef, FieldSpec, Notebook, Card } from '$lib/physics/spec';
+import type { Cell, CellWire } from './notebook';
 
 /** Frozen schema version. Bump only on a breaking grammar change (with a migration). */
 export const NOTEBOOK_CODEC_VERSION = 1;
@@ -172,4 +172,74 @@ export function decodeNotebook(s: string, registry: Registry): CodecCell[] | nul
     cells.push(cell);
   }
   return cells;
+}
+
+// ─── .orrlab.json (durable file) ────────────────────────────────────────────
+// The frozen `Notebook`/`Card` document format (spec.ts) — the durable sibling of
+// the URL codec. It uses ID-based wires (`Card.wires.fromCard`), so this converts
+// between the engine's index wires and the file's id wires (plan B2.1). The file
+// carries `title` + per-card `note` (user free text kept OUT of the URL).
+
+/** The cell shape encodeOrrlab reads: a UI cell (stable id) + optional note. */
+export interface OrrlabCell extends CodecCell {
+  id: string;
+  note?: string;
+}
+
+export function encodeOrrlab(cells: OrrlabCell[], title: string): Notebook {
+  const cards: Card[] = cells.map((c) => {
+    const card: Card = { id: c.id, formulaId: c.formulaId, inputs: c.inputs };
+    const wires = (c.wires ?? [])
+      .filter((w) => cells[w.fromIndex] !== undefined) // valid source index
+      .map((w) => ({ fromCard: cells[w.fromIndex].id, output: w.output, toInput: w.toInput }));
+    if (wires.length > 0) card.wires = wires;
+    if (c.selection && Object.keys(c.selection).length > 0) card.selection = c.selection;
+    if (c.note) card.note = c.note;
+    return card;
+  });
+  return { orrlab: 1, title, cards };
+}
+
+/**
+ * Decode a parsed `.orrlab.json` object (UNTRUSTED). Same sanitisation as the URL
+ * codec — inputs clamped to FieldSpec, unknown formula preserved — plus id→index
+ * wire rehydration. Returns null on a wrong/absent version or a non-array `cards`.
+ */
+export function decodeOrrlab(
+  json: unknown,
+  registry: Registry,
+): { title: string; cells: CodecCell[] } | null {
+  if (!isRecord(json) || json.orrlab !== NOTEBOOK_CODEC_VERSION || !Array.isArray(json.cards)) {
+    return null;
+  }
+  const rawCards = json.cards.filter(isRecord);
+  const idToIndex = new Map<string, number>();
+  rawCards.forEach((c, i) => {
+    if (typeof c.id === 'string') idToIndex.set(c.id, i);
+  });
+
+  const cells: CodecCell[] = [];
+  for (const rc of rawCards) {
+    if (typeof rc.formulaId !== 'string') continue;
+    const def = registry.get(rc.formulaId);
+    const cell: CodecCell = { formulaId: rc.formulaId, inputs: sanitizeInputs(def, rc.inputs) };
+    const sel = sanitizeRecord(rc.selection);
+    if (sel) cell.selection = sel;
+    if (Array.isArray(rc.wires)) {
+      const wires = rc.wires
+        .filter(isRecord)
+        .map((w): CellWire | null => {
+          const from = typeof w.fromCard === 'string' ? idToIndex.get(w.fromCard) : undefined;
+          if (from === undefined || typeof w.output !== 'string' || typeof w.toInput !== 'string') {
+            return null;
+          }
+          return { fromIndex: from, output: w.output, toInput: w.toInput };
+        })
+        .filter((w): w is CellWire => w !== null);
+      if (wires.length > 0) cell.wires = wires;
+    }
+    cells.push(cell);
+  }
+  const title = typeof json.title === 'string' ? json.title : 'Notebook';
+  return { title, cells };
 }

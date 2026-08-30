@@ -21,7 +21,13 @@
   import type { Goal, FormulaResult } from '$lib/physics/spec';
   import { REGISTRY, defaultInputs } from '$lib/physics/registry';
   import { recomputeNotebook, type Cell, type CellComputed, type CellWire } from './notebook';
-  import { encodeNotebook, decodeNotebook, type CodecCell } from './codec';
+  import {
+    encodeNotebook,
+    decodeNotebook,
+    encodeOrrlab,
+    decodeOrrlab,
+    type CodecCell,
+  } from './codec';
   import Card from './Card.svelte';
 
   type Props = {
@@ -153,6 +159,41 @@
     }
     clearTimeout(shareTimer);
     shareTimer = setTimeout(() => (shareState = 'idle'), 2000);
+  }
+
+  // ─── Save / Load .orrlab.json (durable file) ──────────────────────────────
+  let fileInput = $state<HTMLInputElement>();
+  let loadError = $state('');
+
+  function saveFile(): void {
+    const title = restored ? 'Your notebook' : t(goal.titleKey);
+    const doc = encodeOrrlab(cells, title);
+    const blob = new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'notebook.orrlab.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  async function loadFile(e: Event): Promise<void> {
+    const input = e.currentTarget as HTMLInputElement;
+    const file = input.files?.[0];
+    input.value = ''; // allow re-selecting the same file
+    if (!file) return;
+    loadError = '';
+    try {
+      const decoded = decodeOrrlab(JSON.parse(await file.text()), REGISTRY);
+      if (decoded && decoded.cells.length > 0) {
+        cells = fromCodec(decoded.cells);
+        restored = true;
+      } else {
+        loadError = 'Not a valid .orrlab notebook.';
+      }
+    } catch {
+      loadError = 'Could not read that file.';
+    }
   }
 
   // ─── Focus (one card full-width) — a URL-param mode, not a sub-route ───────
@@ -319,20 +360,39 @@
         <span class="nb__goal-kicker">{restored ? 'Custom notebook' : 'Goal'}</span>
         <h2 class="nb__goal-title">{restored ? 'Your notebook' : t(goal.titleKey)}</h2>
       </div>
-      <button
-        type="button"
-        class="nb__share"
-        class:nb__share--done={shareState === 'copied'}
-        onclick={share}
-        aria-label="Share this notebook — copy a link"
-      >
-        {shareState === 'copied'
-          ? '✓ LINK COPIED'
-          : shareState === 'failed'
-            ? 'LINK IN URL'
-            : 'SHARE'}
-      </button>
+      <div class="nb__tools">
+        <button
+          type="button"
+          class="nb__tool nb__tool--accent"
+          class:nb__tool--done={shareState === 'copied'}
+          onclick={share}
+          aria-label="Share this notebook — copy a link"
+        >
+          {shareState === 'copied' ? '✓ COPIED' : shareState === 'failed' ? 'IN URL' : 'SHARE'}
+        </button>
+        <button type="button" class="nb__tool" onclick={saveFile} aria-label="Save as a file"
+          >SAVE</button
+        >
+        <button
+          type="button"
+          class="nb__tool"
+          onclick={() => fileInput?.click()}
+          aria-label="Load a notebook file">LOAD</button
+        >
+        <input
+          bind:this={fileInput}
+          type="file"
+          accept=".json,.orrlab.json,application/json"
+          class="nb__file"
+          onchange={loadFile}
+          aria-hidden="true"
+          tabindex="-1"
+        />
+      </div>
     </header>
+    {#if loadError}
+      <p class="nb__load-error" role="alert">{loadError}</p>
+    {/if}
 
     <ol class="nb__steps">
       {#each cells as cell, i (cell.id)}
@@ -389,33 +449,67 @@
     padding-left: 0.75rem;
   }
 
-  .nb__share {
+  .nb__tools {
+    display: flex;
+    gap: 0.4rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nb__tool {
     font-family: 'Space Mono', monospace;
     font-size: 0.62rem;
     letter-spacing: 1.5px;
-    color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.08);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: rgba(232, 232, 232, 0.75);
+    background: rgba(232, 232, 232, 0.04);
+    border: 1px solid rgba(232, 232, 232, 0.2);
     border-radius: 2px;
-    padding: 0 0.9rem;
+    padding: 0 0.8rem;
     min-height: 40px;
     cursor: pointer;
     white-space: nowrap;
-    flex-shrink: 0;
     transition: background 0.15s;
   }
 
-  .nb__share:hover,
-  .nb__share:focus-visible {
-    background: rgba(78, 205, 196, 0.16);
-    outline: 2px solid #4ecdc4;
+  .nb__tool:hover,
+  .nb__tool:focus-visible {
+    background: rgba(232, 232, 232, 0.1);
+    outline: 2px solid rgba(232, 232, 232, 0.5);
     outline-offset: 2px;
   }
 
-  .nb__share--done {
+  .nb__tool--accent {
+    color: #4ecdc4;
+    background: rgba(78, 205, 196, 0.08);
+    border-color: rgba(78, 205, 196, 0.4);
+  }
+
+  .nb__tool--accent:hover,
+  .nb__tool--accent:focus-visible {
+    background: rgba(78, 205, 196, 0.16);
+    outline-color: #4ecdc4;
+  }
+
+  .nb__tool--done {
     color: #ffc850;
     border-color: rgba(255, 200, 80, 0.5);
     background: rgba(255, 200, 80, 0.1);
+  }
+
+  .nb__file {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nb__load-error {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: #c1440e;
+    margin: -0.5rem 0 0;
   }
 
   .nb__goal-kicker {

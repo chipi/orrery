@@ -15,6 +15,7 @@ import { momentum } from '../mechanics/momentum';
 import { freeFall, projectile } from '../mechanics/kinematics';
 import { circularVelocityKms, visVivaKms, hohmannTransfer } from '../mechanics/orbits';
 import { poweredDescentDvKms } from '../mechanics/descent';
+import { terminalVelocityMs, SURFACE_DENSITY_KGM3 } from '../mechanics/atmosphere';
 import { bodyGravityMs2 } from '../mechanics/bodies';
 import { locationModel, rotationVelocityKms } from '../util/location';
 import { helioModel, synodicPeriodS } from '../util/heliocentric';
@@ -1170,6 +1171,321 @@ export const launchWindow: FormulaDef<{ depart: string; arrive: string }> = {
   },
 };
 
+const ATMO_BODY_IDS = ['earth', 'mars', 'venus', 'moon', 'mercury'] as const;
+
+/**
+ * Terminal velocity in an atmosphere (M5 "land on Mars") — v_t = √(2mg/(ρ·A·C_d)),
+ * the speed where drag balances weight. The Mars lesson: its air is ~1/60 of Earth's,
+ * so a capsule still falls at hundreds of m/s — a parachute isn't enough. Airless
+ * worlds (Moon/Mercury, ρ=0) have NO terminal velocity → fail-honest (M3's burn is
+ * the only way down). Curve shows how a bigger drag area (a chute) lowers v_t.
+ */
+export const terminalVelocity: FormulaDef<{
+  massKg: number;
+  areaM2: number;
+  cd: number;
+  body: string;
+}> = {
+  id: 'terminal-velocity',
+  titleKey: 'lab.f.terminal.title',
+  domain: 'descent',
+  tier: 6,
+  prereqs: ['weight'],
+  latex: 'v_t = \\sqrt{\\dfrac{2mg}{\\rho\\,A\\,C_d}}',
+  inputs: [
+    {
+      key: 'massKg',
+      labelKey: 'lab.f.terminal.mass',
+      units: 'kg',
+      kind: 'number',
+      default: 2000,
+      min: 1,
+      max: 1e6,
+    },
+    {
+      key: 'areaM2',
+      labelKey: 'lab.f.terminal.area',
+      units: '',
+      kind: 'number',
+      default: 10,
+      min: 0.1,
+      max: 2000,
+    },
+    {
+      key: 'cd',
+      labelKey: 'lab.f.terminal.cd',
+      units: '',
+      kind: 'number',
+      default: 1.5,
+      min: 0.1,
+      max: 3,
+    },
+    {
+      key: 'body',
+      labelKey: 'lab.f.terminal.body',
+      units: '',
+      kind: 'body',
+      default: 'mars',
+      bodyIds: [...ATMO_BODY_IDS],
+    },
+  ],
+  outputs: [{ key: 'vTerminal', labelKey: 'lab.f.terminal.vt', units: 'm/s' }],
+  compute: ({ massKg, areaM2, cd, body }) => {
+    const loc = locationModel(body);
+    if (!loc) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions: ['lab.assume.uniform-g'],
+      } satisfies FormulaResult;
+    }
+    const rho = SURFACE_DENSITY_KGM3[body] ?? 0;
+    if (rho <= 0) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.terminal.err-airless' },
+        assumptions: ['lab.assume.uniform-g'],
+      } satisfies FormulaResult;
+    }
+    if (!Number.isFinite(massKg) || !Number.isFinite(areaM2) || !Number.isFinite(cd)) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.uniform-g'],
+      } satisfies FormulaResult;
+    }
+    const vt = terminalVelocityMs(massKg, loc.gMs2, rho, areaM2, cd);
+    const points: Vec2[] = [];
+    for (let A = 1; A <= 400.001; A += 8) {
+      points.push({ x: A, y: terminalVelocityMs(massKg, loc.gMs2, rho, A, cd) });
+    }
+    return {
+      values: { vTerminal: { value: vt, units: 'm/s' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.uniform-g', 'lab.assume.constant-density'],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'mechanics/atmosphere' },
+        assumptions: ['lab.assume.constant-density'],
+        x: { labelKey: 'lab.axis.area', units: '' },
+        y: { labelKey: 'lab.axis.speed', units: 'm/s' },
+        series: [{ points }],
+        marks: [{ at: { x: areaM2, y: vt }, labelKey: 'lab.mark.you-are-here', kind: 'point' }],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Soft-landing check (M5 verdict) — is your terminal velocity slow enough to touch
+ * down intact? margin = safe − terminal. On Mars, even under a big chute the terminal
+ * speed dwarfs a survivable ~5 m/s → fail-honest: you MUST fire engines (the sky-crane).
+ * That failure IS the lesson — why Mars EDL is the "seven minutes of terror".
+ */
+export const softLandingCheck: FormulaDef<{ terminalMs: number; safeMs: number }> = {
+  id: 'soft-landing-check',
+  titleKey: 'lab.f.soft-land.title',
+  domain: 'descent',
+  tier: 7,
+  prereqs: ['terminal-velocity'],
+  latex: '\\text{margin} = v_{\\text{safe}} - v_t',
+  inputs: [
+    {
+      key: 'terminalMs',
+      labelKey: 'lab.f.soft-land.terminal',
+      units: 'm/s',
+      kind: 'number',
+      default: 50,
+      min: 0,
+      max: 2000,
+    },
+    {
+      key: 'safeMs',
+      labelKey: 'lab.f.soft-land.safe',
+      units: 'm/s',
+      kind: 'number',
+      default: 5,
+      min: 0,
+      max: 50,
+    },
+  ],
+  outputs: [{ key: 'margin', labelKey: 'lab.f.soft-land.margin', units: 'm/s' }],
+  compute: ({ terminalMs, safeMs }) => {
+    if (!Number.isFinite(terminalMs) || !Number.isFinite(safeMs)) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.ideal-no-losses'],
+      } satisfies FormulaResult;
+    }
+    const margin = safeMs - terminalMs;
+    const base = {
+      assumptions: ['lab.assume.ideal-no-losses'],
+      figure: {
+        kind: 'dv-waterfall' as const,
+        provenance: { fidelity: 'computed' as const, module: 'mechanics/atmosphere' },
+        assumptions: ['lab.assume.ideal-no-losses'],
+        segments: [
+          { labelKey: 'lab.f.soft-land.safe', dv: safeMs, kind: 'gain' as const },
+          { labelKey: 'lab.f.soft-land.terminal', dv: terminalMs, kind: 'cost' as const },
+        ],
+      },
+    };
+    if (margin < 0) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.soft-land.err-too-fast' },
+        ...base,
+      } satisfies FormulaResult;
+    }
+    return {
+      values: { margin: { value: margin, units: 'm/s' } },
+      status: { ok: true },
+      ...base,
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Airbags (M5, a landing METHOD) — the cheap way the early rovers landed: bounce down
+ * cushioned by inflated bags. They survive an impact only up to a limit (~25 m/s for
+ * Pathfinder/MER). On Mars the parachute leaves you at ~50 m/s → too hard → you still
+ * need SOME retro first (which is exactly what Pathfinder did). Fails-honest above the
+ * limit — the honest reason airbags don't scale to heavy landers (hence the sky-crane).
+ */
+export const airbagsCheck: FormulaDef<{ impactMs: number; airbagLimitMs: number }> = {
+  id: 'airbags-check',
+  titleKey: 'lab.f.airbags.title',
+  domain: 'descent',
+  tier: 8,
+  prereqs: ['terminal-velocity'],
+  latex: 'v_{\\text{impact}} \\le v_{\\text{airbag}}',
+  inputs: [
+    {
+      key: 'impactMs',
+      labelKey: 'lab.f.airbags.impact',
+      units: 'm/s',
+      kind: 'number',
+      default: 50,
+      min: 0,
+      max: 2000,
+    },
+    {
+      key: 'airbagLimitMs',
+      labelKey: 'lab.f.airbags.limit',
+      units: 'm/s',
+      kind: 'number',
+      default: 25,
+      min: 0,
+      max: 100,
+    },
+  ],
+  outputs: [{ key: 'margin', labelKey: 'lab.f.airbags.margin', units: 'm/s' }],
+  compute: ({ impactMs, airbagLimitMs }) => {
+    if (!Number.isFinite(impactMs) || !Number.isFinite(airbagLimitMs)) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.ideal-no-losses'],
+      } satisfies FormulaResult;
+    }
+    const margin = airbagLimitMs - impactMs;
+    const base = {
+      assumptions: ['lab.assume.ideal-no-losses'],
+      figure: {
+        kind: 'dv-waterfall' as const,
+        provenance: { fidelity: 'computed' as const, module: 'mechanics/atmosphere' },
+        assumptions: ['lab.assume.ideal-no-losses'],
+        segments: [
+          { labelKey: 'lab.f.airbags.limit', dv: airbagLimitMs, kind: 'gain' as const },
+          { labelKey: 'lab.f.airbags.impact', dv: impactMs, kind: 'cost' as const },
+        ],
+      },
+    };
+    if (margin < 0) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.airbags.err-too-hard' },
+        ...base,
+      } satisfies FormulaResult;
+    }
+    return {
+      values: { margin: { value: margin, units: 'm/s' } },
+      status: { ok: true },
+      ...base,
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Retro-descent (M5, the second landing METHOD) — the powered burn that finishes what
+ * the parachute can't: it must null the terminal speed you arrive at down to a safe
+ * touchdown, so it provides Δv = v_t − v_safe. Compare it to the parachute (which alone
+ * fails on Mars): the parachute is free but limited by the air; the booster costs
+ * propellant but works anywhere, even the airless Moon. Every Mars lander uses both.
+ */
+export const retroDescent: FormulaDef<{ terminalMs: number; safeMs: number }> = {
+  id: 'retro-descent',
+  titleKey: 'lab.f.retro.title',
+  domain: 'descent',
+  tier: 8,
+  prereqs: ['terminal-velocity'],
+  latex: '\\Delta v_{\\text{retro}} = v_t - v_{\\text{safe}}',
+  inputs: [
+    {
+      key: 'terminalMs',
+      labelKey: 'lab.f.retro.terminal',
+      units: 'm/s',
+      kind: 'number',
+      default: 50,
+      min: 0,
+      max: 2000,
+    },
+    {
+      key: 'safeMs',
+      labelKey: 'lab.f.retro.safe',
+      units: 'm/s',
+      kind: 'number',
+      default: 5,
+      min: 0,
+      max: 50,
+    },
+  ],
+  outputs: [{ key: 'retroDv', labelKey: 'lab.f.retro.dv', units: 'm/s' }],
+  compute: ({ terminalMs, safeMs }) => {
+    if (!Number.isFinite(terminalMs) || !Number.isFinite(safeMs)) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.ideal-no-losses'],
+      } satisfies FormulaResult;
+    }
+    const retro = Math.max(0, terminalMs - safeMs);
+    return {
+      values: { retroDv: { value: retro, units: 'm/s' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.ideal-no-losses', 'lab.assume.uniform-g'],
+      figure: {
+        kind: 'dv-waterfall',
+        provenance: { fidelity: 'computed', module: 'mechanics/atmosphere' },
+        assumptions: ['lab.assume.ideal-no-losses'],
+        segments: [
+          { labelKey: 'lab.f.retro.terminal', dv: terminalMs, kind: 'cost' },
+          { labelKey: 'lab.f.retro.dv', dv: retro, kind: 'gain' },
+        ],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
 /** All registered formulas, keyed by id. Add a formula in exactly one place. */
 export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [tsiolkovsky.id, tsiolkovsky],
@@ -1188,6 +1504,10 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [descentBurn.id, descentBurn],
   [interplanetaryTransfer.id, interplanetaryTransfer],
   [launchWindow.id, launchWindow],
+  [terminalVelocity.id, terminalVelocity],
+  [softLandingCheck.id, softLandingCheck],
+  [airbagsCheck.id, airbagsCheck],
+  [retroDescent.id, retroDescent],
 ]);
 
 /** Default input record for a formula (drives a first compute / the invariant tests). */

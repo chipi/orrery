@@ -151,6 +151,49 @@ export const getToMars: Goal = {
   ],
 };
 
+/**
+ * M5 "land on Mars" — the hardest landing, and the lesson is a FAILURE. Mars has air,
+ * but ~1/60 of Earth's: terminal velocity is still hundreds of m/s, and even a huge
+ * parachute only reaches tens of m/s. The soft-landing check comes up short → you must
+ * fire engines (the sky-crane). Two terminal-velocity rungs (bare capsule, then a big
+ * chute — presetInputs sets the area) feed the verdict, which fails HONEST: that's why
+ * every Mars lander ends under power ("seven minutes of terror").
+ */
+export const landOnMars: Goal = {
+  id: 'land-on-mars',
+  titleKey: 'lab.goal.land-mars.title',
+  family: 'spaceflight',
+  tier: 5,
+  prereqs: ['get-to-mars'],
+  path: [
+    {
+      formulaId: 'terminal-velocity',
+      narrativeKey: 'lab.goal.lom.terminal',
+      presetInputs: { body: 'mars', areaM2: 10 },
+    },
+    {
+      formulaId: 'terminal-velocity',
+      narrativeKey: 'lab.goal.lom.parachute',
+      presetInputs: { body: 'mars', areaM2: 200 },
+    },
+    {
+      formulaId: 'soft-landing-check',
+      narrativeKey: 'lab.goal.lom.verdict',
+      wiresFrom: [{ fromStep: 1, output: 'vTerminal', toInput: 'terminalMs' }],
+    },
+    {
+      formulaId: 'airbags-check',
+      narrativeKey: 'lab.goal.lom.airbags',
+      wiresFrom: [{ fromStep: 1, output: 'vTerminal', toInput: 'impactMs' }],
+    },
+    {
+      formulaId: 'retro-descent',
+      narrativeKey: 'lab.goal.lom.retro',
+      wiresFrom: [{ fromStep: 1, output: 'vTerminal', toInput: 'terminalMs' }],
+    },
+  ],
+};
+
 /** All goals, keyed by id. */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
@@ -158,6 +201,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [reachTheMoon.id, reachTheMoon],
   [landOnTheMoon.id, landOnTheMoon],
   [getToMars.id, getToMars],
+  [landOnMars.id, landOnMars],
 ]);
 
 /**

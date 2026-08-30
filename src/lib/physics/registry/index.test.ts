@@ -13,6 +13,8 @@ import {
   descentBurn,
   interplanetaryTransfer,
   launchWindow,
+  terminalVelocity,
+  softLandingCheck,
 } from './index';
 import { bodyGravityMs2 } from '../mechanics/bodies';
 import { helioModel } from '../util/heliocentric';
@@ -254,6 +256,24 @@ describe('M2 orbital formulas — happy-path numbers + fail branches', () => {
     const r = launchWindow.compute({ depart: 'earth', arrive: 'mars' });
     expect(r.status.ok).toBe(true);
     expect(r.values.synodic.value).toBeCloseTo(780, -1);
+  });
+
+  it('terminal-velocity (M5): a Mars capsule falls at hundreds of m/s; the Moon is airless', () => {
+    const mars = terminalVelocity.compute({ massKg: 2000, areaM2: 10, cd: 1.5, body: 'mars' });
+    expect(mars.status.ok).toBe(true);
+    expect(mars.values.vTerminal.value).toBeGreaterThan(150);
+    // Airless bodies have no terminal velocity → fail-honest.
+    const moon = terminalVelocity.compute({ massKg: 2000, areaM2: 10, cd: 1.5, body: 'moon' });
+    expect(moon.status.ok).toBe(false);
+    if (!moon.status.ok) expect(moon.status.reasonKey).toContain('airless');
+  });
+
+  it('soft-landing-check (M5): a fast terminal speed FAILS honest — the Mars lesson', () => {
+    const crash = softLandingCheck.compute({ terminalMs: 50, safeMs: 5 });
+    expect(crash.status.ok).toBe(false); // 50 m/s ≫ 5 m/s survivable → need powered descent
+    if (!crash.status.ok) expect(crash.status.reasonKey).toContain('too-fast');
+    const ok = softLandingCheck.compute({ terminalMs: 4, safeMs: 5 });
+    expect(ok.status.ok).toBe(true);
   });
 
   it('every planet offered by the interplanetary pickers resolves in helioModel (review MINOR-2)', () => {

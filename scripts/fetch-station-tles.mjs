@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Refresh the bundled station TLEs (#404) from Celestrak into
-// src/lib/satellite/station-tles.json. Run daily by the "Refresh station TLEs"
+// src/lib/physics/satellite/station-tles.json. Run daily by the "Refresh station TLEs"
 // workflow; the CI deploy chain picks up any diff. Keeps the bundled fallback
 // (used when the runtime Celestrak fetch is blocked) at most ~a day stale.
 //
@@ -10,7 +10,9 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
-const OUT = fileURLToPath(new URL('../src/lib/satellite/station-tles.json', import.meta.url));
+const OUT = fileURLToPath(
+  new URL('../src/lib/physics/satellite/station-tles.json', import.meta.url),
+);
 const CATNR = { iss: 25544, tiangong: 48274 };
 
 const data = JSON.parse(readFileSync(OUT, 'utf8'));

@@ -8,8 +8,8 @@
  * `Access-Control-Allow-Origin: *`, so the browser fetch works; in the Capacitor
  * WKWebView it's a native request either way.
  */
-import { parseTleBlock, type Tle } from './tle';
-import { stationTle, type StationId } from './stations';
+import { parseTleBlock, type Tle } from '$lib/physics/satellite/tle';
+import { stationTle, type StationId } from '$lib/physics/satellite/stations';
 
 const CATNR: Record<StationId, number> = { iss: 25544, tiangong: 48274 };
 const CACHE_MS = 24 * 3600 * 1000;

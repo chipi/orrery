@@ -13,9 +13,9 @@ import { skyPosition, julianDay } from '../physics/ephemeris';
 import { gmstRad } from '../physics/ephemeris/time';
 import { heliocentric, type PlanetId } from '../physics/ephemeris/planets';
 import { PLANETS, type SolarSystem } from '../explore-scene';
-import { propagate } from '../satellite/propagate';
-import { STATION_IDS, type StationId } from '../satellite/stations';
-import type { Tle } from '../satellite/tle';
+import { propagate } from '$lib/physics/satellite/propagate';
+import { STATION_IDS, type StationId } from '$lib/physics/satellite/stations';
+import type { Tle } from '$lib/physics/satellite/tle';
 
 const RE_KM = 6378.137;
 const STATION_TINT: Record<StationId, number> = { iss: 0x7cff9e, tiangong: 0xff9edc };

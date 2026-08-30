@@ -1,38 +1,35 @@
 <!--
-  /lab — Physics Lab, Notebook view shell (S3a).
+  /lab — Physics Lab, Notebook view (S3b · the v1 home).
 
-  Shows one Card at a time (selected from a formula picker). The equation-HTML
-  map was built at prerender time in +page.ts so KaTeX never ships to the browser
-  (ADR-034). The t() resolver is a humanizing passthrough for S3a; S3d wires
-  the real paraglide bundle.
+  A goal picker selects one Goal; the keyed <Notebook> renders it as a narrated
+  ladder of formula cards with live index-order recompute (a wired step consumes
+  an earlier step's output). The equation-HTML map is built at prerender time in
+  +page.ts so KaTeX never ships to the browser (ADR-034). The t() resolver is a
+  humanizing passthrough for now; S3d wires the real paraglide bundle.
 -->
 <script lang="ts">
   import 'katex/dist/katex.min.css';
-  import { REGISTRY } from '$lib/physics/registry';
-  import Card from '$lib/lab/Card.svelte';
+  import { GOALS } from '$lib/physics/registry/goals';
+  import Notebook from '$lib/lab/Notebook.svelte';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
   let { data }: Props = $props();
 
-  // Formula picker — default to tsiolkovsky
-  let selectedId = $state('tsiolkovsky');
+  // Goal picker — default to the M1 launch-a-rocket ladder.
+  let selectedGoalId = $state('launch-a-rocket');
+  const goal = $derived(GOALS.get(selectedGoalId) ?? [...GOALS.values()][0]);
 
-  const formula = $derived(REGISTRY.get(selectedId)!);
-  const equationHtml = $derived(data.equationHtml[selectedId] ?? '');
-
-  // S3a humanizing passthrough: last dot-segment, title-cased.
+  // Humanizing passthrough: last dot-segment, title-cased.
   // S3d replaces this with the real paraglide resolver.
   function t(key: string): string {
     const seg = key.split('.').at(-1) ?? key;
     return seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   }
 
-  // Human-readable formula label for the picker option
-  function formulaLabel(id: string): string {
-    const def = REGISTRY.get(id);
-    if (!def) return id;
-    return t(def.titleKey);
+  function goalLabel(id: string): string {
+    const g = GOALS.get(id);
+    return g ? t(g.titleKey) : id;
   }
 </script>
 
@@ -47,30 +44,30 @@
   <main class="lab__main">
     <header class="lab__header">
       <h1 class="lab__title">PHYSICS LAB</h1>
-      <p class="lab__subtitle">Interactive formula explorer</p>
+      <p class="lab__subtitle">First-principles physics, one goal at a time</p>
     </header>
 
-    <!-- Formula picker -->
+    <!-- Goal picker -->
     <div class="lab__picker">
-      <label for="formula-select" class="lab__picker-label">Formula</label>
+      <label for="goal-select" class="lab__picker-label">Goal</label>
       <select
-        id="formula-select"
+        id="goal-select"
         class="lab__picker-select"
-        bind:value={selectedId}
-        aria-label="Select formula"
+        bind:value={selectedGoalId}
+        aria-label="Select goal"
       >
-        {#each [...REGISTRY.keys()] as id (id)}
-          <option value={id}>{formulaLabel(id)}</option>
+        {#each [...GOALS.keys()] as id (id)}
+          <option value={id}>{goalLabel(id)}</option>
         {/each}
       </select>
     </div>
 
-    <!-- Single card -->
-    {#if formula}
-      <div class="lab__card-wrapper">
-        <Card {formula} {equationHtml} {t} />
-      </div>
-    {/if}
+    <!-- Notebook — remounts per goal so cell state re-seeds cleanly -->
+    <div class="lab__card-wrapper">
+      {#key selectedGoalId}
+        <Notebook {goal} equationHtml={data.equationHtml} {t} />
+      {/key}
+    </div>
   </main>
 </div>
 

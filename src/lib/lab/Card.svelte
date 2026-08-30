@@ -1,79 +1,74 @@
 <!--
-  Card — a single formula instance (S3a · UXS-015 §"The card").
+  Card — a single formula instance (S3a card · S3b controlled).
+
+  CONTROLLED: the parent (Notebook) owns cell state + runs the recompute engine,
+  then hands each card its `inputs` (wired values already substituted), its
+  `result`, and the `wiredKeys`/`upstreamFailed` flags. The card is presentational:
+  it renders controls, emits `onInput(key, value)`, and never computes wiring.
 
   Props:
-    formula      — FormulaDef for this card
-    equationHtml — pre-rendered KaTeX HTML (from +page.ts build-time map; ADR-034)
-    t            — i18n resolver; S3a uses a key-passthrough; S3d wires paraglide
+    formula        — FormulaDef for this card
+    equationHtml   — pre-rendered KaTeX HTML (build-time map; ADR-034)
+    t              — i18n resolver (S3a passthrough; S3d wires paraglide)
+    inputs         — current input values (resolved: wired keys already substituted)
+    result         — FormulaResult, or null when upstreamFailed (nothing computed)
+    onInput        — (key, value) → parent updates cell state → recompute
+    wiredKeys      — inputs driven by a wire → rendered read-only "derived"
+    upstreamFailed — a wired source produced no value → surface, do NOT fake a result
 
-  States (plan §2):
-    ok            — normal readout (teal)
-    fail-honest   — !result.status.ok → mars-red readout + reason key
-    upstream-failed — S3b wired inputs; placeholder comment marks the extension point
-
-  Momentum (no figure) → FigureRenderer is omitted gracefully.
-  KaTeX is NOT imported here — equationHtml is already-rendered static HTML.
+  States (plan §2): ok (teal) · fail-honest (mars-red + reasonKey) · upstream-failed.
+  Momentum (no figure) → FigureRenderer omitted. KaTeX is NOT imported here.
 -->
 <script lang="ts">
   import { base } from '$app/paths';
-  import type { FormulaDef, FieldSpec } from '$lib/physics/spec';
+  import type { FormulaDef, FieldSpec, FormulaResult } from '$lib/physics/spec';
   import FigureRenderer from './FigureRenderer.svelte';
-  import { defaultInputs } from '$lib/physics/registry';
 
   type Props = {
     formula: FormulaDef;
     equationHtml: string;
     t: (key: string) => string;
+    inputs: Record<string, number | string>;
+    result: FormulaResult | null;
+    onInput: (key: string, value: number | string) => void;
+    wiredKeys?: string[];
+    upstreamFailed?: boolean;
   };
 
-  let { formula, equationHtml, t }: Props = $props();
+  let {
+    formula,
+    equationHtml,
+    t,
+    inputs,
+    result,
+    onInput,
+    wiredKeys = [],
+    upstreamFailed = false,
+  }: Props = $props();
 
-  // ─── Local input state, seeded from formula defaults ──────────────────────
-  // `formulaId` and `formulaDefaults` are $derived so the $effect below can
-  // read reactive values rather than the prop directly, avoiding the
-  // state_referenced_locally warning that fires when a prop is read in a
-  // $state initializer or $effect without going through a reactive binding.
-  const formulaId = $derived(formula.id);
-  const formulaDefaults = $derived(defaultInputs(formula));
-
-  let trackedId = $state('');
-  let inputs = $state<Record<string, number | string>>({});
-
-  // Reset inputs to defaults whenever the formula changes.
-  $effect(() => {
-    if (formulaId !== trackedId) {
-      trackedId = formulaId;
-      inputs = { ...formulaDefaults };
-    }
-  });
-
-  // ─── Recompute on every input change ─────────────────────────────────────
-  const result = $derived(formula.compute(inputs));
+  const wired = $derived(new Set(wiredKeys));
+  const failed = $derived(upstreamFailed || (result != null && !result.status.ok));
 
   // ─── Helpers ─────────────────────────────────────────────────────────────
-  function numVal(v: number | string): number {
-    return typeof v === 'number' ? v : parseFloat(v) || 0;
+  function numVal(v: number | string | undefined): number {
+    if (typeof v === 'number') return v;
+    return v == null ? 0 : parseFloat(v) || 0;
   }
 
   function handleNumberInput(field: FieldSpec, e: Event): void {
-    const el = e.currentTarget as HTMLInputElement;
-    const v = parseFloat(el.value);
-    if (!isNaN(v)) {
-      inputs = { ...inputs, [field.key]: v };
-    }
+    const v = parseFloat((e.currentTarget as HTMLInputElement).value);
+    if (!isNaN(v)) onInput(field.key, v);
   }
 
   function handleSelectInput(field: FieldSpec, e: Event): void {
-    const el = e.currentTarget as HTMLSelectElement;
-    inputs = { ...inputs, [field.key]: el.value };
+    onInput(field.key, (e.currentTarget as HTMLSelectElement).value);
   }
 
   function handleDateInput(field: FieldSpec, e: Event): void {
-    const el = e.currentTarget as HTMLInputElement;
-    inputs = { ...inputs, [field.key]: el.value };
+    onInput(field.key, (e.currentTarget as HTMLInputElement).value);
   }
 
-  // Format a numeric output value compactly
+  // Format a numeric value compactly (readouts + derived wired cells).
   function fmt(v: number): string {
     if (Math.abs(v) >= 1e6 || (Math.abs(v) < 0.001 && v !== 0)) return v.toExponential(3);
     if (Math.abs(v) >= 100) return v.toFixed(2);
@@ -81,7 +76,7 @@
   }
 </script>
 
-<article class="card" class:card--fail={!result.status.ok}>
+<article class="card" class:card--fail={failed}>
   <!-- Title -->
   <header class="card__header">
     <h2 class="card__title">{t(formula.titleKey)}</h2>
@@ -107,12 +102,24 @@
   <!-- Parameter controls -->
   <section class="card__controls" aria-label="Parameters">
     {#each formula.inputs as field (field.key)}
-      <div class="card__field">
+      <div class="card__field" class:card__field--wired={wired.has(field.key)}>
         <label class="card__label" for="field-{formula.id}-{field.key}">
           {t(field.labelKey)}{field.units ? ` (${field.units})` : ''}
+          {#if wired.has(field.key)}
+            <span class="card__wired-chip" title="Wired from an earlier cell">&#8592; wired</span>
+          {/if}
         </label>
 
-        {#if field.kind === 'number'}
+        {#if wired.has(field.key)}
+          <!-- Wire-driven input: read-only derived value (not user-editable) -->
+          <output id="field-{formula.id}-{field.key}" class="card__derived">
+            {#if upstreamFailed}
+              <span class="card__derived-void">upstream failed</span>
+            {:else}
+              {fmt(numVal(inputs[field.key]))}<span class="card__derived-unit">{field.units}</span>
+            {/if}
+          </output>
+        {:else if field.kind === 'number'}
           <div class="card__number-row">
             <input
               id="field-{formula.id}-{field.key}"
@@ -172,8 +179,8 @@
     {/each}
   </section>
 
-  <!-- Figure — omitted when result has no figure (e.g. momentum) -->
-  {#if result.figure}
+  <!-- Figure — omitted when upstream-failed or when the result has no figure -->
+  {#if !upstreamFailed && result?.figure}
     <div class="card__figure">
       <FigureRenderer figure={result.figure} {t} />
     </div>
@@ -182,11 +189,17 @@
   <!-- Readout grid -->
   <section
     class="card__readout"
-    class:card__readout--fail={!result.status.ok}
+    class:card__readout--fail={failed}
     aria-label="Results"
     aria-live="polite"
   >
-    {#if result.status.ok}
+    {#if upstreamFailed}
+      <!-- upstream-failed: a wired source produced no value. Never a faked verdict. -->
+      <div class="card__readout-fail" role="alert">
+        <span class="card__readout-fail-icon" aria-hidden="true">&#9888;</span>
+        Upstream failed — an earlier cell produced no value to wire in.
+      </div>
+    {:else if result?.status.ok}
       {#each formula.outputs as out (out.key)}
         {@const qty = result.values[out.key]}
         {#if qty !== undefined}
@@ -198,14 +211,12 @@
           </div>
         {/if}
       {/each}
-    {:else}
+    {:else if result}
       <!-- fail-honest state: mars-red + reason key -->
       <div class="card__readout-fail" role="alert">
         <span class="card__readout-fail-icon" aria-hidden="true">&#9888;</span>
-        {t(result.status.reasonKey)}
+        {t(result.status.ok ? '' : result.status.reasonKey)}
       </div>
-      <!-- S3b: upstream-failed state wired here when a fromCard input is absent/failed -->
-      <!-- // S3b: upstream-failed — check wires; if source card !ok → show "upstream failed" -->
     {/if}
   </section>
 </article>
@@ -297,6 +308,43 @@
     letter-spacing: 0.5px;
     color: rgba(78, 205, 196, 0.75);
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  /* Wired input — gold "derived" chip + read-only value cell */
+  .card__wired-chip {
+    font-size: 0.55rem;
+    color: #ffc850;
+    letter-spacing: 0.5px;
+  }
+
+  .card__derived {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #ffc850; /* gold — this value came from a wire, not the user */
+    background: rgba(255, 200, 80, 0.06);
+    border: 1px dashed rgba(255, 200, 80, 0.4);
+    border-radius: 2px;
+    padding: 0.5rem 0.6rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .card__derived-unit {
+    font-size: 0.62rem;
+    margin-left: 0.25rem;
+    color: rgba(255, 200, 80, 0.6);
+    font-weight: normal;
+  }
+
+  .card__derived-void {
+    color: #c1440e;
+    font-weight: normal;
+    font-size: 0.8rem;
   }
 
   .card__number-row {

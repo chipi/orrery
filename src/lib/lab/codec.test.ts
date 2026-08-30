@@ -185,6 +185,42 @@ describe('codec · .orrlab round-trip (id wires ↔ index wires)', () => {
   });
 });
 
+describe('codec · prototype-pollution safety (opus review MINOR-1)', () => {
+  it('hostile __proto__/constructor keys neither pollute Object.prototype nor crash', () => {
+    // Via the URL codec: a __proto__ key in inputs + selection.
+    const urlHostile = craft(
+      JSON.stringify([
+        {
+          f: 'weight',
+          i: { __proto__: { polluted: 1 }, massKg: 1, body: 'earth' },
+          s: { __proto__: 'x', constructor: 'y' },
+        },
+      ]),
+    );
+    expect(() => decodeNotebook(urlHostile, REGISTRY)).not.toThrow();
+
+    // Via .orrlab: a card whose id is __proto__, wired from by a later card.
+    const fileHostile = {
+      orrlab: 1,
+      title: 't',
+      cards: [
+        { id: '__proto__', formulaId: 'weight', inputs: { massKg: 1, body: 'earth' } },
+        {
+          id: 'b',
+          formulaId: 'delta-v-margin',
+          inputs: { capacityKms: 12, requiredKms: 9.4 },
+          wires: [{ fromCard: '__proto__', output: 'weight', toInput: 'capacityKms' }],
+        },
+      ],
+    };
+    expect(() => decodeOrrlab(fileHostile, REGISTRY)).not.toThrow();
+
+    // The prototype is untouched: a fresh object has no injected keys.
+    expect(({} as Record<string, unknown>).polluted).toBeUndefined();
+    expect(Object.getPrototypeOf({})).toBe(Object.prototype);
+  });
+});
+
 describe('codec · volume caps (DoS defense, opus review MAJOR-1)', () => {
   it('an over-length ?nb= string is rejected before parsing', () => {
     expect(decodeNotebook('1.' + 'a'.repeat(64_001), REGISTRY)).toBeNull();

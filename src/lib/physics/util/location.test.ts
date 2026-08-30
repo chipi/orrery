@@ -26,6 +26,17 @@ describe('locationModel', () => {
     expect(mars.equatorialRotationKms).toBeGreaterThan(0.2); // ~24.6 h day
   });
 
+  it('Mercury has a real (tiny) rotation head-start — not silently zero (review MAJOR-1)', () => {
+    const m = locationModel('mercury')!;
+    expect(m.equatorialRotationKms).toBeGreaterThan(0);
+    expect(m.equatorialRotationKms).toBeLessThan(0.02); // ~58.6-day spin → ~0.003 km/s
+  });
+
+  it('Venus spin is retrograde — the boost is NEGATIVE, not a fake eastward gain (review MAJOR-2)', () => {
+    const v = locationModel('venus')!;
+    expect(v.equatorialRotationKms).toBeLessThan(0);
+  });
+
   it('an unknown body resolves to undefined (caller fails honest)', () => {
     expect(locationModel('not-a-body')).toBeUndefined();
   });

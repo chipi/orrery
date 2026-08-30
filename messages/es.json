@@ -2038,5 +2038,8 @@
   "lab_mark_baikonur": "Baikónur",
   "lab_mark_canaveral": "Cabo Cañaveral",
   "lab_mark_kourou": "Kourou",
-  "lab_mark_sea_launch": "Mar (ecuador)"
+  "lab_mark_sea_launch": "Mar (ecuador)",
+  "lab_f_launchsite_err_latitude": "La latitud debe estar entre −90° y 90°.",
+  "lab_assume_prograde_launch": "Lanzamiento hacia el este (prógrado)",
+  "lab_assume_earth_leo_required": "El Δv requerido es para órbita baja terrestre (pérdidas incluidas)"
 }

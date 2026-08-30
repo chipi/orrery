@@ -789,7 +789,15 @@ export const launchSite: FormulaDef<{ latitudeDeg: number; body: string }> = {
       return {
         values,
         status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
-        assumptions: ['lab.assume.rigid-body'],
+        assumptions: ['lab.assume.prograde-launch'],
+      } satisfies FormulaResult;
+    }
+    if (!Number.isFinite(latitudeDeg) || latitudeDeg < -90 || latitudeDeg > 90) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.launchsite.err-latitude' },
+        assumptions: ['lab.assume.prograde-launch'],
       } satisfies FormulaResult;
     }
     const boost = rotationVelocityKms(loc, latitudeDeg);
@@ -822,11 +830,11 @@ export const launchSite: FormulaDef<{ latitudeDeg: number; body: string }> = {
     return {
       values: { boost: { value: boost, units: 'km/s' } },
       status: { ok: true },
-      assumptions: ['lab.assume.rigid-body'],
+      assumptions: ['lab.assume.rigid-body', 'lab.assume.prograde-launch'],
       figure: {
         kind: 'curve',
         provenance: { fidelity: 'computed', module: 'util/location' },
-        assumptions: ['lab.assume.rigid-body'],
+        assumptions: ['lab.assume.rigid-body', 'lab.assume.prograde-launch'],
         x: { labelKey: 'lab.axis.latitude', units: 'deg' },
         y: { labelKey: 'lab.axis.speed', units: 'km/s' },
         series: [{ points }],
@@ -886,11 +894,19 @@ export const reachOrbitVerdict: FormulaDef<{
   compute: ({ capacityKms, boostKms, requiredKms }) => {
     const margin = capacityKms + boostKms - requiredKms;
     const base = {
-      assumptions: ['lab.assume.ideal-no-losses'],
+      assumptions: [
+        'lab.assume.ideal-no-losses',
+        'lab.assume.earth-leo-required',
+        'lab.assume.prograde-launch',
+      ],
       figure: {
         kind: 'dv-waterfall' as const,
         provenance: { fidelity: 'computed' as const, module: 'ascent/reach-orbit' },
-        assumptions: ['lab.assume.ideal-no-losses'],
+        assumptions: [
+          'lab.assume.ideal-no-losses',
+          'lab.assume.earth-leo-required',
+          'lab.assume.prograde-launch',
+        ],
         segments: [
           { labelKey: 'lab.f.dvm.capacity', dv: capacityKms, kind: 'gain' as const },
           { labelKey: 'lab.f.reach-orbit.boost', dv: boostKms, kind: 'gain' as const },

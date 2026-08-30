@@ -2038,5 +2038,8 @@
   "lab_mark_baikonur": "Baikonur",
   "lab_mark_canaveral": "Canaveral",
   "lab_mark_kourou": "Kourou",
-  "lab_mark_sea_launch": "البحر (خط الاستواء)"
+  "lab_mark_sea_launch": "البحر (خط الاستواء)",
+  "lab_f_launchsite_err_latitude": "يجب أن يكون خط العرض بين −90° و90°.",
+  "lab_assume_prograde_launch": "إطلاق نحو الشرق (متوافق مع الدوران)",
+  "lab_assume_earth_leo_required": "Δv المطلوب هو مدار أرضي منخفض (متضمّنًا الخسائر)"
 }

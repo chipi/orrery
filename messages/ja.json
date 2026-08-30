@@ -2038,5 +2038,8 @@
   "lab_mark_baikonur": "Baikonur",
   "lab_mark_canaveral": "Canaveral",
   "lab_mark_kourou": "Kourou",
-  "lab_mark_sea_launch": "海上（赤道）"
+  "lab_mark_sea_launch": "海上（赤道）",
+  "lab_f_launchsite_err_latitude": "緯度は−90°から90°の間で指定してください。",
+  "lab_assume_prograde_launch": "東向き（順行）打ち上げ",
+  "lab_assume_earth_leo_required": "必要Δvは地球低軌道（損失を含む）"
 }

@@ -2038,5 +2038,8 @@
   "lab_mark_baikonur": "拜科努尔",
   "lab_mark_canaveral": "卡纳维拉尔",
   "lab_mark_kourou": "库鲁",
-  "lab_mark_sea_launch": "海上（赤道）"
+  "lab_mark_sea_launch": "海上（赤道）",
+  "lab_f_launchsite_err_latitude": "纬度必须介于 −90° 和 90° 之间。",
+  "lab_assume_prograde_launch": "向东（顺行）发射",
+  "lab_assume_earth_leo_required": "所需 Δv 为地球近地轨道（含损耗）"
 }

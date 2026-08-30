@@ -196,6 +196,14 @@ describe('M2 orbital formulas — happy-path numbers + fail branches', () => {
     if (!r.status.ok) expect(r.status.reasonKey).toContain('unknown-body');
   });
 
+  it('launch-site rejects an out-of-range / non-finite latitude fail-honest (review MINOR-5)', () => {
+    for (const lat of [100, -100, NaN, Infinity]) {
+      const r = launchSite.compute({ latitudeDeg: lat, body: 'earth' });
+      expect(r.status.ok, `lat ${lat} should be rejected`).toBe(false);
+      if (!r.status.ok) expect(r.status.reasonKey).toContain('latitude');
+    }
+  });
+
   it('every ORBIT_BODY_IDS entry actually resolves (the resolver M2 uses)', () => {
     // The M2 formulas route body → ORBIT_BODIES, not bodyGravityMs2; prove that
     // resolver covers every declared id (a mismatch would hit the fail-honest path).

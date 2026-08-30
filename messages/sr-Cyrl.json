@@ -2038,5 +2038,8 @@
   "lab_mark_baikonur": "Бајконур",
   "lab_mark_canaveral": "Канаверал",
   "lab_mark_kourou": "Куру",
-  "lab_mark_sea_launch": "Море (екватор)"
+  "lab_mark_sea_launch": "Море (екватор)",
+  "lab_f_launchsite_err_latitude": "Географска ширина мора бити између −90° и 90°.",
+  "lab_assume_prograde_launch": "Лансирање ка истоку (прогресивно)",
+  "lab_assume_earth_leo_required": "Потребна Δv је Земљина ниска орбита (укључени губици)"
 }

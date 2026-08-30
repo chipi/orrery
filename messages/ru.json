@@ -2038,5 +2038,8 @@
   "lab_mark_baikonur": "Байконур",
   "lab_mark_canaveral": "Канаверал",
   "lab_mark_kourou": "Куру",
-  "lab_mark_sea_launch": "Море (экватор)"
+  "lab_mark_sea_launch": "Море (экватор)",
+  "lab_f_launchsite_err_latitude": "Широта должна быть в диапазоне от −90° до 90°.",
+  "lab_assume_prograde_launch": "Запуск на восток (по орбитальному движению)",
+  "lab_assume_earth_leo_required": "Требуемая Δv соответствует низкой околоземной орбите (с учётом потерь)"
 }

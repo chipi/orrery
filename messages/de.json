@@ -2038,5 +2038,8 @@
   "lab_mark_baikonur": "Baikonur",
   "lab_mark_canaveral": "Canaveral",
   "lab_mark_kourou": "Kourou",
-  "lab_mark_sea_launch": "Meer (Äquator)"
+  "lab_mark_sea_launch": "Meer (Äquator)",
+  "lab_f_launchsite_err_latitude": "Breitengrad muss zwischen −90° und 90° liegen.",
+  "lab_assume_prograde_launch": "Östliche (prograde) Startrichtung",
+  "lab_assume_earth_leo_required": "Erforderliches Δv ist Erdorbit-Niedrigkeit (Verluste enthalten)"
 }

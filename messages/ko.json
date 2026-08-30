@@ -2038,5 +2038,8 @@
   "lab_mark_baikonur": "Baikonur",
   "lab_mark_canaveral": "Canaveral",
   "lab_mark_kourou": "Kourou",
-  "lab_mark_sea_launch": "해상 (적도)"
+  "lab_mark_sea_launch": "해상 (적도)",
+  "lab_f_launchsite_err_latitude": "위도는 −90°에서 90° 사이여야 합니다.",
+  "lab_assume_prograde_launch": "동쪽(순행) 발사",
+  "lab_assume_earth_leo_required": "필요 Δv는 지구 저궤도 기준(손실 포함)"
 }

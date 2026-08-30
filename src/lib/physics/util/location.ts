@@ -39,6 +39,15 @@ const MU_OVERRIDE_KM3S2: Record<string, number> = {
 
 const ROTATION_HOURS = SURFACE_BODY_KINEMATICS as Record<string, { rotationHours: number }>;
 
+// Rotation-period overrides (SIGNED hours — negative = retrograde). SURFACE_BODY_KINEMATICS
+// omits Mercury and stores Venus's period as a positive magnitude; the physics needs the
+// sign (a retrograde spin works AGAINST an eastward launch). Kept here so we don't mutate
+// the shared /explore data. Sidereal periods: Mercury 1407.5 h, Venus −5832.5 h (retrograde).
+const ROTATION_HOURS_OVERRIDE: Record<string, number> = {
+  mercury: 1407.5,
+  venus: -5832.5,
+};
+
 /** Resolve a body id to its location model, or undefined if the body is unknown. */
 export function locationModel(bodyId: string): LocationModel | undefined {
   const stats = PLANET_STATS[bodyId];
@@ -46,9 +55,13 @@ export function locationModel(bodyId: string): LocationModel | undefined {
   const gMs2 = stats.surfaceGravityG * G0;
   const rKm = stats.diameterKm / 2;
   const muKm3s2 = MU_OVERRIDE_KM3S2[bodyId] ?? (gMs2 * (rKm * 1000) ** 2) / 1e9;
-  const rotationHours = ROTATION_HOURS[bodyId]?.rotationHours ?? 0;
+  const rotationHours =
+    ROTATION_HOURS_OVERRIDE[bodyId] ?? ROTATION_HOURS[bodyId]?.rotationHours ?? 0;
+  // Signed: prograde (+hours) → eastward boost; retrograde (−hours) → westward (negative).
   const equatorialRotationKms =
-    rotationHours > 0 ? (2 * Math.PI * rKm) / (rotationHours * 3600) : 0;
+    rotationHours !== 0
+      ? (Math.sign(rotationHours) * (2 * Math.PI * rKm)) / (Math.abs(rotationHours) * 3600)
+      : 0;
   return { id: bodyId, gMs2, rKm, muKm3s2, rotationHours, equatorialRotationKms };
 }
 

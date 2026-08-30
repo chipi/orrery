@@ -7,16 +7,21 @@
   A goal step may WIRE its input from an earlier step's output (index-order, plan
   M4). `+ ADD CELL` appends an unwired sandbox card from the registry palette.
 
-  The parent keys this component on goal.id, so switching goals remounts it and
-  re-seeds from the new path (no cross-goal state bleed). Prerender-safe: the cell
-  list is seeded synchronously at construction (untracked), so the static HTML
-  already contains every card.
+  Lifecycle (S3c): seeded synchronously from the goal at construction (untracked) so
+  the prerendered HTML already contains every card. A goal-change $effect re-seeds on
+  a picker switch (no remount). onMount opens an incoming ?nb= share link as a custom
+  notebook. Edits auto-save to localStorage and Share encodes the notebook into ?nb=.
 -->
 <script lang="ts">
-  import { untrack } from 'svelte';
+  import { untrack, onMount } from 'svelte';
+  import { browser } from '$app/environment';
+  import { page } from '$app/state';
+  import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import type { Goal, FormulaResult } from '$lib/physics/spec';
   import { REGISTRY, defaultInputs } from '$lib/physics/registry';
   import { recomputeNotebook, type Cell, type CellComputed, type CellWire } from './notebook';
+  import { encodeNotebook, decodeNotebook, type CodecCell } from './codec';
   import Card from './Card.svelte';
 
   type Props = {
@@ -27,15 +32,25 @@
 
   let { goal, equationHtml, t }: Props = $props();
 
-  /** UI cell = recompute Cell + presentational extras (narrative, removability). */
+  const LS_KEY = 'orrlab:last';
+
+  /** UI cell = recompute Cell + presentational extras (id, narrative, removability). */
   interface UICell extends Cell {
+    id: string;
     wires: CellWire[];
+    selection?: Record<string, number | string>;
     narrativeKey?: string;
     removable: boolean;
   }
 
+  // Ids: seed cells get deterministic `s{i}` (hydration-stable — SSR + client agree);
+  // cells created client-side (add / restore) get a uuid (only ever called in the
+  // browser — fromCodec runs in onMount, addCell on click).
+  const uid = () => crypto.randomUUID();
+
   function seed(g: Goal): UICell[] {
-    return g.path.map((step) => ({
+    return g.path.map((step, i) => ({
+      id: `s${i}`,
       formulaId: step.formulaId,
       inputs: defaultInputs(REGISTRY.get(step.formulaId)!),
       wires: (step.wiresFrom ?? []).map((w) => ({
@@ -48,12 +63,97 @@
     }));
   }
 
-  // One-time snapshot from the (keyed) goal prop — see header. untrack avoids the
-  // state_referenced_locally warning and the remount gives us fresh seeding.
+  /** A shared/restored notebook is a CUSTOM notebook — no goal narrative, all removable. */
+  function fromCodec(cells: CodecCell[]): UICell[] {
+    return cells.map((c) => ({
+      id: uid(),
+      formulaId: c.formulaId,
+      inputs: c.inputs,
+      wires: c.wires ?? [],
+      selection: c.selection,
+      removable: true,
+    }));
+  }
+
+  function toCodec(cs: UICell[]): CodecCell[] {
+    return cs.map((c) => ({
+      formulaId: c.formulaId,
+      inputs: c.inputs,
+      selection: c.selection,
+      wires: c.wires,
+    }));
+  }
+
+  // SSR/prerender seeds from the goal so the static HTML matches first client render.
   let cells = $state<UICell[]>(untrack(() => seed(goal)));
+  let lastGoalId = untrack(() => goal.id);
+  let restored = $state(false); // loaded from a ?nb= link → showing a custom notebook
 
   // The whole notebook recomputes on any input edit — trivially cheap for M1.
   const computed = $derived(recomputeNotebook(cells, REGISTRY));
+
+  // First client load: an incoming ?nb= share link overrides the goal seed and
+  // becomes a custom notebook. Post-hydration so SSR and first render agree. We do
+  // NOT auto-restore the localStorage save over a goal — that would silently strip
+  // the lesson narratives on refresh; S3c.3 adds a considered "resume" affordance.
+  onMount(() => {
+    const shared = page.url.searchParams.get('nb');
+    if (!shared) return;
+    const decoded = decodeNotebook(shared, REGISTRY);
+    if (decoded && decoded.length > 0) {
+      cells = fromCodec(decoded);
+      restored = true;
+    }
+  });
+
+  // A real goal switch (picker) wins over any restore: fresh seed + drop ?nb=.
+  $effect(() => {
+    const gid = goal.id;
+    if (gid !== lastGoalId) {
+      lastGoalId = gid;
+      cells = seed(goal);
+      restored = false;
+      if (browser && page.url.searchParams.has('nb')) {
+        void goto(`${base}/lab`, { replaceState: true, keepFocus: true, noScroll: true });
+      }
+    }
+  });
+
+  // Auto-save the working notebook to localStorage (debounced) — survives refresh.
+  let saveTimer: ReturnType<typeof setTimeout> | undefined;
+  $effect(() => {
+    const encoded = encodeNotebook(toCodec(cells)); // tracks cells
+    if (!browser) return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      try {
+        localStorage.setItem(LS_KEY, encoded);
+      } catch {
+        // ignore quota / private-mode failures
+      }
+    }, 400);
+    return () => clearTimeout(saveTimer);
+  });
+
+  // ─── Share ───────────────────────────────────────────────────────────────
+  let shareState = $state<'idle' | 'copied' | 'failed'>('idle');
+  let shareTimer: ReturnType<typeof setTimeout> | undefined;
+  async function share(): Promise<void> {
+    const encoded = encodeNotebook(toCodec(cells));
+    await goto(`${base}/lab?nb=${encoded}`, {
+      replaceState: true,
+      keepFocus: true,
+      noScroll: true,
+    });
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      shareState = 'copied';
+    } catch {
+      shareState = 'failed';
+    }
+    clearTimeout(shareTimer);
+    shareTimer = setTimeout(() => (shareState = 'idle'), 2000);
+  }
 
   // ─── Mutations ─────────────────────────────────────────────────────────────
   function setInput(i: number, key: string, value: number | string): void {
@@ -66,12 +166,21 @@
     if (!def) return;
     cells = [
       ...cells,
-      { formulaId: def.id, inputs: defaultInputs(def), wires: [], removable: true },
+      { id: uid(), formulaId: def.id, inputs: defaultInputs(def), wires: [], removable: true },
     ];
   }
 
+  // Removing cell i drops any wire sourced from it and shifts higher source indices
+  // down by one, so index-based wires stay pointed at the right cells (review M-1).
   function removeCell(i: number): void {
-    cells = cells.filter((_, idx) => idx !== i);
+    cells = cells
+      .filter((_, idx) => idx !== i)
+      .map((c) => ({
+        ...c,
+        wires: c.wires
+          .filter((w) => w.fromIndex !== i)
+          .map((w) => ({ ...w, fromIndex: w.fromIndex > i ? w.fromIndex - 1 : w.fromIndex })),
+      }));
   }
 
   function labelFor(id: string): string {
@@ -128,13 +237,28 @@
 </script>
 
 <section class="nb" aria-label="Notebook">
-  <header class="nb__goal">
-    <span class="nb__goal-kicker">Goal</span>
-    <h2 class="nb__goal-title">{t(goal.titleKey)}</h2>
+  <header class="nb__head">
+    <div class="nb__goal">
+      <span class="nb__goal-kicker">{restored ? 'Custom notebook' : 'Goal'}</span>
+      <h2 class="nb__goal-title">{restored ? 'Your notebook' : t(goal.titleKey)}</h2>
+    </div>
+    <button
+      type="button"
+      class="nb__share"
+      class:nb__share--done={shareState === 'copied'}
+      onclick={share}
+      aria-label="Share this notebook — copy a link"
+    >
+      {shareState === 'copied'
+        ? '✓ LINK COPIED'
+        : shareState === 'failed'
+          ? 'LINK IN URL'
+          : 'SHARE'}
+    </button>
   </header>
 
   <ol class="nb__steps">
-    {#each cells as cell, i (i)}
+    {#each cells as cell, i (cell.id)}
       {@const state = computed[i]}
       {@const formula = REGISTRY.get(cell.formulaId)}
       <li class="nb__step">
@@ -200,13 +324,49 @@
     width: 100%;
   }
 
-  /* ─── Goal header ─────────────────────────────────────────────────────── */
+  /* ─── Header (goal + share) ───────────────────────────────────────────── */
+  .nb__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
   .nb__goal {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
     border-left: 2px solid #4ecdc4;
     padding-left: 0.75rem;
+  }
+
+  .nb__share {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 1.5px;
+    color: #4ecdc4;
+    background: rgba(78, 205, 196, 0.08);
+    border: 1px solid rgba(78, 205, 196, 0.4);
+    border-radius: 2px;
+    padding: 0 0.9rem;
+    min-height: 40px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+
+  .nb__share:hover,
+  .nb__share:focus-visible {
+    background: rgba(78, 205, 196, 0.16);
+    outline: 2px solid #4ecdc4;
+    outline-offset: 2px;
+  }
+
+  .nb__share--done {
+    color: #ffc850;
+    border-color: rgba(255, 200, 80, 0.5);
+    background: rgba(255, 200, 80, 0.1);
   }
 
   .nb__goal-kicker {

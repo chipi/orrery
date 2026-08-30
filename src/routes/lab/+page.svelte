@@ -62,11 +62,9 @@
       </select>
     </div>
 
-    <!-- Notebook — remounts per goal so cell state re-seeds cleanly -->
+    <!-- Notebook — owns cell state; a goal-change effect re-seeds, so no remount -->
     <div class="lab__card-wrapper">
-      {#key selectedGoalId}
-        <Notebook {goal} equationHtml={data.equationHtml} {t} />
-      {/key}
+      <Notebook {goal} equationHtml={data.equationHtml} {t} />
     </div>
   </main>
 </div>

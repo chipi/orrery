@@ -982,16 +982,29 @@ export const descentBurn: FormulaDef<{ vOrbitKms: number; body: string; burnTime
         assumptions: ['lab.assume.uniform-g'],
       } satisfies FormulaResult;
     }
+    // Untrusted (MCP) inputs must reject fail-honest — never a NaN readout (review M-1).
+    if (!Number.isFinite(vOrbitKms) || !Number.isFinite(burnTimeS) || burnTimeS < 0) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.uniform-g'],
+      } satisfies FormulaResult;
+    }
     const gLossKms = (loc.gMs2 * burnTimeS) / 1000;
     const dv = poweredDescentDvKms(vOrbitKms, loc.gMs2, burnTimeS);
     return {
       values: { descentDv: { value: dv, units: 'km/s' } },
       status: { ok: true },
-      assumptions: ['lab.assume.uniform-g', 'lab.assume.no-drag', 'lab.assume.ideal-no-losses'],
+      assumptions: [
+        'lab.assume.uniform-g',
+        'lab.assume.no-drag',
+        'lab.assume.vertical-gravity-loss',
+      ],
       figure: {
         kind: 'dv-waterfall',
         provenance: { fidelity: 'computed', module: 'mechanics/descent' },
-        assumptions: ['lab.assume.uniform-g', 'lab.assume.no-drag'],
+        assumptions: ['lab.assume.uniform-g', 'lab.assume.vertical-gravity-loss'],
         segments: [
           { labelKey: 'lab.f.descent.cancel-orbit', dv: vOrbitKms, kind: 'cost' },
           { labelKey: 'lab.f.descent.gravity-loss', dv: gLossKms, kind: 'cost' },

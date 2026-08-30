@@ -2053,5 +2053,7 @@
   "lab_goal_ltm_descent": "L'accensione di allunaggio serve doppio scopo: annullare la velocità orbitale che stai mantenendo, e sostenerti contro la gravità per tutto il tragitto in giù. Sommale per ottenere il Δv di discesa.",
   "lab_goal_ltm_orbit": "Stai orbitando attorno alla Luna. Per allunare, devi prima sapere a che velocità stai andando — la velocità orbitale qui è molto più bassa che sulla Terra, perché la Luna ti attrae con forza molto minore.",
   "lab_goal_ltm_twr": "L'allunaggio è una caduta controllata. Per rallentare e stare in hovering, il tuo motore deve vincere la gravità lunare — rapporto spinta-peso maggiore di uno, altrimenti continui a cadere.",
-  "lab_goal_ltm_verdict": "Il tuo lander ha abbastanza Δv per annullare l'orbita e posarsi dolcemente sulla superficie? Se non ce la fai, è uno schianto, non un allunaggio."
+  "lab_goal_ltm_verdict": "Il tuo lander ha abbastanza Δv per annullare l'orbita e posarsi dolcemente sulla superficie? Se non ce la fai, è uno schianto, non un allunaggio.",
+  "lab_f_descent_err_input": "La velocità orbitale e il tempo di accensione devono essere numeri reali non negativi.",
+  "lab_assume_vertical_gravity_loss": "Perdita gravitazionale approssimata come g costante × tempo di accensione"
 }

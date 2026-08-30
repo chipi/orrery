@@ -116,6 +116,10 @@ export const landOnTheMoon: Goal = {
     {
       formulaId: 'delta-v-margin',
       narrativeKey: 'lab.goal.ltm.verdict',
+      // A lander's DESCENT stage carries ~2.5 km/s, not a full launch vehicle's 8.5 —
+      // preset it so the margin is honestly tight (Apollo-class), not a fake landslide
+      // (review M-2). The learner sees descent is margin-critical, which is the lesson.
+      presetInputs: { capacityKms: 2.5 },
       wiresFrom: [{ fromStep: 2, output: 'descentDv', toInput: 'requiredKms' }],
     },
   ],

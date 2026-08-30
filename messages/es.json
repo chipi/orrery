@@ -2053,5 +2053,7 @@
   "lab_goal_ltm_descent": "El encendido de alunizaje cumple dos funciones: cancelar la velocidad orbital que llevas y sostener la nave contra la gravedad durante toda la bajada. Súmalas para obtener el Δv de descenso.",
   "lab_goal_ltm_orbit": "Estás orbitando la Luna. Para alunizar, primero debes saber a qué velocidad vas — la velocidad orbital aquí es mucho menor que en la Tierra, porque la Luna atrae con mucha menos fuerza.",
   "lab_goal_ltm_twr": "Alunizar es una caída controlada. Para desacelerar y mantenerse en suspensión, tu motor debe superar la gravedad lunar — empuje relativo superior a uno, o simplemente seguirás cayendo.",
-  "lab_goal_ltm_verdict": "¿Lleva tu módulo de alunizaje suficiente Δv para cancelar su órbita y posarse suavemente en la superficie? Si te quedas corto, será un choque, no un alunizaje."
+  "lab_goal_ltm_verdict": "¿Lleva tu módulo de alunizaje suficiente Δv para cancelar su órbita y posarse suavemente en la superficie? Si te quedas corto, será un choque, no un alunizaje.",
+  "lab_f_descent_err_input": "La velocidad orbital y el tiempo de quemado deben ser números reales no negativos.",
+  "lab_assume_vertical_gravity_loss": "Pérdida gravitatoria aproximada como g constante × tiempo de quemado"
 }

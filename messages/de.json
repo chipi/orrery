@@ -2053,5 +2053,7 @@
   "lab_goal_ltm_descent": "Das Landemanöver wirkt doppelt: Es hebt deine Bahngeschwindigkeit auf und hält dich während des ganzen Abstiegs gegen die Gravitation. Addiere beide für das Abstiegs-Δv.",
   "lab_goal_ltm_orbit": "Du umkreist den Mond. Zum Landen musst du zunächst wissen, wie schnell du fliegst — die Bahngeschwindigkeit hier ist viel niedriger als auf der Erde, denn der Mond zieht viel sanfter.",
   "lab_goal_ltm_twr": "Landen ist ein kontrollierter Fall. Zum Abbremsen und Hovern muss dein Triebwerk die Mondgravitation überwiegen — Schub-Gewicht über eins, sonst fällst du einfach weiter.",
-  "lab_goal_ltm_verdict": "Trägt deine Landefähre genug Δv, um ihre Bahn aufzuheben und sanft auf der Oberfläche zu landen? Wenn es nicht reicht, wird es ein Absturz, kein Landen."
+  "lab_goal_ltm_verdict": "Trägt deine Landefähre genug Δv, um ihre Bahn aufzuheben und sanft auf der Oberfläche zu landen? Wenn es nicht reicht, wird es ein Absturz, kein Landen.",
+  "lab_f_descent_err_input": "Orbitalgeschwindigkeit und Brenndauer müssen reelle, nicht-negative Zahlen sein.",
+  "lab_assume_vertical_gravity_loss": "Gravitationsverlust approximiert als konstantes g × Brenndauer"
 }

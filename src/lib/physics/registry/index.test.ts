@@ -218,6 +218,17 @@ describe('M2 orbital formulas — happy-path numbers + fail branches', () => {
     if (!r.status.ok) expect(r.status.reasonKey).toContain('unknown-body');
   });
 
+  it('descent-burn rejects non-finite / negative inputs fail-honest (review M-1)', () => {
+    for (const inp of [
+      { vOrbitKms: NaN, body: 'moon', burnTimeS: 120 },
+      { vOrbitKms: 1.63, body: 'moon', burnTimeS: Infinity },
+      { vOrbitKms: 1.63, body: 'moon', burnTimeS: -5 },
+    ]) {
+      const r = descentBurn.compute(inp);
+      expect(r.status.ok, `${JSON.stringify(inp)} should be rejected`).toBe(false);
+    }
+  });
+
   it('every ORBIT_BODY_IDS entry actually resolves (the resolver M2 uses)', () => {
     // The M2 formulas route body → ORBIT_BODIES, not bodyGravityMs2; prove that
     // resolver covers every declared id (a mismatch would hit the fail-honest path).

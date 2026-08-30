@@ -2053,5 +2053,7 @@
   "lab_goal_ltm_descent": "De landingsbranding werkt dubbel: je opheven baansnelheid opheffen en jezelf onderweg omhoog houden tegen de zwaartekracht. Tel ze op voor de afdaling Δv.",
   "lab_goal_ltm_orbit": "Je draait om de Maan. Om te landen moet je eerst weten hoe snel je gaat — de baansnelheid hier is veel lager dan op Aarde, omdat de Maan veel zwakker trekt.",
   "lab_goal_ltm_twr": "Landen is een gecontroleerde val. Om af te remmen en te zweven moet je motor sterker zijn dan de maanzwaartekracht — stuwkracht-gewichtsverhouding boven één, anders val je gewoon door.",
-  "lab_goal_ltm_verdict": "Heeft je lander genoeg Δv om zijn baan op te heffen en zacht op het oppervlak neer te zetten? Kom je tekort en het is een crash, geen landing."
+  "lab_goal_ltm_verdict": "Heeft je lander genoeg Δv om zijn baan op te heffen en zacht op het oppervlak neer te zetten? Kom je tekort en het is een crash, geen landing.",
+  "lab_f_descent_err_input": "Baansnelheid en verbrandingstijd moeten reële, niet-negatieve getallen zijn.",
+  "lab_assume_vertical_gravity_loss": "Zwaartekrachtverlies benaderd als constant-g × verbrandingstijd"
 }

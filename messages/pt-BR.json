@@ -2053,5 +2053,7 @@
   "lab_goal_ltm_descent": "A queimada de pouso serve para duas coisas: cancelar a velocidade orbital que você carrega e se sustentar contra a gravidade durante toda a descida. Some-as para obter o Δv de descida.",
   "lab_goal_ltm_orbit": "Você está orbitando a Lua. Para pousar, primeiro saiba sua velocidade — a velocidade orbital aqui é muito mais lenta que na Terra, porque a Lua exerce uma atração muito mais fraca.",
   "lab_goal_ltm_twr": "Um pouso é uma queda controlada. Para desacelerar e permanecer pairando, seu motor deve vencer a gravidade lunar — razão empuxo-peso acima de um, ou você continua caindo.",
-  "lab_goal_ltm_verdict": "Seu lander carrega Δv suficiente para cancelar sua órbita e pousar suavemente na superfície? Se ficar curto, é uma colisão, não um pouso."
+  "lab_goal_ltm_verdict": "Seu lander carrega Δv suficiente para cancelar sua órbita e pousar suavemente na superfície? Se ficar curto, é uma colisão, não um pouso.",
+  "lab_f_descent_err_input": "Velocidade orbital e tempo de queimador devem ser números reais e não-negativos.",
+  "lab_assume_vertical_gravity_loss": "Perda gravitacional aproximada como g constante × tempo de queimador"
 }

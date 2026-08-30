@@ -69,4 +69,16 @@ describe('goal registry · coverage + wire integrity', () => {
       ]),
     );
   });
+
+  it('M3 presets the shared rungs onto the Moon + a realistic lander capacity', () => {
+    const g = GOALS.get('land-on-the-moon')!;
+    // orbital-velocity + twr + descent-burn are all put on the Moon by presetInputs.
+    for (const id of ['orbital-velocity', 'twr', 'descent-burn']) {
+      const step = g.path.find((s) => s.formulaId === id)!;
+      expect(step.presetInputs?.body, `${id} should preset body=moon`).toBe('moon');
+    }
+    // the verdict presets a descent-stage Δv (~2.5), not a full launch vehicle's 8.5.
+    const verdict = g.path.find((s) => s.formulaId === 'delta-v-margin')!;
+    expect(verdict.presetInputs?.capacityKms).toBe(2.5);
+  });
 });

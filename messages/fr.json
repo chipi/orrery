@@ -2053,5 +2053,7 @@
   "lab_goal_ltm_descent": "La combustion d'alunissage paie double : annuler la vitesse orbitale que vous portez, et vous tenir contre la gravité tout au long de la descente. Additionnez-les pour le Δv de descente.",
   "lab_goal_ltm_orbit": "Vous tournez autour de la Lune. Pour alunir, connaissez d'abord votre vitesse — la vitesse orbitale ici est bien plus lente qu'à la Terre, car la Lune tire beaucoup plus faiblement.",
   "lab_goal_ltm_twr": "L'alunissage est une chute contrôlée. Pour ralentir et vous maintenir en vol stationnaire, votre moteur doit surpasser la gravité lunaire — rapport poussée-poids supérieur à un, sinon vous continuez de tomber.",
-  "lab_goal_ltm_verdict": "Votre atterrisseur porte-t-il assez de Δv pour annuler son orbite et se poser doucement à la surface ? Si vous manquez de Δv, c'est un crash, pas un alunissage."
+  "lab_goal_ltm_verdict": "Votre atterrisseur porte-t-il assez de Δv pour annuler son orbite et se poser doucement à la surface ? Si vous manquez de Δv, c'est un crash, pas un alunissage.",
+  "lab_f_descent_err_input": "La vitesse orbitale et le temps de combustion doivent être des nombres réels non négatifs.",
+  "lab_assume_vertical_gravity_loss": "Perte gravitationnelle approximée comme g constant × temps de combustion"
 }

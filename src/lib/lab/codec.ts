@@ -31,6 +31,14 @@ import type { Cell, CellWire } from './notebook';
 /** Frozen schema version. Bump only on a breaking grammar change (with a migration). */
 export const NOTEBOOK_CODEC_VERSION = 1;
 
+// Volume caps — the decode surface is untrusted (a share link / uploaded file is
+// attacker-controlled). The measured M1 notebook is ~630 chars / 6 cells, so these
+// are generous. Without them a crafted giant `?nb=` or a huge file would atob +
+// JSON.parse + loop on the main thread and hang the tab (opus review MAJOR-1).
+export const MAX_ENCODED_LEN = 64_000; // ~100× the M1 budget
+export const MAX_CELLS = 200;
+export const MAX_ORRLAB_BYTES = 2_000_000;
+
 /** A codec cell = an engine Cell plus the (inert-for-M1) interactive selection. */
 export interface CodecCell extends Cell {
   selection?: Record<string, number | string>;
@@ -148,6 +156,7 @@ function sanitizeWires(raw: unknown): Cell['wires'] {
  * the current notebook untouched and can surface "couldn't load that link".
  */
 export function decodeNotebook(s: string, registry: Registry): CodecCell[] | null {
+  if (s.length > MAX_ENCODED_LEN) return null; // volume cap (untrusted link)
   const dot = s.indexOf('.');
   if (dot <= 0) return null;
   if (Number(s.slice(0, dot)) !== NOTEBOOK_CODEC_VERSION) return null;
@@ -158,7 +167,7 @@ export function decodeNotebook(s: string, registry: Registry): CodecCell[] | nul
   } catch {
     return null;
   }
-  if (!Array.isArray(parsed)) return null;
+  if (!Array.isArray(parsed) || parsed.length > MAX_CELLS) return null;
 
   const cells: CodecCell[] = [];
   for (const raw of parsed) {
@@ -212,6 +221,7 @@ export function decodeOrrlab(
   if (!isRecord(json) || json.orrlab !== NOTEBOOK_CODEC_VERSION || !Array.isArray(json.cards)) {
     return null;
   }
+  if (json.cards.length > MAX_CELLS) return null; // volume cap (untrusted file)
   const rawCards = json.cards.filter(isRecord);
   const idToIndex = new Map<string, number>();
   rawCards.forEach((c, i) => {

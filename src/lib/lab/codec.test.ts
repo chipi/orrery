@@ -185,6 +185,26 @@ describe('codec · .orrlab round-trip (id wires ↔ index wires)', () => {
   });
 });
 
+describe('codec · volume caps (DoS defense, opus review MAJOR-1)', () => {
+  it('an over-length ?nb= string is rejected before parsing', () => {
+    expect(decodeNotebook('1.' + 'a'.repeat(64_001), REGISTRY)).toBeNull();
+  });
+
+  it('a notebook with too many cells is rejected', () => {
+    const many = craft(JSON.stringify(Array(201).fill({ f: 'tsiolkovsky', i: {} })));
+    expect(decodeNotebook(many, REGISTRY)).toBeNull();
+  });
+
+  it('an .orrlab file with too many cards is rejected', () => {
+    const doc = {
+      orrlab: 1,
+      title: 't',
+      cards: Array(201).fill({ id: 'a', formulaId: 'tsiolkovsky', inputs: {} }),
+    };
+    expect(decodeOrrlab(doc, REGISTRY)).toBeNull();
+  });
+});
+
 describe('codec · .orrlab hostile / malformed', () => {
   it('wrong or missing version → null', () => {
     expect(decodeOrrlab({ orrlab: 2, cards: [] }, REGISTRY)).toBeNull();

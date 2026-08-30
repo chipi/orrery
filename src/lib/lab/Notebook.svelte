@@ -26,6 +26,7 @@
     decodeNotebook,
     encodeOrrlab,
     decodeOrrlab,
+    MAX_ORRLAB_BYTES,
     type CodecCell,
   } from './codec';
   import Card from './Card.svelte';
@@ -183,6 +184,10 @@
     input.value = ''; // allow re-selecting the same file
     if (!file) return;
     loadError = '';
+    if (file.size > MAX_ORRLAB_BYTES) {
+      loadError = 'That file is too large to be a notebook.';
+      return;
+    }
     try {
       const decoded = decodeOrrlab(JSON.parse(await file.text()), REGISTRY);
       if (decoded && decoded.cells.length > 0) {

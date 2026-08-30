@@ -55,13 +55,13 @@ export default [
     // by both the SvelteKit app and a standalone Node process. It may NOT depend
     // on the renderer (three), the framework (svelte / $app), app-internal $lib
     // modules, or the DOM. Shared `$types/*` and intra-kernel `$lib/physics/*`
-    // imports are allowed. Currently 'warn' so the S1.1–S1.4 module moves surface
-    // violations without blocking; flipped to 'error' at S1.5 once the kernel is
-    // fully carved (see docs/wip/2026-08-29-s1-kernel-boundary-manifest.md §5).
+    // imports are allowed. ENFORCED at 'error' (S1.5 — kernel fully carved); the
+    // pure core cannot regain a framework dependency. What ADR-030 kept by
+    // convention is now a lint gate (docs/wip/2026-08-29-s1-kernel-boundary-manifest.md §5).
     files: ['src/lib/physics/**/*.ts'],
     rules: {
       'no-restricted-imports': [
-        'warn',
+        'error',
         {
           patterns: [
             {

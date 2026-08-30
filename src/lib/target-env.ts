@@ -52,7 +52,7 @@ const CONFIG: Record<TargetEnv, TargetConfig> = {
   },
   prod: {
     streamOrigin: 'https://www.orrerylearn.com',
-    sentryDsn: 'https://9b69bd7985fa4ce59cecdbb5c9f7febe@telemetry.orrerylearn.com/4',
+    sentryDsn: 'https://bbab2d17453944c3a693bf9268736200@telemetry.orrerylearn.com/18',
     sentryEnvironment: 'prod',
     umamiHost: 'https://analytics.orrerylearn.com',
     umamiWebsiteId: '4a25d8da-63a1-4ef7-b9d3-1b6b8c8a6bce',

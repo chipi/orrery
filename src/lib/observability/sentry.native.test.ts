@@ -44,7 +44,7 @@ describe('sentry native shell (Capacitor iOS)', () => {
   });
 
   it('defaults to the prod tier when no env override (release build bakes prod)', () => {
-    publicEnv.PUBLIC_SENTRY_DSN = 'https://pub@telemetry.example/4'; // prod project
+    publicEnv.PUBLIC_SENTRY_DSN = 'https://pub@telemetry.example/18'; // prod project
 
     initSentry();
 

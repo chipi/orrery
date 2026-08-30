@@ -33,7 +33,7 @@ describe('target-env (ADR-083 mobile switcher)', () => {
     const c = targetConfig();
     expect(c.sentryEnvironment).toBe('prod');
     expect(c.streamOrigin).toBe('https://www.orrerylearn.com');
-    expect(c.sentryDsn).toContain('@telemetry.orrerylearn.com/4'); // prod project
+    expect(c.sentryDsn).toContain('@telemetry.orrerylearn.com/18'); // prod project (orrery-prod)
     expect(c.umamiWebsiteId).toBe('4a25d8da-63a1-4ef7-b9d3-1b6b8c8a6bce');
   });
 

@@ -248,6 +248,25 @@ suite('pwa');
   try {
     const resp = await p.goto(BASE + '/_app/env.js', { timeout: 20000 });
     record('adapter-static env module served (/_app/env.js)', resp && resp.status() === 200);
+    // env.js is regenerated every deploy (DSN/analytics id/release) and is NOT
+    // content-hashed, so it MUST be no-cache or a CDN default-caches a stale copy
+    // and silently pins clients to an old config (2026-08-30 dead-error-tracking:
+    // Cloudflare 4h-cached a rotated Sentry DSN). Prod-only (nginx sets it; the
+    // GitHub Pages staging host doesn't). WARN not FAIL: immediately after a deploy
+    // the CDN can still serve its pre-fix cached copy until the edge TTL lapses, so
+    // don't red-gate on the transitional window — it's a steady PASS thereafter.
+    if (TIER === 'prod') {
+      const cc = (resp && resp.headers()['cache-control']) || '';
+      const ok = /no-cache|no-store/.test(cc);
+      record(
+        'env.js is no-cache (not CDN-default cached)',
+        ok,
+        cc || '(no Cache-Control — CDN default caching; clears within edge TTL)',
+        {
+          warn: !ok,
+        },
+      );
+    }
   } catch {
     record('adapter-static env module served (/_app/env.js)', false);
   }
@@ -469,7 +488,8 @@ suite('regression-guards');
 // dashed-UUID key the SDK rejects, blocked connect-src) WITHOUT sending events.
 // The full end-to-end check (trigger a real error → verify a 200 POST) is
 // OPT-IN via VALIDATE_ERROR_POST=1, so the scheduled cron / post-deploy runs
-// don't pollute GlitchTip project 4 with a synthetic event every time.
+// don't pollute the GlitchTip prod project (18, orrery-prod) with a synthetic
+// event every time.
 {
   const p = await desktop.newPage();
   const posts = [],

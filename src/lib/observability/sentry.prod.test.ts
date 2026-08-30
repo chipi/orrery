@@ -23,7 +23,7 @@ describe('sentry non-dev rung', () => {
   });
 
   it('a baked DSN inits with environment=prod default and no worktree tag', () => {
-    publicEnv.PUBLIC_SENTRY_DSN = 'https://pub@glitch.example/4';
+    publicEnv.PUBLIC_SENTRY_DSN = 'https://pub@glitch.example/18';
 
     initSentry();
 

@@ -75,7 +75,7 @@ export function initSentry(): void {
     // Environment = the TIER (dev/staging/prod), uniform for web AND native (ADR-082
     // amendment): deploy-injected PUBLIC_SENTRY_ENVIRONMENT wins, `vite dev` → `dev`,
     // else `prod`. Mobile rides the SAME ladder — a simulator build bakes the staging
-    // DSN+env (→ staging project 6), a release build bakes prod (→ prod project 4). The
+    // DSN+env (→ staging project 6), a release build bakes prod (→ prod project 18). The
     // `platform` tag below is the SEGMENT that splits app from browser; overloading
     // `environment` with the platform (the old `mobile-<platform>`) collided with the tier.
     // Internal builds (ADR-083) take the tier from the runtime target instead.
@@ -85,7 +85,7 @@ export function initSentry(): void {
     release: publicEnv.PUBLIC_SENTRY_RELEASE || undefined,
 
     // Tag every event `component: orrery` (+ `platform`) so streams stay separable in the
-    // self-hosted GlitchTip shared with the podcast app. Per-environment projects: prod = 4,
+    // self-hosted GlitchTip shared with the podcast app. Per-environment projects: prod = 18,
     // staging = 6, dev = 7 (the DSN's project id selects it). In dev, also tag the worktree
     // (git branch) so parallel local sessions are distinguishable.
     initialScope: {

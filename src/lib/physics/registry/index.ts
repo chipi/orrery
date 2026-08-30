@@ -26,6 +26,7 @@ export const tsiolkovsky: FormulaDef<{ ispS: number; m0Kg: number; mfKg: number 
   tier: 4,
   prereqs: [],
   citationKey: 'propulsion/tsiolkovsky',
+  latex: '\\Delta v = I_{sp}\\,g_0\\ln\\dfrac{m_0}{m_f}',
   inputs: [
     {
       key: 'ispS',
@@ -97,6 +98,7 @@ export const newtonSecondLaw: FormulaDef<{ forceN: number; massKg: number }> = {
   domain: 'mechanics',
   tier: 1,
   prereqs: [],
+  latex: 'F = ma',
   inputs: [
     {
       key: 'forceN',
@@ -144,6 +146,7 @@ export const weight: FormulaDef<{ massKg: number; body: string }> = {
   domain: 'mechanics',
   tier: 1,
   prereqs: [],
+  latex: 'W = m\\,g',
   inputs: [
     {
       key: 'massKg',
@@ -189,6 +192,7 @@ export const momentumFormula: FormulaDef<{ massKg: number; velMs: number }> = {
   domain: 'mechanics',
   tier: 2,
   prereqs: ['newton-second-law'],
+  latex: 'p = mv',
   inputs: [
     {
       key: 'massKg',
@@ -227,6 +231,7 @@ export const twrFormula: FormulaDef<{ thrustN: number; massKg: number; body: str
   domain: 'mechanics',
   tier: 3,
   prereqs: ['newton-second-law', 'weight'],
+  latex: '\\mathrm{TWR} = \\dfrac{T}{m\\,g}',
   inputs: [
     {
       key: 'thrustN',
@@ -290,6 +295,7 @@ export const freeFallFormula: FormulaDef<{ heightM: number; body: string }> = {
   domain: 'mechanics',
   tier: 1,
   prereqs: [],
+  latex: 't=\\sqrt{\\dfrac{2h}{g}},\\quad v=\\sqrt{2gh}',
   inputs: [
     {
       key: 'heightM',
@@ -351,6 +357,7 @@ export const projectileFormula: FormulaDef<{ v0Ms: number; angleDeg: number; bod
   domain: 'mechanics',
   tier: 2,
   prereqs: ['free-fall'],
+  latex: 'R = \\dfrac{v_0^2 \\sin 2\\theta}{g}',
   inputs: [
     {
       key: 'v0Ms',
@@ -428,6 +435,7 @@ export const deltaVMargin: FormulaDef<{ capacityKms: number; requiredKms: number
   domain: 'transfer',
   tier: 5,
   prereqs: ['tsiolkovsky'],
+  latex: '\\text{margin} = v_{\\text{cap}} - v_{\\text{req}}',
   inputs: [
     {
       key: 'capacityKms',

@@ -72,6 +72,7 @@ export interface FormulaDef<I = Record<string, number | string>> {
   selectionOutputs?: OutputSpec[]; // interactive-figure picks (porkchop cell, sky-chart body …)
   staleAfterDays?: number; // data-staleness bound for `epochAgeDays`
   citationKey?: string; // /science deep-link
+  latex?: string; // LaTeX source for the equation card (server-rendered at build, ADR-034)
   compute(inputs: I): FormulaResult;
 }
 

@@ -59,7 +59,7 @@ The production app ships a set of user-facing routes (the core experience below;
 
 | Corpus | Count |
 | --- | --- |
-| User-facing routes (top-level) | **25** |
+| User-facing routes (top-level) | **26** |
 | Missions | **125** |
 | Fleet entries | **274** |
 | Science sections | **165** |
@@ -69,7 +69,7 @@ The production app ships a set of user-facing routes (the core experience below;
 | AJV schemas | **56** |
 | Essays | **13** |
 
-_Top-level routes: catalog · colophon · credits · earth · essays · explore · fleet · fly · gallery · iss · learn · library · live · mars · missions · moon · patches · plan · posters · programs · science · sourcing · tiangong · venus · worlds_
+_Top-level routes: catalog · colophon · credits · earth · essays · explore · fleet · fly · gallery · iss · lab · learn · library · live · mars · missions · moon · patches · plan · posters · programs · science · sourcing · tiangong · venus · worlds_
 
 <!-- GENERATED:corpus-counts:end -->
 

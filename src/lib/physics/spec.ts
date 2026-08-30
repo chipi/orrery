@@ -1,0 +1,176 @@
+/**
+ * The Physics-Lab contract types (S2a · RFC-037 §4/§5 + Amendment 01) — FROZEN
+ * after two Fable-5 pre-freeze rounds (docs/wip/2026-08-29-s2-contracts-draft.md).
+ *
+ * These are the shapes the whole flagship shares: the registry, the Lab views,
+ * the MCP server, and the `.orrlab.json` document format. They live in the kernel
+ * (pure) because kernel formulas EMIT `FigureSpec`/`FormulaResult`. Changing any
+ * shape here is a contract re-freeze.
+ *
+ * Text discipline: every user-facing string is an i18n message KEY (`*Key`),
+ * resolved from the paraglide bundle — EXCEPT user-authored free text (Notebook
+ * `title`, `Card.note`). Provenance discipline: kernel formulas emit only
+ * `fidelity: 'computed'`; `geometric`/`replayed-published` come from app-side
+ * producers. The honesty line, made structural.
+ */
+import type { Unit, Quantity } from './util/units';
+
+export type { Unit, Quantity } from './util/units';
+
+// Body identifiers the kernel knows (subset used by Lab formulas — the full set
+// lives in the per-body constants table). Kept string-open at the type edge; the
+// registry validates against the real BODY table.
+export type BodyId = string;
+
+// ─── Inputs / outputs ───────────────────────────────────────────────────────
+
+/** A typed input field: drives the slider UI, the derived MCP JSON-Schema, and caps. */
+export interface FieldSpec {
+  key: string;
+  labelKey: string; // i18n
+  units: Unit;
+  kind: 'number' | 'enum' | 'body' | 'date'; // 'date' = ISO string, adapter → JD
+  default: number | string;
+  min?: number;
+  max?: number;
+  step?: number; // number
+  enumValues?: { value: string; labelKey: string }[]; // labeled — no raw untranslated ids
+  bodyIds?: BodyId[]; // 'body': per-formula domain (Lambert ≠ free-fall)
+  serverCap?: number; // MCP abuse bound (e.g. steps ≤ N)
+  injected?: true; // adapter-owned (e.g. fresh TLE) — NOT an MCP user param
+}
+
+/** A declared output — makes wires + MCP result docs statically checkable. */
+export interface OutputSpec {
+  key: string;
+  labelKey: string;
+  units: Unit;
+}
+
+// ─── Formula definition + result ────────────────────────────────────────────
+
+/**
+ * The single source the palette, all views, and the MCP tool generator derive
+ * from. One place to add a formula.
+ *
+ * Invariant (S2c test): keys are UNIQUE across `outputs ∪ selectionOutputs`, so
+ * merging picks into the output namespace on recompute is unambiguous. String
+ * picks (body/enum) declare `units: ''` and match a wire's target by
+ * `FieldSpec.kind`; numeric picks match by `units`.
+ */
+export interface FormulaDef<I = Record<string, number | string>> {
+  id: string;
+  titleKey: string;
+  domain: 'ephemeris' | 'transfer' | 'ascent' | 'descent' | 'propulsion' | 'satellite' | 'mechanics';
+  tier: number; // difficulty rank (concept graph)
+  prereqs: string[]; // FormulaDef ids that should precede
+  inputs: FieldSpec[];
+  outputs: OutputSpec[]; // static; a test asserts compute() keys align (see FormulaResult)
+  selectionOutputs?: OutputSpec[]; // interactive-figure picks (porkchop cell, sky-chart body …)
+  staleAfterDays?: number; // data-staleness bound for `epochAgeDays`
+  citationKey?: string; // /science deep-link
+  compute(inputs: I): FormulaResult;
+}
+
+export type Registry = ReadonlyMap<string, FormulaDef>;
+
+export interface FormulaResult {
+  /** keys ⊆ FormulaDef.outputs[].key always; ≡ when status.ok is true. */
+  values: Record<string, Quantity>;
+  figure?: FigureSpec;
+  /** fail-honest: infeasible carries an i18n reason key; `values` may be partial when !ok. */
+  status: { ok: true } | { ok: false; reasonKey: string };
+  /** i18n keys naming what the model ignores (the teaching-honesty payload). */
+  assumptions: string[];
+  /** data staleness (TLE/ephemeris); the bound is FormulaDef.staleAfterDays. */
+  epochAgeDays?: number;
+}
+
+// ─── FigureSpec + provenance ────────────────────────────────────────────────
+
+export interface Vec2 {
+  x: number;
+  y: number;
+}
+
+export type Fidelity = 'computed' | 'geometric' | 'replayed-published';
+
+/** Kernel-emitted figures are ALWAYS `fidelity: 'computed'`. */
+export interface Provenance {
+  fidelity: Fidelity;
+  module: string;
+}
+
+export interface Annotation {
+  at: Vec2;
+  labelKey: string;
+  kind: 'point' | 'vector' | 'region' | 'note';
+}
+
+export interface Axis {
+  labelKey: string;
+  units: Unit;
+  scale?: 'linear' | 'log';
+}
+
+/**
+ * The FROZEN public surface every FigureSpec carries. Renderers MUST fall back
+ * to an honest "provenance + assumptions + unsupported figure" render for an
+ * unknown `kind` (degrade, never crash), so old documents / MCP clients survive.
+ * `figure.assumptions ⊆ result.assumptions` (S2a test).
+ */
+export interface FigureBase {
+  provenance: Provenance;
+  assumptions: string[];
+}
+
+export type FigureSpec = FigureBase &
+  (
+    | { kind: 'curve'; x: Axis; y: Axis; series: { labelKey?: string; points: Vec2[] }[]; marks?: Annotation[] }
+    | { kind: 'force-diagram'; bodyLabelKey: string; vectors: { labelKey: string; dir: Vec2; magN: number }[] }
+    | { kind: 'dv-waterfall'; segments: { labelKey: string; dv: number; kind: 'gain' | 'cost' }[] }
+    | { kind: 'transfer-ellipse'; frame: 'heliocentric'; bodies: { labelKey: string; at: Vec2 }[]; arc: Vec2[]; marks: Annotation[] }
+    // `tofDays` = Time-of-Flight (the kernel grid rows are TOF, not arrival dates).
+    | { kind: 'porkchop'; depDays: number[]; tofDays: number[]; grid: number[][]; units: Unit }
+    // Additive per goal (renderers demand-driven); typed now so the union is stable.
+    | { kind: 'orbit' | 'ground-track' | 'sky-chart' | 'entry-corridor' | 'cislunar-eci' }
+  );
+
+// ─── Goal / GoalStep (curriculum) + Card / Notebook (user documents) ────────
+
+export interface Goal {
+  id: string;
+  titleKey: string; // authored curriculum text — i18n-keyed, translated ×14
+  family: 'spaceflight' | 'observe' | 'cross-cutting';
+  tier: number;
+  prereqs: string[]; // Goal ids
+  path: GoalStep[];
+}
+
+export interface GoalStep {
+  formulaId: string;
+  narrativeKey: string;
+  wiresFrom?: { fromStep: number; output: string; toInput: string }[];
+}
+
+/**
+ * The user-authored atom (Notebook/Canvas). Distinct from `Goal` (curriculum).
+ * A wire is valid iff `output` names a declared `OutputSpec.key` (or
+ * `selectionOutputs.key`) of the source formula AND that output's `units` equals
+ * the target `FieldSpec.units` (no implicit conversion). Wire beats `inputs` on
+ * recompute; `inputs` is the unwired fallback.
+ */
+export interface Card {
+  id: string;
+  formulaId: string; // registry formulas only — non-formula figures are Lab-view overlays, not cards
+  inputs: Record<string, number | string>;
+  wires?: { fromCard: string; output: string; toInput: string }[];
+  selection?: Record<string, number | string>; // interactive-figure picks, persisted
+  note?: string; // USER free text; NEVER URL-serialized (localStorage/.orrlab only)
+}
+
+export interface Notebook {
+  orrlab: 1; // .orrlab.json schema VERSION (frozen); the codec preserves unknown fields
+  title: string; // USER free text — NOT i18n-keyed
+  cards: Card[];
+}

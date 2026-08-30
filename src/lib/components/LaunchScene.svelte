@@ -27,7 +27,7 @@
     type AscentSummary,
     type AscentState,
     type LaunchProfile,
-  } from '$lib/orbital/ascent-physics';
+  } from '$lib/physics/ascent/ascent-physics';
   import {
     IGNITION_T_S,
     T_MINUS_S,

@@ -9,8 +9,8 @@ import {
   padState,
   type AscentBeat,
 } from './ascent-hud';
-import { integrateAscent } from './ascent-physics';
-import { FALCON9_SAMPLE } from './ascent-profiles';
+import { integrateAscent } from '$lib/physics/ascent/ascent-physics';
+import { FALCON9_SAMPLE } from '$lib/physics/ascent/ascent-profiles';
 
 describe('injectionPhaseStatus', () => {
   const secoT = 500;

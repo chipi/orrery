@@ -14,8 +14,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
-import { LAUNCHER_ENGINES } from '../../src/lib/orbital/launcher-engines.ts';
-import { ENGINE_REGISTRY } from '../../src/lib/orbital/engine-registry.ts';
+import { LAUNCHER_ENGINES } from '../../src/lib/physics/propulsion/launcher-engines.ts';
+import { ENGINE_REGISTRY } from '../../src/lib/physics/propulsion/engine-registry.ts';
 
 const ROOT = path.resolve(import.meta.dirname, '..', '..');
 const OUT = path.join(ROOT, 'docs', 'wip', 'essay-diagram-sources', 'launcher-cutaways');

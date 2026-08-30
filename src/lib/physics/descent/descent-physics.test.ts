@@ -10,7 +10,7 @@ import {
 } from './descent-physics';
 import { SURFACE_DENSITY_KGM3 } from './descent-physics-constants';
 import { expandDescentProfile, type RawDescentProfile } from './descent-profile-registry';
-import { expectCloseTo, expectInRange } from '../test-helpers/expect-close';
+import { expectCloseTo, expectInRange } from '../../test-helpers/expect-close';
 
 // ─── Archetype test profiles (one per EDL class) ────────────────────
 

@@ -22,7 +22,7 @@ import {
   type DescentBody,
   type DescentEvent,
   type DescentState,
-} from '$lib/orbital/descent-physics';
+} from '$lib/physics/descent/descent-physics';
 import { sepProgress } from '$lib/orbital/ascent-cameras';
 import { buildDescentModel } from '$lib/three/descent-models';
 import type { FlightPhaseScene, ForceKey } from '$lib/three/flight-phase-scene';

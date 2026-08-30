@@ -15,8 +15,8 @@ import {
   DESCENT_MISSION_IDS,
   type RawDescentProfile,
   type ArchetypeName,
-} from '../src/lib/orbital/descent-profile-registry';
-import { integrateDescent } from '../src/lib/orbital/descent-physics';
+} from '../src/lib/physics/descent/descent-profile-registry';
+import { integrateDescent } from '../src/lib/physics/descent/descent-physics';
 import type { EDLSystemKind } from '../src/types/mission';
 
 const ROOT = resolve(import.meta.dirname, '..');

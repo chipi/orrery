@@ -10,7 +10,7 @@ import type {
   DescentState,
   DescentSummary,
   EDLPhaseKind,
-} from './descent-physics';
+} from '$lib/physics/descent/descent-physics';
 
 /** EDL phase → HUD status label. */
 export const EDL_PHASE_LABEL: Record<EDLPhaseKind, string> = {

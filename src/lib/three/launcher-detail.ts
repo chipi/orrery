@@ -10,7 +10,7 @@
  */
 import * as THREE from 'three';
 import { heroMetal, heroDark, heroWhite } from './hero-materials';
-import type { EngineArrangement } from '$lib/orbital/launcher-engines';
+import type { EngineArrangement } from '$lib/physics/propulsion/launcher-engines';
 
 // ── Materials per agency "character" ───────────────────────────────────────
 // SpaceX = bare shiny stainless; NASA/most = white MLI + brushed metal frames;

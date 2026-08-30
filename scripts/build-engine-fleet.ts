@@ -1,6 +1,6 @@
 /**
  * build-engine-fleet.ts — generate the `engine` /fleet category from the curated
- * engine registry (src/lib/orbital/engine-registry.ts, PRD-032).
+ * engine registry (src/lib/physics/propulsion/engine-registry.ts, PRD-032).
  *
  * Writes:
  *   - static/data/fleet/engine/<id>.json  (one FleetEntryBase per engine)
@@ -16,7 +16,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { ENGINE_REGISTRY } from '../src/lib/orbital/engine-registry';
+import { ENGINE_REGISTRY } from '../src/lib/physics/propulsion/engine-registry';
 
 const FLEET_DIR = 'static/data/fleet';
 const ENGINE_DIR = join(FLEET_DIR, 'engine');

@@ -10,7 +10,11 @@ import {
   descentStatus,
   formatDescentAltitude,
 } from './descent-hud';
-import { integrateDescent, type DescentProfile, type DescentState } from './descent-physics';
+import {
+  integrateDescent,
+  type DescentProfile,
+  type DescentState,
+} from '$lib/physics/descent/descent-physics';
 
 // ─── Minimal Mars skycrane profile (same archetype as descent-physics.test.ts)
 

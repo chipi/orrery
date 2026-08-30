@@ -140,14 +140,17 @@
     loadLaunchProfile,
     resolveLauncher,
     hasLaunchProfile,
-  } from '$lib/orbital/launch-profile-registry';
-  import { loadDescentProfile, hasDescentProfile } from '$lib/orbital/descent-profile-registry';
-  import { integrateAscent, type LaunchProfile } from '$lib/orbital/ascent-physics';
+  } from '$lib/physics/ascent/launch-profile-registry';
+  import {
+    loadDescentProfile,
+    hasDescentProfile,
+  } from '$lib/physics/descent/descent-profile-registry';
+  import { integrateAscent, type LaunchProfile } from '$lib/physics/ascent/ascent-physics';
   import {
     integrateDescent,
     type DescentProfile,
     type EDLPhaseKind,
-  } from '$lib/orbital/descent-physics';
+  } from '$lib/physics/descent/descent-physics';
   import {
     makeTimeline,
     scrubberToPoint,

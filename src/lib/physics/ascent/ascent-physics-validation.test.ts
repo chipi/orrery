@@ -23,7 +23,7 @@
 import { describe, it, expect } from 'vitest';
 import { integrateAscent, circularSpeed, type AscentEvent } from './ascent-physics';
 import { FALCON9_SAMPLE } from './ascent-profiles';
-import { expectCloseTo } from '../test-helpers/expect-close';
+import { expectCloseTo } from '../../test-helpers/expect-close';
 
 const s = integrateAscent(FALCON9_SAMPLE);
 const ev = (type: AscentEvent['type']): AscentEvent | undefined =>

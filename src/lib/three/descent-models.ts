@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import type { DescentBody } from '../orbital/descent-physics';
+import type { DescentBody } from '$lib/physics/descent/descent-physics';
 import { buildMoonLanderModel } from '../moon-lander-models';
 import { buildMarsLanderModel } from '../mars-lander-models';
 import { buildCapsuleById } from './capsule-models';

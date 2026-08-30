@@ -5,7 +5,7 @@
  * No Three.js / Svelte / DOM — unit-tested like the rest of the orbital lib.
  */
 
-import type { AscentState, AscentSummary } from './ascent-physics';
+import type { AscentState, AscentSummary } from '$lib/physics/ascent/ascent-physics';
 
 /** Countdown length (s): the HUD opens at T-minus this before liftoff. */
 export const T_MINUS_S = 12;

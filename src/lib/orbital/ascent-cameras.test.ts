@@ -10,8 +10,8 @@ import {
   SEP_SLOWMO_WINDOW_S,
   type AscentShotName,
 } from './ascent-cameras';
-import { integrateAscent, type AscentState } from './ascent-physics';
-import { FALCON9_SAMPLE } from './ascent-profiles';
+import { integrateAscent, type AscentState } from '$lib/physics/ascent/ascent-physics';
+import { FALCON9_SAMPLE } from '$lib/physics/ascent/ascent-profiles';
 
 const summary = integrateAscent(FALCON9_SAMPLE);
 const schedule = buildShotSchedule({

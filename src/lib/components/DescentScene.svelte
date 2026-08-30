@@ -29,7 +29,7 @@
     type DescentProfile,
     type DescentState,
     type DescentSummary,
-  } from '$lib/orbital/descent-physics';
+  } from '$lib/physics/descent/descent-physics';
   import {
     buildDescentBeats,
     descentStatus,
@@ -42,7 +42,7 @@
     warpDescentTime as warpTime,
     unwarpDescentTime as unwarpTime,
   } from '$lib/orbital/descent-timewarp';
-  import { BODY_LABEL } from '$lib/orbital/descent-physics-constants';
+  import { BODY_LABEL } from '$lib/physics/descent/descent-physics-constants';
   import { onLayerChange } from '$lib/science-layers';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { DESCENT_FORCE_LAYER_ENTRIES } from '$lib/orbital/descent-force-layers';

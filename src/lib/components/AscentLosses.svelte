@@ -8,7 +8,7 @@
   links (gravity-turn, max-q, rocket-equation).
 -->
 <script lang="ts">
-  import type { AscentState } from '$lib/orbital/ascent-physics';
+  import type { AscentState } from '$lib/physics/ascent/ascent-physics';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
 
   interface Props {

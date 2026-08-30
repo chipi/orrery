@@ -17,7 +17,7 @@
 import * as THREE from 'three';
 import { BoldArrow } from './bold-arrow';
 import { SeparationBurst } from './separation-burst';
-import { gravity, type AscentEvent, type AscentState } from '$lib/orbital/ascent-physics';
+import { gravity, type AscentEvent, type AscentState } from '$lib/physics/ascent/ascent-physics';
 import {
   activeShotAt,
   composeShot,
@@ -32,7 +32,7 @@ import { buildCapsuleById } from '$lib/three/capsule-models';
 import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
 import { buildLauncherModel } from '$lib/three/launcher-models';
 import { clusterOffsets } from '$lib/three/launcher-detail';
-import { getLauncherEngines } from '$lib/orbital/launcher-engines';
+import { getLauncherEngines } from '$lib/physics/propulsion/launcher-engines';
 import {
   buildLaunchGround,
   type LaunchGround,

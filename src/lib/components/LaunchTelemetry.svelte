@@ -10,7 +10,11 @@
   Pure presentational: give it the integrated summary + the live state at time t.
 -->
 <script lang="ts">
-  import type { AscentSummary, AscentState, LaunchProfile } from '$lib/orbital/ascent-physics';
+  import type {
+    AscentSummary,
+    AscentState,
+    LaunchProfile,
+  } from '$lib/physics/ascent/ascent-physics';
   import { IGNITION_T_S, ORBIT_TARGET_KMS } from '$lib/orbital/ascent-hud';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import type { ScienceTabId } from '$types/science';

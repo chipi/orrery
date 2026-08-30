@@ -12,8 +12,8 @@
 import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { integrateAscent } from '../src/lib/orbital/ascent-physics.ts';
-import { R_EARTH_M, MU_EARTH_M3_S2 } from '../src/lib/orbital/ascent-physics-constants.ts';
+import { integrateAscent } from '../src/lib/physics/ascent/ascent-physics.ts';
+import { R_EARTH_M, MU_EARTH_M3_S2 } from '../src/lib/physics/ascent/ascent-physics-constants.ts';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 

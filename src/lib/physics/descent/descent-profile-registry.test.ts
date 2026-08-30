@@ -10,7 +10,7 @@ import {
 } from './descent-profile-registry';
 import { integrateDescent } from './descent-physics';
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../');
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../../');
 
 function loadRaw(missionId: string): RawDescentProfile {
   return JSON.parse(

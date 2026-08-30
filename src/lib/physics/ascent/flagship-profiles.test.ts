@@ -47,7 +47,7 @@ function orbitElements(s: ReturnType<typeof integrateAscent>) {
   };
 }
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../');
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../../');
 
 function load(id: string): LaunchProfile {
   return JSON.parse(

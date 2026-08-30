@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { heroGold, heroWhite, heroDark, heroMetal } from './hero-materials';
-import { getLauncherEngines } from '$lib/orbital/launcher-engines';
+import { getLauncherEngines } from '$lib/physics/propulsion/launcher-engines';
 import {
   agencyPalette,
   ringFrames,

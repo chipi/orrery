@@ -16,7 +16,7 @@ import { LAUNCHER_ENGINES } from './launcher-engines';
 // fails the cross-ref gate, not just silently 404s in the UI.
 const SCIENCE_PRIMERS = ['propulsion/engine-types', 'propulsion/thrust-and-twr'];
 const scienceCardExists = (slug: string) =>
-  existsSync(resolve(__dirname, '../../../static/data/science', `${slug}.json`));
+  existsSync(resolve(__dirname, '../../../../static/data/science', `${slug}.json`));
 
 describe('ENGINE_REGISTRY', () => {
   it('holds the curated set with unique, url-safe ids', () => {

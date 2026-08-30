@@ -18,9 +18,9 @@ import {
   type RawDescentProfile,
 } from './descent-profile-registry';
 import { integrateDescent } from './descent-physics';
-import { expectInRange } from '../test-helpers/expect-close';
+import { expectInRange } from '../../test-helpers/expect-close';
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../');
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../../');
 const profilePath = (id: string): string =>
   resolve(ROOT, `static/data/descent-profiles/${id}.json`);
 const loadRaw = (id: string): RawDescentProfile =>

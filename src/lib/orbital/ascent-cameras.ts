@@ -12,7 +12,7 @@
  * is at (downrangeKm, altKm, 0); the launch site is the origin.
  */
 
-import type { AscentEvent, AscentState } from './ascent-physics';
+import type { AscentEvent, AscentState } from '$lib/physics/ascent/ascent-physics';
 
 export type AscentShotName =
   | 'pad'

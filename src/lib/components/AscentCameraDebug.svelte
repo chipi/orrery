@@ -15,7 +15,7 @@
   functions the scene uses, so it mirrors the real camera without any scene hook.
 -->
 <script lang="ts">
-  import { sampleAscentAt, type AscentSummary } from '$lib/orbital/ascent-physics';
+  import { sampleAscentAt, type AscentSummary } from '$lib/physics/ascent/ascent-physics';
   import {
     activeShotAt,
     composeShot,

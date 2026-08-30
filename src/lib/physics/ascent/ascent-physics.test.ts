@@ -22,7 +22,7 @@ import {
 } from './ascent-physics';
 import { FALCON9_SAMPLE as FALCON9 } from './ascent-profiles';
 import { SEA_LEVEL_DENSITY_KGM3, SEA_LEVEL_PRESSURE_PA } from './ascent-physics-constants';
-import { expectCloseTo } from '../test-helpers/expect-close';
+import { expectCloseTo } from '../../test-helpers/expect-close';
 
 describe('atmosphere + gravity', () => {
   it('sea-level density + pressure match the constants', () => {

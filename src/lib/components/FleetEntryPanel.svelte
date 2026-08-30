@@ -19,7 +19,7 @@
     enginesForLauncher,
     scienceSlugForCycle,
     type EngineCycle,
-  } from '$lib/orbital/engine-registry';
+  } from '$lib/physics/propulsion/engine-registry';
 
   /**
    * Fleet detail panel. Six tabs (OVERVIEW / GALLERY / ANATOMY / CREW /

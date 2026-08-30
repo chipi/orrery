@@ -50,6 +50,44 @@ export default [
     },
   },
   {
+    // Physics-kernel purity gate (RFC-037 §3 / D1 · epic #458 · S1.0 scaffold).
+    // `src/lib/physics/**` is the pure, framework-free kernel imported unchanged
+    // by both the SvelteKit app and a standalone Node process. It may NOT depend
+    // on the renderer (three), the framework (svelte / $app), app-internal $lib
+    // modules, or the DOM. Shared `$types/*` and intra-kernel `$lib/physics/*`
+    // imports are allowed. Currently 'warn' so the S1.1–S1.4 module moves surface
+    // violations without blocking; flipped to 'error' at S1.5 once the kernel is
+    // fully carved (see docs/wip/2026-08-29-s1-kernel-boundary-manifest.md §5).
+    files: ['src/lib/physics/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'warn',
+        {
+          patterns: [
+            {
+              group: [
+                'three',
+                'three/*',
+                'svelte',
+                'svelte/*',
+                '$app/*',
+                '$lib/components/*',
+                '$lib/three/*',
+                '$lib/stores/*',
+                '$lib/fly/*',
+                '$lib/data/*',
+                '$lib/science-layers',
+                '$lib/paraglide/*',
+              ],
+              message:
+                'physics kernel must stay pure — no three / svelte / $app / app-internal $lib / DOM (RFC-037 §3). Move the impure part app-side.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
     // eslint-plugin-svelte v3 routes .svelte, .svelte.ts and .svelte.js
     // (Svelte 5 rune modules) through svelte-eslint-parser; give it the
     // TypeScript sub-parser so the .svelte.ts modules parse as TS.

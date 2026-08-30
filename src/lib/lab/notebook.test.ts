@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { recomputeNotebook, type Cell } from './notebook';
 import { REGISTRY, defaultInputs } from '$lib/physics/registry';
 import { GOALS } from '$lib/physics/registry/goals';
+import type { FormulaDef, Registry } from '$lib/physics/spec';
 
 /**
  * S3b recompute-engine invariants. The M1 "launch a rocket" goal is the shipping
@@ -42,7 +43,7 @@ describe('recomputeNotebook · the M1 launch-a-rocket ladder', () => {
     // The verdict rung (index 5) consumed it via the wire — capacityKms is a
     // wired key and equals the upstream Δv (NOT the input default).
     const verdict = states[5];
-    if (verdict.status === 'upstream-failed' || verdict.status === 'unknown-formula')
+    if (verdict.status !== 'ok' && verdict.status !== 'fail')
       throw new Error('verdict should compute');
     expect(verdict.wiredKeys).toContain('capacityKms');
     expect(verdict.resolvedInputs.capacityKms).toBeCloseTo(deltaV, 6);
@@ -108,5 +109,101 @@ describe('recomputeNotebook · wire discipline (B3)', () => {
     expect(state.status).toBe('unknown-formula');
     if (state.status !== 'unknown-formula') throw new Error();
     expect(state.formulaId).toBe('not-a-real-formula');
+  });
+});
+
+// ─── Hardening after the S3a+S3b opus review — the untrusted-decode surface ──────
+// The engine is S3c's trusted core; every hostile shape must degrade fail-honest,
+// never throw and never fake a value.
+describe('recomputeNotebook · hardening (opus review B-1/B-2/M-2)', () => {
+  it('compute-error: an out-of-domain body id is caught, not thrown (B-1)', () => {
+    // bodyGravityMs2 throws on an unknown body; the whole notebook must not crash.
+    const cells: Cell[] = [{ formulaId: 'weight', inputs: { massKg: 1, body: 'xyzzy' } }];
+    let states: ReturnType<typeof recomputeNotebook>;
+    expect(() => (states = recomputeNotebook(cells, REGISTRY))).not.toThrow();
+    expect(states![0].status).toBe('compute-error');
+  });
+
+  it('invalid-wire: a wire naming an undeclared output is distinct from upstream-failed (M-2)', () => {
+    const cells: Cell[] = [
+      { formulaId: 'tsiolkovsky', inputs: defaultInputs(REGISTRY.get('tsiolkovsky')!) },
+      {
+        formulaId: 'delta-v-margin',
+        inputs: { capacityKms: 12, requiredKms: 9.4 },
+        wires: [{ fromIndex: 0, output: 'no-such-output', toInput: 'capacityKms' }],
+      },
+    ];
+    const [src, verdict] = recomputeNotebook(cells, REGISTRY);
+    expect(src.status).toBe('ok'); // the upstream did NOT fail — the wire is just wrong
+    expect(verdict.status).toBe('invalid-wire');
+    if (verdict.status !== 'invalid-wire') throw new Error();
+    expect(verdict.output).toBe('no-such-output');
+  });
+
+  it('a non-integer / negative fromIndex is un-honoured, not a deref crash', () => {
+    const cells: Cell[] = [
+      { formulaId: 'tsiolkovsky', inputs: defaultInputs(REGISTRY.get('tsiolkovsky')!) },
+      {
+        formulaId: 'delta-v-margin',
+        inputs: { capacityKms: 12, requiredKms: 9.4 },
+        wires: [{ fromIndex: 0.5, output: 'deltaV', toInput: 'capacityKms' }],
+      },
+    ];
+    let states: ReturnType<typeof recomputeNotebook>;
+    expect(() => (states = recomputeNotebook(cells, REGISTRY))).not.toThrow();
+    const s = states![1];
+    expect(s.status).toBe('ok'); // wire ignored → capacity stays 12
+    if (s.status !== 'ok') throw new Error();
+    expect(s.resolvedInputs.capacityKms).toBe(12);
+  });
+
+  it('a self-wire (fromIndex === i) is un-honoured', () => {
+    const cells: Cell[] = [
+      {
+        formulaId: 'tsiolkovsky',
+        inputs: defaultInputs(REGISTRY.get('tsiolkovsky')!),
+        wires: [{ fromIndex: 0, output: 'deltaV', toInput: 'ispS' }],
+      },
+    ];
+    const [state] = recomputeNotebook(cells, REGISTRY);
+    expect(state.status).toBe('ok');
+    if (state.status !== 'ok') throw new Error();
+    expect(state.wiredKeys).not.toContain('ispS');
+  });
+
+  it('a non-finite ok value does NOT flow through a wire — it blocks (B-2)', () => {
+    // No shipping formula emits a non-finite ok value; prove the guard with a mock.
+    const q = (value: number) => ({ value, units: 'km/s' });
+    const mock: Registry = new Map<string, FormulaDef>([
+      [
+        'inf-src',
+        {
+          outputs: [{ key: 'out', labelKey: 'k', units: 'km/s' }],
+          compute: () => ({ values: { out: q(Infinity) }, status: { ok: true }, assumptions: [] }),
+        } as unknown as FormulaDef,
+      ],
+      [
+        'sink',
+        {
+          outputs: [{ key: 'y', labelKey: 'k', units: 'km/s' }],
+          compute: (i: Record<string, number | string>) => ({
+            values: { y: q(Number(i.x)) },
+            status: { ok: true },
+            assumptions: [],
+          }),
+        } as unknown as FormulaDef,
+      ],
+    ]);
+    const cells: Cell[] = [
+      { formulaId: 'inf-src', inputs: {} },
+      {
+        formulaId: 'sink',
+        inputs: { x: 5 },
+        wires: [{ fromIndex: 0, output: 'out', toInput: 'x' }],
+      },
+    ];
+    const [src, sink] = recomputeNotebook(cells, mock);
+    expect(src.status).toBe('ok');
+    expect(sink.status).toBe('upstream-failed'); // Infinity never becomes a readout
   });
 });

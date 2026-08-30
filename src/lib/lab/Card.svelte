@@ -14,10 +14,12 @@
     result         — FormulaResult, or null when upstreamFailed (nothing computed)
     onInput        — (key, value) → parent updates cell state → recompute
     wiredKeys      — inputs driven by a wire → rendered read-only "derived"
-    upstreamFailed — a wired source produced no value → surface, do NOT fake a result
+    blocked        — this cell produced no honest result (upstream-failed / invalid-wire /
+                     compute-error). Surface `blockedMessage`, do NOT fake a result.
+    blockedMessage — the honest reason the cell is blocked
 
-  States (plan §2): ok (teal) · fail-honest (mars-red + reasonKey) · upstream-failed.
-  Momentum (no figure) → FigureRenderer omitted. KaTeX is NOT imported here.
+  States (plan §2): ok (teal) · fail-honest (mars-red + reasonKey) · blocked (mars-red +
+  reason). Momentum (no figure) → FigureRenderer omitted. KaTeX is NOT imported here.
 -->
 <script lang="ts">
   import { base } from '$app/paths';
@@ -32,7 +34,8 @@
     result: FormulaResult | null;
     onInput: (key: string, value: number | string) => void;
     wiredKeys?: string[];
-    upstreamFailed?: boolean;
+    blocked?: boolean;
+    blockedMessage?: string;
   };
 
   let {
@@ -43,11 +46,12 @@
     result,
     onInput,
     wiredKeys = [],
-    upstreamFailed = false,
+    blocked = false,
+    blockedMessage = '',
   }: Props = $props();
 
   const wired = $derived(new Set(wiredKeys));
-  const failed = $derived(upstreamFailed || (result != null && !result.status.ok));
+  const failed = $derived(blocked || (result != null && !result.status.ok));
 
   // ─── Helpers ─────────────────────────────────────────────────────────────
   function numVal(v: number | string | undefined): number {
@@ -113,8 +117,8 @@
         {#if wired.has(field.key)}
           <!-- Wire-driven input: read-only derived value (not user-editable) -->
           <output id="field-{formula.id}-{field.key}" class="card__derived">
-            {#if upstreamFailed}
-              <span class="card__derived-void">upstream failed</span>
+            {#if blocked}
+              <span class="card__derived-void">no value</span>
             {:else}
               {fmt(numVal(inputs[field.key]))}<span class="card__derived-unit">{field.units}</span>
             {/if}
@@ -179,8 +183,8 @@
     {/each}
   </section>
 
-  <!-- Figure — omitted when upstream-failed or when the result has no figure -->
-  {#if !upstreamFailed && result?.figure}
+  <!-- Figure — omitted when blocked or when the result has no figure -->
+  {#if !blocked && result?.figure}
     <div class="card__figure">
       <FigureRenderer figure={result.figure} {t} />
     </div>
@@ -193,11 +197,11 @@
     aria-label="Results"
     aria-live="polite"
   >
-    {#if upstreamFailed}
-      <!-- upstream-failed: a wired source produced no value. Never a faked verdict. -->
+    {#if blocked}
+      <!-- blocked: no honest result (upstream-failed / invalid-wire / compute-error). -->
       <div class="card__readout-fail" role="alert">
         <span class="card__readout-fail-icon" aria-hidden="true">&#9888;</span>
-        Upstream failed — an earlier cell produced no value to wire in.
+        {blockedMessage}
       </div>
     {:else if result?.status.ok}
       {#each formula.outputs as out (out.key)}

@@ -14,9 +14,9 @@
 -->
 <script lang="ts">
   import { untrack } from 'svelte';
-  import type { Goal } from '$lib/physics/spec';
+  import type { Goal, FormulaResult } from '$lib/physics/spec';
   import { REGISTRY, defaultInputs } from '$lib/physics/registry';
-  import { recomputeNotebook, type Cell, type CellWire } from './notebook';
+  import { recomputeNotebook, type Cell, type CellComputed, type CellWire } from './notebook';
   import Card from './Card.svelte';
 
   type Props = {
@@ -78,6 +78,53 @@
     const def = REGISTRY.get(id);
     return def ? t(def.titleKey) : id;
   }
+
+  /**
+   * Map a cell's computed state to the Card's presentational props. A blocked cell
+   * (upstream-failed / invalid-wire / compute-error) shows its honest reason and no
+   * result — never a defaulted value. Messages are English literals for now; S3d
+   * routes them through paraglide (they take a step-number param).
+   */
+  function view(
+    state: CellComputed | undefined,
+    cell: UICell,
+  ): {
+    blocked: boolean;
+    message: string;
+    result: FormulaResult | null;
+    wiredKeys: string[];
+    inputs: Record<string, number | string>;
+  } {
+    const wiredKeys =
+      state && 'wiredKeys' in state ? state.wiredKeys : cell.wires.map((w) => w.toInput);
+    const base = { blocked: true, message: '', result: null, wiredKeys, inputs: cell.inputs };
+    if (!state) return base;
+    switch (state.status) {
+      case 'ok':
+      case 'fail':
+        return {
+          blocked: false,
+          message: '',
+          result: state.result,
+          wiredKeys,
+          inputs: state.resolvedInputs,
+        };
+      case 'upstream-failed':
+        return {
+          ...base,
+          message: `Upstream failed — step ${state.fromIndex + 1} produced no value to wire in.`,
+        };
+      case 'invalid-wire':
+        return {
+          ...base,
+          message: `Invalid wire — step ${state.fromIndex + 1} has no output '${state.output}'.`,
+        };
+      case 'compute-error':
+        return { ...base, message: 'Could not evaluate this formula with these inputs.' };
+      case 'unknown-formula':
+        return { ...base, message: `Unknown formula: ${state.formulaId}` };
+    }
+  }
 </script>
 
 <section class="nb" aria-label="Notebook">
@@ -101,18 +148,10 @@
             <p class="nb__narrative">{t(cell.narrativeKey)}</p>
           {/if}
 
-          {#if !formula || (state && state.status === 'unknown-formula')}
+          {#if !formula}
             <p class="nb__unknown" role="alert">Unknown formula: {cell.formulaId}</p>
           {:else}
-            {@const upstreamFailed = state?.status === 'upstream-failed'}
-            {@const wiredKeys =
-              state && 'wiredKeys' in state ? state.wiredKeys : cell.wires.map((w) => w.toInput)}
-            {@const shownInputs =
-              state && state.status !== 'upstream-failed' && 'resolvedInputs' in state
-                ? state.resolvedInputs
-                : cell.inputs}
-            {@const result =
-              state && (state.status === 'ok' || state.status === 'fail') ? state.result : null}
+            {@const v = view(state, cell)}
             <div class="nb__card">
               {#if cell.removable}
                 <button
@@ -127,10 +166,11 @@
                 {formula}
                 equationHtml={equationHtml[cell.formulaId] ?? ''}
                 {t}
-                inputs={shownInputs}
-                {result}
-                {wiredKeys}
-                {upstreamFailed}
+                inputs={v.inputs}
+                result={v.result}
+                wiredKeys={v.wiredKeys}
+                blocked={v.blocked}
+                blockedMessage={v.message}
                 onInput={(key, value) => setInput(i, key, value)}
               />
             </div>

@@ -155,6 +155,27 @@
     shareTimer = setTimeout(() => (shareState = 'idle'), 2000);
   }
 
+  // ─── Focus (one card full-width) — a URL-param mode, not a sub-route ───────
+  // Index-based (?focus=<i>) so it survives reload for goal + shared notebooks alike.
+  const focusIndex = $derived.by<number | null>(() => {
+    const raw = browser ? page.url.searchParams.get('focus') : null;
+    if (raw == null) return null;
+    const n = Number(raw);
+    return Number.isInteger(n) && n >= 0 && n < cells.length ? n : null;
+  });
+
+  function setFocus(i: number | null): void {
+    const params = new URLSearchParams(page.url.search);
+    if (i == null) params.delete('focus');
+    else params.set('focus', String(i));
+    const qs = params.toString();
+    void goto(`${base}/lab${qs ? `?${qs}` : ''}`, {
+      replaceState: true,
+      keepFocus: true,
+      noScroll: true,
+    });
+  }
+
   // ─── Mutations ─────────────────────────────────────────────────────────────
   function setInput(i: number, key: string, value: number | string): void {
     cells[i] = { ...cells[i], inputs: { ...cells[i].inputs, [key]: value } };
@@ -236,84 +257,112 @@
   }
 </script>
 
-<section class="nb" aria-label="Notebook">
-  <header class="nb__head">
-    <div class="nb__goal">
-      <span class="nb__goal-kicker">{restored ? 'Custom notebook' : 'Goal'}</span>
-      <h2 class="nb__goal-title">{restored ? 'Your notebook' : t(goal.titleKey)}</h2>
+<!-- One card + its action rail (focus / remove) — reused in notebook + focus modes. -->
+{#snippet cardCell(cell: UICell, i: number)}
+  {@const state = computed[i]}
+  {@const formula = REGISTRY.get(cell.formulaId)}
+  {#if !formula}
+    <p class="nb__unknown" role="alert">Unknown formula: {cell.formulaId}</p>
+  {:else}
+    {@const v = view(state, cell)}
+    <div class="nb__card">
+      <div class="nb__card-actions">
+        <button
+          type="button"
+          class="nb__act"
+          onclick={() => setFocus(focusIndex === i ? null : i)}
+          aria-label={focusIndex === i ? 'Exit focus' : 'Focus this cell'}
+          title="Focus this cell">⤢</button
+        >
+        {#if cell.removable}
+          <button
+            type="button"
+            class="nb__act nb__act--danger"
+            onclick={() => removeCell(i)}
+            aria-label="Remove this cell"
+            title="Remove cell">&times;</button
+          >
+        {/if}
+      </div>
+      <Card
+        {formula}
+        equationHtml={equationHtml[cell.formulaId] ?? ''}
+        {t}
+        inputs={v.inputs}
+        result={v.result}
+        wiredKeys={v.wiredKeys}
+        blocked={v.blocked}
+        blockedMessage={v.message}
+        onInput={(key, value) => setInput(i, key, value)}
+      />
     </div>
-    <button
-      type="button"
-      class="nb__share"
-      class:nb__share--done={shareState === 'copied'}
-      onclick={share}
-      aria-label="Share this notebook — copy a link"
-    >
-      {shareState === 'copied'
-        ? '✓ LINK COPIED'
-        : shareState === 'failed'
-          ? 'LINK IN URL'
-          : 'SHARE'}
-    </button>
-  </header>
+  {/if}
+{/snippet}
 
-  <ol class="nb__steps">
-    {#each cells as cell, i (cell.id)}
-      {@const state = computed[i]}
-      {@const formula = REGISTRY.get(cell.formulaId)}
-      <li class="nb__step">
-        <div class="nb__gutter" aria-hidden="true">
-          <span class="nb__index">{i + 1}</span>
-          {#if i < cells.length - 1}<span class="nb__rail"></span>{/if}
-        </div>
+<section class="nb" aria-label="Notebook">
+  {#if focusIndex !== null}
+    <!-- Focus mode — one card full-width, back link clears ?focus -->
+    {@const cell = cells[focusIndex]}
+    <div class="nb__focus-view">
+      <button type="button" class="nb__back" onclick={() => setFocus(null)}>
+        ← Back to notebook
+      </button>
+      <div class="nb__focus-head">
+        <span class="nb__index">{focusIndex + 1}</span>
+        {#if cell.narrativeKey}<p class="nb__narrative">{t(cell.narrativeKey)}</p>{/if}
+      </div>
+      {@render cardCell(cell, focusIndex)}
+    </div>
+  {:else}
+    <header class="nb__head">
+      <div class="nb__goal">
+        <span class="nb__goal-kicker">{restored ? 'Custom notebook' : 'Goal'}</span>
+        <h2 class="nb__goal-title">{restored ? 'Your notebook' : t(goal.titleKey)}</h2>
+      </div>
+      <button
+        type="button"
+        class="nb__share"
+        class:nb__share--done={shareState === 'copied'}
+        onclick={share}
+        aria-label="Share this notebook — copy a link"
+      >
+        {shareState === 'copied'
+          ? '✓ LINK COPIED'
+          : shareState === 'failed'
+            ? 'LINK IN URL'
+            : 'SHARE'}
+      </button>
+    </header>
 
-        <div class="nb__body">
-          {#if cell.narrativeKey}
-            <p class="nb__narrative">{t(cell.narrativeKey)}</p>
-          {/if}
+    <ol class="nb__steps">
+      {#each cells as cell, i (cell.id)}
+        <li class="nb__step">
+          <div class="nb__gutter" aria-hidden="true">
+            <span class="nb__index">{i + 1}</span>
+            {#if i < cells.length - 1}<span class="nb__rail"></span>{/if}
+          </div>
 
-          {#if !formula}
-            <p class="nb__unknown" role="alert">Unknown formula: {cell.formulaId}</p>
-          {:else}
-            {@const v = view(state, cell)}
-            <div class="nb__card">
-              {#if cell.removable}
-                <button
-                  type="button"
-                  class="nb__remove"
-                  onclick={() => removeCell(i)}
-                  aria-label="Remove this cell"
-                  title="Remove cell">&times;</button
-                >
-              {/if}
-              <Card
-                {formula}
-                equationHtml={equationHtml[cell.formulaId] ?? ''}
-                {t}
-                inputs={v.inputs}
-                result={v.result}
-                wiredKeys={v.wiredKeys}
-                blocked={v.blocked}
-                blockedMessage={v.message}
-                onInput={(key, value) => setInput(i, key, value)}
-              />
-            </div>
-          {/if}
-        </div>
-      </li>
-    {/each}
-  </ol>
-
-  <!-- + ADD CELL — append any registered formula as an unwired sandbox card -->
-  <div class="nb__add">
-    <label class="nb__add-label" for="nb-add-select">Add cell</label>
-    <select id="nb-add-select" class="nb__add-select" bind:value={addId}>
-      {#each [...REGISTRY.keys()] as id (id)}
-        <option value={id}>{labelFor(id)}</option>
+          <div class="nb__body">
+            {#if cell.narrativeKey}
+              <p class="nb__narrative">{t(cell.narrativeKey)}</p>
+            {/if}
+            {@render cardCell(cell, i)}
+          </div>
+        </li>
       {/each}
-    </select>
-    <button type="button" class="nb__add-btn" onclick={addCell}>+ ADD CELL</button>
-  </div>
+    </ol>
+
+    <!-- + ADD CELL — append any registered formula as an unwired sandbox card -->
+    <div class="nb__add">
+      <label class="nb__add-label" for="nb-add-select">Add cell</label>
+      <select id="nb-add-select" class="nb__add-select" bind:value={addId}>
+        {#each [...REGISTRY.keys()] as id (id)}
+          <option value={id}>{labelFor(id)}</option>
+        {/each}
+      </select>
+      <button type="button" class="nb__add-btn" onclick={addCell}>+ ADD CELL</button>
+    </div>
+  {/if}
 </section>
 
 <style>
@@ -453,28 +502,85 @@
     position: relative;
   }
 
-  .nb__remove {
+  /* Action rail — focus + remove, top-right of the card */
+  .nb__card-actions {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
     z-index: 2;
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .nb__act {
     font-family: 'Space Mono', monospace;
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1;
-    color: rgba(193, 68, 14, 0.8);
+    color: rgba(78, 205, 196, 0.85);
     background: rgba(4, 4, 12, 0.7);
-    border: 1px solid rgba(193, 68, 14, 0.3);
+    border: 1px solid rgba(78, 205, 196, 0.3);
     border-radius: 3px;
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nb__act:hover,
+  .nb__act:focus-visible {
+    background: rgba(78, 205, 196, 0.14);
+    outline: 2px solid #4ecdc4;
+    outline-offset: 1px;
+  }
+
+  .nb__act--danger {
+    color: rgba(193, 68, 14, 0.85);
+    border-color: rgba(193, 68, 14, 0.3);
+  }
+
+  .nb__act--danger:hover,
+  .nb__act--danger:focus-visible {
+    background: rgba(193, 68, 14, 0.15);
+    outline-color: #c1440e;
+  }
+
+  /* ─── Focus mode ──────────────────────────────────────────────────────── */
+  .nb__focus-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nb__back {
+    align-self: flex-start;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #4ecdc4;
+    background: none;
+    border: none;
+    padding: 0.4rem 0;
     cursor: pointer;
   }
 
-  .nb__remove:hover,
-  .nb__remove:focus-visible {
-    background: rgba(193, 68, 14, 0.15);
-    outline: 2px solid #c1440e;
-    outline-offset: 1px;
+  .nb__back:hover,
+  .nb__back:focus-visible {
+    text-decoration: underline;
+    outline: none;
+  }
+
+  .nb__focus-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* In focus, let the card breathe wider than the 600px notebook cap. */
+  .nb__focus-view :global(.card) {
+    max-width: 860px;
   }
 
   .nb__unknown {

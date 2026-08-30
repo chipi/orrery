@@ -15,6 +15,7 @@ import {
   launchWindow,
 } from './index';
 import { bodyGravityMs2 } from '../mechanics/bodies';
+import { helioModel } from '../util/heliocentric';
 import type { FormulaDef } from '../spec';
 
 /**
@@ -253,6 +254,17 @@ describe('M2 orbital formulas — happy-path numbers + fail branches', () => {
     const r = launchWindow.compute({ depart: 'earth', arrive: 'mars' });
     expect(r.status.ok).toBe(true);
     expect(r.values.synodic.value).toBeCloseTo(780, -1);
+  });
+
+  it('every planet offered by the interplanetary pickers resolves in helioModel (review MINOR-2)', () => {
+    // The body-resolve test guards via bodyGravityMs2, but these formulas compute via
+    // helioModel (a different table) — prove the picker never offers an unresolvable world.
+    for (const f of [interplanetaryTransfer, launchWindow]) {
+      const departField = f.inputs.find((i) => i.key === 'depart')!;
+      for (const id of departField.bodyIds ?? []) {
+        expect(helioModel(id), `${f.id}: "${id}" must resolve in helioModel`).toBeDefined();
+      }
+    }
   });
 
   it('every ORBIT_BODY_IDS entry actually resolves (the resolver M2 uses)', () => {

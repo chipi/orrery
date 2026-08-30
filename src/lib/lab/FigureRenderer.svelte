@@ -386,10 +386,12 @@
       </text>
     {/each}
   {:else if figure.kind === 'transfer-ellipse'}
-    <!-- Transfer ellipse (M2, geocentric): primary at centre, the start + target
-         circular orbits (radii read from the two burn marks), and the half-ellipse
-         transfer arc between them. Coords are normalised to the larger orbit. -->
+    <!-- Transfer ellipse: primary at centre, the start + target circular orbits (radii
+         read from the two burn marks), and the half-ellipse transfer arc between them.
+         Coords normalised to the larger orbit. `frame` colours the primary: a gold Sun
+         (heliocentric, M4) vs a teal planet (geocentric, M2). -->
     {@const fs = fidelityStyle(figure.provenance.fidelity)}
+    {@const primaryFill = figure.frame === 'heliocentric' ? GOLD : TEAL}
     {@const cx = W / 2}
     {@const cy = H / 2 - 4}
     {@const RS = 108}
@@ -420,12 +422,12 @@
       class={fs.registerClass}
     />
 
-    <!-- primary body at the focus -->
+    <!-- primary body at the focus (gold Sun for heliocentric, teal planet otherwise) -->
     <circle
       cx={px(figure.bodies[0]?.at.x ?? 0)}
       cy={py(figure.bodies[0]?.at.y ?? 0)}
       r="6"
-      fill={TEAL}
+      fill={primaryFill}
     />
     {#if figure.bodies[0]}
       <text

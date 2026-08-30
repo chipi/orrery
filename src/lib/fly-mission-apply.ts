@@ -20,7 +20,7 @@ import {
   buildInterplanetaryTrajectory,
   type InterplanetaryTrajectory,
 } from '$lib/interplanetary-geometry';
-import { parseDeltaV } from '$lib/parse-delta-v';
+import { parseDeltaV } from '$lib/physics/util/parse-delta-v';
 import { dateToSimDay } from '$lib/sim-day';
 import { mergeFlightEvents } from '$lib/mission-event-merge';
 import { missionDestToHeliocentricDestinationId } from '$lib/mission-dest';

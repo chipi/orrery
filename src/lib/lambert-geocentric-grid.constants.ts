@@ -9,7 +9,7 @@
  * emit km/s into the grid.
  */
 
-import { geocentricMoon } from './astronomy/moon';
+import { geocentricMoon } from './physics/ephemeris/moon';
 
 /** km per AU (IAU 2012). Matches `orbital.ts#AU_TO_KM`. */
 export const AU_TO_KM = 149_597_870.7;

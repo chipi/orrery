@@ -29,7 +29,7 @@
   import type { QualitySource } from '$lib/components/debug-panel-context';
   import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import { disposeScene } from '$lib/three/dispose-object3d';
-  import { gmstRadians } from '$lib/earth-sidereal';
+  import { gmstRadians } from '$lib/physics/ephemeris/earth-sidereal';
   import { heroEnvironment } from '$lib/three/hero-materials';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
   import { getTiangongModules, getTiangongVisitors, getTiangongModuleGallery } from '$lib/data';
@@ -764,7 +764,7 @@
     // Rotate the Earth backdrop to its current GMST orientation so
     // page-load shows the actual hemisphere facing the camera at this
     // moment in UTC (#317).
-    earthBackdrop.rotation.y = -gmstRadians();
+    earthBackdrop.rotation.y = -gmstRadians(new Date());
     scene.add(earthBackdrop);
     function updateEarthBackdropLod(cameraToBackdropUnits: number): void {
       // __MOBILE__: 4k_earth_daymap.jpg is pruned off-device (ADR-079 D3) —

@@ -14,7 +14,7 @@
   import { page } from '$app/state';
   import { createSkyScene, type SkySceneHandle } from '$lib/ar/sky-scene';
   import type { SkyView } from '$lib/ar/sky-view';
-  import { skyPositions } from '$lib/astronomy';
+  import { skyPositions } from '$lib/physics/ephemeris';
   import { resolveStationTle, lookAngleForTle, STATION_IDS } from '$lib/satellite';
 
   let canvas: HTMLCanvasElement;

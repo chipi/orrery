@@ -26,7 +26,7 @@
     getMoonTraverse,
   } from '$lib/data';
   import type { Traverse } from '$types/surface-site';
-  import { regimeForAltitude } from '$lib/orbit-regime-match';
+  import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
   import { getLocale } from '$lib/paraglide/runtime';
   import * as m from '$lib/paraglide/messages';
   import { getObserverLocation } from '$lib/geolocation';
@@ -34,7 +34,7 @@
     moonObserverView,
     type MoonObserverView,
     type MoonPhaseName,
-  } from '$lib/astronomy/moon-observer';
+  } from '$lib/physics/ephemeris/moon-observer';
 
   // #48 — "view from my location": resolve the observer (getObserverLocation:
   // GPS → timezone → default, shared with AR + /earth), compute tonight's Moon

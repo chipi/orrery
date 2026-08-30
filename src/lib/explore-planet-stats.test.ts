@@ -13,7 +13,7 @@
  */
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { PLANET_STATS } from './planet-stats';
+import { PLANET_STATS } from '$lib/physics/util/planet-stats';
 
 interface PlanetsJson {
   planets: { name: string }[];

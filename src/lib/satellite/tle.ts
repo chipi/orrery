@@ -5,7 +5,7 @@
  * The epoch is converted to a Julian Day so it plugs into the same time base as
  * $lib/astronomy.
  */
-import { julianDay } from '../astronomy/time';
+import { julianDay } from '../physics/ephemeris/time';
 
 const DEG = Math.PI / 180;
 

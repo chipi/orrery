@@ -3,7 +3,7 @@
  * Constants from IAU. See CLAUDE.md §physics and TA.md §contracts/orbital-constants.
  */
 
-import { eccentricAnomaly } from './universe/kepler';
+import { eccentricAnomaly } from './physics/ephemeris/kepler';
 
 /** Heliocentric gravitational parameter, AU³/yr². */
 export const MU_SUN = 4 * Math.PI ** 2;

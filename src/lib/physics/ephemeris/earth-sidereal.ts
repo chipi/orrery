@@ -22,7 +22,7 @@ const MS_PER_DAY = 86_400_000;
  * Return GMST in radians for the given UTC time (defaults to now).
  * Range: [0, 2π). Multiply by 12/π to get GMST in hours.
  */
-export function gmstRadians(now: Date = new Date()): number {
+export function gmstRadians(now: Date): number {
   const daysSinceJ2000 = (now.getTime() - J2000_EPOCH_MS) / MS_PER_DAY;
   // GMST in hours, mod 24
   const gmstHours = (18.697374558 + 24.06570982441908 * daysSinceJ2000) % 24;

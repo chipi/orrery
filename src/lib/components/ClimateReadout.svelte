@@ -14,8 +14,8 @@
     PLANET_STATS,
     SURFACE_BODY_KINEMATICS,
     LIGHT_MINUTES_PER_AU,
-    BODY_PALETTE,
-  } from '$lib/planet-stats';
+  } from '$lib/physics/util/planet-stats';
+  import { BODY_PALETTE } from '$lib/body-palette';
   import * as m from '$lib/paraglide/messages';
 
   let { bodyKey, inline = false }: { bodyKey: string; inline?: boolean } = $props();

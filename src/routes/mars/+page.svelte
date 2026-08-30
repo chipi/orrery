@@ -29,7 +29,7 @@
     getOrbitRegimesMars,
   } from '$lib/data';
   import { getLocale } from '$lib/paraglide/runtime';
-  import { regimeForAltitude } from '$lib/orbit-regime-match';
+  import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
   import type { Traverse } from '$types/surface-site';
   import * as m from '$lib/paraglide/messages';
 

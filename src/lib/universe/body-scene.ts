@@ -10,7 +10,12 @@
 
 import * as THREE from 'three';
 import { bvToRgb, kelvinToRgb } from './bv-to-rgb';
-import { orbitalPlanePosition, meanAnomaly, phaseForIndex, sampleEllipse } from './kepler';
+import {
+  orbitalPlanePosition,
+  meanAnomaly,
+  phaseForIndex,
+  sampleEllipse,
+} from '../physics/ephemeris/kepler';
 import type { ExoplanetSystem } from '$lib/data';
 
 export interface BodyScene {

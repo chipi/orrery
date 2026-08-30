@@ -4,7 +4,7 @@
  * dominated by the observer's offset from Earth's centre, so this does the full
  * topocentric transform (satellite ECI − observer ECI → local SEZ → alt/az).
  */
-import { gmstRad } from '../astronomy/time';
+import { gmstRad } from '../physics/ephemeris/time';
 import type { EciVec } from './propagate';
 
 // WGS84 ellipsoid — geodetic observer model. Flattening matters near the poles

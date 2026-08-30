@@ -23,7 +23,7 @@
    */
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
-  import { BODY_PALETTE } from '$lib/planet-stats';
+  import { BODY_PALETTE } from '$lib/body-palette';
   import * as m from '$lib/paraglide/messages';
   import { createAnimateLoop } from '$lib/three/animate-loop';
 

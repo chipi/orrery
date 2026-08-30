@@ -12,8 +12,11 @@
 // time consumes them — matching the planet path's precession, so stars and
 // planets sit on one consistent of-date sky (removes the ~0.36°-in-2026 residual).
 
-import { equatorialToHorizontal, precessEquatorialJ2000ToDate } from '../astronomy/horizontal';
-import { skyDirectionENU, skyPosition } from '../astronomy';
+import {
+  equatorialToHorizontal,
+  precessEquatorialJ2000ToDate,
+} from '../physics/ephemeris/horizontal';
+import { skyDirectionENU, skyPosition } from '../physics/ephemeris';
 
 // Stars/constellations are effectively at infinity; a huge distance makes the
 // topocentric-parallax term in equatorialToHorizontal vanish (as it should).

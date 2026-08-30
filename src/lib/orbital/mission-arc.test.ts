@@ -211,7 +211,7 @@ describe('destinationPos (v0.1.6 + ADR-028)', () => {
   it('returns heliocentric r matching the corrected Kepler conic (M = L − ϖ) at day 0 for all destinations', () => {
     return import('./mission-arc').then(({ destinationPos }) =>
       import('$lib/lambert-grid.constants').then(({ DESTINATIONS }) =>
-        import('$lib/universe/kepler').then(({ eccentricAnomaly }) => {
+        import('$lib/physics/ephemeris/kepler').then(({ eccentricAnomaly }) => {
           for (const id of [
             'mercury',
             'venus',

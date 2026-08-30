@@ -81,7 +81,7 @@
   import EnterSkyButton from '$lib/components/EnterSkyButton.svelte';
   import { launchArScene, launchSkyScene } from '$lib/ar/launch-ar';
   import { earthPos, outboundArc, type Vec2 } from '$lib/orbital/mission-arc';
-  import { PLANET_STATS, auLightTime } from '$lib/planet-stats';
+  import { PLANET_STATS, auLightTime } from '$lib/physics/util/planet-stats';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
   import { missionDestToHeliocentricDestinationId } from '$lib/mission-dest';
   import { dateToSimDay } from '$lib/sim-day';

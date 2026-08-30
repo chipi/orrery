@@ -10,9 +10,15 @@
 import * as THREE from 'three';
 import { base } from '$app/paths';
 import { pickSkyView, type SkyView } from './sky-view';
-import { skyPosition, skyDirectionENU, SKY_BODIES, type SkyBody, julianDay } from '../astronomy';
-import { moonPhase } from '../astronomy/moon-observer';
-import { heliocentric, geocentricPlanet } from '../astronomy/planets';
+import {
+  skyPosition,
+  skyDirectionENU,
+  SKY_BODIES,
+  type SkyBody,
+  julianDay,
+} from '../physics/ephemeris';
+import { moonPhase } from '../physics/ephemeris/moon-observer';
+import { heliocentric, geocentricPlanet } from '../physics/ephemeris/planets';
 import {
   bakePlanetTextures,
   DEFAULT_FRUSTUM_HALF,

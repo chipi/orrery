@@ -16,7 +16,7 @@
    */
   import { onMount } from 'svelte';
   import { onLayerChange } from '$lib/science-layers';
-  import type { PlanetStats, LightTime } from '$lib/planet-stats';
+  import type { PlanetStats, LightTime } from '$lib/physics/util/planet-stats';
   import AtmosphereWaveform from '$lib/components/AtmosphereWaveform.svelte';
   import InstrumentTiles from '$lib/components/InstrumentTiles.svelte';
   import * as m from '$lib/paraglide/messages';

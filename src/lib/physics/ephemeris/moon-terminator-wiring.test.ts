@@ -7,11 +7,11 @@ import { fileURLToPath } from 'node:url';
 // in-browser across new/quarter/full; this just pins the two-call wiring so a
 // refactor can't silently drop the terminator (leaving a flat, fully-lit globe).
 const moon = readFileSync(
-  fileURLToPath(new URL('../../routes/moon/+page.svelte', import.meta.url)),
+  fileURLToPath(new URL('../../../routes/moon/+page.svelte', import.meta.url)),
   'utf8',
 );
 const scene = readFileSync(
-  fileURLToPath(new URL('../surface-scene/SurfaceScene.svelte', import.meta.url)),
+  fileURLToPath(new URL('../../surface-scene/SurfaceScene.svelte', import.meta.url)),
   'utf8',
 );
 

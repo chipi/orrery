@@ -16,7 +16,7 @@
  */
 
 import { solveLambert } from './lambert';
-import { eccentricAnomaly } from './universe/kepler';
+import { eccentricAnomaly } from './physics/ephemeris/kepler';
 import {
   DESTINATIONS,
   EARTH_A0,

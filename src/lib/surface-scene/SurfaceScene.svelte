@@ -69,7 +69,7 @@
   import EarthObjectPanel from '$lib/surface-scene/EarthObjectPanel.svelte';
   import RegimeChip from '$lib/components/RegimeChip.svelte';
   import AgencyRow from '$lib/components/AgencyRow.svelte';
-  import { regimeForAltitude } from '$lib/orbit-regime-match';
+  import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
   import { getMissionIndex } from '$lib/data';
   import type { EarthObject } from '$types/earth-object';
   import {
@@ -170,7 +170,7 @@
   import TacticalScan from '$lib/components/TacticalScan.svelte';
   import ClimateReadout from '$lib/components/ClimateReadout.svelte';
   import LensLegend from '$lib/components/LensLegend.svelte';
-  import { PLANET_STATS, SURFACE_BODY_KINEMATICS } from '$lib/planet-stats';
+  import { PLANET_STATS, SURFACE_BODY_KINEMATICS } from '$lib/physics/util/planet-stats';
   import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';

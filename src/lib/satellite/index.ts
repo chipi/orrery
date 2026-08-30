@@ -6,7 +6,7 @@
  * (station sunlit, observer in twilight/dark). Shares the time base + Sun
  * position with $lib/astronomy.
  */
-import { julianDay, skyPosition } from '../astronomy';
+import { julianDay, skyPosition } from '../physics/ephemeris';
 import { propagate, type EciVec } from './propagate';
 import { lookAngle, type LookAngle } from './look-angles';
 import { stationTle, type StationId } from './stations';

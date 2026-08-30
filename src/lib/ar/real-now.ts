@@ -9,9 +9,9 @@
 
 import * as THREE from 'three';
 import { latLonToUnitSphere } from '../moon-projection';
-import { skyPosition, julianDay } from '../astronomy';
-import { gmstRad } from '../astronomy/time';
-import { heliocentric, type PlanetId } from '../astronomy/planets';
+import { skyPosition, julianDay } from '../physics/ephemeris';
+import { gmstRad } from '../physics/ephemeris/time';
+import { heliocentric, type PlanetId } from '../physics/ephemeris/planets';
 import { PLANETS, type SolarSystem } from '../explore-scene';
 import { propagate } from '../satellite/propagate';
 import { STATION_IDS, type StationId } from '../satellite/stations';

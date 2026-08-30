@@ -11,8 +11,8 @@
    * Honours prefers-reduced-motion (static frame).
    */
   import { onMount } from 'svelte';
-  import { BODY_PALETTE } from '$lib/planet-stats';
-  import type { PlanetStats } from '$lib/planet-stats';
+  import { BODY_PALETTE } from '$lib/body-palette';
+  import type { PlanetStats } from '$lib/physics/util/planet-stats';
   import * as m from '$lib/paraglide/messages';
   import { createAnimateLoop } from '$lib/three/animate-loop';
 

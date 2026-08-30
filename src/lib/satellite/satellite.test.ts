@@ -3,7 +3,7 @@ import { parseTle } from './tle';
 import { propagate, semiMajorAxisKm } from './propagate';
 import { lookAngle, observerEci } from './look-angles';
 import { stationTle, stationLookAngle, nextPass, STATION_IDS } from './index';
-import { julianDay } from '../astronomy/time';
+import { julianDay } from '../physics/ephemeris/time';
 
 const RE = 6378.137;
 

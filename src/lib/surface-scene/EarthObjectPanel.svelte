@@ -30,7 +30,7 @@
   import type { EarthObject } from '$types/earth-object';
   import type { OrbitRegime } from '$types/orbit-regime';
   import RegimeChip from '$lib/components/RegimeChip.svelte';
-  import { regimeById } from '$lib/orbit-regime-match';
+  import { regimeById } from '$lib/physics/util/orbit-regime-match';
 
   interface Props {
     selected: EarthObject | null;

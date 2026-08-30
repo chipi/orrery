@@ -10,6 +10,7 @@ import {
   hohmannFormula,
   launchSite,
   reachOrbitVerdict,
+  descentBurn,
 } from './index';
 import { bodyGravityMs2 } from '../mechanics/bodies';
 import type { FormulaDef } from '../spec';
@@ -202,6 +203,19 @@ describe('M2 orbital formulas — happy-path numbers + fail branches', () => {
       expect(r.status.ok, `lat ${lat} should be rejected`).toBe(false);
       if (!r.status.ok) expect(r.status.reasonKey).toContain('latitude');
     }
+  });
+
+  it('descent-burn (M3): Moon landing Δv = orbital speed + gravity loss ≈ 1.83 km/s', () => {
+    const r = descentBurn.compute({ vOrbitKms: 1.63, body: 'moon', burnTimeS: 120 });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.descentDv.value).toBeCloseTo(1.63 + (1.62 * 120) / 1000, 2);
+    expect(r.figure?.kind).toBe('dv-waterfall');
+  });
+
+  it('descent-burn rejects an unknown body fail-honest', () => {
+    const r = descentBurn.compute({ vOrbitKms: 1.63, body: 'not-a-planet', burnTimeS: 120 });
+    expect(r.status.ok).toBe(false);
+    if (!r.status.ok) expect(r.status.reasonKey).toContain('unknown-body');
   });
 
   it('every ORBIT_BODY_IDS entry actually resolves (the resolver M2 uses)', () => {

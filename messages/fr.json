@@ -2041,5 +2041,17 @@
   "lab_mark_sea_launch": "Mer (équateur)",
   "lab_f_launchsite_err_latitude": "La latitude doit être entre −90° et 90°.",
   "lab_assume_prograde_launch": "Lancement vers l'est (prograde)",
-  "lab_assume_earth_leo_required": "Le Δv requis est pour une orbite basse terrestre (pertes incluses)"
+  "lab_assume_earth_leo_required": "Le Δv requis est pour une orbite basse terrestre (pertes incluses)",
+  "lab_f_descent_body": "Astre",
+  "lab_f_descent_burn": "Durée de la combustion de freinage",
+  "lab_f_descent_burn_title": "Descente propulsée",
+  "lab_f_descent_cancel_orbit": "Annuler la vitesse orbitale",
+  "lab_f_descent_dv": "Δv de descente",
+  "lab_f_descent_gravity_loss": "Perte gravitationnelle",
+  "lab_f_descent_vorbit": "Vitesse orbitale à annuler",
+  "lab_goal_land_moon_title": "Alunir",
+  "lab_goal_ltm_descent": "La combustion d'alunissage paie double : annuler la vitesse orbitale que vous portez, et vous tenir contre la gravité tout au long de la descente. Additionnez-les pour le Δv de descente.",
+  "lab_goal_ltm_orbit": "Vous tournez autour de la Lune. Pour alunir, connaissez d'abord votre vitesse — la vitesse orbitale ici est bien plus lente qu'à la Terre, car la Lune tire beaucoup plus faiblement.",
+  "lab_goal_ltm_twr": "L'alunissage est une chute contrôlée. Pour ralentir et vous maintenir en vol stationnaire, votre moteur doit surpasser la gravité lunaire — rapport poussée-poids supérieur à un, sinon vous continuez de tomber.",
+  "lab_goal_ltm_verdict": "Votre atterrisseur porte-t-il assez de Δv pour annuler son orbite et se poser doucement à la surface ? Si vous manquez de Δv, c'est un crash, pas un alunissage."
 }

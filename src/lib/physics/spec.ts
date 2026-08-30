@@ -173,6 +173,13 @@ export interface GoalStep {
   formulaId: string;
   narrativeKey: string;
   wiresFrom?: { fromStep: number; output: string; toInput: string }[];
+  /**
+   * Seed values for THIS rung's inputs, over the formula defaults (M3+). Lets a goal
+   * put a reused formula in the right context — e.g. "land on the Moon" presets
+   * `body: 'moon'` on the shared orbital-velocity/TWR rungs. The user can still edit;
+   * codec-clamped like any input. Keys not in the formula's inputs are ignored.
+   */
+  presetInputs?: Record<string, number | string>;
 }
 
 /**

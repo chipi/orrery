@@ -2041,5 +2041,17 @@
   "lab_mark_sea_launch": "Mar (equador)",
   "lab_f_launchsite_err_latitude": "Latitude must be between −90° and 90°.",
   "lab_assume_prograde_launch": "Lançamento para leste (prógrado)",
-  "lab_assume_earth_leo_required": "Δv necessário é órbita baixa terrestre (perdas incluídas)"
+  "lab_assume_earth_leo_required": "Δv necessário é órbita baixa terrestre (perdas incluídas)",
+  "lab_f_descent_body": "Corpo celeste",
+  "lab_f_descent_burn": "Tempo da queimada de frenagem",
+  "lab_f_descent_burn_title": "Descida Motorizada",
+  "lab_f_descent_cancel_orbit": "Cancelar velocidade orbital",
+  "lab_f_descent_dv": "Δv de descida",
+  "lab_f_descent_gravity_loss": "Perda gravitacional",
+  "lab_f_descent_vorbit": "Velocidade orbital a cancelar",
+  "lab_goal_land_moon_title": "Pousar na Lua",
+  "lab_goal_ltm_descent": "A queimada de pouso serve para duas coisas: cancelar a velocidade orbital que você carrega e se sustentar contra a gravidade durante toda a descida. Some-as para obter o Δv de descida.",
+  "lab_goal_ltm_orbit": "Você está orbitando a Lua. Para pousar, primeiro saiba sua velocidade — a velocidade orbital aqui é muito mais lenta que na Terra, porque a Lua exerce uma atração muito mais fraca.",
+  "lab_goal_ltm_twr": "Um pouso é uma queda controlada. Para desacelerar e permanecer pairando, seu motor deve vencer a gravidade lunar — razão empuxo-peso acima de um, ou você continua caindo.",
+  "lab_goal_ltm_verdict": "Seu lander carrega Δv suficiente para cancelar sua órbita e pousar suavemente na superfície? Se ficar curto, é uma colisão, não um pouso."
 }

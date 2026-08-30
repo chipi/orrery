@@ -2041,5 +2041,17 @@
   "lab_mark_sea_launch": "Meer (Äquator)",
   "lab_f_launchsite_err_latitude": "Breitengrad muss zwischen −90° und 90° liegen.",
   "lab_assume_prograde_launch": "Östliche (prograde) Startrichtung",
-  "lab_assume_earth_leo_required": "Erforderliches Δv ist Erdorbit-Niedrigkeit (Verluste enthalten)"
+  "lab_assume_earth_leo_required": "Erforderliches Δv ist Erdorbit-Niedrigkeit (Verluste enthalten)",
+  "lab_f_descent_body": "Himmelskörper",
+  "lab_f_descent_burn": "Bremsmanöver-Dauer",
+  "lab_f_descent_burn_title": "Angetriebener Abstieg",
+  "lab_f_descent_cancel_orbit": "Bahngeschwindigkeit aufheben",
+  "lab_f_descent_dv": "Abstiegs-Δv",
+  "lab_f_descent_gravity_loss": "Gravitationsverlust",
+  "lab_f_descent_vorbit": "Aufzuhebende Bahngeschwindigkeit",
+  "lab_goal_land_moon_title": "Auf dem Mond landen",
+  "lab_goal_ltm_descent": "Das Landemanöver wirkt doppelt: Es hebt deine Bahngeschwindigkeit auf und hält dich während des ganzen Abstiegs gegen die Gravitation. Addiere beide für das Abstiegs-Δv.",
+  "lab_goal_ltm_orbit": "Du umkreist den Mond. Zum Landen musst du zunächst wissen, wie schnell du fliegst — die Bahngeschwindigkeit hier ist viel niedriger als auf der Erde, denn der Mond zieht viel sanfter.",
+  "lab_goal_ltm_twr": "Landen ist ein kontrollierter Fall. Zum Abbremsen und Hovern muss dein Triebwerk die Mondgravitation überwiegen — Schub-Gewicht über eins, sonst fällst du einfach weiter.",
+  "lab_goal_ltm_verdict": "Trägt deine Landefähre genug Δv, um ihre Bahn aufzuheben und sanft auf der Oberfläche zu landen? Wenn es nicht reicht, wird es ein Absturz, kein Landen."
 }

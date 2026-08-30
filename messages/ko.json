@@ -2041,5 +2041,17 @@
   "lab_mark_sea_launch": "해상 (적도)",
   "lab_f_launchsite_err_latitude": "위도는 −90°에서 90° 사이여야 합니다.",
   "lab_assume_prograde_launch": "동쪽(순행) 발사",
-  "lab_assume_earth_leo_required": "필요 Δv는 지구 저궤도 기준(손실 포함)"
+  "lab_assume_earth_leo_required": "필요 Δv는 지구 저궤도 기준(손실 포함)",
+  "lab_f_descent_body": "천체",
+  "lab_f_descent_burn": "감속 분사 시간",
+  "lab_f_descent_burn_title": "동력 하강",
+  "lab_f_descent_cancel_orbit": "궤도 속도 상쇄",
+  "lab_f_descent_dv": "하강 Δv",
+  "lab_f_descent_gravity_loss": "중력 손실",
+  "lab_f_descent_vorbit": "상쇄할 궤도 속도",
+  "lab_goal_land_moon_title": "달 착륙",
+  "lab_goal_ltm_descent": "착륙 분사는 두 가지 대가를 치릅니다. 지니고 있던 궤도 속도를 상쇄하고, 하강하는 내내 중력에 맞서 기체를 지탱해야 합니다. 이 둘을 더하면 하강 Δv가 됩니다.",
+  "lab_goal_ltm_orbit": "당신은 달 주위를 돌고 있습니다. 착륙하려면 먼저 자신의 속도를 알아야 합니다. 달은 훨씬 약하게 끌어당기므로 이곳의 궤도 속도는 지구보다 훨씬 느립니다.",
+  "lab_goal_ltm_twr": "착륙은 통제된 낙하입니다. 감속하고 호버링하려면 엔진이 달 중력보다 강하게 밀어야 합니다. 추력 대 중량비가 1을 넘어야 하며, 그렇지 않으면 그저 계속 떨어질 뿐입니다.",
+  "lab_goal_ltm_verdict": "당신의 착륙선은 궤도를 상쇄하고 표면에 부드럽게 내려앉을 만큼 충분한 Δv를 지녔나요? 모자라면 착륙이 아니라 충돌입니다."
 }

@@ -56,18 +56,26 @@
   const uid = () => crypto.randomUUID();
 
   function seed(g: Goal): UICell[] {
-    return g.path.map((step, i) => ({
-      id: `s${i}`,
-      formulaId: step.formulaId,
-      inputs: defaultInputs(REGISTRY.get(step.formulaId)!),
-      wires: (step.wiresFrom ?? []).map((w) => ({
-        fromIndex: w.fromStep,
-        output: w.output,
-        toInput: w.toInput,
-      })),
-      narrativeKey: step.narrativeKey,
-      removable: false,
-    }));
+    return g.path.map((step, i) => {
+      const def = REGISTRY.get(step.formulaId)!;
+      // Goal presets override the formula defaults (only keys that are real inputs).
+      const inputKeys = new Set(def.inputs.map((f) => f.key));
+      const preset = Object.fromEntries(
+        Object.entries(step.presetInputs ?? {}).filter(([k]) => inputKeys.has(k)),
+      );
+      return {
+        id: `s${i}`,
+        formulaId: step.formulaId,
+        inputs: { ...defaultInputs(def), ...preset },
+        wires: (step.wiresFrom ?? []).map((w) => ({
+          fromIndex: w.fromStep,
+          output: w.output,
+          toInput: w.toInput,
+        })),
+        narrativeKey: step.narrativeKey,
+        removable: false,
+      };
+    });
   }
 
   /** A shared/restored notebook is a CUSTOM notebook — no goal narrative, all removable. */

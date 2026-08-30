@@ -86,11 +86,47 @@ export const reachTheMoon: Goal = {
   ],
 };
 
+/**
+ * M3 "land on the Moon" — from lunar orbit to the surface. Reuses the now body-
+ * parametric rungs (orbital-velocity + TWR, preset to the Moon) and adds the powered-
+ * descent burn: circle the Moon → thrust must beat lunar gravity to control the fall →
+ * the descent Δv (cancel orbital speed + gravity loss) → do you have the fuel to land
+ * softly? `presetInputs` puts the shared formulas on the Moon; the descent Δv wires
+ * into the verdict's required.
+ */
+export const landOnTheMoon: Goal = {
+  id: 'land-on-the-moon',
+  titleKey: 'lab.goal.land-moon.title',
+  family: 'spaceflight',
+  tier: 3,
+  prereqs: ['reach-the-moon'],
+  path: [
+    {
+      formulaId: 'orbital-velocity',
+      narrativeKey: 'lab.goal.ltm.orbit',
+      presetInputs: { body: 'moon', altitudeKm: 100 },
+    },
+    { formulaId: 'twr', narrativeKey: 'lab.goal.ltm.twr', presetInputs: { body: 'moon' } },
+    {
+      formulaId: 'descent-burn',
+      narrativeKey: 'lab.goal.ltm.descent',
+      presetInputs: { body: 'moon' },
+      wiresFrom: [{ fromStep: 0, output: 'vCirc', toInput: 'vOrbitKms' }],
+    },
+    {
+      formulaId: 'delta-v-margin',
+      narrativeKey: 'lab.goal.ltm.verdict',
+      wiresFrom: [{ fromStep: 2, output: 'descentDv', toInput: 'requiredKms' }],
+    },
+  ],
+};
+
 /** All goals, keyed by id. */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
   [motionFirstPrinciples.id, motionFirstPrinciples],
   [reachTheMoon.id, reachTheMoon],
+  [landOnTheMoon.id, landOnTheMoon],
 ]);
 
 /**

@@ -14,6 +14,7 @@ import { fMaAccel, weightN, twr } from '../mechanics/dynamics';
 import { momentum } from '../mechanics/momentum';
 import { freeFall, projectile } from '../mechanics/kinematics';
 import { circularVelocityKms, visVivaKms, hohmannTransfer } from '../mechanics/orbits';
+import { poweredDescentDvKms } from '../mechanics/descent';
 import { bodyGravityMs2 } from '../mechanics/bodies';
 import { locationModel, rotationVelocityKms } from '../util/location';
 import { MOON_ORBIT_RADIUS_KM } from '../util/constants';
@@ -930,6 +931,76 @@ export const reachOrbitVerdict: FormulaDef<{
   },
 };
 
+/**
+ * Powered-descent Δv — M3 "land on the Moon" rung. Soft-landing from orbit costs the
+ * orbital speed you must cancel PLUS the gravity loss through the braking burn:
+ * Δv = v_orbit + g·t. `vOrbitKms` wires from orbital-velocity; `body` supplies g.
+ */
+export const descentBurn: FormulaDef<{ vOrbitKms: number; body: string; burnTimeS: number }> = {
+  id: 'descent-burn',
+  titleKey: 'lab.f.descent-burn.title',
+  domain: 'descent',
+  tier: 8,
+  prereqs: ['orbital-velocity'],
+  latex: '\\Delta v = v_{\\text{orb}} + g\\,t_{\\text{burn}}',
+  inputs: [
+    {
+      key: 'vOrbitKms',
+      labelKey: 'lab.f.descent.vorbit',
+      units: 'km/s',
+      kind: 'number',
+      default: 1.63,
+      min: 0,
+      max: 12,
+    },
+    {
+      key: 'body',
+      labelKey: 'lab.f.descent.body',
+      units: '',
+      kind: 'body',
+      default: 'moon',
+      bodyIds: [...ORBIT_BODY_IDS],
+    },
+    {
+      key: 'burnTimeS',
+      labelKey: 'lab.f.descent.burn',
+      units: 's',
+      kind: 'number',
+      default: 120,
+      min: 0,
+      max: 900,
+    },
+  ],
+  outputs: [{ key: 'descentDv', labelKey: 'lab.f.descent.dv', units: 'km/s' }],
+  compute: ({ vOrbitKms, body, burnTimeS }) => {
+    const loc = locationModel(body);
+    if (!loc) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions: ['lab.assume.uniform-g'],
+      } satisfies FormulaResult;
+    }
+    const gLossKms = (loc.gMs2 * burnTimeS) / 1000;
+    const dv = poweredDescentDvKms(vOrbitKms, loc.gMs2, burnTimeS);
+    return {
+      values: { descentDv: { value: dv, units: 'km/s' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.uniform-g', 'lab.assume.no-drag', 'lab.assume.ideal-no-losses'],
+      figure: {
+        kind: 'dv-waterfall',
+        provenance: { fidelity: 'computed', module: 'mechanics/descent' },
+        assumptions: ['lab.assume.uniform-g', 'lab.assume.no-drag'],
+        segments: [
+          { labelKey: 'lab.f.descent.cancel-orbit', dv: vOrbitKms, kind: 'cost' },
+          { labelKey: 'lab.f.descent.gravity-loss', dv: gLossKms, kind: 'cost' },
+        ],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
 /** All registered formulas, keyed by id. Add a formula in exactly one place. */
 export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [tsiolkovsky.id, tsiolkovsky],
@@ -945,6 +1016,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [orbitalVelocity.id, orbitalVelocity],
   [visVivaFormula.id, visVivaFormula],
   [hohmannFormula.id, hohmannFormula],
+  [descentBurn.id, descentBurn],
 ]);
 
 /** Default input record for a formula (drives a first compute / the invariant tests). */

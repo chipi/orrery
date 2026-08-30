@@ -2041,5 +2041,17 @@
   "lab_mark_sea_launch": "Mare (equatore)",
   "lab_f_launchsite_err_latitude": "La latitudine deve essere compresa tra −90° e 90°.",
   "lab_assume_prograde_launch": "Lancio verso est (progrado)",
-  "lab_assume_earth_leo_required": "Δv richiesto è per l'orbita bassa terrestre (perdite incluse)"
+  "lab_assume_earth_leo_required": "Δv richiesto è per l'orbita bassa terrestre (perdite incluse)",
+  "lab_f_descent_body": "Corpo celeste",
+  "lab_f_descent_burn": "Tempo di accensione frenante",
+  "lab_f_descent_burn_title": "Discesa Propulsata",
+  "lab_f_descent_cancel_orbit": "Annulla velocità orbitale",
+  "lab_f_descent_dv": "Δv di discesa",
+  "lab_f_descent_gravity_loss": "Perdita gravitazionale",
+  "lab_f_descent_vorbit": "Velocità orbitale da annullare",
+  "lab_goal_land_moon_title": "Allunaggio",
+  "lab_goal_ltm_descent": "L'accensione di allunaggio serve doppio scopo: annullare la velocità orbitale che stai mantenendo, e sostenerti contro la gravità per tutto il tragitto in giù. Sommale per ottenere il Δv di discesa.",
+  "lab_goal_ltm_orbit": "Stai orbitando attorno alla Luna. Per allunare, devi prima sapere a che velocità stai andando — la velocità orbitale qui è molto più bassa che sulla Terra, perché la Luna ti attrae con forza molto minore.",
+  "lab_goal_ltm_twr": "L'allunaggio è una caduta controllata. Per rallentare e stare in hovering, il tuo motore deve vincere la gravità lunare — rapporto spinta-peso maggiore di uno, altrimenti continui a cadere.",
+  "lab_goal_ltm_verdict": "Il tuo lander ha abbastanza Δv per annullare l'orbita e posarsi dolcemente sulla superficie? Se non ce la fai, è uno schianto, non un allunaggio."
 }

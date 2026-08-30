@@ -2041,5 +2041,17 @@
   "lab_mark_sea_launch": "海上（赤道）",
   "lab_f_launchsite_err_latitude": "緯度は−90°から90°の間で指定してください。",
   "lab_assume_prograde_launch": "東向き（順行）打ち上げ",
-  "lab_assume_earth_leo_required": "必要Δvは地球低軌道（損失を含む）"
+  "lab_assume_earth_leo_required": "必要Δvは地球低軌道（損失を含む）",
+  "lab_f_descent_body": "天体",
+  "lab_f_descent_burn": "制動噴射時間",
+  "lab_f_descent_burn_title": "動力降下",
+  "lab_f_descent_cancel_orbit": "軌道速度の相殺",
+  "lab_f_descent_dv": "降下Δv",
+  "lab_f_descent_gravity_loss": "重力損失",
+  "lab_f_descent_vorbit": "相殺すべき軌道速度",
+  "lab_goal_land_moon_title": "月面着陸",
+  "lab_goal_ltm_descent": "着陸噴射は二重の働きをします。持っている軌道速度を相殺し、降下中ずっと重力に逆らって機体を支えます。両者を足すと降下Δvになります。",
+  "lab_goal_ltm_orbit": "あなたは月を周回しています。着陸するにはまず自分の速度を知りましょう。月の引力ははるかに穏やかなので、ここでの軌道速度は地球よりずっと遅くなります。",
+  "lab_goal_ltm_twr": "着陸は制御された落下です。減速してホバリングするには、エンジンが月の重力を上回って押し返す必要があります。推力重量比が1を超えなければ、落下し続けるだけです。",
+  "lab_goal_ltm_verdict": "あなたの着陸機は、軌道を相殺して地表にそっと降り立つのに十分なΔvを持っていますか？不足すれば着陸ではなく墜落です。"
 }

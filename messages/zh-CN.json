@@ -2041,5 +2041,17 @@
   "lab_mark_sea_launch": "海上（赤道）",
   "lab_f_launchsite_err_latitude": "纬度必须介于 −90° 和 90° 之间。",
   "lab_assume_prograde_launch": "向东（顺行）发射",
-  "lab_assume_earth_leo_required": "所需 Δv 为地球近地轨道（含损耗）"
+  "lab_assume_earth_leo_required": "所需 Δv 为地球近地轨道（含损耗）",
+  "lab_f_descent_body": "天体",
+  "lab_f_descent_burn": "制动点火时间",
+  "lab_f_descent_burn_title": "动力下降",
+  "lab_f_descent_cancel_orbit": "抵消轨道速度",
+  "lab_f_descent_dv": "下降 Δv",
+  "lab_f_descent_gravity_loss": "重力损失",
+  "lab_f_descent_vorbit": "需抵消的轨道速度",
+  "lab_goal_land_moon_title": "登陆月球",
+  "lab_goal_ltm_descent": "着陆点火要付出双倍代价：既要抵消你所携带的轨道速度，又要在整个下降过程中对抗重力支撑自身。将两者相加即为下降 Δv。",
+  "lab_goal_ltm_orbit": "你正环绕月球飞行。要着陆，首先要知道自己有多快——这里的轨道速度远低于地球，因为月球的引力要温和得多。",
+  "lab_goal_ltm_twr": "着陆是一次受控的坠落。要减速并悬停，你的引擎推力必须超过月球引力——推重比大于一，否则你只会一直坠落。",
+  "lab_goal_ltm_verdict": "你的着陆器是否携带足够的 Δv 来抵消轨道速度并平稳落到地面？若不足，那便是坠毁，而非着陆。"
 }

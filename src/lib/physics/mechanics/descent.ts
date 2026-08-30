@@ -1,24 +1,29 @@
 /**
  * Powered-descent Δv — the first-principles landing model (M3 "land on the Moon").
  *
- * To soft-land from orbit you do two things, and both cost Δv: cancel the orbital
- * speed you're carrying, and hold yourself up against gravity through the braking
- * burn. The honest first-order sum:
- *   Δv = v_orbit + g·t_burn
- * — a constant-g gravity-loss model with no atmosphere or aerodynamic braking (true
- * for the airless Moon; the honesty line names the assumptions). The full entry-
- * descent-landing integrator (`physics/descent/`) is the /fly sim's machinery; this
- * is the teaching rung.
+ * To soft-land from orbit you cancel your orbital speed with a braking burn while
+ * gravity fights you. Model it as a constant-thrust burn decelerating from v_orbit to
+ * rest: the engine gives a = TWR·g, gravity takes g, so the net deceleration is
+ * (TWR−1)·g and the burn lasts t = v_orbit/((TWR−1)·g). The Δv the engine must deliver
+ * is a·t, which reduces to
+ *   Δv = v_orbit · TWR / (TWR − 1)
+ * — no arbitrary burn time, and g cancels. The gravity loss is v_orbit/(TWR−1): a
+ * high-thrust burn is nearly loss-free (Δv → v_orbit); as TWR → 1 the loss diverges
+ * (you can't out-thrust gravity, so you never stop — you crash). Ties the descent to
+ * the TWR rung the goal already computes.
  *
- * Pure; g is passed in (m/s²) so it lands on any body (the location model supplies it).
+ * Assumes a constant-thrust vertical braking burn, no atmosphere/lift (the honesty
+ * line names it). The full trajectory integrator (`physics/descent/`) is the /fly
+ * sim's; this is the teaching rung. Pure.
  */
 
 /**
- * Powered-descent Δv to soft-land from orbit (km/s).
+ * Powered-descent Δv to soft-land from orbit (km/s). Returns Infinity for TWR ≤ 1 —
+ * an engine that can't out-thrust gravity can never null the fall.
  * @param vOrbitKms  orbital speed to cancel at the start of descent (km/s)
- * @param gMs2       surface gravity (m/s²)
- * @param burnTimeS  powered-descent (braking) duration (s)
+ * @param twr        thrust-to-weight ratio of the lander in the local gravity
  */
-export function poweredDescentDvKms(vOrbitKms: number, gMs2: number, burnTimeS: number): number {
-  return vOrbitKms + (gMs2 * burnTimeS) / 1000;
+export function poweredDescentDvKms(vOrbitKms: number, twr: number): number {
+  if (twr <= 1) return Infinity;
+  return (vOrbitKms * twr) / (twr - 1);
 }

@@ -2104,5 +2104,8 @@
   "lab_f_airbags_limit": "Limite de sobrevivência dos airbags",
   "lab_f_airbags_margin": "Margem",
   "lab_f_airbags_title": "Airbags",
-  "lab_goal_lom_airbags": "O jeito barato que os primeiros rovers pousaram: quicando dentro de airbags inflados. Mas eles só resistem a impactos tão fortes — cerca de 25 m/s. Seu paraquedas o deixa mais rápido que isso, então airbags sozinhos não funcionam; Pathfinder disparou pequenos retrofoguetes primeiro para desacelerar antes de quicar."
+  "lab_goal_lom_airbags": "O jeito barato que os primeiros rovers pousaram: quicando dentro de airbags inflados. Mas eles só resistem a impactos tão fortes — cerca de 25 m/s. Seu paraquedas o deixa mais rápido que isso, então airbags sozinhos não funcionam; Pathfinder disparou pequenos retrofoguetes primeiro para desacelerar antes de quicar.",
+  "lab_f_descent_twr": "Impulso específico do módulo de descida",
+  "lab_f_descent_err_twr": "O impulso específico deve ser maior que 1 — abaixo disso você não consegue desacelerar a queda, vai bater.",
+  "lab_assume_constant_thrust": "Queimada de frenagem vertical com impulso constante"
 }

@@ -2104,5 +2104,8 @@
   "lab_f_airbags_limit": "Overlevingslimiet airbags",
   "lab_f_airbags_margin": "Marge",
   "lab_f_airbags_title": "Airbags",
-  "lab_goal_lom_airbags": "De goedkope manier waarop de vroege rovers landden: stuiteren naar beneden in opgeblazen airbags. Maar ze houden slechts een bepaalde impact aan — ongeveer 25 m/s. Je parachute laat je sneller vallen dan dat, dus airbags alleen volstaan niet; Pathfinder schakelde eerst kleine retroraketten in om af te remmen voordat het stuiterde."
+  "lab_goal_lom_airbags": "De goedkope manier waarop de vroege rovers landden: stuiteren naar beneden in opgeblazen airbags. Maar ze houden slechts een bepaalde impact aan — ongeveer 25 m/s. Je parachute laat je sneller vallen dan dat, dus airbags alleen volstaan niet; Pathfinder schakelde eerst kleine retroraketten in om af te remmen voordat het stuiterde.",
+  "lab_f_descent_twr": "Landerstuwkracht-gewichtsverhouding",
+  "lab_f_descent_err_twr": "Stuwkracht-gewichtsverhouding moet groter zijn dan 1 — eronder kunt u de val niet vertragen, u crasht.",
+  "lab_assume_constant_thrust": "Verticale rembranding met constante stuwkracht"
 }

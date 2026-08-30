@@ -210,24 +210,24 @@ describe('M2 orbital formulas — happy-path numbers + fail branches', () => {
     }
   });
 
-  it('descent-burn (M3): Moon landing Δv = orbital speed + gravity loss ≈ 1.83 km/s', () => {
-    const r = descentBurn.compute({ vOrbitKms: 1.63, body: 'moon', burnTimeS: 120 });
+  it('descent-burn (M3): Δv = v_orbit·TWR/(TWR−1), wiring the TWR rung', () => {
+    const r = descentBurn.compute({ vOrbitKms: 1.63, twr: 3 });
     expect(r.status.ok).toBe(true);
-    expect(r.values.descentDv.value).toBeCloseTo(1.63 + (1.62 * 120) / 1000, 2);
+    expect(r.values.descentDv.value).toBeCloseTo(1.63 * 1.5, 3);
     expect(r.figure?.kind).toBe('dv-waterfall');
   });
 
-  it('descent-burn rejects an unknown body fail-honest', () => {
-    const r = descentBurn.compute({ vOrbitKms: 1.63, body: 'not-a-planet', burnTimeS: 120 });
+  it("descent-burn fails honest when TWR ≤ 1 — you can't out-thrust gravity", () => {
+    const r = descentBurn.compute({ vOrbitKms: 1.63, twr: 0.9 });
     expect(r.status.ok).toBe(false);
-    if (!r.status.ok) expect(r.status.reasonKey).toContain('unknown-body');
+    if (!r.status.ok) expect(r.status.reasonKey).toContain('twr');
   });
 
-  it('descent-burn rejects non-finite / negative inputs fail-honest (review M-1)', () => {
+  it('descent-burn rejects non-finite inputs fail-honest (review M-1)', () => {
     for (const inp of [
-      { vOrbitKms: NaN, body: 'moon', burnTimeS: 120 },
-      { vOrbitKms: 1.63, body: 'moon', burnTimeS: Infinity },
-      { vOrbitKms: 1.63, body: 'moon', burnTimeS: -5 },
+      { vOrbitKms: NaN, twr: 3 },
+      { vOrbitKms: 1.63, twr: Infinity },
+      { vOrbitKms: -1, twr: 3 },
     ]) {
       const r = descentBurn.compute(inp);
       expect(r.status.ok, `${JSON.stringify(inp)} should be rejected`).toBe(false);

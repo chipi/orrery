@@ -2104,5 +2104,8 @@
   "lab_f_airbags_limit": "Límite de resistencia de bolsas de aire",
   "lab_f_airbags_margin": "Margen",
   "lab_f_airbags_title": "Bolsas de aire",
-  "lab_goal_lom_airbags": "La forma económica con que los rovers primitivos aterrizaban: rebotar dentro de bolsas de aire infladas. Pero solo resisten un impacto determinado — aproximadamente 25 m/s. Tu paracaídas te deja a una velocidad superior a esa, así que las bolsas de aire solas no funcionarán tampoco; Pathfinder disparó pequeños retroquemadores primero para reducir velocidad antes de rebotar."
+  "lab_goal_lom_airbags": "La forma económica con que los rovers primitivos aterrizaban: rebotar dentro de bolsas de aire infladas. Pero solo resisten un impacto determinado — aproximadamente 25 m/s. Tu paracaídas te deja a una velocidad superior a esa, así que las bolsas de aire solas no funcionarán tampoco; Pathfinder disparó pequeños retroquemadores primero para reducir velocidad antes de rebotar.",
+  "lab_f_descent_twr": "Empuje-peso del módulo de descenso",
+  "lab_f_descent_err_twr": "El empuje-peso debe superar 1 — por debajo no puedes frenar la caída, te estrellas.",
+  "lab_assume_constant_thrust": "Quemador de frenado vertical con empuje constante"
 }

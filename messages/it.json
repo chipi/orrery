@@ -2104,5 +2104,8 @@
   "lab_f_airbags_limit": "Limite di resistenza degli airbag",
   "lab_f_airbags_margin": "Margine",
   "lab_f_airbags_title": "Airbag",
-  "lab_goal_lom_airbags": "Il metodo economico usato dai rover più antichi per atterrare: rimbalzi dentro airbag gonfiati. Ma resistono solo a urti non troppo violenti — circa 25 m/s. Il paracadute ti lascia a velocità superiore, quindi gli airbag da soli non basteranno; Pathfinder accese piccoli retrorazzi prima per rallentare prima di rimbalzare."
+  "lab_goal_lom_airbags": "Il metodo economico usato dai rover più antichi per atterrare: rimbalzi dentro airbag gonfiati. Ma resistono solo a urti non troppo violenti — circa 25 m/s. Il paracadute ti lascia a velocità superiore, quindi gli airbag da soli non basteranno; Pathfinder accese piccoli retrorazzi prima per rallentare prima di rimbalzare.",
+  "lab_f_descent_twr": "Spinta-peso del lander",
+  "lab_f_descent_err_twr": "La spinta-peso deve superare 1 — al di sotto non puoi rallentare la caduta, si schianta.",
+  "lab_assume_constant_thrust": "Frenata verticale a spinta costante"
 }

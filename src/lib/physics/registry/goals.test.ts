@@ -72,8 +72,9 @@ describe('goal registry · coverage + wire integrity', () => {
 
   it('M3 presets the shared rungs onto the Moon + a realistic lander capacity', () => {
     const g = GOALS.get('land-on-the-moon')!;
-    // orbital-velocity + twr + descent-burn are all put on the Moon by presetInputs.
-    for (const id of ['orbital-velocity', 'twr', 'descent-burn']) {
+    // orbital-velocity + twr are put on the Moon by presetInputs (descent-burn derives
+    // its Δv from the two wired rungs, so it has no body of its own).
+    for (const id of ['orbital-velocity', 'twr']) {
       const step = g.path.find((s) => s.formulaId === id)!;
       expect(step.presetInputs?.body, `${id} should preset body=moon`).toBe('moon');
     }

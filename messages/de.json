@@ -2104,5 +2104,8 @@
   "lab_f_airbags_limit": "Airbag-Überlebenslimit",
   "lab_f_airbags_margin": "Sicherheitsmarge",
   "lab_f_airbags_title": "Airbags",
-  "lab_goal_lom_airbags": "Die billige Art, wie frühe Rover landeten: Sprunglandung in aufgeblasenen Airbags. Aber sie halten nur bis etwa 25 m/s aus. Dein Fallschirm lässt dich schneller ankommen, also reichen Airbags allein auch nicht — Pathfinder schoss zuerst kleine Bremsraketen ab, um vor dem Aufprall langsamer zu werden."
+  "lab_goal_lom_airbags": "Die billige Art, wie frühe Rover landeten: Sprunglandung in aufgeblasenen Airbags. Aber sie halten nur bis etwa 25 m/s aus. Dein Fallschirm lässt dich schneller ankommen, also reichen Airbags allein auch nicht — Pathfinder schoss zuerst kleine Bremsraketen ab, um vor dem Aufprall langsamer zu werden.",
+  "lab_f_descent_twr": "Schub-Gewichts-Verhältnis des Landers",
+  "lab_f_descent_err_twr": "Schub-Gewichts-Verhältnis muss 1 übersteigen — unterschreitet es diesen Wert, können Sie den Fall nicht bremsen, Sie stürzen ab.",
+  "lab_assume_constant_thrust": "Konstanter Schub – vertikales Bremsmanöver"
 }

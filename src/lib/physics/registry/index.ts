@@ -937,17 +937,18 @@ export const reachOrbitVerdict: FormulaDef<{
 };
 
 /**
- * Powered-descent Δv — M3 "land on the Moon" rung. Soft-landing from orbit costs the
- * orbital speed you must cancel PLUS the gravity loss through the braking burn:
- * Δv = v_orbit + g·t. `vOrbitKms` wires from orbital-velocity; `body` supplies g.
+ * Powered-descent Δv — M3 "land on the Moon" rung. A constant-thrust braking burn from
+ * orbital speed to rest: Δv = v_orbit·TWR/(TWR−1). The gravity loss is v_orbit/(TWR−1)
+ * — a high-thrust lander is nearly loss-free, and TWR→1 diverges (you can't out-thrust
+ * gravity → you crash). `vOrbitKms` wires from orbital-velocity, `twr` from the TWR rung.
  */
-export const descentBurn: FormulaDef<{ vOrbitKms: number; body: string; burnTimeS: number }> = {
+export const descentBurn: FormulaDef<{ vOrbitKms: number; twr: number }> = {
   id: 'descent-burn',
   titleKey: 'lab.f.descent-burn.title',
   domain: 'descent',
   tier: 8,
-  prereqs: ['orbital-velocity'],
-  latex: '\\Delta v = v_{\\text{orb}} + g\\,t_{\\text{burn}}',
+  prereqs: ['orbital-velocity', 'twr'],
+  latex: '\\Delta v = v_{\\text{orb}}\\,\\dfrac{\\text{TWR}}{\\text{TWR} - 1}',
   inputs: [
     {
       key: 'vOrbitKms',
@@ -959,36 +960,19 @@ export const descentBurn: FormulaDef<{ vOrbitKms: number; body: string; burnTime
       max: 12,
     },
     {
-      key: 'body',
-      labelKey: 'lab.f.descent.body',
+      key: 'twr',
+      labelKey: 'lab.f.descent.twr',
       units: '',
-      kind: 'body',
-      default: 'moon',
-      bodyIds: [...ORBIT_BODY_IDS],
-    },
-    {
-      key: 'burnTimeS',
-      labelKey: 'lab.f.descent.burn',
-      units: 's',
       kind: 'number',
-      default: 120,
+      default: 3,
       min: 0,
-      max: 900,
+      max: 20,
     },
   ],
   outputs: [{ key: 'descentDv', labelKey: 'lab.f.descent.dv', units: 'km/s' }],
-  compute: ({ vOrbitKms, body, burnTimeS }) => {
-    const loc = locationModel(body);
-    if (!loc) {
-      const values: Record<string, Quantity> = {};
-      return {
-        values,
-        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
-        assumptions: ['lab.assume.uniform-g'],
-      } satisfies FormulaResult;
-    }
+  compute: ({ vOrbitKms, twr }) => {
     // Untrusted (MCP) inputs must reject fail-honest — never a NaN readout (review M-1).
-    if (!Number.isFinite(vOrbitKms) || !Number.isFinite(burnTimeS) || burnTimeS < 0) {
+    if (!Number.isFinite(vOrbitKms) || !Number.isFinite(twr) || vOrbitKms < 0) {
       const values: Record<string, Quantity> = {};
       return {
         values,
@@ -996,20 +980,25 @@ export const descentBurn: FormulaDef<{ vOrbitKms: number; body: string; burnTime
         assumptions: ['lab.assume.uniform-g'],
       } satisfies FormulaResult;
     }
-    const gLossKms = (loc.gMs2 * burnTimeS) / 1000;
-    const dv = poweredDescentDvKms(vOrbitKms, loc.gMs2, burnTimeS);
+    // TWR ≤ 1: the engine can't out-thrust gravity — you never stop falling.
+    if (twr <= 1) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-twr' },
+        assumptions: ['lab.assume.uniform-g'],
+      } satisfies FormulaResult;
+    }
+    const dv = poweredDescentDvKms(vOrbitKms, twr);
+    const gLossKms = dv - vOrbitKms; // v_orbit/(TWR−1)
     return {
       values: { descentDv: { value: dv, units: 'km/s' } },
       status: { ok: true },
-      assumptions: [
-        'lab.assume.uniform-g',
-        'lab.assume.no-drag',
-        'lab.assume.vertical-gravity-loss',
-      ],
+      assumptions: ['lab.assume.uniform-g', 'lab.assume.no-drag', 'lab.assume.constant-thrust'],
       figure: {
         kind: 'dv-waterfall',
         provenance: { fidelity: 'computed', module: 'mechanics/descent' },
-        assumptions: ['lab.assume.uniform-g', 'lab.assume.vertical-gravity-loss'],
+        assumptions: ['lab.assume.uniform-g', 'lab.assume.constant-thrust'],
         segments: [
           { labelKey: 'lab.f.descent.cancel-orbit', dv: vOrbitKms, kind: 'cost' },
           { labelKey: 'lab.f.descent.gravity-loss', dv: gLossKms, kind: 'cost' },

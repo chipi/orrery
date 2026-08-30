@@ -2104,5 +2104,8 @@
   "lab_f_airbags_limit": "Limite de résistance des airbags",
   "lab_f_airbags_margin": "Marge",
   "lab_f_airbags_title": "Airbags",
-  "lab_goal_lom_airbags": "La méthode économique utilisée par les premiers rovers pour atterrir : rebondir à l'intérieur d'airbags gonflés. Mais ils ne supportent que des chocs jusqu'à environ 25 m/s. Votre parachute vous laisse plus rapide que cela, donc les airbags seuls ne suffiront pas non plus ; Pathfinder a tiré de petits rétrofusées d'abord pour ralentir avant de rebondir."
+  "lab_goal_lom_airbags": "La méthode économique utilisée par les premiers rovers pour atterrir : rebondir à l'intérieur d'airbags gonflés. Mais ils ne supportent que des chocs jusqu'à environ 25 m/s. Votre parachute vous laisse plus rapide que cela, donc les airbags seuls ne suffiront pas non plus ; Pathfinder a tiré de petits rétrofusées d'abord pour ralentir avant de rebondir.",
+  "lab_f_descent_twr": "Poussée spécifique de l'alunisseur",
+  "lab_f_descent_err_twr": "La poussée spécifique doit dépasser 1 — au-dessous, vous ne pouvez pas ralentir la chute, vous vous écrasez.",
+  "lab_assume_constant_thrust": "Freinage vertical à poussée constante"
 }

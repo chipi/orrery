@@ -110,8 +110,12 @@ export const landOnTheMoon: Goal = {
     {
       formulaId: 'descent-burn',
       narrativeKey: 'lab.goal.ltm.descent',
-      presetInputs: { body: 'moon' },
-      wiresFrom: [{ fromStep: 0, output: 'vCirc', toInput: 'vOrbitKms' }],
+      // Wires BOTH the orbital speed to cancel AND the lander's TWR — the descent Δv
+      // now falls straight out of the two rungs above it (a better model than g·t).
+      wiresFrom: [
+        { fromStep: 0, output: 'vCirc', toInput: 'vOrbitKms' },
+        { fromStep: 1, output: 'twr', toInput: 'twr' },
+      ],
     },
     {
       formulaId: 'delta-v-margin',

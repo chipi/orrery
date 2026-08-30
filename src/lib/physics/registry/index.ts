@@ -17,7 +17,11 @@ import { circularVelocityKms, visVivaKms, hohmannTransfer } from '../mechanics/o
 import { poweredDescentDvKms } from '../mechanics/descent';
 import { bodyGravityMs2 } from '../mechanics/bodies';
 import { locationModel, rotationVelocityKms } from '../util/location';
-import { MOON_ORBIT_RADIUS_KM } from '../util/constants';
+import { helioModel, synodicPeriodS } from '../util/heliocentric';
+import { MOON_ORBIT_RADIUS_KM, MU_SUN_KM3_S2 } from '../util/constants';
+
+/** Planets on a tabulated heliocentric orbit — the interplanetary transfer set (M4). */
+const HELIO_PLANET_IDS = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn'] as const;
 
 // Primaries a learner can orbit — resolved through the ONE launch-location model
 // (radius + µ + rotation from PLANET_STATS), so the orbital formulas run on any
@@ -1014,6 +1018,158 @@ export const descentBurn: FormulaDef<{ vOrbitKms: number; body: string; burnTime
   },
 };
 
+/**
+ * Interplanetary Hohmann transfer (M4 "get to Mars") — the SAME two-burn transfer as
+ * M2, one frame out: everything orbits the Sun. Reuses `hohmannTransfer(r1, r2, µ)`
+ * with the Sun's µ + the planets' heliocentric orbit radii (the kernel's frame-
+ * independence is the point). Δv is HELIOCENTRIC — from the departure planet's solar
+ * orbit, NOT from its surface (that's the launch + escape, earlier rungs).
+ */
+export const interplanetaryTransfer: FormulaDef<{ depart: string; arrive: string }> = {
+  id: 'interplanetary-transfer',
+  titleKey: 'lab.f.interplanetary.title',
+  domain: 'transfer',
+  tier: 9,
+  prereqs: ['hohmann-transfer'],
+  latex: '\\Delta v = \\Delta v_1 + \\Delta v_2',
+  inputs: [
+    {
+      key: 'depart',
+      labelKey: 'lab.f.interplanetary.depart',
+      units: '',
+      kind: 'body',
+      default: 'earth',
+      bodyIds: [...HELIO_PLANET_IDS],
+    },
+    {
+      key: 'arrive',
+      labelKey: 'lab.f.interplanetary.arrive',
+      units: '',
+      kind: 'body',
+      default: 'mars',
+      bodyIds: [...HELIO_PLANET_IDS],
+    },
+  ],
+  outputs: [
+    { key: 'dv1', labelKey: 'lab.f.interplanetary.dv1', units: 'km/s' },
+    { key: 'dv2', labelKey: 'lab.f.interplanetary.dv2', units: 'km/s' },
+    { key: 'total', labelKey: 'lab.f.interplanetary.total', units: 'km/s' },
+    { key: 'tof', labelKey: 'lab.f.interplanetary.tof', units: 'day' },
+  ],
+  compute: ({ depart, arrive }) => {
+    const d = helioModel(depart);
+    const a = helioModel(arrive);
+    if (!d || !a) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.interplanetary.err-planet' },
+        assumptions: ['lab.assume.coplanar'],
+      } satisfies FormulaResult;
+    }
+    if (depart === arrive) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.interplanetary.err-same' },
+        assumptions: ['lab.assume.coplanar'],
+      } satisfies FormulaResult;
+    }
+    const h = hohmannTransfer(d.orbitRadiusKm, a.orbitRadiusKm, MU_SUN_KM3_S2);
+    const aTr = h.aTransferKm;
+    const rp = Math.min(d.orbitRadiusKm, a.orbitRadiusKm);
+    const ra = Math.max(d.orbitRadiusKm, a.orbitRadiusKm);
+    const e = (ra - rp) / (ra + rp);
+    const scale = 1 / ra;
+    const arc: Vec2[] = [];
+    for (let i = 0; i <= 48; i++) {
+      const th = (Math.PI * i) / 48;
+      const r = (aTr * (1 - e * e)) / (1 + e * Math.cos(th));
+      arc.push({ x: r * Math.cos(th) * scale, y: r * Math.sin(th) * scale });
+    }
+    return {
+      values: {
+        dv1: { value: h.dv1Kms, units: 'km/s' },
+        dv2: { value: h.dv2Kms, units: 'km/s' },
+        total: { value: h.totalKms, units: 'km/s' },
+        tof: { value: h.tofS / 86400, units: 'day' },
+      },
+      status: { ok: true },
+      assumptions: [
+        'lab.assume.coplanar',
+        'lab.assume.circular-orbits',
+        'lab.assume.from-planet-orbit',
+      ],
+      figure: {
+        kind: 'transfer-ellipse',
+        frame: 'heliocentric',
+        provenance: { fidelity: 'computed', module: 'util/heliocentric' },
+        assumptions: ['lab.assume.coplanar', 'lab.assume.circular-orbits'],
+        bodies: [{ labelKey: 'lab.body.sun', at: { x: 0, y: 0 } }],
+        arc,
+        marks: [
+          { at: { x: rp * scale, y: 0 }, labelKey: 'lab.mark.burn-1', kind: 'point' },
+          { at: { x: -ra * scale, y: 0 }, labelKey: 'lab.mark.burn-2', kind: 'point' },
+        ],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Launch window — the synodic period, how often two planets realign for a transfer.
+ * 1/S = |1/T₁ − 1/T₂|. Earth↔Mars ≈ 780 days (~26 months) — the ~2-year wait.
+ */
+export const launchWindow: FormulaDef<{ depart: string; arrive: string }> = {
+  id: 'launch-window',
+  titleKey: 'lab.f.synodic.title',
+  domain: 'transfer',
+  tier: 9,
+  prereqs: [],
+  latex: '\\dfrac{1}{S} = \\left|\\dfrac{1}{T_1} - \\dfrac{1}{T_2}\\right|',
+  inputs: [
+    {
+      key: 'depart',
+      labelKey: 'lab.f.synodic.depart',
+      units: '',
+      kind: 'body',
+      default: 'earth',
+      bodyIds: [...HELIO_PLANET_IDS],
+    },
+    {
+      key: 'arrive',
+      labelKey: 'lab.f.synodic.arrive',
+      units: '',
+      kind: 'body',
+      default: 'mars',
+      bodyIds: [...HELIO_PLANET_IDS],
+    },
+  ],
+  outputs: [{ key: 'synodic', labelKey: 'lab.f.synodic.period', units: 'day' }],
+  compute: ({ depart, arrive }) => {
+    const d = helioModel(depart);
+    const a = helioModel(arrive);
+    if (!d || !a || depart === arrive) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: {
+          ok: false,
+          reasonKey:
+            depart === arrive ? 'lab.f.interplanetary.err-same' : 'lab.f.interplanetary.err-planet',
+        },
+        assumptions: ['lab.assume.circular-orbits'],
+      } satisfies FormulaResult;
+    }
+    const synodicDays = synodicPeriodS(d.orbitalPeriodS, a.orbitalPeriodS) / 86400;
+    return {
+      values: { synodic: { value: synodicDays, units: 'day' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.circular-orbits', 'lab.assume.coplanar'],
+    } satisfies FormulaResult;
+  },
+};
+
 /** All registered formulas, keyed by id. Add a formula in exactly one place. */
 export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [tsiolkovsky.id, tsiolkovsky],
@@ -1030,6 +1186,8 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [visVivaFormula.id, visVivaFormula],
   [hohmannFormula.id, hohmannFormula],
   [descentBurn.id, descentBurn],
+  [interplanetaryTransfer.id, interplanetaryTransfer],
+  [launchWindow.id, launchWindow],
 ]);
 
 /** Default input record for a formula (drives a first compute / the invariant tests). */

@@ -11,6 +11,8 @@ import {
   launchSite,
   reachOrbitVerdict,
   descentBurn,
+  interplanetaryTransfer,
+  launchWindow,
 } from './index';
 import { bodyGravityMs2 } from '../mechanics/bodies';
 import type { FormulaDef } from '../spec';
@@ -227,6 +229,30 @@ describe('M2 orbital formulas — happy-path numbers + fail branches', () => {
       const r = descentBurn.compute(inp);
       expect(r.status.ok, `${JSON.stringify(inp)} should be rejected`).toBe(false);
     }
+  });
+
+  it('interplanetary-transfer (M4): Earth→Mars ≈ 5.6 km/s heliocentric, ~259-day cruise', () => {
+    const r = interplanetaryTransfer.compute({ depart: 'earth', arrive: 'mars' });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.total.value).toBeGreaterThan(5.0);
+    expect(r.values.total.value).toBeLessThan(6.2);
+    expect(r.values.tof.value).toBeCloseTo(259, -1); // ~8.5-month Hohmann to Mars
+    expect(r.figure?.kind).toBe('transfer-ellipse');
+  });
+
+  it('interplanetary-transfer fails honest for same / untabulated worlds', () => {
+    expect(interplanetaryTransfer.compute({ depart: 'earth', arrive: 'earth' }).status.ok).toBe(
+      false,
+    );
+    expect(interplanetaryTransfer.compute({ depart: 'earth', arrive: 'pluto' }).status.ok).toBe(
+      false,
+    );
+  });
+
+  it('launch-window (M4): Earth↔Mars synodic ≈ 780 days', () => {
+    const r = launchWindow.compute({ depart: 'earth', arrive: 'mars' });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.synodic.value).toBeCloseTo(780, -1);
   });
 
   it('every ORBIT_BODY_IDS entry actually resolves (the resolver M2 uses)', () => {

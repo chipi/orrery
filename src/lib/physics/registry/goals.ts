@@ -125,12 +125,39 @@ export const landOnTheMoon: Goal = {
   ],
 };
 
+/**
+ * M4 "get to Mars" — the same Hohmann transfer as the Moon, one frame out: everything
+ * orbits the Sun. Reuses interplanetary-transfer (Earth→Mars, heliocentric), teaches the
+ * synodic launch window (~26 months), and the Δv verdict — honest that this Δv is FROM
+ * Earth's solar orbit, on top of leaving Earth. The transfer total wires into the verdict.
+ */
+export const getToMars: Goal = {
+  id: 'get-to-mars',
+  titleKey: 'lab.goal.get-mars.title',
+  family: 'spaceflight',
+  tier: 4,
+  prereqs: ['reach-the-moon'],
+  path: [
+    { formulaId: 'interplanetary-transfer', narrativeKey: 'lab.goal.gtm.transfer' },
+    { formulaId: 'launch-window', narrativeKey: 'lab.goal.gtm.window' },
+    {
+      formulaId: 'delta-v-margin',
+      narrativeKey: 'lab.goal.gtm.verdict',
+      // A Mars-injection stage from Earth's solar orbit carries ~6 km/s — tight against
+      // the ~5.6 heliocentric transfer Δv (honest margin, not a full launch vehicle's 8.5).
+      presetInputs: { capacityKms: 6 },
+      wiresFrom: [{ fromStep: 0, output: 'total', toInput: 'requiredKms' }],
+    },
+  ],
+};
+
 /** All goals, keyed by id. */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
   [motionFirstPrinciples.id, motionFirstPrinciples],
   [reachTheMoon.id, reachTheMoon],
   [landOnTheMoon.id, landOnTheMoon],
+  [getToMars.id, getToMars],
 ]);
 
 /**

@@ -8,8 +8,8 @@
  * follow-up. Returns a geocentric ECI (TEME) position in km.
  */
 import type { Tle } from './tle';
+import { MU_EARTH_KM3_S2 as MU } from '../util/constants'; // D10: one home (was a private dup)
 
-const MU = 398_600.4418; // km³/s²
 const RE = 6378.137; // km
 const J2 = 0.00108262998905;
 

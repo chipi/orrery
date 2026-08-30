@@ -359,10 +359,23 @@
     {/each}
   {:else if figure.kind === 'dv-waterfall'}
     {@const bars = waterfallBars(figure)}
+    {@const fs = fidelityStyle(figure.provenance.fidelity)}
 
     {#each bars as { seg, barW, y } (seg.labelKey)}
       {@const fill = seg.kind === 'gain' ? TEAL : MARS}
-      <rect x={WF_LEFT} {y} width={barW} height={WF_BAR_H} {fill} opacity="0.85" />
+      <!-- Register distinction (honesty line): a computed bar is solid/full-opacity;
+           geometric/replayed carry the register's dashed/dotted stroke + opacity + class. -->
+      <rect
+        x={WF_LEFT}
+        {y}
+        width={barW}
+        height={WF_BAR_H}
+        {fill}
+        opacity={0.85 * fs.opacity}
+        stroke={fs.dasharray === 'none' ? 'none' : fs.stroke}
+        stroke-dasharray={fs.dasharray === 'none' ? undefined : fs.dasharray}
+        class={fs.registerClass}
+      />
       <!-- Segment label -->
       <text x={WF_LEFT - 6} y={y + WF_BAR_H / 2 + 4} class="wf-label" text-anchor="end">
         {t(seg.labelKey)}

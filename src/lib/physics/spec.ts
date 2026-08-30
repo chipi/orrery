@@ -17,9 +17,11 @@ import type { Unit, Quantity } from './util/units';
 
 export type { Unit, Quantity } from './util/units';
 
-// Body identifiers the kernel knows (subset used by Lab formulas — the full set
-// lives in the per-body constants table). Kept string-open at the type edge; the
-// registry validates against the real BODY table.
+// Body identifiers the kernel knows. Per-body gravity resolves via
+// `util/planet-stats` (`mechanics/bodies.bodyGravityMs2`), which THROWS on an
+// unknown id — so a `FieldSpec.bodyIds` list must contain only resolvable ids
+// (guarded by the body-resolve test in registry/index.test.ts). Out-of-domain
+// inputs from an untrusted source (the MCP, S4) must be rejected fail-honest.
 export type BodyId = string;
 
 // ─── Inputs / outputs ───────────────────────────────────────────────────────

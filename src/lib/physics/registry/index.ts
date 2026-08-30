@@ -4,9 +4,9 @@
  * each `FormulaDef` wraps a kernel function and emits a `FigureSpec` — the app
  * and the standalone MCP process import this unchanged.
  *
- * S2a seeds it with ONE proof formula (Tsiolkovsky) that exercises the whole
- * contract chain end to end. The M1 mechanics rungs (F=ma, weight, momentum, TWR)
- * are added in S2b; every later formula is pulled demand-driven by a goal.
+ * Registers 8 formulas at S2: Tsiolkovsky (S2a proof) + the M1 mechanics rungs
+ * (F=ma, weight, momentum, TWR, free-fall, projectile — S2b) + the Δv-margin
+ * verdict (S2c). Every later formula is pulled demand-driven by a goal.
  */
 import type { FormulaDef, FormulaResult, Registry, Vec2, Quantity } from '../spec';
 import { tsiolkovskyDv } from '../ascent/ascent-physics';
@@ -260,17 +260,12 @@ export const twrFormula: FormulaDef<{ thrustN: number; massKg: number; body: str
     const gMs2 = bodyGravityMs2(body);
     const w = weightN(massKg, gMs2);
     const ratio = twr(thrustN, massKg, gMs2);
-    if (ratio < 1) {
-      const values: Record<string, Quantity> = {};
-      return {
-        values,
-        status: { ok: false, reasonKey: 'lab.f.twr.err-wont-lift' },
-        assumptions: ['lab.assume.rigid-body', 'lab.assume.uniform-g'],
-      } satisfies FormulaResult;
-    }
+    // Keep the value + the thrust-vs-weight figure on BOTH branches: a TWR < 1
+    // (thrust shorter than weight) IS the lesson, not an error to hide (MINOR-6;
+    // consistent with delta-v-margin's fail-honest behaviour).
     return {
       values: { twr: { value: ratio, units: '' } },
-      status: { ok: true },
+      status: ratio >= 1 ? { ok: true } : { ok: false, reasonKey: 'lab.f.twr.err-wont-lift' },
       assumptions: ['lab.assume.rigid-body', 'lab.assume.uniform-g'],
       figure: {
         kind: 'force-diagram',

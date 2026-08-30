@@ -29,5 +29,7 @@ export const MU_EARTH_KM3_S2 = 398_600.4418;
 /** Selenocentric µ (km³/s²). */
 export const MU_MOON_KM3_S2 = 4902.8;
 
-// ─── Earth geometry ──────────────────────────────────────────────────────────
+// ─── Earth geometry + standard gravity ───────────────────────────────────────
 export const R_EARTH_M = 6_371_000; // IUGG mean (volumetric) radius
+/** Standard gravity g₀ (m/s²) — the reference for Isp and Earth-relative weights. */
+export const G0 = 9.80665;

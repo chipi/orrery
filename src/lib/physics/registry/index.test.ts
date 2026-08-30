@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { REGISTRY, defaultInputs, tsiolkovsky } from './index';
+import { REGISTRY, defaultInputs, tsiolkovsky, twrFormula, deltaVMargin } from './index';
+import { bodyGravityMs2 } from '../mechanics/bodies';
 
 /**
  * Contract-invariant tests (S2a). These run over EVERY registered formula, so the
@@ -64,5 +65,52 @@ describe('Tsiolkovsky', () => {
     const r = tsiolkovsky.compute({ ispS: 350, m0Kg: 1, mfKg: 1 });
     expect(r.status.ok).toBe(false);
     if (!r.status.ok) expect(r.status.reasonKey).toContain('mass-ratio');
+  });
+});
+
+// MAJOR-1 (S2 holistic): the invariant runner only executes defaultInputs, so the
+// non-default status branches ship untested. Exercise them explicitly.
+describe('fail-honest branches (both status paths)', () => {
+  it('TWR < 1 → ok:false but KEEPS the value + force-diagram (the lesson, MINOR-6)', () => {
+    const r = twrFormula.compute({ thrustN: 5e6, massKg: 1e6, body: 'earth' }); // ≈0.51
+    expect(r.status.ok).toBe(false);
+    if (!r.status.ok) expect(r.status.reasonKey).toContain('wont-lift');
+    expect(r.values.twr.value).toBeLessThan(1);
+    expect(r.figure?.kind).toBe('force-diagram');
+  });
+
+  it('delta-v-margin OK branch: capacity > required → ok, positive margin, figure', () => {
+    const r = deltaVMargin.compute({ capacityKms: 12, requiredKms: 9.4 });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.margin.value).toBeCloseTo(2.6, 5);
+    expect(r.values.margin.units).toBe('km/s');
+    expect(r.figure?.kind).toBe('dv-waterfall');
+  });
+
+  it('delta-v-margin FAIL branch: capacity < required → ok:false, keeps figure', () => {
+    const r = deltaVMargin.compute({ capacityKms: 5, requiredKms: 9.4 });
+    expect(r.status.ok).toBe(false);
+    if (!r.status.ok) expect(r.status.reasonKey).toContain('insufficient');
+    expect(r.figure?.kind).toBe('dv-waterfall'); // the deficit IS the lesson
+  });
+});
+
+// MAJOR-3 (S2 holistic): body-kind FieldSpec.bodyIds are validated by nothing, and
+// bodyGravityMs2 THROWS on an unknown id. Prove every declared bodyId resolves — a
+// typo'd id in a bodyIds list would crash at user-pick time otherwise.
+describe('body-kind inputs resolve (no throw at pick time)', () => {
+  it('every registered body-kind field lists only resolvable bodyIds', () => {
+    for (const def of REGISTRY.values()) {
+      for (const field of def.inputs) {
+        if (field.kind !== 'body') continue;
+        for (const id of field.bodyIds ?? []) {
+          expect(
+            () => bodyGravityMs2(id),
+            `${def.id}.${field.key}: bad body "${id}"`,
+          ).not.toThrow();
+          expect(bodyGravityMs2(id)).toBeGreaterThan(0);
+        }
+      }
+    }
   });
 });

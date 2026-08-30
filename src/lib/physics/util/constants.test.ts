@@ -8,6 +8,7 @@ import {
   MU_EARTH_M3_S2,
   MU_EARTH_KM3_S2,
   MU_MOON_KM3_S2,
+  G0,
 } from './constants';
 // The scattered definitions the canonical home must agree with (D10 hazard):
 import { MU_SUN as MU_SUN_ORBITAL, AU_TO_KM as AU_ORBITAL } from '$lib/physics/transfer/orbital';
@@ -15,7 +16,10 @@ import { MU_SUN as MU_SUN_LAMBERT } from '$lib/physics/transfer/lambert-grid.con
 import {
   MU_EARTH as MU_EARTH_GEO,
   MU_MOON as MU_MOON_GEO,
+  AU_TO_KM as AU_GEO,
 } from '$lib/physics/transfer/lambert-geocentric-grid.constants';
+import { G0 as G0_ASCENT } from '$lib/physics/ascent/ascent-physics-constants';
+import { G0 as G0_DESCENT } from '$lib/physics/descent/descent-physics-constants';
 import { MU_EARTH_M3_S2 as MU_EARTH_ASCENT } from '$lib/physics/ascent/ascent-physics-constants';
 import { gmstRad } from '$lib/physics/ephemeris/time';
 import { julianDay } from '$lib/physics/ephemeris';
@@ -47,6 +51,9 @@ describe('D10 · constants agree by value + unit', () => {
     expect(MU_EARTH_ASCENT).toBe(MU_EARTH_M3_S2); // ascent-physics-constants (m³/s²)
     expect(MU_EARTH_GEO).toBe(MU_EARTH_KM3_S2); // lambert-geocentric (km³/s²)
     expect(MU_MOON_GEO).toBe(MU_MOON_KM3_S2); // lambert-geocentric (km³/s²)
+    expect(AU_GEO).toBe(AU_TO_KM); // lambert-geocentric AU_TO_KM (S2 holistic MAJOR-4)
+    expect(G0_ASCENT).toBe(G0); // ascent-physics-constants G0
+    expect(G0_DESCENT).toBe(G0); // descent-physics-constants G0 (a 2nd copy)
     // planets.json's mu_sun is in Gaussian AU³/yr² (= 4π²), NOT km-family — the
     // agreement test revealed the actual unit (the S1 review's "km-family" label
     // was wrong). It's a 3rd copy of MU_SUN_AU3_YR2, a duplication (not unit) hazard.

@@ -2,9 +2,15 @@
   import * as m from '$lib/paraglide/messages';
   import SectionHub from '$lib/components/SectionHub.svelte';
 
-  // Learn hub — The Long View essays first, then the Science encyclopedia.
-  // Mirrors the nav Learn group order (essays before science).
+  // Learn hub — the Physics Lab first, then The Long View essays, then the
+  // Science encyclopedia. Mirrors the nav Learn group order (lab → essays → science).
   const cards = $derived([
+    {
+      route: '/lab',
+      name: m.nav_lab(),
+      title: m.landing_card_lab_title(),
+      desc: m.landing_card_lab_desc(),
+    },
     {
       route: '/essays',
       name: m.nav_essays(),

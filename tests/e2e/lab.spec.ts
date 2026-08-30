@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { isExpectedNoise } from './_helpers/console-errors';
-import { revealDesktopNavLink } from './_helpers/nav';
+import { clickNavLink } from './_helpers/nav';
 
 /**
  * /lab — Physics Lab (v0.9 flagship, S3e). Covers the M1 "launch a rocket" ladder
@@ -75,21 +75,44 @@ test.describe('/lab — Physics Lab', () => {
 
   test('Focus opens one card full-width (?focus=) and back returns', async ({ page }) => {
     await page.goto('/lab', { waitUntil: 'networkidle' });
-    await page.locator('.nb__act[title]').first().click();
+    await page
+      .getByRole('button', { name: /focus this cell/i })
+      .first()
+      .click();
     await expect(page).toHaveURL(/[?&]focus=/);
     await expect(page.locator('.nb__back')).toBeVisible();
     await expect(page.locator('.card')).toHaveCount(1);
     await page.locator('.nb__back').click();
     await expect(page.locator('.card')).toHaveCount(6);
   });
+
+  test('fail-honest: an infeasible input surfaces a reason and blocks the wired verdict', async ({
+    page,
+  }) => {
+    await page.goto('/lab', { waitUntil: 'networkidle' });
+    await expect(page.locator('.nb__goal-title')).toBeVisible();
+
+    // Tsiolkovsky (card 5, index 4) fails when dry mass ≥ wet mass. Its 3rd number
+    // input is mf; push it above m0 (default 12) → mass ratio < 1 → fail-honest.
+    const tsio = page.locator('.card').nth(4);
+    const mf = tsio.locator('.card__number').nth(2);
+    await mf.fill('20');
+    await mf.dispatchEvent('input');
+
+    // The formula refuses to lie: a mars-red reason (role="alert"), not a fake Δv.
+    await expect(tsio.locator('.card__readout-fail')).toBeVisible();
+
+    // And the honesty line propagates: the wired verdict is upstream-failed, never a
+    // green verdict computed off a stale default.
+    await expect(page.locator('.card').last().locator('.card__readout-fail')).toBeVisible();
+  });
 });
 
-test.describe('/lab — nav (desktop)', () => {
-  test.skip(({ isMobile }) => !!isMobile, 'desktop nav reveal only');
-
-  test('is reachable from the Learn nav group', async ({ page }) => {
+test.describe('/lab — nav', () => {
+  test('is reachable from the Learn nav group (desktop + mobile)', async ({ page }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
-    const link = await revealDesktopNavLink(page, '/lab');
-    await expect(link).toBeVisible();
+    await clickNavLink(page, '/lab');
+    await expect(page).toHaveURL(/\/lab$/);
+    await expect(page.locator('.nb__goal-title')).toBeVisible();
   });
 });

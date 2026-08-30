@@ -79,23 +79,21 @@
     return v.toFixed(4);
   }
 
-  // a11y (review M-3): the visible readout updates on every slider tick, which would
-  // flood a polite live region. Announce a settled summary on a debounce instead, via
-  // a dedicated visually-hidden region — the visible readout carries no aria-live.
+  // a11y (review M-3): the visible readout updated on every slider tick, which would
+  // flood a polite live region. Announce the SETTLED ok result on a debounce via a
+  // dedicated visually-hidden region instead. Blocked/fail states are NOT announced
+  // here — they already own a `role="alert"` node, so repeating them in the polite
+  // region would double-announce (assertive now + polite 500ms later, same text).
   const summary = $derived(
-    blocked
-      ? blockedMessage
-      : result?.status.ok
-        ? formula.outputs
-            .map((o) => {
-              const q = result.values[o.key];
-              return q ? `${t(o.labelKey)} ${fmt(q.value)} ${q.units}` : '';
-            })
-            .filter(Boolean)
-            .join(', ')
-        : result && !result.status.ok
-          ? t(result.status.reasonKey)
-          : '',
+    !blocked && result?.status.ok
+      ? formula.outputs
+          .map((o) => {
+            const q = result.values[o.key];
+            return q ? `${t(o.labelKey)} ${fmt(q.value)} ${q.units}` : '';
+          })
+          .filter(Boolean)
+          .join(', ')
+      : '',
   );
   let announced = $state('');
   let announceTimer: ReturnType<typeof setTimeout> | undefined;
@@ -219,8 +217,8 @@
     </div>
   {/if}
 
-  <!-- Debounced screen-reader announcement (settled result only, review M-3) -->
-  <div class="card__sr" aria-live="polite">{announced}</div>
+  <!-- Debounced screen-reader announcement (settled ok result only, review M-3) -->
+  <div class="card__sr" aria-live="polite" aria-atomic="true">{announced}</div>
 
   <!-- Readout grid — visible; no aria-live (the card__sr region announces) -->
   <section
@@ -251,6 +249,7 @@
       <div class="card__readout-fail" role="alert">
         <span class="card__readout-fail-icon" aria-hidden="true">&#9888;</span>
         {t(result.status.ok ? '' : result.status.reasonKey)}
+        <!-- (result is !ok in this branch; the ternary guards the union narrowing) -->
       </div>
     {/if}
   </section>

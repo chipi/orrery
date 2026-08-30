@@ -134,12 +134,36 @@ wired fly-sim at S5** (Canvas graph engine). This is PRD-033 T2 composition —
 5. **S1.4 — `satellite/`** (exclude `tle-source`). *(No `cislunar/` kernel move — the Tier-1
    shape-gens are app-side per the REVISION; the real cislunar compute `lambert-geocentric.ts`
    moved with `transfer/` in S1.2.)*
-6. **S1.5 — turn the ESLint purity gate to ERROR** + public `physics/index.ts` with
-   per-export units + citations + the D2-b drift-check in CI.
+6. **S1.5 — turn the ESLint purity gate to ERROR** (deny-by-default: only `$types/*`,
+   `$data/*` (D2-b) and `$lib/physics/*` allowed; + no relative-escape / dynamic-import /
+   DOM-globals, tests exempted where legitimate) + public `physics/index.ts` namespacing
+   the domains. **D2-b codegen drift-check DEFERRED to S4** (Fable-5 S1 holistic m2 — the
+   JSON is Vite-imported via `$data`, nothing is baked to `.ts` yet, so there is nothing to
+   drift-check until the standalone-Node MCP consumer needs the co-bundle). Per-export
+   units+citations formalize with the S2 registry.
 
 Blast radius measured: ~55 kernel modules, **69 importing files** repo-wide
 (heaviest: `lib/three` 16, `lib/components` 9, routes). Each sub-slice rewrites only
 the importers of the modules it moves, so the diff stays reviewable per step.
+
+## Post-S1 holistic-review carry-forward (Fable-5, 2026-08-29) — track for S2
+
+The S1 carve landed behaviour-preserving + tests-green; the seal was hardened in-slice
+(B1/M1/M3/m2/m3/m4 fixed). Two items are recorded LOUDLY for S2 (not silently dropped):
+
+- **M2 — two kernel modules still do runtime `fetch` via an injectable default.**
+  `ascent/launch-profile-registry.ts` (`fetchFn: typeof fetch = fetch`, fetches
+  `${baseUrl}/data/launch-profiles/…`) and `descent/descent-profile-registry.ts` (same
+  pattern). The manifest's impurity scan grepped `fetch(` and missed the `= fetch,`
+  default-arg. Injectable + behaviour-unchanged, so not a blocker — but the standalone-Node
+  consumer can't use these loaders without an app-shaped static server. **S2: split each →
+  a pure expand/validate half (kernel) + an app-side loader adapter.**
+- **m1 — D10 constants-home is a same-name-different-UNITS trap, not just a duplicate.**
+  `transfer/orbital.ts` `MU_SUN = 4π²` (AU³/yr²) vs `transfer/lambert-grid.constants.ts`
+  `MU_SUN` (km-family) vs `mission-arc.ts` re-deriving `MU_SUN_AU3_YR2` locally; plus two
+  GMST impls now co-located (`ephemeris/time.ts gmstRad(jd)` vs
+  `ephemeris/earth-sidereal.ts gmstRadians(Date)`). **S2 D10 must unify by VALUE+UNIT, not
+  just name** — same-name-different-unit is the silent-wrong-number hazard.
 
 ---
 

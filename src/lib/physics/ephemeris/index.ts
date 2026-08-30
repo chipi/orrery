@@ -98,4 +98,15 @@ export function skyDirectionENU(
   return [east, up, -north];
 }
 
-export { julianDay } from './time';
+// Domain barrel (S1.5, Fable-5 S1 holistic M1): expose the whole ephemeris
+// surface — JD/GMST/obliquity (time), JPL-Standish positions (planets), Kepler
+// solver (kepler), Moon (moon / moon-observer), frame transforms (horizontal),
+// sidereal time (earth-sidereal) — so `$lib/physics` reaches the core, not just
+// sky-pointing. A barrel smoke test (index.test.ts) keeps this contract executable.
+export * from './time';
+export * from './planets';
+export * from './kepler';
+export * from './moon';
+export * from './moon-observer';
+export * from './horizontal';
+export * from './earth-sidereal';

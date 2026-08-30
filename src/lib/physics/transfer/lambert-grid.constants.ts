@@ -10,8 +10,10 @@
  * v0.3.x (ADR-028): + Uranus, Neptune, Pluto, Ceres (9 destinations).
  */
 
-import planetsData from '../../../../static/data/planets.json';
-import smallBodiesData from '../../../../static/data/small-bodies.json';
+// Sanctioned build-time JSON channel (D2-b) via the $data alias — the ONE
+// external data dependency the kernel purity gate permits besides $types.
+import planetsData from '$data/planets.json';
+import smallBodiesData from '$data/small-bodies.json';
 
 type PlanetEntry = {
   name: string;

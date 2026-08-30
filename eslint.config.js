@@ -50,15 +50,52 @@ export default [
     },
   },
   {
-    // Physics-kernel purity gate (RFC-037 §3 / D1 · epic #458 · S1.0 scaffold).
-    // `src/lib/physics/**` is the pure, framework-free kernel imported unchanged
-    // by both the SvelteKit app and a standalone Node process. It may NOT depend
-    // on the renderer (three), the framework (svelte / $app), app-internal $lib
-    // modules, or the DOM. Shared `$types/*` and intra-kernel `$lib/physics/*`
-    // imports are allowed. ENFORCED at 'error' (S1.5 — kernel fully carved); the
-    // pure core cannot regain a framework dependency. What ADR-030 kept by
-    // convention is now a lint gate (docs/wip/2026-08-29-s1-kernel-boundary-manifest.md §5).
+    // Physics-kernel purity gate (RFC-037 §3 / D1 · epic #458 · S1.5 seal, hardened).
+    // `src/lib/physics/**` is the pure, framework-free kernel imported unchanged by
+    // both the SvelteKit app and a standalone Node process. DENY-BY-DEFAULT: it may
+    // depend ONLY on `$types/*` (shared types), `$data/*` (sanctioned build-time JSON,
+    // D2-b) and intra-kernel `$lib/physics/*`. Everything else — the renderer (three),
+    // the framework (svelte/$app), any app-internal `$lib/*`, dynamic import(), DOM
+    // globals — is forbidden. What ADR-030 kept by convention is now enforced.
+    // (Fable-5 S1 holistic B1: the earlier allowlist was decorative — top-level
+    // $lib/*.ts, relative escapes, dynamic imports and DOM globals all slipped through.)
     files: ['src/lib/physics/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              // Deny all $lib EXCEPT the kernel itself; deny framework/renderer.
+              // $types/* and $data/* are NOT $lib, so remain allowed by omission.
+              group: [
+                'three',
+                'three/*',
+                'svelte',
+                'svelte/*',
+                '$app/*',
+                '$lib/**',
+                '!$lib/physics',
+                '!$lib/physics/**',
+              ],
+              message:
+                'physics kernel must stay pure — only $types/*, $data/* (D2-b) and $lib/physics/* are allowed (RFC-037 §3). Move the impure part app-side.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    // Stricter rules for NON-TEST kernel files (the shipped contract). Tests are
+    // exempt: they legitimately use dynamic import() for orchestration and reach
+    // `../../test-helpers/*`. (Fable-5 S1 holistic B1.)
+    // - relative-escape ban: a kernel module lives at physics/<domain>/x.ts, so
+    //   `../<domain>` (intra-kernel) is legal but `../../` escapes into app-side src/lib.
+    // - no dynamic import() (no-restricted-imports can't see ImportExpression).
+    // - no DOM / browser globals.
+    files: ['src/lib/physics/**/*.ts'],
+    ignores: ['src/lib/physics/**/*.test.ts'],
     rules: {
       'no-restricted-imports': [
         'error',
@@ -71,19 +108,31 @@ export default [
                 'svelte',
                 'svelte/*',
                 '$app/*',
-                '$lib/components/*',
-                '$lib/three/*',
-                '$lib/stores/*',
-                '$lib/fly/*',
-                '$lib/data/*',
-                '$lib/science-layers',
-                '$lib/paraglide/*',
+                '$lib/**',
+                '!$lib/physics',
+                '!$lib/physics/**',
+                '../../**',
               ],
               message:
-                'physics kernel must stay pure — no three / svelte / $app / app-internal $lib / DOM (RFC-037 §3). Move the impure part app-side.',
+                'physics kernel: no relative import escaping src/lib/physics (`../../` and deeper) — use $types/*, $data/* or $lib/physics/* (RFC-037 §3).',
             },
           ],
         },
+      ],
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'ImportExpression',
+          message: 'physics kernel: no dynamic import() — static imports only (RFC-037 §3).',
+        },
+      ],
+      'no-restricted-globals': [
+        'error',
+        { name: 'window', message: 'physics kernel must not touch the DOM.' },
+        { name: 'document', message: 'physics kernel must not touch the DOM.' },
+        { name: 'localStorage', message: 'physics kernel must not touch storage.' },
+        { name: 'sessionStorage', message: 'physics kernel must not touch storage.' },
+        { name: 'navigator', message: 'physics kernel must not touch navigator.' },
       ],
     },
   },

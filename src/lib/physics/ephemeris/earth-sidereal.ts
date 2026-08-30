@@ -19,7 +19,8 @@ const J2000_EPOCH_MS = Date.UTC(2000, 0, 1, 12, 0, 0); // 2000-01-01T12:00:00 UT
 const MS_PER_DAY = 86_400_000;
 
 /**
- * Return GMST in radians for the given UTC time (defaults to now).
+ * Return GMST in radians for the given UTC time (required — pass an explicit
+ * Date; the kernel takes no wall-clock default, S1.1 purity scrub).
  * Range: [0, 2π). Multiply by 12/π to get GMST in hours.
  */
 export function gmstRadians(now: Date): number {

@@ -55,10 +55,36 @@ export const motionFirstPrinciples: Goal = {
   ],
 };
 
+/**
+ * M2 "reach the Moon" — from in-orbit to at-the-Moon. The first-principles path:
+ * circular orbital velocity (you must ORBIT first) → vis-viva (the general speed
+ * law) → the Hohmann transfer (the two-burn ellipse LEO→lunar distance) → the Δv
+ * verdict, whose required Δv WIRES from the Hohmann total (exercises a wire into a
+ * REUSED formula — delta-v-margin, same as M1 but a different output→input mapping).
+ */
+export const reachTheMoon: Goal = {
+  id: 'reach-the-moon',
+  titleKey: 'lab.goal.reach-moon.title',
+  family: 'spaceflight',
+  tier: 2,
+  prereqs: ['launch-a-rocket'],
+  path: [
+    { formulaId: 'orbital-velocity', narrativeKey: 'lab.goal.rtm.orbit' },
+    { formulaId: 'vis-viva', narrativeKey: 'lab.goal.rtm.visviva' },
+    { formulaId: 'hohmann-transfer', narrativeKey: 'lab.goal.rtm.hohmann' },
+    {
+      formulaId: 'delta-v-margin',
+      narrativeKey: 'lab.goal.rtm.verdict',
+      wiresFrom: [{ fromStep: 2, output: 'total', toInput: 'requiredKms' }],
+    },
+  ],
+};
+
 /** All goals, keyed by id. */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
   [motionFirstPrinciples.id, motionFirstPrinciples],
+  [reachTheMoon.id, reachTheMoon],
 ]);
 
 /**

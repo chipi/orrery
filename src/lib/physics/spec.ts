@@ -144,8 +144,10 @@ export type FigureSpec = FigureBase &
       }
     | { kind: 'dv-waterfall'; segments: { labelKey: string; dv: number; kind: 'gain' | 'cost' }[] }
     | {
+        // `frame` gained 'geocentric' at M2 (LEO→Moon Hohmann) — the heliocentric-only
+        // typing was an M1-era gap; additive union extension, no shape break.
         kind: 'transfer-ellipse';
-        frame: 'heliocentric';
+        frame: 'heliocentric' | 'geocentric';
         bodies: { labelKey: string; at: Vec2 }[];
         arc: Vec2[];
         marks: Annotation[];

@@ -2022,8 +2022,9 @@
   "lab_goal_reach_moon_title": "Den Mond erreichen",
   "lab_goal_rtm_hohmann": "Der günstigste Weg, deine Umlaufbahn anzuheben, ist eine gestreckte Ellipse, die beide gerade berührt: Ein Zündung zum Verlassen, eine halbe Umrundung im Gleitflug, eine Zündung zum Ankommen. Strecke sie bis zum Mond.",
   "lab_goal_rtm_orbit": "Geradeaus nach oben reicht nicht — du würdest einfach zurückfallen. Um oben zu bleiben, gehe seitwärts schnell genug, dass die Oberfläche so schnell weg­krümmt, wie du fällst. Diese Geschwindigkeit ist die zirkuläre Orbitalgeschwindigkeit.",
-  "lab_goal_rtm_verdict": "Addiere die zwei Zündungen — das ist die Δv, um den Mond aus niedriger Umlaufbahn zu erreichen. Deckt dein Raumschiff-Budget das ab?",
+  "lab_goal_rtm_verdict": "Addieren Sie die beiden Bremsmanöver: Das ist das Δv für den Transfer zum Mond AUS niedriger Erdumlaufbahn — zusätzlich zu den ~9,4 km/s, die bereits für den Bahnaufstieg erforderlich waren. Reicht Ihr Treibstoffbudget für den Transfer?",
   "lab_goal_rtm_visviva": "Umlaufbahnen sind nicht alle Kreise. Die Vis-Viva-Gleichung gibt dir die Geschwindigkeit an jedem Punkt einer beliebigen Umlaufbahn aus nur zwei Zahlen — wo du bist und wie groß die Umlaufbahn ist. Sie ist das Werkzeug, auf dem jede Manöver aufgebaut ist.",
   "lab_mark_burn_1": "Zündung 1",
-  "lab_mark_burn_2": "Zündung 2"
+  "lab_mark_burn_2": "Zündung 2",
+  "lab_f_orbits_err_unknown_body": "Dieser Himmelskörper kann hier nicht umkreist werden — wählen Sie Erde oder Mond."
 }

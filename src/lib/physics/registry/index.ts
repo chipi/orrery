@@ -29,8 +29,11 @@ const ORBIT_BODIES = {
   moon: { rKm: R_MOON_KM, muKm3s2: MU_MOON_KM3_S2 },
 } as const;
 const ORBIT_BODY_IDS = ['earth', 'moon'] as const;
-const orbitBody = (id: string): { rKm: number; muKm3s2: number } =>
-  ORBIT_BODIES[id as keyof typeof ORBIT_BODIES] ?? ORBIT_BODIES.earth;
+// Returns undefined for an unknown id — the caller fails HONEST rather than
+// silently computing Earth physics (review MAJOR-2: the fail-honest body contract
+// that bodyGravityMs2 enforces for M1 must hold for the M2 orbital formulas too).
+const orbitBody = (id: string): { rKm: number; muKm3s2: number } | undefined =>
+  ORBIT_BODIES[id as keyof typeof ORBIT_BODIES];
 
 /**
  * Tsiolkovsky ideal rocket equation: Δv = Isp·g₀·ln(m₀/m_f). Rung 4 of the
@@ -537,6 +540,14 @@ export const orbitalVelocity: FormulaDef<{ altitudeKm: number; body: string }> =
   outputs: [{ key: 'vCirc', labelKey: 'lab.f.orbvel.vcirc', units: 'km/s' }],
   compute: ({ altitudeKm, body }) => {
     const b = orbitBody(body);
+    if (!b) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions: ['lab.assume.point-mass'],
+      } satisfies FormulaResult;
+    }
     const v = circularVelocityKms(b.rKm + altitudeKm, b.muKm3s2);
     const points: Vec2[] = [];
     for (let alt = 100; alt <= 40000.001; alt += 800) {
@@ -601,6 +612,14 @@ export const visVivaFormula: FormulaDef<{ rKm: number; aKm: number; body: string
   outputs: [{ key: 'v', labelKey: 'lab.f.visviva.v', units: 'km/s' }],
   compute: ({ rKm, aKm, body }) => {
     const b = orbitBody(body);
+    if (!b) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions: ['lab.assume.point-mass'],
+      } satisfies FormulaResult;
+    }
     if (!(rKm > 0) || !(aKm > 0) || rKm >= 2 * aKm) {
       const values: Record<string, Quantity> = {};
       return {
@@ -681,6 +700,14 @@ export const hohmannFormula: FormulaDef<{ r1Km: number; r2Km: number; body: stri
   ],
   compute: ({ r1Km, r2Km, body }) => {
     const b = orbitBody(body);
+    if (!b) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions: ['lab.assume.coplanar'],
+      } satisfies FormulaResult;
+    }
     if (!(r1Km > 0) || !(r2Km > 0)) {
       const values: Record<string, Quantity> = {};
       return {

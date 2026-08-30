@@ -1,6 +1,16 @@
 import { describe, it, expect } from 'vitest';
-import { REGISTRY, defaultInputs, tsiolkovsky, twrFormula, deltaVMargin } from './index';
+import {
+  REGISTRY,
+  defaultInputs,
+  tsiolkovsky,
+  twrFormula,
+  deltaVMargin,
+  orbitalVelocity,
+  visVivaFormula,
+  hohmannFormula,
+} from './index';
 import { bodyGravityMs2 } from '../mechanics/bodies';
+import type { FormulaDef } from '../spec';
 
 /**
  * Contract-invariant tests (S2a). These run over EVERY registered formula, so the
@@ -111,6 +121,56 @@ describe('body-kind inputs resolve (no throw at pick time)', () => {
           expect(bodyGravityMs2(id)).toBeGreaterThan(0);
         }
       }
+    }
+  });
+});
+
+// M2 review MAJOR-1/MAJOR-2: the invariant runner only hits defaultInputs (happy
+// path), so pin the textbook numbers at the registry layer + exercise every M2
+// fail-branch, including the unknown-body path that bypasses bodyGravityMs2.
+describe('M2 orbital formulas — happy-path numbers + fail branches', () => {
+  it('orbital-velocity: 200 km LEO ≈ 7.79 km/s', () => {
+    const r = orbitalVelocity.compute({ altitudeKm: 200, body: 'earth' });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.vCirc.value).toBeCloseTo(7.79, 1);
+  });
+
+  it('hohmann: LEO → Moon defaults give ~3.96 km/s total + ~5-day transfer', () => {
+    const r = hohmannFormula.compute({ r1Km: 6571, r2Km: 384400, body: 'earth' });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.dv1.value).toBeCloseTo(3.13, 1); // TLI
+    expect(r.values.total.value).toBeCloseTo(3.96, 1);
+    expect(r.values.tof.value).toBeCloseTo(5, 0);
+    expect(r.figure?.kind).toBe('transfer-ellipse');
+  });
+
+  it('vis-viva fails honest when r is not on the orbit (r ≥ 2a)', () => {
+    const r = visVivaFormula.compute({ rKm: 100000, aKm: 10000, body: 'earth' });
+    expect(r.status.ok).toBe(false);
+    if (!r.status.ok) expect(r.status.reasonKey).toContain('off-orbit');
+  });
+
+  it('hohmann fails honest on a non-positive radius', () => {
+    const r = hohmannFormula.compute({ r1Km: -1, r2Km: 384400, body: 'earth' });
+    expect(r.status.ok).toBe(false);
+    if (!r.status.ok) expect(r.status.reasonKey).toContain('radius');
+  });
+
+  it('an unknown body fails HONEST — never silently computes Earth (review MAJOR-2)', () => {
+    const forms: FormulaDef[] = [orbitalVelocity, visVivaFormula, hohmannFormula];
+    for (const f of forms) {
+      const r = f.compute({ ...defaultInputs(f), body: 'jupiter' });
+      expect(r.status.ok, `${f.id} should reject unknown body`).toBe(false);
+      if (!r.status.ok) expect(r.status.reasonKey).toContain('unknown-body');
+    }
+  });
+
+  it('every ORBIT_BODY_IDS entry actually resolves (the resolver M2 uses)', () => {
+    // The M2 formulas route body → ORBIT_BODIES, not bodyGravityMs2; prove that
+    // resolver covers every declared id (a mismatch would hit the fail-honest path).
+    for (const id of ['earth', 'moon']) {
+      const r = orbitalVelocity.compute({ altitudeKm: 200, body: id });
+      expect(r.status.ok, `orbital-velocity should accept "${id}"`).toBe(true);
     }
   });
 });

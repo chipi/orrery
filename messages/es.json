@@ -2022,8 +2022,9 @@
   "lab_goal_reach_moon_title": "Alcanzar la Luna",
   "lab_goal_rtm_hohmann": "La forma más barata de elevar tu órbita es una elipse estirada que toca ambas: un impulso para partir, media vuelta en costa, un impulso para llegar. Estírala hasta la Luna.",
   "lab_goal_rtm_orbit": "Subir recto no es suficiente — solo caerías. Para mantenerte arriba, ve de lado lo bastante rápido para que el terreno se curve tan rápido como caes. Esa velocidad es la velocidad orbital circular.",
-  "lab_goal_rtm_verdict": "Suma los dos impulsos — ese es el Δv para alcanzar la Luna desde órbita baja. ¿Tu presupuesto de combustible lo cubre?",
+  "lab_goal_rtm_verdict": "Suma los dos impulsos: ese es el Δv necesario para alcanzar la Luna DESDE órbita baja terrestre — además de los ~9,4 km/s que ya costó llegar a órbita. ¿Tu presupuesto en órbita cubre la transferencia?",
   "lab_goal_rtm_visviva": "Las órbitas no son todas círculos. Vis-viva da tu velocidad en cualquier punto de cualquier órbita con solo dos números — dónde estás y cuán grande es la órbita. Es la herramienta con la que se construye cada transferencia.",
   "lab_mark_burn_1": "Impulso 1",
-  "lab_mark_burn_2": "Impulso 2"
+  "lab_mark_burn_2": "Impulso 2",
+  "lab_f_orbits_err_unknown_body": "Ese mundo no es uno que puedas orbitar aquí — elige la Tierra o la Luna."
 }

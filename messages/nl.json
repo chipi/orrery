@@ -2022,8 +2022,9 @@
   "lab_goal_reach_moon_title": "Bereik de Maan",
   "lab_goal_rtm_hohmann": "De goedkoopste manier om je baan te verhogen is een uitgerekte ellips die beide raakt: één stuwing om te vertrekken, halve omloopbaan vrij varen, één stuwing om aan te komen. Rek het helemaal uit tot de Maan.",
   "lab_goal_rtm_orbit": "Recht omhoog gaan is niet genoeg — je valt gewoon terug. Om omhoog te blijven, ga je zijwaarts snel genoeg zodat de grond even snel wegbuigt als je valt. Die snelheid is de circulaire omloopsnelheid.",
-  "lab_goal_rtm_verdict": "Tel de twee stuwtingen op — dat is de Δv om de Maan te bereiken vanaf lage baan. Dekt je ruimtevaartuig het budget?",
+  "lab_goal_rtm_verdict": "Tel de twee maneuvers op: dit is de Δv om de Maan te bereiken VANUIT lage aardbaan — bovenop de ~9,4 km/s die al nodig was om überhaupt in baan te komen. Dekt uw on-orbit budget de transfer?",
   "lab_goal_rtm_visviva": "Banen zijn niet allemaal cirkels. Vis-viva geeft je snelheid op elk punt van elke baan met slechts twee getallen — waar je bent en hoe groot de baan is. Het is het gereedschap waarop elke transferbaan is gebouwd.",
   "lab_mark_burn_1": "Stuwing 1",
-  "lab_mark_burn_2": "Stuwing 2"
+  "lab_mark_burn_2": "Stuwing 2",
+  "lab_f_orbits_err_unknown_body": "Die wereld kunt u hier niet omcirkelen — kies Aarde of de Maan."
 }

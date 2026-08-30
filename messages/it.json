@@ -2022,8 +2022,9 @@
   "lab_goal_reach_moon_title": "Raggiungi la Luna",
   "lab_goal_rtm_hohmann": "Il modo più economico per alzare l'orbita è un'ellisse allungata che tocca appena entrambe: un'accensione per partire, mezza orbita in costa, un'accensione per arrivare. Allungala fino alla Luna.",
   "lab_goal_rtm_orbit": "Andare dritto verso l'alto non basta — cadresti subito. Per stare in orbita, vai di lato abbastanza veloce che il suolo scenda alla stessa velocità con cui cadi. Quella velocità è la velocità orbitale circolare.",
-  "lab_goal_rtm_verdict": "Somma i due impulsi — questo è il Δv per raggiungere la Luna dall'orbita bassa. Il budget del tuo veicolo spaziale lo copre?",
+  "lab_goal_rtm_verdict": "Somma i due burn: questo è il Δv per raggiungere la Luna DALL'orbita bassa terrestre — in più ai ~9,4 km/s che è già costato solo per raggiungere l'orbita. Il tuo budget in orbita copre il trasferimento?",
   "lab_goal_rtm_visviva": "Le orbite non sono tutte circolari. Vis-viva ti dà la velocità in qualunque punto di qualunque orbita con solo due numeri — dove sei e quanto grande è l'orbita. È lo strumento su cui si costruisce ogni trasferimento.",
   "lab_mark_burn_1": "Impulso 1",
-  "lab_mark_burn_2": "Impulso 2"
+  "lab_mark_burn_2": "Impulso 2",
+  "lab_f_orbits_err_unknown_body": "Quel mondo non è uno che puoi orbitare qui — scegli la Terra o la Luna."
 }

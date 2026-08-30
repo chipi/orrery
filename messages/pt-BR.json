@@ -2022,8 +2022,9 @@
   "lab_goal_reach_moon_title": "Alcançar a Lua",
   "lab_goal_rtm_hohmann": "A forma mais barata de elevar sua órbita é uma elipse alongada que toca as duas: uma queimada para sair, meia volta em costa, uma queimada para chegar. Estique-a completamente até a Lua.",
   "lab_goal_rtm_orbit": "Ir direto para cima não é suficiente — você só caíria de volta. Para ficar em órbita, vá de lado rápido o bastante para que o solo curve tão rápido quanto você cai. Essa velocidade é a velocidade orbital circular.",
-  "lab_goal_rtm_verdict": "Some as duas queimadas — esse é o Δv para alcançar a Lua a partir de órbita baixa. Seu orçamento de combustível cobre?",
+  "lab_goal_rtm_verdict": "Some os dois impulsos: esse é o Δv para alcançar a Lua A PARTIR da órbita baixa terrestre — além dos ~9,4 km/s que já foram necessários apenas para chegar à órbita. Seu orçamento em órbita cobre a transferência?",
   "lab_goal_rtm_visviva": "Órbitas nem sempre são círculos. Vis-viva fornece sua velocidade em qualquer ponto de qualquer órbita a partir de apenas dois números — onde você está e o tamanho da órbita. É a ferramenta na qual toda transferência é construída.",
   "lab_mark_burn_1": "Queimada 1",
-  "lab_mark_burn_2": "Queimada 2"
+  "lab_mark_burn_2": "Queimada 2",
+  "lab_f_orbits_err_unknown_body": "Esse mundo não é um que você pode orbitar aqui — escolha a Terra ou a Lua."
 }

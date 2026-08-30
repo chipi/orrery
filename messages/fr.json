@@ -2022,8 +2022,9 @@
   "lab_goal_reach_moon_title": "Atteindre la Lune",
   "lab_goal_rtm_hohmann": "Le moyen le moins coûteux de rehausser votre orbite est une ellipse allongée qui effleure les deux : une impulsion pour partir, une demi-révolution en vol passif, une impulsion pour arriver. Allongez-la jusqu'à la Lune.",
   "lab_goal_rtm_orbit": "Aller tout droit vers le haut ne suffit pas — vous retomberiez. Pour rester en orbite, allez latéralement assez vite pour que le sol se courbe aussi vite que vous tombez. Cette vitesse est la vitesse orbitale circulaire.",
-  "lab_goal_rtm_verdict": "Additionnez les deux impulsions — c'est le Δv pour atteindre la Lune depuis une orbite basse. Votre budget d'impulsion le couvre-t-il ?",
+  "lab_goal_rtm_verdict": "Additionnez les deux manœuvres : c'est le Δv pour atteindre la Lune DEPUIS l'orbite basse terrestre — en sus des ~9,4 km/s qu'il a déjà fallu juste pour atteindre l'orbite. Votre budget à bord couvre-t-il le transfert ?",
   "lab_goal_rtm_visviva": "Les orbites ne sont pas tous des cercles. Vis-viva donne votre vitesse en tout point de n'importe quelle orbite à partir de seulement deux nombres — où vous êtes, et la taille de l'orbite. C'est l'outil sur lequel se construit tout transfert.",
   "lab_mark_burn_1": "Impulsion 1",
-  "lab_mark_burn_2": "Impulsion 2"
+  "lab_mark_burn_2": "Impulsion 2",
+  "lab_f_orbits_err_unknown_body": "Ce monde n'est pas un que vous pouvez orbiter ici — choisissez la Terre ou la Lune."
 }

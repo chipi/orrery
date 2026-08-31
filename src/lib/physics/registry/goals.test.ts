@@ -1037,3 +1037,37 @@ describe('systems · ascent guidance (PEG lofts the arc, via the real integrator
     expect(g.path.map((s) => s.formulaId)).toEqual(['ascent-guidance']);
   });
 });
+
+/**
+ * Systems — powered-descent guidance. Drives the SAME systems/powered-descent controller the
+ * /fly descent sim runs: a descent-rate schedule that lands softly with enough braking, and
+ * hits hard (fail-honest) when you arrive too fast for the throttle to null the velocity.
+ */
+describe('systems · powered-descent guidance (the landing computer)', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('lands softly on the Moon with enough braking', () => {
+    const r = compute('powered-descent', { body: 'moon', startSpeedMs: 200, maxBrakeG: 4 });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.touchdownMs.value).toBeLessThan(3); // gentle touchdown
+    const fig = r.figure as { kind: string; landedSoft: boolean; samples: unknown[] };
+    expect(fig.kind).toBe('descent-guidance');
+    expect(fig.landedSoft).toBe(true);
+    expect(fig.samples.length).toBeGreaterThan(10);
+  });
+
+  it('CRASHES (fail-honest) when it arrives too fast for the braking authority', () => {
+    const r = compute('powered-descent', { body: 'moon', startSpeedMs: 500, maxBrakeG: 2 });
+    expect(r.status.ok).toBe(false);
+    expect(r.values.touchdownMs.value).toBeGreaterThan(10); // hits hard
+    const fig = r.figure as { kind: string; landedSoft: boolean };
+    expect(fig.kind).toBe('descent-guidance'); // descent still drawn
+    expect(fig.landedSoft).toBe(false);
+  });
+
+  it('landing-computer is the second systems-family goal', () => {
+    const g = GOALS.get('landing-computer')!;
+    expect(g.family).toBe('systems');
+    expect(g.path.map((s) => s.formulaId)).toEqual(['powered-descent']);
+  });
+});

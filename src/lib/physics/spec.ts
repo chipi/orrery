@@ -240,6 +240,21 @@ export type FigureSpec = FigureBase &
         burnTimeS: number;
         reachedOrbit: boolean;
       }
+    // Descent guidance (systems — powered descent) — the landing computer's phase portrait:
+    // altitude vs speed, with the descent-rate SCHEDULE line (v = gain·h) the controller tracks
+    // down to a terminal touchdown speed. When the brake authority can't keep up with a fast
+    // arrival the actual path stays right of the schedule and touches down hard — a crash.
+    | {
+        kind: 'descent-guidance';
+        samples: { altKm: number; speedMs: number }[];
+        scheduleGain: number; // the schedule slope v = gain·altitude (s⁻¹)
+        terminalMs: number; // the survivable touchdown speed
+        touchdownMs: number; // the actual speed at the surface
+        peakDecelG: number;
+        dvUsedMs: number; // propellant Δv spent (m/s)
+        landedSoft: boolean;
+        bodyLabelKey: string;
+      }
   );
 
 // ─── Goal / GoalStep (curriculum) + Card / Notebook (user documents) ────────

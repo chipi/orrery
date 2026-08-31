@@ -771,6 +771,36 @@ export const flyingComputer: Goal = {
   },
 };
 
+/**
+ * "The landing computer" — the second SYSTEMS goal. On an airless world the only brake is the
+ * engine, and nulling the velocity at exactly zero altitude, with seconds of fuel to spare, is
+ * a control loop no human flies by eye. The lesson drives the real powered-descent controller
+ * (systems/powered-descent, the one the /fly descent sim flies): a descent-rate schedule that
+ * eases speed to a soft touchdown — arrive too fast or cap the braking too low and it hits hard.
+ */
+export const landingComputer: Goal = {
+  id: 'landing-computer',
+  titleKey: 'lab.goal.landing-computer.title',
+  family: 'systems',
+  tier: 4,
+  prereqs: ['flying-computer'],
+  path: [{ formulaId: 'powered-descent', narrativeKey: 'lab.goal.sysland.descent' }],
+  connection: {
+    whyKey: 'lab.conn.sysland.why',
+    hookKey: 'lab.conn.sysland.hook',
+    links: [
+      { labelKey: 'lab.conn.sysland.apollo', href: '/fly?mission=apollo11', agency: 'NASA' },
+      {
+        labelKey: 'lab.conn.sysland.perseverance',
+        href: '/fly?mission=perseverance',
+        agency: 'NASA',
+      },
+      { labelKey: 'lab.conn.sysland.falcon9', href: '/fleet?id=falcon-9', agency: 'SpaceX' },
+    ],
+    nextKey: 'lab.conn.sysland.next',
+  },
+};
+
 /** All goals, keyed by id — insertion order drives the Lab picker (the mission arc). */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
@@ -789,6 +819,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [observeTheSky.id, observeTheSky],
   [planAMission.id, planAMission],
   [flyingComputer.id, flyingComputer],
+  [landingComputer.id, landingComputer],
 ]);
 
 /**

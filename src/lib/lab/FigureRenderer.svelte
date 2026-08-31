@@ -26,6 +26,7 @@
   import CislunarEciCanvas from './CislunarEciCanvas.svelte';
   import AscentTrajectoryCanvas from './AscentTrajectoryCanvas.svelte';
   import GuidanceTimelineCanvas from './GuidanceTimelineCanvas.svelte';
+  import DescentGuidanceCanvas from './DescentGuidanceCanvas.svelte';
   import {
     fidelityStyle,
     fidelityLabel,
@@ -172,6 +173,8 @@
   <AscentTrajectoryCanvas {figure} {t} {ariaLabelKey} />
 {:else if figure.kind === 'guidance-timeline'}
   <GuidanceTimelineCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'descent-guidance'}
+  <DescentGuidanceCanvas {figure} {t} {ariaLabelKey} />
 {:else}
   <svg
     role="img"

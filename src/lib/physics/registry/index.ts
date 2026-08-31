@@ -39,6 +39,7 @@ import { geoTransferDv } from '../transfer/lambert-geocentric';
 import { EPOCH_JD, moonEclipticXYKm, R_LEO } from '../transfer/lambert-geocentric-grid.constants';
 import { integrateAscent, circularSpeed } from '../ascent/ascent-physics';
 import { buildGenericProfile } from '../ascent/launch-profile-registry';
+import { poweredDescentThrottle } from '../systems/powered-descent';
 import {
   MOON_ORBIT_RADIUS_KM,
   MU_SUN_KM3_S2,
@@ -1640,6 +1641,138 @@ export const ascentGuidance: FormulaDef<{ upperThrustKN: number; targetOrbitAltK
         burnTimeS: s.totalDurationS,
         reachedOrbit: s.reachedOrbit,
       },
+    } satisfies FormulaResult;
+  },
+};
+
+const DESCENT_BODY_IDS = ['moon', 'mars'] as const;
+
+/**
+ * Powered-descent guidance (SYSTEMS) — the landing computer, made playable. On an airless or
+ * near-airless world you cannot parachute down; the only brake is the engine, and a human
+ * cannot eyeball a burn that must null the velocity at exactly zero altitude with seconds of
+ * fuel to spare. So the vehicle runs the kernel SYSTEMS powered-descent controller
+ * (`systems/poweredDescentThrottle`, the SAME one the /fly descent sim flies): a descent-rate
+ * schedule `v_target = gain · altitude` that eases the speed to a survivable touchdown, throttle
+ * rate-limited so the g-load stays bounded. This lesson drives that controller step by step from
+ * a starting altitude and shows it land — or, if you arrive too fast or cap the braking too low,
+ * watch it stay above the schedule and hit hard. Apollo's LM, the Mars sky-crane, and SpaceX's
+ * landing burn all fly this loop.
+ */
+export const poweredDescent: FormulaDef<{
+  body: string;
+  startSpeedMs: number;
+  maxBrakeG: number;
+}> = {
+  id: 'powered-descent',
+  titleKey: 'lab.f.pdescent.title',
+  domain: 'descent',
+  tier: 3,
+  prereqs: ['descent-burn'],
+  latex:
+    'v_{\\text{target}} = \\min(v,\\; g_{\\text{sched}}\\cdot h),\\quad a_{\\text{cmd}} \\le a_{\\max}',
+  inputs: [
+    {
+      key: 'body',
+      labelKey: 'lab.f.pdescent.body',
+      units: '',
+      kind: 'body',
+      default: 'moon',
+      bodyIds: [...DESCENT_BODY_IDS],
+    },
+    {
+      key: 'startSpeedMs',
+      labelKey: 'lab.f.pdescent.speed',
+      units: 'm/s',
+      kind: 'number',
+      default: 200,
+      min: 50,
+      max: 700,
+      step: 10,
+    },
+    {
+      key: 'maxBrakeG',
+      labelKey: 'lab.f.pdescent.brake',
+      units: '',
+      kind: 'number',
+      default: 4,
+      min: 1,
+      max: 8,
+      step: 0.5,
+    },
+  ],
+  outputs: [
+    { key: 'touchdownMs', labelKey: 'lab.f.pdescent.touchdown', units: 'm/s' },
+    { key: 'peakDecelG', labelKey: 'lab.f.pdescent.decel', units: '' },
+    { key: 'dvUsedMs', labelKey: 'lab.f.pdescent.dv', units: 'm/s' },
+  ],
+  compute: ({ body, startSpeedMs, maxBrakeG }) => {
+    const gMs2 = bodyGravityMs2(body);
+    if (
+      !Number.isFinite(gMs2) ||
+      !Number.isFinite(startSpeedMs) ||
+      !Number.isFinite(maxBrakeG) ||
+      startSpeedMs <= 0 ||
+      maxBrakeG <= 0
+    ) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.vertical-descent'],
+      } satisfies FormulaResult;
+    }
+    const START_ALT_M = 2500;
+    const GAIN = 0.09; // schedule slope: v_target = 0.09 · altitude
+    const TERM_MS = 1; // survivable touchdown speed
+    const dt = 0.1;
+    let h = START_ALT_M;
+    let v = startSpeedMs;
+    let dvUsed = 0;
+    let peakG = 0;
+    const samples: { altKm: number; speedMs: number }[] = [{ altKm: h / 1000, speedMs: v }];
+    for (let t = 0; h > 0 && t < 600; t += dt) {
+      const cmd = poweredDescentThrottle({
+        altitudeM: h,
+        speedMs: v,
+        gravityMs2: gMs2,
+        maxBrakeMs2: maxBrakeG * G0,
+        descentRateGain: GAIN,
+        terminalVelocityMs: TERM_MS,
+        dtS: dt,
+      });
+      v = cmd.nextSpeedMs;
+      h -= v * dt;
+      dvUsed += cmd.thrustAccelMs2 * dt;
+      peakG = Math.max(peakG, cmd.thrustAccelMs2 / G0);
+      if (samples.length < 400) samples.push({ altKm: Math.max(0, h) / 1000, speedMs: v });
+    }
+    const touchdownMs = v;
+    const landedSoft = touchdownMs < 3;
+    const values: Record<string, Quantity> = {
+      touchdownMs: { value: touchdownMs, units: 'm/s' },
+      peakDecelG: { value: peakG, units: '' },
+      dvUsedMs: { value: dvUsed, units: 'm/s' },
+    };
+    const figure = {
+      kind: 'descent-guidance' as const,
+      provenance: { fidelity: 'computed' as const, module: 'systems/powered-descent' },
+      assumptions: ['lab.assume.vertical-descent', 'lab.assume.constant-gravity'],
+      samples,
+      scheduleGain: GAIN,
+      terminalMs: TERM_MS,
+      touchdownMs,
+      peakDecelG: peakG,
+      dvUsedMs: dvUsed,
+      landedSoft,
+      bodyLabelKey: `lab.body.${body}`,
+    };
+    // Fail-honest on a crash — but still draw the descent so you see what went wrong.
+    return {
+      values,
+      status: landedSoft ? { ok: true } : { ok: false, reasonKey: 'lab.f.pdescent.err-crash' },
+      assumptions: ['lab.assume.vertical-descent', 'lab.assume.constant-gravity'],
+      figure,
     } satisfies FormulaResult;
   },
 };
@@ -4782,6 +4915,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [cislunarTransfer.id, cislunarTransfer],
   [ascentToOrbit.id, ascentToOrbit],
   [ascentGuidance.id, ascentGuidance],
+  [poweredDescent.id, poweredDescent],
   [terminalVelocity.id, terminalVelocity],
   [softLandingCheck.id, softLandingCheck],
   [airbagsCheck.id, airbagsCheck],

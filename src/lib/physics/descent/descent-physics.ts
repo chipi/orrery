@@ -35,6 +35,8 @@ import {
   SOUND_SPEED_MS,
   SURFACE_DENSITY_KGM3,
 } from './descent-physics-constants';
+// Powered-descent throttle law now lives in the kernel SYSTEMS layer (ADR-087).
+import { poweredDescentThrottle } from '../systems/powered-descent';
 
 const DEG2RAD = Math.PI / 180;
 
@@ -488,18 +490,21 @@ export function integrateDescent(
     const drag = 0.5 * rho * v * v * cdA;
 
     if (isGuidedPhase(phase.kind)) {
-      // Throttle-guided controlled descent: track a descent-rate schedule
-      // that eases to the terminal velocity at the surface. The braking is
-      // rate-limited to `maxBrakeG` so a fast-incoming direct-powered descent
-      // ramps down instead of snapping v (which would spike the felt-g).
-      const gain = phase.descentRateGain ?? 0.06;
-      const termV = phase.terminalVelocityMs ?? 0.75;
-      const maxBrake = (phase.maxBrakeG ?? 5) * G0;
+      // Throttle-guided controlled descent — the kernel SYSTEMS powered-descent controller
+      // (ADR-087) runs the descent-rate schedule + rate limit; the integrator just applies its
+      // command. Same controller the /fly descent sim and the Lab powered-descent lesson use.
       const vPrev = v;
-      const target = Math.max(termV, Math.min(vPrev, gain * h));
-      v = Math.max(target, vPrev - maxBrake * dt);
-      const brakeAccel = Math.max(0, (vPrev - v) / dt); // decel we just commanded
-      const thrustAccel = g + brakeAccel; // retro also holds the vehicle up
+      const cmd = poweredDescentThrottle({
+        altitudeM: h,
+        speedMs: v,
+        gravityMs2: g,
+        maxBrakeMs2: (phase.maxBrakeG ?? 5) * G0,
+        descentRateGain: phase.descentRateGain ?? 0.06,
+        terminalVelocityMs: phase.terminalVelocityMs ?? 0.75,
+        dtS: dt,
+      });
+      v = cmd.nextSpeedMs;
+      const thrustAccel = cmd.thrustAccelMs2; // brake + gravity (retro also holds the vehicle up)
       const thrustN = propUsed < propTotal ? mass * thrustAccel : 0; // engine out if tanks dry
       if (thrustN <= 0) v = vPrev; // no propellant → guidance can't hold; fall
       curThrustN = thrustN;

@@ -456,3 +456,46 @@ describe('G8 moon-phases · phase geometry from the real ephemeris', () => {
     expect(g.connection!.links.map((l) => l.href)).toEqual(['/moon', '/explore']);
   });
 });
+
+/**
+ * Family B / G10 "Choose an orbit" — altitude ⇄ speed ⇄ period, the geostationary altitude
+ * from the sidereal day, and the light-lag that pushed the megaconstellations low.
+ */
+describe('G10 choose-an-orbit · regimes, geostationary, latency', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('a low orbit is fast and short-period; higher is slower and longer', () => {
+    const leo = compute('orbit-regime', { body: 'earth', altitudeKm: 550 });
+    expect(leo.values.speedKms.value).toBeCloseTo(7.6, 1);
+    expect(leo.values.periodMin.value).toBeCloseTo(96, 0); // ~96 min
+    const meo = compute('orbit-regime', { body: 'earth', altitudeKm: 20200 });
+    expect(meo.values.periodMin.value).toBeGreaterThan(leo.values.periodMin.value);
+    expect(meo.values.speedKms.value).toBeLessThan(leo.values.speedKms.value);
+  });
+
+  it('geostationary altitude is ~35,786 km for Earth (period = the sidereal day)', () => {
+    const r = compute('geostationary-altitude', { body: 'earth' });
+    expect(r.values.altitudeKm.value).toBeCloseTo(35786, -2); // ±~50 km
+    // Mars's areostationary ring is lower (weaker gravity, similar day) — ~17,000 km.
+    const mars = compute('geostationary-altitude', { body: 'mars' });
+    expect(mars.values.altitudeKm.value).toBeGreaterThan(15000);
+    expect(mars.values.altitudeKm.value).toBeLessThan(20000);
+  });
+
+  it('signal latency: ~239 ms at GEO, under 4 ms at a 550 km LEO shell', () => {
+    expect(compute('signal-latency', { altitudeKm: 35786 }).values.roundTripMs.value).toBeCloseTo(
+      238.8,
+      0,
+    );
+    expect(compute('signal-latency', { altitudeKm: 550 }).values.roundTripMs.value).toBeLessThan(4);
+  });
+
+  it('the ladder wires the geostationary altitude into the latency rung', () => {
+    const g = GOALS.get('choose-an-orbit')!;
+    expect(g.family).toBe('observe');
+    const latency = g.path.find((s) => s.formulaId === 'signal-latency')!;
+    expect(latency.wiresFrom).toEqual([
+      { fromStep: 1, output: 'altitudeKm', toInput: 'altitudeKm' },
+    ]);
+  });
+});

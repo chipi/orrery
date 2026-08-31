@@ -487,6 +487,43 @@ export const moonPhases: Goal = {
   },
 };
 
+/**
+ * G10 "Choose an orbit" — the satellite-designer's first decision, and a shift from "get to
+ * orbit" (Family A) to "which orbit, and why". Altitude sets speed AND period (rung 1); one
+ * special altitude makes the period match the day so the satellite hovers — geostationary
+ * (rung 2); and altitude costs time — the signal round-trip that pushed the megaconstellations
+ * low (rung 3, wired from the geostationary altitude). Reuses the orbital helpers on any body.
+ */
+export const chooseAnOrbit: Goal = {
+  id: 'choose-an-orbit',
+  titleKey: 'lab.goal.choose-orbit.title',
+  family: 'observe',
+  tier: 3,
+  prereqs: [],
+  path: [
+    { formulaId: 'orbit-regime', narrativeKey: 'lab.goal.g10.regime' },
+    { formulaId: 'geostationary-altitude', narrativeKey: 'lab.goal.g10.geo' },
+    {
+      formulaId: 'signal-latency',
+      narrativeKey: 'lab.goal.g10.latency',
+      // At geostationary altitude the round trip is ~0.24 s — the wire makes the "why not
+      // just put everything at GEO?" answer fall out: the lag.
+      wiresFrom: [{ fromStep: 1, output: 'altitudeKm', toInput: 'altitudeKm' }],
+    },
+  ],
+  connection: {
+    whyKey: 'lab.conn.g10.why',
+    hookKey: 'lab.conn.g10.hook',
+    links: [
+      { labelKey: 'lab.conn.g10.starlink', href: '/fleet?id=starlink', agency: 'SpaceX' },
+      { labelKey: 'lab.conn.g10.gps', href: '/fleet?id=gps-gnss', agency: 'USSF' },
+      { labelKey: 'lab.conn.g10.goes', href: '/fleet?id=goes-noaa', agency: 'NOAA' },
+      { labelKey: 'lab.conn.g10.molniya', href: '/fleet?id=molniya', agency: 'Roscosmos' },
+      { labelKey: 'lab.conn.g10.sentinel', href: '/fleet?id=sentinel-copernicus', agency: 'ESA' },
+    ],
+  },
+};
+
 /** All goals, keyed by id — insertion order drives the Lab picker (the mission arc). */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
@@ -499,6 +536,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [landOnMars.id, landOnMars],
   [leaveTheSolarSystem.id, leaveTheSolarSystem],
   [moonPhases.id, moonPhases],
+  [chooseAnOrbit.id, chooseAnOrbit],
 ]);
 
 /**

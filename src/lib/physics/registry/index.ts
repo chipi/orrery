@@ -18,6 +18,7 @@ import {
   visVivaKms,
   hohmannTransfer,
   escapeVelocityKms,
+  orbitalPeriodS,
 } from '../mechanics/orbits';
 import { poweredDescentDvKms } from '../mechanics/descent';
 import { terminalVelocityMs, SURFACE_DENSITY_KGM3 } from '../mechanics/atmosphere';
@@ -2767,6 +2768,223 @@ export const moonPhaseFormula: FormulaDef<{ dateIso: string }> = {
   },
 };
 
+// ─── Family B / G10 "Choose an orbit" — regimes, geostationary, latency ───────
+
+/** Bodies with a real "stationary" orbit worth teaching (fast rotators). */
+const GEO_BODY_IDS = ['earth', 'mars'] as const;
+/** Speed of light (km/s) — for signal-latency. */
+const SPEED_OF_LIGHT_KMS = 299792.458;
+
+/**
+ * Orbit regime (G10 rung 1) — the altitude ⇄ speed ⇄ period trade every satellite designer
+ * starts from. Circular speed v = √(µ/r) FALLS with altitude, and the period T = 2π√(r³/µ)
+ * RISES: a 550 km Starlink laps the Earth in ~96 min, a 20 200 km GPS bird in ~12 h. Higher
+ * means slower and longer — the reason low orbits give short passes and high orbits linger.
+ */
+export const orbitRegime: FormulaDef<{ body: string; altitudeKm: number }> = {
+  id: 'orbit-regime',
+  titleKey: 'lab.f.regime.title',
+  domain: 'satellite',
+  tier: 3,
+  prereqs: ['orbital-velocity'],
+  latex: 'v = \\sqrt{\\mu/r},\\quad T = 2\\pi\\sqrt{r^3/\\mu}',
+  inputs: [
+    {
+      key: 'body',
+      labelKey: 'lab.f.regime.body',
+      units: '',
+      kind: 'body',
+      default: 'earth',
+      bodyIds: [...ORBIT_BODY_IDS],
+    },
+    {
+      key: 'altitudeKm',
+      labelKey: 'lab.f.regime.altitude',
+      units: 'km',
+      kind: 'number',
+      default: 550,
+      min: 100,
+      max: 50000,
+    },
+  ],
+  outputs: [
+    { key: 'speedKms', labelKey: 'lab.f.regime.speed', units: 'km/s' },
+    { key: 'periodMin', labelKey: 'lab.f.regime.period', units: '' },
+  ],
+  compute: ({ body, altitudeKm }) => {
+    const loc = locationModel(body);
+    if (!loc) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions: ['lab.assume.circular-orbits'],
+      } satisfies FormulaResult;
+    }
+    if (!Number.isFinite(altitudeKm) || altitudeKm <= 0) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.circular-orbits'],
+      } satisfies FormulaResult;
+    }
+    const r = loc.rKm + altitudeKm;
+    const v = circularVelocityKms(r, loc.muKm3s2);
+    const periodMin = orbitalPeriodS(r, loc.muKm3s2) / 60;
+    const points: Vec2[] = [];
+    for (let alt = 200; alt <= 50000.001; alt += 1000) {
+      points.push({ x: alt, y: orbitalPeriodS(loc.rKm + alt, loc.muKm3s2) / 60 });
+    }
+    return {
+      values: {
+        speedKms: { value: v, units: 'km/s' },
+        periodMin: { value: periodMin, units: 's' },
+      },
+      status: { ok: true },
+      assumptions: ['lab.assume.circular-orbits', 'lab.assume.point-mass'],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'mechanics/orbits' },
+        assumptions: ['lab.assume.circular-orbits'],
+        x: { labelKey: 'lab.axis.altitude', units: 'km' },
+        y: { labelKey: 'lab.axis.period-min', units: '' },
+        series: [{ points }],
+        marks: [
+          { at: { x: altitudeKm, y: periodMin }, labelKey: 'lab.mark.you-are-here', kind: 'point' },
+        ],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Geostationary altitude (G10 rung 2) — the one altitude where the period equals the planet's
+ * SIDEREAL day, so the satellite hangs over a fixed spot: a = ∛(µT²/4π²), altitude = a − R. For
+ * Earth (T = 23.93 h) that's ~35 786 km; Mars's areostationary orbit sits at ~17 000 km. It's
+ * why every TV/weather satellite lives at one ring in the sky — point the dish once, done.
+ */
+export const geostationaryAltitude: FormulaDef<{ body: string }> = {
+  id: 'geostationary-altitude',
+  titleKey: 'lab.f.geo.title',
+  domain: 'satellite',
+  tier: 4,
+  prereqs: ['orbit-regime'],
+  latex: 'a = \\sqrt[3]{\\mu T^2 / 4\\pi^2}',
+  inputs: [
+    {
+      key: 'body',
+      labelKey: 'lab.f.geo.body',
+      units: '',
+      kind: 'body',
+      default: 'earth',
+      bodyIds: [...GEO_BODY_IDS],
+    },
+  ],
+  outputs: [{ key: 'altitudeKm', labelKey: 'lab.f.geo.altitude', units: 'km' }],
+  compute: ({ body }) => {
+    const loc = locationModel(body);
+    if (!loc || loc.rotationHours === 0) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions: ['lab.assume.circular-orbits'],
+      } satisfies FormulaResult;
+    }
+    const T = Math.abs(loc.rotationHours) * 3600; // sidereal day, seconds
+    const a = Math.cbrt((loc.muKm3s2 * T * T) / (4 * Math.PI * Math.PI));
+    const altitudeKm = a - loc.rKm;
+    // curve: stationary altitude vs day length (faster spin → lower ring).
+    const points: Vec2[] = [];
+    for (let h = 6; h <= 48.001; h += 1) {
+      const Th = h * 3600;
+      points.push({
+        x: h,
+        y: Math.cbrt((loc.muKm3s2 * Th * Th) / (4 * Math.PI * Math.PI)) - loc.rKm,
+      });
+    }
+    return {
+      values: { altitudeKm: { value: altitudeKm, units: 'km' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.circular-orbits', 'lab.assume.equatorial-orbit'],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'mechanics/orbits' },
+        assumptions: ['lab.assume.circular-orbits'],
+        x: { labelKey: 'lab.axis.day-length', units: '' },
+        y: { labelKey: 'lab.axis.altitude', units: 'km' },
+        series: [{ points }],
+        marks: [
+          {
+            at: { x: Math.abs(loc.rotationHours), y: altitudeKm },
+            labelKey: 'lab.mark.you-are-here',
+            kind: 'point',
+          },
+        ],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Signal latency (G10 rung 3) — the price of altitude, in time. A radio signal to a satellite
+ * and back covers twice the altitude at the speed of light: geostationary's ~35 786 km means a
+ * ~0.24 s round trip (the lag on an old satellite phone call), while a 550 km Starlink shell is
+ * under ~4 ms. Wire the geostationary altitude in and see why the megaconstellations went LOW.
+ */
+export const signalLatency: FormulaDef<{ altitudeKm: number }> = {
+  id: 'signal-latency',
+  titleKey: 'lab.f.latency.title',
+  domain: 'satellite',
+  tier: 4,
+  prereqs: ['orbit-regime'],
+  latex: '\\Delta t = 2h / c',
+  inputs: [
+    {
+      key: 'altitudeKm',
+      labelKey: 'lab.f.latency.altitude',
+      units: 'km',
+      kind: 'number',
+      default: 35786,
+      min: 100,
+      max: 40000,
+    },
+  ],
+  outputs: [{ key: 'roundTripMs', labelKey: 'lab.f.latency.rt', units: '' }],
+  compute: ({ altitudeKm }) => {
+    if (!Number.isFinite(altitudeKm) || altitudeKm <= 0) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.straight-line-path'],
+      } satisfies FormulaResult;
+    }
+    const rtMs = ((2 * altitudeKm) / SPEED_OF_LIGHT_KMS) * 1000;
+    const points: Vec2[] = [];
+    for (let alt = 200; alt <= 40000.001; alt += 1000) {
+      points.push({ x: alt, y: ((2 * alt) / SPEED_OF_LIGHT_KMS) * 1000 });
+    }
+    return {
+      values: { roundTripMs: { value: rtMs, units: '' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.straight-line-path', 'lab.assume.vacuum-speed'],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'satellite/latency' },
+        assumptions: ['lab.assume.straight-line-path'],
+        x: { labelKey: 'lab.axis.altitude', units: 'km' },
+        y: { labelKey: 'lab.axis.latency-ms', units: '' },
+        series: [{ points }],
+        marks: [
+          { at: { x: altitudeKm, y: rtMs }, labelKey: 'lab.mark.you-are-here', kind: 'point' },
+        ],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
 /** All registered formulas, keyed by id. Add a formula in exactly one place. */
 export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [tsiolkovsky.id, tsiolkovsky],
@@ -2804,6 +3022,9 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [gravityAssist.id, gravityAssist],
   [escapeVerdict.id, escapeVerdict],
   [moonPhaseFormula.id, moonPhaseFormula],
+  [orbitRegime.id, orbitRegime],
+  [geostationaryAltitude.id, geostationaryAltitude],
+  [signalLatency.id, signalLatency],
 ]);
 
 /** Default input record for a formula (drives a first compute / the invariant tests). */

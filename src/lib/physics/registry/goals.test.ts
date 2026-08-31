@@ -565,6 +565,38 @@ describe('G9 catch-the-iss · ground track + visibility', () => {
     const track = g.path.find((s) => s.formulaId === 'ground-track-shift')!;
     expect(track.wiresFrom).toEqual([{ fromStep: 0, output: 'periodMin', toInput: 'periodMin' }]);
   });
+
+  it('orbit-regime periodMin no longer emits a minutes value tagged as seconds (MINOR-1 fix)', () => {
+    const q = compute('orbit-regime', { body: 'earth', altitudeKm: 550 }).values.periodMin;
+    expect(q.value).toBeCloseTo(96, 0); // minutes
+    expect(q.units).toBe(''); // NOT 's' — matches the output spec + the ground-track wire
+  });
+
+  it('the ground track now draws the westward march — 3 successive offset orbits', () => {
+    const fig = compute('ground-track-shift', { periodMin: 92, inclinationDeg: 51.6 }).figure as {
+      series: { points: { x: number }[] }[];
+    };
+    expect(fig.series).toHaveLength(3);
+    // each orbit starts ~23° further west (lower x) than the last.
+    expect(fig.series[1].points[0].x).toBeLessThan(fig.series[0].points[0].x);
+    expect(fig.series[2].points[0].x).toBeLessThan(fig.series[1].points[0].x);
+  });
+
+  it('★ iss-pass: near the TLE epoch, a real pass over a mid-latitude site — figure-less, honest', () => {
+    const r = compute('iss-pass', { latitudeDeg: 40, longitudeDeg: -74, dateIso: '2026-07-21' });
+    expect(r.status.ok).toBe(true);
+    expect(r.figure).toBeUndefined(); // no figure → no fidelity overclaim (it's propagated, not geometry)
+    expect(r.values.maxAltitudeDeg.value).toBeGreaterThanOrEqual(10);
+    expect(r.values.maxAltitudeDeg.value).toBeLessThanOrEqual(90);
+    expect(r.values.minutesUntilPass.value).toBeGreaterThanOrEqual(0);
+    expect(r.values.minutesUntilPass.value).toBeLessThanOrEqual(48 * 60);
+    // the snapshot-TLE staleness is disclosed on the result.
+    expect(r.assumptions).toContain('lab.assume.snapshot-tle');
+    // an equatorial site below the 51.6° inclination band still gets passes; a polar one may not.
+    expect(
+      compute('iss-pass', { latitudeDeg: 85, longitudeDeg: 0, dateIso: '2026-07-21' }).status.ok,
+    ).toBe(false);
+  });
 });
 
 /**

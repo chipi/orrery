@@ -2452,5 +2452,19 @@
   "lab_f_moonalt_altitude": "Altura máxima",
   "lab_goal_g8_distance": "A órbita da Lua é uma elipse, então a distância não é sempre a mesma — oscila de cerca de 356.500 km no perigeu até 406.700 km no apogeu a cada mês. O tamanho aparente varia com 1/distância, então uma lua cheia no perigeu (uma superlua) parece cerca de 14% mais larga e 30% mais brilhante que uma no apogeu. A mesma Lua, uma variação de tamanho real que você pode fotografar.",
   "lab_goal_g8_eclipse": "Por que não há um eclipse a cada mês, em toda lua nova e cheia? Porque a órbita da Lua é inclinada 5,1° em relação à eclíptica, então na maioria das luas novas a Lua passa acima ou abaixo do Sol, não através dele. Um eclipse precisa da sicigia cair perto de um NÓ — onde a órbita inclinada cruza a eclíptica — dentro de uma janela estreita de ±1,5°. O Sol atinge um nó apenas duas vezes por ano, então os eclipses vêm em duas estações cerca de seis meses de intervalo. Observe a latitude da Lua mergulhando pela faixa.",
-  "lab_goal_g8_altitude": "E de onde VOCÊ está, quão alto a Lua sobe? Como qualquer corpo, ela atinge o pico no meridiano a 90° menos a diferença entre sua declinação e sua latitude — mas a declinação da Lua oscila ±28,5° em um mês, bem mais rápido que a marcha anual do Sol. É por isso que uma lua cheia de inverno passa alta no céu enquanto uma de verão raspa o horizonte do hemisfério norte — o oposto do Sol."
+  "lab_goal_g8_altitude": "E de onde VOCÊ está, quão alto a Lua sobe? Como qualquer corpo, ela atinge o pico no meridiano a 90° menos a diferença entre sua declinação e sua latitude — mas a declinação da Lua oscila ±28,5° em um mês, bem mais rápido que a marcha anual do Sol. É por isso que uma lua cheia de inverno passa alta no céu enquanto uma de verão raspa o horizonte do hemisfério norte — o oposto do Sol.",
+  "lab_f_isspass_title": "Próximo passe da ISS",
+  "lab_f_isspass_latitude": "Sua latitude",
+  "lab_f_isspass_longitude": "Sua longitude",
+  "lab_f_isspass_date": "A partir da data",
+  "lab_f_isspass_minutes": "Minutos até nascer",
+  "lab_f_isspass_maxalt": "Altura máxima",
+  "lab_f_isspass_azimuth": "Nasce em (rumo °)",
+  "lab_f_isspass_err_input": "Digite uma localização e data válidas.",
+  "lab_f_isspass_err_none": "Nenhum passe acima de 10° nos próximos 48 horas daqui — tente outra data ou localização.",
+  "lab_assume_satellite_overhead": "Depressão solar no ponto subsatélite (≈ a sua quando sobrecabeça)",
+  "lab_assume_snapshot_tle": "Conjunto de elementos fixos, época ~2026-07-20 — para hoje use um rastreador em tempo real",
+  "lab_assume_kepler_j2": "Propagação Kepler + J2 secular (não SGP4 completo)",
+  "lab_series_this_orbit": "Essa órbita",
+  "lab_goal_g9_pass": "Então junte tudo — onde VOCÊ está? O último degrau propaga um conjunto de elementos real para a estação e encontra seu próximo passe sobre sua latitude e longitude: quantos minutos até nascer, que altura ela atinge e em qual direção da bússola aparece. Cruze com a janela crepuscular acima e você sabe exatamente quando sair e olhar para cima. Uma ressalva honesta: isso usa um instantâneo da órbita de uma data fixa, então é preciso alguns dias em torno dessa data — para o passe de hoje ao minuto, um app ou o Spot the Station da NASA puxa o conjunto de elementos fresco de hoje."
 }

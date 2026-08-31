@@ -555,6 +555,7 @@ export const catchTheIss: Goal = {
       wiresFrom: [{ fromStep: 0, output: 'periodMin', toInput: 'periodMin' }],
     },
     { formulaId: 'visibility-window', narrativeKey: 'lab.goal.g9.visible' },
+    { formulaId: 'iss-pass', narrativeKey: 'lab.goal.g9.pass' },
   ],
   connection: {
     whyKey: 'lab.conn.g9.why',

@@ -30,6 +30,9 @@ import { geocentricMoon } from '../ephemeris/moon';
 import { geocentricPlanet, geocentricSun, type PlanetId } from '../ephemeris/planets';
 import { skyPosition } from '../ephemeris';
 import { julianDay } from '../ephemeris/time';
+import { parseTle } from '../satellite/tle';
+import { nextPassForTle } from '../satellite';
+import stationTles from '../satellite/station-tles.json';
 import { MOON_ORBIT_RADIUS_KM, MU_SUN_KM3_S2, AU_TO_KM, G0, R_EARTH_KM } from '../util/constants';
 
 /** Mean synodic month (new moon → new moon), days — the age scale for G8. */
@@ -3047,7 +3050,9 @@ export const orbitRegime: FormulaDef<{ body: string; altitudeKm: number }> = {
     return {
       values: {
         speedKms: { value: v, units: 'km/s' },
-        periodMin: { value: periodMin, units: 's' },
+        // minutes, but there's no 'min' Unit — carry '' (matching the output spec + the
+        // ground-track wire partner), with "(min)" in the label (review G9 MINOR-1 fix).
+        periodMin: { value: periodMin, units: '' },
       },
       status: { ok: true },
       assumptions: ['lab.assume.circular-orbits', 'lab.assume.point-mass'],
@@ -3246,12 +3251,16 @@ export const groundTrackShift: FormulaDef<{ periodMin: number; inclinationDeg: n
     }
     const shift = (360 * periodMin) / SIDEREAL_DAY_MIN;
     const incl = Math.min(90, inclinationDeg);
-    // The iconic ground track: latitude vs along-track angle over one orbit — a sine capped
-    // at ±inclination (the westward march is the shift number, not drawn on this single pass).
-    const points: Vec2[] = [];
-    for (let deg = 0; deg <= 360.001; deg += 5) {
-      points.push({ x: deg, y: incl * Math.sin((deg * Math.PI) / 180) });
-    }
+    // Three successive orbits, each a sine capped at ±inclination and shifted WEST by the drift —
+    // so the same latitudes reappear further west each lap (review G9: draw the march, not just
+    // the shape). Orbit 0 spans 0–360°; orbit k is offset left by k·shift.
+    const orbit = (k: number): { points: Vec2[] } => {
+      const points: Vec2[] = [];
+      for (let deg = 0; deg <= 360.001; deg += 5) {
+        points.push({ x: deg - k * shift, y: incl * Math.sin((deg * Math.PI) / 180) });
+      }
+      return { points };
+    };
     return {
       values: { shiftDeg: { value: shift, units: 'deg' } },
       status: { ok: true },
@@ -3262,7 +3271,11 @@ export const groundTrackShift: FormulaDef<{ periodMin: number; inclinationDeg: n
         assumptions: ['lab.assume.spherical-earth'],
         x: { labelKey: 'lab.axis.track-lon', units: 'deg' },
         y: { labelKey: 'lab.axis.latitude', units: 'deg' },
-        series: [{ points }],
+        series: [
+          { labelKey: 'lab.series.this-orbit', points: orbit(0).points },
+          orbit(1),
+          orbit(2),
+        ],
         marks: [{ at: { x: 90, y: incl }, labelKey: 'lab.mark.max-latitude', kind: 'point' }],
       },
     } satisfies FormulaResult;
@@ -3272,9 +3285,10 @@ export const groundTrackShift: FormulaDef<{ periodMin: number; inclinationDeg: n
 /**
  * Visibility window (G9 rung 2) — when you can actually catch it. You see the ISS only when it
  * is still in sunlight while your own sky has gone dark. A satellite at altitude h stays sunlit
- * until the Sun drops θ = arccos(R/(R+h)) below the observer's horizon — about 20° for the ISS,
- * a bit past the end of astronomical twilight. So the ISS is a naked-eye object for a couple of
- * hours after dusk and before dawn, gliding over while the ground below is already night.
+ * until the Sun drops θ = arccos(R/(R+h)) below the SUB-SATELLITE horizon (≈ yours when the pass
+ * is near overhead) — about 20° for the ISS, a bit past the end of astronomical twilight. So the
+ * ISS is a naked-eye object for a couple of hours after dusk and before dawn, gliding over while
+ * the ground below is already night. (Refraction, penumbra, and low-pass geometry are ignored.)
  */
 export const visibilityWindow: FormulaDef<{ altitudeKm: number }> = {
   id: 'visibility-window',
@@ -3312,7 +3326,11 @@ export const visibilityWindow: FormulaDef<{ altitudeKm: number }> = {
     return {
       values: { maxSunDepressionDeg: { value: theta, units: 'deg' } },
       status: { ok: true },
-      assumptions: ['lab.assume.spherical-earth', 'lab.assume.point-observer'],
+      assumptions: [
+        'lab.assume.spherical-earth',
+        'lab.assume.point-observer',
+        'lab.assume.satellite-overhead',
+      ],
       figure: {
         kind: 'curve',
         provenance: { fidelity: 'computed', module: 'satellite/visibility' },
@@ -3324,6 +3342,94 @@ export const visibilityWindow: FormulaDef<{ altitudeKm: number }> = {
           { at: { x: altitudeKm, y: theta }, labelKey: 'lab.mark.you-are-here', kind: 'point' },
         ],
       },
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Next ISS pass (G9 finale) — the payoff the goal is named for: from YOUR latitude/longitude,
+ * when does the station next fly over, how high, and from which direction? This one is NOT a
+ * closed form — it propagates a real published two-line element set (Kepler + secular J2) and
+ * scans for the next pass clearing 10°. Honest cost: the bundled element set has a FIXED epoch
+ * (~2026-07-20), so accuracy is good only for a few days around it — for tonight's real pass, a
+ * live tracker (or NASA's "Spot the Station") pulls a fresh TLE. Here it's the mechanism, live.
+ */
+export const issPass: FormulaDef<{ latitudeDeg: number; longitudeDeg: number; dateIso: string }> = {
+  id: 'iss-pass',
+  titleKey: 'lab.f.isspass.title',
+  domain: 'satellite',
+  tier: 5,
+  prereqs: ['visibility-window'],
+  latex: '\\text{propagate TLE} \\rightarrow \\text{next pass} > 10°',
+  inputs: [
+    {
+      key: 'latitudeDeg',
+      labelKey: 'lab.f.isspass.latitude',
+      units: 'deg',
+      kind: 'number',
+      default: 40,
+      min: -80,
+      max: 80,
+    },
+    {
+      key: 'longitudeDeg',
+      labelKey: 'lab.f.isspass.longitude',
+      units: 'deg',
+      kind: 'number',
+      default: -74,
+      min: -180,
+      max: 180,
+    },
+    {
+      key: 'dateIso',
+      labelKey: 'lab.f.isspass.date',
+      units: '',
+      kind: 'date',
+      default: '2026-07-21',
+    },
+  ],
+  outputs: [
+    { key: 'minutesUntilPass', labelKey: 'lab.f.isspass.minutes', units: '' },
+    { key: 'maxAltitudeDeg', labelKey: 'lab.f.isspass.maxalt', units: 'deg' },
+    { key: 'startAzimuthDeg', labelKey: 'lab.f.isspass.azimuth', units: 'deg' },
+  ],
+  compute: ({ latitudeDeg, longitudeDeg, dateIso }) => {
+    const from = new Date(String(dateIso));
+    if (
+      !Number.isFinite(latitudeDeg) ||
+      !Number.isFinite(longitudeDeg) ||
+      Number.isNaN(from.getTime())
+    ) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.isspass.err-input' },
+        assumptions: ['lab.assume.snapshot-tle'],
+      } satisfies FormulaResult;
+    }
+    const iss = (stationTles as Record<string, { name: string; line1: string; line2: string }>).iss;
+    const tle = parseTle(iss.line1, iss.line2, iss.name);
+    const pass = nextPassForTle(tle, from, latitudeDeg, longitudeDeg, {
+      hoursAhead: 48,
+      minMaxAltDeg: 10,
+    });
+    if (!pass) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.isspass.err-none' },
+        assumptions: ['lab.assume.snapshot-tle', 'lab.assume.kepler-j2'],
+      } satisfies FormulaResult;
+    }
+    const minutes = (pass.start.getTime() - from.getTime()) / 60000;
+    return {
+      values: {
+        minutesUntilPass: { value: minutes, units: '' },
+        maxAltitudeDeg: { value: pass.maxAltitudeDeg, units: 'deg' },
+        startAzimuthDeg: { value: pass.startAzimuthDeg, units: 'deg' },
+      },
+      status: { ok: true },
+      assumptions: ['lab.assume.snapshot-tle', 'lab.assume.kepler-j2'],
     } satisfies FormulaResult;
   },
 };
@@ -3694,6 +3800,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [signalLatency.id, signalLatency],
   [groundTrackShift.id, groundTrackShift],
   [visibilityWindow.id, visibilityWindow],
+  [issPass.id, issPass],
   [planetElongation.id, planetElongation],
   [maxElongation.id, maxElongation],
   [retrogradeMotion.id, retrogradeMotion],

@@ -2452,5 +2452,19 @@
   "lab_f_moonalt_altitude": "Su punto más alto",
   "lab_goal_g8_distance": "La órbita de la Luna es una elipse, así que no siempre está a la misma distancia — oscila entre unos 356.500 km en el perigeo y 406.700 km en el apogeo cada mes. El tamaño aparente va como 1/distancia, así que una luna llena en perigeo (una superluna) se ve aproximadamente un 14% más ancha y un 30% más brillante que una en apogeo. La misma Luna, una variación de tamaño real que puedes fotografiar.",
   "lab_goal_g8_eclipse": "¿Por qué no hay un eclipse cada mes, en cada luna nueva y llena? Porque la órbita de la Luna está inclinada 5,1° respecto a la eclíptica, así que en la mayoría de lunas nuevas la Luna pasa por encima o por debajo del Sol, no frente a él. Un eclipse necesita que la sizigia caiga cerca de un NODO — donde la órbita inclinada cruza la eclíptica — dentro de una ventana estrecha de ±1,5°. El Sol alcanza un nodo solo dos veces al año, así que los eclipses ocurren en dos estaciones separadas unos seis meses. Observa cómo la latitud de la Luna se sumerge en la banda.",
-  "lab_goal_g8_altitude": "¿Y desde donde TÚ estás, qué tan alto sube la Luna? Como cualquier cuerpo celeste, alcanza su máximo en el meridiano a 90° menos la diferencia entre su declinación y tu latitud — pero la declinación de la Luna oscila ±28,5° en un mes, mucho más rápido que la marcha anual del Sol. Por eso una luna llena de invierno está muy alta en el cielo mientras que una de verano roza el horizonte desde el hemisferio norte — lo opuesto al Sol."
+  "lab_goal_g8_altitude": "¿Y desde donde TÚ estás, qué tan alto sube la Luna? Como cualquier cuerpo celeste, alcanza su máximo en el meridiano a 90° menos la diferencia entre su declinación y tu latitud — pero la declinación de la Luna oscila ±28,5° en un mes, mucho más rápido que la marcha anual del Sol. Por eso una luna llena de invierno está muy alta en el cielo mientras que una de verano roza el horizonte desde el hemisferio norte — lo opuesto al Sol.",
+  "lab_f_isspass_title": "Próximo paso de la ISS",
+  "lab_f_isspass_latitude": "Tu latitud",
+  "lab_f_isspass_longitude": "Tu longitud",
+  "lab_f_isspass_date": "Desde la fecha",
+  "lab_f_isspass_minutes": "Minutos hasta que salga",
+  "lab_f_isspass_maxalt": "Altura máxima",
+  "lab_f_isspass_azimuth": "Sale hacia (rumbo °)",
+  "lab_f_isspass_err_input": "Introduce una ubicación y fecha válidas.",
+  "lab_f_isspass_err_none": "Ningún paso por encima de 10° en las próximas 48 horas desde aquí — prueba otra fecha u ubicación.",
+  "lab_assume_satellite_overhead": "Depresión solar en el punto subsatélite (≈ la tuya cuando está sobre ti)",
+  "lab_assume_snapshot_tle": "Conjunto de elementos fijo, época ~2026-07-20 — para esta noche usa un rastreador en directo",
+  "lab_assume_kepler_j2": "Propagación Kepler + J2 secular (no SGP4 completo)",
+  "lab_series_this_orbit": "Esta órbita",
+  "lab_goal_g9_pass": "Así que juntándolo todo — ¿dónde ESTÁS? El último escalón propaga un conjunto de elementos real para la estación y encuentra su próximo paso sobre tu latitud y longitud: cuántos minutos hasta que salga, qué altura alcanza y desde qué dirección cardinal aparece. Crúzalo con la ventana crepuscular de arriba y sabrás exactamente cuándo salir fuera y mirar al cielo. Un aviso honesto: esto usa una fotografía de la órbita desde una fecha fija, así que es preciso durante unos días alrededor de esa fecha — para el paso de esta noche al minuto, una aplicación o Spot the Station de la NASA trae el conjunto de elementos fresco de hoy."
 }

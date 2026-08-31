@@ -2452,5 +2452,19 @@
   "lab_f_moonalt_altitude": "Höchster Punkt",
   "lab_goal_g8_distance": "Die Mondbahn ist eine Ellipse, daher ist die Entfernung nicht immer gleich — sie schwankt jeden Monat zwischen etwa 356.500 km im Perigäum und 406.700 km im Apogäum. Die scheinbare Größe verhält sich umgekehrt proportional zur Entfernung, daher erscheint ein Vollmond im Perigäum (ein Supermond) etwa 14% breiter und 30% heller als einer im Apogäum. Derselbe Mond, ein echtes Größenwobben, das man fotografieren kann.",
   "lab_goal_g8_eclipse": "Warum gibt es nicht jeden Monat bei jedem Neu- und Vollmond eine Finsternis? Weil die Mondbahn um 5,1° zur Sonnenbahn geneigt ist, passiert der Mond bei den meisten Neumonden die Sonne oberhalb oder unterhalb, nicht vor ihr. Eine Finsternis erfordert, dass die Syzygie nahe einem KNOTEN landet — wo die geneigte Bahn die Ekliptik kreuzt — innerhalb eines engen ±1,5°-Fensters. Die Sonne erreicht einen Knoten nur zweimal pro Jahr, daher treten Finsternisse in zwei Jahreszeiten etwa sechs Monate auseinander auf. Beobachte, wie die Breite des Mondes durch den Streifen sinkt.",
-  "lab_goal_g8_altitude": "Und von wo DU stehst, wie hoch steigt der Mond auf? Wie jedes Himmelsobjekt erreicht er seine maximale Höhe am Meridian bei 90° minus der Differenz zwischen seiner Deklination und deiner geografischen Breite — aber die Monddeklination schwankt ±28,5° in einem Monat, weit schneller als die jährliche Wanderung der Sonne. Deshalb zieht ein Wintervollmond hoch über dem Horizont, während ein Sommervollmond knapp über dem Horizont dahinzieht — das Gegenteil der Sonne."
+  "lab_goal_g8_altitude": "Und von wo DU stehst, wie hoch steigt der Mond auf? Wie jedes Himmelsobjekt erreicht er seine maximale Höhe am Meridian bei 90° minus der Differenz zwischen seiner Deklination und deiner geografischen Breite — aber die Monddeklination schwankt ±28,5° in einem Monat, weit schneller als die jährliche Wanderung der Sonne. Deshalb zieht ein Wintervollmond hoch über dem Horizont, während ein Sommervollmond knapp über dem Horizont dahinzieht — das Gegenteil der Sonne.",
+  "lab_f_isspass_title": "Nächster ISS-Überflug",
+  "lab_f_isspass_latitude": "Ihre Breite",
+  "lab_f_isspass_longitude": "Ihre Länge",
+  "lab_f_isspass_date": "Ab Datum",
+  "lab_f_isspass_minutes": "Minuten bis zum Aufgang",
+  "lab_f_isspass_maxalt": "Maximale Höhe",
+  "lab_f_isspass_azimuth": "Aufgang bei (Kompass °)",
+  "lab_f_isspass_err_input": "Geben Sie einen gültigen Ort und ein Datum ein.",
+  "lab_f_isspass_err_none": "Kein Überflug über 10° in den nächsten 48 Stunden von hier — versuchen Sie ein anderes Datum oder einen anderen Ort.",
+  "lab_assume_satellite_overhead": "Sonnentiefstand am subsatellitalen Punkt (≈ Ihrer Position bei Überkopfstand)",
+  "lab_assume_snapshot_tle": "Festes Bahnelementset, Epoche ~2026-07-20 — für heute Nacht verwenden Sie einen Live-Tracker",
+  "lab_assume_kepler_j2": "Kepler + säkulare J2-Propagation (nicht vollständiges SGP4)",
+  "lab_series_this_orbit": "Diese Umlaufbahn",
+  "lab_goal_g9_pass": "Alles zusammen: Wo bist DU? Die letzte Stufe berechnet ein echtes Bahnelementset für die Station und findet ihren nächsten Pass über deinem Breitengrad und Längengrad: wie viele Minuten bis zum Aufgang, wie hoch sie steigt und aus welcher Kompassrichtung sie erscheint. Kreuze das mit dem Dämmerungsfenster oben ab und du weißt genau, wann du hinausgehen und nach oben schauen musst. Ein ehrliches Caveat: Dies nutzt eine Bahnaufnahme von einem festen Datum, ist also für einige Tage rundherum akkurat — für heute Abends Pass auf die Minute genau verwende eine App oder NASA's Spot the Station mit aktuellem Bahnelementset."
 }

@@ -2452,5 +2452,19 @@
   "lab_f_moonalt_altitude": "Son point le plus haut",
   "lab_goal_g8_distance": "L'orbite de la Lune est une ellipse, donc sa distance n'est pas constante — elle varie d'environ 356 500 km à l'apogée à 406 700 km au périgée chaque mois. La taille apparente varie en 1/distance, donc une pleine lune au périgée (une superlune) paraît environ 14 % plus large et 30 % plus brillante qu'une à l'apogée. Même Lune, une vraie variation de taille que vous pouvez photographier.",
   "lab_goal_g8_eclipse": "Pourquoi n'y a-t-il pas une éclipse chaque mois, à chaque nouvelle et pleine lune ? Parce que l'orbite de la Lune est inclinée de 5,1° par rapport au chemin du Soleil, donc à la plupart des nouvelles lunes la Lune passe au-dessus ou en dessous du Soleil, non pas sur lui. Une éclipse exige que la syzygie se produise près d'un NŒUD — où l'orbite inclinée croise l'écliptique — dans une fenêtre étroite de ±1,5°. Le Soleil atteint un nœud seulement deux fois par an, donc les éclipses se produisent en deux saisons séparées d'environ six mois. Regardez la latitude de la Lune traverser la bande.",
-  "lab_goal_g8_altitude": "Et de votre endroit, à quelle hauteur la Lune monte-t-elle ? Comme tout astre elle culmine au méridien à 90° moins l'écart entre sa déclinaison et votre latitude — mais la déclinaison de la Lune varie de ±28,5° en un mois, bien plus vite que la marche annuelle du Soleil. C'est pourquoi une pleine lune d'hiver passe haut au-dessus de l'horizon tandis qu'une pleine lune d'été rase l'horizon depuis l'hémisphère nord — l'inverse du Soleil."
+  "lab_goal_g8_altitude": "Et de votre endroit, à quelle hauteur la Lune monte-t-elle ? Comme tout astre elle culmine au méridien à 90° moins l'écart entre sa déclinaison et votre latitude — mais la déclinaison de la Lune varie de ±28,5° en un mois, bien plus vite que la marche annuelle du Soleil. C'est pourquoi une pleine lune d'hiver passe haut au-dessus de l'horizon tandis qu'une pleine lune d'été rase l'horizon depuis l'hémisphère nord — l'inverse du Soleil.",
+  "lab_f_isspass_title": "Prochain passage de l'ISS",
+  "lab_f_isspass_latitude": "Votre latitude",
+  "lab_f_isspass_longitude": "Votre longitude",
+  "lab_f_isspass_date": "À partir de la date",
+  "lab_f_isspass_minutes": "Minutes avant son lever",
+  "lab_f_isspass_maxalt": "Hauteur maximale",
+  "lab_f_isspass_azimuth": "Apparaît vers (compas °)",
+  "lab_f_isspass_err_input": "Entrez un lieu et une date valides.",
+  "lab_f_isspass_err_none": "Aucun passage au-dessus de 10° dans les 48 prochaines heures depuis ici — essayez une autre date ou un autre lieu.",
+  "lab_assume_satellite_overhead": "Dépression du Soleil au point sous-satellite (≈ la vôtre au zénith)",
+  "lab_assume_snapshot_tle": "Éléments orbitaux figés, époque ~2026-07-20 — pour ce soir utilisez un suivi en direct",
+  "lab_assume_kepler_j2": "Propagation Kepler + J2 séculaire (non SGP4 complet)",
+  "lab_series_this_orbit": "Cette orbite",
+  "lab_goal_g9_pass": "Rassemblons tout — OÙ êtes-VOUS ? Le dernier niveau propage un vrai jeu d'éléments pour la station et trouve son prochain passage au-dessus de votre latitude et longitude : combien de minutes avant son lever, quelle hauteur elle atteint, et de quelle direction de compas elle apparaît. Croisez cela avec la fenêtre de crépuscule ci-dessus et vous saurez exactement quand sortir et regarder vers le ciel. Une mise en garde sincère : cela utilise une capture d'orbite à partir d'une date fixe, donc c'est précis pendant quelques jours autour de celle-ci — pour le passage de ce soir à la minute près, une appli ou Spot the Station de la NASA récupère le jeu d'éléments frais d'aujourd'hui."
 }

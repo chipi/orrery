@@ -2452,5 +2452,19 @@
   "lab_f_moonalt_altitude": "Hoogste punt",
   "lab_goal_g8_distance": "De Maan's baan is een ellips, dus de afstand is niet altijd gelijk — deze varieert maandelijks van ongeveer 356.500 km in perigeum tot 406.700 km in apogeum. De schijnbare grootte varieert omgekeerd evenredig met de afstand, dus een vollemaaan in perigeum (een supervollemaaan) ziet er ongeveer 14% breder en 30% helderder uit dan een in apogeum. Dezelfde Maan, een echte grootteoscillatie die je kunt fotograferen.",
   "lab_goal_g8_eclipse": "Waarom is er niet elke maand, bij elke nieuwe en volle maan, een eclips? Omdat de Maan's baan 5,1° is gekanteld ten opzichte van de zonnebaanpad, dus bij de meeste nieuwe manen passeert de Maan boven of onder de Zon, niet erlangs. Een eclips vereist dat de syzygie dicht bij een KNOOP ligt — waar de gekantelde baan de ecliptica kruist — binnen een nauw venster van ±1,5°. De Zon bereikt een knoop slechts tweemaal per jaar, dus eclipsen treden op in twee seizoenen ongeveer zes maanden uit elkaar. Bekijk hoe de Maanbreedtegraad door het gebied schommelt.",
-  "lab_goal_g8_altitude": "En vanuit JOUW standpunt, hoe hoog stijgt de Maan? Zoals elk hemellichaam bereikt het zijn hoogtepunt op de meridiaan op 90° minus het verschil tussen de declinatie en jouw breedtegraad — maar de Maan's declinatie schommelt ±28,5° in een maand, veel sneller dan de jaarlijkse beweging van de Zon. Daarom rijdt een wintervolle maan hoog boven je hoofd terwijl een zomervolle maan langs de horizon kruipt vanuit het noordelijk halfrond — het tegenovergestelde van de Zon."
+  "lab_goal_g8_altitude": "En vanuit JOUW standpunt, hoe hoog stijgt de Maan? Zoals elk hemellichaam bereikt het zijn hoogtepunt op de meridiaan op 90° minus het verschil tussen de declinatie en jouw breedtegraad — maar de Maan's declinatie schommelt ±28,5° in een maand, veel sneller dan de jaarlijkse beweging van de Zon. Daarom rijdt een wintervolle maan hoog boven je hoofd terwijl een zomervolle maan langs de horizon kruipt vanuit het noordelijk halfrond — het tegenovergestelde van de Zon.",
+  "lab_f_isspass_title": "Volgende ISS-passage",
+  "lab_f_isspass_latitude": "Uw breedtegraad",
+  "lab_f_isspass_longitude": "Uw lengtegraad",
+  "lab_f_isspass_date": "Vanaf datum",
+  "lab_f_isspass_minutes": "Minuten tot opkomst",
+  "lab_f_isspass_maxalt": "Maximale hoogte",
+  "lab_f_isspass_azimuth": "Verschijnt in het (kompas °)",
+  "lab_f_isspass_err_input": "Voer een geldige locatie en datum in.",
+  "lab_f_isspass_err_none": "Geen passage boven 10° in de volgende 48 uur vanaf hier — probeer een ander moment of locatie.",
+  "lab_assume_satellite_overhead": "Zonsdepressie op het sub-satellietpunt (≈ die van u bij culminatie)",
+  "lab_assume_snapshot_tle": "Vaste elementenverzameling, epoch ~2026-07-20 — voor vanavond gebruikt u een live tracker",
+  "lab_assume_kepler_j2": "Kepler + seculaire J2-propagatie (niet volledige SGP4)",
+  "lab_series_this_orbit": "Deze baan",
+  "lab_goal_g9_pass": "Zet het allemaal samen — waar bent U? De laatste tree gebruikt een actuele elementenverzameling voor het station en berekent de volgende passage over uw breedtegraad en lengtegraad: hoeveel minuten tot opkomst, hoe hoog het stijgt, en uit welke kompasrichting het verschijnt. Combineer dit met het schemerlicht-venster hierboven en u weet precies wanneer u naar buiten moet gaan en omhoog moet kijken. Een eerlijke kanttekening: dit gebruikt een momentopname van de baan van een vaste datum, dus het is nauwkeurig voor enkele dagen rond die datum — voor vanavonds passage tot op de minuut nauwkeurig gebruikt u een app of NASA's Spot the Station met vandaags verse elementenset."
 }

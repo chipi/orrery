@@ -2452,5 +2452,19 @@
   "lab_f_moonalt_altitude": "Il punto più alto raggiunto",
   "lab_goal_g8_distance": "L'orbita della Luna è un'ellisse, quindi la distanza non è sempre la stessa — oscilla da circa 356.500 km al perigeo a 406.700 km all'apogeo ogni mese. La dimensione apparente varia come 1/distanza, quindi un plenilunio al perigeo (una superluna) appare circa il 14% più largo e il 30% più brillante di uno all'apogeo. La stessa Luna, un vero oscillamento di dimensioni che puoi fotografare.",
   "lab_goal_g8_eclipse": "Perché non c'è un'eclissi ogni mese, ad ogni novilunio e plenilunio? Perché l'orbita della Luna è inclinata di 5,1° rispetto al percorso del Sole, quindi nella maggior parte dei noviluni la Luna passa sopra o sotto il Sole, non attraversandolo. Un'eclissi richiede che la sizigia cada vicino a un NODO — dove l'orbita inclinata incrocia l'eclittica — entro una stretta finestra di ±1,5°. Il Sole raggiunge un nodo solo due volte l'anno, quindi le eclissi si verificano in due stagioni a circa sei mesi di distanza. Osserva la latitudine della Luna scendere attraverso la banda.",
-  "lab_goal_g8_altitude": "E da dove TU stai, quanto in alto sale la Luna? Come qualsiasi corpo raggiunge il picco sul meridiano a 90° meno la differenza tra la sua declinazione e la tua latitudine — ma la declinazione della Luna oscilla di ±28,5° in un mese, molto più veloce della marcia annuale del Sole. Ecco perché un plenilunio invernale passa alto sopra la testa mentre uno estivo sfiora l'orizzonte dall'emisfero boreale — il contrario del Sole."
+  "lab_goal_g8_altitude": "E da dove TU stai, quanto in alto sale la Luna? Come qualsiasi corpo raggiunge il picco sul meridiano a 90° meno la differenza tra la sua declinazione e la tua latitudine — ma la declinazione della Luna oscilla di ±28,5° in un mese, molto più veloce della marcia annuale del Sole. Ecco perché un plenilunio invernale passa alto sopra la testa mentre uno estivo sfiora l'orizzonte dall'emisfero boreale — il contrario del Sole.",
+  "lab_f_isspass_title": "Prossimo passaggio ISS",
+  "lab_f_isspass_latitude": "La tua latitudine",
+  "lab_f_isspass_longitude": "La tua longitudine",
+  "lab_f_isspass_date": "A partire da",
+  "lab_f_isspass_minutes": "Minuti al sorgere",
+  "lab_f_isspass_maxalt": "Altezza massima",
+  "lab_f_isspass_azimuth": "Sorge da (bussola °)",
+  "lab_f_isspass_err_input": "Inserisci una posizione e una data valide.",
+  "lab_f_isspass_err_none": "Nessun passaggio sopra i 10° nelle prossime 48 ore da qui — prova un'altra data o posizione.",
+  "lab_assume_satellite_overhead": "Depressione solare nel punto sub-satellitare (≈ la tua quando è in zenit)",
+  "lab_assume_snapshot_tle": "Set di elementi fissi, epoca ~2026-07-20 — per stasera usa un tracciatore in diretta",
+  "lab_assume_kepler_j2": "Propagazione Kepler + J2 secolare (non full SGP4)",
+  "lab_series_this_orbit": "Questo passaggio",
+  "lab_goal_g9_pass": "Metti tutto insieme — dove SEI? L'ultimo gradino propaga un set di elementi reali per la stazione e trova il suo prossimo passaggio sulla tua latitudine e longitudine: quanti minuti mancano al sorgere, a quale altezza arriva, e da quale direzione della bussola appare. Incrocia questo con la finestra di crepuscolo sopra e saprai esattamente quando uscire e guardare in su. Un'avvertenza onesta: questo usa una foto dell'orbita da una data fissa, quindi è accurato per alcuni giorni attorno a quella data — per il passaggio di stasera al minuto, un'app o NASA's Spot the Station fornisce il set di elementi fresco di oggi."
 }

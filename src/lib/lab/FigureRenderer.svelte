@@ -23,6 +23,7 @@
   import SkyChartCanvas from './SkyChartCanvas.svelte';
   import EntryCorridorCanvas from './EntryCorridorCanvas.svelte';
   import PorkchopCanvas from './PorkchopCanvas.svelte';
+  import CislunarEciCanvas from './CislunarEciCanvas.svelte';
   import {
     fidelityStyle,
     fidelityLabel,
@@ -163,6 +164,8 @@
   <EntryCorridorCanvas {figure} {t} {ariaLabelKey} />
 {:else if figure.kind === 'porkchop'}
   <PorkchopCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'cislunar-eci'}
+  <CislunarEciCanvas {figure} {t} {ariaLabelKey} />
 {:else}
   <svg
     role="img"

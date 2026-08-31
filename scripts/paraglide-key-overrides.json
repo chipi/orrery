@@ -1601,7 +1601,13 @@
     "lab_f_porkchop_besttof": "सर्वोत्तम उड़ान समय",
     "lab_f_porkchop_err_no_window": "इस विंडो में कोई संभव ट्रांसफ़र नहीं — प्रस्थान या उड़ान-समय की सीमा बढ़ाएँ।",
     "lab_assume_lambert_two_body": "द्वि-पिंड लैम्बर्ट ट्रांसफ़र (पैच्ड-कॉनिक, कोई विक्षोभ नहीं)",
-    "lab_goal_gtm_porkchop": "तो आप कब रवाना होते हैं? हर प्रस्थान तिथि और यात्रा अवधि पर अलग-अलग मात्रा में ईंधन लगता है, और उन सबको एक साथ देखने का तरीका वही चार्ट है जिसे मिशन डिज़ाइनर सचमुच इस्तेमाल करते हैं: पोर्कचॉप प्लॉट। यहाँ हर कोशिका लैम्बर्ट की समस्या का एक वास्तविक हल है — इस दिन पृथ्वी कहाँ है और उतने दिनों की उड़ान के बाद Mars कहाँ होगा, यह देखते हुए कौन-सी एकल ट्रांसफ़र कक्षा उन्हें जोड़ती है, और उसमें कितना Δv लगता है? ठंडी घाटियाँ लॉन्च विंडो हैं; क्रॉसहेयर जाने की सबसे सस्ती एकल तिथि-और-अवधि है। घाटी चूक गए तो ईंधन दीवार की तरह चढ़ता है — इसीलिए Mars की लॉन्च विंडो हर 26 महीने में केवल कुछ हफ़्तों के लिए खुलती है।"
+    "lab_goal_gtm_porkchop": "तो आप कब रवाना होते हैं? हर प्रस्थान तिथि और यात्रा अवधि पर अलग-अलग मात्रा में ईंधन लगता है, और उन सबको एक साथ देखने का तरीका वही चार्ट है जिसे मिशन डिज़ाइनर सचमुच इस्तेमाल करते हैं: पोर्कचॉप प्लॉट। यहाँ हर कोशिका लैम्बर्ट की समस्या का एक वास्तविक हल है — इस दिन पृथ्वी कहाँ है और उतने दिनों की उड़ान के बाद Mars कहाँ होगा, यह देखते हुए कौन-सी एकल ट्रांसफ़र कक्षा उन्हें जोड़ती है, और उसमें कितना Δv लगता है? ठंडी घाटियाँ लॉन्च विंडो हैं; क्रॉसहेयर जाने की सबसे सस्ती एकल तिथि-और-अवधि है। घाटी चूक गए तो ईंधन दीवार की तरह चढ़ता है — इसीलिए Mars की लॉन्च विंडो हर 26 महीने में केवल कुछ हफ़्तों के लिए खुलती है।",
+    "lab_f_cislunar_title": "ट्रांस-लूनर स्थानांतरण (पृथ्वी→चंद्रमा)",
+    "lab_f_cislunar_tli": "ट्रांस-लूनर इंजेक्शन Δv",
+    "lab_f_cislunar_loi": "चंद्र-कक्षा अंतर्वेशन Δv",
+    "lab_f_cislunar_tof": "कोस्ट समय",
+    "lab_assume_hohmann_translunar": "न्यूनतम-ऊर्जा (होहमन) ट्रांस-लूनर ज्यामिति",
+    "lab_goal_rtm_cislunar": "अब इसे पृथ्वी-केंद्रित फ्रेम में रखें और यात्रा को देखें। एक निम्न पार्किंग कक्षा से आप उपभू (perigee) पर ट्रांस-लूनर इंजेक्शन फायर करते हैं और एक लंबे अर्ध-दीर्घवृत्त पर कोस्ट करते हैं जिसका दूरस्थ छोर (अपभू) ठीक चंद्रमा की दूरी तक पहुँचता है — पाँच दिन की चढ़ाई पर गिरावट। पर आप चंद्रमा पर निशाना नहीं लगाते: जब आप कोस्ट करते हैं तब वह अपनी कक्षा पर लगभग 59° आगे बढ़ जाता है, इसलिए आप वहाँ निशाना लगाते हैं जहाँ वह होगा और तब पहुँचते हैं जब वह पकड़ लेता है। दूरस्थ छोर पर आप फिर से फायर करते हैं ताकि चंद्र कक्षा में कैप्चर हो सकें। यहाँ दोनों Δv कर्नेल के पृथ्वी-चंद्रमा Lambert सॉल्वर से वास्तविक पैच्ड-कॉनिक मान हैं — यह वही ज्यामिति है जिस पर Apollo से Artemis तक हर मानवयुक्त चंद्र मिशन उड़ान भरता है।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3066,7 +3072,13 @@
     "lab_f_porkchop_besttof": "最適飛行時間",
     "lab_f_porkchop_err_no_window": "このウィンドウでは実行可能な遷移がありません — 出発日または飛行時間の範囲を広げてください。",
     "lab_assume_lambert_two_body": "二体ランベルト遷移（パッチドコニック、摂動なし）",
-    "lab_goal_gtm_porkchop": "では、いつ出発する？ 出発日と巡航期間の組み合わせごとに必要な燃料が変わり、それらを一度に見渡すのがミッション設計者が実際に使う図表——ポークチョッププロットです。ここの各セルはランベルト問題の実際の解です。この日に地球がどこにあり、その飛行日数の後に火星がどこにあるかを踏まえ、両者を結ぶ単一の遷移軌道は何で、そのΔvはいくらか？ 涼しげな谷が打ち上げウィンドウ、十字線が最も燃料の安い出発日と期間です。谷を逃せば燃料は壁を駆け上がる——だからこそ火星への打ち上げウィンドウは26か月ごとにわずか数週間しか開かないのです。"
+    "lab_goal_gtm_porkchop": "では、いつ出発する？ 出発日と巡航期間の組み合わせごとに必要な燃料が変わり、それらを一度に見渡すのがミッション設計者が実際に使う図表——ポークチョッププロットです。ここの各セルはランベルト問題の実際の解です。この日に地球がどこにあり、その飛行日数の後に火星がどこにあるかを踏まえ、両者を結ぶ単一の遷移軌道は何で、そのΔvはいくらか？ 涼しげな谷が打ち上げウィンドウ、十字線が最も燃料の安い出発日と期間です。谷を逃せば燃料は壁を駆け上がる——だからこそ火星への打ち上げウィンドウは26か月ごとにわずか数週間しか開かないのです。",
+    "lab_f_cislunar_title": "月遷移軌道（地球→月）",
+    "lab_f_cislunar_tli": "月遷移軌道投入 Δv",
+    "lab_f_cislunar_loi": "月周回軌道投入 Δv",
+    "lab_f_cislunar_tof": "航行時間",
+    "lab_assume_hohmann_translunar": "最小エネルギー（ホーマン）月遷移ジオメトリ",
+    "lab_goal_rtm_cislunar": "今度は地球中心座標系に置いて、旅路を見てみよう。低いパーキング軌道から近地点で TLI を噴射し、遠地点がちょうど月の距離に届く長い半楕円を惰性飛行する——5日かけて坂を登る落下だ。しかし月そのものを狙うのではない：惰性飛行中に月は軌道上を約59°進むため、月が「これから来る位置」を狙い、月が追いついてくるところに到達する。遠地点で再び噴射して月周回軌道に捕獲される。ここでの両 Δv は、カーネルの地球-月ランバートソルバーによる実際のパッチドコニック値だ——これはアポロからアルテミスまで、あらゆる有人月ミッションが飛ぶジオメトリである。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -4711,7 +4723,13 @@
     "lab_f_porkchop_besttof": "أفضل زمن طيران",
     "lab_f_porkchop_err_no_window": "لا يوجد انتقال ممكن في هذه النافذة — وسّع نطاق المغادرة أو زمن الطيران.",
     "lab_assume_lambert_two_body": "انتقال لامبرت ثنائي الجسم (مخروطي مرقّع، بدون اضطرابات)",
-    "lab_goal_gtm_porkchop": "إذًا، متى تغادر؟ كل تاريخ مغادرة ومدة رحلة يكلّفان قدرًا مختلفًا من الوقود، والطريقة لرؤيتها كلها دفعة واحدة هي المخطط الذي يستخدمه مصممو المهام فعليًا: مخطط بوركتشوب. كل خلية هنا حلٌّ حقيقي لمسألة لامبرت — بمعرفة موقع الأرض في هذا اليوم وموقع المريخ بعد ذلك العدد من أيام الطيران، ما مدار الانتقال الوحيد الذي يربط بينهما، وكم يكلّف من Δv؟ الوديان الباردة هي نوافذ الإطلاق؛ والتقاطع يحدد التاريخ والمدة الأرخص للانطلاق. تفوّت الوادي فيتسلق الوقود جدارًا — ولهذا لا تُفتح نافذة إطلاق نحو المريخ إلا لبضعة أسابيع كل 26 شهرًا."
+    "lab_goal_gtm_porkchop": "إذًا، متى تغادر؟ كل تاريخ مغادرة ومدة رحلة يكلّفان قدرًا مختلفًا من الوقود، والطريقة لرؤيتها كلها دفعة واحدة هي المخطط الذي يستخدمه مصممو المهام فعليًا: مخطط بوركتشوب. كل خلية هنا حلٌّ حقيقي لمسألة لامبرت — بمعرفة موقع الأرض في هذا اليوم وموقع المريخ بعد ذلك العدد من أيام الطيران، ما مدار الانتقال الوحيد الذي يربط بينهما، وكم يكلّف من Δv؟ الوديان الباردة هي نوافذ الإطلاق؛ والتقاطع يحدد التاريخ والمدة الأرخص للانطلاق. تفوّت الوادي فيتسلق الوقود جدارًا — ولهذا لا تُفتح نافذة إطلاق نحو المريخ إلا لبضعة أسابيع كل 26 شهرًا.",
+    "lab_f_cislunar_title": "الانتقال العابر للقمر (الأرض→القمر)",
+    "lab_f_cislunar_tli": "Δv الحقن العابر للقمر (TLI)",
+    "lab_f_cislunar_loi": "Δv الإدخال في مدار القمر (LOI)",
+    "lab_f_cislunar_tof": "زمن الانسياب",
+    "lab_assume_hohmann_translunar": "هندسة عبور قمري بأدنى طاقة (هوهمان)",
+    "lab_goal_rtm_cislunar": "الآن ضعها في الإطار المتمركز حول الأرض وشاهِد الرحلة. من مدار انتظار منخفض تُطلق الحقن العابر للقمر (TLI) عند الحضيض وتنساب على نصف قطع ناقص طويل يصل طرفه البعيد (الأوج) تماماً إلى مسافة القمر — سقوط صاعد يستمر خمسة أيام. لكنك لا تصوّب نحو القمر: فهو يتحرك نحو 59° على مداره بينما تنساب، لذا تصوّب نحو حيث سيكون وتصل عندما يلحق بك. عند الطرف البعيد تُطلق مرة أخرى لتُلتقط في مدار القمر. كِلا قيمتَي Δv هنا هما القيمتان الحقيقيتان للمخروط المرقّع من حلّال لامبرت أرض-قمر في النواة — هذه هي الهندسة التي تسلكها كل بعثة قمرية مأهولة من أبولو إلى أرتميس."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -6178,7 +6196,13 @@
     "lab_f_porkchop_besttof": "최적 비행 시간",
     "lab_f_porkchop_err_no_window": "이 윈도우에서 가능한 천이가 없습니다 — 출발 또는 비행 시간 범위를 넓히세요.",
     "lab_assume_lambert_two_body": "이체 문제 램버트 천이 (패치드 코닉, 섭동 무시)",
-    "lab_goal_gtm_porkchop": "그래서 언제 떠나야 할까요? 출발 날짜와 순항 기간마다 필요한 연료량이 다르며, 이를 한눈에 볼 수 있는 방법이 바로 임무 설계자들이 실제로 사용하는 차트인 포크찹 도표입니다. 여기 각 셀은 램버트 문제의 실제 해입니다 — 지구가 이 날짜에 어디 있고 화성이 그만큼의 비행일수 후에 어디 있을지 주어졌을 때, 이 둘을 잇는 단일 천이 궤도는 무엇이며 Δv는 얼마나 드는가? 차가운 골짜기가 발사 윈도우이고, 십자선은 가장 저렴한 단 하나의 날짜와 기간입니다. 골짜기를 놓치면 연료가 벽처럼 치솟는데 — 그래서 화성 발사 윈도우는 26개월마다 단 몇 주 동안만 열립니다."
+    "lab_goal_gtm_porkchop": "그래서 언제 떠나야 할까요? 출발 날짜와 순항 기간마다 필요한 연료량이 다르며, 이를 한눈에 볼 수 있는 방법이 바로 임무 설계자들이 실제로 사용하는 차트인 포크찹 도표입니다. 여기 각 셀은 램버트 문제의 실제 해입니다 — 지구가 이 날짜에 어디 있고 화성이 그만큼의 비행일수 후에 어디 있을지 주어졌을 때, 이 둘을 잇는 단일 천이 궤도는 무엇이며 Δv는 얼마나 드는가? 차가운 골짜기가 발사 윈도우이고, 십자선은 가장 저렴한 단 하나의 날짜와 기간입니다. 골짜기를 놓치면 연료가 벽처럼 치솟는데 — 그래서 화성 발사 윈도우는 26개월마다 단 몇 주 동안만 열립니다.",
+    "lab_f_cislunar_title": "달 천이 궤도 (지구→달)",
+    "lab_f_cislunar_tli": "TLI Δv",
+    "lab_f_cislunar_loi": "LOI Δv",
+    "lab_f_cislunar_tof": "관성 비행 시간",
+    "lab_assume_hohmann_translunar": "최소 에너지(호만) 달 천이 기하",
+    "lab_goal_rtm_cislunar": "이제 지구 중심 좌표계로 옮겨 여정을 직접 확인해 보세요. 저궤도 주차 궤도에서 근지점에 TLI를 분사하면, 원지점(먼 끝)이 달의 거리에 막 닿는 긴 반타원을 따라 관성 비행합니다 — 오르막을 5일간 떨어지는 셈이죠. 하지만 달을 향해 조준하지 않습니다: 비행하는 동안 달은 궤도를 따라 약 59° 이동하므로, 달이 있을 위치를 조준하고 달이 따라잡는 순간 도착합니다. 먼 끝에서 다시 분사하여 달 궤도에 포획됩니다. 여기 두 Δv는 모두 커널의 지구-달 램버트 솔버가 산출한 실제 패치드 코닉 값입니다 — 아폴로에서 아르테미스까지 모든 유인 달 탐사가 비행하는 바로 그 기하입니다."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -7468,7 +7492,13 @@
     "lab_f_porkchop_besttof": "Beste Flugzeit",
     "lab_f_porkchop_err_no_window": "Kein realisierbarer Transfer in diesem Fenster — Abflug- oder Flugzeitbereich erweitern.",
     "lab_assume_lambert_two_body": "Zweikörper-Lambert-Transfer (patched-conic, ohne Störungen)",
-    "lab_goal_gtm_porkchop": "Also WANN startet man? Jedes Abflugdatum und jede Reisedauer kostet unterschiedlich viel Treibstoff, und um sie alle auf einen Blick zu sehen, nutzt man genau das Diagramm der Missionsplaner: das Porkchop-Diagramm. Jede Zelle hier ist eine echte Lösung des Lambert-Problems — bei gegebener Position der Erde an diesem Tag und der Position des Mars nach so vielen Flugtagen, welche einzelne Transferbahn verbindet sie, und welchen Δv kostet das? Die kühlen Täler sind die Startfenster; das Fadenkreuz markiert das günstigste Datum-Dauer-Paar. Verpasst man das Tal, klettert der Treibstoffbedarf eine Wand hinauf — deshalb öffnet sich ein Mars-Startfenster nur für wenige Wochen alle 26 Monate."
+    "lab_goal_gtm_porkchop": "Also WANN startet man? Jedes Abflugdatum und jede Reisedauer kostet unterschiedlich viel Treibstoff, und um sie alle auf einen Blick zu sehen, nutzt man genau das Diagramm der Missionsplaner: das Porkchop-Diagramm. Jede Zelle hier ist eine echte Lösung des Lambert-Problems — bei gegebener Position der Erde an diesem Tag und der Position des Mars nach so vielen Flugtagen, welche einzelne Transferbahn verbindet sie, und welchen Δv kostet das? Die kühlen Täler sind die Startfenster; das Fadenkreuz markiert das günstigste Datum-Dauer-Paar. Verpasst man das Tal, klettert der Treibstoffbedarf eine Wand hinauf — deshalb öffnet sich ein Mars-Startfenster nur für wenige Wochen alle 26 Monate.",
+    "lab_f_cislunar_title": "Trans-lunarer Transfer (Erde→Mond)",
+    "lab_f_cislunar_tli": "Trans-lunare Injektion Δv",
+    "lab_f_cislunar_loi": "Mondorbit-Einschuss Δv",
+    "lab_f_cislunar_tof": "Flugzeit",
+    "lab_assume_hohmann_translunar": "Energieminimale (Hohmann) trans-lunare Geometrie",
+    "lab_goal_rtm_cislunar": "Nun verlege es ins erdzentrierte Bezugssystem und SIEH die Reise. Aus einer niedrigen Parkbahn zündest du im Perigäum die trans-lunare Injektion und gleitest eine lange Halbellipse entlang, deren fernes Ende (Apogäum) gerade die Distanz des Mondes erreicht — ein fünftägiger Aufstieg. Doch du zielst nicht AUF den Mond: er bewegt sich während deines Fluges rund 59° entlang seiner Bahn, also zielst du dorthin, wo er SEIN WIRD, und triffst ein, während er aufholt. Am fernen Ende zündest du erneut, um in die Mondumlaufbahn eingefangen zu werden. Beide Δv hier sind die echten Patched-Conic-Werte aus dem Erde-Mond-Lambert-Löser des Kernels — dies ist die Geometrie, die jede bemannte Mondmission von Apollo bis Artemis fliegt."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -8697,7 +8727,13 @@
     "lab_f_porkchop_besttof": "Meilleure durée de vol",
     "lab_f_porkchop_err_no_window": "Aucun transfert réalisable dans cette fenêtre — élargissez la plage de départ ou de durée de vol.",
     "lab_assume_lambert_two_body": "Transfert de Lambert à deux corps (coniques raccordées, sans perturbations)",
-    "lab_goal_gtm_porkchop": "Alors QUAND partez-vous ? Chaque date de départ et chaque durée de croisière coûte une quantité de carburant différente, et pour les voir toutes d'un coup, on utilise le graphique dont se servent réellement les concepteurs de mission : le diagramme en côtelette. Chaque cellule ici est une véritable solution du problème de Lambert — étant donné la position de la Terre ce jour-là et celle de Mars après tant de jours de vol, quelle orbite de transfert unique les relie, et quel Δv coûte-t-elle ? Les vallées fraîches sont les fenêtres de lancement ; le réticule marque la date et la durée les moins coûteuses. Ratez la vallée et le carburant grimpe en flèche — c'est pourquoi une fenêtre de lancement vers Mars ne s'ouvre que quelques semaines tous les 26 mois."
+    "lab_goal_gtm_porkchop": "Alors QUAND partez-vous ? Chaque date de départ et chaque durée de croisière coûte une quantité de carburant différente, et pour les voir toutes d'un coup, on utilise le graphique dont se servent réellement les concepteurs de mission : le diagramme en côtelette. Chaque cellule ici est une véritable solution du problème de Lambert — étant donné la position de la Terre ce jour-là et celle de Mars après tant de jours de vol, quelle orbite de transfert unique les relie, et quel Δv coûte-t-elle ? Les vallées fraîches sont les fenêtres de lancement ; le réticule marque la date et la durée les moins coûteuses. Ratez la vallée et le carburant grimpe en flèche — c'est pourquoi une fenêtre de lancement vers Mars ne s'ouvre que quelques semaines tous les 26 mois.",
+    "lab_f_cislunar_title": "Transfert trans-lunaire (Terre→Lune)",
+    "lab_f_cislunar_tli": "Δv d'injection trans-lunaire",
+    "lab_f_cislunar_loi": "Δv d'insertion en orbite lunaire",
+    "lab_f_cislunar_tof": "Durée de vol balistique",
+    "lab_assume_hohmann_translunar": "Géométrie trans-lunaire à énergie minimale (Hohmann)",
+    "lab_goal_rtm_cislunar": "Passez maintenant dans le repère géocentrique et VISUALISEZ le voyage. Depuis une orbite d'attente basse, vous exécutez l'injection trans-lunaire au périgée et parcourez une longue demi-ellipse dont l'extrémité éloignée (apogée) atteint tout juste la distance de la Lune — une chute de cinq jours à contre-pente. Mais vous ne visez PAS la Lune : elle se déplace d'environ 59° le long de son orbite pendant votre trajet balistique, vous visez donc là où elle SERA et arrivez au moment où elle vous rattrape. À l'autre extrémité, vous rallumez le moteur pour être capturé en orbite lunaire. Les deux Δv indiqués ici sont les véritables valeurs des coniques raccordées issues du solveur de Lambert Terre-Lune du noyau — c'est la géométrie que suivent toutes les missions lunaires habitées, d'Apollo à Artemis."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -9893,7 +9929,13 @@
     "lab_f_porkchop_besttof": "Tempo di volo ottimale",
     "lab_f_porkchop_err_no_window": "Nessun trasferimento fattibile in questa finestra — amplia l'intervallo di partenza o di tempo di volo.",
     "lab_assume_lambert_two_body": "Trasferimento di Lambert a due corpi (conica raccordata, senza perturbazioni)",
-    "lab_goal_gtm_porkchop": "Quindi QUANDO parti? Ogni data di partenza e durata di crociera costa una quantità diversa di carburante, e il modo per vederle tutte in una volta è il grafico che i progettisti di missioni usano davvero: il diagramma porkchop. Ogni cella qui è una vera soluzione del problema di Lambert — dato dove si trova la Terra in questo giorno e dove sarà Marte dopo quel numero di giorni di volo, quale singola orbita di trasferimento li collega e quale Δv costa? Le valli fredde sono le finestre di lancio; il mirino è l'unica combinazione data-durata più economica per partire. Manca la valle e il carburante scala un muro — ecco perché una finestra di lancio verso Marte si apre solo per poche settimane ogni 26 mesi."
+    "lab_goal_gtm_porkchop": "Quindi QUANDO parti? Ogni data di partenza e durata di crociera costa una quantità diversa di carburante, e il modo per vederle tutte in una volta è il grafico che i progettisti di missioni usano davvero: il diagramma porkchop. Ogni cella qui è una vera soluzione del problema di Lambert — dato dove si trova la Terra in questo giorno e dove sarà Marte dopo quel numero di giorni di volo, quale singola orbita di trasferimento li collega e quale Δv costa? Le valli fredde sono le finestre di lancio; il mirino è l'unica combinazione data-durata più economica per partire. Manca la valle e il carburante scala un muro — ecco perché una finestra di lancio verso Marte si apre solo per poche settimane ogni 26 mesi.",
+    "lab_f_cislunar_title": "Trasferimento translunare (Terra→Luna)",
+    "lab_f_cislunar_tli": "Δv di iniezione translunare",
+    "lab_f_cislunar_loi": "Δv di inserimento in orbita lunare",
+    "lab_f_cislunar_tof": "Tempo di coasting",
+    "lab_assume_hohmann_translunar": "Geometria translunare a energia minima (Hohmann)",
+    "lab_goal_rtm_cislunar": "Ora poniti nel sistema di riferimento centrato sulla Terra e OSSERVA il viaggio. Da una bassa orbita di parcheggio esegui l'iniezione translunare al perigeo e percorri in coasting una lunga semiellisse la cui estremità lontana (apogeo) raggiunge appena la distanza della Luna — una caduta di cinque giorni in salita. Ma non punti VERSO la Luna: essa si sposta di circa 59° lungo la sua orbita mentre percorri il coasting, quindi punti dove SARÀ e arrivi mentre ti raggiunge. All'estremità lontana esegui di nuovo l'accensione per essere catturato in orbita lunare. Entrambi i Δv qui sono i valori reali a coniche raccordate dal risolutore di Lambert Terra-Luna del kernel — questa è la geometria che vola ogni missione lunare con equipaggio, da Apollo ad Artemis."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -11088,7 +11130,13 @@
     "lab_f_porkchop_besttof": "Mejor tiempo de vuelo",
     "lab_f_porkchop_err_no_window": "No hay transferencia viable en esta ventana: amplía el rango de salida o de tiempo de vuelo.",
     "lab_assume_lambert_two_body": "Transferencia de Lambert de dos cuerpos (cónicas empalmadas, sin perturbaciones)",
-    "lab_goal_gtm_porkchop": "Entonces, ¿CUÁNDO sales? Cada fecha de salida y cada duración de crucero cuesta una cantidad distinta de combustible, y la forma de verlas todas a la vez es el gráfico que los diseñadores de misiones usan de verdad: el diagrama porkchop. Cada celda de aquí es una solución real del problema de Lambert: dada la posición de la Tierra en este día y dónde estará Marte tras ese número de días de vuelo, ¿qué única órbita de transferencia las conecta y qué Δv cuesta? Los valles fríos son las ventanas de lanzamiento; la cruz marca la fecha y duración más baratas para ir. Si fallas el valle, el combustible se dispara: por eso una ventana de lanzamiento a Marte solo se abre durante unas pocas semanas cada 26 meses."
+    "lab_goal_gtm_porkchop": "Entonces, ¿CUÁNDO sales? Cada fecha de salida y cada duración de crucero cuesta una cantidad distinta de combustible, y la forma de verlas todas a la vez es el gráfico que los diseñadores de misiones usan de verdad: el diagrama porkchop. Cada celda de aquí es una solución real del problema de Lambert: dada la posición de la Tierra en este día y dónde estará Marte tras ese número de días de vuelo, ¿qué única órbita de transferencia las conecta y qué Δv cuesta? Los valles fríos son las ventanas de lanzamiento; la cruz marca la fecha y duración más baratas para ir. Si fallas el valle, el combustible se dispara: por eso una ventana de lanzamiento a Marte solo se abre durante unas pocas semanas cada 26 meses.",
+    "lab_f_cislunar_title": "Transferencia translunar (Tierra→Luna)",
+    "lab_f_cislunar_tli": "Δv de inyección translunar",
+    "lab_f_cislunar_loi": "Δv de inserción en órbita lunar",
+    "lab_f_cislunar_tof": "Tiempo de crucero",
+    "lab_assume_hohmann_translunar": "Geometría translunar de mínima energía (Hohmann)",
+    "lab_goal_rtm_cislunar": "Ahora ponlo en el marco geocéntrico y VISUALIZA el viaje. Desde una órbita de aparcamiento baja ejecutas la inyección translunar en el perigeo y recorres una larga semielipse cuyo extremo lejano (apogeo) alcanza justo la distancia de la Luna: una caída cuesta arriba de cinco días. Pero no apuntas HACIA la Luna: se desplaza unos 59° a lo largo de su órbita mientras recorres la trayectoria, así que apuntas a dónde ESTARÁ y llegas justo cuando te alcanza. En el extremo lejano vuelves a encender los motores para ser capturado en órbita lunar. Ambos Δv aquí son los valores reales de cónicas empalmadas del solucionador de Lambert Tierra-Luna del kernel: es la geometría que vuela toda misión lunar tripulada, de Apolo a Artemis."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -12292,7 +12340,13 @@
     "lab_f_porkchop_besttof": "Beste vluchtduur",
     "lab_f_porkchop_err_no_window": "Geen haalbare transfer in dit venster — verbreed het vertrek- of vluchtduurbereik.",
     "lab_assume_lambert_two_body": "Tweelichamen-Lambert-transfer (patched-conic, geen verstoringen)",
-    "lab_goal_gtm_porkchop": "Dus WANNEER vertrek je? Elke vertrekdatum en cruiseduur kost een andere hoeveelheid brandstof, en de manier om ze allemaal tegelijk te zien is de grafiek die missieontwerpers echt gebruiken: de porkchop-plot. Elke cel hier is een echte oplossing van het Lambert-probleem — gegeven waar de Aarde op deze dag staat en waar Mars na zoveel vluchtdagen zal zijn, welke enkele transferbaan verbindt ze, en welke Δv kost dat? De koele dalen zijn de lanceervensters; het draadkruis is de enige goedkoopste datum-en-duur om te gaan. Mis het dal en de brandstof klimt tegen een muur op — daarom opent een lanceervenster naar Mars slechts een paar weken elke 26 maanden."
+    "lab_goal_gtm_porkchop": "Dus WANNEER vertrek je? Elke vertrekdatum en cruiseduur kost een andere hoeveelheid brandstof, en de manier om ze allemaal tegelijk te zien is de grafiek die missieontwerpers echt gebruiken: de porkchop-plot. Elke cel hier is een echte oplossing van het Lambert-probleem — gegeven waar de Aarde op deze dag staat en waar Mars na zoveel vluchtdagen zal zijn, welke enkele transferbaan verbindt ze, en welke Δv kost dat? De koele dalen zijn de lanceervensters; het draadkruis is de enige goedkoopste datum-en-duur om te gaan. Mis het dal en de brandstof klimt tegen een muur op — daarom opent een lanceervenster naar Mars slechts een paar weken elke 26 maanden.",
+    "lab_f_cislunar_title": "Trans-lunaire overgang (Aarde→Maan)",
+    "lab_f_cislunar_tli": "Trans-lunaire injectie-Δv",
+    "lab_f_cislunar_loi": "Maanbaaninsertie-Δv",
+    "lab_f_cislunar_tof": "Overbrugtijd",
+    "lab_assume_hohmann_translunar": "Minimale-energie (Hohmann) trans-lunaire geometrie",
+    "lab_goal_rtm_cislunar": "Zet het nu in het Aarde-gecentreerde stelsel en ZIE de reis. Vanuit een lage parkeerbaan geef je de trans-lunaire injectie bij het perigeum en zweef je langs een lange halve ellips waarvan het verre einde (apogeum) net de afstand van de Maan bereikt — een vijfdaagse val bergop. Maar je richt niet OP de Maan: die beweegt zo'n 59° langs haar baan terwijl je zweeft, dus je richt op waar ze ZAL zijn en arriveert terwijl ze je inhaalt. Aan het verre einde geef je opnieuw een impuls om in een maanbaan te worden gevangen. Beide Δv hier zijn de echte patched-conic-waarden uit de Aarde-Maan Lambert-oplosser van de kernel — dit is de geometrie die elke bemande maanmissie van Apollo tot Artemis vliegt."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -13760,7 +13814,13 @@
     "lab_f_porkchop_besttof": "Оптимальное время перелёта",
     "lab_f_porkchop_err_no_window": "Нет допустимого перелёта в этом окне — расширьте диапазон дат старта или времени перелёта.",
     "lab_assume_lambert_two_body": "Двухтельный ламбертов перелёт (сопряжённые конические сечения, без возмущений)",
-    "lab_goal_gtm_porkchop": "Так КОГДА же стартовать? Каждая дата старта и длительность перелёта стоят разного количества топлива, и увидеть их все сразу помогает диаграмма, которой действительно пользуются проектировщики миссий: porkchop-диаграмма. Каждая ячейка здесь — это реальное решение задачи Ламберта: зная, где находится Земля в этот день и где будет Mars через заданное число дней полёта, какая единственная переходная орбита их соединяет и какой Δv для этого нужен? Прохладные впадины — это стартовые окна; перекрестие — единственная самая дешёвая комбинация даты и длительности. Промахнётесь мимо впадины — и расход топлива взлетает стеной, вот почему стартовое окно к Mars открывается лишь на несколько недель каждые 26 месяцев."
+    "lab_goal_gtm_porkchop": "Так КОГДА же стартовать? Каждая дата старта и длительность перелёта стоят разного количества топлива, и увидеть их все сразу помогает диаграмма, которой действительно пользуются проектировщики миссий: porkchop-диаграмма. Каждая ячейка здесь — это реальное решение задачи Ламберта: зная, где находится Земля в этот день и где будет Mars через заданное число дней полёта, какая единственная переходная орбита их соединяет и какой Δv для этого нужен? Прохладные впадины — это стартовые окна; перекрестие — единственная самая дешёвая комбинация даты и длительности. Промахнётесь мимо впадины — и расход топлива взлетает стеной, вот почему стартовое окно к Mars открывается лишь на несколько недель каждые 26 месяцев.",
+    "lab_f_cislunar_title": "Транслунарный перелёт (Земля→Луна)",
+    "lab_f_cislunar_tli": "Δv транслунарного выведения (TLI)",
+    "lab_f_cislunar_loi": "Δv выхода на окололунную орбиту (LOI)",
+    "lab_f_cislunar_tof": "Время перелёта",
+    "lab_assume_hohmann_translunar": "Транслунарная геометрия минимальной энергии (Гомана)",
+    "lab_goal_rtm_cislunar": "Теперь поместим это в геоцентрическую систему и УВИДИМ перелёт. С низкой опорной орбиты вы выполняете транслунарное выведение в перигее и летите по длинному полуэллипсу, дальний конец которого (апогей) едва достигает расстояния до Луны — пятидневное падение «в гору». Но вы целитесь не В Луну: пока вы летите, она проходит около 59° по своей орбите, поэтому вы целитесь туда, где она БУДЕТ, и прибываете, когда она вас догоняет. В дальнем конце вы выполняете ещё один манёвр, чтобы захватиться на окололунную орбиту. Оба Δv здесь — реальные значения метода состыкованных конических сечений из ламбертова решателя Земля-Луна в ядре — эту геометрию проходит каждая пилотируемая лунная миссия от Apollo до Artemis."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -15272,7 +15332,13 @@
     "lab_f_porkchop_besttof": "最佳飞行时间",
     "lab_f_porkchop_err_no_window": "此窗口内无可行转移——请扩大出发日或飞行时间范围。",
     "lab_assume_lambert_two_body": "二体兰伯特转移（拼接圆锥曲线，无摄动）",
-    "lab_goal_gtm_porkchop": "那么，你该何时出发？每个出发日期和巡航时长所需的燃料各不相同，而要一次看清全部方案，就得用任务设计师真正使用的图表：porkchop 图。这里的每个格子都是兰伯特问题的真实解——已知地球在这一天的位置，以及火星在飞行若干天后所处的位置，哪条转移轨道能将二者连接，又需要多少 Δv？那些凉色的低谷就是发射窗口，十字准线标出的是最省的日期与时长组合。错过低谷，燃料需求便如撞墙般飙升——这正是火星发射窗口每 26 个月只开启短短几周的原因。"
+    "lab_goal_gtm_porkchop": "那么，你该何时出发？每个出发日期和巡航时长所需的燃料各不相同，而要一次看清全部方案，就得用任务设计师真正使用的图表：porkchop 图。这里的每个格子都是兰伯特问题的真实解——已知地球在这一天的位置，以及火星在飞行若干天后所处的位置，哪条转移轨道能将二者连接，又需要多少 Δv？那些凉色的低谷就是发射窗口，十字准线标出的是最省的日期与时长组合。错过低谷，燃料需求便如撞墙般飙升——这正是火星发射窗口每 26 个月只开启短短几周的原因。",
+    "lab_f_cislunar_title": "地月转移（地球→月球）",
+    "lab_f_cislunar_tli": "TLI Δv",
+    "lab_f_cislunar_loi": "LOI Δv",
+    "lab_f_cislunar_tof": "滑行时间",
+    "lab_assume_hohmann_translunar": "最小能量（霍曼）地月转移几何",
+    "lab_goal_rtm_cislunar": "现在把它放到以地球为中心的参考系里，直观看看这趟旅程。从低停泊轨道出发，你在近地点执行 TLI，然后沿一条长长的半椭圆滑行，其远端（远地点）恰好抵达月球轨道距离——这是一场为期五天的上坡下落。但你并不是瞄准月球本身：在你滑行期间，它沿轨道移动约 59°，所以你要瞄准它将要抵达的位置，在它追上来时会合。到达远端时你再次点火，被捕获进入月球轨道。这里的两个 Δv 都是内核地月兰伯特求解器给出的真实拼接圆锥曲线值——从阿波罗到阿尔忒弥斯，每一次载人登月任务飞的都是这套几何。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -16655,7 +16721,13 @@
     "lab_f_porkchop_besttof": "Најбоље време лета",
     "lab_f_porkchop_err_no_window": "Нема изводљивог прелета у овом прозору — прошири опсег поласка или времена лета.",
     "lab_assume_lambert_two_body": "Ламбертов прелет два тела (закрпљене конике, без пертурбација)",
-    "lab_goal_gtm_porkchop": "Дакле, КАДА полазиш? Сваки датум поласка и трајање крстарења кошта другачију количину горива, а начин да их све видиш одједном јесте дијаграм који пројектанти мисија заиста користе: поркчоп дијаграм. Свака ћелија овде је стварно решење Ламбертовог проблема — с обзиром на то где је Земља овог дана и где ће Марс бити после толико дана лета, која јединствена прелазна орбита их повезује и колики Δv кошта? Хладне долине су лансирни прозори; нишан је најјефтинији датум и трајање за полазак. Промашиш ли долину, гориво се пење уз зид — због чега се лансирни прозор за Марс отвара само неколико недеља сваких 26 месеци."
+    "lab_goal_gtm_porkchop": "Дакле, КАДА полазиш? Сваки датум поласка и трајање крстарења кошта другачију количину горива, а начин да их све видиш одједном јесте дијаграм који пројектанти мисија заиста користе: поркчоп дијаграм. Свака ћелија овде је стварно решење Ламбертовог проблема — с обзиром на то где је Земља овог дана и где ће Марс бити после толико дана лета, која јединствена прелазна орбита их повезује и колики Δv кошта? Хладне долине су лансирни прозори; нишан је најјефтинији датум и трајање за полазак. Промашиш ли долину, гориво се пење уз зид — због чега се лансирни прозор за Марс отвара само неколико недеља сваких 26 месеци.",
+    "lab_f_cislunar_title": "Транслунарни трансфер (Земља→Месец)",
+    "lab_f_cislunar_tli": "TLI Δv",
+    "lab_f_cislunar_loi": "LOI Δv",
+    "lab_f_cislunar_tof": "Време лета",
+    "lab_assume_hohmann_translunar": "Транслунарна геометрија минималне енергије (Хоман)",
+    "lab_goal_rtm_cislunar": "Сада је поставите у референтни оквир са центром у Земљи и ВИДИТЕ пут. Из ниске паркинг-орбите палите транслунарну инјекцију (TLI) у перигеју и клизите дугом полуелипсом чији далеки крај (апогеј) тек досеже удаљеност Месеца — петодневни пад узбрдо. Али не циљате НА Месец: он се помери за око 59° дуж своје орбите док клизите, па циљате где ће ОН бити и стижете док вас он сустиже. На далеком крају поново палите да бисте били заробљени у лунарну орбиту. Оба Δv овде су стварне patched-conic вредности из Земља-Месец Ламберовог решавача у кернелу — ово је геометрија коју лети свака посадна лунарна мисија од Apollo до Artemis."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -17857,6 +17929,12 @@
     "lab_f_porkchop_besttof": "Melhor tempo de voo",
     "lab_f_porkchop_err_no_window": "Nenhuma transferência viável nesta janela — amplie o intervalo de partida ou de tempo de voo.",
     "lab_assume_lambert_two_body": "Transferência de Lambert de dois corpos (cônicas emendadas, sem perturbações)",
-    "lab_goal_gtm_porkchop": "Então QUANDO você parte? Cada data de partida e duração de cruzeiro custa uma quantidade diferente de combustível, e a forma de ver todas de uma só vez é o gráfico que os projetistas de missão realmente usam: o gráfico porkchop. Cada célula aqui é uma solução real do problema de Lambert — dado onde a Terra está neste dia e onde Marte estará após aquele número de dias de voo, qual órbita de transferência única as conecta e quanto Δv ela custa? Os vales frios são as janelas de lançamento; a mira é a única data-e-duração mais barata para partir. Perca o vale e o combustível sobe uma parede — é por isso que uma janela de lançamento para Marte abre por apenas algumas semanas a cada 26 meses."
+    "lab_goal_gtm_porkchop": "Então QUANDO você parte? Cada data de partida e duração de cruzeiro custa uma quantidade diferente de combustível, e a forma de ver todas de uma só vez é o gráfico que os projetistas de missão realmente usam: o gráfico porkchop. Cada célula aqui é uma solução real do problema de Lambert — dado onde a Terra está neste dia e onde Marte estará após aquele número de dias de voo, qual órbita de transferência única as conecta e quanto Δv ela custa? Os vales frios são as janelas de lançamento; a mira é a única data-e-duração mais barata para partir. Perca o vale e o combustível sobe uma parede — é por isso que uma janela de lançamento para Marte abre por apenas algumas semanas a cada 26 meses.",
+    "lab_f_cislunar_title": "Transferência translunar (Terra→Lua)",
+    "lab_f_cislunar_tli": "Δv de injeção translunar",
+    "lab_f_cislunar_loi": "Δv de inserção em órbita lunar",
+    "lab_f_cislunar_tof": "Tempo de trânsito",
+    "lab_assume_hohmann_translunar": "Geometria translunar de energia mínima (Hohmann)",
+    "lab_goal_rtm_cislunar": "Agora coloque isso no referencial centrado na Terra e VEJA a viagem. A partir de uma órbita de estacionamento baixa, você aciona a injeção translunar no perigeu e percorre uma longa meia-elipse cuja extremidade distante (apogeu) alcança exatamente a distância da Lua — uma queda ladeira acima de cinco dias. Mas você não mira NA Lua: ela avança cerca de 59° ao longo de sua órbita enquanto você viaja, então você mira onde ela ESTARÁ e chega quando ela o alcança. Na extremidade distante, você aciona novamente para ser capturado em órbita lunar. Ambos os Δv aqui são os valores reais de cônicas emendadas do solucionador de Lambert Terra-Lua do kernel — esta é a geometria que toda missão lunar tripulada, de Apollo a Artemis, executa."
   }
 }

@@ -35,6 +35,7 @@ import { nextPassForTle } from '../satellite';
 import stationTles from '../satellite/station-tles.json';
 import { computePorkchopGrid, DV_FAILED } from '../transfer/lambert-grid';
 import type { DestinationId } from '../transfer/lambert-grid.constants';
+import { geoTransferDv } from '../transfer/lambert-geocentric';
 import {
   MOON_ORBIT_RADIUS_KM,
   MU_SUN_KM3_S2,
@@ -1323,6 +1324,73 @@ export const porkchop: FormulaDef<{ destination: string }> = {
         tofDays: res.arrDays,
         grid: res.grid,
         units: 'km/s',
+      },
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Cislunar transfer (Earth→Moon, ECI frame) — how you actually get to the Moon, drawn in the
+ * Earth-centred-inertial frame. The minimum-energy trans-lunar coast is a Hohmann half-ellipse
+ * from a ~200 km LEO parking orbit (perigee) out to the Moon's distance (apogee): semi-major
+ * a = (r_LEO + r_Moon)/2, time of flight t = π√(a³/µ⊕) ≈ 5 days. The TLI (trans-lunar injection)
+ * and LOI (lunar-orbit insertion) Δv are the kernel's REAL geocentric-Lambert patched-conic
+ * values (`geoTransferDv`). The Moon moves ~59° along its orbit during the coast, so you aim
+ * where it WILL be — the lead the figure shows. Surfaces the geocentric-Lambert kernel the Lab
+ * had never exposed.
+ */
+export const cislunarTransfer: FormulaDef<Record<string, never>> = {
+  id: 'cislunar-transfer',
+  titleKey: 'lab.f.cislunar.title',
+  domain: 'transfer',
+  tier: 5,
+  prereqs: ['hohmann-transfer'],
+  latex: 'a = \\tfrac12(r_{LEO}+r_{Moon}),\\quad t_{of} = \\pi\\sqrt{a^3/\\mu_\\oplus}',
+  inputs: [],
+  outputs: [
+    { key: 'tliKms', labelKey: 'lab.f.cislunar.tli', units: 'km/s' },
+    { key: 'loiKms', labelKey: 'lab.f.cislunar.loi', units: 'km/s' },
+    { key: 'tofDays', labelKey: 'lab.f.cislunar.tof', units: 'day' },
+  ],
+  compute: () => {
+    const rLeo = R_EARTH_KM + 200; // the geo-Lambert module's LEO parking radius (~6578 km)
+    const moonDist = MOON_ORBIT_RADIUS_KM;
+    const a = (rLeo + moonDist) / 2;
+    const tofDays = (Math.PI * Math.sqrt((a * a * a) / MU_EARTH_KM3_S2)) / 86400;
+    const gt = geoTransferDv(0, tofDays);
+    if (!gt.feasible) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.porkchop.err-no-window' },
+        assumptions: ['lab.assume.patched-conic'],
+      } satisfies FormulaResult;
+    }
+    const SIDEREAL_MONTH_DAYS = 27.32166;
+    const moonTravelDeg = (tofDays / SIDEREAL_MONTH_DAYS) * 360;
+    return {
+      values: {
+        tliKms: { value: gt.tli, units: 'km/s' },
+        loiKms: { value: gt.loi, units: 'km/s' },
+        tofDays: { value: tofDays, units: 'day' },
+      },
+      status: { ok: true },
+      assumptions: [
+        'lab.assume.patched-conic',
+        'lab.assume.hohmann-translunar',
+        'lab.assume.coplanar',
+      ],
+      figure: {
+        kind: 'cislunar-eci',
+        provenance: { fidelity: 'computed', module: 'transfer/lambert-geocentric' },
+        assumptions: ['lab.assume.patched-conic', 'lab.assume.hohmann-translunar'],
+        earthRadiusKm: R_EARTH_KM,
+        leoRadiusKm: rLeo,
+        moonDistanceKm: moonDist,
+        moonTravelDeg,
+        tofDays,
+        tliKms: gt.tli,
+        loiKms: gt.loi,
       },
     } satisfies FormulaResult;
   },
@@ -4463,6 +4531,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [interplanetaryTransfer.id, interplanetaryTransfer],
   [launchWindow.id, launchWindow],
   [porkchop.id, porkchop],
+  [cislunarTransfer.id, cislunarTransfer],
   [terminalVelocity.id, terminalVelocity],
   [softLandingCheck.id, softLandingCheck],
   [airbagsCheck.id, airbagsCheck],

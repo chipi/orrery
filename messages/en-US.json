@@ -2546,5 +2546,11 @@
   "lab_f_porkchop_besttof": "Best time of flight",
   "lab_f_porkchop_err_no_window": "No feasible transfer in this window — widen the departure or flight-time range.",
   "lab_assume_lambert_two_body": "Two-body Lambert transfer (patched-conic, no perturbations)",
-  "lab_goal_gtm_porkchop": "So WHEN do you leave? Every departure date and cruise duration costs a different amount of fuel, and the way to see them all at once is the chart mission designers actually use: the porkchop plot. Each cell here is a real solution of Lambert's problem — given where Earth is on this day and where Mars will be after that many days of flight, what single transfer orbit connects them, and what Δv does it cost? The cool valleys are the launch windows; the crosshair is the single cheapest date-and-duration to go. Miss the valley and the fuel climbs a wall — which is why a Mars launch window opens for only a few weeks every 26 months."
+  "lab_goal_gtm_porkchop": "So WHEN do you leave? Every departure date and cruise duration costs a different amount of fuel, and the way to see them all at once is the chart mission designers actually use: the porkchop plot. Each cell here is a real solution of Lambert's problem — given where Earth is on this day and where Mars will be after that many days of flight, what single transfer orbit connects them, and what Δv does it cost? The cool valleys are the launch windows; the crosshair is the single cheapest date-and-duration to go. Miss the valley and the fuel climbs a wall — which is why a Mars launch window opens for only a few weeks every 26 months.",
+  "lab_f_cislunar_title": "Trans-lunar transfer (Earth→Moon)",
+  "lab_f_cislunar_tli": "Trans-lunar injection Δv",
+  "lab_f_cislunar_loi": "Lunar-orbit insertion Δv",
+  "lab_f_cislunar_tof": "Coast time",
+  "lab_assume_hohmann_translunar": "Minimum-energy (Hohmann) trans-lunar geometry",
+  "lab_goal_rtm_cislunar": "Now put it in the Earth-centred frame and SEE the trip. From a low parking orbit you fire the trans-lunar injection at perigee and coast a long half-ellipse whose far end (apogee) just reaches the Moon's distance — a five-day fall uphill. But you don't aim AT the Moon: it moves about 59° along its orbit while you coast, so you aim where it WILL be and arrive as it catches up. At the far end you fire again to be captured into lunar orbit. Both Δv here are the real patched-conic values from the kernel's Earth-Moon Lambert solver — this is the geometry every crewed lunar mission from Apollo to Artemis flies."
 }

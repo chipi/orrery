@@ -198,8 +198,20 @@ export type FigureSpec = FigureBase &
         peakGeeAtEntry: number; // ballistic peak g-load at the chosen angle (readout)
         perigeeAltKm: number; // Keplerian perigee altitude at the chosen angle (readout)
       }
-    // Additive per goal (renderers demand-driven); typed now so the union is stable.
-    | { kind: 'cislunar-eci' }
+    // Cislunar transfer (Earth→Moon, ECI frame) — the trans-lunar coast ellipse from a LEO
+    // parking orbit to the Moon, drawn in the Earth-centred-inertial frame with the Moon's orbit
+    // and its travel during the flight. TLI + LOI Δv are the kernel's geocentric-Lambert
+    // patched-conic values. The idealized min-energy (Hohmann) trans-lunar geometry.
+    | {
+        kind: 'cislunar-eci';
+        earthRadiusKm: number;
+        leoRadiusKm: number;
+        moonDistanceKm: number;
+        moonTravelDeg: number; // how far the Moon moves during the transfer (lead angle)
+        tofDays: number;
+        tliKms: number; // trans-lunar injection Δv from LEO
+        loiKms: number; // lunar-orbit-insertion Δv
+      }
   );
 
 // ─── Goal / GoalStep (curriculum) + Card / Notebook (user documents) ────────

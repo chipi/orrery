@@ -238,6 +238,9 @@ export const reachTheMoon: Goal = {
     { formulaId: 'orbital-velocity', narrativeKey: 'lab.goal.rtm.orbit' },
     { formulaId: 'vis-viva', narrativeKey: 'lab.goal.rtm.visviva' },
     { formulaId: 'hohmann-transfer', narrativeKey: 'lab.goal.rtm.hohmann' },
+    // The trans-lunar transfer in the Earth-centred frame — real TLI + LOI from the kernel's
+    // geocentric Lambert, and the lead you need because the Moon moves ~59° during the coast.
+    { formulaId: 'cislunar-transfer', narrativeKey: 'lab.goal.rtm.cislunar' },
     {
       formulaId: 'delta-v-margin',
       narrativeKey: 'lab.goal.rtm.verdict',

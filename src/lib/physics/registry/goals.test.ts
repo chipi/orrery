@@ -904,6 +904,31 @@ describe('Family C plan-a-mission · assist-chain physics + capstone wiring', ()
     ]);
   });
 
+  it('cislunar-transfer surfaces the kernel geo-Lambert: Apollo-class TLI/LOI on the ~5-day Hohmann', () => {
+    const r = compute('cislunar-transfer', {});
+    expect(r.status.ok).toBe(true);
+    // canonical trans-lunar injection ~3.1 km/s, LOI ~0.8-0.9 km/s, ~5-day coast.
+    expect(r.values.tliKms.value).toBeGreaterThan(3);
+    expect(r.values.tliKms.value).toBeLessThan(3.3);
+    expect(r.values.loiKms.value).toBeGreaterThan(0.6);
+    expect(r.values.loiKms.value).toBeLessThan(1.1);
+    expect(r.values.tofDays.value).toBeGreaterThan(4.5);
+    expect(r.values.tofDays.value).toBeLessThan(5.5);
+    const fig = r.figure as { kind: string; moonTravelDeg: number; moonDistanceKm: number };
+    expect(fig.kind).toBe('cislunar-eci');
+    // the Moon travels ~59-66° during the coast (why you aim ahead of it).
+    expect(fig.moonTravelDeg).toBeGreaterThan(55);
+    expect(fig.moonTravelDeg).toBeLessThan(72);
+    // reach-the-moon now shows the ECI transfer before the verdict.
+    expect(GOALS.get('reach-the-moon')!.path.map((s) => s.formulaId)).toEqual([
+      'orbital-velocity',
+      'vis-viva',
+      'hohmann-transfer',
+      'cislunar-transfer',
+      'delta-v-margin',
+    ]);
+  });
+
   it('the ladder synthesizes A+B in order: window → leg → inject → assist → chain → verdict', () => {
     const g = GOALS.get('plan-a-mission')!;
     expect(g.path.map((s) => s.formulaId)).toEqual([

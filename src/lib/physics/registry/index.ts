@@ -36,6 +36,7 @@ import stationTles from '../satellite/station-tles.json';
 import { computePorkchopGrid, DV_FAILED } from '../transfer/lambert-grid';
 import type { DestinationId } from '../transfer/lambert-grid.constants';
 import { geoTransferDv } from '../transfer/lambert-geocentric';
+import { EPOCH_JD, moonEclipticXYKm, R_LEO } from '../transfer/lambert-geocentric-grid.constants';
 import {
   MOON_ORBIT_RADIUS_KM,
   MU_SUN_KM3_S2,
@@ -1335,7 +1336,7 @@ export const porkchop: FormulaDef<{ destination: string }> = {
  * from a ~200 km LEO parking orbit (perigee) out to the Moon's distance (apogee): semi-major
  * a = (r_LEO + r_Moon)/2, time of flight t = π√(a³/µ⊕) ≈ 5 days. The TLI (trans-lunar injection)
  * and LOI (lunar-orbit insertion) Δv are the kernel's REAL geocentric-Lambert patched-conic
- * values (`geoTransferDv`). The Moon moves ~59° along its orbit during the coast, so you aim
+ * values (`geoTransferDv`). The Moon moves ~62° along its orbit during the coast, so you aim
  * where it WILL be — the lead the figure shows. Surfaces the geocentric-Lambert kernel the Lab
  * had never exposed.
  */
@@ -1353,10 +1354,19 @@ export const cislunarTransfer: FormulaDef<Record<string, never>> = {
     { key: 'tofDays', labelKey: 'lab.f.cislunar.tof', units: 'day' },
   ],
   compute: () => {
-    const rLeo = R_EARTH_KM + 200; // the geo-Lambert module's LEO parking radius (~6578 km)
-    const moonDist = MOON_ORBIT_RADIUS_KM;
-    const a = (rLeo + moonDist) / 2;
-    const tofDays = (Math.PI * Math.sqrt((a * a * a) / MU_EARTH_KM3_S2)) / 86400;
+    const rLeo = R_LEO; // the geo-Lambert module's LEO parking radius (6578 km) — same one geoTransferDv uses
+    // Self-consistent Hohmann TOF + Moon distance: the arrival distance depends on the flight
+    // time (elliptical lunar orbit), and the flight time depends on the distance. Iterate to
+    // convergence against the SAME ephemeris geoTransferDv solves against, so the drawn ellipse's
+    // apogee, the TOF, and the reported Δv are one transfer (review A1).
+    let moonDist = MOON_ORBIT_RADIUS_KM;
+    let tofDays = 0;
+    for (let i = 0; i < 4; i += 1) {
+      const a = (rLeo + moonDist) / 2;
+      tofDays = (Math.PI * Math.sqrt((a * a * a) / MU_EARTH_KM3_S2)) / 86400;
+      const r2 = moonEclipticXYKm(EPOCH_JD + tofDays);
+      moonDist = Math.hypot(r2[0], r2[1]);
+    }
     const gt = geoTransferDv(0, tofDays);
     if (!gt.feasible) {
       const values: Record<string, Quantity> = {};
@@ -1376,14 +1386,14 @@ export const cislunarTransfer: FormulaDef<Record<string, never>> = {
       },
       status: { ok: true },
       assumptions: [
-        'lab.assume.patched-conic',
+        'lab.assume.patched-conic-insertion',
         'lab.assume.hohmann-translunar',
         'lab.assume.coplanar',
       ],
       figure: {
         kind: 'cislunar-eci',
         provenance: { fidelity: 'computed', module: 'transfer/lambert-geocentric' },
-        assumptions: ['lab.assume.patched-conic', 'lab.assume.hohmann-translunar'],
+        assumptions: ['lab.assume.patched-conic-insertion', 'lab.assume.hohmann-translunar'],
         earthRadiusKm: R_EARTH_KM,
         leoRadiusKm: rLeo,
         moonDistanceKm: moonDist,

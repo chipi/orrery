@@ -1607,7 +1607,8 @@
     "lab_f_cislunar_loi": "चंद्र-कक्षा अंतर्वेशन Δv",
     "lab_f_cislunar_tof": "कोस्ट समय",
     "lab_assume_hohmann_translunar": "न्यूनतम-ऊर्जा (होहमन) ट्रांस-लूनर ज्यामिति",
-    "lab_goal_rtm_cislunar": "अब इसे पृथ्वी-केंद्रित फ्रेम में रखें और यात्रा को देखें। एक निम्न पार्किंग कक्षा से आप उपभू (perigee) पर ट्रांस-लूनर इंजेक्शन फायर करते हैं और एक लंबे अर्ध-दीर्घवृत्त पर कोस्ट करते हैं जिसका दूरस्थ छोर (अपभू) ठीक चंद्रमा की दूरी तक पहुँचता है — पाँच दिन की चढ़ाई पर गिरावट। पर आप चंद्रमा पर निशाना नहीं लगाते: जब आप कोस्ट करते हैं तब वह अपनी कक्षा पर लगभग 59° आगे बढ़ जाता है, इसलिए आप वहाँ निशाना लगाते हैं जहाँ वह होगा और तब पहुँचते हैं जब वह पकड़ लेता है। दूरस्थ छोर पर आप फिर से फायर करते हैं ताकि चंद्र कक्षा में कैप्चर हो सकें। यहाँ दोनों Δv कर्नेल के पृथ्वी-चंद्रमा Lambert सॉल्वर से वास्तविक पैच्ड-कॉनिक मान हैं — यह वही ज्यामिति है जिस पर Apollo से Artemis तक हर मानवयुक्त चंद्र मिशन उड़ान भरता है।"
+    "lab_goal_rtm_cislunar": "अब इसे पृथ्वी-केंद्रित फ्रेम में रखें और यात्रा को देखें। एक निम्न पार्किंग कक्षा से आप पेरिजी पर ट्रांस-लूनर इंजेक्शन फायर करते हैं और एक लंबे अर्ध-दीर्घवृत्त पर तैरते हैं जिसका दूर छोर (अपोजी) ठीक चंद्रमा की दूरी तक पहुँचता है — लगभग पाँच-दिन की ऊपर की ओर गिरावट। लेकिन आप चंद्रमा को निशाना नहीं बनाते: जब तक आप तैरते हैं, वह अपनी कक्षा में लगभग 62° आगे बढ़ जाता है, इसलिए आप वहाँ निशाना लगाते हैं जहाँ वह होगा और तब पहुँचते हैं जब वह आपको पकड़ लेता है। दूर छोर पर आप चंद्र कक्षा में कैप्चर होने के लिए फिर से फायर करते हैं। यहाँ दोनों Δv कर्नेल के पृथ्वी-चंद्रमा लैम्बर्ट सॉल्वर से वास्तविक पैच्ड-कॉनिक मान हैं — यही वह ज्यामिति है जिस पर Apollo से Artemis तक हर मानवयुक्त चंद्र मिशन उड़ान भरता है।",
+    "lab_assume_patched_conic_insertion": "पैच्ड-कॉनिक अंतर्वेशन (तात्क्षणिक प्रभाव-क्षेत्र हस्तांतरण)"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3078,7 +3079,8 @@
     "lab_f_cislunar_loi": "月周回軌道投入 Δv",
     "lab_f_cislunar_tof": "航行時間",
     "lab_assume_hohmann_translunar": "最小エネルギー（ホーマン）月遷移ジオメトリ",
-    "lab_goal_rtm_cislunar": "今度は地球中心座標系に置いて、旅路を見てみよう。低いパーキング軌道から近地点で TLI を噴射し、遠地点がちょうど月の距離に届く長い半楕円を惰性飛行する——5日かけて坂を登る落下だ。しかし月そのものを狙うのではない：惰性飛行中に月は軌道上を約59°進むため、月が「これから来る位置」を狙い、月が追いついてくるところに到達する。遠地点で再び噴射して月周回軌道に捕獲される。ここでの両 Δv は、カーネルの地球-月ランバートソルバーによる実際のパッチドコニック値だ——これはアポロからアルテミスまで、あらゆる有人月ミッションが飛ぶジオメトリである。"
+    "lab_goal_rtm_cislunar": "では地球中心座標系に移して、その旅路を見てみよう。低いパーキング軌道から近地点でTLIを噴射し、遠地点が月の距離にちょうど届く長い半楕円を惰性飛行する——約5日かけて坂を上る落下だ。しかし月そのものを狙うのではない。惰性飛行の間に月は軌道上を約62°進むので、月が「いる場所」ではなく「これから来る場所」を狙い、月が追いつくところで到達する。遠地点で再び噴射して月周回軌道に捕捉される。ここでの両方のΔvは、カーネルの地球-月ランバートソルバーによる実際のパッチドコニック値だ——これはアポロからアルテミスまで、あらゆる有人月ミッションが飛行する幾何学である。",
+    "lab_assume_patched_conic_insertion": "パッチドコニック法による投入（影響圏の瞬時的な受け渡し）"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -4729,7 +4731,8 @@
     "lab_f_cislunar_loi": "Δv الإدخال في مدار القمر (LOI)",
     "lab_f_cislunar_tof": "زمن الانسياب",
     "lab_assume_hohmann_translunar": "هندسة عبور قمري بأدنى طاقة (هوهمان)",
-    "lab_goal_rtm_cislunar": "الآن ضعها في الإطار المتمركز حول الأرض وشاهِد الرحلة. من مدار انتظار منخفض تُطلق الحقن العابر للقمر (TLI) عند الحضيض وتنساب على نصف قطع ناقص طويل يصل طرفه البعيد (الأوج) تماماً إلى مسافة القمر — سقوط صاعد يستمر خمسة أيام. لكنك لا تصوّب نحو القمر: فهو يتحرك نحو 59° على مداره بينما تنساب، لذا تصوّب نحو حيث سيكون وتصل عندما يلحق بك. عند الطرف البعيد تُطلق مرة أخرى لتُلتقط في مدار القمر. كِلا قيمتَي Δv هنا هما القيمتان الحقيقيتان للمخروط المرقّع من حلّال لامبرت أرض-قمر في النواة — هذه هي الهندسة التي تسلكها كل بعثة قمرية مأهولة من أبولو إلى أرتميس."
+    "lab_goal_rtm_cislunar": "الآن ضعها في الإطار المتمركز حول الأرض وشاهد الرحلة. من مدار انتظار منخفض تُطلق حقن المسار القمري TLI عند نقطة الحضيض وتنساب في نصف قطع ناقص طويل يبلغ طرفه البعيد (الأوج) مسافة القمر تمامًا — سقوط صعودي يستغرق نحو خمسة أيام. لكنك لا تصوّب نحو القمر: فهو يتحرك نحو 62° على طول مداره أثناء انسيابك، لذا تصوّب إلى حيث سيكون وتصل عندما يلحق بك. عند الطرف البعيد تُطلق مرة أخرى لتُلتقط في مدار قمري. كلا قيمتي Δv هنا هما القيمتان الحقيقيتان للمخروط المرقّع من حلّال لامبرت للأرض-القمر في النواة — هذه هي الهندسة التي تسلكها كل بعثة قمرية مأهولة من أبولو إلى أرتميس.",
+    "lab_assume_patched_conic_insertion": "إدخال المخروط المرقّع (تسليم فوري لمجال التأثير)"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -6202,7 +6205,8 @@
     "lab_f_cislunar_loi": "LOI Δv",
     "lab_f_cislunar_tof": "관성 비행 시간",
     "lab_assume_hohmann_translunar": "최소 에너지(호만) 달 천이 기하",
-    "lab_goal_rtm_cislunar": "이제 지구 중심 좌표계로 옮겨 여정을 직접 확인해 보세요. 저궤도 주차 궤도에서 근지점에 TLI를 분사하면, 원지점(먼 끝)이 달의 거리에 막 닿는 긴 반타원을 따라 관성 비행합니다 — 오르막을 5일간 떨어지는 셈이죠. 하지만 달을 향해 조준하지 않습니다: 비행하는 동안 달은 궤도를 따라 약 59° 이동하므로, 달이 있을 위치를 조준하고 달이 따라잡는 순간 도착합니다. 먼 끝에서 다시 분사하여 달 궤도에 포획됩니다. 여기 두 Δv는 모두 커널의 지구-달 램버트 솔버가 산출한 실제 패치드 코닉 값입니다 — 아폴로에서 아르테미스까지 모든 유인 달 탐사가 비행하는 바로 그 기하입니다."
+    "lab_goal_rtm_cislunar": "이제 지구 중심 좌표계에 놓고 여정을 확인하세요. 낮은 주차 궤도에서 근지점에서 달 전이 분사(TLI)를 실행하고, 원지점이 달 거리에 막 닿는 긴 반타원 궤도를 따라 관성 비행합니다 — 대략 5일간 오르막을 오르는 낙하입니다. 하지만 달을 직접 겨냥하지는 않습니다: 관성 비행하는 동안 달은 궤도를 따라 약 62° 이동하므로, 달이 있을 위치를 겨냥해 달이 따라잡는 순간 도달합니다. 궤도 끝에서 다시 분사하여 달 궤도에 포획됩니다. 여기 두 Δv는 모두 커널의 지구-달 램버트 솔버에서 나온 실제 패치드-코닉 값입니다 — 아폴로부터 아르테미스까지 모든 유인 달 임무가 비행하는 기하 구조입니다.",
+    "lab_assume_patched_conic_insertion": "패치드-코닉 삽입 (순간적 영향권 인계)"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -7498,7 +7502,8 @@
     "lab_f_cislunar_loi": "Mondorbit-Einschuss Δv",
     "lab_f_cislunar_tof": "Flugzeit",
     "lab_assume_hohmann_translunar": "Energieminimale (Hohmann) trans-lunare Geometrie",
-    "lab_goal_rtm_cislunar": "Nun verlege es ins erdzentrierte Bezugssystem und SIEH die Reise. Aus einer niedrigen Parkbahn zündest du im Perigäum die trans-lunare Injektion und gleitest eine lange Halbellipse entlang, deren fernes Ende (Apogäum) gerade die Distanz des Mondes erreicht — ein fünftägiger Aufstieg. Doch du zielst nicht AUF den Mond: er bewegt sich während deines Fluges rund 59° entlang seiner Bahn, also zielst du dorthin, wo er SEIN WIRD, und triffst ein, während er aufholt. Am fernen Ende zündest du erneut, um in die Mondumlaufbahn eingefangen zu werden. Beide Δv hier sind die echten Patched-Conic-Werte aus dem Erde-Mond-Lambert-Löser des Kernels — dies ist die Geometrie, die jede bemannte Mondmission von Apollo bis Artemis fliegt."
+    "lab_goal_rtm_cislunar": "Versetze es nun in das erdzentrierte Bezugssystem und ERLEBE die Reise. Aus einer niedrigen Parkbahn zündest du im Perigäum den Trans-Lunar-Injection-Impuls und driftest eine lange Halbellipse entlang, deren fernes Ende (Apogäum) gerade die Distanz des Mondes erreicht — ein etwa fünftägiger Aufstieg. Doch du zielst nicht AUF den Mond: er wandert während deines Fluges rund 62° entlang seiner Bahn, also zielst du dorthin, wo er SEIN WIRD, und triffst ein, während er dich einholt. Am fernen Ende zündest du erneut, um in die Mondumlaufbahn eingefangen zu werden. Beide Δv hier sind die echten Patched-Conic-Werte aus dem Erde-Mond-Lambert-Löser des Kernels — dies ist die Geometrie, die jede bemannte Mondmission von Apollo bis Artemis fliegt.",
+    "lab_assume_patched_conic_insertion": "Patched-Conic-Einschuss (instantane Übergabe der Einflusssphäre)"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -8733,7 +8738,8 @@
     "lab_f_cislunar_loi": "Δv d'insertion en orbite lunaire",
     "lab_f_cislunar_tof": "Durée de vol balistique",
     "lab_assume_hohmann_translunar": "Géométrie trans-lunaire à énergie minimale (Hohmann)",
-    "lab_goal_rtm_cislunar": "Passez maintenant dans le repère géocentrique et VISUALISEZ le voyage. Depuis une orbite d'attente basse, vous exécutez l'injection trans-lunaire au périgée et parcourez une longue demi-ellipse dont l'extrémité éloignée (apogée) atteint tout juste la distance de la Lune — une chute de cinq jours à contre-pente. Mais vous ne visez PAS la Lune : elle se déplace d'environ 59° le long de son orbite pendant votre trajet balistique, vous visez donc là où elle SERA et arrivez au moment où elle vous rattrape. À l'autre extrémité, vous rallumez le moteur pour être capturé en orbite lunaire. Les deux Δv indiqués ici sont les véritables valeurs des coniques raccordées issues du solveur de Lambert Terre-Lune du noyau — c'est la géométrie que suivent toutes les missions lunaires habitées, d'Apollo à Artemis."
+    "lab_goal_rtm_cislunar": "Placez-le maintenant dans le référentiel géocentrique et OBSERVEZ le trajet. Depuis une orbite d'attente basse, vous déclenchez l'injection trans-lunaire au périgée et parcourez en vol balistique une longue demi-ellipse dont l'extrémité (apogée) atteint tout juste la distance de la Lune — une montée d'environ cinq jours. Mais vous ne visez pas la Lune : elle parcourt environ 62° le long de son orbite pendant votre trajet, alors vous visez là où elle SERA et arrivez au moment où elle vous rattrape. À l'extrémité, vous déclenchez de nouveau la poussée pour être capturé en orbite lunaire. Les deux Δv sont ici les valeurs réelles en coniques raccordées issues du solveur de Lambert Terre-Lune du kernel — c'est la géométrie que suit chaque mission lunaire habitée, d'Apollo à Artemis.",
+    "lab_assume_patched_conic_insertion": "Insertion par coniques raccordées (transfert instantané de sphère d'influence)"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -9935,7 +9941,8 @@
     "lab_f_cislunar_loi": "Δv di inserimento in orbita lunare",
     "lab_f_cislunar_tof": "Tempo di coasting",
     "lab_assume_hohmann_translunar": "Geometria translunare a energia minima (Hohmann)",
-    "lab_goal_rtm_cislunar": "Ora poniti nel sistema di riferimento centrato sulla Terra e OSSERVA il viaggio. Da una bassa orbita di parcheggio esegui l'iniezione translunare al perigeo e percorri in coasting una lunga semiellisse la cui estremità lontana (apogeo) raggiunge appena la distanza della Luna — una caduta di cinque giorni in salita. Ma non punti VERSO la Luna: essa si sposta di circa 59° lungo la sua orbita mentre percorri il coasting, quindi punti dove SARÀ e arrivi mentre ti raggiunge. All'estremità lontana esegui di nuovo l'accensione per essere catturato in orbita lunare. Entrambi i Δv qui sono i valori reali a coniche raccordate dal risolutore di Lambert Terra-Luna del kernel — questa è la geometria che vola ogni missione lunare con equipaggio, da Apollo ad Artemis."
+    "lab_goal_rtm_cislunar": "Ora mettilo nel sistema di riferimento geocentrico e OSSERVA il viaggio. Da un'orbita di parcheggio bassa esegui l'iniezione translunare al perigeo e percorri per inerzia una lunga semi-ellisse la cui estremità lontana (apogeo) raggiunge appena la distanza della Luna — una caduta in salita di circa cinque giorni. Ma non punti VERSO la Luna: essa percorre circa 62° lungo la sua orbita mentre tu procedi per inerzia, quindi punti dove essa SARÀ e arrivi mentre ti raggiunge. All'estremità lontana esegui di nuovo l'accensione per essere catturato in orbita lunare. Entrambi i Δv qui sono i valori reali a coniche raccordate del risolutore di Lambert Terra-Luna del kernel — questa è la geometria che ogni missione lunare con equipaggio, da Apollo ad Artemis, percorre.",
+    "lab_assume_patched_conic_insertion": "Inserimento a coniche raccordate (passaggio di consegne istantaneo della sfera di influenza)"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -11136,7 +11143,8 @@
     "lab_f_cislunar_loi": "Δv de inserción en órbita lunar",
     "lab_f_cislunar_tof": "Tiempo de crucero",
     "lab_assume_hohmann_translunar": "Geometría translunar de mínima energía (Hohmann)",
-    "lab_goal_rtm_cislunar": "Ahora ponlo en el marco geocéntrico y VISUALIZA el viaje. Desde una órbita de aparcamiento baja ejecutas la inyección translunar en el perigeo y recorres una larga semielipse cuyo extremo lejano (apogeo) alcanza justo la distancia de la Luna: una caída cuesta arriba de cinco días. Pero no apuntas HACIA la Luna: se desplaza unos 59° a lo largo de su órbita mientras recorres la trayectoria, así que apuntas a dónde ESTARÁ y llegas justo cuando te alcanza. En el extremo lejano vuelves a encender los motores para ser capturado en órbita lunar. Ambos Δv aquí son los valores reales de cónicas empalmadas del solucionador de Lambert Tierra-Luna del kernel: es la geometría que vuela toda misión lunar tripulada, de Apolo a Artemis."
+    "lab_goal_rtm_cislunar": "Ahora sitúalo en el sistema de referencia centrado en la Tierra y VE el viaje. Desde una órbita de aparcamiento baja ejecutas la inyección translunar (TLI) en el perigeo y navegas por inercia una larga media elipse cuyo extremo lejano (apogeo) alcanza justo la distancia de la Luna: una caída cuesta arriba de unos cinco días. Pero no apuntas A la Luna: esta avanza unos 62° a lo largo de su órbita mientras navegas, así que apuntas a DONDE estará y llegas cuando te alcanza. En el extremo lejano vuelves a encender los motores para ser capturado en órbita lunar. Ambos Δv aquí son los valores reales de cónicas empalmadas del solucionador Lambert Tierra-Luna del kernel: esta es la geometría que vuela toda misión lunar tripulada, de Apolo a Artemis.",
+    "lab_assume_patched_conic_insertion": "Inserción por cónicas empalmadas (transferencia instantánea de esfera de influencia)"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -12346,7 +12354,8 @@
     "lab_f_cislunar_loi": "Maanbaaninsertie-Δv",
     "lab_f_cislunar_tof": "Overbrugtijd",
     "lab_assume_hohmann_translunar": "Minimale-energie (Hohmann) trans-lunaire geometrie",
-    "lab_goal_rtm_cislunar": "Zet het nu in het Aarde-gecentreerde stelsel en ZIE de reis. Vanuit een lage parkeerbaan geef je de trans-lunaire injectie bij het perigeum en zweef je langs een lange halve ellips waarvan het verre einde (apogeum) net de afstand van de Maan bereikt — een vijfdaagse val bergop. Maar je richt niet OP de Maan: die beweegt zo'n 59° langs haar baan terwijl je zweeft, dus je richt op waar ze ZAL zijn en arriveert terwijl ze je inhaalt. Aan het verre einde geef je opnieuw een impuls om in een maanbaan te worden gevangen. Beide Δv hier zijn de echte patched-conic-waarden uit de Aarde-Maan Lambert-oplosser van de kernel — dit is de geometrie die elke bemande maanmissie van Apollo tot Artemis vliegt."
+    "lab_goal_rtm_cislunar": "Zet het nu in het aardgecentreerde stelsel en ZIE de reis. Vanuit een lage parkeerbaan ontsteek je de trans-lunar injection bij het perigeum en zweef je langs een lange halve ellips waarvan het verre uiteinde (apogeum) net de afstand van de Maan bereikt — een ruwweg vijf dagen durende klim omhoog. Maar je richt niet OP de Maan: die beweegt zo'n 62° langs haar baan terwijl jij zweeft, dus richt je waar ze ZAL zijn en kom je aan terwijl ze je inhaalt. Aan het verre uiteinde ontsteek je opnieuw om in een maanbaan te worden ingevangen. Beide Δv hier zijn de echte patched-conic-waarden uit de Earth-Moon Lambert-solver van de kernel — dit is de geometrie die elke bemande maanmissie van Apollo tot Artemis vliegt.",
+    "lab_assume_patched_conic_insertion": "Patched-conic-insertie (instantane overdracht van invloedssfeer)"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -13820,7 +13829,8 @@
     "lab_f_cislunar_loi": "Δv выхода на окололунную орбиту (LOI)",
     "lab_f_cislunar_tof": "Время перелёта",
     "lab_assume_hohmann_translunar": "Транслунарная геометрия минимальной энергии (Гомана)",
-    "lab_goal_rtm_cislunar": "Теперь поместим это в геоцентрическую систему и УВИДИМ перелёт. С низкой опорной орбиты вы выполняете транслунарное выведение в перигее и летите по длинному полуэллипсу, дальний конец которого (апогей) едва достигает расстояния до Луны — пятидневное падение «в гору». Но вы целитесь не В Луну: пока вы летите, она проходит около 59° по своей орбите, поэтому вы целитесь туда, где она БУДЕТ, и прибываете, когда она вас догоняет. В дальнем конце вы выполняете ещё один манёвр, чтобы захватиться на окололунную орбиту. Оба Δv здесь — реальные значения метода состыкованных конических сечений из ламбертова решателя Земля-Луна в ядре — эту геометрию проходит каждая пилотируемая лунная миссия от Apollo до Artemis."
+    "lab_goal_rtm_cislunar": "Теперь перейдём в геоцентрическую систему отсчёта и УВИДИМ перелёт. С низкой опорной орбиты вы выполняете транслунарную инъекцию (TLI) в перигее и летите по длинной полуэллиптической траектории, дальний конец которой (апогей) едва достигает расстояния до Луны — примерно пятидневный подъём вверх. Но вы целитесь не В саму Луну: за время перелёта она проходит около 62° по своей орбите, поэтому вы целитесь туда, где она БУДЕТ, и прибываете, когда она вас нагоняет. В дальней точке вы снова включаете двигатель, чтобы захватиться на лунную орбиту. Оба значения Δv здесь — это реальные величины по методу склеенных конических сечений, полученные из решателя задачи Ламберта Земля—Луна в ядре; именно по этой геометрии летит каждая пилотируемая лунная миссия — от Apollo до Artemis.",
+    "lab_assume_patched_conic_insertion": "Выведение по методу склеенных конических сечений (мгновенная передача в сфере влияния)"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -15338,7 +15348,8 @@
     "lab_f_cislunar_loi": "LOI Δv",
     "lab_f_cislunar_tof": "滑行时间",
     "lab_assume_hohmann_translunar": "最小能量（霍曼）地月转移几何",
-    "lab_goal_rtm_cislunar": "现在把它放到以地球为中心的参考系里，直观看看这趟旅程。从低停泊轨道出发，你在近地点执行 TLI，然后沿一条长长的半椭圆滑行，其远端（远地点）恰好抵达月球轨道距离——这是一场为期五天的上坡下落。但你并不是瞄准月球本身：在你滑行期间，它沿轨道移动约 59°，所以你要瞄准它将要抵达的位置，在它追上来时会合。到达远端时你再次点火，被捕获进入月球轨道。这里的两个 Δv 都是内核地月兰伯特求解器给出的真实拼接圆锥曲线值——从阿波罗到阿尔忒弥斯，每一次载人登月任务飞的都是这套几何。"
+    "lab_goal_rtm_cislunar": "现在切换到地心参考系，直观感受整个旅程。从低停泊轨道出发，你在近地点点火进行月球转移轨道注入（TLI），随后沿一条漫长的半椭圆滑行，其远端（远地点）恰好触及月球距离——这是一段约五天的爬坡下落。但你并不瞄准月球本身：在你滑行期间它沿轨道移动约62°，因此你要瞄准它将要到达的位置，在它追上时抵达。在远端你再次点火，被月球捕获进入环月轨道。此处两次Δv均为内核地月Lambert求解器给出的真实拼接圆锥曲线值——从阿波罗到阿尔忒弥斯，每一次载人登月任务飞行的都是这套几何。",
+    "lab_assume_patched_conic_insertion": "拼接圆锥曲线入轨（瞬时影响球范围交接）"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -16727,7 +16738,8 @@
     "lab_f_cislunar_loi": "LOI Δv",
     "lab_f_cislunar_tof": "Време лета",
     "lab_assume_hohmann_translunar": "Транслунарна геометрија минималне енергије (Хоман)",
-    "lab_goal_rtm_cislunar": "Сада је поставите у референтни оквир са центром у Земљи и ВИДИТЕ пут. Из ниске паркинг-орбите палите транслунарну инјекцију (TLI) у перигеју и клизите дугом полуелипсом чији далеки крај (апогеј) тек досеже удаљеност Месеца — петодневни пад узбрдо. Али не циљате НА Месец: он се помери за око 59° дуж своје орбите док клизите, па циљате где ће ОН бити и стижете док вас он сустиже. На далеком крају поново палите да бисте били заробљени у лунарну орбиту. Оба Δv овде су стварне patched-conic вредности из Земља-Месец Ламберовог решавача у кернелу — ово је геометрија коју лети свака посадна лунарна мисија од Apollo до Artemis."
+    "lab_goal_rtm_cislunar": "Сада то стави у геоцентрични систем и ПОГЛЕДАЈ путовање. Из ниске паркинг-орбите палиш транслунарно убацивање (TLI) у перигеју и клизиш дугом полуелипсом чији далеки крај (апогеј) тек досеже удаљеност Месеца — то је отприлике петодневни успон узбрдо. Али не циљаш НА Месец: он пређе око 62° дуж своје орбите док клизиш, па циљаш тамо где ће он БИТИ и стижеш баш кад те сустигне. На далеком крају поново палиш да би био заробљен у месечеву орбиту. Оба Δv овде су стварне вредности спојених коника из кернеловог Земља-Месец Ламбертовог решавача — ово је геометрија којом лети свака посадна месечева мисија од Apolla до Artemisa.",
+    "lab_assume_patched_conic_insertion": "Убацивање методом спојених коника (тренутна предаја сфере утицаја)"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -17935,6 +17947,7 @@
     "lab_f_cislunar_loi": "Δv de inserção em órbita lunar",
     "lab_f_cislunar_tof": "Tempo de trânsito",
     "lab_assume_hohmann_translunar": "Geometria translunar de energia mínima (Hohmann)",
-    "lab_goal_rtm_cislunar": "Agora coloque isso no referencial centrado na Terra e VEJA a viagem. A partir de uma órbita de estacionamento baixa, você aciona a injeção translunar no perigeu e percorre uma longa meia-elipse cuja extremidade distante (apogeu) alcança exatamente a distância da Lua — uma queda ladeira acima de cinco dias. Mas você não mira NA Lua: ela avança cerca de 59° ao longo de sua órbita enquanto você viaja, então você mira onde ela ESTARÁ e chega quando ela o alcança. Na extremidade distante, você aciona novamente para ser capturado em órbita lunar. Ambos os Δv aqui são os valores reais de cônicas emendadas do solucionador de Lambert Terra-Lua do kernel — esta é a geometria que toda missão lunar tripulada, de Apollo a Artemis, executa."
+    "lab_goal_rtm_cislunar": "Agora coloque no referencial centrado na Terra e VEJA a viagem. A partir de uma órbita baixa de estacionamento, você aciona a injeção translunar no perigeu e faz uma longa meia-elipse cuja extremidade distante (apogeu) apenas alcança a distância da Lua — uma queda ladeira acima de cerca de cinco dias. Mas você não mira NA Lua: ela se desloca cerca de 62° ao longo de sua órbita enquanto você navega, então você mira onde ela ESTARÁ e chega quando ela o alcança. Na extremidade distante, você aciona novamente para ser capturado em órbita lunar. Ambos os Δv aqui são os valores reais de cônicas emendadas do solucionador de Lambert Terra-Lua do kernel — esta é a geometria que toda missão lunar tripulada, da Apollo à Artemis, executa.",
+    "lab_assume_patched_conic_insertion": "Inserção por cônicas emendadas (transferência instantânea de esfera de influência)"
   }
 }

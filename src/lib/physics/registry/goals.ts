@@ -147,6 +147,10 @@ export const landOnEarth: Goal = {
   tier: 2,
   prereqs: ['launch-a-rocket'],
   path: [
+    // The full "come home" sequence — the seven minutes the arc was missing: deorbit →
+    // re-entry heating → parachute → splashdown.
+    { formulaId: 'deorbit-burn', narrativeKey: 'lab.goal.loe.deorbit' },
+    { formulaId: 'entry-heating', narrativeKey: 'lab.goal.loe.entry' },
     {
       formulaId: 'terminal-velocity',
       narrativeKey: 'lab.goal.loe.capsule',
@@ -162,9 +166,10 @@ export const landOnEarth: Goal = {
       narrativeKey: 'lab.goal.loe.verdict',
       // A water splashdown / crushable couch survives ~12 m/s; the chute brings the
       // capsule to ~10 m/s, so Earth PASSES — the success case the identical Mars craft
-      // FAILS (M5). safeMs preset to the splashdown-survivable speed.
+      // FAILS (M5). safeMs preset to the splashdown-survivable speed. Wires the parachute
+      // rung (now index 3, after deorbit + entry).
       presetInputs: { safeMs: 12 },
-      wiresFrom: [{ fromStep: 1, output: 'vTerminal', toInput: 'terminalMs' }],
+      wiresFrom: [{ fromStep: 3, output: 'vTerminal', toInput: 'terminalMs' }],
     },
   ],
   connection: {
@@ -176,6 +181,7 @@ export const landOnEarth: Goal = {
       { labelKey: 'lab.conn.loe.friendship7', href: '/fly?mission=friendship-7', agency: 'NASA' },
       { labelKey: 'lab.conn.loe.dragon', href: '/fleet?id=crew-dragon', agency: 'SpaceX' },
       { labelKey: 'lab.conn.loe.soyuz', href: '/fleet?id=soyuz-ms', agency: 'Roscosmos' },
+      { labelKey: 'lab.conn.loe.orion', href: '/fleet?id=orion', agency: 'NASA' },
       { labelKey: 'lab.conn.loe.falcon9', href: '/fleet?id=falcon-9', agency: 'SpaceX' },
     ],
     nextKey: 'lab.conn.loe.next',

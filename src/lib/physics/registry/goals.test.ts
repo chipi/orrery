@@ -342,3 +342,61 @@ describe('scale-a-rocket · sizing, staging, engine + booster counts', () => {
     );
   });
 });
+
+/**
+ * M-return "come home" physics — the deorbit + re-entry front half of land-on-Earth.
+ * Locks the "surprisingly cheap deorbit / brutally energetic entry" numbers.
+ */
+describe('M-return · deorbit + entry heating', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('deorbit from a 400 km parking orbit costs only ~80 m/s (a nudge, not a dive)', () => {
+    const r = compute('deorbit-burn', {
+      body: 'earth',
+      parkingAltitudeKm: 400,
+      entryAltitudeKm: 120,
+    });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.deorbitDvKms.value).toBeGreaterThan(0.05);
+    expect(r.values.deorbitDvKms.value).toBeLessThan(0.12); // ~0.08 km/s
+  });
+
+  it('deorbit fails honest if the parking orbit is not above the entry altitude', () => {
+    expect(
+      compute('deorbit-burn', { body: 'earth', parkingAltitudeKm: 100, entryAltitudeKm: 120 })
+        .status.ok,
+    ).toBe(false);
+  });
+
+  it('entry at 7.8 km/s dumps ~30 MJ/kg and peaks near 8 g at a 3° path (Allen–Eggers)', () => {
+    const r = compute('entry-heating', {
+      entryVelocityKms: 7.8,
+      flightPathAngleDeg: 3,
+      scaleHeightKm: 7,
+    });
+    expect(r.values.energyPerKgMjkg.value).toBeCloseTo(30.4, 0); // ½·7800² J/kg
+    expect(r.values.peakDecelG.value).toBeCloseTo(8.5, 0);
+    // the corridor: a steeper entry spikes the g-load (and heating).
+    const steep = compute('entry-heating', {
+      entryVelocityKms: 7.8,
+      flightPathAngleDeg: 6,
+      scaleHeightKm: 7,
+    });
+    expect(steep.values.peakDecelG.value).toBeGreaterThan(r.values.peakDecelG.value * 1.9);
+  });
+
+  it('the M-return ladder runs deorbit → entry → parachute → splashdown (5 rungs, wire shifted)', () => {
+    const g = GOALS.get('land-on-earth')!;
+    expect(g.path.map((s) => s.formulaId)).toEqual([
+      'deorbit-burn',
+      'entry-heating',
+      'terminal-velocity',
+      'terminal-velocity',
+      'soft-landing-check',
+    ]);
+    const verdict = g.path.find((s) => s.formulaId === 'soft-landing-check')!;
+    expect(verdict.wiresFrom).toEqual([
+      { fromStep: 3, output: 'vTerminal', toInput: 'terminalMs' },
+    ]);
+  });
+});

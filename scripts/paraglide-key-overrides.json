@@ -1353,7 +1353,28 @@
     "lab_f_cluster_err_twr": "थ्रस्ट भार को नहीं हरा पाता — यह पैड नहीं छोड़ सकता।",
     "lab_goal_sar_starship": "अब तक का सबसे बड़ा निर्मित: SpaceX का Starship अपने Super Heavy बूस्टर पर। तैंतीस Raptor इंजन एक साथ दागते हैं — लगभग 76 मेगान्यूटन, Saturn V का दोगुना — ताकि ~5,000-टन के स्टैक को लगभग 1.5 के थ्रस्ट-टू-वेट पर उठाया जा सके। और किसी और के विपरीत, यह स्टेनलेस स्टील से बना है: एयरोस्पेस एल्युमिनियम से भारी (एक बदतर ε — पहली सीढ़ी का दंड, धातु से बना), पर सस्ता, मजबूत, और पुनः-प्रवेश झेलकर फिर से उड़ान भरने में सक्षम। यही पूरा दांव है: पूरी तरह पुन: उपयोगी रॉकेट पाने के लिए एक भारी रॉकेट उड़ाना।",
     "lab_conn_sar_starship": "Starship + Super Heavy — 33 Raptors, अब तक उड़ाया गया सबसे शक्तिशाली रॉकेट",
-    "lab_conn_sar_raptor": "Raptor — वह ~2.3 MN इंजन जिसे आप तैंतीस से गुणा करते हैं"
+    "lab_conn_sar_raptor": "Raptor — वह ~2.3 MN इंजन जिसे आप तैंतीस से गुणा करते हैं",
+    "lab_f_deorbit_title": "डीऑर्बिट बर्न",
+    "lab_f_deorbit_body": "जिस लोक की आप परिक्रमा कर रहे हैं",
+    "lab_f_deorbit_parking": "पार्किंग-कक्षा ऊँचाई",
+    "lab_f_deorbit_entry": "प्रवेश-इंटरफ़ेस ऊँचाई",
+    "lab_f_deorbit_dv": "डीऑर्बिट Δv",
+    "lab_f_deorbit_vcirc": "कक्षीय गति",
+    "lab_f_deorbit_vapo": "बर्न के बाद गति",
+    "lab_f_deorbit_err_altitude": "पार्किंग कक्षा प्रवेश ऊँचाई के ऊपर होनी चाहिए।",
+    "lab_f_entry_title": "प्रवेश तापन",
+    "lab_f_entry_velocity": "प्रवेश गति",
+    "lab_f_entry_angle": "उड़ान-पथ कोण (क्षैतिज से नीचे)",
+    "lab_f_entry_scale_height": "वायुमंडल स्केल ऊँचाई",
+    "lab_f_entry_energy": "छोड़ी जाने वाली ऊर्जा (MJ/kg)",
+    "lab_f_entry_decel": "शिखर मंदन (g)",
+    "lab_axis_entry_angle": "उड़ान-पथ कोण (°)",
+    "lab_axis_decel_g": "शिखर मंदन (g)",
+    "lab_assume_ballistic_entry": "बैलिस्टिक प्रवेश (कोई लिफ्ट नहीं; Allen–Eggers)",
+    "lab_assume_exponential_atmosphere": "घातांकी वायुमंडल (स्थिर स्केल ऊँचाई)",
+    "lab_goal_loe_deorbit": "घर वापसी की शुरुआत गति घटाने से होती है — बस थोड़ी सी। आपकी पार्किंग ऊँचाई पर एक अकेला प्रतिगामी बर्न, निम्न कक्षा से केवल ~80 m/s, कक्षा के दूरस्थ भाग को वायुमंडल की चोटी में गिरा देता है। आप नीचे उड़ते नहीं हैं; आप निम्न बिंदु को हवा में धकेलते हैं और खिंचाव (ड्रैग) को काम करने देते हैं।",
+    "lab_goal_loe_entry": "अब कठिन भाग। आप वायुमंडल से लगभग 8 km/s की गति से टकराते हैं, प्रति किलोग्राम लगभग 30 मेगाजूल ऊर्जा लिए हुए — समान द्रव्यमान के TNT की ऊर्जा से लगभग सात गुना — और हर जूल को ऊष्मा में बदलना होगा। कवच का काम है इसे हवा में झोंकना, कैप्सूल में नहीं। बहुत तीव्र कोण पर आएँ तो g-भार और तापन शिखर पर पहुँच जाते हैं (कोण को ऊपर खींचें और देखें); बहुत उथले कोण पर आएँ तो आप वापस अंतरिक्ष में उछल जाते हैं। वह संकरी पट्टी ही पुनःप्रवेश गलियारा है।",
+    "lab_conn_loe_orion": "Orion — चंद्रमा से तेज़ और अधिक गर्म वापसी के लिए बनाया गया हीट शील्ड"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -2570,7 +2591,28 @@
     "lab_f_cluster_err_twr": "推力が重量を上回っていない — 発射台を離れられません。",
     "lab_goal_sar_starship": "史上最大：SpaceXのStarshipをSuper Heavyブースターに載せた構成。33基のRaptorエンジンが同時に点火し — 約76メガニュートン、Saturn Vの2倍 — 約5,000トンのスタックを推力重量比1.5近くで持ち上げる。そして他のどことも違い、ステンレス鋼で作られている：航空宇宙用アルミより重く（εが悪化 — 第1段のペナルティ、金属製ゆえの）、しかし安価で頑丈、そして再突入に耐えて再び飛べる。それこそが賭けのすべて：完全再使用を得るために、より重いロケットを飛ばす。",
     "lab_conn_sar_starship": "Starship + Super Heavy — 33基のRaptor、史上最強のロケット",
-    "lab_conn_sar_raptor": "Raptor — 33倍する約2.3 MNのエンジン"
+    "lab_conn_sar_raptor": "Raptor — 33倍する約2.3 MNのエンジン",
+    "lab_f_deorbit_title": "軌道離脱バーン",
+    "lab_f_deorbit_body": "周回中の天体",
+    "lab_f_deorbit_parking": "パーキング軌道高度",
+    "lab_f_deorbit_entry": "エントリーインターフェース高度",
+    "lab_f_deorbit_dv": "軌道離脱 Δv",
+    "lab_f_deorbit_vcirc": "軌道速度",
+    "lab_f_deorbit_vapo": "バーン後の速度",
+    "lab_f_deorbit_err_altitude": "パーキング軌道はエントリー高度より上にある必要があります。",
+    "lab_f_entry_title": "エントリー加熱",
+    "lab_f_entry_velocity": "エントリー速度",
+    "lab_f_entry_angle": "経路角（水平からの下向き）",
+    "lab_f_entry_scale_height": "大気スケールハイト",
+    "lab_f_entry_energy": "放出すべきエネルギー（MJ/kg）",
+    "lab_f_entry_decel": "最大減速度（g）",
+    "lab_axis_entry_angle": "経路角（°）",
+    "lab_axis_decel_g": "最大減速度（g）",
+    "lab_assume_ballistic_entry": "弾道エントリー（揚力なし；Allen–Eggers）",
+    "lab_assume_exponential_atmosphere": "指数大気（スケールハイト一定）",
+    "lab_goal_loe_deorbit": "帰還はまず減速から——ほんのわずかに。パーキング高度で逆行方向に一度だけバーンするだけ、低軌道からわずか約80 m/sで、軌道の遠地点側が大気の上層まで落ち込みます。降下して飛ぶのではなく、低点を大気へ押し込み、あとは抗力に任せるのです。",
+    "lab_goal_loe_entry": "ここからが難所です。大気圏には秒速約8kmで突入し、1キログラムあたり約30メガジュール——同じ質量のTNTの約7倍のエネルギー——を抱えており、その全てのジュールを熱に変えなければなりません。シールドの役目は、それをカプセルではなく大気へ放出することです。突入角が急すぎるとg荷重と加熱が急上昇し（角度を上げて確認してみてください）、浅すぎると宇宙へ弾き返されてしまいます。その狭い帯こそが再突入コリドーです。",
+    "lab_conn_loe_orion": "Orion — 月からのより速く高温な帰還に対応した耐熱シールドを搭載"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -3967,7 +4009,28 @@
     "lab_f_cluster_err_twr": "الدفع لا يتغلب على الوزن — لا يمكنه مغادرة المنصة.",
     "lab_goal_sar_starship": "الأضخم على الإطلاق: مركبة Starship من SpaceX فوق معززها Super Heavy. ثلاثة وثلاثون محرك Raptor تشتعل دفعةً واحدة — نحو 76 ميغانيوتن، ضِعف Saturn V — لرفع كومة تزن نحو 5000 طن بنسبة دفع إلى وزن تقارب 1.5. وعلى خلاف الجميع، فهي مصنوعة من الفولاذ المقاوم للصدأ: أثقل من ألومنيوم الطيران (ε أسوأ — عقوبة الدرجة الأولى، مصنوعةٌ من المعدن)، لكنه رخيص ومتين وقادر على تحمّل العودة إلى الغلاف الجوي والطيران من جديد. وهذا هو الرهان كله: أطلِق صاروخًا أثقل لتحصل على واحدٍ قابل لإعادة الاستخدام بالكامل.",
     "lab_conn_sar_starship": "Starship + Super Heavy — 33 محرك Raptor، أقوى صاروخ طار على الإطلاق",
-    "lab_conn_sar_raptor": "Raptor — المحرك بقدرة نحو 2.3 ميغانيوتن الذي تضربه في ثلاثة وثلاثين"
+    "lab_conn_sar_raptor": "Raptor — المحرك بقدرة نحو 2.3 ميغانيوتن الذي تضربه في ثلاثة وثلاثين",
+    "lab_f_deorbit_title": "حرق الخروج من المدار",
+    "lab_f_deorbit_body": "العالم الذي تدور حوله",
+    "lab_f_deorbit_parking": "ارتفاع مدار الانتظار",
+    "lab_f_deorbit_entry": "ارتفاع سطح الدخول",
+    "lab_f_deorbit_dv": "Δv الخروج من المدار",
+    "lab_f_deorbit_vcirc": "السرعة المدارية",
+    "lab_f_deorbit_vapo": "السرعة بعد الحرق",
+    "lab_f_deorbit_err_altitude": "يجب أن يقع مدار الانتظار فوق ارتفاع الدخول.",
+    "lab_f_entry_title": "تسخين الدخول",
+    "lab_f_entry_velocity": "سرعة الدخول",
+    "lab_f_entry_angle": "زاوية مسار الطيران (تحت الأفق)",
+    "lab_f_entry_scale_height": "ارتفاع مقياس الغلاف الجوي",
+    "lab_f_entry_energy": "الطاقة الواجب تبديدها (MJ/kg)",
+    "lab_f_entry_decel": "ذروة التباطؤ (g)",
+    "lab_axis_entry_angle": "زاوية مسار الطيران (°)",
+    "lab_axis_decel_g": "ذروة التباطؤ (g)",
+    "lab_assume_ballistic_entry": "دخول قذفي (بدون رفع؛ آلن–إيغرز)",
+    "lab_assume_exponential_atmosphere": "غلاف جوي أُسّي (ارتفاع مقياس ثابت)",
+    "lab_goal_loe_deorbit": "تبدأ العودة إلى الوطن بالتباطؤ — بالكاد. حرقٌ واحد عكس اتجاه الحركة عند ارتفاع مدار الانتظار، بمقدار ~80 م/ث فقط من المدار المنخفض، يُهبط الجانب البعيد من المدار إلى قمة الغلاف الجوي. أنت لا تطير هبوطًا؛ بل تدفع النقطة المنخفضة نحو الهواء وتدع السحب يتولى الأمر.",
+    "lab_goal_loe_entry": "الآن الجزء الصعب. تصطدم بالغلاف الجوي بسرعة تقارب 8 كم/ث، حاملاً نحو 30 ميغاجول لكل كيلوغرام — أي حوالي سبعة أضعاف طاقة الكتلة نفسها من مادة TNT — وكل جول يجب أن يتحول إلى حرارة. مهمة الدرع الحراري أن يبدّد هذه الطاقة في الهواء، لا في الكبسولة. ادخل بزاوية شديدة الانحدار فترتفع فجأة قوة التسارع (g) والحرارة (اسحب الزاوية للأعلى وراقب)؛ وادخل بزاوية ضحلة جداً فترتد عائداً إلى الفضاء. ذلك النطاق الضيق هو ممر العودة.",
+    "lab_conn_loe_orion": "Orion — درع حراري صُمِّم للعودة الأسرع والأشد حرارة من القمر"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -5186,7 +5249,28 @@
     "lab_f_cluster_err_twr": "추력이 중량을 넘지 못합니다 — 발사대를 떠날 수 없습니다.",
     "lab_goal_sar_starship": "역사상 가장 거대한 로켓: Super Heavy 부스터에 얹힌 SpaceX의 Starship. 33기의 Raptor 엔진이 동시에 점화되어 — 약 76메가뉴턴, Saturn V의 두 배 — 약 5,000톤의 스택을 추력 대 중량비 약 1.5로 들어 올립니다. 그리고 다른 누구와도 달리, 이것은 스테인리스강으로 만들어졌습니다: 항공우주용 알루미늄보다 무겁지만(더 나쁜 ε — 금속으로 만든 첫 단의 대가), 값싸고 튼튼하며 재진입을 견디고 다시 날 수 있습니다. 그것이 도박의 전부입니다: 완전 재사용 가능한 로켓을 얻기 위해 더 무거운 로켓을 날린다는 것.",
     "lab_conn_sar_starship": "Starship + Super Heavy — Raptor 33기, 지금까지 날아오른 가장 강력한 로켓",
-    "lab_conn_sar_raptor": "Raptor — 서른셋 배로 곱하는 약 2.3 MN 엔진"
+    "lab_conn_sar_raptor": "Raptor — 서른셋 배로 곱하는 약 2.3 MN 엔진",
+    "lab_f_deorbit_title": "이탈 분사",
+    "lab_f_deorbit_body": "선회 중인 천체",
+    "lab_f_deorbit_parking": "주차 궤도 고도",
+    "lab_f_deorbit_entry": "진입 접점 고도",
+    "lab_f_deorbit_dv": "이탈 Δv",
+    "lab_f_deorbit_vcirc": "궤도 속도",
+    "lab_f_deorbit_vapo": "분사 후 속도",
+    "lab_f_deorbit_err_altitude": "주차 궤도는 진입 고도보다 높아야 합니다.",
+    "lab_f_entry_title": "진입 가열",
+    "lab_f_entry_velocity": "진입 속도",
+    "lab_f_entry_angle": "비행 경로각 (수평 아래)",
+    "lab_f_entry_scale_height": "대기 스케일 높이",
+    "lab_f_entry_energy": "방출할 에너지 (MJ/kg)",
+    "lab_f_entry_decel": "최대 감속도 (g)",
+    "lab_axis_entry_angle": "비행 경로각 (°)",
+    "lab_axis_decel_g": "최대 감속도 (g)",
+    "lab_assume_ballistic_entry": "탄도 진입 (양력 없음; Allen–Eggers)",
+    "lab_assume_exponential_atmosphere": "지수 대기 (일정한 스케일 높이)",
+    "lab_goal_loe_deorbit": "귀환은 속도를 줄이는 것에서 시작됩니다 — 아주 살짝. 주차 고도에서 저궤도 속도보다 겨우 ~80 m/s 낮추는 단 한 번의 역행 분사로 궤도 반대편이 대기 상층부로 떨어집니다. 아래로 날아가는 게 아니라, 궤도의 저점을 대기 속으로 살짝 밀어 넣고 항력이 나머지를 맡게 하는 것입니다.",
+    "lab_goal_loe_entry": "이제 어려운 부분입니다. 초속 약 8 km/s로 대기와 만나며, 킬로그램당 약 30메가줄 — 같은 질량의 TNT의 약 7배에 달하는 에너지 — 을 지니고 있고, 모든 줄은 열로 변해야 합니다. 열 차폐막의 임무는 이 열을 캡슐이 아닌 공기 중으로 방출하는 것입니다. 너무 가파르게 진입하면 G 하중과 가열이 급증하고(각도를 올려서 확인해 보세요), 너무 얕게 진입하면 우주로 튕겨 나갑니다. 그 좁은 구간이 바로 재진입 회랑입니다.",
+    "lab_conn_loe_orion": "Orion — 더 빠르고 뜨거운 달 귀환을 위해 설계된 열 차폐막"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -6369,7 +6453,8 @@
     "lab_body_venus": "Venus",
     "lab_body_mercury": "Merkur",
     "lab_mark_burn_depart": "Abflugzündung",
-    "lab_mark_burn_arrive": "Ankunftszündung"
+    "lab_mark_burn_arrive": "Ankunftszündung",
+    "lab_goal_loe_entry": "Jetzt kommt der schwierige Teil. Du triffst die Atmosphäre mit knapp 8 km/s und transportierst etwa 30 Megajoule pro Kilogramm – etwa siebenmal die Energie der gleichen TNT-Menge – und jedes Joule muss in Wärme umgewandelt werden. Die Aufgabe des Hitzeschilds ist, diese Energie in die Luft abzuleiten, nicht in die Kapsel. Kommst du zu steil herein, schnellen g-Belastung und Erhitzung in die Höhe (zieh den Winkel nach oben und beobachte); zu flach und du springst zurück ins All. Dieses enge Band ist der Wiedereintrittskanal."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -7515,7 +7600,8 @@
     "lab_body_venus": "Vénus",
     "lab_body_mercury": "Mercure",
     "lab_mark_burn_depart": "Allumage de départ",
-    "lab_mark_burn_arrive": "Allumage d'arrivée"
+    "lab_mark_burn_arrive": "Allumage d'arrivée",
+    "lab_goal_loe_entry": "Vient la partie difficile. Vous rencontrez l'atmosphère à près de 8 km/s, transportant environ 30 mégajoules par kilogramme — environ sept fois l'énergie de la même masse de TNT — et chaque joule doit devenir de la chaleur. Le rôle du bouclier thermique est de la dissiper dans l'air, pas dans la capsule. Un angle d'attaque trop raide et les g et l'échauffement explosent (augmentez l'angle et observez) ; trop peu profond et vous rebondissez hors de l'espace. Cette bande étroite est le couloir de rentrée."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -8628,7 +8714,8 @@
     "lab_body_venus": "Venere",
     "lab_body_mercury": "Mercurio",
     "lab_mark_burn_depart": "Accensione di partenza",
-    "lab_mark_burn_arrive": "Accensione di arrivo"
+    "lab_mark_burn_arrive": "Accensione di arrivo",
+    "lab_goal_loe_entry": "Ora arriva la parte difficile. Incontri l'atmosfera a quasi 8 km/s, trasportando circa 30 megajoule per chilogrammo — circa sette volte l'energia della stessa massa di TNT — e ogni joule deve diventare calore. Il compito dello scudo è scaricarlo nell'aria, non nella capsula. Se entri troppo ripido, il carico-g e il riscaldamento aumentano bruscamente (trascina l'angolo verso l'alto e osserva); se troppo dolce, rimbalzi indietro nello spazio. Quella striscia ristretta è il corridoio di rientro."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -9740,7 +9827,8 @@
     "lab_body_venus": "Venus",
     "lab_body_mercury": "Mercurio",
     "lab_mark_burn_depart": "Quemada de salida",
-    "lab_mark_burn_arrive": "Quemada de llegada"
+    "lab_mark_burn_arrive": "Quemada de llegada",
+    "lab_goal_loe_entry": "Ahora viene lo difícil. Te encuentras con la atmósfera a casi 8 km/s, llevando unos 30 megajulios por kilogramo — aproximadamente siete veces la energía de la misma masa de TNT — y cada julio debe convertirse en calor. El trabajo del escudo es disipar ese calor en el aire, no en la cápsula. Si entras demasiado pronunciado, la carga de g y el calentamiento se disparan (arrastra el ángulo hacia arriba y observa); si es demasiado suave, rebotas hacia el espacio. Esa banda estrecha es el corredor de reentrada."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -10859,7 +10947,8 @@
     "lab_body_venus": "Venus",
     "lab_body_mercury": "Mercurius",
     "lab_mark_burn_depart": "Vertrekmanoeuvre",
-    "lab_mark_burn_arrive": "Aankomstmanoeuvre"
+    "lab_mark_burn_arrive": "Aankomstmanoeuvre",
+    "lab_goal_loe_entry": "Nu komt het moeilijke gedeelte. Je raakt de atmosfeer met bijna 8 km/s, met ongeveer 30 megajoule per kilogram — ongeveer zeven keer de energie van dezelfde massa TNT — en elke joule moet in warmte worden omgezet. De taak van het schild is om die warmte in de lucht af te voeren, niet in de capsule. Kom je te steil binnen en de g-belasting en verhitting schieten omhoog (sleep de hoek omhoog en kijk); kom je te ondiep binnen en je stuitert terug de ruimte in. Die smalle band is de re-entrytunnel."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -12079,7 +12168,28 @@
     "lab_f_cluster_err_twr": "Тяга не превышает вес — ракета не сможет оторваться от стартового стола.",
     "lab_goal_sar_starship": "Самая большая из когда-либо построенных: Starship от SpaceX на ускорителе Super Heavy. Тридцать три двигателя Raptor работают одновременно — около 76 меганьютонов, вдвое больше Saturn V — чтобы поднять связку массой ~5000 тонн при тяговооружённости около 1,5. И, в отличие от всех остальных, она сделана из нержавеющей стали: тяжелее авиационного алюминия (хуже ε — штраф первой ступени, воплощённый в металле), но дешёвой, прочной и способной пережить вход в атмосферу и лететь снова. В этом вся ставка: запустить более тяжёлую ракету, чтобы получить полностью многоразовую.",
     "lab_conn_sar_starship": "Starship + Super Heavy — 33 Raptor, самая мощная летавшая ракета",
-    "lab_conn_sar_raptor": "Raptor — двигатель на ~2,3 МН, который вы умножаете на тридцать три"
+    "lab_conn_sar_raptor": "Raptor — двигатель на ~2,3 МН, который вы умножаете на тридцать три",
+    "lab_f_deorbit_title": "Тормозной импульс",
+    "lab_f_deorbit_body": "Тело, вокруг которого вы вращаетесь",
+    "lab_f_deorbit_parking": "Высота опорной орбиты",
+    "lab_f_deorbit_entry": "Высота границы входа в атмосферу",
+    "lab_f_deorbit_dv": "Δv торможения",
+    "lab_f_deorbit_vcirc": "Орбитальная скорость",
+    "lab_f_deorbit_vapo": "Скорость после импульса",
+    "lab_f_deorbit_err_altitude": "Опорная орбита должна располагаться выше высоты входа.",
+    "lab_f_entry_title": "Нагрев при входе",
+    "lab_f_entry_velocity": "Скорость входа",
+    "lab_f_entry_angle": "Угол наклона траектории (ниже горизонта)",
+    "lab_f_entry_scale_height": "Высота однородной атмосферы",
+    "lab_f_entry_energy": "Энергия к рассеянию (МДж/кг)",
+    "lab_f_entry_decel": "Пиковая перегрузка (g)",
+    "lab_axis_entry_angle": "Угол наклона траектории (°)",
+    "lab_axis_decel_g": "Пиковая перегрузка (g)",
+    "lab_assume_ballistic_entry": "Баллистический вход (без подъёмной силы; Аллен–Эггерс)",
+    "lab_assume_exponential_atmosphere": "Экспоненциальная атмосфера (постоянная высота однородной атмосферы)",
+    "lab_goal_loe_deorbit": "Возвращение домой начинается с торможения — совсем небольшого. Единственный ретроградный импульс на опорной высоте, всего ~80 м/с от низкой орбиты, опускает противоположную сторону орбиты в верхние слои атмосферы. Вы не спускаетесь активно; вы лишь подталкиваете нижнюю точку в атмосферу и позволяете сопротивлению сделать остальное.",
+    "lab_goal_loe_entry": "Теперь сложная часть. Вы встречаете атмосферу почти на 8 км/с, неся около 30 мегаджоулей на килограмм — примерно в семь раз больше энергии, чем у той же массы тротила, — и каждый джоуль должен превратиться в тепло. Задача щита — отдать его в воздух, а не в капсулу. Войдёте слишком круто — перегрузки и нагрев резко возрастут (потяните угол вверх и посмотрите); слишком полого — отскочите обратно в космос. Эта узкая полоса и есть коридор входа.",
+    "lab_conn_loe_orion": "Orion — теплозащитный экран, рассчитанный на более быстрое и горячее возвращение от Луны"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -13343,7 +13453,28 @@
     "lab_f_cluster_err_twr": "推力不敌重力——无法离开发射台。",
     "lab_goal_sar_starship": "有史以来最大的火箭：SpaceX 的 Starship 搭载 Super Heavy 助推器。三十三台 Raptor 发动机同时点火——约 76 兆牛，是 Saturn V 的两倍——以接近 1.5 的推重比托举约 5,000 吨的整体结构升空。与其他任何火箭都不同的是，它采用不锈钢建造：比航空铝更重（ε 更差——第一级的代价，用金属堆出来的），但便宜、坚固，且能承受再入并再次飞行。这就是整个赌注：让一枚更重的火箭飞起来，换来一枚完全可复用的火箭。",
     "lab_conn_sar_starship": "Starship + Super Heavy——33 台 Raptor，史上最强的飞行火箭",
-    "lab_conn_sar_raptor": "Raptor——那台约 2.3 MN 的发动机，你要乘以三十三"
+    "lab_conn_sar_raptor": "Raptor——那台约 2.3 MN 的发动机，你要乘以三十三",
+    "lab_f_deorbit_title": "离轨点火",
+    "lab_f_deorbit_body": "所环绕的天体",
+    "lab_f_deorbit_parking": "停泊轨道高度",
+    "lab_f_deorbit_entry": "再入界面高度",
+    "lab_f_deorbit_dv": "离轨 Δv",
+    "lab_f_deorbit_vcirc": "轨道速度",
+    "lab_f_deorbit_vapo": "点火后速度",
+    "lab_f_deorbit_err_altitude": "停泊轨道必须高于再入高度。",
+    "lab_f_entry_title": "再入加热",
+    "lab_f_entry_velocity": "再入速度",
+    "lab_f_entry_angle": "航迹角（低于水平线）",
+    "lab_f_entry_scale_height": "大气标高",
+    "lab_f_entry_energy": "需耗散能量（MJ/kg）",
+    "lab_f_entry_decel": "峰值减速度（g）",
+    "lab_axis_entry_angle": "航迹角（°）",
+    "lab_axis_decel_g": "峰值减速度（g）",
+    "lab_assume_ballistic_entry": "弹道式再入（无升力；Allen–Eggers）",
+    "lab_assume_exponential_atmosphere": "指数大气（标高恒定）",
+    "lab_goal_loe_deorbit": "返回之路始于减速——仅需一点点。在停泊高度做一次逆行点火，只需约 80 m/s，就能把轨道远端压入大气层顶部。你并非飞下来，而是把轨道低点推入大气，然后交给阻力接手。",
+    "lab_goal_loe_entry": "现在是最难的部分。你以近 8 km/s 的速度冲入大气层，每千克携带约 30 兆焦耳的能量——约为同等质量 TNT 的七倍——而每一焦耳都必须转化为热量。防热盾的任务是把这些能量抛入空气中，而非留给返回舱。进入角太陡，过载和热流会飙升（把角度拉大并观察）；太浅，则会被弹回太空。那道狭窄的区间就是再入走廊。",
+    "lab_conn_loe_orion": "Orion——为应对更快、更高温的月球返回而设计的隔热罩"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -14478,7 +14609,28 @@
     "lab_f_cluster_err_twr": "Потисак не надјачава тежину — не може да напусти рампу.",
     "lab_goal_sar_starship": "Највећа икада направљена: SpaceX-ов Starship на бустеру Super Heavy. Тридесет три мотора Raptor пале се истовремено — око 76 меганутна, двоструко више од Saturn V — да подигну склоп од ~5.000 тона уз однос потиска и тежине близу 1,5. И за разлику од свих осталих, направљена је од нерђајућег челика: тежег од ваздухопловног алуминијума (лошији ε — казна прве степенице, начињена од метала), али јефтиног, издржљивог и способног да преживи поновни улазак и поново полети. У томе је цела опклада: полети тежу ракету да би добио потпуно вишекратну.",
     "lab_conn_sar_starship": "Starship + Super Heavy — 33 Raptora, најмоћнија ракета икада полетела",
-    "lab_conn_sar_raptor": "Raptor — мотор од ~2,3 MN који множиш са тридесет три"
+    "lab_conn_sar_raptor": "Raptor — мотор од ~2,3 MN који множиш са тридесет три",
+    "lab_f_deorbit_title": "Маневар за напуштање орбите",
+    "lab_f_deorbit_body": "Тело око кога кружите",
+    "lab_f_deorbit_parking": "Висина паркинг-орбите",
+    "lab_f_deorbit_entry": "Висина уласка у атмосферу",
+    "lab_f_deorbit_dv": "Δv за напуштање орбите",
+    "lab_f_deorbit_vcirc": "Орбитална брзина",
+    "lab_f_deorbit_vapo": "Брзина након маневра",
+    "lab_f_deorbit_err_altitude": "Паркинг-орбита мора бити изнад висине уласка.",
+    "lab_f_entry_title": "Загревање при уласку",
+    "lab_f_entry_velocity": "Брзина уласка",
+    "lab_f_entry_angle": "Угао путање лета (испод хоризонта)",
+    "lab_f_entry_scale_height": "Скалирана висина атмосфере",
+    "lab_f_entry_energy": "Енергија за одвођење (MJ/kg)",
+    "lab_f_entry_decel": "Максимално успорење (g)",
+    "lab_axis_entry_angle": "Угао путање лета (°)",
+    "lab_axis_decel_g": "Максимално успорење (g)",
+    "lab_assume_ballistic_entry": "Балистички улазак (без узгона; Allen–Eggers)",
+    "lab_assume_exponential_atmosphere": "Експоненцијална атмосфера (константна скалирана висина)",
+    "lab_goal_loe_deorbit": "Повратак кући почиње успоравањем — једва. Један ретроградни маневар на паркинг-висини, свега ~80 m/s од ниске орбите, спушта супротну страну орбите до врха атмосфере. Не летите наниже; само гурнете најнижу тачку у ваздух и препустите отпору да преузме.",
+    "lab_goal_loe_entry": "Сада долази тежак део. У атмосферу улазиш брзином од скоро 8 km/s, носећи око 30 мегаџула по килограму — око седам пута више енергије од исте масе TNT-а — и сваки џул мора да се претвори у топлоту. Задатак штита је да је преда ваздуху, а не капсули. Уђеш ли престрмо, преоптерећење и загревање нагло скачу (повуци угао навише и посматрај); прешироко и одбијаш се назад у свемир. Тај узак појас је коридор за поновни улазак.",
+    "lab_conn_loe_orion": "Orion — топлотни штит направљен за бржи, топлији повратак са Месеца"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -15597,6 +15749,7 @@
     "lab_body_venus": "Vênus",
     "lab_body_mercury": "Mercúrio",
     "lab_mark_burn_depart": "Queimada de partida",
-    "lab_mark_burn_arrive": "Queimada de chegada"
+    "lab_mark_burn_arrive": "Queimada de chegada",
+    "lab_goal_loe_entry": "Agora vem a parte difícil. Você encontra a atmosfera a quase 8 km/s, carregando cerca de 30 megajoules por quilograma — aproximadamente sete vezes a energia da mesma massa de TNT — e cada joule deve se transformar em calor. O trabalho do escudo é descarregar isso no ar, não na cápsula. Entre muito inclinado e a carga g e o aquecimento disparam (arraste o ângulo para cima e observe); muito raso e você ricocheteia de volta para o espaço. Essa faixa estreita é o corredor de reentrada."
   }
 }

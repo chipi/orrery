@@ -1573,6 +1573,208 @@ export const dvToOrbit: FormulaDef<{ body: string; altitudeKm: number; lossesKms
   },
 };
 
+// ─── "Come home" (M-return) — deorbit + re-entry heating, before the parachute ──
+
+/**
+ * Deorbit burn (M-return rung 1) — coming home starts by slowing down. A single retrograde
+ * burn at your parking altitude lowers the FAR side of the orbit into the top of the
+ * atmosphere; from there, drag does the rest. It's a Hohmann lowering: Δv = v_circ −
+ * v_apoapsis of the transfer ellipse whose periapsis grazes the entry altitude. Surprisingly
+ * cheap — ~80 m/s from low orbit. Reuses circular + vis-viva (any body with an atmosphere).
+ */
+export const deorbitBurn: FormulaDef<{
+  body: string;
+  parkingAltitudeKm: number;
+  entryAltitudeKm: number;
+}> = {
+  id: 'deorbit-burn',
+  titleKey: 'lab.f.deorbit.title',
+  domain: 'descent',
+  tier: 6,
+  prereqs: ['orbital-velocity'],
+  latex: '\\Delta v = v_{\\text{circ}} - v_{\\text{apo}}',
+  inputs: [
+    {
+      key: 'body',
+      labelKey: 'lab.f.deorbit.body',
+      units: '',
+      kind: 'body',
+      default: 'earth',
+      bodyIds: [...ORBIT_BODY_IDS],
+    },
+    {
+      key: 'parkingAltitudeKm',
+      labelKey: 'lab.f.deorbit.parking',
+      units: 'km',
+      kind: 'number',
+      default: 400,
+      min: 150,
+      max: 2000,
+    },
+    {
+      key: 'entryAltitudeKm',
+      labelKey: 'lab.f.deorbit.entry',
+      units: 'km',
+      kind: 'number',
+      default: 120,
+      min: 80,
+      max: 200,
+    },
+  ],
+  outputs: [{ key: 'deorbitDvKms', labelKey: 'lab.f.deorbit.dv', units: 'km/s' }],
+  compute: ({ body, parkingAltitudeKm, entryAltitudeKm }) => {
+    const loc = locationModel(body);
+    if (!loc) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions: ['lab.assume.impulsive-burn'],
+      } satisfies FormulaResult;
+    }
+    if (
+      !Number.isFinite(parkingAltitudeKm) ||
+      !Number.isFinite(entryAltitudeKm) ||
+      parkingAltitudeKm <= entryAltitudeKm
+    ) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.deorbit.err-altitude' },
+        assumptions: ['lab.assume.impulsive-burn'],
+      } satisfies FormulaResult;
+    }
+    const r1 = loc.rKm + parkingAltitudeKm;
+    const rEntry = loc.rKm + entryAltitudeKm;
+    const a = (r1 + rEntry) / 2;
+    const vCirc = circularVelocityKms(r1, loc.muKm3s2);
+    const vApo = visVivaKms(r1, a, loc.muKm3s2); // speed at r1 (apoapsis of the lowering ellipse)
+    const dv = vCirc - vApo;
+    return {
+      values: { deorbitDvKms: { value: dv, units: 'km/s' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.impulsive-burn', 'lab.assume.point-mass'],
+      figure: {
+        kind: 'dv-waterfall',
+        provenance: { fidelity: 'computed', module: 'mechanics/orbits' },
+        assumptions: ['lab.assume.impulsive-burn'],
+        segments: [
+          { labelKey: 'lab.f.deorbit.vcirc', dv: vCirc, kind: 'cost' },
+          { labelKey: 'lab.f.deorbit.vapo', dv: vApo, kind: 'gain' },
+        ],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Entry heating (M-return rung 2) — the "seven minutes". You hit the atmosphere at nearly
+ * orbital speed carrying ½v² of kinetic energy per kg — ~30 MJ/kg at 7.8 km/s, about seven
+ * times the energy of the same mass of TNT — and ALL of it must become heat, dumped into the
+ * air by the shield, not the capsule. The Allen-Eggers ballistic result gives the peak
+ * deceleration, a_peak = v²·sinγ/(2·e·H), independent of the vehicle's mass: come in too
+ * steep and both g-load and heating spike; too shallow and you skip back out. That band is
+ * the re-entry corridor.
+ */
+export const entryHeating: FormulaDef<{
+  entryVelocityKms: number;
+  flightPathAngleDeg: number;
+  scaleHeightKm: number;
+}> = {
+  id: 'entry-heating',
+  titleKey: 'lab.f.entry.title',
+  domain: 'descent',
+  tier: 7,
+  prereqs: ['deorbit-burn'],
+  latex: 'a_{\\text{peak}} = \\dfrac{v^2\\sin\\gamma}{2eH},\\quad E = \\tfrac12 v^2',
+  inputs: [
+    {
+      key: 'entryVelocityKms',
+      labelKey: 'lab.f.entry.velocity',
+      units: 'km/s',
+      kind: 'number',
+      default: 7.8,
+      min: 1,
+      max: 15,
+    },
+    {
+      key: 'flightPathAngleDeg',
+      labelKey: 'lab.f.entry.angle',
+      units: 'deg',
+      kind: 'number',
+      default: 3,
+      min: 0.5,
+      max: 10,
+      step: 0.5,
+    },
+    {
+      key: 'scaleHeightKm',
+      labelKey: 'lab.f.entry.scale-height',
+      units: 'km',
+      kind: 'number',
+      default: 7,
+      min: 3,
+      max: 20,
+    },
+  ],
+  outputs: [
+    { key: 'energyPerKgMjkg', labelKey: 'lab.f.entry.energy', units: '' },
+    { key: 'peakDecelG', labelKey: 'lab.f.entry.decel', units: '' },
+  ],
+  compute: ({ entryVelocityKms, flightPathAngleDeg, scaleHeightKm }) => {
+    if (
+      !Number.isFinite(entryVelocityKms) ||
+      !Number.isFinite(flightPathAngleDeg) ||
+      !Number.isFinite(scaleHeightKm) ||
+      entryVelocityKms <= 0 ||
+      flightPathAngleDeg <= 0 ||
+      scaleHeightKm <= 0
+    ) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.escape.err-input' },
+        assumptions: ['lab.assume.ballistic-entry'],
+      } satisfies FormulaResult;
+    }
+    const v = entryVelocityKms * 1000; // m/s
+    const gamma = (flightPathAngleDeg * Math.PI) / 180;
+    const H = scaleHeightKm * 1000; // m
+    const energyMjkg = (0.5 * v * v) / 1e6;
+    const peakG = (v * v * Math.sin(gamma)) / (2 * Math.E * H) / G0;
+    const points: Vec2[] = [];
+    for (let deg = 0.5; deg <= 10.001; deg += 0.5) {
+      points.push({
+        x: deg,
+        y: (v * v * Math.sin((deg * Math.PI) / 180)) / (2 * Math.E * H) / G0,
+      });
+    }
+    return {
+      values: {
+        energyPerKgMjkg: { value: energyMjkg, units: '' },
+        peakDecelG: { value: peakG, units: '' },
+      },
+      status: { ok: true },
+      assumptions: ['lab.assume.ballistic-entry', 'lab.assume.exponential-atmosphere'],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'mechanics/atmosphere' },
+        assumptions: ['lab.assume.ballistic-entry'],
+        x: { labelKey: 'lab.axis.entry-angle', units: 'deg' },
+        y: { labelKey: 'lab.axis.decel-g', units: '' },
+        series: [{ points }],
+        marks: [
+          {
+            at: { x: flightPathAngleDeg, y: peakG },
+            labelKey: 'lab.mark.you-are-here',
+            kind: 'point',
+          },
+        ],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
 // ─── "Scale a rocket" — payload → mass → thrust → engines → stages → boosters ──
 
 /**
@@ -2529,6 +2731,8 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [softLandingCheck.id, softLandingCheck],
   [airbagsCheck.id, airbagsCheck],
   [retroDescent.id, retroDescent],
+  [deorbitBurn.id, deorbitBurn],
+  [entryHeating.id, entryHeating],
   [solarEscapeVelocity.id, solarEscapeVelocity],
   [heliocentricEscapeDv.id, heliocentricEscapeDv],
   [oberthDepartureDv.id, oberthDepartureDv],

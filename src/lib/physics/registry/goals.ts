@@ -131,6 +131,37 @@ export const scaleARocket: Goal = {
 };
 
 /**
+ * "Reach orbit" — the step every mission needs before it can go anywhere, and the one the Lab
+ * was skipping. Launching a rocket is not the same as reaching orbit: orbit is SPEED, not
+ * height, and getting there costs far more than the ~7.8 km/s of orbital speed. This goal flies
+ * the kernel's real gravity-turn integrator to reveal the "Δv tax" — gravity, drag and steering
+ * losses that push the true cost to ~9.4 km/s. The learner manipulates payload + target
+ * altitude and watches a heavy enough payload fall short of orbit.
+ */
+export const reachOrbit: Goal = {
+  id: 'reach-orbit',
+  titleKey: 'lab.goal.reach-orbit.title',
+  family: 'spaceflight',
+  tier: 1,
+  prereqs: ['launch-a-rocket'],
+  path: [
+    { formulaId: 'orbital-velocity', narrativeKey: 'lab.goal.ro.speed' },
+    { formulaId: 'ascent-to-orbit', narrativeKey: 'lab.goal.ro.ascent' },
+  ],
+  connection: {
+    whyKey: 'lab.conn.ro.why',
+    hookKey: 'lab.conn.ro.hook',
+    links: [
+      { labelKey: 'lab.conn.ro.sputnik', href: '/fly?mission=sputnik1', agency: 'Roscosmos' },
+      { labelKey: 'lab.conn.ro.vostok1', href: '/fly?mission=vostok-1', agency: 'Roscosmos' },
+      { labelKey: 'lab.conn.ro.falcon9', href: '/fleet?id=falcon-9', agency: 'SpaceX' },
+      { labelKey: 'lab.conn.ro.iss', href: '/iss' },
+    ],
+    nextKey: 'lab.conn.ro.next',
+  },
+};
+
+/**
  * M1.5 "land on Earth" — the return leg the very first spaceflights flew: ride a
  * rocket up, fall back under a parachute. It reuses the SAME terminal-velocity +
  * soft-landing-check as "land on Mars", but on Earth. The lesson: Earth's thick air
@@ -715,6 +746,7 @@ export const planAMission: Goal = {
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
   [scaleARocket.id, scaleARocket],
+  [reachOrbit.id, reachOrbit],
   [landOnEarth.id, landOnEarth],
   [motionFirstPrinciples.id, motionFirstPrinciples],
   [reachTheMoon.id, reachTheMoon],

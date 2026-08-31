@@ -212,6 +212,21 @@ export type FigureSpec = FigureBase &
         tliKms: number; // trans-lunar injection Δv from LEO
         loiKms: number; // lunar-orbit-insertion Δv
       }
+    // Ascent trajectory (reach-orbit) — the real gravity-turn from the kernel's ascent
+    // integrator: the flight path (downrange × altitude) coloured by active stage, the
+    // staging/Max-Q/insertion events, and the Δv loss ledger (gravity + drag + steering)
+    // that is the whole reason orbit costs ~9.4 km/s for 7.8 km/s of orbital speed.
+    | {
+        kind: 'ascent-trajectory';
+        points: { x: number; y: number; stage: number }[]; // downrange km, altitude km, stage idx
+        events: { type: string; x: number; y: number }[];
+        losses: { gravityKms: number; dragKms: number; steeringKms: number };
+        idealDvKms: number;
+        orbitAltKm: number;
+        reachedOrbit: boolean;
+        finalSpeedKms: number;
+        targetSpeedKms: number;
+      }
   );
 
 // ─── Goal / GoalStep (curriculum) + Card / Notebook (user documents) ────────

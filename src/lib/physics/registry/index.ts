@@ -37,6 +37,8 @@ import { computePorkchopGrid, DV_FAILED } from '../transfer/lambert-grid';
 import type { DestinationId } from '../transfer/lambert-grid.constants';
 import { geoTransferDv } from '../transfer/lambert-geocentric';
 import { EPOCH_JD, moonEclipticXYKm, R_LEO } from '../transfer/lambert-geocentric-grid.constants';
+import { integrateAscent, circularSpeed } from '../ascent/ascent-physics';
+import { buildGenericProfile } from '../ascent/launch-profile-registry';
 import {
   MOON_ORBIT_RADIUS_KM,
   MU_SUN_KM3_S2,
@@ -1402,6 +1404,126 @@ export const cislunarTransfer: FormulaDef<Record<string, never>> = {
         tliKms: gt.tli,
         loiKms: gt.loi,
       },
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Ascent to orbit (reach-orbit) — the missing step between "launch a rocket" and going
+ * anywhere: actually PUT SOMETHING IN ORBIT. Runs the kernel's real gravity-turn ASCENT
+ * INTEGRATOR (`integrateAscent`, the same one /fly and /plan fly), which accounts for the
+ * three Δv losses a closed-form Tsiolkovsky can't: GRAVITY (thrust wasted fighting weight
+ * on the climb), DRAG (the atmosphere), and STEERING (the cosine loss of pitching over).
+ * Those losses are the whole reason orbit costs ~9.4 km/s when orbital speed is only 7.8 —
+ * the "Δv tax" the Lab could never show before. The engine (a generic 2-stage medium-lift
+ * stack) is fixed; the user manipulates the PAYLOAD and the TARGET ALTITUDE, and a heavy
+ * enough payload FAILS to reach orbit — fail-honest, with the partial trajectory still drawn.
+ */
+export const ascentToOrbit: FormulaDef<{ payloadKg: number; targetOrbitAltKm: number }> = {
+  id: 'ascent-to-orbit',
+  titleKey: 'lab.f.ascent.title',
+  domain: 'ascent',
+  tier: 2,
+  prereqs: ['tsiolkovsky', 'dv-to-orbit'],
+  latex:
+    '\\Delta v_{\\text{needed}} = v_{\\text{orbit}} + \\ell_{\\text{grav}} + \\ell_{\\text{drag}} + \\ell_{\\text{steer}}',
+  inputs: [
+    {
+      key: 'payloadKg',
+      labelKey: 'lab.f.ascent.payload',
+      units: 'kg',
+      kind: 'number',
+      default: 6000,
+      min: 1000,
+      max: 20000,
+      step: 500,
+    },
+    {
+      key: 'targetOrbitAltKm',
+      labelKey: 'lab.f.ascent.altitude',
+      units: 'km',
+      kind: 'number',
+      default: 200,
+      min: 150,
+      max: 500,
+      step: 10,
+    },
+  ],
+  outputs: [
+    { key: 'gravityLossKms', labelKey: 'lab.f.ascent.gravity', units: 'km/s' },
+    { key: 'dragLossKms', labelKey: 'lab.f.ascent.drag', units: 'km/s' },
+    { key: 'steeringLossKms', labelKey: 'lab.f.ascent.steering', units: 'km/s' },
+    { key: 'finalSpeedKms', labelKey: 'lab.f.ascent.finalspeed', units: 'km/s' },
+  ],
+  compute: ({ payloadKg, targetOrbitAltKm }) => {
+    if (
+      !Number.isFinite(payloadKg) ||
+      !Number.isFinite(targetOrbitAltKm) ||
+      payloadKg <= 0 ||
+      targetOrbitAltKm <= 0
+    ) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.planar-ascent'],
+      } satisfies FormulaResult;
+    }
+    const targetOrbitAltM = targetOrbitAltKm * 1000;
+    const profile = { ...buildGenericProfile('ascent-demo'), payloadKg, targetOrbitAltM };
+    const s = integrateAscent(profile);
+    const targetSpeedKms = circularSpeed(targetOrbitAltM) / 1000; // circularSpeed is m/s
+
+    // Down-sample the trajectory (~535 states → ~110 points) for the figure.
+    const step = Math.max(1, Math.round(s.states.length / 110));
+    const points = s.states
+      .filter((_, i) => i % step === 0 || i === s.states.length - 1)
+      .map((st) => ({ x: st.downrangeKm, y: st.altKm, stage: st.stageIndex }));
+    // Map each event to the trajectory position at its time.
+    const evAt = (tt: number): { x: number; y: number } => {
+      let best = s.states[0];
+      for (const st of s.states) if (Math.abs(st.t - tt) < Math.abs(best.t - tt)) best = st;
+      return { x: best.downrangeKm, y: best.altKm };
+    };
+    const events = s.events.map((e) => ({ type: e.type, ...evAt(e.t) }));
+
+    const values: Record<string, Quantity> = {
+      gravityLossKms: { value: s.losses.gravityKms, units: 'km/s' },
+      dragLossKms: { value: s.losses.dragKms, units: 'km/s' },
+      steeringLossKms: { value: s.losses.steeringKms, units: 'km/s' },
+      finalSpeedKms: { value: s.finalSpeedKms, units: 'km/s' },
+    };
+    const figure = {
+      kind: 'ascent-trajectory' as const,
+      provenance: { fidelity: 'computed' as const, module: 'ascent/ascent-physics' },
+      assumptions: ['lab.assume.planar-ascent', 'lab.assume.exponential-atmosphere'],
+      points,
+      events,
+      losses: {
+        gravityKms: s.losses.gravityKms,
+        dragKms: s.losses.dragKms,
+        steeringKms: s.losses.steeringKms,
+      },
+      idealDvKms: s.idealDvKms,
+      orbitAltKm: targetOrbitAltKm,
+      reachedOrbit: s.reachedOrbit,
+      finalSpeedKms: s.finalSpeedKms,
+      targetSpeedKms,
+    };
+    // Fail-honest when the stack can't make orbit — but still draw how far it got.
+    if (!s.reachedOrbit) {
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.ascent.err-no-orbit' },
+        assumptions: ['lab.assume.planar-ascent', 'lab.assume.exponential-atmosphere'],
+        figure,
+      } satisfies FormulaResult;
+    }
+    return {
+      values,
+      status: { ok: true },
+      assumptions: ['lab.assume.planar-ascent', 'lab.assume.exponential-atmosphere'],
+      figure,
     } satisfies FormulaResult;
   },
 };
@@ -4542,6 +4664,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [launchWindow.id, launchWindow],
   [porkchop.id, porkchop],
   [cislunarTransfer.id, cislunarTransfer],
+  [ascentToOrbit.id, ascentToOrbit],
   [terminalVelocity.id, terminalVelocity],
   [softLandingCheck.id, softLandingCheck],
   [airbagsCheck.id, airbagsCheck],

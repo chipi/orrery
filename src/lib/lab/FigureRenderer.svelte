@@ -24,6 +24,7 @@
   import EntryCorridorCanvas from './EntryCorridorCanvas.svelte';
   import PorkchopCanvas from './PorkchopCanvas.svelte';
   import CislunarEciCanvas from './CislunarEciCanvas.svelte';
+  import AscentTrajectoryCanvas from './AscentTrajectoryCanvas.svelte';
   import {
     fidelityStyle,
     fidelityLabel,
@@ -166,6 +167,8 @@
   <PorkchopCanvas {figure} {t} {ariaLabelKey} />
 {:else if figure.kind === 'cislunar-eci'}
   <CislunarEciCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'ascent-trajectory'}
+  <AscentTrajectoryCanvas {figure} {t} {ariaLabelKey} />
 {:else}
   <svg
     role="img"

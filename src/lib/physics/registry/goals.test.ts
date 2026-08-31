@@ -958,3 +958,46 @@ describe('Family C plan-a-mission · assist-chain physics + capstone wiring', ()
     ).toBe(false);
   });
 });
+
+/**
+ * Reach-orbit — the real gravity-turn from the kernel's ascent integrator. Orbit is SPEED, and
+ * getting there costs the 7.8 km/s of orbital speed PLUS the gravity/drag/steering losses; a
+ * heavy enough payload fails to reach orbit (fail-honest). Surfaces integrateAscent.
+ */
+describe('reach-orbit · the real ascent (integrateAscent) + the Δv tax', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('the default stack reaches orbit and breaks out the three real losses', () => {
+    const r = compute('ascent-to-orbit', { payloadKg: 6000, targetOrbitAltKm: 200 });
+    expect(r.status.ok).toBe(true);
+    // gravity loss dominates (~0.8), drag is small (~0.05), steering modest (~0.2) — real ascent.
+    expect(r.values.gravityLossKms.value).toBeGreaterThan(0.4);
+    expect(r.values.dragLossKms.value).toBeGreaterThan(0);
+    expect(r.values.dragLossKms.value).toBeLessThan(r.values.gravityLossKms.value);
+    expect(r.values.steeringLossKms.value).toBeGreaterThan(0);
+    // final speed ~ orbital speed at 200 km (~7.78 km/s).
+    expect(r.values.finalSpeedKms.value).toBeGreaterThan(7.5);
+    const fig = r.figure as { kind: string; reachedOrbit: boolean; targetSpeedKms: number };
+    expect(fig.kind).toBe('ascent-trajectory');
+    expect(fig.reachedOrbit).toBe(true);
+    // the tax is real: orbital speed + losses is comfortably above the 7.78 orbital speed.
+    const tax =
+      r.values.gravityLossKms.value + r.values.dragLossKms.value + r.values.steeringLossKms.value;
+    expect(tax).toBeGreaterThan(0.8);
+  });
+
+  it('a payload too heavy for the stack FAILS to reach orbit (fail-honest, figure still drawn)', () => {
+    const r = compute('ascent-to-orbit', { payloadKg: 15000, targetOrbitAltKm: 200 });
+    expect(r.status.ok).toBe(false);
+    const fig = r.figure as { kind: string; reachedOrbit: boolean };
+    expect(fig.kind).toBe('ascent-trajectory'); // partial trajectory still emitted
+    expect(fig.reachedOrbit).toBe(false);
+  });
+
+  it('reach-orbit slots into the arc between launch-a-rocket and the Moon', () => {
+    const g = GOALS.get('reach-orbit')!;
+    expect(g.family).toBe('spaceflight');
+    expect(g.prereqs).toContain('launch-a-rocket');
+    expect(g.path.map((s) => s.formulaId)).toEqual(['orbital-velocity', 'ascent-to-orbit']);
+  });
+});

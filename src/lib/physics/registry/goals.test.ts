@@ -499,3 +499,37 @@ describe('G10 choose-an-orbit · regimes, geostationary, latency', () => {
     ]);
   });
 });
+
+/**
+ * Family B / G9 "Catch the ISS" — the ground track slides ~23° west each orbit, and the ISS
+ * stays sunlit until the Sun is ~20° below the horizon (the twilight-viewing window).
+ */
+describe('G9 catch-the-iss · ground track + visibility', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('the ~92-min ISS orbit slides ~23° west each lap; the track caps at the inclination', () => {
+    const r = compute('ground-track-shift', { periodMin: 92, inclinationDeg: 51.6 });
+    expect(r.values.shiftDeg.value).toBeCloseTo(23.1, 0);
+    const fig = r.figure as { series: { points: { x: number; y: number }[] }[] };
+    const maxLat = Math.max(...fig.series[0].points.map((p) => Math.abs(p.y)));
+    expect(maxLat).toBeCloseTo(51.6, 1); // the sine is capped at the inclination
+  });
+
+  it('at 420 km the ISS is sunlit until the Sun is ~20° below the horizon (twilight window)', () => {
+    const r = compute('visibility-window', { altitudeKm: 420 });
+    expect(r.values.maxSunDepressionDeg.value).toBeCloseTo(20.3, 0);
+    // higher satellites stay lit later into the night.
+    expect(
+      compute('visibility-window', { altitudeKm: 1200 }).values.maxSunDepressionDeg.value,
+    ).toBeGreaterThan(r.values.maxSunDepressionDeg.value);
+  });
+
+  it('the ladder presets the station orbit and wires its period into the ground track', () => {
+    const g = GOALS.get('catch-the-iss')!;
+    expect(g.family).toBe('observe');
+    const orbit = g.path.find((s) => s.formulaId === 'orbit-regime')!;
+    expect(orbit.presetInputs).toEqual({ body: 'earth', altitudeKm: 420 });
+    const track = g.path.find((s) => s.formulaId === 'ground-track-shift')!;
+    expect(track.wiresFrom).toEqual([{ fromStep: 0, output: 'periodMin', toInput: 'periodMin' }]);
+  });
+});

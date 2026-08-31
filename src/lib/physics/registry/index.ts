@@ -26,10 +26,12 @@ import { bodyGravityMs2 } from '../mechanics/bodies';
 import { locationModel, rotationVelocityKms } from '../util/location';
 import { helioModel, synodicPeriodS } from '../util/heliocentric';
 import { moonPhase } from '../ephemeris/moon-observer';
-import { MOON_ORBIT_RADIUS_KM, MU_SUN_KM3_S2, AU_TO_KM, G0 } from '../util/constants';
+import { MOON_ORBIT_RADIUS_KM, MU_SUN_KM3_S2, AU_TO_KM, G0, R_EARTH_KM } from '../util/constants';
 
 /** Mean synodic month (new moon → new moon), days — the age scale for G8. */
 const SYNODIC_MONTH_DAYS = 29.530588;
+/** Sidereal day (one rotation vs the stars), minutes — the ground-track drift clock for G9. */
+const SIDEREAL_DAY_MIN = 1436.068;
 
 /** Planets on a tabulated heliocentric orbit — the interplanetary transfer set (M4). */
 const HELIO_PLANET_IDS = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn'] as const;
@@ -2985,6 +2987,141 @@ export const signalLatency: FormulaDef<{ altitudeKm: number }> = {
   },
 };
 
+// ─── Family B / G9 "Catch the ISS" — track a satellite ───────────────────────
+
+/**
+ * Ground-track shift (G9 rung 1) — why the ISS never passes over the same place two orbits
+ * running. In one orbital period the Earth turns beneath the orbit, so the ground track slides
+ * west by Δλ = 360°·T/T⊕ — about 23° (≈2,500 km at the equator) for the ISS's ~92-min orbit. The
+ * track itself is a sine: latitude swings between ±the inclination (±51.6° for the ISS), which is
+ * why it reaches the latitudes it does and no further.
+ */
+export const groundTrackShift: FormulaDef<{ periodMin: number; inclinationDeg: number }> = {
+  id: 'ground-track-shift',
+  titleKey: 'lab.f.gtrack.title',
+  domain: 'satellite',
+  tier: 4,
+  prereqs: ['orbit-regime'],
+  latex: '\\Delta\\lambda = 360°\\,T / T_\\oplus',
+  inputs: [
+    {
+      key: 'periodMin',
+      labelKey: 'lab.f.gtrack.period',
+      units: '',
+      kind: 'number',
+      default: 92,
+      min: 60,
+      max: 1500,
+    },
+    {
+      key: 'inclinationDeg',
+      labelKey: 'lab.f.gtrack.incl',
+      units: 'deg',
+      kind: 'number',
+      default: 51.6,
+      min: 0,
+      max: 90,
+    },
+  ],
+  outputs: [{ key: 'shiftDeg', labelKey: 'lab.f.gtrack.shift', units: 'deg' }],
+  compute: ({ periodMin, inclinationDeg }) => {
+    if (
+      !Number.isFinite(periodMin) ||
+      !Number.isFinite(inclinationDeg) ||
+      periodMin <= 0 ||
+      inclinationDeg < 0
+    ) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.spherical-earth'],
+      } satisfies FormulaResult;
+    }
+    const shift = (360 * periodMin) / SIDEREAL_DAY_MIN;
+    const incl = Math.min(90, inclinationDeg);
+    // The iconic ground track: latitude vs along-track angle over one orbit — a sine capped
+    // at ±inclination (the westward march is the shift number, not drawn on this single pass).
+    const points: Vec2[] = [];
+    for (let deg = 0; deg <= 360.001; deg += 5) {
+      points.push({ x: deg, y: incl * Math.sin((deg * Math.PI) / 180) });
+    }
+    return {
+      values: { shiftDeg: { value: shift, units: 'deg' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.spherical-earth', 'lab.assume.circular-orbits'],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'satellite/ground-track' },
+        assumptions: ['lab.assume.spherical-earth'],
+        x: { labelKey: 'lab.axis.track-lon', units: 'deg' },
+        y: { labelKey: 'lab.axis.latitude', units: 'deg' },
+        series: [{ points }],
+        marks: [{ at: { x: 90, y: incl }, labelKey: 'lab.mark.max-latitude', kind: 'point' }],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Visibility window (G9 rung 2) — when you can actually catch it. You see the ISS only when it
+ * is still in sunlight while your own sky has gone dark. A satellite at altitude h stays sunlit
+ * until the Sun drops θ = arccos(R/(R+h)) below the observer's horizon — about 20° for the ISS,
+ * a bit past the end of astronomical twilight. So the ISS is a naked-eye object for a couple of
+ * hours after dusk and before dawn, gliding over while the ground below is already night.
+ */
+export const visibilityWindow: FormulaDef<{ altitudeKm: number }> = {
+  id: 'visibility-window',
+  titleKey: 'lab.f.viswin.title',
+  domain: 'satellite',
+  tier: 4,
+  prereqs: ['orbit-regime'],
+  latex: '\\theta = \\arccos\\!\\big(R/(R+h)\\big)',
+  inputs: [
+    {
+      key: 'altitudeKm',
+      labelKey: 'lab.f.viswin.altitude',
+      units: 'km',
+      kind: 'number',
+      default: 420,
+      min: 100,
+      max: 40000,
+    },
+  ],
+  outputs: [{ key: 'maxSunDepressionDeg', labelKey: 'lab.f.viswin.depression', units: 'deg' }],
+  compute: ({ altitudeKm }) => {
+    if (!Number.isFinite(altitudeKm) || altitudeKm <= 0) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.spherical-earth'],
+      } satisfies FormulaResult;
+    }
+    const theta = Math.acos(R_EARTH_KM / (R_EARTH_KM + altitudeKm)) * (180 / Math.PI);
+    const points: Vec2[] = [];
+    for (let alt = 100; alt <= 2000.001; alt += 50) {
+      points.push({ x: alt, y: Math.acos(R_EARTH_KM / (R_EARTH_KM + alt)) * (180 / Math.PI) });
+    }
+    return {
+      values: { maxSunDepressionDeg: { value: theta, units: 'deg' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.spherical-earth', 'lab.assume.point-observer'],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'satellite/visibility' },
+        assumptions: ['lab.assume.spherical-earth'],
+        x: { labelKey: 'lab.axis.altitude', units: 'km' },
+        y: { labelKey: 'lab.axis.depression', units: 'deg' },
+        series: [{ points }],
+        marks: [
+          { at: { x: altitudeKm, y: theta }, labelKey: 'lab.mark.you-are-here', kind: 'point' },
+        ],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
 /** All registered formulas, keyed by id. Add a formula in exactly one place. */
 export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [tsiolkovsky.id, tsiolkovsky],
@@ -3025,6 +3162,8 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [orbitRegime.id, orbitRegime],
   [geostationaryAltitude.id, geostationaryAltitude],
   [signalLatency.id, signalLatency],
+  [groundTrackShift.id, groundTrackShift],
+  [visibilityWindow.id, visibilityWindow],
 ]);
 
 /** Default input record for a formula (drives a first compute / the invariant tests). */

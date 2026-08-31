@@ -524,6 +524,45 @@ export const chooseAnOrbit: Goal = {
   },
 };
 
+/**
+ * G9 "Catch the ISS" — the most hands-on observe goal: go outside and see it. Reuses the
+ * orbit-regime formula preset to the station (~420 km → ~92 min, 7.66 km/s), then the two
+ * facts that let you actually spot it: the ground track slides ~23° west each orbit (Earth
+ * turning underneath), and you can only see it in the ~20° twilight window when it is still
+ * sunlit while your sky is dark. Sends you to the real station on /iss (and Tiangong).
+ */
+export const catchTheIss: Goal = {
+  id: 'catch-the-iss',
+  titleKey: 'lab.goal.catch-iss.title',
+  family: 'observe',
+  tier: 3,
+  prereqs: [],
+  path: [
+    {
+      formulaId: 'orbit-regime',
+      narrativeKey: 'lab.goal.g9.orbit',
+      presetInputs: { body: 'earth', altitudeKm: 420 },
+    },
+    {
+      formulaId: 'ground-track-shift',
+      narrativeKey: 'lab.goal.g9.track',
+      presetInputs: { inclinationDeg: 51.6 },
+      wiresFrom: [{ fromStep: 0, output: 'periodMin', toInput: 'periodMin' }],
+    },
+    { formulaId: 'visibility-window', narrativeKey: 'lab.goal.g9.visible' },
+  ],
+  connection: {
+    whyKey: 'lab.conn.g9.why',
+    hookKey: 'lab.conn.g9.hook',
+    links: [
+      { labelKey: 'lab.conn.g9.iss', href: '/iss' },
+      { labelKey: 'lab.conn.g9.iss-fleet', href: '/fleet?id=iss', agency: 'NASA / Roscosmos' },
+      { labelKey: 'lab.conn.g9.tiangong', href: '/tiangong', agency: 'CNSA' },
+      { labelKey: 'lab.conn.g9.starlink', href: '/fleet?id=starlink', agency: 'SpaceX' },
+    ],
+  },
+};
+
 /** All goals, keyed by id — insertion order drives the Lab picker (the mission arc). */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
@@ -537,6 +576,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [leaveTheSolarSystem.id, leaveTheSolarSystem],
   [moonPhases.id, moonPhases],
   [chooseAnOrbit.id, chooseAnOrbit],
+  [catchTheIss.id, catchTheIss],
 ]);
 
 /**

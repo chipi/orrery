@@ -2556,11 +2556,12 @@ export const oberthDepartureDv: FormulaDef<{ vInfKms: number; body: string; alti
 /**
  * Gravity assist (M6) — the slingshot. In the planet's frame a flyby is elastic (speed in
  * = speed out), but that frame is MOVING at the planet's orbital velocity, so in the Sun's
- * frame your speed can change. The true ceiling for a single flyby is Δv = 2·v∞ — a full
- * 180° reversal of your velocity relative to the planet. Real flybys turn LESS than that
- * (the deflection is set by how close you pass and the planet's mass), so this is an honest
- * UPPER bound, not a delivered value. A massive planet like Jupiter can bend a fast
- * approach hardest, which is why every outer-system probe flew past it.
+ * frame your speed can change by up to Δv = 2·v∞ — a full 180° reversal of your velocity
+ * relative to the planet. The SIGN is geometry: pass behind the planet and it flings you
+ * forward (a boost, what M6 uses to escape); pass in front and it slows you down — the same
+ * slingshot run backwards (MESSENGER braked into Mercury, Parker keeps dropping at the Sun).
+ * The magnitude here is the honest UPPER bound; real flybys turn less than 180°. A massive,
+ * fast planet like Jupiter bends hardest, which is why the outer-system probes flew past it.
  */
 export const gravityAssist: FormulaDef<{ vInfKms: number }> = {
   id: 'gravity-assist',

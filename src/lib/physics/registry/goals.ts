@@ -453,6 +453,9 @@ export const leaveTheSolarSystem: Goal = {
       { labelKey: 'lab.conn.lss.pioneer10', href: '/fly?mission=pioneer-10', agency: 'NASA' },
       { labelKey: 'lab.conn.lss.newhorizons', href: '/fly?mission=new-horizons', agency: 'NASA' },
       { labelKey: 'lab.conn.lss.galileo', href: '/fly?mission=galileo', agency: 'NASA' },
+      // The slingshot run backwards — assists that BRAKE, to fall inward instead of out.
+      { labelKey: 'lab.conn.lss.messenger', href: '/fly?mission=messenger', agency: 'NASA' },
+      { labelKey: 'lab.conn.lss.parker', href: '/fly?mission=parker-solar-probe', agency: 'NASA' },
     ],
   },
 };

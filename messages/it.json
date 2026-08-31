@@ -2537,5 +2537,13 @@
   "lab_assume_lift_ignored": "Balistico — portanza ignorata",
   "lab_goal_loe_corridor": "Tornando a casa, non puoi semplicemente puntare al suolo: devi imboccare un corridoio di angoli di rientro. Troppo poco inclinato e il perigeo della tua traiettoria resta sopra l'aria densa: sfiori la sommità e RIMBALZI di nuovo nello spazio, come un sasso su uno stagno. Troppo inclinato e la decelerazione supera ciò che un corpo — o una fusoliera — può sopportare. Dall'orbita bassa a 7,8 km/s il corridoio è generoso (sei troppo lento per rimbalzare). Ma se scendi dalla LUNA a 11 km/s il corridoio balistico svanisce: qualsiasi angolo abbastanza poco inclinato da non rimbalzare comporta oltre 30 g. Ecco perché l'Apollo non cadeva come un mattone: volava un rientro PORTANTE, inclinando il suo centro di massa spostato per manovrare, imboccando un corridoio largo appena 2°.",
   "lab_conn_loe_apollo": "Apollo 11 — il corridoio di rientro lunare",
-  "lab_conn_loe_osiris": "OSIRIS-REx — ritorno di campioni a 12,4 km/s"
+  "lab_conn_loe_osiris": "OSIRIS-REx — ritorno di campioni a 12,4 km/s",
+  "lab_f_porkchop_title": "Diagramma porkchop (ottimizzatore della finestra di lancio)",
+  "lab_f_porkchop_destination": "Destinazione",
+  "lab_f_porkchop_mindv": "Δv di trasferimento minimo",
+  "lab_f_porkchop_bestdep": "Giorno di partenza ottimale",
+  "lab_f_porkchop_besttof": "Tempo di volo ottimale",
+  "lab_f_porkchop_err_no_window": "Nessun trasferimento fattibile in questa finestra — amplia l'intervallo di partenza o di tempo di volo.",
+  "lab_assume_lambert_two_body": "Trasferimento di Lambert a due corpi (conica raccordata, senza perturbazioni)",
+  "lab_goal_gtm_porkchop": "Quindi QUANDO parti? Ogni data di partenza e durata di crociera costa una quantità diversa di carburante, e il modo per vederle tutte in una volta è il grafico che i progettisti di missioni usano davvero: il diagramma porkchop. Ogni cella qui è una vera soluzione del problema di Lambert — dato dove si trova la Terra in questo giorno e dove sarà Marte dopo quel numero di giorni di volo, quale singola orbita di trasferimento li collega e quale Δv costa? Le valli fredde sono le finestre di lancio; il mirino è l'unica combinazione data-durata più economica per partire. Manca la valle e il carburante scala un muro — ecco perché una finestra di lancio verso Marte si apre solo per poche settimane ogni 26 mesi."
 }

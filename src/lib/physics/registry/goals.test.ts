@@ -874,6 +874,36 @@ describe('Family C plan-a-mission · assist-chain physics + capstone wiring', ()
     expect(GOALS.get('observe-the-sky')!.family).toBe('observe');
   });
 
+  it('porkchop surfaces the kernel Lambert grid: a real Δv landscape with a feasible best window', () => {
+    const r = compute('porkchop', { destination: 'mars' });
+    expect(r.status.ok).toBe(true);
+    // the cheapest heliocentric transfer to Mars is ~5.6 km/s — agrees with the transfer rung.
+    expect(r.values.minDvKms.value).toBeGreaterThan(4);
+    expect(r.values.minDvKms.value).toBeLessThan(9);
+    expect(r.values.bestDepartureDay.value).toBeGreaterThanOrEqual(0);
+    expect(r.values.bestTofDay.value).toBeGreaterThan(100); // a real Mars cruise
+    const fig = r.figure as {
+      kind: string;
+      grid: number[][];
+      depDays: number[];
+      tofDays: number[];
+    };
+    expect(fig.kind).toBe('porkchop');
+    expect(fig.grid.length).toBe(fig.tofDays.length); // rows = TOF
+    expect(fig.grid[0].length).toBe(fig.depDays.length); // cols = departure
+    // the grid holds real, varying Δv (not all the DV_FAILED=28 sentinel).
+    const feasible = fig.grid.flat().filter((d) => d < 27.9);
+    expect(feasible.length).toBeGreaterThan(100);
+    expect(Math.min(...feasible)).toBeCloseTo(r.values.minDvKms.value, 5);
+    // get-to-mars now teaches the porkchop between the window and the verdict.
+    expect(GOALS.get('get-to-mars')!.path.map((s) => s.formulaId)).toEqual([
+      'interplanetary-transfer',
+      'launch-window',
+      'porkchop',
+      'delta-v-margin',
+    ]);
+  });
+
   it('the ladder synthesizes A+B in order: window → leg → inject → assist → chain → verdict', () => {
     const g = GOALS.get('plan-a-mission')!;
     expect(g.path.map((s) => s.formulaId)).toEqual([

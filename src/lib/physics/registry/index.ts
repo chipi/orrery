@@ -33,6 +33,8 @@ import { julianDay } from '../ephemeris/time';
 import { parseTle } from '../satellite/tle';
 import { nextPassForTle } from '../satellite';
 import stationTles from '../satellite/station-tles.json';
+import { computePorkchopGrid, DV_FAILED } from '../transfer/lambert-grid';
+import type { DestinationId } from '../transfer/lambert-grid.constants';
 import {
   MOON_ORBIT_RADIUS_KM,
   MU_SUN_KM3_S2,
@@ -1210,6 +1212,118 @@ export const launchWindow: FormulaDef<{ depart: string; arrive: string }> = {
       values: { synodic: { value: synodicDays, units: 'day' } },
       status: { ok: true },
       assumptions: ['lab.assume.circular-orbits', 'lab.assume.coplanar'],
+    } satisfies FormulaResult;
+  },
+};
+
+/** Per-destination porkchop windows: a departure span (~1.5 synodic periods) and the
+ *  time-of-flight band that brackets the real transfer, so the grid frames a full window. */
+const PORKCHOP_WINDOWS: Record<
+  string,
+  { depSpanDays: number; tofMinDays: number; tofMaxDays: number }
+> = {
+  venus: { depSpanDays: 584, tofMinDays: 80, tofMaxDays: 300 },
+  mars: { depSpanDays: 780, tofMinDays: 120, tofMaxDays: 400 },
+  jupiter: { depSpanDays: 400, tofMinDays: 700, tofMaxDays: 1400 },
+};
+const PORKCHOP_DEST_IDS = ['venus', 'mars', 'jupiter'] as const;
+
+/**
+ * Porkchop plot (mission-design launch-window optimizer) — the chart every interplanetary
+ * mission is planned from. It runs the kernel's REAL Lambert solver (`computePorkchopGrid`,
+ * the same one that drives /explore) over a grid of departure dates × times-of-flight, solving
+ * the two-body boundary-value problem for each cell and shading it by the total Δv (departure
+ * C3 + arrival v∞). The valleys are the launch windows; the single lowest cell is the cheapest
+ * date-and-duration to leave. This is why launches have a window: miss the valley and the Δv —
+ * the fuel — climbs a wall. Surfaces a kernel capability the Lab had modelled only as a single
+ * Hohmann transfer before.
+ */
+export const porkchop: FormulaDef<{ destination: string }> = {
+  id: 'porkchop',
+  titleKey: 'lab.f.porkchop.title',
+  domain: 'transfer',
+  tier: 8,
+  prereqs: ['interplanetary-transfer', 'launch-window'],
+  latex:
+    '\\Delta v(t_{\\text{dep}}, t_{\\text{of}}) = \\lVert \\vec v_1 - \\vec v_\\oplus \\rVert + v_\\infty^{\\text{arr}}',
+  inputs: [
+    {
+      key: 'destination',
+      labelKey: 'lab.f.porkchop.destination',
+      units: '',
+      kind: 'enum',
+      default: 'mars',
+      enumValues: PORKCHOP_DEST_IDS.map((d) => ({ value: d, labelKey: `lab.body.${d}` })),
+    },
+  ],
+  outputs: [
+    { key: 'minDvKms', labelKey: 'lab.f.porkchop.mindv', units: 'km/s' },
+    { key: 'bestDepartureDay', labelKey: 'lab.f.porkchop.bestdep', units: 'day' },
+    { key: 'bestTofDay', labelKey: 'lab.f.porkchop.besttof', units: 'day' },
+  ],
+  compute: ({ destination }) => {
+    const win = PORKCHOP_WINDOWS[destination] ?? PORKCHOP_WINDOWS.mars;
+    const res = computePorkchopGrid(
+      {
+        id: 0,
+        depRange: [0, win.depSpanDays],
+        arrRange: [win.tofMinDays, win.tofMaxDays],
+        steps: [48, 40],
+        destinationId: destination as DestinationId,
+      },
+      () => {},
+      () => false,
+    );
+    if (!res) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.interplanetary.err-planet' },
+        assumptions: ['lab.assume.lambert-two-body'],
+      } satisfies FormulaResult;
+    }
+    // Find the cheapest (feasible) cell — the best date + duration to leave.
+    let min = Infinity;
+    let mi = 0;
+    let mj = 0;
+    res.grid.forEach((row, j) =>
+      row.forEach((dv, i) => {
+        if (dv < min && dv < DV_FAILED - 0.01) {
+          min = dv;
+          mi = i;
+          mj = j;
+        }
+      }),
+    );
+    if (!Number.isFinite(min)) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.porkchop.err-no-window' },
+        assumptions: ['lab.assume.lambert-two-body'],
+      } satisfies FormulaResult;
+    }
+    return {
+      values: {
+        minDvKms: { value: min, units: 'km/s' },
+        bestDepartureDay: { value: res.depDays[mi], units: 'day' },
+        bestTofDay: { value: res.arrDays[mj], units: 'day' },
+      },
+      status: { ok: true },
+      assumptions: [
+        'lab.assume.lambert-two-body',
+        'lab.assume.coplanar',
+        'lab.assume.patched-conic',
+      ],
+      figure: {
+        kind: 'porkchop',
+        provenance: { fidelity: 'computed', module: 'transfer/lambert-grid' },
+        assumptions: ['lab.assume.lambert-two-body', 'lab.assume.coplanar'],
+        depDays: res.depDays,
+        tofDays: res.arrDays,
+        grid: res.grid,
+        units: 'km/s',
+      },
     } satisfies FormulaResult;
   },
 };
@@ -4348,6 +4462,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [descentBurn.id, descentBurn],
   [interplanetaryTransfer.id, interplanetaryTransfer],
   [launchWindow.id, launchWindow],
+  [porkchop.id, porkchop],
   [terminalVelocity.id, terminalVelocity],
   [softLandingCheck.id, softLandingCheck],
   [airbagsCheck.id, airbagsCheck],

@@ -2538,5 +2538,13 @@
   "lab_assume_lift_ignored": "Ballistic — lift ignored",
   "lab_goal_loe_corridor": "Coming home, you cannot just aim at the ground — you must thread a corridor of entry angles. Too shallow and your trajectory's perigee stays above the thick air: you graze the top and SKIP back into space, like a stone off a pond. Too steep and the deceleration spikes past what a body — or a hull — can take. From low orbit at 7.8 km/s the corridor is generous (you are too slow to skip). But drop in from the MOON at 11 km/s and the ballistic corridor vanishes: any angle shallow enough to not skip pulls over 30 g. That is why Apollo did not fall like a brick — it flew a LIFTING entry, tilting its offset centre of mass to steer, threading a corridor barely 2° wide.",
   "lab_conn_loe_apollo": "Apollo 11 — the lunar-return corridor",
-  "lab_conn_loe_osiris": "OSIRIS-REx — sample return at 12.4 km/s"
+  "lab_conn_loe_osiris": "OSIRIS-REx — sample return at 12.4 km/s",
+  "lab_f_porkchop_title": "Porkchop plot (launch-window optimizer)",
+  "lab_f_porkchop_destination": "Destination",
+  "lab_f_porkchop_mindv": "Cheapest transfer Δv",
+  "lab_f_porkchop_bestdep": "Best departure day",
+  "lab_f_porkchop_besttof": "Best time of flight",
+  "lab_f_porkchop_err_no_window": "No feasible transfer in this window — widen the departure or flight-time range.",
+  "lab_assume_lambert_two_body": "Two-body Lambert transfer (patched-conic, no perturbations)",
+  "lab_goal_gtm_porkchop": "So WHEN do you leave? Every departure date and cruise duration costs a different amount of fuel, and the way to see them all at once is the chart mission designers actually use: the porkchop plot. Each cell here is a real solution of Lambert's problem — given where Earth is on this day and where Mars will be after that many days of flight, what single transfer orbit connects them, and what Δv does it cost? The cool valleys are the launch windows; the crosshair is the single cheapest date-and-duration to go. Miss the valley and the fuel climbs a wall — which is why a Mars launch window opens for only a few weeks every 26 months."
 }

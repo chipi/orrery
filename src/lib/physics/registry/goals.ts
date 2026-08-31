@@ -329,6 +329,8 @@ export const getToMars: Goal = {
   path: [
     { formulaId: 'interplanetary-transfer', narrativeKey: 'lab.goal.gtm.transfer' },
     { formulaId: 'launch-window', narrativeKey: 'lab.goal.gtm.window' },
+    // The real launch-window optimizer: the porkchop plot, run on the kernel's Lambert solver.
+    { formulaId: 'porkchop', narrativeKey: 'lab.goal.gtm.porkchop' },
     {
       formulaId: 'delta-v-margin',
       narrativeKey: 'lab.goal.gtm.verdict',

@@ -2537,5 +2537,13 @@
   "lab_assume_lift_ignored": "Balistique — portance ignorée",
   "lab_goal_loe_corridor": "Au retour, on ne peut pas simplement viser le sol — il faut enfiler un couloir d'angles d'entrée. Trop rasant et le périgée de votre trajectoire reste au-dessus de l'air dense : vous effleurez le sommet et REBONDISSEZ vers l'espace, comme un galet sur l'eau. Trop raide et la décélération dépasse ce qu'un corps — ou une coque — peut supporter. Depuis une orbite basse à 7,8 km/s le couloir est généreux (vous êtes trop lent pour rebondir). Mais tombez depuis la LUNE à 11 km/s et le couloir balistique disparaît : tout angle assez rasant pour ne pas rebondir engendre plus de 30 g. C'est pourquoi Apollo n'est pas tombé comme une pierre — il a effectué une rentrée PORTANTE, inclinant son centre de masse décalé pour se diriger, enfilant un couloir large d'à peine 2°.",
   "lab_conn_loe_apollo": "Apollo 11 — le couloir de retour lunaire",
-  "lab_conn_loe_osiris": "OSIRIS-REx — retour d'échantillon à 12,4 km/s"
+  "lab_conn_loe_osiris": "OSIRIS-REx — retour d'échantillon à 12,4 km/s",
+  "lab_f_porkchop_title": "Diagramme en côtelette (optimiseur de fenêtre de lancement)",
+  "lab_f_porkchop_destination": "Destination",
+  "lab_f_porkchop_mindv": "Δv de transfert minimal",
+  "lab_f_porkchop_bestdep": "Meilleur jour de départ",
+  "lab_f_porkchop_besttof": "Meilleure durée de vol",
+  "lab_f_porkchop_err_no_window": "Aucun transfert réalisable dans cette fenêtre — élargissez la plage de départ ou de durée de vol.",
+  "lab_assume_lambert_two_body": "Transfert de Lambert à deux corps (coniques raccordées, sans perturbations)",
+  "lab_goal_gtm_porkchop": "Alors QUAND partez-vous ? Chaque date de départ et chaque durée de croisière coûte une quantité de carburant différente, et pour les voir toutes d'un coup, on utilise le graphique dont se servent réellement les concepteurs de mission : le diagramme en côtelette. Chaque cellule ici est une véritable solution du problème de Lambert — étant donné la position de la Terre ce jour-là et celle de Mars après tant de jours de vol, quelle orbite de transfert unique les relie, et quel Δv coûte-t-elle ? Les vallées fraîches sont les fenêtres de lancement ; le réticule marque la date et la durée les moins coûteuses. Ratez la vallée et le carburant grimpe en flèche — c'est pourquoi une fenêtre de lancement vers Mars ne s'ouvre que quelques semaines tous les 26 mois."
 }

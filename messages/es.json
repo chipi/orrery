@@ -2537,5 +2537,13 @@
   "lab_assume_lift_ignored": "Balístico — sin considerar sustentación",
   "lab_goal_loe_corridor": "Al volver a casa no puedes simplemente apuntar al suelo: debes enhebrar un corredor de ángulos de entrada. Demasiado rasante y el perigeo de tu trayectoria queda por encima del aire denso: rozas la cima y REBOTAS de vuelta al espacio, como una piedra sobre un estanque. Demasiado pronunciado y la deceleración se dispara más allá de lo que un cuerpo —o un fuselaje— puede soportar. Desde órbita baja a 7,8 km/s el corredor es generoso (vas demasiado lento para rebotar). Pero entra desde la LUNA a 11 km/s y el corredor balístico se desvanece: cualquier ángulo lo bastante rasante para no rebotar somete a más de 30 g. Por eso el Apolo no cayó como un ladrillo: voló una entrada con SUSTENTACIÓN, inclinando su centro de masas desplazado para dirigirse, enhebrando un corredor de apenas 2° de anchura.",
   "lab_conn_loe_apollo": "Apolo 11 — el corredor de retorno lunar",
-  "lab_conn_loe_osiris": "OSIRIS-REx — retorno de muestras a 12,4 km/s"
+  "lab_conn_loe_osiris": "OSIRIS-REx — retorno de muestras a 12,4 km/s",
+  "lab_f_porkchop_title": "Diagrama porkchop (optimizador de ventanas de lanzamiento)",
+  "lab_f_porkchop_destination": "Destino",
+  "lab_f_porkchop_mindv": "Δv de transferencia mínimo",
+  "lab_f_porkchop_bestdep": "Mejor día de salida",
+  "lab_f_porkchop_besttof": "Mejor tiempo de vuelo",
+  "lab_f_porkchop_err_no_window": "No hay transferencia viable en esta ventana: amplía el rango de salida o de tiempo de vuelo.",
+  "lab_assume_lambert_two_body": "Transferencia de Lambert de dos cuerpos (cónicas empalmadas, sin perturbaciones)",
+  "lab_goal_gtm_porkchop": "Entonces, ¿CUÁNDO sales? Cada fecha de salida y cada duración de crucero cuesta una cantidad distinta de combustible, y la forma de verlas todas a la vez es el gráfico que los diseñadores de misiones usan de verdad: el diagrama porkchop. Cada celda de aquí es una solución real del problema de Lambert: dada la posición de la Tierra en este día y dónde estará Marte tras ese número de días de vuelo, ¿qué única órbita de transferencia las conecta y qué Δv cuesta? Los valles fríos son las ventanas de lanzamiento; la cruz marca la fecha y duración más baratas para ir. Si fallas el valle, el combustible se dispara: por eso una ventana de lanzamiento a Marte solo se abre durante unas pocas semanas cada 26 meses."
 }

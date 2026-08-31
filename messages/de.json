@@ -2537,5 +2537,13 @@
   "lab_assume_lift_ignored": "Ballistisch — Auftrieb vernachlässigt",
   "lab_goal_loe_corridor": "Bei der Heimkehr kannst du nicht einfach auf den Boden zielen — du musst einen Korridor von Eintrittswinkeln treffen. Zu flach, und das Perigäum deiner Bahn bleibt oberhalb der dichten Luft: du streifst die Oberkante und PRALLST zurück ins All wie ein Stein über einen Teich. Zu steil, und die Verzögerung schießt über das hinaus, was ein Körper — oder eine Hülle — aushält. Aus niedriger Umlaufbahn bei 7,8 km/s ist der Korridor großzügig (du bist zu langsam zum Abprallen). Doch fällst du vom MOND mit 11 km/s herein, verschwindet der ballistische Korridor: jeder Winkel, der flach genug ist, um nicht abzuprallen, erzeugt über 30 g. Deshalb fiel Apollo nicht wie ein Stein — es flog einen AUFTRIEBS-Eintritt, indem es seinen versetzten Schwerpunkt kippte, um zu steuern, und einen kaum 2° breiten Korridor traf.",
   "lab_conn_loe_apollo": "Apollo 11 — der Mondrückkehr-Korridor",
-  "lab_conn_loe_osiris": "OSIRIS-REx — Probenrückführung bei 12,4 km/s"
+  "lab_conn_loe_osiris": "OSIRIS-REx — Probenrückführung bei 12,4 km/s",
+  "lab_f_porkchop_title": "Porkchop-Diagramm (Startfenster-Optimierer)",
+  "lab_f_porkchop_destination": "Ziel",
+  "lab_f_porkchop_mindv": "Günstigster Transfer-Δv",
+  "lab_f_porkchop_bestdep": "Bester Abflugtag",
+  "lab_f_porkchop_besttof": "Beste Flugzeit",
+  "lab_f_porkchop_err_no_window": "Kein realisierbarer Transfer in diesem Fenster — Abflug- oder Flugzeitbereich erweitern.",
+  "lab_assume_lambert_two_body": "Zweikörper-Lambert-Transfer (patched-conic, ohne Störungen)",
+  "lab_goal_gtm_porkchop": "Also WANN startet man? Jedes Abflugdatum und jede Reisedauer kostet unterschiedlich viel Treibstoff, und um sie alle auf einen Blick zu sehen, nutzt man genau das Diagramm der Missionsplaner: das Porkchop-Diagramm. Jede Zelle hier ist eine echte Lösung des Lambert-Problems — bei gegebener Position der Erde an diesem Tag und der Position des Mars nach so vielen Flugtagen, welche einzelne Transferbahn verbindet sie, und welchen Δv kostet das? Die kühlen Täler sind die Startfenster; das Fadenkreuz markiert das günstigste Datum-Dauer-Paar. Verpasst man das Tal, klettert der Treibstoffbedarf eine Wand hinauf — deshalb öffnet sich ein Mars-Startfenster nur für wenige Wochen alle 26 Monate."
 }

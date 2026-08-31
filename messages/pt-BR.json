@@ -2537,5 +2537,13 @@
   "lab_assume_lift_ignored": "Balístico — sustentação ignorada",
   "lab_goal_loe_corridor": "Ao voltar para casa, você não pode simplesmente mirar no chão — precisa encaixar-se num corredor de ângulos de entrada. Raso demais e o perigeu da trajetória permanece acima do ar denso: você raspa o topo e RICOCHETEIA de volta ao espaço, como uma pedra sobre um lago. Íngreme demais e a desaceleração dispara além do que um corpo — ou um casco — consegue suportar. A partir da órbita baixa, a 7,8 km/s, o corredor é generoso (você está lento demais para ricochetear). Mas venha da LUA a 11 km/s e o corredor balístico desaparece: qualquer ângulo raso o bastante para não ricochetear puxa mais de 30 g. Por isso a Apollo não caiu como um tijolo — voou uma entrada com SUSTENTAÇÃO, inclinando seu centro de massa deslocado para guiar-se, encaixando-se num corredor de apenas 2° de largura.",
   "lab_conn_loe_apollo": "Apollo 11 — o corredor de retorno lunar",
-  "lab_conn_loe_osiris": "OSIRIS-REx — retorno de amostras a 12,4 km/s"
+  "lab_conn_loe_osiris": "OSIRIS-REx — retorno de amostras a 12,4 km/s",
+  "lab_f_porkchop_title": "Gráfico porkchop (otimizador de janela de lançamento)",
+  "lab_f_porkchop_destination": "Destino",
+  "lab_f_porkchop_mindv": "Δv de transferência mais barato",
+  "lab_f_porkchop_bestdep": "Melhor dia de partida",
+  "lab_f_porkchop_besttof": "Melhor tempo de voo",
+  "lab_f_porkchop_err_no_window": "Nenhuma transferência viável nesta janela — amplie o intervalo de partida ou de tempo de voo.",
+  "lab_assume_lambert_two_body": "Transferência de Lambert de dois corpos (cônicas emendadas, sem perturbações)",
+  "lab_goal_gtm_porkchop": "Então QUANDO você parte? Cada data de partida e duração de cruzeiro custa uma quantidade diferente de combustível, e a forma de ver todas de uma só vez é o gráfico que os projetistas de missão realmente usam: o gráfico porkchop. Cada célula aqui é uma solução real do problema de Lambert — dado onde a Terra está neste dia e onde Marte estará após aquele número de dias de voo, qual órbita de transferência única as conecta e quanto Δv ela custa? Os vales frios são as janelas de lançamento; a mira é a única data-e-duração mais barata para partir. Perca o vale e o combustível sobe uma parede — é por isso que uma janela de lançamento para Marte abre por apenas algumas semanas a cada 26 meses."
 }

@@ -2537,5 +2537,13 @@
   "lab_assume_lift_ignored": "Ballistisch — lift genegeerd",
   "lab_goal_loe_corridor": "Bij thuiskomst kun je niet zomaar op de grond mikken — je moet een corridor van intredehoeken vinden. Te vlak en het perigeum van je traject blijft boven de dichte lucht: je scheert langs de top en STUITERT terug de ruimte in, als een steen over een vijver. Te steil en de vertraging piekt voorbij wat een lichaam — of een romp — kan verdragen. Vanuit een lage baan bij 7,8 km/s is de corridor royaal (je bent te traag om te stuiteren). Maar kom binnen vanaf de MAAN bij 11 km/s en de ballistische corridor verdwijnt: elke hoek vlak genoeg om niet te stuiteren trekt meer dan 30 g. Daarom viel Apollo niet als een baksteen — het vloog een LIFT-intrede, waarbij het zijn verschoven massamiddelpunt kantelde om te sturen, door een corridor van amper 2° breed.",
   "lab_conn_loe_apollo": "Apollo 11 — de maanterugkeercorridor",
-  "lab_conn_loe_osiris": "OSIRIS-REx — monsterterugkeer bij 12,4 km/s"
+  "lab_conn_loe_osiris": "OSIRIS-REx — monsterterugkeer bij 12,4 km/s",
+  "lab_f_porkchop_title": "Porkchop-plot (lanceervenster-optimalisator)",
+  "lab_f_porkchop_destination": "Bestemming",
+  "lab_f_porkchop_mindv": "Goedkoopste transfer-Δv",
+  "lab_f_porkchop_bestdep": "Beste vertrekdag",
+  "lab_f_porkchop_besttof": "Beste vluchtduur",
+  "lab_f_porkchop_err_no_window": "Geen haalbare transfer in dit venster — verbreed het vertrek- of vluchtduurbereik.",
+  "lab_assume_lambert_two_body": "Tweelichamen-Lambert-transfer (patched-conic, geen verstoringen)",
+  "lab_goal_gtm_porkchop": "Dus WANNEER vertrek je? Elke vertrekdatum en cruiseduur kost een andere hoeveelheid brandstof, en de manier om ze allemaal tegelijk te zien is de grafiek die missieontwerpers echt gebruiken: de porkchop-plot. Elke cel hier is een echte oplossing van het Lambert-probleem — gegeven waar de Aarde op deze dag staat en waar Mars na zoveel vluchtdagen zal zijn, welke enkele transferbaan verbindt ze, en welke Δv kost dat? De koele dalen zijn de lanceervensters; het draadkruis is de enige goedkoopste datum-en-duur om te gaan. Mis het dal en de brandstof klimt tegen een muur op — daarom opent een lanceervenster naar Mars slechts een paar weken elke 26 maanden."
 }

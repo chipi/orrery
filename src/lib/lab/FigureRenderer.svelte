@@ -22,6 +22,7 @@
   import GroundTrackCanvas from './GroundTrackCanvas.svelte';
   import SkyChartCanvas from './SkyChartCanvas.svelte';
   import EntryCorridorCanvas from './EntryCorridorCanvas.svelte';
+  import PorkchopCanvas from './PorkchopCanvas.svelte';
   import {
     fidelityStyle,
     fidelityLabel,
@@ -160,6 +161,8 @@
   <SkyChartCanvas {figure} {t} {ariaLabelKey} />
 {:else if figure.kind === 'entry-corridor'}
   <EntryCorridorCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'porkchop'}
+  <PorkchopCanvas {figure} {t} {ariaLabelKey} />
 {:else}
   <svg
     role="img"

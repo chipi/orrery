@@ -24,7 +24,11 @@ import { terminalVelocityMs, SURFACE_DENSITY_KGM3 } from '../mechanics/atmospher
 import { bodyGravityMs2 } from '../mechanics/bodies';
 import { locationModel, rotationVelocityKms } from '../util/location';
 import { helioModel, synodicPeriodS } from '../util/heliocentric';
+import { moonPhase } from '../ephemeris/moon-observer';
 import { MOON_ORBIT_RADIUS_KM, MU_SUN_KM3_S2, AU_TO_KM, G0 } from '../util/constants';
+
+/** Mean synodic month (new moon → new moon), days — the age scale for G8. */
+const SYNODIC_MONTH_DAYS = 29.530588;
 
 /** Planets on a tabulated heliocentric orbit — the interplanetary transfer set (M4). */
 const HELIO_PLANET_IDS = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn'] as const;
@@ -2703,6 +2707,66 @@ export const escapeVerdict: FormulaDef<{
   },
 };
 
+// ─── Family B / G8 "Moon phases" — observe the sky ───────────────────────────
+
+/**
+ * Moon phase (Family B / G8) — the first "observe" goal. The GEOMETRY is first-principles:
+ * the lit fraction is k = ½(1 + cos α), where α is the Sun–Moon–Earth phase angle (α = 0 is
+ * full, 180° is new). The NUMBER is real: `moonPhase(date)` runs Orrery's geocentric ephemeris
+ * for the chosen date, so the disc, the age since new moon, and the phase name match the actual
+ * sky (hybrid precision, operator 2026-08-30). Introduces date inputs to the ladder.
+ */
+export const moonPhaseFormula: FormulaDef<{ dateIso: string }> = {
+  id: 'moon-phase',
+  titleKey: 'lab.f.moonphase.title',
+  domain: 'ephemeris',
+  tier: 2,
+  prereqs: [],
+  latex: 'k = \\tfrac12\\,(1 + \\cos\\alpha)',
+  inputs: [
+    {
+      key: 'dateIso',
+      labelKey: 'lab.f.moonphase.date',
+      units: '',
+      kind: 'date',
+      default: '2026-08-30',
+    },
+  ],
+  outputs: [
+    { key: 'illuminatedPct', labelKey: 'lab.f.moonphase.illum', units: '' },
+    { key: 'moonAgeDays', labelKey: 'lab.f.moonphase.age', units: 'day' },
+  ],
+  compute: ({ dateIso }) => {
+    const d = new Date(String(dateIso));
+    if (Number.isNaN(d.getTime())) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.moonphase.err-date' },
+        assumptions: ['lab.assume.geocentric-moon'],
+      } satisfies FormulaResult;
+    }
+    const ph = moonPhase(d);
+    const ageDays = (ph.ageDeg / 360) * SYNODIC_MONTH_DAYS;
+    return {
+      values: {
+        illuminatedPct: { value: ph.illuminatedFraction * 100, units: '' },
+        moonAgeDays: { value: ageDays, units: 'day' },
+      },
+      status: { ok: true },
+      assumptions: ['lab.assume.geocentric-moon', 'lab.assume.optical-only'],
+      figure: {
+        kind: 'moon-phase',
+        provenance: { fidelity: 'computed', module: 'ephemeris/moon-observer' },
+        assumptions: ['lab.assume.geocentric-moon'],
+        illuminatedFraction: ph.illuminatedFraction,
+        waxing: ph.waxing,
+        phaseLabelKey: `lab.moon.phase.${ph.phaseName}`,
+      },
+    } satisfies FormulaResult;
+  },
+};
+
 /** All registered formulas, keyed by id. Add a formula in exactly one place. */
 export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [tsiolkovsky.id, tsiolkovsky],
@@ -2739,6 +2803,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [oberthDepartureDv.id, oberthDepartureDv],
   [gravityAssist.id, gravityAssist],
   [escapeVerdict.id, escapeVerdict],
+  [moonPhaseFormula.id, moonPhaseFormula],
 ]);
 
 /** Default input record for a formula (drives a first compute / the invariant tests). */

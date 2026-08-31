@@ -49,6 +49,17 @@
 
   const ariaLabel = $derived(ariaLabelKey ? t(ariaLabelKey) : `Physics figure · ${provenanceText}`);
 
+  // ─── Moon-phase disc (G8) ───────────────────────────────────────────────────
+  // Two arcs: the sunlit limb (a semicircle on the lit side) + the terminator (a
+  // half-ellipse whose x-radius encodes the lit fraction). k=0 new, 0.5 quarter, 1 full;
+  // `litRight` = waxing (Northern-hemisphere convention, sunlit on the right).
+  function moonPath(cx: number, cy: number, R: number, k: number, litRight: boolean): string {
+    const rx = Math.abs(R * (1 - 2 * k));
+    const limbSweep = litRight ? 1 : 0;
+    const termSweep = litRight ? (k < 0.5 ? 0 : 1) : k < 0.5 ? 1 : 0;
+    return `M ${cx} ${cy - R} A ${R} ${R} 0 0 ${limbSweep} ${cx} ${cy + R} A ${rx} ${R} 0 0 ${termSweep} ${cx} ${cy - R} Z`;
+  }
+
   // ─── Curve helpers ──────────────────────────────────────────────────────────
 
   // Collect all points across all series for extent computation.
@@ -447,6 +458,18 @@
         {t(mk.labelKey)}
       </text>
     {/each}
+  {:else if figure.kind === 'moon-phase'}
+    {@const cx = W / 2}
+    {@const cy = (H - 44) / 2 + 6}
+    {@const R = Math.min(W, H - 88) / 2 - 8}
+    {@const k = Math.max(0, Math.min(1, figure.illuminatedFraction))}
+    <!-- dark disc + faint limb -->
+    <circle {cx} {cy} r={R} fill="#0b0f1c" stroke="rgba(255,255,255,0.22)" stroke-width="1" />
+    <!-- sunlit region -->
+    <path d={moonPath(cx, cy, R, k, figure.waxing)} fill="#e8e8e8" />
+    <text x={cx} y={cy + R + 24} text-anchor="middle" class="mp-label">
+      {t(figure.phaseLabelKey)} · {Math.round(k * 100)}%
+    </text>
   {:else}
     <!-- Unknown-kind fallback: honest, never throws -->
     <rect
@@ -548,6 +571,13 @@
     font-family: 'Space Mono', monospace;
     font-size: 8px;
     fill: rgba(255, 200, 80, 0.6);
+  }
+
+  .mp-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    fill: #e8e8e8;
+    letter-spacing: 1px;
   }
 
   /* Honesty line — always rendered, 8px Space Mono, matches ImageCredit convention */

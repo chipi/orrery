@@ -154,6 +154,8 @@ export type FigureSpec = FigureBase &
       }
     // `tofDays` = Time-of-Flight (the kernel grid rows are TOF, not arrival dates).
     | { kind: 'porkchop'; depDays: number[]; tofDays: number[]; grid: number[][]; units: Unit }
+    // Moon-phase disc (Family B / G8) — the lit fraction + waxing/waning + the phase name.
+    | { kind: 'moon-phase'; illuminatedFraction: number; waxing: boolean; phaseLabelKey: string }
     // Additive per goal (renderers demand-driven); typed now so the union is stable.
     | { kind: 'orbit' | 'ground-track' | 'sky-chart' | 'entry-corridor' | 'cislunar-eci' }
   );

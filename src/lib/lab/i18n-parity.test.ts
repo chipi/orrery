@@ -75,6 +75,8 @@ function collectAllKeys(): string[] {
     }),
     add,
   );
+  // moon-phase's err-date branch (default date is valid) — force it.
+  collectFromResult(REGISTRY.get('moon-phase')!.compute({ dateIso: 'not-a-date' }), add);
 
   for (const goal of GOALS.values()) {
     add(goal.titleKey);
@@ -96,6 +98,17 @@ function collectAllKeys(): string[] {
   ['lab.conn.heading', 'lab.conn.hook-label', 'lab.conn.next-label', 'lab.conn.aria'].forEach(add);
   // Body-picker option labels — rendered via t(`lab.body.${id}`) in Card.svelte (not a labelKey).
   ['earth', 'moon', 'mars', 'venus', 'mercury'].forEach((b) => add(`lab.body.${b}`));
+  // Moon-phase names (G8) — figure.phaseLabelKey is dynamic (date → phase), so assert all 8.
+  [
+    'new',
+    'waxing-crescent',
+    'first-quarter',
+    'waxing-gibbous',
+    'full',
+    'waning-gibbous',
+    'last-quarter',
+    'waning-crescent',
+  ].forEach((n) => add(`lab.moon.phase.${n}`));
 
   return [...keys].filter((k) => k.startsWith('lab.'));
 }

@@ -460,6 +460,33 @@ export const leaveTheSolarSystem: Goal = {
   },
 };
 
+// ─── Family B — observe & orbit ("understand the sky") ───────────────────────
+
+/**
+ * G8 "Moon phases" — the first Family-B goal, a shift from dynamics (Δv, trajectories) to
+ * OBSERVATION (what the sky is doing). Hybrid precision: it teaches the geometry — the lit
+ * fraction is ½(1 + cos α) of the Sun–Moon–Earth phase angle — but reads the ACTUAL phase for
+ * a chosen date from Orrery's ephemeris, so the disc matches tonight's Moon. Introduces the
+ * date input and the first observe-family figure (the phase disc). The connection sends you to
+ * LOOK — the real Moon on /moon, the live sky on /explore — rather than to a catalogue item.
+ */
+export const moonPhases: Goal = {
+  id: 'moon-phases',
+  titleKey: 'lab.goal.moon-phases.title',
+  family: 'observe',
+  tier: 2,
+  prereqs: [],
+  path: [{ formulaId: 'moon-phase', narrativeKey: 'lab.goal.g8.phase' }],
+  connection: {
+    whyKey: 'lab.conn.g8.why',
+    hookKey: 'lab.conn.g8.hook',
+    links: [
+      { labelKey: 'lab.conn.g8.moon', href: '/moon' },
+      { labelKey: 'lab.conn.g8.explore', href: '/explore' },
+    ],
+  },
+};
+
 /** All goals, keyed by id — insertion order drives the Lab picker (the mission arc). */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
@@ -471,6 +498,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [getToMars.id, getToMars],
   [landOnMars.id, landOnMars],
   [leaveTheSolarSystem.id, leaveTheSolarSystem],
+  [moonPhases.id, moonPhases],
 ]);
 
 /**

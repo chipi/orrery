@@ -107,6 +107,16 @@ describe('goal registry · connection href integrity', () => {
     readdirSync('static/data/fleet/launch-site').map((f) => f.replace(/\.json$/, '')),
   ); // /earth?site=
 
+  // Real top-level routes (source of truth: a directory under src/routes). Bare-route
+  // connection links (observe goals sending you to LOOK — /moon, /explore) must hit one:
+  // the panel <a> is interaction-gated so it never reaches prerendered HTML, meaning
+  // check-internal-links can't see it — this is their only gate (review G8 MINOR).
+  const routeDirs = new Set(
+    readdirSync('src/routes', { withFileTypes: true })
+      .filter((d) => d.isDirectory() && !d.name.startsWith('[') && !d.name.startsWith('.'))
+      .map((d) => `/${d.name}`),
+  );
+
   // route path → (id) => does the id exist in that route's data source?
   const resolvers: Record<string, (id: string | null) => boolean> = {
     '/fly': (id) => !!id && missions.has(id),
@@ -147,6 +157,13 @@ describe('goal registry · connection href integrity', () => {
       if (path.startsWith('/programs/')) {
         const id = path.slice('/programs/'.length);
         if (!programs.has(id)) broken.push(`${goal}: unknown program '${id}' (${href})`);
+        continue;
+      }
+      // A bare route link (no query) — e.g. observe goals sending you to /moon or /explore
+      // to LOOK — must be a real top-level route (validated against src/routes, since the
+      // interaction-gated panel <a> never reaches prerendered HTML for check-internal-links).
+      if (qs === undefined) {
+        if (!routeDirs.has(path)) broken.push(`${goal}: '${path}' is not a real route (${href})`);
         continue;
       }
       const resolve = resolvers[path];
@@ -398,5 +415,44 @@ describe('M-return · deorbit + entry heating', () => {
     expect(verdict.wiresFrom).toEqual([
       { fromStep: 3, output: 'vTerminal', toInput: 'terminalMs' },
     ]);
+  });
+});
+
+/**
+ * Family B / G8 "Moon phases" — the first observe goal. The lit fraction + phase name must
+ * match the real ephemeris for known dates (new/full/first-quarter, 2024 reference epochs).
+ */
+describe('G8 moon-phases · phase geometry from the real ephemeris', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('a full-moon date reads ~fully lit, a new-moon date ~dark', () => {
+    const full = compute('moon-phase', { dateIso: '2024-01-25' });
+    expect(full.status.ok).toBe(true);
+    expect(full.values.illuminatedPct.value).toBeGreaterThan(95);
+    const nw = compute('moon-phase', { dateIso: '2024-01-11' });
+    expect(nw.values.illuminatedPct.value).toBeLessThan(5);
+  });
+
+  it("first quarter is ~half lit and WAXING (the figure's disc + name come from the ephemeris)", () => {
+    const r = compute('moon-phase', { dateIso: '2024-01-18' });
+    expect(r.values.illuminatedPct.value).toBeGreaterThan(35);
+    expect(r.values.illuminatedPct.value).toBeLessThan(65);
+    const fig = r.figure as { waxing: boolean; phaseLabelKey: string; illuminatedFraction: number };
+    expect(fig.waxing).toBe(true);
+    expect(fig.phaseLabelKey).toBe('lab.moon.phase.first-quarter');
+    expect(fig.illuminatedFraction).toBeCloseTo(r.values.illuminatedPct.value / 100, 5);
+  });
+
+  it('an invalid date fails honest, and the age stays within a synodic month', () => {
+    expect(compute('moon-phase', { dateIso: 'not-a-date' }).status.ok).toBe(false);
+    const r = compute('moon-phase', { dateIso: '2026-08-30' });
+    expect(r.values.moonAgeDays.value).toBeGreaterThanOrEqual(0);
+    expect(r.values.moonAgeDays.value).toBeLessThan(29.54);
+  });
+
+  it('G8 is an observe-family goal that sends you out to LOOK (bare route links)', () => {
+    const g = GOALS.get('moon-phases')!;
+    expect(g.family).toBe('observe');
+    expect(g.connection!.links.map((l) => l.href)).toEqual(['/moon', '/explore']);
   });
 });

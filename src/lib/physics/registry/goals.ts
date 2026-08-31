@@ -74,6 +74,63 @@ export const launchARocket: Goal = {
 };
 
 /**
+ * "Scale a rocket" — the design depth behind M1. M1 asks "does my Δv clear the bar?";
+ * this asks "so what rocket does that TAKE?" The first-principles cascade: payload → gross
+ * mass (the rocket equation solved for mass, with the single-stage wall) → liftoff thrust →
+ * engine count → why you must stage → when to strap on boosters. Every rung ties to a real
+ * engine or launcher: the same job builds a 9-Merlin Falcon 9, a 5-F-1 Saturn V, or a
+ * single-RD-180 Atlas V with solids. Two rungs WIRE the gross mass; one wires the thrust.
+ */
+export const scaleARocket: Goal = {
+  id: 'scale-a-rocket',
+  titleKey: 'lab.goal.scale-rocket.title',
+  family: 'spaceflight',
+  tier: 1,
+  prereqs: ['launch-a-rocket'],
+  path: [
+    { formulaId: 'rocket-sizing', narrativeKey: 'lab.goal.sar.size' },
+    {
+      formulaId: 'liftoff-thrust',
+      narrativeKey: 'lab.goal.sar.thrust',
+      wiresFrom: [{ fromStep: 0, output: 'grossMassKg', toInput: 'grossMassKg' }],
+    },
+    {
+      formulaId: 'engine-count',
+      narrativeKey: 'lab.goal.sar.engines',
+      wiresFrom: [{ fromStep: 1, output: 'thrustN', toInput: 'thrustN' }],
+    },
+    { formulaId: 'staging', narrativeKey: 'lab.goal.sar.stage' },
+    {
+      formulaId: 'booster-count',
+      narrativeKey: 'lab.goal.sar.boosters',
+      wiresFrom: [{ fromStep: 0, output: 'grossMassKg', toInput: 'grossMassKg' }],
+    },
+    {
+      // The finale: the whole chain on the biggest rocket ever built. Preset to Starship +
+      // Super Heavy — 33 Raptors, ~76 MN, a ~5,000 t stainless-steel stack at TWR ~1.5.
+      formulaId: 'cluster-thrust',
+      narrativeKey: 'lab.goal.sar.starship',
+      presetInputs: { engineCount: 33, engineThrustN: 2300000, grossMassKg: 5000000 },
+    },
+  ],
+  connection: {
+    whyKey: 'lab.conn.sar.why',
+    hookKey: 'lab.conn.sar.hook',
+    links: [
+      { labelKey: 'lab.conn.sar.starship', href: '/fleet?id=starship', agency: 'SpaceX' },
+      { labelKey: 'lab.conn.sar.raptor', href: '/fleet?id=raptor', agency: 'SpaceX' },
+      { labelKey: 'lab.conn.sar.falcon9', href: '/fleet?id=falcon-9', agency: 'SpaceX' },
+      { labelKey: 'lab.conn.sar.merlin', href: '/fleet?id=merlin-1d', agency: 'SpaceX' },
+      { labelKey: 'lab.conn.sar.saturnv', href: '/fleet?id=saturn-v', agency: 'NASA' },
+      { labelKey: 'lab.conn.sar.f1', href: '/fleet?id=f-1', agency: 'NASA' },
+      { labelKey: 'lab.conn.sar.atlasv', href: '/fleet?id=atlas-v', agency: 'ULA' },
+      { labelKey: 'lab.conn.sar.ariane5', href: '/fleet?id=ariane-5', agency: 'ESA' },
+      { labelKey: 'lab.conn.sar.n1', href: '/fleet?id=n1', agency: 'Roscosmos' },
+    ],
+  },
+};
+
+/**
  * M1.5 "land on Earth" — the return leg the very first spaceflights flew: ride a
  * rocket up, fall back under a parachute. It reuses the SAME terminal-velocity +
  * soft-landing-check as "land on Mars", but on Earth. The lesson: Earth's thick air
@@ -397,6 +454,7 @@ export const leaveTheSolarSystem: Goal = {
 /** All goals, keyed by id — insertion order drives the Lab picker (the mission arc). */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
+  [scaleARocket.id, scaleARocket],
   [landOnEarth.id, landOnEarth],
   [motionFirstPrinciples.id, motionFirstPrinciples],
   [reachTheMoon.id, reachTheMoon],

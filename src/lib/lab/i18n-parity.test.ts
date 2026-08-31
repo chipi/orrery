@@ -65,6 +65,16 @@ function collectAllKeys(): string[] {
     REGISTRY.get('oberth-departure-dv')!.compute({ vInfKms: NaN, body: 'earth', altitudeKm: 200 }),
     add,
   );
+  // rocket-sizing's single-stage wall (err-wall) only fires above the ceiling — force it.
+  collectFromResult(
+    REGISTRY.get('rocket-sizing')!.compute({
+      payloadKg: 5000,
+      deltaVKms: 12,
+      ispS: 350,
+      structuralFraction: 0.08,
+    }),
+    add,
+  );
 
   for (const goal of GOALS.values()) {
     add(goal.titleKey);

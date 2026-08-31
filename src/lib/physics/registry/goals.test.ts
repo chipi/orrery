@@ -231,3 +231,114 @@ describe('M6 leave-the-solar-system · escape physics', () => {
     );
   });
 });
+
+/**
+ * "Scale a rocket" physics — locks the sizing/staging/engine-count numbers the lesson
+ * teaches, and pins the reality anchors (Falcon 9 = 9 Merlins, orbit needs 2 stages).
+ */
+describe('scale-a-rocket · sizing, staging, engine + booster counts', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('sizing: a 5 t payload for 7 km/s (Isp 350, ε 0.08) needs a ~90 t rocket, mostly fuel', () => {
+    const r = compute('rocket-sizing', {
+      payloadKg: 5000,
+      deltaVKms: 7,
+      ispS: 350,
+      structuralFraction: 0.08,
+    });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.grossMassKg.value).toBeGreaterThan(80000);
+    expect(r.values.grossMassKg.value).toBeLessThan(110000);
+    // propellant dominates — the "a rocket is mostly fuel" lesson.
+    expect(r.values.propellantMassKg.value).toBeGreaterThan(r.values.grossMassKg.value * 0.8);
+  });
+
+  it('sizing: past the single-stage wall (Rε ≥ 1) it fails HONEST, not with a fake number', () => {
+    // 12 km/s single-stage with ε 0.08 is impossible — the denominator goes non-positive.
+    const r = compute('rocket-sizing', {
+      payloadKg: 5000,
+      deltaVKms: 12,
+      ispS: 350,
+      structuralFraction: 0.08,
+    });
+    expect(r.status.ok).toBe(false);
+  });
+
+  it('staging: a single stage caps at ~8.7 km/s < 9.4 to orbit → 2 stages', () => {
+    const r = compute('staging', { deltaVKms: 9.4, ispS: 350, structuralFraction: 0.08 });
+    expect(r.values.singleStageCeilingKms.value).toBeCloseTo(8.67, 1);
+    expect(r.values.singleStageCeilingKms.value).toBeLessThan(9.4); // why no SSTO
+    expect(r.values.stagesNeeded.value).toBe(2);
+  });
+
+  it('engine-count: Falcon 9-class thrust (~7.6 MN) on Merlins (~845 kN) = 9 engines', () => {
+    expect(
+      compute('engine-count', { thrustN: 7_600_000, engineThrustN: 845_000 }).values.engineCount
+        .value,
+    ).toBe(9);
+    // one big engine can do what many small ones do — Atlas V's single RD-180 (~3.83 MN).
+    expect(
+      compute('engine-count', { thrustN: 3_800_000, engineThrustN: 3_830_000 }).values.engineCount
+        .value,
+    ).toBe(1);
+  });
+
+  it('booster-count: a heavy stack the core cannot lift alone needs strap-ons', () => {
+    // 500 t at TWR 1.3 ⇒ ~6.4 MN required; a 1 MN core leaves ~5.4 MN → 2× 4 MN boosters.
+    const r = compute('booster-count', {
+      grossMassKg: 500_000,
+      coreThrustN: 1_000_000,
+      boosterThrustN: 4_000_000,
+      liftoffTwr: 1.3,
+    });
+    expect(r.values.boostersNeeded.value).toBe(2);
+    // a light rocket the core lifts alone needs none.
+    expect(
+      compute('booster-count', {
+        grossMassKg: 50_000,
+        coreThrustN: 1_000_000,
+        boosterThrustN: 4_000_000,
+        liftoffTwr: 1.3,
+      }).values.boostersNeeded.value,
+    ).toBe(0);
+  });
+
+  it('cluster-thrust finale: Starship (33 Raptors) makes ~76 MN and lifts a 5000 t stack at TWR ~1.5', () => {
+    const r = compute('cluster-thrust', {
+      engineCount: 33,
+      engineThrustN: 2_300_000,
+      grossMassKg: 5_000_000,
+    });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.totalThrustN.value).toBeCloseTo(75_900_000, -5); // ~76 MN
+    expect(r.values.liftoffTwr.value).toBeCloseTo(1.55, 1); // beats weight → it flies
+    // and the Starship rung presets exactly those real numbers.
+    const g = GOALS.get('scale-a-rocket')!;
+    const finale = g.path.find((s) => s.formulaId === 'cluster-thrust')!;
+    expect(finale.presetInputs).toEqual({
+      engineCount: 33,
+      engineThrustN: 2_300_000,
+      grossMassKg: 5_000_000,
+    });
+  });
+
+  it('the ladder wires gross mass → thrust → engines, and gross mass → boosters', () => {
+    const g = GOALS.get('scale-a-rocket')!;
+    const thrust = g.path.find((s) => s.formulaId === 'liftoff-thrust')!;
+    expect(thrust.wiresFrom).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ output: 'grossMassKg', toInput: 'grossMassKg' }),
+      ]),
+    );
+    const engines = g.path.find((s) => s.formulaId === 'engine-count')!;
+    expect(engines.wiresFrom).toEqual(
+      expect.arrayContaining([expect.objectContaining({ output: 'thrustN', toInput: 'thrustN' })]),
+    );
+    const boosters = g.path.find((s) => s.formulaId === 'booster-count')!;
+    expect(boosters.wiresFrom).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ output: 'grossMassKg', toInput: 'grossMassKg' }),
+      ]),
+    );
+  });
+});

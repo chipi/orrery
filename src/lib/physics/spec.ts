@@ -184,10 +184,22 @@ export type FigureSpec = FigureBase &
         planetLabelKey: string;
         maxElongationDeg?: number; // inner planets: the cap the elongation can never exceed
       }
+    // Entry-corridor (Family A landings) — the re-entry knife-edge. Two rigorously-computed
+    // boundaries: the SKIP boundary (shallower → the Keplerian perigee grazes above the capture
+    // floor and the vehicle skips back out) and the G-LIMIT boundary (steeper → ballistic peak
+    // deceleration exceeds the survivable limit). The corridor is the gap between them — and for a
+    // fast lunar return it CLOSES (skip > g-limit), the honest reason a ballistic capsule can't
+    // come back from the Moon and Apollo needed a lifting entry.
+    | {
+        kind: 'entry-corridor';
+        skipBoundaryDeg: number; // shallower than this → skips out (perigee above the capture floor)
+        gLimitBoundaryDeg: number; // steeper than this → ballistic peak-g exceeds the limit
+        entryDeg: number; // the chosen entry flight-path angle
+        peakGeeAtEntry: number; // ballistic peak g-load at the chosen angle (readout)
+        perigeeAltKm: number; // Keplerian perigee altitude at the chosen angle (readout)
+      }
     // Additive per goal (renderers demand-driven); typed now so the union is stable.
-    // (`entry-corridor` stays a stub until the skip-out/over-g boundaries are actually modelled —
-    // Allen-Eggers gives the g-load vs angle but not the shallow skip-out limit; no invented band.)
-    | { kind: 'entry-corridor' | 'cislunar-eci' }
+    | { kind: 'cislunar-eci' }
   );
 
 // ─── Goal / GoalStep (curriculum) + Card / Notebook (user documents) ────────

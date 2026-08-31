@@ -2524,5 +2524,18 @@
   "lab_conn_fc_voyager_program": "El programa Voyager",
   "lab_conn_fc_cassini_program": "El programa Cassini-Huygens",
   "lab_body_uranus": "Urano",
-  "lab_body_neptune": "Neptuno"
+  "lab_body_neptune": "Neptuno",
+  "lab_f_corridor_title": "Corredor de reentrada",
+  "lab_f_corridor_velocity": "Velocidad de entrada",
+  "lab_f_corridor_angle": "Ángulo de trayectoria",
+  "lab_f_corridor_glimit": "Límite de g soportable",
+  "lab_f_corridor_scale_height": "Altura de escala atmosférica",
+  "lab_f_corridor_perigee": "Altitud del perigeo de la trayectoria",
+  "lab_f_corridor_decel": "Pico de g balístico",
+  "lab_f_corridor_width": "Anchura del corredor",
+  "lab_assume_keplerian_above_atmosphere": "Trayectoria kepleriana por encima de la atmósfera",
+  "lab_assume_lift_ignored": "Balístico — sin considerar sustentación",
+  "lab_goal_loe_corridor": "Al volver a casa no puedes simplemente apuntar al suelo: debes enhebrar un corredor de ángulos de entrada. Demasiado rasante y el perigeo de tu trayectoria queda por encima del aire denso: rozas la cima y REBOTAS de vuelta al espacio, como una piedra sobre un estanque. Demasiado pronunciado y la deceleración se dispara más allá de lo que un cuerpo —o un fuselaje— puede soportar. Desde órbita baja a 7,8 km/s el corredor es generoso (vas demasiado lento para rebotar). Pero entra desde la LUNA a 11 km/s y el corredor balístico se desvanece: cualquier ángulo lo bastante rasante para no rebotar somete a más de 30 g. Por eso el Apolo no cayó como un ladrillo: voló una entrada con SUSTENTACIÓN, inclinando su centro de masas desplazado para dirigirse, enhebrando un corredor de apenas 2° de anchura.",
+  "lab_conn_loe_apollo": "Apolo 11 — el corredor de retorno lunar",
+  "lab_conn_loe_osiris": "OSIRIS-REx — retorno de muestras a 12,4 km/s"
 }

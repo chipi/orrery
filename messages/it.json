@@ -2524,5 +2524,18 @@
   "lab_conn_fc_voyager_program": "Il programma Voyager",
   "lab_conn_fc_cassini_program": "Il programma Cassini–Huygens",
   "lab_body_uranus": "Urano",
-  "lab_body_neptune": "Nettuno"
+  "lab_body_neptune": "Nettuno",
+  "lab_f_corridor_title": "Corridoio di rientro",
+  "lab_f_corridor_velocity": "Velocità di rientro",
+  "lab_f_corridor_angle": "Angolo di traiettoria",
+  "lab_f_corridor_glimit": "Limite g sopravvivibile",
+  "lab_f_corridor_scale_height": "Altezza di scala dell'atmosfera",
+  "lab_f_corridor_perigee": "Altitudine del perigeo di traiettoria",
+  "lab_f_corridor_decel": "Picco g balistico",
+  "lab_f_corridor_width": "Larghezza del corridoio",
+  "lab_assume_keplerian_above_atmosphere": "Traiettoria kepleriana sopra l'atmosfera",
+  "lab_assume_lift_ignored": "Balistico — portanza ignorata",
+  "lab_goal_loe_corridor": "Tornando a casa, non puoi semplicemente puntare al suolo: devi imboccare un corridoio di angoli di rientro. Troppo poco inclinato e il perigeo della tua traiettoria resta sopra l'aria densa: sfiori la sommità e RIMBALZI di nuovo nello spazio, come un sasso su uno stagno. Troppo inclinato e la decelerazione supera ciò che un corpo — o una fusoliera — può sopportare. Dall'orbita bassa a 7,8 km/s il corridoio è generoso (sei troppo lento per rimbalzare). Ma se scendi dalla LUNA a 11 km/s il corridoio balistico svanisce: qualsiasi angolo abbastanza poco inclinato da non rimbalzare comporta oltre 30 g. Ecco perché l'Apollo non cadeva come un mattone: volava un rientro PORTANTE, inclinando il suo centro di massa spostato per manovrare, imboccando un corridoio largo appena 2°.",
+  "lab_conn_loe_apollo": "Apollo 11 — il corridoio di rientro lunare",
+  "lab_conn_loe_osiris": "OSIRIS-REx — ritorno di campioni a 12,4 km/s"
 }

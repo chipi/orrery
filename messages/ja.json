@@ -2524,5 +2524,18 @@
   "lab_conn_fc_voyager_program": "Voyager 計画",
   "lab_conn_fc_cassini_program": "Cassini–Huygens 計画",
   "lab_body_uranus": "天王星",
-  "lab_body_neptune": "海王星"
+  "lab_body_neptune": "海王星",
+  "lab_f_corridor_title": "再突入コリドー",
+  "lab_f_corridor_velocity": "突入速度",
+  "lab_f_corridor_angle": "飛行経路角",
+  "lab_f_corridor_glimit": "生存可能なg限界",
+  "lab_f_corridor_scale_height": "大気のスケールハイト",
+  "lab_f_corridor_perigee": "軌道の近地点高度",
+  "lab_f_corridor_decel": "弾道最大g",
+  "lab_f_corridor_width": "コリドー幅",
+  "lab_assume_keplerian_above_atmosphere": "大気圏より上ではケプラー軌道",
+  "lab_assume_lift_ignored": "弾道飛行 — 揚力は無視",
+  "lab_goal_loe_corridor": "帰還時、地面に狙いを定めるだけでは済まない — 突入角のコリドーを縫うように通らなければならない。浅すぎると軌道の近地点が濃い大気の上に留まり、水面を跳ねる石のように上層をかすめて宇宙へSKIP（跳ね返り）してしまう。急すぎると減速が人体や機体の耐えられる限界を超えて跳ね上がる。低軌道の7.8 km/sではコリドーは広い（跳ね返るには遅すぎる）。しかし月から11 km/sで突入すると弾道コリドーは消え去る：跳ね返らない程度に浅い角度はどれも30 gを超える。だからApolloはレンガのように落ちなかった — オフセットした重心を傾けて操舵する揚力突入を行い、わずか2°しかないコリドーを縫うように飛んだ。",
+  "lab_conn_loe_apollo": "Apollo 11 — 月帰還コリドー",
+  "lab_conn_loe_osiris": "OSIRIS-REx — 12.4 km/sでのサンプルリターン"
 }

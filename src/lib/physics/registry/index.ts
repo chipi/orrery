@@ -1811,6 +1811,161 @@ export const entryHeating: FormulaDef<{
   },
 };
 
+/**
+ * Entry corridor (M-return skip-out) — the re-entry knife-edge, and why you can't come back
+ * from the Moon in a brick. Two rigorously-computed boundaries bracket the survivable band of
+ * entry flight-path angle:
+ *   · SKIP (overshoot): treat the trajectory above the atmosphere as Keplerian. Its perigee is
+ *     rp = a(1−e) with a = −µ/(2ε), ε = v²/2 − µ/r, e from the angular momentum h = r·v·cosγ.
+ *     Shallower entry → more h → higher perigee; once the perigee clears the capture floor the
+ *     vehicle grazes and skips back out. The skip boundary is the γ where perigee = capture floor.
+ *   · G-LIMIT (undershoot): the Allen-Eggers ballistic peak deceleration a_peak = v²sinγ/(2eH);
+ *     steeper than the γ that hits the survivable g-limit is fatal.
+ * The corridor is the gap between them. From LEO (~7.8 km/s) the perigee is below the surface at
+ * any real angle, so you NEVER skip — the corridor is just the g-limit, and it's wide. From the
+ * Moon (~11 km/s) the skip boundary is STEEPER than the g-limit boundary — the gap closes, a
+ * ballistic capsule cannot both avoid skipping AND survive the g's, and only a LIFTING entry
+ * (Apollo's offset c.g.) threads the ~2° corridor. Ballistic + lift-ignored is the honest bound;
+ * the "you need lift" verdict falls straight out of it.
+ */
+export const entryCorridor: FormulaDef<{
+  entryVelocityKms: number;
+  flightPathAngleDeg: number;
+  gLimit: number;
+  scaleHeightKm: number;
+}> = {
+  id: 'entry-corridor',
+  titleKey: 'lab.f.corridor.title',
+  domain: 'descent',
+  tier: 8,
+  prereqs: ['entry-heating'],
+  latex: 'r_p = a(1-e),\\quad a_{\\text{peak}} = \\dfrac{v^2\\sin\\gamma}{2eH}',
+  inputs: [
+    {
+      key: 'entryVelocityKms',
+      labelKey: 'lab.f.corridor.velocity',
+      units: 'km/s',
+      kind: 'number',
+      default: 11, // a lunar return — where the corridor bites
+      min: 6,
+      max: 16,
+      step: 0.1,
+    },
+    {
+      key: 'flightPathAngleDeg',
+      labelKey: 'lab.f.corridor.angle',
+      units: 'deg',
+      kind: 'number',
+      default: 6,
+      min: 0.5,
+      max: 12,
+      step: 0.1,
+    },
+    {
+      key: 'gLimit',
+      labelKey: 'lab.f.corridor.glimit',
+      units: '',
+      kind: 'number',
+      default: 12, // a survivable crewed deceleration
+      min: 3,
+      max: 30,
+    },
+    {
+      key: 'scaleHeightKm',
+      labelKey: 'lab.f.corridor.scale-height',
+      units: 'km',
+      kind: 'number',
+      default: 7,
+      min: 3,
+      max: 20,
+    },
+  ],
+  outputs: [
+    { key: 'perigeeAltKm', labelKey: 'lab.f.corridor.perigee', units: 'km' },
+    { key: 'peakDecelG', labelKey: 'lab.f.corridor.decel', units: '' },
+    { key: 'corridorWidthDeg', labelKey: 'lab.f.corridor.width', units: 'deg' },
+  ],
+  compute: ({ entryVelocityKms, flightPathAngleDeg, gLimit, scaleHeightKm }) => {
+    if (
+      !Number.isFinite(entryVelocityKms) ||
+      !Number.isFinite(flightPathAngleDeg) ||
+      !Number.isFinite(gLimit) ||
+      !Number.isFinite(scaleHeightKm) ||
+      entryVelocityKms <= 0 ||
+      flightPathAngleDeg <= 0 ||
+      gLimit <= 0 ||
+      scaleHeightKm <= 0
+    ) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.escape.err-input' },
+        assumptions: ['lab.assume.ballistic-entry'],
+      } satisfies FormulaResult;
+    }
+    const ENTRY_ALT_KM = 122; // the conventional Earth entry interface
+    const CAPTURE_ALT_KM = 60; // below this the atmosphere is dense enough to capture
+    const rEI = R_EARTH_KM + ENTRY_ALT_KM;
+    const v = entryVelocityKms;
+    const H = scaleHeightKm * 1000;
+    const vMs = entryVelocityKms * 1000;
+
+    // Keplerian perigee of the entry trajectory at the chosen angle.
+    const eps = (v * v) / 2 - MU_EARTH_KM3_S2 / rEI;
+    const a = -MU_EARTH_KM3_S2 / (2 * eps);
+    const gamma = (flightPathAngleDeg * Math.PI) / 180;
+    const hMom = rEI * v * Math.cos(gamma);
+    const ecc = Math.sqrt(
+      Math.max(0, 1 + (2 * eps * hMom * hMom) / (MU_EARTH_KM3_S2 * MU_EARTH_KM3_S2)),
+    );
+    const perigeeAltKm = a * (1 - ecc) - R_EARTH_KM;
+    const peakG = (vMs * vMs * Math.sin(gamma)) / (2 * Math.E * H) / G0;
+
+    // SKIP boundary — γ where the perigee equals the capture floor (bound orbits only; if the
+    // perigee is below the surface at all angles, as from LEO, you can never skip → boundary 0).
+    const rc = R_EARTH_KM + CAPTURE_ALT_KM;
+    let skipBoundaryDeg = 0;
+    if (eps < 0) {
+      const eAtCapture = 1 - rc / a; // e that puts perigee at the capture floor
+      const hSq = ((eAtCapture * eAtCapture - 1) * MU_EARTH_KM3_S2 * MU_EARTH_KM3_S2) / (2 * eps);
+      if (hSq > 0) {
+        const cg = Math.sqrt(hSq) / (rEI * v);
+        if (cg <= 1) skipBoundaryDeg = (Math.acos(cg) * 180) / Math.PI;
+      }
+    }
+    // G-LIMIT boundary — γ where the ballistic peak-g equals the limit.
+    const sinSteep = (gLimit * 2 * Math.E * H * G0) / (vMs * vMs);
+    const gLimitBoundaryDeg = sinSteep >= 1 ? 90 : (Math.asin(sinSteep) * 180) / Math.PI;
+
+    const corridorWidthDeg = Math.max(0, gLimitBoundaryDeg - skipBoundaryDeg);
+
+    return {
+      values: {
+        perigeeAltKm: { value: perigeeAltKm, units: 'km' },
+        peakDecelG: { value: peakG, units: '' },
+        corridorWidthDeg: { value: corridorWidthDeg, units: 'deg' },
+      },
+      status: { ok: true },
+      assumptions: [
+        'lab.assume.ballistic-entry',
+        'lab.assume.exponential-atmosphere',
+        'lab.assume.keplerian-above-atmosphere',
+        'lab.assume.lift-ignored',
+      ],
+      figure: {
+        kind: 'entry-corridor',
+        provenance: { fidelity: 'computed', module: 'mechanics/atmosphere' },
+        assumptions: ['lab.assume.keplerian-above-atmosphere', 'lab.assume.lift-ignored'],
+        skipBoundaryDeg,
+        gLimitBoundaryDeg,
+        entryDeg: flightPathAngleDeg,
+        peakGeeAtEntry: peakG,
+        perigeeAltKm,
+      },
+    } satisfies FormulaResult;
+  },
+};
+
 // ─── "Scale a rocket" — payload → mass → thrust → engines → stages → boosters ──
 
 /**
@@ -4199,6 +4354,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [retroDescent.id, retroDescent],
   [deorbitBurn.id, deorbitBurn],
   [entryHeating.id, entryHeating],
+  [entryCorridor.id, entryCorridor],
   [solarEscapeVelocity.id, solarEscapeVelocity],
   [heliocentricEscapeDv.id, heliocentricEscapeDv],
   [oberthDepartureDv.id, oberthDepartureDv],

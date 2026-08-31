@@ -402,19 +402,47 @@ describe('M-return · deorbit + entry heating', () => {
     expect(steep.values.peakDecelG.value).toBeGreaterThan(r.values.peakDecelG.value * 1.9);
   });
 
-  it('the M-return ladder runs deorbit → entry → parachute → splashdown (5 rungs, wire shifted)', () => {
+  it('the M-return ladder runs deorbit → entry → corridor → parachute → splashdown (6 rungs, wire shifted)', () => {
     const g = GOALS.get('land-on-earth')!;
     expect(g.path.map((s) => s.formulaId)).toEqual([
       'deorbit-burn',
       'entry-heating',
+      'entry-corridor',
       'terminal-velocity',
       'terminal-velocity',
       'soft-landing-check',
     ]);
+    // the verdict wires the PARACHUTE rung, now index 4 after the corridor was inserted.
     const verdict = g.path.find((s) => s.formulaId === 'soft-landing-check')!;
     expect(verdict.wiresFrom).toEqual([
-      { fromStep: 3, output: 'vTerminal', toInput: 'terminalMs' },
+      { fromStep: 4, output: 'vTerminal', toInput: 'terminalMs' },
     ]);
+  });
+
+  it('entry-corridor: LEO return has a wide corridor and never skips; a lunar return has NONE (needs lift)', () => {
+    // From LEO (7.8 km/s) you are too slow to skip — the skip boundary collapses to 0 and the
+    // corridor is just the (wide) g-limit.
+    const leo = compute('entry-corridor', {
+      entryVelocityKms: 7.8,
+      flightPathAngleDeg: 3,
+      gLimit: 12,
+      scaleHeightKm: 7,
+    });
+    const leoFig = leo.figure as { skipBoundaryDeg: number; gLimitBoundaryDeg: number };
+    expect(leoFig.skipBoundaryDeg).toBeCloseTo(0, 5);
+    expect(leoFig.gLimitBoundaryDeg).toBeGreaterThan(3); // a real, positive corridor
+    // From the Moon (11 km/s) the skip boundary is STEEPER than the g-limit → corridor closes.
+    const lunar = compute('entry-corridor', {
+      entryVelocityKms: 11,
+      flightPathAngleDeg: 6,
+      gLimit: 12,
+      scaleHeightKm: 7,
+    });
+    const lunarFig = lunar.figure as { skipBoundaryDeg: number; gLimitBoundaryDeg: number };
+    expect(lunarFig.skipBoundaryDeg).toBeGreaterThan(lunarFig.gLimitBoundaryDeg); // no ballistic corridor
+    expect(lunar.values.corridorWidthDeg.value).toBe(0);
+    // and a mid-angle lunar ballistic entry is brutally high-g.
+    expect(lunar.values.peakDecelG.value).toBeGreaterThan(20);
   });
 });
 

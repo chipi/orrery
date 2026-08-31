@@ -2524,5 +2524,18 @@
   "lab_conn_fc_voyager_program": "Het Voyager-programma",
   "lab_conn_fc_cassini_program": "Het Cassini–Huygens-programma",
   "lab_body_uranus": "Uranus",
-  "lab_body_neptune": "Neptunus"
+  "lab_body_neptune": "Neptunus",
+  "lab_f_corridor_title": "Terugkeercorridor",
+  "lab_f_corridor_velocity": "Intredesnelheid",
+  "lab_f_corridor_angle": "Vluchtpadhoek",
+  "lab_f_corridor_glimit": "Overleefbare g-limiet",
+  "lab_f_corridor_scale_height": "Schaalhoogte atmosfeer",
+  "lab_f_corridor_perigee": "Perigeumhoogte traject",
+  "lab_f_corridor_decel": "Ballistische piek-g",
+  "lab_f_corridor_width": "Corridorbreedte",
+  "lab_assume_keplerian_above_atmosphere": "Kepleriaans traject boven de atmosfeer",
+  "lab_assume_lift_ignored": "Ballistisch — lift genegeerd",
+  "lab_goal_loe_corridor": "Bij thuiskomst kun je niet zomaar op de grond mikken — je moet een corridor van intredehoeken vinden. Te vlak en het perigeum van je traject blijft boven de dichte lucht: je scheert langs de top en STUITERT terug de ruimte in, als een steen over een vijver. Te steil en de vertraging piekt voorbij wat een lichaam — of een romp — kan verdragen. Vanuit een lage baan bij 7,8 km/s is de corridor royaal (je bent te traag om te stuiteren). Maar kom binnen vanaf de MAAN bij 11 km/s en de ballistische corridor verdwijnt: elke hoek vlak genoeg om niet te stuiteren trekt meer dan 30 g. Daarom viel Apollo niet als een baksteen — het vloog een LIFT-intrede, waarbij het zijn verschoven massamiddelpunt kantelde om te sturen, door een corridor van amper 2° breed.",
+  "lab_conn_loe_apollo": "Apollo 11 — de maanterugkeercorridor",
+  "lab_conn_loe_osiris": "OSIRIS-REx — monsterterugkeer bij 12,4 km/s"
 }

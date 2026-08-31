@@ -2524,5 +2524,18 @@
   "lab_conn_fc_voyager_program": "旅行者计划",
   "lab_conn_fc_cassini_program": "卡西尼-惠更斯计划",
   "lab_body_uranus": "天王星",
-  "lab_body_neptune": "海王星"
+  "lab_body_neptune": "海王星",
+  "lab_f_corridor_title": "再入走廊",
+  "lab_f_corridor_velocity": "再入速度",
+  "lab_f_corridor_angle": "航迹角",
+  "lab_f_corridor_glimit": "可承受g限",
+  "lab_f_corridor_scale_height": "大气标高",
+  "lab_f_corridor_perigee": "轨迹近地点高度",
+  "lab_f_corridor_decel": "弹道峰值g",
+  "lab_f_corridor_width": "走廊宽度",
+  "lab_assume_keplerian_above_atmosphere": "大气层之上为开普勒轨迹",
+  "lab_assume_lift_ignored": "纯弹道式——忽略升力",
+  "lab_goal_loe_corridor": "返回地球时，你不能只瞄准地面——你必须穿过一条由再入角构成的走廊。角度太浅，轨迹的近地点会停留在稠密大气之上：你擦过顶部并弹回太空，就像水漂石子。角度太陡，减速峰值会超过人体——或舱体——所能承受的极限。从7.8 km/s的低轨道返回时走廊很宽裕（你太慢，弹不出去）。但从月球以11 km/s切入，弹道走廊便荡然无存：任何浅到不会弹出的角度都会带来超过30 g的过载。这就是为什么阿波罗没有像砖头一样直落——它飞的是升力式再入，通过倾斜偏置质心来操纵方向，穿过一条仅约2°宽的走廊。",
+  "lab_conn_loe_apollo": "阿波罗11号——月球返回走廊",
+  "lab_conn_loe_osiris": "OSIRIS-REx——以12.4 km/s进行样本返回"
 }

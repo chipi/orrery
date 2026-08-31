@@ -2524,5 +2524,18 @@
   "lab_conn_fc_voyager_program": "Das Voyager-Programm",
   "lab_conn_fc_cassini_program": "Das Cassini-Huygens-Programm",
   "lab_body_uranus": "Uranus",
-  "lab_body_neptune": "Neptun"
+  "lab_body_neptune": "Neptun",
+  "lab_f_corridor_title": "Wiedereintrittskorridor",
+  "lab_f_corridor_velocity": "Eintrittsgeschwindigkeit",
+  "lab_f_corridor_angle": "Flugbahnwinkel",
+  "lab_f_corridor_glimit": "Überlebbares g-Limit",
+  "lab_f_corridor_scale_height": "Atmosphärische Skalenhöhe",
+  "lab_f_corridor_perigee": "Perigäumshöhe der Bahn",
+  "lab_f_corridor_decel": "Ballistische Spitzen-g",
+  "lab_f_corridor_width": "Korridorbreite",
+  "lab_assume_keplerian_above_atmosphere": "Keplerbahn oberhalb der Atmosphäre",
+  "lab_assume_lift_ignored": "Ballistisch — Auftrieb vernachlässigt",
+  "lab_goal_loe_corridor": "Bei der Heimkehr kannst du nicht einfach auf den Boden zielen — du musst einen Korridor von Eintrittswinkeln treffen. Zu flach, und das Perigäum deiner Bahn bleibt oberhalb der dichten Luft: du streifst die Oberkante und PRALLST zurück ins All wie ein Stein über einen Teich. Zu steil, und die Verzögerung schießt über das hinaus, was ein Körper — oder eine Hülle — aushält. Aus niedriger Umlaufbahn bei 7,8 km/s ist der Korridor großzügig (du bist zu langsam zum Abprallen). Doch fällst du vom MOND mit 11 km/s herein, verschwindet der ballistische Korridor: jeder Winkel, der flach genug ist, um nicht abzuprallen, erzeugt über 30 g. Deshalb fiel Apollo nicht wie ein Stein — es flog einen AUFTRIEBS-Eintritt, indem es seinen versetzten Schwerpunkt kippte, um zu steuern, und einen kaum 2° breiten Korridor traf.",
+  "lab_conn_loe_apollo": "Apollo 11 — der Mondrückkehr-Korridor",
+  "lab_conn_loe_osiris": "OSIRIS-REx — Probenrückführung bei 12,4 km/s"
 }

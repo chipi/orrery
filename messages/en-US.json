@@ -2525,5 +2525,18 @@
   "lab_conn_fc_voyager_program": "The Voyager program",
   "lab_conn_fc_cassini_program": "The Cassini–Huygens program",
   "lab_body_uranus": "Uranus",
-  "lab_body_neptune": "Neptune"
+  "lab_body_neptune": "Neptune",
+  "lab_f_corridor_title": "Re-entry corridor",
+  "lab_f_corridor_velocity": "Entry velocity",
+  "lab_f_corridor_angle": "Flight-path angle",
+  "lab_f_corridor_glimit": "Survivable g-limit",
+  "lab_f_corridor_scale_height": "Atmosphere scale height",
+  "lab_f_corridor_perigee": "Trajectory perigee altitude",
+  "lab_f_corridor_decel": "Ballistic peak g",
+  "lab_f_corridor_width": "Corridor width",
+  "lab_assume_keplerian_above_atmosphere": "Keplerian trajectory above the atmosphere",
+  "lab_assume_lift_ignored": "Ballistic — lift ignored",
+  "lab_goal_loe_corridor": "Coming home, you cannot just aim at the ground — you must thread a corridor of entry angles. Too shallow and your trajectory's perigee stays above the thick air: you graze the top and SKIP back into space, like a stone off a pond. Too steep and the deceleration spikes past what a body — or a hull — can take. From low orbit at 7.8 km/s the corridor is generous (you are too slow to skip). But drop in from the MOON at 11 km/s and the ballistic corridor vanishes: any angle shallow enough to not skip pulls over 30 g. That is why Apollo did not fall like a brick — it flew a LIFTING entry, tilting its offset centre of mass to steer, threading a corridor barely 2° wide.",
+  "lab_conn_loe_apollo": "Apollo 11 — the lunar-return corridor",
+  "lab_conn_loe_osiris": "OSIRIS-REx — sample return at 12.4 km/s"
 }

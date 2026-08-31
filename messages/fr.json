@@ -2524,5 +2524,18 @@
   "lab_conn_fc_voyager_program": "Le programme Voyager",
   "lab_conn_fc_cassini_program": "Le programme Cassini-Huygens",
   "lab_body_uranus": "Uranus",
-  "lab_body_neptune": "Neptune"
+  "lab_body_neptune": "Neptune",
+  "lab_f_corridor_title": "Couloir de rentrée",
+  "lab_f_corridor_velocity": "Vitesse d'entrée",
+  "lab_f_corridor_angle": "Angle de trajectoire",
+  "lab_f_corridor_glimit": "Limite de g survivable",
+  "lab_f_corridor_scale_height": "Hauteur d'échelle de l'atmosphère",
+  "lab_f_corridor_perigee": "Altitude du périgée de trajectoire",
+  "lab_f_corridor_decel": "Pic de g balistique",
+  "lab_f_corridor_width": "Largeur du couloir",
+  "lab_assume_keplerian_above_atmosphere": "Trajectoire képlérienne au-dessus de l'atmosphère",
+  "lab_assume_lift_ignored": "Balistique — portance ignorée",
+  "lab_goal_loe_corridor": "Au retour, on ne peut pas simplement viser le sol — il faut enfiler un couloir d'angles d'entrée. Trop rasant et le périgée de votre trajectoire reste au-dessus de l'air dense : vous effleurez le sommet et REBONDISSEZ vers l'espace, comme un galet sur l'eau. Trop raide et la décélération dépasse ce qu'un corps — ou une coque — peut supporter. Depuis une orbite basse à 7,8 km/s le couloir est généreux (vous êtes trop lent pour rebondir). Mais tombez depuis la LUNE à 11 km/s et le couloir balistique disparaît : tout angle assez rasant pour ne pas rebondir engendre plus de 30 g. C'est pourquoi Apollo n'est pas tombé comme une pierre — il a effectué une rentrée PORTANTE, inclinant son centre de masse décalé pour se diriger, enfilant un couloir large d'à peine 2°.",
+  "lab_conn_loe_apollo": "Apollo 11 — le couloir de retour lunaire",
+  "lab_conn_loe_osiris": "OSIRIS-REx — retour d'échantillon à 12,4 km/s"
 }

@@ -21,6 +21,7 @@
   import OrbitDiagramCanvas from './OrbitDiagramCanvas.svelte';
   import GroundTrackCanvas from './GroundTrackCanvas.svelte';
   import SkyChartCanvas from './SkyChartCanvas.svelte';
+  import EntryCorridorCanvas from './EntryCorridorCanvas.svelte';
   import {
     fidelityStyle,
     fidelityLabel,
@@ -157,6 +158,8 @@
   <GroundTrackCanvas {figure} {t} {ariaLabelKey} />
 {:else if figure.kind === 'sky-chart'}
   <SkyChartCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'entry-corridor'}
+  <EntryCorridorCanvas {figure} {t} {ariaLabelKey} />
 {:else}
   <svg
     role="img"

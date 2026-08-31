@@ -2524,5 +2524,18 @@
   "lab_conn_fc_voyager_program": "O programa Voyager",
   "lab_conn_fc_cassini_program": "O programa Cassini–Huygens",
   "lab_body_uranus": "Urano",
-  "lab_body_neptune": "Netuno"
+  "lab_body_neptune": "Netuno",
+  "lab_f_corridor_title": "Corredor de reentrada",
+  "lab_f_corridor_velocity": "Velocidade de entrada",
+  "lab_f_corridor_angle": "Ângulo de trajetória",
+  "lab_f_corridor_glimit": "Limite de g suportável",
+  "lab_f_corridor_scale_height": "Altura de escala da atmosfera",
+  "lab_f_corridor_perigee": "Altitude do perigeu da trajetória",
+  "lab_f_corridor_decel": "g balístico máximo",
+  "lab_f_corridor_width": "Largura do corredor",
+  "lab_assume_keplerian_above_atmosphere": "Trajetória kepleriana acima da atmosfera",
+  "lab_assume_lift_ignored": "Balístico — sustentação ignorada",
+  "lab_goal_loe_corridor": "Ao voltar para casa, você não pode simplesmente mirar no chão — precisa encaixar-se num corredor de ângulos de entrada. Raso demais e o perigeu da trajetória permanece acima do ar denso: você raspa o topo e RICOCHETEIA de volta ao espaço, como uma pedra sobre um lago. Íngreme demais e a desaceleração dispara além do que um corpo — ou um casco — consegue suportar. A partir da órbita baixa, a 7,8 km/s, o corredor é generoso (você está lento demais para ricochetear). Mas venha da LUA a 11 km/s e o corredor balístico desaparece: qualquer ângulo raso o bastante para não ricochetear puxa mais de 30 g. Por isso a Apollo não caiu como um tijolo — voou uma entrada com SUSTENTAÇÃO, inclinando seu centro de massa deslocado para guiar-se, encaixando-se num corredor de apenas 2° de largura.",
+  "lab_conn_loe_apollo": "Apollo 11 — o corredor de retorno lunar",
+  "lab_conn_loe_osiris": "OSIRIS-REx — retorno de amostras a 12,4 km/s"
 }

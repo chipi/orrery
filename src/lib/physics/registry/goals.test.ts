@@ -455,6 +455,39 @@ describe('G8 moon-phases · phase geometry from the real ephemeris', () => {
     expect(g.family).toBe('observe');
     expect(g.connection!.links.map((l) => l.href)).toEqual(['/moon', '/explore']);
   });
+
+  it('moon-distance: the real distance stays in the perigee–apogee band, size ~100% of mean', () => {
+    const r = compute('moon-distance', { dateIso: '2026-08-30' });
+    expect(r.values.distanceKm.value).toBeGreaterThan(356000);
+    expect(r.values.distanceKm.value).toBeLessThan(407000);
+    expect(r.values.apparentSizePct.value).toBeGreaterThan(88);
+    expect(r.values.apparentSizePct.value).toBeLessThan(112);
+  });
+
+  it("eclipse-seasons: the Moon's latitude stays within its 5.1° tilt (why eclipses aren't monthly)", () => {
+    const r = compute('eclipse-seasons', { dateIso: '2026-08-30' });
+    expect(Math.abs(r.values.moonLatitudeDeg.value)).toBeLessThanOrEqual(5.2);
+    // over ~70 days the figure sweeps the full ±5° range (it crosses the ±1.5° eclipse band).
+    const fig = r.figure as { series: { points: { x: number; y: number }[] }[] };
+    const betas = fig.series[0].points.map((p) => p.y);
+    expect(Math.max(...betas) - Math.min(...betas)).toBeGreaterThan(6);
+  });
+
+  it('moon-altitude: culminates at ≤90°, peaking over the observer at its declination', () => {
+    const r = compute('moon-altitude', { dateIso: '2026-08-30', latitudeDeg: 40 });
+    expect(r.values.culminationAltitudeDeg.value).toBeLessThanOrEqual(90);
+    const fig = r.figure as { series: { points: { x: number; y: number }[] }[] };
+    expect(Math.max(...fig.series[0].points.map((p) => p.y))).toBeGreaterThan(87);
+  });
+
+  it('the G8 ladder is 4 rungs: phase → distance → eclipse seasons → altitude', () => {
+    expect(GOALS.get('moon-phases')!.path.map((s) => s.formulaId)).toEqual([
+      'moon-phase',
+      'moon-distance',
+      'eclipse-seasons',
+      'moon-altitude',
+    ]);
+  });
 });
 
 /**

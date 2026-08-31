@@ -476,7 +476,12 @@ export const moonPhases: Goal = {
   family: 'observe',
   tier: 2,
   prereqs: [],
-  path: [{ formulaId: 'moon-phase', narrativeKey: 'lab.goal.g8.phase' }],
+  path: [
+    { formulaId: 'moon-phase', narrativeKey: 'lab.goal.g8.phase' },
+    { formulaId: 'moon-distance', narrativeKey: 'lab.goal.g8.distance' },
+    { formulaId: 'eclipse-seasons', narrativeKey: 'lab.goal.g8.eclipse' },
+    { formulaId: 'moon-altitude', narrativeKey: 'lab.goal.g8.altitude' },
+  ],
   connection: {
     whyKey: 'lab.conn.g8.why',
     hookKey: 'lab.conn.g8.hook',

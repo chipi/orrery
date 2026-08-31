@@ -157,6 +157,11 @@
     ctx.fillStyle = 'rgba(232,235,255,0.9)';
     const star = eastern ? 'evening star (E of Sun)' : 'morning star (W of Sun)';
     ctx.fillText(`${t(figure.planetLabelKey)} · ${eps.toFixed(1)}° · ${star}`, cx, horizonY + 20);
+    // The dome height is the Sun-SEPARATION, not the true altitude (ecliptic tilt makes real
+    // altitude ≤ ε) — say it on the figure, not just the honesty line.
+    ctx.font = "7px 'Space Mono', monospace";
+    ctx.fillStyle = 'rgba(180,190,215,0.6)';
+    ctx.fillText('dome height = angle from Sun, not true altitude', cx, horizonY + 32);
 
     heroVignette(ctx, cx, horizonY);
     drawHonestyLine(ctx, provenanceText, assumptionsText);

@@ -162,6 +162,13 @@
     ctx.fillStyle = 'rgba(120,235,225,0.9)';
     ctx.fillText(`west drift ${figure.shiftDeg.toFixed(1)}°/orbit`, x0 + 4, y0 + 23);
 
+    // The longitude axis is RELATIVE, not geographic (the zero is arbitrary) — say so, so the
+    // −180…180 ticks aren't read as Greenwich-referenced coordinates.
+    ctx.textAlign = 'center';
+    ctx.fillStyle = 'rgba(78,205,196,0.5)';
+    ctx.font = "7px 'Space Mono', monospace";
+    ctx.fillText('relative longitude (arbitrary zero) · latitude', (x0 + x1) / 2, y1 + 22);
+
     heroVignette(ctx, W / 2, H / 2);
     drawHonestyLine(ctx, provenanceText, assumptionsText);
   }

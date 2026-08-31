@@ -3923,8 +3923,13 @@ export const planetElongation: FormulaDef<{ planet: string; dateIso: string }> =
         elongationDeg: Math.abs(elong),
         eastern: elong >= 0, // planet east of the Sun → sets after it → evening star
         planetLabelKey: `lab.body.${planet}`,
-        // inner planets (a < 1 AU) can never exceed arcsin(a) from the Sun; outer planets have no cap.
-        maxElongationDeg: a < 1 ? (Math.asin(a) * 180) / Math.PI : undefined,
+        // inner planets (a < 1 AU) cap their elongation; use the SAME eccentric limit the
+        // max-elongation rung teaches — arcsin(a(1+e)) at aphelion (Mercury ~27.8°, not the
+        // circular 22.8°) — so the drawn wall never contradicts rung 2. Outer planets: no cap.
+        maxElongationDeg:
+          a < 1
+            ? (Math.asin(Math.min(1, a * (1 + (PLANET_ECCENTRICITY[planet] ?? 0)))) * 180) / Math.PI
+            : undefined,
       },
     } satisfies FormulaResult;
   },

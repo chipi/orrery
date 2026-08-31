@@ -698,6 +698,26 @@ describe('G7 observe-the-sky · elongation + the inner/outer split', () => {
     );
   });
 
+  it("the sky-chart cap agrees with rung 2's eccentric limit — never the weaker circular arcsin(a) (honesty)", () => {
+    // the elongation figure draws a "max" wall for inner planets; it MUST match what
+    // max-elongation teaches (arcsin(a(1+e)) at aphelion), or a real Mercury plots past its wall.
+    const rung2 = compute('max-elongation', { planet: 'mercury' }).values.greatestElongationDeg
+      .value;
+    const fig = compute('planet-elongation', { planet: 'mercury', dateIso: '2026-06-01' })
+      .figure as {
+      kind: string;
+      maxElongationDeg?: number;
+    };
+    expect(fig.kind).toBe('sky-chart');
+    expect(fig.maxElongationDeg).toBeCloseTo(rung2, 1); // ~27.8, NOT the circular 22.8
+    expect(fig.maxElongationDeg).toBeGreaterThan(24);
+    // outer planets have no cap.
+    const mars = compute('planet-elongation', { planet: 'mars', dateIso: '2026-06-01' }).figure as {
+      maxElongationDeg?: number;
+    };
+    expect(mars.maxElongationDeg).toBeUndefined();
+  });
+
   it('the real ephemeris elongation for Mercury never exceeds its greatest (honesty check — the bug that was)', () => {
     const cap = compute('max-elongation', { planet: 'mercury' }).values.greatestElongationDeg.value;
     for (const dateIso of ['2026-01-15', '2026-06-01', '2027-03-20', '2027-11-09']) {

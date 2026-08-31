@@ -3141,10 +3141,11 @@ export const orbitRegime: FormulaDef<{ body: string; altitudeKm: number }> = {
     const r = loc.rKm + altitudeKm;
     const v = circularVelocityKms(r, loc.muKm3s2);
     const periodMin = orbitalPeriodS(r, loc.muKm3s2) / 60;
-    const points: Vec2[] = [];
-    for (let alt = 200; alt <= 50000.001; alt += 1000) {
-      points.push({ x: alt, y: orbitalPeriodS(loc.rKm + alt, loc.muKm3s2) / 60 });
-    }
+    // Reference ring = the body's stationary orbit (period = sidereal day) — geostationary
+    // for Earth, areostationary for Mars. Drawn faint so LEO/MEO read against it.
+    const sidT = body === 'earth' ? SIDEREAL_DAY_MIN * 60 : Math.abs(loc.rotationHours) * 3600;
+    const refAlt =
+      sidT > 0 ? Math.cbrt((loc.muKm3s2 * sidT * sidT) / (4 * Math.PI * Math.PI)) - loc.rKm : 0;
     return {
       values: {
         speedKms: { value: v, units: 'km/s' },
@@ -3155,15 +3156,15 @@ export const orbitRegime: FormulaDef<{ body: string; altitudeKm: number }> = {
       status: { ok: true },
       assumptions: ['lab.assume.circular-orbits', 'lab.assume.point-mass'],
       figure: {
-        kind: 'curve',
+        kind: 'orbit',
         provenance: { fidelity: 'computed', module: 'mechanics/orbits' },
         assumptions: ['lab.assume.circular-orbits'],
-        x: { labelKey: 'lab.axis.altitude', units: 'km' },
-        y: { labelKey: 'lab.axis.period-min', units: '' },
-        series: [{ points }],
-        marks: [
-          { at: { x: altitudeKm, y: periodMin }, labelKey: 'lab.mark.you-are-here', kind: 'point' },
-        ],
+        bodyRadiusKm: loc.rKm,
+        altitudeKm,
+        refAltitudeKm: refAlt > 0 ? refAlt : undefined,
+        periodMin,
+        speedKms: v,
+        bodyLabelKey: `lab.body.${body}`,
       },
     } satisfies FormulaResult;
   },

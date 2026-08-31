@@ -633,6 +633,21 @@ describe('G9 catch-the-iss · ground track + visibility', () => {
     expect(q.units).toBe(''); // NOT 's' — matches the output spec + the ground-track wire
   });
 
+  it('orbit-regime draws the to-scale orbit-shell hero with a geostationary reference ring', () => {
+    const fig = compute('orbit-regime', { body: 'earth', altitudeKm: 550 }).figure as {
+      kind: string;
+      bodyRadiusKm: number;
+      altitudeKm: number;
+      refAltitudeKm?: number;
+    };
+    expect(fig.kind).toBe('orbit');
+    expect(fig.bodyRadiusKm).toBeCloseTo(6371, -2); // Earth mean radius
+    expect(fig.altitudeKm).toBe(550);
+    // the reference ring is Earth's geostationary altitude (~35,786 km above the mean radius).
+    expect(fig.refAltitudeKm).toBeGreaterThan(35000);
+    expect(fig.refAltitudeKm).toBeLessThan(36500);
+  });
+
   it('the ground track now draws the westward march — 3 successive offset orbits', () => {
     const fig = compute('ground-track-shift', { periodMin: 92, inclinationDeg: 51.6 }).figure as {
       series: { points: { x: number }[] }[];

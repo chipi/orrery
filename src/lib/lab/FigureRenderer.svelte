@@ -18,6 +18,7 @@
   import MoonPhaseCanvas from './MoonPhaseCanvas.svelte';
   import DvWaterfallCanvas from './DvWaterfallCanvas.svelte';
   import ForceDiagramCanvas from './ForceDiagramCanvas.svelte';
+  import OrbitDiagramCanvas from './OrbitDiagramCanvas.svelte';
   import {
     fidelityStyle,
     fidelityLabel,
@@ -148,6 +149,8 @@
   <DvWaterfallCanvas {figure} {t} {ariaLabelKey} />
 {:else if figure.kind === 'force-diagram'}
   <ForceDiagramCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'orbit'}
+  <OrbitDiagramCanvas {figure} {t} {ariaLabelKey} />
 {:else}
   <svg
     role="img"

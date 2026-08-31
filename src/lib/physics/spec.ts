@@ -156,8 +156,20 @@ export type FigureSpec = FigureBase &
     | { kind: 'porkchop'; depDays: number[]; tofDays: number[]; grid: number[][]; units: Unit }
     // Moon-phase disc (Family B / G8) — the lit fraction + waxing/waning + the phase name.
     | { kind: 'moon-phase'; illuminatedFraction: number; waxing: boolean; phaseLabelKey: string }
+    // Orbit-shell diagram (Family B / G10 "choose an orbit") — the body drawn to scale with the
+    // satellite's orbit ring at `altitudeKm` and an optional reference ring (e.g. geostationary).
+    // Values (period/speed) ride the figure as readouts, so it needs no extra i18n text.
+    | {
+        kind: 'orbit';
+        bodyRadiusKm: number;
+        altitudeKm: number;
+        refAltitudeKm?: number; // a reference ring (geostationary), drawn faint + dashed
+        periodMin: number;
+        speedKms: number;
+        bodyLabelKey: string;
+      }
     // Additive per goal (renderers demand-driven); typed now so the union is stable.
-    | { kind: 'orbit' | 'ground-track' | 'sky-chart' | 'entry-corridor' | 'cislunar-eci' }
+    | { kind: 'ground-track' | 'sky-chart' | 'entry-corridor' | 'cislunar-eci' }
   );
 
 // ─── Goal / GoalStep (curriculum) + Card / Notebook (user documents) ────────

@@ -2604,5 +2604,22 @@
   "lab_conn_sysland_next": "你已驾驭了着陆计算机。只剩下一个控制回路——操纵返回舱的升力穿越那刀锋般的再入走廊。",
   "lab_conn_sysland_apollo": "阿波罗11号——登月舱着陆计算机",
   "lab_conn_sysland_perseverance": "毅力号——火星空中吊车",
-  "lab_conn_sysland_falcon9": "Falcon 9——自主着陆点火"
+  "lab_conn_sysland_falcon9": "Falcon 9——自主着陆点火",
+  "lab_f_esteer_title": "再入升力操控（滚转控制）",
+  "lab_f_esteer_ld": "升阻比",
+  "lab_f_esteer_angle": "目标再入角",
+  "lab_f_esteer_glimit": "可承受的g极限",
+  "lab_f_esteer_liftwidth": "升力走廊宽度",
+  "lab_f_esteer_ballwidth": "弹道走廊宽度",
+  "lab_f_esteer_peakg": "峰值减速度",
+  "lab_f_esteer_err_lost": "此次再入无法生还——太陡（过载超限）或太浅（弹跳飞出）。它落在可生还走廊之外。",
+  "lab_assume_two_dof_entry": "二维升力再入（高度、速度、飞行路径角），指数大气，恒定g滚转律",
+  "lab_goal_entry_computer_title": "再入计算机。以11 km/s从月球返回时，返回舱无法调节推力，也无法打开降落伞——它唯一的控制方式是滚转，将升力指向上方或下方。最后这堂课就来操控它，展示它带给你的东西：一条走廊。",
+  "lab_goal_sysentry_steer": "回想那条弹道走廊：太陡你会被压垮，太浅你会弹回太空——而对于月球返回，急坠的返回舱在两者之间几乎没有余地。升力就是出路。带有少许升力的返回舱可以通过滚转来操控：滚转使升力指向上方，它便能从陡降中拉起（限制g载荷）；滚转使升力指向下方，它便能扎进浅弹道中（阻止弹跳）。本课操控一次真实的升力再入，用滚转控制器保持减速度，随后扫过每一个再入角以测量可生还走廊。弹道返回舱的走廊窄如刀刃；即便阿波罗那不高的0.3升阻比也大约将其扩大一倍。调高升阻比，看着走廊变宽——正是这份余量让载人月球返回得以生还。",
+  "lab_conn_sysentry_why": "每一批从月球返回的乘员——阿波罗，以及即将到来的Artemis——乘坐的都是升力返回舱，通过滚转穿越一条弹道飞行器绝无法穿过的再入走廊。阿波罗指令舱在整个下降过程中都在计算机控制下左右滚转，其偏置质心提供了恰好够用的升力，以保持g载荷并抵达回收区。",
+  "lab_conn_sysentry_hook": "阿波罗的计算机将再入作为一套滚转程序来飞行：它指令滚转反转——先把升力翻向左，再翻向右——以在保持减速度的同时操控航程，在40,000 km/h时穿过一条约两度宽的走廊。滚转出错，你就会弹入孤独的轨道或被烧毁。",
+  "lab_conn_sysentry_next": "这就是全部三台飞行计算机——上升制导、着陆推力、再入滚转。它们合力完成一整趟任何人手都无法飞行的任务。",
+  "lab_conn_sysentry_apollo": "Apollo 11——升力指令舱再入",
+  "lab_conn_sysentry_orion": "Orion——用于Artemis返回的升力返回舱",
+  "lab_conn_sysentry_osiris": "OSIRIS-REx——一次升力样本返回再入"
 }

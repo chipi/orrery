@@ -801,6 +801,33 @@ export const landingComputer: Goal = {
   },
 };
 
+/**
+ * "The re-entry computer" — the third SYSTEMS goal, and the payoff of the entry-corridor lesson.
+ * A capsule back from the Moon at 11 km/s has ONE control: bank, to point its lift up or down.
+ * The lesson flies the kernel bank controller (systems/entry-steering) through a real 2-DOF
+ * lifting entry and measures the survivable corridor — ballistic is a knife-edge, lift roughly
+ * DOUBLES it. Raise the lift-to-drag and watch the corridor widen; that is why lunar returns fly
+ * lifting entries.
+ */
+export const entryComputer: Goal = {
+  id: 'entry-computer',
+  titleKey: 'lab.goal.entry-computer.title',
+  family: 'systems',
+  tier: 5,
+  prereqs: ['landing-computer'],
+  path: [{ formulaId: 'entry-steering', narrativeKey: 'lab.goal.sysentry.steer' }],
+  connection: {
+    whyKey: 'lab.conn.sysentry.why',
+    hookKey: 'lab.conn.sysentry.hook',
+    links: [
+      { labelKey: 'lab.conn.sysentry.apollo', href: '/fly?mission=apollo11', agency: 'NASA' },
+      { labelKey: 'lab.conn.sysentry.orion', href: '/fleet?id=orion', agency: 'NASA' },
+      { labelKey: 'lab.conn.sysentry.osiris', href: '/fly?mission=osiris-rex', agency: 'NASA' },
+    ],
+    nextKey: 'lab.conn.sysentry.next',
+  },
+};
+
 /** All goals, keyed by id — insertion order drives the Lab picker (the mission arc). */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
@@ -820,6 +847,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [planAMission.id, planAMission],
   [flyingComputer.id, flyingComputer],
   [landingComputer.id, landingComputer],
+  [entryComputer.id, entryComputer],
 ]);
 
 /**

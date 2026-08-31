@@ -2604,5 +2604,22 @@
   "lab_conn_sysland_next": "Vous avez piloté l'ordinateur d'atterrissage. Il reste une boucle de contrôle — orienter la PORTANCE d'une capsule dans le couloir de rentrée sur le fil du rasoir.",
   "lab_conn_sysland_apollo": "Apollo 11 — l'ordinateur d'atterrissage du LM",
   "lab_conn_sysland_perseverance": "Perseverance — le sky-crane martien",
-  "lab_conn_sysland_falcon9": "Falcon 9 — la combustion d'atterrissage autonome"
+  "lab_conn_sysland_falcon9": "Falcon 9 — la combustion d'atterrissage autonome",
+  "lab_f_esteer_title": "Pilotage par portance à la rentrée (contrôle du roulis)",
+  "lab_f_esteer_ld": "Finesse (portance/traînée)",
+  "lab_f_esteer_angle": "Angle de rentrée à suivre",
+  "lab_f_esteer_glimit": "Limite de g survivable",
+  "lab_f_esteer_liftwidth": "Largeur du corridor porté",
+  "lab_f_esteer_ballwidth": "Largeur du corridor balistique",
+  "lab_f_esteer_peakg": "Décélération maximale",
+  "lab_f_esteer_err_lost": "Cette rentrée n'est pas survivable — trop raide (excès de g) ou trop rasante (rebond dans l'espace). Elle est hors du corridor survivable.",
+  "lab_assume_two_dof_entry": "Rentrée portée 2D (altitude, vitesse, angle de trajectoire), atmosphère exponentielle, loi de roulis à g constant",
+  "lab_goal_entry_computer_title": "Le calculateur de rentrée. En revenant de la Lune à 11 km/s, une capsule ne peut ni moduler sa poussée ni ouvrir un parachute — son SEUL contrôle est de ROULER, orientant sa portance vers le haut ou vers le bas. Cette dernière leçon pilote ce contrôle et montre ce qu'il apporte : un corridor.",
+  "lab_goal_sysentry_steer": "Rappelez-vous le corridor balistique : trop raide et vous êtes écrasé, trop rasant et vous rebondissez dans l'espace — et pour un retour lunaire une capsule en chute libre n'a presque aucune marge entre les deux. La portance est la solution. Une capsule dotée d'un peu de portance peut S'INCLINER pour se piloter : roulez pour orienter la portance vers le haut et elle se relève d'un piqué raide (plafonnant le g) ; roulez pour l'orienter vers le bas et elle s'enfonce dans une trajectoire rasante (arrêtant le rebond). Cette leçon pilote une véritable rentrée portée avec un contrôleur de roulis maintenant la décélération, puis balaie chaque angle de rentrée pour mesurer le corridor survivable. Celui d'une capsule balistique tient sur le fil du rasoir ; même la finesse modeste de 0,3 d'Apollo le DOUBLE à peu près. Augmentez la finesse et regardez le corridor s'élargir — la marge qui a rendu les retours lunaires habités survivables.",
+  "lab_conn_sysentry_why": "Chaque équipage revenu de la Lune — Apollo, et bientôt Artemis — a chevauché une capsule PORTÉE qui s'inclinait pour se piloter à travers un corridor de rentrée qu'un engin balistique n'aurait jamais pu franchir. Le module de commande Apollo roulait à gauche et à droite sous contrôle informatique tout du long, son centre de masse décalé fournissant juste assez de portance pour maintenir la charge en g et atteindre la zone de récupération.",
+  "lab_conn_sysentry_hook": "Le calculateur d'Apollo pilotait la rentrée comme un programme de roulis : il commandait des inversions de roulis — basculer la portance à gauche, puis à droite — pour piloter la portée tout en maintenant la décélération, franchissant un corridor large d'environ deux degrés à 40 000 km/h. Un roulis mal exécuté et vous rebondissez vers une orbite solitaire ou vous brûlez.",
+  "lab_conn_sysentry_next": "Voilà les trois calculateurs de vol — le guidage à l'ascension, la modulation de poussée à l'atterrissage, et le roulis à la rentrée. Ensemble, ils pilotent une mission entière qu'aucune main humaine ne pourrait mener.",
+  "lab_conn_sysentry_apollo": "Apollo 11 — la rentrée portée du module de commande",
+  "lab_conn_sysentry_orion": "Orion — la capsule portée pour les retours d'Artemis",
+  "lab_conn_sysentry_osiris": "OSIRIS-REx — une rentrée portée de retour d'échantillons"
 }

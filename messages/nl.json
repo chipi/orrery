@@ -2604,5 +2604,22 @@
   "lab_conn_sysland_next": "Je hebt de landingscomputer gevlogen. Eén regellus rest nog — het sturen van de LIFT van een capsule door de vlijmscherpe re-entrycorridor.",
   "lab_conn_sysland_apollo": "Apollo 11 — de LM-landingscomputer",
   "lab_conn_sysland_perseverance": "Perseverance — de Mars sky-crane",
-  "lab_conn_sysland_falcon9": "Falcon 9 — de autonome landingsburn"
+  "lab_conn_sysland_falcon9": "Falcon 9 — de autonome landingsburn",
+  "lab_f_esteer_title": "Lift-sturing bij terugkeer (bank-regeling)",
+  "lab_f_esteer_ld": "Lift-weerstandverhouding",
+  "lab_f_esteer_angle": "Te vliegen intredehoek",
+  "lab_f_esteer_glimit": "Overleefbare g-limiet",
+  "lab_f_esteer_liftwidth": "Breedte van de liftcorridor",
+  "lab_f_esteer_ballwidth": "Breedte van de ballistische corridor",
+  "lab_f_esteer_peakg": "Piekvertraging",
+  "lab_f_esteer_err_lost": "Deze intrede wordt niet overleefd — te steil (over-g) of te vlak (weggestuiterd). Hij ligt buiten de overleefbare corridor.",
+  "lab_assume_two_dof_entry": "2D-lift-intrede (hoogte, snelheid, baanhoek), exponentiële atmosfeer, bankwet met constante g",
+  "lab_goal_entry_computer_title": "De terugkeercomputer. Onderweg terug van de Maan met 11 km/s kan een capsule niet gasgeven en geen parachute openen — zijn ENIGE regeling is ROLLEN, waarmee hij zijn lift omhoog of omlaag richt. Deze laatste les vliegt die regeling en toont wat het je oplevert: een corridor.",
+  "lab_goal_sysentry_steer": "Denk aan de ballistische corridor: te steil en je wordt verpletterd, te vlak en je stuitert terug de ruimte in — en bij een terugkeer van de Maan heeft een neerstortende capsule bijna geen ruimte tussen die twee. Lift is de uitweg. Een capsule met een beetje lift kan BANKEN om te sturen: rol zodat de lift omhoog wijst en hij trekt uit een steile duik (met een plafond op de g); rol zodat hij omlaag wijst en hij graaft zich in een vlakke intrede (en stopt het stuiteren). Deze les vliegt een echte lift-intrede met een bankregelaar die de vertraging vasthoudt, en doorloopt daarna elke intredehoek om de overleefbare corridor te meten. Die van een ballistische capsule is vlijmscherp; zelfs Apollo's bescheiden lift-weerstandverhouding van 0,3 VERDUBBELT hem ongeveer. Draai de lift-weerstandverhouding op en zie de corridor verbreden — de marge die bemande terugkeren van de Maan overleefbaar maakte.",
+  "lab_conn_sysentry_why": "Elke bemanning die van de Maan is teruggekomen — Apollo, en binnenkort Artemis — reed in een LIFTENDE capsule die bankte om door een terugkeercorridor te sturen die een ballistisch vaartuig nooit zou kunnen raken. De Apollo-commandomodule rolde de hele weg naar beneden onder computerbesturing links en rechts, waarbij zijn verschoven massamiddelpunt net genoeg lift gaf om de g-belasting vast te houden en het bergingsgebied te bereiken.",
+  "lab_conn_sysentry_hook": "Apollo's computer vloog de terugkeer als een bankprogramma: hij commandeerde rolomkeringen — kantel de lift naar links, dan naar rechts — om downrange te sturen terwijl de vertraging werd vastgehouden, en reeg een corridor van ongeveer twee graden breed bij 40.000 km/u. Bank verkeerd en je stuitert weg in een eenzame baan of verbrandt.",
+  "lab_conn_sysentry_next": "Dat zijn alle drie de vluchtcomputers — de opstijggeleiding, de landingsgasregeling en de terugkeerbank. Samen vliegen ze een hele missie die geen mensenhand zou kunnen.",
+  "lab_conn_sysentry_apollo": "Apollo 11 — de liftende terugkeer van de commandomodule",
+  "lab_conn_sysentry_orion": "Orion — de liftende capsule voor Artemis-terugkeren",
+  "lab_conn_sysentry_osiris": "OSIRIS-REx — een liftende monsterretour-intrede"
 }

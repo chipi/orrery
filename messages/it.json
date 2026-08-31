@@ -2604,5 +2604,22 @@
   "lab_conn_sysland_next": "Hai pilotato il computer di atterraggio. Resta un solo anello di controllo — dirigere la PORTANZA di una capsula attraverso lo stretto corridoio di rientro.",
   "lab_conn_sysland_apollo": "Apollo 11 — il computer di atterraggio del LM",
   "lab_conn_sysland_perseverance": "Perseverance — la sky-crane di Marte",
-  "lab_conn_sysland_falcon9": "Falcon 9 — l'accensione di atterraggio autonoma"
+  "lab_conn_sysland_falcon9": "Falcon 9 — l'accensione di atterraggio autonoma",
+  "lab_f_esteer_title": "Guida in portanza al rientro (controllo di rollio)",
+  "lab_f_esteer_ld": "Rapporto portanza/resistenza",
+  "lab_f_esteer_angle": "Angolo di rientro da seguire",
+  "lab_f_esteer_glimit": "Limite di g sopravvivibile",
+  "lab_f_esteer_liftwidth": "Larghezza del corridoio in portanza",
+  "lab_f_esteer_ballwidth": "Larghezza del corridoio balistico",
+  "lab_f_esteer_peakg": "Decelerazione di picco",
+  "lab_f_esteer_err_lost": "Questo rientro non è sopravvivibile — troppo ripido (g eccessivi) o troppo radente (rimbalzo). È fuori dal corridoio sopravvivibile.",
+  "lab_assume_two_dof_entry": "Rientro in portanza 2-D (quota, velocità, angolo di traiettoria), atmosfera esponenziale, legge di rollio a g costante",
+  "lab_goal_entry_computer_title": "Il computer di rientro. Tornando dalla Luna a 11 km/s, una capsula non può regolare la spinta né aprire un paracadute — il suo UNICO controllo è ROLLARE, orientando la portanza in alto o in basso. Quest'ultima lezione pilota quel controllo e mostra cosa ti offre: un corridoio.",
+  "lab_goal_sysentry_steer": "Ricorda il corridoio balistico: troppo ripido e vieni schiacciato, troppo radente e rimbalzi di nuovo nello spazio — e per un ritorno lunare una capsula in caduta ha quasi zero margine tra i due. La portanza è la via d'uscita. Una capsula con un po' di portanza può ROLLARE per manovrare: rolla così che la portanza punti in alto e si tira fuori da una picchiata ripida (limitando i g); rolla così che punti in basso e si affonda in una radente (fermando il rimbalzo). Questa lezione pilota un vero rientro in portanza con un controllore di rollio che mantiene la decelerazione, poi scandaglia ogni angolo di rientro per misurare il corridoio sopravvivibile. Quello di una capsula balistica è sul filo del rasoio; persino il modesto rapporto portanza/resistenza di 0,3 dell'Apollo lo RADDOPPIA circa. Aumenta il rapporto portanza/resistenza e osserva il corridoio allargarsi — il margine che rese sopravvivibili i ritorni lunari con equipaggio.",
+  "lab_conn_sysentry_why": "Ogni equipaggio tornato dalla Luna — Apollo, e presto Artemis — ha cavalcato una capsula in PORTANZA che rollava per manovrare attraverso un corridoio di rientro che un veicolo balistico non avrebbe mai potuto infilare. Il modulo di comando Apollo rollava a sinistra e a destra sotto controllo del computer per tutta la discesa, con il suo centro di massa decentrato che forniva giusto la portanza sufficiente a mantenere il carico g e raggiungere la zona di recupero.",
+  "lab_conn_sysentry_hook": "Il computer dell'Apollo pilotava il rientro come un programma di rollio: comandava inversioni di rollio — ribalta la portanza a sinistra, poi a destra — per manovrare in gittata mantenendo la decelerazione, infilando un corridoio largo circa due gradi a 40.000 km/h. Rolla male e rimbalzi in un'orbita solitaria o bruci.",
+  "lab_conn_sysentry_next": "Ecco tutti e tre i computer di volo — la guida di ascesa, la spinta di atterraggio e il rollio di rientro. Insieme pilotano un'intera missione che nessuna mano umana potrebbe.",
+  "lab_conn_sysentry_apollo": "Apollo 11 — il rientro in portanza del modulo di comando",
+  "lab_conn_sysentry_orion": "Orion — la capsula in portanza per i ritorni Artemis",
+  "lab_conn_sysentry_osiris": "OSIRIS-REx — un rientro in portanza con ritorno di campioni"
 }

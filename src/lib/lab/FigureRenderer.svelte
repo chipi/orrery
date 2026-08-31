@@ -27,6 +27,7 @@
   import AscentTrajectoryCanvas from './AscentTrajectoryCanvas.svelte';
   import GuidanceTimelineCanvas from './GuidanceTimelineCanvas.svelte';
   import DescentGuidanceCanvas from './DescentGuidanceCanvas.svelte';
+  import EntrySteeringCanvas from './EntrySteeringCanvas.svelte';
   import {
     fidelityStyle,
     fidelityLabel,
@@ -175,6 +176,8 @@
   <GuidanceTimelineCanvas {figure} {t} {ariaLabelKey} />
 {:else if figure.kind === 'descent-guidance'}
   <DescentGuidanceCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'entry-steering'}
+  <EntrySteeringCanvas {figure} {t} {ariaLabelKey} />
 {:else}
   <svg
     role="img"

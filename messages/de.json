@@ -2604,5 +2604,22 @@
   "lab_conn_sysland_next": "Du hast den Landecomputer geflogen. Ein Regelkreis bleibt — das Steuern des AUFTRIEBS einer Kapsel durch den messerscharfen Wiedereintrittskorridor.",
   "lab_conn_sysland_apollo": "Apollo 11 — der LM-Landecomputer",
   "lab_conn_sysland_perseverance": "Perseverance — der Mars-Sky-Crane",
-  "lab_conn_sysland_falcon9": "Falcon 9 — das autonome Landebrennmanöver"
+  "lab_conn_sysland_falcon9": "Falcon 9 — das autonome Landebrennmanöver",
+  "lab_f_esteer_title": "Auftriebssteuerung beim Wiedereintritt (Rollsteuerung)",
+  "lab_f_esteer_ld": "Gleitzahl (Auftrieb-Widerstand-Verhältnis)",
+  "lab_f_esteer_angle": "Zu fliegender Eintrittswinkel",
+  "lab_f_esteer_glimit": "Überlebbare g-Grenze",
+  "lab_f_esteer_liftwidth": "Breite des Auftriebskorridors",
+  "lab_f_esteer_ballwidth": "Breite des ballistischen Korridors",
+  "lab_f_esteer_peakg": "Maximale Verzögerung",
+  "lab_f_esteer_err_lost": "Dieser Eintritt wird nicht überlebt — zu steil (Über-g) oder zu flach (abgeprallt). Er liegt außerhalb des überlebbaren Korridors.",
+  "lab_assume_two_dof_entry": "2-D-Auftriebseintritt (Höhe, Geschwindigkeit, Flugbahnwinkel), exponentielle Atmosphäre, Rollgesetz mit konstantem g",
+  "lab_goal_entry_computer_title": "Der Wiedereintrittsrechner. Bei der Rückkehr vom Mond mit 11 km/s kann eine Kapsel weder drosseln noch einen Fallschirm öffnen — ihre EINZIGE Steuerung ist das ROLLEN, um ihren Auftrieb nach oben oder unten zu richten. Diese letzte Lektion fliegt diese Steuerung und zeigt, was sie einbringt: einen Korridor.",
+  "lab_goal_sysentry_steer": "Erinnere dich an den ballistischen Korridor: zu steil und du wirst zerquetscht, zu flach und du prallst zurück ins All — und bei einer Mondrückkehr hat eine stürzende Kapsel fast keinen Spielraum zwischen beidem. Der Auftrieb ist der Ausweg. Eine Kapsel mit etwas Auftrieb kann durch ROLLEN steuern: rolle, sodass der Auftrieb nach oben zeigt, und sie fängt sich aus einem steilen Sturz (begrenzt das g); rolle, sodass er nach unten zeigt, und sie gräbt sich in einen flachen Eintritt (stoppt das Abprallen). Diese Lektion fliegt einen echten Auftriebseintritt mit einem Rollregler, der die Verzögerung hält, und durchläuft dann jeden Eintrittswinkel, um den überlebbaren Korridor zu vermessen. Bei einer ballistischen Kapsel ist er messerscharf; selbst Apollos bescheidene Gleitzahl von 0,3 VERDOPPELT ihn ungefähr. Erhöhe die Gleitzahl und beobachte, wie sich der Korridor weitet — die Marge, die bemannte Mondrückkehren überlebbar machte.",
+  "lab_conn_sysentry_why": "Jede Besatzung, die vom Mond zurückgekehrt ist — Apollo und bald Artemis — flog eine AUFTRIEBS-Kapsel, die durch Rollen durch einen Wiedereintrittskorridor steuerte, den ein ballistisches Raumschiff niemals treffen könnte. Das Apollo-Kommandomodul rollte auf dem gesamten Weg nach unten unter Rechnersteuerung nach links und rechts, wobei sein versetzter Schwerpunkt gerade genug Auftrieb lieferte, um die g-Belastung zu halten und die Bergungszone zu erreichen.",
+  "lab_conn_sysentry_hook": "Apollos Rechner flog den Wiedereintritt als Rollprogramm: er befahl Rollumkehrungen — kippe den Auftrieb nach links, dann nach rechts —, um bei gehaltener Verzögerung in Flugrichtung zu steuern und einen etwa zwei Grad breiten Korridor bei 40.000 km/h zu treffen. Rolle falsch und du prallst ab in eine einsame Umlaufbahn oder verglühst.",
+  "lab_conn_sysentry_next": "Das sind alle drei Flugrechner — die Aufstiegssteuerung, die Landungsdrosselung und der Wiedereintrittsrollregler. Zusammen fliegen sie eine ganze Mission, die keine menschliche Hand fliegen könnte.",
+  "lab_conn_sysentry_apollo": "Apollo 11 — der Auftriebs-Wiedereintritt des Kommandomoduls",
+  "lab_conn_sysentry_orion": "Orion — die Auftriebskapsel für Artemis-Rückkehren",
+  "lab_conn_sysentry_osiris": "OSIRIS-REx — ein Auftriebseintritt zur Probenrückführung"
 }

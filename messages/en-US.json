@@ -2605,5 +2605,22 @@
   "lab_conn_sysland_next": "You have flown the landing computer. One control loop is left — steering the LIFT of a capsule through the knife-edge re-entry corridor.",
   "lab_conn_sysland_apollo": "Apollo 11 — the LM landing computer",
   "lab_conn_sysland_perseverance": "Perseverance — the Mars sky-crane",
-  "lab_conn_sysland_falcon9": "Falcon 9 — the autonomous landing burn"
+  "lab_conn_sysland_falcon9": "Falcon 9 — the autonomous landing burn",
+  "lab_f_esteer_title": "Re-entry lift steering (bank control)",
+  "lab_f_esteer_ld": "Lift-to-drag ratio",
+  "lab_f_esteer_angle": "Entry angle to fly",
+  "lab_f_esteer_glimit": "Survivable g-limit",
+  "lab_f_esteer_liftwidth": "Lifting corridor width",
+  "lab_f_esteer_ballwidth": "Ballistic corridor width",
+  "lab_f_esteer_peakg": "Peak deceleration",
+  "lab_f_esteer_err_lost": "This entry does not survive — too steep (over-g) or too shallow (skipped out). It sits outside the survivable corridor.",
+  "lab_assume_two_dof_entry": "2-D lifting entry (altitude, speed, flight-path angle), exponential atmosphere, constant-g bank law",
+  "lab_goal_entry_computer_title": "The re-entry computer. Coming home from the Moon at 11 km/s, a capsule cannot throttle and cannot open a parachute — its ONLY control is to ROLL, aiming its lift up or down. This last lesson flies that control and shows what it buys you: a corridor.",
+  "lab_goal_sysentry_steer": "Recall the ballistic corridor: too steep and you are crushed, too shallow and you skip back into space — and for a lunar return a plummeting capsule has almost no gap between the two. Lift is the way out. A capsule with a little lift can BANK to steer: roll so the lift points up and it pulls out of a steep dive (capping the g); roll so it points down and it digs into a shallow one (stopping the skip). This lesson flies a real lifting entry with a bank controller holding the deceleration, then sweeps every entry angle to measure the survivable corridor. A ballistic capsule's is a knife-edge; even Apollo's modest lift-to-drag of 0.3 roughly DOUBLES it. Turn up the lift-to-drag and watch the corridor widen — the margin that made crewed Moon returns survivable.",
+  "lab_conn_sysentry_why": "Every crew that has come back from the Moon — Apollo, and soon Artemis — rode a LIFTING capsule that banked to steer through a re-entry corridor a ballistic craft could never thread. The Apollo command module rolled left and right under computer control the whole way down, its offset centre of mass giving just enough lift to hold the g-load and reach the recovery zone.",
+  "lab_conn_sysentry_hook": "Apollo's computer flew re-entry as a bank program: it commanded roll reversals — flip the lift left, then right — to steer downrange while holding the deceleration, threading a corridor about two degrees wide at 40,000 km/h. Bank wrong and you skip off into a lonely orbit or burn.",
+  "lab_conn_sysentry_next": "That is all three flight computers — the ascent guidance, the landing throttle, and the re-entry bank. Together they fly a whole mission no human hand could.",
+  "lab_conn_sysentry_apollo": "Apollo 11 — the lifting command-module re-entry",
+  "lab_conn_sysentry_orion": "Orion — the lifting capsule for Artemis returns",
+  "lab_conn_sysentry_osiris": "OSIRIS-REx — a lifting sample-return entry"
 }

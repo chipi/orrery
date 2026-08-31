@@ -255,6 +255,25 @@ export type FigureSpec = FigureBase &
         landedSoft: boolean;
         bodyLabelKey: string;
       }
+    // Entry steering (systems — re-entry lift-vector steering) — the payoff of the ballistic
+    // entry-corridor: a lifting capsule steered by BANK has a WIDER survivable entry-angle
+    // corridor than a ballistic one. Shows the representative lifting-entry trajectory (altitude
+    // × speed) plus the corridor-width comparison (ballistic band vs lifting band).
+    | {
+        kind: 'entry-steering';
+        trajectory: { altKm: number; speedKms: number }[];
+        liftShallowDeg: number;
+        liftSteepDeg: number;
+        liftWidthDeg: number;
+        ballShallowDeg: number;
+        ballSteepDeg: number;
+        ballWidthDeg: number;
+        entryAngleDeg: number;
+        peakGeeAtEntry: number;
+        gLimitG: number;
+        liftToDrag: number;
+        captured: boolean;
+      }
   );
 
 // ─── Goal / GoalStep (curriculum) + Card / Notebook (user documents) ────────

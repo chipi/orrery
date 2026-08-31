@@ -2604,5 +2604,22 @@
   "lab_conn_sysland_next": "Você pilotou o computador de pouso. Resta um laço de controle — dirigir a SUSTENTAÇÃO de uma cápsula pelo estreitíssimo corredor de reentrada.",
   "lab_conn_sysland_apollo": "Apollo 11 — o computador de pouso do LM",
   "lab_conn_sysland_perseverance": "Perseverance — o guindaste aéreo de Marte",
-  "lab_conn_sysland_falcon9": "Falcon 9 — a queima de pouso autônoma"
+  "lab_conn_sysland_falcon9": "Falcon 9 — a queima de pouso autônoma",
+  "lab_f_esteer_title": "Direção por sustentação na reentrada (controle de rolagem)",
+  "lab_f_esteer_ld": "Razão sustentação-arrasto",
+  "lab_f_esteer_angle": "Ângulo de entrada a voar",
+  "lab_f_esteer_glimit": "Limite de g suportável",
+  "lab_f_esteer_liftwidth": "Largura do corredor com sustentação",
+  "lab_f_esteer_ballwidth": "Largura do corredor balístico",
+  "lab_f_esteer_peakg": "Desaceleração de pico",
+  "lab_f_esteer_err_lost": "Esta entrada não sobrevive — íngreme demais (excesso de g) ou rasa demais (ricocheteou para fora). Está fora do corredor suportável.",
+  "lab_assume_two_dof_entry": "Entrada com sustentação 2-D (altitude, velocidade, ângulo de trajetória), atmosfera exponencial, lei de rolagem com g constante",
+  "lab_goal_entry_computer_title": "O computador de reentrada. Voltando da Lua a 11 km/s, uma cápsula não pode acelerar nem abrir um paraquedas — seu ÚNICO controle é ROLAR, apontando sua sustentação para cima ou para baixo. Esta última lição voa esse controle e mostra o que ele oferece: um corredor.",
+  "lab_goal_sysentry_steer": "Lembre-se do corredor balístico: íngreme demais e você é esmagado, raso demais e você ricocheteia de volta ao espaço — e num retorno lunar uma cápsula em queda quase não tem margem entre os dois. A sustentação é a saída. Uma cápsula com um pouco de sustentação pode INCLINAR para dirigir: role de modo que a sustentação aponte para cima e ela sai de um mergulho íngreme (limitando o g); role para que aponte para baixo e ela se aprofunda num raso (evitando o ricochete). Esta lição voa uma entrada com sustentação real, com um controlador de rolagem mantendo a desaceleração, e então varre todos os ângulos de entrada para medir o corredor suportável. O de uma cápsula balística é um fio de navalha; até a modesta razão sustentação-arrasto de 0,3 da Apollo o DOBRA aproximadamente. Aumente a razão sustentação-arrasto e veja o corredor alargar — a margem que tornou os retornos lunares tripulados sobreviventes.",
+  "lab_conn_sysentry_why": "Toda tripulação que voltou da Lua — Apollo, e em breve Artemis — pilotou uma cápsula com SUSTENTAÇÃO que inclinava para dirigir por um corredor de reentrada que uma nave balística jamais atravessaria. O módulo de comando da Apollo rolava para a esquerda e para a direita sob controle do computador durante toda a descida, com seu centro de massa deslocado dando sustentação suficiente para manter a carga g e alcançar a zona de recuperação.",
+  "lab_conn_sysentry_hook": "O computador da Apollo voava a reentrada como um programa de rolagem: comandava inversões de rolagem — virar a sustentação para a esquerda, depois para a direita — para dirigir no alcance enquanto mantinha a desaceleração, atravessando um corredor de cerca de dois graus de largura a 40.000 km/h. Role errado e você ricocheteia para uma órbita solitária ou queima.",
+  "lab_conn_sysentry_next": "Esses são os três computadores de voo — a orientação de ascensão, o acelerador de pouso e a rolagem de reentrada. Juntos, eles voam uma missão inteira que nenhuma mão humana poderia.",
+  "lab_conn_sysentry_apollo": "Apollo 11 — a reentrada do módulo de comando com sustentação",
+  "lab_conn_sysentry_orion": "Orion — a cápsula com sustentação para os retornos da Artemis",
+  "lab_conn_sysentry_osiris": "OSIRIS-REx — uma entrada de retorno de amostra com sustentação"
 }

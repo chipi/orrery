@@ -2604,5 +2604,22 @@
   "lab_conn_sysland_next": "Has pilotado el ordenador de aterrizaje. Queda un bucle de control: dirigir la SUSTENTACIÓN de una cápsula por el corredor de reentrada al filo de la navaja.",
   "lab_conn_sysland_apollo": "Apollo 11 — el ordenador de aterrizaje del LM",
   "lab_conn_sysland_perseverance": "Perseverance — la grúa aérea de Marte",
-  "lab_conn_sysland_falcon9": "Falcon 9 — el encendido de aterrizaje autónomo"
+  "lab_conn_sysland_falcon9": "Falcon 9 — el encendido de aterrizaje autónomo",
+  "lab_f_esteer_title": "Guiado de sustentación en reentrada (control de alabeo)",
+  "lab_f_esteer_ld": "Relación sustentación-resistencia",
+  "lab_f_esteer_angle": "Ángulo de entrada a volar",
+  "lab_f_esteer_glimit": "Límite de g soportable",
+  "lab_f_esteer_liftwidth": "Anchura del corredor con sustentación",
+  "lab_f_esteer_ballwidth": "Anchura del corredor balístico",
+  "lab_f_esteer_peakg": "Deceleración máxima",
+  "lab_f_esteer_err_lost": "Esta entrada no sobrevive: demasiado empinada (exceso de g) o demasiado tendida (rebota fuera). Queda fuera del corredor soportable.",
+  "lab_assume_two_dof_entry": "Entrada 2-D con sustentación (altitud, velocidad, ángulo de trayectoria), atmósfera exponencial, ley de alabeo a g constante",
+  "lab_goal_entry_computer_title": "El ordenador de reentrada. Al volver de la Luna a 11 km/s, una cápsula no puede regular el empuje ni abrir un paracaídas: su ÚNICO control es ALABEAR, apuntando su sustentación hacia arriba o hacia abajo. Esta última lección vuela ese control y muestra lo que te da: un corredor.",
+  "lab_goal_sysentry_steer": "Recuerda el corredor balístico: demasiado empinada y te aplasta, demasiado tendida y rebotas de vuelta al espacio; y para un regreso lunar una cápsula en picado casi no tiene margen entre ambas. La sustentación es la salida. Una cápsula con algo de sustentación puede ALABEAR para dirigirse: rueda para apuntar la sustentación hacia arriba y sale de una zambullida empinada (limitando la g); rueda para apuntarla hacia abajo y se hunde en una entrada tendida (evitando el rebote). Esta lección vuela una entrada real con sustentación con un controlador de alabeo que mantiene la deceleración, y luego barre cada ángulo de entrada para medir el corredor soportable. El de una cápsula balística es un filo de cuchillo; incluso la modesta relación sustentación-resistencia de 0,3 del Apollo lo DUPLICA aproximadamente. Sube la relación sustentación-resistencia y observa cómo se ensancha el corredor: el margen que hizo que los regresos tripulados de la Luna fueran sobrevivibles.",
+  "lab_conn_sysentry_why": "Cada tripulación que ha vuelto de la Luna —Apollo, y pronto Artemis— viajó en una cápsula con SUSTENTACIÓN que alabeaba para dirigirse por un corredor de reentrada que una nave balística nunca podría enhebrar. El módulo de mando del Apollo rodaba a izquierda y derecha bajo control del ordenador durante todo el descenso, con su centro de masas desplazado dando la sustentación justa para mantener la carga de g y alcanzar la zona de recuperación.",
+  "lab_conn_sysentry_hook": "El ordenador del Apollo volaba la reentrada como un programa de alabeo: comandaba inversiones de alabeo —girar la sustentación a la izquierda, luego a la derecha— para dirigirse en alcance mientras mantenía la deceleración, enhebrando un corredor de unos dos grados de ancho a 40 000 km/h. Alabea mal y rebotas hacia una órbita solitaria o te quemas.",
+  "lab_conn_sysentry_next": "Esos son los tres ordenadores de vuelo: la guía de ascenso, el control del empuje de aterrizaje y el alabeo de reentrada. Juntos vuelan una misión completa que ninguna mano humana podría.",
+  "lab_conn_sysentry_apollo": "Apollo 11: la reentrada del módulo de mando con sustentación",
+  "lab_conn_sysentry_orion": "Orion: la cápsula con sustentación para los regresos de Artemis",
+  "lab_conn_sysentry_osiris": "OSIRIS-REx: una entrada de retorno de muestras con sustentación"
 }

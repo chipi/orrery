@@ -40,6 +40,7 @@ import { EPOCH_JD, moonEclipticXYKm, R_LEO } from '../transfer/lambert-geocentri
 import { integrateAscent, circularSpeed } from '../ascent/ascent-physics';
 import { buildGenericProfile } from '../ascent/launch-profile-registry';
 import { poweredDescentThrottle } from '../systems/powered-descent';
+import { simulateLiftingEntry, liftCorridor } from '../systems/entry-steering';
 import {
   MOON_ORBIT_RADIUS_KM,
   MU_SUN_KM3_S2,
@@ -1772,6 +1773,138 @@ export const poweredDescent: FormulaDef<{
       values,
       status: landedSoft ? { ok: true } : { ok: false, reasonKey: 'lab.f.pdescent.err-crash' },
       assumptions: ['lab.assume.vertical-descent', 'lab.assume.constant-gravity'],
+      figure,
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Re-entry lift-vector steering (SYSTEMS) — the payoff of the ballistic entry-corridor lesson,
+ * and the last of the three flight computers. A capsule coming back from the Moon at ~11 km/s
+ * has ONE control: BANK. By rolling, it points its lift vector up (pull out of the dive, avoid
+ * over-g) or down (dig in, avoid skipping back to space). This lesson flies the kernel SYSTEMS
+ * bank controller (`systems/entry-steering`) through a real 2-DOF lifting entry and — the honest
+ * teaching claim — measures the SURVIVABLE ENTRY-ANGLE CORRIDOR: a ballistic capsule's is a
+ * knife-edge (the entry-corridor lesson showed a lunar-return ballistic corridor barely exists),
+ * and lift + steering roughly DOUBLES it (Apollo's L/D≈0.3). Raise the lift-to-drag and the
+ * corridor widens; that widening is why every crewed lunar return has flown a lifting entry.
+ */
+export const entrySteering: FormulaDef<{
+  liftToDrag: number;
+  entryAngleDeg: number;
+  gLimitG: number;
+}> = {
+  id: 'entry-steering',
+  titleKey: 'lab.f.esteer.title',
+  domain: 'descent',
+  tier: 4,
+  prereqs: ['entry-corridor'],
+  latex:
+    '\\dot\\gamma = \\dfrac{(L/D)\\,a_D\\cos\\phi}{v} + \\ldots,\\quad \\cos\\phi = \\text{bank command}',
+  inputs: [
+    {
+      key: 'liftToDrag',
+      labelKey: 'lab.f.esteer.ld',
+      units: '',
+      kind: 'number',
+      default: 0.3,
+      min: 0,
+      max: 0.6,
+      step: 0.05,
+    },
+    {
+      key: 'entryAngleDeg',
+      labelKey: 'lab.f.esteer.angle',
+      units: 'deg',
+      kind: 'number',
+      default: 5.75,
+      min: 3,
+      max: 9,
+      step: 0.25,
+    },
+    {
+      key: 'gLimitG',
+      labelKey: 'lab.f.esteer.glimit',
+      units: '',
+      kind: 'number',
+      default: 12,
+      min: 6,
+      max: 20,
+    },
+  ],
+  outputs: [
+    { key: 'liftWidthDeg', labelKey: 'lab.f.esteer.liftwidth', units: 'deg' },
+    { key: 'ballWidthDeg', labelKey: 'lab.f.esteer.ballwidth', units: 'deg' },
+    { key: 'peakGeeAtEntry', labelKey: 'lab.f.esteer.peakg', units: '' },
+  ],
+  compute: ({ liftToDrag, entryAngleDeg, gLimitG }) => {
+    if (
+      !Number.isFinite(liftToDrag) ||
+      !Number.isFinite(entryAngleDeg) ||
+      !Number.isFinite(gLimitG) ||
+      liftToDrag < 0 ||
+      entryAngleDeg <= 0 ||
+      gLimitG <= 0
+    ) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.escape.err-input' },
+        assumptions: ['lab.assume.two-dof-entry'],
+      } satisfies FormulaResult;
+    }
+    const V0 = 11000; // lunar-return entry speed
+    const BC = 400; // ballistic coefficient (Apollo-class capsule, kg/m²)
+    const TARGET_G = 6;
+    const lift = liftCorridor({
+      entryVelocityMs: V0,
+      liftToDrag,
+      ballisticCoeff: BC,
+      targetDecelG: TARGET_G,
+      gLimitG,
+    });
+    const ball = liftCorridor({
+      entryVelocityMs: V0,
+      liftToDrag: 0,
+      ballisticCoeff: BC,
+      targetDecelG: TARGET_G,
+      gLimitG,
+    });
+    const traj = simulateLiftingEntry({
+      entryVelocityMs: V0,
+      entryAngleDeg,
+      liftToDrag,
+      ballisticCoeff: BC,
+      targetDecelG: TARGET_G,
+    });
+    const captured = traj.outcome === 'captured' && traj.peakG <= gLimitG;
+    const values: Record<string, Quantity> = {
+      liftWidthDeg: { value: lift.widthDeg, units: 'deg' },
+      ballWidthDeg: { value: ball.widthDeg, units: 'deg' },
+      peakGeeAtEntry: { value: traj.peakG, units: '' },
+    };
+    const figure = {
+      kind: 'entry-steering' as const,
+      provenance: { fidelity: 'computed' as const, module: 'systems/entry-steering' },
+      assumptions: ['lab.assume.two-dof-entry', 'lab.assume.exponential-atmosphere'],
+      trajectory: traj.trajectory,
+      liftShallowDeg: lift.shallowDeg ?? 0,
+      liftSteepDeg: lift.steepDeg ?? 0,
+      liftWidthDeg: lift.widthDeg,
+      ballShallowDeg: ball.shallowDeg ?? 0,
+      ballSteepDeg: ball.steepDeg ?? 0,
+      ballWidthDeg: ball.widthDeg,
+      entryAngleDeg,
+      peakGeeAtEntry: traj.peakG,
+      gLimitG,
+      liftToDrag,
+      captured,
+    };
+    // Fail-honest when this particular entry doesn't survive (skip or over-g) — figure still drawn.
+    return {
+      values,
+      status: captured ? { ok: true } : { ok: false, reasonKey: 'lab.f.esteer.err-lost' },
+      assumptions: ['lab.assume.two-dof-entry', 'lab.assume.exponential-atmosphere'],
       figure,
     } satisfies FormulaResult;
   },
@@ -4916,6 +5049,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [ascentToOrbit.id, ascentToOrbit],
   [ascentGuidance.id, ascentGuidance],
   [poweredDescent.id, poweredDescent],
+  [entrySteering.id, entrySteering],
   [terminalVelocity.id, terminalVelocity],
   [softLandingCheck.id, softLandingCheck],
   [airbagsCheck.id, airbagsCheck],

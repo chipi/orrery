@@ -1071,3 +1071,31 @@ describe('systems · powered-descent guidance (the landing computer)', () => {
     expect(g.path.map((s) => s.formulaId)).toEqual(['powered-descent']);
   });
 });
+
+/**
+ * Systems — re-entry lift-vector steering. Flies the systems/entry-steering bank controller
+ * through a 2-DOF lifting entry and measures the survivable corridor: a ballistic capsule's is a
+ * knife-edge, and lift roughly DOUBLES it (Apollo L/D≈0.3) — the honest payoff of entry-corridor.
+ */
+describe('systems · re-entry lift steering (lift widens the corridor)', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('lift roughly doubles the survivable entry corridor vs ballistic', () => {
+    const r = compute('entry-steering', { liftToDrag: 0.3, entryAngleDeg: 5.75, gLimitG: 12 });
+    const fig = r.figure as { kind: string; liftWidthDeg: number; ballWidthDeg: number };
+    expect(fig.kind).toBe('entry-steering');
+    // ballistic corridor is a narrow knife-edge; the lifting one is meaningfully wider.
+    expect(fig.ballWidthDeg).toBeGreaterThan(0);
+    expect(fig.liftWidthDeg).toBeGreaterThan(fig.ballWidthDeg * 1.5);
+    // more lift → wider corridor still.
+    const hi = compute('entry-steering', { liftToDrag: 0.5, entryAngleDeg: 5.75, gLimitG: 12 })
+      .figure as { liftWidthDeg: number };
+    expect(hi.liftWidthDeg).toBeGreaterThan(fig.liftWidthDeg);
+  });
+
+  it('entry-computer is the third systems-family goal', () => {
+    const g = GOALS.get('entry-computer')!;
+    expect(g.family).toBe('systems');
+    expect(g.path.map((s) => s.formulaId)).toEqual(['entry-steering']);
+  });
+});

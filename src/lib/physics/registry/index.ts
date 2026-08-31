@@ -3681,17 +3681,12 @@ export const groundTrackShift: FormulaDef<{ periodMin: number; inclinationDeg: n
       status: { ok: true },
       assumptions: ['lab.assume.spherical-earth', 'lab.assume.circular-orbits'],
       figure: {
-        kind: 'curve',
+        kind: 'ground-track',
         provenance: { fidelity: 'computed', module: 'satellite/ground-track' },
         assumptions: ['lab.assume.spherical-earth'],
-        x: { labelKey: 'lab.axis.track-lon', units: 'deg' },
-        y: { labelKey: 'lab.axis.latitude', units: 'deg' },
-        series: [
-          { labelKey: 'lab.series.this-orbit', points: orbit(0).points },
-          orbit(1),
-          orbit(2),
-        ],
-        marks: [{ at: { x: 90, y: incl }, labelKey: 'lab.mark.max-latitude', kind: 'point' }],
+        tracks: [orbit(0).points, orbit(1).points, orbit(2).points],
+        inclinationDeg: incl,
+        shiftDeg: shift,
       },
     } satisfies FormulaResult;
   },
@@ -3916,22 +3911,20 @@ export const planetElongation: FormulaDef<{ planet: string; dateIso: string }> =
       return norm180(lamP - lamS);
     };
     const elong = elongAt(jd);
-    // |elongation| over ~780 days — a clean cycle (peaks = best viewing) without the ±180 wrap.
-    const points: Vec2[] = [];
-    for (let day = 0; day <= 780; day += 10)
-      points.push({ x: day, y: Math.abs(elongAt(jd + day)) });
+    const a = HELIO_ORBIT_AU[planet];
     return {
       values: { elongationDeg: { value: elong, units: 'deg' } },
       status: { ok: true },
       assumptions: ['lab.assume.ecliptic-longitude', 'lab.assume.point-mass'],
       figure: {
-        kind: 'curve',
+        kind: 'sky-chart',
         provenance: { fidelity: 'computed', module: 'ephemeris/planets' },
         assumptions: ['lab.assume.ecliptic-longitude'],
-        x: { labelKey: 'lab.axis.days-ahead', units: 'day' },
-        y: { labelKey: 'lab.axis.elongation', units: 'deg' },
-        series: [{ points }],
-        marks: [{ at: { x: 0, y: Math.abs(elong) }, labelKey: 'lab.mark.today', kind: 'point' }],
+        elongationDeg: Math.abs(elong),
+        eastern: elong >= 0, // planet east of the Sun → sets after it → evening star
+        planetLabelKey: `lab.body.${planet}`,
+        // inner planets (a < 1 AU) can never exceed arcsin(a) from the Sun; outer planets have no cap.
+        maxElongationDeg: a < 1 ? (Math.asin(a) * 180) / Math.PI : undefined,
       },
     } satisfies FormulaResult;
   },

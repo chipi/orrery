@@ -604,8 +604,9 @@ describe('G9 catch-the-iss · ground track + visibility', () => {
   it('the ~92-min ISS orbit slides ~23° west each lap; the track caps at the inclination', () => {
     const r = compute('ground-track-shift', { periodMin: 92, inclinationDeg: 51.6 });
     expect(r.values.shiftDeg.value).toBeCloseTo(23.1, 0);
-    const fig = r.figure as { series: { points: { x: number; y: number }[] }[] };
-    const maxLat = Math.max(...fig.series[0].points.map((p) => Math.abs(p.y)));
+    const fig = r.figure as { kind: string; tracks: { x: number; y: number }[][] };
+    expect(fig.kind).toBe('ground-track');
+    const maxLat = Math.max(...fig.tracks[0].map((p) => Math.abs(p.y)));
     expect(maxLat).toBeCloseTo(51.6, 1); // the sine is capped at the inclination
   });
 
@@ -650,12 +651,12 @@ describe('G9 catch-the-iss · ground track + visibility', () => {
 
   it('the ground track now draws the westward march — 3 successive offset orbits', () => {
     const fig = compute('ground-track-shift', { periodMin: 92, inclinationDeg: 51.6 }).figure as {
-      series: { points: { x: number }[] }[];
+      tracks: { x: number }[][];
     };
-    expect(fig.series).toHaveLength(3);
+    expect(fig.tracks).toHaveLength(3);
     // each orbit starts ~23° further west (lower x) than the last.
-    expect(fig.series[1].points[0].x).toBeLessThan(fig.series[0].points[0].x);
-    expect(fig.series[2].points[0].x).toBeLessThan(fig.series[1].points[0].x);
+    expect(fig.tracks[1][0].x).toBeLessThan(fig.tracks[0][0].x);
+    expect(fig.tracks[2][0].x).toBeLessThan(fig.tracks[1][0].x);
   });
 
   it('★ iss-pass: near the TLE epoch, a real pass over a mid-latitude site — figure-less, honest', () => {

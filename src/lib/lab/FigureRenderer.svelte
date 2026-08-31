@@ -19,6 +19,8 @@
   import DvWaterfallCanvas from './DvWaterfallCanvas.svelte';
   import ForceDiagramCanvas from './ForceDiagramCanvas.svelte';
   import OrbitDiagramCanvas from './OrbitDiagramCanvas.svelte';
+  import GroundTrackCanvas from './GroundTrackCanvas.svelte';
+  import SkyChartCanvas from './SkyChartCanvas.svelte';
   import {
     fidelityStyle,
     fidelityLabel,
@@ -151,6 +153,10 @@
   <ForceDiagramCanvas {figure} {t} {ariaLabelKey} />
 {:else if figure.kind === 'orbit'}
   <OrbitDiagramCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'ground-track'}
+  <GroundTrackCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'sky-chart'}
+  <SkyChartCanvas {figure} {t} {ariaLabelKey} />
 {:else}
   <svg
     role="img"

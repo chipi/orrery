@@ -168,8 +168,26 @@ export type FigureSpec = FigureBase &
         speedKms: number;
         bodyLabelKey: string;
       }
+    // Ground-track map (Family B / G9 "catch the ISS") — successive orbits as sine tracks on an
+    // equirectangular graticule, each marching west by `shiftDeg`. `tracks` are (lonDeg, latDeg)
+    // polylines; the renderer wraps longitude to [-180,180]. No continents — the longitudes are
+    // relative (the shape + inclination cap + westward march are the honest content).
+    | { kind: 'ground-track'; tracks: Vec2[][]; inclinationDeg: number; shiftDeg: number }
+    // Sky-chart (Family B / G7 "observe the sky") — an honest Sun-centred elongation schematic:
+    // the planet's angular separation from the Sun and whether it trails (eastern → evening star)
+    // or leads (western → morning star). NOT a literal horizon placement (that would overclaim
+    // altitude); the honest content is the angle from the Sun + the morning/evening side.
+    | {
+        kind: 'sky-chart';
+        elongationDeg: number;
+        eastern: boolean; // true → evening star (east of the Sun); false → morning star
+        planetLabelKey: string;
+        maxElongationDeg?: number; // inner planets: the cap the elongation can never exceed
+      }
     // Additive per goal (renderers demand-driven); typed now so the union is stable.
-    | { kind: 'ground-track' | 'sky-chart' | 'entry-corridor' | 'cislunar-eci' }
+    // (`entry-corridor` stays a stub until the skip-out/over-g boundaries are actually modelled —
+    // Allen-Eggers gives the g-load vs angle but not the shallow skip-out limit; no invented band.)
+    | { kind: 'entry-corridor' | 'cislunar-eci' }
   );
 
 // ─── Goal / GoalStep (curriculum) + Card / Notebook (user documents) ────────

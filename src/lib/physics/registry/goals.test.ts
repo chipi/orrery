@@ -751,3 +751,91 @@ describe('G7 observe-the-sky · elongation + the inner/outer split', () => {
     ]);
   });
 });
+
+/**
+ * Family C — the "plan a mission" capstone. The assist-chain accumulator is the one new
+ * formula; it must emit an HONEST upper bound (Σ 2·v∞), never a fake trajectory number. The
+ * goal itself is a synthesis: it wires the transfer leg's departure/arrival speeds into the
+ * Oberth + gravity-assist rungs, and the chain's Δv + the from-LEO cost into the verdict.
+ */
+describe('Family C plan-a-mission · assist-chain physics + capstone wiring', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('assist-chain sums the per-flyby ceiling: 4 flybys @ 10 km/s → 80 km/s upper bound', () => {
+    const r = compute('assist-chain', { flybys: 4, vInfKms: 10 });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.maxBoost.value).toBeCloseTo(80, 5); // 4 · 2 · 10
+  });
+
+  it('assist-chain is monotonic in both flybys and approach speed, and honest about being a ceiling', () => {
+    const base = compute('assist-chain', { flybys: 2, vInfKms: 8 }).values.maxBoost.value;
+    expect(
+      compute('assist-chain', { flybys: 3, vInfKms: 8 }).values.maxBoost.value,
+    ).toBeGreaterThan(base);
+    expect(
+      compute('assist-chain', { flybys: 2, vInfKms: 12 }).values.maxBoost.value,
+    ).toBeGreaterThan(base);
+    // the "this is only a ceiling" caveat must be a declared assumption, not buried in prose.
+    expect(compute('assist-chain', { flybys: 4, vInfKms: 10 }).assumptions).toContain(
+      'lab.assume.upper-bound-sum',
+    );
+  });
+
+  it('assist-chain fails honest on a nonsense chain (negative speed, zero flybys)', () => {
+    expect(compute('assist-chain', { flybys: 4, vInfKms: -1 }).status.ok).toBe(false);
+    expect(compute('assist-chain', { flybys: 0, vInfKms: 10 }).status.ok).toBe(false);
+  });
+
+  it('assist-chain draws the cumulative staircase as a computed figure', () => {
+    const fig = compute('assist-chain', { flybys: 4, vInfKms: 10 }).figure as {
+      kind: string;
+      provenance: { fidelity: string };
+      series: { points: { x: number; y: number }[] }[];
+    };
+    expect(fig.kind).toBe('curve');
+    expect(fig.provenance.fidelity).toBe('computed');
+    // starts at the origin, rises to (4, 80).
+    expect(fig.series[0].points[0]).toEqual({ x: 0, y: 0 });
+    expect(fig.series[0].points.at(-1)).toEqual({ x: 4, y: 80 });
+  });
+
+  it('the capstone is cross-cutting and gated on BOTH families (spaceflight ∧ observe)', () => {
+    const g = GOALS.get('plan-a-mission')!;
+    expect(g.family).toBe('cross-cutting');
+    expect(g.prereqs).toEqual(
+      expect.arrayContaining(['leave-the-solar-system', 'observe-the-sky']),
+    );
+    // one prereq is a spaceflight (Family A) goal, the other an observe (Family B) goal.
+    expect(GOALS.get('leave-the-solar-system')!.family).toBe('spaceflight');
+    expect(GOALS.get('observe-the-sky')!.family).toBe('observe');
+  });
+
+  it('the ladder synthesizes A+B in order: window → leg → inject → assist → chain → verdict', () => {
+    const g = GOALS.get('plan-a-mission')!;
+    expect(g.path.map((s) => s.formulaId)).toEqual([
+      'launch-window',
+      'interplanetary-transfer',
+      'oberth-departure-dv',
+      'gravity-assist',
+      'assist-chain',
+      'escape-verdict',
+    ]);
+  });
+
+  it('the transfer leg feeds both the injection cost and the flyby, and the verdict weighs chain vs cost', () => {
+    const g = GOALS.get('plan-a-mission')!;
+    const inject = g.path.find((s) => s.formulaId === 'oberth-departure-dv')!;
+    expect(inject.wiresFrom).toEqual([{ fromStep: 1, output: 'dv1', toInput: 'vInfKms' }]);
+    const assist = g.path.find((s) => s.formulaId === 'gravity-assist')!;
+    expect(assist.wiresFrom).toEqual([{ fromStep: 1, output: 'dv2', toInput: 'vInfKms' }]);
+    const verdict = g.path.find((s) => s.formulaId === 'escape-verdict')!;
+    // the chain Δv is the assist; required is SOLAR ESCAPE from LEO (~8.7), preset — NOT the
+    // cheaper Jupiter-leg cost (chemical clears that, which would falsify the verdict narrative).
+    expect(verdict.wiresFrom).toEqual([{ fromStep: 4, output: 'maxBoost', toInput: 'assistKms' }]);
+    expect(verdict.presetInputs?.requiredKms).toBe(8.7);
+    // sanity: with 8.5 chemical capacity, chemical ALONE (no assist) falls short of the 8.7 tour bar.
+    expect(
+      compute('escape-verdict', { capacityKms: 8.5, assistKms: 0, requiredKms: 8.7 }).status.ok,
+    ).toBe(false);
+  });
+});

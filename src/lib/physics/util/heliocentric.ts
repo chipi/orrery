@@ -20,6 +20,8 @@ export const HELIO_ORBIT_AU: Record<string, number> = {
   mars: 1.524,
   jupiter: 5.204,
   saturn: 9.583,
+  uranus: 19.191,
+  neptune: 30.07,
 };
 
 export interface HelioModel {

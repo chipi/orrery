@@ -605,6 +605,99 @@ export const observeTheSky: Goal = {
   },
 };
 
+// ─── Family C — the capstone ("plan a real mission") ─────────────────────────
+
+/**
+ * Family C "Plan a deep-space mission" — the flagship capstone, and the only 'cross-cutting'
+ * goal: it synthesizes Family A (launch, transfer, escape, gravity assist) with Family B
+ * (where the planets are, when a window opens) into the one thing a real mission designer
+ * does — sequence a trajectory. It is a GENERIC planner: the formulas take any bodies, any
+ * approach speed, any flyby count, so the learner can re-drive every rung. The ladder walks
+ * the method on ONE worked example — Voyager 2's Jupiter→Saturn→Uranus→Neptune Grand Tour —
+ * and the narrative holds up Cassini's Venus-Venus-Earth-Jupiter run to Saturn as the
+ * counter-example where assists BRAKE and route inward first.
+ *
+ * The rungs, each reusing a formula the earlier goals taught:
+ *   0 launch-window — you cannot leave whenever; wait for the alignment (Voyager caught a 176-yr one).
+ *   1 interplanetary-transfer — the first cruise leg to Jupiter: departure Δv, arrival speed, years.
+ *   2 oberth-departure-dv — what that leg actually costs from LEO (wired from the leg's departure Δv).
+ *   3 gravity-assist — the Jupiter flyby turns the arrival speed into free Δv (wired from arrival speed).
+ *   4 assist-chain — stack four flybys: the honest UPPER BOUND on cumulative Δv the tour can steal.
+ *   5 escape-verdict — could a rocket do this on fuel alone? (no) — with the chain, you not only
+ *     escape but TOUR. Wired: chain Δv → assist, the from-LEO cost → required.
+ *
+ * Gated on BOTH families (prereqs: leave-the-solar-system ∧ observe-the-sky) — the capstone
+ * you unlock once you can both fly and read the sky.
+ */
+export const planAMission: Goal = {
+  id: 'plan-a-mission',
+  titleKey: 'lab.goal.plan-mission.title',
+  family: 'cross-cutting',
+  tier: 7,
+  prereqs: ['leave-the-solar-system', 'observe-the-sky'],
+  path: [
+    {
+      formulaId: 'launch-window',
+      narrativeKey: 'lab.goal.fc.window',
+      presetInputs: { depart: 'earth', arrive: 'jupiter' },
+    },
+    {
+      formulaId: 'interplanetary-transfer',
+      narrativeKey: 'lab.goal.fc.leg',
+      presetInputs: { depart: 'earth', arrive: 'jupiter' },
+    },
+    {
+      formulaId: 'oberth-departure-dv',
+      narrativeKey: 'lab.goal.fc.inject',
+      // The leg's heliocentric departure Δv IS the hyperbolic excess relative to Earth — wire it
+      // straight into the Oberth rung to see the honest from-LEO cost.
+      presetInputs: { body: 'earth', altitudeKm: 200 },
+      wiresFrom: [{ fromStep: 1, output: 'dv1', toInput: 'vInfKms' }],
+    },
+    {
+      formulaId: 'gravity-assist',
+      narrativeKey: 'lab.goal.fc.assist',
+      // You arrive at Jupiter at the leg's arrival speed (≈ v∞ in the patched-conic frame); the
+      // flyby turns it into free Δv.
+      wiresFrom: [{ fromStep: 1, output: 'dv2', toInput: 'vInfKms' }],
+    },
+    {
+      formulaId: 'assist-chain',
+      narrativeKey: 'lab.goal.fc.chain',
+      // Voyager 2's four flybys, a representative ~10 km/s approach each — the staircase upper bound.
+      presetInputs: { flybys: 4, vInfKms: 10 },
+    },
+    {
+      formulaId: 'escape-verdict',
+      narrativeKey: 'lab.goal.fc.verdict',
+      // Honest frame: required is SOLAR ESCAPE from LEO (~8.7, Oberth-discounted — the formula's
+      // documented default), NOT the Jupiter-leg cost. Reaching Jupiter (~6 km/s) is within chemical
+      // reach; a Grand Tour — escaping the system with touring speed — is not: ~8.5 from a strong
+      // stage falls just short of 8.7. The chain (assist) supplies the margin and the touring speed.
+      presetInputs: { requiredKms: 8.7 },
+      wiresFrom: [{ fromStep: 4, output: 'maxBoost', toInput: 'assistKms' }],
+    },
+  ],
+  connection: {
+    whyKey: 'lab.conn.fc.why',
+    hookKey: 'lab.conn.fc.hook',
+    links: [
+      { labelKey: 'lab.conn.fc.voyager2', href: '/fly?mission=voyager-2', agency: 'NASA' },
+      { labelKey: 'lab.conn.fc.voyager1', href: '/fly?mission=voyager-1', agency: 'NASA' },
+      { labelKey: 'lab.conn.fc.cassini', href: '/fly?mission=cassini', agency: 'NASA / ESA / ASI' },
+      { labelKey: 'lab.conn.fc.galileo', href: '/fly?mission=galileo', agency: 'NASA' },
+      { labelKey: 'lab.conn.fc.newhorizons', href: '/fly?mission=new-horizons', agency: 'NASA' },
+      { labelKey: 'lab.conn.fc.voyager-program', href: '/programs/voyager', agency: 'NASA' },
+      {
+        labelKey: 'lab.conn.fc.cassini-program',
+        href: '/programs/cassini',
+        agency: 'NASA / ESA / ASI',
+      },
+    ],
+    nextKey: 'lab.conn.fc.next',
+  },
+};
+
 /** All goals, keyed by id — insertion order drives the Lab picker (the mission arc). */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
@@ -620,6 +713,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [chooseAnOrbit.id, chooseAnOrbit],
   [catchTheIss.id, catchTheIss],
   [observeTheSky.id, observeTheSky],
+  [planAMission.id, planAMission],
 ]);
 
 /**

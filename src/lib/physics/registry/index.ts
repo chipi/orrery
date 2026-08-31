@@ -54,7 +54,16 @@ const SYNODIC_MONTH_DAYS = 29.530588;
 const SIDEREAL_DAY_MIN = 1436.068;
 
 /** Planets on a tabulated heliocentric orbit — the interplanetary transfer set (M4). */
-const HELIO_PLANET_IDS = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn'] as const;
+const HELIO_PLANET_IDS = [
+  'mercury',
+  'venus',
+  'earth',
+  'mars',
+  'jupiter',
+  'saturn',
+  'uranus',
+  'neptune',
+] as const;
 
 // Primaries a learner can orbit — resolved through the ONE launch-location model
 // (radius + µ + rotation from PLANET_STATS), so the orbital formulas run on any
@@ -2730,6 +2739,82 @@ export const escapeVerdict: FormulaDef<{
   },
 };
 
+/**
+ * Gravity-assist CHAIN (Family C synthesis) — the capstone move that makes a Grand Tour
+ * possible. A single flyby can change heliocentric velocity by at most 2·v∞ (the M6
+ * `gravity-assist` ceiling); a CHAIN of them stacks that gain flyby after flyby. This
+ * emits an honest UPPER BOUND: cumulative Δv ≤ Σ 2·v∞, drawn as the staircase a mission
+ * planner sketches. It is deliberately NOT a trajectory integration — real flybys vary in
+ * v∞, never hit the 180° ideal, and the vectors do not add as scalars. Those four caveats
+ * are the loud assumptions. The teaching payload: even this optimistic ceiling reveals a
+ * chain delivers tens of km/s no chemical stage could — which is exactly why Voyager 2's
+ * J→S→U→N tour, or Cassini's Venus-Venus-Earth-Jupiter run to Saturn, was flyable at all.
+ */
+export const assistChain: FormulaDef<{ flybys: number; vInfKms: number }> = {
+  id: 'assist-chain',
+  titleKey: 'lab.f.assistchain.title',
+  domain: 'transfer',
+  tier: 8,
+  prereqs: ['gravity-assist'],
+  latex: '\\Delta v_{\\max} \\le \\sum_{i=1}^{N} 2\\,v_{\\infty,i}',
+  inputs: [
+    {
+      key: 'flybys',
+      labelKey: 'lab.f.assistchain.flybys',
+      units: '',
+      kind: 'number',
+      default: 4, // Voyager 2: Jupiter, Saturn, Uranus, Neptune
+      min: 1,
+      max: 8,
+      step: 1,
+    },
+    {
+      key: 'vInfKms',
+      labelKey: 'lab.f.assistchain.vinf',
+      units: 'km/s',
+      kind: 'number',
+      default: 10, // a representative outer-planet approach speed
+      min: 0,
+      max: 30,
+    },
+  ],
+  outputs: [{ key: 'maxBoost', labelKey: 'lab.f.assistchain.total', units: 'km/s' }],
+  compute: ({ flybys, vInfKms }) => {
+    const n = Math.round(flybys);
+    if (!Number.isFinite(vInfKms) || vInfKms < 0 || !Number.isFinite(flybys) || n < 1) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.escape.err-input' },
+        assumptions: ['lab.assume.patched-conic'],
+      } satisfies FormulaResult;
+    }
+    const perFlyby = 2 * vInfKms; // the ideal 180°-turn ceiling for one flyby
+    const maxBoost = n * perFlyby; // cumulative UPPER BOUND — flybys do not add as scalars in reality
+    const points: Vec2[] = [{ x: 0, y: 0 }];
+    for (let i = 1; i <= n; i += 1) points.push({ x: i, y: i * perFlyby });
+    return {
+      values: { maxBoost: { value: maxBoost, units: 'km/s' } },
+      status: { ok: true },
+      assumptions: [
+        'lab.assume.patched-conic',
+        'lab.assume.ideal-deflection',
+        'lab.assume.equal-vinf-chain',
+        'lab.assume.upper-bound-sum',
+      ],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'mechanics/orbits' },
+        assumptions: ['lab.assume.upper-bound-sum'],
+        x: { labelKey: 'lab.axis.flyby', units: '' },
+        y: { labelKey: 'lab.axis.cumulative-dv', units: 'km/s' },
+        series: [{ points }],
+        marks: [{ at: { x: n, y: maxBoost }, labelKey: 'lab.mark.chain-total', kind: 'point' }],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
 // ─── Family B / G8 "Moon phases" — observe the sky ───────────────────────────
 
 /**
@@ -4120,6 +4205,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [oberthDepartureDv.id, oberthDepartureDv],
   [gravityAssist.id, gravityAssist],
   [escapeVerdict.id, escapeVerdict],
+  [assistChain.id, assistChain],
   [moonPhaseFormula.id, moonPhaseFormula],
   [moonDistance.id, moonDistance],
   [eclipseSeasons.id, eclipseSeasons],

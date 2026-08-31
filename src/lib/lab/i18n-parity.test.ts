@@ -58,6 +58,13 @@ function collectAllKeys(): string[] {
     REGISTRY.get('delta-v-margin')!.compute({ capacityKms: 5, requiredKms: 9.4 }),
     add,
   );
+  // M6 fail branches (defaults are feasible, so force the reason keys explicitly).
+  collectFromResult(REGISTRY.get('solar-escape-velocity')!.compute({ distanceAu: 0 }), add);
+  collectFromResult(REGISTRY.get('gravity-assist')!.compute({ vInfKms: -1 }), add);
+  collectFromResult(
+    REGISTRY.get('oberth-departure-dv')!.compute({ vInfKms: NaN, body: 'earth', altitudeKm: 200 }),
+    add,
+  );
 
   for (const goal of GOALS.values()) {
     add(goal.titleKey);

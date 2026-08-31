@@ -160,3 +160,74 @@ describe('goal registry · connection href integrity', () => {
     expect(broken, `broken connection links:\n${broken.join('\n')}`).toEqual([]);
   });
 });
+
+/**
+ * M6 "leave the solar system" physics — locks the escape numbers the narrative claims,
+ * and proves the assist is DECISIVE (rocket-alone fails, assist tips it positive). If a
+ * refactor changes µ_sun, the escape-velocity formula, or the assist model, this fails.
+ */
+describe('M6 leave-the-solar-system · escape physics', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('solar escape velocity at 1 AU is ~42.1 km/s (√2 × Earth orbital)', () => {
+    const r = compute('solar-escape-velocity', { distanceAu: 1 });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.vEsc.value).toBeCloseTo(42.1, 0);
+    // falls with distance: 4 AU (Jupiter-ish) is slower than 1 AU
+    expect(compute('solar-escape-velocity', { distanceAu: 5.2 }).values.vEsc.value).toBeLessThan(
+      r.values.vEsc.value,
+    );
+  });
+
+  it('heliocentric escape Δv from Earth is only ~12.3 km/s (you keep Earth’s 29.8)', () => {
+    const r = compute('heliocentric-escape-dv', { escapeKms: 42.1, orbitalKms: 29.78 });
+    expect(r.values.dvKms.value).toBeCloseTo(12.3, 0);
+  });
+
+  it('the Oberth effect makes the from-LEO Δv (~8.7) far cheaper than the 12.3 heliocentric v∞', () => {
+    const r = compute('oberth-departure-dv', { vInfKms: 12.3, body: 'earth', altitudeKm: 200 });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.dvFromLeo.value).toBeCloseTo(8.7, 0);
+    // the honesty crux: burning deep in the well costs LESS than the excess speed you gain
+    expect(r.values.dvFromLeo.value).toBeLessThan(12.3);
+  });
+
+  it('a gravity assist boost is 2·v∞ — the honest 180° ceiling, no planet-speed fudge', () => {
+    expect(compute('gravity-assist', { vInfKms: 8 }).values.boost.value).toBe(16);
+    expect(compute('gravity-assist', { vInfKms: 6 }).values.boost.value).toBe(12);
+  });
+
+  it('the verdict is honest: a top launch clears escape alone, a weaker one needs the assist', () => {
+    // New Horizons class (~9 ≥ 8.7) escapes on its own thrust — no "only the slingshot can".
+    expect(
+      compute('escape-verdict', { capacityKms: 9, assistKms: 0, requiredKms: 8.7 }).status.ok,
+    ).toBe(true);
+    // a weaker stage falls a hair short alone…
+    expect(
+      compute('escape-verdict', { capacityKms: 8, assistKms: 0, requiredKms: 8.7 }).status.ok,
+    ).toBe(false);
+    // …and the flyby boost tips it over (and buys the tour speed).
+    const withAssist = compute('escape-verdict', {
+      capacityKms: 8,
+      assistKms: 12,
+      requiredKms: 8.7,
+    });
+    expect(withAssist.status.ok).toBe(true);
+    expect(withAssist.values.margin.value).toBeCloseTo(11.3, 1);
+  });
+
+  it('the M6 ladder wires v∞ into Oberth, and the flyby boost + from-LEO Δv into the verdict', () => {
+    const g = GOALS.get('leave-the-solar-system')!;
+    const oberth = g.path.find((s) => s.formulaId === 'oberth-departure-dv')!;
+    expect(oberth.wiresFrom).toEqual(
+      expect.arrayContaining([expect.objectContaining({ output: 'dvKms', toInput: 'vInfKms' })]),
+    );
+    const verdict = g.path.find((s) => s.formulaId === 'escape-verdict')!;
+    expect(verdict.wiresFrom).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ output: 'boost', toInput: 'assistKms' }),
+        expect.objectContaining({ output: 'dvFromLeo', toInput: 'requiredKms' }),
+      ]),
+    );
+  });
+});

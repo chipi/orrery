@@ -339,6 +339,61 @@ export const landOnMars: Goal = {
   },
 };
 
+/**
+ * M6 "leave the solar system" — the last spaceflight rung, and a genuinely NEW physics:
+ * hyperbolic escape, not another closed transfer. Solar escape velocity at 1 AU (~42 km/s)
+ * → the heliocentric Δv beyond Earth's orbital motion to reach it (~12.3 km/s) → the
+ * gravity assist that supplies what a chemical rocket can't → a verdict wiring the assist
+ * boost and the escape Δv. The lesson: no rocket has ever escaped the Sun on its own thrust
+ * — every craft that left (Voyager, Pioneer, New Horizons) was slung out by a planet.
+ */
+export const leaveTheSolarSystem: Goal = {
+  id: 'leave-the-solar-system',
+  titleKey: 'lab.goal.leave-system.title',
+  family: 'spaceflight',
+  tier: 6,
+  prereqs: ['get-to-mars'],
+  path: [
+    { formulaId: 'solar-escape-velocity', narrativeKey: 'lab.goal.lss.escape' },
+    {
+      formulaId: 'heliocentric-escape-dv',
+      narrativeKey: 'lab.goal.lss.helio',
+      // The escape SPEED (42) wires in; you already own Earth's 29.8, so the ladder shows
+      // the heliocentric excess you need is just the ~12.3 difference.
+      wiresFrom: [{ fromStep: 0, output: 'vEsc', toInput: 'escapeKms' }],
+    },
+    {
+      formulaId: 'oberth-departure-dv',
+      narrativeKey: 'lab.goal.lss.oberth',
+      // The honest twist: that 12.3 heliocentric excess costs only ~8.7 km/s of Δv FROM
+      // LEO, because you burn deep in Earth's well (Oberth). Wires v∞ from the rung above.
+      wiresFrom: [{ fromStep: 1, output: 'dvKms', toInput: 'vInfKms' }],
+    },
+    { formulaId: 'gravity-assist', narrativeKey: 'lab.goal.lss.assist' },
+    {
+      formulaId: 'escape-verdict',
+      narrativeKey: 'lab.goal.lss.verdict',
+      // Required is the Oberth-discounted from-LEO Δv (~8.7); a strong stage (~8.5) lands
+      // on the line, and the flyby boost supplies margin + the speed to tour. Honest frame.
+      wiresFrom: [
+        { fromStep: 3, output: 'boost', toInput: 'assistKms' },
+        { fromStep: 2, output: 'dvFromLeo', toInput: 'requiredKms' },
+      ],
+    },
+  ],
+  connection: {
+    whyKey: 'lab.conn.lss.why',
+    hookKey: 'lab.conn.lss.hook',
+    links: [
+      { labelKey: 'lab.conn.lss.voyager1', href: '/fly?mission=voyager-1', agency: 'NASA' },
+      { labelKey: 'lab.conn.lss.voyager2', href: '/fly?mission=voyager-2', agency: 'NASA' },
+      { labelKey: 'lab.conn.lss.pioneer10', href: '/fly?mission=pioneer-10', agency: 'NASA' },
+      { labelKey: 'lab.conn.lss.newhorizons', href: '/fly?mission=new-horizons', agency: 'NASA' },
+      { labelKey: 'lab.conn.lss.galileo', href: '/fly?mission=galileo', agency: 'NASA' },
+    ],
+  },
+};
+
 /** All goals, keyed by id — insertion order drives the Lab picker (the mission arc). */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
@@ -348,6 +403,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [landOnTheMoon.id, landOnTheMoon],
   [getToMars.id, getToMars],
   [landOnMars.id, landOnMars],
+  [leaveTheSolarSystem.id, leaveTheSolarSystem],
 ]);
 
 /**

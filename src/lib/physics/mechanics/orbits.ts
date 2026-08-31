@@ -19,6 +19,15 @@ export function circularVelocityKms(radiusKm: number, muKm3s2: number): number {
   return Math.sqrt(muKm3s2 / radiusKm);
 }
 
+/**
+ * Escape speed at radius r from a primary of µ: v = √(2µ/r) = √2·v_circular (M6
+ * "leave the solar system"). Serves any primary — the Sun (µ_sun, r in km) gives the
+ * ~42 km/s solar-escape speed at 1 AU that Voyager had to reach.
+ */
+export function escapeVelocityKms(radiusKm: number, muKm3s2: number): number {
+  return Math.SQRT2 * circularVelocityKms(radiusKm, muKm3s2);
+}
+
 /** Vis-viva: speed at radius r on an orbit of semi-major axis a: v = √(µ(2/r − 1/a)). */
 export function visVivaKms(rKm: number, aKm: number, muKm3s2: number): number {
   return Math.sqrt(muKm3s2 * (2 / rKm - 1 / aKm));

@@ -748,9 +748,20 @@ export const hohmannFormula: FormulaDef<{ r1Km: number; r2Km: number; body: stri
         assumptions: ['lab.assume.coplanar', 'lab.assume.ideal-no-losses'],
         bodies: [{ labelKey: 'lab.body.primary', at: { x: 0, y: 0 } }],
         arc,
+        // Label by ROLE (departure at r1, arrival at r2), not by position — so a lowering
+        // transfer (r1 > r2) still names the burns correctly (review M2 MINOR-2). Perigee is
+        // at +x (rp), apogee at −x (ra); the departure orbit sits at whichever r1 is.
         marks: [
-          { at: { x: rp * scale, y: 0 }, labelKey: 'lab.mark.burn-1', kind: 'point' },
-          { at: { x: -ra * scale, y: 0 }, labelKey: 'lab.mark.burn-2', kind: 'point' },
+          {
+            at: { x: (r1Km <= r2Km ? rp : -ra) * scale, y: 0 },
+            labelKey: 'lab.mark.burn-depart',
+            kind: 'point',
+          },
+          {
+            at: { x: (r1Km <= r2Km ? -ra : rp) * scale, y: 0 },
+            labelKey: 'lab.mark.burn-arrive',
+            kind: 'point',
+          },
         ],
       },
     } satisfies FormulaResult;
@@ -1094,9 +1105,19 @@ export const interplanetaryTransfer: FormulaDef<{ depart: string; arrive: string
         assumptions: ['lab.assume.coplanar', 'lab.assume.circular-orbits'],
         bodies: [{ labelKey: 'lab.body.sun', at: { x: 0, y: 0 } }],
         arc,
+        // Role-based burn labels (departure = the planet you leave, arrival = the target),
+        // correct for an inward transfer (e.g. Earth→Venus) too (review M2 MINOR-2).
         marks: [
-          { at: { x: rp * scale, y: 0 }, labelKey: 'lab.mark.burn-1', kind: 'point' },
-          { at: { x: -ra * scale, y: 0 }, labelKey: 'lab.mark.burn-2', kind: 'point' },
+          {
+            at: { x: (d.orbitRadiusKm <= a.orbitRadiusKm ? rp : -ra) * scale, y: 0 },
+            labelKey: 'lab.mark.burn-depart',
+            kind: 'point',
+          },
+          {
+            at: { x: (d.orbitRadiusKm <= a.orbitRadiusKm ? -ra : rp) * scale, y: 0 },
+            labelKey: 'lab.mark.burn-arrive',
+            kind: 'point',
+          },
         ],
       },
     } satisfies FormulaResult;

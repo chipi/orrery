@@ -2024,8 +2024,6 @@
   "lab_goal_rtm_orbit": "Recht omhoog gaan is niet genoeg — je valt gewoon terug. Om omhoog te blijven, ga je zijwaarts snel genoeg zodat de grond even snel wegbuigt als je valt. Die snelheid is de circulaire omloopsnelheid.",
   "lab_goal_rtm_verdict": "Tel de twee maneuvers op: dit is de Δv om de Maan te bereiken VANUIT lage aardbaan — bovenop de ~9,4 km/s die al nodig was om überhaupt in baan te komen. Dekt uw on-orbit budget de transfer?",
   "lab_goal_rtm_visviva": "Banen zijn niet allemaal cirkels. Vis-viva geeft je snelheid op elk punt van elke baan met slechts twee getallen — waar je bent en hoe groot de baan is. Het is het gereedschap waarop elke transferbaan is gebouwd.",
-  "lab_mark_burn_1": "Stuwing 1",
-  "lab_mark_burn_2": "Stuwing 2",
   "lab_f_orbits_err_unknown_body": "Die wereld kunt u hier niet omcirkelen — kies Aarde of de Maan.",
   "lab_axis_latitude": "Breedtegraad",
   "lab_f_launch_site_title": "Lanceerplaats",
@@ -2223,5 +2221,12 @@
   "lab_f_oberth_circular": "Cirkelt al op",
   "lab_f_escape_err_input": "Voer eindige, niet-negatieve waarden in.",
   "lab_goal_lss_oberth": "Hier zit de slimheid die het mogelijk maakt: je koopt die 12,3 km/s niet in de diepe ruimte. Je verbrandt vanuit een lage parkeerbaan, diep in Earths zwaartekrachtput waar snelheid goedkoop is — het Oberth-effect. Van daaruit is de Δv om v∞ = 12,3 te bereiken slechts ongeveer 8,7 km/s, niet 12,3. Dat is haalbaar voor een sterke chemische boventrip — precies hoe New Horizons rechtstreeks op een zon-ontsnappingsbaan werd gelanceerd.",
-  "lab_assume_impulsive_burn": "Impulsieve verbranding (alle Δv instantaan op periapsis toegepast)"
+  "lab_assume_impulsive_burn": "Impulsieve verbranding (alle Δv instantaan op periapsis toegepast)",
+  "lab_body_earth": "Aarde",
+  "lab_body_moon": "Maan",
+  "lab_body_mars": "Mars",
+  "lab_body_venus": "Venus",
+  "lab_body_mercury": "Mercurius",
+  "lab_mark_burn_depart": "Vertrekmanoeuvre",
+  "lab_mark_burn_arrive": "Aankomstmanoeuvre"
 }

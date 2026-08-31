@@ -2024,8 +2024,6 @@
   "lab_goal_rtm_orbit": "直直向上飞是不够的——你只会掉回来。要留在天上，就得横向飞得足够快，让地面下沉的速度和你下坠的速度一样快。这个速度就是圆轨道速度。",
   "lab_goal_rtm_verdict": "将两次点火相加：这就是从近地轨道抵达月球所需的Δv——此外还需约9.4 km/s才能进入轨道。你的在轨预算能否覆盖此次转移？",
   "lab_goal_rtm_visviva": "轨道并非都是圆形。活力公式仅凭两个数字——你所在的位置，以及轨道的大小——就能算出你在任意轨道任意点的速度。它是每一次转移的构建基石。",
-  "lab_mark_burn_1": "点火 1",
-  "lab_mark_burn_2": "点火 2",
   "lab_f_orbits_err_unknown_body": "该天体无法在此绕行——请选择地球或月球。",
   "lab_axis_latitude": "纬度",
   "lab_f_launch_site_title": "发射场",
@@ -2223,5 +2221,12 @@
   "lab_f_oberth_circular": "已在此高度环绕",
   "lab_f_escape_err_input": "请输入有限的非负数值。",
   "lab_goal_lss_oberth": "让这一切成为可能的关键在于：你并非在深空中获取那 12.3 km/s。你从深处于地球引力井中的低停泊轨道点火，那里速度代价低廉——这就是奥伯特效应。从这里出发，达到 v∞ = 12.3 所需的 Δv 仅约 8.7 km/s，而非 12.3。这在强力化学末级的能力范围之内——新视野号（New Horizons）正是这样直接踏上了逃离太阳的轨迹。",
-  "lab_assume_impulsive_burn": "脉冲点火（全部 Δv 于近拱点瞬时施加）"
+  "lab_assume_impulsive_burn": "脉冲点火（全部 Δv 于近拱点瞬时施加）",
+  "lab_body_earth": "地球",
+  "lab_body_moon": "月球",
+  "lab_body_mars": "火星",
+  "lab_body_venus": "金星",
+  "lab_body_mercury": "水星",
+  "lab_mark_burn_depart": "出发点火",
+  "lab_mark_burn_arrive": "到达点火"
 }

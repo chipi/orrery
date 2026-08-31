@@ -1,8 +1,13 @@
 import { describe, it, expect } from 'vitest';
-import { visViva, keplerPos, MU_SUN, AU_TO_KM, AU_TO_LMIN, AUPYR_TO_KMS } from './orbital';
+import { keplerPos, MU_SUN, AU_TO_KM, AU_TO_LMIN, AUPYR_TO_KMS } from './orbital';
+import { visVivaKms } from '../mechanics/orbits';
+import { MU_SUN_KM3_S2 } from '../util/constants';
 import planetsData from '$data/planets.json';
 
-describe('visViva', () => {
+// Vis-viva now has ONE canonical implementation — `mechanics/orbits.visVivaKms`
+// (µ passed in). These heliocentric reference checks moved here from the removed
+// AU/yr `visViva` (M2 MINOR-1); the physics is identical, the units are explicit.
+describe('visVivaKms — heliocentric reference values', () => {
   // Reference values from NASA Planetary Fact Sheets (2023):
   // - Earth mean orbital velocity: 29.78 km/s
   // - Mars mean orbital velocity: 24.13 km/s
@@ -10,16 +15,17 @@ describe('visViva', () => {
   // Hohmann perihelion velocity from Curtis "Orbital Mechanics for
   // Engineering Students" §6.2 — for the Earth → Mars Hohmann transfer
   // with a = (1 + 1.524)/2 = 1.262 AU, perihelion v ≈ 32.73 km/s.
+  const au = (r: number): number => r * AU_TO_KM;
   it('Earth at 1 AU ≈ 29.78 km/s (NASA fact sheet)', () => {
-    expect(visViva(1.0, 1.0)).toBeCloseTo(29.78, 1);
+    expect(visVivaKms(au(1.0), au(1.0), MU_SUN_KM3_S2)).toBeCloseTo(29.78, 1);
   });
 
   it('Mars at 1.524 AU ≈ 24.13 km/s (NASA fact sheet)', () => {
-    expect(visViva(1.524, 1.524)).toBeCloseTo(24.13, 1);
+    expect(visVivaKms(au(1.524), au(1.524), MU_SUN_KM3_S2)).toBeCloseTo(24.13, 1);
   });
 
   it('Hohmann transfer perihelion (a=1.262, r=1.0) ≈ 32.73 km/s (Curtis §6.2)', () => {
-    expect(visViva(1.262, 1.0)).toBeCloseTo(32.73, 1);
+    expect(visVivaKms(au(1.0), au(1.262), MU_SUN_KM3_S2)).toBeCloseTo(32.73, 1);
   });
 });
 

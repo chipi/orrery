@@ -7,11 +7,12 @@
  * Pure; µ is passed IN (km³/s²) so the same functions serve any primary (Earth,
  * Moon, …) — matching how `mechanics/kinematics` takes `g` rather than assuming Earth.
  *
- * M2 gap note: `transfer/orbital.ts` also has a `visViva`, but it is UNIT-LOCKED to
- * heliocentric AU + µ_sun for the /fly sim (it multiplies by AUPYR_TO_KMS). This is
- * the general, unit-consistent form (r, a, µ in matching units) the learning kernel
- * needs; unifying the two is a tracked follow-up, not an M2 change (it would touch
- * the /fly trajectory sim).
+ * `visVivaKms` here is the ONE canonical vis-viva for the kernel (µ passed in, any
+ * primary). The old AU/yr-locked `transfer/orbital.visViva` was test-only dead code and
+ * has been removed (M2 MINOR-1); its NASA/Curtis reference checks moved onto this fn in
+ * `transfer/orbital.test.ts`. The /fly trajectory sim still carries its OWN inline vis-viva
+ * in `transfer/mission-arc.ts` (AU³/yr² · AUPYR_TO_KMS) — folding THAT onto this helper is a
+ * separate, deliberate /fly refactor, out of scope here.
  */
 
 /** Circular orbital speed at radius r: v = √(µ/r). */

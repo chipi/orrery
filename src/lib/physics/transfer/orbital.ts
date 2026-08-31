@@ -60,13 +60,7 @@ export function keplerPos(
   return { x: Math.cos(theta) * r, y: Math.sin(theta) * r, r };
 }
 
-/**
- * Vis-viva equation: orbital velocity at radius r on an orbit of semi-major axis a.
- *
- * @param a semi-major axis (AU)
- * @param r distance from focus (AU)
- * @returns velocity (km/s)
- */
-export function visViva(a: number, r: number): number {
-  return Math.sqrt(MU_SUN * (2 / r - 1 / a)) * AUPYR_TO_KMS;
-}
+// Vis-viva lived here as an AU/yr-locked helper, but it was test-only dead code —
+// the learning kernel uses the general `mechanics/orbits.visVivaKms` (µ passed in),
+// and the /fly sim computes its own inline in `transfer/mission-arc.ts`. Removed to
+// leave one canonical vis-viva per consumer (M2 MINOR-1). See orbits.ts head note.

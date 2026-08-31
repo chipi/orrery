@@ -84,6 +84,8 @@ function collectAllKeys(): string[] {
   ['lab.fidelity.computed', 'lab.fidelity.geometric', 'lab.fidelity.replayed'].forEach(add);
   // Connection-panel chrome — rendered via t() in Notebook.svelte, not a data literal.
   ['lab.conn.heading', 'lab.conn.hook-label', 'lab.conn.next-label', 'lab.conn.aria'].forEach(add);
+  // Body-picker option labels — rendered via t(`lab.body.${id}`) in Card.svelte (not a labelKey).
+  ['earth', 'moon', 'mars', 'venus', 'mercury'].forEach((b) => add(`lab.body.${b}`));
 
   return [...keys].filter((k) => k.startsWith('lab.'));
 }

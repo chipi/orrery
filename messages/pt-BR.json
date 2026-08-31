@@ -2024,8 +2024,6 @@
   "lab_goal_rtm_orbit": "Ir direto para cima não é suficiente — você só caíria de volta. Para ficar em órbita, vá de lado rápido o bastante para que o solo curve tão rápido quanto você cai. Essa velocidade é a velocidade orbital circular.",
   "lab_goal_rtm_verdict": "Some os dois impulsos: esse é o Δv para alcançar a Lua A PARTIR da órbita baixa terrestre — além dos ~9,4 km/s que já foram necessários apenas para chegar à órbita. Seu orçamento em órbita cobre a transferência?",
   "lab_goal_rtm_visviva": "Órbitas nem sempre são círculos. Vis-viva fornece sua velocidade em qualquer ponto de qualquer órbita a partir de apenas dois números — onde você está e o tamanho da órbita. É a ferramenta na qual toda transferência é construída.",
-  "lab_mark_burn_1": "Queimada 1",
-  "lab_mark_burn_2": "Queimada 2",
   "lab_f_orbits_err_unknown_body": "Esse mundo não é um que você pode orbitar aqui — escolha a Terra ou a Lua.",
   "lab_axis_latitude": "Latitude",
   "lab_f_launch_site_title": "Local de Lançamento",
@@ -2223,5 +2221,12 @@
   "lab_f_oberth_circular": "Já orbitando circularmente a",
   "lab_f_escape_err_input": "Insira valores finitos e não-negativos.",
   "lab_goal_lss_oberth": "Aqui está o detalhe que torna isso possível: você não adquire esse 12,3 km/s lá no espaço profundo. Você queima a partir de uma órbita de estacionamento baixa, bem fundo no poço gravitacional da Terra, onde velocidade é barata — o efeito Oberth. De lá, o Δv necessário para atingir v∞ = 12,3 é apenas cerca de 8,7 km/s, não 12,3. Isso está ao alcance de um forte estágio superior químico — que é exatamente como New Horizons foi lançada direto em uma trajetória de escape solar.",
-  "lab_assume_impulsive_burn": "Queimada impulsiva (todo Δv aplicado instantaneamente no periapsis)"
+  "lab_assume_impulsive_burn": "Queimada impulsiva (todo Δv aplicado instantaneamente no periapsis)",
+  "lab_body_earth": "Terra",
+  "lab_body_moon": "Lua",
+  "lab_body_mars": "Marte",
+  "lab_body_venus": "Vênus",
+  "lab_body_mercury": "Mercúrio",
+  "lab_mark_burn_depart": "Queimada de partida",
+  "lab_mark_burn_arrive": "Queimada de chegada"
 }

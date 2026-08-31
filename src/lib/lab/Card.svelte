@@ -194,7 +194,9 @@
             onchange={(e) => handleSelectInput(field, e)}
           >
             {#each field.bodyIds ?? [] as bodyId (bodyId)}
-              <option value={bodyId}>{bodyId.replace(/^\w/, (c) => c.toUpperCase())}</option>
+              <!-- Translated body name — lab.body.<id>, authored for every picker id
+                   (earth/moon/mars/venus/mercury) and guarded by the i18n-parity test. -->
+              <option value={bodyId}>{t(`lab.body.${bodyId}`)}</option>
             {/each}
           </select>
         {:else if field.kind === 'date'}

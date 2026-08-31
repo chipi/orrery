@@ -985,8 +985,6 @@
   "lab_goal_rtm_verdict": "Add the two burns: that is the Δv to reach the Moon FROM low Earth orbit — on top of the ~9.4 km/s it already took just to get to orbit. Does your on-orbit budget cover the transfer?",
   "lab_goal_rtm_visviva": "Orbits aren't all circles. Vis-viva gives your speed at any point of any orbit from just two numbers — where you are, and how big the orbit is. It's the tool every transfer is built from.",
   "lab_mark_baikonur": "Baikonur",
-  "lab_mark_burn_1": "Burn 1",
-  "lab_mark_burn_2": "Burn 2",
   "lab_mark_canaveral": "Canaveral",
   "lab_mark_kourou": "Kourou",
   "lab_mark_sea_launch": "Sea (equator)",
@@ -2224,5 +2222,12 @@
   "lab_f_oberth_circular": "Already circling at",
   "lab_f_escape_err_input": "Enter finite, non-negative values.",
   "lab_goal_lss_oberth": "Here is the twist that makes it possible: you do not buy that 12.3 km/s out in deep space. You burn from a low parking orbit, deep in Earth's gravity well where speed is cheap — the Oberth effect. From there the Δv to reach v∞ = 12.3 is only about 8.7 km/s, not 12.3. That is within a strong chemical upper stage — which is exactly how New Horizons launched straight onto a Sun-escaping path.",
-  "lab_assume_impulsive_burn": "Impulsive burn (all Δv applied instantly at periapsis)"
+  "lab_assume_impulsive_burn": "Impulsive burn (all Δv applied instantly at periapsis)",
+  "lab_body_earth": "Earth",
+  "lab_body_moon": "Moon",
+  "lab_body_mars": "Mars",
+  "lab_body_venus": "Venus",
+  "lab_body_mercury": "Mercury",
+  "lab_mark_burn_depart": "Departure burn",
+  "lab_mark_burn_arrive": "Arrival burn"
 }

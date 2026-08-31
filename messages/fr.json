@@ -2024,8 +2024,6 @@
   "lab_goal_rtm_orbit": "Aller tout droit vers le haut ne suffit pas — vous retomberiez. Pour rester en orbite, allez latéralement assez vite pour que le sol se courbe aussi vite que vous tombez. Cette vitesse est la vitesse orbitale circulaire.",
   "lab_goal_rtm_verdict": "Additionnez les deux manœuvres : c'est le Δv pour atteindre la Lune DEPUIS l'orbite basse terrestre — en sus des ~9,4 km/s qu'il a déjà fallu juste pour atteindre l'orbite. Votre budget à bord couvre-t-il le transfert ?",
   "lab_goal_rtm_visviva": "Les orbites ne sont pas tous des cercles. Vis-viva donne votre vitesse en tout point de n'importe quelle orbite à partir de seulement deux nombres — où vous êtes, et la taille de l'orbite. C'est l'outil sur lequel se construit tout transfert.",
-  "lab_mark_burn_1": "Impulsion 1",
-  "lab_mark_burn_2": "Impulsion 2",
   "lab_f_orbits_err_unknown_body": "Ce monde n'est pas un que vous pouvez orbiter ici — choisissez la Terre ou la Lune.",
   "lab_axis_latitude": "Latitude",
   "lab_f_launch_site_title": "Site de lancement",
@@ -2223,5 +2221,12 @@
   "lab_f_oberth_circular": "Déjà en orbite circulaire à",
   "lab_f_escape_err_input": "Entrez des valeurs finies, non-négatives.",
   "lab_goal_lss_oberth": "Voici l'astuce qui rend la chose possible : vous n'achetez pas ces 12,3 km/s en plein espace lointain. Vous brûlez depuis une orbite de stationnement basse, au fond du puits de gravité terrestre où la vitesse coûte peu — l'effet Oberth. De là, le Δv pour atteindre v∞ = 12,3 n'est que d'environ 8,7 km/s, pas 12,3. C'est à la portée d'un étage supérieur chimique puissant — exactement comment New Horizons a été lancé directement sur une trajectoire d'évasion du Soleil.",
-  "lab_assume_impulsive_burn": "Brûlure impulsive (tout Δv appliqué instantanément à la périapside)"
+  "lab_assume_impulsive_burn": "Brûlure impulsive (tout Δv appliqué instantanément à la périapside)",
+  "lab_body_earth": "Terre",
+  "lab_body_moon": "Lune",
+  "lab_body_mars": "Mars",
+  "lab_body_venus": "Vénus",
+  "lab_body_mercury": "Mercure",
+  "lab_mark_burn_depart": "Allumage de départ",
+  "lab_mark_burn_arrive": "Allumage d'arrivée"
 }

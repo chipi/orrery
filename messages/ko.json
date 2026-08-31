@@ -2024,8 +2024,6 @@
   "lab_goal_rtm_orbit": "그냥 위로 곧장 올라가는 것만으로는 부족합니다 — 다시 떨어질 뿐이죠. 계속 떠 있으려면 떨어지는 속도만큼 지면이 곡선을 그리며 멀어질 정도로 빠르게 옆으로 나아가야 합니다. 그 속도가 바로 원궤도 속도입니다.",
   "lab_goal_rtm_verdict": "두 번의 분사를 더하세요: 이것이 지구 저궤도에서 달까지 도달하는 데 필요한 Δv입니다 — 궤도에 진입하는 데만 이미 소요된 ~9.4 km/s에 더해서요. 궤도상 예산으로 이 천이를 감당할 수 있나요?",
   "lab_goal_rtm_visviva": "궤도가 모두 원인 것은 아닙니다. 비스-비바 방정식은 단 두 개의 값 — 현재 위치와 궤도의 크기 — 만으로 어떤 궤도의 어떤 지점에서든 속력을 알려줍니다. 모든 전이의 기반이 되는 도구입니다.",
-  "lab_mark_burn_1": "분사 1",
-  "lab_mark_burn_2": "분사 2",
   "lab_f_orbits_err_unknown_body": "여기서 궤도를 돌 수 있는 천체가 아닙니다 — 지구 또는 달을 선택하세요.",
   "lab_axis_latitude": "위도",
   "lab_f_launch_site_title": "발사장",
@@ -2223,5 +2221,12 @@
   "lab_f_oberth_circular": "이미 원 궤도 유지 중:",
   "lab_f_escape_err_input": "유한하고 음이 아닌 값을 입력하세요.",
   "lab_goal_lss_oberth": "이를 가능하게 하는 반전은 이렇습니다: 그 12.3 km/s를 심우주에서 사서 쓰는 게 아닙니다. 지구 중력 우물 깊숙한 곳, 속도가 값싼 저궤도 주차 궤도에서 연소합니다 — 오베르트 효과입니다. 그곳에서 v∞ = 12.3에 도달하는 데 필요한 Δv는 12.3이 아니라 약 8.7 km/s에 불과합니다. 이는 강력한 화학 상단의 성능 범위 안에 있으며 — New Horizons가 곧장 태양 탈출 궤도로 발사된 방식이 바로 이것입니다.",
-  "lab_assume_impulsive_burn": "충격 연소 (모든 Δv를 근점에서 순간적으로 적용)"
+  "lab_assume_impulsive_burn": "충격 연소 (모든 Δv를 근점에서 순간적으로 적용)",
+  "lab_body_earth": "지구",
+  "lab_body_moon": "달",
+  "lab_body_mars": "화성",
+  "lab_body_venus": "금성",
+  "lab_body_mercury": "수성",
+  "lab_mark_burn_depart": "출발 분사",
+  "lab_mark_burn_arrive": "도착 분사"
 }

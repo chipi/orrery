@@ -2024,8 +2024,6 @@
   "lab_goal_rtm_orbit": "Subir recto no es suficiente — solo caerías. Para mantenerte arriba, ve de lado lo bastante rápido para que el terreno se curve tan rápido como caes. Esa velocidad es la velocidad orbital circular.",
   "lab_goal_rtm_verdict": "Suma los dos impulsos: ese es el Δv necesario para alcanzar la Luna DESDE órbita baja terrestre — además de los ~9,4 km/s que ya costó llegar a órbita. ¿Tu presupuesto en órbita cubre la transferencia?",
   "lab_goal_rtm_visviva": "Las órbitas no son todas círculos. Vis-viva da tu velocidad en cualquier punto de cualquier órbita con solo dos números — dónde estás y cuán grande es la órbita. Es la herramienta con la que se construye cada transferencia.",
-  "lab_mark_burn_1": "Impulso 1",
-  "lab_mark_burn_2": "Impulso 2",
   "lab_f_orbits_err_unknown_body": "Ese mundo no es uno que puedas orbitar aquí — elige la Tierra o la Luna.",
   "lab_axis_latitude": "Latitud",
   "lab_f_launch_site_title": "Centro de Lanzamiento",
@@ -2223,5 +2221,12 @@
   "lab_f_oberth_circular": "Ya orbita circularmente a",
   "lab_f_escape_err_input": "Introduce valores finitos y no negativos.",
   "lab_goal_lss_oberth": "Aquí está el truco que lo hace posible: no compras esos 12,3 km/s en el espacio profundo. Quemas desde una órbita de aparcamiento baja, profunda en el pozo gravitatorio terrestre donde la velocidad es barata — el efecto Oberth. Desde allí el Δv para alcanzar v∞ = 12,3 es solo unos 8,7 km/s, no 12,3. Esto está al alcance de una etapa superior química potente — exactamente cómo New Horizons se lanzó directo hacia una trayectoria de escape solar.",
-  "lab_assume_impulsive_burn": "Quemadura impulsiva (todo el Δv aplicado instantáneamente en periapsis)"
+  "lab_assume_impulsive_burn": "Quemadura impulsiva (todo el Δv aplicado instantáneamente en periapsis)",
+  "lab_body_earth": "Tierra",
+  "lab_body_moon": "Luna",
+  "lab_body_mars": "Marte",
+  "lab_body_venus": "Venus",
+  "lab_body_mercury": "Mercurio",
+  "lab_mark_burn_depart": "Quemada de salida",
+  "lab_mark_burn_arrive": "Quemada de llegada"
 }

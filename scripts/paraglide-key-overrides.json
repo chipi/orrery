@@ -1277,7 +1277,14 @@
     "lab_f_oberth_circular": "पहले से ही परिक्रमा कर रहा है",
     "lab_f_escape_err_input": "परिमित, गैर-ऋणात्मक मान दर्ज करें।",
     "lab_goal_lss_oberth": "यहाँ वह पेच है जो इसे संभव बनाता है: आप वह 12.3 km/s गहरे अंतरिक्ष में नहीं खरीदते। आप एक निचली पार्किंग कक्षा से बर्न करते हैं, पृथ्वी के गुरुत्व कूप में गहरे जहाँ गति सस्ती है — ओबर्थ प्रभाव। वहाँ से v∞ = 12.3 तक पहुँचने के लिए Δv केवल लगभग 8.7 km/s है, 12.3 नहीं। यह एक मज़बूत रासायनिक ऊपरी चरण की क्षमता के भीतर है — और ठीक इसी तरह New Horizons सीधे सूर्य-पलायन पथ पर प्रक्षेपित हुआ था।",
-    "lab_assume_impulsive_burn": "आवेगी बर्न (सारा Δv उपभू पर तत्काल लगाया गया)"
+    "lab_assume_impulsive_burn": "आवेगी बर्न (सारा Δv उपभू पर तत्काल लगाया गया)",
+    "lab_body_earth": "पृथ्वी",
+    "lab_body_moon": "चंद्रमा",
+    "lab_body_mars": "मंगल",
+    "lab_body_venus": "शुक्र",
+    "lab_body_mercury": "बुध",
+    "lab_mark_burn_depart": "प्रस्थान बर्न",
+    "lab_mark_burn_arrive": "आगमन बर्न"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -2418,7 +2425,14 @@
     "lab_f_oberth_circular": "すでに周回中",
     "lab_f_escape_err_input": "有限かつ非負の値を入力してください。",
     "lab_goal_lss_oberth": "これを可能にする仕掛けはこうだ。その12.3 km/sを深宇宙で得るわけではない。地球の重力井戸の奥深く、速度が「安い」低パーキング軌道からバーンする——オーベルト効果だ。そこからv∞ = 12.3に到達するのに必要なΔvはわずか約8.7 km/sで、12.3ではない。これは強力な化学上段の射程内にある——まさにこの方法でNew Horizonsは太陽脱出軌道へ直接打ち上げられた。",
-    "lab_assume_impulsive_burn": "インパルスバーン（Δvはすべて近点で瞬時に適用）"
+    "lab_assume_impulsive_burn": "インパルスバーン（Δvはすべて近点で瞬時に適用）",
+    "lab_body_earth": "地球",
+    "lab_body_moon": "月",
+    "lab_body_mars": "火星",
+    "lab_body_venus": "金星",
+    "lab_body_mercury": "水星",
+    "lab_mark_burn_depart": "出発噴射",
+    "lab_mark_burn_arrive": "到着噴射"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -3739,7 +3753,14 @@
     "lab_f_oberth_circular": "يدور بالفعل عند",
     "lab_f_escape_err_input": "أدخل قيمًا محدودة وغير سالبة.",
     "lab_goal_lss_oberth": "إليك الحيلة التي تجعل ذلك ممكنًا: أنت لا تحصل على تلك الـ 12.3 كم/ث في أعماق الفضاء. بل تحرق من مدار انتظار منخفض، عميقًا في بئر جاذبية الأرض حيث السرعة رخيصة — تأثير أوبرث. من هناك يكون Δv اللازم للوصول إلى v∞ = 12.3 نحو 8.7 كم/ث فقط، وليس 12.3. وهذا ضمن قدرة مرحلة علوية كيميائية قوية — وهذه بالضبط الطريقة التي انطلقت بها New Horizons مباشرة على مسار هروب من الشمس.",
-    "lab_assume_impulsive_burn": "حرق اندفاعي (يُطبَّق كامل Δv فوريًا عند الحضيض)"
+    "lab_assume_impulsive_burn": "حرق اندفاعي (يُطبَّق كامل Δv فوريًا عند الحضيض)",
+    "lab_body_earth": "الأرض",
+    "lab_body_moon": "القمر",
+    "lab_body_mars": "المريخ",
+    "lab_body_venus": "الزهرة",
+    "lab_body_mercury": "عطارد",
+    "lab_mark_burn_depart": "حرق المغادرة",
+    "lab_mark_burn_arrive": "حرق الوصول"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -4882,7 +4903,14 @@
     "lab_f_oberth_circular": "이미 원 궤도 유지 중:",
     "lab_f_escape_err_input": "유한하고 음이 아닌 값을 입력하세요.",
     "lab_goal_lss_oberth": "이를 가능하게 하는 반전은 이렇습니다: 그 12.3 km/s를 심우주에서 사서 쓰는 게 아닙니다. 지구 중력 우물 깊숙한 곳, 속도가 값싼 저궤도 주차 궤도에서 연소합니다 — 오베르트 효과입니다. 그곳에서 v∞ = 12.3에 도달하는 데 필요한 Δv는 12.3이 아니라 약 8.7 km/s에 불과합니다. 이는 강력한 화학 상단의 성능 범위 안에 있으며 — New Horizons가 곧장 태양 탈출 궤도로 발사된 방식이 바로 이것입니다.",
-    "lab_assume_impulsive_burn": "충격 연소 (모든 Δv를 근점에서 순간적으로 적용)"
+    "lab_assume_impulsive_burn": "충격 연소 (모든 Δv를 근점에서 순간적으로 적용)",
+    "lab_body_earth": "지구",
+    "lab_body_moon": "달",
+    "lab_body_mars": "화성",
+    "lab_body_venus": "금성",
+    "lab_body_mercury": "수성",
+    "lab_mark_burn_depart": "출발 분사",
+    "lab_mark_burn_arrive": "도착 분사"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -6058,7 +6086,14 @@
     "lab_f_oberth_circular": "Bereits im Orbit mit",
     "lab_f_escape_err_input": "Endliche, nicht-negative Werte eingeben.",
     "lab_goal_lss_oberth": "Hier ist der Kniff, der es möglich macht: Du kaufst diese 12,3 km/s nicht im Weltall. Du zündest aus einer niedrigen Parkumlaufbahn, tief im Gravitationsfeld der Erde, wo Geschwindigkeit billig ist — der Oberth-Effekt. Von dort beträgt das Δv, um v∞ = 12,3 zu erreichen, nur etwa 8,7 km/s, nicht 12,3. Das ist mit einer starken chemischen Oberstufe möglich — genau so ist New Horizons auf eine sonnenflüchtige Bahn gestartet.",
-    "lab_assume_impulsive_burn": "Impulsives Manöver (gesamtes Δv wird instantan beim Periapsis angewendet)"
+    "lab_assume_impulsive_burn": "Impulsives Manöver (gesamtes Δv wird instantan beim Periapsis angewendet)",
+    "lab_body_earth": "Erde",
+    "lab_body_moon": "Mond",
+    "lab_body_mars": "Mars",
+    "lab_body_venus": "Venus",
+    "lab_body_mercury": "Merkur",
+    "lab_mark_burn_depart": "Abflugzündung",
+    "lab_mark_burn_arrive": "Ankunftszündung"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -7197,7 +7232,14 @@
     "lab_conn_lom_zhurong": "Zhurong — le premier atterrissage chinois sur Mars",
     "lab_conn_lom_mars3": "Mars 3 — le premier atterrissage en douceur sur Mars, perdu après 20 s (URSS)",
     "lab_conn_lom_schiaparelli": "Schiaparelli — le rétrofusée s'est coupée trop tôt et il s'est écrasé (ESA)",
-    "lab_conn_lom_next": "Suivant : quitter le système solaire complètement."
+    "lab_conn_lom_next": "Suivant : quitter le système solaire complètement.",
+    "lab_body_earth": "Terre",
+    "lab_body_moon": "Lune",
+    "lab_body_mars": "Mars",
+    "lab_body_venus": "Vénus",
+    "lab_body_mercury": "Mercure",
+    "lab_mark_burn_depart": "Allumage de départ",
+    "lab_mark_burn_arrive": "Allumage d'arrivée"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -8303,7 +8345,14 @@
     "lab_conn_lom_zhurong": "Zhurong — il primo allunaggio cinese su Marte",
     "lab_conn_lom_mars3": "Mars 3 — il primo allunaggio morbido su Marte, perso dopo 20 s (URSS)",
     "lab_conn_lom_schiaparelli": "Schiaparelli — i retrorazzi si sono disattivati prematuramente e si è schiantato (ESA)",
-    "lab_conn_lom_next": "Prossimo: lasciare completamente il sistema solare."
+    "lab_conn_lom_next": "Prossimo: lasciare completamente il sistema solare.",
+    "lab_body_earth": "Terra",
+    "lab_body_moon": "Luna",
+    "lab_body_mars": "Marte",
+    "lab_body_venus": "Venere",
+    "lab_body_mercury": "Mercurio",
+    "lab_mark_burn_depart": "Accensione di partenza",
+    "lab_mark_burn_arrive": "Accensione di arrivo"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -9408,7 +9457,14 @@
     "lab_conn_lom_zhurong": "Zhurong — el primer alunizaje chino en Marte",
     "lab_conn_lom_mars3": "Mars 3 — el primer alunizaje suave en Marte, perdido tras 20 s (URSS)",
     "lab_conn_lom_schiaparelli": "Schiaparelli — el retrocohete se apagó prematuramente y se estrelló (ESA)",
-    "lab_conn_lom_next": "Siguiente: abandonar el sistema solar por completo."
+    "lab_conn_lom_next": "Siguiente: abandonar el sistema solar por completo.",
+    "lab_body_earth": "Tierra",
+    "lab_body_moon": "Luna",
+    "lab_body_mars": "Marte",
+    "lab_body_venus": "Venus",
+    "lab_body_mercury": "Mercurio",
+    "lab_mark_burn_depart": "Quemada de salida",
+    "lab_mark_burn_arrive": "Quemada de llegada"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -10520,7 +10576,14 @@
     "lab_conn_lom_zhurong": "Zhurong — Chinas eerste Marslandding",
     "lab_conn_lom_mars3": "Mars 3 — de eerste zachte landing op Mars, verloren na 20 s (USSR)",
     "lab_conn_lom_schiaparelli": "Schiaparelli — de retroraket schakelde voortijdig uit en het stortte neer (ESA)",
-    "lab_conn_lom_next": "Volgende: het zonnestelsel volledig verlaten."
+    "lab_conn_lom_next": "Volgende: het zonnestelsel volledig verlaten.",
+    "lab_body_earth": "Aarde",
+    "lab_body_moon": "Maan",
+    "lab_body_mars": "Mars",
+    "lab_body_venus": "Venus",
+    "lab_body_mercury": "Mercurius",
+    "lab_mark_burn_depart": "Vertrekmanoeuvre",
+    "lab_mark_burn_arrive": "Aankomstmanoeuvre"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -11664,7 +11727,14 @@
     "lab_f_oberth_circular": "Уже на круговой орбите на",
     "lab_f_escape_err_input": "Введите конечные неотрицательные значения.",
     "lab_goal_lss_oberth": "Вот хитрость, которая делает это возможным: вы не набираете эти 12,3 км/с в глубоком космосе. Вы выполняете манёвр с низкой опорной орбиты, глубоко в гравитационной яме Земли, где скорость обходится дёшево — эффект Оберта. Оттуда Δv для достижения v∞ = 12,3 составляет всего около 8,7 км/с, а не 12,3. Это по силам мощной химической верхней ступени — именно так New Horizons вышел прямо на траекторию покидания Солнца.",
-    "lab_assume_impulsive_burn": "Импульсный манёвр (вся Δv прикладывается мгновенно в перицентре)"
+    "lab_assume_impulsive_burn": "Импульсный манёвр (вся Δv прикладывается мгновенно в перицентре)",
+    "lab_body_earth": "Земля",
+    "lab_body_moon": "Луна",
+    "lab_body_mars": "Марс",
+    "lab_body_venus": "Венера",
+    "lab_body_mercury": "Меркурий",
+    "lab_mark_burn_depart": "Импульс отбытия",
+    "lab_mark_burn_arrive": "Импульс прибытия"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -12852,7 +12922,14 @@
     "lab_f_oberth_circular": "已在此高度环绕",
     "lab_f_escape_err_input": "请输入有限的非负数值。",
     "lab_goal_lss_oberth": "让这一切成为可能的关键在于：你并非在深空中获取那 12.3 km/s。你从深处于地球引力井中的低停泊轨道点火，那里速度代价低廉——这就是奥伯特效应。从这里出发，达到 v∞ = 12.3 所需的 Δv 仅约 8.7 km/s，而非 12.3。这在强力化学末级的能力范围之内——新视野号（New Horizons）正是这样直接踏上了逃离太阳的轨迹。",
-    "lab_assume_impulsive_burn": "脉冲点火（全部 Δv 于近拱点瞬时施加）"
+    "lab_assume_impulsive_burn": "脉冲点火（全部 Δv 于近拱点瞬时施加）",
+    "lab_body_earth": "地球",
+    "lab_body_moon": "月球",
+    "lab_body_mars": "火星",
+    "lab_body_venus": "金星",
+    "lab_body_mercury": "水星",
+    "lab_mark_burn_depart": "出发点火",
+    "lab_mark_burn_arrive": "到达点火"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -13911,7 +13988,14 @@
     "lab_f_oberth_circular": "Већ кружи на",
     "lab_f_escape_err_input": "Унесите коначне, ненегативне вредности.",
     "lab_goal_lss_oberth": "Ево обрта који то омогућава: тих 12,3 km/s не купујете у дубоком свемиру. Убрзавате из ниске паркинг орбите, дубоко у Земљиној гравитационој јами где је брзина јефтина — Оберотов ефекат. Одатле је Δv за достизање v∞ = 12,3 само око 8,7 km/s, а не 12,3. То је у домету снажног хемијског горњег степена — управо тако је New Horizons полетео право на путању бекства од Сунца.",
-    "lab_assume_impulsive_burn": "Импулсно паљење (сав Δv примењен тренутно у периапсиди)"
+    "lab_assume_impulsive_burn": "Импулсно паљење (сав Δv примењен тренутно у периапсиди)",
+    "lab_body_earth": "Земља",
+    "lab_body_moon": "Месец",
+    "lab_body_mars": "Марс",
+    "lab_body_venus": "Венера",
+    "lab_body_mercury": "Меркур",
+    "lab_mark_burn_depart": "Одлазни маневар",
+    "lab_mark_burn_arrive": "Долазни маневар"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -15023,6 +15107,13 @@
     "lab_conn_lom_zhurong": "Zhurong — primeiro pouso chinês em Marte",
     "lab_conn_lom_mars3": "Mars 3 — primeiro pouso suave em Marte, perdido após 20 s (URSS)",
     "lab_conn_lom_schiaparelli": "Schiaparelli — o retrorfoguete desligou cedo e se chocou (ESA)",
-    "lab_conn_lom_next": "Próximo: sair do sistema solar completamente."
+    "lab_conn_lom_next": "Próximo: sair do sistema solar completamente.",
+    "lab_body_earth": "Terra",
+    "lab_body_moon": "Lua",
+    "lab_body_mars": "Marte",
+    "lab_body_venus": "Vênus",
+    "lab_body_mercury": "Mercúrio",
+    "lab_mark_burn_depart": "Queimada de partida",
+    "lab_mark_burn_arrive": "Queimada de chegada"
   }
 }

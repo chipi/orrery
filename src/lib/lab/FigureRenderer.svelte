@@ -1,7 +1,8 @@
 <!--
-  FigureRenderer — SVG renderer for FigureSpec (S2a #509).
-  Handles: curve · force-diagram · dv-waterfall · unknown-kind fallback.
-  The honesty line (fidelity · module + assumptions) is always visible.
+  FigureRenderer — renderer for FigureSpec (S2a #509).
+  Renders `curve` + the unknown-kind fallback here in SVG; delegates the four canvas
+  "heroes" (transfer-ellipse · moon-phase · dv-waterfall · force-diagram, v0.9 phase 2).
+  The honesty line (fidelity · module + assumptions) is always visible in every path.
 
   Props:
     figure      — FigureSpec from a FormulaResult
@@ -13,13 +14,16 @@
 -->
 <script lang="ts">
   import type { FigureSpec, Vec2 } from '$lib/physics/spec';
+  import TransferEllipseCanvas from './TransferEllipseCanvas.svelte';
+  import MoonPhaseCanvas from './MoonPhaseCanvas.svelte';
+  import DvWaterfallCanvas from './DvWaterfallCanvas.svelte';
+  import ForceDiagramCanvas from './ForceDiagramCanvas.svelte';
   import {
     fidelityStyle,
     fidelityLabel,
     FIGURE_BG,
     TEAL,
     GOLD,
-    MARS,
     GRID,
     GRID_STEP,
     AXIS_TICK,
@@ -27,6 +31,8 @@
     niceTicks,
     fmtTick,
   } from './figure-style';
+  // MARS/force-diagram/waterfall/moon-phase rendering moved to the canvas heroes
+  // (TransferEllipse/MoonPhase/DvWaterfall/ForceDiagram); this file keeps curve + fallback.
 
   type Props = {
     figure: FigureSpec;
@@ -52,17 +58,6 @@
   );
 
   const ariaLabel = $derived(ariaLabelKey ? t(ariaLabelKey) : `Physics figure · ${provenanceText}`);
-
-  // ─── Moon-phase disc (G8) ───────────────────────────────────────────────────
-  // Two arcs: the sunlit limb (a semicircle on the lit side) + the terminator (a
-  // half-ellipse whose x-radius encodes the lit fraction). k=0 new, 0.5 quarter, 1 full;
-  // `litRight` = waxing (Northern-hemisphere convention, sunlit on the right).
-  function moonPath(cx: number, cy: number, R: number, k: number, litRight: boolean): string {
-    const rx = Math.abs(R * (1 - 2 * k));
-    const limbSweep = litRight ? 1 : 0;
-    const termSweep = litRight ? (k < 0.5 ? 0 : 1) : k < 0.5 ? 1 : 0;
-    return `M ${cx} ${cy - R} A ${R} ${R} 0 0 ${limbSweep} ${cx} ${cy + R} A ${rx} ${R} 0 0 ${termSweep} ${cx} ${cy - R} Z`;
-  }
 
   // ─── Curve helpers ──────────────────────────────────────────────────────────
 
@@ -142,433 +137,248 @@
       )
       .join(' ');
   }
-
-  // ─── Force-diagram helpers ──────────────────────────────────────────────────
-  const BODY_CX = W / 2;
-  const BODY_CY = H / 2 - 10; // slightly above center to leave room for honesty line
-  const BODY_R = 18;
-  const ARROW_SCALE = 80; // px per unit magN (normalized to max)
-
-  function forceDiagramVectors(fig: Extract<FigureSpec, { kind: 'force-diagram' }>) {
-    const maxMag = Math.max(...fig.vectors.map((v) => v.magN), 1);
-    return fig.vectors.map((v) => {
-      const len = (v.magN / maxMag) * ARROW_SCALE;
-      // dir is a unit vector in data space; y-axis is inverted in SVG
-      const dx = v.dir.x * len;
-      const dy = -v.dir.y * len; // flip y
-      const x2 = BODY_CX + dx;
-      const y2 = BODY_CY + dy;
-      // Arrow head
-      const angle = Math.atan2(dy, dx);
-      const headLen = 8;
-      const headAngle = 0.4; // radians
-      const hx1 = x2 - headLen * Math.cos(angle - headAngle);
-      const hy1 = y2 - headLen * Math.sin(angle - headAngle);
-      const hx2 = x2 - headLen * Math.cos(angle + headAngle);
-      const hy2 = y2 - headLen * Math.sin(angle + headAngle);
-      return { v, x2, y2, hx1, hy1, hx2, hy2, dx, dy };
-    });
-  }
-
-  // ─── Waterfall helpers ──────────────────────────────────────────────────────
-  const WF_LEFT = 100; // px — label column width
-  const WF_RIGHT = W - 24;
-  const WF_BAR_H = 22;
-  const WF_GAP = 8;
-  const WF_TOP = 20;
-
-  function waterfallBars(fig: Extract<FigureSpec, { kind: 'dv-waterfall' }>) {
-    const maxDv = Math.max(...fig.segments.map((s) => s.dv), 1);
-    const availW = WF_RIGHT - WF_LEFT - 8;
-    return fig.segments.map((seg, i) => {
-      const barW = Math.max(2, (seg.dv / maxDv) * availW);
-      const y = WF_TOP + i * (WF_BAR_H + WF_GAP);
-      return { seg, barW, y };
-    });
-  }
 </script>
 
-<svg
-  role="img"
-  aria-label={ariaLabel}
-  viewBox="0 0 {W} {H}"
-  width="100%"
-  class="figure-root"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <!-- Lab-bench background: graph paper (minor + major grid) + a soft radial
+{#if figure.kind === 'transfer-ellipse'}
+  <!-- Canvas "heroes" (v0.9 phase 2) — richer than SVG can be; curve + stubs stay SVG. -->
+  <TransferEllipseCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'moon-phase'}
+  <MoonPhaseCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'dv-waterfall'}
+  <DvWaterfallCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'force-diagram'}
+  <ForceDiagramCanvas {figure} {t} {ariaLabelKey} />
+{:else}
+  <svg
+    role="img"
+    aria-label={ariaLabel}
+    viewBox="0 0 {W} {H}"
+    width="100%"
+    class="figure-root"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <!-- Lab-bench background: graph paper (minor + major grid) + a soft radial
        bench-glow (center feels lit) + a vignette (edges fall off). Operator-
        approved 2026-08-29 — "makes you think lab, not void-black". -->
-  <defs>
-    <radialGradient id="fig-bg" cx="40%" cy="34%" r="95%">
-      <stop offset="0%" stop-color="#0b0f1c" />
-      <stop offset="52%" stop-color="#070810" />
-      <stop offset="100%" stop-color="#030307" />
-    </radialGradient>
-    <radialGradient id="fig-benchglow" cx="42%" cy="40%" r="55%">
-      <stop offset="0%" stop-color="rgba(78,205,196,0.06)" />
-      <stop offset="100%" stop-color="rgba(78,205,196,0)" />
-    </radialGradient>
-    <radialGradient id="fig-vignette" cx="50%" cy="46%" r="72%">
-      <stop offset="60%" stop-color="rgba(0,0,0,0)" />
-      <stop offset="100%" stop-color="rgba(0,0,0,0.42)" />
-    </radialGradient>
-    <pattern id="fig-grid-minor" width="8" height="8" patternUnits="userSpaceOnUse">
-      <path d="M8 0H0V8" fill="none" stroke="rgba(78,205,196,0.032)" stroke-width="1" />
-    </pattern>
-    <pattern
-      id="fig-grid"
-      x="0"
-      y="0"
-      width={GRID_STEP}
-      height={GRID_STEP}
-      patternUnits="userSpaceOnUse"
-    >
-      <line x1="0" y1="0" x2={GRID_STEP} y2="0" stroke={GRID} stroke-width="1" />
-      <line x1="0" y1="0" x2="0" y2={GRID_STEP} stroke={GRID} stroke-width="1" />
-    </pattern>
-    <!-- Curve chrome (v0.9 lift): a soft glow for data strokes/marks + a fade for the
+    <defs>
+      <radialGradient id="fig-bg" cx="40%" cy="34%" r="95%">
+        <stop offset="0%" stop-color="#0b0f1c" />
+        <stop offset="52%" stop-color="#070810" />
+        <stop offset="100%" stop-color="#030307" />
+      </radialGradient>
+      <radialGradient id="fig-benchglow" cx="42%" cy="40%" r="55%">
+        <stop offset="0%" stop-color="rgba(78,205,196,0.06)" />
+        <stop offset="100%" stop-color="rgba(78,205,196,0)" />
+      </radialGradient>
+      <radialGradient id="fig-vignette" cx="50%" cy="46%" r="72%">
+        <stop offset="60%" stop-color="rgba(0,0,0,0)" />
+        <stop offset="100%" stop-color="rgba(0,0,0,0.42)" />
+      </radialGradient>
+      <pattern id="fig-grid-minor" width="8" height="8" patternUnits="userSpaceOnUse">
+        <path d="M8 0H0V8" fill="none" stroke="rgba(78,205,196,0.032)" stroke-width="1" />
+      </pattern>
+      <pattern
+        id="fig-grid"
+        x="0"
+        y="0"
+        width={GRID_STEP}
+        height={GRID_STEP}
+        patternUnits="userSpaceOnUse"
+      >
+        <line x1="0" y1="0" x2={GRID_STEP} y2="0" stroke={GRID} stroke-width="1" />
+        <line x1="0" y1="0" x2="0" y2={GRID_STEP} stroke={GRID} stroke-width="1" />
+      </pattern>
+      <!-- Curve chrome (v0.9 lift): a soft glow for data strokes/marks + a fade for the
          area under the curve, so a plotted line reads as lit signal, not a flat stroke. -->
-    <filter id="fig-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2.2" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <linearGradient id="fig-area" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="rgba(78,205,196,0.22)" />
-      <stop offset="100%" stop-color="rgba(78,205,196,0)" />
-    </linearGradient>
-  </defs>
-  <rect width={W} height={H} fill="url(#fig-bg)" />
-  <rect width={W} height={H} fill="url(#fig-benchglow)" />
-  <rect width={W} height={H} fill="url(#fig-grid-minor)" />
-  <rect width={W} height={H} fill="url(#fig-grid)" />
+      <filter id="fig-glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="2.2" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+      <linearGradient id="fig-area" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="rgba(78,205,196,0.22)" />
+        <stop offset="100%" stop-color="rgba(78,205,196,0)" />
+      </linearGradient>
+    </defs>
+    <rect width={W} height={H} fill="url(#fig-bg)" />
+    <rect width={W} height={H} fill="url(#fig-benchglow)" />
+    <rect width={W} height={H} fill="url(#fig-grid-minor)" />
+    <rect width={W} height={H} fill="url(#fig-grid)" />
 
-  {#if figure.kind === 'curve'}
-    {@const ext = curveExtent(figure)}
-    {@const xSc = figure.x.scale}
-    {@const ySc = figure.y.scale}
-    {@const fs = fidelityStyle(figure.provenance.fidelity)}
-    {@const xTicks = niceTicks(ext.xMin, ext.xMax, xSc)}
-    {@const yTicks = niceTicks(ext.yMin, ext.yMax, ySc)}
+    {#if figure.kind === 'curve'}
+      {@const ext = curveExtent(figure)}
+      {@const xSc = figure.x.scale}
+      {@const ySc = figure.y.scale}
+      {@const fs = fidelityStyle(figure.provenance.fidelity)}
+      {@const xTicks = niceTicks(ext.xMin, ext.xMax, xSc)}
+      {@const yTicks = niceTicks(ext.yMin, ext.yMax, ySc)}
 
-    <!-- Data-aligned gridlines (one per tick value) — sit under the axes + series -->
-    {#each xTicks as tx (tx)}
-      {@const px = mapX(tx, ext.xMin, ext.xMax, xSc)}
-      {#if px >= PAD.left - 0.5 && px <= PAD.left + plotW + 0.5}
-        <line
-          x1={px}
-          y1={PAD.top}
-          x2={px}
-          y2={PAD.top + plotH}
-          stroke={AXIS_GRIDLINE}
-          stroke-width="1"
-        />
-        <line x1={px} y1={PAD.top + plotH} x2={px} y2={PAD.top + plotH + 4} stroke={AXIS_TICK} />
-        <text x={px} y={PAD.top + plotH + 15} class="tick-label" text-anchor="middle"
-          >{fmtTick(tx)}</text
-        >
-      {/if}
-    {/each}
-    {#each yTicks as ty (ty)}
-      {@const py = mapY(ty, ext.yMin, ext.yMax, ySc)}
-      {#if py >= PAD.top - 0.5 && py <= PAD.top + plotH + 0.5}
-        <line
-          x1={PAD.left}
-          y1={py}
-          x2={PAD.left + plotW}
-          y2={py}
-          stroke={AXIS_GRIDLINE}
-          stroke-width="1"
-        />
-        <line x1={PAD.left - 4} y1={py} x2={PAD.left} y2={py} stroke={AXIS_TICK} />
-        <text x={PAD.left - 7} y={py + 3} class="tick-label" text-anchor="end">{fmtTick(ty)}</text>
-      {/if}
-    {/each}
-
-    <!-- Axes -->
-    <!-- x-axis -->
-    <line
-      x1={PAD.left}
-      y1={PAD.top + plotH}
-      x2={PAD.left + plotW}
-      y2={PAD.top + plotH}
-      stroke={TEAL}
-      stroke-width="1"
-      opacity="0.35"
-    />
-    <!-- y-axis -->
-    <line
-      x1={PAD.left}
-      y1={PAD.top}
-      x2={PAD.left}
-      y2={PAD.top + plotH}
-      stroke={TEAL}
-      stroke-width="1"
-      opacity="0.35"
-    />
-
-    <!-- Axis labels -->
-    <text x={PAD.left + plotW / 2} y={H - 6} class="axis-label" text-anchor="middle"
-      >{t(figure.x.labelKey)}{figure.x.units ? ` (${figure.x.units})` : ''}</text
-    >
-    <text
-      x={10}
-      y={PAD.top + plotH / 2}
-      class="axis-label"
-      text-anchor="middle"
-      transform="rotate(-90, 10, {PAD.top + plotH / 2})"
-      >{t(figure.y.labelKey)}{figure.y.units ? ` (${figure.y.units})` : ''}</text
-    >
-
-    <!-- Series -->
-    {#each figure.series as series, si (si)}
-      {@const pts = pointsToPolyline(
-        series.points,
-        ext.xMin,
-        ext.xMax,
-        ext.yMin,
-        ext.yMax,
-        xSc,
-        ySc,
-      )}
-      {#if pts}
-        <!-- Area under the first (primary) computed series — a lit fade to the baseline,
-             so the curve reads as signal. Skipped for dashed/dotted register lines. -->
-        {#if si === 0 && fs.dasharray === 'none' && series.points.length > 1}
-          {@const fx = mapX(series.points[0].x, ext.xMin, ext.xMax, xSc).toFixed(2)}
-          {@const lx = mapX(
-            series.points[series.points.length - 1].x,
-            ext.xMin,
-            ext.xMax,
-            xSc,
-          ).toFixed(2)}
-          {@const base = (PAD.top + plotH).toFixed(2)}
-          <polygon points={`${pts} ${lx},${base} ${fx},${base}`} fill="url(#fig-area)" />
+      <!-- Data-aligned gridlines (one per tick value) — sit under the axes + series -->
+      {#each xTicks as tx (tx)}
+        {@const px = mapX(tx, ext.xMin, ext.xMax, xSc)}
+        {#if px >= PAD.left - 0.5 && px <= PAD.left + plotW + 0.5}
+          <line
+            x1={px}
+            y1={PAD.top}
+            x2={px}
+            y2={PAD.top + plotH}
+            stroke={AXIS_GRIDLINE}
+            stroke-width="1"
+          />
+          <line x1={px} y1={PAD.top + plotH} x2={px} y2={PAD.top + plotH + 4} stroke={AXIS_TICK} />
+          <text x={px} y={PAD.top + plotH + 15} class="tick-label" text-anchor="middle"
+            >{fmtTick(tx)}</text
+          >
         {/if}
-        <polyline
-          points={pts}
-          fill="none"
-          stroke={fs.stroke}
-          stroke-width="1.5"
-          stroke-dasharray={fs.dasharray === 'none' ? undefined : fs.dasharray}
-          opacity={fs.opacity}
-          class={fs.registerClass}
-          filter="url(#fig-glow)"
-        />
-        {#if series.labelKey}
-          <!-- Series label at last point -->
-          {@const last = series.points[series.points.length - 1]}
-          {#if last}
-            <text
-              x={mapX(last.x, ext.xMin, ext.xMax, xSc) + 4}
-              y={mapY(last.y, ext.yMin, ext.yMax, ySc) - 4}
-              class="series-label">{t(series.labelKey)}</text
-            >
+      {/each}
+      {#each yTicks as ty (ty)}
+        {@const py = mapY(ty, ext.yMin, ext.yMax, ySc)}
+        {#if py >= PAD.top - 0.5 && py <= PAD.top + plotH + 0.5}
+          <line
+            x1={PAD.left}
+            y1={py}
+            x2={PAD.left + plotW}
+            y2={py}
+            stroke={AXIS_GRIDLINE}
+            stroke-width="1"
+          />
+          <line x1={PAD.left - 4} y1={py} x2={PAD.left} y2={py} stroke={AXIS_TICK} />
+          <text x={PAD.left - 7} y={py + 3} class="tick-label" text-anchor="end">{fmtTick(ty)}</text
+          >
+        {/if}
+      {/each}
+
+      <!-- Axes -->
+      <!-- x-axis -->
+      <line
+        x1={PAD.left}
+        y1={PAD.top + plotH}
+        x2={PAD.left + plotW}
+        y2={PAD.top + plotH}
+        stroke={TEAL}
+        stroke-width="1"
+        opacity="0.35"
+      />
+      <!-- y-axis -->
+      <line
+        x1={PAD.left}
+        y1={PAD.top}
+        x2={PAD.left}
+        y2={PAD.top + plotH}
+        stroke={TEAL}
+        stroke-width="1"
+        opacity="0.35"
+      />
+
+      <!-- Axis labels -->
+      <text x={PAD.left + plotW / 2} y={H - 6} class="axis-label" text-anchor="middle"
+        >{t(figure.x.labelKey)}{figure.x.units ? ` (${figure.x.units})` : ''}</text
+      >
+      <text
+        x={10}
+        y={PAD.top + plotH / 2}
+        class="axis-label"
+        text-anchor="middle"
+        transform="rotate(-90, 10, {PAD.top + plotH / 2})"
+        >{t(figure.y.labelKey)}{figure.y.units ? ` (${figure.y.units})` : ''}</text
+      >
+
+      <!-- Series -->
+      {#each figure.series as series, si (si)}
+        {@const pts = pointsToPolyline(
+          series.points,
+          ext.xMin,
+          ext.xMax,
+          ext.yMin,
+          ext.yMax,
+          xSc,
+          ySc,
+        )}
+        {#if pts}
+          <!-- Area under the first (primary) computed series — a lit fade to the baseline,
+             so the curve reads as signal. Skipped for dashed/dotted register lines. -->
+          {#if si === 0 && fs.dasharray === 'none' && series.points.length > 1}
+            {@const fx = mapX(series.points[0].x, ext.xMin, ext.xMax, xSc).toFixed(2)}
+            {@const lx = mapX(
+              series.points[series.points.length - 1].x,
+              ext.xMin,
+              ext.xMax,
+              xSc,
+            ).toFixed(2)}
+            {@const base = (PAD.top + plotH).toFixed(2)}
+            <polygon points={`${pts} ${lx},${base} ${fx},${base}`} fill="url(#fig-area)" />
+          {/if}
+          <polyline
+            points={pts}
+            fill="none"
+            stroke={fs.stroke}
+            stroke-width="1.5"
+            stroke-dasharray={fs.dasharray === 'none' ? undefined : fs.dasharray}
+            opacity={fs.opacity}
+            class={fs.registerClass}
+            filter="url(#fig-glow)"
+          />
+          {#if series.labelKey}
+            <!-- Series label at last point -->
+            {@const last = series.points[series.points.length - 1]}
+            {#if last}
+              <text
+                x={mapX(last.x, ext.xMin, ext.xMax, xSc) + 4}
+                y={mapY(last.y, ext.yMin, ext.yMax, ySc) - 4}
+                class="series-label">{t(series.labelKey)}</text
+              >
+            {/if}
           {/if}
         {/if}
-      {/if}
-      <!-- Suppress unused var warning -->
-      {#if si < 0}{/if}
-    {/each}
-
-    <!-- Marks (annotations) -->
-    {#if figure.marks}
-      {#each figure.marks as mark, mi (mi)}
-        {@const cx = mapX(mark.at.x, ext.xMin, ext.xMax, xSc)}
-        {@const cy = mapY(mark.at.y, ext.yMin, ext.yMax, ySc)}
-        <circle {cx} {cy} r="4" fill={FIGURE_BG} stroke={GOLD} stroke-width="1.5" />
-        <circle {cx} {cy} r="2" fill={GOLD} />
-        <text x={cx + 6} y={cy - 4} class="mark-label">{t(mark.labelKey)}</text>
+        <!-- Suppress unused var warning -->
+        {#if si < 0}{/if}
       {/each}
-    {/if}
-  {:else if figure.kind === 'force-diagram'}
-    {@const vectors = forceDiagramVectors(figure)}
 
-    <!-- Body glyph -->
-    <circle
-      cx={BODY_CX}
-      cy={BODY_CY}
-      r={BODY_R}
-      fill={FIGURE_BG}
-      stroke={TEAL}
-      stroke-width="1.5"
-    />
-    <text x={BODY_CX} y={BODY_CY + 4} class="body-label" text-anchor="middle">
-      {t(figure.bodyLabelKey)}
-    </text>
-
-    <!-- Force vectors -->
-    {#each vectors as { v, x2, y2, hx1, hy1, hx2, hy2 } (v.labelKey)}
-      {@const fs = fidelityStyle(figure.provenance.fidelity)}
-      <!-- Shaft: from body edge toward tip -->
-      {@const angle = Math.atan2(y2 - BODY_CY, x2 - BODY_CX)}
-      {@const startX = BODY_CX + BODY_R * Math.cos(angle)}
-      {@const startY = BODY_CY + BODY_R * Math.sin(angle)}
-      <line
-        x1={startX}
-        y1={startY}
-        {x2}
-        {y2}
-        stroke={fs.stroke}
-        stroke-width="2"
-        stroke-dasharray={fs.dasharray === 'none' ? undefined : fs.dasharray}
-        opacity={fs.opacity}
-        class={fs.registerClass}
-      />
-      <!-- Arrowhead -->
-      <polyline
-        points="{hx1.toFixed(2)},{hy1.toFixed(2)} {x2.toFixed(2)},{y2.toFixed(2)} {hx2.toFixed(
-          2,
-        )},{hy2.toFixed(2)}"
-        fill="none"
-        stroke={fs.stroke}
-        stroke-width="2"
-        opacity={fs.opacity}
-      />
-      <!-- Label -->
-      <text
-        x={(x2 + (x2 - BODY_CX) * 0.18).toFixed(2)}
-        y={(y2 + (y2 - BODY_CY) * 0.18 - 4).toFixed(2)}
-        class="vector-label">{t(v.labelKey)}</text
-      >
-    {/each}
-  {:else if figure.kind === 'dv-waterfall'}
-    {@const bars = waterfallBars(figure)}
-    {@const fs = fidelityStyle(figure.provenance.fidelity)}
-
-    {#each bars as { seg, barW, y } (seg.labelKey)}
-      {@const fill = seg.kind === 'gain' ? TEAL : MARS}
-      <!-- Register distinction (honesty line): a computed bar is solid/full-opacity;
-           geometric/replayed carry the register's dashed/dotted stroke + opacity + class. -->
+      <!-- Marks (annotations) -->
+      {#if figure.marks}
+        {#each figure.marks as mark, mi (mi)}
+          {@const cx = mapX(mark.at.x, ext.xMin, ext.xMax, xSc)}
+          {@const cy = mapY(mark.at.y, ext.yMin, ext.yMax, ySc)}
+          <circle {cx} {cy} r="4" fill={FIGURE_BG} stroke={GOLD} stroke-width="1.5" />
+          <circle {cx} {cy} r="2" fill={GOLD} />
+          <text x={cx + 6} y={cy - 4} class="mark-label">{t(mark.labelKey)}</text>
+        {/each}
+      {/if}
+    {:else}
+      <!-- Unknown-kind fallback: honest, never throws -->
       <rect
-        x={WF_LEFT}
-        {y}
-        width={barW}
-        height={WF_BAR_H}
-        {fill}
-        opacity={0.85 * fs.opacity}
-        stroke={fs.dasharray === 'none' ? 'none' : fs.stroke}
-        stroke-dasharray={fs.dasharray === 'none' ? undefined : fs.dasharray}
-        class={fs.registerClass}
-      />
-      <!-- Segment label -->
-      <text x={WF_LEFT - 6} y={y + WF_BAR_H / 2 + 4} class="wf-label" text-anchor="end">
-        {t(seg.labelKey)}
-      </text>
-      <!-- dv value -->
-      <text x={WF_LEFT + barW + 6} y={y + WF_BAR_H / 2 + 4} class="wf-value">
-        {seg.dv.toFixed(1)}
-      </text>
-    {/each}
-  {:else if figure.kind === 'transfer-ellipse'}
-    <!-- Transfer ellipse: primary at centre, the start + target circular orbits (radii
-         read from the two burn marks), and the half-ellipse transfer arc between them.
-         Coords normalised to the larger orbit. `frame` colours the primary: a gold Sun
-         (heliocentric, M4) vs a teal planet (geocentric, M2). -->
-    {@const fs = fidelityStyle(figure.provenance.fidelity)}
-    {@const primaryFill = figure.frame === 'heliocentric' ? GOLD : TEAL}
-    {@const cx = W / 2}
-    {@const cy = H / 2 - 4}
-    {@const RS = 108}
-    {@const px = (x: number) => cx + x * RS}
-    {@const py = (y: number) => cy - y * RS}
-    {@const arcPts = figure.arc.map((p) => `${px(p.x)},${py(p.y)}`).join(' ')}
-
-    <!-- start + target circular orbits -->
-    {#each figure.marks as mk (mk.labelKey)}
-      <circle
-        {cx}
-        {cy}
-        r={Math.hypot(mk.at.x, mk.at.y) * RS}
-        fill="none"
-        stroke="rgba(78,205,196,0.28)"
+        x={PAD.left}
+        y={PAD.top}
+        width={plotW}
+        height={H - PAD.top - 28}
+        fill="rgba(255,255,255,0.03)"
+        stroke={GOLD}
         stroke-width="1"
+        stroke-dasharray="4 4"
       />
-    {/each}
-
-    <!-- the transfer half-ellipse -->
-    <polyline
-      points={arcPts}
-      fill="none"
-      stroke={fs.stroke}
-      stroke-width="2"
-      opacity={fs.opacity}
-      stroke-dasharray={fs.dasharray === 'none' ? undefined : fs.dasharray}
-      class={fs.registerClass}
-    />
-
-    <!-- primary body at the focus (gold Sun for heliocentric, teal planet otherwise) -->
-    <circle
-      cx={px(figure.bodies[0]?.at.x ?? 0)}
-      cy={py(figure.bodies[0]?.at.y ?? 0)}
-      r="6"
-      fill={primaryFill}
-    />
-    {#if figure.bodies[0]}
-      <text
-        x={px(figure.bodies[0].at.x)}
-        y={py(figure.bodies[0].at.y) + 18}
-        class="te-label"
-        text-anchor="middle"
-      >
-        {t(figure.bodies[0].labelKey)}
+      <text x={W / 2} y={H / 2 - 10} class="fallback-label" text-anchor="middle">
+        {t('lab.figure.unsupported')}
+      </text>
+      <text x={W / 2} y={H / 2 + 10} class="fallback-prov" text-anchor="middle">
+        {provenanceText}
       </text>
     {/if}
 
-    <!-- burn points + labels -->
-    {#each figure.marks as mk (mk.labelKey)}
-      <circle cx={px(mk.at.x)} cy={py(mk.at.y)} r="3.5" fill={GOLD} />
-      <text x={px(mk.at.x)} y={py(mk.at.y) - 8} class="te-label" text-anchor="middle">
-        {t(mk.labelKey)}
-      </text>
-    {/each}
-  {:else if figure.kind === 'moon-phase'}
-    {@const cx = W / 2}
-    {@const cy = (H - 44) / 2 + 6}
-    {@const R = Math.min(W, H - 88) / 2 - 8}
-    {@const k = Math.max(0, Math.min(1, figure.illuminatedFraction))}
-    <!-- dark disc + faint limb -->
-    <circle {cx} {cy} r={R} fill="#0b0f1c" stroke="rgba(255,255,255,0.22)" stroke-width="1" />
-    <!-- sunlit region -->
-    <path d={moonPath(cx, cy, R, k, figure.waxing)} fill="#e8e8e8" />
-    <text x={cx} y={cy + R + 24} text-anchor="middle" class="mp-label">
-      {t(figure.phaseLabelKey)} · {Math.round(k * 100)}%
-    </text>
-  {:else}
-    <!-- Unknown-kind fallback: honest, never throws -->
-    <rect
-      x={PAD.left}
-      y={PAD.top}
-      width={plotW}
-      height={H - PAD.top - 28}
-      fill="rgba(255,255,255,0.03)"
-      stroke={GOLD}
-      stroke-width="1"
-      stroke-dasharray="4 4"
-    />
-    <text x={W / 2} y={H / 2 - 10} class="fallback-label" text-anchor="middle">
-      {t('lab.figure.unsupported')}
-    </text>
-    <text x={W / 2} y={H / 2 + 10} class="fallback-prov" text-anchor="middle">
-      {provenanceText}
-    </text>
-  {/if}
-
-  <!-- Vignette overlay — darkens the edges to focus the figure; drawn above the
+    <!-- Vignette overlay — darkens the edges to focus the figure; drawn above the
        plot but below the honesty text so the trust line stays crisp. -->
-  <rect width={W} height={H} fill="url(#fig-vignette)" pointer-events="none" />
+    <rect width={W} height={H} fill="url(#fig-vignette)" pointer-events="none" />
 
-  <!-- Honesty line — always visible, always at the bottom -->
-  <text x={8} y={H - 16} class="honesty-prov">{provenanceText}</text>
-  {#if assumptionsText}
-    <text x={8} y={H - 6} class="honesty-assumptions" style="max-width:{W - 16}px">
-      {assumptionsText}
-    </text>
-  {/if}
-</svg>
+    <!-- Honesty line — always visible, always at the bottom -->
+    <text x={8} y={H - 16} class="honesty-prov">{provenanceText}</text>
+    {#if assumptionsText}
+      <text x={8} y={H - 6} class="honesty-assumptions" style="max-width:{W - 16}px">
+        {assumptionsText}
+      </text>
+    {/if}
+  </svg>
+{/if}
 
 <style>
   .figure-root {
@@ -602,37 +412,6 @@
     fill: #ffc850;
   }
 
-  .body-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    fill: rgba(78, 205, 196, 0.85);
-    letter-spacing: 0.5px;
-  }
-
-  .vector-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    fill: rgba(255, 255, 255, 0.75);
-  }
-
-  .wf-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    fill: rgba(255, 255, 255, 0.65);
-  }
-
-  .wf-value {
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    fill: rgba(255, 255, 255, 0.55);
-  }
-
-  .te-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    fill: rgba(232, 232, 232, 0.7);
-  }
-
   .fallback-label {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 14px;
@@ -644,13 +423,6 @@
     font-family: 'Space Mono', monospace;
     font-size: 8px;
     fill: rgba(255, 200, 80, 0.6);
-  }
-
-  .mp-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    fill: #e8e8e8;
-    letter-spacing: 1px;
   }
 
   /* Honesty line — always rendered, 8px Space Mono, matches ImageCredit convention */

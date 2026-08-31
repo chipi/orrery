@@ -515,6 +515,10 @@ export const chooseAnOrbit: Goal = {
       // just put everything at GEO?" answer fall out: the lag.
       wiresFrom: [{ fromStep: 1, output: 'altitudeKm', toInput: 'altitudeKm' }],
     },
+    { formulaId: 'sun-synchronous', narrativeKey: 'lab.goal.g10.sso' },
+    { formulaId: 'frozen-orbit', narrativeKey: 'lab.goal.g10.frozen' },
+    { formulaId: 'constellation-coverage', narrativeKey: 'lab.goal.g10.coverage' },
+    { formulaId: 'launch-azimuth', narrativeKey: 'lab.goal.g10.azimuth' },
   ],
   connection: {
     whyKey: 'lab.conn.g10.why',

@@ -531,6 +531,67 @@ describe('G10 choose-an-orbit · regimes, geostationary, latency', () => {
       { fromStep: 1, output: 'altitudeKm', toInput: 'altitudeKm' },
     ]);
   });
+
+  it('★ sun-synchronous: the J2 gem yields the retrograde ~98° near-polar orbit', () => {
+    expect(compute('sun-synchronous', { altitudeKm: 700 }).values.inclinationDeg.value).toBeCloseTo(
+      98.2,
+      0,
+    );
+    // inclination grows with altitude; above ~5,970 km there is no solution → fail honest.
+    expect(
+      compute('sun-synchronous', { altitudeKm: 400 }).values.inclinationDeg.value,
+    ).toBeLessThan(compute('sun-synchronous', { altitudeKm: 800 }).values.inclinationDeg.value);
+    expect(compute('sun-synchronous', { altitudeKm: 8000 }).status.ok).toBe(false);
+  });
+
+  it('frozen-orbit: perigee drift vanishes at the 63.4° critical inclination', () => {
+    expect(
+      Math.abs(
+        compute('frozen-orbit', { inclinationDeg: 63.4349 }).values.perigeeDriftDegPerDay.value,
+      ),
+    ).toBeLessThan(0.001);
+    expect(
+      compute('frozen-orbit', { inclinationDeg: 0 }).values.perigeeDriftDegPerDay.value,
+    ).toBeGreaterThan(0);
+    expect(
+      compute('frozen-orbit', { inclinationDeg: 90 }).values.perigeeDriftDegPerDay.value,
+    ).toBeLessThan(0);
+  });
+
+  it('coverage: THREE from geostationary blanket the globe (Clarke); a 550 km shell needs many', () => {
+    expect(
+      compute('constellation-coverage', { altitudeKm: 35786, minElevationDeg: 5 }).values
+        .equatorRingSatellites.value,
+    ).toBeLessThanOrEqual(3);
+    expect(
+      compute('constellation-coverage', { altitudeKm: 550, minElevationDeg: 25 }).values
+        .equatorRingSatellites.value,
+    ).toBeGreaterThan(15);
+  });
+
+  it('launch-azimuth: due-northeast for ISS from the Cape, southward for a retrograde SSO, unreachable below the latitude', () => {
+    expect(
+      compute('launch-azimuth', { launchLatitudeDeg: 28.5, targetInclinationDeg: 51.6 }).values
+        .azimuthDeg.value,
+    ).toBeCloseTo(44.9, 0);
+    // SSO (i>90°) → azimuth > 90° = southward.
+    expect(
+      compute('launch-azimuth', { launchLatitudeDeg: 34.7, targetInclinationDeg: 98 }).values
+        .azimuthDeg.value,
+    ).toBeGreaterThan(90);
+    // can't reach an inclination below the launch latitude.
+    expect(
+      compute('launch-azimuth', { launchLatitudeDeg: 45, targetInclinationDeg: 20 }).status.ok,
+    ).toBe(false);
+  });
+
+  it('geostationary now uses the canonical 23.9345 h sidereal day (MINOR-2 fix): ~35,790 km above mean radius', () => {
+    // Sidereal day → semimajor 42,164 km; altitude subtracts Earth's mean radius (6,371),
+    // so ~35,793 km (the textbook 35,786 uses the equatorial radius — a separate choice).
+    expect(
+      compute('geostationary-altitude', { body: 'earth' }).values.altitudeKm.value,
+    ).toBeCloseTo(35793, -1);
+  });
 });
 
 /**

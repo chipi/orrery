@@ -167,6 +167,37 @@ export interface Goal {
   tier: number;
   prereqs: string[]; // Goal ids
   path: GoalStep[];
+  connection?: Connection; // v0.9 reality-punch — the "so what" panel (additive, optional)
+}
+
+/**
+ * The practical-connection ("reality punch") layer — the panel a Goal renders AFTER
+ * its ladder, linking the lesson's CONCLUSION to the real missions, vehicles, programs
+ * and launch sites in Orrery that live this physics, plus the citizen-science hook that
+ * makes it click. Additive/optional like `GoalStep.presetInputs`: a Goal without one
+ * renders no panel. Every string is an i18n KEY; every `href` is an INTERNAL Orrery route
+ * (a leading-'/' path + optional query). The route PATH is covered by `check-internal-links`;
+ * the query TARGET ID (`?site=`/`?mission=`/`?id=`, or a `/programs/<id>` segment) is
+ * validated against the real data index by the connection-href test in `goals.test.ts`
+ * (check-internal-links strips the query, so it can't see the id). So the lesson hands the
+ * learner into a fleet/mission/surface page that provably exists — with the exact item
+ * selected. Global-program representation is first-class (the `agency` tag).
+ */
+export interface Connection {
+  /** the engineering "why" this lesson explains in the real world (Kourou's latitude, the sky-crane…) */
+  whyKey: string;
+  /** the famous thought-experiment / event this lesson unlocks (Newton's cannonball, Apollo 13's free-return…) */
+  hookKey?: string;
+  /** real missions/vehicles/sites that embody the conclusion — deep links OUT to Orrery routes */
+  links: ConnectionLink[];
+  /** optional forward pointer to a not-yet-built goal or the next rung (e.g. land-on-Mars → "leave the system") */
+  nextKey?: string;
+}
+
+export interface ConnectionLink {
+  labelKey: string;
+  href: string; // internal Orrery route WITHOUT base (e.g. '/fleet?id=perseverance'); the view prepends `base`
+  agency?: string; // optional agency tag for the badge — NASA / ESA / CNSA / ISRO / Roscosmos / JAXA / SpaceIL …
 }
 
 export interface GoalStep {

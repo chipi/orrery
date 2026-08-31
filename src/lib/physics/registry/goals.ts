@@ -8,7 +8,17 @@
  * reachable from ≥1 goal (or explicitly on NOT_A_GOAL_FORMULA), AND every wire
  * must name a real upstream output with matching units (no implicit conversion).
  *
- * S2c seeds the M1 rung ladder; M2–M6 + Family-B goals are added as their slices land.
+ * Each goal also carries a `connection` (v0.9 reality-punch): the "so what" panel
+ * that links the lesson's conclusion out to the real missions, vehicles, programs
+ * and launch sites in Orrery that live this physics — plus the citizen-science hook.
+ * Every `href` is an INTERNAL route; its target id is checked against the real data
+ * index by goals.test.ts (check-internal-links only sees the query-stripped path).
+ *
+ * Ladder order (the natural mission arc): launch → land on Earth → reach the Moon →
+ * land on the Moon → get to Mars → land on Mars. The three landings share the SAME
+ * physics (terminal velocity + a soft-landing check); the BODY's atmosphere changes
+ * the answer — thick air (Earth) nearly lands you on a chute alone, no air (Moon)
+ * forces an all-powered descent, thin air (Mars) leaves you needing a big supplement.
  */
 import type { Goal } from '../spec';
 
@@ -45,6 +55,74 @@ export const launchARocket: Goal = {
       ],
     },
   ],
+  connection: {
+    whyKey: 'lab.conn.lar.why',
+    hookKey: 'lab.conn.lar.hook',
+    links: [
+      { labelKey: 'lab.conn.lar.kourou', href: '/earth?site=kourou-ela-3', agency: 'ESA' },
+      { labelKey: 'lab.conn.lar.cape', href: '/earth?site=lc-39a', agency: 'NASA' },
+      {
+        labelKey: 'lab.conn.lar.baikonur',
+        href: '/earth?site=gagarins-start',
+        agency: 'Roscosmos',
+      },
+      { labelKey: 'lab.conn.lar.wenchang', href: '/earth?site=wenchang-lc-101', agency: 'CNSA' },
+      { labelKey: 'lab.conn.lar.sriharikota', href: '/earth?site=sriharikota-slp', agency: 'ISRO' },
+      { labelKey: 'lab.conn.lar.vostok1', href: '/fly?mission=vostok-1', agency: 'Roscosmos' },
+    ],
+  },
+};
+
+/**
+ * M1.5 "land on Earth" — the return leg the very first spaceflights flew: ride a
+ * rocket up, fall back under a parachute. It reuses the SAME terminal-velocity +
+ * soft-landing-check as "land on Mars", but on Earth. The lesson: Earth's thick air
+ * (ρ ≈ 1.2, ~60× Mars) does almost all the braking — a capsule that would smash in
+ * at ~46 m/s bare is slowed to ~10 m/s under a chute, which a water splashdown or a
+ * crushable couch survives. The identical craft hits Mars at ~50 m/s (M5 fails) and
+ * gets NO braking on the airless Moon (M3, all-powered). Same rules; the body's air
+ * changes the answer.
+ */
+export const landOnEarth: Goal = {
+  id: 'land-on-earth',
+  titleKey: 'lab.goal.land-earth.title',
+  family: 'spaceflight',
+  tier: 2,
+  prereqs: ['launch-a-rocket'],
+  path: [
+    {
+      formulaId: 'terminal-velocity',
+      narrativeKey: 'lab.goal.loe.capsule',
+      presetInputs: { body: 'earth', areaM2: 10, massKg: 2000 },
+    },
+    {
+      formulaId: 'terminal-velocity',
+      narrativeKey: 'lab.goal.loe.parachute',
+      presetInputs: { body: 'earth', areaM2: 200, massKg: 2000 },
+    },
+    {
+      formulaId: 'soft-landing-check',
+      narrativeKey: 'lab.goal.loe.verdict',
+      // A water splashdown / crushable couch survives ~12 m/s; the chute brings the
+      // capsule to ~10 m/s, so Earth PASSES — the success case the identical Mars craft
+      // FAILS (M5). safeMs preset to the splashdown-survivable speed.
+      presetInputs: { safeMs: 12 },
+      wiresFrom: [{ fromStep: 1, output: 'vTerminal', toInput: 'terminalMs' }],
+    },
+  ],
+  connection: {
+    whyKey: 'lab.conn.loe.why',
+    hookKey: 'lab.conn.loe.hook',
+    links: [
+      { labelKey: 'lab.conn.loe.vostok1', href: '/fly?mission=vostok-1', agency: 'Roscosmos' },
+      { labelKey: 'lab.conn.loe.freedom7', href: '/fly?mission=freedom-7', agency: 'NASA' },
+      { labelKey: 'lab.conn.loe.friendship7', href: '/fly?mission=friendship-7', agency: 'NASA' },
+      { labelKey: 'lab.conn.loe.dragon', href: '/fleet?id=crew-dragon', agency: 'SpaceX' },
+      { labelKey: 'lab.conn.loe.soyuz', href: '/fleet?id=soyuz-ms', agency: 'Roscosmos' },
+      { labelKey: 'lab.conn.loe.falcon9', href: '/fleet?id=falcon-9', agency: 'SpaceX' },
+    ],
+    nextKey: 'lab.conn.loe.next',
+  },
 };
 
 /**
@@ -62,6 +140,14 @@ export const motionFirstPrinciples: Goal = {
     { formulaId: 'free-fall', narrativeKey: 'lab.goal.motion.drop' },
     { formulaId: 'projectile', narrativeKey: 'lab.goal.motion.throw' },
   ],
+  connection: {
+    whyKey: 'lab.conn.motion.why',
+    hookKey: 'lab.conn.motion.hook',
+    links: [
+      { labelKey: 'lab.conn.motion.freedom7', href: '/fly?mission=freedom-7', agency: 'NASA' },
+      { labelKey: 'lab.conn.motion.vostok1', href: '/fly?mission=vostok-1', agency: 'Roscosmos' },
+    ],
+  },
 };
 
 /**
@@ -87,6 +173,18 @@ export const reachTheMoon: Goal = {
       wiresFrom: [{ fromStep: 2, output: 'total', toInput: 'requiredKms' }],
     },
   ],
+  connection: {
+    whyKey: 'lab.conn.rtm.why',
+    hookKey: 'lab.conn.rtm.hook',
+    links: [
+      { labelKey: 'lab.conn.rtm.apollo11', href: '/fly?mission=apollo11', agency: 'NASA' },
+      { labelKey: 'lab.conn.rtm.apollo13', href: '/fly?mission=apollo13', agency: 'NASA' },
+      { labelKey: 'lab.conn.rtm.luna16', href: '/fly?mission=luna16', agency: 'Roscosmos' },
+      { labelKey: 'lab.conn.rtm.change5', href: '/fly?mission=change5', agency: 'CNSA' },
+      { labelKey: 'lab.conn.rtm.chandrayaan1', href: '/fly?mission=chandrayaan1', agency: 'ISRO' },
+      { labelKey: 'lab.conn.rtm.program', href: '/programs/apollo', agency: 'NASA' },
+    ],
+  },
 };
 
 /**
@@ -130,6 +228,19 @@ export const landOnTheMoon: Goal = {
       wiresFrom: [{ fromStep: 2, output: 'descentDv', toInput: 'requiredKms' }],
     },
   ],
+  connection: {
+    whyKey: 'lab.conn.ltm.why',
+    hookKey: 'lab.conn.ltm.hook',
+    links: [
+      { labelKey: 'lab.conn.ltm.apollo-lm', href: '/fleet?id=apollo-lm', agency: 'NASA' },
+      { labelKey: 'lab.conn.ltm.apollo11', href: '/moon?site=apollo11', agency: 'NASA' },
+      { labelKey: 'lab.conn.ltm.luna9', href: '/fly?mission=luna9', agency: 'Roscosmos' },
+      { labelKey: 'lab.conn.ltm.change4', href: '/moon?site=change4', agency: 'CNSA' },
+      { labelKey: 'lab.conn.ltm.chandrayaan3', href: '/moon?site=chandrayaan3', agency: 'ISRO' },
+      { labelKey: 'lab.conn.ltm.slim', href: '/moon?site=slim', agency: 'JAXA' },
+      { labelKey: 'lab.conn.ltm.beresheet', href: '/fly?mission=beresheet', agency: 'SpaceIL' },
+    ],
+  },
 };
 
 /**
@@ -156,6 +267,18 @@ export const getToMars: Goal = {
       wiresFrom: [{ fromStep: 0, output: 'total', toInput: 'requiredKms' }],
     },
   ],
+  connection: {
+    whyKey: 'lab.conn.gtm.why',
+    hookKey: 'lab.conn.gtm.hook',
+    links: [
+      { labelKey: 'lab.conn.gtm.perseverance', href: '/fly?mission=perseverance', agency: 'NASA' },
+      { labelKey: 'lab.conn.gtm.tianwen1', href: '/fly?mission=tianwen1', agency: 'CNSA' },
+      { labelKey: 'lab.conn.gtm.hope', href: '/fly?mission=hope-probe', agency: 'MBRSC' },
+      { labelKey: 'lab.conn.gtm.mangalyaan', href: '/fly?mission=mangalyaan', agency: 'ISRO' },
+      { labelKey: 'lab.conn.gtm.mars-express', href: '/fly?mission=mars-express', agency: 'ESA' },
+      { labelKey: 'lab.conn.gtm.program', href: '/programs/mars-rovers', agency: 'NASA' },
+    ],
+  },
 };
 
 /**
@@ -199,11 +322,27 @@ export const landOnMars: Goal = {
       wiresFrom: [{ fromStep: 1, output: 'vTerminal', toInput: 'terminalMs' }],
     },
   ],
+  connection: {
+    whyKey: 'lab.conn.lom.why',
+    hookKey: 'lab.conn.lom.hook',
+    links: [
+      { labelKey: 'lab.conn.lom.pathfinder', href: '/mars?site=mars-pathfinder', agency: 'NASA' },
+      { labelKey: 'lab.conn.lom.opportunity', href: '/mars?site=opportunity', agency: 'NASA' },
+      { labelKey: 'lab.conn.lom.curiosity', href: '/mars?site=curiosity', agency: 'NASA' },
+      { labelKey: 'lab.conn.lom.perseverance', href: '/mars?site=perseverance', agency: 'NASA' },
+      { labelKey: 'lab.conn.lom.viking1', href: '/mars?site=viking1-lander', agency: 'NASA' },
+      { labelKey: 'lab.conn.lom.zhurong', href: '/mars?site=zhurong', agency: 'CNSA' },
+      { labelKey: 'lab.conn.lom.mars3', href: '/mars?site=mars3', agency: 'Roscosmos' },
+      { labelKey: 'lab.conn.lom.schiaparelli', href: '/mars?site=schiaparelli', agency: 'ESA' },
+    ],
+    nextKey: 'lab.conn.lom.next',
+  },
 };
 
-/** All goals, keyed by id. */
+/** All goals, keyed by id — insertion order drives the Lab picker (the mission arc). */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
+  [landOnEarth.id, landOnEarth],
   [motionFirstPrinciples.id, motionFirstPrinciples],
   [reachTheMoon.id, reachTheMoon],
   [landOnTheMoon.id, landOnTheMoon],

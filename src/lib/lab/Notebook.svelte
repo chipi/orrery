@@ -451,6 +451,42 @@
       </select>
       <button type="button" class="nb__add-btn" onclick={addCell}>+ {t('lab.ui.add-cell')}</button>
     </div>
+
+    <!-- Practical-connection panel (v0.9 reality-punch) — the lesson's conclusion linked
+         out to the real missions/vehicles/sites in Orrery. Goal mode only (a restored
+         custom notebook has no lesson). -->
+    {#if !restored && goal.connection}
+      {@const conn = goal.connection}
+      <aside class="nb__conn" aria-label={t('lab.conn.aria')}>
+        <h3 class="nb__conn-title">{t('lab.conn.heading')}</h3>
+        <p class="nb__conn-why">{t(conn.whyKey)}</p>
+
+        {#if conn.hookKey}
+          <div class="nb__conn-hook">
+            <span class="nb__conn-hook-label">{t('lab.conn.hook-label')}</span>
+            <p class="nb__conn-hook-text">{t(conn.hookKey)}</p>
+          </div>
+        {/if}
+
+        <ul class="nb__conn-links">
+          {#each conn.links as link (link.href)}
+            <li>
+              <a class="nb__conn-a" href="{base}{link.href}">
+                <span class="nb__conn-label">{t(link.labelKey)}</span>
+                {#if link.agency}<span class="nb__conn-agency">{link.agency}</span>{/if}
+              </a>
+            </li>
+          {/each}
+        </ul>
+
+        {#if conn.nextKey}
+          <p class="nb__conn-next">
+            <span class="nb__conn-next-label">{t('lab.conn.next-label')}</span>
+            {t(conn.nextKey)}
+          </p>
+        {/if}
+      </aside>
+    {/if}
   {/if}
 </section>
 
@@ -460,6 +496,105 @@
     flex-direction: column;
     gap: 1.5rem;
     width: 100%;
+  }
+
+  /* ─── Practical-connection panel (reality punch) ──────────────────────────── */
+  .nb__conn {
+    margin-top: 0.25rem;
+    padding: 1.25rem 1.4rem;
+    border: 1px solid rgba(78, 205, 196, 0.28);
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(78, 205, 196, 0.07), rgba(78, 205, 196, 0.02));
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .nb__conn-title {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #4ecdc4;
+  }
+  .nb__conn-why {
+    margin: 0;
+    line-height: 1.55;
+    color: #e8e8e8;
+  }
+  .nb__conn-hook {
+    border-left: 2px solid #ffc850;
+    padding-left: 0.8rem;
+  }
+  .nb__conn-hook-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #ffc850;
+    margin-bottom: 0.25rem;
+  }
+  .nb__conn-hook-text {
+    margin: 0;
+    line-height: 1.55;
+    color: #d8d8d8;
+    font-style: italic;
+  }
+  .nb__conn-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .nb__conn-a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.03);
+    color: #e8e8e8;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition:
+      background 0.12s ease,
+      border-color 0.12s ease;
+  }
+  .nb__conn-a:hover,
+  .nb__conn-a:focus-visible {
+    background: rgba(78, 205, 196, 0.12);
+    border-color: rgba(78, 205, 196, 0.45);
+  }
+  .nb__conn-label {
+    line-height: 1.35;
+  }
+  .nb__conn-agency {
+    flex-shrink: 0;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(78, 205, 196, 0.16);
+    color: #9fe0da;
+  }
+  .nb__conn-next {
+    margin: 0;
+    padding-top: 0.5rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.14);
+    color: #b7bdc0;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .nb__conn-next-label {
+    color: #4ecdc4;
+    font-weight: 700;
+    margin-right: 0.35rem;
   }
 
   /* ─── Header (goal + share) ───────────────────────────────────────────── */

@@ -62,11 +62,21 @@ function collectAllKeys(): string[] {
   for (const goal of GOALS.values()) {
     add(goal.titleKey);
     goal.path.forEach((s) => add(s.narrativeKey));
+    // The practical-connection panel (v0.9) — why / hook / next + every link label.
+    const c = goal.connection;
+    if (c) {
+      add(c.whyKey);
+      add(c.hookKey);
+      add(c.nextKey);
+      c.links.forEach((l) => add(l.labelKey));
+    }
   }
 
   // Fidelity register — built by concatenation in FigureRenderer, so it never
   // appears as a whole-string literal; assert the three explicitly.
   ['lab.fidelity.computed', 'lab.fidelity.geometric', 'lab.fidelity.replayed'].forEach(add);
+  // Connection-panel chrome — rendered via t() in Notebook.svelte, not a data literal.
+  ['lab.conn.heading', 'lab.conn.hook-label', 'lab.conn.next-label', 'lab.conn.aria'].forEach(add);
 
   return [...keys].filter((k) => k.startsWith('lab.'));
 }

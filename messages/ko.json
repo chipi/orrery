@@ -2571,5 +2571,20 @@
   "lab_conn_ro_sputnik": "Sputnik 1 — 최초의 궤도 진입 (1957)",
   "lab_conn_ro_vostok1": "Vostok 1 — Gagarin, 궤도에 오른 최초의 인간",
   "lab_conn_ro_falcon9": "Falcon 9 — 현대의 궤도 발사체",
-  "lab_conn_ro_iss": "ISS — 궤도에서의 생활"
+  "lab_conn_ro_iss": "ISS — 궤도에서의 생활",
+  "lab_f_guidance_title": "상승 유도 (비행 컴퓨터)",
+  "lab_f_guidance_thrust": "상단 추력",
+  "lab_f_guidance_altitude": "목표 궤도 고도",
+  "lab_f_guidance_minpitch": "최대 로프트 피치",
+  "lab_f_guidance_handoff": "개루프→폐루프 전환",
+  "lab_f_guidance_burntime": "연소 시간",
+  "lab_assume_peg_linear_tangent": "주기별 중력 적분을 포함한 PEG 선형-탄젠트 조종 (sin γ = A + B·t)",
+  "lab_goal_flying_computer_title": "로켓은 스스로 비행한다. 물리가 있고, 그 다음엔 물리가 만들어 낸, 손으로 풀기엔 너무 어려운 문제들이 있다 — 궤도 진입이 그중 하나다. 이것은 기계를 조종하는 유도 컴퓨터에 관한 첫 번째 강의이지, 그 컴퓨터가 따르는 물리에 관한 것이 아니다.",
+  "lab_goal_sysasc_guidance": "비행 컴퓨터가 생각하는 것을 지켜보라. 궤도 진입은 정확한 해답이 있는 경계값 문제다 — 목표 고도에 도달해, 수평 자세로, 원궤도 속도로 도착하는 것 — 그리고 기체의 실제 상태는 매초 표류하므로 전체 경로를 미리 계획할 수 없다. 그래서 두 가지 방식으로 비행한다. 짙은 대기 속에서는 미리 계획된 피치 표(개루프)를 따르며 중력 선회 동안 하중을 안전하게 유지한다. 약 55 km 위에서는 컴퓨터가 인계받는다: 이 저추력 상단의 경우 그것은 Powered Explicit Guidance로, 매초 두-점 경계 문제를 다시 풀어 조종 법칙 sin γ = A + B·t를 산출한다 — 그리고 그 해답은 상승을 로프트시켜, 기수를 수평선 아래로 내려 고도를 소비하며 속도를 얻는다. 어떤 사람도 그렇게 눈먼 채로 비행할 수 없다. 상단 추력을 낮추면 더 강하게 로프트하는 것을 지켜보라.",
+  "lab_conn_sysasc_why": "1960년대 이후 모든 발사체는 궤도까지의 마지막 구간을 스스로 비행해 왔다. 진입이 너무 정밀하고 너무 빨라서 사람 손으로는 불가능하기 때문이다. Apollo Guidance Computer는 단 4 KB 메모리로 바로 이런 폐루프 조종을 수행했다; 오늘날 Falcon 9의 컴퓨터는 그것을 하고 나서 부스터를 배 위에 착륙시킨다 — 어떤 사람도 실시간으로 풀 수 없는 제어 문제다.",
+  "lab_conn_sysasc_hook": "Draper의 MIT 연구실은 여기에 달을 걸었다: Apollo Guidance Computer는 인간을 태우고 비행한 최초의 기계로, 초당 여러 번 자체 유도 방정식을 다시 풀며 조종했다 — 이후 모든 플라이-바이-와이어 시스템의 조상이다.",
+  "lab_conn_sysasc_next": "당신은 상승 컴퓨터를 만났다. 같은 발상 — 사람에게 너무 어려운 제어 문제를 기계가 푸는 것 — 이 착륙을 향한 동력 하강과 재진입 회랑을 통과하는 양력 벡터 조종을 담당한다.",
+  "lab_conn_sysasc_apollo": "Apollo 11 — Apollo Guidance Computer가 비행",
+  "lab_conn_sysasc_saturnv": "Saturn V — 이를 조종한 Instrument Unit",
+  "lab_conn_sysasc_falcon9": "Falcon 9 — 궤도로 비행하고 스스로 착륙"
 }

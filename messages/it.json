@@ -2571,5 +2571,20 @@
   "lab_conn_ro_sputnik": "Sputnik 1 — primo in orbita (1957)",
   "lab_conn_ro_vostok1": "Vostok 1 — Gagarin, primo essere umano in orbita",
   "lab_conn_ro_falcon9": "Falcon 9 — un lanciatore orbitale moderno",
-  "lab_conn_ro_iss": "La ISS — vivere in orbita"
+  "lab_conn_ro_iss": "La ISS — vivere in orbita",
+  "lab_f_guidance_title": "Guida di ascesa (il computer di volo)",
+  "lab_f_guidance_thrust": "Spinta dello stadio superiore",
+  "lab_f_guidance_altitude": "Quota dell'orbita target",
+  "lab_f_guidance_minpitch": "Beccheggio più basso in loft",
+  "lab_f_guidance_handoff": "Passaggio aperto→chiuso",
+  "lab_f_guidance_burntime": "Tempo di combustione",
+  "lab_assume_peg_linear_tangent": "Guida PEG a tangente lineare (sin γ = A + B·t) con integrale di gravità per ciclo",
+  "lab_goal_flying_computer_title": "Il razzo vola da solo. C'è la fisica, e poi ci sono problemi che la fisica rende troppo DIFFICILI da risolvere a mano — e raggiungere l'orbita è uno di questi. Questa è la prima lezione sui COMPUTER di guida che pilotano la macchina, non sulla fisica a cui obbediscono.",
+  "lab_goal_sysasc_guidance": "Osserva il computer di volo pensare. Raggiungere l'orbita è un problema ai valori al contorno con una soluzione esatta — arrivare alla quota target, in assetto orizzontale, alla velocità circolare — e lo stato reale del veicolo deriva ogni secondo, quindi non puoi pre-pianificare l'intero percorso. Perciò vola in due regimi. Nell'atmosfera densa segue una tabella di beccheggio PRE-PIANIFICATA (ad anello aperto) che mantiene i carichi in sicurezza durante la virata di gravità. Sopra i ~55 km il computer PRENDE IL COMANDO: per questo stadio superiore a bassa spinta si tratta della Powered Explicit Guidance, che risolve nuovamente ogni secondo un problema al contorno a due punti per una legge di guida sin γ = A + B·t — e la sua soluzione mette in LOFT la salita, comandando il muso SOTTO l'orizzonte per spendere quota comprando velocità. Nessun umano vola così alla cieca. Riduci la spinta dello stadio superiore e osserva il loft aumentare.",
+  "lab_conn_sysasc_why": "Ogni lanciatore dagli anni '60 ha volato da solo l'ultimo tratto verso l'orbita, perché l'inserimento è troppo preciso e troppo veloce per la mano di un umano. L'Apollo Guidance Computer eseguiva esattamente questo tipo di guida ad anello chiuso con 4 KB di memoria; oggi il computer del Falcon 9 lo fa e poi fa atterrare il booster su una nave — problemi di controllo che nessuna persona potrebbe risolvere in tempo reale.",
+  "lab_conn_sysasc_hook": "Il laboratorio di Draper al MIT ci scommise la Luna: l'Apollo Guidance Computer fu la prima macchina a pilotare esseri umani, guidando risolvendo nuovamente le proprie equazioni di guida molte volte al secondo — l'antenato di ogni sistema fly-by-wire successivo.",
+  "lab_conn_sysasc_next": "Hai conosciuto il computer di ascesa. La stessa idea — una macchina che risolve un problema di controllo troppo difficile per un umano — gestisce la discesa propulsa fino all'atterraggio e la guida del vettore di portanza attraverso un corridoio di rientro.",
+  "lab_conn_sysasc_apollo": "Apollo 11 — pilotato dall'Apollo Guidance Computer",
+  "lab_conn_sysasc_saturnv": "Saturn V — l'Instrument Unit che lo guidava",
+  "lab_conn_sysasc_falcon9": "Falcon 9 — vola in orbita e atterra da solo"
 }

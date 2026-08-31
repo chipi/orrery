@@ -1001,3 +1001,39 @@ describe('reach-orbit · the real ascent (integrateAscent) + the Δv tax', () =>
     expect(g.path.map((s) => s.formulaId)).toEqual(['orbital-velocity', 'ascent-to-orbit']);
   });
 });
+
+/**
+ * Systems — ascent guidance (the flight computer). Runs the real integrator with a lofting
+ * low-TWR upper stage so PEG (systems/peg) fires: the commanded pitch dips BELOW the horizon
+ * (γ < 0), trading altitude for speed — a command no human flies by hand. Reaches orbit.
+ */
+describe('systems · ascent guidance (PEG lofts the arc, via the real integrator)', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('PEG lofts the arc below the horizon and still reaches orbit', () => {
+    const r = compute('ascent-guidance', { upperThrustKN: 220, targetOrbitAltKm: 200 });
+    expect(r.status.ok).toBe(true);
+    // the signature of closed-loop PEG on a low-TWR stage: commanded pitch goes negative.
+    expect(r.values.minPitchDeg.value).toBeLessThan(0);
+    expect(r.values.minPitchDeg.value).toBeGreaterThan(-40); // sane loft, not inverted
+    // the open→closed handoff happens partway into the flight (after the atmosphere).
+    expect(r.values.handoffTimeS.value).toBeGreaterThan(30);
+    expect(r.values.handoffTimeS.value).toBeLessThan(r.values.burnTimeS.value);
+    const fig = r.figure as {
+      kind: string;
+      reachedOrbit: boolean;
+      samples: { closedLoop: boolean }[];
+    };
+    expect(fig.kind).toBe('guidance-timeline');
+    expect(fig.reachedOrbit).toBe(true);
+    // the timeline has both regimes.
+    expect(fig.samples.some((s) => !s.closedLoop)).toBe(true); // open-loop table phase
+    expect(fig.samples.some((s) => s.closedLoop)).toBe(true); // closed-loop PEG phase
+  });
+
+  it('flying-computer is the first systems-family goal', () => {
+    const g = GOALS.get('flying-computer')!;
+    expect(g.family).toBe('systems');
+    expect(g.path.map((s) => s.formulaId)).toEqual(['ascent-guidance']);
+  });
+});

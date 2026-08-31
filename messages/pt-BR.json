@@ -2571,5 +2571,20 @@
   "lab_conn_ro_sputnik": "Sputnik 1 — primeiro em órbita (1957)",
   "lab_conn_ro_vostok1": "Vostok 1 — Gagarin, primeiro humano em órbita",
   "lab_conn_ro_falcon9": "Falcon 9 — um lançador orbital moderno",
-  "lab_conn_ro_iss": "A ISS — vivendo em órbita"
+  "lab_conn_ro_iss": "A ISS — vivendo em órbita",
+  "lab_f_guidance_title": "Orientação de subida (o computador de voo)",
+  "lab_f_guidance_thrust": "Empuxo do estágio superior",
+  "lab_f_guidance_altitude": "Altitude da órbita alvo",
+  "lab_f_guidance_minpitch": "Arfagem elevada mais profunda",
+  "lab_f_guidance_handoff": "Transição aberto→fechado",
+  "lab_f_guidance_burntime": "Tempo de queima",
+  "lab_assume_peg_linear_tangent": "Direcionamento tangente-linear PEG (sin γ = A + B·t) com uma integral de gravidade por ciclo",
+  "lab_goal_flying_computer_title": "O foguete voa sozinho. Há a física, e há problemas que a física torna DIFÍCEIS demais para resolver à mão — e alcançar a órbita é um deles. Esta é a primeira lição sobre os COMPUTADORES de orientação que pilotam a máquina, não sobre a física que eles obedecem.",
+  "lab_goal_sysasc_guidance": "Observe o computador de voo pensar. Chegar à órbita é um problema de valor de contorno com uma resposta exata — atingir a altitude alvo, em voo nivelado, à velocidade circular — e o estado real do veículo desvia a cada segundo, então não dá para planejar toda a trajetória de antemão. Por isso ele voa em dois regimes. Na atmosfera densa, segue uma tabela de arfagem PRÉ-PLANEJADA (malha aberta) que mantém as cargas seguras durante a curva gravitacional. Acima de ~55 km o computador ASSUME o controle: para este estágio superior de baixo empuxo, isso é a Powered Explicit Guidance, que re-resolve um problema de contorno de dois pontos a cada segundo para uma lei de direcionamento sin γ = A + B·t — e sua resposta ELEVA a subida, comandando o nariz ABAIXO do horizonte para gastar altitude comprando velocidade. Nenhum humano voa tão às cegas. Reduza o empuxo do estágio superior e observe-o elevar mais.",
+  "lab_conn_sysasc_why": "Todo veículo lançador desde os anos 1960 voa sozinho o último trecho até a órbita, porque a inserção é precisa e rápida demais para a mão humana. O Apollo Guidance Computer executava exatamente esse tipo de direcionamento em malha fechada com 4 KB de memória; hoje o computador do Falcon 9 faz isso e ainda pousa o propulsor num barco — problemas de controle que ninguém resolveria em tempo real.",
+  "lab_conn_sysasc_hook": "O laboratório de Draper no MIT apostou a Lua nisso: o Apollo Guidance Computer foi a primeira máquina a pilotar humanos, direcionando ao re-resolver suas próprias equações de orientação muitas vezes por segundo — o ancestral de todo sistema fly-by-wire desde então.",
+  "lab_conn_sysasc_next": "Você conheceu o computador de subida. A mesma ideia — uma máquina resolvendo um problema de controle difícil demais para um humano — comanda a descida propulsada até o pouso e o direcionamento do vetor de sustentação por um corredor de reentrada.",
+  "lab_conn_sysasc_apollo": "Apollo 11 — pilotada pelo Apollo Guidance Computer",
+  "lab_conn_sysasc_saturnv": "Saturn V — a Instrument Unit que o direcionava",
+  "lab_conn_sysasc_falcon9": "Falcon 9 — voa até a órbita e pousa sozinho"
 }

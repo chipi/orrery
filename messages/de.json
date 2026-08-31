@@ -2571,5 +2571,20 @@
   "lab_conn_ro_sputnik": "Sputnik 1 — erster im Orbit (1957)",
   "lab_conn_ro_vostok1": "Vostok 1 — Gagarin, erster Mensch im Orbit",
   "lab_conn_ro_falcon9": "Falcon 9 — eine moderne Orbitalträgerrakete",
-  "lab_conn_ro_iss": "Die ISS — Leben im Orbit"
+  "lab_conn_ro_iss": "Die ISS — Leben im Orbit",
+  "lab_f_guidance_title": "Aufstiegssteuerung (der Bordrechner)",
+  "lab_f_guidance_thrust": "Oberstufenschub",
+  "lab_f_guidance_altitude": "Zielbahnhöhe",
+  "lab_f_guidance_minpitch": "Tiefster gelofteter Nickwinkel",
+  "lab_f_guidance_handoff": "Übergabe offen→geschlossen",
+  "lab_f_guidance_burntime": "Brenndauer",
+  "lab_assume_peg_linear_tangent": "PEG-Linear-Tangenten-Steuerung (sin γ = A + B·t) mit einem Gravitationsintegral pro Zyklus",
+  "lab_goal_flying_computer_title": "Die Rakete fliegt sich selbst. Es gibt Physik, und dann gibt es Probleme, die die Physik zu SCHWER macht, um sie von Hand zu lösen — und das Erreichen der Umlaufbahn ist eines davon. Dies ist die erste Lektion über die Steuer-COMPUTER, die die Maschine fliegen, nicht über die Physik, der sie gehorchen.",
+  "lab_goal_sysasc_guidance": "Beobachte, wie der Bordrechner denkt. In die Umlaufbahn zu gelangen ist ein Randwertproblem mit exakter Lösung — die Zielhöhe erreichen, waagerecht fliegend, mit Kreisbahngeschwindigkeit — und der reale Zustand des Fahrzeugs driftet jede Sekunde, sodass du nicht die gesamte Bahn vorausplanen kannst. Also fliegt es in zwei Regimen. In der dichten Atmosphäre folgt es einer VORGEPLANTEN Nickwinkeltabelle (offener Regelkreis), die die Lasten durch die Gravitationskurve sicher hält. Oberhalb von ~55 km ÜBERNIMMT der Computer: Für diese schubschwache Oberstufe ist das Powered Explicit Guidance, das jede Sekunde ein Zweipunkt-Randwertproblem neu löst für ein Steuergesetz sin γ = A + B·t — und seine Lösung LOFTET den Aufstieg, indem sie die Nase UNTER den Horizont befiehlt, um Höhe gegen Geschwindigkeit einzutauschen. Kein Mensch fliegt so blind. Senke den Oberstufenschub und beobachte, wie es stärker loftet.",
+  "lab_conn_sysasc_why": "Jede Trägerrakete seit den 1960er-Jahren fliegt das letzte Stück zur Umlaufbahn selbst, weil die Einschussmanöver zu präzise und zu schnell für eine menschliche Hand sind. Der Apollo Guidance Computer führte genau diese Art geschlossener Regelung auf 4 KB Speicher aus; heute macht es der Rechner der Falcon 9 und landet dann die Erststufe auf einem Schiff — Regelungsprobleme, die kein Mensch in Echtzeit lösen könnte.",
+  "lab_conn_sysasc_hook": "Drapers MIT-Labor setzte den Mond darauf: Der Apollo Guidance Computer war die erste Maschine, die Menschen flog, gesteuert durch mehrfaches Neulösen seiner eigenen Steuerungsgleichungen pro Sekunde — der Vorfahr jedes Fly-by-Wire-Systems seither.",
+  "lab_conn_sysasc_next": "Du hast den Aufstiegsrechner kennengelernt. Dieselbe Idee — eine Maschine, die ein für Menschen zu schweres Regelungsproblem löst — steuert den angetriebenen Abstieg zur Landung und die Auftriebsvektorsteuerung durch einen Wiedereintrittskorridor.",
+  "lab_conn_sysasc_apollo": "Apollo 11 — geflogen vom Apollo Guidance Computer",
+  "lab_conn_sysasc_saturnv": "Saturn V — die Instrument Unit, die sie steuerte",
+  "lab_conn_sysasc_falcon9": "Falcon 9 — fliegt zur Umlaufbahn und landet selbst"
 }

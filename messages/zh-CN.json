@@ -2571,5 +2571,20 @@
   "lab_conn_ro_sputnik": "Sputnik 1 —— 首个入轨（1957）",
   "lab_conn_ro_vostok1": "Vostok 1 —— Gagarin，首位入轨人类",
   "lab_conn_ro_falcon9": "Falcon 9 —— 现代轨道运载火箭",
-  "lab_conn_ro_iss": "ISS —— 在轨生活"
+  "lab_conn_ro_iss": "ISS —— 在轨生活",
+  "lab_f_guidance_title": "上升制导（飞行计算机）",
+  "lab_f_guidance_thrust": "上面级推力",
+  "lab_f_guidance_altitude": "目标轨道高度",
+  "lab_f_guidance_minpitch": "最深抬升俯仰角",
+  "lab_f_guidance_handoff": "开环→闭环交接",
+  "lab_f_guidance_burntime": "点火时长",
+  "lab_assume_peg_linear_tangent": "PEG 线性正切制导（sin γ = A + B·t），每周期进行一次重力积分",
+  "lab_goal_flying_computer_title": "火箭自主飞行。有物理规律，也有一些问题因物理太复杂而无法手工求解——入轨就是其中之一。这是关于驾驭机器的制导计算机的第一课，而非它们所遵循的物理。",
+  "lab_goal_sysasc_guidance": "看飞行计算机思考。入轨是一个有精确答案的边值问题——在目标高度以水平姿态、以环绕速度到达——而飞行器的真实状态每秒都在漂移，所以你无法预先规划整条路径。因此它以两种模式飞行。在稠密大气中，它遵循一份预先规划好的俯仰表（开环），在重力转弯期间保持载荷安全。在约 55 km 以上，计算机接管：对这个低推力上面级而言，这就是动力显式制导（PEG），它每秒重解一个两点边值问题，得到制导律 sin γ = A + B·t——它的答案会抬升爬升轨迹，指令机头低于地平线，用高度换取速度。没有人能盲飞完成这些。降低上面级推力，看它抬升得更狠。",
+  "lab_conn_sysasc_why": "自 1960 年代以来，每一枚运载火箭在入轨前的最后一段都是自主飞行的，因为入轨对人手来说太精确、太快。阿波罗制导计算机在 4 KB 内存上运行的正是这种闭环制导；如今 Falcon 9 的计算机做同样的事，还能把助推器降落在海上驳船上——这些控制问题没有人能实时求解。",
+  "lab_conn_sysasc_hook": "Draper 的 MIT 实验室为此押上了登月成败：阿波罗制导计算机是第一台驾驭载人飞行的机器，通过每秒多次重解自己的制导方程来操纵飞行——是此后每一套电传飞控系统的鼻祖。",
+  "lab_conn_sysasc_next": "你已认识了上升计算机。同样的思路——机器求解人类难以应对的控制问题——也支配着着陆的动力下降，以及再入走廊中的升力矢量制导。",
+  "lab_conn_sysasc_apollo": "Apollo 11——由阿波罗制导计算机驾驭",
+  "lab_conn_sysasc_saturnv": "Saturn V——操纵它的仪器舱",
+  "lab_conn_sysasc_falcon9": "Falcon 9——自主入轨并自主着陆"
 }

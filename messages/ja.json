@@ -2571,5 +2571,20 @@
   "lab_conn_ro_sputnik": "スプートニク1号 — 初の軌道到達（1957年）",
   "lab_conn_ro_vostok1": "ボストーク1号 — ガガーリン、初の軌道飛行を果たした人間",
   "lab_conn_ro_falcon9": "Falcon 9 — 現代の軌道打ち上げ機",
-  "lab_conn_ro_iss": "ISS — 軌道上での生活"
+  "lab_conn_ro_iss": "ISS — 軌道上での生活",
+  "lab_f_guidance_title": "上昇誘導（飛行コンピュータ）",
+  "lab_f_guidance_thrust": "上段の推力",
+  "lab_f_guidance_altitude": "目標軌道高度",
+  "lab_f_guidance_minpitch": "最深ロフトピッチ",
+  "lab_f_guidance_handoff": "開ループ→閉ループ切替",
+  "lab_f_guidance_burntime": "燃焼時間",
+  "lab_assume_peg_linear_tangent": "PEG線形正接ステアリング（sin γ = A + B·t）とサイクルごとの重力積分",
+  "lab_goal_flying_computer_title": "ロケットは自ら飛ぶ。物理があり、そして物理があまりに解くのを困難にする問題がある——軌道到達もその一つだ。これは物理そのものではなく、機体を飛ばす誘導コンピュータについての最初のレッスンである。",
+  "lab_goal_sysasc_guidance": "飛行コンピュータが思考する様子を見よう。軌道到達は厳密な解を持つ境界値問題だ——目標高度に、水平飛行で、円軌道速度で到達する——だが機体の実際の状態は毎秒ドリフトするため、経路全体を事前に計画することはできない。そこで飛行は二つのレジームで行われる。濃い大気中では、重力ターンを通じて荷重を安全に保つ事前計画済みのピッチテーブル（開ループ）に従う。約55 km上空でコンピュータが引き継ぐ：この低推力の上段ではPowered Explicit Guidance（動力付き明示誘導）となり、毎秒二点境界問題を解き直してステアリング則 sin γ = A + B·t を導く——そしてその解は上昇をロフトさせ、機首を水平線の下に指示して高度を消費し速度を得る。人間にこの盲目飛行はできない。上段の推力を下げて、より強くロフトする様子を見よう。",
+  "lab_conn_sysasc_why": "1960年代以降のすべての打ち上げロケットは、軌道への最後の区間を自ら飛行してきた。投入があまりに精密で速すぎて人間の手には負えないからだ。Apollo Guidance Computerは、まさにこの種の閉ループステアリングをわずか4 KBのメモリで実行した；今日ではFalcon 9のコンピュータがそれを行い、さらにブースターを船上に着陸させる——人間がリアルタイムで解けない制御問題だ。",
+  "lab_conn_sysasc_hook": "DraperのMIT研究室は月をそれに賭けた：Apollo Guidance Computerは人間を飛ばした最初の機械であり、自らの誘導方程式を毎秒何度も解き直して操縦した——以降のあらゆるフライバイワイヤシステムの祖先だ。",
+  "lab_conn_sysasc_next": "上昇コンピュータに出会った。同じ発想——人間には困難すぎる制御問題を機械が解く——が、着陸への動力降下や、再突入コリドーを通る揚力ベクトルステアリングを動かしている。",
+  "lab_conn_sysasc_apollo": "Apollo 11——Apollo Guidance Computerが操縦",
+  "lab_conn_sysasc_saturnv": "Saturn V——操縦したInstrument Unit",
+  "lab_conn_sysasc_falcon9": "Falcon 9——軌道へ飛び自ら着陸する"
 }

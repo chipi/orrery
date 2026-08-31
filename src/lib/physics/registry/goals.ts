@@ -742,6 +742,35 @@ export const planAMission: Goal = {
   },
 };
 
+// ─── Family S — systems ("how a machine flies the physics") ──────────────────
+
+/**
+ * "The rocket flies itself" — the first SYSTEMS goal (ADR-087), and a shift from physics to the
+ * GUIDANCE COMPUTERS that fly it. Some problems can't be solved by hand: a low-TWR upper stage
+ * reaching orbit is a per-second, exact boundary-value problem. The lesson runs the real ascent
+ * with a lofting upper stage and shows the flight computer's commanded pitch — a pre-planned
+ * open-loop table in the atmosphere, then closed-loop PEG (the extracted systems/peg controller)
+ * lofting the arc below the horizon. It is why spaceflight needed digital computers.
+ */
+export const flyingComputer: Goal = {
+  id: 'flying-computer',
+  titleKey: 'lab.goal.flying-computer.title',
+  family: 'systems',
+  tier: 3,
+  prereqs: ['reach-orbit'],
+  path: [{ formulaId: 'ascent-guidance', narrativeKey: 'lab.goal.sysasc.guidance' }],
+  connection: {
+    whyKey: 'lab.conn.sysasc.why',
+    hookKey: 'lab.conn.sysasc.hook',
+    links: [
+      { labelKey: 'lab.conn.sysasc.apollo', href: '/fly?mission=apollo11', agency: 'NASA' },
+      { labelKey: 'lab.conn.sysasc.saturnv', href: '/fleet?id=saturn-v', agency: 'NASA' },
+      { labelKey: 'lab.conn.sysasc.falcon9', href: '/fleet?id=falcon-9', agency: 'SpaceX' },
+    ],
+    nextKey: 'lab.conn.sysasc.next',
+  },
+};
+
 /** All goals, keyed by id — insertion order drives the Lab picker (the mission arc). */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
@@ -759,6 +788,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [catchTheIss.id, catchTheIss],
   [observeTheSky.id, observeTheSky],
   [planAMission.id, planAMission],
+  [flyingComputer.id, flyingComputer],
 ]);
 
 /**

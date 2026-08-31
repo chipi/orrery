@@ -2571,5 +2571,20 @@
   "lab_conn_ro_sputnik": "Sputnik 1: primero en órbita (1957)",
   "lab_conn_ro_vostok1": "Vostok 1: Gagarin, primer humano en órbita",
   "lab_conn_ro_falcon9": "Falcon 9: un lanzador orbital moderno",
-  "lab_conn_ro_iss": "La ISS: vivir en órbita"
+  "lab_conn_ro_iss": "La ISS: vivir en órbita",
+  "lab_f_guidance_title": "Guiado de ascenso (el ordenador de vuelo)",
+  "lab_f_guidance_thrust": "Empuje de la etapa superior",
+  "lab_f_guidance_altitude": "Altitud de la órbita objetivo",
+  "lab_f_guidance_minpitch": "Cabeceo elevado más profundo",
+  "lab_f_guidance_handoff": "Transferencia abierto→cerrado",
+  "lab_f_guidance_burntime": "Tiempo de combustión",
+  "lab_assume_peg_linear_tangent": "Guiado de tangente lineal PEG (sin γ = A + B·t) con una integral de gravedad por ciclo",
+  "lab_goal_flying_computer_title": "El cohete vuela solo. Está la física, y luego están los problemas que la física hace demasiado DIFÍCILES de resolver a mano — y alcanzar la órbita es uno. Esta es la primera lección sobre los ORDENADORES de guiado que pilotan la máquina, no sobre la física que obedecen.",
+  "lab_goal_sysasc_guidance": "Observa pensar al ordenador de vuelo. Llegar a órbita es un problema de valores en la frontera con una respuesta exacta — llegar a la altitud objetivo, en horizontal, a velocidad circular — y el estado real del vehículo se desvía cada segundo, así que no puedes planificar toda la trayectoria de antemano. Por eso vuela en dos regímenes. En la atmósfera densa sigue una tabla de cabeceo PREPLANIFICADA (bucle abierto) que mantiene las cargas seguras durante el giro por gravedad. Por encima de ~55 km el ordenador TOMA EL MANDO: para esta etapa superior de bajo empuje eso es Guiado Explícito Propulsado (PEG), que vuelve a resolver un problema de frontera de dos puntos cada segundo para una ley de guiado sin γ = A + B·t — y su respuesta ELEVA el ascenso, ordenando al morro que apunte POR DEBAJO del horizonte para gastar altitud comprando velocidad. Ningún humano vuela así de ciego. Reduce el empuje de la etapa superior y observa cómo eleva con más fuerza.",
+  "lab_conn_sysasc_why": "Todo vehículo de lanzamiento desde los años 60 ha volado solo el último tramo hasta la órbita, porque la inserción es demasiado precisa y demasiado rápida para una mano humana. El Apollo Guidance Computer ejecutaba exactamente este tipo de guiado en bucle cerrado con 4 KB de memoria; hoy el ordenador del Falcon 9 lo hace y además aterriza el propulsor en un barco — problemas de control que ninguna persona podría resolver en tiempo real.",
+  "lab_conn_sysasc_hook": "El laboratorio de Draper en el MIT se jugó la Luna por ello: el Apollo Guidance Computer fue la primera máquina en pilotar a seres humanos, guiando al resolver sus propias ecuaciones de guiado muchas veces por segundo — el antepasado de todo sistema fly-by-wire desde entonces.",
+  "lab_conn_sysasc_next": "Ya conoces el ordenador de ascenso. La misma idea — una máquina resolviendo un problema de control demasiado difícil para un humano — controla el descenso propulsado hasta el aterrizaje y el guiado del vector de sustentación a través de un corredor de reentrada.",
+  "lab_conn_sysasc_apollo": "Apollo 11 — pilotado por el Apollo Guidance Computer",
+  "lab_conn_sysasc_saturnv": "Saturn V — la Instrument Unit que lo guiaba",
+  "lab_conn_sysasc_falcon9": "Falcon 9 — vuela a órbita y aterriza solo"
 }

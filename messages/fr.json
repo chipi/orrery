@@ -2571,5 +2571,20 @@
   "lab_conn_ro_sputnik": "Spoutnik 1 — premier en orbite (1957)",
   "lab_conn_ro_vostok1": "Vostok 1 — Gagarine, premier humain en orbite",
   "lab_conn_ro_falcon9": "Falcon 9 — un lanceur orbital moderne",
-  "lab_conn_ro_iss": "L'ISS — vivre en orbite"
+  "lab_conn_ro_iss": "L'ISS — vivre en orbite",
+  "lab_f_guidance_title": "Guidage d'ascension (l'ordinateur de vol)",
+  "lab_f_guidance_thrust": "Poussée de l'étage supérieur",
+  "lab_f_guidance_altitude": "Altitude d'orbite cible",
+  "lab_f_guidance_minpitch": "Tangage cabré maximal",
+  "lab_f_guidance_handoff": "Passage boucle ouverte→fermée",
+  "lab_f_guidance_burntime": "Durée de combustion",
+  "lab_assume_peg_linear_tangent": "Pilotage tangent linéaire PEG (sin γ = A + B·t) avec une intégrale de gravité par cycle",
+  "lab_goal_flying_computer_title": "La fusée se pilote toute seule. Il y a la physique, puis il y a les problèmes que la physique rend trop DIFFICILES à résoudre à la main — atteindre l'orbite en est un. Voici la première leçon sur les ORDINATEURS de guidage qui pilotent la machine, non sur la physique qu'ils respectent.",
+  "lab_goal_sysasc_guidance": "Observez l'ordinateur de vol réfléchir. Atteindre l'orbite est un problème aux limites à réponse exacte — arriver à l'altitude cible, à l'horizontale, à la vitesse circulaire — et l'état réel du véhicule dérive à chaque seconde, on ne peut donc pas planifier toute la trajectoire à l'avance. Il vole en deux régimes. Dans l'atmosphère dense, il suit une table de tangage PRÉ-PLANIFIÉE (boucle ouverte) qui maintient les charges sûres pendant le virage gravitationnel. Au-dessus de ~55 km, l'ordinateur PREND LE RELAIS : pour cet étage supérieur à faible poussée, c'est le Powered Explicit Guidance, qui résout à nouveau un problème aux limites à deux points chaque seconde pour une loi de pilotage sin γ = A + B·t — et sa réponse CABRE la montée, commandant le nez SOUS l'horizon pour dépenser de l'altitude et gagner de la vitesse. Aucun humain ne vole aussi aveuglément. Réduisez la poussée de l'étage supérieur et observez-le cabrer davantage.",
+  "lab_conn_sysasc_why": "Tout lanceur depuis les années 1960 pilote lui-même la dernière portion vers l'orbite, car l'insertion est trop précise et trop rapide pour une main humaine. L'Apollo Guidance Computer exécutait exactement ce type de pilotage en boucle fermée sur 4 Ko de mémoire ; aujourd'hui, l'ordinateur du Falcon 9 le fait puis pose l'étage sur une barge — des problèmes de contrôle qu'aucun humain ne pourrait résoudre en temps réel.",
+  "lab_conn_sysasc_hook": "Le laboratoire de Draper au MIT y a misé la Lune : l'Apollo Guidance Computer fut la première machine à piloter des humains, guidant en résolvant à nouveau ses propres équations de guidage plusieurs fois par seconde — l'ancêtre de tout système fly-by-wire depuis.",
+  "lab_conn_sysasc_next": "Vous avez découvert l'ordinateur d'ascension. La même idée — une machine résolvant un problème de contrôle trop difficile pour un humain — pilote la descente propulsée jusqu'à l'atterrissage et le pilotage du vecteur de portance dans un couloir de rentrée.",
+  "lab_conn_sysasc_apollo": "Apollo 11 — piloté par l'Apollo Guidance Computer",
+  "lab_conn_sysasc_saturnv": "Saturn V — l'Instrument Unit qui le pilotait",
+  "lab_conn_sysasc_falcon9": "Falcon 9 — atteint l'orbite et se pose lui-même"
 }

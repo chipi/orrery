@@ -2571,5 +2571,20 @@
   "lab_conn_ro_sputnik": "Spoetnik 1 — eerste in een baan (1957)",
   "lab_conn_ro_vostok1": "Vostok 1 — Gagarin, eerste mens in een baan",
   "lab_conn_ro_falcon9": "Falcon 9 — een moderne orbitale draagraket",
-  "lab_conn_ro_iss": "Het ISS — leven in een baan"
+  "lab_conn_ro_iss": "Het ISS — leven in een baan",
+  "lab_f_guidance_title": "Klimsturing (de vluchtcomputer)",
+  "lab_f_guidance_thrust": "Stuwkracht bovenste trap",
+  "lab_f_guidance_altitude": "Hoogte doelbaan",
+  "lab_f_guidance_minpitch": "Diepste opgestuwde pitch",
+  "lab_f_guidance_handoff": "Overgang open→gesloten",
+  "lab_f_guidance_burntime": "Brandtijd",
+  "lab_assume_peg_linear_tangent": "PEG lineair-tangens sturing (sin γ = A + B·t) met een zwaartekracht-integraal per cyclus",
+  "lab_goal_flying_computer_title": "De raket vliegt zichzelf. Er is fysica, en dan zijn er problemen die de fysica te MOEILIJK maakt om met de hand op te lossen — en een baan bereiken is er één van. Dit is de eerste les over de stuur-COMPUTERS die de machine besturen, niet over de fysica die zij gehoorzamen.",
+  "lab_goal_sysasc_guidance": "Kijk hoe de vluchtcomputer denkt. In een baan komen is een randwaardeprobleem met een exact antwoord — aankomen op de doelhoogte, horizontaal vliegend, op cirkelsnelheid — en de werkelijke toestand van het voertuig drijft elke seconde weg, dus je kunt niet het hele traject vooraf plannen. Daarom vliegt hij in twee regimes. In de dikke atmosfeer volgt hij een VOORAF GEPLANDE pitch-tabel (open-loop) die de belastingen veilig houdt tijdens de zwaartekrachtbocht. Boven ~55 km NEEMT de computer HET OVER: voor deze bovenste trap met lage stuwkracht is dat Powered Explicit Guidance, dat elke seconde een tweepunts-randprobleem opnieuw oplost voor een stuurwet sin γ = A + B·t — en zijn antwoord STUWT de klim OP, waarbij de neus ONDER de horizon wordt gecommandeerd om hoogte in te ruilen voor snelheid. Geen mens vliegt zo blind. Verlaag de stuwkracht van de bovenste trap en zie hem harder opstuwen.",
+  "lab_conn_sysasc_why": "Elke draagraket sinds de jaren 1960 vliegt zichzelf het laatste stuk naar de baan, omdat de inschakeling te nauwkeurig en te snel is voor een menselijke hand. De Apollo Guidance Computer draaide precies dit soort closed-loop sturing op 4 KB geheugen; vandaag doet de computer van Falcon 9 het en landt daarna de booster op een schip — besturingsproblemen die niemand in real time kon oplossen.",
+  "lab_conn_sysasc_hook": "Drapers MIT-lab zette de Maan erop in: de Apollo Guidance Computer was de eerste machine die mensen liet vliegen, sturend door zijn eigen stuurvergelijkingen vele malen per seconde opnieuw op te lossen — de voorvader van elk fly-by-wire-systeem sindsdien.",
+  "lab_conn_sysasc_next": "Je hebt de klimcomputer ontmoet. Hetzelfde idee — een machine die een besturingsprobleem oplost dat te moeilijk is voor een mens — stuurt de aangedreven daling naar een landing en de liftvector-sturing door een terugkeercorridor.",
+  "lab_conn_sysasc_apollo": "Apollo 11 — gevlogen door de Apollo Guidance Computer",
+  "lab_conn_sysasc_saturnv": "Saturn V — de Instrument Unit die hem stuurde",
+  "lab_conn_sysasc_falcon9": "Falcon 9 — vliegt naar een baan en landt zichzelf"
 }

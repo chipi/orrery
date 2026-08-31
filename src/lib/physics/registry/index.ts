@@ -1528,6 +1528,122 @@ export const ascentToOrbit: FormulaDef<{ payloadKg: number; targetOrbitAltKm: nu
   },
 };
 
+/**
+ * Ascent guidance (SYSTEMS — how a machine flies the physics) — the flight computer's job, made
+ * visible. A rocket cannot be flown to orbit by hand: the timing is per-second and the insertion
+ * boundary conditions (r=rT, vr=0, vh=circular) are exact. So it flies in two regimes, and this
+ * lesson runs the REAL integrator (with a low-TWR upper stage that triggers PEG) and plots the
+ * COMMANDED pitch γ over the whole burn:
+ *   · OPEN-loop below ~55 km — a pre-planned aero-safe pitch table drives the gravity turn.
+ *   · CLOSED-loop above — the guidance computer takes over. For a low-TWR upper stage that is
+ *     Powered Explicit Guidance (`systems/peg`): each major cycle it re-solves a two-point
+ *     boundary problem for a linear-tangent steering law `sin γ = A + B·t`, and the solution
+ *     LOFTS the arc — commanding pitch BELOW the horizon (γ < 0) to trade altitude for speed, a
+ *     command a human would never fly blind. Lower the upper-stage thrust and watch it loft harder.
+ */
+export const ascentGuidance: FormulaDef<{ upperThrustKN: number; targetOrbitAltKm: number }> = {
+  id: 'ascent-guidance',
+  titleKey: 'lab.f.guidance.title',
+  domain: 'ascent',
+  tier: 3,
+  prereqs: ['ascent-to-orbit'],
+  latex: '\\sin\\gamma(t) = A + B\\,t \\quad\\text{(PEG linear-tangent steering)}',
+  inputs: [
+    {
+      key: 'upperThrustKN',
+      labelKey: 'lab.f.guidance.thrust', // in kN (carried in the label; no 'kN' Unit)
+      units: '',
+      kind: 'number',
+      default: 220,
+      min: 150,
+      max: 320,
+      step: 5,
+    },
+    {
+      key: 'targetOrbitAltKm',
+      labelKey: 'lab.f.guidance.altitude',
+      units: 'km',
+      kind: 'number',
+      default: 200,
+      min: 150,
+      max: 400,
+      step: 10,
+    },
+  ],
+  outputs: [
+    { key: 'minPitchDeg', labelKey: 'lab.f.guidance.minpitch', units: 'deg' },
+    { key: 'handoffTimeS', labelKey: 'lab.f.guidance.handoff', units: 's' },
+    { key: 'burnTimeS', labelKey: 'lab.f.guidance.burntime', units: 's' },
+  ],
+  compute: ({ upperThrustKN, targetOrbitAltKm }) => {
+    if (
+      !Number.isFinite(upperThrustKN) ||
+      !Number.isFinite(targetOrbitAltKm) ||
+      upperThrustKN <= 0 ||
+      targetOrbitAltKm <= 0
+    ) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.planar-ascent'],
+      } satisfies FormulaResult;
+    }
+    const base = buildGenericProfile('peg-demo');
+    const profile = {
+      ...base,
+      loftBoost: true, // triggers the PEG controller for the final low-TWR stage
+      targetOrbitAltM: targetOrbitAltKm * 1000,
+      stages: [base.stages[0], { ...base.stages[1], thrustVacKN: upperThrustKN }],
+    };
+    const s = integrateAscent(profile);
+    const HANDOFF_ALT_KM = 55; // GUIDANCE.handoverAltM — the open→closed regime boundary
+    const deg = (rad: number): number => (rad * 180) / Math.PI;
+    const stepN = Math.max(1, Math.round(s.states.length / 140));
+    const samples = s.states
+      .filter((_, i) => i % stepN === 0 || i === s.states.length - 1)
+      .map((st) => ({
+        t: st.t,
+        pitchDeg: deg(st.pitchRad),
+        closedLoop: st.altKm > HANDOFF_ALT_KM,
+      }));
+    const closed = s.states.filter((st) => st.altKm > HANDOFF_ALT_KM);
+    const minPitchDeg = closed.length ? Math.min(...closed.map((st) => deg(st.pitchRad))) : 90;
+    const handoff = s.states.find((st) => st.altKm > HANDOFF_ALT_KM);
+    const handoffTimeS = handoff ? handoff.t : s.totalDurationS;
+    const nearest = (tt: number): (typeof s.states)[number] => {
+      let best = s.states[0];
+      for (const st of s.states) if (Math.abs(st.t - tt) < Math.abs(best.t - tt)) best = st;
+      return best;
+    };
+    const events = s.events.map((e) => ({
+      type: e.type,
+      t: e.t,
+      pitchDeg: deg(nearest(e.t).pitchRad),
+    }));
+    return {
+      values: {
+        minPitchDeg: { value: minPitchDeg, units: 'deg' },
+        handoffTimeS: { value: handoffTimeS, units: 's' },
+        burnTimeS: { value: s.totalDurationS, units: 's' },
+      },
+      status: { ok: true },
+      assumptions: ['lab.assume.planar-ascent', 'lab.assume.peg-linear-tangent'],
+      figure: {
+        kind: 'guidance-timeline',
+        provenance: { fidelity: 'computed', module: 'systems/peg' },
+        assumptions: ['lab.assume.peg-linear-tangent'],
+        samples,
+        events,
+        handoffTimeS,
+        minPitchDeg,
+        burnTimeS: s.totalDurationS,
+        reachedOrbit: s.reachedOrbit,
+      },
+    } satisfies FormulaResult;
+  },
+};
+
 const ATMO_BODY_IDS = ['earth', 'mars', 'venus', 'moon', 'mercury'] as const;
 
 /**
@@ -4665,6 +4781,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [porkchop.id, porkchop],
   [cislunarTransfer.id, cislunarTransfer],
   [ascentToOrbit.id, ascentToOrbit],
+  [ascentGuidance.id, ascentGuidance],
   [terminalVelocity.id, terminalVelocity],
   [softLandingCheck.id, softLandingCheck],
   [airbagsCheck.id, airbagsCheck],

@@ -25,6 +25,7 @@
   import PorkchopCanvas from './PorkchopCanvas.svelte';
   import CislunarEciCanvas from './CislunarEciCanvas.svelte';
   import AscentTrajectoryCanvas from './AscentTrajectoryCanvas.svelte';
+  import GuidanceTimelineCanvas from './GuidanceTimelineCanvas.svelte';
   import {
     fidelityStyle,
     fidelityLabel,
@@ -169,6 +170,8 @@
   <CislunarEciCanvas {figure} {t} {ariaLabelKey} />
 {:else if figure.kind === 'ascent-trajectory'}
   <AscentTrajectoryCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'guidance-timeline'}
+  <GuidanceTimelineCanvas {figure} {t} {ariaLabelKey} />
 {:else}
   <svg
     role="img"

@@ -227,6 +227,19 @@ export type FigureSpec = FigureBase &
         finalSpeedKms: number;
         targetSpeedKms: number;
       }
+    // Guidance timeline (systems — ascent guidance / PEG) — the flight computer's commanded
+    // pitch γ over the burn, split into the OPEN-loop pre-planned pitch table (in the atmosphere)
+    // and the CLOSED-loop guidance takeover (PEG for a low-TWR upper stage, which lofts the arc
+    // by pitching BELOW horizontal to trade altitude for speed — a command no human flies by hand).
+    | {
+        kind: 'guidance-timeline';
+        samples: { t: number; pitchDeg: number; closedLoop: boolean }[];
+        events: { type: string; t: number; pitchDeg: number }[];
+        handoffTimeS: number; // when the open→closed handoff completes
+        minPitchDeg: number; // the deepest lofted dip (PEG below horizontal)
+        burnTimeS: number;
+        reachedOrbit: boolean;
+      }
   );
 
 // ─── Goal / GoalStep (curriculum) + Card / Notebook (user documents) ────────
@@ -234,7 +247,9 @@ export type FigureSpec = FigureBase &
 export interface Goal {
   id: string;
   titleKey: string; // authored curriculum text — i18n-keyed, translated ×14
-  family: 'spaceflight' | 'observe' | 'cross-cutting';
+  // 'systems' (ADR-087) = the guidance/control CONTROLLERS that fly the physics — a different
+  // question from the physics itself ("how does a machine fly this?").
+  family: 'spaceflight' | 'observe' | 'cross-cutting' | 'systems';
   tier: number;
   prereqs: string[]; // Goal ids
   path: GoalStep[];

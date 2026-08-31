@@ -2572,5 +2572,20 @@
   "lab_conn_ro_sputnik": "Sputnik 1 — first to orbit (1957)",
   "lab_conn_ro_vostok1": "Vostok 1 — Gagarin, first human in orbit",
   "lab_conn_ro_falcon9": "Falcon 9 — a modern orbital launcher",
-  "lab_conn_ro_iss": "The ISS — living in orbit"
+  "lab_conn_ro_iss": "The ISS — living in orbit",
+  "lab_f_guidance_title": "Ascent guidance (the flight computer)",
+  "lab_f_guidance_thrust": "Upper-stage thrust",
+  "lab_f_guidance_altitude": "Target orbit altitude",
+  "lab_f_guidance_minpitch": "Deepest lofted pitch",
+  "lab_f_guidance_handoff": "Open→closed handoff",
+  "lab_f_guidance_burntime": "Burn time",
+  "lab_assume_peg_linear_tangent": "PEG linear-tangent steering (sin γ = A + B·t) with a per-cycle gravity integral",
+  "lab_goal_flying_computer_title": "The rocket flies itself. There is physics, and then there are problems the physics makes too HARD to solve by hand — and reaching orbit is one. This is the first lesson on the guidance COMPUTERS that fly the machine, not the physics they obey.",
+  "lab_goal_sysasc_guidance": "Watch the flight computer think. Getting to orbit is a boundary-value problem with an exact answer — arrive at the target altitude, going level, at circular speed — and the vehicle's real state drifts every second, so you cannot pre-plan the whole path. So it flies in two regimes. In the thick atmosphere it follows a PRE-PLANNED pitch table (open-loop) that keeps the loads safe through the gravity turn. Above ~55 km the computer TAKES OVER: for this low-thrust upper stage that is Powered Explicit Guidance, which re-solves a two-point boundary problem each second for a steering law sin γ = A + B·t — and its answer LOFTS the climb, commanding the nose BELOW the horizon to spend altitude buying speed. No human flies that blind. Lower the upper-stage thrust and watch it loft harder.",
+  "lab_conn_sysasc_why": "Every launch vehicle since the 1960s has flown itself the last stretch to orbit, because the insertion is too precise and too fast for a human hand. The Apollo Guidance Computer ran exactly this kind of closed-loop steering on 4 KB of memory; today Falcon 9's computer does it and then lands the booster on a boat — control problems no person could solve in real time.",
+  "lab_conn_sysasc_hook": "Draper's MIT lab bet the Moon on it: the Apollo Guidance Computer was the first machine to fly humans, steering by re-solving its own guidance equations many times a second — the ancestor of every fly-by-wire system since.",
+  "lab_conn_sysasc_next": "You have met the ascent computer. The same idea — a machine solving a control problem too hard for a human — runs the powered descent to a landing and the lift-vector steering through a re-entry corridor.",
+  "lab_conn_sysasc_apollo": "Apollo 11 — flown by the Apollo Guidance Computer",
+  "lab_conn_sysasc_saturnv": "Saturn V — the Instrument Unit that steered it",
+  "lab_conn_sysasc_falcon9": "Falcon 9 — flies to orbit and lands itself"
 }

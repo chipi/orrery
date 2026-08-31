@@ -2107,5 +2107,12 @@
   "lab_goal_lom_airbags": "De goedkope manier waarop de vroege rovers landden: stuiteren naar beneden in opgeblazen airbags. Maar ze houden slechts een bepaalde impact aan — ongeveer 25 m/s. Je parachute laat je sneller vallen dan dat, dus airbags alleen volstaan niet; Pathfinder schakelde eerst kleine retroraketten in om af te remmen voordat het stuiterde.",
   "lab_f_descent_twr": "Landerstuwkracht-gewichtsverhouding",
   "lab_f_descent_err_twr": "Stuwkracht-gewichtsverhouding moet groter zijn dan 1 — eronder kunt u de val niet vertragen, u crasht.",
-  "lab_assume_constant_thrust": "Verticale rembranding met constante stuwkracht"
+  "lab_assume_constant_thrust": "Verticale rembranding met constante stuwkracht",
+  "lab_assume_ascent_losses_input": "Ascent gravity + drag losses handmatig ingevoerd (trajectoryafhankelijk)",
+  "lab_f_dvorbit_altitude": "Baanhoogte",
+  "lab_f_dvorbit_body": "Hemellichaam",
+  "lab_f_dvorbit_losses": "Opstijgverliezen",
+  "lab_f_dvorbit_required": "Δv om baan te bereiken",
+  "lab_f_dvorbit_title": "Δv naar baan",
+  "lab_goal_lar_required": "Hoeveel Δv vraagt een baan werkelijk? Geen magisch getal — het is de baansnelheid die je moet bereiken (bepaald door de zwaartekracht en grootte van dit hemellichaam) plus de verliezen in de strijd door zwaartekracht en lucht. Op Aarde ongeveer 9,4 km/s; een kleiner, luchtloos hemellichaam vraagt veel minder."
 }

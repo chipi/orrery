@@ -30,8 +30,8 @@ describe('recomputeNotebook · the M1 launch-a-rocket ladder', () => {
     const cells = cellsFromGoal('launch-a-rocket');
     const states = recomputeNotebook(cells, REGISTRY);
 
-    // 7 rungs: newton, weight, momentum, twr, tsiolkovsky, launch-site, reach-orbit-verdict
-    expect(states).toHaveLength(7);
+    // 8 rungs: newton, weight, momentum, twr, tsiolkovsky, launch-site, dv-to-orbit, verdict
+    expect(states).toHaveLength(8);
 
     // The Tsiolkovsky rung (index 4) produced Δv.
     const tsio = states[4];
@@ -40,13 +40,14 @@ describe('recomputeNotebook · the M1 launch-a-rocket ladder', () => {
     const deltaV = tsio.result.values.deltaV.value;
     expect(deltaV).toBeCloseTo(8.53, 1);
 
-    // The verdict rung (index 6) wires capacityKms from Tsiolkovsky's Δv AND boostKms
-    // from the launch-site rung (index 5) — both wired keys, not input defaults.
-    const verdict = states[6];
+    // The verdict rung (index 7) wires capacityKms from Tsiolkovsky, boostKms from the
+    // launch-site rung (5), AND requiredKms from the derived dv-to-orbit rung (6).
+    const verdict = states[7];
     if (verdict.status !== 'ok' && verdict.status !== 'fail')
       throw new Error('verdict should compute');
     expect(verdict.wiredKeys).toContain('capacityKms');
     expect(verdict.wiredKeys).toContain('boostKms');
+    expect(verdict.wiredKeys).toContain('requiredKms');
     expect(verdict.resolvedInputs.capacityKms).toBeCloseTo(deltaV, 6);
   });
 });

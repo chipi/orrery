@@ -2107,5 +2107,12 @@
   "lab_goal_lom_airbags": "Il metodo economico usato dai rover più antichi per atterrare: rimbalzi dentro airbag gonfiati. Ma resistono solo a urti non troppo violenti — circa 25 m/s. Il paracadute ti lascia a velocità superiore, quindi gli airbag da soli non basteranno; Pathfinder accese piccoli retrorazzi prima per rallentare prima di rimbalzare.",
   "lab_f_descent_twr": "Spinta-peso del lander",
   "lab_f_descent_err_twr": "La spinta-peso deve superare 1 — al di sotto non puoi rallentare la caduta, si schianta.",
-  "lab_assume_constant_thrust": "Frenata verticale a spinta costante"
+  "lab_assume_constant_thrust": "Frenata verticale a spinta costante",
+  "lab_assume_ascent_losses_input": "Perdite di gravità e drag in salita inserite manualmente (dipendenti dalla traiettoria)",
+  "lab_f_dvorbit_altitude": "Altitudine orbitale",
+  "lab_f_dvorbit_body": "Mondo",
+  "lab_f_dvorbit_losses": "Perdite in salita",
+  "lab_f_dvorbit_required": "Δv per raggiungere l'orbita",
+  "lab_f_dvorbit_title": "Δv to Orbit",
+  "lab_goal_lar_required": "Quanto Δv richiede effettivamente l'orbita? Non è un numero magico — è la velocità orbitale che devi raggiungere (determinata dalla gravità e dalle dimensioni di questo mondo) più le perdite dovute alla gravità e all'aria. Sulla Terra circa 9,4 km/s; un mondo più piccolo e senza aria ne richiede molto meno."
 }

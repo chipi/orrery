@@ -2107,5 +2107,12 @@
   "lab_goal_lom_airbags": "O jeito barato que os primeiros rovers pousaram: quicando dentro de airbags inflados. Mas eles só resistem a impactos tão fortes — cerca de 25 m/s. Seu paraquedas o deixa mais rápido que isso, então airbags sozinhos não funcionam; Pathfinder disparou pequenos retrofoguetes primeiro para desacelerar antes de quicar.",
   "lab_f_descent_twr": "Impulso específico do módulo de descida",
   "lab_f_descent_err_twr": "O impulso específico deve ser maior que 1 — abaixo disso você não consegue desacelerar a queda, vai bater.",
-  "lab_assume_constant_thrust": "Queimada de frenagem vertical com impulso constante"
+  "lab_assume_constant_thrust": "Queimada de frenagem vertical com impulso constante",
+  "lab_assume_ascent_losses_input": "Perdas de gravidade + arrasto na ascensão inseridas manualmente (dependentes da trajetória)",
+  "lab_f_dvorbit_altitude": "Altitude orbital",
+  "lab_f_dvorbit_body": "Mundo",
+  "lab_f_dvorbit_losses": "Perdas na ascensão",
+  "lab_f_dvorbit_required": "Δv para atingir órbita",
+  "lab_f_dvorbit_title": "Δv para Órbita",
+  "lab_goal_lar_required": "Quanto Δv a órbita realmente exige? Não é um número mágico — é a velocidade orbital que você deve atingir (definida pela gravidade e tamanho deste mundo) mais as perdas ao lutar contra a gravidade e o ar. Na Terra, cerca de 9,4 km/s; um mundo menor e sem ar exige muito menos."
 }

@@ -2107,5 +2107,12 @@
   "lab_goal_lom_airbags": "초기 로버들이 착륙한 저렴한 방식: 부풀린 에어백 안에서 튕기며 내려온다. 하지만 견딜 수 있는 충격에는 한계가 있어 — 약 25 m/s. 낙하산으로는 그보다 빠른 속도가 남으므로 에어백만으로는 불가능하다. Pathfinder는 튕기기 전에 작은 역추진 로켓을 분사해 먼저 감속했다.",
   "lab_f_descent_twr": "착륙선 추력 대 중량비",
   "lab_f_descent_err_twr": "추력 대 중량비가 1을 초과해야 합니다 — 그 미만이면 낙하를 늦출 수 없어 추락합니다.",
-  "lab_assume_constant_thrust": "일정 추력 수직 제동 분사"
+  "lab_assume_constant_thrust": "일정 추력 수직 제동 분사",
+  "lab_assume_ascent_losses_input": "상승 중력 + 항력 손실을 수동 입력 (궤적 의존)",
+  "lab_f_dvorbit_altitude": "궤도 고도",
+  "lab_f_dvorbit_body": "천체",
+  "lab_f_dvorbit_losses": "상승 손실",
+  "lab_f_dvorbit_required": "궤도 진입 Δv",
+  "lab_f_dvorbit_title": "궤도 진입 Δv",
+  "lab_goal_lar_required": "궤도에 실제로 필요한 Δv는 얼마일까요? 마법 같은 숫자가 아닙니다 — 도달해야 하는 궤도 속도(이 천체의 중력과 크기로 결정됨)에 중력과 대기를 뚫고 올라가며 싸우는 손실을 더한 값입니다. 지구에서는 약 9.4 km/s이며, 더 작고 대기가 없는 천체는 훨씬 적게 요구합니다."
 }

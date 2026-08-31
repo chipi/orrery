@@ -2107,5 +2107,12 @@
   "lab_goal_lom_airbags": "La méthode économique utilisée par les premiers rovers pour atterrir : rebondir à l'intérieur d'airbags gonflés. Mais ils ne supportent que des chocs jusqu'à environ 25 m/s. Votre parachute vous laisse plus rapide que cela, donc les airbags seuls ne suffiront pas non plus ; Pathfinder a tiré de petits rétrofusées d'abord pour ralentir avant de rebondir.",
   "lab_f_descent_twr": "Poussée spécifique de l'alunisseur",
   "lab_f_descent_err_twr": "La poussée spécifique doit dépasser 1 — au-dessous, vous ne pouvez pas ralentir la chute, vous vous écrasez.",
-  "lab_assume_constant_thrust": "Freinage vertical à poussée constante"
+  "lab_assume_constant_thrust": "Freinage vertical à poussée constante",
+  "lab_assume_ascent_losses_input": "Pertes de gravité + traînée en ascension entrées manuellement (dépendantes de la trajectoire)",
+  "lab_f_dvorbit_altitude": "Altitude orbitale",
+  "lab_f_dvorbit_body": "Monde",
+  "lab_f_dvorbit_losses": "Pertes en ascension",
+  "lab_f_dvorbit_required": "Δv pour atteindre l'orbite",
+  "lab_f_dvorbit_title": "Δv vers l'orbite",
+  "lab_goal_lar_required": "Combien de Δv l'orbite demande-t-elle réellement ? Ce n'est pas un chiffre magique — c'est la vitesse orbitale que vous devez atteindre (définie par la gravité et la taille de ce monde) plus les pertes en combattant la gravité et l'air. Sur Terre environ 9,4 km/s ; un monde plus petit et sans atmosphère en demande bien moins."
 }

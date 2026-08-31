@@ -58,14 +58,15 @@ describe('goal registry · coverage + wire integrity', () => {
         expect(GOALS.has(p), `${g.id}: unknown prereq goal ${p}`).toBe(true);
   });
 
-  it('the M1 launch goal wires BOTH Tsiolkovsky Δv AND the launch-site boost into the verdict', () => {
+  it('the M1 launch goal wires Tsiolkovsky Δv, the launch-site boost, AND the derived Δv-to-orbit into the verdict', () => {
     const g = GOALS.get('launch-a-rocket')!;
     const verdict = g.path.find((s) => s.formulaId === 'reach-orbit-verdict')!;
-    expect(verdict.wiresFrom).toHaveLength(2);
+    expect(verdict.wiresFrom).toHaveLength(3);
     expect(verdict.wiresFrom).toEqual(
       expect.arrayContaining([
         expect.objectContaining({ output: 'deltaV', toInput: 'capacityKms' }),
         expect.objectContaining({ output: 'boost', toInput: 'boostKms' }),
+        expect.objectContaining({ output: 'required', toInput: 'requiredKms' }),
       ]),
     );
   });

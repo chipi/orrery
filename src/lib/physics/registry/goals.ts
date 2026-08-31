@@ -31,14 +31,17 @@ export const launchARocket: Goal = {
     { formulaId: 'twr', narrativeKey: 'lab.goal.lar.twr' },
     { formulaId: 'tsiolkovsky', narrativeKey: 'lab.goal.lar.tsiolkovsky' },
     { formulaId: 'launch-site', narrativeKey: 'lab.goal.lar.launch-site' },
+    { formulaId: 'dv-to-orbit', narrativeKey: 'lab.goal.lar.required' },
     {
       formulaId: 'reach-orbit-verdict',
       narrativeKey: 'lab.goal.lar.verdict',
-      // The payoff wires BOTH the rocket's Δv (Tsiolkovsky) and the launch-site
-      // head-start into the verdict — a better site visibly buys margin.
+      // The payoff wires the rocket's Δv (Tsiolkovsky), the launch-site head-start,
+      // AND the DERIVED Δv-to-orbit (no magic 9.4) — a better site buys margin, and
+      // switching worlds updates the target honestly.
       wiresFrom: [
         { fromStep: 4, output: 'deltaV', toInput: 'capacityKms' },
         { fromStep: 5, output: 'boost', toInput: 'boostKms' },
+        { fromStep: 6, output: 'required', toInput: 'requiredKms' },
       ],
     },
   ],

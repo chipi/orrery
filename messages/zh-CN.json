@@ -2107,5 +2107,12 @@
   "lab_goal_lom_airbags": "早期火星车着陆的廉价方式：裹在充气气囊里弹跳落地。但气囊只能承受一定强度的撞击——约 25 m/s。你的降落伞留给你的速度高于此值，所以单靠气囊也不行；旅居者号在弹跳前先点燃小型反推火箭来减速。",
   "lab_f_descent_twr": "着陆器推重比",
   "lab_f_descent_err_twr": "推重比必须大于 1——低于 1 则无法减缓下降，将会坠毁。",
-  "lab_assume_constant_thrust": "恒推力垂直制动点火"
+  "lab_assume_constant_thrust": "恒推力垂直制动点火",
+  "lab_assume_ascent_losses_input": "上升段重力+阻力损耗需手动输入（取决于轨迹）",
+  "lab_f_dvorbit_altitude": "轨道高度",
+  "lab_f_dvorbit_body": "天体",
+  "lab_f_dvorbit_losses": "上升损耗",
+  "lab_f_dvorbit_required": "入轨所需Δv",
+  "lab_f_dvorbit_title": "入轨Δv",
+  "lab_goal_lar_required": "入轨实际需要多少Δv？这并非魔法数字——它是你必须达到的轨道速度（由该天体的引力和大小决定），再加上对抗引力和空气爬升所付出的损耗。地球约为9.4 km/s；更小、无大气的天体所需则要少得多。"
 }

@@ -2107,5 +2107,12 @@
   "lab_goal_lom_airbags": "Die billige Art, wie frühe Rover landeten: Sprunglandung in aufgeblasenen Airbags. Aber sie halten nur bis etwa 25 m/s aus. Dein Fallschirm lässt dich schneller ankommen, also reichen Airbags allein auch nicht — Pathfinder schoss zuerst kleine Bremsraketen ab, um vor dem Aufprall langsamer zu werden.",
   "lab_f_descent_twr": "Schub-Gewichts-Verhältnis des Landers",
   "lab_f_descent_err_twr": "Schub-Gewichts-Verhältnis muss 1 übersteigen — unterschreitet es diesen Wert, können Sie den Fall nicht bremsen, Sie stürzen ab.",
-  "lab_assume_constant_thrust": "Konstanter Schub – vertikales Bremsmanöver"
+  "lab_assume_constant_thrust": "Konstanter Schub – vertikales Bremsmanöver",
+  "lab_assume_ascent_losses_input": "Aufstiegs-Gravitations- und Widerstandsverluste manuell eingegeben (bahnabhängig)",
+  "lab_f_dvorbit_altitude": "Bahnhöhe",
+  "lab_f_dvorbit_body": "Himmelskörper",
+  "lab_f_dvorbit_losses": "Aufstiegsverluste",
+  "lab_f_dvorbit_required": "Δv zur Erreichung der Umlaufbahn",
+  "lab_f_dvorbit_title": "Δv zur Umlaufbahn",
+  "lab_goal_lar_required": "Wie viel Δv verlangt die Umlaufbahn tatsächlich? Keine Geheimzahl — es ist die Orbitalgeschwindigkeit, die du erreichen musst (bestimmt durch Gravitation und Größe dieses Himmelskörpers) plus die Verluste beim Kampf gegen Gravitation und Atmosphäre. Auf der Erde etwa 9,4 km/s; ein kleinerer, luftloser Himmelskörper verlangt deutlich weniger."
 }

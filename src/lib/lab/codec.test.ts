@@ -51,8 +51,8 @@ describe('codec · round-trip', () => {
     const back = decodeNotebook(encodeNotebook(cells), REGISTRY)!;
     const a = recomputeNotebook(cells, REGISTRY);
     const b = recomputeNotebook(back, REGISTRY);
-    const av = a[6]; // the reach-orbit verdict (M1's last rung)
-    const bv = b[6];
+    const av = a[7]; // the reach-orbit verdict (M1's last rung)
+    const bv = b[7];
     if (av.status !== 'ok' && av.status !== 'fail') throw new Error();
     if (bv.status !== 'ok' && bv.status !== 'fail') throw new Error();
     expect(bv.resolvedInputs.capacityKms).toBe(av.resolvedInputs.capacityKms);
@@ -161,21 +161,23 @@ describe('codec · .orrlab round-trip (id wires ↔ index wires)', () => {
     expect(doc.title).toBe('My launch');
     // the verdict card (index 6) serialises its wires as ID references (fromCard),
     // not indices — first wire is capacity ← Tsiolkovsky (s4).
-    const verdict = doc.cards[6];
+    const verdict = doc.cards[7];
     expect(verdict.wires?.[0].fromCard).toBe('s4');
 
     const back = decodeOrrlab(doc, REGISTRY);
     expect(back).not.toBeNull();
     expect(back!.title).toBe('My launch');
-    expect(back!.cells).toHaveLength(7);
+    expect(back!.cells).toHaveLength(8);
     // id wire 's4' rehydrated back to index 4
-    expect(back!.cells[6].wires?.[0]).toEqual({
+    expect(back!.cells[7].wires?.[0]).toEqual({
       fromIndex: 4,
       output: 'deltaV',
       toInput: 'capacityKms',
     });
     const states = recomputeNotebook(back!.cells, REGISTRY);
-    expect(states[6].status === 'ok' || states[6].status === 'fail').toBe(true);
+    // the verdict rung (index 7) reached an honest terminal state (ok or fail — a
+    // negative margin is a valid, honest verdict, not a compute failure).
+    expect(states[7].status === 'ok' || states[7].status === 'fail').toBe(true);
   });
 
   it('the file carries per-card note (kept OUT of the URL codec)', () => {

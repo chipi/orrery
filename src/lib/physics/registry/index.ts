@@ -900,19 +900,11 @@ export const reachOrbitVerdict: FormulaDef<{
   compute: ({ capacityKms, boostKms, requiredKms }) => {
     const margin = capacityKms + boostKms - requiredKms;
     const base = {
-      assumptions: [
-        'lab.assume.ideal-no-losses',
-        'lab.assume.earth-leo-required',
-        'lab.assume.prograde-launch',
-      ],
+      assumptions: ['lab.assume.ideal-no-losses', 'lab.assume.prograde-launch'],
       figure: {
         kind: 'dv-waterfall' as const,
         provenance: { fidelity: 'computed' as const, module: 'ascent/reach-orbit' },
-        assumptions: [
-          'lab.assume.ideal-no-losses',
-          'lab.assume.earth-leo-required',
-          'lab.assume.prograde-launch',
-        ],
+        assumptions: ['lab.assume.ideal-no-losses', 'lab.assume.prograde-launch'],
         segments: [
           { labelKey: 'lab.f.dvm.capacity', dv: capacityKms, kind: 'gain' as const },
           { labelKey: 'lab.f.reach-orbit.boost', dv: boostKms, kind: 'gain' as const },
@@ -1475,6 +1467,86 @@ export const retroDescent: FormulaDef<{ terminalMs: number; safeMs: number }> = 
   },
 };
 
+/**
+ * Δv to orbit (M1, body-parametric) — the required Δv is DERIVED, not the magic 9.4:
+ * the orbital speed you must reach (from the body's gravity + radius) plus the ascent
+ * losses (gravity + drag). On Earth ≈ 7.8 + 1.6 = 9.4; the Moon needs far less, and an
+ * airless world has almost no drag loss. This is what the launch verdict compares
+ * against — so switching worlds updates the target honestly (retrospective #2).
+ */
+export const dvToOrbit: FormulaDef<{ body: string; altitudeKm: number; lossesKms: number }> = {
+  id: 'dv-to-orbit',
+  titleKey: 'lab.f.dvorbit.title',
+  domain: 'ascent',
+  tier: 5,
+  prereqs: ['orbital-velocity'],
+  latex: 'v_{\\text{req}} = v_{\\text{orbit}} + v_{\\text{loss}}',
+  inputs: [
+    {
+      key: 'body',
+      labelKey: 'lab.f.dvorbit.body',
+      units: '',
+      kind: 'body',
+      default: 'earth',
+      bodyIds: [...ORBIT_BODY_IDS],
+    },
+    {
+      key: 'altitudeKm',
+      labelKey: 'lab.f.dvorbit.altitude',
+      units: 'km',
+      kind: 'number',
+      default: 200,
+      min: 100,
+      max: 2000,
+    },
+    {
+      key: 'lossesKms',
+      labelKey: 'lab.f.dvorbit.losses',
+      units: 'km/s',
+      kind: 'number',
+      default: 1.6,
+      min: 0,
+      max: 3,
+    },
+  ],
+  outputs: [{ key: 'required', labelKey: 'lab.f.dvorbit.required', units: 'km/s' }],
+  compute: ({ body, altitudeKm, lossesKms }) => {
+    const loc = locationModel(body);
+    if (!loc) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions: ['lab.assume.point-mass'],
+      } satisfies FormulaResult;
+    }
+    if (!Number.isFinite(altitudeKm) || !Number.isFinite(lossesKms) || lossesKms < 0) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions: ['lab.assume.point-mass'],
+      } satisfies FormulaResult;
+    }
+    const vOrbit = circularVelocityKms(loc.rKm + altitudeKm, loc.muKm3s2);
+    const required = vOrbit + lossesKms;
+    return {
+      values: { required: { value: required, units: 'km/s' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.point-mass', 'lab.assume.ascent-losses-input'],
+      figure: {
+        kind: 'dv-waterfall',
+        provenance: { fidelity: 'computed', module: 'mechanics/orbits' },
+        assumptions: ['lab.assume.ascent-losses-input'],
+        segments: [
+          { labelKey: 'lab.f.orbvel.vcirc', dv: vOrbit, kind: 'cost' },
+          { labelKey: 'lab.f.dvorbit.losses', dv: lossesKms, kind: 'cost' },
+        ],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
 /** All registered formulas, keyed by id. Add a formula in exactly one place. */
 export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [tsiolkovsky.id, tsiolkovsky],
@@ -1486,6 +1558,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [projectileFormula.id, projectileFormula],
   [deltaVMargin.id, deltaVMargin],
   [launchSite.id, launchSite],
+  [dvToOrbit.id, dvToOrbit],
   [reachOrbitVerdict.id, reachOrbitVerdict],
   [orbitalVelocity.id, orbitalVelocity],
   [visVivaFormula.id, visVivaFormula],

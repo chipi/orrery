@@ -22,6 +22,10 @@
     MARS,
     GRID,
     GRID_STEP,
+    AXIS_TICK,
+    AXIS_GRIDLINE,
+    niceTicks,
+    fmtTick,
   } from './figure-style';
 
   type Props = {
@@ -223,6 +227,19 @@
       <line x1="0" y1="0" x2={GRID_STEP} y2="0" stroke={GRID} stroke-width="1" />
       <line x1="0" y1="0" x2="0" y2={GRID_STEP} stroke={GRID} stroke-width="1" />
     </pattern>
+    <!-- Curve chrome (v0.9 lift): a soft glow for data strokes/marks + a fade for the
+         area under the curve, so a plotted line reads as lit signal, not a flat stroke. -->
+    <filter id="fig-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <linearGradient id="fig-area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(78,205,196,0.22)" />
+      <stop offset="100%" stop-color="rgba(78,205,196,0)" />
+    </linearGradient>
   </defs>
   <rect width={W} height={H} fill="url(#fig-bg)" />
   <rect width={W} height={H} fill="url(#fig-benchglow)" />
@@ -234,6 +251,42 @@
     {@const xSc = figure.x.scale}
     {@const ySc = figure.y.scale}
     {@const fs = fidelityStyle(figure.provenance.fidelity)}
+    {@const xTicks = niceTicks(ext.xMin, ext.xMax, xSc)}
+    {@const yTicks = niceTicks(ext.yMin, ext.yMax, ySc)}
+
+    <!-- Data-aligned gridlines (one per tick value) — sit under the axes + series -->
+    {#each xTicks as tx (tx)}
+      {@const px = mapX(tx, ext.xMin, ext.xMax, xSc)}
+      {#if px >= PAD.left - 0.5 && px <= PAD.left + plotW + 0.5}
+        <line
+          x1={px}
+          y1={PAD.top}
+          x2={px}
+          y2={PAD.top + plotH}
+          stroke={AXIS_GRIDLINE}
+          stroke-width="1"
+        />
+        <line x1={px} y1={PAD.top + plotH} x2={px} y2={PAD.top + plotH + 4} stroke={AXIS_TICK} />
+        <text x={px} y={PAD.top + plotH + 15} class="tick-label" text-anchor="middle"
+          >{fmtTick(tx)}</text
+        >
+      {/if}
+    {/each}
+    {#each yTicks as ty (ty)}
+      {@const py = mapY(ty, ext.yMin, ext.yMax, ySc)}
+      {#if py >= PAD.top - 0.5 && py <= PAD.top + plotH + 0.5}
+        <line
+          x1={PAD.left}
+          y1={py}
+          x2={PAD.left + plotW}
+          y2={py}
+          stroke={AXIS_GRIDLINE}
+          stroke-width="1"
+        />
+        <line x1={PAD.left - 4} y1={py} x2={PAD.left} y2={py} stroke={AXIS_TICK} />
+        <text x={PAD.left - 7} y={py + 3} class="tick-label" text-anchor="end">{fmtTick(ty)}</text>
+      {/if}
+    {/each}
 
     <!-- Axes -->
     <!-- x-axis -->
@@ -282,6 +335,19 @@
         ySc,
       )}
       {#if pts}
+        <!-- Area under the first (primary) computed series — a lit fade to the baseline,
+             so the curve reads as signal. Skipped for dashed/dotted register lines. -->
+        {#if si === 0 && fs.dasharray === 'none' && series.points.length > 1}
+          {@const fx = mapX(series.points[0].x, ext.xMin, ext.xMax, xSc).toFixed(2)}
+          {@const lx = mapX(
+            series.points[series.points.length - 1].x,
+            ext.xMin,
+            ext.xMax,
+            xSc,
+          ).toFixed(2)}
+          {@const base = (PAD.top + plotH).toFixed(2)}
+          <polygon points={`${pts} ${lx},${base} ${fx},${base}`} fill="url(#fig-area)" />
+        {/if}
         <polyline
           points={pts}
           fill="none"
@@ -290,6 +356,7 @@
           stroke-dasharray={fs.dasharray === 'none' ? undefined : fs.dasharray}
           opacity={fs.opacity}
           class={fs.registerClass}
+          filter="url(#fig-glow)"
         />
         {#if series.labelKey}
           <!-- Series label at last point -->
@@ -521,6 +588,12 @@
     font-family: 'Space Mono', monospace;
     font-size: 8px;
     fill: rgba(78, 205, 196, 0.8);
+  }
+
+  .tick-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 7.5px;
+    fill: rgba(78, 205, 196, 0.55);
   }
 
   .mark-label {

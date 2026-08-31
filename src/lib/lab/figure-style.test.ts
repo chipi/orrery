@@ -50,3 +50,44 @@ describe('fidelityStyle register golden-master', () => {
     expect(sr.registerClass).toBe('fidelity-replayed');
   });
 });
+
+import { niceTicks, fmtTick } from './figure-style';
+
+describe('niceTicks · axis tick generation', () => {
+  it('linear: round steps spanning the range', () => {
+    const t = niceTicks(0, 100, 'linear');
+    expect(t[0]).toBe(0);
+    expect(t.at(-1)).toBeLessThanOrEqual(100);
+    // steps are equal + round
+    const step = t[1] - t[0];
+    expect([1, 2, 5, 10, 20, 25, 50].includes(step)).toBe(true);
+    expect(t.length).toBeGreaterThanOrEqual(3);
+  });
+
+  it('linear: handles a valley range crossing zero (frozen-orbit drift)', () => {
+    const t = niceTicks(-0.6, 0.9, 'linear');
+    expect(t.some((v) => v < 0)).toBe(true);
+    expect(t.some((v) => v > 0)).toBe(true);
+  });
+
+  it('log: one tick per decade', () => {
+    expect(niceTicks(1, 1000, 'log')).toEqual([1, 10, 100, 1000]);
+  });
+
+  it('degenerate + non-finite ranges do not throw', () => {
+    expect(niceTicks(5, 5, 'linear')).toEqual([5]);
+    expect(niceTicks(Infinity, NaN, 'linear')).toEqual([]);
+  });
+});
+
+describe('fmtTick · compact tick labels', () => {
+  it('drops float noise and keeps integers clean', () => {
+    expect(fmtTick(0)).toBe('0');
+    expect(fmtTick(42)).toBe('42');
+    expect(fmtTick(0.30000000000000004)).toBe('0.3');
+  });
+  it('uses an exponent only for extremes (≥ 1e5)', () => {
+    expect(fmtTick(35786)).toBe('35786'); // < 1e5 → stays plain
+    expect(fmtTick(120000)).toContain('e'); // ≥ 1e5 → exponent
+  });
+});

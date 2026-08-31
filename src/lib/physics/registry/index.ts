@@ -27,6 +27,7 @@ import { locationModel, rotationVelocityKms } from '../util/location';
 import { helioModel, synodicPeriodS, HELIO_ORBIT_AU } from '../util/heliocentric';
 import { moonPhase } from '../ephemeris/moon-observer';
 import { geocentricPlanet, geocentricSun, type PlanetId } from '../ephemeris/planets';
+import { skyPosition } from '../ephemeris';
 import { julianDay } from '../ephemeris/time';
 import { MOON_ORBIT_RADIUS_KM, MU_SUN_KM3_S2, AU_TO_KM, G0, R_EARTH_KM } from '../util/constants';
 
@@ -3128,6 +3129,14 @@ export const visibilityWindow: FormulaDef<{ altitudeKm: number }> = {
 
 /** Planets a naked-eye observer chases (skip the ice giants — telescope-only). */
 const OBSERVE_PLANETS = ['mercury', 'venus', 'mars', 'jupiter', 'saturn'] as const;
+/** Orbital eccentricities (J2000) — Mercury's 0.21 is why its elongations swing so widely. */
+const PLANET_ECCENTRICITY: Record<string, number> = {
+  mercury: 0.2056,
+  venus: 0.0068,
+  mars: 0.0934,
+  jupiter: 0.0489,
+  saturn: 0.0565,
+};
 /** Wrap a longitude difference to (−180, 180]. */
 const norm180 = (deg: number): number => ((((deg + 180) % 360) + 360) % 360) - 180;
 
@@ -3217,7 +3226,7 @@ export const maxElongation: FormulaDef<{ planet: string }> = {
   domain: 'ephemeris',
   tier: 3,
   prereqs: ['planet-elongation'],
-  latex: '\\varepsilon_{\\max} = \\arcsin(a/a_\\oplus)\\ \\ (a<1)',
+  latex: '\\varepsilon_{\\max} = \\arcsin\\!\\big(a(1+e)\\big)\\ \\ (a<1)',
   inputs: [
     {
       key: 'planet',
@@ -3228,7 +3237,10 @@ export const maxElongation: FormulaDef<{ planet: string }> = {
       enumValues: OBSERVE_PLANETS.map((pl) => ({ value: pl, labelKey: `lab.body.${pl}` })),
     },
   ],
-  outputs: [{ key: 'maxElongationDeg', labelKey: 'lab.f.maxelong.max', units: 'deg' }],
+  outputs: [
+    { key: 'greatestElongationDeg', labelKey: 'lab.f.maxelong.greatest', units: 'deg' },
+    { key: 'leastElongationDeg', labelKey: 'lab.f.maxelong.least', units: 'deg' },
+  ],
   compute: ({ planet }) => {
     const a = HELIO_ORBIT_AU[planet];
     if (!a) {
@@ -3236,30 +3248,203 @@ export const maxElongation: FormulaDef<{ planet: string }> = {
       return {
         values,
         status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
-        assumptions: ['lab.assume.circular-orbits'],
+        assumptions: ['lab.assume.elliptical-orbit'],
       } satisfies FormulaResult;
     }
-    const maxE = a < 1 ? (Math.asin(a) * 180) / Math.PI : 180;
+    const e = PLANET_ECCENTRICITY[planet] ?? 0;
+    // An inner planet's greatest elongation happens at APHELION (a(1+e)), the least at
+    // perihelion (a(1−e)) — Mercury's e=0.21 spreads it 18°→28°, not one arcsin(a). An
+    // outer planet reaches opposition either way (180°).
+    const asinDeg = (x: number): number => (Math.asin(Math.min(1, x)) * 180) / Math.PI;
+    const greatest = a < 1 ? asinDeg(a * (1 + e)) : 180;
+    const least = a < 1 ? asinDeg(a * (1 - e)) : 180;
     const points: Vec2[] = [];
-    for (let r = 0.1; r <= 5.001; r += 0.1) {
-      points.push({ x: r, y: r < 1 ? (Math.asin(r) * 180) / Math.PI : 180 });
-    }
+    for (let r = 0.1; r <= 5.001; r += 0.1) points.push({ x: r, y: r < 1 ? asinDeg(r) : 180 });
+    const marks =
+      a < 1
+        ? [
+            {
+              at: { x: a * (1 + e), y: greatest },
+              labelKey: 'lab.mark.aphelion',
+              kind: 'point' as const,
+            },
+            {
+              at: { x: a * (1 - e), y: least },
+              labelKey: 'lab.mark.perihelion',
+              kind: 'point' as const,
+            },
+          ]
+        : [{ at: { x: a, y: 180 }, labelKey: 'lab.mark.opposition', kind: 'point' as const }];
     return {
-      values: { maxElongationDeg: { value: maxE, units: 'deg' } },
+      values: {
+        greatestElongationDeg: { value: greatest, units: 'deg' },
+        leastElongationDeg: { value: least, units: 'deg' },
+      },
       status: { ok: true },
-      assumptions: ['lab.assume.circular-orbits', 'lab.assume.coplanar'],
+      assumptions: ['lab.assume.elliptical-orbit', 'lab.assume.coplanar'],
       figure: {
         kind: 'curve',
         provenance: { fidelity: 'computed', module: 'ephemeris/planets' },
-        assumptions: ['lab.assume.circular-orbits'],
+        assumptions: ['lab.assume.elliptical-orbit'],
         x: { labelKey: 'lab.axis.orbit-radius', units: 'AU' },
         y: { labelKey: 'lab.axis.max-elongation', units: 'deg' },
         series: [{ points }],
-        marks: [{ at: { x: a, y: maxE }, labelKey: 'lab.mark.you-are-here', kind: 'point' }],
+        marks,
       },
     } satisfies FormulaResult;
   },
 };
+
+/**
+ * Retrograde motion (G7 rung 3) — the phenomenon that broke the geocentric model, falling
+ * straight out of the geometry above. Track a planet's apparent longitude in our sky and most
+ * of the time it drifts eastward (prograde, dλ/dt > 0). But for a few months around opposition
+ * an outer planet appears to REVERSE, looping westward (dλ/dt < 0) — not because it slows, but
+ * because faster Earth OVERTAKES it on the inside track. Inner planets do the same near inferior
+ * conjunction. The rate crossing zero marks the "stationary" points that bracket the loop.
+ */
+export const retrogradeMotion: FormulaDef<{ planet: string; dateIso: string }> = {
+  id: 'retrograde-motion',
+  titleKey: 'lab.f.retro.title',
+  domain: 'ephemeris',
+  tier: 3,
+  prereqs: ['planet-elongation'],
+  latex: '\\dot\\lambda < 0 \\Rightarrow \\text{retrograde}',
+  inputs: [
+    {
+      key: 'planet',
+      labelKey: 'lab.f.retro.planet',
+      units: '',
+      kind: 'enum',
+      default: 'mars',
+      enumValues: OBSERVE_PLANETS.map((pl) => ({ value: pl, labelKey: `lab.body.${pl}` })),
+    },
+    {
+      key: 'dateIso',
+      labelKey: 'lab.f.retro.date',
+      units: '',
+      kind: 'date',
+      default: '2026-08-30',
+    },
+  ],
+  outputs: [{ key: 'apparentRateDegPerDay', labelKey: 'lab.f.retro.rate', units: 'deg' }],
+  compute: ({ planet, dateIso }) => {
+    const d = new Date(String(dateIso));
+    if (!HELIO_ORBIT_AU[planet] || Number.isNaN(d.getTime())) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.moonphase.err-date' },
+        assumptions: ['lab.assume.ecliptic-longitude'],
+      } satisfies FormulaResult;
+    }
+    const id = planet as Exclude<PlanetId, 'earth'>;
+    const jd0 = julianDay(d);
+    // Apparent geocentric longitude rate (°/day) via a central difference; norm180 the step so a
+    // 0°/360° wrap doesn't fake a huge rate.
+    const rateAt = (j: number): number => {
+      const before = geocentricPlanet(id, j - 1);
+      const after = geocentricPlanet(id, j + 1);
+      const lamB = (Math.atan2(before.y, before.x) * 180) / Math.PI;
+      const lamA = (Math.atan2(after.y, after.x) * 180) / Math.PI;
+      return norm180(lamA - lamB) / 2;
+    };
+    const rate = rateAt(jd0);
+    const points: Vec2[] = [];
+    for (let day = 0; day <= 780; day += 6) points.push({ x: day, y: rateAt(jd0 + day) });
+    return {
+      values: { apparentRateDegPerDay: { value: rate, units: 'deg' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.ecliptic-longitude', 'lab.assume.point-mass'],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'ephemeris/planets' },
+        assumptions: ['lab.assume.ecliptic-longitude'],
+        x: { labelKey: 'lab.axis.days-ahead', units: 'day' },
+        y: { labelKey: 'lab.axis.apparent-rate', units: 'deg' },
+        series: [{ points }],
+        marks: [{ at: { x: 0, y: rate }, labelKey: 'lab.mark.today', kind: 'point' }],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Sky altitude (G7 rung 4) — the practical payoff: from YOUR latitude, how high does a planet
+ * climb? At its best (crossing the meridian) a body reaches altitude 90° − |latitude − dec|,
+ * where dec is its declination that night. A planet whose declination matches your latitude
+ * passes overhead; one far to the other side barely clears the horizon (or never rises, a
+ * negative answer). It's why the same planet is a glorious high target from one hemisphere and
+ * a low, murky one from the other.
+ */
+export const planetAltitude: FormulaDef<{ planet: string; dateIso: string; latitudeDeg: number }> =
+  {
+    id: 'planet-altitude',
+    titleKey: 'lab.f.skyalt.title',
+    domain: 'ephemeris',
+    tier: 3,
+    prereqs: ['planet-elongation'],
+    latex: 'h_{\\max} = 90° - |\\varphi - \\delta|',
+    inputs: [
+      {
+        key: 'planet',
+        labelKey: 'lab.f.skyalt.planet',
+        units: '',
+        kind: 'enum',
+        default: 'jupiter',
+        enumValues: OBSERVE_PLANETS.map((pl) => ({ value: pl, labelKey: `lab.body.${pl}` })),
+      },
+      {
+        key: 'dateIso',
+        labelKey: 'lab.f.skyalt.date',
+        units: '',
+        kind: 'date',
+        default: '2026-08-30',
+      },
+      {
+        key: 'latitudeDeg',
+        labelKey: 'lab.f.skyalt.latitude',
+        units: 'deg',
+        kind: 'number',
+        default: 40,
+        min: -90,
+        max: 90,
+      },
+    ],
+    outputs: [{ key: 'culminationAltitudeDeg', labelKey: 'lab.f.skyalt.altitude', units: 'deg' }],
+    compute: ({ planet, dateIso, latitudeDeg }) => {
+      const d = new Date(String(dateIso));
+      if (!HELIO_ORBIT_AU[planet] || Number.isNaN(d.getTime()) || !Number.isFinite(latitudeDeg)) {
+        const values: Record<string, Quantity> = {};
+        return {
+          values,
+          status: { ok: false, reasonKey: 'lab.f.moonphase.err-date' },
+          assumptions: ['lab.assume.transit-altitude'],
+        } satisfies FormulaResult;
+      }
+      const dec = skyPosition(planet as Exclude<PlanetId, 'earth'>, d, 0, 0).decDeg;
+      const alt = 90 - Math.abs(latitudeDeg - dec);
+      const points: Vec2[] = [];
+      for (let lat = -90; lat <= 90.001; lat += 5)
+        points.push({ x: lat, y: 90 - Math.abs(lat - dec) });
+      return {
+        values: { culminationAltitudeDeg: { value: alt, units: 'deg' } },
+        status: { ok: true },
+        assumptions: ['lab.assume.transit-altitude', 'lab.assume.point-observer'],
+        figure: {
+          kind: 'curve',
+          provenance: { fidelity: 'computed', module: 'ephemeris/planets' },
+          assumptions: ['lab.assume.transit-altitude'],
+          x: { labelKey: 'lab.axis.latitude', units: 'deg' },
+          y: { labelKey: 'lab.axis.altitude', units: 'deg' },
+          series: [{ points }],
+          marks: [
+            { at: { x: latitudeDeg, y: alt }, labelKey: 'lab.mark.you-are-here', kind: 'point' },
+          ],
+        },
+      } satisfies FormulaResult;
+    },
+  };
 
 /** All registered formulas, keyed by id. Add a formula in exactly one place. */
 export const REGISTRY: Registry = new Map<string, FormulaDef>([
@@ -3305,6 +3490,8 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [visibilityWindow.id, visibilityWindow],
   [planetElongation.id, planetElongation],
   [maxElongation.id, maxElongation],
+  [retrogradeMotion.id, retrogradeMotion],
+  [planetAltitude.id, planetAltitude],
 ]);
 
 /** Default input record for a formula (drives a first compute / the invariant tests). */

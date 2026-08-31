@@ -580,6 +580,8 @@ export const observeTheSky: Goal = {
   path: [
     { formulaId: 'planet-elongation', narrativeKey: 'lab.goal.g7.elong' },
     { formulaId: 'max-elongation', narrativeKey: 'lab.goal.g7.max' },
+    { formulaId: 'retrograde-motion', narrativeKey: 'lab.goal.g7.retro' },
+    { formulaId: 'planet-altitude', narrativeKey: 'lab.goal.g7.alt' },
   ],
   connection: {
     whyKey: 'lab.conn.g7.why',

@@ -542,23 +542,28 @@ describe('G9 catch-the-iss · ground track + visibility', () => {
 describe('G7 observe-the-sky · elongation + the inner/outer split', () => {
   const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
 
-  it('max elongation: Venus ~46°, Mercury ~23°, an outer planet reaches opposition (180°)', () => {
+  it('greatest elongation is eccentric-honest: Mercury swings 18°→28°, matching rung 1; Venus ~46.7°; outer = 180°', () => {
+    const merc = compute('max-elongation', { planet: 'mercury' });
+    // The FIX: Mercury's greatest (aphelion) is ~28°, not a flat arcsin(a)=22.8° — matches the
+    // real ephemeris peak rung 1 shows, and the least (perihelion) is ~18°.
+    expect(merc.values.greatestElongationDeg.value).toBeCloseTo(27.8, 0);
+    expect(merc.values.leastElongationDeg.value).toBeCloseTo(17.9, 0);
     expect(
-      compute('max-elongation', { planet: 'venus' }).values.maxElongationDeg.value,
-    ).toBeCloseTo(46.3, 0);
-    expect(
-      compute('max-elongation', { planet: 'mercury' }).values.maxElongationDeg.value,
-    ).toBeCloseTo(22.8, 0);
-    expect(compute('max-elongation', { planet: 'mars' }).values.maxElongationDeg.value).toBe(180);
+      compute('max-elongation', { planet: 'venus' }).values.greatestElongationDeg.value,
+    ).toBeCloseTo(46.7, 0);
+    expect(compute('max-elongation', { planet: 'mars' }).values.greatestElongationDeg.value).toBe(
+      180,
+    );
   });
 
-  it('the real ephemeris elongation for Venus never exceeds its ~46° leash (honesty check)', () => {
-    const cap = compute('max-elongation', { planet: 'venus' }).values.maxElongationDeg.value;
+  it('the real ephemeris elongation for Mercury never exceeds its greatest (honesty check — the bug that was)', () => {
+    const cap = compute('max-elongation', { planet: 'mercury' }).values.greatestElongationDeg.value;
     for (const dateIso of ['2026-01-15', '2026-06-01', '2027-03-20', '2027-11-09']) {
-      const r = compute('planet-elongation', { planet: 'venus', dateIso });
+      const r = compute('planet-elongation', { planet: 'mercury', dateIso });
       expect(r.status.ok).toBe(true);
       expect(Math.abs(r.values.elongationDeg.value)).toBeLessThanOrEqual(cap + 1.5);
     }
+    const vcap = compute('max-elongation', { planet: 'venus' }).values.greatestElongationDeg.value;
     // Mars, being outer, is free to swing well past Venus's cap at some point in a 2-year span.
     let marsMax = 0;
     for (let m = 0; m < 24; m++) {
@@ -570,12 +575,53 @@ describe('G7 observe-the-sky · elongation + the inner/outer split', () => {
         ),
       );
     }
-    expect(marsMax).toBeGreaterThan(cap);
+    expect(marsMax).toBeGreaterThan(vcap);
   });
 
   it('an invalid date fails honest', () => {
     expect(compute('planet-elongation', { planet: 'venus', dateIso: 'not-a-date' }).status.ok).toBe(
       false,
     );
+  });
+
+  it('retrograde motion: Mars really does reverse (rate goes negative) somewhere in a 2-year span', () => {
+    const rates: number[] = [];
+    for (let m = 0; m < 26; m++) {
+      const y = 2026 + Math.floor(m / 12);
+      const iso = `${y}-${String((m % 12) + 1).padStart(2, '0')}-15`;
+      rates.push(
+        compute('retrograde-motion', { planet: 'mars', dateIso: iso }).values.apparentRateDegPerDay
+          .value,
+      );
+    }
+    expect(Math.min(...rates)).toBeLessThan(0); // retrograde happens (looping westward)
+    expect(Math.max(...rates)).toBeGreaterThan(0); // and prograde the rest of the time
+  });
+
+  it('sky altitude: a planet culminates at 90° over an observer at its declination, lower elsewhere', () => {
+    const dec = 20; // pretend
+    // the formula is 90 − |lat − dec|; check the shape, not a specific ephemeris dec.
+    const atDec = compute('planet-altitude', {
+      planet: 'jupiter',
+      dateIso: '2026-08-30',
+      latitudeDeg: 40,
+    });
+    expect(atDec.status.ok).toBe(true);
+    expect(atDec.values.culminationAltitudeDeg.value).toBeLessThanOrEqual(90);
+    // moving your latitude toward the planet's declination maximises altitude (peaks near 90°;
+    // the 5° figure grid gets within ~2.5° of the exact declination).
+    const fig = atDec.figure as { series: { points: { x: number; y: number }[] }[] };
+    expect(Math.max(...fig.series[0].points.map((p) => p.y))).toBeGreaterThan(87);
+    void dec;
+  });
+
+  it('the G7 ladder is 4 rungs: elongation → its eccentric limit → retrograde → altitude', () => {
+    const g = GOALS.get('observe-the-sky')!;
+    expect(g.path.map((s) => s.formulaId)).toEqual([
+      'planet-elongation',
+      'max-elongation',
+      'retrograde-motion',
+      'planet-altitude',
+    ]);
   });
 });

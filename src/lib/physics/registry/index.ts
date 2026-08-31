@@ -24,8 +24,10 @@ import { poweredDescentDvKms } from '../mechanics/descent';
 import { terminalVelocityMs, SURFACE_DENSITY_KGM3 } from '../mechanics/atmosphere';
 import { bodyGravityMs2 } from '../mechanics/bodies';
 import { locationModel, rotationVelocityKms } from '../util/location';
-import { helioModel, synodicPeriodS } from '../util/heliocentric';
+import { helioModel, synodicPeriodS, HELIO_ORBIT_AU } from '../util/heliocentric';
 import { moonPhase } from '../ephemeris/moon-observer';
+import { geocentricPlanet, geocentricSun, type PlanetId } from '../ephemeris/planets';
+import { julianDay } from '../ephemeris/time';
 import { MOON_ORBIT_RADIUS_KM, MU_SUN_KM3_S2, AU_TO_KM, G0, R_EARTH_KM } from '../util/constants';
 
 /** Mean synodic month (new moon → new moon), days — the age scale for G8. */
@@ -3122,6 +3124,143 @@ export const visibilityWindow: FormulaDef<{ altitudeKm: number }> = {
   },
 };
 
+// ─── Family B / G7 "Observe the sky" — planet visibility ─────────────────────
+
+/** Planets a naked-eye observer chases (skip the ice giants — telescope-only). */
+const OBSERVE_PLANETS = ['mercury', 'venus', 'mars', 'jupiter', 'saturn'] as const;
+/** Wrap a longitude difference to (−180, 180]. */
+const norm180 = (deg: number): number => ((((deg + 180) % 360) + 360) % 360) - 180;
+
+/**
+ * Planet elongation (G7 rung 1) — where a planet is relative to the Sun, which is the whole
+ * game in "when can I see it". Elongation ε = λ_planet − λ_Sun (their ecliptic-longitude gap):
+ * near 0° the planet is lost in the glare (conjunction); east of the Sun (ε > 0) it sets after
+ * it in the evening sky; west (ε < 0) it rises before it at dawn; near ±180° an outer planet is
+ * opposite the Sun, up all night (opposition). Real geocentric ephemeris for the chosen date.
+ */
+export const planetElongation: FormulaDef<{ planet: string; dateIso: string }> = {
+  id: 'planet-elongation',
+  titleKey: 'lab.f.elong.title',
+  domain: 'ephemeris',
+  tier: 3,
+  prereqs: [],
+  latex: '\\varepsilon = \\lambda_{\\text{planet}} - \\lambda_\\odot',
+  inputs: [
+    {
+      key: 'planet',
+      labelKey: 'lab.f.elong.planet',
+      units: '',
+      kind: 'enum',
+      default: 'venus',
+      enumValues: OBSERVE_PLANETS.map((pl) => ({ value: pl, labelKey: `lab.body.${pl}` })),
+    },
+    {
+      key: 'dateIso',
+      labelKey: 'lab.f.elong.date',
+      units: '',
+      kind: 'date',
+      default: '2026-08-30',
+    },
+  ],
+  outputs: [{ key: 'elongationDeg', labelKey: 'lab.f.elong.elongation', units: 'deg' }],
+  compute: ({ planet, dateIso }) => {
+    const d = new Date(String(dateIso));
+    if (!HELIO_ORBIT_AU[planet] || Number.isNaN(d.getTime())) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.moonphase.err-date' },
+        assumptions: ['lab.assume.ecliptic-longitude'],
+      } satisfies FormulaResult;
+    }
+    const id = planet as Exclude<PlanetId, 'earth'>;
+    const jd = julianDay(d);
+    const elongAt = (j: number): number => {
+      const p = geocentricPlanet(id, j);
+      const s = geocentricSun(j);
+      const lamP = (Math.atan2(p.y, p.x) * 180) / Math.PI;
+      const lamS = (Math.atan2(s.y, s.x) * 180) / Math.PI;
+      return norm180(lamP - lamS);
+    };
+    const elong = elongAt(jd);
+    // |elongation| over ~780 days — a clean cycle (peaks = best viewing) without the ±180 wrap.
+    const points: Vec2[] = [];
+    for (let day = 0; day <= 780; day += 10)
+      points.push({ x: day, y: Math.abs(elongAt(jd + day)) });
+    return {
+      values: { elongationDeg: { value: elong, units: 'deg' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.ecliptic-longitude', 'lab.assume.point-mass'],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'ephemeris/planets' },
+        assumptions: ['lab.assume.ecliptic-longitude'],
+        x: { labelKey: 'lab.axis.days-ahead', units: 'day' },
+        y: { labelKey: 'lab.axis.elongation', units: 'deg' },
+        series: [{ points }],
+        marks: [{ at: { x: 0, y: Math.abs(elong) }, labelKey: 'lab.mark.today', kind: 'point' }],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Maximum elongation (G7 rung 2) — why Mercury and Venus never stray far from the Sun. A planet
+ * inside Earth's orbit (a < 1 AU) can only reach ε_max = arcsin(a/a⊕): Venus tops out at ~46°,
+ * Mercury at only ~23°, so they are always a morning or evening object, never overhead at
+ * midnight. A planet OUTSIDE Earth's orbit has no such limit — it can swing all the way to 180°,
+ * opposition, and ride the sky all night. That one inequality sorts the naked-eye planets in two.
+ */
+export const maxElongation: FormulaDef<{ planet: string }> = {
+  id: 'max-elongation',
+  titleKey: 'lab.f.maxelong.title',
+  domain: 'ephemeris',
+  tier: 3,
+  prereqs: ['planet-elongation'],
+  latex: '\\varepsilon_{\\max} = \\arcsin(a/a_\\oplus)\\ \\ (a<1)',
+  inputs: [
+    {
+      key: 'planet',
+      labelKey: 'lab.f.maxelong.planet',
+      units: '',
+      kind: 'enum',
+      default: 'venus',
+      enumValues: OBSERVE_PLANETS.map((pl) => ({ value: pl, labelKey: `lab.body.${pl}` })),
+    },
+  ],
+  outputs: [{ key: 'maxElongationDeg', labelKey: 'lab.f.maxelong.max', units: 'deg' }],
+  compute: ({ planet }) => {
+    const a = HELIO_ORBIT_AU[planet];
+    if (!a) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions: ['lab.assume.circular-orbits'],
+      } satisfies FormulaResult;
+    }
+    const maxE = a < 1 ? (Math.asin(a) * 180) / Math.PI : 180;
+    const points: Vec2[] = [];
+    for (let r = 0.1; r <= 5.001; r += 0.1) {
+      points.push({ x: r, y: r < 1 ? (Math.asin(r) * 180) / Math.PI : 180 });
+    }
+    return {
+      values: { maxElongationDeg: { value: maxE, units: 'deg' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.circular-orbits', 'lab.assume.coplanar'],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'ephemeris/planets' },
+        assumptions: ['lab.assume.circular-orbits'],
+        x: { labelKey: 'lab.axis.orbit-radius', units: 'AU' },
+        y: { labelKey: 'lab.axis.max-elongation', units: 'deg' },
+        series: [{ points }],
+        marks: [{ at: { x: a, y: maxE }, labelKey: 'lab.mark.you-are-here', kind: 'point' }],
+      },
+    } satisfies FormulaResult;
+  },
+};
+
 /** All registered formulas, keyed by id. Add a formula in exactly one place. */
 export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [tsiolkovsky.id, tsiolkovsky],
@@ -3164,6 +3303,8 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [signalLatency.id, signalLatency],
   [groundTrackShift.id, groundTrackShift],
   [visibilityWindow.id, visibilityWindow],
+  [planetElongation.id, planetElongation],
+  [maxElongation.id, maxElongation],
 ]);
 
 /** Default input record for a formula (drives a first compute / the invariant tests). */

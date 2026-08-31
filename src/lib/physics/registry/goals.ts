@@ -563,6 +563,36 @@ export const catchTheIss: Goal = {
   },
 };
 
+/**
+ * G7 "Observe the sky" — the last observe goal, and the naked-eye question: where is a planet
+ * relative to the Sun, so when can I see it? Rung 1 reads the real elongation for a date (east =
+ * evening star, west = morning star, ~180° = an outer planet at opposition, up all night); rung 2
+ * is the first-principles reason Mercury and Venus never leave the Sun's side — an inner planet's
+ * elongation caps at arcsin(a/a⊕) (~46° for Venus, ~23° for Mercury), while outer planets swing
+ * all the way to opposition. Sends you to the live sky on /explore and the planets themselves.
+ */
+export const observeTheSky: Goal = {
+  id: 'observe-the-sky',
+  titleKey: 'lab.goal.observe-sky.title',
+  family: 'observe',
+  tier: 2,
+  prereqs: [],
+  path: [
+    { formulaId: 'planet-elongation', narrativeKey: 'lab.goal.g7.elong' },
+    { formulaId: 'max-elongation', narrativeKey: 'lab.goal.g7.max' },
+  ],
+  connection: {
+    whyKey: 'lab.conn.g7.why',
+    hookKey: 'lab.conn.g7.hook',
+    links: [
+      { labelKey: 'lab.conn.g7.explore', href: '/explore' },
+      { labelKey: 'lab.conn.g7.venus', href: '/venus' },
+      { labelKey: 'lab.conn.g7.mars', href: '/mars' },
+      { labelKey: 'lab.conn.g7.worlds', href: '/worlds' },
+    ],
+  },
+};
+
 /** All goals, keyed by id — insertion order drives the Lab picker (the mission arc). */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
@@ -577,6 +607,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [moonPhases.id, moonPhases],
   [chooseAnOrbit.id, chooseAnOrbit],
   [catchTheIss.id, catchTheIss],
+  [observeTheSky.id, observeTheSky],
 ]);
 
 /**

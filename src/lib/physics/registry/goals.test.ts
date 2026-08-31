@@ -533,3 +533,49 @@ describe('G9 catch-the-iss · ground track + visibility', () => {
     expect(track.wiresFrom).toEqual([{ fromStep: 0, output: 'periodMin', toInput: 'periodMin' }]);
   });
 });
+
+/**
+ * Family B / G7 "Observe the sky" — inner planets cap their elongation at arcsin(a) (Venus
+ * ~46°, Mercury ~23°), outer planets reach opposition (180°); and the real ephemeris elongation
+ * for a date must respect that cap.
+ */
+describe('G7 observe-the-sky · elongation + the inner/outer split', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('max elongation: Venus ~46°, Mercury ~23°, an outer planet reaches opposition (180°)', () => {
+    expect(
+      compute('max-elongation', { planet: 'venus' }).values.maxElongationDeg.value,
+    ).toBeCloseTo(46.3, 0);
+    expect(
+      compute('max-elongation', { planet: 'mercury' }).values.maxElongationDeg.value,
+    ).toBeCloseTo(22.8, 0);
+    expect(compute('max-elongation', { planet: 'mars' }).values.maxElongationDeg.value).toBe(180);
+  });
+
+  it('the real ephemeris elongation for Venus never exceeds its ~46° leash (honesty check)', () => {
+    const cap = compute('max-elongation', { planet: 'venus' }).values.maxElongationDeg.value;
+    for (const dateIso of ['2026-01-15', '2026-06-01', '2027-03-20', '2027-11-09']) {
+      const r = compute('planet-elongation', { planet: 'venus', dateIso });
+      expect(r.status.ok).toBe(true);
+      expect(Math.abs(r.values.elongationDeg.value)).toBeLessThanOrEqual(cap + 1.5);
+    }
+    // Mars, being outer, is free to swing well past Venus's cap at some point in a 2-year span.
+    let marsMax = 0;
+    for (let m = 0; m < 24; m++) {
+      const iso = `2026-${String((m % 12) + 1).padStart(2, '0')}-15`;
+      marsMax = Math.max(
+        marsMax,
+        Math.abs(
+          compute('planet-elongation', { planet: 'mars', dateIso: iso }).values.elongationDeg.value,
+        ),
+      );
+    }
+    expect(marsMax).toBeGreaterThan(cap);
+  });
+
+  it('an invalid date fails honest', () => {
+    expect(compute('planet-elongation', { planet: 'venus', dateIso: 'not-a-date' }).status.ok).toBe(
+      false,
+    );
+  });
+});

@@ -25,12 +25,18 @@
  * Still trips on a structural re-leak (a ~20 MB 4K-texture bucket → ~87 MB ≫ 70)
  * and stays well under the iOS 200 MB cellular-OTA cap. Headroom is again thin
  * (~1 MB); re-baseline (or re-prune the outer star shells for mobile) if it trips.
+ *
+ * v0.9.0 re-baseline 70 → 73 MB (a data floor, not a leak): the v0.9 checkpoint
+ * (S1–S3 Physics Lab — /lab route, formula registry, flight maps — plus 6 new
+ * /science articles with hand-drawn diagram webps ×14 locales) took the pruned
+ * build to 71.8 MB. All buckets individually sane (data 28.7 · textures 16.8 ·
+ * _app 8.6 · science 6.3 · diagrams 4.8). ~1.2 MB headroom remains.
  */
 import { statSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 
 const BUILD = path.resolve(process.cwd(), 'build');
-const BUDGET_MB = 70;
+const BUDGET_MB = 73;
 
 if (process.env.MOBILE !== '1') {
   console.log('[size-budget] MOBILE != 1 — skipping (browser build is not budgeted).');

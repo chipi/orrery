@@ -22,6 +22,7 @@
 | **Mercury** (orbital) | 0 (ballistic) | 1.89 | — | ~7.8 g | — | [FAA/NASA][faa] |
 | **Mercury** (suborbital) | 0 (ballistic) | 1.89 | — | ~11 g (Redstone hop) | — | [FAA/NASA][faa] |
 | **Vostok / Voskhod** | 0 (ballistic) | 2.30 | — | ~8 g | — | [FAA/NASA][faa] |
+| **MSL / Curiosity** (Mars) | 0.24 | 4.5 | ~115 | ~12 g (Mars entry) | — | [AAS 13-307][msl-aas], [MSL guidance][msl-ntrs] |
 
 Notes:
 - **Apollo CM BC 313.5 kg·m⁻²** is directly sourced (NASA aero data, ref area 12.0 m², 3.91 m base
@@ -74,6 +75,8 @@ Notes:
 [sz-skip]: https://jdse.bit.edu.cn/sktcxb/cn/article/pdf/preview/10.15982/j.issn.2096-9287.2021.20210016.pdf
 [gatech]: https://repository.gatech.edu/server/api/core/bitstreams/39f02e86-13a2-4066-a79d-2a87df7d2ccd/content
 [dtic-gemini]: https://apps.dtic.mil/sti/tr/pdf/AD0856691.pdf
+[msl-aas]: https://scispace.com/pdf/mars-science-laboratory-entry-descent-and-landing-trajectory-1oqvpyorjg.pdf
+[msl-ntrs]: https://ntrs.nasa.gov/api/citations/20110003649/downloads/20110003649.pdf
 
 ---
 *Orrery · docs/reference/capsule-entry-aerodynamics.md · created 2026-08-31 (ADR-088 Phase 1a)*

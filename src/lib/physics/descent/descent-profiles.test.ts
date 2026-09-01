@@ -115,12 +115,15 @@ describe('every descent profile expands + flies to its honest outcome', () => {
  * [3.5, 6] brackets the model; a ballistic (lift-free) regression would spike ~11 g and fail here.
  */
 describe('lifting re-entries fly the calibrated lifting band (all capsules)', () => {
-  // LEO returns only (~7.8 km/s). apollo8 is a LUNAR return (10.8 km/s skip entry) — a different
-  // regime with a higher corridor g; it's asserted separately in the lunar-return skip test.
+  // EARTH LEO capsule returns only (~7.8 km/s). apollo8 (LUNAR return, 10.8 km/s skip) and the Mars
+  // guided-lifting entries (super-circular, higher corridor g) are different regimes, asserted in
+  // their own tests (the lunar-return skip test / the Mars EDL band).
   const liftingIds = [...DESCENT_MISSION_IDS].filter((id) => {
     if (!existsSync(profilePath(id))) return false;
     const raw = loadRaw(id);
-    return (raw.liftToDragRatio ?? 0) > 0 && raw.entryState.velocityMs < 9000;
+    return (
+      raw.body === 'earth' && (raw.liftToDragRatio ?? 0) > 0 && raw.entryState.velocityMs < 9000
+    );
   });
 
   it('covers every authored lifting capsule (>=10)', () => {
@@ -165,6 +168,27 @@ describe('apollo8 lunar-return skip flight (shipped profile)', () => {
     const s = integrateDescent(expandDescentProfile(loadRaw('apollo7')));
     expect(s.events.some((e) => e.type === 'skip_out')).toBe(false);
   });
+});
+
+/**
+ * Mars guided-lifting entries (#29 Phase 2 · ADR-089). Curiosity/MSL (the first guided Mars entry,
+ * L/D 0.24 sourced), Perseverance, and Tianwen-1 fly a bank-steered LIFTING entry at the real ~15°
+ * inertial FPA — 2-DOF, not the old fixed-γ ballistic. They must land soft, stay in the Mars g band,
+ * and NOT skip (a steep super-circular entry digs in, it doesn't loft). MSL peak ~12 g flown; the
+ * model reads ~6.5–8.5 g flying lift-up (no active bank-modulation to dig deeper — same fixed-bank
+ * residual as the Earth capsules, documented).
+ */
+describe('Mars guided-lifting entries (2-DOF, no skip)', () => {
+  for (const id of ['curiosity', 'perseverance', 'tianwen1']) {
+    it(`${id} flies a lifting entry, lands soft, does not skip`, () => {
+      const raw = loadRaw(id);
+      expect(raw.liftToDragRatio).toBeGreaterThan(0); // guided lifting, not ballistic
+      const s = integrateDescent(expandDescentProfile(raw));
+      expect(s.touchdownSuccess).toBe(true);
+      expect(s.events.some((e) => e.type === 'skip_out')).toBe(false); // steep enough not to loft
+      expectInRange(s.peakDecel.g, 4, 18, `${id} Mars entry peak-g`);
+    });
+  }
 });
 
 /**

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <link href="/orrery/_app/immutable/entry/start.Dcu156AR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CqvjHJeM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/g-6jpy_p.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.mU2JxZG_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/HclGiUj8.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DnWHc8jb.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D3PeEvYZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B2-DRRjD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.C55ttDyR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C0_HGIXo.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YPMBO0iq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CBwHidpd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/JoCTSQC1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/TJACmhev.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BQNYqyJK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D6mzCASo.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dr_lJWph.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/gBtNj8Y4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/1GPmnsnq2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C3vyJluZ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CFiopaZs2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dioq4iei2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuVLxKAH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B80NvaXM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CPy_0_2V.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DlCfuXK2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CQdSZbaL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D7EWoWN1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CgpYgZf8.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BaSqdnKP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dy840otp.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CkNdYTjQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKMRGM-U.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/L8oMSVnY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/7ij9_A0z.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DGsZH2dO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DK__ztBr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/NI1GqABn.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dzg7ADGA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CqhgC8P4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DazonjT0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/3.Bx8qhhjt.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B7d9dbTM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DwB0kRxU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D8Hu_9GA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BHBJU6Up.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4DxrJbx.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CQTVpQUc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DMerd71W.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/cWKrxpl2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B043S0Fy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/JrzyHj5q.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BQ_J3wqO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CREkwxIQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/y9gcg8Nj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D8HfD_WH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DH9NML3S.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mYXWO5me.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BrBAUVTL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xYsZ0SAr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1mIXN1S.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CW9rwuNs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/nLtiBeHC.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DLz6ji3Y.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF0sYl5Q.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DsuMVs5E.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BbSvYT0v.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/V15SqtW0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/KhQ0RzN6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DLf5Idbt.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CEvfHiHC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CuGaybfz2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B3F7IaZr2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bi9H2b1I2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DJ3LV8EY2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BgvvOMjZ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bwi9E1Cu2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/HjchEiLp2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DwA3GlJe2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/rbMGnIL72.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BHeEJTta2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/We6g1mfr2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BtAsL1OC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D7VIVS6E2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D-TrwAFi2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B109MgVQ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CxXk94JG2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YUaI4vp92.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BWLfKcIA2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DSWjdQKV2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BG7vl1T22.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DC0K7BxA2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CyGsy99I.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DmcdCrkX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/OU4FzxXk.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BCKvlIzF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DHPv0n8v.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DzUyaCpo.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BrXY5WOz.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/phgQKYS8.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/-nva-Nwf.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D2Th3Y55.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ0Gtvjw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CrHKUClb.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/eUjjarY9.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C6qZFvg4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CLWjMzrU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/4WD6NI5q.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/46.CKIdpMNG.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DsC71hw9.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="canonical" href="https://www.orrerylearn.com/it/science/orbits/escape-velocity"/> <!--[--><link rel="alternate" hreflang="en-US" href="https://www.orrerylearn.com/science/orbits/escape-velocity"/><link rel="alternate" hreflang="es" href="https://www.orrerylearn.com/es/science/orbits/escape-velocity"/><link rel="alternate" hreflang="fr" href="https://www.orrerylearn.com/fr/science/orbits/escape-velocity"/><link rel="alternate" hreflang="de" href="https://www.orrerylearn.com/de/science/orbits/escape-velocity"/><link rel="alternate" hreflang="pt-BR" href="https://www.orrerylearn.com/pt-BR/science/orbits/escape-velocity"/><link rel="alternate" hreflang="it" href="https://www.orrerylearn.com/it/science/orbits/escape-velocity"/><link rel="alternate" hreflang="nl" href="https://www.orrerylearn.com/nl/science/orbits/escape-velocity"/><link rel="alternate" hreflang="sr-Cyrl" href="https://www.orrerylearn.com/sr-Cyrl/science/orbits/escape-velocity"/><link rel="alternate" hreflang="zh-CN" href="https://www.orrerylearn.com/zh-CN/science/orbits/escape-velocity"/><link rel="alternate" hreflang="ja" href="https://www.orrerylearn.com/ja/science/orbits/escape-velocity"/><link rel="alternate" hreflang="ko" href="https://www.orrerylearn.com/ko/science/orbits/escape-velocity"/><link rel="alternate" hreflang="hi" href="https://www.orrerylearn.com/hi/science/orbits/escape-velocity"/><link rel="alternate" hreflang="ar" href="https://www.orrerylearn.com/ar/science/orbits/escape-velocity"/><link rel="alternate" hreflang="ru" href="https://www.orrerylearn.com/ru/science/orbits/escape-velocity"/><link rel="alternate" hreflang="x-default" href="https://www.orrerylearn.com/science/orbits/escape-velocity"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--mk168d--><meta name="description" content="Lancia qualsiasi cosa verso l'alto abbastanza veloce e non cadrà mai — la velocità di fuga è la velocità esatta in cui l'energia cinetica di un corpo bilancia esattamente la buca gravitazionale da cui sta fuggendo."/><!----><title>Velocità di fuga — la velocità che non torna indietro · Scienza · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Bh8qGPCz.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/3.CxlAiDkg.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/katex.DOr2_-9W.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/46.CJLomz_T.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><nav aria-label="Navigazione principale" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — pagina iniziale"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">HOME</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">ESPLORA<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">MONDI<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">VOLO</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">PIANIFICA</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">CATALOGO<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">IMPARA<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="Apri menu di navigazione" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="Fai il tour" aria-pressed="false" title="Fai il tour"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="Lingua" aria-haspopup="listbox" aria-expanded="false" title="Scegli lingua">IT</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="Attiva lente scientifica (unavailable on this page)" aria-pressed="false" title="Mostra layer di fisica (sovrapposizioni di meccanica orbitale) (unavailable on this page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="Attiva/disattiva modalità ad alto contrasto" aria-pressed="false" title="Attiva/disattiva modalità ad alto contrasto">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="IMPOSTAZIONI" aria-haspopup="dialog" aria-expanded="false" title="IMPOSTAZIONI"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="Condividi questa vista" title="Condividi questa vista"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="Attiva/disattiva overlay di debug" aria-pressed="false" title="Modalità debug — overlay per sviluppatori"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main class="svelte-12qhfyh"><!--[0--><!--[--><div class="science-root svelte-1kywmug"><div class="page svelte-1kywmug has-right-rail"><div class="layout svelte-1kywmug"><aside class="rail rail-left svelte-1kywmug" aria-label="Schede enciclopedia"><button type="button" class="search-button svelte-1kywmug" data-audio-stage="science-search-button" aria-label="Cerca nell'enciclopedia (⌘K)"><span class="search-icon svelte-1kywmug" aria-hidden="true">⌕</span> <span class="search-label svelte-1kywmug">Cerca</span> <kbd class="search-hint svelte-1kywmug">⌘K</kbd></button> <h2 class="rail-heading svelte-1kywmug">Sezioni</h2> <ul class="tab-list svelte-1kywmug" data-audio-stage="science-tabs"><!--[--><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-scales-time" href="/orrery/science/scales-time" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">SCALE E TEMPO</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-planets" href="/orrery/science/planets" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">Planets</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-exoplanets" href="/orrery/science/exoplanets" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">ESOPIANETI</span></a></li><li><a class="tab-card svelte-1kywmug active" data-audio-stage="science-tab-orbits" href="/orrery/science/orbits" aria-current="page" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">ORBITE</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-transfers" href="/orrery/science/transfers" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">TRASFERIMENTI</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-porkchop" href="/orrery/science/porkchop" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">PORKCHOP</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-propulsion" href="/orrery/science/propulsion" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">PROPULSIONE</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-mission-phases" href="/orrery/science/mission-phases" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">FASI DI MISSIONE</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-space-stations" href="/orrery/science/space-stations" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">STAZIONI SPAZIALI</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-life-in-space" href="/orrery/science/life-in-space" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">VITA NELLO SPAZIO</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-observation" href="/orrery/science/observation" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">OSSERVAZIONE</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-cosmology" href="/orrery/science/cosmology" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">COSMOLOGIA</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-history" href="/orrery/science/history" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">STORIA</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-reading-list" href="/orrery/science/reading-list" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">LETTURE</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-watch-list" href="/orrery/science/watch-list" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">DA VEDERE</span></a></li><!--]--></ul></aside> <div class="content svelte-1kywmug"><!--[--><article class="reading svelte-mk168d"><nav class="crumb svelte-mk168d"><a href="/orrery/science" class="svelte-mk168d">SCIENZA</a> <span class="sep svelte-mk168d">›</span> <a href="/orrery/science/orbits" class="svelte-mk168d">ORBITE</a> <span class="sep svelte-mk168d">›</span> <span>Velocità di fuga — la velocità che non torna indietro</span></nav> <header><h1 class="svelte-mk168d">Velocità di fuga — la velocità che non torna indietro</h1> <p class="lede svelte-mk168d">Lancia qualsiasi cosa verso l'alto abbastanza veloce e non cadrà mai — la velocità di fuga è la velocità esatta in cui l'energia cinetica di un corpo bilancia esattamente la buca gravitazionale da cui sta fuggendo.</p></header> <!--[0--><figure class="hero-diagram svelte-mk168d"><img src="/orrery/diagrams/science/escape-velocity.webp" alt="Velocità di fuga v = √(2μ/r) = √2 × velocità circolare: sotto di essa il percorso è un'ellisse legata, a essa una parabola, sopra di essa un'iperbole che raggiunge l'infinito con velocità in eccesso." loading="lazy" decoding="async" class="svelte-mk168d"/> <!--[0--><figcaption class="svelte-mk168d">Velocità di fuga v = √(2μ/r) = √2 × velocità circolare: sotto di essa il percorso è un'ellisse legata, a essa una parabola, sopra di essa un'iperbole che raggiunge l'infinito con velocità in eccesso.</figcaption><!--]--></figure><!--]--> <!--[0--><section class="narrative-101 svelte-mk168d" aria-label="Un'introduzione mirata"><p class="badge svelte-mk168d">101 · zoom in</p> <!--[--><p class="svelte-mk168d">La gravità non molla mai la presa — la sua attrazione raggiunge l'infinito, indebolendosi solo con la distanza. Quindi "sfuggire" a un pianeta non significa superare la gravità; significa avere esattamente tanta energia che, mentre sali e rallenti, tu rallenti verso velocità zero solo quando raggiungi distanza infinita. Se arrivi anche di poco corto e la gravità alla fine vince, ti ferma e ti tira indietro. La velocità di fuga è il filo del rasoio tra questi due destini.</p><p class="svelte-mk168d">Dalla superficie terrestre quella velocità è circa 11,2 chilometri al secondo — approssimativamente 40.000 km/h. Non dipende dalla direzione in cui lanci l'oggetto o da quanto pesa: un sassolino e un'astronave hanno bisogno della stessa velocità. Ed è legata alla velocità orbitale circolare da un fattore elegante — la velocità di fuga è esattamente la radice quadrata di due (circa 1,41) volte la velocità di un'orbita circolare alla stessa altitudine. Raggiungi l'orbita, poi vai circa il 41% più veloce, e sei via.</p><p class="svelte-mk168d">Il numero che conta per lasciare l'intero Sistema Solare è più grande: sfuggire al Sole dalla distanza terrestre richiede circa 42 km/s. La Terra ci trasporta già intorno al Sole a circa 30, quindi una sonda ha bisogno solo della differenza — ma è comunque più di quanto la maggior parte dei razzi chimici riescano ad aggiungere da soli, motivo per cui i veicoli che lasciano il Sistema Solare si sono affidati agli assisti gravitazionali: decisivi per Voyager e Pioneer, e una spinta aggiuntiva per New Horizons, che il lanciatore più grande del suo tempo aveva già scagliato su una traiettoria di fuga.</p><!--]--></section><!--]--> <!--[-1--><!--]--> <div class="body svelte-mk168d"><!--[--><p class="svelte-mk168d">La velocità di fuga segue dalla conservazione dell'energia: poni l'energia totale (cinetica più potenziale gravitazionale) uguale a zero, e v_escape = √(2μ / r), dove μ è il parametro gravitazionale del corpo e r la distanza dal suo centro. Poiché la velocità orbitale circolare è √(μ / r), la velocità di fuga è esattamente √2 volte — lo stesso fattore a ogni altitudine. Una traiettoria lanciata esattamente alla velocità di fuga è una parabola (energia orbitale zero); sopra di essa, un'iperbole che arriva all'infinito con velocità residua, l'"eccesso iperbolico" v∞.</p><p class="svelte-mk168d">I valori meritano di essere conosciuti: ~11,2 km/s dalla superficie terrestre, ~2,4 km/s dalla Luna, ~5,0 km/s da Marte, ~618 km/s dalla superficie solare, e ~42,1 km/s per sfuggire al Sole dall'orbita terrestre di 1 AU. La velocità di fuga diminuisce con l'altitudine (r più grande), quindi lasciare da un'orbita alta è più economico che da terra — uno dei motivi per cui le missioni accumulano velocità per stadi.</p><p class="svelte-mk168d">Raggiungere la fuga solare è il motivo per cui le missioni nello spazio profondo si affidano all'effetto Oberth e agli assisti gravitazionali. Il moto orbitale terrestre di ~30 km/s è una partenza gratuita, ma il rimanente Δv verso 42 km/s, applicato dall'orbita terrestre bassa, supera il budget di uno stadio chimico; un flyby planetario dona il resto senza propellente. La velocità di fuga è l'obiettivo che la lezione "lasciare il Sistema Solare" del Physics Lab deve raggiungere.</p><!--]--></div> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[0--><section class="see-in-app svelte-mk168d"><h2 class="svelte-mk168d">VEDI NELL’APP</h2> <ul class="svelte-mk168d"><!--[--><li class="svelte-mk168d"><a href="/orrery/lab" class="svelte-mk168d">/lab</a> <span class="ctx svelte-mk168d">The Physics Lab's leave-the-Solar-System lesson computes escape speed and the Δv beyond Earth's orbital motion to reach it</span></li><li class="svelte-mk168d"><a href="/orrery/explore" class="svelte-mk168d">/explore</a> <span class="ctx svelte-mk168d">Trace an escape trajectory outward past the planets</span></li><!--]--></ul></section><!--]--> <!--[0--><section class="learn-more svelte-mk168d"><h2 class="svelte-mk168d">SCOPRI DI PIÙ</h2> <ul class="svelte-mk168d"><!--[--><li class="svelte-mk168d"><span class="tier tier-intro svelte-mk168d">intro</span> <a href="https://en.wikipedia.org/wiki/Escape_velocity" target="_blank" rel="noopener noreferrer external" class="svelte-mk168d">Wikipedia · Escape velocity</a></li><li class="svelte-mk168d"><span class="tier tier-core svelte-mk168d">core</span> <a href="https://science.nasa.gov/learn/basics-of-space-flight/chapter3-1/" target="_blank" rel="noopener noreferrer external" class="svelte-mk168d">NASA · Basics of Space Flight — gravitation and mechanics</a></li><!--]--></ul></section><!--]--></article><!--]--><!----></div> <!--[0--><aside class="rail rail-right svelte-1kywmug" aria-label="Sezioni in questa scheda"><h2 class="rail-heading svelte-1kywmug">ORBITE</h2> <ul class="section-list svelte-1kywmug"><!--[--><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-keplerian-orbit" href="/orrery/science/orbits/keplerian-orbit" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Orbita kepleriana</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-semi-major-axis" href="/orrery/science/orbits/semi-major-axis" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Semiasse maggiore</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-eccentricity" href="/orrery/science/orbits/eccentricity" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Eccentricità</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-inclination" href="/orrery/science/orbits/inclination" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Inclinazione</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-true-anomaly" href="/orrery/science/orbits/true-anomaly" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Anomalia vera</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-vis-viva" href="/orrery/science/orbits/vis-viva" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Equazione di vis-viva</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-keplers-laws" href="/orrery/science/orbits/keplers-laws" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Le tre leggi di Keplero</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-apsides" href="/orrery/science/orbits/apsides" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Apsidi — Perielio, Afelio, Perigeo, Apogeo</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-orbit-regimes" href="/orrery/science/orbits/orbit-regimes" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Regimi Orbitali — LEO, MEO, GEO, HEO</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-lagrange-points" href="/orrery/science/orbits/lagrange-points" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Punti di ritardo</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-hill-sphere" href="/orrery/science/orbits/hill-sphere" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Sfera di Hill</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-sun-synchronous" href="/orrery/science/orbits/sun-synchronous" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Orbite eliocentriche + polari — la spina dorsale dell'osservazione terrestre</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-special-orbits" href="/orrery/science/orbits/special-orbits" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Orbite speciali — Molniya, Tundra, GTO, congelate</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-cislunar-orbits" href="/orrery/science/orbits/cislunar-orbits" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Orbite cislunar — DRO, NRHO, alone, congelate lunari</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-disposal-end-of-life" href="/orrery/science/orbits/disposal-end-of-life" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Smaltimento a fine vita — orbite cimitero, deorbita controllata, la regola dei 25 anni</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-space-debris" href="/orrery/science/orbits/space-debris" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Detriti spaziali — sindrome di Kessler, eventi ASAT e i tentativi di pulizia</span></a></li><li><a class="section-row svelte-1kywmug active" data-audio-stage="science-section-escape-velocity" href="/orrery/science/orbits/escape-velocity" aria-current="page" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Velocità di fuga — la velocità che non torna indietro</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-synodic-period" href="/orrery/science/orbits/synodic-period" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Periodo sinodico — perché le finestre di lancio si aprono e si chiudono</span></a></li><!--]--></ul></aside><!--]--></div></div> <!--[-1--><!--]--><!----></div><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="Piè di pagina del sito"><nav class="footer-menu svelte-12qhfyh" aria-label="Collegamenti piè di pagina"><a class="footer-link svelte-12qhfyh" href="/orrery/gallery">Galleria</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">Crediti</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">Colophon</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">Biblioteca</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">Info</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="Informazioni"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">Licenza</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="Versione build + data di deploy (apre CHANGELOG su GitHub): v0.9-2026-09-01-1 · 2026-09-01" hreflang="en">v0.9-2026-09-01-1</a></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1hmsq52 = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_1hmsq52.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.Dcu156AR.js"),
+							import("/orrery/_app/immutable/entry/app.mU2JxZG_.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 3, 46],
+									data: [null,null,null],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

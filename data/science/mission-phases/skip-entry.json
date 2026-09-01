@@ -1,0 +1,32 @@
+{
+  "id": "skip-entry",
+  "tab": "mission-phases",
+  "order": 16,
+  "diagram": "skip-entry.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/lab",
+      "context_key": "The re-entry-computer lesson models a super-circular lunar-return entry at ~11 km/s, where the skip appears"
+    },
+    {
+      "route": "/fly",
+      "query": "?mission=apollo8&descent=1",
+      "context_key": "Fly Apollo 8's 11 km/s lunar-return entry and watch the skip profile"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Skip reentry",
+      "u": "https://en.wikipedia.org/wiki/Skip_reentry",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Orion, Artemis I re-entry (skip guidance)",
+      "u": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "t": "core"
+    }
+  ],
+  "reviewed_at": "2026-09-01",
+  "review_hash": "b61ffb1ebca6"
+}

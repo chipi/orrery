@@ -252,6 +252,20 @@
   <url><loc>https://www.orrerylearn.com/hi/science</loc></url>
   <url><loc>https://www.orrerylearn.com/ar/science</loc></url>
   <url><loc>https://www.orrerylearn.com/ru/science</loc></url>
+  <url><loc>https://www.orrerylearn.com/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/es/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/fr/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/de/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/pt-BR/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/it/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/nl/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/sr-Cyrl/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/zh-CN/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/ja/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/ko/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/hi/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/ar/lab</loc></url>
+  <url><loc>https://www.orrerylearn.com/ru/lab</loc></url>
   <url><loc>https://www.orrerylearn.com/live</loc></url>
   <url><loc>https://www.orrerylearn.com/es/live</loc></url>
   <url><loc>https://www.orrerylearn.com/fr/live</loc></url>
@@ -1190,6 +1204,20 @@
   <url><loc>https://www.orrerylearn.com/hi/science/mission-phases/gravity-turn</loc></url>
   <url><loc>https://www.orrerylearn.com/ar/science/mission-phases/gravity-turn</loc></url>
   <url><loc>https://www.orrerylearn.com/ru/science/mission-phases/gravity-turn</loc></url>
+  <url><loc>https://www.orrerylearn.com/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/es/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/fr/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/de/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/pt-BR/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/it/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/nl/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/sr-Cyrl/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/zh-CN/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/ja/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/ko/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/hi/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/ar/science/mission-phases/ascent-guidance</loc></url>
+  <url><loc>https://www.orrerylearn.com/ru/science/mission-phases/ascent-guidance</loc></url>
   <url><loc>https://www.orrerylearn.com/science/mission-phases/max-q</loc></url>
   <url><loc>https://www.orrerylearn.com/es/science/mission-phases/max-q</loc></url>
   <url><loc>https://www.orrerylearn.com/fr/science/mission-phases/max-q</loc></url>
@@ -1288,6 +1316,48 @@
   <url><loc>https://www.orrerylearn.com/hi/science/mission-phases/entry-heating</loc></url>
   <url><loc>https://www.orrerylearn.com/ar/science/mission-phases/entry-heating</loc></url>
   <url><loc>https://www.orrerylearn.com/ru/science/mission-phases/entry-heating</loc></url>
+  <url><loc>https://www.orrerylearn.com/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/es/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/fr/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/de/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/pt-BR/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/it/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/nl/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/sr-Cyrl/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/zh-CN/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/ja/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/ko/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/hi/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/ar/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/ru/science/mission-phases/lifting-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/es/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/fr/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/de/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/pt-BR/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/it/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/nl/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/sr-Cyrl/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/zh-CN/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/ja/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/ko/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/hi/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/ar/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/ru/science/mission-phases/skip-entry</loc></url>
+  <url><loc>https://www.orrerylearn.com/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/es/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/fr/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/de/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/pt-BR/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/it/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/nl/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/sr-Cyrl/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/zh-CN/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/ja/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/ko/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/hi/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/ar/science/mission-phases/entry-footprint</loc></url>
+  <url><loc>https://www.orrerylearn.com/ru/science/mission-phases/entry-footprint</loc></url>
   <url><loc>https://www.orrerylearn.com/science/mission-phases/comms-blackout</loc></url>
   <url><loc>https://www.orrerylearn.com/es/science/mission-phases/comms-blackout</loc></url>
   <url><loc>https://www.orrerylearn.com/fr/science/mission-phases/comms-blackout</loc></url>
@@ -1820,6 +1890,20 @@
   <url><loc>https://www.orrerylearn.com/hi/science/orbits/vis-viva</loc></url>
   <url><loc>https://www.orrerylearn.com/ar/science/orbits/vis-viva</loc></url>
   <url><loc>https://www.orrerylearn.com/ru/science/orbits/vis-viva</loc></url>
+  <url><loc>https://www.orrerylearn.com/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/es/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/fr/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/de/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/pt-BR/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/it/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/nl/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/sr-Cyrl/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/zh-CN/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/ja/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/ko/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/hi/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/ar/science/orbits/escape-velocity</loc></url>
+  <url><loc>https://www.orrerylearn.com/ru/science/orbits/escape-velocity</loc></url>
   <url><loc>https://www.orrerylearn.com/science/orbits/keplers-laws</loc></url>
   <url><loc>https://www.orrerylearn.com/es/science/orbits/keplers-laws</loc></url>
   <url><loc>https://www.orrerylearn.com/fr/science/orbits/keplers-laws</loc></url>
@@ -1862,6 +1946,20 @@
   <url><loc>https://www.orrerylearn.com/hi/science/orbits/orbit-regimes</loc></url>
   <url><loc>https://www.orrerylearn.com/ar/science/orbits/orbit-regimes</loc></url>
   <url><loc>https://www.orrerylearn.com/ru/science/orbits/orbit-regimes</loc></url>
+  <url><loc>https://www.orrerylearn.com/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/es/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/fr/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/de/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/pt-BR/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/it/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/nl/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/sr-Cyrl/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/zh-CN/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/ja/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/ko/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/hi/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/ar/science/orbits/synodic-period</loc></url>
+  <url><loc>https://www.orrerylearn.com/ru/science/orbits/synodic-period</loc></url>
   <url><loc>https://www.orrerylearn.com/science/orbits/lagrange-points</loc></url>
   <url><loc>https://www.orrerylearn.com/es/science/orbits/lagrange-points</loc></url>
   <url><loc>https://www.orrerylearn.com/fr/science/orbits/lagrange-points</loc></url>

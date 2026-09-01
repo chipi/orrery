@@ -1,0 +1,32 @@
+{
+  "id": "entry-footprint",
+  "tab": "mission-phases",
+  "order": 17,
+  "diagram": "entry-footprint.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/lab",
+      "context_key": "The re-entry-computer's range-control lesson solves the bank angle that lands the capsule on a target inside its footprint"
+    },
+    {
+      "route": "/fly",
+      "query": "?descent=1",
+      "context_key": "Watch a lifting capsule stretch or steepen its descent to reach a landing point"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Atmospheric entry — cross range",
+      "u": "https://en.wikipedia.org/wiki/Atmospheric_entry",
+      "t": "intro"
+    },
+    {
+      "l": "MIT/Draper · Apollo Reentry Guidance (R-415)",
+      "u": "https://www.ibiblio.org/apollo/Documents/R-415%20Apollo%20Reentry%20Guidance.pdf",
+      "t": "core"
+    }
+  ],
+  "reviewed_at": "2026-09-01",
+  "review_hash": "8cf7b83f4563"
+}

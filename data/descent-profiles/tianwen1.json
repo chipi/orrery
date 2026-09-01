@@ -3,9 +3,11 @@
   "siteId": "zhurong",
   "body": "mars",
   "landingSite": { "lat": 25.066, "lon": 109.925 },
-  "entryState": { "altitudeM": 125000, "velocityMs": 4800, "flightPathAngleDeg": 7.5 },
+  "entryState": { "altitudeM": 125000, "velocityMs": 4800, "flightPathAngleDeg": 15 },
   "entryMassKg": 1300,
   "entryCdA": 14,
+  "liftToDragRatio": 0.24,
+  "estimatedFields": ["flightPathAngleDeg", "liftToDragRatio", "entryCdA"],
   "retroPropellantKg": 200,
   "archetype": "MARS_PARACHUTE_RETRO",
   "params": {

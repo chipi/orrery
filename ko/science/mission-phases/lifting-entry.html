@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <link href="/orrery/_app/immutable/entry/start.Dcu156AR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CqvjHJeM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/g-6jpy_p.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.mU2JxZG_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/HclGiUj8.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DnWHc8jb.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D3PeEvYZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B2-DRRjD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.C55ttDyR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C0_HGIXo.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YPMBO0iq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CBwHidpd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/JoCTSQC1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/TJACmhev.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BQNYqyJK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D6mzCASo.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dr_lJWph.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/gBtNj8Y4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/1GPmnsnq2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C3vyJluZ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CFiopaZs2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dioq4iei2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuVLxKAH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B80NvaXM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CPy_0_2V.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DlCfuXK2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CQdSZbaL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D7EWoWN1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CgpYgZf8.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BaSqdnKP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dy840otp.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CkNdYTjQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKMRGM-U.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/L8oMSVnY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/7ij9_A0z.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DGsZH2dO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DK__ztBr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/NI1GqABn.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dzg7ADGA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CqhgC8P4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DazonjT0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/3.Bx8qhhjt.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B7d9dbTM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DwB0kRxU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D8Hu_9GA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BHBJU6Up.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4DxrJbx.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CQTVpQUc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DMerd71W.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/cWKrxpl2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B043S0Fy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/JrzyHj5q.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BQ_J3wqO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CREkwxIQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/y9gcg8Nj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D8HfD_WH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DH9NML3S.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mYXWO5me.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BrBAUVTL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xYsZ0SAr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1mIXN1S.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CW9rwuNs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/nLtiBeHC.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DLz6ji3Y.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF0sYl5Q.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DsuMVs5E.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BbSvYT0v.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/V15SqtW0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/KhQ0RzN6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DLf5Idbt.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CEvfHiHC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CuGaybfz2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B3F7IaZr2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bi9H2b1I2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DJ3LV8EY2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BgvvOMjZ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bwi9E1Cu2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/HjchEiLp2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DwA3GlJe2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/rbMGnIL72.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BHeEJTta2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/We6g1mfr2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BtAsL1OC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D7VIVS6E2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D-TrwAFi2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B109MgVQ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CxXk94JG2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YUaI4vp92.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BWLfKcIA2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DSWjdQKV2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BG7vl1T22.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DC0K7BxA2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CyGsy99I.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DmcdCrkX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/OU4FzxXk.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BCKvlIzF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DHPv0n8v.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DzUyaCpo.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BrXY5WOz.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/phgQKYS8.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/-nva-Nwf.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D2Th3Y55.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ0Gtvjw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CrHKUClb.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/eUjjarY9.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C6qZFvg4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CLWjMzrU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/4WD6NI5q.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/46.CKIdpMNG.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DsC71hw9.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="canonical" href="https://www.orrerylearn.com/ko/science/mission-phases/lifting-entry"/> <!--[--><link rel="alternate" hreflang="en-US" href="https://www.orrerylearn.com/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="es" href="https://www.orrerylearn.com/es/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="fr" href="https://www.orrerylearn.com/fr/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="de" href="https://www.orrerylearn.com/de/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="pt-BR" href="https://www.orrerylearn.com/pt-BR/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="it" href="https://www.orrerylearn.com/it/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="nl" href="https://www.orrerylearn.com/nl/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="sr-Cyrl" href="https://www.orrerylearn.com/sr-Cyrl/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="zh-CN" href="https://www.orrerylearn.com/zh-CN/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="ja" href="https://www.orrerylearn.com/ja/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="ko" href="https://www.orrerylearn.com/ko/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="hi" href="https://www.orrerylearn.com/hi/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="ar" href="https://www.orrerylearn.com/ar/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="ru" href="https://www.orrerylearn.com/ru/science/mission-phases/lifting-entry"/><link rel="alternate" hreflang="x-default" href="https://www.orrerylearn.com/science/mission-phases/lifting-entry"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--mk168d--><meta name="description" content="뭉툭한 캡슐은 단지 떨어지는 돌이 아닙니다. 무게중심을 편하게 설치하면 약간의 양력으로 날아다니고, 캡슐을 회전시켜 그 양력을 향하게 하면 칼날 같은 재진입을 생존 가능하게 만드는 조종 장치가 됩니다."/><!----><title>승강력 진입 — 캡슐의 양력으로 조종하기 · 과학 · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Bh8qGPCz.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/3.CxlAiDkg.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/katex.DOr2_-9W.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/46.CJLomz_T.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><nav aria-label="주 내비게이션" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery - 집"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">홈</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">탐색<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">천체<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">비행</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">계획</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">카탈로그<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">학습<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="내비게이션 메뉴 열기" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="투어 시작" aria-pressed="false" title="투어 시작"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="언어" aria-haspopup="listbox" aria-expanded="false" title="언어 선택">KO</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="과학 렌즈 전환 (unavailable on this page)" aria-pressed="false" title="물리 레이어 표시 (궤도역학 오버레이) (unavailable on this page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="높은 콘트라스트 모드" aria-pressed="false" title="높은 콘트라스트 모드">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="설정" aria-haspopup="dialog" aria-expanded="false" title="설정"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="이 화면 공유" title="이 화면 공유"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="디버그 오버레이 전환" aria-pressed="false" title="디버그 모드 — 개발자 오버레이"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main class="svelte-12qhfyh"><!--[0--><!--[--><div class="science-root svelte-1kywmug"><div class="page svelte-1kywmug has-right-rail"><div class="layout svelte-1kywmug"><aside class="rail rail-left svelte-1kywmug" aria-label="백과사전 탭"><button type="button" class="search-button svelte-1kywmug" data-audio-stage="science-search-button" aria-label="백과사전 검색 (⌘K)"><span class="search-icon svelte-1kywmug" aria-hidden="true">⌕</span> <span class="search-label svelte-1kywmug">검색</span> <kbd class="search-hint svelte-1kywmug">⌘K</kbd></button> <h2 class="rail-heading svelte-1kywmug">섹션</h2> <ul class="tab-list svelte-1kywmug" data-audio-stage="science-tabs"><!--[--><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-scales-time" href="/orrery/science/scales-time" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">규모 및 시간</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-planets" href="/orrery/science/planets" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">Planets</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-exoplanets" href="/orrery/science/exoplanets" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">외계행성</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-orbits" href="/orrery/science/orbits" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">궤도</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-transfers" href="/orrery/science/transfers" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">전이</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-porkchop" href="/orrery/science/porkchop" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">포크찹</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-propulsion" href="/orrery/science/propulsion" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">추진</span></a></li><li><a class="tab-card svelte-1kywmug active" data-audio-stage="science-tab-mission-phases" href="/orrery/science/mission-phases" aria-current="page" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">임무 단계</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-space-stations" href="/orrery/science/space-stations" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">우주 정거장</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-life-in-space" href="/orrery/science/life-in-space" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">우주 생활</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-observation" href="/orrery/science/observation" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">관측</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-cosmology" href="/orrery/science/cosmology" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">우주론</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-history" href="/orrery/science/history" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">역사</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-reading-list" href="/orrery/science/reading-list" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">읽기 목록</span></a></li><li><a class="tab-card svelte-1kywmug" data-audio-stage="science-tab-watch-list" href="/orrery/science/watch-list" data-sveltekit-keepfocus=""><span class="tab-name svelte-1kywmug">시청 목록</span></a></li><!--]--></ul></aside> <div class="content svelte-1kywmug"><!--[--><article class="reading svelte-mk168d"><nav class="crumb svelte-mk168d"><a href="/orrery/science" class="svelte-mk168d">과학</a> <span class="sep svelte-mk168d">›</span> <a href="/orrery/science/mission-phases" class="svelte-mk168d">임무 단계</a> <span class="sep svelte-mk168d">›</span> <span>승강력 진입 — 캡슐의 양력으로 조종하기</span></nav> <header><h1 class="svelte-mk168d">승강력 진입 — 캡슐의 양력으로 조종하기</h1> <p class="lede svelte-mk168d">뭉툭한 캡슐은 단지 떨어지는 돌이 아닙니다. 무게중심을 편하게 설치하면 약간의 양력으로 날아다니고, 캡슐을 회전시켜 그 양력을 향하게 하면 칼날 같은 재진입을 생존 가능하게 만드는 조종 장치가 됩니다.</p></header> <!--[0--><figure class="hero-diagram svelte-mk168d"><img src="/orrery/diagrams/science/lifting-entry.webp" alt="뱅크 각도 조종: 캡슐을 회전시켜 작은 양력 벡터를 위(활강 늘임, 저-g) 또는 아래(가파르게 함)로 향하게 하여 생존 가능한 재진입 통로를 넓힙니다." loading="lazy" decoding="async" class="svelte-mk168d"/> <!--[0--><figcaption class="svelte-mk168d">뱅크 각도 조종: 캡슐을 회전시켜 작은 양력 벡터를 위(활강 늘임, 저-g) 또는 아래(가파르게 함)로 향하게 하여 생존 가능한 재진입 통로를 넓힙니다.</figcaption><!--]--></figure><!--]--> <!--[0--><section class="narrative-101 svelte-mk168d" aria-label="집중 입문"><p class="badge svelte-mk168d">101 · zoom in</p> <!--[--><p class="svelte-mk168d">달에서 돌아오는 아폴로 캡슐은 대기 상층부에 거의 초속 11킬로미터의 속도로 진입합니다 — 저궤도에서 돌아오는 물체보다 약 1.5배 빠릅니다. 너무 가파르게 진입하면 감속이 승무원을 짓누르고 열이 견딜 수 없고, 너무 얕게 진입하면 연못의 돌 같이 대기를 뛰어나가 다시 우주로 나가버립니다. 생존 가능하면서 포획되는 진입 각도의 범위를 "통로(corridor)"라 하는데, 달 귀환 속도에서는 가슴 철렁할 정도로 좁습니다 — 2도 미만의 폭입니다.</p><p class="svelte-mk168d">승무원을 구하는 비결은 양력입니다. 캡슐은 대칭적인 원뿔처럼 보이지만, 열 방어막이 의도적으로 중심에서 벗어나게 설치되어 기울어져 날면서 공기와 약간의 각도를 이루고 작은 양력을 만듭니다 — 많지는 않지만, 양력 대 항력 비율이 약 0.3 정도이지만 충분합니다. 그리고 캡슐은 정확히 한 가지 제어 방법으로 그 양력을 목표할 수 있습니다: 뱅크 각도입니다. 양력이 위를 향하도록 회전시키면 캡슐은 강하를 늘이면서 높이를 유지하고 천천히 속도를 줄입니다. 양력이 아래를 향하도록 회전시키면 공기 속으로 더 깊이 들어갑니다. 옆으로 회전시키면 좌우로 조종합니다.</p><p class="svelte-mk168d">이 단 하나의 레버는 순수 탄도 강하에 비해 생존 가능한 통로를 수 배 넓혀줍니다 — 대략 3배에서 5배 정도 — 그리고 이것이 달에서의 모든 유인 귀환 — 아폴로와 지금의 아르테미스의 오리온 — 이 승강력 진입을 비행하는 이유입니다. 유도 컴퓨터는 캡슐을 앞뒤로 회전시켜 감속을 인간이 견딜 수 있는 범위 내에 유지하면서도 회수선이 기다리는 곳에 착륙합니다.</p><!--]--></section><!--]--> <!--[-1--><!--]--> <div class="body svelte-mk168d"><!--[--><p class="svelte-mk168d">물리학은 항력이 제동을 하고 양력이 목표 조정을 합니다. 캡슐의 양력 대 항력 비율(L/D)은 작습니다 — 아폴로와 오리온의 경우 약 0.3, 화성 에어로셀의 경우 약 0.24, 항공사 여객기는 4 이상 — 하지만 0이 아니며, 극초음속에서는 작은 L/D도 궤도를 멀리 움직입니다. 캡슐은 피칭할 수 없기 때문에(날개나 엘레베이터가 없음), 그 고정된 크기의 양력을 재설정하는 유일한 방법은 뱅크입니다: 속도 벡터를 중심으로 회전하면 양력 벡터가 위, 아래 또는 옆을 가리키지만 공기가 밀어내는 힘의 크기는 변하지 않습니다.</p><p class="svelte-mk168d">생존 가능한 통로는 양쪽으로 경계가 있습니다. 너무 가파르면 최고 감속과 열이 제한을 초과합니다 — 순수 탄도 달 귀환 진입은 10g를 넘을 수 있지만(무인 조드 탄도 귀환은 약 15g에 도달), 아폴로의 유도 승강력 진입은 최고값을 약 7g에 유지했습니다. 너무 얕으면 차량이 포획되지 못하고 다시 뛰어나갑니다. 양력은 유도가 중간을 비행하게 합니다: 초기에 양력 상향을 명령하면 강하를 평탄하게 하고 g 로드를 낮추고, 진입 내내 뱅크를 조절하면 전체 프로파일을 통로 내에 유지합니다. 발표된 결과는 양력이 생존 가능한 각도 범위를 탄도 진입보다 수 배 넓혀줍니다 — 대략 3배에서 5배 정도.</p><p class="svelte-mk168d">유도 컴퓨터가 폐루프로 비행합니다. 목표 거리와 g, 열 제한을 알고 있으며, 캡슐을 회전시킵니다 — 양력 최상향, 부분 양력 하향, 좌우 반전으로 횡거리 드리프트를 제거 — 감지된 감속을 바탕으로 초당 여러 번 업데이트합니다. 아폴로의 진입은 이렇게 비행했으며, 오리온도 그렇습니다. 같은 뱅크 각도 레버는 또한 착륙 지점을 목표하며, 이는 진입 풋프린트 페이지의 주제입니다.</p><!--]--></div> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[0--><section class="see-in-app svelte-mk168d"><h2 class="svelte-mk168d">앱에서 보기</h2> <ul class="svelte-mk168d"><!--[--><li class="svelte-mk168d"><a href="/orrery/lab" class="svelte-mk168d">/lab</a> <span class="ctx svelte-mk168d">The Physics Lab's re-entry-computer lesson flies a real 2-DOF lifting entry and measures how bank widens the survivable corridor</span></li><li class="svelte-mk168d"><a href="/orrery/fly?descent=1" class="svelte-mk168d">/fly</a> <span class="ctx svelte-mk168d">Fly an Earth-return capsule's entry end-to-end and watch it steer through peak-g to splashdown</span></li><!--]--></ul></section><!--]--> <!--[0--><section class="learn-more svelte-mk168d"><h2 class="svelte-mk168d">더 알아보기</h2> <ul class="svelte-mk168d"><!--[--><li class="svelte-mk168d"><span class="tier tier-intro svelte-mk168d">intro</span> <a href="https://en.wikipedia.org/wiki/Atmospheric_entry" target="_blank" rel="noopener noreferrer external" class="svelte-mk168d">Wikipedia · Atmospheric entry</a></li><li class="svelte-mk168d"><span class="tier tier-core svelte-mk168d">core</span> <a href="https://www.ibiblio.org/apollo/Documents/R-415%20Apollo%20Reentry%20Guidance.pdf" target="_blank" rel="noopener noreferrer external" class="svelte-mk168d">MIT/Draper · Apollo Reentry Guidance (R-415)</a></li><!--]--></ul></section><!--]--></article><!--]--><!----></div> <!--[0--><aside class="rail rail-right svelte-1kywmug" aria-label="이 탭의 섹션"><h2 class="rail-heading svelte-1kywmug">임무 단계</h2> <ul class="section-list svelte-1kywmug"><!--[--><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-launch" href="/orrery/science/mission-phases/launch" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">발사 + 상승</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-gravity-turn" href="/orrery/science/mission-phases/gravity-turn" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">중력 턴</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-max-q" href="/orrery/science/mission-phases/max-q" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Max-Q</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-trans-x-injection" href="/orrery/science/mission-phases/trans-x-injection" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">Trans-X 분사 — TLI / TMI / TVI / TJI</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-tcm" href="/orrery/science/mission-phases/tcm" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">TCM — 궤도 수정 기동</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-orbit-insertion" href="/orrery/science/mission-phases/orbit-insertion" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">궤도 진입 — LOI / MOI</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-deorbit-corridor" href="/orrery/science/mission-phases/deorbit-corridor" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">이탈 궤도 기동과 대기권 재진입 회랑</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-edl" href="/orrery/science/mission-phases/edl" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">EDL — 진입, 하강, 착륙</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-entry-heating" href="/orrery/science/mission-phases/entry-heating" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">진입 가열</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-comms-blackout" href="/orrery/science/mission-phases/comms-blackout" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">통신 두절</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-terminal-velocity" href="/orrery/science/mission-phases/terminal-velocity" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">터미널 속도</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-skycrane" href="/orrery/science/mission-phases/skycrane" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">스카이 크레인</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-ballistic-coefficient" href="/orrery/science/mission-phases/ballistic-coefficient" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">탄도 계수</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-aerobraking" href="/orrery/science/mission-phases/aerobraking" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">대기제동(에어로브레이킹)</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-propulsive-landing" href="/orrery/science/mission-phases/propulsive-landing" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">추진력 착륙</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-met" href="/orrery/science/mission-phases/met" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">MET — Mission Elapsed Time</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-nrho" href="/orrery/science/mission-phases/nrho" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">NRHO — 근직선 할로 궤도(Near-Rectilinear Halo Orbit)</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-mission-types" href="/orrery/science/mission-phases/mission-types" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">임무 유형 — 플라이바이, 궤도 탐사선, 착륙선, 로버, 샘플 반환</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-eva" href="/orrery/science/mission-phases/eva" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">EVA — 선외활동</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-star-trackers" href="/orrery/science/mission-phases/star-trackers" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">스타 트래커</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-dead-reckoning" href="/orrery/science/mission-phases/dead-reckoning" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">죽은 reckoning</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-dsn" href="/orrery/science/mission-phases/dsn" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">DSN — 딥 스페이스 네트워크</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-optical-comms" href="/orrery/science/mission-phases/optical-comms" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">광학 통신 — 빛의 빔으로 대화하기</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-interplanetary-internet" href="/orrery/science/mission-phases/interplanetary-internet" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">행성간 인터넷 — 광속 지연을 넘어 네트워킹</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-antenna-arrays" href="/orrery/science/mission-phases/antenna-arrays" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">배열화 — 하나의 거대한 안테나 대신 많은 작은 수신기</span></a></li><li><a class="section-row svelte-1kywmug active" data-audio-stage="science-section-lifting-entry" href="/orrery/science/mission-phases/lifting-entry" aria-current="page" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">승강력 진입 — 캡슐의 양력으로 조종하기</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-skip-entry" href="/orrery/science/mission-phases/skip-entry" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">스킵 진입 — 대기권에서 다시 빠져나가기</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-entry-footprint" href="/orrery/science/mission-phases/entry-footprint" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">착륙 발자국 — 캡슐의 양력이 도달할 수 있는 곳</span></a></li><li><a class="section-row svelte-1kywmug" data-audio-stage="science-section-ascent-guidance" href="/orrery/science/mission-phases/ascent-guidance" data-sveltekit-keepfocus=""><span class="section-name svelte-1kywmug">상승 유도 — 로켓을 궤도로 날려보내는 컴퓨터</span></a></li><!--]--></ul></aside><!--]--></div></div> <!--[-1--><!--]--><!----></div><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="사이트 바닥글"><nav class="footer-menu svelte-12qhfyh" aria-label="바닥글 링크"><a class="footer-link svelte-12qhfyh" href="/orrery/gallery">갤러리</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">크레딧</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">판권</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">관련 기사</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">정보</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="정보"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">라이선스</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">읽기</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="빌드 버전 + 배포 날짜 (GitHub의 CHANGELOG 열기): v0.9-2026-09-01-1 · 2026-09-01" hreflang="en">v0.9-2026-09-01-1</a></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1hmsq52 = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_1hmsq52.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.Dcu156AR.js"),
+							import("/orrery/_app/immutable/entry/app.mU2JxZG_.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 3, 46],
+									data: [null,null,null],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

@@ -2,6 +2,7 @@
   "ids": [
     "launch",
     "gravity-turn",
+    "ascent-guidance",
     "max-q",
     "trans-x-injection",
     "tcm",
@@ -9,6 +10,9 @@
     "deorbit-corridor",
     "edl",
     "entry-heating",
+    "lifting-entry",
+    "skip-entry",
+    "entry-footprint",
     "comms-blackout",
     "terminal-velocity",
     "skycrane",

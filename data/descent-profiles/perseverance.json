@@ -3,9 +3,11 @@
   "siteId": "perseverance",
   "body": "mars",
   "landingSite": { "lat": 18.44, "lon": 77.45 },
-  "entryState": { "altitudeM": 125000, "velocityMs": 5400, "flightPathAngleDeg": 7.5 },
+  "entryState": { "altitudeM": 125000, "velocityMs": 5400, "flightPathAngleDeg": 15 },
   "entryMassKg": 3650,
   "entryCdA": 24,
+  "liftToDragRatio": 0.24,
+  "estimatedFields": ["flightPathAngleDeg", "liftToDragRatio", "entryCdA"],
   "retroPropellantKg": 450,
   "archetype": "MARS_SKYCRANE",
   "params": {

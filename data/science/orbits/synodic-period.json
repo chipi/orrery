@@ -1,0 +1,31 @@
+{
+  "id": "synodic-period",
+  "tab": "orbits",
+  "order": 17,
+  "diagram": "synodic-period.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/lab",
+      "context_key": "The Physics Lab's launch-window lesson computes the synodic period from the two orbital periods and the required lead angle"
+    },
+    {
+      "route": "/plan",
+      "context_key": "Plan an interplanetary trip and see the window the synodic clock opens"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Synodic period",
+      "u": "https://en.wikipedia.org/wiki/Orbital_period#Synodic_period",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Launch window",
+      "u": "https://en.wikipedia.org/wiki/Launch_window",
+      "t": "core"
+    }
+  ],
+  "reviewed_at": "2026-09-01",
+  "review_hash": "f3c7fb3f30ea"
+}

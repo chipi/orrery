@@ -1,0 +1,32 @@
+{
+  "id": "ascent-guidance",
+  "tab": "mission-phases",
+  "order": 18,
+  "diagram": "ascent-guidance.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/lab",
+      "context_key": "The Physics Lab's flying-computer lesson runs the real ascent: an open-loop pitch program handing over to closed-loop PEG"
+    },
+    {
+      "route": "/fly",
+      "query": "?mission=apollo11",
+      "context_key": "Watch a launch climb and pitch over toward orbit"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Powered explicit guidance",
+      "u": "https://en.wikipedia.org/wiki/Powered_explicit_guidance",
+      "t": "intro"
+    },
+    {
+      "l": "Helmut Horn and the Origin of the Saturn V Iterative Guidance Mode (IGM)",
+      "u": "https://www.researchgate.net/publication/348240240_Helmut_Horn_and_the_Origin_of_the_Saturn_V_Iterative_Guidance_Mode_IGM",
+      "t": "core"
+    }
+  ],
+  "reviewed_at": "2026-09-01",
+  "review_hash": "8b392f3e6002"
+}

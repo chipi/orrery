@@ -3,10 +3,10 @@
   "siteId": "vostok-1",
   "body": "earth",
   "landingSite": { "lat": 51.27, "lon": 45.99 },
-  "entryState": { "altitudeM": 122000, "velocityMs": 7850, "flightPathAngleDeg": 4 },
+  "entryState": { "altitudeM": 122000, "velocityMs": 7850, "flightPathAngleDeg": 1.5 },
   "entryMassKg": 2460,
   "entryCdA": 5,
-  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7000,
     "terminalHandoffAltM": 4000,

@@ -44,6 +44,8 @@ export const EDL_BEAT_LABEL: Record<DescentEventType, string> = {
   sample_collected: 'SAMPLE',
   parachute_jettison: 'CHUTE SEP',
   probe_signal_lost: 'SIGNAL LOST',
+  skip_out: 'SKIP OUT',
+  second_entry: '2ND ENTRY',
   touchdown: 'TOUCHDOWN',
 };
 

@@ -99,6 +99,8 @@ export type DescentEventType =
   | 'sample_collected' // touch-and-go sample horn fired, ascent begins
   | 'parachute_jettison' // drogue/main chute released (Huygens two-chute, Galileo)
   | 'probe_signal_lost' // atmospheric probe crushed / comms end (Galileo, no surface)
+  | 'skip_out' // super-circular lifting entry lofts back above the atmosphere (Apollo-4 skip)
+  | 'second_entry' // the lofted capsule falls back into the atmosphere for the second pulse
   | 'touchdown';
 
 /**
@@ -422,17 +424,25 @@ export function integrateDescent(
   // step. `liftBonus` = L/D applied as a fraction of drag in the γ EOM.
   let gammaRad = gammaDegFor(profile.phases[0], profile) * DEG2RAD;
   const liftBonus = profile.liftToDragRatio ?? 0;
+  const hasLift = liftBonus > 0;
   const bodyRadiusM = R_BODY_M[body];
-  // 2-DOF γ integration is enabled for SUB-CIRCULAR (orbital-decay) reentry — the
-  // #419 Earth-capsule case, where the shallow-skim corridor produces the honest
-  // duration + peak-g. SUPER-circular interplanetary arrivals (v > v_circ: Mars /
-  // Venus / Titan / Jupiter probes) sit in the skip/aerocapture regime, where a
-  // purely ballistic (lift-free) 2-DOF trajectory would skim out unrealistically;
-  // those keep the validated fixed-γ model until per-profile lift data is authored.
+  const muBody = MU_BODY_M3_S2[body];
+  // 2-DOF γ integration (#419) is enabled for SUB-CIRCULAR (orbital-decay) reentry — the
+  // Earth-capsule case, where the shallow-skim corridor produces the honest duration + peak-g —
+  // AND for LIFTING super-circular entries (#29 · ADR-089: lunar-return 11 km/s, Mars guided
+  // lifting), where the lift vector produces the real loft/skip. Non-lifting super-circular arrivals
+  // (ballistic Mars/Venus/Titan/Jupiter probes) keep the validated fixed-γ model — a lift-free 2-DOF
+  // would skim out unrealistically.
   const vCircEntry = Math.sqrt(
     bodyGravity(profile.entryState.altitudeM, body) * (bodyRadiusM + profile.entryState.altitudeM),
   );
   const subCircular = profile.entryState.velocityMs <= vCircEntry * 1.02;
+  // Loft/skip bookkeeping (ADR-089). A lifting entry may climb back above the atmosphere (γ<0);
+  // above SKIP_ALT_M the air is negligible and explicit Euler drifts specific energy, so we HOLD
+  // the conserved orbital energy on the exo-atmospheric coast. `lofted` gates the skip beats.
+  const SKIP_ALT_M = 105_000;
+  let lofted = false;
+  let coastEnergy: number | null = null; // specific orbital energy held during the vacuum coast
   // Drag-area a phase inflates FROM (the previous phase's Cd·A). A chute/aeroshell
   // deploy is not instantaneous — it inflates over ~INFLATION_S, so the effective
   // Cd·A ramps up smoothly instead of applying full area at deploy velocity (which
@@ -498,7 +508,7 @@ export function integrateDescent(
     // 2-DOF flight-path angle (#419): a free-aerodynamic phase evolves γ (below);
     // every other phase pins it to the profile/default constant. sinG/cosG are
     // read from the live γ at the start of the step (semi-implicit Euler with h).
-    const dynamicalGamma = subCircular && gammaIsDynamical(phase);
+    const dynamicalGamma = (subCircular || hasLift) && gammaIsDynamical(phase);
     if (!dynamicalGamma) gammaRad = gammaDegFor(phase, profile) * DEG2RAD;
     const sinG = Math.sin(gammaRad);
     const cosG = Math.cos(gammaRad);
@@ -583,8 +593,9 @@ export function integrateDescent(
           (g * cosG - lift / Math.max(1, mass) - (v * v * cosG) / (bodyRadiusM + h)) /
           Math.max(v, 1);
         gammaRad += dGammaDt * dt;
-        if (gammaRad < 0.0017)
-          gammaRad = 0.0017; // ~0.1° floor — never fly upward here
+        // A LIFTING entry may loft (γ<0 = climbing back up) — that IS the super-circular skip
+        // (ADR-089), so don't floor it. A non-lifting capsule can't fly upward: floor γ at ~0.1°.
+        if (!hasLift && gammaRad < 0.0017) gammaRad = 0.0017;
         else if (gammaRad > Math.PI / 2) gammaRad = Math.PI / 2; // cap at vertical
       }
     }
@@ -596,6 +607,28 @@ export function integrateDescent(
     h += -v * sinG * dt;
     downrange += v * cosG * dt; // ground track advances with the horizontal velocity component
     t += dt;
+
+    // ── Loft/skip handling (ADR-089), lifting entries only ──────────────────────────────────
+    // A super-circular lifting entry can climb back above the atmosphere (the Apollo-4 skip). Above
+    // SKIP_ALT_M the air is negligible: we HOLD the conserved specific orbital energy so explicit
+    // Euler doesn't drift the coast, and emit skip_out / second_entry beats at the crossing.
+    if (hasLift) {
+      if (h > SKIP_ALT_M) {
+        if (!lofted) {
+          lofted = true;
+          pushEvent('skip_out');
+          coastEnergy = (v * v) / 2 - muBody / (bodyRadiusM + h); // enter the vacuum coast
+        } else if (coastEnergy !== null) {
+          // Conserve energy: v = √(2·(E + μ/r)). Gravity is conservative, so the coast keeps E.
+          const vSq = 2 * (coastEnergy + muBody / (bodyRadiusM + h));
+          if (vSq > 0) v = Math.sqrt(vSq);
+        }
+      } else if (lofted && coastEnergy !== null) {
+        // Fell back into the atmosphere — the second entry pulse begins; drag resumes.
+        pushEvent('second_entry');
+        coastEnergy = null;
+      }
+    }
 
     if (t >= nextSampleT) {
       states.push(makeState());

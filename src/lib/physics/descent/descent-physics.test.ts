@@ -395,3 +395,51 @@ describe('range-control entry guidance', () => {
     expect(s.touchdownSuccess).toBe(true); // still a real ballistic entry
   });
 });
+
+// ─── Super-circular loft/skip model (#29 · ADR-089) ──────────────────
+
+describe('lunar-return skip entry (11 km/s lifting)', () => {
+  // Apollo CM aero (L/D 0.3, real Cd·A) hitting Earth's atmosphere at lunar-return speed.
+  const lunarReturn = (angle: number): RawDescentProfile => ({
+    missionId: 'test-lunar-return',
+    siteId: 'test',
+    body: 'earth',
+    landingSite: { lat: 0, lon: 0 },
+    entryState: { altitudeM: 122_000, velocityMs: 11_000, flightPathAngleDeg: angle },
+    entryMassKg: 5560,
+    entryCdA: 17.7,
+    liftToDragRatio: 0.3,
+    archetype: 'EARTH_CAPSULE_REENTRY',
+    params: {
+      chuteDeployAltM: 7300,
+      terminalHandoffAltM: 3000,
+      parachuteCdA: 367,
+      terminalCdA: 1392,
+    },
+    source_tier: 'flagship',
+  });
+
+  it('a corridor entry (6.5°) lofts back out then re-enters — the Apollo-4 double pulse', () => {
+    const s = integrateDescent(expandDescentProfile(lunarReturn(6.5)), { entryBankCos: 1 });
+    expect(s.events.some((e) => e.type === 'skip_out')).toBe(true);
+    expect(s.events.some((e) => e.type === 'second_entry')).toBe(true);
+    // The skip carries it back above the atmosphere (max alt above the 105 km skip line).
+    expect(Math.max(...s.states.map((st) => st.altKm))).toBeGreaterThan(122);
+    expect(s.touchdownSuccess).toBe(true); // survives the corridor
+    expectInRange(s.peakDecel.g, 4, 12, 'lunar-return corridor peak-g'); // real ~6.5–8 g
+  });
+
+  it('lift-down (dig-in) pulls a much higher peak-g than lift-up (skip)', () => {
+    const up = integrateDescent(expandDescentProfile(lunarReturn(6.5)), { entryBankCos: 1 });
+    const down = integrateDescent(expandDescentProfile(lunarReturn(6.5)), { entryBankCos: -1 });
+    expect(down.peakDecel.g).toBeGreaterThan(up.peakDecel.g);
+  });
+
+  it('a too-shallow entry (4°) skips out and fails to land — the entry corridor is a knife-edge', () => {
+    const s = integrateDescent(expandDescentProfile(lunarReturn(4)), { entryBankCos: 1 });
+    expect(s.events.some((e) => e.type === 'skip_out')).toBe(true);
+    // Skips to a huge ellipse (near escape) and does not return within the sim window.
+    expect(Math.max(...s.states.map((st) => st.altKm))).toBeGreaterThan(1000);
+    expect(s.touchdownSuccess).toBe(false);
+  });
+});

@@ -42,9 +42,14 @@ const PEAK_G_BAND: Record<string, [number, number]> = {
   moon: [0, 7],
   mars: [4, 18],
   venus: [120, 320],
-  // Tier-1 manned Earth re-entry: the classic capsule g-band (Mercury/Apollo ~7–8 g
-  // ballistic; the drogue softens the main-canopy opening shock below the entry peak).
-  earth: [3, 12],
+  // Tier-1 manned Earth re-entry (ADR-088 Phase 0a re-calibration): profiles now use the real
+  // ~1.5° LEO-deorbit interface angle (was a too-steep 4°). Orbital BALLISTIC capsules
+  // (Mercury/Vostok/Voskhod) now read ~7.6–7.7 g — matching the flown ~7.8 g. Suborbital Mercury
+  // (freedom-7/liberty-bell-7, 18°/2.3 km/s) ~8.7 g. LIFTING capsules read ~5–8 g — still ~2× the
+  // flown ~3.3–4.5 g because the app integrator floors γ (no lofting); the #29 loft/skip model
+  // brings them to the flown value (then this band + the lifting band below tighten). Lower bound
+  // stays 3 to accommodate that pending drop.
+  earth: [3, 9.5],
   // Phase 2 (RFC-034 §12): micro-g asteroids barely decelerate; the Galileo
   // Jupiter probe hits the fiercest entry of any probe (~200–260 g published).
   itokawa: [0, 2],
@@ -97,13 +102,17 @@ describe('every descent profile expands + flies to its honest outcome', () => {
 /**
  * Every lifting capsule flies LIFT-UP, not ballistic (#419 · ADR-087/088), across the board —
  * Apollo/Skylab CM, Gemini, Soyuz, Crew Dragon, Shenzhou. A capsule rides its offset-CG lift
- * vector to cap the peak near the real ~6–8 g; a ballistic (lift-free) fall from the same 7.8 km/s
- * entry spikes to ~11 g. This guard auto-covers EVERY Earth profile carrying a `liftToDragRatio`,
- * so dropping the lift on any of them (→ ballistic 11 g) fails here — the loose per-body earth
- * band [3, 12] would not catch it. A guided profile (targetDownrangeKm) must also actually reach
- * its target: the entry computer flew it, not an open-loop fall.
+ * vector; a ballistic (lift-free) fall from the same 7.8 km/s entry at this angle spikes to ~11 g.
+ * This guard auto-covers EVERY Earth profile carrying a `liftToDragRatio`, so dropping the lift on
+ * any of them fails here. A guided profile (targetDownrangeKm) must also actually reach its target.
+ *
+ * HONEST CALIBRATION NOTE (ADR-088 Phase 0a): the band here is [4, 8.5], the FLOORED-model value —
+ * ~2× the flown ~3.3–4.5 g. The app integrator floors γ (never flies upward), so a lifting capsule
+ * cannot loft the way the real vehicles did to shed g gently; it skims at a fixed shallow angle and
+ * reads ~5–8 g. The #29 loft/skip model (γ-floor removal + exo-atmospheric coast) lets it loft to
+ * the flown value, at which point this band tightens to ~[3, 5]. Kept honest, not faked, until then.
  */
-describe('lifting re-entries fly the real ~6–8 g lifting band (all capsules)', () => {
+describe('lifting re-entries fly the floored-model lifting band (all capsules)', () => {
   const liftingIds = [...DESCENT_MISSION_IDS].filter((id) => {
     if (!existsSync(profilePath(id))) return false;
     return (loadRaw(id).liftToDragRatio ?? 0) > 0;
@@ -127,6 +136,35 @@ describe('lifting re-entries fly the real ~6–8 g lifting band (all capsules)',
           `${id} guided to target downrange`,
         );
       }
+    });
+  }
+});
+
+/**
+ * Honest provenance (ADR-088 Phase 0b): a profile's `liftToDragRatio` and `targetDownrangeKm` are
+ * MODEL-AUTHORED estimates, not values from the mission-report `provenance` block. This guard makes
+ * that machine-checkable — any Earth profile setting either MUST declare both (plus the estimated
+ * entry angle) in `estimatedFields`, so an invented number can never silently wear real provenance.
+ */
+describe('model-authored entry fields are declared as estimates, not sourced', () => {
+  const earthGuided = [...DESCENT_MISSION_IDS].filter((id) => {
+    if (!existsSync(profilePath(id))) return false;
+    const raw = loadRaw(id);
+    return (
+      raw.body === 'earth' && ((raw.liftToDragRatio ?? 0) > 0 || raw.targetDownrangeKm != null)
+    );
+  });
+
+  it('covers the lifting/guided Earth capsules (>=10)', () => {
+    expect(earthGuided.length).toBeGreaterThanOrEqual(10);
+  });
+
+  for (const id of earthGuided) {
+    it(`${id} declares its estimated physics fields`, () => {
+      const raw = loadRaw(id);
+      const est = raw.estimatedFields ?? [];
+      if ((raw.liftToDragRatio ?? 0) > 0) expect(est).toContain('liftToDragRatio');
+      if (raw.targetDownrangeKm != null) expect(est).toContain('targetDownrangeKm');
     });
   }
 });

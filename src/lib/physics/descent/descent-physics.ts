@@ -572,8 +572,13 @@ export function integrateDescent(
         // Its magnitude = (L/D)·D, scaled by the commanded bank: cos(bank)=+1 full lift-up (max
         // range, min g), −1 lift-down (dig in, short + high g). `entryBankCos` is 1 for an unguided
         // capsule; a guided entry (targetDownrangeKm) sets it via the range-control solve so the
-        // computer steers to its landing point — the systems/entry-steering job the Lab teaches.
-        const lift = liftBonus * drag * entryBankCos; // L = (L/D)·D, vertical component set by bank
+        // computer steers to its landing point — the range-control job the Lab teaches.
+        // Lift only exists on the LIFTING BODY (the capsule/aeroshell at angle of attack) — a
+        // deployed PARACHUTE is a symmetric canopy with ~zero L/D, so zero its lift (M1 fix): under
+        // the chute γ still integrates as a ballistic falling body, just with no lift term.
+        const isLiftingBody =
+          phase.kind === 'ballistic_entry' || phase.kind === 'aeroshell_descent';
+        const lift = isLiftingBody ? liftBonus * drag * entryBankCos : 0; // L = (L/D)·D, bank-scaled
         const dGammaDt =
           (g * cosG - lift / Math.max(1, mass) - (v * v * cosG) / (bodyRadiusM + h)) /
           Math.max(v, 1);
@@ -672,9 +677,17 @@ function integrateGuidedDescent(profile: DescentProfile, opts: DescentOptions): 
     integrateDescent(profile, { ...opts, entryBankCos: u });
   const rMinus = run(-1).landingDownrangeKm;
   const rPlus = run(1).landingDownrangeKm;
-  const increasing = rPlus >= rMinus;
   const footLo = Math.min(rMinus, rPlus);
   const footHi = Math.max(rMinus, rPlus);
+  // M4 guard — no steering authority. A profile that carries a `targetDownrangeKm` but has no
+  // effective lift (liftToDragRatio absent/0, or a SUPER-CIRCULAR arrival where the γ/lift
+  // integration is disabled — the Mars/lunar case, #29) has a ~zero-width footprint: bank does
+  // nothing. Don't pretend to guide it — fly the nominal descent and flag targetReachable=false.
+  const STEERABLE_KM = 20;
+  if (footHi - footLo < STEERABLE_KM) {
+    return { ...run(1), guidance: { entryBankCos: 1, targetReachable: false } };
+  }
+  const increasing = rPlus >= rMinus;
   const reachable = target >= footLo && target <= footHi;
   const clamped = Math.max(footLo, Math.min(footHi, target));
   let lo = -1;
@@ -687,7 +700,12 @@ function integrateGuidedDescent(profile: DescentProfile, opts: DescentOptions): 
     if (res.landingDownrangeKm < clamped === increasing) lo = mid;
     else hi = mid;
   }
-  return { ...res, guidance: { entryBankCos: mid, targetReachable: reachable } };
+  // M3 guard — residual check. The bisection ASSUMES range is monotone in cos(bank); if a future
+  // profile breaks that mid-curve the solve returns a wrong bank with no other symptom. Only claim
+  // the target was reached if we actually landed near it (a converged solve misses by ~0 km; a
+  // monotonicity break misses by hundreds). 50 km is well above convergence + the ±30 km test band.
+  const converged = Math.abs(res.landingDownrangeKm - clamped) <= 50;
+  return { ...res, guidance: { entryBankCos: mid, targetReachable: reachable && converged } };
 }
 
 /**

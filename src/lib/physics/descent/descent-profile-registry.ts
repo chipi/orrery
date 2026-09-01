@@ -380,11 +380,17 @@ export interface RawDescentProfile {
   entryCdA: number;
   /** Lift-to-drag ratio (#419). 0/absent = ballistic (Mercury/Vostok). A lifting
    *  capsule (Apollo CM ~0.3, Gemini/Soyuz/Dragon ~0.2) flies lift-up: caps peak-g
-   *  at the real ~6–7 g instead of the ~11 g ballistic value. */
+   *  below the ballistic value. MODEL ESTIMATE — declare in `estimatedFields`. */
   liftToDragRatio?: number;
   /** Guided-entry target downrange (km) from the entry interface (#29 · ADR-088). With a positive
-   *  L/D, the entry computer solves the bank that lands here. Absent = full lift-up (open loop). */
+   *  L/D, the entry computer solves the bank that lands here. MODEL ESTIMATE — declare in
+   *  `estimatedFields`. Absent = full lift-up (open loop). */
   targetDownrangeKm?: number;
+  /** Names of fields whose values are MODEL-AUTHORED ESTIMATES, not taken from the `provenance`
+   *  sources (ADR-088 Phase 0b). The provenance block backs sourced fields (mass, Cd·A); it does
+   *  NOT back these. A test enforces that any Earth profile setting liftToDragRatio/targetDownrangeKm
+   *  declares them here, so an invented number can never silently wear real mission-report provenance. */
+  estimatedFields?: string[];
   retroPropellantKg?: number;
   survivableTouchdownMs?: number;
   archetype: ArchetypeName;

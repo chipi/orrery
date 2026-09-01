@@ -73,6 +73,10 @@
     speed?: number;
     /** When true, DescentScene does NOT self-advance `t` — the master clock owns it. */
     externalClock?: boolean;
+    /** Pre-integrated summary (M6 · ADR-088 Phase 0f). /fly already runs `integrateDescent` for its
+     *  clock/scrubber; passing it in avoids re-running the (guided ~100 ms) integration a second
+     *  time here. Omitted → DescentScene integrates its own, staying standalone-usable. */
+    precomputedSummary?: DescentSummary;
   }
   let {
     profile,
@@ -84,9 +88,10 @@
     playing = $bindable(true),
     speed = $bindable(3),
     externalClock = false,
+    precomputedSummary,
   }: Props = $props();
 
-  const summary: DescentSummary = $derived(integrateDescent(profile));
+  const summary: DescentSummary = $derived(precomputedSummary ?? integrateDescent(profile));
   const duration = $derived(summary.totalDurationS);
   const beats = $derived(buildDescentBeats(summary));
 

@@ -341,7 +341,7 @@ describe('range-control entry guidance', () => {
     siteId: 'test',
     body: 'earth',
     landingSite: { lat: 0, lon: 0 },
-    entryState: { altitudeM: 122_000, velocityMs: 7820, flightPathAngleDeg: 4 },
+    entryState: { altitudeM: 122_000, velocityMs: 7820, flightPathAngleDeg: 1.5 },
     entryMassKg: 5560,
     entryCdA: 6,
     liftToDragRatio: 0.3,
@@ -371,7 +371,7 @@ describe('range-control entry guidance', () => {
   });
 
   it('the computer solves the bank to hit a reachable target downrange', () => {
-    for (const target of [1400, 1600, 1800]) {
+    for (const target of [2600, 3000, 3400]) {
       const s = integrateDescent({ ...capsule, targetDownrangeKm: target });
       expect(s.guidance?.targetReachable).toBe(true);
       expectInRange(s.landingDownrangeKm, target - 25, target + 25, `guided to ${target} km`);
@@ -381,9 +381,17 @@ describe('range-control entry guidance', () => {
   });
 
   it('flags an out-of-footprint target and clamps to the reachable edge', () => {
-    const s = integrateDescent({ ...capsule, targetDownrangeKm: 5000 });
+    const s = integrateDescent({ ...capsule, targetDownrangeKm: 8000 });
     expect(s.guidance?.targetReachable).toBe(false);
-    expect(s.landingDownrangeKm).toBeLessThan(5000); // clamped to full-lift-up max
+    expect(s.landingDownrangeKm).toBeLessThan(8000); // clamped to full-lift-up max
     expect(s.touchdownSuccess).toBe(true); // still a real, survivable entry
+  });
+
+  it('M4 guard: a target with no lift (no steering authority) is flagged, not faked', () => {
+    // A profile carrying a target but zero L/D has a zero-width footprint — bank does nothing.
+    const noLift = expandDescentProfile({ ...RAW_CAPSULE, liftToDragRatio: 0 });
+    const s = integrateDescent({ ...noLift, targetDownrangeKm: 3000 });
+    expect(s.guidance?.targetReachable).toBe(false); // honest: cannot steer, does not pretend
+    expect(s.touchdownSuccess).toBe(true); // still a real ballistic entry
   });
 });

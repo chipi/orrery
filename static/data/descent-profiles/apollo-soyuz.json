@@ -9,13 +9,13 @@
   "entryState": {
     "altitudeM": 122000,
     "velocityMs": 7820,
-    "flightPathAngleDeg": 4
+    "flightPathAngleDeg": 1.5
   },
   "entryMassKg": 5560,
   "entryCdA": 6,
   "liftToDragRatio": 0.3,
-  "targetDownrangeKm": 1500,
-  "archetype": "EARTH_CAPSULE_REENTRY",
+  "targetDownrangeKm": 3000,
+  "estimatedFields": ["liftToDragRatio", "targetDownrangeKm", "flightPathAngleDeg"],  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7000,
     "terminalHandoffAltM": 3000,

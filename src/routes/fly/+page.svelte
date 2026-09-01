@@ -3302,6 +3302,7 @@
   <DescentScene
     profile={descentProfile}
     mission={descentDossier}
+    precomputedSummary={descentSummaryFly ?? undefined}
     {hudHidden}
     onToggleHud={toggleHud}
     bind:t={descentT}

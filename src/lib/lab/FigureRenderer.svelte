@@ -28,6 +28,10 @@
   import GuidanceTimelineCanvas from './GuidanceTimelineCanvas.svelte';
   import DescentGuidanceCanvas from './DescentGuidanceCanvas.svelte';
   import EntrySteeringCanvas from './EntrySteeringCanvas.svelte';
+  import EntryRangeCanvas from './EntryRangeCanvas.svelte';
+  import LaunchWindowCanvas from './LaunchWindowCanvas.svelte';
+  import AssistTurnCanvas from './AssistTurnCanvas.svelte';
+  import AssistStaircaseCanvas from './AssistStaircaseCanvas.svelte';
   import {
     fidelityStyle,
     fidelityLabel,
@@ -178,6 +182,14 @@
   <DescentGuidanceCanvas {figure} {t} {ariaLabelKey} />
 {:else if figure.kind === 'entry-steering'}
   <EntrySteeringCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'entry-range'}
+  <EntryRangeCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'launch-window'}
+  <LaunchWindowCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'assist-turn'}
+  <AssistTurnCanvas {figure} {t} {ariaLabelKey} />
+{:else if figure.kind === 'assist-staircase'}
+  <AssistStaircaseCanvas {figure} {t} {ariaLabelKey} />
 {:else}
   <svg
     role="img"

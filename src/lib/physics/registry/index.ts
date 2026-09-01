@@ -1218,10 +1218,39 @@ export const launchWindow: FormulaDef<{ depart: string; arrive: string }> = {
       } satisfies FormulaResult;
     }
     const synodicDays = synodicPeriodS(d.orbitalPeriodS, a.orbitalPeriodS) / 86400;
+    // Relative semi-major axes from the periods (Kepler III: a ∝ T^(2/3)); the ratio is all the
+    // geometry needs. The required lead angle is the classic Hohmann phasing: the target must be
+    // ahead by 180° minus how far it travels during the transfer half-ellipse.
+    const T1 = d.orbitalPeriodS;
+    const T2 = a.orbitalPeriodS;
+    const a1 = Math.cbrt(T1 * T1);
+    const a2 = Math.cbrt(T2 * T2);
+    const at = (a1 + a2) / 2;
+    const departInner = a1 <= a2;
+    const aOuter = Math.max(a1, a2);
+    const aInner = Math.min(a1, a2);
+    const transferS = 0.5 * (aInner === a1 ? T1 : T2) * Math.pow(at / aInner, 1.5);
+    const transferDays = transferS / 86400;
+    const requiredPhaseDeg = 180 - 360 * (transferS / T2);
+    const outerDrawR = 120;
+    const innerDrawR = 120 * (aInner / aOuter);
     return {
       values: { synodic: { value: synodicDays, units: 'day' } },
       status: { ok: true },
       assumptions: ['lab.assume.circular-orbits', 'lab.assume.coplanar'],
+      figure: {
+        kind: 'launch-window',
+        provenance: { fidelity: 'computed', module: 'transfer/orbital' },
+        assumptions: ['lab.assume.circular-orbits', 'lab.assume.coplanar'],
+        innerDrawR,
+        outerDrawR,
+        departInner,
+        requiredPhaseDeg,
+        synodicDays,
+        transferDays,
+        departLabel: depart.charAt(0).toUpperCase() + depart.slice(1),
+        arriveLabel: arrive.charAt(0).toUpperCase() + arrive.slice(1),
+      },
     } satisfies FormulaResult;
   },
 };
@@ -1995,11 +2024,13 @@ export const entryRangeControl: FormulaDef<{
     const bankDeg = (Math.acos(Math.max(-1, Math.min(1, solve.bankCos))) * 180) / Math.PI;
     // Footprint: sweep a CONSTANT bank from lift-down (short + high-g) to lift-up (far + low-g); each
     // point is (landing range, peak-g) — the trade the computer navigates.
-    const points: Vec2[] = [];
-    for (let u = -1; u <= 1.0001; u += 0.1) {
+    const footprint: { rangeKm: number; peakG: number }[] = [];
+    for (let u = -1; u <= 1.0001; u += 0.08) {
       const r = simulateLiftingEntry({ ...dyn, targetDecelG: 0, bankCommand: () => u });
-      points.push({ x: r.downrangeM / 1000, y: r.peakG });
+      footprint.push({ rangeKm: r.downrangeM / 1000, peakG: r.peakG });
     }
+    const footLoKm = Math.min(...footprint.map((p) => p.rangeKm));
+    const footHiKm = Math.max(...footprint.map((p) => p.rangeKm));
     const values: Record<string, Quantity> = {
       bankDeg: { value: bankDeg, units: 'deg' },
       landedRangeKm: { value: solve.landedRangeM / 1000, units: 'km' },
@@ -2012,19 +2043,18 @@ export const entryRangeControl: FormulaDef<{
         : { ok: false, reasonKey: 'lab.f.rangectl.err-unreachable' },
       assumptions: ['lab.assume.two-dof-entry', 'lab.assume.exponential-atmosphere'],
       figure: {
-        kind: 'curve',
+        kind: 'entry-range',
         provenance: { fidelity: 'computed', module: 'systems/entry-steering' },
         assumptions: ['lab.assume.two-dof-entry', 'lab.assume.exponential-atmosphere'],
-        x: { labelKey: 'lab.axis.range', units: 'km' },
-        y: { labelKey: 'lab.axis.decel-g', units: '' },
-        series: [{ labelKey: 'lab.f.rangectl.footprint', points }],
-        marks: [
-          {
-            at: { x: solve.landedRangeM / 1000, y: solve.peakG },
-            labelKey: 'lab.f.rangectl.solved',
-            kind: 'point',
-          },
-        ],
+        footprint,
+        footLoKm,
+        footHiKm,
+        targetKm: targetRangeKm,
+        solvedRangeKm: solve.landedRangeM / 1000,
+        solvedPeakG: solve.peakG,
+        bankDeg,
+        reachable: solve.reachable,
+        liftToDrag,
       },
     } satisfies FormulaResult;
   },
@@ -3599,20 +3629,17 @@ export const gravityAssist: FormulaDef<{ vInfKms: number }> = {
       } satisfies FormulaResult;
     }
     const boost = 2 * vInfKms; // ideal 180° turn — the ceiling, rarely reached
-    const points: Vec2[] = [];
-    for (let v = 0; v <= 30.001; v += 1) points.push({ x: v, y: 2 * v });
     return {
       values: { boost: { value: boost, units: 'km/s' } },
       status: { ok: true },
       assumptions: ['lab.assume.patched-conic', 'lab.assume.ideal-deflection'],
       figure: {
-        kind: 'curve',
+        kind: 'assist-turn',
         provenance: { fidelity: 'computed', module: 'mechanics/orbits' },
         assumptions: ['lab.assume.ideal-deflection'],
-        x: { labelKey: 'lab.axis.vinf', units: 'km/s' },
-        y: { labelKey: 'lab.axis.speed', units: 'km/s' },
-        series: [{ points }],
-        marks: [{ at: { x: vInfKms, y: boost }, labelKey: 'lab.mark.you-are-here', kind: 'point' }],
+        vInfKms,
+        turnDeg: 110, // a representative strong deflection (not the 180° ideal)
+        boostKms: boost,
       },
     } satisfies FormulaResult;
   },
@@ -3762,8 +3789,8 @@ export const assistChain: FormulaDef<{ flybys: number; vInfKms: number }> = {
     }
     const perFlyby = 2 * vInfKms; // the ideal 180°-turn ceiling for one flyby
     const maxBoost = n * perFlyby; // cumulative UPPER BOUND — flybys do not add as scalars in reality
-    const points: Vec2[] = [{ x: 0, y: 0 }];
-    for (let i = 1; i <= n; i += 1) points.push({ x: i, y: i * perFlyby });
+    const steps: { n: number; cumKms: number }[] = [];
+    for (let i = 1; i <= n; i += 1) steps.push({ n: i, cumKms: i * perFlyby });
     return {
       values: { maxBoost: { value: maxBoost, units: 'km/s' } },
       status: { ok: true },
@@ -3774,13 +3801,12 @@ export const assistChain: FormulaDef<{ flybys: number; vInfKms: number }> = {
         'lab.assume.upper-bound-sum',
       ],
       figure: {
-        kind: 'curve',
+        kind: 'assist-staircase',
         provenance: { fidelity: 'computed', module: 'mechanics/orbits' },
         assumptions: ['lab.assume.upper-bound-sum'],
-        x: { labelKey: 'lab.axis.flyby', units: '' },
-        y: { labelKey: 'lab.axis.cumulative-dv', units: 'km/s' },
-        series: [{ points }],
-        marks: [{ at: { x: n, y: maxBoost }, labelKey: 'lab.mark.chain-total', kind: 'point' }],
+        steps,
+        perFlybyKms: perFlyby,
+        totalKms: maxBoost,
       },
     } satisfies FormulaResult;
   },

@@ -274,6 +274,51 @@ export type FigureSpec = FigureBase &
         liftToDrag: number;
         captured: boolean;
       }
+    | {
+        // Range-control footprint (ADR-088): the reachable landing-range band + the g each range
+        // costs, with the target + the bank the computer solved to hit it. `footprint` runs
+        // lift-down (short, high-g) → lift-up (far, low-g).
+        kind: 'entry-range';
+        footprint: { rangeKm: number; peakG: number }[];
+        footLoKm: number;
+        footHiKm: number;
+        targetKm: number;
+        solvedRangeKm: number;
+        solvedPeakG: number;
+        bankDeg: number;
+        reachable: boolean;
+        liftToDrag: number;
+      }
+    // Launch-window geometry (synodic) — the two coplanar circular orbits, the departure planet,
+    // the target at the REQUIRED lead angle for a Hohmann arrival, and the transfer half-ellipse.
+    // The synodic period is how often this alignment recurs — i.e. how often a window opens.
+    | {
+        kind: 'launch-window';
+        innerDrawR: number; // normalised draw radii (inner/outer orbit)
+        outerDrawR: number;
+        departInner: boolean; // is the departure planet on the inner orbit?
+        requiredPhaseDeg: number; // target lead angle at departure
+        synodicDays: number;
+        transferDays: number;
+        departLabel: string;
+        arriveLabel: string;
+      }
+    // Gravity-assist deflection — the incoming v∞, the planet, the bent outgoing v∞ (same speed
+    // in the planet frame), the turn angle, and the heliocentric Δv the flyby banks (≤ 2·v∞).
+    | {
+        kind: 'assist-turn';
+        vInfKms: number;
+        turnDeg: number; // representative deflection drawn
+        boostKms: number; // the ceiling 2·v∞
+      }
+    // Gravity-assist chain — the cumulative-Δv staircase, one step per flyby (each ≤ 2·v∞), the
+    // upper-bound sum a tour like Voyager 2 can bank.
+    | {
+        kind: 'assist-staircase';
+        steps: { n: number; cumKms: number }[];
+        perFlybyKms: number;
+        totalKms: number;
+      }
   );
 
 // ─── Goal / GoalStep (curriculum) + Card / Notebook (user documents) ────────

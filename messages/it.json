@@ -2645,5 +2645,15 @@
   "lab_f_rangectl_footprint": "Impronta (distanza vs g)",
   "lab_f_rangectl_solved": "Rollio risolto",
   "lab_f_rangectl_err_unreachable": "L'obiettivo è fuori dall'impronta raggiungibile — il computer si arresta al bordo più vicino (volato a piena portanza in su o piena portanza in giù).",
-  "lab_goal_sysentry_range": "Sopravvivere al corridoio è solo metà del lavoro — il computer deve anche farti atterrare nella zona di recupero, non in un punto qualsiasi. La distanza è monotona rispetto al rollio: piena portanza in su vola più lontano (una lunga sfioratura poco profonda), portanza in giù affonda breve. Così il computer risolve l'unico angolo di rollio che atterra sul tuo obiettivo. La curva dell'impronta mostra il prezzo: un obiettivo vicino impone un affondo a portanza in giù che fa impennare i g, uno lontano cavalca la portanza in su con dolcezza. Distanza e g si scambiano — e il computer li centra entrambi."
+  "lab_goal_sysentry_range": "Sopravvivere al corridoio è solo metà del lavoro — il computer deve anche farti atterrare nella zona di recupero, non in un punto qualsiasi. La distanza è monotona rispetto al rollio: piena portanza in su vola più lontano (una lunga sfioratura poco profonda), portanza in giù affonda breve. Così il computer risolve l'unico angolo di rollio che atterra sul tuo obiettivo. La curva dell'impronta mostra il prezzo: un obiettivo vicino impone un affondo a portanza in giù che fa impennare i g, uno lontano cavalca la portanza in su con dolcezza. Distanza e g si scambiano — e il computer li centra entrambi.",
+  "lab_conn_art_apollo13": "Apollo 13 — il giro a ritorno libero che riportò l'equipaggio a casa",
+  "lab_conn_art_saturn": "Saturn V — il razzo che portò ogni equipaggio Apollo sulla Luna",
+  "lab_conn_art_csm": "Modulo di Comando/Servizio Apollo — la nave che tornò a casa",
+  "lab_conn_rtm_saturn": "Saturn V — il razzo che lanciò Apollo verso la Luna",
+  "lab_conn_rtm_csm": "Modulo di Comando/Servizio Apollo — la nave dell'equipaggio",
+  "lab_conn_gtm_odyssey": "Mars Odyssey — l'orbiter marziano più longevo della NASA",
+  "lab_conn_gtm_atlas": "Atlas V — il cavallo di battaglia che lanciò molte missioni marziane",
+  "lab_conn_lom_vikingcraft": "Viking 1 — il primo veicolo a atterrare e operare su Marte (NASA)",
+  "lab_conn_lss_voyager1craft": "Voyager 1 — l'oggetto costruito dall'uomo più lontano dalla Terra",
+  "lab_conn_lss_voyager2craft": "Voyager 2 — l'unico veicolo a sorvolare tutti e quattro i pianeti giganti"
 }

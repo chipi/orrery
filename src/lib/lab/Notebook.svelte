@@ -30,6 +30,8 @@
     type CodecCell,
   } from './codec';
   import Card from './Card.svelte';
+  import FlightMapCanvas from './FlightMapCanvas.svelte';
+  import { getFlightMap } from './flight-maps';
 
   type Props = {
     goal: Goal;
@@ -106,6 +108,9 @@
 
   // The whole notebook recomputes on any input edit — trivially cheap for M1.
   const computed = $derived(recomputeNotebook(cells, REGISTRY));
+
+  /** The capstone/milestone GRAND HERO — a whole-mission flight map, shown atop the notebook. */
+  const flightMap = $derived(restored ? null : getFlightMap(goal.id));
 
   // First client load: an incoming ?nb= share link overrides the goal seed and
   // becomes a custom notebook. Post-hydration so SSR and first render agree. We do
@@ -419,6 +424,11 @@
         />
       </div>
     </header>
+    {#if flightMap}
+      <figure class="nb__flightmap">
+        <FlightMapCanvas flight={flightMap} />
+      </figure>
+    {/if}
     {#if loadError}
       <p class="nb__load-error" role="alert">{loadError}</p>
     {/if}
@@ -674,6 +684,14 @@
     font-size: 0.72rem;
     color: #c1440e;
     margin: -0.5rem 0 0;
+  }
+
+  .nb__flightmap {
+    margin: 0 0 0.5rem;
+    border: 1px solid rgba(78, 205, 196, 0.18);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
   }
 
   .nb__goal-kicker {

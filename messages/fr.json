@@ -2645,5 +2645,15 @@
   "lab_f_rangectl_footprint": "Empreinte (portée vs g)",
   "lab_f_rangectl_solved": "Inclinaison résolue",
   "lab_f_rangectl_err_unreachable": "La cible est hors de l'empreinte atteignable — le calculateur se cale sur le bord le plus proche (vol en portance maximale vers le haut ou vers le bas).",
-  "lab_goal_sysentry_range": "Survivre au corridor n'est que la moitié du travail — le calculateur doit aussi vous poser dans la zone de récupération, et pas n'importe où. La portée est monotone selon l'inclinaison : la portance maximale vers le haut porte le plus loin (un long effleurement en pente douce), la portance vers le bas creuse court. Le calculateur résout donc l'unique angle d'inclinaison qui atterrit sur votre cible. La courbe d'empreinte montre le prix à payer : une cible proche impose un creusement en portance vers le bas qui fait grimper le g, une cible lointaine glisse doucement en portance vers le haut. Portée et g s'échangent — et le calculateur atteint les deux."
+  "lab_goal_sysentry_range": "Survivre au corridor n'est que la moitié du travail — le calculateur doit aussi vous poser dans la zone de récupération, et pas n'importe où. La portée est monotone selon l'inclinaison : la portance maximale vers le haut porte le plus loin (un long effleurement en pente douce), la portance vers le bas creuse court. Le calculateur résout donc l'unique angle d'inclinaison qui atterrit sur votre cible. La courbe d'empreinte montre le prix à payer : une cible proche impose un creusement en portance vers le bas qui fait grimper le g, une cible lointaine glisse doucement en portance vers le haut. Portée et g s'échangent — et le calculateur atteint les deux.",
+  "lab_conn_art_apollo13": "Apollo 13 — la trajectoire à retour libre qui a ramené l'équipage",
+  "lab_conn_art_saturn": "Saturn V — la fusée qui a emmené tous les équipages Apollo vers la Lune",
+  "lab_conn_art_csm": "Module de commande/service Apollo — le vaisseau qui est revenu",
+  "lab_conn_rtm_saturn": "Saturn V — la fusée qui a lancé Apollo vers la Lune",
+  "lab_conn_rtm_csm": "Module de commande/service Apollo — le vaisseau de l'équipage",
+  "lab_conn_gtm_odyssey": "Mars Odyssey — l'orbiteur martien de la NASA au service le plus long",
+  "lab_conn_gtm_atlas": "Atlas V — le lanceur polyvalent de nombreuses missions martiennes",
+  "lab_conn_lom_vikingcraft": "Viking 1 — le premier engin à se poser et à fonctionner sur Mars (NASA)",
+  "lab_conn_lss_voyager1craft": "Voyager 1 — l'objet humain le plus éloigné de la Terre",
+  "lab_conn_lss_voyager2craft": "Voyager 2 — le seul engin à avoir survolé les quatre planètes géantes"
 }

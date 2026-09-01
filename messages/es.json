@@ -2645,5 +2645,15 @@
   "lab_f_rangectl_footprint": "Huella (alcance vs g)",
   "lab_f_rangectl_solved": "Alabeo resuelto",
   "lab_f_rangectl_err_unreachable": "El objetivo está fuera de la huella alcanzable — el ordenador se ajusta al borde más cercano (volando con sustentación máxima hacia arriba o hacia abajo).",
-  "lab_goal_sysentry_range": "Sobrevivir al corredor es solo la mitad del trabajo — el ordenador también debe hacerte aterrizar en la zona de recuperación, no en cualquier sitio. El alcance es monótono con el alabeo: sustentación máxima hacia arriba vuela lo más lejos (un rasante largo y suave), hacia abajo cava corto. Así que el ordenador resuelve el único ángulo de alabeo que aterriza en tu objetivo. La curva de la huella muestra el precio: un objetivo cercano fuerza un descenso con sustentación hacia abajo que dispara las g, uno lejano cabalga suavemente con sustentación hacia arriba. Alcance y g se compensan — y el ordenador acierta con ambos."
+  "lab_goal_sysentry_range": "Sobrevivir al corredor es solo la mitad del trabajo — el ordenador también debe hacerte aterrizar en la zona de recuperación, no en cualquier sitio. El alcance es monótono con el alabeo: sustentación máxima hacia arriba vuela lo más lejos (un rasante largo y suave), hacia abajo cava corto. Así que el ordenador resuelve el único ángulo de alabeo que aterriza en tu objetivo. La curva de la huella muestra el precio: un objetivo cercano fuerza un descenso con sustentación hacia abajo que dispara las g, uno lejano cabalga suavemente con sustentación hacia arriba. Alcance y g se compensan — y el ordenador acierta con ambos.",
+  "lab_conn_art_apollo13": "Apollo 13 — el bucle de retorno libre que trajo a la tripulación a casa",
+  "lab_conn_art_saturn": "Saturn V — el cohete que llevó a cada tripulación Apollo a la Luna",
+  "lab_conn_art_csm": "Módulo de Mando/Servicio Apollo — la nave que regresó a casa",
+  "lab_conn_rtm_saturn": "Saturn V — el cohete que lanzó a Apollo hacia la Luna",
+  "lab_conn_rtm_csm": "Módulo de Mando/Servicio Apollo — la nave de la tripulación",
+  "lab_conn_gtm_odyssey": "Mars Odyssey — el orbitador marciano más longevo de la NASA",
+  "lab_conn_gtm_atlas": "Atlas V — el caballo de batalla que lanzó muchas misiones a Marte",
+  "lab_conn_lom_vikingcraft": "Viking 1 — la primera nave en aterrizar y operar en Marte (NASA)",
+  "lab_conn_lss_voyager1craft": "Voyager 1 — el objeto humano más lejano de la Tierra",
+  "lab_conn_lss_voyager2craft": "Voyager 2 — la única nave que ha sobrevolado los cuatro planetas gigantes"
 }

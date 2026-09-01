@@ -2645,5 +2645,15 @@
   "lab_f_rangectl_footprint": "Voetafdruk (bereik vs g)",
   "lab_f_rangectl_solved": "Berekende rolhoek",
   "lab_f_rangectl_err_unreachable": "Doel ligt buiten de bereikbare voetafdruk — de computer klemt vast op de dichtstbijzijnde rand (gevlogen met volledige lift omhoog of volledige lift omlaag).",
-  "lab_goal_sysentry_range": "De corridor overleven is maar het halve werk — de computer moet je ook in de bergingszone landen, niet zomaar ergens. Downrange is monotoon in rolhoek: volledige lift omhoog vliegt het verst (een lange, ondiepe scheerbeweging), lift omlaag graaft kort in. Dus lost de computer de ene rolhoek op die op je doel landt. De voetafdrukkromme toont de prijs: een nabij doel dwingt een lift-omlaag-ingraving af die de g laat pieken, een ver doel rijdt zacht op lift omhoog. Bereik en g wisselen uit — en de computer haalt beide."
+  "lab_goal_sysentry_range": "De corridor overleven is maar het halve werk — de computer moet je ook in de bergingszone landen, niet zomaar ergens. Downrange is monotoon in rolhoek: volledige lift omhoog vliegt het verst (een lange, ondiepe scheerbeweging), lift omlaag graaft kort in. Dus lost de computer de ene rolhoek op die op je doel landt. De voetafdrukkromme toont de prijs: een nabij doel dwingt een lift-omlaag-ingraving af die de g laat pieken, een ver doel rijdt zacht op lift omhoog. Bereik en g wisselen uit — en de computer haalt beide.",
+  "lab_conn_art_apollo13": "Apollo 13 — de free-returnbaan die de bemanning thuisbracht",
+  "lab_conn_art_saturn": "Saturn V — de raket die elke Apollo-bemanning naar de Maan bracht",
+  "lab_conn_art_csm": "Apollo Command/Service Module — het schip dat thuiskwam",
+  "lab_conn_rtm_saturn": "Saturn V — de raket die Apollo naar de Maan wierp",
+  "lab_conn_rtm_csm": "Apollo Command/Service Module — het schip van de bemanning",
+  "lab_conn_gtm_odyssey": "Mars Odyssey — NASA's langst dienende Mars-orbiter",
+  "lab_conn_gtm_atlas": "Atlas V — het werkpaard dat veel Mars-missies lanceerde",
+  "lab_conn_lom_vikingcraft": "Viking 1 — het eerste ruimtevaartuig dat op Mars landde en werkte (NASA)",
+  "lab_conn_lss_voyager1craft": "Voyager 1 — het verste door mensen gemaakte object van de Aarde",
+  "lab_conn_lss_voyager2craft": "Voyager 2 — het enige vaartuig dat langs alle vier de reuzenplaneten vloog"
 }

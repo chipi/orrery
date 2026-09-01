@@ -871,13 +871,17 @@ describe('Family C plan-a-mission · assist-chain physics + capstone wiring', ()
     const fig = compute('assist-chain', { flybys: 4, vInfKms: 10 }).figure as {
       kind: string;
       provenance: { fidelity: string };
-      series: { points: { x: number; y: number }[] }[];
+      steps: { n: number; cumKms: number }[];
+      perFlybyKms: number;
+      totalKms: number;
     };
-    expect(fig.kind).toBe('curve');
+    expect(fig.kind).toBe('assist-staircase');
     expect(fig.provenance.fidelity).toBe('computed');
-    // starts at the origin, rises to (4, 80).
-    expect(fig.series[0].points[0]).toEqual({ x: 0, y: 0 });
-    expect(fig.series[0].points.at(-1)).toEqual({ x: 4, y: 80 });
+    // one step per flyby, climbing 20 km/s each to an 80 km/s upper bound.
+    expect(fig.perFlybyKms).toBe(20);
+    expect(fig.totalKms).toBe(80);
+    expect(fig.steps[0]).toEqual({ n: 1, cumKms: 20 });
+    expect(fig.steps.at(-1)).toEqual({ n: 4, cumKms: 80 });
   });
 
   it('the capstone is cross-cutting and gated on BOTH families (spaceflight ∧ observe)', () => {

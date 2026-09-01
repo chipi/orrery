@@ -2645,5 +2645,15 @@
   "lab_f_rangectl_footprint": "Fußabdruck (Reichweite vs. g)",
   "lab_f_rangectl_solved": "Berechneter Rollwinkel",
   "lab_f_rangectl_err_unreachable": "Ziel liegt außerhalb des erreichbaren Fußabdrucks — der Rechner begrenzt auf die nächste Kante (Flug mit vollem Auftrieb nach oben oder unten).",
-  "lab_goal_sysentry_range": "Den Korridor zu überleben ist nur die halbe Miete — der Rechner muss dich auch in der Bergungszone absetzen, nicht irgendwo. Die Reichweite ist monoton im Rollwinkel: voller Auftrieb nach oben fliegt am weitesten (ein langes, flaches Streifen), Auftrieb nach unten gräbt kurz ein. Also berechnet der Rechner den einen Rollwinkel, der dein Ziel trifft. Die Fußabdruck-Kurve zeigt den Preis: ein nahes Ziel erzwingt ein Auftrieb-nach-unten-Eingraben, das die g-Spitze hochtreibt, ein fernes Ziel gleitet sanft mit Auftrieb nach oben. Reichweite und g stehen im Zielkonflikt — und der Rechner trifft beides."
+  "lab_goal_sysentry_range": "Den Korridor zu überleben ist nur die halbe Miete — der Rechner muss dich auch in der Bergungszone absetzen, nicht irgendwo. Die Reichweite ist monoton im Rollwinkel: voller Auftrieb nach oben fliegt am weitesten (ein langes, flaches Streifen), Auftrieb nach unten gräbt kurz ein. Also berechnet der Rechner den einen Rollwinkel, der dein Ziel trifft. Die Fußabdruck-Kurve zeigt den Preis: ein nahes Ziel erzwingt ein Auftrieb-nach-unten-Eingraben, das die g-Spitze hochtreibt, ein fernes Ziel gleitet sanft mit Auftrieb nach oben. Reichweite und g stehen im Zielkonflikt — und der Rechner trifft beides.",
+  "lab_conn_art_apollo13": "Apollo 13 — die Free-Return-Bahn, die die Crew nach Hause brachte",
+  "lab_conn_art_saturn": "Saturn V — die Rakete, die jede Apollo-Crew zum Mond flog",
+  "lab_conn_art_csm": "Apollo-Kommando-/Servicemodul — das Schiff, das heimkehrte",
+  "lab_conn_rtm_saturn": "Saturn V — die Rakete, die Apollo zum Mond schleuderte",
+  "lab_conn_rtm_csm": "Apollo-Kommando-/Servicemodul — das Schiff der Crew",
+  "lab_conn_gtm_odyssey": "Mars Odyssey — der am längsten aktive Mars-Orbiter der NASA",
+  "lab_conn_gtm_atlas": "Atlas V — das Arbeitspferd, das viele Mars-Missionen startete",
+  "lab_conn_lom_vikingcraft": "Viking 1 — die erste Sonde, die auf dem Mars landete und arbeitete (NASA)",
+  "lab_conn_lss_voyager1craft": "Voyager 1 — das am weitesten von der Erde entfernte von Menschen geschaffene Objekt",
+  "lab_conn_lss_voyager2craft": "Voyager 2 — die einzige Sonde, die an allen vier Gasriesen vorbeiflog"
 }

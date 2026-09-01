@@ -2645,5 +2645,15 @@
   "lab_f_rangectl_footprint": "Área de pouso (alcance vs g)",
   "lab_f_rangectl_solved": "Rolamento resolvido",
   "lab_f_rangectl_err_unreachable": "O alvo está fora da área de pouso alcançável — o computador limita à borda mais próxima (voando com sustentação máxima para cima ou para baixo).",
-  "lab_goal_sysentry_range": "Sobreviver ao corredor é só metade do trabalho — o computador também precisa pousar você na zona de recuperação, e não em qualquer lugar. O alcance é monótono em relação ao rolamento: sustentação máxima para cima voa mais longe (um roçar longo e raso), sustentação para baixo mergulha curto. Então o computador resolve o único ângulo de rolamento que pousa no seu alvo. A curva da área de pouso mostra o preço: um alvo próximo força um mergulho com sustentação para baixo que dispara o g, um distante desliza suavemente com sustentação para cima. Alcance e g se compensam — e o computador acerta os dois."
+  "lab_goal_sysentry_range": "Sobreviver ao corredor é só metade do trabalho — o computador também precisa pousar você na zona de recuperação, e não em qualquer lugar. O alcance é monótono em relação ao rolamento: sustentação máxima para cima voa mais longe (um roçar longo e raso), sustentação para baixo mergulha curto. Então o computador resolve o único ângulo de rolamento que pousa no seu alvo. A curva da área de pouso mostra o preço: um alvo próximo força um mergulho com sustentação para baixo que dispara o g, um distante desliza suavemente com sustentação para cima. Alcance e g se compensam — e o computador acerta os dois.",
+  "lab_conn_art_apollo13": "Apollo 13 — a trajetória de retorno livre que trouxe a tripulação de volta",
+  "lab_conn_art_saturn": "Saturn V — o foguete que levou todas as tripulações Apollo à Lua",
+  "lab_conn_art_csm": "Módulo de Comando/Serviço Apollo — a nave que voltou para casa",
+  "lab_conn_rtm_saturn": "Saturn V — o foguete que lançou a Apollo rumo à Lua",
+  "lab_conn_rtm_csm": "Módulo de Comando/Serviço Apollo — a nave da tripulação",
+  "lab_conn_gtm_odyssey": "Mars Odyssey — o orbitador de Marte da NASA em serviço há mais tempo",
+  "lab_conn_gtm_atlas": "Atlas V — o burro de carga que lançou muitas missões a Marte",
+  "lab_conn_lom_vikingcraft": "Viking 1 — a primeira espaçonave a pousar e operar em Marte (NASA)",
+  "lab_conn_lss_voyager1craft": "Voyager 1 — o objeto feito pelo homem mais distante da Terra",
+  "lab_conn_lss_voyager2craft": "Voyager 2 — a única nave a passar pelos quatro planetas gigantes"
 }

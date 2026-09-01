@@ -2657,5 +2657,6 @@
   "lab_conn_lss_voyager1craft": "Voyager 1 — el objeto humano más lejano de la Tierra",
   "lab_conn_lss_voyager2craft": "Voyager 2 — la única nave que ha sobrevolado los cuatro planetas gigantes",
   "lab_conn_lom_persrover": "Perseverance — el róver del sistema sky-crane, como hardware de vuelo (NASA)",
-  "lab_conn_lom_currover": "Curiosity — el primer aterrizaje con sky-crane, como hardware de vuelo (NASA)"
+  "lab_conn_lom_currover": "Curiosity — el primer aterrizaje con sky-crane, como hardware de vuelo (NASA)",
+  "lab_ui_load_error_link": "No se pudo cargar ese enlace del cuaderno compartido — se muestra la lección en su lugar."
 }

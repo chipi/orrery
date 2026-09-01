@@ -2657,5 +2657,6 @@
   "lab_conn_lss_voyager1craft": "Voyager 1 — l'objet humain le plus éloigné de la Terre",
   "lab_conn_lss_voyager2craft": "Voyager 2 — le seul engin à avoir survolé les quatre planètes géantes",
   "lab_conn_lom_persrover": "Perseverance — le rover à grue aérienne, comme matériel de vol (NASA)",
-  "lab_conn_lom_currover": "Curiosity — le premier atterrissage par grue aérienne, comme matériel de vol (NASA)"
+  "lab_conn_lom_currover": "Curiosity — le premier atterrissage par grue aérienne, comme matériel de vol (NASA)",
+  "lab_ui_load_error_link": "Impossible de charger ce lien de notebook partagé — affichage de la leçon à la place."
 }

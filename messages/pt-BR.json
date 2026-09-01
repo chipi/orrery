@@ -2657,5 +2657,6 @@
   "lab_conn_lss_voyager1craft": "Voyager 1 — o objeto feito pelo homem mais distante da Terra",
   "lab_conn_lss_voyager2craft": "Voyager 2 — a única nave a passar pelos quatro planetas gigantes",
   "lab_conn_lom_persrover": "Perseverance — o rover do guindaste aéreo, como hardware de voo (NASA)",
-  "lab_conn_lom_currover": "Curiosity — o primeiro pouso com guindaste aéreo, como hardware de voo (NASA)"
+  "lab_conn_lom_currover": "Curiosity — o primeiro pouso com guindaste aéreo, como hardware de voo (NASA)",
+  "lab_ui_load_error_link": "Não foi possível carregar esse link do notebook compartilhado — exibindo a lição em seu lugar."
 }

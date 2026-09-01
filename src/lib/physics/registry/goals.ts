@@ -446,6 +446,8 @@ export const landOnMars: Goal = {
       { labelKey: 'lab.conn.lom.mars3', href: '/mars?site=mars3', agency: 'Roscosmos' },
       { labelKey: 'lab.conn.lom.schiaparelli', href: '/mars?site=schiaparelli', agency: 'ESA' },
       { labelKey: 'lab.conn.lom.vikingcraft', href: '/fleet?id=viking-1', agency: 'NASA' },
+      { labelKey: 'lab.conn.lom.persrover', href: '/fleet?id=perseverance', agency: 'NASA' },
+      { labelKey: 'lab.conn.lom.currover', href: '/fleet?id=curiosity', agency: 'NASA' },
     ],
     nextKey: 'lab.conn.lom.next',
   },

@@ -1711,7 +1711,9 @@
     "lab_conn_gtm_atlas": "Atlas V — वह वर्कहॉर्स जिसने कई मंगल मिशन लॉन्च किए",
     "lab_conn_lom_vikingcraft": "Viking 1 — मंगल पर उतरने और काम करने वाला पहला अंतरिक्ष यान (NASA)",
     "lab_conn_lss_voyager1craft": "Voyager 1 — पृथ्वी से सबसे दूर मानव-निर्मित वस्तु",
-    "lab_conn_lss_voyager2craft": "Voyager 2 — चारों विशाल ग्रहों के पास से गुज़रने वाला एकमात्र यान"
+    "lab_conn_lss_voyager2craft": "Voyager 2 — चारों विशाल ग्रहों के पास से गुज़रने वाला एकमात्र यान",
+    "lab_conn_lom_persrover": "Perseverance — स्काई-क्रेन रोवर, फ्लाइट हार्डवेयर के रूप में (NASA)",
+    "lab_conn_lom_currover": "Curiosity — पहली स्काई-क्रेन लैंडिंग, फ्लाइट हार्डवेयर के रूप में (NASA)"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3286,7 +3288,9 @@
     "lab_conn_gtm_atlas": "Atlas V — 多くの火星ミッションを打ち上げた主力ロケット",
     "lab_conn_lom_vikingcraft": "Viking 1 — 火星に着陸し稼働した初の探査機（NASA）",
     "lab_conn_lss_voyager1craft": "Voyager 1 — 地球から最も遠い人工物",
-    "lab_conn_lss_voyager2craft": "Voyager 2 — 4つの巨大惑星すべてを通過した唯一の探査機"
+    "lab_conn_lss_voyager2craft": "Voyager 2 — 4つの巨大惑星すべてを通過した唯一の探査機",
+    "lab_conn_lom_persrover": "Perseverance — スカイクレーン方式のローバー、フライトハードウェアとして（NASA）",
+    "lab_conn_lom_currover": "Curiosity — 初のスカイクレーン着陸、フライトハードウェアとして（NASA）"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5041,7 +5045,9 @@
     "lab_conn_gtm_atlas": "Atlas V — الصاروخ العتيد الذي أطلق العديد من بعثات المريخ",
     "lab_conn_lom_vikingcraft": "Viking 1 — أول مركبة تهبط وتعمل على المريخ (NASA)",
     "lab_conn_lss_voyager1craft": "Voyager 1 — أبعد جسم من صنع الإنسان عن الأرض",
-    "lab_conn_lss_voyager2craft": "Voyager 2 — المركبة الوحيدة التي حلّقت قرب كل الكواكب العملاقة الأربعة"
+    "lab_conn_lss_voyager2craft": "Voyager 2 — المركبة الوحيدة التي حلّقت قرب كل الكواكب العملاقة الأربعة",
+    "lab_conn_lom_persrover": "Perseverance — مركبة الهبوط بالرافعة السماوية، كعتاد طيران (NASA)",
+    "lab_conn_lom_currover": "Curiosity — أول هبوط بالرافعة السماوية، كعتاد طيران (NASA)"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -6618,7 +6624,9 @@
     "lab_conn_gtm_atlas": "Atlas V — 수많은 화성 임무를 발사한 주력 로켓",
     "lab_conn_lom_vikingcraft": "Viking 1 — 화성에 착륙해 임무를 수행한 최초의 우주선 (NASA)",
     "lab_conn_lss_voyager1craft": "Voyager 1 — 지구에서 가장 멀리 떨어진 인공 물체",
-    "lab_conn_lss_voyager2craft": "Voyager 2 — 네 거대 행성을 모두 근접 통과한 유일한 우주선"
+    "lab_conn_lss_voyager2craft": "Voyager 2 — 네 거대 행성을 모두 근접 통과한 유일한 우주선",
+    "lab_conn_lom_persrover": "Perseverance — 스카이크레인 로버, 비행 하드웨어 (NASA)",
+    "lab_conn_lom_currover": "Curiosity — 최초의 스카이크레인 착륙, 비행 하드웨어 (NASA)"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -8018,7 +8026,9 @@
     "lab_conn_gtm_atlas": "Atlas V — das Arbeitspferd, das viele Mars-Missionen startete",
     "lab_conn_lom_vikingcraft": "Viking 1 — die erste Sonde, die auf dem Mars landete und arbeitete (NASA)",
     "lab_conn_lss_voyager1craft": "Voyager 1 — das am weitesten von der Erde entfernte von Menschen geschaffene Objekt",
-    "lab_conn_lss_voyager2craft": "Voyager 2 — die einzige Sonde, die an allen vier Gasriesen vorbeiflog"
+    "lab_conn_lss_voyager2craft": "Voyager 2 — die einzige Sonde, die an allen vier Gasriesen vorbeiflog",
+    "lab_conn_lom_persrover": "Perseverance — der Sky-Crane-Rover, als Flughardware (NASA)",
+    "lab_conn_lom_currover": "Curiosity — die erste Sky-Crane-Landung, als Flughardware (NASA)"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -9357,7 +9367,9 @@
     "lab_conn_gtm_atlas": "Atlas V — le lanceur polyvalent de nombreuses missions martiennes",
     "lab_conn_lom_vikingcraft": "Viking 1 — le premier engin à se poser et à fonctionner sur Mars (NASA)",
     "lab_conn_lss_voyager1craft": "Voyager 1 — l'objet humain le plus éloigné de la Terre",
-    "lab_conn_lss_voyager2craft": "Voyager 2 — le seul engin à avoir survolé les quatre planètes géantes"
+    "lab_conn_lss_voyager2craft": "Voyager 2 — le seul engin à avoir survolé les quatre planètes géantes",
+    "lab_conn_lom_persrover": "Perseverance — le rover à grue aérienne, comme matériel de vol (NASA)",
+    "lab_conn_lom_currover": "Curiosity — le premier atterrissage par grue aérienne, comme matériel de vol (NASA)"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -10663,7 +10675,9 @@
     "lab_conn_gtm_atlas": "Atlas V — il cavallo di battaglia che lanciò molte missioni marziane",
     "lab_conn_lom_vikingcraft": "Viking 1 — il primo veicolo a atterrare e operare su Marte (NASA)",
     "lab_conn_lss_voyager1craft": "Voyager 1 — l'oggetto costruito dall'uomo più lontano dalla Terra",
-    "lab_conn_lss_voyager2craft": "Voyager 2 — l'unico veicolo a sorvolare tutti e quattro i pianeti giganti"
+    "lab_conn_lss_voyager2craft": "Voyager 2 — l'unico veicolo a sorvolare tutti e quattro i pianeti giganti",
+    "lab_conn_lom_persrover": "Perseverance — il rover con sky-crane, come hardware di volo (NASA)",
+    "lab_conn_lom_currover": "Curiosity — il primo atterraggio con sky-crane, come hardware di volo (NASA)"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -11968,7 +11982,9 @@
     "lab_conn_gtm_atlas": "Atlas V — el caballo de batalla que lanzó muchas misiones a Marte",
     "lab_conn_lom_vikingcraft": "Viking 1 — la primera nave en aterrizar y operar en Marte (NASA)",
     "lab_conn_lss_voyager1craft": "Voyager 1 — el objeto humano más lejano de la Tierra",
-    "lab_conn_lss_voyager2craft": "Voyager 2 — la única nave que ha sobrevolado los cuatro planetas gigantes"
+    "lab_conn_lss_voyager2craft": "Voyager 2 — la única nave que ha sobrevolado los cuatro planetas gigantes",
+    "lab_conn_lom_persrover": "Perseverance — el róver del sistema sky-crane, como hardware de vuelo (NASA)",
+    "lab_conn_lom_currover": "Curiosity — el primer aterrizaje con sky-crane, como hardware de vuelo (NASA)"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -13282,7 +13298,9 @@
     "lab_conn_gtm_atlas": "Atlas V — het werkpaard dat veel Mars-missies lanceerde",
     "lab_conn_lom_vikingcraft": "Viking 1 — het eerste ruimtevaartuig dat op Mars landde en werkte (NASA)",
     "lab_conn_lss_voyager1craft": "Voyager 1 — het verste door mensen gemaakte object van de Aarde",
-    "lab_conn_lss_voyager2craft": "Voyager 2 — het enige vaartuig dat langs alle vier de reuzenplaneten vloog"
+    "lab_conn_lss_voyager2craft": "Voyager 2 — het enige vaartuig dat langs alle vier de reuzenplaneten vloog",
+    "lab_conn_lom_persrover": "Perseverance — de sky-crane rover, als vluchthardware (NASA)",
+    "lab_conn_lom_currover": "Curiosity — de eerste sky-crane landing, als vluchthardware (NASA)"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -14860,7 +14878,9 @@
     "lab_conn_gtm_atlas": "Atlas V — рабочая лошадка, запустившая множество миссий к Марсу",
     "lab_conn_lom_vikingcraft": "Viking 1 — первый аппарат, севший и работавший на Марсе (NASA)",
     "lab_conn_lss_voyager1craft": "Voyager 1 — самый удалённый от Земли рукотворный объект",
-    "lab_conn_lss_voyager2craft": "Voyager 2 — единственный аппарат, пролетевший мимо всех четырёх планет-гигантов"
+    "lab_conn_lss_voyager2craft": "Voyager 2 — единственный аппарат, пролетевший мимо всех четырёх планет-гигантов",
+    "lab_conn_lom_persrover": "Perseverance — марсоход с посадкой на «небесном кране», как лётное оборудование (NASA)",
+    "lab_conn_lom_currover": "Curiosity — первая посадка на «небесном кране», как лётное оборудование (NASA)"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -16482,7 +16502,9 @@
     "lab_conn_gtm_atlas": "Atlas V——发射众多火星任务的主力火箭",
     "lab_conn_lom_vikingcraft": "Viking 1——首个成功着陆并在火星上工作的航天器（NASA）",
     "lab_conn_lss_voyager1craft": "Voyager 1——距地球最远的人造物体",
-    "lab_conn_lss_voyager2craft": "Voyager 2——唯一飞越全部四颗巨行星的航天器"
+    "lab_conn_lss_voyager2craft": "Voyager 2——唯一飞越全部四颗巨行星的航天器",
+    "lab_conn_lom_persrover": "毅力号——采用天空起重机着陆的火星车，作为飞行硬件（NASA）",
+    "lab_conn_lom_currover": "好奇号——首次天空起重机着陆，作为飞行硬件（NASA）"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -17975,7 +17997,9 @@
     "lab_conn_gtm_atlas": "Atlas V — радна кобила која је лансирала многе марсовске мисије",
     "lab_conn_lom_vikingcraft": "Viking 1 — прва летелица која је слетела и радила на Марсу (NASA)",
     "lab_conn_lss_voyager1craft": "Voyager 1 — најудаљенији објекат које је направио човек од Земље",
-    "lab_conn_lss_voyager2craft": "Voyager 2 — једина летелица која је пролетела поред све четири џиновске планете"
+    "lab_conn_lss_voyager2craft": "Voyager 2 — једина летелица која је пролетела поред све четири џиновске планете",
+    "lab_conn_lom_persrover": "Perseverance — ровер спуштен небеском дизалицом, као летна опрема (NASA)",
+    "lab_conn_lom_currover": "Curiosity — прво слетање небеском дизалицом, као летна опрема (NASA)"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -19287,6 +19311,8 @@
     "lab_conn_gtm_atlas": "Atlas V — o burro de carga que lançou muitas missões a Marte",
     "lab_conn_lom_vikingcraft": "Viking 1 — a primeira espaçonave a pousar e operar em Marte (NASA)",
     "lab_conn_lss_voyager1craft": "Voyager 1 — o objeto feito pelo homem mais distante da Terra",
-    "lab_conn_lss_voyager2craft": "Voyager 2 — a única nave a passar pelos quatro planetas gigantes"
+    "lab_conn_lss_voyager2craft": "Voyager 2 — a única nave a passar pelos quatro planetas gigantes",
+    "lab_conn_lom_persrover": "Perseverance — o rover do guindaste aéreo, como hardware de voo (NASA)",
+    "lab_conn_lom_currover": "Curiosity — o primeiro pouso com guindaste aéreo, como hardware de voo (NASA)"
   }
 }

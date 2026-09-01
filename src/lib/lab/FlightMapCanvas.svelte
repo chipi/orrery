@@ -19,8 +19,8 @@
 
   type Props = { flight: FlightMap; width?: number; height?: number };
   let { flight, width = 960, height = 600 }: Props = $props();
-  const W = width;
-  const H = height;
+  const W = $derived(width);
+  const H = $derived(height);
   const DPR = 2;
   const MAP_H = 452; // trajectory region; filmstrip below
 

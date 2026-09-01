@@ -378,6 +378,13 @@ export interface RawDescentProfile {
   entryState: { altitudeM: number; velocityMs: number; flightPathAngleDeg: number };
   entryMassKg: number;
   entryCdA: number;
+  /** Lift-to-drag ratio (#419). 0/absent = ballistic (Mercury/Vostok). A lifting
+   *  capsule (Apollo CM ~0.3, Gemini/Soyuz/Dragon ~0.2) flies lift-up: caps peak-g
+   *  at the real ~6–7 g instead of the ~11 g ballistic value. */
+  liftToDragRatio?: number;
+  /** Guided-entry target downrange (km) from the entry interface (#29 · ADR-088). With a positive
+   *  L/D, the entry computer solves the bank that lands here. Absent = full lift-up (open loop). */
+  targetDownrangeKm?: number;
   retroPropellantKg?: number;
   survivableTouchdownMs?: number;
   archetype: ArchetypeName;
@@ -398,6 +405,8 @@ export function expandDescentProfile(raw: RawDescentProfile): DescentProfile {
     entryState: raw.entryState,
     entryMassKg: raw.entryMassKg,
     entryCdA: raw.entryCdA,
+    liftToDragRatio: raw.liftToDragRatio,
+    targetDownrangeKm: raw.targetDownrangeKm,
     retroPropellantKg: raw.retroPropellantKg,
     phases: build(raw.params ?? {}),
     survivableTouchdownMs: raw.survivableTouchdownMs ?? ARCHETYPE_SURVIVABLE[raw.archetype],

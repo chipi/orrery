@@ -37,18 +37,34 @@ export function bankLiftFraction(opts: {
 
 export type EntryOutcome = 'captured' | 'skip' | 'ground' | 'timeout';
 
+/** The live entry state a bank-command law reads to decide cos(bank) each step. */
+export interface EntryStep {
+  speedMs: number;
+  altM: number;
+  gammaRad: number; // flight-path angle (negative = descending)
+  downrangeM: number; // ground distance flown since the entry interface
+}
+
 export interface LiftingEntryResult {
   outcome: EntryOutcome;
   peakG: number;
+  /** Ground distance flown from the entry interface to capture/ground (m). */
+  downrangeM: number;
   trajectory: { altKm: number; speedKms: number }[];
 }
 
 const ENTRY_ALT_M = 122_000; // entry interface
+const CAPTURE_SPEED_MS = 400; // aerodynamic phase ends here (hand off to chutes)
 
 /**
- * Fly a 2-DOF lifting entry with the bank controller. `liftToDrag` = 0 is a ballistic capsule
- * (no steering — the controller output is irrelevant with zero lift). `ballisticCoeff` = m/(Cd·A)
- * (kg·m⁻²). Returns the outcome + peak felt-g + a downsampled altitude/speed trajectory.
+ * Fly a 2-DOF lifting entry (speed, altitude, flight-path angle) with a bank-steered lift vector,
+ * integrating DOWNRANGE (#29 · ADR-088). `liftToDrag` = 0 is a ballistic capsule (bank irrelevant
+ * with zero lift). `ballisticCoeff` = m/(Cd·A) (kg·m⁻²).
+ *
+ * The vertical lift fraction cos(bank) comes from `bankCommand` when supplied — e.g. a constant
+ * for the range-vs-bank sweep `solveEntryBankForRange` bisects. Without it the default is the
+ * decel-hold `bankLiftFraction` (holds `targetDecelG`) — the corridor-widening behaviour the Lab
+ * entry-steering lesson teaches, left byte-identical.
  */
 export function simulateLiftingEntry(opts: {
   entryVelocityMs: number;
@@ -57,6 +73,8 @@ export function simulateLiftingEntry(opts: {
   ballisticCoeff: number;
   targetDecelG: number;
   bankGain?: number;
+  /** Overrides the decel-hold law: returns cos(bank) ∈ [−1, +1] for the live state. */
+  bankCommand?: (step: EntryStep) => number;
 }): LiftingEntryResult {
   const { entryVelocityMs, entryAngleDeg, liftToDrag, ballisticCoeff, targetDecelG } = opts;
   const bankGain = opts.bankGain ?? 0.02;
@@ -64,6 +82,7 @@ export function simulateLiftingEntry(opts: {
   let h = ENTRY_ALT_M;
   let v = entryVelocityMs;
   let gamma = (-Math.abs(entryAngleDeg) * Math.PI) / 180;
+  let downrange = 0;
   let peakG = 0;
   const trajectory: { altKm: number; speedKms: number }[] = [
     { altKm: h / 1000, speedKms: v / 1000 },
@@ -74,21 +93,20 @@ export function simulateLiftingEntry(opts: {
     const aD = (0.5 * rho * v * v) / ballisticCoeff; // drag deceleration (m·s⁻²)
     const aL = liftToDrag * aD; // lift-acceleration magnitude
     const grav = MU_EARTH_M3_S2 / ((R_EARTH_M + h) * (R_EARTH_M + h));
-    const cosBank = bankLiftFraction({
-      dragDecelMs2: aD,
-      targetDecelMs2: targetDecelG * G0,
-      gain: bankGain,
-    });
+    const cosBank = opts.bankCommand
+      ? opts.bankCommand({ speedMs: v, altM: h, gammaRad: gamma, downrangeM: downrange })
+      : bankLiftFraction({ dragDecelMs2: aD, targetDecelMs2: targetDecelG * G0, gain: bankGain });
     // flight-path-angle rate: lift's vertical component curves the path; gravity + centrifugal.
     const gammaDot = (aL * cosBank) / v + Math.cos(gamma) * (v / (R_EARTH_M + h) - grav / v);
     v += (-aD - grav * Math.sin(gamma)) * dt;
     gamma += gammaDot * dt;
     h += v * Math.sin(gamma) * dt;
+    downrange += v * Math.cos(gamma) * dt; // ground track advances with the horizontal component
     peakG = Math.max(peakG, aD / G0);
     if (trajectory.length < 300 && (t * 20) % 4 < 1) {
       trajectory.push({ altKm: Math.max(0, h) / 1000, speedKms: v / 1000 });
     }
-    if (v < 400) {
+    if (v < CAPTURE_SPEED_MS) {
       outcome = 'captured';
       break;
     }
@@ -102,7 +120,58 @@ export function simulateLiftingEntry(opts: {
     }
   }
   trajectory.push({ altKm: Math.max(0, h) / 1000, speedKms: v / 1000 });
-  return { outcome, peakG, trajectory };
+  return { outcome, peakG, downrangeM: downrange, trajectory };
+}
+
+interface EntryDynamics {
+  entryVelocityMs: number;
+  entryAngleDeg: number;
+  liftToDrag: number;
+  ballisticCoeff: number;
+}
+
+/**
+ * Range-control entry guidance (#29 · ADR-088) — the entry computer's real job: find the bank
+ * angle that lands a lifting capsule at its target downrange (the Apollo/Orion/Soyuz "how far do
+ * I fly to reach the recovery zone?" problem). Downrange is MONOTONE in the vertical lift fraction
+ * cos(bank): full lift-up flies farthest (a long shallow skim), lift-down digs in short. So the
+ * computer BISECTS constant bank against the target — a robust solve that needs no per-case tuning.
+ *
+ * Returns the solved cos(bank), the landing point it produces, its peak-g, and whether the target
+ * was reachable (clamped to the footprint if not). Honest teaching-grade simplifications: a single
+ * held bank (real guidance flies bank REVERSALS to also null crossrange — out of scope for this
+ * planar, downrange-only model) solved by offline bisection (real guidance closes the loop live).
+ * The architecture — range target → commanded bank — is faithful to how entry guidance works.
+ */
+export function solveEntryBankForRange(
+  dyn: EntryDynamics,
+  targetRangeM: number,
+): { bankCos: number; landedRangeM: number; peakG: number; reachable: boolean } {
+  const fly = (u: number): LiftingEntryResult =>
+    simulateLiftingEntry({
+      entryVelocityMs: dyn.entryVelocityMs,
+      entryAngleDeg: dyn.entryAngleDeg,
+      liftToDrag: dyn.liftToDrag,
+      ballisticCoeff: dyn.ballisticCoeff,
+      targetDecelG: 0,
+      bankCommand: () => u,
+    });
+  // Footprint bounds: full lift-down = shortest, full lift-up = longest.
+  const rShort = fly(-1).downrangeM;
+  const rLong = fly(1).downrangeM;
+  const reachable = targetRangeM >= rShort && targetRangeM <= rLong;
+  const target = Math.max(rShort, Math.min(rLong, targetRangeM));
+  let lo = -1;
+  let hi = 1;
+  let mid = 0;
+  let result = fly(0);
+  for (let i = 0; i < 28; i += 1) {
+    mid = (lo + hi) / 2;
+    result = fly(mid);
+    if (result.downrangeM < target) lo = mid;
+    else hi = mid;
+  }
+  return { bankCos: mid, landedRangeM: result.downrangeM, peakG: result.peakG, reachable };
 }
 
 /**

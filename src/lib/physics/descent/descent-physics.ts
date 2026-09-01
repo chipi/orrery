@@ -175,6 +175,14 @@ export interface DescentProfile {
    * aeroshell) integrate γ; guided + explicit-γ phases ignore it.
    */
   liftToDragRatio?: number;
+  /**
+   * Guided-entry target downrange (km) from the entry interface to touchdown. When set (with a
+   * positive L/D), `integrateGuidedDescent` SOLVES the constant bank angle that lands the capsule
+   * here — the real Apollo/Orion/Soyuz range-control job, the same range-target → commanded-bank
+   * PRINCIPLE the Lab entry-steering lesson teaches (the Lab uses its own `solveEntryBankForRange`;
+   * this app path is a separate solver — reconcile per ADR-088 Phase 0d). Absent = full lift-up.
+   */
+  targetDownrangeKm?: number;
   /** Descent-stage retro propellant (kg) for the fuel gauge. Default ∞ (never gates). */
   retroPropellantKg?: number;
   /** Ordered EDL phases; the last should end on `ground`. */
@@ -217,6 +225,8 @@ export interface DescentState {
   propRemainingKg: number;
   /** Flight-path angle below horizontal (deg) — for the scene's attitude. */
   flightPathAngleDeg: number;
+  /** Ground distance flown from the entry interface (km) — the entry ground track. */
+  downrangeKm: number;
 }
 
 /** A discrete descent beat. */
@@ -244,6 +254,11 @@ export interface DescentSummary {
   touchdownVelocityMs: number;
   /** True when touchdown speed ≤ the lander's survivable limit. */
   touchdownSuccess: boolean;
+  /** Ground distance flown from the entry interface to touchdown (km). */
+  landingDownrangeKm: number;
+  /** For a guided entry (targetDownrangeKm set): the bank the computer solved, and whether the
+   *  target sat inside the reachable footprint. Undefined for an unguided (full-lift-up) descent. */
+  guidance?: { entryBankCos: number; targetReachable: boolean };
 }
 
 // ─── Per-body atmosphere + gravity ──────────────────────────────────
@@ -301,6 +316,10 @@ export interface DescentOptions {
    *  Titan's parachute descent legitimately runs ~3 h; every other body reaches
    *  the ground (or the Jupiter crush) long before the cap. */
   maxTS?: number;
+  /** Guided entry (#29 · ADR-088): constant vertical-lift fraction cos(bank) applied to the entry
+   *  γ integration. Internal — set by the range-control solve when a profile carries a
+   *  `targetDownrangeKm`. Default 1 (full lift-up, the unguided behaviour). */
+  entryBankCos?: number;
 }
 
 /** Default flight-path angle (deg below horizontal) for a phase. */
@@ -375,6 +394,12 @@ export function integrateDescent(
   profile: DescentProfile,
   opts: DescentOptions = {},
 ): DescentSummary {
+  // Guided range-control entry (#29 · ADR-088): when a profile carries a target downrange, the
+  // entry computer solves the constant bank angle that lands there before flying the trajectory.
+  if (profile.targetDownrangeKm != null && opts.entryBankCos === undefined) {
+    return integrateGuidedDescent(profile, opts);
+  }
+  const entryBankCos = opts.entryBankCos ?? 1; // full lift-up unless the range solve set a bank
   const dt = opts.dtS ?? 0.02;
   const sampleDt = opts.sampleDtS ?? 0.5;
   const maxT = opts.maxTS ?? 12000;
@@ -385,6 +410,7 @@ export function integrateDescent(
   let h = profile.entryState.altitudeM;
   let v = profile.entryState.velocityMs;
   let mass = profile.entryMassKg - (profile.phases[0]?.jettisonKg ?? 0);
+  let downrange = 0; // ground distance flown from the entry interface (m)
   let phaseIndex = 0;
   let phaseStartT = 0;
   let propUsed = 0;
@@ -451,6 +477,7 @@ export function integrateDescent(
       aeroHeatFlux: Math.sqrt(rho) * v * v * v,
       propRemainingKg: Number.isFinite(propTotal) ? Math.max(0, propTotal - propUsed) : Infinity,
       flightPathAngleDeg: gammaRad / DEG2RAD,
+      downrangeKm: downrange / 1000,
     };
   };
 
@@ -541,7 +568,12 @@ export function integrateDescent(
       // wins, and γ steepens into the deceleration spike — realistic duration AND
       // peak-g from one model. Guided/explicit/terminal phases skip this (γ pinned).
       if (dynamicalGamma) {
-        const lift = liftBonus * drag; // L = (L/D)·D
+        // Lift flown vertical-up caps the peak-g (Apollo's "heads-down, lift-up" ~7 g attitude).
+        // Its magnitude = (L/D)·D, scaled by the commanded bank: cos(bank)=+1 full lift-up (max
+        // range, min g), −1 lift-down (dig in, short + high g). `entryBankCos` is 1 for an unguided
+        // capsule; a guided entry (targetDownrangeKm) sets it via the range-control solve so the
+        // computer steers to its landing point — the systems/entry-steering job the Lab teaches.
+        const lift = liftBonus * drag * entryBankCos; // L = (L/D)·D, vertical component set by bank
         const dGammaDt =
           (g * cosG - lift / Math.max(1, mass) - (v * v * cosG) / (bodyRadiusM + h)) /
           Math.max(v, 1);
@@ -557,6 +589,7 @@ export function integrateDescent(
     if (flux > peakHeat.flux) peakHeat = { t, altKm: h / 1000, flux };
 
     h += -v * sinG * dt;
+    downrange += v * cosG * dt; // ground track advances with the horizontal velocity component
     t += dt;
 
     if (t >= nextSampleT) {
@@ -619,7 +652,42 @@ export function integrateDescent(
     peakHeat,
     touchdownVelocityMs,
     touchdownSuccess: touchdownVelocityMs <= survivable,
+    landingDownrangeKm: downrange / 1000,
   };
+}
+
+/**
+ * Guided range-control entry (#29 · ADR-088). The entry computer's real job: solve the constant
+ * bank angle that lands a lifting capsule at its `targetDownrangeKm`, then fly that trajectory.
+ * Downrange is monotone in the vertical lift fraction cos(bank) — full lift-up flies the farthest
+ * (long shallow skim), lift-down digs in short — so a bisection converges without per-case tuning.
+ * Same range-target → commanded-bank PRINCIPLE as the Lab's `solveEntryBankForRange`, but a
+ * SEPARATE solver (this integrates the full EDL profile incl. chutes; the Lab one is standalone) —
+ * the two are to be reconciled per ADR-088 Phase 0d.
+ * If the target sits outside the reachable footprint it clamps to the nearest edge and flags it.
+ */
+function integrateGuidedDescent(profile: DescentProfile, opts: DescentOptions): DescentSummary {
+  const target = profile.targetDownrangeKm ?? 0;
+  const run = (u: number): DescentSummary =>
+    integrateDescent(profile, { ...opts, entryBankCos: u });
+  const rMinus = run(-1).landingDownrangeKm;
+  const rPlus = run(1).landingDownrangeKm;
+  const increasing = rPlus >= rMinus;
+  const footLo = Math.min(rMinus, rPlus);
+  const footHi = Math.max(rMinus, rPlus);
+  const reachable = target >= footLo && target <= footHi;
+  const clamped = Math.max(footLo, Math.min(footHi, target));
+  let lo = -1;
+  let hi = 1;
+  let mid = 0;
+  let res = run(0);
+  for (let i = 0; i < 28; i += 1) {
+    mid = (lo + hi) / 2;
+    res = run(mid);
+    if (res.landingDownrangeKm < clamped === increasing) lo = mid;
+    else hi = mid;
+  }
+  return { ...res, guidance: { entryBankCos: mid, targetReachable: reachable } };
 }
 
 /**
@@ -661,5 +729,6 @@ export function sampleDescentAt(states: DescentState[], t: number): DescentState
     aeroHeatFlux: lerp(a.aeroHeatFlux, b.aeroHeatFlux),
     propRemainingKg: lerp(a.propRemainingKg, b.propRemainingKg),
     flightPathAngleDeg: lerp(a.flightPathAngleDeg, b.flightPathAngleDeg),
+    downrangeKm: lerp(a.downrangeKm, b.downrangeKm),
   };
 }

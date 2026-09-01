@@ -93,3 +93,40 @@ describe('every descent profile expands + flies to its honest outcome', () => {
     });
   }
 });
+
+/**
+ * Every lifting capsule flies LIFT-UP, not ballistic (#419 · ADR-087/088), across the board —
+ * Apollo/Skylab CM, Gemini, Soyuz, Crew Dragon, Shenzhou. A capsule rides its offset-CG lift
+ * vector to cap the peak near the real ~6–8 g; a ballistic (lift-free) fall from the same 7.8 km/s
+ * entry spikes to ~11 g. This guard auto-covers EVERY Earth profile carrying a `liftToDragRatio`,
+ * so dropping the lift on any of them (→ ballistic 11 g) fails here — the loose per-body earth
+ * band [3, 12] would not catch it. A guided profile (targetDownrangeKm) must also actually reach
+ * its target: the entry computer flew it, not an open-loop fall.
+ */
+describe('lifting re-entries fly the real ~6–8 g lifting band (all capsules)', () => {
+  const liftingIds = [...DESCENT_MISSION_IDS].filter((id) => {
+    if (!existsSync(profilePath(id))) return false;
+    return (loadRaw(id).liftToDragRatio ?? 0) > 0;
+  });
+
+  it('covers every authored lifting capsule (>=10)', () => {
+    expect(liftingIds.length).toBeGreaterThanOrEqual(10);
+  });
+
+  for (const id of liftingIds) {
+    it(`${id} rides its lift vector, peak-g in the lifting band`, () => {
+      const raw = loadRaw(id);
+      const s = integrateDescent(expandDescentProfile(raw));
+      expectInRange(s.peakDecel.g, 4, 8.5, `${id} lifting peak decel (g)`);
+      if (raw.targetDownrangeKm != null) {
+        expect(s.guidance?.targetReachable).toBe(true);
+        expectInRange(
+          s.landingDownrangeKm,
+          raw.targetDownrangeKm - 30,
+          raw.targetDownrangeKm + 30,
+          `${id} guided to target downrange`,
+        );
+      }
+    });
+  }
+});

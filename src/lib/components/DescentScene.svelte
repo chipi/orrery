@@ -33,6 +33,7 @@
   import {
     buildDescentBeats,
     descentStatus,
+    descentGuidanceReadout,
     formatDescentAltitude,
   } from '$lib/orbital/descent-hud';
   import { formatDescentClock } from '$lib/orbital/ascent-clock';
@@ -107,6 +108,16 @@
     ...(mission.entryVelocityKms != null
       ? ([['ENTRY VELOCITY', `${mission.entryVelocityKms.toFixed(2)} km/s`]] as [string, string][])
       : []),
+    // Guided entry (ADR-088): the target downrange the entry computer steers to, and (if the
+    // target is inside the reachable footprint) a check that it made it. Only for a guided capsule.
+    ...(summary.guidance != null
+      ? ([
+          [
+            'GUIDED TO',
+            `${Math.round(summary.landingDownrangeKm)} km${summary.guidance.targetReachable ? ' ✓' : ' (max)'}`,
+          ],
+        ] as [string, string][])
+      : []),
     // Earth re-entry shows the nominal ~14 min entry→splashdown, not the 1-DOF
     // model's inflated path time (RFC-034 §13).
     ['DESCENT', `${Math.round(profile.body === 'earth' ? 840 : duration)} s`],
@@ -125,6 +136,9 @@
 
   const status = $derived(descentStatus(liveState, summary));
   const alt = $derived(formatDescentAltitude(liveState.altKm));
+  // Range-control entry (#29 · ADR-088): the bank the entry computer solved to steer this capsule
+  // to its target downrange. Null for an unguided (ballistic / full-lift-up) descent.
+  const guidance = $derived(descentGuidanceReadout(summary));
   const progressPct = $derived(Math.max(0, Math.min(1, duration > 0 ? t / duration : 0)) * 100);
   const chuteOut = $derived(
     liveState.phaseKind === 'parachute' || liveState.phaseKind === 'aeroshell_descent',
@@ -381,6 +395,19 @@
         /></span
       ><span class="rv">{liveState.decelG.toFixed(1)}</span><span class="ru">G</span>
     </div>
+    {#if guidance}
+      <!-- Guided range-control entry: the ground track flown + the bank the entry computer
+           solved to steer to the target landing point (#29 · ADR-088). -->
+      <div class="ro" data-testid="descent-downrange">
+        <span class="rl">DOWNRANGE</span><span class="rv">{liveState.downrangeKm.toFixed(0)}</span
+        ><span class="ru">KM</span>
+      </div>
+      <div class="ro" data-testid="descent-guidance" class:guidance-miss={!guidance.reachable}>
+        <span class="rl">GUIDED · BANK</span><span class="rv">{guidance.bankDeg}</span><span
+          class="ru">°</span
+        >
+      </div>
+    {/if}
   </div>
 
   {#if !flashing}
@@ -709,6 +736,15 @@
     font-size: 12px;
     letter-spacing: 1px;
     color: #7d99b5;
+  }
+  /* Guided-entry cells tint cyan; a target the computer can't reach flags amber. */
+  .ro[data-testid='descent-guidance'] .rl,
+  .ro[data-testid='descent-downrange'] .rl {
+    color: #6fd8cf;
+  }
+  .ro.guidance-miss .rl,
+  .ro.guidance-miss .rv {
+    color: #e8a24a;
   }
   .hud-collapse {
     position: absolute;

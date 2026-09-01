@@ -437,6 +437,12 @@
     if (kinds.has('aeroshell_descent')) return 'Aeroshell';
     if (kinds.has('parachute') && kinds.has('powered_retro')) return 'Parachute + retro';
     if (kinds.has('powered_retro')) return 'Powered retro';
+    // A capsule with lift steers its entry (ADR-088): a guided one solves a bank to a target
+    // downrange (Apollo/Soyuz/Dragon); a lift-up one just caps peak-g. Only a truly lift-free
+    // capsule (Mercury/Vostok/Voskhod) is ballistic.
+    if ((p.liftToDragRatio ?? 0) > 0) {
+      return p.targetDownrangeKm != null ? 'Lifting (guided)' : 'Lifting';
+    }
     return 'Ballistic';
   }
   let descentDossier = $derived(

@@ -97,3 +97,20 @@ export function formatDescentAltitude(altKm: number): { value: string; unit: str
   if (altKm >= 5) return { value: altKm.toFixed(0), unit: 'KM' };
   return { value: Math.max(0, altKm * 1000).toFixed(0), unit: 'M' };
 }
+
+/**
+ * The guidance readout for a range-controlled entry (#29 · ADR-088). When the entry computer
+ * solved a bank to steer the capsule to its target downrange, surface the commanded bank as a
+ * roll angle (arccos of the vertical lift fraction) + whether the target was reachable. Null for
+ * an unguided descent (ballistic, or full-lift-up with no target). Pure — feeds the HUD.
+ */
+export function descentGuidanceReadout(
+  summary: DescentSummary,
+): { bankDeg: number; reachable: boolean } | null {
+  if (!summary.guidance) return null;
+  const cos = Math.max(-1, Math.min(1, summary.guidance.entryBankCos));
+  return {
+    bankDeg: Math.round((Math.acos(cos) * 180) / Math.PI),
+    reachable: summary.guidance.targetReachable,
+  };
+}

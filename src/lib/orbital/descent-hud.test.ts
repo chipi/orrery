@@ -8,12 +8,14 @@ import {
   EDL_BEAT_LABEL,
   buildDescentBeats,
   descentStatus,
+  descentGuidanceReadout,
   formatDescentAltitude,
 } from './descent-hud';
 import {
   integrateDescent,
   type DescentProfile,
   type DescentState,
+  type DescentSummary,
 } from '$lib/physics/descent/descent-physics';
 
 // ─── Minimal Mars skycrane profile (same archetype as descent-physics.test.ts)
@@ -124,9 +126,50 @@ function makeState(overrides: Partial<DescentState> = {}): DescentState {
     aeroHeatFlux: 1e8,
     propRemainingKg: Infinity,
     flightPathAngleDeg: 7.5,
+    downrangeKm: 0,
     ...overrides,
   };
 }
+
+// ─── descentGuidanceReadout (range-control entry · ADR-088) ──────────
+
+describe('descentGuidanceReadout', () => {
+  const base = (guidance?: DescentSummary['guidance']): DescentSummary => ({
+    body: 'earth',
+    states: [],
+    events: [],
+    totalDurationS: 0,
+    peakDecel: { t: 0, g: 0, altKm: 0 },
+    peakHeat: { t: 0, altKm: 0, flux: 0 },
+    touchdownVelocityMs: 0,
+    touchdownSuccess: true,
+    landingDownrangeKm: 1500,
+    guidance,
+  });
+
+  it('null for an unguided descent (no guidance)', () => {
+    expect(descentGuidanceReadout(base())).toBeNull();
+  });
+
+  it('full lift-up (cos=1) reads 0° bank', () => {
+    expect(descentGuidanceReadout(base({ entryBankCos: 1, targetReachable: true }))).toEqual({
+      bankDeg: 0,
+      reachable: true,
+    });
+  });
+
+  it('neutral lift (cos=0) reads 90° bank', () => {
+    expect(descentGuidanceReadout(base({ entryBankCos: 0, targetReachable: true }))?.bankDeg).toBe(
+      90,
+    );
+  });
+
+  it('carries the reachability flag through', () => {
+    expect(
+      descentGuidanceReadout(base({ entryBankCos: 1, targetReachable: false }))?.reachable,
+    ).toBe(false);
+  });
+});
 
 // ─── EDL_PHASE_LABEL ─────────────────────────────────────────────────
 

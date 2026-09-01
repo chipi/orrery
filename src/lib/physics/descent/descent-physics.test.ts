@@ -332,3 +332,58 @@ describe('sampleDescentAt', () => {
     expect(() => sampleDescentAt([], 0)).toThrow();
   });
 });
+
+// ─── Guided range-control entry (#29 · ADR-088) ──────────────────────
+
+describe('range-control entry guidance', () => {
+  const RAW_CAPSULE: RawDescentProfile = {
+    missionId: 'test-capsule',
+    siteId: 'test',
+    body: 'earth',
+    landingSite: { lat: 0, lon: 0 },
+    entryState: { altitudeM: 122_000, velocityMs: 7820, flightPathAngleDeg: 4 },
+    entryMassKg: 5560,
+    entryCdA: 6,
+    liftToDragRatio: 0.3,
+    archetype: 'EARTH_CAPSULE_REENTRY',
+    params: {
+      chuteDeployAltM: 7300,
+      terminalHandoffAltM: 3000,
+      parachuteCdA: 367,
+      terminalCdA: 1392,
+    },
+    source_tier: 'flagship',
+  };
+  const capsule = expandDescentProfile(RAW_CAPSULE);
+
+  it('downrange is monotone in the entry bank (lift-up flies farther)', () => {
+    const short = integrateDescent(capsule, { entryBankCos: -1 }).landingDownrangeKm;
+    const mid = integrateDescent(capsule, { entryBankCos: 0 }).landingDownrangeKm;
+    const long = integrateDescent(capsule, { entryBankCos: 1 }).landingDownrangeKm;
+    expect(short).toBeLessThan(mid);
+    expect(mid).toBeLessThan(long);
+  });
+
+  it('the shortest-range (lift-down) entry pulls the highest peak-g', () => {
+    const down = integrateDescent(capsule, { entryBankCos: -1 }).peakDecel.g;
+    const up = integrateDescent(capsule, { entryBankCos: 1 }).peakDecel.g;
+    expect(down).toBeGreaterThan(up); // range traded against deceleration
+  });
+
+  it('the computer solves the bank to hit a reachable target downrange', () => {
+    for (const target of [1400, 1600, 1800]) {
+      const s = integrateDescent({ ...capsule, targetDownrangeKm: target });
+      expect(s.guidance?.targetReachable).toBe(true);
+      expectInRange(s.landingDownrangeKm, target - 25, target + 25, `guided to ${target} km`);
+      expect(s.guidance!.entryBankCos).toBeGreaterThanOrEqual(-1);
+      expect(s.guidance!.entryBankCos).toBeLessThanOrEqual(1);
+    }
+  });
+
+  it('flags an out-of-footprint target and clamps to the reachable edge', () => {
+    const s = integrateDescent({ ...capsule, targetDownrangeKm: 5000 });
+    expect(s.guidance?.targetReachable).toBe(false);
+    expect(s.landingDownrangeKm).toBeLessThan(5000); // clamped to full-lift-up max
+    expect(s.touchdownSuccess).toBe(true); // still a real, survivable entry
+  });
+});

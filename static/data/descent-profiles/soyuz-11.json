@@ -13,6 +13,8 @@
   },
   "entryMassKg": 2900,
   "entryCdA": 4.5,
+  "liftToDragRatio": 0.24,
+  "targetDownrangeKm": 1500,
   "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7000,

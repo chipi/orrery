@@ -370,6 +370,10 @@ describe('range-control entry guidance', () => {
     expect(down).toBeGreaterThan(up); // range traded against deceleration
   });
 
+  // Three bank-solve bisections = ~30 full entry integrations; under CI coverage
+  // instrumentation on a loaded runner this legitimately exceeds vitest's 5 s
+  // default (timed out on main 2026-09-01 after passing the identical code) —
+  // hence the explicit 30 s budget.
   it('the computer solves the bank to hit a reachable target downrange', () => {
     for (const target of [2600, 3000, 3400]) {
       const s = integrateDescent({ ...capsule, targetDownrangeKm: target });
@@ -378,10 +382,7 @@ describe('range-control entry guidance', () => {
       expect(s.guidance!.entryBankCos).toBeGreaterThanOrEqual(-1);
       expect(s.guidance!.entryBankCos).toBeLessThanOrEqual(1);
     }
-  }, // Three bank-solve bisections = ~30 full entry integrations; under CI coverage
-  // instrumentation on a loaded runner this legitimately exceeds vitest's 5 s
-  // default (timed out on main 2026-09-01 after passing the identical code).
-  30_000);
+  }, 30_000);
 
   it('flags an out-of-footprint target and clamps to the reachable edge', () => {
     const s = integrateDescent({ ...capsule, targetDownrangeKm: 8000 });

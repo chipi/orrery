@@ -2621,5 +2621,18 @@
   "lab_conn_sysentry_next": "Das sind alle drei Flugrechner — die Aufstiegssteuerung, die Landungsdrosselung und der Wiedereintrittsrollregler. Zusammen fliegen sie eine ganze Mission, die keine menschliche Hand fliegen könnte.",
   "lab_conn_sysentry_apollo": "Apollo 11 — der Auftriebs-Wiedereintritt des Kommandomoduls",
   "lab_conn_sysentry_orion": "Orion — die Auftriebskapsel für Artemis-Rückkehren",
-  "lab_conn_sysentry_osiris": "OSIRIS-REx — ein Auftriebseintritt zur Probenrückführung"
+  "lab_conn_sysentry_osiris": "OSIRIS-REx — ein Auftriebseintritt zur Probenrückführung",
+  "lab_goal_apollo_roundtrip_title": "Apollo: hin und zurück",
+  "lab_goal_art_ascent": "Jeder Mondflug beginnt gleich: den Orbit erreichen. Die Oberstufe der Saturn V lässt sich nicht von Hand steuern — ein Lenkrechner (PEG) löst seine eigene Steuerung in Echtzeit und neigt den Verbund so, dass er exakt die richtige Geschwindigkeit und Höhe für den niedrigen Erdorbit erreicht. Dies ist der erste der drei Computer, die diese Mission fliegen.",
+  "lab_goal_art_tli": "Im Orbit zielst du nicht auf den Mond — du zielst dorthin, wo er sein wird. Ein Brennmanöver (Trans-lunar Injection, TLI) dehnt deine Umlaufbahn zu einer Ellipse, die bis zur Mondentfernung reicht; drei Tage später bremst dich ein zweites Brennmanöver (Lunar Orbit Insertion, LOI) in eine Umlaufbahn um den Mond. Der Lambert-Löser findet beide.",
+  "lab_goal_art_descent": "Der Landecomputer übernimmt. Aus dem Mondorbit hebt er deine Geschwindigkeit auf und fliegt ein Sinkraten-Profil — er regelt das Triebwerk jeden Moment, sodass du genau dann auf Schritttempo abbremst, wenn der Boden dir entgegensteigt. Keine Luft, kein Fallschirm: Schub ist die einzige Bremse.",
+  "lab_goal_art_liftoff": "Jetzt geht es zurück. Die Aufstiegsstufe zündet und steigt zurück in den Mondorbit. Ohne Atmosphäre gibt es keinen Luftwiderstand und keine Lenkverluste — das gesamte Δv geht in Geschwindigkeit über, weshalb eine kleine Aufstiegsstufe genügt, um den Mond zu verlassen.",
+  "lab_goal_art_tei": "Ein weiteres Brennmanöver schleudert dich heim: Trans-Earth Injection (TEI). Es ist dieselbe zislunare Ellipse, nur rückwärts durchflogen — ein Brennmanöver aus dem Mondorbit heraus auf eine Bahn, die über drei Tage zur Erde zurückfällt.",
+  "lab_goal_art_entry": "Der Höhepunkt. Du triffst mit fast 11 km/s auf die Atmosphäre — vom Mond kommend, nicht nur aus dem Orbit — und der überlebbare Korridor ist messerscharf: zu flach, und du prallst zurück ins All, zu steil, und die g-Last ist tödlich. Der Eintrittscomputer neigt den Auftriebsvektor der Kapsel, um ihn zu treffen, und reitet einen kontrollierten Sprung (den Apollo-Doppelpuls) hinab bis zur Wasserung. Flieg es: Apollo 8 flog genau dies.",
+  "lab_conn_art_why": "Eine Mondmission ist nicht ein Problem — sie ist eine Kette davon, jedes ein anderes Regime mit einer anderen Maschine zum Fliegen. Dieses Abschlusskapitel geht den gesamten Apollo-8-Rundflug von Anfang bis Ende durch, sodass jede Stufe, die du einzeln gelernt hast, sich zu einem Flug zusammenfügt.",
+  "lab_conn_art_hook": "Apollo 8 flog genau dieses Profil im Dezember 1968 — die ersten Menschen, die die Erdanziehung verließen, den Mond umkreisten und mit einem 11-km/s-Sprungeintritt heimkehrten.",
+  "lab_conn_art_apollo8": "Apollo 8 — der erste bemannte Mond-Rundflug und 11-km/s-Sprungeintritt",
+  "lab_conn_art_apollo11": "Apollo 11 — die erste bemannte Landung, der volle Rundflug mit Aufenthalt auf der Oberfläche",
+  "lab_conn_art_apollo_lm": "Apollo Lunar Module — das Raumfahrzeug, das den Abstieg und den Mondaufstieg flog",
+  "lab_conn_art_program": "Das Apollo-Programm — neun bemannte Mondmissionen"
 }

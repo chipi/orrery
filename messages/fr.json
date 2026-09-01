@@ -2621,5 +2621,18 @@
   "lab_conn_sysentry_next": "Voilà les trois calculateurs de vol — le guidage à l'ascension, la modulation de poussée à l'atterrissage, et le roulis à la rentrée. Ensemble, ils pilotent une mission entière qu'aucune main humaine ne pourrait mener.",
   "lab_conn_sysentry_apollo": "Apollo 11 — la rentrée portée du module de commande",
   "lab_conn_sysentry_orion": "Orion — la capsule portée pour les retours d'Artemis",
-  "lab_conn_sysentry_osiris": "OSIRIS-REx — une rentrée portée de retour d'échantillons"
+  "lab_conn_sysentry_osiris": "OSIRIS-REx — une rentrée portée de retour d'échantillons",
+  "lab_goal_apollo_roundtrip_title": "Apollo : aller-retour",
+  "lab_goal_art_ascent": "Chaque tir vers la Lune commence de la même façon : atteindre l'orbite. L'étage supérieur de la Saturn V ne peut pas être piloté à la main — un ordinateur de guidage (PEG) résout son propre pilotage en temps réel, inclinant l'empilage pour arriver à la vitesse et à l'altitude exactes de l'orbite terrestre basse. C'est le premier des trois ordinateurs qui pilotent cette mission.",
+  "lab_goal_art_tli": "En orbite, on ne vise pas la Lune — on vise là où elle sera. Une poussée (injection trans-lunaire, TLI) étire votre orbite en une ellipse qui atteint la distance lunaire ; trois jours plus tard, une seconde poussée (insertion en orbite lunaire, LOI) vous freine pour vous placer en orbite autour de la Lune. Le solveur de Lambert trouve les deux.",
+  "lab_goal_art_descent": "L'ordinateur d'atterrissage prend le relais. Depuis l'orbite lunaire, il annule votre vitesse et suit une consigne de taux de descente — modulant la poussée à chaque instant pour vous ralentir jusqu'à un pas de tortue au moment précis où le sol s'élève à votre rencontre. Pas d'air, pas de parachute : la poussée est le seul frein.",
+  "lab_goal_art_liftoff": "Maintenant, partez. L'étage de remontée s'allume et regrimpe vers l'orbite lunaire. Sans atmosphère, pas de traînée ni de perte au pilotage — tout le Δv se convertit en vitesse, et c'est pourquoi un petit étage de remontée suffit à quitter la Lune.",
+  "lab_goal_art_tei": "Une dernière poussée vous renvoie chez vous : injection trans-Terre (TEI). C'est la même ellipse cislunaire parcourue à l'envers — une poussée hors de l'orbite lunaire vers un vol balistique qui retombe vers la Terre en trois jours.",
+  "lab_goal_art_entry": "Le point culminant. Vous heurtez l'atmosphère à près de 11 km/s — en revenant de la Lune, pas simplement de l'orbite — et le corridor de survie est un fil du rasoir : trop rasant et vous rebondissez dans l'espace, trop raide et l'accélération est fatale. L'ordinateur de rentrée incline le vecteur portance des capsules pour l'enfiler, chevauchant un rebond contrôlé (la double impulsion Apollo) jusqu'à l'amerrissage. Pilotez-le : Apollo 8 a volé exactement cela.",
+  "lab_conn_art_why": "Une mission lunaire n'est pas un seul problème — c'est une chaîne de problèmes, chacun un régime différent avec une machine différente pour le piloter. Cette pierre de couronnement parcourt l'aller-retour complet d'Apollo 8 de bout en bout, pour que chaque échelon appris séparément s'emboîte en un seul vol.",
+  "lab_conn_art_hook": "Apollo 8 a volé exactement ce profil en décembre 1968 — les premiers humains à quitter la gravité terrestre, orbiter autour de la Lune et effectuer une rentrée à rebond à 11 km/s.",
+  "lab_conn_art_apollo8": "Apollo 8 — le premier aller-retour lunaire habité et une rentrée à rebond à 11 km/s",
+  "lab_conn_art_apollo11": "Apollo 11 — le premier alunissage habité, l'aller-retour complet avec séjour au sol",
+  "lab_conn_art_apollo_lm": "Module lunaire Apollo — l'engin qui a effectué la descente et la remontée lunaire",
+  "lab_conn_art_program": "Le programme Apollo — neuf missions lunaires habitées"
 }

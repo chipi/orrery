@@ -2621,5 +2621,18 @@
   "lab_conn_sysentry_next": "Esses são os três computadores de voo — a orientação de ascensão, o acelerador de pouso e a rolagem de reentrada. Juntos, eles voam uma missão inteira que nenhuma mão humana poderia.",
   "lab_conn_sysentry_apollo": "Apollo 11 — a reentrada do módulo de comando com sustentação",
   "lab_conn_sysentry_orion": "Orion — a cápsula com sustentação para os retornos da Artemis",
-  "lab_conn_sysentry_osiris": "OSIRIS-REx — uma entrada de retorno de amostra com sustentação"
+  "lab_conn_sysentry_osiris": "OSIRIS-REx — uma entrada de retorno de amostra com sustentação",
+  "lab_goal_apollo_roundtrip_title": "Apollo: ida e volta",
+  "lab_goal_art_ascent": "Toda missão à Lua começa da mesma forma: alcançar a órbita. O estágio superior do Saturn V não pode ser pilotado manualmente — um computador de guiagem (PEG) resolve seu próprio direcionamento em tempo real, inclinando o conjunto para chegar à velocidade e altitude exatas da órbita terrestre baixa. Este é o primeiro dos três computadores que conduzem esta missão.",
+  "lab_goal_art_tli": "Em órbita, você não mira na Lua — você mira onde ela estará. Uma queima (injeção translunar, TLI) estica sua órbita em uma elipse que alcança a distância lunar; três dias depois, uma segunda queima (inserção em órbita lunar, LOI) o freia para entrar em órbita ao redor da Lua. O solucionador de Lambert encontra ambas.",
+  "lab_goal_art_descent": "O computador de pouso assume. Da órbita lunar, ele cancela sua velocidade e executa um perfil de taxa de descida — modulando o motor a cada instante para que você reduza a um rastejar exatamente quando o solo sobe ao seu encontro. Sem ar, sem paraquedas: o empuxo é o único freio.",
+  "lab_goal_art_liftoff": "Agora parta. O estágio de subida dispara e escala de volta à órbita lunar. Sem atmosfera, não há arrasto nem perda por direcionamento — todo o Δv vira velocidade, e é por isso que um pequeno estágio de subida basta para deixar a Lua.",
+  "lab_goal_art_tei": "Mais uma queima o lança para casa: injeção transterrestre (TEI). É a mesma elipse cislunar percorrida ao contrário — uma queima para fora da órbita lunar rumo a uma trajetória livre que retorna à Terra ao longo de três dias.",
+  "lab_goal_art_entry": "O clímax. Você atinge a atmosfera a quase 11 km/s — vindo da Lua, não apenas da órbita — e o corredor de sobrevivência é o fio da navalha: raso demais e você ricocheteia de volta ao espaço, íngreme demais e a carga g é fatal. O computador de reentrada inclina o vetor de sustentação da cápsula para atravessá-lo, executando um ricochete controlado (o pulso duplo da Apollo) até a amerissagem. Pilote: a Apollo 8 voou exatamente isto.",
+  "lab_conn_art_why": "Uma missão à Lua não é um único problema — é uma cadeia deles, cada um um regime diferente com uma máquina diferente para pilotá-lo. Este trabalho de conclusão percorre toda a ida e volta da Apollo 8 de ponta a ponta, para que cada degrau que você aprendeu separadamente se encaixe em um único voo.",
+  "lab_conn_art_hook": "A Apollo 8 voou exatamente este perfil em dezembro de 1968 — os primeiros humanos a deixar a gravidade da Terra, orbitar a Lua e voltar para casa em uma reentrada por ricochete a 11 km/s.",
+  "lab_conn_art_apollo8": "Apollo 8 — a primeira ida e volta lunar tripulada e reentrada por ricochete a 11 km/s",
+  "lab_conn_art_apollo11": "Apollo 11 — o primeiro pouso tripulado, a ida e volta completa com estadia na superfície",
+  "lab_conn_art_apollo_lm": "Módulo Lunar Apollo — a nave que executou a descida e a subida lunar",
+  "lab_conn_art_program": "O programa Apollo — nove missões lunares tripuladas"
 }

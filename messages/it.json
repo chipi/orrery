@@ -2621,5 +2621,18 @@
   "lab_conn_sysentry_next": "Ecco tutti e tre i computer di volo — la guida di ascesa, la spinta di atterraggio e il rollio di rientro. Insieme pilotano un'intera missione che nessuna mano umana potrebbe.",
   "lab_conn_sysentry_apollo": "Apollo 11 — il rientro in portanza del modulo di comando",
   "lab_conn_sysentry_orion": "Orion — la capsula in portanza per i ritorni Artemis",
-  "lab_conn_sysentry_osiris": "OSIRIS-REx — un rientro in portanza con ritorno di campioni"
+  "lab_conn_sysentry_osiris": "OSIRIS-REx — un rientro in portanza con ritorno di campioni",
+  "lab_goal_apollo_roundtrip_title": "Apollo: andata e ritorno",
+  "lab_goal_art_ascent": "Ogni missione lunare inizia allo stesso modo: raggiungere l'orbita. Lo stadio superiore del Saturn V non può essere pilotato a mano — un computer di guida (PEG) risolve da solo la propria traiettoria in tempo reale, orientando il razzo per arrivare alla velocità e alla quota esatte dell'orbita terrestre bassa. Questo è il primo dei tre computer che pilotano questa missione.",
+  "lab_goal_art_tli": "In orbita non punti alla Luna — punti a dove sarà. Un'accensione (iniezione translunare, TLI) allunga la tua orbita in un'ellisse che raggiunge la distanza lunare; tre giorni dopo una seconda accensione (inserimento in orbita lunare, LOI) ti frena in orbita attorno alla Luna. Il risolutore di Lambert trova entrambe.",
+  "lab_goal_art_descent": "Subentra il computer di atterraggio. Dall'orbita lunare annulla la tua velocità e segue un profilo di velocità di discesa — regolando il motore istante per istante così da rallentare fino a un passo d'uomo esattamente mentre il suolo sale a incontrarti. Niente aria, niente paracadute: la spinta è l'unico freno.",
+  "lab_goal_art_liftoff": "Ora riparti. Lo stadio di risalita si accende e risale in orbita lunare. Senza atmosfera non c'è resistenza né perdita di guida — tutto il Δv si trasforma in velocità, ed è per questo che un piccolo stadio di risalita basta per lasciare la Luna.",
+  "lab_goal_art_tei": "Un'ultima accensione ti lancia verso casa: iniezione transterrestre (TEI). È la stessa ellisse cislunare percorsa al contrario — un'accensione fuori dall'orbita lunare su una traiettoria inerziale che ricade sulla Terra in tre giorni.",
+  "lab_goal_art_entry": "Il culmine. Colpisci l'atmosfera a quasi 11 km/s — arrivando dalla Luna, non solo dall'orbita — e il corridoio di sopravvivenza è sottilissimo: troppo poco inclinato e rimbalzi di nuovo nello spazio, troppo ripido e il carico g è fatale. Il computer di rientro inclina il vettore di portanza della capsula per centrarlo, cavalcando un rimbalzo controllato (la doppia pulsazione Apollo) fino all'ammaraggio. Pilotalo: Apollo 8 ha volato esattamente così.",
+  "lab_conn_art_why": "Una missione lunare non è un solo problema — è una catena di problemi, ciascuno un regime diverso con una macchina diversa per affrontarlo. Questa prova finale percorre l'intero viaggio di andata e ritorno di Apollo 8 dall'inizio alla fine, così ogni tassello che hai imparato separatamente si incastra in un unico volo.",
+  "lab_conn_art_hook": "Apollo 8 ha volato esattamente questo profilo nel dicembre 1968 — i primi esseri umani a lasciare la gravità terrestre, orbitare attorno alla Luna e cavalcare un rientro a rimbalzo a 11 km/s verso casa.",
+  "lab_conn_art_apollo8": "Apollo 8 — il primo viaggio lunare di andata e ritorno con equipaggio e rientro a rimbalzo a 11 km/s",
+  "lab_conn_art_apollo11": "Apollo 11 — il primo allunaggio con equipaggio, l'intero viaggio di andata e ritorno con permanenza sulla superficie",
+  "lab_conn_art_apollo_lm": "Modulo Lunare Apollo — il veicolo che ha volato la discesa e la risalita lunare",
+  "lab_conn_art_program": "Il programma Apollo — nove missioni lunari con equipaggio"
 }

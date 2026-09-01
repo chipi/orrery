@@ -2621,5 +2621,18 @@
   "lab_conn_sysentry_next": "Dat zijn alle drie de vluchtcomputers — de opstijggeleiding, de landingsgasregeling en de terugkeerbank. Samen vliegen ze een hele missie die geen mensenhand zou kunnen.",
   "lab_conn_sysentry_apollo": "Apollo 11 — de liftende terugkeer van de commandomodule",
   "lab_conn_sysentry_orion": "Orion — de liftende capsule voor Artemis-terugkeren",
-  "lab_conn_sysentry_osiris": "OSIRIS-REx — een liftende monsterretour-intrede"
+  "lab_conn_sysentry_osiris": "OSIRIS-REx — een liftende monsterretour-intrede",
+  "lab_goal_apollo_roundtrip_title": "Apollo: heen en terug",
+  "lab_goal_art_ascent": "Elke maanvlucht begint op dezelfde manier: bereik een baan. De bovenste trap van de Saturn V kan niet met de hand worden gevlogen — een besturingscomputer (PEG) lost zijn eigen sturing in realtime op en kantelt de stapel om precies op de juiste snelheid en hoogte voor een lage aardbaan te komen. Dit is de eerste van de drie computers die deze missie vliegen.",
+  "lab_goal_art_tli": "In een baan mik je niet op de Maan — je mikt op waar zij zal zijn. Eén stuwstoot (trans-lunaire injectie, TLI) rekt je baan uit tot een ellips die de maanafstand bereikt; drie dagen later remt een tweede stuwstoot (lunaire baaninsertie, LOI) je af tot een baan rond de Maan. De Lambert-oplosser vindt ze beide.",
+  "lab_goal_art_descent": "De landingscomputer neemt het over. Vanuit de maanbaan doodt hij je snelheid en volgt een daalsnelheidsschema — waarbij hij de motor elk moment regelt zodat je afremt tot een kruipgang precies wanneer de grond je tegemoet komt. Geen lucht, geen parachute: stuwkracht is de enige rem.",
+  "lab_goal_art_liftoff": "Vertrek nu. De opstijgtrap ontsteekt en klimt terug naar de maanbaan. Zonder atmosfeer is er geen luchtweerstand en geen stuurverlies — de volledige Δv gaat in snelheid zitten, en daarom is een kleine opstijgtrap genoeg om de Maan te verlaten.",
+  "lab_goal_art_tei": "Nog één stuwstoot werpt je naar huis: trans-aardse injectie (TEI). Het is dezelfde cislunaire ellips in omgekeerde richting — een stuwstoot uit de maanbaan naar een coast die in drie dagen terug naar de Aarde valt.",
+  "lab_goal_art_entry": "De climax. Je raakt de atmosfeer met bijna 11 km/s — je komt van de Maan, niet alleen uit een baan — en de overleefbare corridor is vlijmscherp: te ondiep en je stuitert terug de ruimte in, te steil en de g-belasting is fataal. De intredecomputer kantelt de liftvector van de capsule om erdoorheen te weven, en rijdt op een gecontroleerde stuiter (de Apollo-dubbelpuls) naar de landing in zee. Vlieg het: Apollo 8 vloog precies dit.",
+  "lab_conn_art_why": "Een maanmissie is niet één probleem — het is een keten ervan, elk een ander regime met een andere machine om het te vliegen. Dit sluitstuk loopt de hele heen-en-terugreis van Apollo 8 van begin tot eind door, zodat elke sport die je apart leerde in één vlucht op zijn plaats valt.",
+  "lab_conn_art_hook": "Apollo 8 vloog precies dit profiel in december 1968 — de eerste mensen die de zwaartekracht van de Aarde verlieten, om de Maan cirkelden en een stuiterintrede van 11 km/s naar huis reden.",
+  "lab_conn_art_apollo8": "Apollo 8 — de eerste bemande maanreis heen en terug met 11 km/s stuiterintrede",
+  "lab_conn_art_apollo11": "Apollo 11 — de eerste bemande landing, de volledige heen-en-terugreis met verblijf op het oppervlak",
+  "lab_conn_art_apollo_lm": "Apollo Lunar Module — het vaartuig dat de daling en de maanopstijging vloog",
+  "lab_conn_art_program": "Het Apollo-programma — negen bemande maanmissies"
 }

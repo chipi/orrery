@@ -828,6 +828,57 @@ export const entryComputer: Goal = {
   },
 };
 
+/**
+ * CAPSTONE — "Apollo: there and back" (#29 · Phase 3). The reference-based end-to-end mission:
+ * walk the ENTIRE Apollo 8 round trip, stage by stage, each flown by the real kernel formula and,
+ * where a machine flies it, one of the three FLIGHT COMPUTERS (systems layer). Gated on knowing how
+ * to land on the Moon AND all three computers — this is the goal that puts them together:
+ *   1 ascent-guidance (PEG) — the flying computer steers the Saturn V's upper stage to LEO.
+ *   2 cislunar-transfer — the geocentric Lambert: the TLI burn out + the LOI burn into lunar orbit.
+ *   3 powered-descent (landing computer) — the descent computer flies the LM to the surface.
+ *   4 dv-to-orbit (Moon) — the LM ascent stage climbs back to lunar orbit; no air, so no drag loss.
+ *   5 cislunar-transfer — the return leg: the TEI burn that throws the CM home (same Lambert, home).
+ *   6 entry-corridor (10.8 km/s) — the climax: the knife-edge lunar-return corridor the entry
+ *     computer threads, the 11 km/s skip entry apollo8 actually flew (/fly?mission=apollo8).
+ */
+export const apolloRoundTrip: Goal = {
+  id: 'apollo-round-trip',
+  titleKey: 'lab.goal.apollo-roundtrip.title',
+  family: 'spaceflight',
+  tier: 8,
+  prereqs: ['land-on-the-moon', 'flying-computer', 'landing-computer', 'entry-computer'],
+  path: [
+    { formulaId: 'ascent-guidance', narrativeKey: 'lab.goal.art.ascent' },
+    { formulaId: 'cislunar-transfer', narrativeKey: 'lab.goal.art.tli' },
+    {
+      formulaId: 'powered-descent',
+      narrativeKey: 'lab.goal.art.descent',
+      presetInputs: { body: 'moon' },
+    },
+    {
+      formulaId: 'dv-to-orbit',
+      narrativeKey: 'lab.goal.art.liftoff',
+      presetInputs: { body: 'moon', altitudeKm: 100, lossesKms: 0.2 },
+    },
+    { formulaId: 'cislunar-transfer', narrativeKey: 'lab.goal.art.tei' },
+    {
+      formulaId: 'entry-corridor',
+      narrativeKey: 'lab.goal.art.entry',
+      presetInputs: { entryVelocityKms: 10.8, flightPathAngleDeg: 6.5 },
+    },
+  ],
+  connection: {
+    whyKey: 'lab.conn.art.why',
+    hookKey: 'lab.conn.art.hook',
+    links: [
+      { labelKey: 'lab.conn.art.apollo8', href: '/fly?mission=apollo8', agency: 'NASA' },
+      { labelKey: 'lab.conn.art.apollo11', href: '/fly?mission=apollo11', agency: 'NASA' },
+      { labelKey: 'lab.conn.art.apollo-lm', href: '/fleet?id=apollo-lm', agency: 'NASA' },
+      { labelKey: 'lab.conn.art.program', href: '/programs/apollo', agency: 'NASA' },
+    ],
+  },
+};
+
 /** All goals, keyed by id — insertion order drives the Lab picker (the mission arc). */
 export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [launchARocket.id, launchARocket],
@@ -848,6 +899,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [flyingComputer.id, flyingComputer],
   [landingComputer.id, landingComputer],
   [entryComputer.id, entryComputer],
+  [apolloRoundTrip.id, apolloRoundTrip],
 ]);
 
 /**

@@ -806,10 +806,11 @@ describe('getScienceSection', () => {
 describe('getScienceTab', () => {
   it('returns orbits sections sorted by order', async () => {
     const sections = await getScienceTab('orbits');
-    // 16 sections: the GH #83 set (sun-synchronous, special-orbits,
+    // 18 sections: the GH #83 set (sun-synchronous, special-orbits,
     // cislunar-orbits, disposal-end-of-life, space-debris) plus hill-sphere,
-    // which was on disk + referenced but missing from the orbits _index.
-    expect(sections.length).toBe(16);
+    // which was on disk + referenced but missing from the orbits _index,
+    // plus escape-velocity + synodic-period (Physics-Lab-derived, #32).
+    expect(sections.length).toBe(18);
     for (let i = 1; i < sections.length; i++) {
       expect(sections[i].order).toBeGreaterThanOrEqual(sections[i - 1].order);
     }

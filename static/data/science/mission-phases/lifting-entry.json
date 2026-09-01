@@ -1,0 +1,32 @@
+{
+  "id": "lifting-entry",
+  "tab": "mission-phases",
+  "order": 15,
+  "diagram": "lifting-entry.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/lab",
+      "context_key": "The Physics Lab's re-entry-computer lesson flies a real 2-DOF lifting entry and measures how bank widens the survivable corridor"
+    },
+    {
+      "route": "/fly",
+      "query": "?descent=1",
+      "context_key": "Fly an Earth-return capsule's entry end-to-end and watch it steer through peak-g to splashdown"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Atmospheric entry",
+      "u": "https://en.wikipedia.org/wiki/Atmospheric_entry",
+      "t": "intro"
+    },
+    {
+      "l": "MIT/Draper · Apollo Reentry Guidance (R-415)",
+      "u": "https://www.ibiblio.org/apollo/Documents/R-415%20Apollo%20Reentry%20Guidance.pdf",
+      "t": "core"
+    }
+  ],
+  "reviewed_at": "2026-09-01",
+  "review_hash": "c179e19ffb22"
+}

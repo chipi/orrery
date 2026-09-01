@@ -386,6 +386,13 @@
   },
   {
     "tab": "mission-phases",
+    "section": "ascent-guidance",
+    "title": "Ascent guidance — the computer that flies a rocket to orbit",
+    "intro": "Getting to orbit is not a fixed script you can write in advance — it is a boundary-value problem solved anew every second, which is why spaceflight had to wait for the digital computer.",
+    "haystack": "ascent guidance — the computer that flies a rocket to orbit getting to orbit is not a fixed script you can write in advance — it is a boundary-value problem solved anew every second, which is why spaceflight had to wait for the digital computer. ascent guidance is a two-phase affair. in the atmospheric first phase the vehicle flies open-loop: a small pitch-over kick just after tower clear initiates a gravity turn, and thereafter it holds a pre-computed pitch program that keeps the angle of attack near zero so aerodynamic and structural loads stay bounded through max-q. there is little freedom here — the air dictates the path."
+  },
+  {
+    "tab": "mission-phases",
     "section": "ballistic-coefficient",
     "title": "Ballistic Coefficient",
     "intro": "The single number — mass divided by drag area — that decides how fast a spacecraft falls through an atmosphere, and whether it can stop in time.",
@@ -428,6 +435,13 @@
   },
   {
     "tab": "mission-phases",
+    "section": "entry-footprint",
+    "title": "The landing footprint — where a capsule’s lift can take it",
+    "intro": "A re-entering capsule is not aimed like a dart at one point — its lift gives it a whole reachable area on the ground, the \"footprint\", and the guidance computer picks a landing site inside it by deciding how to spend that lift.",
+    "haystack": "the landing footprint — where a capsule’s lift can take it a re-entering capsule is not aimed like a dart at one point — its lift gives it a whole reachable area on the ground, the \"footprint\", and the guidance computer picks a landing site inside it by deciding how to spend that lift. the footprint is the reachable set in downrange–crossrange space. downrange is set mostly by how the vehicle spends vertical lift: full lift-up maximises range (the capsule \"floats\", decelerating slowly and travelling far), full lift-down minimises it (a steep, fast arrival). crossrange comes from banking the lift sideways, and its extent grows with l/d. for a low-l/d capsule the footprint is modest; for a lifting body or a winged vehicle it is huge."
+  },
+  {
+    "tab": "mission-phases",
     "section": "entry-heating",
     "title": "Entry Heating",
     "intro": "Why hitting an atmosphere at kilometres per second heats a spacecraft to thousands of degrees — and how a heat shield takes the punishment.",
@@ -460,6 +474,13 @@
     "title": "Launch + Ascent",
     "intro": "The most violent ten minutes of any mission — fighting gravity, atmosphere, and the rocket equation simultaneously.",
     "haystack": "launch + ascent the most violent ten minutes of any mission — fighting gravity, atmosphere, and the rocket equation simultaneously. launch ascent costs about 9.4 km/s of ∆v, but barely 7.9 km/s of that is actual orbital velocity. the rest is gravity loss (you spend energy holding the rocket up while it climbs) and drag loss (atmosphere fighting back). pitch-program right and you minimise both — too vertical wastes thrust on altitude that doesn't help orbital insertion; too horizontal and the atmosphere has more time to slow you down."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "lifting-entry",
+    "title": "Lifting entry — steering with a capsule’s lift",
+    "intro": "A blunt capsule is not just a falling rock. Offset its centre of mass and it flies with a little lift — and that lift, pointed by rolling the capsule, becomes a steering wheel that turns a knife-edge re-entry into a survivable one.",
+    "haystack": "lifting entry — steering with a capsule’s lift a blunt capsule is not just a falling rock. offset its centre of mass and it flies with a little lift — and that lift, pointed by rolling the capsule, becomes a steering wheel that turns a knife-edge re-entry into a survivable one. the physics is drag doing the braking and lift doing the aiming. a capsule’s lift-to-drag ratio (l/d) is small — about 0.3 for apollo and orion, near 0.24 for a mars aeroshell, versus 4+ for an airliner — but it is not zero, and at hypersonic speed even a small l/d moves the trajectory a long way. because the capsule cannot pitch (it has no wings or elevators), the only way to redirect that fixed-magnitude lift is to bank: rolling about the velocity vector points the lift vector up, down, or sideways without changing how hard the air pushes."
   },
   {
     "tab": "mission-phases",
@@ -509,6 +530,13 @@
     "title": "Propulsive Landing",
     "intro": "Landing on rockets alone — the only way down on an airless world like the Moon, and how a giant like Starship will set down on Mars.",
     "haystack": "propulsive landing landing on rockets alone — the only way down on an airless world like the moon, and how a giant like starship will set down on mars. the propellant cost is set by the rocket equation and the speed to cancel. on the moon a lander must kill its full orbital or approach speed on the engine, which is why so much of a lunar lander's mass is fuel. on mars the atmosphere does the expensive first half for free (the heat shield), leaving the engine to handle only the final, slow kilometres — but for a heavy vehicle even that is a large burn."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "skip-entry",
+    "title": "Skip entry — surfing back out of the atmosphere",
+    "intro": "Too fast for a single dip, the capsule skips back out of the atmosphere, coasts, then re-enters — splitting a brutal heat load into two gentler bites.",
+    "haystack": "skip entry — surfing back out of the atmosphere too fast for a single dip, the capsule skips back out of the atmosphere, coasts, then re-enters — splitting a brutal heat load into two gentler bites. a skip entry is only possible above the speed of a circular orbit at that altitude (~7.9 km/s low down) — a \"super-circular\" return. during the first dip the vehicle uses lift-up to arrest the descent before it has slowed all the way down; with energy still above what a closed orbit at that altitude needs, the trajectory carries it back up out of the sensible atmosphere. it then follows an exo-atmospheric coast — energy conserved, no drag — until it falls back for the second, final entry."
   },
   {
     "tab": "mission-phases",
@@ -673,6 +701,13 @@
   },
   {
     "tab": "orbits",
+    "section": "escape-velocity",
+    "title": "Escape velocity — the speed that never comes back",
+    "intro": "Throw anything upward fast enough and it never falls back — escape velocity is the exact speed at which a body’s kinetic energy just balances the gravity well it is climbing out of.",
+    "haystack": "escape velocity — the speed that never comes back throw anything upward fast enough and it never falls back — escape velocity is the exact speed at which a body’s kinetic energy just balances the gravity well it is climbing out of. escape velocity follows from energy conservation: set total energy (kinetic plus gravitational potential) to zero, and v_escape = √(2μ / r), where μ is the body’s gravitational parameter and r the distance from its centre. because circular orbital speed is √(μ / r), escape velocity is exactly √2 times it — the same factor at every altitude. a trajectory launched at exactly escape speed is a parabola (orbital energy zero); above it, a hyperbola that arrives at infinity with leftover speed, the \"hyperbolic excess\" v∞."
+  },
+  {
+    "tab": "orbits",
     "section": "hill-sphere",
     "title": "Hill Sphere",
     "intro": "The volume of space where a planet's gravity wins out over the Sun's.",
@@ -740,6 +775,13 @@
     "title": "Sun-synchronous + polar orbits — the Earth-observation backbone",
     "intro": "Sun-synchronous orbits cross every point on Earth at the same local solar time daily. Nearly polar, retrograde, tuned to use Earth's equatorial bulge as a precession motor — the trick behind consistent Earth observation.",
     "haystack": "sun-synchronous + polar orbits — the earth-observation backbone sun-synchronous orbits cross every point on earth at the same local solar time daily. nearly polar, retrograde, tuned to use earth's equatorial bulge as a precession motor — the trick behind consistent earth observation. a sun-synchronous orbit (sso) is a near-polar orbit (inclination usually 96-99°) at low to mid-leo altitude (600-900 km) whose orbital plane rotates eastward at exactly the same rate earth orbits the sun — 360°/year, or about 0.9856°/day. the effect: the angle between the satellite's orbital plane and the sun stays constant year-round, so the satellite always crosses any given latitude at the same local solar time. a sentinel-2 spacecraft, for instance, crosses the equator on the descending node at 10:30 local time every single day; this is what lets you compare a landsat image of a forest from 2010 to one from 2025 and know the lighting conditions are similar."
+  },
+  {
+    "tab": "orbits",
+    "section": "synodic-period",
+    "title": "Synodic period — why launch windows open and close",
+    "intro": "Two planets on different orbits drift in and out of alignment on a clock of their own — the synodic period — and that clock decides when the cheap road between them is open.",
+    "haystack": "synodic period — why launch windows open and close two planets on different orbits drift in and out of alignment on a clock of their own — the synodic period — and that clock decides when the cheap road between them is open. the synodic period s is set by the two orbital periods through 1/s = |1/t₁ − 1/t₂|: the rate at which the faster planet laps the slower one. for earth (365.25 d) and mars (687 d) that gives ~780 days; for earth and venus ~584 days; for earth and jupiter ~399 days (jupiter is so slow that the synodic period is barely longer than earth’s year). the closer two orbits are in period, the longer the synodic period — nearby planets take ages to lap each other."
   },
   {
     "tab": "orbits",

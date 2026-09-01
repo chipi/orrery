@@ -1,0 +1,15 @@
+{
+  "title": "The landing footprint — where a capsule’s lift can take it",
+  "intro_sentence": "A re-entering capsule is not aimed like a dart at one point — its lift gives it a whole reachable area on the ground, the \"footprint\", and the guidance computer picks a landing site inside it by deciding how to spend that lift.",
+  "narrative_101": [
+    "Once a capsule commits to re-entry it cannot add energy — no engines, no go-around. But it is not helpless about WHERE it comes down. By rolling to point its lift up it stretches the glide and flies far; by rolling lift-down it dives and lands short; by banking left or right it moves sideways. The set of all the places it could reach, given its speed and its lift, is a patch on the ground shaped like a stretched teardrop — the landing footprint.",
+    "Reaching the far edge of that footprint costs something: flying lift-up to go long means a shallower, gentler descent and a lower peak-g, while diving short means a steeper, harsher one. So there is a trade written into the footprint — the farther targets are the low-g ones, the near targets the high-g ones — and the guidance has to find a bank schedule that lands on the chosen spot without ever breaking the g or heating limits along the way.",
+    "This is exactly why Apollo could splash down near its recovery carrier and why Perseverance could hit a landing ellipse under 8 kilometres across (about 7.7 by 6.6 km) on Mars from millions of kilometres away. The computer is not steering to a point so much as choosing a point inside the footprint and then flying the lift to reach it."
+  ],
+  "body_paragraphs": [
+    "The footprint is the reachable set in downrange–crossrange space. Downrange is set mostly by how the vehicle spends vertical lift: full lift-up maximises range (the capsule \"floats\", decelerating slowly and travelling far), full lift-down minimises it (a steep, fast arrival). Crossrange comes from banking the lift sideways, and its extent grows with L/D. For a low-L/D capsule the footprint is modest; for a lifting body or a winged vehicle it is huge.",
+    "The trade between range and g-load is the load-bearing fact. Because a long, lift-up trajectory sheds speed high in thin air over a long time, its peak deceleration is low; a short, lift-down trajectory concentrates the braking and peaks higher. A footprint diagram therefore doubles as a menu: each reachable range comes with the peak-g it costs, and the target must sit inside both the range band and the g limit.",
+    "A range-control guidance loop closes this. Given a target range it solves for the bank angle (really a bank schedule) that lands there, then flies it, reversing bank left/right to cancel crossrange error. If the target lies outside the footprint the honest answer is that it cannot be reached — the guidance clamps to the nearest edge — which is why mission design chooses entry conditions that keep the target comfortably inside the footprint."
+  ],
+  "diagram_caption": "The reachable landing footprint: lift-up reaches far at low peak-g, lift-down lands short at high g; the guidance solves a bank schedule to a target inside the band."
+}

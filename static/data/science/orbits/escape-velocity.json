@@ -1,0 +1,31 @@
+{
+  "id": "escape-velocity",
+  "tab": "orbits",
+  "order": 16,
+  "diagram": "escape-velocity.webp",
+  "diagram_quality": "polished",
+  "see_in_app": [
+    {
+      "route": "/lab",
+      "context_key": "The Physics Lab's leave-the-Solar-System lesson computes escape speed and the Δv beyond Earth's orbital motion to reach it"
+    },
+    {
+      "route": "/explore",
+      "context_key": "Trace an escape trajectory outward past the planets"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Escape velocity",
+      "u": "https://en.wikipedia.org/wiki/Escape_velocity",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Basics of Space Flight — gravitation and mechanics",
+      "u": "https://science.nasa.gov/learn/basics-of-space-flight/chapter3-1/",
+      "t": "core"
+    }
+  ],
+  "reviewed_at": "2026-09-01",
+  "review_hash": "881308913408"
+}

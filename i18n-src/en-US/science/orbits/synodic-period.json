@@ -1,0 +1,15 @@
+{
+  "title": "Synodic period — why launch windows open and close",
+  "intro_sentence": "Two planets on different orbits drift in and out of alignment on a clock of their own — the synodic period — and that clock decides when the cheap road between them is open.",
+  "narrative_101": [
+    "A cheap trip to another planet is not a straight line — it is a long coasting ellipse that leaves Earth and just grazes the target’s orbit half a lap later. For that to work, the target planet has to be at the far end of the ellipse when the spacecraft arrives, not somewhere else on its orbit. Since the two planets move at different speeds, that lucky geometry only lines up now and then. The time between one alignment and the next is the synodic period.",
+    "For Earth and Mars it is about 780 days — roughly 26 months. That is why Mars missions come in clumps: miss the window and you wait more than two years for the planets to line up again. In 2020 the window opened for everyone at once, and NASA’s Perseverance, China’s Tianwen-1 and the UAE’s Hope all launched within three weeks of each other.",
+    "The alignment needed is not \"planets next to each other\" but a specific lead angle — Mars has to be a set number of degrees ahead of Earth at launch so that it arrives at the rendezvous point just as the spacecraft does. The synodic clock is simply how often that exact lead angle comes back around."
+  ],
+  "body_paragraphs": [
+    "The synodic period S is set by the two orbital periods through 1/S = |1/T₁ − 1/T₂|: the rate at which the faster planet laps the slower one. For Earth (365.25 d) and Mars (687 d) that gives ~780 days; for Earth and Venus ~584 days; for Earth and Jupiter ~399 days (Jupiter is so slow that the synodic period is barely longer than Earth’s year). The closer two orbits are in period, the LONGER the synodic period — nearby planets take ages to lap each other.",
+    "The launch window itself is set by phasing. A Hohmann transfer takes a fixed time (about 259 days Earth→Mars), during which the target sweeps a known arc; so at departure the target must lead the departure planet by a specific phase angle (roughly 44° for Earth→Mars) so it reaches the transfer’s far apse exactly when the spacecraft does. That geometry recurs every synodic period — which is why the window is periodic.",
+    "Real windows have width and cost structure: the porkchop plot maps departure date against flight time and shades the total Δv, and the synodic clock is what makes a fresh porkchop valley appear each cycle. The Physics Lab’s launch-window lesson computes S from the two periods and the required lead angle from the transfer time — the same arithmetic every interplanetary mission is scheduled by."
+  ],
+  "diagram_caption": "Synodic geometry: the target must lead by a set phase angle so it meets the transfer ellipse at arrival; that alignment recurs every synodic period 1/S = |1/T₁ − 1/T₂|."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Synodische periode — waarom lanceervensters openen en sluiten",
+  "intro_sentence": "Twee planeten op verschillende banen glijden in en uit elkaar volgens hun eigen klok — de synodische periode — en die klok bepaalt wanneer de goedkope route tussen hen open is.",
+  "narrative_101": [
+    "Een goedkope reis naar een ander planeet is geen rechte lijn — het is een lange glijdende ellips die de Aarde verlaat en de baan van het doel halfweg later net raakt. Daarvoor moet het doelplaneet aan het verre uiteinde van de ellips zijn wanneer de ruimtesonde aankomt, niet ergens anders op zijn baan. Omdat de twee planeten met verschillende snelheden bewegen, komt die gelukkige geometrie slechts nu en dan voor. De tijd tussen één uitlijning en de volgende is de synodische periode.",
+    "Voor Aarde en Mars is het ongeveer 780 dagen — ruwweg 26 maanden. Daarom komen Marsmissies in groepjes: mis het venster en je wacht meer dan twee jaar tot de planeten weer uitgelind zijn. In 2020 ging het venster voor iedereen tegelijk open, en NASA's Perseverance, China's Tianwen-1 en de VAE's Hope lanceerden allemaal binnen drie weken van elkaar.",
+    "De benodigde uitlijning is niet \"planeten naast elkaar\" maar een specifieke loodhoek — Mars moet een bepaald aantal graden voor op de Aarde staan bij lancering zodat het aankomt op het ontmoetingspunt precies wanneer de ruimtesonde dat doet. De synodische klok is eenvoudig hoe vaak die exacte loodhoek terugkomt."
+  ],
+  "body_paragraphs": [
+    "De synodische periode S wordt bepaald door de twee baanperioden via 1/S = |1/T₁ − 1/T₂|: de snelheid waarmee de snellere planeet de langzamere voorbijloopt. Voor Aarde (365,25 d) en Mars (687 d) geeft dat ~780 dagen; voor Aarde en Venus ~584 dagen; voor Aarde en Jupiter ~399 dagen (Jupiter is zo traag dat de synodische periode nauwelijks langer is dan Aarde's jaar). Hoe dichterbij twee banen in periode zijn, hoe LANGER de synodische periode — nabijgelegen planeten doen er eeuwigheden over om elkaar voorbij te lopen.",
+    "Het lanceervenster zelf wordt bepaald door fasering. Een Hohmann-overdracht neemt een vaste tijd (ongeveer 259 dagen Aarde→Mars), gedurende welke het doel een bekende boog doorloopt; dus bij vertrek moet het doel de vertrekplaneet voorgaan met een specifieke fasehoek (ongeveer 44° voor Aarde→Mars) zodat het het verre apsis van de overdracht precies bereikt wanneer de ruimtesonde dat doet. Die geometrie herhaalt zich elke synodische periode — daarom is het venster periodiek.",
+    "Echte vensters hebben breedte en kostenstructuur: de porkchop-grafiek zet vertrekdatum tegen vluchttijd uit en geeft de totale Δv aan, en de synodische klok is wat een vers porkchop-dal laat verschijnen in elke cyclus. Het Physics Lab's lanceervenster-les berekent S uit de twee perioden en de vereiste loodhoek uit de overdrachtstijd — dezelfde rekenkunde waarmee elke interplanetaire missie wordt ingepland."
+  ],
+  "diagram_caption": "Synodische geometrie: het doel moet voorgaan met een bepaalde fasehoek zodat het de overdrachtsellips bij aankomst ontmoet; die uitlijning herhaalt zich elke synodische periode 1/S = |1/T₁ − 1/T₂|."
+}

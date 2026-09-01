@@ -144,6 +144,37 @@ const ORPHAN_ALLOWLIST: AllowlistEntry[] = [
     reason: 'PERMANENT-INDIRECT — FleetEntryPanel scienceSlugForCycle(specs.cycle)',
   },
 
+  // ── BROWSE — Physics-Lab-derived encyclopedia articles (#32) ──
+  // The 6 concepts the Physics Lab teaches with no /science article until now.
+  // Each is browse-reachable via its /science tab nav (_index) and deep-links
+  // OUTWARD to /lab (see_in_app). The inbound direction (Lab lesson → article)
+  // is a later Lab slice; until then they are browse-reachable and intentional.
+  {
+    id: 'mission-phases/lifting-entry',
+    reason: 'BROWSE — Physics Lab re-entry computer (#32); Lab→article deep-link pending',
+  },
+  {
+    id: 'mission-phases/skip-entry',
+    reason: 'BROWSE — Physics Lab lunar-return entry (#32); Lab→article deep-link pending',
+  },
+  {
+    id: 'mission-phases/entry-footprint',
+    reason: 'BROWSE — Physics Lab range-control lesson (#32); Lab→article deep-link pending',
+  },
+  {
+    id: 'mission-phases/ascent-guidance',
+    reason: 'BROWSE — Physics Lab flying-computer lesson (#32); Lab→article deep-link pending',
+  },
+  {
+    id: 'orbits/escape-velocity',
+    reason:
+      'BROWSE — Physics Lab leave-the-Solar-System lesson (#32); Lab→article deep-link pending',
+  },
+  {
+    id: 'orbits/synodic-period',
+    reason: 'BROWSE — Physics Lab launch-window lesson (#32); Lab→article deep-link pending',
+  },
+
   // ── PERMANENT-BROWSE — /explore v2 exoplanet wing (RFC-032 S3) ──
   // These articles are reached via the /science/exoplanets tab and each
   // deep-links OUTWARD to a matching /explore BodyScene (see_in_app). The

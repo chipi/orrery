@@ -2635,5 +2635,16 @@
   "lab_conn_art_apollo8": "Apollo 8 — the first crewed lunar round trip and 11 km/s lifting entry",
   "lab_conn_art_apollo11": "Apollo 11 — the first crewed landing, the full round trip with a surface stay",
   "lab_conn_art_apollo_lm": "Apollo Lunar Module — the craft that flew the descent and lunar ascent",
-  "lab_conn_art_program": "The Apollo program — nine crewed lunar missions"
+  "lab_conn_art_program": "The Apollo program — nine crewed lunar missions",
+  "lab_f_rangectl_title": "Range-control entry",
+  "lab_f_rangectl_ld": "Lift-to-drag ratio",
+  "lab_f_rangectl_target": "Target downrange",
+  "lab_f_rangectl_angle": "Entry angle",
+  "lab_f_rangectl_bank": "Commanded bank",
+  "lab_f_rangectl_landed": "Landed downrange",
+  "lab_f_rangectl_peakg": "Peak deceleration",
+  "lab_f_rangectl_footprint": "Footprint (range vs g)",
+  "lab_f_rangectl_solved": "Solved bank",
+  "lab_f_rangectl_err_unreachable": "Target is outside the reachable footprint — the computer clamps to the nearest edge (flown at full lift-up or full lift-down).",
+  "lab_goal_sysentry_range": "Surviving the corridor is only half the job — the computer must also land you at the recovery zone, not just anywhere. Downrange is monotone in bank: full lift-up flies the farthest (a long shallow skim), lift-down digs in short. So the computer solves the one bank angle that lands at your target. The footprint curve shows the price: a near target forces a lift-down dig-in that spikes the g, a far one rides lift-up gently. Range and g trade — and the computer hits both."
 }

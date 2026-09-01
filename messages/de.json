@@ -2634,5 +2634,16 @@
   "lab_conn_art_apollo8": "Apollo 8 — die erste bemannte Mondrundreise und der auftriebsgestützte 11-km/s-Eintritt",
   "lab_conn_art_apollo11": "Apollo 11 — die erste bemannte Landung, der volle Rundflug mit Aufenthalt auf der Oberfläche",
   "lab_conn_art_apollo_lm": "Apollo Lunar Module — das Raumfahrzeug, das den Abstieg und den Mondaufstieg flog",
-  "lab_conn_art_program": "Das Apollo-Programm — neun bemannte Mondmissionen"
+  "lab_conn_art_program": "Das Apollo-Programm — neun bemannte Mondmissionen",
+  "lab_f_rangectl_title": "Reichweitengeregelter Eintritt",
+  "lab_f_rangectl_ld": "Gleitzahl (Auftrieb/Widerstand)",
+  "lab_f_rangectl_target": "Ziel-Reichweite",
+  "lab_f_rangectl_angle": "Eintrittswinkel",
+  "lab_f_rangectl_bank": "Kommandierter Rollwinkel",
+  "lab_f_rangectl_landed": "Erreichte Reichweite",
+  "lab_f_rangectl_peakg": "Spitzenverzögerung",
+  "lab_f_rangectl_footprint": "Fußabdruck (Reichweite vs. g)",
+  "lab_f_rangectl_solved": "Berechneter Rollwinkel",
+  "lab_f_rangectl_err_unreachable": "Ziel liegt außerhalb des erreichbaren Fußabdrucks — der Rechner begrenzt auf die nächste Kante (Flug mit vollem Auftrieb nach oben oder unten).",
+  "lab_goal_sysentry_range": "Den Korridor zu überleben ist nur die halbe Miete — der Rechner muss dich auch in der Bergungszone absetzen, nicht irgendwo. Die Reichweite ist monoton im Rollwinkel: voller Auftrieb nach oben fliegt am weitesten (ein langes, flaches Streifen), Auftrieb nach unten gräbt kurz ein. Also berechnet der Rechner den einen Rollwinkel, der dein Ziel trifft. Die Fußabdruck-Kurve zeigt den Preis: ein nahes Ziel erzwingt ein Auftrieb-nach-unten-Eingraben, das die g-Spitze hochtreibt, ein fernes Ziel gleitet sanft mit Auftrieb nach oben. Reichweite und g stehen im Zielkonflikt — und der Rechner trifft beides."
 }

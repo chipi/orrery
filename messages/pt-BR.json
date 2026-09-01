@@ -2634,5 +2634,16 @@
   "lab_conn_art_apollo8": "Apollo 8 — a primeira viagem tripulada de ida e volta à Lua e reentrada com sustentação a 11 km/s",
   "lab_conn_art_apollo11": "Apollo 11 — o primeiro pouso tripulado, a ida e volta completa com estadia na superfície",
   "lab_conn_art_apollo_lm": "Módulo Lunar Apollo — a nave que executou a descida e a subida lunar",
-  "lab_conn_art_program": "O programa Apollo — nove missões lunares tripuladas"
+  "lab_conn_art_program": "O programa Apollo — nove missões lunares tripuladas",
+  "lab_f_rangectl_title": "Entrada com controle de alcance",
+  "lab_f_rangectl_ld": "Razão sustentação-arrasto",
+  "lab_f_rangectl_target": "Alcance-alvo",
+  "lab_f_rangectl_angle": "Ângulo de entrada",
+  "lab_f_rangectl_bank": "Rolamento comandado",
+  "lab_f_rangectl_landed": "Alcance de pouso",
+  "lab_f_rangectl_peakg": "Desaceleração de pico",
+  "lab_f_rangectl_footprint": "Área de pouso (alcance vs g)",
+  "lab_f_rangectl_solved": "Rolamento resolvido",
+  "lab_f_rangectl_err_unreachable": "O alvo está fora da área de pouso alcançável — o computador limita à borda mais próxima (voando com sustentação máxima para cima ou para baixo).",
+  "lab_goal_sysentry_range": "Sobreviver ao corredor é só metade do trabalho — o computador também precisa pousar você na zona de recuperação, e não em qualquer lugar. O alcance é monótono em relação ao rolamento: sustentação máxima para cima voa mais longe (um roçar longo e raso), sustentação para baixo mergulha curto. Então o computador resolve o único ângulo de rolamento que pousa no seu alvo. A curva da área de pouso mostra o preço: um alvo próximo força um mergulho com sustentação para baixo que dispara o g, um distante desliza suavemente com sustentação para cima. Alcance e g se compensam — e o computador acerta os dois."
 }

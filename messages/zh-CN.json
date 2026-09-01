@@ -2634,5 +2634,16 @@
   "lab_conn_art_apollo8": "Apollo 8——首次载人绕月往返与 11 km/s 升力式再入",
   "lab_conn_art_apollo11": "阿波罗11号——首次载人登月，包含月面停留的完整往返",
   "lab_conn_art_apollo_lm": "阿波罗登月舱——执行下降与月面上升的飞行器",
-  "lab_conn_art_program": "阿波罗计划——九次载人登月任务"
+  "lab_conn_art_program": "阿波罗计划——九次载人登月任务",
+  "lab_f_rangectl_title": "航程控制再入",
+  "lab_f_rangectl_ld": "升阻比",
+  "lab_f_rangectl_target": "目标航程",
+  "lab_f_rangectl_angle": "再入角",
+  "lab_f_rangectl_bank": "指令倾侧角",
+  "lab_f_rangectl_landed": "着陆航程",
+  "lab_f_rangectl_peakg": "峰值减速度",
+  "lab_f_rangectl_footprint": "落区范围（航程与g）",
+  "lab_f_rangectl_solved": "解算倾侧角",
+  "lab_f_rangectl_err_unreachable": "目标超出可达落区范围——计算机将其限制到最近的边缘（以全升力向上或全升力向下飞行）。",
+  "lab_goal_sysentry_range": "熬过再入走廊只是任务的一半——计算机还必须让你着陆在回收区，而不是随便哪里。航程随倾侧角单调变化：全升力向上飞得最远（长而浅的掠飞），升力向下则短促下扎。因此计算机解算出唯一能落在目标点的倾侧角。落区范围曲线揭示了代价：近距目标迫使升力向下下扎，使g值飙升，远距目标则平缓地借助升力向上。航程与g此消彼长——而计算机两者兼顾。"
 }

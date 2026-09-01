@@ -815,7 +815,10 @@ export const entryComputer: Goal = {
   family: 'systems',
   tier: 5,
   prereqs: ['landing-computer'],
-  path: [{ formulaId: 'entry-steering', narrativeKey: 'lab.goal.sysentry.steer' }],
+  path: [
+    { formulaId: 'entry-steering', narrativeKey: 'lab.goal.sysentry.steer' },
+    { formulaId: 'entry-range-control', narrativeKey: 'lab.goal.sysentry.range' },
+  ],
   connection: {
     whyKey: 'lab.conn.sysentry.why',
     hookKey: 'lab.conn.sysentry.hook',

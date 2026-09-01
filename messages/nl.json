@@ -2634,5 +2634,16 @@
   "lab_conn_art_apollo8": "Apollo 8 — de eerste bemande rondreis om de Maan en liftende intrede met 11 km/s",
   "lab_conn_art_apollo11": "Apollo 11 — de eerste bemande landing, de volledige heen-en-terugreis met verblijf op het oppervlak",
   "lab_conn_art_apollo_lm": "Apollo Lunar Module — het vaartuig dat de daling en de maanopstijging vloog",
-  "lab_conn_art_program": "Het Apollo-programma — negen bemande maanmissies"
+  "lab_conn_art_program": "Het Apollo-programma — negen bemande maanmissies",
+  "lab_f_rangectl_title": "Invoer bereikregeling",
+  "lab_f_rangectl_ld": "Lift-weerstandsverhouding",
+  "lab_f_rangectl_target": "Doel-downrange",
+  "lab_f_rangectl_angle": "Intredehoek",
+  "lab_f_rangectl_bank": "Gecommandeerde rolhoek",
+  "lab_f_rangectl_landed": "Geland downrange",
+  "lab_f_rangectl_peakg": "Piekvertraging",
+  "lab_f_rangectl_footprint": "Voetafdruk (bereik vs g)",
+  "lab_f_rangectl_solved": "Berekende rolhoek",
+  "lab_f_rangectl_err_unreachable": "Doel ligt buiten de bereikbare voetafdruk — de computer klemt vast op de dichtstbijzijnde rand (gevlogen met volledige lift omhoog of volledige lift omlaag).",
+  "lab_goal_sysentry_range": "De corridor overleven is maar het halve werk — de computer moet je ook in de bergingszone landen, niet zomaar ergens. Downrange is monotoon in rolhoek: volledige lift omhoog vliegt het verst (een lange, ondiepe scheerbeweging), lift omlaag graaft kort in. Dus lost de computer de ene rolhoek op die op je doel landt. De voetafdrukkromme toont de prijs: een nabij doel dwingt een lift-omlaag-ingraving af die de g laat pieken, een ver doel rijdt zacht op lift omhoog. Bereik en g wisselen uit — en de computer haalt beide."
 }

@@ -2634,5 +2634,16 @@
   "lab_conn_art_apollo8": "Apollo 8 — le premier aller-retour lunaire habité et l'entrée en portance à 11 km/s",
   "lab_conn_art_apollo11": "Apollo 11 — le premier alunissage habité, l'aller-retour complet avec séjour au sol",
   "lab_conn_art_apollo_lm": "Module lunaire Apollo — l'engin qui a effectué la descente et la remontée lunaire",
-  "lab_conn_art_program": "Le programme Apollo — neuf missions lunaires habitées"
+  "lab_conn_art_program": "Le programme Apollo — neuf missions lunaires habitées",
+  "lab_f_rangectl_title": "Saisie du contrôle de portée",
+  "lab_f_rangectl_ld": "Rapport portance/traînée",
+  "lab_f_rangectl_target": "Portée cible",
+  "lab_f_rangectl_angle": "Angle d'entrée",
+  "lab_f_rangectl_bank": "Inclinaison commandée",
+  "lab_f_rangectl_landed": "Portée à l'atterrissage",
+  "lab_f_rangectl_peakg": "Décélération maximale",
+  "lab_f_rangectl_footprint": "Empreinte (portée vs g)",
+  "lab_f_rangectl_solved": "Inclinaison résolue",
+  "lab_f_rangectl_err_unreachable": "La cible est hors de l'empreinte atteignable — le calculateur se cale sur le bord le plus proche (vol en portance maximale vers le haut ou vers le bas).",
+  "lab_goal_sysentry_range": "Survivre au corridor n'est que la moitié du travail — le calculateur doit aussi vous poser dans la zone de récupération, et pas n'importe où. La portée est monotone selon l'inclinaison : la portance maximale vers le haut porte le plus loin (un long effleurement en pente douce), la portance vers le bas creuse court. Le calculateur résout donc l'unique angle d'inclinaison qui atterrit sur votre cible. La courbe d'empreinte montre le prix à payer : une cible proche impose un creusement en portance vers le bas qui fait grimper le g, une cible lointaine glisse doucement en portance vers le haut. Portée et g s'échangent — et le calculateur atteint les deux."
 }

@@ -1110,9 +1110,10 @@ describe('systems · re-entry lift steering (lift widens the corridor)', () => {
     expect(hi.liftWidthDeg).toBeGreaterThan(fig.liftWidthDeg);
   });
 
-  it('entry-computer is the third systems-family goal', () => {
+  it('entry-computer is the third systems-family goal (corridor + range control)', () => {
     const g = GOALS.get('entry-computer')!;
     expect(g.family).toBe('systems');
-    expect(g.path.map((s) => s.formulaId)).toEqual(['entry-steering']);
+    // Two rungs: entry-steering (lift widens the corridor) → entry-range-control (steer to a target).
+    expect(g.path.map((s) => s.formulaId)).toEqual(['entry-steering', 'entry-range-control']);
   });
 });

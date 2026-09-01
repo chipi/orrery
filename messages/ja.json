@@ -2634,5 +2634,16 @@
   "lab_conn_art_apollo8": "Apollo 8 — 初の有人月往復飛行と11 km/s揚力突入",
   "lab_conn_art_apollo11": "Apollo 11 — 初の有人着陸、表面滞在を含む完全な往還",
   "lab_conn_art_apollo_lm": "Apollo月着陸船 — 降下と月面上昇を飛んだ機体",
-  "lab_conn_art_program": "Apollo計画 — 九回の有人月ミッション"
+  "lab_conn_art_program": "Apollo計画 — 九回の有人月ミッション",
+  "lab_f_rangectl_title": "レンジ制御エントリー",
+  "lab_f_rangectl_ld": "揚抗比",
+  "lab_f_rangectl_target": "目標ダウンレンジ",
+  "lab_f_rangectl_angle": "進入角",
+  "lab_f_rangectl_bank": "指令バンク角",
+  "lab_f_rangectl_landed": "着陸ダウンレンジ",
+  "lab_f_rangectl_peakg": "最大減速度",
+  "lab_f_rangectl_footprint": "フットプリント（レンジ対G）",
+  "lab_f_rangectl_solved": "解算バンク角",
+  "lab_f_rangectl_err_unreachable": "目標は到達可能なフットプリントの外側です — コンピューターは最も近い端にクランプします（フルリフトアップまたはフルリフトダウンで飛行）。",
+  "lab_goal_sysentry_range": "コリドーを生き延びるのは仕事の半分に過ぎません — コンピューターはどこでもよいわけではなく、回収ゾーンに着陸させなければなりません。ダウンレンジはバンク角に対して単調です。フルリフトアップは最も遠くまで飛び（浅く長くかすめる）、リフトダウンは短く突っ込みます。そこでコンピューターは、目標に着陸する唯一のバンク角を解きます。フットプリント曲線がその代償を示します。近い目標はリフトダウンの突っ込みを強いてGを跳ね上げ、遠い目標はリフトアップで穏やかに滑空します。レンジとGはトレードオフの関係にあり — コンピューターはその両方を的中させます。"
 }

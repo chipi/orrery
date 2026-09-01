@@ -2634,5 +2634,16 @@
   "lab_conn_art_apollo8": "Apollo 8 — il primo viaggio lunare con equipaggio andata e ritorno e rientro portante a 11 km/s",
   "lab_conn_art_apollo11": "Apollo 11 — il primo allunaggio con equipaggio, l'intero viaggio di andata e ritorno con permanenza sulla superficie",
   "lab_conn_art_apollo_lm": "Modulo Lunare Apollo — il veicolo che ha volato la discesa e la risalita lunare",
-  "lab_conn_art_program": "Il programma Apollo — nove missioni lunari con equipaggio"
+  "lab_conn_art_program": "Il programma Apollo — nove missioni lunari con equipaggio",
+  "lab_f_rangectl_title": "Ingresso a controllo di distanza",
+  "lab_f_rangectl_ld": "Rapporto portanza/resistenza",
+  "lab_f_rangectl_target": "Distanza obiettivo",
+  "lab_f_rangectl_angle": "Angolo d'ingresso",
+  "lab_f_rangectl_bank": "Rollio comandato",
+  "lab_f_rangectl_landed": "Distanza atterraggio",
+  "lab_f_rangectl_peakg": "Decelerazione di picco",
+  "lab_f_rangectl_footprint": "Impronta (distanza vs g)",
+  "lab_f_rangectl_solved": "Rollio risolto",
+  "lab_f_rangectl_err_unreachable": "L'obiettivo è fuori dall'impronta raggiungibile — il computer si arresta al bordo più vicino (volato a piena portanza in su o piena portanza in giù).",
+  "lab_goal_sysentry_range": "Sopravvivere al corridoio è solo metà del lavoro — il computer deve anche farti atterrare nella zona di recupero, non in un punto qualsiasi. La distanza è monotona rispetto al rollio: piena portanza in su vola più lontano (una lunga sfioratura poco profonda), portanza in giù affonda breve. Così il computer risolve l'unico angolo di rollio che atterra sul tuo obiettivo. La curva dell'impronta mostra il prezzo: un obiettivo vicino impone un affondo a portanza in giù che fa impennare i g, uno lontano cavalca la portanza in su con dolcezza. Distanza e g si scambiano — e il computer li centra entrambi."
 }

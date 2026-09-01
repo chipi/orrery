@@ -2634,5 +2634,16 @@
   "lab_conn_art_apollo8": "아폴로 8호 — 최초의 유인 달 왕복 비행 및 11 km/s 양력 진입",
   "lab_conn_art_apollo11": "Apollo 11 — 최초의 유인 착륙, 지표 체류를 포함한 완전한 왕복",
   "lab_conn_art_apollo_lm": "Apollo Lunar Module — 강하와 달 상승을 비행한 우주선",
-  "lab_conn_art_program": "Apollo 계획 — 아홉 차례의 유인 달 임무"
+  "lab_conn_art_program": "Apollo 계획 — 아홉 차례의 유인 달 임무",
+  "lab_f_rangectl_title": "사거리 제어 진입",
+  "lab_f_rangectl_ld": "양항비",
+  "lab_f_rangectl_target": "목표 다운레인지",
+  "lab_f_rangectl_angle": "진입각",
+  "lab_f_rangectl_bank": "지령 뱅크각",
+  "lab_f_rangectl_landed": "착륙 다운레인지",
+  "lab_f_rangectl_peakg": "최대 감속도",
+  "lab_f_rangectl_footprint": "풋프린트 (사거리 대 g)",
+  "lab_f_rangectl_solved": "해석된 뱅크각",
+  "lab_f_rangectl_err_unreachable": "목표가 도달 가능한 풋프린트 밖에 있습니다 — 컴퓨터가 가장 가까운 가장자리로 고정합니다(완전 양력 상향 또는 완전 양력 하향으로 비행).",
+  "lab_goal_sysentry_range": "회랑에서 살아남는 것은 절반의 임무일 뿐 — 컴퓨터는 아무 데나가 아니라 회수 구역에 착륙시켜야 합니다. 다운레인지는 뱅크각에 대해 단조적입니다: 완전 양력 상향은 가장 멀리 비행하고(길고 얕은 스키밍), 양력 하향은 짧게 파고듭니다. 그래서 컴퓨터는 목표에 착륙하는 단 하나의 뱅크각을 풉니다. 풋프린트 곡선은 그 대가를 보여줍니다: 가까운 목표는 양력 하향으로 파고들어 g를 급증시키고, 먼 목표는 양력 상향으로 부드럽게 활공합니다. 사거리와 g는 맞바꿈 관계이며 — 컴퓨터는 둘 다 명중시킵니다."
 }

@@ -2634,5 +2634,16 @@
   "lab_conn_art_apollo8": "Apollo 8 — el primer viaje tripulado de ida y vuelta a la Luna y reentrada con sustentación a 11 km/s",
   "lab_conn_art_apollo11": "Apollo 11: el primer alunizaje tripulado, el viaje completo de ida y vuelta con estancia en superficie",
   "lab_conn_art_apollo_lm": "Módulo Lunar Apollo: la nave que voló el descenso y el ascenso lunar",
-  "lab_conn_art_program": "El programa Apollo: nueve misiones lunares tripuladas"
+  "lab_conn_art_program": "El programa Apollo: nueve misiones lunares tripuladas",
+  "lab_f_rangectl_title": "Entrada con control de alcance",
+  "lab_f_rangectl_ld": "Relación sustentación-resistencia",
+  "lab_f_rangectl_target": "Alcance objetivo",
+  "lab_f_rangectl_angle": "Ángulo de entrada",
+  "lab_f_rangectl_bank": "Alabeo comandado",
+  "lab_f_rangectl_landed": "Alcance de aterrizaje",
+  "lab_f_rangectl_peakg": "Deceleración máxima",
+  "lab_f_rangectl_footprint": "Huella (alcance vs g)",
+  "lab_f_rangectl_solved": "Alabeo resuelto",
+  "lab_f_rangectl_err_unreachable": "El objetivo está fuera de la huella alcanzable — el ordenador se ajusta al borde más cercano (volando con sustentación máxima hacia arriba o hacia abajo).",
+  "lab_goal_sysentry_range": "Sobrevivir al corredor es solo la mitad del trabajo — el ordenador también debe hacerte aterrizar en la zona de recuperación, no en cualquier sitio. El alcance es monótono con el alabeo: sustentación máxima hacia arriba vuela lo más lejos (un rasante largo y suave), hacia abajo cava corto. Así que el ordenador resuelve el único ángulo de alabeo que aterriza en tu objetivo. La curva de la huella muestra el precio: un objetivo cercano fuerza un descenso con sustentación hacia abajo que dispara las g, uno lejano cabalga suavemente con sustentación hacia arriba. Alcance y g se compensan — y el ordenador acierta con ambos."
 }

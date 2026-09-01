@@ -40,7 +40,11 @@ import { EPOCH_JD, moonEclipticXYKm, R_LEO } from '../transfer/lambert-geocentri
 import { integrateAscent, circularSpeed } from '../ascent/ascent-physics';
 import { buildGenericProfile } from '../ascent/launch-profile-registry';
 import { poweredDescentThrottle } from '../systems/powered-descent';
-import { simulateLiftingEntry, liftCorridor } from '../systems/entry-steering';
+import {
+  simulateLiftingEntry,
+  liftCorridor,
+  solveEntryBankForRange,
+} from '../systems/entry-steering';
 import {
   MOON_ORBIT_RADIUS_KM,
   MU_SUN_KM3_S2,
@@ -1906,6 +1910,122 @@ export const entrySteering: FormulaDef<{
       status: captured ? { ok: true } : { ok: false, reasonKey: 'lab.f.esteer.err-lost' },
       assumptions: ['lab.assume.two-dof-entry', 'lab.assume.exponential-atmosphere'],
       figure,
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Range-control entry guidance (#29 · ADR-088) — the OTHER job of the entry computer: not just to
+ * survive the corridor, but to STEER to a chosen landing point. Downrange is monotone in the
+ * vertical lift fraction cos(bank): full lift-up flies the farthest (a long shallow skim), lift-down
+ * digs in short. So the computer bisects the bank that lands at your target
+ * (systems/entry-steering `solveEntryBankForRange`). The curve is the FOOTPRINT — every reachable
+ * landing range and the g it costs: a near target forces a lift-down dig-in that spikes the g, a far
+ * target rides lift-up gently. The lesson: range and g TRADE against each other, and the computer
+ * picks the single bank that hits the target. An out-of-footprint target fails honest (clamped).
+ */
+export const entryRangeControl: FormulaDef<{
+  liftToDrag: number;
+  targetRangeKm: number;
+  entryAngleDeg: number;
+}> = {
+  id: 'entry-range-control',
+  titleKey: 'lab.f.rangectl.title',
+  domain: 'descent',
+  tier: 5,
+  prereqs: ['entry-steering'],
+  latex:
+    'R(\\cos\\phi)\\ \\text{monotone} \\Rightarrow \\text{bisect}\\ \\cos\\phi\\ \\text{s.t.}\\ R = R_\\text{target}',
+  inputs: [
+    {
+      key: 'liftToDrag',
+      labelKey: 'lab.f.rangectl.ld',
+      units: '',
+      kind: 'number',
+      default: 0.3,
+      min: 0.1,
+      max: 0.5,
+      step: 0.02,
+    },
+    {
+      key: 'targetRangeKm',
+      labelKey: 'lab.f.rangectl.target',
+      units: 'km',
+      kind: 'number',
+      default: 3000,
+      min: 2000,
+      max: 4500,
+      step: 100,
+    },
+    {
+      key: 'entryAngleDeg',
+      labelKey: 'lab.f.rangectl.angle',
+      units: 'deg',
+      kind: 'number',
+      default: 1.5,
+      min: 1,
+      max: 3,
+      step: 0.25,
+    },
+  ],
+  outputs: [
+    { key: 'bankDeg', labelKey: 'lab.f.rangectl.bank', units: 'deg' },
+    { key: 'landedRangeKm', labelKey: 'lab.f.rangectl.landed', units: 'km' },
+    { key: 'peakGeeAtSolve', labelKey: 'lab.f.rangectl.peakg', units: '' },
+  ],
+  compute: ({ liftToDrag, targetRangeKm, entryAngleDeg }) => {
+    if (
+      !Number.isFinite(liftToDrag) ||
+      !Number.isFinite(targetRangeKm) ||
+      !Number.isFinite(entryAngleDeg) ||
+      liftToDrag <= 0 ||
+      targetRangeKm <= 0 ||
+      entryAngleDeg <= 0
+    ) {
+      return {
+        values: {},
+        status: { ok: false, reasonKey: 'lab.f.escape.err-input' },
+        assumptions: ['lab.assume.two-dof-entry'],
+      } satisfies FormulaResult;
+    }
+    const V0 = 7820; // LEO-return entry speed
+    const BC = 400; // Apollo-class capsule ballistic coefficient (kg/m²)
+    const dyn = { entryVelocityMs: V0, entryAngleDeg, liftToDrag, ballisticCoeff: BC };
+    const solve = solveEntryBankForRange(dyn, targetRangeKm * 1000);
+    const bankDeg = (Math.acos(Math.max(-1, Math.min(1, solve.bankCos))) * 180) / Math.PI;
+    // Footprint: sweep a CONSTANT bank from lift-down (short + high-g) to lift-up (far + low-g); each
+    // point is (landing range, peak-g) — the trade the computer navigates.
+    const points: Vec2[] = [];
+    for (let u = -1; u <= 1.0001; u += 0.1) {
+      const r = simulateLiftingEntry({ ...dyn, targetDecelG: 0, bankCommand: () => u });
+      points.push({ x: r.downrangeM / 1000, y: r.peakG });
+    }
+    const values: Record<string, Quantity> = {
+      bankDeg: { value: bankDeg, units: 'deg' },
+      landedRangeKm: { value: solve.landedRangeM / 1000, units: 'km' },
+      peakGeeAtSolve: { value: solve.peakG, units: '' },
+    };
+    return {
+      values,
+      status: solve.reachable
+        ? { ok: true }
+        : { ok: false, reasonKey: 'lab.f.rangectl.err-unreachable' },
+      assumptions: ['lab.assume.two-dof-entry', 'lab.assume.exponential-atmosphere'],
+      figure: {
+        kind: 'curve',
+        provenance: { fidelity: 'computed', module: 'systems/entry-steering' },
+        assumptions: ['lab.assume.two-dof-entry', 'lab.assume.exponential-atmosphere'],
+        x: { labelKey: 'lab.axis.range', units: 'km' },
+        y: { labelKey: 'lab.axis.decel-g', units: '' },
+        series: [{ labelKey: 'lab.f.rangectl.footprint', points }],
+        marks: [
+          {
+            at: { x: solve.landedRangeM / 1000, y: solve.peakG },
+            labelKey: 'lab.f.rangectl.solved',
+            kind: 'point',
+          },
+        ],
+      },
     } satisfies FormulaResult;
   },
 };
@@ -5050,6 +5170,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [ascentGuidance.id, ascentGuidance],
   [poweredDescent.id, poweredDescent],
   [entrySteering.id, entrySteering],
+  [entryRangeControl.id, entryRangeControl],
   [terminalVelocity.id, terminalVelocity],
   [softLandingCheck.id, softLandingCheck],
   [airbagsCheck.id, airbagsCheck],

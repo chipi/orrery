@@ -1690,7 +1690,18 @@
     "lab_conn_art_apollo8": "Apollo 8 — पहला मानवयुक्त चंद्र आना-जाना का सफर और 11 km/s की लिफ्टिंग प्रवेश",
     "lab_conn_art_apollo11": "Apollo 11 — पहली मानवयुक्त लैंडिंग, सतह पर ठहराव के साथ पूरी राउंड ट्रिप",
     "lab_conn_art_apollo_lm": "Apollo Lunar Module — वह यान जिसने अवरोहण और चंद्र आरोहण उड़ाया",
-    "lab_conn_art_program": "Apollo कार्यक्रम — नौ मानवयुक्त चंद्र मिशन"
+    "lab_conn_art_program": "Apollo कार्यक्रम — नौ मानवयुक्त चंद्र मिशन",
+    "lab_f_rangectl_title": "रेंज-नियंत्रण प्रवेश",
+    "lab_f_rangectl_ld": "लिफ्ट-टू-ड्रैग अनुपात",
+    "lab_f_rangectl_target": "लक्ष्य डाउनरेंज",
+    "lab_f_rangectl_angle": "प्रवेश कोण",
+    "lab_f_rangectl_bank": "आदेशित बैंक",
+    "lab_f_rangectl_landed": "अवतरित डाउनरेंज",
+    "lab_f_rangectl_peakg": "शिखर मंदन",
+    "lab_f_rangectl_footprint": "फुटप्रिंट (रेंज बनाम g)",
+    "lab_f_rangectl_solved": "हल किया गया बैंक",
+    "lab_f_rangectl_err_unreachable": "लक्ष्य पहुँच योग्य फुटप्रिंट के बाहर है — कंप्यूटर निकटतम किनारे पर सीमित कर देता है (पूर्ण लिफ्ट-अप या पूर्ण लिफ्ट-डाउन पर उड़ाया जाता है)।",
+    "lab_goal_sysentry_range": "गलियारे में जीवित रहना केवल आधा काम है — कंप्यूटर को आपको रिकवरी ज़ोन पर उतारना भी है, कहीं भी नहीं। डाउनरेंज बैंक में एकदिष्ट होता है: पूर्ण लिफ्ट-अप सबसे दूर तक उड़ता है (एक लंबी उथली छूती हुई उड़ान), लिफ्ट-डाउन कम दूरी में गोता लगाता है। तो कंप्यूटर वह एक बैंक कोण हल करता है जो आपके लक्ष्य पर उतरे। फुटप्रिंट वक्र कीमत दिखाता है: निकट लक्ष्य एक लिफ्ट-डाउन गोता मजबूर करता है जो g को बढ़ा देता है, दूर वाला लिफ्ट-अप पर धीरे से चलता है। रेंज और g में अदला-बदली होती है — और कंप्यूटर दोनों को साध लेता है।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3244,7 +3255,18 @@
     "lab_conn_art_apollo8": "Apollo 8 — 初の有人月往復飛行と11 km/s揚力突入",
     "lab_conn_art_apollo11": "Apollo 11 — 初の有人着陸、表面滞在を含む完全な往還",
     "lab_conn_art_apollo_lm": "Apollo月着陸船 — 降下と月面上昇を飛んだ機体",
-    "lab_conn_art_program": "Apollo計画 — 九回の有人月ミッション"
+    "lab_conn_art_program": "Apollo計画 — 九回の有人月ミッション",
+    "lab_f_rangectl_title": "レンジ制御エントリー",
+    "lab_f_rangectl_ld": "揚抗比",
+    "lab_f_rangectl_target": "目標ダウンレンジ",
+    "lab_f_rangectl_angle": "進入角",
+    "lab_f_rangectl_bank": "指令バンク角",
+    "lab_f_rangectl_landed": "着陸ダウンレンジ",
+    "lab_f_rangectl_peakg": "最大減速度",
+    "lab_f_rangectl_footprint": "フットプリント（レンジ対G）",
+    "lab_f_rangectl_solved": "解算バンク角",
+    "lab_f_rangectl_err_unreachable": "目標は到達可能なフットプリントの外側です — コンピューターは最も近い端にクランプします（フルリフトアップまたはフルリフトダウンで飛行）。",
+    "lab_goal_sysentry_range": "コリドーを生き延びるのは仕事の半分に過ぎません — コンピューターはどこでもよいわけではなく、回収ゾーンに着陸させなければなりません。ダウンレンジはバンク角に対して単調です。フルリフトアップは最も遠くまで飛び（浅く長くかすめる）、リフトダウンは短く突っ込みます。そこでコンピューターは、目標に着陸する唯一のバンク角を解きます。フットプリント曲線がその代償を示します。近い目標はリフトダウンの突っ込みを強いてGを跳ね上げ、遠い目標はリフトアップで穏やかに滑空します。レンジとGはトレードオフの関係にあり — コンピューターはその両方を的中させます。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -4978,7 +5000,18 @@
     "lab_conn_art_apollo8": "أبولو 8 — أول رحلة قمرية مأهولة ذهابًا وإيابًا ودخول رافع بسرعة 11 كم/ث",
     "lab_conn_art_apollo11": "أبولو 11 — أول هبوط مأهول، الجولة الكاملة ذهابًا وإيابًا مع إقامة سطحية",
     "lab_conn_art_apollo_lm": "Apollo Lunar Module — المركبة التي نفّذت الهبوط والصعود القمري",
-    "lab_conn_art_program": "برنامج أبولو — تسع مهام قمرية مأهولة"
+    "lab_conn_art_program": "برنامج أبولو — تسع مهام قمرية مأهولة",
+    "lab_f_rangectl_title": "دخول التحكّم بالمدى",
+    "lab_f_rangectl_ld": "نسبة الرفع إلى السحب",
+    "lab_f_rangectl_target": "المدى الأمامي المستهدف",
+    "lab_f_rangectl_angle": "زاوية الدخول",
+    "lab_f_rangectl_bank": "الميلان المأمور",
+    "lab_f_rangectl_landed": "المدى الأمامي عند الهبوط",
+    "lab_f_rangectl_peakg": "ذروة التباطؤ",
+    "lab_f_rangectl_footprint": "منطقة الهبوط (المدى مقابل g)",
+    "lab_f_rangectl_solved": "الميلان المحلول",
+    "lab_f_rangectl_err_unreachable": "الهدف خارج منطقة الهبوط القابلة للوصول — يثبّت الحاسوب على أقرب حافة (يُطار برفع كامل للأعلى أو رفع كامل للأسفل).",
+    "lab_goal_sysentry_range": "النجاة من الممر ليست سوى نصف المهمة — على الحاسوب أيضًا أن يهبط بك في منطقة الاستعادة، لا في أي مكان آخر. المدى الأمامي رتيب مع الميلان: الرفع الكامل للأعلى يطير الأبعد (انزلاق طويل ضحل)، والرفع للأسفل يغرز إلى مدى قصير. لذا يحلّ الحاسوب زاوية الميلان الوحيدة التي تهبط عند هدفك. يبيّن منحنى منطقة الهبوط الثمن: الهدف القريب يفرض غرزًا بالرفع للأسفل يرفع g بشدة، والبعيد يركب الرفع للأعلى بلطف. المدى وg يتبادلان — والحاسوب يصيب كليهما."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -6534,7 +6567,18 @@
     "lab_conn_art_apollo8": "아폴로 8호 — 최초의 유인 달 왕복 비행 및 11 km/s 양력 진입",
     "lab_conn_art_apollo11": "Apollo 11 — 최초의 유인 착륙, 지표 체류를 포함한 완전한 왕복",
     "lab_conn_art_apollo_lm": "Apollo Lunar Module — 강하와 달 상승을 비행한 우주선",
-    "lab_conn_art_program": "Apollo 계획 — 아홉 차례의 유인 달 임무"
+    "lab_conn_art_program": "Apollo 계획 — 아홉 차례의 유인 달 임무",
+    "lab_f_rangectl_title": "사거리 제어 진입",
+    "lab_f_rangectl_ld": "양항비",
+    "lab_f_rangectl_target": "목표 다운레인지",
+    "lab_f_rangectl_angle": "진입각",
+    "lab_f_rangectl_bank": "지령 뱅크각",
+    "lab_f_rangectl_landed": "착륙 다운레인지",
+    "lab_f_rangectl_peakg": "최대 감속도",
+    "lab_f_rangectl_footprint": "풋프린트 (사거리 대 g)",
+    "lab_f_rangectl_solved": "해석된 뱅크각",
+    "lab_f_rangectl_err_unreachable": "목표가 도달 가능한 풋프린트 밖에 있습니다 — 컴퓨터가 가장 가까운 가장자리로 고정합니다(완전 양력 상향 또는 완전 양력 하향으로 비행).",
+    "lab_goal_sysentry_range": "회랑에서 살아남는 것은 절반의 임무일 뿐 — 컴퓨터는 아무 데나가 아니라 회수 구역에 착륙시켜야 합니다. 다운레인지는 뱅크각에 대해 단조적입니다: 완전 양력 상향은 가장 멀리 비행하고(길고 얕은 스키밍), 양력 하향은 짧게 파고듭니다. 그래서 컴퓨터는 목표에 착륙하는 단 하나의 뱅크각을 풉니다. 풋프린트 곡선은 그 대가를 보여줍니다: 가까운 목표는 양력 하향으로 파고들어 g를 급증시키고, 먼 목표는 양력 상향으로 부드럽게 활공합니다. 사거리와 g는 맞바꿈 관계이며 — 컴퓨터는 둘 다 명중시킵니다."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -7913,7 +7957,18 @@
     "lab_conn_art_apollo8": "Apollo 8 — die erste bemannte Mondrundreise und der auftriebsgestützte 11-km/s-Eintritt",
     "lab_conn_art_apollo11": "Apollo 11 — die erste bemannte Landung, der volle Rundflug mit Aufenthalt auf der Oberfläche",
     "lab_conn_art_apollo_lm": "Apollo Lunar Module — das Raumfahrzeug, das den Abstieg und den Mondaufstieg flog",
-    "lab_conn_art_program": "Das Apollo-Programm — neun bemannte Mondmissionen"
+    "lab_conn_art_program": "Das Apollo-Programm — neun bemannte Mondmissionen",
+    "lab_f_rangectl_title": "Reichweitengeregelter Eintritt",
+    "lab_f_rangectl_ld": "Gleitzahl (Auftrieb/Widerstand)",
+    "lab_f_rangectl_target": "Ziel-Reichweite",
+    "lab_f_rangectl_angle": "Eintrittswinkel",
+    "lab_f_rangectl_bank": "Kommandierter Rollwinkel",
+    "lab_f_rangectl_landed": "Erreichte Reichweite",
+    "lab_f_rangectl_peakg": "Spitzenverzögerung",
+    "lab_f_rangectl_footprint": "Fußabdruck (Reichweite vs. g)",
+    "lab_f_rangectl_solved": "Berechneter Rollwinkel",
+    "lab_f_rangectl_err_unreachable": "Ziel liegt außerhalb des erreichbaren Fußabdrucks — der Rechner begrenzt auf die nächste Kante (Flug mit vollem Auftrieb nach oben oder unten).",
+    "lab_goal_sysentry_range": "Den Korridor zu überleben ist nur die halbe Miete — der Rechner muss dich auch in der Bergungszone absetzen, nicht irgendwo. Die Reichweite ist monoton im Rollwinkel: voller Auftrieb nach oben fliegt am weitesten (ein langes, flaches Streifen), Auftrieb nach unten gräbt kurz ein. Also berechnet der Rechner den einen Rollwinkel, der dein Ziel trifft. Die Fußabdruck-Kurve zeigt den Preis: ein nahes Ziel erzwingt ein Auftrieb-nach-unten-Eingraben, das die g-Spitze hochtreibt, ein fernes Ziel gleitet sanft mit Auftrieb nach oben. Reichweite und g stehen im Zielkonflikt — und der Rechner trifft beides."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -9231,7 +9286,18 @@
     "lab_conn_art_apollo8": "Apollo 8 — le premier aller-retour lunaire habité et l'entrée en portance à 11 km/s",
     "lab_conn_art_apollo11": "Apollo 11 — le premier alunissage habité, l'aller-retour complet avec séjour au sol",
     "lab_conn_art_apollo_lm": "Module lunaire Apollo — l'engin qui a effectué la descente et la remontée lunaire",
-    "lab_conn_art_program": "Le programme Apollo — neuf missions lunaires habitées"
+    "lab_conn_art_program": "Le programme Apollo — neuf missions lunaires habitées",
+    "lab_f_rangectl_title": "Saisie du contrôle de portée",
+    "lab_f_rangectl_ld": "Rapport portance/traînée",
+    "lab_f_rangectl_target": "Portée cible",
+    "lab_f_rangectl_angle": "Angle d'entrée",
+    "lab_f_rangectl_bank": "Inclinaison commandée",
+    "lab_f_rangectl_landed": "Portée à l'atterrissage",
+    "lab_f_rangectl_peakg": "Décélération maximale",
+    "lab_f_rangectl_footprint": "Empreinte (portée vs g)",
+    "lab_f_rangectl_solved": "Inclinaison résolue",
+    "lab_f_rangectl_err_unreachable": "La cible est hors de l'empreinte atteignable — le calculateur se cale sur le bord le plus proche (vol en portance maximale vers le haut ou vers le bas).",
+    "lab_goal_sysentry_range": "Survivre au corridor n'est que la moitié du travail — le calculateur doit aussi vous poser dans la zone de récupération, et pas n'importe où. La portée est monotone selon l'inclinaison : la portance maximale vers le haut porte le plus loin (un long effleurement en pente douce), la portance vers le bas creuse court. Le calculateur résout donc l'unique angle d'inclinaison qui atterrit sur votre cible. La courbe d'empreinte montre le prix à payer : une cible proche impose un creusement en portance vers le bas qui fait grimper le g, une cible lointaine glisse doucement en portance vers le haut. Portée et g s'échangent — et le calculateur atteint les deux."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -10516,7 +10582,18 @@
     "lab_conn_art_apollo8": "Apollo 8 — il primo viaggio lunare con equipaggio andata e ritorno e rientro portante a 11 km/s",
     "lab_conn_art_apollo11": "Apollo 11 — il primo allunaggio con equipaggio, l'intero viaggio di andata e ritorno con permanenza sulla superficie",
     "lab_conn_art_apollo_lm": "Modulo Lunare Apollo — il veicolo che ha volato la discesa e la risalita lunare",
-    "lab_conn_art_program": "Il programma Apollo — nove missioni lunari con equipaggio"
+    "lab_conn_art_program": "Il programma Apollo — nove missioni lunari con equipaggio",
+    "lab_f_rangectl_title": "Ingresso a controllo di distanza",
+    "lab_f_rangectl_ld": "Rapporto portanza/resistenza",
+    "lab_f_rangectl_target": "Distanza obiettivo",
+    "lab_f_rangectl_angle": "Angolo d'ingresso",
+    "lab_f_rangectl_bank": "Rollio comandato",
+    "lab_f_rangectl_landed": "Distanza atterraggio",
+    "lab_f_rangectl_peakg": "Decelerazione di picco",
+    "lab_f_rangectl_footprint": "Impronta (distanza vs g)",
+    "lab_f_rangectl_solved": "Rollio risolto",
+    "lab_f_rangectl_err_unreachable": "L'obiettivo è fuori dall'impronta raggiungibile — il computer si arresta al bordo più vicino (volato a piena portanza in su o piena portanza in giù).",
+    "lab_goal_sysentry_range": "Sopravvivere al corridoio è solo metà del lavoro — il computer deve anche farti atterrare nella zona di recupero, non in un punto qualsiasi. La distanza è monotona rispetto al rollio: piena portanza in su vola più lontano (una lunga sfioratura poco profonda), portanza in giù affonda breve. Così il computer risolve l'unico angolo di rollio che atterra sul tuo obiettivo. La curva dell'impronta mostra il prezzo: un obiettivo vicino impone un affondo a portanza in giù che fa impennare i g, uno lontano cavalca la portanza in su con dolcezza. Distanza e g si scambiano — e il computer li centra entrambi."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -11800,7 +11877,18 @@
     "lab_conn_art_apollo8": "Apollo 8 — el primer viaje tripulado de ida y vuelta a la Luna y reentrada con sustentación a 11 km/s",
     "lab_conn_art_apollo11": "Apollo 11: el primer alunizaje tripulado, el viaje completo de ida y vuelta con estancia en superficie",
     "lab_conn_art_apollo_lm": "Módulo Lunar Apollo: la nave que voló el descenso y el ascenso lunar",
-    "lab_conn_art_program": "El programa Apollo: nueve misiones lunares tripuladas"
+    "lab_conn_art_program": "El programa Apollo: nueve misiones lunares tripuladas",
+    "lab_f_rangectl_title": "Entrada con control de alcance",
+    "lab_f_rangectl_ld": "Relación sustentación-resistencia",
+    "lab_f_rangectl_target": "Alcance objetivo",
+    "lab_f_rangectl_angle": "Ángulo de entrada",
+    "lab_f_rangectl_bank": "Alabeo comandado",
+    "lab_f_rangectl_landed": "Alcance de aterrizaje",
+    "lab_f_rangectl_peakg": "Deceleración máxima",
+    "lab_f_rangectl_footprint": "Huella (alcance vs g)",
+    "lab_f_rangectl_solved": "Alabeo resuelto",
+    "lab_f_rangectl_err_unreachable": "El objetivo está fuera de la huella alcanzable — el ordenador se ajusta al borde más cercano (volando con sustentación máxima hacia arriba o hacia abajo).",
+    "lab_goal_sysentry_range": "Sobrevivir al corredor es solo la mitad del trabajo — el ordenador también debe hacerte aterrizar en la zona de recuperación, no en cualquier sitio. El alcance es monótono con el alabeo: sustentación máxima hacia arriba vuela lo más lejos (un rasante largo y suave), hacia abajo cava corto. Así que el ordenador resuelve el único ángulo de alabeo que aterriza en tu objetivo. La curva de la huella muestra el precio: un objetivo cercano fuerza un descenso con sustentación hacia abajo que dispara las g, uno lejano cabalga suavemente con sustentación hacia arriba. Alcance y g se compensan — y el ordenador acierta con ambos."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -13093,7 +13181,18 @@
     "lab_conn_art_apollo8": "Apollo 8 — de eerste bemande rondreis om de Maan en liftende intrede met 11 km/s",
     "lab_conn_art_apollo11": "Apollo 11 — de eerste bemande landing, de volledige heen-en-terugreis met verblijf op het oppervlak",
     "lab_conn_art_apollo_lm": "Apollo Lunar Module — het vaartuig dat de daling en de maanopstijging vloog",
-    "lab_conn_art_program": "Het Apollo-programma — negen bemande maanmissies"
+    "lab_conn_art_program": "Het Apollo-programma — negen bemande maanmissies",
+    "lab_f_rangectl_title": "Invoer bereikregeling",
+    "lab_f_rangectl_ld": "Lift-weerstandsverhouding",
+    "lab_f_rangectl_target": "Doel-downrange",
+    "lab_f_rangectl_angle": "Intredehoek",
+    "lab_f_rangectl_bank": "Gecommandeerde rolhoek",
+    "lab_f_rangectl_landed": "Geland downrange",
+    "lab_f_rangectl_peakg": "Piekvertraging",
+    "lab_f_rangectl_footprint": "Voetafdruk (bereik vs g)",
+    "lab_f_rangectl_solved": "Berekende rolhoek",
+    "lab_f_rangectl_err_unreachable": "Doel ligt buiten de bereikbare voetafdruk — de computer klemt vast op de dichtstbijzijnde rand (gevlogen met volledige lift omhoog of volledige lift omlaag).",
+    "lab_goal_sysentry_range": "De corridor overleven is maar het halve werk — de computer moet je ook in de bergingszone landen, niet zomaar ergens. Downrange is monotoon in rolhoek: volledige lift omhoog vliegt het verst (een lange, ondiepe scheerbeweging), lift omlaag graaft kort in. Dus lost de computer de ene rolhoek op die op je doel landt. De voetafdrukkromme toont de prijs: een nabij doel dwingt een lift-omlaag-ingraving af die de g laat pieken, een ver doel rijdt zacht op lift omhoog. Bereik en g wisselen uit — en de computer haalt beide."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -14650,7 +14749,18 @@
     "lab_conn_art_apollo8": "Apollo 8 — первый пилотируемый облёт Луны и подъёмный вход на 11 км/с",
     "lab_conn_art_apollo11": "Apollo 11 — первая пилотируемая посадка, полный полёт туда и обратно с пребыванием на поверхности",
     "lab_conn_art_apollo_lm": "Apollo Lunar Module — аппарат, выполнивший снижение и лунный взлёт",
-    "lab_conn_art_program": "Программа Apollo — девять пилотируемых лунных миссий"
+    "lab_conn_art_program": "Программа Apollo — девять пилотируемых лунных миссий",
+    "lab_f_rangectl_title": "Ввод управления дальностью",
+    "lab_f_rangectl_ld": "Аэродинамическое качество",
+    "lab_f_rangectl_target": "Целевая дальность",
+    "lab_f_rangectl_angle": "Угол входа",
+    "lab_f_rangectl_bank": "Заданный крен",
+    "lab_f_rangectl_landed": "Дальность посадки",
+    "lab_f_rangectl_peakg": "Пиковая перегрузка",
+    "lab_f_rangectl_footprint": "Зона достижимости (дальность vs g)",
+    "lab_f_rangectl_solved": "Расчётный крен",
+    "lab_f_rangectl_err_unreachable": "Цель за пределами зоны достижимости — компьютер ограничивает её ближайшим краем (полёт с полной подъёмной силой вверх или вниз).",
+    "lab_goal_sysentry_range": "Пройти коридор — лишь полдела: компьютер должен посадить вас именно в зоне эвакуации, а не где попало. Дальность монотонна по крену: полная подъёмная сила вверх даёт наибольшую дальность (долгое пологое скольжение), вниз — заглубляет и укорачивает. Поэтому компьютер находит единственный угол крена, при котором посадка попадает в цель. Кривая зоны достижимости показывает цену: близкая цель требует заглубления с подъёмной силой вниз, что вызывает пик перегрузки, а дальняя мягко идёт на подъёмной силе вверх. Дальность и g — компромисс, и компьютер попадает в оба."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -16251,7 +16361,18 @@
     "lab_conn_art_apollo8": "Apollo 8——首次载人绕月往返与 11 km/s 升力式再入",
     "lab_conn_art_apollo11": "阿波罗11号——首次载人登月，包含月面停留的完整往返",
     "lab_conn_art_apollo_lm": "阿波罗登月舱——执行下降与月面上升的飞行器",
-    "lab_conn_art_program": "阿波罗计划——九次载人登月任务"
+    "lab_conn_art_program": "阿波罗计划——九次载人登月任务",
+    "lab_f_rangectl_title": "航程控制再入",
+    "lab_f_rangectl_ld": "升阻比",
+    "lab_f_rangectl_target": "目标航程",
+    "lab_f_rangectl_angle": "再入角",
+    "lab_f_rangectl_bank": "指令倾侧角",
+    "lab_f_rangectl_landed": "着陆航程",
+    "lab_f_rangectl_peakg": "峰值减速度",
+    "lab_f_rangectl_footprint": "落区范围（航程与g）",
+    "lab_f_rangectl_solved": "解算倾侧角",
+    "lab_f_rangectl_err_unreachable": "目标超出可达落区范围——计算机将其限制到最近的边缘（以全升力向上或全升力向下飞行）。",
+    "lab_goal_sysentry_range": "熬过再入走廊只是任务的一半——计算机还必须让你着陆在回收区，而不是随便哪里。航程随倾侧角单调变化：全升力向上飞得最远（长而浅的掠飞），升力向下则短促下扎。因此计算机解算出唯一能落在目标点的倾侧角。落区范围曲线揭示了代价：近距目标迫使升力向下下扎，使g值飙升，远距目标则平缓地借助升力向上。航程与g此消彼长——而计算机两者兼顾。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -17723,7 +17844,18 @@
     "lab_conn_art_apollo8": "Аполо 8 — прво посадно лунарно кружно путовање и улаз с узгоном при 11 km/s",
     "lab_conn_art_apollo11": "Apollo 11 — прво посадно слетање, пуни повратни пут са боравком на површини",
     "lab_conn_art_apollo_lm": "Apollo Lunar Module — летелица која је извела спуштање и узлазак са Месеца",
-    "lab_conn_art_program": "Програм Apollo — девет посадних Месечевих мисија"
+    "lab_conn_art_program": "Програм Apollo — девет посадних Месечевих мисија",
+    "lab_f_rangectl_title": "Улаз с контролом домета",
+    "lab_f_rangectl_ld": "Однос узгона и отпора",
+    "lab_f_rangectl_target": "Циљни домет",
+    "lab_f_rangectl_angle": "Угао улаза",
+    "lab_f_rangectl_bank": "Задати нагиб",
+    "lab_f_rangectl_landed": "Домет слетања",
+    "lab_f_rangectl_peakg": "Вршно успорење",
+    "lab_f_rangectl_footprint": "Отисак (домет наспрам g)",
+    "lab_f_rangectl_solved": "Решени нагиб",
+    "lab_f_rangectl_err_unreachable": "Циљ је изван достижног отиска — рачунар се ограничава на најближу ивицу (лет уз пуни узгон навише или пуни узгон наниже).",
+    "lab_goal_sysentry_range": "Преживети коридор је тек пола посла — рачунар вас мора и спустити у зону опоравка, а не било где. Домет је монотон у односу на нагиб: пуни узгон навише лети најдаље (дуго плитко клизање), а узгон наниже забија кратко. Зато рачунар решава онај један угао нагиба који слеће на ваш циљ. Крива отиска показује цену: близак циљ приморава на забадање узгоном наниже које нагло повећава g, а далеки нежно јаше на узгону навише. Домет и g се размењују — а рачунар погађа оба."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -19014,6 +19146,17 @@
     "lab_conn_art_apollo8": "Apollo 8 — a primeira viagem tripulada de ida e volta à Lua e reentrada com sustentação a 11 km/s",
     "lab_conn_art_apollo11": "Apollo 11 — o primeiro pouso tripulado, a ida e volta completa com estadia na superfície",
     "lab_conn_art_apollo_lm": "Módulo Lunar Apollo — a nave que executou a descida e a subida lunar",
-    "lab_conn_art_program": "O programa Apollo — nove missões lunares tripuladas"
+    "lab_conn_art_program": "O programa Apollo — nove missões lunares tripuladas",
+    "lab_f_rangectl_title": "Entrada com controle de alcance",
+    "lab_f_rangectl_ld": "Razão sustentação-arrasto",
+    "lab_f_rangectl_target": "Alcance-alvo",
+    "lab_f_rangectl_angle": "Ângulo de entrada",
+    "lab_f_rangectl_bank": "Rolamento comandado",
+    "lab_f_rangectl_landed": "Alcance de pouso",
+    "lab_f_rangectl_peakg": "Desaceleração de pico",
+    "lab_f_rangectl_footprint": "Área de pouso (alcance vs g)",
+    "lab_f_rangectl_solved": "Rolamento resolvido",
+    "lab_f_rangectl_err_unreachable": "O alvo está fora da área de pouso alcançável — o computador limita à borda mais próxima (voando com sustentação máxima para cima ou para baixo).",
+    "lab_goal_sysentry_range": "Sobreviver ao corredor é só metade do trabalho — o computador também precisa pousar você na zona de recuperação, e não em qualquer lugar. O alcance é monótono em relação ao rolamento: sustentação máxima para cima voa mais longe (um roçar longo e raso), sustentação para baixo mergulha curto. Então o computador resolve o único ângulo de rolamento que pousa no seu alvo. A curva da área de pouso mostra o preço: um alvo próximo força um mergulho com sustentação para baixo que dispara o g, um distante desliza suavemente com sustentação para cima. Alcance e g se compensam — e o computador acerta os dois."
   }
 }

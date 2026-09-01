@@ -20,7 +20,7 @@
  */
 
 import { solveLambert } from '$lib/physics/transfer/lambert';
-import { eccentricAnomaly } from './physics/ephemeris/kepler';
+import { eccentricAnomaly } from '$lib/physics/ephemeris/kepler';
 import { DV_FAILED } from '$lib/physics/transfer/lambert-grid';
 import {
   EARTH_A0,

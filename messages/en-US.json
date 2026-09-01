@@ -1010,6 +1010,7 @@
   "lab_ui_goal_picker": "Goal",
   "lab_ui_load": "Load",
   "lab_ui_load_error_invalid": "Not a valid .orrlab notebook.",
+  "lab_ui_load_error_link": "Couldn't load that shared notebook link — showing the lesson instead.",
   "lab_ui_load_error_read": "Could not read that file.",
   "lab_ui_load_error_toobig": "That file is too large to be a notebook.",
   "lab_ui_no_value": "no value",

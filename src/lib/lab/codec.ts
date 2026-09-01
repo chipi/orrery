@@ -38,6 +38,7 @@ export const NOTEBOOK_CODEC_VERSION = 1;
 export const MAX_ENCODED_LEN = 64_000; // ~100× the M1 budget
 export const MAX_CELLS = 200;
 export const MAX_ORRLAB_BYTES = 2_000_000;
+export const MAX_NOTE_LEN = 4_000; // per-card free text (file/localStorage only, never URL)
 
 /** A codec cell = an engine Cell plus the (inert-for-M1) interactive selection. */
 export interface CodecCell extends Cell {
@@ -171,7 +172,13 @@ export function decodeNotebook(s: string, registry: Registry): CodecCell[] | nul
 
   const cells: CodecCell[] = [];
   for (const raw of parsed) {
-    if (!isRecord(raw) || typeof raw.f !== 'string') continue;
+    if (!isRecord(raw) || typeof raw.f !== 'string') {
+      // Placeholder, NOT a skip: wires are index-based into this array, so dropping a
+      // malformed cell would shift every later index and silently rewire a downstream
+      // cell to the wrong source. An empty formulaId fails honest (unknown-formula).
+      cells.push({ formulaId: '', inputs: {} });
+      continue;
+    }
     const def = registry.get(raw.f);
     const cell: CodecCell = { formulaId: raw.f, inputs: sanitizeInputs(def, raw.i) };
     const sel = sanitizeRecord(raw.s);
@@ -195,6 +202,11 @@ export interface OrrlabCell extends CodecCell {
   note?: string;
 }
 
+/** What decodeOrrlab yields per card: engine cell + the rehydrated note (no id — regenerated). */
+export interface DecodedOrrlabCell extends CodecCell {
+  note?: string;
+}
+
 export function encodeOrrlab(cells: OrrlabCell[], title: string): Notebook {
   const cards: Card[] = cells.map((c) => {
     const card: Card = { id: c.id, formulaId: c.formulaId, inputs: c.inputs };
@@ -203,7 +215,7 @@ export function encodeOrrlab(cells: OrrlabCell[], title: string): Notebook {
       .map((w) => ({ fromCard: cells[w.fromIndex].id, output: w.output, toInput: w.toInput }));
     if (wires.length > 0) card.wires = wires;
     if (c.selection && Object.keys(c.selection).length > 0) card.selection = c.selection;
-    if (c.note) card.note = c.note;
+    if (c.note) card.note = c.note.slice(0, MAX_NOTE_LEN);
     return card;
   });
   return { orrlab: 1, title, cards };
@@ -217,7 +229,7 @@ export function encodeOrrlab(cells: OrrlabCell[], title: string): Notebook {
 export function decodeOrrlab(
   json: unknown,
   registry: Registry,
-): { title: string; cells: CodecCell[] } | null {
+): { title: string; cells: DecodedOrrlabCell[] } | null {
   if (!isRecord(json) || json.orrlab !== NOTEBOOK_CODEC_VERSION || !Array.isArray(json.cards)) {
     return null;
   }
@@ -228,13 +240,25 @@ export function decodeOrrlab(
     if (typeof c.id === 'string') idToIndex.set(c.id, i);
   });
 
-  const cells: CodecCell[] = [];
+  const cells: DecodedOrrlabCell[] = [];
   for (const rc of rawCards) {
-    if (typeof rc.formulaId !== 'string') continue;
+    if (typeof rc.formulaId !== 'string') {
+      // Placeholder, NOT a skip — id→index above is built over rawCards, so every raw
+      // card must yield exactly one cell or later ids resolve to the wrong index and
+      // silently rewire. An empty formulaId fails honest (unknown-formula).
+      cells.push({ formulaId: '', inputs: {} });
+      continue;
+    }
     const def = registry.get(rc.formulaId);
-    const cell: CodecCell = { formulaId: rc.formulaId, inputs: sanitizeInputs(def, rc.inputs) };
+    const cell: DecodedOrrlabCell = {
+      formulaId: rc.formulaId,
+      inputs: sanitizeInputs(def, rc.inputs),
+    };
     const sel = sanitizeRecord(rc.selection);
     if (sel) cell.selection = sel;
+    if (typeof rc.note === 'string' && rc.note.length > 0) {
+      cell.note = rc.note.slice(0, MAX_NOTE_LEN); // v1 format carries notes — must round-trip
+    }
     if (Array.isArray(rc.wires)) {
       const wires = rc.wires
         .filter(isRecord)

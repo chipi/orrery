@@ -5,6 +5,7 @@ import {
   encodeOrrlab,
   decodeOrrlab,
   NOTEBOOK_CODEC_VERSION,
+  MAX_NOTE_LEN,
   type CodecCell,
   type OrrlabCell,
 } from './codec';
@@ -134,6 +135,29 @@ describe('codec · hostile / malformed input degrades fail-honest', () => {
     expect(state.status).toBe('unknown-formula');
   });
 
+  it('a malformed cell becomes a placeholder — later wire INDICES stay aligned (no silent rewiring)', () => {
+    // Fable-5 review M1: skipping a malformed cell shifted every later index, so a
+    // backward wire could silently resolve to the WRONG source. Payload: [garbage, A, B←1].
+    const hostile = craft(
+      JSON.stringify([
+        42, // malformed — must become a placeholder, not vanish
+        { f: 'tsiolkovsky', i: {} },
+        {
+          f: 'delta-v-margin',
+          i: { capacityKms: 12, requiredKms: 9.4 },
+          w: [{ from: 1, out: 'deltaV', to: 'capacityKms' }],
+        },
+      ]),
+    );
+    const back = decodeNotebook(hostile, REGISTRY)!;
+    expect(back).toHaveLength(3); // placeholder kept
+    expect(back[0].formulaId).toBe(''); // fails honest as unknown-formula
+    expect(back[2].wires?.[0].fromIndex).toBe(1); // still points at tsiolkovsky
+    const states = recomputeNotebook(back, REGISTRY);
+    expect(states[0].status).toBe('unknown-formula');
+    expect(states[1].status).toBe('ok');
+  });
+
   it('a fully hostile payload feeds the engine WITHOUT throwing (the whole point)', () => {
     const hostile = craft(
       JSON.stringify([
@@ -185,6 +209,37 @@ describe('codec · .orrlab round-trip (id wires ↔ index wires)', () => {
     cells[0].note = 'start here';
     const doc = encodeOrrlab(cells, 'x');
     expect(doc.cards[0].note).toBe('start here');
+  });
+
+  it('per-card note ROUND-TRIPS: decode returns it, and it survives a save→load→save cycle', () => {
+    // Fable-5 review H1: decodeOrrlab used to drop notes — the durable format's
+    // entire reason for carrying them. Freeze the round-trip, not just the encode.
+    const cells = m1OrrlabCells();
+    cells[0].note = 'start here';
+    cells[2].note = 'why: g varies by body';
+    const back = decodeOrrlab(encodeOrrlab(cells, 'x'), REGISTRY)!;
+    expect(back.cells[0].note).toBe('start here');
+    expect(back.cells[2].note).toBe('why: g varies by body');
+    expect(back.cells[1].note).toBeUndefined();
+    // second generation: re-encode the decoded cells (id regenerated, as the UI does)
+    const again = encodeOrrlab(
+      back.cells.map((c, i) => ({ ...c, id: `r${i}` })),
+      'x',
+    );
+    expect(again.cards[0].note).toBe('start here');
+    expect(again.cards[2].note).toBe('why: g varies by body');
+  });
+
+  it('an oversized note is truncated to MAX_NOTE_LEN on decode', () => {
+    const doc = {
+      orrlab: 1,
+      title: 't',
+      cards: [
+        { id: 'a', formulaId: 'tsiolkovsky', inputs: {}, note: 'x'.repeat(MAX_NOTE_LEN + 50) },
+      ],
+    };
+    const back = decodeOrrlab(doc, REGISTRY)!;
+    expect(back.cells[0].note).toHaveLength(MAX_NOTE_LEN);
   });
 });
 
@@ -250,6 +305,31 @@ describe('codec · .orrlab hostile / malformed', () => {
     expect(decodeOrrlab({ cards: [] }, REGISTRY)).toBeNull();
     expect(decodeOrrlab({ orrlab: 1 }, REGISTRY)).toBeNull();
     expect(decodeOrrlab('nope', REGISTRY)).toBeNull();
+  });
+
+  it('a malformed card becomes a placeholder — id→index wires after it stay aligned', () => {
+    // Fable-5 review M1 (file flavour): idToIndex is built over rawCards; a skipped
+    // card would offset every later id and silently rewire.
+    const doc = {
+      orrlab: 1,
+      title: 't',
+      cards: [
+        { id: 'junk' }, // malformed (no formulaId) — must hold its slot
+        { id: 'a', formulaId: 'tsiolkovsky', inputs: {} },
+        {
+          id: 'b',
+          formulaId: 'delta-v-margin',
+          inputs: { capacityKms: 12, requiredKms: 9.4 },
+          wires: [{ fromCard: 'a', output: 'deltaV', toInput: 'capacityKms' }],
+        },
+      ],
+    };
+    const back = decodeOrrlab(doc, REGISTRY)!;
+    expect(back.cells).toHaveLength(3);
+    expect(back.cells[0].formulaId).toBe('');
+    expect(back.cells[2].wires?.[0].fromIndex).toBe(1); // 'a' → index 1, not shifted to 0
+    const states = recomputeNotebook(back.cells, REGISTRY);
+    expect(states[1].status).toBe('ok');
   });
 
   it('a wire to an unknown card id is dropped', () => {

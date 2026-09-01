@@ -300,8 +300,8 @@ export type FigureSpec = FigureBase &
         requiredPhaseDeg: number; // target lead angle at departure
         synodicDays: number;
         transferDays: number;
-        departLabel: string;
-        arriveLabel: string;
+        departLabelKey: string; // i18n key (lab.body.*) — the kernel contract carries keys, not raw copy
+        arriveLabelKey: string;
       }
     // Gravity-assist deflection — the incoming v∞, the planet, the bent outgoing v∞ (same speed
     // in the planet frame), the turn angle, and the heliocentric Δv the flyby banks (≤ 2·v∞).

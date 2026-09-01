@@ -12,7 +12,10 @@
  * angle) over a round planet with an exponential atmosphere, flown by the controller. Its payoff,
  * `liftCorridorWidthDeg`, is the honest teaching claim the ballistic `entry-corridor` formula sets
  * up: a ballistic capsule's survivable entry-angle band is a knife-edge, and LIFT + steering
- * WIDENS it (Apollo's L/D≈0.3 roughly doubles it) — which is why crewed lunar returns fly lifting.
+ * WIDENS it — which is why crewed lunar returns fly lifting. THIS sim's simplified 2-DOF corridor
+ * comes out ~2× wider at L/D≈0.3; the published lunar-return figure (and the /science
+ * lifting-entry article + diagram) is 3–5×, the gap being entry-speed, g-limit and heating
+ * constraints this teaching model doesn't carry. Don't "reconcile" the two by tuning either.
  */
 import {
   MU_EARTH_M3_S2,
@@ -101,7 +104,10 @@ export function simulateLiftingEntry(opts: {
     v += (-aD - grav * Math.sin(gamma)) * dt;
     gamma += gammaDot * dt;
     h += v * Math.sin(gamma) * dt;
-    downrange += v * Math.cos(gamma) * dt; // ground track advances with the horizontal component
+    // Two teaching-grade simplifications, on the honesty ledger: `downrange` is the
+    // path-projected horizontal distance (flat-track, not the great-circle ground arc),
+    // and `peakG` counts drag only — sensed load is aD·√(1+(L/D)²), ~4% higher at L/D 0.3.
+    downrange += v * Math.cos(gamma) * dt;
     peakG = Math.max(peakG, aD / G0);
     if (trajectory.length < 300 && (t * 20) % 4 < 1) {
       trajectory.push({ altKm: Math.max(0, h) / 1000, speedKms: v / 1000 });

@@ -28,6 +28,7 @@
     decodeOrrlab,
     MAX_ORRLAB_BYTES,
     type CodecCell,
+    type DecodedOrrlabCell,
   } from './codec';
   import Card from './Card.svelte';
   import FlightMapCanvas from './FlightMapCanvas.svelte';
@@ -50,6 +51,7 @@
     selection?: Record<string, number | string>;
     narrativeKey?: string;
     removable: boolean;
+    note?: string; // free text from a loaded .orrlab file — must survive load→save
   }
 
   // Ids: seed cells get deterministic `s{i}` (hydration-stable — SSR + client agree);
@@ -81,7 +83,7 @@
   }
 
   /** A shared/restored notebook is a CUSTOM notebook — no goal narrative, all removable. */
-  function fromCodec(cells: CodecCell[]): UICell[] {
+  function fromCodec(cells: DecodedOrrlabCell[]): UICell[] {
     return cells.map((c) => ({
       id: uid(),
       formulaId: c.formulaId,
@@ -89,6 +91,7 @@
       wires: c.wires ?? [],
       selection: c.selection,
       removable: true,
+      note: c.note,
     }));
   }
 
@@ -105,6 +108,7 @@
   let cells = $state<UICell[]>(untrack(() => seed(goal)));
   let lastGoalId = untrack(() => goal.id);
   let restored = $state(false); // loaded from a ?nb= link → showing a custom notebook
+  let restoredTitle = $state(''); // title from a loaded .orrlab file — round-trips on re-save
 
   // The whole notebook recomputes on any input edit — trivially cheap for M1.
   const computed = $derived(recomputeNotebook(cells, REGISTRY));
@@ -123,6 +127,10 @@
     if (decoded && decoded.length > 0) {
       cells = fromCodec(decoded);
       restored = true;
+    } else {
+      // Fail honest, not silent: the visitor followed a share link and is seeing
+      // the goal seed instead of the shared notebook — say so (same rail as file load).
+      loadError = t('lab.ui.load-error-link');
     }
   });
 
@@ -133,6 +141,7 @@
       lastGoalId = gid;
       cells = seed(goal);
       restored = false;
+      restoredTitle = '';
       if (browser && page.url.searchParams.has('nb')) {
         void goto(`${base}/lab`, { replaceState: true, keepFocus: true, noScroll: true });
       }
@@ -180,7 +189,7 @@
   let loadError = $state('');
 
   function saveFile(): void {
-    const title = restored ? t('lab.ui.your-notebook') : t(goal.titleKey);
+    const title = restored ? restoredTitle || t('lab.ui.your-notebook') : t(goal.titleKey);
     const doc = encodeOrrlab(cells, title);
     const blob = new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -206,6 +215,7 @@
       if (decoded && decoded.cells.length > 0) {
         cells = fromCodec(decoded.cells);
         restored = true;
+        restoredTitle = decoded.title;
       } else {
         loadError = t('lab.ui.load-error-invalid');
       }

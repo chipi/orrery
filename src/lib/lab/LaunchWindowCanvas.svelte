@@ -126,9 +126,9 @@
     ctx.font = "8px 'Space Mono', monospace";
     ctx.textAlign = 'center';
     ctx.fillStyle = `rgba(${TEAL},0.9)`;
-    ctx.fillText(figure.departLabel, dx, dy + 16);
+    ctx.fillText(t(figure.departLabelKey), dx, dy + 16);
     ctx.fillStyle = `rgba(${GOLD},0.95)`;
-    ctx.fillText(figure.arriveLabel, tx, ty - 9);
+    ctx.fillText(t(figure.arriveLabelKey), tx, ty - 9);
 
     // readouts (right)
     ctx.textAlign = 'left';

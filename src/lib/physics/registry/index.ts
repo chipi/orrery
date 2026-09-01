@@ -1248,8 +1248,8 @@ export const launchWindow: FormulaDef<{ depart: string; arrive: string }> = {
         requiredPhaseDeg,
         synodicDays,
         transferDays,
-        departLabel: depart.charAt(0).toUpperCase() + depart.slice(1),
-        arriveLabel: arrive.charAt(0).toUpperCase() + arrive.slice(1),
+        departLabelKey: `lab.body.${depart}`,
+        arriveLabelKey: `lab.body.${arrive}`,
       },
     } satisfies FormulaResult;
   },

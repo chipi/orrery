@@ -12,10 +12,10 @@
     "flightPathAngleDeg": 1.5
   },
   "entryMassKg": 3240,
-  "entryCdA": 4.5,
-  "liftToDragRatio": 0.24,
+  "entryCdA": 7.33,
+  "liftToDragRatio": 0.2,
   "targetDownrangeKm": 3000,
-  "estimatedFields": ["liftToDragRatio", "targetDownrangeKm", "flightPathAngleDeg"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7000,
     "terminalHandoffAltM": 3000,

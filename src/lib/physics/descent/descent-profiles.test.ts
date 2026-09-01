@@ -106,13 +106,15 @@ describe('every descent profile expands + flies to its honest outcome', () => {
  * This guard auto-covers EVERY Earth profile carrying a `liftToDragRatio`, so dropping the lift on
  * any of them fails here. A guided profile (targetDownrangeKm) must also actually reach its target.
  *
- * HONEST CALIBRATION NOTE (ADR-088 Phase 0a): the band here is [4, 8.5], the FLOORED-model value —
- * ~2× the flown ~3.3–4.5 g. The app integrator floors γ (never flies upward), so a lifting capsule
- * cannot loft the way the real vehicles did to shed g gently; it skims at a fixed shallow angle and
- * reads ~5–8 g. The #29 loft/skip model (γ-floor removal + exo-atmospheric coast) lets it loft to
- * the flown value, at which point this band tightens to ~[3, 5]. Kept honest, not faked, until then.
+ * CALIBRATION (ADR-088 Phase 1a): with the entry angle (1.5°), sourced L/D, and real/geometry-
+ * derived drag areas (Apollo BC 313.5), lifting capsules now read ~4.2–5.6 g. Flown guided values:
+ * Apollo 7 LEO ~3.3 g, Soyuz LEO 3–4 g, Shenzhou ≤4 g, Dragon ~4 g. The model runs ~1–1.5 g ABOVE
+ * the flown guided value for the low-L/D capsules because our range-control solve flies a single
+ * FIXED bank; the real vehicles ACTIVELY modulate bank to hold a lower g-limit (and, at lunar-
+ * return energy, loft) — neither is in this planar fixed-bank model. Honest gap, not faked. Band
+ * [3.5, 6] brackets the model; a ballistic (lift-free) regression would spike ~11 g and fail here.
  */
-describe('lifting re-entries fly the floored-model lifting band (all capsules)', () => {
+describe('lifting re-entries fly the calibrated lifting band (all capsules)', () => {
   const liftingIds = [...DESCENT_MISSION_IDS].filter((id) => {
     if (!existsSync(profilePath(id))) return false;
     return (loadRaw(id).liftToDragRatio ?? 0) > 0;
@@ -126,7 +128,7 @@ describe('lifting re-entries fly the floored-model lifting band (all capsules)',
     it(`${id} rides its lift vector, peak-g in the lifting band`, () => {
       const raw = loadRaw(id);
       const s = integrateDescent(expandDescentProfile(raw));
-      expectInRange(s.peakDecel.g, 4, 8.5, `${id} lifting peak decel (g)`);
+      expectInRange(s.peakDecel.g, 3.5, 6, `${id} lifting peak decel (g)`);
       if (raw.targetDownrangeKm != null) {
         expect(s.guidance?.targetReachable).toBe(true);
         expectInRange(
@@ -141,12 +143,22 @@ describe('lifting re-entries fly the floored-model lifting band (all capsules)',
 });
 
 /**
- * Honest provenance (ADR-088 Phase 0b): a profile's `liftToDragRatio` and `targetDownrangeKm` are
- * MODEL-AUTHORED estimates, not values from the mission-report `provenance` block. This guard makes
- * that machine-checkable — any Earth profile setting either MUST declare both (plus the estimated
- * entry angle) in `estimatedFields`, so an invented number can never silently wear real provenance.
+ * Honest provenance (ADR-088 Phase 0b/1a). A lifting Earth capsule's fields split into SOURCED and
+ * MODEL-AUTHORED. Sourced (NOT in estimatedFields): `liftToDragRatio` (Apollo 0.3, Soyuz 0.3 [RU],
+ * Shenzhou 0.2 [CN], Dragon 0.18 [Georgia Tech], Gemini 0.19 [DTIC AD0856691]) and — for Apollo —
+ * `entryCdA` (BC 313.5 kg/m², NASA). Estimated (MUST be declared): the ~1.5° `flightPathAngleDeg`,
+ * the `targetDownrangeKm`, and the geometry-derived `entryCdA` on non-Apollo capsules. The guard
+ * makes it machine-checkable so a model estimate can never silently wear mission-report provenance.
  */
-describe('model-authored entry fields are declared as estimates, not sourced', () => {
+describe('model-authored entry fields are declared as estimates, sourced ones are not', () => {
+  const APOLLO_SOURCED_CDA = new Set([
+    'apollo7',
+    'apollo9',
+    'apollo-soyuz',
+    'skylab-2',
+    'skylab-3',
+    'skylab-4',
+  ]);
   const earthGuided = [...DESCENT_MISSION_IDS].filter((id) => {
     if (!existsSync(profilePath(id))) return false;
     const raw = loadRaw(id);
@@ -160,11 +172,16 @@ describe('model-authored entry fields are declared as estimates, not sourced', (
   });
 
   for (const id of earthGuided) {
-    it(`${id} declares its estimated physics fields`, () => {
+    it(`${id} declares estimates, omits sourced fields`, () => {
       const raw = loadRaw(id);
       const est = raw.estimatedFields ?? [];
-      if ((raw.liftToDragRatio ?? 0) > 0) expect(est).toContain('liftToDragRatio');
+      // Estimated → must be declared.
       if (raw.targetDownrangeKm != null) expect(est).toContain('targetDownrangeKm');
+      // Sourced L/D → must NOT be flagged an estimate.
+      if ((raw.liftToDragRatio ?? 0) > 0) expect(est).not.toContain('liftToDragRatio');
+      // Cd·A: geometry-derived (estimate) except Apollo (sourced BC).
+      if (APOLLO_SOURCED_CDA.has(id)) expect(est).not.toContain('entryCdA');
+      else expect(est).toContain('entryCdA');
     });
   }
 });

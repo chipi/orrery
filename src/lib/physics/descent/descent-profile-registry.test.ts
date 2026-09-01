@@ -24,10 +24,9 @@ const viking1 = loadRaw('viking1');
 const apollo11 = loadRaw('apollo11');
 
 describe('hasDescentProfile gate', () => {
-  it('covers the 44 landers + Tier-1 Earth re-entry, and rejects the rest', () => {
-    // 37 Moon/Mars/Venus + 7 Phase-2 outer/small-body + Tier-1 Earth-orbit
-    // capsules (friendship-7 for the MVP; grows as the ~31-mission set lands).
-    expect(DESCENT_MISSION_IDS.size).toBe(75);
+  it('covers the landers + Tier-1 Earth re-entry (incl. apollo8 lunar-return skip), rejects the rest', () => {
+    // Moon/Mars/Venus + outer/small-body + Earth-orbit capsules + apollo8 (10.8 km/s lunar return).
+    expect(DESCENT_MISSION_IDS.size).toBe(76);
     expect(hasDescentProfile('apollo11')).toBe(true);
     expect(hasDescentProfile('curiosity')).toBe(true);
     expect(hasDescentProfile('friendship-7')).toBe(true);

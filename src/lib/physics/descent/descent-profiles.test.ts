@@ -115,9 +115,12 @@ describe('every descent profile expands + flies to its honest outcome', () => {
  * [3.5, 6] brackets the model; a ballistic (lift-free) regression would spike ~11 g and fail here.
  */
 describe('lifting re-entries fly the calibrated lifting band (all capsules)', () => {
+  // LEO returns only (~7.8 km/s). apollo8 is a LUNAR return (10.8 km/s skip entry) — a different
+  // regime with a higher corridor g; it's asserted separately in the lunar-return skip test.
   const liftingIds = [...DESCENT_MISSION_IDS].filter((id) => {
     if (!existsSync(profilePath(id))) return false;
-    return (loadRaw(id).liftToDragRatio ?? 0) > 0;
+    const raw = loadRaw(id);
+    return (raw.liftToDragRatio ?? 0) > 0 && raw.entryState.velocityMs < 9000;
   });
 
   it('covers every authored lifting capsule (>=10)', () => {
@@ -143,6 +146,28 @@ describe('lifting re-entries fly the calibrated lifting band (all capsules)', ()
 });
 
 /**
+ * apollo8 is the shipped lunar-return flight (#29 Phase 3 · ADR-089) — the first crewed 10.8 km/s
+ * skip entry. It exercises the loft/skip model end-to-end through its real EARTH_CAPSULE_REENTRY
+ * profile: loft above the atmosphere (skip_out), the coast, the second entry, then chutes to
+ * splashdown. Peak-g sits in the real lunar-return corridor (~6.5–8 g); LEO returns never skip.
+ */
+describe('apollo8 lunar-return skip flight (shipped profile)', () => {
+  it('skips out then re-enters and splashes down in the lunar-return g corridor', () => {
+    const s = integrateDescent(expandDescentProfile(loadRaw('apollo8')));
+    expect(s.events.some((e) => e.type === 'skip_out')).toBe(true);
+    expect(s.events.some((e) => e.type === 'second_entry')).toBe(true);
+    expect(Math.max(...s.states.map((st) => st.altKm))).toBeGreaterThan(130); // lofts above the interface
+    expect(s.touchdownSuccess).toBe(true);
+    expectInRange(s.peakDecel.g, 6, 9, 'apollo8 lunar-return peak-g'); // real ~6.8 g
+  });
+
+  it('the LEO Apollo 7 return does NOT skip (same capsule, sub-circular speed)', () => {
+    const s = integrateDescent(expandDescentProfile(loadRaw('apollo7')));
+    expect(s.events.some((e) => e.type === 'skip_out')).toBe(false);
+  });
+});
+
+/**
  * Honest provenance (ADR-088 Phase 0b/1a). EVERY Earth capsule (lifting AND ballistic) splits its
  * entry fields into SOURCED and MODEL-AUTHORED. Sourced (NOT in estimatedFields): `liftToDragRatio`
  * (Apollo 0.3, Soyuz 0.3 [RU], Shenzhou 0.2 [CN], Dragon 0.18 [GT], Gemini 0.19 [DTIC AD0856691])
@@ -155,6 +180,7 @@ describe('lifting re-entries fly the calibrated lifting band (all capsules)', ()
 describe('model-authored entry fields are declared as estimates, sourced ones are not', () => {
   const APOLLO_SOURCED_CDA = new Set([
     'apollo7',
+    'apollo8',
     'apollo9',
     'apollo-soyuz',
     'skylab-2',
@@ -169,6 +195,8 @@ describe('model-authored entry fields are declared as estimates, sourced ones ar
     expect(earthCapsules.length).toBeGreaterThanOrEqual(25);
   });
 
+  // apollo8's Cd·A is the sourced Apollo BC (313.5); its velocity (10.8 km/s) makes it the lunar
+  // return, but the drag area is the same sourced Apollo CM value.
   for (const id of earthCapsules) {
     it(`${id} declares estimates (angle, Cd·A, target), omits sourced fields`, () => {
       const raw = loadRaw(id);

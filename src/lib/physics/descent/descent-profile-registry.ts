@@ -478,6 +478,7 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'friendship-7', // Mercury-Atlas 6 — John Glenn, 3 orbits, Atlantic splashdown
   'vostok-1', // Gagarin — first human, 1 orbit, Saratov steppe landing
   'apollo7', // first crewed Apollo — Apollo CM, 163 orbits, Atlantic splashdown
+  'apollo8', // first crewed lunar-return entry — 10.8 km/s SKIP entry (Apollo-4 double pulse)
   // The rest of the Tier-1 set (Mercury/Gemini/Vostok/Voskhod/Apollo CM/Soyuz/
   // Dragon/Shenzhou + 2 Mercury-Redstone suborbital hops).
   'aurora-7',

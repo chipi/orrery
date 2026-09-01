@@ -1,0 +1,25 @@
+{
+  "missionId": "apollo8",
+  "siteId": "apollo8",
+  "body": "earth",
+  "landingSite": { "lat": 8.13, "lon": -165.02 },
+  "entryState": { "altitudeM": 122000, "velocityMs": 10822, "flightPathAngleDeg": 6.48 },
+  "entryMassKg": 5560,
+  "entryCdA": 17.7,
+  "liftToDragRatio": 0.3,
+  "estimatedFields": ["flightPathAngleDeg"],
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7300,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 367,
+    "terminalCdA": 1392
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Apollo 8 Mission Report (NASA MSC-PA-R-69-1) — lunar-return entry, 10.8 km/s, 6.48° FPA",
+      "u": "https://www.nasa.gov/history/afj/ap08fj/"
+    }
+  ]
+}

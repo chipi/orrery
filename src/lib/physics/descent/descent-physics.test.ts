@@ -419,14 +419,47 @@ describe('lunar-return skip entry (11 km/s lifting)', () => {
     source_tier: 'flagship',
   });
 
-  it('a corridor entry (6.5°) lofts back out then re-enters — the Apollo-4 double pulse', () => {
+  it('a corridor entry (6.5°) lofts back out AFTER the first pulse then re-enters — Apollo-4 double pulse', () => {
     const s = integrateDescent(expandDescentProfile(lunarReturn(6.5)), { entryBankCos: 1 });
-    expect(s.events.some((e) => e.type === 'skip_out')).toBe(true);
-    expect(s.events.some((e) => e.type === 'second_entry')).toBe(true);
-    // The skip carries it back above the atmosphere (max alt above the 105 km skip line).
-    expect(Math.max(...s.states.map((st) => st.altKm))).toBeGreaterThan(122);
+    const skipT = s.events.find((e) => e.type === 'skip_out')?.t ?? -1;
+    const secondT = s.events.find((e) => e.type === 'second_entry')?.t ?? -1;
+    const firstPeakT = s.events.find((e) => e.type === 'peak_decel')?.t ?? -1;
+    // NON-VACUOUS: the skip must happen AFTER the first deceleration pulse (not spuriously at entry),
+    // and the re-entry after the skip. A bug that fired the beats at t≈0 would fail this ordering.
+    expect(skipT).toBeGreaterThan(firstPeakT);
+    expect(secondT).toBeGreaterThan(skipT);
+    // The skip carries it well above the atmosphere (max alt above the 105 km skip line).
+    expect(Math.max(...s.states.map((st) => st.altKm))).toBeGreaterThan(130);
     expect(s.touchdownSuccess).toBe(true); // survives the corridor
     expectInRange(s.peakDecel.g, 4, 12, 'lunar-return corridor peak-g'); // real ~6.5–8 g
+  });
+
+  it('the energy-conserving coast holds specific orbital energy across the skip', () => {
+    const s = integrateDescent(expandDescentProfile(lunarReturn(6.5)), { entryBankCos: 1 });
+    const skipT = s.events.find((e) => e.type === 'skip_out')!.t;
+    const secondT = s.events.find((e) => e.type === 'second_entry')!.t;
+    const R_EARTH = 6_371_000;
+    const MU_EARTH = 3.986004418e14;
+    const nearest = (t: number) =>
+      s.states.reduce((a, b) => (Math.abs(b.t - t) < Math.abs(a.t - t) ? b : a));
+    const E = (t: number) => {
+      const st = nearest(t);
+      return (st.velocityMs * st.velocityMs) / 2 - MU_EARTH / (R_EARTH + st.altM);
+    };
+    // Gravity is conservative — the vacuum coast must keep specific energy (drift < 1% of |E|).
+    expect(Math.abs(E(secondT) - E(skipT))).toBeLessThan(Math.abs(E(skipT)) * 0.01);
+  });
+
+  it('a LEO lifting reentry (not super-circular) emits NO skip beats — it never lofts', () => {
+    // Regression for the entry-above-SKIP_ALT bug: capsules enter at 122 km (above the 105 km skip
+    // line) but must not spuriously report skip_out/second_entry just for starting above it.
+    const leo = expandDescentProfile({
+      ...lunarReturn(1.5),
+      entryState: { altitudeM: 122_000, velocityMs: 7820, flightPathAngleDeg: 1.5 },
+    });
+    const s = integrateDescent(leo, { entryBankCos: 1 });
+    expect(s.events.some((e) => e.type === 'skip_out')).toBe(false);
+    expect(s.events.some((e) => e.type === 'second_entry')).toBe(false);
   });
 
   it('lift-down (dig-in) pulls a much higher peak-g than lift-up (skip)', () => {
@@ -435,10 +468,11 @@ describe('lunar-return skip entry (11 km/s lifting)', () => {
     expect(down.peakDecel.g).toBeGreaterThan(up.peakDecel.g);
   });
 
-  it('a too-shallow entry (4°) skips out and fails to land — the entry corridor is a knife-edge', () => {
+  it('a too-shallow entry (4°) skips to a huge ellipse and does not return within the sim window', () => {
     const s = integrateDescent(expandDescentProfile(lunarReturn(4)), { entryBankCos: 1 });
     expect(s.events.some((e) => e.type === 'skip_out')).toBe(true);
-    // Skips to a huge ellipse (near escape) and does not return within the sim window.
+    // Lofts to a huge ellipse — it WOULD return (bound orbit), but not before maxTS: an honest
+    // mission failure (the corridor is a knife-edge). NOT a hyperbolic escape.
     expect(Math.max(...s.states.map((st) => st.altKm))).toBeGreaterThan(1000);
     expect(s.touchdownSuccess).toBe(false);
   });

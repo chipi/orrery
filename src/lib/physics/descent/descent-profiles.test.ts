@@ -1,11 +1,11 @@
 /**
  * Flagship descent-profile guard (RFC-034 §9) — the inverse of
- * flagship-profiles.test.ts. Every one of the 37 Moon/Mars/Venus landers must
- * ship a well-formed thin profile that expands via its archetype and flies to
- * the RIGHT outcome: a survivable touchdown for the soft landers, an honest
- * high-speed impact for the three crash reconstructions. Catches a data typo
- * (an entry mass, a phase altitude, a propellant budget) the moment it makes a
- * lander crater — or a crash "succeed".
+ * flagship-profiles.test.ts. Every shipped lander/capsule (Moon/Mars/Venus/Titan/
+ * Jupiter/small-body/Earth-return) must ship a well-formed thin profile that expands
+ * via its archetype and flies to the RIGHT outcome: a survivable touchdown for the
+ * soft landers, an honest high-speed impact for the crash reconstructions. Catches a
+ * data typo (an entry mass, a phase altitude, a propellant budget) the moment it makes
+ * a lander crater — or a crash "succeed".
  */
 
 import { readFileSync, existsSync } from 'node:fs';
@@ -42,13 +42,13 @@ const PEAK_G_BAND: Record<string, [number, number]> = {
   moon: [0, 7],
   mars: [4, 18],
   venus: [120, 320],
-  // Tier-1 manned Earth re-entry (ADR-088 Phase 0a re-calibration): profiles now use the real
-  // ~1.5° LEO-deorbit interface angle (was a too-steep 4°). Orbital BALLISTIC capsules
-  // (Mercury/Vostok/Voskhod) now read ~7.6–7.7 g — matching the flown ~7.8 g. Suborbital Mercury
-  // (freedom-7/liberty-bell-7, 18°/2.3 km/s) ~8.7 g. LIFTING capsules read ~5–8 g — still ~2× the
-  // flown ~3.3–4.5 g because the app integrator floors γ (no lofting); the #29 loft/skip model
-  // brings them to the flown value (then this band + the lifting band below tighten). Lower bound
-  // stays 3 to accommodate that pending drop.
+  // Tier-1 manned Earth re-entry (ADR-088 Phase 0a/1a). Profiles use the real ~1.5° LEO-deorbit
+  // angle + sourced L/D + real/derived drag areas. Orbital BALLISTIC capsules (Mercury/Vostok/
+  // Voskhod) read ~7.6–7.7 g — matching flown ~7.8 g. LIFTING capsules read ~4.2–5.6 g (flown guided
+  // 3.3–4 g) — the ~1–1.5 g residual is a fixed-bank vs active-bank-modulation gap, NOT the γ-floor
+  // (measured irrelevant at LEO energy) and NOT closed by the naive decel-hold controller (measured:
+  // overshoots). Suborbital Mercury-Redstone (freedom-7/liberty-bell-7, 18°/2.3 km/s) read ~8.7 g vs
+  // flown ~11 g — an unclosed gap (their 18° + drag are model estimates). Band [3, 9.5] brackets all.
   earth: [3, 9.5],
   // Phase 2 (RFC-034 §12): micro-g asteroids barely decelerate; the Galileo
   // Jupiter probe hits the fiercest entry of any probe (~200–260 g published).
@@ -64,7 +64,7 @@ const PEAK_G_BAND: Record<string, [number, number]> = {
 /** Missions whose descent has no solid-surface terminus (atmospheric probe). */
 const NO_SURFACE = new Set(['galileo']);
 
-describe('all 44 descent profiles ship on disk', () => {
+describe('all descent profiles ship on disk', () => {
   for (const id of DESCENT_MISSION_IDS) {
     it(`${id} has a profile JSON`, () => {
       expect(existsSync(profilePath(id))).toBe(true);
@@ -143,12 +143,14 @@ describe('lifting re-entries fly the calibrated lifting band (all capsules)', ()
 });
 
 /**
- * Honest provenance (ADR-088 Phase 0b/1a). A lifting Earth capsule's fields split into SOURCED and
- * MODEL-AUTHORED. Sourced (NOT in estimatedFields): `liftToDragRatio` (Apollo 0.3, Soyuz 0.3 [RU],
- * Shenzhou 0.2 [CN], Dragon 0.18 [Georgia Tech], Gemini 0.19 [DTIC AD0856691]) and — for Apollo —
- * `entryCdA` (BC 313.5 kg/m², NASA). Estimated (MUST be declared): the ~1.5° `flightPathAngleDeg`,
- * the `targetDownrangeKm`, and the geometry-derived `entryCdA` on non-Apollo capsules. The guard
- * makes it machine-checkable so a model estimate can never silently wear mission-report provenance.
+ * Honest provenance (ADR-088 Phase 0b/1a). EVERY Earth capsule (lifting AND ballistic) splits its
+ * entry fields into SOURCED and MODEL-AUTHORED. Sourced (NOT in estimatedFields): `liftToDragRatio`
+ * (Apollo 0.3, Soyuz 0.3 [RU], Shenzhou 0.2 [CN], Dragon 0.18 [GT], Gemini 0.19 [DTIC AD0856691])
+ * and — for Apollo — `entryCdA` (BC 313.5 kg/m², NASA). Estimated (MUST be declared): the
+ * `flightPathAngleDeg` (the ~1.5° LEO / 18° suborbital angle), the `targetDownrangeKm`, and the
+ * geometry-derived/tuned `entryCdA` on every non-Apollo capsule. Machine-checkable so a model
+ * estimate can never silently wear the mission-report provenance block — enforced for the ballistic
+ * profiles too (they had estimated angle+Cd·A wearing NSSDCA provenance unmarked; now flagged).
  */
 describe('model-authored entry fields are declared as estimates, sourced ones are not', () => {
   const APOLLO_SOURCED_CDA = new Set([
@@ -159,27 +161,25 @@ describe('model-authored entry fields are declared as estimates, sourced ones ar
     'skylab-3',
     'skylab-4',
   ]);
-  const earthGuided = [...DESCENT_MISSION_IDS].filter((id) => {
-    if (!existsSync(profilePath(id))) return false;
-    const raw = loadRaw(id);
-    return (
-      raw.body === 'earth' && ((raw.liftToDragRatio ?? 0) > 0 || raw.targetDownrangeKm != null)
-    );
+  const earthCapsules = [...DESCENT_MISSION_IDS].filter(
+    (id) => existsSync(profilePath(id)) && loadRaw(id).body === 'earth',
+  );
+
+  it('covers all Earth capsules (>=25, lifting + ballistic)', () => {
+    expect(earthCapsules.length).toBeGreaterThanOrEqual(25);
   });
 
-  it('covers the lifting/guided Earth capsules (>=10)', () => {
-    expect(earthGuided.length).toBeGreaterThanOrEqual(10);
-  });
-
-  for (const id of earthGuided) {
-    it(`${id} declares estimates, omits sourced fields`, () => {
+  for (const id of earthCapsules) {
+    it(`${id} declares estimates (angle, Cd·A, target), omits sourced fields`, () => {
       const raw = loadRaw(id);
       const est = raw.estimatedFields ?? [];
-      // Estimated → must be declared.
+      // The entry angle is a model estimate on EVERY Earth capsule (not from the provenance source).
+      expect(est).toContain('flightPathAngleDeg');
+      // A guided target is always an estimate.
       if (raw.targetDownrangeKm != null) expect(est).toContain('targetDownrangeKm');
       // Sourced L/D → must NOT be flagged an estimate.
       if ((raw.liftToDragRatio ?? 0) > 0) expect(est).not.toContain('liftToDragRatio');
-      // Cd·A: geometry-derived (estimate) except Apollo (sourced BC).
+      // Cd·A: sourced only for the Apollo CM (BC 313.5); estimated for everyone else.
       if (APOLLO_SOURCED_CDA.has(id)) expect(est).not.toContain('entryCdA');
       else expect(est).toContain('entryCdA');
     });

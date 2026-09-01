@@ -20,6 +20,7 @@
 | **Crew Dragon** | 0.18 | 3.66 | ~500 (derived) | ~4 g | — | [Georgia Tech][gatech] |
 | **Gemini RM** | 0.19 | 2.28 | ~330 (derived) | ~5–8 g | — | [DTIC AD0856691][dtic-gemini] |
 | **Mercury** (orbital) | 0 (ballistic) | 1.89 | — | ~7.8 g | — | [FAA/NASA][faa] |
+| **Mercury** (suborbital) | 0 (ballistic) | 1.89 | — | ~11 g (Redstone hop) | — | [FAA/NASA][faa] |
 | **Vostok / Voskhod** | 0 (ballistic) | 2.30 | — | ~8 g | — | [FAA/NASA][faa] |
 
 Notes:
@@ -30,6 +31,9 @@ Notes:
   0.3 "offset-CG / headlight" value; Dragon is lowest at 0.18 (12° trim); Gemini 0.19; Shenzhou ≥0.2.
 - **Ballistic capsules** (Mercury/Vostok/Voskhod) have no lift — an offset-CG lift vector was not
   yet used; they ate the full ~8 g. Correct to keep them lift-free.
+- **Suborbital gap (honest):** the two Mercury-Redstone hops (freedom-7, liberty-bell-7) read ~8.7 g
+  in the model vs the flown ~11 g. Their 18° entry angle + drag area are model estimates (marked in
+  `estimatedFields`), unclosed — a known low-fidelity corner, not a sourced match.
 
 ## How the Orrery model uses these
 
@@ -37,10 +41,15 @@ Notes:
   `flightPathAngleDeg` (~1.5° LEO deorbit, estimate), `targetDownrangeKm` (estimate). The estimated
   fields are declared in each profile's `estimatedFields`; a test enforces it (ADR-088 Phase 0b/1a).
 - **Known model gap (honest):** the range-control solve flies a single *fixed* bank, so modeled
-  guided peak-g runs ~1–1.5 g **above** the flown value for low-L/D capsules (Soyuz/Shenzhou/Dragon
-  read ~5–5.5 g vs flown 3–4 g). Real vehicles actively bank-modulate to hold a g-limit — and at
-  lunar-return energy they *loft/skip* — neither of which the planar fixed-bank model reproduces.
-  Closing it is the #29 loft/skip work.
+  guided peak-g runs **above** the flown value for low-L/D capsules — Apollo 4.2 g (flown 3.3),
+  Soyuz **5.6 g** (flown 3–4), Shenzhou 5.0 g (flown ≤4), Dragon 5.3 g (flown ~4); i.e. **+1 to
+  +2.6 g**. Real vehicles actively bank-*modulate* to hold a g-limit. **Measured negative result:**
+  wiring the kernel's own decel-hold controller (`bankLiftFraction`) does NOT close this — it
+  *overshoots* (Apollo target 3 g → peak ~6 g, worse than the fixed bank's ~4.2 g), because early in
+  entry, with g below target, it digs *in* to build g. Holding a target g genuinely needs a
+  predictor-corrector (integrate-ahead) controller, which is a large build; the residual stands
+  documented, not faked. Separately, at lunar-return energy the capsule *lofts/skips*, which the
+  #29 loft model DOES reproduce (ADR-089).
 
 ## Source library
 

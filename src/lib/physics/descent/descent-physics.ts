@@ -441,6 +441,7 @@ export function integrateDescent(
   // above SKIP_ALT_M the air is negligible and explicit Euler drifts specific energy, so we HOLD
   // the conserved orbital energy on the exo-atmospheric coast. `lofted` gates the skip beats.
   const SKIP_ALT_M = 105_000;
+  let skipArmed = false; // true once the capsule has descended into the atmosphere (below SKIP_ALT_M)
   let lofted = false;
   let coastEnergy: number | null = null; // specific orbital energy held during the vacuum coast
   // Drag-area a phase inflates FROM (the previous phase's Cd·A). A chute/aeroshell
@@ -609,11 +610,16 @@ export function integrateDescent(
     t += dt;
 
     // ── Loft/skip handling (ADR-089), lifting entries only ──────────────────────────────────
-    // A super-circular lifting entry can climb back above the atmosphere (the Apollo-4 skip). Above
-    // SKIP_ALT_M the air is negligible: we HOLD the conserved specific orbital energy so explicit
-    // Euler doesn't drift the coast, and emit skip_out / second_entry beats at the crossing.
+    // A super-circular lifting entry can climb back above the atmosphere (the Apollo-4 skip). The
+    // capsule ENTERS above SKIP_ALT_M (interface ~122 km), so skip-detection only becomes meaningful
+    // once it has been IN the atmosphere — `skipArmed` gates that. On a real upward crossing we emit
+    // skip_out and HOLD the conserved specific orbital energy (E = v²/2 − μ/r; gravity is
+    // conservative) so explicit Euler doesn't drift the vacuum coast; on the downward crossing back
+    // into the air we emit second_entry and re-arm for a possible further skip.
     if (hasLift) {
-      if (h > SKIP_ALT_M) {
+      const aboveSkip = h > SKIP_ALT_M;
+      if (!aboveSkip) skipArmed = true; // has now touched the atmosphere → crossings are real
+      if (skipArmed && aboveSkip) {
         if (!lofted) {
           lofted = true;
           pushEvent('skip_out');
@@ -623,10 +629,11 @@ export function integrateDescent(
           const vSq = 2 * (coastEnergy + muBody / (bodyRadiusM + h));
           if (vSq > 0) v = Math.sqrt(vSq);
         }
-      } else if (lofted && coastEnergy !== null) {
+      } else if (lofted && !aboveSkip) {
         // Fell back into the atmosphere — the second entry pulse begins; drag resumes.
         pushEvent('second_entry');
         coastEnergy = null;
+        lofted = false; // re-armable: a lifting entry can skip more than once
       }
     }
 

@@ -13,7 +13,7 @@
   },
   "entryMassKg": 2900,
   "entryCdA": 4.5,
-  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7000,
     "terminalHandoffAltM": 3000,

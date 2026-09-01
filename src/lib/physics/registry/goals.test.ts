@@ -25,6 +25,23 @@ describe('goal registry · coverage + wire integrity', () => {
         );
   });
 
+  it('the apollo-round-trip capstone EXECUTES ok at every one of its 6 stages', () => {
+    // Guards that the composed capstone actually computes a valid result at each stage (PEG ascent →
+    // TLI/LOI → powered descent → lunar ascent → TEI → lifting entry), not just references real
+    // formulas. It uses no wiresFrom, so defaults + presetInputs are the full input; a typo'd preset
+    // the Notebook silently drops would otherwise render defaults with no failure anywhere.
+    const capstone = GOALS.get('apollo-round-trip')!;
+    expect(capstone.path.length).toBe(6);
+    for (const [i, step] of capstone.path.entries()) {
+      const f = REGISTRY.get(step.formulaId)!;
+      const inputs: Record<string, unknown> = {};
+      for (const inp of f.inputs) inputs[inp.key] = (inp as { default?: unknown }).default;
+      Object.assign(inputs, step.presetInputs ?? {});
+      const r = f.compute(inputs as never);
+      expect(r.status.ok, `apollo-round-trip[${i}] · ${step.formulaId}: compute not ok`).toBe(true);
+    }
+  });
+
   it('every wiresFrom is a valid upstream output with matching units (B1/B2)', () => {
     for (const g of GOALS.values()) {
       g.path.forEach((step, i) => {

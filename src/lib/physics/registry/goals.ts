@@ -862,16 +862,22 @@ export const apolloRoundTrip: Goal = {
     },
     { formulaId: 'cislunar-transfer', narrativeKey: 'lab.goal.art.tei' },
     {
-      formulaId: 'entry-corridor',
+      // entry-steering runs a real 2-DOF lifting entry at the 11 km/s lunar-return speed and MEASURES
+      // the survivable-corridor WIDTH ballistic vs lifting — the honest climax (lift ≈ doubles the
+      // knife-edge corridor). NOT entry-corridor (ballistic-only: at 11 km/s it reads a 0°-wide
+      // corridor / ~35 g, which would say the crew died — true for ballistic, wrong as the story).
+      formulaId: 'entry-steering',
       narrativeKey: 'lab.goal.art.entry',
-      presetInputs: { entryVelocityKms: 10.8, flightPathAngleDeg: 6.5 },
+      // Apollo CM L/D 0.3, a 5.75° interface inside the survivable band, 12 g crew limit → the
+      // corridor is 0.75° ballistic vs 1.5° lifting (lift ≈ doubles it). At 6.5° the entry is 'lost'.
+      presetInputs: { liftToDrag: 0.3, entryAngleDeg: 5.75, gLimitG: 12 },
     },
   ],
   connection: {
     whyKey: 'lab.conn.art.why',
     hookKey: 'lab.conn.art.hook',
     links: [
-      { labelKey: 'lab.conn.art.apollo8', href: '/fly?mission=apollo8', agency: 'NASA' },
+      { labelKey: 'lab.conn.art.apollo8', href: '/fly?mission=apollo8&descent=1', agency: 'NASA' },
       { labelKey: 'lab.conn.art.apollo11', href: '/fly?mission=apollo11', agency: 'NASA' },
       { labelKey: 'lab.conn.art.apollo-lm', href: '/fleet?id=apollo-lm', agency: 'NASA' },
       { labelKey: 'lab.conn.art.program', href: '/programs/apollo', agency: 'NASA' },

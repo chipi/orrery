@@ -7,7 +7,8 @@
   "entryMassKg": 3300,
   "entryCdA": 24,
   "liftToDragRatio": 0.24,
-  "estimatedFields": ["flightPathAngleDeg", "liftToDragRatio"],  "retroPropellantKg": 450,
+  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],
+  "retroPropellantKg": 450,
   "archetype": "MARS_SKYCRANE",
   "params": {
     "chuteDeployAltM": 11000,

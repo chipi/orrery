@@ -186,23 +186,29 @@ describe('Mars guided-lifting entries (2-DOF, no skip)', () => {
       const s = integrateDescent(expandDescentProfile(raw));
       expect(s.touchdownSuccess).toBe(true);
       expect(s.events.some((e) => e.type === 'skip_out')).toBe(false); // steep enough not to loft
-      expectInRange(s.peakDecel.g, 4, 18, `${id} Mars entry peak-g`);
+      // Tight corridor (not the generic Mars [4,18]): the model reads 6.7–8.5 g for these three;
+      // a regression to the loose band would ship silently. Flown MSL ~12 g (fixed-bank residual).
+      expectInRange(s.peakDecel.g, 6, 9, `${id} Mars guided-lifting peak-g`);
     });
   }
 });
 
 /**
- * Honest provenance (ADR-088 Phase 0b/1a). EVERY Earth capsule (lifting AND ballistic) splits its
- * entry fields into SOURCED and MODEL-AUTHORED. Sourced (NOT in estimatedFields): `liftToDragRatio`
- * (Apollo 0.3, Soyuz 0.3 [RU], Shenzhou 0.2 [CN], Dragon 0.18 [GT], Gemini 0.19 [DTIC AD0856691])
- * and — for Apollo — `entryCdA` (BC 313.5 kg/m², NASA). Estimated (MUST be declared): the
- * `flightPathAngleDeg` (the ~1.5° LEO / 18° suborbital angle), the `targetDownrangeKm`, and the
- * geometry-derived/tuned `entryCdA` on every non-Apollo capsule. Machine-checkable so a model
- * estimate can never silently wear the mission-report provenance block — enforced for the ballistic
- * profiles too (they had estimated angle+Cd·A wearing NSSDCA provenance unmarked; now flagged).
+ * Honest provenance (ADR-088 Phase 0b/1a · ADR-089 Phase 2). Every capsule/lifting profile splits
+ * its entry fields into SOURCED and MODEL-AUTHORED; the SOURCED ones must NOT be flagged in
+ * `estimatedFields` and the estimated ones MUST. Machine-checkable so a model estimate can never
+ * silently wear the mission-report provenance block. Covers Earth capsules AND the Mars lifting
+ * entries. The entry angle is deliberately NOT universally forced estimated — apollo8's 6.48° FPA
+ * is sourced from the mission report, while the LEO 1.5° / Mars 15° are model estimates.
  */
 describe('model-authored entry fields are declared as estimates, sourced ones are not', () => {
-  const APOLLO_SOURCED_CDA = new Set([
+  // L/D SOURCED per capsule (see docs/reference/capsule-entry-aerodynamics.md); anything with lift
+  // NOT in this set has an estimated L/D that must be declared. Perseverance/Tianwen are MSL-class
+  // estimates (only MSL/Curiosity L/D 0.24 is directly cited); Apollo/Gemini/Soyuz/Dragon/Shenzhou
+  // are directly sourced.
+  const ESTIMATED_LD = new Set(['perseverance', 'tianwen1']);
+  // Cd·A sourced only for the Apollo CM family (BC 313.5, NASA); estimated/tuned for everyone else.
+  const SOURCED_CDA = new Set([
     'apollo7',
     'apollo8',
     'apollo9',
@@ -211,29 +217,31 @@ describe('model-authored entry fields are declared as estimates, sourced ones ar
     'skylab-3',
     'skylab-4',
   ]);
-  const earthCapsules = [...DESCENT_MISSION_IDS].filter(
-    (id) => existsSync(profilePath(id)) && loadRaw(id).body === 'earth',
-  );
-
-  it('covers all Earth capsules (>=25, lifting + ballistic)', () => {
-    expect(earthCapsules.length).toBeGreaterThanOrEqual(25);
+  const profiles = [...DESCENT_MISSION_IDS].filter((id) => {
+    if (!existsSync(profilePath(id))) return false;
+    const raw = loadRaw(id);
+    return raw.body === 'earth' || (raw.liftToDragRatio ?? 0) > 0; // all capsules + Mars lifting
   });
 
-  // apollo8's Cd·A is the sourced Apollo BC (313.5); its velocity (10.8 km/s) makes it the lunar
-  // return, but the drag area is the same sourced Apollo CM value.
-  for (const id of earthCapsules) {
-    it(`${id} declares estimates (angle, Cd·A, target), omits sourced fields`, () => {
+  it('covers all Earth capsules + Mars lifting entries (>=28)', () => {
+    expect(profiles.length).toBeGreaterThanOrEqual(28);
+  });
+
+  for (const id of profiles) {
+    it(`${id} declares its estimates, omits its sourced fields`, () => {
       const raw = loadRaw(id);
       const est = raw.estimatedFields ?? [];
-      // The entry angle is a model estimate on EVERY Earth capsule (not from the provenance source).
-      expect(est).toContain('flightPathAngleDeg');
-      // A guided target is always an estimate.
+      // A guided range target is always a model estimate.
       if (raw.targetDownrangeKm != null) expect(est).toContain('targetDownrangeKm');
-      // Sourced L/D → must NOT be flagged an estimate.
-      if ((raw.liftToDragRatio ?? 0) > 0) expect(est).not.toContain('liftToDragRatio');
-      // Cd·A: sourced only for the Apollo CM (BC 313.5); estimated for everyone else.
-      if (APOLLO_SOURCED_CDA.has(id)) expect(est).not.toContain('entryCdA');
-      else expect(est).toContain('entryCdA');
+      // L/D: sourced unless in the MSL-class-estimate set.
+      if ((raw.liftToDragRatio ?? 0) > 0) {
+        if (ESTIMATED_LD.has(id)) expect(est).toContain('liftToDragRatio');
+        else expect(est).not.toContain('liftToDragRatio');
+      }
+      // Cd·A: sourced only for the Apollo CM family.
+      if (SOURCED_CDA.has(id)) expect(est).not.toContain('entryCdA');
+      else if ((raw.liftToDragRatio ?? 0) > 0 || raw.body === 'earth')
+        expect(est).toContain('entryCdA');
     });
   }
 });

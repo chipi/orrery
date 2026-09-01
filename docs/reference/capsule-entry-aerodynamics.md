@@ -22,14 +22,17 @@
 | **Mercury** (orbital) | 0 (ballistic) | 1.89 | — | ~7.8 g | — | [FAA/NASA][faa] |
 | **Mercury** (suborbital) | 0 (ballistic) | 1.89 | — | ~11 g (Redstone hop) | — | [FAA/NASA][faa] |
 | **Vostok / Voskhod** | 0 (ballistic) | 2.30 | — | ~8 g | — | [FAA/NASA][faa] |
-| **MSL / Curiosity** (Mars) | 0.24 | 4.5 | ~115 | ~12 g (Mars entry) | — | [AAS 13-307][msl-aas], [MSL guidance][msl-ntrs] |
+| **MSL / Curiosity** (Mars) | 0.24 | 4.5 | ~140 (Cd·A 24) | — | ~12 g (Mars entry) | [MSL guidance][msl-ntrs] |
 
 Notes:
 - **Apollo CM BC 313.5 kg·m⁻²** is directly sourced (NASA aero data, ref area 12.0 m², 3.91 m base
   → Cd·A 17.7, Cd ≈ 1.47). This calibrates the blunt-body Cd used to *derive* the others' Cd·A
   from their published base diameters — those BCs are marked "derived" (model estimates).
-- **L/D is sourced for every lifting capsule** (see per-capsule links). Apollo & Soyuz share the
-  0.3 "offset-CG / headlight" value; Dragon is lowest at 0.18 (12° trim); Gemini 0.19; Shenzhou ≥0.2.
+- **L/D is directly sourced for most lifting capsules** (see per-capsule links). Apollo & Soyuz share
+  the 0.3 "offset-CG / headlight" value; Dragon is lowest at 0.18 (12° trim); Gemini 0.19;
+  Shenzhou ≥0.2; MSL/Curiosity 0.24. **Exceptions (MSL-class estimates, marked in `estimatedFields`):**
+  Perseverance + Tianwen-1 reuse the MSL aeroshell so we take L/D 0.24, but a mission-specific figure
+  is not directly cited for them.
 - **Ballistic capsules** (Mercury/Vostok/Voskhod) have no lift — an offset-CG lift vector was not
   yet used; they ate the full ~8 g. Correct to keep them lift-free.
 - **Suborbital gap (honest):** the two Mercury-Redstone hops (freedom-7, liberty-bell-7) read ~8.7 g
@@ -75,7 +78,6 @@ Notes:
 [sz-skip]: https://jdse.bit.edu.cn/sktcxb/cn/article/pdf/preview/10.15982/j.issn.2096-9287.2021.20210016.pdf
 [gatech]: https://repository.gatech.edu/server/api/core/bitstreams/39f02e86-13a2-4066-a79d-2a87df7d2ccd/content
 [dtic-gemini]: https://apps.dtic.mil/sti/tr/pdf/AD0856691.pdf
-[msl-aas]: https://scispace.com/pdf/mars-science-laboratory-entry-descent-and-landing-trajectory-1oqvpyorjg.pdf
 [msl-ntrs]: https://ntrs.nasa.gov/api/citations/20110003649/downloads/20110003649.pdf
 
 ---

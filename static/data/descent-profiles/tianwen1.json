@@ -7,7 +7,8 @@
   "entryMassKg": 1300,
   "entryCdA": 14,
   "liftToDragRatio": 0.24,
-  "estimatedFields": ["flightPathAngleDeg", "liftToDragRatio"],  "retroPropellantKg": 200,
+  "estimatedFields": ["flightPathAngleDeg", "liftToDragRatio", "entryCdA"],
+  "retroPropellantKg": 200,
   "archetype": "MARS_PARACHUTE_RETRO",
   "params": {
     "chuteDeployAltM": 8000,

@@ -378,7 +378,10 @@ describe('range-control entry guidance', () => {
       expect(s.guidance!.entryBankCos).toBeGreaterThanOrEqual(-1);
       expect(s.guidance!.entryBankCos).toBeLessThanOrEqual(1);
     }
-  });
+  }, // Three bank-solve bisections = ~30 full entry integrations; under CI coverage
+  // instrumentation on a loaded runner this legitimately exceeds vitest's 5 s
+  // default (timed out on main 2026-09-01 after passing the identical code).
+  30_000);
 
   it('flags an out-of-footprint target and clamps to the reachable edge', () => {
     const s = integrateDescent({ ...capsule, targetDownrangeKm: 8000 });

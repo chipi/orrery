@@ -2670,5 +2670,7 @@
   "lab_conn_lov_sevenmin": "7분 — 착륙이 가장 어려운 이유에 관한 에세이",
   "lab_conn_lov_explore": "3D 태양계에서 금성을 살펴보세요",
   "lab_conn_lov_next": "다음: 하강 경로 계속 — 타이탄, 목성형 행성들, 그리고 미소중력 천체들.",
-  "lab_goal_land_earth_title": "지구에 착륙"
+  "lab_goal_land_earth_title": "지구에 착륙",
+  "lab_promote_reason_cycle": "이 카드들이 루프를 형성하도록 서로 연결되어 있습니다. 노트북은 위에서 아래로 실행되므로 사이클을 표현할 수 없습니다 — 한 연결을 끊고 다시 시도하세요.",
+  "lab_promote_reason_too_big": "이 선택 항목(연결된 종속성 포함)이 노트북이 수용할 수 있는 크기보다 큽니다. 더 작은 부분 그래프를 승격하세요."
 }

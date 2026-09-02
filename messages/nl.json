@@ -2670,5 +2670,7 @@
   "lab_conn_lov_sevenmin": "Zeven minuten — het essay over waarom landingen het moeilijkste deel zijn",
   "lab_conn_lov_explore": "Bekijk Venus in het 3D-zonnestelsel",
   "lab_conn_lov_next": "Volgende: de afdaaladder gaat door — Titan, de gasgiganten en de microzwaartekrachtwerelden.",
-  "lab_goal_land_earth_title": "Op Aarde landen"
+  "lab_goal_land_earth_title": "Op Aarde landen",
+  "lab_promote_reason_cycle": "Deze kaarten zijn in een lus met elkaar verbonden. Een notebook wordt van boven naar beneden uitgevoerd, dus een lus kan niet worden uitgedrukt — verbreek één verbinding en probeer opnieuw.",
+  "lab_promote_reason_too_big": "Deze selectie (met de bijbehorende verbonden afhankelijkheden) is groter dan een notebook kan bevatten. Promoot een kleinere subgraaf."
 }

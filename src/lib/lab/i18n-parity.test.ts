@@ -96,6 +96,8 @@ function collectAllKeys(): string[] {
   ['lab.fidelity.computed', 'lab.fidelity.geometric', 'lab.fidelity.replayed'].forEach(add);
   // Connection-panel chrome — rendered via t() in Notebook.svelte, not a data literal.
   ['lab.conn.heading', 'lab.conn.hook-label', 'lab.conn.next-label', 'lab.conn.aria'].forEach(add);
+  // Promote refusal reasons (S5) — emitted by promote.ts, rendered by the Canvas UI.
+  ['lab.promote.reason-cycle', 'lab.promote.reason-too-big'].forEach(add);
   // Body-picker option labels — rendered via t(`lab.body.${id}`) in Card.svelte (not a labelKey).
   ['earth', 'moon', 'mars', 'venus', 'mercury'].forEach((b) => add(`lab.body.${b}`));
   // Moon-phase names (G8) — figure.phaseLabelKey is dynamic (date → phase), so assert all 8.

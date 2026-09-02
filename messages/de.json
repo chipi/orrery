@@ -2670,5 +2670,7 @@
   "lab_conn_lov_sevenmin": "Sieben Minuten — der Essay darüber, warum Landungen der schwierigste Teil sind",
   "lab_conn_lov_explore": "Sehen Sie die Venus im 3D-Sonnensystem",
   "lab_conn_lov_next": "Nächstes: die Abstiegsleiter setzt sich fort — Titan, die Gasriesen und die Mikrogravitations-Welten.",
-  "lab_goal_land_earth_title": "Auf der Erde landen"
+  "lab_goal_land_earth_title": "Auf der Erde landen",
+  "lab_promote_reason_cycle": "Diese Karten sind in einer Schleife miteinander verbunden. Ein Notebook läuft von oben nach unten, daher kann eine Schleife nicht dargestellt werden — unterbrechen Sie eine Verbindung und versuchen Sie es erneut.",
+  "lab_promote_reason_too_big": "Diese Auswahl (mit ihren verdrahteten Abhängigkeiten) ist größer als ein Notebook aufnehmen kann. Fördern Sie einen kleineren Subgraph."
 }

@@ -1015,6 +1015,8 @@
   "lab_ui_goal": "Goal",
   "lab_ui_goal_picker": "Goal",
   "lab_ui_load": "Load",
+  "lab_promote_reason_cycle": "These cards wire into each other in a loop. A notebook runs top-to-bottom, so a cycle can't be expressed — break one wire and retry.",
+  "lab_promote_reason_too_big": "This selection (with its wired dependencies) is larger than a notebook can hold. Promote a smaller subgraph.",
   "lab_ui_load_error_invalid": "Not a valid .orrlab notebook.",
   "lab_ui_load_error_link": "Couldn't load that shared notebook link — showing the lesson instead.",
   "lab_ui_load_error_read": "Could not read that file.",

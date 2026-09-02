@@ -2670,5 +2670,7 @@
   "lab_conn_lov_sevenmin": "Siete minutos — el ensayo sobre por qué los aterrizajes son la parte más difícil",
   "lab_conn_lov_explore": "Ve a Venus en el sistema solar 3D",
   "lab_conn_lov_next": "Siguiente: el descenso continúa — Titán, los gigantes gaseosos y los mundos de microgravedad.",
-  "lab_goal_land_earth_title": "Aterrizar en la Tierra"
+  "lab_goal_land_earth_title": "Aterrizar en la Tierra",
+  "lab_promote_reason_cycle": "Estas tarjetas se conectan entre sí en un bucle. Un cuaderno se ejecuta de arriba hacia abajo, por lo que no se puede expresar un ciclo — desconecta un cable e intenta de nuevo.",
+  "lab_promote_reason_too_big": "Esta selección (con sus dependencias conectadas) es mayor de lo que un cuaderno puede contener. Promociona un subgrafo más pequeño."
 }

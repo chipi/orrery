@@ -1726,7 +1726,9 @@
     "lab_goal_lov_chute": "शुक्र के निचले वायुमंडल में पैराशूट खोलें और आप चलने की गति से नीचे आते हैं — लेकिन यह कोमलता एक जाल है: अवतरण इतना लंबा होगा कि गर्मी लैंडर को जमीन से पहले मार देगी। देखें कि मंगल पर जो पैराशूट मुश्किल से मदद करता था, वह यहां क्या करता है।",
     "lab_goal_lov_corridor": "मंगल पर प्रवेश गलियारा एक छुरी की धार है; यहां यह एक विशाल दरवाजा है। इतनी सघन हवा आपको प्रवेश कोणों की एक विशाल पट्टी में पकड़ लेगी — वेनेरा जांच इरादे से तीव्र कोण पर भट्टी के माध्यम से यात्रा को छोटा करने के लिए गोता लगाते थे। शुक्र पर पकड़े जाना समस्या नहीं है।",
     "lab_goal_lov_entry": "शुक्र आपसे पृथ्वी की सतह के दबाव का लगभग नब्बे गुना वायुमंडल के साथ मिलता है। अंतरग्रहीय गति से तीव्र कोण पर इसमें सीधे टकराएं और यह आपको लगभग तुरंत रोक देता है — त्वरण सौ g से ऊपर चोटी पर पहुंचता है। कोई भी चालक दल इसे सहन नहीं कर सकता; वेनेरा लैंडर पनडुब्बियों की तरह बनाए गए थे और इसे झेल गए।",
-    "lab_goal_lov_verdict": "स्पर्श की जांच करें: एरोशेल-केवल गिरावट झटके की अंगूठी से धीमी गति से आती है। शुक्र बिना रेट्रो-रॉकेट के और सतह पर बिना पैराशूट के सफल होता है — मंगल का सटीक विपरीत। असली दुश्मन अवतरण के बाद इंतजार करता है: ~460 °C पर, लैंडर के पास लगभग एक घंटा जीने के लिए है।"
+    "lab_goal_lov_verdict": "स्पर्श की जांच करें: एरोशेल-केवल गिरावट झटके की अंगूठी से धीमी गति से आती है। शुक्र बिना रेट्रो-रॉकेट के और सतह पर बिना पैराशूट के सफल होता है — मंगल का सटीक विपरीत। असली दुश्मन अवतरण के बाद इंतजार करता है: ~460 °C पर, लैंडर के पास लगभग एक घंटा जीने के लिए है।",
+    "lab_promote_reason_cycle": "ये कार्ड एक-दूसरे से लूप में जुड़े हुए हैं। नोटबुक ऊपर-से-नीचे चलती है, इसलिए साइकिल व्यक्त नहीं की जा सकती — एक तार तोड़ें और फिर से कोशिश करें।",
+    "lab_promote_reason_too_big": "यह चयन (अपनी वायर्ड निर्भरताओं के साथ) नोटबुक में रखे जाने से बड़ा है। एक छोटे सबग्राफ को प्रमोट करें।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3316,7 +3318,9 @@
     "lab_goal_lov_chute": "金星の下層大気でパラシュートを開くと、歩行速度で漂い降りる——だがこの温和さは罠である。降下に時間がかかりすぎて、地面に到達する前に熱が着陸機を破壊する。火星でほとんど役に立たなかったこのパラシュートがここでどうなるか見よ。",
     "lab_goal_lov_corridor": "火星では進入廊下はナイフの刃だが、ここでは大きな戸である。このように密度の高い大気は広大な進入角の範囲で捕捉する——ベネラ探査機は意図的に急角度で飛び込み、炉の中の滞在時間を短縮した。金星では捕捉されることは問題ではない。",
     "lab_goal_lov_entry": "金星は地球の表面気圧の約90倍の大気で迎える。惑星間速度から直接的に急角度で衝突させるとほぼ一度に停止する——減速は100g以上に達する。乗員はこれに耐えられず、ベネラ着陸機は潜水艦のように造られていた。",
-    "lab_goal_lov_verdict": "タッチダウンをチェック：エアシェルのみの落下は衝撃リングが生き残れるより遅く到着する。金星は逆推進ロケットなしで、表面にパラシュートなしで合格する——火星とまさに逆である。本当の敵は着陸後に待つ：約460°Cで、着陸機は約1時間の生命を持つ。"
+    "lab_goal_lov_verdict": "タッチダウンをチェック：エアシェルのみの落下は衝撃リングが生き残れるより遅く到着する。金星は逆推進ロケットなしで、表面にパラシュートなしで合格する——火星とまさに逆である。本当の敵は着陸後に待つ：約460°Cで、着陸機は約1時間の生命を持つ。",
+    "lab_promote_reason_cycle": "これらのカードはループで相互に接続されています。ノートブックは上から下へ実行されるため、サイクルは表現できません — ワイヤーを1本切断して再試行してください。",
+    "lab_promote_reason_too_big": "この選択項目（及びそのワイヤー接続の依存関係）はノートブックが保持できるサイズより大きいです。より小さい部分グラフをプロモートしてください。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5086,7 +5090,9 @@
     "lab_goal_lov_chute": "افتح مظلة في الغلاف الجوي السفلي للزهرة وستنجرف بسرعة المشي — لكن هذه الرقة فخ: الهبوط سيستغرق وقتاً طويلاً جداً بحيث يقتل الحرارة المسبار قبل أن تفعل الأرض. انظر ماذا تفعل نفس المظلة التي ساعدت بالكاد على المريخ هنا.",
     "lab_goal_lov_corridor": "على المريخ ممر الدخول حاد كحد السكين؛ هنا هو واسع كباب حظيرة. الهواء بهذه الكثافة سيقبض عليك عبر نطاق ضخم من زوايا الدخول — مسابير فينيرا غطست بشكل حاد عن قصد لتقصير الرحلة عبر الفرن. الاستيلاء عليك ليس المشكلة على الزهرة.",
     "lab_goal_lov_entry": "الزهرة تستقبلك بغلاف جوي يبلغ حوالي تسعين ضعف ضغط سطح الأرض. اضرب فيها مباشرة من سرعة بين الكواكب بزاوية حادة وستوقفك فوراً — يصل فك التسارع أعلى من مائة g. لا يمكن لأي طاقم أن يتحمل هذا؛ مسابير فينيرا كانت مبنية مثل الغواصات وتحملتها.",
-    "lab_goal_lov_verdict": "افحص الهبوط: سقوط الهيكل الخارجي وحده يصل أبطأ مما يمكن لحلقة الصدمة أن تتحمله. الزهرة تنجح بدون صواريخ عكسية وبدون مظلة على السطح — العكس تماماً للمريخ. العدو الحقيقي ينتظر بعد الهبوط: عند حوالي 460 °م، المسبار له حوالي ساعة واحدة للعيش."
+    "lab_goal_lov_verdict": "افحص الهبوط: سقوط الهيكل الخارجي وحده يصل أبطأ مما يمكن لحلقة الصدمة أن تتحمله. الزهرة تنجح بدون صواريخ عكسية وبدون مظلة على السطح — العكس تماماً للمريخ. العدو الحقيقي ينتظر بعد الهبوط: عند حوالي 460 °م، المسبار له حوالي ساعة واحدة للعيش.",
+    "lab_promote_reason_cycle": "هذه البطاقات متصلة ببعضها في حلقة. تعمل دفاتر الملاحظات من الأعلى إلى الأسفل، لذا لا يمكن التعبير عن حلقة — قطّع أحد الأسلاك وحاول مجددًا.",
+    "lab_promote_reason_too_big": "هذا الاختيار (مع تبعياته المسلّكة) أكبر من أن تتسعه دفاتر الملاحظات. رقّ رسم بياني فرعيًا أصغر."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -6678,7 +6684,9 @@
     "lab_goal_lov_chute": "금성의 하층 대기에서 낙하산을 펴면 보행 속도로 내려갑니다 — 하지만 이 완만함은 함정입니다: 하강에 너무 오래 걸려 땅에 닿기 전에 열이 착륙선을 파괴할 것입니다. 화성에서 거의 도움이 되지 않던 같은 낙하산이 여기서 어떻게 작용하는지 보세요.",
     "lab_goal_lov_corridor": "화성에서 재진입 복도는 칼날처럼 좁습니다; 여기서는 헛간 문처럼 넓습니다. 이렇게 조밀한 대기는 광대한 재진입 각도 대역에 걸쳐 포착할 것입니다 — 베네라 탐사선들은 용광로를 통과하는 시간을 단축하기 위해 의도적으로 가파르게 진입했습니다. 금성에서는 포착되는 것이 문제가 아닙니다.",
     "lab_goal_lov_entry": "금성은 지구 표면 기압의 약 90배에 달하는 대기로 맞이합니다. 행성간 속도에서 가파른 각도로 직접 충돌하면 거의 즉시 멈춥니다 — 감속은 100g 이상에 도달합니다. 어떤 승무원도 이것을 견딜 수 없습니다; 베네라 착륙선들은 잠수함처럼 지어져서 견뎌냈습니다.",
-    "lab_goal_lov_verdict": "접지 확인: 에어로셸만의 낙하는 충격 링이 견딜 수 있는 것보다 느리게 도착합니다. 금성은 역추진 로켓도 지표면의 낙하산도 없이 통과합니다 — 화성의 정확한 역입니다. 진정한 적은 착륙 후 기다립니다: ~460 °C에서 착륙선은 약 1시간 동안 살 수 있습니다."
+    "lab_goal_lov_verdict": "접지 확인: 에어로셸만의 낙하는 충격 링이 견딜 수 있는 것보다 느리게 도착합니다. 금성은 역추진 로켓도 지표면의 낙하산도 없이 통과합니다 — 화성의 정확한 역입니다. 진정한 적은 착륙 후 기다립니다: ~460 °C에서 착륙선은 약 1시간 동안 살 수 있습니다.",
+    "lab_promote_reason_cycle": "이 카드들이 루프를 형성하도록 서로 연결되어 있습니다. 노트북은 위에서 아래로 실행되므로 사이클을 표현할 수 없습니다 — 한 연결을 끊고 다시 시도하세요.",
+    "lab_promote_reason_too_big": "이 선택 항목(연결된 종속성 포함)이 노트북이 수용할 수 있는 크기보다 큽니다. 더 작은 부분 그래프를 승격하세요."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -8093,7 +8101,9 @@
     "lab_goal_lov_chute": "Öffnen Sie einen Fallschirm in der unteren Atmosphäre der Venus und Sie sinken im Schrittempo herab — aber diese Sanftheit ist eine Falle: Der Abstieg würde so lange dauern, dass die Hitze die Landeeinheit tötet, bevor der Boden es tut. Sehen Sie, was derselbe Fallschirm, der auf dem Mars kaum half, hier bewirkt.",
     "lab_goal_lov_corridor": "Auf dem Mars ist der Eintrittskanal messerscharf; hier ist er eine Scheunentür. Eine so dichte Atmosphäre wird Sie über einen riesigen Bereich von Eintritswinkeln erfassen — die Venera-Sonden tauchten absichtlich steil ein, um die Zeit im Ofen zu verkürzen. Erfasst zu werden ist auf der Venus nicht das Problem.",
     "lab_goal_lov_entry": "Die Venus empfängt Sie mit einer Atmosphäre von etwa neunzig Mal dem Oberflächendruck der Erde. Treffen Sie sie direkt aus der interplanetaren Geschwindigkeit in steilem Winkel und sie stoppt Sie fast sofort — die Verzögerung übersteigt hundert g. Keine Besatzung könnte dies überstehen; die Venera-Lander waren wie U-Boote gebaut und widerstanden es.",
-    "lab_goal_lov_verdict": "Überprüfen Sie die Landung: Der Sturz der Aeroshell-nur-Konstruktion kommt langsamer an, als der Stoßring überstehen kann. Die Venus schafft es ohne Retroraketeri und ohne Fallschirm an der Oberfläche — das genaue Gegenteil des Mars. Der eigentliche Feind wartet nach der Landung: Bei etwa 460 °C hat die Landeeinheit etwa eine Stunde zu leben."
+    "lab_goal_lov_verdict": "Überprüfen Sie die Landung: Der Sturz der Aeroshell-nur-Konstruktion kommt langsamer an, als der Stoßring überstehen kann. Die Venus schafft es ohne Retroraketeri und ohne Fallschirm an der Oberfläche — das genaue Gegenteil des Mars. Der eigentliche Feind wartet nach der Landung: Bei etwa 460 °C hat die Landeeinheit etwa eine Stunde zu leben.",
+    "lab_promote_reason_cycle": "Diese Karten sind in einer Schleife miteinander verbunden. Ein Notebook läuft von oben nach unten, daher kann eine Schleife nicht dargestellt werden — unterbrechen Sie eine Verbindung und versuchen Sie es erneut.",
+    "lab_promote_reason_too_big": "Diese Auswahl (mit ihren verdrahteten Abhängigkeiten) ist größer als ein Notebook aufnehmen kann. Fördern Sie einen kleineren Subgraph."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -9447,7 +9457,9 @@
     "lab_goal_lov_chute": "Déployer un parachute dans l'atmosphère inférieure de Vénus et vous descendez au pas — mais cette douceur est un piège : la descente prendrait tellement de temps que la chaleur tuerait l'atterrisseur avant le sol. Voyez ce que le même parachute qui a à peine aidé sur Mars fait ici.",
     "lab_goal_lov_corridor": "Sur Mars, le corridor d'entrée est un fil de rasoir ; ici c'est une grande porte. Un air aussi dense vous capturera sur une énorme bande d'angles d'entrée — les sondes Venera ont plongé volontairement à la verticale pour raccourcir le passage dans la fournaise. Être capturé n'est pas le problème sur Vénus.",
     "lab_goal_lov_entry": "Vénus vous accueille avec une atmosphère environ quatre-vingt-dix fois la pression de surface terrestre. Frappez-la directement à partir de la vitesse interplanétaire à un angle raide et elle vous arrête presque immédiatement — la décélération dépasse cent g. Aucun équipage ne pourrait supporter cela ; les atterrisseurs Venera étaient construits comme des sous-marins et l'ont encaissé.",
-    "lab_goal_lov_verdict": "Vérifiez l'impact : la chute avec coque thermique seule arrive plus lentement que ce que l'anneau de choc peut supporter. Vénus réussit sans rétrofusées et sans parachute à la surface — l'exact inverse de Mars. Le vrai ennemi attend après l'atterrissage : à ~460 °C, l'atterrisseur n'a qu'une heure à vivre."
+    "lab_goal_lov_verdict": "Vérifiez l'impact : la chute avec coque thermique seule arrive plus lentement que ce que l'anneau de choc peut supporter. Vénus réussit sans rétrofusées et sans parachute à la surface — l'exact inverse de Mars. Le vrai ennemi attend après l'atterrissage : à ~460 °C, l'atterrisseur n'a qu'une heure à vivre.",
+    "lab_promote_reason_cycle": "Ces cartes se connectent les unes aux autres en boucle. Un notebook s'exécute de haut en bas, donc une boucle ne peut pas être exprimée — coupez un fil et réessayez.",
+    "lab_promote_reason_too_big": "Cette sélection (avec ses dépendances câblées) est trop grande pour tenir dans un notebook. Promouvez un sous-graphe plus petit."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -10768,7 +10780,9 @@
     "lab_goal_lov_chute": "Apri un paracadute nella bassa atmosfera di Venere e scendi al passo — ma questa dolcezza è una trappola: la discesa durerebbe così a lungo che il calore ucciderebbe il lander prima del suolo. Osserva cosa fa lo stesso paracadute che a malapena ha aiutato su Marte.",
     "lab_goal_lov_corridor": "Su Marte il corridoio di entrata è il filo di un coltello; qui è un portone. Un'aria così densa ti catturerà su un'ampia banda di angoli di entrata — le sonde Venera si sono tuffate ripidamente di proposito per accorciare il passaggio attraverso la fornace. Essere catturati non è il problema su Venere.",
     "lab_goal_lov_entry": "Venere ti accoglie con un'atmosfera di circa novanta volte la pressione superficiale terrestre. Colpiscila direttamente dalla velocità interplanetaria con un angolo ripido e ti ferma quasi all'istante — la decelerazione raggiunge oltre cento g. Nessun equipaggio potrebbe resistere a questo; i lander Venera erano costruiti come sommergibili e lo hanno sopportato.",
-    "lab_goal_lov_verdict": "Verifica l'allunaggio: la caduta del solo aeroshell arriva più lentamente di quanto l'anello d'urto possa sopportare. Venere passa senza retrorazzi e senza paracadute in superficie — l'esatto inverso di Marte. Il vero nemico attende dopo l'allunaggio: a ~460 °C, il lander ha circa un'ora di vita."
+    "lab_goal_lov_verdict": "Verifica l'allunaggio: la caduta del solo aeroshell arriva più lentamente di quanto l'anello d'urto possa sopportare. Venere passa senza retrorazzi e senza paracadute in superficie — l'esatto inverso di Marte. Il vero nemico attende dopo l'allunaggio: a ~460 °C, il lander ha circa un'ora di vita.",
+    "lab_promote_reason_cycle": "Queste schede si collegano l'una all'altra in un ciclo. Un notebook esegue dall'alto verso il basso, quindi un ciclo non può essere espresso — interrompi un collegamento e riprova.",
+    "lab_promote_reason_too_big": "Questa selezione (con le sue dipendenze collegate) è più grande di quanto un notebook possa contenere. Promuovi un sottografo più piccolo."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -12088,7 +12102,9 @@
     "lab_goal_lov_chute": "Abre un paracaídas en la atmósfera inferior de Venus y descenderás al paso de una caminata — pero esa suavidad es una trampa: el descenso tardaría tanto que el calor mataría el módulo antes de que lo haga el terreno. Observa qué hace aquí el mismo paracaídas que apenas ayudó en Marte.",
     "lab_goal_lov_corridor": "En Marte el corredor de entrada es un filo de navaja; aquí es una puerta de granero. Un aire tan denso te capturará en un enorme abanico de ángulos de entrada — las sondas Venera se sumergieron empinadas a propósito para acortar el viaje a través del horno. Ser capturado no es el problema en Venus.",
     "lab_goal_lov_entry": "Venus te recibe con una atmósfera de unos noventa veces la presión de la superficie terrestre. Golpéala directamente desde velocidad interplanetaria en un ángulo empinado y se detiene casi instantáneamente — la desaceleración alcanza picos por encima de cien g. Ninguna tripulación podría soportar esto; los módulos Venera fueron construidos como submarinos y lo aguantaron.",
-    "lab_goal_lov_verdict": "Comprueba el contacto: la caída solo con aerocubierta llega más lenta de lo que el anillo de choque puede soportar. Venus se aprueba sin cohetes de retro-propulsión ni paracaídas en la superficie — el inverso exacto de Marte. El verdadero enemigo espera después del aterrizaje: a ~460 °C, el módulo tiene aproximadamente una hora de vida."
+    "lab_goal_lov_verdict": "Comprueba el contacto: la caída solo con aerocubierta llega más lenta de lo que el anillo de choque puede soportar. Venus se aprueba sin cohetes de retro-propulsión ni paracaídas en la superficie — el inverso exacto de Marte. El verdadero enemigo espera después del aterrizaje: a ~460 °C, el módulo tiene aproximadamente una hora de vida.",
+    "lab_promote_reason_cycle": "Estas tarjetas se conectan entre sí en un bucle. Un cuaderno se ejecuta de arriba hacia abajo, por lo que no se puede expresar un ciclo — desconecta un cable e intenta de nuevo.",
+    "lab_promote_reason_too_big": "Esta selección (con sus dependencias conectadas) es mayor de lo que un cuaderno puede contener. Promociona un subgrafo más pequeño."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -13417,7 +13433,9 @@
     "lab_goal_lov_chute": "Open een parachute in Venus' lagere atmosfeer en je drijft omlaag met wandelsnelheid — maar die zachtheid is een valstrik: de afdaling zou zo lang duren dat de hitte de lander doodt voordat de grond dat doet. Kijk wat dezelfde parachute die nauwelijks hielp op Mars hier doet.",
     "lab_goal_lov_corridor": "Op Mars is de insteepcorridor een scherp mes; hier is het een schuur. Lucht zo dicht zal je opvangen over een enorm bereik van insteekhoeken — de Venera-sondes doken met opzet steil in om de reis door de oven in te korten. Opgvangen worden is niet het probleem op Venus.",
     "lab_goal_lov_entry": "Venus verwelkomt je met een atmosfeer ongeveer negentig keer de oppervlaktedruk van de Aarde. Raak het rechtstreeks vanuit interplanetaire snelheid onder een steile hoek en het stopt je bijna onmiddellijk — de vertraging piekt boven honderd g. Geen bemanning kon dit meemaken; de Venera-landers waren als onderzeeërs gebouwd en hebben het doorstaan.",
-    "lab_goal_lov_verdict": "Controleer de landing: de aeroshell-only daling komt langzamer aan dan de schokring kan overleven. Venus slaagt zonder retrorockets en zonder parachute aan het oppervlak — het exacte omgekeerde van Mars. De echte vijand wacht na de landing: op ~460 °C heeft de lander ongeveer een uur te leven."
+    "lab_goal_lov_verdict": "Controleer de landing: de aeroshell-only daling komt langzamer aan dan de schokring kan overleven. Venus slaagt zonder retrorockets en zonder parachute aan het oppervlak — het exacte omgekeerde van Mars. De echte vijand wacht na de landing: op ~460 °C heeft de lander ongeveer een uur te leven.",
+    "lab_promote_reason_cycle": "Deze kaarten zijn in een lus met elkaar verbonden. Een notebook wordt van boven naar beneden uitgevoerd, dus een lus kan niet worden uitgedrukt — verbreek één verbinding en probeer opnieuw.",
+    "lab_promote_reason_too_big": "Deze selectie (met de bijbehorende verbonden afhankelijkheden) is groter dan een notebook kan bevatten. Promoot een kleinere subgraaf."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -15010,7 +15028,9 @@
     "lab_goal_lov_chute": "Раскройте парашют в нижней атмосфере Венеры — и вы будете снижаться со скоростью пешехода — но эта кажущаяся мягкость ловушка: спуск займёт столько времени, что жара убьёт посадочный модуль раньше, чем земля. Посмотрите, что творит здесь тот же парашют, который едва помогал на Марсе.",
     "lab_goal_lov_corridor": "На Марсе коридор входа — лезвие бритвы; здесь он — амбар. Столь плотный воздух захватит вас в огромном диапазоне углов входа — зонды Венера целенаправленно входили круто, чтобы сократить время в печи. Попасть в захват на Венере — не проблема.",
     "lab_goal_lov_entry": "Венера встречает вас атмосферой давлением примерно в девяносто раз больше земного. Врежьте её с межпланетной скорости под крутым углом — и она остановит вас почти мгновенно — пик замедления превышает сто g. Никакой экипаж не пережил бы это; зонды Венера были построены как подводные лодки и выдержали.",
-    "lab_goal_lov_verdict": "Проверьте приземление: падение только с теплозащитным экраном прибывает медленнее, чем может выдержать кольцо удара. Венера проходит без ретророкет и парашюта у поверхности — полная противоположность Марсу. Настоящий враг ждёт после посадки: при ~460 °C посадочный модуль проживёт около часа."
+    "lab_goal_lov_verdict": "Проверьте приземление: падение только с теплозащитным экраном прибывает медленнее, чем может выдержать кольцо удара. Венера проходит без ретророкет и парашюта у поверхности — полная противоположность Марсу. Настоящий враг ждёт после посадки: при ~460 °C посадочный модуль проживёт около часа.",
+    "lab_promote_reason_cycle": "Эти карточки соединены в цикл. Notebook выполняется сверху вниз, поэтому цикл невозможен — разомкните одно соединение и повторите попытку.",
+    "lab_promote_reason_too_big": "Это выделение (со всеми подключёнными зависимостями) больше, чем может вместить notebook. Переместите в ячейку меньший подграф."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -16647,7 +16667,9 @@
     "lab_goal_lov_chute": "在金星下层大气中打开降落伞，你会以行走速度缓慢下降——但这种温和正是陷阱：下降耗时太长，热量会在地面之前杀死着陆器。看看在火星上几乎没有帮助的同一降落伞在这里会如何表现。",
     "lab_goal_lov_corridor": "在火星上进入走廊是刀锋一线；这里则是大门洞开。如此稠密的大气会在广泛的进入角度范围内捕获你——金星探测器故意陡峭俯冲以缩短通过炉火的时间。被捕获在金星上不是问题。",
     "lab_goal_lov_entry": "金星迎接你的是大约为地表压力九十倍的大气。以陡峭角度从行星际速度直接撞入它，它几乎立即停止你——减速峰值超过一百g。任何船员都无法承受；金星探测器像潜艇一样建造，能够承受这一切。",
-    "lab_goal_lov_verdict": "检查着陆：仅有气动外壳的下降到达速度比冲击环能承受的更慢。金星不使用制动火箭和表面降落伞就通过了——这正好与火星相反。真正的敌人在着陆后等待：在约460°C下，着陆器只能存活大约一小时。"
+    "lab_goal_lov_verdict": "检查着陆：仅有气动外壳的下降到达速度比冲击环能承受的更慢。金星不使用制动火箭和表面降落伞就通过了——这正好与火星相反。真正的敌人在着陆后等待：在约460°C下，着陆器只能存活大约一小时。",
+    "lab_promote_reason_cycle": "这些卡片形成一个循环连接。笔记本从上到下运行，无法表达循环——断开一条线并重试。",
+    "lab_promote_reason_too_big": "此选择（含其连接的依赖项）超过笔记本容纳的大小。请提升一个较小的子图。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -18155,7 +18177,9 @@
     "lab_goal_lov_chute": "Отворите падобран у нижој атмосфери Венере и спуштате се брзином ходања — али та нежност је замка: силазак би трајао толико дуго да би топлота убила слетач пре него што то учини земља. Видите шта исти падобран који је једва помогао на Марсу овде чини.",
     "lab_goal_lov_corridor": "На Марсу је коридор уласка оштар као нож; овде је отворен као амбар. Ваздух оволике густине ће вас ухватити у широком распону углова уласка — Венера сонде су намерно урониле стрмо да би скратиле пут кроз пећ. Бити ухваћен није проблем на Венери.",
     "lab_goal_lov_entry": "Венера вас сусреће атмосфером од око деведесет пута већег притиска од Земљиног површинског.Ударите је директно из међупланетарне брзине под стрмим углом и она вас zaustavља скоро одједном — децелерација достиже више од сто g. Ниједна посада не би могла издржати ово; Венера слетачи су били изграђени попут подморница и издржали су.",
-    "lab_goal_lov_verdict": "Проверите слетање: пад само аеро-шкољке стиже спорије него што удар-прстен може издржати. Венера пролази без ретро-ракета и без падобрана на површини — сасвим супротно од Марса. Прави непријатељ чека после слетања: на ~460 °C, слетач има око један сат да живи."
+    "lab_goal_lov_verdict": "Проверите слетање: пад само аеро-шкољке стиже спорије него што удар-прстен може издржати. Венера пролази без ретро-ракета и без падобрана на површини — сасвим супротно од Марса. Прави непријатељ чека после слетања: на ~460 °C, слетач има око један сат да живи.",
+    "lab_promote_reason_cycle": "Ове картице су повезане једна с другом у петљи. Белешка се извршава одозго надоле, па се петља не може изразити — прекините једну везу и покушајте поново.",
+    "lab_promote_reason_too_big": "Овај избор (са својим повезаним зависностима) је већи него што белешка може да садржи. Промовишите мањи подграф."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -19482,6 +19506,8 @@
     "lab_goal_lov_chute": "Abrir um paraquedas na atmosfera inferior de Vênus e você desce na velocidade de uma caminhada — mas essa suavidade é uma armadilha: a descida demoraria tanto que o calor mataria o módulo antes do solo. Veja o que o mesmo paraquedas que mal ajudou em Marte faz aqui.",
     "lab_goal_lov_corridor": "Em Marte o corredor de entrada é uma faca afiada; aqui é uma porta de celeiro. O ar tão denso vai capturá-lo em uma faixa enorme de ângulos de entrada — as sondas Venera mergulharam de forma íngreme de propósito para encurtar a passagem pela fornalha. Ser capturado não é o problema em Vênus.",
     "lab_goal_lov_entry": "Vênus o recebe com uma atmosfera cerca de noventa vezes a pressão superficial da Terra. Impacte diretamente da velocidade interplanetária em um ângulo íngreme e ela o freia quase que instantaneamente — a desaceleração ultrapassa cem g. Nenhuma tripulação poderia resistir a isto; os módulos Venera foram construídos como submarinos e resistiram.",
-    "lab_goal_lov_verdict": "Verifique o pouso: a queda apenas com o escudo térmico chega mais lentamente do que o anel de choque pode suportar. Vênus passa sem retrofoguetes e sem paraquedas na superfície — o inverso exato de Marte. O inimigo real espera após o pouso: a ~460 °C, o módulo tem cerca de uma hora de vida."
+    "lab_goal_lov_verdict": "Verifique o pouso: a queda apenas com o escudo térmico chega mais lentamente do que o anel de choque pode suportar. Vênus passa sem retrofoguetes e sem paraquedas na superfície — o inverso exato de Marte. O inimigo real espera após o pouso: a ~460 °C, o módulo tem cerca de uma hora de vida.",
+    "lab_promote_reason_cycle": "Esses cartões se conectam um ao outro em um loop. Um notebook executa de cima para baixo, então um ciclo não pode ser expresso — quebra uma conexão e tenta novamente.",
+    "lab_promote_reason_too_big": "Esta seleção (com suas dependências conectadas) é maior do que um notebook pode conter. Promova um subgrafo menor."
   }
 }

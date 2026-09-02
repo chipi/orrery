@@ -2670,5 +2670,7 @@
   "lab_conn_lov_sevenmin": "Sete minutos — o ensaio sobre por que os pousos são a parte mais difícil",
   "lab_conn_lov_explore": "Veja Vênus no sistema solar 3D",
   "lab_conn_lov_next": "Próximo: a escada de descida continua — Titã, os gigantes gasosos e os mundos de microgravidade.",
-  "lab_goal_land_earth_title": "Pousar na Terra"
+  "lab_goal_land_earth_title": "Pousar na Terra",
+  "lab_promote_reason_cycle": "Esses cartões se conectam um ao outro em um loop. Um notebook executa de cima para baixo, então um ciclo não pode ser expresso — quebra uma conexão e tenta novamente.",
+  "lab_promote_reason_too_big": "Esta seleção (com suas dependências conectadas) é maior do que um notebook pode conter. Promova um subgrafo menor."
 }

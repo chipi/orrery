@@ -2670,5 +2670,7 @@
   "lab_conn_lov_sevenmin": "Sept minutes — l'essai sur les raisons pour lesquelles les atterrissages sont la partie la plus difficile",
   "lab_conn_lov_explore": "Découvrez Vénus dans le système solaire en 3D",
   "lab_conn_lov_next": "Suivant : la descente continue — Titan, les géantes gazeuses et les mondes en microgravité.",
-  "lab_goal_land_earth_title": "Atterrir sur Terre"
+  "lab_goal_land_earth_title": "Atterrir sur Terre",
+  "lab_promote_reason_cycle": "Ces cartes se connectent les unes aux autres en boucle. Un notebook s'exécute de haut en bas, donc une boucle ne peut pas être exprimée — coupez un fil et réessayez.",
+  "lab_promote_reason_too_big": "Cette sélection (avec ses dépendances câblées) est trop grande pour tenir dans un notebook. Promouvez un sous-graphe plus petit."
 }

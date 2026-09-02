@@ -134,6 +134,18 @@ function cycleMembers(nodes: GraphNode[], residue: Set<number>): Set<number> {
   return members;
 }
 
+/**
+ * The deterministic order of a graph WITHOUT computing it (promote's need):
+ * topo-ordered ids of the acyclic part + the ids stuck in the cyclic residue.
+ */
+export function graphOrder(nodes: GraphNode[]): { order: string[]; cyclic: string[] } {
+  const { order, residue } = topoSort(nodes);
+  return {
+    order: order.map((i) => nodes[i].id),
+    cyclic: [...residue].map((i) => nodes[i].id),
+  };
+}
+
 /** Recompute a canvas graph. Pure; O(V+E) topo + the linear engine's cost. */
 export function recomputeGraph(nodes: GraphNode[], registry: Registry): GraphResult {
   const { order, residue } = topoSort(nodes);

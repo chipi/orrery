@@ -2670,5 +2670,7 @@
   "lab_conn_lov_sevenmin": "Sette minuti — il saggio su perché gli allunaggi sono la parte più difficile",
   "lab_conn_lov_explore": "Osserva Venere nel sistema solare 3D",
   "lab_conn_lov_next": "Prossimo: la scala di discesa continua — Titano, i giganti gassosi e i mondi a microgravità.",
-  "lab_goal_land_earth_title": "Atterrare sulla Terra"
+  "lab_goal_land_earth_title": "Atterrare sulla Terra",
+  "lab_promote_reason_cycle": "Queste schede si collegano l'una all'altra in un ciclo. Un notebook esegue dall'alto verso il basso, quindi un ciclo non può essere espresso — interrompi un collegamento e riprova.",
+  "lab_promote_reason_too_big": "Questa selezione (con le sue dipendenze collegate) è più grande di quanto un notebook possa contenere. Promuovi un sottografo più piccolo."
 }

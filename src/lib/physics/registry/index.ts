@@ -2060,7 +2060,9 @@ export const entryRangeControl: FormulaDef<{
   },
 };
 
-const ATMO_BODY_IDS = ['earth', 'mars', 'venus', 'moon', 'mercury'] as const;
+// Titan joined for the Huygens lesson (P3 · #527) — the only moon with a real
+// atmosphere; the Moon/Mercury stay for the airless fail-honest branch.
+const ATMO_BODY_IDS = ['earth', 'mars', 'venus', 'titan', 'moon', 'mercury'] as const;
 
 /**
  * Terminal velocity in an atmosphere (M5 "land on Mars") — v_t = √(2mg/(ρ·A·C_d)),

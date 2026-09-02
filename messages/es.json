@@ -2696,5 +2696,16 @@
   "lab_canvas_wire_to": "Conectar a entrada {input}",
   "lab_ui_view_canvas": "Lienzo",
   "lab_ui_view_notebook": "Cuaderno",
-  "lab_ui_view_switch_aria": "Vista del espacio de trabajo"
+  "lab_ui_view_switch_aria": "Vista del espacio de trabajo",
+  "lab_goal_land_titan_title": "Aterrizar en Titán",
+  "lab_goal_lot_entry": "Titán se oculta bajo una atmósfera de nitrógeno una vez y media más densa que la de la Tierra en superficie, y se extiende muy alto — la sonda Huygens comenzó a sentirla a más de mil kilómetros de altitud. Entrando a 6 km/s, la sonda experimentó más de una docena de g detrás de su escudo térmico: una reentrada de verdad, en una luna.",
+  "lab_goal_lot_main_chute": "Desplegar un paracaídas de tamaño completo aquí y caes al paso de una caminata — lo que suena perfecto y es en realidad mortal. El aire de Titán es tan denso y su gravedad tan débil que bajo el paracaídas principal de 8,3 metros de Huygens la sonda derivaría durante muchas horas, y sus baterías tenían menos de tres. En Titán la paradoja del paracaídas funciona al revés: demasiada resistencia te mata lentamente.",
+  "lab_goal_lot_drogue": "Así que quince minutos después, Huygens soltó el gran paracaídas e intercambió por un drogue más pequeño que una sombrilla de playa. Incluso bajo ese trozo de tela, el aire de Titán te deja a menos de 5 m/s — un golpe firme contra el barro congelado. El aterrizaje más suave del sistema solar, conseguido con el paracaídas más pequeño.",
+  "lab_goal_lot_verdict": "Comprueba el contacto: el drogue te entrega más lentamente que el límite de diseño de la sonda. Titán pasa con un paracaídas del tamaño de la palma de la mano y sin motor — el único mundo además de la Tierra donde un aterrizaje suave es tan barato. El precio se pagó en otro sitio: siete años de viaje solo para llegar.",
+  "lab_conn_lot_why": "Huygens sigue siendo el aterrizaje más distante jamás realizado — 1.200 millones de kilómetros de la Tierra, transportada durante siete años bajo el vientre de Cassini, luego dejada sola en la bruma. Su descenso de 2 h 27 min devolvió las primeras imágenes de la superficie de Titán: cantos rodados redondeados de hielo de agua en un delta de río congelado. Una sonda alimentada por batería, un paracaídas pequeño, un mundo completamente nuevo.",
+  "lab_conn_lot_hook": "Huygens transmitió desde la superficie de Titán durante más de una hora — más tiempo del que sus diseñadores se atrevieron a esperar — hasta que Cassini se sumergió bajo el horizonte.",
+  "lab_conn_lot_huygens": "Huygens — el descenso en Titán, como un vuelo (ESA)",
+  "lab_conn_lot_cassini": "Cassini — el viaje de siete años a Saturno (NASA/ESA/ASI)",
+  "lab_conn_lot_explore": "Ver Saturno y Titán en el sistema solar 3D",
+  "lab_conn_lot_next": "Siguiente: los gigantes gaseosos — entrando en un mundo sin superficie en absoluto."
 }

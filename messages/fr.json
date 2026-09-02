@@ -2696,5 +2696,16 @@
   "lab_canvas_wire_to": "Connecter à l'entrée {input}",
   "lab_ui_view_canvas": "Canevas",
   "lab_ui_view_notebook": "Carnet",
-  "lab_ui_view_switch_aria": "Vue de l'espace de travail"
+  "lab_ui_view_switch_aria": "Vue de l'espace de travail",
+  "lab_goal_land_titan_title": "Atterrir sur Titan",
+  "lab_goal_lot_entry": "Titan se cache sous une atmosphère d'azote une fois et demie plus épaisse que celle de la Terre au sol, et elle s'étend haut — Huygens a commencé à la ressentir à plus d'un millier de kilomètres d'altitude. Arrivant à 6 km/s, la sonde a subi plus d'une dizaine de g derrière son bouclier : une vrai rentrée, sur une lune.",
+  "lab_goal_lot_main_chute": "Déployer un parachute de taille normale ici et vous chutez à allure de marche — ce qui semble parfait et est en réalité fatal. L'air de Titan est tellement dense et sa gravité tellement faible que sous le parachute principal de 8,3 mètres de Huygens, la sonde dériverait pendant plusieurs heures, et ses batteries n'en avaient moins de trois. Sur Titan, le paradoxe du parachute joue à l'envers : trop de traînée vous tue lentement.",
+  "lab_goal_lot_drogue": "Donc quinze minutes plus tard, Huygens a lâché le grand parachute et a basculé sur une voile-parachute plus petite qu'un parapluie de plage. Même sous ce bout de tissu, l'air de Titan vous fait descendre à moins de 5 m/s — un coup ferme dans la boue gelée. L'atterrissage le plus doux du système solaire, obtenu avec le plus petit parachute.",
+  "lab_goal_lot_verdict": "Vérifiez l'impact : la voile-parachute vous livre plus lentement que la limite de conception de la sonde. Titan réussit avec un parachute de la taille d'une main et aucun moteur — le seul monde en dehors de la Terre où un atterrissage en douceur est si bon marché. Le prix a été payé ailleurs : sept ans de traversée juste pour arriver.",
+  "lab_conn_lot_why": "Huygens reste l'atterrissage le plus lointain jamais effectué — 1,2 milliard de kilomètres de la Terre, transporté pendant sept ans sous le ventre de Cassini, puis largué seul dans la brume. Sa descente de 2 h 27 min a rapporté les premières images de la surface de Titan : des galets arrondis de glace d'eau dans un delta fluvial gelé. Une sonde alimentée par batterie, un petit parachute, un monde entièrement nouveau.",
+  "lab_conn_lot_hook": "Huygens a transmis depuis la surface de Titan pendant plus d'une heure — plus longtemps que ses concepteurs n'osaient l'espérer — jusqu'à ce que Cassini passe sous l'horizon.",
+  "lab_conn_lot_huygens": "Huygens — la descente sur Titan, en tant que vol (ESA)",
+  "lab_conn_lot_cassini": "Cassini — le voyage de sept ans vers Saturne (NASA/ESA/ASI)",
+  "lab_conn_lot_explore": "Voir Saturne et Titan dans le système solaire 3D",
+  "lab_conn_lot_next": "Suivant : les géantes gazeuses — entrer dans un monde sans surface du tout."
 }

@@ -20,8 +20,9 @@ interface PlanetsJson {
 }
 
 // Bodies in PLANET_STATS that are intentionally NOT in planets.json —
-// satellites added for the surface Tactical Scan (#382).
-const NON_PLANET_KEYS = new Set(['moon']);
+// satellites: the Moon for the surface Tactical Scan (#382), Titan for the
+// Huygens descent lesson (P3 · #527).
+const NON_PLANET_KEYS = new Set(['moon', 'titan']);
 
 function planetsJsonIds(): string[] {
   const data = JSON.parse(readFileSync('static/data/planets.json', 'utf8')) as PlanetsJson;

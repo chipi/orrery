@@ -2696,5 +2696,16 @@
   "lab_canvas_wire_to": "Conectar à entrada {input}",
   "lab_ui_view_canvas": "Canvas",
   "lab_ui_view_notebook": "Notebook",
-  "lab_ui_view_switch_aria": "Visualização do espaço de trabalho"
+  "lab_ui_view_switch_aria": "Visualização do espaço de trabalho",
+  "lab_goal_land_titan_title": "Pousar em Titã",
+  "lab_goal_lot_entry": "Titã se esconde sob uma atmosfera de nitrogênio uma vez e meia mais densa que a da Terra ao nível da superfície, e ela se estende bem alto — Huygens começou a sentir seus efeitos a mais de mil quilômetros de altitude. Entrando a 6 km/s, a sonda sofreu mais de uma dezena de g atrás de seu escudo: uma verdadeira reentrada, em uma lua.",
+  "lab_goal_lot_main_chute": "Abrir um paraquedas de tamanho normal aqui e você cai no ritmo de uma caminhada — o que parece perfeito e é na verdade fatal. O ar de Titã é tão denso e sua gravidade tão fraca que sob o paraquedas principal de 8,3 metros de Huygens a sonda à deriva duraria muitas horas, e suas baterias tinham menos de três. Em Titã o paradoxo do paraquedas funciona ao contrário: arrasto demais o mata lentamente.",
+  "lab_goal_lot_drogue": "Então quinze minutos depois, Huygens soltou o grande paraquedas e trocou por um drogue menor que um guarda-chuva de praia. Mesmo sob esse pedaço de tecido, o ar de Titã o coloca em velocidade menor que 5 m/s — um baque firme na lama congelada. O pouso mais suave do sistema solar, comprado com o menor paraquedas.",
+  "lab_goal_lot_verdict": "Confira o toque: o drogue o entrega mais lentamente que o limite de projeto da sonda. Titã passa com um paraquedas do tamanho da mão e sem motor — o único mundo além da Terra onde um pouso suave é tão barato. O preço foi pago em outro lugar: sete anos de viagem apenas para chegar.",
+  "lab_conn_lot_why": "Huygens continua sendo o pouso mais distante já realizado — 1,2 bilhão de quilômetros da Terra, carregada por sete anos sob o ventre de Cassini, depois solta sozinha na neblina. Sua descida de 2 h 27 min retornou as primeiras imagens da superfície de Titã: seixos arredondados de gelo de água em um delta de rio congelado. Uma sonda alimentada por bateria, um pequeno paraquedas, um mundo inteiramente novo.",
+  "lab_conn_lot_hook": "Huygens transmitiu da superfície de Titã por mais de uma hora — mais tempo do que seus projetistas ousaram esperar — até Cassini descer abaixo do horizonte.",
+  "lab_conn_lot_huygens": "Huygens — a descida em Titã, como um voo (ESA)",
+  "lab_conn_lot_cassini": "Cassini — os sete anos de jornada até Saturno (NASA/ESA/ASI)",
+  "lab_conn_lot_explore": "Veja Saturno e Titã no sistema solar 3D",
+  "lab_conn_lot_next": "Próximo: os gigantes gasosos — entrando em um mundo sem superfície alguma."
 }

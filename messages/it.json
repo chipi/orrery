@@ -2696,5 +2696,16 @@
   "lab_canvas_wire_to": "Collega all'ingresso {input}",
   "lab_ui_view_canvas": "Canvas",
   "lab_ui_view_notebook": "Notebook",
-  "lab_ui_view_switch_aria": "Vista dell'area di lavoro"
+  "lab_ui_view_switch_aria": "Vista dell'area di lavoro",
+  "lab_goal_land_titan_title": "Allunare su Titano",
+  "lab_goal_lot_entry": "Titano si nasconde sotto un'atmosfera d'azoto una volta e mezzo più densa di quella terrestre al suolo, e si estende in alto — Huygens iniziò a sentirla oltre mille chilometri di quota. Entrando a 6 km/s la sonda subì più di una decina di g dietro lo scudo: una vera rientrata, su una luna.",
+  "lab_goal_lot_main_chute": "Aprire qui un paracadute a dimensioni naturali e cadi al passo — sembra perfetto ed è in realtà mortale. L'aria di Titano è così densa e la gravità così debole che sotto il paracadute principale da 8,3 metri di Huygens la sonda driftererebbe per molte ore, e le batterie avevano meno di tre ore di autonomia. Su Titano il paradosso del paracadute funziona al contrario: troppa resistenza ti uccide lentamente.",
+  "lab_goal_lot_drogue": "Così dopo quindici minuti, Huygens mollò il grande paracadute e passò a un drogue più piccolo di un ombrello da spiaggia. Anche sotto quel pezzo di stoffa, l'aria di Titano ti deposita a meno di 5 m/s — un urto secco nel fango ghiacciato. L'allunaggio più dolce del sistema solare, pagato con il paracadute più piccolo.",
+  "lab_goal_lot_verdict": "Controlla l'impatto: il drogue ti consegna più lentamente del limite di progettazione della sonda. Titano passa con un paracadute delle dimensioni di una mano e nessun motore — l'unico mondo oltre la Terra dove un allunaggio dolce è così economico. Il prezzo fu pagato altrove: sette anni di crociera solo per arrivarci.",
+  "lab_conn_lot_why": "Huygens è ancora l'allunaggio più distante mai effettuato — 1,2 miliardi di chilometri dalla Terra, trasportato per sette anni sotto il ventre di Cassini, poi calato solo nella foschia. La sua discesa di 2 h 27 min ha restituito le prime immagini dalla superficie di Titano: ciottoli arrotondati di ghiaccio d'acqua in un delta fluviale ghiacciato. Una sonda alimentata a batterie, un piccolo paracadute, un intero nuovo mondo.",
+  "lab_conn_lot_hook": "Huygens ha trasmesso dalla superficie di Titano per più di un'ora — più a lungo di quanto i suoi progettisti osassero sperare — finché Cassini non scese sotto l'orizzonte.",
+  "lab_conn_lot_huygens": "Huygens — la discesa su Titano, come volo (ESA)",
+  "lab_conn_lot_cassini": "Cassini — i sette anni di viaggio verso Saturno (NASA/ESA/ASI)",
+  "lab_conn_lot_explore": "Vedi Saturno e Titano nel sistema solare 3D",
+  "lab_conn_lot_next": "Prossimo: i pianeti giganti — entrare in un mondo senza superficie."
 }

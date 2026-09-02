@@ -1752,7 +1752,18 @@
     "lab_canvas_wire_to": "इनपुट {input} में वायर करें",
     "lab_ui_view_canvas": "कैनवास",
     "lab_ui_view_notebook": "नोटबुक",
-    "lab_ui_view_switch_aria": "कार्यक्षेत्र दृश्य"
+    "lab_ui_view_switch_aria": "कार्यक्षेत्र दृश्य",
+    "lab_goal_land_titan_title": "टाइटन पर उतरें",
+    "lab_goal_lot_entry": "टाइटन एक नाइट्रोजन वायुमंडल के नीचे छिपा है जो पृथ्वी की सतह पर मोटाई में डेढ़ गुना है, और यह ऊंचाई में फैला है — ह्यूजेंस को हजार किलोमीटर ऊपर इसका अनुभव होने लगा। 6 किमी/सेकंड की गति से प्रवेश करते हुए, जांच अपनी ढाल के पीछे एक दर्जन से अधिक g का खिंचाव महसूस करती है: एक असली पुनः-प्रवेश, एक चंद्रमा पर।",
+    "lab_goal_lot_main_chute": "यहाँ पूर्ण आकार का पैराशूट खोलें और आप चलने की गति से गिरते हैं — जो बिल्कुल सही लगता है और वास्तव में घातक है। टाइटन की हवा इतनी गाढ़ी है और इसका गुरुत्वाकर्षण इतना कमजोर है कि ह्यूजेंस के 8.3-मीटर मुख्य पैराशूट के तहत जांच कई घंटों तक बहती रहेगी, जबकि इसकी बैटरी के पास तीन घंटे से भी कम समय था। टाइटन पर पैराशूट विरोधाभास दूसरी ओर से काटता है: बहुत अधिक ड्रैग आपको धीरे-धीरे मार देता है।",
+    "lab_goal_lot_drogue": "तो पंद्रह मिनट बाद, ह्यूजेंस बड़े पैराशूट को छोड़ देता है और एक ड्रोग पर स्विच करता है जो समुद्र तट की छतरी से छोटा है। टाइटन की हवा के नीचे भी उस कपड़े के टुकड़े के नीचे, आप 5 मी/सेकंड से कम गति पर उतरते हैं — जमी हुई कीचड़ में एक दृढ़ टक्कर। सौर मंडल में सबसे कोमल लैंडिंग, एक मुट्ठी भर पैराशूट की कीमत पर खरीदी गई।",
+    "lab_goal_lot_verdict": "टचडाउन की जांच करें: ड्रोग आपको जांच की डिजाइन सीमा से भी धीमी गति से पहुंचाता है। टाइटन एक मुट्ठी भर पैराशूट और कोई इंजन नहीं के साथ सफल होता है — पृथ्वी के अलावा एकमात्र दुनिया जहाँ नरम लैंडिंग इतनी सस्ती है। कीमत कहीं और दी गई थी: सिर्फ पहुंचने के लिए सात साल की क्रूजिंग।",
+    "lab_conn_lot_why": "ह्यूजेंस अभी भी कभी किया गया सबसे दूर का लैंडिंग है — पृथ्वी से 1.2 बिलियन किलोमीटर दूर, सात साल तक कैसिनी के पेट के नीचे ले जाया गया, फिर अकेले धुंध में गिराया गया। इसके 2 घंटे 27 मिनट की गतिविधि ने टाइटन की सतह से पहली तस्वीरें लौटाईं: एक जमी हुई नदी डेल्टा में पानी की बर्फ के गोल कंकड़। एक बैटरी से चलने वाली जांच, एक छोटा पैराशूट, एक पूरी नई दुनिया।",
+    "lab_conn_lot_hook": "ह्यूजेंस ने टाइटन की सतह से एक घंटे से अधिक समय तक प्रसारण किया — इसके डिजाइनरों ने जो सोचा था उससे अधिक लंबे समय तक — जब तक कैसिनी क्षितिज के नीचे नहीं चला गया।",
+    "lab_conn_lot_huygens": "ह्यूजेंस — टाइटन वंश, एक उड़ान के रूप में (ESA)",
+    "lab_conn_lot_cassini": "कैसिनी — शनि के लिए सात साल की यात्रा (NASA/ESA/ASI)",
+    "lab_conn_lot_explore": "3D सौर मंडल में शनि और टाइटन देखें",
+    "lab_conn_lot_next": "अगला: बृहत्‍ ग्रह — एक ऐसी दुनिया में प्रवेश करना जिसकी कोई सतह नहीं है।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3368,7 +3379,18 @@
     "lab_canvas_wire_to": "入力 {input} に配線",
     "lab_ui_view_canvas": "キャンバス",
     "lab_ui_view_notebook": "ノートブック",
-    "lab_ui_view_switch_aria": "ワークスペースビュー"
+    "lab_ui_view_switch_aria": "ワークスペースビュー",
+    "lab_goal_land_titan_title": "タイタンに着陸",
+    "lab_goal_lot_entry": "タイタンは地表で地球の1.5倍の厚さを持つ窒素大気に覆われており、その高さは著しい — ホイヘンスは1000キロメートル以上上空で既に感じ始めた。秒速6キロメートルで突入するプローブは、シールドの後ろで10以上のGを受けた。それは月での本格的な大気圏再突入だった。",
+    "lab_goal_lot_main_chute": "ここで本格的なパラシュートを開くと、歩行速度で落下する — 完璧に聞こえるが実は致命的だ。タイタンの空気は極めて濃厚で重力は極めて弱いため、ホイヘンスの8.3メートルのメインパラシュートの下では、プローブは何時間も漂流し、バッテリーはそのうちの3時間以下しか持たない。タイタンではパラシュートのパラドックスが逆向きに働く。過度なドラッグはゆっくりとあなたを殺す。",
+    "lab_goal_lot_drogue": "だから15分後、ホイヘンスは大型パラシュートを手放し、ビーチパラソルより小さいドローグに交換した。その布きれの下でも、タイタンの空気はあなたを秒速5メートル以下の速度で下ろす — 凍った泥への硬い衝撃だ。太陽系で最も穏やかな着陸であり、手のひらサイズのパラシュートで買われたものだ。",
+    "lab_goal_lot_verdict": "着地を確認する。ドローグはあなたをプローブの設計限界より遅く下ろす。タイタンはエンジンなしの手のひらサイズのパラシュートで合格した — 地球以外で軟着陸がこれほど安価な唯一の世界だ。その代償は他の場所で払われた。到着するまでに7年間の航行だ。",
+    "lab_conn_lot_why": "ホイヘンスは今でも最も遠い着陸地点である — 地球から12億キロメートル離れ、7年間カッシーニの下に搭載され、その後単独でもやの中に投下された。その2時間27分の降下は、タイタン表面からの最初の画像を返した。水氷の丸い小石が凍った河川三角州に。単一のバッテリー駆動プローブ、1枚の小さなパラシュート、まったく新しい世界だ。",
+    "lab_conn_lot_hook": "ホイヘンスはタイタン表面から1時間以上送信した — その設計者が期待するより長く — カッシーニが地平線の下に沈むまで。",
+    "lab_conn_lot_huygens": "ホイヘンス — タイタン降下フライト（ESA）",
+    "lab_conn_lot_cassini": "カッシーニ — 土星への7年間の航行（NASA/ESA/ASI）",
+    "lab_conn_lot_explore": "3D太陽系で土星とタイタンを見る",
+    "lab_conn_lot_next": "次へ：巨大惑星 — 表面を持たない世界へ突入する。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5164,7 +5186,18 @@
     "lab_canvas_wire_to": "ربط إلى المدخل {input}",
     "lab_ui_view_canvas": "لوحة الرسم",
     "lab_ui_view_notebook": "دفتر الملاحظات",
-    "lab_ui_view_switch_aria": "عرض مساحة العمل"
+    "lab_ui_view_switch_aria": "عرض مساحة العمل",
+    "lab_goal_land_titan_title": "الهبوط على تايتان",
+    "lab_goal_lot_entry": "تايتان مختفية تحت غلاف نيتروجيني أكثر كثافة بمقدار النصف من غلاف الأرض عند السطح، وامتداده شاسع — بدأت مسبّرة هويجنز تشعر به على ارتفاع يزيد على ألف كيلومتر. عند الدخول بسرعة 6 كم/ث، تحمّل المسبار أكثر من عشرة أضعاف الجاذبية خلف درعه: عملية دخول حقيقية، على قمر.",
+    "lab_goal_lot_main_chute": "إذا فتحت مظلة بحجم كامل هنا، ستسقط بسرعة المشي — وهذا يبدو مثاليًا لكنه قاتل فعلًا. هواء تايتان سميك جدًا وجاذبيتها ضعيفة جدًا بحيث أن المسبار تحت المظلة الرئيسية للمسبار هويجنز بقطر 8.3 متر سيطفو لساعات عديدة، وبطارياته كانت تحمل أقل من ثلاث ساعات. على تايتان، مفارقة المظلة تعكس اتجاهها: الكثير من المقاومة يقتلك ببطء.",
+    "lab_goal_lot_drogue": "إذن بعد خمس عشرة دقيقة، أطلقت هويجنز المظلة الكبيرة واستبدلتها بمظلة استقرار أصغر من مظلة الشاطئ. حتى تحت هذه القطعة الصغيرة من النسيج، هواء تايتان يهبط بك بأقل من 5 م/ث — ارتطام قوي في الوحل المتجمد. الهبوط الأكثر رقة في النظام الشمسي، ومشتراه باستخدام أصغر مظلة.",
+    "lab_goal_lot_verdict": "تحقق من الهبوط: مظلة الاستقرار تنزلك أبطأ من حد التصميم الآمن للمسبار. تايتان تنجح برمية مظلة بحجم اليد وبدون محرك — العالم الوحيد إلى جانب الأرض حيث يكون الهبوط الناعم رخيصًا بهذا الشكل. الثمن دُفع في مكان آخر: سبع سنوات من الإبحار لمجرد الوصول.",
+    "lab_conn_lot_why": "هويجنز لا تزال أبعد عملية هبوط تمت — 1.2 مليار كيلومتر من الأرض، حملتها لسبع سنوات تحت بطن كاسيني، ثم أُطلقت وحدها في الضباب. نزولها الذي استغرق ساعتين و27 دقيقة أعاد أول صور من سطح تايتان: حصى مستديرة من جليد الماء في دلتا نهر متجمدة. مسبار واحد يعمل بالبطارية، مظلة صغيرة واحدة، عالم جديد تمامًا.",
+    "lab_conn_lot_hook": "أرسلت هويجنز من سطح تايتان لأكثر من ساعة — أطول مما أمل مصمموها — حتى انخفضت كاسيني تحت الأفق.",
+    "lab_conn_lot_huygens": "هويجنز — نزول تايتان، كمهمة طيران (ESA)",
+    "lab_conn_lot_cassini": "كاسيني — الرحلة السباعية إلى زحل (NASA/ESA/ASI)",
+    "lab_conn_lot_explore": "شاهد زحل وتايتان في النظام الشمسي ثلاثي الأبعاد",
+    "lab_conn_lot_next": "التالي: الكواكب العملاقة — الدخول إلى عالم بلا سطح على الإطلاق."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -6782,7 +6815,18 @@
     "lab_canvas_wire_to": "{input} 입력으로 연결",
     "lab_ui_view_canvas": "캔버스",
     "lab_ui_view_notebook": "노트북",
-    "lab_ui_view_switch_aria": "작업 공간 보기"
+    "lab_ui_view_switch_aria": "작업 공간 보기",
+    "lab_goal_land_titan_title": "타이탄에 착륙",
+    "lab_goal_lot_entry": "타이탄은 지표면에서 지구보다 1.5배 두꺼운 질소 대기 아래 숨어 있으며, 그 높이는 상당하다 — 호이겐스호는 천 킬로미터 상공에서 이미 대기를 감지했다. 초속 6km로 진입하는 프로브는 방어막 뒤에서 10g 이상의 가속도를 받았다: 달에서의 진정한 재진입이었다.",
+    "lab_goal_lot_main_chute": "여기서 정규 크기의 낙하산을 펼치면 걷는 속도로 떨어진다 — 완벽해 보이지만 실제로는 치명적이다. 타이탄의 공기는 너무 짙고 중력은 너무 약해서 호이겐스호의 8.3미터 주낙하산 아래에서 프로브는 수 시간 동안 표류할 것이고, 배터리는 3시간도 채 못 간다. 타이탄에서 낙하산 역설은 반대로 작용한다: 과도한 항력이 당신을 천천히 죽인다.",
+    "lab_goal_lot_drogue": "15분 후, 호이겐스호는 큰 낙하산을 떨어뜨리고 해변 우산보다 작은 드로그 낙하산으로 교체했다. 그 작은 천 조각 아래에서도 타이탄의 공기는 당신을 초속 5미터 미만의 속도로 내린다 — 얼어붙은 진흙으로의 단단한 충격. 태양계에서 가장 완만한 착륙이며, 가장 작은 낙하산으로 얻어낸 것이다.",
+    "lab_goal_lot_verdict": "착륙을 확인하면: 드로그 낙하산이 프로브 설계 한계보다 느린 속도로 당신을 내린다. 타이탄은 손가락 크기의 낙하산과 엔진 없이 통과한다 — 지구 외에 연착륙이 이렇게 저렴한 유일한 천체다. 그 대가는 다른 곳에서 치러졌다: 도착하기까지 7년의 항해.",
+    "lab_conn_lot_why": "호이겐스호는 여전히 가장 먼 거리에서 이루어진 착륙이다 — 지구에서 12억 킬로미터, 7년 동안 카시니호의 배 아래에 실려 있다가 안개 속으로 혼자 떨어졌다. 2시간 27분의 강하 동안 타이탄 표면의 첫 사진을 돌려보냈다: 얼어붙은 강 삼각주에 있는 둥근 물 얼음 자갈들. 배터리로 구동되는 하나의 프로브, 작은 낙하산 하나, 완전히 새로운 세계.",
+    "lab_conn_lot_hook": "호이겐스호는 타이탄 표면에서 1시간 이상 신호를 보냈다 — 설계자들이 감히 바라던 것보다 더 오래 — 카시니호가 지평선 아래로 내려갈 때까지.",
+    "lab_conn_lot_huygens": "호이겐스호 — 타이탄 강하, 비행임무로서 (ESA)",
+    "lab_conn_lot_cassini": "카시니호 — 토성으로의 7년 항해 (NASA/ESA/ASI)",
+    "lab_conn_lot_explore": "3D 태양계에서 토성과 타이탄 보기",
+    "lab_conn_lot_next": "다음: 거대 행성들 — 표면이 전혀 없는 세계로 진입."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -8223,7 +8267,18 @@
     "lab_canvas_wire_to": "Mit Eingang {input} verbinden",
     "lab_ui_view_canvas": "Canvas",
     "lab_ui_view_notebook": "Notizbuch",
-    "lab_ui_view_switch_aria": "Arbeitsbereich-Ansicht"
+    "lab_ui_view_switch_aria": "Arbeitsbereich-Ansicht",
+    "lab_goal_land_titan_title": "Auf Titan landen",
+    "lab_goal_lot_entry": "Titan verbirgt sich unter einer Stickstoffatmosphäre, die an der Oberfläche anderthalbmal so dicht ist wie die der Erde, und sie reicht hoch hinauf — Huygens spürte sie noch über tausend Kilometer oben. Bei 6 km/s zog die Sonde hinter ihrem Hitzeschild über ein Dutzend g: ein echter Wiedereintritt, an einem Mond.",
+    "lab_goal_lot_main_chute": "Hier einen vollständigen Fallschirm öffnen und du fällst im Schrittempo — klingt perfekt und ist eigentlich tödlich. Titans Luft ist so dicht und seine Gravitation so schwach, dass die Sonde unter Huygens' 8,3-Meter-Hauptschirm viele Stunden treiben würde, doch die Batterien hielten weniger als drei. Auf Titan wirkt das Fallschirm-Paradoxon andersherum: zu viel Luftwiderstand tötet dich langsam.",
+    "lab_goal_lot_drogue": "Also ließen die Huygens nach fünfzehn Minuten den großen Schirm los und wechselten zu einem Drogue, kleiner als ein Strandschirm. Selbst unter diesem Stück Stoff landet man in Titans Luft mit unter 5 m/s — ein fester Aufprall auf gefrorenen Schlamm. Die sanfteste Landung im Sonnensystem, erkauft mit dem kleinsten Fallschirm.",
+    "lab_goal_lot_verdict": "Überprüfe die Landung: der Drogue setzt dich langsamer ab als die Designgrenze der Sonde. Titan besteht mit einem handtellergroßen Fallschirm und ohne Motor — die einzige Welt außer der Erde, wo eine sanfte Landung so günstig ist. Der Preis wurde anderswo bezahlt: sieben Jahre Flug nur zum Ankommen.",
+    "lab_conn_lot_why": "Huygens ist immer noch die entfernteste Landung, die je gemacht wurde — 1,2 Milliarden Kilometer von der Erde entfernt, sieben Jahre lang unter Cassinis Bauch mitgenommen, dann allein in den Dunst abgesetzt. Der 2 h 27 min lange Abstieg lieferte die ersten Bilder von Titans Oberfläche: abgerundete Kieselsteine aus Wassereis in einem gefrorenen Flussdelta. Eine batteriebetriebene Sonde, ein kleiner Fallschirm, eine ganze neue Welt.",
+    "lab_conn_lot_hook": "Huygens sendete von Titans Oberfläche über eine Stunde lang — länger als seine Konstrukteure erhofften — bis Cassini unter dem Horizont verschwand.",
+    "lab_conn_lot_huygens": "Huygens — der Titan-Abstieg, als Flug (ESA)",
+    "lab_conn_lot_cassini": "Cassini — die siebenjährige Fahrt zum Saturn (NASA/ESA/ASI)",
+    "lab_conn_lot_explore": "Sehe Saturn und Titan im 3D-Sonnensystem",
+    "lab_conn_lot_next": "Nächstes: die Riesenplaneten — Eintritt in eine Welt ohne Oberfläche."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -9603,7 +9658,18 @@
     "lab_canvas_wire_to": "Connecter à l'entrée {input}",
     "lab_ui_view_canvas": "Canevas",
     "lab_ui_view_notebook": "Carnet",
-    "lab_ui_view_switch_aria": "Vue de l'espace de travail"
+    "lab_ui_view_switch_aria": "Vue de l'espace de travail",
+    "lab_goal_land_titan_title": "Atterrir sur Titan",
+    "lab_goal_lot_entry": "Titan se cache sous une atmosphère d'azote une fois et demie plus épaisse que celle de la Terre au sol, et elle s'étend haut — Huygens a commencé à la ressentir à plus d'un millier de kilomètres d'altitude. Arrivant à 6 km/s, la sonde a subi plus d'une dizaine de g derrière son bouclier : une vrai rentrée, sur une lune.",
+    "lab_goal_lot_main_chute": "Déployer un parachute de taille normale ici et vous chutez à allure de marche — ce qui semble parfait et est en réalité fatal. L'air de Titan est tellement dense et sa gravité tellement faible que sous le parachute principal de 8,3 mètres de Huygens, la sonde dériverait pendant plusieurs heures, et ses batteries n'en avaient moins de trois. Sur Titan, le paradoxe du parachute joue à l'envers : trop de traînée vous tue lentement.",
+    "lab_goal_lot_drogue": "Donc quinze minutes plus tard, Huygens a lâché le grand parachute et a basculé sur une voile-parachute plus petite qu'un parapluie de plage. Même sous ce bout de tissu, l'air de Titan vous fait descendre à moins de 5 m/s — un coup ferme dans la boue gelée. L'atterrissage le plus doux du système solaire, obtenu avec le plus petit parachute.",
+    "lab_goal_lot_verdict": "Vérifiez l'impact : la voile-parachute vous livre plus lentement que la limite de conception de la sonde. Titan réussit avec un parachute de la taille d'une main et aucun moteur — le seul monde en dehors de la Terre où un atterrissage en douceur est si bon marché. Le prix a été payé ailleurs : sept ans de traversée juste pour arriver.",
+    "lab_conn_lot_why": "Huygens reste l'atterrissage le plus lointain jamais effectué — 1,2 milliard de kilomètres de la Terre, transporté pendant sept ans sous le ventre de Cassini, puis largué seul dans la brume. Sa descente de 2 h 27 min a rapporté les premières images de la surface de Titan : des galets arrondis de glace d'eau dans un delta fluvial gelé. Une sonde alimentée par batterie, un petit parachute, un monde entièrement nouveau.",
+    "lab_conn_lot_hook": "Huygens a transmis depuis la surface de Titan pendant plus d'une heure — plus longtemps que ses concepteurs n'osaient l'espérer — jusqu'à ce que Cassini passe sous l'horizon.",
+    "lab_conn_lot_huygens": "Huygens — la descente sur Titan, en tant que vol (ESA)",
+    "lab_conn_lot_cassini": "Cassini — le voyage de sept ans vers Saturne (NASA/ESA/ASI)",
+    "lab_conn_lot_explore": "Voir Saturne et Titan dans le système solaire 3D",
+    "lab_conn_lot_next": "Suivant : les géantes gazeuses — entrer dans un monde sans surface du tout."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -10950,7 +11016,18 @@
     "lab_canvas_wire_to": "Collega all'ingresso {input}",
     "lab_ui_view_canvas": "Canvas",
     "lab_ui_view_notebook": "Notebook",
-    "lab_ui_view_switch_aria": "Vista dell'area di lavoro"
+    "lab_ui_view_switch_aria": "Vista dell'area di lavoro",
+    "lab_goal_land_titan_title": "Allunare su Titano",
+    "lab_goal_lot_entry": "Titano si nasconde sotto un'atmosfera d'azoto una volta e mezzo più densa di quella terrestre al suolo, e si estende in alto — Huygens iniziò a sentirla oltre mille chilometri di quota. Entrando a 6 km/s la sonda subì più di una decina di g dietro lo scudo: una vera rientrata, su una luna.",
+    "lab_goal_lot_main_chute": "Aprire qui un paracadute a dimensioni naturali e cadi al passo — sembra perfetto ed è in realtà mortale. L'aria di Titano è così densa e la gravità così debole che sotto il paracadute principale da 8,3 metri di Huygens la sonda driftererebbe per molte ore, e le batterie avevano meno di tre ore di autonomia. Su Titano il paradosso del paracadute funziona al contrario: troppa resistenza ti uccide lentamente.",
+    "lab_goal_lot_drogue": "Così dopo quindici minuti, Huygens mollò il grande paracadute e passò a un drogue più piccolo di un ombrello da spiaggia. Anche sotto quel pezzo di stoffa, l'aria di Titano ti deposita a meno di 5 m/s — un urto secco nel fango ghiacciato. L'allunaggio più dolce del sistema solare, pagato con il paracadute più piccolo.",
+    "lab_goal_lot_verdict": "Controlla l'impatto: il drogue ti consegna più lentamente del limite di progettazione della sonda. Titano passa con un paracadute delle dimensioni di una mano e nessun motore — l'unico mondo oltre la Terra dove un allunaggio dolce è così economico. Il prezzo fu pagato altrove: sette anni di crociera solo per arrivarci.",
+    "lab_conn_lot_why": "Huygens è ancora l'allunaggio più distante mai effettuato — 1,2 miliardi di chilometri dalla Terra, trasportato per sette anni sotto il ventre di Cassini, poi calato solo nella foschia. La sua discesa di 2 h 27 min ha restituito le prime immagini dalla superficie di Titano: ciottoli arrotondati di ghiaccio d'acqua in un delta fluviale ghiacciato. Una sonda alimentata a batterie, un piccolo paracadute, un intero nuovo mondo.",
+    "lab_conn_lot_hook": "Huygens ha trasmesso dalla superficie di Titano per più di un'ora — più a lungo di quanto i suoi progettisti osassero sperare — finché Cassini non scese sotto l'orizzonte.",
+    "lab_conn_lot_huygens": "Huygens — la discesa su Titano, come volo (ESA)",
+    "lab_conn_lot_cassini": "Cassini — i sette anni di viaggio verso Saturno (NASA/ESA/ASI)",
+    "lab_conn_lot_explore": "Vedi Saturno e Titano nel sistema solare 3D",
+    "lab_conn_lot_next": "Prossimo: i pianeti giganti — entrare in un mondo senza superficie."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -12296,7 +12373,18 @@
     "lab_canvas_wire_to": "Conectar a entrada {input}",
     "lab_ui_view_canvas": "Lienzo",
     "lab_ui_view_notebook": "Cuaderno",
-    "lab_ui_view_switch_aria": "Vista del espacio de trabajo"
+    "lab_ui_view_switch_aria": "Vista del espacio de trabajo",
+    "lab_goal_land_titan_title": "Aterrizar en Titán",
+    "lab_goal_lot_entry": "Titán se oculta bajo una atmósfera de nitrógeno una vez y media más densa que la de la Tierra en superficie, y se extiende muy alto — la sonda Huygens comenzó a sentirla a más de mil kilómetros de altitud. Entrando a 6 km/s, la sonda experimentó más de una docena de g detrás de su escudo térmico: una reentrada de verdad, en una luna.",
+    "lab_goal_lot_main_chute": "Desplegar un paracaídas de tamaño completo aquí y caes al paso de una caminata — lo que suena perfecto y es en realidad mortal. El aire de Titán es tan denso y su gravedad tan débil que bajo el paracaídas principal de 8,3 metros de Huygens la sonda derivaría durante muchas horas, y sus baterías tenían menos de tres. En Titán la paradoja del paracaídas funciona al revés: demasiada resistencia te mata lentamente.",
+    "lab_goal_lot_drogue": "Así que quince minutos después, Huygens soltó el gran paracaídas e intercambió por un drogue más pequeño que una sombrilla de playa. Incluso bajo ese trozo de tela, el aire de Titán te deja a menos de 5 m/s — un golpe firme contra el barro congelado. El aterrizaje más suave del sistema solar, conseguido con el paracaídas más pequeño.",
+    "lab_goal_lot_verdict": "Comprueba el contacto: el drogue te entrega más lentamente que el límite de diseño de la sonda. Titán pasa con un paracaídas del tamaño de la palma de la mano y sin motor — el único mundo además de la Tierra donde un aterrizaje suave es tan barato. El precio se pagó en otro sitio: siete años de viaje solo para llegar.",
+    "lab_conn_lot_why": "Huygens sigue siendo el aterrizaje más distante jamás realizado — 1.200 millones de kilómetros de la Tierra, transportada durante siete años bajo el vientre de Cassini, luego dejada sola en la bruma. Su descenso de 2 h 27 min devolvió las primeras imágenes de la superficie de Titán: cantos rodados redondeados de hielo de agua en un delta de río congelado. Una sonda alimentada por batería, un paracaídas pequeño, un mundo completamente nuevo.",
+    "lab_conn_lot_hook": "Huygens transmitió desde la superficie de Titán durante más de una hora — más tiempo del que sus diseñadores se atrevieron a esperar — hasta que Cassini se sumergió bajo el horizonte.",
+    "lab_conn_lot_huygens": "Huygens — el descenso en Titán, como un vuelo (ESA)",
+    "lab_conn_lot_cassini": "Cassini — el viaje de siete años a Saturno (NASA/ESA/ASI)",
+    "lab_conn_lot_explore": "Ver Saturno y Titán en el sistema solar 3D",
+    "lab_conn_lot_next": "Siguiente: los gigantes gaseosos — entrando en un mundo sin superficie en absoluto."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -13651,7 +13739,18 @@
     "lab_canvas_wire_to": "Verbinden met invoer {input}",
     "lab_ui_view_canvas": "Canvas",
     "lab_ui_view_notebook": "Notitieboek",
-    "lab_ui_view_switch_aria": "Werkruimte-weergave"
+    "lab_ui_view_switch_aria": "Werkruimte-weergave",
+    "lab_goal_land_titan_title": "Landen op Titan",
+    "lab_goal_lot_entry": "Titan schuilt onder een stikstofatmosfeer anderhalf keer zo dik als die van de Aarde op het oppervlak, en hij reikt hoog — Huygens voelde hem al meer dan duizend kilometer hoger. Met 6 km/s haalde de sonde meer dan tien g achter haar hitteschild: een echte terugkeer, op een maan.",
+    "lab_goal_lot_main_chute": "Een volledige parachute hier openen en je daalt op wandelsnelheid — wat perfect klinkt en eigenlijk dodelijk is. Titans lucht is zo dik en zijn zwaartekracht zo zwak dat de sonde onder Huygens' 8,3 meter grote parachute uren zou drijven, maar haar batterijen hadden minder dan drie uur energie. Op Titan werkt de parachuteparadox andersom: te veel weerstand doodt je langzaam.",
+    "lab_goal_lot_drogue": "Dus vijftien minuten later liet Huygens de grote parachute los en schakelde over op een drogue kleiner dan een strandparasol. Zelfs onder dat stukje stof landde je op Titans lucht met minder dan 5 m/s — een stevige plof in bevroren modder. De zachtste landing in het zonnestelsel, bereikt met de kleinste parachute.",
+    "lab_goal_lot_verdict": "Controleer de landing: de drogue zet je langzamer neer dan de ontwerpgrens van de sonde. Titan slaagt met een handpalm-grote parachute en geen motor — de enige wereld behalve de Aarde waar een zachte landing zo goedkoop is. De prijs werd elders betaald: zeven jaar cruisen alleen al om er aan te komen.",
+    "lab_conn_lot_why": "Huygens is nog steeds de verste landing ooit gemaakt — 1,2 miljard kilometer van de Aarde, zeven jaar onder Cassini's buik vervoerd, toen alleen in de nevel losgelaten. Zijn 2 h 27 min afdaling leverde de eerste foto's van Titans oppervlak op: ronde ijskiezelstenen in een bevroren rivieredelta. Eén batterij-aangedreven sonde, één kleine parachute, een hele nieuwe wereld.",
+    "lab_conn_lot_hook": "Huygens zond meer dan een uur lang uit vanaf Titans oppervlak — langer dan zijn ontwerpers durfden hopen — totdat Cassini onder de horizon verdween.",
+    "lab_conn_lot_huygens": "Huygens — de Titan-afdaling, als een vlucht (ESA)",
+    "lab_conn_lot_cassini": "Cassini — de zeven jaar durende rit naar Saturnus (NASA/ESA/ASI)",
+    "lab_conn_lot_explore": "Bekijk Saturnus en Titan in het 3D-zonnestelsel",
+    "lab_conn_lot_next": "Volgende: de reuzenplaneten — een wereld zonder oppervlak betreden."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -15270,7 +15369,18 @@
     "lab_canvas_wire_to": "Подключить к входу {input}",
     "lab_ui_view_canvas": "Холст",
     "lab_ui_view_notebook": "Блокнот",
-    "lab_ui_view_switch_aria": "Представление рабочего пространства"
+    "lab_ui_view_switch_aria": "Представление рабочего пространства",
+    "lab_goal_land_titan_title": "Посадка на Титан",
+    "lab_goal_lot_entry": "Титан скрыт под азотной атмосферой, в полтора раза более плотной, чем земная на поверхности, и она простирается высоко — зонд Гюйгенса начал её ощущать более чем за тысячу километров высоты. Входя со скоростью 6 км/с, аппарат испытал перегрузки более десяти g за своим теплозащитным экраном — настоящий спуск с торможением у спутника.",
+    "lab_goal_lot_main_chute": "Раскрой полноразмерный парашют здесь, и ты падаешь со скоростью ходьбы — звучит идеально и на самом деле смертельно. Воздух Титана настолько плотен, а его гравитация настолько слаба, что под основным парашютом Гюйгенса 8,3 метра аппарат дрейфовал бы много часов, а батареи работали менее трёх часов. На Титане парадокс парашюта действует наоборот: слишком большое сопротивление убивает тебя медленно.",
+    "lab_goal_lot_drogue": "Так что через пятнадцать минут Гюйгенс отпустил большой парашют и переключился на буксировочный парашют размером меньше пляжного зонтика. Даже под этим лоскутом ткани воздух Титана снижает скорость менее чем до 5 м/с — твёрдый удар о замёрзшую грязь. Самая мягкая посадка в Солнечной системе, достигнутая самым маленьким парашютом.",
+    "lab_goal_lot_verdict": "Проверь касание: буксировочный парашют доставляет тебя медленнее, чем конструкционный предел зонда. Титан проходит с парашютом размером с ладонь и без двигателя — единственный мир кроме Земли, где мягкая посадка настолько дешева. Цена была уплачена в другом месте: семь лет плавания только чтобы прибыть.",
+    "lab_conn_lot_why": "Гюйгенс остаётся самой далёкой посадкой из когда-либо совершённых — 1,2 миллиарда километров от Земли, доставлен семь лет под брюхом Кассини, затем выброшен один в дымку. Его спуск в течение 2 ч 27 мин вернул первые снимки с поверхности Титана: округлые льдистые галька в замёрзшей речной дельте. Один работающий на батарейке зонд, один маленький парашют, целый новый мир.",
+    "lab_conn_lot_hook": "Гюйгенс передавал данные с поверхности Титана более часа — дольше, чем осмеливались надеяться его конструкторы — до тех пор, пока Кассини не опустился ниже линии горизонта.",
+    "lab_conn_lot_huygens": "Гюйгенс — спуск на Титан как полёт (ESA)",
+    "lab_conn_lot_cassini": "Кассини — семилетний полёт к Сатурну (NASA/ESA/ASI)",
+    "lab_conn_lot_explore": "Посмотри Сатурн и Титан в 3D модели Солнечной системы",
+    "lab_conn_lot_next": "Далее: газовые гиганты — вход в мир без поверхности вообще."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -16933,7 +17043,18 @@
     "lab_canvas_wire_to": "连接到输入 {input}",
     "lab_ui_view_canvas": "画布",
     "lab_ui_view_notebook": "笔记本",
-    "lab_ui_view_switch_aria": "工作区视图"
+    "lab_ui_view_switch_aria": "工作区视图",
+    "lab_goal_land_titan_title": "登陆泰坦",
+    "lab_goal_lot_entry": "泰坦被氮气大气笼罩，其表面密度是地球的1.5倍，高度延伸至1000多公里处——惠更斯号在那里开始感受到大气影响。以6公里/秒的速度进入，探测器在隔热罩后面承受了十多个g的加速度：这是真实的再入，发生在一颗卫星上。",
+    "lab_goal_lot_main_chute": "在这里打开全尺寸降落伞，你会以步行速度下降——听起来很完美，实际上是致命的。泰坦的空气太稠密，重力太弱，在惠更斯号的8.3米主降落伞下，探测器会漂浮数小时，但电池只能维持不到三小时。在泰坦上，降落伞悖论反了过来：过大的阻力会慢慢杀死你。",
+    "lab_goal_lot_drogue": "所以在下降15分钟后，惠更斯号释放了主降落伞，换上了一个比沙滩伞还小的小型降落伞。即使在这块布料下，泰坦的空气也会让你以不到5米/秒的速度着陆——对冰冻泥浆的有力撞击。太阳系中最温柔的着陆，用最小的降落伞买来的。",
+    "lab_goal_lot_verdict": "检查着陆情况：小型降落伞让你的速度低于探测器设计极限。泰坦通过了考验，仅用一个手掌大小的降落伞和无发动机就实现了软着陆——除地球外唯一能这么便宜实现软着陆的世界。代价在别处付出：七年的航行才能到达。",
+    "lab_conn_lot_why": "惠更斯号仍然是有史以来最远的着陆——距地球12亿公里，在卡西尼号的保护下航行七年，然后孤身一人坠入薄雾。它的2小时27分钟下降过程传回了泰坦表面的第一批图像：冰冻河三角洲中光滑的水冰鹅卵石。一个电池供电的探测器，一个小降落伞，一个全新的世界。",
+    "lab_conn_lot_hook": "惠更斯号从泰坦表面传输信号超过一小时——比设计者敢于期望的时间更长——直到卡西尼号滑过地平线。",
+    "lab_conn_lot_huygens": "惠更斯号——泰坦下降任务（欧航局）",
+    "lab_conn_lot_cassini": "卡西尼号——七年土星之旅（NASA/欧航局/意大利航天局）",
+    "lab_conn_lot_explore": "在3D太阳系中查看土星和泰坦",
+    "lab_conn_lot_next": "下一步：巨行星——进入一个完全没有固体表面的世界。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -18467,7 +18588,18 @@
     "lab_canvas_wire_to": "Повежи са улазом {input}",
     "lab_ui_view_canvas": "Платно",
     "lab_ui_view_notebook": "Свеска",
-    "lab_ui_view_switch_aria": "Приказ радног простора"
+    "lab_ui_view_switch_aria": "Приказ радног простора",
+    "lab_goal_land_titan_title": "Слетање на Титан",
+    "lab_goal_lot_entry": "Титан се крије под атмосфером азота која је за половину гушћа него Земљина на површини, и простире се високо — Хајгенс је почео да је осећа већ хиљаду километара горе. Улазећи брзином од 6 км/с, сонда је искусила више од дузина g-а иза свог штита: прави поновни улазак, на луни.",
+    "lab_goal_lot_main_chute": "Отвориш паду паде пуне величине овде и паду брзином хода — што звучи савршено и заправо је фатално. Титанов ваздух је толико гусц а његова гравитација толико слаба да би под Хајгенсовом главном паду од 8,3 метра сонда дрифтовала много сати, а батерије су имале мање од три. На Титану парадокс пауре делује другачије: превише отпора те споро убија.",
+    "lab_goal_lot_drogue": "Тако петнаест минута касније, Хајгенс пушта велику паду и замењује је мањом — мањом од пляжног кишобрана. Чак и под тим комадом ткива, Титанов ваздух те слаби на брже од 5 м/с — чврст удар у замрзнуто блато. Најнежније слетање у соларном систему, куплено са паду величине шаке.",
+    "lab_goal_lot_verdict": "Проверите дотак: мала паду те слаби спорије него лимит за који је сонда пројектована. Титан пролази са паду величине шаке и без мотора — једини свет поред Земље где је мекано слетање толико јефтино. Цена је плаћена другде: седам година крстарења само да дође.",
+    "lab_conn_lot_why": "Хајгенс је и даље најудаљеније слетање икад направљено — 1,2 milijarde километара од Земље, носен седам година под Касинијевим трбухом, онда пуштен сам у маглу. Његов силазни пут од 2 h 27 min вратио је прве слике са Титанове површине: заобљене камене водоледа у замрзнутој делти реке. Једна сонда на батерију, једна мала паду, читав нови свет.",
+    "lab_conn_lot_hook": "Хајгенс је преносио са Титанове површине више од сата — дуже него што су дизајнери смели надати — док Касини није пропао испод хоризонта.",
+    "lab_conn_lot_huygens": "Huygens — Титанов силазни пут, као лет (ESA)",
+    "lab_conn_lot_cassini": "Cassini — седамгодишња вожња до Сатурна (NASA/ESA/ASI)",
+    "lab_conn_lot_explore": "Видите Сатурн и Титан у 3D соларном систему",
+    "lab_conn_lot_next": "Следеће: џиновске планете — улазак у свет без површине."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -19820,6 +19952,17 @@
     "lab_canvas_wire_to": "Conectar à entrada {input}",
     "lab_ui_view_canvas": "Canvas",
     "lab_ui_view_notebook": "Notebook",
-    "lab_ui_view_switch_aria": "Visualização do espaço de trabalho"
+    "lab_ui_view_switch_aria": "Visualização do espaço de trabalho",
+    "lab_goal_land_titan_title": "Pousar em Titã",
+    "lab_goal_lot_entry": "Titã se esconde sob uma atmosfera de nitrogênio uma vez e meia mais densa que a da Terra ao nível da superfície, e ela se estende bem alto — Huygens começou a sentir seus efeitos a mais de mil quilômetros de altitude. Entrando a 6 km/s, a sonda sofreu mais de uma dezena de g atrás de seu escudo: uma verdadeira reentrada, em uma lua.",
+    "lab_goal_lot_main_chute": "Abrir um paraquedas de tamanho normal aqui e você cai no ritmo de uma caminhada — o que parece perfeito e é na verdade fatal. O ar de Titã é tão denso e sua gravidade tão fraca que sob o paraquedas principal de 8,3 metros de Huygens a sonda à deriva duraria muitas horas, e suas baterias tinham menos de três. Em Titã o paradoxo do paraquedas funciona ao contrário: arrasto demais o mata lentamente.",
+    "lab_goal_lot_drogue": "Então quinze minutos depois, Huygens soltou o grande paraquedas e trocou por um drogue menor que um guarda-chuva de praia. Mesmo sob esse pedaço de tecido, o ar de Titã o coloca em velocidade menor que 5 m/s — um baque firme na lama congelada. O pouso mais suave do sistema solar, comprado com o menor paraquedas.",
+    "lab_goal_lot_verdict": "Confira o toque: o drogue o entrega mais lentamente que o limite de projeto da sonda. Titã passa com um paraquedas do tamanho da mão e sem motor — o único mundo além da Terra onde um pouso suave é tão barato. O preço foi pago em outro lugar: sete anos de viagem apenas para chegar.",
+    "lab_conn_lot_why": "Huygens continua sendo o pouso mais distante já realizado — 1,2 bilhão de quilômetros da Terra, carregada por sete anos sob o ventre de Cassini, depois solta sozinha na neblina. Sua descida de 2 h 27 min retornou as primeiras imagens da superfície de Titã: seixos arredondados de gelo de água em um delta de rio congelado. Uma sonda alimentada por bateria, um pequeno paraquedas, um mundo inteiramente novo.",
+    "lab_conn_lot_hook": "Huygens transmitiu da superfície de Titã por mais de uma hora — mais tempo do que seus projetistas ousaram esperar — até Cassini descer abaixo do horizonte.",
+    "lab_conn_lot_huygens": "Huygens — a descida em Titã, como um voo (ESA)",
+    "lab_conn_lot_cassini": "Cassini — os sete anos de jornada até Saturno (NASA/ESA/ASI)",
+    "lab_conn_lot_explore": "Veja Saturno e Titã no sistema solar 3D",
+    "lab_conn_lot_next": "Próximo: os gigantes gasosos — entrando em um mundo sem superfície alguma."
   }
 }

@@ -462,6 +462,37 @@ describe('M-return · deorbit + entry heating', () => {
     expect(verdict.status.ok).toBe(true);
   });
 
+  it('A8 Titan: real entry g at a moon, main chute is TOO slow, the drogue lands it (P3 · #527)', () => {
+    const g = GOALS.get('land-on-titan')!;
+    const run = (i: number, extra: Record<string, unknown> = {}) => {
+      const step = g.path[i];
+      const def = REGISTRY.get(step.formulaId)!;
+      const inputs: Record<string, unknown> = {};
+      for (const inp of def.inputs) inputs[inp.key] = (inp as { default?: unknown }).default;
+      Object.assign(inputs, step.presetInputs ?? {}, extra);
+      return def.compute(inputs as never);
+    };
+    // Rung 1: a genuine re-entry at a moon — double-digit peak g.
+    const entry = run(0);
+    expect(entry.status.ok).toBe(true);
+    expect(entry.values.peakDecelG.value).toBeGreaterThan(10);
+    // Rung 2: the paradox — the MAIN chute sinks at walking pace (< 2 m/s).
+    const main = run(1);
+    expect(main.status.ok).toBe(true);
+    expect(main.values.vTerminal.value).toBeLessThan(2);
+    // Rung 3: the drogue still lands under the ~6 m/s design limit.
+    const drogue = run(2);
+    expect(drogue.status.ok).toBe(true);
+    expect(drogue.values.vTerminal.value).toBeGreaterThan(main.values.vTerminal.value);
+    expect(drogue.values.vTerminal.value).toBeLessThan(6);
+    // Rung 4 verdict: wired from the DROGUE rung, passes.
+    expect(g.path[3].wiresFrom).toEqual([
+      { fromStep: 2, output: 'vTerminal', toInput: 'terminalMs' },
+    ]);
+    const verdict = run(3, { terminalMs: drogue.values.vTerminal.value });
+    expect(verdict.status.ok).toBe(true);
+  });
+
   it('the M-return ladder runs deorbit → entry → corridor → parachute → splashdown (6 rungs, wire shifted)', () => {
     const g = GOALS.get('land-on-earth')!;
     expect(g.path.map((s) => s.formulaId)).toEqual([

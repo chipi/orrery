@@ -90,6 +90,23 @@ export const PLANET_STATS: Record<string, PlanetStats> = {
     surfaceKind: 'rocky',
     radiation: 'high',
   },
+  // Titan is a satellite (P3 · #527 — the Huygens descent lesson): the only moon
+  // with a substantial atmosphere — 1.45 bar of N₂/CH₄ at a tenth of Earth's
+  // gravity, which makes it the gentlest EDL target in the solar system. Winds
+  // near the surface measured by Huygens were ~0.3 m/s. The haze + Saturn's
+  // magnetosphere shield the surface.
+  titan: {
+    diameterKm: 5150,
+    diameterRatioEarth: 0.404,
+    surfaceGravityG: 0.138,
+    atmoBar: 1.45,
+    atmoComposition: 'N₂ ~95% · CH₄ ~5% · organic haze',
+    surfaceTempK: 94,
+    maxWindMs: 1,
+    escapeKms: 2.64,
+    surfaceKind: 'rocky-ice',
+    radiation: 'shielded',
+  },
   mars: {
     diameterKm: 6779,
     diameterRatioEarth: 0.53,

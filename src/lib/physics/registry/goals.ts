@@ -520,6 +520,60 @@ export const landOnVenus: Goal = {
 };
 
 /**
+ * A8 "land on Titan" (#527 · P3) — the Huygens lesson: the GENTLEST landing target in the
+ * solar system, and the sharpest version of the parachute paradox. Titan pairs a thick
+ * atmosphere (1.45 bar of cold N₂, surface density ~5.3 kg/m³ — over 4× Earth's) with a
+ * tenth of Earth's gravity, so a main parachute is TOO good: under Huygens' 8.3 m main
+ * the probe would sink at walking pace and its batteries would die long before the
+ * ground. So Huygens jettisoned the main after 15 minutes and rode a small drogue for
+ * 2¼ hours, touching down at ~4.6 m/s. Science-reviewed pending; kernel check
+ * (2026-09-03): entry 6.0 km/s @ 65°, H=40 km → ~15 g peak (Huygens recorded ~13 g);
+ * tv titan/320 kg/54 m² → 1.4 m/s; tv titan/320 kg/5 m² → 4.7 m/s.
+ */
+export const landOnTitan: Goal = {
+  id: 'land-on-titan',
+  titleKey: 'lab.goal.land-titan.title',
+  family: 'spaceflight',
+  tier: 6,
+  prereqs: ['land-on-venus'],
+  path: [
+    {
+      formulaId: 'entry-heating',
+      narrativeKey: 'lab.goal.lot.entry',
+      presetInputs: { entryVelocityKms: 6.0, flightPathAngleDeg: 65, scaleHeightKm: 40 },
+    },
+    {
+      formulaId: 'terminal-velocity',
+      narrativeKey: 'lab.goal.lot.main-chute',
+      presetInputs: { body: 'titan', massKg: 320, areaM2: 54 },
+    },
+    {
+      formulaId: 'terminal-velocity',
+      narrativeKey: 'lab.goal.lot.drogue',
+      presetInputs: { body: 'titan', massKg: 320, areaM2: 5 },
+    },
+    {
+      formulaId: 'soft-landing-check',
+      narrativeKey: 'lab.goal.lot.verdict',
+      // Huygens was built for a ~5–6 m/s impact; the drogue rung (index 2)
+      // delivers ~4.7 m/s — Titan passes under a HAND-SIZED chute, no retro.
+      presetInputs: { safeMs: 6 },
+      wiresFrom: [{ fromStep: 2, output: 'vTerminal', toInput: 'terminalMs' }],
+    },
+  ],
+  connection: {
+    whyKey: 'lab.conn.lot.why',
+    hookKey: 'lab.conn.lot.hook',
+    links: [
+      { labelKey: 'lab.conn.lot.huygens', href: '/fly?mission=huygens', agency: 'ESA' },
+      { labelKey: 'lab.conn.lot.cassini', href: '/fly?mission=cassini', agency: 'NASA' },
+      { labelKey: 'lab.conn.lot.explore', href: '/explore' },
+    ],
+    nextKey: 'lab.conn.lot.next',
+  },
+};
+
+/**
  * M6 "leave the solar system" — the last spaceflight rung, and a genuinely NEW physics:
  * hyperbolic escape, not another closed transfer. Solar escape velocity at 1 AU (~42 km/s)
  * → the heliocentric Δv beyond Earth's orbital motion to reach it (~12.3 km/s) → the
@@ -978,6 +1032,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [getToMars.id, getToMars],
   [landOnMars.id, landOnMars],
   [landOnVenus.id, landOnVenus],
+  [landOnTitan.id, landOnTitan],
   [leaveTheSolarSystem.id, leaveTheSolarSystem],
   [moonPhases.id, moonPhases],
   [chooseAnOrbit.id, chooseAnOrbit],

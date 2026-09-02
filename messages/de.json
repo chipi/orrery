@@ -2696,5 +2696,16 @@
   "lab_canvas_wire_to": "Mit Eingang {input} verbinden",
   "lab_ui_view_canvas": "Canvas",
   "lab_ui_view_notebook": "Notizbuch",
-  "lab_ui_view_switch_aria": "Arbeitsbereich-Ansicht"
+  "lab_ui_view_switch_aria": "Arbeitsbereich-Ansicht",
+  "lab_goal_land_titan_title": "Auf Titan landen",
+  "lab_goal_lot_entry": "Titan verbirgt sich unter einer Stickstoffatmosphäre, die an der Oberfläche anderthalbmal so dicht ist wie die der Erde, und sie reicht hoch hinauf — Huygens spürte sie noch über tausend Kilometer oben. Bei 6 km/s zog die Sonde hinter ihrem Hitzeschild über ein Dutzend g: ein echter Wiedereintritt, an einem Mond.",
+  "lab_goal_lot_main_chute": "Hier einen vollständigen Fallschirm öffnen und du fällst im Schrittempo — klingt perfekt und ist eigentlich tödlich. Titans Luft ist so dicht und seine Gravitation so schwach, dass die Sonde unter Huygens' 8,3-Meter-Hauptschirm viele Stunden treiben würde, doch die Batterien hielten weniger als drei. Auf Titan wirkt das Fallschirm-Paradoxon andersherum: zu viel Luftwiderstand tötet dich langsam.",
+  "lab_goal_lot_drogue": "Also ließen die Huygens nach fünfzehn Minuten den großen Schirm los und wechselten zu einem Drogue, kleiner als ein Strandschirm. Selbst unter diesem Stück Stoff landet man in Titans Luft mit unter 5 m/s — ein fester Aufprall auf gefrorenen Schlamm. Die sanfteste Landung im Sonnensystem, erkauft mit dem kleinsten Fallschirm.",
+  "lab_goal_lot_verdict": "Überprüfe die Landung: der Drogue setzt dich langsamer ab als die Designgrenze der Sonde. Titan besteht mit einem handtellergroßen Fallschirm und ohne Motor — die einzige Welt außer der Erde, wo eine sanfte Landung so günstig ist. Der Preis wurde anderswo bezahlt: sieben Jahre Flug nur zum Ankommen.",
+  "lab_conn_lot_why": "Huygens ist immer noch die entfernteste Landung, die je gemacht wurde — 1,2 Milliarden Kilometer von der Erde entfernt, sieben Jahre lang unter Cassinis Bauch mitgenommen, dann allein in den Dunst abgesetzt. Der 2 h 27 min lange Abstieg lieferte die ersten Bilder von Titans Oberfläche: abgerundete Kieselsteine aus Wassereis in einem gefrorenen Flussdelta. Eine batteriebetriebene Sonde, ein kleiner Fallschirm, eine ganze neue Welt.",
+  "lab_conn_lot_hook": "Huygens sendete von Titans Oberfläche über eine Stunde lang — länger als seine Konstrukteure erhofften — bis Cassini unter dem Horizont verschwand.",
+  "lab_conn_lot_huygens": "Huygens — der Titan-Abstieg, als Flug (ESA)",
+  "lab_conn_lot_cassini": "Cassini — die siebenjährige Fahrt zum Saturn (NASA/ESA/ASI)",
+  "lab_conn_lot_explore": "Sehe Saturn und Titan im 3D-Sonnensystem",
+  "lab_conn_lot_next": "Nächstes: die Riesenplaneten — Eintritt in eine Welt ohne Oberfläche."
 }

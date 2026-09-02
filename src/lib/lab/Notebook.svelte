@@ -20,16 +20,15 @@
   import { base } from '$app/paths';
   import type { Goal, FormulaResult } from '$lib/physics/spec';
   import { REGISTRY, defaultInputs } from '$lib/physics/registry';
-  import { recomputeNotebook, type Cell, type CellComputed, type CellWire } from './notebook';
+  import { recomputeNotebook, type CellComputed } from './notebook';
   import {
     encodeNotebook,
     decodeNotebook,
     encodeOrrlab,
     decodeOrrlab,
     MAX_ORRLAB_BYTES,
-    type CodecCell,
-    type DecodedOrrlabCell,
   } from './codec';
+  import type { LabState, LabCell } from './lab-state.svelte';
   import Card from './Card.svelte';
   import FlightMapCanvas from './FlightMapCanvas.svelte';
   import { getFlightMap } from './flight-maps';
@@ -38,77 +37,28 @@
     goal: Goal;
     equationHtml: Record<string, string>;
     t: (key: string, params?: Record<string, string | number>) => string;
+    /** The shared /lab card-state owner (S5 step 4) — Notebook is a projection. */
+    labState: LabState;
   };
 
-  let { goal, equationHtml, t }: Props = $props();
+  let { goal, equationHtml, t, labState }: Props = $props();
 
   const LS_KEY = 'orrlab:last';
 
-  /** UI cell = recompute Cell + presentational extras (id, narrative, removability). */
-  interface UICell extends Cell {
-    id: string;
-    wires: CellWire[];
-    selection?: Record<string, number | string>;
-    narrativeKey?: string;
-    removable: boolean;
-    note?: string; // free text from a loaded .orrlab file — must survive load→save
-  }
+  /** UICell is now the shared LabCell (lab-state.svelte.ts) — alias for the template. */
+  type UICell = LabCell;
 
-  // Ids: seed cells get deterministic `s{i}` (hydration-stable — SSR + client agree);
-  // cells created client-side (add / restore) get a uuid (only ever called in the
-  // browser — fromCodec runs in onMount, addCell on click).
+  // Ids for cells created in THIS view (addCell); seed/restore ids live in lab-state.
   const uid = () => crypto.randomUUID();
 
-  function seed(g: Goal): UICell[] {
-    return g.path.map((step, i) => {
-      const def = REGISTRY.get(step.formulaId)!;
-      // Goal presets override the formula defaults (only keys that are real inputs).
-      const inputKeys = new Set(def.inputs.map((f) => f.key));
-      const preset = Object.fromEntries(
-        Object.entries(step.presetInputs ?? {}).filter(([k]) => inputKeys.has(k)),
-      );
-      return {
-        id: `s${i}`,
-        formulaId: step.formulaId,
-        inputs: { ...defaultInputs(def), ...preset },
-        wires: (step.wiresFrom ?? []).map((w) => ({
-          fromIndex: w.fromStep,
-          output: w.output,
-          toInput: w.toInput,
-        })),
-        narrativeKey: step.narrativeKey,
-        removable: false,
-      };
-    });
-  }
-
-  /** A shared/restored notebook is a CUSTOM notebook — no goal narrative, all removable. */
-  function fromCodec(cells: DecodedOrrlabCell[]): UICell[] {
-    return cells.map((c) => ({
-      id: uid(),
-      formulaId: c.formulaId,
-      inputs: c.inputs,
-      wires: c.wires ?? [],
-      selection: c.selection,
-      removable: true,
-      note: c.note,
-    }));
-  }
-
-  function toCodec(cs: UICell[]): CodecCell[] {
-    return cs.map((c) => ({
-      formulaId: c.formulaId,
-      inputs: c.inputs,
-      selection: c.selection,
-      wires: c.wires,
-    }));
-  }
-
-  // SSR/prerender seeds from the goal so the static HTML matches first client render.
-  let cells = $state<UICell[]>(untrack(() => seed(goal)));
+  // The shared state owner holds cells/restored/restoredTitle (S5 step 4);
+  // these aliases keep the 900-line template unchanged. Deep mutations
+  // (slider edits) go through the $state proxy the getter returns; whole-list
+  // replacements go through labState.setCells / seedFromGoal / restore.
+  const cells = $derived(labState.cells);
+  const restored = $derived(labState.restored);
+  const restoredTitle = $derived(labState.restoredTitle);
   let lastGoalId = untrack(() => goal.id);
-  let restored = $state(false); // loaded from a ?nb= link → showing a custom notebook
-  let restoredTitle = $state(''); // title from a loaded .orrlab file — round-trips on re-save
 
   // The whole notebook recomputes on any input edit — trivially cheap for M1.
   const computed = $derived(recomputeNotebook(cells, REGISTRY));
@@ -125,8 +75,7 @@
     if (!shared) return;
     const decoded = decodeNotebook(shared, REGISTRY);
     if (decoded && decoded.length > 0) {
-      cells = fromCodec(decoded);
-      restored = true;
+      labState.restore(decoded);
     } else {
       // Fail honest, not silent: the visitor followed a share link and is seeing
       // the goal seed instead of the shared notebook — say so (same rail as file load).
@@ -139,9 +88,7 @@
     const gid = goal.id;
     if (gid !== lastGoalId) {
       lastGoalId = gid;
-      cells = seed(goal);
-      restored = false;
-      restoredTitle = '';
+      labState.seedFromGoal(goal); // clears restored/restoredTitle too
       if (browser && page.url.searchParams.has('nb')) {
         void goto(`${base}/lab`, { replaceState: true, keepFocus: true, noScroll: true });
       }
@@ -151,7 +98,7 @@
   // Auto-save the working notebook to localStorage (debounced) — survives refresh.
   let saveTimer: ReturnType<typeof setTimeout> | undefined;
   $effect(() => {
-    const encoded = encodeNotebook(toCodec(cells)); // tracks cells
+    const encoded = encodeNotebook(labState.toCodec()); // tracks cells via the getter
     if (!browser) return;
     clearTimeout(saveTimer);
     saveTimer = setTimeout(() => {
@@ -168,7 +115,7 @@
   let shareState = $state<'idle' | 'copied' | 'failed'>('idle');
   let shareTimer: ReturnType<typeof setTimeout> | undefined;
   async function share(): Promise<void> {
-    const encoded = encodeNotebook(toCodec(cells));
+    const encoded = encodeNotebook(labState.toCodec());
     await goto(`${base}/lab?nb=${encoded}`, {
       replaceState: true,
       keepFocus: true,
@@ -190,7 +137,7 @@
 
   function saveFile(): void {
     const title = restored ? restoredTitle || t('lab.ui.your-notebook') : t(goal.titleKey);
-    const doc = encodeOrrlab(cells, title);
+    const doc = encodeOrrlab(labState.toOrrlab(), title, { positions: labState.positions() });
     const blob = new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -213,9 +160,7 @@
     try {
       const decoded = decodeOrrlab(JSON.parse(await file.text()), REGISTRY);
       if (decoded && decoded.cells.length > 0) {
-        cells = fromCodec(decoded.cells);
-        restored = true;
-        restoredTitle = decoded.title;
+        labState.restore(decoded.cells, decoded.title);
       } else {
         loadError = t('lab.ui.load-error-invalid');
       }
@@ -247,6 +192,7 @@
 
   // ─── Mutations ─────────────────────────────────────────────────────────────
   function setInput(i: number, key: string, value: number | string): void {
+    // Deep write through the shared $state proxy — both views see it live.
     cells[i] = { ...cells[i], inputs: { ...cells[i].inputs, [key]: value } };
   }
 
@@ -254,23 +200,25 @@
   function addCell(): void {
     const def = REGISTRY.get(addId);
     if (!def) return;
-    cells = [
+    labState.setCells([
       ...cells,
       { id: uid(), formulaId: def.id, inputs: defaultInputs(def), wires: [], removable: true },
-    ];
+    ]);
   }
 
   // Removing cell i drops any wire sourced from it and shifts higher source indices
   // down by one, so index-based wires stay pointed at the right cells (review M-1).
   function removeCell(i: number): void {
-    cells = cells
-      .filter((_, idx) => idx !== i)
-      .map((c) => ({
-        ...c,
-        wires: c.wires
-          .filter((w) => w.fromIndex !== i)
-          .map((w) => ({ ...w, fromIndex: w.fromIndex > i ? w.fromIndex - 1 : w.fromIndex })),
-      }));
+    labState.setCells(
+      cells
+        .filter((_, idx) => idx !== i)
+        .map((c) => ({
+          ...c,
+          wires: c.wires
+            .filter((w) => w.fromIndex !== i)
+            .map((w) => ({ ...w, fromIndex: w.fromIndex > i ? w.fromIndex - 1 : w.fromIndex })),
+        })),
+    );
     // Keep ?focus pointing at the same card after the index shift (review MINOR-3):
     // the removed card clears focus; a card before it shifts down by one.
     const fi = focusIndex;

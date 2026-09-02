@@ -10,9 +10,11 @@
 -->
 <script lang="ts">
   import 'katex/dist/katex.min.css';
+  import { untrack } from 'svelte';
   import * as m from '$lib/paraglide/messages';
   import { GOALS } from '$lib/physics/registry/goals';
   import Notebook from '$lib/lab/Notebook.svelte';
+  import { createLabState } from '$lib/lab/lab-state.svelte';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
@@ -21,6 +23,12 @@
   // Goal picker — default to the M1 launch-a-rocket ladder.
   let selectedGoalId = $state('launch-a-rocket');
   const goal = $derived(GOALS.get(selectedGoalId) ?? [...GOALS.values()][0]);
+
+  // ONE card-state owner for all lab views (S5 step 4): Notebook (and Canvas,
+  // S5) are projections of this instance — switching views can't lose an edit.
+  // Seeded from the INITIAL goal deliberately (untrack): later goal switches
+  // re-seed through Notebook's goal-change effect, not by re-creating state.
+  const labState = createLabState(untrack(() => goal));
 
   // The registry uses dotted keys; paraglide ids are flat snake_case. Map
   // dot/hyphen → underscore and call the message fn (params for the few
@@ -68,7 +76,7 @@
 
     <!-- Notebook — owns cell state; a goal-change effect re-seeds, so no remount -->
     <div class="lab__card-wrapper">
-      <Notebook {goal} equationHtml={data.equationHtml} {t} />
+      <Notebook {goal} equationHtml={data.equationHtml} {t} {labState} />
     </div>
   </main>
 </div>

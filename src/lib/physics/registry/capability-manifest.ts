@@ -52,7 +52,7 @@ export const DESCENT_BODY_CAPABILITIES: Record<DescentBody, CapabilityRow> = {
   moon: { status: 'covered' },
   mars: { status: 'covered' },
   earth: { status: 'covered' },
-  venus: { status: 'pending', trackedBy: '#526' },
+  venus: { status: 'covered' }, // land-on-venus (P2 · #526)
   titan: { status: 'pending', trackedBy: '#527' },
   jupiter: { status: 'pending', trackedBy: '#528' },
   comet_67p: { status: 'pending', trackedBy: '#529' },

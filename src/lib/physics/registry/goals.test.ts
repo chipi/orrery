@@ -120,6 +120,7 @@ describe('goal registry · connection href integrity', () => {
   const moon = idSet('static/data/moon-sites.json'); // /moon?site=
   const mars = idSet('static/data/mars-sites.json'); // /mars?site=
   const programs = idSet('static/data/programs/index.json'); // /programs/<id>
+  const essays = new Set(readdirSync('static/data/essays').map((f) => f.replace(/\.json$/, ''))); // /essays/<slug>
   const earth = new Set(
     readdirSync('static/data/fleet/launch-site').map((f) => f.replace(/\.json$/, '')),
   ); // /earth?site=
@@ -174,6 +175,11 @@ describe('goal registry · connection href integrity', () => {
       if (path.startsWith('/programs/')) {
         const id = path.slice('/programs/'.length);
         if (!programs.has(id)) broken.push(`${goal}: unknown program '${id}' (${href})`);
+        continue;
+      }
+      if (path.startsWith('/essays/')) {
+        const slug = path.slice('/essays/'.length);
+        if (!essays.has(slug)) broken.push(`${goal}: unknown essay '${slug}' (${href})`);
         continue;
       }
       // A bare route link (no query) — e.g. observe goals sending you to /moon or /explore
@@ -417,6 +423,43 @@ describe('M-return · deorbit + entry heating', () => {
       scaleHeightKm: 7,
     });
     expect(steep.values.peakDecelG.value).toBeGreaterThan(r.values.peakDecelG.value * 1.9);
+  });
+
+  it('A8 Venus: steep entry brakes >100 g, corridor is wide, aeroshell-only lands survivably (P2 · #526)', () => {
+    const g = GOALS.get('land-on-venus')!;
+    expect(g.path.map((s) => s.formulaId)).toEqual([
+      'entry-heating',
+      'entry-corridor',
+      'terminal-velocity',
+      'terminal-velocity',
+      'soft-landing-check',
+    ]);
+    const run = (i: number, extra: Record<string, unknown> = {}) => {
+      const step = g.path[i];
+      const def = REGISTRY.get(step.formulaId)!;
+      const inputs: Record<string, unknown> = {};
+      for (const inp of def.inputs) inputs[inp.key] = (inp as { default?: unknown }).default;
+      Object.assign(inputs, step.presetInputs ?? {}, extra);
+      return def.compute(inputs as never);
+    };
+    // Rung 1: the Venera-class steep direct entry decelerates at over one hundred g.
+    const entry = run(0);
+    expect(entry.status.ok).toBe(true);
+    expect(entry.values.peakDecelG.value).toBeGreaterThan(100);
+    // Rung 2: dense air ⇒ a barn-door corridor (vs Mars's knife-edge).
+    const corridor = run(1);
+    expect(corridor.status.ok).toBe(true);
+    expect(corridor.values.corridorWidthDeg.value).toBeGreaterThan(45);
+    // Rung 4: aeroshell-only terminal speed — landable with NO chute, NO retro.
+    const aeroshell = run(3);
+    expect(aeroshell.status.ok).toBe(true);
+    expect(aeroshell.values.vTerminal.value).toBeLessThan(10);
+    // Rung 5 verdict: wired from the aeroshell rung, passes the ~15 m/s ring limit.
+    expect(g.path[4].wiresFrom).toEqual([
+      { fromStep: 3, output: 'vTerminal', toInput: 'terminalMs' },
+    ]);
+    const verdict = run(4, { terminalMs: aeroshell.values.vTerminal.value });
+    expect(verdict.status.ok).toBe(true);
   });
 
   it('the M-return ladder runs deorbit → entry → corridor → parachute → splashdown (6 rungs, wire shifted)', () => {

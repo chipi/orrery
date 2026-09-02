@@ -454,6 +454,72 @@ export const landOnMars: Goal = {
 };
 
 /**
+ * A8 "land on Venus" (#526 · P2) — the anti-Mars. Mars EDL is a knife-edge because the
+ * atmosphere is too THIN to stop you; Venus flips every constraint: an atmosphere ~90×
+ * Earth's surface pressure brakes an ~11.2 km/s direct entry (Venera-13) at over a
+ * hundred g (documented Venera entries flew typically 65–80° steep — Venera-8 at 77°,
+ * Venera-4 at 80° — and survived), the entry corridor is enormous, and drag alone lands
+ * you — Venera-13 JETTISONED its parachute at ~47–50 km and fell the last ~hour on its
+ * aeroshell disc, touching down near 7–8 m/s. The enemy is not the landing; it is the
+ * ~460 °C surface that limits a lander's life to about an hour (Venera-13: 127 min vs a
+ * 32-min design life). Science-reviewed 2026-09-02. Kernel check: entry-heating
+ * 11.2 km/s @ 65°, H=15.9 km → ~134 g peak; terminal-velocity venus/760 kg/3.2 m² →
+ * 6.6 m/s; corridor ~85° wide.
+ */
+export const landOnVenus: Goal = {
+  id: 'land-on-venus',
+  titleKey: 'lab.goal.land-venus.title',
+  family: 'spaceflight',
+  tier: 6,
+  prereqs: ['land-on-mars'],
+  path: [
+    {
+      formulaId: 'entry-heating',
+      narrativeKey: 'lab.goal.lov.entry',
+      presetInputs: { entryVelocityKms: 11.2, flightPathAngleDeg: 65, scaleHeightKm: 15.9 },
+    },
+    {
+      formulaId: 'entry-corridor',
+      narrativeKey: 'lab.goal.lov.corridor',
+      presetInputs: {
+        entryVelocityKms: 11.2,
+        flightPathAngleDeg: 65,
+        gLimit: 160,
+        scaleHeightKm: 15.9,
+      },
+    },
+    {
+      formulaId: 'terminal-velocity',
+      narrativeKey: 'lab.goal.lov.chute',
+      presetInputs: { body: 'venus', massKg: 760, areaM2: 24 },
+    },
+    {
+      formulaId: 'terminal-velocity',
+      narrativeKey: 'lab.goal.lov.aeroshell',
+      presetInputs: { body: 'venus', massKg: 760, areaM2: 3.2 },
+    },
+    {
+      formulaId: 'soft-landing-check',
+      narrativeKey: 'lab.goal.lov.verdict',
+      // Venera's shock-absorbing landing ring survived ~15 m/s; the aeroshell-only rung
+      // (index 3) delivers ~6.6 m/s — Venus PASSES with no retro and no chute at
+      // touchdown, the inverse of the M5 Mars failure.
+      presetInputs: { safeMs: 15 },
+      wiresFrom: [{ fromStep: 3, output: 'vTerminal', toInput: 'terminalMs' }],
+    },
+  ],
+  connection: {
+    whyKey: 'lab.conn.lov.why',
+    hookKey: 'lab.conn.lov.hook',
+    links: [
+      { labelKey: 'lab.conn.lov.sevenmin', href: '/essays/seven-minutes' },
+      { labelKey: 'lab.conn.lov.explore', href: '/explore' },
+    ],
+    nextKey: 'lab.conn.lov.next',
+  },
+};
+
+/**
  * M6 "leave the solar system" — the last spaceflight rung, and a genuinely NEW physics:
  * hyperbolic escape, not another closed transfer. Solar escape velocity at 1 AU (~42 km/s)
  * → the heliocentric Δv beyond Earth's orbital motion to reach it (~12.3 km/s) → the
@@ -911,6 +977,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [landOnTheMoon.id, landOnTheMoon],
   [getToMars.id, getToMars],
   [landOnMars.id, landOnMars],
+  [landOnVenus.id, landOnVenus],
   [leaveTheSolarSystem.id, leaveTheSolarSystem],
   [moonPhases.id, moonPhases],
   [chooseAnOrbit.id, chooseAnOrbit],

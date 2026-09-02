@@ -2658,5 +2658,16 @@
   "lab_conn_lss_voyager2craft": "Voyager 2 — die einzige Sonde, die an allen vier Gasriesen vorbeiflog",
   "lab_conn_lom_persrover": "Perseverance — der Sky-Crane-Rover, als Flughardware (NASA)",
   "lab_conn_lom_currover": "Curiosity — die erste Sky-Crane-Landung, als Flughardware (NASA)",
-  "lab_ui_load_error_link": "Konnte diesen freigegebenen Notebook-Link nicht laden — zeige stattdessen die Lektion an."
+  "lab_ui_load_error_link": "Konnte diesen freigegebenen Notebook-Link nicht laden — zeige stattdessen die Lektion an.",
+  "lab_goal_land_venus_title": "Auf der Venus landen",
+  "lab_goal_lov_entry": "Die Venus empfängt dich mit einer Atmosphäre etwa neunzigmal so dicht wie der Luftdruck an Erdoberfläche. Triffst du sie direkt aus interplanetarer Geschwindigkeit im steilen Winkel, bremst sie dich fast augenblicklich ab — die Verzögerung erreicht über hundert g. Keine Besatzung könnte das überstehen; die Venera-Lander waren wie U-Boote konstruiert und hielten es aus.",
+  "lab_goal_lov_corridor": "Der Eintrittskorridor zum Mars ist eine Messerschneide; hier ist er eine Scheunentür. Luft so dicht wird dich über einen riesigen Bereich von Eintrittswinkeln erfassen — die Venera-Sonden tauchten absichtlich steil ein, um die Passage durch den Ofen zu verkürzen. Erfasst zu werden ist auf der Venus nicht das Problem.",
+  "lab_goal_lov_chute": "Öffne einen Fallschirm in der unteren Atmosphäre der Venus und du schwebst im Schritttempo hinab — aber diese Sanftheit ist eine Falle: der Abstieg würde so lange dauern, dass die Hitze den Lander tötet, bevor es der Boden tut. Beobachte, was der gleiche Fallschirm, der auf dem Mars kaum half, hier bewirkt.",
+  "lab_goal_lov_aeroshell": "So ließ Venera seinen Fallschirm in etwa 47–50 km ab — bewusst — und fiel die letzte Stunde auf nichts als seine flache Aeroshell-Scheibe. In so dicker Luft landen Sie damit immer noch mit etwa 7 m/s, ungefähr der Geschwindigkeit eines Sprungs von einer Gartenmauer. Bremsluftreibung allein leistet, wofür der Mars Raketen brauchte.",
+  "lab_goal_lov_verdict": "Überprüfe die Landung: der reine Aeroshell-Absturz kommt langsamer an, als der Stoßring überstehen kann. Die Venus besteht ohne Bremstriebwerke und ohne Fallschirm an der Oberfläche — das genaue Gegenteil des Mars. Der wahre Feind wartet nach der Landung: bei etwa 460 °C hat der Lander etwa eine Stunde zu leben.",
+  "lab_conn_lov_why": "Acht sowjetische Venera-Lander erreichten die Oberfläche und funken zwischen 1970 und 1982 — und bis heute war jedes Raumschiff, das auf der Venus landete und funksprach, sowjetisch. Sie bewiesen die seltsamste EDL-Wahrheit im Sonnensystem: der höllische Planet ist der EINFACHE zum Landen. Seine Atmosphäre ist so dicht, dass Bremsluftreibung allein eine überlebbare Landung ermöglicht; der Ingenieurskrieg wird gegen 460 °C und 90 Atmosphären ausgefochten.",
+  "lab_conn_lov_hook": "Venera-13 sandte die ersten Farbfotografien der VenusOberfläche zurück — und hielt 127 Minuten im Ofen aus, fast das Vierfache ihrer 32-minütigen Auslegungslebensdauer.",
+  "lab_conn_lov_sevenmin": "Sieben Minuten — der Essay darüber, warum Landungen der schwierigste Teil sind",
+  "lab_conn_lov_explore": "Siehe die Venus im 3D-Sonnensystem",
+  "lab_conn_lov_next": "Nächstes: die Abstiegsliter setzt sich fort — Titan, die Gasriesen und die Mikrogravitations-Welten."
 }

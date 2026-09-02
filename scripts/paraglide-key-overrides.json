@@ -1714,7 +1714,10 @@
     "lab_conn_lss_voyager2craft": "Voyager 2 — चारों विशाल ग्रहों के पास से गुज़रने वाला एकमात्र यान",
     "lab_conn_lom_persrover": "Perseverance — स्काई-क्रेन रोवर, फ्लाइट हार्डवेयर के रूप में (NASA)",
     "lab_conn_lom_currover": "Curiosity — पहली स्काई-क्रेन लैंडिंग, फ्लाइट हार्डवेयर के रूप में (NASA)",
-    "lab_ui_load_error_link": "वह साझा नोटबुक लिंक लोड नहीं हो सका — इसके बजाय पाठ दिखाया जा रहा है।"
+    "lab_ui_load_error_link": "वह साझा नोटबुक लिंक लोड नहीं हो सका — इसके बजाय पाठ दिखाया जा रहा है।",
+    "lab_conn_lov_why": "आठ सोवियत वेनेरा लैंडर 1970 और 1982 के बीच शुक्र की सतह पर पहुंचे और संचार किया — और आज तक, शुक्र पर जो भी अंतरिक्ष यान उतरा और प्रसारित हुआ, वह सोवियत था। उन्होंने सौर मंडल में सबसे अजीब EDL सत्य साबित किया: यह नरकीय ग्रह उतरने के लिए आसान है। इसका वातावरण इतना सघन है कि अकेले ड्रैग से ही जीवित रहने योग्य着陆 संभव हो जाता है; इंजीनियरिंग का युद्ध 460 °C और 90 वायुमंडल के विरुद्ध लड़ा जाता है।",
+    "lab_conn_lov_hook": "वेनेरा-13 ने शुक्र की सतह की पहली रंगीन तस्वीरें भेजीं — और इस भट्टी में 127 मिनट तक टिका रहा, अपने 32-मिनट के डिज़ाइन जीवन से लगभग चार गुना ज्यादा।",
+    "lab_goal_lov_aeroshell": "तो वेनेरा ने लगभग 47–50 km पर अपना पैराशूट जानबूझकर छोड़ दिया — और अपनी सपाट एरोशेल डिस्क पर ही अंतिम घंटा गिरा। इतने सघन वायु में भी, अकेले ड्रैग आपको लगभग 7 m/s पर उतार देगा, जो बाग की दीवार से गिरने की गति जैसा है। ड्रैग अकेला ही वह काम करता है जो मंगल को रॉकेट की जरूरत थी।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3292,7 +3295,10 @@
     "lab_conn_lss_voyager2craft": "Voyager 2 — 4つの巨大惑星すべてを通過した唯一の探査機",
     "lab_conn_lom_persrover": "Perseverance — スカイクレーン方式のローバー、フライトハードウェアとして（NASA）",
     "lab_conn_lom_currover": "Curiosity — 初のスカイクレーン着陸、フライトハードウェアとして（NASA）",
-    "lab_ui_load_error_link": "共有ノートブックリンクを読み込めませんでした — レッスンを表示しています。"
+    "lab_ui_load_error_link": "共有ノートブックリンクを読み込めませんでした — レッスンを表示しています。",
+    "lab_conn_lov_why": "8機のソビエト・ヴェネラ着陸機が金星表面に到達し、1970年から1982年の間に通信を行いました。そして今日まで、金星に着陸して通信を行ったあらゆる宇宙機はソビエト製です。太陽系で最も奇妙なEDL真実を証明しました。地獄のような惑星は着陸が簡単なのです。その大気が非常に密集しているため、抗力だけで生存可能な着陸をもたらします。エンジニアリングの戦いは460 °Cと90気圧に対して戦われるのです。",
+    "lab_conn_lov_hook": "ヴェネラ13は金星表面の最初のカラー写真を送信し、設計寿命32分のほぼ4倍である127分間、その炎炉の中で持ちこたえました。",
+    "lab_goal_lov_aeroshell": "そのためヴェネラは約47～50 kmの高度でパラシュートを意図的に切り離し、最後の1時間を平坦なエアロシェルディスクだけで落下しました。このような濃密な空気中では、それでも時速約7 m/sで着陸します。庭の塀から落ちるのと同程度の速度です。抗力だけで火星がロケットを必要としていたことを成し遂げるのです。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5050,7 +5056,10 @@
     "lab_conn_lss_voyager2craft": "Voyager 2 — المركبة الوحيدة التي حلّقت قرب كل الكواكب العملاقة الأربعة",
     "lab_conn_lom_persrover": "Perseverance — مركبة الهبوط بالرافعة السماوية، كعتاد طيران (NASA)",
     "lab_conn_lom_currover": "Curiosity — أول هبوط بالرافعة السماوية، كعتاد طيران (NASA)",
-    "lab_ui_load_error_link": "تعذر تحميل رابط دفتر الملاحظات المشترك — يتم عرض الدرس بدلاً من ذلك."
+    "lab_ui_load_error_link": "تعذر تحميل رابط دفتر الملاحظات المشترك — يتم عرض الدرس بدلاً من ذلك.",
+    "lab_conn_lov_why": "وصل ثمانية هبوط سوفييتية فينيرا إلى السطح وأرسلت إشارات بين عامي 1970 و1982 — وحتى يومنا هذا، كل مركبة فضائية هبطت على الزهرة وأرسلت بيانات كانت سوفييتية. لقد أثبتت الحقيقة الأغرب للـ EDL في النظام الشمسي: الكوكب الجهنمي هو الأسهل للهبوط عليه. غلافه الجوي كثيف جداً بحيث أن المقاومة وحدها توفر هبوطاً قابلاً للبقاء؛ الحرب الهندسية تُخاض ضد 460 °C و90 ضغط جوي بدلاً من ذلك.",
+    "lab_conn_lov_hook": "أرسلت فينيرا-13 أول صور ملونة لسطح الزهرة — واستمرت 127 دقيقة في الفرن، تقريباً أربع مرات عمر تصميمها البالغ 32 دقيقة.",
+    "lab_goal_lov_aeroshell": "لذا أطلقت فينيرا مظلتها عند حوالي 47–50 كم — عن قصد — وسقطت الساعة الأخيرة على لا شيء سوى قرصها الديناميكي الهوائي المسطح. في هواء هذا الكثافة، حتى ذلك يهبطك بحوالي 7 م/ث، تقريباً سرعة السقوط من جدار حديقة. المقاومة وحدها تفعل ما احتاجت إليه المريخ بالصواريخ."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -6630,7 +6639,10 @@
     "lab_conn_lss_voyager2craft": "Voyager 2 — 네 거대 행성을 모두 근접 통과한 유일한 우주선",
     "lab_conn_lom_persrover": "Perseverance — 스카이크레인 로버, 비행 하드웨어 (NASA)",
     "lab_conn_lom_currover": "Curiosity — 최초의 스카이크레인 착륙, 비행 하드웨어 (NASA)",
-    "lab_ui_load_error_link": "공유된 노트북 링크를 불러올 수 없습니다 — 대신 레슨을 표시합니다."
+    "lab_ui_load_error_link": "공유된 노트북 링크를 불러올 수 없습니다 — 대신 레슨을 표시합니다.",
+    "lab_conn_lov_why": "8대의 소비에트 베네라 착륙선이 1970년부터 1982년 사이에 금성 표면에 도달했고 신호를 보냈으며 — 현재까지 금성에 착륙해 신호를 보낸 모든 우주선은 소비에트였습니다. 그들은 태양계에서 가장 기묘한 EDL 진실을 증명했습니다: 그 지옥 같은 행성이 착륙하기 쉬운 것입니다. 대기가 너무 조밀해서 항력만으로도 생존 가능한 착륙을 전달합니다. 엔지니어링 전쟁은 460 °C와 90기압에 맞서 벌어집니다.",
+    "lab_conn_lov_hook": "베네라-13은 금성 표면의 첫 번째 칼라 사진을 보냈으며 — 127분 동안 용광로 속에서 견뎠고, 이는 32분의 설계 수명의 거의 4배였습니다.",
+    "lab_goal_lov_aeroshell": "그래서 베네라는 약 47–50 km에서 낙하산을 버렸습니다 — 의도적으로 — 그리고 평평한 에어로셸 원판만으로 마지막 한 시간을 낙하했습니다. 이렇게 두꺼운 대기에서도, 그것만으로도 시속 약 7 m/s, 정도로 착륙하게 됩니다. 정원 담장에서 떨어지는 속도 정도입니다. 항력만으로 화성이 로켓이 필요했던 것을 합니다."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -8033,7 +8045,10 @@
     "lab_conn_lss_voyager2craft": "Voyager 2 — die einzige Sonde, die an allen vier Gasriesen vorbeiflog",
     "lab_conn_lom_persrover": "Perseverance — der Sky-Crane-Rover, als Flughardware (NASA)",
     "lab_conn_lom_currover": "Curiosity — die erste Sky-Crane-Landung, als Flughardware (NASA)",
-    "lab_ui_load_error_link": "Konnte diesen freigegebenen Notebook-Link nicht laden — zeige stattdessen die Lektion an."
+    "lab_ui_load_error_link": "Konnte diesen freigegebenen Notebook-Link nicht laden — zeige stattdessen die Lektion an.",
+    "lab_conn_lov_why": "Acht sowjetische Venera-Lander erreichten die Oberfläche und funken zwischen 1970 und 1982 — und bis heute war jedes Raumschiff, das auf der Venus landete und funksprach, sowjetisch. Sie bewiesen die seltsamste EDL-Wahrheit im Sonnensystem: der höllische Planet ist der EINFACHE zum Landen. Seine Atmosphäre ist so dicht, dass Bremsluftreibung allein eine überlebbare Landung ermöglicht; der Ingenieurskrieg wird gegen 460 °C und 90 Atmosphären ausgefochten.",
+    "lab_conn_lov_hook": "Venera-13 sandte die ersten Farbfotografien der VenusOberfläche zurück — und hielt 127 Minuten im Ofen aus, fast das Vierfache ihrer 32-minütigen Auslegungslebensdauer.",
+    "lab_goal_lov_aeroshell": "So ließ Venera seinen Fallschirm in etwa 47–50 km ab — bewusst — und fiel die letzte Stunde auf nichts als seine flache Aeroshell-Scheibe. In so dicker Luft landen Sie damit immer noch mit etwa 7 m/s, ungefähr der Geschwindigkeit eines Sprungs von einer Gartenmauer. Bremsluftreibung allein leistet, wofür der Mars Raketen brauchte."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -9375,7 +9390,10 @@
     "lab_conn_lss_voyager2craft": "Voyager 2 — le seul engin à avoir survolé les quatre planètes géantes",
     "lab_conn_lom_persrover": "Perseverance — le rover à grue aérienne, comme matériel de vol (NASA)",
     "lab_conn_lom_currover": "Curiosity — le premier atterrissage par grue aérienne, comme matériel de vol (NASA)",
-    "lab_ui_load_error_link": "Impossible de charger ce lien de notebook partagé — affichage de la leçon à la place."
+    "lab_ui_load_error_link": "Impossible de charger ce lien de notebook partagé — affichage de la leçon à la place.",
+    "lab_conn_lov_why": "Huit atterrisseurs soviétiques Venera ont atteint la surface et ont transmis entre 1970 et 1982 — et à ce jour, tous les engins spatiaux qui se sont posés sur Vénus et ont émis des signaux étaient soviétiques. Ils ont prouvé la vérité EDL la plus étrange du système solaire : la planète infernale est la FACILE à aborder. Son atmosphère est si dense que la traînée seule assure un atterrissage survivable ; la bataille technologique se mène contre 460 °C et 90 atmosphères à la place.",
+    "lab_conn_lov_hook": "Venera-13 a renvoyé les premières photographies en couleur de la surface vénusienne — et a tenu 127 minutes dans ce four, près de quatre fois sa durée de vie nominale de 32 minutes.",
+    "lab_goal_lov_aeroshell": "Venera a donc largué son parachute à environ 47–50 km — délibérément — et a chuté la dernière heure sur rien d'autre que son disque d'écran thermique plat. Dans un air aussi dense, même cela vous pose à environ 7 m/s, à peu près la vitesse d'une chute d'un muret de jardin. La traînée seule fait ce que Mars a eu besoin de fusées pour accomplir."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -10684,7 +10702,10 @@
     "lab_conn_lss_voyager2craft": "Voyager 2 — l'unico veicolo a sorvolare tutti e quattro i pianeti giganti",
     "lab_conn_lom_persrover": "Perseverance — il rover con sky-crane, come hardware di volo (NASA)",
     "lab_conn_lom_currover": "Curiosity — il primo atterraggio con sky-crane, come hardware di volo (NASA)",
-    "lab_ui_load_error_link": "Impossibile caricare il link del notebook condiviso — visualizzo la lezione."
+    "lab_ui_load_error_link": "Impossibile caricare il link del notebook condiviso — visualizzo la lezione.",
+    "lab_conn_lov_why": "Otto lander sovietici Venera raggiunsero la superficie e trasmisero tra il 1970 e il 1982 — e ancora oggi, ogni veicolo spaziale che ha atterrato su Venere e ha trasmesso era sovietico. Provarono la verità dell'EDL più strana del sistema solare: il pianeta infernale è quello FACILE su cui atterrare. La sua atmosfera è così densa che la resistenza aerodinamica da sola consegna un atterraggio sopravvivibile; la guerra dell'ingegneria si combatte contro 460 °C e 90 atmosfere invece.",
+    "lab_conn_lov_hook": "Venera-13 inviò le prime fotografie a colori della superficie venusiana — e durò 127 minuti nella fornace, quasi quattro volte la sua vita progettuale di 32 minuti.",
+    "lab_goal_lov_aeroshell": "Così Venera rilasciò il paracadute a circa 47–50 km — deliberatamente — e cadde l'ultima ora su nient'altro che il suo disco aeroshell piatto. In un'aria così densa, anche quello ti fa atterrare a circa 7 m/s, più o meno la velocità di cadere dal muro di un orto. La resistenza aerodinamica da sola fa quello che Marte aveva bisogno di razzi per fare."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -11992,7 +12013,10 @@
     "lab_conn_lss_voyager2craft": "Voyager 2 — la única nave que ha sobrevolado los cuatro planetas gigantes",
     "lab_conn_lom_persrover": "Perseverance — el róver del sistema sky-crane, como hardware de vuelo (NASA)",
     "lab_conn_lom_currover": "Curiosity — el primer aterrizaje con sky-crane, como hardware de vuelo (NASA)",
-    "lab_ui_load_error_link": "No se pudo cargar ese enlace del cuaderno compartido — se muestra la lección en su lugar."
+    "lab_ui_load_error_link": "No se pudo cargar ese enlace del cuaderno compartido — se muestra la lección en su lugar.",
+    "lab_conn_lov_why": "Ocho sondas soviéticas Venera alcanzaron la superficie y transmitieron entre 1970 y 1982 — y hasta hoy, todos los artefactos que han aterrizando en Venus y han transmitido fueron soviéticos. Probaron la verdad más extraña del EDL en el sistema solar: el planeta infernal es el FÁCIL para aterrizar. Su atmósfera es tan densa que la resistencia aerodinámica por sí sola proporciona un descenso tolerable; la batalla de ingeniería se libra contra 460 °C y 90 atmósferas en su lugar.",
+    "lab_conn_lov_hook": "Venera-13 envió las primeras fotografías en color de la superficie venusiana — y resistió 127 minutos en el horno, casi cuatro veces su vida útil de diseño de 32 minutos.",
+    "lab_goal_lov_aeroshell": "Así que Venera soltó su paracaídas alrededor de los 47–50 km — deliberadamente — y cayó la última hora sin nada más que su disco aeroshell plano. En aire tan denso, incluso eso te deposita a aproximadamente 7 m/s, más o menos la velocidad de caer desde una pared de jardín. La resistencia aerodinámica por sí sola hace lo que Marte necesitaba cohetes para lograr."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -13309,7 +13333,10 @@
     "lab_conn_lss_voyager2craft": "Voyager 2 — het enige vaartuig dat langs alle vier de reuzenplaneten vloog",
     "lab_conn_lom_persrover": "Perseverance — de sky-crane rover, als vluchthardware (NASA)",
     "lab_conn_lom_currover": "Curiosity — de eerste sky-crane landing, als vluchthardware (NASA)",
-    "lab_ui_load_error_link": "Kon die gedeelde notitieboekkoppeling niet laden — de les wordt in plaats daarvan weergegeven."
+    "lab_ui_load_error_link": "Kon die gedeelde notitieboekkoppeling niet laden — de les wordt in plaats daarvan weergegeven.",
+    "lab_conn_lov_why": "Acht Sovjetse Venera-landers bereikten het oppervlak en zonden signalen tussen 1970 en 1982 — en tot vandaag de dag was elke ruimtevaartuig die op Venus is geland en heeft uitgezonden van Sovjetse makelij. Ze bewezen de vreemdste EDL-waarheid in het zonnestelsel: de verschroeiende planeet is de GEMAKKELIJKE om op neer te komen. De atmosfeer is zo dicht dat weerstand alleen al een overlevingskans biedt; de technische strijd wordt gevoerd tegen 460 °C en 90 atmosferen in plaats daarvan.",
+    "lab_conn_lov_hook": "Venera-13 stuurde de eerste kleurenfoto's van het Venusoppervlak terug — en hield het 127 minuten vol in de ovengloed, bijna vier keer langer dan de ontwerpkwaliteit van 32 minuten.",
+    "lab_goal_lov_aeroshell": "Dus Venera liet zijn parachute op ongeveer 47–50 km los — opzettelijk — en viel de laatste uren op niets anders dan zijn platte aeroshell-schijf. In lucht zo dicht, zelfs dat zet je neer op ongeveer 7 m/s, ongeveer de snelheid van van een tuinmuur afvallen. Weerstand alleen doet wat Mars raketten voor nodig had."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -14890,7 +14917,10 @@
     "lab_conn_lss_voyager2craft": "Voyager 2 — единственный аппарат, пролетевший мимо всех четырёх планет-гигантов",
     "lab_conn_lom_persrover": "Perseverance — марсоход с посадкой на «небесном кране», как лётное оборудование (NASA)",
     "lab_conn_lom_currover": "Curiosity — первая посадка на «небесном кране», как лётное оборудование (NASA)",
-    "lab_ui_load_error_link": "Не удалось загрузить ссылку на общую записную книжку — вместо этого отображается урок."
+    "lab_ui_load_error_link": "Не удалось загрузить ссылку на общую записную книжку — вместо этого отображается урок.",
+    "lab_conn_lov_why": "Восемь советских посадочных аппаратов «Венера» достигли поверхности и передавали данные между 1970 и 1982 годами — и по сей день каждый космический аппарат, который приземлился на Венеру и передавал сигнал, был советским. Они доказали самую странную истину о входе, спуске и посадке в Солнечной системе: адский планета — это ЛЁГКАЯ цель для посадки. Её атмосфера настолько плотная, что одного аэродинамического торможения достаточно для мягкого приземления; инженерная борьба ведётся против 460 °C и 90 атмосфер вместо этого.",
+    "lab_conn_lov_hook": "«Венера-13» передала первые цветные фотографии поверхности Венеры — и проработала 127 минут в пекле, почти в четыре раза дольше своего расчётного ресурса в 32 минуты.",
+    "lab_goal_lov_aeroshell": "Поэтому «Венера» сбросила свой парашют примерно на высоте 47–50 км — намеренно — и падала последний час только на своём плоском диске аэродинамического корпуса. В воздухе такой плотности даже это приводит вас к скорости примерно 7 м/с, что соответствует падению со стены садового забора. Одного аэродинамического торможения достаточно для того, что на Марсе требовало ракетных двигателей."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -16515,7 +16545,10 @@
     "lab_conn_lss_voyager2craft": "Voyager 2——唯一飞越全部四颗巨行星的航天器",
     "lab_conn_lom_persrover": "毅力号——采用天空起重机着陆的火星车，作为飞行硬件（NASA）",
     "lab_conn_lom_currover": "好奇号——首次天空起重机着陆，作为飞行硬件（NASA）",
-    "lab_ui_load_error_link": "无法加载共享笔记本链接——改为显示课程内容。"
+    "lab_ui_load_error_link": "无法加载共享笔记本链接——改为显示课程内容。",
+    "lab_conn_lov_why": "八艘苏联金星着陆器在1970年至1982年间到达金星表面并传回数据——直到今天，每一个在金星登陆并传回数据的航天器都是苏联的。它们证明了太阳系中最奇特的EDL真理：这颗地狱般的行星是最容易着陆的。其大气密度如此之大，仅凭气动阻力就能带来可生存的着陆；工程挑战转而与460°C和90大气压对抗。",
+    "lab_conn_lov_hook": "金星13号传回了第一批金星表面彩色照片——并在这个熔炉中坚持了127分钟，几乎是其32分钟设计寿命的四倍。",
+    "lab_goal_lov_aeroshell": "因此金星号在约47–50公里高度故意抛弃了降落伞，仅凭其平坦的气动罩盘坠落最后一个小时。在如此稠密的大气中，即使这样的着陆速度也仅约7米/秒，相当于从花园围墙跳下的速度。仅凭阻力就完成了火星需要火箭才能做到的事。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -18011,7 +18044,10 @@
     "lab_conn_lss_voyager2craft": "Voyager 2 — једина летелица која је пролетела поред све четири џиновске планете",
     "lab_conn_lom_persrover": "Perseverance — ровер спуштен небеском дизалицом, као летна опрема (NASA)",
     "lab_conn_lom_currover": "Curiosity — прво слетање небеском дизалицом, као летна опрема (NASA)",
-    "lab_ui_load_error_link": "Нисам могао да учита ту везу дељене белешке — приказујем лекцију."
+    "lab_ui_load_error_link": "Нисам могао да учита ту везу дељене белешке — приказујем лекцију.",
+    "lab_conn_lov_why": "Осам совјетских Венера сондажа достигло је површину и емитовало између 1970. и 1982. — и до данас, сваки свемирски брод који је слетео на Венеру и преносио сигнал био је совјетски. Доказали су најчуднију EDL истину у сончевом систему: пакаоска планета је ЛАКША за слетање. Њена атмосфера је толико густа да сама отпор доноси издржив слет; инжењерска битка се води против 460 °C и 90 атмосфера уместо тога.",
+    "lab_conn_lov_hook": "Венера-13 је послала прве колорне фотографије венеријанске површине — и издржала је 127 минута у пећи, готово четири пута дуже од своега 32-минутног пројектног века.",
+    "lab_goal_lov_aeroshell": "Тако је Венера отпустила своју парашутску листу на око 47–50 km — намерно — и пала последњи час на ничем другом осим своје равне аеродинамичке диске. У ваздуху овако густом, чак и то те слеће на око 7 m/s, отприлике брзину скока са врта. Сам отпор чини оно што су Марсу требале ракете."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -19326,6 +19362,9 @@
     "lab_conn_lss_voyager2craft": "Voyager 2 — a única nave a passar pelos quatro planetas gigantes",
     "lab_conn_lom_persrover": "Perseverance — o rover do guindaste aéreo, como hardware de voo (NASA)",
     "lab_conn_lom_currover": "Curiosity — o primeiro pouso com guindaste aéreo, como hardware de voo (NASA)",
-    "lab_ui_load_error_link": "Não foi possível carregar esse link do notebook compartilhado — exibindo a lição em seu lugar."
+    "lab_ui_load_error_link": "Não foi possível carregar esse link do notebook compartilhado — exibindo a lição em seu lugar.",
+    "lab_conn_lov_why": "Oito sondas soviéticas Venera alcançaram a superfície e transmitiram entre 1970 e 1982 — e até hoje, toda nave que pousou em Vênus e transmitiu foi soviética. Provaram a verdade de EDL mais estranha do sistema solar: o planeta infernal é o FÁCIL para pousar. Sua atmosfera é tão densa que o arrasto sozinho proporciona um pouso sobrevivível; a batalha da engenharia é travada contra 460 °C e 90 atmosferas em vez disso.",
+    "lab_conn_lov_hook": "Venera-13 enviou as primeiras fotografias coloridas da superfície venusiana — e durou 127 minutos na fornalha, quase quatro vezes sua vida útil de 32 minutos.",
+    "lab_goal_lov_aeroshell": "Então Venera soltou seu paraquedas em cerca de 47–50 km — deliberadamente — e caiu a última hora apoiada apenas em seu disco de aeroshell plano. Em ar tão denso, até isso o faz pousar em aproximadamente 7 m/s, mais ou menos a velocidade de cair de um muro de jardim. O arrasto sozinho faz o que Marte precisou de foguetes para fazer."
   }
 }

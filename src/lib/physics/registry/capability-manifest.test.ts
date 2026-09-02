@@ -87,7 +87,6 @@ describe('capability manifest · built→goal gate (armed)', () => {
     expect(pendingCapabilities().sort()).toEqual(
       [
         'domain:propulsion (#531)',
-        'descent-body:venus (#526)',
         'descent-body:titan (#527)',
         'descent-body:jupiter (#528)',
         'descent-body:comet_67p (#529)',

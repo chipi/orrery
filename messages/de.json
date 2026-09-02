@@ -2707,5 +2707,15 @@
   "lab_conn_lot_huygens": "Huygens — der Titan-Abstieg, als Flug (ESA)",
   "lab_conn_lot_cassini": "Cassini — die siebenjährige Fahrt zum Saturn (NASA/ESA/ASI)",
   "lab_conn_lot_explore": "Sehe Saturn und Titan im 3D-Sonnensystem",
-  "lab_conn_lot_next": "Nächstes: die Riesenplaneten — Eintritt in eine Welt ohne Oberfläche."
+  "lab_conn_lot_next": "Nächstes: die Riesenplaneten — Eintritt in eine Welt ohne Oberfläche.",
+  "lab_goal_probe_jupiter_title": "Tauche in Jupiter ein",
+  "lab_goal_pj_corridor": "Jupiters Gravitation schleudert dich mit 47 km/s hinein – mehr als viermal schneller als jede Rückkehr zur Erde. Bei dieser Geschwindigkeit verengt sich das überlebbare Fenster der Eintrittswinkel brutal: ein Hauch zu steil und selbst eine wie eine Kanonenkugel gebaute Sonde wird zerquetscht; zu flach und du prallst ins All zurück, nachdem du die halbe Sonnensystem für nichts durchquert hast. Galileos Navigatoren mussten einen Korridor von nur drei Grad Breite treffen – ±1,5° Himmel.",
+  "lab_goal_pj_entry": "Dann kommt der Eintritt selbst – der schnellste atmosphärische Eintritt, den jemals ein Raumfahrzeug überstand. Die Sonde traf den Wasserstoff bei 47,4 km/s und bremste mit etwa 228 g ab, während ihr Hitzeschutzschild in unter zwei Minuten mehr als die Hälfte seiner Masse als glühendes Gas abwarf. Jede Faustregel für bemannte Eintritte gilt hier nicht; dies ist nur für Maschinen überlebbar.",
+  "lab_goal_pj_descent": "Und dann – nichts zum Landen. Unter seinem Fallschirm sank die Sonde einfach weiter, und der Himmel überraschte alle: Sie war in einen seltsam trockenen, wolkenarmen ‚Hot Spot' gefallen, mit etwa zehnmal weniger Wasser als die Lehrbücher vorhersagten. Es gibt keine Landestufe in dieser Lektion, weil es keine Landung gibt: Nach knapp 58 Minuten und ~23 bar Druck zerquetschte und verschlang Jupiter sie einfach. Die Daten der Sonde überlebten die Sonde.",
+  "lab_conn_pj_why": "Galileos Atmosphärensonde ist die einzige Eintrittsonde, die je in die Atmosphäre eines Riesenplaneten flog und Bericht erstattete. Ihre 76,6 Minuten Übertragung schrieben die Lehrbücher über Jupiters Winde, Wasser und Helium neu – und ihr Eintritt bleibt der extreme Maßstab des atmosphärischen Flugs: kein Objekt ist je schneller in eine Atmosphäre eingetreten und hat überlebt, um davon zu berichten.",
+  "lab_conn_pj_hook": "Das Signal der Sonde starb nach 57,6 Minuten – nicht durch einen Fehler, sondern weil Jupiters Hitze und Druck sie zerstörten. Ihr Mutterschiff lauschte, bis es nichts mehr zu hören gab.",
+  "lab_conn_pj_galileo": "Galileo — die Mission, die die Sonde trug (NASA)",
+  "lab_conn_pj_juno": "Juno — fliegt heute Jupiters Pole (NASA)",
+  "lab_conn_pj_explore": "Sieh Jupiter im 3D-Sonnensystem",
+  "lab_conn_pj_next": "Nächstes: die kleinsten Welten — Landung wo die Schwerkraft kaum existiert."
 }

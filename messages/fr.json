@@ -2707,5 +2707,15 @@
   "lab_conn_lot_huygens": "Huygens — la descente sur Titan, en tant que vol (ESA)",
   "lab_conn_lot_cassini": "Cassini — le voyage de sept ans vers Saturne (NASA/ESA/ASI)",
   "lab_conn_lot_explore": "Voir Saturne et Titan dans le système solaire 3D",
-  "lab_conn_lot_next": "Suivant : les géantes gazeuses — entrer dans un monde sans surface du tout."
+  "lab_conn_lot_next": "Suivant : les géantes gazeuses — entrer dans un monde sans surface du tout.",
+  "lab_goal_probe_jupiter_title": "Plonger dans Jupiter",
+  "lab_goal_pj_corridor": "La gravité de Jupiter vous précipite à 47 km/s — plus de quatre fois plus vite que tout retour vers la Terre. À cette vitesse, la bande d'angles d'entrée survivables se rétrécit brutalement : un rien trop raide et même une sonde construite comme un boulet de canon est écrasée ; trop rasante et vous ricchez dans l'espace après avoir traversé la moitié du système solaire pour rien. Les navigateurs de Galileo ont dû emprunter un corridor large de seulement trois degrés — ±1,5° de ciel.",
+  "lab_goal_pj_entry": "Vient ensuite l'entrée elle-même — l'entrée atmosphérique la plus rapide qu'ait jamais subie un engin. La sonde a rencontré l'hydrogène à 47,4 km/s et a décéléré à environ 228 g, son bouclier perdant plus de la moitié de sa masse en gaz incandescent en moins de deux minutes. Chaque règle empirique des entrées habitées s'effondre ici ; seules les machines peuvent survivre.",
+  "lab_goal_pj_descent": "Et puis — rien sur quoi atterrir. Sous son parachute, la sonde n'a fait que s'enfoncer, et le ciel a surpris tout le monde : elle était tombée dans une étrange 'zone chaude' sèche et pauvre en nuages, avec environ dix fois moins d'eau que ne le prédisaient les manuels. Il n'y a pas d'échelon d'atterrissage dans cette leçon car aucun atterrissage n'existe : après près de 58 minutes et ~23 bar de pression, Jupiter l'a simplement écrasée et avalée. Les données de la sonde lui ont survécu.",
+  "lab_conn_pj_why": "La sonde atmosphérique de Galileo est la seule sonde d'entrée à avoir jamais volé dans l'atmosphère d'une géante gazeuse et à avoir fait son rapport. Ses 57,6 minutes de transmission ont réécrit les manuels sur les vents, l'eau et l'hélium de Jupiter — et son entrée demeure le repère extrême du vol atmosphérique : aucun objet n'a jamais frappé une atmosphère plus vite et survécu pour en parler.",
+  "lab_conn_pj_hook": "Le signal de la sonde s'est éteint après 57,6 minutes — non par défaut, mais parce que la chaleur et la pression de Jupiter l'ont détruite. Son vaisseau mère a écouté jusqu'à ce qu'il n'y ait plus rien à entendre.",
+  "lab_conn_pj_galileo": "Galileo — la mission qui a transporté la sonde (NASA)",
+  "lab_conn_pj_juno": "Juno — survolant les pôles de Jupiter aujourd'hui (NASA)",
+  "lab_conn_pj_explore": "Voir Jupiter dans le système solaire en 3D",
+  "lab_conn_pj_next": "Suivant : les plus petits mondes — atterrir où la gravité existe à peine."
 }

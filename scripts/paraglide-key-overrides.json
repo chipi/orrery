@@ -1763,7 +1763,17 @@
     "lab_conn_lot_huygens": "ह्यूजेंस — टाइटन वंश, एक उड़ान के रूप में (ESA)",
     "lab_conn_lot_cassini": "कैसिनी — शनि के लिए सात साल की यात्रा (NASA/ESA/ASI)",
     "lab_conn_lot_explore": "3D सौर मंडल में शनि और टाइटन देखें",
-    "lab_conn_lot_next": "अगला: बृहत्‍ ग्रह — एक ऐसी दुनिया में प्रवेश करना जिसकी कोई सतह नहीं है।"
+    "lab_conn_lot_next": "अगला: बृहत्‍ ग्रह — एक ऐसी दुनिया में प्रवेश करना जिसकी कोई सतह नहीं है।",
+    "lab_goal_probe_jupiter_title": "बृहस्पति में गोता लगाएँ",
+    "lab_goal_pj_corridor": "बृहस्पति का गुरुत्वाकर्षण आपको 47 किमी/सेक में झटका देता है — पृथ्वी पर किसी भी वापसी से चार गुना से अधिक तेज। उस गति पर प्रवेश कोणों की जीवित रहने योग्य पट्टी क्रूरता से संकीर्ण हो जाती है: जरा सी ढलान बहुत तीव्र हो तो गोलीबारी की तरह बने एक जांच को भी कुचल दिया जाता है; बहुत उथला हो तो आप अंतरिक्ष में वापस फिसल जाते हैं, आधे सौर मंडल को पार करके कुछ नहीं पाते। गैलिलियो के नेविगेटरों को सिर्फ तीन डिग्री चौड़े एक गलियारे में से गुजरना था — आकाश के ±1.5°।",
+    "lab_goal_pj_entry": "फिर प्रवेश ही आता है — सबसे तेज वायुमंडलीय प्रवेश जो किसी अंतरिक्ष यान ने जीवित रहकर किया है। जांच ने 47.4 किमी/सेक पर हाइड्रोजन से मुलाकात की और लगभग 228 जी पर धीमी पड़ी, इसकी ढाल दो मिनट से भी कम में अपने आधे से अधिक द्रव्यमान को चमकती गैस के रूप में बहा दी। हर क्रू प्रवेश का सिद्धांत यहां मर जाता है; यह केवल मशीनों के लिए ही जीवित रहने योग्य है।",
+    "lab_goal_pj_descent": "और फिर — कहीं नहीं उतरना। अपने पैराशूट के तहत जांच सिर्फ डूबती गई, और आकाश ने सबको आश्चर्य में डाल दिया: यह एक विचित्र रूप से सूखे, बादलों से विरल 'गर्म स्थान' में गिर गई था, जिसमें पाठ्यपुस्तकें जितना अनुमान लगाती हैं उससे लगभग दस गुना कम पानी था। इस पाठ में कोई अवतरण पायदान नहीं है क्योंकि कोई अवतरण मौजूद नहीं है: लगभग 58 मिनट और ~23 बार दबाव के बाद, बृहस्पति ने इसे कुचलकर निगल लिया। जांच का डेटा जांच से अधिक जीवित रहा।",
+    "lab_conn_pj_why": "गैलिलियो की वायुमंडलीय जांच किसी विशाल ग्रह के वायुमंडल में उड़ान भरने और वापस संवाद करने वाली एकमात्र प्रवेश जांच है। इसके 57.6 मिनट के संचरण ने बृहस्पति की हवाओं, पानी और हीलियम पर पाठ्यपुस्तकों को दोबारा लिखा — और इसका प्रवेश वायुमंडलीय उड़ान का चरम बेंचमार्क बना हुआ है: कोई वस्तु कभी वायुमंडल से अधिक तेजी से नहीं टकराई और बोलने के लिए जीवित नहीं रही।",
+    "lab_conn_pj_hook": "जांच का संकेत 57.6 मिनट में मर गया — किसी खराबी से नहीं, बल्कि क्योंकि बृहस्पति की गर्मी और दबाव ने इसे नष्ट कर दिया। इसकी मातृ पोत तब तक सुनता रहा जब तक सुनने के लिए कुछ नहीं रहा।",
+    "lab_conn_pj_galileo": "गैलीलियो — वह मिशन जो जांच ले गया (NASA)",
+    "lab_conn_pj_juno": "जूनो — आज बृहस्पति के ध्रुवों पर उड़ रहा है (NASA)",
+    "lab_conn_pj_explore": "3D सौर मंडल में बृहस्पति देखें",
+    "lab_conn_pj_next": "अगला: सबसे छोटी दुनिया — जहाँ गुरुत्वाकर्षण मुश्किल से मौजूद है, वहाँ उतरना।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3390,7 +3400,17 @@
     "lab_conn_lot_huygens": "ホイヘンス — タイタン降下フライト（ESA）",
     "lab_conn_lot_cassini": "カッシーニ — 土星への7年間の航行（NASA/ESA/ASI）",
     "lab_conn_lot_explore": "3D太陽系で土星とタイタンを見る",
-    "lab_conn_lot_next": "次へ：巨大惑星 — 表面を持たない世界へ突入する。"
+    "lab_conn_lot_next": "次へ：巨大惑星 — 表面を持たない世界へ突入する。",
+    "lab_goal_probe_jupiter_title": "木星への突入",
+    "lab_goal_pj_corridor": "木星の重力があなたを秒速47km——地球への帰還時より4倍以上速い速度で叩き込みます。その速度では生存可能な突入角の幅は極めて狭くなります：少し急すぎると砲弾のように堅く造られたプローブでさえ潰されてしまいます。浅すぎると太陽系の半分を横切って何も得られずに宇宙へスキップしてしまいます。ガリレオの航法士たちは幅たった3度の回廊——空の±1.5°を縫わなければなりませんでした。",
+    "lab_goal_pj_entry": "その後は突入本体です——あらゆる航宙機が生き残った最速の大気突入。プローブは秒速47.4kmで水素に衝突し、約228gで減速しました。その熱防盾は2分以内に質量の半分以上が発光ガスとして剥がれ落ちました。有人突入のあらゆる経験則がここでは通用しません。これは機械だけが生き残ることができるのです。",
+    "lab_goal_pj_descent": "その後——着陸する場所がありません。パラシュートの下でプローブはただ沈み続け、空は予想外でした：奇妙に乾いた、雲の少ない『ホットスポット』に落ち込んでいたのです。教科書で予測されたものより約10倍少ない水量でした。着陸する場所が存在しないため、このレッスンに着陸のステップはありません：約58分間、~23気圧の圧力の後、木星はそれを単に潰して飲み込みました。プローブのデータはプローブ自体より長く生き残りました。",
+    "lab_conn_pj_why": "ガリレオの大気プローブは、巨大惑星の大気圏に突入して報告した唯一の突入プローブです。その57.6分間の送信は木星の風、水、ヘリウムに関する教科書を書き換えました——その突入は大気飛行の極端なベンチマークのままです：いかなる物体も大気に最速で衝突して生き残り、語った者はいません。",
+    "lab_conn_pj_hook": "プローブの信号は57.6分で途絶えました——障害からではなく、木星の熱と圧力がそれを破壊したからです。その母船は聞くべき何もなくなるまで耳を傾けていました。",
+    "lab_conn_pj_galileo": "ガリレオ — 探査機を運んだミッション（NASA）",
+    "lab_conn_pj_juno": "ジュノー — 今日、木星の極を飛行中（NASA）",
+    "lab_conn_pj_explore": "3D太陽系で木星を見る",
+    "lab_conn_pj_next": "次へ：最小の世界 — 重力がほぼ存在しない場所への着陸。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5197,7 +5217,17 @@
     "lab_conn_lot_huygens": "هويجنز — نزول تايتان، كمهمة طيران (ESA)",
     "lab_conn_lot_cassini": "كاسيني — الرحلة السباعية إلى زحل (NASA/ESA/ASI)",
     "lab_conn_lot_explore": "شاهد زحل وتايتان في النظام الشمسي ثلاثي الأبعاد",
-    "lab_conn_lot_next": "التالي: الكواكب العملاقة — الدخول إلى عالم بلا سطح على الإطلاق."
+    "lab_conn_lot_next": "التالي: الكواكب العملاقة — الدخول إلى عالم بلا سطح على الإطلاق.",
+    "lab_goal_probe_jupiter_title": "الغوص نحو المشتري",
+    "lab_goal_pj_corridor": "تجاذب المشتري يُطلقك بسرعة 47 كم/ث — أكثر من أربع مرات سرعة أي عودة إلى الأرض. وبهذه السرعة يضيق مجال زوايا الدخول الآمن بقسوة: انحدار شديد قليلاً وحتى المسبار المبني كقذيفة مدفع سيتحطم؛ انحدار ضحل قليلاً وستزحلق إلى الفضاء بعد عبور نصف النظام الشمسي دون جدوى. كان على ملاحي جاليليو أن يسيروا في ممر بعرض ثلاث درجات فقط — ±1.5° من السماء.",
+    "lab_goal_pj_entry": "ثم يأتي الدخول ذاته — أسرع دخول غلاف جوي نجت فيه أي مركبة. التقى المسبار الهيدروجين بسرعة 47.4 كم/ث وتباطأ بحوالي 228 جم، حيث ذاب درعه أكثر من نصف كتلته كغاز مُتوهج في أقل من دقيقتين. كل قواعد الدخول المأهول بالسكان تنهار هنا؛ هذا قابل للبقاء من قبل الآلات وحدها.",
+    "lab_goal_pj_descent": "ثم — لا شيء للهبوط عليه. تحت مظلته ظل المسبار يغوص، وفاجأت السماء الجميع: فقد سقط في 'بقعة ساخنة' غريبة الأطوار، قليلة الغيوم نسبياً، بها حوالي عُشر كمية الماء المتوقعة. لا توجد خطوة هبوط نهائية في هذا الدرس لأن لا وجود لأي هبوط: بعد ما يقرب من 58 دقيقة و~23 بار من الضغط، ببساطة حطمها المشتري وابتلاها. بقيت بيانات المسبار تعيش بعد موت المسبار.",
+    "lab_conn_pj_why": "مسبار جاليليو الغلافي هو الوحيد الذي حلق في غلاف كوكب عملاق وأرسل البيانات. أعادت 57.6 دقيقة من إرساله كتابة الكتب المدرسية عن الرياح والماء والهيليوم على المشتري — ودخوله يبقى معيار الحد الأقصى للرحلة الغلافية: لم يصطدم أي جسم بغلاف جوي بسرعة أعلى ونجا ليروي قصته.",
+    "lab_conn_pj_hook": "انقطع إرسال المسبار بعد 57.6 دقيقة — لا من عطل، بل لأن حرارة وضغط المشتري دمّراه. استمعت سفينته الأم حتى لم يعد هناك ما تسمعه.",
+    "lab_conn_pj_galileo": "غاليليو — البعثة التي حملت المسبار (ناسا)",
+    "lab_conn_pj_juno": "جونو — تحلق فوق أقطاب المشتري اليوم (ناسا)",
+    "lab_conn_pj_explore": "شاهد المشتري في النظام الشمسي ثلاثي الأبعاد",
+    "lab_conn_pj_next": "التالي: أصغر العوالم — الهبوط حيث الجاذبية كاد تكاد لا تكون موجودة."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -6826,7 +6856,17 @@
     "lab_conn_lot_huygens": "호이겐스호 — 타이탄 강하, 비행임무로서 (ESA)",
     "lab_conn_lot_cassini": "카시니호 — 토성으로의 7년 항해 (NASA/ESA/ASI)",
     "lab_conn_lot_explore": "3D 태양계에서 토성과 타이탄 보기",
-    "lab_conn_lot_next": "다음: 거대 행성들 — 표면이 전혀 없는 세계로 진입."
+    "lab_conn_lot_next": "다음: 거대 행성들 — 표면이 전혀 없는 세계로 진입.",
+    "lab_goal_probe_jupiter_title": "목성 탐사",
+    "lab_goal_pj_corridor": "목성의 중력이 초속 47km의 속도로 당신을 끌어당깁니다 — 지구로의 귀환보다 4배 이상 빠릅니다. 이 속도에서 생존 가능한 진입각의 범위는 극도로 좁아집니다: 각도가 조금만 가파르면 포탄처럼 만든 탐사선도 압축되고, 너무 완만하면 태양계 반을 가로질러 우주로 튕겨 나갑니다. 갈릴레오의 항법사들은 너비 3도에 불과한 통로 — ±1.5°의 하늘을 정확히 통과해야 했습니다.",
+    "lab_goal_pj_entry": "그 다음은 진입 자체입니다 — 어떤 우주선도 생존한 대기권 진입 중 가장 빠릅니다. 탐사선은 초속 47.4km에서 수소와 만났고 약 228g로 감속했으며, 2분 미만에 방열판의 절반 이상을 빛나는 가스로 방출했습니다. 유인 진입의 모든 경험칙은 여기서 무너집니다; 이것은 기계만이 생존할 수 있습니다.",
+    "lab_goal_pj_descent": "그리고 나서 — 착륙할 지표면이 없습니다. 낙하산 아래에서 탐사선은 계속 내려갔고, 하늘은 모두를 놀라게 했습니다: 이상하게 건조한 구름 적은 '열점'으로 떨어졌고, 교과서가 예측한 것보다 약 10배 적은 물을 가지고 있었습니다. 착륙은 존재하지 않으므로 이 교훈에 착륙 단계가 없습니다: 약 58분과 ~23기압 후, 목성은 단순히 탐사선을 압축하고 삼켰습니다. 탐사선의 데이터는 탐사선보다 오래 남았습니다.",
+    "lab_conn_pj_why": "갈릴레오의 대기 탐사선은 거대 행성의 대기권으로 비행하여 신호를 보낸 유일한 진입 탐사선입니다. 57.6분간의 전송은 목성의 바람, 물, 헬륨에 관한 교과서를 다시 썼습니다 — 그리고 그 진입은 대기 비행의 극한적 기준으로 남아있습니다: 어떤 물체도 더 빠르게 대기권에 충돌하여 생존한 적이 없습니다.",
+    "lab_conn_pj_hook": "탐사선의 신호는 57.6분 후 끊겼습니다 — 고장이 아니라 목성의 열과 압력이 그것을 파괴했기 때문입니다. 모선은 들을 것이 더 이상 남아있지 않을 때까지 기다렸습니다.",
+    "lab_conn_pj_galileo": "갈릴레오 — 탐사선을 실은 미션 (NASA)",
+    "lab_conn_pj_juno": "주노 — 오늘날 목성의 극지방을 비행 중 (NASA)",
+    "lab_conn_pj_explore": "3D 태양계에서 목성 보기",
+    "lab_conn_pj_next": "다음: 가장 작은 세계들 — 중력이 거의 없는 곳에 착륙하기."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -8278,7 +8318,17 @@
     "lab_conn_lot_huygens": "Huygens — der Titan-Abstieg, als Flug (ESA)",
     "lab_conn_lot_cassini": "Cassini — die siebenjährige Fahrt zum Saturn (NASA/ESA/ASI)",
     "lab_conn_lot_explore": "Sehe Saturn und Titan im 3D-Sonnensystem",
-    "lab_conn_lot_next": "Nächstes: die Riesenplaneten — Eintritt in eine Welt ohne Oberfläche."
+    "lab_conn_lot_next": "Nächstes: die Riesenplaneten — Eintritt in eine Welt ohne Oberfläche.",
+    "lab_goal_probe_jupiter_title": "Tauche in Jupiter ein",
+    "lab_goal_pj_corridor": "Jupiters Gravitation schleudert dich mit 47 km/s hinein – mehr als viermal schneller als jede Rückkehr zur Erde. Bei dieser Geschwindigkeit verengt sich das überlebbare Fenster der Eintrittswinkel brutal: ein Hauch zu steil und selbst eine wie eine Kanonenkugel gebaute Sonde wird zerquetscht; zu flach und du prallst ins All zurück, nachdem du die halbe Sonnensystem für nichts durchquert hast. Galileos Navigatoren mussten einen Korridor von nur drei Grad Breite treffen – ±1,5° Himmel.",
+    "lab_goal_pj_entry": "Dann kommt der Eintritt selbst – der schnellste atmosphärische Eintritt, den jemals ein Raumfahrzeug überstand. Die Sonde traf den Wasserstoff bei 47,4 km/s und bremste mit etwa 228 g ab, während ihr Hitzeschutzschild in unter zwei Minuten mehr als die Hälfte seiner Masse als glühendes Gas abwarf. Jede Faustregel für bemannte Eintritte gilt hier nicht; dies ist nur für Maschinen überlebbar.",
+    "lab_goal_pj_descent": "Und dann – nichts zum Landen. Unter seinem Fallschirm sank die Sonde einfach weiter, und der Himmel überraschte alle: Sie war in einen seltsam trockenen, wolkenarmen ‚Hot Spot' gefallen, mit etwa zehnmal weniger Wasser als die Lehrbücher vorhersagten. Es gibt keine Landestufe in dieser Lektion, weil es keine Landung gibt: Nach knapp 58 Minuten und ~23 bar Druck zerquetschte und verschlang Jupiter sie einfach. Die Daten der Sonde überlebten die Sonde.",
+    "lab_conn_pj_why": "Galileos Atmosphärensonde ist die einzige Eintrittsonde, die je in die Atmosphäre eines Riesenplaneten flog und Bericht erstattete. Ihre 76,6 Minuten Übertragung schrieben die Lehrbücher über Jupiters Winde, Wasser und Helium neu – und ihr Eintritt bleibt der extreme Maßstab des atmosphärischen Flugs: kein Objekt ist je schneller in eine Atmosphäre eingetreten und hat überlebt, um davon zu berichten.",
+    "lab_conn_pj_hook": "Das Signal der Sonde starb nach 57,6 Minuten – nicht durch einen Fehler, sondern weil Jupiters Hitze und Druck sie zerstörten. Ihr Mutterschiff lauschte, bis es nichts mehr zu hören gab.",
+    "lab_conn_pj_galileo": "Galileo — die Mission, die die Sonde trug (NASA)",
+    "lab_conn_pj_juno": "Juno — fliegt heute Jupiters Pole (NASA)",
+    "lab_conn_pj_explore": "Sieh Jupiter im 3D-Sonnensystem",
+    "lab_conn_pj_next": "Nächstes: die kleinsten Welten — Landung wo die Schwerkraft kaum existiert."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -9669,7 +9719,17 @@
     "lab_conn_lot_huygens": "Huygens — la descente sur Titan, en tant que vol (ESA)",
     "lab_conn_lot_cassini": "Cassini — le voyage de sept ans vers Saturne (NASA/ESA/ASI)",
     "lab_conn_lot_explore": "Voir Saturne et Titan dans le système solaire 3D",
-    "lab_conn_lot_next": "Suivant : les géantes gazeuses — entrer dans un monde sans surface du tout."
+    "lab_conn_lot_next": "Suivant : les géantes gazeuses — entrer dans un monde sans surface du tout.",
+    "lab_goal_probe_jupiter_title": "Plonger dans Jupiter",
+    "lab_goal_pj_corridor": "La gravité de Jupiter vous précipite à 47 km/s — plus de quatre fois plus vite que tout retour vers la Terre. À cette vitesse, la bande d'angles d'entrée survivables se rétrécit brutalement : un rien trop raide et même une sonde construite comme un boulet de canon est écrasée ; trop rasante et vous ricchez dans l'espace après avoir traversé la moitié du système solaire pour rien. Les navigateurs de Galileo ont dû emprunter un corridor large de seulement trois degrés — ±1,5° de ciel.",
+    "lab_goal_pj_entry": "Vient ensuite l'entrée elle-même — l'entrée atmosphérique la plus rapide qu'ait jamais subie un engin. La sonde a rencontré l'hydrogène à 47,4 km/s et a décéléré à environ 228 g, son bouclier perdant plus de la moitié de sa masse en gaz incandescent en moins de deux minutes. Chaque règle empirique des entrées habitées s'effondre ici ; seules les machines peuvent survivre.",
+    "lab_goal_pj_descent": "Et puis — rien sur quoi atterrir. Sous son parachute, la sonde n'a fait que s'enfoncer, et le ciel a surpris tout le monde : elle était tombée dans une étrange 'zone chaude' sèche et pauvre en nuages, avec environ dix fois moins d'eau que ne le prédisaient les manuels. Il n'y a pas d'échelon d'atterrissage dans cette leçon car aucun atterrissage n'existe : après près de 58 minutes et ~23 bar de pression, Jupiter l'a simplement écrasée et avalée. Les données de la sonde lui ont survécu.",
+    "lab_conn_pj_why": "La sonde atmosphérique de Galileo est la seule sonde d'entrée à avoir jamais volé dans l'atmosphère d'une géante gazeuse et à avoir fait son rapport. Ses 57,6 minutes de transmission ont réécrit les manuels sur les vents, l'eau et l'hélium de Jupiter — et son entrée demeure le repère extrême du vol atmosphérique : aucun objet n'a jamais frappé une atmosphère plus vite et survécu pour en parler.",
+    "lab_conn_pj_hook": "Le signal de la sonde s'est éteint après 57,6 minutes — non par défaut, mais parce que la chaleur et la pression de Jupiter l'ont détruite. Son vaisseau mère a écouté jusqu'à ce qu'il n'y ait plus rien à entendre.",
+    "lab_conn_pj_galileo": "Galileo — la mission qui a transporté la sonde (NASA)",
+    "lab_conn_pj_juno": "Juno — survolant les pôles de Jupiter aujourd'hui (NASA)",
+    "lab_conn_pj_explore": "Voir Jupiter dans le système solaire en 3D",
+    "lab_conn_pj_next": "Suivant : les plus petits mondes — atterrir où la gravité existe à peine."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -11027,7 +11087,17 @@
     "lab_conn_lot_huygens": "Huygens — la discesa su Titano, come volo (ESA)",
     "lab_conn_lot_cassini": "Cassini — i sette anni di viaggio verso Saturno (NASA/ESA/ASI)",
     "lab_conn_lot_explore": "Vedi Saturno e Titano nel sistema solare 3D",
-    "lab_conn_lot_next": "Prossimo: i pianeti giganti — entrare in un mondo senza superficie."
+    "lab_conn_lot_next": "Prossimo: i pianeti giganti — entrare in un mondo senza superficie.",
+    "lab_goal_probe_jupiter_title": "Immersione in Giove",
+    "lab_goal_pj_corridor": "La gravità di Giove ti scaraventa dentro a 47 km/s — più di quattro volte più veloce di qualsiasi ritorno sulla Terra. A quella velocità la banda di angoli di entrata sopravvivibile si restringe brutalmente: un po' troppo ripido e anche una sonda costruita come una palla di cannone viene schiacciata; troppo piatto e rimbalzi nello spazio dopo aver attraversato metà del sistema solare per niente. I navigatori di Galileo dovettero infilare un corridoio largo appena tre gradi — ±1,5° di cielo.",
+    "lab_goal_pj_entry": "Poi viene l'ingresso stesso — l'entrata atmosferica più veloce mai sopravvissuta da un veicolo. La sonda ha incontrato l'idrogeno a 47,4 km/s e ha decelerato a circa 228 g, il suo scudo perdendo più della metà della sua massa come gas incandescente in meno di due minuti. Ogni regola pratica di ingresso con equipaggio muore qui; questo è sopravvivibile solo dalle macchine.",
+    "lab_goal_pj_descent": "E poi — niente su cui atterrare. Sotto il suo paracadute la sonda ha continuato a sprofondare, e il cielo ha sorpreso tutti: era finita in una strana 'macchia calda' priva di nuvole, con circa dieci volte meno acqua di quanto i libri di testo prevedessero. Non c'è un gradino di contatto in questa lezione perché nessun contatto esiste: dopo quasi 58 minuti e ~23 bar di pressione, Giove l'ha semplicemente schiacciata e inghiottita. I dati della sonda hanno sopravvissuto alla sonda.",
+    "lab_conn_pj_why": "La sonda atmosferica di Galileo è l'unica sonda di entrata mai volata nell'atmosfera di un pianeta gigante e tornata a riferire. I suoi 57,6 minuti di trasmissione hanno riscritto i libri di testo sui venti, l'acqua e l'elio di Giove — e il suo ingresso rimane il benchmark estremo del volo atmosferico: nessun oggetto ha mai colpito un'atmosfera più velocemente e sopravvissuto per raccontarlo.",
+    "lab_conn_pj_hook": "Il segnale della sonda è morto dopo 57,6 minuti — non per un guasto, ma perché il calore e la pressione di Giove l'hanno distrutta. La sua nave madre ha ascoltato finché non c'è stato più nulla da sentire.",
+    "lab_conn_pj_galileo": "Galileo — la missione che portava la sonda (NASA)",
+    "lab_conn_pj_juno": "Juno — che vola sopra i poli di Giove oggi (NASA)",
+    "lab_conn_pj_explore": "Vedi Giove nel sistema solare 3D",
+    "lab_conn_pj_next": "Prossimo: i mondi più piccoli — atterrare dove la gravità quasi non esiste."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -12384,7 +12454,17 @@
     "lab_conn_lot_huygens": "Huygens — el descenso en Titán, como un vuelo (ESA)",
     "lab_conn_lot_cassini": "Cassini — el viaje de siete años a Saturno (NASA/ESA/ASI)",
     "lab_conn_lot_explore": "Ver Saturno y Titán en el sistema solar 3D",
-    "lab_conn_lot_next": "Siguiente: los gigantes gaseosos — entrando en un mundo sin superficie en absoluto."
+    "lab_conn_lot_next": "Siguiente: los gigantes gaseosos — entrando en un mundo sin superficie en absoluto.",
+    "lab_goal_probe_jupiter_title": "Sumergirse en Júpiter",
+    "lab_goal_pj_corridor": "La gravedad de Júpiter te lanza a 47 km/s — más de cuatro veces más rápido que cualquier retorno a la Tierra. A esa velocidad, la banda de ángulos de entrada supervivible se estrecha brutalmente: un poco demasiado pronunciado y hasta una sonda construida como una bala de cañón se aplasta; demasiado rasante y rebota hacia el espacio habiendo cruzado media galaxia para nada. Los navegantes de Galileo tuvieron que atravesar un corredor de apenas tres grados de ancho — ±1,5° de cielo.",
+    "lab_goal_pj_entry": "Luego viene la entrada en sí — la reentrada atmosférica más rápida que ha sobrevivido ninguna nave. La sonda encontró el hidrógeno a 47,4 km/s y deceleró a unos 228 g, su escudo desprendiendo más de la mitad de su masa en forma de gas incandescente en menos de dos minutos. Cada regla de oro de entrada tripulada muere aquí; esto solo es supervivible para máquinas.",
+    "lab_goal_pj_descent": "Y luego — nada en qué aterrizar. Bajo su paracaídas la sonda simplemente siguió hundiéndose, y el cielo sorprendió a todos: había caído en una extraña zona seca, con pocas nubes, un «punto caliente» con aproximadamente diez veces menos agua de la que predecían los libros de texto. No hay peldaño de toque en esta lección porque no existe tal toque: tras casi 58 minutos y ~23 bar de presión, Júpiter simplemente la aplastó e la tragó. Los datos de la sonda le sobrevivieron.",
+    "lab_conn_pj_why": "La sonda atmosférica de Galileo es la única sonda de entrada que ha volado hacia la atmósfera de un gigante gaseoso e informado de vuelta. Sus 57,6 minutos de transmisión reescribieron los libros de texto sobre los vientos, agua y helio de Júpiter — y su entrada sigue siendo el referente extremo del vuelo atmosférico: ningún objeto ha impactado nunca una atmósfera más rápido y ha sobrevivido para contarlo.",
+    "lab_conn_pj_hook": "La señal de la sonda se extinguió tras 57,6 minutos — no por un fallo, sino porque el calor y la presión de Júpiter la destruyeron. Su nave nodriza escuchó hasta que no hubo nada más que oír.",
+    "lab_conn_pj_galileo": "Galileo — la misión que llevaba la sonda (NASA)",
+    "lab_conn_pj_juno": "Juno — sobrevolando los polos de Júpiter hoy (NASA)",
+    "lab_conn_pj_explore": "Ver Júpiter en el sistema solar 3D",
+    "lab_conn_pj_next": "Siguiente: los mundos más pequeños — aterrizar donde la gravedad apenas existe."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -13750,7 +13830,17 @@
     "lab_conn_lot_huygens": "Huygens — de Titan-afdaling, als een vlucht (ESA)",
     "lab_conn_lot_cassini": "Cassini — de zeven jaar durende rit naar Saturnus (NASA/ESA/ASI)",
     "lab_conn_lot_explore": "Bekijk Saturnus en Titan in het 3D-zonnestelsel",
-    "lab_conn_lot_next": "Volgende: de reuzenplaneten — een wereld zonder oppervlak betreden."
+    "lab_conn_lot_next": "Volgende: de reuzenplaneten — een wereld zonder oppervlak betreden.",
+    "lab_goal_probe_jupiter_title": "Duik in Jupiter",
+    "lab_goal_pj_corridor": "Jupiters zwaartekracht slingert je met 47 km/s naar binnen — meer dan vier keer sneller dan enige terugkeer naar Aarde. Bij die snelheid wordt de overleefbare band van invaalshoeken brutaal smal: iets te steil en zelfs een probe gebouwd als een kanonkogel wordt verpletterd; te ondiep en je stuitert de ruimte in nadat je half het zonnestelsel hebt overgestoken voor niets. Galileo's navigators moesten een corridor van slechts drie graden breed navigeren — ±1,5° van de hemel.",
+    "lab_goal_pj_entry": "Dan komt de inval zelf — de snelste atmosferische inval die enig vaartuig heeft overleefd. De probe ontmoette de waterstof bij 47,4 km/s en vertraagde met ongeveer 228 g, waarbij zijn schild meer dan de helft van zijn massa als gloeiend gas in minder dan twee minuten verloor. Elke regel van het boekje voor bemande inval vervalt hier; dit kunnen alleen machines overleven.",
+    "lab_goal_pj_descent": "En dan — niets om op te landen. Onder zijn parachute bleef de probe maar zinken, en de lucht verraste iedereen: hij was in een vreemd droog, wolkenarm 'warm gebied' terechtgekomen, met ongeveer tien keer minder water dan de leerboeken voorspelden. Er is geen landingsmoment in deze les omdat er geen landing bestaat: na bijna 58 minuten en ~23 bar druk verpletterde en verslond Jupiter het eenvoudigweg. De gegevens van de probe overleefden de probe.",
+    "lab_conn_pj_why": "Galileo's atmosferische probe is de enige invalprobe ooit die in de atmosfeer van een gasreus is gevlogen en terug informatie heeft gegeven. De 57,6 minuten transmissie herschreven de leerboeken over Jupiters winden, water en helium — en zijn inval blijft het extreme referentiepunt van atmosferische vlucht: geen enkel object heeft ooit sneller een atmosfeer geraakt en overleefd om erover te berichten.",
+    "lab_conn_pj_hook": "Het signaal van de probe stierf na 57,6 minuten uit — niet door een fout, maar omdat Jupiters hitte en druk het vernietigden. Zijn moederschip luisterde tot er niets meer te horen was.",
+    "lab_conn_pj_galileo": "Galileo — de missie die de sonde vervoerde (NASA)",
+    "lab_conn_pj_juno": "Juno — vliegt vandaag Jupiters polen (NASA)",
+    "lab_conn_pj_explore": "Zie Jupiter in het 3D-zonnestelsel",
+    "lab_conn_pj_next": "Volgende: de kleinste werelden — landen waar zwaartekracht nauwelijks bestaat."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -15380,7 +15470,17 @@
     "lab_conn_lot_huygens": "Гюйгенс — спуск на Титан как полёт (ESA)",
     "lab_conn_lot_cassini": "Кассини — семилетний полёт к Сатурну (NASA/ESA/ASI)",
     "lab_conn_lot_explore": "Посмотри Сатурн и Титан в 3D модели Солнечной системы",
-    "lab_conn_lot_next": "Далее: газовые гиганты — вход в мир без поверхности вообще."
+    "lab_conn_lot_next": "Далее: газовые гиганты — вход в мир без поверхности вообще.",
+    "lab_goal_probe_jupiter_title": "Погружение в Юпитер",
+    "lab_goal_pj_corridor": "Гравитация Юпитера выбрасывает вас на скорости 47 км/с — более чем в четыре раза быстрее, чем любое возвращение с Земли. На такой скорости полоса выживаемых углов входа сужается жестоко: чуть слишком круто — и даже зонд, построенный как ядро, будет раздавлен; слишком полого — и вы отскочите в космос, пересекнув половину Солнечной системы впустую. Навигаторам «Галилея» пришлось прокладывать коридор шириной всего три градуса — ±1,5° неба.",
+    "lab_goal_pj_entry": "Затем наступает само входит — самое быстрое атмосферное вхождение, пережившее какой-либо аппарат. Зонд встретил водород на скорости 47,4 км/с и замедлялся примерно на 228 g, его теплозащита теряя более половины своей массы в виде светящегося газа менее чем за две минуты. Здесь не работают никакие эмпирические правила пилотируемого входа; это выживаемо только для машин.",
+    "lab_goal_pj_descent": "И затем — не на что приземляться. Под своим парашютом зонд просто продолжал тонуть, и небо удивило всех: он упал в странно сухое, с редкими облаками «горячее пятно» с примерно в десять раз меньшей водой, чем предсказывали учебники. В этом уроке нет финальной ступени приземления, потому что приземления не существует: после почти 58 минут и ~23 бар давления Юпитер просто раздавил и поглотил его. Данные зонда пережили сам зонд.",
+    "lab_conn_pj_why": "Атмосферный зонд «Галилея» — единственный входной зонд, который когда-либо летал в атмосферу газового гиганта и докладывал об этом. Его 57,6 минут передачи переписали учебники о ветрах, воде и гелии Юпитера — и его вхождение остаётся экстремальным ориентиром атмосферного полёта: ни один объект никогда не врезался в атмосферу быстрее и не выжил, чтобы рассказать об этом.",
+    "lab_conn_pj_hook": "Сигнал зонда оборвался на 57,6-й минуте — не из-за неисправности, а потому что жара и давление Юпитера его разрушили. Его материнский корабль слушал, пока было что слушать.",
+    "lab_conn_pj_galileo": "«Галилео» — миссия, доставившая зонд (NASA)",
+    "lab_conn_pj_juno": "Juno — исследует полюса Юпитера сегодня (NASA)",
+    "lab_conn_pj_explore": "Посмотрите Юпитер в 3D-модели солнечной системы",
+    "lab_conn_pj_next": "Далее: самые маленькие миры — посадка там, где гравитация едва существует."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -17054,7 +17154,17 @@
     "lab_conn_lot_huygens": "惠更斯号——泰坦下降任务（欧航局）",
     "lab_conn_lot_cassini": "卡西尼号——七年土星之旅（NASA/欧航局/意大利航天局）",
     "lab_conn_lot_explore": "在3D太阳系中查看土星和泰坦",
-    "lab_conn_lot_next": "下一步：巨行星——进入一个完全没有固体表面的世界。"
+    "lab_conn_lot_next": "下一步：巨行星——进入一个完全没有固体表面的世界。",
+    "lab_goal_probe_jupiter_title": "深入木星",
+    "lab_goal_pj_corridor": "木星的引力以47 km/s的速度将你推入——比任何返回地球的速度快四倍多。以这种速度，可生存的进入角度范围变得极其狭窄：角度稍陡，即使是像炮弹一样坚固的探测器也会被压碎；角度过浅，你就会滑出太空，横跨了半个太阳系却一无所获。伽利略的领航员必须在天空中穿过大约一度半的范围。",
+    "lab_goal_pj_entry": "接着是进入过程本身——有史以来最快的一次。探测器以47.4 km/s的速度撞入氢气，减速约230 g，其热护盾在两分钟内脱落了超过一半的质量，化为炽热的气体。在这里，所有有人进入的经验法则都失效了；只有机器才能生存。",
+    "lab_goal_pj_descent": "然后——没有着陆点。在降落伞下，探测器不断下沉，穿过氨云和水云，周围的空气越来越稠密。这节课中没有着陆的阶段，因为着陆点根本不存在：在58分钟和约23巴的压力后，木星最终压碎并吞没了它。探测器的数据比探测器本身活得更久。",
+    "lab_conn_pj_why": "伽利略的大气探测器是唯一进入巨行星大气并传回信息的航天器。它57.6分钟的传输时间重新改写了关于木星风速、水含量和氦含量的教科书——其进入过程仍然是大气飞行的极限基准：没有任何物体以更快的速度撞入大气并存活到能够传输数据。",
+    "lab_conn_pj_hook": "探测器的信号在58分钟后消失——不是因为故障，而是因为木星的热量和压力摧毁了它。其母船一直在监听，直到没有什么可听的为止。",
+    "lab_conn_pj_galileo": "伽利略号——运载探测器的任务（美国宇航局）",
+    "lab_conn_pj_juno": "朱诺号——今天在木星两极飞行（美国宇航局）",
+    "lab_conn_pj_explore": "在3D太阳系中查看木星",
+    "lab_conn_pj_next": "下一个：最小的世界——着陆在引力几乎不存在的地方。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -18599,7 +18709,17 @@
     "lab_conn_lot_huygens": "Huygens — Титанов силазни пут, као лет (ESA)",
     "lab_conn_lot_cassini": "Cassini — седамгодишња вожња до Сатурна (NASA/ESA/ASI)",
     "lab_conn_lot_explore": "Видите Сатурн и Титан у 3D соларном систему",
-    "lab_conn_lot_next": "Следеће: џиновске планете — улазак у свет без површине."
+    "lab_conn_lot_next": "Следеће: џиновске планете — улазак у свет без површине.",
+    "lab_goal_probe_jupiter_title": "Роњење у Јупитер",
+    "lab_goal_pj_corridor": "Јупитеров гравитациони притисак вас хвата брзином од 47 км/с — више од четири пута брже него било који повратак на Земљу. На тој брзини опсег преживљивих углова уласка постаје окрутно узан: мало стрме и чак и сонда изграђена као топовска кугла је уништена; премалко стрме и скачете у простор después што сте прешли половину сунчевог система за ништа. Галилејевим навигаторима је требало да пређу коридор широк само три степена — ±1,5° неба.",
+    "lab_goal_pj_entry": "Затим долази сам уласк — најбржи атмосферски уласк коју је икада преживела нека летелица. Сонда је наишла на водоник брзином од 47,4 км/с и децелерирала брзином од око 228 g, њена заштита губећи више од половине своје масе као светлуцави гас за мање од две минуте. Свако правило досади за уласк са људском праформом умире овде; ово је преживљиво само за машине.",
+    "lab_goal_pj_descent": "И затим — ничега на шта би слетео. Под својом парашутом сонда је просто наставила да тоне, и небо је изненадило све: пала је у чудно сухо, облачно ретко 'врућу тачку', са око десет пута мање воде него што су уџбеници предвиђали. Нема степеника слетања у овој лекцији јер слетање не постоји: после готово 58 минута и ~23 бара притиска, Јупитер је просто уништио и прогутао сонду. Подаци сонде су преживели саму сонду.",
+    "lab_conn_pj_why": "Галилејева атмосферска сонда је једина сонда за уласк која је икада летела у атмосферу џиновског планете и пријавила назад. Њених 57,6 минута трансмисије преписало је уџбенике о Јупитеровим ветровима, води и хелијуму — и њен уласк остаје екстремни еталон атмосферског лета: ниједан објекат никад није ударио атмосферу брже и преживео да говори.",
+    "lab_conn_pj_hook": "Сигнал сонде је умро после 57,6 минута — не због неисправке, већ јер су Јупитерова топлота и притисак сонду уништили. Њена мајчинска летелица је слушала док није било више ничега да се чује.",
+    "lab_conn_pj_galileo": "Galileo — мисија која је превезла сонду (NASA)",
+    "lab_conn_pj_juno": "Juno — летећа кроз Јупитерове полове данас (NASA)",
+    "lab_conn_pj_explore": "Види Јупитер у 3D соларном систему",
+    "lab_conn_pj_next": "Следеће: најмањи светови — слетање где гравитација једва постоји."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -19963,6 +20083,16 @@
     "lab_conn_lot_huygens": "Huygens — a descida em Titã, como um voo (ESA)",
     "lab_conn_lot_cassini": "Cassini — os sete anos de jornada até Saturno (NASA/ESA/ASI)",
     "lab_conn_lot_explore": "Veja Saturno e Titã no sistema solar 3D",
-    "lab_conn_lot_next": "Próximo: os gigantes gasosos — entrando em um mundo sem superfície alguma."
+    "lab_conn_lot_next": "Próximo: os gigantes gasosos — entrando em um mundo sem superfície alguma.",
+    "lab_goal_probe_jupiter_title": "Mergulhe em Júpiter",
+    "lab_goal_pj_corridor": "A gravidade de Júpiter o lança a 47 km/s — mais de quatro vezes mais rápido que qualquer retorno à Terra. Nessa velocidade, a faixa de ângulos de entrada sobrevivível se estreita brutalmente: um pouco mais íngreme e até uma sonda construída como uma bala de canhão é esmagada; muito rasa e você ricocheteia para o espaço depois de ter cruzado metade do sistema solar por nada. Os navegadores da Galileo tiveram de passar por um corredor de apenas três graus de largura — ±1,5° de céu.",
+    "lab_goal_pj_entry": "Depois vem a entrada em si — a entrada atmosférica mais rápida que qualquer nave jamais sobreviveu. A sonda encontrou o hidrogênio a 47,4 km/s e desacelerou a cerca de 228 g, seu escudo perdendo mais da metade de sua massa em gás incandescente em menos de dois minutos. Cada regra prática de entrada tripulada morre aqui; isso só é sobrevivível por máquinas.",
+    "lab_goal_pj_descent": "E depois — nada em que pousar. Sob seu paraquedas, a sonda continuou descendo, e o céu surpreendeu a todos: havia caído em um 'ponto quente' estranhamente seco, com poucas nuvens, com cerca de dez vezes menos água do que os livros didáticos previam. Não há um degrau de pouso nesta lição porque nenhum pouso existe: após quase 58 minutos e ~23 bar de pressão, Júpiter simplesmente a esmagou e a engoliu. Os dados da sonda sobreviveram à sonda.",
+    "lab_conn_pj_why": "A sonda atmosférica da Galileo é a única sonda de entrada que voou para a atmosfera de um gigante gasoso e relatou de volta. Seus 57,6 minutos de transmissão reescreveram os livros didáticos sobre os ventos, a água e o hélio de Júpiter — e sua entrada permanece como o benchmark extremo do voo atmosférico: nenhum objeto jamais atingiu uma atmosfera mais rápido e sobreviveu para falar.",
+    "lab_conn_pj_hook": "O sinal da sonda morreu 57,6 minutos depois — não por uma falha, mas porque o calor e a pressão de Júpiter a destruíram. Sua nave-mãe escutou até não haver mais nada para ouvir.",
+    "lab_conn_pj_galileo": "Galileo — a missão que carregou a sonda (NASA)",
+    "lab_conn_pj_juno": "Juno — voando pelos pólos de Júpiter hoje (NASA)",
+    "lab_conn_pj_explore": "Veja Júpiter no sistema solar 3D",
+    "lab_conn_pj_next": "Próximo: os mundos mais pequenos — pousando onde a gravidade quase não existe."
   }
 }

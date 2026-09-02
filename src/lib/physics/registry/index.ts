@@ -2061,8 +2061,9 @@ export const entryRangeControl: FormulaDef<{
 };
 
 // Titan joined for the Huygens lesson (P3 · #527) — the only moon with a real
-// atmosphere; the Moon/Mercury stay for the airless fail-honest branch.
-const ATMO_BODY_IDS = ['earth', 'mars', 'venus', 'titan', 'moon', 'mercury'] as const;
+// atmosphere; Jupiter for the Galileo probe dive (P4 · #528, 1-bar datum — no
+// surface, no landing); the Moon/Mercury stay for the airless fail-honest branch.
+const ATMO_BODY_IDS = ['earth', 'mars', 'venus', 'titan', 'jupiter', 'moon', 'mercury'] as const;
 
 /**
  * Terminal velocity in an atmosphere (M5 "land on Mars") — v_t = √(2mg/(ρ·A·C_d)),

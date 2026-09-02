@@ -54,7 +54,7 @@ export const DESCENT_BODY_CAPABILITIES: Record<DescentBody, CapabilityRow> = {
   earth: { status: 'covered' },
   venus: { status: 'covered' }, // land-on-venus (P2 · #526)
   titan: { status: 'covered' }, // land-on-titan (P3 · #527)
-  jupiter: { status: 'pending', trackedBy: '#528' },
+  jupiter: { status: 'covered' }, // probe-jupiter (P4 · #528 — entry, no landing, by design)
   comet_67p: { status: 'pending', trackedBy: '#529' },
   itokawa: { status: 'pending', trackedBy: '#529' },
   ryugu: { status: 'pending', trackedBy: '#529' },

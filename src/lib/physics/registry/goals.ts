@@ -574,6 +574,60 @@ export const landOnTitan: Goal = {
 };
 
 /**
+ * A8 "dive into Jupiter" (#528 · P4) — the entry that is NOT a landing, deliberately.
+ * Galileo's probe made the fastest atmospheric entry any craft has SURVIVED: 47.4 km/s
+ * (the Galileo orbiter's 2003 disposal dive was faster, ~48.2 km/s, but transmitted
+ * nothing), ~228 g peak deceleration, an entry energy (~1.1 GJ/kg) that ablated over
+ * half its heat shield — and then there was nowhere to land. A gas giant has no
+ * surface; the probe hung under its parachute and sank for 57.6 minutes — through a
+ * strangely DRY hot spot with ~10× less water than predicted — until Jupiter's
+ * pressure and heat crushed and finally vaporised it near ~23 bar. The ladder has NO
+ * soft-landing verdict — fail-honest at the goal level: pretending a landing rung
+ * exists would be the lie. Science-reviewed 2026-09-03. Kernel check: entry-heating
+ * 47.4 km/s @ 8.6° (the documented nominal; corridor ±1.5°), H=27 km → 233 g,
+ * 1123 MJ/kg; tv jupiter (1-bar datum, 121 kg module, 2.5 m chute) → ~70 m/s, sinking.
+ */
+export const probeJupiter: Goal = {
+  id: 'probe-jupiter',
+  titleKey: 'lab.goal.probe-jupiter.title',
+  family: 'spaceflight',
+  tier: 7,
+  prereqs: ['land-on-titan'],
+  path: [
+    {
+      formulaId: 'entry-corridor',
+      narrativeKey: 'lab.goal.pj.corridor',
+      presetInputs: {
+        entryVelocityKms: 47.4,
+        flightPathAngleDeg: 8.6,
+        gLimit: 250,
+        scaleHeightKm: 27,
+      },
+    },
+    {
+      formulaId: 'entry-heating',
+      narrativeKey: 'lab.goal.pj.entry',
+      presetInputs: { entryVelocityKms: 47.4, flightPathAngleDeg: 8.6, scaleHeightKm: 27 },
+    },
+    {
+      formulaId: 'terminal-velocity',
+      narrativeKey: 'lab.goal.pj.descent',
+      presetInputs: { body: 'jupiter', massKg: 121, areaM2: 4.9 },
+    },
+  ],
+  connection: {
+    whyKey: 'lab.conn.pj.why',
+    hookKey: 'lab.conn.pj.hook',
+    links: [
+      { labelKey: 'lab.conn.pj.galileo', href: '/fly?mission=galileo', agency: 'NASA' },
+      { labelKey: 'lab.conn.pj.juno', href: '/fly?mission=juno', agency: 'NASA' },
+      { labelKey: 'lab.conn.pj.explore', href: '/explore' },
+    ],
+    nextKey: 'lab.conn.pj.next',
+  },
+};
+
+/**
  * M6 "leave the solar system" — the last spaceflight rung, and a genuinely NEW physics:
  * hyperbolic escape, not another closed transfer. Solar escape velocity at 1 AU (~42 km/s)
  * → the heliocentric Δv beyond Earth's orbital motion to reach it (~12.3 km/s) → the
@@ -1033,6 +1087,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [landOnMars.id, landOnMars],
   [landOnVenus.id, landOnVenus],
   [landOnTitan.id, landOnTitan],
+  [probeJupiter.id, probeJupiter],
   [leaveTheSolarSystem.id, leaveTheSolarSystem],
   [moonPhases.id, moonPhases],
   [chooseAnOrbit.id, chooseAnOrbit],

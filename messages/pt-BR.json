@@ -2707,5 +2707,15 @@
   "lab_conn_lot_huygens": "Huygens — a descida em Titã, como um voo (ESA)",
   "lab_conn_lot_cassini": "Cassini — os sete anos de jornada até Saturno (NASA/ESA/ASI)",
   "lab_conn_lot_explore": "Veja Saturno e Titã no sistema solar 3D",
-  "lab_conn_lot_next": "Próximo: os gigantes gasosos — entrando em um mundo sem superfície alguma."
+  "lab_conn_lot_next": "Próximo: os gigantes gasosos — entrando em um mundo sem superfície alguma.",
+  "lab_goal_probe_jupiter_title": "Mergulhe em Júpiter",
+  "lab_goal_pj_corridor": "A gravidade de Júpiter o lança a 47 km/s — mais de quatro vezes mais rápido que qualquer retorno à Terra. Nessa velocidade, a faixa de ângulos de entrada sobrevivível se estreita brutalmente: um pouco mais íngreme e até uma sonda construída como uma bala de canhão é esmagada; muito rasa e você ricocheteia para o espaço depois de ter cruzado metade do sistema solar por nada. Os navegadores da Galileo tiveram de passar por um corredor de apenas três graus de largura — ±1,5° de céu.",
+  "lab_goal_pj_entry": "Depois vem a entrada em si — a entrada atmosférica mais rápida que qualquer nave jamais sobreviveu. A sonda encontrou o hidrogênio a 47,4 km/s e desacelerou a cerca de 228 g, seu escudo perdendo mais da metade de sua massa em gás incandescente em menos de dois minutos. Cada regra prática de entrada tripulada morre aqui; isso só é sobrevivível por máquinas.",
+  "lab_goal_pj_descent": "E depois — nada em que pousar. Sob seu paraquedas, a sonda continuou descendo, e o céu surpreendeu a todos: havia caído em um 'ponto quente' estranhamente seco, com poucas nuvens, com cerca de dez vezes menos água do que os livros didáticos previam. Não há um degrau de pouso nesta lição porque nenhum pouso existe: após quase 58 minutos e ~23 bar de pressão, Júpiter simplesmente a esmagou e a engoliu. Os dados da sonda sobreviveram à sonda.",
+  "lab_conn_pj_why": "A sonda atmosférica da Galileo é a única sonda de entrada que voou para a atmosfera de um gigante gasoso e relatou de volta. Seus 57,6 minutos de transmissão reescreveram os livros didáticos sobre os ventos, a água e o hélio de Júpiter — e sua entrada permanece como o benchmark extremo do voo atmosférico: nenhum objeto jamais atingiu uma atmosfera mais rápido e sobreviveu para falar.",
+  "lab_conn_pj_hook": "O sinal da sonda morreu 57,6 minutos depois — não por uma falha, mas porque o calor e a pressão de Júpiter a destruíram. Sua nave-mãe escutou até não haver mais nada para ouvir.",
+  "lab_conn_pj_galileo": "Galileo — a missão que carregou a sonda (NASA)",
+  "lab_conn_pj_juno": "Juno — voando pelos pólos de Júpiter hoje (NASA)",
+  "lab_conn_pj_explore": "Veja Júpiter no sistema solar 3D",
+  "lab_conn_pj_next": "Próximo: os mundos mais pequenos — pousando onde a gravidade quase não existe."
 }

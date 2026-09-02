@@ -2707,5 +2707,15 @@
   "lab_conn_lot_huygens": "Huygens — la discesa su Titano, come volo (ESA)",
   "lab_conn_lot_cassini": "Cassini — i sette anni di viaggio verso Saturno (NASA/ESA/ASI)",
   "lab_conn_lot_explore": "Vedi Saturno e Titano nel sistema solare 3D",
-  "lab_conn_lot_next": "Prossimo: i pianeti giganti — entrare in un mondo senza superficie."
+  "lab_conn_lot_next": "Prossimo: i pianeti giganti — entrare in un mondo senza superficie.",
+  "lab_goal_probe_jupiter_title": "Immersione in Giove",
+  "lab_goal_pj_corridor": "La gravità di Giove ti scaraventa dentro a 47 km/s — più di quattro volte più veloce di qualsiasi ritorno sulla Terra. A quella velocità la banda di angoli di entrata sopravvivibile si restringe brutalmente: un po' troppo ripido e anche una sonda costruita come una palla di cannone viene schiacciata; troppo piatto e rimbalzi nello spazio dopo aver attraversato metà del sistema solare per niente. I navigatori di Galileo dovettero infilare un corridoio largo appena tre gradi — ±1,5° di cielo.",
+  "lab_goal_pj_entry": "Poi viene l'ingresso stesso — l'entrata atmosferica più veloce mai sopravvissuta da un veicolo. La sonda ha incontrato l'idrogeno a 47,4 km/s e ha decelerato a circa 228 g, il suo scudo perdendo più della metà della sua massa come gas incandescente in meno di due minuti. Ogni regola pratica di ingresso con equipaggio muore qui; questo è sopravvivibile solo dalle macchine.",
+  "lab_goal_pj_descent": "E poi — niente su cui atterrare. Sotto il suo paracadute la sonda ha continuato a sprofondare, e il cielo ha sorpreso tutti: era finita in una strana 'macchia calda' priva di nuvole, con circa dieci volte meno acqua di quanto i libri di testo prevedessero. Non c'è un gradino di contatto in questa lezione perché nessun contatto esiste: dopo quasi 58 minuti e ~23 bar di pressione, Giove l'ha semplicemente schiacciata e inghiottita. I dati della sonda hanno sopravvissuto alla sonda.",
+  "lab_conn_pj_why": "La sonda atmosferica di Galileo è l'unica sonda di entrata mai volata nell'atmosfera di un pianeta gigante e tornata a riferire. I suoi 57,6 minuti di trasmissione hanno riscritto i libri di testo sui venti, l'acqua e l'elio di Giove — e il suo ingresso rimane il benchmark estremo del volo atmosferico: nessun oggetto ha mai colpito un'atmosfera più velocemente e sopravvissuto per raccontarlo.",
+  "lab_conn_pj_hook": "Il segnale della sonda è morto dopo 57,6 minuti — non per un guasto, ma perché il calore e la pressione di Giove l'hanno distrutta. La sua nave madre ha ascoltato finché non c'è stato più nulla da sentire.",
+  "lab_conn_pj_galileo": "Galileo — la missione che portava la sonda (NASA)",
+  "lab_conn_pj_juno": "Juno — che vola sopra i poli di Giove oggi (NASA)",
+  "lab_conn_pj_explore": "Vedi Giove nel sistema solare 3D",
+  "lab_conn_pj_next": "Prossimo: i mondi più piccoli — atterrare dove la gravità quasi non esiste."
 }

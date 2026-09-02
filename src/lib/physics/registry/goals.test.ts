@@ -493,6 +493,34 @@ describe('M-return · deorbit + entry heating', () => {
     expect(verdict.status.ok).toBe(true);
   });
 
+  it('A8 Jupiter: fastest entry ever, ~230 g, and NO landing rung by design (P4 · #528)', () => {
+    const g = GOALS.get('probe-jupiter')!;
+    // Fail-honest at the goal level: a gas giant has no surface, so the ladder
+    // must NOT contain a soft-landing verdict — pretending one exists is the lie.
+    expect(g.path.some((s) => s.formulaId === 'soft-landing-check')).toBe(false);
+    const run = (i: number) => {
+      const step = g.path[i];
+      const def = REGISTRY.get(step.formulaId)!;
+      const inputs: Record<string, unknown> = {};
+      for (const inp of def.inputs) inputs[inp.key] = (inp as { default?: unknown }).default;
+      Object.assign(inputs, step.presetInputs ?? {});
+      return def.compute(inputs as never);
+    };
+    // The corridor exists even at 47 km/s — for a machine built to take 250 g.
+    const corridor = run(0);
+    expect(corridor.status.ok).toBe(true);
+    expect(corridor.values.corridorWidthDeg.value).toBeGreaterThan(0);
+    // The entry: >200 g and an entry energy an order beyond any lunar return.
+    const entry = run(1);
+    expect(entry.status.ok).toBe(true);
+    expect(entry.values.peakDecelG.value).toBeGreaterThan(200);
+    expect(entry.values.energyPerKgMjkg.value).toBeGreaterThan(1000);
+    // The descent computes (1-bar datum) — it just never ends at a surface.
+    const descent = run(2);
+    expect(descent.status.ok).toBe(true);
+    expect(descent.values.vTerminal.value).toBeGreaterThan(10);
+  });
+
   it('the M-return ladder runs deorbit → entry → corridor → parachute → splashdown (6 rungs, wire shifted)', () => {
     const g = GOALS.get('land-on-earth')!;
     expect(g.path.map((s) => s.formulaId)).toEqual([

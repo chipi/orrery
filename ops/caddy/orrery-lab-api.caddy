@@ -1,0 +1,21 @@
+# Public lab-api vhost (D · #533) — ROUTING OWNED BY THIS REPO.
+#
+# The shared Caddy edge engine is owned by podcast_scraper (ADR-114); this file
+# is a tenant vhost dropped into /etc/caddy/sites/orrery-lab-api.caddy by
+# ops/deploy_caddy_vhosts.sh (`caddy adapt`-gated, then restart).
+#
+# Upstream: the orrery-lab-api container on loopback 8093 (compose service
+# `lab-api`). 8093 was ADR-114's reserved slot — the port-map update rides in
+# the prepared cross-repo ADR-114 amendment (operator-gated push; 8092 is the
+# podcast player's own OAuth AS, NOT ours). The server enforces its own auth
+# (OAuth 2.1 AS + bearer-gated /ask) and rate limits — the vhost only
+# terminates TLS and proxies.
+#
+# DNS: lab-api.orrerylearn.com must resolve to the box BEFORE this file lands,
+# or ACME retries burn Let's Encrypt rate limits (same caveat as orrery.caddy).
+#
+# Rollback: rm /etc/caddy/sites/orrery-lab-api.caddy && sudo systemctl restart caddy.
+lab-api.orrerylearn.com {
+	import hardened
+	reverse_proxy 127.0.0.1:8093
+}

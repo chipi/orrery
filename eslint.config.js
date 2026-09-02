@@ -182,6 +182,7 @@ export default [
       '.svelte-kit/',
       'dist/',
       'dist-mcp/', // esbuild-bundled MCP server output (S4) — generated, gitignored
+      'dist-lab-api/', // esbuild-bundled lab-api output (D) — generated, gitignored
       'node_modules/',
       // Capacitor native project dirs — platform-generated + the synced web
       // bundle copy (cap sync populates ios/App/App/public +

@@ -151,6 +151,7 @@ jobs:
       - name: Live round-trip (health + initialize + tools/list)
         run: |
           set -euo pipefail
+          trap 'docker rm -f mcp-ci >/dev/null 2>&1 || true' EXIT
           docker run -d --name mcp-ci -e MCP_DEV_BEARER=ci-bearer -p 8091:8091 orrery-mcp:ci
           for i in $(seq 1 20); do
             curl -sf http://127.0.0.1:8091/health >/dev/null && break
@@ -179,3 +180,64 @@ jobs:
           docker tag orrery-mcp:ci "ghcr.io/chipi/orrery-mcp:sha-${SHORT}"
           docker push ghcr.io/chipi/orrery-mcp:main
           docker push "ghcr.io/chipi/orrery-mcp:sha-${SHORT}"
+
+  # ════════════════════════════════════════════════════════════════════
+  # lab-api-image (D · #533) — cold container build + curl-level round-trip
+  # of the identity container: health, both .well-known metadata docs,
+  # /authorize input validation, /ask bearer gate. The full OAuth chain
+  # (with a mock Google) lives in the vitest integration suite under `ci`;
+  # this job proves the BUNDLED artifact serves the same surface.
+  # ════════════════════════════════════════════════════════════════════
+  lab-api-image:
+    # Same reasoning as mcp-image's `needs: ci`: never advance the GHCR
+    # :main tag on a commit whose unit tests are red.
+    needs: ci
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - name: Build image
+        run: docker build -f Dockerfile.lab-api -t orrery-lab-api:ci .
+      - name: Live round-trip (health + metadata + authorize/ask gates)
+        run: |
+          set -euo pipefail
+          trap 'docker rm -f lab-api-ci >/dev/null 2>&1 || true' EXIT
+          # NODE_ENV=production in the image → fail-closed needs client config;
+          # supply CI dummies (the round-trip never reaches real Google).
+          docker run -d --name lab-api-ci \
+            -e LAB_ISSUER=http://127.0.0.1:8093 \
+            -e LAB_GOOGLE_CLIENT_ID=ci -e LAB_GOOGLE_CLIENT_SECRET=ci \
+            -e LAB_CLAUDE_CLIENT_SECRET=ci-secret \
+            -p 8093:8093 orrery-lab-api:ci
+          for i in $(seq 1 20); do
+            curl -sf http://127.0.0.1:8093/health >/dev/null && break
+            sleep 1
+          done
+          curl -sf http://127.0.0.1:8093/health | grep -q '"ok":true'
+          curl -sf http://127.0.0.1:8093/.well-known/oauth-authorization-server \
+            | grep -q '"code_challenge_methods_supported":\["S256"\]'
+          curl -sf http://127.0.0.1:8093/.well-known/openid-configuration \
+            | grep -q '"grant_types_supported":\["authorization_code","refresh_token"\]'
+          curl -sf http://127.0.0.1:8093/jwks | grep -q '"kty":"EC"'
+          # Unknown client_id must 400, not redirect.
+          code=$(curl -s -o /dev/null -w '%{http_code}' \
+            'http://127.0.0.1:8093/authorize?client_id=nope&redirect_uri=https://evil.example')
+          test "$code" = "400"
+          # /ask without a bearer must 401.
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST http://127.0.0.1:8093/ask \
+            -H 'content-type: application/json' -d '{"question":"hi"}')
+          test "$code" = "401"
+          docker rm -f lab-api-ci
+      - name: Publish to GHCR (main pushes only)
+        if: github.repository == 'chipi/orrery' && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          set -euo pipefail
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          SHORT=$(echo "${{ github.sha }}" | cut -c1-7)
+          docker tag orrery-lab-api:ci ghcr.io/chipi/orrery-lab-api:main
+          docker tag orrery-lab-api:ci "ghcr.io/chipi/orrery-lab-api:sha-${SHORT}"
+          docker push ghcr.io/chipi/orrery-lab-api:main
+          docker push "ghcr.io/chipi/orrery-lab-api:sha-${SHORT}"

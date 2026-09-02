@@ -1,6 +1,7 @@
 node_modules/
 dist/
 dist-mcp/
+dist-lab-api/
 build/
 docs/.vitepress/dist/
 docs/.vitepress/cache/

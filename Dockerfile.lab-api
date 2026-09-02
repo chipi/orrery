@@ -1,0 +1,32 @@
+# Orrery lab-api image (D · #533 · RFC-037 A01.7/A01.8).
+#
+# Same two-stage shape as Dockerfile.mcp: builder runs the esbuild bundle,
+# runtime is node:20-alpine + ONE bundle file + messages/. State (signing
+# keypair, refresh tokens, allowlist) lives on a bind-mounted volume — the
+# image itself is stateless and disposable.
+#
+# Build (CI + locally):  docker build -f Dockerfile.lab-api -t orrery-lab-api .
+# Run:                   docker run -p 8093:8093 -v ./lab-api-state:/srv/lab-api-state orrery-lab-api
+
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --ignore-scripts
+COPY scripts/build-lab-api-server.mjs scripts/
+COPY server/ server/
+COPY src/ src/
+COPY static/data/ static/data/
+RUN node scripts/build-lab-api-server.mjs
+
+FROM node:20-alpine
+ENV NODE_ENV=production
+WORKDIR /srv/lab-api
+COPY --from=builder /app/dist-lab-api/server.mjs ./server.mjs
+COPY messages/ ./messages/
+RUN addgroup -S labapi && adduser -S labapi -G labapi \
+  && mkdir -p /srv/lab-api-state && chown labapi:labapi /srv/lab-api-state
+USER labapi
+EXPOSE 8093
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
+  CMD node -e "fetch('http://127.0.0.1:'+(process.env.LAB_PORT||8093)+'/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+CMD ["node", "server.mjs"]

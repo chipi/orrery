@@ -100,6 +100,8 @@
     "docs:preview": "vitepress preview docs",
     "mcp:dev": "tsx server/mcp/main.ts",
     "mcp:build": "node scripts/build-mcp-server.mjs",
+    "lab-api:dev": "tsx server/lab-api/main.ts",
+    "lab-api:build": "node scripts/build-lab-api-server.mjs",
     "preflight": "node scripts/with-lock.mjs preflight -- node scripts/preflight-smart.mjs",
     "preflight:coverage": "npm run preflight && npm run test:coverage",
     "ci": "npm run preflight",

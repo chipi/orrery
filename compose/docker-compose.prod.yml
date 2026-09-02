@@ -111,6 +111,50 @@ services:
       MCP_RATE_LIMIT_PER_MIN: '${ORRERY_MCP_RATE_LIMIT_PER_MIN:-60}'
       MCP_MAX_CONCURRENT: '${ORRERY_MCP_MAX_CONCURRENT:-4}'
 
+  # Orrery lab-api (D · #533 · RFC-037 A01.7/A01.8) — the identity container:
+  # OAuth 2.1 AS federating to Google over the file allowlist, plus the /ask
+  # door. Fronted by lab-api.orrerylearn.com (ops/caddy/orrery-lab-api.caddy →
+  # 127.0.0.1:8093; 8093 = ADR-114's reserved slot, amendment prepared —
+  # 8092 is the podcast player's AS). Image from ci.yml's lab-api-image job.
+  #
+  # DEPLOY NOTES:
+  #  - Fail-closed like mcp: production refuses to start without
+  #    LAB_GOOGLE_CLIENT_ID/SECRET + LAB_CLAUDE_CLIENT_SECRET — stage them in
+  #    /srv/orrery/.env BEFORE the first `up -d lab-api` or it crash-loops.
+  #  - chown ./lab-api-state to the container's labapi uid (or chmod 770)
+  #    BEFORE first boot: TokenCore WRITES state.json on first start and a
+  #    root-owned host dir → EACCES crash-loop under restart:unless-stopped.
+  #  - Seed ./lab-api-state/allowlist.json ({"emails":["..."]}) by hand; a
+  #    missing file DENIES ALL (intended fail-closed, not a bug).
+  #  - LiteLLM: the container must reach ${ORRERY_LITELLM_BASE_URL} over the
+  #    tailnet — `docker compose exec lab-api node -e "fetch(...)"` is the
+  #    deploy-day check (bridge networking + MagicDNS may need the IP form).
+  #    An unstaged ORRERY_LITELLM_API_KEY boots green but /ask 502s until set.
+  lab-api:
+    image: ghcr.io/chipi/orrery-lab-api:${ORRERY_LAB_API_IMAGE_TAG:-main}
+    container_name: orrery-lab-api
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:${ORRERY_LAB_API_PORT:-8093}:8093'
+    environment:
+      LAB_ISSUER: '${ORRERY_LAB_ISSUER:-https://lab-api.orrerylearn.com}'
+      LAB_MCP_RESOURCE: '${ORRERY_LAB_MCP_RESOURCE:-https://mcp.orrerylearn.com}'
+      LAB_GOOGLE_CLIENT_ID: '${ORRERY_LAB_GOOGLE_CLIENT_ID:-}'
+      LAB_GOOGLE_CLIENT_SECRET: '${ORRERY_LAB_GOOGLE_CLIENT_SECRET:-}'
+      LAB_CLAUDE_CLIENT_ID: '${ORRERY_LAB_CLAUDE_CLIENT_ID:-claude-ai}'
+      LAB_CLAUDE_CLIENT_SECRET: '${ORRERY_LAB_CLAUDE_CLIENT_SECRET:-}'
+      LITELLM_BASE_URL: '${ORRERY_LITELLM_BASE_URL:-http://100.87.33.61:4001}'
+      LITELLM_API_KEY: '${ORRERY_LITELLM_API_KEY:-}'
+      LAB_LLM_MODEL: '${ORRERY_LAB_LLM_MODEL:-claude-haiku-4-5}'
+      LAB_RATE_LIMIT_PER_MIN: '${ORRERY_LAB_RATE_LIMIT_PER_MIN:-120}'
+      LAB_ASK_MAX_CONCURRENT: '${ORRERY_LAB_ASK_MAX_CONCURRENT:-4}'
+      LAB_WEB_REDIRECT_URIS: '${ORRERY_LAB_WEB_REDIRECT_URIS:-}'
+      LAB_CORS_ORIGINS: '${ORRERY_LAB_CORS_ORIGINS:-}'
+    volumes:
+      # Keypair + refresh tokens + allowlist — survives redeploys; the
+      # operator edits allowlist.json here directly (no redeploy needed).
+      - ./lab-api-state:/srv/lab-api-state
+
   # Pipeline-runner image pulled from GHCR. One-shot invocations spawned
   # by host cron (or `docker compose run --rm pipeline-runner ...`).
   # Image tag pinned via env var so the deploy workflow can roll forward

@@ -208,4 +208,23 @@ describe('recomputeNotebook · hardening (opus review B-1/B-2/M-2)', () => {
     expect(src.status).toBe('ok');
     expect(sink.status).toBe('upstream-failed'); // Infinity never becomes a readout
   });
+
+  it('a units-mismatched wire is invalid-wire — seconds never flow into kilograms (S5 gap fix)', () => {
+    // Card contract (spec.ts): a wire is valid ONLY when the output's units equal the
+    // target FieldSpec.units. Before S5 the engine checked declaration but not units,
+    // so a hostile .orrlab could wire any number into any input and render a
+    // silently-wrong green. tsiolkovsky.deltaV is [km/s]; momentum.massKg is [kg].
+    const cells: Cell[] = [
+      { formulaId: 'tsiolkovsky', inputs: defaultInputs(REGISTRY.get('tsiolkovsky')!) },
+      {
+        formulaId: 'momentum',
+        inputs: defaultInputs(REGISTRY.get('momentum')!),
+        wires: [{ fromIndex: 0, output: 'deltaV', toInput: 'massKg' }],
+      },
+    ];
+    const [, sink] = recomputeNotebook(cells, REGISTRY);
+    expect(sink.status).toBe('invalid-wire');
+    if (sink.status !== 'invalid-wire') throw new Error();
+    expect(sink.blockedInput).toBe('massKg');
+  });
 });

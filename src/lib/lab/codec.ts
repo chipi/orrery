@@ -39,6 +39,8 @@ export const MAX_ENCODED_LEN = 64_000; // ~100× the M1 budget
 export const MAX_CELLS = 200;
 export const MAX_ORRLAB_BYTES = 2_000_000;
 export const MAX_NOTE_LEN = 4_000; // per-card free text (file/localStorage only, never URL)
+/** Canvas position clamp (S5): keeps a hostile file from parking cards at ±1e300. */
+export const MAX_CANVAS_COORD = 50_000;
 
 /** A codec cell = an engine Cell plus the (inert-for-M1) interactive selection. */
 export interface CodecCell extends Cell {
@@ -202,12 +204,19 @@ export interface OrrlabCell extends CodecCell {
   note?: string;
 }
 
-/** What decodeOrrlab yields per card: engine cell + the rehydrated note (no id — regenerated). */
+/** What decodeOrrlab yields per card: engine cell + rehydrated note + canvas
+ *  position (no id — the UI regenerates ids, so position rides ON the cell,
+ *  resolved from the file's id-keyed map exactly like id→index wires). */
 export interface DecodedOrrlabCell extends CodecCell {
   note?: string;
+  position?: { x: number; y: number };
 }
 
-export function encodeOrrlab(cells: OrrlabCell[], title: string): Notebook {
+export function encodeOrrlab(
+  cells: OrrlabCell[],
+  title: string,
+  canvas?: { positions: Record<string, { x: number; y: number }> },
+): Notebook {
   const cards: Card[] = cells.map((c) => {
     const card: Card = { id: c.id, formulaId: c.formulaId, inputs: c.inputs };
     const wires = (c.wires ?? [])
@@ -218,7 +227,17 @@ export function encodeOrrlab(cells: OrrlabCell[], title: string): Notebook {
     if (c.note) card.note = c.note.slice(0, MAX_NOTE_LEN);
     return card;
   });
-  return { orrlab: 1, title, cards };
+  const doc: Notebook = { orrlab: 1, title, cards };
+  if (canvas && Object.keys(canvas.positions).length > 0) {
+    // Only positions for cards that exist — the id set is the cards', always.
+    const ids = new Set(cards.map((c) => c.id));
+    const positions: Record<string, { x: number; y: number }> = {};
+    for (const [id, p] of Object.entries(canvas.positions)) {
+      if (ids.has(id)) positions[id] = { x: p.x, y: p.y };
+    }
+    if (Object.keys(positions).length > 0) doc.canvas = { positions };
+  }
+  return doc;
 }
 
 /**
@@ -226,6 +245,33 @@ export function encodeOrrlab(cells: OrrlabCell[], title: string): Notebook {
  * codec — inputs clamped to FieldSpec, unknown formula preserved — plus id→index
  * wire rehydration. Returns null on a wrong/absent version or a non-array `cards`.
  */
+/**
+ * Sanitize an untrusted canvas block (S5): finite coords clamped to
+ * ±MAX_CANVAS_COORD, only ids present among the decoded cards, count-capped.
+ * Anything malformed degrades to "no layout" — never to a crash.
+ */
+function sanitizeCanvas(
+  raw: unknown,
+  cardIds: Set<string>,
+): { positions: Record<string, { x: number; y: number }> } | undefined {
+  if (!isRecord(raw) || !isRecord(raw.positions)) return undefined;
+  const positions: Record<string, { x: number; y: number }> = {};
+  let count = 0;
+  for (const [id, p] of Object.entries(raw.positions)) {
+    if (count >= MAX_CELLS) break;
+    if (!cardIds.has(id) || !isRecord(p)) continue;
+    const x = typeof p.x === 'number' && Number.isFinite(p.x) ? p.x : NaN;
+    const y = typeof p.y === 'number' && Number.isFinite(p.y) ? p.y : NaN;
+    if (Number.isNaN(x) || Number.isNaN(y)) continue;
+    positions[id] = {
+      x: Math.max(-MAX_CANVAS_COORD, Math.min(MAX_CANVAS_COORD, x)),
+      y: Math.max(-MAX_CANVAS_COORD, Math.min(MAX_CANVAS_COORD, y)),
+    };
+    count += 1;
+  }
+  return Object.keys(positions).length > 0 ? { positions } : undefined;
+}
+
 export function decodeOrrlab(
   json: unknown,
   registry: Registry,
@@ -273,6 +319,18 @@ export function decodeOrrlab(
       if (wires.length > 0) cell.wires = wires;
     }
     cells.push(cell);
+  }
+  // Canvas layout (S5): sanitize, then resolve the id-keyed positions onto the
+  // cells (rawCards[i] ↔ cells[i] — the placeholder discipline guarantees it).
+  const canvas = sanitizeCanvas(
+    json.canvas,
+    new Set(rawCards.map((c) => (typeof c.id === 'string' ? c.id : ''))),
+  );
+  if (canvas) {
+    rawCards.forEach((rc, i) => {
+      const pos = typeof rc.id === 'string' ? canvas.positions[rc.id] : undefined;
+      if (pos) cells[i].position = pos;
+    });
   }
   const title = typeof json.title === 'string' ? json.title : 'Notebook';
   return { title, cells };

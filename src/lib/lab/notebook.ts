@@ -106,11 +106,27 @@ export function recomputeNotebook(cells: Cell[], registry: Registry): CellComput
       // not the runtime values map — a wire naming an undeclared output is an
       // invalid wire, NOT an upstream failure.
       const srcDef = registry.get(cells[w.fromIndex].formulaId);
-      const declares =
-        !!srcDef &&
-        (srcDef.outputs.some((o) => o.key === w.output) ||
-          (srcDef.selectionOutputs?.some((o) => o.key === w.output) ?? false));
-      if (!declares) {
+      const outSpec =
+        srcDef?.outputs.find((o) => o.key === w.output) ??
+        srcDef?.selectionOutputs?.find((o) => o.key === w.output);
+      if (!outSpec) {
+        problem = {
+          status: 'invalid-wire',
+          blockedInput: w.toInput,
+          fromIndex: w.fromIndex,
+          output: w.output,
+        };
+        break;
+      }
+
+      // UNITS MATCH (the Card contract, spec.ts — S5 pre-review latent-gap fix):
+      // declaration alone let a hostile .orrlab wire seconds into km/s and render
+      // a silently-wrong green. Numeric wires must match the target
+      // FieldSpec.units EXACTLY (no implicit conversion; same rule the goal
+      // registry enforces statically in its B2 test). Skipped only when the
+      // destination formula is unknown — `unknown-formula` surfaces later.
+      const dstField = registry.get(cell.formulaId)?.inputs?.find((f) => f.key === w.toInput);
+      if (dstField && dstField.units !== outSpec.units) {
         problem = {
           status: 'invalid-wire',
           blockedInput: w.toInput,

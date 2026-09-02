@@ -395,7 +395,23 @@ export interface Card {
 }
 
 export interface Notebook {
-  orrlab: 1; // .orrlab.json schema VERSION (frozen); the codec preserves unknown fields
+  /**
+   * .orrlab.json schema VERSION (frozen at 1). CONTRACT AMENDMENT (S5 · #463,
+   * Fable-5 pre-review B): unknown fields are DROPPED by the sanitizing codec —
+   * BY DESIGN, not preservation. The codec's whole posture is
+   * sanitize-everything-untrusted; round-tripping opaque attacker-controlled
+   * bags would invert it. Known optional fields (like `canvas`) degrade
+   * honestly instead: an old decoder ignores them, losing LAYOUT ONLY —
+   * cards/wires/notes/selection always survive.
+   */
+  orrlab: 1;
   title: string; // USER free text — NOT i18n-keyed
   cards: Card[];
+  /**
+   * Canvas layout (S5 · T2). Positions are card-id keyed; `Card.wires` IS the
+   * edge set (a separate edges array would double-count — pre-review premise
+   * correction of RFC-037 §5). Never URL-serialized; sanitized on decode
+   * (finite, clamped, ids ⊆ cards).
+   */
+  canvas?: { positions: Record<string, { x: number; y: number }> };
 }

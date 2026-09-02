@@ -6,6 +6,7 @@ import {
   decodeOrrlab,
   NOTEBOOK_CODEC_VERSION,
   MAX_NOTE_LEN,
+  MAX_CANVAS_COORD,
   type CodecCell,
   type OrrlabCell,
 } from './codec';
@@ -228,6 +229,53 @@ describe('codec · .orrlab round-trip (id wires ↔ index wires)', () => {
     );
     expect(again.cards[0].note).toBe('start here');
     expect(again.cards[2].note).toBe('why: g varies by body');
+  });
+
+  it('canvas positions ROUND-TRIP: encode writes id-keyed, decode resolves onto cells (S5)', () => {
+    const cells = m1OrrlabCells();
+    const doc = encodeOrrlab(cells, 'layout', {
+      positions: { s0: { x: 120, y: -40 }, s2: { x: 900, y: 310 }, ghost: { x: 1, y: 1 } },
+    });
+    expect(doc.canvas?.positions.s0).toEqual({ x: 120, y: -40 });
+    expect(doc.canvas?.positions.ghost).toBeUndefined(); // unknown id never written
+    const back = decodeOrrlab(doc, REGISTRY)!;
+    expect(back.cells[0].position).toEqual({ x: 120, y: -40 });
+    expect(back.cells[2].position).toEqual({ x: 900, y: 310 });
+    expect(back.cells[1].position).toBeUndefined();
+  });
+
+  it('hostile canvas degrades to no-layout, never a crash: bad coords clamped/dropped, foreign ids ignored', () => {
+    const doc = {
+      orrlab: 1,
+      title: 't',
+      cards: [{ id: 'a', formulaId: 'tsiolkovsky', inputs: {} }],
+      canvas: {
+        positions: {
+          a: { x: 1e300, y: -1e300 }, // clamped to ±MAX_CANVAS_COORD
+          nope: { x: 1, y: 2 }, // id not among cards
+          __proto__: { x: 3, y: 4 },
+        },
+      },
+    };
+    const back = decodeOrrlab(doc, REGISTRY)!;
+    expect(back.cells[0].position).toEqual({ x: MAX_CANVAS_COORD, y: -MAX_CANVAS_COORD });
+    expect(({} as { x?: number }).x).toBeUndefined(); // no prototype pollution
+    const junk = decodeOrrlab(
+      {
+        orrlab: 1,
+        title: 't',
+        cards: [{ id: 'a', formulaId: 'tsiolkovsky', inputs: {} }],
+        canvas: { positions: { a: { x: NaN, y: 'up' } } },
+      },
+      REGISTRY,
+    )!;
+    expect(junk.cells[0].position).toBeUndefined();
+  });
+
+  it('an old-style doc without canvas decodes exactly as before (layout-only degrade)', () => {
+    const cells = m1OrrlabCells();
+    const back = decodeOrrlab(encodeOrrlab(cells, 'x'), REGISTRY)!;
+    expect(back.cells.every((c) => c.position === undefined)).toBe(true);
   });
 
   it('an oversized note is truncated to MAX_NOTE_LEN on decode', () => {

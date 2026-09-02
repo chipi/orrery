@@ -181,6 +181,7 @@
     "@sentry/capacitor": "^4.2.0",
     "@sentry/sveltekit": "10.60.0",
     "detect-gpu": "^5.0.70",
+    "jose": "^6.2.10",
     "katex": "^0.17.0",
     "qrcode": "1.5.4",
     "three": "0.185.1"

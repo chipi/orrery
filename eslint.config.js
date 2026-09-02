@@ -87,6 +87,28 @@ export default [
     },
   },
   {
+    // MCP-consumer boundary (S4 · #462 · 2026-09-01 plan review MAJOR-4). The
+    // standalone MCP server (`server/**`) and the app-side lab modules it consumes
+    // (codec + recompute engine) must run in bare Node — an app edit coupling them
+    // to svelte/$app/three would only surface at the MCP container's cold CI
+    // build. Enforce the boundary where the edit happens instead.
+    files: ['server/**/*.ts', 'src/lib/lab/codec.ts', 'src/lib/lab/notebook.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['three', 'three/*', 'svelte', 'svelte/*', '$app/*'],
+              message:
+                'consumed by the standalone MCP server (server/mcp) — must stay framework-free (bare Node).',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
     // Stricter rules for NON-TEST kernel files (the shipped contract). Tests are
     // exempt: they legitimately use dynamic import() for orchestration and reach
     // `../../test-helpers/*`. (Fable-5 S1 holistic B1.)
@@ -159,6 +181,7 @@ export default [
       'build/',
       '.svelte-kit/',
       'dist/',
+      'dist-mcp/', // esbuild-bundled MCP server output (S4) — generated, gitignored
       'node_modules/',
       // Capacitor native project dirs — platform-generated + the synced web
       // bundle copy (cap sync populates ios/App/App/public +

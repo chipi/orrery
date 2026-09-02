@@ -125,3 +125,57 @@ jobs:
       - run: npm run test:coverage
       - run: npm run validate-data
       - run: npm run build
+
+  # ════════════════════════════════════════════════════════════════════
+  # mcp-image (S4 · #462) — builds the MCP server container cold and
+  # round-trips it with a real Streamable HTTP request, so a kernel or
+  # bundling change that breaks the bare-Node consumer surfaces HERE,
+  # not on the VPS. On main pushes the verified image publishes to GHCR
+  # (:main + :sha-<short>, amd64-only — the VPS is amd64 and the bundle
+  # is pure JS; no native deps, so no multi-arch matrix needed).
+  # ════════════════════════════════════════════════════════════════════
+  mcp-image:
+    # `needs: ci` (holistic MINOR-4): without it a main push with red unit
+    # tests but a green container build would still advance the GHCR :main tag
+    # — the compose default the VPS pulls. Image integrity > job parallelism.
+    needs: ci
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - name: Build image
+        run: docker build -f Dockerfile.mcp -t orrery-mcp:ci .
+      - name: Live round-trip (health + initialize + tools/list)
+        run: |
+          set -euo pipefail
+          docker run -d --name mcp-ci -e MCP_DEV_BEARER=ci-bearer -p 8091:8091 orrery-mcp:ci
+          for i in $(seq 1 20); do
+            curl -sf http://127.0.0.1:8091/health >/dev/null && break
+            sleep 1
+          done
+          curl -sf http://127.0.0.1:8091/health | grep -q '"ok":true'
+          # Unauthenticated must 401.
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST http://127.0.0.1:8091/mcp \
+            -H 'content-type: application/json' -d '{}')
+          test "$code" = "401"
+          # Initialize over Streamable HTTP with the bearer.
+          curl -sf -X POST http://127.0.0.1:8091/mcp \
+            -H 'authorization: Bearer ci-bearer' \
+            -H 'content-type: application/json' \
+            -H 'accept: application/json, text/event-stream' \
+            -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"ci","version":"0"}}}' \
+            | grep -q '"orrery-physics"'
+          docker rm -f mcp-ci
+      - name: Publish to GHCR (main pushes only)
+        if: github.repository == 'chipi/orrery' && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          set -euo pipefail
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          SHORT=$(echo "${{ github.sha }}" | cut -c1-7)
+          docker tag orrery-mcp:ci ghcr.io/chipi/orrery-mcp:main
+          docker tag orrery-mcp:ci "ghcr.io/chipi/orrery-mcp:sha-${SHORT}"
+          docker push ghcr.io/chipi/orrery-mcp:main
+          docker push "ghcr.io/chipi/orrery-mcp:sha-${SHORT}"

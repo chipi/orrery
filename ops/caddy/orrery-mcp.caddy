@@ -1,0 +1,20 @@
+# Public MCP vhost (S4 · #462 · RFC-037 §6) — ROUTING OWNED BY THIS REPO.
+#
+# The shared Caddy edge engine is owned by podcast_scraper (ADR-114); this file
+# is a tenant vhost dropped into /etc/caddy/sites/orrery-mcp.caddy by
+# ops/deploy_caddy_vhosts.sh (`caddy adapt`-gated, then restart).
+#
+# Upstream: the orrery-mcp container on loopback 8091 (compose
+# `compose/docker-compose.prod.yml` service `mcp`; ADR-114 port map — 8080
+# podcast, 8090 orrery web, 8091 orrery mcp). The server itself enforces auth
+# (S4: dev bearer; #534 upgrades to OAuth 2.1 with lab-api as the AS) and its
+# own rate/concurrency caps — the vhost only terminates TLS and proxies.
+#
+# DNS: mcp.orrerylearn.com must resolve to the box BEFORE this file lands, or
+# ACME retries burn Let's Encrypt rate limits (same caveat as orrery.caddy).
+#
+# Rollback: rm /etc/caddy/sites/orrery-mcp.caddy && sudo systemctl restart caddy.
+mcp.orrerylearn.com {
+	import hardened
+	reverse_proxy 127.0.0.1:8091
+}

@@ -406,7 +406,7 @@ export default defineConfig(({ mode }) => {
       chunkSizeWarningLimit: 700,
     },
     test: {
-      include: ['src/**/*.{test,spec}.{js,ts}', 'scripts/**/*.test.ts'],
+      include: ['src/**/*.{test,spec}.{js,ts}', 'scripts/**/*.test.ts', 'server/**/*.test.ts'],
       // S1 (Test-coverage gap-closure plan) wired the v8 coverage reporter;
       // S5/G1-G9 raised the per-file numbers to 94.54 % / 79.71 % / 89.24 %
       // / 96.34 % (stmt / branch / fn / line). Gate locked at observed

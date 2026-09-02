@@ -87,6 +87,30 @@ services:
       retries: 3
       start_period: 10s
 
+  # Orrery MCP server (S4 · #462 · RFC-037 §6) — the physics kernel as MCP
+  # tools over Streamable HTTP, fronted by the mcp.orrerylearn.com Caddy vhost
+  # (ops/caddy/orrery-mcp.caddy → 127.0.0.1:8091). Image published to GHCR by
+  # ci.yml's mcp-image job; ORRERY_MCP_IMAGE_TAG staged per-deploy like the
+  # pipeline tag. Bearer here is the S4 dev gate only — OAuth 2.1 arrives with
+  # lab-api (#533/#534) and demotes it.
+  #
+  # DEPLOY NOTE: an unset ORRERY_MCP_DEV_BEARER + NODE_ENV=production makes the
+  # server refuse to start (intended fail-closed) — under restart:
+  # unless-stopped that reads as a crash-loop. Stage the secret in /srv/orrery
+  # /.env BEFORE the first `up -d mcp`.
+  mcp:
+    image: ghcr.io/chipi/orrery-mcp:${ORRERY_MCP_IMAGE_TAG:-main}
+    container_name: orrery-mcp
+    restart: unless-stopped
+    ports:
+      # Loopback-only: Caddy is the sole public entry (ADR-114 port map —
+      # 8080 podcast, 8090 orrery web, 8091 orrery mcp).
+      - '127.0.0.1:${ORRERY_MCP_PORT:-8091}:8091'
+    environment:
+      MCP_DEV_BEARER: '${ORRERY_MCP_DEV_BEARER:-}'
+      MCP_RATE_LIMIT_PER_MIN: '${ORRERY_MCP_RATE_LIMIT_PER_MIN:-60}'
+      MCP_MAX_CONCURRENT: '${ORRERY_MCP_MAX_CONCURRENT:-4}'
+
   # Pipeline-runner image pulled from GHCR. One-shot invocations spawned
   # by host cron (or `docker compose run --rm pipeline-runner ...`).
   # Image tag pinned via env var so the deploy workflow can roll forward

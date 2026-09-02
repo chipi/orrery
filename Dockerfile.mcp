@@ -1,0 +1,32 @@
+# Orrery MCP server image (S4 · #462 · RFC-037 §6).
+#
+# Two-stage: the builder runs the esbuild bundle (self-contained ESM, kernel
+# JSON inlined); the runtime carries node:20-alpine + ONE bundle file + the
+# messages/ bundles (read at runtime for ×14 tool descriptions). No node_modules
+# in the runtime image — smaller surface, faster cold start (2026-09-01 plan
+# review MAJOR-4).
+#
+# Build (CI + locally):  docker build -f Dockerfile.mcp -t orrery-mcp .
+# Run:                   docker run -e MCP_DEV_BEARER=... -p 8091:8091 orrery-mcp
+
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --ignore-scripts
+COPY scripts/build-mcp-server.mjs scripts/
+COPY server/ server/
+COPY src/ src/
+COPY static/data/ static/data/
+RUN node scripts/build-mcp-server.mjs
+
+FROM node:20-alpine
+ENV NODE_ENV=production
+WORKDIR /srv/mcp
+COPY --from=builder /app/dist-mcp/server.mjs ./server.mjs
+COPY messages/ ./messages/
+RUN addgroup -S mcp && adduser -S mcp -G mcp
+USER mcp
+EXPOSE 8091
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
+  CMD node -e "fetch('http://127.0.0.1:'+(process.env.MCP_PORT||8091)+'/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+CMD ["node", "server.mjs"]

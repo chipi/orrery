@@ -21,6 +21,7 @@ import {
   orbitalPeriodS,
 } from '../mechanics/orbits';
 import { poweredDescentDvKms } from '../mechanics/descent';
+import { MU_BODY_M3_S2, R_BODY_M } from '../descent/descent-physics-constants';
 import { terminalVelocityMs, SURFACE_DENSITY_KGM3 } from '../mechanics/atmosphere';
 import { bodyGravityMs2 } from '../mechanics/bodies';
 import { locationModel, rotationVelocityKms } from '../util/location';
@@ -2310,6 +2311,196 @@ export const airbagsCheck: FormulaDef<{ impactMs: number; airbagLimitMs: number 
     }
     return {
       values: { margin: { value: margin, units: 'm/s' } },
+      status: { ok: true },
+      ...base,
+    } satisfies FormulaResult;
+  },
+};
+
+// The five micro-g worlds the descent kernel models (P5 · #529) — every one has
+// been touched by a real spacecraft: Philae/67P, Hayabusa/Itokawa, Hayabusa2/
+// Ryugu, OSIRIS-REx/Bennu, NEAR Shoemaker/Eros.
+const MICROG_BODY_IDS = ['comet_67p', 'itokawa', 'ryugu', 'bennu', 'eros'] as const;
+
+function isMicrogBody(id: string): id is (typeof MICROG_BODY_IDS)[number] {
+  return (MICROG_BODY_IDS as readonly string[]).includes(id);
+}
+
+/**
+ * Micro-g surface (A8 "touch a small world" · #529) — the two numbers that make
+ * small-body operations a DIFFERENT sport: surface gravity g = μ/R² and escape
+ * velocity v_esc = √(2μ/R), straight from the descent kernel's IAU/JPL body
+ * table. On Bennu v_esc is ~0.2 m/s — slower than a walking pace — so "landing"
+ * in the planetary sense barely exists; every mission here either bounced,
+ * hopped, or touched-and-went.
+ */
+export const microGSurface: FormulaDef<{ body: string }> = {
+  id: 'micro-g-surface',
+  titleKey: 'lab.f.microg.title',
+  domain: 'descent',
+  tier: 7,
+  prereqs: ['weight'],
+  latex: 'g = \\dfrac{\\mu}{R^2}, \\quad v_{esc} = \\sqrt{\\dfrac{2\\mu}{R}}',
+  inputs: [
+    {
+      key: 'body',
+      labelKey: 'lab.f.microg.body',
+      units: '',
+      kind: 'body',
+      default: 'comet_67p',
+      bodyIds: [...MICROG_BODY_IDS],
+    },
+  ],
+  outputs: [
+    { key: 'gMs2', labelKey: 'lab.f.microg.g', units: 'm/s2' },
+    { key: 'vEscMs', labelKey: 'lab.f.microg.vesc', units: 'm/s' },
+  ],
+  compute: ({ body }) => {
+    if (!isMicrogBody(body)) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions: ['lab.assume.point-mass', 'lab.assume.mean-radius'],
+      } satisfies FormulaResult;
+    }
+    const mu = MU_BODY_M3_S2[body];
+    const r = R_BODY_M[body];
+    return {
+      values: {
+        gMs2: { value: mu / (r * r), units: 'm/s2' },
+        vEscMs: { value: Math.sqrt((2 * mu) / r), units: 'm/s' },
+      },
+      status: { ok: true },
+      assumptions: ['lab.assume.point-mass', 'lab.assume.mean-radius'],
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Touchdown bounce (A8 · #529) — what actually happens when you hit a micro-g
+ * world: you BOUNCE, at e·v_td, and the point-mass energy equation says how
+ * high — h = (1/R − v_b²/2μ)⁻¹ − R. The uniform-g h = v²/2g would lie badly
+ * here: bounce apexes rival the body's own radius. If the bounce clears v_esc
+ * the world cannot hold you at all → fail-honest: you have LEFT (why
+ * OSIRIS-REx touched-and-went BY DESIGN, and why Philae's failed harpoons
+ * nearly lost it). Hayabusa2's MINERVA rovers inverted the bug into the
+ * feature: in micro-g, hopping IS driving.
+ */
+export const touchdownBounce: FormulaDef<{
+  body: string;
+  touchdownMs: number;
+  restitution: number;
+}> = {
+  id: 'touchdown-bounce',
+  titleKey: 'lab.f.bounce.title',
+  domain: 'descent',
+  tier: 7,
+  prereqs: ['micro-g-surface'],
+  latex:
+    'v_b = e\\,v_{td},\\quad h = \\left(\\tfrac{1}{R} - \\tfrac{v_b^2}{2\\mu}\\right)^{-1} - R',
+  inputs: [
+    {
+      key: 'body',
+      labelKey: 'lab.f.bounce.body',
+      units: '',
+      kind: 'body',
+      default: 'comet_67p',
+      bodyIds: [...MICROG_BODY_IDS],
+    },
+    {
+      key: 'touchdownMs',
+      labelKey: 'lab.f.bounce.touchdown',
+      units: 'm/s',
+      kind: 'number',
+      default: 1,
+      min: 0.01,
+      max: 20,
+    },
+    {
+      key: 'restitution',
+      labelKey: 'lab.f.bounce.restitution',
+      units: '',
+      kind: 'number',
+      default: 0.4,
+      min: 0,
+      max: 0.95,
+    },
+  ],
+  outputs: [
+    { key: 'bounceMs', labelKey: 'lab.f.bounce.speed', units: 'm/s' },
+    { key: 'apexM', labelKey: 'lab.f.bounce.apex', units: 'm' },
+  ],
+  compute: ({ body, touchdownMs, restitution }) => {
+    const assumptions = [
+      'lab.assume.point-mass',
+      'lab.assume.mean-radius',
+      'lab.assume.vertical-bounce',
+    ];
+    if (!isMicrogBody(body)) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.orbits.err-unknown-body' },
+        assumptions,
+      } satisfies FormulaResult;
+    }
+    if (!Number.isFinite(touchdownMs) || !Number.isFinite(restitution)) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.descent.err-input' },
+        assumptions,
+      } satisfies FormulaResult;
+    }
+    const mu = MU_BODY_M3_S2[body];
+    const r = R_BODY_M[body];
+    const vEsc = Math.sqrt((2 * mu) / r);
+    const vb = restitution * touchdownMs;
+    const apexAt = (v: number): number => 1 / (1 / r - (v * v) / (2 * mu)) - r;
+    // Apex-vs-restitution curve — it diverges where e·v_td reaches v_esc, so
+    // the mark shows how close the chosen bounce sits to the escape cliff.
+    const points: Vec2[] = [];
+    for (let e = 0; e <= 0.9501; e += 0.02) {
+      const v = e * touchdownMs;
+      if (v >= vEsc) break;
+      points.push({ x: e, y: apexAt(v) });
+    }
+    const base = {
+      assumptions,
+      figure: {
+        kind: 'curve' as const,
+        provenance: { fidelity: 'computed' as const, module: 'descent/descent-physics' },
+        assumptions: ['lab.assume.point-mass'],
+        x: { labelKey: 'lab.axis.restitution', units: '' as const },
+        y: { labelKey: 'lab.axis.height', units: 'm' as const },
+        series: [{ points }],
+        marks:
+          vb < vEsc
+            ? [
+                {
+                  at: { x: restitution, y: apexAt(vb) },
+                  labelKey: 'lab.mark.you-are-here',
+                  kind: 'point' as const,
+                },
+              ]
+            : [],
+      },
+    };
+    if (vb >= vEsc) {
+      // The world cannot hold you — there is no apex to report.
+      const values: Record<string, Quantity> = { bounceMs: { value: vb, units: 'm/s' } };
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.bounce.err-escaped' },
+        ...base,
+      } satisfies FormulaResult;
+    }
+    return {
+      values: {
+        bounceMs: { value: vb, units: 'm/s' },
+        apexM: { value: apexAt(vb), units: 'm' },
+      },
       status: { ok: true },
       ...base,
     } satisfies FormulaResult;
@@ -5207,6 +5398,8 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [deorbitBurn.id, deorbitBurn],
   [entryHeating.id, entryHeating],
   [entryCorridor.id, entryCorridor],
+  [microGSurface.id, microGSurface],
+  [touchdownBounce.id, touchdownBounce],
   [solarEscapeVelocity.id, solarEscapeVelocity],
   [heliocentricEscapeDv.id, heliocentricEscapeDv],
   [oberthDepartureDv.id, oberthDepartureDv],

@@ -37,7 +37,7 @@ export const MU_BODY_M3_S2: Record<DescentBody, number> = {
   jupiter: 1.26686534e17,
   comet_67p: 6.662e2, // 67P/Churyumov–Gerasimenko, M≈9.98e12 kg
   itokawa: 2.342, // M≈3.51e10 kg
-  ryugu: 30.03, // M≈4.50e11 kg
+  ryugu: 29.8, // GM 29.8±0.3 measured directly (Hayabusa2 orbit determination), not G×M(est)
   bennu: 4.892, // M≈7.33e10 kg
   eros: 4.463e5, // 433 Eros, M≈6.687e15 kg
 };

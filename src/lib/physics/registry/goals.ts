@@ -628,6 +628,84 @@ export const probeJupiter: Goal = {
 };
 
 /**
+ * A8 "touch a small world" (#529 · P5) — the last landing frontier, where "landing"
+ * stops meaning what it meant everywhere else. Five worlds, five real missions, one
+ * inverted physics: escape velocities of 0.2–10 m/s mean the danger is not hitting
+ * too hard but LEAVING by accident. The ladder: 67P's numbers (Philae's world) → the
+ * bounce that nearly lost Philae when its harpoons failed (rebound ≈0.38 of a 1 m/s
+ * touchdown, an apex of hundreds of metres, but under 67P's ~0.9 m/s escape — it
+ * stayed) → Bennu, where the same class of push ESCAPES (fail-honest rung: e·v >
+ * v_esc, no apex exists — why OSIRIS-REx only ever touched-and-went) → Ryugu, where
+ * Hayabusa2's MINERVA-II rovers made bouncing the LOCOMOTION (torque-driven hops, no
+ * wheels — wheels would fling you off) → Itokawa, the smallest world ever sampled →
+ * Eros, the counterexample big enough (v_esc ~10 m/s) that NEAR Shoemaker — an
+ * orbiter with no landing gear — set down at ~1.6 m/s and kept transmitting from the
+ * surface. Kernel check (2026-09-03): 67P g=2.25e-4 m/s², vEsc=0.88 m/s;
+ * bounce(67p, 1.0, 0.38) → 0.38 m/s, apex ~394 m, ok; bounce(bennu, 0.5, 0.5) →
+ * 0.25 > vEsc 0.20 → err-escaped; bounce(ryugu, 0.25, 0.4) → 0.10 m/s, apex ~36 m;
+ * itokawa vEsc 0.17; eros vEsc 10.3 (point-mass mean; local range ~3–17 by shape).
+ * Science-reviewed 2026-09-03: 2 MAJOR fixed (rebound is 38% not "a third";
+ * "largest asteroid sample" qualifier), ryugu GM corrected to the directly
+ * measured 29.8, MINERVA hop claim aligned to the JAXA 15 m / 15 min spec,
+ * Philae = three touchdowns, Hayabusa return year 2010; μ/R constants + the
+ * fail-honest Bennu escape logic verified against ESA/NASA/JAXA sources.
+ */
+export const touchSmallWorld: Goal = {
+  id: 'touch-small-world',
+  titleKey: 'lab.goal.touch-small-world.title',
+  family: 'spaceflight',
+  tier: 7,
+  prereqs: ['land-on-titan'],
+  path: [
+    {
+      formulaId: 'micro-g-surface',
+      narrativeKey: 'lab.goal.tsw.microg',
+      presetInputs: { body: 'comet_67p' },
+    },
+    {
+      formulaId: 'touchdown-bounce',
+      narrativeKey: 'lab.goal.tsw.philae',
+      presetInputs: { body: 'comet_67p', touchdownMs: 1.0, restitution: 0.38 },
+    },
+    {
+      // Fail-honest BY DESIGN: on Bennu the same class of bounce clears escape —
+      // the formula reports err-escaped and no apex. That refusal IS the lesson.
+      formulaId: 'touchdown-bounce',
+      narrativeKey: 'lab.goal.tsw.bennu',
+      presetInputs: { body: 'bennu', touchdownMs: 0.5, restitution: 0.5 },
+    },
+    {
+      formulaId: 'touchdown-bounce',
+      narrativeKey: 'lab.goal.tsw.ryugu',
+      presetInputs: { body: 'ryugu', touchdownMs: 0.25, restitution: 0.4 },
+    },
+    {
+      formulaId: 'micro-g-surface',
+      narrativeKey: 'lab.goal.tsw.itokawa',
+      presetInputs: { body: 'itokawa' },
+    },
+    {
+      formulaId: 'micro-g-surface',
+      narrativeKey: 'lab.goal.tsw.eros',
+      presetInputs: { body: 'eros' },
+    },
+  ],
+  connection: {
+    whyKey: 'lab.conn.tsw.why',
+    hookKey: 'lab.conn.tsw.hook',
+    links: [
+      { labelKey: 'lab.conn.tsw.rosetta', href: '/fly?mission=rosetta', agency: 'ESA' },
+      { labelKey: 'lab.conn.tsw.hayabusa2', href: '/fly?mission=hayabusa2', agency: 'JAXA' },
+      { labelKey: 'lab.conn.tsw.osirisrex', href: '/fly?mission=osiris-rex', agency: 'NASA' },
+      { labelKey: 'lab.conn.tsw.hayabusa1', href: '/fly?mission=hayabusa1', agency: 'JAXA' },
+      { labelKey: 'lab.conn.tsw.near', href: '/fly?mission=near-shoemaker', agency: 'NASA' },
+      { labelKey: 'lab.conn.tsw.explore', href: '/explore' },
+    ],
+    nextKey: 'lab.conn.tsw.next',
+  },
+};
+
+/**
  * M6 "leave the solar system" — the last spaceflight rung, and a genuinely NEW physics:
  * hyperbolic escape, not another closed transfer. Solar escape velocity at 1 AU (~42 km/s)
  * → the heliocentric Δv beyond Earth's orbital motion to reach it (~12.3 km/s) → the
@@ -1088,6 +1166,7 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [landOnVenus.id, landOnVenus],
   [landOnTitan.id, landOnTitan],
   [probeJupiter.id, probeJupiter],
+  [touchSmallWorld.id, touchSmallWorld],
   [leaveTheSolarSystem.id, leaveTheSolarSystem],
   [moonPhases.id, moonPhases],
   [chooseAnOrbit.id, chooseAnOrbit],

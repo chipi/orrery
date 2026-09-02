@@ -84,15 +84,6 @@ describe('capability manifest · built→goal gate (armed)', () => {
   it('the pending set is exactly the tracked Phase-2 remainder (drift alarm)', () => {
     // Deliberately explicit: this list SHRINKS as P2–P7 land and must be []
     // at release exit (#464). Editing it means touching the manifest — good.
-    expect(pendingCapabilities().sort()).toEqual(
-      [
-        'domain:propulsion (#531)',
-        'descent-body:comet_67p (#529)',
-        'descent-body:itokawa (#529)',
-        'descent-body:ryugu (#529)',
-        'descent-body:bennu (#529)',
-        'descent-body:eros (#529)',
-      ].sort(),
-    );
+    expect(pendingCapabilities().sort()).toEqual(['domain:propulsion (#531)'].sort());
   });
 });

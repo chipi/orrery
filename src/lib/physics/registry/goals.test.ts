@@ -1223,3 +1223,61 @@ describe('systems · re-entry lift steering (lift widens the corridor)', () => {
     expect(g.path.map((s) => s.formulaId)).toEqual(['entry-steering', 'entry-range-control']);
   });
 });
+
+describe('A8 touch-small-world · micro-g golden masters (P5 · #529)', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('67P: g ~2.25e-4 m/s², escape ~0.88 m/s — a joggable world', () => {
+    const r = compute('micro-g-surface', { body: 'comet_67p' });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.gMs2.value).toBeCloseTo(2.25e-4, 5);
+    expect(r.values.vEscMs.value).toBeCloseTo(0.88, 2);
+  });
+
+  it('the five worlds order by escape velocity: itokawa < bennu < ryugu < 67P < eros', () => {
+    const vEsc = (body: string) => compute('micro-g-surface', { body }).values.vEscMs.value;
+    expect(vEsc('itokawa')).toBeCloseTo(0.17, 2);
+    expect(vEsc('bennu')).toBeCloseTo(0.2, 2);
+    expect(vEsc('ryugu')).toBeCloseTo(0.36, 2);
+    expect(vEsc('eros')).toBeCloseTo(10.3, 1);
+    expect(vEsc('itokawa')).toBeLessThan(vEsc('bennu'));
+    expect(vEsc('bennu')).toBeLessThan(vEsc('ryugu'));
+    expect(vEsc('ryugu')).toBeLessThan(vEsc('comet_67p'));
+    expect(vEsc('comet_67p')).toBeLessThan(vEsc('eros'));
+  });
+
+  it('Philae bounce (67P, 1 m/s, e=0.38): rebounds sub-escape to a ~394 m apex — it STAYS', () => {
+    const r = compute('touchdown-bounce', {
+      body: 'comet_67p',
+      touchdownMs: 1.0,
+      restitution: 0.38,
+    });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.bounceMs.value).toBeCloseTo(0.38, 2);
+    expect(r.values.apexM.value).toBeCloseTo(394, 0);
+    // The honesty of the point-mass form: uniform-g v²/2g would UNDERSTATE the
+    // apex here (~320 m) because the bounce climbs a meaningful way out of the well.
+    const g = compute('micro-g-surface', { body: 'comet_67p' }).values.gMs2.value;
+    expect(r.values.apexM.value).toBeGreaterThan((0.38 * 0.38) / (2 * g));
+  });
+
+  it('Bennu TAG rung fails HONEST: e·v clears escape → err-escaped, no apex value', () => {
+    const r = compute('touchdown-bounce', { body: 'bennu', touchdownMs: 0.5, restitution: 0.5 });
+    expect(r.status.ok).toBe(false);
+    if (!r.status.ok) expect(r.status.reasonKey).toBe('lab.f.bounce.err-escaped');
+    expect(r.values.bounceMs.value).toBeCloseTo(0.25, 2);
+    expect(r.values.apexM).toBeUndefined();
+  });
+
+  it('Ryugu MINERVA hop (0.25 m/s, e=0.4): a ~36 m arc — hopping as locomotion', () => {
+    const r = compute('touchdown-bounce', { body: 'ryugu', touchdownMs: 0.25, restitution: 0.4 });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.apexM.value).toBeCloseTo(36, 0);
+  });
+
+  it('the ladder mechanically pins all five micro-g worlds (the A8 coverage proof)', () => {
+    const g = GOALS.get('touch-small-world')!;
+    const pinned = g.path.map((s) => s.presetInputs?.body).filter(Boolean);
+    expect(new Set(pinned)).toEqual(new Set(['comet_67p', 'bennu', 'ryugu', 'itokawa', 'eros']));
+  });
+});

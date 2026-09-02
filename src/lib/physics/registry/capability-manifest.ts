@@ -55,11 +55,11 @@ export const DESCENT_BODY_CAPABILITIES: Record<DescentBody, CapabilityRow> = {
   venus: { status: 'covered' }, // land-on-venus (P2 · #526)
   titan: { status: 'covered' }, // land-on-titan (P3 · #527)
   jupiter: { status: 'covered' }, // probe-jupiter (P4 · #528 — entry, no landing, by design)
-  comet_67p: { status: 'pending', trackedBy: '#529' },
-  itokawa: { status: 'pending', trackedBy: '#529' },
-  ryugu: { status: 'pending', trackedBy: '#529' },
-  bennu: { status: 'pending', trackedBy: '#529' },
-  eros: { status: 'pending', trackedBy: '#529' },
+  comet_67p: { status: 'covered' }, // touch-small-world (P5 · #529 — Philae bounce)
+  itokawa: { status: 'covered' }, // touch-small-world (P5 · #529 — Hayabusa)
+  ryugu: { status: 'covered' }, // touch-small-world (P5 · #529 — MINERVA hop)
+  bennu: { status: 'covered' }, // touch-small-world (P5 · #529 — TAG escape, fail-honest)
+  eros: { status: 'covered' }, // touch-small-world (P5 · #529 — NEAR landing)
 };
 
 /** The release-exit view: capabilities still awaiting their pulling goal. */

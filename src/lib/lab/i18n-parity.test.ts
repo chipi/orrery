@@ -98,6 +98,33 @@ function collectAllKeys(): string[] {
   ['lab.conn.heading', 'lab.conn.hook-label', 'lab.conn.next-label', 'lab.conn.aria'].forEach(add);
   // Promote refusal reasons (S5) — emitted by promote.ts, rendered by the Canvas UI.
   ['lab.promote.reason-cycle', 'lab.promote.reason-too-big'].forEach(add);
+  // Canvas chrome (S5) — rendered via t() in Canvas.svelte + the /lab view switch.
+  [
+    'lab.canvas.aria',
+    'lab.canvas.add-formula',
+    'lab.canvas.blocked-upstream',
+    'lab.canvas.blocked-wire',
+    'lab.canvas.cancel',
+    'lab.canvas.cycle',
+    'lab.canvas.drag-handle',
+    'lab.canvas.palette-aria',
+    'lab.canvas.palette-search',
+    'lab.canvas.promote',
+    'lab.canvas.promote-confirm',
+    'lab.canvas.promote-confirm-aria',
+    'lab.canvas.promote-summary',
+    'lab.canvas.promote-title',
+    'lab.canvas.readonly-note',
+    'lab.canvas.select-card',
+    'lab.canvas.unwire',
+    'lab.canvas.upstream-cycle',
+    'lab.canvas.upstream-included',
+    'lab.canvas.wire-from',
+    'lab.canvas.wire-to',
+    'lab.ui.view-canvas',
+    'lab.ui.view-notebook',
+    'lab.ui.view-switch-aria',
+  ].forEach(add);
   // Body-picker option labels — rendered via t(`lab.body.${id}`) in Card.svelte (not a labelKey).
   ['earth', 'moon', 'mars', 'venus', 'mercury'].forEach((b) => add(`lab.body.${b}`));
   // Moon-phase names (G8) — figure.phaseLabelKey is dynamic (date → phase), so assert all 8.

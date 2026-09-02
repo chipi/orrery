@@ -11,9 +11,13 @@
 <script lang="ts">
   import 'katex/dist/katex.min.css';
   import { untrack } from 'svelte';
+  import { browser } from '$app/environment';
+  import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import { GOALS } from '$lib/physics/registry/goals';
   import Notebook from '$lib/lab/Notebook.svelte';
+  import Canvas from '$lib/lab/Canvas.svelte';
   import { createLabState } from '$lib/lab/lab-state.svelte';
   import type { PageData } from './$types';
 
@@ -29,6 +33,12 @@
   // Seeded from the INITIAL goal deliberately (untrack): later goal switches
   // re-seed through Notebook's goal-change effect, not by re-creating state.
   const labState = createLabState(untrack(() => goal));
+
+  // View switch (S5): Notebook is the default home; Canvas is the T2 workspace.
+  // Touch devices get the read-only graph (UXS-015 §Responsive — never a wiring
+  // surface on mobile; a stated limitation).
+  let view = $state<'notebook' | 'canvas'>('notebook');
+  const isTouch = browser ? matchMedia('(hover: none)').matches : false;
 
   // The registry uses dotted keys; paraglide ids are flat snake_case. Map
   // dot/hyphen → underscore and call the message fn (params for the few
@@ -59,7 +69,7 @@
       <p class="lab__subtitle">{t('lab.ui.subtitle')}</p>
     </header>
 
-    <!-- Goal picker -->
+    <!-- Goal picker + view switch -->
     <div class="lab__picker">
       <label for="goal-select" class="lab__picker-label">{t('lab.ui.goal-picker')}</label>
       <select
@@ -72,11 +82,47 @@
           <option value={id}>{goalLabel(id)}</option>
         {/each}
       </select>
+      <div class="lab__views" role="tablist" aria-label={t('lab.ui.view-switch-aria')}>
+        <button
+          role="tab"
+          aria-selected={view === 'notebook'}
+          class="lab__view-btn"
+          class:lab__view-btn--on={view === 'notebook'}
+          onclick={() => (view = 'notebook')}>{t('lab.ui.view-notebook')}</button
+        >
+        <button
+          role="tab"
+          aria-selected={view === 'canvas'}
+          class="lab__view-btn"
+          class:lab__view-btn--on={view === 'canvas'}
+          onclick={() => (view = 'canvas')}>{t('lab.ui.view-canvas')}</button
+        >
+      </div>
     </div>
 
-    <!-- Notebook — owns cell state; a goal-change effect re-seeds, so no remount -->
+    <!-- Both views project the ONE shared labState — switching can't lose an edit. -->
     <div class="lab__card-wrapper">
-      <Notebook {goal} equationHtml={data.equationHtml} {t} {labState} />
+      {#if view === 'canvas'}
+        <Canvas
+          equationHtml={data.equationHtml}
+          {t}
+          {labState}
+          readonly={isTouch}
+          onPromoted={(cells) => {
+            labState.adopt(cells);
+            view = 'notebook';
+          }}
+          onFocusCard={(i) => {
+            view = 'notebook';
+            void goto(`${base}/lab?focus=${i}`, { replaceState: true, noScroll: true });
+          }}
+        />
+        {#if isTouch}
+          <p class="lab__canvas-note">{t('lab.canvas.readonly-note')}</p>
+        {/if}
+      {:else}
+        <Notebook {goal} equationHtml={data.equationHtml} {t} {labState} />
+      {/if}
     </div>
   </main>
 </div>
@@ -89,6 +135,32 @@
     background: #04040c;
     color: #e8e8e8;
     overflow-x: hidden;
+  }
+
+  .lab__views {
+    display: inline-flex;
+    gap: 4px;
+    margin-left: 12px;
+  }
+  .lab__view-btn {
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+  }
+  .lab__view-btn--on {
+    color: #fff;
+    border-color: #4ecdc4;
+    background: rgba(78, 205, 196, 0.08);
+  }
+  .lab__canvas-note {
+    margin-top: 8px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.55);
   }
 
   /* Graph-paper background grid (32px major, 8px minor — figure-style.ts tokens) */

@@ -46,6 +46,8 @@ export interface LabState {
   seedFromGoal(goal: Goal): void;
   /** Adopt decoded cells (?nb= link or .orrlab file) as a custom notebook. */
   restore(cells: DecodedOrrlabCell[], title?: string): void;
+  /** Adopt already-shaped cells (Canvas promote) as a custom notebook. */
+  adopt(cells: LabCell[]): void;
   /** Codec projections. */
   toCodec(): CodecCell[];
   toOrrlab(): OrrlabCell[];
@@ -115,6 +117,11 @@ export function createLabState(goal: Goal): LabState {
       }));
       restored = true;
       restoredTitle = title;
+    },
+    adopt(next: LabCell[]) {
+      cells = next;
+      restored = true;
+      restoredTitle = '';
     },
     toCodec() {
       return cells.map((c) => ({

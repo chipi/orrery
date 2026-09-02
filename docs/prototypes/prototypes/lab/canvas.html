@@ -68,6 +68,40 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:12
 .prov b{color:var(--teal);font-weight:400}
 /* socket + wire (canvas mode) */
 .sock{width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--teal)}
+/* ── promote mock (S5 gate · #463 · pre-review F) ─────────────────────── */
+.mockbar{position:absolute;right:22px;bottom:20px;z-index:9;display:flex;gap:6px;align-items:center;
+  background:var(--hud);border:1px solid var(--border);border-radius:var(--r-lg);padding:8px 10px}
+.mockbar .lbl{font-size:8px;letter-spacing:2px;color:var(--faint);margin-right:4px}
+.mockbar button{font-family:var(--mono);font-size:9px;letter-spacing:1px;color:var(--dim);
+  background:transparent;border:1px solid var(--rule);border-radius:var(--r);padding:5px 9px;cursor:pointer}
+.mockbar button.on{color:var(--text);border-color:var(--teal);background:rgba(78,205,196,.08)}
+.sel .card{outline:2px solid var(--teal);outline-offset:2px}
+.sel-dim{opacity:.38;filter:saturate(.5)}
+.overlay{position:absolute;inset:0;z-index:8;display:flex;align-items:center;justify-content:center;
+  background:rgba(4,4,12,.55);backdrop-filter:blur(2px)}
+.confirm{width:400px}
+.confirm .step{display:flex;gap:10px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--rule)}
+.confirm .n{font-family:var(--disp);font-size:15px;color:var(--teal);width:18px}
+.confirm .nm{font-family:var(--disp);font-size:14px;letter-spacing:2px}
+.confirm .wire-note{font-size:9px;color:var(--dim);margin-left:auto}
+.confirm .closure{margin:10px 0 2px;font-size:10px;color:var(--gold)}
+.confirm .closure b{font-weight:700}
+.btnrow{display:flex;gap:8px;margin-top:12px}
+.btn{font-family:var(--mono);font-size:10px;letter-spacing:2px;padding:8px 14px;border-radius:var(--r);cursor:pointer}
+.btn.primary{color:#04040c;background:var(--teal);border:1px solid var(--teal);font-weight:700}
+.btn.ghost{color:var(--dim);background:transparent;border:1px solid var(--rule)}
+.refusal{border-color:rgba(193,68,14,.7)}
+.refusal .card-h .t{color:var(--mars)}
+.refusal .reason{color:var(--mars);font-size:11px;line-height:1.5}
+.nbcol{position:absolute;right:34px;top:80px;bottom:60px;width:330px;z-index:8;overflow:hidden;
+  display:flex;flex-direction:column;gap:10px}
+.nbcol .nbcard{background:var(--panel);border:1px solid var(--border);border-radius:var(--r-lg);padding:10px 13px}
+.nbcol .nbcard .h{display:flex;gap:8px;align-items:baseline}
+.nbcol .nbcard .h .n{font-family:var(--disp);color:var(--teal);font-size:14px}
+.nbcol .nbcard .h .t{font-family:var(--disp);font-size:14px;letter-spacing:2px}
+.nbcol .wire-ann{font-size:9px;color:var(--gold);margin-top:4px}
+.nbcol .head{font-size:9px;letter-spacing:2px;color:var(--dim);padding:4px 2px}
+.hidden{display:none !important}
 </style></head><body>
 <div class="grid"></div><div class="nav"><span class="wordmark">ORRERY</span>
   <a>HOME</a><a>EXPLORE</a><a>FLY</a><a>PLAN</a><a class="on">LAB</a><a>SCIENCE</a>
@@ -75,8 +109,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:12
 <div style="position:relative;height:calc(100% - 52px)">
   <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none">
     <path d="M 352 250 C 430 250, 470 300, 548 300" fill="none" stroke="var(--teal)" stroke-width="1.5" opacity=".8"/>
+    <path d="M 900 330 C 918 330, 918 260, 936 260" fill="none" stroke="var(--teal)" stroke-width="1.5" opacity=".8"/>
   </svg>
-  <div style="position:absolute;left:40px;top:120px"><div class="card" style="width:300px">
+  <div id="cardA" style="position:absolute;left:40px;top:120px"><div class="card" style="width:300px">
     <div class="card-h"><span class="t">TSIOLKOVSKY</span><span class="chip">ⓘ</span><span style="flex:1"></span><span class="sock" title="Δv out"></span></div>
     <div class="eq"><span id="eqA"></span><script>window.addEventListener('load',()=>{try{katex.render("\\Delta v = I_{sp}\\, g_0 \\ln\\dfrac{m_0}{m_f}",document.getElementById("eqA"),{displayMode:false})}catch(e){}});</script></div>
     <div class="body">
@@ -101,7 +136,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:12
       <div class="prov">computed · <b>orrery-kernel · ascent-physics</b> · G0 9.80665 m/s²</div>
     </div>
   </div></div>
-  <div style="position:absolute;left:548px;top:150px"><div class="card" style="width:340px">
+  <div id="cardB" style="position:absolute;left:548px;top:150px"><div class="card" style="width:340px">
     <div class="card-h"><span class="sock" title="Δv in"></span><span class="t">TRANSFER</span><span class="chip">ⓘ</span></div>
     <div class="eq"><span id="eqB"></span><script>window.addEventListener('load',()=>{try{katex.render("v = \\sqrt{\\mu\\left(\\dfrac{2}{r}-\\dfrac{1}{a}\\right)}",document.getElementById("eqB"),{displayMode:false})}catch(e){}});</script></div>
     <div class="body">
@@ -129,8 +164,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:12
       <div class="prov">computed · <b>orrery-kernel · lambert + mission-arc</b></div>
     </div>
   </div></div>
-  <div style="position:absolute;left:930px;top:120px;width:250px" class="card">
-    <div class="card-h"><span class="t">DESCENT · EDL</span><span class="chip">ⓘ</span></div>
+  <div id="cardC" style="position:absolute;left:930px;top:120px;width:250px" class="card">
+    <div class="card-h"><span class="sock" title="Δv in"></span><span class="t">DESCENT · EDL</span><span class="chip">ⓘ</span></div>
     <div class="body">
       <div class="ctrl"><span class="k">BODY</span><input type="range" min="0" max="3" value="1"><span class="v">MARS</span></div>
       <div class="fig" style="height:120px;display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:9px">entry corridor · alt vs v</div>
@@ -139,5 +174,79 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:12
     </div>
   </div>
   <div style="position:absolute;left:40px;bottom:26px;color:var(--faint);font-size:9px;letter-spacing:1px">drag cards freely · drag a socket to wire output → input · + ADD FORMULA</div>
+
+  <!-- ── PROMOTE MOCK (S5 gate · #463 · pre-review F): click-through states ── -->
+  <!-- State 1 · selection: TRANSFER + DESCENT selected; TSIOLKOVSKY is the
+       unselected upstream dependency (fed by the Δv wire). -->
+  <!-- State 2 · confirm: derived topo ORDER + the auto-included-closure line —
+       the judgment moment for promote semantics. -->
+  <div id="ovConfirm" class="overlay hidden"><div class="card confirm">
+    <div class="card-h"><span class="t">PROMOTE TO NOTEBOOK</span></div>
+    <div class="body">
+      <div class="eyebrow">DERIVED ORDER (TOPOLOGICAL)</div>
+      <div class="step"><span class="n">1</span><span class="nm">TSIOLKOVSKY</span><span class="wire-note">upstream dependency · auto-included</span></div>
+      <div class="step"><span class="n">2</span><span class="nm">TRANSFER</span><span class="wire-note">Δv capacity ← step 1</span></div>
+      <div class="step"><span class="n">3</span><span class="nm">DESCENT · EDL</span><span class="wire-note">Δv budget ← step 2</span></div>
+      <div class="closure">promotes <b>3 cards</b> — 2 selected + <b>1 upstream dependency included</b> (a wired input is never frozen into a default)</div>
+      <div class="btnrow"><span class="btn primary">PROMOTE 3 CARDS</span><span class="btn ghost">CANCEL</span></div>
+    </div>
+  </div></div>
+  <!-- State 3 · result: the linear Notebook column with wire annotations. -->
+  <div id="ovResult" class="nbcol hidden">
+    <div class="head">NOTEBOOK · PROMOTED FROM CANVAS</div>
+    <div class="nbcard"><div class="h"><span class="n">1</span><span class="t">TSIOLKOVSKY</span></div>
+      <div style="color:var(--dim);font-size:10px;margin-top:3px">Δv ideal 8.60 km/s</div></div>
+    <div class="nbcard"><div class="h"><span class="n">2</span><span class="t">TRANSFER</span></div>
+      <div class="wire-ann">↳ Δv capacity from step 1 · 8.60 km/s</div>
+      <div style="color:var(--dim);font-size:10px;margin-top:3px">Δv required 3.61 km/s · TOF 259 d</div></div>
+    <div class="nbcard"><div class="h"><span class="n">3</span><span class="t">DESCENT · EDL</span></div>
+      <div class="wire-ann">↳ Δv budget from step 2</div>
+      <div style="color:var(--dim);font-size:10px;margin-top:3px">peak q 11.4 kPa · margin LOW</div></div>
+  </div>
+  <!-- State 4 · refusal (loss-honest half): cycle refusal in mars-red. -->
+  <div id="ovRefusal" class="overlay hidden"><div class="card confirm refusal" style="width:360px">
+    <div class="card-h"><span class="t">CANNOT PROMOTE</span></div>
+    <div class="body">
+      <div class="reason">These cards wire into each other in a loop (TRANSFER → DESCENT → TRANSFER). A notebook runs top-to-bottom, so a cycle can't be expressed — break one wire and retry.</div>
+      <div class="prov" style="margin-top:10px">lab.promote.reason-cycle · fail-honest, never silently dropped</div>
+      <div class="btnrow"><span class="btn ghost">BACK TO CANVAS</span></div>
+    </div>
+  </div></div>
+
+  <div class="mockbar">
+    <span class="lbl">PROMOTE MOCK</span>
+    <button data-st="0" class="on">0 CANVAS</button>
+    <button data-st="1">1 SELECT</button>
+    <button data-st="2">2 CONFIRM</button>
+    <button data-st="3">3 RESULT</button>
+    <button data-st="4">4 REFUSAL</button>
+  </div>
 </div>
+<style>.card.sel,.sel > .card{outline:2px solid var(--teal);outline-offset:2px}</style>
+<script>
+(() => {
+  const A = document.getElementById('cardA'), B = document.getElementById('cardB'),
+        C = document.getElementById('cardC');
+  const ov = {
+    2: document.getElementById('ovConfirm'),
+    3: document.getElementById('ovResult'),
+    4: document.getElementById('ovRefusal'),
+  };
+  const btns = [...document.querySelectorAll('.mockbar button')];
+  function setState(s) {
+    btns.forEach((b) => b.classList.toggle('on', Number(b.dataset.st) === s));
+    Object.values(ov).forEach((o) => o.classList.add('hidden'));
+    [A, B, C].forEach((el) => { el.classList.remove('sel', 'sel-dim'); el.querySelector('.card')?.classList.remove('sel'); el.classList.remove('sel'); });
+    if (s >= 1 && s <= 2) {
+      // TRANSFER + DESCENT selected; TSIOLKOVSKY dimmed (the upstream closure).
+      (B.querySelector('.card') ?? B).classList.add('sel');
+      C.classList.add('sel');
+      A.classList.add('sel-dim');
+    }
+    if (s === 3) [A, B, C].forEach((el) => el.classList.add('sel-dim'));
+    if (ov[s]) ov[s].classList.remove('hidden');
+  }
+  btns.forEach((b) => b.addEventListener('click', () => setState(Number(b.dataset.st))));
+})();
+</script>
 </body></html>

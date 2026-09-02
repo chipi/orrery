@@ -121,4 +121,41 @@ describe('lab i18n · resolver key parity', () => {
       `unauthored lab keys (would render raw to the user): ${missing.join(', ')}`,
     ).toEqual([]);
   });
+
+  it('every lab.* key is authored in ALL 14 locale bundles (P1 hole-close · #525)', () => {
+    // The en-US-only check let `lab_goal_land_earth_title` ship untranslated ×13 —
+    // a missing locale key silently falls back to English, so nothing LOOKED broken.
+    // The standing rule is translate-everything-×14; this arms it for every key the
+    // lab UI can reach.
+    const locales = [
+      'ar',
+      'de',
+      'es',
+      'fr',
+      'hi',
+      'it',
+      'ja',
+      'ko',
+      'nl',
+      'pt-BR',
+      'ru',
+      'sr-Cyrl',
+      'zh-CN',
+    ];
+    const keys = collectAllKeys();
+    const gaps: string[] = [];
+    for (const locale of locales) {
+      const bundle = JSON.parse(readFileSync(`messages/${locale}.json`, 'utf8')) as Record<
+        string,
+        string
+      >;
+      for (const k of keys) {
+        if (!(k.replace(/[.-]/g, '_') in bundle)) gaps.push(`${locale}: ${k}`);
+      }
+    }
+    expect(
+      gaps,
+      `untranslated lab keys (silent en-US fallback):\n${gaps.slice(0, 40).join('\n')}${gaps.length > 40 ? `\n… +${gaps.length - 40} more` : ''}`,
+    ).toEqual([]);
+  });
 });

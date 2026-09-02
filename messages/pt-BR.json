@@ -2660,14 +2660,15 @@
   "lab_conn_lom_currover": "Curiosity — o primeiro pouso com guindaste aéreo, como hardware de voo (NASA)",
   "lab_ui_load_error_link": "Não foi possível carregar esse link do notebook compartilhado — exibindo a lição em seu lugar.",
   "lab_goal_land_venus_title": "Pousar em Vênus",
-  "lab_goal_lov_entry": "Vênus o recebe com uma atmosfera cerca de noventa vezes mais densa que a pressão da superfície terrestre. Se você a atinge diretamente da velocidade interplanetária em um ângulo íngreme, ela o detém quase instantaneamente — a desaceleração ultrapassa cem g. Nenhuma tripulação poderia suportar isso; os pousadores Venera foram construídos como submarinos e resistiram.",
-  "lab_goal_lov_corridor": "Em Marte, o corredor de entrada é uma faca afiada; aqui é uma porta de celeiro. Ar tão denso o capturará em uma enorme faixa de ângulos de entrada — as sondas Venera mergulhavam íngreme de propósito para encurtar a travessia pela fornalha. Ser capturado não é o problema em Vênus.",
-  "lab_goal_lov_chute": "Abra um paraquedas na atmosfera inferior de Vênus e você desce no ritmo de uma caminhada — mas essa suavidade é uma armadilha: a descida levaria tanto tempo que o calor mataria o pousador antes do solo. Veja o que o mesmo paraquedas que mal ajudou em Marte faz aqui.",
+  "lab_goal_lov_entry": "Vênus o recebe com uma atmosfera cerca de noventa vezes a pressão superficial da Terra. Impacte diretamente da velocidade interplanetária em um ângulo íngreme e ela o freia quase que instantaneamente — a desaceleração ultrapassa cem g. Nenhuma tripulação poderia resistir a isto; os módulos Venera foram construídos como submarinos e resistiram.",
+  "lab_goal_lov_corridor": "Em Marte o corredor de entrada é uma faca afiada; aqui é uma porta de celeiro. O ar tão denso vai capturá-lo em uma faixa enorme de ângulos de entrada — as sondas Venera mergulharam de forma íngreme de propósito para encurtar a passagem pela fornalha. Ser capturado não é o problema em Vênus.",
+  "lab_goal_lov_chute": "Abrir um paraquedas na atmosfera inferior de Vênus e você desce na velocidade de uma caminhada — mas essa suavidade é uma armadilha: a descida demoraria tanto que o calor mataria o módulo antes do solo. Veja o que o mesmo paraquedas que mal ajudou em Marte faz aqui.",
   "lab_goal_lov_aeroshell": "Então Venera soltou seu paraquedas em cerca de 47–50 km — deliberadamente — e caiu a última hora apoiada apenas em seu disco de aeroshell plano. Em ar tão denso, até isso o faz pousar em aproximadamente 7 m/s, mais ou menos a velocidade de cair de um muro de jardim. O arrasto sozinho faz o que Marte precisou de foguetes para fazer.",
-  "lab_goal_lov_verdict": "Confira o pouso: a queda apenas com aeroshell chega mais lentamente do que o anel de choque pode suportar. Vênus passa sem foguetes de retroempuxo e sem paraquedas na superfície — o inverso exato de Marte. O verdadeiro inimigo aguarda após o pouso: a ~460 °C, o pousador tem cerca de uma hora de vida.",
+  "lab_goal_lov_verdict": "Verifique o pouso: a queda apenas com o escudo térmico chega mais lentamente do que o anel de choque pode suportar. Vênus passa sem retrofoguetes e sem paraquedas na superfície — o inverso exato de Marte. O inimigo real espera após o pouso: a ~460 °C, o módulo tem cerca de uma hora de vida.",
   "lab_conn_lov_why": "Oito sondas soviéticas Venera alcançaram a superfície e transmitiram entre 1970 e 1982 — e até hoje, toda nave que pousou em Vênus e transmitiu foi soviética. Provaram a verdade de EDL mais estranha do sistema solar: o planeta infernal é o FÁCIL para pousar. Sua atmosfera é tão densa que o arrasto sozinho proporciona um pouso sobrevivível; a batalha da engenharia é travada contra 460 °C e 90 atmosferas em vez disso.",
   "lab_conn_lov_hook": "Venera-13 enviou as primeiras fotografias coloridas da superfície venusiana — e durou 127 minutos na fornalha, quase quatro vezes sua vida útil de 32 minutos.",
-  "lab_conn_lov_sevenmin": "Sete minutos — o ensaio sobre por que pousos são a parte mais difícil",
-  "lab_conn_lov_explore": "Veja Vênus no sistema solar em 3D",
-  "lab_conn_lov_next": "Próximo: a escada de descida continua — Titã, os gigantes gasosos e os mundos de microgravidade."
+  "lab_conn_lov_sevenmin": "Sete minutos — o ensaio sobre por que os pousos são a parte mais difícil",
+  "lab_conn_lov_explore": "Veja Vênus no sistema solar 3D",
+  "lab_conn_lov_next": "Próximo: a escada de descida continua — Titã, os gigantes gasosos e os mundos de microgravidade.",
+  "lab_goal_land_earth_title": "Pousar na Terra"
 }

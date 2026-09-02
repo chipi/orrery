@@ -188,6 +188,52 @@ export function recomputeGraph(nodes: GraphNode[], registry: Registry): GraphRes
 }
 
 /**
+ * Re-linearize INDEX-wired cells into topological order (holistic M2 — the
+ * "one model" invariant made mechanical: the shared cells array is ALWAYS
+ * topo-sorted, so `recomputeNotebook(cells)` ≡ `recomputeGraph(nodes)` for the
+ * live document). Without this, a Canvas-created wire from a later-array card
+ * is silently un-honoured by the linear Notebook view — same doc, two views,
+ * two different numbers, no honesty marker — and the quiet lie round-trips
+ * through `?nb=` and `.orrlab`.
+ *
+ * Acyclic part first in topo order (stable array-order tiebreak); cyclic
+ * residue keeps its relative array order at the END — its intra-cycle wires
+ * stay forward, which the linear engine un-honours and the graph view marks
+ * `cycle`: both honest. Wire indices are remapped; wires into the residue or
+ * out of range keep a sentinel that stays un-honoured.
+ */
+export function linearizeIndexWired<
+  T extends { id: string; wires?: { fromIndex: number; output: string; toInput: string }[] },
+>(cells: T[]): T[] {
+  const nodes: GraphNode[] = cells.map((c) => ({
+    id: c.id,
+    formulaId: '',
+    inputs: {},
+    wires: (c.wires ?? [])
+      .filter(
+        (w) => Number.isInteger(w.fromIndex) && w.fromIndex >= 0 && w.fromIndex < cells.length,
+      )
+      .map((w) => ({ fromId: cells[w.fromIndex].id, output: w.output, toInput: w.toInput })),
+  }));
+  const { order, residue } = topoSort(nodes);
+  const finalOrder = [...order, ...residue];
+  const newPos = new Map<number, number>();
+  finalOrder.forEach((oldIdx, pos) => newPos.set(oldIdx, pos));
+  return finalOrder.map((oldIdx) => {
+    const c = cells[oldIdx];
+    const wires = (c.wires ?? []).map((w) => {
+      const mapped =
+        Number.isInteger(w.fromIndex) && w.fromIndex >= 0 && w.fromIndex < cells.length
+          ? newPos.get(w.fromIndex)
+          : undefined;
+      // Unmappable wires keep an out-of-range sentinel — un-honoured, never wrong.
+      return { ...w, fromIndex: mapped ?? cells.length };
+    });
+    return { ...c, wires } as T;
+  });
+}
+
+/**
  * Would adding `fromId → toId` close a cycle? The Canvas UI's predictive
  * wire-creation check (refuse + toast) — the engine-level handling above stays
  * mandatory regardless (untrusted decode).

@@ -62,6 +62,9 @@ export function promoteSubgraph(
   selectedIds: ReadonlySet<string>,
 ): PromoteResult {
   const closure = upstreamClosure(nodes, selectedIds);
+  // Empty selection collapses onto reason-too-big deliberately: the UI disables
+  // promote at zero selection, so this only guards API misuse — "nothing to
+  // promote" and "too much to promote" both mean "not a promotable selection".
   if (closure.size === 0) return { ok: false, reasonKey: 'lab.promote.reason-too-big' };
   if (closure.size > MAX_CELLS) return { ok: false, reasonKey: 'lab.promote.reason-too-big' };
 

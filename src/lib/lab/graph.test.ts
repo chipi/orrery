@@ -11,7 +11,7 @@
  */
 import { describe, it, expect } from 'vitest';
 import { REGISTRY, defaultInputs } from '$lib/physics/registry';
-import { recomputeGraph, wouldCycle, type GraphNode } from './graph';
+import { recomputeGraph, wouldCycle, linearizeIndexWired, type GraphNode } from './graph';
 import { recomputeNotebook } from './notebook';
 
 const tsiolkovsky = (): GraphNode => ({
@@ -158,6 +158,63 @@ describe('recomputeGraph · delegation + order-independence', () => {
     const a = recomputeGraph(nodes, REGISTRY).order;
     const b = recomputeGraph(nodes, REGISTRY).order;
     expect(a).toEqual(b);
+  });
+});
+
+describe('linearizeIndexWired · the always-topo-sorted invariant (holistic M2)', () => {
+  it('a forward-in-array wire gets re-linearized so the LINEAR engine honours it', () => {
+    // verdict sits BEFORE its source in the array — the exact shape a canvas
+    // wire-commit could produce; without linearize the notebook silently
+    // un-honours it (quiet-lie green from the stale local value).
+    const cells = [
+      {
+        id: 'verdict',
+        formulaId: 'delta-v-margin',
+        inputs: defaultInputs(REGISTRY.get('delta-v-margin')!),
+        wires: [{ fromIndex: 1, output: 'deltaV', toInput: 'capacityKms' }],
+      },
+      {
+        id: 'rocket',
+        formulaId: 'tsiolkovsky',
+        inputs: defaultInputs(REGISTRY.get('tsiolkovsky')!),
+        wires: [],
+      },
+    ];
+    const linear = linearizeIndexWired(cells);
+    expect(linear.map((c) => c.id)).toEqual(['rocket', 'verdict']);
+    expect(linear[1].wires[0].fromIndex).toBe(0);
+    const states = recomputeNotebook(linear, REGISTRY);
+    const v = states[1];
+    if (v.status !== 'ok' && v.status !== 'fail') throw new Error('wire not honoured');
+    const r = states[0];
+    if (r.status !== 'ok') throw new Error();
+    expect(v.resolvedInputs.capacityKms).toBe(r.result.values.deltaV.value);
+  });
+
+  it('a cyclic residue lands at the END with its wires left un-honourable (never wrong)', () => {
+    const cells = [
+      {
+        id: 'a',
+        formulaId: 'tsiolkovsky',
+        inputs: defaultInputs(REGISTRY.get('tsiolkovsky')!),
+        wires: [{ fromIndex: 1, output: 'deltaV', toInput: 'ispS' }],
+      },
+      {
+        id: 'b',
+        formulaId: 'tsiolkovsky',
+        inputs: defaultInputs(REGISTRY.get('tsiolkovsky')!),
+        wires: [{ fromIndex: 0, output: 'deltaV', toInput: 'ispS' }],
+      },
+      {
+        id: 'free',
+        formulaId: 'momentum',
+        inputs: defaultInputs(REGISTRY.get('momentum')!),
+        wires: [],
+      },
+    ];
+    const linear = linearizeIndexWired(cells);
+    expect(linear[0].id).toBe('free'); // acyclic part first
+    expect(() => recomputeNotebook(linear, REGISTRY)).not.toThrow();
   });
 });
 

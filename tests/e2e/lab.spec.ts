@@ -161,4 +161,48 @@ test.describe('/lab — Canvas (S5 smoke)', () => {
     await page.getByRole('tab', { name: /canvas/i }).click();
     await expect(page.locator('.canvas__card').first()).toBeVisible();
   });
+
+  test('wire-drag: output socket → compatible input creates an edge (holistic B1 proof)', async ({
+    page,
+  }, testInfo) => {
+    test.skip(
+      testInfo.project.name.startsWith('mobile'),
+      'wiring is a pointer gesture — desktop only',
+    );
+    await page.goto('/lab', { waitUntil: 'networkidle' });
+    await page.getByRole('tab', { name: /canvas/i }).click();
+    await expect(page.locator('.canvas__card').first()).toBeVisible();
+
+    // Deterministic fixture: add TWO fresh cards near the origin (spawn point) —
+    // a source (tsiolkovsky, outputs deltaV [km/s]) and an UNWIRED sink
+    // (delta-v-margin, inputs capacityKms [km/s]) — so the commit ADDS an edge
+    // instead of replacing one of the goal's existing wires.
+    const addVia = async (query: string) => {
+      await page.locator('.canvas__bar-btn', { hasText: '+' }).click();
+      await page.locator('.canvas__palette-search').fill(query);
+      await page.locator('.canvas__palette-item').first().click();
+    };
+    await addVia('tsiolkovsky');
+    await addVia('margin');
+    const edgesBefore = await page.locator('.canvas__edge').count();
+
+    // Three-point drag: down on the added source's deltaV output socket → move →
+    // up on the sink's surfaced compatible-input socket.
+    const outSock = page.locator('.canvas__sock--out[title^="deltaV"]').last();
+    const from = await outSock.boundingBox();
+    if (!from) throw new Error('no deltaV output socket');
+    await page.mouse.move(from.x + from.width / 2, from.y + from.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(from.x + 100, from.y + 60, { steps: 5 });
+    const inSock = page.locator('.canvas__card').last().locator('.canvas__sock--in').first();
+    await expect(inSock).toBeVisible();
+    const to = await inSock.boundingBox();
+    if (!to) throw new Error('no input socket');
+    await page.mouse.move(to.x + to.width / 2, to.y + to.height / 2, { steps: 5 });
+    await page.mouse.up();
+
+    // The wire committed: one more edge, and the ghost is gone.
+    await expect(page.locator('.canvas__edge')).toHaveCount(edgesBefore + 1);
+    await expect(page.locator('.canvas__edge--ghost')).toHaveCount(0);
+  });
 });

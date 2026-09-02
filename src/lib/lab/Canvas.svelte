@@ -22,7 +22,7 @@
 -->
 <script lang="ts">
   import { REGISTRY, defaultInputs } from '$lib/physics/registry';
-  import { recomputeGraph, wouldCycle, type GraphNode } from './graph';
+  import { recomputeGraph, wouldCycle, linearizeIndexWired, type GraphNode } from './graph';
   import { promoteSubgraph } from './promote';
   import type { LabState, LabCell } from './lab-state.svelte';
   import Card from './Card.svelte';
@@ -82,13 +82,37 @@
   let panning = $state(false);
   let panStart = { x: 0, y: 0, panX: 0, panY: 0 };
 
+  // Active-pointer map for pinch zoom (holistic M4 — touch-action:none disables
+  // native pinch, so the readonly mobile canvas must implement it: two pointers
+  // on the surface scale `zoom` by the inter-pointer distance ratio).
+  const activePointers = new Map<number, { x: number; y: number }>();
+  let pinchStartDist = 0;
+  let pinchStartZoom = 1;
+
   function onSurfacePointerDown(e: PointerEvent): void {
     if (e.target !== e.currentTarget) return; // only bare-grid drags pan
+    activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (activePointers.size === 2) {
+      const [a, b] = [...activePointers.values()];
+      pinchStartDist = Math.hypot(a.x - b.x, a.y - b.y);
+      pinchStartZoom = zoom;
+      panning = false; // pinch supersedes pan
+      return;
+    }
     panning = true;
     panStart = { x: e.clientX, y: e.clientY, panX, panY };
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
   }
   function onSurfacePointerMove(e: PointerEvent): void {
+    if (activePointers.has(e.pointerId)) {
+      activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (activePointers.size === 2 && pinchStartDist > 0) {
+        const [a, b] = [...activePointers.values()];
+        const dist = Math.hypot(a.x - b.x, a.y - b.y);
+        zoom = Math.min(2, Math.max(0.35, pinchStartZoom * (dist / pinchStartDist)));
+        return;
+      }
+    }
     if (panning) {
       panX = panStart.panX + (e.clientX - panStart.x);
       panY = panStart.panY + (e.clientY - panStart.y);
@@ -100,13 +124,26 @@
       const { id, offsetX, offsetY } = drag;
       const w = toWorld(e.clientX, e.clientY);
       const i = cells.findIndex((c) => c.id === id);
-      if (i !== -1) cells[i] = { ...cells[i], position: { x: w.x - offsetX, y: w.y - offsetY } };
+      // DEEP write (holistic m1): replacing the element would invalidate the
+      // `nodes` derived and re-run the whole graph per move; `nodes` never
+      // reads `position`, so the fine-grained proxy write keeps it cached.
+      if (i !== -1) cells[i].position = { x: w.x - offsetX, y: w.y - offsetY };
     }
   }
   function onSurfacePointerUp(e: PointerEvent): void {
+    activePointers.delete(e.pointerId);
+    if (activePointers.size < 2) pinchStartDist = 0;
     panning = false;
     drag = null;
     if (wireDrag) endWireDrag(e);
+  }
+  /** A cancelled pointer (browser gesture steal, tab switch) never leaves a stuck ghost. */
+  function onSurfacePointerCancel(e: PointerEvent): void {
+    activePointers.delete(e.pointerId);
+    pinchStartDist = 0;
+    panning = false;
+    drag = null;
+    wireDrag = null;
   }
   function onWheel(e: WheelEvent): void {
     e.preventDefault();
@@ -164,7 +201,12 @@
     }
     wireDrag = { fromId: c.id, output: outputKey, units: out.units, compatible };
     wireCursor = toWorld(e.clientX, e.clientY);
-    surfaceEl?.setPointerCapture(e.pointerId);
+    // NO pointer capture here (holistic B1): capture retargets every subsequent
+    // pointer event to the capture element and bypasses hit-testing, so the
+    // input socket's onpointerup could never fire and the gesture always
+    // silently cancelled. Uncaptured, move/up bubble to the surface handlers
+    // (ghost still tracks) and the socket's commitWire runs before the bubbled
+    // endWireDrag no-ops on the cleared state.
     e.preventDefault();
     e.stopPropagation();
   }
@@ -175,11 +217,20 @@
     const ti = cells.findIndex((c) => c.id === targetId);
     if (fromIndex === -1 || ti === -1) return;
     // One edge per input socket: replace an existing wire on the same input.
-    const wires = [
-      ...cells[ti].wires.filter((w) => w.toInput !== inputKey),
-      { fromIndex, output: wireDrag.output, toInput: inputKey },
-    ];
-    cells[ti] = { ...cells[ti], wires };
+    const next = cells.map((c, idx) =>
+      idx === ti
+        ? {
+            ...c,
+            wires: [
+              ...c.wires.filter((w) => w.toInput !== inputKey),
+              { fromIndex, output: wireDrag!.output, toInput: inputKey },
+            ],
+          }
+        : c,
+    );
+    // Topo-linearize (holistic M2): the shared array stays topologically sorted,
+    // so the Notebook view honours this wire too — one model, provably.
+    labState.setCells(linearizeIndexWired(next));
     wireDrag = null;
   }
   function endWireDrag(_e: PointerEvent): void {
@@ -228,6 +279,7 @@
       selection: byId.get(pc.sourceId)?.selection,
       removable: true,
       note: byId.get(pc.sourceId)?.note,
+      position: byId.get(pc.sourceId)?.position, // layout survives promote (holistic m3)
     }));
     promotePreview = null;
     selected = new Set();
@@ -253,7 +305,9 @@
   function addFormula(id: string): void {
     const def = REGISTRY.get(id);
     if (!def) return;
-    const spawn = toWorld(120, 140);
+    // World coords straight from the pan/zoom transform (holistic M3 — toWorld
+    // expects CLIENT coords; feeding it surface-locals spawned cards off-canvas).
+    const spawn = { x: (140 - panX) / zoom, y: (120 - panY) / zoom };
     labState.setCells([
       ...cells,
       {
@@ -347,15 +401,26 @@
   const cellState = (id: string) => graph.states.get(id);
 </script>
 
+<svelte:window
+  onkeydown={(e) => {
+    if (e.key === 'Escape') {
+      paletteOpen = false;
+      promotePreview = null;
+      wireDrag = null;
+    }
+  }}
+/>
+
 <div
   class="canvas"
   class:canvas--readonly={readonly}
   bind:this={surfaceEl}
-  role="application"
+  role="group"
   aria-label={t('lab.canvas.aria')}
   onpointerdown={onSurfacePointerDown}
   onpointermove={onSurfacePointerMove}
   onpointerup={onSurfacePointerUp}
+  onpointercancel={onSurfacePointerCancel}
   onwheel={onWheel}
 >
   <div class="canvas__world" style="transform: translate({panX}px, {panY}px) scale({zoom})">
@@ -459,7 +524,9 @@
             inputs={st.status === 'ok' || st.status === 'fail' ? st.resolvedInputs : c.inputs}
             result={st.status === 'ok' || st.status === 'fail' ? st.result : null}
             onInput={(key, value) => setInput(c.id, key, value)}
-            wiredKeys={c.wires.map((w) => w.toInput)}
+            wiredKeys={st.status === 'ok' || st.status === 'fail'
+              ? st.wiredKeys
+              : c.wires.map((w) => w.toInput)}
             blocked={st.status !== 'ok' && st.status !== 'fail'}
             blockedMessage={st.status === 'upstream-failed'
               ? t('lab.canvas.blocked-upstream')

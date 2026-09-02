@@ -12,6 +12,7 @@
   import 'katex/dist/katex.min.css';
   import { untrack } from 'svelte';
   import { browser } from '$app/environment';
+  import { page } from '$app/state';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
@@ -39,6 +40,21 @@
   // surface on mobile; a stated limitation).
   let view = $state<'notebook' | 'canvas'>('notebook');
   const isTouch = browser ? matchMedia('(hover: none)').matches : false;
+
+  // Goal switch re-seeds HERE, at the owner's level (holistic M1): the effect
+  // used to live in Notebook, which is unmounted in canvas view — switching
+  // goals there left the old goal's cells under the new goal's title forever.
+  let lastGoalId = untrack(() => goal.id);
+  $effect(() => {
+    const gid = goal.id;
+    if (gid !== lastGoalId) {
+      lastGoalId = gid;
+      labState.seedFromGoal(goal);
+      if (browser && page.url.searchParams.has('nb')) {
+        void goto(`${base}/lab`, { replaceState: true, keepFocus: true, noScroll: true });
+      }
+    }
+  });
 
   // The registry uses dotted keys; paraglide ids are flat snake_case. Map
   // dot/hyphen → underscore and call the message fn (params for the few

@@ -13,7 +13,7 @@
   notebook. Edits auto-save to localStorage and Share encodes the notebook into ?nb=.
 -->
 <script lang="ts">
-  import { untrack, onMount } from 'svelte';
+  import { onMount } from 'svelte';
   import { browser } from '$app/environment';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
@@ -58,7 +58,6 @@
   const cells = $derived(labState.cells);
   const restored = $derived(labState.restored);
   const restoredTitle = $derived(labState.restoredTitle);
-  let lastGoalId = untrack(() => goal.id);
 
   // The whole notebook recomputes on any input edit — trivially cheap for M1.
   const computed = $derived(recomputeNotebook(cells, REGISTRY));
@@ -83,17 +82,8 @@
     }
   });
 
-  // A real goal switch (picker) wins over any restore: fresh seed + drop ?nb=.
-  $effect(() => {
-    const gid = goal.id;
-    if (gid !== lastGoalId) {
-      lastGoalId = gid;
-      labState.seedFromGoal(goal); // clears restored/restoredTitle too
-      if (browser && page.url.searchParams.has('nb')) {
-        void goto(`${base}/lab`, { replaceState: true, keepFocus: true, noScroll: true });
-      }
-    }
-  });
+  // Goal-switch re-seeding lives in /lab/+page.svelte (holistic M1) — the owner
+  // level, so it fires even while this component is unmounted in canvas view.
 
   // Auto-save the working notebook to localStorage (debounced) — survives refresh.
   let saveTimer: ReturnType<typeof setTimeout> | undefined;

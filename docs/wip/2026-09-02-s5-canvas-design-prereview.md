@@ -86,3 +86,21 @@ hostile tests. 2. graph.ts + units-match (both paths). 3. promote.ts + round-tri
 1. touching the hardened engine (eliminated by delegation) · 2. opaque-extras (rejected) ·
 3. units-mismatch latent gap · 4. state-owner refactor discovered mid-build · 5. drag e2e
 flake · 6. i18n/coverage forgotten at close.
+
+## Post-build record (2026-09-03, after the Fable-5 holistic)
+
+The holistic caught the build's blind spot exactly where the "drag e2e is flake bait" cut
+left it: the wire gesture was DEAD by construction (B1 — pointer capture retargeted
+pointerup away from the input socket). All findings fixed in-slice: capture removed +
+pointercancel cleanup (B1), goal-switch re-seed hoisted to /lab (M1), **the
+always-topo-sorted invariant** via `linearizeIndexWired` on wire commit so
+`recomputeNotebook ≡ recomputeGraph` for the live document (M2), spawn-coordinate fix
+(M3), pinch zoom implemented (M4 — the design mandated it; it was never a stated cut),
+drag deep-writes (m1), honoured-wiredKeys display (m2), positions survive promote (m3).
+A deterministic three-point wire-drag e2e now proves the gesture live.
+
+Judged-acceptable deviations, recorded: edge deletion via per-input unwire buttons
+(not on-edge hit targets); positions ride on cells (not a separate map) — WITH the m1
+deep-write; keyboard wire-creation remains the stated cut; canvas edits are not
+auto-saved to localStorage while in canvas view (no reader exists yet — revisit with
+S3c.3's resume affordance); dialog focus traps deferred (Escape works).

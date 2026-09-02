@@ -117,3 +117,48 @@ test.describe('/lab — nav', () => {
     await expect(page.locator('.nb__goal-title')).toBeVisible();
   });
 });
+
+test.describe('/lab — Canvas (S5 smoke)', () => {
+  // Weight lives in the unit suites (graph/promote/codec); e2e stays a thin smoke
+  // per the S5 pre-review — drag-wire e2e is flake bait.
+  test('view switch renders the graph; palette adds a card; promote round-trips to Notebook', async ({
+    page,
+  }, testInfo) => {
+    test.skip(
+      testInfo.project.name.startsWith('mobile'),
+      'canvas is read-only on touch (UXS-015) — the desktop smoke covers interactions',
+    );
+    await page.goto('/lab', { waitUntil: 'networkidle' });
+    await page.getByRole('tab', { name: /canvas/i }).click();
+    await expect(page.locator('.canvas')).toBeVisible();
+    // The M1 goal renders as canvas cards with its wires as edges.
+    await expect(page.locator('.canvas__card').first()).toBeVisible();
+    await expect(page.locator('.canvas__edge').first()).toBeVisible();
+
+    // Palette: add one formula → a new card appears.
+    const before = await page.locator('.canvas__card').count();
+    await page.locator('.canvas__bar-btn', { hasText: '+' }).click();
+    await page.locator('.canvas__palette-item').first().click();
+    await expect(page.locator('.canvas__card')).toHaveCount(before + 1);
+
+    // Promote: select the two verdict-side goal cards → confirm shows the derived
+    // order → confirming lands back in Notebook view as a custom notebook.
+    await page
+      .locator('.canvas__select')
+      .nth(before - 2)
+      .check();
+    await page
+      .locator('.canvas__select')
+      .nth(before - 1)
+      .check();
+    await page.locator('.canvas__bar > .canvas__bar-btn--primary').click();
+    await expect(page.locator('.canvas__confirm')).toBeVisible();
+    await expect(page.locator('.canvas__confirm-list li').first()).toBeVisible();
+    await page.locator('.canvas__confirm-actions .canvas__bar-btn--primary').click();
+    await expect(page.locator('.nb__goal-title')).toBeVisible();
+
+    // Switch back — the shared state owner means the promoted cells render on canvas too.
+    await page.getByRole('tab', { name: /canvas/i }).click();
+    await expect(page.locator('.canvas__card').first()).toBeVisible();
+  });
+});

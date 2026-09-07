@@ -1,78 +1,67 @@
 /**
- * Fresh TLE resolution for the station AR modes (#404/#405).
+ * Runtime TLE resolution for the station AR modes + the Physics Lab
+ * (#404/#405 · H4c #464).
  *
- * A station's real sky position needs a CURRENT element set (TLEs stale in days),
- * so we fetch the latest from Celestrak at runtime — cached in localStorage for a
- * day so we hit the network at most once daily — and fall back to the bundled
- * sample TLE if the fetch fails (offline / CORS). Celestrak's gp.php sends
- * `Access-Control-Allow-Origin: *`, so the browser fetch works; in the Capacitor
- * WKWebView it's a native request either way.
+ * The element sets are refreshed SERVER-SIDE into the served /data overlay
+ * (static/data/station-tles.json) by fetch-station-tles.mjs — daily on main and
+ * every 6h on the prod VPS, the same pipeline launches use. At runtime we fetch
+ * that SAME-ORIGIN copy (no browser → Celestrak egress; there is exactly one
+ * Celestrak-fetching code, and it runs server-side), memoise it for the session,
+ * and fall back to the build-baked bundle (stations.ts) when the fetch fails
+ * (offline). In the Capacitor build the overlay ships in the bundle, so the
+ * fetch reads the packaged copy. Callers get a fresh TLE without any of them
+ * knowing where it came from.
  */
+import { base } from '$app/paths';
 import { parseTleBlock, type Tle } from '$lib/physics/satellite/tle';
-import { stationTle, type StationId } from '$lib/physics/satellite/stations';
+import { stationTle, stationTleBlock, type StationId } from '$lib/physics/satellite/stations';
 
-const CATNR: Record<StationId, number> = { iss: 25544, tiangong: 48274 };
-const CACHE_MS = 24 * 3600 * 1000;
-
-const memo = new Map<StationId, Tle>();
-
-function cacheKey(id: StationId): string {
-  return `orrery.tle.${id}`;
+interface StationEntry {
+  name: string;
+  line1: string;
+  line2: string;
 }
 
-/** Try localStorage for a recent cached TLE block. */
-function readCache(id: StationId): Tle | null {
-  try {
-    const raw = typeof localStorage !== 'undefined' && localStorage.getItem(cacheKey(id));
-    if (!raw) return null;
-    const { at, block } = JSON.parse(raw) as { at: number; block: string };
-    if (Date.now() - at > CACHE_MS) return null;
-    return parseTleBlock(block);
-  } catch {
-    return null;
-  }
-}
+let overlay: Partial<Record<StationId, StationEntry>> | null = null;
+let fetchAttempted = false;
 
-function writeCache(id: StationId, block: string): void {
+/** Fetch the served overlay once per session; null when it can't be reached. */
+async function loadOverlay(): Promise<Partial<Record<StationId, StationEntry>> | null> {
+  if (overlay) return overlay;
+  if (fetchAttempted) return overlay;
+  fetchAttempted = true;
   try {
-    if (typeof localStorage !== 'undefined')
-      localStorage.setItem(cacheKey(id), JSON.stringify({ at: Date.now(), block }));
-  } catch {
-    /* private mode / quota — ignore */
-  }
-}
-
-async function fetchTle(id: StationId): Promise<Tle | null> {
-  try {
-    const url = `https://celestrak.org/NORAD/elements/gp.php?CATNR=${CATNR[id]}&FORMAT=TLE`;
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), 7000);
-    const res = await fetch(url, { signal: ctrl.signal });
+    const res = await fetch(`${base}/data/station-tles.json`, { signal: ctrl.signal });
     clearTimeout(timer);
     if (!res.ok) return null;
-    const text = (await res.text()).trim();
-    // Require the actual TLE line structure (guards against rate-limit HTML or a
-    // truncated body slipping through into the parser).
-    if (!/^1 \d{5}/m.test(text) || !/^2 \d{5}/m.test(text)) return null;
-    writeCache(id, text);
-    return parseTleBlock(text);
+    const json = (await res.json()) as Partial<Record<StationId, StationEntry>>;
+    // Shape guard against a truncated / wrong body slipping into the parser.
+    if (!json?.iss?.line1 || !json?.iss?.line2) return null;
+    overlay = json;
+    return overlay;
   } catch {
     return null;
   }
+}
+
+function blockFrom(e: StationEntry): string {
+  return `${e.name}\n${e.line1}\n${e.line2}`;
+}
+
+/** Best available raw 3-line TLE block: served overlay → build-baked bundle. */
+export async function resolveStationTleBlock(id: StationId): Promise<string> {
+  const o = await loadOverlay();
+  const entry = o?.[id];
+  return entry ? blockFrom(entry) : stationTleBlock(id);
 }
 
 /**
- * Best available TLE: in-memory → localStorage (≤1 day) → Celestrak → bundled
- * sample. Always resolves (never rejects).
+ * Best available parsed TLE: served overlay → build-baked bundle. Never rejects.
  */
 export async function resolveStationTle(id: StationId): Promise<Tle> {
-  const cached = memo.get(id) ?? readCache(id);
-  if (cached) {
-    memo.set(id, cached);
-    return cached;
-  }
-  const fetched = await fetchTle(id);
-  const tle = fetched ?? stationTle(id);
-  memo.set(id, tle);
-  return tle;
+  const o = await loadOverlay();
+  const entry = o?.[id];
+  return entry ? parseTleBlock(blockFrom(entry)) : stationTle(id);
 }

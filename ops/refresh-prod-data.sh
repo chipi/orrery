@@ -16,6 +16,24 @@ set -euo pipefail
 cd /srv/orrery
 
 COMPOSE=(docker compose -f compose/docker-compose.prod.yml --project-directory . --env-file .env --profile manual run --rm pipeline-runner)
+
+# Station TLEs (#404 · H4c #464) — the SAME overlay pattern as launches: refresh
+# inside the pipeline-runner from Celestrak (the one and only Celestrak fetch;
+# the browser never does), keep the result only if plausibly non-empty, and drop
+# the precompressed siblings so nginx serves the fresh JSON. Non-fatal: a TLE
+# hiccup must not block the launches refresh below.
+TLE=static/data/station-tles.json
+TBAK="${TLE}.prev"
+cp -f "$TLE" "$TBAK" 2>/dev/null || true
+if "${COMPOSE[@]}" scripts/fetch-station-tles.mjs && [ "$(wc -c < "$TLE")" -ge 200 ]; then
+  rm -f static/data/station-tles.json.gz static/data/station-tles.json.br 2>/dev/null || true
+  rm -f "$TBAK"
+  echo "[refresh-prod-data] $(date -u +%FT%TZ) ok — station-tles.json $(wc -c < "$TLE") bytes"
+else
+  echo "[refresh-prod-data] $(date -u +%FT%TZ) TLE fetch failed/empty — restoring previous" >&2
+  [ -f "$TBAK" ] && mv -f "$TBAK" "$TLE"
+fi
+
 LIVE=static/data/launches.json
 BAK="${LIVE}.prev"
 MIN_BYTES=10000 # a healthy manifest is ~500 KB; an empty/failed one is ~100 B

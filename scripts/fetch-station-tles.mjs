@@ -1,11 +1,12 @@
 #!/usr/bin/env node
-// Refresh the bundled station TLEs (#404) from Celestrak into
-// src/lib/physics/satellite/station-tles.json. Run daily by
-// .github/workflows/refresh-station-tles.yml (bot-commits any diff to main; the
-// CI deploy chain picks it up). Keeps the bundled fallback (used when the
-// runtime Celestrak fetch is blocked, and baked into the MCP image) at most
-// ~a day stale on main — note a manually-deployed container can still lag, which
-// is why iss-pass discloses epochAgeDays at compute time (H5 · #464).
+// Refresh the station TLEs (#404) from Celestrak into the served /data overlay
+// static/data/station-tles.json. This is the ONLY code that fetches Celestrak;
+// the browser never does (H4c · #464). Run server-side in two places, the same
+// pipeline launches use: daily on main by .github/workflows/refresh-station-tles.yml
+// (bot-commit) and every 6h on the prod VPS by ops/refresh-prod-data.sh (live
+// overlay, no redeploy). The app prefers the fresh served copy at runtime; the
+// build-baked import (stations.ts) is the offline/MCP fallback, whose age
+// iss-pass discloses via epochAgeDays (H5).
 //
 // Fails soft: a fetch/parse error for one station leaves its previous entry
 // intact rather than blanking it.
@@ -13,9 +14,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
-const OUT = fileURLToPath(
-  new URL('../src/lib/physics/satellite/station-tles.json', import.meta.url),
-);
+const OUT = fileURLToPath(new URL('../static/data/station-tles.json', import.meta.url));
 const CATNR = { iss: 25544, tiangong: 48274 };
 
 const data = JSON.parse(readFileSync(OUT, 'utf8'));

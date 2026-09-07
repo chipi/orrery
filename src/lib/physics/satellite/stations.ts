@@ -1,14 +1,16 @@
 /**
- * Bundled station element sets (#404).
+ * Station element sets (#404 · H4c #464).
  *
- * The TLEs live in station-tles.json, refreshed daily from Celestrak by the
- * `Refresh station TLEs` workflow (npm run fetch:tles) so the bundled fallback
- * is never more than ~a day stale. At runtime, `resolveStationTle` (tle-source.ts)
- * still prefers a live fetch; this bundle is the offline/CORS fallback. The
- * parser/propagator are validated independently of these exact values.
+ * The TLEs live in the served /data overlay `static/data/station-tles.json`,
+ * refreshed by fetch-station-tles.mjs — daily on main (refresh-station-tles.yml)
+ * and every 6h on the prod VPS (refresh-prod-data.sh), the SAME pipeline
+ * launches use. This module imports it as the BUILD-BAKED baseline (the MCP
+ * image and the app bundle carry it); at runtime the app prefers the fresh
+ * served copy via `resolveStationTle` (tle-source.ts), falling back here when
+ * offline. No code fetches Celestrak from the browser — one server-side fetcher.
  */
 import { parseTle, type Tle } from './tle';
-import bundled from './station-tles.json';
+import bundled from '$data/station-tles.json';
 
 export type StationId = 'iss' | 'tiangong';
 

@@ -21,6 +21,7 @@
   import type { Goal, FormulaResult } from '$lib/physics/spec';
   import { REGISTRY, defaultInputs } from '$lib/physics/registry';
   import { stationTleBlock } from '$lib/physics/satellite/stations';
+  import { resolveStationTleBlock } from '$lib/satellite';
   import { recomputeNotebook, type CellComputed } from './notebook';
   import {
     encodeNotebook,
@@ -64,10 +65,16 @@
   const restored = $derived(labState.restored);
   const restoredTitle = $derived(labState.restoredTitle);
 
-  // Adapter-owned injected inputs (iss-pass needs the current TLE). Sourced from
-  // the bundled, daily-refreshed set here; H4c swaps this to the served /data
-  // overlay resolved on mount. Keyed by FieldSpec key — never in cell.inputs.
-  const injectedInputs: Record<string, number | string> = { tle: stationTleBlock('iss') };
+  // Adapter-owned injected inputs (iss-pass needs the current TLE). Seed with the
+  // build-baked block, then upgrade to the fresh served /data overlay on mount —
+  // the single app-side resolver, no browser→Celestrak fetch (H4c · #464). Keyed
+  // by FieldSpec key; never enters cell.inputs.
+  let injectedInputs = $state<Record<string, number | string>>({ tle: stationTleBlock('iss') });
+  onMount(() => {
+    resolveStationTleBlock('iss').then((tle) => {
+      injectedInputs = { tle };
+    });
+  });
 
   // The whole notebook recomputes on any input edit — trivially cheap for M1.
   const computed = $derived(recomputeNotebook(cells, REGISTRY, injectedInputs));

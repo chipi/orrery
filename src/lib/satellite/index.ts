@@ -1,2 +1,2 @@
 export * from '$lib/physics/satellite';
-export { resolveStationTle } from './tle-source';
+export { resolveStationTle, resolveStationTleBlock } from './tle-source';

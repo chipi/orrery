@@ -1,14 +1,13 @@
 name: Refresh station TLEs
 
-# Keeps the bundled station element sets (ISS, Tiangong) in
-# src/lib/physics/satellite/station-tles.json current. TLEs decay in accuracy
-# over days, so a stale bundle makes the /lab `iss-pass` finale (and the MCP
-# tool once the gate lifts, H · #464) quietly wrong. This is the bot-commit
-# variant of the launches refresh pattern: fetch → commit-if-changed → push to
-# main, where CI + the deploy chain pick up the diff. The app additionally
-# surfaces `epochAgeDays` at compute time (H5), so even a container that hasn't
-# redeployed since the last bundle discloses its own staleness honestly rather
-# than relying on this job having run.
+# Keeps the served station element sets (ISS, Tiangong) in the /data overlay
+# static/data/station-tles.json current. TLEs decay in accuracy over days, so a
+# stale set makes the /lab `iss-pass` tool and the AR sky quietly wrong. This is
+# the bot-commit variant of the launches refresh pattern: fetch → commit-if
+# -changed → push to main, where CI + the deploy chain pick up the diff (the prod
+# VPS additionally refreshes the same file every 6h via ops/refresh-prod-data.sh,
+# no redeploy). The app also surfaces `epochAgeDays` at compute time (H5), so even
+# a container that hasn't redeployed discloses its own staleness honestly.
 
 on:
   schedule:
@@ -55,8 +54,8 @@ jobs:
           set -euo pipefail
           git config user.name 'orrery-tle-bot'
           git config user.email 'tle-bot@orrery.local'
-          if [[ -n "$(git status --porcelain src/lib/physics/satellite/station-tles.json)" ]]; then
-            git add src/lib/physics/satellite/station-tles.json
+          if [[ -n "$(git status --porcelain static/data/station-tles.json)" ]]; then
+            git add static/data/station-tles.json
             git commit -m "chore(tle): refresh — station element sets"
             # --no-verify: npm ci installs the husky pre-push hook on the runner;
             # a full preflight here would re-validate the whole tree and blow the

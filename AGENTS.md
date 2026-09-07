@@ -25,6 +25,8 @@ Then drill into the matching doc by question type:
 | Deploying to prod, or need a **service / port / log / endpoint** on the VPS? | The prod VPS is **co-tenant** with `podcast_scraper` — **never guess or port-probe, it's all documented.** Live services + ports per box: the **homelab homepage `http://homelab:8888`**. Port allocations: podcast infra **ADR-114** (`~/Projects/podcast_scraper-infra/docs/adr/ADR-114*.md` — 8090 orrery web · 8091 mcp · 8092 podcast AS · 8093 orrery lab-api). Logs / metrics / errors + Grafana: `docs/guides/observability.md` (Grafana `http://homelab:3000`, VictoriaLogs). Deploy mechanics + prerequisites: `docs/ops/deploy-prod-vps.md`. |
 | What lives in this folder / which of two look-alike functions do I touch? | the folder's own `README.md` (module map) — see below |
 
+**Consult this table BEFORE you act — especially before you probe.** The moment you're about to `curl` / `dig` / `ssh` / port-scan, or *guess* an infra fact — a port, a service, a URL, what runs on which box — STOP: the answer is in the row above, and the doc it points to is written **for you**. Reading it first is mandatory; probing or guessing before reading is a defect, not initiative. (2026-09-07: an agent port-scanned the homelab box for what holds `:8093` and burned a pile of tokens — the answer was one line in ADR-114's port map and on the homepage `http://homelab:8888`. Don't repeat it.)
+
 **Anti-drift rule:** when code and TA.md disagree, one is wrong — fix it. The same applies to README, CHANGELOG, and TECH-BOM. Do not tolerate divergence.
 
 ### Module READMEs — tactical maps next to code

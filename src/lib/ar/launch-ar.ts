@@ -15,14 +15,22 @@ const COMPASS8 = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
 export function compass8(deg: number): string {
   return COMPASS8[Math.round((((deg % 360) + 360) % 360) / 45) % 8];
 }
-export function formatPass(id: StationId, pass: Pass | null): string {
+// Matches iss-pass `staleAfterDays` (H5): past this the propagated position
+// drifts enough to disclose rather than show a confidently-wrong marker.
+const STALE_TLE_DAYS = 14;
+
+export function formatPass(id: StationId, pass: Pass | null, epochAgeDays = 0): string {
   const name = id === 'iss' ? 'ISS' : 'Tiangong';
-  if (!pass) return `${name}: no pass in 24 h`;
+  // The marker is propagated from an element set; if that set is old (offline /
+  // un-redeployed), say so instead of implying pinpoint accuracy (H-b · #464).
+  const stale =
+    epochAgeDays > STALE_TLE_DAYS ? ` — approx (${Math.round(epochAgeDays)}d old TLE)` : '';
+  if (!pass) return `${name}: no pass in 24 h${stale}`;
   const mins = Math.max(0, Math.round((pass.start.getTime() - Date.now()) / 60_000));
   const when = mins === 0 ? 'now' : `in ${mins} min`;
   return `${name}: ${pass.visible ? 'visible' : 'daytime'} pass ${when}, ${compass8(
     pass.startAzimuthDeg,
-  )}, max ${Math.round(pass.maxAltitudeDeg)}°`;
+  )}, max ${Math.round(pass.maxAltitudeDeg)}°${stale}`;
 }
 
 let active: {
@@ -198,8 +206,8 @@ export async function launchSkyScene(): Promise<boolean> {
   const hintTimer = setTimeout(() => hint.remove(), 8000);
   const handle = createSkyScene(canvas, {
     onExit: cleanup,
-    onPass: (id, pass) => {
-      passLines.set(id, formatPass(id, pass));
+    onPass: (id, pass, epochAgeDays) => {
+      passLines.set(id, formatPass(id, pass, epochAgeDays));
       clearTimeout(hintTimer);
       if (!hint.isConnected) document.body.appendChild(hint);
       hint.textContent = [...passLines.values()].join('   ·   ');

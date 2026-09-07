@@ -149,4 +149,13 @@ describe('formatPass', () => {
   it('distinguishes a daytime (non-visible) pass', () => {
     expect(formatPass('tiangong', pass({ visible: false }))).toContain('daytime pass');
   });
+  it('discloses a stale element set (H-b · #464) — approx + age, past the 14-day bound', () => {
+    const s = formatPass('iss', pass({}), 48);
+    expect(s).toContain('approx');
+    expect(s).toContain('48d');
+    // a fresh set (≤ bound) carries no disclosure
+    expect(formatPass('iss', pass({}), 3)).not.toContain('approx');
+    // the no-pass line discloses staleness too
+    expect(formatPass('iss', null, 48)).toContain('approx');
+  });
 });

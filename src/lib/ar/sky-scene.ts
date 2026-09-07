@@ -233,8 +233,13 @@ export interface SkySceneOptions {
   onExit?: () => void;
   /** Pre-resolved observer location (else resolved on start). */
   location?: ObserverLocation;
-  /** The next pass for each station, once its fresh TLE resolves (#405). */
-  onPass?: (id: StationId, pass: Pass | null) => void;
+  /**
+   * The next pass for each station, once its TLE resolves (#405). `epochAgeDays`
+   * is how old the element set is (H-b · #464) — the DOM hint discloses
+   * "positions approximate" past the staleness bound, so an offline/stale
+   * fallback isn't silently wrong.
+   */
+  onPass?: (id: StationId, pass: Pass | null, epochAgeDays: number) => void;
   /** Inject a substrate (tests); else the best available is picked on start. */
   view?: SkyView;
   /** Live diagnostics tick (~4 Hz) for the debug HUD (#54). */
@@ -1864,12 +1869,15 @@ export function createSkyScene(
         if (!sm) return;
         sm.tle = tle;
         if (observer) {
+          // How old the element set is now — the DOM hint flags stale positions.
+          const epochAgeDays = Math.abs(julianDay(new Date()) - tle.epochJd);
           opts.onPass?.(
             id,
             nextPassForTle(tle, new Date(), observer.latDeg, observer.lonDeg, {
               hoursAhead: 24,
               minMaxAltDeg: 10,
             }),
+            epochAgeDays,
           );
         }
       });

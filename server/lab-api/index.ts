@@ -52,7 +52,9 @@ export function staticClients(cfg: LabApiConfig): StaticClient[] {
       redirectUris: ['https://claude.ai/api/mcp/auth_callback'],
       scope: 'physics:read',
       // Door 2 ONLY — a connector token must never open /ask (MINOR-1).
-      resources: [cfg.mcpResource],
+      // Both RFC 8707 identifier forms (E pre-review F1): origin, and the
+      // /mcp path form an RFC 9728 client derives from the connector URL.
+      resources: [cfg.mcpResource, `${cfg.mcpResource}/mcp`],
     });
   }
   // The /lab SPA — public client, PKCE-only (no secret to keep in a browser).
@@ -201,7 +203,8 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
       }
       case 'POST /ask': {
         const header = req.headers.authorization ?? '';
-        const bearer = header.startsWith('Bearer ') ? header.slice(7) : '';
+        // RFC 7235: the auth scheme is case-insensitive (E holistic m-2).
+        const bearer = /^bearer /i.test(header) ? header.slice(7) : '';
         // Door-1 tokens carry aud = the lab-api issuer itself.
         const claims = await tokens.verifyAccessToken(bearer, cfg.issuer);
         if (!claims || claims.scope !== 'physics:ask') {

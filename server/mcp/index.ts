@@ -6,10 +6,14 @@
  * Tools are auto-derived from the formula registry (`registry-tools.ts`) —
  * S4 gates to the `transfer` domain; the gate lifts in S6 (#464).
  *
- * AUTH (D3-updated, A01.7): bearer here is an INTERNAL DEV CONVENIENCE only —
- * `MCP_DEV_BEARER` unset means the server refuses to start outside NODE_ENV
- * test/dev. Real auth is OAuth 2.1 via lab-api (#533/#534, spike doc
- * docs/wip/2026-09-01-infra-auth-spike.md).
+ * AUTH (E · #534): OAuth 2.1 resource server. Bearer JWTs are verified against
+ * lab-api's /jwks (ES256, iss + aud + scope — auth.ts); RFC 9728 protected-
+ * resource metadata is served unauthenticated at both well-known paths (the
+ * origin form AND the /mcp path form — pre-review F1), and 401/403 responses
+ * carry RFC 6750 WWW-Authenticate with the resource_metadata pointer.
+ * `MCP_DEV_BEARER` survives ONLY outside production (local dev/tests without a
+ * lab-api); in production a SET dev bearer refuses startup (pre-review F4 —
+ * fail-closed inverted: the backdoor cannot exist where it matters).
  *
  * ABUSE GUARDS (2026-09-01 plan review MAJOR-1):
  *  - validate-REJECT boundary in registry-tools (never clamp agent input);
@@ -45,6 +49,7 @@ import {
   type DerivedTool,
 } from './registry-tools';
 import { LOCALES, makeT, resolveLocale, type Locale } from './i18n';
+import { mcpAuthIssuer, mcpResource, verifyRequestToken, REQUIRED_SCOPE } from './auth';
 
 // ─── Config ─────────────────────────────────────────────────────────────────
 
@@ -151,24 +156,54 @@ export function buildMcpServer(listLocale: Locale): Server {
   return server;
 }
 
-// ─── HTTP transport + bearer gate ───────────────────────────────────────────
+// ─── HTTP transport + auth gate ─────────────────────────────────────────────
 
 /**
- * Timing-safe bearer check (S4 holistic MINOR-3): hash both sides to equal
- * length, then constant-time compare. NOTE: the rate limiter deliberately keys
- * on the VALID token only (post-auth) — keying on attacker-supplied strings
- * would grow `windows` unboundedly.
+ * Timing-safe dev-bearer check (S4 holistic MINOR-3), NON-PRODUCTION ONLY as
+ * of E (pre-review F4): local dev and unit tests run without a lab-api; in
+ * production a set MCP_DEV_BEARER refuses startup. Hash both sides to equal
+ * length, then constant-time compare. NOTE: the rate limiter keys on
+ * post-auth identities only (JWT `sub`, or the valid dev bearer) — keying on
+ * attacker-supplied strings would grow `windows` unboundedly.
  */
 function bearerMatches(token: string): boolean {
-  if (!DEV_BEARER) return false;
+  if (!DEV_BEARER || process.env.NODE_ENV === 'production') return false;
   const a = createHash('sha256').update(token).digest();
   const b = createHash('sha256').update(DEV_BEARER).digest();
   return timingSafeEqual(a, b);
 }
 
-function unauthorized(res: ServerResponse): void {
-  res.writeHead(401, { 'WWW-Authenticate': 'Bearer realm="orrery-mcp"' });
-  res.end(JSON.stringify({ error: 'unauthorized' }));
+/** RFC 9728 protected-resource metadata for one resource-identifier form. */
+function prmDocument(resource: string): Record<string, unknown> {
+  return {
+    resource,
+    authorization_servers: [mcpAuthIssuer()],
+    bearer_methods_supported: ['header'],
+    scopes_supported: [REQUIRED_SCOPE],
+  };
+}
+
+function wwwAuthenticate(error?: 'invalid_token' | 'insufficient_scope'): string {
+  const parts = [
+    `Bearer resource_metadata="${mcpResource()}/.well-known/oauth-protected-resource"`,
+  ];
+  // RFC 6750 §3: omit the error attribute when no token was presented at all.
+  if (error) parts.push(`error="${error}"`);
+  if (error === 'insufficient_scope') parts.push(`scope="${REQUIRED_SCOPE}"`);
+  return parts.join(', ');
+}
+
+function authFailure(
+  res: ServerResponse,
+  error: 'invalid_token' | 'insufficient_scope' | undefined,
+  description: string,
+): void {
+  const status = error === 'insufficient_scope' ? 403 : 401;
+  res.writeHead(status, {
+    'WWW-Authenticate': wwwAuthenticate(error),
+    'content-type': 'application/json',
+  });
+  res.end(JSON.stringify({ error: error ?? 'unauthorized', error_description: description }));
 }
 
 async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> {
@@ -178,6 +213,20 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
     res.end(JSON.stringify({ ok: true, tools: toolsFor('en-US').length }));
     return;
   }
+  // PRM is public by design (RFC 9728) — it's how a client FINDS the AS.
+  // Both identifier forms are served because the connector URL includes /mcp
+  // and §3.3 requires the returned `resource` to match the client-computed
+  // identifier exactly (pre-review F1).
+  if (req.method === 'GET' && url.pathname === '/.well-known/oauth-protected-resource') {
+    res.writeHead(200, { 'content-type': 'application/json' });
+    res.end(JSON.stringify(prmDocument(mcpResource())));
+    return;
+  }
+  if (req.method === 'GET' && url.pathname === '/.well-known/oauth-protected-resource/mcp') {
+    res.writeHead(200, { 'content-type': 'application/json' });
+    res.end(JSON.stringify(prmDocument(`${mcpResource()}/mcp`)));
+    return;
+  }
   if (url.pathname !== '/mcp') {
     res.writeHead(404);
     res.end();
@@ -185,12 +234,25 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
   }
 
   const auth = req.headers.authorization ?? '';
-  const token = auth.startsWith('Bearer ') ? auth.slice(7) : '';
-  if (!DEV_BEARER || !bearerMatches(token)) {
-    unauthorized(res);
+  // RFC 7235: the auth scheme is case-insensitive (holistic m-2).
+  const token = /^bearer /i.test(auth) ? auth.slice(7) : '';
+  if (!token) {
+    authFailure(res, undefined, 'no bearer token presented');
     return;
   }
-  if (rateLimited(token)) {
+  let rateKey: string;
+  if (bearerMatches(token)) {
+    rateKey = token; // dev path (non-production only)
+  } else {
+    const verdict = await verifyRequestToken(token);
+    if (!verdict.ok) {
+      authFailure(res, verdict.error, verdict.description);
+      return;
+    }
+    // Keyed on the verified subject: bounded by the allowlist's cardinality.
+    rateKey = verdict.sub;
+  }
+  if (rateLimited(rateKey)) {
     res.writeHead(429, { 'retry-after': '30' });
     res.end(JSON.stringify({ error: 'rate limit exceeded' }));
     return;
@@ -211,8 +273,11 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
 }
 
 export function startServer(): ReturnType<typeof createServer> {
-  if (!DEV_BEARER && process.env.NODE_ENV === 'production') {
-    throw new Error('MCP_DEV_BEARER must be set in production (S4 dev gate)');
+  // Inverted S4 gate (E · pre-review F4): production must NOT carry the dev
+  // bearer — real auth is the lab-api JWT path; a staged bearer would be a
+  // standing backdoor with zero legitimate users.
+  if (DEV_BEARER && process.env.NODE_ENV === 'production') {
+    throw new Error('MCP_DEV_BEARER must NOT be set in production (E · #534 — JWT auth only)');
   }
   const httpServer = createServer((req, res) => {
     handle(req, res).catch((e) => {

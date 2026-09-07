@@ -148,23 +148,57 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - name: Build image
         run: docker build -f Dockerfile.mcp -t orrery-mcp:ci .
-      - name: Live round-trip (health + initialize + tools/list)
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install deps (jose for the JWT minter)
+        run: npm ci --ignore-scripts
+      # E (#534): the image bakes NODE_ENV=production, where the dev bearer
+      # REFUSES startup — so this round-trip exercises the REAL JWT path: a
+      # runner-local JWKS + jose-minted tokens stand in for lab-api.
+      - name: Live round-trip (PRM + JWT auth + initialize)
         run: |
           set -euo pipefail
-          trap 'docker rm -f mcp-ci >/dev/null 2>&1 || true' EXIT
-          docker run -d --name mcp-ci -e MCP_DEV_BEARER=ci-bearer -p 8091:8091 orrery-mcp:ci
+          JWKS_PID=''
+          trap 'docker rm -f mcp-ci >/dev/null 2>&1 || true; [ -n "$JWKS_PID" ] && kill "$JWKS_PID" 2>/dev/null || true' EXIT
+          ISSUER=https://lab-api.orrerylearn.com
+          RESOURCE=https://mcp.orrerylearn.com
+          mkdir -p /tmp/ci-jwks
+          node scripts/mint-ci-jwt.mjs /tmp/ci-jwks "$ISSUER" "$RESOURCE" > /tmp/ci-tokens.txt
+          VALID=$(sed -n 1p /tmp/ci-tokens.txt)
+          WRONG_AUD=$(sed -n 2p /tmp/ci-tokens.txt)
+          python3 -m http.server 9099 --directory /tmp/ci-jwks &
+          JWKS_PID=$!
+          docker run -d --name mcp-ci \
+            --add-host=host.docker.internal:host-gateway \
+            -e MCP_JWKS_URL=http://host.docker.internal:9099/jwks.json \
+            -e MCP_AUTH_ISSUER="$ISSUER" \
+            -e MCP_RESOURCE="$RESOURCE" \
+            -p 8091:8091 orrery-mcp:ci
           for i in $(seq 1 20); do
             curl -sf http://127.0.0.1:8091/health >/dev/null && break
             sleep 1
           done
           curl -sf http://127.0.0.1:8091/health | grep -q '"ok":true'
-          # Unauthenticated must 401.
+          # RFC 9728 PRM at both identifier forms, unauthenticated.
+          curl -sf http://127.0.0.1:8091/.well-known/oauth-protected-resource \
+            | grep -q "\"resource\":\"$RESOURCE\""
+          curl -sf http://127.0.0.1:8091/.well-known/oauth-protected-resource/mcp \
+            | grep -q "\"resource\":\"$RESOURCE/mcp\""
+          # No token → 401 with the resource_metadata pointer.
+          curl -s -D /tmp/h401 -o /dev/null -X POST http://127.0.0.1:8091/mcp \
+            -H 'content-type: application/json' -d '{}'
+          grep -q '^HTTP/1.1 401' /tmp/h401
+          grep -qi 'resource_metadata=' /tmp/h401
+          # Wrong audience → 401.
           code=$(curl -s -o /dev/null -w '%{http_code}' -X POST http://127.0.0.1:8091/mcp \
+            -H "authorization: Bearer $WRONG_AUD" \
             -H 'content-type: application/json' -d '{}')
           test "$code" = "401"
-          # Initialize over Streamable HTTP with the bearer.
+          # Valid JWT → full initialize.
           curl -sf -X POST http://127.0.0.1:8091/mcp \
-            -H 'authorization: Bearer ci-bearer' \
+            -H "authorization: Bearer $VALID" \
             -H 'content-type: application/json' \
             -H 'accept: application/json, text/event-stream' \
             -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"ci","version":"0"}}}' \

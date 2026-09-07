@@ -375,6 +375,30 @@ describe('negative paths', () => {
     expect(loc.searchParams.get('error')).toBe('invalid_target');
   });
 
+  it('claude-ai may request the /mcp PATH-form resource (E pre-review F1) — token aud matches', async () => {
+    const verifier = randomBytes(32).toString('base64url');
+    const flow = await runAuthLeg({
+      email: ALLOWED_EMAIL,
+      verifier,
+      resource: `${MCP_RESOURCE}/mcp`,
+    });
+    expect(flow.ourCode).toBeTruthy();
+    const { status, body } = await postToken({
+      grant_type: 'authorization_code',
+      client_id: 'claude-ai',
+      client_secret: CLAUDE_SECRET,
+      code: flow.ourCode!,
+      redirect_uri: 'https://claude.ai/api/mcp/auth_callback',
+      code_verifier: verifier,
+      resource: `${MCP_RESOURCE}/mcp`,
+    });
+    expect(status).toBe(200);
+    const payload = JSON.parse(
+      Buffer.from((body.access_token as string).split('.')[1], 'base64url').toString(),
+    ) as { aud: string };
+    expect(payload.aud).toBe(`${MCP_RESOURCE}/mcp`);
+  });
+
   it('per-client resource binding: the SPA cannot request an aud=mcp token', async () => {
     const url = new URL(`${base}/authorize`);
     url.searchParams.set('client_id', 'orrery-lab-web');

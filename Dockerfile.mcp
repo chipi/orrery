@@ -7,7 +7,8 @@
 # review MAJOR-4).
 #
 # Build (CI + locally):  docker build -f Dockerfile.mcp -t orrery-mcp .
-# Run:                   docker run -e MCP_DEV_BEARER=... -p 8091:8091 orrery-mcp
+# Run:                   docker run -e MCP_JWKS_URL=... -p 8091:8091 orrery-mcp
+#   (NODE_ENV=production is baked in — a set MCP_DEV_BEARER REFUSES startup; E #534)
 
 FROM node:20-alpine AS builder
 WORKDIR /app

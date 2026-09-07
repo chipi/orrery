@@ -22,6 +22,7 @@ Then drill into the matching doc by question type:
 | Image / link / text provenance? | `static/data/{image,link}-provenance.json` + ADR-046 / ADR-047 / ADR-051 |
 | How is a specific 3D scene built? | TA.md §rendering + `src/routes/<route>/+page.svelte` |
 | How does the build pipeline work? | TA.md §pipelines (10 pipelines documented) |
+| Deploying to prod, or need a **service / port / log / endpoint** on the VPS? | The prod VPS is **co-tenant** with `podcast_scraper` — **never guess or port-probe, it's all documented.** Live services + ports per box: the **homelab homepage `http://homelab:8888`**. Port allocations: podcast infra **ADR-114** (`~/Projects/podcast_scraper-infra/docs/adr/ADR-114*.md` — 8090 orrery web · 8091 mcp · 8092 podcast AS · 8093 orrery lab-api). Logs / metrics / errors + Grafana: `docs/guides/observability.md` (Grafana `http://homelab:3000`, VictoriaLogs). Deploy mechanics + prerequisites: `docs/ops/deploy-prod-vps.md`. |
 | What lives in this folder / which of two look-alike functions do I touch? | the folder's own `README.md` (module map) — see below |
 
 **Anti-drift rule:** when code and TA.md disagree, one is wrong — fix it. The same applies to README, CHANGELOG, and TECH-BOM. Do not tolerate divergence.

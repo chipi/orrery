@@ -10,15 +10,17 @@
 //                                app + per-stream labels are set HERE)
 // Do NOT touch base.alloy or the podcast sources.
 
-// ---------- Orrery containers: web (nginx) + ephemeral pipeline-runner ----------
-// Keep ONLY orrery-web + orrery-pipeline-runner-* (the leak the old agent had was
-// a too-broad keep). surface=web|pipeline mirrors the podcast split.
+// ---------- Orrery containers: web + mcp + lab-api + ephemeral pipeline-runner ----------
+// Keep ONLY orrery's own containers (the leak the old agent had was a too-broad
+// keep). surface=web|mcp|lab-api|pipeline mirrors the podcast split. mcp + lab-api
+// added with the v0.9 backend deploy (#464) — env=prod tagging is inherited from
+// the shared node's loki.write sink, same as orrery-web.
 discovery.relabel "orrery" {
 	targets = discovery.docker.app.targets
 
 	rule {
 		source_labels = ["__meta_docker_container_name"]
-		regex         = "/(orrery-web|orrery-pipeline-runner-.*)"
+		regex         = "/(orrery-web|orrery-mcp|orrery-lab-api|orrery-pipeline-runner-.*)"
 		action        = "keep"
 	}
 
@@ -27,6 +29,20 @@ discovery.relabel "orrery" {
 		regex         = "/orrery-web"
 		target_label  = "surface"
 		replacement   = "web"
+	}
+
+	rule {
+		source_labels = ["__meta_docker_container_name"]
+		regex         = "/orrery-mcp"
+		target_label  = "surface"
+		replacement   = "mcp"
+	}
+
+	rule {
+		source_labels = ["__meta_docker_container_name"]
+		regex         = "/orrery-lab-api"
+		target_label  = "surface"
+		replacement   = "lab-api"
 	}
 
 	rule {

@@ -25,6 +25,22 @@
 set -euo pipefail
 
 VHOSTS=(orrery orrery-telemetry orrery-analytics)
+# The lab-api + mcp backend vhosts (S4/D · #464) are added ONLY once their DNS
+# resolves — a vhost for a name that doesn't resolve makes Caddy start ACME
+# against a dead host on restart and burn Let's Encrypt's per-host failure budget
+# (Fable-5 M1). getent = "resolves at all" (the names are Cloudflare-fronted, so
+# they won't resolve to the box IP directly); a NXDOMAIN name is skipped with a
+# warning and the next deploy (post-DNS) picks it up — an ordering mistake becomes
+# a no-op, never churn.
+for v in orrery-lab-api orrery-mcp; do
+  host="${v#orrery-}.orrerylearn.com"   # orrery-lab-api → lab-api.orrerylearn.com
+  if getent hosts "$host" >/dev/null 2>&1; then
+    VHOSTS+=("$v")
+    echo "  DNS ok for $host — will install ${v}.caddy"
+  else
+    echo "::warning::$host does not resolve yet — skipping ${v}.caddy (no ACME churn); re-run deploy once DNS is live"
+  fi
+done
 SRC="${1:-ops/caddy}"          # repo checkout dir, read-only — NEVER deleted
 SITES=/etc/caddy/sites
 BK="$(mktemp -d)"

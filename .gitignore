@@ -2,6 +2,9 @@ node_modules/
 dist/
 dist-mcp/
 dist-lab-api/
+# lab-api runtime state on the VPS (ES256 signing key, refresh-token hashes,
+# allowlist.json) — lives in the /srv/orrery checkout; never commit it (#464).
+lab-api-state/
 build/
 docs/.vitepress/dist/
 docs/.vitepress/cache/

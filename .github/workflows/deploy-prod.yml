@@ -285,6 +285,12 @@ jobs:
         env:
           SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
           IMAGE_TAG: ${{ steps.sha.outputs.tag }}
+          # Backend auth secrets (D/E · #464). Empty when unset → deploy_stack.sh
+          # brings up web-only + a warning (lab-api crash-loops without them).
+          LAB_GOOGLE_CLIENT_ID: ${{ secrets.ORRERY_LAB_GOOGLE_CLIENT_ID }}
+          LAB_GOOGLE_CLIENT_SECRET: ${{ secrets.ORRERY_LAB_GOOGLE_CLIENT_SECRET }}
+          LAB_CLAUDE_CLIENT_SECRET: ${{ secrets.ORRERY_LAB_CLAUDE_CLIENT_SECRET }}
+          LITELLM_API_KEY: ${{ secrets.ORRERY_LITELLM_API_KEY }}
         run: |
           set -euo pipefail
           # Logs now ship via the shared node Alloy (ADR-121; ops/observability/
@@ -298,6 +304,18 @@ jobs:
             printf '%s=%s\n' COMPOSE_PROJECT_NAME      orrery
             printf '%s=%s\n' ORRERY_PORT               8090
             printf '%s=%s\n' ORRERY_PIPELINE_IMAGE_TAG "$IMAGE_TAG"
+            # Backend images roll forward/back with the deploy tag (main | sha-<7>).
+            printf '%s=%s\n' ORRERY_MCP_IMAGE_TAG      "$IMAGE_TAG"
+            printf '%s=%s\n' ORRERY_LAB_API_IMAGE_TAG  "$IMAGE_TAG"
+            # lab-api auth secrets — empty → web-only bring-up (deploy_stack.sh gate).
+            printf '%s=%s\n' ORRERY_LAB_GOOGLE_CLIENT_ID     "$LAB_GOOGLE_CLIENT_ID"
+            printf '%s=%s\n' ORRERY_LAB_GOOGLE_CLIENT_SECRET "$LAB_GOOGLE_CLIENT_SECRET"
+            printf '%s=%s\n' ORRERY_LAB_CLAUDE_CLIENT_SECRET "$LAB_CLAUDE_CLIENT_SECRET"
+            printf '%s=%s\n' ORRERY_LITELLM_API_KEY          "$LITELLM_API_KEY"
+            # Public app origins — CORS + OAuth redirects. Apex + www + Pages
+            # (www is a live origin; Fable-5 M2). Not secret.
+            printf '%s=%s\n' ORRERY_LAB_CORS_ORIGINS 'https://orrerylearn.com,https://www.orrerylearn.com,https://chipi.github.io'
+            printf '%s=%s\n' ORRERY_LAB_WEB_REDIRECT_URIS 'https://orrerylearn.com/lab/callback,https://www.orrerylearn.com/lab/callback,https://chipi.github.io/orrery/lab/callback'
           } > "$ENVTMP"
           scp -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new -o BatchMode=yes \
@@ -307,20 +325,17 @@ jobs:
             "set -euo pipefail; cd /srv/orrery; \
              mv .env.deploy-staged .env; chmod 600 .env"
 
-      - name: Deploy (fetch + reset + compose up + healthcheck)
+      - name: Deploy (fetch + reset + whole-stack up + healthcheck)
         # Mirror of podcast_scraper's deploy.sh — thin, idempotent,
-        # zero-bootstrap. Sequence:
-        #   1. `git fetch + reset --hard origin/main` brings the on-VPS
-        #      checkout in lockstep with this workflow's commit.
-        #   2. Drop ops/observability/orrery.alloy into the box's
-        #      config.d/ + HUP the shared node Alloy, and remove the
-        #      retired orrery-grafana-agent — same deploy, so logs don't
-        #      double-collect (ADR-121).
-        #   3. `. ./.env` sources the just-staged env vars so docker
-        #      compose CLI sees ORRERY_PIPELINE_IMAGE_TAG and friends.
-        #   4. `docker compose up` brings up `web`. pipeline-runner stays
-        #      profiles: manual — invoked on-demand by cron.
-        #   5. Internal healthcheck against ORRERY_PORT.
+        # zero-bootstrap. This step only does the git sync; the rest lives in
+        # ops/deploy_stack.sh (run from the FRESH checkout) because the gated
+        # whole-stack bring-up + lab-api state bootstrap + per-service
+        # healthchecks outgrew a safely-escaped inline ssh string (Fable-5).
+        # deploy_stack.sh: drops orrery.alloy into the shared node + HUPs it
+        # (ADR-121), builds web, bootstraps lab-api-state, and brings up
+        # web ALWAYS + mcp/lab-api ONLY when their secrets are staged (else
+        # web-only + a warning — lab-api crash-loops without them). Caddy
+        # routing is the separate step below.
         if: steps.preflight.outputs.skip != 'true'
         env:
           SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
@@ -330,30 +345,7 @@ jobs:
             "set -euo pipefail; cd /srv/orrery; \
              git fetch --depth=50 origin '+refs/heads/main:refs/remotes/origin/main'; \
              git reset --hard origin/main; \
-             touch data-refresh.log; \
-             cp ops/observability/orrery.alloy /opt/vps-observability/config.d/orrery.alloy; \
-             docker rm -f orrery-grafana-agent 2>/dev/null || true; \
-             docker kill -s HUP alloy 2>/dev/null || true; \
-             . ./.env; \
-             docker compose -f compose/docker-compose.prod.yml \
-               --project-directory . --env-file .env --profile manual \
-               pull pipeline-runner; \
-             docker compose -f compose/docker-compose.prod.yml \
-               --project-directory . --env-file .env \
-               build web; \
-             docker compose -f compose/docker-compose.prod.yml \
-               --project-directory . --env-file .env \
-               up -d web; \
-             PORT=\${ORRERY_PORT:-8090}; \
-             for i in \$(seq 1 30); do \
-               if curl -fsS \"http://127.0.0.1:\${PORT}/\" >/dev/null 2>&1; then \
-                 echo OK; exit 0; \
-               fi; \
-               sleep 2; \
-             done; \
-             echo 'orrery web did not respond within 60s'; \
-             docker compose -f compose/docker-compose.prod.yml --project-directory . --env-file .env logs web; \
-             exit 1"
+             bash ops/deploy_stack.sh"
 
       - name: Deploy orrery Caddy routing (own the vhosts — ADR-114 tenant ownership)
         # Orrery owns its three public vhosts (orrerylearn.com, telemetry.*, analytics.*).

@@ -51,6 +51,15 @@ fi
 have() { grep -qE "^$1=..*" .env; }
 if have ORRERY_LAB_GOOGLE_CLIENT_ID && have ORRERY_LAB_GOOGLE_CLIENT_SECRET && have ORRERY_LAB_CLAUDE_CLIENT_SECRET; then
   echo "::notice::lab-api secrets present — bringing up web + mcp + lab-api"
+  # A prior partial bring-up can leave orrery-mcp/orrery-lab-api holding their
+  # loopback ports (8091/8093) in a way `up -d` can't rebind ("port is already
+  # allocated"). Log what holds them, then force-remove OUR OWN backend
+  # containers only (never web, never podcast) so the recreate binds cleanly.
+  # Idempotent + forward-safe: these are additive services, nothing depends on
+  # the old instance being up.
+  echo "--- backend port holders before up (8091/8093):"
+  docker ps -a --format '  {{.Names}}  {{.Status}}  {{.Ports}}' | grep -E '809[13]|orrery-(mcp|lab-api)' || echo "  (none)"
+  docker rm -f orrery-mcp orrery-lab-api >/dev/null 2>&1 || true
   "${COMPOSE[@]}" pull mcp lab-api
   "${COMPOSE[@]}" up -d web mcp lab-api
   STACK=full

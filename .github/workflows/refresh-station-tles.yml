@@ -1,0 +1,68 @@
+name: Refresh station TLEs
+
+# Keeps the bundled station element sets (ISS, Tiangong) in
+# src/lib/physics/satellite/station-tles.json current. TLEs decay in accuracy
+# over days, so a stale bundle makes the /lab `iss-pass` finale (and the MCP
+# tool once the gate lifts, H · #464) quietly wrong. This is the bot-commit
+# variant of the launches refresh pattern: fetch → commit-if-changed → push to
+# main, where CI + the deploy chain pick up the diff. The app additionally
+# surfaces `epochAgeDays` at compute time (H5), so even a container that hasn't
+# redeployed since the last bundle discloses its own staleness honestly rather
+# than relying on this job having run.
+
+on:
+  schedule:
+    # 04:00 UTC daily — outside the docker-e2e (05:07) and validate-prod (06:00)
+    # windows so a refresh commit never races those runs.
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Own concurrency group: a refresh may cancel a previous refresh, but the
+# ci.yml `ci-databot-*` split keeps it from cancelling a user CI run.
+concurrency:
+  group: refresh-station-tles-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          # PAT so the push reuses the fetch credentials (same pattern as
+          # regen-snapshots.yml); falls through to GITHUB_TOKEN when unset
+          # (push then 403s on a protected branch — same trade-off as the
+          # launches bot).
+          token: ${{ secrets.LAUNCHES_BOT_TOKEN || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Fetch fresh station TLEs
+        run: node scripts/fetch-station-tles.mjs
+
+      - name: Commit if changed
+        run: |
+          set -euo pipefail
+          git config user.name 'orrery-tle-bot'
+          git config user.email 'tle-bot@orrery.local'
+          if [[ -n "$(git status --porcelain src/lib/physics/satellite/station-tles.json)" ]]; then
+            git add src/lib/physics/satellite/station-tles.json
+            git commit -m "chore(tle): refresh — station element sets"
+            # --no-verify: npm ci installs the husky pre-push hook on the runner;
+            # a full preflight here would re-validate the whole tree and blow the
+            # job timeout. The bot pushes only the refreshed JSON; CI validates
+            # the branch itself.
+            git push --no-verify origin HEAD:${{ github.ref_name }}
+          else
+            echo "Station TLEs unchanged — exiting clean."
+          fi

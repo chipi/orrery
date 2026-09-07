@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 // Refresh the bundled station TLEs (#404) from Celestrak into
-// src/lib/physics/satellite/station-tles.json. Run daily by the "Refresh station TLEs"
-// workflow; the CI deploy chain picks up any diff. Keeps the bundled fallback
-// (used when the runtime Celestrak fetch is blocked) at most ~a day stale.
+// src/lib/physics/satellite/station-tles.json. Run daily by
+// .github/workflows/refresh-station-tles.yml (bot-commits any diff to main; the
+// CI deploy chain picks it up). Keeps the bundled fallback (used when the
+// runtime Celestrak fetch is blocked, and baked into the MCP image) at most
+// ~a day stale on main — note a manually-deployed container can still lag, which
+// is why iss-pass discloses epochAgeDays at compute time (H5 · #464).
 //
 // Fails soft: a fetch/parse error for one station leaves its previous entry
 // intact rather than blanking it.

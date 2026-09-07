@@ -46,6 +46,11 @@ pass this job (the inverted gate is itself under test).
   wrong-aud 401, valid JWT → `initialize` → `"orrery-physics"` — the exact CI
   assertions, locally green.
 
+## Protocol step 5 — full e2e both projects (recorded 2026-09-06, with the
+full-arc-review fix batch on the tree): `npx playwright test --workers=1`
+desktop-chromium **670 passed / 1 flaky-retried-green (36.2m)**,
+mobile-chromium **525 passed / 1 flaky-retried-green (16.6m)**, EXIT=0.
+
 ## Operator-decision log
 
 - Dev-bearer posture: pre-review recommendation adopted (non-prod-only +

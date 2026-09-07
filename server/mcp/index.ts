@@ -253,7 +253,7 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
     rateKey = verdict.sub;
   }
   if (rateLimited(rateKey)) {
-    res.writeHead(429, { 'retry-after': '30' });
+    res.writeHead(429, { 'retry-after': '30', 'content-type': 'application/json' });
     res.end(JSON.stringify({ error: 'rate limit exceeded' }));
     return;
   }

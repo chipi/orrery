@@ -42,11 +42,24 @@ function collectAllKeys(): string[] {
     for (const input of def.inputs) {
       add(input.labelKey);
       input.enumValues?.forEach((e) => add(e.labelKey));
+      // Body-picker option labels DERIVED from the registry (full-arc review
+      // MAJOR-1): Card.svelte renders every option via t(`lab.body.${id}`) —
+      // a hand list here went blind when P3/P5 added titan + the micro-g
+      // worlds, and six raw keys shipped to users ×14. Never enumerate by
+      // hand what the registry already knows.
+      if (input.kind === 'body') input.bodyIds?.forEach((b) => add(`lab.body.${b}`));
     }
     def.outputs.forEach((o) => add(o.labelKey));
     def.selectionOutputs?.forEach((o) => add(o.labelKey));
     collectFromResult(def.compute(defaultInputs(def)), add);
   }
+
+  // Every fail-branch reason key, STATICALLY (full-arc review MINOR-1): the
+  // forced-compute list below only reaches branches someone remembered to
+  // force. Scanning the registry source for reasonKey literals catches the
+  // next unauthored err key without anyone remembering anything.
+  const registrySource = readFileSync('src/lib/physics/registry/index.ts', 'utf8');
+  for (const m of registrySource.matchAll(/reasonKey:\s*'(lab\.[^']+)'/g)) add(m[1]);
 
   // Fail branches — the reason keys only surface when a formula is infeasible.
   collectFromResult(REGISTRY.get('tsiolkovsky')!.compute({ ispS: 350, m0Kg: 1, mfKg: 1 }), add);
@@ -125,8 +138,8 @@ function collectAllKeys(): string[] {
     'lab.ui.view-notebook',
     'lab.ui.view-switch-aria',
   ].forEach(add);
-  // Body-picker option labels — rendered via t(`lab.body.${id}`) in Card.svelte (not a labelKey).
-  ['earth', 'moon', 'mars', 'venus', 'mercury'].forEach((b) => add(`lab.body.${b}`));
+  // Body-picker labels now derive from the registry's body-kind fields above
+  // (MAJOR-1 class fix); only ids the UI reaches OUTSIDE the registry belong here.
   // Moon-phase names (G8) — figure.phaseLabelKey is dynamic (date → phase), so assert all 8.
   [
     'new',

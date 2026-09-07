@@ -2801,5 +2801,11 @@
   "lab_conn_eng_f1": "F-1 — груба сила првог степена Сатурна V (NASA)",
   "lab_conn_eng_rl10": "RL10 — шест деценија горњих степена (NASA)",
   "lab_conn_eng_raptor": "Raptor — потпуна циркулација са пофазним сагоревањем (SpaceX)",
-  "lab_conn_eng_fleet": "Прегледајте сваки мотор у флоти"
+  "lab_conn_eng_fleet": "Прегледајте сваки мотор у флоти",
+  "lab_body_titan": "Титан",
+  "lab_body_comet_67p": "Комета 67P",
+  "lab_body_itokawa": "Итокава",
+  "lab_body_ryugu": "Риугу",
+  "lab_body_bennu": "Бену",
+  "lab_body_eros": "Ерос"
 }

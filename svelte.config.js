@@ -64,7 +64,11 @@ const config = {
       // /sitemap.xml is unreachable by link-crawl (nothing on-page links to
       // it), so it needs an explicit entry or the prerenderer errors on it as
       // an "unseen prerderable route". Single entry — it's locale-agnostic.
-      entries: [...localizedRoots, '/sitemap.xml'],
+      // /lab/callback is the OAuth redirect landing (F · #535) — unreachable
+      // by link-crawl and DELIBERATELY not in site-routes.mjs: the registered
+      // redirect URIs are exact locale-agnostic strings, so the route must
+      // not be ×14-expanded into the sitemap.
+      entries: [...localizedRoots, '/sitemap.xml', '/lab/callback'],
       // /science/[tab] dynamic + /science/reading-list static overlap.
       // The static page wins via SvelteKit's specificity rules but the
       // crawler still flags it. Ignore — same behaviour as before #328

@@ -272,6 +272,28 @@ export default defineConfig(({ mode }) => {
           importScripts: ['offline-sw.js'],
           runtimeCaching: [
             {
+              // lab-api is NEVER cached (F · #535, slice-plan MAJOR-1.3):
+              // auth/token/ask responses are per-user and time-sensitive — a
+              // cached 401 or a replayed token response would be a security
+              // bug, and offline asks are dishonest by design (the UI says
+              // offline instead). FIRST rule on purpose. NOTE: generateSW
+              // STRINGIFIES this function into sw.js — literals only, no
+              // closure over config variables.
+              urlPattern: ({ url }) =>
+                url.hostname === 'lab-api.orrerylearn.com' || url.port === '8093',
+              handler: 'NetworkOnly',
+            },
+            {
+              // The POST twin (F holistic MINOR-4): workbox routes default to
+              // GET, and /token + /ask are POSTs — unmatched POSTs pass
+              // through uncached anyway, but the guard should SAY what it
+              // guards. Same literals-only constraint.
+              urlPattern: ({ url }) =>
+                url.hostname === 'lab-api.orrerylearn.com' || url.port === '8093',
+              handler: 'NetworkOnly',
+              method: 'POST',
+            },
+            {
               // Imagery — runtime-cached on demand, NOT precached (precaching
               // all of it = ~1.7 GB → exceeds the iOS CacheStorage quota and
               // breaks SW install on iOS; see globPatterns note). Bounded by

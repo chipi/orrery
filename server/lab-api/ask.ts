@@ -94,7 +94,14 @@ async function chat(deps: AskDeps, messages: ChatMessage[]): Promise<ChatMessage
     throw new LlmUnavailableError(`LLM unreachable: ${String(e)}`);
   }
   if (!resp.ok) throw new LlmUnavailableError(`LLM returned ${resp.status}`);
-  const data = (await resp.json()) as { choices?: { message?: ChatMessage }[] };
+  let data: { choices?: { message?: ChatMessage }[] };
+  try {
+    data = (await resp.json()) as typeof data;
+  } catch {
+    // Malformed gateway body is an UPSTREAM failure class, not our 500
+    // (full-arc review m-3).
+    throw new LlmUnavailableError('LLM returned unparseable JSON');
+  }
   const msg = data.choices?.[0]?.message;
   if (!msg) throw new LlmUnavailableError('LLM returned no choices');
   return msg;
@@ -154,9 +161,10 @@ export async function ask(
     }
   }
   // Out of rounds — one last narration pass without tools would still need a
-  // request; instead answer honestly with what the kernel produced.
+  // request; instead answer honestly with what the kernel produced. Localized
+  // ×14 like every other user-visible string (full-arc review MINOR-2).
   return {
-    answer: 'Tool-call budget exhausted before a final answer; results above are kernel-computed.',
+    answer: t('lab.ask.budget-exhausted'),
     toolCalls,
     model: deps.model,
     requestId: randomBytes(8).toString('hex'),

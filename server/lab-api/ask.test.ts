@@ -121,6 +121,6 @@ describe('ask', () => {
     script = [toolTurn, toolTurn, toolTurn, toolTurn];
     const out = await ask('loop forever', 'en-US', deps);
     expect(out.toolCalls).toHaveLength(4);
-    expect(out.answer).toMatch(/budget exhausted/);
+    expect(out.answer).toMatch(/tool-call budget/); // the localized lab.ask.budget-exhausted string
   });
 });

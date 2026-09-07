@@ -15,11 +15,13 @@
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
-  import * as m from '$lib/paraglide/messages';
+  import { t } from '$lib/lab/t';
   import { GOALS } from '$lib/physics/registry/goals';
   import Notebook from '$lib/lab/Notebook.svelte';
   import Canvas from '$lib/lab/Canvas.svelte';
+  import Ask from '$lib/lab/ask/Ask.svelte';
   import { createLabState } from '$lib/lab/lab-state.svelte';
+  import { createAskState } from '$lib/lab/ask/ask-state.svelte';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
@@ -38,8 +40,15 @@
   // View switch (S5): Notebook is the default home; Canvas is the T2 workspace.
   // Touch devices get the read-only graph (UXS-015 §Responsive — never a wiring
   // surface on mobile; a stated limitation).
-  let view = $state<'notebook' | 'canvas'>('notebook');
+  let view = $state<'notebook' | 'canvas' | 'ask'>('notebook');
   const isTouch = browser ? matchMedia('(hover: none)').matches : false;
+
+  // Ask state (F · #535): instance-per-page like labState; the transcript
+  // survives view switches. Silent session resume happens once, in browser.
+  const askState = createAskState();
+  $effect(() => {
+    if (browser) askState.init();
+  });
 
   // Goal switch re-seeds HERE, at the owner's level (holistic M1): the effect
   // used to live in Notebook, which is unmounted in canvas view — switching
@@ -56,14 +65,8 @@
     }
   });
 
-  // The registry uses dotted keys; paraglide ids are flat snake_case. Map
-  // dot/hyphen → underscore and call the message fn (params for the few
-  // parametrised strings). Falls back to the key if a message is missing.
-  const messages = m as unknown as Record<string, (inputs?: Record<string, unknown>) => string>;
-  function t(key: string, params?: Record<string, string | number>): string {
-    const fn = messages[key.replace(/[.-]/g, '_')];
-    return typeof fn === 'function' ? fn(params ?? {}) : key;
-  }
+  // Dotted-key resolver — shared module since F (#535) so the OAuth callback
+  // page resolves through the SAME map (see src/lib/lab/t.ts).
 
   function goalLabel(id: string): string {
     const g = GOALS.get(id);
@@ -113,6 +116,13 @@
           class:lab__view-btn--on={view === 'canvas'}
           onclick={() => (view = 'canvas')}>{t('lab.ui.view-canvas')}</button
         >
+        <button
+          role="tab"
+          aria-selected={view === 'ask'}
+          class="lab__view-btn"
+          class:lab__view-btn--on={view === 'ask'}
+          onclick={() => (view = 'ask')}>{t('lab.ui.view-ask')}</button
+        >
       </div>
     </div>
 
@@ -136,6 +146,8 @@
         {#if isTouch}
           <p class="lab__canvas-note">{t('lab.canvas.readonly-note')}</p>
         {/if}
+      {:else if view === 'ask'}
+        <Ask ask={askState} {t} />
       {:else}
         <Notebook {goal} equationHtml={data.equationHtml} {t} {labState} />
       {/if}

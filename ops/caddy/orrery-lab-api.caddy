@@ -4,10 +4,11 @@
 # is a tenant vhost dropped into /etc/caddy/sites/orrery-lab-api.caddy by
 # ops/deploy_caddy_vhosts.sh (`caddy adapt`-gated, then restart).
 #
-# Upstream: the orrery-lab-api container on loopback 8093 (compose service
-# `lab-api`). 8093 was ADR-114's reserved slot — the port-map update rides in
-# the prepared cross-repo ADR-114 amendment (operator-gated push; 8092 is the
-# podcast player's own OAuth AS, NOT ours). The server enforces its own auth
+# Upstream: the orrery-lab-api container on loopback 8094 (compose service
+# `lab-api`). ADR-114 allocated 8093 to lab-api, but the live box has a
+# co-tenant `operator-viewer-1` healthy on 8093, so orrery (the newcomer)
+# relocated its host bind to 8094 (#464; container-internal port + mcp JWKS
+# stay 8093). ADR-114 amendment pending. The server enforces its own auth
 # (OAuth 2.1 AS + bearer-gated /ask) and rate limits — the vhost only
 # terminates TLS and proxies.
 #
@@ -17,5 +18,5 @@
 # Rollback: rm /etc/caddy/sites/orrery-lab-api.caddy && sudo systemctl restart caddy.
 lab-api.orrerylearn.com {
 	import hardened
-	reverse_proxy 127.0.0.1:8093
+	reverse_proxy 127.0.0.1:8094
 }

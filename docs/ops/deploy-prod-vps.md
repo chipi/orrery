@@ -68,7 +68,7 @@ After the prereqs above land, every deploy is just:
 4. **Stages `/srv/orrery/.env`** from GH `prod` env secrets (atomic: `mktemp -p /dev/shm` + trap shred + `printf` + scp `.env.deploy-staged` + atomic `mv`). Single source of truth — missing secrets → empty values → integrations no-op
 5. `git fetch --depth=50 origin main` + `git reset --hard origin/main` — brings the on-VPS checkout in lockstep with the deploying commit
 6. `bash ops/deploy_stack.sh` (from the fresh checkout) — HUPs the shared node Alloy (ADR-121), builds `web`, bootstraps `lab-api-state` (dir + allowlist seed + docker-mediated chown to the labapi uid), and brings up **`web` always + `mcp`/`lab-api` only when their auth secrets are staged** (else web-only + a `::warning::` — lab-api crash-loops without `LAB_GOOGLE_CLIENT_ID/SECRET` + `LAB_CLAUDE_CLIENT_SECRET`). pipeline-runner stays `profiles: manual`.
-7. Per-service loopback healthchecks: `web` on `:ORRERY_PORT`, `lab-api` on `:8093/jwks`, `mcp` on `:8091/health` (when the full stack is up)
+7. Per-service loopback healthchecks: `web` on `:ORRERY_PORT`, `lab-api` on `:8094/jwks` (host bind relocated from 8093 — a co-tenant `operator-viewer-1` holds 8093; container-internal port stays 8093), `mcp` on `:8091/health` (when the full stack is up)
 8. Re-arms tailscale serve via the root-owned wrapper `sudo -n /usr/local/sbin/orrery-tailscale-serve.sh` (narrow NOPASSWD entry; podcast_scraper#838)
 9. External tailnet probe at `https://<PROD_TAILNET_FQDN>:8443/`
 

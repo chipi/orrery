@@ -122,8 +122,9 @@ services:
   # Orrery lab-api (D · #533 · RFC-037 A01.7/A01.8) — the identity container:
   # OAuth 2.1 AS federating to Google over the file allowlist, plus the /ask
   # door. Fronted by lab-api.orrerylearn.com (ops/caddy/orrery-lab-api.caddy →
-  # 127.0.0.1:8093; 8093 = ADR-114's reserved slot, amendment prepared —
-  # 8092 is the podcast player's AS). Image from ci.yml's lab-api-image job.
+  # 127.0.0.1:8094; host bind relocated from ADR-114's 8093 slot because a
+  # co-tenant `operator-viewer-1` holds 8093 on the live box — orrery, the
+  # newcomer, moved (#464). 8092 is the podcast player's AS). Image from ci.yml.
   #
   # DEPLOY NOTES:
   #  - Fail-closed like mcp: production refuses to start without
@@ -149,7 +150,12 @@ services:
     container_name: orrery-lab-api
     restart: unless-stopped
     ports:
-      - '127.0.0.1:${ORRERY_LAB_API_PORT:-8093}:8093'
+      # Host loopback 8094 (was 8093): ADR-114 allocated 8093 to lab-api, but the
+      # live box has `operator-viewer-1` healthy on 127.0.0.1:8093 (co-tenant,
+      # stays put — orrery is the newcomer and relocates, #464). Container-internal
+      # port stays 8093, so mcp's `http://lab-api:8093/jwks` is unaffected; only
+      # the host bind + the Caddy upstream move. ADR-114 amendment pending.
+      - '127.0.0.1:${ORRERY_LAB_API_PORT:-8094}:8093'
     extra_hosts:
       # The LiteLLM gateway is a SEPARATE compose project bound to host
       # loopback — bridge containers reach it only through the host gateway.

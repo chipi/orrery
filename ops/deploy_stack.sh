@@ -63,9 +63,24 @@ if have ORRERY_LAB_GOOGLE_CLIENT_ID && have ORRERY_LAB_GOOGLE_CLIENT_SECRET && h
   # containers only (never web, never podcast) so the recreate binds cleanly.
   # Idempotent + forward-safe: these are additive services, nothing depends on
   # the old instance being up.
-  echo "--- backend port holders before up (8091/8093):"
-  docker ps -a --format '  {{.Names}}  {{.Status}}  {{.Ports}}' | grep -E '809[13]|orrery-(mcp|lab-api)' || echo "  (none)"
+  # Full host-port table — the box is a SHARED co-tenant machine and the ADR-114
+  # map is not authoritative, so always SEE every binding, not just ours.
+  echo "--- all container host-port bindings on this box:"
+  docker ps --format '  {{.Names}}  {{.Status}}  {{.Ports}}'
+  # Clear our OWN stale backend containers so a re-deploy can rebind (name-scoped
+  # — never touches a co-tenant container).
   docker rm -f orrery-mcp orrery-lab-api >/dev/null 2>&1 || true
+  # Verify our host ports are actually free before binding (mcp 8091, lab-api
+  # 8094). A NON-orrery holder is a squatter to route around, not fight: fail
+  # loudly naming it so the port is bumped in one edit (compose + Caddy upstream).
+  for pp in 8091:mcp 8094:lab-api; do
+    port="${pp%%:*}"; svc="${pp##*:}"
+    holder="$(docker ps --format '{{.Names}} {{.Ports}}' | grep "127.0.0.1:${port}->" | grep -v "orrery-${svc}" || true)"
+    if [ -n "$holder" ]; then
+      echo "::error::host port ${port} (orrery ${svc}) is held by a co-tenant: ${holder} — bump orrery's ${svc} host port + its Caddy upstream"
+      exit 1
+    fi
+  done
   "${COMPOSE[@]}" pull mcp lab-api
   "${COMPOSE[@]}" up -d web mcp lab-api
   STACK=full
@@ -90,7 +105,7 @@ wait_ok() { # name url
 PORT="$(grep -E '^ORRERY_PORT=' .env | cut -d= -f2-)"; PORT="${PORT:-8090}"
 wait_ok web "http://127.0.0.1:${PORT}/"
 if [ "$STACK" = full ]; then
-  wait_ok lab-api "http://127.0.0.1:8093/jwks"
+  wait_ok lab-api "http://127.0.0.1:8094/jwks"
   wait_ok mcp "http://127.0.0.1:8091/health"
 fi
 echo "deploy_stack: $STACK stack up"

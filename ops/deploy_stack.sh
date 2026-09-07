@@ -34,17 +34,23 @@ docker kill -s HUP alloy 2>/dev/null || true
 #    no seed/boot race.
 ALLOW_EMAIL="${ORRERY_LAB_ALLOWLIST_EMAIL:-marko.dragoljevic@gmail.com}"
 mkdir -p lab-api-state
+# Seed the allowlist only if absent. On a re-run the dir + file already exist and
+# are owned by the container's labapi uid (chowned below on a prior run), so
+# deploy@ must NOT chmod/chown them directly — that EPERMs. All ownership + perms
+# are set through docker (root-in-container) instead: labapi owns it so the
+# container reads/writes state.json + the 0600 key; group=deploy + 770 dir /
+# 660 allowlist so the operator can still edit the allowlist over SSH.
 if [ ! -f lab-api-state/allowlist.json ]; then
   printf '{"emails":["%s"]}\n' "$ALLOW_EMAIL" > lab-api-state/allowlist.json
   echo "seeded lab-api-state/allowlist.json"
 fi
-chmod 0644 lab-api-state/allowlist.json
-LAB_API_TAG="$(grep -E '^ORRERY_LAB_API_IMAGE_TAG=' .env | cut -d= -f2-)"
+LAB_API_TAG="$(grep -E '^ORRERY_LAB_API_IMAGE_TAG=' .env | cut -d= -f2- || true)"
 LAB_API_TAG="${LAB_API_TAG:-main}"
 LABUID="$(docker run --rm "ghcr.io/chipi/orrery-lab-api:${LAB_API_TAG}" id -u 2>/dev/null || echo '')"
+DEPLOY_GID="$(id -g)"
 if [ -n "$LABUID" ]; then
-  docker run --rm -v /srv/orrery/lab-api-state:/s alpine:3.20 \
-    sh -c "chown -R ${LABUID}:$(id -g) /s && chmod 770 /s" || true
+  docker run --rm -v /srv/orrery/lab-api-state:/s alpine:3.20 sh -c \
+    "chown -R ${LABUID}:${DEPLOY_GID} /s && chmod 770 /s && chmod 660 /s/allowlist.json" || true
 fi
 
 # ── Whole-stack up, gated on lab-api secrets present (Fable-5 B2).

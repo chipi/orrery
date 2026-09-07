@@ -100,6 +100,11 @@ function sanitizeInputs(
   if (!def) return out; // unknown formula → inputs irrelevant (engine → unknown-formula)
   const src = isRecord(raw) ? raw : {};
   for (const field of def.inputs) {
+    // Injected fields (adapter-owned, e.g. fresh TLE) are resolved at compute
+    // time and NEVER enter cell.inputs — so a hostile share-link cannot inject
+    // an attacker-controlled TLE into the kernel (R1 · #464). Skip them here;
+    // `defaultInputs` already excludes them on the authoring side.
+    if (field.injected) continue;
     out[field.key] = clampField(field, src[field.key]);
   }
   return out;

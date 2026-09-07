@@ -20,6 +20,7 @@
   import { base } from '$app/paths';
   import type { Goal, FormulaResult } from '$lib/physics/spec';
   import { REGISTRY, defaultInputs } from '$lib/physics/registry';
+  import { stationTleBlock } from '$lib/physics/satellite/stations';
   import { recomputeNotebook, type CellComputed } from './notebook';
   import {
     encodeNotebook,
@@ -63,8 +64,13 @@
   const restored = $derived(labState.restored);
   const restoredTitle = $derived(labState.restoredTitle);
 
+  // Adapter-owned injected inputs (iss-pass needs the current TLE). Sourced from
+  // the bundled, daily-refreshed set here; H4c swaps this to the served /data
+  // overlay resolved on mount. Keyed by FieldSpec key — never in cell.inputs.
+  const injectedInputs: Record<string, number | string> = { tle: stationTleBlock('iss') };
+
   // The whole notebook recomputes on any input edit — trivially cheap for M1.
-  const computed = $derived(recomputeNotebook(cells, REGISTRY));
+  const computed = $derived(recomputeNotebook(cells, REGISTRY, injectedInputs));
 
   /** The capstone/milestone GRAND HERO — a whole-mission flight map, shown atop the notebook. */
   const flightMap = $derived(restored ? null : getFlightMap(goal.id));

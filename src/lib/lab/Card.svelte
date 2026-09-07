@@ -130,7 +130,7 @@
 
   <!-- Parameter controls -->
   <section class="card__controls" aria-label={t('lab.ui.aria-parameters')}>
-    {#each formula.inputs as field (field.key)}
+    {#each formula.inputs.filter((f) => !f.injected) as field (field.key)}
       <div class="card__field" class:card__field--wired={wired.has(field.key)}>
         <label class="card__label" for="field-{formula.id}-{field.key}">
           {t(field.labelKey)}{field.units ? ` (${field.units})` : ''}

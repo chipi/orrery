@@ -79,7 +79,19 @@ type WireProblem =
  * Linear index-order recompute. O(n · wires) — trivially cheap for M1 (closed-form
  * formulas, ≤~95-pt curves); no memoisation until the porkchop (plan §3 S3b).
  */
-export function recomputeNotebook(cells: Cell[], registry: Registry): CellComputed[] {
+/**
+ * `injected` supplies adapter-owned FieldSpec values (e.g. the current TLE for
+ * `iss-pass`) at compute time, keyed by field key. These NEVER live in
+ * `cell.inputs` (so they can't render, serialize, or be wired) — they are merged
+ * into the compute record here and stripped from the displayed `resolvedInputs`
+ * (R1 · #464). The app resolves them once (tle-source) and passes them in; the
+ * MCP server does the same in its own `callTool` adapter.
+ */
+export function recomputeNotebook(
+  cells: Cell[],
+  registry: Registry,
+  injected?: Record<string, number | string>,
+): CellComputed[] {
   const out: CellComputed[] = [];
 
   for (let i = 0; i < cells.length; i++) {
@@ -155,6 +167,13 @@ export function recomputeNotebook(cells: Cell[], registry: Registry): CellComput
       continue;
     }
 
+    // Merge adapter-owned injected values (e.g. fresh TLE) — authoritative, so
+    // after the wire pass. Absent → the field default, which the formula treats
+    // fail-honest. Never sourced from cell.inputs (they aren't there).
+    for (const f of def.inputs ?? []) {
+      if (f.injected) resolved[f.key] = injected?.[f.key] ?? f.default;
+    }
+
     let result: FormulaResult;
     try {
       result = def.compute(resolved);
@@ -165,10 +184,15 @@ export function recomputeNotebook(cells: Cell[], registry: Registry): CellComput
       continue;
     }
 
+    // `resolvedInputs` is display state ("inputs actually used") — strip injected
+    // adapter values so a TLE blob never surfaces there (R1 · #464).
+    const shownInputs = { ...resolved };
+    for (const f of def.inputs ?? []) if (f.injected) delete shownInputs[f.key];
+
     out.push({
       status: result.status.ok ? 'ok' : 'fail',
       result,
-      resolvedInputs: resolved,
+      resolvedInputs: shownInputs,
       wiredKeys,
     });
   }

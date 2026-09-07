@@ -45,6 +45,7 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 import { REGISTRY } from '$lib/physics/registry';
+import { stationTleBlock } from '$lib/physics/satellite/stations';
 import {
   deriveTools,
   callTool,
@@ -52,6 +53,7 @@ import {
   InvalidArgumentsError,
   InjectedInputUnavailableError,
   type DerivedTool,
+  type InjectedResolver,
 } from './registry-tools';
 import { LOCALES, makeT, resolveLocale, type Locale } from './i18n';
 import { mcpAuthIssuer, mcpResource, verifyRequestToken, REQUIRED_SCOPE } from './auth';
@@ -82,6 +84,19 @@ function rateLimited(token: string): boolean {
 }
 
 let activeComputes = 0;
+
+/**
+ * TLE adapter (H · #464). Supplies the adapter-owned injected inputs a formula
+ * declares. Only `iss-pass` has one today: the current ISS element set, baked
+ * into the image from station-tles.json (refreshed daily on main by
+ * refresh-station-tles.yml; a manually-deployed container can lag, which the
+ * kernel discloses via `epochAgeDays`). H4c re-homes the source to the served
+ * /data overlay without changing this contract.
+ */
+const resolveInjected: InjectedResolver = (def) => {
+  if (def.id === 'iss-pass') return { tle: stationTleBlock('iss') };
+  return null;
+};
 
 // ─── Tool derivation (per-locale, memoized) ─────────────────────────────────
 
@@ -137,7 +152,13 @@ export function buildMcpServer(listLocale: Locale): Server {
       }
       const locale = resolveLocale(rawArgs.locale);
       delete rawArgs.locale;
-      const { result, localized } = callTool(REGISTRY, req.params.name, rawArgs, makeT(locale));
+      const { result, localized } = callTool(
+        REGISTRY,
+        req.params.name,
+        rawArgs,
+        makeT(locale),
+        resolveInjected,
+      );
       // `localized` rides beside the verbatim FormulaResult spread — if the
       // frozen contract ever gains a field of that name, nest this instead.
       return {

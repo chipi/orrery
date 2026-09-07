@@ -147,7 +147,11 @@ export function graphOrder(nodes: GraphNode[]): { order: string[]; cyclic: strin
 }
 
 /** Recompute a canvas graph. Pure; O(V+E) topo + the linear engine's cost. */
-export function recomputeGraph(nodes: GraphNode[], registry: Registry): GraphResult {
+export function recomputeGraph(
+  nodes: GraphNode[],
+  registry: Registry,
+  injected?: Record<string, number | string>,
+): GraphResult {
   const { order, residue } = topoSort(nodes);
   const members = residue.size > 0 ? cycleMembers(nodes, residue) : new Set<number>();
 
@@ -172,7 +176,7 @@ export function recomputeGraph(nodes: GraphNode[], registry: Registry): GraphRes
     return { formulaId: n.formulaId, inputs: n.inputs, wires };
   });
 
-  const computed = recomputeNotebook(cells, registry);
+  const computed = recomputeNotebook(cells, registry, injected);
 
   const states = new Map<string, NodeComputed>();
   nodes.forEach((n, i) => {

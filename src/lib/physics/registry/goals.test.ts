@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import { REGISTRY } from './index';
 import { GOALS, NOT_A_GOAL_FORMULA } from './goals';
+import { stationTleBlock } from '../satellite/stations';
 
 /**
  * S2c coverage CI + wire integrity (Fable-5 rounds: bidirectional coverage,
@@ -807,7 +808,12 @@ describe('G9 catch-the-iss · ground track + visibility', () => {
   });
 
   it('★ iss-pass: near the TLE epoch, a real pass over a mid-latitude site — figure-less, honest', () => {
-    const r = compute('iss-pass', { latitudeDeg: 40, longitudeDeg: -74, dateIso: '2026-07-21' });
+    const r = compute('iss-pass', {
+      latitudeDeg: 40,
+      longitudeDeg: -74,
+      dateIso: '2026-07-21',
+      tle: stationTleBlock('iss'), // adapter-owned injected input (R1 · #464)
+    });
     expect(r.status.ok).toBe(true);
     expect(r.figure).toBeUndefined(); // no figure → no fidelity overclaim (it's propagated, not geometry)
     expect(r.values.maxAltitudeDeg.value).toBeGreaterThanOrEqual(10);
@@ -818,7 +824,12 @@ describe('G9 catch-the-iss · ground track + visibility', () => {
     expect(r.assumptions).toContain('lab.assume.snapshot-tle');
     // an equatorial site below the 51.6° inclination band still gets passes; a polar one may not.
     expect(
-      compute('iss-pass', { latitudeDeg: 85, longitudeDeg: 0, dateIso: '2026-07-21' }).status.ok,
+      compute('iss-pass', {
+        latitudeDeg: 85,
+        longitudeDeg: 0,
+        dateIso: '2026-07-21',
+        tle: stationTleBlock('iss'),
+      }).status.ok,
     ).toBe(false);
   });
 });

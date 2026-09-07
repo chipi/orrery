@@ -177,7 +177,12 @@ const FIXTURE: FormulaDef = {
     },
   ],
   outputs: [{ key: 'out', labelKey: 'lab.f.synodic.title', units: '' }],
-  compute: () => ({ values: {}, status: { ok: true }, assumptions: [] }),
+  // Echo the injected value so a test can prove the adapter's value reached compute.
+  compute: (i) => ({
+    values: { out: { value: Number(i.tle), units: '' } },
+    status: { ok: true },
+    assumptions: [],
+  }),
 };
 const FIXTURE_REGISTRY: Registry = new Map([[FIXTURE.id, FIXTURE]]);
 
@@ -199,8 +204,20 @@ describe('S4 · fixture: injected + serverCap branches', () => {
     expect(v.ok).toBe(false);
   });
 
-  it('a def with injected inputs refuses to compute over MCP (no undefined → NaN)', () => {
+  it('without an adapter, an injected-input tool refuses to compute (no undefined → NaN)', () => {
     expect(() => callTool(FIXTURE_REGISTRY, 'fixture-injected', {}, tEn)).toThrow(
+      InjectedInputUnavailableError,
+    );
+  });
+
+  it('with an adapter, the injected value reaches compute (never from caller args)', () => {
+    const { result } = callTool(FIXTURE_REGISTRY, 'fixture-injected', {}, tEn, () => ({ tle: 42 }));
+    expect(result.status.ok).toBe(true);
+    expect(result.values.out.value).toBe(42); // the adapter's value, not a caller arg
+  });
+
+  it('an adapter that omits a required injected key still refuses (no partial NaN)', () => {
+    expect(() => callTool(FIXTURE_REGISTRY, 'fixture-injected', {}, tEn, () => ({}))).toThrow(
       InjectedInputUnavailableError,
     );
   });

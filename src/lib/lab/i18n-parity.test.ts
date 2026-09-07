@@ -41,6 +41,10 @@ function collectAllKeys(): string[] {
   for (const def of REGISTRY.values()) {
     add(def.titleKey);
     for (const input of def.inputs) {
+      // Injected fields (adapter-owned, e.g. TLE) are excluded from the palette
+      // render, the MCP schema, and resolvedInputs (R1 · #464) — their labelKey
+      // is unreachable by any UI, so it carries no parity obligation.
+      if (input.injected) continue;
       add(input.labelKey);
       input.enumValues?.forEach((e) => add(e.labelKey));
       // Body-picker option labels DERIVED from the registry (full-arc review

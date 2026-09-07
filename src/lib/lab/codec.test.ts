@@ -88,6 +88,29 @@ describe('codec · hostile / malformed input degrades fail-honest', () => {
     expect(back[0].inputs.body).not.toBe('xyzzy');
   });
 
+  it('no injected field ever enters a share-link, for every registry formula (R1 · #464)', () => {
+    // Injected fields (adapter-owned, e.g. iss-pass TLE) are resolved at compute
+    // time and must NEVER round-trip through ?nb= / .orrlab — otherwise a crafted
+    // link could inject an attacker-controlled TLE straight into the kernel.
+    const injectedDefs = [...REGISTRY.values()].filter((d) => d.inputs.some((f) => f.injected));
+    expect(injectedDefs.length).toBeGreaterThan(0); // guard: at least iss-pass has one
+    for (const def of injectedDefs) {
+      const injectedKeys = def.inputs.filter((f) => f.injected).map((f) => f.key);
+      // Authoring side: defaultInputs excludes injected keys entirely.
+      const cell: CodecCell = { formulaId: def.id, inputs: defaultInputs(def) };
+      for (const k of injectedKeys) expect(k in cell.inputs).toBe(false);
+      // Encode → decode round-trip stays clean.
+      const roundTrip = decodeNotebook(encodeNotebook([cell]), REGISTRY)!;
+      for (const k of injectedKeys) expect(k in roundTrip[0].inputs).toBe(false);
+      // Decode side: a HOSTILE link that DOES carry the injected key gets it dropped.
+      const hostileInputs: Record<string, unknown> = { ...defaultInputs(def) };
+      for (const k of injectedKeys) hostileInputs[k] = 'ATTACKER\n1 99999U\n2 99999';
+      const hostile = craft(JSON.stringify([{ f: def.id, i: hostileInputs }]));
+      const back = decodeNotebook(hostile, REGISTRY)!;
+      for (const k of injectedKeys) expect(k in back[0].inputs).toBe(false);
+    }
+  });
+
   it('a number wildly out of range is clamped to the FieldSpec max', () => {
     const ispField = REGISTRY.get('tsiolkovsky')!.inputs.find((f) => f.key === 'ispS')!;
     const hostile = craft(

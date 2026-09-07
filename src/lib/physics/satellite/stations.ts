@@ -27,3 +27,13 @@ export function stationTle(id: StationId): Tle {
   const s = RAW[id];
   return parseTle(s.line1, s.line2, s.name);
 }
+
+/**
+ * Raw 3-line TLE block for a station, the form `parseTleBlock` (and the Lab's
+ * injected `tle` input) consume. Sourced from the bundled set here; H4c swaps
+ * the app-side resolver to the served /data overlay without changing callers.
+ */
+export function stationTleBlock(id: StationId): string {
+  const s = RAW[id];
+  return `${s.name}\n${s.line1}\n${s.line2}`;
+}

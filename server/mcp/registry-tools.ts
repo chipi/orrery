@@ -241,32 +241,51 @@ export class InvalidArgumentsError extends Error {
 }
 /**
  * A formula declaring `injected` inputs (adapter-owned, e.g. fresh TLE) cannot
- * be served until an adapter supplies them — computing with `undefined` would
- * NaN-propagate into a silent fail-honest violation (S4 holistic MAJOR-2).
- * The MCP-TLE sub-slice (#464) builds the first adapter.
+ * be served unless an adapter supplies them — computing with `undefined` would
+ * NaN-propagate into a silent fail-honest violation (S4 holistic MAJOR-2). H
+ * (#464) builds the first adapter: `callTool` merges the resolved values in, and
+ * throws this only when NO adapter (or an incomplete one) is provided.
  */
 export class InjectedInputUnavailableError extends Error {}
 
 /**
+ * Resolves adapter-owned injected FieldSpec values (e.g. the current TLE) for a
+ * formula that declares them. Returns null (or omits a key) when it has nothing
+ * to supply — `callTool` then rejects with `InjectedInputUnavailableError`.
+ */
+export type InjectedResolver = (def: FormulaDef) => Record<string, number | string> | null;
+
+/**
  * Validate and run one tool call. Throws typed errors for the transport layer
- * to map onto MCP error responses; never clamps, never guesses.
+ * to map onto MCP error responses; never clamps, never guesses. Injected inputs
+ * come from `resolveInjected` (the TLE adapter), never from the caller's args.
  */
 export function callTool(
   registry: Registry,
   name: string,
   rawArgs: unknown,
   t: Localize,
+  resolveInjected?: InjectedResolver,
 ): ToolCallResult {
   const def = registry.get(name);
   if (!def) throw new UnknownToolError(`unknown tool '${name}'`);
-  if (def.inputs.some((f) => f.injected)) {
-    throw new InjectedInputUnavailableError(
-      `tool '${name}' requires an adapter-owned input (e.g. fresh TLE) — not yet servable over MCP`,
-    );
-  }
   const validated = validateCall(def, rawArgs);
   if (!validated.ok) throw new InvalidArgumentsError(validated.errors);
-  const result = def.compute(validated.inputs);
+  const inputs: Record<string, number | string> = { ...validated.inputs };
+  const injectedFields = def.inputs.filter((f) => f.injected);
+  if (injectedFields.length > 0) {
+    const supplied = resolveInjected?.(def) ?? null;
+    for (const f of injectedFields) {
+      const v = supplied?.[f.key];
+      if (v === undefined) {
+        throw new InjectedInputUnavailableError(
+          `tool '${name}' requires an adapter-owned input '${f.key}' (e.g. fresh TLE); no adapter supplied it`,
+        );
+      }
+      inputs[f.key] = v;
+    }
+  }
+  const result = def.compute(inputs);
   return {
     result,
     localized: {

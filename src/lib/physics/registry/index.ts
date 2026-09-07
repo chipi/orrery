@@ -31,9 +31,8 @@ import { geocentricMoon } from '../ephemeris/moon';
 import { geocentricPlanet, geocentricSun, type PlanetId } from '../ephemeris/planets';
 import { skyPosition } from '../ephemeris';
 import { julianDay } from '../ephemeris/time';
-import { parseTle } from '../satellite/tle';
+import { parseTleBlock } from '../satellite/tle';
 import { nextPassForTle } from '../satellite';
-import stationTles from '../satellite/station-tles.json';
 import { computePorkchopGrid, DV_FAILED } from '../transfer/lambert-grid';
 import type { DestinationId } from '../transfer/lambert-grid.constants';
 import { geoTransferDv } from '../transfer/lambert-geocentric';
@@ -5021,7 +5020,12 @@ export const visibilityWindow: FormulaDef<{ altitudeKm: number }> = {
  * (~2026-07-20), so accuracy is good only for a few days around it — for tonight's real pass, a
  * live tracker (or NASA's "Spot the Station") pulls a fresh TLE. Here it's the mechanism, live.
  */
-export const issPass: FormulaDef<{ latitudeDeg: number; longitudeDeg: number; dateIso: string }> = {
+export const issPass: FormulaDef<{
+  latitudeDeg: number;
+  longitudeDeg: number;
+  dateIso: string;
+  tle: string;
+}> = {
   id: 'iss-pass',
   titleKey: 'lab.f.isspass.title',
   domain: 'satellite',
@@ -5057,13 +5061,27 @@ export const issPass: FormulaDef<{ latitudeDeg: number; longitudeDeg: number; da
       kind: 'date',
       default: '2026-07-21',
     },
+    {
+      // Adapter-owned element set: the app's tle-source (H4c) or the MCP TLE
+      // adapter supplies the current TLE at compute time. NEVER a user or
+      // share-link input — excluded from the palette render, defaultInputs, the
+      // MCP schema, and the codec (R1 · #464). kind:'number' is defense-in-depth:
+      // if a codec skip is ever missed, a hostile string coerces to NaN→default
+      // instead of reaching parseTleBlock.
+      key: 'tle',
+      labelKey: 'lab.f.isspass.tle',
+      units: '',
+      kind: 'number',
+      default: '',
+      injected: true,
+    },
   ],
   outputs: [
     { key: 'minutesUntilPass', labelKey: 'lab.f.isspass.minutes', units: '' },
     { key: 'maxAltitudeDeg', labelKey: 'lab.f.isspass.maxalt', units: 'deg' },
     { key: 'startAzimuthDeg', labelKey: 'lab.f.isspass.azimuth', units: 'deg' },
   ],
-  compute: ({ latitudeDeg, longitudeDeg, dateIso }) => {
+  compute: ({ latitudeDeg, longitudeDeg, dateIso, tle }) => {
     const from = new Date(String(dateIso));
     if (
       !Number.isFinite(latitudeDeg) ||
@@ -5077,9 +5095,21 @@ export const issPass: FormulaDef<{ latitudeDeg: number; longitudeDeg: number; da
         assumptions: ['lab.assume.snapshot-tle'],
       } satisfies FormulaResult;
     }
-    const iss = (stationTles as Record<string, { name: string; line1: string; line2: string }>).iss;
-    const tle = parseTle(iss.line1, iss.line2, iss.name);
-    const pass = nextPassForTle(tle, from, latitudeDeg, longitudeDeg, {
+    // The element set is injected (app tle-source / MCP adapter), never a user
+    // input. Absent or malformed → fail honest, never a NaN-propagating pass.
+    const block = String(tle ?? '').trim();
+    let parsedTle;
+    try {
+      if (!block) throw new Error('no injected TLE');
+      parsedTle = parseTleBlock(block);
+    } catch {
+      return {
+        values: {},
+        status: { ok: false, reasonKey: 'lab.f.isspass.err-input' },
+        assumptions: ['lab.assume.snapshot-tle'],
+      } satisfies FormulaResult;
+    }
+    const pass = nextPassForTle(parsedTle, from, latitudeDeg, longitudeDeg, {
       hoursAhead: 48,
       minMaxAltDeg: 10,
     });
@@ -5498,5 +5528,8 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
 
 /** Default input record for a formula (drives a first compute / the invariant tests). */
 export function defaultInputs(def: FormulaDef): Record<string, number | string> {
-  return Object.fromEntries(def.inputs.map((f) => [f.key, f.default]));
+  // Injected fields (adapter-owned, e.g. fresh TLE) are NOT seeded — they never
+  // live in cell.inputs, so they can't render, serialize into a share-link, or
+  // be user-edited (R1 · #464). They are resolved at compute time instead.
+  return Object.fromEntries(def.inputs.filter((f) => !f.injected).map((f) => [f.key, f.default]));
 }

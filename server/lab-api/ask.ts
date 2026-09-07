@@ -32,7 +32,11 @@ export function askDepsFromEnv(): AskDeps {
   return {
     llmBaseUrl: process.env.LITELLM_BASE_URL ?? 'http://homelab:4001',
     llmApiKey: process.env.LITELLM_API_KEY ?? '',
-    model: process.env.LAB_LLM_MODEL ?? 'claude-haiku-4-5',
+    // A gateway ALIAS, not a provider name (operator 2026-09-06): the shared
+    // prod LiteLLM maps `orrery-ask` to the actual model + the project's
+    // dedicated OpenRouter key. Local dev: add the alias to the homelab
+    // gateway config, or export LAB_LLM_MODEL=<an existing homelab alias>.
+    model: process.env.LAB_LLM_MODEL ?? 'orrery-ask',
   };
 }
 

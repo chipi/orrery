@@ -134,16 +134,26 @@ services:
   #    root-owned host dir → EACCES crash-loop under restart:unless-stopped.
   #  - Seed ./lab-api-state/allowlist.json ({"emails":["..."]}) by hand; a
   #    missing file DENIES ALL (intended fail-closed, not a bug).
-  #  - LiteLLM: the container must reach ${ORRERY_LITELLM_BASE_URL} over the
-  #    tailnet — `docker compose exec lab-api node -e "fetch(...)"` is the
-  #    deploy-day check (bridge networking + MagicDNS may need the IP form).
-  #    An unstaged ORRERY_LITELLM_API_KEY boots green but /ask 502s until set.
+  #  - LiteLLM (operator decision 2026-09-06): /ask targets the EXISTING prod
+  #    LiteLLM gateway on this VPS (podcast_scraper-infra/infra/litellm — its
+  #    own compose project, loopback 127.0.0.1:4001, DB-backed). We reach the
+  #    host loopback via host-gateway; the homelab instance is LOCAL DEV only.
+  #    ORRERY_LITELLM_API_KEY = a VIRTUAL key minted on that gateway
+  #    (`/key/generate`: key_alias orrery-lab-api, models [orrery-ask],
+  #    max_budget 5, budget_duration 7d — the weekly cap; budget-exceeded
+  #    surfaces as /ask's honest llm_unavailable). Unstaged key boots green
+  #    but /ask 502s until set. Deploy-day check:
+  #    `docker compose exec lab-api node -e "fetch('http://host.docker.internal:4001/health/liveliness').then(r=>console.log(r.status))"`.
   lab-api:
     image: ghcr.io/chipi/orrery-lab-api:${ORRERY_LAB_API_IMAGE_TAG:-main}
     container_name: orrery-lab-api
     restart: unless-stopped
     ports:
       - '127.0.0.1:${ORRERY_LAB_API_PORT:-8093}:8093'
+    extra_hosts:
+      # The LiteLLM gateway is a SEPARATE compose project bound to host
+      # loopback — bridge containers reach it only through the host gateway.
+      - 'host.docker.internal:host-gateway'
     environment:
       LAB_ISSUER: '${ORRERY_LAB_ISSUER:-https://lab-api.orrerylearn.com}'
       LAB_MCP_RESOURCE: '${ORRERY_LAB_MCP_RESOURCE:-https://mcp.orrerylearn.com}'
@@ -151,9 +161,11 @@ services:
       LAB_GOOGLE_CLIENT_SECRET: '${ORRERY_LAB_GOOGLE_CLIENT_SECRET:-}'
       LAB_CLAUDE_CLIENT_ID: '${ORRERY_LAB_CLAUDE_CLIENT_ID:-claude-ai}'
       LAB_CLAUDE_CLIENT_SECRET: '${ORRERY_LAB_CLAUDE_CLIENT_SECRET:-}'
-      LITELLM_BASE_URL: '${ORRERY_LITELLM_BASE_URL:-http://100.87.33.61:4001}'
+      LITELLM_BASE_URL: '${ORRERY_LITELLM_BASE_URL:-http://host.docker.internal:4001}'
       LITELLM_API_KEY: '${ORRERY_LITELLM_API_KEY:-}'
-      LAB_LLM_MODEL: '${ORRERY_LAB_LLM_MODEL:-claude-haiku-4-5}'
+      # Project-scoped ALIAS on the shared gateway (its config maps the alias
+      # to the actual provider/model + the dedicated OpenRouter key).
+      LAB_LLM_MODEL: '${ORRERY_LAB_LLM_MODEL:-orrery-ask}'
       LAB_RATE_LIMIT_PER_MIN: '${ORRERY_LAB_RATE_LIMIT_PER_MIN:-120}'
       LAB_ASK_MAX_CONCURRENT: '${ORRERY_LAB_ASK_MAX_CONCURRENT:-4}'
       LAB_WEB_REDIRECT_URIS: '${ORRERY_LAB_WEB_REDIRECT_URIS:-}'

@@ -26,6 +26,20 @@ import {
 } from '../ascent/ascent-physics-constants';
 
 /**
+ * COMPUTE BUDGET (H · #464) — these caps bound the MCP worst case. Once the
+ * domain gate lifts, any authed client can call `entry-range-control`, whose
+ * cost is `solveEntryBankForRange` (3 + ENTRY_BISECTION_ITERS sims) plus a
+ * 26-point footprint sweep, each sim capped at ENTRY_SIM_MAX_STEPS integration
+ * steps. Changing any of these changes that worst case, so a change here is a
+ * deliberate edit pinned by `server/mcp/compute-budget.test.ts`. Values are
+ * byte-identical to the literals they replaced.
+ */
+export const ENTRY_SIM_DT_S = 0.05;
+export const ENTRY_SIM_MAX_T_S = 1400;
+export const ENTRY_SIM_MAX_STEPS = ENTRY_SIM_MAX_T_S / ENTRY_SIM_DT_S; // 28_000
+export const ENTRY_BISECTION_ITERS = 28;
+
+/**
  * Bank controller: the commanded VERTICAL lift fraction cos(bank) ∈ [−1, +1]. +1 = full lift up
  * (bank 0°, pull out of the dive), −1 = full lift down (bank 180°, hold the capsule in). Drives
  * the drag deceleration toward the target: too much decel → lift up; too little → lift down.
@@ -81,7 +95,7 @@ export function simulateLiftingEntry(opts: {
 }): LiftingEntryResult {
   const { entryVelocityMs, entryAngleDeg, liftToDrag, ballisticCoeff, targetDecelG } = opts;
   const bankGain = opts.bankGain ?? 0.02;
-  const dt = 0.05;
+  const dt = ENTRY_SIM_DT_S;
   let h = ENTRY_ALT_M;
   let v = entryVelocityMs;
   let gamma = (-Math.abs(entryAngleDeg) * Math.PI) / 180;
@@ -91,7 +105,7 @@ export function simulateLiftingEntry(opts: {
     { altKm: h / 1000, speedKms: v / 1000 },
   ];
   let outcome: EntryOutcome = 'timeout';
-  for (let t = 0; t < 1400; t += dt) {
+  for (let t = 0; t < ENTRY_SIM_MAX_T_S; t += dt) {
     const rho = SEA_LEVEL_DENSITY_KGM3 * Math.exp(-Math.max(0, h) / ATM_SCALE_HEIGHT_M);
     const aD = (0.5 * rho * v * v) / ballisticCoeff; // drag deceleration (m·s⁻²)
     const aL = liftToDrag * aD; // lift-acceleration magnitude
@@ -171,7 +185,7 @@ export function solveEntryBankForRange(
   let hi = 1;
   let mid = 0;
   let result = fly(0);
-  for (let i = 0; i < 28; i += 1) {
+  for (let i = 0; i < ENTRY_BISECTION_ITERS; i += 1) {
     mid = (lo + hi) / 2;
     result = fly(mid);
     if (result.downrangeM < target) lo = mid;

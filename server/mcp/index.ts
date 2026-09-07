@@ -3,10 +3,11 @@
  *
  * A standalone Node process exposing the physics kernel as MCP tools over
  * Streamable HTTP (the remote transport Claude.ai custom connectors speak).
- * Tools are auto-derived from the formula registry (`registry-tools.ts`). The
- * `transfer` domain is the only one LISTED here (a discovery filter in
- * `toolsFor` → `deriveTools`); the call handler runs the FULL registry ungated.
- * H (#464) lifts the listing filter so all 64 formulas are discoverable.
+ * Tools are auto-derived from the formula registry (`registry-tools.ts`) — all
+ * 64 formulas are listed (H · #464 lifted the S4 transfer-only discovery filter;
+ * calls were never domain-gated). Injected-input tools (iss-pass's TLE) are
+ * served via the `resolveInjected` adapter below; the compute-budget test bounds
+ * the heaviest (`entry-range-control`), so no worker thread is needed.
  *
  * AUTH (E · #534): OAuth 2.1 resource server. Bearer JWTs are verified against
  * lab-api's /jwks (ES256, iss + aud + scope — auth.ts); RFC 9728 protected-
@@ -62,7 +63,6 @@ import { mcpAuthIssuer, mcpResource, verifyRequestToken, REQUIRED_SCOPE } from '
 
 const PORT = Number(process.env.MCP_PORT ?? 8091);
 const DEV_BEARER = process.env.MCP_DEV_BEARER;
-const S4_DOMAINS: Parameters<typeof deriveTools>[1]['domains'] = ['transfer'];
 const RATE_LIMIT_PER_MIN = Number(process.env.MCP_RATE_LIMIT_PER_MIN ?? 60);
 const MAX_CONCURRENT_COMPUTES = Number(process.env.MCP_MAX_CONCURRENT ?? 4);
 
@@ -105,7 +105,7 @@ const toolCache = new Map<Locale, DerivedTool[]>();
 function toolsFor(locale: Locale): DerivedTool[] {
   const hit = toolCache.get(locale);
   if (hit) return hit;
-  const derived = deriveTools(REGISTRY, { domains: S4_DOMAINS, t: makeT(locale) });
+  const derived = deriveTools(REGISTRY, { t: makeT(locale) }); // H (#464): no domain filter — all 64 tools
   // Every tool additionally accepts `locale` — result-string localization.
   for (const tool of derived) {
     tool.inputSchema.properties.locale = {

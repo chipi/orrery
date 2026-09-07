@@ -10,9 +10,14 @@ import {
   InjectedInputUnavailableError,
 } from './registry-tools';
 import { makeT } from './i18n';
+import { stationTleBlock } from '$lib/physics/satellite/stations';
 
 const tEn = makeT('en-US');
 const tJa = makeT('ja');
+
+/** The TLE adapter the live server uses — supplies iss-pass's injected input. */
+const resolveInjected = (def: FormulaDef): Record<string, number | string> | null =>
+  def.id === 'iss-pass' ? { tle: stationTleBlock('iss') } : null;
 
 describe('S4 · tool derivation from the registry', () => {
   it('derives one tool per transfer-domain formula, ids = FormulaDef ids', () => {
@@ -112,9 +117,15 @@ describe('S4 · validate-REJECT boundary (never clamp)', () => {
 });
 
 describe('S4 · callTool returns the kernel result verbatim + localized companions', () => {
-  it('a defaults-only call on every transfer tool computes without throwing', () => {
-    for (const def of [...REGISTRY.values()].filter((d) => d.domain === 'transfer')) {
-      const { result, localized } = callTool(REGISTRY, def.id, {}, tEn);
+  it('the full tool surface is exactly the registry — 64 tools, ids ≡ keys (H · #464)', () => {
+    const tools = deriveTools(REGISTRY, { t: tEn }); // no domain filter — gate lifted
+    expect(tools.length).toBe(REGISTRY.size);
+    expect(tools.map((t) => t.name).sort()).toEqual([...REGISTRY.keys()].sort());
+  });
+
+  it('a defaults-only call on EVERY tool computes without throwing (H · #464 gate lift)', () => {
+    for (const def of REGISTRY.values()) {
+      const { result, localized } = callTool(REGISTRY, def.id, {}, tEn, resolveInjected);
       expect(result.assumptions).toBeInstanceOf(Array);
       expect(result.status.ok === true || typeof result.status === 'object').toBe(true);
       if (result.status.ok) {
@@ -131,8 +142,8 @@ describe('S4 · callTool returns the kernel result verbatim + localized companio
   });
 
   it('kernel-emitted figures are fidelity computed — passed through untouched', () => {
-    for (const def of [...REGISTRY.values()].filter((d) => d.domain === 'transfer')) {
-      const { result } = callTool(REGISTRY, def.id, {}, tEn);
+    for (const def of REGISTRY.values()) {
+      const { result } = callTool(REGISTRY, def.id, {}, tEn, resolveInjected);
       if (result.figure) expect(result.figure.provenance.fidelity).toBe('computed');
     }
   });

@@ -305,4 +305,13 @@
       width: 100%;
     }
   }
+
+  /* Lab report print (G holistic MINOR-4): the page-level chrome — goal
+     picker + view tablist — must not print either. */
+  @media print {
+    .lab__picker,
+    .lab__views {
+      display: none !important;
+    }
+  }
 </style>

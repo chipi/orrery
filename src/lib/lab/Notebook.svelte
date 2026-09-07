@@ -31,6 +31,10 @@
   import type { LabState, LabCell } from './lab-state.svelte';
   import Card from './Card.svelte';
   import FlightMapCanvas from './FlightMapCanvas.svelte';
+  import IllustrationFigure from './IllustrationFigure.svelte';
+  import { illustrationFor } from './illustration';
+  import { composeReportCard, downloadBlob, type ReportCardLine } from './report-card';
+  import { assetUrl } from '$lib/asset-url';
   import { getFlightMap } from './flight-maps';
 
   type Props = {
@@ -104,6 +108,36 @@
   // ─── Share ───────────────────────────────────────────────────────────────
   let shareState = $state<'idle' | 'copied' | 'failed'>('idle');
   let shareTimer: ReturnType<typeof setTimeout> | undefined;
+  /**
+   * PNG share card (G · #536): composed CLIENT-side on click from the goal
+   * title + the first output of each ok cell — the values are the kernel's,
+   * this only formats. The illustration rides along WITH its register badge.
+   */
+  async function shareCard(): Promise<void> {
+    const lines: ReportCardLine[] = [];
+    for (let i = 0; i < cells.length && lines.length < 4; i++) {
+      const state = computed[i];
+      if (state?.status !== 'ok') continue;
+      const def = REGISTRY.get(cells[i].formulaId);
+      const out = def?.outputs[0];
+      const q = out ? state.result.values[out.key] : undefined;
+      if (out && q) {
+        const v = Math.abs(q.value) >= 100 ? q.value.toFixed(2) : q.value.toFixed(4);
+        lines.push({ label: t(out.labelKey), value: `${v} ${q.units}`.trim() });
+      }
+    }
+    const illus = restored ? undefined : illustrationFor(goal.id);
+    const blob = await composeReportCard({
+      title: restored ? t('lab.ui.your-notebook') : t(goal.titleKey),
+      lines,
+      illustrationUrl: illus ? assetUrl(`/${illus.file}`) : undefined,
+      illustrationBadge: t('lab.illustration.badge'),
+      shareUrl: window.location.href,
+      wordmark: 'Orrery · Physics Lab',
+    });
+    if (blob) downloadBlob(blob, `orrery-lab-${restored ? 'notebook' : goal.id}.png`);
+  }
+
   async function share(): Promise<void> {
     const encoded = encodeNotebook(labState.toCodec());
     await goto(`${base}/lab?nb=${encoded}`, {
@@ -352,6 +386,18 @@
               ? t('lab.ui.share-in-url')
               : t('lab.ui.share')}
         </button>
+        <button
+          type="button"
+          class="nb__tool"
+          onclick={() => window.print()}
+          aria-label={t('lab.report.aria-print')}>{t('lab.report.print')}</button
+        >
+        <button
+          type="button"
+          class="nb__tool"
+          onclick={shareCard}
+          aria-label={t('lab.report.aria-card')}>{t('lab.report.card')}</button
+        >
         <button type="button" class="nb__tool" onclick={saveFile} aria-label={t('lab.ui.aria-save')}
           >{t('lab.ui.save')}</button
         >
@@ -372,6 +418,15 @@
         />
       </div>
     </header>
+    <!-- Illustration register (G · #536): goal-seeded notebooks ONLY — a
+         restored/custom notebook has no goalId identity and never shows art.
+         Lives in the header chrome; structurally cannot enter a card slot. -->
+    {#if !restored}
+      {@const illus = illustrationFor(goal.id)}
+      {#if illus}
+        <IllustrationFigure illustration={illus} {t} />
+      {/if}
+    {/if}
     {#if flightMap}
       <figure class="nb__flightmap">
         <FlightMapCanvas flight={flightMap} />
@@ -878,6 +933,32 @@
     }
     .nb__gutter {
       width: 1.5rem;
+    }
+  }
+
+  /* ── Lab report (G · #536 · D-G3): the print stylesheet IS the artifact —
+     browser Save-as-PDF produces the shareable report. The honesty line
+     prints too: fidelity captions, assumptions, and the illustration badge
+     all survive; interactive chrome does not. ── */
+  @media print {
+    :global(nav),
+    :global(footer),
+    .nb__tools,
+    .nb__file {
+      display: none !important;
+    }
+    :global(body) {
+      background: #fff !important;
+      color: #111 !important;
+    }
+    .nb__goal-title {
+      font-size: 20pt;
+    }
+    /* One card per block, never split across pages. */
+    :global(.card),
+    .nb__conn {
+      break-inside: avoid;
+      border-color: #bbb !important;
     }
   }
 </style>

@@ -735,9 +735,28 @@ const posters = [
   thumb: `/images/posters/${id}.thumb.jpg`,
 }));
 
+// Lab goal illustrations (G · #536) — generated art behind the Lab's
+// illustration register. Only APPROVED assets exist at the canonical path
+// (the /dev review flow moves them there); _staging is gitignored + skipped.
+const labIllustrations = (() => {
+  try {
+    return readdirSync('static/images/lab/goals')
+      .filter((f) => f.endsWith('.webp'))
+      .sort()
+      .map((f) => ({
+        title: humanize(f.replace(/\.webp$/, '')),
+        file: `/images/lab/goals/${f}`,
+        cover: false,
+      }));
+  } catch {
+    return [];
+  }
+})();
+
 const manifest = {
   generated_by: 'scripts/build-original-work.mjs',
   anatomy_art: anatomyArt,
+  lab_illustrations: labIllustrations,
   diagrams_science: science,
   posters,
   models3d,
@@ -747,6 +766,7 @@ const manifest = {
   writing,
   totals: {
     anatomy_art: anatomyArt.length,
+    lab_illustrations: labIllustrations.length,
     diagrams_science: science.length,
     posters: posters.length,
     models3d: models3d.length,

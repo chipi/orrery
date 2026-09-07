@@ -1890,7 +1890,13 @@
     "lab_ask_callback_working": "साइन-इन पूरा हो रहा है…",
     "lab_ask_callback_denied": "यह Google खाता बीटा सूची में नहीं है, इसलिए प्रश्न बॉक्स लॉक रहता है — लैब में सब कुछ बिना इसके काम करता है।",
     "lab_ask_callback_error": "साइन-इन पूरा नहीं हुआ — कृपया फिर से कोशिश करें।",
-    "lab_ask_callback_back": "लैब में वापस"
+    "lab_ask_callback_back": "लैब में वापस",
+    "lab_illustration_badge": "चित्रण — जनित कला, कम्प्यूटेड परिणाम नहीं",
+    "lab_illustration_credit": "{model} के साथ जनित, {date} — संपादक द्वारा समीक्षित",
+    "lab_report_print": "लैब रिपोर्ट",
+    "lab_report_aria_print": "इस नोटबुक को PDF लैब रिपोर्ट के रूप में प्रिंट या सहेजें",
+    "lab_report_card": "साझा कार्ड",
+    "lab_report_aria_card": "इस नोटबुक का साझेयोग्य छवि कार्ड डाउनलोड करें"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3644,7 +3650,13 @@
     "lab_ask_callback_working": "サインイン中…",
     "lab_ask_callback_denied": "この Google アカウントはベータリストに登録されていないため、質問ボックスはロックされています — Lab の他の機能は接続なしで動作します。",
     "lab_ask_callback_error": "サインインが完了しませんでした — もう一度試してください。",
-    "lab_ask_callback_back": "Lab に戻る"
+    "lab_ask_callback_back": "Lab に戻る",
+    "lab_illustration_badge": "イラスト — 生成アート、計算結果ではありません",
+    "lab_illustration_credit": "{model} で生成、{date} — エディターによるレビュー済み",
+    "lab_report_print": "ラボレポート",
+    "lab_report_aria_print": "このノートブックを PDF ラボレポートとして印刷または保存",
+    "lab_report_card": "シェアカード",
+    "lab_report_aria_card": "このノートブックの共有可能な画像カードをダウンロード"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5578,7 +5590,13 @@
     "lab_ask_callback_working": "إنهاء تسجيل الدخول…",
     "lab_ask_callback_denied": "حساب جوجل هذا غير موجود في قائمة بيتا، لذا يظل صندوق الأسئلة مغلقاً — كل شيء آخر في المختبر يعمل بدونه.",
     "lab_ask_callback_error": "لم يكتمل تسجيل الدخول — يرجى المحاولة مجدداً.",
-    "lab_ask_callback_back": "العودة إلى المختبر"
+    "lab_ask_callback_back": "العودة إلى المختبر",
+    "lab_illustration_badge": "رسم توضيحي — فن مولّد، وليس نتيجة محسوبة",
+    "lab_illustration_credit": "تم إنشاؤه باستخدام {model}، {date} — تمت مراجعته من قبل المحرر",
+    "lab_report_print": "تقرير المختبر",
+    "lab_report_aria_print": "اطبع أو احفظ دفتر الملاحظات هذا كتقرير مختبر بصيغة PDF",
+    "lab_report_card": "بطاقة المشاركة",
+    "lab_report_aria_card": "نزّل صورة بطاقة قابلة للمشاركة من دفتر الملاحظات هذا"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -7334,7 +7352,13 @@
     "lab_ask_callback_working": "로그인을 완료 중…",
     "lab_ask_callback_denied": "이 Google 계정이 베타 목록에 없어 질문 상자가 잠겨 있습니다 — Lab의 나머지 모든 기능은 이것 없이 작동합니다.",
     "lab_ask_callback_error": "로그인이 완료되지 않았습니다 — 다시 시도하세요.",
-    "lab_ask_callback_back": "Lab으로 돌아가기"
+    "lab_ask_callback_back": "Lab으로 돌아가기",
+    "lab_illustration_badge": "일러스트레이션 — 생성 아트, 계산 결과가 아님",
+    "lab_illustration_credit": "{model}로 생성, {date} — 편집자 검토됨",
+    "lab_report_print": "실험실 보고서",
+    "lab_report_aria_print": "이 노트북을 PDF 실험실 보고서로 인쇄하거나 저장하기",
+    "lab_report_card": "공유 카드",
+    "lab_report_aria_card": "이 노트북의 공유 가능한 이미지 카드 다운로드하기"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -8913,7 +8937,13 @@
     "lab_ask_callback_working": "Anmeldung wird abgeschlossen…",
     "lab_ask_callback_denied": "Dieses Google-Konto steht nicht auf der Beta-Liste, daher bleibt die Frage-Box gesperrt — alles andere im Lab funktioniert ohne sie.",
     "lab_ask_callback_error": "Anmeldung nicht abgeschlossen — bitte versuche es erneut.",
-    "lab_ask_callback_back": "Zurück zum Lab"
+    "lab_ask_callback_back": "Zurück zum Lab",
+    "lab_illustration_badge": "Illustration — generierte Kunst, kein berechnetes Ergebnis",
+    "lab_illustration_credit": "Generiert mit {model}, {date} — von der Redaktion überprüft",
+    "lab_report_print": "Laborbericht",
+    "lab_report_aria_print": "Dieses Notizbuch als PDF-Laborbericht drucken oder speichern",
+    "lab_report_card": "Teilen-Karte",
+    "lab_report_aria_card": "Ein teilbares Bildkartenformat dieses Notizbuches herunterladen"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -10431,7 +10461,13 @@
     "lab_ask_callback_working": "Finalisation de la connexion…",
     "lab_ask_callback_denied": "Ce compte Google ne figure pas sur la liste bêta, la boîte de questions reste verrouillée — tout le reste du Laboratoire fonctionne sans.",
     "lab_ask_callback_error": "La connexion n'a pas abouti — veuillez réessayer.",
-    "lab_ask_callback_back": "Retour au Laboratoire"
+    "lab_ask_callback_back": "Retour au Laboratoire",
+    "lab_illustration_badge": "Illustration — art généré, pas un résultat calculé",
+    "lab_illustration_credit": "Généré avec {model}, {date} — examiné par l'éditeur",
+    "lab_report_print": "Rapport de laboratoire",
+    "lab_report_aria_print": "Imprimer ou enregistrer ce carnet sous forme de rapport de laboratoire PDF",
+    "lab_report_card": "Carte de partage",
+    "lab_report_aria_card": "Télécharger une image de carte partageable de ce carnet"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -11916,7 +11952,13 @@
     "lab_ask_callback_working": "Completamento accesso…",
     "lab_ask_callback_denied": "Questo account Google non è nella lista beta, quindi la casella di domande resta bloccata — tutto il resto del Lab funziona senza di essa.",
     "lab_ask_callback_error": "L'accesso non è stato completato — prova di nuovo.",
-    "lab_ask_callback_back": "Torna al Lab"
+    "lab_ask_callback_back": "Torna al Lab",
+    "lab_illustration_badge": "Illustrazione — arte generata, non un risultato calcolato",
+    "lab_illustration_credit": "Generato con {model}, {date} — revisionato dall'editore",
+    "lab_report_print": "Rapporto di laboratorio",
+    "lab_report_aria_print": "Stampa o salva questo notebook come rapporto di laboratorio in PDF",
+    "lab_report_card": "Scheda di condivisione",
+    "lab_report_aria_card": "Scarica una scheda immagine condivisibile di questo notebook"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -13400,7 +13442,13 @@
     "lab_ask_callback_working": "Finalizando inicio de sesión…",
     "lab_ask_callback_denied": "Esta cuenta de Google no está en la lista beta, así que el cuadro de preguntas permanece bloqueado — todo lo demás en el Laboratorio funciona sin él.",
     "lab_ask_callback_error": "El inicio de sesión no se completó — por favor, inténtalo de nuevo.",
-    "lab_ask_callback_back": "Volver al Laboratorio"
+    "lab_ask_callback_back": "Volver al Laboratorio",
+    "lab_illustration_badge": "Ilustración — arte generado, no un resultado computado",
+    "lab_illustration_credit": "Generado con {model}, {date} — revisado por el editor",
+    "lab_report_print": "Informe de laboratorio",
+    "lab_report_aria_print": "Imprimir o guardar este cuaderno como un informe de laboratorio en PDF",
+    "lab_report_card": "Tarjeta para compartir",
+    "lab_report_aria_card": "Descargar una tarjeta de imagen compartible de este cuaderno"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -14893,7 +14941,13 @@
     "lab_ask_callback_working": "Aanmelding afronden…",
     "lab_ask_callback_denied": "Dit Google-account staat niet op de bètalijst, dus het vraagvak blijft vergrendeld — alles anders in het Lab werkt zonder.",
     "lab_ask_callback_error": "Aanmelding is niet voltooid — probeer het opnieuw.",
-    "lab_ask_callback_back": "Terug naar het Lab"
+    "lab_ask_callback_back": "Terug naar het Lab",
+    "lab_illustration_badge": "Illustratie — gegenereerde kunst, geen berekend resultaat",
+    "lab_illustration_credit": "Gegenereerd met {model}, {date} — gereviewd door de redactie",
+    "lab_report_print": "Labrapport",
+    "lab_report_aria_print": "Dit notitieboek als PDF-labrapport afdrukken of opslaan",
+    "lab_report_card": "Deelkaart",
+    "lab_report_aria_card": "Een deelbaar afbeeldingskaartje van dit notitieboek downloaden"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -16650,7 +16704,13 @@
     "lab_ask_callback_working": "Завершение входа…",
     "lab_ask_callback_denied": "Этот аккаунт Google отсутствует в списке бета-тестеров, поэтому поле вопроса заблокировано — остальная часть Lab работает без него.",
     "lab_ask_callback_error": "Вход не завершён — попробуйте снова.",
-    "lab_ask_callback_back": "Вернуться в Lab"
+    "lab_ask_callback_back": "Вернуться в Lab",
+    "lab_illustration_badge": "Иллюстрация — созданное искусство, не вычисленный результат",
+    "lab_illustration_credit": "Создано с помощью {model}, {date} — проверено редактором",
+    "lab_report_print": "Отчёт лаборатории",
+    "lab_report_aria_print": "Печать или сохранение этой записной книжки в виде PDF-отчёта лаборатории",
+    "lab_report_card": "Карточка поделиться",
+    "lab_report_aria_card": "Загрузить карточку изображения этой записной книжки для общего доступа"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -18451,7 +18511,13 @@
     "lab_ask_callback_working": "完成登录中…",
     "lab_ask_callback_denied": "该Google账户不在测试版名单中，提问框保持锁定——实验室的其他功能无需此权限。",
     "lab_ask_callback_error": "登录未完成——请重试。",
-    "lab_ask_callback_back": "返回实验室"
+    "lab_ask_callback_back": "返回实验室",
+    "lab_illustration_badge": "插图 — 生成艺术，非计算结果",
+    "lab_illustration_credit": "由 {model} 生成于 {date} — 由编辑审阅",
+    "lab_report_print": "实验室报告",
+    "lab_report_aria_print": "将此笔记本打印或保存为 PDF 实验室报告",
+    "lab_report_card": "分享卡片",
+    "lab_report_aria_card": "下载此笔记本的可分享图像卡片"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -20123,7 +20189,13 @@
     "lab_ask_callback_working": "Завршавање пријаве…",
     "lab_ask_callback_denied": "Овај Google налог није на листи бета тестера, па поље за питања остаје закључано — све остало у Лабораторијуму ради без њега.",
     "lab_ask_callback_error": "Пријава се није завршила — молим покушајте поново.",
-    "lab_ask_callback_back": "Назад у Лабораторијум"
+    "lab_ask_callback_back": "Назад у Лабораторијум",
+    "lab_illustration_badge": "Илустрација — генерисана уметност, није израчунати резултат",
+    "lab_illustration_credit": "Генерисано са {model}, {date} — прегледано од стране уредника",
+    "lab_report_print": "Извештај лабораторије",
+    "lab_report_aria_print": "Испиши или сачувај овај белешник као PDF извештај лабораторије",
+    "lab_report_card": "Картица за дељење",
+    "lab_report_aria_card": "Преузми дељиву картицу слике овог белешника"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -21614,6 +21686,12 @@
     "lab_ask_callback_working": "Finalizando entrada…",
     "lab_ask_callback_denied": "Esta conta do Google não está na lista beta, então a caixa de perguntas permanece bloqueada — tudo mais no Lab funciona sem ela.",
     "lab_ask_callback_error": "A entrada não foi concluída — tente novamente.",
-    "lab_ask_callback_back": "Voltar ao Lab"
+    "lab_ask_callback_back": "Voltar ao Lab",
+    "lab_illustration_badge": "Ilustração — arte gerada, não um resultado calculado",
+    "lab_illustration_credit": "Gerada com {model}, {date} — revisada pelo editor",
+    "lab_report_print": "Relatório de laboratório",
+    "lab_report_aria_print": "Imprimir ou salvar este notebook como um relatório PDF de laboratório",
+    "lab_report_card": "Cartão para compartilhar",
+    "lab_report_aria_card": "Baixar um cartão de imagem compartilhável deste notebook"
   }
 }

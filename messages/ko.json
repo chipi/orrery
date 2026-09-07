@@ -2834,5 +2834,11 @@
   "lab_ask_callback_working": "로그인을 완료 중…",
   "lab_ask_callback_denied": "이 Google 계정이 베타 목록에 없어 질문 상자가 잠겨 있습니다 — Lab의 나머지 모든 기능은 이것 없이 작동합니다.",
   "lab_ask_callback_error": "로그인이 완료되지 않았습니다 — 다시 시도하세요.",
-  "lab_ask_callback_back": "Lab으로 돌아가기"
+  "lab_ask_callback_back": "Lab으로 돌아가기",
+  "lab_illustration_badge": "일러스트레이션 — 생성 아트, 계산 결과가 아님",
+  "lab_illustration_credit": "{model}로 생성, {date} — 편집자 검토됨",
+  "lab_report_print": "실험실 보고서",
+  "lab_report_aria_print": "이 노트북을 PDF 실험실 보고서로 인쇄하거나 저장하기",
+  "lab_report_card": "공유 카드",
+  "lab_report_aria_card": "이 노트북의 공유 가능한 이미지 카드 다운로드하기"
 }

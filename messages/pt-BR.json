@@ -2834,5 +2834,11 @@
   "lab_ask_callback_working": "Finalizando entrada…",
   "lab_ask_callback_denied": "Esta conta do Google não está na lista beta, então a caixa de perguntas permanece bloqueada — tudo mais no Lab funciona sem ela.",
   "lab_ask_callback_error": "A entrada não foi concluída — tente novamente.",
-  "lab_ask_callback_back": "Voltar ao Lab"
+  "lab_ask_callback_back": "Voltar ao Lab",
+  "lab_illustration_badge": "Ilustração — arte gerada, não um resultado calculado",
+  "lab_illustration_credit": "Gerada com {model}, {date} — revisada pelo editor",
+  "lab_report_print": "Relatório de laboratório",
+  "lab_report_aria_print": "Imprimir ou salvar este notebook como um relatório PDF de laboratório",
+  "lab_report_card": "Cartão para compartilhar",
+  "lab_report_aria_card": "Baixar um cartão de imagem compartilhável deste notebook"
 }

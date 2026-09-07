@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { REGISTRY, defaultInputs } from '$lib/physics/registry';
 import { GOALS } from '$lib/physics/registry/goals';
+import { allIllustrations } from './illustration';
 import type { FormulaResult } from '$lib/physics/spec';
 
 /**
@@ -165,7 +166,18 @@ function collectAllKeys(): string[] {
     'lab.ask.callback-denied',
     'lab.ask.callback-error',
     'lab.ask.callback-back',
+    // Illustration register + lab report (G · #536).
+    'lab.illustration.badge',
+    'lab.illustration.credit',
+    'lab.report.print',
+    'lab.report.aria-print',
+    'lab.report.card',
+    'lab.report.aria-card',
   ].forEach(add);
+  // Per-asset illustration alt keys DERIVED from the manifest (G holistic
+  // MAJOR-1): when an approved asset lands, its alt text is demanded en-US
+  // AND ×13 — the #525 hole cannot reopen through generated art.
+  allIllustrations().forEach((i) => add(i.altKey));
   // Body-picker labels now derive from the registry's body-kind fields above
   // (MAJOR-1 class fix); only ids the UI reaches OUTSIDE the registry belong here.
   // Moon-phase names (G8) — figure.phaseLabelKey is dynamic (date → phase), so assert all 8.

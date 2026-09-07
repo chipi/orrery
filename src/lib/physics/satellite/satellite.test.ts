@@ -3,7 +3,7 @@ import { parseTle } from './tle';
 import { propagate, semiMajorAxisKm } from './propagate';
 import { lookAngle, observerEci } from './look-angles';
 import { stationTle, stationLookAngle, nextPass, STATION_IDS } from './index';
-import { julianDay } from '../ephemeris/time';
+import { julianDay, gmstRad } from '../ephemeris/time';
 
 const RE = 6378.137;
 
@@ -115,6 +115,64 @@ describe('satellite — pass prediction', () => {
       expect(pass.maxAltitudeDeg).toBeGreaterThanOrEqual(10);
       expect(typeof pass.visible).toBe('boolean');
     }
+  });
+});
+
+describe('satellite — look-angle geometry is correct (H-a · #464)', () => {
+  // The AR sky + Lab both point users at where a station IS, so verify the
+  // ECI→topocentric transform against hand-constructed geometry (first
+  // principles), not just bounds — this is the correctness check behind the
+  // "could the calculation be wrong?" question, complementing the staleness fix.
+  const jd = 2460000.5;
+
+  it('a satellite on the observer local-vertical reads ~90° elevation (equator)', () => {
+    // At the equator geodetic = geocentric vertical, so straight-up is exact.
+    const lat = 0;
+    const lon = 0;
+    const obs = observerEci(jd, lat, lon);
+    const rObs = Math.hypot(obs.x, obs.y, obs.z);
+    const scale = (rObs + 420) / rObs; // 420 km straight up
+    const sat = { x: obs.x * scale, y: obs.y * scale, z: obs.z * scale };
+    const la = lookAngle(sat, jd, lat, lon);
+    expect(la.altitudeDeg).toBeCloseTo(90, 1);
+    expect(la.rangeKm).toBeCloseTo(420, 0);
+  });
+
+  it('a target on the far side of Earth is below the horizon', () => {
+    const lat = 0.3;
+    const lon = 1.0;
+    const obs = observerEci(jd, lat, lon);
+    const rObs = Math.hypot(obs.x, obs.y, obs.z);
+    const scale = -(rObs + 420) / rObs; // antipodal direction
+    const sat = { x: obs.x * scale, y: obs.y * scale, z: obs.z * scale };
+    const la = lookAngle(sat, jd, lat, lon);
+    expect(la.altitudeDeg).toBeLessThan(0);
+    expect(la.aboveHorizon).toBe(false);
+  });
+
+  it('azimuth convention: a target nudged local-North reads ~0°, local-East ~90°', () => {
+    // Build the local SEZ basis from first principles and place a target 500 km
+    // up + 100 km along North / East; the transform must recover the right az.
+    const lat = 0.7;
+    const lon = -0.5;
+    const lst = gmstRad(jd) + lon;
+    const cL = Math.cos(lat);
+    const sL = Math.sin(lat);
+    const cS = Math.cos(lst);
+    const sS = Math.sin(lst);
+    const zen = { x: cL * cS, y: cL * sS, z: sL };
+    const east = { x: -sS, y: cS, z: 0 };
+    const north = { x: -sL * cS, y: -sL * sS, z: cL };
+    const obs = observerEci(jd, lat, lon);
+    const mk = (dir: typeof east, d: number) => ({
+      x: obs.x + zen.x * 500 + dir.x * d,
+      y: obs.y + zen.y * 500 + dir.y * d,
+      z: obs.z + zen.z * 500 + dir.z * d,
+    });
+    const northAz = lookAngle(mk(north, 100), jd, lat, lon).azimuthDeg;
+    const eastAz = lookAngle(mk(east, 100), jd, lat, lon).azimuthDeg;
+    expect(Math.min(northAz, 360 - northAz)).toBeLessThan(10); // near 0/360 (North)
+    expect(eastAz).toBeCloseTo(90, 0); // due East
   });
 });
 

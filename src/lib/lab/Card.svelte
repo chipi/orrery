@@ -261,8 +261,7 @@
        flag the readout as approximate. Honest even on a container that hasn't
        redeployed since the last refresh. -->
   {#if !blocked && result?.status.ok && result.epochAgeDays != null}
-    {@const stale =
-      formula.staleAfterDays != null && result.epochAgeDays > formula.staleAfterDays}
+    {@const stale = formula.staleAfterDays != null && result.epochAgeDays > formula.staleAfterDays}
     <p class="card__staleness" class:card__staleness--stale={stale}>
       {t('lab.ui.tle-age', { days: Math.round(result.epochAgeDays) })}
       {#if stale}

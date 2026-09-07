@@ -314,6 +314,11 @@ jobs:
             printf '%s=%s\n' ORRERY_LITELLM_API_KEY          "$LITELLM_API_KEY"
             # Public app origins — CORS + OAuth redirects. Apex + www + Pages
             # (www is a live origin; Fable-5 M2). Not secret.
+            # LiteLLM gateway: lab-api is a BRIDGE container, so host.docker.internal
+            # (→ docker bridge gateway) can't reach the gateway's 127.0.0.1:4001 bind.
+            # Use the box's tailnet IP, where the gateway also binds (prod-podcast
+            # 100.124.111.115:4001, verified reachable). #464 deploy-day fix.
+            printf '%s=%s\n' ORRERY_LITELLM_BASE_URL 'http://100.124.111.115:4001'
             printf '%s=%s\n' ORRERY_LAB_CORS_ORIGINS 'https://orrerylearn.com,https://www.orrerylearn.com,https://chipi.github.io'
             printf '%s=%s\n' ORRERY_LAB_WEB_REDIRECT_URIS 'https://orrerylearn.com/lab/callback,https://www.orrerylearn.com/lab/callback,https://chipi.github.io/orrery/lab/callback'
           } > "$ENVTMP"

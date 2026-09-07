@@ -107,5 +107,16 @@ wait_ok web "http://127.0.0.1:${PORT}/"
 if [ "$STACK" = full ]; then
   wait_ok lab-api "http://127.0.0.1:8094/jwks"
   wait_ok mcp "http://127.0.0.1:8091/health"
+  # Verify the /ask path end-to-end at the network level: can lab-api actually
+  # reach the LiteLLM gateway? Non-fatal (a broken LLM path shouldn't fail the
+  # whole deploy) but logged, so it's visible without a user token. host.docker
+  # .internal can't reach the gateway's 127.0.0.1 bind from a bridge container —
+  # this is why LITELLM_BASE_URL points at the box's tailnet IP (#464).
+  LLM_URL="$(grep -E '^ORRERY_LITELLM_BASE_URL=' .env | cut -d= -f2- || true)"
+  LLM_URL="${LLM_URL:-http://host.docker.internal:4001}"
+  echo "--- lab-api → LiteLLM reachability (${LLM_URL}/health/liveliness):"
+  "${COMPOSE[@]}" exec -T lab-api node -e \
+    "fetch('${LLM_URL}/health/liveliness').then(function(r){console.log('  HTTP',r.status)}).catch(function(e){console.log('  FAIL',e.message)})" \
+    || echo "  (probe could not run)"
 fi
 echo "deploy_stack: $STACK stack up"

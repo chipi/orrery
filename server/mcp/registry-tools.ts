@@ -93,7 +93,11 @@ function callerFields(def: FormulaDef): FieldSpec[] {
 }
 
 export interface DeriveOptions {
-  /** Restrict to these domains (S4 ships `['transfer']`; the gate lifts in S6). */
+  /**
+   * Restrict the LISTED tools to these domains — a discovery filter only; the
+   * call path (`callTool`) is never domain-gated. Pre-H ships `['transfer']`;
+   * H (#464) omits it so all 64 formulas are listed.
+   */
   domains?: FormulaDef['domain'][];
   t: Localize;
 }

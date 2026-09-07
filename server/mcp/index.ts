@@ -3,8 +3,10 @@
  *
  * A standalone Node process exposing the physics kernel as MCP tools over
  * Streamable HTTP (the remote transport Claude.ai custom connectors speak).
- * Tools are auto-derived from the formula registry (`registry-tools.ts`) —
- * S4 gates to the `transfer` domain; the gate lifts in S6 (#464).
+ * Tools are auto-derived from the formula registry (`registry-tools.ts`). The
+ * `transfer` domain is the only one LISTED here (a discovery filter in
+ * `toolsFor` → `deriveTools`); the call handler runs the FULL registry ungated.
+ * H (#464) lifts the listing filter so all 64 formulas are discoverable.
  *
  * AUTH (E · #534): OAuth 2.1 resource server. Bearer JWTs are verified against
  * lab-api's /jwks (ES256, iss + aud + scope — auth.ts); RFC 9728 protected-
@@ -18,16 +20,19 @@
  * ABUSE GUARDS (2026-09-01 plan review MAJOR-1):
  *  - validate-REJECT boundary in registry-tools (never clamp agent input);
  *  - per-token sliding-window rate limit;
- *  - compute cost: every transfer-domain formula is bounded — the worst case is
- *    `porkchop` at a FIXED 48×40 grid (~1,920 Lambert solves, low seconds), and
- *    compute is SYNCHRONOUS, so the actual S4 bound is event-loop
- *    serialization: one compute at a time, the rate limit bounding how many a
- *    token can queue per minute. The `activeComputes` cap below is inert until
- *    compute moves off-loop — it becomes real when S6 lifts the domain gate and
- *    the multi-second descent solvers (`entry-range-control`) move to a worker
- *    thread with a wall-clock kill (tracked on #464). Known S4 trade-off: a
- *    valid-token client can stall /health for its burst; acceptable for the
- *    single operator-held bearer.
+ *  - compute cost: EVERY formula in the registry is bounded — every input is
+ *    box-constrained by its FieldSpec min/max, and the two heaviest are fixed-
+ *    size: `porkchop` at a 48×40 grid (~1,920 Lambert solves) and
+ *    `entry-range-control` at 28 bisections over a 26-sim footprint sweep, each
+ *    sim ≤ 28,000 fixed-step integrations (~250 ms worst case, pinned by the
+ *    compute-budget test). Compute is SYNCHRONOUS, so the real bound is event-
+ *    loop serialization: one compute at a time, the 60/min rate limit capping
+ *    how many a token can queue — worst-case aggregate is a few seconds of CPU
+ *    per token per minute. There is NO worker thread (operator decision on
+ *    H/#464: the bound is small enough that off-loop compute isn't warranted);
+ *    the `activeComputes` cap stays inert and exists only to shape E's
+ *    multi-token future. Known trade-off: a valid-token client can stall
+ *    /health for its burst; acceptable for the small allowlisted beta.
  *
  * LOCALE (operator 2026-09-01, ×14): `?locale=<tag>` on the endpoint localizes
  * tool descriptions in tools/list; a `locale` argument on any call localizes

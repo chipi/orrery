@@ -628,6 +628,131 @@ export const probeJupiter: Goal = {
 };
 
 /**
+ * "Engines of the world" (P7 · #531 — the goal that pulls the propulsion domain).
+ * Three real engines from the kernel's registry teach the one trade every rocket
+ * lives inside: thrust decides whether you leave the pad, exhaust velocity
+ * (v_e = Isp·g0) decides how far you go. The F-1 is the brute — 6.77 MN, five per
+ * Saturn V first stage, but each tonne of kerosene buys modest speed (Isp 304).
+ * The RL10 is the surgeon — a fraction of a first-stage engine's thrust, never
+ * meant for the pad (though DC-X flew VTOL hops on four of them), and its
+ * hydrogen expander cycle reaches Isp ~450 in modern variants (427 in 1963);
+ * it has flown upper stages since 1963. Raptor is the modern middle: full-flow
+ * staged combustion holding methane Isp 350 vac at booster-class thrust. The
+ * capstone wires the RL10's Isp into Tsiolkovsky at mass ratio 10 — ~10.2 km/s
+ * where an F-1-class Isp yields ~6.9: same mass ratio, half again the speed
+ * (the narrative carries the LH2 density caveat — hydrogen buys some of it
+ * back in tankage). Kernel check (2026-09-06): ve f-1 2.98 km/s, rl10 4.41,
+ * raptor 3.43; tsiolkovsky (450, 100000/10000) → 10.16 km/s.
+ * Science-reviewed 2026-09-06 (Sonnet pass + Fable-5 deep pass): F-1 flow
+ * corrected to 2.6 t/s total propellant; RL10 lift claims made DC-X-proof;
+ * variant-qualified Isp; vacuum/pad regimes disclosed in every rung; registry
+ * datasheet audit fixes applied (RL10C-1 coherent row, RD-107A/vikas/RD-253/
+ * YF-100/H-1 vacuum Isps, Vulcain-2/Raptor/LR87 metadata).
+ */
+export const enginesOfTheWorld: Goal = {
+  id: 'engines-of-the-world',
+  titleKey: 'lab.goal.engines.title',
+  family: 'systems',
+  tier: 4,
+  prereqs: ['launch-a-rocket'],
+  path: [
+    {
+      formulaId: 'engine-performance',
+      narrativeKey: 'lab.goal.eng.f1',
+      presetInputs: { engine: 'f-1' },
+    },
+    {
+      formulaId: 'engine-performance',
+      narrativeKey: 'lab.goal.eng.rl10',
+      presetInputs: { engine: 'rl10' },
+    },
+    {
+      formulaId: 'engine-performance',
+      narrativeKey: 'lab.goal.eng.raptor',
+      presetInputs: { engine: 'raptor' },
+    },
+    {
+      // The punchline: the registry's Isp drives the rocket equation directly.
+      formulaId: 'tsiolkovsky',
+      narrativeKey: 'lab.goal.eng.tsiolkovsky',
+      presetInputs: { m0Kg: 100000, mfKg: 10000 },
+      wiresFrom: [{ fromStep: 1, output: 'ispS', toInput: 'ispS' }],
+    },
+  ],
+  connection: {
+    whyKey: 'lab.conn.eng.why',
+    hookKey: 'lab.conn.eng.hook',
+    links: [
+      { labelKey: 'lab.conn.eng.f1', href: '/fleet?id=f-1', agency: 'NASA' },
+      { labelKey: 'lab.conn.eng.rl10', href: '/fleet?id=rl10', agency: 'NASA' },
+      { labelKey: 'lab.conn.eng.raptor', href: '/fleet?id=raptor', agency: 'SpaceX' },
+      { labelKey: 'lab.conn.eng.fleet', href: '/fleet' },
+    ],
+    nextKey: 'lab.conn.eng.next',
+  },
+};
+
+/**
+ * A8 "land on Mercury" (#530 · P6) — the landing NOBODY has flown, taught honestly as
+ * a Δv problem. Mercury is the Moon's brutal big brother: airless (terminal-velocity
+ * fails err-airless — a parachute is paper here) but with more than twice the Moon's
+ * gravity, so low orbit is ~2.9 km/s (vs the Moon's 1.6) and the all-retro descent
+ * bill lands near 4.4 km/s. The verdict rung deliberately reuses M3's Apollo-class
+ * 2.5 km/s descent-stage capacity — the exact stage that lands on the Moon dies ~2
+ * km/s short on Mercury. That cross-goal echo, plus the transfer cost that made even
+ * ORBITING Mercury take MESSENGER six gravity assists, is why the surface is still
+ * untouched. Kernel check (2026-09-03): orbital-velocity(mercury, 100 km) → 2.95
+ * km/s; descent-burn(2.95, twr 3) → 4.42 km/s; margin vs 2.5 → −1.92 → fail-honest.
+ * Science-reviewed 2026-09-03: BepiColombo cruise corrected to >8 years (arrives
+ * late 2026, not "seven years"); MESSENGER 6.6 → "nearly seven years"; GM/radius,
+ * gravity ratio, orbit speeds, 3.91 km/s impact, flyby counts (6 and 9), iron-core
+ * and exosphere framing all verified against JPL/NASA/ESA/JAXA sources.
+ */
+export const landOnMercury: Goal = {
+  id: 'land-on-mercury',
+  titleKey: 'lab.goal.land-mercury.title',
+  family: 'spaceflight',
+  tier: 7,
+  prereqs: ['land-on-the-moon'],
+  path: [
+    {
+      // Fail-honest opener: no air → no terminal velocity → no chute, ever.
+      formulaId: 'terminal-velocity',
+      narrativeKey: 'lab.goal.lmc.chute',
+      presetInputs: { body: 'mercury' },
+    },
+    {
+      formulaId: 'orbital-velocity',
+      narrativeKey: 'lab.goal.lmc.orbit',
+      presetInputs: { body: 'mercury', altitudeKm: 100 },
+    },
+    {
+      formulaId: 'descent-burn',
+      narrativeKey: 'lab.goal.lmc.descent',
+      presetInputs: { twr: 3 },
+      wiresFrom: [{ fromStep: 1, output: 'vCirc', toInput: 'vOrbitKms' }],
+    },
+    {
+      // The M3 echo: same 2.5 km/s Apollo-class capacity, now ~2 km/s short.
+      formulaId: 'delta-v-margin',
+      narrativeKey: 'lab.goal.lmc.verdict',
+      presetInputs: { capacityKms: 2.5 },
+      wiresFrom: [{ fromStep: 2, output: 'descentDv', toInput: 'requiredKms' }],
+    },
+  ],
+  connection: {
+    whyKey: 'lab.conn.lmc.why',
+    hookKey: 'lab.conn.lmc.hook',
+    links: [
+      { labelKey: 'lab.conn.lmc.messenger', href: '/fly?mission=messenger', agency: 'NASA' },
+      { labelKey: 'lab.conn.lmc.bepicolombo', href: '/fleet?id=bepicolombo', agency: 'ESA' },
+      { labelKey: 'lab.conn.lmc.explore', href: '/explore' },
+    ],
+    nextKey: 'lab.conn.lmc.next',
+  },
+};
+
+/**
  * A8 "touch a small world" (#529 · P5) — the last landing frontier, where "landing"
  * stops meaning what it meant everywhere else. Five worlds, five real missions, one
  * inverted physics: escape velocities of 0.2–10 m/s mean the danger is not hitting
@@ -1166,7 +1291,9 @@ export const GOALS: ReadonlyMap<string, Goal> = new Map<string, Goal>([
   [landOnVenus.id, landOnVenus],
   [landOnTitan.id, landOnTitan],
   [probeJupiter.id, probeJupiter],
+  [landOnMercury.id, landOnMercury],
   [touchSmallWorld.id, touchSmallWorld],
+  [enginesOfTheWorld.id, enginesOfTheWorld],
   [leaveTheSolarSystem.id, leaveTheSolarSystem],
   [moonPhases.id, moonPhases],
   [chooseAnOrbit.id, chooseAnOrbit],

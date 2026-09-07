@@ -22,6 +22,7 @@ const DESCENT_BODIES = [
   'titan',
   'earth',
   'jupiter',
+  'mercury',
   'comet_67p',
   'itokawa',
   'ryugu',

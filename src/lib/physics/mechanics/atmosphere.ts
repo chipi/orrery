@@ -13,19 +13,15 @@
  * (drag can't slow you); the caller fails honest.
  */
 
+import { SURFACE_DENSITY_KGM3 as DESCENT_SURFACE_DENSITY } from '$lib/physics/descent/descent-physics-constants';
+
 /** Surface atmospheric density (kg/m³) — 0 for airless bodies.
- *  KNOWN D10 DRIFT (flagged on #524): descent/descent-physics-constants.ts
- *  carries a second, DescentBody-exhaustive copy of these values — the two
- *  must agree until the planned dedup lands. Keep edits mirrored. */
+ *  D10 dedup (P7 · #531): descent/descent-physics-constants.ts is the single
+ *  source of truth (DescentBody-exhaustive); this spread only ADDS bodies the
+ *  descent engine doesn't model but the terminal-velocity dropdown offers. */
 export const SURFACE_DENSITY_KGM3: Record<string, number> = {
-  venus: 65.0,
-  earth: 1.225,
-  mars: 0.02,
-  titan: 5.3, // dense cold N₂ at the surface (~1.5 bar, 94 K) — P3 · #527
-  jupiter: 0.16, // 1-bar datum
-  saturn: 0.19, // 1-bar datum
-  mercury: 0,
-  moon: 0,
+  ...DESCENT_SURFACE_DENSITY,
+  saturn: 0.19, // 1-bar datum — atmosphere-only body, deliberately not a DescentBody
 };
 
 /**

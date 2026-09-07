@@ -37,9 +37,9 @@ export const DOMAIN_CAPABILITIES: Record<FormulaDef['domain'], CapabilityRow> = 
   descent: { status: 'covered' },
   satellite: { status: 'covered' },
   mechanics: { status: 'covered' },
-  // ~22 engines live in propulsion/engine-registry.ts with zero FormulaDefs —
-  // register formulas or record the exclusion; the P7 decision resolves this row.
-  propulsion: { status: 'pending', trackedBy: '#531' },
+  // P7 decision (#531): REGISTERED — engine-performance derives v_e = Isp·g0
+  // from the curated registry; pulled by engines-of-the-world.
+  propulsion: { status: 'covered' },
 };
 
 /**
@@ -55,6 +55,7 @@ export const DESCENT_BODY_CAPABILITIES: Record<DescentBody, CapabilityRow> = {
   venus: { status: 'covered' }, // land-on-venus (P2 · #526)
   titan: { status: 'covered' }, // land-on-titan (P3 · #527)
   jupiter: { status: 'covered' }, // probe-jupiter (P4 · #528 — entry, no landing, by design)
+  mercury: { status: 'covered' }, // land-on-mercury (P6 · #530 — the unflown landing, fail-honest verdict)
   comet_67p: { status: 'covered' }, // touch-small-world (P5 · #529 — Philae bounce)
   itokawa: { status: 'covered' }, // touch-small-world (P5 · #529 — Hayabusa)
   ryugu: { status: 'covered' }, // touch-small-world (P5 · #529 — MINERVA hop)

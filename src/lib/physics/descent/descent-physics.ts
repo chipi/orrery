@@ -50,6 +50,8 @@ const DEG2RAD = Math.PI / 180;
  * timeline stay honest across ten-orders-of-magnitude gravity. Tier-1 Earth-orbit
  * re-entry (RFC-034 §13) adds Earth — the one *return* body, where a capsule
  * deorbits from LEO and rides a heat-shield + parachutes down to splashdown/ground.
+ * Mercury (P6 · #530) is the airless heavyweight nobody has landed on — modelled
+ * so the Lab can show honestly WHY (a Δv bill with no atmosphere to pay it).
  */
 export type DescentBody =
   | 'moon'
@@ -58,6 +60,7 @@ export type DescentBody =
   | 'titan'
   | 'earth'
   | 'jupiter'
+  | 'mercury'
   | 'comet_67p'
   | 'itokawa'
   | 'ryugu'

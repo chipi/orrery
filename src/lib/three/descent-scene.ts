@@ -35,6 +35,7 @@ const R_BODY_KM: Record<DescentBody, number> = {
   titan: 2574.7,
   earth: 6371,
   jupiter: 69911,
+  mercury: 2439.7,
   comet_67p: 1.72,
   itokawa: 0.165,
   ryugu: 0.448,
@@ -54,6 +55,13 @@ const SKY: Record<DescentBody, SkyConfig> = {
   moon: {
     high: new THREE.Color('#03040a'),
     low: new THREE.Color('#05060c'),
+    stars: true,
+    fadeKm: 5,
+  },
+  // Airless like the Moon — black sky to the horizon, stars in daylight.
+  mercury: {
+    high: new THREE.Color('#03040a'),
+    low: new THREE.Color('#0a0806'),
     stars: true,
     fadeKm: 5,
   },

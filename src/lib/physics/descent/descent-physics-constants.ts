@@ -35,6 +35,7 @@ export const MU_BODY_M3_S2: Record<DescentBody, number> = {
   titan: 8.978e12,
   earth: 3.986004418e14,
   jupiter: 1.26686534e17,
+  mercury: 2.2032e13,
   comet_67p: 6.662e2, // 67P/Churyumov–Gerasimenko, M≈9.98e12 kg
   itokawa: 2.342, // M≈3.51e10 kg
   ryugu: 29.8, // GM 29.8±0.3 measured directly (Hayabusa2 orbit determination), not G×M(est)
@@ -50,6 +51,7 @@ export const R_BODY_M: Record<DescentBody, number> = {
   titan: 2_574_700,
   earth: 6_371_000,
   jupiter: 69_911_000, // 1-bar volumetric radius (the "datum"; probe descends below)
+  mercury: 2_439_700,
   comet_67p: 1_720, // mean radius of the bilobed nucleus
   itokawa: 165, // mean radius of the 535×294×209 m body
   ryugu: 448,
@@ -65,6 +67,7 @@ export const SURFACE_DENSITY_KGM3: Record<DescentBody, number> = {
   titan: 5.3, // dense cold N₂ at the surface (~1.5 bar, 94 K)
   earth: 1.225, // ISA sea-level density (1013 hPa, 15 °C)
   jupiter: 0.16, // at the 1-bar datum; ρ(h)=ρ₀·exp(−h/H) rises as the probe sinks below
+  mercury: 0, // exosphere only — airless for EDL purposes
   comet_67p: 0, // airless
   itokawa: 0,
   ryugu: 0,
@@ -80,6 +83,7 @@ export const ATM_SCALE_HEIGHT_M: Record<DescentBody, number> = {
   titan: 40_000, // thick, cold, deep troposphere
   earth: 8_500, // ISA troposphere single-exponential fit
   jupiter: 27_000,
+  mercury: 1, // airless (density 0)
   comet_67p: 1, // airless (density 0)
   itokawa: 1,
   ryugu: 1,
@@ -96,6 +100,7 @@ export const SOUND_SPEED_MS: Record<DescentBody, number> = {
   titan: 194, // cold N₂
   earth: 340, // dry air, 15 °C
   jupiter: 800, // H₂/He
+  mercury: 0, // airless → Mach meaningless
   comet_67p: 0, // airless → Mach meaningless
   itokawa: 0,
   ryugu: 0,
@@ -111,6 +116,7 @@ export const BODY_LABEL: Record<DescentBody, string> = {
   titan: 'Titan',
   earth: 'Earth',
   jupiter: 'Jupiter',
+  mercury: 'Mercury',
   comet_67p: '67P/C-G',
   itokawa: 'Itokawa',
   ryugu: 'Ryugu',

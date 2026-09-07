@@ -84,6 +84,6 @@ describe('capability manifest · built→goal gate (armed)', () => {
   it('the pending set is exactly the tracked Phase-2 remainder (drift alarm)', () => {
     // Deliberately explicit: this list SHRINKS as P2–P7 land and must be []
     // at release exit (#464). Editing it means touching the manifest — good.
-    expect(pendingCapabilities().sort()).toEqual(['domain:propulsion (#531)'].sort());
+    expect(pendingCapabilities()).toEqual([]);
   });
 });

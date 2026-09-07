@@ -1224,6 +1224,98 @@ describe('systems · re-entry lift steering (lift widens the corridor)', () => {
   });
 });
 
+describe('engines-of-the-world · propulsion golden masters (P7 · #531)', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('F-1: 6.77 MN of thrust but ve ~2.98 km/s — thrust is not efficiency', () => {
+    const r = compute('engine-performance', { engine: 'f-1' });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.thrustN.value).toBe(6_770_000);
+    expect(r.values.ispS.value).toBe(304);
+    expect(r.values.veKms.value).toBeCloseTo(2.98, 2);
+  });
+
+  it('RL10: 1/60th the thrust, ve ~4.41 km/s — the efficiency king', () => {
+    const r = compute('engine-performance', { engine: 'rl10' });
+    expect(r.values.veKms.value).toBeCloseTo(4.41, 2);
+    expect(r.values.thrustN.value).toBeLessThan(6_770_000 / 60);
+  });
+
+  it('a registry row without published Isp fails HONEST, thrust still shown', () => {
+    // yf-77 carries no isp fields in the curated registry (data gap, not a bug).
+    const gapEngine = ['yf-77', 'vikas', 'lr87'].find((id) => {
+      const r = compute('engine-performance', { engine: id });
+      return !r.status.ok;
+    });
+    if (gapEngine) {
+      const r = compute('engine-performance', { engine: gapEngine });
+      expect(r.status.ok).toBe(false);
+      if (!r.status.ok) expect(r.status.reasonKey).toBe('lab.f.engine-perf.err-no-isp');
+      expect(r.values.thrustN?.value).toBeGreaterThan(0);
+      expect(r.values.veKms).toBeUndefined();
+    } else {
+      // Registry became fully populated — the fail-honest branch needs a new probe.
+      expect(compute('engine-performance', { engine: 'nonexistent' }).status.ok).toBe(false);
+    }
+  });
+
+  it('the capstone: RL10 Isp at mass ratio 10 → ~10.2 km/s vs F-1-class ~6.9', () => {
+    const rl10 = compute('tsiolkovsky', { ispS: 450, m0Kg: 100000, mfKg: 10000 });
+    const f1 = compute('tsiolkovsky', { ispS: 304, m0Kg: 100000, mfKg: 10000 });
+    expect(rl10.values.deltaV.value).toBeCloseTo(10.16, 1);
+    expect(f1.values.deltaV.value).toBeCloseTo(6.87, 1);
+  });
+
+  it('the goal wires the registry Isp into Tsiolkovsky (domain coverage proof)', () => {
+    const g = GOALS.get('engines-of-the-world')!;
+    expect(g.path.filter((s) => s.formulaId === 'engine-performance')).toHaveLength(3);
+    const capstone = g.path[3];
+    expect(capstone.formulaId).toBe('tsiolkovsky');
+    expect(capstone.wiresFrom?.[0]).toEqual({ fromStep: 1, output: 'ispS', toInput: 'ispS' });
+  });
+});
+
+describe('A8 land-on-mercury · airless heavyweight golden masters (P6 · #530)', () => {
+  const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
+
+  it('the chute rung fails HONEST: no atmosphere → err-airless, no terminal velocity', () => {
+    const r = compute('terminal-velocity', { massKg: 2000, areaM2: 10, cd: 1.5, body: 'mercury' });
+    expect(r.status.ok).toBe(false);
+    if (!r.status.ok) expect(r.status.reasonKey).toBe('lab.f.terminal.err-airless');
+  });
+
+  it('low Mercury orbit is ~2.95 km/s — nearly twice the Moon (deeper well, same look)', () => {
+    const r = compute('orbital-velocity', { body: 'mercury', altitudeKm: 100 });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.vCirc.value).toBeCloseTo(2.95, 1);
+    const moon = compute('orbital-velocity', { body: 'moon', altitudeKm: 100 });
+    expect(r.values.vCirc.value).toBeGreaterThan(1.7 * moon.values.vCirc.value);
+  });
+
+  it('all-retro descent at TWR 3 bills ~4.4 km/s (the Moon: ~2.4)', () => {
+    const r = compute('descent-burn', { vOrbitKms: 2.95, twr: 3 });
+    expect(r.status.ok).toBe(true);
+    expect(r.values.descentDv.value).toBeCloseTo(4.4, 1);
+  });
+
+  it('the M3 echo fails HONEST: an Apollo-class 2.5 km/s stage is ~2 km/s short', () => {
+    const r = compute('delta-v-margin', { capacityKms: 2.5, requiredKms: 4.42 });
+    expect(r.status.ok).toBe(false);
+    // The same preset capacity that PASSES the Moon ladder (required ~2.45)
+    // dies here — the cross-goal echo IS the lesson.
+    const moonDv = compute('descent-burn', { vOrbitKms: 1.63, twr: 3 }).values.descentDv.value;
+    expect(compute('delta-v-margin', { capacityKms: 2.5, requiredKms: moonDv }).status.ok).toBe(
+      true,
+    );
+  });
+
+  it('the goal pins mercury through the descent domain (manifest coverage proof)', () => {
+    const g = GOALS.get('land-on-mercury')!;
+    const pin = g.path.find((s) => s.formulaId === 'terminal-velocity')?.presetInputs?.body;
+    expect(pin).toBe('mercury');
+  });
+});
+
 describe('A8 touch-small-world · micro-g golden masters (P5 · #529)', () => {
   const compute = (id: string, i: Record<string, number | string>) => REGISTRY.get(id)!.compute(i);
 

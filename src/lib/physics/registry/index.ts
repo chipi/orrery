@@ -46,6 +46,7 @@ import {
   liftCorridor,
   solveEntryBankForRange,
 } from '../systems/entry-steering';
+import { ENGINE_REGISTRY, getEngineMeta } from '../propulsion/engine-registry';
 import {
   MOON_ORBIT_RADIUS_KM,
   MU_SUN_KM3_S2,
@@ -2313,6 +2314,71 @@ export const airbagsCheck: FormulaDef<{ impactMs: number; airbagLimitMs: number 
       values: { margin: { value: margin, units: 'm/s' } },
       status: { ok: true },
       ...base,
+    } satisfies FormulaResult;
+  },
+};
+
+/**
+ * Engine performance (P7 · #531 — the propulsion domain's first formula). Looks a
+ * real engine up in the kernel's curated registry (~22, every major agency) and
+ * derives the number that actually matters: effective exhaust velocity
+ * v_e = Isp·g0 — the ONLY engine parameter in the rocket equation. Thrust decides
+ * whether you lift off; v_e decides how far you go. Rows publishing only a
+ * sea-level Isp fall back to it (disclosed via the assumption keys); a row
+ * with no Isp at all fails HONEST, never with an invented number.
+ */
+export const enginePerformance: FormulaDef<{ engine: string }> = {
+  id: 'engine-performance',
+  titleKey: 'lab.f.engine-perf.title',
+  domain: 'propulsion',
+  tier: 4,
+  prereqs: ['tsiolkovsky'],
+  latex: 'v_e = I_{sp}\\,g_0',
+  inputs: [
+    {
+      key: 'engine',
+      labelKey: 'lab.f.engine-perf.engine',
+      units: '',
+      kind: 'enum',
+      default: 'merlin-1d',
+      enumValues: ENGINE_REGISTRY.map((e) => ({ value: e.id, labelKey: `lab.engine.${e.id}` })),
+    },
+  ],
+  outputs: [
+    { key: 'thrustN', labelKey: 'lab.f.engine-perf.thrust', units: 'N' },
+    { key: 'ispS', labelKey: 'lab.f.engine-perf.isp', units: 's' },
+    { key: 'veKms', labelKey: 'lab.f.engine-perf.ve', units: 'km/s' },
+  ],
+  compute: ({ engine }) => {
+    const meta = getEngineMeta(engine);
+    if (!meta) {
+      const values: Record<string, Quantity> = {};
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.engine-perf.err-unknown' },
+        assumptions: ['lab.assume.registry-datasheet'],
+      } satisfies FormulaResult;
+    }
+    const isp = meta.isp_vac_s ?? meta.isp_sl_s;
+    if (!isp) {
+      // A registry row without a published Isp — surface the gap, don't guess.
+      const values: Record<string, Quantity> = {
+        thrustN: { value: meta.thrust_kn * 1000, units: 'N' },
+      };
+      return {
+        values,
+        status: { ok: false, reasonKey: 'lab.f.engine-perf.err-no-isp' },
+        assumptions: ['lab.assume.registry-datasheet'],
+      } satisfies FormulaResult;
+    }
+    return {
+      values: {
+        thrustN: { value: meta.thrust_kn * 1000, units: 'N' },
+        ispS: { value: isp, units: 's' },
+        veKms: { value: (isp * G0) / 1000, units: 'km/s' },
+      },
+      status: { ok: true },
+      assumptions: ['lab.assume.registry-datasheet', 'lab.assume.vacuum-isp-preferred'],
     } satisfies FormulaResult;
   },
 };
@@ -5400,6 +5466,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [entryCorridor.id, entryCorridor],
   [microGSurface.id, microGSurface],
   [touchdownBounce.id, touchdownBounce],
+  [enginePerformance.id, enginePerformance],
   [solarEscapeVelocity.id, solarEscapeVelocity],
   [heliocentricEscapeDv.id, heliocentricEscapeDv],
   [oberthDepartureDv.id, oberthDepartureDv],

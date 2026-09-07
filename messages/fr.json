@@ -2835,10 +2835,12 @@
   "lab_ask_callback_denied": "Ce compte Google ne figure pas sur la liste bêta, la boîte de questions reste verrouillée — tout le reste du Laboratoire fonctionne sans.",
   "lab_ask_callback_error": "La connexion n'a pas abouti — veuillez réessayer.",
   "lab_ask_callback_back": "Retour au Laboratoire",
-  "lab_illustration_badge": "Illustration — art généré, pas un résultat calculé",
-  "lab_illustration_credit": "Généré avec {model}, {date} — examiné par l'éditeur",
+  "lab_illustration_badge": "Illustration — art généré par IA, pas un résultat calculé",
+  "lab_illustration_credit": "Illustration générée par IA, {date} — révisée par l'éditeur",
   "lab_report_print": "Rapport de laboratoire",
   "lab_report_aria_print": "Imprimer ou enregistrer ce carnet sous forme de rapport de laboratoire PDF",
   "lab_report_card": "Carte de partage",
-  "lab_report_aria_card": "Télécharger une image de carte partageable de ce carnet"
+  "lab_report_aria_card": "Télécharger une image de carte partageable de ce carnet",
+  "credits_used_route_lab": "Laboratoire de Physique",
+  "colophon_lab_illustrations": "Illustrations du Laboratoire de Physique"
 }

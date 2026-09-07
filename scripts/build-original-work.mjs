@@ -695,6 +695,24 @@ const writing = [
     where: 'Take the tour',
     route: '/credits',
   },
+  {
+    title: 'Physics Lab formula registry',
+    what: 'The Physics Lab is built on 64 original formula definitions — each with its equation, parameter ranges, fail-honest reasoning, stated assumptions, and computed-figure spec — authored in-house over real physics. The reference constants they compute from (JPL/IAU/EGM96) are cited on the Credits page.',
+    where: 'Physics Lab',
+    route: '/lab',
+  },
+  {
+    title: 'Physics Lab goals',
+    what: '25 original learning-goal ladders that chain the formulas into narrated journeys — from launching a rocket to touching a comet — with a written practical-connection panel for each.',
+    where: 'Physics Lab',
+    route: '/lab',
+  },
+  {
+    title: 'Physics Lab interface, in 14 languages',
+    what: 'Every Lab string — formula titles, parameter labels, assumptions, narration, error states — is originally authored and machine-translated across all 14 supported locales.',
+    where: 'Physics Lab',
+    route: '/lab',
+  },
 ];
 
 // Gallery posters (/posters) — 27 ORRERY-original art prints, AI-generated,

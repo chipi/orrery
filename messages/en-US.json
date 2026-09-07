@@ -2835,10 +2835,12 @@
   "lab_ask_callback_denied": "This Google account isn't on the beta list, so the ask box stays locked — everything else in the Lab works without it.",
   "lab_ask_callback_error": "Sign-in didn't complete — please try again.",
   "lab_ask_callback_back": "Back to the Lab",
-  "lab_illustration_badge": "Illustration — generated art, not a computed result",
-  "lab_illustration_credit": "Generated with {model}, {date} — reviewed by the editor",
+  "lab_illustration_badge": "Illustration — AI-generated art, not a computed result",
+  "lab_illustration_credit": "AI-generated illustration, {date} — reviewed by the editor",
   "lab_report_print": "Lab report",
   "lab_report_aria_print": "Print or save this notebook as a PDF lab report",
   "lab_report_card": "Share card",
-  "lab_report_aria_card": "Download a shareable image card of this notebook"
+  "lab_report_aria_card": "Download a shareable image card of this notebook",
+  "credits_used_route_lab": "Physics Lab",
+  "colophon_lab_illustrations": "Physics Lab illustrations"
 }

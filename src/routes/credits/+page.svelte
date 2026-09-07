@@ -119,6 +119,8 @@
         return m.credits_used_route_logos();
       case 'textures':
         return m.credits_used_route_textures();
+      case 'lab':
+        return m.credits_used_route_lab();
       default:
         return key;
     }

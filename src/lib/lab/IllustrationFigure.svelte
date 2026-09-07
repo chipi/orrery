@@ -30,7 +30,6 @@
     <span class="illus__badge">{t('lab.illustration.badge')}</span>
     <span class="illus__credit">
       {t('lab.illustration.credit', {
-        model: illustration.model,
         date: illustration.generated,
       })}
     </span>

@@ -2835,10 +2835,12 @@
   "lab_ask_callback_denied": "यह Google खाता बीटा सूची में नहीं है, इसलिए प्रश्न बॉक्स लॉक रहता है — लैब में सब कुछ बिना इसके काम करता है।",
   "lab_ask_callback_error": "साइन-इन पूरा नहीं हुआ — कृपया फिर से कोशिश करें।",
   "lab_ask_callback_back": "लैब में वापस",
-  "lab_illustration_badge": "चित्रण — जनित कला, कम्प्यूटेड परिणाम नहीं",
-  "lab_illustration_credit": "{model} के साथ जनित, {date} — संपादक द्वारा समीक्षित",
+  "lab_illustration_badge": "चित्र — AI-जनित कला, परिकलित परिणाम नहीं",
+  "lab_illustration_credit": "AI-जनित चित्र, {date} — संपादक द्वारा समीक्षित",
   "lab_report_print": "लैब रिपोर्ट",
   "lab_report_aria_print": "इस नोटबुक को PDF लैब रिपोर्ट के रूप में प्रिंट या सहेजें",
   "lab_report_card": "साझा कार्ड",
-  "lab_report_aria_card": "इस नोटबुक का साझेयोग्य छवि कार्ड डाउनलोड करें"
+  "lab_report_aria_card": "इस नोटबुक का साझेयोग्य छवि कार्ड डाउनलोड करें",
+  "credits_used_route_lab": "भौतिकी प्रयोगशाला",
+  "colophon_lab_illustrations": "भौतिकी प्रयोगशाला चित्र"
 }

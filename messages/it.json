@@ -2835,10 +2835,12 @@
   "lab_ask_callback_denied": "Questo account Google non è nella lista beta, quindi la casella di domande resta bloccata — tutto il resto del Lab funziona senza di essa.",
   "lab_ask_callback_error": "L'accesso non è stato completato — prova di nuovo.",
   "lab_ask_callback_back": "Torna al Lab",
-  "lab_illustration_badge": "Illustrazione — arte generata, non un risultato calcolato",
-  "lab_illustration_credit": "Generato con {model}, {date} — revisionato dall'editore",
+  "lab_illustration_badge": "Illustrazione — arte generata da IA, non un risultato calcolato",
+  "lab_illustration_credit": "Illustrazione generata da IA, {date} — revisionata dall'editore",
   "lab_report_print": "Rapporto di laboratorio",
   "lab_report_aria_print": "Stampa o salva questo notebook come rapporto di laboratorio in PDF",
   "lab_report_card": "Scheda di condivisione",
-  "lab_report_aria_card": "Scarica una scheda immagine condivisibile di questo notebook"
+  "lab_report_aria_card": "Scarica una scheda immagine condivisibile di questo notebook",
+  "credits_used_route_lab": "Laboratorio di Fisica",
+  "colophon_lab_illustrations": "Illustrazioni del Laboratorio di Fisica"
 }

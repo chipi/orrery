@@ -2835,10 +2835,12 @@
   "lab_ask_callback_denied": "Dieses Google-Konto steht nicht auf der Beta-Liste, daher bleibt die Frage-Box gesperrt — alles andere im Lab funktioniert ohne sie.",
   "lab_ask_callback_error": "Anmeldung nicht abgeschlossen — bitte versuche es erneut.",
   "lab_ask_callback_back": "Zurück zum Lab",
-  "lab_illustration_badge": "Illustration — generierte Kunst, kein berechnetes Ergebnis",
-  "lab_illustration_credit": "Generiert mit {model}, {date} — von der Redaktion überprüft",
+  "lab_illustration_badge": "Illustration — KI-generierte Kunst, kein berechnetes Ergebnis",
+  "lab_illustration_credit": "KI-generierte Illustration, {date} — von der Redaktion geprüft",
   "lab_report_print": "Laborbericht",
   "lab_report_aria_print": "Dieses Notizbuch als PDF-Laborbericht drucken oder speichern",
   "lab_report_card": "Teilen-Karte",
-  "lab_report_aria_card": "Ein teilbares Bildkartenformat dieses Notizbuches herunterladen"
+  "lab_report_aria_card": "Ein teilbares Bildkartenformat dieses Notizbuches herunterladen",
+  "credits_used_route_lab": "Physik-Labor",
+  "colophon_lab_illustrations": "Physik-Labor-Illustrationen"
 }

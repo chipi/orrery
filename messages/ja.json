@@ -2835,10 +2835,12 @@
   "lab_ask_callback_denied": "この Google アカウントはベータリストに登録されていないため、質問ボックスはロックされています — Lab の他の機能は接続なしで動作します。",
   "lab_ask_callback_error": "サインインが完了しませんでした — もう一度試してください。",
   "lab_ask_callback_back": "Lab に戻る",
-  "lab_illustration_badge": "イラスト — 生成アート、計算結果ではありません",
-  "lab_illustration_credit": "{model} で生成、{date} — エディターによるレビュー済み",
+  "lab_illustration_badge": "イラスト — AI生成アート、計算結果ではありません",
+  "lab_illustration_credit": "AI生成イラスト、{date} — エディターにより確認済み",
   "lab_report_print": "ラボレポート",
   "lab_report_aria_print": "このノートブックを PDF ラボレポートとして印刷または保存",
   "lab_report_card": "シェアカード",
-  "lab_report_aria_card": "このノートブックの共有可能な画像カードをダウンロード"
+  "lab_report_aria_card": "このノートブックの共有可能な画像カードをダウンロード",
+  "credits_used_route_lab": "物理ラボ",
+  "colophon_lab_illustrations": "物理ラボ イラスト"
 }

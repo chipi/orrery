@@ -2835,10 +2835,12 @@
   "lab_ask_callback_denied": "Esta cuenta de Google no está en la lista beta, así que el cuadro de preguntas permanece bloqueado — todo lo demás en el Laboratorio funciona sin él.",
   "lab_ask_callback_error": "El inicio de sesión no se completó — por favor, inténtalo de nuevo.",
   "lab_ask_callback_back": "Volver al Laboratorio",
-  "lab_illustration_badge": "Ilustración — arte generado, no un resultado computado",
-  "lab_illustration_credit": "Generado con {model}, {date} — revisado por el editor",
+  "lab_illustration_badge": "Ilustración — arte generado por IA, no un resultado calculado",
+  "lab_illustration_credit": "Ilustración generada por IA, {date} — revisada por la redacción",
   "lab_report_print": "Informe de laboratorio",
   "lab_report_aria_print": "Imprimir o guardar este cuaderno como un informe de laboratorio en PDF",
   "lab_report_card": "Tarjeta para compartir",
-  "lab_report_aria_card": "Descargar una tarjeta de imagen compartible de este cuaderno"
+  "lab_report_aria_card": "Descargar una tarjeta de imagen compartible de este cuaderno",
+  "credits_used_route_lab": "Laboratorio de Física",
+  "colophon_lab_illustrations": "Ilustraciones del Laboratorio de Física"
 }

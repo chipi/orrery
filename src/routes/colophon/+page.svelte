@@ -23,6 +23,7 @@
     anatomy_art: Diagram[];
     diagrams_science: Diagram[];
     posters: Poster[];
+    lab_illustrations: Diagram[];
     models3d: Item[];
     capsules: Item[];
     canvas2d: Item[];
@@ -139,6 +140,36 @@
         {/each}
       </ul>
     </section>
+
+    <!-- Physics Lab illustrations: ORRERY originals, AI-generated (/lab).
+         Renders only once an approved batch lands (empty at v0.9 ship). -->
+    {#if data.lab_illustrations && data.lab_illustrations.length > 0}
+      <section class="block" aria-labelledby="sec-lab-illustrations">
+        <h2 id="sec-lab-illustrations">
+          {m.colophon_lab_illustrations()}<span class="count">{data.lab_illustrations.length}</span>
+        </h2>
+        <p class="block-note">
+          The <a href="{base}/lab">Physics Lab</a>'s goal illustrations are ORRERY-original art,
+          AI-generated to a house brief, then reviewed image-by-image in-house before shipping. They
+          are honest illustration — labelled as such beside the kernel's computed figures, never
+          presented as a computed result.
+        </p>
+        <ul class="thumb-grid">
+          {#each data.lab_illustrations as d (d.file)}
+            <li class="thumb-card">
+              <button
+                type="button"
+                class="thumb-open"
+                onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: '/lab' })}
+              >
+                <img src={srcOf(d.file)} alt={d.title} loading="lazy" decoding="async" />
+              </button>
+              <span class="thumb-title">{d.title}</span>
+            </li>
+          {/each}
+        </ul>
+      </section>
+    {/if}
 
     <!-- Hand-authored SVG diagrams: real thumbnails. -->
     <section class="block" aria-labelledby="sec-diagrams">

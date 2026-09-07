@@ -2835,10 +2835,12 @@
   "lab_ask_callback_denied": "该Google账户不在测试版名单中，提问框保持锁定——实验室的其他功能无需此权限。",
   "lab_ask_callback_error": "登录未完成——请重试。",
   "lab_ask_callback_back": "返回实验室",
-  "lab_illustration_badge": "插图 — 生成艺术，非计算结果",
-  "lab_illustration_credit": "由 {model} 生成于 {date} — 由编辑审阅",
+  "lab_illustration_badge": "插图 — AI生成艺术作品，非计算结果",
+  "lab_illustration_credit": "AI生成插图，{date} — 由编辑审核",
   "lab_report_print": "实验室报告",
   "lab_report_aria_print": "将此笔记本打印或保存为 PDF 实验室报告",
   "lab_report_card": "分享卡片",
-  "lab_report_aria_card": "下载此笔记本的可分享图像卡片"
+  "lab_report_aria_card": "下载此笔记本的可分享图像卡片",
+  "credits_used_route_lab": "物理实验室",
+  "colophon_lab_illustrations": "物理实验室插图"
 }

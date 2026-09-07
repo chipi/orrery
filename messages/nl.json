@@ -2835,10 +2835,12 @@
   "lab_ask_callback_denied": "Dit Google-account staat niet op de bètalijst, dus het vraagvak blijft vergrendeld — alles anders in het Lab werkt zonder.",
   "lab_ask_callback_error": "Aanmelding is niet voltooid — probeer het opnieuw.",
   "lab_ask_callback_back": "Terug naar het Lab",
-  "lab_illustration_badge": "Illustratie — gegenereerde kunst, geen berekend resultaat",
-  "lab_illustration_credit": "Gegenereerd met {model}, {date} — gereviewd door de redactie",
+  "lab_illustration_badge": "Illustratie — AI-gegenereerde kunst, geen berekend resultaat",
+  "lab_illustration_credit": "AI-gegenereerde illustratie, {date} — gecontroleerd door de redacteur",
   "lab_report_print": "Labrapport",
   "lab_report_aria_print": "Dit notitieboek als PDF-labrapport afdrukken of opslaan",
   "lab_report_card": "Deelkaart",
-  "lab_report_aria_card": "Een deelbaar afbeeldingskaartje van dit notitieboek downloaden"
+  "lab_report_aria_card": "Een deelbaar afbeeldingskaartje van dit notitieboek downloaden",
+  "credits_used_route_lab": "Fysica Lab",
+  "colophon_lab_illustrations": "Fysica Lab illustraties"
 }

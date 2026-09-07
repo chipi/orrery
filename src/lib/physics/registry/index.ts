@@ -5027,6 +5027,9 @@ export const issPass: FormulaDef<{ latitudeDeg: number; longitudeDeg: number; da
   domain: 'satellite',
   tier: 5,
   prereqs: ['visibility-window'],
+  // Surfaces the TLE-propagation source (Kepler + secular J2, from a NORAD
+  // element set) as a science-explainer link on the card (slice I attribution).
+  citationKey: 'orbits/keplerian-orbit',
   latex: '\\text{propagate TLE} \\rightarrow \\text{next pass} > 10°',
   inputs: [
     {

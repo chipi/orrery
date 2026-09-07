@@ -2842,5 +2842,7 @@
   "lab_report_card": "Deelkaart",
   "lab_report_aria_card": "Een deelbaar afbeeldingskaartje van dit notitieboek downloaden",
   "credits_used_route_lab": "Fysica Lab",
-  "colophon_lab_illustrations": "Fysica Lab illustraties"
+  "colophon_lab_illustrations": "Fysica Lab illustraties",
+  "lab_ui_tle_age": "Elementset {days} dagen oud",
+  "lab_ui_tle_stale": "positie bij benadering"
 }

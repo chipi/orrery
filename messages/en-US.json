@@ -1066,6 +1066,8 @@
   "lab_ui_subtitle": "First-principles physics, one goal at a time",
   "lab_ui_title": "Physics Lab",
   "lab_ui_unknown_formula": "Unknown formula: {id}",
+  "lab_ui_tle_age": "Element set {days} days old",
+  "lab_ui_tle_stale": "position approximate",
   "lab_ui_view_canvas": "Canvas",
   "lab_ui_view_notebook": "Notebook",
   "lab_ui_view_switch_aria": "Workspace view",

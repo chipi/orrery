@@ -822,6 +822,17 @@ describe('G9 catch-the-iss · ground track + visibility', () => {
     expect(r.values.minutesUntilPass.value).toBeLessThanOrEqual(48 * 60);
     // the snapshot-TLE staleness is disclosed on the result.
     expect(r.assumptions).toContain('lab.assume.snapshot-tle');
+    // epochAgeDays is emitted (H5 · #464): ~1 day from the 2026-07-20 bundle epoch.
+    expect(r.epochAgeDays).toBeGreaterThanOrEqual(0);
+    expect(r.epochAgeDays).toBeLessThan(5);
+    // a date far past the epoch discloses staleness beyond the 14-day bound.
+    const far = compute('iss-pass', {
+      latitudeDeg: 40,
+      longitudeDeg: -74,
+      dateIso: '2026-12-01',
+      tle: stationTleBlock('iss'),
+    });
+    expect(far.epochAgeDays).toBeGreaterThan(14);
     // an equatorial site below the 51.6° inclination band still gets passes; a polar one may not.
     expect(
       compute('iss-pass', {

@@ -2842,5 +2842,7 @@
   "lab_report_card": "Tarjeta para compartir",
   "lab_report_aria_card": "Descargar una tarjeta de imagen compartible de este cuaderno",
   "credits_used_route_lab": "Laboratorio de Física",
-  "colophon_lab_illustrations": "Ilustraciones del Laboratorio de Física"
+  "colophon_lab_illustrations": "Ilustraciones del Laboratorio de Física",
+  "lab_ui_tle_age": "Conjunto de elementos con {days} días de antigüedad",
+  "lab_ui_tle_stale": "posición aproximada"
 }

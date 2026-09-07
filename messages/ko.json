@@ -2842,5 +2842,7 @@
   "lab_report_card": "공유 카드",
   "lab_report_aria_card": "이 노트북의 공유 가능한 이미지 카드 다운로드하기",
   "credits_used_route_lab": "물리 실험실",
-  "colophon_lab_illustrations": "물리 실험실 일러스트레이션"
+  "colophon_lab_illustrations": "물리 실험실 일러스트레이션",
+  "lab_ui_tle_age": "요소 세트 {days}일 경과",
+  "lab_ui_tle_stale": "위치 근사값"
 }

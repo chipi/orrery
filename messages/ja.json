@@ -2842,5 +2842,7 @@
   "lab_report_card": "シェアカード",
   "lab_report_aria_card": "このノートブックの共有可能な画像カードをダウンロード",
   "credits_used_route_lab": "物理ラボ",
-  "colophon_lab_illustrations": "物理ラボ イラスト"
+  "colophon_lab_illustrations": "物理ラボ イラスト",
+  "lab_ui_tle_age": "要素セット {days} 日前のデータ",
+  "lab_ui_tle_stale": "位置は近似値"
 }

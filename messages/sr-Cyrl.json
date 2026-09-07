@@ -2842,5 +2842,7 @@
   "lab_report_card": "Картица за дељење",
   "lab_report_aria_card": "Преузми дељиву картицу слике овог белешника",
   "credits_used_route_lab": "Лабораторија физике",
-  "colophon_lab_illustrations": "Илустрације Лабораторије физике"
+  "colophon_lab_illustrations": "Илустрације Лабораторије физике",
+  "lab_ui_tle_age": "Скуп елемената стар {days} дана",
+  "lab_ui_tle_stale": "позиција приближна"
 }

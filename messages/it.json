@@ -2842,5 +2842,7 @@
   "lab_report_card": "Scheda di condivisione",
   "lab_report_aria_card": "Scarica una scheda immagine condivisibile di questo notebook",
   "credits_used_route_lab": "Laboratorio di Fisica",
-  "colophon_lab_illustrations": "Illustrazioni del Laboratorio di Fisica"
+  "colophon_lab_illustrations": "Illustrazioni del Laboratorio di Fisica",
+  "lab_ui_tle_age": "Set di elementi di {days} giorni",
+  "lab_ui_tle_stale": "posizione approssimativa"
 }

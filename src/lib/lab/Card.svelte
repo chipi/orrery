@@ -255,6 +255,21 @@
       </div>
     {/if}
   </section>
+
+  <!-- Data-staleness disclosure (H5 · #464): when a result carries epochAgeDays
+       (TLE / ephemeris), show how old the element set is; past staleAfterDays,
+       flag the readout as approximate. Honest even on a container that hasn't
+       redeployed since the last refresh. -->
+  {#if !blocked && result?.status.ok && result.epochAgeDays != null}
+    {@const stale =
+      formula.staleAfterDays != null && result.epochAgeDays > formula.staleAfterDays}
+    <p class="card__staleness" class:card__staleness--stale={stale}>
+      {t('lab.ui.tle-age', { days: Math.round(result.epochAgeDays) })}
+      {#if stale}
+        <span class="card__staleness-flag">{t('lab.ui.tle-stale')}</span>
+      {/if}
+    </p>
+  {/if}
 </article>
 
 <style>
@@ -274,6 +289,22 @@
 
   .card--fail {
     border-color: rgba(193, 68, 14, 0.35);
+  }
+
+  /* Data-staleness disclosure (H5) — subtle when fresh, mars-red when stale. */
+  .card__staleness {
+    margin: 0.5rem 0 0;
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    color: rgba(232, 232, 232, 0.5);
+  }
+  .card__staleness--stale {
+    color: #c1440e;
+  }
+  .card__staleness-flag {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 0.35rem;
   }
 
   /* ─── Header ─────────────────────────────────────────────────────────── */

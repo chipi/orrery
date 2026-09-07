@@ -1898,7 +1898,9 @@
     "lab_report_card": "साझा कार्ड",
     "lab_report_aria_card": "इस नोटबुक का साझेयोग्य छवि कार्ड डाउनलोड करें",
     "credits_used_route_lab": "भौतिकी प्रयोगशाला",
-    "colophon_lab_illustrations": "भौतिकी प्रयोगशाला चित्र"
+    "colophon_lab_illustrations": "भौतिकी प्रयोगशाला चित्र",
+    "lab_ui_tle_age": "तत्व समुच्चय {days} दिन पुराना है",
+    "lab_ui_tle_stale": "स्थिति अनुमानित है"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3660,7 +3662,9 @@
     "lab_report_card": "シェアカード",
     "lab_report_aria_card": "このノートブックの共有可能な画像カードをダウンロード",
     "credits_used_route_lab": "物理ラボ",
-    "colophon_lab_illustrations": "物理ラボ イラスト"
+    "colophon_lab_illustrations": "物理ラボ イラスト",
+    "lab_ui_tle_age": "要素セット {days} 日前のデータ",
+    "lab_ui_tle_stale": "位置は近似値"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5602,7 +5606,9 @@
     "lab_report_card": "بطاقة المشاركة",
     "lab_report_aria_card": "نزّل صورة بطاقة قابلة للمشاركة من دفتر الملاحظات هذا",
     "credits_used_route_lab": "معمل الفيزياء",
-    "colophon_lab_illustrations": "رسومات معمل الفيزياء"
+    "colophon_lab_illustrations": "رسومات معمل الفيزياء",
+    "lab_ui_tle_age": "مجموعة العناصر عمرها {days} يوم",
+    "lab_ui_tle_stale": "الموضع تقريبي"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -7366,7 +7372,9 @@
     "lab_report_card": "공유 카드",
     "lab_report_aria_card": "이 노트북의 공유 가능한 이미지 카드 다운로드하기",
     "credits_used_route_lab": "물리 실험실",
-    "colophon_lab_illustrations": "물리 실험실 일러스트레이션"
+    "colophon_lab_illustrations": "물리 실험실 일러스트레이션",
+    "lab_ui_tle_age": "요소 세트 {days}일 경과",
+    "lab_ui_tle_stale": "위치 근사값"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -8953,7 +8961,9 @@
     "lab_report_card": "Teilen-Karte",
     "lab_report_aria_card": "Ein teilbares Bildkartenformat dieses Notizbuches herunterladen",
     "credits_used_route_lab": "Physik-Labor",
-    "colophon_lab_illustrations": "Physik-Labor-Illustrationen"
+    "colophon_lab_illustrations": "Physik-Labor-Illustrationen",
+    "lab_ui_tle_age": "Elementset {days} Tage alt",
+    "lab_ui_tle_stale": "Position ungefähr"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -10479,7 +10489,9 @@
     "lab_report_card": "Carte de partage",
     "lab_report_aria_card": "Télécharger une image de carte partageable de ce carnet",
     "credits_used_route_lab": "Laboratoire de Physique",
-    "colophon_lab_illustrations": "Illustrations du Laboratoire de Physique"
+    "colophon_lab_illustrations": "Illustrations du Laboratoire de Physique",
+    "lab_ui_tle_age": "Ensemble d'éléments datant de {days} jours",
+    "lab_ui_tle_stale": "position approximative"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -11972,7 +11984,9 @@
     "lab_report_card": "Scheda di condivisione",
     "lab_report_aria_card": "Scarica una scheda immagine condivisibile di questo notebook",
     "credits_used_route_lab": "Laboratorio di Fisica",
-    "colophon_lab_illustrations": "Illustrazioni del Laboratorio di Fisica"
+    "colophon_lab_illustrations": "Illustrazioni del Laboratorio di Fisica",
+    "lab_ui_tle_age": "Set di elementi di {days} giorni",
+    "lab_ui_tle_stale": "posizione approssimativa"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -13464,7 +13478,9 @@
     "lab_report_card": "Tarjeta para compartir",
     "lab_report_aria_card": "Descargar una tarjeta de imagen compartible de este cuaderno",
     "credits_used_route_lab": "Laboratorio de Física",
-    "colophon_lab_illustrations": "Ilustraciones del Laboratorio de Física"
+    "colophon_lab_illustrations": "Ilustraciones del Laboratorio de Física",
+    "lab_ui_tle_age": "Conjunto de elementos con {days} días de antigüedad",
+    "lab_ui_tle_stale": "posición aproximada"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -14965,7 +14981,9 @@
     "lab_report_card": "Deelkaart",
     "lab_report_aria_card": "Een deelbaar afbeeldingskaartje van dit notitieboek downloaden",
     "credits_used_route_lab": "Fysica Lab",
-    "colophon_lab_illustrations": "Fysica Lab illustraties"
+    "colophon_lab_illustrations": "Fysica Lab illustraties",
+    "lab_ui_tle_age": "Elementset {days} dagen oud",
+    "lab_ui_tle_stale": "positie bij benadering"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -16730,7 +16748,9 @@
     "lab_report_card": "Карточка поделиться",
     "lab_report_aria_card": "Загрузить карточку изображения этой записной книжки для общего доступа",
     "credits_used_route_lab": "Лаборатория физики",
-    "colophon_lab_illustrations": "Иллюстрации Лаборатории физики"
+    "colophon_lab_illustrations": "Иллюстрации Лаборатории физики",
+    "lab_ui_tle_age": "Набор элементов возрастом {days} дней",
+    "lab_ui_tle_stale": "позиция приблизительна"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -18539,7 +18559,9 @@
     "lab_report_card": "分享卡片",
     "lab_report_aria_card": "下载此笔记本的可分享图像卡片",
     "credits_used_route_lab": "物理实验室",
-    "colophon_lab_illustrations": "物理实验室插图"
+    "colophon_lab_illustrations": "物理实验室插图",
+    "lab_ui_tle_age": "根数据集已有 {days} 天",
+    "lab_ui_tle_stale": "位置近似"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -20219,7 +20241,9 @@
     "lab_report_card": "Картица за дељење",
     "lab_report_aria_card": "Преузми дељиву картицу слике овог белешника",
     "credits_used_route_lab": "Лабораторија физике",
-    "colophon_lab_illustrations": "Илустрације Лабораторије физике"
+    "colophon_lab_illustrations": "Илустрације Лабораторије физике",
+    "lab_ui_tle_age": "Скуп елемената стар {days} дана",
+    "lab_ui_tle_stale": "позиција приближна"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -21718,6 +21742,8 @@
     "lab_report_card": "Cartão para compartilhar",
     "lab_report_aria_card": "Baixar um cartão de imagem compartilhável deste notebook",
     "credits_used_route_lab": "Laboratório de Física",
-    "colophon_lab_illustrations": "Ilustrações do Laboratório de Física"
+    "colophon_lab_illustrations": "Ilustrações do Laboratório de Física",
+    "lab_ui_tle_age": "Conjunto de elementos com {days} dias",
+    "lab_ui_tle_stale": "posição aproximada"
   }
 }

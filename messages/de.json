@@ -2842,5 +2842,7 @@
   "lab_report_card": "Teilen-Karte",
   "lab_report_aria_card": "Ein teilbares Bildkartenformat dieses Notizbuches herunterladen",
   "credits_used_route_lab": "Physik-Labor",
-  "colophon_lab_illustrations": "Physik-Labor-Illustrationen"
+  "colophon_lab_illustrations": "Physik-Labor-Illustrationen",
+  "lab_ui_tle_age": "Elementset {days} Tage alt",
+  "lab_ui_tle_stale": "Position ungefähr"
 }

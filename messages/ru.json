@@ -2842,5 +2842,7 @@
   "lab_report_card": "Карточка поделиться",
   "lab_report_aria_card": "Загрузить карточку изображения этой записной книжки для общего доступа",
   "credits_used_route_lab": "Лаборатория физики",
-  "colophon_lab_illustrations": "Иллюстрации Лаборатории физики"
+  "colophon_lab_illustrations": "Иллюстрации Лаборатории физики",
+  "lab_ui_tle_age": "Набор элементов возрастом {days} дней",
+  "lab_ui_tle_stale": "позиция приблизительна"
 }

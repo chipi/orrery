@@ -143,6 +143,9 @@ function collectAllKeys(): string[] {
     'lab.ui.view-canvas',
     'lab.ui.view-notebook',
     'lab.ui.view-switch-aria',
+    // Data-staleness disclosure (H5 · #464) — rendered via t() in Card.svelte.
+    'lab.ui.tle-age',
+    'lab.ui.tle-stale',
     // Ask view (F · #535) — UI chrome the registry can't know about.
     'lab.ask.aria-view',
     'lab.ask.aria-input',

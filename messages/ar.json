@@ -2842,5 +2842,7 @@
   "lab_report_card": "بطاقة المشاركة",
   "lab_report_aria_card": "نزّل صورة بطاقة قابلة للمشاركة من دفتر الملاحظات هذا",
   "credits_used_route_lab": "معمل الفيزياء",
-  "colophon_lab_illustrations": "رسومات معمل الفيزياء"
+  "colophon_lab_illustrations": "رسومات معمل الفيزياء",
+  "lab_ui_tle_age": "مجموعة العناصر عمرها {days} يوم",
+  "lab_ui_tle_stale": "الموضع تقريبي"
 }

@@ -2842,5 +2842,7 @@
   "lab_report_card": "分享卡片",
   "lab_report_aria_card": "下载此笔记本的可分享图像卡片",
   "credits_used_route_lab": "物理实验室",
-  "colophon_lab_illustrations": "物理实验室插图"
+  "colophon_lab_illustrations": "物理实验室插图",
+  "lab_ui_tle_age": "根数据集已有 {days} 天",
+  "lab_ui_tle_stale": "位置近似"
 }

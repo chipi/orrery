@@ -5034,6 +5034,9 @@ export const issPass: FormulaDef<{
   // Surfaces the TLE-propagation source (Kepler + secular J2, from a NORAD
   // element set) as a science-explainer link on the card (slice I attribution).
   citationKey: 'orbits/keplerian-orbit',
+  // TLE accuracy degrades over days from its epoch; past this the result emits
+  // an epochAgeDays disclosure ("element set N days old — approximate"). H5/#464.
+  staleAfterDays: 14,
   latex: '\\text{propagate TLE} \\rightarrow \\text{next pass} > 10°',
   inputs: [
     {
@@ -5109,6 +5112,10 @@ export const issPass: FormulaDef<{
         assumptions: ['lab.assume.snapshot-tle'],
       } satisfies FormulaResult;
     }
+    // How far the propagation reaches from the element set's epoch — the honesty
+    // number the Lab surfaces against staleAfterDays (compute-time, vs the
+    // requested date, so a container that hasn't redeployed still discloses age).
+    const epochAgeDays = Math.abs(julianDay(from) - parsedTle.epochJd);
     const pass = nextPassForTle(parsedTle, from, latitudeDeg, longitudeDeg, {
       hoursAhead: 48,
       minMaxAltDeg: 10,
@@ -5119,6 +5126,7 @@ export const issPass: FormulaDef<{
         values,
         status: { ok: false, reasonKey: 'lab.f.isspass.err-none' },
         assumptions: ['lab.assume.snapshot-tle', 'lab.assume.kepler-j2'],
+        epochAgeDays,
       } satisfies FormulaResult;
     }
     const minutes = (pass.start.getTime() - from.getTime()) / 60000;
@@ -5130,6 +5138,7 @@ export const issPass: FormulaDef<{
       },
       status: { ok: true },
       assumptions: ['lab.assume.snapshot-tle', 'lab.assume.kepler-j2'],
+      epochAgeDays,
     } satisfies FormulaResult;
   },
 };

@@ -2842,5 +2842,7 @@
   "lab_report_card": "Carte de partage",
   "lab_report_aria_card": "Télécharger une image de carte partageable de ce carnet",
   "credits_used_route_lab": "Laboratoire de Physique",
-  "colophon_lab_illustrations": "Illustrations du Laboratoire de Physique"
+  "colophon_lab_illustrations": "Illustrations du Laboratoire de Physique",
+  "lab_ui_tle_age": "Ensemble d'éléments datant de {days} jours",
+  "lab_ui_tle_stale": "position approximative"
 }

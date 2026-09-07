@@ -2842,5 +2842,7 @@
   "lab_report_card": "साझा कार्ड",
   "lab_report_aria_card": "इस नोटबुक का साझेयोग्य छवि कार्ड डाउनलोड करें",
   "credits_used_route_lab": "भौतिकी प्रयोगशाला",
-  "colophon_lab_illustrations": "भौतिकी प्रयोगशाला चित्र"
+  "colophon_lab_illustrations": "भौतिकी प्रयोगशाला चित्र",
+  "lab_ui_tle_age": "तत्व समुच्चय {days} दिन पुराना है",
+  "lab_ui_tle_stale": "स्थिति अनुमानित है"
 }

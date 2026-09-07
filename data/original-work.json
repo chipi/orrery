@@ -762,7 +762,13 @@
       "cover": false
     }
   ],
+  "lab_illustrations": [],
   "diagrams_science": [
+    {
+      "title": "Cosmology",
+      "file": "/diagrams/science/_cover-cosmology.svg",
+      "cover": true
+    },
     {
       "title": "Exoplanets",
       "file": "/diagrams/science/_cover-exoplanets.svg",
@@ -844,6 +850,11 @@
       "cover": false
     },
     {
+      "title": "Ascent Guidance",
+      "file": "/diagrams/science/ascent-guidance.webp",
+      "cover": false
+    },
+    {
       "title": "Asteroid Belt",
       "file": "/diagrams/science/asteroid-belt.webp",
       "cover": false
@@ -919,8 +930,18 @@
       "cover": false
     },
     {
+      "title": "Entry Footprint",
+      "file": "/diagrams/science/entry-footprint.webp",
+      "cover": false
+    },
+    {
       "title": "Entry Heating",
       "file": "/diagrams/science/entry-heating.webp",
+      "cover": false
+    },
+    {
+      "title": "Escape Velocity",
+      "file": "/diagrams/science/escape-velocity.webp",
       "cover": false
     },
     {
@@ -1109,6 +1130,11 @@
       "cover": false
     },
     {
+      "title": "Lifting Entry",
+      "file": "/diagrams/science/lifting-entry.webp",
+      "cover": false
+    },
+    {
       "title": "Light Minute",
       "file": "/diagrams/science/light-minute.webp",
       "cover": false
@@ -1219,6 +1245,11 @@
       "cover": false
     },
     {
+      "title": "Skip Entry",
+      "file": "/diagrams/science/skip-entry.webp",
+      "cover": false
+    },
+    {
       "title": "Skycrane",
       "file": "/diagrams/science/skycrane.webp",
       "cover": false
@@ -1246,6 +1277,11 @@
     {
       "title": "Staged Combustion",
       "file": "/diagrams/science/staged-combustion.webp",
+      "cover": false
+    },
+    {
+      "title": "Synodic Period",
+      "file": "/diagrams/science/synodic-period.webp",
       "cover": false
     },
     {
@@ -2377,16 +2413,35 @@
       "what": "Every guided + extended tour episode is originally written for Orrery; only the text-to-speech voices are third-party (credited on the Credits page).",
       "where": "Take the tour",
       "route": "/credits"
+    },
+    {
+      "title": "Physics Lab formula registry",
+      "what": "The Physics Lab is built on 64 original formula definitions — each with its equation, parameter ranges, fail-honest reasoning, stated assumptions, and computed-figure spec — authored in-house over real physics. The reference constants they compute from (JPL/IAU/EGM96) are cited on the Credits page.",
+      "where": "Physics Lab",
+      "route": "/lab"
+    },
+    {
+      "title": "Physics Lab goals",
+      "what": "25 original learning-goal ladders that chain the formulas into narrated journeys — from launching a rocket to touching a comet — with a written practical-connection panel for each.",
+      "where": "Physics Lab",
+      "route": "/lab"
+    },
+    {
+      "title": "Physics Lab interface, in 14 languages",
+      "what": "Every Lab string — formula titles, parameter labels, assumptions, narration, error states — is originally authored and machine-translated across all 14 supported locales.",
+      "where": "Physics Lab",
+      "route": "/lab"
     }
   ],
   "totals": {
     "anatomy_art": 152,
-    "diagrams_science": 107,
+    "lab_illustrations": 0,
+    "diagrams_science": 114,
     "posters": 27,
     "models3d": 109,
     "capsules": 8,
     "canvas2d": 6,
     "ui": 4,
-    "writing": 8
+    "writing": 11
   }
 }

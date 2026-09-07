@@ -117,6 +117,34 @@
       "used_on": [
         "explore"
       ]
+    },
+    {
+      "id": "celestrak",
+      "name": "CelesTrak",
+      "catalog": "NORAD GP element sets (gp.php API)",
+      "category": "other",
+      "description": "Two-line element sets for the ISS (NORAD 25544) and Tiangong (48274), refreshed daily and cached, that drive the Physics Lab's satellite-pass prediction (when the station next flies over you, how high, from which bearing).",
+      "source_url": "https://celestrak.org/",
+      "license_short": "PD-USGov",
+      "license_url": "https://celestrak.org/faq.php",
+      "license_rationale": "The underlying element sets originate from US Space Command (public domain); CelesTrak redistributes them and requests attribution as the source, which we give here.",
+      "used_on": [
+        "lab"
+      ]
+    },
+    {
+      "id": "jpl-iau-constants",
+      "name": "NASA JPL · IAU reference constants",
+      "catalog": "JPL Keplerian planetary elements (Standish) + IAU/EGM96/IUGG constants",
+      "category": "other",
+      "description": "The authoritative constants the Physics Lab kernel computes from: JPL's Keplerian elements for approximate planetary positions (Standish), IAU gravitational parameters and precession series, the EGM96 geopotential constant, and IUGG mean radii. The Lab's numbers are ours; these reference values are cited and real.",
+      "source_url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html",
+      "license_short": "PD-USGov",
+      "license_url": "https://www.jpl.nasa.gov/jpl-image-use-policy",
+      "license_rationale": "JPL/NASA reference data is US-Government public domain; the IAU/IUGG constants are published international-standard reference values, reusable with citation.",
+      "used_on": [
+        "lab"
+      ]
     }
   ]
 }

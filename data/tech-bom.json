@@ -3,7 +3,7 @@
   "specVersion": "1.5",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-07-07T15:28:22.057Z",
+    "timestamp": "2026-09-07T18:13:36.033Z",
     "tools": [
       {
         "vendor": "Orrery",
@@ -14,7 +14,7 @@
     "component": {
       "type": "application",
       "name": "orrery",
-      "version": "0.8.0-wip",
+      "version": "0.9.0-wip",
       "licenses": [
         {
           "license": {
@@ -90,7 +90,7 @@
     {
       "type": "library",
       "name": "@capacitor/app",
-      "version": "8.1.0",
+      "version": "8.1.1",
       "description": "The App API handles high level App state and events.For example, this API emits events when the app enters and leaves the foreground, handles deeplinks, opens other apps, and manages persisted plugin state.",
       "licenses": [
         {
@@ -180,6 +180,35 @@
     },
     {
       "type": "library",
+      "name": "@capacitor/filesystem",
+      "version": "8.1.3",
+      "description": "The Filesystem API provides a NodeJS-like API for working with files on the device.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/ionic-team/capacitor-filesystem"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@capacitor/haptics",
       "version": "8.0.2",
       "description": "The Haptics API provides physical feedback to the user through touch or vibration.",
@@ -210,7 +239,7 @@
     {
       "type": "library",
       "name": "@capacitor/ios",
-      "version": "8.4.1",
+      "version": "8.4.2",
       "description": "Capacitor: Cross-platform apps with JavaScript and the web",
       "licenses": [
         {
@@ -227,6 +256,35 @@
         {
           "type": "vcs",
           "url": "https://github.com/ionic-team/capacitor"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@capacitor/network",
+      "version": "8.0.1",
+      "description": "The Network API provides network and connectivity information.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/ionic-team/capacitor-plugins"
         }
       ],
       "properties": [
@@ -300,8 +358,74 @@
     },
     {
       "type": "library",
+      "name": "@modelcontextprotocol/sdk",
+      "version": "1.30.0",
+      "description": "Model Context Protocol implementation for TypeScript",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://modelcontextprotocol.io"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/modelcontextprotocol/typescript-sdk"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@sentry/capacitor",
+      "version": "4.2.0",
+      "description": "Official Sentry SDK for Capacitor",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/getsentry/sentry-capacitor"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/getsentry/sentry-capacitor"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@sentry/sveltekit",
-      "version": "10.63.0",
+      "version": "10.60.0",
       "description": "Official Sentry SDK for SvelteKit",
       "licenses": [
         {
@@ -366,8 +490,41 @@
     },
     {
       "type": "library",
+      "name": "jose",
+      "version": "6.2.10",
+      "description": "JWA, JWS, JWE, JWT, JWK, JWKS for Node.js, Browser, Cloudflare Workers, Deno, Bun, and other Web-interoperable runtimes",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/panva/jose"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/panva/jose"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "katex",
-      "version": "0.16.47",
+      "version": "0.17.0",
       "description": "Fast math typesetting for the web.",
       "licenses": [
         {
@@ -399,8 +556,41 @@
     },
     {
       "type": "library",
+      "name": "qrcode",
+      "version": "1.5.4",
+      "description": "QRCode / 2d Barcode api with both server side and client side support using canvas",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "http://github.com/soldair/node-qrcode"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/soldair/node-qrcode"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "three",
-      "version": "0.128.0",
+      "version": "0.185.1",
       "description": "JavaScript 3D library",
       "licenses": [
         {
@@ -964,6 +1154,63 @@
     },
     {
       "type": "library",
+      "name": "@capacitor/synapse",
+      "version": "1.0.4",
+      "description": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "externalReferences": [],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@hono/node-server",
+      "version": "2.1.1",
+      "description": "Node.js Adapter for Hono",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/honojs/node-server"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/honojs/node-server"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@jridgewell/gen-mapping",
       "version": "0.3.13",
       "description": "Generate source maps",
@@ -1163,7 +1410,7 @@
     {
       "type": "library",
       "name": "@opentelemetry/core",
-      "version": "2.9.0",
+      "version": "2.10.0",
       "description": "OpenTelemetry Core provides constants and utilities shared by all OpenTelemetry SDK packages.",
       "licenses": [
         {
@@ -1229,7 +1476,7 @@
     {
       "type": "library",
       "name": "@opentelemetry/resources",
-      "version": "2.9.0",
+      "version": "2.10.0",
       "description": "OpenTelemetry SDK resources",
       "licenses": [
         {
@@ -1262,7 +1509,7 @@
     {
       "type": "library",
       "name": "@opentelemetry/sdk-trace",
-      "version": "2.9.0",
+      "version": "2.10.0",
       "description": "OpenTelemetry Tracing",
       "licenses": [
         {
@@ -1295,7 +1542,7 @@
     {
       "type": "library",
       "name": "@opentelemetry/sdk-trace-base",
-      "version": "2.9.0",
+      "version": "2.10.0",
       "description": "OpenTelemetry Tracing",
       "licenses": [
         {
@@ -1328,7 +1575,7 @@
     {
       "type": "library",
       "name": "@opentelemetry/semantic-conventions",
-      "version": "1.42.0",
+      "version": "1.43.0",
       "description": "OpenTelemetry semantic conventions",
       "licenses": [
         {
@@ -1389,9 +1636,9 @@
     },
     {
       "type": "library",
-      "name": "@sentry/babel-plugin-component-annotate",
-      "version": "5.3.0",
-      "description": "A Babel plugin that annotates frontend components with additional data to enrich the experience in Sentry",
+      "name": "@rollup/rollup-darwin-arm64",
+      "version": "4.62.2",
+      "description": "Native bindings for Rollup",
       "licenses": [
         {
           "license": {
@@ -1402,11 +1649,11 @@
       "externalReferences": [
         {
           "type": "website",
-          "url": "https://github.com/getsentry/sentry-javascript-bundler-plugins/tree/main/packages/babel-plugin-component-annotate"
+          "url": "https://rollupjs.org/"
         },
         {
           "type": "vcs",
-          "url": "https://github.com/getsentry/sentry-javascript-bundler-plugins"
+          "url": "https://github.com/rollup/rollup"
         }
       ],
       "properties": [
@@ -1423,7 +1670,7 @@
     {
       "type": "library",
       "name": "@sentry/browser",
-      "version": "10.63.0",
+      "version": "10.60.0",
       "description": "Official Sentry SDK for browsers",
       "licenses": [
         {
@@ -1456,7 +1703,7 @@
     {
       "type": "library",
       "name": "@sentry/browser-utils",
-      "version": "10.63.0",
+      "version": "10.60.0",
       "description": "Browser Utilities for all Sentry JavaScript SDKs",
       "licenses": [
         {
@@ -1488,9 +1735,9 @@
     },
     {
       "type": "library",
-      "name": "@sentry/bundler-plugin-core",
-      "version": "5.3.0",
-      "description": "Sentry Bundler Plugin Core",
+      "name": "@sentry/bundler-plugins",
+      "version": "10.65.0",
+      "description": "Sentry Bundler Plugins",
       "licenses": [
         {
           "license": {
@@ -1501,11 +1748,11 @@
       "externalReferences": [
         {
           "type": "website",
-          "url": "https://github.com/getsentry/sentry-javascript-bundler-plugins/tree/main/packages/bundler-plugin-core"
+          "url": "https://github.com/getsentry/sentry-javascript/tree/main/packages/bundler-plugins"
         },
         {
           "type": "vcs",
-          "url": "https://github.com/getsentry/sentry-javascript-bundler-plugins"
+          "url": "https://github.com/getsentry/sentry-javascript"
         }
       ],
       "properties": [
@@ -1584,7 +1831,7 @@
     {
       "type": "library",
       "name": "@sentry/cloudflare",
-      "version": "10.63.0",
+      "version": "10.60.0",
       "description": "Official Sentry SDK for Cloudflare Workers and Pages",
       "licenses": [
         {
@@ -1617,7 +1864,7 @@
     {
       "type": "library",
       "name": "@sentry/conventions",
-      "version": "0.12.0",
+      "version": "0.15.1",
       "licenses": [
         {
           "license": {
@@ -1649,7 +1896,7 @@
     {
       "type": "library",
       "name": "@sentry/core",
-      "version": "10.63.0",
+      "version": "10.65.0",
       "description": "Base implementation for all Sentry JavaScript SDKs",
       "licenses": [
         {
@@ -1682,7 +1929,7 @@
     {
       "type": "library",
       "name": "@sentry/feedback",
-      "version": "10.63.0",
+      "version": "10.60.0",
       "description": "Sentry SDK integration for user feedback",
       "licenses": [
         {
@@ -1715,7 +1962,7 @@
     {
       "type": "library",
       "name": "@sentry/node",
-      "version": "10.63.0",
+      "version": "10.60.0",
       "description": "Sentry Node SDK using OpenTelemetry for performance instrumentation",
       "licenses": [
         {
@@ -1748,7 +1995,7 @@
     {
       "type": "library",
       "name": "@sentry/node-core",
-      "version": "10.63.0",
+      "version": "10.60.0",
       "description": "Sentry Node-Core SDK",
       "licenses": [
         {
@@ -1781,7 +2028,7 @@
     {
       "type": "library",
       "name": "@sentry/opentelemetry",
-      "version": "10.63.0",
+      "version": "10.60.0",
       "description": "Official Sentry utilities for OpenTelemetry",
       "licenses": [
         {
@@ -1814,7 +2061,7 @@
     {
       "type": "library",
       "name": "@sentry/replay",
-      "version": "10.63.0",
+      "version": "10.60.0",
       "description": "User replays for Sentry",
       "licenses": [
         {
@@ -1847,7 +2094,7 @@
     {
       "type": "library",
       "name": "@sentry/replay-canvas",
-      "version": "10.63.0",
+      "version": "10.60.0",
       "description": "Replay canvas integration",
       "licenses": [
         {
@@ -1879,41 +2126,8 @@
     },
     {
       "type": "library",
-      "name": "@sentry/rollup-plugin",
-      "version": "5.3.0",
-      "description": "Official Sentry Rollup plugin",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/getsentry/sentry-javascript-bundler-plugins/tree/main/packages/rollup-plugin"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/getsentry/sentry-javascript-bundler-plugins"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "@sentry/server-utils",
-      "version": "10.63.0",
+      "version": "10.60.0",
       "description": "Server Utilities for all Sentry JavaScript SDKs",
       "licenses": [
         {
@@ -1946,7 +2160,7 @@
     {
       "type": "library",
       "name": "@sentry/svelte",
-      "version": "10.63.0",
+      "version": "10.60.0",
       "description": "Official Sentry SDK for Svelte",
       "licenses": [
         {
@@ -1978,8 +2192,41 @@
     },
     {
       "type": "library",
+      "name": "@sentry/types",
+      "version": "10.60.0",
+      "description": "Types for all Sentry JavaScript SDKs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/getsentry/sentry-javascript/tree/master/packages/types"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/getsentry/sentry-javascript"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@sentry/vite-plugin",
-      "version": "5.3.0",
+      "version": "5.4.0",
       "description": "Official Sentry Vite plugin",
       "licenses": [
         {
@@ -2078,7 +2325,7 @@
     {
       "type": "library",
       "name": "@sveltejs/kit",
-      "version": "2.61.1",
+      "version": "2.69.2",
       "description": "SvelteKit is the fastest way to build Svelte apps",
       "licenses": [
         {
@@ -2111,39 +2358,7 @@
     {
       "type": "library",
       "name": "@sveltejs/vite-plugin-svelte",
-      "version": "4.0.4",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/sveltejs/vite-plugin-svelte#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/sveltejs/vite-plugin-svelte"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "@sveltejs/vite-plugin-svelte-inspector",
-      "version": "3.0.1",
+      "version": "7.2.0",
       "licenses": [
         {
           "license": {
@@ -2368,6 +2583,130 @@
     },
     {
       "type": "library",
+      "name": "ajv",
+      "version": "8.20.0",
+      "description": "Another JSON Schema Validator",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://ajv.js.org"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/ajv-validator/ajv"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ajv-formats",
+      "version": "3.0.1",
+      "description": "Format validation for Ajv v7+",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/ajv-validator/ajv-formats#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/ajv-validator/ajv-formats"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ansi-regex",
+      "version": "5.0.1",
+      "description": "Regular expression for matching ANSI escape codes",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/chalk/ansi-regex"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ansi-styles",
+      "version": "3.2.1",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/chalk/ansi-styles"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "aria-query",
       "version": "5.3.1",
       "description": "Programmatic access to the ARIA specification",
@@ -2435,7 +2774,7 @@
     {
       "type": "library",
       "name": "balanced-match",
-      "version": "1.0.2",
+      "version": "4.0.4",
       "description": "Match balanced character pairs, like \"{\" and \"}\"",
       "licenses": [
         {
@@ -2445,10 +2784,6 @@
         }
       ],
       "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/juliangruber/balanced-match"
-        },
         {
           "type": "vcs",
           "url": "https://github.com/juliangruber/balanced-match"
@@ -2468,7 +2803,7 @@
     {
       "type": "library",
       "name": "baseline-browser-mapping",
-      "version": "2.10.42",
+      "version": "2.11.20",
       "description": "A library for obtaining browser versions with their maximum supported Baseline feature set and Widely Available status.",
       "licenses": [
         {
@@ -2496,41 +2831,8 @@
     },
     {
       "type": "library",
-      "name": "brace-expansion",
-      "version": "1.1.15",
-      "description": "Brace expansion as known from sh/bash",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/juliangruber/brace-expansion"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/juliangruber/brace-expansion"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "browserslist",
-      "version": "4.28.5",
+      "version": "4.28.8",
       "description": "Share target browsers between different front-end tools, like Autoprefixer, Stylelint and babel-env-preset",
       "licenses": [
         {
@@ -2558,8 +2860,66 @@
     },
     {
       "type": "library",
+      "name": "bytes",
+      "version": "3.1.2",
+      "description": "Utility to parse a string bytes to bytes and vice-versa",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/visionmedia/bytes.js"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "camelcase",
+      "version": "5.3.1",
+      "description": "Convert a dash/dot/underscore/space separated string to camelCase or PascalCase: `foo-bar` → `fooBar`",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/sindresorhus/camelcase"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "caniuse-lite",
-      "version": "1.0.30001803",
+      "version": "1.0.30001810",
       "description": "A smaller version of caniuse-db, with only the essentials!",
       "licenses": [
         {
@@ -2572,6 +2932,35 @@
         {
           "type": "vcs",
           "url": "https://github.com/browserslist/caniuse-lite"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cliui",
+      "version": "8.0.1",
+      "description": "easily create complex multi-column command-line-interfaces",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/yargs/cliui"
         }
       ],
       "properties": [
@@ -2616,8 +3005,70 @@
     },
     {
       "type": "library",
+      "name": "color-convert",
+      "version": "1.9.3",
+      "description": "Plain color conversion functions",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/Qix-/color-convert"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "color-name",
+      "version": "1.1.3",
+      "description": "A list of color names and its values",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/dfcreative/color-name"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/dfcreative/color-name"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "commander",
-      "version": "12.1.0",
+      "version": "8.3.0",
       "description": "the complete solution for node.js command-line programs",
       "licenses": [
         {
@@ -2630,6 +3081,35 @@
         {
           "type": "vcs",
           "url": "https://github.com/tj/commander.js"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "content-type",
+      "version": "1.0.5",
+      "description": "Create and parse HTTP Content-Type header",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/jshttp/content-type"
         }
       ],
       "properties": [
@@ -2707,8 +3187,70 @@
     },
     {
       "type": "library",
+      "name": "cors",
+      "version": "2.8.6",
+      "description": "Node.js CORS middleware",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/expressjs/cors"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cross-spawn",
+      "version": "7.0.6",
+      "description": "Cross platform child_process#spawn and child_process#spawnSync",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/moxystudio/node-cross-spawn"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/moxystudio/node-cross-spawn"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "debug",
-      "version": "4.4.3",
+      "version": "4.3.4",
       "description": "Lightweight debugging utility for Node.js and the browser",
       "licenses": [
         {
@@ -2721,6 +3263,35 @@
         {
           "type": "vcs",
           "url": "https://github.com/debug-js/debug"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "decamelize",
+      "version": "1.2.0",
+      "description": "Convert a camelized string into a lowercased one with a custom separator: unicornRainbow → unicorn_rainbow",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/sindresorhus/decamelize"
         }
       ],
       "properties": [
@@ -2798,8 +3369,41 @@
     },
     {
       "type": "library",
+      "name": "dijkstrajs",
+      "version": "1.0.3",
+      "description": "A simple JavaScript implementation of Dijkstra's single-source shortest-paths algorithm.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/tcort/dijkstrajs"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/tcort/dijkstrajs"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "dotenv",
-      "version": "16.6.1",
+      "version": "17.4.2",
       "description": "Loads environment variables from .env file",
       "licenses": [
         {
@@ -2832,7 +3436,7 @@
     {
       "type": "library",
       "name": "electron-to-chromium",
-      "version": "1.5.388",
+      "version": "1.5.419",
       "description": "Provides a list of electron-to-chromium version mappings",
       "licenses": [
         {
@@ -2861,7 +3465,7 @@
     {
       "type": "library",
       "name": "es-module-lexer",
-      "version": "2.3.0",
+      "version": "2.3.1",
       "description": "Lexes ES modules returning their import/export metadata",
       "licenses": [
         {
@@ -2983,6 +3587,138 @@
     },
     {
       "type": "library",
+      "name": "eventsource",
+      "version": "3.0.7",
+      "description": "WhatWG/W3C compliant EventSource client for Node.js and browsers",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/EventSource/eventsource#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://git@github.com/EventSource/eventsource"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "eventsource-parser",
+      "version": "3.1.1",
+      "description": "Streaming, source-agnostic EventSource/Server-Sent Events parser",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/rexxars/eventsource-parser#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/rexxars/eventsource-parser"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "express",
+      "version": "5.2.1",
+      "description": "Fast, unopinionated, minimalist web framework",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://expressjs.com/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/expressjs/express"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "express-rate-limit",
+      "version": "8.7.0",
+      "description": "Basic IP rate-limiting middleware for Express. Use to limit repeated requests to public APIs and/or endpoints such as password reset.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/express-rate-limit/express-rate-limit"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/express-rate-limit/express-rate-limit"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "find-up",
       "version": "5.0.0",
       "description": "Find a file or directory by walking up parent directories",
@@ -2997,6 +3733,39 @@
         {
           "type": "vcs",
           "url": "https://github.com/sindresorhus/find-up"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fsevents",
+      "version": "2.3.2",
+      "description": "Native Access to MacOS FSEvents",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/fsevents/fsevents"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/fsevents/fsevents"
         }
       ],
       "properties": [
@@ -3030,6 +3799,39 @@
         {
           "type": "vcs",
           "url": "https://github.com/loganfsmyth/gensync"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "get-caller-file",
+      "version": "2.0.5",
+      "description": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/stefanpenner/get-caller-file#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/stefanpenner/get-caller-file"
         }
       ],
       "properties": [
@@ -3132,6 +3934,68 @@
     },
     {
       "type": "library",
+      "name": "hono",
+      "version": "4.13.5",
+      "description": "Web framework built on Web Standards",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://hono.dev"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/honojs/hono"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "http-errors",
+      "version": "2.0.1",
+      "description": "Create HTTP error objects",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/jshttp/http-errors"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "https-proxy-agent",
       "version": "5.0.1",
       "description": "An HTTP(s) proxy `http.Agent` implementation for HTTPS",
@@ -3161,8 +4025,41 @@
     },
     {
       "type": "library",
+      "name": "iconv-lite",
+      "version": "0.7.3",
+      "description": "Convert character encodings in pure javascript.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pillarjs/iconv-lite"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/pillarjs/iconv-lite"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "import-in-the-middle",
-      "version": "3.3.0",
+      "version": "3.3.2",
       "description": "Intercept imports in Node.js",
       "licenses": [
         {
@@ -3179,6 +4076,35 @@
         {
           "type": "vcs",
           "url": "https://github.com/nodejs/import-in-the-middle"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ip-address",
+      "version": "10.7.0",
+      "description": "A library for parsing IPv4 and IPv6 IP addresses in node and the browser.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/beaugunderson/ip-address"
         }
       ],
       "properties": [
@@ -3307,6 +4233,39 @@
         {
           "type": "vcs",
           "url": "https://github.com/mathiasbynens/jsesc"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "json-schema-typed",
+      "version": "8.0.2",
+      "description": "JSON Schema TypeScript definitions with complete inline documentation.",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-2-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/RemyRylan/json-schema-typed/tree/main/dist/node"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/RemyRylan/json-schema-typed"
         }
       ],
       "properties": [
@@ -3505,12 +4464,12 @@
     {
       "type": "library",
       "name": "minimatch",
-      "version": "3.1.5",
+      "version": "10.2.5",
       "description": "a glob matcher in javascript",
       "licenses": [
         {
           "license": {
-            "id": "ISC"
+            "id": "BlueOak-1.0.0"
           }
         }
       ],
@@ -3657,6 +4616,35 @@
     },
     {
       "type": "library",
+      "name": "ms",
+      "version": "2.1.2",
+      "description": "Tiny millisecond conversion utility",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/zeit/ms"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "node-fetch",
       "version": "2.7.0",
       "description": "A light-weight module that brings window.fetch to node.js",
@@ -3691,7 +4679,7 @@
     {
       "type": "library",
       "name": "node-releases",
-      "version": "2.0.50",
+      "version": "2.0.54",
       "description": "Node.js releases data",
       "licenses": [
         {
@@ -3704,6 +4692,68 @@
         {
           "type": "vcs",
           "url": "https://github.com/chicoxyzzy/node-releases"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "object-assign",
+      "version": "4.1.1",
+      "description": "ES2015 `Object.assign()` ponyfill",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/sindresorhus/object-assign"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "obug",
+      "version": "2.1.3",
+      "description": "A lightweight JavaScript debugging utility, forked from debug, featuring TypeScript and ESM support.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/sxzz/obug#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/sxzz/obug"
         }
       ],
       "properties": [
@@ -3777,6 +4827,35 @@
     },
     {
       "type": "library",
+      "name": "p-try",
+      "version": "2.2.0",
+      "description": "`Start a promise chain",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/sindresorhus/p-try"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "path-exists",
       "version": "4.0.0",
       "description": "Check if a path exists",
@@ -3791,6 +4870,35 @@
         {
           "type": "vcs",
           "url": "https://github.com/sindresorhus/path-exists"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path-key",
+      "version": "3.1.1",
+      "description": "Get the PATH environment variable key cross-platform",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/sindresorhus/path-key"
         }
       ],
       "properties": [
@@ -3849,6 +4957,72 @@
         {
           "type": "vcs",
           "url": "https://github.com/alexeyraspopov/picocolors"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pkce-challenge",
+      "version": "5.0.1",
+      "description": "Generate or verify a Proof Key for Code Exchange (PKCE) challenge pair",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/crouchcd/pkce-challenge#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/crouchcd/pkce-challenge"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pngjs",
+      "version": "5.0.0",
+      "description": "PNG encoder/decoder in pure JS, supporting any bit size & interlace, async & sync with full test suite.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/lukeapage/pngjs"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/lukeapage/pngjs"
         }
       ],
       "properties": [
@@ -3926,6 +5100,68 @@
     },
     {
       "type": "library",
+      "name": "raw-body",
+      "version": "3.0.2",
+      "description": "Get and validate the raw body of a readable stream.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/stream-utils/raw-body"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "require-directory",
+      "version": "2.1.1",
+      "description": "Recursively iterates over specified directory, require()'ing each file, and returning a nested hash structure containing those modules.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/troygoode/node-require-directory/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/troygoode/node-require-directory"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "require-in-the-middle",
       "version": "8.0.1",
       "description": "Module to hook into the Node.js require function",
@@ -3944,6 +5180,39 @@
         {
           "type": "vcs",
           "url": "https://github.com/nodejs/require-in-the-middle"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "require-main-filename",
+      "version": "2.0.0",
+      "description": "shim for require.main.filename() that works in as many environments as possible",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/yargs/require-main-filename#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/yargs/require-main-filename"
         }
       ],
       "properties": [
@@ -3992,6 +5261,35 @@
     },
     {
       "type": "library",
+      "name": "safer-buffer",
+      "version": "2.1.2",
+      "description": "Modern Buffer API polyfill without footguns",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/ChALkeR/safer-buffer"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "semver",
       "version": "7.8.5",
       "description": "The semantic version parser used by npm.",
@@ -4021,8 +5319,41 @@
     },
     {
       "type": "library",
+      "name": "set-blocking",
+      "version": "2.0.0",
+      "description": "set blocking stdio and stderr ensuring that terminal output does not truncate",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/yargs/set-blocking#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/yargs/set-blocking"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "set-cookie-parser",
-      "version": "3.1.1",
+      "version": "3.1.2",
       "description": "Parses set-cookie headers into objects",
       "licenses": [
         {
@@ -4039,6 +5370,64 @@
         {
           "type": "vcs",
           "url": "https://github.com/nfriedly/set-cookie-parser"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "shebang-command",
+      "version": "2.0.0",
+      "description": "Get the command from a shebang",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/kevva/shebang-command"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "shebang-regex",
+      "version": "3.0.0",
+      "description": "Regular expression for matching a shebang line",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/sindresorhus/shebang-regex"
         }
       ],
       "properties": [
@@ -4097,6 +5486,64 @@
         {
           "type": "vcs",
           "url": "https://github.com/Rich-Harris/sorcery"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "string-width",
+      "version": "4.2.3",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/sindresorhus/string-width"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "strip-ansi",
+      "version": "6.0.1",
+      "description": "Strip ANSI escape codes from a string",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/chalk/strip-ansi"
         }
       ],
       "properties": [
@@ -4204,7 +5651,7 @@
     {
       "type": "library",
       "name": "tr46",
-      "version": "5.1.1",
+      "version": "6.0.0",
       "description": "An implementation of the Unicode UTS #46: Unicode IDNA Compatibility Processing",
       "licenses": [
         {
@@ -4233,7 +5680,7 @@
     {
       "type": "library",
       "name": "typescript",
-      "version": "5.7.2",
+      "version": "5.9.3",
       "description": "TypeScript is a language for application scale JavaScript development",
       "licenses": [
         {
@@ -4265,8 +5712,37 @@
     },
     {
       "type": "library",
+      "name": "unpipe",
+      "version": "1.0.0",
+      "description": "Unpipe a stream from all destinations",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/stream-utils/unpipe"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "update-browserslist-db",
-      "version": "1.2.3",
+      "version": "1.3.2",
       "description": "CLI tool to update caniuse-lite to refresh target browsers from Browserslist config",
       "licenses": [
         {
@@ -4294,8 +5770,37 @@
     },
     {
       "type": "library",
+      "name": "vary",
+      "version": "1.1.2",
+      "description": "Manipulate the HTTP Vary header",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/jshttp/vary"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "vite",
-      "version": "5.4.21",
+      "version": "8.1.4",
       "description": "Native-ESM powered web dev build tool",
       "licenses": [
         {
@@ -4381,7 +5886,7 @@
     {
       "type": "library",
       "name": "webidl-conversions",
-      "version": "7.0.0",
+      "version": "8.0.1",
       "description": "Implements the WebIDL algorithms for converting to and from JavaScript values",
       "licenses": [
         {
@@ -4410,7 +5915,7 @@
     {
       "type": "library",
       "name": "whatwg-url",
-      "version": "14.2.0",
+      "version": "16.0.1",
       "description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
       "licenses": [
         {
@@ -4467,6 +5972,101 @@
     },
     {
       "type": "library",
+      "name": "which-module",
+      "version": "2.0.1",
+      "description": "Find the module object for something that was require()d",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/nexdrew/which-module#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/nexdrew/which-module"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "wrap-ansi",
+      "version": "7.0.0",
+      "description": "Wordwrap a string with ANSI escape codes",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/chalk/wrap-ansi"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "y18n",
+      "version": "5.0.8",
+      "description": "the bare-bones internationalization library used by yargs",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/yargs/y18n"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/yargs/y18n"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "yallist",
       "version": "3.1.1",
       "description": "Yet Another Linked List",
@@ -4481,6 +6081,68 @@
         {
           "type": "vcs",
           "url": "https://github.com/isaacs/yallist"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yargs",
+      "version": "17.7.2",
+      "description": "yargs the modern, pirate-themed, successor to optimist.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://yargs.js.org/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/yargs/yargs"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yargs-parser",
+      "version": "20.2.9",
+      "description": "the mighty option parser used by yargs",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/yargs/yargs-parser"
         }
       ],
       "properties": [
@@ -4539,6 +6201,68 @@
         {
           "type": "vcs",
           "url": "https://github.com/sveltejs/zimmerframe"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "zod",
+      "version": "4.5.4",
+      "description": "TypeScript-first schema declaration and validation library with static type inference",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://zod.dev"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/colinhacks/zod"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "zod-to-json-schema",
+      "version": "3.25.2",
+      "description": "Converts Zod schemas to Json Schemas",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/StefanTerdell/zod-to-json-schema"
         }
       ],
       "properties": [
@@ -4679,7 +6403,7 @@
     {
       "type": "library",
       "name": "@eslint/js",
-      "version": "9.17.0",
+      "version": "10.0.1",
       "description": "ESLint JavaScript language implementation",
       "licenses": [
         {
@@ -4745,7 +6469,7 @@
     {
       "type": "library",
       "name": "@inlang/paraglide-js",
-      "version": "2.20.2",
+      "version": "2.21.0",
       "licenses": [
         {
           "license": {
@@ -4777,7 +6501,7 @@
     {
       "type": "library",
       "name": "@playwright/test",
-      "version": "1.60.0",
+      "version": "1.61.1",
       "description": "A high-level API to automate web browsers",
       "licenses": [
         {
@@ -4876,7 +6600,7 @@
     {
       "type": "library",
       "name": "@types/node",
-      "version": "22.10.2",
+      "version": "26.1.1",
       "description": "TypeScript definitions for node",
       "licenses": [
         {
@@ -4908,8 +6632,41 @@
     },
     {
       "type": "library",
+      "name": "@types/qrcode",
+      "version": "1.5.6",
+      "description": "TypeScript definitions for qrcode",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/qrcode"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@types/three",
-      "version": "0.128.0",
+      "version": "0.185.1",
       "description": "TypeScript definitions for three",
       "licenses": [
         {
@@ -4919,6 +6676,10 @@
         }
       ],
       "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/three"
+        },
         {
           "type": "vcs",
           "url": "https://github.com/DefinitelyTyped/DefinitelyTyped"
@@ -5003,72 +6764,6 @@
     },
     {
       "type": "library",
-      "name": "ajv",
-      "version": "8.20.0",
-      "description": "Another JSON Schema Validator",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://ajv.js.org"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/ajv-validator/ajv"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "true"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "ajv-formats",
-      "version": "3.0.1",
-      "description": "Format validation for Ajv v7+",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/ajv-validator/ajv-formats#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/ajv-validator/ajv-formats"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "true"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "canvas",
       "version": "3.2.3",
       "description": "Canvas graphics API backed by Cairo",
@@ -5103,7 +6798,7 @@
     {
       "type": "library",
       "name": "eslint",
-      "version": "9.17.0",
+      "version": "10.7.0",
       "description": "An AST-based pattern checker for JavaScript.",
       "licenses": [
         {
@@ -5169,7 +6864,7 @@
     {
       "type": "library",
       "name": "eslint-plugin-svelte",
-      "version": "2.46.1",
+      "version": "3.22.0",
       "description": "ESLint plugin for Svelte using AST",
       "licenses": [
         {
@@ -5231,7 +6926,7 @@
     {
       "type": "library",
       "name": "globals",
-      "version": "17.6.0",
+      "version": "17.7.0",
       "description": "Global identifiers from different JavaScript environments",
       "licenses": [
         {
@@ -5260,7 +6955,7 @@
     {
       "type": "library",
       "name": "jsdom",
-      "version": "26.0.0",
+      "version": "29.1.1",
       "description": "A JavaScript implementation of many web standards",
       "licenses": [
         {
@@ -5289,7 +6984,7 @@
     {
       "type": "library",
       "name": "prettier",
-      "version": "3.4.2",
+      "version": "3.9.5",
       "description": "Prettier is an opinionated code formatter",
       "licenses": [
         {
@@ -5322,7 +7017,7 @@
     {
       "type": "library",
       "name": "prettier-plugin-svelte",
-      "version": "3.5.2",
+      "version": "4.1.1",
       "description": "Svelte plugin for prettier",
       "licenses": [
         {
@@ -5454,7 +7149,7 @@
     {
       "type": "library",
       "name": "tsx",
-      "version": "4.22.3",
+      "version": "4.23.1",
       "description": "TypeScript Execute (tsx): Node.js enhanced with esbuild to run TypeScript & ESM files",
       "licenses": [
         {
@@ -5553,7 +7248,7 @@
     {
       "type": "library",
       "name": "vitepress",
-      "version": "1.5.0",
+      "version": "1.6.4",
       "description": "Vite & Vue powered static site generator",
       "licenses": [
         {
@@ -5586,7 +7281,7 @@
     {
       "type": "library",
       "name": "vitepress-sidebar",
-      "version": "1.25.2",
+      "version": "1.36.1",
       "description": "A VitePress auto sidebar plugin that automatically creates a simple configuration.",
       "licenses": [
         {
@@ -5652,7 +7347,7 @@
     {
       "type": "library",
       "name": "@algolia/autocomplete-core",
-      "version": "1.17.9",
+      "version": "1.17.7",
       "description": "Core primitives for building autocomplete experiences.",
       "licenses": [
         {
@@ -5685,7 +7380,7 @@
     {
       "type": "library",
       "name": "@algolia/autocomplete-plugin-algolia-insights",
-      "version": "1.17.9",
+      "version": "1.17.7",
       "description": "A plugin to add Algolia Insights to Algolia Autocomplete.",
       "licenses": [
         {
@@ -5718,7 +7413,7 @@
     {
       "type": "library",
       "name": "@algolia/autocomplete-preset-algolia",
-      "version": "1.17.9",
+      "version": "1.17.7",
       "description": "Presets for building autocomplete experiences with Algolia.",
       "licenses": [
         {
@@ -5751,7 +7446,7 @@
     {
       "type": "library",
       "name": "@algolia/autocomplete-shared",
-      "version": "1.17.9",
+      "version": "1.17.7",
       "description": "Shared utils for Autocomplete packages.",
       "licenses": [
         {
@@ -5784,7 +7479,7 @@
     {
       "type": "library",
       "name": "@algolia/client-common",
-      "version": "5.55.1",
+      "version": "5.55.2",
       "description": "Common package for the Algolia JavaScript API client.",
       "licenses": [
         {
@@ -5817,7 +7512,7 @@
     {
       "type": "library",
       "name": "@algolia/client-search",
-      "version": "5.55.1",
+      "version": "5.55.2",
       "description": "JavaScript client for client-search",
       "licenses": [
         {
@@ -5850,7 +7545,7 @@
     {
       "type": "library",
       "name": "@algolia/requester-browser-xhr",
-      "version": "5.55.1",
+      "version": "5.55.2",
       "description": "Promise-based request library for browser using xhr.",
       "licenses": [
         {
@@ -5883,7 +7578,7 @@
     {
       "type": "library",
       "name": "@algolia/requester-fetch",
-      "version": "5.55.1",
+      "version": "5.55.2",
       "description": "Promise-based request library using Fetch.",
       "licenses": [
         {
@@ -5916,7 +7611,7 @@
     {
       "type": "library",
       "name": "@algolia/requester-node-http",
-      "version": "5.55.1",
+      "version": "5.55.2",
       "description": "Promise-based request library for node using the native http module.",
       "licenses": [
         {
@@ -5978,7 +7673,7 @@
     {
       "type": "library",
       "name": "@asamuzakjp/css-color",
-      "version": "3.2.0",
+      "version": "5.1.11",
       "description": "CSS color - Resolve and convert CSS colors.",
       "licenses": [
         {
@@ -5995,6 +7690,105 @@
         {
           "type": "vcs",
           "url": "https://github.com/asamuzaK/cssColor"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@asamuzakjp/dom-selector",
+      "version": "7.1.1",
+      "description": "A CSS selector engine.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/asamuzaK/domSelector#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/asamuzaK/domSelector"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@asamuzakjp/generational-cache",
+      "version": "1.0.1",
+      "description": "A generational pseudo-LRU cache with strict maximum size limits.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/asamuzaK/generationalCache"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/asamuzaK/generationalCache"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@asamuzakjp/nwsapi",
+      "version": "2.3.9",
+      "description": "Fast CSS Selectors API Engine",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "http://javascript.nwbox.com/nwsapi/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/dperini/nwsapi"
         }
       ],
       "properties": [
@@ -8511,6 +10305,39 @@
     },
     {
       "type": "library",
+      "name": "@bramus/specificity",
+      "version": "2.4.2",
+      "description": "Calculate specificity of a CSS Selector",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/bramus/specificity#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/bramus/specificity"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@cspotcode/source-map-support",
       "version": "0.8.1",
       "description": "Fixes stack traces for files with source maps",
@@ -8541,7 +10368,7 @@
     {
       "type": "library",
       "name": "@csstools/color-helpers",
-      "version": "5.1.0",
+      "version": "6.1.0",
       "description": "Color helpers to ease transformation between formats, gamut, etc",
       "licenses": [
         {
@@ -8574,7 +10401,7 @@
     {
       "type": "library",
       "name": "@csstools/css-calc",
-      "version": "2.1.4",
+      "version": "3.2.1",
       "description": "Solve CSS math expressions",
       "licenses": [
         {
@@ -8607,7 +10434,7 @@
     {
       "type": "library",
       "name": "@csstools/css-color-parser",
-      "version": "3.1.0",
+      "version": "4.1.9",
       "description": "Parse CSS color values",
       "licenses": [
         {
@@ -8640,7 +10467,7 @@
     {
       "type": "library",
       "name": "@csstools/css-parser-algorithms",
-      "version": "3.0.5",
+      "version": "4.0.0",
       "description": "Algorithms to help you parse CSS from an array of tokens.",
       "licenses": [
         {
@@ -8672,8 +10499,41 @@
     },
     {
       "type": "library",
+      "name": "@csstools/css-syntax-patches-for-csstree",
+      "version": "1.1.6",
+      "description": "CSS syntax patches for CSS tree",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT-0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/csstools/postcss-plugins/tree/main/packages/css-syntax-patches-for-csstree#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/csstools/postcss-plugins"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@csstools/css-tokenizer",
-      "version": "3.0.4",
+      "version": "4.0.0",
       "description": "Tokenize CSS",
       "licenses": [
         {
@@ -8705,8 +10565,41 @@
     },
     {
       "type": "library",
+      "name": "@dimforge/rapier3d-compat",
+      "version": "0.12.0",
+      "description": "3-dimensional physics engine in Rust - official JS bindings. Compatibility package with inlined webassembly as base64.",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://rapier.rs"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/dimforge/rapier.js"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@docsearch/css",
-      "version": "3.9.0",
+      "version": "3.8.2",
       "description": "Styles for DocSearch.",
       "licenses": [
         {
@@ -8739,7 +10632,7 @@
     {
       "type": "library",
       "name": "@docsearch/js",
-      "version": "3.9.0",
+      "version": "3.8.2",
       "description": "JavaScript package for DocSearch, the best search experience for docs.",
       "licenses": [
         {
@@ -8772,7 +10665,7 @@
     {
       "type": "library",
       "name": "@docsearch/react",
-      "version": "3.9.0",
+      "version": "3.8.2",
       "description": "React package for DocSearch, the best search experience for docs.",
       "licenses": [
         {
@@ -8899,6 +10792,39 @@
     },
     {
       "type": "library",
+      "name": "@exodus/bytes",
+      "version": "1.15.1",
+      "description": "Various operations on Uint8Array data",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/ExodusOSS/bytes"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/ExodusOSS/bytes"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@grpc/grpc-js",
       "version": "1.14.4",
       "description": "gRPC Library for Node - pure JS implementation",
@@ -8999,7 +10925,7 @@
     {
       "type": "library",
       "name": "@iconify-json/simple-icons",
-      "version": "1.2.89",
+      "version": "1.2.90",
       "description": "Simple Icons icon set in Iconify JSON format",
       "licenses": [
         {
@@ -10005,7 +11931,7 @@
     {
       "type": "library",
       "name": "@shikijs/core",
-      "version": "1.29.2",
+      "version": "2.5.0",
       "description": "Core of Shiki",
       "licenses": [
         {
@@ -10038,7 +11964,7 @@
     {
       "type": "library",
       "name": "@shikijs/engine-javascript",
-      "version": "1.29.2",
+      "version": "2.5.0",
       "description": "Engine for Shiki using JavaScript's native RegExp",
       "licenses": [
         {
@@ -10071,7 +11997,7 @@
     {
       "type": "library",
       "name": "@shikijs/engine-oniguruma",
-      "version": "1.29.2",
+      "version": "2.5.0",
       "description": "Engine for Shiki using Oniguruma RegExp engine in WebAssembly",
       "licenses": [
         {
@@ -10104,7 +12030,7 @@
     {
       "type": "library",
       "name": "@shikijs/langs",
-      "version": "1.29.2",
+      "version": "2.5.0",
       "description": "TextMate grammars for Shiki in ESM",
       "licenses": [
         {
@@ -10137,7 +12063,7 @@
     {
       "type": "library",
       "name": "@shikijs/themes",
-      "version": "1.29.2",
+      "version": "2.5.0",
       "description": "TextMate themes for Shiki in ESM",
       "licenses": [
         {
@@ -10170,7 +12096,7 @@
     {
       "type": "library",
       "name": "@shikijs/transformers",
-      "version": "1.29.2",
+      "version": "2.5.0",
       "description": "Collective of common transformers transformers for Shiki",
       "licenses": [
         {
@@ -10203,7 +12129,7 @@
     {
       "type": "library",
       "name": "@shikijs/types",
-      "version": "1.29.2",
+      "version": "2.5.0",
       "description": "Type definitions for Shiki",
       "licenses": [
         {
@@ -10265,7 +12191,7 @@
     {
       "type": "library",
       "name": "@sinclair/typebox",
-      "version": "0.31.28",
+      "version": "0.31.30",
       "description": "JSONSchema Type Builder with Static Type Resolution for TypeScript",
       "licenses": [
         {
@@ -10277,7 +12203,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "https://github.com/sinclairzx81/typebox"
+          "url": "https://github.com/sinclairzx81/sinclair-typebox"
         }
       ],
       "properties": [
@@ -10553,8 +12479,41 @@
     },
     {
       "type": "library",
+      "name": "@tweenjs/tween.js",
+      "version": "23.1.3",
+      "description": "Simple and fast tweening engine with optimised Robert Penner's equations.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/tweenjs/tween.js"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/tweenjs/tween.js"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@types/hast",
-      "version": "3.0.4",
+      "version": "3.0.5",
       "description": "TypeScript definitions for hast",
       "licenses": [
         {
@@ -10817,6 +12776,39 @@
     },
     {
       "type": "library",
+      "name": "@types/stats.js",
+      "version": "0.17.4",
+      "description": "TypeScript definitions for stats.js",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/stats.js"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@types/unist",
       "version": "3.0.3",
       "description": "TypeScript definitions for unist",
@@ -10851,7 +12843,7 @@
     {
       "type": "library",
       "name": "@types/web-bluetooth",
-      "version": "0.0.20",
+      "version": "0.0.21",
       "description": "TypeScript definitions for web-bluetooth",
       "licenses": [
         {
@@ -10864,6 +12856,39 @@
         {
           "type": "website",
           "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/web-bluetooth"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/webxr",
+      "version": "0.5.24",
+      "description": "TypeScript definitions for webxr",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/webxr"
         },
         {
           "type": "vcs",
@@ -11115,7 +13140,7 @@
     {
       "type": "library",
       "name": "@ungap/structured-clone",
-      "version": "1.3.2",
+      "version": "1.3.3",
       "description": "A structuredClone polyfill",
       "licenses": [
         {
@@ -11132,38 +13157,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/ungap/structured-clone"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "@vitejs/plugin-vue",
-      "version": "5.2.4",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/vitejs/vite-plugin-vue"
         }
       ],
       "properties": [
@@ -11363,7 +13356,7 @@
     {
       "type": "library",
       "name": "@vueuse/core",
-      "version": "11.3.0",
+      "version": "12.8.2",
       "description": "Collection of essential Vue Composition Utilities",
       "licenses": [
         {
@@ -11396,7 +13389,7 @@
     {
       "type": "library",
       "name": "@vueuse/integrations",
-      "version": "11.3.0",
+      "version": "12.8.2",
       "description": "Integration wrappers for utility libraries",
       "licenses": [
         {
@@ -11429,7 +13422,7 @@
     {
       "type": "library",
       "name": "@vueuse/metadata",
-      "version": "11.3.0",
+      "version": "12.8.2",
       "description": "Metadata for VueUse functions",
       "licenses": [
         {
@@ -11462,7 +13455,7 @@
     {
       "type": "library",
       "name": "@vueuse/shared",
-      "version": "11.3.0",
+      "version": "12.8.2",
       "licenses": [
         {
           "license": {
@@ -11684,7 +13677,7 @@
     {
       "type": "library",
       "name": "algoliasearch",
-      "version": "5.55.1",
+      "version": "5.55.2",
       "description": "A fully-featured and blazing-fast JavaScript API client to interact with Algolia API.",
       "licenses": [
         {
@@ -11701,35 +13694,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/algolia/algoliasearch-client-javascript"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "ansi-styles",
-      "version": "4.3.0",
-      "description": "ANSI escape codes for styling strings in the terminal",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/chalk/ansi-styles"
         }
       ],
       "properties": [
@@ -11775,12 +13739,12 @@
     {
       "type": "library",
       "name": "argparse",
-      "version": "2.0.1",
-      "description": "CLI arguments parser. Native port of python's argparse.",
+      "version": "1.0.10",
+      "description": "Very powerful CLI arguments parser. Native port of argparse - python's options parsing library",
       "licenses": [
         {
           "license": {
-            "id": "Python-2.0"
+            "id": "MIT"
           }
         }
       ],
@@ -12063,39 +14027,6 @@
     },
     {
       "type": "library",
-      "name": "asynckit",
-      "version": "0.4.0",
-      "description": "Minimal async jobs utility library, with streams support",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/alexindigo/asynckit#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/alexindigo/asynckit"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "at-least-node",
       "version": "1.0.0",
       "description": "Lightweight Node.js version sniffing/comparison",
@@ -12349,7 +14280,7 @@
     {
       "type": "library",
       "name": "bare-fs",
-      "version": "4.7.3",
+      "version": "4.7.4",
       "description": "Native file system operations for Bare",
       "licenses": [
         {
@@ -12382,7 +14313,7 @@
     {
       "type": "library",
       "name": "bare-path",
-      "version": "3.1.0",
+      "version": "3.1.1",
       "description": "Path manipulation library for JavaScript",
       "licenses": [
         {
@@ -12498,6 +14429,35 @@
         {
           "type": "vcs",
           "url": "https://github.com/beatgammit/base64-js"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "bidi-js",
+      "version": "1.0.3",
+      "description": "A JavaScript implementation of the Unicode Bidirectional Algorithm",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/lojjic/bidi-js"
         }
       ],
       "properties": [
@@ -12798,35 +14758,6 @@
     },
     {
       "type": "library",
-      "name": "camelcase",
-      "version": "5.3.1",
-      "description": "Convert a dash/dot/underscore/space separated string to camelCase or PascalCase: `foo-bar` → `fooBar`",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/sindresorhus/camelcase"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "camelcase-keys",
       "version": "6.2.2",
       "description": "Convert object keys to camel case",
@@ -12886,7 +14817,7 @@
     {
       "type": "library",
       "name": "chalk",
-      "version": "4.1.2",
+      "version": "2.4.2",
       "description": "Terminal string styling done right",
       "licenses": [
         {
@@ -13067,35 +14998,6 @@
     },
     {
       "type": "library",
-      "name": "cliui",
-      "version": "8.0.1",
-      "description": "easily create complex multi-column command-line-interfaces",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/yargs/cliui"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "color",
       "version": "4.2.3",
       "description": "Color conversion and manipulation with CSS string support",
@@ -13125,68 +15027,6 @@
     },
     {
       "type": "library",
-      "name": "color-convert",
-      "version": "2.0.1",
-      "description": "Plain color conversion functions",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/Qix-/color-convert"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "color-name",
-      "version": "1.1.4",
-      "description": "A list of color names and its values",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/colorjs/color-name"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/colorjs/color-name"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "color-string",
       "version": "1.9.1",
       "description": "Parser and generator for CSS color strings",
@@ -13201,39 +15041,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/Qix-/color-string"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "combined-stream",
-      "version": "1.0.8",
-      "description": "A stream that emits multiple other streams one after another.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/felixge/node-combined-stream"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/felixge/node-combined-stream"
         }
       ],
       "properties": [
@@ -13358,6 +15165,35 @@
         {
           "type": "vcs",
           "url": "https://github.com/stevemao/compare-func"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "concat-map",
+      "version": "0.0.1",
+      "description": "concatenative mapdashery",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/substack/node-concat-map"
         }
       ],
       "properties": [
@@ -14021,41 +15857,8 @@
     },
     {
       "type": "library",
-      "name": "cross-spawn",
-      "version": "7.0.6",
-      "description": "Cross platform child_process#spawn and child_process#spawnSync",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/moxystudio/node-cross-spawn"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/moxystudio/node-cross-spawn"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "crypto-random-string",
-      "version": "2.0.0",
+      "version": "4.0.0",
       "description": "Generate a cryptographically strong random string",
       "licenses": [
         {
@@ -14097,6 +15900,35 @@
         {
           "type": "vcs",
           "url": "https://github.com/fb55/css-select"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "css-tree",
+      "version": "3.2.1",
+      "description": "A tool set for CSS: fast detailed parser (CSS → AST), walker (AST traversal), generator (AST → CSS) and lexer (validation and matching) based on specs and browser implementations",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/csstree/csstree"
         }
       ],
       "properties": [
@@ -14159,39 +15991,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/mathiasbynens/cssesc"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "cssstyle",
-      "version": "4.6.0",
-      "description": "CSSStyleDeclaration Object Model implementation",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/jsdom/cssstyle"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/jsdom/cssstyle"
         }
       ],
       "properties": [
@@ -14270,7 +16069,7 @@
     {
       "type": "library",
       "name": "data-urls",
-      "version": "5.0.0",
+      "version": "7.0.0",
       "description": "Parses data: URLs",
       "licenses": [
         {
@@ -14415,35 +16214,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/felixge/node-dateformat"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "decamelize",
-      "version": "1.2.0",
-      "description": "Convert a camelized string into a lowercased one with a custom separator: unicornRainbow → unicorn_rainbow",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/sindresorhus/decamelize"
         }
       ],
       "properties": [
@@ -14626,39 +16396,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/ljharb/define-properties"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "delayed-stream",
-      "version": "1.0.0",
-      "description": "Buffers events from a stream until you are ready to handle them.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/felixge/node-delayed-stream"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/felixge/node-delayed-stream"
         }
       ],
       "properties": [
@@ -15130,8 +16867,8 @@
     {
       "type": "library",
       "name": "entities",
-      "version": "6.0.1",
-      "description": "Encode & decode XML and HTML entities with ease & speed",
+      "version": "2.2.0",
+      "description": "Encode & decode XML and HTML entities with ease",
       "licenses": [
         {
           "license": {
@@ -15497,41 +17234,8 @@
     },
     {
       "type": "library",
-      "name": "eslint-compat-utils",
-      "version": "0.5.1",
-      "description": "Provides an API for ESLint custom rules that is compatible with the latest ESLint even when using older ESLint.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/ota-meshi/eslint-compat-utils#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/ota-meshi/eslint-compat-utils"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "eslint-scope",
-      "version": "8.4.0",
+      "version": "9.1.2",
       "description": "ECMAScript scope analyzer for ESLint",
       "licenses": [
         {
@@ -15564,7 +17268,7 @@
     {
       "type": "library",
       "name": "eslint-visitor-keys",
-      "version": "4.2.1",
+      "version": "5.0.1",
       "description": "Constants and utilities about visitor keys to traverse AST.",
       "licenses": [
         {
@@ -15597,7 +17301,7 @@
     {
       "type": "library",
       "name": "espree",
-      "version": "10.4.0",
+      "version": "11.2.0",
       "description": "An Esprima-compatible JavaScript parser built on Acorn",
       "licenses": [
         {
@@ -16079,6 +17783,39 @@
     },
     {
       "type": "library",
+      "name": "fflate",
+      "version": "0.8.3",
+      "description": "High performance (de)compression in an 8kB package",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://101arrowz.github.io/fflate"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/101arrowz/fflate"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "filelist",
       "version": "1.0.6",
       "description": "Lazy-evaluating list of files, based on globs or regex patterns",
@@ -16207,35 +17944,6 @@
     },
     {
       "type": "library",
-      "name": "form-data",
-      "version": "4.0.6",
-      "description": "A library to create readable \"multipart/form-data\" streams. Can be used to submit forms and file uploads to other web applications.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/form-data/form-data"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "formdata-polyfill",
       "version": "4.0.10",
       "description": "HTML5 `FormData` for Browsers and Node.",
@@ -16270,7 +17978,7 @@
     {
       "type": "library",
       "name": "fs-extra",
-      "version": "11.3.6",
+      "version": "10.1.0",
       "description": "fs-extra contains methods that aren't included in the vanilla Node.js fs package. Such as recursive mkdir, copy, and remove.",
       "licenses": [
         {
@@ -16349,39 +18057,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/isaacs/fs.realpath"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "fsevents",
-      "version": "2.3.2",
-      "description": "Native Access to MacOS FSEvents",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/fsevents/fsevents"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/fsevents/fsevents"
         }
       ],
       "properties": [
@@ -16493,7 +18168,7 @@
     {
       "type": "library",
       "name": "gaxios",
-      "version": "7.1.6",
+      "version": "7.2.0",
       "description": "A simple common HTTP client specifically for Google APIs and services.",
       "licenses": [
         {
@@ -16576,39 +18251,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/TimothyGu/generator-function"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "get-caller-file",
-      "version": "2.0.5",
-      "description": "",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/stefanpenner/get-caller-file#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/stefanpenner/get-caller-file"
         }
       ],
       "properties": [
@@ -17637,7 +19279,7 @@
     {
       "type": "library",
       "name": "html-encoding-sniffer",
-      "version": "4.0.0",
+      "version": "6.0.0",
       "description": "Sniff the encoding from a HTML byte stream",
       "licenses": [
         {
@@ -17939,7 +19581,7 @@
     {
       "type": "library",
       "name": "ini",
-      "version": "4.1.3",
+      "version": "2.0.0",
       "description": "An ini encoder/decoder for node",
       "licenses": [
         {
@@ -17951,7 +19593,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "https://github.com/npm/ini"
+          "url": "https://github.com/isaacs/ini"
         }
       ],
       "properties": [
@@ -18406,7 +20048,7 @@
     {
       "type": "library",
       "name": "is-obj",
-      "version": "1.0.1",
+      "version": "2.0.0",
       "description": "Check if a value is an object",
       "licenses": [
         {
@@ -18625,7 +20267,7 @@
     {
       "type": "library",
       "name": "is-stream",
-      "version": "2.0.1",
+      "version": "3.0.0",
       "description": "Check if something is a Node.js stream",
       "licenses": [
         {
@@ -19125,7 +20767,7 @@
     {
       "type": "library",
       "name": "js-yaml",
-      "version": "4.3.0",
+      "version": "3.15.0",
       "description": "YAML 1.2 parser and serializer",
       "licenses": [
         {
@@ -19135,6 +20777,10 @@
         }
       ],
       "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/nodeca/js-yaml"
+        },
         {
           "type": "vcs",
           "url": "https://github.com/nodeca/js-yaml"
@@ -19460,7 +21106,7 @@
     {
       "type": "library",
       "name": "known-css-properties",
-      "version": "0.35.0",
+      "version": "0.37.0",
       "description": "List of known CSS properties",
       "licenses": [
         {
@@ -20054,6 +21700,39 @@
     },
     {
       "type": "library",
+      "name": "meshoptimizer",
+      "version": "1.1.1",
+      "description": "Mesh optimization library that makes meshes smaller and faster to render",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/zeux/meshoptimizer"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/zeux/meshoptimizer"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "micromark-util-character",
       "version": "2.1.1",
       "description": "micromark utility to handle character codes",
@@ -20184,64 +21863,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-types"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "mime-db",
-      "version": "1.52.0",
-      "description": "Media Type Database",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/jshttp/mime-db"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "mime-types",
-      "version": "2.1.35",
-      "description": "The ultimate javascript content-type utility.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/jshttp/mime-types"
         }
       ],
       "properties": [
@@ -20836,39 +22457,6 @@
     },
     {
       "type": "library",
-      "name": "nwsapi",
-      "version": "2.2.24",
-      "description": "Fast CSS Selectors API Engine",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://javascript.nwbox.com/nwsapi/"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/dperini/nwsapi"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "object-hash",
       "version": "3.0.0",
       "description": "Generate hashes from javascript objects in node and the browser.",
@@ -20993,39 +22581,6 @@
     },
     {
       "type": "library",
-      "name": "obug",
-      "version": "2.1.3",
-      "description": "A lightweight JavaScript debugging utility, forked from debug, featuring TypeScript and ESM support.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/sxzz/obug#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/sxzz/obug"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "once",
       "version": "1.4.0",
       "description": "Run a function exactly one time",
@@ -21056,7 +22611,7 @@
     {
       "type": "library",
       "name": "oniguruma-to-es",
-      "version": "2.3.0",
+      "version": "3.1.1",
       "description": "Convert Oniguruma patterns to native JavaScript RegExp",
       "licenses": [
         {
@@ -21146,35 +22701,6 @@
     },
     {
       "type": "library",
-      "name": "p-try",
-      "version": "2.2.0",
-      "description": "`Start a promise chain",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/sindresorhus/p-try"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "package-json-from-dist",
       "version": "1.0.1",
       "description": "Load the local package.json from either src or dist folder",
@@ -21234,7 +22760,7 @@
     {
       "type": "library",
       "name": "parse5",
-      "version": "7.3.0",
+      "version": "8.0.1",
       "description": "HTML parser and serializer.",
       "licenses": [
         {
@@ -21387,7 +22913,7 @@
     {
       "type": "library",
       "name": "playwright",
-      "version": "1.60.0",
+      "version": "1.61.1",
       "description": "A high-level API to automate web browsers",
       "licenses": [
         {
@@ -21515,7 +23041,7 @@
     {
       "type": "library",
       "name": "postcss",
-      "version": "8.5.16",
+      "version": "8.5.19",
       "description": "Tool for transforming styles with JS plugins",
       "licenses": [
         {
@@ -21577,7 +23103,7 @@
     {
       "type": "library",
       "name": "postcss-safe-parser",
-      "version": "6.0.0",
+      "version": "7.0.1",
       "description": "Fault-tolerant CSS parser for PostCSS",
       "licenses": [
         {
@@ -21635,7 +23161,7 @@
     {
       "type": "library",
       "name": "postcss-selector-parser",
-      "version": "6.1.4",
+      "version": "7.1.4",
       "description": "Selector parser with built in methods for working with selector strings.",
       "licenses": [
         {
@@ -21668,7 +23194,7 @@
     {
       "type": "library",
       "name": "preact",
-      "version": "10.29.5",
+      "version": "10.29.7",
       "description": "Fast 3kb React-compatible Virtual DOM library.",
       "licenses": [
         {
@@ -22039,6 +23565,39 @@
     },
     {
       "type": "library",
+      "name": "qsu",
+      "version": "1.13.2",
+      "description": "qsu is a utility library that contains useful and frequently used functions. Start with your preferred language and the modern development environment.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://qsu.cdget.com"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/jooy2/qsu"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "quick-lru",
       "version": "4.0.1",
       "description": "Simple \"Least Recently Used\" (LRU) cache",
@@ -22317,7 +23876,7 @@
     {
       "type": "library",
       "name": "regex",
-      "version": "5.1.1",
+      "version": "6.1.0",
       "description": "Regex template tag with extended syntax, context-aware interpolation, and always-on best practices",
       "licenses": [
         {
@@ -22346,7 +23905,7 @@
     {
       "type": "library",
       "name": "regex-recursion",
-      "version": "5.1.1",
+      "version": "6.0.2",
       "description": "Recursive matching plugin for Regex+",
       "licenses": [
         {
@@ -22588,9 +24147,9 @@
     },
     {
       "type": "library",
-      "name": "require-directory",
-      "version": "2.1.1",
-      "description": "Recursively iterates over specified directory, require()'ing each file, and returning a nested hash structure containing those modules.",
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "description": "Require module from string",
       "licenses": [
         {
           "license": {
@@ -22600,45 +24159,8 @@
       ],
       "externalReferences": [
         {
-          "type": "website",
-          "url": "https://github.com/troygoode/node-require-directory/"
-        },
-        {
           "type": "vcs",
-          "url": "https://github.com/troygoode/node-require-directory"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "require-main-filename",
-      "version": "2.0.0",
-      "description": "shim for require.main.filename() that works in as many environments as possible",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/yargs/require-main-filename#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/yargs/require-main-filename"
+          "url": "https://github.com/floatdrop/require-from-string"
         }
       ],
       "properties": [
@@ -22763,35 +24285,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/isaacs/rimraf"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "rrweb-cssom",
-      "version": "0.8.0",
-      "description": "CSS Object Model implementation and CSS parser",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/rrweb-io/CSSOM"
         }
       ],
       "properties": [
@@ -23121,39 +24614,6 @@
     },
     {
       "type": "library",
-      "name": "set-blocking",
-      "version": "2.0.0",
-      "description": "set blocking stdio and stderr ensuring that terminal output does not truncate",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/yargs/set-blocking#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/yargs/set-blocking"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "set-function-length",
       "version": "1.2.2",
       "description": "Set a function's length property",
@@ -23254,7 +24714,7 @@
     {
       "type": "library",
       "name": "shiki",
-      "version": "1.29.2",
+      "version": "2.5.0",
       "description": "A beautiful Syntax Highlighter.",
       "licenses": [
         {
@@ -23304,105 +24764,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/ljharb/side-channel"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "side-channel-list",
-      "version": "1.0.1",
-      "description": "Store information about any JS value in a side channel, using a linked list",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/ljharb/side-channel-list#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/ljharb/side-channel-list"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "side-channel-map",
-      "version": "1.0.1",
-      "description": "Store information about any JS value in a side channel, using a Map",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/ljharb/side-channel-map#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/ljharb/side-channel-map"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "side-channel-weakmap",
-      "version": "1.0.2",
-      "description": "Store information about any JS value in a side channel. Uses WeakMap if available.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/ljharb/side-channel-weakmap#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/ljharb/side-channel-weakmap"
         }
       ],
       "properties": [
@@ -23774,7 +25135,7 @@
     {
       "type": "library",
       "name": "split2",
-      "version": "4.2.0",
+      "version": "3.2.2",
       "description": "split a Text Stream into a Line Stream, using Stream 3",
       "licenses": [
         {
@@ -23888,7 +25249,7 @@
     {
       "type": "library",
       "name": "std-env",
-      "version": "4.1.0",
+      "version": "4.2.0",
       "description": "Runtime agnostic JS utils",
       "licenses": [
         {
@@ -24110,35 +25471,6 @@
     },
     {
       "type": "library",
-      "name": "string-width",
-      "version": "4.2.3",
-      "description": "Get the visual width of a string - the number of columns required to display it",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/sindresorhus/string-width"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "string.prototype.matchall",
       "version": "4.0.12",
       "description": "Spec-compliant polyfill for String.prototype.matchAll",
@@ -24302,35 +25634,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/yeoman/stringify-object"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "strip-ansi",
-      "version": "6.0.1",
-      "description": "Strip ANSI escape codes from a string",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/chalk/strip-ansi"
         }
       ],
       "properties": [
@@ -24532,7 +25835,7 @@
     {
       "type": "library",
       "name": "svelte-eslint-parser",
-      "version": "0.43.0",
+      "version": "1.8.0",
       "description": "Svelte parser for ESLint",
       "licenses": [
         {
@@ -24598,7 +25901,7 @@
     {
       "type": "library",
       "name": "tar",
-      "version": "7.5.19",
+      "version": "7.5.20",
       "description": "tar for node",
       "licenses": [
         {
@@ -24792,7 +26095,7 @@
     {
       "type": "library",
       "name": "temp-dir",
-      "version": "2.0.0",
+      "version": "3.0.0",
       "description": "Get the real path of the system temp directory",
       "licenses": [
         {
@@ -24821,7 +26124,7 @@
     {
       "type": "library",
       "name": "tempy",
-      "version": "0.6.0",
+      "version": "3.2.0",
       "description": "Get a random temporary file or directory path",
       "licenses": [
         {
@@ -24850,7 +26153,7 @@
     {
       "type": "library",
       "name": "terser",
-      "version": "5.48.0",
+      "version": "5.49.0",
       "description": "JavaScript parser, mangler/compressor and beautifier toolkit for ES6+",
       "licenses": [
         {
@@ -25040,7 +26343,7 @@
     {
       "type": "library",
       "name": "tldts",
-      "version": "6.1.86",
+      "version": "7.4.8",
       "description": "Library to work against complex domain names, subdomains and URIs.",
       "licenses": [
         {
@@ -25073,7 +26376,7 @@
     {
       "type": "library",
       "name": "tldts-core",
-      "version": "6.1.86",
+      "version": "7.4.8",
       "description": "tldts core primitives (internal module)",
       "licenses": [
         {
@@ -25139,7 +26442,7 @@
     {
       "type": "library",
       "name": "tough-cookie",
-      "version": "5.1.2",
+      "version": "6.0.2",
       "description": "RFC6265 Cookies and Cookie Jar for node.js",
       "licenses": [
         {
@@ -25387,7 +26690,7 @@
     {
       "type": "library",
       "name": "type-fest",
-      "version": "0.16.0",
+      "version": "0.18.1",
       "description": "A collection of essential TypeScript types",
       "licenses": [
         {
@@ -25610,7 +26913,7 @@
     {
       "type": "library",
       "name": "undici",
-      "version": "6.27.0",
+      "version": "7.28.0",
       "description": "An HTTP/1.1 client, written from scratch for Node.js",
       "licenses": [
         {
@@ -25775,7 +27078,7 @@
     {
       "type": "library",
       "name": "unique-string",
-      "version": "2.0.0",
+      "version": "3.0.0",
       "description": "Generate a unique random string",
       "licenses": [
         {
@@ -26382,37 +27685,8 @@
     },
     {
       "type": "library",
-      "name": "whatwg-encoding",
-      "version": "3.1.1",
-      "description": "Decode strings according to the WHATWG Encoding Standard",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/jsdom/whatwg-encoding"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "whatwg-mimetype",
-      "version": "4.0.0",
+      "version": "5.0.0",
       "description": "Parses, serializes, and manipulates MIME types, according to the WHATWG MIME Sniffing Standard",
       "licenses": [
         {
@@ -26524,39 +27798,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/inspect-js/which-collection"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "which-module",
-      "version": "2.0.1",
-      "description": "Find the module object for something that was require()d",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/nexdrew/which-module#readme"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/nexdrew/which-module"
         }
       ],
       "properties": [
@@ -27158,35 +28399,6 @@
     },
     {
       "type": "library",
-      "name": "wrap-ansi",
-      "version": "7.0.0",
-      "description": "Wordwrap a string with ANSI escape codes",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/chalk/wrap-ansi"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "wrappy",
       "version": "1.0.2",
       "description": "Callback wrapping utility",
@@ -27205,39 +28417,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/npm/wrappy"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "ws",
-      "version": "8.21.0",
-      "description": "Simple to use, blazing fast and thoroughly tested websocket client and server for Node.js",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/websockets/ws"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/websockets/ws"
         }
       ],
       "properties": [
@@ -27519,134 +28698,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/Raynos/xtend"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "y18n",
-      "version": "5.0.8",
-      "description": "the bare-bones internationalization library used by yargs",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/yargs/y18n"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/yargs/y18n"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "yaml",
-      "version": "1.10.3",
-      "description": "JavaScript parser and stringifier for YAML",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://eemeli.org/yaml/v1/"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/eemeli/yaml"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "yargs",
-      "version": "17.7.3",
-      "description": "yargs the modern, pirate-themed, successor to optimist.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://yargs.js.org/"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/yargs/yargs"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "yargs-parser",
-      "version": "21.1.1",
-      "description": "the mighty option parser used by yargs",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/yargs/yargs-parser"
         }
       ],
       "properties": [

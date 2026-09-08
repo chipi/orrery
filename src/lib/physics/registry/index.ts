@@ -96,6 +96,7 @@ export const tsiolkovsky: FormulaDef<{ ispS: number; m0Kg: number; mfKg: number 
   tier: 4,
   prereqs: [],
   citationKey: 'propulsion/tsiolkovsky',
+  learnMore: { url: 'https://www.grc.nasa.gov/www/k-12/rocket/rktpow.html', source: 'nasa-glenn' },
   latex: '\\Delta v = I_{sp}\\,g_0\\ln\\dfrac{m_0}{m_f}',
   inputs: [
     {
@@ -165,6 +166,10 @@ export const tsiolkovsky: FormulaDef<{ ispS: number; m0Kg: number; mfKg: number 
 export const newtonSecondLaw: FormulaDef<{ forceN: number; massKg: number }> = {
   id: 'newton-second-law',
   titleKey: 'lab.f.newton-second-law.title',
+  learnMore: {
+    url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/newt.html',
+    source: 'hyperphysics',
+  },
   domain: 'mechanics',
   tier: 1,
   prereqs: [],
@@ -213,6 +218,10 @@ const WEIGHT_BODY_IDS = ['earth', 'moon', 'mars', 'venus', 'mercury'] as const;
 export const weight: FormulaDef<{ massKg: number; body: string }> = {
   id: 'weight',
   titleKey: 'lab.f.weight.title',
+  learnMore: {
+    url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/mass.html',
+    source: 'hyperphysics',
+  },
   domain: 'mechanics',
   tier: 1,
   prereqs: [],
@@ -259,6 +268,7 @@ export const weight: FormulaDef<{ massKg: number; body: string }> = {
 export const momentumFormula: FormulaDef<{ massKg: number; velMs: number }> = {
   id: 'momentum',
   titleKey: 'lab.f.momentum.title',
+  learnMore: { url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/mom.html', source: 'hyperphysics' },
   domain: 'mechanics',
   tier: 2,
   prereqs: ['newton-second-law'],
@@ -298,6 +308,8 @@ export const momentumFormula: FormulaDef<{ massKg: number; velMs: number }> = {
 export const twrFormula: FormulaDef<{ thrustN: number; massKg: number; body: string }> = {
   id: 'twr',
   titleKey: 'lab.f.twr.title',
+  citationKey: 'propulsion/thrust-and-twr',
+  learnMore: { url: 'https://www.grc.nasa.gov/www/k-12/airplane/fwrat.html', source: 'nasa-glenn' },
   domain: 'mechanics',
   tier: 3,
   prereqs: ['newton-second-law', 'weight'],
@@ -362,6 +374,10 @@ const FREE_FALL_BODY_IDS = ['earth', 'moon', 'mars', 'venus', 'mercury'] as cons
 export const freeFallFormula: FormulaDef<{ heightM: number; body: string }> = {
   id: 'free-fall',
   titleKey: 'lab.f.free-fall.title',
+  learnMore: {
+    url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/traj.html',
+    source: 'hyperphysics',
+  },
   domain: 'mechanics',
   tier: 1,
   prereqs: [],
@@ -424,6 +440,10 @@ const PROJECTILE_BODY_IDS = ['earth', 'moon', 'mars', 'venus', 'mercury'] as con
 export const projectileFormula: FormulaDef<{ v0Ms: number; angleDeg: number; body: string }> = {
   id: 'projectile',
   titleKey: 'lab.f.projectile.title',
+  learnMore: {
+    url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/traj.html',
+    source: 'hyperphysics',
+  },
   domain: 'mechanics',
   tier: 2,
   prereqs: ['free-fall'],
@@ -502,6 +522,8 @@ export const projectileFormula: FormulaDef<{ v0Ms: number; angleDeg: number; bod
 export const deltaVMargin: FormulaDef<{ capacityKms: number; requiredKms: number }> = {
   id: 'delta-v-margin',
   titleKey: 'lab.f.delta-v-margin.title',
+  citationKey: 'propulsion/dv-budget',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Delta-v_budget', source: 'wikipedia' },
   domain: 'transfer',
   tier: 5,
   prereqs: ['tsiolkovsky'],
@@ -564,6 +586,11 @@ export const deltaVMargin: FormulaDef<{ capacityKms: number; requiredKms: number
 export const orbitalVelocity: FormulaDef<{ altitudeKm: number; body: string }> = {
   id: 'orbital-velocity',
   titleKey: 'lab.f.orbital-velocity.title',
+  citationKey: 'orbits/keplerian-orbit',
+  learnMore: {
+    url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/orbv.html',
+    source: 'hyperphysics',
+  },
   domain: 'satellite',
   tier: 5,
   prereqs: [],
@@ -627,6 +654,8 @@ export const orbitalVelocity: FormulaDef<{ altitudeKm: number; body: string }> =
 export const visVivaFormula: FormulaDef<{ rKm: number; aKm: number; body: string }> = {
   id: 'vis-viva',
   titleKey: 'lab.f.vis-viva.title',
+  citationKey: 'orbits/vis-viva',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Vis-viva_equation', source: 'wikipedia' },
   domain: 'satellite',
   tier: 6,
   prereqs: ['orbital-velocity'],
@@ -710,6 +739,8 @@ export const visVivaFormula: FormulaDef<{ rKm: number; aKm: number; body: string
 export const hohmannFormula: FormulaDef<{ r1Km: number; r2Km: number; body: string }> = {
   id: 'hohmann-transfer',
   titleKey: 'lab.f.hohmann.title',
+  citationKey: 'transfers/hohmann-transfer',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Hohmann_transfer_orbit', source: 'wikipedia' },
   domain: 'transfer',
   tier: 7,
   prereqs: ['vis-viva'],
@@ -829,6 +860,8 @@ export const hohmannFormula: FormulaDef<{ r1Km: number; r2Km: number; body: stri
 export const launchSite: FormulaDef<{ latitudeDeg: number; body: string }> = {
   id: 'launch-site',
   titleKey: 'lab.f.launch-site.title',
+  citationKey: 'mission-phases/launch',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Spaceport', source: 'wikipedia' },
   domain: 'ascent',
   tier: 3,
   prereqs: [],
@@ -928,6 +961,8 @@ export const reachOrbitVerdict: FormulaDef<{
 }> = {
   id: 'reach-orbit-verdict',
   titleKey: 'lab.f.reach-orbit.title',
+  citationKey: 'mission-phases/orbit-insertion',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Orbital_spaceflight', source: 'wikipedia' },
   domain: 'ascent',
   tier: 5,
   prereqs: ['tsiolkovsky', 'launch-site'],
@@ -1002,6 +1037,8 @@ export const reachOrbitVerdict: FormulaDef<{
 export const descentBurn: FormulaDef<{ vOrbitKms: number; twr: number }> = {
   id: 'descent-burn',
   titleKey: 'lab.f.descent-burn.title',
+  citationKey: 'mission-phases/propulsive-landing',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Powered_descent', source: 'wikipedia' },
   domain: 'descent',
   tier: 8,
   prereqs: ['orbital-velocity', 'twr'],
@@ -1075,6 +1112,11 @@ export const descentBurn: FormulaDef<{ vOrbitKms: number; twr: number }> = {
 export const interplanetaryTransfer: FormulaDef<{ depart: string; arrive: string }> = {
   id: 'interplanetary-transfer',
   titleKey: 'lab.f.interplanetary.title',
+  citationKey: 'transfers/patched-conics',
+  learnMore: {
+    url: 'https://en.wikipedia.org/wiki/Interplanetary_Transport_Network',
+    source: 'wikipedia',
+  },
   domain: 'transfer',
   tier: 9,
   prereqs: ['hohmann-transfer'],
@@ -1180,6 +1222,8 @@ export const interplanetaryTransfer: FormulaDef<{ depart: string; arrive: string
 export const launchWindow: FormulaDef<{ depart: string; arrive: string }> = {
   id: 'launch-window',
   titleKey: 'lab.f.synodic.title',
+  citationKey: 'porkchop/what-is-a-porkchop',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Launch_window', source: 'wikipedia' },
   domain: 'transfer',
   tier: 9,
   prereqs: [],
@@ -1281,6 +1325,8 @@ const PORKCHOP_DEST_IDS = ['venus', 'mars', 'jupiter'] as const;
 export const porkchop: FormulaDef<{ destination: string }> = {
   id: 'porkchop',
   titleKey: 'lab.f.porkchop.title',
+  citationKey: 'porkchop/what-is-a-porkchop',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Porkchop_plot', source: 'wikipedia' },
   domain: 'transfer',
   tier: 8,
   prereqs: ['interplanetary-transfer', 'launch-window'],
@@ -1381,6 +1427,8 @@ export const porkchop: FormulaDef<{ destination: string }> = {
 export const cislunarTransfer: FormulaDef<Record<string, never>> = {
   id: 'cislunar-transfer',
   titleKey: 'lab.f.cislunar.title',
+  citationKey: 'orbits/cislunar-orbits',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Trans-lunar_injection', source: 'wikipedia' },
   domain: 'transfer',
   tier: 5,
   prereqs: ['hohmann-transfer'],
@@ -1458,6 +1506,8 @@ export const cislunarTransfer: FormulaDef<Record<string, never>> = {
 export const ascentToOrbit: FormulaDef<{ payloadKg: number; targetOrbitAltKm: number }> = {
   id: 'ascent-to-orbit',
   titleKey: 'lab.f.ascent.title',
+  citationKey: 'mission-phases/gravity-turn',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Gravity_turn', source: 'wikipedia' },
   domain: 'ascent',
   tier: 2,
   prereqs: ['tsiolkovsky', 'dv-to-orbit'],
@@ -1580,6 +1630,11 @@ export const ascentToOrbit: FormulaDef<{ payloadKg: number; targetOrbitAltKm: nu
 export const ascentGuidance: FormulaDef<{ upperThrustKN: number; targetOrbitAltKm: number }> = {
   id: 'ascent-guidance',
   titleKey: 'lab.f.guidance.title',
+  citationKey: 'mission-phases/ascent-guidance',
+  learnMore: {
+    url: 'https://en.wikipedia.org/wiki/Guidance,_navigation,_and_control',
+    source: 'wikipedia',
+  },
   domain: 'ascent',
   tier: 3,
   prereqs: ['ascent-to-orbit'],
@@ -1701,6 +1756,8 @@ export const poweredDescent: FormulaDef<{
 }> = {
   id: 'powered-descent',
   titleKey: 'lab.f.pdescent.title',
+  citationKey: 'mission-phases/propulsive-landing',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Powered_descent', source: 'wikipedia' },
   domain: 'descent',
   tier: 3,
   prereqs: ['descent-burn'],
@@ -1830,6 +1887,8 @@ export const entrySteering: FormulaDef<{
 }> = {
   id: 'entry-steering',
   titleKey: 'lab.f.esteer.title',
+  citationKey: 'mission-phases/lifting-entry',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Atmospheric_entry', source: 'wikipedia' },
   domain: 'descent',
   tier: 4,
   prereqs: ['entry-corridor'],
@@ -1961,6 +2020,8 @@ export const entryRangeControl: FormulaDef<{
 }> = {
   id: 'entry-range-control',
   titleKey: 'lab.f.rangectl.title',
+  citationKey: 'mission-phases/entry-footprint',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Atmospheric_entry', source: 'wikipedia' },
   domain: 'descent',
   tier: 5,
   prereqs: ['entry-steering'],
@@ -2081,6 +2142,8 @@ export const terminalVelocity: FormulaDef<{
 }> = {
   id: 'terminal-velocity',
   titleKey: 'lab.f.terminal.title',
+  citationKey: 'mission-phases/terminal-velocity',
+  learnMore: { url: 'https://www.grc.nasa.gov/www/k-12/airplane/termv.html', source: 'nasa-glenn' },
   domain: 'descent',
   tier: 6,
   prereqs: ['weight'],
@@ -2181,6 +2244,11 @@ export const terminalVelocity: FormulaDef<{
 export const softLandingCheck: FormulaDef<{ terminalMs: number; safeMs: number }> = {
   id: 'soft-landing-check',
   titleKey: 'lab.f.soft-land.title',
+  citationKey: 'mission-phases/propulsive-landing',
+  learnMore: {
+    url: 'https://en.wikipedia.org/wiki/Soft_landing_(aeronautics)',
+    source: 'wikipedia',
+  },
   domain: 'descent',
   tier: 7,
   prereqs: ['terminal-velocity'],
@@ -2254,6 +2322,8 @@ export const softLandingCheck: FormulaDef<{ terminalMs: number; safeMs: number }
 export const airbagsCheck: FormulaDef<{ impactMs: number; airbagLimitMs: number }> = {
   id: 'airbags-check',
   titleKey: 'lab.f.airbags.title',
+  citationKey: 'mission-phases/edl',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Mars_Pathfinder', source: 'wikipedia' },
   domain: 'descent',
   tier: 8,
   prereqs: ['terminal-velocity'],
@@ -2329,6 +2399,8 @@ export const airbagsCheck: FormulaDef<{ impactMs: number; airbagLimitMs: number 
 export const enginePerformance: FormulaDef<{ engine: string }> = {
   id: 'engine-performance',
   titleKey: 'lab.f.engine-perf.title',
+  citationKey: 'propulsion/specific-impulse',
+  learnMore: { url: 'https://www.grc.nasa.gov/www/k-12/rocket/specimp.html', source: 'nasa-glenn' },
   domain: 'propulsion',
   tier: 4,
   prereqs: ['tsiolkovsky'],
@@ -2402,6 +2474,8 @@ function isMicrogBody(id: string): id is (typeof MICROG_BODY_IDS)[number] {
 export const microGSurface: FormulaDef<{ body: string }> = {
   id: 'micro-g-surface',
   titleKey: 'lab.f.microg.title',
+  citationKey: 'orbits/hill-sphere',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Surface_gravity', source: 'wikipedia' },
   domain: 'descent',
   tier: 7,
   prereqs: ['weight'],
@@ -2459,6 +2533,10 @@ export const touchdownBounce: FormulaDef<{
 }> = {
   id: 'touchdown-bounce',
   titleKey: 'lab.f.bounce.title',
+  learnMore: {
+    url: 'https://en.wikipedia.org/wiki/Coefficient_of_restitution',
+    source: 'wikipedia',
+  },
   domain: 'descent',
   tier: 7,
   prereqs: ['micro-g-surface'],
@@ -2582,6 +2660,8 @@ export const touchdownBounce: FormulaDef<{
 export const retroDescent: FormulaDef<{ terminalMs: number; safeMs: number }> = {
   id: 'retro-descent',
   titleKey: 'lab.f.retro.title',
+  citationKey: 'mission-phases/propulsive-landing',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Retrorocket', source: 'wikipedia' },
   domain: 'descent',
   tier: 8,
   prereqs: ['terminal-velocity'],
@@ -2644,6 +2724,8 @@ export const retroDescent: FormulaDef<{ terminalMs: number; safeMs: number }> = 
 export const dvToOrbit: FormulaDef<{ body: string; altitudeKm: number; lossesKms: number }> = {
   id: 'dv-to-orbit',
   titleKey: 'lab.f.dvorbit.title',
+  citationKey: 'propulsion/dv-budget',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Delta-v_budget', source: 'wikipedia' },
   domain: 'ascent',
   tier: 5,
   prereqs: ['orbital-velocity'],
@@ -2730,6 +2812,8 @@ export const deorbitBurn: FormulaDef<{
 }> = {
   id: 'deorbit-burn',
   titleKey: 'lab.f.deorbit.title',
+  citationKey: 'mission-phases/deorbit-corridor',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Atmospheric_entry', source: 'wikipedia' },
   domain: 'descent',
   tier: 6,
   prereqs: ['orbital-velocity'],
@@ -2824,6 +2908,11 @@ export const entryHeating: FormulaDef<{
 }> = {
   id: 'entry-heating',
   titleKey: 'lab.f.entry.title',
+  citationKey: 'mission-phases/entry-heating',
+  learnMore: {
+    url: 'https://en.wikipedia.org/wiki/Atmospheric_entry#Entry_heating',
+    source: 'wikipedia',
+  },
   domain: 'descent',
   tier: 7,
   prereqs: ['deorbit-burn'],
@@ -2941,6 +3030,8 @@ export const entryCorridor: FormulaDef<{
 }> = {
   id: 'entry-corridor',
   titleKey: 'lab.f.corridor.title',
+  citationKey: 'mission-phases/deorbit-corridor',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Atmospheric_entry', source: 'wikipedia' },
   domain: 'descent',
   tier: 8,
   prereqs: ['entry-heating'],
@@ -3090,6 +3181,8 @@ export const rocketSizing: FormulaDef<{
 }> = {
   id: 'rocket-sizing',
   titleKey: 'lab.f.sizing.title',
+  citationKey: 'propulsion/rocket-stages',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Multistage_rocket', source: 'wikipedia' },
   domain: 'ascent',
   tier: 5,
   prereqs: ['tsiolkovsky'],
@@ -3203,6 +3296,11 @@ export const rocketSizing: FormulaDef<{
 export const liftoffThrust: FormulaDef<{ grossMassKg: number; liftoffTwr: number }> = {
   id: 'liftoff-thrust',
   titleKey: 'lab.f.liftoff.title',
+  citationKey: 'propulsion/thrust-and-twr',
+  learnMore: {
+    url: 'https://www.grc.nasa.gov/www/k-12/rocket/rktthsum.html',
+    source: 'nasa-glenn',
+  },
   domain: 'ascent',
   tier: 5,
   prereqs: ['rocket-sizing', 'twr'],
@@ -3274,6 +3372,8 @@ export const liftoffThrust: FormulaDef<{ grossMassKg: number; liftoffTwr: number
 export const engineCount: FormulaDef<{ thrustN: number; engineThrustN: number }> = {
   id: 'engine-count',
   titleKey: 'lab.f.engines.title',
+  citationKey: 'propulsion/engine-clustering',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Rocket_engine', source: 'wikipedia' },
   domain: 'ascent',
   tier: 6,
   prereqs: ['liftoff-thrust'],
@@ -3348,6 +3448,11 @@ export const staging: FormulaDef<{ deltaVKms: number; ispS: number; structuralFr
   {
     id: 'staging',
     titleKey: 'lab.f.staging.title',
+    citationKey: 'propulsion/rocket-stages',
+    learnMore: {
+      url: 'https://www.grc.nasa.gov/www/k-12/rocket/rktstage.html',
+      source: 'nasa-glenn',
+    },
     domain: 'ascent',
     tier: 6,
     prereqs: ['rocket-sizing'],
@@ -3445,6 +3550,8 @@ export const boosterCount: FormulaDef<{
 }> = {
   id: 'booster-count',
   titleKey: 'lab.f.boosters.title',
+  citationKey: 'propulsion/engine-clustering',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Booster_(rocketry)', source: 'wikipedia' },
   domain: 'ascent',
   tier: 6,
   prereqs: ['liftoff-thrust'],
@@ -3547,6 +3654,8 @@ export const clusterThrust: FormulaDef<{
 }> = {
   id: 'cluster-thrust',
   titleKey: 'lab.f.cluster.title',
+  citationKey: 'propulsion/engine-clustering',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Rocket_engine', source: 'wikipedia' },
   domain: 'ascent',
   tier: 6,
   prereqs: ['engine-count'],
@@ -3652,6 +3761,11 @@ export const clusterThrust: FormulaDef<{
 export const solarEscapeVelocity: FormulaDef<{ distanceAu: number }> = {
   id: 'solar-escape-velocity',
   titleKey: 'lab.f.solesc.title',
+  citationKey: 'orbits/escape-velocity',
+  learnMore: {
+    url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/vesc.html',
+    source: 'hyperphysics',
+  },
   domain: 'transfer',
   tier: 6,
   prereqs: ['orbital-velocity'],
@@ -3711,6 +3825,8 @@ export const solarEscapeVelocity: FormulaDef<{ distanceAu: number }> = {
 export const heliocentricEscapeDv: FormulaDef<{ escapeKms: number; orbitalKms: number }> = {
   id: 'heliocentric-escape-dv',
   titleKey: 'lab.f.helesc.title',
+  citationKey: 'propulsion/c3',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Characteristic_energy', source: 'wikipedia' },
   domain: 'transfer',
   tier: 7,
   prereqs: ['solar-escape-velocity'],
@@ -3776,6 +3892,8 @@ export const oberthDepartureDv: FormulaDef<{ vInfKms: number; body: string; alti
   {
     id: 'oberth-departure-dv',
     titleKey: 'lab.f.oberth.title',
+    citationKey: 'propulsion/oberth-effect',
+    learnMore: { url: 'https://en.wikipedia.org/wiki/Oberth_effect', source: 'wikipedia' },
     domain: 'transfer',
     tier: 7,
     prereqs: ['heliocentric-escape-dv'],
@@ -3862,6 +3980,8 @@ export const oberthDepartureDv: FormulaDef<{ vInfKms: number; body: string; alti
 export const gravityAssist: FormulaDef<{ vInfKms: number }> = {
   id: 'gravity-assist',
   titleKey: 'lab.f.grav.title',
+  citationKey: 'transfers/gravity-assist',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Gravity_assist', source: 'wikipedia' },
   domain: 'transfer',
   tier: 7,
   prereqs: [],
@@ -3919,6 +4039,11 @@ export const escapeVerdict: FormulaDef<{
 }> = {
   id: 'escape-verdict',
   titleKey: 'lab.f.escverd.title',
+  citationKey: 'orbits/escape-velocity',
+  learnMore: {
+    url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/vesc.html',
+    source: 'hyperphysics',
+  },
   domain: 'transfer',
   tier: 8,
   prereqs: ['heliocentric-escape-dv', 'gravity-assist'],
@@ -4010,6 +4135,8 @@ export const escapeVerdict: FormulaDef<{
 export const assistChain: FormulaDef<{ flybys: number; vInfKms: number }> = {
   id: 'assist-chain',
   titleKey: 'lab.f.assistchain.title',
+  citationKey: 'transfers/gravity-assist',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Gravity_assist', source: 'wikipedia' },
   domain: 'transfer',
   tier: 8,
   prereqs: ['gravity-assist'],
@@ -4083,6 +4210,7 @@ export const assistChain: FormulaDef<{ flybys: number; vInfKms: number }> = {
 export const moonPhaseFormula: FormulaDef<{ dateIso: string }> = {
   id: 'moon-phase',
   titleKey: 'lab.f.moonphase.title',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Lunar_phase', source: 'wikipedia' },
   domain: 'ephemeris',
   tier: 2,
   prereqs: [],
@@ -4143,6 +4271,10 @@ const MOON_MEAN_DISTANCE_AU = MOON_ORBIT_RADIUS_KM / AU_TO_KM;
 export const moonDistance: FormulaDef<{ dateIso: string }> = {
   id: 'moon-distance',
   titleKey: 'lab.f.moondist.title',
+  learnMore: {
+    url: 'https://en.wikipedia.org/wiki/Lunar_distance_(astronomy)',
+    source: 'wikipedia',
+  },
   domain: 'ephemeris',
   tier: 2,
   prereqs: ['moon-phase'],
@@ -4207,6 +4339,7 @@ export const moonDistance: FormulaDef<{ dateIso: string }> = {
 export const eclipseSeasons: FormulaDef<{ dateIso: string }> = {
   id: 'eclipse-seasons',
   titleKey: 'lab.f.eclipse.title',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Eclipse_season', source: 'wikipedia' },
   domain: 'ephemeris',
   tier: 3,
   prereqs: ['moon-phase'],
@@ -4276,6 +4409,10 @@ export const eclipseSeasons: FormulaDef<{ dateIso: string }> = {
 export const moonAltitude: FormulaDef<{ dateIso: string; latitudeDeg: number }> = {
   id: 'moon-altitude',
   titleKey: 'lab.f.moonalt.title',
+  learnMore: {
+    url: 'https://en.wikipedia.org/wiki/Horizontal_coordinate_system',
+    source: 'wikipedia',
+  },
   domain: 'ephemeris',
   tier: 3,
   prereqs: ['moon-phase'],
@@ -4349,6 +4486,8 @@ const SPEED_OF_LIGHT_KMS = 299792.458;
 export const orbitRegime: FormulaDef<{ body: string; altitudeKm: number }> = {
   id: 'orbit-regime',
   titleKey: 'lab.f.regime.title',
+  citationKey: 'orbits/orbit-regimes',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/List_of_orbits', source: 'wikipedia' },
   domain: 'satellite',
   tier: 3,
   prereqs: ['orbital-velocity'],
@@ -4435,6 +4574,8 @@ export const orbitRegime: FormulaDef<{ body: string; altitudeKm: number }> = {
 export const geostationaryAltitude: FormulaDef<{ body: string }> = {
   id: 'geostationary-altitude',
   titleKey: 'lab.f.geo.title',
+  citationKey: 'orbits/special-orbits',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Geostationary_orbit', source: 'wikipedia' },
   domain: 'satellite',
   tier: 4,
   prereqs: ['orbit-regime'],
@@ -4507,6 +4648,8 @@ export const geostationaryAltitude: FormulaDef<{ body: string }> = {
 export const signalLatency: FormulaDef<{ altitudeKm: number }> = {
   id: 'signal-latency',
   titleKey: 'lab.f.latency.title',
+  citationKey: 'scales-time/light-minute',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Speed_of_light', source: 'wikipedia' },
   domain: 'satellite',
   tier: 4,
   prereqs: ['orbit-regime'],
@@ -4567,6 +4710,8 @@ export const signalLatency: FormulaDef<{ altitudeKm: number }> = {
 export const sunSynchronous: FormulaDef<{ altitudeKm: number }> = {
   id: 'sun-synchronous',
   titleKey: 'lab.f.sso.title',
+  citationKey: 'orbits/sun-synchronous',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Sun-synchronous_orbit', source: 'wikipedia' },
   domain: 'satellite',
   tier: 5,
   prereqs: ['orbit-regime'],
@@ -4635,6 +4780,8 @@ export const sunSynchronous: FormulaDef<{ altitudeKm: number }> = {
 export const frozenOrbit: FormulaDef<{ inclinationDeg: number }> = {
   id: 'frozen-orbit',
   titleKey: 'lab.f.frozen.title',
+  citationKey: 'orbits/inclination',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Frozen_orbit', source: 'wikipedia' },
   domain: 'satellite',
   tier: 5,
   prereqs: ['orbit-regime'],
@@ -4704,6 +4851,8 @@ export const frozenOrbit: FormulaDef<{ inclinationDeg: number }> = {
 export const constellationCoverage: FormulaDef<{ altitudeKm: number; minElevationDeg: number }> = {
   id: 'constellation-coverage',
   titleKey: 'lab.f.coverage.title',
+  citationKey: 'orbits/orbit-regimes',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Satellite_constellation', source: 'wikipedia' },
   domain: 'satellite',
   tier: 4,
   prereqs: ['orbit-regime'],
@@ -4795,6 +4944,11 @@ export const launchAzimuth: FormulaDef<{
 }> = {
   id: 'launch-azimuth',
   titleKey: 'lab.f.azimuth.title',
+  citationKey: 'orbits/inclination',
+  learnMore: {
+    url: 'https://en.wikipedia.org/wiki/Launch_window',
+    source: 'wikipedia',
+  },
   domain: 'ascent',
   tier: 4,
   prereqs: ['launch-site'],
@@ -4881,6 +5035,8 @@ export const launchAzimuth: FormulaDef<{
 export const groundTrackShift: FormulaDef<{ periodMin: number; inclinationDeg: number }> = {
   id: 'ground-track-shift',
   titleKey: 'lab.f.gtrack.title',
+  citationKey: 'orbits/orbit-regimes',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Ground_track', source: 'wikipedia' },
   domain: 'satellite',
   tier: 4,
   prereqs: ['orbit-regime'],
@@ -4959,6 +5115,7 @@ export const groundTrackShift: FormulaDef<{ periodMin: number; inclinationDeg: n
 export const visibilityWindow: FormulaDef<{ altitudeKm: number }> = {
   id: 'visibility-window',
   titleKey: 'lab.f.viswin.title',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Satellite_pass', source: 'wikipedia' },
   domain: 'satellite',
   tier: 4,
   prereqs: ['orbit-regime'],
@@ -5028,6 +5185,7 @@ export const issPass: FormulaDef<{
 }> = {
   id: 'iss-pass',
   titleKey: 'lab.f.isspass.title',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Satellite_pass', source: 'wikipedia' },
   domain: 'satellite',
   tier: 5,
   prereqs: ['visibility-window'],
@@ -5168,6 +5326,8 @@ const norm180 = (deg: number): number => ((((deg + 180) % 360) + 360) % 360) - 1
 export const planetElongation: FormulaDef<{ planet: string; dateIso: string }> = {
   id: 'planet-elongation',
   titleKey: 'lab.f.elong.title',
+  citationKey: 'orbits/synodic-period',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Elongation_(astronomy)', source: 'wikipedia' },
   domain: 'ephemeris',
   tier: 3,
   prereqs: [],
@@ -5244,6 +5404,8 @@ export const planetElongation: FormulaDef<{ planet: string; dateIso: string }> =
 export const maxElongation: FormulaDef<{ planet: string }> = {
   id: 'max-elongation',
   titleKey: 'lab.f.maxelong.title',
+  citationKey: 'orbits/synodic-period',
+  learnMore: { url: 'https://en.wikipedia.org/wiki/Elongation_(astronomy)', source: 'wikipedia' },
   domain: 'ephemeris',
   tier: 3,
   prereqs: ['planet-elongation'],
@@ -5327,6 +5489,11 @@ export const maxElongation: FormulaDef<{ planet: string }> = {
 export const retrogradeMotion: FormulaDef<{ planet: string; dateIso: string }> = {
   id: 'retrograde-motion',
   titleKey: 'lab.f.retro.title',
+  citationKey: 'orbits/synodic-period',
+  learnMore: {
+    url: 'https://en.wikipedia.org/wiki/Apparent_retrograde_motion',
+    source: 'wikipedia',
+  },
   domain: 'ephemeris',
   tier: 3,
   prereqs: ['planet-elongation'],
@@ -5402,6 +5569,10 @@ export const planetAltitude: FormulaDef<{ planet: string; dateIso: string; latit
   {
     id: 'planet-altitude',
     titleKey: 'lab.f.skyalt.title',
+    learnMore: {
+      url: 'https://en.wikipedia.org/wiki/Horizontal_coordinate_system',
+      source: 'wikipedia',
+    },
     domain: 'ephemeris',
     tier: 3,
     prereqs: ['planet-elongation'],

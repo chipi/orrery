@@ -321,6 +321,44 @@
   }
 </script>
 
+<!-- Notebook toolbar glyphs (V3): compact icon buttons top-right. 16px stroke
+     icons on currentColor so they inherit the button's teal/gold state. -->
+{#snippet toolIcon(name: 'share' | 'check' | 'print' | 'card' | 'save' | 'load')}
+  <svg
+    class="nb__tool-icon"
+    viewBox="0 0 16 16"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    {#if name === 'share'}
+      <circle cx="4" cy="8" r="1.7" />
+      <circle cx="12" cy="4" r="1.7" />
+      <circle cx="12" cy="12" r="1.7" />
+      <path d="M5.5 7.2l5-2.4M5.5 8.8l5 2.4" />
+    {:else if name === 'check'}
+      <path d="M3 8.5l3.2 3.2L13 5" />
+    {:else if name === 'print'}
+      <path d="M4.5 6.5v-4h7v4" />
+      <path d="M4.5 11.5h-2v-4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v4h-2" />
+      <rect x="4.5" y="9.5" width="7" height="4" rx="0.5" />
+    {:else if name === 'card'}
+      <rect x="2.5" y="3.5" width="11" height="9" rx="1" />
+      <circle cx="5.5" cy="6.5" r="1" />
+      <path d="M3 11.5l3-2.5 2.5 2 2-1.5 2.5 2" />
+    {:else if name === 'save'}
+      <path d="M3 2.5h7.5l2.5 2.5v8.5H3z" />
+      <path d="M5.5 2.5v3.5h5V2.5" />
+      <rect x="5" y="9" width="6" height="4.5" rx="0.4" />
+    {:else if name === 'load'}
+      <path d="M2 4.5h4l1.2 1.5H14v7H2z" />
+    {/if}
+  </svg>
+{/snippet}
+
 <!-- One card + its action rail (focus / remove) — reused in notebook + focus modes. -->
 {#snippet cardCell(cell: UICell, i: number)}
   {@const state = computed[i]}
@@ -384,6 +422,9 @@
           >{restored ? t('lab.ui.custom-notebook') : t('lab.ui.goal')}</span
         >
         <h2 class="nb__goal-title">{restored ? t('lab.ui.your-notebook') : t(goal.titleKey)}</h2>
+        {#if !restored}
+          <p class="nb__goal-desc">{t(goal.descriptionKey)}</p>
+        {/if}
       </div>
       <div class="nb__tools">
         <button
@@ -391,34 +432,42 @@
           class="nb__tool nb__tool--accent"
           class:nb__tool--done={shareState === 'copied'}
           onclick={share}
-          aria-label={t('lab.ui.aria-share')}
-        >
-          {shareState === 'copied'
-            ? '✓ ' + t('lab.ui.share-copied')
+          title={shareState === 'copied'
+            ? t('lab.ui.share-copied')
             : shareState === 'failed'
               ? t('lab.ui.share-in-url')
               : t('lab.ui.share')}
+          aria-label={t('lab.ui.aria-share')}
+        >
+          {@render toolIcon(shareState === 'copied' ? 'check' : 'share')}
         </button>
         <button
           type="button"
           class="nb__tool"
           onclick={() => window.print()}
-          aria-label={t('lab.report.aria-print')}>{t('lab.report.print')}</button
+          title={t('lab.report.print')}
+          aria-label={t('lab.report.aria-print')}>{@render toolIcon('print')}</button
         >
         <button
           type="button"
           class="nb__tool"
           onclick={shareCard}
-          aria-label={t('lab.report.aria-card')}>{t('lab.report.card')}</button
+          title={t('lab.report.card')}
+          aria-label={t('lab.report.aria-card')}>{@render toolIcon('card')}</button
         >
-        <button type="button" class="nb__tool" onclick={saveFile} aria-label={t('lab.ui.aria-save')}
-          >{t('lab.ui.save')}</button
+        <button
+          type="button"
+          class="nb__tool"
+          onclick={saveFile}
+          title={t('lab.ui.save')}
+          aria-label={t('lab.ui.aria-save')}>{@render toolIcon('save')}</button
         >
         <button
           type="button"
           class="nb__tool"
           onclick={() => fileInput?.click()}
-          aria-label={t('lab.ui.aria-load')}>{t('lab.ui.load')}</button
+          title={t('lab.ui.load')}
+          aria-label={t('lab.ui.aria-load')}>{@render toolIcon('load')}</button
         >
         <input
           bind:this={fileInput}
@@ -645,21 +694,28 @@
     flex-shrink: 0;
     flex-wrap: wrap;
     justify-content: flex-end;
+    align-items: flex-start;
   }
 
+  /* Compact square icon buttons (V3) — no text, 40px touch target. */
   .nb__tool {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 1.5px;
     color: rgba(232, 232, 232, 0.75);
     background: rgba(232, 232, 232, 0.04);
     border: 1px solid rgba(232, 232, 232, 0.2);
-    border-radius: 2px;
-    padding: 0 0.8rem;
-    min-height: 40px;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    white-space: nowrap;
     transition: background 0.15s;
+  }
+
+  .nb__tool-icon {
+    width: 18px;
+    height: 18px;
   }
 
   .nb__tool:hover,
@@ -725,6 +781,15 @@
     color: #e8e8e8;
     margin: 0;
     line-height: 1.05;
+  }
+
+  /* Goal hook (V2) — the "why care" under the short title. */
+  .nb__goal-desc {
+    margin: 0.4rem 0 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(232, 232, 232, 0.7);
+    max-width: 60ch;
   }
 
   /* ─── Step column ─────────────────────────────────────────────────────── */
@@ -938,6 +1003,19 @@
     background: rgba(78, 205, 196, 0.16);
     outline: 2px solid #4ecdc4;
     outline-offset: 2px;
+  }
+
+  @media (max-width: 560px) {
+    /* Stack the header so the goal title/description gets the full width and the
+       icon rail drops below it (V3 — no more left-20% squeeze). */
+    .nb__head {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.6rem;
+    }
+    .nb__tools {
+      justify-content: flex-start;
+    }
   }
 
   @media (max-width: 480px) {

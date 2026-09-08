@@ -384,12 +384,16 @@ describe('range-control entry guidance', () => {
     }
   }, 30_000);
 
+  // Out-of-footprint solve runs the full bank-solve bisection (searching the whole
+  // bank range before declaring 8000 km unreachable) — same ~30-integration cost as
+  // the sibling test above, so it needs the same 30 s budget under coverage
+  // instrumentation (timed out at vitest's 5 s default on a coverage run 2026-09-07).
   it('flags an out-of-footprint target and clamps to the reachable edge', () => {
     const s = integrateDescent({ ...capsule, targetDownrangeKm: 8000 });
     expect(s.guidance?.targetReachable).toBe(false);
     expect(s.landingDownrangeKm).toBeLessThan(8000); // clamped to full-lift-up max
     expect(s.touchdownSuccess).toBe(true); // still a real, survivable entry
-  });
+  }, 30_000);
 
   it('M4 guard: a target with no lift (no steering authority) is flagged, not faked', () => {
     // A profile carrying a target but zero L/D has a zero-width footprint — bank does nothing.

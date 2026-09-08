@@ -183,6 +183,32 @@
       cover: '/images/recommendations/blogs/damn-interesting.webp',
     },
   ];
+
+  // First-principles references — the external resources the Physics Lab's
+  // per-formula "Learn more" links point to (curated best-per-formula).
+  const references: Resource[] = [
+    {
+      title: 'HyperPhysics',
+      publisher: 'hyperphysics.phy-astr.gsu.edu',
+      blurb:
+        "Georgia State University's concept-map of introductory physics. The first-principles home for the Physics Lab's mechanics, gravity, and orbital-velocity cards — every “Learn more → HyperPhysics” link lands here.",
+      href: 'http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html',
+    },
+    {
+      title: "NASA Glenn — Beginner's Guide to Rocketry",
+      publisher: 'grc.nasa.gov',
+      blurb:
+        "NASA's plain-language derivations of thrust, the ideal rocket equation, staging, and terminal velocity. Where the Lab's rocketry and re-entry cards send you to go deeper.",
+      href: 'https://www.grc.nasa.gov/www/k-12/rocket/bgmr.html',
+    },
+    {
+      title: 'Wikipedia',
+      publisher: 'wikipedia.org',
+      blurb:
+        'The universal fallback for the Lab’s “Learn more” links on the aerospace-specific formulas — Hohmann transfers, porkchop plots, sun-synchronous orbits, gravity assists — that the introductory-physics references above do not cover.',
+      href: 'https://en.wikipedia.org/wiki/Orbital_mechanics',
+    },
+  ];
 </script>
 
 <svelte:head>
@@ -232,6 +258,33 @@
               </span>
             </div>
             <p class="blurb">{book.blurb}</p>
+          </div>
+        </li>
+      {/each}
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>{m.reading_list_section_references()}</h2>
+    <ul class="entries">
+      {#each references as ref (ref.title)}
+        <li class="entry">
+          <div
+            class="thumb thumb--square thumb--placeholder"
+            style:background={gradientFor(ref.title)}
+            aria-hidden="true"
+          >
+            <span class="thumb-initial">{initialFor(ref.title)}</span>
+          </div>
+          <div class="entry-content">
+            <div class="entry-head">
+              <h3>
+                <a href={ref.href} target="_blank" rel="noopener noreferrer external">{ref.title}</a
+                >
+              </h3>
+              <span class="meta">{ref.publisher}</span>
+            </div>
+            <p class="blurb">{ref.blurb}</p>
           </div>
         </li>
       {/each}

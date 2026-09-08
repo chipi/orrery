@@ -31,6 +31,7 @@ import type { Goal } from '../spec';
 export const launchARocket: Goal = {
   id: 'launch-a-rocket',
   titleKey: 'lab.goal.launch-a-rocket.title',
+  descriptionKey: 'lab.goal.launch-a-rocket.desc',
   family: 'spaceflight',
   tier: 1,
   prereqs: [],
@@ -84,6 +85,7 @@ export const launchARocket: Goal = {
 export const scaleARocket: Goal = {
   id: 'scale-a-rocket',
   titleKey: 'lab.goal.scale-rocket.title',
+  descriptionKey: 'lab.goal.scale-rocket.desc',
   family: 'spaceflight',
   tier: 1,
   prereqs: ['launch-a-rocket'],
@@ -141,6 +143,7 @@ export const scaleARocket: Goal = {
 export const reachOrbit: Goal = {
   id: 'reach-orbit',
   titleKey: 'lab.goal.reach-orbit.title',
+  descriptionKey: 'lab.goal.reach-orbit.desc',
   family: 'spaceflight',
   tier: 1,
   prereqs: ['launch-a-rocket'],
@@ -174,6 +177,7 @@ export const reachOrbit: Goal = {
 export const landOnEarth: Goal = {
   id: 'land-on-earth',
   titleKey: 'lab.goal.land-earth.title',
+  descriptionKey: 'lab.goal.land-earth.desc',
   family: 'spaceflight',
   tier: 2,
   prereqs: ['launch-a-rocket'],
@@ -235,6 +239,7 @@ export const landOnEarth: Goal = {
 export const motionFirstPrinciples: Goal = {
   id: 'motion-first-principles',
   titleKey: 'lab.goal.motion.title',
+  descriptionKey: 'lab.goal.motion.desc',
   family: 'cross-cutting',
   tier: 1,
   prereqs: [],
@@ -262,6 +267,7 @@ export const motionFirstPrinciples: Goal = {
 export const reachTheMoon: Goal = {
   id: 'reach-the-moon',
   titleKey: 'lab.goal.reach-moon.title',
+  descriptionKey: 'lab.goal.reach-moon.desc',
   family: 'spaceflight',
   tier: 2,
   prereqs: ['launch-a-rocket'],
@@ -305,6 +311,7 @@ export const reachTheMoon: Goal = {
 export const landOnTheMoon: Goal = {
   id: 'land-on-the-moon',
   titleKey: 'lab.goal.land-moon.title',
+  descriptionKey: 'lab.goal.land-moon.desc',
   family: 'spaceflight',
   tier: 3,
   prereqs: ['reach-the-moon'],
@@ -359,6 +366,7 @@ export const landOnTheMoon: Goal = {
 export const getToMars: Goal = {
   id: 'get-to-mars',
   titleKey: 'lab.goal.get-mars.title',
+  descriptionKey: 'lab.goal.get-mars.desc',
   family: 'spaceflight',
   tier: 4,
   prereqs: ['reach-the-moon'],
@@ -403,6 +411,7 @@ export const getToMars: Goal = {
 export const landOnMars: Goal = {
   id: 'land-on-mars',
   titleKey: 'lab.goal.land-mars.title',
+  descriptionKey: 'lab.goal.land-mars.desc',
   family: 'spaceflight',
   tier: 5,
   prereqs: ['get-to-mars'],
@@ -469,6 +478,7 @@ export const landOnMars: Goal = {
 export const landOnVenus: Goal = {
   id: 'land-on-venus',
   titleKey: 'lab.goal.land-venus.title',
+  descriptionKey: 'lab.goal.land-venus.desc',
   family: 'spaceflight',
   tier: 6,
   prereqs: ['land-on-mars'],
@@ -533,6 +543,7 @@ export const landOnVenus: Goal = {
 export const landOnTitan: Goal = {
   id: 'land-on-titan',
   titleKey: 'lab.goal.land-titan.title',
+  descriptionKey: 'lab.goal.land-titan.desc',
   family: 'spaceflight',
   tier: 6,
   prereqs: ['land-on-venus'],
@@ -590,6 +601,7 @@ export const landOnTitan: Goal = {
 export const probeJupiter: Goal = {
   id: 'probe-jupiter',
   titleKey: 'lab.goal.probe-jupiter.title',
+  descriptionKey: 'lab.goal.probe-jupiter.desc',
   family: 'spaceflight',
   tier: 7,
   prereqs: ['land-on-titan'],
@@ -652,6 +664,7 @@ export const probeJupiter: Goal = {
 export const enginesOfTheWorld: Goal = {
   id: 'engines-of-the-world',
   titleKey: 'lab.goal.engines.title',
+  descriptionKey: 'lab.goal.engines.desc',
   family: 'systems',
   tier: 4,
   prereqs: ['launch-a-rocket'],
@@ -711,6 +724,7 @@ export const enginesOfTheWorld: Goal = {
 export const landOnMercury: Goal = {
   id: 'land-on-mercury',
   titleKey: 'lab.goal.land-mercury.title',
+  descriptionKey: 'lab.goal.land-mercury.desc',
   family: 'spaceflight',
   tier: 7,
   prereqs: ['land-on-the-moon'],
@@ -778,6 +792,7 @@ export const landOnMercury: Goal = {
 export const touchSmallWorld: Goal = {
   id: 'touch-small-world',
   titleKey: 'lab.goal.touch-small-world.title',
+  descriptionKey: 'lab.goal.touch-small-world.desc',
   family: 'spaceflight',
   tier: 7,
   prereqs: ['land-on-titan'],
@@ -841,6 +856,7 @@ export const touchSmallWorld: Goal = {
 export const leaveTheSolarSystem: Goal = {
   id: 'leave-the-solar-system',
   titleKey: 'lab.goal.leave-system.title',
+  descriptionKey: 'lab.goal.leave-system.desc',
   family: 'spaceflight',
   tier: 6,
   prereqs: ['get-to-mars'],
@@ -903,6 +919,7 @@ export const leaveTheSolarSystem: Goal = {
 export const moonPhases: Goal = {
   id: 'moon-phases',
   titleKey: 'lab.goal.moon-phases.title',
+  descriptionKey: 'lab.goal.moon-phases.desc',
   family: 'observe',
   tier: 2,
   prereqs: [],
@@ -932,6 +949,7 @@ export const moonPhases: Goal = {
 export const chooseAnOrbit: Goal = {
   id: 'choose-an-orbit',
   titleKey: 'lab.goal.choose-orbit.title',
+  descriptionKey: 'lab.goal.choose-orbit.desc',
   family: 'observe',
   tier: 3,
   prereqs: [],
@@ -973,6 +991,7 @@ export const chooseAnOrbit: Goal = {
 export const catchTheIss: Goal = {
   id: 'catch-the-iss',
   titleKey: 'lab.goal.catch-iss.title',
+  descriptionKey: 'lab.goal.catch-iss.desc',
   family: 'observe',
   tier: 3,
   prereqs: [],
@@ -1014,6 +1033,7 @@ export const catchTheIss: Goal = {
 export const observeTheSky: Goal = {
   id: 'observe-the-sky',
   titleKey: 'lab.goal.observe-sky.title',
+  descriptionKey: 'lab.goal.observe-sky.desc',
   family: 'observe',
   tier: 2,
   prereqs: [],
@@ -1062,6 +1082,7 @@ export const observeTheSky: Goal = {
 export const planAMission: Goal = {
   id: 'plan-a-mission',
   titleKey: 'lab.goal.plan-mission.title',
+  descriptionKey: 'lab.goal.plan-mission.desc',
   family: 'cross-cutting',
   tier: 7,
   prereqs: ['leave-the-solar-system', 'observe-the-sky'],
@@ -1141,6 +1162,7 @@ export const planAMission: Goal = {
 export const flyingComputer: Goal = {
   id: 'flying-computer',
   titleKey: 'lab.goal.flying-computer.title',
+  descriptionKey: 'lab.goal.flying-computer.desc',
   family: 'systems',
   tier: 3,
   prereqs: ['reach-orbit'],
@@ -1167,6 +1189,7 @@ export const flyingComputer: Goal = {
 export const landingComputer: Goal = {
   id: 'landing-computer',
   titleKey: 'lab.goal.landing-computer.title',
+  descriptionKey: 'lab.goal.landing-computer.desc',
   family: 'systems',
   tier: 4,
   prereqs: ['flying-computer'],
@@ -1198,6 +1221,7 @@ export const landingComputer: Goal = {
 export const entryComputer: Goal = {
   id: 'entry-computer',
   titleKey: 'lab.goal.entry-computer.title',
+  descriptionKey: 'lab.goal.entry-computer.desc',
   family: 'systems',
   tier: 5,
   prereqs: ['landing-computer'],
@@ -1233,6 +1257,7 @@ export const entryComputer: Goal = {
 export const apolloRoundTrip: Goal = {
   id: 'apollo-round-trip',
   titleKey: 'lab.goal.apollo-roundtrip.title',
+  descriptionKey: 'lab.goal.apollo-roundtrip.desc',
   family: 'spaceflight',
   tier: 8,
   prereqs: ['land-on-the-moon', 'flying-computer', 'landing-computer', 'entry-computer'],

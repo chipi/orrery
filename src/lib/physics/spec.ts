@@ -71,9 +71,23 @@ export interface FormulaDef<I = Record<string, number | string>> {
   outputs: OutputSpec[]; // static; a test asserts compute() keys align (see FormulaResult)
   selectionOutputs?: OutputSpec[]; // interactive-figure picks (porkchop cell, sky-chart body …)
   staleAfterDays?: number; // data-staleness bound for `epochAgeDays`
-  citationKey?: string; // /science deep-link
+  citationKey?: string; // internal /science deep-link — `section/slug` (e.g. 'orbits/escape-velocity')
+  learnMore?: LearnMore; // external first-principles resource — the card's "Learn more" row
   latex?: string; // LaTeX source for the equation card (server-rendered at build, ADR-034)
   compute(inputs: I): FormulaResult;
+}
+
+/**
+ * External "learn more" pointer for a formula card (curated best-per-formula).
+ * `source` drives the shown label (a proper name — never translated); `url` is a
+ * VERIFIED live link (no invented URLs). HyperPhysics is the first-principles home
+ * for mechanics/orbits/energy; NASA Glenn's Beginner's Guide for rocketry/aero;
+ * Wikipedia is the universal fallback.
+ */
+export type LearnMoreSource = 'hyperphysics' | 'nasa-glenn' | 'wikipedia';
+export interface LearnMore {
+  url: string;
+  source: LearnMoreSource;
 }
 
 export type Registry = ReadonlyMap<string, FormulaDef>;
@@ -326,6 +340,9 @@ export type FigureSpec = FigureBase &
 export interface Goal {
   id: string;
   titleKey: string; // authored curriculum text — i18n-keyed, translated ×14
+  // Short hook shown under the (short) title in the notebook header — the "why care"
+  // that the dropdown title deliberately omits. i18n-keyed, translated ×14.
+  descriptionKey: string;
   // 'systems' (ADR-087) = the guidance/control CONTROLLERS that fly the physics — a different
   // question from the physics itself ("how does a machine fly this?").
   family: 'spaceflight' | 'observe' | 'cross-cutting' | 'systems';

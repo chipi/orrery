@@ -59,9 +59,22 @@
     return v == null ? 0 : parseFloat(v) || 0;
   }
 
+  // Live update while typing — no clamp here so the value can be edited freely.
   function handleNumberInput(field: FieldSpec, e: Event): void {
     const v = parseFloat((e.currentTarget as HTMLInputElement).value);
     if (!isNaN(v)) onInput(field.key, v);
+  }
+
+  // Common input hygiene (operator): on blur/enter, clamp the entry to the
+  // field's declared [min, max] so a stray key can't land on an absurd value.
+  function handleNumberChange(field: FieldSpec, e: Event): void {
+    const el = e.currentTarget as HTMLInputElement;
+    let v = parseFloat(el.value);
+    if (isNaN(v)) v = numVal(inputs[field.key]);
+    if (typeof field.min === 'number') v = Math.max(field.min, v);
+    if (typeof field.max === 'number') v = Math.min(field.max, v);
+    el.value = String(v);
+    onInput(field.key, v);
   }
 
   function handleSelectInput(field: FieldSpec, e: Event): void {
@@ -72,6 +85,13 @@
     onInput(field.key, (e.currentTarget as HTMLInputElement).value);
   }
 
+  // Proper-name label for an external learn-more source — never translated.
+  const SOURCE_LABEL: Record<string, string> = {
+    hyperphysics: 'HyperPhysics',
+    'nasa-glenn': 'NASA Glenn',
+    wikipedia: 'Wikipedia',
+  };
+
   // Format a numeric value compactly (readouts + derived wired cells).
   function fmt(v: number): string {
     if (Math.abs(v) >= 1e6 || (Math.abs(v) < 0.001 && v !== 0)) return v.toExponential(3);
@@ -79,7 +99,7 @@
     return v.toFixed(4);
   }
 
-  // a11y (review M-3): the visible readout updated on every slider tick, which would
+  // a11y (review M-3): the visible readout updates on every keystroke, which would
   // flood a polite live region. Announce the SETTLED ok result on a debounce via a
   // dedicated visually-hidden region instead. Blocked/fail states are NOT announced
   // here — they already own a `role="alert"` node, so repeating them in the polite
@@ -109,15 +129,6 @@
   <!-- Title -->
   <header class="card__header">
     <h2 class="card__title">{t(formula.titleKey)}</h2>
-    {#if formula.citationKey}
-      <!-- Why? affordance — gold, links to /science deep-link -->
-      <a
-        href="{base}/science/{formula.citationKey}"
-        class="card__why"
-        aria-label={t('lab.ui.aria-why')}
-        title={t('lab.ui.why-title')}>?</a
-      >
-    {/if}
   </header>
 
   <!-- Equation — pre-rendered KaTeX HTML, never calls renderKatex at runtime -->
@@ -151,30 +162,20 @@
             {/if}
           </output>
         {:else if field.kind === 'number'}
-          <div class="card__number-row">
-            <input
-              id="field-{formula.id}-{field.key}"
-              type="range"
-              class="card__slider"
-              min={field.min ?? 0}
-              max={field.max ?? 1000}
-              step={field.step ?? ((field.max ?? 1000) - (field.min ?? 0)) / 500}
-              value={numVal(inputs[field.key])}
-              oninput={(e) => handleNumberInput(field, e)}
-              aria-label={t('lab.ui.aria-slider', { label: t(field.labelKey) })}
-            />
-            <input
-              type="number"
-              class="card__number"
-              min={field.min}
-              max={field.max}
-              step={field.step ?? 'any'}
-              value={numVal(inputs[field.key])}
-              oninput={(e) => handleNumberInput(field, e)}
-              aria-labelledby="field-{formula.id}-{field.key}"
-              aria-label={t('lab.ui.aria-value', { label: t(field.labelKey) })}
-            />
-          </div>
+          <!-- Plain number field (no slider, operator V4): compact + clamps to
+               the declared [min,max] on blur. -->
+          <input
+            id="field-{formula.id}-{field.key}"
+            type="number"
+            class="card__number"
+            min={field.min}
+            max={field.max}
+            step={field.step ?? 'any'}
+            value={numVal(inputs[field.key])}
+            oninput={(e) => handleNumberInput(field, e)}
+            onchange={(e) => handleNumberChange(field, e)}
+            aria-label={t('lab.ui.aria-value', { label: t(field.labelKey) })}
+          />
         {:else if field.kind === 'enum'}
           <select
             id="field-{formula.id}-{field.key}"
@@ -211,13 +212,6 @@
       </div>
     {/each}
   </section>
-
-  <!-- Figure — omitted when blocked or when the result has no figure -->
-  {#if !blocked && result?.figure}
-    <div class="card__figure">
-      <FigureRenderer figure={result.figure} {t} />
-    </div>
-  {/if}
 
   <!-- Debounced screen-reader announcement (settled ok result only, review M-3) -->
   <div class="card__sr" aria-live="polite" aria-atomic="true">{announced}</div>
@@ -268,6 +262,35 @@
         <span class="card__staleness-flag">{t('lab.ui.tle-stale')}</span>
       {/if}
     </p>
+  {/if}
+
+  <!-- Figure — big, at the very bottom (operator V4). Omitted when blocked or
+       when the result has no figure. -->
+  {#if !blocked && result?.figure}
+    <div class="card__figure">
+      <FigureRenderer figure={result.figure} {t} />
+    </div>
+  {/if}
+
+  <!-- Learn more — one row linking OUT: our own /science encyclopedia article
+       (citationKey) and a curated external first-principles resource. -->
+  {#if formula.citationKey || formula.learnMore}
+    <footer class="card__learn">
+      <span class="card__learn-label">{t('lab.ui.learn-more')}</span>
+      {#if formula.citationKey}
+        <a class="card__learn-link" href="{base}/science/{formula.citationKey}"
+          >{t('lab.ui.learn-more-science')}</a
+        >
+      {/if}
+      {#if formula.learnMore}
+        <a
+          class="card__learn-link card__learn-link--ext"
+          href={formula.learnMore.url}
+          target="_blank"
+          rel="noopener noreferrer">{SOURCE_LABEL[formula.learnMore.source]} ↗</a
+        >
+      {/if}
+    </footer>
   {/if}
 </article>
 
@@ -323,49 +346,72 @@
     flex: 1;
   }
 
-  /* Why? — gold affordance (UXS-015 §colour discipline) */
-  .card__why {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    color: #ffc850;
-    border: 1px solid rgba(255, 200, 80, 0.45);
-    border-radius: 50%;
-    width: 1.3rem;
-    height: 1.3rem;
+  /* ─── Learn more (footer link row) ──────────────────────────────────── */
+  .card__learn {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    flex-shrink: 0;
-    transition: background 0.15s;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 0.9rem;
+    border-top: 1px solid rgba(78, 205, 196, 0.12);
+    padding-top: 0.7rem;
+    margin-top: 0.2rem;
   }
 
-  .card__why:hover,
-  .card__why:focus-visible {
-    background: rgba(255, 200, 80, 0.12);
-    outline: 2px solid #ffc850;
+  .card__learn-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .card__learn-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: #4ecdc4;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(78, 205, 196, 0.35);
+    padding-bottom: 1px;
+    transition: color 0.15s;
+  }
+
+  .card__learn-link--ext {
+    color: #ffc850; /* gold = leaves Orrery (colour discipline) */
+    border-bottom-color: rgba(255, 200, 80, 0.4);
+  }
+
+  .card__learn-link:hover,
+  .card__learn-link:focus-visible {
+    color: #fff;
+    outline: 2px solid rgba(78, 205, 196, 0.5);
     outline-offset: 2px;
   }
 
   /* ─── Equation (KaTeX HTML, server-rendered) ──────────────────────── */
   .card__equation {
-    /* KaTeX display mode centres by default; keep it in the card flow */
+    /* The formula is the card's hero (operator V4): dominant size, centred.
+       KaTeX sizes relative to this container's font-size. */
     overflow-x: auto;
-    padding: 0.5rem 0;
-    color: rgba(255, 255, 255, 0.9);
+    overflow-y: hidden;
+    padding: 0.75rem 0 0.9rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.35rem;
+    text-align: center;
   }
 
   /* ─── Controls ───────────────────────────────────────────────────────── */
+  /* Compact 2-up grid (operator V4): inputs no longer eat vertical space. */
   .card__controls {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem 0.75rem;
   }
 
   .card__field {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    min-width: 0;
   }
 
   .card__label {
@@ -413,24 +459,10 @@
     font-size: 0.8rem;
   }
 
-  .card__number-row {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .card__slider {
-    flex: 1;
-    accent-color: #4ecdc4;
-    /* 44px touch target height — AGENTS.md mobile-first */
-    height: 44px;
-    cursor: pointer;
-  }
-
   .card__number {
     font-family: 'Space Mono', monospace;
     font-size: 0.75rem;
-    width: 7rem;
+    width: 100%;
     background: rgba(78, 205, 196, 0.06);
     border: 1px solid rgba(78, 205, 196, 0.2);
     border-radius: 2px;
@@ -448,6 +480,7 @@
   .card__select {
     font-family: 'Space Mono', monospace;
     font-size: 0.75rem;
+    width: 100%;
     background: rgba(78, 205, 196, 0.06);
     border: 1px solid rgba(78, 205, 196, 0.2);
     border-radius: 2px;
@@ -465,6 +498,7 @@
   .card__date {
     font-family: 'Space Mono', monospace;
     font-size: 0.75rem;
+    width: 100%;
     background: rgba(78, 205, 196, 0.06);
     border: 1px solid rgba(78, 205, 196, 0.2);
     border-radius: 2px;
@@ -479,9 +513,12 @@
   }
 
   /* ─── Figure wrapper ─────────────────────────────────────────────────── */
+  /* Full-width at the card bottom (operator V4): the SVG scales to this box, so
+     spanning the card is what "zooms in" on the picture. */
   .card__figure {
-    border-radius: 2px;
+    border-radius: 4px;
     overflow: hidden;
+    margin-top: 0.25rem;
   }
 
   /* Visually-hidden live region for the debounced result announcement */
@@ -559,13 +596,12 @@
       padding: 1rem 0.875rem 0.875rem;
     }
 
-    .card__number-row {
-      flex-direction: column;
-      align-items: stretch;
+    .card__controls {
+      gap: 0.5rem 0.6rem;
     }
 
-    .card__number {
-      width: 100%;
+    .card__equation {
+      font-size: 1.15rem;
     }
   }
 </style>

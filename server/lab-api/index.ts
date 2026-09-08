@@ -180,6 +180,9 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
           res.writeHead(302, { location: out.location });
           res.end();
         } else {
+          // Trace OAuth authorize rejections (bad client/redirect/scope/target)
+          // — the connector flow is otherwise invisible in logs (#464 auth trace).
+          console.warn('[lab-api] /authorize rejected:', out.body);
           res.writeHead(out.status, { 'content-type': 'text/plain' });
           res.end(out.body);
         }
@@ -199,6 +202,7 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
       case 'POST /token': {
         const out = await auth.token(await readForm(req));
         if (out.kind === 'ok') return json(res, 200, out.body);
+        console.warn('[lab-api] /token rejected:', out.error, '-', out.description);
         return json(res, out.status, { error: out.error, error_description: out.description });
       }
       case 'POST /ask': {
@@ -251,6 +255,10 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
         }
       }
       default:
+        // Log unhandled paths so a Claude.ai DCR attempt (POST /register) or any
+        // other unexpected connector call is visible in VictoriaLogs — the auth
+        // flow was otherwise a black box (#464 auth trace).
+        console.warn(`[lab-api] 404 ${req.method} ${url.pathname}`);
         res.writeHead(404);
         res.end();
     }

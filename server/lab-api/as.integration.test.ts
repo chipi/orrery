@@ -175,6 +175,7 @@ describe('metadata + jwks', () => {
       expect(meta.issuer).toBe(issuer);
       expect(meta.authorization_endpoint).toBe(`${issuer}/authorize`);
       expect(meta.token_endpoint).toBe(`${issuer}/token`);
+      expect(meta.registration_endpoint).toBe(`${issuer}/register`); // DCR (#464)
       expect(meta.jwks_uri).toBe(`${issuer}/jwks`);
       expect(meta.code_challenge_methods_supported).toEqual(['S256']);
       expect(meta.grant_types_supported).toEqual(['authorization_code', 'refresh_token']);
@@ -513,5 +514,62 @@ describe('negative paths', () => {
     } finally {
       writeFileSync(allowlistPath, JSON.stringify({ emails: [ALLOWED_EMAIL] }));
     }
+  });
+});
+
+describe('DCR — dynamic client registration (#464, shareable connector)', () => {
+  async function register(redirectUris: string[]): Promise<{
+    status: number;
+    body: Record<string, unknown>;
+  }> {
+    const resp = await fetch(`${base}/register`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ redirect_uris: redirectUris }),
+    });
+    return { status: resp.status, body: (await resp.json()) as Record<string, unknown> };
+  }
+
+  const CB = 'https://claude.ai/api/mcp/auth_callback';
+
+  it('a self-registered PUBLIC client completes the full flow (paste-URL, no secret)', async () => {
+    const reg = await register([CB]);
+    expect(reg.status).toBe(201);
+    expect(reg.body.client_id).toMatch(/^dcr-/);
+    expect(reg.body.token_endpoint_auth_method).toBe('none'); // public — PKCE only
+    expect(reg.body.client_secret).toBeUndefined();
+    expect(reg.body.scope).toBe('physics:read');
+
+    const clientId = reg.body.client_id as string;
+    const verifier = randomBytes(32).toString('base64url');
+    const flow = await runAuthLeg({ email: ALLOWED_EMAIL, verifier, clientId, redirectUri: CB });
+    expect(flow.ourCode).toBeTruthy();
+    const { status, body } = await postToken({
+      grant_type: 'authorization_code',
+      client_id: clientId, // NO client_secret — public client
+      code: flow.ourCode!,
+      redirect_uri: CB,
+      code_verifier: verifier,
+      resource: MCP_RESOURCE,
+    });
+    expect(status).toBe(200);
+    expect(body.scope).toBe('physics:read'); // MCP door only, never physics:ask
+  });
+
+  it('the allowlist STILL gates a DCR client (non-allowlisted → access_denied, no code)', async () => {
+    const reg = await register([CB]);
+    const flow = await runAuthLeg({
+      email: 'intruder@example.com',
+      verifier: randomBytes(32).toString('base64url'),
+      clientId: reg.body.client_id as string,
+      redirectUri: CB,
+    });
+    expect(flow.callbackRedirect.searchParams.get('error')).toBe('access_denied');
+    expect(flow.ourCode).toBeNull();
+  });
+
+  it('register requires at least one https redirect_uri', async () => {
+    expect((await register([])).status).toBe(400);
+    expect((await register(['http://insecure.example/cb'])).status).toBe(400);
   });
 });

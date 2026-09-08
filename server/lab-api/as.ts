@@ -1,9 +1,12 @@
 /**
  * lab-api authorization server (D · #533 · spike "option zero" + pre-review A/C).
  *
- * Minimal OAuth 2.1 AS: two STATIC clients (Claude.ai connector + the /lab
- * SPA), PKCE S256 mandatory, RFC 8707 resource→aud binding, Google OIDC as the
- * only IdP. No DCR, no CIMD (not advertised until implemented), no cookies.
+ * Minimal OAuth 2.1 AS: static clients (the /lab SPA + any pre-registered
+ * connector) PLUS DCR (RFC 7591, #464) so a shared MCP connector works for
+ * anyone by pasting the URL — no client secret to hand out. PKCE S256 mandatory,
+ * RFC 8707 resource→aud binding, Google OIDC as the only IdP, no cookies. DCR
+ * clients are public (PKCE) and MCP-door-scoped; the allowlist gates access at
+ * sign-in, so open registration never widens who can actually get a token.
  *
  * PKCE through the two-leg chain (pre-review): the verifier never transits the
  * Google hop — /authorize stores the CHALLENGE in a pending record keyed by our
@@ -42,6 +45,8 @@ export interface AsConfig {
   clients: StaticClient[];
   allowlistPath: string;
   google: GoogleConfig;
+  /** RFC 8707 resource identifiers a DCR client may request (the MCP door). */
+  mcpResources: string[];
 }
 
 interface PendingAuth {
@@ -86,6 +91,69 @@ export class AuthServer {
     private readonly tokens: TokenCore,
   ) {}
 
+  /**
+   * Resolve a client by id: the static registry first (SPA + any pre-registered
+   * connector), then the DCR store. Dynamic clients are PUBLIC (PKCE, no secret)
+   * and scoped to the MCP door only (physics:read + the mcp resources), so a
+   * self-registered connector can never mint an /ask (physics:ask) token (#464).
+   */
+  private findClient(clientId: string): StaticClient | undefined {
+    const stat = this.cfg.clients.find((c) => c.clientId === clientId);
+    if (stat) return stat;
+    const dyn = this.tokens.dynamicClient(clientId);
+    if (!dyn) return undefined;
+    return {
+      clientId,
+      redirectUris: dyn.redirectUris,
+      scope: 'physics:read',
+      resources: dyn.resources,
+    };
+  }
+
+  // ── /register (DCR · RFC 7591) ────────────────────────────────────────────
+
+  /**
+   * Register a PUBLIC client so a shared connector works for ANYONE by just
+   * pasting the URL — no client secret to hand out (#464). Access is still gated
+   * by the allowlist at Google sign-in, and the client is confined to the MCP
+   * door. Returns the RFC 7591 registration response.
+   */
+  register(body: unknown): { status: number; body: Record<string, unknown> } {
+    const b = (body ?? {}) as Record<string, unknown>;
+    const redirectUris = Array.isArray(b.redirect_uris)
+      ? b.redirect_uris.filter((u): u is string => typeof u === 'string')
+      : [];
+    const httpsOk = (u: string): boolean => {
+      try {
+        return new URL(u).protocol === 'https:';
+      } catch {
+        return false;
+      }
+    };
+    if (redirectUris.length === 0 || !redirectUris.every(httpsOk)) {
+      return {
+        status: 400,
+        body: {
+          error: 'invalid_redirect_uri',
+          error_description: 'at least one https redirect_uri is required',
+        },
+      };
+    }
+    const clientId = this.tokens.registerClient(redirectUris, this.cfg.mcpResources);
+    return {
+      status: 201,
+      body: {
+        client_id: clientId,
+        redirect_uris: redirectUris,
+        token_endpoint_auth_method: 'none',
+        grant_types: ['authorization_code', 'refresh_token'],
+        response_types: ['code'],
+        scope: 'physics:read',
+        client_id_issued_at: Math.floor(Date.now() / 1000),
+      },
+    };
+  }
+
   // ── Metadata documents ──────────────────────────────────────────────────
 
   /** RFC 8414 (also served as the OIDC-discovery alias). */
@@ -94,6 +162,7 @@ export class AuthServer {
       issuer: this.cfg.issuer,
       authorization_endpoint: `${this.cfg.issuer}/authorize`,
       token_endpoint: `${this.cfg.issuer}/token`,
+      registration_endpoint: `${this.cfg.issuer}/register`,
       jwks_uri: `${this.cfg.issuer}/jwks`,
       scopes_supported: ['physics:read', 'physics:ask'],
       response_types_supported: ['code'],
@@ -112,7 +181,7 @@ export class AuthServer {
 
   authorize(params: URLSearchParams): AuthorizeResult {
     const clientId = params.get('client_id') ?? '';
-    const client = this.cfg.clients.find((c) => c.clientId === clientId);
+    const client = this.findClient(clientId);
     if (!client) return { kind: 'error', status: 400, body: 'unknown client_id' };
 
     // Open-redirect guard (pre-review risk 3): exact-match against the static
@@ -207,7 +276,7 @@ export class AuthServer {
 
   async token(form: URLSearchParams): Promise<TokenResult> {
     const clientId = form.get('client_id') ?? '';
-    const client = this.cfg.clients.find((c) => c.clientId === clientId);
+    const client = this.findClient(clientId);
     if (!client) return err(401, 'invalid_client', 'unknown client_id');
     if (client.clientSecret !== undefined) {
       const supplied = form.get('client_secret') ?? '';

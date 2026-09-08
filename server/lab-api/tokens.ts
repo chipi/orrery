@@ -23,6 +23,17 @@ import { SignJWT, jwtVerify, generateKeyPair, exportJWK, importJWK, type JWK } f
 
 export const ACCESS_TOKEN_TTL_S = 3600; // 1 h — the allowlist-revocation ceiling
 const REFRESH_TOKEN_BYTES = 32;
+// DCR (#464): bound the dynamic-client store so open registration can't bloat
+// state.json / DoS the box. Oldest evicted first when full — a connector whose
+// client was evicted just re-registers (Claude.ai does DCR again on next auth).
+const MAX_DYNAMIC_CLIENTS = 500;
+
+/** A dynamically-registered (DCR) client — always PUBLIC (PKCE, no secret). */
+export interface DynamicClientRecord {
+  redirectUris: string[];
+  resources: string[];
+  createdAt: number;
+}
 
 export interface AccessClaims {
   sub: string; // Google's stable subject id
@@ -36,6 +47,9 @@ interface StateFile {
   publicJwk: JWK;
   /** sha256(token-hex) → record. Tokens are never stored in the clear. */
   refresh: Record<string, { sub: string; email: string; clientId: string; resource: string }>;
+  /** DCR (#464): client_id → registered public client. Survives redeploys so a
+   *  friend's connector keeps working across restarts. */
+  clients?: Record<string, DynamicClientRecord>;
 }
 
 function hashToken(token: string): string {
@@ -62,9 +76,11 @@ export class TokenCore {
         privateJwk: await exportJWK(privateKey),
         publicJwk: await exportJWK(publicKey),
         refresh: {},
+        clients: {},
       };
       core.persist();
     }
+    core.state.clients ??= {}; // back-fill for state files predating DCR (#464)
     core.state.publicJwk.alg = 'ES256';
     core.state.publicJwk.use = 'sig';
     core.state.publicJwk.kid ??= 'lab-api-1';
@@ -141,5 +157,27 @@ export class TokenCore {
   revokeRefreshToken(token: string): void {
     delete this.state.refresh[hashToken(token)];
     this.persist();
+  }
+
+  // ── Dynamic client registration (DCR · RFC 7591 · #464) ───────────────────
+
+  /** Register a PUBLIC DCR client; returns its generated client_id. Evicts the
+   *  oldest when the cap is hit so open registration can't grow unbounded. */
+  registerClient(redirectUris: string[], resources: string[]): string {
+    const clients = (this.state.clients ??= {});
+    const ids = Object.keys(clients);
+    if (ids.length >= MAX_DYNAMIC_CLIENTS) {
+      const oldest = ids.reduce((a, b) => (clients[a].createdAt <= clients[b].createdAt ? a : b));
+      delete clients[oldest];
+    }
+    const clientId = `dcr-${randomBytes(16).toString('hex')}`;
+    clients[clientId] = { redirectUris, resources, createdAt: Date.now() };
+    this.persist();
+    return clientId;
+  }
+
+  /** Look up a dynamically-registered client, or null. */
+  dynamicClient(clientId: string): DynamicClientRecord | null {
+    return this.state.clients?.[clientId] ?? null;
   }
 }

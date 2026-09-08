@@ -150,6 +150,9 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
     clients: staticClients(cfg),
     allowlistPath: cfg.allowlistPath,
     google: googleConfigFromEnv(cfg.issuer),
+    // The RFC 8707 resources a DCR client may request — the MCP door, both id
+    // forms (origin + /mcp path), matching the static claude-ai client (#464).
+    mcpResources: [cfg.mcpResource, `${cfg.mcpResource}/mcp`],
   };
   const auth = new AuthServer(asConfig, tokens);
   let activeAsks = 0;
@@ -204,6 +207,23 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
         if (out.kind === 'ok') return json(res, 200, out.body);
         console.warn('[lab-api] /token rejected:', out.error, '-', out.description);
         return json(res, out.status, { error: out.error, error_description: out.description });
+      }
+      case 'POST /register': {
+        // DCR (RFC 7591 · #464): a shared connector auto-registers a public
+        // client here, so anyone can add the URL without pasting a secret.
+        let body: unknown;
+        try {
+          body = JSON.parse((await readBody(req)).toString('utf8') || '{}');
+        } catch (e) {
+          if (e instanceof BodyTooLargeError) throw e;
+          return json(res, 400, {
+            error: 'invalid_client_metadata',
+            error_description: 'body must be JSON',
+          });
+        }
+        const out = auth.register(body);
+        if (out.status >= 400) console.warn('[lab-api] /register rejected:', out.body.error);
+        return json(res, out.status, out.body);
       }
       case 'POST /ask': {
         const header = req.headers.authorization ?? '';

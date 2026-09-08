@@ -11,16 +11,16 @@ test.describe('/lab — illustration register + report', () => {
   test('zero-asset state: no illustration frame, report buttons present', async ({ page }) => {
     await page.goto('/lab', { waitUntil: 'networkidle' });
     await expect(page.locator('.illus')).toHaveCount(0);
-    // Visible-text locators: getByRole matches the aria-label (accessible
-    // name), which words these differently from the on-screen text.
-    await expect(page.locator('.nb__tool', { hasText: 'Lab report' })).toBeVisible();
-    await expect(page.locator('.nb__tool', { hasText: 'Share card' })).toBeVisible();
+    // The report affordances are icon-only buttons (V3) — locate by their
+    // accessible name (aria-label), not on-screen text.
+    await expect(page.getByRole('button', { name: /lab report/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /image card/i })).toBeVisible();
   });
 
   test('the share card composes and downloads a PNG from kernel numbers', async ({ page }) => {
     await page.goto('/lab', { waitUntil: 'networkidle' });
     const download = page.waitForEvent('download');
-    await page.locator('.nb__tool', { hasText: 'Share card' }).click();
+    await page.getByRole('button', { name: /image card/i }).click();
     const dl = await download;
     expect(dl.suggestedFilename()).toMatch(/^orrery-lab-.*\.png$/);
   });

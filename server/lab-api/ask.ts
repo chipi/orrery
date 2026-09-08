@@ -20,7 +20,11 @@ import { REGISTRY } from '$lib/physics/registry';
 import { deriveTools, callTool, type DerivedTool } from '../mcp/registry-tools';
 import { makeT, resolveLocale } from '../mcp/i18n';
 
-const MAX_TOOL_ROUNDS = 4;
+// Tool-calling rounds before the guaranteed final-synthesis pass (#464 follow-up).
+// A rich question ("how do I launch a rocket?") legitimately needs several
+// formulas; 6 rounds gives headroom, and the synthesis pass below means the user
+// always gets a narrated answer even if all rounds are spent tool-calling.
+const MAX_TOOL_ROUNDS = 6;
 
 export interface AskDeps {
   llmBaseUrl: string;
@@ -70,7 +74,11 @@ interface ChatMessage {
   tool_call_id?: string;
 }
 
-async function chat(deps: AskDeps, messages: ChatMessage[]): Promise<ChatMessage> {
+async function chat(
+  deps: AskDeps,
+  messages: ChatMessage[],
+  withTools = true,
+): Promise<ChatMessage> {
   let resp: Response;
   try {
     resp = await fetch(`${deps.llmBaseUrl}/chat/completions`, {
@@ -84,10 +92,16 @@ async function chat(deps: AskDeps, messages: ChatMessage[]): Promise<ChatMessage
       body: JSON.stringify({
         model: deps.model,
         messages,
-        tools: allTools().map((t) => ({
-          type: 'function',
-          function: { name: t.name, description: t.description, parameters: t.inputSchema },
-        })),
+        // The final-synthesis pass omits tools so the model MUST answer in prose
+        // (no more tool calls) — guarantees a narrated answer from the results.
+        ...(withTools
+          ? {
+              tools: allTools().map((t) => ({
+                type: 'function',
+                function: { name: t.name, description: t.description, parameters: t.inputSchema },
+              })),
+            }
+          : {}),
       }),
     });
   } catch (e) {
@@ -111,9 +125,12 @@ function systemPrompt(locale: string): string {
   return (
     'You are the Orrery Physics Lab assistant. You answer spaceflight-physics ' +
     'questions using ONLY the provided tools for every numeric result — never ' +
-    'do arithmetic yourself; the physics kernel computes, you narrate. Cite ' +
-    'which tool produced each number. If no tool fits, say so plainly and ' +
-    `answer conceptually without inventing numbers. Respond in locale "${locale}".`
+    'do arithmetic yourself; the physics kernel computes, you narrate. When a ' +
+    'question needs several formulas, request them TOGETHER in as few rounds as ' +
+    'possible (you may call multiple tools in one turn); reserve your final turn ' +
+    'for writing the answer. Cite which tool produced each number. If no tool ' +
+    'fits, say so plainly and answer conceptually without inventing numbers. ' +
+    `Respond in locale "${locale}".`
   );
 }
 
@@ -160,9 +177,26 @@ export async function ask(
       messages.push({ role: 'tool', content: resultText, tool_call_id: call.id });
     }
   }
-  // Out of rounds — one last narration pass without tools would still need a
-  // request; instead answer honestly with what the kernel produced. Localized
-  // ×14 like every other user-visible string (full-arc review MINOR-2).
+  // Out of tool rounds. Rather than a dead-end, force ONE final narration pass
+  // with tools DISABLED so the user always gets an answer synthesized from the
+  // kernel results already computed (#464 follow-up: guaranteed synthesis). Only
+  // if that pass itself fails/returns nothing do we fall back to the honest
+  // budget message (localized ×14, full-arc review MINOR-2).
+  try {
+    messages.push({
+      role: 'user',
+      content:
+        'You have used all available tool calls. Do NOT request more tools. Write ' +
+        'the final answer for the user now, using ONLY the tool results above.',
+    });
+    const final = await chat(deps, messages, false);
+    const answer = (final.content ?? '').trim();
+    if (answer) {
+      return { answer, toolCalls, model: deps.model, requestId: randomBytes(8).toString('hex') };
+    }
+  } catch {
+    // fall through to the honest budget message
+  }
   return {
     answer: t('lab.ask.budget-exhausted'),
     toolCalls,

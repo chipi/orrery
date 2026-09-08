@@ -112,15 +112,55 @@ describe('ask', () => {
     await expect(ask('anything', 'en-US', dead)).rejects.toBeInstanceOf(LlmUnavailableError);
   });
 
-  it('tool-round budget exhausts honestly', async () => {
-    const toolTurn = {
-      role: 'assistant',
-      content: null,
-      tool_calls: [{ id: 'c', function: { name: 'interplanetary-transfer', arguments: '{}' } }],
-    };
-    script = [toolTurn, toolTurn, toolTurn, toolTurn];
+  const toolTurn = {
+    role: 'assistant',
+    content: null,
+    tool_calls: [{ id: 'c', function: { name: 'interplanetary-transfer', arguments: '{}' } }],
+  };
+
+  it('exhausted tool rounds → guaranteed final synthesis with tools DISABLED (#464)', async () => {
+    // 6 tool rounds spend the budget; the forced synthesis pass then writes the
+    // answer from the kernel results — the user never hits a dead-end.
+    script = [
+      toolTurn,
+      toolTurn,
+      toolTurn,
+      toolTurn,
+      toolTurn,
+      toolTurn,
+      { role: 'assistant', content: 'Synthesized from the results above.' },
+    ];
+    received = [];
+    const out = await ask('rich question', 'en-US', deps);
+    expect(out.toolCalls).toHaveLength(6);
+    expect(out.answer).toBe('Synthesized from the results above.');
+    // The synthesis pass omitted tools so the model MUST answer in prose.
+    expect(received[received.length - 1].toolNames).toBeUndefined();
+  });
+
+  it('budget message only when the synthesis pass itself fails', async () => {
+    // 6 tool rounds; the 7th (synthesis) call finds the script empty → 500 →
+    // LlmUnavailable, caught → honest localized budget message.
+    script = [toolTurn, toolTurn, toolTurn, toolTurn, toolTurn, toolTurn];
     const out = await ask('loop forever', 'en-US', deps);
-    expect(out.toolCalls).toHaveLength(4);
-    expect(out.answer).toMatch(/tool-call budget/); // the localized lab.ask.budget-exhausted string
+    expect(out.toolCalls).toHaveLength(6);
+    expect(out.answer).toMatch(/tool-call budget/); // localized lab.ask.budget-exhausted
+  });
+
+  it('multiple tool calls in one round all execute (batching, #464)', async () => {
+    script = [
+      {
+        role: 'assistant',
+        content: null,
+        tool_calls: [
+          { id: 'a', function: { name: 'interplanetary-transfer', arguments: '{}' } },
+          { id: 'b', function: { name: 'launch-window', arguments: '{}' } },
+        ],
+      },
+      { role: 'assistant', content: 'Both formulas, one round.' },
+    ];
+    const out = await ask('two formulas at once', 'en-US', deps);
+    expect(out.toolCalls.map((c) => c.tool)).toEqual(['interplanetary-transfer', 'launch-window']);
+    expect(out.answer).toBe('Both formulas, one round.');
   });
 });

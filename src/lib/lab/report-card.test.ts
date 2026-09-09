@@ -41,7 +41,13 @@ describe('composeReportCard', () => {
 });
 
 describe('illustrationFor (m-3)', () => {
-  it('answers undefined for any goal while the manifest is empty', () => {
-    expect(illustrationFor('launch-a-rocket')).toBeUndefined();
+  it('answers the manifest entry for an approved goal, undefined for an unknown id', () => {
+    // The FB1b batch (operator-approved 2026-09-09) populated the manifest — the
+    // empty-manifest era this test guarded is over; graceful-absent still holds
+    // for ids with no art (a restored/custom notebook has no goalId identity).
+    const hit = illustrationFor('launch-a-rocket');
+    expect(hit?.file).toBe('images/lab/goals/launch-a-rocket.webp');
+    expect(hit?.altKey).toBe('lab.illustration.alt.launch-a-rocket');
+    expect(illustrationFor('not-a-goal')).toBeUndefined();
   });
 });

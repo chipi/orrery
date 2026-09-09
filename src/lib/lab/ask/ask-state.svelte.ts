@@ -10,6 +10,7 @@
  */
 import { AskAuth, browserDeps, type AuthPhase } from './auth';
 import { redirectUri } from './config';
+import type { AskScenario } from '../ask-scenario';
 
 export interface AskToolCallView {
   tool: string;
@@ -29,6 +30,8 @@ export interface AskEntry {
   answer?: string;
   model?: string;
   toolCalls?: AskToolCallView[];
+  /** The composed formula ladder (slice #541) — recomputed + rendered client-side. */
+  scenario?: AskScenario;
   /** lab.ask.err-* message key for the error states. */
   errorKey?: string;
   retryAfterS?: number;
@@ -99,10 +102,12 @@ export function createAskState(): AskState {
             answer: string;
             model: string;
             toolCalls: AskToolCallView[];
+            scenario?: AskScenario;
           };
           entry.answer = body.answer;
           entry.model = body.model;
           entry.toolCalls = body.toolCalls;
+          entry.scenario = body.scenario;
           entry.state = 'done';
           return;
         }

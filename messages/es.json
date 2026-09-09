@@ -2888,5 +2888,6 @@
   "lab_goal_sar_challenge": "Empuja la carga útil hacia arriba hasta que una sola etapa ya no pueda alcanzar órbita y aparezca el muro de dimensionamiento — luego observa cómo el escalonamiento lo supera.",
   "lab_goal_lmars_challenge": "Adelgaza el paracaídas o la atmósfera hasta que el descenso deje de ser survivible. Marte deja casi sin margen — por eso es difícil.",
   "lab_goal_tsw_challenge": "Aumenta tu velocidad de aproximación hasta que rebotes en lugar de aterrizar. En un mundo tan pequeño, la velocidad de escape es apenas el ritmo de una caminata.",
-  "lab_goal_lss_challenge": "Vierte más Δv en un único cohete — ¿puede atravesar el Sol solo con combustible, o aún necesitas la cadena de asistencias gravitatorias?"
+  "lab_goal_lss_challenge": "Vierte más Δv en un único cohete — ¿puede atravesar el Sol solo con combustible, o aún necesitas la cadena de asistencias gravitatorias?",
+  "lab_ask_scenario_aria": "Escenario calculado"
 }

@@ -2888,5 +2888,6 @@
   "lab_goal_sar_challenge": "Push the payload up until a single stage can no longer reach orbit and the sizing wall appears — then watch staging beat it.",
   "lab_goal_lmars_challenge": "Thin the parachute or the atmosphere until the touchdown stops being survivable. Mars leaves almost no margin — that is why it is hard.",
   "lab_goal_tsw_challenge": "Raise your approach speed until you bounce off instead of landing. On a world this small, escape velocity is barely walking pace.",
-  "lab_goal_lss_challenge": "Pour more Δv into a single rocket — can it clear the Sun on fuel alone, or do you still need the gravity-assist chain?"
+  "lab_goal_lss_challenge": "Pour more Δv into a single rocket — can it clear the Sun on fuel alone, or do you still need the gravity-assist chain?",
+  "lab_ask_scenario_aria": "Computed scenario"
 }

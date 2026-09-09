@@ -11,6 +11,7 @@
 <script lang="ts">
   import { getLocale } from '$lib/paraglide/runtime';
   import AskToolResult from './AskToolResult.svelte';
+  import AskScenarioView from './AskScenarioView.svelte';
   import type { AskState } from './ask-state.svelte';
 
   type Props = {
@@ -63,9 +64,12 @@
             })}
           </p>
         {:else}
-          {#if entry.toolCalls?.length}
+          {#if entry.scenario}
+            <AskScenarioView scenario={entry.scenario} {t} />
+          {/if}
+          {#if entry.toolCalls?.some((c) => c.tool !== 'compose_scenario')}
             <div class="ask__tools">
-              {#each entry.toolCalls as call, j (j)}
+              {#each entry.toolCalls.filter((c) => c.tool !== 'compose_scenario') as call, j (j)}
                 <AskToolResult {call} {t} />
               {/each}
             </div>

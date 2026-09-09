@@ -2888,5 +2888,6 @@
   "lab_goal_sar_challenge": "Poussez la charge utile vers le haut jusqu'à ce qu'un seul étage ne puisse plus atteindre l'orbite et que le mur de dimensionnement apparaisse — puis regardez l'étagement le surmonter.",
   "lab_goal_lmars_challenge": "Amincissez le parachute ou l'atmosphère jusqu'à ce que l'atterrissage ne soit plus survivable. Mars ne laisse presque aucune marge — c'est pourquoi c'est difficile.",
   "lab_goal_tsw_challenge": "Augmentez votre vitesse d'approche jusqu'à rebondir au lieu d'atterrir. Sur un monde si petit, la vitesse de libération est à peine un pas.",
-  "lab_goal_lss_challenge": "Versez plus de Δv dans une seule fusée — peut-elle franchir le Soleil avec le carburant seul, ou avez-vous toujours besoin de la chaîne d'assistance gravitationnelle ?"
+  "lab_goal_lss_challenge": "Versez plus de Δv dans une seule fusée — peut-elle franchir le Soleil avec le carburant seul, ou avez-vous toujours besoin de la chaîne d'assistance gravitationnelle ?",
+  "lab_ask_scenario_aria": "Scénario calculé"
 }

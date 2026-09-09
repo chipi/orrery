@@ -1919,7 +1919,8 @@
     "lab_goal_sar_challenge": "पेलोड को ऊपर धकेलें जब तक एक एकल स्टेज कक्षा तक पहुँचने में असमर्थ न हो जाए और साइजिंग वॉल दिखाई न दे — फिर स्टेजिंग को इसे हराते हुए देखें।",
     "lab_goal_lmars_challenge": "पैराशूट या वायुमंडल को तब तक पतला करें जब तक लैंडिंग जीवंत न रह जाए। मंगल लगभग कोई मार्जिन नहीं छोड़ता — यही कारण है कि यह कठिन है।",
     "lab_goal_tsw_challenge": "अपनी दृष्टिकोण गति बढ़ाएँ जब तक आप उतरने के बजाय उछल न जाएँ। इतनी छोटी दुनिया पर, एस्केप वेग मुश्किल से चलने की गति है।",
-    "lab_goal_lss_challenge": "एक एकल रॉकेट में अधिक Δv डालें — क्या यह अकेले ईंधन पर सूर्य को साफ कर सकता है, या क्या आपको अभी भी गुरुत्व-सहायता श्रृंखला की आवश्यकता है?"
+    "lab_goal_lss_challenge": "एक एकल रॉकेट में अधिक Δv डालें — क्या यह अकेले ईंधन पर सूर्य को साफ कर सकता है, या क्या आपको अभी भी गुरुत्व-सहायता श्रृंखला की आवश्यकता है?",
+    "lab_ask_scenario_aria": "परिकलित परिदृश्य"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3702,7 +3703,8 @@
     "lab_goal_sar_challenge": "ペイロードを上げていき、単一段では軌道に到達できなくなり、サイジング限界が現れるまで — その後、段数分離がそれを超える様子を見てください。",
     "lab_goal_lmars_challenge": "パラシュートまたは大気を薄くしていき、着陸が生存不可能になるまで。火星はほぼ余裕がありません — だからこそ困難なのです。",
     "lab_goal_tsw_challenge": "接近速度を上げていき、着陸する代わりにバウンドするまで。このような小さな天体では、脱出速度はほぼ歩行速度です。",
-    "lab_goal_lss_challenge": "より多くのΔvを単一ロケットに注ぎ込んでください — 燃料だけで太陽を抜けられるか、それともまだ重力アシスト連鎖が必要ですか？"
+    "lab_goal_lss_challenge": "より多くのΔvを単一ロケットに注ぎ込んでください — 燃料だけで太陽を抜けられるか、それともまだ重力アシスト連鎖が必要ですか？",
+    "lab_ask_scenario_aria": "計算されたシナリオ"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5665,7 +5667,8 @@
     "lab_goal_sar_challenge": "ادفع الحمولة لأعلى حتى لا تستطيع مرحلة واحدة الوصول إلى المدار بعد الآن ويظهر جدار التحديد — ثم شاهد التوزيع يتغلب عليه.",
     "lab_goal_lmars_challenge": "رقّق المظلة أو الغلاف الجوي حتى يتوقف الهبوط عن كونه آمنًا. المريخ يترك هامشًا ضئيلًا جدًا — لهذا السبب يكون صعبًا.",
     "lab_goal_tsw_challenge": "ارفع سرعة الاقتراب حتى ترتد بدلاً من الهبوط. على عالم بهذا الحجم الصغير، سرعة الهروب تكاد تكون بسرعة المشي.",
-    "lab_goal_lss_challenge": "اسكب المزيد من Δv في صاروخ واحد — هل يمكنه تجاوز الشمس بالوقود وحده، أم أنك لا تزال بحاجة إلى سلسلة الاستقطاب الثقالي؟"
+    "lab_goal_lss_challenge": "اسكب المزيد من Δv في صاروخ واحد — هل يمكنه تجاوز الشمس بالوقود وحده، أم أنك لا تزال بحاجة إلى سلسلة الاستقطاب الثقالي؟",
+    "lab_ask_scenario_aria": "السيناريو المحسوب"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -7450,7 +7453,8 @@
     "lab_goal_sar_challenge": "페이로드를 올려서 단일 단계로 더 이상 궤도에 도달할 수 없게 하고 사이징 벽이 나타날 때까지 — 그 다음 단계 분리가 이를 극복하는 것을 보세요.",
     "lab_goal_lmars_challenge": "낙하산이나 대기를 얇게 할 때까지 — 착륙이 더 이상 생존 가능하지 않을 때까지. 화성은 거의 여유가 없습니다 — 그것이 어려운 이유입니다.",
     "lab_goal_tsw_challenge": "접근 속도를 올려서 착륙 대신 튕겨나갈 때까지. 이렇게 작은 세계에서는 탈출 속도가 겨우 걷는 속도입니다.",
-    "lab_goal_lss_challenge": "단일 로켓에 더 많은 Δv를 쏟아 붓습니다 — 연료만으로 태양을 벗어날 수 있을까요, 아니면 여전히 중력 어시스트 체인이 필요할까요?"
+    "lab_goal_lss_challenge": "단일 로켓에 더 많은 Δv를 쏟아 붓습니다 — 연료만으로 태양을 벗어날 수 있을까요, 아니면 여전히 중력 어시스트 체인이 필요할까요?",
+    "lab_ask_scenario_aria": "계산된 시나리오"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -9058,7 +9062,8 @@
     "lab_goal_sar_challenge": "Treiben Sie die Nutzlast nach oben, bis eine einzelne Stufe die Umlaufbahn nicht mehr erreichen kann und die Sizingwand erscheint — dann sehen Sie, wie das Staging sie überwindet.",
     "lab_goal_lmars_challenge": "Verdünnen Sie den Fallschirm oder die Atmosphäre, bis die Landung nicht mehr überlebbar ist. Der Mars lässt fast keinen Spielraum — deshalb ist er so schwierig.",
     "lab_goal_tsw_challenge": "Erhöhen Sie Ihre Anfluggeschwindigkeit, bis Sie abprallen statt zu landen. Auf einer so kleinen Welt ist die Fluchtgeschwindigkeit kaum schneller als Schrittempo.",
-    "lab_goal_lss_challenge": "Pumpen Sie mehr Δv in eine einzelne Rakete — kann sie die Sonne nur mit Treibstoff verlassen, oder brauchen Sie immer noch die Swing-by-Kette?"
+    "lab_goal_lss_challenge": "Pumpen Sie mehr Δv in eine einzelne Rakete — kann sie die Sonne nur mit Treibstoff verlassen, oder brauchen Sie immer noch die Swing-by-Kette?",
+    "lab_ask_scenario_aria": "Berechnetes Szenario"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -10606,7 +10611,8 @@
     "lab_goal_sar_challenge": "Poussez la charge utile vers le haut jusqu'à ce qu'un seul étage ne puisse plus atteindre l'orbite et que le mur de dimensionnement apparaisse — puis regardez l'étagement le surmonter.",
     "lab_goal_lmars_challenge": "Amincissez le parachute ou l'atmosphère jusqu'à ce que l'atterrissage ne soit plus survivable. Mars ne laisse presque aucune marge — c'est pourquoi c'est difficile.",
     "lab_goal_tsw_challenge": "Augmentez votre vitesse d'approche jusqu'à rebondir au lieu d'atterrir. Sur un monde si petit, la vitesse de libération est à peine un pas.",
-    "lab_goal_lss_challenge": "Versez plus de Δv dans une seule fusée — peut-elle franchir le Soleil avec le carburant seul, ou avez-vous toujours besoin de la chaîne d'assistance gravitationnelle ?"
+    "lab_goal_lss_challenge": "Versez plus de Δv dans une seule fusée — peut-elle franchir le Soleil avec le carburant seul, ou avez-vous toujours besoin de la chaîne d'assistance gravitationnelle ?",
+    "lab_ask_scenario_aria": "Scénario calculé"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -12121,7 +12127,8 @@
     "lab_goal_sar_challenge": "Spinge il carico utile verso l'alto finché un singolo stadio non riesce più a raggiungere l'orbita e appare il muro di dimensionamento — poi guarda lo staging sconfiggerlo.",
     "lab_goal_lmars_challenge": "Assottiglia il paracadute o l'atmosfera finché l'atterraggio non diventa più sopravvivibile. Marte lascia quasi nessun margine — per questo è difficile.",
     "lab_goal_tsw_challenge": "Aumenta la tua velocità di avvicinamento finché non rimbalzi invece di atterrare. Su un mondo così piccolo, la velocità di fuga è appena un ritmo di marcia.",
-    "lab_goal_lss_challenge": "Versa più Δv in un singolo razzo — riesce a superare il Sole solo con il carburante, o hai ancora bisogno della catena di assistenza gravitazionale?"
+    "lab_goal_lss_challenge": "Versa più Δv in un singolo razzo — riesce a superare il Sole solo con il carburante, o hai ancora bisogno della catena di assistenza gravitazionale?",
+    "lab_ask_scenario_aria": "Scenario calcolato"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -13635,7 +13642,8 @@
     "lab_goal_sar_challenge": "Empuja la carga útil hacia arriba hasta que una sola etapa ya no pueda alcanzar órbita y aparezca el muro de dimensionamiento — luego observa cómo el escalonamiento lo supera.",
     "lab_goal_lmars_challenge": "Adelgaza el paracaídas o la atmósfera hasta que el descenso deje de ser survivible. Marte deja casi sin margen — por eso es difícil.",
     "lab_goal_tsw_challenge": "Aumenta tu velocidad de aproximación hasta que rebotes en lugar de aterrizar. En un mundo tan pequeño, la velocidad de escape es apenas el ritmo de una caminata.",
-    "lab_goal_lss_challenge": "Vierte más Δv en un único cohete — ¿puede atravesar el Sol solo con combustible, o aún necesitas la cadena de asistencias gravitatorias?"
+    "lab_goal_lss_challenge": "Vierte más Δv en un único cohete — ¿puede atravesar el Sol solo con combustible, o aún necesitas la cadena de asistencias gravitatorias?",
+    "lab_ask_scenario_aria": "Escenario calculado"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -15158,7 +15166,8 @@
     "lab_goal_sar_challenge": "Duw de nutlast omhoog totdat een enkel stadium niet meer in een baan kan komen en de dimensioneringsmuur verschijnt — observeer dan hoe staging dit overwint.",
     "lab_goal_lmars_challenge": "Verdun de parachute of de atmosfeer totdat de landing niet meer overleefbaar is. Mars laat vrijwel geen marge — daarom is het moeilijk.",
     "lab_goal_tsw_challenge": "Verhoog je naderingssnelheid totdat je afketst in plaats van landt. Op een wereld zo klein is de ontsnappingssnelheid nauwelijks wandeltempo.",
-    "lab_goal_lss_challenge": "Investeer meer Δv in een enkele raket — kan deze de Zon alleen op brandstof bereiken, of heb je nog steeds de gravity-assist-keten nodig?"
+    "lab_goal_lss_challenge": "Investeer meer Δv in een enkele raket — kan deze de Zon alleen op brandstof bereiken, of heb je nog steeds de gravity-assist-keten nodig?",
+    "lab_ask_scenario_aria": "Berekend scenario"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -16944,7 +16953,8 @@
     "lab_goal_sar_challenge": "Поднимайте полезную нагрузку, пока одна ступень не сможет больше выйти на орбиту и не появится стена конструкции — тогда смотрите, как многоступенчатость её преодолевает.",
     "lab_goal_lmars_challenge": "Уменьшайте парашют или плотность атмосферы, пока посадка не станет неживучей. Марс оставляет почти без запаса — поэтому это так сложно.",
     "lab_goal_tsw_challenge": "Поднимайте скорость подхода, пока вы не отскочите вместо приземления. На таком маленьком мире скорость убегания — едва ли не прогулочный темп.",
-    "lab_goal_lss_challenge": "Вкладывайте больше Δv в одну ракету — может ли она очистить Солнце на топливе одном, или вам всё ещё нужна цепь гравитационных манёвров?"
+    "lab_goal_lss_challenge": "Вкладывайте больше Δv в одну ракету — может ли она очистить Солнце на топливе одном, или вам всё ещё нужна цепь гравитационных манёвров?",
+    "lab_ask_scenario_aria": "Вычисленный сценарий"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -18774,7 +18784,8 @@
     "lab_goal_sar_challenge": "推高有效载荷，直到单级火箭无法再到达轨道并出现分级壁——然后观看分级火箭突破它。",
     "lab_goal_lmars_challenge": "减薄降落伞或大气，直到着陆不再可生存。火星几乎没有冗余——这就是为什么它很难。",
     "lab_goal_tsw_challenge": "提高接近速度，直到弹起而不是着陆。在这么小的星体上，逃逸速度只是步行速度。",
-    "lab_goal_lss_challenge": "向单个火箭注入更多Δv——它能仅靠燃料越过太阳，还是仍需重力助推链？"
+    "lab_goal_lss_challenge": "向单个火箭注入更多Δv——它能仅靠燃料越过太阳，还是仍需重力助推链？",
+    "lab_ask_scenario_aria": "计算的情景"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -20475,7 +20486,8 @@
     "lab_goal_sar_challenge": "Гурни товар нагоре док једна фаза више не може да достигне орбиту и зид величине се појави — затим гледај како фазирање га преваже.",
     "lab_goal_lmars_challenge": "Истањи паду или атмосферу док слетање више није преживљиво. Марс оставља скоро без марже — то је разлог зашто је то тешко.",
     "lab_goal_tsw_challenge": "Подигни своју брзину приласка док се не отскочиш уместо слетања. На толико малом свету, брзина утаје је вишак пешке.",
-    "lab_goal_lss_challenge": "Уливај више Δv у једну ракету — може ли она да прошvolta Сунце само на гориву, или ti још требa ланац гравитационе асистенције?"
+    "lab_goal_lss_challenge": "Уливај више Δv у једну ракету — може ли она да прошvolta Сунце само на гориву, или ti још требa ланац гравитационе асистенције?",
+    "lab_ask_scenario_aria": "Израчунати сценарио"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -21996,6 +22008,7 @@
     "lab_goal_sar_challenge": "Empurre a carga útil para cima até que um único estágio não consiga mais atingir órbita e a parede de dimensionamento apareça — então veja o staging vencê-la.",
     "lab_goal_lmars_challenge": "Afiने o paraquedas ou a atmosfera até que o pouso deixe de ser sobrevivível. Marte oferece quase nenhuma margem — é por isso que é difícil.",
     "lab_goal_tsw_challenge": "Aumente sua velocidade de aproximação até que você quique em vez de pousar. Em um mundo tão pequeno, a velocidade de escape é quase apenas uma caminhada.",
-    "lab_goal_lss_challenge": "Coloque mais Δv em um único foguete — consegue ultrapassar o Sol apenas com combustível, ou ainda precisa da cadeia de assistência gravitacional?"
+    "lab_goal_lss_challenge": "Coloque mais Δv em um único foguete — consegue ultrapassar o Sol apenas com combustível, ou ainda precisa da cadeia de assistência gravitacional?",
+    "lab_ask_scenario_aria": "Cenário calculado"
   }
 }

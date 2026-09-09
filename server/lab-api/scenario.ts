@@ -10,19 +10,17 @@
  * render live on the client; the model only gets a compact recompute — R4 token budget).
  */
 import type { Registry } from '$lib/physics/spec';
-import { defaultInputs } from '$lib/physics/registry';
 import { recomputeNotebook, type Cell } from '$lib/lab/notebook';
+import {
+  hydrateCells,
+  MAX_SCENARIO_CELLS,
+  SCENARIO_VERSION,
+  type AskScenario,
+} from '$lib/lab/ask-scenario';
 
-export const SCENARIO_VERSION = 1 as const;
-/** Fable-5: bound the ladder so an open tool can't bloat state / the token budget. */
-export const MAX_SCENARIO_CELLS = 12;
 export const COMPOSE_SCENARIO_TOOL = 'compose_scenario';
-
-/** The scenario the LLM composes + the client carries across turns (state lives client-side). */
-export interface AskScenario {
-  v: typeof SCENARIO_VERSION;
-  cells: Cell[];
-}
+export type { AskScenario };
+export { MAX_SCENARIO_CELLS, SCENARIO_VERSION } from '$lib/lab/ask-scenario';
 
 /** The `compose_scenario` function-tool definition handed to the LLM (OpenAI shape). */
 export function composeScenarioTool() {
@@ -104,19 +102,6 @@ export function parseScenarioArgs(args: unknown): AskScenario {
     return { formulaId: cell.formulaId, inputs, wires };
   });
   return { v: SCENARIO_VERSION, cells };
-}
-
-/**
- * Merge each cell's user-stated inputs OVER the formula defaults, so an unspecified
- * input keeps the kernel default ("the default stands") instead of computing on
- * `undefined`. The model seeds only what the user pinned; this completes the rest.
- * Exported so the client hydrates identically before it recomputes for rendering.
- */
-export function hydrateCells(cells: Cell[], registry: Registry): Cell[] {
-  return cells.map((c) => {
-    const def = registry.get(c.formulaId);
-    return def ? { ...c, inputs: { ...defaultInputs(def), ...c.inputs } } : c;
-  });
 }
 
 /** One step as the MODEL sees it — figure stripped, numbers the kernel actually produced. */

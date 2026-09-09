@@ -207,25 +207,25 @@ describe('codec · .orrlab round-trip (id wires ↔ index wires)', () => {
     const doc = encodeOrrlab(cells, 'My launch');
     expect(doc.orrlab).toBe(1);
     expect(doc.title).toBe('My launch');
-    // the verdict card (index 6) serialises its wires as ID references (fromCard),
-    // not indices — first wire is capacity ← Tsiolkovsky (s4).
-    const verdict = doc.cards[7];
-    expect(verdict.wires?.[0].fromCard).toBe('s4');
+    // the verdict card (last rung, index 8 after the W4 thrust rung) serialises its wires
+    // as ID references (fromCard), not indices — first wire is capacity ← Tsiolkovsky (s5).
+    const verdict = doc.cards[8];
+    expect(verdict.wires?.[0].fromCard).toBe('s5');
 
     const back = decodeOrrlab(doc, REGISTRY);
     expect(back).not.toBeNull();
     expect(back!.title).toBe('My launch');
-    expect(back!.cells).toHaveLength(8);
-    // id wire 's4' rehydrated back to index 4
-    expect(back!.cells[7].wires?.[0]).toEqual({
-      fromIndex: 4,
+    expect(back!.cells).toHaveLength(9);
+    // id wire 's5' rehydrated back to index 5 (Tsiolkovsky)
+    expect(back!.cells[8].wires?.[0]).toEqual({
+      fromIndex: 5,
       output: 'deltaV',
       toInput: 'capacityKms',
     });
     const states = recomputeNotebook(back!.cells, REGISTRY);
-    // the verdict rung (index 7) reached an honest terminal state (ok or fail — a
+    // the verdict rung (index 8) reached an honest terminal state (ok or fail — a
     // negative margin is a valid, honest verdict, not a compute failure).
-    expect(states[7].status === 'ok' || states[7].status === 'fail').toBe(true);
+    expect(states[8].status === 'ok' || states[8].status === 'fail').toBe(true);
   });
 
   it('the file carries per-card note (kept OUT of the URL codec)', () => {

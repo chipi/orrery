@@ -20,10 +20,10 @@ test.describe('/lab — Physics Lab', () => {
 
     await page.goto('/lab', { waitUntil: 'networkidle' });
 
-    // The goal ladder rendered: 8 rungs of the launch-a-rocket goal.
+    // The goal ladder rendered: 9 rungs of the launch-a-rocket goal (W4 added the thrust rung).
     await expect(page.locator('.nb__goal-title')).toBeVisible();
     const cards = page.locator('.card');
-    await expect(cards).toHaveCount(8);
+    await expect(cards).toHaveCount(9);
 
     // KaTeX equation is server-prerendered into the card (ADR-034, no runtime katex).
     await expect(page.locator('.card__equation .katex').first()).toBeVisible();
@@ -84,7 +84,7 @@ test.describe('/lab — Physics Lab', () => {
     await expect(page.locator('.nb__back')).toBeVisible();
     await expect(page.locator('.card')).toHaveCount(1);
     await page.locator('.nb__back').click();
-    await expect(page.locator('.card')).toHaveCount(8);
+    await expect(page.locator('.card')).toHaveCount(9);
   });
 
   test('fail-honest: an infeasible input surfaces a reason and blocks the wired verdict', async ({
@@ -93,9 +93,9 @@ test.describe('/lab — Physics Lab', () => {
     await page.goto('/lab', { waitUntil: 'networkidle' });
     await expect(page.locator('.nb__goal-title')).toBeVisible();
 
-    // Tsiolkovsky (card 5, index 4) fails when dry mass ≥ wet mass. Its 3rd number
-    // input is mf; push it above m0 (default 12) → mass ratio < 1 → fail-honest.
-    const tsio = page.locator('.card').nth(4);
+    // Tsiolkovsky (card 6, index 5 after the W4 thrust rung) fails when dry mass ≥ wet
+    // mass. Its 3rd number input is mf; push it above m0 (default 12) → ratio < 1 → fail.
+    const tsio = page.locator('.card').nth(5);
     const mf = tsio.locator('.card__number').nth(2);
     await mf.fill('20');
     await mf.dispatchEvent('input');

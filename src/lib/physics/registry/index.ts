@@ -314,7 +314,10 @@ export const thrustFromFlowFormula: FormulaDef<{ massFlowKgS: number; exhaustVel
   id: 'thrust-from-flow',
   titleKey: 'lab.f.thrust-flow.title',
   citationKey: 'propulsion/thrust-and-twr',
-  learnMore: { url: 'https://www.grc.nasa.gov/www/k-12/rocket/rktthsum.html', source: 'nasa-glenn' },
+  learnMore: {
+    url: 'https://www.grc.nasa.gov/www/k-12/rocket/rktthsum.html',
+    source: 'nasa-glenn',
+  },
   domain: 'propulsion',
   tier: 2,
   prereqs: ['momentum'],
